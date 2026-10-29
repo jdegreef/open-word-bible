@@ -5,7 +5,7 @@ Usage: python3 scripts/build_site.py [-o DIR]
 Needs only the repository: the Greek words come from the committed extracts
 in data/grc/ (see scripts/extract_tokens.py), so a deploy never fetches the
 full sources. Every page is built in each interface language: English at
-the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/).
+the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /am/).
 """
 import argparse
 import base64
@@ -701,10 +701,15 @@ def curl_record(r):
     # rendering, like the links (data/words_of_jesus/).
     if r["id"] in words_of_jesus.marked():
         r["wj"] = words_of_jesus.record_ranges(r, words_of_jesus.marked()[r["id"]])
+    r["literal_gloss"] = smart_quotes(r["literal_gloss"])
+    return curl_texts(r)
+
+
+def curl_texts(r):
+    """curl_record's quotes in a record's renderings and decisions."""
     for levels in r["renderings"].values():
         for level, text in levels.items():
             levels[level] = smart_quotes(text)
-    r["literal_gloss"] = smart_quotes(r["literal_gloss"])
     for d in r["decisions"]:
         d["choice"] = smart_quotes(d["choice"])
         d["alternatives"] = [smart_quotes(a) for a in d["alternatives"]]
@@ -737,14 +742,22 @@ def describe(word, lang):
 # What search_documents reads of a record, and of a decision. The API's
 # search rebuild (backend/translation/search.py) sets SEARCH_ONLY, so the
 # records it holds keep only these: all of content/ in memory otherwise
-# outgrows the API's 512 MB.
+# outgrows the API's 512 MB. It also sets SEARCH_LANG to the one language it
+# is indexing: only that language's renderings and wording notes are kept,
+# or English's where a sentence is not in it yet (text_lang). Every other
+# language keeps an empty entry, so a record still says which languages it
+# is in (passages_in, languages_label).
 SEARCH_DECISION_KEYS = ("layer", "language", "category", "choice", "alternatives", "reason")
 SEARCH_ONLY = False
+SEARCH_LANG = None
 
 
 def search_only(r):
-    return {"id": r["id"], "refs": r["refs"], "renderings": r["renderings"],
-            "decisions": [{k: d[k] for k in SEARCH_DECISION_KEYS} for d in r["decisions"]]}
+    keep = {text_lang(r, SEARCH_LANG)} if SEARCH_LANG else set(r["renderings"])
+    return {"id": r["id"], "refs": r["refs"],
+            "renderings": {code: levels if code in keep else {} for code, levels in r["renderings"].items()},
+            "decisions": [{k: d[k] for k in SEARCH_DECISION_KEYS} for d in r["decisions"]
+                          if d["layer"] != "rendering" or d["language"] in keep]}
 
 
 @functools.lru_cache(maxsize=None)
@@ -753,9 +766,9 @@ def _book_records(book):
     by_chapter = {}
     for path in sorted((ROOT / "content" / book).glob("*.json")):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
-            r = curl_record(r)
-            if SEARCH_ONLY:
-                r = search_only(r)
+            # Search needs no links or red letters: only the texts it keeps
+            # are curled.
+            r = curl_texts(search_only(r)) if SEARCH_ONLY else curl_record(r)
             for ch in {refs.parse(v).chapter for v in r["refs"]}:
                 by_chapter.setdefault(ch, []).append(r)
     return by_chapter

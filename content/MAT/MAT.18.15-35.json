@@ -64,6 +64,11 @@
           "L": "E, se o seu {{gender:irmão ou irmã|irmão}} pecar contra você, vá, mostre-lhe a falta, só entre você e {{gender:essa pessoa|ele}}.",
           "B": "Se o seu {{gender:irmão ou irmã|irmão}} pecar contra você, vá falar com {{gender:essa pessoa|ele}} sobre o assunto, só vocês dois.",
           "R": "Se o seu {{gender:irmão ou irmã|irmão}} na família de Deus pecar contra você, vá conversar a sós com {{gender:essa pessoa|ele}}. Mostre a {{gender:essa pessoa|ele}} o que fez de errado."
+        },
+        "am": {
+          "L": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}} ግን ኃጢአት ቢሠራብህ ሄደህ ሁለታችሁ ብቻ ባላችሁበት ስሕተቱን አሳየው።",
+          "B": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}} ቢበድልህ ሄደህ ሁለታችሁ ብቻ ባላችሁበት ስሕተቱን ንገረው።",
+          "R": "በእግዚአብሔር ቤተሰብ ውስጥ ያለ {{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}} ቢበድልህ ሄደህ ለብቻው አነጋግረው። የሠራውን ስሕተት አሳየው።"
         }
       },
       "decisions": [
@@ -373,6 +378,51 @@
           "reason": "For this chapter. The fellow disciple may be a man or a woman (m1), so the default is \"irmão ou irmã\", with the article and possessive outside the span since \"o seu\" fits both options. Portuguese pronouns are gendered, so where one is needed it goes under the same setting as \"essa pessoa\"; where Portuguese can leave the subject unsaid or use \"lhe\", which serves for both, no span is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007",
+            "n40018015008",
+            "n40018015011",
+            "n40018015015"
+          ],
+          "choice": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}}; pronouns with no span",
+          "alternatives": [
+            "a span on each pronoun, as in the English"
+          ],
+          "reason": "As the Amharic style guide sets for a fellow believer, the noun takes the gender span. The pronouns that follow are suffixes on the verb (\"አሳየው\", \"ቢሰማህ\"), whose masculine form is also the general one, so they take no span; Literal avoids the free pronoun in \"between you and him\" by saying \"when only the two of you are there\". The same holds through 18:15-35.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015003"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [
+            "deity_pronoun spans as in the English"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the deity_pronoun setting has nothing to change in Amharic and this passage carries no deity_pronoun spans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -432,6 +482,11 @@
           "L": "Se {{gender:essa pessoa|ele}} der ouvidos a você, você ganhou o seu {{gender:irmão ou irmã|irmão}};",
           "B": "Se {{gender:essa pessoa|ele}} ouvir você, você terá ganhado de volta o seu {{gender:irmão ou irmã|irmão}}.",
           "R": "Talvez {{gender:essa pessoa|ele}} ouça você. Então você ganhou de volta o seu {{gender:irmão ou irmã|irmão}}."
+        },
+        "am": {
+          "L": "ቢሰማህ {{gender:ወንድምህን ወይም እኅትህን|ወንድምህን}} አተረፍክ፤",
+          "B": "ቢሰማህ {{gender:ወንድምህን ወይም እኅትህን|ወንድምህን}} መልሰህ አገኘህ።",
+          "R": "ምናልባት ይሰማህ ይሆናል። ከሰማህ {{gender:ወንድምህን ወይም እኅትህን|ወንድምህን}} መልሰህ አገኘህ ማለት ነው።"
         }
       },
       "decisions": [
@@ -640,6 +695,11 @@
           "L": "Mas, se {{gender:essa pessoa|ele}} não ouvir, leve com você mais um ou dois, para que 'pela boca de duas ou três testemunhas toda palavra seja confirmada.'",
           "B": "Se {{gender:essa pessoa|ele}} ainda assim não ouvir, volte lá com mais uma ou duas pessoas, para que 'toda acusação seja decidida pelo depoimento de duas ou três testemunhas.'",
           "R": "Se {{gender:essa pessoa|ele}} continuar sem ouvir, leve com você mais uma ou duas pessoas. As Escrituras dizem: 'Toda acusação tem de ser provada por duas ou três testemunhas.'"
+        },
+        "am": {
+          "L": "ባይሰማ ግን “በሁለት ወይም በሦስት ምስክሮች አፍ ነገር ሁሉ እንዲጸና” አንድ ወይም ሁለት ሰዎች ጨምረህ ከአንተ ጋር ውሰድ።",
+          "B": "አሁንም ባይሰማ “ክሱ ሁሉ በሁለት ወይም በሦስት ምስክሮች ቃል እንዲረጋገጥ” አንድ ወይም ሁለት ሰዎች ይዘህ ተመለስ።",
+          "R": "አሁንም ባይሰማ አንድ ወይም ሁለት ሌሎች ሰዎችን ይዘህ ሂድ። መጽሐፍ ቅዱስ እንዲህ ይላል፦ “ክስ ሁሉ በሁለት ወይም በሦስት ምስክሮች መረጋገጥ አለበት።”"
         }
       },
       "decisions": [
@@ -795,6 +855,35 @@
           "reason": "The words of Deuteronomy 19:15 (meaning decision): \"every word\" is every matter or charge, and Balanced and Readable say so; Readable says that it is Scripture, as the English Readable does. \"증인\" is the word of the style guide (section 6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40018016012",
+            "n40018016013",
+            "n40018016014",
+            "n40018016015",
+            "n40018016016",
+            "n40018016017",
+            "n40018016018",
+            "n40018016019",
+            "n40018016020",
+            "n40018016021"
+          ],
+          "choice": "the quoted purpose clause before the command",
+          "alternatives": [
+            "the Greek order, command first"
+          ],
+          "reason": "An Amharic purpose clause stands before the verb it explains, so the words from Deuteronomy 19:15 come before \"take one or two with you\"; the quotation itself is kept whole.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -868,6 +957,11 @@
           "L": "E, se {{gender:essa pessoa|ele}} não der atenção a eles, conte [isso] à igreja; e, se não der atenção nem à igreja, que {{gender:essa pessoa|ele}} seja para você como o pagão e o cobrador de impostos.",
           "B": "Se {{gender:essa pessoa|ele}} não ouvir nem a eles, leve o caso à igreja. E, se não ouvir nem a igreja, {{gender:trate essa pessoa|trate-o}} como alguém de fora, como um pagão ou um cobrador de impostos.",
           "R": "Se {{gender:essa pessoa|ele}} não ouvir essas pessoas, conte tudo à igreja inteira. Se não ouvir nem mesmo a igreja, {{gender:trate essa pessoa|trate-o}} como alguém que não conhece a Deus, ou como um cobrador de impostos."
+        },
+        "am": {
+          "L": "እነርሱንም ባይሰማ ለቤተ ክርስቲያን ንገር፤ ቤተ ክርስቲያንንም ደግሞ ባይሰማ እንደ አሕዛብ ሰውና እንደ ቀራጭ ይሁንልህ።",
+          "B": "እነርሱንም ባይሰማ ጉዳዩን ለቤተ ክርስቲያን አቅርብ። ቤተ ክርስቲያንንም ባይሰማ እንደ ውጭ ሰው፣ እንደ አሕዛብ ሰው ወይም እንደ ቀራጭ ቁጠረው።",
+          "R": "እነርሱንም ባይሰማ ለቤተ ክርስቲያን ሁሉ ንገር። ቤተ ክርስቲያንን እንኳ ባይሰማ እግዚአብሔርን እንደማያውቅ ሰው ወይም እንደ ቀራጭ ቁጠረው።"
         }
       },
       "decisions": [
@@ -1224,6 +1318,26 @@
           "reason": "Written Portuguese takes the clitic \"o\" as object (\"trate-o\"), not \"ele\", so the setting covers the verb with its object.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017018"
+          ],
+          "choice": "\"አሕዛብ ሰው\" (a man of the Gentiles)",
+          "alternatives": [
+            "\"አረማዊ\" (a pagan)"
+          ],
+          "reason": "\"አሕዛብ\" is the Bible's word for the nations outside Israel; with \"ሰው\" it names one such person. Readable says what that meant, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1300,6 +1414,11 @@
           "L": "Em verdade eu lhes digo: tudo o que vocês ligarem na terra terá sido ligado no céu, e tudo o que vocês desligarem na terra terá sido desligado no céu.",
           "B": "Em verdade eu lhes digo: o que vocês ligarem na terra será ligado no céu, e o que vocês desligarem na terra será desligado no céu.",
           "R": "Eu garanto a vocês: tudo o que vocês proibirem na terra vai ser proibido no céu. E tudo o que vocês permitirem na terra vai ser permitido no céu."
+        },
+        "am": {
+          "L": "እውነት እላችኋለሁ፣ በምድር ላይ የምታስሩት ሁሉ በሰማይ ታስሮ ይሆናል፤ በምድር ላይ የምትፈቱትም ሁሉ በሰማይ ተፈትቶ ይሆናል።",
+          "B": "እውነት እላችኋለሁ፣ በምድር የምታስሩት በሰማይ የታሰረ ይሆናል፤ በምድር የምትፈቱትም በሰማይ የተፈታ ይሆናል።",
+          "R": "እውነቱን እነግራችኋለሁ፣ በምድር ላይ የምትከለክሉት ነገር ሁሉ በሰማይም የተከለከለ ይሆናል። በምድር ላይ የምትፈቅዱት ነገር ሁሉ በሰማይም የተፈቀደ ይሆናል።"
         }
       },
       "decisions": [
@@ -1532,6 +1651,51 @@
           "reason": "\"Ligar\" and \"desligar\" are the words Portuguese readers know for this idiom; Balanced should match the Portuguese of 16:19, so readers see the same promise now given to all the disciples. Readable gives the sense, as the English does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018001",
+            "n40018018002",
+            "n40018018003"
+          ],
+          "choice": "\"እውነት እላችኋለሁ\" (L, B); \"እውነቱን እነግራችኋለሁ\" (R)",
+          "alternatives": [
+            "\"አሜን እላችኋለሁ\""
+          ],
+          "reason": "As in 16:28: the word \"amen\" vouches for what follows, which \"እውነት እላችኋለሁ\" says in Amharic; Readable uses the plainer everyday phrase. Used so through 18:15-35.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018010",
+            "n40018018011",
+            "n40018018021",
+            "n40018018022"
+          ],
+          "choice": "\"ታስሮ ይሆናል\", \"ተፈትቶ ይሆናል\" (will have been bound, loosed)",
+          "alternatives": [
+            "\"የታሰረ ይሆናል\" (will be bound), as Balanced and 16:19"
+          ],
+          "reason": "The Amharic future perfect keeps the Greek's \"will have been bound\" at Literal, so that heaven's verdict is not made to follow the disciples' one; Balanced keeps the wording of 16:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1612,6 +1776,11 @@
           "L": "De novo, em verdade eu lhes digo que, se dois de vocês concordarem na terra a respeito de qualquer coisa que pedirem, isso lhes será feito pelo {{deity_pronoun:meu|Meu}} Pai, que [está] nos céus.",
           "B": "E de novo, em verdade eu lhes digo: se dois de vocês, aqui na terra, estiverem de acordo sobre qualquer coisa que pedirem, o {{deity_pronoun:meu|Meu}} Pai, que está no céu, fará isso por eles.",
           "R": "Mais uma vez eu garanto a vocês: imaginem que dois de vocês, aqui na terra, combinam entre si e pedem alguma coisa a Deus. Então o {{deity_pronoun:meu|Meu}} Pai, que está no céu, vai fazer isso por eles."
+        },
+        "am": {
+          "L": "ደግሞም እውነት እላችኋለሁ፣ ከእናንተ ሁለቱ በምድር ላይ ስለሚለምኑት ስለ ማናቸውም ነገር ቢስማሙ በሰማያት ባለው በአባቴ ዘንድ ይደረግላቸዋል።",
+          "B": "ደግሞም እውነት እላችኋለሁ፤ ከእናንተ ሁለቱ እዚህ በምድር ላይ ስለሚለምኑት ስለ ማንኛውም ነገር በአንድ ልብ ቢስማሙ በሰማይ ያለው አባቴ ያደርግላቸዋል።",
+          "R": "ደግሞም እውነቱን እነግራችኋለሁ። ከእናንተ ሁለቱ እዚህ በምድር ላይ ስለ አንድ ነገር ተስማምተው እግዚአብሔርን ቢለምኑ እንበል። በሰማይ ያለው አባቴ ያን ያደርግላቸዋል።"
         }
       },
       "decisions": [
@@ -1838,6 +2007,11 @@
           "L": "Pois onde há dois ou três reunidos em {{deity_pronoun:meu|Meu}} nome, ali estou eu, no meio deles.\"",
           "B": "Pois, sempre que dois ou três se juntam em {{deity_pronoun:meu|Meu}} nome, eu estou ali com eles.\"",
           "R": "Quando duas ou três pessoas se encontram porque {{deity_pronoun:me|Me}} seguem, eu estou ali com elas.\""
+        },
+        "am": {
+          "L": "ሁለት ወይም ሦስት በስሜ በተሰበሰቡበት በዚያ እኔ በመካከላቸው ነኝና።»",
+          "B": "ሁለት ወይም ሦስት ሰዎች በስሜ በሚሰበሰቡበት ሁሉ እኔ በዚያ በመካከላቸው እገኛለሁና።»",
+          "R": "ሁለት ወይም ሦስት ሰዎች እኔን ስለሚከተሉ አብረው ሲሰበሰቡ እኔ በዚያ ከእነርሱ ጋር ነኝ።»"
         }
       },
       "decisions": [
@@ -2052,6 +2226,11 @@
           "L": "Então Pedro se aproximou {{deity_pronoun:dele|Dele}} e disse: \"Senhor, quantas vezes o meu {{gender:irmão ou irmã|irmão}} pecará contra mim, e eu lhe perdoarei?",
           "B": "Então Pedro se aproximou de Jesus e perguntou: \"Senhor, se o meu {{gender:irmão ou irmã|irmão}} continuar pecando contra mim, quantas vezes tenho de perdoar?",
           "R": "Então Pedro foi até Jesus e perguntou: \"Senhor, e se o meu {{gender:irmão ou irmã|irmão}} na família de Deus pecar contra mim muitas e muitas vezes? Quantas vezes devo {{gender:perdoar essa pessoa|perdoá-lo}}?"
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ጴጥሮስ ወደ እርሱ ቀርቦ እንዲህ አለው፦ «ጌታ ሆይ፣ {{gender:ወንድሜ ወይም እኅቴ|ወንድሜ}} ስንት ጊዜ ኃጢአት ይሠራብኛል፤ እኔስ ይቅር እለዋለሁ?",
+          "B": "በዚያን ጊዜ ጴጥሮስ ወደ ኢየሱስ ቀርቦ እንዲህ ብሎ ጠየቀው፦ «ጌታ ሆይ፣ {{gender:ወንድሜ ወይም እኅቴ|ወንድሜ}} ደጋግሞ ቢበድለኝ ስንት ጊዜ ይቅር ልበለው?",
+          "R": "በዚያን ጊዜ ጴጥሮስ ወደ ኢየሱስ ቀርቦ እንዲህ ብሎ ጠየቀው፦ «ጌታ ሆይ፣ በእግዚአብሔር ቤተሰብ ውስጥ ያለ {{gender:ወንድሜ ወይም እኅቴ|ወንድሜ}} ደጋግሞ ቢበድለኝ እንበል። ስንት ጊዜ ይቅር ልበለው?"
         }
       },
       "decisions": [
@@ -2336,6 +2515,11 @@
           "L": "Até sete vezes?\"",
           "B": "Até sete vezes?\"",
           "R": "Devo perdoar sete vezes?\""
+        },
+        "am": {
+          "L": "እስከ ሰባት ጊዜ?»",
+          "B": "እስከ ሰባት ጊዜ ድረስ?»",
+          "R": "ሰባት ጊዜ ይቅር ልበለው?»"
         }
       },
       "decisions": [
@@ -2440,6 +2624,11 @@
           "L": "Jesus lhe diz: \"Eu não lhe digo até sete vezes, mas até setenta e sete vezes.",
           "B": "Jesus lhe respondeu: \"Não só até sete vezes, mas até setenta e sete vezes.",
           "R": "Jesus respondeu: \"Eu digo a você: não só sete vezes. Você tem de perdoar setenta e sete vezes."
+        },
+        "am": {
+          "L": "ኢየሱስ ይለዋል፦ «እስከ ሰባት ጊዜ አልልህም፤ እስከ ሰባ ሰባት ጊዜ እንጂ።",
+          "B": "ኢየሱስም እንዲህ አለው፦ «እስከ ሰባት ጊዜ ብቻ አይደለም፤ እስከ ሰባ ሰባት ጊዜ እንጂ።",
+          "R": "ኢየሱስም እንዲህ ብሎ መለሰለት፦ «እልሃለሁ፤ ሰባት ጊዜ ብቻ አይደለም። ሰባ ሰባት ጊዜ ይቅር ማለት አለብህ።"
         }
       },
       "decisions": [
@@ -2658,6 +2847,28 @@
           "reason": "The Greek leaves \"I say\" to be understood in the second half; Korean needs the verb, and Literal brackets it. The quotation stays open to the end of 18:35.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018022012",
+            "n40018022013"
+          ],
+          "choice": "\"ሰባ ሰባት ጊዜ\" (seventy-seven times)",
+          "alternatives": [
+            "\"ሰባ ጊዜ ሰባት\" (seventy times seven)"
+          ],
+          "reason": "\"ሰባ ሰባት\" is the ordinary Amharic for seventy-seven, the reading the meaning decision takes (Genesis 4:24); \"ሰባ ጊዜ ሰባት\" would choose the other reading.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2727,6 +2938,11 @@
           "L": "Por isso, o Reino dos céus foi comparado a um homem, um rei, que quis acertar contas com os seus escravos.",
           "B": "Por isso, o Reino dos céus é como isto: um rei resolveu que era hora de acertar as contas com os seus servos.",
           "R": "Então o Reino dos céus é assim: havia um rei que resolveu cobrar dos seus servos o que eles lhe deviam."
+        },
+        "am": {
+          "L": "ስለዚህ መንግሥተ ሰማያት ከባሪያዎቹ ጋር ሒሳብ ሊተሳሰብ የፈለገን ንጉሥ የሆነ ሰው ትመስላለች።",
+          "B": "ስለዚህ መንግሥተ ሰማያት ከባሪያዎቹ ጋር ሒሳቡን ሊያጣራ የወሰነን ንጉሥ ትመስላለች።",
+          "R": "ስለዚህ የሰማይ መንግሥት እንዲህ ናት። አንድ ንጉሥ ነበረ፤ ባሪያዎቹ ያለባቸውን ዕዳ እንዲያወራርዱ ወሰነ።"
         }
       },
       "decisions": [
@@ -3030,6 +3246,50 @@
           "reason": "As in the Korean Matthew 13:24: Literal keeps the passive \"has been compared\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "\"ባሪያ\" at every level",
+          "alternatives": [
+            "\"አገልጋይ\" (servant) at Balanced and Readable, as the English"
+          ],
+          "reason": "The Amharic style guide keeps \"ባሪያ\" for the Greek word at every level; here the point is that the king owns them, since one can be sold with his family (18:25). They are royal slaves, who could hold high office.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023005",
+            "n40018023006",
+            "n40018023007"
+          ],
+          "choice": "\"መንግሥተ ሰማያት\" (L, B); \"የሰማይ መንግሥት\" (R)",
+          "alternatives": [
+            "\"የሰማያት መንግሥት\" at Literal"
+          ],
+          "reason": "As in 16:19 and 18:1: the church name at Literal and Balanced, the plain Amharic phrase at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3092,6 +3352,11 @@
           "L": "E, quando ele começou a acertar, foi trazido a ele um que lhe devia dez mil talentos.",
           "B": "Quando ele começou, trouxeram diante dele um homem que lhe devia {{units:uma soma que nenhum trabalhador ganharia em cem mil anos|dez mil talentos}}.",
           "R": "Quando ele começou, trouxeram até ele um servo que devia a ele {{units:uma soma que nenhum trabalhador ganharia em cem mil anos|dez mil talentos}}. Ninguém conseguiria pagar tanto dinheiro."
+        },
+        "am": {
+          "L": "መተሳሰብም በጀመረ ጊዜ አሥር ሺህ መክሊት ዕዳ ያለበት አንድ ሰው ወደ እርሱ ቀረበለት።",
+          "B": "ሒሳቡን ማጣራት ሲጀምር ዕዳው {{units:አንድ ሠራተኛ በመቶ ሺህ ዓመት ሠርቶ እንኳ የማያገኘው ገንዘብ|አሥር ሺህ መክሊት}} የሆነ አንድ ሰው ወደ እርሱ ቀረበለት።",
+          "R": "ሒሳቡን ማጣራት ሲጀምር ዕዳው {{units:አንድ ሠራተኛ በመቶ ሺህ ዓመት ሠርቶ እንኳ የማያገኘው ገንዘብ|አሥር ሺህ መክሊት}} የሆነ አንድ ባሪያ ወደ እርሱ ቀረበለት። ያን ያህል ገንዘብ ማንም ሊከፍል አይችልም።"
         }
       },
       "decisions": [
@@ -3251,6 +3516,27 @@
           "reason": "Ten thousand talents is a sum beyond counting (meaning decision). As the Korean Mark does for denarii (6:37; 14:5), the default gives it in wages and the alternative keeps the original unit; Literal keeps the unit. The figure follows the meaning decisions: sixty million days' wages, at about twenty years' wages a talent (25:14-15), so two hundred thousand years, the same rate the Korean Readable gives at 25:15. \"에 이르는\" fits both forms, whatever their last letter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018024009",
+            "n40018024010"
+          ],
+          "choice": "{{units:አንድ ሠራተኛ በመቶ ሺህ ዓመት ሠርቶ እንኳ የማያገኘው ገንዘብ|አሥር ሺህ መክሊት}}",
+          "alternatives": [
+            "\"አሥር ሺህ መክሊት\" with no setting, as Literal"
+          ],
+          "reason": "Money, so there is no metric form: as in the English, the default gives the sum in a worker's earnings and the alternative keeps the Greek's \"ten thousand talents\" (\"መክሊት\", the Amharic Bible word for the talent).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3325,6 +3611,11 @@
           "L": "E, como ele não tinha [com que] pagar, o senhor ordenou que ele fosse vendido, e a mulher e os filhos e tudo quanto tinha, e que se pagasse [a dívida].",
           "B": "Como ele não tinha com que pagar, o seu senhor mandou que ele fosse vendido, junto com a mulher, os filhos e tudo o que tinha, para abater a dívida.",
           "R": "O servo não podia pagar. Então o rei mandou vendê-lo como escravo, junto com a mulher, os filhos e tudo o que ele tinha. O dinheiro serviria para pagar parte da dívida."
+        },
+        "am": {
+          "L": "የሚከፍለውም ባይኖረው ጌታው እርሱና ሚስቱ ልጆቹም ያለውም ሁሉ ተሽጠው እንዲከፈል አዘዘ።",
+          "B": "የሚከፍለው ስላልነበረው ጌታው እርሱ፣ ሚስቱ፣ ልጆቹና ያለው ሁሉ ተሽጠው ለዕዳው እንዲከፈል አዘዘ።",
+          "R": "ባሪያው መክፈል አልቻለም። ስለዚህ ንጉሡ እርሱ ከሚስቱና ከልጆቹ ጋር፣ ያለውም ሁሉ እንዲሸጥ አዘዘ። ገንዘቡም ዕዳውን ለመክፈል ይውላል።"
         }
       },
       "decisions": [
@@ -3616,6 +3907,11 @@
           "L": "Então o escravo, caindo [ao chão], se prostrava diante dele, dizendo: 'Tenha paciência comigo, e eu lhe pagarei tudo.'",
           "B": "Então o servo se jogou ao chão diante dele e suplicou: 'Dê-me um prazo, e eu lhe pagarei tudo.'",
           "R": "O servo se ajoelhou na frente do rei e implorou: 'Por favor, tenha paciência comigo. Eu vou pagar tudo ao senhor.'"
+        },
+        "am": {
+          "L": "ስለዚህ ባሪያው ወድቆ እንዲህ እያለ ይሰግድለት ነበር፦ “ታገሡኝ፤ ሁሉንም እከፍልዎታለሁ።”",
+          "B": "በዚህ ጊዜ ባሪያው በፊቱ መሬት ላይ ወድቆ እንዲህ ሲል ለመነው፦ “ጊዜ ይስጡኝ፤ ሁሉንም መልሼ እከፍልዎታለሁ።”",
+          "R": "ባሪያውም በንጉሡ ፊት ተንበርክኮ እንዲህ ብሎ ለመነው፦ “እባክዎ ይታገሡኝ። ሁሉንም እከፍልዎታለሁ።”"
         }
       },
       "decisions": [
@@ -3825,6 +4121,28 @@
           "reason": "A servant speaks up to his king, so he uses the forms that go with \"o senhor\" (docs/portuguese-style.md, section 4); \"você\" would sound rude. In 18:29 one servant pleads with another, an equal, so the same words there go with \"você\" and Readable says \"a você\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018026008",
+            "n40018026014"
+          ],
+          "choice": "\"እርስዎ\" (respectful you) from the slave to the king",
+          "alternatives": [
+            "\"አንተ\" (familiar you), as in 18:29"
+          ],
+          "reason": "As the Amharic style guide sets, a subordinate speaks to a ruler with the respectful form; so this plea differs from the fellow slave's in 18:29 in the pronoun only, which is Amharic courtesy, not a change in what is said. The king answers with \"አንተ\" (18:32).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3891,6 +4209,11 @@
           "L": "E o senhor daquele escravo, movido de compaixão, o soltou e lhe perdoou o empréstimo.",
           "B": "O senhor teve compaixão daquele servo. Ele o deixou ir livre e lhe perdoou a dívida.",
           "R": "O rei teve pena do servo. Por isso, deixou que ele fosse embora livre e perdoou toda a dívida dele."
+        },
+        "am": {
+          "L": "የዚያም ባሪያ ጌታ ራራለትና ፈታው፤ ብድሩንም ይቅር አለው።",
+          "B": "ጌታው ለዚያ ባሪያ አዘነለት። ፈታውም፤ ዕዳውንም ይቅር አለው።",
+          "R": "ንጉሡ ለባሪያው አዘነለት። ስለዚህ ነፃ አድርጎ ለቀቀው፤ ዕዳውንም በሙሉ ይቅር አለው።"
         }
       },
       "decisions": [
@@ -4086,6 +4409,28 @@
           "reason": "Moved with compassion, deeply moved (meaning decision); the words of the Korean Matthew 15:32.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018027013"
+          ],
+          "choice": "\"ይቅር አለው\" (forgave him)",
+          "alternatives": [
+            "\"ተወለት\" (let him off)",
+            "\"ሰረዘለት\" (cancelled)"
+          ],
+          "reason": "\"ይቅር ማለት\" is the verb of Peter's question (18:21) and of 18:35, so the debt and the sins are forgiven with one word, as in the Greek; it is also good Amharic of a debt.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4162,6 +4507,11 @@
           "L": "Mas aquele escravo saiu e encontrou um dos seus companheiros de escravidão, que lhe devia cem denários, e, agarrando-o, começou a sufocá-lo, dizendo: 'Pague o que você deve.'",
           "B": "Mas, assim que aquele servo saiu, deu com um dos seus companheiros de serviço, que lhe devia {{units:cerca de cem dias de salário|cem denários}}. Agarrou-o pelo pescoço. 'Pague o que você me deve!', disse.",
           "R": "Depois, aquele servo saiu e encontrou outro servo que devia a ele {{units:cerca de cem dias de pagamento|cem denários}}. Ele agarrou o homem e começou a sufocá-lo. Ele disse: 'Pague o dinheiro que você me deve!'"
+        },
+        "am": {
+          "L": "ያ ባሪያ ግን ወጥቶ መቶ ዲናር ዕዳ ያለበትን ከባልንጀሮቹ ባሪያዎች አንዱን አገኘ፤ ይዞም እንዲህ እያለ ያንቀው ጀመር፦ “ያለብህ ቢኖር ክፈል።”",
+          "B": "ያ ባሪያ ግን ገና እንደ ወጣ {{units:የመቶ ቀን ደመወዝ ያህል|መቶ ዲናር}} ዕዳ ያለበትን ከባልንጀሮቹ ባሪያዎች አንዱን አገኘ። አንገቱን አንቆ ያዘው። “ያለብህን ክፈለኝ!” አለው።",
+          "R": "ከዚያም ያ ባሪያ ወጥቶ {{units:የመቶ ቀን ደመወዝ ያህል|መቶ ዲናር}} ዕዳ ያለበትን ሌላ ባሪያ አገኘ። ሰውየውን ይዞ ያንቀው ጀመር። እንዲህም አለው፦ “ያለብህን ገንዘብ መልስልኝ!”"
         }
       },
       "decisions": [
@@ -4404,6 +4754,27 @@
           "reason": "\"Conservo\" is the old church word and is no longer understood; Portuguese says \"companheiro\" with the word that matches \"escravo\" (L) or \"servo\" (B).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018028014",
+            "n40018028015"
+          ],
+          "choice": "{{units:የመቶ ቀን ደመወዝ ያህል|መቶ ዲናር}} (about a hundred days' wages; a hundred denarii)",
+          "alternatives": [
+            "\"መቶ ዲናር\" with no setting, as Literal"
+          ],
+          "reason": "Money, so there is no metric form: as in the English, the default gives the sum in days' wages and the alternative keeps the coin.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4470,6 +4841,11 @@
           "L": "Então o seu companheiro de escravidão, caindo [ao chão], lhe suplicava, dizendo: 'Tenha paciência comigo, e eu lhe pagarei.'",
           "B": "O seu companheiro de serviço se jogou ao chão e suplicou: 'Dê-me um prazo, e eu lhe pagarei.'",
           "R": "O outro servo se ajoelhou e implorou: 'Por favor, tenha paciência comigo. Eu vou pagar a você.'"
+        },
+        "am": {
+          "L": "ስለዚህ ባልንጀራው ባሪያ ወድቆ እንዲህ እያለ ይለምነው ነበር፦ “ታገሠኝ፤ እከፍልሃለሁ።”",
+          "B": "ባልንጀራው ባሪያ መሬት ላይ ወድቆ እንዲህ ሲል ለመነው፦ “ጊዜ ስጠኝ፤ መልሼ እከፍልሃለሁ።”",
+          "R": "ሌላው ባሪያም ተንበርክኮ እንዲህ ብሎ ለመነው፦ “እባክህ ታገሠኝ። መልሼ እከፍልሃለሁ።”"
         }
       },
       "decisions": [
@@ -4681,6 +5057,11 @@
           "L": "Mas ele não quis; ao contrário, foi e o lançou na prisão até que pagasse o que devia.",
           "B": "Mas ele não quis saber. Foi embora e mandou pôr o homem na prisão até que a dívida fosse paga.",
           "R": "Mas o primeiro servo não quis esperar. Ele mandou jogar o outro homem na prisão. Ele ficaria lá até pagar o que devia."
+        },
+        "am": {
+          "L": "እርሱ ግን አልፈቀደም፤ ይልቁንም ሄዶ ያለበትን እስኪከፍል ድረስ እስር ቤት ጣለው።",
+          "B": "እርሱ ግን አልተቀበለውም። ሄዶም ዕዳውን እስኪከፍል ድረስ ሰውየውን እስር ቤት አስገባው።",
+          "R": "የመጀመሪያው ባሪያ ግን ሊጠብቀው አልፈለገም። ሌላውን ሰው እስር ቤት አስጣለው። ያለበትን እስኪከፍል ድረስ እዚያ ይቆያል።"
         }
       },
       "decisions": [
@@ -4831,6 +5212,11 @@
           "L": "Então os companheiros de escravidão dele, vendo o que tinha acontecido, ficaram muito tristes, e foram e relataram ao senhor deles tudo o que tinha acontecido.",
           "B": "Quando os outros servos viram o que tinha acontecido, ficaram muito aborrecidos. Foram até o senhor deles e lhe contaram tudo.",
           "R": "Os outros servos viram o que aconteceu e ficaram muito aborrecidos. Então foram e contaram tudo ao rei."
+        },
+        "am": {
+          "L": "ስለዚህ ባልንጀሮቹ ባሪያዎች የሆነውን ባዩ ጊዜ እጅግ አዘኑ፤ መጥተውም የሆነውን ሁሉ ለጌታቸው ገለጡለት።",
+          "B": "ሌሎቹ ባሪያዎች የሆነውን ባዩ ጊዜ እጅግ ተበሳጩ። ወደ ጌታቸውም ሄደው ነገሩን ሁሉ ነገሩት።",
+          "R": "ሌሎቹ ባሪያዎች የሆነውን አዩ፤ በጣም ተበሳጩም። ስለዚህ ሄደው ለንጉሡ ሁሉንም ነገሩት።"
         }
       },
       "decisions": [
@@ -4976,6 +5362,11 @@
           "L": "Então o senhor dele, tendo-o chamado, lhe diz: 'Escravo mau! Eu lhe perdoei toda aquela dívida, porque você me suplicou.",
           "B": "Então o senhor mandou chamá-lo e lhe disse: 'Servo mau! Você me suplicou, e eu lhe perdoei aquela dívida inteira.",
           "R": "Então o rei chamou o servo. Ele disse ao servo: 'Servo malvado! Você me implorou ajuda, e por isso eu perdoei tudo o que você me devia."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ጌታው ጠርቶት እንዲህ ይለዋል፦ “አንተ ክፉ ባሪያ፣ ስለ ለመንኸኝ ያን ዕዳ ሁሉ ይቅር አልኩህ፤",
+          "B": "ስለዚህ ጌታው አስጠርቶት እንዲህ አለው፦ “አንተ ክፉ ባሪያ! ለመንኸኝ፤ እኔም ያን ዕዳ ሁሉ ይቅር አልኩህ።",
+          "R": "ከዚያም ንጉሡ ባሪያውን ጠራው። እንዲህም አለው፦ “አንተ ክፉ ባሪያ! እንድረዳህ ለመንኸኝ፤ ስለዚህ ያለብህን ሁሉ ይቅር አልኩህ።"
         }
       },
       "decisions": [
@@ -5200,6 +5591,11 @@
           "L": "Não devia você também ter tido misericórdia do seu companheiro de escravidão, assim como eu tive misericórdia de você?'",
           "B": "Você não devia ter mostrado ao seu companheiro de serviço a mesma misericórdia que eu mostrei a você?'",
           "R": "Você devia ter tido misericórdia do outro servo, assim como eu tive misericórdia de você.'"
+        },
+        "am": {
+          "L": "እኔ አንተን እንደ ማርኩህ አንተስ ደግሞ ባልንጀራህን ባሪያ ልትምረው አይገባህም ነበር?”",
+          "B": "እኔ ለአንተ ያሳየሁህን ምሕረት አንተም ለባልንጀራህ ባሪያ ልታሳይ አይገባህም ነበር?”",
+          "R": "እኔ ለአንተ ምሕረት እንዳሳየሁህ አንተም ለሌላው ባሪያ ምሕረት ማሳየት ነበረብህ።”"
         }
       },
       "decisions": [
@@ -5377,6 +5773,11 @@
           "L": "E, irado, o senhor dele o entregou aos torturadores até que pagasse tudo o que devia.",
           "B": "Então o senhor, agora irado, o entregou aos torturadores, para ficar com eles até pagar a dívida inteira.",
           "R": "O rei ficou com muita raiva. Ele entregou o servo a homens que iriam torturá-lo na prisão. Ele ficaria lá até pagar tudo o que devia."
+        },
+        "am": {
+          "L": "ጌታውም ተቆጥቶ ያለበትን ሁሉ እስኪከፍል ድረስ ለአሠቃዮች አሳልፎ ሰጠው።",
+          "B": "ጌታውም ተቆጥቶ ዕዳውን ሁሉ እስኪከፍል ድረስ እንዲቆይ ለአሠቃዮች አሳልፎ ሰጠው።",
+          "R": "ንጉሡ በጣም ተቆጣ። ባሪያውን በእስር ቤት ለሚያሠቃዩት ሰዎች አሳልፎ ሰጠው። ያለበትን ሁሉ እስኪከፍል ድረስ እዚያ ይቆያል።"
         }
       },
       "decisions": [
@@ -5565,6 +5966,11 @@
           "L": "Assim também o {{deity_pronoun:meu|Meu}} Pai celestial fará a vocês, se cada um de vocês não perdoar de coração ao seu {{gender:irmão ou irmã|irmão}}.\"",
           "B": "O {{deity_pronoun:meu|Meu}} Pai, que está no céu, vai tratar vocês da mesma forma, se cada um de vocês não perdoar de coração ao seu {{gender:irmão ou irmã|irmão}}.\"",
           "R": "E o {{deity_pronoun:meu|Meu}} Pai, que está no céu, vai fazer o mesmo com vocês se cada um de vocês não perdoar de verdade, de todo o coração, o seu {{gender:irmão ou irmã|irmão}}.\""
+        },
+        "am": {
+          "L": "ከእናንተ እያንዳንዱ {{gender:ወንድሙን ወይም እኅቱን|ወንድሙን}} ከልባችሁ ይቅር ባትሉ የሰማዩ አባቴም እንዲሁ ያደርግባችኋል።»",
+          "B": "እያንዳንዳችሁ {{gender:ወንድማችሁን ወይም እኅታችሁን|ወንድማችሁን}} ከልብ ይቅር ባትሉ በሰማይ ያለው አባቴም እንዲሁ ያደርግባችኋል።»",
+          "R": "እናንተም {{gender:ወንድማችሁን ወይም እኅታችሁን|ወንድማችሁን}} በእውነት ከልባችሁ ይቅር ባትሉ በሰማይ ያለው አባቴ እንዲሁ ያደርግባችኋል።»"
         }
       },
       "decisions": [

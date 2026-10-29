@@ -53,6 +53,11 @@
           "L": "그리고 {{divine_name:주|야훼}}께서 모세와 아론에게 말씀하여 이르셨다.",
           "B": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다. 그분께서 이르셨다.",
           "R": "{{divine_name:주|야훼}}께서 모세와 아론에게 말씀하셨다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés e a Arão, dizendo:",
+          "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés e a Arão. Ele disse:",
+          "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés e a Arão:"
         }
       },
       "decisions": [
@@ -173,6 +178,11 @@
           "L": "\"어떤 사람의 살갗에 부어오른 곳이나 딱지나 밝은 반점이 생겨서, 그것이 그의 살갗에 악성 피부병의 환부가 되면, 그를 아론 제사장에게나 제사장인 그의 아들들 가운데 하나에게 데려가야 한다.",
           "B": "\"어떤 사람의 살갗에 부어오른 곳이나 딱지나 밝은 반점이 생겨서 악성 피부병의 환부처럼 되면, 그 사람을 아론 제사장에게나 제사장인 그의 아들들 가운데 한 사람에게 데려가야 한다.",
           "R": "\"어떤 사람의 살갗에 부어오른 곳이나 딱지나 번들거리는 점이 생길 수 있다. 그것이 악성 피부병으로 생긴 병든 자리처럼 보이기 시작하면, 그 사람을 아론 제사장에게나 제사장으로 일하는 그의 아들들 가운데 한 사람에게 데려가야 한다."
+        },
+        "pt": {
+          "L": "\"Uma pessoa, quando houver na pele da sua carne um inchaço, ou uma crosta, ou uma mancha brilhante, e se tornar na pele da sua carne uma marca de doença escamosa, então ele será levado a Arão, o sacerdote, ou a um dos seus filhos, os sacerdotes.",
+          "B": "\"Se aparecer na pele de alguém um inchaço, uma crosta ou uma mancha brilhante, e isso se transformar no que pode ser uma lesão de doença de pele grave, a pessoa será levada a Arão, o sacerdote, ou a um dos seus filhos, os sacerdotes.",
+          "R": "\"Pode ser que alguém tenha na pele um inchaço, uma crosta ou uma mancha brilhante. Se isso começar a parecer uma ferida de uma doença de pele grave, a pessoa deve ser levada a Arão, o sacerdote, ou a um dos filhos dele que servem como sacerdotes."
         }
       },
       "decisions": [
@@ -488,6 +498,77 @@
           "reason": "The Hebrew word, literally a touch or stroke, names a visible patch of disease; \"환부\" is the ordinary Korean word for the affected place, and Readable says it in native words. Recorded once for Leviticus 10-15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130020151",
+            "o030130020142"
+          ],
+          "choice": "uma doença de pele grave (B, R); doença escamosa (L); uma lesão (B), uma ferida (R), uma marca (L)",
+          "alternatives": [
+            "lepra",
+            "a doença de pele (L)",
+            "uma chaga"
+          ],
+          "reason": "For chapters 13 and 14, as docs/pentateuch-portuguese-terms.md sets it and Exodus 4:6 has it: Balanced and Readable call the disease \"uma doença de pele grave\". The traditional Portuguese name is \"lepra\" (Almeida and the Latin tradition), but today \"lepra\" means Hansen's disease (hanseníase), which does not fit the signs of this chapter, and the same word is used of growths in cloth and houses (m1); the meaning note keeps the old name in view. Literal follows the English Literal's \"scale disease\" with \"doença escamosa\", one term for the one Hebrew word through both chapters, so a reader can see that it is the same word for skin, cloth and house. The patch the disease makes (m2) is \"marca\" at Literal, as the English \"mark\", \"lesão\" at Balanced and \"ferida\" at Readable, the plain word for a sore.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130020061",
+            "o030130020081",
+            "o030130020101"
+          ],
+          "choice": "um inchaço, uma crosta, uma mancha brilhante",
+          "alternatives": [
+            "um tumor",
+            "uma erupção",
+            "uma pústula",
+            "uma mancha lustrosa (R)"
+          ],
+          "reason": "For chapters 13 and 14 (and 14:56): the three first signs (m3) keep the same plain words at every level. \"Inchaço\" is a raised place on the skin, without the medical suggestion of \"tumor\"; \"crosta\" is the crusting or flaking patch, and the same word names the harmless crust of verses 6-8; \"mancha brilhante\" is already plain, so Readable keeps it where the English Readable says \"shiny spot\". \"Erupção\" is kept for the harmless rash of verse 39.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-3",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130020011"
+          ],
+          "choice": "alguém / a pessoa (B, R); ele, o (L)",
+          "alternatives": [
+            "ele (B, R)",
+            "o homem"
+          ],
+          "reason": "The Hebrew is the general word for a human being, so the law is for men and women alike. Balanced and Readable say \"a pessoa\" through the chapter where the Hebrew says \"he\", with adjectives agreeing with it (\"declarar a pessoa impura\"); Literal keeps \"ele\" and \"o\", as the Hebrew and the English Literal do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -573,6 +654,11 @@
           "L": "그러면 제사장은 그 살갗에 있는 환부를 살펴보아야 한다. 환부에 난 털이 희어졌고 환부가 그의 살갗보다 깊어 보이면, 그것은 악성 피부병의 환부이다. 제사장은 그를 살펴보고 그를 부정하다고 선언해야 한다.",
           "B": "제사장은 그 환부를 자세히 살펴보아야 한다. 환부에 난 털이 희어졌고 환부가 살갗보다 깊이 들어가 보이면, 그것은 악성 피부병의 환부이다. 제사장은 그것을 살펴본 다음 그 사람을 부정하다고 선언해야 한다.",
           "R": "제사장은 그 병든 자리를 살펴보아야 한다. 거기에 난 털이 하얗게 변했을 수 있다. 그리고 그 자리가 살갗보다 깊이 들어가 보일 수 있다. 그러면 그것은 악성 피부병이다. 제사장은 그 사람을 살펴본 뒤에 그 사람이 부정하다고 말해야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará a marca na pele da carne, e [se] o pelo na marca tiver se tornado branco e a aparência da marca [for] mais funda que a pele da sua carne, [é] uma marca de doença escamosa; e o sacerdote o examinará e o declarará impuro.",
+          "B": "O sacerdote examinará com atenção a lesão. Se os pelos nela tiverem ficado brancos e ela parecer mais funda que a superfície da pele, é uma lesão de doença de pele grave. Depois de examiná-la, o sacerdote declarará a pessoa impura.",
+          "R": "O sacerdote deve olhar a ferida. Pode ser que os pelos dela tenham ficado brancos e que a ferida pareça mais funda que a pele. Então é uma doença de pele grave. Depois de olhar a pessoa, o sacerdote deve dizer que ela está impura."
         }
       },
       "decisions": [
@@ -745,6 +831,32 @@
           "reason": "The verb is the priest's ruling, as the meaning decision says; Korean makes the declaration explicit so that it is not read as the priest making the person unclean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130030212",
+            "o030130030072",
+            "o030130030091",
+            "o030130030101"
+          ],
+          "choice": "o declarará impuro (L), declarará a pessoa impura (B), dizer que ela está impura (R); pelo branco",
+          "alternatives": [
+            "o pronunciará impuro",
+            "o tornará impuro",
+            "cabelo branco"
+          ],
+          "reason": "For chapters 13 and 14: the priest's ruling (m1) is \"declarar puro\" and \"declarar impuro\" at Literal and Balanced, and \"dizer que a pessoa está pura / impura\" at Readable, as the English has \"pronounce\", \"declare\" and \"say\". Portuguese \"pronunciar\" does not mean to give a verdict, and \"tornar impuro\" would make the priest the cause. The hair that grows in the mark (m2) is \"pelo\", the word for body hair, at every level; \"cabelo\" is the hair of the head.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -824,6 +936,11 @@
           "L": "그러나 그의 살갗에 있는 것이 흰 반점이고 살갗보다 깊어 보이지 않으며 그 털이 희어지지 않았으면, 제사장은 환부가 있는 사람을 칠 일 동안 가두어 두어야 한다.",
           "B": "그러나 살갗에 흰 반점이 있어도 살갗보다 깊어 보이지 않고 그 털도 희어지지 않았으면, 제사장은 그 사람을 칠 일 동안 격리해야 한다.",
           "R": "그러나 번들거리는 점이 희기는 하지만 살갗보다 깊어 보이지 않을 수 있다. 그리고 거기에 난 털도 하얗게 변하지 않았을 수 있다. 그러면 제사장은 그 사람을 칠 일 동안 다른 사람들과 떨어져 지내게 해야 한다."
+        },
+        "pt": {
+          "L": "E se [for] uma mancha brilhante branca na pele da sua carne, e a sua aparência não [for] mais funda que a pele, e o seu pelo não tiver se tornado branco, então o sacerdote encerrará o [que tem a] marca sete dias.",
+          "B": "Se, porém, houver na pele uma mancha brilhante branca que não pareça ir abaixo da superfície, e os seus pelos não tiverem ficado brancos, o sacerdote isolará a pessoa por sete dias.",
+          "R": "Mas a mancha brilhante pode ser branca sem parecer mais funda que a pele, e os pelos dela podem não ter ficado brancos. Então o sacerdote deve isolar a pessoa dos outros por sete dias."
         }
       },
       "decisions": [
@@ -983,6 +1100,30 @@
           "reason": "The meaning decision explains that the person is kept apart for a week while the priest waits; \"가두다\" alone sounds like imprisonment, so Balanced and Readable say what is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130040162",
+            "o030130040191",
+            "o030130040192"
+          ],
+          "choice": "encerrará (L); isolará (B); deve isolar a pessoa dos outros (R)",
+          "alternatives": [
+            "porá em quarentena",
+            "fechará (L)"
+          ],
+          "reason": "For chapters 13 and 14: Literal keeps the verb's sense of shutting in with \"encerrar\", as the English Literal \"shut up\"; Balanced says \"isolar por sete dias\", and Readable adds \"dos outros\" as the English Readable does. \"Quarentena\" is avoided, as the English avoids \"quarantine\", since the law does not give health as its reason (m1). For a thing (verse 50) and a house (14:38) the verb is \"fechar\" or \"guardar à parte\". Literal brackets \"[que tem a]\", as the English \"[one with the]\" (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1061,6 +1202,11 @@
           "L": "그리고 제사장은 칠 일째 되는 날에 그를 살펴보아야 한다. 보라, 그의 눈에 환부가 그대로 있고 환부가 살갗에 퍼지지 않았으면, 제사장은 그를 두 번째로 칠 일 동안 가두어 두어야 한다.",
           "B": "칠 일째 되는 날에 제사장은 그 사람을 다시 살펴보아야 한다. 제사장이 보기에 환부가 그대로이고 살갗에 퍼지지 않았으면, 그는 그 사람을 다시 칠 일 동안 격리해야 한다.",
           "R": "칠 일째 되는 날에 제사장은 다시 살펴보아야 한다. 병든 자리가 변하지도 않고 퍼지지도 않았으면, 그 사람을 칠 일 동안 더 다른 사람들과 떨어져 지내게 해야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote o examinará no sétimo dia, e eis que a marca parou aos seus olhos; a marca não se espalhou na pele; então o sacerdote o encerrará sete dias pela segunda [vez].",
+          "B": "No sétimo dia o sacerdote examinará a pessoa de novo. Se, a seu ver, a lesão não tiver mudado nem se espalhado na pele, ele a isolará por mais sete dias.",
+          "R": "No sétimo dia o sacerdote deve olhar de novo. Se ele vir que a ferida não mudou nem se espalhou, deve isolar a pessoa dos outros por mais sete dias."
         }
       },
       "decisions": [
@@ -1110,6 +1256,31 @@
             "leaving it untranslated"
           ],
           "reason": "Literal keeps the Hebrew's pointer to what the priest sees; Balanced and Readable fold it into \"if\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130050071",
+            "o030130050081",
+            "o030130050082",
+            "o030130050101"
+          ],
+          "choice": "parou aos seus olhos (L), a seu ver (B); se espalhou",
+          "alternatives": [
+            "ficou parada diante dos seus olhos",
+            "se alastrou"
+          ],
+          "reason": "Literal keeps the idiom \"aos seus olhos\" (m1), which Portuguese also uses for someone's judgment, with \"parar\" for the mark that has \"stood\". Balanced says \"a seu ver\". The sign of active disease (m2) is \"espalhar-se\" at every level through both chapters.",
           "uncertain": false,
           "footnote": false
         }
@@ -1195,6 +1366,11 @@
           "L": "그리고 제사장은 두 번째 칠 일째 되는 날에 그를 살펴보아야 한다. 보라, 환부가 희미해졌고 환부가 살갗에 퍼지지 않았으면, 제사장은 그를 정결하다고 선언해야 한다. 그것은 딱지이다. 그는 자기 옷을 빨아야 하고, 그러면 정결해질 것이다.",
           "B": "두 번째 칠 일이 지나면 제사장은 다시 살펴보아야 한다. 환부가 희미해졌고 살갗에 퍼지지 않았으면 그것은 딱지일 뿐이니, 제사장은 그 사람을 정결하다고 선언해야 한다. 그 사람은 옷을 빨아야 하며, 그러면 정결해진다.",
           "R": "두 번째 칠 일이 끝나면 제사장은 그것을 다시 살펴보아야 한다. 병든 자리가 퍼지지 않고 흐려졌을 수 있다. 그러면 제사장은 그 사람이 정결하다고 말해야 한다. 그것은 딱지일 뿐이다. 그 사람은 옷을 빨아야 한다. 그러면 정결해진다."
+        },
+        "pt": {
+          "L": "E o sacerdote o examinará no sétimo dia pela segunda [vez], e eis que a marca esmaeceu, e a marca não se espalhou na pele; então o sacerdote o declarará puro; [é] uma crosta; e ele lavará as suas roupas e será puro.",
+          "B": "Ao fim dos outros sete dias, o sacerdote examinará a pessoa mais uma vez. Se a lesão tiver esmaecido e não se espalhado pela pele, é apenas uma crosta, e o sacerdote declarará a pessoa pura. Depois de lavar as roupas, ela estará pura.",
+          "R": "No fim dos outros sete dias, o sacerdote deve olhar a ferida de novo. Pode ser que ela tenha ficado mais clara sem se espalhar. Então o sacerdote deve dizer que a pessoa está pura. É só uma crosta. A pessoa deve lavar as suas roupas. Então ela estará pura."
         }
       },
       "decisions": [
@@ -1260,6 +1436,29 @@
           "choice": "the second seven days",
           "alternatives": [],
           "reason": "'On the seventh day a second time' means at the end of the second week (verse 5). Balanced and Readable say so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130060081"
+          ],
+          "choice": "esmaeceu (L, B); ficou mais clara (R)",
+          "alternatives": [
+            "enfraqueceu",
+            "desbotou",
+            "ficou pálida"
+          ],
+          "reason": "For chapters 13 and 14: the mark that grows dim (m1) \"esmaece\" at Literal and Balanced, the Portuguese verb for a color or light growing faint; \"desbotar\" is said of cloth. Readable says \"ficar mais clara\", the plain way of saying that a mark on the skin fades.",
           "uncertain": false,
           "footnote": false
         }
@@ -1332,6 +1531,11 @@
           "L": "그러나 그가 정결하게 되려고 제사장에게 자기를 보인 뒤에 딱지가 살갗에 정말로 퍼지면, 그는 제사장에게 두 번째로 자기를 보여야 한다.",
           "B": "그러나 제사장에게 보이고 정결하다는 선언을 받은 뒤에 그 딱지가 살갗에 퍼지면, 그 사람은 다시 제사장 앞에 가야 한다.",
           "R": "그러나 제사장이 그 사람이 정결하다고 말한 뒤에 딱지가 살갗에 퍼질 수도 있다. 그러면 그 사람은 다시 제사장에게 가야 한다."
+        },
+        "pt": {
+          "L": "Mas se a crosta de fato se espalhar na pele depois que ele se mostrou ao sacerdote para a sua purificação, então se mostrará ao sacerdote pela segunda [vez].",
+          "B": "Mas, se a crosta se espalhar na pele depois que a pessoa se apresentou ao sacerdote e foi declarada pura, ela deve se apresentar outra vez ao sacerdote.",
+          "R": "Mas a crosta pode se espalhar na pele depois que o sacerdote disse que a pessoa estava pura. Então a pessoa deve voltar ao sacerdote."
         }
       },
       "decisions": [
@@ -1451,6 +1655,11 @@
           "L": "그리고 제사장이 살펴보아야 한다. 보라, 딱지가 살갗에 퍼졌으면, 제사장은 그를 부정하다고 선언해야 한다. 그것은 악성 피부병이다.",
           "B": "제사장이 보아서 딱지가 살갗에 퍼졌으면, 그 사람을 부정하다고 선언해야 한다. 그것은 악성 피부병이다.",
           "R": "제사장은 다시 살펴보아야 한다. 딱지가 퍼졌으면 제사장은 그 사람이 부정하다고 말해야 한다. 그것은 악성 피부병이다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará, e eis que a crosta se espalhou na pele; então o sacerdote o declarará impuro; [é] doença escamosa.",
+          "B": "Se o sacerdote vir que a crosta se espalhou na pele, declarará a pessoa impura: é uma doença de pele grave.",
+          "R": "O sacerdote deve olhar de novo. Se a crosta tiver se espalhado, ele deve dizer que a pessoa está impura. É uma doença de pele grave."
         }
       },
       "decisions": [
@@ -1526,6 +1735,11 @@
           "L": "어떤 사람에게 악성 피부병의 환부가 있으면, 그를 제사장에게 데려가야 한다.",
           "B": "악성 피부병의 환부가 있는 사람은 누구든지 제사장에게 데려가야 한다.",
           "R": "어떤 사람에게 악성 피부병으로 생긴 병든 자리가 있으면, 그 사람을 제사장에게 데려가야 한다."
+        },
+        "pt": {
+          "L": "Quando uma marca de doença escamosa estiver numa pessoa, então ele será levado ao sacerdote.",
+          "B": "Quem tiver uma lesão de doença de pele grave será levado ao sacerdote.",
+          "R": "Quando alguém tiver uma ferida de uma doença de pele grave, deve ser levado ao sacerdote."
         }
       },
       "decisions": [
@@ -1611,6 +1825,11 @@
           "L": "그리고 제사장이 살펴보아야 한다. 보라, 살갗에 흰 부스럼이 있고, 그것이 털을 희게 하였고, 부스럼 속에 산 살의 생살이 드러나 있으면,",
           "B": "제사장은 살펴보아야 한다. 살갗에 흰 부스럼이 있는데 그것 때문에 털이 희어졌고, 그 부스럼 속에 생살이 드러나 있으면,",
           "R": "제사장은 그 살갗을 살펴보아야 한다. 하얗게 부어오른 곳이 있는데, 그 때문에 털이 하얗게 변했고, 그 속에 생살이 드러나 있을 수 있다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará, e eis que [há] um inchaço branco na pele, e ele tornou branco o pelo, e [há] um ponto de carne viva no inchaço,",
+          "B": "O sacerdote examinará a pessoa. Se houver na pele um inchaço branco que tornou brancos os pelos, e houver carne viva no inchaço,",
+          "R": "O sacerdote deve examinar a pele. Ele pode ver um inchaço branco que fez os pelos ficarem brancos, com carne viva no meio."
         }
       },
       "decisions": [
@@ -1772,6 +1991,30 @@
           "reason": "The meaning decision says this is raw, open flesh; \"생살\" is the Korean word for it, and Literal keeps \"living\" as well.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130100112",
+            "o030130100121",
+            "o030130100131"
+          ],
+          "choice": "um ponto de carne viva (L); carne viva (B, R)",
+          "alternatives": [
+            "carne crua",
+            "uma ferida aberta"
+          ],
+          "reason": "For chapters 13 and 14: Portuguese \"carne viva\" says word for word what the Hebrew says, \"living flesh\", and is also the everyday phrase for raw, open flesh (m1), so every level keeps it where the English Balanced and Readable change to \"raw flesh\". Literal adds \"um ponto de\" for the first noun, as the English \"a raw spot of\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1837,6 +2080,11 @@
           "L": "그것은 그의 살갗에 있는 오래된 악성 피부병이다. 제사장은 그를 부정하다고 선언해야 한다. 그는 그를 가두어 두지 않아야 한다. 그가 부정하기 때문이다.",
           "B": "그것은 살갗에 오래 묵은 악성 피부병이다. 제사장은 그 사람을 격리해 둘 것도 없이 부정하다고 선언해야 한다. 그 사람이 부정하다는 것이 분명하기 때문이다.",
           "R": "그러면 그 사람은 오래전부터 악성 피부병을 앓고 있는 것이다. 제사장은 그 사람이 부정하다고 말해야 한다. 알아보려고 칠 일 동안 떨어져 지내게 할 필요가 없다. 그 사람이 부정하다는 것이 분명하기 때문이다."
+        },
+        "pt": {
+          "L": "[é] uma doença escamosa antiga na pele da sua carne, e o sacerdote o declarará impuro; não o encerrará, porque ele [é] impuro.",
+          "B": "é uma doença de pele grave de longa data. O sacerdote declarará a pessoa impura sem a isolar, porque não há dúvida de que ela está impura.",
+          "R": "Então a pessoa tem uma doença de pele grave há muito tempo. O sacerdote deve dizer que ela está impura. Ele não precisa isolar a pessoa por sete dias para ter certeza, porque está claro que ela está impura."
         }
       },
       "decisions": [
@@ -1966,6 +2214,11 @@
           "L": "그리고 악성 피부병이 살갗에 정말로 퍼져 나서, 악성 피부병이 환부가 있는 사람의 온 살갗을 머리에서 발까지, 제사장의 눈에 보이는 데까지 모두 덮으면,",
           "B": "그 병이 살갗 전체에 퍼져서 환부가 있는 사람의 온 살갗을 머리에서 발끝까지 덮어, 제사장이 보는 곳마다 다 그러하면,",
           "R": "어떤 때에는 피부병이 퍼져서 그 사람의 온몸을 머리에서 발끝까지 덮기도 한다. 제사장이 어디를 보아도 그 병이 보인다."
+        },
+        "pt": {
+          "L": "E se a doença escamosa de fato brotar na pele, e a doença escamosa cobrir toda a pele do [que tem a] marca, da sua cabeça até os seus pés, a toda a vista dos olhos do sacerdote,",
+          "B": "Se a doença brotar por toda a pele e cobrir a pele inteira da pessoa com a lesão, da cabeça aos pés, por onde quer que o sacerdote olhe,",
+          "R": "Às vezes a doença de pele se espalha até cobrir o corpo inteiro da pessoa, da cabeça aos pés. O sacerdote a vê por toda parte para onde olha."
         }
       },
       "decisions": [
@@ -1999,6 +2252,28 @@
           "choice": "to all the sight of the priest's eyes: everywhere the priest looks",
           "alternatives": [],
           "reason": "The phrase means that the priest can find no part of the skin it has not reached.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130120021",
+            "o030130120031"
+          ],
+          "choice": "brotar (L, B)",
+          "alternatives": [
+            "irromper",
+            "aparecer"
+          ],
+          "reason": "The verb is used of a plant budding (m1). \"Brotar\" keeps that picture and is also said in Portuguese of what springs up on the skin, so Literal and Balanced use it here, where the disease covers the whole body; where a mark breaks out in one place (verses 20, 25, 39, 42), Portuguese says \"irromper\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2072,6 +2347,11 @@
           "L": "제사장이 살펴보아야 한다. 보라, 악성 피부병이 그의 온몸을 덮었으면, 그는 환부가 있는 사람을 정결하다고 선언해야 한다. 그것이 모두 희어졌으니, 그는 정결하다.",
           "B": "제사장은 살펴보아서 그 병이 온몸을 덮었으면 그 사람을 정결하다고 선언해야 한다. 온몸이 다 희어졌으니 그 사람은 정결하다.",
           "R": "제사장이 보아서 그 병이 온몸을 덮고 모두 하얗게 변했으면, 그 사람이 정결하다고 말해야 한다. 그 사람은 정결하다."
+        },
+        "pt": {
+          "L": "e o sacerdote examinará, e eis que a doença escamosa cobriu toda a sua carne; então ele declarará puro o [que tem a] marca; tudo se tornou branco; ele [é] puro.",
+          "B": "o sacerdote examinará a pessoa, e, se a doença tiver coberto o corpo inteiro, ele a declarará pura. Tudo ficou branco; ela está pura.",
+          "R": "Se o sacerdote vir que a doença cobre o corpo inteiro e que tudo ficou branco, ele deve dizer que a pessoa está pura. Ela está pura."
         }
       },
       "decisions": [
@@ -2165,6 +2445,11 @@
           "L": "그러나 그에게 생살이 드러나는 날에는 그가 부정할 것이다.",
           "B": "그러나 언제든지 생살이 드러나면 그 사람은 부정하다.",
           "R": "그러나 언제라도 생살이 드러나면 그 사람은 부정하다."
+        },
+        "pt": {
+          "L": "Mas no dia [em que] aparecer nele carne viva, ele será impuro.",
+          "B": "Mas, sempre que aparecer carne viva na pessoa, ela estará impura.",
+          "R": "Mas, se em algum momento aparecer carne viva na pessoa, ela estará impura."
         }
       },
       "decisions": [
@@ -2250,6 +2535,11 @@
           "L": "그리고 제사장은 그 생살을 살펴보고 그를 부정하다고 선언해야 한다. 생살, 그것은 부정하다. 그것은 악성 피부병이다.",
           "B": "제사장은 그 생살을 살펴보고 그 사람을 부정하다고 선언해야 한다. 생살은 부정한 것이다. 그것은 악성 피부병이다.",
           "R": "제사장은 그 생살을 살펴보고 그 사람이 부정하다고 말해야 한다. 생살은 부정하다. 그것은 악성 피부병이 있다는 표시이다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará a carne viva e o declarará impuro; a carne viva, ela [é] impura; [é] doença escamosa.",
+          "B": "O sacerdote examinará a carne viva e declarará a pessoa impura. A carne viva é impura; é uma doença de pele grave.",
+          "R": "O sacerdote deve examinar a carne viva e dizer que a pessoa está impura. Carne viva é impura. Ela mostra uma doença de pele grave."
         }
       },
       "decisions": [
@@ -2331,6 +2621,11 @@
           "L": "또는 그 생살이 다시 변하여 희어지면, 그는 제사장에게 가야 한다.",
           "B": "그러나 생살이 다시 변하여 희어지면, 그 사람은 제사장에게 가야 한다.",
           "R": "그러나 그 생살이 변하여 하얗게 될 수도 있다. 그러면 그 사람은 제사장에게 가야 한다."
+        },
+        "pt": {
+          "L": "Ou se a carne viva voltar e se transformar em branco, então ele virá ao sacerdote.",
+          "B": "Mas, se a carne viva mudar de novo e ficar branca, a pessoa irá ao sacerdote.",
+          "R": "Mas a carne viva pode mudar e ficar branca. Então a pessoa deve ir ao sacerdote."
         }
       },
       "decisions": [
@@ -2416,6 +2711,11 @@
           "L": "그리고 제사장은 그를 살펴보아야 한다. 보라, 환부가 희게 변했으면, 제사장은 환부가 있는 사람을 정결하다고 선언해야 한다. 그는 정결하다.",
           "B": "제사장은 그 사람을 살펴보아서 환부가 희어졌으면, 그 환부가 있는 사람을 정결하다고 선언해야 한다. 그 사람은 정결하다.",
           "R": "제사장은 그 사람을 살펴보아야 한다. 병든 자리가 하얗게 변했으면, 제사장은 그 사람이 정결하다고 말해야 한다. 그 사람은 정결하다."
+        },
+        "pt": {
+          "L": "E o sacerdote o examinará, e eis que a marca se transformou em branco; então o sacerdote declarará puro o [que tem a] marca; ele [é] puro.",
+          "B": "O sacerdote examinará a pessoa e, se a lesão tiver ficado branca, declarará pura a pessoa com a lesão. Ela está pura.",
+          "R": "O sacerdote deve examinar a pessoa. Se a ferida tiver ficado branca, ele deve dizer que a pessoa está pura. Ela está pura."
         }
       },
       "decisions": [
@@ -2492,6 +2792,11 @@
           "L": "그리고 몸, 곧 그 살갗에 종기가 났다가 나았는데,",
           "B": "어떤 사람의 살갗에 종기가 났다가 나았는데,",
           "R": "어떤 사람의 살갗에 종기가 났다가 나을 수 있다."
+        },
+        "pt": {
+          "L": "E [quanto à] carne, quando houver nela, na sua pele, um furúnculo, e ele sarar,",
+          "B": "Quando alguém tiver um furúnculo na pele e ele sarar,",
+          "R": "Pode ser que alguém tenha na pele um furúnculo que sara."
         }
       },
       "decisions": [
@@ -2523,6 +2828,29 @@
           "choice": "flesh: a body, a person",
           "alternatives": [],
           "reason": "'Flesh' stands for a person's body. As in verse 2, the case is for men and women alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130180061"
+          ],
+          "choice": "um furúnculo",
+          "alternatives": [
+            "uma úlcera",
+            "um tumor",
+            "uma chaga"
+          ],
+          "reason": "The inflamed swelling or sore (m1) is \"furúnculo\", the everyday Portuguese word for a boil, at every level. \"Úlcera\" is an open wound and \"chaga\" is old-fashioned.",
           "uncertain": false,
           "footnote": false
         }
@@ -2589,6 +2917,11 @@
           "L": "종기가 났던 자리에 흰 부스럼이나 불그스름한 흰 반점이 생기면, 그는 자기를 제사장에게 보여야 한다.",
           "B": "종기가 났던 자리에 흰 부스럼이나 불그스름한 흰 반점이 생기면, 그 사람은 그것을 제사장에게 보여야 한다.",
           "R": "나중에 종기가 났던 자리에 하얗게 부어오른 곳이나 분홍빛이 도는 흰 점이 생길 수 있다. 그러면 그 사람은 그것을 제사장에게 보여야 한다."
+        },
+        "pt": {
+          "L": "e houver no lugar do furúnculo um inchaço branco ou uma mancha brilhante branco-avermelhada, então ele se mostrará ao sacerdote.",
+          "B": "e no lugar do furúnculo aparecer um inchaço branco ou uma mancha brilhante branco-avermelhada, a pessoa a mostrará ao sacerdote.",
+          "R": "Depois pode aparecer um inchaço branco ou uma mancha brilhante branco-rosada no lugar onde estava o furúnculo. Então a pessoa deve mostrá-la ao sacerdote."
         }
       },
       "decisions": [
@@ -2622,6 +2955,29 @@
           "choice": "pinkish-white",
           "alternatives": [],
           "reason": "Readable says 'pinkish-white' for white with a faint red, here and in verses 24, 42 and 43.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130190081",
+            "o030130190091"
+          ],
+          "choice": "branco-avermelhada (L, B); branco-rosada (R)",
+          "alternatives": [
+            "vermelho-esbranquiçada",
+            "rosada"
+          ],
+          "reason": "Here and in verses 24, 42 and 43: white with a faint red (m1) is \"branco-avermelhado\" at Literal and Balanced; Readable says \"branco-rosado\", as the English Readable says \"pinkish-white\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2699,6 +3055,11 @@
           "L": "그리고 제사장이 살펴보아야 한다. 보라, 그것이 살갗보다 낮아 보이고 그 털이 희어졌으면, 제사장은 그를 부정하다고 선언해야 한다. 그것은 악성 피부병의 환부이다. 그것이 종기에서 퍼져 나온 것이다.",
           "B": "제사장은 그것을 살펴보아야 한다. 그것이 주위의 살갗보다 낮아 보이고 그 털이 희어졌으면, 제사장은 그 사람을 부정하다고 선언해야 한다. 그것은 종기가 났던 자리에 생긴 악성 피부병의 환부이다.",
           "R": "제사장은 그것을 살펴보아야 한다. 그 자리가 주위의 살갗보다 낮아 보이고, 거기에 난 털이 하얗게 변했을 수 있다. 그러면 제사장은 그 사람이 부정하다고 말해야 한다. 종기가 났던 자리에 악성 피부병이 생긴 것이다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará, e eis que a sua aparência [é] mais baixa que a pele, e o seu pelo se tornou branco; então o sacerdote o declarará impuro; [é] uma marca de doença escamosa; irrompeu no furúnculo.",
+          "B": "O sacerdote a examinará. Se ela parecer mais baixa que a pele em volta e os seus pelos tiverem ficado brancos, o sacerdote declarará a pessoa impura. É uma lesão de doença de pele grave que irrompeu onde estava o furúnculo.",
+          "R": "O sacerdote deve olhar a mancha. Ela pode parecer mais baixa que a pele em volta, e os pelos nela podem ter ficado brancos. Então o sacerdote deve dizer que a pessoa está impura. Uma doença de pele grave apareceu onde estava o furúnculo."
         }
       },
       "decisions": [
@@ -2806,6 +3167,11 @@
           "L": "그러나 제사장이 그것을 살펴보았는데, 보라, 그 속에 흰 털이 없고 살갗보다 낮지 않으며 희미하면, 제사장은 그를 칠 일 동안 가두어 두어야 한다.",
           "B": "그러나 제사장이 살펴보아서 그 속에 흰 털이 없고 살갗보다 낮지 않으며 색이 희미해졌으면, 제사장은 그 사람을 칠 일 동안 격리해야 한다.",
           "R": "그러나 제사장이 보니 거기에 흰 털이 없고, 살갗보다 낮지도 않으며, 색이 흐려졌을 수 있다. 그러면 제사장은 그 사람을 칠 일 동안 다른 사람들과 떨어져 지내게 해야 한다."
+        },
+        "pt": {
+          "L": "Mas se o sacerdote a examinar, e eis que não [há] nela pelo branco, e ela não [é] mais baixa que a pele, e ela [está] esmaecida, então o sacerdote o encerrará sete dias.",
+          "B": "Mas, se o sacerdote não encontrar nela pelos brancos, e ela não for mais baixa que a pele e tiver esmaecido, ele isolará a pessoa por sete dias.",
+          "R": "Mas o sacerdote pode ver que não há pelos brancos nela, que ela não é mais baixa que a pele e que ficou mais clara. Então ele deve isolar a pessoa dos outros por sete dias."
         }
       },
       "decisions": [
@@ -2885,6 +3251,11 @@
           "L": "그리고 그것이 살갗에 정말로 퍼지면, 제사장은 그를 부정하다고 선언해야 한다. 그것은 환부이다.",
           "B": "그것이 살갗에 퍼지면, 제사장은 그 사람을 부정하다고 선언해야 한다. 그것은 그 병의 환부이다.",
           "R": "그것이 살갗에 퍼지면, 제사장은 그 사람이 부정하다고 말해야 한다. 그것은 그 병으로 생긴 병든 자리이다."
+        },
+        "pt": {
+          "L": "E se de fato se espalhar na pele, então o sacerdote o declarará impuro; [é] uma marca.",
+          "B": "Se ela se espalhar na pele, o sacerdote declarará a pessoa impura. É uma lesão da doença.",
+          "R": "Se ela se espalhar na pele, o sacerdote deve dizer que a pessoa está impura. É uma ferida da doença."
         }
       },
       "decisions": [
@@ -2984,6 +3355,11 @@
           "L": "그러나 그 밝은 반점이 제자리에 머물러 퍼지지 않았으면, 그것은 종기의 흉터이다. 제사장은 그를 정결하다고 선언해야 한다.",
           "B": "그러나 그 밝은 반점이 그대로 있고 퍼지지 않았으면, 그것은 종기의 흉터이다. 제사장은 그 사람을 정결하다고 선언해야 한다.",
           "R": "그러나 그 번들거리는 점이 그대로 있고 퍼지지 않을 수 있다. 그러면 그것은 종기가 남긴 흉터일 뿐이다. 제사장은 그 사람이 정결하다고 말해야 한다."
+        },
+        "pt": {
+          "L": "Mas se a mancha brilhante ficar no seu lugar [e] não se espalhou, [é] a cicatriz do furúnculo; e o sacerdote o declarará puro.",
+          "B": "Se a mancha brilhante continuar no mesmo lugar e não se espalhar, é a cicatriz do furúnculo, e o sacerdote declarará a pessoa pura.",
+          "R": "Mas a mancha brilhante pode continuar igual, sem se espalhar. Então é só a cicatriz que o furúnculo deixou. O sacerdote deve dizer que a pessoa está pura."
         }
       },
       "decisions": [
@@ -3068,6 +3444,11 @@
           "L": "또는 몸, 곧 그 살갗에 불에 덴 상처가 있는데, 그 덴 자리의 생살이 불그스름한 흰 반점이나 흰 반점이 되면,",
           "B": "또는 어떤 사람의 살갗에 화상을 입었는데, 그 덴 자리의 생살에 불그스름한 흰 반점이나 흰 반점이 생기면,",
           "R": "어떤 사람이 살갗에 화상을 입을 수 있다. 그런데 덴 자리의 벗겨진 살에 분홍빛이 도는 흰 점이나 하얀 점이 생길 수 있다."
+        },
+        "pt": {
+          "L": "Ou [quanto à] carne, quando houver na sua pele uma queimadura de fogo, e a carne viva da queimadura se tornar uma mancha brilhante branco-avermelhada ou branca,",
+          "B": "Ou, quando alguém tiver uma queimadura na pele e a carne viva da queimadura se tornar uma mancha brilhante branco-avermelhada ou branca,",
+          "R": "Pode ser que alguém sofra uma queimadura na pele. Depois pode aparecer uma mancha brilhante branco-rosada ou branca na carne viva onde foi a queimadura."
         }
       },
       "decisions": [
@@ -3181,6 +3562,11 @@
           "L": "제사장은 그것을 살펴보아야 한다. 보라, 그 밝은 반점에 난 털이 희어졌고 그것이 살갗보다 깊어 보이면, 그것은 악성 피부병이다. 그것이 덴 자리에서 퍼져 나온 것이다. 제사장은 그를 부정하다고 선언해야 한다. 그것은 악성 피부병의 환부이다.",
           "B": "제사장은 그것을 살펴보아야 한다. 그 반점에 난 털이 희어졌고 그것이 살갗보다 깊어 보이면, 그것은 덴 자리에 생긴 악성 피부병이다. 제사장은 그 사람을 부정하다고 선언해야 한다. 그것은 악성 피부병의 환부이다.",
           "R": "제사장은 그것을 살펴보아야 한다. 그 점에 난 털이 하얗게 변했고, 그 점이 살갗보다 깊이 들어가 보일 수 있다. 그러면 덴 자리에 악성 피부병이 생긴 것이다. 제사장은 그 사람이 부정하다고 말해야 한다. 그것은 악성 피부병으로 생긴 병든 자리이다."
+        },
+        "pt": {
+          "L": "então o sacerdote a examinará, e eis que o pelo na mancha brilhante se tornou branco, e a sua aparência [é] mais funda que a pele; [é] doença escamosa; irrompeu na queimadura; e o sacerdote o declarará impuro; [é] uma marca de doença escamosa.",
+          "B": "o sacerdote a examinará. Se os pelos na mancha brilhante tiverem ficado brancos e a mancha parecer mais funda que a pele, é uma doença de pele grave que irrompeu na queimadura. O sacerdote declarará a pessoa impura; é uma lesão de doença de pele grave.",
+          "R": "O sacerdote deve olhar a mancha. Os pelos nela podem ter ficado brancos, e a mancha pode parecer mais funda que a pele. Então uma doença de pele grave apareceu na queimadura. O sacerdote deve dizer que a pessoa está impura. É uma ferida de uma doença de pele grave."
         }
       },
       "decisions": [
@@ -3276,6 +3662,11 @@
           "L": "그러나 제사장이 그것을 살펴보았는데, 보라, 그 밝은 반점에 흰 털이 없고 살갗보다 낮지 않으며 희미하면, 제사장은 그를 칠 일 동안 가두어 두어야 한다.",
           "B": "그러나 제사장이 살펴보아서 그 반점에 흰 털이 없고 살갗보다 낮지 않으며 색이 희미해졌으면, 제사장은 그 사람을 칠 일 동안 격리해야 한다.",
           "R": "그러나 제사장이 보니 그 점에 흰 털이 없을 수 있다. 살갗보다 낮지도 않고 색이 흐려졌을 수 있다. 그러면 제사장은 그 사람을 칠 일 동안 다른 사람들과 떨어져 지내게 해야 한다."
+        },
+        "pt": {
+          "L": "Mas se o sacerdote a examinar, e eis que não [há] na mancha brilhante pelo branco, e ela não [é] mais baixa que a pele, e ela [está] esmaecida, então o sacerdote o encerrará sete dias.",
+          "B": "Mas, se o sacerdote não encontrar pelos brancos na mancha brilhante, e ela não for mais baixa que a pele e tiver esmaecido, ele isolará a pessoa por sete dias.",
+          "R": "Mas o sacerdote pode não encontrar pelos brancos na mancha. Ela pode não ser mais baixa que a pele e pode ter ficado mais clara. Então ele deve isolar a pessoa dos outros por sete dias."
         }
       },
       "decisions": [
@@ -3364,6 +3755,11 @@
           "L": "그리고 제사장은 칠 일째 되는 날에 그를 살펴보아야 한다. 그것이 살갗에 정말로 퍼졌으면, 제사장은 그를 부정하다고 선언해야 한다. 그것은 악성 피부병의 환부이다.",
           "B": "칠 일째 되는 날에 제사장은 그 사람을 살펴보아야 한다. 그것이 살갗에 퍼졌으면, 제사장은 그 사람을 부정하다고 선언해야 한다. 그것은 악성 피부병의 환부이다.",
           "R": "칠 일째 되는 날에 제사장은 그 사람을 다시 살펴보아야 한다. 그 점이 살갗에 퍼졌으면, 제사장은 그 사람이 부정하다고 말해야 한다. 그것은 악성 피부병으로 생긴 병든 자리이다."
+        },
+        "pt": {
+          "L": "E o sacerdote o examinará no sétimo dia; se de fato se espalhar na pele, então o sacerdote o declarará impuro; [é] uma marca de doença escamosa.",
+          "B": "No sétimo dia o sacerdote examinará a pessoa. Se a mancha tiver se espalhado na pele, o sacerdote declarará a pessoa impura; é uma lesão de doença de pele grave.",
+          "R": "No sétimo dia o sacerdote deve examinar a pessoa de novo. Se a mancha tiver se espalhado na pele, ele deve dizer que a pessoa está impura. É uma ferida de uma doença de pele grave."
         }
       },
       "decisions": [
@@ -3456,6 +3852,11 @@
           "L": "그러나 그 밝은 반점이 제자리에 머물러 살갗에 퍼지지 않았고 희미하면, 그것은 덴 자리의 부스럼이다. 제사장은 그를 정결하다고 선언해야 한다. 그것은 덴 자리의 흉터이기 때문이다.",
           "B": "그러나 그 밝은 반점이 그대로 있고 살갗에 퍼지지 않았으며 색이 희미해졌으면, 그것은 덴 자리가 부어오른 것이다. 제사장은 그 사람을 정결하다고 선언해야 한다. 그것은 화상의 흉터이기 때문이다.",
           "R": "그러나 그 번들거리는 점이 퍼지지 않고 그대로 있으면서 색이 흐려질 수 있다. 그러면 그것은 덴 자리가 부은 것일 뿐이다. 제사장은 그 사람이 정결하다고 말해야 한다. 그것은 화상이 남긴 흉터이기 때문이다."
+        },
+        "pt": {
+          "L": "Mas se a mancha brilhante ficar no seu lugar, [e] não se espalhou na pele, e ela [está] esmaecida, [é] o inchaço da queimadura; e o sacerdote o declarará puro, porque [é] a cicatriz da queimadura.",
+          "B": "Mas, se a mancha brilhante continuar onde está, sem se espalhar na pele, e tiver esmaecido, é o inchaço da queimadura. O sacerdote declarará a pessoa pura, porque é a cicatriz da queimadura.",
+          "R": "Mas a mancha brilhante pode continuar igual, sem se espalhar, e ficar mais clara. Então é só o inchaço da queimadura. O sacerdote deve dizer que a pessoa está pura, porque é a cicatriz que a queimadura deixou."
         }
       },
       "decisions": [
@@ -3534,6 +3935,11 @@
           "L": "그리고 남자나 여자의 머리나 수염에 환부가 생기면,",
           "B": "남자나 여자의 머리나 수염에 환부가 생기면,",
           "R": "남자나 여자의 머리에, 또는 남자의 수염에 병든 자리가 생길 수 있다."
+        },
+        "pt": {
+          "L": "E um homem ou uma mulher, quando houver nele uma marca, na cabeça ou na barba,",
+          "B": "Quando um homem ou uma mulher tiver uma lesão na cabeça ou na barba,",
+          "R": "Um homem ou uma mulher pode ter uma ferida na cabeça, ou um homem pode ter uma na barba."
         }
       },
       "decisions": [
@@ -3667,6 +4073,11 @@
           "L": "제사장은 그 환부를 살펴보아야 한다. 보라, 그것이 살갗보다 깊어 보이고 그 속에 누렇고 가는 털이 있으면, 제사장은 그를 부정하다고 선언해야 한다. 그것은 버짐이다. 그것은 머리나 수염의 악성 피부병이다.",
           "B": "제사장은 그 환부를 살펴보아야 한다. 그것이 살갗보다 깊어 보이고 그 속에 누렇고 가는 털이 있으면, 제사장은 그 사람을 부정하다고 선언해야 한다. 그것은 버짐, 곧 머리나 수염에 생긴 악성 피부병이다.",
           "R": "제사장은 그 병든 자리를 살펴보아야 한다. 그 자리가 살갗보다 깊이 들어가 보이고 그 속에 누렇고 가는 털이 있을 수 있다. 그러면 제사장은 그 사람이 부정하다고 말해야 한다. 그것은 가렵고 비늘처럼 일어나는 버짐이다. 머리나 턱에 생긴 악성 피부병이다."
+        },
+        "pt": {
+          "L": "então o sacerdote examinará a marca, e eis que a sua aparência [é] mais funda que a pele, e nela [há] pelo amarelo fino; então o sacerdote o declarará impuro; [é] tinha; [é] doença escamosa da cabeça ou da barba.",
+          "B": "o sacerdote examinará a lesão. Se ela parecer mais funda que a pele e houver nela pelos amarelos e finos, o sacerdote declarará a pessoa impura. É uma coceira escamosa, uma doença de pele grave da cabeça ou da barba.",
+          "R": "O sacerdote deve olhar a ferida. Ela pode parecer mais funda que a pele e ter pelos amarelos e finos. Então o sacerdote deve dizer que a pessoa está impura. É uma mancha escamosa que coça, uma doença de pele grave da cabeça ou do queixo."
         }
       },
       "decisions": [
@@ -3830,6 +4241,30 @@
           "reason": "The meaning decision describes a scaly, itching patch on the scalp or chin; \"버짐\" is the Korean word for such a scaly patch, while \"옴\" names scabies. The exact condition is uncertain.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130300171",
+            "o030130300222"
+          ],
+          "choice": "tinha (L); uma coceira escamosa (B); uma mancha escamosa que coça (R); queixo (R)",
+          "alternatives": [
+            "sarna",
+            "micose",
+            "tinha (every level)"
+          ],
+          "reason": "Here and in verses 31-37 and 14:54. Literal keeps one word for the one Hebrew term, \"tinha\", the old Portuguese name for a scaly disease of the scalp, as the English Literal keeps \"scall\"; today it also names a fungal infection, so Balanced and Readable describe it in common words instead, since its exact nature is not known (m1). \"Sarna\" is scabies, a different thing. Readable says \"queixo\" for the beard, as the English Readable says \"chin\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3911,6 +4346,11 @@
           "L": "그리고 제사장이 버짐의 환부를 살펴보았는데, 보라, 그것이 살갗보다 깊어 보이지 않고 그 속에 검은 털이 없으면, 제사장은 버짐의 환부가 있는 사람을 칠 일 동안 가두어 두어야 한다.",
           "B": "그러나 제사장이 그 버짐의 환부를 살펴보아서 그것이 살갗보다 깊어 보이지 않고 그 속에 검은 털도 없으면, 그는 그 환부가 있는 사람을 칠 일 동안 격리해야 한다.",
           "R": "그러나 제사장이 그 버짐을 보니 살갗보다 깊이 들어가 보이지 않을 수 있다. 그리고 그 속에 검은 털이 없을 수 있다. 그러면 제사장은 그 사람을 칠 일 동안 다른 사람들과 떨어져 지내게 해야 한다."
+        },
+        "pt": {
+          "L": "E se o sacerdote examinar a marca da tinha, e eis que a sua aparência não [é] mais funda que a pele, e não [há] nela pelo preto, então o sacerdote encerrará o [que tem a] marca da tinha sete dias.",
+          "B": "Mas, se o sacerdote examinar a lesão da coceira escamosa e ela não parecer mais funda que a pele, e não houver nela pelos pretos, ele isolará a pessoa com a lesão por sete dias.",
+          "R": "Mas, quando o sacerdote olhar a mancha que coça, ela pode não parecer mais funda que a pele. E pode não haver pelos pretos nela. Então o sacerdote deve isolar a pessoa dos outros por sete dias."
         }
       },
       "decisions": [
@@ -4009,6 +4449,11 @@
           "L": "그리고 제사장은 칠 일째 되는 날에 그 환부를 살펴보아야 한다. 보라, 버짐이 퍼지지 않았고 그 속에 누런 털이 없으며 버짐이 살갗보다 깊어 보이지 않으면,",
           "B": "칠 일째 되는 날에 제사장은 그 환부를 살펴보아야 한다. 버짐이 퍼지지 않았고 그 속에 누런 털도 생기지 않았으며 살갗보다 깊어 보이지 않으면,",
           "R": "칠 일째 되는 날에 제사장은 그 병든 자리를 다시 살펴보아야 한다. 버짐이 퍼지지 않았을 수 있다. 그 속에 누런 털도 없고, 살갗보다 깊어 보이지도 않을 수 있다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará a marca no sétimo dia, e eis que a tinha não se espalhou, e não houve nela pelo amarelo, e a aparência da tinha não [é] mais funda que a pele,",
+          "B": "No sétimo dia o sacerdote examinará a lesão. Se a coceira escamosa não tiver se espalhado, não tiverem aparecido nela pelos amarelos, e ela não parecer mais funda que a pele,",
+          "R": "No sétimo dia o sacerdote deve olhar a ferida de novo. Pode ser que a mancha que coça não tenha se espalhado. Pode não haver pelos amarelos nela, e ela pode não parecer mais funda que a pele."
         }
       },
       "decisions": [
@@ -4093,6 +4538,11 @@
           "L": "그는 털을 밀어야 한다. 그러나 버짐 [난 곳]은 밀지 말아야 한다. 그리고 제사장은 버짐이 있는 사람을 두 번째로 칠 일 동안 가두어 두어야 한다.",
           "B": "그 사람은 털을 밀되 버짐이 난 곳은 밀지 말아야 하고, 제사장은 그 사람을 다시 칠 일 동안 격리해야 한다.",
           "R": "그러면 그 사람은 버짐이 난 곳만 남기고 털을 밀어야 한다. 제사장은 그 사람을 칠 일 동안 더 다른 사람들과 떨어져 지내게 해야 한다."
+        },
+        "pt": {
+          "L": "então ele se raspará, mas a tinha não raspará; e o sacerdote encerrará o [que tem a] tinha sete dias pela segunda [vez].",
+          "B": "a pessoa raspará os pelos, menos no lugar da coceira escamosa, e o sacerdote a isolará por mais sete dias.",
+          "R": "Então a pessoa deve raspar os pelos, menos os da mancha que coça. O sacerdote deve isolar a pessoa dos outros por mais sete dias."
         }
       },
       "decisions": [
@@ -4211,6 +4661,11 @@
           "L": "그리고 제사장은 칠 일째 되는 날에 그 버짐을 살펴보아야 한다. 보라, 버짐이 살갗에 퍼지지 않았고 살갗보다 깊어 보이지 않으면, 제사장은 그를 정결하다고 선언해야 한다. 그는 자기 옷을 빨아야 하고, 그러면 정결해질 것이다.",
           "B": "칠 일째 되는 날에 제사장은 그 버짐을 살펴보아야 한다. 그것이 살갗에 퍼지지 않았고 살갗보다 깊어 보이지 않으면, 제사장은 그 사람을 정결하다고 선언해야 한다. 그 사람은 옷을 빨아야 하며, 그러면 정결해진다.",
           "R": "칠 일째 되는 날에 제사장은 그 버짐을 살펴보아야 한다. 그것이 퍼지지 않았고 살갗보다 깊어 보이지 않으면, 제사장은 그 사람이 정결하다고 말해야 한다. 그 사람은 옷을 빨아야 한다. 그러면 정결해진다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará a tinha no sétimo dia, e eis que a tinha não se espalhou na pele, e a sua aparência não [é] mais funda que a pele; então o sacerdote o declarará puro, e ele lavará as suas roupas e será puro.",
+          "B": "No sétimo dia o sacerdote examinará a coceira escamosa. Se ela não tiver se espalhado na pele e não parecer mais funda que a pele, ele declarará a pessoa pura. Ela deve lavar as suas roupas, e estará pura.",
+          "R": "No sétimo dia o sacerdote deve olhar a mancha que coça. Se ela não tiver se espalhado e não parecer mais funda que a pele, ele deve dizer que a pessoa está pura. A pessoa deve lavar as suas roupas. Então ela estará pura."
         }
       },
       "decisions": [
@@ -4286,6 +4741,11 @@
           "L": "그러나 그가 정결하게 된 뒤에 버짐이 살갗에 정말로 퍼지면,",
           "B": "그러나 정결하다는 선언을 받은 뒤에 버짐이 살갗에 퍼지면,",
           "R": "그러나 제사장이 그 사람이 정결하다고 말한 뒤에 버짐이 살갗에 퍼질 수도 있다."
+        },
+        "pt": {
+          "L": "Mas se a tinha de fato se espalhar na pele depois da sua purificação,",
+          "B": "Mas, se a coceira escamosa se espalhar na pele depois que a pessoa foi declarada pura,",
+          "R": "Mas a mancha que coça pode se espalhar na pele depois que o sacerdote disse que a pessoa estava pura."
         }
       },
       "decisions": [
@@ -4373,6 +4833,11 @@
           "L": "제사장이 그를 살펴보아서, 보라, 버짐이 살갗에 퍼졌으면, 제사장은 누런 털을 찾지 않아도 된다. 그는 부정하다.",
           "B": "제사장은 그 사람을 살펴보아서 버짐이 살갗에 퍼졌으면, 누런 털이 있는지 찾아볼 필요도 없다. 그 사람은 부정하다.",
           "R": "제사장이 보아서 버짐이 퍼졌으면, 누런 털이 있는지 찾아볼 필요가 없다. 그 사람은 부정하다."
+        },
+        "pt": {
+          "L": "e o sacerdote o examinar, e eis que a tinha se espalhou na pele, o sacerdote não procurará o pelo amarelo; ele [é] impuro.",
+          "B": "e o sacerdote examinar a pessoa e vir que ela se espalhou na pele, não precisará procurar pelos amarelos. A pessoa está impura.",
+          "R": "Se o sacerdote vir que a mancha se espalhou, não precisa procurar pelos amarelos. A pessoa está impura."
         }
       },
       "decisions": [
@@ -4463,6 +4928,11 @@
           "L": "그러나 그의 눈에 버짐이 그대로 있고 그 속에 검은 털이 돋아났으면, 버짐이 나은 것이다. 그는 정결하다. 제사장은 그를 정결하다고 선언해야 한다.",
           "B": "그러나 제사장이 보기에 버짐이 그대로이고 그 속에 검은 털이 자라났으면, 그것은 나은 것이다. 그 사람은 정결하니, 제사장은 그 사람을 정결하다고 선언해야 한다.",
           "R": "그러나 제사장이 보니 버짐이 그대로이고 그 속에 검은 털이 자라났을 수 있다. 그러면 버짐이 나은 것이다. 그 사람은 정결하다. 제사장은 그 사람이 정결하다고 말해야 한다."
+        },
+        "pt": {
+          "L": "Mas se aos seus olhos a tinha parou, e pelo preto brotou nela, a tinha sarou; ele [é] puro; e o sacerdote o declarará puro.",
+          "B": "Mas, se a seu ver a coceira escamosa não tiver mudado e tiverem crescido nela pelos pretos, ela sarou. A pessoa está pura, e o sacerdote a declarará pura.",
+          "R": "Mas o sacerdote pode ver que a mancha que coça continuou igual e que cresceram pelos pretos nela. Então ela sarou. A pessoa está pura, e o sacerdote deve dizer isso."
         }
       },
       "decisions": [
@@ -4557,6 +5027,11 @@
           "L": "그리고 남자나 여자의 살갗에 밝은 반점들, 곧 흰 반점들이 생기면,",
           "B": "남자나 여자의 살갗에 밝은 반점들, 곧 흰 반점들이 생기면,",
           "R": "남자나 여자의 살갗에 번들거리는 점들, 곧 하얀 점들이 생길 수 있다."
+        },
+        "pt": {
+          "L": "E um homem ou uma mulher, quando houver na pele da sua carne manchas brilhantes, manchas brilhantes brancas,",
+          "B": "Quando um homem ou uma mulher tiver manchas brilhantes na pele, manchas brilhantes brancas,",
+          "R": "Um homem ou uma mulher pode ter manchas brilhantes na pele, manchas brilhantes brancas."
         }
       },
       "decisions": [
@@ -4642,6 +5117,11 @@
           "L": "제사장이 살펴보아야 한다. 보라, 그들의 살갗에 있는 반점들이 희미한 흰색이면, 그것은 어루러기이다. 그것이 살갗에 돋아난 것이다. 그는 정결하다.",
           "B": "제사장이 살펴보아서 살갗에 있는 반점들이 흐릿한 흰색이면, 그것은 살갗에 돋아난 어루러기일 뿐이다. 그 사람은 정결하다.",
           "R": "제사장은 그것을 살펴보아야 한다. 그 점들이 흐린 흰색이면, 그것은 해롭지 않은 어루러기일 뿐이다. 그것이 살갗에 돋아났어도 그 사람은 정결하다."
+        },
+        "pt": {
+          "L": "e o sacerdote examinar, e eis que na pele da sua carne [há] manchas brilhantes de um branco esmaecido; [é] uma erupção; irrompeu na pele; ele [é] puro.",
+          "B": "e o sacerdote vir que as manchas na pele são de um branco apagado, é uma erupção, nada mais, que irrompeu na pele. A pessoa está pura.",
+          "R": "O sacerdote deve olhar as manchas. Se elas forem de um branco pálido, é só uma erupção que não faz mal. Ela apareceu na pele, mas a pessoa está pura."
         }
       },
       "decisions": [
@@ -4765,6 +5245,29 @@
           "reason": "The meaning decision describes a pale, harmless spotting of the skin; \"어루러기\" is the Korean name of such pale patches. The identification is uncertain.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130390091"
+          ],
+          "choice": "uma erupção",
+          "alternatives": [
+            "uma sarda",
+            "um vitiligo",
+            "uma mancha"
+          ],
+          "reason": "The word appears only here (m1) and names harmless pale spotting. \"Erupção\" is the ordinary Portuguese word for spots breaking out on the skin and goes with \"irrompeu\"; a modern diagnosis such as \"vitiligo\" would claim more than the text does. Balanced adds \"nada mais\" and Readable \"que não faz mal\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4822,6 +5325,11 @@
           "L": "그리고 남자의 머리[털]이 빠지면, 그는 대머리이다. 그는 정결하다.",
           "B": "남자가 머리털이 빠지면 대머리가 된 것일 뿐, 그는 정결하다.",
           "R": "남자의 머리털이 빠질 수 있다. 그 사람은 대머리가 되었지만 정결하다."
+        },
+        "pt": {
+          "L": "E um homem, quando [o cabelo da] sua cabeça cair, ele [é] calvo; ele [é] puro.",
+          "B": "Quando um homem perde o cabelo da cabeça, ele é calvo, mas está puro.",
+          "R": "Um homem pode perder o cabelo da cabeça. Ele fica careca, mas está puro."
         }
       },
       "decisions": [
@@ -4870,6 +5378,25 @@
           "choice": "[the hair of] his head falls out",
           "alternatives": [],
           "reason": "Literal supplies 'the hair of' in brackets, since 'his head becomes bare' would be unclear.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130400051"
+          ],
+          "choice": "calvo (L, B); careca (R)",
+          "alternatives": [
+            "careca (every level)"
+          ],
+          "reason": "\"Calvo\" is the written word for bald; Readable says \"careca\", the everyday Brazilian word. Here Portuguese says \"cabelo\", the hair of the head, where the mark's hair is \"pelo\" (verse 3).",
           "uncertain": false,
           "footnote": false
         }
@@ -4932,6 +5459,11 @@
           "L": "그리고 그의 머리[털]이 얼굴 가장자리에서부터 빠지면, 그는 이마 대머리이다. 그는 정결하다.",
           "B": "앞머리가 빠지면 이마가 벗어진 것일 뿐, 그는 정결하다.",
           "R": "또는 앞머리가 빠질 수 있다. 그 사람은 이마가 벗어졌지만 정결하다."
+        },
+        "pt": {
+          "L": "E se [o cabelo da] sua cabeça cair do lado do seu rosto, ele [é] calvo na fronte; ele [é] puro.",
+          "B": "Se perder o cabelo da parte da frente da cabeça, ele é calvo na testa, mas está puro.",
+          "R": "Ou ele pode perder o cabelo da frente da cabeça. Fica careca ali, mas está puro."
         }
       },
       "decisions": [
@@ -5019,6 +5551,11 @@
           "L": "그러나 벗어진 머리나 벗어진 이마에 불그스름한 흰 환부가 있으면, 그것은 그의 벗어진 머리나 벗어진 이마에 돋아나는 악성 피부병이다.",
           "B": "그러나 벗어진 머리나 이마에 불그스름한 흰 환부가 생기면, 그것은 벗어진 머리나 이마에 돋아나는 악성 피부병이다.",
           "R": "그러나 벗어진 자리에, 뒤쪽이든 앞쪽이든, 분홍빛이 도는 흰 병든 자리가 생길 수 있다. 그러면 그곳에 악성 피부병이 돋아나고 있는 것이다."
+        },
+        "pt": {
+          "L": "Mas quando houver na calva ou na fronte calva uma marca branco-avermelhada, [é] doença escamosa brotando na sua calva ou na sua fronte calva.",
+          "B": "Mas, se aparecer uma lesão branco-avermelhada na sua calva ou na sua testa calva, é uma doença de pele grave que está brotando na sua calva ou na sua testa.",
+          "R": "Mas pode aparecer uma ferida branco-rosada no lugar careca, atrás ou na frente. Então uma doença de pele grave está aparecendo ali."
         }
       },
       "decisions": [
@@ -5109,6 +5646,11 @@
           "L": "그리고 제사장은 그를 살펴보아야 한다. 보라, 그의 벗어진 머리나 벗어진 이마에 있는 환부의 부스럼이 불그스름한 흰색이어서, 살갗에 생긴 악성 피부병처럼 보이면,",
           "B": "제사장은 그 사람을 살펴보아야 한다. 벗어진 머리나 이마에 부어오른 환부가 불그스름한 흰색이어서 몸에 생긴 악성 피부병처럼 보이면,",
           "R": "제사장은 그 사람을 살펴보아야 한다. 벗어진 머리에 부어오른 병든 자리가 분홍빛이 도는 흰색일 수 있다. 그것이 몸의 다른 곳에 생기는 악성 피부병처럼 보일 수 있다."
+        },
+        "pt": {
+          "L": "E o sacerdote o examinará, e eis que o inchaço da marca [é] branco-avermelhado na sua calva ou na sua fronte calva, como a aparência da doença escamosa da pele da carne;",
+          "B": "O sacerdote o examinará. Se a lesão inchada na sua calva ou na sua testa for branco-avermelhada, com a aparência de uma doença de pele grave no corpo,",
+          "R": "O sacerdote deve examinar o homem. A ferida inchada na cabeça careca pode ser branco-rosada. Ela pode se parecer com uma doença de pele grave em outras partes do corpo."
         }
       },
       "decisions": [
@@ -5191,6 +5733,11 @@
           "L": "그는 악성 피부병에 걸린 사람이다. 그는 부정하다. 제사장은 그를 반드시 부정하다고 선언해야 한다. 그의 환부가 그의 머리에 있다.",
           "B": "그는 악성 피부병에 걸린 사람이니 부정하다. 제사장은 반드시 그를 부정하다고 선언해야 한다. 그 환부가 머리에 있기 때문이다.",
           "R": "그러면 그 사람은 악성 피부병에 걸렸으니 부정하다. 제사장은 그 사람이 부정하다고 말해야 한다. 그 병든 자리가 머리에 있다."
+        },
+        "pt": {
+          "L": "ele [é] um homem com doença escamosa; ele [é] impuro; o sacerdote certamente o declarará impuro; a sua marca [está] na sua cabeça.",
+          "B": "ele é um homem com uma doença de pele grave e está impuro. O sacerdote deve declará-lo impuro; a lesão está na cabeça dele.",
+          "R": "Então o homem tem uma doença de pele grave e está impuro. O sacerdote deve dizer que ele está impuro. A ferida está na cabeça dele."
         }
       },
       "decisions": [
@@ -5294,6 +5841,11 @@
           "L": "그리고 그 환부가 있는 악성 피부병 환자는 자기 옷을 찢고 머리를 풀고 윗입술을 가리고 '부정하다! 부정하다!' 하고 외쳐야 한다.",
           "B": "악성 피부병의 환부가 있는 사람은 찢어진 옷을 입고 머리를 풀어 헤친 채 다녀야 한다. 그는 윗입술을 가리고 '부정하다, 부정하다!' 하고 외쳐야 한다.",
           "R": "이 병에 걸린 사람은 누구든지 찢어진 옷을 입고 머리를 빗지 말고 풀어 두어야 한다. 그리고 윗입술을 가려야 한다. 그리고 '부정합니다, 부정합니다!' 하고 외쳐야 한다."
+        },
+        "pt": {
+          "L": "E o que tem doença escamosa, em quem [está] a marca, as suas roupas estarão rasgadas, e a sua cabeça estará solta, e ele cobrirá o [seu] lábio superior, e 'Impuro! Impuro!' gritará.",
+          "B": "A pessoa que tem a lesão de doença de pele grave andará com as roupas rasgadas e com os cabelos soltos. Cobrirá o lábio superior e gritará: 'Impuro, impuro!'",
+          "R": "Quem tem essa doença deve usar roupas rasgadas e deixar o cabelo solto e despenteado. Deve cobrir o lábio de cima. Deve gritar: 'Impuro, impuro!'"
         }
       },
       "decisions": [
@@ -5454,6 +6006,30 @@
           "reason": "The cry warns others, as the meaning decision says. Literal and Balanced keep the plain declaration; Readable puts it in the polite style a person would use calling to strangers.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130450142",
+            "o030130450151",
+            "o030130450161"
+          ],
+          "choice": "'Impuro! Impuro!' / 'Impuro, impuro!'",
+          "alternatives": [
+            "'Impura, impura!' for a woman",
+            "'Sou impuro!'"
+          ],
+          "reason": "The cry (m3) is a single word repeated. Portuguese adjectives show gender, and the law covers men and women, so a woman would cry \"Impura!\"; the text gives one form, and the masculine is the general form Portuguese uses in a rule for anyone. Literal keeps \"a sua cabeça estará solta\" with the English Literal; Balanced and Readable say \"os cabelos soltos\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5519,6 +6095,11 @@
           "L": "그 환부가 그에게 있는 모든 날 동안 그는 부정할 것이다. 그는 부정하다. 그는 혼자 살아야 한다. 진 바깥이 그의 거처[가 되어야 한다].",
           "B": "환부가 몸에 있는 동안에는 늘 부정하다. 부정한 사람이니 혼자 살아야 하며, 진 밖에서 지내야 한다.",
           "R": "그 사람은 병든 자리가 몸에 남아 있는 동안 부정하다. 부정하기 때문에 다른 사람들과 떨어져 혼자 지내야 한다. 진 밖에서 살아야 한다."
+        },
+        "pt": {
+          "L": "Todos os dias em que a marca [estiver] nele, ele será impuro; ele [é] impuro; habitará sozinho; fora do acampamento [será] a sua habitação.",
+          "B": "Durante todo o tempo em que tiver a lesão, a pessoa estará impura. Por estar impura, viverá sozinha e morará fora do acampamento.",
+          "R": "A pessoa vai ficar impura enquanto tiver a ferida. Por estar impura, deve ficar sozinha. Ela deve morar fora do acampamento."
         }
       },
       "decisions": [
@@ -5636,6 +6217,11 @@
           "L": "그리고 옷에, 곧 털옷이나 베옷에 악성 피부병의 환부가 생기면,",
           "B": "옷에 곰팡이 얼룩이 생기면, 그것이 털옷이든 베옷이든,",
           "R": "털옷이나 베옷에 곰팡이가 생길 수 있다."
+        },
+        "pt": {
+          "L": "E a roupa, quando houver nela uma marca de doença escamosa, numa roupa de lã ou numa roupa de linho,",
+          "B": "Quando aparecer uma mancha de mofo numa roupa, seja de lã ou de linho,",
+          "R": "Pode aparecer mofo numa roupa de lã ou de linho."
         }
       },
       "decisions": [
@@ -5843,6 +6429,29 @@
           "reason": "The ordinary Korean words for woollen and linen clothes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130470051",
+            "o030130470061"
+          ],
+          "choice": "uma mancha de mofo (B); mofo (R); uma marca de doença escamosa (L)",
+          "alternatives": [
+            "bolor",
+            "lepra (of cloth)",
+            "fungo"
+          ],
+          "reason": "For chapters 13 and 14 (14:34, 55, 57): Balanced and Readable say \"mofo\", the everyday Brazilian word for mold, for the spreading growth in cloth, leather and walls (m1), and \"mancha\" for the patch, as the English says \"mold\" and \"patch\". \"Bolor\" means the same but is more European. Literal keeps \"marca de doença escamosa\", the same words as for the skin, as the English Literal does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5909,6 +6518,11 @@
           "L": "또는 베나 털의 날실이나 씨실에나, 가죽이나 가죽으로 만든 어떤 물건에 [생기면],",
           "B": "베나 털의 날실이나 씨실에, 또는 가죽이나 가죽으로 만든 물건에 생기면,",
           "R": "그것은 베나 털로 짠 천의 세로실이나 가로실에 생길 수도 있고, 가죽이나 가죽으로 만든 물건에 생길 수도 있다."
+        },
+        "pt": {
+          "L": "ou na urdidura ou na trama do linho ou da lã, ou em couro ou em qualquer obra de couro,",
+          "B": "ou na urdidura ou na trama do linho ou da lã, ou no couro ou em qualquer coisa feita de couro,",
+          "R": "Pode estar nos fios do comprimento ou da largura de um tecido de linho ou de lã, ou no couro ou em qualquer coisa feita de couro."
         }
       },
       "decisions": [
@@ -6047,6 +6661,30 @@
           "reason": "Korean has the weaving terms; Readable describes the threads by direction, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130480022",
+            "o030130480042",
+            "o030130480082"
+          ],
+          "choice": "a urdidura e a trama (L, B); os fios do comprimento ou da largura (R); couro",
+          "alternatives": [
+            "o fio e a trama",
+            "pele (L)"
+          ],
+          "reason": "\"Urdidura\" and \"trama\" are the standard Portuguese words for the lengthwise and crosswise threads of a weave (m1), still in use, so Literal and Balanced keep them; Readable says what they are, as the English Readable does, and later just \"os fios\". \"Couro\" is both hide and leather, so every level says it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6125,6 +6763,11 @@
           "L": "그 환부가 옷에나 가죽에나 날실에나 씨실에나 가죽으로 만든 어떤 물건에 푸르스름하거나 불그스름하면, 그것은 악성 피부병의 환부이니, 제사장에게 보여야 한다.",
           "B": "옷이나 가죽이나 날실이나 씨실이나 가죽으로 만든 물건에 생긴 얼룩이 푸르스름하거나 불그스름하면, 그것은 곰팡이 얼룩이니 제사장에게 보여야 한다.",
           "R": "천이나 실이나 가죽에 생긴 얼룩이 푸르스름하거나 불그스름하면, 그것은 곰팡이다. 그것을 제사장에게 보여야 한다."
+        },
+        "pt": {
+          "L": "e a marca for esverdeada ou avermelhada na roupa, ou no couro, ou na urdidura, ou na trama, ou em qualquer objeto de couro, [é] uma marca de doença escamosa, e será mostrada ao sacerdote.",
+          "B": "e a mancha na roupa ou no couro, na urdidura ou na trama, ou em qualquer objeto de couro, for esverdeada ou avermelhada, é uma mancha de mofo e deve ser mostrada ao sacerdote.",
+          "R": "Se a mancha no tecido, nos fios ou no couro for esverdeada ou avermelhada, é mofo. Deve ser mostrada ao sacerdote."
         }
       },
       "decisions": [
@@ -6219,6 +6862,11 @@
           "L": "그러면 제사장은 그 환부를 살펴보고, 환부가 있는 [것을] 칠 일 동안 가두어 두어야 한다.",
           "B": "제사장은 그 얼룩을 살펴보고, 그 물건을 칠 일 동안 따로 두어야 한다.",
           "R": "제사장은 그 곰팡이를 살펴보아야 한다. 그런 다음 그 물건을 칠 일 동안 따로 치워 두어야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará a marca e encerrará o [objeto com a] marca sete dias.",
+          "B": "O sacerdote examinará a mancha e guardará o objeto à parte por sete dias.",
+          "R": "O sacerdote deve olhar o mofo. Depois deve guardar a coisa à parte por sete dias."
         }
       },
       "decisions": [
@@ -6338,6 +6986,11 @@
           "L": "그리고 그는 칠 일째 되는 날에 그 환부를 살펴보아야 한다. 환부가 옷에나 날실에나 씨실에나 가죽에, 가죽이 무엇을 만드는 데 쓰였든, 퍼졌으면, 그 환부는 파고드는 악성 피부병이다. 그것은 부정하다.",
           "B": "칠 일째 되는 날에 제사장은 그 얼룩을 살펴보아야 한다. 그것이 옷이나 날실이나 씨실이나 가죽에, 가죽이 무엇에 쓰이든, 퍼졌으면, 그것은 번지는 곰팡이이며 그 물건은 부정하다.",
           "R": "칠 일째 되는 날에 제사장은 그것을 다시 살펴보아야 한다. 곰팡이가 천이나 실이나 가죽에 퍼졌을 수 있다. 그 가죽이 무엇에 쓰이든 마찬가지다. 그러면 그것은 계속 자라는 곰팡이다. 그 물건은 부정하다."
+        },
+        "pt": {
+          "L": "E examinará a marca no sétimo dia; se a marca se espalhou na roupa, ou na urdidura, ou na trama, ou no couro, para tudo o que se faz do couro para uso, a marca [é] uma doença escamosa maligna; [é] impura.",
+          "B": "No sétimo dia ele examinará a mancha. Se ela tiver se espalhado na roupa, na urdidura ou na trama, ou no couro, seja qual for o uso do couro, é um mofo que se alastra, e o objeto está impuro.",
+          "R": "No sétimo dia ele deve olhar de novo. O mofo pode ter se espalhado no tecido, nos fios ou no couro, não importa para que o couro é usado. Então é o tipo de mofo que não para de crescer. A coisa está impura."
         }
       },
       "decisions": [
@@ -6456,6 +7109,28 @@
           "reason": "The meaning decision gives the sense destructive, eating away; \"악성\" is already part of the term for the disease, so Korean describes what the growth does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130510221"
+          ],
+          "choice": "maligna (L); um mofo que se alastra (B); o tipo de mofo que não para de crescer (R)",
+          "alternatives": [
+            "um mofo maligno (B)",
+            "corrosiva"
+          ],
+          "reason": "Here, in verse 52 and in 14:44: Literal keeps \"maligna\", as the English Literal keeps \"malignant\"; Balanced and Readable say what it means for mold (m1), a growth that keeps eating away. Balanced uses \"alastrar-se\" for this kind of mold, so as not to repeat the \"espalhar-se\" of the test just before it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6540,6 +7215,11 @@
           "L": "그리고 그는 그 옷이나, 털이나 베의 날실이나 씨실이나, 환부가 있는 가죽으로 만든 어떤 물건을 불살라야 한다. 그것은 파고드는 악성 피부병이기 때문이다. 그것을 불에 태워야 한다.",
           "B": "그는 얼룩이 있는 옷이나, 털이나 베의 날실이나 씨실이나, 가죽 물건을 불살라야 한다. 그것은 번지는 곰팡이이므로 불에 태워 없애야 한다.",
           "R": "제사장은 곰팡이가 있는 천이나 실이나 가죽을 태워야 한다. 그것은 계속 자라는 곰팡이이므로 불에 태워야 한다."
+        },
+        "pt": {
+          "L": "E queimará a roupa, ou a urdidura, ou a trama, de lã ou de linho, ou qualquer objeto de couro em que estiver a marca, porque [é] uma doença escamosa maligna; será queimada no fogo.",
+          "B": "Ele deve queimar a roupa, a urdidura ou a trama de lã ou de linho, ou o objeto de couro em que estiver a mancha. Por ser um mofo que se alastra, tem de ser queimado.",
+          "R": "Ele deve queimar o tecido, os fios ou o couro que tiver mofo. É o tipo de mofo que não para de crescer, por isso deve ser queimado no fogo."
         }
       },
       "decisions": [
@@ -6628,6 +7308,11 @@
           "L": "그러나 제사장이 살펴보았는데, 보라, 환부가 옷에나 날실에나 씨실에나 가죽으로 만든 어떤 물건에 퍼지지 않았으면,",
           "B": "그러나 제사장이 살펴보아서 그 얼룩이 옷이나 날실이나 씨실이나 가죽 물건에 퍼지지 않았으면,",
           "R": "그러나 제사장이 보니 곰팡이가 천이나 실이나 가죽에 퍼지지 않았을 수 있다."
+        },
+        "pt": {
+          "L": "Mas se o sacerdote examinar, e eis que a marca não se espalhou na roupa, ou na urdidura, ou na trama, ou em qualquer objeto de couro,",
+          "B": "Mas, se o sacerdote examinar e a mancha não tiver se espalhado na roupa, na urdidura ou na trama, ou no objeto de couro,",
+          "R": "Mas o sacerdote pode ver que o mofo não se espalhou no tecido, nos fios ou no couro."
         }
       },
       "decisions": [
@@ -6710,6 +7395,11 @@
           "L": "제사장은 명령하여 환부가 있는 것을 빨게 하고, 그것을 두 번째로 칠 일 동안 가두어 두어야 한다.",
           "B": "제사장은 얼룩이 있는 물건을 빨게 하고, 그것을 다시 칠 일 동안 따로 두어야 한다.",
           "R": "그러면 제사장은 곰팡이가 생긴 물건을 빨게 해야 한다. 그리고 그것을 칠 일 동안 더 따로 치워 두어야 한다."
+        },
+        "pt": {
+          "L": "então o sacerdote ordenará, e lavarão aquilo em que [está] a marca, e ele o encerrará sete dias pela segunda [vez].",
+          "B": "o sacerdote mandará lavar o objeto em que está a mancha e o guardará à parte por mais sete dias.",
+          "R": "Então o sacerdote deve mandar lavar a coisa que tem o mofo. Deve guardá-la à parte por mais sete dias."
         }
       },
       "decisions": [
@@ -6812,6 +7502,11 @@
           "L": "그리고 그 환부를 빤 뒤에 제사장이 살펴보아야 한다. 보라, 환부가 그 빛깔을 바꾸지 않았으면, 환부가 퍼지지 않았더라도 그것은 부정하다. 너희는 그것을 불에 태워야 한다. 그것은 뒷면이나 앞면을 파먹은 것이다.",
           "B": "그것을 빤 뒤에 제사장은 그 얼룩을 다시 살펴보아야 한다. 얼룩이 퍼지지 않았더라도 그 모양이 변하지 않았으면 그것은 부정하다. 너희는 그것을 불에 태워야 한다. 그것은 뒷면이나 앞면을 파먹어 들어간 것이다.",
           "R": "그 물건을 빤 뒤에 제사장은 곰팡이를 다시 살펴보아야 한다. 곰팡이가 퍼지지는 않았어도 전과 똑같아 보일 수 있다. 그러면 그 물건은 부정하다. 너희는 그것을 불에 태워야 한다. 곰팡이가 이쪽이나 저쪽을 파먹어 들어간 것이다."
+        },
+        "pt": {
+          "L": "E o sacerdote examinará depois de a marca ter sido lavada, e eis que a marca não mudou o seu aspecto, e a marca não se espalhou; [é] impura; tu a queimarás no fogo; [é] uma corrosão, no seu lado de trás ou no seu lado da frente.",
+          "B": "Depois que o objeto for lavado, o sacerdote examinará a mancha de novo. Se a sua aparência não tiver mudado, mesmo que ela não se tenha espalhado, o objeto está impuro. Tu o queimarás no fogo; é uma corrosão que atingiu o avesso ou o lado direito.",
+          "R": "Depois que a coisa for lavada, o sacerdote deve olhar o mofo de novo. Ele pode estar igual a antes, mesmo que não tenha se espalhado. Então a coisa está impura. Deves queimá-la no fogo. O mofo comeu o material, de um lado ou do outro."
         }
       },
       "decisions": [
@@ -6992,6 +7687,56 @@
           "reason": "The Hebrew idiom uses \"eye\" for the look of a thing, as the meaning decision says; a word-for-word \"눈\" would not be understood in Korean, so Literal gives the nearest plain sense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030130550191",
+            "o030130550192"
+          ],
+          "choice": "tu (a queimarás, queimarás, deves queimar)",
+          "alternatives": [
+            "vocês",
+            "você"
+          ],
+          "reason": "Here and in verses 57-58 the Hebrew turns to the singular \"you\" of the law addressed to each Israelite, so every level says \"tu\", as the book does from 2:4 (and Readable from 1:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130550091",
+            "o030130550111",
+            "o030130550201",
+            "o030130550221",
+            "o030130550241"
+          ],
+          "choice": "não mudou o seu aspecto (L); uma corrosão (L, B); o avesso ou o lado direito (B)",
+          "alternatives": [
+            "não mudou o seu olho (L)",
+            "podridão",
+            "apodrecimento"
+          ],
+          "reason": "Portuguese cannot keep \"eye\" for appearance (m1) without being misread, so Literal says \"aspecto\", which still names how a thing looks. The rare word for the eating away (m2) is \"corrosão\" at Literal and Balanced, which keeps the sense of a hollow eaten into the cloth better than \"podridão\". For the two sides of a cloth (m3) Balanced uses \"o avesso\" and \"o lado direito\", the words for the inner and outer side of fabric.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7072,6 +7817,11 @@
           "L": "그러나 제사장이 살펴보았는데, 보라, 그것을 빤 뒤에 환부가 희미해졌으면, 그는 그것을 옷에서나 가죽에서나 날실에서나 씨실에서 찢어 내야 한다.",
           "B": "그러나 제사장이 살펴보아서 빤 뒤에 얼룩이 희미해졌으면, 그는 그 부분을 옷이나 가죽이나 날실이나 씨실에서 찢어 내야 한다.",
           "R": "그러나 제사장이 보니 빨고 난 뒤에 곰팡이가 흐려졌을 수 있다. 그러면 그는 곰팡이가 난 부분을 천이나 가죽이나 실에서 찢어 내야 한다."
+        },
+        "pt": {
+          "L": "Mas se o sacerdote examinou, e eis que a marca esmaeceu depois de ter sido lavada, então ele a arrancará da roupa, ou do couro, ou da urdidura, ou da trama.",
+          "B": "Mas, se o sacerdote examinar e a mancha tiver esmaecido depois de lavada, ele arrancará a mancha da roupa, do couro, da urdidura ou da trama.",
+          "R": "Mas o sacerdote pode ver que o mofo ficou mais claro depois de lavado. Então ele deve arrancar a parte com mofo do tecido, do couro ou dos fios."
         }
       },
       "decisions": [
@@ -7165,6 +7915,11 @@
           "L": "그리고 그것이 옷에나 날실에나 씨실에나 가죽으로 만든 어떤 물건에 다시 나타나면, 그것은 돋아나는 것이다. 너희는 환부가 있는 것을 불에 태워야 한다.",
           "B": "그런데도 그것이 옷이나 날실이나 씨실이나 가죽 물건에 다시 나타나면, 그것은 다시 번지는 것이니, 너희는 얼룩이 있는 것을 불에 태워야 한다.",
           "R": "그러나 곰팡이가 천이나 실이나 가죽에 다시 생길 수 있다. 그것은 곰팡이가 다시 자라고 있다는 뜻이다. 너희는 곰팡이가 있는 그 물건을 불에 태워야 한다."
+        },
+        "pt": {
+          "L": "E se aparecer outra vez na roupa, ou na urdidura, ou na trama, ou em qualquer objeto de couro, [é] algo brotando; tu queimarás no fogo aquilo em que [está] a marca.",
+          "B": "Se a mancha aparecer de novo na roupa, na urdidura ou na trama, ou no objeto de couro, é o mofo brotando outra vez, e tu queimarás o que tiver a mancha.",
+          "R": "Mas o mofo pode aparecer de novo no tecido, nos fios ou no couro. Isso quer dizer que ele está crescendo outra vez. Deves queimar a coisa que tem o mofo."
         }
       },
       "decisions": [
@@ -7255,6 +8010,11 @@
           "L": "그리고 너희가 빤 옷이나 날실이나 씨실이나 가죽으로 만든 어떤 물건에서 환부가 없어졌으면, 그것을 두 번째로 빨아야 한다. 그러면 그것은 정결해질 것이다.",
           "B": "그러나 너희가 빤 옷이나 날실이나 씨실이나 가죽 물건에서 얼룩이 없어졌으면, 그것을 한 번 더 빨아야 한다. 그러면 그것은 정결해진다.",
           "R": "그러나 너희가 천이나 실이나 가죽을 빨았더니 곰팡이가 없어질 수 있다. 그러면 그것을 한 번 더 빨아라. 그러면 그것은 정결해진다."
+        },
+        "pt": {
+          "L": "E a roupa, ou a urdidura, ou a trama, ou qualquer objeto de couro que lavares, e a marca sair deles, então será lavado pela segunda [vez], e será puro.",
+          "B": "Mas a roupa, a urdidura ou a trama, ou o objeto de couro que lavares e do qual a mancha tiver saído, será lavado uma segunda vez e estará puro.",
+          "R": "Mas podes lavar o tecido, os fios ou o couro, e o mofo pode sair. Então lava-o uma segunda vez, e ele estará puro."
         }
       },
       "decisions": [
@@ -7347,6 +8107,11 @@
           "L": "이것이 털옷이나 베옷에나, 날실이나 씨실에나, 가죽으로 만든 어떤 물건에 생긴 악성 피부병의 환부에 관한 율법이니, 그것을 정결하다고 선언하거나 부정하다고 선언하기 위한 것이다.\"",
           "B": "이것이 털옷이나 베옷, 날실이나 씨실, 가죽으로 만든 물건에 생긴 곰팡이에 관한 규례이다. 이것에 따라 그것을 정결하다거나 부정하다고 선언해야 한다.\"",
           "R": "이것이 털옷이나 베옷이나 그 실이나 가죽으로 만든 물건에 생긴 곰팡이에 관한 규례이다. 이 규례는 그것이 정결한지 부정한지 가려내는 법을 알려 준다.\""
+        },
+        "pt": {
+          "L": "Esta [é] a lei da marca de doença escamosa numa roupa de lã ou de linho, ou na urdidura, ou na trama, ou em qualquer objeto de couro, para declará-lo puro ou para declará-lo impuro.\"",
+          "B": "Esta é a lei do mofo na roupa de lã ou de linho, na urdidura ou na trama, ou em qualquer objeto de couro, para declará-lo puro ou impuro.\"",
+          "R": "Estas são as regras sobre o mofo em tecido de lã ou de linho, nos fios dele ou em qualquer coisa feita de couro. Elas mostram como saber se a coisa está pura ou impura.\""
         }
       },
       "decisions": [
@@ -7396,6 +8161,29 @@
           "choice": "mold",
           "alternatives": [],
           "reason": "As in verse 47, Balanced and Readable say 'mold'; Literal keeps 'mark of scale disease'.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130590011",
+            "o030130590021"
+          ],
+          "choice": "a lei (L, B); as regras (R)",
+          "alternatives": [
+            "a instrução",
+            "o regulamento"
+          ],
+          "reason": "For chapters 13 and 14 (14:2, 32, 54-57): the closing formula (m1) keeps \"a lei\" at Literal and Balanced, the word the book uses for the rule of each case, lowercase because it is one law, not the whole Law; Readable says \"as regras\", as the English Readable says \"rules\".",
           "uncertain": false,
           "footnote": false
         }

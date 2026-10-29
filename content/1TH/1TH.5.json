@@ -70,6 +70,16 @@
           "L": "Thưa {{gender:anh chị em|anh em}}, về thời kỳ và thời điểm, anh chị em không cần có ai viết cho anh chị em, \\v 2 vì chính anh chị em biết rõ rằng ngày của Chúa sẽ đến như kẻ trộm trong đêm.",
           "B": "Thưa {{gender:anh chị em|anh em}}, về thời kỳ và ngày giờ, chúng tôi không cần viết cho anh chị em. \\v 2 Chính anh chị em biết rất rõ rằng ngày của Chúa đến như kẻ trộm ban đêm.",
           "R": "Thưa {{gender:anh chị em|anh em}}, chúng tôi không cần viết cho anh chị em về việc khi nào những điều này sẽ xảy ra. \\v 2 Anh chị em đã biết rằng ngày Chúa trở lại sẽ đến bất ngờ, như kẻ trộm đến ban đêm."
+        },
+        "pt": {
+          "L": "Quanto aos tempos e às épocas, {{gender:irmãos e irmãs|irmãos}}, vocês não têm necessidade de que [algo] lhes seja escrito, \\v 2 pois vocês mesmos sabem muito bem que [o] dia do Senhor vem como um ladrão à noite.",
+          "B": "Quanto a tempos e datas, {{gender:irmãos e irmãs|irmãos}}, não há necessidade de escrevermos a vocês. \\v 2 Vocês mesmos sabem muito bem que o dia do Senhor vem como um ladrão à noite.",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, não precisamos escrever a vocês sobre quando essas coisas vão acontecer. \\v 2 Vocês já sabem que o dia em que o Senhor voltar vai ser uma surpresa, como um ladrão que chega à noite."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ ዘመናቱና ስለ ወቅቶቹ ግን ምንም ሊጻፍላችሁ አያስፈልጋችሁም፤ \\v 2 የጌታ ቀን ሌባ በሌሊት እንደሚመጣ እንዲሁ እንደሚመጣ እናንተ ራሳችሁ በትክክል ታውቃላችሁና።",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ ጊዜያቱና ስለ ወቅቶቹ ልንጽፍላችሁ አያስፈልግም። \\v 2 የጌታ ቀን ሌባ በሌሊት እንደሚመጣ እንዲሁ እንደሚመጣ ራሳችሁ በሚገባ ታውቃላችሁ።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እነዚህ ነገሮች መቼ እንደሚሆኑ ልንጽፍላችሁ አያስፈልገንም። \\v 2 ጌታ ተመልሶ የሚመጣበት ቀን ድንገት እንደሚደርስ ራሳችሁ ታውቃላችሁ፤ ሌባ በሌሊት እንደሚመጣ ይሆናል።"
         }
       },
       "decisions": [
@@ -239,6 +249,71 @@
           "reason": "The day of God's judgment and rescue, now the day of Christ's coming (m2); Readable says so, as in 2:19.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005002006",
+            "n52005002007"
+          ],
+          "choice": "o dia do Senhor",
+          "alternatives": [
+            "o Dia do Senhor"
+          ],
+          "reason": "Lowercase \"dia\", as the English writes \"day\" and as Portuguese writes \"o dia do juízo\"; the capital in \"Senhor\" already marks whose day it is (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n52005002007"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "mirroring the English deity_pronoun spans"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God and Christ has nothing to change in Amharic; the pronouns (እርሱ, the verb endings) are written once, with no span, through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005002006",
+            "n52005002007"
+          ],
+          "choice": "የጌታ ቀን (the day of the Lord, L, B), here and in 2 Thessalonians 2:2; ጌታ ተመልሶ የሚመጣበት ቀን (the day when the Lord comes back, R)",
+          "alternatives": [
+            "የፍርድ ቀን (the day of judgment)",
+            "የመጨረሻው ቀን (the last day)"
+          ],
+          "reason": "\"The day of the Lord\" is the prophets' name for God's day of judgment and rescue, as the meaning decision says, and Paul keeps the name; Amharic keeps it word for word so the link with the prophets stays. Readable says which day it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -307,6 +382,16 @@
           "L": "Khi người ta đang nói: \"Bình an và an toàn,\" thì sự hủy diệt thình lình giáng trên họ, như cơn đau đẻ đến trên người đàn bà có thai, và họ chắc chắn sẽ không thoát được.",
           "B": "Đúng lúc người ta đang nói: \"Mọi sự đều bình an và an toàn,\" thì sự hủy diệt sẽ thình lình ập đến trên họ, như cơn đau đẻ đến với người phụ nữ đang mang thai, và họ sẽ không có lối thoát.",
           "R": "Người ta sẽ nói: \"Mọi sự đều bình an và an toàn.\" Rồi thình lình họ sẽ bị hủy diệt. Điều đó sẽ đến trên họ như cơn đau của người phụ nữ sắp sinh con, và họ sẽ không thể thoát được."
+        },
+        "pt": {
+          "L": "Quando estiverem dizendo: \"Paz e segurança\", então repentina destruição vem sobre eles, como as dores de parto sobre a mulher grávida, e de modo nenhum escaparão.",
+          "B": "Justamente quando as pessoas estiverem dizendo: \"Está tudo em paz e em segurança\", a ruína cairá sobre elas sem aviso, como as dores de parto vêm sobre uma mulher que espera um filho, e não haverá como escapar.",
+          "R": "As pessoas vão estar dizendo: \"Está tudo calmo e seguro.\" Então, de repente, elas serão destruídas. Isso vai cair sobre elas como as dores de uma mulher que está para dar à luz, e elas não vão conseguir escapar."
+        },
+        "am": {
+          "L": "«ሰላምና ጸጥታ» በሚሉበት ጊዜ፣ ያረገዘችውን ሴት ምጥ እንደሚይዛት ያን ጊዜ ድንገተኛ ጥፋት ይመጣባቸዋል፤ ከቶም አያመልጡም።",
+          "B": "ሰዎች «ሁሉ ሰላም ነው፤ ምንም ሥጋት የለም» በሚሉበት ጊዜ ልክ፣ ያረገዘችን ሴት ምጥ እንደሚይዛት ጥፋት ሳይታሰብ ይወድቅባቸዋል፤ ማምለጫም አይኖርም።",
+          "R": "ሰዎች «ሁሉ ነገር ሰላም ነው፤ ምንም አደጋ የለም» ይላሉ። ከዚያም ድንገት ይጠፋሉ። ይህም ልትወልድ የተቃረበችን ሴት ምጥ እንደሚይዛት ይመጣባቸዋል፤ ማምለጥም አይችሉም።"
         }
       },
       "decisions": [
@@ -427,6 +512,25 @@
           "reason": "The slogan is a false confidence (m1). \"Hòa bình và an ninh\" would sound like a political slogan of our own day; \"bình an\" is the key word for peace, which lets the reader set this false peace beside God's peace (5:23).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005003005"
+          ],
+          "choice": "«ሰላምና ጸጥታ» (peace and security) at Literal",
+          "alternatives": [
+            "«ሰላምና ደኅንነት»"
+          ],
+          "reason": "\"ሰላምና ጸጥታ\" is the everyday Amharic pair for public peace and safety, which is the slogan's sense. \"ደኅንነት\" is avoided because in church speech it often means salvation, which would confuse the warning.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -498,6 +602,16 @@
           "L": "Nhưng, thưa {{gender:anh chị em|anh em}}, anh chị em không ở trong bóng tối, để ngày ấy bắt chợt anh chị em như kẻ trộm, \\v 5 vì tất cả anh chị em đều là con cái của ánh sáng và con cái của ban ngày.",
           "B": "Nhưng thưa {{gender:anh chị em|anh em}}, anh chị em không sống trong bóng tối, để ngày ấy bắt chợt anh chị em như kẻ trộm. \\v 5 Tất cả anh chị em đều là con cái của ánh sáng và con cái của ban ngày.",
           "R": "Nhưng thưa {{gender:anh chị em|anh em}}, anh chị em không sống trong bóng tối, nên ngày ấy sẽ không bắt chợt anh chị em như kẻ trộm. \\v 5 Tất cả anh chị em đều thuộc về ánh sáng và thuộc về ban ngày."
+        },
+        "pt": {
+          "L": "Mas vocês, {{gender:irmãos e irmãs|irmãos}}, não estão em trevas, para que o dia os surpreenda como um ladrão, \\v 5 pois todos vocês são filhos da luz e filhos do dia.",
+          "B": "Mas vocês, {{gender:irmãos e irmãs|irmãos}}, não estão vivendo nas trevas, para que aquele dia os pegue de surpresa como um ladrão. \\v 5 Todos vocês são filhos da luz e filhos do dia.",
+          "R": "Mas, {{gender:irmãos e irmãs|irmãos}}, vocês não estão vivendo na escuridão, e por isso aquele dia não vai pegar vocês de surpresa como um ladrão. \\v 5 Todos vocês pertencem à luz e ao dia."
+        },
+        "am": {
+          "L": "እናንተ ግን፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ያ ቀን እንደ ሌባ ያገኛችሁ ዘንድ በጨለማ ውስጥ አይደላችሁም፤ \\v 5 ሁላችሁ የብርሃን ልጆችና የቀን ልጆች ናችሁና።",
+          "B": "እናንተ ግን፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ያ ቀን እንደ ሌባ ድንገት እንዲደርስባችሁ በጨለማ የምትኖሩ አይደላችሁም። \\v 5 ሁላችሁ የብርሃን ልጆችና የቀን ልጆች ናችሁ።",
+          "R": "ነገር ግን፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እናንተ በጨለማ የምትኖሩ አይደላችሁም፤ ስለዚህ ያ ቀን እንደ ሌባ ድንገት አይደርስባችሁም። \\v 5 ሁላችሁም የብርሃንና የቀን ሰዎች ናችሁ።"
         }
       },
       "decisions": [
@@ -748,6 +862,48 @@
           "reason": "As in the Vietnamese Colossians (3:6), \"con cái\" already includes sons and daughters, so the English setting has nothing to choose between.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n52005005004",
+            "n52005005008"
+          ],
+          "choice": "filhos, with no gender setting",
+          "alternatives": [
+            "{{gender:filhos e filhas|filhos}}"
+          ],
+          "reason": "The English needs a setting to choose between \"children\" and \"sons\". Portuguese \"filhos\" already covers sons and daughters, as in \"filhos de Deus\" (Matthew 5:9), so there is nothing to choose.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n52005005004",
+            "n52005005008"
+          ],
+          "choice": "የብርሃን ልጆች ... የቀን ልጆች (children of light, of the day), with no gender span",
+          "alternatives": [
+            "{{gender:ልጆች|ወንዶች ልጆች}}, following the English {{gender:children|sons}}"
+          ],
+          "reason": "Amharic \"ልጆች\" already covers sons and daughters, and \"ወንዶች ልጆች\" would name males only, so there is no second wording for the setting to choose. This holds for the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -800,6 +956,16 @@
           "L": "Chúng ta không thuộc về ban đêm hay bóng tối.",
           "B": "Chúng ta không thuộc về ban đêm hay bóng tối.",
           "R": "Chúng ta không thuộc về ban đêm hay bóng tối."
+        },
+        "pt": {
+          "L": "Não somos da noite nem das trevas.",
+          "B": "Não pertencemos à noite nem às trevas.",
+          "R": "Não pertencemos à noite nem à escuridão."
+        },
+        "am": {
+          "L": "እኛ የሌሊት ወይም የጨለማ አይደለንም።",
+          "B": "እኛ የሌሊት ወይም የጨለማ ወገን አይደለንም።",
+          "R": "እኛ የሌሊት ወይም የጨለማ ሰዎች አይደለንም።"
         }
       },
       "decisions": [
@@ -899,6 +1065,16 @@
           "L": "Vậy, chúng ta đừng ngủ như những người khác, nhưng hãy tỉnh thức và tiết độ.",
           "B": "Vậy chúng ta đừng ngủ như những người khác, nhưng hãy tỉnh thức và giữ đầu óc sáng suốt.",
           "R": "Vậy chúng ta đừng giống như những người khác, là những người đang ngủ. Chúng ta phải luôn tỉnh thức và giữ cho tâm trí sáng suốt."
+        },
+        "pt": {
+          "L": "Assim, pois, não durmamos como os demais, mas vigiemos e sejamos sóbrios.",
+          "B": "Portanto, não devemos dormir como os outros, mas ficar acordados e manter a mente lúcida.",
+          "R": "Por isso, não devemos ser como as outras pessoas, que estão dormindo. Devemos ficar acordados e manter a mente clara."
+        },
+        "am": {
+          "L": "እንግዲያስ እንደ ሌሎቹ አንተኛ፤ ነገር ግን እንንቃ፤ ሳንሰክርም እንኑር።",
+          "B": "ስለዚህ እንደ ሌሎቹ ልንተኛ አይገባም፤ ነቅተን አእምሯችንን እንሰብስብ እንጂ።",
+          "R": "ስለዚህ እንደ ተኙት ሌሎች ሰዎች መሆን የለብንም። ነቅተን መጠበቅና አእምሯችንን ንጹሕ አድርገን መያዝ አለብን።"
         }
       },
       "decisions": [
@@ -1044,6 +1220,27 @@
           "reason": "The two verbs are alert and clear-headed (m2). \"Tiết độ\" is the church word for sober self-control, which Literal keeps; Balanced and Readable say what it means, since in verse 7 the picture of drunkenness follows.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005006011"
+          ],
+          "choice": "ሳንሰክር እንኑር (let us live not drunk, L); አእምሯችንን እንሰብስብ (let us keep our minds collected, B); አእምሯችንን ንጹሕ አድርገን (keeping our minds clear, R)",
+          "alternatives": [
+            "በመጠን እንኑር (let us live in moderation)"
+          ],
+          "reason": "The Greek verb is to be sober, set against drunkenness in the next verse; Literal keeps the picture, and Balanced and Readable give the sense of a clear, alert mind, as the meaning decision says. The verb is kept the same in verse 8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1101,6 +1298,16 @@
           "L": "Vì những người ngủ thì ngủ ban đêm, và những người say thì say ban đêm;",
           "B": "Người ngủ thì ngủ ban đêm, người say thì say ban đêm.",
           "R": "Người ta ngủ vào ban đêm, và người ta say rượu vào ban đêm."
+        },
+        "pt": {
+          "L": "Pois os que dormem dormem de noite, e os que se embriagam ficam embriagados de noite.",
+          "B": "Quem dorme dorme à noite, e quem bebe se embriaga à noite.",
+          "R": "É à noite que as pessoas dormem, e é à noite que elas ficam bêbadas."
+        },
+        "am": {
+          "L": "የሚተኙ በሌሊት ይተኛሉና፤ የሚሰክሩም በሌሊት ይሰክራሉ።",
+          "B": "የሚተኙ ሰዎች በሌሊት ይተኛሉ፤ ሰካራሞችም በሌሊት ይሰክራሉ።",
+          "R": "ሰዎች የሚተኙት በሌሊት ነው፤ የሚሰክሩትም በሌሊት ነው።"
         }
       },
       "decisions": [
@@ -1187,6 +1394,16 @@
           "L": "Nhưng chúng ta thuộc về ban ngày, hãy tiết độ, mặc áo giáp che ngực là đức tin và tình yêu thương, và [đội] mũ sắt là niềm hy vọng về sự cứu rỗi;",
           "B": "Nhưng chúng ta thuộc về ban ngày, vậy hãy giữ đầu óc sáng suốt, lấy đức tin và tình yêu thương làm áo giáp che ngực, và lấy niềm hy vọng về sự cứu rỗi làm mũ sắt.",
           "R": "Nhưng chúng ta thuộc về ban ngày, vì vậy chúng ta phải giữ cho tâm trí sáng suốt. Đức tin và tình yêu thương của chúng ta sẽ che chở chúng ta như áo giáp của người lính. Niềm hy vọng rằng Đức Chúa Trời sẽ cứu chúng ta sẽ che chở chúng ta như mũ sắt."
+        },
+        "pt": {
+          "L": "Mas nós, sendo do dia, sejamos sóbrios, tendo vestido [a] couraça da fé e do amor e, [como] capacete, [a] esperança da salvação.",
+          "B": "Mas nós pertencemos ao dia; por isso, mantenhamos a mente lúcida, tendo a fé e o amor como couraça e a esperança da salvação como capacete.",
+          "R": "Mas nós pertencemos ao dia, por isso devemos manter a mente clara. A nossa fé e o nosso amor vão nos proteger como a armadura de um soldado. A nossa esperança de que Deus vai nos salvar vai nos proteger como um capacete."
+        },
+        "am": {
+          "L": "እኛ ግን የቀን ስለ ሆንን የእምነትንና የፍቅርን ጥሩር፣ የመዳንንም ተስፋ እንደ ራስ ቁር ለብሰን ሳንሰክር እንኑር።",
+          "B": "እኛ ግን የቀን ወገን ስለ ሆንን እምነትንና ፍቅርን እንደ ጥሩር፣ የመዳንንም ተስፋ እንደ ራስ ቁር ለብሰን አእምሯችንን እንሰብስብ።",
+          "R": "እኛ ግን የቀን ሰዎች ነን፤ ስለዚህ አእምሯችንን ንጹሕ አድርገን መያዝ አለብን። እምነታችንና ፍቅራችን እንደ ወታደር ጥሩር ይጠብቁናል። እግዚአብሔር እንደሚያድነን ያለን ተስፋ እንደ ራስ ቁር ይጠብቀናል።"
         }
       },
       "decisions": [
@@ -1346,6 +1563,29 @@
           "reason": "The words of the Vietnamese Ephesians (6:14, 17) for the same pieces of God's armor (m1), so the two letters read alike.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005008007",
+            "n52005008012",
+            "n52005008014"
+          ],
+          "choice": "ጥሩር (breastplate), ራስ ቁር (helmet), መዳን (salvation)",
+          "alternatives": [
+            "ደኅንነት for salvation"
+          ],
+          "reason": "\"ጥሩር\" and \"ራስ ቁር\" are the plain words for a soldier's chest armour and helmet. Salvation is \"መዳን\", as in Romans, here and in verse 9.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1425,6 +1665,16 @@
           "L": "vì Đức Chúa Trời đã không định cho chúng ta chịu cơn thịnh nộ, nhưng được sự cứu rỗi qua Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}}, \\v 10 là Đấng đã chết vì chúng ta, để dù chúng ta thức hay ngủ, chúng ta đều được sống cùng với {{deity_pronoun:ngài|Ngài}}.",
           "B": "Vì Đức Chúa Trời đã không định cho chúng ta chịu cơn thịnh nộ. Ngài đã định cho chúng ta nhận được sự cứu rỗi qua Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}}, \\v 10 là Đấng đã chết vì chúng ta, để dù thức hay ngủ, chúng ta đều được sống cùng với {{deity_pronoun:ngài|Ngài}}.",
           "R": "Đức Chúa Trời đã không chọn chúng ta để bị cơn giận của {{deity_pronoun:ngài|Ngài}} trừng phạt. Ngài đã chọn chúng ta để được cứu qua Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}}. \\v 10 Đức Giê-xu đã chết vì chúng ta, để chúng ta được sống cùng với {{deity_pronoun:ngài|Ngài}}, dù khi {{deity_pronoun:ngài|Ngài}} đến chúng ta còn sống hay đã qua đời."
+        },
+        "pt": {
+          "L": "Porque Deus não nos destinou para a ira, mas para alcançarmos a salvação por meio do nosso Senhor Jesus {{christos:Cristo|Messias}}, \\v 10 que morreu por nós para que, quer estejamos acordados, quer dormindo, vivamos juntamente com {{deity_pronoun:ele|Ele}}.",
+          "B": "Pois Deus não nos destinou para a ira. Ele nos destinou para obtermos a salvação por meio do nosso Senhor Jesus {{christos:Cristo|o Messias}}, \\v 10 que morreu por nós para que, acordados ou dormindo, vivamos junto com {{deity_pronoun:ele|Ele}}.",
+          "R": "Deus não nos escolheu para sermos castigados pela {{deity_pronoun:sua|Sua}} ira. Ele nos escolheu para sermos salvos por meio do nosso Senhor Jesus {{christos:Cristo|o Messias}}. \\v 10 Jesus morreu por nós para que vivamos junto com {{deity_pronoun:ele|Ele}}, quer ainda estejamos vivos quando {{deity_pronoun:ele|Ele}} vier, quer já tenhamos morrido."
+        },
+        "am": {
+          "L": "እግዚአብሔር በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} በኩል መዳንን እንድናገኝ እንጂ ለቁጣ አልመደበንምና፤ \\v 10 እርሱም ብንነቃም ብንተኛም ከእርሱ ጋር በአንድነት በሕይወት እንድንኖር ስለ እኛ የሞተ ነው።",
+          "B": "እግዚአብሔር ለቁጣ አልመደበንም፤ ይልቁንም በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} በኩል መዳንን እንድናገኝ መደበን። \\v 10 እርሱ ነቅተንም ሆነ ተኝተን ከእርሱ ጋር በአንድነት እንድንኖር ስለ እኛ ሞተ።",
+          "R": "እግዚአብሔር የመረጠን በቁጣው እንድንቀጣ አይደለም። የመረጠን በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} በኩል እንድንድን ነው። \\v 10 ኢየሱስ ስለ እኛ ሞተ፤ ይህም እርሱ በሚመጣበት ጊዜ በሕይወት ብንኖርም ሆነ አስቀድመን ብንሞት ከእርሱ ጋር አብረን እንድንኖር ነው።"
         }
       },
       "decisions": [
@@ -1615,6 +1865,49 @@
           "reason": "Awake or asleep means alive or dead when the Lord comes (m3), not alert or dull as in verse 6. Literal and Balanced keep the picture of 4:13-15, and Readable says what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005010008",
+            "n52005010009"
+          ],
+          "choice": "dormindo",
+          "alternatives": [
+            "adormecidos",
+            "mortos"
+          ],
+          "reason": "The verb is the one used for careless sleep in verse 6, not the word for the dead in 4:13-15, so Literal and Balanced keep the ordinary \"dormindo\" and leave the sense (m3) to the note and to Readable, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005010007",
+            "n52005010009"
+          ],
+          "choice": "ብንነቃም ብንተኛም (whether we are awake or asleep, L); ነቅተንም ሆነ ተኝተን (B)",
+          "alternatives": [
+            "በሕይወት ብንኖርም ብንሞትም (whether we live or die)"
+          ],
+          "reason": "Paul uses the everyday words for waking and sleeping, not the euphemism of 4:13-15; the meaning decision reads them as alive or dead at the Lord's coming. Literal and Balanced keep the words, and Readable says what they mean, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1673,6 +1966,16 @@
           "L": "Vậy hãy khích lệ nhau và gây dựng cho nhau, như anh chị em vẫn đang làm.",
           "B": "Vậy hãy tiếp tục khích lệ nhau và gây dựng cho nhau, như anh chị em vẫn đang làm.",
           "R": "Vậy hãy khích lệ nhau và giúp nhau vững mạnh trong đức tin, như anh chị em đang làm."
+        },
+        "pt": {
+          "L": "Por isso, encorajem-se uns aos outros e edifiquem um ao outro, como também já fazem.",
+          "B": "Por isso, continuem encorajando uns aos outros e fortalecendo-se mutuamente, como já estão fazendo.",
+          "R": "Por isso, animem uns aos outros e ajudem uns aos outros a ficar fortes na fé, como já estão fazendo."
+        },
+        "am": {
+          "L": "ስለዚህ ደግሞ እንደምታደርጉት እርስ በርሳችሁ ተበረታቱ፤ አንዱም አንዱን ያንጽ።",
+          "B": "ስለዚህ አሁን እንደምታደርጉት እርስ በርሳችሁ መበረታታታችሁንና መተናነጻችሁን ቀጥሉ።",
+          "R": "ስለዚህ አሁን እንደምታደርጉት እርስ በርሳችሁ ተበረታቱ፤ በእምነትም እንድትጠነክሩ እርስ በርሳችሁ ተረዳዱ።"
         }
       },
       "decisions": [
@@ -1769,6 +2072,26 @@
           "reason": "As in the Vietnamese Ephesians (4:12): \"gây dựng\" is the church word for strengthening one another, which keeps the picture of a building going up (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005011005"
+          ],
+          "choice": "ያንጽ / መተናነጽ (build up)",
+          "alternatives": [
+            "ማጠንከር (strengthen)"
+          ],
+          "reason": "The Greek verb pictures a building going up, as the meaning decision says; \"ማነጽ\" keeps the picture, as in Romans 14:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1844,6 +2167,16 @@
           "L": "Thưa {{gender:anh chị em|anh em}}, chúng tôi xin anh chị em hãy nhìn nhận những người làm việc khó nhọc giữa anh chị em, là những người lãnh đạo anh chị em trong Chúa và khuyên răn anh chị em, \\v 13 và hãy hết sức kính trọng họ trong tình yêu thương vì công việc của họ.",
           "B": "Thưa {{gender:anh chị em|anh em}}, chúng tôi xin anh chị em hãy quý trọng những người làm việc vất vả giữa anh chị em, là những người lãnh đạo anh chị em trong Chúa và sửa dạy anh chị em. \\v 13 Hãy hết lòng kính trọng và yêu thương họ vì công việc họ làm.",
           "R": "Thưa {{gender:anh chị em|anh em}}, chúng tôi xin anh chị em hãy tôn trọng những người làm việc khó nhọc giữa anh chị em. Họ lãnh đạo anh chị em như những người thuộc về Chúa, và họ cảnh báo anh chị em khi anh chị em làm sai. \\v 13 Hãy hết lòng yêu thương và kính trọng họ vì công việc họ làm."
+        },
+        "pt": {
+          "L": "Mas pedimos a vocês, {{gender:irmãos e irmãs|irmãos}}, que reconheçam os que trabalham arduamente entre vocês e lideram vocês no Senhor e admoestam vocês, \\v 13 e que os tenham na mais alta consideração, com amor, por causa do trabalho deles.",
+          "B": "Pedimos a vocês, {{gender:irmãos e irmãs|irmãos}}, que reconheçam os que trabalham com dedicação entre vocês, que estão à frente de vocês no Senhor e os corrigem. \\v 13 Tenham por eles o mais alto respeito e amor, por causa do trabalho que fazem.",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, pedimos que vocês respeitem as pessoas que trabalham duro entre vocês. Elas lideram vocês como pessoas que pertencem ao Senhor, e chamam a atenção de vocês quando vocês fazem algo errado. \\v 13 Amem essas pessoas e deem muita honra a elas por causa do trabalho que elas fazem."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እንለምናችኋለን፤ በመካከላችሁ የሚደክሙትን፣ በጌታም የሚመሯችሁንና የሚገሥጿችሁን እንድታውቁ፣ \\v 13 ስለ ሥራቸውም ከመጠን በላይ በፍቅር እንድትቆጥሯቸው።",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በመካከላችሁ ተግተው የሚሠሩትን፣ በጌታ የሚመሯችሁንና የሚመክሯችሁን እንድታከብሩ እንለምናችኋለን። \\v 13 ስለሚሠሩትም ሥራ እጅግ አክብሯቸው፤ ውደዷቸውም።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በመካከላችሁ ተግተው የሚሠሩትን ሰዎች እንድታከብሩ እንለምናችኋለን። እነርሱ የጌታ እንደ ሆኑ ሰዎች ይመሯችኋል፤ ስትሳሳቱም ያስጠነቅቋችኋል። \\v 13 ስለሚሠሩት ሥራ ውደዷቸው፤ እጅግም አክብሯቸው።"
         }
       },
       "decisions": [
@@ -1973,6 +2306,27 @@
           "reason": "The leaders are described by what they do, not by an office title (m2), so Vietnamese says \"những người ... lãnh đạo\" and the plain \"họ\"; \"trưởng lão\" would bring in a later title.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n52005012004"
+          ],
+          "choice": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ",
+          "alternatives": [
+            "ወንድሞች ሆይ alone"
+          ],
+          "reason": "Paul's word for the believers he writes to includes the sisters, so the default names both and the alternative keeps the traditional \"ወንድሞች\". The vocative \"ሆይ\" stands outside the span because both options take it; a case prefix goes inside each option. This holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2023,6 +2377,16 @@
           "L": "Hãy sống hòa thuận với nhau.",
           "B": "Hãy giữ hòa khí với nhau.",
           "R": "Hãy sống bình an với nhau."
+        },
+        "pt": {
+          "L": "Estejam em paz entre vocês.",
+          "B": "Mantenham a paz entre vocês.",
+          "R": "Vivam em paz uns com os outros."
+        },
+        "am": {
+          "L": "በመካከላችሁ በሰላም ኑሩ።",
+          "B": "በመካከላችሁ ሰላምን ጠብቁ።",
+          "R": "እርስ በርሳችሁ በሰላም ኑሩ።"
         }
       },
       "decisions": [
@@ -2126,6 +2490,16 @@
           "L": "Thưa {{gender:anh chị em|anh em}}, chúng tôi cũng khuyên anh chị em: hãy khuyên răn những người vô trật tự, khích lệ những người ngã lòng, nâng đỡ những người yếu đuối, và hãy kiên nhẫn với mọi người.",
           "B": "Thưa {{gender:anh chị em|anh em}}, chúng tôi khuyên anh chị em: hãy sửa dạy những người sống không theo khuôn phép, khích lệ những người nản lòng, giúp đỡ những người yếu đuối, và hãy kiên nhẫn với mọi người.",
           "R": "Thưa {{gender:anh chị em|anh em}}, chúng tôi khích lệ anh chị em hãy cảnh báo những người không sống như họ phải sống. Hãy khích lệ những người sợ hãi. Hãy giúp đỡ những người yếu đuối. Hãy kiên nhẫn với mọi người."
+        },
+        "pt": {
+          "L": "E exortamos vocês, {{gender:irmãos e irmãs|irmãos}}: admoestem os desordeiros, encorajem os desanimados, amparem os fracos, sejam pacientes com todos.",
+          "B": "Exortamos vocês, {{gender:irmãos e irmãs|irmãos}}: corrijam os que andam fora da linha, encorajem os desanimados, apoiem os fracos e sejam pacientes com todos.",
+          "R": "Pedimos a vocês, {{gender:irmãos e irmãs|irmãos}}, que chamem a atenção das pessoas que não estão vivendo como deveriam. Encorajem os que estão com medo. Ajudem os que são fracos. Sejam pacientes com todos."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እንመክራችኋለን፤ ሥርዓት የሌላቸውን ገሥጹ፤ ልባቸው የደከመውን አጽናኑ፤ ደካሞችን ደግፉ፤ ሁሉንም ታገሡ።",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እንመክራችኋለን፤ ከሥርዓት የወጡትን አርሙ፤ ልባቸው የዛለውን አበረታቱ፤ ከደካሞች ጎን ቁሙ፤ ሰውን ሁሉ ታገሡ።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እንደሚገባ የማይኖሩትን ሰዎች እንድታስጠነቅቁ እናበረታታችኋለን። የሚፈሩትን አበረታቱ። ደካሞችን እርዱ። ሰውን ሁሉ ታገሡ።"
         }
       },
       "decisions": [
@@ -2280,6 +2654,26 @@
           "reason": "The meaning decision reads the word as those who are out of line, with idleness as a possible part of it footnoted (m1). \"Vô trật tự\" keeps the picture of breaking ranks; \"biếng nhác\" would choose the narrower sense.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005014007"
+          ],
+          "choice": "ሥርዓት የሌላቸውን (the disorderly, L); ከሥርዓት የወጡትን (those who have stepped out of line, B)",
+          "alternatives": [
+            "ሰነፎችን (the idle)"
+          ],
+          "reason": "The Greek word is of soldiers out of rank, people who do not keep to order, as the meaning decision says; \"idle\" narrows it to one way of being out of line.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2345,6 +2739,16 @@
           "L": "Hãy coi chừng, đừng ai lấy ác báo ác cho ai, nhưng hãy luôn luôn theo đuổi điều tốt cho nhau và cho mọi người.",
           "B": "Hãy coi chừng, đừng ai lấy điều ác trả điều ác. Hãy luôn luôn tìm làm điều tốt cho nhau và cho mọi người.",
           "R": "Hãy cẩn thận, đừng ai lấy điều ác để trả điều ác. Hãy luôn cố gắng làm điều tốt cho nhau và cho mọi người."
+        },
+        "pt": {
+          "L": "Vejam que ninguém retribua a alguém mal por mal, mas busquem sempre o bem, uns para com os outros e para com todos.",
+          "B": "Cuidem para que ninguém pague o mal com o mal. Busquem sempre o que é bom, uns para os outros e para todas as pessoas.",
+          "R": "Tomem cuidado para que ninguém pague o mal com o mal. Procurem sempre fazer o bem uns aos outros e a todas as pessoas."
+        },
+        "am": {
+          "L": "ማንም ለማንም በክፉ ፈንታ ክፉን እንዳይመልስ ተጠንቀቁ፤ ነገር ግን እርስ በርሳችሁና ለሁሉም ሁልጊዜ መልካሙን ተከተሉ።",
+          "B": "ማንም በክፉ ፈንታ ክፉ እንዳይመልስ ተጠንቀቁ። ለእርስ በርሳችሁም ሆነ ለሰው ሁሉ ሁልጊዜ መልካም የሆነውን ተከታተሉ።",
+          "R": "ማንም ክፉ ላደረገበት ክፉ እንዳይመልስ ተጠንቀቁ። ሁልጊዜ እርስ በርሳችሁና ለሰው ሁሉ መልካም ለማድረግ ሞክሩ።"
         }
       },
       "decisions": [
@@ -2432,6 +2836,16 @@
           "L": "Hãy vui mừng luôn luôn, \\v 17 cầu nguyện không ngừng, \\v 18 tạ ơn trong mọi sự; vì đây là ý muốn của Đức Chúa Trời trong {{christos:Đấng Christ|Đấng Mê-si-a}} Giê-xu cho anh chị em.",
           "B": "Hãy luôn luôn vui mừng. \\v 17 Đừng bao giờ ngừng cầu nguyện. \\v 18 Dù có chuyện gì xảy ra, hãy tạ ơn; đây là điều Đức Chúa Trời muốn cho anh chị em trong Đức Giê-xu {{christos:Christ|Mê-si-a}}.",
           "R": "Hãy luôn luôn vui mừng. \\v 17 Đừng bao giờ ngừng cầu nguyện. \\v 18 Hãy cảm tạ Đức Chúa Trời trong mọi hoàn cảnh. Đây là điều Đức Chúa Trời muốn cho anh chị em là những người thuộc về Đức Giê-xu {{christos:Christ|Mê-si-a}}."
+        },
+        "pt": {
+          "L": "Alegrem-se sempre, \\v 17 orem sem cessar, \\v 18 deem graças em tudo; pois esta é [a] vontade de Deus {{christos:em Cristo|no Messias}} Jesus para vocês.",
+          "B": "Estejam alegres em todo o tempo. \\v 17 Nunca deixem de orar. \\v 18 Aconteça o que acontecer, deem graças; é isto que Deus quer para vocês {{christos:em Cristo|no Messias}} Jesus.",
+          "R": "Estejam sempre alegres. \\v 17 Nunca parem de orar. \\v 18 Agradeçam a Deus em todas as situações. É isso que Deus quer para vocês, que pertencem {{christos:a Cristo|ao Messias}} Jesus."
+        },
+        "am": {
+          "L": "ሁልጊዜ ደስ ይበላችሁ፤ \\v 17 ሳታቋርጡ ጸልዩ፤ \\v 18 በሁሉ ነገር አመስግኑ፤ ይህ {{christos:በክርስቶስ|በመሲሕ}} ኢየሱስ ለእናንተ [ያለው] የእግዚአብሔር ፈቃድ ነውና።",
+          "B": "ሁልጊዜ ደስ ይበላችሁ። \\v 17 መጸለይን አታቋርጡ። \\v 18 በማንኛውም ሁኔታ አመስግኑ፤ {{christos:በክርስቶስ|በመሲሕ}} ኢየሱስ እግዚአብሔር ለእናንተ የሚፈልገው ይህ ነው።",
+          "R": "ሁልጊዜ ደስተኞች ሁኑ። \\v 17 መጸለይን አታቋርጡ። \\v 18 በማንኛውም ሁኔታ እግዚአብሔርን አመስግኑ። {{christos:የክርስቶስ|የመሲሑ}} ኢየሱስ ለሆናችሁት ለእናንተ እግዚአብሔር የሚፈልገው ይህ ነው።"
         }
       },
       "decisions": [
@@ -2588,6 +3002,28 @@
           "reason": "The words mean in every circumstance, not for everything (m1). \"Trong\" keeps that sense; \"về mọi sự\" would mean thanking God for the evil itself.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005018001",
+            "n52005018002"
+          ],
+          "choice": "በሁሉ ነገር (in everything, L); በማንኛውም ሁኔታ (in every situation, B, R)",
+          "alternatives": [
+            "ስለ ሁሉ ነገር (for everything)"
+          ],
+          "reason": "The meaning decision reads the phrase as thanks in every circumstance, not thanks for every event; \"ስለ\" would say the second.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2643,6 +3079,16 @@
           "L": "Đừng dập tắt Thánh Linh; \\v 20 đừng khinh dể các lời tiên tri;",
           "B": "Đừng dập tắt Thánh Linh; \\v 20 đừng xem thường lời tiên tri.",
           "R": "Đừng ngăn cản Đức Thánh Linh hành động giữa anh chị em. \\v 20 Đừng nghĩ rằng những sứ điệp Đức Chúa Trời ban qua người khác là vô giá trị."
+        },
+        "pt": {
+          "L": "Não apaguem o Espírito; \\v 20 não desprezem profecias.",
+          "B": "Não sufoquem o Espírito; \\v 20 não menosprezem a profecia.",
+          "R": "Não impeçam o Espírito Santo de agir entre vocês. \\v 20 Não pensem que as mensagens que Deus dá por meio de pessoas não têm valor."
+        },
+        "am": {
+          "L": "መንፈስን አታጥፉ፤ \\v 20 ትንቢቶችን አትናቁ።",
+          "B": "መንፈስን አታዳፍኑ፤ \\v 20 ትንቢትን አታቃልሉ።",
+          "R": "መንፈስ ቅዱስ በመካከላችሁ እንዳይሠራ አትከልክሉ። \\v 20 እግዚአብሔር በሰዎች በኩል የሚሰጠውን መልእክት የማይጠቅም አድርጋችሁ አትቁጠሩ።"
         }
       },
       "decisions": [
@@ -2757,6 +3203,26 @@
           "reason": "The verb is to put out, like a fire (m1); \"dập tắt\" keeps the picture of the Spirit as fire. Readable says what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005019004"
+          ],
+          "choice": "አታጥፉ (do not put out, L); አታዳፍኑ (do not smother, B)",
+          "alternatives": [
+            "አታሳዝኑ (do not grieve)"
+          ],
+          "reason": "The Greek verb is used for putting out a fire, as the meaning decision says; both Amharic verbs are used of fire, \"ማዳፈን\" for smothering embers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2816,6 +3282,16 @@
           "L": "Nhưng hãy thử nghiệm mọi sự; hãy giữ lấy điều tốt; \\v 22 hãy tránh mọi hình thức của điều ác.",
           "B": "Hãy thử nghiệm mọi sự; hãy giữ chặt điều tốt; \\v 22 hãy tránh xa điều ác dưới mọi hình thức.",
           "R": "Nhưng hãy thử nghiệm mọi điều xem có thật không. Hãy giữ lấy điều tốt. \\v 22 Hãy tránh xa mọi thứ điều ác."
+        },
+        "pt": {
+          "L": "Mas examinem tudo; retenham o que é bom; \\v 22 abstenham-se de toda forma de mal.",
+          "B": "Ponham tudo à prova; fiquem com o que é bom; \\v 22 afastem-se do mal em todas as suas formas.",
+          "R": "Mas examinem tudo para ver se é verdade. Fiquem com o que é bom. \\v 22 Fiquem longe de todo tipo de mal."
+        },
+        "am": {
+          "L": "ሁሉን ግን ፈትኑ፤ መልካሙን ያዙ፤ \\v 22 ከክፉ ነገር መልክ ሁሉ ራቁ።",
+          "B": "ሁሉን ፈትኑ፤ መልካም የሆነውን አጥብቃችሁ ያዙ፤ \\v 22 ከማንኛውም ዓይነት ክፉ ነገር ራቁ።",
+          "R": "ነገር ግን እውነት መሆኑን ለማወቅ ሁሉን ፈትኑ። መልካም የሆነውን ያዙ። \\v 22 ከማንኛውም ዓይነት ክፋት ራቁ።"
         }
       },
       "decisions": [
@@ -2948,6 +3424,16 @@
           "L": "Nguyện chính Đức Chúa Trời của sự bình an làm cho anh chị em nên thánh trọn vẹn, và nguyện toàn thể tâm linh, linh hồn và thân thể của anh chị em được giữ không chỗ trách được khi Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} đến.",
           "B": "Nguyện chính Đức Chúa Trời của sự bình an làm cho anh chị em nên thánh trong mọi phương diện, và nguyện tâm linh, linh hồn và thân thể của anh chị em được giữ trọn vẹn và không chỗ trách được khi Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} đến.",
           "R": "Chúng tôi cầu xin Đức Chúa Trời, Đấng ban bình an cho chúng ta, làm cho anh chị em nên thánh trong mọi phương diện. Chúng tôi cầu xin {{deity_pronoun:ngài|Ngài}} gìn giữ trọn con người anh chị em, cả tâm linh, linh hồn và thân thể, không có lỗi gì cho đến khi Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} trở lại."
+        },
+        "pt": {
+          "L": "E que o Deus da paz, {{deity_pronoun:ele mesmo|Ele mesmo}}, santifique vocês completamente, e que o espírito e a alma e o corpo de vocês, inteiros, sejam conservados irrepreensíveis na vinda do nosso Senhor Jesus {{christos:Cristo|Messias}}.",
+          "B": "Que o Deus da paz, {{deity_pronoun:ele mesmo|Ele mesmo}}, santifique vocês por inteiro, e que o espírito, a alma e o corpo de vocês sejam conservados íntegros e sem culpa na vinda do nosso Senhor Jesus {{christos:Cristo|o Messias}}.",
+          "R": "Oramos para que Deus, que nos dá paz, torne vocês santos em tudo. Oramos para que {{deity_pronoun:ele|Ele}} guarde vocês por inteiro, o espírito, a alma e o corpo de vocês, sem culpa até que o nosso Senhor Jesus {{christos:Cristo|o Messias}} volte."
+        },
+        "am": {
+          "L": "የሰላም አምላክ ራሱ ፈጽሞ ይቀድሳችሁ፤ መንፈሳችሁ፣ ነፍሳችሁና ሰውነታችሁም ሁሉ በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} መምጣት ያለ ነቀፋ ሙሉ ሆነው ይጠበቁ።",
+          "B": "የሰላም አምላክ ራሱ በሁለንተናችሁ ይቀድሳችሁ፤ መንፈሳችሁ፣ ነፍሳችሁና ሰውነታችሁም በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} መምጣት ሙሉና ያለ ነቀፋ ሆነው ይጠበቁ።",
+          "R": "ሰላምን የሚሰጠን እግዚአብሔር በሁሉ ነገር ቅዱሳን እንዲያደርጋችሁ እንጸልያለን። ጌታችን ኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ተመልሶ እስኪመጣ ድረስ መንፈሳችሁን፣ ነፍሳችሁንና ሰውነታችሁን፣ ሁለንተናችሁን ያለ ነቀፋ እንዲጠብቅ እንጸልያለን።"
         }
       },
       "decisions": [
@@ -3197,6 +3683,51 @@
           "reason": "As in 3:11, Vietnamese stresses \"God himself\" with \"chính\" before the noun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005023004",
+            "n52005023006"
+          ],
+          "choice": "የሰላም አምላክ (the God of peace, L, B); ሰላምን የሚሰጠን እግዚአብሔር (God, who gives us peace, R)",
+          "alternatives": [
+            "የሰላም እግዚአብሔር"
+          ],
+          "reason": "\"God\" with a genitive that describes him takes \"አምላክ\", as in Romans 15:33 and 16:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005023014",
+            "n52005023017",
+            "n52005023020"
+          ],
+          "choice": "መንፈስ, ነፍስ, ሰውነት (spirit, soul, body)",
+          "alternatives": [
+            "ሥጋ for body"
+          ],
+          "reason": "The three words name the whole person, as the meaning decision says; \"ሰውነት\" is the body, kept apart from \"ሥጋ\" (flesh), as in Romans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3251,6 +3782,16 @@
           "L": "Đấng gọi anh chị em là thành tín, và {{deity_pronoun:ngài|Ngài}} cũng sẽ làm [điều đó].",
           "B": "Đức Chúa Trời, Đấng gọi anh chị em, là Đấng đáng tin cậy, và {{deity_pronoun:ngài|Ngài}} sẽ làm điều đó.",
           "R": "Đức Chúa Trời, Đấng đã gọi anh chị em, là thành tín. Ngài sẽ làm những điều ấy cho anh chị em."
+        },
+        "pt": {
+          "L": "Fiel [é] aquele que os chama, o qual também [o] fará.",
+          "B": "O Deus que chama vocês é fiel, e {{deity_pronoun:ele|Ele}} fará isso.",
+          "R": "Deus, que chama vocês, é fiel. Ele vai fazer essas coisas por vocês."
+        },
+        "am": {
+          "L": "የሚጠራችሁ ታማኝ [ነው]፤ እርሱም ደግሞ ያደርገዋል።",
+          "B": "የሚጠራችሁ እግዚአብሔር ታማኝ ነው፤ እርሱም ይህን ያደርገዋል።",
+          "R": "የሚጠራችሁ እግዚአብሔር ታማኝ ነው። እነዚህን ነገሮች ለእናንተ ያደርግላችኋል።"
         }
       },
       "decisions": [
@@ -3331,6 +3872,25 @@
           "reason": "Said of God, the Vietnamese Romans uses \"thành tín\" for his faithfulness to his word (3:3); \"trung tín\" is kept for faithful people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005024001"
+          ],
+          "choice": "é fiel",
+          "alternatives": [
+            "é digno de confiança"
+          ],
+          "reason": "The English Balanced says \"can be trusted\" because \"faithful\" can sound churchy in English; Portuguese \"fiel\" is the everyday word for someone who keeps his word, so Balanced keeps it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3382,6 +3942,16 @@
           "L": "Thưa {{gender:anh chị em|anh em}}, hãy cầu nguyện cho chúng tôi.",
           "B": "Thưa {{gender:anh chị em|anh em}}, xin hãy cầu nguyện cho chúng tôi.",
           "R": "Thưa {{gender:anh chị em|anh em}}, xin hãy cầu nguyện cho chúng tôi."
+        },
+        "pt": {
+          "L": "{{gender:Irmãos e irmãs|Irmãos}}, orem por nós.",
+          "B": "{{gender:Irmãos e irmãs|Irmãos}}, orem por nós.",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, orem por nós."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ እኛ ጸልዩ።",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ እኛ ጸልዩ።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ እኛ ጸልዩ።"
         }
       },
       "decisions": [
@@ -3475,6 +4045,16 @@
           "L": "Hãy chào tất cả các {{gender:anh chị em|anh em}} bằng cái hôn thánh.",
           "B": "Hãy chào tất cả các {{gender:anh chị em|anh em}} bằng cái hôn thánh.",
           "R": "Hãy chào tất cả các tín hữu bằng một cái hôn, như những người trong gia đình của Đức Chúa Trời."
+        },
+        "pt": {
+          "L": "Saúdem todos os {{gender:irmãos e irmãs|irmãos}} com um beijo santo.",
+          "B": "Saúdem todos os {{gender:irmãos e irmãs|irmãos}} com um beijo santo.",
+          "R": "Cumprimentem todos os irmãos na fé com um beijo, como faz a família de Deus."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችንና እኅቶችን|ወንድሞችን}} ሁሉ በቅዱስ መሳሳም ሰላም በሉ።",
+          "B": "{{gender:ወንድሞችንና እኅቶችን|ወንድሞችን}} ሁሉ በቅዱስ መሳሳም ሰላም በሉልኝ።",
+          "R": "የእግዚአብሔር ቤተሰብ እንደሚያደርገው አማኞችን ሁሉ በመሳም ሰላም በሉልኝ።"
         }
       },
       "decisions": [
@@ -3634,6 +4214,16 @@
           "L": "Tôi nhân danh Chúa mà nghiêm khắc truyền cho anh chị em [rằng] thư này phải được đọc cho tất cả các {{gender:anh chị em|anh em}}.",
           "B": "Nhân danh Chúa, tôi nghiêm khắc truyền cho anh chị em: hãy đọc thư này cho tất cả các {{gender:anh chị em|anh em}}.",
           "R": "Nhân danh Chúa, tôi truyền cho anh chị em: hãy đọc thư này cho tất cả các tín hữu."
+        },
+        "pt": {
+          "L": "Eu os ponho sob juramento pelo Senhor [para que] a carta seja lida a todos os {{gender:irmãos e irmãs|irmãos}}.",
+          "B": "Pelo Senhor, eu ordeno solenemente a vocês: façam com que esta carta seja lida a todos os {{gender:irmãos e irmãs|irmãos}}.",
+          "R": "Eu ordeno a vocês, em nome do Senhor: leiam esta carta para todos os irmãos na fé."
+        },
+        "am": {
+          "L": "መልእክቱ {{gender:ለወንድሞችና ለእኅቶች|ለወንድሞች}} ሁሉ እንዲነበብ በጌታ አምላችኋለሁ።",
+          "B": "በጌታ አጥብቄ አምላችኋለሁ፤ ይህን መልእክት {{gender:ለወንድሞችና ለእኅቶች|ለወንድሞች}} ሁሉ አንብቡላቸው።",
+          "R": "በጌታ ስም አዝዛችኋለሁ፤ ይህን ደብዳቤ ለአማኞች ሁሉ አንብቡላቸው።"
         }
       },
       "decisions": [
@@ -3747,6 +4337,27 @@
           "reason": "The verb puts the readers under oath (meaning decision); \"conjurar\" is the Spanish verb for charging someone by a solemn oath.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n52005027007"
+          ],
+          "choice": "መልእክት (letter, epistle, L, B); ደብዳቤ (letter, R)",
+          "alternatives": [
+            "ደብዳቤ at every level"
+          ],
+          "reason": "\"መልእክት\" is the word Amharic readers know for an apostle's letter; Readable uses the everyday \"ደብዳቤ\", as in its opening of the letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3803,6 +4414,16 @@
           "L": "Ân điển của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} [ở] với anh chị em.",
           "B": "Nguyện ân điển của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} ở cùng anh chị em.",
           "R": "Cầu xin ân điển của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} ở cùng anh chị em."
+        },
+        "pt": {
+          "L": "A graça do nosso Senhor Jesus {{christos:Cristo|Messias}} [esteja] com vocês.",
+          "B": "Que a graça do nosso Senhor Jesus {{christos:Cristo|o Messias}} esteja com vocês.",
+          "R": "Que a graça do nosso Senhor Jesus {{christos:Cristo|o Messias}} esteja com vocês."
+        },
+        "am": {
+          "L": "የጌታችን የኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ጸጋ ከእናንተ ጋር [ይሁን]።",
+          "B": "የጌታችን የኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ጸጋ ከእናንተ ጋር ይሁን።",
+          "R": "የጌታችን የኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ጸጋ ከእናንተ ጋር ይሁን።"
         }
       },
       "decisions": [

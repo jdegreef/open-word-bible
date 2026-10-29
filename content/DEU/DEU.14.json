@@ -60,6 +60,11 @@
           "L": "너희는 너희 하나님 {{divine_name:주|야훼}}의 자녀이다. 너희는 죽은 사람 때문에 너희 몸을 베지 말고, 너희 눈 사이를 밀어 대머리가 되게 하지 말아라.",
           "B": "너희는 너희 하나님 {{divine_name:주|야훼}}의 자녀이다. 죽은 사람을 애도한다고 몸에 상처를 내거나 이마 위의 머리를 밀지 말아라.",
           "R": "여러분은 여러분의 하나님 {{divine_name:주|야훼}}의 자녀입니다. 그러니 누가 죽었을 때 슬픔을 나타내려고 몸에 상처를 내거나 앞머리를 밀지 마십시오."
+        },
+        "pt": {
+          "L": "Vocês [são] filhos {{divine_name:do SENHOR|de Javé}}, o Deus de vocês. Não se cortarão, e não farão uma parte calva entre os olhos de vocês por um morto.",
+          "B": "Vocês são filhos {{divine_name:do SENHOR|de Javé}}, o Deus de vocês. Não farão cortes no corpo nem rasparão a frente da cabeça em luto por um morto.",
+          "R": "Vocês são os filhos {{divine_name:do SENHOR|de Javé}}, o Deus de vocês. Por isso, quando alguém morrer, não cortem o corpo nem raspem a frente da cabeça para mostrar a sua tristeza."
         }
       },
       "decisions": [
@@ -178,6 +183,27 @@
           "reason": "The same two wordings as for \"your sons\" (11:2): \"con cái\" by default, \"con trai\" as the traditional alternative.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050140010011"
+          ],
+          "choice": "filhos, with no gender setting",
+          "alternatives": [
+            "{{gender:filhos e filhas|filhos}}"
+          ],
+          "reason": "The English puts \"sons\" under the gender setting because it is said of the whole people (m1). Portuguese \"filhos\" already includes daughters, so there is no second wording to offer, as with \"os filhos de Israel\" (docs/pentateuch-portuguese-terms.md). Readable says \"para mostrar a sua tristeza\", the wording of Leviticus 19:28 for the same rite.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -254,6 +280,11 @@
           "L": "너는 네 하나님 {{divine_name:주|야훼}}께 거룩한 백성이기 때문이다. {{divine_name:주|야훼}}께서 땅 위에 있는 모든 백성 가운데서 너를 택하셔서 그분께 특별한 소유의 백성이 되게 하셨다.",
           "B": "너희는 너희 하나님 {{divine_name:주|야훼}}께 거룩하게 구별된 백성이다. {{divine_name:주|야훼}}께서 땅 위의 모든 민족 가운데서 너희를 택하셔서 그분의 소중한 보물로 삼으셨다.",
           "R": "여러분은 여러분의 하나님 {{divine_name:주|야훼}}께 속한 거룩한 백성입니다. {{divine_name:주|야훼}}께서 세상의 모든 민족 가운데서 여러분을 택하셔서 그분의 특별한 보물로 삼으셨습니다."
+        },
+        "pt": {
+          "L": "Porque tu [és] um povo santo {{divine_name:para o SENHOR|para Javé}}, o teu Deus, e {{divine_name:o SENHOR|Javé}} te escolheu para seres um povo de propriedade especial para {{deity_pronoun:ele|Ele}}, dentre todos os povos que [há] sobre a face da terra.",
+          "B": "Porque tu és um povo separado como santo {{divine_name:para o SENHOR|para Javé}}, o teu Deus. Dentre todos os povos que há sobre a face da terra, {{divine_name:o SENHOR|Javé}} te escolheu para seres o {{deity_pronoun:seu|Seu}} tesouro especial.",
+          "R": "Tu pertences {{divine_name:ao SENHOR|a Javé}}, o teu Deus, como um povo santo. {{divine_name:O SENHOR|Javé}} te escolheu dentre todas as nações da terra para seres o {{deity_pronoun:seu|Seu}} tesouro especial."
         }
       },
       "decisions": [
@@ -338,6 +369,54 @@
           "reason": "As in Exodus 19:5, Balanced and Readable say \"own special treasure\" to bring out both ownership and value; Literal has \"special possession\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o050140020041",
+            "o050140020062",
+            "o050140020073"
+          ],
+          "choice": "tu (Hebrew singular), vocês (Hebrew plural): word by word at Literal, sentence by sentence at Balanced and Readable",
+          "alternatives": [
+            "vocês throughout",
+            "tu throughout"
+          ],
+          "reason": "As 4:1 and 6:1 set it for the whole book. Moses speaks to Israel now in the plural (verse 1) and now in the singular, as one people (m4). Literal follows the Hebrew number word by word, \"tu\" or \"vocês\". Balanced and Readable follow it sentence by sentence, so that no sentence mixes \"tu\" and \"vocês\", as Leviticus 19:2 does. With \"tu\" the formula is \"{{divine_name:o SENHOR|Javé}}, o teu Deus\"; with \"vocês\", \"o Deus de vocês\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140020121",
+            "o050140020122",
+            "o050140020131"
+          ],
+          "choice": "um povo de propriedade especial (L); o seu tesouro especial (B, R)",
+          "alternatives": [
+            "o seu povo particular",
+            "a sua possessão"
+          ],
+          "reason": "As Exodus 19:5 words the same term (m3): \"propriedade especial\" at Literal, \"tesouro especial\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -389,6 +468,11 @@
           "L": "너는 가증한 것은 아무것도 먹지 말아라.",
           "B": "가증한 것은 아무것도 먹지 말아라.",
           "R": "역겨운 것은 아무것도 먹지 마십시오."
+        },
+        "pt": {
+          "L": "Não comerás nenhuma abominação.",
+          "B": "Não comerás nada que seja abominável.",
+          "R": "Não comas nada que seja abominável."
         }
       },
       "decisions": [
@@ -437,6 +521,28 @@
           "choice": "anything detestable / anything disgusting",
           "alternatives": [],
           "reason": "Literal keeps \"abomination\". Balanced says \"detestable\" and Readable \"disgusting\", the wording Leviticus 18:22 uses for this word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140030041"
+          ],
+          "choice": "abominação (L); abominável (B, R)",
+          "alternatives": [
+            "detestável (B)",
+            "repugnante (R)"
+          ],
+          "reason": "For the whole book. This is the word of Leviticus 18:22 and of the nations' worship (m1), and Leviticus sets it as \"abominação\" (L) and \"abominável\" (B, R). The English Balanced and Readable say \"detestable\" and \"disgusting\", but Portuguese keeps \"detestável\" and \"repugnante\" for the different word Leviticus 11 uses for forbidden creatures, so that the two words stay apart, as the meaning note asks.",
           "uncertain": false,
           "footnote": false
         }
@@ -497,6 +603,11 @@
           "L": "너희가 먹을 수 있는 짐승은 이러하다. 소와 양 가운데 하나와 염소 가운데 하나와,",
           "B": "너희가 먹어도 되는 짐승은 이러하다. 소와 양과 염소,",
           "R": "여러분이 먹어도 되는 짐승은 이러합니다. 소, 양, 염소,"
+        },
+        "pt": {
+          "L": "Este [é] o animal que vocês podem comer: o boi, um [animal] das ovelhas e um das cabras,",
+          "B": "Estes são os animais que vocês podem comer: o boi, a ovelha e a cabra,",
+          "R": "Estes são os animais que vocês podem comer: bois, ovelhas, cabras,"
         }
       },
       "decisions": [
@@ -636,6 +747,11 @@
           "L": "사슴과 가젤과 노루와 들염소와 산염소와 영양과 산양이다.",
           "B": "사슴, 가젤, 노루, 들염소, 산염소, 영양, 산양이다.",
           "R": "사슴, 가젤, 노루, 들염소, 산염소, 영양, 산양입니다."
+        },
+        "pt": {
+          "L": "o veado, e a gazela, e o corço, e a cabra selvagem, e o íbex, e o antílope, e o carneiro selvagem.",
+          "B": "o veado, a gazela, o corço, a cabra selvagem, o íbex, o antílope e o carneiro selvagem.",
+          "R": "veados, gazelas, corços, cabras selvagens, íbex, antílopes e carneiros selvagens."
         }
       },
       "decisions": [
@@ -745,6 +861,35 @@
           "reason": "Probable identifications, as in the English; \"linh dương sừng dài\" keeps the antelope apart from the gazelle (\"linh dương\").",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140050011",
+            "o050140050022",
+            "o050140050032",
+            "o050140050042",
+            "o050140050052",
+            "o050140050062",
+            "o050140050072"
+          ],
+          "choice": "o veado, a gazela, o corço, a cabra selvagem, o íbex, o antílope, o carneiro selvagem",
+          "alternatives": [
+            "a corça",
+            "a cabra-montês",
+            "o muflão"
+          ],
+          "reason": "Several names are probable identifications only (m2). Portuguese follows the English one for one with the usual Portuguese name of each animal: \"corço\" for the roe deer, \"íbex\" for the ibex, \"cabra selvagem\" and \"carneiro selvagem\" for the wild goat and the mountain sheep, in plain words rather than zoologists' names such as \"cabra-montês\" or \"muflão\", which would claim more certainty than the Hebrew allows.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -809,6 +954,11 @@
           "L": "그리고 짐승 가운데서 굽이 갈라지고 굽이 쪼개져 두 쪽으로 틈이 나 있으며 되새김질하는 것은 모두 너희가 먹을 수 있다.",
           "B": "되새김질도 하고 굽도 완전히 두 쪽으로 갈라진 짐승은 무엇이든 먹어도 된다.",
           "R": "되새김질을 하면서 굽도 두 쪽으로 갈라진 짐승은 무엇이든 먹어도 됩니다."
+        },
+        "pt": {
+          "L": "E todo animal que divide o casco e tem o casco fendido em dois cascos, [e] rumina, entre os animais, esse vocês podem comer.",
+          "B": "Vocês podem comer todo animal que rumina e tem o casco totalmente dividido em dois.",
+          "R": "Vocês podem comer todo animal que rumina, isto é, que mastiga de novo a comida, e que também tem o casco dividido em duas partes."
         }
       },
       "decisions": [
@@ -882,6 +1032,28 @@
           "choice": "Wording of the food laws as Leviticus 11 in Korean (\"되새김질\", \"굽이 갈라지다\", \"부정하다\", the animal and bird names)",
           "alternatives": [],
           "reason": "Deuteronomy 14:3-20 repeats Leviticus 11, so the Korean repeats the words chosen there; only the address to the people differs (Moses' \"너희\" / \"여러분\" instead of God's commands).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140060091",
+            "o050140060101"
+          ],
+          "choice": "rumina (every level); R adds \"isto é, que mastiga de novo a comida\"",
+          "alternatives": [
+            "traz à boca o que comeu (L)"
+          ],
+          "reason": "For the whole chapter, as Leviticus 11:3: Portuguese has one verb, \"ruminar\", for bringing up the cud and chewing it again (m2), so Literal does not need the English Literal's \"brings up\". Readable explains the word once.",
           "uncertain": false,
           "footnote": false
         }
@@ -970,6 +1142,11 @@
           "L": "그러나 되새김질하는 것들 가운데서나 굽이 갈라지고 쪼개진 것들 가운데서 이것들은 너희가 먹지 말아라. 낙타와 산토끼와 바위너구리이다. 그것들은 되새김질은 하지만 굽이 갈라지지 않았으니, 그것들은 너희에게 부정하다.",
           "B": "그러나 되새김질을 하거나 굽이 갈라졌더라도 다음 짐승들은 먹지 말아라. 낙타와 산토끼와 바위너구리이다. 그것들은 되새김질은 하지만 굽이 갈라지지 않았으므로 너희에게 부정한 것이다.",
           "R": "그러나 이 두 가지 가운데 한 가지만 있는 짐승은 먹으면 안 됩니다. 낙타와 산토끼와 바위너구리는 되새김질은 하지만 굽이 갈라지지 않았습니다. 그러므로 그것들은 여러분에게 부정합니다."
+        },
+        "pt": {
+          "L": "Contudo, estes vocês não comerão, dentre os que ruminam e dentre os que dividem o casco fendido: o camelo, e a lebre, e o hírax, porque eles ruminam, mas o casco não dividem; eles [são] impuros para vocês.",
+          "B": "Mas vocês não comerão estes, ainda que ruminem ou tenham o casco dividido: o camelo, a lebre e o hírax. Eles ruminam, mas não têm o casco dividido; por isso são impuros para vocês.",
+          "R": "Mas não comam os animais que têm só um desses dois sinais. O camelo, a lebre e o hírax, um pequeno animal que vive entre as rochas, ruminam, mas não têm o casco dividido. Por isso eles são impuros para vocês."
         }
       },
       "decisions": [
@@ -1041,6 +1218,30 @@
           "choice": "unclean for you",
           "alternatives": [],
           "reason": "As in Leviticus 11:4, \"to you\" means as far as you are concerned, for your eating, and Balanced and Readable say \"for you\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140070161",
+            "o050140070162"
+          ],
+          "choice": "o hírax; R adds \"um pequeno animal que vive entre as rochas\"",
+          "alternatives": [
+            "o coelho",
+            "o arganaz",
+            "o damão"
+          ],
+          "reason": "As Leviticus 11:5: the rock hyrax (m2) has no traditional Portuguese name that readers know, so all levels use its name, \"hírax\", and Readable says what it is.",
           "uncertain": false,
           "footnote": false
         }
@@ -1116,6 +1317,11 @@
           "L": "그리고 돼지는 굽이 갈라졌으나 되새김질은 하지 않으니, 그것은 너희에게 부정하다. 너희는 그것들의 고기를 먹지 말고, 그것들의 주검을 만지지 말아라.",
           "B": "돼지는 굽이 갈라졌지만 되새김질은 하지 않으므로 너희에게 부정한 것이다. 이런 짐승들의 고기는 먹지 말고, 죽은 것은 만지지도 말아라.",
           "R": "돼지는 굽이 갈라졌지만 되새김질을 하지 않습니다. 그러므로 여러분에게 부정합니다. 이런 짐승들의 고기는 먹으면 안 됩니다. 그것들이 죽은 뒤에 그 몸을 만져도 안 됩니다."
+        },
+        "pt": {
+          "L": "E o porco, porque ele divide o casco, mas não [rumina]; ele [é] impuro para vocês. Da carne deles vocês não comerão, e na carcaça deles não tocarão.",
+          "B": "O porco tem o casco dividido, mas não rumina; ele é impuro para vocês. Não comerão nada da carne deles e não tocarão neles quando estiverem mortos.",
+          "R": "O porco tem o casco dividido, mas não rumina. Por isso ele é impuro para vocês. Não comam a carne de nenhum desses animais. Não toquem no corpo deles depois que morrerem."
         }
       },
       "decisions": [
@@ -1250,6 +1456,11 @@
           "L": "물속에 있는 모든 것 가운데서 너희가 먹을 수 있는 것은 이러하다. 지느러미와 비늘이 있는 것은 모두 너희가 먹을 수 있다.",
           "B": "물에 사는 것 가운데서 지느러미와 비늘이 있는 것은 무엇이든 먹어도 된다.",
           "R": "물에 사는 동물 가운데서 지느러미와 비늘이 있는 것은 먹어도 됩니다."
+        },
+        "pt": {
+          "L": "Isto vocês podem comer de tudo o que [há] nas águas: tudo o que tem barbatana e escama vocês podem comer.",
+          "B": "Dos animais que vivem na água, vocês podem comer todos os que têm barbatanas e escamas.",
+          "R": "Vocês podem comer os animais da água que têm barbatanas e escamas."
         }
       },
       "decisions": [
@@ -1329,6 +1540,11 @@
           "L": "그리고 지느러미와 비늘이 없는 것은 모두 너희가 먹지 말아라. 그것은 너희에게 부정하다.",
           "B": "그러나 지느러미와 비늘이 없는 것은 무엇이든 먹지 말아라. 그것은 너희에게 부정한 것이다.",
           "R": "그러나 지느러미와 비늘이 없는 물속 동물은 먹지 마십시오. 그것들은 여러분에게 부정합니다."
+        },
+        "pt": {
+          "L": "E tudo o que não tem barbatana e escama vocês não comerão; ele [é] impuro para vocês.",
+          "B": "Mas não comerão nada que não tenha barbatanas e escamas; é impuro para vocês.",
+          "R": "Mas não comam os animais da água que não têm barbatanas e escamas. Eles são impuros para vocês."
         }
       },
       "decisions": [
@@ -1416,6 +1632,11 @@
           "L": "정결한 새는 모두 너희가 먹을 수 있다.",
           "B": "정결한 새는 무엇이든 먹어도 된다.",
           "R": "정결한 새는 무엇이든 먹어도 됩니다."
+        },
+        "pt": {
+          "L": "Toda ave pura vocês podem comer.",
+          "B": "Vocês podem comer qualquer ave pura.",
+          "R": "Vocês podem comer qualquer ave que seja pura."
         }
       },
       "decisions": [
@@ -1495,6 +1716,11 @@
           "L": "그러나 그것들 가운데서 너희가 먹지 말아야 할 것은 이러하다. 독수리와 수염수리와 검은독수리와,",
           "B": "그러나 다음 새들은 먹지 말아라. 독수리, 수염수리, 검은독수리,",
           "R": "그러나 다음 새들은 먹지 마십시오. 독수리, 수염수리, 검은독수리,"
+        },
+        "pt": {
+          "L": "Mas isto [é o] que vocês não comerão delas: a águia, e o abutre-barbudo, e o abutre-preto,",
+          "B": "Mas estas são as aves que vocês não comerão: a águia, o abutre-barbudo, o abutre-preto,",
+          "R": "Mas não comam estas aves: a águia, o abutre-barbudo, o abutre-preto,"
         }
       },
       "decisions": [
@@ -1544,6 +1770,30 @@
           "choice": "the list runs on to verse 18",
           "alternatives": [],
           "reason": "The list of birds is one sentence from verse 12 to verse 18, so verses 12-17 end with a comma, as in Leviticus 11:13-18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140120062",
+            "o050140120073",
+            "o050140120083"
+          ],
+          "choice": "the birds of verses 12-18 by the Portuguese names of Leviticus 11:13-19",
+          "alternatives": [
+            "other bird names",
+            "transliterated Hebrew names"
+          ],
+          "reason": "Many of these names are uncertain (m1). Portuguese gives each bird the name Leviticus 11:13-19 gives the bird the English names: \"a águia\", \"o abutre-barbudo\", \"o abutre-preto\", \"o milhafre-real\", \"o milhafre-preto\", \"o corvo\", \"o avestruz\", \"a corujinha-do-mato\", \"a gaivota\", \"o falcão\", \"o mocho-galego\", \"o bufo-real\", \"a coruja-das-torres\", \"a coruja-do-deserto\", \"o abutre-do-egito\", \"o corvo-marinho\", \"a cegonha\", \"a garça\", \"a poupa\", \"o morcego\". Bird names are lowercase, hyphenated as Portuguese writes species.",
           "uncertain": false,
           "footnote": false
         }
@@ -1606,6 +1856,11 @@
           "L": "붉은솔개와 검은솔개와 그 종류대로의 솔개와,",
           "B": "붉은솔개, 검은솔개, 여러 종류의 솔개,",
           "R": "붉은솔개, 검은솔개, 그 밖의 모든 종류의 솔개,"
+        },
+        "pt": {
+          "L": "e o milhafre-real, e o milhafre-preto, e o milhafre conforme a sua espécie,",
+          "B": "o milhafre-real, o milhafre-preto, as várias espécies de milhafre,",
+          "R": "o milhafre-real, o milhafre-preto, todos os outros tipos de milhafre,"
         }
       },
       "decisions": [
@@ -1672,6 +1927,33 @@
           "reason": "Readable adds \"other\" so that the third name does not seem to repeat the first two.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140130013",
+            "o050140130032",
+            "o050140130043",
+            "o050140130051",
+            "o050140130052",
+            "o050140130053"
+          ],
+          "choice": "o milhafre-real, o milhafre-preto, o milhafre; conforme a sua espécie (L), as várias espécies de (B), todos os outros tipos de (R)",
+          "alternatives": [
+            "o gavião",
+            "o açor"
+          ],
+          "reason": "All three are probably kites (m2), and \"milhafre\" is the Portuguese name for the kites, as in Leviticus 11:14; the third name, which has no species, is \"o milhafre\". \"After its kind\" is worded as Leviticus 11:14-19 words it at each level; Readable adds \"outros\" as the English Readable adds \"other\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1726,6 +2008,11 @@
           "L": "그 종류대로의 모든 까마귀와,",
           "B": "여러 종류의 까마귀,",
           "R": "모든 종류의 큰까마귀와 까마귀,"
+        },
+        "pt": {
+          "L": "e todo corvo conforme a sua espécie,",
+          "B": "todas as espécies de corvo,",
+          "R": "todo tipo de corvo e de gralha,"
         }
       },
       "decisions": [
@@ -1828,6 +2115,11 @@
           "L": "타조와 올빼미와 갈매기와 그 종류대로의 매와,",
           "B": "타조, 올빼미, 갈매기, 여러 종류의 매,",
           "R": "타조, 올빼미, 바다갈매기, 모든 종류의 매,"
+        },
+        "pt": {
+          "L": "e o avestruz, e a corujinha-do-mato, e a gaivota, e o falcão conforme a sua espécie,",
+          "B": "o avestruz, a corujinha-do-mato, a gaivota, as várias espécies de falcão,",
+          "R": "o avestruz, a corujinha-do-mato, a gaivota, todo tipo de falcão,"
         }
       },
       "decisions": [
@@ -1918,6 +2210,11 @@
           "L": "작은 올빼미와 수리부엉이와 가면올빼미와,",
           "B": "작은 올빼미, 수리부엉이, 가면올빼미,",
           "R": "작은 올빼미, 수리부엉이, 가면올빼미,"
+        },
+        "pt": {
+          "L": "o mocho-galego, e o bufo-real, e a coruja-das-torres,",
+          "B": "o mocho-galego, o bufo-real, a coruja-das-torres,",
+          "R": "o mocho-galego, o bufo-real, a coruja-das-torres,"
         }
       },
       "decisions": [
@@ -1995,6 +2292,11 @@
           "L": "사막올빼미와 이집트독수리와 가마우지와,",
           "B": "사막올빼미, 이집트독수리, 가마우지,",
           "R": "사막올빼미, 썩은 고기를 먹는 독수리, 가마우지,"
+        },
+        "pt": {
+          "L": "e a coruja-do-deserto, e o abutre-do-egito, e o corvo-marinho,",
+          "B": "a coruja-do-deserto, o abutre-do-egito, o corvo-marinho,",
+          "R": "a coruja-do-deserto, o abutre, o corvo-marinho,"
         }
       },
       "decisions": [
@@ -2075,6 +2377,11 @@
           "L": "황새와 그 종류대로의 왜가리와 후투티와 박쥐이다.",
           "B": "황새, 여러 종류의 왜가리, 후투티, 박쥐이다.",
           "R": "황새, 모든 종류의 왜가리, 후투티, 박쥐입니다."
+        },
+        "pt": {
+          "L": "e a cegonha, e a garça conforme a sua espécie, e a poupa, e o morcego.",
+          "B": "a cegonha, as várias espécies de garça, a poupa e o morcego.",
+          "R": "a cegonha, todo tipo de garça, a poupa e o morcego."
         }
       },
       "decisions": [
@@ -2165,6 +2472,11 @@
           "L": "그리고 날아다니는 떼 지어 사는 것은 모두 너희에게 부정하니, 그것들을 먹어서는 안 된다.",
           "B": "날개가 있는 떼 지어 사는 것은 모두 너희에게 부정한 것이니, 먹어서는 안 된다.",
           "R": "날개가 있는 곤충은 모두 여러분에게 부정합니다. 그것들을 먹지 마십시오."
+        },
+        "pt": {
+          "L": "E todo ser alado que enxameia [é] impuro para vocês; não serão comidos.",
+          "B": "Todos os pequenos animais com asas que enxameiam são impuros para vocês. Não devem ser comidos.",
+          "R": "Todos os insetos com asas são impuros para vocês. Não comam esses insetos."
         }
       },
       "decisions": [
@@ -2218,6 +2530,29 @@
           "reason": "As in Leviticus 11:20, Readable says \"insects with wings\" for \"swarming things that fly\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140190012",
+            "o050140190021",
+            "o050140190032"
+          ],
+          "choice": "todo ser alado que enxameia (L); os pequenos animais com asas que enxameiam (B)",
+          "alternatives": [
+            "os répteis alados",
+            "os insetos alados (L, B)"
+          ],
+          "reason": "As Leviticus 11:20-23: \"enxamear\" is the verb for small creatures that appear in great numbers (m1), and Readable says \"insetos com asas\" as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2269,6 +2604,11 @@
           "L": "정결한 날짐승은 모두 너희가 먹을 수 있다.",
           "B": "그러나 정결한 날짐승은 무엇이든 먹어도 된다.",
           "R": "그러나 날아다니는 것 가운데 정결한 것은 무엇이든 먹어도 됩니다."
+        },
+        "pt": {
+          "L": "Todo ser alado puro vocês podem comer.",
+          "B": "Mas vocês podem comer qualquer ser alado que seja puro.",
+          "R": "Mas vocês podem comer qualquer animal puro que voa."
         }
       },
       "decisions": [
@@ -2385,6 +2725,11 @@
           "L": "너희는 저절로 죽은 것은 아무것도 먹지 말아라. 네 성문 안에 있는 나그네에게 그것을 주어 그가 먹게 하거나 외국인에게 팔 수 있다. 너는 네 하나님 {{divine_name:주|야훼}}께 거룩한 백성이기 때문이다. 너는 새끼 염소를 그 어미의 젖으로 삶지 말아라.",
           "B": "저절로 죽은 짐승은 아무것도 먹지 말아라. 너희 성읍에 사는 나그네에게 주어 먹게 하거나 외국인에게 팔 수는 있다. 너희는 너희 하나님 {{divine_name:주|야훼}}께 거룩하게 구별된 백성이기 때문이다. 새끼 염소를 그 어미의 젖으로 삶지 말아라.",
           "R": "저절로 죽은 짐승은 먹지 마십시오. 여러분의 성읍에 사는 나그네에게 주어서 먹게 할 수는 있습니다. 또는 다른 나라에서 온 사람에게 팔아도 됩니다. 여러분은 여러분의 하나님 {{divine_name:주|야훼}}께 속한 거룩한 백성이기 때문입니다. 새끼 염소를 그 어미의 젖으로 삶지 마십시오."
+        },
+        "pt": {
+          "L": "Vocês não comerão nenhuma carcaça. Ao imigrante que [está] dentro das tuas portas tu podes dá-la, e ele a comerá, ou [podes] vendê-la a um estrangeiro; porque tu [és] um povo santo {{divine_name:para o SENHOR|para Javé}}, o teu Deus. Não cozinharás um cabrito no leite da mãe dele.",
+          "B": "Vocês não comerão nenhum animal que morreu por si mesmo. Tu podes dá-lo ao imigrante que vive nas tuas cidades, para que ele o coma, ou vendê-lo a um estrangeiro. Pois tu és um povo separado como santo {{divine_name:para o SENHOR|para Javé}}, o teu Deus. Não cozinharás um cabrito no leite da mãe dele.",
+          "R": "Não comam nenhum animal que morreu sozinho. Tu podes dá-lo a um estrangeiro que mora na tua cidade, e ele pode comê-lo. Ou podes vendê-lo a alguém de outro país. Isso porque tu pertences {{divine_name:ao SENHOR|a Javé}}, o teu Deus, como um povo santo. Não cozinhes um cabrito no leite da própria mãe dele."
         }
       },
       "decisions": [
@@ -2597,6 +2942,55 @@
           "reason": "Two different people in the Hebrew; Readable says \"người ngoại quốc sống trong thành\" and \"người từ nước khác đến\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140210052",
+            "o050140210072",
+            "o050140210122"
+          ],
+          "choice": "o imigrante (L, B), um estrangeiro que mora na tua cidade (R) for the sojourner; um estrangeiro (L, B), alguém de outro país (R) for the foreigner; dentro das tuas portas (L), nas tuas cidades (B, R)",
+          "alternatives": [
+            "o estrangeiro (B, R), as Leviticus 19:33",
+            "o forasteiro"
+          ],
+          "reason": "As 1:16 sets it for the whole book. The sojourner is an outsider settled in Israel; the foreigner comes from another people (m2). This verse names both, so Portuguese keeps them apart at every level: \"o imigrante\" at Literal and Balanced for the first, and plain words at Readable that say he lives among Israel (\"um estrangeiro que mora na tua cidade\"), against \"estrangeiro\" (L, B) and \"alguém de outro país\" (R) for the second. The town \"gates\" are \"portas\" at Literal and \"cidades\" at Balanced and Readable, as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o050140210201",
+            "o050140210211",
+            "o050140210222",
+            "o050140210231",
+            "o050140210232"
+          ],
+          "choice": "Não cozinharás um cabrito no leite da mãe dele (L, B); Não cozinhes um cabrito no leite da própria mãe dele (R)",
+          "alternatives": [
+            "Não cozerás o cabrito no leite da sua mãe"
+          ],
+          "reason": "The command repeats Exodus 23:19 (m3), so each level repeats Exodus 23:19's Portuguese. The verse moves between plural and singular as the Hebrew does: Balanced and Readable give each sentence one form of address.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2657,6 +3051,11 @@
           "L": "너는 해마다 밭에서 나는, 네가 뿌린 씨의 모든 소출의 십분의 일을 반드시 떼어 놓아라.",
           "B": "해마다 너희가 밭에 씨를 뿌려 거둔 모든 소출에서 반드시 십분의 일을 떼어 놓아라.",
           "R": "해마다 여러분의 밭에서 거둔 모든 곡식의 십분의 일을 꼭 따로 떼어 놓으십시오."
+        },
+        "pt": {
+          "L": "Certamente separarás o dízimo de todo o produto da tua semente que sai do campo, ano após ano.",
+          "B": "Ano após ano, separarás sem falta o dízimo de toda a colheita que brota da semente que semeias no campo.",
+          "R": "Todo ano, não deixes de separar a décima parte de toda a colheita dos teus campos."
         }
       },
       "decisions": [
@@ -2743,6 +3142,29 @@
           "choice": "\"một phần mười\" for the tithe",
           "alternatives": [],
           "reason": "As the Genesis sheet; the verb is \"dâng\" (L) or \"dành riêng\" (B, R), since in this law the giver eats the tithe at the sanctuary.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140220011",
+            "o050140220021"
+          ],
+          "choice": "separar o dízimo (L, B); separar a décima parte (R)",
+          "alternatives": [
+            "dizimar",
+            "dar o dízimo"
+          ],
+          "reason": "For the whole book, as Leviticus 27:30 and Numbers 18:21: \"o dízimo\" at Literal and Balanced, \"a décima parte\" at Readable, where the English Readable says \"a tenth\". The verb \"dizimar\" now means to decimate, so the Hebrew verb is \"separar o dízimo\"; Literal shows the doubled verb (m1) with \"Certamente\", Balanced with \"sem falta\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2834,6 +3256,11 @@
           "L": "그리고 너는 네 하나님 {{divine_name:주|야훼}} 앞에서, 그분께서 그분의 이름을 거기에 머물게 하시려고 택하실 곳에서, 네 곡식과 네 새 포도주와 네 기름의 십분의 일과 네 소 떼와 네 양 떼의 처음 난 것을 먹어라. 그러면 네가 언제나 네 하나님 {{divine_name:주|야훼}}를 경외하기를 배울 것이다.",
           "B": "너희 하나님 {{divine_name:주|야훼}}께서 그분의 이름을 두시려고 택하실 곳, 곧 너희 하나님 {{divine_name:주|야훼}} 앞에서 너희 곡식과 새 포도주와 올리브기름의 십분의 일과, 소 떼와 양 떼의 처음 난 것을 먹어라. 그렇게 하여 너희는 늘 너희 하나님 {{divine_name:주|야훼}}를 경외하는 법을 배울 것이다.",
           "R": "곡식과 새 포도주와 올리브기름의 십분의 일과, 소와 양과 염소의 첫 새끼를 여러분의 하나님 {{divine_name:주|야훼}}께서 그분의 이름을 두시려고 택하실 곳으로 가져가십시오. 그곳 여러분의 하나님 {{divine_name:주|야훼}} 앞에서 그것을 먹으십시오. 그러면 여러분은 평생 여러분의 하나님 {{divine_name:주|야훼}}를 두려워하며 공경하는 법을 배우게 될 것입니다."
+        },
+        "pt": {
+          "L": "E comerás diante {{divine_name:do SENHOR|de Javé}}, o teu Deus, no lugar que {{deity_pronoun:ele|Ele}} escolher para fazer habitar ali o {{deity_pronoun:seu|Seu}} nome, o dízimo do teu cereal, do teu vinho novo e do teu azeite fresco, e os primogênitos do teu gado e do teu rebanho, para que aprendas a temer {{divine_name:o SENHOR|Javé}}, o teu Deus, todos os dias.",
+          "B": "Comerás diante {{divine_name:do SENHOR|de Javé}}, o teu Deus, no lugar que {{deity_pronoun:ele|Ele}} escolher como habitação para o {{deity_pronoun:seu|Seu}} nome, o dízimo do teu cereal, do teu vinho novo e do teu azeite, e os primogênitos do teu gado e do teu rebanho. Assim aprenderás a temer {{divine_name:o SENHOR|Javé}}, o teu Deus, em todo o tempo.",
+          "R": "Leva a décima parte do teu cereal, do teu vinho novo e do teu azeite, e as primeiras crias do teu gado, das tuas ovelhas e das tuas cabras, ao lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher como morada para o {{deity_pronoun:seu|Seu}} nome. Come tudo isso ali, na presença {{divine_name:do SENHOR|de Javé}}, o teu Deus. Assim aprenderás a ter profundo respeito {{divine_name:pelo SENHOR|por Javé}}, o teu Deus, por toda a tua vida."
         }
       },
       "decisions": [
@@ -2939,6 +3366,56 @@
           "reason": "Literal says \"fresh oil\". Balanced and Readable say \"olive oil\", which the word means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140230052",
+            "o050140230071",
+            "o050140230082",
+            "o050140230091",
+            "o050140230092",
+            "o050140230101"
+          ],
+          "choice": "o lugar que ele escolher para fazer habitar ali o seu nome (L); ... como habitação para o seu nome (B); ... como morada para o seu nome (R); \"para pôr ali o seu nome\" (L, B) for the other phrase (verse 24)",
+          "alternatives": [
+            "o lugar que ele escolher para ali fazer morar o seu nome (B, R)",
+            "santuário"
+          ],
+          "reason": "For the whole book: the place God will choose (m1, as 12:5, 11) keeps one wording per level. The future subjunctive \"escolher\" leaves the place unnamed, as the Hebrew does. \"Fazer habitar ali o seu nome\" keeps the Hebrew verb at Literal; Balanced says \"habitação\" and Readable \"morada\", the plain word for a home, as the English says \"dwelling\" and \"home\". The other phrase, \"to put his name there\", is \"para pôr ali o seu nome\" at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140230142",
+            "o050140230152"
+          ],
+          "choice": "azeite fresco (L), azeite (B, R); os primogênitos (L, B), as primeiras crias (R)",
+          "alternatives": [
+            "óleo",
+            "os primeiros nascidos"
+          ],
+          "reason": "\"Azeite\" is olive oil in Portuguese, so Balanced and Readable need no \"de oliva\"; Literal adds \"fresco\" for the fresh oil (m2). For animals, Readable says \"as primeiras crias\", the plain word for the first young of a herd.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3020,6 +3497,11 @@
           "L": "그리고 네 하나님 {{divine_name:주|야훼}}께서 너에게 복을 주실 때에, 길이 너무 멀어서 네가 그것을 나를 수 없으면, 곧 네 하나님 {{divine_name:주|야훼}}께서 그분의 이름을 두시려고 택하실 곳이 너에게서 너무 멀면,",
           "B": "너희 하나님 {{divine_name:주|야훼}}께서 너희에게 복을 주셔서 소출이 많은데, 너희 하나님 {{divine_name:주|야훼}}께서 그분의 이름을 두시려고 택하실 곳이 너무 멀어서 그 길이 멀고 그것을 가져갈 수 없으면,",
           "R": "그러나 여러분의 하나님 {{divine_name:주|야훼}}께서 그분의 이름을 두시려고 택하실 곳이 너무 멀 수도 있습니다. 여러분의 하나님 {{divine_name:주|야훼}}께서 여러분에게 복을 주셔서 수확이 많을 때에는, 그 십분의 일을 그렇게 먼 곳까지 가져갈 수 없을지도 모릅니다."
+        },
+        "pt": {
+          "L": "E, se o caminho for longo demais para ti, de modo que não possas carregá-lo, porque o lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher para pôr ali o {{deity_pronoun:seu|Seu}} nome estiver longe demais de ti, quando {{divine_name:o SENHOR|Javé}}, o teu Deus, te abençoar,",
+          "B": "Se a viagem for longa demais para ti e não puderes carregá-lo, porque o lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher para pôr ali o {{deity_pronoun:seu|Seu}} nome estiver longe demais de ti, quando {{divine_name:o SENHOR|Javé}}, o teu Deus, te tiver abençoado com fartura,",
+          "R": "Mas pode ser que o lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher para o {{deity_pronoun:seu|Seu}} nome fique longe demais de ti. Quando {{divine_name:o SENHOR|Javé}}, o teu Deus, te abençoar com grandes colheitas, talvez não consigas levar a tua décima parte até tão longe."
         }
       },
       "decisions": [
@@ -3163,6 +3645,11 @@
           "L": "너는 그것을 돈으로 바꾸고, 그 돈을 네 손에 싸 들고, 네 하나님 {{divine_name:주|야훼}}께서 택하실 곳으로 가거라.",
           "B": "그것을 돈으로 바꾸어라. 그 돈을 싸서 손에 들고 너희 하나님 {{divine_name:주|야훼}}께서 택하실 곳으로 가거라.",
           "R": "그럴 때에는 그것을 팔아서 그 돈을 가지고 가십시오. 여러분의 하나님 {{divine_name:주|야훼}}께서 택하실 곳으로 가십시오."
+        },
+        "pt": {
+          "L": "então o trocarás por dinheiro, e amarrarás o dinheiro na tua mão, e irás ao lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher.",
+          "B": "então o trocarás por dinheiro. Amarrarás o dinheiro e o levarás contigo ao lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher.",
+          "R": "Então vende a tua décima parte e leva o dinheiro contigo. Vai ao lugar que {{divine_name:o SENHOR|Javé}}, o teu Deus, escolher."
         }
       },
       "decisions": [
@@ -3227,6 +3714,28 @@
           "choice": "sell it",
           "alternatives": [],
           "reason": "Readable says \"sell it\" for \"give it for money\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140250022",
+            "o050140250032"
+          ],
+          "choice": "dinheiro (every level)",
+          "alternatives": [
+            "prata"
+          ],
+          "reason": "The word is \"silver\", weighed out, since there were no coins yet (m1). Portuguese says \"dinheiro\", as the English says \"money\", since \"prata\" alone would read as the metal and not as payment; the meaning note explains it.",
           "uncertain": false,
           "footnote": false
         }
@@ -3319,6 +3828,11 @@
           "L": "그리고 너는 그 돈을 네 영혼이 원하는 모든 것, 곧 소나 양이나 포도주나 독한 술이나 네 영혼이 너에게 바라는 모든 것에 쓰고, 거기서 네 하나님 {{divine_name:주|야훼}} 앞에서 먹고, 너와 네 집안이 즐거워하여라.",
           "B": "그 돈으로 너희가 원하는 것은 무엇이든 사라. 소든 양이든 포도주든 독한 술이든, 먹고 싶은 것은 무엇이든 사라. 그리고 거기 너희 하나님 {{divine_name:주|야훼}} 앞에서 너희와 너희 집안이 함께 먹고 즐거워하여라.",
           "R": "그 돈으로 여러분이 원하는 것은 무엇이든 사십시오. 소나 양이나 포도주나 독한 술이나, 그 밖에 먹고 마시고 싶은 것을 사십시오. 그리고 여러분과 여러분의 가족이 그곳 여러분의 하나님 {{divine_name:주|야훼}} 앞에서 함께 먹고 기뻐하십시오."
+        },
+        "pt": {
+          "L": "E darás o dinheiro por tudo o que a tua alma desejar: por bois, e por ovelhas, e por vinho, e por bebida forte, e por tudo o que a tua alma te pedir; e comerás ali diante {{divine_name:do SENHOR|de Javé}}, o teu Deus, e te alegrarás, tu e a tua casa.",
+          "B": "Usarás o dinheiro para comprar o que quiseres: bois, ovelhas, vinho, cerveja ou qualquer outra coisa que desejares. Então comerás ali, na presença {{divine_name:do SENHOR|de Javé}}, o teu Deus, e te alegrarás, tu e a tua família.",
+          "R": "Usa o dinheiro para comprar o que te agradar: bois, ovelhas, vinho, cerveja ou qualquer outra coisa que quiseres. Depois, come ali com toda a tua família, na presença {{divine_name:do SENHOR|de Javé}}, o teu Deus, e alegra-te com eles."
         }
       },
       "decisions": [
@@ -3454,6 +3968,30 @@
           "reason": "Fermented drink other than wine; Vietnamese has no older word for beer, and \"bia\" would sound modern, so \"rượu mạnh\" is kept at every level.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140260093",
+            "o050140260103",
+            "o050140260222"
+          ],
+          "choice": "bebida forte (L), cerveja (B, R); a tua casa (L), a tua família (B, R)",
+          "alternatives": [
+            "bebida alcoólica",
+            "os teus"
+          ],
+          "reason": "The second drink is most likely beer (m2), as in Leviticus 10:9, where Portuguese also says \"bebida forte\" at Literal and \"cerveja\" at Balanced and Readable. The household (m3) is \"a tua casa\" at Literal and \"a tua família\" at Balanced and Readable; Readable makes the family the companions of \"tu\", since Brazilian Portuguese has no natural verb form for \"tu e a tua família\" together.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3520,6 +4058,11 @@
           "L": "그리고 네 성문 안에 있는 레위인, 그를 너는 저버리지 말아라. 그에게는 너와 함께 받은 몫이나 유산이 없기 때문이다.",
           "B": "너희 성읍에 사는 레위인을 저버리지 말아라. 그는 너희 가운데서 받은 몫이나 유산이 없다.",
           "R": "여러분의 성읍에 사는 레위인들을 잊지 마십시오. 그들은 여러분처럼 자기 땅을 받지 않았습니다."
+        },
+        "pt": {
+          "L": "E o levita que [está] dentro das tuas portas, não o abandonarás, porque ele não tem porção nem herança contigo.",
+          "B": "E não deixarás de lado o levita que vive nas tuas cidades, pois ele não recebeu porção nem herança como tu.",
+          "R": "Não te esqueças dos levitas que vivem nas tuas cidades. Eles não têm terra própria como tu tens."
         }
       },
       "decisions": [
@@ -3590,6 +4133,29 @@
           "reason": "Readable explains \"portion and inheritance\" as land, and uses the plural for the Levites as a group.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140270091",
+            "o050140270102",
+            "o050140270111",
+            "o050140270112"
+          ],
+          "choice": "como tu",
+          "alternatives": [
+            "entre vocês",
+            "contigo"
+          ],
+          "reason": "The Hebrew \"with you\" is singular; the English Balanced says \"among you\". Portuguese \"entre vocês\" would bring the plural into a singular sentence, and \"contigo\" would read as company, so Balanced says the Levite has no share of the land \"como tu\", as you have.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3656,6 +4222,11 @@
           "L": "삼 년 끝에 너는 그해의 네 소출의 십분의 일을 모두 내어다가 네 성문 안에 쌓아 두어라.",
           "B": "매 삼 년째 되는 해가 끝날 때에는 그해 소출의 십분의 일을 모두 가져다가 너희 성읍에 쌓아 두어라.",
           "R": "삼 년마다 그해에 거둔 것의 십분의 일을 모두 가져다가 여러분이 사는 성읍에 쌓아 두십시오."
+        },
+        "pt": {
+          "L": "Ao fim de três anos tirarás todo o dízimo da tua produção naquele ano e [o] depositarás dentro das tuas portas.",
+          "B": "No fim de cada terceiro ano, tirarás todo o dízimo da produção daquele ano e o guardarás nas tuas cidades.",
+          "R": "A cada três anos, leva toda a décima parte das colheitas daquele ano e guarda-a na tua própria cidade."
         }
       },
       "decisions": [
@@ -3800,6 +4371,11 @@
           "L": "그러면 너와 함께 받은 몫이나 유산이 없는 레위인과, 네 성문 안에 있는 나그네와 고아와 과부가 와서 먹고 배부를 것이다. 그러면 네 하나님 {{divine_name:주|야훼}}께서 네가 하는 네 손의 모든 일에 너에게 복을 주실 것이다.",
           "B": "그러면 너희 가운데서 받은 몫이나 유산이 없는 레위인과, 너희 성읍에 사는 나그네와 고아와 과부가 와서 배불리 먹을 것이다. 그렇게 하면 너희 하나님 {{divine_name:주|야훼}}께서 너희가 하는 모든 일에 복을 주실 것이다.",
           "R": "그러면 레위인들과 나그네들과 아버지 없는 아이들과 남편 없는 여자들이 와서 마음껏 먹을 수 있을 것입니다. 레위인들은 여러분처럼 자기 땅을 받지 않았습니다. 여러분이 이렇게 하면, 여러분의 하나님 {{divine_name:주|야훼}}께서 여러분이 하는 모든 일에 복을 주실 것입니다."
+        },
+        "pt": {
+          "L": "E virá o levita, porque ele não tem porção nem herança contigo, e o imigrante, e o órfão, e a viúva que [estão] dentro das tuas portas, e comerão e se fartarão, para que {{divine_name:o SENHOR|Javé}}, o teu Deus, te abençoe em toda a obra da tua mão que fizeres.",
+          "B": "Então o levita, que não tem porção nem herança como tu, e o imigrante, o órfão e a viúva que vivem nas tuas cidades virão e comerão até ficarem satisfeitos, para que {{divine_name:o SENHOR|Javé}}, o teu Deus, te abençoe em todo o trabalho que fizeres.",
+          "R": "Então os levitas, os imigrantes, os órfãos e as viúvas da tua cidade poderão vir e comer tudo o que quiserem. Os levitas não têm terra própria como tu tens. Se fizeres isso, {{divine_name:o SENHOR|Javé}}, o teu Deus, te abençoará em todo o trabalho que fizeres."
         }
       },
       "decisions": [
@@ -3888,6 +4464,30 @@
           "choice": "The Levites have no land of their own as you do.",
           "alternatives": [],
           "reason": "Readable moves the reason about the Levites into a sentence of its own, so the list of those who come is easier to follow, and says \"If you do this\" for \"so that\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050140290093",
+            "o050140290103",
+            "o050140290113"
+          ],
+          "choice": "o imigrante, o órfão e a viúva (every level)",
+          "alternatives": [
+            "o estrangeiro, o órfão e a viúva",
+            "as crianças sem pai (R)"
+          ],
+          "reason": "As 1:16 and 10:18 set it for the whole book: the triad of those without land or a provider (m1) is \"o imigrante, o órfão e a viúva\" at every level. \"Órfão\" is the everyday Portuguese word for a fatherless child, so Readable needs no explanation where the English Readable says \"children without fathers\".",
           "uncertain": false,
           "footnote": false
         }

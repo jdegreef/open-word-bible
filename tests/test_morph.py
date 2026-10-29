@@ -63,6 +63,13 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe("V-2AAI-3S", "pt"),
                          "Verbo · indicativo aoristo segundo, voz ativa · 3.ª pessoa singular")
         self.assertEqual(morph.describe("N-DSF", "pt"), "Substantivo · dativo singular feminino")
+        self.assertEqual(morph.describe("V-IAI-3S", "am"),
+                         "ግስ · ያልተጠናቀቀ ኃላፊ ጊዜ፣ አመልካች ዘይቤ፣ ገቢር · ሦስተኛ መደብ፣ ነጠላ")
+        self.assertEqual(morph.describe("V-2AAI-3S", "am"),
+                         "ግስ · ሁለተኛ ቀላል ኃላፊ ጊዜ፣ አመልካች ዘይቤ፣ ገቢር · ሦስተኛ መደብ፣ ነጠላ")
+        self.assertEqual(morph.describe("N-DSF", "am"), "ስም · ተቀባይ፣ ነጠላ፣ ሴት")
+        # A verb with no voice (X) leaves no stray Ethiopic comma.
+        self.assertFalse(morph.describe("V-PXI-3S", "am").split(" · ")[1].endswith("፣"))
 
     def test_every_hebrew_code_in_the_extracts_is_described(self):
         words = [w for path in (ROOT / "data" / "hbo").glob("*.json")
@@ -92,6 +99,8 @@ class MorphTest(unittest.TestCase):
             self.assertEqual(morph.describe_hebrew(code), words, code)
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "es"),
                          "Verbo · Qal · narrativo pasado (wayyiqtol) · 3.ª persona masculino singular")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "am"),
+                         "ግስ · Qal · የኃላፊ ትረካ (ወይይቅጦል) · ሦስተኛ መደብ ወንድ ነጠላ")
         # Aramaic stems share letters with Hebrew ones but not names.
         self.assertEqual(morph.describe_hebrew("Vai3ms", "en", "A"),
                          "Verb · Aphel · imperfect (yiqtol) · 3rd person masculine singular")

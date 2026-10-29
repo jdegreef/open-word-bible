@@ -76,6 +76,16 @@
           "L": "Sau hết, thưa {{gender:anh chị em|anh em}}, hãy cầu nguyện cho chúng tôi, để lời của Chúa được lan nhanh và được tôn vinh, như đã [xảy ra] ở giữa anh chị em, \\v 2 và để chúng tôi được giải cứu khỏi những người gian tà và độc ác, vì không phải mọi người đều có đức tin.",
           "B": "Sau hết, thưa {{gender:anh chị em|anh em}}, hãy cầu nguyện cho chúng tôi: xin cho lời của Chúa được lan truyền nhanh chóng và được tôn vinh khắp nơi, như đã được tôn vinh ở giữa anh chị em, \\v 2 và xin cho chúng tôi được giải cứu khỏi những người gian tà và độc ác, vì không phải ai cũng có đức tin.",
           "R": "Và bây giờ, thưa {{gender:anh chị em|anh em}}, hãy cầu nguyện cho chúng tôi. Hãy cầu xin cho sứ điệp của Chúa được lan ra nhanh chóng và được tôn vinh khắp nơi, như đã xảy ra ở giữa anh chị em. \\v 2 Cũng hãy cầu xin cho chúng tôi được giải cứu khỏi những người xấu xa và độc ác, vì không phải ai cũng có đức tin."
+        },
+        "pt": {
+          "L": "Finalmente, {{gender:irmãos e irmãs|irmãos}}, orem por nós, para que a palavra do Senhor corra e seja glorificada, assim como também [aconteceu] entre vocês, \\v 2 e para que sejamos livrados {{gender:das pessoas perversas e más|dos homens perversos e maus}}, porque nem todos [têm] fé.",
+          "B": "Finalmente, {{gender:irmãos e irmãs|irmãos}}, orem por nós: orem para que a palavra do Senhor corra depressa e seja glorificada por toda parte, como foi entre vocês, \\v 2 e para que sejamos libertos de pessoas perversas e más, pois nem todos têm fé.",
+          "R": "E agora, {{gender:irmãos e irmãs|irmãos}}, orem por nós. Orem para que a mensagem do Senhor se espalhe depressa e receba glória em toda parte, como aconteceu entre vocês. \\v 2 Orem também para que sejamos livrados das pessoas más e perversas, porque nem todo mundo tem fé."
+        },
+        "am": {
+          "L": "በቀረውስ፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ የጌታ ቃል በእናንተ ዘንድ ደግሞ እንደ [ሆነው] እንዲሮጥና እንዲከበር፣ \\v 2 ከጠማሞችና ከክፉ ሰዎችም እንድንታደግ ስለ እኛ ጸልዩ፤ እምነት የሁሉም አይደለምና።",
+          "B": "በመጨረሻም፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ እኛ ጸልዩ፤ የጌታ ቃል በእናንተ ዘንድ እንደ ሆነው በፍጥነት እንዲሮጥና በየስፍራው እንዲከበር ጸልዩ፤ \\v 2 ከጠማሞችና ከክፉ ሰዎች እንድንታደግም ጸልዩ፤ እምነት በሁሉ ዘንድ አይገኝምና።",
+          "R": "አሁን ደግሞ፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ስለ እኛ ጸልዩ። በእናንተ ዘንድ እንደ ሆነው የጌታ መልእክት በፍጥነት እንዲዳረስና በየቦታው እንዲከበር ጸልዩ። \\v 2 ደግሞም ከመጥፎና ከክፉ ሰዎች እንድንታደግ ጸልዩ፤ ምክንያቱም ሁሉም ሰው እምነት የለውም።"
         }
       },
       "decisions": [
@@ -323,6 +333,68 @@
           "reason": "The verb is \"run\" (m2). Vietnamese does not say that a word runs, so every level says that it spreads quickly, which is what the picture means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003002006",
+            "n53003002007",
+            "n53003002008",
+            "n53003002009"
+          ],
+          "choice": "{{gender:das pessoas perversas e más|dos homens perversos e maus}}",
+          "alternatives": [
+            "das {{gender:pessoas|homens}} perversas e más"
+          ],
+          "reason": "The adjectives and the article agree with the noun in Portuguese, so the whole phrase goes under the setting and each option reads correctly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003001011"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "mirroring the English deity_pronoun spans"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God and Christ has nothing to change in Amharic; the pronouns (እርሱ, the verb endings) are written once, with no span, through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003002009"
+          ],
+          "choice": "ሰዎች / ሰው (people), with no gender span",
+          "alternatives": [
+            "{{gender:ሰዎች|ወንዶች}}, following the English"
+          ],
+          "reason": "The Greek word means human beings, men and women. Amharic \"ሰው\" and \"ሰዎች\" already say that, and \"ወንዶች\" would wrongly mean males only, so Amharic has no span where the English has one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -383,6 +455,16 @@
           "L": "Nhưng Chúa là thành tín, Đấng sẽ làm cho anh chị em vững mạnh và gìn giữ [anh chị em] khỏi kẻ ác.",
           "B": "Nhưng Chúa là Đấng đáng tin cậy: {{deity_pronoun:ngài|Ngài}} sẽ làm cho anh chị em vững mạnh và gìn giữ anh chị em khỏi kẻ ác.",
           "R": "Nhưng Chúa là thành tín. Ngài sẽ làm cho anh chị em vững mạnh và giữ anh chị em được an toàn khỏi kẻ ác."
+        },
+        "pt": {
+          "L": "Mas fiel é o Senhor, que os fortalecerá e [os] guardará do Maligno.",
+          "B": "Mas o Senhor é digno de confiança: {{deity_pronoun:ele|Ele}} os tornará fortes e os guardará do Maligno.",
+          "R": "Mas o Senhor é fiel. Ele vai dar força a vocês e vai proteger vocês do Maligno."
+        },
+        "am": {
+          "L": "ጌታ ግን ታማኝ ነው፤ እርሱም ያጸናችኋል፤ ከክፉውም ይጠብቃችኋል።",
+          "B": "ጌታ ግን የሚታመን ነው፤ ያጠነክራችኋል፤ ከክፉውም ይጠብቃችኋል።",
+          "R": "ጌታ ግን ታማኝ ነው። ያጠነክራችኋል፤ ከክፉውም ይጠብቃችኋል።"
         }
       },
       "decisions": [
@@ -531,6 +613,48 @@
           "reason": "Paul sets the Lord's faithfulness against those who have no faith (m3). As in 1 Thessalonians 5:24, \"thành tín\" is said of God; the shared \"tín\" lets the reader hear the play with \"đức tin\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003003013"
+          ],
+          "choice": "o Maligno",
+          "alternatives": [
+            "o mal"
+          ],
+          "reason": "As in Matthew (13:19, 38), the name for Satan (m1) is \"o Maligno\" with a capital, which marks it as a person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003003001"
+          ],
+          "choice": "ታማኝ / የሚታመን (faithful, trustworthy), from the same root as እምነት (faith) in verse 2",
+          "alternatives": [
+            "እውነተኛ (true)"
+          ],
+          "reason": "Paul sets the Lord's faithfulness against the faithlessness of verse 2 with words of one root; Amharic \"እምነት\" and \"ታማኝ\" share a root too, so the contrast survives.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -591,6 +715,16 @@
           "L": "Và trong Chúa, chúng tôi tin chắc về anh chị em rằng anh chị em đang làm và sẽ làm những điều chúng tôi truyền dặn.",
           "B": "Nhờ Chúa, chúng tôi tin chắc về anh chị em: anh chị em đang làm những điều chúng tôi dặn bảo, và sẽ tiếp tục làm.",
           "R": "Chúa cho chúng tôi lòng tin chắc rằng anh chị em đang vâng theo lời dạy của chúng tôi, và anh chị em sẽ tiếp tục vâng theo."
+        },
+        "pt": {
+          "L": "E estamos confiantes no Senhor a respeito de vocês, de que vocês fazem e farão as coisas que ordenamos.",
+          "B": "Por causa do Senhor, temos confiança a respeito de vocês: vocês estão fazendo o que lhes mandamos e vão continuar a fazê-lo.",
+          "R": "O Senhor nos dá a certeza de que vocês estão obedecendo ao nosso ensino e de que vão continuar obedecendo."
+        },
+        "am": {
+          "L": "ያዘዝናችሁን እያደረጋችሁ እንዳላችሁና ወደ ፊትም እንደምታደርጉ በጌታ ሆነን ስለ እናንተ እንተማመናለን።",
+          "B": "በጌታ ምክንያት ስለ እናንተ እንተማመናለን፤ የምናዝዛችሁን እያደረጋችሁ ነው፤ ወደ ፊትም ታደርጉታላችሁ።",
+          "R": "እናንተ ትምህርታችንን እየታዘዛችሁ እንደ ሆነና መታዘዛችሁንም እንደምትቀጥሉ ጌታ እንድንተማመን ያደርገናል።"
         }
       },
       "decisions": [
@@ -696,6 +830,16 @@
           "L": "Nguyện Chúa hướng lòng anh chị em vào tình yêu thương của Đức Chúa Trời và vào sự kiên trì của {{christos:Đấng Christ|Đấng Mê-si-a}}.",
           "B": "Nguyện Chúa dẫn dắt lòng anh chị em vào tình yêu thương của Đức Chúa Trời và sự kiên trì của {{christos:Đấng Christ|Đấng Mê-si-a}}.",
           "R": "Chúng tôi cầu xin Chúa giúp anh chị em ngày càng hiểu Đức Chúa Trời yêu thương anh chị em biết bao, và giúp anh chị em cứ kiên nhẫn bền lòng, như {{christos:Đấng Christ|Đấng Mê-si-a}} đã bền lòng."
+        },
+        "pt": {
+          "L": "E [que] o Senhor dirija o coração de vocês para o amor de Deus e para a perseverança do {{christos:Cristo|Messias}}.",
+          "B": "Que o Senhor guie o coração de vocês para o amor de Deus e para a perseverança {{christos:de Cristo|do Messias}}.",
+          "R": "Oramos para que o Senhor ajude vocês a entender cada vez mais o quanto Deus ama vocês, e a continuar firmes com paciência, como {{christos:Cristo|o Messias}} continuou."
+        },
+        "am": {
+          "L": "ጌታም ልባችሁን ወደ እግዚአብሔር ፍቅርና ወደ {{christos:የክርስቶስ|የመሲሑ}} ጽናት ያቅና።",
+          "B": "ጌታ ልባችሁን ወደ እግዚአብሔር ፍቅርና ወደ {{christos:የክርስቶስ|የመሲሑ}} ጽናት ይምራ።",
+          "R": "እግዚአብሔር ምን ያህል እንደሚወዳችሁ ጌታ ይበልጥ እያስረዳችሁ እንዲሄድ፣ {{christos:ክርስቶስ|መሲሑ}} እንዳደረገው እናንተም በትዕግሥት እንድትጸኑ እንዲረዳችሁ እንጸልያለን።"
         }
       },
       "decisions": [
@@ -845,6 +989,26 @@
           "reason": "The meaning decision reads these as God's love for them and the endurance Christ showed and gives, with other readings noted (m1). Literal and Balanced keep \"của\", which leaves the phrase as open as the Greek; Readable says what the meaning decision reads.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003005018"
+          ],
+          "choice": "{{christos:የክርስቶስ|የመሲሑ}} (of the Christ, of the Messiah), with the definite \"መሲሑ\"",
+          "alternatives": [
+            "{{christos:የክርስቶስ|የመሲሕ}}"
+          ],
+          "reason": "The Greek has the article here, so the alternative takes the definite form, as the style brief sets for Christ with a prefix.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -919,6 +1083,16 @@
           "L": "Thưa {{gender:anh chị em|anh em}}, nhân danh Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}}, chúng tôi truyền cho anh chị em phải tránh xa mọi {{gender:anh chị em|anh em}} nào sống vô trật tự và không theo truyền thống mà họ đã nhận từ chúng tôi.",
           "B": "Thưa {{gender:anh chị em|anh em}}, nhân danh Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}}, chúng tôi truyền cho anh chị em: hãy giữ khoảng cách với bất cứ {{gender:anh chị em|anh em}} nào sống không theo khuôn phép, trái với truyền thống mà họ đã nhận từ chúng tôi.",
           "R": "Thưa {{gender:anh chị em|anh em}}, chúng tôi truyền cho anh chị em mệnh lệnh này với thẩm quyền của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}}: hãy tránh xa bất cứ tín hữu nào không chịu làm việc và không sống theo cách chúng tôi đã dạy."
+        },
+        "pt": {
+          "L": "Ora, ordenamos a vocês, {{gender:irmãos e irmãs|irmãos}}, em nome do nosso Senhor Jesus {{christos:Cristo|Messias}}, que se afastem de {{gender:qualquer irmão ou irmã|todo irmão}} que anda de modo desordenado e não segundo a tradição que receberam de nós.",
+          "B": "{{gender:Irmãos e irmãs|Irmãos}}, em nome do nosso Senhor Jesus {{christos:Cristo|o Messias}}, nós lhes ordenamos: mantenham distância de {{gender:qualquer irmão ou irmã|qualquer irmão}} que leve uma vida indisciplinada, contrária à tradição que receberam de nós.",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, damos a vocês esta ordem com a autoridade do nosso Senhor Jesus {{christos:Cristo|o Messias}}: fiquem longe de qualquer membro da igreja que se recusa a trabalhar e não vive do jeito que nós ensinamos."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ስም እናዝዛችኋለን፤ ያለ ሥርዓት ከሚመላለስና ከእኛ እንደ ተቀበሉት ትውፊት ከማይኖር {{gender:ወንድም ወይም እኅት|ወንድም}} ሁሉ ራቁ።",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ስም እናዝዛችኋለን፤ ሥርዓት በሌለው ኑሮ ከሚኖርና ከእኛ የተቀበሉትን ትውፊት ከማይከተል {{gender:ወንድም ወይም እኅት|ወንድም}} ሁሉ ራቁ።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በጌታችን በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ሥልጣን ይህን ትእዛዝ እንሰጣችኋለን፤ መሥራት እንቢ ካለና እኛ ባስተማርነው መንገድ ከማይኖር አማኝ ሁሉ ራቁ።"
         }
       },
       "decisions": [
@@ -1218,6 +1392,67 @@
           "reason": "The word is out of line, here refusing to work (m1). Literal and Balanced keep the words of 1 Thessalonians 5:14 for the same Greek word, so the reader sees that Paul returns to it; Readable says what it means here, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003006016"
+          ],
+          "choice": "qualquer membro da igreja",
+          "alternatives": [
+            "qualquer irmão na fé",
+            "qualquer crente"
+          ],
+          "reason": "The English Readable says \"believer\". \"Irmão na fé\" is masculine, and \"crente\" in Brazil usually means a Protestant; \"membro da igreja\" covers men and women without a setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003006004"
+          ],
+          "choice": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ",
+          "alternatives": [
+            "ወንድሞች ሆይ alone"
+          ],
+          "reason": "Paul's word for the believers he writes to includes the sisters, so the default names both and the alternative keeps the traditional \"ወንድሞች\". The vocative \"ሆይ\" stands outside the span because both options take it; a case prefix goes inside each option. This holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003006016"
+          ],
+          "choice": "{{gender:ወንድም ወይም እኅት|ወንድም}} (a brother or sister, or a brother), with the case prefix on the relative verb before it",
+          "alternatives": [
+            "ወንድም alone"
+          ],
+          "reason": "The believer who will not work may be a man or a woman. Amharic puts \"ከ-\" (from) on the first word of the phrase, the relative verb, so the noun in the span is bare; Readable says \"any believer\" (\"አማኝ ሁሉ\"), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1299,6 +1534,16 @@
           "L": "Vì chính anh chị em biết anh chị em phải bắt chước chúng tôi thế nào, vì chúng tôi đã không sống vô trật tự giữa anh chị em, \\v 8 cũng không ăn bánh của ai mà không trả tiền, nhưng làm việc lao nhọc và vất vả cả ngày lẫn đêm, để khỏi làm gánh nặng cho một ai trong anh chị em;",
           "B": "Chính anh chị em biết rằng anh chị em phải noi gương chúng tôi. Chúng tôi đã không sống nhàn rỗi giữa anh chị em, \\v 8 và chúng tôi chưa bao giờ ăn bánh của ai mà không trả tiền. Chúng tôi đã lao nhọc và vất vả, làm việc cả ngày lẫn đêm, để khỏi làm gánh nặng cho bất cứ ai trong anh chị em.",
           "R": "Anh chị em biết rằng anh chị em nên sống như chúng tôi đã sống. Chúng tôi đã không lười biếng khi ở với anh chị em. \\v 8 Chúng tôi không ăn thức ăn của ai mà không trả tiền. Chúng tôi đã làm việc vất vả cả ngày lẫn đêm, để không trở thành gánh nặng cho ai trong anh chị em."
+        },
+        "pt": {
+          "L": "Pois vocês mesmos sabem como devem nos imitar, porque não fomos desordenados entre vocês, \\v 8 nem comemos de graça o pão de ninguém, mas com trabalho e fadiga, trabalhando noite e dia, para não sermos um peso para nenhum de vocês.",
+          "B": "Vocês mesmos sabem que devem nos imitar. Não vivemos no ócio entre vocês, \\v 8 e nunca comemos de graça o pão de ninguém; trabalhamos com esforço e cansaço, noite e dia, para não sermos um peso para nenhum de vocês.",
+          "R": "Vocês sabem que devem viver como nós vivemos. Não fomos preguiçosos quando estávamos com vocês. \\v 8 Não comemos a comida de ninguém sem pagar. Trabalhamos duro, dia e noite, para não sermos um peso para nenhum de vocês."
+        },
+        "am": {
+          "L": "እኛን ልትመስሉ እንዴት እንደሚገባችሁ እናንተ ራሳችሁ ታውቃላችሁና፤ በመካከላችሁ ያለ ሥርዓት አልኖርንምና፤ \\v 8 የማንንም እንጀራ በነጻ አልበላንም፤ ነገር ግን ከእናንተ በማንም ላይ ሸክም እንዳንሆን በድካምና በልፋት ሌሊትና ቀን እየሠራን [ኖርን]።",
+          "B": "እኛን ልትመስሉ እንደሚገባችሁ ራሳችሁ ታውቃላችሁ። በመካከላችሁ ሥራ ፈቶች አልነበርንም፤ \\v 8 የማንንም እንጀራ በነጻ ከቶ አልበላንም፤ ይልቁንም ከእናንተ በማንም ላይ ሸክም እንዳንሆን ሌሊትና ቀን ሠራን፤ ደከምን፤ ለፋንም።",
+          "R": "እኛ እንደ ኖርን መኖር እንዳለባችሁ ታውቃላችሁ። ከእናንተ ጋር በነበርን ጊዜ ሰነፎች አልነበርንም። \\v 8 የማንንም ምግብ ሳንከፍል አልበላንም። ከእናንተ በማንም ላይ ሸክም እንዳንሆን ቀንና ሌሊት ተግተን ሠራን።"
         }
       },
       "decisions": [
@@ -1420,6 +1665,27 @@
           "reason": "The style guide gives \"빵\" for bread, never \"떡\". To eat bread freely is to live at someone else's expense (the meaning decision); Readable says \"음식\" (food), as the English Readable says \"food\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003008003"
+          ],
+          "choice": "እንጀራ (bread, L, B); ምግብ (food, R), here and in verse 12",
+          "alternatives": [
+            "ዳቦ (a loaf)"
+          ],
+          "reason": "\"To eat bread\" means to live on food someone provides, and the style brief keeps \"እንጀራ\" for bread as food; Readable says \"food\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1482,6 +1748,16 @@
           "L": "không phải vì chúng tôi không có quyền, nhưng để làm gương cho anh chị em bắt chước chúng tôi.",
           "B": "Không phải vì chúng tôi không có quyền được giúp đỡ, nhưng chúng tôi muốn làm gương cho anh chị em noi theo.",
           "R": "Chúng tôi có quyền xin anh chị em giúp đỡ, nhưng chúng tôi đã không làm vậy. Chúng tôi muốn cho anh chị em thấy cách sống, để anh chị em sống giống như vậy."
+        },
+        "pt": {
+          "L": "Não que não tenhamos o direito, mas para nos darmos a vocês como exemplo, para que nos imitem.",
+          "B": "Não que não tivéssemos direito ao sustento, mas quisemos dar a vocês um exemplo a seguir.",
+          "R": "Nós tínhamos o direito de pedir ajuda a vocês, mas não fizemos isso. Queríamos mostrar a vocês como viver, para que vocês vivessem do mesmo jeito."
+        },
+        "am": {
+          "L": "ይህም መብት ስለሌለን አይደለም፤ ነገር ግን ልትመስሉን ራሳችንን ምሳሌ አድርገን እንድንሰጣችሁ ነው።",
+          "B": "ይህን ያደረግነው ድጋፍ የማግኘት መብት ስለሌለን አይደለም፤ ነገር ግን የምትከተሉት ምሳሌ ልንሰጣችሁ ፈልገን ነው።",
+          "R": "እርዳታ እንድትሰጡን ልንጠይቃችሁ መብት ነበረን፤ ግን አላደረግነውም። እንዴት መኖር እንዳለባችሁ ልናሳያችሁ ፈለግን፤ ይህም እናንተም እንዲሁ እንድትኖሩ ነው።"
         }
       },
       "decisions": [
@@ -1603,6 +1879,16 @@
           "L": "Vì ngay cả khi chúng tôi còn ở với anh chị em, chúng tôi đã truyền cho anh chị em điều này: \"Nếu ai không muốn làm việc, thì cũng đừng ăn.\"",
           "B": "Vì ngay khi còn ở với anh chị em, chúng tôi đã dặn bảo anh chị em điều này: \"Ai không chịu làm việc thì đừng ăn.\"",
           "R": "Khi ở với anh chị em, chúng tôi đã cho anh chị em quy tắc này: \"Nếu ai không muốn làm việc, thì người ấy không nên ăn.\""
+        },
+        "pt": {
+          "L": "Pois também, quando estávamos com vocês, nós lhes ordenávamos isto: \"Se alguém não quer trabalhar, que também não coma.\"",
+          "B": "Pois, mesmo quando estávamos com vocês, nós lhes demos esta instrução: \"Quem não quer trabalhar não deve comer.\"",
+          "R": "Quando estávamos com vocês, demos a vocês esta regra: \"Se alguém não quer trabalhar, não deve comer.\""
+        },
+        "am": {
+          "L": "ከእናንተ ጋር በነበርን ጊዜ ይህን እናዝዛችሁ ነበርና፦ «ማንም መሥራት የማይፈልግ ቢኖር አይብላ።»",
+          "B": "ከእናንተ ጋር ሳለንም እንኳ ይህን ትእዛዝ ሰጥተናችሁ ነበር፦ «መሥራት የማይፈልግ አይብላ።»",
+          "R": "ከእናንተ ጋር በነበርን ጊዜ ይህን ደንብ ሰጠናችሁ፦ «አንድ ሰው መሥራት ካልፈለገ መብላት የለበትም።»"
         }
       },
       "decisions": [
@@ -1705,6 +1991,27 @@
           "reason": "\"Ai\" and \"người ấy\" do not mark sex, so the setting has nothing to change, here and in verses 14-15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003010014"
+          ],
+          "choice": "የማይፈልግ / ካልፈለገ (who does not want to, will not)",
+          "alternatives": [
+            "የማይችል (who cannot)"
+          ],
+          "reason": "The rule is about refusing to work, not being unable to, as the meaning decision says; Amharic \"ፈለገ\" (to want) keeps that. After \"ማንም\" the masculine verb is generic and includes women.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1763,6 +2070,16 @@
           "L": "Vì chúng tôi nghe rằng có mấy người giữa anh chị em sống vô trật tự, chẳng làm việc gì cả, nhưng lại lăng xăng lo việc người khác.",
           "B": "Chúng tôi nghe rằng có một số người giữa anh chị em sống không theo khuôn phép: họ không bận rộn làm việc, mà bận rộn xen vào việc của người khác.",
           "R": "Chúng tôi nghe rằng có một số người giữa anh chị em không chịu làm việc. Thay vào đó, họ xen vào việc của người khác."
+        },
+        "pt": {
+          "L": "Pois ouvimos que alguns entre vocês andam de modo desordenado, sem fazer trabalho nenhum, mas se intrometendo [na vida alheia].",
+          "B": "Ouvimos que alguns entre vocês estão vivendo de modo indisciplinado: não andam ocupados com o trabalho, andam ocupados com a vida dos outros.",
+          "R": "Ouvimos dizer que algumas pessoas entre vocês não estão trabalhando. Em vez disso, estão se metendo na vida dos outros."
+        },
+        "am": {
+          "L": "በመካከላችሁ አንዳንዶች ሥራ ሳይሠሩ በሰው ሥራ እየገቡ ያለ ሥርዓት እንደሚመላለሱ እንሰማለንና።",
+          "B": "በመካከላችሁ አንዳንዶች ሥርዓት በሌለው ኑሮ እንደሚኖሩ እንሰማለን፤ በሥራ አልተጠመዱም፤ በሰው ጉዳይ ግን ተጠምደዋል።",
+          "R": "በመካከላችሁ አንዳንድ ሰዎች እንደማይሠሩ እንሰማለን። ከመሥራት ይልቅ በሌሎች ሰዎች ጉዳይ ጣልቃ ይገባሉ።"
         }
       },
       "decisions": [
@@ -1913,6 +2230,49 @@
           "reason": "The Greek plays on \"working\" and \"working around\" (m1). Balanced keeps the play by repeating \"bận rộn\", as the English repeats \"busy\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003011008",
+            "n53003011009",
+            "n53003011010",
+            "n53003011011"
+          ],
+          "choice": "não andam ocupados com o trabalho, andam ocupados com a vida dos outros",
+          "alternatives": [
+            "não trabalham, mas se intrometem"
+          ],
+          "reason": "Balanced keeps Paul's play on words (m1) by repeating \"ocupados\", as the English repeats \"busy\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003011009",
+            "n53003011011"
+          ],
+          "choice": "ሥራ ሳይሠሩ በሰው ሥራ እየገቡ (not working, but getting into others' work, L); በሥራ አልተጠመዱም፤ በሰው ጉዳይ ግን ተጠምደዋል (not busy with work, but busy with others' business, B)",
+          "alternatives": [
+            "ሥራ ፈቶችና ወሬኞች (idle and gossips)"
+          ],
+          "reason": "Paul plays on the word for work, as the meaning decision notes; Amharic repeats \"ሥራ\" at Literal and \"ተጠመደ\" (be busy) at Balanced so the play is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1978,6 +2338,16 @@
           "L": "Chúng tôi truyền và khuyên những người như vậy trong Chúa Giê-xu {{christos:Christ|Mê-si-a}} hãy yên lặng làm việc và ăn bánh của chính mình.",
           "B": "Trong Chúa Giê-xu {{christos:Christ|Mê-si-a}}, chúng tôi truyền cho những người như thế, và nài khuyên họ, hãy yên lặng làm việc và ăn bánh do chính mình làm ra.",
           "R": "Nhân danh Chúa Giê-xu {{christos:Christ|Mê-si-a}}, chúng tôi bảo những người ấy, và nài xin họ, hãy sống ổn định, làm việc cách yên lặng và tự kiếm thức ăn cho mình."
+        },
+        "pt": {
+          "L": "A esses tais ordenamos e exortamos no Senhor Jesus {{christos:Cristo|Messias}} que, trabalhando com tranquilidade, comam o seu próprio pão.",
+          "B": "A essas pessoas ordenamos, e lhes pedimos com insistência no Senhor Jesus {{christos:Cristo|o Messias}}, que façam o seu trabalho tranquilamente e comam o pão que elas mesmas ganharam.",
+          "R": "Em nome do Senhor Jesus {{christos:Cristo|o Messias}}, dizemos a essas pessoas, e imploramos a elas, que sosseguem, trabalhem tranquilamente e ganhem a própria comida."
+        },
+        "am": {
+          "L": "እንደነዚህ ያሉትንም በጸጥታ እየሠሩ የራሳቸውን እንጀራ እንዲበሉ በጌታ በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} እናዝዛቸዋለን፤ እንመክራቸዋለንም።",
+          "B": "እንደነዚህ ያሉትን በጸጥታ ሥራቸውን እንዲሠሩና ራሳቸው ሠርተው ያገኙትን እንጀራ እንዲበሉ እናዝዛቸዋለን፤ በጌታ በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} እንመክራቸዋለንም።",
+          "R": "በጌታ በኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ስም እነዚህ ሰዎች ተረጋግተው በጸጥታ እንዲሠሩና የሚበሉትን ራሳቸው ሠርተው እንዲያገኙ እንነግራቸዋለን፤ እንለምናቸዋለንም።"
         }
       },
       "decisions": [
@@ -2082,6 +2452,16 @@
           "L": "Còn anh chị em, thưa {{gender:anh chị em|anh em}}, đừng mỏi mệt trong việc làm điều lành.",
           "B": "Còn anh chị em, thưa {{gender:anh chị em|anh em}}, đừng nản lòng trong việc làm điều đúng.",
           "R": "Thưa {{gender:anh chị em|anh em}}, đừng bao giờ chán làm điều tốt."
+        },
+        "pt": {
+          "L": "Mas vocês, {{gender:irmãos e irmãs|irmãos}}, não se cansem de fazer o bem.",
+          "B": "Quanto a vocês, {{gender:irmãos e irmãs|irmãos}}, não desanimem de fazer o que é certo.",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, nunca se cansem de fazer o que é bom."
+        },
+        "am": {
+          "L": "እናንተ ግን፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ መልካም በማድረግ አትታክቱ።",
+          "B": "እናንተ ግን፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ትክክል የሆነውን በማድረግ ተስፋ አትቁረጡ።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ መልካም ማድረግን ፈጽሞ አትሰልቹ።"
         }
       },
       "decisions": [
@@ -2187,6 +2567,16 @@
           "L": "Nếu có ai không vâng theo lời chúng tôi qua thư này, hãy để ý người đó, và đừng giao thiệp với người ấy, để người ấy hổ thẹn;",
           "B": "Nếu có ai không chịu vâng theo những gì chúng tôi nói trong thư này, hãy để ý người đó và đừng giao thiệp với người ấy, để người ấy biết xấu hổ.",
           "R": "Có thể có người không vâng theo những gì chúng tôi nói với anh chị em trong thư này. Hãy để ý xem đó là ai, và đừng giao du với họ. Khi đó họ sẽ cảm thấy xấu hổ."
+        },
+        "pt": {
+          "L": "E se alguém não obedece à nossa palavra por meio desta carta, tomem nota dessa pessoa e não convivam com ela, para que se envergonhe.",
+          "B": "Se alguém não obedecer ao que dizemos nesta carta, tomem nota dessa pessoa e não tenham contato com ela, para que se envergonhe.",
+          "R": "Algumas pessoas talvez não obedeçam ao que dizemos a vocês nesta carta. Prestem atenção em quem são essas pessoas e não andem com elas. Assim, elas vão sentir vergonha."
+        },
+        "am": {
+          "L": "ማንም በዚህ መልእክት ለተናገርነው ቃል ባይታዘዝ ያንን ሰው ልብ በሉት፤ እንዲያፍርም ከእርሱ ጋር አትቀላቀሉ።",
+          "B": "ማንም በዚህ መልእክት የምንለውን ባይታዘዝ ያንን ሰው ልብ በሉት፤ እንዲያፍርም ከእርሱ ጋር ምንም ግንኙነት አይኑራችሁ።",
+          "R": "አንዳንድ ሰዎች በዚህ ደብዳቤ የምንነግራችሁን ላይታዘዙ ይችላሉ። እነማን እንደ ሆኑ ልብ በሉ፤ ከእነርሱም ጋር ጊዜ አታሳልፉ። ከዚያም ያፍራሉ።"
         }
       },
       "decisions": [
@@ -2260,6 +2650,27 @@
           "reason": "The English Literal supplies \"that person\" with no gender span; Spanish \"alguno ... ese ... él\" follows the Greek masculine, which here means anyone. Balanced says \"esa persona ... con ella\", which includes women and men.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n53003014012",
+            "n53003014016",
+            "n53003014018"
+          ],
+          "choice": "dessa pessoa ... com ela ... se envergonhe",
+          "alternatives": [
+            "desse homem ... com ele"
+          ],
+          "reason": "Portuguese \"pessoa\" covers a man or a woman, and the pronoun that agrees with it is \"ela\"; the subject of \"se envergonhe\" needs no pronoun. So Literal needs none of the English brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2316,6 +2727,16 @@
           "L": "nhưng đừng coi người ấy như kẻ thù, nhưng hãy khuyên bảo người ấy như {{gender:anh chị em|anh em}} mình.",
           "B": "Nhưng đừng đối xử với người ấy như kẻ thù; hãy khuyên bảo người ấy như {{gender:anh chị em|anh em}} mình.",
           "R": "Nhưng đừng đối xử với họ như kẻ thù. Hãy khuyên răn họ như anh chị em khuyên răn một tín hữu."
+        },
+        "pt": {
+          "L": "E não considerem [essa pessoa] como inimigo, mas advirtam[-na] como {{gender:um irmão ou uma irmã|um irmão}}.",
+          "B": "Mas não tratem essa pessoa como inimiga; corrijam-na como se corrige {{gender:um irmão ou uma irmã|um irmão}}.",
+          "R": "Mas não tratem essas pessoas como inimigas. Chamem a atenção delas como fariam com qualquer pessoa da família da fé."
+        },
+        "am": {
+          "L": "እንደ ጠላትም አትቁጠሩት፤ ነገር ግን እንደ {{gender:ወንድም ወይም እኅት|ወንድም}} ገሥጹት።",
+          "B": "ነገር ግን ያንን ሰው እንደ ጠላት አትዩት፤ እንደ {{gender:ወንድም ወይም እኅት|ወንድም}} አድርጋችሁ አርሙት።",
+          "R": "ነገር ግን እንደ ጠላት አትዩት። አብሯችሁ የሚያምንን ሰው እንደምታስጠነቅቁ አስጠንቅቁት።"
         }
       },
       "decisions": [
@@ -2420,6 +2841,16 @@
           "L": "Nguyện chính Chúa của sự bình an ban cho anh chị em sự bình an luôn luôn, trong mọi cách.",
           "B": "Nguyện chính Chúa bình an ban cho anh chị em sự bình an luôn luôn và trong mọi phương diện.",
           "R": "Chúng tôi cầu xin Chúa, là Đấng ban bình an, ban cho anh chị em sự bình an mọi lúc và trong mọi hoàn cảnh."
+        },
+        "pt": {
+          "L": "Ora, [que] o Senhor da paz, {{deity_pronoun:ele mesmo|Ele mesmo}}, lhes dê a paz sempre, de todo modo.",
+          "B": "Que o Senhor da paz, {{deity_pronoun:ele mesmo|Ele mesmo}}, conceda a vocês a paz continuamente e de todas as maneiras.",
+          "R": "Oramos para que o Senhor, que dá a paz, dê paz a vocês em todo tempo e em todas as situações."
+        },
+        "am": {
+          "L": "የሰላም ጌታ ራሱ ሁልጊዜ በሁሉ መንገድ ሰላምን ይስጣችሁ።",
+          "B": "የሰላም ጌታ ራሱ ዘወትርና በሁሉ መንገድ ሰላምን ይስጣችሁ።",
+          "R": "ሰላምን የሚሰጥ ጌታ በማንኛውም ጊዜና በማንኛውም ሁኔታ ሰላምን እንዲሰጣችሁ እንጸልያለን።"
         }
       },
       "decisions": [
@@ -2577,6 +3008,16 @@
           "L": "Nguyện Chúa [ở] với tất cả anh chị em.",
           "B": "Nguyện Chúa ở cùng tất cả anh chị em.",
           "R": "Cầu xin Chúa ở cùng tất cả anh chị em."
+        },
+        "pt": {
+          "L": "O Senhor [esteja] com todos vocês.",
+          "B": "O Senhor esteja com todos vocês.",
+          "R": "Que o Senhor esteja com todos vocês."
+        },
+        "am": {
+          "L": "ጌታ ከሁላችሁ ጋር [ይሁን]።",
+          "B": "ጌታ ከሁላችሁ ጋር ይሁን።",
+          "R": "ጌታ ከሁላችሁ ጋር ይሁን።"
         }
       },
       "decisions": [
@@ -2658,6 +3099,16 @@
           "L": "Lời chào [này] do chính tay tôi, Phao-lô, viết, là dấu hiệu trong mọi bức thư; tôi viết như vậy.",
           "B": "Lời chào này là do chính tay tôi, Phao-lô, viết. Đó là dấu hiệu xác nhận trong mọi bức thư của tôi; tôi viết như thế này.",
           "R": "Tôi, Phao-lô, đang tự tay viết lời chào này. Tôi làm như vậy trong mọi bức thư để làm dấu hiệu cho thấy thư thật sự là của tôi. Đây là chữ viết của tôi."
+        },
+        "pt": {
+          "L": "A saudação [é] da minha própria mão, de Paulo, o que é sinal em toda carta; assim escrevo.",
+          "B": "Esta saudação está escrita com a minha própria mão, a de Paulo. Ela é o sinal de autenticidade em todas as cartas; é assim que eu escrevo.",
+          "R": "Eu, Paulo, estou escrevendo esta saudação com a minha própria mão. Faço isso em todas as cartas, como sinal de que a carta vem mesmo de mim. É assim que eu escrevo."
+        },
+        "am": {
+          "L": "የእኔ የጳውሎስ ሰላምታ በገዛ እጄ [ነው]፤ ይህም በመልእክት ሁሉ ምልክት ነው፤ እንዲህ እጽፋለሁ።",
+          "B": "ይህ ሰላምታ በገዛ እጄ የተጻፈ የእኔ የጳውሎስ ነው። በመልእክቶቼ ሁሉ እውነተኛነታቸውን የሚያሳይ ምልክት ይህ ነው፤ እንዲህ ነው የምጽፈው።",
+          "R": "እኔ ጳውሎስ ይህን ሰላምታ በገዛ እጄ እጽፋለሁ። ደብዳቤው በእርግጥ ከእኔ እንደ ሆነ ምልክት እንዲሆን በደብዳቤዎቼ ሁሉ ይህን አደርጋለሁ። የእኔ አጻጻፍ ይህ ነው።"
         }
       },
       "decisions": [
@@ -2779,6 +3230,16 @@
           "L": "Ân điển của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} [ở] với tất cả anh chị em.",
           "B": "Nguyện ân điển của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} ở cùng tất cả anh chị em.",
           "R": "Cầu xin ân điển của Chúa chúng ta là Đức Giê-xu {{christos:Christ|Mê-si-a}} ở cùng tất cả anh chị em."
+        },
+        "pt": {
+          "L": "A graça do nosso Senhor Jesus {{christos:Cristo|Messias}} [esteja] com todos vocês.",
+          "B": "Que a graça do nosso Senhor Jesus {{christos:Cristo|o Messias}} esteja com todos vocês.",
+          "R": "Que a graça do nosso Senhor Jesus {{christos:Cristo|o Messias}} esteja com todos vocês."
+        },
+        "am": {
+          "L": "የጌታችን የኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ጸጋ ከሁላችሁ ጋር [ይሁን]።",
+          "B": "የጌታችን የኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ጸጋ ከሁላችሁ ጋር ይሁን።",
+          "R": "የጌታችን የኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ጸጋ ከሁላችሁ ጋር ይሁን።"
         }
       },
       "decisions": [

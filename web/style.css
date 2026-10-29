@@ -76,6 +76,19 @@
 @font-face { font-family: "Noto Serif Hebrew"; font-style: normal; font-weight: 600; font-display: swap;
   src: url(/fonts/noto-serif-hebrew-hebrew-600-normal.woff2) format("woff2"); unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F; }
 
+/* Amharic's Ethiopic script (ፊደል), which none of the faces above has: Noto
+   Serif Ethiopic beside Gentium and Fraunces, Noto Sans Ethiopic beside
+   Hanken Grotesk. From @fontsource/noto-serif-ethiopic@5.2.8 and
+   @fontsource/noto-sans-ethiopic@5.2.7. */
+@font-face { font-family: "Noto Serif Ethiopic"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-serif-ethiopic-ethiopic-400-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+@font-face { font-family: "Noto Serif Ethiopic"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-serif-ethiopic-ethiopic-700-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+@font-face { font-family: "Noto Sans Ethiopic"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-sans-ethiopic-ethiopic-400-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+@font-face { font-family: "Noto Sans Ethiopic"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-sans-ethiopic-ethiopic-700-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
+
 /* Atkinson Hyperlegible, the Readable typeface in the gear menu, made by the
    Braille Institute for low-vision readers. Generated from
    @fontsource/atkinson-hyperlegible@5.2.8. */
@@ -98,11 +111,11 @@
 
 :root {
   --header-h: 64px;
-  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --serif: "Gentium Book Plus", "Noto Serif Hebrew", Georgia, serif;
+  --display: "Fraunces", "Noto Serif Ethiopic", "Iowan Old Style", Georgia, serif;
+  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", Georgia, serif;
   --greek: "Gentium Book Plus", "Gentium Plus", serif;
   --hebrew: "Noto Serif Hebrew", serif;
-  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: "Hanken Grotesk", "Noto Sans Ethiopic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 12px;
   --radius-sm: 9px;
   --fast: 150ms;
@@ -856,9 +869,10 @@ a.map-book.part:hover { color: var(--accent); }
   background: var(--surface); box-shadow: var(--shadow-card); text-decoration: none;
   transition: border-color var(--fast) ease, transform var(--fast) ease;
 }
-/* Previous and next passage at the window's edges, where there is room. */
+/* Previous and next passage at the window's edges, where there is room:
+   the reader's 1300px column leaves the 64px they need from 1420px. */
 .edge-turn { display: none; }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
   .edge-turn {
     display: grid; place-items: center; position: fixed; top: 50%; z-index: 15; width: 44px; height: 44px; margin-top: -22px;
     border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--muted);
@@ -1398,7 +1412,6 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
 .panel .keys { color: var(--muted); font-size: 13px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
 @media (hover: none) { .panel .keys { display: none; } }
 .panel-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px; }
-.panel-title .copy-link + .copy-link { margin-left: 0; }
 /* Previous and next verse, either side of the reference. */
 .panel-step {
   flex: none; display: inline-grid; place-items: center; width: 30px; height: 30px; padding: 0 0 2px;
@@ -1409,9 +1422,16 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
 .panel-step:disabled { color: var(--muted); opacity: .45; cursor: default; }
 .panel-step:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .panel-ref { padding: 0 4px; }
-.panel-actions { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; }
-.panel-actions .ask-link { text-decoration: none; }
-.panel-actions .copy-link { margin-left: 0; }
+/* Bookmark, copy link, cite and "More", in one row under the status. */
+.panel-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
+.panel-actions .copy-link, .more-links .copy-link { margin-left: 0; }
+.panel-actions .mark-bookmark { padding: 3px 10px; font-family: var(--sans); font-size: 12.5px; }
+.more-toggle::after { content: " \25BE"; }
+.more-toggle[aria-expanded="true"]::after { content: " \25B4"; }
+.more-box { margin: 4px 0 12px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
+.more-box[hidden] { display: none; }
+.more-links { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.more-box .mark-row { margin: 0; }
 .copy-link[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
 /* Review status and the next sentence with notes. */
 .panel-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 8px 0 10px; font-family: var(--sans); font-size: 13px; }
@@ -1445,7 +1465,10 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
 }
 .cite-text:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .cite-chapter { margin: 10px 0 0; }
-/* Suggest or ask (web/reader.js noteBox): a message to the editors. */
+/* Suggest or ask (web/reader.js feedback): a message to the editors, at
+   the end of the reasoning, and a public GitHub issue under it. */
+.feedback { margin: 28px 0 8px; padding-top: 4px; border-top: 1px solid var(--line); }
+.feedback-public { margin: 0; font-family: var(--sans); font-size: 13px; }
 .note-box { margin: 4px 0 12px; padding: 10px 12px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font-family: var(--sans); }
 .note-box[hidden] { display: none; }
 .note-box .cite-label { display: block; margin: 0 0 6px; }
@@ -1718,8 +1741,6 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
 }
 @media (max-width: 860px) {
   .key-notes { display: block; }
-  /* The actions run under the close button, which sits beside the title. */
-  .panel-actions { flex-basis: calc(100% + 44px); margin-right: -44px; }
   /* Sideways swipes step through verses; vertical ones scroll. */
   .panel { touch-action: pan-y; }
   .panel-tools { margin-bottom: 6px; }

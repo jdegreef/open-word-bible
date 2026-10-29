@@ -58,6 +58,16 @@
           "L": "{{gender:형제자매|형제}} 여러분, 나도 여러분에게 영적인 [사람들]에게 하듯이 말할 수 없었고, 육신에 속한 [사람들]에게 하듯이, {{christos:그리스도|메시아}} 안에서 어린아이들에게 하듯이 [말했습니다].",
           "B": "{{gender:형제자매|형제}} 여러분, 나는 여러분에게 성령의 사람들에게 하듯이 말할 수 없었습니다. 그저 육신에 머물러 있는 사람들, {{christos:그리스도|메시아}} 안에서 어린아이 같은 사람들에게 하듯이 말해야 했습니다.",
           "R": "{{gender:형제자매|형제}} 여러분, 내가 여러분과 함께 있을 때, 나는 여러분에게 성령께서 이끄시는 사람들에게 하듯이 말할 수 없었습니다. 아직 사람의 방식대로만 생각하는 사람들에게 하듯이 말해야 했습니다. 여러분은 {{christos:그리스도|메시아}}와 함께하는 새 삶에서 아기와 같았습니다."
+        },
+        "pt": {
+          "L": "E eu, {{gender:irmãos e irmãs|irmãos}}, não pude falar a vocês como a espirituais, mas como a [pessoas] de carne, como a criancinhas {{christos:em Cristo|no Messias}}.",
+          "B": "Quanto a mim, {{gender:irmãos e irmãs|irmãos}}, não pude falar a vocês como a pessoas do Espírito. Tive de falar a vocês como a pessoas meramente de carne, como a criancinhas {{christos:em Cristo|no Messias}}.",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, quando eu estava com vocês, não pude falar a vocês como a pessoas guiadas pelo Espírito de Deus. Tive de falar como se fala a pessoas que ainda pensavam de um jeito simplesmente humano. Vocês eram como bebês na nova vida {{christos:em Cristo|no Messias}}."
+        },
+        "am": {
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እኔም እንደ መንፈሳውያን ልናገራችሁ አልቻልኩም፤ ከሥጋ እንደ ተሠሩ [ሰዎች]፣ {{christos:በክርስቶስ|በመሲሕ}} እንደ ሕፃናት እንጂ።",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እኔ በበኩሌ የመንፈስ ሰዎች እንደ ሆናችሁ አድርጌ ልናገራችሁ አልቻልኩም። ሥጋ ብቻ እንደ ሆኑ ሰዎች፣ {{christos:በክርስቶስ|በመሲሕ}} እንደ ሕፃናት አድርጌ ልናገራችሁ ግድ ሆነብኝ።",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ ከእናንተ ጋር በነበርኩ ጊዜ በእግዚአብሔር መንፈስ እንደሚመሩ ሰዎች ላነጋግራችሁ አልቻልኩም። ገና በሰው አስተሳሰብ ብቻ እንደሚያስቡ ሰዎች አድርጌ ላነጋግራችሁ ግድ ሆነብኝ። {{christos:ከክርስቶስ|ከመሲሕ}} ጋር በጀመራችሁት አዲስ ሕይወት እንደ ሕፃናት ነበራችሁ።"
         }
       },
       "decisions": [
@@ -352,6 +362,70 @@
           "reason": "\"육신\" is the word of Romans and Galatians for the flesh. The meaning decisions describe people still living on a merely human level; \"세상적인\" would blur this with \"세상\" (the world), a different key word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003001011"
+          ],
+          "choice": "[pessoas] de carne (L); pessoas meramente de carne (B); pessoas que ainda pensavam de um jeito simplesmente humano (R)",
+          "alternatives": [
+            "carnais (every level)",
+            "mundanos"
+          ],
+          "reason": "For the whole book, as docs/corinthians-terms.md sets the two words of 3:1 and 3:3: Literal \"de carne\" and \"carnais\", Balanced \"meramente de carne\" and \"vivem segundo a carne\", Readable \"um jeito simplesmente humano\". Never \"mundanos\", which would blur the word with \"o mundo\" (verse 19); and \"carnal\" alone suggests sexual sin to many readers, so Balanced names the flesh with \"segundo a carne\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003001001"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "a span like the English {{deity_pronoun:he|He}}"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting for capitalised pronouns has nothing to change; pronouns for God and for Christ are written plainly through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003001011"
+          ],
+          "choice": "ከሥጋ እንደ ተሠሩ [ሰዎች] (people made of flesh, L); ሥጋ ብቻ እንደ ሆኑ ሰዎች (people of mere flesh, B); በሰው አስተሳሰብ ብቻ (merely human ways, R)",
+          "alternatives": [
+            "ዓለማውያን (worldly)"
+          ],
+          "reason": "Paul's word here is the one for what is made of flesh; the next sentence uses a related word, \"fleshly\", which Literal gives as \"ሥጋውያን\". \"ዓለማውያን\" is never used, since it would blur with \"ዓለም\", the world, as the book's terms note says for the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -407,6 +481,16 @@
           "L": "나는 여러분에게 젖을 먹였고 단단한 음식을 [먹이지] 않았습니다. 여러분이 아직 [그것을 먹을] 수 없었기 때문입니다.",
           "B": "나는 여러분에게 젖을 먹였을 뿐, 단단한 음식은 주지 않았습니다. 여러분이 아직 그것을 먹을 수 없었기 때문입니다.",
           "R": "나는 아기에게 먹이듯이 여러분에게 젖을 먹였습니다. 단단한 음식은 주지 않았습니다. 여러분이 아직 그것을 소화할 수 없었기 때문입니다."
+        },
+        "pt": {
+          "L": "Eu lhes dei leite para beber, não alimento sólido, pois ainda não podiam [recebê-lo].",
+          "B": "Foi leite que dei a vocês para beber, não alimento sólido, pois vocês ainda não podiam recebê-lo.",
+          "R": "Eu alimentei vocês com leite, como se alimenta um bebê. Não dei a vocês comida sólida, porque vocês ainda não conseguiam comê-la."
+        },
+        "am": {
+          "L": "ጠንካራ ምግብ ሳይሆን ወተት አጠጣኳችሁ፤ ገና [ልትበሉት] አልቻላችሁም ነበርና።",
+          "B": "ያጠጣኳችሁ ወተት ነበር እንጂ ጠንካራ ምግብ አልነበረም፤ ገና ልትበሉት አትችሉም ነበርና።",
+          "R": "ሰዎች ሕፃን እንደሚመግቡ በወተት መገብኳችሁ። ጠንካራ ምግብ አልሰጠኳችሁም፤ ገና ልትቋቋሙት ስላልቻላችሁ ነው።"
         }
       },
       "decisions": [
@@ -555,6 +639,16 @@
           "L": "사실 지금도 여러분은 [먹을] 수 없습니다. \\v 3 여러분은 아직도 육신에 속해 있기 때문입니다.",
           "B": "사실 지금도 여러분은 아직 그것을 먹을 수 없습니다. \\v 3 여러분은 아직도 육신을 따라 살고 있기 때문입니다.",
           "R": "그리고 지금도 여러분은 아직 준비가 되어 있지 않습니다. \\v 3 여러분은 아직도 사람의 방식대로만 살고 있기 때문입니다."
+        },
+        "pt": {
+          "L": "Mas nem mesmo agora vocês podem, \\v 3 pois ainda são carnais.",
+          "B": "Na verdade, nem agora vocês conseguem recebê-lo, \\v 3 porque ainda vivem segundo a carne.",
+          "R": "E mesmo agora vocês ainda não estão prontos, \\v 3 porque continuam vivendo de um jeito simplesmente humano."
+        },
+        "am": {
+          "L": "አሁንም እንኳ ገና አትችሉም፤ \\v 3 ገና ሥጋውያን ናችሁና።",
+          "B": "እንዲያውም አሁንም ገና ልትበሉት አትችሉም፤ \\v 3 ምክንያቱም አሁንም በሥጋ መንገድ ትኖራላችሁ።",
+          "R": "አሁንም እንኳ ዝግጁ አይደላችሁም፤ \\v 3 ምክንያቱም ገና በሰው አስተሳሰብ ብቻ ትኖራላችሁ።"
         }
       },
       "decisions": [
@@ -730,6 +824,16 @@
           "L": "여러분 가운데 시기와 다툼이 있으니, 여러분은 육신에 속해 있고 사람을 따라 걷고 있는 것이 아닙니까?",
           "B": "여러분 가운데 시기와 다툼이 있는 한, 여러분은 육신을 따라 살면서 그저 사람의 방식대로 행동하고 있는 것이 아닙니까?",
           "R": "여러분은 서로 시기하고 다툽니다. 그것은 여러분이 사람의 방식대로만 살고 있다는 것을 보여 주지 않습니까? 여러분은 하나님의 성령이 없는 사람처럼 행동하고 있습니다."
+        },
+        "pt": {
+          "L": "Pois, onde [há] ciúme e contenda entre vocês, não são carnais e não andam segundo [o modo] humano?",
+          "B": "Pois, enquanto houver ciúme e brigas entre vocês, será que não estão vivendo segundo a carne e se comportando de um modo meramente humano?",
+          "R": "Vocês têm ciúme uns dos outros e brigam. Isso não mostra que vocês estão vivendo de um jeito simplesmente humano? Vocês estão se comportando como se não tivessem o Espírito de Deus."
+        },
+        "am": {
+          "L": "በመካከላችሁ ቅንዓትና ክርክር ካለ፣ ሥጋውያን አይደላችሁምን? እንደ ሰውስ አካሄድ አትመላለሱምን?",
+          "B": "በመካከላችሁ ቅንዓትና ጭቅጭቅ እስካለ ድረስ በሥጋ መንገድ የምትኖሩና እንደ ተራ ሰው የምትመላለሱ አይደላችሁምን?",
+          "R": "እርስ በርሳችሁ ትቀናናላችሁ፤ ትጨቃጨቃላችሁም። ይህ በሰው አስተሳሰብ ብቻ እንደምትኖሩ አያሳይምን? የእግዚአብሔር መንፈስ እንደሌላቸው ሰዎች ትመላለሳላችሁ።"
         }
       },
       "decisions": [
@@ -941,6 +1045,16 @@
           "L": "어떤 사람은 \"나는 바울의 [사람]이다\" 하고, 다른 사람은 \"나는 아볼로의 [사람]이다\" 하고 말하니, 여러분은 [그저] 사람이 아닙니까?",
           "B": "여러분 가운데 어떤 사람은 \"나는 바울 편이다\" 하고, 또 어떤 사람은 \"나는 아볼로 편이다\" 하고 말하니, 그것은 그저 사람의 수준에서 사는 사람들이 하는 말이 아닙니까?",
           "R": "여러분 가운데 어떤 사람은 \"나는 바울을 따른다\" 하고 말합니다. 또 어떤 사람은 \"나는 아볼로를 따른다\" 하고 말합니다. 그렇게 말할 때 여러분은 하나님의 성령이 여러분 안에 계시지 않는 것처럼, 그저 사람처럼 행동하고 있는 것입니다."
+        },
+        "pt": {
+          "L": "Pois, quando alguém diz: \"Eu sou de Paulo\", e outro: \"Eu, de Apolo\", não são [meros] seres humanos?",
+          "B": "Quando um de vocês diz: \"Eu apoio Paulo\", e outro: \"Eu apoio Apolo\", não é assim que fala quem vive num nível meramente humano?",
+          "R": "Um de vocês diz: \"Eu estou do lado de Paulo.\" Outro diz: \"Eu estou do lado de Apolo.\" Quando vocês falam assim, estão agindo como pessoas que são apenas humanas, como se o Espírito de Deus não estivesse em vocês."
+        },
+        "am": {
+          "L": "አንዱ «እኔ የጳውሎስ ነኝ»፣ ሌላውም «እኔ የአጵሎስ» ሲል፣ [ተራ] ሰዎች አይደላችሁምን?",
+          "B": "ከእናንተ አንዱ «እኔ ከጳውሎስ ጋር ነኝ»፣ ሌላውም «እኔ ከአጵሎስ ጋር ነኝ» ሲል፣ ይህ በሰው ደረጃ ብቻ የሚኖሩ ሰዎች አነጋገር አይደለምን?",
+          "R": "ከእናንተ አንዱ «እኔ የጳውሎስ ወገን ነኝ» ይላል። ሌላው «እኔ የአጵሎስ ወገን ነኝ» ይላል። እንዲህ ስትናገሩ የእግዚአብሔር መንፈስ በውስጣችሁ እንደሌለ፣ ሰዎች ብቻ እንደ ሆኑ ሰዎች ትሠራላችሁ።"
         }
       },
       "decisions": [
@@ -1127,6 +1241,29 @@
           "reason": "The same slogans come back, so Korean uses the same words each time, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003004005",
+            "n46003004007",
+            "n46003004008"
+          ],
+          "choice": "«እኔ የጳውሎስ ነኝ» (L); «እኔ ከጳውሎስ ጋር ነኝ» (B); «እኔ የጳውሎስ ወገን ነኝ» (R)",
+          "alternatives": [
+            "a new wording for the slogans here"
+          ],
+          "reason": "The slogans keep the forms they have in 1:12, so a reader hears Paul return to them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1178,6 +1315,16 @@
           "L": "그렇다면 아볼로는 무엇입니까?",
           "B": "그렇다면 아볼로는 무엇입니까?",
           "R": "그러면 아볼로는 무엇입니까?"
+        },
+        "pt": {
+          "L": "Que é, então, Apolo?",
+          "B": "O que é Apolo, então?",
+          "R": "Então, o que é Apolo?"
+        },
+        "am": {
+          "L": "እንግዲህ አጵሎስ ምንድን ነው?",
+          "B": "እንግዲያውስ አጵሎስ ምንድን ነው?",
+          "R": "ታዲያ አጵሎስ ምንድን ነው?"
         }
       },
       "decisions": [
@@ -1283,6 +1430,16 @@
           "L": "바울은 무엇입니까?",
           "B": "바울은 무엇입니까?",
           "R": "바울은 무엇입니까?"
+        },
+        "pt": {
+          "L": "E que é Paulo?",
+          "B": "E o que é Paulo?",
+          "R": "E o que é Paulo?"
+        },
+        "am": {
+          "L": "ጳውሎስስ ምንድን ነው?",
+          "B": "ጳውሎስስ ምንድን ነው?",
+          "R": "ጳውሎስስ ምንድን ነው?"
         }
       },
       "decisions": [
@@ -1356,6 +1513,16 @@
           "L": "[우리는] 여러분이 믿게 된 일꾼들이며, 주님께서 각 사람에게 주신 대로 [일했습니다].",
           "B": "우리는 일꾼일 뿐이고, 우리를 통해 여러분이 믿게 되었습니다. 우리는 저마다 주님께서 맡기신 일을 했을 뿐입니다.",
           "R": "우리는 섬기는 사람일 뿐입니다. 우리를 통해 여러분이 믿게 되었습니다. 우리는 저마다 주님께서 주신 일을 했습니다."
+        },
+        "pt": {
+          "L": "Servos por meio dos quais vocês creram, e [cada um] conforme o Senhor deu a cada um.",
+          "B": "Servos por meio dos quais vocês chegaram à fé, cada um fazendo o trabalho que o Senhor lhe confiou.",
+          "R": "Somos apenas servos. Por meio de nós vocês passaram a acreditar. Cada um de nós fez o trabalho que recebeu do Senhor."
+        },
+        "am": {
+          "L": "ጌታ ለእያንዳንዱ እንደ ሰጠ፣ በእነርሱ በኩል ያመናችሁባቸው አገልጋዮች [ናቸው]።",
+          "B": "እናንተ በእነርሱ በኩል ያመናችሁባቸው አገልጋዮች ናቸው፤ እያንዳንዳቸውም ጌታ የሰጣቸውን ሥራ ይሠራሉ።",
+          "R": "እኛ አገልጋዮች ብቻ ነን። በእኛ በኩል አመናችሁ። እያንዳንዳችንም ጌታ የሰጠንን ሥራ ሠራን።"
         }
       },
       "decisions": [
@@ -1592,6 +1759,50 @@
           "reason": "As in Colossians 1:7 and Romans 13:4, \"일꾼\" is the word for one who serves another, and \"종\" is kept for the slave. The same word returns in 2 Corinthians 3:6 and 6:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003005009"
+          ],
+          "choice": "servos",
+          "alternatives": [
+            "ministros",
+            "diáconos"
+          ],
+          "reason": "For the whole book, as docs/corinthians-terms.md sets it: \"servo\" for this word at every level, and \"auxiliares\" for the different word of 4:1, so that the two stay apart. \"Ministros\" would suggest an office in the church.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003005009"
+          ],
+          "choice": "አገልጋዮች (servants)",
+          "alternatives": [
+            "ባሪያዎች (slaves)",
+            "ሠራተኞች (workers)"
+          ],
+          "reason": "Paul's word is the one for someone who carries out a task for another, not the word for a slave; \"አገልጋይ\" is kept for it through the letter, and \"ባሪያ\" for the slave word, so the two stay apart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1647,6 +1858,16 @@
           "L": "나는 심었고 아볼로는 물을 주었지만, 하나님께서는 자라게 하셨습니다.",
           "B": "나는 심었고 아볼로는 물을 주었습니다. 그러나 계속 자라게 하신 분은 하나님이십니다.",
           "R": "나는 씨를 땅에 심었고, 아볼로는 물을 주었습니다. 그러나 자라게 하신 분은 하나님이십니다."
+        },
+        "pt": {
+          "L": "Eu plantei, Apolo regou, mas Deus fazia crescer.",
+          "B": "Eu plantei, Apolo regou, mas foi Deus quem continuou fazendo crescer.",
+          "R": "Eu coloquei a semente na terra, e Apolo a regou. Mas foi Deus quem a fez crescer."
+        },
+        "am": {
+          "L": "እኔ ተከልኩ፤ አጵሎስ አጠጣ፤ እግዚአብሔር ግን ያሳድግ ነበር።",
+          "B": "እኔ ተከልኩ፤ አጵሎስ አጠጣ፤ ሲያሳድገው የኖረው ግን እግዚአብሔር ነው።",
+          "R": "እኔ ዘሩን ዘራሁ፤ አጵሎስም ውኃ አጠጣው። እንዲያድግ ያደረገው ግን እግዚአብሔር ነው።"
         }
       },
       "decisions": [
@@ -1803,6 +2024,16 @@
           "L": "그러므로 심는 사람도 아무것도 아니고 물 주는 사람도 [아무것도 아니며], 자라게 하시는 하나님[만이 중요합니다].",
           "B": "그러므로 심는 사람도 물 주는 사람도 대단한 것이 아닙니다. 중요한 분은 자라게 하시는 하나님이십니다.",
           "R": "그러니 씨를 심는 사람도 중요하지 않고 물을 주는 사람도 중요하지 않습니다. 중요한 분은 하나님이십니다. 하나님께서 자라게 하시기 때문입니다."
+        },
+        "pt": {
+          "L": "De modo que nem o que planta é alguma coisa, nem o que rega, mas Deus, que faz crescer.",
+          "B": "Assim, quem planta não tem importância alguma, nem quem rega. O que importa é Deus, que dá o crescimento.",
+          "R": "Por isso, quem planta não é importante, e quem rega também não. Deus é quem importa, porque {{deity_pronoun:ele|Ele}} faz as coisas crescerem."
+        },
+        "am": {
+          "L": "ስለዚህ የሚተክልም ቢሆን የሚያጠጣም ቢሆን አንዳች አይደለም፤ የሚያሳድግ እግዚአብሔር እንጂ።",
+          "B": "ስለዚህ የሚተክለው ምንም አይቆጠርም፤ የሚያጠጣውም እንዲሁ። የሚቆጠረው የሚያሳድገው እግዚአብሔር ነው።",
+          "R": "ስለዚህ የሚተክለው ሰው አስፈላጊ አይደለም፤ የሚያጠጣውም አስፈላጊ አይደለም። አስፈላጊው እግዚአብሔር ነው፤ ምክንያቱም እርሱ ነገሮችን ያሳድጋል።"
         }
       },
       "decisions": [
@@ -1955,6 +2186,16 @@
           "L": "심는 사람과 물 주는 사람은 하나이며, 각 사람은 자기의 수고를 따라 자기의 삯을 받을 것입니다. \\v 9 우리는 하나님의 동역자들이고, 여러분은 하나님의 밭, 하나님의 건물입니다.",
           "B": "심는 사람과 물 주는 사람은 한 가지 일을 합니다. 그리고 각 사람은 자기가 한 수고에 따라 상을 받을 것입니다. \\v 9 우리는 하나님을 섬기며 함께 일하는 사람들이고, 여러분은 하나님의 밭이며 하나님의 건물입니다.",
           "R": "심는 사람과 물 주는 사람은 같은 목적을 위해 함께 일합니다. 하나님께서는 각 사람이 수고한 만큼 상을 주실 것입니다. \\v 9 우리는 하나님을 위해 함께 일하는 일꾼들입니다. 여러분은 하나님의 밭과 같습니다. 여러분은 하나님의 건물과 같습니다."
+        },
+        "pt": {
+          "L": "Ora, o que planta e o que rega são um, e cada um receberá o seu próprio salário, segundo o seu próprio trabalho. \\v 9 Pois somos cooperadores de Deus; vocês são lavoura de Deus, edifício de Deus.",
+          "B": "Quem planta e quem rega trabalham como um só, e cada um será recompensado de acordo com o trabalho que fez. \\v 9 Pois somos colaboradores a serviço de Deus, e vocês são a lavoura de Deus, o edifício de Deus.",
+          "R": "Quem planta e quem rega trabalham juntos com o mesmo propósito. Deus vai recompensar cada um pelo trabalho duro que fez. \\v 9 Somos trabalhadores que trabalham juntos para Deus. Vocês são como a plantação de Deus. Vocês são como a construção de Deus."
+        },
+        "am": {
+          "L": "የሚተክልና የሚያጠጣ አንድ ናቸው፤ እያንዳንዱም እንደ ራሱ ድካም የራሱን ዋጋ ይቀበላል። \\v 9 የእግዚአብሔር የሥራ ባልደረቦች ነንና፤ እናንተ የእግዚአብሔር እርሻ፣ የእግዚአብሔር ሕንጻ ናችሁ።",
+          "B": "የሚተክለውና የሚያጠጣው በአንድነት ይሠራሉ፤ እያንዳንዱም እንደ ደከመው ድካም ዋጋውን ይቀበላል። \\v 9 እኛ በእግዚአብሔር አገልግሎት አብረን የምንሠራ ነን፤ እናንተም የእግዚአብሔር እርሻ፣ የእግዚአብሔር ሕንጻ ናችሁ።",
+          "R": "የሚተክለውና የሚያጠጣው ለአንድ ዓላማ አብረው ይሠራሉ። እግዚአብሔር እያንዳንዳቸውን እንደ ደከሙበት ሥራ ዋጋ ይሰጣቸዋል። \\v 9 እኛ ለእግዚአብሔር አብረን የምንሠራ ሠራተኞች ነን። እናንተ እንደ እግዚአብሔር እርሻ ናችሁ። እንደ እግዚአብሔር ሕንጻም ናችሁ።"
         }
       },
       "decisions": [
@@ -2313,6 +2554,89 @@
           "reason": "The meaning decision leaves open whether Paul and Apollos work with God or together for God; Literal keeps the Greek's \"God's fellow workers\", which can bear both, and Balanced and Readable follow the English.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003008013"
+          ],
+          "choice": "salário (L); recompensa, recompensar (B, R)",
+          "alternatives": [
+            "pagamento",
+            "recompensa (every level)"
+          ],
+          "reason": "For the whole book (3:8, 14), as docs/corinthians-terms.md sets it: Literal keeps \"salário\", the pay of a worker; Balanced and Readable say \"recompensa\", since \"salário\" would suggest earning salvation (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003008009",
+            "n46003008012",
+            "n46003008017"
+          ],
+          "choice": "cada um ... o seu próprio salário (no gender span)",
+          "alternatives": [],
+          "reason": "Portuguese has no pronoun here that shows gender: \"seu\" agrees with \"salário\", not with the worker, and \"cada um\" already means anyone. So Literal needs no gender setting where the English has one; the same holds for \"alguém\", \"ninguém\" and \"cada um\" in verses 10-18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003008009",
+            "n46003008012"
+          ],
+          "choice": "no gender span on \"እያንዳንዱ\" and \"የራሱ\" (each, his own), here and through this chapter",
+          "alternatives": [
+            "a span like the English {{gender:their|his}}"
+          ],
+          "reason": "Amharic uses the masculine form for \"each one\" and \"anyone\" in general, and readers take it to include women; there is no other natural wording for a setting to switch to, so the Amharic has no span where the English Literal has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003008013"
+          ],
+          "choice": "ዋጋ (wage, reward) at every level",
+          "alternatives": [
+            "ደመወዝ (pay)",
+            "ሽልማት (prize)"
+          ],
+          "reason": "\"ዋጋ\" is both what a worker earns and what God gives in the end, so one word serves Literal (\"wage\") and Balanced and Readable (\"reward\"), as in Matthew. \"ሽልማት\" would make it a prize for winning; the meaning decision keeps it distinct from salvation (3:14-15).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2376,6 +2700,16 @@
           "L": "하나님께서 나에게 주신 은혜를 따라 내가 지혜로운 건축가처럼 기초를 놓았고, 다른 사람이 그 위에 집을 짓고 있습니다.",
           "B": "하나님께서 나에게 주신 은혜에 따라, 나는 솜씨 좋은 건축가처럼 기초를 놓았고, 지금은 다른 사람이 그 위에 집을 짓고 있습니다.",
           "R": "하나님께서는 은혜를 베푸셔서 나에게 솜씨 좋은 건축가의 일을 맡기셨습니다. 그래서 나는 기초를 놓았습니다. 지금은 다른 사람이 그 위에 집을 짓고 있습니다."
+        },
+        "pt": {
+          "L": "Segundo a graça de Deus que me foi dada, como sábio mestre de obras lancei um alicerce, e outro edifica sobre [ele].",
+          "B": "Usando a graça que Deus me deu, assentei o alicerce como um construtor experiente, e agora outra pessoa está construindo sobre ele.",
+          "R": "Deus, na {{deity_pronoun:sua|Sua}} graça, me deu o trabalho de um construtor habilidoso, e eu coloquei o alicerce. Agora outra pessoa está construindo sobre ele."
+        },
+        "am": {
+          "L": "እንደ ተሰጠኝ እንደ እግዚአብሔር ጸጋ፣ እንደ ጥበበኛ ዋና ግንበኛ መሠረትን ጣልኩ፤ ሌላውም በላዩ ይገነባል።",
+          "B": "እግዚአብሔር በሰጠኝ ጸጋ፣ እንደ ባለሙያ ዋና ግንበኛ መሠረትን አኖርኩ፤ አሁን ደግሞ ሌላ ሰው በላዩ ላይ እየገነባ ነው።",
+          "R": "እግዚአብሔር በጸጋው የብልህ ግንበኛን ሥራ ሰጠኝ፤ እኔም መሠረቱን ጣልኩ። አሁን ሌላ ሰው በላዩ እየገነባ ነው።"
         }
       },
       "decisions": [
@@ -2582,6 +2916,16 @@
           "L": "그러나 각 사람은 그 위에 어떻게 지을지 조심해야 합니다.",
           "B": "그러나 각 사람은 그 위에 어떻게 지을지 주의해야 합니다.",
           "R": "그러나 집을 짓는 사람은 누구든지 어떻게 지을지 조심해야 합니다."
+        },
+        "pt": {
+          "L": "Mas cada um veja como edifica sobre [ele].",
+          "B": "Mas cada um precisa tomar cuidado com a maneira como constrói sobre ele.",
+          "R": "Mas todos os que constroem precisam tomar cuidado com o que fazem."
+        },
+        "am": {
+          "L": "ነገር ግን እያንዳንዱ በላዩ እንዴት እንደሚገነባ ይጠንቀቅ።",
+          "B": "ነገር ግን እያንዳንዱ በላዩ እንዴት እንደሚገነባ መጠንቀቅ አለበት።",
+          "R": "ነገር ግን የሚገነባ ሁሉ እንዴት እንደሚገነባ መጠንቀቅ አለበት።"
         }
       },
       "decisions": [
@@ -2652,6 +2996,24 @@
           "reason": "The Spanish verb does not show whether the builder is a man or a woman, so the English setting ({{gender:they build|he builds}}) has nothing to change here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003010017",
+            "n46003010021"
+          ],
+          "choice": "cada um veja como edifica (no gender span)",
+          "alternatives": [],
+          "reason": "Portuguese leaves out the subject pronoun, so \"cada um ... edifica\" names no gender and needs no setting where the English has \"they build / he builds\" (see verse 8).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2712,6 +3074,16 @@
           "L": "놓여 있는 [기초] 외에 아무도 다른 기초를 놓을 수 없기 때문입니다. 그 [기초]는 예수 {{christos:그리스도|메시아}}이십니다.",
           "B": "이미 놓인 기초 말고는 아무도 다른 기초를 놓을 수 없습니다. 그 기초는 바로 예수 {{christos:그리스도|메시아}}이십니다.",
           "R": "기초는 이미 놓여 있습니다. 그 기초는 예수 {{christos:그리스도|메시아}}이십니다. 아무도 다른 기초를 놓을 수 없습니다."
+        },
+        "pt": {
+          "L": "Pois ninguém pode lançar outro alicerce além do que está posto, que é Jesus {{christos:Cristo|Messias}}.",
+          "B": "Pois não há outro alicerce que alguém possa lançar; o que já está posto é Jesus {{christos:Cristo|o Messias}}.",
+          "R": "O alicerce já está lá, e é Jesus {{christos:Cristo|o Messias}}. Ninguém pode colocar outro."
+        },
+        "am": {
+          "L": "ከተጣለው በቀር ሌላ መሠረት ሊጥል የሚችል ማንም የለምና፤ እርሱም ኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ነው።",
+          "B": "ማንም ሊጥለው የሚችል ሌላ መሠረት የለምና፤ ቀድሞ የተጣለው መሠረት ኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ነው።",
+          "R": "መሠረቱ አስቀድሞ ተጥሏል፤ እርሱም ኢየሱስ {{christos:ክርስቶስ|መሲሕ}} ነው። ማንም ሌላ መሠረት ሊጥል አይችልም።"
         }
       },
       "decisions": [
@@ -2900,6 +3272,16 @@
           "L": "누구든지 이 기초 위에 금, 은, 값진 돌, 나무, 풀, 짚으로 집을 지으면, \\v 13 각 사람의 일이 드러나게 될 것입니다. 그날이 [그것을] 밝힐 것입니다. 그날은 불로 나타날 것이고, 그 불이 각 사람의 일이 어떤 것인지 시험할 것이기 때문입니다.",
           "B": "누가 이 기초 위에 금이나 은이나 값진 돌로, 또는 나무나 풀이나 짚으로 집을 지으면, \\v 13 각 사람이 한 일이 다 드러날 것입니다. 그날이 그것을 밝히 보여 줄 것입니다. 그날은 불과 함께 오고, 그 불이 각 사람이 한 일이 어떤 것인지 시험할 것이기 때문입니다.",
           "R": "사람들은 이 기초 위에 금이나 은이나 좋은 돌로 집을 지을 수도 있습니다. 또는 나무나 풀이나 짚으로 지을 수도 있습니다. \\v 13 그러나 언젠가 각 사람이 지은 것이 어떤 것인지 모두가 보게 될 것입니다. 심판의 날에 그것이 환히 드러날 것입니다. 그날은 불과 함께 올 것이고, 그 불은 각 사람이 한 일이 정말 어떤 것인지 시험할 것입니다."
+        },
+        "pt": {
+          "L": "Ora, se alguém edifica sobre o alicerce ouro, prata, pedras preciosas, madeira, feno, palha, \\v 13 a obra de cada um se tornará evidente; pois o Dia [a] tornará clara, porque [ele] é revelado com fogo, e o próprio fogo provará qual é a obra de cada um.",
+          "B": "Se alguém constrói sobre esse alicerce com ouro, prata, pedras de valor, madeira, feno ou palha, \\v 13 a obra de cada construtor virá à luz. O Dia a tornará visível, pois esse Dia chega com fogo, e o próprio fogo provará que tipo de obra cada um fez.",
+          "R": "As pessoas podem construir sobre esse alicerce com ouro, prata ou pedras finas. Ou podem construir com madeira, feno ou palha. \\v 13 Mas um dia todos vão ver que tipo de trabalho cada construtor fez. No dia do juízo isso vai ficar claro. Esse dia virá com fogo, e o fogo vai testar como é de verdade o trabalho de cada um."
+        },
+        "am": {
+          "L": "ማንም በዚህ መሠረት ላይ ወርቅን፣ ብርን፣ የከበሩ ድንጋዮችን፣ እንጨትን፣ ሣርን፣ ገለባን ቢገነባ፣ \\v 13 የእያንዳንዱ ሥራ ግልጥ ይሆናል፤ ቀኑ ይገልጠዋልና፤ በእሳት ይገለጣልና፤ የእያንዳንዱም ሥራ ምን ዓይነት እንደ ሆነ እሳቱ ራሱ ይፈትነዋል።",
+          "B": "ማንም በዚህ መሠረት ላይ በወርቅ፣ በብር፣ በውድ ድንጋዮች፣ በእንጨት፣ በሣር ወይም በገለባ ቢገነባ፣ \\v 13 የእያንዳንዱ ግንበኛ ሥራ በግልጥ ይታያል። ያ ቀን ይገልጠዋል፤ ቀኑ በእሳት ይመጣልና፤ እሳቱም ራሱ እያንዳንዱ የሠራው ሥራ ምን ዓይነት እንደ ሆነ ያረጋግጣል።",
+          "R": "ሰዎች በዚህ መሠረት ላይ በወርቅ፣ በብር ወይም በጥሩ ድንጋይ ሊገነቡ ይችላሉ። ወይም በእንጨት፣ በሣር ወይም በገለባ ሊገነቡ ይችላሉ። \\v 13 ነገር ግን አንድ ቀን እያንዳንዱ ግንበኛ የሠራው ሥራ ምን ዓይነት እንደ ሆነ ሁሉም ያያል። በፍርድ ቀን ግልጥ ይሆናል። ያ ቀን በእሳት ይመጣል፤ እሳቱም የእያንዳንዱ ሰው ሥራ በእርግጥ ምን እንደሚመስል ይፈትናል።"
         }
       },
       "decisions": [
@@ -3159,6 +3541,27 @@
           "reason": "The meaning decision reads the Day as the day of judgment when the Lord Jesus comes (1:8); Literal and Balanced keep the Greek's bare \"the Day\", and Readable names it, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003013008"
+          ],
+          "choice": "ቀኑ, ያ ቀን (the Day, L, B); የፍርድ ቀን (the day of judgment, R)",
+          "alternatives": [
+            "ቀን alone at Readable"
+          ],
+          "reason": "English marks this as a title with a capital, which Ethiopic cannot do; the definite \"ቀኑ\" and \"ያ ቀን\" point back to \"the day of our Lord\" (1:8), and Readable names it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3215,6 +3618,16 @@
           "L": "누구든지 그 위에 지은 일이 남아 있으면 그는 삯을 받을 것입니다.",
           "B": "누구든지 기초 위에 지은 것이 남아 있으면, 그 사람은 상을 받을 것입니다.",
           "R": "어떤 사람이 지은 것이 불이 지나간 뒤에도 서 있으면, 하나님께서 그 사람에게 상을 주실 것입니다."
+        },
+        "pt": {
+          "L": "Se a obra que alguém edificou sobre [ele] permanecer, receberá salário.",
+          "B": "Se o que alguém construiu sobre o alicerce resistir, esse construtor receberá recompensa.",
+          "R": "Se o que uma pessoa construiu continuar de pé depois do fogo, Deus vai recompensar essa pessoa."
+        },
+        "am": {
+          "L": "ማንም በላዩ የገነባው ሥራ ቢቆይ ዋጋን ይቀበላል።",
+          "B": "አንድ ሰው በመሠረቱ ላይ የገነባው ከእሳቱ ቢተርፍ፣ ያ ግንበኛ ዋጋ ይቀበላል።",
+          "R": "አንድ ሰው የገነባው ከእሳቱ በኋላ ቆሞ ቢገኝ፣ እግዚአብሔር ለዚያ ሰው ዋጋ ይሰጠዋል።"
         }
       },
       "decisions": [
@@ -3347,6 +3760,25 @@
           "reason": "Vietnamese \"người\" is already man or woman, so there is only one way to say it; the English Literal needs \"they/he\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003014002",
+            "n46003014007",
+            "n46003014009"
+          ],
+          "choice": "alguém ... receberá (no gender span)",
+          "alternatives": [],
+          "reason": "The subject of \"receberá\" is unspoken in Portuguese and \"alguém\" already means anyone, so Literal needs no gender setting where the English has \"they / he\" (see verse 8).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3408,6 +3840,16 @@
           "L": "누구든지 그 일이 불타 버리면 그는 손해를 볼 것입니다. 그러나 그 자신은 구원을 받을 것입니다. 그러나 불을 통과하여 나온 것처럼 [구원을 받을 것입니다].",
           "B": "누구든지 그가 한 일이 불타 버리면 그 사람은 손해를 볼 것입니다. 그 사람 자신은 구원을 받겠지만, 불 속에서 겨우 빠져나온 사람처럼 구원을 받을 것입니다.",
           "R": "어떤 사람이 지은 것이 불타 버리면, 그 사람은 상을 잃을 것입니다. 그래도 하나님께서는 그 사람을 구원해 주실 것입니다. 마치 불타는 집에서 아무것도 건지지 못하고 겨우 빠져나온 사람과 같을 것입니다."
+        },
+        "pt": {
+          "L": "Se a obra de alguém for queimada, sofrerá perda; mas ele mesmo será salvo, porém como que através do fogo.",
+          "B": "Se a obra de alguém se queimar, essa pessoa sofrerá perda. O construtor ainda assim será salvo, mas só como quem sai pelo meio do fogo.",
+          "R": "Se o que uma pessoa construiu queimar, ela vai perder a recompensa. Mas Deus ainda vai salvar essa pessoa, como alguém que escapa de uma casa em chamas sem nada nas mãos."
+        },
+        "am": {
+          "L": "የማንም ሥራ ቢቃጠል ይከስራል፤ እርሱ ራሱ ግን ይድናል፤ ነገር ግን በእሳት ውስጥ እንደሚያልፍ ሆኖ ነው።",
+          "B": "የአንድ ሰው ሥራ ቢቃጠል፣ ያ ሰው ይከስራል። ግንበኛው ራሱ ግን ይድናል፤ ነገር ግን በእሳት ውስጥ አልፎ እንደሚወጣ ሰው ብቻ ነው።",
+          "R": "አንድ ሰው የገነባው ቢቃጠል፣ ያ ሰው ዋጋውን ያጣል። እግዚአብሔር ግን ያንን ሰው ያድነዋል፤ ነገር ግን ከሚቃጠል ቤት ባዶ እጁን እንደሚያመልጥ ሰው ይሆናል።"
         }
       },
       "decisions": [
@@ -3541,6 +3983,27 @@
           "reason": "Spanish follows the English setting. The adjective has to agree with \"persona\" or \"él\", so the span takes in the whole clause up to it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003015002",
+            "n46003015006",
+            "n46003015007"
+          ],
+          "choice": "alguém ... ele mesmo (no gender span)",
+          "alternatives": [
+            "essa pessoa mesma"
+          ],
+          "reason": "\"Ele mesmo\" refers back to \"alguém\", which already means anyone; the style guide (section 7) treats such a pronoun as ordinary generic Portuguese, with no setting. The English needs \"they themselves / he himself\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3602,6 +4065,16 @@
           "L": "여러분이 하나님의 성전이고 하나님의 영께서 여러분 안에 사신다는 것을 알지 못합니까?",
           "B": "여러분이 함께 하나님의 성전이며, 하나님의 영께서 여러분 가운데 사신다는 것을 알지 못합니까?",
           "R": "여러분은 모두 함께 하나님의 성전이라는 것을 알지 못합니까? 하나님의 영께서 여러분 가운데 사십니다."
+        },
+        "pt": {
+          "L": "Não sabem que vocês são templo de Deus e [que] o Espírito de Deus habita em vocês?",
+          "B": "Vocês não sabem que, juntos, vocês são o templo de Deus, e que o Espírito de Deus vive no meio de vocês?",
+          "R": "Vocês não sabem que todos vocês juntos são o templo de Deus? O próprio Espírito de Deus vive no meio de vocês."
+        },
+        "am": {
+          "L": "የእግዚአብሔር ቤተ መቅደስ እንደ ሆናችሁ፣ የእግዚአብሔርም መንፈስ በእናንተ እንደሚኖር አታውቁምን?",
+          "B": "በአንድነት የእግዚአብሔር ቤተ መቅደስ እንደ ሆናችሁ፣ የእግዚአብሔርም መንፈስ በመካከላችሁ እንደሚኖር አታውቁምን?",
+          "R": "ሁላችሁም በአንድነት የእግዚአብሔር ቤተ መቅደስ እንደ ሆናችሁ አታውቁምን? የእግዚአብሔር የራሱ መንፈስ በመካከላችሁ ይኖራል።"
         }
       },
       "decisions": [
@@ -3853,6 +4326,16 @@
           "L": "누구든지 하나님의 성전을 망가뜨리면 하나님께서 그 [사람]을 망가뜨리실 것입니다. 하나님의 성전은 거룩하기 때문입니다. 여러분이 바로 그 [성전]입니다.",
           "B": "누구든지 하나님의 성전을 망가뜨리면, 하나님께서 그 사람을 망하게 하실 것입니다. 하나님의 성전은 거룩하고, 여러분이 바로 그 성전입니다.",
           "R": "누구든지 하나님의 성전을 망치면, 하나님께서 그 사람을 망하게 하실 것입니다. 하나님의 성전은 거룩합니다. 그것은 오직 하나님의 것입니다. 그리고 여러분이 바로 그 성전입니다."
+        },
+        "pt": {
+          "L": "Se alguém destrói o templo de Deus, Deus destruirá a esse; pois o templo de Deus é santo, e esse [templo] são vocês.",
+          "B": "Se alguém arruinar o templo de Deus, Deus arruinará essa pessoa. O templo de Deus é santo, e esse templo são vocês.",
+          "R": "Se alguém arruinar o templo de Deus, Deus vai arruinar essa pessoa. O templo de Deus é santo: ele pertence somente a {{deity_pronoun:ele|Ele}}. E vocês são esse templo."
+        },
+        "am": {
+          "L": "ማንም የእግዚአብሔርን ቤተ መቅደስ ቢያጠፋ፣ እግዚአብሔር እርሱን ያጠፋዋል፤ የእግዚአብሔር ቤተ መቅደስ ቅዱስ ነውና፤ ያውም እናንተ ናችሁ።",
+          "B": "ማንም በእግዚአብሔር ቤተ መቅደስ ላይ ጥፋት ቢያመጣ፣ እግዚአብሔር በዚያ ሰው ላይ ጥፋት ያመጣበታል። የእግዚአብሔር ቤተ መቅደስ ቅዱስ ነው፤ ያ ቤተ መቅደስ ደግሞ እናንተ ናችሁ።",
+          "R": "ማንም የእግዚአብሔርን ቤተ መቅደስ ቢያበላሽ፣ እግዚአብሔር ያንን ሰው ያጠፋዋል። የእግዚአብሔር ቤተ መቅደስ ቅዱስ ነው፤ የእርሱ ብቻ ነው። ያ ቤተ መቅደስ ደግሞ እናንተ ናችሁ።"
         }
       },
       "decisions": [
@@ -4028,6 +4511,27 @@
           "reason": "The meaning decision notes that the sin and the punishment are the same verb; Literal keeps one Korean verb for both, and the other levels keep two forms of the same idea.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46003017007",
+            "n46003017008"
+          ],
+          "choice": "ቢያጠፋ ... ያጠፋዋል (L); ጥፋት ቢያመጣ ... ጥፋት ያመጣበታል (B)",
+          "alternatives": [
+            "two different verbs"
+          ],
+          "reason": "The Greek uses one verb for the wrong and for God's answer to it, and Literal and Balanced keep one Amharic word for both so the match is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4116,6 +4620,16 @@
           "L": "아무도 자기 자신을 속이지 마십시오. 여러분 가운데 누구든지 이 세대에서 자기가 지혜롭다고 생각하면, 그는 지혜롭게 되기 위해 어리석은 사람이 되어야 합니다. \\v 19 이 세상의 지혜는 하나님께는 어리석음이기 때문입니다. 기록되어 있기를 \"[그분은] 지혜로운 사람들을 그들의 간교함으로 잡으시는 분이다\" 하였습니다.",
           "B": "아무도 자기를 속이지 마십시오. 여러분 가운데 누구든지 이 시대에서 자기가 지혜롭다고 생각하는 사람은, 참으로 지혜롭게 되려면 어리석은 사람이 되어야 합니다. \\v 19 이 세상이 지혜라고 하는 것이 하나님 보시기에는 어리석음입니다. 성경에 \"그분은 지혜로운 사람들을 그들 자신의 꾀로 붙잡으신다\" 하고 기록되어 있습니다.",
           "R": "스스로 속지 마십시오. 여러분 가운데 누구라도 지금 이 세상의 기준으로 자기가 지혜롭다고 생각한다면, 어리석어 보이는 것을 받아들이십시오. 그래야 참으로 지혜로운 사람이 될 수 있습니다. \\v 19 이 세상이 지혜롭다고 생각하는 것을 하나님께서는 어리석다고 여기십니다. 성경에 이렇게 쓰여 있습니다. \"하나님께서는 지혜로운 사람들을 그들 자신의 잔꾀로 붙잡으신다.\""
+        },
+        "pt": {
+          "L": "Ninguém engane a si mesmo. Se alguém entre vocês pensa ser sábio nesta era, torne-se louco, para que se torne sábio. \\v 19 Pois a sabedoria deste mundo é loucura diante de Deus. Pois está escrito: \"[Ele é] o que apanha os sábios na astúcia deles.\"",
+          "B": "Ninguém se iluda. Quem entre vocês pensa que é sábio nesta era presente precisa se tornar louco para se tornar sábio. \\v 19 O que este mundo chama de sabedoria é loucura aos olhos de Deus, pois as Escrituras dizem: \"Ele apanha os sábios na própria esperteza deles.\"",
+          "R": "Não se enganem. Se algum de vocês pensa que é sábio pelos padrões deste tempo em que vivemos, aceite parecer tolo, para que possa se tornar sábio de verdade. \\v 19 O que este mundo acha que é sabedoria, Deus acha que é loucura. As Escrituras dizem: \"Deus pega os sábios nos seus próprios truques espertos.\""
+        },
+        "am": {
+          "L": "ማንም ራሱን አያታልል። ከእናንተ መካከል ማንም በዚህ ዘመን ጥበበኛ እንደ ሆነ ቢያስብ፣ ጥበበኛ ይሆን ዘንድ ሞኝ ይሁን። \\v 19 የዚህ ዓለም ጥበብ በእግዚአብሔር ዘንድ ሞኝነት ነውና። «[እርሱ] ጥበበኞችን በተንኮላቸው የሚይዝ [ነው]» ተብሎ ተጽፎአልና።",
+          "B": "ማንም ራሱን አያሞኝ። ከእናንተ መካከል በዚህ የአሁኑ ዘመን ጥበበኛ እንደ ሆነ የሚያስብ ሰው ጥበበኛ ለመሆን ሞኝ መሆን አለበት። \\v 19 ይህ ዓለም ጥበብ ብሎ የሚጠራው በእግዚአብሔር ዓይን ሞኝነት ነውና፤ መጽሐፍ «ጥበበኞችን በገዛ ብልሃታቸው ያጠምዳቸዋል» ይላል።",
+          "R": "ራሳችሁን አታሞኙ። ማናችሁም በዚህ ዘመን መለኪያ ጥበበኞች እንደ ሆናችሁ ብታስቡ፣ በእውነት ጥበበኞች ለመሆን ሞኞች መስላችሁ ለመታየት ፈቃደኞች ሁኑ። \\v 19 ይህ ዓለም ጥበብ ነው የሚለውን እግዚአብሔር ሞኝነት ነው ይለዋል። መጻሕፍት «እግዚአብሔር ጥበበኞችን በገዛ ተንኮላቸው ይይዛቸዋል» ይላሉ።"
         }
       },
       "decisions": [
@@ -4370,6 +4884,27 @@
           "reason": "Scripture quoted in the letter keeps the plain written style, as in 1:19; Job speaks of God, so the verb takes the honorific -시-.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46003018001",
+            "n46003018002",
+            "n46003018005",
+            "n46003018006"
+          ],
+          "choice": "Ninguém engane a si mesmo; se alguém ... pensa ser sábio (no gender span)",
+          "alternatives": [],
+          "reason": "\"Ninguém\", \"alguém\" and \"quem\" already mean anyone, and Portuguese leaves out the pronouns that follow them, so Literal and Balanced need none of the gender settings the English needs for \"themselves\", \"they are\" and \"them\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4428,6 +4963,16 @@
           "L": "또 \"주께서는 지혜로운 사람들의 생각이 헛되다는 것을 아신다\" [하였습니다].",
           "B": "또 \"주님께서는 지혜로운 사람들의 생각이 얼마나 헛된지 아신다\" 하고 기록되어 있습니다.",
           "R": "또 다른 곳에는 이렇게 쓰여 있습니다. \"주님께서는 지혜로운 사람들의 생각이 아무 쓸모없다는 것을 아신다.\""
+        },
+        "pt": {
+          "L": "E também: \"[O] Senhor conhece os raciocínios dos sábios, que são vãos.\"",
+          "B": "E ainda: \"O Senhor sabe como são vazios os raciocínios dos sábios.\"",
+          "R": "E outra passagem diz: \"O Senhor sabe que as ideias das pessoas sábias não valem nada.\""
+        },
+        "am": {
+          "L": "ደግሞም፦ «ጌታ የጥበበኞችን አሳብ ከንቱ እንደ ሆነ ያውቃል።»",
+          "B": "ደግሞም፦ «ጌታ የጥበበኞች አሳብ ምን ያህል ባዶ እንደ ሆነ ያውቃል።»",
+          "R": "ሌላ ክፍል ደግሞ እንዲህ ይላል፦ «ጌታ የጥበበኛ ሰዎች አሳብ ዋጋ ቢስ መሆኑን ያውቃል።»"
         }
       },
       "decisions": [
@@ -4668,6 +5213,16 @@
           "L": "그러므로 아무도 사람을 자랑하지 마십시오. 모든 것이 여러분의 것이기 때문입니다. \\v 22 바울이든 아볼로든 게바든, 세상이든 생명이든 죽음이든, 현재 있는 것들이든 장래의 것들이든, 모든 것이 여러분의 것이고, \\v 23 여러분은 {{christos:그리스도|메시아}}의 것이며, {{christos:그리스도|메시아}}는 하나님의 것입니다.",
           "B": "그러므로 아무도 사람을 자랑하지 마십시오. 모든 것이 여러분의 것입니다. \\v 22 바울이나 아볼로나 게바나, 세상이나 생명이나 죽음이나, 지금 있는 것이나 앞으로 올 것이나, 모두 여러분의 것입니다. \\v 23 그리고 여러분은 {{christos:그리스도|메시아}}께 속해 있고, {{christos:그리스도|메시아}}께서는 하나님께 속해 계십니다.",
           "R": "그러니 어떤 지도자를 따른다고 뽐내지 마십시오. 모든 것이 여러분의 것입니다. \\v 22 바울도 아볼로도 베드로도 모두 여러분의 것입니다. 세상도, 삶과 죽음도, 지금 일어나는 일과 앞으로 일어날 일도, 모두 여러분의 것입니다. \\v 23 그리고 여러분은 {{christos:그리스도|메시아}}께 속해 있고, {{christos:그리스도|메시아}}께서는 하나님께 속해 계십니다."
+        },
+        "pt": {
+          "L": "Assim, ninguém se glorie em seres humanos; pois todas as coisas são de vocês, \\v 22 seja Paulo, seja Apolo, seja Cefas, seja [o] mundo, seja vida, seja morte, sejam coisas presentes, sejam coisas por vir, todas [são] de vocês, \\v 23 e vocês [são] {{christos:de Cristo|do Messias}}, e {{christos:Cristo|o Messias}} [é] de Deus.",
+          "B": "Por isso, ninguém se orgulhe de meros seres humanos. Tudo pertence a vocês: \\v 22 Paulo, Apolo ou Cefas, o mundo, a vida ou a morte, o que existe agora ou o que ainda está por vir. Tudo pertence a vocês, \\v 23 e vocês pertencem {{christos:a Cristo|ao Messias}}, e {{christos:Cristo|o Messias}} pertence a Deus.",
+          "R": "Por isso, não se gabem de seguir este ou aquele líder humano. Tudo pertence a vocês. \\v 22 Paulo, Apolo e Pedro pertencem a vocês. O mundo, a vida e a morte, o que está acontecendo agora e o que vai acontecer no futuro: tudo isso é de vocês. \\v 23 E vocês pertencem {{christos:a Cristo|ao Messias}}, e {{christos:Cristo|o Messias}} pertence a Deus."
+        },
+        "am": {
+          "L": "ስለዚህ ማንም በሰዎች አይመካ፤ ሁሉ የእናንተ ነውና፤ \\v 22 ጳውሎስ ቢሆን አጵሎስም ቢሆን ኬፋም ቢሆን፣ ዓለምም ቢሆን ሕይወትም ቢሆን ሞትም ቢሆን፣ ያለውም ቢሆን የሚመጣውም ቢሆን፣ ሁሉ የእናንተ [ነው]፤ \\v 23 እናንተም {{christos:የክርስቶስ|የመሲሑ}} [ናችሁ]፤ {{christos:ክርስቶስ|መሲሕ}} ደግሞ የእግዚአብሔር [ነው]።",
+          "B": "ስለዚህ ማንም በሰዎች አይኩራ። ሁሉ ነገር የእናንተ ነው፤ \\v 22 ጳውሎስም ሆነ አጵሎስ ወይም ኬፋ፣ ዓለምም፣ ሕይወትም ሆነ ሞት፣ አሁን ያለውም ሆነ ወደ ፊት የሚመጣው፣ ሁሉም የእናንተ ነው፤ \\v 23 እናንተ ደግሞ {{christos:የክርስቶስ|የመሲሑ}} ናችሁ፤ {{christos:ክርስቶስ|መሲሕ}} ደግሞ የእግዚአብሔር ነው።",
+          "R": "ስለዚህ የትኛውንም ሰብዓዊ መሪ በመከተላችሁ አትኩራሩ። ሁሉ ነገር የእናንተ ነው። \\v 22 ጳውሎስ፣ አጵሎስና ጴጥሮስ ሁሉም የእናንተ ናቸው። ዓለም፣ ሕይወትና ሞት፣ አሁን እየሆነ ያለውና ወደ ፊት የሚሆነው፣ ሁሉም የእናንተ ነው። \\v 23 እናንተ ደግሞ {{christos:የክርስቶስ|የመሲሑ}} ናችሁ፤ {{christos:ክርስቶስ|መሲሕ}} ደግሞ የእግዚአብሔር ነው።"
         }
       },
       "decisions": [
@@ -4977,6 +5532,47 @@
             "the honorific form \"께서는 하나님께 속해 계십니다\" in Literal too"
           ],
           "reason": "Literal keeps the Greek's three matching phrases (\"yours ... Christ's ... God's\"); Balanced and Readable say \"belong to\" with the honorific for Christ.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003021003"
+          ],
+          "choice": "se glorie (L); se orgulhe (B); se gabem (R)",
+          "alternatives": [
+            "se vanglorie"
+          ],
+          "reason": "Following the rule for boasting set at 1:29: Literal keeps \"gloriar-se\"; Balanced says \"orgulhar-se\", as the English says \"take pride\"; Readable says \"gabar-se\", the word for bragging, as the English says \"brag\" for pride that takes credit for leaders who are God's gift.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46003021003"
+          ],
+          "choice": "አይመካ (L); አይኩራ (take pride, B); አትኩራሩ (brag, R)",
+          "alternatives": [
+            "መመካት at every level, as in 1:29-31"
+          ],
+          "reason": "As the book's terms note sets for the English: Literal keeps \"መመካት\" so the word can be traced; here Paul's point is pride in human leaders, not the word itself, so Balanced says \"መኩራት\" and Readable \"መኩራራት\", bragging.",
           "uncertain": false,
           "footnote": false
         }

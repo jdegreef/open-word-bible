@@ -60,6 +60,11 @@
           "L": "E, saindo dali, Jesus se retirou para as regiões de Tiro e Sidom.",
           "B": "Jesus saiu daquele lugar e se retirou para a região de Tiro e Sidom.",
           "R": "Jesus saiu daquele lugar e foi para a região perto das cidades de Tiro e Sidom."
+        },
+        "am": {
+          "L": "ኢየሱስም ከዚያ ወጥቶ ወደ ጢሮስና ወደ ሲዶና አገሮች ገለል አለ።",
+          "B": "ኢየሱስ ከዚያ ስፍራ ተነሥቶ በጢሮስና በሲዶና አካባቢ ወዳለው አገር ሄደ።",
+          "R": "ኢየሱስ ያንን ስፍራ ትቶ ጢሮስና ሲዶና ወደሚባሉት ከተሞች አቅራቢያ ሄደ።"
         }
       },
       "decisions": [
@@ -295,6 +300,11 @@
           "L": "E eis que uma mulher cananeia, vinda daquelas regiões, gritava, dizendo: \"Tem misericórdia de mim, Senhor, Filho de Davi! A minha filha está terrivelmente endemoninhada.\"",
           "B": "Uma mulher cananeia que vivia naquela região veio e não parava de gritar: \"Senhor, Filho de Davi, tem misericórdia de mim! Um demônio domina a minha filha, e ela sofre terrivelmente.\"",
           "R": "Uma mulher daquela região veio até Jesus. Ela era cananeia, não era judia. Ela gritava sem parar: \"Senhor, Filho de Davi, por favor, tem pena de mim! A minha filha está com um demônio, e ele a faz sofrer muito.\""
+        },
+        "am": {
+          "L": "እነሆም፣ ከዚያ አገር የወጣች አንዲት ከነዓናዊት ሴት እንዲህ እያለች ትጮኽ ነበር፦ «ማረኝ፣ ጌታ ሆይ፣ የዳዊት ልጅ! ልጄ ክፉኛ በጋኔን ተይዛለች።»",
+          "B": "በዚያ አገር የምትኖር አንዲት ከነዓናዊት ሴት ወጥታ እንዲህ እያለች ትጮኽ ነበር፦ «ጌታ ሆይ፣ የዳዊት ልጅ፣ ማረኝ! ልጄን ጋኔን ይዟታል፤ እጅግም ትሠቃያለች።»",
+          "R": "ከዚያ አካባቢ አንዲት ሴት ወደ ኢየሱስ መጣች። እርሷ ከነዓናዊት ነበረች እንጂ አይሁዳዊት አልነበረችም። እንዲህ እያለች ትጮኽ ነበር፦ «ጌታ ሆይ፣ የዳዊት ልጅ፣ እባክህ እዘንልኝ! ልጄ ጋኔን አለባት፤ በጣምም ያሠቃያታል።»"
         }
       },
       "decisions": [
@@ -615,6 +625,28 @@
           "reason": "Everyone who speaks to Jesus uses \"tu\" (docs/portuguese-style.md, section 4), the Canaanite woman too: her plea is the prayer of the Psalms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40015022012",
+            "n40015022014"
+          ],
+          "choice": "\"ማረኝ፣ ጌታ ሆይ\" with the familiar \"አንተ\" (\"እዘንልኝ\" at R)",
+          "alternatives": [
+            "the respectful \"እርስዎ\" (\"ይማሩኝ\")"
+          ],
+          "reason": "The style guide has everyone who speaks to Jesus use \"አንተ\", petitioners included. A foreign woman appealing to a stranger might well use \"እርስዎ\" in Amharic speech; a reviewer may move her to it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -673,6 +705,11 @@
           "L": "Mas {{deity_pronoun:ele|Ele}} não lhe respondeu palavra.",
           "B": "Mas {{deity_pronoun:ele|Ele}} não lhe deu resposta, nem uma palavra.",
           "R": "Mas Jesus não disse nada a ela."
+        },
+        "am": {
+          "L": "እርሱ ግን አንድ ቃል አልመለሰላትም።",
+          "B": "እርሱ ግን አንዲት ቃል እንኳ አልመለሰላትም።",
+          "R": "ኢየሱስ ግን ምንም አልተናገራትም።"
         }
       },
       "decisions": [
@@ -711,6 +748,27 @@
             "he"
           ],
           "reason": "Readable names Jesus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40015023001"
+          ],
+          "choice": "No deity_pronoun span in Amharic",
+          "alternatives": [
+            "A span like the English one"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the English choice between \"he\" and \"He\" has nothing to change in Amharic, and the Amharic text carries no deity_pronoun spans in this passage.",
           "uncertain": false,
           "footnote": false
         }
@@ -779,6 +837,11 @@
           "L": "E os {{deity_pronoun:seus|Seus}} discípulos vieram e {{deity_pronoun:lhe|Lhe}} pediam, dizendo: \"Despede-a, pois ela vem gritando atrás de nós.\"",
           "B": "Os {{deity_pronoun:seus|Seus}} discípulos vieram e insistiam com {{deity_pronoun:ele|Ele}}: \"Manda-a embora, porque ela não para de gritar atrás de nós.\"",
           "R": "Os {{deity_pronoun:seus|Seus}} seguidores foram até {{deity_pronoun:ele|Ele}} e {{deity_pronoun:lhe|Lhe}} pediram: \"Manda essa mulher embora! Ela fica seguindo a gente e gritando.\""
+        },
+        "am": {
+          "L": "ደቀ መዛሙርቱም ቀርበው እንዲህ እያሉ ይለምኑት ነበር፦ «አሰናብታት፤ በኋላችን ትጮኻለችና።»",
+          "B": "ደቀ መዛሙርቱም መጥተው አጥብቀው ለመኑት፦ «ከኋላችን እየጮኸች ስለምትከተለን አሰናብታት።»",
+          "R": "ደቀ መዛሙርቱም ወደ እርሱ መጥተው እንዲህ ብለው ለመኑት፦ «አሰናብታት! እየጮኸች ትከተለናለች።»"
         }
       },
       "decisions": [
@@ -982,6 +1045,11 @@
           "L": "Mas {{deity_pronoun:ele|Ele}}, respondendo, disse: \"Eu não fui enviado senão às ovelhas perdidas da casa de Israel.\"",
           "B": "Ele respondeu: \"Eu fui enviado somente às ovelhas perdidas, o povo de Israel.\"",
           "R": "Jesus respondeu: \"Deus {{deity_pronoun:me|Me}} enviou somente para o povo de Israel. Eles são como ovelhas perdidas.\""
+        },
+        "am": {
+          "L": "እርሱም መልሶ አለ፦ «ወደ ጠፉት ወደ እስራኤል ቤት በጎች እንጂ አልተላክሁም።»",
+          "B": "እርሱም እንዲህ ሲል መለሰ፦ «የተላክሁት ወደ ጠፉት በጎች፣ ወደ እስራኤል ሕዝብ ብቻ ነው።»",
+          "R": "ኢየሱስም እንዲህ ሲል መለሰ፦ «እግዚአብሔር የላከኝ ወደ እስራኤል ሕዝብ ብቻ ነው። እነርሱ እንደ ጠፉ በጎች ናቸው።»"
         }
       },
       "decisions": [
@@ -1199,6 +1267,11 @@
           "L": "Mas ela veio e se prostrou diante {{deity_pronoun:dele|Dele}}, dizendo: \"Senhor, ajuda-me.\"",
           "B": "Mas ela veio e se inclinou até o chão diante {{deity_pronoun:dele|Dele}}. \"Senhor\", disse ela, \"ajuda-me!\"",
           "R": "Então a mulher veio e se ajoelhou na frente de Jesus. Ela disse: \"Senhor, ajuda-me!\""
+        },
+        "am": {
+          "L": "እርሷ ግን መጥታ ሰገደችለት፤ እንዲህም አለች፦ «ጌታ ሆይ፣ እርዳኝ።»",
+          "B": "እርሷ ግን መጥታ በፊቱ ሰገደች። «ጌታ ሆይ» አለች፤ «እርዳኝ!»",
+          "R": "ከዚያም ሴቲቱ መጥታ በኢየሱስ ፊት ሰገደች። እንዲህም አለች፦ «ጌታ ሆይ፣ እርዳኝ!»"
         }
       },
       "decisions": [
@@ -1343,6 +1416,11 @@
           "L": "Mas {{deity_pronoun:ele|Ele}}, respondendo, disse: \"Não é certo tomar o pão dos filhos e jogá-[lo] aos cachorrinhos.\"",
           "B": "Ele respondeu: \"Não é bom tirar o pão dos filhos e jogá-lo aos cachorrinhos.\"",
           "R": "Jesus respondeu: \"Não é certo tirar a comida dos filhos e jogar para os cachorros da casa.\""
+        },
+        "am": {
+          "L": "እርሱም መልሶ አለ፦ «የልጆችን እንጀራ ወስዶ ለቡችሎች መጣል መልካም አይደለም።»",
+          "B": "እርሱም እንዲህ ሲል መለሰ፦ «እንጀራን ከልጆች ወስዶ ለቡችሎች መወርወር ጥሩ አይደለም።»",
+          "R": "ኢየሱስም እንዲህ ሲል መለሰ፦ «የልጆችን ምግብ ወስዶ ለቤት ውሾች መጣል ትክክል አይደለም።»"
         }
       },
       "decisions": [
@@ -1545,6 +1623,29 @@
           "reason": "Portuguese needs the object pronoun after \"jogar\"; Literal brackets it, as the English brackets \"[it]\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40015026010",
+            "n40015026016"
+          ],
+          "choice": "\"የልጆች እንጀራ\" (L, B), \"ምግብ\" (R); \"ቡችሎች\" (L, B), \"የቤት ውሾች\" (R)",
+          "alternatives": [
+            "\"ዳቦ\"",
+            "\"ውሾች\""
+          ],
+          "reason": "Here bread is the children's food, not loaves to be counted, so it is \"እንጀራ\". The Greek word is a diminutive for house dogs; \"ቡችሎች\" (puppies) keeps the small, household picture that plain \"ውሾች\", a harsh insult in Amharic, would lose.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1618,6 +1719,11 @@
           "L": "Mas ela disse: \"Sim, Senhor, pois até os cachorrinhos comem das migalhas que caem da mesa dos seus donos.\"",
           "B": "Ela disse: \"É verdade, Senhor. Mesmo assim, os cachorrinhos comem algumas das migalhas que caem da mesa onde os seus donos comem.\"",
           "R": "Ela disse: \"Sim, Senhor. Mas até os cachorros da casa comem as migalhas que caem da mesa onde os donos deles comem.\""
+        },
+        "am": {
+          "L": "እርሷም አለች፦ «አዎን፣ ጌታ ሆይ፤ ቡችሎችም እንኳ ከጌቶቻቸው ማዕድ ከሚወድቀው ፍርፋሪ ይበላሉና።»",
+          "B": "እርሷም እንዲህ አለች፦ «እውነት ነው፣ ጌታ ሆይ፤ ሆኖም ቡችሎችም ጌቶቻቸው ከሚመገቡበት ማዕድ ከሚወድቀው ፍርፋሪ ጥቂት ይበላሉ።»",
+          "R": "እርሷም እንዲህ አለች፦ «አዎ፣ ጌታ ሆይ። ነገር ግን የቤት ውሾችም እንኳ ባለቤቶቻቸው ከሚበሉበት ማዕድ የሚወድቀውን ፍርፋሪ ይበላሉ።»"
         }
       },
       "decisions": [
@@ -1867,6 +1973,11 @@
           "L": "Então Jesus, respondendo, lhe disse: \"Ó mulher, grande [é] a sua fé! Seja feito a você como você quer.\"",
           "B": "Então Jesus lhe disse: \"Mulher, a sua fé é grande. Seja feito a você como você deseja.\"",
           "R": "Então Jesus respondeu à mulher: \"Mulher, a sua fé é muito grande! O que você pediu vai acontecer.\""
+        },
+        "am": {
+          "L": "ያን ጊዜ ኢየሱስ መልሶ አላት፦ «ሴት ሆይ፣ እምነትሽ እንዴት ታላቅ [ነው]! እንደ ምኞትሽ ይደረግልሽ።»",
+          "B": "ያን ጊዜ ኢየሱስ እንዲህ አላት፦ «ሴት ሆይ፣ እምነትሽ ትልቅ ነው። እንደ ፍላጎትሽ ይደረግልሽ።»",
+          "R": "ከዚያም ኢየሱስ እንዲህ ሲል መለሰላት፦ «ሴት ሆይ፣ እምነትሽ በጣም ትልቅ ነው! የለመንሽው ይፈጸማል።»"
         }
       },
       "decisions": [
@@ -2010,6 +2121,29 @@
           "reason": "\"Mulher\" as an address is plain in Portuguese, as in Greek, and the words that follow carry Jesus's praise; \"senhora\" would add a modern social politeness the Greek lacks. Literal keeps the Greek interjection \"Ó\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40015028007",
+            "n40015028008"
+          ],
+          "choice": "\"ሴት ሆይ\"",
+          "alternatives": [
+            "\"አንቺ ሴት\"",
+            "\"እናቴ\""
+          ],
+          "reason": "The vocative \"ሴት ሆይ\" is formal and respectful; \"አንቺ ሴት\" can sound brusque in modern speech. \"እናቴ\" is the everyday respectful address to a woman, but it adds a picture the Greek lacks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2071,6 +2205,11 @@
           "L": "E a sua filha foi curada desde aquela hora.",
           "B": "E a partir daquele momento a filha dela ficou boa.",
           "R": "A filha dela ficou curada naquele mesmo instante."
+        },
+        "am": {
+          "L": "ልጇም ከዚያች ሰዓት ጀምሮ ተፈወሰች።",
+          "B": "ከዚያች ቅጽበት ጀምሮ ልጇ ደኅና ሆነች።",
+          "R": "ልጇም በዚያው ቅጽበት ተፈወሰች።"
         }
       },
       "decisions": [
@@ -2184,6 +2323,11 @@
           "L": "E, partindo dali, Jesus foi para junto do mar da Galileia e, subindo ao monte, sentou-se ali.",
           "B": "Jesus partiu dali e seguiu pela margem do mar da Galileia. Subiu ao monte e se sentou ali.",
           "R": "Jesus saiu dali e foi andando pela margem do lago da Galileia. Depois {{deity_pronoun:ele|Ele}} subiu um morro e se sentou."
+        },
+        "am": {
+          "L": "ኢየሱስም ከዚያ ተነሥቶ በገሊላ ባሕር አጠገብ መጣ፤ ወደ ተራራውም ወጥቶ በዚያ ተቀመጠ።",
+          "B": "ኢየሱስ ከዚያ ተነሥቶ በገሊላ ባሕር ዳር መጣ። ወደ ተራራውም ወጥቶ በዚያ ተቀመጠ።",
+          "R": "ኢየሱስ ከዚያ ተነሥቶ በገሊላ ሐይቅ ዳር ሄደ። ከዚያም ወደ አንድ ኮረብታ ወጥቶ ተቀመጠ።"
         }
       },
       "decisions": [
@@ -2418,6 +2562,11 @@
           "L": "E grandes multidões vieram até {{deity_pronoun:ele|Ele}}, trazendo consigo mudos, cegos, coxos, aleijados e muitos outros, e os lançaram aos {{deity_pronoun:seus|Seus}} pés, e {{deity_pronoun:ele|Ele}} os curou.",
           "B": "Grandes multidões vieram até {{deity_pronoun:ele|Ele}}, trazendo pessoas que não falavam, cegos, coxos, aleijados e muitos outros. Elas os colocaram aos {{deity_pronoun:seus|Seus}} pés, e {{deity_pronoun:ele|Ele}} os curou.",
           "R": "Multidões enormes vieram até {{deity_pronoun:ele|Ele}}. Trouxeram pessoas que não conseguiam falar, pessoas cegas, pessoas que não conseguiam andar, pessoas com braços ou pernas deformados e muitas outras. Elas as puseram na frente de Jesus, e {{deity_pronoun:ele|Ele}} as curou."
+        },
+        "am": {
+          "L": "ብዙ ሕዝብም ዲዳዎችን፣ ዕውሮችን፣ አንካሶችን፣ ጉንድሾችንና ሌሎች ብዙዎችን ይዘው ወደ እርሱ መጡ፤ በእግሩም አጠገብ ጣሏቸው፤ ፈወሳቸውም።",
+          "B": "ብዙ ሕዝብ መናገር የማይችሉትን፣ ዕውሮችን፣ አንካሶችን፣ አካለ ጎደሎዎችንና ሌሎች ብዙዎችን ይዘው ወደ እርሱ መጡ። በእግሩ ሥርም አስቀመጧቸው፤ እርሱም ፈወሳቸው።",
+          "R": "ብዙ ሕዝብ ወደ እርሱ መጡ። መናገር የማይችሉትን፣ ዓይነ ስውሮችን፣ መራመድ የማይችሉትን፣ እጅና እግራቸው የተጎዳውን፣ ሌሎችንም ብዙ ሰዎች አመጡ። በኢየሱስ ፊት አስቀመጧቸው፤ እርሱም ፈወሳቸው።"
         }
       },
       "decisions": [
@@ -2683,6 +2832,11 @@
           "L": "De modo que a multidão se maravilhou, vendo mudos falando, aleijados sãos, coxos andando e cegos vendo; e glorificaram o Deus de Israel.",
           "B": "A multidão ficou admirada ao ver os mudos falando, os aleijados restaurados, os coxos andando e os cegos enxergando. E glorificaram o Deus de Israel.",
           "R": "O povo ficou admirado. Quem não conseguia falar estava falando. As pessoas que tinham braços ou pernas deformados estavam boas de novo. Quem não conseguia andar estava andando, e os cegos estavam enxergando. E a multidão deu glória ao Deus de Israel."
+        },
+        "am": {
+          "L": "ስለዚህም ሕዝቡ ዲዳዎች ሲናገሩ፣ ጉንድሾች ሲድኑ፣ አንካሶች ሲራመዱ፣ ዕውሮችም ሲያዩ አይተው ተደነቁ፤ የእስራኤልንም አምላክ አከበሩ።",
+          "B": "ሕዝቡ ዲዳዎች ሲናገሩ፣ አካለ ጎደሎዎች ሙሉ ጤነኛ ሲሆኑ፣ አንካሶች ሲራመዱና ዕውሮች ሲያዩ አይተው ተገረሙ። የእስራኤልንም አምላክ አከበሩ።",
+          "R": "ሰዎቹ ተገረሙ። መናገር የማይችሉት ይናገሩ ነበር። እጅና እግራቸው የተጎዳው ደኅና ሆኑ። መራመድ የማይችሉት ይራመዱ ነበር፤ ዓይነ ስውሮችም ያዩ ነበር። ሕዝቡም የእስራኤልን አምላክ አከበሩ።"
         }
       },
       "decisions": [
@@ -2822,6 +2976,29 @@
           "reason": "\"Glory\" is a key term (\"영광\", style guide section 6), kept at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40015031018",
+            "n40015031019",
+            "n40015031020"
+          ],
+          "choice": "\"የእስራኤል አምላክ\"",
+          "alternatives": [
+            "\"የእስራኤል እግዚአብሔር\""
+          ],
+          "reason": "With a genitive (\"God of Israel\", \"my God\"), Amharic says \"አምላክ\", as the style guide sets; \"እግዚአብሔር\" is used as the name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2908,6 +3085,11 @@
           "L": "E Jesus chamou os {{deity_pronoun:seus|Seus}} discípulos e disse: \"Tenho compaixão da multidão, porque já faz três dias que permanecem {{deity_pronoun:comigo|Comigo}} e não têm o que comer; e não quero despedi-los em jejum, para que não desfaleçam no caminho.\"",
           "B": "Jesus chamou os {{deity_pronoun:seus|Seus}} discípulos e disse: \"Sinto profunda compaixão por esta multidão. Já faz três dias que estão {{deity_pronoun:comigo|Comigo}}, e não lhes resta nada para comer. Se eu os mandar embora sem comida, podem desmaiar no caminho, e isso eu não quero.\"",
           "R": "Jesus chamou os {{deity_pronoun:seus|Seus}} seguidores para perto. Ele disse: \"Tenho pena dessas pessoas. Elas estão aqui {{deity_pronoun:comigo|Comigo}} há três dias, e agora não têm nada para comer. Se eu mandar essas pessoas para casa com fome, elas podem ficar fracas e desmaiar na estrada. Não quero que isso aconteça.\""
+        },
+        "am": {
+          "L": "ኢየሱስም ደቀ መዛሙርቱን ጠርቶ አለ፦ «ለሕዝቡ እራራላቸዋለሁ፤ እነሆ ሦስት ቀን ከእኔ ጋር ቆይተዋልና፤ የሚበሉትም የላቸውም፤ በመንገድም እንዳይዝሉ ተርበው እንዲሄዱ ላሰናብታቸው አልፈልግም።»",
+          "B": "ኢየሱስ ደቀ መዛሙርቱን ወደ እርሱ ጠርቶ እንዲህ አላቸው፦ «ለሕዝቡ እጅግ እራራላቸዋለሁ። ከእኔ ጋር ሦስት ቀን ቆይተዋል፤ የሚበሉትም ምንም አልቀረላቸውም። ምግብ ሳይበሉ ባሰናብታቸው በመንገድ ላይ ሊዝሉ ይችላሉ፤ ይህንንም አልፈልግም።»",
+          "R": "ኢየሱስ ደቀ መዛሙርቱን ወደ እርሱ ጠራቸው። እንዲህም አላቸው፦ «ለእነዚህ ሰዎች አዝናለሁ። ከእኔ ጋር ሦስት ቀን ቆይተዋል፤ አሁን የሚበሉት ነገር የላቸውም። ተርበው ወደ ቤታቸው ባሰናብታቸው በመንገድ ላይ ደክመው ሊዝሉ ይችላሉ። ይህን አልፈልግም።»"
         }
       },
       "decisions": [
@@ -3157,6 +3339,11 @@
           "L": "E os discípulos {{deity_pronoun:lhe|Lhe}} dizem: \"De onde [teríamos] num lugar deserto tantos pães para saciar tão grande multidão?\"",
           "B": "Os discípulos {{deity_pronoun:lhe|Lhe}} disseram: \"Aqui neste lugar isolado, onde vamos encontrar pão suficiente para alimentar tanta gente?\"",
           "R": "Os {{deity_pronoun:seus|Seus}} seguidores responderam: \"Estamos longe de qualquer cidade. Onde vamos conseguir pão suficiente para dar de comer a todo esse povo?\""
+        },
+        "am": {
+          "L": "ደቀ መዛሙርቱም ይሉታል፦ «እንዲህ ያለውን ብዙ ሕዝብ የሚያጠግብ ይህን ያህል ዳቦ በምድረ በዳ ከየት [እናገኛለን]?»",
+          "B": "ደቀ መዛሙርቱም እንዲህ አሉት፦ «በዚህ ሰው በሌለበት ስፍራ ይህን ያህል ሕዝብ የሚያጠግብ ዳቦ ከየት እናገኛለን?»",
+          "R": "ደቀ መዛሙርቱም እንዲህ ብለው መለሱ፦ «እኛ ካለንበት ቦታ ከተማ በጣም ሩቅ ነው። እነዚህን ሁሉ ሰዎች የሚመግብ በቂ ዳቦ ከየት እናገኛለን?»"
         }
       },
       "decisions": [
@@ -3395,6 +3582,11 @@
           "L": "E Jesus lhes diz: \"Quantos pães vocês têm?\"",
           "B": "Jesus lhes perguntou: \"Quantos pães vocês têm?\"",
           "R": "Jesus perguntou a eles: \"Quantos pães vocês têm?\""
+        },
+        "am": {
+          "L": "ኢየሱስም ይላቸዋል፦ «ስንት ዳቦ አላችሁ?»",
+          "B": "ኢየሱስም፦ «ስንት ዳቦ አላችሁ?» ብሎ ጠየቃቸው።",
+          "R": "ኢየሱስም፦ «ስንት ዳቦ አላችሁ?» ብሎ ጠየቃቸው።"
         }
       },
       "decisions": [
@@ -3529,6 +3721,11 @@
           "L": "E eles disseram: \"Sete, e alguns peixinhos.\"",
           "B": "\"Sete\", disseram, \"e alguns peixinhos.\"",
           "R": "Eles responderam: \"Sete pães e alguns peixinhos.\""
+        },
+        "am": {
+          "L": "እነርሱም አሉ፦ «ሰባት፤ ጥቂት ትናንሽ ዓሦችም።»",
+          "B": "«ሰባት» አሉ፤ «ጥቂት ትናንሽ ዓሦችም አሉን።»",
+          "R": "እነርሱም እንዲህ አሉ፦ «ሰባት ዳቦና ጥቂት ትናንሽ ዓሦች።»"
         }
       },
       "decisions": [
@@ -3646,6 +3843,11 @@
           "L": "E, tendo ordenado à multidão que se sentasse no chão, \\v 36 tomou os sete pães e os peixes e, tendo dado graças, [os] partiu e [os] dava aos discípulos, e os discípulos, às multidões.",
           "B": "Ele mandou a multidão sentar-se no chão. \\v 36 Depois tomou os sete pães e os peixes, deu graças e os partiu. Ia entregando-os aos discípulos, e os discípulos os passavam ao povo.",
           "R": "Jesus mandou o povo sentar no chão. \\v 36 Depois {{deity_pronoun:ele|Ele}} pegou os sete pães e os peixes e agradeceu a Deus por eles. Partiu tudo em pedaços e foi dando aos {{deity_pronoun:seus|Seus}} seguidores, e os seguidores davam ao povo."
+        },
+        "am": {
+          "L": "ሕዝቡንም በመሬት ላይ እንዲቀመጡ አዝዞ \\v 36 ሰባቱን ዳቦና ዓሦቹን ወሰደ፤ አመስግኖም ቆረሰ፤ ለደቀ መዛሙርቱም ይሰጥ ነበር፤ ደቀ መዛሙርቱም ለሕዝቡ [ሰጡ]።",
+          "B": "ሕዝቡ በመሬት ላይ እንዲቀመጡ አዘዘ። \\v 36 ከዚያም ሰባቱን ዳቦና ዓሦቹን ይዞ አመሰገነና ቆረሳቸው። ለደቀ መዛሙርቱም ይሰጣቸው ነበር፤ ደቀ መዛሙርቱም ለሕዝቡ ያከፋፍሉ ነበር።",
+          "R": "ኢየሱስ ሰዎቹን በመሬት ላይ እንዲቀመጡ ነገራቸው። \\v 36 ከዚያም ሰባቱን ዳቦና ዓሦቹን ይዞ ስለ እነርሱ እግዚአብሔርን አመሰገነ። ቆራርሶም ለደቀ መዛሙርቱ ይሰጣቸው ነበር፤ ደቀ መዛሙርቱም ለሰዎቹ ሰጡ።"
         }
       },
       "decisions": [
@@ -3823,6 +4025,11 @@
           "L": "E todos comeram e ficaram saciados, e recolheram o que sobrou dos pedaços, sete cestos grandes cheios.",
           "B": "Todos comeram até ficarem satisfeitos. Depois recolheram os pedaços que sobraram, e com eles encheram sete cestos grandes.",
           "R": "Todas as pessoas comeram quanto quiseram. Depois juntaram os pedaços de comida que sobraram. Eles encheram sete cestos bem grandes."
+        },
+        "am": {
+          "L": "ሁሉም በሉ፤ ጠገቡም፤ ከቁርስራሹም የተረፈውን ሰባት ትልልቅ ቅርጫት ሙሉ አነሡ።",
+          "B": "ሁሉም እስኪጠግቡ በሉ። ከዚያም የተረፈውን ቁርስራሽ ሰበሰቡ፤ ሰባት ትልልቅ ቅርጫትም ሞላ።",
+          "R": "ሰዎቹ ሁሉ የፈለጉትን ያህል በሉ። ከዚያም የተረፈውን የምግብ ቁርስራሽ አነሡ። ሰባት ትልልቅ ቅርጫት ሞሉ።"
         }
       },
       "decisions": [
@@ -3941,6 +4148,27 @@
           "reason": "As in the parallel Mark 8:8 and 8:19-20: \"광주리\" for the large baskets of the second feeding, \"바구니\" for the baskets of the first, so the two words stay apart when Jesus recalls them in 16:9-10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40015037013"
+          ],
+          "choice": "\"ትልልቅ ቅርጫት\" for these baskets",
+          "alternatives": [
+            "\"ቅርጫት\", as at 14:20"
+          ],
+          "reason": "Matthew uses a different word here from the hand baskets of 14:20, a large basket or hamper; Amharic marks the difference with \"ትልልቅ\", as again at 16:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4003,6 +4231,11 @@
           "L": "E os que comeram eram quatro mil homens, além de mulheres e crianças.",
           "B": "Os que comeram eram quatro mil homens, e havia ainda mulheres e crianças.",
           "R": "Quatro mil homens comeram, e havia também mulheres e crianças."
+        },
+        "am": {
+          "L": "የበሉትም ከሴቶችና ከልጆች ሌላ 4000 ወንዶች ነበሩ።",
+          "B": "የበሉት 4000 ወንዶች ነበሩ፤ ከእነርሱም ሌላ ሴቶችና ልጆች ነበሩ።",
+          "R": "የበሉት ወንዶች 4000 ነበሩ፤ ሴቶችና ልጆችም ነበሩ።"
         }
       },
       "decisions": [
@@ -4215,6 +4448,11 @@
           "L": "E, tendo despedido as multidões, entrou no barco e foi para a região de Magadã.",
           "B": "Depois de despedir as multidões, {{deity_pronoun:ele|Ele}} entrou no barco e foi para a região de Magadã.",
           "R": "Depois Jesus mandou o povo para casa. Ele entrou no barco e foi para a região de Magadã."
+        },
+        "am": {
+          "L": "ሕዝቡንም አሰናብቶ ወደ ጀልባዋ ገባ፤ ወደ መጋዳን አገርም መጣ።",
+          "B": "ሕዝቡን ካሰናበተ በኋላ ወደ ጀልባዋ ገብቶ ወደ መጋዳን አካባቢ ሄደ።",
+          "R": "ከዚያም ኢየሱስ ሰዎቹን ወደ ቤታቸው አሰናበታቸው። ወደ ጀልባዋም ገብቶ ወደ መጋዳን አካባቢ ሄደ።"
         }
       },
       "decisions": [

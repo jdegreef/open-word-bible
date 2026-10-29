@@ -50,6 +50,11 @@
           "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
           "B": "{{divine_name:주|야훼}}께서 모세에게 이렇게 말씀하셨다.",
           "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
+          "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
+          "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
         }
       },
       "decisions": [
@@ -158,6 +163,11 @@
           "L": "\"이스라엘 자손에게 명령하여, 악성 피부병이 든 자와 유출이 있는 자와 죽은 사람 때문에 부정해진 자를 모두 진 밖으로 내보내게 하여라.",
           "B": "\"이스라엘 백성에게 명령하여, 악성 피부병이 있거나 유출이 있는 사람과 시신 때문에 부정해진 사람을 모두 진 밖으로 내보내게 하여라.",
           "R": "\"이스라엘 사람들에게 명령하여, 어떤 사람들을 진 밖으로 내보내게 해야 한다. 곧 악성 피부병이 있는 사람과, 몸에서 무엇이 흘러나오는 사람과, 시신 때문에 부정해진 사람이다."
+        },
+        "pt": {
+          "L": "\"Ordena aos filhos de Israel que mandem para fora do acampamento todo o que tem doença escamosa, e todo o que tem fluxo, e todo o que está impuro por causa de um morto.",
+          "B": "\"Ordena aos israelitas que mandem para fora do acampamento todo aquele que tiver uma doença de pele grave ou um fluxo, e todo aquele que tiver ficado impuro por causa de um cadáver.",
+          "R": "\"Ordena aos israelitas que mandem algumas pessoas para fora do acampamento: quem tiver uma doença de pele grave, quem tiver um fluxo que sai do corpo e quem estiver impuro por ter tocado num morto."
         }
       },
       "decisions": [
@@ -329,6 +339,48 @@
           "reason": "The term sheet and Korean Leviticus 13-15 use \"악성 피부병\"; \"나병\", the word of older Korean Bibles, names one disease (leprosy), while the Hebrew covers a range of skin conditions, as the footnoted meaning decision says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050020091"
+          ],
+          "choice": "doença escamosa (L); uma doença de pele grave (B, R)",
+          "alternatives": [
+            "leproso",
+            "lepra"
+          ],
+          "reason": "As Leviticus 13 says it in Portuguese: Literal \"doença escamosa\" for the English Literal \"scale disease\"; Balanced and Readable \"uma doença de pele grave\" (docs/pentateuch-portuguese-terms.md), not \"lepra\", since m1 says it is not the disease now called leprosy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o040050020131",
+            "o040050020142"
+          ],
+          "choice": "impuro por ter tocado num morto",
+          "alternatives": [
+            "impuro por causa de um cadáver"
+          ],
+          "reason": "Readable says how a dead body makes a person unclean, by touching it (m3), where the English Readable says \"because of a dead body\"; being in the tent where someone died (Numbers 19:14) is the less common case and is not lost from the meaning note.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -400,6 +452,11 @@
           "L": "남자부터 여자까지 너희는 내보내라. 진 밖으로 그들을 내보내어, 내가 그 가운데 머무는 그들의 진들을 그들이 더럽히지 않게 하라.\"",
           "B": "남자든 여자든 내보내어 진 밖에 있게 하라. 그래야 그들이 내가 머물고 있는 백성의 진을 더럽히지 않을 것이다.\"",
           "R": "남자든 여자든 내보내라. 그들을 진 밖에서 지내게 해야 한다. 그러면 그들이 진을 부정하게 하지 않을 것이다. 내가 그 진 안에서 백성과 함께 살기 때문이다.\""
+        },
+        "pt": {
+          "L": "Desde o homem até a mulher vocês [os] mandarão embora; para fora do acampamento vocês os mandarão, e não contaminarão os acampamentos deles, no meio dos quais eu habito.\"",
+          "B": "Sejam homens ou mulheres, vocês os mandarão embora e os porão fora do acampamento. Assim eles não contaminarão os acampamentos do povo no meio do qual eu habito.\"",
+          "R": "Mandem embora tanto homens como mulheres. Façam que fiquem fora do acampamento. Assim eles não vão tornar impuro o acampamento, porque eu moro ali, no meio do povo.\""
         }
       },
       "decisions": [
@@ -507,6 +564,28 @@
           "reason": "The Literal keeps the Hebrew \"from male to female\"; the other levels say \"men and women alike\" in ordinary Korean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050030012",
+            "o040050030031"
+          ],
+          "choice": "Desde o homem até a mulher (L); Sejam homens ou mulheres (B); tanto homens como mulheres (R); vocês",
+          "alternatives": [
+            "Desde o macho até a fêmea (L)"
+          ],
+          "reason": "The pair means men and women alike (m1). Portuguese \"macho\" and \"fêmea\" are said of animals, so Literal says \"homem\" and \"mulher\". The command passes from Moses to the people, and the verbs are plural in the Hebrew, so they are \"vocês\" forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -578,6 +657,11 @@
           "L": "그리고 이스라엘 자손이 그렇게 하여, 그들을 진 밖으로 내보냈다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 대로 이스라엘 자손이 그렇게 하였다.",
           "B": "이스라엘 백성은 그렇게 하였다. 그들은 그 사람들을 진 밖으로 내보냈다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 그대로 이스라엘 백성이 행하였다.",
           "R": "이스라엘 사람들은 그대로 했다. 그들은 그 사람들을 진 밖으로 내보냈다. {{divine_name:주|야훼}}께서 모세에게 말씀하신 그대로 했다."
+        },
+        "pt": {
+          "L": "E os filhos de Israel fizeram assim, e os mandaram para fora do acampamento; como {{divine_name:o SENHOR|Javé}} tinha falado a Moisés, assim fizeram os filhos de Israel.",
+          "B": "Os israelitas fizeram isso e os mandaram para fora do acampamento. Como {{divine_name:o SENHOR|Javé}} tinha dito a Moisés, assim fizeram os israelitas.",
+          "R": "Os israelitas fizeram isso. Mandaram aquelas pessoas para fora do acampamento. Fizeram exatamente o que {{divine_name:o SENHOR|Javé}} tinha dito a Moisés."
         }
       },
       "decisions": [
@@ -666,6 +750,11 @@
           "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
           "B": "{{divine_name:주|야훼}}께서 모세에게 이렇게 말씀하셨다.",
           "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
+          "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
+          "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
         }
       },
       "decisions": [
@@ -759,6 +848,11 @@
           "L": "\"이스라엘 자손에게 말하여라. '남자나 여자가 사람들이 짓는 죄 가운데 어떤 것을 지어 {{divine_name:주|야훼}}께 신의를 저버리는 일을 저지르고, 그 사람이 죄책이 있게 되면,",
           "B": "\"이스라엘 백성에게 일러라. '남자든 여자든 다른 사람에게 잘못을 저질러 {{divine_name:주|야훼}}께 신의를 저버리고, 그 사람에게 죄책이 있게 되면,",
           "R": "\"이스라엘 사람들에게 일러라. '남자나 여자가 다른 사람에게 잘못을 저지를 수 있다. 그것은 {{divine_name:주|야훼}}께 신의를 저버리는 일이고, 그 사람은 죄를 지은 것이다."
+        },
+        "pt": {
+          "L": "\"Fala aos filhos de Israel: 'Um homem ou uma mulher, quando fizerem qualquer dos pecados do ser humano, cometendo infidelidade contra {{divine_name:o SENHOR|Javé}}, e aquela pessoa for culpada,",
+          "B": "\"Diz aos israelitas: 'Quando um homem ou uma mulher fizer algum mal a outra pessoa e assim for infiel {{divine_name:ao SENHOR|a Javé}}, essa pessoa é culpada.",
+          "R": "\"Diz aos israelitas: 'Um homem ou uma mulher pode fazer mal a outra pessoa. Isso é ser infiel {{divine_name:ao SENHOR|a Javé}}, e essa pessoa fica culpada."
         }
       },
       "decisions": [
@@ -893,6 +987,29 @@
           "reason": "The footnoted meaning decision reads the phrase as wrongs people do to one another; the Literal keeps the Hebrew phrase and the other levels say the sense. \"신의를 저버리다\" is the phrase Korean Leviticus 5:15 uses for acting unfaithfully.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050060132",
+            "o040050060141"
+          ],
+          "choice": "cometendo infidelidade contra (L); for infiel a (B); ser infiel a (R)",
+          "alternatives": [
+            "prevaricar",
+            "transgredir"
+          ],
+          "reason": "The words name a breach of trust (m2). Portuguese \"infidelidade\" and \"infiel\" keep the link with the wife's unfaithfulness in verse 12, where the same Hebrew word returns; \"prevaricar\" is a legal word few readers know. Balanced ends the condition with \"é culpada\" and lets verse 7 begin the instruction, since a Portuguese sentence of that length would lose its thread.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -968,6 +1085,11 @@
           "L": "그들은 자기들이 지은 죄를 자백해야 하고, 그는 자기의 죄책[의 값]을 원금대로 갚고, 거기에 오분의 일을 더하여, 자기가 죄를 지은 상대에게 주어야 한다.",
           "B": "그는 자기가 지은 죄를 털어놓고 자백해야 한다. 죄를 지은 사람은 잘못한 만큼 다 갚고, 거기에 오분의 일을 더하여 피해를 입은 사람에게 주어야 한다.",
           "R": "그는 자기가 지은 죄를 털어놓아야 한다. 그리고 잘못한 만큼 다 갚고, 오분의 일을 더 얹어야 한다. 그런 다음 그것을 자기가 잘못한 사람에게 주어야 한다."
+        },
+        "pt": {
+          "L": "então confessarão o pecado que cometeram, e ele restituirá a sua culpa por inteiro, e lhe acrescentará a quinta parte, e [a] dará àquele contra quem se tornou culpado.",
+          "B": "Ela deverá confessar abertamente o seu pecado. O culpado restituirá por inteiro o que deve pelo mal que fez, acrescentará um quinto e entregará tudo a quem foi prejudicado.",
+          "R": "Ela deve admitir o pecado que cometeu. Deve pagar tudo o que deve pelo mal que fez e acrescentar mais um quinto. Depois deve entregar isso à pessoa que foi prejudicada."
         }
       },
       "decisions": [
@@ -1130,6 +1252,27 @@
           "reason": "The words Leviticus 5:5 and 16 use in Vietnamese for the same law. Vietnamese does not use a plural pronoun for one person of either sex, and \"người ấy\" already covers a man or a woman.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050070012",
+            "o040050070062"
+          ],
+          "choice": "Ela (essa pessoa) ... O culpado (B); Ela ... deve (R)",
+          "alternatives": [
+            "eles confessarão (B, R)"
+          ],
+          "reason": "The plural \"they\" and the singular \"he\" both mean the guilty person (m1). Portuguese Balanced and Readable continue from \"essa pessoa\" in verse 6 with the singular \"ela\", which covers a man or a woman, where the English Readable uses a singular \"they\" that Portuguese has no form for. Literal keeps the Hebrew change of number. \"Restituir\", \"um quinto\" follow Leviticus 5:16, 24.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1209,6 +1352,11 @@
           "L": "그리고 만일 그 사람에게 죄책[의 값]을 돌려받을 무를 자가 없으면, 돌려주는 죄책[의 값]은 {{divine_name:주|야훼}}께 [속하여] 제사장의 것이 될 것이니, 그를 위하여 속죄하는 데 쓰는 속죄의 숫양 외에 [그러하다].",
           "B": "피해를 입은 사람이 죽었는데 갚는 것을 받을 가까운 친척도 없으면, 잘못에 대하여 갚는 것은 {{divine_name:주|야훼}}께 돌아가니, 곧 제사장의 것이 된다. 이것은 제사장이 죄를 지은 사람을 위하여 속죄할 때 쓰는 속죄의 숫양과는 따로이다.",
           "R": "그런데 피해를 입은 사람이 죽고, 갚는 것을 받을 가까운 친척도 없을 수 있다. 그러면 그 갚는 것은 {{divine_name:주|야훼}}의 것이 되고, 제사장에게 주어야 한다. 죄를 지은 사람은 숫양도 한 마리 가져와야 한다. 그러면 제사장이 그 숫양으로 그를 위하여 속죄할 것이다."
+        },
+        "pt": {
+          "L": "E se o homem não tiver resgatador a quem se restitua a culpa, a culpa restituída [pertence] {{divine_name:ao SENHOR|a Javé}}, ao sacerdote, além do carneiro da expiação com o qual ele faz expiação por ele.",
+          "B": "Se a pessoa prejudicada tiver morrido e não houver nenhum parente próximo para receber a restituição, o que se restitui pelo mal feito pertence {{divine_name:ao SENHOR|a Javé}}, isto é, ao sacerdote. Isso é além do carneiro da expiação, com o qual o sacerdote faz expiação pelo culpado.",
+          "R": "Mas pode ser que a pessoa prejudicada tenha morrido e não tenha nenhum parente próximo para receber o pagamento. Então o pagamento pertence {{divine_name:ao SENHOR|a Javé}} e é entregue ao sacerdote. O culpado também deve trazer um carneiro, para que o sacerdote faça expiação por ele."
         }
       },
       "decisions": [
@@ -1388,6 +1536,29 @@
           "reason": "The word Korean Leviticus 25:25 uses for the go'el at Literal; the other levels name the nearest relative, as the English does. \"그 사람\" covers the English gender span on \"the person / the man\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050080032",
+            "o040050080041"
+          ],
+          "choice": "o homem; resgatador (L); a pessoa prejudicada; parente próximo (B, R)",
+          "alternatives": [
+            "redentor (L)",
+            "vingador"
+          ],
+          "reason": "Literal says \"resgatador\", the relative who buys back and stands up for a family member (m1); \"redentor\" in Portuguese suggests the theological title. Where the English Literal has a gender span on \"the man\", Portuguese Literal keeps \"o homem\" and Balanced and Readable already say \"a pessoa prejudicada\", which includes men and women, so no setting is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1450,6 +1621,11 @@
           "L": "그리고 이스라엘 자손이 제사장에게 가져오는 모든 거룩한 것 가운데 들어 바치는 제물은 모두 그의 것이 될 것이다.",
           "B": "이스라엘 백성이 제사장에게 가져오는 모든 거룩한 예물 가운데 들어 바치는 제물은 모두 그 제사장의 것이다.",
           "R": "이스라엘 사람들이 제사장에게 가져오는 거룩한 예물 가운데 따로 떼어 바치는 특별한 예물은 모두 그 제사장의 것이다."
+        },
+        "pt": {
+          "L": "E toda contribuição de todas as coisas santas dos filhos de Israel que eles trouxerem ao sacerdote será dele.",
+          "B": "Toda contribuição entre todas as coisas santas que os israelitas trouxerem ao sacerdote pertencerá a ele.",
+          "R": "Toda oferta especial entre os presentes santos que os israelitas trouxerem a um sacerdote vai pertencer a esse sacerdote."
         }
       },
       "decisions": [
@@ -1517,6 +1693,27 @@
           "reason": "The term sheet's name, a portion set apart from the whole for holy use; Readable follows Exodus 25:2 in Vietnamese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050090021"
+          ],
+          "choice": "contribuição (L, B); oferta especial (R)",
+          "alternatives": [
+            "oferta alçada"
+          ],
+          "reason": "\"Contribuição\" names a portion set apart for holy use (m1), as Leviticus 7:34 (B) says it; Readable says \"oferta especial\", as the English Readable says \"special gift\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1580,6 +1777,11 @@
           "L": "그리고 각 사람의 거룩한 것들은 그의 것이 될 것이다. 각 사람이 제사장에게 주는 것은 그[제사장]의 것이 될 것이다.'\"",
           "B": "각 사람의 거룩한 예물은 그 사람이 드릴 것이지만, 누구든지 제사장에게 준 것은 그 제사장의 것이다.'\"",
           "R": "사람들이 따로 떼어 둔 거룩한 예물은 그들이 원하는 대로 드릴 수 있다. 그러나 제사장에게 준 것은 그 제사장의 것이다.'\""
+        },
+        "pt": {
+          "L": "E cada um, as suas coisas santas serão suas; o que cada um der ao sacerdote será dele.'\"",
+          "B": "As coisas santas de cada pessoa são dela para dar, mas o que alguém der a um sacerdote pertence a esse sacerdote.'\"",
+          "R": "Os presentes santos que as pessoas separam são delas, e elas os dão como quiserem. Mas o que derem a um sacerdote pertence a ele.'\""
         }
       },
       "decisions": [
@@ -1671,6 +1873,11 @@
           "L": "그리고 {{divine_name:주|야훼}}께서 모세에게 말씀하여 이르셨다.",
           "B": "{{divine_name:주|야훼}}께서 모세에게 이렇게 말씀하셨다.",
           "R": "{{divine_name:주|야훼}}께서 모세에게 말씀하셨다."
+        },
+        "pt": {
+          "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
+          "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
+          "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
         }
       },
       "decisions": [
@@ -1758,6 +1965,11 @@
           "L": "\"이스라엘 자손에게 말하고 그들에게 일러라. '어떤 남자든지 그의 아내가 곁길로 나가 그에게 신의를 저버리는 일을 저질러,",
           "B": "\"이스라엘 백성에게 이렇게 일러라. '어떤 남자의 아내가 바른길에서 벗어나 남편에게 신의를 저버리고,",
           "R": "\"이스라엘 사람들에게 일러라. '어떤 아내가 남편에게서 마음이 떠나 남편을 배신할 수 있다."
+        },
+        "pt": {
+          "L": "\"Fala aos filhos de Israel e dize-lhes: 'Quando a mulher de qualquer homem se desviar e lhe for infiel,",
+          "B": "\"Fala aos israelitas e dize-lhes: 'Suponham que a mulher de um homem se desvie dele e lhe seja infiel,",
+          "R": "\"Diz aos israelitas: 'Pode ser que a mulher de um homem se afaste dele e lhe seja infiel."
         }
       },
       "decisions": [
@@ -1876,6 +2088,30 @@
           "reason": "The verb is turning off the right road (m2). \"Kukengeuka\" keeps that picture at Literal and through the chapter (verses 19, 20, 29); Balanced uses \"kupotoka\", going astray, here at the start of the case. Readable says plainly that she turns away from her husband.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050120101",
+            "o040050120122",
+            "o040050120141"
+          ],
+          "choice": "se desviar (L); se desvie (B); se afaste (R); for infiel / seja infiel",
+          "alternatives": [
+            "trair",
+            "cometer adultério"
+          ],
+          "reason": "The verb pictures turning off the right road (m2), which \"desviar-se\" keeps; \"infiel\" is the word of verse 6 for the same Hebrew noun (m3). The chapter's wording stays as plain and decent as the English: it names what happened without coarse or euphemistic words. Balanced opens with \"Suponham\", addressed to the people, as the English \"Suppose\" begins the long case (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1950,6 +2186,11 @@
           "L": "어떤 남자가 씨를 [쏟는] 동침으로 그 여자와 동침하였는데, 그것이 그 여자의 남편의 눈에 숨겨지고, 그 여자가 [그 일을] 감추었으며, 그 여자가 자기를 더럽혔으나, 그 여자에게 불리한 증인이 없고, 그 여자가 붙잡히지도 않았는데,",
           "B": "다른 남자가 그 여자와 동침하였는데도 남편이 그 일을 모르고, 그 여자가 몰래 자기를 더럽혔으나, 그 여자에게 불리한 증인이 없고 그 여자가 붙잡히지도 않았는데,",
           "R": "다른 남자가 그 여자와 잠자리를 같이했지만, 남편은 그 일을 모른다. 그 여자는 몰래 자기를 부정하게 했다. 본 사람도 없고, 그 여자가 붙잡히지도 않았다."
+        },
+        "pt": {
+          "L": "e um homem se deitar com ela [com] emissão de sêmen, e isso for escondido dos olhos do marido dela, e ela se ocultar, e ela se contaminar, e não houver testemunha contra ela, e ela não tiver sido apanhada,",
+          "B": "e outro homem tenha relações com ela, mas isso fique escondido do marido; ela se contaminou em segredo, não há testemunha contra ela e ela não foi apanhada.",
+          "R": "Outro homem dorme com ela, mas o marido não fica sabendo. Ela se tornou impura em segredo. Ninguém viu, e ela não foi apanhada."
         }
       },
       "decisions": [
@@ -2036,6 +2277,29 @@
           "reason": "Vietnamese must choose a pronoun for the woman. \"nàng\" is the usual third person for a woman in written narrative; Readable uses the plainer \"cô ấy\". The priest's oath is formal and solemn, so he addresses her with the respectful \"bà\" at Balanced and Readable, and with \"ngươi\" at Literal like the other legal speech. Used through 5:12-31.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050130041",
+            "o040050130051"
+          ],
+          "choice": "se deitar com ela [com] emissão de sêmen (L); tenha relações com ela (B); dorme com ela (R)",
+          "alternatives": [
+            "coabitar (B)",
+            "deitar-se com ela (B, R)"
+          ],
+          "reason": "The phrase is a plain legal description of intercourse (m1). Literal keeps its wording decently; Balanced says \"ter relações\", the usual written Portuguese, and Readable \"dormir com\", as the English Readable does. \"Contaminar-se\" (L, B) and \"tornar-se impura\" (R) follow the English \"defile\" and \"make herself unclean\" (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2112,6 +2376,11 @@
           "L": "질투의 영이 그에게 임하여 그가 자기 아내를 질투하는데 그 여자가 자기를 더럽혔거나, 또는 질투의 영이 그에게 임하여 그가 자기 아내를 질투하나 그 여자가 자기를 더럽히지 않았으면,",
           "B": "남편이 질투심에 사로잡혀 아내를 의심하는데, 실제로 그 여자가 자기를 더럽혔거나, 또는 남편이 질투심에 사로잡혀 아내를 의심하지만 그 여자가 자기를 더럽히지 않았으면,",
           "R": "그러면 남편은 질투심에 사로잡혀 아내를 의심하게 된다. 아내가 정말로 자기를 부정하게 했을 수도 있고, 그러지 않았을 수도 있다. 그래도 남편은 질투하며 아내를 의심한다."
+        },
+        "pt": {
+          "L": "e passar sobre ele um espírito de ciúme, e ele tiver ciúme da sua mulher, e ela se tiver contaminado; ou passar sobre ele um espírito de ciúme, e ele tiver ciúme da sua mulher, e ela não se tiver contaminado,",
+          "B": "e uma crise de ciúme venha sobre ele, e ele fique com ciúme da mulher, e ela de fato tenha se contaminado; ou se uma crise de ciúme vier sobre ele, e ele ficar com ciúme da mulher, sem que ela tenha se contaminado,",
+          "R": "Então um ciúme forte toma conta do marido, e ele desconfia dela. Talvez ela tenha se tornado impura, talvez não, mas ele continua com ciúme e desconfia dela."
         }
       },
       "decisions": [
@@ -2236,6 +2505,30 @@
           "reason": "The Hebrew word is jealousy, and the meaning decision reads \"spirit of jealousy\" as a strong feeling that takes hold of him; Balanced and Readable add \"의심하다\" for \"he is jealous of his wife\", which in Korean means suspecting her faithfulness.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050140031",
+            "o040050140041",
+            "o040050140052"
+          ],
+          "choice": "um espírito de ciúme (L); uma crise de ciúme (B); um ciúme forte (R); ter ciúme de",
+          "alternatives": [
+            "um acesso de ciúme (B)",
+            "suspeitar (L, B)"
+          ],
+          "reason": "\"Spirit\" means a passion that takes hold of him, not a spirit being (m1), so Balanced says \"crise de ciúme\", as the English \"fit of jealousy\". \"Ciúme\" is the Portuguese word for the passion of someone who claims a relationship as his alone (m2), not \"inveja\". Readable adds \"desconfia\", as the English Readable \"suspects\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2324,6 +2617,11 @@
           "L": "그 남자는 자기 아내를 제사장에게 데려가고, 그 여자를 위하여 그 여자의 제물로 보릿가루 에바 십분의 일을 가져가야 한다. 그는 그 위에 기름을 붓지 말고 그 위에 유향을 놓지 말아야 한다. 그것은 질투의 곡식 제물, 곧 기억나게 하는 곡식 제물로, 죄악을 기억나게 하는 것이기 때문이다.",
           "B": "그 남자는 자기 아내를 제사장에게 데려가야 한다. 그는 또 그 여자를 위한 제물로 보릿가루 {{units:2.2리터쯤|에바 십분의 일}}를 가져가야 한다. 그 위에 기름을 붓거나 유향을 얹어서는 안 된다. 그것은 질투 때문에 바치는 곡식 제물이며, 죄를 드러내어 기억나게 하는 곡식 제물이기 때문이다.",
           "R": "그 남자는 아내를 제사장에게 데려가야 한다. 그는 아내를 위한 제물도 가져가야 하는데, 그것은 보릿가루 {{units:2.2리터쯤|에바 십분의 일}}이다. 그 위에 올리브기름이나 유향을 얹으면 안 된다. 그것은 질투 때문에 바치는 곡식 제물이기 때문이다. 그것은 숨겨진 잘못을 기억나게 하는 제물이다."
+        },
+        "pt": {
+          "L": "então o homem trará a sua mulher ao sacerdote, e trará a oferta dela por ela, um décimo de efa de farinha de cevada; não derramará azeite sobre ela, nem porá incenso sobre ela, porque [é] uma oferta de cereal de ciúmes, uma oferta de cereal de lembrança, que traz a iniquidade à memória.",
+          "B": "o homem levará a sua mulher ao sacerdote. Levará também a oferta exigida por ela, {{units:cerca de 2,2 litros|um décimo de efa}} de farinha de cevada. Não derramará azeite sobre ela nem porá incenso, porque é uma oferta de cereal por causa de ciúme, uma oferta de cereal de lembrança, que traz a culpa à memória.",
+          "R": "O homem deve levar a sua mulher ao sacerdote. Deve levar também uma oferta por ela: {{units:cerca de 2,2 litros|um décimo de efa}} de farinha de cevada. Não deve pôr nela azeite nem incenso, porque é uma oferta de cereal por causa de ciúme. É uma oferta que traz à memória um mal escondido."
         }
       },
       "decisions": [
@@ -2510,6 +2808,52 @@
           "reason": "The term sheet's word; \"소제\" is the older Sino-Korean name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040050150111",
+            "o040050150122"
+          ],
+          "choice": "cerca de 2,2 litros, alternative \"um décimo de efa\"",
+          "alternatives": [
+            "um décimo de efa (no setting)"
+          ],
+          "reason": "As in Leviticus 5:11: the metric measure by default, with the Hebrew unit as the alternative, where the English converts to quarts. Literal keeps \"efa\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050150241",
+            "o040050150251",
+            "o040050150281",
+            "o040050150291"
+          ],
+          "choice": "oferta de cereal de ciúmes (L); oferta de cereal por causa de ciúme (B, R); de lembrança / traz ... à memória",
+          "alternatives": [
+            "oferta de ciúmes (B)",
+            "oferta memorial"
+          ],
+          "reason": "\"Oferta de cereal\" is the Leviticus 2 name. Literal keeps the plural \"ciúmes\"; Balanced and Readable say what it means, an offering brought because of jealousy (m2). \"Lembrança\" and \"trazer à memória\" keep the Hebrew link between the two words of m3, as \"porção memorial\" does in verse 26.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2569,6 +2913,11 @@
           "L": "그리고 제사장은 그 여자를 가까이 데려와 {{divine_name:주|야훼}} 앞에 세워야 한다.",
           "B": "제사장은 그 여자를 가까이 데려와 {{divine_name:주|야훼}} 앞에 세워야 한다.",
           "R": "제사장은 그 여자를 앞으로 데려와 성막에서 {{divine_name:주|야훼}} 앞에 서게 해야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote a fará aproximar-se e a fará ficar diante {{divine_name:do SENHOR|de Javé}}.",
+          "B": "O sacerdote a fará aproximar-se e a colocará diante {{divine_name:do SENHOR|de Javé}}.",
+          "R": "O sacerdote deve levá-la para a frente e fazer que ela fique diante {{divine_name:do SENHOR|de Javé}}, no tabernáculo."
         }
       },
       "decisions": [
@@ -2678,6 +3027,11 @@
           "L": "그리고 제사장은 토기에 거룩한 물을 담고, 성막 바닥에 있는 흙을 제사장이 조금 집어 그 물에 넣어야 한다.",
           "B": "그다음에 제사장은 토기 그릇에 거룩한 물을 담고, 성막 바닥의 흙을 조금 집어 그 물에 넣어야 한다.",
           "R": "그다음에 제사장은 흙으로 빚은 그릇에 거룩한 물을 조금 부어야 한다. 그리고 성막 바닥에서 흙을 조금 집어 그 물에 넣어야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote tomará água santa num vaso de barro, e do pó que houver no chão do tabernáculo o sacerdote tomará e [o] porá na água.",
+          "B": "Depois o sacerdote porá água santa num vaso de barro, pegará um pouco do pó que está no chão do tabernáculo e o porá na água.",
+          "R": "Então o sacerdote deve pôr um pouco de água santa num pote de barro. Deve pegar um pouco de pó do chão do tabernáculo e pôr na água."
         }
       },
       "decisions": [
@@ -2812,6 +3166,11 @@
           "L": "그리고 제사장은 그 여자를 {{divine_name:주|야훼}} 앞에 세우고, 그 여자의 머리를 풀고, 기억나게 하는 곡식 제물, 곧 질투의 곡식 제물을 그 여자의 두 손바닥에 놓아야 한다. 그리고 제사장의 손에는 저주를 가져오는 쓰라림의 물이 있어야 한다.",
           "B": "제사장은 그 여자를 {{divine_name:주|야훼}} 앞에 세우고, 그 여자의 머리를 풀게 한 다음, 기억나게 하는 곡식 제물, 곧 질투 때문에 바치는 곡식 제물을 그 여자의 두 손에 들려야 한다. 제사장은 자기 손에 저주를 가져오는 쓴 물을 들고 있어야 한다.",
           "R": "제사장은 그 여자를 {{divine_name:주|야훼}} 앞에 서게 해야 한다. 그리고 그 여자의 머리를 풀고, 곡식 제물을 그 여자의 손에 들려 주어야 한다. 그것은 질투 때문에 바치는 제물로, 그 일을 기억나게 하는 제물이다. 제사장은 저주를 가져오는 쓴 물을 직접 들고 있어야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote fará a mulher ficar diante {{divine_name:do SENHOR|de Javé}}, e soltará [os cabelos da] cabeça da mulher, e porá sobre as palmas das mãos dela a oferta de cereal de lembrança — ela [é] a oferta de cereal de ciúmes —, e na mão do sacerdote estarão as águas de amargura que trazem a maldição.",
+          "B": "O sacerdote colocará a mulher diante {{divine_name:do SENHOR|de Javé}}, soltará os cabelos dela e porá nas mãos dela a oferta de cereal de lembrança, a oferta de cereal por causa de ciúme. Na sua própria mão o sacerdote segurará a água amarga que traz a maldição.",
+          "R": "O sacerdote deve fazer a mulher ficar diante {{divine_name:do SENHOR|de Javé}}. Deve soltar os cabelos dela e pôr a oferta de cereal nas mãos dela. É a oferta por causa de ciúme, que traz o caso à memória. O próprio sacerdote deve segurar a água amarga que traz a maldição."
         }
       },
       "decisions": [
@@ -2976,6 +3335,52 @@
           "reason": "The Hebrew is \"the waters of the bitter things\"; the Literal keeps the abstract noun, the other levels use the ordinary phrase, as the English does. The water causes bitter suffering if she is guilty, as the meaning decision says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050180231",
+            "o040050180242",
+            "o040050180252"
+          ],
+          "choice": "as águas de amargura que trazem a maldição (L); a água amarga que traz a maldição (B, R)",
+          "alternatives": [
+            "a água da amargura que acarreta maldição",
+            "a água amarga da maldição"
+          ],
+          "reason": "For the whole book: the name of the water, said the same way through the chapter. Literal keeps the Hebrew plural and \"amargura\"; Balanced and Readable say \"a água amarga\", as the English \"the bitter water\". The name describes what the water does to a guilty woman, not its taste (m2), which \"que traz a maldição\" makes plain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050180072",
+            "o040050180091"
+          ],
+          "choice": "soltará [os cabelos da] cabeça (L); soltará os cabelos (B, R)",
+          "alternatives": [
+            "descobrirá a cabeça"
+          ],
+          "reason": "The verb means letting the hair hang loose (m1), as Leviticus 10:6 says it in Portuguese; \"descobrir a cabeça\", the other reading m1 names, is left to the meaning note.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3057,6 +3462,11 @@
           "L": "그리고 제사장은 그 여자에게 맹세하게 하고, 그 여자에게 말해야 한다. \"어떤 남자도 너와 동침하지 않았고, 네가 네 남편 아래 있으면서 곁길로 나가 부정한 일을 하지 않았으면, 저주를 가져오는 이 쓰라림의 물에서 너는 해를 면할 것이다.",
           "B": "그다음에 제사장은 그 여자에게 맹세하게 하고 이렇게 말해야 한다. \"네 남편 말고 다른 남자가 너와 동침한 적이 없고, 네가 남편에게 매인 몸으로 곁길로 나가 부정한 일을 하지 않았다면, 저주를 가져오는 이 쓴 물이 너를 해치지 못할 것이다.",
           "R": "그다음에 제사장은 그 여자에게 맹세하게 해야 한다. 그리고 이렇게 말해야 한다. \"다른 남자가 너와 잠자리를 같이한 적이 없고, 네가 남편을 배신하여 네 몸을 부정하게 하지 않았다면, 저주를 가져오는 이 쓴 물이 너를 해치지 않을 것이다."
+        },
+        "pt": {
+          "L": "E o sacerdote a fará jurar e dirá à mulher: \"Se nenhum homem se deitou com você, e se você não se desviou [para a] impureza, estando sob o seu marido, fique livre destas águas de amargura que trazem a maldição.",
+          "B": "Depois o sacerdote a fará prestar juramento e lhe dirá: \"Se nenhum homem além do seu marido teve relações com você, e se você não se desviou para a impureza enquanto estava ligada a ele, você ficará livre do mal desta água amarga que traz a maldição.",
+          "R": "Então o sacerdote deve fazer a mulher prestar um juramento. Ele deve dizer a ela: \"Se nenhum outro homem dormiu com você, e se você não foi infiel ao seu marido nem se tornou impura, então esta água amarga que traz a maldição não vai lhe fazer mal."
         }
       },
       "decisions": [
@@ -3227,6 +3637,28 @@
           "reason": "The Literal keeps the Hebrew \"under your husband\"; Balanced says the sense, bound to him in marriage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040050190101"
+          ],
+          "choice": "você (the priest to the woman)",
+          "alternatives": [
+            "tu",
+            "a senhora"
+          ],
+          "reason": "The priest speaks to the woman as one person to another, so Portuguese uses \"você\" (docs/portuguese-style.md, section 4); \"tu\" is kept for God's address and for speech to God. The oath stays plain and sober at every level, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3296,6 +3728,11 @@
           "L": "그러나 너, 만일 네가 네 남편 아래 있으면서 곁길로 나갔고, 만일 네가 네 몸을 더럽혀서, 네 남편 외에 어떤 남자가 너와 동침하였으면—\"",
           "B": "그러나 네가 남편에게 매인 몸으로 곁길로 나가 네 몸을 더럽혔고, 네 남편 말고 다른 남자가 너와 동침하였다면—\"",
           "R": "그러나 네가 남편과 결혼한 몸으로 남편을 배신했을 수도 있다. 네가 남편이 아닌 다른 남자와 잠자리를 같이하여 네 몸을 부정하게 했을 수도 있다.\""
+        },
+        "pt": {
+          "L": "Mas você, se você se desviou estando sob o seu marido, e se você se contaminou, e um homem que não é o seu marido se deitou com você —\"",
+          "B": "Mas se você se desviou enquanto estava ligada ao seu marido, se você se contaminou e outro homem além do seu marido teve relações com você —\"",
+          "R": "Mas pode ser que você tenha sido infiel enquanto estava casada com o seu marido. Pode ser que você tenha se tornado impura dormindo com outro homem que não é o seu marido.\""
         }
       },
       "decisions": [
@@ -3435,6 +3872,11 @@
           "L": "그때에 제사장은 그 여자에게 저주의 맹세로 맹세하게 하고, 제사장은 그 여자에게 말해야 한다. \"{{divine_name:주|야훼}}께서 네 넓적다리를 떨어지게 하시고 네 배를 부어오르게 하실 때에, {{divine_name:주|야훼}}께서 너를 네 백성 가운데서 저주와 맹세[의 본보기]가 되게 하시기를 바란다.",
           "B": "제사장은 그 여자에게 저주의 맹세를 하게 하고 이렇게 말해야 한다. \"{{divine_name:주|야훼}}께서 네 넓적다리를 마르게 하시고 네 배를 부어오르게 하실 때에, {{divine_name:주|야훼}}께서 너를 네 백성이 저주하고 맹세할 때 들먹이는 본보기가 되게 하시기를 바란다.",
           "R": "그다음에 제사장은 그 여자에게 저주의 맹세를 하게 해야 한다. 그리고 이렇게 말해야 한다. \"네게 죄가 있다면, {{divine_name:주|야훼}}께서 네 이름을 저주로 삼으셔서 네 백성이 맹세할 때 네 이름을 들먹이게 하시기를 바란다. {{divine_name:주|야훼}}께서 네 태를 오그라들게 하시고 네 배를 부어오르게 하시기를 바란다."
+        },
+        "pt": {
+          "L": "então o sacerdote fará a mulher jurar com o juramento da maldição, e o sacerdote dirá à mulher: \"{{divine_name:O SENHOR|Javé}} faça de você uma maldição e um juramento no meio do seu povo, quando {{divine_name:o SENHOR|Javé}} fizer a sua coxa definhar e o seu ventre inchar;",
+          "B": "então o sacerdote fará a mulher prestar o juramento da maldição e lhe dirá: \"Que {{divine_name:o SENHOR|Javé}} faça do seu nome uma maldição e uma fórmula de juramento no meio do seu povo, quando {{divine_name:o SENHOR|Javé}} fizer a sua coxa definhar e o seu ventre inchar.",
+          "R": "Então o sacerdote deve fazer a mulher prestar o juramento da maldição. Ele deve dizer a ela: \"Se você for culpada, que {{divine_name:o SENHOR|Javé}} faça do seu nome uma maldição que o seu povo usa quando jura. Que {{divine_name:o SENHOR|Javé}} faça o seu útero murchar e a sua barriga inchar."
         }
       },
       "decisions": [
@@ -3638,6 +4080,51 @@
           "reason": "Literal and Balanced keep the Hebrew body word, which the footnoted meaning decision explains as harm that ends her ability to bear children; Readable follows the English Readable in naming the womb.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050210201",
+            "o040050210211",
+            "o040050210231",
+            "o040050210241"
+          ],
+          "choice": "a sua coxa definhar e o seu ventre inchar (L, B); o seu útero murchar e a sua barriga inchar (R)",
+          "alternatives": [
+            "os seus quadris",
+            "o seu ventre secar"
+          ],
+          "reason": "Literal and Balanced keep \"coxa\", the polite word the Hebrew uses for the organs of childbearing (m2), as the English keeps \"thigh\". Readable says \"útero\", as the English Readable says \"womb\", and then \"barriga\", since Portuguese \"ventre\" also means womb and would blur the two parts of the curse.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050210132",
+            "o040050210143"
+          ],
+          "choice": "faça do seu nome uma maldição e uma fórmula de juramento",
+          "alternatives": [
+            "faça de você um exemplo de maldição"
+          ],
+          "reason": "Balanced says that her name becomes what people say when they curse or swear (m1), as the English \"byword\"; Portuguese has no single word for it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3709,6 +4196,11 @@
           "L": "그리고 저주를 가져오는 이 물이 네 창자 속으로 들어가서, [네] 배를 부어오르게 하고 [네] 넓적다리를 떨어지게 하기를 바란다.\" 그러면 그 여자는 \"아멘, 아멘\" 하고 말해야 한다.",
           "B": "저주를 가져오는 이 물이 네 몸속에 들어가서, 네 배를 부어오르게 하고 네 넓적다리를 마르게 하기를 바란다.\" 그러면 그 여자는 \"아멘, 아멘\" 하고 말해야 한다.",
           "R": "저주를 가져오는 이 물이 네 몸속으로 들어가기를 바란다. 이 물이 네 배를 부어오르게 하고 네 태를 오그라들게 하기를 바란다.\" 그러면 그 여자는 \"아멘, 아멘\" 하고 말해야 한다."
+        },
+        "pt": {
+          "L": "e entrem estas águas que trazem a maldição nas suas entranhas, para fazer inchar [o seu] ventre e definhar [a sua] coxa.\" E a mulher dirá: \"Amém, amém.\"",
+          "B": "Que esta água que traz a maldição entre em você e faça o seu ventre inchar e a sua coxa definhar.\" E a mulher dirá: \"Amém, amém.\"",
+          "R": "Que esta água que traz a maldição entre no seu corpo. Que ela faça a sua barriga inchar e o seu útero murchar.\" Então a mulher deve dizer: \"Amém, amém.\""
         }
       },
       "decisions": [
@@ -3837,6 +4329,11 @@
           "L": "그리고 제사장은 이 저주들을 두루마리에 써서, 쓰라림의 물에 씻어 넣어야 한다.",
           "B": "제사장은 이 저주의 말을 두루마리에 쓴 다음, 그 글씨를 쓴 물에 씻어 넣어야 한다.",
           "R": "그다음에 제사장은 이 저주의 말을 두루마리에 써야 한다. 그리고 그 먹물을 쓴 물에 씻어 넣어야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote escreverá estas maldições num rolo e [as] apagará nas águas de amargura.",
+          "B": "O sacerdote escreverá estas maldições num rolo e depois lavará a escrita na água amarga.",
+          "R": "Então o sacerdote deve escrever estas maldições num rolo. Depois deve lavar a tinta, deixando-a cair na água amarga."
         }
       },
       "decisions": [
@@ -3953,6 +4450,11 @@
           "L": "그리고 그는 그 여자에게 저주를 가져오는 쓰라림의 물을 마시게 할 것이며, 저주를 가져오는 물이 그 여자 속에 들어가 쓰라림이 될 것이다.",
           "B": "제사장은 그 여자에게 저주를 가져오는 쓴 물을 마시게 해야 한다. 그러면 이 물이 그 여자 속에 들어가 쓰라린 고통을 줄 것이다.",
           "R": "제사장은 그 여자에게 저주를 가져오는 쓴 물을 마시게 해야 한다. 그 물은 그 여자의 몸속에 들어가 쓰라린 고통을 일으킬 것이다."
+        },
+        "pt": {
+          "L": "E fará a mulher beber as águas de amargura que trazem a maldição, e entrarão nela as águas que trazem a maldição [para se tornarem] amargas.",
+          "B": "Ele fará a mulher beber a água amarga que traz a maldição, e essa água entrará nela e lhe causará dores amargas.",
+          "R": "Ele deve fazer a mulher beber a água amarga que traz a maldição. A água vai entrar no corpo dela para causar dores amargas."
         }
       },
       "decisions": [
@@ -4060,6 +4562,11 @@
           "L": "그리고 제사장은 그 여자의 손에서 질투의 곡식 제물을 받아, 그 곡식 제물을 {{divine_name:주|야훼}} 앞에서 흔들고, 그것을 제단으로 가까이 가져가야 한다.",
           "B": "제사장은 그 여자의 손에서 질투 때문에 바치는 곡식 제물을 받아 {{divine_name:주|야훼}} 앞에서 흔들어 바치고, 그것을 제단으로 가져가야 한다.",
           "R": "제사장은 그 여자의 손에서 질투 때문에 바치는 곡식 제물을 받아야 한다. 그리고 그것을 {{divine_name:주|야훼}} 앞에서 들어 올려 그분께 드리는 예물로 바친 다음, 제단으로 가져가야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote tomará da mão da mulher a oferta de cereal de ciúmes, e moverá a oferta de cereal diante {{divine_name:do SENHOR|de Javé}}, e a apresentará ao altar.",
+          "B": "O sacerdote tomará da mão da mulher a oferta de cereal por causa de ciúme. Ele a moverá diante {{divine_name:do SENHOR|de Javé}} e a apresentará no altar.",
+          "R": "O sacerdote deve tirar da mão da mulher a oferta de cereal por causa de ciúme. Deve levantá-la diante {{divine_name:do SENHOR|de Javé}} como um presente para {{deity_pronoun:ele|Ele}} e depois levá-la ao altar."
         }
       },
       "decisions": [
@@ -4106,6 +4613,27 @@
           "choice": "lift it up ... as a gift to him",
           "alternatives": [],
           "reason": "Readable explains the waving by what it meant, offering the gift to the LORD.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050250082"
+          ],
+          "choice": "moverá (L, B); levantá-la ... como um presente para ele (R)",
+          "alternatives": [
+            "apresentará como oferta movida (B)"
+          ],
+          "reason": "\"Mover\" is the verb of \"a oferta movida\" in Leviticus 7:30 and 8:27. Readable explains the gesture, as the English Readable does (m1), with a deity_pronoun span where the English has one.",
           "uncertain": false,
           "footnote": false
         }
@@ -4179,6 +4707,11 @@
           "L": "그리고 제사장은 그 곡식 제물에서 그 기념 몫으로 한 움큼을 집어 제단 위에서 살라 연기로 올리고, 그 뒤에 그 여자에게 그 물을 마시게 해야 한다.",
           "B": "그다음에 제사장은 곡식 제물에서 기념 몫으로 한 움큼을 집어 제단 위에서 살라 연기로 올리고, 그 뒤에야 그 여자에게 물을 마시게 해야 한다.",
           "R": "그다음에 제사장은 곡식 제물을 한 움큼 집어야 한다. 이것은 하나님께서 기억하시도록 태워 바치는 부분이다. 그는 그것을 제단 위에서 태워야 한다. 그런 다음에 그 여자에게 그 물을 마시게 해야 한다."
+        },
+        "pt": {
+          "L": "E o sacerdote tomará um punhado da oferta de cereal, a sua porção memorial, e [a] fará subir em fumaça sobre o altar, e depois fará a mulher beber as águas.",
+          "B": "Então o sacerdote tirará um punhado da oferta de cereal, a sua porção memorial, e a fará subir em fumaça no altar. Só depois fará a mulher beber a água.",
+          "R": "Depois o sacerdote deve pegar um punhado da oferta de cereal. É a parte que serve de lembrança. Ele deve queimá-la no altar. Depois disso, deve fazer a mulher beber a água."
         }
       },
       "decisions": [
@@ -4336,6 +4869,11 @@
           "L": "그리고 그가 그 여자에게 그 물을 마시게 하였을 때, 만일 그 여자가 자기를 더럽혀 자기 남편에게 신의를 저버리는 일을 저질렀으면, 저주를 가져오는 물이 그 여자 속에 들어가 쓰라림이 되어, 그 여자의 배가 부어오르고 그 여자의 넓적다리가 떨어질 것이며, 그 여자는 자기 백성 가운데서 저주가 될 것이다.",
           "B": "그 여자가 그 물을 마셨을 때, 만일 그 여자가 정말로 자기를 더럽혀 남편에게 신의를 저버렸다면, 저주를 가져오는 물이 그 여자 속에 들어가 쓰라린 고통을 줄 것이다. 그 여자의 배는 부어오르고 넓적다리는 마를 것이며, 그 여자의 이름은 자기 백성 가운데서 저주가 될 것이다.",
           "R": "그 여자가 그 물을 마신 뒤, 만일 그 여자가 자기를 부정하게 하여 남편을 배신했다면 이런 일이 일어날 것이다. 저주를 가져오는 물이 그 여자 속에 들어가 쓰라린 고통을 일으킬 것이다. 그 여자의 배는 부어오르고 태는 오그라들 것이다. 그 여자의 백성은 누구를 저주할 때 그 여자의 이름을 들먹일 것이다."
+        },
+        "pt": {
+          "L": "E ele a fará beber as águas, e acontecerá que, se ela se contaminou e foi infiel ao seu marido, as águas que trazem a maldição entrarão nela [para se tornarem] amargas, e o seu ventre inchará e a sua coxa definhará, e a mulher se tornará uma maldição no meio do seu povo.",
+          "B": "Depois que ela beber a água, se de fato se contaminou e foi infiel ao marido, a água que traz a maldição entrará nela e lhe causará dores amargas. O seu ventre inchará, a sua coxa definhará, e o seu nome se tornará uma maldição no meio do seu povo.",
+          "R": "Depois que ela beber a água, isto vai acontecer, se ela se tornou impura e foi infiel ao marido: a água que traz a maldição vai entrar nela e causar dores amargas. A barriga dela vai inchar e o seu útero vai murchar. O povo dela vai usar o seu nome quando amaldiçoar alguém."
         }
       },
       "decisions": [
@@ -4460,6 +4998,11 @@
           "L": "그러나 만일 그 여자가 자기를 더럽히지 않고 정결하면, 그 여자는 [해를] 면하고 씨를 받아 [임신할] 것이다.",
           "B": "그러나 그 여자가 자기를 더럽히지 않고 정결하다면, 그 여자는 혐의를 벗고 자식을 낳을 수 있을 것이다.",
           "R": "그러나 그 여자가 자기를 부정하게 하지 않았고 정결하다면, 그 여자는 아무 해도 입지 않을 것이다. 그 여자는 아이를 가질 수 있을 것이다."
+        },
+        "pt": {
+          "L": "E se a mulher não se contaminou, mas ela [está] pura, então ficará livre e será semeada [com] semente.",
+          "B": "Mas se a mulher não se contaminou e está pura, ficará livre da suspeita e poderá conceber filhos.",
+          "R": "Mas se a mulher não se tornou impura e está pura, nada de mal vai lhe acontecer. Ela vai poder ter filhos."
         }
       },
       "decisions": [
@@ -4524,6 +5067,30 @@
           "reason": "Balanced says \"cleared\" to show that she is free of the suspicion; Readable says \"will not be harmed\", as in verse 19.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040050280052",
+            "o040050280082",
+            "o040050280091"
+          ],
+          "choice": "pura; será semeada [com] semente (L); poderá conceber filhos (B); vai poder ter filhos (R)",
+          "alternatives": [
+            "limpa",
+            "terá descendência"
+          ],
+          "reason": "\"Pura\" answers \"se contaminou\", the pair used for ritual purity (m3), as docs/pentateuch-portuguese-terms.md sets \"puro/impuro\". Literal keeps the Hebrew picture of being sown; Balanced and Readable say what it means (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4583,6 +5150,11 @@
           "L": "이것이 질투의 법이니, 아내가 자기 남편 아래 있으면서 곁길로 나가 자기를 더럽혔을 때나,",
           "B": "이것이 질투에 관한 법이다. 남편에게 매인 아내가 곁길로 나가 자기를 더럽혔을 때나,",
           "R": "이것이 질투에 관한 법이다. 이 법은 남편을 배신하여 자기를 부정하게 한 아내에 관한 것이다."
+        },
+        "pt": {
+          "L": "Esta [é] a lei dos ciúmes, quando uma mulher se desviar, estando sob o seu marido, e se contaminar,",
+          "B": "Esta é a lei para os casos de ciúme, quando uma mulher ligada ao seu marido se desviar e se contaminar,",
+          "R": "Esta é a lei sobre o ciúme. Ela vale para a mulher que for infiel ao marido e se tornar impura."
         }
       },
       "decisions": [
@@ -4694,6 +5266,11 @@
           "L": "또는 질투의 영이 어떤 남자에게 임하여 그가 자기 아내를 질투할 때[의 법이다]. 그는 그 여자를 {{divine_name:주|야훼}} 앞에 세우고, 제사장은 이 법을 모두 그 여자에게 행해야 한다.",
           "B": "또는 남편이 질투심에 사로잡혀 아내를 의심할 때의 법이다. 그는 아내를 {{divine_name:주|야훼}} 앞에 세워야 하고, 제사장은 이 법이 정한 모든 것을 그 여자에게 행해야 한다.",
           "R": "또 질투심에 사로잡혀 아내를 의심하는 남편에 관한 것이기도 하다. 그는 아내를 {{divine_name:주|야훼}} 앞에 세워야 하고, 제사장은 이 법에 적힌 대로 다 해야 한다."
+        },
+        "pt": {
+          "L": "ou [quando] um homem sobre quem passar um espírito de ciúme, e ele tiver ciúme da sua mulher; e ele fará a mulher ficar diante {{divine_name:do SENHOR|de Javé}}, e o sacerdote lhe aplicará toda esta lei.",
+          "B": "ou quando uma crise de ciúme vier sobre um homem e ele ficar com ciúme da sua mulher. Ele fará a mulher ficar diante {{divine_name:do SENHOR|de Javé}}, e o sacerdote fará com ela tudo o que esta lei exige.",
+          "R": "Vale também para o marido que fica com ciúme e desconfia da mulher. Ele deve fazer a mulher ficar diante {{divine_name:do SENHOR|de Javé}}, e o sacerdote deve fazer tudo o que esta lei manda."
         }
       },
       "decisions": [
@@ -4805,6 +5382,11 @@
           "L": "그리고 그 남자는 죄악에서 벗어날 것이고, 그 여자는 자기 죄악을 짊어질 것이다.'\"",
           "B": "남편은 죄책을 벗을 것이고, 그 여자는 자기 죄책을 스스로 져야 한다.'\"",
           "R": "남편은 아무 잘못이 없다. 그러나 그 여자에게 죄가 있다면, 그 여자가 자기 죄의 대가를 치러야 한다.'\""
+        },
+        "pt": {
+          "L": "E o homem estará livre de iniquidade, e aquela mulher levará a sua iniquidade.'\"",
+          "B": "O marido estará livre de culpa, mas a mulher levará sobre si a sua própria culpa.'\"",
+          "R": "O marido não será culpado de nenhum mal. Mas, se a mulher for culpada, ela vai sofrer as consequências do seu pecado.'\""
         }
       },
       "decisions": [

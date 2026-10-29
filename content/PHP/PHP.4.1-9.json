@@ -58,6 +58,16 @@
           "L": "Vậy, thưa {{gender:anh chị em|anh em}} của tôi, là những người yêu dấu và mong nhớ, là niềm vui và mão miện của tôi, hãy đứng vững trong Chúa như vậy, thưa những người yêu dấu.",
           "B": "Vậy, thưa {{gender:anh chị em|anh em}} thân yêu của tôi, là những người tôi yêu thương và mong được gặp, là niềm vui và mão miện của tôi: hãy đứng vững trong Chúa như vậy, các bạn thân yêu.",
           "R": "Vậy, thưa {{gender:anh chị em|anh em}} thân yêu của tôi, tôi yêu thương và nhớ anh chị em. Anh chị em là niềm vui của tôi và là mão miện chiến thắng của tôi. Hãy tiếp tục đứng vững trong Chúa, như tôi đã chỉ cho anh chị em, các bạn thân yêu."
+        },
+        "pt": {
+          "L": "Portanto, meus {{gender:irmãos e irmãs|irmãos}}, amados e muito desejados, minha alegria e coroa, assim fiquem firmes no Senhor, amados.",
+          "B": "Portanto, meus queridos {{gender:irmãos e irmãs|irmãos}}, que eu amo e de quem sinto saudade, minha alegria e minha coroa: fiquem firmes no Senhor desse modo, queridos amigos.",
+          "R": "Por isso, meus queridos {{gender:irmãos e irmãs|irmãos}}, eu amo vocês e sinto saudade de vocês. Vocês são a minha alegria e a minha coroa de vitória. Continuem firmes no Senhor, como eu mostrei a vocês, queridos amigos."
+        },
+        "am": {
+          "L": "ስለዚህ የምወዳችሁና የምናፍቃችሁ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ ደስታዬና አክሊሌ ሆይ፣ እንዲሁ በጌታ ጸንታችሁ ቁሙ፣ የተወደዳችሁ ሆይ።",
+          "B": "ስለዚህ የምወዳችሁና ላያችሁ የምናፍቅ ውድ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ ደስታዬና አክሊሌ ሆይ፦ ውድ ወዳጆቼ፣ በዚህ መንገድ በጌታ ጸንታችሁ ቁሙ።",
+          "R": "ስለዚህ ውድ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ እወዳችኋለሁ፤ ናፍቃችሁኛልም። እናንተ ደስታዬና የድል አክሊሌ ናችሁ። ውድ ወዳጆቼ ሆይ፣ እንዳሳየኋችሁ በጌታ ጸንታችሁ መቆማችሁን ቀጥሉ።"
         }
       },
       "decisions": [
@@ -274,6 +284,70 @@
           "reason": "The word means dear ones, not brothers (as in 2:12). Balanced and Readable say \"các bạn thân yêu\", as the English says \"dear friends\", so the address is not the same word twice. Literal says \"thưa những người yêu dấu\", as the Vietnamese Romans does (12:19).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004001009"
+          ],
+          "choice": "coroa (L, B); coroa de vitória (R)",
+          "alternatives": [
+            "grinalda",
+            "coroa de louros"
+          ],
+          "reason": "Portuguese \"coroa\" also names the winner's wreath (\"coroa de louros\"), so Literal and Balanced keep it; Readable adds \"de vitória\", as the English Readable does, so that it is not read as a king's crown (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004001014"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "a span like the English {{deity_pronoun:him|Him}}"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting for capitalised pronouns has nothing to change; pronouns for God and for Christ are written plainly through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004001009"
+          ],
+          "choice": "አክሊል (crown, wreath); የድል አክሊል (crown of victory, R)",
+          "alternatives": [
+            "ዘውድ (a king's crown)"
+          ],
+          "reason": "The Greek word is the wreath given to a victor (meaning decision m2), not a royal crown; \"አክሊል\" is the word for a wreath or garland of honour, where \"ዘውድ\" would make it a king's.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -331,6 +405,16 @@
           "L": "Tôi khuyên Ê-vô-đi và tôi khuyên Sin-ti-cơ hãy đồng một ý trong Chúa.",
           "B": "Tôi nài khuyên Ê-vô-đi và tôi nài khuyên Sin-ti-cơ hãy hiệp ý với nhau trong Chúa.",
           "R": "Tôi nài xin Ê-vô-đi và Sin-ti-cơ hãy đồng lòng với nhau, như những người thuộc về Chúa."
+        },
+        "pt": {
+          "L": "Exorto Evódia e exorto Síntique a pensarem a mesma coisa no Senhor.",
+          "B": "Peço a Evódia e peço a Síntique que vivam em harmonia no Senhor.",
+          "R": "Faço um apelo a Evódia e a Síntique: que elas entrem em acordo uma com a outra, como pessoas que pertencem ao Senhor."
+        },
+        "am": {
+          "L": "ኤዎድያን እለምናለሁ፤ ሲንጤኪንም እለምናለሁ፤ በጌታ ያንኑ እንዲያስቡ።",
+          "B": "ኤዎድያን እማጸናለሁ፤ ሲንጤኪንም እማጸናለሁ፤ በጌታ እርስ በርሳቸው እንዲስማሙ።",
+          "R": "ኤዎድያንና ሲንጤኪን፣ የጌታ እንደ ሆኑ ሰዎች እርስ በርሳቸው እንዲስማሙ እለምናቸዋለሁ።"
         }
       },
       "decisions": [
@@ -428,6 +512,27 @@
           "reason": "Names in the Protestant transliteration, as the style guide sets; a reviewer should check both. Paul names each woman with her own verb (m1), which Literal and Balanced keep.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n50004002002",
+            "n50004002005"
+          ],
+          "choice": "the verb repeated for each woman: ኤዎድያን እለምናለሁ፤ ሲንጤኪንም እለምናለሁ",
+          "alternatives": [
+            "one verb for both names"
+          ],
+          "reason": "Paul makes the same appeal to each woman separately (meaning decision m1), so Literal and Balanced repeat the verb as he does; Readable joins them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -503,6 +608,16 @@
           "L": "Phải, tôi cũng xin anh, người đồng lao chân thật, hãy giúp đỡ hai bà ấy, là những người đã cùng tôi chiến đấu vì Tin Lành, với Cơ-lê-măng và những bạn đồng lao khác của tôi, là những người có tên trong sách sự sống.",
           "B": "Phải, tôi cũng xin anh, người bạn đồng hành chân thật của tôi, hãy giúp đỡ hai bà ấy. Họ đã sát cánh chiến đấu với tôi vì Tin Lành, cùng với Cơ-lê-măng và những bạn đồng lao khác của tôi, là những người có tên trong sách sự sống.",
           "R": "Và anh, người cộng sự trung thành của tôi, xin hãy giúp đỡ hai bà ấy. Họ đã làm việc vất vả với tôi để truyền bá Tin Lành, cùng với Cơ-lê-măng và những người cùng làm việc khác với tôi. Tên của họ đã được ghi trong sách sự sống."
+        },
+        "pt": {
+          "L": "Sim, peço também a você, verdadeiro companheiro de jugo, ajude-as, as quais lutaram ao meu lado no evangelho, junto com Clemente e os demais colaboradores meus, cujos nomes [estão] no livro da vida.",
+          "B": "Sim, e peço a você, meu verdadeiro companheiro, que ajude essas mulheres. Elas lutaram lado a lado comigo pelo evangelho, junto com Clemente e os demais colaboradores meus, cujos nomes estão no livro da vida.",
+          "R": "E você, meu companheiro leal, por favor, ajude essas mulheres. Elas trabalharam muito comigo para espalhar as boas-novas, junto com Clemente e os meus outros colaboradores. Os nomes deles estão escritos no livro da vida."
+        },
+        "am": {
+          "L": "አዎን፣ እውነተኛ የቀንበር ጓደኛዬ ሆይ፣ አንተንም ደግሞ እለምንሃለሁ፤ እነርሱን እርዳቸው፤ እነዚህ [ሴቶች] ከቀሌምንጦስና ስማቸው በሕይወት መጽሐፍ ካለው ከሌሎቹ አብረውኝ ከሚሠሩት ጋር በወንጌል ከእኔ ጋር አብረው ተጋድለዋል።",
+          "B": "አዎን፣ እውነተኛ አጋሬ ሆይ፣ እነዚህን ሴቶች እንድትረዳቸው አንተንም እለምንሃለሁ። እነርሱ ከቀሌምንጦስና ስማቸው በሕይወት መጽሐፍ ካለው ከሌሎቹ የሥራ ባልደረቦቼ ጋር ስለ ወንጌል ከእኔ ጋር ጎን ለጎን ተጋድለዋል።",
+          "R": "ታማኝ አጋሬ ሆይ፣ አንተም እባክህ እነዚህን ሴቶች እርዳቸው። እነርሱ ከቀሌምንጦስና ከሌሎቹ የሥራ ባልደረቦቼ ጋር የምሥራቹን ለማዳረስ ከእኔ ጋር ተግተው ሠርተዋል። ስማቸው በሕይወት መጽሐፍ ተጽፏል።"
         }
       },
       "decisions": [
@@ -743,6 +858,69 @@
           "reason": "God's register of his people (m4). \"Sự sống\" is the style guide's word for life (zoe), so the book keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n50004003008",
+            "n50004003009"
+          ],
+          "choice": "ajude-as, as quais",
+          "alternatives": [
+            "ajude-as, [mulheres] que"
+          ],
+          "reason": "The English Literal brackets \"[women]\" because \"them\" hides that the Greek pronouns are feminine. Portuguese \"as\" and \"as quais\" are feminine already, so Literal needs no supplied word; Balanced and Readable say \"essas mulheres\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-pt-2",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n50004003004"
+          ],
+          "choice": "você",
+          "alternatives": [
+            "tu"
+          ],
+          "reason": "Paul speaks here to one person, a fellow worker, so Portuguese uses \"você\" with \"ajude\", as for any address between people (docs/portuguese-style.md section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004003005",
+            "n50004003006"
+          ],
+          "choice": "እውነተኛ የቀንበር ጓደኛዬ (my true yokefellow, L); እውነተኛ አጋሬ (B); ታማኝ አጋሬ (R), addressed with አንተ",
+          "alternatives": [
+            "a proper name, Syzygus"
+          ],
+          "reason": "The Greek is read as a description of an unnamed loyal partner (meaning decision m1), one man, so the singular \"አንተ\" is used. Literal keeps the picture of two yoked together; the other levels say partner.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -797,6 +975,16 @@
           "L": "Hãy vui mừng trong Chúa luôn luôn; tôi lại nói nữa, hãy vui mừng.",
           "B": "Hãy luôn luôn vui mừng trong Chúa. Tôi xin nói lại: hãy vui mừng!",
           "R": "Hãy luôn luôn tràn đầy niềm vui trong Chúa. Tôi nói lại lần nữa: hãy tràn đầy niềm vui!"
+        },
+        "pt": {
+          "L": "Alegrem-se no Senhor sempre; outra vez direi: alegrem-se.",
+          "B": "Alegrem-se sempre no Senhor. Vou repetir: alegrem-se!",
+          "R": "Fiquem sempre cheios de alegria no Senhor. Vou dizer de novo: fiquem cheios de alegria!"
+        },
+        "am": {
+          "L": "በጌታ ሁልጊዜ ደስ ይበላችሁ፤ እንደ ገና እላለሁ፤ ደስ ይበላችሁ።",
+          "B": "በጌታ ሁልጊዜ ደስ ይበላችሁ። እንደ ገና እላለሁ፦ ደስ ይበላችሁ!",
+          "R": "ሁልጊዜ በጌታ በደስታ ተሞሉ። እንደ ገና እላችኋለሁ፦ በደስታ ተሞሉ!"
         }
       },
       "decisions": [
@@ -906,6 +1094,16 @@
           "L": "Hãy để sự hòa nhã của anh chị em được mọi người biết đến.",
           "B": "Hãy để mọi người thấy rõ sự hòa nhã của anh chị em.",
           "R": "Hãy để mọi người thấy anh chị em hiền hòa và rộng lượng thế nào."
+        },
+        "pt": {
+          "L": "Que a amabilidade de vocês seja conhecida por {{gender:todas as pessoas|todos os homens}}.",
+          "B": "Que a amabilidade de vocês seja evidente a {{gender:todos|todos os homens}}.",
+          "R": "Deixem que {{gender:todos|todos os homens}} vejam como vocês são gentis e bondosos."
+        },
+        "am": {
+          "L": "ገርነታችሁ ለሰዎች ሁሉ ይታወቅ።",
+          "B": "ገርነታችሁ ለሰው ሁሉ ግልጥ ይሁን።",
+          "R": "ምን ያህል ገሮችና ቸሮች እንደ ሆናችሁ ሰው ሁሉ ይይ።"
         }
       },
       "decisions": [
@@ -1070,6 +1268,49 @@
           "reason": "The word is gentle graciousness that does not insist on its rights (m1). \"Hòa nhã\" is gentle and courteous toward others; Readable names both sides, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004005002"
+          ],
+          "choice": "amabilidade",
+          "alternatives": [
+            "moderação",
+            "gentileza",
+            "mansidão"
+          ],
+          "reason": "m1: someone who yields rather than insists on his rights. \"Moderação\" now means restraint in eating or spending, and \"gentileza\" in Brazil is mostly politeness; \"amabilidade\" is the kind, accommodating manner meant. Readable says \"gentis e bondosos\", as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004005006"
+          ],
+          "choice": "ለሰዎች ሁሉ / ሰው ሁሉ (all people, everyone) with no gender span",
+          "alternatives": [
+            "a span like the English {{gender:everyone|all men}}"
+          ],
+          "reason": "\"ሰዎች\" and \"ሰው ሁሉ\" already include women and men, so Amharic has no second wording for the setting to offer.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1120,6 +1361,16 @@
           "L": "Chúa ở gần.",
           "B": "Chúa đang ở gần.",
           "R": "Chúa đang ở gần."
+        },
+        "pt": {
+          "L": "O Senhor [está] perto.",
+          "B": "O Senhor está perto.",
+          "R": "O Senhor está perto."
+        },
+        "am": {
+          "L": "ጌታ ቅርብ [ነው]።",
+          "B": "ጌታ ቅርብ ነው።",
+          "R": "ጌታ ቅርብ ነው።"
         }
       },
       "decisions": [
@@ -1284,6 +1535,16 @@
           "L": "Đừng lo lắng điều gì cả, nhưng trong mọi sự, bằng sự cầu nguyện và nài xin cùng với sự tạ ơn, hãy trình những điều anh chị em cầu xin lên Đức Chúa Trời; \\v 7 và sự bình an của Đức Chúa Trời, vượt trên mọi sự hiểu biết, sẽ canh giữ lòng và tâm trí anh chị em trong {{christos:Đấng Christ|Đấng Mê-si-a}} Giê-xu.",
           "B": "Đừng lo lắng về bất cứ điều gì. Trái lại, trong mọi sự, hãy trình dâng những điều anh chị em cần lên Đức Chúa Trời bằng sự cầu nguyện và nài xin, với lòng tạ ơn. \\v 7 Và sự bình an của Đức Chúa Trời, là sự bình an vượt quá mọi sự hiểu biết của chúng ta, sẽ canh giữ lòng và tâm trí anh chị em trong Đức Giê-xu {{christos:Christ|Mê-si-a}}.",
           "R": "Đừng lo lắng về bất cứ điều gì. Dù có chuyện gì xảy ra, hãy nói với Đức Chúa Trời về chuyện ấy. Hãy xin {{deity_pronoun:ngài|Ngài}} những gì anh chị em cần, và cảm tạ {{deity_pronoun:ngài|Ngài}} trong khi cầu xin. \\v 7 Và sự bình an của Đức Chúa Trời, là điều tâm trí chúng ta không thể hiểu thấu, sẽ canh giữ lòng và tư tưởng anh chị em, vì anh chị em được hiệp nhất với Đức Giê-xu {{christos:Christ|Mê-si-a}}."
+        },
+        "pt": {
+          "L": "Não fiquem ansiosos por nada; ao contrário, em tudo, pela oração e pela súplica com ação de graças, que os pedidos de vocês sejam dados a conhecer a Deus; \\v 7 e a paz de Deus, que supera todo entendimento, guardará os corações de vocês e os pensamentos de vocês {{christos:em Cristo|no Messias}} Jesus.",
+          "B": "Não se preocupem com nada. Em vez disso, em todas as situações, apresentem a Deus os pedidos de vocês por meio de oração e súplica, com ação de graças. \\v 7 E a paz de Deus, que está além de toda a nossa compreensão, montará guarda sobre os corações e as mentes de vocês {{christos:em Cristo|no Messias}} Jesus.",
+          "R": "Não fiquem preocupados com nada. Aconteça o que acontecer, falem com Deus sobre isso. Peçam a {{deity_pronoun:ele|Ele}} aquilo de que vocês precisam e agradeçam a {{deity_pronoun:ele|Ele}} enquanto pedem. \\v 7 E a paz de Deus, que é maior do que a nossa mente pode entender, vai vigiar o coração e os pensamentos de vocês, porque vocês estão unidos {{christos:a Cristo|ao Messias}} Jesus."
+        },
+        "am": {
+          "L": "ስለ ምንም አትጨነቁ፤ ይልቁንም በሁሉ ነገር በጸሎትና በልመና ከምስጋና ጋር የምትጠይቁት ነገር ለእግዚአብሔር ይታወቅ፤ \\v 7 ማስተዋልን ሁሉ የሚበልጠው የእግዚአብሔር ሰላምም {{christos:በክርስቶስ|በመሲሕ}} ኢየሱስ ልባችሁንና ሐሳባችሁን እንደ ዘብ ይጠብቃል።",
+          "B": "ስለ ምንም ነገር አትጨነቁ። ይልቁንም በሁሉ ነገር የምትፈልጉትን በጸሎትና በልመና ከምስጋና ጋር ለእግዚአብሔር አቅርቡ። \\v 7 ከማስተዋላችን ሁሉ በላይ የሆነው የእግዚአብሔር ሰላምም {{christos:በክርስቶስ|በመሲሕ}} ኢየሱስ ልባችሁንና አእምሮአችሁን በዘብነት ይጠብቃል።",
+          "R": "ስለ ምንም ነገር አትጨነቁ። ምንም ቢደርስባችሁ ስለ ጉዳዩ ለእግዚአብሔር ንገሩት። የሚያስፈልጋችሁን ለምኑት፤ ስትለምኑትም አመስግኑት። \\v 7 አእምሮአችን ሊረዳው ከሚችለው በላይ የሆነው የእግዚአብሔር ሰላምም ልባችሁንና ሐሳባችሁን ይጠብቃል፤ ምክንያቱም {{christos:ከክርስቶስ|ከመሲሕ}} ኢየሱስ ጋር አንድ ሆናችኋል።"
         }
       },
       "decisions": [
@@ -1591,6 +1852,47 @@
           "reason": "The meaning decision reads the phrase as beyond what the mind can grasp, with another reading footnoted (m5). Vietnamese says it in current words; \"trổi hơn\" is older church language and would bring the wording close to a familiar version.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004007010"
+          ],
+          "choice": "montará guarda sobre (B); vai vigiar (R)",
+          "alternatives": [
+            "guardará",
+            "protegerá"
+          ],
+          "reason": "The verb is what a garrison does (m6); \"montar guarda\" keeps the soldiers' picture, as the English \"stand guard over\" does. Literal keeps the plain \"guardará\". The familiar Portuguese wording of this verse is avoided throughout; this rendering is drafted from the Greek.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004007010"
+          ],
+          "choice": "እንደ ዘብ ይጠብቃል (will guard like a sentry, L); በዘብነት ይጠብቃል (B)",
+          "alternatives": [
+            "ይጠብቃል (will keep) alone"
+          ],
+          "reason": "The Greek verb is a soldier's word for guarding a city (meaning decision); \"ዘብ\" keeps that picture, which the plain \"ይጠብቃል\" would lose.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1663,6 +1965,16 @@
           "L": "Sau hết, thưa {{gender:anh chị em|anh em}}, những gì chân thật, những gì đáng kính, những gì đúng đắn, những gì trong sạch, những gì đáng mến, những gì được tiếng tốt, nếu có điều gì là đức hạnh và nếu có điều gì đáng khen, thì hãy suy nghĩ về những điều ấy.",
           "B": "Sau hết, thưa {{gender:anh chị em|anh em}}: tất cả những gì chân thật, những gì đáng kính, những gì công chính, những gì trong sạch, những gì đáng mến, những gì được người ta khen ngợi, nếu có điều gì là đức hạnh, điều gì đáng được ca ngợi, thì hãy để tâm trí anh chị em suy nghĩ về những điều ấy.",
           "R": "Sau hết, thưa {{gender:anh chị em|anh em}} của tôi, hãy để tâm trí anh chị em đầy dẫy những điều tốt đẹp: những điều chân thật và đáng kính, đúng đắn và trong sạch, đáng mến và được người khác quý trọng. Hãy suy nghĩ về bất cứ điều gì tuyệt vời và đáng được khen ngợi."
+        },
+        "pt": {
+          "L": "Finalmente, {{gender:irmãos e irmãs|irmãos}}, quanto é verdadeiro, quanto [é] honroso, quanto [é] justo, quanto [é] puro, quanto [é] amável, quanto [é] de boa reputação, se [há] alguma virtude e se algum louvor, levem em conta essas coisas.",
+          "B": "Finalmente, {{gender:irmãos e irmãs|irmãos}}: tudo o que é verdadeiro, tudo o que é honroso, tudo o que é justo, tudo o que é puro, tudo o que é amável, tudo o que tem boa reputação, tudo o que for virtuoso e digno de louvor, ocupem a mente com essas coisas.",
+          "R": "Finalmente, meus {{gender:irmãos e irmãs|irmãos}}, encham a mente de vocês com coisas boas: coisas que são verdadeiras e honrosas, justas e puras, bonitas e admiradas pelos outros. Pensem em tudo o que é excelente e merece elogio."
+        },
+        "am": {
+          "L": "የቀረውንም [በተመለከተ]፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እውነት የሆነውን ሁሉ፣ ክቡር የሆነውን ሁሉ፣ ትክክል የሆነውን ሁሉ፣ ንጹሕ የሆነውን ሁሉ፣ ተወዳጅ የሆነውን ሁሉ፣ መልካም የሚወራለትን ሁሉ፣ በጎነት ቢኖር፣ ምስጋናም ቢኖር፣ እነዚህን አስቡ።",
+          "B": "በመጨረሻም፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፦ እውነት የሆነውን ሁሉ፣ ክቡር የሆነውን ሁሉ፣ ትክክለኛ የሆነውን ሁሉ፣ ንጹሕ የሆነውን ሁሉ፣ ተወዳጅ የሆነውን ሁሉ፣ በመልካም የሚነገርለትን ሁሉ፣ በጎነት ያለበትንና ምስጋና የሚገባውን ሁሉ፣ እነዚህን ነገሮች አሰላስሉ።",
+          "R": "በመጨረሻም፣ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ አእምሮአችሁን በመልካም ነገሮች ሙሉ፤ እውነትና ክቡር በሆኑ፣ ትክክልና ንጹሕ በሆኑ፣ ተወዳጅና በሌሎች በሚደነቁ ነገሮች። እጅግ መልካም የሆነውንና ምስጋና የሚገባውን ሁሉ አስቡ።"
         }
       },
       "decisions": [
@@ -1871,6 +2183,46 @@
           "reason": "The list names qualities of life (m3). \"Chân thật\" is truthful, kept apart from \"chân lý\" (the truth of the gospel), as in Ephesians 5:9. The third word is from the righteousness family; Balanced keeps \"công chính\", Literal and Readable the plainer \"đúng đắn\", as the English says \"right\" and \"just\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-pt-1",
+          "layer": "rendering",
+          "language": "pt",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004008025"
+          ],
+          "choice": "levem em conta",
+          "alternatives": [
+            "pensem",
+            "considerem"
+          ],
+          "reason": "The verb is a reckoning word (m6), careful consideration that leads to action; \"levar em conta\" keeps the bookkeeping sense that \"pensar\" loses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004008010"
+          ],
+          "choice": "ትክክል / ትክክለኛ (right, just)",
+          "alternatives": [
+            "ጽድቅ (righteousness)"
+          ],
+          "reason": "In this list of virtues any decent person would recognise (meaning decision), the word means what is right and fair; \"ትክክለኛ\" says that, where \"ጽድቅ\" would bring in Paul's term for right standing with God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1939,6 +2291,16 @@
           "L": "Những gì anh chị em đã học, đã nhận, đã nghe và đã thấy nơi tôi, hãy thực hành những điều ấy; và Đức Chúa Trời của sự bình an sẽ ở cùng anh chị em.",
           "B": "Hãy đem ra thực hành những gì anh chị em đã học và đã nhận từ tôi, những gì anh chị em đã nghe và đã thấy nơi tôi. Và Đức Chúa Trời của sự bình an sẽ ở cùng anh chị em.",
           "R": "Hãy tiếp tục làm mọi điều anh chị em đã học từ tôi, mọi điều tôi đã dạy anh chị em, và mọi điều anh chị em đã nghe tôi nói và thấy tôi làm. Khi đó Đức Chúa Trời, Đấng ban bình an, sẽ ở cùng anh chị em."
+        },
+        "pt": {
+          "L": "O que também aprenderam, e receberam, e ouviram, e viram em mim, isso pratiquem; e o Deus da paz estará com vocês.",
+          "B": "Ponham em prática o que vocês aprenderam e receberam de mim, o que ouviram e viram em mim. E o Deus da paz estará com vocês.",
+          "R": "Continuem fazendo tudo o que aprenderam comigo, tudo o que eu ensinei a vocês e tudo o que vocês me ouviram dizer e me viram fazer. Então o Deus que dá a paz estará com vocês."
+        },
+        "am": {
+          "L": "በእኔ የተማራችሁትንና የተቀበላችሁትን፣ የሰማችሁትንና ያያችሁትን፣ እነዚህን አድርጉ፤ የሰላምም አምላክ ከእናንተ ጋር ይሆናል።",
+          "B": "ከእኔ የተማራችሁትንና የተቀበላችሁትን፣ በእኔ የሰማችሁትንና ያያችሁትን በተግባር ላይ አውሉ። የሰላም አምላክም ከእናንተ ጋር ይሆናል።",
+          "R": "ከእኔ የተማራችሁትን ሁሉ፣ ያስተማርኳችሁን ሁሉ፣ ስናገር የሰማችሁትንና ሳደርግ ያያችሁትን ሁሉ ማድረጋችሁን ቀጥሉ። ከዚያም ሰላምን የሚሰጠው አምላክ ከእናንተ ጋር ይሆናል።"
         }
       },
       "decisions": [

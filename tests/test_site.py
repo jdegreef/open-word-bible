@@ -90,9 +90,10 @@ class SiteTest(unittest.TestCase):
         verses = list(dict.fromkeys(v for r in data["records"] for v in r["refs"]))
         self.assertEqual(verses, [f"JHN.1.{v}" for v in range(1, 52)])
         # English for every sentence; Spanish for 1:1-18 so far, French,
-        # Swahili, Vietnamese, Korean and Portuguese for the whole chapter.
-        self.assertEqual(data["languages"], ["en", "es", "fr", "sw", "vi", "ko", "pt"])
-        for lang in ("fr", "sw", "vi", "ko", "pt"):
+        # Swahili, Vietnamese, Korean, Portuguese and Amharic for the whole
+        # chapter.
+        self.assertEqual(data["languages"], ["en", "es", "fr", "sw", "vi", "ko", "pt", "am"])
+        for lang in ("fr", "sw", "vi", "ko", "pt", "am"):
             self.assertTrue(all(lang in r["renderings"] for r in data["records"]), lang)
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
@@ -282,7 +283,11 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(sum(manifest["status"].values()),
                          sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
         self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
-        self.assertGreater(manifest["missing"]["count"], 0)
+        # Editions with gaps list them by book too (French may have none left).
+        for _, _, m in built.values():
+            self.assertEqual(sum(m["missing"]["by_book"].values()), m["missing"]["count"])
+            self.assertEqual(m["missing"]["count"], len(m["missing"]["verses"]))
+        self.assertTrue(any(m["missing"]["count"] for _, _, m in built.values()))
         self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
         # The page lists every file, in every site language, and the footer links it.
         for lang in build_site.LANGUAGES:
@@ -473,7 +478,8 @@ class SiteTest(unittest.TestCase):
         for script in ("greek", "greek-ext"):
             self.assertIn(f"gentium-book-plus-{script}-400-normal.woff2", files)
         self.assertIn("noto-serif-hebrew-hebrew-400-normal.woff2", files)
-        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt"):
+        self.assertIn("noto-serif-ethiopic-ethiopic-400-normal.woff2", files)
+        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt", "OFL-NotoEthiopic.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
@@ -573,9 +579,10 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(len(verses), len(build_site.votd_refs(lang)))
             self.assertTrue(all("l" not in v for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
-                # The verse ends a sentence, so it reads on its own (a closing
-                # quotation mark may follow: ” ’, or French » after a no-break space).
-                self.assertRegex(v["t"], r"[.?!](?:[”’]|\u00a0»)?$", vid)
+                # The verse ends a sentence, so it reads on its own (Amharic
+                # ends one with ።; a closing quotation mark may follow: ” ’,
+                # Amharic », or French » after a no-break space).
+                self.assertRegex(v["t"], r"[.?!።](?:[”’»]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))

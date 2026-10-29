@@ -1,5 +1,5 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/), the footer's language
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/), the footer's language
 switch, and the message catalogs in i18n/."""
 import json
 import re
@@ -122,6 +122,8 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<span lang="sw" aria-current="true">Kiswahili</span>', self.read("sw/jhn/1/index.html"))
         self.assertIn('<a href="/vi/jhn/1/" lang="vi" hreflang="vi" data-lang="vi">Tiếng Việt</a>', en)
         self.assertIn('<span lang="ko" aria-current="true">한국어</span>', self.read("ko/jhn/1/index.html"))
+        self.assertIn('<a href="/am/jhn/1/" lang="am" hreflang="am" data-lang="am">አማርኛ</a>', en)
+        self.assertIn('<span lang="am" aria-current="true">አማርኛ</span>', self.read("am/mat/1/index.html"))
         self.assertIn('<span lang="es" aria-current="true">Español</span>', es)
         self.assertIn('<a href="/jhn/1/" lang="en" hreflang="en" data-lang="en">English</a>', es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
@@ -153,7 +155,8 @@ class LanguagesTest(unittest.TestCase):
                               r'|<script type="application/json" class="votd-data">.*?</script>'
                               r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
                 for key in keys:
-                    self.assertNotIn(en[key], page, (lang, rel, key))
+                    # A whole word: English "Home" is inside Portuguese "Homem".
+                    self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
                     self.assertIn(cat[key], page, (lang, rel, key))
             home = self.read(f"{lang}/index.html")
             self.assertIn(cat["home.heading"], home)
@@ -182,8 +185,8 @@ class LanguagesTest(unittest.TestCase):
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
         self.assertIn(">Linganifu</button>", sw)
-        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("pt", "Equilibrada")):
-            page = self.read(f"{lang}/jhn/1/index.html")
+        for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("pt", "Equilibrada"), ("am", "ሚዛናዊ")):
+            page = self.read(f"{lang}/mat/1/index.html")
             self.assertNotIn('data-setting="plural_you"', page)
             self.assertIn(f">{balanced}</button>", page)
 
@@ -191,14 +194,12 @@ class LanguagesTest(unittest.TestCase):
         # Every language's renderings (the reader sets two side by side), but
         # only the meaning decisions and the page language's own wording ones.
         for lang in build_site.LANGUAGES:
-            page = self.read(build_site.url(lang, "/jhn/1/").strip("/") + "/index.html")
+            page = self.read(build_site.url(lang, "/mat/1/").strip("/") + "/index.html")
             data = page_data(page)
             decisions = [d for r in data["records"] for d in r["decisions"]]
             self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
-            # A language not yet drafted in John 1 has no decisions of its own there.
-            if lang in data["languages"]:
-                self.assertTrue(any(d["language"] == lang for d in decisions), lang)
-            self.assertTrue(all({"en", "vi", "ko"} <= set(r["renderings"]) for r in data["records"]), lang)
+            self.assertTrue(any(d["language"] == lang for d in decisions), lang)
+            self.assertTrue(all({"en", "vi", "ko", "pt", "am"} <= set(r["renderings"]) for r in data["records"]), lang)
 
     def test_home_page_shows_nothing_in_english_where_it_need_not(self):
         # The verse of the day and the worked examples are taken from what
