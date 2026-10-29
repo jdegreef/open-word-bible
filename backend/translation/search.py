@@ -24,7 +24,9 @@ import hashlib
 import itertools
 import json
 import re
+import subprocess
 import sys
+import time
 import unicodedata
 from collections import Counter
 from typing import NamedTuple
@@ -68,14 +70,17 @@ def fold(text):
 
 # ---- Building the tables ----------------------------------------------------
 
-def site_build():
+def site_build(lang=None):
     """scripts/build_site.py, with its caches cleared, so it reads content/ afresh,
-    keeping only what search needs of each record (SEARCH_ONLY)."""
+    keeping only what search needs of each record (SEARCH_ONLY), in lang,
+    or English where a sentence is not in lang yet (SEARCH_LANG). Every
+    language's renderings at once came to outgrow the API's 512 MB."""
     scripts = str(settings.REPO_ROOT / "scripts")
     if scripts not in sys.path:
         sys.path.insert(0, scripts)
     import build_site
     build_site.SEARCH_ONLY = True
+    build_site.SEARCH_LANG = lang
     for value in vars(build_site).values():
         if hasattr(value, "cache_clear"):
             value.cache_clear()
@@ -195,25 +200,49 @@ def plan(old, new):
     return delete, places
 
 
-def rebuild(full=False):
+def rebuild(full=False, until=None, separate=False):
     """Bring the search tables up to date with the site's documents in every
     site language, rewriting only the entries whose documents changed (all
     of them with full=True). Each language is a transaction of its own, so
     a deploy stopped part way keeps the languages it finished, and the next
-    picks up from there. Returns {language: Change}."""
+    picks up from there. With until (a time.monotonic() value), no language
+    is started after that time: those left out wait for the next rebuild.
+    With separate=True, each language is updated in a process of its own
+    (manage.py update_search), so memory doesn't build up from one to the
+    next. Returns {language: Change} for the languages it brought up to date."""
     site = site_build()
     with transaction.atomic():
         SearchLanguage.objects.exclude(code__in=site.LANGUAGES).delete()
         SearchEntry.objects.exclude(language__in=site.LANGUAGES).delete()
         SearchWord.objects.exclude(language__in=site.LANGUAGES).delete()
-    return {lang: _rebuild_language(site, lang, full) for lang in site.LANGUAGES}
+    changes = {}
+    try:
+        for lang in site.LANGUAGES:
+            if until is not None and time.monotonic() > until:
+                break
+            changes[lang] = (_rebuild_separately(lang, full) if separate
+                             else _rebuild_language(site_build(lang), lang, full))
+        return changes
+    finally:
+        # Records that hold one language's renderings must not outlive the
+        # rebuild: anything else reading build_site would find the others empty.
+        site_build()
+
+
+def _rebuild_separately(lang, full):
+    command = [sys.executable, str(settings.BASE_DIR / "manage.py"), "update_search", lang]
+    if full:
+        command.append("--all")
+    out = subprocess.run(command, check=True, stdout=subprocess.PIPE, text=True).stdout
+    return Change(**json.loads(out.splitlines()[-1]))
 
 
 @transaction.atomic
 def _rebuild_language(site, lang, full):
     data = site.search_documents(lang)
-    # One language's documents at a time: search_documents caches each.
-    site.search_documents.cache_clear()
+    # The documents are all that's needed now: the records go (every cache
+    # cleared), so the memory they held serves the work below.
+    site_build(site.SEARCH_LANG)
     SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
     entries, words = _table(), SearchWord._meta.db_table
@@ -226,6 +255,7 @@ def _rebuild_language(site, lang, full):
         # one added before the first), every entry is replaced.
         delete, places = (None if full or not old else plan(old, [key(c, doc) for doc, c in docs])) or (
             [row[0] for row in old], [(i, i, 0) for i in range(len(docs))])
+        del old
         if not delete and not places and SearchWord.objects.filter(language=lang).exists():
             return Change(len(docs), 0, 0)
         if delete:

@@ -282,7 +282,11 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(sum(manifest["status"].values()),
                          sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
         self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
-        self.assertGreater(manifest["missing"]["count"], 0)
+        # Editions with gaps list them by book too (French may have none left).
+        for _, _, m in built.values():
+            self.assertEqual(sum(m["missing"]["by_book"].values()), m["missing"]["count"])
+            self.assertEqual(m["missing"]["count"], len(m["missing"]["verses"]))
+        self.assertTrue(any(m["missing"]["count"] for _, _, m in built.values()))
         self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
         # The page lists every file, in every site language, and the footer links it.
         for lang in build_site.LANGUAGES:
