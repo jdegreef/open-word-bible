@@ -238,6 +238,65 @@ Settings change wording, never meaning, exactly as in English.
 - **Titles.** A psalm's title is verse 1, as in the Hebrew: የዳዊት መዝሙር
   (L, B), ዳዊት የዘመረው መዝሙር (R).
 
+## 7b. Conventions settled in Matthew
+
+Matthew was drafted first, in parallel passages; these choices came out of
+harmonising it and hold for the later books. In the Synoptic parallels, keep
+the wording of the Matthew passage where the Greek is the same, and differ
+where the Greek differs.
+
+- **Pronouns and spelling.** እርሱ, እርሷ, እነርሱ (not እሱ, እሷ, እነሱ); first
+  person past -ኩ (ሆንኩ, አልኩ); ውኃ; ቆ, ቁ rather than ቈ, ቍ (ተቆጣ).
+- **Disciples** are ደቀ መዛሙርት at every level, Readable included, where
+  the English Readable says "followers".
+- **Reward** (*misthos*) is ዋጋ, not ሽልማት (a prize).
+- **Behold** (*idou*) is እነሆ at Literal, left out or reworded at Balanced
+  and Readable.
+- **Third-level quotations** use ‘ ’ inside “ ” inside « » (Matthew 13:30;
+  22:44), the marks the red letters read.
+- **Address.** As section 4: everyone, opponents included, says አንተ to
+  Jesus. Slaves to their master and subjects to a ruler say እርስዎ (Matthew
+  13:27; 18:26; 27:63); in a parable where the master stands for God, a
+  decision says so.
+- **Coins** have no metric form: a `units` span gives the value in wages by
+  default and the coin as the alternative (`{{units:የአንድ ቀን ደመወዝ|አንድ
+  ዲናር}}`), as the English does; Literal keeps the coin. Thirty pieces of
+  silver are ሠላሳ የብር ሳንቲም, so ብር does not read as the birr.
+- **Gender.** Where the English has a span on a word that is already
+  inclusive in Amharic (ሰው, ሰዎች, ማንም, ልጆች, the generic masculine
+  suffix), the Amharic has no span and a setting_alternative decision says
+  why, once per passage. Spans remain for *adelphos* /*adelphoi*
+  (`{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}}`), with the case prefix inside
+  each option.
+- **The no-capitals note** (section 7) goes on the first record of a passage
+  file whose English has a deity_pronoun span.
+- **Lake and sea.** The Sea of Galilee is ባሕር at Literal, ሐይቅ at Balanced
+  and Readable.
+- **Clock time.** Balanced and Readable give hours as Ethiopians count them
+  from dawn, which matches the Greek count (ከቀኑ ስድስት ሰዓት, noon).
+- **Familiar wording.** Fixed short phrases may stay (ልቅሶና ጥርስ ማፋጨት);
+  anything longer that matches the 1962 Bible is reworded.
+
+Settled later, in Luke, John, Acts and Paul:
+
+- **"Master"** (Luke's *epistata*) is አለቃ ሆይ, kept apart from መምህር
+  (Teacher) and ጌታ (Lord).
+- **The Son** as a title is ወልድ beside አብ (the Father); ልጁ only where the
+  Greek pictures a son in a household (John 8:35).
+- **Pentecost** is በዓለ ሃምሳ (Acts 2:1; 20:16; 1 Corinthians 16:8);
+  ጰንጠቆስጤ is now heard mostly as the name of a church movement.
+- **Saul** is ሳውል for Paul, ሳኦል for the king.
+- **Members** of the body are ክፍሎች at every level; ብልት now usually
+  means the genitals. The body is አካል; ሥጋ is kept for flesh and for the
+  Lord's body at the meal.
+- **Christ with a suffix or prefix** puts the whole word in each option,
+  with the definite form where the Greek has the article:
+  `{{christos:የክርስቶስ|የመሲሑ}}`, `{{christos:በክርስቶስ|በመሲሕ}}`.
+- **"Ancestors"** offered by the English as a gender span is
+  `{{gender:ቅድመ አያቶቻችን|አባቶቻችን}}` (proposed; Matthew has none).
+- **First person past** is -ኩ after a consonant stem (ወደድኩ) and -ሁ after
+  a vowel stem (አየሁ, መጣሁ).
+
 ## 8. Status
 
 An Amharic rendering added to a record does not change its status. Nothing

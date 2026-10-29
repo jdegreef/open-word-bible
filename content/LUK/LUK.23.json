@@ -59,6 +59,11 @@
           "L": "E toda a multidão deles se levantou e {{deity_pronoun:o|O}} levou a Pilatos.",
           "B": "Então toda a assembleia se levantou e {{deity_pronoun:o|O}} levou a Pilatos.",
           "R": "Então todos os membros do conselho se levantaram e levaram Jesus a Pilatos."
+        },
+        "am": {
+          "L": "የእነርሱም ብዛት ሁሉ ተነሥቶ ወደ ጲላጦስ ወሰዱት።",
+          "B": "ከዚያም ጉባኤው ሁሉ ተነሥተው በጲላጦስ ፊት አቀረቡት።",
+          "R": "ከዚያም የሸንጎው አባላት ሁሉ ተነሥተው ኢየሱስን ወደ ጲላጦስ ወሰዱት።"
         }
       },
       "decisions": [
@@ -240,6 +245,47 @@
           "reason": "The multitude is the council (meaning decision); Readable names it and Pilate's office with the words of the Korean Mark 15:1 Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42023001008"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic",
+          "alternatives": [
+            "Marking pronouns for God and Jesus in some other way"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for Jesus in the English of this chapter has nothing to change in Amharic; here \"him\" is the object suffix of the verb (ወሰዱት).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42023001005",
+            "n42023001007"
+          ],
+          "choice": "\"የእነርሱም ብዛት ሁሉ ተነሥቶ ... ወሰዱት\": a singular participle and a plural verb",
+          "alternatives": [
+            "\"ሁሉም ተነሥተው ... ወሰዱት\" (all plural)"
+          ],
+          "reason": "The Greek has a singular participle for the multitude and then a plural verb for what its members did; Literal keeps that shift, which Amharic also allows with a collective noun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -314,6 +360,11 @@
           "L": "E começaram a acusá-{{deity_pronoun:lo|Lo}}, dizendo: \"Encontramos este [homem] desencaminhando a nossa nação, e proibindo [que] se paguem impostos a César, e dizendo que {{deity_pronoun:ele|Ele}} mesmo é {{christos:Cristo|Messias}}, um rei.\"",
           "B": "Começaram a apresentar acusações contra {{deity_pronoun:ele|Ele}}: \"Descobrimos que este homem anda desencaminhando a nossa nação. Ele proíbe que se paguem impostos a César e afirma ser o {{christos:Cristo|Messias}}, um rei.\"",
           "R": "Começaram a acusar Jesus. Disseram: \"Nós pegamos este homem levando o nosso povo para o caminho errado. Ele diz às pessoas que não paguem impostos a César. E {{deity_pronoun:ele|Ele}} diz que é o {{christos:Cristo|Messias}}, um rei!\""
+        },
+        "am": {
+          "L": "እንዲህም እያሉ ይከሱት ጀመር፦ «ይህን [ሰው] ሕዝባችንን ሲያሳስት፣ ለቄሳርም ግብር መስጠትን ሲከለክል፣ ራሱንም {{christos:ክርስቶስ|መሲሕ}}፣ ንጉሥ ነኝ ሲል አገኘነው።»",
+          "B": "እንዲህ ብለውም ይከሱት ጀመር፦ «ይህ ሰው ሕዝባችንን ሲያሳስት አገኘነው። ለቄሳር ግብር እንዳይከፈል ይከለክላል፤ ራሱንም {{christos:ክርስቶስ|መሲሕ}}፣ ንጉሥ ነኝ ይላል።»",
+          "R": "ኢየሱስንም መክሰስ ጀመሩ። እንዲህም አሉ፦ «ይህ ሰው ሕዝባችንን ወደ ተሳሳተ መንገድ ሲመራ ያዝነው። ለቄሳር ግብር እንዳይከፍሉ ይነግራቸዋል። ደግሞም {{christos:ክርስቶስ|መሲሕ}}፣ ንጉሥ ነኝ ይላል!»"
         }
       },
       "decisions": [
@@ -511,6 +562,27 @@
           "reason": "\"가이사\" is the Protestant form of the style guide; Readable says who he was. \"곧\" sets the king beside the title, as the meaning decision explains it as a political claim; the particle after the span fits both forms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42023002020"
+          ],
+          "choice": "{{christos:ክርስቶስ|መሲሕ}} with no article in either option",
+          "alternatives": [
+            "\"መሲሑ\" with the article suffix"
+          ],
+          "reason": "Amharic has no article to place before the title, so the same span reads naturally at every level; the claim is put in the accusers' words as \"ንጉሥ ነኝ\" (\"I am king\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -575,6 +647,11 @@
           "L": "E Pilatos {{deity_pronoun:o|O}} interrogou, dizendo: \"Tu és o Rei dos judeus?\"",
           "B": "Então Pilatos {{deity_pronoun:lhe|Lhe}} perguntou: \"És {{deity_pronoun:tu|Tu}} o Rei dos judeus?\"",
           "R": "Pilatos perguntou a Jesus: \"Tu és o rei dos judeus?\""
+        },
+        "am": {
+          "L": "ጲላጦስም እንዲህ ብሎ ጠየቀው፦ «አንተ የአይሁድ ንጉሥ ነህ?»",
+          "B": "ጲላጦስም፦ «አንተ የአይሁድ ንጉሥ ነህ?» ብሎ ጠየቀው።",
+          "R": "ጲላጦስ ኢየሱስን፦ «አንተ የአይሁድ ንጉሥ ነህ?» ብሎ ጠየቀው።"
         }
       },
       "decisions": [
@@ -802,6 +879,11 @@
           "L": "E {{deity_pronoun:ele|Ele}}, respondendo-lhe, disse: \"Você [o] diz.\"",
           "B": "Ele lhe respondeu: \"É você quem o diz.\"",
           "R": "Jesus respondeu: \"É você que está dizendo isso.\""
+        },
+        "am": {
+          "L": "እርሱም መልሶ፦ «አንተ ትላለህ» አለው።",
+          "B": "እርሱም፦ «ይህን የምትለው አንተ ነህ» ብሎ መለሰለት።",
+          "R": "ኢየሱስም፦ «ይህን የምትናገረው አንተ ራስህ ነህ» ብሎ መለሰ።"
         }
       },
       "decisions": [
@@ -976,6 +1058,11 @@
           "L": "E Pilatos disse aos chefes dos sacerdotes e às multidões: \"Não encontro nenhuma culpa neste homem.\"",
           "B": "Pilatos disse aos chefes dos sacerdotes e às multidões: \"Não acho este homem culpado de nada.\"",
           "R": "Então Pilatos disse aos chefes dos sacerdotes e às multidões: \"Eu não acho que este homem tenha feito nada de errado.\""
+        },
+        "am": {
+          "L": "ጲላጦስም የካህናት አለቆችንና ሕዝቡን፦ «በዚህ ሰው ላይ ምንም በደል አላገኝም» አላቸው።",
+          "B": "ጲላጦስም ለካህናት አለቆችና ለሕዝቡ፦ «ይህን ሰው በምንም ነገር ጥፋተኛ ሆኖ አላገኘሁትም» አላቸው።",
+          "R": "ከዚያም ጲላጦስ የካህናት አለቆችንና ሕዝቡን፦ «ይህ ሰው ምንም ጥፋት እንዳደረገ አላየሁም» አላቸው።"
         }
       },
       "decisions": [
@@ -1231,6 +1318,11 @@
           "L": "Mas eles insistiam, dizendo: \"Ele agita o povo, ensinando por toda a Judeia, e começando desde a Galileia até aqui.\"",
           "B": "Mas eles insistiram ainda mais na acusação: \"Ele está agitando o povo com o {{deity_pronoun:seu|Seu}} ensino por toda a Judeia. Começou na Galileia e chegou até aqui.\"",
           "R": "Mas eles continuaram dizendo: \"Ele está deixando o povo todo revoltado com o que {{deity_pronoun:ele|Ele}} ensina. Ele fez isso em toda a Judeia. Começou na Galileia, e agora {{deity_pronoun:ele|Ele}} veio até aqui!\""
+        },
+        "am": {
+          "L": "እነርሱ ግን አጽንተው እንዲህ አሉ፦ «በይሁዳ ሁሉ እያስተማረ ሕዝቡን ያነሣሣል፤ ከገሊላም ጀምሮ እስከዚህ ድረስ [ይህን አድርጓል]።»",
+          "B": "እነርሱ ግን ክሳቸውን አጠናክረው፦ «በትምህርቱ በይሁዳ ሁሉ ሕዝቡን ያነሣሣል። ከገሊላ ጀምሮ እስከዚህ ድረስ መጥቷል» አሉ።",
+          "R": "እነርሱ ግን እንዲህ እያሉ ቀጠሉ፦ «በሚያስተምረው ነገር ሕዝቡን እያነሣሣ ነው። ይህን በይሁዳ በየቦታው አድርጓል። በገሊላ ጀመረ፤ አሁን ደግሞ እዚህ መጥቷል!»"
         }
       },
       "decisions": [
@@ -1436,6 +1528,11 @@
           "L": "E Pilatos, ouvindo [isso], perguntou se o homem era galileu \\v 7 e, sabendo que {{deity_pronoun:ele|Ele}} era da jurisdição de Herodes, {{deity_pronoun:o|O}} remeteu a Herodes, que também estava em Jerusalém naqueles dias.",
           "B": "Quando ouviu isso, Pilatos perguntou se o homem era da Galileia. \\v 7 Ao saber que {{deity_pronoun:ele|Ele}} estava sob a autoridade de Herodes, {{deity_pronoun:o|O}} mandou a Herodes, que também estava em Jerusalém naqueles dias.",
           "R": "Quando Pilatos ouviu isso, perguntou se Jesus era da Galileia. \\v 7 Ele soube que Jesus era da região governada por Herodes. Por isso mandou Jesus a Herodes. Herodes também estava em Jerusalém naquela época."
+        },
+        "am": {
+          "L": "ጲላጦስም [ይህን] ሰምቶ ሰውየው የገሊላ ሰው መሆን አለመሆኑን ጠየቀ፤ \\v 7 ከሄሮድስም ግዛት እንደ ሆነ ባወቀ ጊዜ ወደ ሄሮድስ ሰደደው፤ እርሱም ደግሞ በዚያን ወራት በኢየሩሳሌም ነበረ።",
+          "B": "ጲላጦስ ይህን በሰማ ጊዜ ሰውየው ከገሊላ መሆን አለመሆኑን ጠየቀ። \\v 7 ከሄሮድስ ግዛት ሥር መሆኑን ባወቀ ጊዜ ወደ ሄሮድስ ላከው፤ ሄሮድስም በዚያን ጊዜ በኢየሩሳሌም ነበረ።",
+          "R": "ጲላጦስ ይህን በሰማ ጊዜ ኢየሱስ ከገሊላ የመጣ እንደ ሆነ ጠየቀ። \\v 7 ኢየሱስ ሄሮድስ ከሚገዛው አገር መሆኑን ተረዳ። ስለዚህ ኢየሱስን ወደ ሄሮድስ ላከው። ሄሮድስም በዚያን ጊዜ በኢየሩሳሌም ነበረ።"
         }
       },
       "decisions": [
@@ -1592,6 +1689,28 @@
           "reason": "The word here is the area under Herod's authority (meaning decision); \"관할\" is the Korean legal word, and Readable says it plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42023006004",
+            "n42023006005"
+          ],
+          "choice": "\"መሆን አለመሆኑን ጠየቀ\" (asked whether he was or was not)",
+          "alternatives": [
+            "A direct question in quotation marks"
+          ],
+          "reason": "Amharic reports a yes-or-no question with the paired \"being or not being\"; turning it into a direct question would add a quotation the Greek does not have.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1673,6 +1792,11 @@
           "L": "E Herodes, vendo Jesus, alegrou-se muito, pois havia muito tempo queria vê-{{deity_pronoun:lo|Lo}}, por ouvir [falar] a respeito {{deity_pronoun:dele|Dele}}, e esperava ver algum sinal feito por {{deity_pronoun:ele|Ele}}.",
           "B": "Herodes ficou muito contente quando viu Jesus. Fazia muito tempo que queria vê-{{deity_pronoun:lo|Lo}}, por causa do que tinha ouvido a respeito {{deity_pronoun:dele|Dele}}, e esperava vê-{{deity_pronoun:lo|Lo}} realizar algum sinal.",
           "R": "Herodes ficou muito feliz por ver Jesus. Ele tinha ouvido falar de Jesus e fazia muito tempo que queria conhecê-{{deity_pronoun:lo|Lo}}. Esperava que Jesus fizesse algum sinal, uma coisa fora do comum, enquanto ele assistia."
+        },
+        "am": {
+          "L": "ሄሮድስም ኢየሱስን ባየ ጊዜ እጅግ ደስ አለው፤ ስለ እርሱ ይሰማ ስለ ነበረ ከብዙ ጊዜ ጀምሮ ሊያየው ይፈልግ ነበርና፤ በእርሱም የሚደረግ አንዳች ምልክት ለማየት ተስፋ ያደርግ ነበር።",
+          "B": "ሄሮድስ ኢየሱስን ባየ ጊዜ እጅግ ደስ አለው። ስለ እርሱ ከሰማው የተነሣ ለብዙ ጊዜ ሊያየው ይፈልግ ነበር፤ አንዳች ምልክት ሲያደርግ ለማየትም ተስፋ አድርጎ ነበር።",
+          "R": "ሄሮድስ ኢየሱስን በማየቱ በጣም ደስ አለው። ስለ ኢየሱስ ሰምቶ ነበር፤ ከረጅም ጊዜም ጀምሮ ሊያገኘው ይፈልግ ነበር። ኢየሱስ እርሱ እያየ አንድ ምልክት፣ ማለትም ተአምር፣ እንዲያደርግ ተስፋ አደረገ።"
         }
       },
       "decisions": [
@@ -1888,6 +2012,11 @@
           "L": "E {{deity_pronoun:o|O}} interrogava com muitas palavras, mas {{deity_pronoun:ele|Ele}} nada lhe respondeu.",
           "B": "Ele {{deity_pronoun:lhe|Lhe}} fez uma pergunta atrás da outra, mas Jesus não lhe deu resposta nenhuma.",
           "R": "Herodes fez muitas perguntas a Jesus. Mas Jesus não respondeu nada a ele."
+        },
+        "am": {
+          "L": "በብዙ ቃልም ጠየቀው፤ እርሱ ግን ምንም አልመለሰለትም።",
+          "B": "ብዙ ጥያቄዎችንም አቀረበለት፤ ኢየሱስ ግን አንዳች መልስ አልሰጠውም።",
+          "R": "ሄሮድስ ኢየሱስን ብዙ ጥያቄዎች ጠየቀው። ኢየሱስ ግን ምንም አልመለሰለትም።"
         }
       },
       "decisions": [
@@ -2007,6 +2136,11 @@
           "L": "E os chefes dos sacerdotes e os escribas estavam [ali], acusando-{{deity_pronoun:o|O}} com veemência.",
           "B": "Os chefes dos sacerdotes e os escribas estavam ali, acusando-{{deity_pronoun:o|O}} com fúria.",
           "R": "Os chefes dos sacerdotes e os mestres da Lei estavam ali. Eles não paravam de fazer acusações duras contra Jesus."
+        },
+        "am": {
+          "L": "የካህናት አለቆችና ጸሐፍትም በብርቱ እየከሰሱት ቆመው ነበር።",
+          "B": "የካህናት አለቆችና የሕግ መምህራንም በዚያ ቆመው በብርቱ ይከሱት ነበር።",
+          "R": "የካህናት አለቆችና የሕግ መምህራን በዚያ ቆመው ነበር። በኢየሱስ ላይ ጠንካራ ክስ ማቅረባቸውን ቀጠሉ።"
         }
       },
       "decisions": [
@@ -2150,6 +2284,27 @@
           "reason": "The terms settled for the Korean Gospels, as in Mark 15:1 and Luke 9:22.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023010007"
+          ],
+          "choice": "\"ጸሐፍት\" (L); \"የሕግ መምህራን\" (B, R)",
+          "alternatives": [
+            "\"ጸሐፍት\" at every level"
+          ],
+          "reason": "The scribes were teachers of the Law, not copyists; Literal keeps the traditional word, Balanced and Readable say what they were, as in Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2221,6 +2376,11 @@
           "L": "E Herodes, com os seus soldados, tratou-{{deity_pronoun:o|O}} com desprezo e zombou [{{deity_pronoun:dele|Dele}}] e, vestindo-[{{deity_pronoun:o|O}}] com uma roupa resplandecente, {{deity_pronoun:o|O}} mandou de volta a Pilatos.",
           "B": "Herodes e os seus soldados {{deity_pronoun:o|O}} trataram com desprezo e zombaram {{deity_pronoun:dele|Dele}}. Herodes mandou vesti-{{deity_pronoun:lo|Lo}} com um manto brilhante e {{deity_pronoun:o|O}} mandou de volta a Pilatos.",
           "R": "Então Herodes e os seus soldados riram de Jesus e {{deity_pronoun:o|O}} trataram como se {{deity_pronoun:ele|Ele}} não valesse nada. Puseram {{deity_pronoun:nele|Nele}} um manto brilhante, como se {{deity_pronoun:ele|Ele}} fosse um rei. Depois Herodes mandou Jesus de volta a Pilatos."
+        },
+        "am": {
+          "L": "ሄሮድስም ደግሞ ከወታደሮቹ ጋር ንቆትና አፌዞበት፣ የሚያንጸባርቅ ልብስ አልብሶ ወደ ጲላጦስ መልሶ ላከው።",
+          "B": "ሄሮድስና ወታደሮቹ ናቁት፤ አፌዙበትም። ሄሮድስ የሚያንጸባርቅ ልብስ አስለብሶ ወደ ጲላጦስ መልሶ ላከው።",
+          "R": "ከዚያም ሄሮድስና ወታደሮቹ በኢየሱስ ላይ ሳቁበት፤ እንደማይረባ ሰውም አድርገው ቆጠሩት። ንጉሥ የሆነ ይመስል የሚያንጸባርቅ ካባ አለበሱት። ከዚያም ሄሮድስ ወደ ጲላጦስ መልሶ ላከው።"
         }
       },
       "decisions": [
@@ -2429,6 +2589,11 @@
           "L": "E Herodes e Pilatos se tornaram amigos um do outro naquele mesmo dia, pois antes viviam em inimizade entre si.",
           "B": "Naquele mesmo dia, Herodes e Pilatos ficaram amigos. Até então havia hostilidade entre eles.",
           "R": "Herodes e Pilatos eram inimigos antes. Mas naquele dia eles ficaram amigos."
+        },
+        "am": {
+          "L": "በዚያም ቀን ሄሮድስና ጲላጦስ እርስ በርሳቸው ወዳጆች ሆኑ፤ ከዚያ በፊት እርስ በርሳቸው በጠላትነት ነበሩና።",
+          "B": "በዚያው ቀን ሄሮድስና ጲላጦስ ወዳጆች ሆኑ፤ ከዚያ በፊት በመካከላቸው ጠላትነት ነበረ።",
+          "R": "ሄሮድስና ጲላጦስ ከዚያ በፊት ጠላቶች ነበሩ። በዚያ ቀን ግን ወዳጆች ሆኑ።"
         }
       },
       "decisions": [
@@ -2616,6 +2781,11 @@
           "L": "E Pilatos, convocando os chefes dos sacerdotes, as autoridades e o povo, \\v 14 disse-lhes: \"Vocês me trouxeram este homem como alguém que desvia o povo; e eis que eu, depois de [{{deity_pronoun:o|O}}] interrogar diante de vocês, não encontrei neste homem nenhuma culpa das coisas de que vocês {{deity_pronoun:o|O}} acusam.",
           "B": "Pilatos reuniu os chefes dos sacerdotes, as autoridades e o povo \\v 14 e lhes disse: \"Vocês me trouxeram este homem com a acusação de que {{deity_pronoun:ele|Ele}} estava jogando o povo contra as autoridades. Eu {{deity_pronoun:o|O}} interroguei na presença de vocês e não {{deity_pronoun:o|O}} achei culpado de nenhuma das coisas de que vocês {{deity_pronoun:o|O}} acusam.",
           "R": "Pilatos chamou os chefes dos sacerdotes, os outros líderes e o povo. \\v 14 Ele disse a eles: \"Vocês me trouxeram este homem. Vocês disseram que {{deity_pronoun:ele|Ele}} estava levando o povo a se revoltar. Eu {{deity_pronoun:o|O}} interroguei aqui, na frente de vocês. Mas não achei {{deity_pronoun:nele|Nele}} culpa de nenhuma das coisas que vocês dizem que {{deity_pronoun:ele|Ele}} fez."
+        },
+        "am": {
+          "L": "ጲላጦስም የካህናት አለቆችንና መሪዎችን ሕዝቡንም በአንድነት ጠርቶ \\v 14 እንዲህ አላቸው፦ «ይህን ሰው ሕዝቡን እንደሚያስት አድርጋችሁ ወደ እኔ አመጣችሁት፤ እነሆም፣ እኔ በፊታችሁ መርምሬ ከምትከሱበት ነገር አንድም በደል በዚህ ሰው ላይ አላገኘሁም።",
+          "B": "ጲላጦስ የካህናት አለቆችን፣ መሪዎችንና ሕዝቡን ጠርቶ ሰበሰበ፤ \\v 14 እንዲህም አላቸው፦ «ይህን ሰው ሕዝቡን ከታማኝነቱ ያወጣል ብላችሁ በፊቴ አቀረባችሁት። እኔም በፊታችሁ መረመርኩት፤ ከምትከሱበት ነገር በአንዱም ጥፋተኛ ሆኖ አላገኘሁትም።",
+          "R": "ጲላጦስ የካህናት አለቆችን፣ ሌሎቹን መሪዎችና ሕዝቡን በአንድነት ጠራ። \\v 14 እንዲህም አላቸው፦ «ይህን ሰው ወደ እኔ አመጣችሁት። ሕዝቡ እንዲያምፁ ያደርጋል አላችሁ። እኔም እዚህ በፊታችሁ ጠየቅኩት። ነገር ግን እርሱ አደረገ ከምትሉት ነገር በአንዱም ጥፋተኛ ሆኖ አላገኘሁትም።"
         }
       },
       "decisions": [
@@ -2905,6 +3075,28 @@
           "reason": "For these chapters (also 23:35 and 24:20): the rulers are members of the council (m3). \"Os chefes\" would be confused with \"os chefes dos sacerdotes\" beside it, and \"príncipes\" suggests royalty; \"as autoridades\" is the plain word for those in charge. Readable says \"os outros líderes\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023013008"
+          ],
+          "choice": "\"መሪዎች\" for the rulers",
+          "alternatives": [
+            "\"አለቆች\" (the word in \"የካህናት አለቆች\")",
+            "\"ሹማምንት\""
+          ],
+          "reason": "\"አለቆች\" already names the chief priests (\"የካህናት አለቆች\") in the same list, so the council's other leaders are \"መሪዎች\", as again in 23:35.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2973,6 +3165,11 @@
           "L": "Nem Herodes [{{deity_pronoun:o|O}} achou], pois {{deity_pronoun:o|O}} mandou de volta para nós; e eis que nada digno de morte foi feito por {{deity_pronoun:ele|Ele}}.",
           "B": "Nem Herodes, pois {{deity_pronoun:o|O}} mandou de volta para nós. É claro que {{deity_pronoun:ele|Ele}} não fez nada que mereça a morte.",
           "R": "Herodes também não {{deity_pronoun:o|O}} achou culpado. Por isso {{deity_pronoun:o|O}} mandou de volta para nós. Este homem não fez nada que mereça a pena de morte."
+        },
+        "am": {
+          "L": "ሄሮድስም ቢሆን [አላገኘበትም]፤ ወደ እኛ መልሶ ልኮታልና፤ እነሆም፣ ለሞት የሚያበቃ ምንም ነገር በእርሱ አልተደረገም።",
+          "B": "ሄሮድስም ቢሆን ምንም አላገኘበትም፤ ወደ እኛ መልሶ ልኮታልና። ለሞት የሚያበቃ ምንም ነገር እንዳላደረገ ግልጽ ነው።",
+          "R": "ሄሮድስም ጥፋተኛ ሆኖ አላገኘውም። ወደ እኛ መልሶ የላከውም ለዚህ ነው። ይህ ሰው ሞት የሚገባው ምንም ነገር አላደረገም።"
         }
       },
       "decisions": [
@@ -3172,6 +3369,11 @@
           "L": "Portanto, depois de castigá-{{deity_pronoun:lo|Lo}}, eu {{deity_pronoun:o|O}} soltarei.\"",
           "B": "Por isso vou mandar açoitá-{{deity_pronoun:lo|Lo}} e depois {{deity_pronoun:o|O}} porei em liberdade.\"",
           "R": "Por isso vou mandar chicoteá-{{deity_pronoun:lo|Lo}} e depois vou deixar que {{deity_pronoun:ele|Ele}} vá embora livre.\""
+        },
+        "am": {
+          "L": "ስለዚህ ቀጥቼ እፈታዋለሁ።»",
+          "B": "ስለዚህ አስገርፌ እለቀዋለሁ።»",
+          "R": "ስለዚህ በጅራፍ አስገርፌ በነፃ እለቀዋለሁ።»"
         }
       },
       "decisions": [
@@ -3270,6 +3472,27 @@
           "reason": "A beating as a warning (meaning decision), a different word from the flogging of Mark 15:15 (\"채찍질하다\"); the release verbs are those of the Korean Mark 15:6-15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023016001"
+          ],
+          "choice": "\"ቀጥቼ\" (having punished) (L); \"አስገርፌ\" (having had him flogged) (B, R)",
+          "alternatives": [
+            "\"አስገርፌ\" at every level"
+          ],
+          "reason": "The Greek verb is the general word for disciplining; Literal keeps the general Amharic word, Balanced and Readable name the beating that was meant.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3333,6 +3556,11 @@
           "L": "Mas todos gritaram juntos, dizendo: \"Fora com este, e solte-nos Barrabás!\"",
           "B": "Mas toda a multidão gritou a uma só voz: \"Leve este homem embora! Solte Barrabás para nós!\"",
           "R": "Mas toda a multidão gritou junta: \"Mande matar este homem! Deixe Barrabás livre para nós!\""
+        },
+        "am": {
+          "L": "ሁሉም በአንድነት እንዲህ እያሉ ጮኹ፦ «ይህን ያስወግዱት፤ በርባንን ግን ይፍቱልን!»",
+          "B": "ሕዝቡ ሁሉ ግን በአንድ ድምፅ፦ «ይህን ሰው ያስወግዱት! በርባንን ይፍቱልን!» ብለው ጮኹ።",
+          "R": "ሕዝቡ ሁሉ ግን በአንድነት፦ «ይህን ሰው ያስገድሉት! በርባንን ይፍቱልን!» ብለው ጮኹ።"
         }
       },
       "decisions": [
@@ -3467,6 +3695,28 @@
           "reason": "The crowd is speaking to the Roman governor. Brazilians speak up to a superior with \"o senhor\" (style section 4), and these imperatives are the forms that go with it, as in \"Crucifique-o\" in 23:21 and Mark 15:13; the \"tu\" forms would put the crowd on the footing Portuguese keeps for God and Jesus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42023018005",
+            "n42023018007"
+          ],
+          "choice": "The crowd addresses Pilate with the respectful plural (\"ያስወግዱት\", \"ይፍቱልን\")",
+          "alternatives": [
+            "The familiar singular \"አስወግደው\", \"ፍታልን\""
+          ],
+          "reason": "Subjects speaking to a ruler use the respectful form in this translation (as the chief priests to Pilate in Matthew 27:63), even in an angry demand; the Greek singular imperatives are addressed to Pilate alone. The same holds in 23:21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3534,6 +3784,11 @@
           "L": "Ele era [um homem] que tinha sido lançado na prisão por causa de uma revolta acontecida na cidade, e por assassinato.",
           "B": "Ele tinha sido posto na prisão por causa de um motim que houve na cidade, e por assassinato.",
           "R": "Barrabás estava na prisão porque tinha participado de uma revolta na cidade. Ele também tinha matado uma pessoa."
+        },
+        "am": {
+          "L": "እርሱም በከተማ ውስጥ በተነሣ በአንድ ዓመፅና በነፍስ ግድያ ምክንያት ወደ ወኅኒ የተጣለ [ሰው] ነበር።",
+          "B": "እርሱም በከተማ ውስጥ በተነሣ ሁከትና በነፍስ ግድያ ምክንያት ወኅኒ ቤት የገባ ነበር።",
+          "R": "በርባን በወኅኒ ቤት የነበረው በከተማው በተነሣ ዓመፅ ተካፍሎ ስለ ነበረ ነው። ደግሞም ሰው ገድሎ ነበር።"
         }
       },
       "decisions": [
@@ -3690,6 +3945,11 @@
           "L": "E Pilatos lhes falou de novo, querendo soltar Jesus.",
           "B": "Pilatos lhes falou mais uma vez, porque queria pôr Jesus em liberdade.",
           "R": "Pilatos queria deixar Jesus livre. Por isso falou de novo com a multidão."
+        },
+        "am": {
+          "L": "ጲላጦስም ኢየሱስን ሊፈታ ፈልጎ እንደገና ተናገራቸው።",
+          "B": "ጲላጦስ ኢየሱስን ለመፍታት ፈልጎ ስለ ነበረ እንደገና ተናገራቸው።",
+          "R": "ጲላጦስ ኢየሱስን ሊለቀው ፈለገ። ስለዚህ ሕዝቡን እንደገና አነጋገረ።"
         }
       },
       "decisions": [
@@ -3797,6 +4057,11 @@
           "L": "Mas eles gritavam, dizendo: \"Crucifique, crucifique-{{deity_pronoun:o|O}}!\"",
           "B": "Mas eles continuavam gritando: \"Crucifique-{{deity_pronoun:o|O}}! Crucifique-{{deity_pronoun:o|O}}!\"",
           "R": "Mas eles continuaram gritando: \"Mande pregá-{{deity_pronoun:lo|Lo}} numa cruz! Mande pregá-{{deity_pronoun:lo|Lo}} numa cruz!\""
+        },
+        "am": {
+          "L": "እነርሱ ግን፦ «ይስቀሉት፣ ይስቀሉት!» እያሉ ይጮኹ ነበር።",
+          "B": "እነርሱ ግን፦ «ይስቀሉት! ይስቀሉት!» እያሉ መጮኻቸውን ቀጠሉ።",
+          "R": "እነርሱ ግን፦ «በመስቀል ላይ ይቸንክሩት! በመስቀል ላይ ይቸንክሩት!» እያሉ መጮኻቸውን ቀጠሉ።"
         }
       },
       "decisions": [
@@ -3995,6 +4260,11 @@
           "L": "E ele lhes disse pela terceira vez: \"Pois que mal este [homem] fez?",
           "B": "Pela terceira vez ele lhes disse: \"Por quê? Que mal este homem fez?",
           "R": "Pilatos falou com eles pela terceira vez. Ele disse: \"Por quê? Que coisa errada este homem fez?"
+        },
+        "am": {
+          "L": "እርሱም ለሦስተኛ ጊዜ እንዲህ አላቸው፦ «ለምን? ይህ [ሰው] ምን ክፉ ነገር አደረገ?",
+          "B": "ለሦስተኛ ጊዜም እንዲህ አላቸው፦ «ለምን? ይህ ሰው ምን በደል አደረገ?",
+          "R": "ጲላጦስ ለሦስተኛ ጊዜ አነጋገራቸው። እንዲህም አለ፦ «ለምን? ይህ ሰው ምን መጥፎ ነገር አደረገ?"
         }
       },
       "decisions": [
@@ -4136,6 +4406,11 @@
           "L": "Não encontrei {{deity_pronoun:nele|Nele}} nenhuma causa [digna] de morte; portanto, depois de castigá-{{deity_pronoun:lo|Lo}}, eu {{deity_pronoun:o|O}} soltarei.\"",
           "B": "Não encontrei nenhum motivo para condená-{{deity_pronoun:lo|Lo}} à morte. Por isso vou mandar açoitá-{{deity_pronoun:lo|Lo}} e depois {{deity_pronoun:o|O}} porei em liberdade.\"",
           "R": "Não achei nada pelo qual {{deity_pronoun:ele|Ele}} deva morrer. Por isso vou mandar chicoteá-{{deity_pronoun:lo|Lo}} e depois vou deixar que {{deity_pronoun:ele|Ele}} vá embora livre.\""
+        },
+        "am": {
+          "L": "ለሞት የሚያበቃ ምክንያት በእርሱ ላይ አላገኘሁም፤ ስለዚህ ቀጥቼ እፈታዋለሁ።»",
+          "B": "እርሱን ለመግደል የሚያበቃ ምንም ምክንያት አላገኘሁም። ስለዚህ አስገርፌ እለቀዋለሁ።»",
+          "R": "እርሱ ሊሞትበት የሚገባ ምንም ነገር አላገኘሁም። ስለዚህ በጅራፍ አስገርፌ በነፃ እለቀዋለሁ።»"
         }
       },
       "decisions": [
@@ -4276,6 +4551,11 @@
           "L": "Mas eles insistiam com grandes gritos, pedindo que {{deity_pronoun:ele|Ele}} fosse crucificado, e as vozes deles prevaleciam.",
           "B": "Mas eles continuaram exigindo aos gritos que {{deity_pronoun:ele|Ele}} fosse crucificado, e os gritos deles acabaram vencendo.",
           "R": "Mas eles continuaram gritando bem alto. Exigiam que Jesus fosse morto numa cruz. No fim, os gritos deles venceram."
+        },
+        "am": {
+          "L": "እነርሱ ግን እንዲሰቀል እየጠየቁ በታላቅ ድምፅ አጥብቀው ያስጨንቁት ነበር፤ ድምፃቸውም አየለ።",
+          "B": "እነርሱ ግን እንዲሰቀል እየጠየቁ በታላቅ ጩኸት አጥብቀው ጫኑት፤ ጩኸታቸውም አሸነፈ።",
+          "R": "እነርሱ ግን በታላቅ ድምፅ መጮኻቸውን ቀጠሉ። ኢየሱስ በመስቀል ላይ ተሰቅሎ እንዲገደል ጠየቁ። በመጨረሻም ጩኸታቸው አሸነፈ።"
         }
       },
       "decisions": [
@@ -4387,6 +4667,11 @@
           "L": "E Pilatos sentenciou que fosse feito o que eles pediam.",
           "B": "Então Pilatos decidiu que se fizesse o que eles pediam.",
           "R": "Então Pilatos resolveu dar a eles o que queriam."
+        },
+        "am": {
+          "L": "ጲላጦስም የጠየቁት እንዲደረግ ፈረደ።",
+          "B": "ስለዚህ ጲላጦስ የጠየቁት እንዲፈጸም ወሰነ።",
+          "R": "ስለዚህ ጲላጦስ የፈለጉትን ሊሰጣቸው ወሰነ።"
         }
       },
       "decisions": [
@@ -4509,6 +4794,11 @@
           "L": "E soltou o que tinha sido lançado na prisão por revolta e assassinato, a quem eles pediam; mas Jesus ele entregou à vontade deles.",
           "B": "Pôs em liberdade o homem que eles pediam, aquele que tinha sido preso por revolta e assassinato. Mas entregou Jesus a eles, para fazerem o que quisessem.",
           "R": "Ele soltou o homem que eles queriam, aquele que estava na prisão por rebelião e assassinato. Mas entregou Jesus a eles, para fazerem com {{deity_pronoun:ele|Ele}} o que quisessem."
+        },
+        "am": {
+          "L": "በዓመፅና በነፍስ ግድያ ምክንያት ወደ ወኅኒ የተጣለውን፣ የለመኑትን [ሰው] ፈታላቸው፤ ኢየሱስን ግን ለፈቃዳቸው አሳልፎ ሰጠው።",
+          "B": "የጠየቁትን ሰው፣ በዓመፅና በነፍስ ግድያ ምክንያት ወኅኒ ቤት የገባውን ፈታላቸው። ኢየሱስን ግን እንደ ፈቀዱት እንዲያደርጉበት አሳልፎ ሰጣቸው።",
+          "R": "የፈለጉትን ሰው ፈታላቸው፤ ይህም በዓመፅና በነፍስ ግድያ ምክንያት በወኅኒ ቤት የነበረው ሰው ነው። ኢየሱስን ግን የፈለጉትን ሁሉ እንዲያደርጉበት አሳልፎ ሰጣቸው።"
         }
       },
       "decisions": [
@@ -4729,6 +5019,11 @@
           "L": "E, quando {{deity_pronoun:o|O}} levavam, agarraram um certo Simão, cireneu, que vinha do campo, e puseram sobre ele a cruz, para [a] carregar atrás de Jesus.",
           "B": "Enquanto {{deity_pronoun:o|O}} levavam, pegaram um homem chamado Simão, de Cirene, que vinha do campo. Puseram a cruz sobre ele e o obrigaram a carregá-la atrás de Jesus.",
           "R": "Os soldados levaram Jesus embora. No caminho, agarraram um homem chamado Simão, da cidade de Cirene, na África. Ele vinha dos campos para Jerusalém. Puseram a cruz nos ombros dele e o obrigaram a carregá-la atrás de Jesus."
+        },
+        "am": {
+          "L": "ይዘውትም ሲሄዱ ከገጠር ይመጣ የነበረውን ስምዖን የሚባለውን አንድ የቀሬና ሰው ያዙ፤ ከኢየሱስም ኋላ እንዲሸከመው መስቀሉን በላዩ ጫኑበት።",
+          "B": "ኢየሱስን ይዘውት ሲሄዱ ከገጠር ወደ ከተማ ይመጣ የነበረውን ስምዖን የሚባለውን የቀሬና ሰው ያዙ። መስቀሉንም በላዩ ጫኑበት፤ ከኢየሱስም ኋላ እንዲሸከመው አደረጉት።",
+          "R": "ወታደሮቹ ኢየሱስን ይዘው ሄዱ። በመንገድ ላይ ስምዖን የሚባል ሰው ያዙ። እርሱም በአፍሪካ ካለችው ከቀሬና ከተማ የመጣ ነበር። ከእርሻ ወደ ኢየሩሳሌም እየገባ ነበር። መስቀሉን በላዩ ጫኑበት፤ ከኢየሱስም ኋላ እንዲሸከመው አደረጉት።"
         }
       },
       "decisions": [
@@ -4933,6 +5228,11 @@
           "L": "E {{deity_pronoun:o|O}} seguia uma grande multidão do povo e de mulheres que batiam no peito e se lamentavam por {{deity_pronoun:ele|Ele}}.",
           "B": "Uma grande multidão do povo {{deity_pronoun:o|O}} seguia, e entre eles havia mulheres que choravam e se lamentavam por {{deity_pronoun:ele|Ele}}.",
           "R": "Uma grande multidão de pessoas seguia Jesus. No meio delas havia mulheres que choravam e batiam no peito de tristeza por {{deity_pronoun:ele|Ele}}."
+        },
+        "am": {
+          "L": "ብዙ የሕዝብ ብዛትና ደረታቸውን እየመቱ ያለቅሱለት የነበሩ ሴቶችም ይከተሉት ነበር።",
+          "B": "ብዙ ሕዝብ ይከተሉት ነበር፤ ከእነርሱም መካከል የሚያዝኑለትና የሚያለቅሱለት ሴቶች ነበሩ።",
+          "R": "ብዙ ሕዝብ ኢየሱስን ይከተሉ ነበር። ከእነርሱም መካከል ሴቶች ነበሩ፤ እነርሱም ስለ እርሱ በሐዘን ደረታቸውን እየመቱ ያለቅሱ ነበር።"
         }
       },
       "decisions": [
@@ -5087,6 +5387,11 @@
           "L": "E Jesus, voltando-se para elas, disse: \"Filhas de Jerusalém, não chorem por {{deity_pronoun:mim|Mim}}; antes, chorem por vocês mesmas e pelos filhos de vocês, \\v 29 porque eis que vêm dias em que dirão: 'Bem-aventuradas as estéreis, e os ventres que não geraram, e os seios que não amamentaram.'",
           "B": "Jesus se voltou para elas e disse: \"Filhas de Jerusalém, não é por {{deity_pronoun:mim|Mim}} que vocês devem chorar. Chorem por vocês mesmas e pelos filhos de vocês. \\v 29 Estão chegando dias em que as pessoas vão dizer: 'Bem-aventuradas as mulheres que não puderam ter filhos, os ventres que nunca deram à luz e os seios que nunca amamentaram.'",
           "R": "Jesus se virou para as mulheres e disse: \"Mulheres de Jerusalém, não chorem por {{deity_pronoun:mim|Mim}}. Chorem por vocês mesmas e pelos filhos de vocês. \\v 29 Vai chegar um tempo em que as pessoas vão dizer: 'Felizes as mulheres que nunca tiveram filhos. Felizes as que nunca deram à luz e nunca deram de mamar a um bebê.'"
+        },
+        "am": {
+          "L": "ኢየሱስም ወደ እነርሱ ዘወር ብሎ እንዲህ አለ፦ «የኢየሩሳሌም ሴቶች ልጆች፣ ለእኔ አታልቅሱ፤ ነገር ግን ለራሳችሁና ለልጆቻችሁ አልቅሱ፤ \\v 29 እነሆ፣ “የተባረኩ [ናቸው] መካኖች፣ ያልወለዱ ማኅፀኖችና ያላጠቡ ጡቶች” የሚሉባቸው ቀናት ይመጣሉና።",
+          "B": "ኢየሱስም ወደ እነርሱ ዘወር ብሎ እንዲህ አለ፦ «የኢየሩሳሌም ሴቶች ልጆች፣ ልታለቅሱ የሚገባችሁ ለእኔ አይደለም። ለራሳችሁና ለልጆቻችሁ አልቅሱ። \\v 29 ሰዎች “ልጅ መውለድ ያልቻሉ ሴቶች፣ ያልወለዱ ማኅፀኖችና ያላጠቡ ጡቶች የተባረኩ ናቸው” የሚሉበት ጊዜ ይመጣል።",
+          "R": "ኢየሱስ ወደ ሴቶቹ ዘወር ብሎ እንዲህ አለ፦ «እናንተ የኢየሩሳሌም ሴቶች፣ ለእኔ አታልቅሱ። ለራሳችሁና ለልጆቻችሁ አልቅሱ። \\v 29 ሰዎች “ልጅ ያልወለዱ ሴቶች የተባረኩ ናቸው። ያልወለዱና ልጅ ያላጠቡ የተባረኩ ናቸው” የሚሉበት ጊዜ ይመጣል።"
         }
       },
       "decisions": [
@@ -5334,6 +5639,29 @@
           "reason": "The word of the Korean Beatitudes (Matthew 5, Luke 6), so the reversal (meaning decision) is heard.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42023029003",
+            "n42023029004",
+            "n42023029007"
+          ],
+          "choice": "The saying is quoted before \"the days are coming\" (\"... የሚሉባቸው ቀናት ይመጣሉ\")",
+          "alternatives": [
+            "\"ቀናት ይመጣሉ፤ በእነርሱም ... ይላሉ\" (two clauses, as the Greek order)"
+          ],
+          "reason": "Amharic puts a relative clause before the noun it describes, so the words people will say come first and \"the days are coming\" closes the verse; both stay in verse 29.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5399,6 +5727,11 @@
           "L": "Então começarão a dizer aos montes: 'Caiam sobre nós', e às colinas: 'Cubram-nos.'",
           "B": "Então vão começar a dizer aos montes: 'Caiam sobre nós!', e às colinas: 'Cubram-nos!'",
           "R": "As pessoas vão gritar para os montes: 'Caiam em cima de nós!' Vão gritar para as colinas: 'Escondam-nos!'"
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ተራሮችን፦ “በላያችን ውደቁ”፣ ኮረብቶችንም፦ “ሸፍኑን” ማለት ይጀምራሉ።",
+          "B": "በዚያን ጊዜ ተራሮችን፦ “በላያችን ውደቁ!” ኮረብቶችንም፦ “ሸፍኑን!” ማለት ይጀምራሉ።",
+          "R": "ሰዎች ተራሮችን፦ “በላያችን ውደቁ!” ብለው ይጣራሉ። ኮረብቶችንም፦ “ሸፍኑን!” ብለው ይጮኻሉ።"
         }
       },
       "decisions": [
@@ -5527,6 +5860,11 @@
           "L": "Pois, se fazem estas coisas com a madeira verde, o que acontecerá com a seca?\"",
           "B": "Porque, se é assim que tratam a lenha verde, o que será da lenha seca?\"",
           "R": "Se fazem isto com uma árvore verde e cheia de vida, o que vai acontecer com uma árvore seca?\""
+        },
+        "am": {
+          "L": "ምክንያቱም በእርጥብ እንጨት ይህን የሚያደርጉ ከሆነ በደረቁ ምን ይደረግ ይሆን?»",
+          "B": "ምክንያቱም እርጥብ የሆነውን እንጨት እንዲህ የሚያደርጉት ከሆነ፣ በደረቀው እንጨት ላይ ምን ይደርስ ይሆን?»",
+          "R": "እርጥብና እያደገ ባለ ዛፍ ላይ ይህን የሚያደርጉ ከሆነ፣ በደረቀ ዛፍ ላይማ ምን ይደርስበት ይሆን?»"
         }
       },
       "decisions": [
@@ -5696,6 +6034,11 @@
           "L": "E eram levados também outros dois, criminosos, com {{deity_pronoun:ele|Ele}}, para serem mortos.",
           "B": "Dois outros homens, ambos criminosos, também foram levados com {{deity_pronoun:ele|Ele}} para serem executados.",
           "R": "Dois outros homens também estavam sendo levados para serem mortos com Jesus. Eles eram criminosos."
+        },
+        "am": {
+          "L": "ሌሎች ሁለት ወንጀለኞችም ደግሞ ሊገደሉ ከእርሱ ጋር ይወሰዱ ነበር።",
+          "B": "ሁለት ሌሎች ሰዎችም፣ ሁለቱም ወንጀለኞች፣ ሊገደሉ ከእርሱ ጋር ተወሰዱ።",
+          "R": "ከኢየሱስ ጋር ሊገደሉ ሌሎች ሁለት ሰዎችም ይወሰዱ ነበር። እነርሱም ወንጀለኞች ነበሩ።"
         }
       },
       "decisions": [
@@ -5837,6 +6180,28 @@
           "reason": "Luke's word means one who does evil; \"강도\" stays for lestes (Mark 15:27). Naming the two as \"other\" men first and then calling them criminals keeps Jesus out of that word (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023032005"
+          ],
+          "choice": "\"ወንጀለኞች\" (criminals, wrongdoers)",
+          "alternatives": [
+            "\"ወንበዴዎች\" (bandits, the word for the men crucified with Jesus in Matthew 27:38)",
+            "\"ክፉ አድራጊዎች\" (evildoers)"
+          ],
+          "reason": "Luke uses a different word from Matthew's \"bandits\": people who do wrong, criminals. \"ወንጀለኞች\" says that plainly; the order \"two others, criminals\" keeps Jesus apart from them, as the meaning decision explains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5912,6 +6277,11 @@
           "L": "E, quando chegaram ao lugar chamado \"Caveira\", ali {{deity_pronoun:o|O}} crucificaram, e também os criminosos, um à direita e outro à esquerda.",
           "B": "Quando chegaram ao lugar chamado Caveira, ali {{deity_pronoun:o|O}} crucificaram, e com {{deity_pronoun:ele|Ele}} os criminosos, um à {{deity_pronoun:sua|Sua}} direita e outro à {{deity_pronoun:sua|Sua}} esquerda.",
           "R": "Eles chegaram a um lugar chamado A Caveira. Ali os soldados pregaram Jesus numa cruz. Também pregaram os dois criminosos em cruzes, um do {{deity_pronoun:seu|Seu}} lado direito e o outro do {{deity_pronoun:seu|Seu}} lado esquerdo."
+        },
+        "am": {
+          "L": "«የራስ ቅል» ወደሚባለውም ስፍራ በመጡ ጊዜ በዚያ እርሱንና ወንጀለኞቹን ሰቀሉ፤ አንዱን በቀኝ አንዱንም በግራ።",
+          "B": "የራስ ቅል ወደሚባለው ስፍራ በደረሱ ጊዜ በዚያ ሰቀሉት፤ ወንጀለኞቹንም አንዱን በቀኙ አንዱንም በግራው ሰቀሉ።",
+          "R": "የራስ ቅል ወደሚባል ቦታ መጡ። በዚያም ወታደሮቹ ኢየሱስን በመስቀል ላይ ቸነከሩት። ሁለቱንም ወንጀለኞች በመስቀሎች ላይ ቸነከሩአቸው፤ አንዱን በቀኙ፣ ሌላውን በግራው።"
         }
       },
       "decisions": [
@@ -6186,6 +6556,11 @@
           "L": "E Jesus dizia: \"Pai, perdoa-lhes, pois eles não sabem o que estão fazendo.\"",
           "B": "Jesus dizia: \"Pai, perdoa-lhes. Eles não sabem o que estão fazendo.\"",
           "R": "Jesus disse: \"Pai, perdoa estas pessoas. Elas não entendem o que estão fazendo.\""
+        },
+        "am": {
+          "L": "ኢየሱስም፦ «አባት ሆይ፣ የሚያደርጉትን አያውቁምና ይቅር በላቸው» ይል ነበር።",
+          "B": "ኢየሱስም፦ «አባት ሆይ፣ ይቅር በላቸው፤ የሚያደርጉትን አያውቁም» ይል ነበር።",
+          "R": "ኢየሱስም፦ «አባት ሆይ፣ እነዚህን ሰዎች ይቅር በላቸው። የሚያደርጉትን አይረዱም» አለ።"
         }
       },
       "decisions": [
@@ -6386,6 +6761,11 @@
           "L": "E, repartindo as {{deity_pronoun:suas|Suas}} vestes, lançaram sortes.",
           "B": "Repartiram entre si as {{deity_pronoun:suas|Suas}} roupas, tirando a sorte.",
           "R": "Os soldados dividiram as roupas {{deity_pronoun:dele|Dele}} entre eles. Tiraram a sorte para decidir quem ia ficar com cada peça."
+        },
+        "am": {
+          "L": "ልብሱንም እየተካፈሉ ዕጣ ተጣጣሉ።",
+          "B": "ልብሶቹንም ዕጣ ተጣጥለው ተከፋፈሉ።",
+          "R": "ወታደሮቹ ልብሶቹን በመካከላቸው ተከፋፈሉ። እያንዳንዱን ልብስ ማን እንደሚወስድ ለመወሰን ዕጣ ተጣጣሉ።"
         }
       },
       "decisions": [
@@ -6567,6 +6947,11 @@
           "L": "E o povo estava de pé, olhando.",
           "B": "O povo ficou ali, observando.",
           "R": "O povo ficou ali olhando."
+        },
+        "am": {
+          "L": "ሕዝቡም እየተመለከቱ ቆመው ነበር።",
+          "B": "ሕዝቡ በዚያ ቆመው ይመለከቱ ነበር።",
+          "R": "ሕዝቡ በዚያ ቆመው ተመለከቱ።"
         }
       },
       "decisions": [
@@ -6644,7 +7029,7 @@
         "en": {
           "L": "And the rulers also were sneering, saying, \"He saved others; let {{deity_pronoun:him|Him}} save {{deity_pronoun:himself|Himself}}, if this is the {{christos:Christ|Messiah}} of God, the Chosen One.\"",
           "B": "The rulers joined in the scoffing. \"He saved others,\" they said. \"So let {{deity_pronoun:him|Him}} save {{deity_pronoun:himself|Himself}}, if this man is God's {{christos:Christ|Messiah}}, the one God chose.\"",
-          "R": "The leaders laughed at {{deity_pronoun:him|Him}} too. They said, \"He saved other people. Let {{deity_pronoun:him|Him}} save {{deity_pronoun:himself|Himself}} now, if {{deity_pronoun:he|He}} really is {{christos:Christ|the Messiah}} whom God sent, the one God has chosen!\""
+          "R": "The leaders laughed at {{deity_pronoun:him|Him}} too. They said, \"He saved other people. Let {{deity_pronoun:him|Him}} save {{deity_pronoun:himself|Himself}} now, if {{deity_pronoun:he|He}} really is the {{christos:Christ|Messiah}} whom God sent, the one God has chosen!\""
         },
         "es": {
           "L": "Y también los dirigentes se mofaban, diciendo: «A otros salvó; que se salve a {{deity_pronoun:sí|Sí}} mismo, si este es el {{christos:Cristo|Mesías}} de Dios, el Escogido».",
@@ -6675,6 +7060,11 @@
           "L": "E as autoridades também zombavam, dizendo: \"Salvou outros; salve a {{deity_pronoun:si mesmo|Si mesmo}}, se este é o {{christos:Cristo|Messias}} de Deus, o Escolhido.\"",
           "B": "As autoridades também zombavam. \"Ele salvou outros\", diziam. \"Pois que salve a {{deity_pronoun:si mesmo|Si mesmo}}, se este homem é o {{christos:Cristo|Messias}} de Deus, aquele que Deus escolheu.\"",
           "R": "Os líderes também riam {{deity_pronoun:dele|Dele}}. Diziam: \"Ele salvou outras pessoas. Que salve a {{deity_pronoun:si mesmo|Si mesmo}} agora, se {{deity_pronoun:ele|Ele}} é mesmo o {{christos:Cristo|Messias}} que Deus enviou, aquele que Deus escolheu!\""
+        },
+        "am": {
+          "L": "መሪዎችም ደግሞ እንዲህ እያሉ ያሾፉበት ነበር፦ «ሌሎችን አዳነ፤ ይህ የእግዚአብሔር {{christos:ክርስቶስ|መሲሕ}}፣ የተመረጠው ከሆነ ራሱን ያድን።»",
+          "B": "መሪዎቹም ደግሞ አሾፉበት። «ሌሎችን አዳነ» አሉ፤ «ይህ ሰው የእግዚአብሔር {{christos:ክርስቶስ|መሲሕ}}፣ እግዚአብሔር የመረጠው ከሆነ እንግዲያውስ ራሱን ያድን።»",
+          "R": "መሪዎቹም ደግሞ በእርሱ ላይ ሳቁበት። እንዲህም አሉ፦ «ሌሎችን ሰዎች አዳነ። እግዚአብሔር የላከው {{christos:ክርስቶስ|መሲሕ}}፣ እግዚአብሔር የመረጠው በእርግጥ እርሱ ከሆነ፣ እስኪ አሁን ራሱን ያድን!»"
         }
       },
       "decisions": [
@@ -6877,6 +7267,26 @@
           "reason": "As in the Korean Mark 15:31-32: the scorn says more than it means (meaning decision), so \"구원하다\" keeps the word of salvation. The particles after the christos span fit both forms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023035006"
+          ],
+          "choice": "\"ያሾፉበት ነበር\" / \"አሾፉበት\" (sneered, scoffed)",
+          "alternatives": [
+            "\"አፌዙበት\" (mocked)"
+          ],
+          "reason": "Luke has one verb for the rulers' scornful sneer and another for the soldiers' mockery in 23:36; Amharic keeps them apart with \"ማሾፍ\" here and \"ማፌዝ\" there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6951,6 +7361,11 @@
           "L": "E os soldados também zombaram {{deity_pronoun:dele|Dele}}, aproximando-se [e] oferecendo-{{deity_pronoun:lhe|Lhe}} vinagre \\v 37 e dizendo: \"Se {{deity_pronoun:tu|Tu}} és o Rei dos judeus, salva-{{deity_pronoun:te|Te}} a {{deity_pronoun:ti|Ti}} mesmo!\"",
           "B": "Os soldados também zombaram {{deity_pronoun:dele|Dele}}. Chegaram perto e {{deity_pronoun:lhe|Lhe}} ofereceram vinho azedo, \\v 37 dizendo: \"Se {{deity_pronoun:tu|Tu}} és o Rei dos judeus, salva a {{deity_pronoun:ti|Ti}} mesmo!\"",
           "R": "Os soldados também riram {{deity_pronoun:dele|Dele}}. Chegaram perto e {{deity_pronoun:lhe|Lhe}} ofereceram um vinho barato e azedo. \\v 37 Disseram: \"Se {{deity_pronoun:tu|Tu}} és o rei dos judeus, então salva a {{deity_pronoun:ti|Ti}} mesmo!\""
+        },
+        "am": {
+          "L": "ወታደሮችም ደግሞ እየቀረቡ ኮምጣጣ የወይን ጠጅ እያቀረቡለት አፌዙበት፤ \\v 37 እንዲህም ይሉ ነበር፦ «አንተ የአይሁድ ንጉሥ ከሆንህ ራስህን አድን!»",
+          "B": "ወታደሮቹም ደግሞ አፌዙበት። ወደ እርሱ ቀርበው ኮምጣጣ የወይን ጠጅ አቀረቡለት፤ \\v 37 እንዲህም አሉ፦ «አንተ የአይሁድ ንጉሥ ከሆንህ ራስህን አድን!»",
+          "R": "ወታደሮቹም ደግሞ አፌዙበት። ወደ እርሱ ቀርበው ርካሽ ኮምጣጣ የወይን ጠጅ አቀረቡለት። \\v 37 እንዲህም አሉ፦ «አንተ የአይሁድ ንጉሥ ከሆንህ እስኪ ራስህን አድን!»"
         }
       },
       "decisions": [
@@ -7110,6 +7525,27 @@
           "reason": "The word of the Korean Mark 15:36 and John 19:29; \"초\" (vinegar) misleads, since it was cheap wine gone sour.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023036008"
+          ],
+          "choice": "\"ኮምጣጣ የወይን ጠጅ\" (sour wine)",
+          "alternatives": [
+            "\"ሆምጣጤ\" (vinegar)"
+          ],
+          "reason": "This was cheap wine gone sour, the soldiers' own drink, as in Matthew 27:48; \"ሆምጣጤ\" would suggest vinegar for cooking.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7173,6 +7609,11 @@
           "L": "E havia também uma inscrição acima {{deity_pronoun:dele|Dele}}: \"Este [é] o Rei dos judeus.\"",
           "B": "Acima {{deity_pronoun:dele|Dele}} havia também um letreiro: \"Este é o Rei dos judeus.\"",
           "R": "Tinham posto uma placa acima da cabeça {{deity_pronoun:dele|Dele}}. Nela estava escrito: \"Este é o rei dos judeus.\""
+        },
+        "am": {
+          "L": "በላዩም ደግሞ፦ «ይህ የአይሁድ ንጉሥ ነው» የሚል ጽሑፍ ነበረ።",
+          "B": "ከእርሱ በላይም፦ «ይህ የአይሁድ ንጉሥ ነው» የሚል የተጻፈ ማስታወቂያ ነበረ።",
+          "R": "ከራሱ በላይ አንድ ጽሑፍ ተሰቅሎ ነበር። ጽሑፉም፦ «ይህ የአይሁድ ንጉሥ ነው» ይላል።"
         }
       },
       "decisions": [
@@ -7303,8 +7744,8 @@
       "renderings": {
         "en": {
           "L": "And one of the criminals who had been hanged [there] kept insulting {{deity_pronoun:him|Him}}, saying, \"Are {{deity_pronoun:you|You}} not the {{christos:Christ|Messiah}}?",
-          "B": "One of the criminals hanging beside {{deity_pronoun:him|Him}} kept abusing {{deity_pronoun:him|Him}}. \"You are {{christos:Christ|the Messiah}}, are {{deity_pronoun:you|You}} not?",
-          "R": "One of the criminals hanging there began to say cruel things to Jesus. He said, \"You are {{christos:Christ|the Messiah}}, are {{deity_pronoun:you|You}} not?"
+          "B": "One of the criminals hanging beside {{deity_pronoun:him|Him}} kept abusing {{deity_pronoun:him|Him}}. \"You are the {{christos:Christ|Messiah}}, are {{deity_pronoun:you|You}} not?",
+          "R": "One of the criminals hanging there began to say cruel things to Jesus. He said, \"You are the {{christos:Christ|Messiah}}, are {{deity_pronoun:you|You}} not?"
         },
         "es": {
           "L": "Y uno de los malhechores colgados [allí] {{deity_pronoun:lo|Lo}} injuriaba, diciendo: «¿No eres {{deity_pronoun:tú|Tú}} el {{christos:Cristo|Mesías}}?",
@@ -7335,6 +7776,11 @@
           "L": "E um dos criminosos que tinham sido pendurados [ali] {{deity_pronoun:o|O}} insultava, dizendo: \"Não és {{deity_pronoun:tu|Tu}} o {{christos:Cristo|Messias}}?",
           "B": "Um dos criminosos pendurados ao lado {{deity_pronoun:dele|Dele}} {{deity_pronoun:o|O}} insultava: \"Tu és o {{christos:Cristo|Messias}}, não és?",
           "R": "Um dos criminosos que estavam pendurados ali começou a dizer coisas cruéis a Jesus. Ele disse: \"Tu és o {{christos:Cristo|Messias}}, não és?"
+        },
+        "am": {
+          "L": "ከተሰቀሉትም ወንጀለኞች አንዱ እንዲህ እያለ ይሰድበው ነበር፦ «አንተ {{christos:ክርስቶስ|መሲሕ}} አይደለህምን?",
+          "B": "በአጠገቡ ተሰቅለው ከነበሩት ወንጀለኞች አንዱ ይሰድበው ነበር። «አንተ {{christos:ክርስቶስ|መሲሕ}} ነህ፤ አይደለህም?",
+          "R": "በዚያ ተሰቅለው ከነበሩት ወንጀለኞች አንዱ በኢየሱስ ላይ ክፉ ቃል መናገር ጀመረ። እንዲህም አለ፦ «አንተ {{christos:ክርስቶስ|መሲሕ}} ነህ፤ አይደለህም?"
         }
       },
       "decisions": [
@@ -7509,6 +7955,11 @@
           "L": "Salva-{{deity_pronoun:te|Te}} a {{deity_pronoun:ti|Ti}} mesmo e a nós!\"",
           "B": "Então salva a {{deity_pronoun:ti|Ti}} mesmo, e a nós também!\"",
           "R": "Então salva a {{deity_pronoun:ti|Ti}} mesmo e salva a nós também!\""
+        },
+        "am": {
+          "L": "ራስህንና እኛንም አድን!»",
+          "B": "እንግዲያውስ ራስህን አድን፤ እኛንም ደግሞ!»",
+          "R": "እንግዲያውስ ራስህን አድን፤ እኛንም ደግሞ አድነን!»"
         }
       },
       "decisions": [
@@ -7618,6 +8069,11 @@
           "L": "Mas o outro, respondendo e repreendendo-o, disse: \"Nem você teme a Deus, estando debaixo da mesma sentença?",
           "B": "Mas o outro criminoso o repreendeu: \"Você não tem nem temor de Deus, estando debaixo da mesma sentença de morte?",
           "R": "Mas o outro criminoso disse que ele estava errado. Ele disse: \"Você devia ter medo de Deus! Você está sendo castigado com a mesma morte que {{deity_pronoun:ele|Ele}}."
+        },
+        "am": {
+          "L": "ሌላው ግን መልሶ እየገሠጸው እንዲህ አለ፦ «አንተ በዚያው ፍርድ ሥር ሆነህ እግዚአብሔርን እንኳ አትፈራምን?",
+          "B": "ሌላው ወንጀለኛ ግን ገሠጸው፦ «አንተ በዚያው የሞት ፍርድ ሥር ሆነህ እግዚአብሔርን እንኳ አትፈራም?",
+          "R": "ሌላው ወንጀለኛ ግን ስሕተቱን ነገረው። እንዲህም አለ፦ «እግዚአብሔርን ልትፈራ ይገባ ነበር! ከእርሱ ጋር አንድ ዓይነት የሞት ቅጣት እየተቀጣህ ነው።"
         }
       },
       "decisions": [
@@ -7835,6 +8291,11 @@
           "L": "E nós, de fato, com justiça [sofremos], pois estamos recebendo o que merecem as coisas que fizemos; mas este não fez nada de impróprio.\"",
           "B": "Para nós isso é justo: estamos pagando o preço merecido pelo que fizemos. Mas este homem não fez nada de mau.\"",
           "R": "Nós merecemos ser castigados. Estamos recebendo o que merecemos pelas coisas que fizemos. Mas este homem não fez nada de errado.\""
+        },
+        "am": {
+          "L": "እኛስ በትክክል [እንቀጣለን]፤ ላደረግነው የሚገባውን እንቀበላለንና፤ ይህ ግን ምንም ያልተገባ ነገር አላደረገም።»",
+          "B": "ለእኛስ ይገባናል፤ ስላደረግነው ነገር ተገቢውን ቅጣት እየተቀበልን ነው። ይህ ሰው ግን ምንም ስሕተት አላደረገም።»",
+          "R": "እኛ መቀጣት ይገባናል። ባደረግነው ነገር የሚገባንን እያገኘን ነው። ይህ ሰው ግን ምንም መጥፎ ነገር አላደረገም።»"
         }
       },
       "decisions": [
@@ -8011,6 +8472,11 @@
           "L": "E dizia: \"Jesus, lembra-{{deity_pronoun:te|Te}} de mim quando vieres no {{deity_pronoun:teu|Teu}} Reino.\"",
           "B": "Depois disse: \"Jesus, lembra-{{deity_pronoun:te|Te}} de mim quando vieres no {{deity_pronoun:teu|Teu}} Reino.\"",
           "R": "Depois ele disse: \"Jesus, por favor, lembra-{{deity_pronoun:te|Te}} de mim quando vieres como rei.\""
+        },
+        "am": {
+          "L": "እንዲህም ይል ነበር፦ «ኢየሱስ ሆይ፣ በመንግሥትህ በምትመጣበት ጊዜ አስበኝ።»",
+          "B": "ከዚያም፦ «ኢየሱስ ሆይ፣ በመንግሥትህ በምትመጣበት ጊዜ አስታውሰኝ» አለ።",
+          "R": "ከዚያም፦ «ኢየሱስ ሆይ፣ እባክህ ንጉሥ ሆነህ በምትመጣበት ጊዜ አስታውሰኝ» አለ።"
         }
       },
       "decisions": [
@@ -8244,6 +8710,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} lhe disse: \"Em verdade eu lhe digo: hoje você estará {{deity_pronoun:comigo|Comigo}} no paraíso.\"",
           "B": "Jesus lhe respondeu: \"Em verdade eu lhe digo: hoje mesmo você estará {{deity_pronoun:comigo|Comigo}} no paraíso.\"",
           "R": "Jesus respondeu: \"Eu garanto a você: antes de este dia terminar, você vai estar {{deity_pronoun:comigo|Comigo}} no paraíso.\""
+        },
+        "am": {
+          "L": "እርሱም፦ «እውነት እልሃለሁ፤ ዛሬ ከእኔ ጋር በገነት ትሆናለህ» አለው።",
+          "B": "ኢየሱስም፦ «እውነት እልሃለሁ፤ ዛሬውኑ ከእኔ ጋር በገነት ትሆናለህ» ብሎ መለሰለት።",
+          "R": "ኢየሱስም፦ «እውነቱን እነግርሃለሁ፤ ይህ ቀን ሳያልፍ ከእኔ ጋር በገነት ትሆናለህ» ብሎ መለሰለት።"
         }
       },
       "decisions": [
@@ -8520,6 +8991,50 @@
           "reason": "The book-wide formula (style section 6) in its form for one person: Jesus says \"você\" to the criminal, as he does to anyone, so \"lhe\", not \"te\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023043004",
+            "n42023043005",
+            "n42023043006"
+          ],
+          "choice": "\"እውነት እልሃለሁ\" (L, B); \"እውነቱን እነግርሃለሁ\" (R), in the singular",
+          "alternatives": [
+            "The plural \"እውነት እላችኋለሁ\" of the sayings to the disciples"
+          ],
+          "reason": "The book-wide formula for \"Truly I tell you\", here with the singular \"you\" because Jesus speaks to one man.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023043013"
+          ],
+          "choice": "\"ገነት\" (paradise)",
+          "alternatives": [
+            "\"የጻድቃን ማረፊያ\" (the resting place of the righteous)"
+          ],
+          "reason": "\"ገነት\" is the Amharic word for the garden of Eden and for the place of the righteous with God, which is what the Greek word means here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8599,6 +9114,11 @@
           "L": "E já era quase a hora sexta, e houve trevas sobre toda a terra até a hora nona, \\v 45 tendo faltado [a luz do] sol; e o véu do santuário se rasgou ao meio.",
           "B": "Já era quase meio-dia quando a escuridão cobriu toda a terra, e ela durou até as três da tarde. \\v 45 A luz do sol faltou, e o véu do santuário se rasgou pelo meio.",
           "R": "Era mais ou menos meio-dia. Então toda a terra ficou escura, e continuou escura até as três horas da tarde. \\v 45 A luz do sol sumiu. E a cortina pesada do templo se rasgou bem no meio."
+        },
+        "am": {
+          "L": "ጊዜውም አሁን ስድስተኛው ሰዓት ገደማ ነበር፤ እስከ ዘጠነኛውም ሰዓት ድረስ በምድሩ ሁሉ ላይ ጨለማ ሆነ፤ \\v 45 የፀሐይ [ብርሃን] ጠፍቶ ነበርና፤ የቤተ መቅደሱም መጋረጃ በመካከሉ ተቀደደ።",
+          "B": "ጊዜው ከቀኑ ስድስት ሰዓት ገደማ ነበር፤ በምድሩም ሁሉ ላይ ጨለማ ሆነ፤ እስከ ዘጠኝ ሰዓትም ቆየ። \\v 45 የፀሐይ ብርሃን ጠፋ፤ የቤተ መቅደሱም መጋረጃ ከመካከሉ ለሁለት ተቀደደ።",
+          "R": "ጊዜው እኩለ ቀን ገደማ፣ ከቀኑ ስድስት ሰዓት ነበር። በዚያን ጊዜ ምድሩ ሁሉ ጨለመ፤ እስከ ቀኑ ዘጠኝ ሰዓት ድረስ ጨለማ ሆኖ ቆየ። \\v 45 የፀሐይ ብርሃን ጠፋ። በቤተ መቅደሱ ውስጥ ያለው ወፍራሙ መጋረጃም ከመካከሉ ለሁለት ተቀደደ።"
         }
       },
       "decisions": [
@@ -8895,6 +9415,52 @@
           "reason": "The words of the Korean Mark 15:38 for the curtain of the sanctuary (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023044005",
+            "n42023044006",
+            "n42023044015",
+            "n42023044016"
+          ],
+          "choice": "\"ስድስተኛው ሰዓት ... ዘጠነኛው ሰዓት\" (L); \"ከቀኑ ስድስት ሰዓት ... ዘጠኝ ሰዓት\" (B, R), with \"እኩለ ቀን\" (R)",
+          "alternatives": [
+            "Western clock times, noon and three o'clock"
+          ],
+          "reason": "The Greek counts the hours from sunrise, as Ethiopians do, so Balanced and Readable can give the time as Amharic readers tell it, as in Matthew 27:45.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023044007",
+            "n42023044009"
+          ],
+          "choice": "\"የቤተ መቅደሱ መጋረጃ\" at every level",
+          "alternatives": [
+            "\"የመቅደሱ መጋረጃ\" (the sanctuary's curtain)"
+          ],
+          "reason": "\"ቤተ መቅደስ\" names both the temple and its sanctuary building, and it is the wording of Matthew 27:51 for the same Greek words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8962,6 +9528,11 @@
           "L": "E Jesus, clamando em alta voz, disse: \"Pai, às {{deity_pronoun:tuas|Tuas}} mãos confio o {{deity_pronoun:meu|Meu}} espírito.\"",
           "B": "Então Jesus clamou em alta voz: \"Pai, eu ponho o {{deity_pronoun:meu|Meu}} espírito nas {{deity_pronoun:tuas|Tuas}} mãos.\"",
           "R": "Então Jesus gritou: \"Pai, eu entrego o {{deity_pronoun:meu|Meu}} espírito aos {{deity_pronoun:teus|Teus}} cuidados!\""
+        },
+        "am": {
+          "L": "ኢየሱስም በታላቅ ድምፅ ጮኾ፦ «አባት ሆይ፣ በእጆችህ መንፈሴን አደራ እሰጣለሁ» አለ።",
+          "B": "ከዚያም ኢየሱስ በታላቅ ድምፅ ጮኾ፦ «አባት ሆይ፣ መንፈሴን በእጆችህ አደራ እሰጣለሁ» አለ።",
+          "R": "ከዚያም ኢየሱስ ድምፁን ከፍ አድርጎ፦ «አባት ሆይ፣ መንፈሴን አንተ እንድትጠብቀው አደራ እሰጥሃለሁ!» ብሎ ጮኸ።"
         }
       },
       "decisions": [
@@ -9162,6 +9733,27 @@
           "reason": "Korean addresses the Father by title, not \"당신\"; Readable says \"to you\" without the picture of hands, as the English Readable does. \"영\" keeps the words of Psalm 31 (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023046012"
+          ],
+          "choice": "\"አደራ እሰጣለሁ\" (I entrust, give into safekeeping)",
+          "alternatives": [
+            "\"እሰጣለሁ\" (I give)"
+          ],
+          "reason": "\"አደራ\" is something handed over to be kept safe and returned, which is the sense of the Greek verb and of Psalm 31.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9218,6 +9810,11 @@
           "L": "E, tendo dito isso, {{deity_pronoun:ele|Ele}} expirou.",
           "B": "Com essas palavras, {{deity_pronoun:ele|Ele}} deu o {{deity_pronoun:seu|Seu}} último suspiro.",
           "R": "Depois de dizer isso, {{deity_pronoun:ele|Ele}} morreu."
+        },
+        "am": {
+          "L": "ይህንም ብሎ [የመጨረሻ] እስትንፋሱን ተነፈሰ።",
+          "B": "ይህንም ብሎ የመጨረሻ እስትንፋሱን ተነፈሰ።",
+          "R": "ይህን ከተናገረ በኋላ ሞተ።"
         }
       },
       "decisions": [
@@ -9365,6 +9962,11 @@
           "L": "E o centurião, vendo o que tinha acontecido, glorificava a Deus, dizendo: \"Certamente este homem era justo.\"",
           "B": "O centurião viu o que tinha acontecido e deu glória a Deus, dizendo: \"Este homem era mesmo justo.\"",
           "R": "O oficial romano viu o que tinha acontecido. Ele deu glória a Deus e disse: \"Este homem era mesmo justo. Ele não tinha feito nada de errado!\""
+        },
+        "am": {
+          "L": "የመቶ አለቃውም የሆነውን አይቶ፦ «ይህ ሰው በእውነት ጻድቅ ነበር» እያለ እግዚአብሔርን ያከብር ጀመር።",
+          "B": "የመቶ አለቃው የሆነውን ነገር አይቶ፦ «ይህ ሰው በእውነት ጻድቅ ነበር» ብሎ እግዚአብሔርን አከበረ።",
+          "R": "የሮማውያን ወታደሮች አለቃ የሆነውን ነገር አየ። እግዚአብሔርንም አከበረ፤ እንዲህም አለ፦ «ይህ ሰው በእርግጥ ጻድቅ ነበር። ምንም በደል አላደረገም!»"
         }
       },
       "decisions": [
@@ -9689,6 +10291,11 @@
           "L": "E todas as multidões que tinham se reunido para este espetáculo, vendo as coisas que tinham acontecido, voltavam batendo no peito.",
           "B": "Todas as multidões que tinham se juntado para ver aquele espetáculo viram o que tinha acontecido e voltaram para casa batendo no peito.",
           "R": "Muita gente tinha vindo ver tudo aquilo. Quando viram o que aconteceu, voltaram para casa batendo no peito de tristeza."
+        },
+        "am": {
+          "L": "ይህንንም ትዕይንት ለማየት የተሰበሰቡ ሕዝብ ሁሉ የሆነውን ነገር አይተው ደረታቸውን እየመቱ ይመለሱ ነበር።",
+          "B": "ይህን ትዕይንት ለማየት ተሰብስበው የነበሩት ሕዝብ ሁሉ የሆነውን ባዩ ጊዜ ደረታቸውን እየመቱ ወደ ቤታቸው ተመለሱ።",
+          "R": "ብዙ ሕዝብ ይህን ለማየት መጥቶ ነበር። የሆነውን ባዩ ጊዜ በሐዘን ደረታቸውን እየመቱ ወደ ቤታቸው ሄዱ።"
         }
       },
       "decisions": [
@@ -9844,6 +10451,11 @@
           "L": "E todos os conhecidos {{deity_pronoun:dele|Dele}} estavam de longe, e [as] mulheres que {{deity_pronoun:o|O}} tinham seguido desde a Galileia, vendo estas coisas.",
           "B": "Todos os que {{deity_pronoun:o|O}} conheciam ficaram de longe. As mulheres que tinham vindo com {{deity_pronoun:ele|Ele}} da Galileia também estavam ali e viram essas coisas.",
           "R": "Todos os amigos de Jesus estavam lá longe. As mulheres que tinham seguido Jesus desde a Galileia também estavam ali. Elas viram tudo o que aconteceu."
+        },
+        "am": {
+          "L": "የሚያውቁት ሁሉና ከገሊላ ጀምሮ የተከተሉት ሴቶችም ይህን እያዩ በሩቅ ቆመው ነበር።",
+          "B": "የሚያውቁት ሁሉ በሩቅ ቆመው ነበር። ከገሊላ ጀምሮ ከእርሱ ጋር የመጡት ሴቶችም በዚያ ቆመው ይህን ሁሉ ተመለከቱ።",
+          "R": "የኢየሱስ ወዳጆች ሁሉ በሩቅ ቆመው ነበር። ከገሊላ ጀምሮ የተከተሉት ሴቶችም በዚያ ነበሩ። የሆነውን ሁሉ ተመለከቱ።"
         }
       },
       "decisions": [
@@ -10058,6 +10670,11 @@
           "L": "E eis que [havia] um homem chamado José, que era conselheiro, homem bom e justo \\v 51 (ele não tinha concordado com o plano e a ação deles), de Arimateia, cidade dos judeus, que esperava o Reino de Deus. \\v 52 Este foi a Pilatos e pediu o corpo de Jesus \\v 53 e, tendo-[o] descido, envolveu-o num lençol de linho e {{deity_pronoun:o|O}} pôs num sepulcro escavado na rocha, onde ninguém ainda tinha sido posto.",
           "B": "Havia um homem chamado José, membro do Sinédrio, homem bom e justo, \\v 51 que não tinha concordado com o que o Sinédrio planejou e fez. Ele era de Arimateia, uma cidade dos judeus, e esperava o Reino de Deus. \\v 52 Ele foi a Pilatos e pediu o corpo de Jesus. \\v 53 Desceu o corpo da cruz e o envolveu num lençol de linho. Depois {{deity_pronoun:o|O}} colocou num sepulcro escavado na rocha, onde ninguém tinha sido sepultado ainda.",
           "R": "Havia um homem chamado José. Ele era membro do conselho dos líderes judeus. Era um homem bom, que fazia o que era certo aos olhos de Deus. \\v 51 Ele não tinha concordado com o plano dos outros líderes nem com o que eles tinham feito. Ele era de Arimateia, uma cidade dos judeus, e esperava que Deus estabelecesse o Reino {{deity_pronoun:dele|Dele}}. \\v 52 José foi até Pilatos e pediu o corpo de Jesus. \\v 53 Ele tirou o corpo da cruz e o enrolou num pano de linho. Depois {{deity_pronoun:o|O}} colocou num túmulo que tinha sido cavado na rocha. Ninguém tinha sido sepultado ali antes."
+        },
+        "am": {
+          "L": "እነሆም፣ የሸንጎ አባል የሆነ ዮሴፍ የሚባል አንድ ሰው [ነበረ]፤ እርሱም መልካምና ጻድቅ ሰው ነበረ። \\v 51 (እርሱም በምክራቸውና በሥራቸው አልተስማማም ነበር።) እርሱም የአይሁድ ከተማ ከሆነችው ከአርማትያስ ነበረ፤ የእግዚአብሔርንም መንግሥት ይጠባበቅ ነበር። \\v 52 ይህ [ሰው] ወደ ጲላጦስ ቀርቦ የኢየሱስን ሥጋ ለመነ፤ \\v 53 አውርዶም በበፍታ ጠቀለለው፤ ገና ማንም ባልተቀበረበት ከዓለት በተወቀረ መቃብርም አኖረው።",
+          "B": "የሸንጎው አባል የሆነ ዮሴፍ የሚባል አንድ ሰው ነበረ፤ እርሱም መልካምና ጻድቅ ሰው ነበረ። \\v 51 ሸንጎው ባቀደውና ባደረገው ነገር አልተስማማም ነበር። እርሱም የአይሁድ ከተማ ከሆነችው ከአርማትያስ ነበረ፤ የእግዚአብሔርንም መንግሥት ይጠባበቅ ነበር። \\v 52 እርሱም ወደ ጲላጦስ ሄዶ የኢየሱስን ሥጋ ለመነ። \\v 53 ሥጋውንም ከመስቀል አውርዶ በበፍታ ጨርቅ ገነዘው። ከዚያም ከዓለት ተወቅሮ በተሠራና ማንም ገና ባልተቀበረበት መቃብር አኖረው።",
+          "R": "ዮሴፍ የሚባል አንድ ሰው ነበረ። እርሱም የአይሁድ ሸንጎ አባል ነበረ። በእግዚአብሔር ፊት ትክክል የሆነውን የሚያደርግ መልካም ሰው ነበረ። \\v 51 ሌሎቹ መሪዎች ባቀዱትና ባደረጉት ነገር አልተስማማም ነበር። እርሱም የአይሁድ ከተማ ከሆነችው ከአርማትያስ የመጣ ነበረ፤ እግዚአብሔር መንግሥቱን እስኪመሠርት ድረስ ይጠባበቅ ነበር። \\v 52 ዮሴፍ ወደ ጲላጦስ ሄዶ የኢየሱስን አስከሬን ለመነ። \\v 53 አስከሬኑን ከመስቀል አውርዶ በበፍታ ጨርቅ ጠቀለለው። ከዚያም ከዓለት ተወቅሮ በተሠራ መቃብር ውስጥ አኖረው። ከዚያ በፊት በዚያ መቃብር ማንም ተቀብሮ አያውቅም።"
         }
       },
       "decisions": [
@@ -10449,6 +11066,46 @@
           "reason": "Literal keeps the single noun of the Greek, as Mark 15:43 does. Balanced and Readable say which council: the Sinédrio (B) and \"o conselho dos líderes judeus\" (R), the book-wide terms of style section 6; Balanced then says \"o que o Sinédrio planejou\" where the English says \"what the council planned\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023050006"
+          ],
+          "choice": "\"የሸንጎ አባል\" (a member of the council)",
+          "alternatives": [
+            "\"አማካሪ\" (counsellor)"
+          ],
+          "reason": "He sat on the Jewish council, the body Matthew 26:59 calls \"ሸንጎ\"; the Amharic says so at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42023050011"
+          ],
+          "choice": "\"በእግዚአብሔር ፊት ትክክል የሆነውን የሚያደርግ\" for \"righteous\" (R)",
+          "alternatives": [
+            "\"ጻድቅ\" (the key term, kept at L and B)"
+          ],
+          "reason": "Here the word describes a man's conduct, so Readable spells it out, as the style guide allows for this key term and as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10508,6 +11165,11 @@
           "L": "E era [o] dia da Preparação, e o sábado começava a raiar.",
           "B": "Era o dia da Preparação, e o sábado estava para começar.",
           "R": "Era sexta-feira, o dia em que as pessoas se preparavam para o sábado. O sábado ia começar ao pôr do sol."
+        },
+        "am": {
+          "L": "ቀኑም የዝግጅት ቀን ነበረ፤ ሰንበትም ሊጀምር ነበር።",
+          "B": "ቀኑ የዝግጅት ቀን ነበረ፤ ሰንበትም እየደረሰ ነበር።",
+          "R": "ቀኑ ዓርብ ነበር፤ ሰዎች ለሰንበት የሚዘጋጁበት ቀን ነው። ሰንበት ፀሐይ ስትጠልቅ ይጀምር ነበር።"
         }
       },
       "decisions": [
@@ -10725,6 +11387,11 @@
           "L": "E as mulheres que tinham vindo com {{deity_pronoun:ele|Ele}} da Galileia seguiram atrás e viram o sepulcro e como o {{deity_pronoun:seu|Seu}} corpo foi colocado, \\v 56 e, voltando, prepararam especiarias e perfumes.",
           "B": "As mulheres que tinham vindo com {{deity_pronoun:ele|Ele}} da Galileia acompanharam José. Viram o sepulcro e como o corpo {{deity_pronoun:dele|Dele}} foi colocado ali. \\v 56 Depois voltaram e prepararam especiarias e óleos perfumados.",
           "R": "As mulheres que tinham vindo com Jesus da Galileia seguiram José. Viram o túmulo e como o corpo de Jesus foi colocado nele. \\v 56 Depois foram para casa e prepararam especiarias e óleos de cheiro agradável para passar no corpo."
+        },
+        "am": {
+          "L": "ከእርሱም ጋር ከገሊላ የመጡት ሴቶች ተከትለው መቃብሩንና ሥጋው እንዴት እንደ ተቀመጠ አዩ፤ \\v 56 ተመልሰውም ቅመማ ቅመምና ሽቱ አዘጋጁ።",
+          "B": "ከእርሱ ጋር ከገሊላ የመጡት ሴቶች ዮሴፍን ተከተሉት፤ መቃብሩንና ሥጋው በዚያ እንዴት እንደ ተቀመጠ አዩ። \\v 56 ከዚያም ተመልሰው ቅመማ ቅመምና ሽቱ አዘጋጁ።",
+          "R": "ከኢየሱስ ጋር ከገሊላ የመጡት ሴቶች ዮሴፍን ተከተሉት። መቃብሩንና የኢየሱስ አስከሬን እንዴት እንደ ተቀመጠ አዩ። \\v 56 ከዚያም ወደ ቤታቸው ሄደው በአስከሬኑ ላይ የሚያደርጉትን መዓዛ ያለው ቅመምና ዘይት አዘጋጁ።"
         }
       },
       "decisions": [
@@ -10914,6 +11581,11 @@
           "L": "E no sábado descansaram, segundo o mandamento.",
           "B": "No sábado elas descansaram, como o mandamento exigia.",
           "R": "No dia de sábado elas descansaram, como a Lei de Deus mandava."
+        },
+        "am": {
+          "L": "በሰንበትም እንደ ትእዛዙ ዐረፉ።",
+          "B": "በሰንበትም ትእዛዙ እንደሚያዝዘው ዐረፉ።",
+          "R": "በሰንበት ቀን የእግዚአብሔር ሕግ እንደሚያዝዘው ዐረፉ።"
         }
       },
       "decisions": [
