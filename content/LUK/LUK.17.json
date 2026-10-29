@@ -66,6 +66,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} disse aos {{deity_pronoun:seus|Seus}} discípulos: \"É impossível que não venham as ocasiões de tropeço, mas ai [daquele] por meio de quem elas vêm!",
           "B": "Jesus disse aos {{deity_pronoun:seus|Seus}} discípulos: \"As armadilhas que fazem as pessoas tropeçar e cair no pecado certamente virão. Mas ai de quem as provocar!",
           "R": "Jesus disse aos {{deity_pronoun:seus|Seus}} discípulos: \"Sempre vai haver coisas que levam as pessoas a pecar. Mas que terrível vai ser para quem causar essas coisas!"
+        },
+        "am": {
+          "L": "ለደቀ መዛሙርቱም እንዲህ አለ፦ «ማሰናከያዎች እንዳይመጡ አይቻልም፤ ነገር ግን ማሰናከያው በእርሱ በኩል ለሚመጣ [ሰው] ወዮለት!",
+          "B": "ኢየሱስ ለደቀ መዛሙርቱ እንዲህ አለ፦ «ሰዎችን የሚያሰናክሉና ወደ ኃጢአት የሚመሩ ነገሮች መምጣታቸው አይቀርም። ነገር ግን እነርሱን ለሚያመጣ ሰው ወዮለት!",
+          "R": "ኢየሱስ ለደቀ መዛሙርቱ እንዲህ አላቸው፦ «ሰዎችን ኃጢአት እንዲሠሩ የሚያደርጉ ነገሮች ሁልጊዜ ይኖራሉ። ነገር ግን እነዚህን ነገሮች ለሚያመጣ ሰው ምንኛ አስከፊ ይሆንበታል!"
         }
       },
       "decisions": [
@@ -374,6 +379,50 @@
           "reason": "Portuguese \"ai de\" is still a living cry of grief and warning, unlike English \"woe\", so Balanced keeps it (docs/portuguese-style.md, section 6), as in Matthew 18:7; Readable follows the English \"how terrible\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42017001005",
+            "n42017001006"
+          ],
+          "choice": "no deity_pronoun spans in Amharic: \"ደቀ መዛሙርቱ\" (his disciples) is written once",
+          "alternatives": [
+            "a deity_pronoun span on each pronoun"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the deity_pronoun setting has nothing to change in Amharic. This holds for the whole of Luke 17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017001011",
+            "n42017001015"
+          ],
+          "choice": "ማሰናከያዎች (stumbling blocks, L); ወዮለት (woe to him, L, B); ምንኛ አስከፊ ይሆንበታል (how terrible it will be for him, R)",
+          "alternatives": [
+            "ወጥመዶች (snares)"
+          ],
+          "reason": "As in Matthew 18:7: \"ወዮ\" is the Amharic cry of grief and warning; Balanced and Readable say what the stumbling blocks do, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -448,6 +497,11 @@
           "L": "Seria melhor para ele que uma pedra de moinho lhe fosse pendurada ao pescoço e ele fosse lançado ao mar, do que fazer tropeçar um destes pequeninos.",
           "B": "Seria melhor para essa pessoa ser lançada ao mar com uma pedra de moinho amarrada ao pescoço do que levar a pecar um destes pequeninos.",
           "R": "Seria melhor para essa pessoa ter uma pedra pesada amarrada no pescoço e ser jogada no mar. Isso seria melhor do que fazer um destes pequeninos pecar."
+        },
+        "am": {
+          "L": "የወፍጮ ድንጋይ በአንገቱ ተንጠልጥሎ ወደ ባሕር ቢጣል፣ ከእነዚህ ከታናናሾቹ አንዱን ከሚያሰናክል ይሻለዋል።",
+          "B": "ከእነዚህ ታናናሾች አንዱን ከሚያሰናክል ይልቅ የወፍጮ ድንጋይ በአንገቱ ታሥሮ ወደ ባሕር ቢጣል ይሻለዋል።",
+          "R": "ትልቅ ድንጋይ በአንገቱ ታሥሮ ወደ ባሕር ቢወረወር ይሻለዋል። ይህ ከእነዚህ ታናናሾች አንዱን ኃጢአት እንዲሠራ ከማድረግ ይሻላል።"
         }
       },
       "decisions": [
@@ -730,6 +784,50 @@
           "reason": "As in Matthew 18:6: \"pequeninos\" plainly means people, the humble disciples of m2, where \"estes pequenos\" reads as an adjective waiting for its noun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42017002002",
+            "n42017002010"
+          ],
+          "choice": "ይሻለዋል, በአንገቱ (for him, his neck), with no gender span",
+          "alternatives": [
+            "gender spans on the pronouns, as the English that person/him"
+          ],
+          "reason": "The pronouns are suffixes whose masculine form is also Amharic's general one for anyone, so there is no second wording for the setting to switch to; this holds for the general sayings of this chapter (17:4, 31, 33).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017002020",
+            "n42017002021"
+          ],
+          "choice": "ታናናሾች (little ones, the lowly)",
+          "alternatives": [
+            "ትንንሽ ልጆች (small children)"
+          ],
+          "reason": "As in Matthew 18:6: the word covers the lowly disciples the meaning decision describes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -784,6 +882,11 @@
           "L": "Tenham cuidado com vocês mesmos.",
           "B": "Fiquem atentos.",
           "R": "Por isso, tomem cuidado com o que vocês fazem."
+        },
+        "am": {
+          "L": "ለራሳችሁ ተጠንቀቁ።",
+          "B": "ራሳችሁን ጠብቁ።",
+          "R": "ስለዚህ በምታደርጉት ነገር ተጠንቀቁ።"
         }
       },
       "decisions": [
@@ -908,6 +1011,11 @@
           "L": "Se o seu {{gender:irmão ou irmã|irmão}} pecar, {{gender:repreenda essa pessoa|repreenda-o}}; e, se {{gender:ela|ele}} se arrepender, perdoe-lhe.",
           "B": "Quando o seu {{gender:irmão ou irmã|irmão}} fizer algo errado, {{gender:chame a atenção dessa pessoa|chame a atenção dele}}. E, se {{gender:ela|ele}} se arrepender, perdoe-lhe.",
           "R": "Se o seu {{gender:irmão ou irmã|irmão}} pecar, diga a {{gender:essa pessoa|ele}} que isso está errado. Se {{gender:ela|ele}} se afastar do pecado, perdoe."
+        },
+        "am": {
+          "L": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}} ኃጢአት ቢሠራ ገሥጸው፤ ንስሓ ቢገባም ይቅር በለው።",
+          "B": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}} ስሕተት ቢሠራ አስጠንቅቀው። ንስሓ ከገባም ይቅር በለው።",
+          "R": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}} ኃጢአት ቢሠራ የሠራው ስሕተት መሆኑን ንገረው። ከኃጢአቱ ቢመለስ ይቅር በለው።"
         }
       },
       "decisions": [
@@ -1224,6 +1332,28 @@
           "reason": "As in Matthew 18:15: the default is \"irmão ou irmã\" (m1), and the person is then \"essa pessoa\", \"ela\", with the traditional \"o\", \"ele\" as the alternative; the whole verb phrase goes under the setting where the clitic changes (\"repreenda essa pessoa|repreenda-o\"). \"Perdoe-lhe\" is the same for a man or a woman, so it needs no setting though the English has one; Readable says \"perdoe\" alone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42017003006",
+            "n42017003007"
+          ],
+          "choice": "{{gender:ወንድምህ ወይም እኅትህ|ወንድምህ}}; the pronouns with no span",
+          "alternatives": [
+            "spans on the pronouns too"
+          ],
+          "reason": "As in Matthew 18:15: the noun for a fellow believer takes the gender span, and the pronouns that follow are verb suffixes whose masculine form is also the general one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1293,6 +1423,11 @@
           "L": "E, se sete vezes no dia {{gender:ela|ele}} pecar contra você e sete vezes voltar a você, dizendo: 'Eu me arrependo', você lhe perdoará.\"",
           "B": "Ainda que {{gender:ela|ele}} ofenda você sete vezes no mesmo dia e sete vezes volte e diga: 'Eu me arrependo', perdoe-lhe.\"",
           "R": "Talvez {{gender:ela|ele}} peque contra você sete vezes num só dia, e sete vezes venha dizer a você: 'Desculpe. Eu vou mudar.' Mesmo assim, você deve perdoar cada vez.\""
+        },
+        "am": {
+          "L": "በቀን ሰባት ጊዜ ቢበድልህ፣ ሰባት ጊዜም ወደ አንተ ተመልሶ፦ “ንስሓ ገብቻለሁ” ቢልህ ይቅር ትለዋለህ።»",
+          "B": "በአንድ ቀን ሰባት ጊዜ ሊበድልህ፣ ሰባት ጊዜም ተመልሶ “ንስሓ ገብቻለሁ” ሊልህ ይችላል። ቢሆንም ይቅር በለው።»",
+          "R": "ምናልባት በአንድ ቀን ሰባት ጊዜ ይበድልህ ይሆናል። ሰባት ጊዜም ወደ አንተ ተመልሶ “አዝናለሁ፤ እለወጣለሁ” ይልህ ይሆናል። አንተም ሁልጊዜ ይቅር ልትለው ይገባል።»"
         }
       },
       "decisions": [
@@ -1465,6 +1600,11 @@
           "L": "E os apóstolos disseram ao Senhor: \"Acrescenta-nos fé!\"",
           "B": "Os apóstolos disseram ao Senhor: \"Aumenta a nossa fé!\"",
           "R": "Os apóstolos disseram ao Senhor Jesus: \"Torna a nossa fé mais forte!\""
+        },
+        "am": {
+          "L": "ሐዋርያትም ጌታን፦ «እምነት ጨምርልን» አሉት።",
+          "B": "ሐዋርያትም ጌታን «እምነታችንን ጨምርልን!» አሉት።",
+          "R": "ሐዋርያትም ጌታ ኢየሱስን «እምነታችንን አጠንክርልን!» አሉት።"
         }
       },
       "decisions": [
@@ -1657,6 +1797,11 @@
           "L": "E o Senhor disse: \"Se vocês tivessem fé como um grão de mostarda, diriam a esta amoreira: 'Arranque-se pela raiz e plante-se no mar', e ela obedeceria a vocês.",
           "B": "O Senhor respondeu: \"Se vocês tivessem fé do tamanho de uma semente de mostarda, poderiam dizer a esta amoreira: 'Arranque-se pela raiz e plante-se no mar', e ela faria o que vocês mandassem.",
           "R": "O Senhor respondeu: \"Mesmo que a fé de vocês fosse só do tamanho de uma sementinha de mostarda, vocês poderiam dizer a esta árvore: 'Saia do chão com raiz e tudo e vá crescer no mar!' E a árvore obedeceria a vocês."
+        },
+        "am": {
+          "L": "ጌታም እንዲህ አለ፦ «የሰናፍጭ ቅንጣት የምታክል እምነት ቢኖራችሁ ይህን የእንጆሪ ዛፍ፦ “ተነቀልና በባሕር ውስጥ ተተከል” ባላችሁት ነበር፤ እርሱም በታዘዘላችሁ ነበር።",
+          "B": "ጌታም እንዲህ ሲል መለሰ፦ «የሰናፍጭ ቅንጣት የምታክል እምነት ቢኖራችሁ ኖሮ ይህን የእንጆሪ ዛፍ፦ “ከሥርህ ተነቅለህ በባሕር ውስጥ ተተከል” ልትሉት ትችሉ ነበር፤ እርሱም የምትሉትን ያደርግ ነበር።",
+          "R": "ጌታም እንዲህ ብሎ መለሰ፦ «እምነታችሁ እንደ ትንሿ የሰናፍጭ ቅንጣት ብቻ ብትሆን እንኳ ይህን ዛፍ፦ “ሥርህን ከመሬት ነቅለህ ሂድና ራስህን በባሕር ውስጥ ትከል!” ልትሉት ትችሉ ነበር። ዛፉም ይታዘዛችሁ ነበር።"
         }
       },
       "decisions": [
@@ -1916,6 +2061,50 @@
           "reason": "A command to a tree takes the form Jesus uses to one hearer, \"você\" (docs/portuguese-style.md, section 4), as when he speaks to the fig tree (Matthew 21:19; Mark 11:14).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017006014"
+          ],
+          "choice": "የእንጆሪ ዛፍ (mulberry tree, L, B); ዛፍ (tree, R)",
+          "alternatives": [
+            "ሾላ (sycamore fig)"
+          ],
+          "reason": "\"እንጆሪ\" is the mulberry; \"ሾላ\" is a fig tree and would confuse it with the sycomore of 19:4. Readable says \"tree\" as the English does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42017006011",
+            "n42017006012",
+            "n42017006023",
+            "n42017006024"
+          ],
+          "choice": "ባላችሁት ነበር ... በታዘዘላችሁ ነበር (you would have said ... it would have obeyed)",
+          "alternatives": [
+            "a plain future"
+          ],
+          "reason": "The Amharic unreal conditional keeps the Greek form that does not match the facts as they are (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2010,6 +2199,11 @@
           "L": "Quem de vocês, tendo um escravo que ara a terra ou pastoreia ovelhas, lhe dirá, quando ele voltar do campo: 'Venha logo e recline-se [à mesa]'? \\v 8 Pelo contrário, não lhe dirá: 'Prepare-me algo para jantar, cinja-se e sirva-me enquanto eu como e bebo; e depois disso você comerá e beberá'?",
           "B": "Imaginem que um de vocês tem um servo que esteve arando a terra ou cuidando das ovelhas. Quando ele chega do campo, será que você vai lhe dizer: 'Venha logo e sente-se à mesa'? \\v 8 Em vez disso, você não vai dizer: 'Prepare o meu jantar. Depois ponha o avental e sirva-me enquanto eu como e bebo. Você pode comer e beber depois'?",
           "R": "Imaginem que um de vocês tem um servo que trabalha no campo, arando a terra ou cuidando das ovelhas. Quando o servo chega do trabalho, você não diz a ele: 'Venha logo sentar e comer.' \\v 8 Em vez disso, você diz: 'Prepare o meu jantar. Vista a roupa de trabalho e sirva-me enquanto eu como e bebo. Depois disso você pode fazer a sua refeição.'"
+        },
+        "am": {
+          "L": "ከእናንተ ደግሞ የሚያርስ ወይም የሚያግድ ባሪያ ያለው፣ ከእርሻ በገባ ጊዜ፦ “ፈጥነህ ቀርበህ [ለማዕድ] ተቀመጥ” የሚለው ማን ነው? \\v 8 ይልቁንም፦ “የምበላውን አዘጋጅልኝ፤ እስክበላና እስክጠጣም ድረስ ታጥቀህ አገልግለኝ፤ ከዚያ በኋላ አንተ ትበላለህ፤ ትጠጣለህም” አይለውምን?",
+          "B": "ከእናንተ አንዱ በማረስ ወይም በጎችን በመጠበቅ የሚሠራ ባሪያ አለው እንበል። ባሪያው ከእርሻ ሲገባ “ቶሎ ና፤ ለማዕድ ተቀመጥ” ይለዋልን? \\v 8 ይልቁንም “የምበላውን አዘጋጅልኝ። ከዚያም ሽርጥህን ታጥቀህ እስክበላና እስክጠጣ ድረስ አስተናግደኝ። አንተ ከዚያ በኋላ ትበላለህ፤ ትጠጣለህም” አይለውምን?",
+          "R": "ከእናንተ አንዱ በእርሻ የሚሠራ፣ የሚያርስ ወይም በጎችን የሚጠብቅ ባሪያ አለው እንበል። ባሪያው ከሥራ ሲገባ ጌታው “አሁኑኑ ና፤ ተቀምጠህ ብላ” አይለውም። \\v 8 ይልቁንም “ራቴን አዘጋጅልኝ። የሥራ ልብስህን ልበስና እስክበላና እስክጠጣ ድረስ አስተናግደኝ። ከዚያ በኋላ አንተ የራስህን ምግብ ትበላለህ” ይለዋል።"
         }
       },
       "decisions": [
@@ -2386,6 +2580,50 @@
           "reason": "Jesus speaks to the group (\"vocês\") and then pictures one of them as the master, whom Portuguese addresses as \"você\", the way a speaker turns to one listener; \"vocês diriam\" would make the whole group one master.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017007005"
+          ],
+          "choice": "ባሪያ (slave) at every level",
+          "alternatives": [
+            "አገልጋይ (servant), as the English Balanced and Readable"
+          ],
+          "reason": "The style guide keeps \"ባሪያ\" for doulos at every level; the point of the saying is that a slave is owed nothing for doing what he is told (17:9-10).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42017007001",
+            "n42017007002",
+            "n42017007003",
+            "n42017007004"
+          ],
+          "choice": "the master's questions in the third person (ይለዋልን? the master says)",
+          "alternatives": [
+            "\"you\" in the questions, as the English Balanced"
+          ],
+          "reason": "After \"ከእናንተ አንዱ\" (one of you) Amharic goes on about that person; the second person would read as a different speaker.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2447,6 +2685,11 @@
           "L": "Por acaso ele fica agradecido ao escravo porque fez as coisas ordenadas?",
           "B": "O dono não deve nenhum agradecimento ao servo por ter feito o que lhe mandaram, deve?",
           "R": "O dono não agradece ao servo por ele ter feito o que lhe mandaram."
+        },
+        "am": {
+          "L": "ባሪያውን የታዘዘውን ስላደረገ ያመሰግነዋልን?",
+          "B": "ባሪያው የታዘዘውን በማድረጉ ጌታው የምስጋና ዕዳ አለበትን?",
+          "R": "ጌታው ባሪያውን የታዘዘውን ስላደረገ አያመሰግነውም።"
         }
       },
       "decisions": [
@@ -2624,6 +2867,11 @@
           "L": "Assim também vocês, quando tiverem feito tudo o que lhes foi ordenado, digam: 'Somos escravos indignos; fizemos o que devíamos fazer.'\"",
           "B": "O mesmo vale para vocês. Quando tiverem feito tudo o que lhes mandaram, digam: 'Somos servos que não merecem nada. Fizemos apenas o que era a nossa obrigação.'\"",
           "R": "O mesmo acontece com vocês. Quando tiverem feito tudo o que mandaram vocês fazerem, digam: 'Somos apenas servos e não merecemos nada especial. Só fizemos o trabalho que tínhamos de fazer.'\""
+        },
+        "am": {
+          "L": "እንዲሁ እናንተም የታዘዛችሁትን ሁሉ ባደረጋችሁ ጊዜ፦ “ዋጋ የሌለን ባሪያዎች ነን፤ ልናደርገው የሚገባንን አደረግን” በሉ።»",
+          "B": "እናንተም እንዲሁ ናችሁ። የታዘዛችሁትን ሁሉ ባደረጋችሁ ጊዜ “ምንም የማይገባን ባሪያዎች ነን፤ ልናደርገው የሚገባንን ብቻ አደረግን” በሉ።»",
+          "R": "እናንተም እንደዚሁ ናችሁ። የታዘዛችሁትን ሁሉ ባደረጋችሁ ጊዜ “እኛ ባሪያዎች ብቻ ነን፤ ለየት ያለ ዋጋ አይገባንም። ልንሠራው የሚገባንን ሥራ ብቻ ሠራን” ልትሉ ይገባል።»"
         }
       },
       "decisions": [
@@ -2885,6 +3133,27 @@
           "reason": "\"Inúteis\" is the familiar word, but these slaves have done all they were told (m1): they are not useless, only owed nothing extra. Literal says \"indignos\", Balanced says what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017010013"
+          ],
+          "choice": "ዋጋ የሌለን (unworthy, L); ምንም የማይገባን (to whom nothing is owed, B); ለየት ያለ ዋጋ አይገባንም (we are owed no special reward, R)",
+          "alternatives": [
+            "የማንጠቅም (useless)"
+          ],
+          "reason": "The sense is having no special claim (m1), not being useless; \"ዋጋ\" is the word for reward, as in Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2952,6 +3221,11 @@
           "L": "E aconteceu que, indo para Jerusalém, {{deity_pronoun:ele|Ele}} passava pelo meio de Samaria e da Galileia.",
           "B": "Seguindo o {{deity_pronoun:seu|Seu}} caminho para Jerusalém, Jesus passou pela região que fica entre Samaria e a Galileia.",
           "R": "Jesus continuava viajando para Jerusalém. Ele passou pela região na divisa entre Samaria e a Galileia."
+        },
+        "am": {
+          "L": "ወደ ኢየሩሳሌምም ሲሄድ እንዲህ ሆነ፤ እርሱ በሰማርያና በገሊላ መካከል ያልፍ ነበር።",
+          "B": "ኢየሱስ ወደ ኢየሩሳሌም ሲጓዝ በሰማርያና በገሊላ መካከል ባለው አገር አለፈ።",
+          "R": "ኢየሱስ አሁንም ወደ ኢየሩሳሌም እየተጓዘ ነበር። ሰማርያና ገሊላ በሚገናኙበት አካባቢ አለፈ።"
         }
       },
       "decisions": [
@@ -3108,6 +3382,11 @@
           "L": "E, ao entrar {{deity_pronoun:ele|Ele}} num certo povoado, dez homens leprosos {{deity_pronoun:o|O}} encontraram, os quais ficaram parados de longe; \\v 13 e eles levantaram a voz, dizendo: \"Jesus, Mestre, tem misericórdia de nós!\"",
           "B": "Quando {{deity_pronoun:ele|Ele}} estava entrando num povoado, dez homens com lepra vieram ao {{deity_pronoun:seu|Seu}} encontro. Eles ficaram a distância \\v 13 e gritaram bem alto: \"Jesus! Mestre! Tem misericórdia de nós!\"",
           "R": "Jesus estava entrando num povoado quando dez homens com uma doença de pele terrível vieram na direção {{deity_pronoun:dele|Dele}}. Eles ficaram longe {{deity_pronoun:dele|Dele}}. \\v 13 Eles gritaram: \"Jesus! Mestre! Por favor, tem pena de nós!\""
+        },
+        "am": {
+          "L": "ወደ አንዲት መንደርም ሲገባ ለምጻሞች የሆኑ አሥር ሰዎች ተገናኙት፤ እነርሱም በሩቅ ቆሙ፤ \\v 13 ድምፃቸውንም ከፍ አድርገው፦ «ኢየሱስ፣ አለቃ ሆይ፣ ማረን!» አሉ።",
+          "B": "ወደ አንዲት መንደር ሲገባ ለምጽ የያዛቸው አሥር ሰዎች ወደ እርሱ መጡ። እነርሱም ራቅ ብለው ቆሙ፤ \\v 13 በታላቅ ድምፅም «ኢየሱስ ሆይ! አለቃችን! ማረን!» ብለው ጮኹ።",
+          "R": "ኢየሱስ ወደ አንዲት መንደር ሲገባ ከባድ የቆዳ በሽታ የነበረባቸው አሥር ሰዎች ወደ እርሱ መጡ። ከእርሱ ርቀው ቆሙ። \\v 13 እነርሱም «ኢየሱስ ሆይ! አለቃችን! እባክህ ማረን!» እያሉ ጮኹ።"
         }
       },
       "decisions": [
@@ -3448,6 +3727,49 @@
           "reason": "The men call to Jesus, so they use the \"tu\" imperative \"tem\", as the blind men do in Matthew 20:30 (docs/portuguese-style.md, section 4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017013007"
+          ],
+          "choice": "አለቃ ሆይ (L); አለቃችን (our master, B, R)",
+          "alternatives": [
+            "መምህር (teacher)",
+            "ጌታ (lord)"
+          ],
+          "reason": "Luke's word is the one who has authority and gives orders, not the word for teacher (didaskalos, \"መምህር\") nor kyrios (\"ጌታ\"); \"አለቃ\" keeps it distinct. A reviewer may prefer another word.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017012009"
+          ],
+          "choice": "ለምጻሞች (lepers, L); ለምጽ የያዛቸው (who had leprosy, B); ከባድ የቆዳ በሽታ የነበረባቸው (who had a serious skin disease, R)",
+          "alternatives": [
+            "ለምጻሞች at every level"
+          ],
+          "reason": "As in Matthew 8:2: Balanced names the people rather than labelling them, and Readable says what the disease was, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3509,6 +3831,11 @@
           "L": "E, quando [os] viu, {{deity_pronoun:ele|Ele}} lhes disse: \"Vão e mostrem-se aos sacerdotes.\"",
           "B": "Jesus os viu e lhes disse: \"Vão e deixem os sacerdotes examinar vocês.\"",
           "R": "Quando Jesus os viu, {{deity_pronoun:ele|Ele}} disse: \"Vão e deixem os sacerdotes olhar a pele de vocês.\""
+        },
+        "am": {
+          "L": "አይቶም፦ «ሂዱ፤ ራሳችሁን ለካህናት አሳዩ» አላቸው።",
+          "B": "ኢየሱስም አያቸውና «ሂዱ፤ ካህናቱ እንዲመረምሯችሁ ራሳችሁን አሳዩ» አላቸው።",
+          "R": "ኢየሱስ ባያቸው ጊዜ «ሂዱ፤ ካህናቱ ቆዳችሁን እንዲያዩ አድርጉ» አላቸው።"
         }
       },
       "decisions": [
@@ -3649,6 +3976,11 @@
           "L": "E aconteceu que, enquanto iam, foram purificados.",
           "B": "No caminho, eles ficaram limpos.",
           "R": "Enquanto eles iam, foram curados e ficaram limpos."
+        },
+        "am": {
+          "L": "ሲሄዱም እንዲህ ሆነ፤ ነጹ።",
+          "B": "ወደዚያ በመሄድ ላይ ሳሉ ነጹ።",
+          "R": "እየሄዱ ሳሉ ተፈወሱ፤ ነጹም።"
         }
       },
       "decisions": [
@@ -3783,6 +4115,11 @@
           "L": "E um deles, vendo que tinha sido curado, voltou, glorificando a Deus em alta voz, \\v 16 e caiu com o rosto [em terra] aos {{deity_pronoun:seus|Seus}} pés, dando-{{deity_pronoun:lhe|Lhe}} graças; e ele era samaritano.",
           "B": "Um deles, quando viu que estava curado, voltou glorificando a Deus em alta voz. \\v 16 Ele se prostrou com o rosto no chão aos pés de Jesus e {{deity_pronoun:lhe|Lhe}} agradeceu. E esse homem era samaritano.",
           "R": "Um dos homens viu que estava curado. Ele voltou gritando e dando glória a Deus. \\v 16 Ele se ajoelhou aos pés de Jesus com o rosto no chão e agradeceu a {{deity_pronoun:ele|Ele}}. Esse homem era samaritano, não judeu."
+        },
+        "am": {
+          "L": "ከእነርሱም አንዱ እንደ ተፈወሰ ባየ ጊዜ በታላቅ ድምፅ እግዚአብሔርን እያከበረ ተመለሰ፤ \\v 16 በእግሩም ሥር በግንባሩ ተደፍቶ አመሰገነው፤ እርሱም ሳምራዊ ነበረ።",
+          "B": "ከእነርሱ አንዱ እንደ ተፈወሰ ባየ ጊዜ በታላቅ ድምፅ እግዚአብሔርን እያከበረ ተመለሰ። \\v 16 በኢየሱስ እግር ሥር በግንባሩ ተደፍቶ አመሰገነው። ሰውየውም ሳምራዊ ነበረ።",
+          "R": "ከሰዎቹ አንዱ እንደ ተፈወሰ አየ። እየጮኸና እግዚአብሔርን እያከበረ ተመለሰ። \\v 16 በኢየሱስ እግር ሥር በግንባሩ ተደፍቶ አመሰገነው። ይህ ሰው አይሁዳዊ ሳይሆን ሳምራዊ ነበረ።"
         }
       },
       "decisions": [
@@ -3896,6 +4233,29 @@
           "reason": "Glory is a key term, kept at Literal and Balanced; Readable says what the giving of glory was (meaning decision). \"사마리아 사람\" as the style guide and the Korean Luke 10:33.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017016002",
+            "n42017016003",
+            "n42017016004"
+          ],
+          "choice": "በግንባሩ ተደፍቶ (prostrated with his forehead to the ground)",
+          "alternatives": [
+            "በፊቱ ወድቆ (fell on his face)"
+          ],
+          "reason": "\"በግንባር መደፋት\" is the Amharic way of saying that someone bowed with his face to the ground, which is the sense (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3957,6 +4317,11 @@
           "L": "E Jesus, respondendo, disse: \"Não foram purificados os dez?",
           "B": "Jesus respondeu: \"Os dez homens ficaram limpos, não ficaram?",
           "R": "Jesus perguntou: \"Os dez homens não ficaram todos limpos?"
+        },
+        "am": {
+          "L": "ኢየሱስም መልሶ እንዲህ አለ፦ «አሥሩ አልነጹምን?",
+          "B": "ኢየሱስም እንዲህ አለ፦ «የነጹት አሥር ሰዎች አልነበሩምን?",
+          "R": "ኢየሱስም እንዲህ ብሎ ጠየቀ፦ «አሥሩም ሰዎች አልነጹምን?"
         }
       },
       "decisions": [
@@ -4055,6 +4420,11 @@
           "L": "E os nove, onde [estão]?",
           "B": "Então, onde estão os outros nove?",
           "R": "Onde estão os outros nove homens?"
+        },
+        "am": {
+          "L": "ዘጠኙ ግን የት [አሉ]?",
+          "B": "ታዲያ ሌሎቹ ዘጠኙ የት አሉ?",
+          "R": "ሌሎቹ ዘጠኝ ሰዎች የት ናቸው?"
         }
       },
       "decisions": [
@@ -4176,6 +4546,11 @@
           "L": "Não se achou ninguém que voltasse para dar glória a Deus, a não ser este estrangeiro?\"",
           "B": "Será que só este forasteiro voltou para dar glória a Deus?\"",
           "R": "Ninguém voltou para dar glória a Deus, a não ser este homem de outro povo?\""
+        },
+        "am": {
+          "L": "ከዚህ ከባዕድ ሰው በቀር እግዚአብሔርን ለማክበር የተመለሰ አልተገኘምን?»",
+          "B": "እግዚአብሔርን ለማክበር የተመለሰው ይህ እንግዳ ሰው ብቻ ነውን?»",
+          "R": "ከሌላ ሕዝብ ከሆነው ከዚህ ሰው በቀር እግዚአብሔርን ለማክበር የተመለሰ የለምን?»"
         }
       },
       "decisions": [
@@ -4326,6 +4701,27 @@
           "reason": "As the English \"outsider\": \"forasteiro\" is someone from outside the community, without the sense of a far country that \"estrangeiro\" can carry; \"estranho\" would also mean odd.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017018011"
+          ],
+          "choice": "ባዕድ ሰው (foreigner, L); እንግዳ ሰው (outsider, B); ከሌላ ሕዝብ የሆነ ሰው (a man of another people, R)",
+          "alternatives": [
+            "ሳምራዊ (Samaritan)"
+          ],
+          "reason": "Jesus uses a word for one not of Israel, not the name Samaritan, so the Amharic keeps a general word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4388,6 +4784,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} lhe disse: \"Levante-se [e] vá; a sua fé o salvou.\"",
           "B": "Então {{deity_pronoun:ele|Ele}} lhe disse: \"Levante-se e siga o seu caminho. A sua fé o curou.\"",
           "R": "Então Jesus disse a ele: \"Levante-se e siga o seu caminho. A sua fé curou você e salvou você.\""
+        },
+        "am": {
+          "L": "እርሱንም፦ «ተነሥተህ ሂድ፤ እምነትህ አድኖሃል» አለው።",
+          "B": "ከዚያም «ተነሥና መንገድህን ሂድ። እምነትህ ፈውሶሃል» አለው።",
+          "R": "ከዚያም ኢየሱስ «ተነሥና መንገድህን ሂድ። እምነትህ ፈውሶሃል፤ አድኖሃልም» አለው።"
         }
       },
       "decisions": [
@@ -4502,6 +4903,27 @@
           "reason": "As the Korean Mark 10:52: the verb means both made well and saved (meaning decision, footnoted), so Balanced and Readable give both.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017019009"
+          ],
+          "choice": "አድኖሃል (has saved you, L); ፈውሶሃል (has healed you, B); ፈውሶሃል፤ አድኖሃልም (R)",
+          "alternatives": [
+            "ፈውሶሃል at every level"
+          ],
+          "reason": "Amharic \"ማዳን\" means both to save and to heal, so Literal keeps the one Greek verb; Balanced says \"healed\" and Readable gives both senses, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4593,6 +5015,11 @@
           "L": "E, interrogado pelos fariseus sobre quando viria o Reino de Deus, {{deity_pronoun:ele|Ele}} lhes respondeu e disse: \"O Reino de Deus não vem com observação cuidadosa, \\v 21 nem dirão: 'Vejam, [está] aqui!' ou: 'Ali!' Pois vejam, o Reino de Deus está no meio de vocês.\"",
           "B": "Certa vez os fariseus perguntaram a Jesus quando viria o Reino de Deus. Ele lhes respondeu: \"O Reino de Deus não vem de um modo que se possa vigiar e calcular. \\v 21 As pessoas não vão dizer: 'Está aqui!' ou: 'Está ali!' Pois o Reino de Deus está no meio de vocês.\"",
           "R": "Um dia, os fariseus perguntaram a Jesus: \"Quando o Reino de Deus vai chegar?\" Jesus respondeu: \"O Reino de Deus não vem com sinais que vocês possam ficar observando. \\v 21 As pessoas não vão dizer: 'Olhem, está aqui!' ou: 'Está ali!' A verdade é que o Reino de Deus já está bem aqui, no meio de vocês.\""
+        },
+        "am": {
+          "L": "የእግዚአብሔር መንግሥት መቼ እንደምትመጣ በፈሪሳውያን ተጠይቆ እንዲህ ብሎ መለሰላቸው፦ «የእግዚአብሔር መንግሥት በጥንቃቄ በመመልከት አትመጣም፤ \\v 21 ወይም፦ “እነሆ፣ እዚህ [ናት]!” ወይም፦ “እዚያ!” አይሉም፤ እነሆ፣ የእግዚአብሔር መንግሥት በመካከላችሁ ናትና።»",
+          "B": "አንድ ጊዜ ፈሪሳውያን ኢየሱስን የእግዚአብሔር መንግሥት መቼ እንደምትመጣ ጠየቁት። እርሱም እንዲህ ሲል መለሰላቸው፦ «የእግዚአብሔር መንግሥት ተከታትላችሁ ልትመለከቷት በምትችሉበት መንገድ አትመጣም። \\v 21 ሰዎች “እዚህ ናት!” ወይም “እዚያ ናት!” አይሉም፤ የእግዚአብሔር መንግሥት በመካከላችሁ ናትና።»",
+          "R": "አንድ ቀን ፈሪሳውያን ኢየሱስን «የእግዚአብሔር መንግሥት መቼ ትመጣለች?» ብለው ጠየቁት። ኢየሱስም እንዲህ ብሎ መለሰ፦ «የእግዚአብሔር መንግሥት ልትጠብቋቸው በምትችሉ ምልክቶች አትመጣም። \\v 21 ሰዎች “እዩ፣ እዚህ ናት!” ወይም “እዚያ ናት!” አይሉም። እውነቱ፣ የእግዚአብሔር መንግሥት እዚሁ በመካከላችሁ ናት።»"
         }
       },
       "decisions": [
@@ -4925,6 +5352,51 @@
           "reason": "Follows m3: the kingdom is present among the Pharisees in Jesus' own work. Portuguese \"no meio de vocês\" says this plainly; \"dentro de vocês\" would give the inner reading the meaning decision sets aside.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42017020001",
+            "n42017020002",
+            "n42017020003",
+            "n42017020004",
+            "n42017020005"
+          ],
+          "choice": "በፈሪሳውያን ተጠይቆ (having been asked by the Pharisees)",
+          "alternatives": [
+            "ፈሪሳውያን ጠየቁት (the Pharisees asked him)"
+          ],
+          "reason": "Literal keeps the Greek passive participle; Balanced and Readable make the Pharisees the subject.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017021013",
+            "n42017021014"
+          ],
+          "choice": "በመካከላችሁ (in your midst, among you)",
+          "alternatives": [
+            "በውስጣችሁ (within you)"
+          ],
+          "reason": "The meaning decision reads the kingdom as present among them in Jesus; \"በውስጣችሁ\" would make it an inward state.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4997,6 +5469,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} disse aos discípulos: \"Virão dias em que vocês desejarão ver um dos dias do Filho do Homem, e não [o] verão.",
           "B": "Depois {{deity_pronoun:ele|Ele}} disse aos discípulos: \"Vão chegar dias em que vocês vão ansiar por ver um só dia do Filho do Homem, mas não vão ver.",
           "R": "Depois Jesus disse aos discípulos: \"Vai chegar um tempo em que vocês vão querer muito ver um só dia do Filho do Homem. Mas vocês não vão ver."
+        },
+        "am": {
+          "L": "ለደቀ መዛሙርቱም እንዲህ አለ፦ «ከሰው ልጅ ቀኖች አንዱን ቀን ልታዩ የምትመኙበት ቀኖች ይመጣሉ፤ አታዩትምም።",
+          "B": "ከዚያም ለደቀ መዛሙርቱ እንዲህ አላቸው፦ «ከሰው ልጅ ቀኖች አንዱን እንኳ ለማየት የምትናፍቁበት ጊዜ ይመጣል፤ ነገር ግን አታዩትም።",
+          "R": "ከዚያም ኢየሱስ ለደቀ መዛሙርቱ እንዲህ አላቸው፦ «ከሰው ልጅ ቀኖች አንዱን ብቻ ለማየት እጅግ የምትፈልጉበት ጊዜ ይመጣል። ነገር ግን አታዩትም።"
         }
       },
       "decisions": [
@@ -5144,6 +5621,29 @@
           "reason": "The title as in the Korean Gospels (style guide, section 6); Jesus speaks of himself under the title, and a Korean speaker does not honour himself, as in the Korean Matthew 24:27.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017022014",
+            "n42017022015",
+            "n42017022016"
+          ],
+          "choice": "የሰው ልጅ (the Son of Man) as a title at every level, with no gender span",
+          "alternatives": [
+            "the gender setting on \"ሰው\""
+          ],
+          "reason": "As in Matthew: the phrase is Jesus' title for himself, kept word for word through 17:22-30.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5207,6 +5707,11 @@
           "L": "E dirão a vocês: 'Vejam, ali!', 'Vejam, aqui!' Não saiam, nem sigam.",
           "B": "As pessoas vão dizer a vocês: 'Vejam, ali!' ou: 'Vejam, aqui!' Não saiam e não corram atrás delas.",
           "R": "As pessoas vão dizer a vocês: 'Olhem, lá!' ou: 'Olhem, bem aqui!' Não saiam para ver. Não sigam essas pessoas."
+        },
+        "am": {
+          "L": "“እነሆ፣ በዚያ!” “እነሆ፣ በዚህ!” ይሏችኋል፤ አትውጡ፤ አትከተሉም።",
+          "B": "ሰዎች “እዩ፣ በዚያ ነው!” ወይም “እዩ፣ እዚህ ነው!” ይሏችኋል። አትውጡ፤ ተከትላችሁም አትሩጡ።",
+          "R": "ሰዎች “እዩ፣ እዚያ ነው!” ወይም “እዩ፣ እዚሁ ነው!” ይሏችኋል። ለማየት አትውጡ። አትከተሏቸውም።"
         }
       },
       "decisions": [
@@ -5308,6 +5813,28 @@
           "reason": "Here the word is part of what people will say, so every level keeps it, with the \"보라\" used for \"look\" through the Korean Matthew and Luke (as at 17:21).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017023004",
+            "n42017023006"
+          ],
+          "choice": "እነሆ (L); እዩ (look!, B, R)",
+          "alternatives": [
+            "እነሆ at every level"
+          ],
+          "reason": "\"እነሆ\" is kept at Literal as the style guide sets; in the people's shouts Balanced and Readable use the spoken \"እዩ\", as in Matthew 24:26.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5385,6 +5912,11 @@
           "L": "Pois, assim como o relâmpago, relampejando de uma [extremidade] sob o céu, brilha até a outra [extremidade] sob o céu, assim será o Filho do Homem no {{deity_pronoun:seu|Seu}} dia.",
           "B": "Quando o relâmpago brilha, ilumina o céu de uma ponta à outra. Assim será o Filho do Homem no {{deity_pronoun:seu|Seu}} dia.",
           "R": "Quando um relâmpago brilha, ele ilumina o céu inteiro, de um lado ao outro. O dia em que o Filho do Homem vier vai ser assim. Todos vão ver."
+        },
+        "am": {
+          "L": "መብረቅ ከሰማይ በታች ካለው [ከአንዱ ዳርቻ] ብልጭ ብሎ ከሰማይ በታች እስካለው [እስከ ሌላው ዳርቻ] እንደሚያበራ፣ የሰው ልጅም በቀኑ እንዲሁ ይሆናልና።",
+          "B": "መብረቅ ብልጭ ሲል ሰማዩን ከአንዱ ዳርቻ እስከ ሌላው ዳርቻ ያበራል። የሰው ልጅም በቀኑ እንዲሁ ይሆናል።",
+          "R": "መብረቅ ብልጭ ሲል ሰማዩን ሁሉ ከአንዱ ጫፍ እስከ ሌላው ጫፍ ያበራል። የሰው ልጅ የሚመጣበት ቀን እንደዚሁ ይሆናል። ሁሉም ያየዋል።"
         }
       },
       "decisions": [
@@ -5613,6 +6145,11 @@
           "L": "Mas primeiro é necessário que {{deity_pronoun:ele|Ele}} sofra muitas coisas e seja rejeitado por esta geração.",
           "B": "Mas antes disso {{deity_pronoun:ele|Ele}} precisa passar por muito sofrimento e ser rejeitado pelas pessoas desta geração.",
           "R": "Mas primeiro {{deity_pronoun:ele|Ele}} precisa sofrer muitas coisas. As pessoas que vivem hoje vão rejeitá-{{deity_pronoun:lo|Lo}}."
+        },
+        "am": {
+          "L": "ነገር ግን አስቀድሞ ብዙ መከራ ሊቀበልና በዚህ ትውልድ ሊጣል ይገባዋል።",
+          "B": "ከዚያ በፊት ግን ብዙ መከራ መቀበልና በዚህ ትውልድ ሰዎች መጣል አለበት።",
+          "R": "ነገር ግን አስቀድሞ ብዙ መከራ መቀበል አለበት። አሁን የሚኖሩ ሰዎች ይጥሉታል።"
         }
       },
       "decisions": [
@@ -5726,6 +6263,27 @@
           "reason": "It is part of God's plan (meaning decision); \"버림받다\" is to be turned away as worthless. Jesus speaks of the Son of Man, himself, in the plain style.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017025008"
+          ],
+          "choice": "ሊጣል (to be cast aside)",
+          "alternatives": [
+            "ሊናቅ (to be despised)"
+          ],
+          "reason": "The Greek is to be tested and turned away as worthless (m2), which \"መጣል\" says; \"መናቅ\" is only scorn.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5795,6 +6353,11 @@
           "L": "E, assim como aconteceu nos dias de Noé, assim será também nos dias do Filho do Homem.",
           "B": "O que aconteceu no tempo de Noé vai acontecer de novo nos dias do Filho do Homem.",
           "R": "Quando o Filho do Homem vier, vai ser como foi no tempo de Noé."
+        },
+        "am": {
+          "L": "በኖኅም ቀኖች እንደ ሆነ፣ በሰው ልጅ ቀኖች ደግሞ እንዲሁ ይሆናል።",
+          "B": "በኖኅ ዘመን የሆነው በሰው ልጅ ቀኖችም እንደ ገና ይሆናል።",
+          "R": "የሰው ልጅ ሲመጣ በኖኅ ዘመን እንደ ሆነው ይሆናል።"
         }
       },
       "decisions": [
@@ -5919,6 +6482,11 @@
           "L": "Comiam, bebiam, casavam-se, eram dados em casamento, até o dia em que Noé entrou na arca, e veio o dilúvio e destruiu todos.",
           "B": "As pessoas comiam e bebiam, os homens se casavam e as mulheres eram dadas em casamento, até o dia em que Noé entrou na arca. Então veio o dilúvio e acabou com todos eles.",
           "R": "As pessoas comiam, bebiam e se casavam, até o dia em que Noé entrou no grande barco. Então veio o dilúvio e matou todas elas."
+        },
+        "am": {
+          "L": "ኖኅ ወደ መርከብ እስከ ገባበት ቀን ድረስ ይበሉ፣ ይጠጡ፣ ያገቡ፣ ይዳሩ ነበር፤ የጥፋት ውኃም መጥቶ ሁሉንም አጠፋ።",
+          "B": "ኖኅ ወደ መርከቡ እስከ ገባበት ቀን ድረስ ሰዎች ይበሉና ይጠጡ፣ ሚስት ያገቡና ይዳሩ ነበር። ከዚያም የጥፋት ውኃ መጥቶ ሁሉንም ጠራርጎ አጠፋቸው።",
+          "R": "ኖኅ ወደ ትልቁ መርከብ እስከ ገባበት ቀን ድረስ ሰዎች ይበሉ፣ ይጠጡ፣ ያገቡም ነበር። ከዚያም የጥፋት ውኃ መጥቶ ሁሉንም ገደላቸው።"
         }
       },
       "decisions": [
@@ -6127,6 +6695,59 @@
           "reason": "The English \"taking wives and being given as wives\" has no smooth Portuguese match; Balanced names who did each, as m2 explains, which Portuguese can do with \"homens\" and \"mulheres\" without a setting, since the words mean men and women here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017027003",
+            "n42017027004"
+          ],
+          "choice": "ያገቡ፣ ይዳሩ (they married, they were given in marriage)",
+          "alternatives": [
+            "ያገቡ፣ ይድሩ (they married, they gave in marriage)"
+          ],
+          "reason": "Luke's second verb is passive, of daughters given to husbands, so Amharic uses the passive \"ይዳሩ\" where Matthew 24:38 has the active \"ይድሩ\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42017027001",
+            "n42017027002",
+            "n42017027003",
+            "n42017027004",
+            "n42017027005",
+            "n42017027006",
+            "n42017027007",
+            "n42017027008",
+            "n42017027009",
+            "n42017027010",
+            "n42017027011",
+            "n42017027012"
+          ],
+          "choice": "the four verbs after \"until the day Noah entered the ark\"",
+          "alternatives": [
+            "the Greek order, verbs first"
+          ],
+          "reason": "Amharic puts the clause of time before the verbs it limits; the whole stays in one verse.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6192,6 +6813,11 @@
           "L": "Do mesmo modo, assim como aconteceu nos dias de Ló: comiam, bebiam, compravam, vendiam, plantavam, construíam;",
           "B": "Foi a mesma coisa no tempo de Ló. As pessoas comiam e bebiam, compravam e vendiam, plantavam e construíam.",
           "R": "Foi assim também no tempo de Ló. As pessoas estavam comendo e bebendo. Estavam comprando e vendendo. Estavam fazendo plantações e construindo casas."
+        },
+        "am": {
+          "L": "እንዲሁም በሎጥ ቀኖች እንደ ሆነ፤ ይበሉ፣ ይጠጡ፣ ይገዙ፣ ይሸጡ፣ ይተክሉ፣ ይገነቡ ነበር፤",
+          "B": "በሎጥ ዘመንም እንዲሁ ነበር። ሰዎች ይበሉና ይጠጡ፣ ይገዙና ይሸጡ፣ ይተክሉና ይገነቡ ነበር።",
+          "R": "በሎጥ ዘመንም እንደዚሁ ነበር። ሰዎች ይበሉና ይጠጡ ነበር። ይገዙና ይሸጡ ነበር። እህል ይዘሩ፣ ቤቶችንም ይሠሩ ነበር።"
         }
       },
       "decisions": [
@@ -6383,6 +7009,11 @@
           "L": "Mas, no dia em que Ló saiu de Sodoma, choveu fogo e enxofre do céu e destruiu todos.",
           "B": "Então chegou o dia em que Ló saiu de Sodoma. Fogo e enxofre caíram do céu como chuva, e todos foram destruídos.",
           "R": "Mas, no dia em que Ló saiu da cidade de Sodoma, fogo e enxofre ardente caíram do céu como chuva. Aquilo matou todos eles."
+        },
+        "am": {
+          "L": "ሎጥ ከሰዶም በወጣበት ቀን ግን እሳትና ዲን ከሰማይ ዘነበ፤ ሁሉንም አጠፋ።",
+          "B": "ከዚያም ሎጥ ከሰዶም የወጣበት ቀን መጣ። እሳትና ዲን ከሰማይ እንደ ዝናብ ወረደ፤ ሁሉም ጠፉ።",
+          "R": "ነገር ግን ሎጥ ከሰዶም ከተማ በወጣበት ቀን እሳትና የሚነድ ድኝ ከሰማይ እንደ ዝናብ ወረደ። ሁሉንም ገደላቸው።"
         }
       },
       "decisions": [
@@ -6476,6 +7107,27 @@
           "reason": "Sulfur, the yellow mineral that burns (meaning decision); the name in its Protestant form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017029011"
+          ],
+          "choice": "ዲን (brimstone, L, B); የሚነድ ድኝ (burning sulfur, R)",
+          "alternatives": [
+            "ድኝ at every level"
+          ],
+          "reason": "\"ዲን\" is the familiar Bible word for the burning sulfur of Genesis 19:24; Readable uses the everyday word \"ድኝ\".",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6539,6 +7191,11 @@
           "L": "Do mesmo modo será no dia em que o Filho do Homem for revelado.",
           "B": "É assim que vai ser no dia em que o Filho do Homem for revelado.",
           "R": "Vai ser assim no dia em que o Filho do Homem aparecer."
+        },
+        "am": {
+          "L": "የሰው ልጅ በሚገለጥበት ቀን ልክ እንደዚሁ ይሆናል።",
+          "B": "የሰው ልጅ በሚገለጥበት ቀን እንዲህ ይሆናል።",
+          "R": "የሰው ልጅ በሚታይበት ቀን እንደዚያ ይሆናል።"
         }
       },
       "decisions": [
@@ -6677,6 +7334,11 @@
           "L": "Naquele dia, quem estiver no terraço, com os seus bens dentro de casa, não desça para apanhá-los; e, da mesma forma, quem [estiver] no campo não volte para as coisas que ficaram para trás.",
           "B": "Naquele dia, quem estiver no terraço não deve descer para pegar as suas coisas dentro de casa. Do mesmo modo, quem estiver no campo não deve voltar para buscar o que deixou para trás.",
           "R": "Naquele dia, quem estiver em cima do terraço da casa não deve descer para pegar as suas coisas. Quem estiver no campo não deve voltar para casa para buscar nada."
+        },
+        "am": {
+          "L": "በዚያ ቀን በጣሪያ ላይ ያለ፣ ዕቃውም በቤት ውስጥ ያለ፣ ሊወስደው አይውረድ፤ እንዲሁም በእርሻ ያለ ወደ ኋላ አይመለስ።",
+          "B": "በዚያ ቀን በጣሪያ ላይ ያለ ሰው ዕቃውን ለመውሰድ ወደ ቤቱ አይውረድ። እንዲሁም በእርሻ ያለ ሰው በኋላው ያለውን ለመውሰድ አይመለስ።",
+          "R": "በዚያ ቀን በጣሪያ ላይ ያለ ሰው ዕቃውን ከቤት ለመውሰድ አይውረድ። በእርሻ ያለ ሰውም ምንም ነገር ለመውሰድ ወደ ቤቱ አይመለስ።"
         }
       },
       "decisions": [
@@ -6886,6 +7548,11 @@
           "L": "Lembrem-se da mulher de Ló.",
           "B": "Lembrem-se da mulher de Ló.",
           "R": "Lembrem-se do que aconteceu com a mulher de Ló."
+        },
+        "am": {
+          "L": "የሎጥን ሚስት አስቡ።",
+          "B": "የሎጥን ሚስት አስታውሱ።",
+          "R": "በሎጥ ሚስት ላይ የደረሰውን አስታውሱ።"
         }
       },
       "decisions": [
@@ -6991,6 +7658,11 @@
           "L": "Quem procurar preservar a sua vida a perderá, mas quem [a] perder a conservará viva.",
           "B": "Quem tentar se agarrar à própria vida vai perdê-la, e quem a perder vai mantê-la viva.",
           "R": "Quem tentar manter a própria vida em segurança vai perdê-la. Mas quem a perder vai ser mantido vivo."
+        },
+        "am": {
+          "L": "ሕይወቱን ለራሱ ሊያቆይ የሚሻ ያጣዋል፤ የሚያጣው ግን ሕያው አድርጎ ይጠብቀዋል።",
+          "B": "ሕይወቱን አጥብቆ ለመያዝ የሚሞክር ሁሉ ያጣዋል፤ የሚያጣው ግን በሕይወት ያቆየዋል።",
+          "R": "ሕይወቱን ለማዳን የሚሞክር ሰው ያጣዋል። ሕይወቱን የሚያጣ ሰው ግን በሕይወት ይኖራል።"
         }
       },
       "decisions": [
@@ -7147,6 +7819,27 @@
           "reason": "As in 17:31: after \"quem\" the possessive has no gender to choose, so the English \"their/his\" setting has nothing to set in Portuguese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017033014"
+          ],
+          "choice": "ሕያው አድርጎ ይጠብቀዋል (will keep it alive)",
+          "alternatives": [
+            "ያገኘዋል (will find it), as Matthew 10:39"
+          ],
+          "reason": "Luke's verb is to preserve alive, not Matthew's \"find\", so the Amharic differs from Matthew 10:39 here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7216,6 +7909,11 @@
           "L": "Eu lhes digo: naquela noite haverá dois numa cama; um será levado e o outro será deixado.",
           "B": "Eu lhes digo: naquela noite, duas pessoas estarão dormindo na mesma cama. Uma será levada, e a outra será deixada para trás.",
           "R": "Eu digo a vocês: naquela noite, duas pessoas vão estar dormindo na mesma cama. Uma delas vai ser levada. A outra vai ser deixada."
+        },
+        "am": {
+          "L": "እላችኋለሁ፣ በዚያች ሌሊት ሁለት [ሰዎች] በአንድ አልጋ ላይ ይሆናሉ፤ አንዱ ይወሰዳል፤ ሌላውም ይተዋል።",
+          "B": "እላችኋለሁ፣ በዚያች ሌሊት ሁለት ሰዎች በአንድ አልጋ ላይ ይተኛሉ፤ አንዱ ይወሰዳል፤ ሌላው ይቀራል።",
+          "R": "እነግራችኋለሁ፣ በዚያች ሌሊት ሁለት ሰዎች በአንድ አልጋ ላይ ተኝተው ይሆናሉ። ከእነርሱ አንዱ ይወሰዳል። ሌላው ይቀራል።"
         }
       },
       "decisions": [
@@ -7416,6 +8114,11 @@
           "L": "Duas estarão moendo no mesmo [lugar]; uma será levada e a outra será deixada.\"",
           "B": "Duas mulheres estarão moendo grãos juntas. Uma será levada, e a outra será deixada para trás.\"",
           "R": "Duas mulheres vão estar moendo grãos juntas. Uma delas vai ser levada. A outra vai ser deixada.\""
+        },
+        "am": {
+          "L": "ሁለት [ሴቶች] በአንድ ላይ ይፈጫሉ፤ አንዲቱ ትወሰዳለች፤ ሌላይቱም ትተዋለች።»",
+          "B": "ሁለት ሴቶች በአንድነት እህል ይፈጫሉ፤ አንዲቱ ትወሰዳለች፤ ሌላይቱ ትቀራለች።»",
+          "R": "ሁለት ሴቶች በአንድነት እህል ይፈጫሉ። ከእነርሱ አንዲቱ ትወሰዳለች። ሌላይቱ ትቀራለች።»"
         }
       },
       "decisions": [
@@ -7610,6 +8313,11 @@
           "L": "E, respondendo, eles {{deity_pronoun:lhe|Lhe}} dizem: \"Onde, Senhor?\"",
           "B": "Eles {{deity_pronoun:lhe|Lhe}} perguntaram: \"Onde isso vai acontecer, Senhor?\"",
           "R": "Os discípulos perguntaram: \"Senhor, onde isso vai acontecer?\""
+        },
+        "am": {
+          "L": "እነርሱም መልሰው፦ «ጌታ ሆይ፣ የት?» ይሉታል።",
+          "B": "እነርሱም «ጌታ ሆይ፣ ይህ የት ይሆናል?» ብለው ጠየቁት።",
+          "R": "ደቀ መዛሙርቱም «ጌታ ሆይ፣ ይህ የት ይሆናል?» ብለው ጠየቁት።"
         }
       },
       "decisions": [
@@ -7765,6 +8473,25 @@
           "reason": "The disciples' address to Jesus as in the Korean Matthew; Literal keeps Luke's present tense of narration.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42017037003"
+          ],
+          "choice": "ይሉታል (they say to him)",
+          "alternatives": [
+            "አሉት (they said to him)"
+          ],
+          "reason": "Literal keeps the Greek historic present.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7829,6 +8556,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} lhes disse: \"Onde [estiver] o corpo, ali também se ajuntarão os abutres.\"",
           "B": "Ele lhes respondeu: \"Onde estiver o cadáver, ali os abutres vão se juntar.\"",
           "R": "Jesus respondeu: \"Os urubus se juntam onde estiver o corpo morto.\""
+        },
+        "am": {
+          "L": "እርሱም፦ «በድን ባለበት በዚያ ጥንብ አንሳዎችም ይሰበሰባሉ» አላቸው።",
+          "B": "እርሱም «ሬሳ ባለበት ቦታ ጥንብ አንሳዎች ይከማቻሉ» አላቸው።",
+          "R": "ኢየሱስም «ሬሳ ባለበት ሁሉ ጥንብ አንሳዎች ይሰበሰባሉ» ብሎ መለሰ።"
         }
       },
       "decisions": [
@@ -8009,6 +8741,29 @@
             "as águias"
           ],
           "reason": "As in Matthew 24:28: birds gathering at a dead body are vultures (m2). Readable names the Brazilian vulture, the \"urubu\", which every reader has seen circling.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42017037013",
+            "n42017037017"
+          ],
+          "choice": "በድን (body, L); ሬሳ (corpse, B, R); ጥንብ አንሳዎች (vultures)",
+          "alternatives": [
+            "ሥጋ (flesh)",
+            "ንስሮች (eagles)"
+          ],
+          "reason": "As in Matthew 24:28: birds that gather at a dead body are vultures, and the body here is a dead one (m3).",
           "uncertain": false,
           "footnote": false
         }

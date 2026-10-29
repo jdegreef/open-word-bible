@@ -1,4 +1,5 @@
-"""Hebrew and English verse numbering in the Old Testament.
+"""Source and English verse numbering: the Old Testament, and five New
+Testament verses.
 
 Open Word Bible numbers verses as its source text does. In the Old Testament
 that is the Westminster Leningrad Codex, where, for example, a psalm's title
@@ -12,8 +13,8 @@ English counterpart is not the verse with the same id: {"PSA.3.1": [],
 "PSA.3.2": ["PSA.3.1"], ...}. An empty list is a verse with no English
 counterpart (a psalm title, which English Bibles print unnumbered above
 verse 1). Under "not_in_hebrew" are the English verse ids the WLC has no verse
-for (GEN.31.55 is Hebrew GEN.32.1). Any other verse, and every New Testament
-verse, is numbered the same in both.
+for (GEN.31.55 is Hebrew GEN.32.1). Any other verse is numbered the same in
+both, except the few New Testament verses in NEW_TESTAMENT below.
 
 The file is derived by scripts/build_versification.py from the Open
 Scriptures Hebrew Bible's wlc/VerseMap.xml (CC BY 4.0), keeping only verses
@@ -33,12 +34,28 @@ from owb import refs
 DATA = Path(__file__).resolve().parents[1] / "data" / "versification.json"
 VERSE_MAP = "wlc/VerseMap.xml"   # in the morphhb source
 
+# The New Testament verses the SBLGNT numbers otherwise than English (KJV)
+# Bibles, written by hand: there are only these, against the KJV's text
+# (tests/test_versification.py). Each SBLGNT verse -> the English verses that
+# hold its text. The verses the SBLGNT leaves out altogether (Matthew 17:21)
+# are not here: they are missing, not renumbered.
+NEW_TESTAMENT = {
+    "ACT.19.40": ("ACT.19.40", "ACT.19.41"),  # its last clause is English 19:41
+    "2CO.13.12": ("2CO.13.12", "2CO.13.13"),  # its second sentence is English 13
+    "2CO.13.13": ("2CO.13.14",),              # the grace
+    "3JN.1.15": ("3JN.1.14",),                # the end of English verse 14
+    "REV.12.18": ("REV.13.1",),               # the start of English 13:1
+}
+# English verse ids those leave with no SBLGNT verse of their own number.
+NEW_TESTAMENT_ABSENT = ("ACT.19.41", "2CO.13.14")
+
 
 @lru_cache(maxsize=None)
 def _tables():
     data = json.loads(DATA.read_text(encoding="utf-8"))
-    english = {refs.parse(h): tuple(refs.parse(e) for e in es) for h, es in data["english"].items()}
-    absent = {refs.parse(e) for e in data["not_in_hebrew"]}
+    english = {refs.parse(h): tuple(refs.parse(e) for e in es)
+               for h, es in (data["english"] | NEW_TESTAMENT).items()}
+    absent = {refs.parse(e) for e in (*data["not_in_hebrew"], *NEW_TESTAMENT_ABSENT)}
     source, chapters = defaultdict(list), defaultdict(set)
     for h, es in english.items():
         for e in es:

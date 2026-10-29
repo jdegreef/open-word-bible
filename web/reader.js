@@ -1356,24 +1356,18 @@
     title.appendChild(stepButton(-1, at <= 0));
     title.appendChild(el("span", "panel-ref", ref));
     title.appendChild(stepButton(1, at < 0 || at >= count - 1));
-    var actions = el("span", "panel-actions");
-    actions.appendChild(linkButton(currentVerse));
-    actions.appendChild(imageButton(currentVerse));
-    actions.appendChild(citeButton());
-    // The verse beside other Bibles, with the reasoning (/compare/).
-    var compare = el("a", "copy-link", t("compare"));
-    compare.href = DATA.compare_url + "?v=" + verseId(currentVerse || verseOf(current.refs[0]));
-    actions.appendChild(compare);
-    actions.appendChild(noteButton());
-    var ask = askLink(null);
-    ask.classList.add("copy-link");
-    actions.appendChild(ask);
-    title.appendChild(actions);
     panel.appendChild(title);
-    panel.appendChild(citeBox(currentVerse));
-    panel.appendChild(noteBox(currentVerse || verseOf(current.refs[0])));
     panel.appendChild(toolRow());
-    panel.appendChild(markRow(currentVerse));
+    // One row of actions, the rest folded under "More", so the reasoning
+    // starts near the top; the sticky title holds only the reference.
+    var actions = el("div", "panel-actions");
+    actions.appendChild(bookmarkButton(currentVerse));
+    actions.appendChild(linkButton(currentVerse));
+    actions.appendChild(citeButton());
+    actions.appendChild(moreButton());
+    panel.appendChild(actions);
+    panel.appendChild(citeBox(currentVerse));
+    panel.appendChild(moreBox(currentVerse));
     var mine = myNoteBox(currentVerse);
     if (mine) panel.appendChild(mine);
     // On phones the sheet opens at 60% height: its footnotes and uncertain
@@ -1491,6 +1485,7 @@
     ds.rendering.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
     var xr = xrefSection(current);
     if (xr) panel.appendChild(xr);
+    panel.appendChild(feedback(currentVerse || verseOf(current.refs[0])));
   }
 
   // Bookmarks, highlights and the reader's own notes, kept in this browser
@@ -1545,15 +1540,20 @@
     panelEl.scrollTop = top;
   }
 
-  // Under the panel's title: bookmark the verse, highlight it in a colour.
-  function markRow(v) {
+  // In the panel's actions: bookmark the verse.
+  function bookmarkButton(v) {
     var m = marks()[verseId(v)] || {};
-    var row = el("div", "mark-row");
     var b = el("button", "mark-bookmark", t(m.b ? "bookmarked" : "bookmark"));
     b.type = "button";
     b.setAttribute("aria-pressed", m.b ? "true" : "false");
     b.addEventListener("click", function () { setMark(v, { b: !m.b }); });
-    row.appendChild(b);
+    return b;
+  }
+
+  // Under "More": highlight the verse in a colour, add a note.
+  function markRow(v) {
+    var m = marks()[verseId(v)] || {};
+    var row = el("div", "mark-row");
     var hues = el("div", "mark-hues");
     hues.setAttribute("role", "group");
     hues.setAttribute("aria-label", t("highlight"));
@@ -1738,23 +1738,19 @@
   // editors (POST /api/messages; backend/feedback/), who answer by email.
   // It needs an account, so the reply has somewhere to go; signed out, the
   // box offers sign-in and comes back to the verse.
-  var noteOpen = false, noteKind = "suggestion", noteDraft = "";
-  function noteButton() {
-    var b = el("button", "copy-link note-toggle", t("note"));
-    b.type = "button";
-    b.setAttribute("aria-expanded", noteOpen ? "true" : "false");
-    b.setAttribute("aria-controls", "note-box");
-    b.addEventListener("click", function () {
-      noteOpen = !noteOpen;
-      b.setAttribute("aria-expanded", noteOpen ? "true" : "false");
-      var box = document.getElementById("note-box");
-      if (box) {
-        box.hidden = !noteOpen;
-        var field = box.querySelector("textarea, a");
-        if (noteOpen && field) field.focus();
-      }
-    });
-    return b;
+  // It sits at the end of the reasoning, with "Question this" (a public
+  // GitHub issue) under it as the other way to ask.
+  var noteKind = "suggestion", noteDraft = "";
+  function feedback(verse) {
+    var box = el("section", "feedback");
+    box.appendChild(el("h3", null, t("note")));
+    box.appendChild(noteBox(verse));
+    var p = el("p", "feedback-public");
+    var ask = askLink(null);
+    ask.textContent = t("ask_public");
+    p.appendChild(ask);
+    box.appendChild(p);
+    return box;
   }
   function account() {
     try { return JSON.parse(localStorage.getItem("owb.account") || "null"); } catch (e) { return null; }
@@ -1762,7 +1758,6 @@
   function noteBox(verse) {
     var box = el("div", "note-box");
     box.id = "note-box";
-    box.hidden = !noteOpen;
     var me = account();
     if (!me || !me.token) {
       var p = el("p", "note-sign-in", t("note_sign_in") + " ");
@@ -1848,6 +1843,37 @@
       if (box) box.hidden = !citeOpen;
     });
     return b;
+  }
+
+  // "More": the verse as an image, beside other Bibles (/compare/),
+  // highlights and the reader's own note. Open or shut, it stays so from
+  // verse to verse.
+  var moreOpen = false;
+  function moreButton() {
+    var b = el("button", "copy-link more-toggle", t("more"));
+    b.type = "button";
+    b.setAttribute("aria-expanded", moreOpen ? "true" : "false");
+    b.setAttribute("aria-controls", "more-box");
+    b.addEventListener("click", function () {
+      moreOpen = !moreOpen;
+      b.setAttribute("aria-expanded", moreOpen ? "true" : "false");
+      var box = document.getElementById("more-box");
+      if (box) box.hidden = !moreOpen;
+    });
+    return b;
+  }
+  function moreBox(v) {
+    var box = el("div", "more-box");
+    box.id = "more-box";
+    box.hidden = !moreOpen;
+    var row = el("div", "more-links");
+    row.appendChild(imageButton(v));
+    var compare = el("a", "copy-link", t("compare"));
+    compare.href = DATA.compare_url + "?v=" + verseId(v || verseOf(current.refs[0]));
+    row.appendChild(compare);
+    box.appendChild(row);
+    box.appendChild(markRow(v));
+    return box;
   }
 
   function citation(ref, status, link) {
@@ -2513,7 +2539,6 @@
     if (!first || !first.record) return;
     var ids = selectedTokens(range);
     if (suggest) {
-      noteOpen = true;
       noteKind = "suggestion";
       if (!noteDraft.trim()) noteDraft = "“" + clip(quote(range).split("\n— ")[0], 300) + "” — ";
     }
