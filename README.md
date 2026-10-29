@@ -57,7 +57,9 @@ different files, so they don't conflict.
 
 Old Testament verses are numbered as in the Hebrew text (a psalm's title is
 verse 1), not as in English Bibles; `data/versification.json` maps one to the
-other (`owb/versification.py`).
+other (`owb/versification.py`). Five New Testament verses are numbered as in
+the SBLGNT where English Bibles differ (2 Corinthians 13:13 is English 13:14);
+`versification.NEW_TESTAMENT` maps them.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)
@@ -388,8 +390,8 @@ against Postgres (`render.yaml`). It holds:
 - **export** (in staff): the site admin's Export section downloads one
   language at one level as a zip of USFM books or as JSON, for Bible
   software and the apps that carry our text (`owb/export.py`). Reader
-  settings are applied, poetry runs on one line, Old Testament verses take
-  English numbers by default (a psalm title becomes the chapter's `\d`
+  settings are applied, poetry runs on one line, verses take English
+  numbers by default (a psalm title becomes the chapter's `\d`
   title), and untranslated verses are left out; each file's
   `manifest.json` gives its licence, review states and missing verses.
 - **search** (in translation): `import_content` brings the search tables
