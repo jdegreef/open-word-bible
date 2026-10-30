@@ -681,7 +681,7 @@ Everything in the Spanish section of `docs/isaiah-jeremiah-ezra-five-languages-t
 - **Jonah: the great fish.** *un gran pez* (L, B), *un pez enorme* (R) [Matthew 12:40 R], never *ballena*. A decision notes Matthew 12:40 L *monstruo marino*.
 - **Jonah 3:3.** L *una ciudad grande para Dios*, B *una ciudad sumamente grande*, R *una ciudad enorme*. *Tres días de camino* at every level.
 - **The plant (4:6–10).** *una planta* (L, B), *una planta frondosa* (R).
-- **Jonah 4:2** reuses the words of Spanish Exodus 34:6 L (*compasivo y benévolo, lento para la ira, y grande en amor fiel*), in Jonah's Hebrew order: *un Dios benévolo y compasivo, lento para la ira y grande en amor fiel* (L). The English likewise reuses its Exodus wording. See the open question below.
+- **Jonah 4:2** reuses the words of Spanish Exodus 34:6 L (*compasivo y benévolo, lento para la ira, y grande en amor leal*), in Jonah's Hebrew order: *un Dios benévolo y compasivo, lento para la ira y grande en amor leal* (L). The English likewise reuses its Exodus wording.
 - **Micah 5:1 (English 5:2).**
   - L *Y tú, Belén Efrata, pequeña para estar entre los millares de Judá, \q de ti me saldrá \q el que ha de ser gobernante en Israel, \q cuyos orígenes [son] desde antiguo, desde los días de antaño*.
   - B *entre los clanes de Judá ... cuyos orígenes vienen desde antiguo, desde tiempos remotos*.
@@ -792,7 +792,7 @@ Spanish has no style guide; these come from the published Isaiah, Jeremiah and P
 - *Hananías* for Daniel's friend, where Spanish tradition has *Ananías*. *Hananías* is the form published for every other bearer of the name.
 - *Langosta migratoria*.
 - *El satán* at L, before Job is drafted.
-- As in English: Joel 2:13 uses *amor leal* (L) while Jonah 4:2 reuses Exodus 34:6 (*amor fiel* even at L). One wording should be chosen with the founder's English ruling.
+- Settled for Spanish: Joel 2:13 and Jonah 4:2 both have *amor leal* at L, since Exodus 34:6 L now follows the Psalms rule (*amor leal* L, *amor fiel* B, R).
 
 ## Swahili
 

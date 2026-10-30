@@ -72,7 +72,7 @@ Decision text stays in English, quoting the words of the language.
 | ephod; the linen ephod | l’éphod; un éphod de lin | el efod; un efod de lino | efodi; efodi ya kitani | áo ê-phót; áo ê-phót bằng vải gai | 에봇; 베 에봇 |
 | Urim and Thummim | les ourim et les toummim | el urim y el tumim | Urimu na Thumimu | U-rim và Thu-mim | 우림과 둠밈 |
 | household gods (L) / god (B) / idol (R) | les dieux domestiques; le dieu domestique; l’idole domestique | los dioses domésticos; el ídolo doméstico (B, R) | miungu ya nyumbani (L); sanamu ya miungu ya nyumbani (B, R) | các tượng thần gia đình (L, B); tượng thần nhỏ của gia đình (R) | 드라빔 (L); 집안 우상 (B, R) |
-| high place (R: hilltop shrine) | le haut lieu (L, B); le sanctuaire sur la colline (R) | el lugar alto (L, B); el santuario de la colina (R) | mahali pa juu (L, B); patakatifu pa kilimani (R) | nơi cao | 산당 |
+| high place (R: hilltop shrine) | le haut lieu (L, B); le sanctuaire sur la colline (R) | el lugar alto (L, B); el santuario sobre la colina (R), now worded as the Kings note (*santuarios sobre las colinas*) | mahali pa juu (L, B); patakatifu pa kilimani (R) | nơi cao | 산당 |
 | the king's servants (officials) | les serviteurs du roi (L); les officiers du roi (B, R) | los siervos del rey (L); los oficiales del rey (B, R) | watumishi wa mfalme (L); maafisa wa mfalme (B, R) | các đầy tớ của vua (L); các quần thần (B, R) | 왕의 신하들 |
 | "your servant" (to the king) | ton serviteur | tu siervo | mtumishi wako | đầy tớ của vua (L, B); tôi (R) | 임금님의 종, 이 종 (L, B); 저 (R) |
 | "my lord the king" | mon seigneur le roi | mi señor el rey | bwana wangu mfalme | chúa tôi là vua (L); bệ hạ (B); đức vua (R) | 내 주 임금님 |
