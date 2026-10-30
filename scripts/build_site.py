@@ -1960,7 +1960,7 @@ def word_page(lang="en"):
     reader = catalog(lang)["reader.ui"]
     data = {"lang": lang, "ui": ui, "category": reader["category"], "notesLanguage": reader.get("notes_language", ""),
             "wordsUrl": f"/{WORDS_DIR}/", "shards": WORD_SHARDS, "chapterUrl": url(lang, "/"),
-            "termUrl": url(lang, "/terms/"), "searchUrl": url(lang, "/search/"),
+            "termUrl": url(lang, "/terms/"), "searchUrl": url(lang, "/search/"), "savedUrl": url(lang, "/saved/"),
             "books": {code: chapter_book(code, lang) for code in refs.BOOK_CODES},
             "bookNames": {code: BOOK_NAMES[code][lang] for code in refs.BOOK_CODES if code in BOOK_NAMES}}
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
@@ -1974,7 +1974,7 @@ def word_page(lang="en"):
 <p class="sr-only" id="word-status" aria-live="polite"></p>
 <div class="word" id="word"></div>
 <script type="application/json" id="word-data">{blob}</script>
-<script src="{asset("word.js")}"></script>
+<script src="{asset("word.js")}" defer></script>
 """
     return page(lang, t(lang, "word.title"), body, path="/word/", current="/read/", description=t(lang, "word.dek"))
 
@@ -2269,7 +2269,16 @@ def plans_json(lang):
                     "days": [[{"b": b, "c": c, "n": plan_ref(b, c, lang), "u": url(lang, chapter_url(b, c))}
                               for b, c in day] for day in p.days]}
              for p in available_plans(lang)}
-    return json.dumps({"ui": catalog(lang)["plans.ui"], "plans": plans}, ensure_ascii=False, separators=(",", ":"))
+    # For the reader's own plans (my_plans_page): every chapter readable
+    # whole in lang, by book in canonical order, and where chapters are.
+    drafted = drafted_chapters(lang)
+    readable = [[b, chapter_book(b, lang), sorted(c for bb, c in drafted if bb == b)]
+                for b in refs.BOOK_CODES if any(bb == b for bb, _ in drafted)]
+    return json.dumps({"ui": catalog(lang)["plans.ui"], "plans": plans, "books": readable,
+                       "names": {b: chapter_book(b, lang) for b in refs.BOOK_CODES},
+                       "chapter": url(lang, "/{b}/{c}/"), "chapter_en": url("en", "/{b}/{c}/"),
+                       "mine": url(lang, MY_PLANS_PATH)},
+                      ensure_ascii=False, separators=(",", ":"))
 
 
 @functools.lru_cache(maxsize=None)
@@ -2332,6 +2341,20 @@ def home_plans(lang="en"):
 """
 
 
+def plans_mine_link(lang):
+    return (f'<p class="plans-mine-link actions"><a class="button ghost" href="{url(lang, MY_PLANS_PATH)}">'
+            f'{icon(ICONS["calendar"], 16)}{t(lang, "plans.make")}</a> '
+            f'<a class="button ghost" href="{url(lang, "/groups/")}">{t(lang, "plans.together")}</a></p>')
+
+
+def plan_extras(lang):
+    """Under a plan's controls: its days in the reader's calendar (web/plans.js
+    makes the file), and where to have each day's reading emailed."""
+    return (f'<p class="plan-extras"><button type="button" class="plan-undo" data-plan-ics hidden>'
+            f'{t(lang, "plans.ics")}</button> <a class="plan-remind" href="{url(lang, "/account/")}#email">'
+            f'{t(lang, "plans.remind")}</a></p>')
+
+
 def plans_page(lang="en", plans=None):
     """The plans offered in lang (available_plans), or, with none, a plain
     word that none is ready yet and a link to the English ones."""
@@ -2351,6 +2374,7 @@ def plans_page(lang="en", plans=None):
 <section class="plans" aria-labelledby="plans-h">
 <h2 id="plans-h" class="sr-only">{t(lang, "plans.title")}</h2>
 {listing}
+{plans_mine_link(lang) if any(drafted_chapters(lang)) else ""}
 </section>
 {plans_script()}
 """
@@ -2385,6 +2409,7 @@ def plan_page(plan, lang="en", translated=LANGUAGES):
 </p>
 <p class="plan-status" data-plan-status aria-live="polite"></p>
 <p class="plan-kept">{t(lang, "plans.kept")}</p>
+{plan_extras(lang)}
 </div>
 </header>
 <section class="plan-days-wrap" aria-labelledby="plan-days-h">
@@ -2397,6 +2422,78 @@ def plan_page(plan, lang="en", translated=LANGUAGES):
 """
     return page(lang, plan.name[lang], body, path=plan_url(plan), current="/read/", translated=translated,
                 description=t(lang, "meta.plan_description", name=plan.name[lang], days=n))
+
+
+MY_PLANS_PATH = "/plans/mine/"
+
+
+def my_plans_page(lang="en"):
+    """The reader's own plans (web/plans.js, owb.myplans): a list of them, one
+    opened (#id=my-...) to read like a plan's page, a plan shared by link
+    (#n=<name>&d=JHN.1,JHN.2;JHN.3) to save, and a form to make one from
+    chapters readable in lang. Not indexed: what it shows is the reader's."""
+    def p(key):
+        return t(lang, "plans." + key)
+
+    body = f"""
+<header class="page-head">
+<p class="eyebrow"><a href="{url(lang, "/plans/")}">{t(lang, "plans.title")}</a></p>
+<h1>{p("mine_heading")}</h1>
+<p class="dek">{p("mine_dek")}</p>
+</header>
+<div class="myplans" id="myplans" {plans_attrs(lang)} data-account="{url(lang, "/account/")}">
+<section class="myplan-shared" hidden aria-live="polite"></section>
+<section class="myplan-view" hidden></section>
+<section class="myplan-list" aria-labelledby="myplans-h">
+<h2 id="myplans-h">{p("mine_list")}</h2>
+<p class="myplan-empty">{p("mine_empty")}</p>
+<ul class="a-grid plan-list"></ul>
+</section>
+<section class="myplan-builder" aria-labelledby="builder-h">
+<h2 id="builder-h">{p("make")}</h2>
+<form class="account-form myplan-form" id="myplan-form" novalidate>
+<label for="myplan-name">{p("name")}</label>
+<input id="myplan-name" name="name" maxlength="80" required>
+<fieldset class="myplan-add">
+<legend>{p("add_chapters")}</legend>
+<label>{p("book")} <select name="book"></select></label>
+<label>{p("from")} <select name="from"></select></label>
+<label>{p("to")} <select name="to"></select></label>
+<label>{p("per_day")} <input name="per" type="number" min="1" max="10" value="1" inputmode="numeric"></label>
+<button class="button ghost" type="button" data-add>{p("add")}</button>
+</fieldset>
+<ol class="myplan-days"></ol>
+<p class="form-note" id="myplan-note" role="status"></p>
+<p class="actions"><button class="button" type="submit">{p("save")}</button>
+<button class="button ghost" type="button" data-clear>{p("clear")}</button></p>
+</form>
+</section>
+</div>
+{plans_script()}
+"""
+    return page(lang, p("mine_heading"), body, current="/read/", unlisted=MY_PLANS_PATH)
+
+
+def groups_page(lang="en"):
+    """Reading groups (web/groups.js; backend groups/): the reader's groups,
+    one group's progress and talk, and invites. Not indexed: everything on
+    it is the reader's, and needs their account."""
+    body = f"""
+<header class="page-head">
+<p class="eyebrow"><a href="{url(lang, "/plans/")}">{t(lang, "plans.title")}</a></p>
+<h1>{t(lang, "groups.heading")}</h1>
+<p class="dek">{t(lang, "groups.dek")}</p>
+</header>
+<div class="groups" id="groups" data-plans="{plans_json_url(lang)}" data-plans-page="{url(lang, "/plans/")}"
+ data-login="{url(lang, "/login/")}">
+<noscript><p class="notice">{t(lang, "groups.noscript")}</p></noscript>
+<div class="groups-view" aria-live="polite"></div>
+</div>
+<script type="application/json" id="groups-text">{_ui_json(lang, "groups.ui")}</script>
+{plans_script()}
+<script src="{asset("groups.js")}" defer></script>
+"""
+    return page(lang, t(lang, "groups.title"), body, current="/read/", unlisted="/groups/")
 
 
 def all_records():
@@ -3494,7 +3591,18 @@ def term_head(term, lang, heading, eyebrow):
 <h1{heading[1]}>{heading[0]}</h1>
 <p class="term-id">{term_lemma(term, "term-lemma big")}
 <span class="term-strong">{t(lang, "terms.language_" + code)} &middot; Strong&rsquo;s {term_strong(term)}</span></p>
+{save_word_button(term["lemma"], term["sense"], code, lang)}
 </header>"""
+
+
+def save_word_button(lemma, gloss, language, lang):
+    """A button that puts a dictionary form in the reader's word list
+    (web/site.js OWBStudy), shown once the script is running."""
+    return (f'<p class="word-save-row"><button class="mark-bookmark save-word" type="button" hidden '
+            f'data-save-word="{html.escape(lemma)}" data-gloss="{html.escape(gloss)}" data-l="{language}" '
+            f'data-label-save="{html.escape(t(lang, "word.ui")["save"])}" '
+            f'data-label-saved="{html.escape(t(lang, "word.ui")["saved"])}"></button> '
+            f'<a class="mark-all" href="{url(lang, "/saved/")}#words">{t(lang, "word.ui")["list"]}</a></p>')
 
 
 def term_book_chips(term, lang, current=None):
@@ -4241,6 +4349,9 @@ def login_page(lang="en"):
 <div class="auth-alt" data-for="sign-in sign-up">
 <button class="button ghost wide" type="button" id="magic">{l("magic")}</button>
 </div>
+<div class="auth-alt" data-for="sign-in">
+<button class="button ghost wide" type="button" id="passkey" hidden>{l("passkey")}</button>
+</div>
 <p class="forgot" data-for="sign-in"><a href="?mode=reset" data-mode-link="reset">{l("forgot")}</a></p>
 </form>
 <p class="auth-switch" data-for="sign-in">{l("new")} <a href="./" data-mode-link="sign-up">{l("create")}</a></p>
@@ -4343,17 +4454,56 @@ def account_page(lang="en"):
 <p class="form-note" id="name-note" role="status"></p>
 </form>
 <p class="synced">{a("synced")} <a href="{url(lang, "/saved/")}">{a("synced_link")}</a></p>
+<p class="account-links"><a href="{url(lang, "/saved/")}#words">{a("link_words")}</a> &middot;
+<a href="{url(lang, MY_PLANS_PATH)}">{a("link_plans")}</a> &middot; <a href="{url(lang, "/groups/")}">{a("link_groups")}</a></p>
 <p><button class="button ghost" type="button" id="sign-out">{a("sign_out")}</button></p>
+</section>
+
+<section class="set-block" id="email-address">
+<h2>{a("address")}</h2>
+<p>{a("address_text")}</p>
+<form class="account-form" id="email-form">
+<label for="new-email">{a("address_new")}</label>
+<div class="field-row">
+<input id="new-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+<button class="button ghost" type="submit">{a("address_send")}</button>
+</div>
+<p class="form-note" id="email-note" role="status"></p>
+</form>
+</section>
+
+<section class="set-block" id="email">
+<h2>{a("emails")}</h2>
+<p>{a("emails_text")}</p>
+<form class="account-form email-prefs" id="prefs-form">
+<label class="handout-check"><input type="checkbox" name="replies"> {a("emails_replies")}</label>
+<label class="handout-check"><input type="checkbox" name="plan_reminders"> {a("emails_plans")}</label>
+<label class="prefs-hour">{a("emails_hour")} <select name="reminder_hour"></select></label>
+<p class="fine" id="prefs-zone"></p>
+<p class="form-note" id="prefs-note" role="status"></p>
+</form>
+</section>
+
+<section class="set-block" id="devices">
+<h2>{a("devices")}</h2>
+<p>{a("devices_text")}</p>
+<ul class="account-list" id="device-list"></ul>
+<p><button class="button ghost" type="button" id="sign-out-others">{a("devices_others")}</button></p>
+<p class="form-note" id="devices-note" role="status"></p>
+</section>
+
+<section class="set-block" id="passkeys">
+<h2>{a("passkeys")}</h2>
+<p>{a("passkeys_text")}</p>
+<ul class="account-list" id="passkey-list"></ul>
+<p><button class="button ghost" type="button" id="add-passkey" hidden>{a("passkeys_add")}</button></p>
+<p class="form-note" id="passkeys-note" role="status"></p>
 </section>
 <section class="set-block" id="my-messages" hidden data-books="{html.escape(json.dumps({b: chapter_book(b, lang) for b in BOOK_CHAPTERS}, ensure_ascii=False))}">
 <h2>{a("messages")}</h2>
 <p>{a("messages_text")}</p>
 <ul class="my-messages" id="messages-list"></ul>
 </section>
-<div class="soon">
-<h2>{a("soon")}</h2>
-<p>{a("soon_text")}</p>
-</div>
 
 <section class="set-block">
 <h2>{a("data")}</h2>
@@ -4423,28 +4573,49 @@ def not_found_page():
 
 
 def saved_page(lang="en"):
-    """The reader's bookmarks, highlights and notes, from owb.marks in this browser
-    (web/reader.js keeps them, web/site.js lists them here). The page
-    carries the book names and canonical order in lang, and its labels."""
+    """The reader's bookmarks, highlights, notes, collections and word list,
+    from this browser (web/site.js OWBStudy keeps them; web/saved.js lists
+    them here, and downloads or prints them). The page carries the book
+    names and canonical order in lang, and its labels."""
     order = [b for b, _ in books()]
     names = {b: chapter_book(b, lang) for b in order}
     data = {"order": order, "names": names,
             "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
+            "word_url": word_url(lang),
             "remove": t(lang, "saved.remove"), "bookmark": t(lang, "saved.bookmark"),
             "note": t(lang, "saved.note"), "confirm": t(lang, "saved.confirm")}
     filters = "".join(f'<button type="button" data-filter="{k}" aria-pressed="{"true" if k == "all" else "false"}">'
                       f'{t(lang, "saved." + k)}</button>' for k in ("all", "bookmarks", "highlights", "notes"))
+    views = "".join(f'<button type="button" data-view="{k}" aria-pressed="{"true" if k == "verses" else "false"}">'
+                    f'{t(lang, "saved.view_" + k)}</button>' for k in ("verses", "words"))
     return page(lang, t(lang, "saved.title"), f"""
 <header class="page-head">
 <p class="eyebrow">{t(lang, "saved.title")}</p>
 <h1>{t(lang, "saved.heading")}</h1>
 <p class="dek">{t(lang, "saved.dek")}</p>
 </header>
+<div class="saved-print-head" id="saved-print-head"><h1></h1><p></p></div>
 <section class="saved" id="saved" data-saved="{html.escape(json.dumps(data, ensure_ascii=False))}">
+<div class="saved-bar">
+<div class="seg saved-view" role="group" aria-label="{t(lang, "saved.show")}">{views}</div>
+<div class="saved-export" role="group" aria-label="{t(lang, "saved.export")}">
+<button class="button ghost" type="button" data-export="markdown">{t(lang, "saved.markdown")}</button>
+<button class="button ghost" type="button" data-export="print">{t(lang, "saved.print")}</button>
+</div>
+</div>
+<div class="saved-verses">
+<div class="saved-filters">
 <div class="seg saved-filter" role="group" aria-label="{t(lang, "saved.show")}">{filters}</div>
+<label class="saved-book-label">{t(lang, "saved.book")} <select class="saved-book-pick"></select></label>
+</div>
+<div class="saved-tags" hidden></div>
 <p class="saved-empty" hidden>{t(lang, "saved.empty")}</p>
 <div class="saved-list"></div>
-</section>""", unlisted="/saved/")
+</div>
+<div class="saved-words" hidden></div>
+</section>
+<script type="application/json" id="saved-text">{_ui_json(lang, "saved.ui")}</script>
+<script src="{asset("saved.js")}" defer></script>""", unlisted="/saved/")
 
 
 def offline_page(lang="en"):
@@ -4484,7 +4655,7 @@ def service_worker():
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
     current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js",
-                                  "compare.js", "word.js")]
+                                  "compare.js", "word.js", "saved.js", "groups.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
     current += [reader_shared(lang)[1] for lang in LANGUAGES]
@@ -4761,6 +4932,8 @@ def build(out):
         add("/reset-password/", reset_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
+        add(MY_PLANS_PATH, my_plans_page(lang), index=False)
+        add("/groups/", groups_page(lang), index=False)
     # The admin is in English only (admin_page).
     pages["/admin/"] = admin_page()
     # A plan's page is in the languages that offer it.
@@ -4798,13 +4971,13 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "admin.js", "admin.css"):
+                 "word.js", "saved.js", "groups.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
     return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
-                            "search.js", "site.js", "style.css"]
+                            "saved.js", "groups.js", "search.js", "site.js", "style.css"]
 
 
 def main():

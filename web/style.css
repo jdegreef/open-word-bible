@@ -2456,3 +2456,110 @@ button.button { font-family: inherit; cursor: pointer; }
 .book-outline li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .book-outline a { font-weight: 600; }
 .outline-heads { display: block; color: var(--muted); font-size: 15px; margin-top: 2px; }
+
+/* Collections, passage notes and the word list (web/reader.js, web/saved.js,
+   web/word.js; web/site.js OWBStudy keeps them). */
+.tag-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+.tag-chip {
+  padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--text); font: inherit; font-size: 13px; cursor: pointer;
+}
+.tag-chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--accent-contrast, #fff); }
+.tag-chip.small { font-size: 12px; padding: 2px 8px; }
+.collections { margin: -4px 0 16px; font-family: var(--sans); }
+.collection-form { display: flex; gap: 8px; align-items: center; }
+.collection-new { flex: 1; min-width: 0; max-width: 16em; padding: 4px 10px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); font: inherit; font-size: 14px; }
+.passage-note .my-note-label { color: var(--accent); }
+.verse.passage-noted { text-decoration: underline dotted var(--accent); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.wi-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 8px 0 0; }
+.word-save-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 8px 0 12px; }
+.save-word::before { display: none; }
+.saved-bar, .saved-filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 20px; }
+.saved-filters .saved-filter { margin: 0; }
+.saved-export { display: flex; flex-wrap: wrap; gap: 8px; }
+.saved-book-label { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 14px; }
+.saved-book-pick { padding: 4px 8px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); font: inherit; }
+.saved-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 20px; font-family: var(--sans); }
+.saved-tag-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.saved-tag-row .label { margin-right: 4px; }
+.saved-tag-delete { margin-left: 0; }
+.saved-item-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+.saved-item.passage { border-style: dashed; }
+.saved-lemma { font-size: 1.25em; font-weight: 600; }
+.saved-gloss { color: var(--muted); font-size: 14px; }
+.saved-recent { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 8px; }
+.saved-print-head { display: none; }
+.saved-remove.armed, .saved-tag-delete.armed { color: var(--danger, #b3261e); }
+@media print {
+  .saved-print-head { display: block; margin: 0 0 12pt; }
+  .saved-print-head h1 { font-size: 20pt; margin: 0 0 4pt; }
+  .saved-print-head p { font-family: var(--sans); font-size: 9pt; color: #444; margin: 0; }
+  body:has(#saved) .page-head, .saved-bar, .saved-filters, .saved-tags, .saved-remove, .tag-chip:not(.small) { display: none !important; }
+  .saved-item { box-shadow: none; border: .5pt solid #999; break-inside: avoid; }
+  .saved-item-tags .tag-chip { border: 0; padding: 0; font-style: italic; }
+}
+
+/* The verse image's note option, and the handout (web/reader.js
+   openHandout, printHandout): a dialog to choose it, a page to print. */
+.image-share { display: inline-flex; align-items: center; gap: 8px; }
+.image-note { font-family: var(--sans); font-size: 13px; display: inline-flex; align-items: center; gap: 4px; }
+.handout-dialog { max-width: 30rem; width: calc(100% - 32px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--text); padding: 20px 24px; }
+.handout-dialog::backdrop { background: rgb(0 0 0 / .4); }
+.handout-dialog h2 { margin: 0 0 8px; }
+.handout-dialog label { display: block; margin: 10px 0 0; }
+.handout-dialog input:not([type=checkbox]), .handout-dialog select { width: 100%; }
+.handout-pick { display: inline-block !important; width: 48%; }
+.handout-check { display: flex !important; align-items: center; gap: 8px; }
+@media print {
+  body.printing-handout > *:not(#handout) { display: none !important; }
+  body.printing-handout #handout { display: block !important; }
+  .handout { font-family: var(--serif); color: #000; }
+  .handout h1 { font-size: 20pt; margin: 0 0 4pt; }
+  .handout h2 { font-size: 12pt; margin: 14pt 0 6pt; border-bottom: .5pt solid #999; }
+  .handout h3 { font-size: 10.5pt; margin: 10pt 0 4pt; }
+  .handout-meta { font-family: var(--sans); font-size: 8.5pt; color: #444; margin: 0 0 10pt; }
+  .handout-text p { font-size: 12pt; line-height: 1.55; margin: 0 0 6pt; }
+  .handout-text sup { font-size: 7pt; font-family: var(--sans); }
+  .handout-notes li, .handout-decision p { font-size: 9.5pt; margin: 0 0 3pt; break-inside: avoid; }
+  .handout-notes ol { list-style: none; padding: 0; }
+  .handout-choice { font-weight: 700; }
+  .handout-decision { break-inside: avoid; margin: 0 0 6pt; }
+  .handout-line { border-bottom: .5pt solid #999; height: 22pt; }
+}
+
+/* The account page's devices and passkeys, and its email choices. */
+.account-list { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 8px; }
+.account-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.account-item p { margin: 0; }
+.account-item-name { font-weight: 600; }
+.account-links { font-family: var(--sans); font-size: 15px; }
+.email-prefs label { margin: 8px 0 0; }
+.prefs-hour { display: flex; align-items: center; gap: 8px; }
+.prefs-hour select { width: auto; }
+
+/* The reader's own plans (my_plans_page, web/plans.js). */
+.plans-mine-link { margin: 24px 0 0; }
+.myplan-card { display: flex; flex-direction: column; gap: 6px; }
+.myplan-actions { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 6px 0 0; }
+.myplan-add { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 14px; margin: 16px 0; padding: 12px 16px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.myplan-add label { display: flex; flex-direction: column; gap: 4px; margin: 0; font-size: 14px; }
+.myplan-add input[type=number] { width: 5em; }
+.myplan-days { padding-left: 0; list-style: none; display: grid; gap: 4px; margin: 0 0 12px; }
+.myplan-day { display: flex; align-items: center; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--line); font-family: var(--sans); font-size: 15px; }
+.myplan-day .plan-undo { margin-left: auto; }
+.myplan-shared, .myplan-view { margin: 0 0 32px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.plan-extras { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 8px 0 0; font-family: var(--sans); font-size: 14px; }
+
+/* Reading groups (groups_page, web/groups.js). */
+.groups-view > section { margin: 0 0 32px; }
+.groups-back { display: inline-block; margin: 0 0 12px; font-family: var(--sans); font-size: 14px; }
+.groups-head { margin: 0 0 24px; }
+.groups-member-list, .groups-posts { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 10px; }
+.groups-member, .groups-post { padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.groups-member p, .groups-post p { margin: 0 0 4px; }
+.groups-member-name { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.groups-post-head { display: flex; align-items: baseline; gap: 10px; }
+.groups-post-head .saved-remove { margin-left: auto; }
+.groups-post-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.plan-ticks.small .tick { width: 8px; height: 8px; }
+.groups-invite .field-row input { flex: 1; min-width: 0; }

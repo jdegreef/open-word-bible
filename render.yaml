@@ -48,12 +48,13 @@ services:
       - path: /*
         name: X-Frame-Options
         value: DENY
-      # Nothing on the site uses these. Listen uses speechSynthesis, and
-      # sharing uses navigator.share and the clipboard, none of which these
-      # cover.
+      # Nothing on the site uses these but passkeys (web/account.js), which
+      # the site's own pages may make and use. Listen uses speechSynthesis,
+      # and sharing uses navigator.share and the clipboard, none of which
+      # these cover.
       - path: /*
         name: Permissions-Policy
-        value: "accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=(), browsing-topics=()"
+        value: "accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(self), publickey-credentials-get=(self), serial=(), usb=(), xr-spatial-tracking=(), browsing-topics=()"
       # The offline worker (web/sw.js) is checked on every visit, so a
       # deploy reaches readers at once.
       - path: /sw.js
@@ -175,3 +176,9 @@ services:
   # unset. To bring it back, set EMAIL_HOST, EMAIL_HOST_USER,
   # EMAIL_HOST_PASSWORD and DEFAULT_FROM_EMAIL on owb-api, then restore the
   # service from git history (render.yaml at 4ed6799).
+  # Reading-plan emails (backend/accounts/reminders.py) need a cron job too,
+  # once SMTP is set: every hour ("5 * * * *"), running
+  #   python backend/manage.py send_plan_reminders
+  # with owb-api's environment (DATABASE_URL, EMAIL_*, DEFAULT_FROM_EMAIL,
+  # OWB_SITE_URL, and DJANGO_SECRET_KEY, which signs the unsubscribe links).
+  # Until it runs, readers can turn the emails on but none are sent.

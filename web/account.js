@@ -77,6 +77,47 @@
     });
   }
 
+  // Passkeys (WebAuthn): the API's options come as JSON, with its binary
+  // fields in base64url; the browser's answer goes back the same way.
+  function fromB64(text) {
+    text = text.replace(/-/g, "+").replace(/_/g, "/");
+    while (text.length % 4) text += "=";
+    var bin = atob(text), out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out.buffer;
+  }
+  function toB64(buf) {
+    var bytes = new Uint8Array(buf), bin = "";
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  function credentialJSON(c) {
+    var r = c.response, out = { id: c.id, rawId: toB64(c.rawId), type: c.type,
+                                response: { clientDataJSON: toB64(r.clientDataJSON) },
+                                clientExtensionResults: c.getClientExtensionResults ? c.getClientExtensionResults() : {} };
+    if (r.attestationObject) {
+      out.response.attestationObject = toB64(r.attestationObject);
+      if (r.getTransports) out.response.transports = r.getTransports();
+    } else {
+      out.response.authenticatorData = toB64(r.authenticatorData);
+      out.response.signature = toB64(r.signature);
+      out.response.userHandle = r.userHandle ? toB64(r.userHandle) : null;
+    }
+    return out;
+  }
+  function passkeysWork() { return !!(window.PublicKeyCredential && navigator.credentials); }
+  function makePasskey(options) {
+    options.challenge = fromB64(options.challenge);
+    options.user.id = fromB64(options.user.id);
+    (options.excludeCredentials || []).forEach(function (c) { c.id = fromB64(c.id); });
+    return navigator.credentials.create({ publicKey: options }).then(credentialJSON);
+  }
+  function usePasskey(options) {
+    options.challenge = fromB64(options.challenge);
+    (options.allowCredentials || []).forEach(function (c) { c.id = fromB64(c.id); });
+    return navigator.credentials.get({ publicKey: options }).then(credentialJSON);
+  }
+
   function showView(root, name) {
     root.querySelectorAll("[data-view]").forEach(function (n) {
       n.hidden = n.getAttribute("data-view") !== name;
@@ -218,6 +259,20 @@
         .catch(function (err) { say(err.message); busy(submit, false); });
     });
 
+    // A passkey: the device's lock, no address needed.
+    var passkey = document.getElementById("passkey");
+    passkey.hidden = !passkeysWork();
+    passkey.addEventListener("click", function () {
+      say("");
+      busy(passkey, true);
+      api("/api/auth/passkey/options", { method: "POST", anonymous: true }, T).then(usePasskey).then(function (credential) {
+        return api("/api/auth/passkey", { method: "POST", body: { credential: credential }, anonymous: true }, T);
+      }).then(signedIn).catch(function (err) {
+        say(err && err.name === "NotAllowedError" ? T.passkey_cancelled : (err && err.message) || T.passkey_failed);
+        busy(passkey, false);
+      });
+    });
+
     magic.addEventListener("click", function () {
       say("");
       var email = emailOk();
@@ -336,7 +391,24 @@
     function toLogin() { location.replace(login + "?redirect=" + encodeURIComponent(location.pathname)); }
     // A sign-in email sent before /login/ existed linked here.
     if (/^#token=/.test(location.hash)) { location.replace(login + location.hash); return; }
-    if (!saved()) { toLogin(); return; }
+    // A change-of-address link (accounts/controls.py): used here, signed in
+    // or not, and the address it moved to said.
+    var moved = /^#email=([\w-]+)$/.exec(location.hash);
+    if (moved) {
+      try { history.replaceState(null, "", location.pathname); } catch (e) { /* ignore */ }
+      var banner = document.createElement("p");
+      banner.className = "notice";
+      banner.setAttribute("role", "status");
+      root.parentNode.insertBefore(banner, root);
+      api("/api/me/email/confirm", { method: "POST", body: { token: moved[1] }, anonymous: true }, T)
+        .then(function (user) {
+          banner.textContent = T.address_moved.replace("{email}", user.email);
+          var account = saved();
+          if (account && account.user && account.user.email !== user.email) { account.user = user; store(account); }
+          if (saved()) render(saved().user);
+        }).catch(function (err) { banner.textContent = err.message; });
+    }
+    if (!saved()) { if (!moved) toLogin(); return; }
 
     var nameForm = document.getElementById("name-form");
     var nameNote = document.getElementById("name-note");
@@ -440,6 +512,121 @@
         location.replace(PREFIX + "/");
       }).catch(function (err) { failed(err, dangerNote); });
     });
+
+    function dateText(iso) {
+      return new Date(iso).toLocaleDateString(LANG, { year: "numeric", month: "short", day: "numeric" });
+    }
+
+    // Moving the account to another address: a link to the new one, which
+    // lands back here as #email=<secret>.
+    var emailForm = document.getElementById("email-form"), emailNote = document.getElementById("email-note");
+    emailForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var address = emailForm.email.value.trim(), button = emailForm.querySelector("button");
+      busy(button, true);
+      api("/api/me/email", { method: "POST", body: { email: address, lang: LANG } }, T).then(function () {
+        emailNote.textContent = T.address_sent.replace("{email}", address);
+        emailForm.email.value = "";
+      }).catch(function (err) { failed(err, emailNote); }).then(function () { busy(button, false); });
+    });
+
+    // Which emails: saved as soon as one is changed, with this browser's
+    // time zone and the page's language for the links.
+    var prefsForm = document.getElementById("prefs-form"), prefsNote = document.getElementById("prefs-note");
+    var zone = (window.Intl && Intl.DateTimeFormat().resolvedOptions().timeZone) || "UTC";
+    for (var h = 0; h < 24; h++) {
+      var o = el("option", null, new Date(2026, 0, 1, h).toLocaleTimeString(LANG, { hour: "numeric", minute: "2-digit" }));
+      o.value = h;
+      prefsForm.reminder_hour.appendChild(o);
+    }
+    document.getElementById("prefs-zone").textContent = T.zone.replace("{zone}", zone);
+    function showPrefs(p) {
+      prefsForm.replies.checked = p.replies;
+      prefsForm.plan_reminders.checked = p.plan_reminders;
+      prefsForm.reminder_hour.value = p.reminder_hour;
+      prefsForm.reminder_hour.disabled = !p.plan_reminders;
+    }
+    prefsForm.addEventListener("change", function () {
+      prefsForm.reminder_hour.disabled = !prefsForm.plan_reminders.checked;
+      api("/api/me/prefs", { method: "PATCH", body: {
+        replies: prefsForm.replies.checked, plan_reminders: prefsForm.plan_reminders.checked,
+        reminder_hour: +prefsForm.reminder_hour.value, timezone: zone, language: LANG } }, T)
+        .then(function (p) { showPrefs(p); prefsNote.textContent = T.saved; })
+        .catch(function (err) { failed(err, prefsNote); });
+    });
+    api("/api/me/prefs", {}, T).then(showPrefs).catch(function () { /* offline */ });
+
+    // Signed-in devices.
+    var devicesNote = document.getElementById("devices-note");
+    function showDevices(list) {
+      var ul = document.getElementById("device-list");
+      ul.textContent = "";
+      list.forEach(function (d) {
+        var li = el("li", "account-item");
+        var text = el("div");
+        text.appendChild(el("p", "account-item-name", d.label || T.unknown_device));
+        text.appendChild(el("p", "fine", d.current ? T.this_device : T.last_used.replace("{date}", dateText(d.last_used_at))));
+        li.appendChild(text);
+        if (!d.current) {
+          var out = el("button", "button ghost", T.sign_out_device);
+          out.type = "button";
+          out.addEventListener("click", function () {
+            api("/api/me/devices/" + d.id, { method: "DELETE" }, T).then(loadDevices)
+              .catch(function (err) { failed(err, devicesNote); });
+          });
+          li.appendChild(out);
+        }
+        ul.appendChild(li);
+      });
+      document.getElementById("sign-out-others").hidden = list.length < 2;
+    }
+    function loadDevices() { return api("/api/me/devices", {}, T).then(showDevices).catch(function () { /* offline */ }); }
+    twoClicks(document.getElementById("sign-out-others"), function () {
+      api("/api/me/devices/sign-out-others", { method: "POST" }, T).then(function (r) {
+        devicesNote.textContent = T.signed_out_others.replace("{n}", r.signed_out);
+        loadDevices();
+      }).catch(function (err) { failed(err, devicesNote); });
+    });
+    loadDevices();
+
+    // Passkeys.
+    var passkeysNote = document.getElementById("passkeys-note"), addPasskey = document.getElementById("add-passkey");
+    function showPasskeys(list) {
+      var ul = document.getElementById("passkey-list");
+      ul.textContent = "";
+      if (!list.length) ul.appendChild(el("li", "fine", T.passkeys_none));
+      list.forEach(function (k) {
+        var li = el("li", "account-item");
+        var text = el("div");
+        text.appendChild(el("p", "account-item-name", k.label || T.unknown_device));
+        text.appendChild(el("p", "fine", k.last_used_at ? T.last_used.replace("{date}", dateText(k.last_used_at))
+          : T.added.replace("{date}", dateText(k.created_at))));
+        li.appendChild(text);
+        var x = el("button", "button ghost", T.remove);
+        x.type = "button";
+        twoClicks(x, function () {
+          api("/api/me/passkeys/" + k.id, { method: "DELETE" }, T).then(loadPasskeys)
+            .catch(function (err) { failed(err, passkeysNote); });
+        });
+        li.appendChild(x);
+        ul.appendChild(li);
+      });
+    }
+    function loadPasskeys() { return api("/api/me/passkeys", {}, T).then(showPasskeys).catch(function () { /* offline */ }); }
+    addPasskey.hidden = !passkeysWork();
+    if (!passkeysWork()) passkeysNote.textContent = T.passkey_unsupported;
+    addPasskey.addEventListener("click", function () {
+      busy(addPasskey, true);
+      passkeysNote.textContent = "";
+      api("/api/me/passkeys/options", { method: "POST" }, T).then(makePasskey).then(function (credential) {
+        return api("/api/me/passkeys", { method: "POST", body: { credential: credential } }, T);
+      }).then(function () { passkeysNote.textContent = T.passkey_added; return loadPasskeys(); })
+        .catch(function (err) {
+          if (err && err.signedOut) { toLogin(); return; }
+          passkeysNote.textContent = err && err.name === "NotAllowedError" ? "" : (err && err.message) || T.passkey_failed;
+        }).then(function () { busy(addPasskey, false); });
+    });
+    loadPasskeys();
 
     // Your suggestions and questions (sent from a verse in the reader,
     // backend/feedback/), with the editors' replies.
