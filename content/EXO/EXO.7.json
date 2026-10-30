@@ -66,6 +66,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} disse a Moisés: \"Vê, eu te fiz Deus para Faraó, e Arão, teu irmão, será o teu profeta.",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Olha, eu te coloquei diante de Faraó como Deus, e o teu irmão Arão será o teu profeta.",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Presta atenção. Vou fazer de ti alguém como Deus para Faraó. O teu irmão Arão vai falar por ti, como um profeta fala em nome de Deus."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርም|ያህዌም}} ለሙሴ እንዲህ አለው፦ «ተመልከት፣ ለፈርዖን አምላክ አድርጌሃለሁ፤ ወንድምህ አሮንም ነቢይህ ይሆናል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ተመልከት፤ በፈርዖን ፊት እንደ አምላክ እንድትሆን ሾሜሃለሁ፤ ወንድምህ አሮንም ነቢይህ ሆኖ ያገለግልሃል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ስማ። ለፈርዖን እንደ አምላክ አደርግሃለሁ። ነቢይ እግዚአብሔርን ወክሎ እንደሚናገር፣ ወንድምህ አሮንም አንተን ወክሎ ይናገራል።"
         }
       },
       "decisions": [
@@ -178,6 +183,46 @@
           "reason": "Moses will stand before Pharaoh with God's authority (meaning decision); Vietnamese \"làm Đức Chúa Trời\" would make him divine, so Literal brackets \"như\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020070010021"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalizes pronouns for God has nothing to change in Amharic; the Amharic text carries no deity_pronoun spans in this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070010071"
+          ],
+          "choice": "\"አምላክ\" for Elohim in \"I have made you God to Pharaoh\"",
+          "alternatives": [
+            "\"እግዚአብሔር\""
+          ],
+          "reason": "Elohim is a predicate here and has no article: Moses is not the one God but stands to Pharaoh as God does. Amharic keeps \"እግዚአብሔር\" for the one God himself and uses \"አምላክ\" for a predicate or a title (\"the God of the Hebrews\": \"የዕብራውያን አምላክ\"); Balanced and Readable say \"as God\" (\"እንደ አምላክ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -252,6 +297,11 @@
           "L": "Tu falarás tudo o que eu te ordenar, e Arão, teu irmão, falará a Faraó, para que ele deixe os filhos de Israel saírem da sua terra.",
           "B": "Fala tudo o que eu te mandar dizer. Depois o teu irmão Arão falará a Faraó, para que ele deixe os israelitas saírem da sua terra.",
           "R": "Conta a Arão tudo o que eu te ordenar. Então o teu irmão Arão vai dizer a Faraó que deixe os israelitas saírem do seu país."
+        },
+        "am": {
+          "L": "አንተ ያዘዝኩህን ሁሉ ትናገራለህ፤ ወንድምህ አሮንም የእስራኤልን ልጆች ከምድሩ እንዲለቅቅ ለፈርዖን ይናገራል።",
+          "B": "እንድትናገር የምሰጥህን ሁሉ ተናገር፤ ከዚያም ወንድምህ አሮን የእስራኤልን ልጆች ከአገሩ እንዲለቅቅ ለፈርዖን ይነግረዋል።",
+          "R": "ያዘዝኩህን ሁሉ ለአሮን ንገረው። ከዚያም ወንድምህ አሮን እስራኤላውያንን ከአገሩ እንዲለቅቅ ለፈርዖን ይነግረዋል።"
         }
       },
       "decisions": [
@@ -301,6 +351,25 @@
           "choice": "Tell Aaron",
           "alternatives": [],
           "reason": "Readable says to whom Moses speaks; verse 1 and 4:15-16 show that Moses gives the words to Aaron.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020070020141"
+          ],
+          "choice": "no gender span on \"የእስራኤል ልጆች\" / \"እስራኤላውያን\"",
+          "alternatives": [],
+          "reason": "The English offers \"children\" or \"Israelites\" beside \"sons\". Amharic \"ልጆች\" and \"እስራኤላውያን\" already include daughters and women, so there are not two wordings to choose between; the Amharic has no gender span in this chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -373,6 +442,11 @@
           "L": "Mas eu endurecerei o coração de Faraó e multiplicarei os {{deity_pronoun:meus|Meus}} sinais e as {{deity_pronoun:minhas|Minhas}} maravilhas na terra do Egito.",
           "B": "Quanto a {{deity_pronoun:mim|Mim}}, endurecerei o coração de Faraó e encherei a terra do Egito com os {{deity_pronoun:meus|Meus}} sinais e maravilhas.",
           "R": "Mas eu vou fazer Faraó ficar teimoso. Vou fazer muitos milagres e maravilhas no Egito."
+        },
+        "am": {
+          "L": "እኔ ግን የፈርዖንን ልብ አደነድናለሁ፤ ምልክቶቼንና ድንቆቼን በግብፅ ምድር አበዛለሁ።",
+          "B": "እኔ ደግሞ የፈርዖንን ልብ አደነድናለሁ፤ የግብፅንም ምድር በምልክቶቼና በድንቆቼ እሞላታለሁ።",
+          "R": "እኔ ግን ፈርዖንን እልከኛ አደርገዋለሁ። በግብፅ ብዙ ተአምራትንና ድንቅ ነገሮችን አደርጋለሁ።"
         }
       },
       "decisions": [
@@ -582,6 +656,27 @@
           "reason": "As set at 4:21, Literal keeps the three Hebrew verbs for Pharaoh's heart apart (m1): \"endurecer\" for this verb, \"fortalecer\" for the verb of 4:21 and 7:13 (also \"se fortaleceu\" where the heart itself is the subject), and \"tornar pesado\" or \"estar pesado\" for the verb of 7:14. Balanced says \"endurecer o coração\" for all three, Readable \"teimoso\". \"Faraó\" keeps no article, as a name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070030021"
+          ],
+          "choice": "Literal keeps the three Hebrew verbs for Pharaoh's heart apart: \"አደነደነ\" (make hard, here), \"ጸና\" / \"አጸና\" (be or make strong), \"ከበደ\" / \"አከበደ\" (be or make heavy); Balanced says \"ልቡ ደነደነ\" / \"ልቡን አደነደነ\" for all three, Readable \"እልከኛ\" (stubborn)",
+          "alternatives": [
+            "\"ልቡን አጠነከረ\" at every level"
+          ],
+          "reason": "The plague chapters repeat these formulas; one wording for each keeps the repetition visible. Literal lets a reader see which Hebrew verb is used; Balanced and Readable follow the English levels, which give the sense, stubbornness, with one word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -663,6 +758,11 @@
           "L": "E Faraó não ouvirá vocês, e eu porei a {{deity_pronoun:minha|Minha}} mão sobre o Egito e farei sair os {{deity_pronoun:meus|Meus}} exércitos, o {{deity_pronoun:meu|Meu}} povo, os filhos de Israel, da terra do Egito com grandes juízos.",
           "B": "Faraó não dará ouvidos a vocês. Então levantarei a {{deity_pronoun:minha|Minha}} mão contra o Egito e, com grandes juízos, tirarei da terra do Egito as {{deity_pronoun:minhas|Minhas}} fileiras, o {{deity_pronoun:meu|Meu}} povo, os israelitas.",
           "R": "Faraó não vai ouvir vocês. Então eu vou usar o {{deity_pronoun:meu|Meu}} poder contra o Egito. Vou castigar duramente o Egito e vou tirar de lá o {{deity_pronoun:meu|Meu}} povo, os israelitas, como um exército que sai marchando."
+        },
+        "am": {
+          "L": "ፈርዖንም አይሰማችሁም፤ እጄንም በግብፅ ላይ አደርጋለሁ፤ ሠራዊቶቼን፣ ሕዝቤን፣ የእስራኤልን ልጆች፣ በታላቅ ፍርድ ከግብፅ ምድር አወጣለሁ።",
+          "B": "ፈርዖን አይሰማችሁም። ከዚያም እጄን በግብፅ ላይ አነሣለሁ፤ ሠራዊቴን፣ ሕዝቤን የእስራኤልን ልጆች፣ በታላቅ ፍርድ ከግብፅ ምድር አወጣቸዋለሁ።",
+          "R": "ፈርዖን አይሰማችሁም። ከዚያም ኃይሌን በግብፅ ላይ አሳያለሁ። ግብፅን በብርቱ እቀጣለሁ፤ ሕዝቤን እስራኤላውያንንም ሠራዊት ተሰልፎ እንደሚወጣ ከግብፅ አወጣቸዋለሁ።"
         }
       },
       "decisions": [
@@ -802,6 +902,11 @@
           "L": "E os egípcios saberão que eu [sou] {{divine_name:o SENHOR|Javé}}, quando eu estender a {{deity_pronoun:minha|Minha}} mão sobre o Egito e fizer sair os filhos de Israel do meio deles.\"",
           "B": "Quando eu estender a {{deity_pronoun:minha|Minha}} mão contra o Egito e tirar os israelitas do meio do seu povo, os egípcios saberão que eu sou {{divine_name:o SENHOR|Javé}}.\"",
           "R": "Então os egípcios vão aprender que eu sou {{divine_name:o SENHOR|Javé}}. Eles vão aprender isso quando eu usar o {{deity_pronoun:meu|Meu}} poder contra eles e tirar os israelitas da terra deles.\""
+        },
+        "am": {
+          "L": "እጄንም በግብፅ ላይ በዘረጋሁ ጊዜ፣ የእስራኤልንም ልጆች ከመካከላቸው ባወጣሁ ጊዜ፣ ግብፃውያን እኔ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ሆንኩ ያውቃሉ።»",
+          "B": "እጄን በግብፅ ላይ ስዘረጋና የእስራኤልን ልጆች ከመካከላቸው ሳወጣ፣ ግብፃውያን እኔ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ሆንኩ ያውቃሉ።»",
+          "R": "ያን ጊዜ ግብፃውያን እኔ {{divine_name:እግዚአብሔር|ያህዌ}} መሆኔን ያውቃሉ። ኃይሌን በእነርሱ ላይ ስጠቀምና እስራኤላውያንን ከአገራቸው ሳወጣ ይህን ያውቃሉ።»"
         }
       },
       "decisions": [
@@ -832,6 +937,24 @@
           "choice": "Egypt: the people of Egypt",
           "alternatives": [],
           "reason": "The name of the land stands for its people, as the plural verb shows.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020070050012"
+          ],
+          "choice": "the \"when\" clauses before \"the Egyptians will know\"",
+          "alternatives": [],
+          "reason": "Amharic puts the main verb last, so the time clauses come first; the sentence still ends on the knowledge of the name, as the Hebrew does.",
           "uncertain": false,
           "footnote": false
         }
@@ -899,6 +1022,11 @@
           "L": "E Moisés e Arão fizeram [assim]; como {{divine_name:o SENHOR|Javé}} lhes ordenou, assim fizeram.",
           "B": "Então Moisés e Arão obedeceram; fizeram exatamente o que {{divine_name:o SENHOR|Javé}} lhes mandou.",
           "R": "Moisés e Arão obedeceram. Fizeram tudo o que {{divine_name:o SENHOR|Javé}} mandou que eles fizessem."
+        },
+        "am": {
+          "L": "ሙሴና አሮንም [እንዲሁ] አደረጉ፤ {{divine_name:እግዚአብሔር|ያህዌ}} እንዳዘዛቸው እንዲሁ አደረጉ።",
+          "B": "ሙሴና አሮንም ታዘዙ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ያዘዛቸውን ልክ እንዳዘዛቸው አደረጉ።",
+          "R": "ሙሴና አሮን ታዘዙ። {{divine_name:እግዚአብሔር|ያህዌ}} ያዘዛቸውን ሁሉ አደረጉ።"
         }
       },
       "decisions": [
@@ -985,6 +1113,11 @@
           "L": "E Moisés [era] filho de oitenta anos, e Arão, filho de oitenta e três anos, quando falaram a Faraó.",
           "B": "Quando falaram com Faraó, Moisés tinha oitenta anos e Arão, oitenta e três.",
           "R": "Quando Moisés e Arão falaram com Faraó, Moisés tinha oitenta anos. Arão tinha oitenta e três."
+        },
+        "am": {
+          "L": "ፈርዖንን ባነጋገሩት ጊዜ ሙሴ የሰማንያ ዓመት ልጅ [ነበረ]፤ አሮንም የሰማንያ ሦስት ዓመት ልጅ [ነበረ]።",
+          "B": "ፈርዖንን ባነጋገሩት ጊዜ ሙሴ ሰማንያ ዓመቱ ነበር፤ አሮን ደግሞ ሰማንያ ሦስት ዓመቱ ነበር።",
+          "R": "ሙሴና አሮን ፈርዖንን ሲያነጋግሩ ሙሴ ሰማንያ ዓመቱ ነበር። አሮን ደግሞ ሰማንያ ሦስት ዓመቱ ነበር።"
         }
       },
       "decisions": [
@@ -1122,6 +1255,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés e a Arão, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés e a Arão:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés e a Arão:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርም|ያህዌም}} ሙሴንና አሮንን እንዲህ ብሎ ተናገራቸው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴንና አሮንን እንዲህ አላቸው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴንና አሮንን እንዲህ አላቸው፦"
         }
       },
       "decisions": [],
@@ -1202,6 +1340,11 @@
           "L": "\"Quando Faraó falar a vocês, dizendo: 'Deem uma maravilha em favor de vocês', então dirás a Arão: 'Pegue a sua vara e lance[-a] diante de Faraó'; ela se tornará uma serpente.\"",
           "B": "\"Se Faraó exigir: 'Provem quem vocês são com uma maravilha', manda Arão pegar a sua vara e jogá-la no chão diante de Faraó. Ela se transformará numa serpente.\"",
           "R": "\"Faraó vai dizer a vocês: 'Façam um milagre para eu ver.' Então tu, Moisés, manda Arão jogar a sua vara no chão diante de Faraó. Ela vai virar uma serpente.\""
+        },
+        "am": {
+          "L": "«ፈርዖን፦ “ለራሳችሁ ድንቅ ስጡ” ብሎ ሲናገራችሁ፣ አንተ አሮንን፦ “በትርህን ውሰድና በፈርዖን ፊት ጣለው” ትለዋለህ፤ ዘንዶም ይሆናል።»",
+          "B": "«ፈርዖን፦ “ድንቅ ነገር በማድረግ ራሳችሁን አስመስክሩ” ብሎ ቢጠይቃችሁ፣ አሮን በትሩን ወስዶ በፈርዖን ፊት እንዲጥለው ንገረው። በትሩም ዘንዶ ይሆናል።»",
+          "R": "«ፈርዖን፦ “እስቲ ተአምር አሳዩኝ” ይላችኋል። ያን ጊዜ፣ ሙሴ፣ በትሩን በፈርዖን ፊት እንዲጥል አሮንን ንገረው። በትሩም ዘንዶ ይሆናል።»"
         }
       },
       "decisions": [
@@ -1425,6 +1568,27 @@
           "reason": "For the whole book: the word here (m2) is not the \"snake\" of 4:3 and 7:15, so Portuguese keeps them apart as the English does: \"serpente\" here and in verses 10-12, \"cobra\" for the snake of 7:15. \"Serpente\" can name a large and frightening creature; \"cobra\" is the everyday word for a snake.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070090192"
+          ],
+          "choice": "\"ዘንዶ\" for the serpent of the staff here",
+          "alternatives": [
+            "\"እባብ\""
+          ],
+          "reason": "The Hebrew word here is not the one for the \"snake\" of 4:3, which the Amharic gives as \"እባብ\"; \"ዘንዶ\", a large serpent, keeps the two apart as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1509,6 +1673,11 @@
           "L": "E Moisés e Arão foram a Faraó e fizeram assim, como {{divine_name:o SENHOR|Javé}} tinha ordenado; e Arão lançou a sua vara diante de Faraó e diante dos seus servos, e ela se tornou uma serpente.",
           "B": "Moisés e Arão foram até Faraó e fizeram como {{divine_name:o SENHOR|Javé}} tinha ordenado. Arão jogou a sua vara no chão diante de Faraó e da sua corte, e ela se transformou numa serpente.",
           "R": "Então Moisés e Arão foram até Faraó. Eles fizeram o que {{divine_name:o SENHOR|Javé}} tinha mandado. Arão jogou a sua vara no chão diante de Faraó e dos seus oficiais. A vara virou uma serpente."
+        },
+        "am": {
+          "L": "ሙሴና አሮንም ወደ ፈርዖን ገቡ፤ {{divine_name:እግዚአብሔር|ያህዌ}} እንዳዘዘም እንዲሁ አደረጉ፤ አሮንም በትሩን በፈርዖንና በባሪያዎቹ ፊት ጣለ፤ ዘንዶም ሆነ።",
+          "B": "ሙሴና አሮን ወደ ፈርዖን ሄደው {{divine_name:እግዚአብሔር|ያህዌ}} እንዳዘዛቸው አደረጉ። አሮን በትሩን በፈርዖንና በሹማምንቱ ፊት መሬት ላይ ጣለው፤ በትሩም ዘንዶ ሆነ።",
+          "R": "ስለዚህ ሙሴና አሮን ወደ ፈርዖን ሄዱ። {{divine_name:እግዚአብሔር|ያህዌ}} የነገራቸውን አደረጉ። አሮን በትሩን በፈርዖንና በሹማምንቱ ፊት ጣለው። በትሩም ዘንዶ ሆነ።"
         }
       },
       "decisions": [
@@ -1545,6 +1714,27 @@
             "đầy tớ"
           ],
           "reason": "Pharaoh's officials (meaning decision); Literal keeps \"đầy tớ\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070100181"
+          ],
+          "choice": "Pharaoh's servants: \"ባሪያዎቹ\" (Literal), \"ሹማምንቱ\" (his officials, Balanced and Readable)",
+          "alternatives": [
+            "\"አገልጋዮቹ\""
+          ],
+          "reason": "The men round Pharaoh are his court, as the English Balanced and Readable say; \"ሹማምንት\" names royal officials, where \"አገልጋዮች\" would suggest household servants. Literal keeps the Hebrew word as \"ባሪያ\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1618,6 +1808,11 @@
           "L": "E Faraó também chamou os sábios e os feiticeiros; e eles também, os magos do Egito, fizeram assim com as suas artes secretas.",
           "B": "Faraó, por sua vez, mandou chamar os seus sábios e feiticeiros, e os magos do Egito fizeram a mesma coisa com os seus encantamentos.",
           "R": "Então Faraó chamou os seus sábios e os seus feiticeiros. Esses magos egípcios usaram a sua magia e fizeram a mesma coisa."
+        },
+        "am": {
+          "L": "ፈርዖንም ደግሞ ጠቢባንንና መተተኞችን ጠራ፤ የግብፅ አስማተኞችም እነርሱ ደግሞ በድግምታቸው እንዲሁ አደረጉ።",
+          "B": "ፈርዖን በበኩሉ ጠቢባኑንና መተተኞቹን አስጠራ፤ የግብፅ አስማተኞችም በድግምታቸው ያንኑ አደረጉ።",
+          "R": "ከዚያም ፈርዖን ጠቢባኑንና መተተኞቹን አስጠራ። እነዚህ የግብፅ አስማተኞች አስማታቸውን ተጠቅመው ያንኑ ነገር አደረጉ።"
         }
       },
       "decisions": [
@@ -1753,6 +1948,27 @@
           "reason": "For the whole book (7:11, 22; 8:3, 14-15; 9:11), and the word for the same experts at Pharaoh's court in Genesis 41:8, 24: \"magos\" are men of secret knowledge serving a king (m1). \"Mágicos\" sounds like stage conjurers. The \"feiticeiros\" (m3) and \"sábios\" beside them are the same court, as the note says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070110091"
+          ],
+          "choice": "\"ጠቢባን\" (wise men), \"መተተኞች\" (sorcerers), \"አስማተኞች\" (magicians), \"ድግምት\" (their enchantments; \"አስማት\" at Readable)",
+          "alternatives": [
+            "\"ጠንቋዮች\" for the magicians"
+          ],
+          "reason": "These words are used for Pharaoh's experts through the plague chapters. \"ጠንቋይ\" is a diviner who consults spirits; the Egyptian experts are scholars of secret arts, closer to \"አስማተኛ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1821,6 +2037,11 @@
           "L": "E lançaram cada um a sua vara, e elas se tornaram serpentes; mas a vara de Arão engoliu as varas deles.",
           "B": "Cada um deles jogou a sua vara no chão, e também elas se transformaram em serpentes. Então a vara de Arão engoliu as deles.",
           "R": "Cada homem jogou a sua vara no chão, e cada uma virou uma serpente. Mas então a vara de Arão engoliu todas as varas deles."
+        },
+        "am": {
+          "L": "እያንዳንዱም በትሩን ጣለ፤ ዘንዶዎችም ሆኑ፤ የአሮን በትር ግን በትሮቻቸውን ዋጠ።",
+          "B": "ሁሉም እያንዳንዳቸው በትራቸውን መሬት ላይ ጣሉ፤ እነዚህም ደግሞ ዘንዶዎች ሆኑ። ከዚያም የአሮን በትር የእነርሱን በትሮች ዋጠ።",
+          "R": "እያንዳንዱ ሰው በትሩን ጣለ፤ እያንዳንዱም በትር ዘንዶ ሆነ። ነገር ግን የአሮን በትር የእነርሱን በትሮች በሙሉ ዋጠ።"
         }
       },
       "decisions": [
@@ -1904,6 +2125,11 @@
           "L": "E o coração de Faraó se fortaleceu, e ele não os ouviu, assim como {{divine_name:o SENHOR|Javé}} tinha falado.",
           "B": "Mas o coração de Faraó se endureceu, e ele se recusou a ouvi-los, como {{divine_name:o SENHOR|Javé}} tinha dito.",
           "R": "Mas Faraó continuou teimoso. Ele não quis ouvir Moisés e Arão. Foi exatamente como {{divine_name:o SENHOR|Javé}} tinha dito que aconteceria."
+        },
+        "am": {
+          "L": "የፈርዖንም ልብ ጸና፤ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ተናገረም አልሰማቸውም።",
+          "B": "የፈርዖን ልብ ግን እንደ ደነደነ ቀረ። {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ተናገረው ሊሰማቸው አልፈለገም።",
+          "R": "ፈርዖን ግን እልከኛ ሆኖ ቀረ። ሙሴንና አሮንን አልሰማም። ይህም {{divine_name:እግዚአብሔር|ያህዌ}} አስቀድሞ እንደ ተናገረው ሆነ።"
         }
       },
       "decisions": [
@@ -2098,6 +2324,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} disse a Moisés: \"O coração de Faraó [está] pesado; ele se recusa a deixar o povo ir.",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"O coração de Faraó está endurecido, e ele não quer libertar o povo.",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Faraó é muito teimoso. Ele não vai deixar o povo ir."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርም|ያህዌም}} ለሙሴ እንዲህ አለው፦ «የፈርዖን ልብ ከባድ [ነው]፤ ሕዝቡን ለመልቀቅ እምቢ ብሏል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «የፈርዖን ልብ ደንድኗል፤ ሕዝቡን አይለቅም።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ፈርዖን በጣም እልከኛ ነው። ሕዝቡን አይለቅም።"
         }
       },
       "decisions": [
@@ -2292,6 +2523,11 @@
           "L": "Vai a Faraó pela manhã; eis que ele sai para a água. E te porás à espera dele à margem do Rio, e a vara que se transformou em cobra tomarás na tua mão.",
           "B": "Vai até Faraó de manhã, quando ele sair para a água. Espera por ele à margem do Nilo e leva na mão a vara que se transformou em cobra.",
           "R": "De manhã, vai até Faraó quando ele descer até a água. Fica na margem do rio Nilo e espera por ele ali. Leva contigo a vara que virou cobra."
+        },
+        "am": {
+          "L": "በማለዳ ወደ ፈርዖን ሂድ፤ እነሆ፣ ወደ ውኃው ይወጣል፤ አንተም በወንዙ ዳር ልትገናኘው ትቆማለህ፤ ወደ እባብ የተለወጠውንም በትር በእጅህ ትይዛለህ።",
+          "B": "በማለዳ ፈርዖን ወደ ውኃው ሲወጣ ወደ እርሱ ሂድ። በዓባይ ወንዝ ዳር ጠብቀው፤ ወደ እባብ ተለውጦ የነበረውንም በትር በእጅህ ያዝ።",
+          "R": "በማለዳ ፈርዖን ወደ ውኃው ሲወርድ ወደ እርሱ ሂድ። በዓባይ ወንዝ ዳር ቆመህ ጠብቀው። እባብ ሆኖ የነበረውንም በትር ይዘህ ሂድ።"
         }
       },
       "decisions": [
@@ -2355,6 +2591,25 @@
           "choice": "the Nile",
           "alternatives": [],
           "reason": "Balanced and Readable name the river; Literal keeps \"the River\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070150122"
+          ],
+          "choice": "\"ወንዙ\" (the River) at Literal; \"የዓባይ ወንዝ\" (the Nile) at Balanced and Readable",
+          "alternatives": [],
+          "reason": "The Hebrew says \"the River\", meaning the Nile; Balanced and Readable name it, as the English levels do. Used so through the plague chapters.",
           "uncertain": false,
           "footnote": false
         }
@@ -2438,6 +2693,11 @@
           "L": "E lhe dirás: '{{divine_name:O SENHOR|Javé}}, o Deus dos hebreus, me enviou ao senhor, dizendo: \"Deixa ir o {{deity_pronoun:meu|Meu}} povo, para que {{deity_pronoun:me|Me}} sirvam no deserto.\" Mas eis que o senhor não ouviu até agora.",
           "B": "Então lhe dirás: '{{divine_name:O SENHOR|Javé}}, o Deus dos hebreus, me enviou para dizer ao senhor: \"Liberta o {{deity_pronoun:meu|Meu}} povo, para que {{deity_pronoun:me|Me}} sirvam no deserto.\" Até agora, porém, o senhor se recusou a ouvir.",
           "R": "Diz a ele: '{{divine_name:O SENHOR|Javé}}, o Deus dos hebreus, me enviou ao senhor. Ele diz: \"Deixa o {{deity_pronoun:meu|Meu}} povo ir para que {{deity_pronoun:me|Me}} adorem no deserto.\" Mas o senhor ainda não obedeceu."
+        },
+        "am": {
+          "L": "እንዲህም ትለዋለህ፦ “የዕብራውያን አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፦ ‘ሕዝቤን ልቀቅ፤ በምድረ በዳ ያገልግሉኝ’ ብሎ ወደ አንተ ልኮኛል፤ እነሆም፣ እስከ አሁን አልሰማህም።",
+          "B": "እንዲህ በለው፦ “የዕብራውያን አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ወደ አንተ የላከኝ፦ ‘በምድረ በዳ እንዲያገለግሉኝ ሕዝቤን ልቀቅ’ እንድልህ ነው። አንተ ግን እስከ አሁን ልትሰማ አልፈለግህም።",
+          "R": "እንዲህ በለው፦ “የዕብራውያን አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ወደ አንተ ልኮኛል። እርሱም፦ ‘በምድረ በዳ እንዲያመልኩኝ ሕዝቤን ልቀቅ’ ይላል። አንተ ግን እስከ አሁን አልታዘዝህም።"
         }
       },
       "decisions": [
@@ -2574,6 +2834,49 @@
           "reason": "As the English Readable says \"worship\" (r-en-1); Literal and Balanced keep \"sirvam\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020070160091",
+            "o020070160123"
+          ],
+          "choice": "the demand, the same at each occurrence: \"ሕዝቤን ልቀቅ፤ ያገልግሉኝ\" (Literal), \"እንዲያገለግሉኝ ሕዝቤን ልቀቅ\" (Balanced), \"እንዲያመልኩኝ ሕዝቤን ልቀቅ\" (Readable)",
+          "alternatives": [
+            "\"ያገለግሉኝ ዘንድ ሕዝቤን ልቀቅ\""
+          ],
+          "reason": "Literal keeps the Hebrew's two clauses, \"let go\" and \"and let them serve me\" (a jussive); Balanced joins them as purpose; Readable says \"worship\" as the English Readable does. \"ያገለግሉኝ ዘንድ\" is the wording of the older Amharic Bible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020070160012"
+          ],
+          "choice": "Moses says \"አንተ\" to Pharaoh",
+          "alternatives": [
+            "\"እርስዎ\""
+          ],
+          "reason": "Moses speaks to Pharaoh as God's messenger, carrying God's own words and addressing the king as God addresses him (7:1, \"I have made you God to Pharaoh\"); he uses the plain \"አንተ\" through the plague chapters. Pharaoh's officials, his subordinates, say \"እርስዎ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2654,6 +2957,11 @@
           "L": "Assim diz {{divine_name:o SENHOR|Javé}}: \"Nisto saberás que eu [sou] {{divine_name:o SENHOR|Javé}}: eis que eu estou ferindo com a vara que [está] na {{deity_pronoun:minha|Minha}} mão a água que [está] no Rio, e ela se transformará em sangue.",
           "B": "Assim diz {{divine_name:o SENHOR|Javé}}: \"É assim que saberás que eu sou {{divine_name:o SENHOR|Javé}}: vou ferir a água do Nilo com esta vara que está na {{deity_pronoun:minha|Minha}} mão, e ela se transformará em sangue.",
           "R": "{{divine_name:O SENHOR|Javé}} diz: \"Assim saberás que eu sou {{divine_name:o SENHOR|Javé}}. Olha! Vou bater na água do Nilo com a vara que está na {{deity_pronoun:minha|Minha}} mão. A água vai virar sangue."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ‘እኔ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ሆንኩ በዚህ ታውቃለህ፤ እነሆ፣ በእጄ ባለው በትር በወንዙ ውስጥ ያለውን ውኃ እመታለሁ፤ ወደ ደምም ይለወጣል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ‘እኔ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ሆንኩ በዚህ ታውቃለህ፤ በእጄ ባለው በዚህ በትር የዓባይን ወንዝ ውኃ ልመታ ነው፤ ውኃውም ደም ይሆናል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ‘እኔ {{divine_name:እግዚአብሔር|ያህዌ}} መሆኔን በዚህ ታውቃለህ። ተመልከት! በእጄ ባለው በትር የዓባይን ወንዝ ውኃ እመታለሁ። ውኃውም ወደ ደም ይለወጣል።"
         }
       },
       "decisions": [
@@ -2776,6 +3084,11 @@
           "L": "E os peixes que [estão] no Rio morrerão, e o Rio cheirará mal, e [os] egípcios se esgotarão [tentando] beber água do Rio.\"'\"",
           "B": "Os seus peixes morrerão, o Nilo cheirará mal, e os egípcios não conseguirão suportar a sua água.\"'\"",
           "R": "Os peixes do rio vão morrer, e o rio vai ficar com um cheiro horrível. Os egípcios vão ver que não conseguem beber a água dele.\"'\""
+        },
+        "am": {
+          "L": "በወንዙም ውስጥ ያሉት ዓሣዎች ይሞታሉ፤ ወንዙም ይገማል፤ ግብፃውያንም ከወንዙ ውኃ ለመጠጣት ይታክታሉ።’”»",
+          "B": "ዓሣዎቹ ይሞታሉ፤ የዓባይ ወንዝ ይገማል፤ ግብፃውያንም ውኃውን መጠጣት ይጸየፋሉ።’”»",
+          "R": "በወንዙ ያሉት ዓሣዎች ይሞታሉ፤ ወንዙም በጣም ይገማል። ግብፃውያንም ከወንዙ ሊጠጡ አይችሉም።’”»"
         }
       },
       "decisions": [
@@ -2908,6 +3221,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} disse a Moisés: \"Diz a Arão: 'Pegue a sua vara e estenda a sua mão sobre as águas do Egito, sobre os seus rios, sobre os seus canais e sobre os seus lagos, e sobre todo ajuntamento das suas águas, para que se tornem sangue.' E haverá sangue em toda a terra do Egito, tanto em [vasos de] madeira como em [vasos de] pedra.\"",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Diz a Arão: 'Pegue a sua vara e estenda a mão sobre as águas do Egito, sobre os braços do Nilo, os canais, os pântanos e todos os lugares onde se junta água, para que se tornem sangue.' Haverá sangue em toda a terra do Egito, até nos vasos de madeira e de pedra.\"",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Diz a Arão que pegue a sua vara e estenda a mão sobre toda a água do Egito: os rios, os canais, as lagoas e todos os lugares onde se guarda água. Toda essa água vai virar sangue. Vai haver sangue em todo o Egito, até nos potes de madeira e de pedra em que as pessoas guardam água.\""
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርም|ያህዌም}} ለሙሴ እንዲህ አለው፦ «አሮንን እንዲህ በለው፦ “በትርህን ውሰድ፤ ደም እንዲሆኑም እጅህን በግብፅ ውኆች ላይ፣ በወንዞቻቸው ላይ፣ በቦዮቻቸው ላይ፣ በኩሬዎቻቸውም ላይ፣ በተከማቸው ውኃቸውም ሁሉ ላይ ዘርጋ።” በግብፅም ምድር ሁሉ፣ በእንጨትም በድንጋይም [ዕቃዎች] ውስጥ ደም ይሆናል።»",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «አሮንን እንዲህ በለው፦ “በትርህን ውሰድና እጅህን በግብፅ ውኆች ላይ፣ በዓባይ ወንዝ ቅርንጫፎች፣ በቦዮቹ፣ በረግረጎቹና ውኃ በሚጠራቀምባቸው ስፍራዎች ሁሉ ላይ ዘርጋ፤ ደምም ይሆናሉ።” በግብፅ ምድር ሁሉ፣ በእንጨትና በድንጋይ ዕቃዎች ውስጥ እንኳ ሳይቀር ደም ይገኛል።»",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «አሮን በትሩን ወስዶ እጁን በግብፅ ውኃ ሁሉ ላይ እንዲዘረጋ ንገረው፤ በወንዞቹ፣ በቦዮቹ፣ በኩሬዎቹና ውኃ በሚጠራቀምበት ስፍራ ሁሉ ላይ ይዘርጋ። ውኃው ሁሉ ወደ ደም ይለወጣል። በግብፅ በየቦታው ደም ይሆናል፤ ሰዎች ውኃ በሚያስቀምጡባቸው የእንጨትና የድንጋይ ዕቃዎች ውስጥ እንኳ ደም ይሆናል።»"
         }
       },
       "decisions": [
@@ -3056,6 +3374,11 @@
           "L": "E Moisés e Arão fizeram assim, como {{divine_name:o SENHOR|Javé}} tinha ordenado; e ele levantou a vara e feriu a água que [estava] no Rio diante dos olhos de Faraó e diante dos olhos dos seus servos, e toda a água que [estava] no Rio se transformou em sangue.",
           "B": "Moisés e Arão fizeram como {{divine_name:o SENHOR|Javé}} tinha ordenado. Enquanto Faraó e os seus oficiais olhavam, ele levantou a vara e feriu a água do Nilo, e toda a água do rio se transformou em sangue.",
           "R": "Moisés e Arão fizeram o que {{divine_name:o SENHOR|Javé}} tinha mandado. Arão levantou a sua vara e bateu na água do Nilo. Faraó e os seus oficiais viram isso acontecer. Toda a água do rio virou sangue."
+        },
+        "am": {
+          "L": "ሙሴና አሮንም {{divine_name:እግዚአብሔር|ያህዌ}} እንዳዘዘ እንዲሁ አደረጉ፤ በትሩንም አንሥቶ በፈርዖንና በባሪያዎቹ ዓይን ፊት በወንዙ ውስጥ ያለውን ውኃ መታ፤ በወንዙ ውስጥ ያለውም ውኃ ሁሉ ወደ ደም ተለወጠ።",
+          "B": "ሙሴና አሮን {{divine_name:እግዚአብሔር|ያህዌ}} እንዳዘዛቸው አደረጉ። ፈርዖንና ሹማምንቱ እያዩ በትሩን አንሥቶ የዓባይን ወንዝ ውኃ መታ፤ በወንዙ ያለው ውኃ ሁሉ ወደ ደም ተለወጠ።",
+          "R": "ሙሴና አሮን {{divine_name:እግዚአብሔር|ያህዌ}} የነገራቸውን አደረጉ። አሮን በትሩን አንሥቶ የዓባይን ወንዝ ውኃ መታ። ፈርዖንና ሹማምንቱ ይህ ሲሆን አዩ። በወንዙ ያለው ውኃ ሁሉ ወደ ደም ተለወጠ።"
         }
       },
       "decisions": [
@@ -3208,6 +3531,11 @@
           "L": "E os peixes que [estavam] no Rio morreram, e o Rio cheirou mal, e [os] egípcios não puderam beber água do Rio; e o sangue estava em toda a terra do Egito.",
           "B": "Os peixes do Nilo morreram, e o rio começou a feder; os egípcios não conseguiam beber a sua água. Havia sangue em toda a terra do Egito.",
           "R": "Todos os peixes do rio morreram. O rio ficou com um cheiro horrível, e os egípcios não conseguiam beber a água dele. Havia sangue em todas as partes do Egito."
+        },
+        "am": {
+          "L": "በወንዙም ውስጥ የነበሩት ዓሣዎች ሞቱ፤ ወንዙም ገማ፤ ግብፃውያንም ከወንዙ ውኃ መጠጣት አልቻሉም፤ ደሙም በግብፅ ምድር ሁሉ ነበረ።",
+          "B": "የዓባይ ወንዝ ዓሣዎች ሞቱ፤ ወንዙም መግማት ጀመረ፤ ግብፃውያንም ከእርሱ መጠጣት አልቻሉም። በግብፅ ምድር ሁሉ ደም ነበረ።",
+          "R": "በወንዙ ያሉት ዓሣዎች ሁሉ ሞቱ። ወንዙ በጣም ገማ፤ ግብፃውያንም ከእርሱ መጠጣት አልቻሉም። በግብፅ በየስፍራው ደም ነበረ።"
         }
       },
       "decisions": [
@@ -3300,6 +3628,11 @@
           "L": "E os magos do Egito fizeram assim com as suas artes secretas; e o coração de Faraó se fortaleceu, e ele não os ouviu, assim como {{divine_name:o SENHOR|Javé}} tinha falado.",
           "B": "Mas os magos do Egito fizeram o mesmo com os seus encantamentos, e o coração de Faraó continuou endurecido. Ele não os ouviu; aconteceu como {{divine_name:o SENHOR|Javé}} tinha dito.",
           "R": "Mas os magos egípcios usaram a sua magia e fizeram a mesma coisa. E Faraó continuou teimoso. Ele não quis ouvir Moisés e Arão. Foi exatamente como {{divine_name:o SENHOR|Javé}} tinha dito que aconteceria."
+        },
+        "am": {
+          "L": "የግብፅ አስማተኞችም በድግምታቸው እንዲሁ አደረጉ፤ የፈርዖንም ልብ ጸና፤ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ተናገረም አልሰማቸውም።",
+          "B": "የግብፅ አስማተኞች ግን በድግምታቸው ያንኑ አደረጉ፤ የፈርዖን ልብም እንደ ደነደነ ቀረ። አልሰማቸውም፤ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ተናገረው ሆነ።",
+          "R": "የግብፅ አስማተኞች ግን አስማታቸውን ተጠቅመው ያንኑ ነገር አደረጉ። ፈርዖንም እልከኛ ሆኖ ቀረ። ሙሴንና አሮንን አልሰማም። ይህም {{divine_name:እግዚአብሔር|ያህዌ}} አስቀድሞ እንደ ተናገረው ሆነ።"
         }
       },
       "decisions": [
@@ -3418,6 +3751,11 @@
           "L": "E Faraó se virou e entrou na sua casa, e não pôs o seu coração nem mesmo nisto.",
           "B": "Faraó deu as costas e entrou no seu palácio, sem dar atenção nem mesmo a isso.",
           "R": "Faraó se virou e voltou para o seu palácio. Nem isso fez com que ele prestasse atenção."
+        },
+        "am": {
+          "L": "ፈርዖንም ዞሮ ወደ ቤቱ ገባ፤ በዚህም ደግሞ ልቡን አላኖረም።",
+          "B": "ፈርዖን ፊቱን አዙሮ ወደ ቤተ መንግሥቱ ገባ፤ ይህንንም እንኳ ከቁም ነገር አልቆጠረውም።",
+          "R": "ፈርዖን ዞሮ ወደ ቤተ መንግሥቱ ተመለሰ። ይህ እንኳ ልብ እንዲል አላደረገውም።"
         }
       },
       "decisions": [
@@ -3544,6 +3882,11 @@
           "L": "E todos os egípcios cavaram ao redor do Rio [em busca de] água para beber, porque não podiam beber da água do Rio.",
           "B": "Como não podiam beber a água do Nilo, todos os egípcios cavaram ao redor do rio para encontrar água que se pudesse beber.",
           "R": "Os egípcios não conseguiam beber a água do Nilo. Por isso todos eles cavaram buracos perto do rio para achar água para beber."
+        },
+        "am": {
+          "L": "ግብፃውያንም ሁሉ የሚጠጡትን ውኃ [ለማግኘት] በወንዙ ዙሪያ ቆፈሩ፤ ከወንዙ ውኃ መጠጣት አልቻሉምና።",
+          "B": "ግብፃውያን ሁሉ የዓባይን ወንዝ ውኃ መጠጣት ስላልቻሉ፣ የሚጠጣ ውኃ ለማግኘት በወንዙ ዙሪያ ቆፈሩ።",
+          "R": "ግብፃውያን ከዓባይ ወንዝ ውኃ መጠጣት አልቻሉም። ስለዚህ የሚጠጡት ውኃ ለማግኘት ሁሉም በወንዙ አጠገብ ጉድጓድ ቆፈሩ።"
         }
       },
       "decisions": [
@@ -3623,6 +3966,11 @@
           "L": "E sete dias se completaram depois que {{divine_name:o SENHOR|Javé}} feriu o Rio.",
           "B": "Depois que {{divine_name:o SENHOR|Javé}} feriu o Nilo, passaram-se sete dias inteiros.",
           "R": "Depois que {{divine_name:o SENHOR|Javé}} feriu o Nilo, passou uma semana inteira."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ወንዙን ከመታ በኋላ ሰባት ቀን ተፈጸመ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የዓባይን ወንዝ ከመታ በኋላ ሙሉ ሰባት ቀን አለፈ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የዓባይን ወንዝ ከመታ በኋላ አንድ ሳምንት ሙሉ አለፈ።"
         }
       },
       "decisions": [
@@ -3730,6 +4078,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} disse a Moisés: \"Vai a Faraó e diz-lhe: 'Assim diz {{divine_name:o SENHOR|Javé}}: \"Deixa ir o {{deity_pronoun:meu|Meu}} povo, para que {{deity_pronoun:me|Me}} sirvam.",
           "B": "Então {{divine_name:o SENHOR|Javé}} disse a Moisés: \"Vai até Faraó e diz a ele: '{{divine_name:O SENHOR|Javé}} diz o seguinte: \"Liberta o {{deity_pronoun:meu|Meu}} povo, para que {{deity_pronoun:me|Me}} sirvam.",
           "R": "Então {{divine_name:o SENHOR|Javé}} disse a Moisés: \"Vai até Faraó e diz a ele: '{{divine_name:O SENHOR|Javé}} diz: \"Deixa o {{deity_pronoun:meu|Meu}} povo ir para que {{deity_pronoun:me|Me}} adorem."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርም|ያህዌም}} ለሙሴ እንዲህ አለው፦ «ወደ ፈርዖን ግባና እንዲህ በለው፦ “{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ‘ሕዝቤን ልቀቅ፤ ያገልግሉኝ።",
+          "B": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ወደ ፈርዖን ገብተህ እንዲህ በለው፦ “{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ‘እንዲያገለግሉኝ ሕዝቤን ልቀቅ።",
+          "R": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ወደ ፈርዖን ሂድና እንዲህ በለው፦ “{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ‘እንዲያመልኩኝ ሕዝቤን ልቀቅ።"
         }
       },
       "decisions": [
@@ -3848,6 +4201,11 @@
           "L": "E se tu te recusas a deixar[-os] ir, eis que eu estou ferindo todo o teu território com rãs.",
           "B": "Se te recusares a deixá-los ir, presta atenção: ferirei todo o teu país com rãs.",
           "R": "Se te recusares a deixá-los ir, vou castigar todo o teu país com rãs."
+        },
+        "am": {
+          "L": "ለመልቀቅም እምቢ ብትል፣ እነሆ፣ ግዛትህን ሁሉ በእንቁራሪቶች እመታለሁ።",
+          "B": "ልትለቃቸው እምቢ ብትል ግን፣ ተመልከት፤ አገርህን ሁሉ በእንቁራሪቶች እመታለሁ።",
+          "R": "እነርሱን ለመልቀቅ እምቢ ብትል፣ አገርህን ሁሉ በእንቁራሪቶች እመታለሁ።"
         }
       },
       "decisions": [
@@ -4010,6 +4368,11 @@
           "L": "E o Rio fervilhará [de] rãs, e elas subirão e entrarão na tua casa, e no quarto onde te deitas, e sobre a tua cama, e na casa dos teus servos, e sobre o teu povo, e nos teus fornos, e nas tuas gamelas.",
           "B": "O Nilo fervilhará de rãs. Elas sairão dele e entrarão no teu palácio, no quarto onde dormes e na tua cama, nas casas dos teus oficiais e no meio do teu povo, nos teus fornos e nas vasilhas em que se amassa o pão.",
           "R": "O Nilo vai ficar cheio de rãs. Elas vão sair do rio e entrar no teu palácio. Vão entrar no teu quarto e subir na tua cama. Vão entrar nas casas dos teus oficiais e subir nas pessoas do teu povo. Vão entrar até nos teus fornos e nas vasilhas onde se mistura a massa do pão."
+        },
+        "am": {
+          "L": "ወንዙም በእንቁራሪቶች ይርመሰመሳል፤ እነርሱም ወጥተው ወደ ቤትህ፣ ወደምትተኛበትም ክፍል፣ በአልጋህም ላይ፣ ወደ ባሪያዎችህም ቤት፣ በሕዝብህም ላይ፣ ወደ ምድጃዎችህም፣ ወደ ማቡኪያዎችህም ይገባሉ።",
+          "B": "የዓባይ ወንዝ በእንቁራሪቶች ይርመሰመሳል። እነርሱም ከወንዙ ወጥተው ወደ ቤተ መንግሥትህ፣ ወደምትተኛበት ክፍል፣ በአልጋህም ላይ፣ ወደ ሹማምንትህ ቤቶች፣ በሕዝብህም ላይ፣ ወደ ምድጃዎችህና ሊጥ ወደሚቦካባቸው ማቡኪያዎችህ ይገባሉ።",
+          "R": "የዓባይ ወንዝ በእንቁራሪቶች ይሞላል። እንቁራሪቶቹ ከወንዙ ወጥተው ወደ ቤተ መንግሥትህ ይገባሉ። ወደ መኝታ ክፍልህ ገብተው አልጋህ ላይ ይወጣሉ። ወደ ሹማምንትህ ቤቶች ይገባሉ፤ በሕዝብህም ላይ ይወጣሉ። ወደ ምድጃዎችህና የዳቦ ሊጥ ወደሚቦካባቸው ዕቃዎችህ እንኳ ይገባሉ።"
         }
       },
       "decisions": [
@@ -4161,6 +4524,11 @@
           "L": "E sobre ti, e sobre o teu povo, e sobre todos os teus servos subirão as rãs.\"'\"",
           "B": "Sobre ti, sobre o teu povo e sobre todos os teus oficiais as rãs subirão.\"'\"",
           "R": "As rãs vão pular em cima de ti, do teu povo e de todos os teus oficiais.\"'\""
+        },
+        "am": {
+          "L": "እንቁራሪቶቹም በአንተ ላይ፣ በሕዝብህም ላይ፣ በባሪያዎችህም ሁሉ ላይ ይወጣሉ።’”»",
+          "B": "በአንተ ላይ፣ በሕዝብህ ላይና በሹማምንትህ ሁሉ ላይ እንቁራሪቶቹ ይወጣሉ።’”»",
+          "R": "እንቁራሪቶቹ በአንተ፣ በሕዝብህና በሹማምንትህ ሁሉ ላይ ዘለው ይወጣሉ።’”»"
         }
       },
       "decisions": [

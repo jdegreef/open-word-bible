@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴንም እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -91,6 +96,27 @@
             "passé composé at every level"
           ],
           "reason": "As the French style guide sets: the passé simple is the tense of written narrative, the passé composé that of the plain Readable level. The instructions follow the ordinary French forms for commands, as the Pentateuch terms set for laws and instructions.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020130010021"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "a span like the English {{deity_pronoun:he|He}}"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting for capitalised pronouns has nothing to change; pronouns for God are written plainly through the chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -164,6 +190,11 @@
           "L": "\"Consagra a {{deity_pronoun:mim|Mim}} todo primogênito, o primeiro a abrir todo ventre entre os filhos de Israel, tanto de homem como de animal; [ele] é {{deity_pronoun:meu|Meu}}.\"",
           "B": "\"Separa como santo para {{deity_pronoun:mim|Mim}} todo primogênito entre os israelitas, todo aquele que é o primeiro a sair do ventre da mãe, tanto de gente como de animal. Ele pertence a {{deity_pronoun:mim|Mim}}.\"",
           "R": "\"Separa para {{deity_pronoun:mim|Mim}} todo primogênito do sexo masculino. Entre os israelitas, o primeiro menino que cada mãe tem pertence a {{deity_pronoun:mim|Mim}}, e também o primeiro filhote macho de cada animal.\""
+        },
+        "am": {
+          "L": "«በእስራኤል ልጆች መካከል በኩርን ሁሉ፣ ማኅፀንን ሁሉ መጀመሪያ የሚከፍተውን፣ ከሰውም ከእንስሳም ለእኔ ቀድስልኝ፤ እርሱ የእኔ ነው።»",
+          "B": "«በእስራኤል ልጆች መካከል ያለውን በኩር ሁሉ፣ ከእናቱ ማኅፀን መጀመሪያ የሚወጣውን ሁሉ፣ ሰውም ሆነ እንስሳ፣ ቅዱስ አድርገህ ለእኔ ለይልኝ። እርሱ የእኔ ነው።»",
+          "R": "«መጀመሪያ የተወለደውን ወንድ ሁሉ ለእኔ ለይልኝ። በእስራኤላውያን መካከል ከእያንዳንዲቱ እናት መጀመሪያ የሚወለደው ወንድ ሰውም ይሁን እንስሳ የእኔ ነው።»"
         }
       },
       "decisions": [
@@ -295,6 +326,49 @@
           "reason": "The English Readable says \"the first male born to each mother ... whether a child or an animal\". Portuguese \"macho\" is said of animals, not of a boy, so Readable names the two cases, \"menino\" and \"filhote macho\", keeping the sense of m2 and of verses 12 and 15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020130020082",
+            "o020130020091"
+          ],
+          "choice": "\"የእስራኤል ልጆች\" (L, B) and \"እስራኤላውያን\" (R) with no gender span",
+          "alternatives": [
+            "a gender setting span, as the English children or sons"
+          ],
+          "reason": "\"ልጆች\" already takes in sons and daughters, so Amharic has only one wording here and the setting has nothing to change; this holds for \"the sons of Israel\" through these chapters, as the Pentateuch terms set.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130020041"
+          ],
+          "choice": "\"በኩር\" (L, B); \"መጀመሪያ የተወለደ\" (R)",
+          "alternatives": [
+            "\"በኩር\" at Readable too"
+          ],
+          "reason": "\"በኩር\" is the church word for the firstborn and is kept at Literal and Balanced through the passage; Readable says it plainly, as the Pentateuch terms set.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -380,6 +454,11 @@
           "L": "E Moisés disse ao povo: \"Lembrem-se deste dia em que vocês saíram do Egito, da casa de escravos, pois com força de mão {{divine_name:o SENHOR|Javé}} os tirou daqui; e não se comerá [nada] fermentado.",
           "B": "Moisés disse ao povo: \"Lembrem-se deste dia, o dia em que vocês saíram do Egito, da casa da escravidão. {{divine_name:O SENHOR|Javé}} tirou vocês deste lugar pela força da {{deity_pronoun:sua|Sua}} mão. Não se deve comer pão fermentado.",
           "R": "Moisés disse ao povo: \"Lembrem-se sempre deste dia. Foi o dia em que vocês saíram do Egito, onde eram escravos. {{divine_name:O SENHOR|Javé}} usou o {{deity_pronoun:seu|Seu}} grande poder para tirar vocês de lá. Não comam nenhum pão feito com fermento."
+        },
+        "am": {
+          "L": "ሙሴም ለሕዝቡ እንዲህ አለ፦ «ከግብፅ፣ ከባሪያዎች ቤት የወጣችሁበትን ይህን ቀን አስቡ፤ {{divine_name:እግዚአብሔር|ያህዌ}} በእጅ ብርታት ከዚህ አውጥቷችኋልና፤ እርሾ ያለበትም አይበላ።",
+          "B": "ሙሴ ሕዝቡን እንዲህ አላቸው፦ «ከግብፅ፣ ከባርነት ቤት የወጣችሁበትን ይህን ቀን አስታውሱ። {{divine_name:እግዚአብሔር|ያህዌ}} በእጁ ብርታት ከዚህ ስፍራ አውጥቷችኋል። እርሾ ያለበት እንጀራ አይበላ።",
+          "R": "ሙሴ ሕዝቡን እንዲህ አላቸው፦ «ይህን ቀን ሁልጊዜ አስታውሱ። ባሪያዎች ሆናችሁ ከኖራችሁባት ከግብፅ የወጣችሁበት ቀን ነው። {{divine_name:እግዚአብሔር|ያህዌ}} ታላቅ ኃይሉን ተጠቅሞ አወጣችሁ። እርሾ ያለበትን እንጀራ አትብሉ።"
         }
       },
       "decisions": [
@@ -568,6 +647,27 @@
           "reason": "Portuguese \"fermento\" is both the old sourdough leaven (m3) and the yeast of today, so every level can use the one familiar word where the English Readable changes to \"yeast\". \"Levedura\" is a technical word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130030122",
+            "o020130030131"
+          ],
+          "choice": "\"ከባሪያዎች ቤት\" (L); \"ከባርነት ቤት\" (B)",
+          "alternatives": [
+            "\"ከአገልጋዮች ቤት\" (house of servants)"
+          ],
+          "reason": "Israel was enslaved in Egypt, so \"ባሪያ\" and \"ባርነት\" are used at every level for it, not \"አገልጋይ\", as the Pentateuch terms set for slavery in Egypt.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -628,6 +728,11 @@
           "L": "Hoje vocês estão saindo, no mês de Abibe.",
           "B": "Vocês estão saindo hoje, no mês de Abibe.",
           "R": "Vocês estão saindo hoje, no mês de Abibe, entre março e abril."
+        },
+        "am": {
+          "L": "ዛሬ እናንተ በአቢብ ወር ትወጣላችሁ።",
+          "B": "ዛሬ፣ በአቢብ ወር፣ ትወጣላችሁ።",
+          "R": "ዛሬ በአቢብ ወር ትወጣላችሁ፤ ይህም በመጋቢት አካባቢ የሚውል ወር ነው።"
         }
       },
       "decisions": [
@@ -681,6 +786,25 @@
             "no começo da primavera"
           ],
           "reason": "For the whole book: the month takes the usual Brazilian form \"Abibe\", with a capital as the name of a Hebrew month, and a final -e. The English Readable says \"in early spring\", but for readers in the southern hemisphere spring falls in September; Readable gives the months the meaning note names (m1) instead.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020130040052"
+          ],
+          "choice": "\"በመጋቢት አካባቢ የሚውል ወር\" (a month falling about Megabit) for the English \"in early spring\"",
+          "alternatives": [
+            "\"በፀደይ መጀመሪያ\" (early spring)"
+          ],
+          "reason": "Abib falls in March-April, which in Ethiopia is Megabit and the short-rains season (በልግ); \"ፀደይ\" names the season after the long rains (September-November) and would mislead.",
           "uncertain": false,
           "footnote": false
         }
@@ -782,6 +906,11 @@
           "L": "E será que, quando {{divine_name:o SENHOR|Javé}} te fizer entrar na terra dos cananeus, e dos hititas, e dos amorreus, e dos heveus, e dos jebuseus, a qual jurou aos teus pais que te daria, uma terra onde corre leite e mel, prestarás este serviço neste mês.",
           "B": "Quando {{divine_name:o SENHOR|Javé}} te levar para a terra dos cananeus, hititas, amorreus, heveus e jebuseus, a terra que jurou aos teus antepassados que te daria, uma terra onde corre leite e mel, celebrarás este rito neste mesmo mês.",
           "R": "{{divine_name:O SENHOR|Javé}} vai te levar para a terra onde vivem os cananeus, os hititas, os amorreus, os heveus e os jebuseus. Ele jurou aos teus antepassados que te daria essa terra. É uma terra rica, onde corre leite e mel. Quando estiveres morando lá, deves celebrar esta cerimônia neste mês."
+        },
+        "am": {
+          "L": "እንዲህም ይሆናል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለአንተ ሊሰጥህ ለአባቶችህ ወደ ማለላቸው ወደ ከነዓናውያንና ወደ ኬጢያውያን፣ ወደ አሞራውያንና ወደ ኤውያውያን፣ ወደ ኢያቡሳውያንም ምድር፣ ወተትና ማር ወደምታፈስ ምድር ባገባህ ጊዜ፣ ይህን አገልግሎት በዚህ ወር ታገለግላለህ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለአንተ ሊሰጥህ ለአባቶችህ ወደ ማለላቸው ምድር፣ ወተትና ማር ወደምታፈስ ወደ ከነዓናውያን፣ ወደ ኬጢያውያን፣ ወደ አሞራውያን፣ ወደ ኤውያውያንና ወደ ኢያቡሳውያን ምድር ባገባህ ጊዜ፣ ይህን የአምልኮ ሥርዓት በዚሁ ወር ትፈጽማለህ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከነዓናውያን፣ ኬጢያውያን፣ አሞራውያን፣ ኤውያውያንና ኢያቡሳውያን ወደሚኖሩባት ምድር ያስገባሃል። ያቺን ምድር ለአንተ እንደሚሰጥ ለአባቶችህ በመሐላ ቃል ገብቶላቸው ነበር። እርሷ ወተትና ማር የምታፈስ ለም ምድር ናት። በዚያ በምትኖርበት ጊዜ ይህን ሥርዓት በዚህ ወር መፈጸም አለብህ።"
         }
       },
       "decisions": [
@@ -987,6 +1116,27 @@
           "reason": "The list of the peoples of Canaan keeps the forms Genesis uses in Portuguese (\"hititas\", as for Efrom the hitita in Genesis 23, \"amorreus\", \"jebuseus\"), so that the lists match across the Pentateuch; \"heveus\" is the usual Brazilian form for the Hivites.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130050032"
+          ],
+          "choice": "singular \"you\" (አንተ: ያገባሃል, ታገለግላለህ) from verse 5 to verse 16; plural (እናንተ) in verses 3-4",
+          "alternatives": [
+            "the plural all through Moses' speech"
+          ],
+          "reason": "The Hebrew changes from the plural (verses 3-4) to the singular, addressing Israel as one, from verse 5; Amharic can show the difference, and the Pentateuch terms set the singular for Israel addressed as one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1051,6 +1201,11 @@
           "L": "Sete dias comerás pães sem fermento, e no sétimo dia [haverá] uma festa {{divine_name:ao SENHOR|a Javé}}.",
           "B": "Durante sete dias comerás pão sem fermento, e o sétimo dia será uma festa em honra {{divine_name:do SENHOR|de Javé}}.",
           "R": "Deves comer pão sem fermento durante sete dias. O sétimo dia é uma festa para honrar {{divine_name:o SENHOR|Javé}}."
+        },
+        "am": {
+          "L": "ሰባት ቀን ቂጣ ትበላለህ፤ በሰባተኛውም ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} በዓል [ይሆናል]።",
+          "B": "ሰባት ቀን ቂጣ ትበላለህ፤ ሰባተኛውም ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚከበር በዓል ነው።",
+          "R": "ለሰባት ቀን ቂጣ ብላ። ሰባተኛው ቀን {{divine_name:እግዚአብሔርን|ያህዌን}} የምታከብርበት በዓል ነው።"
         }
       },
       "decisions": [
@@ -1080,6 +1235,27 @@
           "choice": "feast: a pilgrimage festival",
           "alternatives": [],
           "reason": "The word is used for the great yearly feasts, when the people gathered to celebrate before God (10:9; 12:14; 23:14-17).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130060041"
+          ],
+          "choice": "\"ቂጣ\" (unleavened bread) at every level",
+          "alternatives": [
+            "\"እርሾ የሌለበት እንጀራ\""
+          ],
+          "reason": "\"ቂጣ\" is the everyday Amharic word for flat bread made without leaven and the word for the feast of Unleavened Bread (የቂጣ በዓል) in the Pentateuch terms.",
           "uncertain": false,
           "footnote": false
         }
@@ -1156,6 +1332,11 @@
           "L": "Pães sem fermento serão comidos [durante] os sete dias; e nada fermentado será visto contigo, e nenhum fermento será visto contigo em todo o teu território.",
           "B": "Durante os sete dias se comerá pão sem fermento. Não se achará contigo nenhum pão fermentado, nem fermento algum em todo o teu território.",
           "R": "Deves comer pão sem fermento durante todos os sete dias. Não pode haver pão feito com fermento nas tuas casas, nem fermento nenhum em toda a tua terra."
+        },
+        "am": {
+          "L": "በሰባቱ ቀን ቂጣ ይበላል፤ እርሾ ያለበትም ከአንተ ጋር አይታይ፤ እርሾም በድንበርህ ሁሉ ከአንተ ጋር አይታይ።",
+          "B": "በሰባቱ ቀናት ሁሉ ቂጣ ይበላ። እርሾ ያለበት እንጀራ በአንተ ዘንድ አይገኝ፤ በግዛትህም ሁሉ ምንም እርሾ አይገኝ።",
+          "R": "በሰባቱም ቀናት ቂጣ ብላ። በቤትህ ውስጥ እርሾ ያለበት እንጀራ መኖር የለበትም፤ በምድርህም በየትኛውም ስፍራ ምንም እርሾ መገኘት የለበትም።"
         }
       },
       "decisions": [
@@ -1281,6 +1462,11 @@
           "L": "E contarás ao teu filho naquele dia, dizendo: '[É] por causa do que {{divine_name:o SENHOR|Javé}} fez por mim quando saí do Egito.'",
           "B": "Naquele dia, explicarás ao teu filho o que isso significa: '{{divine_name:O SENHOR|Javé}} agiu em meu favor quando saí do Egito, e é por isso que fazemos isto.'",
           "R": "Naquele dia, explica ao teu filho: 'Nós celebramos esta festa por causa do que {{divine_name:o SENHOR|Javé}} fez por mim quando saí do Egito.'"
+        },
+        "am": {
+          "L": "በዚያም ቀን ለልጅህ እንዲህ ብለህ ትነግረዋለህ፦ “ከግብፅ በወጣሁ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ለእኔ ስላደረገው [ነው]።”",
+          "B": "በዚያ ቀን ትርጉሙን ለልጅህ እንዲህ ብለህ ንገረው፦ “ከግብፅ በወጣሁ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ስለ እኔ ሠርቷል፤ ይህን የምናደርገውም ስለዚህ ነው።”",
+          "R": "በዚያ ቀን ለልጅህ አስረዳው። እንዲህ በለው፦ “ይህን በዓል የምናከብረው ከግብፅ በወጣሁ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ስላደረገልኝ ነገር ነው።”"
         }
       },
       "decisions": [
@@ -1441,6 +1627,11 @@
           "L": "E [isto] te será por sinal sobre a tua mão e por memorial entre os teus olhos, para que a lei {{divine_name:do SENHOR|de Javé}} esteja na tua boca; pois com mão forte {{divine_name:o SENHOR|Javé}} te tirou do Egito.",
           "B": "Esta festa será para ti um sinal, como uma marca na tua mão, e uma lembrança, como uma marca entre os teus olhos, para que a instrução {{divine_name:do SENHOR|de Javé}} esteja sempre nos teus lábios. Pois com mão forte {{divine_name:o SENHOR|Javé}} te tirou do Egito.",
           "R": "Esta festa vai te lembrar do que aconteceu, como uma marca na tua mão ou na tua testa, que vês todos os dias. Ela vai te ajudar a continuar falando do ensino {{divine_name:do SENHOR|de Javé}}. Pois {{divine_name:o SENHOR|Javé}} te tirou do Egito com o {{deity_pronoun:seu|Seu}} grande poder."
+        },
+        "am": {
+          "L": "ይህም በእጅህ ላይ ምልክት፣ በዓይኖችህም መካከል መታሰቢያ ይሆንልሃል፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ሕግ በአፍህ ይሆን ዘንድ፤ {{divine_name:እግዚአብሔር|ያህዌ}} በብርቱ እጅ ከግብፅ አውጥቶሃልና።",
+          "B": "ይህ በዓል በእጅህ ላይ እንዳለ ምልክት፣ በዓይኖችህም መካከል እንዳለ ምልክት መታሰቢያ ይሆንልሃል፤ ይኸውም {{divine_name:የእግዚአብሔር|የያህዌ}} ሕግ ዘወትር በአንደበትህ እንዲሆን ነው። {{divine_name:እግዚአብሔር|ያህዌ}} በብርቱ እጅ ከግብፅ አውጥቶሃልና።",
+          "R": "ይህ በዓል የሆነውን ነገር ያሳስብሃል፤ በየዕለቱ እንደምታየው በእጅህ ወይም በግንባርህ ላይ እንዳለ ምልክት ይሆንልሃል። ስለ {{divine_name:እግዚአብሔር|ያህዌ}} ትምህርት ዘወትር እንድትናገር ይረዳሃል። {{divine_name:እግዚአብሔር|ያህዌ}} በታላቅ ኃይሉ ከግብፅ አውጥቶሃልና።"
         }
       },
       "decisions": [
@@ -1634,6 +1825,11 @@
           "L": "E guardarás este estatuto no seu tempo determinado, de dias em dias.",
           "B": "Portanto, guardarás este estatuto no tempo certo, todos os anos.",
           "R": "Deves cumprir esta regra no tempo certo, todos os anos."
+        },
+        "am": {
+          "L": "ይህንም ሥርዓት በተወሰነለት ጊዜ ከቀናት ወደ ቀናት ትጠብቃለህ።",
+          "B": "ስለዚህ ይህን ሥርዓት በየዓመቱ በተወሰነለት ጊዜ ትጠብቃለህ።",
+          "R": "ይህን ሥርዓት በየዓመቱ በተገቢው ጊዜ ጠብቅ።"
         }
       },
       "decisions": [
@@ -1798,6 +1994,11 @@
           "L": "E será que, quando {{divine_name:o SENHOR|Javé}} te fizer entrar na terra dos cananeus, como jurou a ti e aos teus pais, e a entregar a ti,",
           "B": "Depois que {{divine_name:o SENHOR|Javé}} te tiver levado para a terra dos cananeus e a tiver entregado a ti, como jurou a ti e aos teus antepassados,",
           "R": "{{divine_name:O SENHOR|Javé}} vai te levar para a terra dos cananeus e vai dá-la a ti. Ele prometeu isso com juramento a ti e aos teus antepassados."
+        },
+        "am": {
+          "L": "እንዲህም ይሆናል፤ ለአንተና ለአባቶችህ እንደ ማለ {{divine_name:እግዚአብሔር|ያህዌ}} ወደ ከነዓናውያን ምድር ባገባህና እርሷን በሰጠህ ጊዜ፣",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለአንተና ለአባቶችህ በማለው መሠረት ወደ ከነዓናውያን ምድር ካገባህና ምድሪቱን ከሰጠህ በኋላ፣",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ወደ ከነዓናውያን ምድር ያስገባሃል፤ እርሷንም ይሰጥሃል። ይህንንም ለአንተና ለአባቶችህ በመሐላ ቃል ገብቷል።"
         }
       },
       "decisions": [
@@ -1919,6 +2120,11 @@
           "L": "que entregarás {{divine_name:ao SENHOR|a Javé}} todo aquele que abre o ventre; e todo primeiro filhote, a cria do gado que tiveres, os machos [pertencem] {{divine_name:ao SENHOR|a Javé}}.",
           "B": "então entregarás {{divine_name:ao SENHOR|a Javé}} todo primogênito que abre o ventre. Todo primeiro filhote dos teus animais que for macho pertence {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Então deves dar {{divine_name:ao SENHOR|a Javé}} todo primogênito do sexo masculino. O primeiro filhote macho de cada um dos teus animais pertence {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "ማኅፀንን መጀመሪያ የሚከፍተውን ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ታሳልፋለህ፤ ካለህም እንስሳ የሚወለደውን በኩር ሁሉ፣ ወንዶቹ {{divine_name:የእግዚአብሔር|የያህዌ}} [ናቸው]።",
+          "B": "በዚያን ጊዜ ማኅፀንን መጀመሪያ የሚከፍተውን በኩር ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ትሰጣለህ። ከእንስሶችህ የሚወለደው በኩር ወንድ ከሆነ {{divine_name:የእግዚአብሔር|የያህዌ}} ነው።",
+          "R": "በዚያን ጊዜ መጀመሪያ የተወለደውን ወንድ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መስጠት አለብህ። ከእንስሶችህም መጀመሪያ የሚወለደው ወንድ ሁሉ {{divine_name:የእግዚአብሔር|የያህዌ}} ነው።"
         }
       },
       "decisions": [
@@ -2039,6 +2245,11 @@
           "L": "E todo primeiro filhote de jumento resgatarás com um cordeiro; e, se não [o] resgatares, quebrarás o seu pescoço. E todo primogênito de homem entre os teus filhos resgatarás.",
           "B": "Todo primeiro filhote de jumenta resgatarás, dando um cordeiro no lugar dele; se não o resgatares, quebrarás o pescoço dele. E resgatarás cada primogênito entre os teus filhos.",
           "R": "Deves comprar de volta cada jumentinho que nascer primeiro, dando um cordeiro no lugar dele. Se não o comprares de volta, deves quebrar o pescoço dele. Também deves comprar de volta cada um dos teus filhos primogênitos."
+        },
+        "am": {
+          "L": "የአህያን በኩር ሁሉ በጠቦት ትዋጀዋለህ፤ ባትዋጀውም አንገቱን ትሰብረዋለህ። ከልጆችህም መካከል የሰውን በኩር ሁሉ ትዋጃለህ።",
+          "B": "የአህያን በኩር ሁሉ በእርሱ ፋንታ ጠቦት ሰጥተህ ትዋጀዋለህ፤ ባትዋጀው ግን አንገቱን ትሰብረዋለህ። ከልጆችህም መካከል በኩር የሆነውን ወንድ ሁሉ ትዋጃለህ።",
+          "R": "የአህያን የመጀመሪያ ውርንጫ ሁሉ በእርሱ ፋንታ ጠቦት በመስጠት መልሰህ መግዛት አለብህ። መልሰህ ካልገዛኸው ግን አንገቱን መስበር አለብህ። የመጀመሪያ ወንዶች ልጆችህንም ሁሉ መልሰህ መግዛት አለብህ።"
         }
       },
       "decisions": [
@@ -2197,6 +2408,29 @@
           "reason": "\"Chuộc lại\" is both the plain word for buying something back and the word the Vietnamese New Testament uses for redemption, so it serves all three levels.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130130041",
+            "o020130130081",
+            "o020130130141"
+          ],
+          "choice": "\"ዋጀ\" (redeem) at Literal and Balanced; \"መልሶ መግዛት\" (buy back) at Readable",
+          "alternatives": [
+            "\"ቤዛ ከፈለ\" (pay a ransom)"
+          ],
+          "reason": "\"መዋጀት\" is the established word for redeeming by paying a price in place of the thing redeemed; Readable says what it means in plain words, as the English level does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2276,6 +2510,11 @@
           "L": "E será que, quando o teu filho te perguntar no futuro, dizendo: 'Que [é] isto?', tu lhe dirás: 'Com força de mão {{divine_name:o SENHOR|Javé}} nos tirou do Egito, da casa de escravos.",
           "B": "Mais tarde, quando o teu filho te perguntar: 'O que é isto?', tu lhe responderás: 'Pela força da {{deity_pronoun:sua|Sua}} mão {{divine_name:o SENHOR|Javé}} nos tirou do Egito, da casa da escravidão.",
           "R": "No futuro, o teu filho vai te perguntar: 'Por que fazemos isto?' Então responde a ele: '{{divine_name:O SENHOR|Javé}} usou o {{deity_pronoun:seu|Seu}} grande poder para nos tirar do Egito, onde éramos escravos."
+        },
+        "am": {
+          "L": "እንዲህም ይሆናል፤ በሚመጣው ጊዜ ልጅህ “ይህ ምንድን ነው?” ብሎ በጠየቀህ ጊዜ እንዲህ ትለዋለህ፦ “{{divine_name:እግዚአብሔር|ያህዌ}} በእጅ ብርታት ከግብፅ፣ ከባሪያዎች ቤት አወጣን።",
+          "B": "ከጊዜ በኋላ ልጅህ “ይህ ምንድን ነው?” ብሎ ሲጠይቅህ እንዲህ ብለህ ትመልስለታለህ፦ “{{divine_name:እግዚአብሔር|ያህዌ}} በእጁ ብርታት ከግብፅ፣ ከባርነት ቤት አወጣን።",
+          "R": "ወደፊት ልጅህ “ይህን የምናደርገው ለምንድን ነው?” ብሎ ይጠይቅሃል። በዚያን ጊዜ እንዲህ በለው፦ “{{divine_name:እግዚአብሔር|ያህዌ}} ታላቅ ኃይሉን ተጠቅሞ ባሪያዎች ከነበርንባት ከግብፅ አወጣን።"
         }
       },
       "decisions": [
@@ -2363,6 +2602,25 @@
             "servitude"
           ],
           "reason": "\"Slaves\" and \"slavery\" at every level, as the style guide keeps them for Israel's slavery in Egypt, \"the house of slavery\" (verse 3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020130140062"
+          ],
+          "choice": "the son's question in “ ” inside Moses' speech, and the father's answer opened with “ and closed at the end of verse 15",
+          "alternatives": [],
+          "reason": "Moses' speech runs from verse 3 to verse 16 in « »; the son's and the father's words are quoted inside it, so they take the inner marks.",
           "uncertain": false,
           "footnote": false
         }
@@ -2457,6 +2715,11 @@
           "L": "E foi que, quando Faraó [se] endureceu [para não] nos deixar ir, {{divine_name:o SENHOR|Javé}} matou todo primogênito na terra do Egito, desde o primogênito do homem até o primogênito do animal. Por isso eu sacrifico {{divine_name:ao SENHOR|a Javé}} todo o que abre o ventre, os machos, e todo primogênito dos meus filhos eu resgato.'",
           "B": "Quando Faraó se endureceu e não quis nos deixar ir, {{divine_name:o SENHOR|Javé}} matou todos os primogênitos da terra do Egito, tanto de gente como de animais. Por isso ofereço em sacrifício {{divine_name:ao SENHOR|a Javé}} todo macho que abre o ventre, e resgato cada primogênito entre os meus filhos.'",
           "R": "Faraó foi teimoso e não quis nos deixar ir. Por isso {{divine_name:o SENHOR|Javé}} matou todos os primogênitos do Egito, tanto de pessoas como de animais. É por isso que ofereço {{divine_name:ao SENHOR|a Javé}} em sacrifício todo primeiro filhote macho dos animais. Mas os meus filhos primogênitos eu compro de volta.'"
+        },
+        "am": {
+          "L": "እንዲህም ሆነ፤ ፈርዖን እኛን ለመልቀቅ [ልቡን] ባደነደነ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} በግብፅ ምድር ያለውን በኩር ሁሉ፣ ከሰው በኩር እስከ እንስሳ በኩር ድረስ፣ ገደለ። ስለዚህ ማኅፀንን የሚከፍተውን ሁሉ፣ ወንዶቹን፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} እሠዋለሁ፤ የልጆቼንም በኩር ሁሉ እዋጃለሁ።”",
+          "B": "ፈርዖን እኛን ላለመልቀቅ ልቡን ባደነደነ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} በግብፅ ምድር ያለውን በኩር ሁሉ፣ የሰውንም የእንስሳንም በኩር፣ ገደለ። ስለዚህ ማኅፀንን መጀመሪያ የሚከፍተውን ወንድ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መሥዋዕት አድርጌ አቀርባለሁ፤ ከልጆቼም መካከል በኩር የሆነውን ሁሉ እዋጃለሁ።”",
+          "R": "ፈርዖን እልከኛ ሆኖ ሊለቀን አልፈለገም። ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} በግብፅ ያለውን የመጀመሪያ ልጅ ሁሉ፣ የሰውንም የእንስሳንም፣ ገደለ። ከእንስሶቼ መጀመሪያ የተወለደውን ወንድ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መሥዋዕት አድርጌ የማቀርበው በዚህ ምክንያት ነው። የመጀመሪያ ወንዶች ልጆቼን ግን መልሼ እገዛቸዋለሁ።”"
         }
       },
       "decisions": [
@@ -2656,6 +2919,11 @@
           "L": "E [isto] será por sinal sobre a tua mão e por frontais entre os teus olhos, pois com força de mão {{divine_name:o SENHOR|Javé}} nos tirou do Egito.\"",
           "B": "Será para ti um sinal, como uma marca na tua mão e uma faixa entre os teus olhos, pois pela força da {{deity_pronoun:sua|Sua}} mão {{divine_name:o SENHOR|Javé}} nos tirou do Egito.\"",
           "R": "Este costume será como uma marca na tua mão ou uma faixa na tua testa. Ele vai te lembrar que {{divine_name:o SENHOR|Javé}} usou o {{deity_pronoun:seu|Seu}} grande poder para nos tirar do Egito.\""
+        },
+        "am": {
+          "L": "ይህም በእጅህ ላይ ምልክት፣ በዓይኖችህም መካከል የግንባር ማሰሪያ ይሆናል፤ {{divine_name:እግዚአብሔር|ያህዌ}} በእጅ ብርታት ከግብፅ አውጥቶናልና።»",
+          "B": "ይህም በእጅህ ላይ እንዳለ ምልክትና በዓይኖችህ መካከል እንዳለ ማሰሪያ ይሆንልሃል፤ {{divine_name:እግዚአብሔር|ያህዌ}} በእጁ ብርታት ከግብፅ አውጥቶናልና።»",
+          "R": "ይህ ልማድ በእጅህ ላይ እንዳለ ምልክት ወይም በግንባርህ ላይ እንዳለ ማሰሪያ ይሆናል። {{divine_name:እግዚአብሔር|ያህዌ}} ታላቅ ኃይሉን ተጠቅሞ ከግብፅ እንዳወጣን ያሳስብሃል።»"
         }
       },
       "decisions": [
@@ -2861,6 +3129,11 @@
           "L": "E foi que, quando Faraó deixou o povo ir, Deus não os conduziu [pelo] caminho da terra dos filisteus, pois ele [era] perto; pois Deus disse: \"Para que o povo não se arrependa quando vir guerra e volte para o Egito.\"",
           "B": "Depois que Faraó deixou o povo partir, Deus não o guiou pela rota da terra dos filisteus, embora esse fosse o caminho mais curto. Pois Deus pensou: \"O povo pode se arrepender de ter saído quando se vir diante de uma guerra, e voltar para o Egito.\"",
           "R": "Faraó finalmente deixou o povo ir. O caminho mais curto para Canaã passava pela terra dos filisteus, mas Deus não levou o povo por ali. Deus pensou: \"Se o povo tiver de enfrentar uma guerra, pode se arrepender de ter saído e voltar para o Egito.\""
+        },
+        "am": {
+          "L": "እንዲህም ሆነ፤ ፈርዖን ሕዝቡን በለቀቀ ጊዜ እግዚአብሔር በፍልስጥኤማውያን ምድር መንገድ አልመራቸውም፤ እርሱ ቅርብ ነበረና፤ እግዚአብሔር «ሕዝቡ ጦርነትን ሲያዩ እንዳይጸጸቱ፣ ወደ ግብፅም እንዳይመለሱ» ብሏልና።",
+          "B": "ፈርዖን ሕዝቡን ከለቀቀ በኋላ፣ ወደ ፍልስጥኤማውያን ምድር የሚወስደው መንገድ ቅርብ ቢሆንም እግዚአብሔር በዚያ አልመራቸውም። እግዚአብሔር «ሕዝቡ ጦርነት ሲገጥማቸው በመውጣታቸው ተጸጽተው ወደ ግብፅ ይመለሱ ይሆናል» ብሎ አስቦ ነበርና።",
+          "R": "በመጨረሻም ፈርዖን ሕዝቡን ለቀቀ። ወደ ከነዓን የሚያደርሰው አጭሩ መንገድ በፍልስጥኤማውያን ምድር በኩል ያልፍ ነበር፤ እግዚአብሔር ግን በዚያ መንገድ አልመራቸውም። እግዚአብሔር «ሕዝቡ ጦርነት ቢገጥማቸው በመውጣታቸው ተጸጽተው ወደ ግብፅ ይመለሱ ይሆናል» ብሎ አሰበ።"
         }
       },
       "decisions": [
@@ -2925,6 +3198,27 @@
           "choice": "The shortest way to Canaan",
           "alternatives": [],
           "reason": "Readable says where the road led and what \"near\" means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130170081"
+          ],
+          "choice": "\"እግዚአብሔር\" for Elohim (God)",
+          "alternatives": [
+            "\"አምላክ\""
+          ],
+          "reason": "Where Elohim names the one God and YHWH does not stand beside it, Amharic says \"እግዚአብሔር\", as the Pentateuch terms set; \"አምላክ\" is kept for \"a god\" and for \"the God of ...\", \"my God\". The English \"God\" and \"the LORD\" then read alike in Amharic except where the divine_name setting is turned to the name.",
           "uncertain": false,
           "footnote": false
         }
@@ -2998,6 +3292,11 @@
           "L": "E Deus fez o povo dar a volta [pelo] caminho do deserto, [em direção ao] mar dos Juncos; e os filhos de Israel subiram armados da terra do Egito.",
           "B": "Em vez disso, Deus levou o povo pelo caminho mais longo, através do deserto, em direção ao mar Vermelho, e os israelitas saíram da terra do Egito prontos para a batalha.",
           "R": "Por isso Deus levou o povo pelo caminho mais longo, pelo deserto, em direção ao mar Vermelho. Os israelitas saíram do Egito prontos para lutar."
+        },
+        "am": {
+          "L": "እግዚአብሔርም ሕዝቡን በምድረ በዳው መንገድ ወደ ቀይ ባሕር አዙሮ መራቸው፤ የእስራኤልም ልጆች ለጦርነት ታጥቀው ከግብፅ ምድር ወጡ።",
+          "B": "ይልቁንም እግዚአብሔር ሕዝቡን በምድረ በዳው በኩል ወደ ቀይ ባሕር በሚወስደው ረጅም መንገድ አዙሮ ወሰዳቸው፤ የእስራኤልም ልጆች ለጦርነት ታጥቀው ከግብፅ ምድር ወጡ።",
+          "R": "ስለዚህ እግዚአብሔር በምድረ በዳው በኩል ወደ ቀይ ባሕር በሚወስደው ረጅም መንገድ መራቸው። እስራኤላውያንም ለመዋጋት ተዘጋጅተው ከግብፅ ወጡ።"
         }
       },
       "decisions": [
@@ -3137,6 +3436,28 @@
           "reason": "The meaning of the rare word is uncertain (m2). \"Armados\" is the most likely sense, as the English Literal \"equipped for battle\"; Balanced and Readable say what it implies, a people ready for war.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130180071",
+            "o020130180081"
+          ],
+          "choice": "\"ቀይ ባሕር\" (Red Sea) at every level, Literal included",
+          "alternatives": [
+            "\"የሸምበቆ ባሕር\" (Sea of Reeds), as the English Literal"
+          ],
+          "reason": "The Hebrew says \"sea of reeds\"; the sea is known by the name Red Sea in Amharic, as in the Greek and in Acts 7:36 and Hebrews 11:29 in this translation. The Pentateuch terms keep one name at every level; meaning decision m1 gives the Hebrew sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3219,6 +3540,11 @@
           "L": "E Moisés levou consigo os ossos de José, pois este havia feito os filhos de Israel jurarem solenemente, dizendo: \"Certamente Deus visitará vocês, e vocês levarão daqui os meus ossos com vocês.\"",
           "B": "Moisés levou junto os ossos de José, pois José tinha obrigado os israelitas a fazer um juramento solene. \"Deus certamente virá em auxílio de vocês\", ele tinha dito, \"e, quando {{deity_pronoun:ele|Ele}} vier, levem daqui os meus ossos com vocês.\"",
           "R": "Moisés levou junto os ossos de José. Muito tempo antes, José tinha feito os israelitas prometerem fazer isso. Ele tinha dito a eles: \"Deus com certeza virá ajudar vocês. Quando {{deity_pronoun:ele|Ele}} vier, levem os meus ossos com vocês para fora desta terra.\""
+        },
+        "am": {
+          "L": "ሙሴም የዮሴፍን አጥንቶች ከእርሱ ጋር ወሰደ፤ [ዮሴፍ] «እግዚአብሔር በእርግጥ ይጎበኛችኋል፤ አጥንቶቼንም ከዚህ ከእናንተ ጋር ታወጣላችሁ» ብሎ የእስራኤልን ልጆች አጥብቆ አምሏቸው ነበርና።",
+          "B": "ሙሴ የዮሴፍን አጥንቶች ይዞ ሄደ፤ ዮሴፍ የእስራኤልን ልጆች በጽኑ መሐላ አስሯቸው ነበርና። «እግዚአብሔር በእርግጥ ሊረዳችሁ ይመጣል» ብሎ ነበር፤ «እርሱ ሲመጣም አጥንቶቼን ከዚህ ከእናንተ ጋር ይዛችሁ ውጡ።»",
+          "R": "ሙሴ የዮሴፍን አጥንቶች ይዞ ሄደ። ከብዙ ዘመን በፊት ዮሴፍ እስራኤላውያንን ይህን እንዲያደርጉ ቃል አስገብቷቸው ነበር። እንዲህም ብሏቸው ነበር፦ «እግዚአብሔር በእርግጥ ሊረዳችሁ ይመጣል። እርሱ ሲመጣ አጥንቶቼን ይዛችሁ ከዚህ ምድር ውጡ።»"
         }
       },
       "decisions": [
@@ -3407,6 +3733,11 @@
           "L": "E partiram de Sucote e acamparam em Etã, na extremidade do deserto.",
           "B": "Eles partiram de Sucote e montaram acampamento em Etã, na borda do deserto.",
           "R": "O povo saiu de Sucote e acampou em Etã, onde começa o deserto."
+        },
+        "am": {
+          "L": "ከሱኮትም ተጓዙ፤ በምድረ በዳውም ዳር በኤታም ሰፈሩ።",
+          "B": "ከሱኮት ተነሥተው በምድረ በዳው ዳርቻ በምትገኘው በኤታም ሰፈሩ።",
+          "R": "ሕዝቡ ከሱኮት ተነሥተው ምድረ በዳው በሚጀምርበት በኤታም ሰፈሩ።"
         }
       },
       "decisions": [
@@ -3528,6 +3859,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} ia adiante deles de dia numa coluna de nuvem, para guiá-los [no] caminho, e de noite numa coluna de fogo, para lhes dar luz, para que [pudessem] andar de dia e de noite.",
           "B": "{{divine_name:O SENHOR|Javé}} ia à frente deles: de dia, numa coluna de nuvem, para guiá-los pelo caminho, e de noite, numa coluna de fogo, para iluminar o seu caminho. Assim eles podiam continuar andando dia e noite.",
           "R": "{{divine_name:O SENHOR|Javé}} ia na frente do povo. Durante o dia, {{deity_pronoun:ele|Ele}} estava numa coluna de nuvem para mostrar o caminho a eles. À noite, {{deity_pronoun:ele|Ele}} estava numa coluna de fogo para iluminá-los. Assim eles podiam viajar de dia ou de noite."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በመንገድ ሊመራቸው ቀን በደመና ዓምድ፣ ሊያበራላቸውም ሌሊት በእሳት ዓምድ በፊታቸው ይሄድ ነበር፤ ቀንና ሌሊት ይጓዙ ዘንድ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በፊታቸው ይሄድ ነበር፤ ቀን መንገዱን እንዲያሳያቸው በደመና ዓምድ፣ ሌሊት ደግሞ እንዲያበራላቸው በእሳት ዓምድ ውስጥ ነበር። በዚህም ቀንም ሌሊትም መጓዝ ይችሉ ነበር።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሕዝቡ ፊት ፊት ይሄድ ነበር። ቀን መንገዱን ሊያሳያቸው በደመና ዓምድ ውስጥ ነበር። ሌሊት ደግሞ ብርሃን ሊሰጣቸው በእሳት ዓምድ ውስጥ ነበር። ስለዚህ ቀንም ሆነ ሌሊት መጓዝ ይችሉ ነበር።"
         }
       },
       "decisions": [
@@ -3652,6 +3988,27 @@
           "reason": "For the whole book: \"coluna\" is the Portuguese word for a standing column and the one Brazilian readers know for the pillar of cloud and fire (m2); \"pilar\" sounds like part of a building. Genesis uses \"coluna\" also for the standing stone (matsevah, Genesis 28:18), a different Hebrew word; the context keeps them apart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020130210052"
+          ],
+          "choice": "\"ዓምድ\" (pillar)",
+          "alternatives": [
+            "\"ምሰሶ\" (post)"
+          ],
+          "reason": "\"ዓምድ\" is a standing column, and reads naturally of cloud and fire; \"ምሰሶ\" is a house post.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3719,6 +4076,11 @@
           "L": "Não se afastava a coluna da nuvem de dia, nem a coluna do fogo de noite, de diante do povo.",
           "B": "De dia a coluna de nuvem, e de noite a coluna de fogo, nunca se afastavam da frente do povo.",
           "R": "Durante o dia, a coluna de nuvem estava sempre na frente do povo, e à noite a coluna de fogo estava sempre ali."
+        },
+        "am": {
+          "L": "የደመናው ዓምድ በቀን፣ የእሳቱም ዓምድ በሌሊት ከሕዝቡ ፊት አልተለየም።",
+          "B": "ቀን የደመናው ዓምድ፣ ሌሊት የእሳቱ ዓምድ ከሕዝቡ ፊት ፈጽሞ አልራቀም።",
+          "R": "ቀን የደመናው ዓምድ ሁልጊዜ በሕዝቡ ፊት ነበር፤ ሌሊትም የእሳቱ ዓምድ ሁልጊዜ በዚያ ነበር።"
         }
       },
       "decisions": [
