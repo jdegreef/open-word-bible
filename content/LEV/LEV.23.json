@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -89,6 +94,25 @@
           "choice": "passé simple for the narrative at Literal and Balanced (\"parla\", \"dit\"); passé composé at Readable (\"a dit\")",
           "alternatives": [],
           "reason": "As in the rest of Leviticus, the speech formulas that open each section of the chapter (verses 1, 9, 23, 26, 33) and the closing verse 44 are narrative: written narrative tense at Literal and Balanced, the spoken tense at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030230010021"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalizes pronouns for God has nothing to change in Amharic; the Amharic text carries no deity_pronoun spans in this chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -163,6 +187,11 @@
           "L": "\"Fala aos filhos de Israel e dize-lhes: 'Os tempos determinados {{divine_name:do SENHOR|de Javé}}, que vocês proclamarão [como] santas convocações, estes são os {{deity_pronoun:meus|Meus}} tempos determinados.",
           "B": "\"Fala aos israelitas e diz-lhes: 'Vocês anunciarão as festas fixas {{divine_name:do SENHOR|de Javé}} como reuniões sagradas. Estas são as {{deity_pronoun:minhas|Minhas}} festas fixas:",
           "R": "\"Diz aos israelitas: 'Estas são as {{deity_pronoun:minhas|Minhas}} festas especiais, as festas {{divine_name:do SENHOR|de Javé}}. Em cada uma delas vocês devem chamar o povo para uma reunião sagrada de adoração."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “የተቀደሱ ጉባኤዎች ብላችሁ የምታውጇቸው {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ ጊዜያት፣ እነዚህ የእኔ የተወሰኑ ጊዜያት ናቸው።",
+          "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “{{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ በዓላት የተቀደሱ ጉባኤዎች እንደ ሆኑ አውጁ። የእኔ የተወሰኑ በዓላት እነዚህ ናቸው፦",
+          "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “ልዩ በዓሎቼ፣ ማለትም {{divine_name:የእግዚአብሔር|የያህዌ}} በዓላት እነዚህ ናቸው። በእያንዳንዳቸው ሕዝቡን ለአምልኮ ወደ ተቀደሰ ስብሰባ መጥራት አለባችሁ።"
         }
       },
       "decisions": [
@@ -379,6 +408,48 @@
           "reason": "For the whole book (chapter 23 and Numbers 28-29). The first word names the days God has fixed for meeting with Israel (m1); Literal keeps \"tempos determinados\", Balanced says \"festas fixas\" and Readable \"festas especiais\", following the English levels. The gathering called on those days (m2) is \"santa convocação\" at Literal, as Exodus 12:16 has it, \"reunião sagrada\" at Balanced, a plain word for a gathering of the people for worship, and \"reunião sagrada de adoração\" at Readable. \"Assembleia\" is kept for the congregation (qahal, docs/pentateuch-portuguese-terms.md). The commands are plural, so the people are \"vocês\"; God still speaks to Moses with \"tu\" (\"Fala\", \"Diz\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230020071",
+            "o030230020161"
+          ],
+          "choice": "\"የተወሰኑ ጊዜያት\" (L); \"የተወሰኑ በዓላት\" (B); \"ልዩ በዓላት\" (R)",
+          "alternatives": [
+            "\"በዓላት\" at every level"
+          ],
+          "reason": "The Hebrew word means a fixed time; it covers the Sabbath as well as the yearly feasts. Literal keeps \"times\"; Balanced and Readable say \"festivals\" as the English levels do. The word for a festival kept with pilgrimage (verses 6, 34, 39) is \"በዓል\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230020121",
+            "o030230020131"
+          ],
+          "choice": "\"የተቀደሰ ጉባኤ\" (holy convocation, L, B); \"ለአምልኮ የተቀደሰ ስብሰባ\" (R)",
+          "alternatives": [],
+          "reason": "As in Exodus 12:16. Readable says what the gathering is for, as the English Readable does (\"a holy gathering for worship\"). \"የተከበረ ስብሰባ\" is kept for the different word of verse 36.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -456,6 +527,11 @@
           "L": "Seis dias se fará trabalho, mas no sétimo dia [haverá] sábado de descanso solene, santa convocação; nenhum trabalho vocês farão; [é] sábado {{divine_name:ao SENHOR|a Javé}} em todas as habitações de vocês.",
           "B": "Durante seis dias se pode trabalhar, mas o sétimo dia é um sábado de descanso solene, uma reunião sagrada. Não façam nenhum tipo de trabalho. Em todas as casas de vocês esse dia será guardado como sábado dedicado {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Vocês podem trabalhar durante seis dias. Mas o sétimo dia é um sábado, um dia de descanso completo. É uma reunião sagrada de adoração. Não façam nenhum trabalho nesse dia. Onde quer que vocês morem, guardem o sábado em honra {{divine_name:do SENHOR|de Javé}}."
+        },
+        "am": {
+          "L": "ስድስት ቀን ሥራ ይሠራል፤ በሰባተኛው ቀን ግን የፍጹም ዕረፍት ሰንበት፣ የተቀደሰ ጉባኤ [ነው]፤ ምንም ሥራ አትሥሩ፤ በመኖሪያዎቻችሁ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሰንበት ነው።",
+          "B": "ስድስት ቀን ሥራ ሊሠራ ይችላል፤ ሰባተኛው ቀን ግን የፍጹም ዕረፍት ሰንበት፣ የተቀደሰ ጉባኤ ነው። ምንም ዓይነት ሥራ አትሥሩ። በምትኖሩበት ስፍራ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሰንበት አድርጋችሁ ጠብቁት።",
+          "R": "ለስድስት ቀን መሥራት ትችላላችሁ። ሰባተኛው ቀን ግን ሰንበት፣ የፍጹም ዕረፍት ቀን ነው። ለአምልኮ የሚደረግ የተቀደሰ ስብሰባ ነው። በዚያ ቀን ምንም ሥራ አትሥሩ። በምትኖሩበት ስፍራ ሁሉ {{divine_name:እግዚአብሔርን|ያህዌን}} ለማክበር ሰንበትን ጠብቁ።"
         }
       },
       "decisions": [
@@ -612,6 +688,47 @@
           "reason": "As Exodus 31:15 and 35:2 word the Sabbath (m1): \"sábado de descanso solene\" at Literal and Balanced, \"dia de descanso completo\" at Readable, as the English Readable says \"complete rest\". \"Sábado\" is lowercase, like the days of the week.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230030071",
+            "o030230030081"
+          ],
+          "choice": "\"የፍጹም ዕረፍት ሰንበት\" (L, B); \"የፍጹም ዕረፍት ቀን\" (R); the shorter word alone (verses 24, 39) \"የሰንበት ዕረፍት\"",
+          "alternatives": [],
+          "reason": "The same wording as Exodus 31:15 for the doubled Hebrew \"sabbath of sabbath rest\". The word used alone for the first and eighth days of the autumn feasts is \"የሰንበት ዕረፍት\", so the two stay distinct.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230030191"
+          ],
+          "choice": "\"በመኖሪያዎቻችሁ ሁሉ\" (L); \"በምትኖሩበት ስፍራ ሁሉ\" (B, R)",
+          "alternatives": [
+            "\"በማደሪያዎቻችሁ ሁሉ\""
+          ],
+          "reason": "\"ማደሪያ\" is the terms list's word for the tabernacle, so Israel's own dwellings take \"መኖሪያ\"; Balanced and Readable say \"wherever you live\". The phrase is the same through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -676,6 +793,11 @@
           "L": "Estes [são] os tempos determinados {{divine_name:do SENHOR|de Javé}}, santas convocações, que vocês proclamarão no seu tempo determinado.",
           "B": "Estas são as festas fixas {{divine_name:do SENHOR|de Javé}}, reuniões sagradas que vocês devem anunciar quando chegar o tempo de cada uma.",
           "R": "Estas são as festas especiais {{divine_name:do SENHOR|de Javé}}. Elas são reuniões sagradas de adoração. Vocês devem anunciar cada uma no tempo certo."
+        },
+        "am": {
+          "L": "በተወሰነላቸው ጊዜ የምታውጇቸው የተቀደሱ ጉባኤዎች፣ {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ ጊዜያት እነዚህ ናቸው።",
+          "B": "እያንዳንዳቸው የሚከበሩበት ጊዜ ሲደርስ የምታውጇቸው የተቀደሱ ጉባኤዎች፣ {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ በዓላት እነዚህ ናቸው።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ልዩ በዓላት እነዚህ ናቸው። ለአምልኮ የሚደረጉ የተቀደሱ ስብሰባዎች ናቸው። እያንዳንዱን በትክክለኛው ጊዜ ማወጅ አለባችሁ።"
         }
       },
       "decisions": [
@@ -776,6 +898,11 @@
           "L": "No primeiro mês, no décimo quarto [dia] do mês, entre as duas tardes, [é] a Páscoa para {{divine_name:o SENHOR|Javé}}.",
           "B": "No primeiro mês, no dia catorze, ao entardecer, celebra-se a Páscoa em honra {{divine_name:do SENHOR|de Javé}}.",
           "R": "A Páscoa em honra {{divine_name:do SENHOR|de Javé}} é no dia catorze do primeiro mês, entre março e abril, quando o sol estiver se pondo."
+        },
+        "am": {
+          "L": "በመጀመሪያው ወር ከወሩ በአሥራ አራተኛው [ቀን] በሁለቱ ምሽቶች መካከል {{divine_name:ለእግዚአብሔር|ለያህዌ}} ፋሲካ [ነው]።",
+          "B": "በመጀመሪያው ወር በአሥራ አራተኛው ቀን ሲመሽ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ፋሲካ ይከበራል።",
+          "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚከበረው ፋሲካ በመጀመሪያው ወር በአሥራ አራተኛው ቀን ምሽት ላይ ነው።"
         }
       },
       "decisions": [
@@ -912,6 +1039,26 @@
           "reason": "The time of day follows Exodus 12:6 at each level (m1). Readable names the months of the first month, as Exodus 13:4 does for Abibe (m3): the meaning note says \"spring\", but for readers in the southern hemisphere March and April are autumn, so the months say it for everyone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230050081",
+            "o030230050072"
+          ],
+          "choice": "\"ፋሲካ\" (Passover); \"በሁለቱ ምሽቶች መካከል\" (L), \"ሲመሽ\" (B), \"ምሽት ላይ\" (R)",
+          "alternatives": [],
+          "reason": "The terms list's name for the Passover, and the wording of Exodus 12:6 for the time of the sacrifice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -982,6 +1129,11 @@
           "L": "E no décimo quinto dia deste mês [é] a festa dos Pães sem Fermento {{divine_name:ao SENHOR|a Javé}}; sete dias vocês comerão pães sem fermento.",
           "B": "O dia quinze deste mês é a festa dos Pães sem Fermento, celebrada em honra {{divine_name:do SENHOR|de Javé}}. Durante sete dias vocês comerão pão sem fermento.",
           "R": "No dia quinze desse mês começa a festa dos Pães sem Fermento. É uma festa em honra {{divine_name:do SENHOR|de Javé}}. Durante sete dias, o pão que vocês comerem tem de ser feito sem fermento."
+        },
+        "am": {
+          "L": "በዚሁም ወር በአሥራ አምስተኛው ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የቂጣ በዓል [ነው]፤ ሰባት ቀን ቂጣ ትበላላችሁ።",
+          "B": "የዚሁ ወር አሥራ አምስተኛው ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚከበረው የቂጣ በዓል ነው። ሰባት ቀን ቂጣ ብሉ።",
+          "R": "በዚያው ወር በአሥራ አምስተኛው ቀን የቂጣ በዓል ይጀምራል። ይህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚከበር በዓል ነው። ለሰባት ቀን ያለ እርሾ የተጋገረ ቂጣ ብቻ ብሉ።"
         }
       },
       "decisions": [
@@ -1071,6 +1223,26 @@
           "reason": "The term sheet names of the festivals, as Chronicles already uses them; \"빵\" rather than \"떡\", as in the Gospels.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230060061",
+            "o030230060072"
+          ],
+          "choice": "\"የቂጣ በዓል\" (the Festival of Unleavened Bread) at every level; Readable \"ያለ እርሾ የተጋገረ ቂጣ\"",
+          "alternatives": [],
+          "reason": "The name used in Exodus 12:17 and 23:15. Readable spells out that the bread is baked without yeast, as Exodus 12 does at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1137,6 +1309,11 @@
           "L": "No primeiro dia haverá para vocês santa convocação; nenhum trabalho servil vocês farão.",
           "B": "O primeiro dia será para vocês uma reunião sagrada, e nesse dia vocês não farão nenhum dos seus trabalhos habituais.",
           "R": "No primeiro dia da festa, façam uma reunião sagrada de adoração. Não façam o trabalho de todo dia."
+        },
+        "am": {
+          "L": "በመጀመሪያው ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ ምንም የጉልበት ሥራ አትሥሩ።",
+          "B": "የመጀመሪያው ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ በዚያ ቀን የዘወትር ሥራችሁን አትሥሩ።",
+          "R": "በበዓሉ የመጀመሪያ ቀን ለአምልኮ የተቀደሰ ስብሰባ አድርጉ። የዕለት ተዕለት ሥራችሁን አትሥሩ።"
         }
       },
       "decisions": [
@@ -1287,6 +1464,26 @@
           "reason": "For the chapter (verses 8, 21, 25, 35, 36) and Numbers 28-29. The phrase means the work of one's trade or living (m1), less than the \"any work\" of the Sabbath. Literal says \"trabalho servil\", the old Portuguese name for the work of a livelihood that holy days forbid, which keeps the Hebrew noun's link with \"serve\"; Balanced says \"trabalhos habituais\" and Readable \"o trabalho de todo dia\", as the English says \"ordinary\" and \"everyday\" work. \"Pesado\" would wrongly allow light work.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230070081",
+            "o030230070091"
+          ],
+          "choice": "\"የጉልበት ሥራ\" (work of labor, L); \"የዘወትር ሥራ\" (B); \"የዕለት ተዕለት ሥራ\" (R)",
+          "alternatives": [],
+          "reason": "The festival days forbid ordinary daily work, a narrower phrase than the \"any work\" of the Sabbath and the Day of Atonement (verses 3, 28, 31), which is \"ምንም ሥራ\". The same wording holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1357,6 +1554,11 @@
           "L": "E vocês oferecerão oferta queimada {{divine_name:ao SENHOR|a Javé}} sete dias; no sétimo dia [haverá] santa convocação; nenhum trabalho servil vocês farão.'\"",
           "B": "Durante os sete dias, apresentem a cada dia uma oferta queimada {{divine_name:ao SENHOR|a Javé}}. No sétimo dia haverá de novo uma reunião sagrada, sem trabalhos habituais.'\"",
           "R": "Durante sete dias, tragam cada dia uma oferta queimada no fogo para {{divine_name:o SENHOR|Javé}}. No sétimo dia, façam outra reunião sagrada de adoração. Não façam o trabalho de todo dia.'\""
+        },
+        "am": {
+          "L": "ሰባት ቀንም {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት ታቀርባላችሁ፤ በሰባተኛው ቀን የተቀደሰ ጉባኤ [ነው]፤ ምንም የጉልበት ሥራ አትሥሩ።”»",
+          "B": "በሰባቱ ቀናት በየዕለቱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት አቅርቡ። በሰባተኛው ቀን እንደ ገና የተቀደሰ ጉባኤ ይሁን፤ የዘወትር ሥራ አይሠራበትም።”»",
+          "R": "ለሰባት ቀን በየዕለቱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት አምጡ። በሰባተኛው ቀን ሌላ የተቀደሰ ስብሰባ አድርጉ። የዕለት ተዕለት ሥራችሁን አትሥሩ።”»"
         }
       },
       "decisions": [
@@ -1447,6 +1649,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -1549,6 +1756,11 @@
           "L": "\"Fala aos filhos de Israel e dize-lhes: 'Quando vocês entrarem na terra que eu estou dando a vocês e fizerem a sua colheita, então trarão ao sacerdote o feixe das primícias da colheita de vocês.",
           "B": "\"Fala aos israelitas e diz-lhes: 'Quando vocês tiverem entrado na terra que eu lhes dou e estiverem fazendo a colheita, levem ao sacerdote um feixe dos primeiros grãos colhidos.",
           "R": "\"Diz aos israelitas: 'Vocês vão entrar na terra que eu estou dando a vocês e vão colher o que ela produzir. Quando isso acontecer, levem ao sacerdote um feixe dos primeiros grãos que vocês cortarem."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “እኔ ወደምሰጣችሁ ምድር በገባችሁ ጊዜ፣ መከሯንም ባጨዳችሁ ጊዜ፣ ከመከራችሁ የበኩራቱን ነዶ ወደ ካህኑ ታመጣላችሁ።",
+          "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ወደምሰጣችሁ ምድር ገብታችሁ መከሯን በምታጭዱበት ጊዜ ከሰብላችሁ የመጀመሪያውን ነዶ ወደ ካህኑ አምጡ።",
+          "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “ወደምሰጣችሁ ምድር ትገባላችሁ፤ ሰብሏንም ትሰበስባላችሁ። በዚያን ጊዜ ካጨዳችሁት የመጀመሪያ እህል አንድ ነዶ ወደ ካህኑ አምጡ።"
         }
       },
       "decisions": [
@@ -1720,6 +1932,46 @@
           "reason": "The word here is the bundle of cut stalks (m1), not the dry measure of Exodus 16:16, which keeps the name \"ômer\". \"Feixe\" is the everyday Portuguese word for a bundle of stalks, so Readable keeps it where the English Readable changes \"sheaf\" to \"bundle\". \"Primícias\" is the book's word for the first of the harvest (2:12); Balanced and Readable say \"os primeiros grãos\", since the gift is of grain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230100201",
+            "o030230100211"
+          ],
+          "choice": "\"ነዶ\" (sheaf); \"በኩራት\" (firstfruits, L), \"የመጀመሪያው\" (the first of the crop, B, R)",
+          "alternatives": [],
+          "reason": "\"ነዶ\" is the ordinary word for a bundle of cut grain. \"በኩራት\" is the word of Exodus 23:16 for the first of the harvest; Balanced and Readable say \"the first\" here, keeping \"በኩራት\" for the loaves of verses 17 and 20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030230100031",
+            "o030230100041"
+          ],
+          "choice": "no gender span on \"የእስራኤል ልጆች\"",
+          "alternatives": [],
+          "reason": "Amharic \"ልጆች\" already includes daughters, so \"the sons of Israel\" is \"የእስራኤል ልጆች\" (L, B) and \"እስራኤላውያን\" (R) with no setting, as in the Pentateuch terms list; this holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1791,6 +2043,11 @@
           "L": "E ele moverá o feixe diante {{divine_name:do SENHOR|de Javé}}, para que vocês sejam aceitos; no dia seguinte ao sábado o sacerdote o moverá.",
           "B": "No dia seguinte ao sábado, o sacerdote erguerá o feixe e o moverá diante {{divine_name:do SENHOR|de Javé}}, para que vocês sejam aceitos.",
           "R": "O sacerdote vai mover o feixe diante {{divine_name:do SENHOR|de Javé}} no dia depois do sábado. Então {{divine_name:o SENHOR|Javé}} vai aceitar vocês."
+        },
+        "am": {
+          "L": "እርሱም ተቀባይነት እንድታገኙ ነዶውን {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይወዘውዘዋል፤ ከሰንበት በኋላ ባለው ቀን ካህኑ ይወዘውዘው።",
+          "B": "ከሰንበት በኋላ ባለው ቀን ካህኑ ተቀባይነት እንድታገኙ ነዶውን አንሥቶ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይወዝውዘው።",
+          "R": "ከሰንበት ቀጥሎ ባለው ቀን ካህኑ ነዶውን {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይወዘውዘዋል። ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ይቀበላችኋል።"
         }
       },
       "decisions": [
@@ -1979,6 +2236,11 @@
           "L": "E vocês oferecerão, no dia em que moverem o feixe, um cordeiro sem defeito, de um ano, como holocausto {{divine_name:ao SENHOR|a Javé}}.",
           "B": "No dia em que o feixe for movido, ofereçam um cordeiro de um ano, sem defeito, como holocausto {{divine_name:ao SENHOR|a Javé}}.",
           "R": "No dia em que o sacerdote mover o feixe, ofereçam um holocausto {{divine_name:ao SENHOR|a Javé}}. Deve ser um cordeiro macho de um ano, sem nenhum defeito."
+        },
+        "am": {
+          "L": "ነዶውንም በምትወዘውዙበት ቀን ነውር የሌለበትን አንድ ዓመት የሆነውን ተባዕት ጠቦት {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አድርጋችሁ ታቀርባላችሁ።",
+          "B": "ነዶው በሚወዘወዝበት ቀን ነውር የሌለበትን የአንድ ዓመት ተባዕት ጠቦት {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አድርጋችሁ አቅርቡ።",
+          "R": "ካህኑ ነዶውን በሚወዘውዝበት ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አቅርቡ። መሥዋዕቱ አንድ ዓመት የሆነው ተባዕት ጠቦት መሆን አለበት፤ ምንም ጉድለት ሊኖርበት አይገባም።"
         }
       },
       "decisions": [
@@ -2089,6 +2351,11 @@
           "L": "E a sua oferta de cereal [será] dois décimos [de efa] de flor de farinha amassada com azeite, oferta queimada {{divine_name:ao SENHOR|a Javé}}, aroma agradável; e a sua oferta de bebida [será] vinho, um quarto de him.",
           "B": "A oferta de cereal que o acompanha será de {{units:cerca de 4,4 litros|dois décimos de efa}} de flor de farinha amassada com azeite, uma oferta queimada {{divine_name:ao SENHOR|a Javé}}, de aroma agradável. A oferta de bebida será de {{units:cerca de 1 litro|um quarto de him}} de vinho.",
           "R": "Junto com ele, tragam uma oferta de cereal de {{units:cerca de 4,4 litros|dois décimos de efa}} da melhor farinha misturada com azeite. É uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}. Tragam também {{units:cerca de 1 litro|um quarto de him}} de vinho para derramar como oferta de bebida."
+        },
+        "am": {
+          "L": "የእህል ቁርባኑም በዘይት የተለወሰ የ[ኢፍ] ሁለት አሥረኛ የላመ ዱቄት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ ደስ የሚያሰኝ መዓዛ [ይሁን]፤ የመጠጥ ቁርባኑም የኢን አንድ አራተኛ የወይን ጠጅ [ይሁን]።",
+          "B": "የእህል ቁርባኑ በዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት ይሁን፤ ይህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ ደስ የሚያሰኝ መዓዛ ነው። የመጠጥ ቁርባኑም {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የወይን ጠጅ ይሁን።",
+          "R": "ከእርሱም ጋር በዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አድርጋችሁ አምጡ። ይህ በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል። እንዲሁም የመጠጥ ቁርባን አድርጋችሁ የምታፈሱት {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የወይን ጠጅ አምጡ።"
         }
       },
       "decisions": [
@@ -2257,6 +2524,28 @@
           "reason": "Metric by default with the ancient measure as the alternative, as the book sets at 5:11, where the English converts to quarts. Two tenths of an ephah of 22 litros is 4,4 litros; a fourth of a hin is \"cerca de 1 litro\", as Exodus 29:40 rounds it. \"Oferta de bebida\" (m2), its first mention in Leviticus, is the name Exodus 29:40 uses; \"libação\" is a church word many readers do not know.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030230130031",
+            "o030230130131",
+            "o030230130142"
+          ],
+          "choice": "metric by default: \"4.4 ሊትር ያህል\" for two tenths of an ephah, \"1 ሊትር ያህል\" for a fourth of a hin; the Hebrew units (\"የኢፍ ሁለት አሥረኛ\", \"የኢን አንድ አራተኛ\") as the alternative",
+          "alternatives": [
+            "US units, as the English"
+          ],
+          "reason": "Amharic gives metric measures by default with the Hebrew unit as the alternative (the English uses US units), with the terms list's values: an ephah about 22 litres, a hin about 3.7 litres. Literal keeps the Hebrew units, supplying \"ephah\" in brackets as the English Literal does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2339,6 +2628,11 @@
           "L": "E pão, grão tostado e grão novo vocês não comerão até este mesmo dia, até que tenham trazido a oferta do Deus de vocês; [é] estatuto perpétuo pelas gerações de vocês em todas as suas habitações.",
           "B": "Até o dia em que trouxerem essa oferta ao seu Deus, não comam nada da nova colheita: nem pão, nem grão tostado, nem espigas novas. Este é um estatuto perpétuo para todas as gerações de vocês, onde quer que morem.",
           "R": "Não comam nada dos grãos novos antes de trazerem essa oferta ao Deus de vocês. Não comam os grãos novos nem em pão, nem tostados, nem frescos. Esta regra vale para sempre, onde quer que vocês morem."
+        },
+        "am": {
+          "L": "እስከዚችም ቀን፣ የአምላካችሁን መባ እስክታመጡ ድረስ፣ እንጀራንም ቆሎንም እሸትንም አትብሉ፤ በመኖሪያዎቻችሁ ሁሉ ለትውልዶቻችሁ የዘላለም ሥርዓት [ነው]።",
+          "B": "ይህን መባ ለአምላካችሁ እስከምታመጡበት ቀን ድረስ ከአዲሱ ሰብል ምንም አትብሉ፤ እንጀራም ቢሆን፣ ቆሎም ቢሆን፣ እሸትም ቢሆን። ይህ በምትኖሩበት ስፍራ ሁሉ ከትውልድ እስከ ትውልድ የዘላለም ሥርዓት ነው።",
+          "R": "ይህን መባ ለአምላካችሁ እስክታመጡ ድረስ ከአዲሱ እህል ምንም አትብሉ። እንጀራ አድርጋችሁም ሆነ ቆልታችሁ ወይም እሸቱን አትብሉት። ይህ በምትኖሩበት ስፍራ ሁሉ ለሚመጡት ዘመናት ሁሉ የሚጠበቅ ሕግ ነው።"
         }
       },
       "decisions": [
@@ -2407,6 +2701,26 @@
           "choice": "from the new crop / the new grain",
           "alternatives": [],
           "reason": "Balanced and Readable say \"the new crop\" or \"the new grain\", which the context makes plain: the rule is about the harvest just begun (verse 10). Balanced puts the time clause first.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230140151",
+            "o030230140161"
+          ],
+          "choice": "\"የዘላለም ሥርዓት\" (a statute forever, L, B); \"ለሚመጡት ዘመናት ሁሉ የሚጠበቅ ሕግ\" (R)",
+          "alternatives": [],
+          "reason": "The terms list's phrase, used in Exodus 12:14. Readable says it plainly (\"a law kept for all the ages to come\"), as the English Readable says \"a rule for all time to come\"; the same wording holds through the chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -2481,6 +2795,11 @@
           "L": "E vocês contarão para vocês, desde o dia seguinte ao sábado, desde o dia em que trouxerem o feixe da oferta movida, sete sábados; completos serão.",
           "B": "Depois comecem a contar a partir do dia seguinte ao sábado, o dia em que trouxeram o feixe como oferta movida. Contem sete semanas completas.",
           "R": "Comecem a contar no dia em que vocês trouxeram o feixe para o sacerdote mover, o dia depois do sábado. Contem sete semanas ao todo."
+        },
+        "am": {
+          "L": "ከሰንበትም ማግሥት፣ የሚወዘወዘውን መባ ነዶ ካመጣችሁበት ቀን ጀምሮ ሰባት ሰንበቶችን ለራሳችሁ ትቆጥራላችሁ፤ ሙሉ ይሁኑ።",
+          "B": "ከዚያም ነዶውን የሚወዘወዝ መባ አድርጋችሁ ካመጣችሁበት ከሰንበት ማግሥት ጀምራችሁ ቁጠሩ። ሰባት ሙሉ ሳምንታት ቁጠሩ።",
+          "R": "ካህኑ እንዲወዘውዘው ነዶውን ካመጣችሁበት ቀን፣ ከሰንበት ማግሥት ጀምራችሁ ቁጠሩ። በአጠቃላይ ሰባት ሳምንታት ቁጠሩ።"
         }
       },
       "decisions": [
@@ -2553,6 +2872,27 @@
           "reason": "The term sheet word, which says what the priest does with the offering.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230150092"
+          ],
+          "choice": "\"የሚወዘወዝ መባ\" (wave offering) for the sheaf",
+          "alternatives": [
+            "\"የሚወዘወዝ መሥዋዕት\""
+          ],
+          "reason": "As settled for the Pentateuch, a wave offering of things (grain, gold) is \"የሚወዘወዝ መባ\" and one of animal portions \"የሚወዘወዝ መሥዋዕት\" (verse 20, where the lambs are waved with the loaves).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2621,6 +2961,11 @@
           "L": "Até o dia seguinte ao sétimo sábado vocês contarão cinquenta dias; então oferecerão uma oferta de cereal nova {{divine_name:ao SENHOR|a Javé}}.",
           "B": "O dia seguinte ao sétimo sábado será o quinquagésimo dia. Nesse dia, apresentem {{divine_name:ao SENHOR|a Javé}} uma oferta de cereal da nova colheita.",
           "R": "O dia depois do sétimo sábado é o dia de número cinquenta. Nesse dia, tragam {{divine_name:ao SENHOR|a Javé}} uma oferta de cereal da nova colheita."
+        },
+        "am": {
+          "L": "እስከ ሰባተኛው ሰንበት ማግሥት ድረስ ሃምሳ ቀን ትቆጥራላችሁ፤ ከዚያም አዲስ የእህል ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ታቀርባላችሁ።",
+          "B": "የሰባተኛው ሰንበት ማግሥት ሃምሳኛው ቀን ይሆናል። በዚያን ዕለት ከአዲሱ ሰብል የእህል ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} አቅርቡ።",
+          "R": "የሰባተኛው ሰንበት ማግሥት ሃምሳኛው ቀን ነው። በዚያ ቀን ከአዲሱ መከር የእህል ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} አምጡ።"
         }
       },
       "decisions": [
@@ -2670,6 +3015,29 @@
           "choice": "the fiftieth day",
           "alternatives": [],
           "reason": "The Hebrew \"until the day after the seventh sabbath you shall count fifty days\" means that this day is the fiftieth. Balanced and Readable say so directly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230160061",
+            "o030230160071"
+          ],
+          "choice": "no festival name added: \"ሃምሳ ቀን\" (L), \"ሃምሳኛው ቀን\" (B, R)",
+          "alternatives": [
+            "\"የሳምንታት በዓል\"",
+            "\"በዓለ ሃምሳ\""
+          ],
+          "reason": "Leviticus 23 gives this festival no name; elsewhere it is the Feast of Weeks (\"የሳምንታት በዓል\", Exodus 34:22), and the New Testament's Pentecost is \"በዓለ ሃምሳ\". The Amharic, like the English, counts the fifty days and names nothing.",
           "uncertain": false,
           "footnote": false
         }
@@ -2740,6 +3108,11 @@
           "L": "Das habitações de vocês trarão pão de oferta movida, dois [pães], de dois décimos [de efa]; de flor de farinha serão; com fermento serão assados, primícias {{divine_name:ao SENHOR|a Javé}}.",
           "B": "Tragam de casa dois pães para serem movidos como primícias {{divine_name:ao SENHOR|a Javé}}. Assem-nos com fermento, usando {{units:cerca de 4,4 litros|dois décimos de efa}} de flor de farinha para cada um.",
           "R": "Tragam de casa dois pães para o sacerdote mover. Façam cada pão com {{units:cerca de 4,4 litros|dois décimos de efa}} da melhor farinha e assem com fermento. Eles são um presente para {{divine_name:o SENHOR|Javé}}, das primeiras colheitas de vocês."
+        },
+        "am": {
+          "L": "ከመኖሪያዎቻችሁ የሚወዘወዝ ሁለት ዳቦ ታመጣላችሁ፤ የ[ኢፍ] ሁለት አሥረኛ የላመ ዱቄት ይሁኑ፤ በእርሾ ይጋገሩ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በኩራት ናቸው።",
+          "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በኩራት ሆነው የሚወዘወዙ ሁለት ዳቦዎችን ከቤቶቻችሁ አምጡ። እያንዳንዳቸውን {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት አድርጋችሁ በእርሾ ጋግሯቸው።",
+          "R": "ካህኑ እንዲወዘውዛቸው ከቤቶቻችሁ ሁለት ዳቦ አምጡ። እያንዳንዱን ዳቦ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} ከሚሆን የላመ ዱቄት አዘጋጁ፤ በእርሾም ጋግሩት። እነዚህ ከመከራችሁ መጀመሪያ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚሰጡ ስጦታዎች ናቸው።"
         }
       },
       "decisions": [
@@ -2824,6 +3197,27 @@
             "\"của đầu mùa\""
           ],
           "reason": "The usual Vietnamese phrase for the first produce given to God; Romans and 1 Corinthians use \"trái đầu mùa\" for the picture, which is close.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230170041"
+          ],
+          "choice": "\"ዳቦ\" for the loaves; \"በእርሾ ይጋገሩ\" (baked with yeast)",
+          "alternatives": [
+            "\"እንጀራ\""
+          ],
+          "reason": "As the Amharic New Testament has it, loaves are \"ዳቦ\" and bread as food in general \"እንጀራ\" (verse 14). These loaves are leavened, unlike the bread of the altar, so the yeast is named plainly.",
           "uncertain": false,
           "footnote": false
         }
@@ -2911,6 +3305,11 @@
           "L": "E vocês oferecerão com o pão sete cordeiros sem defeito, de um ano, e um novilho do gado, e dois carneiros; serão holocausto {{divine_name:ao SENHOR|a Javé}}, com a sua oferta de cereal e as suas ofertas de bebida, oferta queimada de aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "B": "Com o pão, ofereçam sete cordeiros de um ano, sem defeito, um novilho e dois carneiros, todos como holocausto {{divine_name:ao SENHOR|a Javé}}. As ofertas de cereal e de bebida que os acompanham vão junto. É uma oferta queimada de aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Junto com os pães, tragam sete cordeiros de um ano, um novilho e dois carneiros. Os cordeiros não podem ter nenhum defeito. Queimem todos esses animais como holocausto {{divine_name:ao SENHOR|a Javé}}, junto com as ofertas de cereal e de bebida que os acompanham. Essa oferta queimada no fogo produz um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "ከዳቦውም ጋር ነውር የሌለባቸውን አንድ ዓመት የሆናቸውን ሰባት ተባዕት ጠቦቶች፣ ከላም መንጋ አንድ ወይፈን፣ ሁለትም አውራ በጎች ታቀርባላችሁ፤ ከእህል ቁርባናቸውና ከመጠጥ ቁርባኖቻቸው ጋር {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት ይሆናሉ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ያለው በእሳት የሚቀርብ መሥዋዕት [ናቸው]።",
+          "B": "ከዳቦው ጋር ነውር የሌለባቸውን የአንድ ዓመት ሰባት ተባዕት ጠቦቶች፣ ከላም መንጋ አንድ ወይፈንና ሁለት አውራ በጎች {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አድርጋችሁ አቅርቡ። የእህልና የመጠጥ ቁርባኖቻቸውም ከእነርሱ ጋር ይቅረቡ። ይህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ ደስ የሚያሰኝ መዓዛ ነው።",
+          "R": "ከዳቦው ጋር አንድ ዓመት የሆናቸውን ሰባት ተባዕት ጠቦቶች፣ አንድ ወይፈንና ሁለት አውራ በጎች አምጡ። ጠቦቶቹ ምንም ጉድለት ሊኖርባቸው አይገባም። እነዚህን እንስሶች ሁሉ ከእነርሱ ጋር ከሚቀርቡት የእህልና የመጠጥ ቁርባኖች ጋር {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አድርጋችሁ አቃጥሉ። በመሠዊያው ላይ በእሳት የሚቀርበው ይህ መሥዋዕት {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኝ መዓዛ አለው።"
         }
       },
       "decisions": [
@@ -3011,6 +3410,11 @@
           "L": "E vocês oferecerão um bode como oferta pelo pecado, e dois cordeiros de um ano como sacrifício de comunhão.",
           "B": "Ofereçam também um bode como oferta pelo pecado e dois cordeiros de um ano como sacrifício de comunhão.",
           "R": "Também ofereçam um bode como oferta pelo pecado. E ofereçam dois cordeiros de um ano como sacrifício de comunhão."
+        },
+        "am": {
+          "L": "ለኃጢአት መሥዋዕትም አንድ አውራ ፍየል፣ ለኅብረት መሥዋዕትም አንድ ዓመት የሆናቸውን ሁለት ተባዕት ጠቦቶች ታቀርባላችሁ።",
+          "B": "ደግሞም አንድ አውራ ፍየል ለኃጢአት መሥዋዕት፣ የአንድ ዓመት ሁለት ተባዕት ጠቦቶችን ለኅብረት መሥዋዕት አቅርቡ።",
+          "R": "እንዲሁም አንድ አውራ ፍየል የኃጢአት መሥዋዕት አድርጋችሁ፣ አንድ ዓመት የሆናቸውን ሁለት ተባዕት ጠቦቶች የኅብረት መሥዋዕት አድርጋችሁ አቅርቡ።"
         }
       },
       "decisions": [
@@ -3103,6 +3507,11 @@
           "L": "E o sacerdote os moverá com o pão das primícias [como] oferta movida diante {{divine_name:do SENHOR|de Javé}}, com os dois cordeiros; santos serão para {{divine_name:o SENHOR|Javé}}, para o sacerdote.",
           "B": "O sacerdote pegará o pão das primícias e os dois cordeiros e os moverá diante {{divine_name:do SENHOR|de Javé}} como oferta movida. Eles são santos, dedicados {{divine_name:ao SENHOR|a Javé}}, e pertencem ao sacerdote.",
           "R": "O sacerdote deve mover os pães e os dois cordeiros diante {{divine_name:do SENHOR|de Javé}} como oferta movida. Eles são presentes santos para {{divine_name:o SENHOR|Javé}} e vão pertencer ao sacerdote."
+        },
+        "am": {
+          "L": "ካህኑም ከበኩራቱ ዳቦ ጋር ከሁለቱ ጠቦቶች ጋር የሚወዘወዝ መሥዋዕት አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይወዘውዛቸዋል፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለካህኑ ቅዱስ ይሆናሉ።",
+          "B": "ካህኑ የበኩራቱን ዳቦና ሁለቱን ጠቦቶች ወስዶ የሚወዘወዝ መሥዋዕት አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይወዝውዛቸው። እነዚህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱሳን ናቸው፤ የካህኑም ድርሻ ናቸው።",
+          "R": "ካህኑ ዳቦውንና ሁለቱን ጠቦቶች የሚወዘወዝ መሥዋዕት አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት መወዝወዝ አለበት። እነዚህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተቀደሱ ስጦታዎች ናቸው፤ ለካህኑም ይሆናሉ።"
         }
       },
       "decisions": [
@@ -3217,6 +3626,11 @@
           "L": "E vocês proclamarão neste mesmo dia: santa convocação haverá para vocês; nenhum trabalho servil vocês farão; [é] estatuto perpétuo em todas as habitações de vocês, pelas suas gerações.",
           "B": "Nesse mesmo dia, anunciem uma reunião sagrada, um dia em que nenhum dos trabalhos habituais será feito. É um estatuto perpétuo, onde quer que vocês morem, para todas as gerações.",
           "R": "Nesse mesmo dia, anunciem uma reunião sagrada de adoração. Não façam o trabalho de todo dia. Esta regra vale para sempre, onde quer que vocês morem."
+        },
+        "am": {
+          "L": "በዚችም ቀን ታውጃላችሁ፤ የተቀደሰ ጉባኤ ይሁንላችሁ፤ ምንም የጉልበት ሥራ አትሥሩ፤ በመኖሪያዎቻችሁ ሁሉ ለትውልዶቻችሁ የዘላለም ሥርዓት [ነው]።",
+          "B": "በዚያችው ቀን የተቀደሰ ጉባኤ አውጁ፤ የዘወትር ሥራችሁን የማትሠሩበት ቀን ይሁን። ይህ በምትኖሩበት ስፍራ ሁሉ ከትውልድ እስከ ትውልድ የዘላለም ሥርዓት ነው።",
+          "R": "በዚያው ቀን ለአምልኮ የተቀደሰ ስብሰባ አውጁ። የዕለት ተዕለት ሥራችሁን አትሥሩ። ይህ በምትኖሩበት ስፍራ ሁሉ ለሚመጡት ዘመናት ሁሉ የሚጠበቅ ሕግ ነው።"
         }
       },
       "decisions": [
@@ -3321,6 +3735,11 @@
           "L": "E quando vocês colherem a colheita da terra de vocês, não acabarás [de ceifar] a borda do teu campo na tua ceifa, e as espigas caídas da tua colheita não recolherás; para o pobre e para o imigrante as deixarás. Eu [sou] {{divine_name:o SENHOR|Javé}}, o Deus de vocês.'\"",
           "B": "Na época da colheita, não ceifes até as bordas do teu campo, nem voltes para recolher as espigas que os ceifeiros deixaram para trás. Deixa-as para o pobre e para o estrangeiro que vive entre vocês. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês.'\"",
           "R": "Quando vocês colherem o que plantaram na sua terra, não cortem o cereal das bordas do campo. Não recolham as espigas que caírem no chão. Deixem-nas para os pobres e para os estrangeiros. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês.'\""
+        },
+        "am": {
+          "L": "የምድራችሁንም መከር ስታጭዱ፣ የእርሻህን ዳርቻ በማጨድህ ፈጽመህ አታጭድ፤ የመከርህንም ቃርሚያ አትልቀም፤ ለድሃውና ለመጻተኛው ትተውላቸዋለህ። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ [ነኝ]።”»",
+          "B": "በመከር ጊዜ የእርሻችሁን ዳርቻ ሳታጭዱ ተዉት፤ አጫጆቹ ያስቀሩትንም ቃርሚያ ተመልሳችሁ አትልቀሙ። እነዚህ ለድሃውና ለመጻተኛው ናቸው። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ ነኝ።”»",
+          "R": "የምድራችሁን ሰብል ስትሰበስቡ በእርሻችሁ ዳር ያለውን እህል አታጭዱ። መሬት ላይ የወደቀውንም እህል አትልቀሙ። ለድሆችና ለእንግዶች ተዉላቸው። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ ነኝ።”»"
         }
       },
       "decisions": [
@@ -3457,6 +3876,25 @@
           "reason": "The Hebrew starts in the plural (\"when you reap\") and moves to the singular (\"your field\"), as 19:9 does, addressing each farmer. Literal and Balanced keep the shift, with \"tu\" for the one who reaps; Readable keeps \"vocês\" throughout, which the English cannot show and a young reader would stumble over. The sojourner is \"o imigrante\" at Literal and \"o estrangeiro que vive entre vocês\" at Balanced, as Exodus 12:19 sets it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o030230220041",
+            "o030230220081",
+            "o030230220161"
+          ],
+          "choice": "plural \"you\" then singular (\"የምድራችሁን … የእርሻህን … ትተውላቸዋለህ\") at Literal; plural throughout at Balanced and Readable",
+          "alternatives": [],
+          "reason": "The Hebrew begins in the plural and turns to the singular, as in 19:9-10; Literal keeps the turn, Balanced and Readable keep the plural of the rest of the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3516,6 +3954,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -3607,6 +4050,11 @@
           "L": "\"Fala aos filhos de Israel, dizendo: 'No sétimo mês, no primeiro [dia] do mês, haverá para vocês um descanso sabático, um memorial de toque forte, santa convocação.",
           "B": "\"Fala aos israelitas e diz-lhes: 'No sétimo mês, o primeiro dia do mês será para vocês um dia de descanso sabático. Haverá toques fortes como lembrança, e haverá uma reunião sagrada.",
           "R": "\"Diz aos israelitas: 'O primeiro dia do sétimo mês, entre setembro e outubro, vai ser um dia de descanso para vocês. Nesse dia, façam soar toques fortes como lembrança. É uma reunião sagrada de adoração."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች እንዲህ ብለህ ተናገር፦ “በሰባተኛው ወር ከወሩ በመጀመሪያው [ቀን] የሰንበት ዕረፍት፣ የታላቅ ድምፅ መታሰቢያ፣ የተቀደሰ ጉባኤ ይሁንላችሁ።",
+          "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “በሰባተኛው ወር የወሩ የመጀመሪያ ቀን የሰንበት ዕረፍት ቀን ይሁንላችሁ። ለመታሰቢያ መለከት በታላቅ ድምፅ ይነፋ፤ የተቀደሰ ጉባኤም ይሁን።",
+          "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “የሰባተኛው ወር የመጀመሪያ ቀን የዕረፍት ቀን ይሆንላችኋል። ለማስታወሻ መለከትን በታላቅ ድምፅ ንፉ። ለአምልኮ የሚደረግ የተቀደሰ ስብሰባ ነው።"
         }
       },
       "decisions": [
@@ -3847,6 +4295,28 @@
           "reason": "Readable names the months of the seventh month (m3), as at verse 5 and Exodus 13:4, since \"autumn\" would be spring for southern-hemisphere readers. The sound is not tied to an instrument (m1), so Portuguese says \"toque forte\" rather than naming trumpets or horns.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230240131",
+            "o030230240141"
+          ],
+          "choice": "\"የታላቅ ድምፅ መታሰቢያ\" (L); \"ለመታሰቢያ መለከት በታላቅ ድምፅ ይነፋ\" (B), \"መለከትን በታላቅ ድምፅ ንፉ\" (R)",
+          "alternatives": [
+            "\"የመለከት በዓል\" (Feast of Trumpets) as a name"
+          ],
+          "reason": "The Hebrew names no instrument: the word is a loud blast or shout (meaning decision). Literal keeps \"a loud sound\"; Balanced and Readable name the horn, as the English \"blasts\" implies. The day is not given a name here; where a name is wanted elsewhere, \"የመለከት በዓል\" is proposed.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3909,6 +4379,11 @@
           "L": "Nenhum trabalho servil vocês farão, e oferecerão oferta queimada {{divine_name:ao SENHOR|a Javé}}.'\"",
           "B": "Nesse dia não se fará nenhum dos trabalhos habituais, e vocês apresentarão {{divine_name:ao SENHOR|a Javé}} uma oferta queimada.'\"",
           "R": "Não façam o trabalho de todo dia. Tragam uma oferta queimada no fogo para {{divine_name:o SENHOR|Javé}}.'\""
+        },
+        "am": {
+          "L": "ምንም የጉልበት ሥራ አትሥሩ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት ታቀርባላችሁ።”»",
+          "B": "በዚያ ቀን የዘወትር ሥራችሁን ምንም አትሥሩ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት አቅርቡ።”»",
+          "R": "የዕለት ተዕለት ሥራችሁን አትሥሩ። {{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት አምጡ።”»"
         }
       },
       "decisions": [
@@ -3985,6 +4460,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -4082,6 +4562,11 @@
           "L": "\"Porém, no décimo [dia] deste sétimo mês [é] o Dia da Expiação; santa convocação haverá para vocês, e vocês se afligirão e oferecerão oferta queimada {{divine_name:ao SENHOR|a Javé}}.",
           "B": "\"Marquem o décimo dia deste sétimo mês: é o Dia da Expiação. Nesse dia vocês farão uma reunião sagrada, se humilharão com jejum e apresentarão {{divine_name:ao SENHOR|a Javé}} uma oferta queimada.",
           "R": "\"O décimo dia deste sétimo mês é o Dia da Expiação. Façam nesse dia uma reunião sagrada de adoração. Fiquem sem comer e humilhem-se. Tragam uma oferta queimada no fogo para {{divine_name:o SENHOR|Javé}}."
+        },
+        "am": {
+          "L": "«ብቻ በዚህ በሰባተኛው ወር በአሥረኛው [ቀን] የስርየት ቀን [ነው]፤ የተቀደሰ ጉባኤ ይሁንላችሁ፤ ነፍሳችሁንም አዋርዱ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕትም አቅርቡ።",
+          "B": "«የዚህን የሰባተኛውን ወር አሥረኛ ቀን አስቡ፤ የስርየት ቀን ነው። በዚያ ቀን የተቀደሰ ጉባኤ አድርጉ፤ በጾም ራሳችሁን ዝቅ አድርጉ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕትም አቅርቡ።",
+          "R": "«የዚህ የሰባተኛው ወር አሥረኛ ቀን የስርየት ቀን ነው። በዚያ ቀን ለአምልኮ የተቀደሰ ስብሰባ አድርጉ። ምግብ ሳትበሉ ጹሙ፤ ራሳችሁንም ዝቅ አድርጉ። {{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት አምጡ።"
         }
       },
       "decisions": [
@@ -4280,6 +4765,46 @@
           "reason": "For the whole book (16:29, 31; verses 29, 32). The phrase means bowing low before God in self-denial, above all by fasting (m2). Literal keeps the verb \"afligir\"; Balanced and Readable name the fast and the humbling, as the English does. \"Alma\" would make readers think of the soul alone, where the Hebrew means the whole self.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230270061",
+            "o030230270072"
+          ],
+          "choice": "\"የስርየት ቀን\" (the Day of Atonement) at every level",
+          "alternatives": [],
+          "reason": "The terms list's name, from \"ስርየት\" (atonement), the noun of \"ማስተስረይ\" used for making atonement (verse 28).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230270132",
+            "o030230270151"
+          ],
+          "choice": "\"ነፍሳችሁን አዋርዱ\" (afflict your souls, L); \"በጾም ራሳችሁን ዝቅ አድርጉ\" (B); \"ምግብ ሳትበሉ ጹሙ፤ ራሳችሁንም ዝቅ አድርጉ\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"afflict your souls\"; Balanced and Readable name the fast that the meaning decision finds in it, as the English levels do. The same wording holds in verses 29 and 32.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4356,6 +4881,11 @@
           "L": "E nenhum trabalho vocês farão neste mesmo dia, porque [é] dia de expiação, para fazer expiação por vocês diante {{divine_name:do SENHOR|de Javé}}, o Deus de vocês.",
           "B": "Nesse mesmo dia não se fará trabalho de espécie alguma. É um dia de expiação, reservado para que se faça expiação por vocês na presença {{divine_name:do SENHOR|de Javé}}, o Deus de vocês.",
           "R": "Não façam nenhum trabalho nesse dia. É o Dia da Expiação. Nesse dia o sacerdote vai fazer expiação por vocês diante {{divine_name:do SENHOR|de Javé}}, o Deus de vocês."
+        },
+        "am": {
+          "L": "በዚችም ቀን ምንም ሥራ አትሥሩ፤ በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያስተሰርይላችሁ ዘንድ የስርየት ቀን ነውና።",
+          "B": "በዚያው ቀን ምንም ዓይነት ሥራ አይሠራ። በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት የሚያስተሰርይላችሁ የስርየት ቀን ነው።",
+          "R": "በዚያ ቀን ምንም ሥራ አትሥሩ። የስርየት ቀን ነው። በዚያ ቀን ካህኑ በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ኃጢአታችሁ እንዲሰረይላችሁ ያደርጋል።"
         }
       },
       "decisions": [
@@ -4478,6 +5008,11 @@
           "L": "Porque toda pessoa que não se afligir neste mesmo dia será cortada do seu povo.",
           "B": "Quem não se humilhar com jejum nesse dia será eliminado do povo.",
           "R": "Quem não ficar sem comer e não se humilhar nesse dia tem de ser eliminado do povo."
+        },
+        "am": {
+          "L": "በዚችም ቀን ነፍሱን የማያዋርድ ሰው ሁሉ ከሕዝቡ ተቆርጦ ይጥፋ።",
+          "B": "በዚያ ቀን በጾም ራሱን ዝቅ የማያደርግ ማንም ሰው ከሕዝቡ ተቆርጦ ይጥፋ።",
+          "R": "በዚያ ቀን ምግብ ሳይበላ የማይጾምና ራሱን ዝቅ የማያደርግ ማንም ሰው ከሕዝቡ መወገድ አለበት።"
         }
       },
       "decisions": [
@@ -4595,6 +5130,11 @@
           "L": "E toda pessoa que fizer qualquer trabalho neste mesmo dia, eu destruirei essa pessoa do meio do seu povo.",
           "B": "Quem fizer qualquer trabalho nesse dia, eu exterminarei essa pessoa do meio do povo.",
           "R": "Se alguém fizer qualquer trabalho nesse dia, eu mesmo vou destruir essa pessoa, e ela não fará mais parte do povo."
+        },
+        "am": {
+          "L": "በዚችም ቀን ማንኛውንም ሥራ የሚሠራውን ሰው ሁሉ፣ ያንን ሰው ከሕዝቡ መካከል አጠፋዋለሁ።",
+          "B": "በዚያ ቀን ማንኛውንም ሥራ የሚሠራውን ሰው ከሕዝቡ መካከል አጠፋዋለሁ።",
+          "R": "በዚያ ቀን ማንም ሰው ማንኛውንም ሥራ ቢሠራ፣ ያንን ሰው ከሕዝቡ መካከል አጠፋዋለሁ።"
         }
       },
       "decisions": [
@@ -4677,6 +5217,11 @@
           "L": "Nenhum trabalho vocês farão; [é] estatuto perpétuo pelas gerações de vocês em todas as suas habitações.",
           "B": "Vocês não devem fazer nenhum trabalho. É um estatuto perpétuo para todas as gerações de vocês, onde quer que morem.",
           "R": "Não façam nenhum trabalho. Esta regra vale para sempre, onde quer que vocês morem."
+        },
+        "am": {
+          "L": "ምንም ሥራ አትሥሩ፤ በመኖሪያዎቻችሁ ሁሉ ለትውልዶቻችሁ የዘላለም ሥርዓት [ነው]።",
+          "B": "ፈጽሞ አትሥሩ። ይህ በምትኖሩበት ስፍራ ሁሉ ከትውልድ እስከ ትውልድ የዘላለም ሥርዓት ነው።",
+          "R": "ምንም ሥራ አትሥሩ። ይህ በምትኖሩበት ስፍራ ሁሉ ለሚመጡት ዘመናት ሁሉ የሚጠበቅ ሕግ ነው።"
         }
       },
       "decisions": [
@@ -4769,6 +5314,11 @@
           "L": "Sábado de descanso solene ele [é] para vocês, e vocês se afligirão; no nono [dia] do mês, à tarde, de tarde a tarde, vocês guardarão o seu sábado.\"",
           "B": "Para vocês, esse dia é um sábado de descanso solene, e vocês devem se humilhar com jejum. Guardem esse sábado de um anoitecer ao outro, começando no anoitecer do dia nove do mês.\"",
           "R": "É um dia de descanso completo para vocês. Fiquem sem comer e humilhem-se. Guardem esse dia de descanso desde o pôr do sol do dia nove do mês até o pôr do sol do dia seguinte.\""
+        },
+        "am": {
+          "L": "ለእናንተ የፍጹም ዕረፍት ሰንበት ነው፤ ነፍሳችሁንም አዋርዱ፤ ከወሩ በዘጠነኛው [ቀን] ማታ፣ ከማታ እስከ ማታ ሰንበታችሁን ጠብቁ።»",
+          "B": "ለእናንተ የፍጹም ዕረፍት ሰንበት ነው፤ በጾም ራሳችሁን ዝቅ አድርጉ። ከወሩ ዘጠነኛ ቀን ማታ ጀምራችሁ ከማታ እስከ ማታ ይህን ሰንበት ጠብቁ።»",
+          "R": "ለእናንተ የፍጹም ዕረፍት ቀን ነው። ምግብ ሳትበሉ ጹሙ፤ ራሳችሁንም ዝቅ አድርጉ። ከወሩ ዘጠነኛ ቀን ፀሐይ ከጠለቀችበት ጊዜ ጀምራችሁ እስከ ማግሥቱ ፀሐይ መጥለቂያ ድረስ ይህን የዕረፍት ቀን ጠብቁ።»"
         }
       },
       "decisions": [
@@ -4906,6 +5456,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -4998,6 +5553,11 @@
           "L": "\"Fala aos filhos de Israel, dizendo: 'No décimo quinto dia deste sétimo mês [é] a festa das Tendas, sete dias {{divine_name:ao SENHOR|a Javé}}.",
           "B": "\"Fala aos israelitas e diz-lhes: 'No dia quinze deste sétimo mês começa a festa das Tendas, celebrada durante sete dias em honra {{divine_name:do SENHOR|de Javé}}.",
           "R": "\"Diz aos israelitas: 'A festa das Tendas começa no dia quinze deste sétimo mês. Ela dura sete dias e é em honra {{divine_name:do SENHOR|de Javé}}."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች እንዲህ ብለህ ተናገር፦ “በዚህ በሰባተኛው ወር በአሥራ አምስተኛው ቀን ለሰባት ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የዳስ በዓል [ነው]።",
+          "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “የዚህ የሰባተኛው ወር አሥራ አምስተኛው ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሰባት ቀን የሚከበረው የዳስ በዓል መጀመሪያ ነው።",
+          "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “የዳስ በዓል በዚህ በሰባተኛው ወር በአሥራ አምስተኛው ቀን ይጀምራል። ሰባት ቀን የሚቆይና {{divine_name:እግዚአብሔርን|ያህዌን}} የሚያከብሩበት በዓል ነው።"
         }
       },
       "decisions": [
@@ -5171,6 +5731,28 @@
           "reason": "For the whole book, and the Pentateuch. The festival is named for the rough shelters of branches Israel lives in for seven days (m1; verses 42-43). \"Festa dos Tabernáculos\" is the traditional name, but in this translation \"o tabernáculo\" names the sanctuary (mishkan, docs/pentateuch-portuguese-terms.md), so the old name would suggest the wrong thing; \"tendas\" is the plain word for a temporary shelter and the one many Brazilian readers know this festival by. \"Cabanas\" would be closer to huts of branches, and Readable uses it to explain the word where the people live in them (verse 42). It is the festival that Exodus 23:16 and 34:22 call \"a festa da Colheita\" (m2), here named by its shelters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230340121",
+            "o030230340132"
+          ],
+          "choice": "\"የዳስ በዓል\" (the Festival of Booths) at every level; booths \"ዳሶች\"",
+          "alternatives": [
+            "\"የዳስ በዓል\" alongside \"የመሰብሰብ በዓል\""
+          ],
+          "reason": "\"ዳስ\" is the everyday word for a shelter of poles and branches, which is what the booths are (verse 42, Readable \"ከቅርንጫፍ በተሠሩ ዳሶች\"). Exodus 23:16 names the same feast from the harvest, \"የመሰብሰብ በዓል\" (Ingathering); here the Hebrew names it from the booths.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5234,6 +5816,11 @@
           "L": "No primeiro dia [haverá] santa convocação; nenhum trabalho servil vocês farão.",
           "B": "O primeiro dia será uma reunião sagrada; nele não se fará nenhum dos trabalhos habituais.",
           "R": "No primeiro dia, façam uma reunião sagrada de adoração. Não façam o trabalho de todo dia."
+        },
+        "am": {
+          "L": "በመጀመሪያው ቀን የተቀደሰ ጉባኤ [ነው]፤ ምንም የጉልበት ሥራ አትሥሩ።",
+          "B": "የመጀመሪያው ቀን የተቀደሰ ጉባኤ ነው፤ የዘወትር ሥራችሁን ምንም አትሥሩ።",
+          "R": "በመጀመሪያው ቀን ለአምልኮ የተቀደሰ ስብሰባ አድርጉ። የዕለት ተዕለት ሥራችሁን አትሥሩ።"
         }
       },
       "decisions": [
@@ -5330,6 +5917,11 @@
           "L": "Sete dias vocês oferecerão oferta queimada {{divine_name:ao SENHOR|a Javé}}; no oitavo dia haverá para vocês santa convocação, e oferecerão oferta queimada {{divine_name:ao SENHOR|a Javé}}; [é] reunião solene; nenhum trabalho servil vocês farão.",
           "B": "Durante os sete dias, apresentem {{divine_name:ao SENHOR|a Javé}} uma oferta queimada a cada dia. O oitavo dia também será uma reunião sagrada para vocês, com uma oferta queimada {{divine_name:ao SENHOR|a Javé}}. É uma reunião solene que encerra a festa, e nela não se fará nenhum dos trabalhos habituais.",
           "R": "Durante sete dias, tragam ofertas queimadas no fogo para {{divine_name:o SENHOR|Javé}}. No oitavo dia, façam outra reunião sagrada de adoração e tragam outra oferta queimada no fogo para {{divine_name:o SENHOR|Javé}}. É um encontro especial que encerra a festa. Não façam o trabalho de todo dia."
+        },
+        "am": {
+          "L": "ሰባት ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት ታቀርባላችሁ፤ በስምንተኛውም ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕትም ታቀርባላችሁ፤ የተከበረ ስብሰባ ነው፤ ምንም የጉልበት ሥራ አትሥሩ።",
+          "B": "በሰባቱ ቀናት በየዕለቱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት አቅርቡ። ስምንተኛው ቀንም ለእናንተ የተቀደሰ ጉባኤ ነው፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት አቅርቡ። በዓሉን የሚዘጋ የተከበረ ስብሰባ ነው፤ የዘወትር ሥራችሁን ምንም አትሥሩ።",
+          "R": "ለሰባት ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርቡ መሥዋዕቶችን አምጡ። በስምንተኛው ቀን ሌላ የተቀደሰ ስብሰባ አድርጉ፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ ሌላ መሥዋዕትም አምጡ። ይህ በዓሉን የሚያበቃ ልዩ ስብሰባ ነው። የዕለት ተዕለት ሥራችሁን አትሥሩ።"
         }
       },
       "decisions": [
@@ -5463,6 +6055,27 @@
           "reason": "The word names a gathering for worship on a day when work is held back (m1). \"Assembleia\" is kept for the congregation (qahal), so Literal and Balanced say \"reunião solene\", and Readable \"um encontro especial\", as the English says \"a special gathering\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230360151"
+          ],
+          "choice": "\"የተከበረ ስብሰባ\" (solemn assembly, L, B); \"ልዩ ስብሰባ\" (R)",
+          "alternatives": [
+            "\"ጉባኤ\""
+          ],
+          "reason": "A different Hebrew word from the \"holy convocation\" (\"የተቀደሰ ጉባኤ\") of the same verse, so Amharic uses \"ስብሰባ\" with a different adjective; Balanced and Readable add that it closes the festival, as the English levels do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5540,6 +6153,11 @@
           "L": "Estes [são] os tempos determinados {{divine_name:do SENHOR|de Javé}}, que vocês proclamarão [como] santas convocações, para oferecer oferta queimada {{divine_name:ao SENHOR|a Javé}}: holocausto e oferta de cereal, sacrifício e ofertas de bebida, a coisa de cada dia no seu dia,",
           "B": "Estas são, portanto, as festas fixas {{divine_name:do SENHOR|de Javé}}. Anunciem-nas como reuniões sagradas, em que se apresentam {{divine_name:ao SENHOR|a Javé}} ofertas queimadas: holocaustos e ofertas de cereal, sacrifícios e ofertas de bebida, o que cada dia pede, no seu dia,",
           "R": "Estas são as festas especiais {{divine_name:do SENHOR|de Javé}}. Anunciem cada uma como uma reunião sagrada de adoração. Nessas festas vocês devem trazer ofertas queimadas no fogo para {{divine_name:o SENHOR|Javé}}: holocaustos, ofertas de cereal, sacrifícios e ofertas de bebida. Tragam as ofertas de cada dia no dia certo."
+        },
+        "am": {
+          "L": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕትን፣ የሚቃጠል መሥዋዕትንና የእህል ቁርባንን፣ መሥዋዕትንና የመጠጥ ቁርባኖችን፣ የዕለቱን ነገር በዕለቱ ለማቅረብ የተቀደሱ ጉባኤዎች ብላችሁ የምታውጇቸው {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ ጊዜያት እነዚህ ናቸው፤",
+          "B": "እንግዲህ {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ በዓላት እነዚህ ናቸው። {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርቡ መሥዋዕቶች የሚቀርቡባቸው የተቀደሱ ጉባኤዎች አድርጋችሁ አውጇቸው፤ የሚቃጠል መሥዋዕትና የእህል ቁርባን፣ መሥዋዕትና የመጠጥ ቁርባን፣ እያንዳንዱ ቀን የሚጠይቀውን በዚያው ቀን አቅርቡ፤",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ልዩ በዓላት እነዚህ ናቸው። እያንዳንዳቸውን ለአምልኮ የተቀደሰ ስብሰባ አድርጋችሁ አውጁ። በእነዚህ ጊዜያት {{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርቡ መሥዋዕቶችን ማምጣት አለባችሁ፤ የሚቃጠሉ መሥዋዕቶችን፣ የእህል ቁርባኖችን፣ መሥዋዕቶችንና የመጠጥ ቁርባኖችን። የእያንዳንዱን ቀን መሥዋዕት በዚያው ቀን አምጡ።"
         }
       },
       "decisions": [
@@ -5654,6 +6272,11 @@
           "L": "além dos sábados {{divine_name:do SENHOR|de Javé}}, e além das dádivas de vocês, e além de todos os seus votos, e além de todas as suas ofertas voluntárias que vocês derem {{divine_name:ao SENHOR|a Javé}}.",
           "B": "e isso além dos sábados {{divine_name:do SENHOR|de Javé}} e além das dádivas de vocês, de todos os seus votos e de todas as ofertas voluntárias que vocês dão {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Essas ofertas não são as mesmas dos sábados {{divine_name:do SENHOR|de Javé}}. Também são diferentes dos outros presentes que vocês dão {{divine_name:ao SENHOR|a Javé}}: as ofertas que vocês {{deity_pronoun:lhe|Lhe}} prometeram e as ofertas que escolhem dar por vontade própria."
+        },
+        "am": {
+          "L": "{{divine_name:ከእግዚአብሔር|ከያህዌ}} ሰንበቶች ሌላ፣ ከስጦታዎቻችሁም ሌላ፣ ከስእለቶቻችሁም ሁሉ ሌላ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ከምትሰጡት ከፈቃድ መሥዋዕቶቻችሁም ሁሉ ሌላ [ናቸው]።",
+          "B": "ይህም {{divine_name:ከእግዚአብሔር|ከያህዌ}} ሰንበቶች በተጨማሪ፣ ከስጦታዎቻችሁ፣ ከስእለቶቻችሁ ሁሉና {{divine_name:ለእግዚአብሔር|ለያህዌ}} ከምትሰጡት የፈቃድ መሥዋዕቶቻችሁ ሁሉ በተጨማሪ ነው።",
+          "R": "እነዚህ መሥዋዕቶች {{divine_name:በእግዚአብሔር|በያህዌ}} ሰንበቶች ከሚቀርቡት መሥዋዕቶች የተለዩ ናቸው። {{divine_name:ለእግዚአብሔር|ለያህዌ}} ከምትሰጧቸው ሌሎች ስጦታዎችም የተለዩ ናቸው፤ ማለትም ለእርሱ ከተሳላችሁት መሥዋዕትና በፈቃዳችሁ ከምትሰጡት መሥዋዕት።"
         }
       },
       "decisions": [
@@ -5815,6 +6438,11 @@
           "L": "Porém, no décimo quinto dia do sétimo mês, quando vocês tiverem recolhido o produto da terra, celebrarão a festa {{divine_name:do SENHOR|de Javé}} sete dias; no primeiro dia [haverá] descanso sabático, e no oitavo dia, descanso sabático.",
           "B": "Mas, quando tiverem recolhido o que a terra produziu, celebrem durante sete dias a festa {{divine_name:do SENHOR|de Javé}}, começando no dia quinze do sétimo mês. Tanto o primeiro dia como o oitavo serão dias de descanso sabático.",
           "R": "Quando vocês tiverem colhido tudo o que a terra produziu, celebrem durante sete dias a festa {{divine_name:do SENHOR|de Javé}}. Ela começa no dia quinze do sétimo mês. O primeiro e o oitavo dia são dias de descanso."
+        },
+        "am": {
+          "L": "ብቻ በሰባተኛው ወር በአሥራ አምስተኛው ቀን፣ የምድሩን ፍሬ በሰበሰባችሁ ጊዜ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} በዓል ሰባት ቀን አክብሩ፤ በመጀመሪያው ቀን የሰንበት ዕረፍት፣ በስምንተኛውም ቀን የሰንበት ዕረፍት [ይሆናል]።",
+          "B": "ነገር ግን ምድሪቱ ያፈራችውን ከሰበሰባችሁ በኋላ ከሰባተኛው ወር ከአሥራ አምስተኛው ቀን ጀምሮ {{divine_name:የእግዚአብሔር|የያህዌ}} በዓል ሰባት ቀን አክብሩ። የመጀመሪያው ቀንም ስምንተኛው ቀንም የሰንበት ዕረፍት ቀን ይሁን።",
+          "R": "ሰብላችሁን ከምድሩ ከሰበሰባችሁ በኋላ {{divine_name:የእግዚአብሔር|የያህዌ}} በዓል ሰባት ቀን አክብሩ። በዓሉ የሚጀምረው በሰባተኛው ወር በአሥራ አምስተኛው ቀን ነው። የመጀመሪያውና ስምንተኛው ቀን የዕረፍት ቀናት ናቸው።"
         }
       },
       "decisions": [
@@ -5943,6 +6571,11 @@
           "L": "E vocês tomarão para vocês, no primeiro dia, fruto de árvores formosas, ramos de palmeiras, ramos de árvores frondosas e salgueiros do ribeiro, e vocês se alegrarão diante {{divine_name:do SENHOR|de Javé}}, o Deus de vocês, sete dias.",
           "B": "No primeiro dia, apanhem frutos de árvores nobres, folhas de palmeira, ramos de árvores cheias de folhas e salgueiros que crescem junto aos riachos. Depois celebrem diante {{divine_name:do SENHOR|de Javé}}, o Deus de vocês, durante sete dias.",
           "R": "No primeiro dia, colham os melhores frutos das suas árvores, e também folhas de palmeira, galhos cheios de folhas e galhos de salgueiro da beira dos riachos. Depois se alegrem e festejem diante {{divine_name:do SENHOR|de Javé}}, o Deus de vocês, durante sete dias."
+        },
+        "am": {
+          "L": "በመጀመሪያውም ቀን የተዋቡ ዛፎችን ፍሬ፣ የዘንባባ ዛፎችን ዝንጣፊዎች፣ ቅጠላቸው የበዛ የዛፎችን ቅርንጫፎችና የወንዝ ዳር አኻያዎችን ለራሳችሁ ውሰዱ፤ በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊትም ሰባት ቀን ደስ ይበላችሁ።",
+          "B": "በመጀመሪያው ቀን የተዋቡ ዛፎችን ፍሬ፣ የዘንባባ ዝንጣፊዎችን፣ ቅጠላቸው ከበዛ ዛፎች ቅርንጫፎችንና በወንዝ ዳር የሚበቅሉ አኻያዎችን ሰብስቡ። ከዚያም በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ሰባት ቀን ደስ ይበላችሁ።",
+          "R": "በመጀመሪያው ቀን ከዛፎቻችሁ ምርጡን ፍሬ፣ የዘንባባ ዝንጣፊዎችን፣ ቅጠል ያላቸውን ቅርንጫፎችና ከወንዝ ዳር የአኻያ ቅርንጫፎችን ሰብስቡ። ከዚያም በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ሰባት ቀን ደስ ብሏችሁ አክብሩ።"
         }
       },
       "decisions": [
@@ -6014,6 +6647,27 @@
           "choice": "the best fruit from your trees",
           "alternatives": [],
           "reason": "Readable gives \"fruit of majestic trees\" as \"the best fruit from your trees\", keeping the reading of Literal and Balanced (see the meaning decision). Readable says \"be glad and celebrate\" for \"rejoice\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030230400161",
+            "o030230400171",
+            "o030230400181"
+          ],
+          "choice": "\"በአምላካችሁ እግዚአብሔር ፊት\" for \"before YHWH your God\"",
+          "alternatives": [],
+          "reason": "With a preposition, Amharic puts \"your God\" first and the name second (\"before your God, the LORD\"), the ordinary order for a title and a name; the name alone is in the setting span, carrying the preposition. The phrase is the same in verse 28.",
           "uncertain": false,
           "footnote": false
         }
@@ -6091,6 +6745,11 @@
           "L": "E vocês a celebrarão [como] festa {{divine_name:ao SENHOR|a Javé}} sete dias no ano; [é] estatuto perpétuo pelas gerações de vocês; no sétimo mês vocês a celebrarão.",
           "B": "Todos os anos vocês celebrarão esta festa de sete dias em honra {{divine_name:do SENHOR|de Javé}}. É um estatuto perpétuo para todas as gerações de vocês que ela seja celebrada no sétimo mês.",
           "R": "Todos os anos, celebrem esta festa em honra {{divine_name:do SENHOR|de Javé}} durante sete dias, no sétimo mês. Esta regra vale para sempre."
+        },
+        "am": {
+          "L": "በዓመትም ሰባት ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} በዓል አድርጋችሁ አክብሩት፤ ለትውልዶቻችሁ የዘላለም ሥርዓት [ነው]፤ በሰባተኛው ወር አክብሩት።",
+          "B": "ይህን የሰባት ቀን በዓል በየዓመቱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} አክብሩ። በሰባተኛው ወር እንድታከብሩት ከትውልድ እስከ ትውልድ የዘላለም ሥርዓት ነው።",
+          "R": "በየዓመቱ በሰባተኛው ወር ይህን በዓል {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሰባት ቀን አክብሩ። ይህ ለሚመጡት ዘመናት ሁሉ የሚጠበቅ ሕግ ነው።"
         }
       },
       "decisions": [
@@ -6174,6 +6833,11 @@
           "L": "Em tendas vocês habitarão sete dias; todo natural de Israel habitará em tendas,",
           "B": "Durante sete dias vocês ficarão em tendas. Todo israelita de nascimento deve morar em tendas,",
           "R": "Durante sete dias vocês devem morar em cabanas feitas de ramos. Todos os que nasceram em Israel devem morar nelas."
+        },
+        "am": {
+          "L": "ሰባት ቀን በዳሶች ውስጥ ኑሩ፤ በእስራኤል ያለ የአገሩ ተወላጅ ሁሉ በዳሶች ውስጥ ይኑር፤",
+          "B": "ሰባት ቀን በዳሶች ውስጥ ተቀመጡ። እስራኤላዊ ሆኖ የተወለደ ሁሉ በዳሶች ውስጥ ይኑር፤",
+          "R": "ሰባት ቀን ከቅርንጫፍ በተሠሩ ዳሶች ውስጥ መኖር አለባችሁ። በእስራኤል የተወለደ ሁሉ በእነርሱ ውስጥ መኖር አለበት።"
         }
       },
       "decisions": [
@@ -6318,6 +6982,11 @@
           "L": "para que as gerações de vocês saibam que em tendas eu fiz habitar os filhos de Israel quando os tirei da terra do Egito; eu [sou] {{divine_name:o SENHOR|Javé}}, o Deus de vocês.'\"",
           "B": "para que cada geração de vocês saiba isto: quando tirei os israelitas da terra do Egito, eu os fiz morar em tendas. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês.'\"",
           "R": "Assim os filhos e os netos de vocês vão se lembrar do tempo em que eu tirei os israelitas do Egito. Naquele tempo eu os fiz morar em cabanas. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês.'\""
+        },
+        "am": {
+          "L": "ይኸውም ከግብፅ ምድር ባወጣኋቸው ጊዜ የእስራኤልን ልጆች በዳሶች እንዳኖርኋቸው ትውልዶቻችሁ ያውቁ ዘንድ ነው፤ እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ [ነኝ]።”»",
+          "B": "ይህም የእስራኤልን ልጆች ከግብፅ ምድር ባወጣኋቸው ጊዜ በዳስ እንዳኖርኋቸው ትውልዶቻችሁ ሁሉ እንዲያውቁ ነው። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ ነኝ።”»",
+          "R": "ይህ እስራኤላውያንን ከግብፅ ያወጣኋቸውን ጊዜ ልጆቻችሁንና የልጅ ልጆቻችሁን ያሳስባቸዋል። በዚያን ጊዜ በዳሶች ውስጥ እንዲኖሩ አደረግኋቸው። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ ነኝ።”»"
         }
       },
       "decisions": [
@@ -6432,6 +7101,11 @@
           "L": "E Moisés anunciou os tempos determinados {{divine_name:do SENHOR|de Javé}} aos filhos de Israel.",
           "B": "Assim Moisés deu a conhecer aos israelitas as festas fixas {{divine_name:do SENHOR|de Javé}}.",
           "R": "Assim Moisés falou aos israelitas sobre todas as festas especiais {{divine_name:do SENHOR|de Javé}}."
+        },
+        "am": {
+          "L": "ሙሴም {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ ጊዜያት ለእስራኤል ልጆች ተናገረ።",
+          "B": "በዚህ ሁኔታ ሙሴ {{divine_name:የእግዚአብሔር|የያህዌ}} የተወሰኑ በዓላት ለእስራኤል ልጆች አስታወቀ።",
+          "R": "ሙሴም ስለ {{divine_name:የእግዚአብሔር|የያህዌ}} ልዩ በዓላት ሁሉ ለእስራኤላውያን ነገራቸው።"
         }
       },
       "decisions": [
