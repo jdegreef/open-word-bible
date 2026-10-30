@@ -62,6 +62,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} chamou Moisés, e {{divine_name:o SENHOR|Javé}} lhe falou da tenda do encontro, dizendo:",
           "B": "Da tenda do encontro, {{divine_name:o SENHOR|Javé}} chamou Moisés e lhe disse:",
           "R": "{{divine_name:O SENHOR|Javé}} chamou Moisés da tenda do encontro e lhe disse:"
+        },
+        "am": {
+          "L": "ሙሴንም ጠራው፤ {{divine_name:እግዚአብሔር|ያህዌ}}ም ከመገናኛው ድንኳን እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከመገናኛው ድንኳን ሙሴን ጠርቶ ተናገረው፤ እንዲህም አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከመገናኛው ድንኳን ሙሴን ጠርቶ እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -442,6 +447,52 @@
           "reason": "For the whole book, as in Exodus (docs/pentateuch-portuguese-terms.md): \"a tenda do encontro\" names the tent where God meets with Moses and Israel (m1). It is already plain Portuguese, so Readable keeps it where the English Readable changes to \"the meeting tent\". \"Tenda da congregação\", the older name, makes it a place where the people gather.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010010051",
+            "o030010010012"
+          ],
+          "choice": "For the whole of Leviticus, as in Genesis and Exodus: YHWH is \"{{divine_name:እግዚአብሔር|ያህዌ}}\" at every level, with the whole inflected word in each option (\"{{divine_name:ለእግዚአብሔር|ለያህዌ}}\", \"{{divine_name:በእግዚአብሔር|በያህዌ}}\"); Elohim is \"አምላክ\" with a possessive (\"አምላክህ\", \"your God\", 2:13; \"አምላካችሁ\") and \"እግዚአብሔር\" where the one God is meant and YHWH does not stand beside it. No deity_pronoun spans.",
+          "alternatives": [
+            "\"ያህዌ\" as the default",
+            "a deity_pronoun span on the verb"
+          ],
+          "reason": "The name stands as Ethiopian Bibles have long given it, with the name as scholars reconstruct it as the alternative. Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God (here the unnamed subject of \"called\") has nothing to change, and the Amharic of Leviticus has no such spans. Recorded once for the book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010010072",
+            "o030010010081"
+          ],
+          "choice": "\"የመገናኛው ድንኳን\" (the tent of meeting) at every level, Readable included; its entrance is \"ደጃፍ\" (L, B) and \"በር\" (R)",
+          "alternatives": [
+            "\"የመገናኛ ድንኳን\"",
+            "\"የስብሰባው ድንኳን\""
+          ],
+          "reason": "As in Exodus: \"the tent of meeting\" names the tent where God meets Moses and Israel (m1). \"የመገናኛው ድንኳን\" is already plain Amharic, so Readable keeps it where the English Readable says \"the meeting tent\". This holds through Leviticus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -524,6 +575,11 @@
           "L": "\"Fala aos filhos de Israel e dize-lhes: 'Quando alguém dentre vocês oferecer uma oferta {{divine_name:ao SENHOR|a Javé}}, dentre os animais, do gado e do rebanho, vocês oferecerão a sua oferta.",
           "B": "\"Fala aos israelitas e dize-lhes: 'Quando alguém de vocês trouxer um animal como oferta {{divine_name:ao SENHOR|a Javé}}, ele será do gado ou do rebanho.",
           "R": "\"Diz aos israelitas: 'Quando algum de vocês trouxer um animal como oferta {{divine_name:ao SENHOR|a Javé}}, ele deve ser um boi, uma ovelha ou uma cabra dos animais de vocês."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ከእናንተ ማንም ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ ሲያቀርብ፣ ከእንስሳት፣ ከከብቱና ከመንጋው መባችሁን ታቀርባላችሁ።",
+          "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ከእናንተ አንዱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ አድርጎ እንስሳ ቢያቀርብ፣ ከከብት መንጋ ወይም ከበግና ከፍየል መንጋ ያቅርብ።",
+          "R": "«ለእስራኤላውያን እንዲህ ብለህ ንገራቸው፦ “{{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ አድርጋችሁ እንስሳ ስታቀርቡ፣ ከከብቶቻችሁ ወይም ከበጎቻችሁና ከፍየሎቻችሁ መካከል መሆን አለበት።"
         }
       },
       "decisions": [
@@ -921,6 +977,51 @@
           "reason": "For the whole book: the Hebrew word is the general word for a human being (m2), and Portuguese \"alguém\" already means anyone, so it takes no gender setting, and the \"ele\" that refers back to it in the laws is ordinary generic Portuguese. Literal says \"oferecer ... oferta\" because the Portuguese verb and noun share a root, as the Hebrew \"bring near\" and \"offering\" do (m1); \"fazer chegar perto\" would keep the picture but not the link.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010020091",
+            "o030010020111",
+            "o030010020191"
+          ],
+          "choice": "\"መባ\" for the offering brought near (qorban) at every level, through Leviticus",
+          "alternatives": [
+            "\"ቁርባን\"",
+            "\"መሥዋዕት\""
+          ],
+          "reason": "The word names anything brought near to God (m1), animal or grain. \"መሥዋዕት\" is kept for the slaughtered offerings (the burnt, fellowship, sin and guilt offerings), and \"ቁርባን\" is already the grain offering (\"የእህል ቁርባን\", 2:1), so \"መባ\", a gift brought, takes the general word. The priests' contribution (terumah, 7:14, 7:32) is \"የሚነሣ መባ\" as in Exodus 29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010020071"
+          ],
+          "choice": "no gender span: \"የእስራኤል ልጆች\" (L, B), \"እስራኤላውያን\" (R); \"ማንም ሰው\" (anyone)",
+          "alternatives": [
+            "\"የእስራኤል ወንዶች ልጆች\""
+          ],
+          "reason": "Amharic \"ልጆች\" (children) and \"ሰው\" (person) already include women, so the English gender spans have nothing to change in Amharic (m2). This holds through Leviticus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -997,6 +1098,11 @@
           "L": "Se a sua oferta [for] um holocausto do gado, oferecerá um macho sem defeito; à entrada da tenda do encontro o oferecerá, para a sua aceitação diante {{divine_name:do SENHOR|de Javé}}.",
           "B": "Se a oferta for um holocausto do gado, será um macho sem defeito. Ele será trazido à entrada da tenda do encontro, para que {{divine_name:o SENHOR|Javé}} aceite quem o oferece.",
           "R": "Se trouxeres um holocausto do teu gado, ele deve ser um macho sem nenhum defeito. Deves levá-lo até a entrada da tenda do encontro. Então {{divine_name:o SENHOR|Javé}} te aceitará."
+        },
+        "am": {
+          "L": "መባው ከከብት መንጋ የሚቃጠል መሥዋዕት ቢሆን፣ ነውር የሌለበትን ተባዕት ያቀርባል፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ተቀባይነትን እንዲያገኝ ወደ መገናኛው ድንኳን ደጃፍ ያቀርበዋል።",
+          "B": "ከከብት መንጋ የሚቀርብ የሚቃጠል መሥዋዕት ነውር የሌለበት ተባዕት ይሁን። ያቀረበውንም ሰው {{divine_name:እግዚአብሔር|ያህዌ}} እንዲቀበለው ወደ መገናኛው ድንኳን ደጃፍ ይቅረብ።",
+          "R": "የሚቃጠል መሥዋዕት ከከብቶችህ የምታቀርብ ከሆነ ምንም ነውር የሌለበት ወንድ መሆን አለበት። ወደ መገናኛው ድንኳን በር አምጣው። ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ይቀበልሃል።"
         }
       },
       "decisions": [
@@ -1300,6 +1406,50 @@
           "reason": "For the whole book: where the English Readable speaks to the worshiper as \"you\", Portuguese Readable uses \"tu\", \"teu\", \"te\", because it is God's law addressed to each Israelite, and the Pentateuch drafts give God's word to Israel in the singular \"tu\" (Exodus 13:5; 20). \"Vocês\" would make one person's offering sound like the whole people's; \"você\" is kept for people speaking to each other. Where the Hebrew itself speaks to the people in the plural (verse 2), every level says \"vocês\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030021",
+            "o030010030071"
+          ],
+          "choice": "\"የሚቃጠል መሥዋዕት\" (burnt offering); \"ነውር የሌለበት\" (unblemished, L, B), \"ምንም ነውር የሌለበት\" (R)",
+          "alternatives": [
+            "\"ሙሉ በሙሉ የሚቃጠል መሥዋዕት\""
+          ],
+          "reason": "The Pentateuch terms list's words, used through Leviticus. \"ነውር\" is a bodily blemish as well as a disgrace, so it says \"with no physical defect\" (m2) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030010030081",
+            "o030010030131"
+          ],
+          "choice": "Laws: the imperfect at Literal (\"ያቀርባል\"), the jussive at Balanced (\"ይሁን\", \"ይቅረብ\"), \"-አለበት\" (\"must\") and the imperative at Readable, which speaks to each worshiper as \"you\" singular (\"ከከብቶችህ\", \"አምጣው\")",
+          "alternatives": [
+            "plural \"እናንተ\" at Readable"
+          ],
+          "reason": "The Hebrew states each case of an individual worshiper (\"he\"). The English Readable says \"you\"; Amharic must choose a number, and the singular keeps the case of one person bringing one animal. This holds through the offering laws.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1368,6 +1518,11 @@
           "L": "E apoiará a mão sobre a cabeça do holocausto, e ele será aceito em seu favor, para fazer expiação por ele.",
           "B": "Quem o oferece porá a mão sobre a cabeça do holocausto, e o animal será aceito em seu favor e fará expiação por ele.",
           "R": "Deves pôr a mão na cabeça do animal. Então ele será aceito em teu favor, para fazer expiação por ti."
+        },
+        "am": {
+          "L": "እጁንም በሚቃጠለው መሥዋዕት ራስ ላይ ይጭናል፤ ያስተሰርይለትም ዘንድ ስለ እርሱ ተቀባይነት ያገኛል።",
+          "B": "ያቀረበውም ሰው እጁን በሚቃጠለው መሥዋዕት ራስ ላይ ይጫን፤ መሥዋዕቱም ስለ እርሱ ተቀባይነት አግኝቶ ያስተሰርይለታል።",
+          "R": "እጅህን በእንስሳው ራስ ላይ ጫን። ከዚያም መሥዋዕቱ ስለ አንተ ተቀባይነት አግኝቶ ያስተሰርይልሃል።"
         }
       },
       "decisions": [
@@ -1600,6 +1755,53 @@
           "reason": "For the whole book (docs/pentateuch-portuguese-terms.md): \"fazer expiação por\" names what the priest does with an offering to put right what stands between the worshiper and God (m2). The English Readable keeps \"make atonement\", and so does Portuguese Readable; \"expiar\" alone suggests the worshiper paying for the sin himself.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040082",
+            "o030010040091",
+            "o030010040092"
+          ],
+          "choice": "\"ማስተስረይ\" (make atonement) at every level: \"ያስተሰርይለታል\" (L, B), \"ያስተሰርይልሃል\" (R)",
+          "alternatives": [
+            "\"ይቅርታ ያስገኝለታል\"",
+            "\"ያነጻዋል\""
+          ],
+          "reason": "The Pentateuch terms list's verb, which says that what stands between the worshiper and God is put right (m2). The English Readable keeps \"make atonement\", so Amharic Readable keeps the verb too; it is the same word as in Exodus 29 and the rest of Leviticus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040012",
+            "o030010040021",
+            "o030010040041"
+          ],
+          "choice": "\"እጁን ... ላይ ይጭናል\" (lean his hand on)",
+          "alternatives": [
+            "\"እጁን ያኖራል\""
+          ],
+          "reason": "\"መጫን\" says that the hand presses on the head, as the Hebrew \"lean\" does, and is the verb of Exodus 29:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1683,6 +1885,11 @@
           "L": "E imolará o novilho diante {{divine_name:do SENHOR|de Javé}}, e os filhos de Arão, os sacerdotes, oferecerão o sangue e lançarão o sangue sobre o altar ao redor, que [está à] entrada da tenda do encontro.",
           "B": "Quem trouxe o novilho o matará ali, diante {{divine_name:do SENHOR|de Javé}}. Depois os filhos de Arão, os sacerdotes, apresentarão o sangue e o jogarão em todos os lados do altar que fica à entrada da tenda do encontro.",
           "R": "Depois deves matar o novilho ali, diante {{divine_name:do SENHOR|de Javé}}. Os filhos de Arão, os sacerdotes, vão trazer o sangue. Eles vão jogá-lo em todos os lados do altar, na entrada da tenda do encontro."
+        },
+        "am": {
+          "L": "ወይፈኑንም {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያርደዋል፤ የአሮን ልጆች ካህናቱም ደሙን ያቀርባሉ፤ ደሙንም በመገናኛው ድንኳን ደጃፍ ባለው መሠዊያ ዙሪያ ይረጩታል።",
+          "B": "ወይፈኑን ያመጣው ሰው በዚያው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያርደው። ከዚያም የአሮን ልጆች ካህናቱ ደሙን ያቅርቡ፤ በመገናኛው ድንኳን ደጃፍ ባለው መሠዊያ ላይ በዙሪያው ሁሉ ይርጩት።",
+          "R": "ከዚያም ወይፈኑን በዚያው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት እረደው። የአሮን ልጆች ካህናቱ ደሙን ያመጣሉ፤ በመገናኛው ድንኳን በር ባለው መሠዊያ ዙሪያ ሁሉ ይረጩታል።"
         }
       },
       "decisions": [
@@ -1920,6 +2127,28 @@
           "reason": "For the whole book: the verb means to throw a quantity of liquid from a bowl (m3), so Portuguese uses \"lançar\" (L) and \"jogar\" (B, R), keeping \"salpicar\" for the different verb \"sprinkle\", done with a finger (4:6), as Exodus 29:21 does and as the English keeps \"splash\" and \"sprinkle\" apart. \"Aspergir\" is left aside because it is used for both in older Bibles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050132",
+            "o030010050181"
+          ],
+          "choice": "\"መርጨት\" (throw, splash the blood against the altar)",
+          "alternatives": [
+            "\"ማርከፍከፍ\""
+          ],
+          "reason": "As in Exodus 29:16: the blood is thrown in quantity, \"መርጨት\". \"ማርከፍከፍ\" is kept for sprinkling in drops with the finger (4:6), so the two Hebrew verbs stay apart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1984,6 +2213,11 @@
           "L": "E esfolará o holocausto e o cortará nos seus pedaços.",
           "B": "Depois, quem o oferece tirará a pele do holocausto e o cortará nas suas partes.",
           "R": "Depois deves tirar a pele do animal e cortá-lo em partes."
+        },
+        "am": {
+          "L": "የሚቃጠለውንም መሥዋዕት ቆዳውን ይገፍፋል፤ በየቁራጩም ይቆራርጠዋል።",
+          "B": "ከዚያም ያቀረበው ሰው የሚቃጠለውን መሥዋዕት ቆዳውን ይግፈፍ፤ በየክፍሉም ይቆራርጠው።",
+          "R": "ከዚያም የእንስሳውን ቆዳ ግፈፍ፤ እንስሳውንም በየክፍሉ ቆራርጠው።"
         }
       },
       "decisions": [
@@ -2017,6 +2251,29 @@
           ],
           "reason": "The subject is not named. It is most naturally the one who slaughtered the animal in verse 5. In 2 Chronicles 29:34 it is the priests, helped by the Levites, who skin the burnt offerings.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010060012",
+            "o030010060042",
+            "o030010060061"
+          ],
+          "choice": "\"በየቁራጩ\" (L), \"በየክፍሉ\" (B, R) for \"into its pieces\"",
+          "alternatives": [
+            "\"በየብልቱ\""
+          ],
+          "reason": "\"ብልት\", the butcher's word for a joint, now usually means the genitals (see the Amharic style guide), so the pieces are \"ቁራጭ\" or \"ክፍል\".",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -2086,6 +2343,11 @@
           "L": "E os filhos de Arão, o sacerdote, porão fogo sobre o altar e arrumarão lenha sobre o fogo.",
           "B": "Os filhos do sacerdote Arão porão fogo no altar e arrumarão a lenha em ordem sobre o fogo.",
           "R": "Os filhos do sacerdote Arão vão acender um fogo no altar e empilhar lenha em cima dele."
+        },
+        "am": {
+          "L": "የካህኑ የአሮን ልጆችም በመሠዊያው ላይ እሳት ያደርጋሉ፤ በእሳቱም ላይ እንጨት ይደረድራሉ።",
+          "B": "የካህኑ የአሮን ልጆች በመሠዊያው ላይ እሳት ያንድዱ፤ በእሳቱም ላይ እንጨት በሥርዓት ይደርድሩ።",
+          "R": "የካህኑ የአሮን ልጆች በመሠዊያው ላይ እሳት ያነድዳሉ፤ በላዩም እንጨት ይከምራሉ።"
         }
       },
       "decisions": [
@@ -2216,6 +2478,11 @@
           "L": "E os filhos de Arão, os sacerdotes, arrumarão os pedaços, a cabeça e o sebo, sobre a lenha que [está] sobre o fogo que [está] sobre o altar.",
           "B": "Os filhos de Arão, os sacerdotes, disporão os pedaços sobre a lenha que arde no altar, junto com a cabeça e o sebo.",
           "R": "Depois eles vão colocar os pedaços, a cabeça e a gordura sobre a lenha que está queimando no altar."
+        },
+        "am": {
+          "L": "የአሮን ልጆች ካህናቱም ቁራጮቹን፣ ራሱንና ሞራውን በመሠዊያው ላይ ባለው እሳት ላይ ባለው እንጨት ላይ ይደረድራሉ።",
+          "B": "የአሮን ልጆች ካህናቱ ቁራጮቹን ከራሱና ከስቡ ጋር በመሠዊያው ላይ በሚነድደው እንጨት ላይ ይደርድሩ።",
+          "R": "ከዚያም ቁራጮቹን፣ ራሱንና ስቡን በመሠዊያው ላይ በሚነድደው እንጨት ላይ ያስቀምጣሉ።"
         }
       },
       "decisions": [
@@ -2352,6 +2619,25 @@
           "reason": "The rare word for hard fat (m1) is \"sebo\" at Literal and Balanced, so that it stays distinct from \"a gordura\", the book's word for the fat of chapter 3; Readable says \"a gordura\", as the English Readable says \"the fat\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010080102"
+          ],
+          "choice": "\"ሞራ\" (suet, L); \"ስብ\" (fat, B, R)",
+          "alternatives": [
+            "\"ስብ\" at every level"
+          ],
+          "reason": "This rare word is the hard fat (m1), kept apart from \"ስብ\", the word for the fat of 3:3 that belongs to God. \"ሞራ\" is the Amharic name for the firm fat around the inner organs; Balanced and Readable say \"fat\", as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2429,6 +2715,11 @@
           "L": "E as suas entranhas e as suas pernas lavará com água, e o sacerdote fará subir em fumaça o todo sobre o altar: [é] um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "B": "As vísceras e as pernas serão lavadas com água, e o sacerdote fará o animal inteiro subir em fumaça no altar. É um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Deves lavar com água as partes de dentro e as pernas. Depois o sacerdote deve queimar tudo no altar. É um holocausto, uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "የሆድ ዕቃውንና እግሮቹንም በውኃ ያጥባል፤ ካህኑም ሁሉንም በመሠዊያው ላይ ያጤሳል፤ የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "B": "የሆድ ዕቃውና እግሮቹ በውኃ ይታጠቡ፤ ካህኑም እንስሳውን በሙሉ በመሠዊያው ላይ ያቃጥለው። ይህ የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "R": "የሆድ ዕቃውንና እግሮቹን በውኃ እጠብ። ከዚያም ካህኑ ሁሉንም በመሠዊያው ላይ ያቃጥለዋል። ይህ የሚቃጠል መሥዋዕት ነው፤ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
         }
       },
       "decisions": [
@@ -2805,6 +3096,50 @@
           "reason": "For the whole book: the verb is not the ordinary word for burning but means making something go up as smoke (m1), so Literal and Balanced say \"fazer subir em fumaça\", as the English says \"make smoke\" and \"turn into smoke\"; Readable says \"queimar\", as the English Readable says \"burn\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090111",
+            "o030010090121",
+            "o030010090131"
+          ],
+          "choice": "The closing formula, one wording through Leviticus: \"የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው\" (L; B with \"ይህ\" first); Readable \"ይህ የሚቃጠል መሥዋዕት ነው፤ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል\"",
+          "alternatives": [
+            "\"የምግብ መሥዋዕት\" for the fire offering, as the English \"food offering\""
+          ],
+          "reason": "The Pentateuch terms list keeps \"በእሳት የሚቀርብ መሥዋዕት\" for the fire offering (m2) at every level, as Exodus 29:18 does, where the English Balanced and Readable say \"food offering\"; the food sense is kept where the Hebrew says \"food\" (3:11). \"ደስ የሚያሰኝ መዓዛ\" is the soothing aroma (m3); Readable turns it into a clause.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090052"
+          ],
+          "choice": "\"ያጤሳል\" (L); \"ያቃጥለው\", \"ያቃጥለዋል\" (B, R) for \"make smoke\"",
+          "alternatives": [
+            "\"ያቃጥላል\" at every level"
+          ],
+          "reason": "As in Exodus 29:13: the altar verb is \"make go up in smoke\" (m1), kept apart from the plain \"burn\" used outside the camp (4:12). Balanced and Readable say \"burn\", as the English Readable does; Literal alone keeps \"ማጤስ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2877,6 +3212,11 @@
           "L": "E se a sua oferta [for] do rebanho, das ovelhas ou das cabras, para holocausto, oferecerá um macho sem defeito.",
           "B": "Se o animal para o holocausto vier do rebanho, das ovelhas ou das cabras, será um macho sem defeito.",
           "R": "Se trouxeres um animal das tuas ovelhas ou das tuas cabras como holocausto, ele deve ser um macho, um carneiro ou um bode. Deve ser saudável e perfeito."
+        },
+        "am": {
+          "L": "መባውም ከመንጋው፣ ከበጎች ወይም ከፍየሎች፣ ለሚቃጠል መሥዋዕት ቢሆን፣ ነውር የሌለበትን ተባዕት ያቀርባል።",
+          "B": "ለሚቃጠል መሥዋዕት የሚቀርበው እንስሳ ከመንጋው፣ ከበጎች ወይም ከፍየሎች ከሆነ፣ ነውር የሌለበት ተባዕት ይሁን።",
+          "R": "የሚቃጠል መሥዋዕት አድርገህ በግ ወይም ፍየል የምታቀርብ ከሆነ ወንድ መሆን አለበት። ጤነኛና ምንም እንከን የሌለበት መሆን አለበት።"
         }
       },
       "decisions": [
@@ -3026,6 +3366,11 @@
           "L": "E o imolará ao lado do altar, para o norte, diante {{divine_name:do SENHOR|de Javé}}, e os filhos de Arão, os sacerdotes, lançarão o seu sangue sobre o altar ao redor.",
           "B": "O animal será morto diante {{divine_name:do SENHOR|de Javé}}, no lado norte do altar, e os filhos de Arão, os sacerdotes, jogarão o seu sangue em todos os lados do altar.",
           "R": "Deves matá-lo diante {{divine_name:do SENHOR|de Javé}}, no lado norte do altar. Os filhos de Arão, os sacerdotes, vão jogar o sangue dele em todos os lados do altar."
+        },
+        "am": {
+          "L": "በመሠዊያውም በሰሜን በኩል {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያርደዋል፤ የአሮን ልጆች ካህናቱም ደሙን በመሠዊያው ዙሪያ ይረጩታል።",
+          "B": "በመሠዊያው በሰሜን በኩል {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይታረድ፤ የአሮን ልጆች ካህናቱም ደሙን በመሠዊያው ላይ በዙሪያው ሁሉ ይርጩት።",
+          "R": "በመሠዊያው በሰሜን በኩል {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት እረደው። የአሮን ልጆች ካህናቱ ደሙን በመሠዊያው ዙሪያ ሁሉ ይረጩታል።"
         }
       },
       "decisions": [
@@ -3142,6 +3487,11 @@
           "L": "E o cortará nos seus pedaços, com a sua cabeça e o seu sebo, e o sacerdote os arrumará sobre a lenha que [está] sobre o fogo que [está] sobre o altar.",
           "B": "Ele será cortado nos seus pedaços, e o sacerdote os disporá, com a cabeça e o sebo, sobre a lenha que arde no altar.",
           "R": "Depois deves cortar o animal em pedaços. O sacerdote vai colocar os pedaços, a cabeça e a gordura sobre a lenha que está queimando no altar."
+        },
+        "am": {
+          "L": "በየቁራጩም ይቆራርጠዋል፤ ካህኑም ከራሱና ከሞራው ጋር በመሠዊያው ላይ ባለው እሳት ላይ ባለው እንጨት ላይ ይደረድራቸዋል።",
+          "B": "በየክፍሉ ይቆራረጥ፤ ካህኑም ቁራጮቹን ከራሱና ከስቡ ጋር በመሠዊያው ላይ በሚነድደው እንጨት ላይ ይደርድራቸው።",
+          "R": "ከዚያም በየክፍሉ ቆራርጠው። ካህኑ ቁራጮቹን፣ ራሱንና ስቡን በመሠዊያው ላይ በሚነድደው እንጨት ላይ ያስቀምጣቸዋል።"
         }
       },
       "decisions": [
@@ -3240,6 +3590,11 @@
           "L": "E as entranhas e as pernas lavará com água, e o sacerdote oferecerá o todo e [o] fará subir em fumaça sobre o altar; é um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "B": "As vísceras e as pernas serão lavadas com água. O sacerdote apresentará tudo e o fará subir em fumaça no altar. É um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Deves lavar com água as partes de dentro e as pernas. O sacerdote vai oferecer tudo e queimar no altar. É um holocausto, uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "የሆድ ዕቃውንና እግሮቹንም በውኃ ያጥባል፤ ካህኑም ሁሉንም ያቀርባል፤ በመሠዊያውም ላይ ያጤሰዋል፤ ይህ የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "B": "የሆድ ዕቃውና እግሮቹ በውኃ ይታጠቡ። ካህኑም ሁሉንም ያቅርብ፤ በመሠዊያውም ላይ ያቃጥለው። ይህ የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "R": "የሆድ ዕቃውንና እግሮቹን በውኃ እጠብ። ካህኑ ሁሉንም አቅርቦ በመሠዊያው ላይ ያቃጥለዋል። ይህ የሚቃጠል መሥዋዕት ነው፤ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
         }
       },
       "decisions": [
@@ -3332,6 +3687,11 @@
           "L": "E se a sua oferta {{divine_name:ao SENHOR|a Javé}} [for] um holocausto de aves, oferecerá a sua oferta de rolinhas ou de pombinhos.",
           "B": "Se alguém oferecer uma ave como holocausto {{divine_name:ao SENHOR|a Javé}}, trará uma rolinha ou um pombinho.",
           "R": "Se ofereceres uma ave como holocausto {{divine_name:ao SENHOR|a Javé}}, deves escolher uma rolinha ou um pombinho."
+        },
+        "am": {
+          "L": "መባውም {{divine_name:ለእግዚአብሔር|ለያህዌ}} ከወፎች የሚቃጠል መሥዋዕት ቢሆን፣ መባውን ከዋኖሶች ወይም ከርግብ ጫጩቶች ያቀርባል።",
+          "B": "አንድ ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚያቀርበው የሚቃጠል መሥዋዕት ወፍ ከሆነ፣ ዋኖስ ወይም የርግብ ጫጩት ያቅርብ።",
+          "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አድርገህ ወፍ የምታቀርብ ከሆነ፣ ዋኖስ ወይም የርግብ ጫጩት ምረጥ።"
         }
       },
       "decisions": [
@@ -3451,6 +3811,29 @@
           "reason": "For the whole book: \"rolinha\" is the common Brazilian name for the small wild dove (m1), so every level can use it where the English Readable changes to \"dove\"; \"pombinho\" is a young pigeon, the \"sons of the dove\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010140092",
+            "o030010140121",
+            "o030010140132"
+          ],
+          "choice": "\"ዋኖስ\" (turtledove); \"የርግብ ጫጩት\" (young pigeon, literally \"the sons of the dove\")",
+          "alternatives": [
+            "\"የርግብ ልጆች\" at Literal"
+          ],
+          "reason": "\"ዋኖስ\" is the Amharic name of the turtledove, and \"ጫጩት\" the usual word for a young bird, so Literal needs no bracket. Readable keeps \"ዋኖስ\", a familiar bird, where the English Readable says \"a dove\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3529,6 +3912,11 @@
           "L": "E o sacerdote a oferecerá no altar, e lhe destacará a cabeça e [a] fará subir em fumaça sobre o altar, e o seu sangue será espremido na parede do altar.",
           "B": "O sacerdote a levará ao altar. Ele destacará a cabeça e a fará subir em fumaça no altar, e o sangue da ave será espremido contra o lado do altar.",
           "R": "O sacerdote vai levar a ave até o altar. Ele vai arrancar a cabeça dela e queimar a cabeça no altar. Depois vai deixar o sangue dela escorrer pelo lado do altar."
+        },
+        "am": {
+          "L": "ካህኑም ወደ መሠዊያው ያቀርበዋል፤ ራሱንም ይቆለምማል፤ በመሠዊያውም ላይ ያጤሰዋል፤ ደሙም በመሠዊያው ግድግዳ ላይ ይንጠፈጠፋል።",
+          "B": "ካህኑ ወደ መሠዊያው ይውሰደው፤ ራሱን ቆልምሞ ራሱን በመሠዊያው ላይ ያቃጥለው፤ የወፉም ደም በመሠዊያው ጎን ላይ ይጨመቅ።",
+          "R": "ካህኑ ወፉን ወደ መሠዊያው ይወስደዋል። ራሱን ቆልምሞ ይነቅልና ራሱን በመሠዊያው ላይ ያቃጥለዋል። ከዚያም ደሙን በመሠዊያው ጎን ላይ እንዲፈስ ያደርጋል።"
         }
       },
       "decisions": [
@@ -3615,6 +4003,27 @@
           "reason": "The verb means pinching off with the fingers (m1): \"destacar\" says that the head is separated without suggesting a knife, which \"cortar\" would; Readable says \"arrancar\", as the English \"pull off\". The blood is squeezed or drained out (m2): \"espremido\" (L, B) keeps the squeezing; Readable says \"deixar escorrer\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010150052"
+          ],
+          "choice": "\"ይቆለምማል\" / \"ቆልምሞ\" (nip off)",
+          "alternatives": [
+            "\"ይቆርጣል\" (cut off)"
+          ],
+          "reason": "\"መቆልመም\" is to wring or pinch off with the fingers, without a knife (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3688,6 +4097,11 @@
           "L": "E removerá o seu papo com as suas penas e o lançará junto ao altar, para o oriente, no lugar da cinza gordurosa.",
           "B": "Ele tirará o papo junto com as penas e os jogará do lado leste do altar, no lugar das cinzas.",
           "R": "Ele vai tirar o papo da ave e as penas. Depois vai jogá-los do lado leste do altar, onde as cinzas ficam amontoadas."
+        },
+        "am": {
+          "L": "የምግብ ቋቱንም ከላባው ጋር ያስወግዳል፤ በመሠዊያውም አጠገብ በምሥራቅ በኩል ወደ ስብ አመዱ ስፍራ ይጥለዋል።",
+          "B": "የምግብ ቋቱን ከላባው ጋር አውጥቶ በመሠዊያው በምሥራቅ በኩል አመዱ ወደሚደፋበት ስፍራ ይጣለው።",
+          "R": "የወፉን የምግብ ቋትና ላባውን ያስወግዳል። በመሠዊያው በምሥራቅ በኩል አመዱ ወደሚከመርበት ስፍራ ይጥላቸዋል።"
         }
       },
       "decisions": [
@@ -3777,6 +4191,46 @@
           "reason": "\"diều\" is the ordinary Vietnamese word for the pouch in a bird's throat. Literal keeps the fatty ashes as \"tro mỡ\"; Balanced and Readable say \"tro\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010160031"
+          ],
+          "choice": "\"የምግብ ቋት\" (crop)",
+          "alternatives": [
+            "\"ጉሮሮ\""
+          ],
+          "reason": "Amharic has no common word for a bird's crop; \"የምግብ ቋት\" (\"food pouch\") describes it (m1). A reviewer may know a better farmyard word.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010160122"
+          ],
+          "choice": "\"የስብ አመድ\" (L); \"አመድ\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps \"fatty ashes\" (m3); Balanced and Readable say \"the ashes\", as the English levels do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3861,6 +4315,11 @@
           "L": "E a fenderá pelas asas, [mas] não [a] dividirá; e o sacerdote a fará subir em fumaça sobre o altar, sobre a lenha que [está] sobre o fogo; é um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "B": "Segurando-a pelas asas, ele a rasgará, mas sem parti-la em duas. Depois o sacerdote a fará subir em fumaça no altar, sobre a lenha que arde. É um holocausto, uma oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Ele vai segurar a ave pelas asas e abri-la, mas sem dividi-la em duas partes. Depois o sacerdote vai queimá-la no fogo do altar. É um holocausto, uma oferta queimada no fogo, um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "በክንፎቹም ይሰነጥቀዋል፤ ለሁለት ግን አይለየውም፤ ካህኑም በመሠዊያው ላይ በእሳቱ ላይ ባለው እንጨት ላይ ያጤሰዋል፤ ይህ የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "B": "በክንፎቹ ይዞ ይሰንጥቀው፤ ለሁለት ግን አይክፈለው። ከዚያም ካህኑ በመሠዊያው ላይ በሚነድደው እንጨት ላይ ያቃጥለው። ይህ የሚቃጠል መሥዋዕት፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "R": "በክንፎቹ ይዞ ይሰነጥቀዋል፤ ለሁለት ግን አይከፍለውም። ከዚያም ካህኑ በመሠዊያው ላይ ባለው እሳት ላይ ያቃጥለዋል። ይህ የሚቃጠል መሥዋዕት ነው፤ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
         }
       },
       "decisions": [
