@@ -413,104 +413,6 @@
   });
 })();
 
-// The saved verses page (saved_page in scripts/build_site.py): the
-// bookmarks, highlights and notes web/reader.js keeps as owb.marks, by book
-// in canonical order, each with its words as they were shown when marked
-// and the reader's note.
-(function () {
-  "use strict";
-  var box = document.getElementById("saved");
-  if (!box) return;
-  var data = JSON.parse(box.getAttribute("data-saved"));
-  var list = box.querySelector(".saved-list"), empty = box.querySelector(".saved-empty");
-  var filter = "all";
-
-  function load() {
-    try { return JSON.parse(localStorage.getItem("owb.marks") || "{}"); } catch (e) { return {}; }
-  }
-  function remove(id) {
-    var all = load();
-    all[id] = { at: Date.now() };
-    try { localStorage.setItem("owb.marks", JSON.stringify(all)); } catch (e) { /* ignore */ }
-    document.dispatchEvent(new Event("owb:marks"));
-    draw();
-  }
-  function el(tag, cls, text) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-
-  function draw() {
-    var all = load();
-    var ids = Object.keys(all).filter(function (id) {
-      var m = all[id], book = id.split(".")[0];
-      if (data.order.indexOf(book) < 0) return false;
-      // A cleared mark ({at}) is kept only for syncing.
-      return filter === "all" ? m.b || m.h || m.n : filter === "bookmarks" ? m.b : filter === "notes" ? m.n : m.h;
-    }).sort(function (a, b) {
-      var p = a.split("."), q = b.split(".");
-      return (data.order.indexOf(p[0]) - data.order.indexOf(q[0])) || (p[1] - q[1]) || (p[2] - q[2]);
-    });
-    list.textContent = "";
-    empty.hidden = ids.length > 0;
-    var group = null, book = null;
-    ids.forEach(function (id) {
-      var m = all[id], p = id.split(".");
-      if (p[0] !== book) {
-        book = p[0];
-        list.appendChild(el("h2", "saved-book", data.names[book]));
-        group = el("ul", "saved-items");
-        list.appendChild(group);
-      }
-      var li = el("li", "saved-item" + (m.h ? " hl-" + m.h : ""));
-      var head = el("p", "saved-head");
-      var a = el("a", null, data.names[book] + " " + p[1] + ":" + p[2]);
-      a.href = data.chapters[book].replace("{c}", p[1]) + "#v" + p[2];
-      head.appendChild(a);
-      if (m.b) {
-        var b = el("span", "saved-flag", data.bookmark);
-        head.appendChild(b);
-      }
-      var x = el("button", "saved-remove", data.remove);
-      x.type = "button";
-      // Removing takes the note too: a verse with one asks for a second click.
-      x.addEventListener("click", function () {
-        if (!m.n || x.classList.contains("armed")) { remove(id); return; }
-        x.classList.add("armed");
-        x.textContent = data.confirm;
-        setTimeout(function () { x.classList.remove("armed"); x.textContent = data.remove; }, 4000);
-      });
-      head.appendChild(x);
-      li.appendChild(head);
-      if (m.text) {
-        var q = el("p", "saved-text", m.text);
-        if (m.lang && m.lang !== document.documentElement.lang) q.lang = m.lang;
-        li.appendChild(q);
-      }
-      if (m.n) {
-        var n = el("p", "saved-note", m.n);
-        n.setAttribute("aria-label", data.note);
-        li.appendChild(n);
-      }
-      group.appendChild(li);
-    });
-  }
-
-  box.querySelectorAll("[data-filter]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      filter = b.getAttribute("data-filter");
-      box.querySelectorAll("[data-filter]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
-      draw();
-    });
-  });
-  // Marks made or removed in another tab.
-  window.addEventListener("storage", function (e) { if (e.key === "owb.marks") draw(); });
-  document.addEventListener("owb:synced", draw);
-  draw();
-})();
-
 // A link to a folded section (a book's uses on a key-term page, #jhn)
 // opens it, in browsers that do not unfold it themselves.
 (function () {
@@ -592,12 +494,135 @@
   choose(location.hash.slice(1));
 })();
 
+// The reader's own study, kept in this browser for every page that shows
+// or changes it (web/reader.js, web/saved.js, web/word.js, web/plans.js):
+//
+//   owb.marks    {verse: {b, h, n, t, text, lang, at}}   bookmarks, highlights,
+//                                                       notes, collections (t)
+//   owb.notes    {"JHN.3.16-21": {n, t, text, lang, at}} notes on a passage
+//   owb.words    {lemma: {s, n, g, l, at}}               the word list: saved (s),
+//                                                       a note (n), gloss, language
+//   owb.lookups  [{w: lemma, g, l, at}, ...]             words looked up lately,
+//                                                       newest first; this device only
+//
+// Anything cleared is kept as {at}, so a signed-in reader's other devices
+// clear it too (the sync below; backend accounts/reading.py). A change is
+// announced on document as owb:marks, owb:notes or owb:words.
+window.OWBStudy = (function () {
+  "use strict";
+  var HISTORY = 100;
+  function read(key) {
+    try {
+      var v = JSON.parse(localStorage.getItem(key) || "null");
+      return v && typeof v === "object" && !Array.isArray(v) ? v : {};
+    } catch (e) { return {}; }
+  }
+  function write(key, value, event) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* full or blocked */ }
+    if (event) document.dispatchEvent(new Event(event));
+  }
+  // A mark or note that is still there, not one kept only to sync its clearing.
+  function kept(m) { return !!(m && (m.b || m.h || m.n || (m.t && m.t.length))); }
+  // The reader's collections, from every mark and note, case kept as first written.
+  function collections() {
+    var names = {};
+    [read("owb.marks"), read("owb.notes")].forEach(function (all) {
+      Object.keys(all).forEach(function (id) {
+        (all[id].t || []).forEach(function (name) {
+          var k = name.toLowerCase();
+          if (!names[k]) names[k] = name;
+        });
+      });
+    });
+    return Object.keys(names).map(function (k) { return names[k]; })
+      .sort(function (a, b) { return a.localeCompare(b, document.documentElement.lang); });
+  }
+  function cleanTag(name) { return String(name || "").replace(/\s+/g, " ").trim().slice(0, 40); }
+  function hasTag(m, name) {
+    return (m.t || []).some(function (x) { return x.toLowerCase() === name.toLowerCase(); });
+  }
+  function withTag(tags, name, on) {
+    var out = (tags || []).filter(function (x) { return x.toLowerCase() !== name.toLowerCase(); });
+    if (on) out.push(name);
+    return out.slice(0, 20);
+  }
+  // Take a collection off every mark and note (the saved page's "Delete").
+  function dropCollection(name) {
+    [["owb.marks", "owb:marks"], ["owb.notes", "owb:notes"]].forEach(function (k) {
+      var all = read(k[0]), changed = false;
+      Object.keys(all).forEach(function (id) {
+        var m = all[id];
+        if (!hasTag(m, name)) return;
+        m.t = withTag(m.t, name, false);
+        if (!m.t.length) delete m.t;
+        m.at = Date.now();
+        all[id] = kept(m) ? m : { at: m.at };
+        changed = true;
+      });
+      if (changed) write(k[0], all, k[1]);
+    });
+  }
+
+  // The word list.
+  function word(lemma) { return read("owb.words")[lemma] || null; }
+  function setWord(lemma, change, info) {
+    var all = read("owb.words"), w = all[lemma] || {};
+    Object.keys(change).forEach(function (k) { if (change[k]) w[k] = change[k]; else delete w[k]; });
+    if (info && info.g) w.g = String(info.g).slice(0, 120);
+    if (info && info.l) w.l = info.l;
+    w.at = Date.now();
+    all[lemma] = w.s || w.n ? w : { at: w.at };
+    write("owb.words", all, "owb:words");
+    return all[lemma];
+  }
+  function lookups() {
+    try {
+      var v = JSON.parse(localStorage.getItem("owb.lookups") || "[]");
+      return Array.isArray(v) ? v : [];
+    } catch (e) { return []; }
+  }
+  function lookedUp(lemma, info) {
+    var list = lookups().filter(function (x) { return x && x.w !== lemma; });
+    list.unshift({ w: lemma, g: (info && info.g) || "", l: (info && info.l) || "", at: Date.now() });
+    try { localStorage.setItem("owb.lookups", JSON.stringify(list.slice(0, HISTORY))); } catch (e) { /* blocked */ }
+  }
+  function forgetLookups() {
+    try { localStorage.removeItem("owb.lookups"); } catch (e) { /* blocked */ }
+  }
+
+  return { read: read, write: write, kept: kept, collections: collections, cleanTag: cleanTag,
+           hasTag: hasTag, withTag: withTag, dropCollection: dropCollection,
+           word: word, setWord: setWord, lookups: lookups, lookedUp: lookedUp, forgetLookups: forgetLookups };
+})();
+
+// A key term's "Save to word list" (save_word_button in
+// scripts/build_site.py); opening the page counts as looking the word up.
+(function () {
+  "use strict";
+  var S = window.OWBStudy;
+  document.querySelectorAll("[data-save-word]").forEach(function (b) {
+    var lemma = b.getAttribute("data-save-word");
+    var info = { g: b.getAttribute("data-gloss"), l: b.getAttribute("data-l") };
+    function show() {
+      var on = !!(S.word(lemma) || {}).s;
+      b.textContent = b.getAttribute(on ? "data-label-saved" : "data-label-save");
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    b.addEventListener("click", function () { S.setWord(lemma, { s: !(S.word(lemma) || {}).s }, info); show(); });
+    S.lookedUp(lemma, info);
+    show();
+    b.hidden = false;
+  });
+})();
+
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
-// highlights (owb.marks), the reading place (owb.place), reading-plan
-// progress (owb.plans, web/plans.js) and the reader's settings
-// (owb.settings, web/reader.js) go to the account and come back merged, the
-// latest change to each verse and each plan winning, and the latest copy of
-// the settings, so they follow the reader between devices. A sync sends this
+// highlights, notes and collections (owb.marks), passage notes (owb.notes),
+// the word list (owb.words), the reading place (owb.place), reading-plan
+// progress (owb.plans, web/plans.js), the reader's own plans (owb.myplans)
+// and the reader's settings (owb.settings, web/reader.js) go to the account
+// and come back merged, the latest change to each verse, note, word and plan
+// winning, and the latest copy of the settings, so they follow the reader
+// between devices. A sync sends this
 // browser's whole copy; it runs on loading a page when anything changed since
 // the last sync (or every two minutes, for the other devices' changes), soon
 // after a mark, a plan or a setting changes, on signing in, and, as best it
@@ -629,7 +654,9 @@
   }
   function body() {
     return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null),
-                            plans: read("owb.plans", null), settings: settings() });
+                            plans: read("owb.plans", null), settings: settings(),
+                            notes: read("owb.notes", {}), words: read("owb.words", {}),
+                            myplans: read("owb.myplans", {}) });
   }
   function hash(text) {
     for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
@@ -638,13 +665,20 @@
   function session(key) { try { return sessionStorage.getItem(key); } catch (e) { return null; } }
 
   // The account's merged copy, taken in the same way: the later of each.
-  function take(merged) {
-    var marks = read("owb.marks", {}), changed = false;
-    Object.keys(merged.marks || {}).forEach(function (id) {
-      var theirs = merged.marks[id], ours = marks[id];
-      if (!ours || theirs.at > (ours.at || 0)) { marks[id] = theirs; changed = true; }
+  // A store keyed by id ({id: {..., at}}): true if anything came in.
+  function takeEach(key, theirs) {
+    var ours = read(key, {}), moved = false;
+    Object.keys(theirs || {}).forEach(function (id) {
+      if (!ours[id] || theirs[id].at > (ours[id].at || 0)) { ours[id] = theirs[id]; moved = true; }
     });
-    if (changed) write("owb.marks", marks);
+    if (moved) write(key, ours);
+    return moved;
+  }
+  function take(merged) {
+    var changed = takeEach("owb.marks", merged.marks);
+    changed = takeEach("owb.notes", merged.notes) || changed;
+    changed = takeEach("owb.words", merged.words) || changed;
+    changed = takeEach("owb.myplans", merged.myplans) || changed;
     var place = read("owb.place", null);
     if (merged.place && (!place || merged.place.at > (place.at || 0))) { write("owb.place", merged.place); changed = true; }
     if (merged.plans) {
@@ -701,7 +735,7 @@
   }
 
   function soon() { clearTimeout(timer); timer = setTimeout(sync, 1500); }
-  document.addEventListener("owb:marks", soon);
+  ["owb:marks", "owb:notes", "owb:words", "owb:myplans"].forEach(function (e) { document.addEventListener(e, soon); });
   document.addEventListener("owb:plans-change", soon);
   document.addEventListener("owb:settings", soon);
   document.addEventListener("owb:account", function () { stopped = false; sync(); });

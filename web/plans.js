@@ -20,6 +20,16 @@
 // The plans themselves, their names and each day's chapters in the page's
 // language, come from /plans-<lang>.json (plans_json); a plan started in
 // English that this language cannot offer yet is read from the English file.
+//
+// The reader's own plans (my_plans_page) are kept as owb.myplans, in the
+// shape of data/plans.json, and their progress in owb.plans like any other:
+//
+//   {"my-k3x9q2": {"name": "Advent", "days": [["LUK.1", "LUK.2"], ...], "at": ...}}
+//
+// A deleted one is kept as {at}, so the reader's other devices delete it too.
+// One is shared as a link to the page, #n=<name>&d=LUK.1,LUK.2;MAT.1 (days
+// apart by ";"), which the page offers to save. Any plan's days not yet done
+// can be taken into a calendar as an .ics file, a day each from today.
 (function () {
   "use strict";
   var KEY = "owb.plans";
@@ -48,7 +58,18 @@
     try { document.dispatchEvent(new CustomEvent("owb:plans-change")); } catch (e) { /* old browser */ }
   }
 
-  window.OWBPlans = { key: KEY, load: load, save: save };
+  var MINE = "owb.myplans";
+  function mine() {
+    var all = null;
+    try { all = JSON.parse(localStorage.getItem(MINE) || "null"); } catch (e) { /* none */ }
+    return all && typeof all === "object" && !Array.isArray(all) ? all : {};
+  }
+  function saveMine(all) {
+    try { localStorage.setItem(MINE, JSON.stringify(all)); } catch (e) { /* storage blocked */ }
+    try { document.dispatchEvent(new CustomEvent("owb:myplans")); } catch (e) { /* old browser */ }
+  }
+
+  window.OWBPlans = { key: KEY, load: load, save: save, mine: mine };
 
   var lang = document.documentElement.lang;
 
@@ -105,9 +126,35 @@
     return files[src];
   }
 
+  // One of the reader's own plans, as plans_json gives a plan: chapters
+  // named and linked in this language (in English where it has not got
+  // them yet).
+  function ownPlan(file, id, p) {
+    var have = {};
+    file.books.forEach(function (b) { have[b[0]] = b[2]; });
+    return {
+      name: p.name, url: file.mine + "#id=" + id, own: true,
+      days: p.days.map(function (day) {
+        return day.map(function (ref) {
+          var b = ref.split(".")[0], c = +ref.split(".")[1];
+          var here = (have[b] || []).indexOf(c) >= 0;
+          return { b: b, c: c, n: (file.names[b] || b) + " " + c,
+                   u: (here ? file.chapter : file.chapter_en).replace("{b}", b.toLowerCase()).replace("{c}", c) };
+        });
+      })
+    };
+  }
+
   // {ui, plan, lang}: the plan id, from this language's file or English's,
   // with this language's labels. Rejects when neither has it.
   function planData(box, id) {
+    if (/^my-/.test(id)) {
+      return fetchFile(box.getAttribute("data-plans")).then(function (own) {
+        var p = mine()[id];
+        if (!p || !p.days) throw new Error("no plan " + id);
+        return { ui: own.ui, plan: ownPlan(own, id, p), lang: lang };
+      });
+    }
     return fetchFile(box.getAttribute("data-plans")).then(function (own) {
       if (own.plans[id]) return { ui: own.ui, plan: own.plans[id], lang: lang };
       var en = box.getAttribute("data-plans-en");
@@ -276,6 +323,48 @@
     }).catch(function () { box.hidden = true; });
   }
 
+  // The plan's days not yet done, a day each from today, as a calendar
+  // file (RFC 5545) for the reader's own calendar app.
+  function icsText(ui, id, plan, rec) {
+    function esc(text) { return String(text).replace(/[\\;,]/g, function (c) { return "\\" + c; }).replace(/\n/g, "\\n"); }
+    function ymd(d) { return d.getFullYear() + ("0" + (d.getMonth() + 1)).slice(-2) + ("0" + d.getDate()).slice(-2); }
+    // Lines over 75 octets are folded; cut by characters, which is safe for
+    // the short lines here.
+    function fold(line) {
+      var out = [];
+      while (line.length > 70) { out.push(line.slice(0, 70)); line = " " + line.slice(70); }
+      out.push(line);
+      return out.join("\r\n");
+    }
+    var stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
+    var lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Open Word Bible//Reading plans//EN",
+                 "CALSCALE:GREGORIAN", "X-WR-CALNAME:" + esc(plan.name)];
+    var at = new Date(), n = 0;
+    plan.days.forEach(function (day, i) {
+      if (rec && rec.done.indexOf(i + 1) >= 0) return;
+      var d = new Date(at.getFullYear(), at.getMonth(), at.getDate() + n++);
+      var next = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1);
+      var link = location.origin + day[0].u;
+      lines.push("BEGIN:VEVENT", "UID:" + id + "-" + (i + 1) + "-" + stamp + "@openwordbible.org", "DTSTAMP:" + stamp,
+                 "DTSTART;VALUE=DATE:" + ymd(d), "DTEND;VALUE=DATE:" + ymd(next),
+                 "SUMMARY:" + esc(fill(ui.ics_day, { day: i + 1, ref: refs(day), plan: plan.name })),
+                 "DESCRIPTION:" + esc(link), "URL:" + link, "TRANSP:TRANSPARENT", "END:VEVENT");
+    });
+    lines.push("END:VCALENDAR");
+    return lines.map(fold).join("\r\n") + "\r\n";
+  }
+  function downloadIcs(box, id) {
+    planData(box, id).then(function (d) {
+      var text = icsText(d.ui, id, d.plan, load().plans[id]);
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([text], { type: "text/calendar" }));
+      a.download = id + ".ics";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+    });
+  }
+
   // A plan's own page: start, stop or start over, and tick off days.
   function drawPlanPage(box) {
     var id = box.getAttribute("data-plan-page");
@@ -287,6 +376,11 @@
     var status = box.querySelector("[data-plan-status]");
     var startLabel = startBtn.textContent;
     var days = Array.prototype.slice.call(document.querySelectorAll(".plan-day[data-day]"));
+    var icsBtn = box.querySelector("[data-plan-ics]");
+    if (icsBtn) {
+      icsBtn.hidden = !window.Blob;
+      icsBtn.addEventListener("click", function () { downloadIcs(box, id); });
+    }
     var ui = null;
 
     function render() {
@@ -355,7 +449,7 @@
     });
 
     render();
-    var src = document.querySelector("[data-plans]");
+    var src = box.hasAttribute("data-plans") ? box : document.querySelector("[data-plans]");
     var file = src ? src.getAttribute("data-plans") : null;
     if (file) fetchFile(file).then(function (f) { ui = f.ui; render(); }).catch(function () { /* labels only */ });
     return render;
@@ -371,9 +465,301 @@
     });
   }
 
+  // The reader's own plans (my_plans_page): the list, one plan opened to
+  // read (#id=), a plan shared by link (#n=&d=) to save, and the form that
+  // makes or changes one. Returns the open plan's render, if any.
+  function newId() {
+    var a = "abcdefghijklmnopqrstuvwxyz0123456789", id = "my-";
+    var r = new Uint32Array(8);
+    (window.crypto || window.msCrypto).getRandomValues(r);
+    for (var i = 0; i < 8; i++) id += a[r[i] % a.length];
+    return id;
+  }
+  function shareLink(file, p) {
+    return location.origin + file.mine + "#n=" + encodeURIComponent(p.name) +
+      "&d=" + p.days.map(function (day) { return day.join(","); }).join(";");
+  }
+  // A plan from a share link's fragment, or null: only chapters that exist.
+  function fromLink(hash, file) {
+    var q = {};
+    hash.replace(/^#/, "").split("&").forEach(function (kv) {
+      var i = kv.indexOf("=");
+      if (i > 0) { try { q[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); } catch (e) { /* bad */ } }
+    });
+    if (!q.n || !q.d) return null;
+    var known = {};
+    file.books.forEach(function (b) { known[b[0]] = true; });
+    var days = q.d.split(";").map(function (day) {
+      return day.split(",").filter(function (ref) {
+        return /^[1-4A-Z]{3}\.\d{1,3}$/.test(ref) && (known[ref.split(".")[0]] || file.names[ref.split(".")[0]]);
+      }).slice(0, 30);
+    }).filter(function (day) { return day.length; }).slice(0, 400);
+    return days.length ? { name: q.n.replace(/\s+/g, " ").trim().slice(0, 80), days: days } : null;
+  }
+  function copy(text, button, done) {
+    var label = button.textContent;
+    function said(t) { button.textContent = t; setTimeout(function () { button.textContent = label; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText)
+      navigator.clipboard.writeText(text).then(function () { said(done); }, function () { window.prompt("", text); });
+    else window.prompt("", text);
+  }
+
+  function drawMine(root, file) {
+    var ui = file.ui;
+    var view = root.querySelector(".myplan-view"), shared = root.querySelector(".myplan-shared");
+    var listBox = root.querySelector(".myplan-list ul"), emptyNote = root.querySelector(".myplan-empty");
+    var form = document.getElementById("myplan-form"), note = document.getElementById("myplan-note");
+    var dayList = form.querySelector(".myplan-days");
+    var draft = { id: null, name: "", days: [] };
+    var openRender = null;
+
+    function length(p) { return fill(ui.length, { n: p.days.length }); }
+
+    function drawList() {
+      var all = mine(), s = load();
+      var ids = Object.keys(all).filter(function (id) { return all[id].days; })
+        .sort(function (a, b) { return all[b].at - all[a].at; });
+      listBox.textContent = "";
+      emptyNote.hidden = ids.length > 0;
+      ids.forEach(function (id) {
+        var p = all[id];
+        var li = el("li");
+        var card = el("div", "a-card plan-card myplan-card" + (s.active === id ? " mine" : ""));
+        var title = el("a", "a-title", p.name);
+        title.href = file.mine + "#id=" + id;
+        card.appendChild(title);
+        var meta = el("span", "a-meta", length(p) + (s.active === id ? " \u00b7 " + ui.yours : ""));
+        card.appendChild(meta);
+        var row = el("p", "myplan-actions");
+        var edit = el("button", "plan-undo", ui.edit);
+        edit.type = "button";
+        edit.addEventListener("click", function () {
+          draft = { id: id, name: p.name, days: p.days.map(function (d) { return d.slice(); }) };
+          drawDraft();
+          form.name.focus();
+          form.scrollIntoView({ block: "start" });
+        });
+        row.appendChild(edit);
+        var share = el("button", "plan-undo", ui.share);
+        share.type = "button";
+        share.addEventListener("click", function () { copy(shareLink(file, p), share, ui.copied); });
+        row.appendChild(share);
+        var del = el("button", "plan-undo", ui.delete);
+        del.type = "button";
+        del.addEventListener("click", function () {
+          if (!del.classList.contains("armed")) {
+            del.classList.add("armed");
+            del.textContent = ui.delete_confirm;
+            setTimeout(function () { del.classList.remove("armed"); del.textContent = ui.delete; }, 4000);
+            return;
+          }
+          var all2 = mine();
+          all2[id] = { at: Date.now() };
+          saveMine(all2);
+          var s2 = load();
+          if (s2.plans[id]) { delete s2.plans[id]; if (s2.active === id) s2.active = null; save(s2); }
+          if (location.hash === "#id=" + id) history.replaceState(null, "", location.pathname);
+          drawAll2();
+        });
+        row.appendChild(del);
+        card.appendChild(row);
+        li.appendChild(card);
+        listBox.appendChild(li);
+      });
+    }
+
+    // The open plan, laid out as a plan's page (plan_page) for drawPlanPage.
+    function drawView(id) {
+      view.textContent = "";
+      openRender = null;
+      var p = mine()[id];
+      if (!p || !p.days) {
+        view.hidden = !id;
+        if (id) view.appendChild(el("p", "notice", ui.not_here));
+        return;
+      }
+      var plan = ownPlan(file, id, p);
+      view.appendChild(el("h2", null, plan.name));
+      view.appendChild(el("p", "dek", length(p)));
+      var controls = el("div", "plan-controls");
+      controls.setAttribute("data-plan-page", id);
+      controls.setAttribute("data-total", plan.days.length);
+      controls.setAttribute("data-plans", root.getAttribute("data-plans"));
+      var actions = el("p", "actions");
+      var start = el("button", "button", ui.start);
+      start.type = "button";
+      start.setAttribute("data-plan-start", "");
+      start.setAttribute("data-continue", ui["continue"]);
+      var read = el("a", "button");
+      read.setAttribute("data-plan-read", "");
+      read.hidden = true;
+      read.href = "#";
+      var stop = el("button", "button ghost", ui.stop);
+      stop.type = "button";
+      stop.setAttribute("data-plan-stop", "");
+      var restart = el("button", "button ghost", ui.restart);
+      restart.type = "button";
+      restart.setAttribute("data-plan-restart", "");
+      [start, read, stop, restart].forEach(function (b) { actions.appendChild(b); });
+      controls.appendChild(actions);
+      var status = el("p", "plan-status");
+      status.setAttribute("data-plan-status", "");
+      status.setAttribute("aria-live", "polite");
+      controls.appendChild(status);
+      var extras = el("p", "plan-extras");
+      var ics = el("button", "plan-undo", ui.ics);
+      ics.type = "button";
+      ics.setAttribute("data-plan-ics", "");
+      extras.appendChild(ics);
+      var remind = el("a", "plan-remind", ui.remind);
+      remind.href = root.getAttribute("data-account") + "#email";
+      extras.appendChild(document.createTextNode(" "));
+      extras.appendChild(remind);
+      controls.appendChild(extras);
+      view.appendChild(controls);
+      var ol = el("ol", "plan-days");
+      plan.days.forEach(function (day, i) {
+        var li = el("li", "plan-day");
+        li.setAttribute("data-day", i + 1);
+        li.appendChild(el("span", "plan-day-n", fill(ui.day, { n: i + 1 })));
+        var chs = el("span", "plan-day-chs");
+        day.forEach(function (c, j) {
+          if (j) chs.appendChild(document.createTextNode(", "));
+          var a = el("a", null, c.n);
+          a.href = c.u;
+          chs.appendChild(a);
+        });
+        li.appendChild(chs);
+        var tick = el("button", "plan-tick");
+        tick.type = "button";
+        tick.setAttribute("data-plan-toggle", "");
+        tick.setAttribute("aria-pressed", "false");
+        tick.setAttribute("aria-label", fill(ui.day_done, { n: i + 1 }));
+        tick.hidden = true;
+        tick.textContent = "\u2713";
+        li.appendChild(tick);
+        ol.appendChild(li);
+      });
+      view.appendChild(ol);
+      view.hidden = false;
+      openRender = drawPlanPage(controls);
+    }
+
+    // A plan shared by link: shown with a button to keep it.
+    function drawShared() {
+      shared.textContent = "";
+      var p = fromLink(location.hash, file);
+      shared.hidden = !p;
+      if (!p) return;
+      shared.appendChild(el("p", "eyebrow", ui.shared));
+      shared.appendChild(el("h2", null, p.name));
+      shared.appendChild(el("p", "dek", length(p) + " \u00b7 " + p.days.map(function (d) {
+        return d.map(function (ref) { return (file.names[ref.split(".")[0]] || ref) + " " + ref.split(".")[1]; }).join(", ");
+      }).slice(0, 3).join(" \u00b7 ") + (p.days.length > 3 ? " \u2026" : "")));
+      var keep = el("button", "button", ui.shared_save);
+      keep.type = "button";
+      keep.addEventListener("click", function () {
+        var all = mine(), id = newId();
+        all[id] = { name: p.name, days: p.days, at: Date.now() };
+        saveMine(all);
+        location.hash = "#id=" + id;
+      });
+      shared.appendChild(keep);
+    }
+
+    // The form: chapters are added a range at a time, so many a day.
+    var books = file.books;
+    function bookOf(code) { return books.filter(function (b) { return b[0] === code; })[0]; }
+    function chapterOptions() {
+      var b = bookOf(form.book.value);
+      [form.from, form.to].forEach(function (sel, k) {
+        sel.textContent = "";
+        (b ? b[2] : []).forEach(function (c) {
+          var o = el("option", null, String(c));
+          o.value = c;
+          sel.appendChild(o);
+        });
+        if (k === 1 && b) sel.value = b[2][b[2].length - 1];
+      });
+    }
+    books.forEach(function (b) {
+      var o = el("option", null, b[1]);
+      o.value = b[0];
+      form.book.appendChild(o);
+    });
+    form.book.addEventListener("change", chapterOptions);
+    chapterOptions();
+
+    function drawDraft() {
+      form.name.value = draft.name;
+      dayList.textContent = "";
+      draft.days.forEach(function (day, i) {
+        var li = el("li", "myplan-day");
+        li.appendChild(el("span", "plan-day-n", fill(ui.day, { n: i + 1 })));
+        li.appendChild(el("span", "plan-day-chs", day.map(function (ref) {
+          return (file.names[ref.split(".")[0]] || ref) + " " + ref.split(".")[1];
+        }).join(", ")));
+        var x = el("button", "plan-undo", ui.remove_day);
+        x.type = "button";
+        x.setAttribute("aria-label", fill(ui.remove_day_label, { n: i + 1 }));
+        x.addEventListener("click", function () { draft.days.splice(i, 1); drawDraft(); });
+        li.appendChild(x);
+        dayList.appendChild(li);
+      });
+      note.textContent = draft.days.length ? length(draft) : ui.no_days;
+    }
+    form.name.addEventListener("input", function () { draft.name = form.name.value; });
+    form.querySelector("[data-add]").addEventListener("click", function () {
+      var b = bookOf(form.book.value);
+      if (!b) return;
+      var from = +form.from.value, to = +form.to.value, per = Math.max(1, Math.min(10, +form.per.value || 1));
+      if (to < from) { var x = from; from = to; to = x; }
+      var chs = b[2].filter(function (c) { return c >= from && c <= to; });
+      for (var i = 0; i < chs.length && draft.days.length < 400; i += per)
+        draft.days.push(chs.slice(i, i + per).map(function (c) { return b[0] + "." + c; }));
+      drawDraft();
+    });
+    form.querySelector("[data-clear]").addEventListener("click", function () {
+      draft = { id: null, name: "", days: [] };
+      drawDraft();
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.name.value.replace(/\s+/g, " ").trim();
+      if (!name) { note.textContent = ui.need_name; form.name.focus(); return; }
+      if (!draft.days.length) { note.textContent = ui.no_days; return; }
+      var all = mine(), id = draft.id || newId();
+      all[id] = { name: name.slice(0, 80), days: draft.days, at: Date.now() };
+      saveMine(all);
+      draft = { id: null, name: "", days: [] };
+      drawDraft();
+      location.hash = "#id=" + id;
+      note.textContent = ui.saved;
+    });
+
+    function drawAll2() {
+      var m = location.hash.match(/^#id=(my-[a-z0-9]+)$/);
+      drawShared();
+      drawView(m ? m[1] : null);
+      drawList();
+      if (m) view.scrollIntoView({ block: "start" });
+    }
+    window.addEventListener("hashchange", drawAll2);
+    document.addEventListener("owb:synced", drawAll2);
+    window.addEventListener("storage", function (e) { if (e.key === MINE || e.key === KEY) drawAll2(); });
+    drawDraft();
+    drawAll2();
+    return function () { if (openRender) openRender(); drawList(); };
+  }
+
   var todays = Array.prototype.slice.call(document.querySelectorAll("[data-plan-today]"));
   var bars = Array.prototype.slice.call(document.querySelectorAll("[data-plan-bar]"));
   var pageBox = document.querySelector("[data-plan-page]");
+  var mineBox = document.getElementById("myplans");
+  if (mineBox) {
+    fetchFile(mineBox.getAttribute("data-plans")).then(function (file) { drawMine(mineBox, file); });
+    return;
+  }
   if (!todays.length && !bars.length && !pageBox && !document.querySelector("[data-plan-card]")) return;
   var renderPage = pageBox ? drawPlanPage(pageBox) : null;
 

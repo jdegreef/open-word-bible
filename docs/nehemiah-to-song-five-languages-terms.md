@@ -288,9 +288,11 @@ Isaiah–Ezra notes hold.
   enemies (6:14; 13:29): « Souviens-toi, mon Dieu, de Tobiya et de Sanballat,
   selon leurs œuvres ».
 - 1:5 and 9:32: « le Dieu grand et redoutable, qui garde l’alliance et l’amour
-  fidèle envers ceux qui {{deity_pronoun:l’|L’}}aiment » [Deut 7:9; 10:17 B].
+  fidèle envers ceux qui {{deity_pronoun:l’|L’}}aiment » [Deut 7:9; 10:17 B];
+  at L « l’amour loyal », as *ḥesed* now reads at L in Exodus and Deuteronomy
+  (and in 9:17, 13:14, 13:22).
   9:17, 31: L « un Dieu de pardons, compatissant et favorable, lent à la colère
-  et grand en amour fidèle », B « … plein de tendre compassion et de grâce,
+  et grand en amour loyal », B « … plein de tendre compassion et de grâce,
   lent à se mettre en colère, riche en amour fidèle », R « tu pardonnes, tu es
   plein de tendresse et de bonté, tu ne te mets pas vite en colère » [Exod
   34:6, each level].
@@ -312,8 +314,9 @@ Isaiah–Ezra notes hold.
 **Esther**
 - Susa the citadel: « Suse la citadelle » (L), « la citadelle de Suse » (B),
   « la forteresse royale de Suse » (R); the city alone « Suse ».
-- *saris*: « eunuque » (L, B), « officier du palais » (R). The harem: « la
-  maison des femmes » (L), « le harem » (B), « le quartier des femmes » (R).
+- *saris*: « eunuque » (L, B), « fonctionnaire du palais » (R); R now follows
+  `kings-chronicles-five-languages-terms.md` (was « officier du palais »).
+  The harem: « la maison des femmes » (L), « le harem » (B), « le quartier des femmes » (R).
   Queen « la reine Vashti », « la reine Esther ».
 - The king's gate « la porte du roi »; satraps « les satrapes » (L, B), « les
   gouverneurs des régions » (R) [Ezra]; governors « les gouverneurs »;

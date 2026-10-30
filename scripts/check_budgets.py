@@ -34,8 +34,9 @@ BUDGETS = {
     # The largest script or style sheet (not counting the reader data
     # scripts, chapter-data/ and reader-<lang>.js) [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync;
-    # 33.1 KB on 2026-10-17 with personal verse notes].
-    "js_css_asset_gz": 36 * KB,
+    # 33.1 KB on 2026-10-17 with personal verse notes; 39 KB on 2026-10-30
+    # with the study tools, own plans and reading groups].
+    "js_css_asset_gz": 40 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
     # with Vietnamese and Korean as site languages, each about 250 MB, since
