@@ -26,6 +26,7 @@ from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
+from accounts import controls
 from accounts.auth import site_url
 from feedback.models import ReaderMessage
 from owb import refs
@@ -197,6 +198,10 @@ def _assign(m, who, editor):
 
 
 def _send_reply(m, reply, editor):
+    """Email the reply; True if it went, or if the reader turned these
+    emails off (they read it on their account page)."""
+    if not controls.wants(m.user, "replies"):
+        return True
     subject, body = REPLY
     label = verse_label(m.verse)
     quoted = "\n".join("> " + line for line in m.text.splitlines())

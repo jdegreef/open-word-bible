@@ -277,10 +277,9 @@ left for a reviewer:
 
 - Numbers above one hundred are in words in some blocks and figures in
   others (French, Swahili and Vietnamese 1 Kings 1–11 against the rest).
-- French "Your Majesty" at R is *ô roi* in most blocks, *mon seigneur le
-  roi* in 2 Kings 1–12; French *archiviste* (Kings, Chronicles) against
-  *chancelier* (2 Samuel 8:16) for the recorder.
+- (Resolved) French "Your Majesty" at R is now *ô roi* in 2 Kings 1–12 too,
+  and 2 Samuel 8:16 now says *archiviste* for the recorder.
 - Swahili *Bonde la Refaimu* (1 Chronicles 14:9) against *Bonde la
   Warefai* (2 Samuel 5); Swahili *agano* and *mkataba* for a treaty.
-- Vietnamese *thẩm phán* for judges, where the Joshua–Ruth drafts propose
-  *quan xét*.
+- Vietnamese judges of Israel now follow the Joshua–Ruth note: *quan xét*
+  (L, B), *thủ lĩnh* (R), where the drafts had *thẩm phán*.

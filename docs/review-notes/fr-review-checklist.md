@@ -386,7 +386,7 @@ group.
 
 Each was checked in `content/` before it was listed.
 
-- [ ] ***Ḥesed* at Literal.** The Psalms, Samuel, Joshua–Ruth and prophets
+- [x] ***Ḥesed* at Literal.** The Psalms, Samuel, Joshua–Ruth and prophets
   notes give « amour loyal » at L (about 210 occurrences), but the
   Pentateuch, Nehemiah and a few others say « amour fidèle » at L:
   [GEN 32:11](https://openwordbible.org/fr/gen/32/#v11), [EXO 20:6](https://openwordbible.org/fr/exo/20/#v6), [EXO 34:6](https://openwordbible.org/fr/exo/34/#v6), [NUM 14:18](https://openwordbible.org/fr/num/14/#v18), [DEU 7:9](https://openwordbible.org/fr/deu/7/#v9),
@@ -397,11 +397,13 @@ Each was checked in `content/` before it was listed.
   « amour loyal » against the rule: [JER 31:3](https://openwordbible.org/fr/jer/31/#v3), [JER 32:18](https://openwordbible.org/fr/jer/32/#v18),
   [PSA 109:26](https://openwordbible.org/fr/psa/109/#v26). The Lamentations–Twelve doc ("Parallels and New Testament
   quotations") leaves this to a ruling on the English question.
+  Fixed: « amour loyal » at L everywhere, as the Psalms, Samuel and Joshua–Ruth notes set (most text); the Exodus 34:6 quotations now read alike; JER 31:3, 32:18 and PSA 109:26 B say « amour fidèle ». 20 records; `pentateuch-fr-es-sw-terms.md`, the Lamentations–Twelve and Nehemiah notes updated.
 - [ ] **Isaiah's name.** `data/books.json` names the book « Ésaïe », but
   every French verse says « Isaïe » (about 175 occurrences, none of
   « Ésaïe »): [ISA 1:1](https://openwordbible.org/fr/isa/1/#v1), [2KI 19:2](https://openwordbible.org/fr/2ki/19/#v2), [MAT 8:17](https://openwordbible.org/fr/mat/8/#v17), [JHN 1:23](https://openwordbible.org/fr/jhn/1/#v23). Raised
   for the founder in `isaiah-jeremiah-ezra-five-languages-terms.md`, "Before
   review".
+  Left for review: the terms docs give « Isaïe » for the prophet but no rule for the book title, and the Isaiah note leaves the title to the founder; `data/books.json` unchanged.
 - [ ] **Officials (*sarim*).** At L, « princes » in Jeremiah, Esther, Ezra,
   Nehemiah and Chronicles ([JER 1:18](https://openwordbible.org/fr/jer/1/#v18), [EST 1:3](https://openwordbible.org/fr/est/1/#v3), [NEH 10:1](https://openwordbible.org/fr/neh/10/#v1),
   [2CH 12:5](https://openwordbible.org/fr/2ch/12/#v5)), « chefs » in Ezekiel and the Twelve ([EZK 11:1](https://openwordbible.org/fr/ezk/11/#v1),
@@ -410,55 +412,68 @@ Each was checked in `content/` before it was listed.
   [2KI 10:1](https://openwordbible.org/fr/2ki/10/#v1)) and « chefs » (Ezekiel, the Twelve). R is mostly
   « dirigeants ». The Esther note and the Lamentations–Twelve note record
   different words; choose one per level.
+  Left for review: the two notes disagree, the majority differs by level (« princes » at L, « chefs » at B), and *sar* also means commander and chief, so no safe mechanical alignment.
 - [ ] **Eunuchs, court officials (*saris*).** Kings and Daniel say
   « eunuques » (L), « hauts fonctionnaires » (B), « fonctionnaires (du
   palais) » (R) ([DAN 1:3](https://openwordbible.org/fr/dan/1/#v3), [2KI 18:17](https://openwordbible.org/fr/2ki/18/#v17)); Esther keeps « eunuque » at B
   and says « officiers du palais » at R ([EST 1:10](https://openwordbible.org/fr/est/1/#v10)).
   `kings-chronicles-five-languages-terms.md` and
   `nehemiah-to-song-five-languages-terms.md` ("Esther") disagree.
-- [ ] **The family redeemer (*goʾel*).** « racheteur » in Leviticus 25
+  Partly fixed: Esther R now « fonctionnaire(s) du palais », as Kings and Daniel (12 records; Esther note updated). Esther B keeps « eunuques », where the English B says "eunuchs" (the harem); left for review.
+- [x] **The family redeemer (*goʾel*).** « racheteur » in Leviticus 25
   ([LEV 25:25](https://openwordbible.org/fr/lev/25/#v25), uncertain), « rédempteur » in [NUM 5:8](https://openwordbible.org/fr/num/5/#v8) and « proche
   parent rédempteur » in Ruth ([RUT 2:20](https://openwordbible.org/fr/rut/2/#v20), [RUT 4:1](https://openwordbible.org/fr/rut/4/#v1)), as
   `joshua-ruth-five-languages-terms.md` sets.
-- [ ] **Nazirite.** « naziréen », « naziréat » in Numbers 6 and Amos
+  Fixed: Leviticus 25:25–26 now « rédempteur » (L), « proche parent rédempteur » (B, R), as the Joshua–Ruth note sets. 2 records.
+- [x] **Nazirite.** « naziréen », « naziréat » in Numbers 6 and Amos
   ([NUM 6:2](https://openwordbible.org/fr/num/6/#v2), [NUM 6:13](https://openwordbible.org/fr/num/6/#v13), [AMO 2:11](https://openwordbible.org/fr/amo/2/#v11)); « nazir » in Judges
   ([JDG 13:5](https://openwordbible.org/fr/jdg/13/#v5), [JDG 16:17](https://openwordbible.org/fr/jdg/16/#v17)), as the Joshua–Ruth table gives it.
-- [ ] **Restoring the fortunes.** The prophets say « rétablir le sort » at L
+  Fixed: « nazir », « nazirs » (the only French term in the docs, Joshua–Ruth table) in Numbers 6 and Amos 2; « naziréat » kept for the state. 13 records.
+- [x] **Restoring the fortunes.** The prophets say « rétablir le sort » at L
   and B ([JER 30:3](https://openwordbible.org/fr/jer/30/#v3), [EZK 39:25](https://openwordbible.org/fr/ezk/39/#v25), [AMO 9:14](https://openwordbible.org/fr/amo/9/#v14), [JOL 4:1](https://openwordbible.org/fr/jol/4/#v1)); the Psalms
   mix « ramener les captifs » (L: [PSA 85:2](https://openwordbible.org/fr/psa/85/#v2), [PSA 126:1](https://openwordbible.org/fr/psa/126/#v1)), « rétablir le
   sort » (L: [PSA 14:7](https://openwordbible.org/fr/psa/14/#v7)) and « changer le sort » (B: [PSA 14:7](https://openwordbible.org/fr/psa/14/#v7),
   [PSA 53:7](https://openwordbible.org/fr/psa/53/#v7), [PSA 126:1](https://openwordbible.org/fr/psa/126/#v1)).
-- [ ] **The book of Jashar.** « le livre du Yashar » at L in [2SA 1:18](https://openwordbible.org/fr/2sa/1/#v18),
+  Fixed: « rétablir le sort » at L and B, as the prophets' notes set, in PSA 14:7, 53:7, 85:2, 126:1, 126:4, DEU 30:3 and JOB 42:10 B. 7 records.
+- [x] **The book of Jashar.** « le livre du Yashar » at L in [2SA 1:18](https://openwordbible.org/fr/2sa/1/#v18),
   « le livre du Juste » at L in [JOS 10:13](https://openwordbible.org/fr/jos/10/#v13) (B and R agree on « du
   Juste »). The Samuel note sets « Yashar » at L.
-- [ ] **The recorder (*mazkir*).** « chancelier » in [2SA 8:16](https://openwordbible.org/fr/2sa/8/#v16),
+  Fixed: JOS 10:13 L « le livre du Yashar », as 2 Samuel 1:18. 1 record.
+- [x] **The recorder (*mazkir*).** « chancelier » in [2SA 8:16](https://openwordbible.org/fr/2sa/8/#v16),
   « archiviste » in [2SA 20:24](https://openwordbible.org/fr/2sa/20/#v24), [1KI 4:3](https://openwordbible.org/fr/1ki/4/#v3), [2KI 18:18](https://openwordbible.org/fr/2ki/18/#v18) and
   [ISA 36:3](https://openwordbible.org/fr/isa/36/#v3). Listed in the Kings note, "Before review".
-- [ ] **"Your Majesty" at Readable in 2 Kings.** « mon seigneur le roi »
+  Fixed: 2SA 8:16 « archiviste », as the Kings note. 1 record (and the 1CH 18:15 decision); Kings note updated.
+- [x] **"Your Majesty" at Readable in 2 Kings.** « mon seigneur le roi »
   where the English R says "Your Majesty" ([2KI 6:12](https://openwordbible.org/fr/2ki/6/#v12), [2KI 6:26](https://openwordbible.org/fr/2ki/6/#v26)),
   against « ô roi » in the other books. Listed in the Kings note.
+  Fixed: « ô roi » at R in 2KI 6:12, 6:26, 8:5, and also in 2 Samuel 9, 14 and 19, which said « mon roi » or « mon seigneur le roi » (Samuel note). 21 records; Kings note updated.
 - [ ] **Numbers above one hundred.** Words in some places, figures in
   others, at Balanced: « deux cent mille » ([1SA 15:4](https://openwordbible.org/fr/1sa/15/#v4)), « quatre
   cents » ([1KI 22:6](https://openwordbible.org/fr/1ki/22/#v6)) against « 450 … 400 » ([1KI 18:19](https://openwordbible.org/fr/1ki/18/#v19)), « 20 000 »
   ([2SA 10:6](https://openwordbible.org/fr/2sa/10/#v6)). The style guide says words up
   to *cent*; choose a rule for larger numbers. Listed in the Samuel and
   Kings notes.
+  Left for review: the style guide stops at *cent* and the notes differ for larger numbers; a rule has to be chosen first.
 - [ ] **A gender span on a pronoun.** `{{gender:il ou elle|il}}` in
   [MAT 18:15](https://openwordbible.org/fr/mat/18/#v15)–17 and [LUK 17:3](https://openwordbible.org/fr/luk/17/#v3)–4, at every level, where the style guide
   (§7) says generic pronouns take no span.
-- [ ] **Church or congregation.** The style guide gives « l’Église » for the
+  Left for review: style guide §7 also puts words that agree with a spanned noun under its setting, and here « il ou elle » agrees with « ton frère ou ta sœur », so the guide does not settle it.
+- [x] **Church or congregation.** The style guide gives « l’Église » for the
   whole body and « l’église » for one congregation, but [ACT 5:11](https://openwordbible.org/fr/act/5/#v11) says
   « toute l’Église » of the church in Jerusalem, called « l’église de
   Jérusalem » in [ACT 8:1](https://openwordbible.org/fr/act/8/#v1) and [ACT 11:22](https://openwordbible.org/fr/act/11/#v22); [1CO 1:2](https://openwordbible.org/fr/1co/1/#v2) « l’église de
   Dieu qui est à Corinthe » against [1CO 11:22](https://openwordbible.org/fr/1co/11/#v22) « l’Église de Dieu ».
-- [ ] **The ram's horn (*shofar*) at Readable.** « cor » in Judges
+  Fixed: ACT 5:11 and 1CO 11:22 now lowercase « l’église », one congregation, as the style guide sets. 2 records.
+- [x] **The ram's horn (*shofar*) at Readable.** « cor » in Judges
   ([JDG 3:27](https://openwordbible.org/fr/jdg/3/#v27), [JDG 7:20](https://openwordbible.org/fr/jdg/7/#v20)), « corne de bélier » in [1KI 1:34](https://openwordbible.org/fr/1ki/1/#v34),
   « trompette » in Joshua and the prophets ([JOS 6:4](https://openwordbible.org/fr/jos/6/#v4), [JER 4:5](https://openwordbible.org/fr/jer/4/#v5),
   [JOL 2:1](https://openwordbible.org/fr/jol/2/#v1)). The prophets' note sets « cor » (L, B) and « trompette » (R).
-- [ ] **Watchman.** « sentinelle » in Ezekiel and Hosea ([EZK 3:17](https://openwordbible.org/fr/ezk/3/#v17),
+  Fixed: « trompette » at R in Judges 3:27–7:22 and 1KI 1:34–41, as the prophets' note and the English R. 11 records; Joshua–Ruth table updated. Corne de bélier stays where the English R says "ram's horn" or a metal trumpet is beside it.
+- [x] **Watchman.** « sentinelle » in Ezekiel and Hosea ([EZK 3:17](https://openwordbible.org/fr/ezk/3/#v17),
   [HOS 9:8](https://openwordbible.org/fr/hos/9/#v8)), « guetteur » in Samuel, Isaiah and Jeremiah ([2SA 18:24](https://openwordbible.org/fr/2sa/18/#v24),
   [ISA 52:8](https://openwordbible.org/fr/isa/52/#v8), [JER 31:6](https://openwordbible.org/fr/jer/31/#v6)). Ezekiel chose one word deliberately; the
   other books were left mixed.
+  Fixed: « sentinelle(s) », the word the Ezekiel note sets for the watchman, in 1SA 14:16, 2SA 18:24–27, ISA 21:6 B, 21:12 B, 52:8, 56:10, 62:6 L, JER 6:17 B R and 31:6, with agreement. 12 records. « la tour des guetteurs » (Kings) is kept as a fixed name.
 
 ## 5. Passages to read closely
 

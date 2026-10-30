@@ -117,7 +117,7 @@ is the subject, follow the English wording and decisions.
 | the Passover; Unleavened Bread | la Pâque; la fête des Pains sans levain | la Pascua; la fiesta de los Panes sin Levadura | Pasaka; Sikukuu ya Mikate Isiyotiwa Chachu |
 | the Day of Atonement | le jour des Expiations | el día de la Expiación | Siku ya Upatanisho |
 | serious skin disease (*tsaraʿat*) | une maladie de peau grave (B, R), "lèpre" in a decision | una enfermedad grave de la piel | ugonjwa mbaya wa ngozi |
-| steadfast love (*ḥesed*) | as the English level: l’amour fidèle, la fidélité | el amor fiel | upendo usiokoma, fadhili |
+| steadfast love (*ḥesed*) | l’amour loyal (L), l’amour fidèle (B, R), la fidélité; now follows `psalms-proverbs-five-languages-terms.md` (was « amour fidèle » at L as the English level) | el amor fiel | upendo usiokoma, fadhili |
 | Sheol | le séjour des morts (L: le Shéol) | el Seol (L); el lugar de los muertos (B, R) | Kuzimu |
 | the land flowing with milk and honey | un pays où coulent le lait et le miel | una tierra que fluye leche y miel | nchi itiririkayo maziwa na asali |
 | the wilderness | le désert | el desierto | jangwa, nyika |

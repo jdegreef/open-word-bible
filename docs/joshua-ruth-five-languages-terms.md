@@ -59,7 +59,7 @@ Decision text stays in English, quoting the words of the language.
 | cities of refuge | villes de refuge | ciudades de refugio | miji ya makimbilio | các thành ẩn náu | 도피성 |
 | inheritance; allotment, lot | héritage, patrimoine; lot, sort | heredad; suerte | urithi; kura | sản nghiệp; thăm | 유산, 기업; 제비 |
 | the ark of the covenant | l’arche de l’alliance | el arca del pacto | sanduku la agano | hòm giao ước | 언약궤 |
-| ram's horn / trumpet (*shofar*) | cor de bélier | cuerno de carnero | baragumu | kèn sừng cừu đực | 숫양 뿔나팔 |
+| ram's horn / trumpet (*shofar*) | cor de bélier, cor (L, B); trompette (R), as the prophets' note sets at R | cuerno de carnero | baragumu | kèn sừng cừu đực | 숫양 뿔나팔 |
 | threshing floor | aire | era | uwanja wa kupuria | sân đập lúa | 타작마당 |
 
 ## Names
