@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "Então {{divine_name:o SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
+          "B": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -173,6 +178,11 @@
           "L": "\"Envia para ti homens, e eles espiarão a terra de Canaã, que eu estou dando aos filhos de Israel. Um homem, um homem para [cada] tribo dos seus pais vocês enviarão, cada um [deles] um líder entre eles.\"",
           "B": "\"Envia homens para espiar a terra de Canaã, que eu estou dando aos israelitas. Enviem um homem de cada tribo dos seus antepassados, e cada um deles deve ser um líder entre eles.\"",
           "R": "\"Envia alguns homens para explorar a terra de Canaã. Eu estou dando essa terra aos israelitas. Envia um homem de cada tribo, e cada um deve ser um líder na sua tribo.\""
+        },
+        "am": {
+          "L": "«ለራስህ ሰዎችን ላክ፤ እኔ ለእስራኤል ልጆች የምሰጣትንም የከነዓንን ምድር ይሰልሉ። ለአባቶቹ ነገድ አንድ ሰው፣ አንድ ሰው ትልካለህ፤ እያንዳንዱም በመካከላቸው አለቃ [ይሁን]።»",
+          "B": "«ለእስራኤል ልጆች የምሰጣትን የከነዓንን ምድር የሚቃኙ ሰዎችን ላክ። ከእያንዳንዱ የአባቶች ነገድ አንድ ሰው ላክ፤ እያንዳንዳቸውም በመካከላቸው አለቃ የሆኑ ይሁኑ።»",
+          "R": "«የከነዓንን ምድር እንዲቃኙ ሰዎችን ላክ። ያችን ምድር ለእስራኤላውያን እሰጣታለሁ። ከእያንዳንዱ ነገድ አንድ ሰው ላክ፤ እያንዳንዱም በነገዱ ውስጥ መሪ መሆን አለበት።»"
         }
       },
       "decisions": [
@@ -480,6 +490,50 @@
           "reason": "The first command is singular, to Moses, so it uses God's \"tu\" (\"Envia\"); the Hebrew then turns to the plural (\"you shall send\"), Moses with those who help him, which Literal and Balanced keep with \"vocês\". Readable keeps the singular, as the English Readable gives one simple command.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040130020112",
+            "o040130020121"
+          ],
+          "choice": "\"የእስራኤል ልጆች\" (L, B) and \"እስራኤላውያን\" (R) with no gender span",
+          "alternatives": [
+            "a span like the English {{gender:children|sons}}"
+          ],
+          "reason": "\"ልጆች\" already includes daughters, so Amharic has no second wording for the setting to offer; as the Pentateuch terms set, the phrase is written plainly through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040130020042"
+          ],
+          "choice": "\"ይሰልሉ\" (spy out, L); \"ይቃኙ\" / \"እንዲቃኙ\" (scout, survey, B and R), kept through chapters 13-14",
+          "alternatives": [
+            "\"ይሰልሉ\" at every level",
+            "\"ያጠኑ\" (study) at Readable"
+          ],
+          "reason": "Literal keeps the plain word for spying; Balanced and Readable use the everyday verb for going through a land to look it over, which is what the mission is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -550,6 +604,11 @@
           "L": "E Moisés os enviou do deserto de Parã, pela boca {{divine_name:do SENHOR|de Javé}}; todos eles [eram] homens [que eram] chefes dos filhos de Israel.",
           "B": "Assim Moisés os enviou do deserto de Parã, por ordem {{divine_name:do SENHOR|de Javé}}. Todos eles eram homens que estavam entre os chefes dos israelitas.",
           "R": "Então Moisés os enviou do deserto de Parã, como {{divine_name:o SENHOR|Javé}} tinha mandado. Todos eles eram líderes dos israelitas."
+        },
+        "am": {
+          "L": "ሙሴም እንደ {{divine_name:እግዚአብሔር|ያህዌ}} አፍ ከፋራን ምድረ በዳ ላካቸው፤ ሁሉም የእስራኤል ልጆች አለቆች የሆኑ ሰዎች [ነበሩ]።",
+          "B": "ሙሴም {{divine_name:እግዚአብሔር|ያህዌ}} ባዘዘው መሠረት ከፋራን ምድረ በዳ ላካቸው። ሁሉም በእስራኤል ልጆች መካከል አለቆች የነበሩ ሰዎች ናቸው።",
+          "R": "ሙሴም {{divine_name:እግዚአብሔር|ያህዌ}} እንዳዘዘው ከፋራን ምድረ በዳ ላካቸው። ሁሉም የእስራኤላውያን መሪዎች ነበሩ።"
         }
       },
       "decisions": [
@@ -638,6 +697,25 @@
           "reason": "Literal keeps the Hebrew picture \"at the mouth of\", as Exodus 17:1 does in Korean; Balanced and Readable say \"commanded\" (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o040130030071"
+          ],
+          "choice": "\"እንደ እግዚአብሔር አፍ\" (according to the mouth of the LORD)",
+          "alternatives": [
+            "\"እግዚአብሔር እንዳዘዘው\" (as the LORD commanded)"
+          ],
+          "reason": "Literal keeps the Hebrew idiom; Balanced and Readable say what it means, at his command.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -700,6 +778,11 @@
           "L": "E estes [são] os nomes deles: para a tribo de Rúben, Samua, filho de Zacur.",
           "B": "Estes são os nomes deles: da tribo de Rúben, Samua, filho de Zacur.",
           "R": "Aqui estão os nomes deles. Da tribo de Rúben: Samua, filho de Zacur."
+        },
+        "am": {
+          "L": "ስሞቻቸውም እነዚህ [ናቸው]፦ ለሮቤል ነገድ፣ የዘኩር ልጅ ሻሙአ።",
+          "B": "ስሞቻቸው እነዚህ ናቸው፦ ከሮቤል ነገድ፣ የዘኩር ልጅ ሻሙአ።",
+          "R": "ስሞቻቸው እነዚህ ናቸው። ከሮቤል ነገድ፣ የዘኩር ልጅ ሻሙአ።"
         }
       },
       "decisions": [
@@ -908,6 +991,11 @@
           "L": "Para a tribo de Simeão, Safate, filho de Hori.",
           "B": "Da tribo de Simeão, Safate, filho de Hori.",
           "R": "Da tribo de Simeão: Safate, filho de Hori."
+        },
+        "am": {
+          "L": "ለስምዖን ነገድ፣ የሆሪ ልጅ ሣፋጥ።",
+          "B": "ከስምዖን ነገድ፣ የሆሪ ልጅ ሣፋጥ።",
+          "R": "ከስምዖን ነገድ፣ የሆሪ ልጅ ሣፋጥ።"
         }
       },
       "decisions": [
@@ -986,6 +1074,11 @@
           "L": "Para a tribo de Judá, Calebe, filho de Jefoné.",
           "B": "Da tribo de Judá, Calebe, filho de Jefoné.",
           "R": "Da tribo de Judá: Calebe, filho de Jefoné."
+        },
+        "am": {
+          "L": "ለይሁዳ ነገድ፣ የዮፎኒ ልጅ ካሌብ።",
+          "B": "ከይሁዳ ነገድ፣ የዮፎኒ ልጅ ካሌብ።",
+          "R": "ከይሁዳ ነገድ፣ የዮፎኒ ልጅ ካሌብ።"
         }
       },
       "decisions": [
@@ -1061,6 +1154,11 @@
           "L": "Para a tribo de Issacar, Igal, filho de José.",
           "B": "Da tribo de Issacar, Igal, filho de José.",
           "R": "Da tribo de Issacar: Igal, filho de José."
+        },
+        "am": {
+          "L": "ለይሳኮር ነገድ፣ የዮሴፍ ልጅ ይግኣል።",
+          "B": "ከይሳኮር ነገድ፣ የዮሴፍ ልጅ ይግኣል።",
+          "R": "ከይሳኮር ነገድ፣ የዮሴፍ ልጅ ይግኣል።"
         }
       },
       "decisions": [
@@ -1154,6 +1252,11 @@
           "L": "Para a tribo de Efraim, Oseias, filho de Num.",
           "B": "Da tribo de Efraim, Oseias, filho de Num.",
           "R": "Da tribo de Efraim: Oseias, filho de Num."
+        },
+        "am": {
+          "L": "ለኤፍሬም ነገድ፣ የነዌ ልጅ ሆሴዕ።",
+          "B": "ከኤፍሬም ነገድ፣ የነዌ ልጅ ሆሴዕ።",
+          "R": "ከኤፍሬም ነገድ፣ የነዌ ልጅ ሆሴዕ።"
         }
       },
       "decisions": [
@@ -1294,6 +1397,11 @@
           "L": "Para a tribo de Benjamim, Palti, filho de Rafu.",
           "B": "Da tribo de Benjamim, Palti, filho de Rafu.",
           "R": "Da tribo de Benjamim: Palti, filho de Rafu."
+        },
+        "am": {
+          "L": "ለብንያም ነገድ፣ የራፉ ልጅ ፈልጢ።",
+          "B": "ከብንያም ነገድ፣ የራፉ ልጅ ፈልጢ።",
+          "R": "ከብንያም ነገድ፣ የራፉ ልጅ ፈልጢ።"
         }
       },
       "decisions": [
@@ -1372,6 +1480,11 @@
           "L": "Para a tribo de Zebulom, Gadiel, filho de Sodi.",
           "B": "Da tribo de Zebulom, Gadiel, filho de Sodi.",
           "R": "Da tribo de Zebulom: Gadiel, filho de Sodi."
+        },
+        "am": {
+          "L": "ለዛብሎን ነገድ፣ የሶዲ ልጅ ጉዲኤል።",
+          "B": "ከዛብሎን ነገድ፣ የሶዲ ልጅ ጉዲኤል።",
+          "R": "ከዛብሎን ነገድ፣ የሶዲ ልጅ ጉዲኤል።"
         }
       },
       "decisions": [
@@ -1453,6 +1566,11 @@
           "L": "Para a tribo de José, para a tribo de Manassés, Gadi, filho de Susi.",
           "B": "Da tribo de José, isto é, da tribo de Manassés, Gadi, filho de Susi.",
           "R": "Dos descendentes de José, da tribo de Manassés: Gadi, filho de Susi."
+        },
+        "am": {
+          "L": "ለዮሴፍ ነገድ፣ ለምናሴ ነገድ፣ የሱሲ ልጅ ጋዲ።",
+          "B": "ከዮሴፍ ነገድ፣ ማለትም ከምናሴ ነገድ፣ የሱሲ ልጅ ጋዲ።",
+          "R": "ከዮሴፍ ዘሮች፣ ከምናሴ ነገድ፣ የሱሲ ልጅ ጋዲ።"
         }
       },
       "decisions": [
@@ -1627,6 +1745,11 @@
           "L": "Para a tribo de Dã, Amiel, filho de Gemali.",
           "B": "Da tribo de Dã, Amiel, filho de Gemali.",
           "R": "Da tribo de Dã: Amiel, filho de Gemali."
+        },
+        "am": {
+          "L": "ለዳን ነገድ፣ የገማሊ ልጅ ዓሚኤል።",
+          "B": "ከዳን ነገድ፣ የገማሊ ልጅ ዓሚኤል።",
+          "R": "ከዳን ነገድ፣ የገማሊ ልጅ ዓሚኤል።"
         }
       },
       "decisions": [
@@ -1705,6 +1828,11 @@
           "L": "Para a tribo de Aser, Setur, filho de Micael.",
           "B": "Da tribo de Aser, Setur, filho de Micael.",
           "R": "Da tribo de Aser: Setur, filho de Micael."
+        },
+        "am": {
+          "L": "ለአሴር ነገድ፣ የሚካኤል ልጅ ሰቱር።",
+          "B": "ከአሴር ነገድ፣ የሚካኤል ልጅ ሰቱር።",
+          "R": "ከአሴር ነገድ፣ የሚካኤል ልጅ ሰቱር።"
         }
       },
       "decisions": [
@@ -1783,6 +1911,11 @@
           "L": "Para a tribo de Naftali, Naabi, filho de Vofsi.",
           "B": "Da tribo de Naftali, Naabi, filho de Vofsi.",
           "R": "Da tribo de Naftali: Naabi, filho de Vofsi."
+        },
+        "am": {
+          "L": "ለንፍታሌም ነገድ፣ የዋፍሲ ልጅ ናሕቢ።",
+          "B": "ከንፍታሌም ነገድ፣ የዋፍሲ ልጅ ናሕቢ።",
+          "R": "ከንፍታሌም ነገድ፣ የዋፍሲ ልጅ ናሕቢ።"
         }
       },
       "decisions": [
@@ -1861,6 +1994,11 @@
           "L": "Para a tribo de Gade, Geuel, filho de Maqui.",
           "B": "Da tribo de Gade, Geuel, filho de Maqui.",
           "R": "Da tribo de Gade: Geuel, filho de Maqui."
+        },
+        "am": {
+          "L": "ለጋድ ነገድ፣ የማኪ ልጅ ጉኤል።",
+          "B": "ከጋድ ነገድ፣ የማኪ ልጅ ጉኤል።",
+          "R": "ከጋድ ነገድ፣ የማኪ ልጅ ጉኤል።"
         }
       },
       "decisions": [
@@ -1969,6 +2107,11 @@
           "L": "Estes [são] os nomes dos homens que Moisés enviou para espiar a terra. E Moisés chamou Oseias, filho de Num, [de] Josué.",
           "B": "Estes são os nomes dos homens que Moisés enviou para espiar a terra. E Moisés deu a Oseias, filho de Num, o nome de Josué.",
           "R": "Esses são os nomes dos homens que Moisés enviou para explorar a terra. Moisés deu a Oseias, filho de Num, um novo nome: Josué."
+        },
+        "am": {
+          "L": "ሙሴ ምድሪቱን እንዲሰልሉ የላካቸው ሰዎች ስሞች እነዚህ [ናቸው]። ሙሴም የነዌን ልጅ ሆሴዕን ኢያሱ ብሎ ጠራው።",
+          "B": "ሙሴ ምድሪቱን እንዲቃኙ የላካቸው ሰዎች ስሞች እነዚህ ናቸው። ሙሴም የነዌን ልጅ ሆሴዕን ኢያሱ የሚል ስም አወጣለት።",
+          "R": "ሙሴ ምድሪቱን እንዲቃኙ የላካቸው ሰዎች ስሞች እነዚህ ናቸው። ሙሴ ለነዌ ልጅ ለሆሴዕ ኢያሱ የሚል አዲስ ስም ሰጠው።"
         }
       },
       "decisions": [
@@ -2121,6 +2264,11 @@
           "L": "E Moisés os enviou para espiar a terra de Canaã, e lhes disse: \"Subam por aqui ao Neguebe, e subam à região montanhosa,",
           "B": "Quando Moisés os enviou para espiar a terra de Canaã, ele lhes disse: \"Subam por este caminho até o Neguebe e continuem subindo até a região montanhosa,",
           "R": "Moisés os enviou para explorar a terra de Canaã. Ele disse a eles: \"Vão para o norte, passando pelo deserto do Neguebe, e sigam até a região montanhosa."
+        },
+        "am": {
+          "L": "ሙሴም የከነዓንን ምድር እንዲሰልሉ ላካቸው፤ እንዲህም አላቸው፦ «በዚህ በኩል ወደ ኔጌብ ውጡ፤ ወደ ኮረብታማውም አገር ውጡ፤",
+          "B": "ሙሴ የከነዓንን ምድር እንዲቃኙ በላካቸው ጊዜ እንዲህ አላቸው፦ «በዚህ መንገድ ወደ ኔጌብ ውጡ፤ ከዚያም ወደ ኮረብታማው አገር ቀጥሉ፤",
+          "R": "ሙሴ የከነዓንን ምድር እንዲቃኙ ላካቸው። እንዲህም አላቸው፦ «በኔጌብ ምድረ በዳ በኩል ወደ ሰሜን ሂዱ፤ ከዚያም ወደ ኮረብታማው አገር ውጡ።"
         }
       },
       "decisions": [
@@ -2375,6 +2523,11 @@
           "L": "e vejam a terra, como ela [é], e o povo que habita nela, se ele [é] forte ou fraco, se [é] pouco ou numeroso,",
           "B": "e vejam como é a terra e se o povo que vive nela é forte ou fraco, pequeno ou numeroso,",
           "R": "Descubram como é a terra. Vejam se o povo que mora lá é forte ou fraco, e se é pouca ou muita gente."
+        },
+        "am": {
+          "L": "ምድሪቱንም ምን እንደ ሆነች፣ በእርሷም ላይ የሚኖረውን ሕዝብ ብርቱ ወይም ደካማ፣ ጥቂት ወይም ብዙ እንደ ሆነ እዩ፤",
+          "B": "ምድሪቱ ምን እንደምትመስል፣ በውስጧ የሚኖረውም ሕዝብ ብርቱ ወይም ደካማ፣ ጥቂት ወይም ብዙ እንደ ሆነ እዩ፤",
+          "R": "ምድሪቱ ምን እንደምትመስል ተመልከቱ። በዚያ የሚኖሩት ሰዎች ብርቱዎች ወይም ደካሞች፣ ጥቂቶች ወይም ብዙዎች መሆናቸውን እዩ።"
         }
       },
       "decisions": [
@@ -2557,6 +2710,11 @@
           "L": "e como [é] a terra em que ele habita, se ela [é] boa ou má, e como [são] as cidades em que ele habita, se em acampamentos ou em fortalezas,",
           "B": "em que tipo de terra ele vive, se é boa ou ruim, e em que tipo de cidades vive, se são acampamentos abertos ou cidades fortificadas,",
           "R": "Descubram se a terra onde esse povo vive é boa ou ruim. Vejam se as cidades deles são só acampamentos abertos ou se têm muralhas fortes em volta."
+        },
+        "am": {
+          "L": "የሚኖሩባትም ምድር ምን እንደ ሆነች፣ መልካም ወይም ክፉ እንደ ሆነች፣ የሚኖሩባቸውም ከተሞች ምን እንደ ሆኑ፣ በሰፈሮች ወይም በምሽጎች እንደ ሆኑ [እዩ]፤",
+          "B": "የሚኖሩባት ምድር ምን ዓይነት እንደ ሆነች፣ መልካም ወይም መጥፎ እንደ ሆነች፣ የሚኖሩባቸውም ከተሞች ምን ዓይነት እንደ ሆኑ፣ ክፍት ሰፈሮች ወይም የተመሸጉ ከተሞች እንደ ሆኑ ተመልከቱ፤",
+          "R": "የሚኖሩባት ምድር ጥሩ ወይም መጥፎ መሆኗን እወቁ። ከተሞቻቸው ክፍት ሰፈሮች ወይም በጠንካራ ቅጥር የተከበቡ መሆናቸውን እዩ።"
         }
       },
       "decisions": [
@@ -2709,6 +2867,11 @@
           "L": "e como [é] a terra, se ela [é] gorda ou magra, se há árvores nela ou não. E sejam fortes, e tomem do fruto da terra.\" E aqueles dias [eram] os dias das primeiras uvas maduras.",
           "B": "e se o solo é fértil ou pobre, e se há árvores nela ou não. Tenham coragem e tragam alguns frutos da terra.\" Era a época das primeiras uvas maduras.",
           "R": "Descubram se o solo é bom para plantar e se crescem árvores lá. Sejam corajosos e tragam alguns dos frutos que crescem na terra.\" Era a época do ano em que as primeiras uvas estavam amadurecendo."
+        },
+        "am": {
+          "L": "ምድሪቱም ምን እንደ ሆነች፣ ለም ወይም ደካማ እንደ ሆነች፣ በእርሷም ውስጥ ዛፍ ቢኖር ወይም ባይኖር [እዩ]። በርቱ፤ ከምድሪቱም ፍሬ ውሰዱ።» ቀኖቹም የመጀመሪያው የወይን ፍሬ [የሚደርስበት] ቀኖች ነበሩ።",
+          "B": "አፈሩ ለም ወይም ደካማ እንደ ሆነ፣ ዛፍም ቢኖርበት ወይም ባይኖርበት ተመልከቱ። ደፋሮች ሁኑ፤ ከምድሪቱም ፍሬ ይዛችሁ ተመለሱ።» ወቅቱ የመጀመሪያው የወይን ፍሬ የሚበስልበት ጊዜ ነበር።",
+          "R": "አፈሩ ለእርሻ ጥሩ መሆኑን፣ ዛፎችም በዚያ ይበቅሉ እንደ ሆነ እወቁ። ደፋሮች ሁኑ፤ በምድሪቱ ከሚበቅለውም ፍሬ ጥቂት ይዛችሁ ኑ።» ጊዜው የመጀመሪያዎቹ የወይን ዘለላዎች መብሰል የጀመሩበት ወቅት ነበር።"
         }
       },
       "decisions": [
@@ -2906,6 +3069,11 @@
           "L": "E subiram e espiaram a terra desde o deserto de Zim até Reobe, em Lebo-Hamate.",
           "B": "Eles subiram e espiaram a terra desde o deserto de Zim até Reobe, perto de Lebo-Hamate.",
           "R": "Eles foram e exploraram a terra, desde o deserto de Zim, no sul, até Reobe, perto de Lebo-Hamate, bem no norte."
+        },
+        "am": {
+          "L": "እነርሱም ወጡ፤ ምድሪቱንም ከጺን ምድረ በዳ እስከ ረአብ፣ እስከ ሌቦ ሐማት ድረስ ሰለሉ።",
+          "B": "ስለዚህ ወጥተው ምድሪቱን ከጺን ምድረ በዳ ጀምሮ በሌቦ ሐማት አጠገብ እስካለችው እስከ ረአብ ድረስ ቃኙ።",
+          "R": "ስለዚህ ሄደው ምድሪቱን ቃኙ። በደቡብ ካለው ከጺን ምድረ በዳ ጀምሮ በሩቅ ሰሜን በሌቦ ሐማት አጠገብ እስካለችው እስከ ረአብ ድረስ ሄዱ።"
         }
       },
       "decisions": [
@@ -3132,6 +3300,11 @@
           "L": "E subiram pelo Neguebe, e ele chegou até Hebrom; e ali [estavam] Aimã, Sesai e Talmai, os nascidos de Anaque. (Ora, Hebrom foi construída sete anos antes de Zoã do Egito.)",
           "B": "Eles subiram pelo Neguebe e chegaram a Hebrom, onde viviam Aimã, Sesai e Talmai, os descendentes de Anaque. (Hebrom tinha sido construída sete anos antes de Zoã, no Egito.)",
           "R": "Eles subiram pelo deserto do Neguebe e chegaram à cidade de Hebrom. Ali viviam Aimã, Sesai e Talmai. Eles eram anaquins, descendentes de Anaque, um povo conhecido por ser muito alto. Hebrom foi construída sete anos antes da cidade de Zoã, no Egito."
+        },
+        "am": {
+          "L": "ወደ ኔጌብም ወጡ፤ ወደ ኬብሮንም መጣ፤ በዚያም ከዔናቅ የተወለዱት አኪመን፣ ሴሲና ተላሚ ነበሩ። (ኬብሮንም ከግብፅ ጾዓን ሰባት ዓመት በፊት ተሠርታ ነበር።)",
+          "B": "በኔጌብ በኩል ወጥተው ወደ ኬብሮን መጡ፤ በዚያም የዔናቅ ዘሮች አኪመን፣ ሴሲና ተላሚ ይኖሩ ነበር። (ኬብሮን በግብፅ ካለችው ከጾዓን ሰባት ዓመት ቀደም ብላ ተሠርታ ነበር።)",
+          "R": "በኔጌብ ምድረ በዳ በኩል ወጥተው ወደ ኬብሮን ከተማ መጡ። በዚያም አኪመን፣ ሴሲና ተላሚ ይኖሩ ነበር። እነርሱ እጅግ ረጃጅም በመሆናቸው የሚታወቁት የዔናቅ ዘሮች ነበሩ። ኬብሮን በግብፅ ካለችው ከጾዓን ከተማ ሰባት ዓመት ቀደም ብላ ተሠርታ ነበር።"
         }
       },
       "decisions": [
@@ -3307,6 +3480,49 @@
           "reason": "For the whole book: the usual Brazilian forms of the names. The ancestor is \"Anaque\", and his people (m2) are \"os anaquins\", the Portuguese plural of the Hebrew -im, as in \"os querubins\". Readable names the people \"anaquins\" as it explains who they were (r-en-2), because \"descendentes de Anaque, um povo\" would make a person a people. Zoan is \"Zoã\", not its later Greek name Tanis (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040130220101",
+            "o040130220112"
+          ],
+          "choice": "\"ከዔናቅ የተወለዱት\" (those born of Anak, L); \"የዔናቅ ዘሮች\" (the descendants of Anak, B and R)",
+          "alternatives": [
+            "\"ዔናቃውያን\" (Anakites)"
+          ],
+          "reason": "The Hebrew names them by their ancestor; Amharic keeps the name Anak and says they come from him rather than coining a people-name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040130220171"
+          ],
+          "choice": "\"ጾዓን\" for Zoan",
+          "alternatives": [
+            "\"ጣኔዎስ\" (Tanis, the name from the Greek)"
+          ],
+          "reason": "The name follows the Hebrew form; the familiar Amharic \"ጣኔዎስ\" comes from the Greek name of the city.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3388,6 +3604,11 @@
           "L": "E chegaram até o vale de Escol, e cortaram dali um ramo com um só cacho de uvas, e o carregaram numa vara entre dois [homens], e [levaram] algumas das romãs e alguns dos figos.",
           "B": "Quando chegaram ao vale de Escol, cortaram um ramo com um único cacho de uvas, e dois deles o carregaram numa vara. Levaram também algumas romãs e alguns figos.",
           "R": "Quando chegaram ao vale de Escol, cortaram um ramo que tinha só um cacho de uvas. Dois homens o carregaram numa vara entre eles. Também levaram algumas romãs e figos."
+        },
+        "am": {
+          "L": "እስከ ኤሽኮል ሸለቆም መጡ፤ ከዚያም አንድ የወይን ዘለላ ያለበትን ቅርንጫፍ ቆረጡ፤ በመሎጊያም በሁለት [ሰዎች] ተሸከሙት፤ ከሮማኑና ከበለሱም [ወሰዱ]።",
+          "B": "ወደ ኤሽኮል ሸለቆ በደረሱ ጊዜ አንድ የወይን ዘለላ ያለበትን ቅርንጫፍ ቆረጡ፤ ከእነርሱም ሁለቱ በመሎጊያ ተሸከሙት። ከሮማኑና ከበለሱም ደግሞ ወሰዱ።",
+          "R": "ወደ ኤሽኮል ሸለቆ በደረሱ ጊዜ አንድ የወይን ዘለላ ብቻ ያለበትን ቅርንጫፍ ቆረጡ። ሁለት ሰዎች በመካከላቸው በመሎጊያ ተሸከሙት። ጥቂት ሮማንና በለስም ወሰዱ።"
         }
       },
       "decisions": [
@@ -3529,6 +3750,11 @@
           "L": "Aquele lugar foi chamado vale de Escol, por causa do cacho que os filhos de Israel cortaram dali.",
           "B": "Aquele lugar passou a se chamar vale de Escol, por causa do cacho de uvas que os israelitas cortaram ali.",
           "R": "Aquele lugar recebeu o nome de vale de Escol, que quer dizer vale do Cacho, por causa do cacho de uvas que os israelitas cortaram ali."
+        },
+        "am": {
+          "L": "የእስራኤል ልጆች ከዚያ ስለ ቆረጡት ዘለላ ያ ስፍራ የኤሽኮል ሸለቆ ተብሎ ተጠራ።",
+          "B": "የእስራኤል ልጆች በዚያ ስለ ቆረጡት የወይን ዘለላ ያ ስፍራ የኤሽኮል ሸለቆ ተባለ፤ ኤሽኮል ማለት ዘለላ ማለት ነው።",
+          "R": "እስራኤላውያን በዚያ ስለ ቆረጡት የወይን ዘለላ ያ ስፍራ የኤሽኮል ሸለቆ ተብሎ ተሰየመ፤ ይህም የዘለላ ሸለቆ ማለት ነው።"
         }
       },
       "decisions": [
@@ -3619,6 +3845,25 @@
           "reason": "\"Escol\" is the form Genesis 14:13 uses in Portuguese for the man of the same name (m1). \"Vale\" stays lowercase, as Portuguese writes \"o vale do Jordão\". Readable gives the meaning of the name, \"Cacho\", as the English Readable does (r-en-2), since the verse explains it by the cluster.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o040130240051"
+          ],
+          "choice": "Balanced adds \"ኤሽኮል ማለት ዘለላ ማለት ነው\" (Eshcol means cluster)",
+          "alternatives": [
+            "no explanation at Balanced, as the English"
+          ],
+          "reason": "The place is named for the cluster of grapes, but an Amharic reader cannot hear \"cluster\" in \"ኤሽኮል\"; as in Genesis and Exodus, Balanced and Readable both give the meaning.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3681,6 +3926,11 @@
           "L": "E voltaram de espiar a terra ao fim de quarenta dias.",
           "B": "Depois de quarenta dias, eles voltaram de espiar a terra.",
           "R": "Depois de explorar a terra durante quarenta dias, eles voltaram."
+        },
+        "am": {
+          "L": "ምድሪቱንም ሰልለው በአርባ ቀን መጨረሻ ተመለሱ።",
+          "B": "ከአርባ ቀንም በኋላ ምድሪቱን ቃኝተው ተመለሱ።",
+          "R": "ምድሪቱን አርባ ቀን ከቃኙ በኋላ ተመለሱ።"
         }
       },
       "decisions": [
@@ -3788,6 +4038,11 @@
           "L": "E foram e vieram a Moisés, e a Arão, e a toda a comunidade dos filhos de Israel, ao deserto de Parã, a Cades; e deram notícia a eles e a toda a comunidade, e lhes mostraram o fruto da terra.",
           "B": "Eles voltaram a Moisés e Arão e a toda a comunidade dos israelitas em Cades, no deserto de Parã. Prestaram contas a eles e a toda a comunidade e lhes mostraram o fruto da terra.",
           "R": "Eles voltaram para onde estavam Moisés, Arão e toda a comunidade dos israelitas, em Cades, no deserto de Parã. Contaram a eles e a todo o povo o que tinham encontrado e mostraram as frutas da terra."
+        },
+        "am": {
+          "L": "ሄደውም በፋራን ምድረ በዳ ወዳለችው ወደ ቃዴስ ወደ ሙሴና ወደ አሮን ወደ እስራኤልም ልጆች ማኅበር ሁሉ መጡ፤ ለእነርሱና ለማኅበሩ ሁሉ ወሬ መለሱ፤ የምድሪቱንም ፍሬ አሳዩአቸው።",
+          "B": "በፋራን ምድረ በዳ ወዳለችው ወደ ቃዴስ ወደ ሙሴ፣ ወደ አሮንና ወደ እስራኤል ልጆች ማኅበር ሁሉ ተመለሱ። ለእነርሱና ለማኅበሩ ሁሉ ያዩትን ተናገሩ፤ የምድሪቱንም ፍሬ አሳዩአቸው።",
+          "R": "በፋራን ምድረ በዳ ወዳለችው ወደ ቃዴስ ወደ ሙሴ፣ ወደ አሮንና ወደ እስራኤላውያን ማኅበር ሁሉ ተመለሱ። ያገኙትን ሁሉ ለእነርሱና ለሕዝቡ ሁሉ ነገሩ፤ ከምድሪቱ ያመጡትንም ፍሬ አሳዩአቸው።"
         }
       },
       "decisions": [
@@ -3976,6 +4231,11 @@
           "L": "E lhe contaram, dizendo: \"Fomos à terra para onde você nos enviou, e de fato nela corre leite e mel, e este [é] o seu fruto.",
           "B": "Eles fizeram este relato a Moisés: \"Entramos na terra para onde você nos enviou. É mesmo uma terra onde corre leite e mel, e aqui está o fruto dela.",
           "R": "Eles disseram a Moisés: \"Entramos na terra para onde você nos mandou. É mesmo uma terra rica, onde corre leite e mel. Aqui estão algumas das frutas de lá."
+        },
+        "am": {
+          "L": "እንዲህም ብለው ነገሩት፦ «ወደ ላክኸን ምድር ሄድን፤ በእውነትም ወተትና ማር የምታፈስ ናት፤ ፍሬዋም ይህ ነው።",
+          "B": "ለሙሴም እንዲህ ብለው ነገሩት፦ «ወደ ላክኸን ምድር ገባን። በእርግጥም ወተትና ማር የምታፈስ ምድር ናት፤ ፍሬዋም ይኸውልህ።",
+          "R": "ለሙሴም እንዲህ አሉት፦ «ወደ ላክኸን ምድር ገባን። በእውነትም ወተትና ማር የምታፈስ ለም ምድር ናት። ከፍሬዋ ጥቂቱ ይኸውልህ።"
         }
       },
       "decisions": [
@@ -4225,6 +4485,11 @@
           "L": "Contudo, o povo que habita na terra [é] forte, e as cidades [são] fortificadas [e] muito grandes; e também vimos ali os nascidos de Anaque.",
           "B": "Mas o povo que vive na terra é poderoso, e as cidades são fortificadas e muito grandes. Vimos lá até os descendentes de Anaque.",
           "R": "Mas o povo que mora lá é forte, e as cidades deles são muito grandes e têm muralhas fortes. Vimos lá até os descendentes de Anaque."
+        },
+        "am": {
+          "L": "ነገር ግን በምድሪቱ የሚኖረው ሕዝብ ብርቱ ነው፤ ከተሞቹም የተመሸጉና እጅግ ታላላቅ ናቸው፤ ደግሞም ከዔናቅ የተወለዱትን በዚያ አየን።",
+          "B": "ነገር ግን በምድሪቱ የሚኖረው ሕዝብ ኃይለኛ ነው፤ ከተሞቹም የተመሸጉና እጅግ ትላልቅ ናቸው። እንዲያውም የዔናቅን ዘሮች በዚያ አየን።",
+          "R": "ነገር ግን በዚያ የሚኖሩት ሰዎች ብርቱዎች ናቸው። ከተሞቻቸውም እጅግ ትላልቅና ጠንካራ ቅጥር ያላቸው ናቸው። እንዲያውም የዔናቅን ዘሮች በዚያ አየን።"
         }
       },
       "decisions": [
@@ -4356,6 +4621,11 @@
           "L": "Amaleque habita na terra do Neguebe, e o hitita, e o jebuseu, e o amorreu habitam na região montanhosa, e o cananeu habita junto ao mar e ao longo do Jordão.\"",
           "B": "Os amalequitas vivem na terra do Neguebe. Os hititas, os jebuseus e os amorreus vivem na região montanhosa, e os cananeus vivem junto ao mar e ao longo do Jordão.\"",
           "R": "Os amalequitas vivem no deserto do Neguebe. Os hititas, os jebuseus e os amorreus vivem na região montanhosa. Os cananeus vivem perto do mar Mediterrâneo e ao longo do rio Jordão.\""
+        },
+        "am": {
+          "L": "አማሌቅ በኔጌብ ምድር ይኖራል፤ ኬጢያዊው፣ ኢያቡሳዊውና አሞራዊው በኮረብታማው አገር ይኖራሉ፤ ከነዓናዊውም በባሕሩ አጠገብና በዮርዳኖስ ዳር ይኖራል።»",
+          "B": "አማሌቃውያን በኔጌብ ምድር ይኖራሉ። ኬጢያውያን፣ ኢያቡሳውያንና አሞራውያን በኮረብታማው አገር ይኖራሉ፤ ከነዓናውያንም በባሕሩ አጠገብና በዮርዳኖስ ዳር ይኖራሉ።»",
+          "R": "አማሌቃውያን በኔጌብ ምድረ በዳ ይኖራሉ። ኬጢያውያን፣ ኢያቡሳውያንና አሞራውያን በኮረብታማው አገር ይኖራሉ። ከነዓናውያን ደግሞ በሜዲትራኒያን ባሕር አጠገብና በዮርዳኖስ ወንዝ ዳር ይኖራሉ።»"
         }
       },
       "decisions": [
@@ -4593,6 +4863,11 @@
           "L": "E Calebe fez calar o povo diante de Moisés e disse: \"Subamos, subamos de fato, e tomemos posse dela, pois certamente seremos capazes de [vencê-la].\"",
           "B": "Então Calebe fez o povo se calar diante de Moisés e disse: \"Precisamos subir e tomar posse da terra, pois com certeza temos força para conquistá-la.\"",
           "R": "Então Calebe fez o povo ficar quieto na frente de Moisés. Ele disse: \"Vamos subir e tomar a terra. Nós temos força para fazer isso.\""
+        },
+        "am": {
+          "L": "ካሌብም ሕዝቡን በሙሴ ፊት ጸጥ አሰኘ፤ እንዲህም አለ፦ «እንውጣ፣ በእርግጥ እንውጣ፤ እንውረሳትም፤ [እርሷን ለማሸነፍ] በእርግጥ እንችላለንና።»",
+          "B": "ካሌብም በሙሴ ፊት ሕዝቡን ጸጥ አሰኝቶ እንዲህ አለ፦ «ወጥተን ልንወርሳት ይገባናል፤ እርሷን ለማሸነፍ በእርግጥ ብርቱዎች ነንና።»",
+          "R": "ካሌብም በሙሴ ፊት ሕዝቡን ጸጥ አሰኘ፤ እንዲህም አለ፦ «ወጥተን ምድሪቱን እንውሰድ። ይህን ለማድረግ በቂ ብርታት አለን።»"
         }
       },
       "decisions": [
@@ -4747,6 +5022,27 @@
           "reason": "For the whole book: the verb means taking over a land and holding it as one's own (m3); \"tomar posse\" says both. Readable says \"tomar a terra\". The doubled verbs (m2) are kept at Literal by repetition and \"certamente\"; Balanced gives the force with \"precisamos\" and \"com certeza\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040130300102"
+          ],
+          "choice": "\"እንውረሳት\" (let us take possession of it, L and B); \"ምድሪቱን እንውሰድ\" (let us take the land, R)",
+          "alternatives": [
+            "\"እንያዛት\" (let us seize it)"
+          ],
+          "reason": "The Hebrew verb means to take a land as one's own holding; \"መውረስ\" says that at Literal and Balanced, and Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4819,6 +5115,11 @@
           "L": "Mas os homens que tinham subido com ele disseram: \"Não seremos capazes de subir contra o povo, porque ele [é] mais forte do que nós.\"",
           "B": "Mas os homens que tinham subido com ele disseram: \"Não podemos atacar esse povo, porque ele é forte demais para nós.\"",
           "R": "Mas os outros homens que tinham ido com ele disseram: \"Não podemos lutar contra esse povo. Eles são mais fortes do que nós.\""
+        },
+        "am": {
+          "L": "ከእርሱ ጋር የወጡት ሰዎች ግን እንዲህ አሉ፦ «ሕዝቡ ከእኛ ይልቅ ብርቱ ነውና በእርሱ ላይ ልንወጣ አንችልም።»",
+          "B": "ከእርሱ ጋር ወጥተው የነበሩት ሰዎች ግን እንዲህ አሉ፦ «እነዚህ ሰዎች ከእኛ ይልቅ ይበረታሉና ልንወጋቸው አንችልም።»",
+          "R": "ከእርሱ ጋር የሄዱት ሌሎቹ ሰዎች ግን እንዲህ አሉ፦ «እነዚህን ሰዎች ልንዋጋቸው አንችልም። ከእኛ ይልቅ ብርቱዎች ናቸው።»"
         }
       },
       "decisions": [
@@ -4999,6 +5300,11 @@
           "L": "E espalharam entre os filhos de Israel um relato maldoso da terra que tinham espiado, dizendo: \"A terra pela qual passamos para espiá-la [é] uma terra que devora os seus habitantes, e todo o povo que vimos no meio dela [são] homens de [grande] estatura.",
           "B": "Assim espalharam entre os israelitas um relato maldoso sobre a terra que tinham espiado, dizendo: \"A terra que percorremos para espiar é uma terra que devora os seus moradores. Todos os que vimos lá são homens de tamanho enorme.",
           "R": "Então contaram aos israelitas coisas ruins sobre a terra que tinham explorado. Disseram: \"A terra por onde passamos devora as pessoas que moram lá. Todas as pessoas que vimos lá são enormes."
+        },
+        "am": {
+          "L": "ስለ ሰለሏትም ምድር ለእስራኤል ልጆች ክፉ ወሬ አወጡ፤ እንዲህም አሉ፦ «ልንሰልላት ያለፍንባት ምድር የሚኖሩባትን የምትበላ ምድር ናት፤ በውስጧም ያየነው ሕዝብ ሁሉ [ታላቅ] ቁመት ያላቸው ሰዎች ናቸው።",
+          "B": "ስለ ቃኟትም ምድር በእስራኤል ልጆች መካከል መጥፎ ወሬ አሰራጩ፤ እንዲህም አሉ፦ «ልንቃኛት ያለፍንባት ምድር በውስጧ የሚኖሩትን የምትበላ ምድር ናት። በዚያ ያየናቸው ሰዎች ሁሉ እጅግ ግዙፎች ናቸው።",
+          "R": "ከዚያም ስለ ቃኟት ምድር ለእስራኤላውያን መጥፎ ነገር ነገሯቸው። እንዲህም አሉ፦ «ያለፍንባት ምድር በዚያ የሚኖሩትን ሰዎች ትበላለች። በዚያ ያየናቸው ሰዎች ሁሉ ግዙፎች ናቸው።"
         }
       },
       "decisions": [
@@ -5251,6 +5557,11 @@
           "L": "E ali vimos os nefilins, os filhos de Anaque, [que vêm] dos nefilins; e éramos aos nossos próprios olhos como gafanhotos, e assim éramos aos olhos deles.\"",
           "B": "Vimos lá os nefilins, os filhos de Anaque, que descendem dos nefilins. Aos nossos próprios olhos parecíamos gafanhotos, e era assim que eles nos viam.\"",
           "R": "Vimos lá até os nefilins, os gigantes de quem descendem os filhos de Anaque. Perto deles nós nos sentimos pequenos como gafanhotos, e era assim que eles também nos viam.\""
+        },
+        "am": {
+          "L": "በዚያም ኔፍሊምን፣ ከኔፍሊም የሆኑትን የዔናቅን ልጆች አየን፤ እኛም በራሳችን ዓይን እንደ ፌንጣ ነበርን፤ በእነርሱም ዓይን እንዲሁ ነበርን።»",
+          "B": "በዚያም ኔፍሊምን አየን፤ እነርሱም ከኔፍሊም የተገኙት የዔናቅ ልጆች ናቸው። በራሳችን ዓይን እንደ ፌንጣ ታየን፤ በእነርሱም ዓይን እንደዚያው ነበርን።»",
+          "R": "እንዲያውም የዔናቅ ዘሮች የተገኙባቸውን ግዙፎቹን ኔፍሊምን በዚያ አየን። በእነርሱ አጠገብ ራሳችንን እንደ ፌንጣ ትንሽ አድርገን ቆጠርን፤ እነርሱም እንደዚያው አዩን።»"
         }
       },
       "decisions": [
@@ -5457,6 +5768,30 @@
             "os nefilim"
           ],
           "reason": "The name is kept as Genesis 6:4 has it in Portuguese, \"os nefilins\", with the Portuguese plural, so that the allusion (m1) can be seen; Readable explains it as \"os gigantes\", as the English Readable does (r-en-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040130330042",
+            "o040130330082",
+            "o040130330112"
+          ],
+          "choice": "\"ኔፍሊም\" (the Hebrew name) at every level, as Genesis 6:4, with \"ግዙፎቹ\" (the giants) added at Readable; \"ፌንጣ\" (grasshopper)",
+          "alternatives": [
+            "\"ግዙፋን\" (giants) for Nephilim",
+            "\"አንበጣ\" (locust)"
+          ],
+          "reason": "The scouts name the giants of Genesis 6:4, so the same Hebrew name is kept; \"ፌንጣ\" is the small grasshopper the comparison needs, while \"አንበጣ\" suggests a swarming locust.",
           "uncertain": false,
           "footnote": false
         }

@@ -59,6 +59,11 @@
           "L": "E Deus falou todas estas palavras, dizendo:",
           "B": "Deus falou todas estas palavras e disse:",
           "R": "Então Deus disse ao povo estas palavras:"
+        },
+        "am": {
+          "L": "እግዚአብሔርም እነዚህን ሁሉ ቃሎች ተናገረ፤ እንዲህም አለ፦",
+          "B": "እግዚአብሔር ይህን ሁሉ ቃል ተናገረ፤ እንዲህም አለ፦",
+          "R": "ከዚያም እግዚአብሔር ለሕዝቡ እነዚህን ቃሎች ተናገረ፦"
         }
       },
       "decisions": [
@@ -149,6 +154,44 @@
           "reason": "As the Vietnamese style guide sets, \"phán\" is kept for God speaking; the people and Moses \"nói\". The words that follow are what the term sheet calls the Ten Commandments, \"Mười Điều Răn\"; the Hebrew name, \"the ten words\", appears later (34:28).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic",
+          "alternatives": [
+            "Mark pronouns for God with a setting span, as the English does"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written as for anyone else.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "The Ten Words drafted from the Hebrew, in wording of their own",
+          "alternatives": [
+            "The familiar wording of the 1962 Amharic Bible"
+          ],
+          "reason": "These verses are the best known in the Amharic Bible. They are translated afresh from the Hebrew; the short commandments the New Testament quotes keep the Amharic of Matthew 19:18-19, Mark 10:19, Romans 13:9 and Ephesians 6:2 where the Hebrew agrees, and the rest is worded independently.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -214,6 +257,11 @@
           "L": "\"Eu [sou] {{divine_name:o SENHOR|Javé}}, teu Deus, que te tirei da terra do Egito, da casa de escravos.",
           "B": "\"Eu sou {{divine_name:o SENHOR|Javé}}, teu Deus. Eu te fiz sair da terra do Egito, da casa da escravidão.",
           "R": "\"Eu sou {{divine_name:o SENHOR|Javé}}, teu Deus. Eu te tirei do Egito, onde vivias como escravo."
+        },
+        "am": {
+          "L": "«እኔ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} [ነኝ]፤ ከግብፅ ምድር፣ ከባሮች ቤት ያወጣሁህ [እኔ ነኝ]።",
+          "B": "«እኔ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ። ከግብፅ ምድር፣ ባሪያ ሆነህ ከኖርክበት ቤት አወጣሁህ።",
+          "R": "«እኔ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ። ባሪያ ሆነህ ትኖርበት ከነበረው ከግብፅ አወጣሁህ።"
         }
       },
       "decisions": [
@@ -417,6 +465,48 @@
           "reason": "In verses 2-17 God addresses Israel in the singular, as one people standing before him, and Portuguese keeps that with \"tu\" at every level, Readable included (\"teu Deus\", \"te tirei\"): the commandments of the Law keep God's \"tu\" (docs/portuguese-style.md, section 4), as the New Testament drafts already quote them (\"Não matarás\", \"Honra o teu pai e a tua mãe\"). \"Vocês\" would lose the singular the Hebrew chose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020200020032"
+          ],
+          "choice": "አንተ (singular you) in the commandments: \"አምላክህ\", \"አትግደል\"",
+          "alternatives": [
+            "እናንተ (plural you)"
+          ],
+          "reason": "The Hebrew speaks to Israel as one person, \"you\" in the singular, through the Ten Words, and Amharic keeps the singular, as the New Testament quotations do. Where God turns to the people in the plural (verses 22-23) Amharic says እናንተ.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200020091"
+          ],
+          "choice": "ከባሮች ቤት (L); ባሪያ ሆነህ (B, R)",
+          "alternatives": [
+            "ከባርነት ቤት (from the house of slavery)"
+          ],
+          "reason": "The Hebrew says \"a house of slaves\"; Literal keeps the people in the phrase, and Balanced and Readable say that Israel lived there as slaves.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -478,6 +568,11 @@
           "L": "Não haverá para ti outros deuses diante da {{deity_pronoun:minha|Minha}} face.",
           "B": "Não terás nenhum outro deus além de {{deity_pronoun:mim|Mim}}.",
           "R": "Não tenhas nenhum outro deus além de {{deity_pronoun:mim|Mim}}."
+        },
+        "am": {
+          "L": "በፊቴ ሌሎች አማልክት አይሁኑልህ።",
+          "B": "ከእኔ ጎን ሌሎች አማልክት አይኑሩህ።",
+          "R": "ከእኔ ሌላ ምንም አምላክ አይኑርህ።"
         }
       },
       "decisions": [
@@ -741,6 +836,11 @@
           "L": "Não farás para ti uma imagem esculpida, nem qualquer forma do que [está] nos céus, em cima, ou do que [está] na terra, embaixo, ou do que [está] nas águas, debaixo da terra.",
           "B": "Não farás para ti um ídolo esculpido, nem a figura de coisa alguma que esteja no céu, lá em cima, na terra, aqui embaixo, ou nas águas que ficam abaixo da terra.",
           "R": "Não faças nenhum ídolo para ti. Não faças estátua nem imagem de nada do que existe no céu, na terra ou nas águas debaixo da terra."
+        },
+        "am": {
+          "L": "ለራስህ የተቀረጸ ምስል አትሥራ፤ በላይ በሰማያት ያለውን፣ በታችም በምድር ያለውን፣ ከምድርም በታች በውኃ ያለውን የማንኛውንም ነገር መልክ [አትሥራ]።",
+          "B": "ለራስህ የተቀረጸ ጣዖት አትሥራ፤ ደግሞም በላይ በሰማይ፣ በታች በምድር፣ ወይም ከምድር በታች በውኃ ውስጥ ያለውን የማንኛውንም ነገር ቅርጽ አትሥራ።",
+          "R": "ለራስህ ምንም ዓይነት ጣዖት አትሥራ። በሰማይ፣ በምድር ወይም ከምድር በታች ባለው ውኃ ውስጥ ያለውን የማንኛውንም ነገር ሐውልት ወይም ሥዕል አትሥራ።"
         }
       },
       "decisions": [
@@ -925,6 +1025,11 @@
           "L": "Não te prostrarás diante deles e não os servirás; pois eu, {{divine_name:o SENHOR|Javé}}, teu Deus, [sou] um Deus zeloso, que visito a iniquidade dos pais sobre os filhos, sobre a terceira e sobre a quarta [geração] dos que {{deity_pronoun:me|Me}} odeiam,",
           "B": "Não te curvarás diante deles nem os servirás. Pois eu, {{divine_name:o SENHOR|Javé}}, teu Deus, sou um Deus zeloso. Faço cair a culpa dos pais sobre os filhos, sobre a terceira e a quarta geração daqueles que {{deity_pronoun:me|Me}} odeiam,",
           "R": "Não te curves diante deles nem os sirvas. Eu sou {{divine_name:o SENHOR|Javé}}, teu Deus, e sou um Deus zeloso. Não aceito dividir a tua lealdade com outros deuses. Quando as pessoas {{deity_pronoun:me|Me}} odeiam, eu castigo o pecado delas, até nos seus netos e bisnetos."
+        },
+        "am": {
+          "L": "አትስገድላቸው፤ አታገልግላቸውም፤ እኔ፣ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}}፣ የሚቀና አምላክ [ነኝ]ና፤ የአባቶችን በደል በልጆች ላይ፣ ከሚጠሉኝ በሦስተኛውና በአራተኛው [ትውልድ] ላይ የማመጣ [ነኝ]፣",
+          "B": "ለእነርሱ አትስገድ፤ አታገልግላቸውም። እኔ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} የምቀና አምላክ ነኝና። ከሚጠሉኝ መካከል የአባቶችን በደል በልጆቻቸው ላይ፣ እስከ ሦስተኛውና አራተኛው ትውልድ ድረስ አመጣለሁ፤",
+          "R": "ለእነርሱ አትስገድ፤ አታገልግላቸውም። እኔ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ፤ የምቀናም አምላክ ነኝ። ታማኝነትህ ለእኔ ብቻ ይሁን፤ ከሌሎች አማልክት ጋር አልካፈለውም። ሰዎች ሲጠሉኝ ኃጢአታቸውን እቀጣለሁ፤ ቅጣቱም እስከ ልጅ ልጆቻቸውና እስከ ልጅ ልጅ ልጆቻቸው ድረስ ይደርሳል።"
         }
       },
       "decisions": [
@@ -1189,6 +1294,26 @@
           "reason": "Literal keeps the Hebrew verb \"visit\" (m2) with \"a iniquidade\", the terms list's Literal word; Balanced says what the visiting does, as the English Balanced says \"I bring the guilt\"; Readable says \"castigo\", as the English Readable says \"punish\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200050111"
+          ],
+          "choice": "የሚቀና (L); የምቀና (B) for \"jealous\"",
+          "alternatives": [
+            "ቀናተኛ (jealous, envious)"
+          ],
+          "reason": "The verb \"መቅናት\" carries the zeal of one who will not share what is his; it is used as a verb so that it does not read as the envy of a rival.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1254,6 +1379,11 @@
           "L": "e faço lealdade a milhares, aos que {{deity_pronoun:me|Me}} amam e aos que guardam os {{deity_pronoun:meus|Meus}} mandamentos.",
           "B": "mas aos milhares que {{deity_pronoun:me|Me}} amam e guardam os {{deity_pronoun:meus|Meus}} mandamentos eu mostro amor leal.",
           "R": "Mas aos milhares que {{deity_pronoun:me|Me}} amam e obedecem aos {{deity_pronoun:meus|Meus}} mandamentos, eu mostro amor leal."
+        },
+        "am": {
+          "L": "ለሺዎችም፣ ለሚወዱኝና ትእዛዛቴን ለሚጠብቁ፣ ጽኑ ፍቅርን የማደርግ [ነኝ]።",
+          "B": "ነገር ግን ለሚወዱኝና ትእዛዛቴን ለሚጠብቁ ሺዎች ጽኑ ፍቅሬን አሳያለሁ።",
+          "R": "ነገር ግን ለሚወዱኝና ትእዛዛቴን ለሚፈጽሙ ሺዎች ጽኑ ፍቅሬን አሳያለሁ።"
         }
       },
       "decisions": [
@@ -1443,6 +1573,28 @@
           "reason": "Hesed follows docs/pentateuch-portuguese-terms.md and the English levels (r-en-1): Literal \"lealdade\", the bond kept, as Genesis 39:21; Balanced and Readable \"amor leal\". \"Misericórdia\", the word of the older Bibles, leaves out the loyalty (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200060021"
+          ],
+          "choice": "ጽኑ ፍቅር (steadfast love) at every level",
+          "alternatives": [
+            "ምሕረት (mercy)",
+            "ቸርነት (kindness)"
+          ],
+          "reason": "The Hebrew word is love that holds to a covenant. \"ጽኑ ፍቅር\" says love that does not give way; \"ምሕረት\" would narrow it to mercy.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1516,6 +1668,11 @@
           "L": "Não levantarás o nome {{divine_name:do SENHOR|de Javé}}, teu Deus, para o vazio, pois {{divine_name:o SENHOR|Javé}} não deixará impune aquele que levantar o {{deity_pronoun:seu|Seu}} nome para o vazio.",
           "B": "Não usarás o nome {{divine_name:do SENHOR|de Javé}}, teu Deus, para o que é falso ou sem valor, pois {{divine_name:o SENHOR|Javé}} não deixará sem castigo quem usar o {{deity_pronoun:seu|Seu}} nome dessa maneira.",
           "R": "Não uses o nome {{divine_name:do SENHOR|de Javé}}, teu Deus, em promessas falsas nem para coisas vazias. {{divine_name:O SENHOR|Javé}} vai castigar quem tratar o {{deity_pronoun:seu|Seu}} nome assim."
+        },
+        "am": {
+          "L": "የአምላክህን {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም ለከንቱ አታንሣ፤ ስሙን ለከንቱ የሚያነሣውን {{divine_name:እግዚአብሔር|ያህዌ}} ሳይቀጣ አይተወውምና።",
+          "B": "የአምላክህን {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም ለሐሰት ወይም ለከንቱ ነገር አትጠቀምበት፤ ስሙን እንዲህ የሚጠቀምበትን ማንንም {{divine_name:እግዚአብሔር|ያህዌ}} ሳይቀጣ አይተወውምና።",
+          "R": "ሐሰተኛ ቃል ስትገባ ወይም ለከንቱ ነገር የአምላክህን {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም አትጥራ። ስሙን እንደዚያ የሚያደርገውን ሁሉ {{divine_name:እግዚአብሔር|ያህዌ}} ይቀጣዋል።"
         }
       },
       "decisions": [
@@ -1692,6 +1849,11 @@
           "L": "Lembra o dia do sábado, para torná-lo santo.",
           "B": "Lembra o dia de sábado e separa-o como santo.",
           "R": "Lembra o dia de sábado. Trata-o como um dia santo."
+        },
+        "am": {
+          "L": "የሰንበትን ቀን አስታውስ፤ ትቀድሰውም ዘንድ።",
+          "B": "የሰንበትን ቀን አስታውስ፤ ቅዱስ አድርገህም ለይተው።",
+          "R": "የሰንበትን ቀን አስታውስ። ቅዱስ ቀን አድርገህ ያዘው።"
         }
       },
       "decisions": [
@@ -1841,6 +2003,11 @@
           "L": "Seis dias labutarás e farás todo o teu trabalho,",
           "B": "Tens seis dias para trabalhar e fazer todo o teu serviço,",
           "R": "Podes trabalhar durante seis dias e fazer todas as tuas tarefas."
+        },
+        "am": {
+          "L": "ስድስት ቀን ትደክማለህ፤ ሥራህንም ሁሉ ትሠራለህ፣",
+          "B": "ለመሥራትና ሥራህን ሁሉ ለማከናወን ስድስት ቀን አለህ፤",
+          "R": "ለስድስት ቀን መሥራትና ሥራህን ሁሉ መጨረስ ትችላለህ።"
         }
       },
       "decisions": [
@@ -1960,6 +2127,11 @@
           "L": "mas o sétimo dia [é] sábado para {{divine_name:o SENHOR|Javé}}, teu Deus. Não farás trabalho algum, tu, nem o teu filho, nem a tua filha, nem o teu escravo, nem a tua escrava, nem o teu gado, nem o teu imigrante que [está] dentro das tuas portas.",
           "B": "mas o sétimo dia é um sábado para {{divine_name:o SENHOR|Javé}}, teu Deus. Nesse dia não farás nenhum trabalho: nem tu, nem o teu filho ou a tua filha, nem o teu servo ou a tua serva, nem os teus animais, nem o estrangeiro que vive entre vocês nas tuas cidades.",
           "R": "Mas o sétimo dia é um sábado, um dia de descanso para {{divine_name:o SENHOR|Javé}}, teu Deus. Nesse dia ninguém da tua casa deve trabalhar: nem tu, nem os teus filhos ou filhas, nem os teus servos, nem os teus animais, nem os estrangeiros que moram contigo nas tuas cidades."
+        },
+        "am": {
+          "L": "ሰባተኛውም ቀን ሰንበት [ነው]፣ ለአምላክህ {{divine_name:ለእግዚአብሔር|ለያህዌ}}፤ ምንም ሥራ አትሥራ፤ አንተ፣ ወንድ ልጅህና ሴት ልጅህ፣ ወንድ ባሪያህና ሴት ባሪያህ፣ ከብትህም፣ በደጆችህ ውስጥ [ያለው] መጻተኛህም።",
+          "B": "ሰባተኛው ቀን ግን ለአምላክህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተለየ ሰንበት ነው። በዚያ ቀን ምንም ሥራ አትሥራ፤ አንተም ሆንክ ወንድ ወይም ሴት ልጅህ፣ ወንድ ወይም ሴት አገልጋይህ፣ ከብትህ ወይም በከተሞችህ ውስጥ ከአንተ ጋር የሚኖረው መጻተኛ።",
+          "R": "ሰባተኛው ቀን ግን ሰንበት ነው፤ ለአምላክህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተለየ የዕረፍት ቀን ነው። በዚያ ቀን በቤትህ ያለ ማንም ሰው አይሥራ፤ አንተም፣ ወንዶችና ሴቶች ልጆችህም፣ አገልጋዮችህም፣ እንስሶችህም፣ በከተሞችህ ውስጥ ከአንተ ጋር የሚኖሩ እንግዶችም አይሥሩ።"
         }
       },
       "decisions": [
@@ -2185,6 +2357,11 @@
           "L": "Pois [em] seis dias {{divine_name:o SENHOR|Javé}} fez os céus e a terra, o mar e tudo o que [há] neles, e {{deity_pronoun:ele|Ele}} descansou no sétimo dia; por isso {{divine_name:o SENHOR|Javé}} abençoou o dia do sábado e o fez santo.",
           "B": "Pois em seis dias {{divine_name:o SENHOR|Javé}} fez os céus e a terra, o mar e tudo o que há neles, e no sétimo dia {{deity_pronoun:ele|Ele}} descansou. Por essa razão {{divine_name:o SENHOR|Javé}} abençoou o dia de sábado e o separou como santo.",
           "R": "{{divine_name:O SENHOR|Javé}} fez o céu, a terra, o mar e tudo o que há neles em seis dias. Depois {{deity_pronoun:ele|Ele}} descansou no sétimo dia. Por isso {{divine_name:o SENHOR|Javé}} abençoou o dia de sábado e fez dele um dia santo."
+        },
+        "am": {
+          "L": "ስድስት ቀን {{divine_name:እግዚአብሔር|ያህዌ}} ሰማያትንና ምድርን፣ ባሕርንና በእነርሱ ውስጥ ያለውን ሁሉ ሠርቷልና፤ በሰባተኛውም ቀን ዐረፈ፤ ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} የሰንበትን ቀን ባረከው፤ ቀደሰውም።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሰማይንና ምድርን፣ ባሕርንና በውስጣቸው ያለውን ሁሉ በስድስት ቀን ሠርቷልና፤ በሰባተኛው ቀን ደግሞ ዐረፈ። ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} የሰንበትን ቀን ባረከው፤ ቅዱስም አደረገው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሰማይን፣ ምድርን፣ ባሕርንና በውስጣቸው ያለውን ሁሉ በስድስት ቀን ሠራ። ከዚያም በሰባተኛው ቀን ዐረፈ። ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} የሰንበትን ቀን ባረከው፤ ቅዱስ ቀንም አደረገው።"
         }
       },
       "decisions": [
@@ -2307,6 +2484,11 @@
           "L": "Honra o teu pai e a tua mãe, para que os teus dias sejam longos sobre a terra que {{divine_name:o SENHOR|Javé}}, teu Deus, está te dando.",
           "B": "Honra o teu pai e a tua mãe. Assim terás vida longa na terra que {{divine_name:o SENHOR|Javé}}, teu Deus, vai te dar.",
           "R": "Honra o teu pai e a tua mãe e trata-os com respeito. Então viverás muitos anos na terra que {{divine_name:o SENHOR|Javé}}, teu Deus, está para te dar."
+        },
+        "am": {
+          "L": "አባትህንና እናትህን አክብር፤ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} በሚሰጥህ ምድር ላይ ቀኖችህ ይረዝሙ ዘንድ።",
+          "B": "አባትህንና እናትህን አክብር። እንዲህ ብታደርግ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} ሊሰጥህ ባለው ምድር ላይ ዕድሜህ ይረዝማል።",
+          "R": "አባትህንና እናትህን አክብር፤ በአክብሮትም ያዛቸው። ያን ጊዜ አምላክህ {{divine_name:እግዚአብሔር|ያህዌ}} ሊሰጥህ ባለው ምድር ላይ ረጅም ዘመን ትኖራለህ።"
         }
       },
       "decisions": [
@@ -2396,6 +2578,25 @@
           "reason": "\"Honra o teu pai e a tua mãe\" is how the New Testament drafts quote this word (Matthew 15:4; 19:19; Mark 7:10; Ephesians 6:2), so Exodus keeps it at every level; \"honrar\" holds respect, obedience and care together (m1). Balanced says \"vida longa\", the words of Ephesians 6:3, for the promise (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200120011"
+          ],
+          "choice": "አባትህንና እናትህን አክብር, as in Ephesians 6:2 and Matthew 19:19",
+          "alternatives": [],
+          "reason": "The command keeps the Amharic of the New Testament quotations. Ephesians 6:3 adds \"that it may go well with you\", from Deuteronomy 5:16 in Greek; the Hebrew of Exodus has only the long days in the land, and Amharic follows it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2450,6 +2651,11 @@
           "L": "Não matarás.",
           "B": "Não matarás.",
           "R": "Não mates."
+        },
+        "am": {
+          "L": "አትግደል።",
+          "B": "አትግደል።",
+          "R": "ሰው አትግደል።"
         }
       },
       "decisions": [
@@ -2587,6 +2793,25 @@
           "reason": "The verb means unlawful killing of a person, not every killing (m1), and \"assassinar\" would say that more exactly, as Matthew 5:21 does in Portuguese where Jesus builds on the word. But \"Não matarás\" is the short common phrase by which Brazilian readers know this commandment, and the New Testament drafts quote it so (Matthew 19:18; Romans 13:9; James 2:11; \"Não mates\" at Readable), so Exodus keeps it; the meaning note says what it forbids. Verses 14-15 follow the same quotations: \"Não adulterarás\" (L), \"Não cometerás adultério\" (B), \"Não cometas adultério\" (R); \"Não furtarás\" (L, B), \"Não roubes\" (R).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020200130021"
+          ],
+          "choice": "ሰው አትግደል (R); አትግደል (L, B)",
+          "alternatives": [
+            "ነፍስ አትግደል, as Matthew 5:21 has it"
+          ],
+          "reason": "The verb already means murder, so Literal and Balanced say \"አትግደል\", as in Matthew 19:18 and Mark 10:19. Readable adds \"ሰው\" (a person), as the Readable of those passages does, so that the command is not read as forbidding all killing, of animals as well.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2641,6 +2866,11 @@
           "L": "Não adulterarás.",
           "B": "Não cometerás adultério.",
           "R": "Não cometas adultério."
+        },
+        "am": {
+          "L": "አታመንዝር።",
+          "B": "አታመንዝር።",
+          "R": "አታመንዝር።"
         }
       },
       "decisions": [
@@ -2725,6 +2955,11 @@
           "L": "Não furtarás.",
           "B": "Não furtarás.",
           "R": "Não roubes."
+        },
+        "am": {
+          "L": "አትስረቅ።",
+          "B": "አትስረቅ።",
+          "R": "አትስረቅ።"
         }
       },
       "decisions": [
@@ -2800,6 +3035,11 @@
           "L": "Não responderás contra o teu próximo [como] testemunha de falsidade.",
           "B": "Não darás falso testemunho contra o teu próximo.",
           "R": "Não contes mentiras sobre o teu próximo quando fores testemunha."
+        },
+        "am": {
+          "L": "በባልንጀራህ ላይ የሐሰት ምስክር [ሆነህ] አትመልስ።",
+          "B": "በባልንጀራህ ላይ የሐሰት ምስክርነት አትስጥ።",
+          "R": "ምስክር ስትሆን ስለ ባልንጀራህ ውሸት አትናገር።"
         }
       },
       "decisions": [
@@ -2868,6 +3108,27 @@
           "choice": "\"làm nhân chứng gian dối mà khai\" (L)",
           "alternatives": [],
           "reason": "The Hebrew is the language of the law court: to answer as a false witness (meaning decision). Literal keeps the witness and the answer; Balanced uses \"làm chứng dối\", the phrase of the project's Gospels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200160032"
+          ],
+          "choice": "በባልንጀራህ ላይ የሐሰት ምስክር [ሆነህ] አትመልስ (L); የሐሰት ምስክርነት አትስጥ (B)",
+          "alternatives": [
+            "በሐሰት አትመስክር, as in Matthew 19:18 and Mark 10:19"
+          ],
+          "reason": "The Gospels quote this command in a short Greek form without \"against your neighbor\". The Hebrew names the neighbor and pictures a witness answering in court, and Exodus follows the Hebrew; Literal keeps its verb \"answer\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2950,6 +3211,11 @@
           "L": "Não cobiçarás a casa do teu próximo; não cobiçarás a esposa do teu próximo, nem o escravo dele, nem a escrava dele, nem o boi dele, nem o jumento dele, nem nada que [seja] do teu próximo.\"",
           "B": "Não cobiçarás o que pertence à casa do teu próximo: não desejarás para ti a mulher dele, nem o seu servo ou a sua serva, nem o seu boi ou o seu jumento, nem nada mais que o teu próximo tenha.\"",
           "R": "Não queiras tomar para ti a casa do teu próximo. Não desejes ter a mulher dele, os seus servos, o seu boi, o seu jumento, nem qualquer outra coisa que pertença a ele.\""
+        },
+        "am": {
+          "L": "የባልንጀራህን ቤት አትመኝ፤ የባልንጀራህን ሚስት፣ ወንድ ባሪያውንም፣ ሴት ባሪያውንም፣ በሬውንም፣ አህያውንም፣ የባልንጀራህ የሆነውንም ሁሉ አትመኝ።»",
+          "B": "የባልንጀራህን ቤተሰብ አትመኝ፤ ሚስቱን፣ ወንድ ወይም ሴት አገልጋዩን፣ በሬውን ወይም አህያውን፣ ወይም ባልንጀራህ ያለውን ማንኛውንም ነገር ዓይንህን አትጣልበት።»",
+          "R": "የባልንጀራህን ቤትና ንብረት ለመውሰድ አትመኝ። ሚስቱን፣ አገልጋዮቹን፣ በሬውን ወይም አህያውን፣ ወይም የእርሱ የሆነውን ማንኛውንም ነገር የራስህ ለማድረግ አትፈልግ።»"
         }
       },
       "decisions": [
@@ -3100,6 +3366,27 @@
           "reason": "\"Cobiçar\" is the desire for what is another's that reaches toward taking it (m1), and \"Não cobiçarás\" is how Romans 7:7 and 13:9 quote this word in the drafts. Balanced and Readable vary the second verb as the English does (r-en-1), with \"para ti\" and \"tomar\" to show that the desire is to possess. Literal says \"escravo, escrava\", the terms list's Literal word, and \"dele\" for the neighbour's things, to keep them apart from the hearer's \"teu\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200170021"
+          ],
+          "choice": "አትመኝ (L, R); ዓይንህን አትጣልበት (B) for the second \"covet\"",
+          "alternatives": [
+            "ተመኘ only"
+          ],
+          "reason": "\"አትመኝ\" is the word of Romans 13:9 and 7:7 for this command. Balanced gives the second one with the idiom \"to cast one's eye on\", the desire that reaches for what is another's, as the English Balanced says \"set your heart on\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3184,6 +3471,11 @@
           "L": "E todo o povo via os trovões e os relâmpagos e o som do chifre de carneiro e o monte fumegando; e o povo viu, e tremeram e ficaram de longe.",
           "B": "Todo o povo presenciou os trovões e os relâmpagos, o toque do chifre de carneiro e o monte soltando fumaça. Ao ver isso, tremeram e ficaram afastados, à distância.",
           "R": "Todo o povo ouviu os trovões e o chifre de carneiro, e viu os relâmpagos e a fumaça no monte. Quando viram isso, tremeram e ficaram bem longe."
+        },
+        "am": {
+          "L": "ሕዝቡም ሁሉ ነጎድጓዶቹንና መብረቆቹን፣ የቀንዱን መለከት ድምፅና የሚጤሰውን ተራራ ያዩ ነበር፤ ሕዝቡም አየ፤ ተንቀጠቀጡም፤ በሩቅም ቆሙ።",
+          "B": "ሕዝቡ ሁሉ ነጎድጓዱንና መብረቁን፣ የቀንዱን መለከት ድምፅና የሚጤሰውን ተራራ ተመለከቱ። ይህንም ባዩ ጊዜ ተንቀጠቀጡ፤ ወደ ኋላ ፈቀቅ ብለውም በሩቅ ቆሙ።",
+          "R": "ሕዝቡ ሁሉ ነጎድጓዱንና የቀንዱን መለከት ድምፅ ሰሙ፤ መብረቁንና በተራራው ላይ ያለውን ጢስ አዩ። ይህን ሲያዩ ተንቀጠቀጡ፤ ወደ ኋላም ርቀው ቆሙ።"
         }
       },
       "decisions": [
@@ -3341,6 +3633,11 @@
           "L": "E disseram a Moisés: \"Fale você conosco, e ouviremos; mas que Deus não fale conosco, para que não morramos.\"",
           "B": "Eles disseram a Moisés: \"Fale você conosco, e nós ouviremos. Mas que Deus não fale conosco, senão morreremos.\"",
           "R": "Eles disseram a Moisés: \"Fale você conosco, e nós vamos ouvir. Mas não deixe Deus falar conosco. Se {{deity_pronoun:ele|Ele}} falar, nós vamos morrer.\""
+        },
+        "am": {
+          "L": "ሙሴንም አሉት፦ «አንተ ከእኛ ጋር ተናገር፤ እኛም እንሰማለን፤ እንዳንሞት ግን እግዚአብሔር ከእኛ ጋር አይናገር።»",
+          "B": "ሙሴንም እንዲህ አሉት፦ «አንተ ንገረን፤ እኛም እንሰማለን። እግዚአብሔር ግን አያናግረን፤ አለዚያ እንሞታለን።»",
+          "R": "ሙሴንም እንዲህ አሉት፦ «አንተ አነጋግረን፤ እኛም እንሰማሃለን። እግዚአብሔር ግን እንዲያናግረን አታድርግ። እርሱ ካናገረን እንሞታለን።»"
         }
       },
       "decisions": [
@@ -3479,6 +3776,11 @@
           "L": "E Moisés disse ao povo: \"Não temam; pois para pôr vocês à prova Deus veio, e para que o temor {{deity_pronoun:dele|Dele}} esteja sobre o rosto de vocês, para que não pequem.\"",
           "B": "Moisés respondeu ao povo: \"Não tenham medo. Deus veio para pôr vocês à prova e para que o temor {{deity_pronoun:dele|Dele}} esteja diante dos olhos de vocês, para que não pequem.\"",
           "R": "Moisés disse ao povo: \"Não tenham medo. Deus veio para pôr vocês à prova. Ele quer que vocês {{deity_pronoun:o|O}} temam e respeitem, para que não pequem.\""
+        },
+        "am": {
+          "L": "ሙሴም ሕዝቡን አለ፦ «አትፍሩ፤ እግዚአብሔር እናንተን ለመፈተን መጥቷልና፤ ደግሞም ኃጢአት እንዳትሠሩ የእርሱ ፍርሃት በፊታችሁ እንዲሆን [መጥቷል]።»",
+          "B": "ሙሴም ሕዝቡን እንዲህ ብሎ መለሰላቸው፦ «አትፍሩ፤ እግዚአብሔር የመጣው ሊፈትናችሁ ነው፤ ደግሞም ኃጢአት እንዳትሠሩ እርሱን መፍራት ዘወትር በፊታችሁ እንዲሆን ነው።»",
+          "R": "ሙሴም ሕዝቡን እንዲህ አላቸው፦ «አትፍሩ። እግዚአብሔር የመጣው ሊፈትናችሁ ነው። ኃጢአት እንዳትሠሩ እርሱን እንድትፈሩትና እንድታከብሩት ይፈልጋል።»"
         }
       },
       "decisions": [
@@ -3695,6 +3997,11 @@
           "L": "E o povo ficou de longe, e Moisés se aproximou da escuridão densa onde Deus [estava].",
           "B": "Então o povo ficou à distância, e Moisés se aproximou da densa escuridão onde Deus estava.",
           "R": "O povo ficou bem longe. Mas Moisés foi para perto da nuvem escura onde Deus estava."
+        },
+        "am": {
+          "L": "ሕዝቡም በሩቅ ቆሙ፤ ሙሴም እግዚአብሔር ወዳለበት ወደ ድቅድቁ ጨለማ ቀረበ።",
+          "B": "ስለዚህ ሕዝቡ ርቀው ቆሙ፤ ሙሴ ግን እግዚአብሔር ወዳለበት ወደ ድቅድቁ ጨለማ ተጠጋ።",
+          "R": "ሕዝቡ ርቀው ቆሙ። ሙሴ ግን እግዚአብሔር ወዳለበት ወደ ጨለማው ደመና ቀረበ።"
         }
       },
       "decisions": [
@@ -3815,6 +4122,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} disse a Moisés: \"Assim dirás aos filhos de Israel: 'Vocês mesmos viram que eu falei com vocês desde os céus.",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Fala isto aos israelitas: 'Vocês viram com os próprios olhos que eu falei com vocês do céu.",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés: \"Dá aos israelitas esta mensagem: 'Vocês viram como eu falei com vocês lá do céu."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን አለው፦ «ለእስራኤል ልጆች እንዲህ ትላለህ፦ “እኔ ከሰማያት ከእናንተ ጋር እንደ ተናገርኩ እናንተ ራሳችሁ አይታችኋል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ለእስራኤል ልጆች ይህን ንገራቸው፦ “ከሰማይ ሆኜ እንዳናገርኳችሁ በገዛ ዓይናችሁ አይታችኋል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ለእስራኤላውያን ይህን መልእክት ንገራቸው፦ “ከሰማይ እንዴት እንዳናገርኳችሁ አይታችኋል።"
         }
       },
       "decisions": [
@@ -3869,6 +4181,27 @@
             "\"너희\" throughout"
           ],
           "reason": "The laws switch between plural and singular \"you\"; Korean keeps the switch at every level, as the Hebrew does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020200220081"
+          ],
+          "choice": "የእስራኤል ልጆች (L, B); እስራኤላውያን (R), with no gender span",
+          "alternatives": [
+            "a gender setting span between two wordings"
+          ],
+          "reason": "\"ልጆች\" (children) already takes in daughters as well as sons, so Amharic has no second wording for the setting to offer.",
           "uncertain": false,
           "footnote": false
         }
@@ -3937,6 +4270,11 @@
           "L": "Não farão {{deity_pronoun:comigo|Comigo}} deuses de prata e deuses de ouro; não [os] farão para vocês.",
           "B": "Não farão deuses para pôr ao {{deity_pronoun:meu|Meu}} lado; não farão para vocês deuses de prata nem de ouro.",
           "R": "Não façam nenhum deus para ficar ao {{deity_pronoun:meu|Meu}} lado. Não façam para vocês ídolos de prata nem de ouro."
+        },
+        "am": {
+          "L": "ከእኔ ጋር የብር አማልክትንና የወርቅ አማልክትን አትሥሩ፤ ለራሳችሁም አትሥሩ።",
+          "B": "ከእኔ ጋር የሚቆሙ አማልክትን አትሥሩ፤ የብር ወይም የወርቅ አማልክትን ለራሳችሁ አትሥሩ።",
+          "R": "ከእኔ ጎን የሚቆሙ ምንም አማልክት አትሥሩ። ለራሳችሁ የብር ወይም የወርቅ ጣዖታትን አትሥሩ።"
         }
       },
       "decisions": [
@@ -4132,6 +4470,11 @@
           "L": "Um altar de terra farás para {{deity_pronoun:mim|Mim}}, e sacrificarás sobre ele os teus holocaustos e os teus sacrifícios de comunhão, as tuas ovelhas e os teus bois; em todo lugar onde eu fizer lembrar o {{deity_pronoun:meu|Meu}} nome, virei a ti e te abençoarei.",
           "B": "Farás para {{deity_pronoun:mim|Mim}} um altar de terra e sobre ele oferecerás os teus holocaustos e os teus sacrifícios de comunhão, tirados das tuas ovelhas e do teu gado. Em todo lugar onde eu fizer lembrar o {{deity_pronoun:meu|Meu}} nome, virei a ti e te abençoarei.",
           "R": "Constrói para {{deity_pronoun:mim|Mim}} um altar de terra. Oferece sobre ele os teus holocaustos e os teus sacrifícios de comunhão, animais das tuas ovelhas e do teu gado. Em qualquer lugar onde eu escolher que as pessoas se lembrem do {{deity_pronoun:meu|Meu}} nome, eu virei a ti e te abençoarei."
+        },
+        "am": {
+          "L": "የአፈር መሠዊያ ትሠራልኛለህ፤ በላዩም የሚቃጠሉ መሥዋዕቶችህንና የኅብረት መሥዋዕቶችህን፣ በጎችህንና ከብቶችህን ትሠዋለህ፤ ስሜ እንዲታሰብ በማደርግበት ስፍራ ሁሉ ወደ አንተ እመጣለሁ፤ እባርክሃለሁም።",
+          "B": "የአፈር መሠዊያ ሥራልኝ፤ በላዩም ከበጎችህና ከከብቶችህ የሚቃጠሉ መሥዋዕቶችህንና የኅብረት መሥዋዕቶችህን ሠዋ። ስሜ እንዲታሰብ በማደርግበት ስፍራ ሁሉ ወደ አንተ መጥቼ እባርክሃለሁ።",
+          "R": "ከአፈር መሠዊያ ሥራልኝ። በላዩም የሚቃጠሉ መሥዋዕቶችንና የኅብረት መሥዋዕቶችን አቅርብ፤ ከበጎችህና ከከብቶችህ የተወሰዱ እንስሶችን አቅርብ። ሰዎች ስሜን እንዲያስታውሱ በምመርጠው ስፍራ ሁሉ ወደ አንተ መጥቼ እባርክሃለሁ።"
         }
       },
       "decisions": [
@@ -4315,6 +4658,28 @@
           "reason": "As docs/pentateuch-portuguese-terms.md sets them, at every level: \"holocausto\" is the offering burned whole, \"sacrifício de comunhão\" the offering shared in a meal, which the English calls \"peace offering\" (L) and \"fellowship offering\" (B, R) (r-en-1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200240081",
+            "o020200240102"
+          ],
+          "choice": "የሚቃጠል መሥዋዕት (burnt offering); የኅብረት መሥዋዕት (peace offering)",
+          "alternatives": [
+            "የሰላም መሥዋዕት (peace offering)"
+          ],
+          "reason": "These are the Pentateuch's terms for the two offerings. The second is a meal shared before God by the worshipers, so \"ኅብረት\" (fellowship) says what it is better than a word for peace alone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4388,6 +4753,11 @@
           "L": "E, se fizeres para {{deity_pronoun:mim|Mim}} um altar de pedras, não as construirás [como pedras] lavradas; pois, [se] tiveres brandido a tua ferramenta sobre ele, tu o profanaste.",
           "B": "Se fizeres para {{deity_pronoun:mim|Mim}} um altar de pedras, não o construirás com pedras cortadas, pois, se passares a tua ferramenta sobre elas, tu o profanarás.",
           "R": "Se construíres um altar de pedras para {{deity_pronoun:mim|Mim}}, não cortes nem talhes as pedras. Se usares uma ferramenta nelas, o altar deixará de ser santo."
+        },
+        "am": {
+          "L": "የድንጋይም መሠዊያ ብትሠራልኝ፣ ጥርብ [ድንጋይ] አድርገህ አትገንባው፤ መሣሪያህን በላዩ [ብታነሣ] አቃለኸዋልና።",
+          "B": "የድንጋይ መሠዊያ ብትሠራልኝ፣ ከተጠረበ ድንጋይ አትሥራው። መሣሪያህን በላዩ ብታነሣ ቅድስናውን ታሳጣዋለህ።",
+          "R": "የድንጋይ መሠዊያ ብትሠራልኝ፣ ድንጋዮቹን አትጥረባቸው፤ ቅርጽም አታውጣላቸው። መሣሪያ ብትነካቸው መሠዊያው ከእንግዲህ ቅዱስ አይሆንም።"
         }
       },
       "decisions": [
@@ -4502,6 +4872,11 @@
           "L": "E não subirás por degraus ao {{deity_pronoun:meu|Meu}} altar, para que a tua nudez não seja descoberta sobre ele.",
           "B": "Não subirás ao {{deity_pronoun:meu|Meu}} altar por degraus, para que a tua nudez não fique exposta ali.",
           "R": "Não uses degraus para subir ao {{deity_pronoun:meu|Meu}} altar. Assim ninguém verá o teu corpo descoberto ali."
+        },
+        "am": {
+          "L": "ወደ መሠዊያዬም በደረጃ አትውጣ፤ ዕርቃንህ በላዩ እንዳይገለጥ።",
+          "B": "ዕርቃንህ በዚያ እንዳይጋለጥ ወደ መሠዊያዬ በደረጃ አትውጣ።",
+          "R": "ወደ መሠዊያዬ ስትወጣ በደረጃ አትውጣ። እንዲህ ብታደርግ ማንም በዚያ ሰውነትህን ተገልጦ አያይም።"
         }
       },
       "decisions": [
@@ -4532,6 +4907,27 @@
           "choice": "nakedness uncovered: the body exposed, a shame before God",
           "alternatives": [],
           "reason": "Worship at God's altar must not expose the worshiper's body (Leviticus 18:6-7 uses the same word).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020200260091"
+          ],
+          "choice": "ዕርቃንህ (your nakedness) (L, B); ሰውነትህ ተገልጦ (R)",
+          "alternatives": [
+            "ኅፍረተ ሥጋህ (your shame)"
+          ],
+          "reason": "\"ዕርቃን\" names the uncovered body plainly, as the Hebrew does, without the older euphemism.",
           "uncertain": false,
           "footnote": false
         }

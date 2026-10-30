@@ -127,9 +127,12 @@ decision is needed for narrative, unlike French.
   Homem, o Cordeiro de Deus, a Lei (the Law of Moses), as Escrituras, o
   Reino de Deus, o Reino dos céus. Lowercase: fariseus, saduceus, sábado,
   months and days of the week.
-- Numbers in words up to *vinte* and for round tens and hundreds in running
-  text ("cinco mil homens"); figures for clock times, measures and money
-  when the number is long.
+- Numbers in words up to *vinte*, and for any count that is one to twenty
+  tens, hundreds or thousands in running text ("cento e trinta anos", "mil e
+  setecentos cavaleiros", "cinco mil homens"); figures for other long counts
+  (930, 2.172), for clock times, and for measures and money when the number
+  is long. A list of counts in one verse stays uniform: all in figures if
+  any of them takes figures.
 - Proper names in their usual Brazilian form: Jesus, Maria, José, João,
   Pedro, André, Tiago, Filipe, Bartolomeu, Tomé, Mateus, Natanael, Judas
   Iscariotes, Simão, Moisés, Elias, Eliseu, Isaías, Jeremias, Abraão,

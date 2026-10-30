@@ -78,6 +78,11 @@
           "L": "Então Moisés e os filhos de Israel cantaram este cântico {{divine_name:ao SENHOR|a Javé}}, e disseram: \"Cantarei {{divine_name:ao SENHOR|a Javé}}, pois sumamente {{deity_pronoun:ele|Ele}} se exaltou; o cavalo e o seu cavaleiro {{deity_pronoun:ele|Ele}} lançou no mar.",
           "B": "Então Moisés e os israelitas cantaram este cântico {{divine_name:ao SENHOR|a Javé}}: \"Cantarei {{divine_name:ao SENHOR|a Javé}}, pois {{deity_pronoun:ele|Ele}} se ergueu em triunfo; cavalo e cavaleiro {{deity_pronoun:ele|Ele}} arremessou no mar.",
           "R": "Então Moisés e os israelitas cantaram este cântico {{divine_name:ao SENHOR|a Javé}}: \"Vou cantar {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} teve uma grande vitória. Ele jogou no mar os cavalos e os seus cavaleiros."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ሙሴና የእስራኤል ልጆች ይህን መዝሙር {{divine_name:ለእግዚአብሔር|ለያህዌ}} ዘመሩ፤ እንዲህም አሉ፦ «{{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ እርሱ እጅግ ታላቅ ሆኖ ተነሥቷልና፤ ፈረስንና ጋላቢውን ወደ ባሕር ወረወረ።",
+          "B": "በዚያን ጊዜ ሙሴና የእስራኤል ልጆች ይህን መዝሙር {{divine_name:ለእግዚአብሔር|ለያህዌ}} ዘመሩ፦ «{{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ እርሱ በድል አድራጊነት ከፍ ብሏልና፤ ፈረስንና ጋላቢን ወደ ባሕር ወረወረ።",
+          "R": "በዚያን ጊዜ ሙሴና እስራኤላውያን ይህን መዝሙር {{divine_name:ለእግዚአብሔር|ለያህዌ}} ዘመሩ፦ «ታላቅ ድል አድርጓልና {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ። ፈረሶቹንና ጋላቢዎቻቸውን ወደ ባሕር ጣላቸው።"
         }
       },
       "decisions": [
@@ -233,6 +238,48 @@
           "reason": "The English song (verses 1-18) has no \\q line breaks at any level, so the Portuguese has none either. The song speaks of God in the third person in verses 1-5 and to him from verse 6, where Portuguese uses \"tu\" with deity_pronoun spans (docs/portuguese-style.md section 4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020150010151"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "a span like the English deity_pronoun spans"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting for capitalised pronouns has nothing to change; pronouns for God are written plainly through the song and the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020150010151"
+          ],
+          "choice": "the song (verses 1-18) is set as prose, with no \\q line breaks, at every level",
+          "alternatives": [
+            "lines at the Hebrew accents"
+          ],
+          "reason": "The English levels of this song have no line markers, and the Amharic keeps each level's breaks where the English level has them; lines can be added to every language together later.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -308,6 +355,11 @@
           "L": "A minha força e [o meu] cântico [é] {{divine_name:o SENHOR|Iá}}, e {{deity_pronoun:ele|Ele}} se tornou a minha salvação. Este [é] o meu Deus, e eu {{deity_pronoun:o|O}} louvarei; [o] Deus do meu pai, e eu {{deity_pronoun:o|O}} exaltarei.",
           "B": "A minha força e o meu cântico é {{divine_name:o SENHOR|Iá}}; {{deity_pronoun:ele|Ele}} veio para me salvar. Este é o meu Deus, e eu {{deity_pronoun:o|O}} honrarei com louvor; o Deus do meu pai, e eu {{deity_pronoun:o|O}} exaltarei.",
           "R": "{{divine_name:O SENHOR|Iá}} me dá forças, e {{deity_pronoun:ele|Ele}} é o motivo do meu canto. Ele me salvou. Ele é o meu Deus, e eu {{deity_pronoun:o|O}} louvarei. Ele é o Deus do meu pai, e eu vou contar como {{deity_pronoun:ele|Ele}} é grande."
+        },
+        "am": {
+          "L": "ብርታቴና መዝሙሬ {{divine_name:እግዚአብሔር|ያህ}} [ነው]፤ እርሱም መዳን ሆነልኝ። ይህ አምላኬ ነው፤ አመሰግነዋለሁ፤ የአባቴ አምላክ [ነው]፤ ከፍ አደርገዋለሁ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህ}} ብርታቴና ዝማሬዬ ነው፤ ሊያድነኝም መጣ። ይህ አምላኬ ነው፤ በምስጋና አከብረዋለሁ፤ የአባቴ አምላክ ነው፤ ልዕልናውን እናገራለሁ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህ}} ብርታት ይሰጠኛል፤ የምዘምረውም ስለ እርሱ ነው። እርሱ አድኖኛል። እርሱ አምላኬ ነው፤ አመሰግነዋለሁ። እርሱ የአባቴ አምላክ ነው፤ ምን ያህል ታላቅ እንደ ሆነ እናገራለሁ።"
         }
       },
       "decisions": [
@@ -462,6 +514,27 @@
           "reason": "As the English (r-en-1), the short form of the name is shown as \"o SENHOR\", and the divine name setting shows the form the Hebrew has. Portuguese writes it \"Iá\", the sound of the short name as in \"aleluia\"; \"Já\" would match \"Javé\" but reads as the adverb \"já\", and \"Jah\" keeps an h Portuguese does not sound.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020150020031"
+          ],
+          "choice": "Yah in a divine_name span with \"እግዚአብሔር\" as the default and \"ያህ\" as the alternative",
+          "alternatives": [
+            "\"ያህዌ\" as the alternative, as for the full name"
+          ],
+          "reason": "Yah is the short form of the name (meaning decision m1); as in the English, the alternative gives the form the Hebrew has here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -520,6 +593,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} [é] um homem de guerra; {{divine_name:o SENHOR|Javé}} [é] o {{deity_pronoun:seu|Seu}} nome.",
           "B": "{{divine_name:O SENHOR|Javé}} é um homem de guerra; o {{deity_pronoun:seu|Seu}} nome é {{divine_name:SENHOR|Javé}}.",
           "R": "{{divine_name:O SENHOR|Javé}} luta como um soldado na batalha. O nome {{deity_pronoun:dele|Dele}} é {{divine_name:SENHOR|Javé}}."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የጦር ሰው [ነው]፤ {{divine_name:እግዚአብሔር|ያህዌ}} ስሙ [ነው]።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የጦር ሰው ነው፤ ስሙም {{divine_name:እግዚአብሔር|ያህዌ}} ነው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንደ ጀግና ወታደር በጦርነት ይዋጋል። ስሙ {{divine_name:እግዚአብሔር|ያህዌ}} ነው።"
         }
       },
       "decisions": [
@@ -700,6 +778,11 @@
           "L": "Os carros de Faraó e o seu exército {{deity_pronoun:ele|Ele}} lançou no mar, e os melhores dos seus oficiais foram afundados no mar dos Juncos.",
           "B": "Os carros de Faraó e o seu exército {{deity_pronoun:ele|Ele}} arremessou no mar; os seus melhores oficiais afundaram no mar Vermelho.",
           "R": "Ele jogou no mar os carros de guerra de Faraó e o seu exército. Os melhores oficiais de Faraó se afogaram no mar Vermelho."
+        },
+        "am": {
+          "L": "የፈርዖንን ሰረገሎችና ሠራዊቱን ወደ ባሕር ጣለ፤ የተመረጡት አለቆቹም በሸምበቆ ባሕር ሰጠሙ።",
+          "B": "የፈርዖንን ሰረገሎችና ሠራዊቱን ወደ ባሕር ወረወረ፤ ምርጥ አለቆቹም በቀይ ባሕር ሰጠሙ።",
+          "R": "የፈርዖንን ሰረገሎችና ሠራዊቱን ወደ ባሕር ጣላቸው። የፈርዖን ምርጥ የጦር አለቆች በቀይ ባሕር ሰጥመው ሞቱ።"
         }
       },
       "decisions": [
@@ -832,6 +915,11 @@
           "L": "Os abismos os cobrem; desceram às profundezas como uma pedra.",
           "B": "As águas profundas se fecharam sobre eles; como pedra, desceram ao fundo.",
           "R": "A água funda os cobriu. Eles foram até o fundo como uma pedra."
+        },
+        "am": {
+          "L": "ጥልቆቹ ይከድኗቸዋል፤ እንደ ድንጋይ ወደ ጥልቁ ወረዱ።",
+          "B": "ጥልቁ ውኃ ከደናቸው፤ እንደ ድንጋይ ወደ ታች ዘቀጡ።",
+          "R": "ጥልቁ ውኃ ሸፈናቸው። እንደ ድንጋይ ወደ ታች ሰጠሙ።"
         }
       },
       "decisions": [
@@ -926,6 +1014,11 @@
           "L": "A {{deity_pronoun:tua|Tua}} mão direita, ó {{divine_name:SENHOR|Javé}}, [é] gloriosa em poder; a {{deity_pronoun:tua|Tua}} mão direita, ó {{divine_name:SENHOR|Javé}}, despedaça o inimigo.",
           "B": "Ó {{divine_name:SENHOR|Javé}}, a {{deity_pronoun:tua|Tua}} mão direita é esplêndida em poder; ó {{divine_name:SENHOR|Javé}}, a {{deity_pronoun:tua|Tua}} mão direita despedaçou o inimigo.",
           "R": "{{divine_name:SENHOR|Javé}}, a {{deity_pronoun:tua|Tua}} mão direita é grande e poderosa. {{divine_name:SENHOR|Javé}}, a {{deity_pronoun:tua|Tua}} mão direita esmagou o inimigo."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቀኝ እጅህ በኃይል የከበረች [ናት]፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቀኝ እጅህ ጠላትን ታደቃለች።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቀኝ እጅህ በኃይል የተዋበች ናት፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቀኝ እጅህ ጠላትን አደቀቀች።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቀኝ እጅህ ታላቅና ኃያል ናት። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቀኝ እጅህ ጠላትን አደቀቀች።"
         }
       },
       "decisions": [
@@ -999,6 +1092,27 @@
           "reason": "Addressed by name, God is \"SENHOR\" without the article, as in Genesis 32:10, so the setting reads \"ó Javé\". \"Destra\" is the old poetic word for the right hand; \"mão direita\" says it plainly at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020150060012"
+          ],
+          "choice": "God addressed as \"አንተ\" with the vocative \"... ሆይ\" from verse 6 to verse 17",
+          "alternatives": [
+            "\"እርስዎ\""
+          ],
+          "reason": "People pray to God with the familiar \"አንተ\", as the Pentateuch terms set; the song speaks of God in verses 1-5 and to him from here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1066,6 +1180,11 @@
           "L": "E na grandeza da {{deity_pronoun:tua|Tua}} majestade derrubaste os que se levantaram contra {{deity_pronoun:ti|Ti}}; enviaste o {{deity_pronoun:teu|Teu}} furor; ele os consumiu como palha.",
           "B": "Na {{deity_pronoun:tua|Tua}} imensa majestade, derrubaste os que se levantaram contra {{deity_pronoun:ti|Ti}}; soltaste a {{deity_pronoun:tua|Tua}} fúria, e ela os queimou como palha.",
           "R": "Com o {{deity_pronoun:teu|Teu}} grande poder, derrotaste os {{deity_pronoun:teus|Teus}} inimigos. A {{deity_pronoun:tua|Tua}} ira se acendeu e os queimou como palha seca."
+        },
+        "am": {
+          "L": "በግርማህም ታላቅነት በአንተ ላይ የተነሡትን ጣልሃቸው፤ የሚነድ ቁጣህን ላክህ፤ እንደ ገለባ በላቸው።",
+          "B": "በልዕልናህ ታላቅነት በአንተ ላይ የተነሡትን አፈረስሃቸው፤ ቁጣህን ለቀቅህ፤ እንደ ጭድም አቃጠላቸው።",
+          "R": "በታላቅ ኃይልህ ጠላቶችህን አሸነፍህ። ቁጣህ እንደ እሳት ነድዶ እንደ ደረቅ ጭድ አቃጠላቸው።"
         }
       },
       "decisions": [
@@ -1187,6 +1306,11 @@
           "L": "E pelo sopro das {{deity_pronoun:tuas|Tuas}} narinas as águas se amontoaram; as correntes se ergueram como um monte; os abismos se coalharam no coração do mar.",
           "B": "Ao sopro das {{deity_pronoun:tuas|Tuas}} narinas, as águas se empilharam; as águas correntes se levantaram num monte, e as profundezas se solidificaram no meio do mar.",
           "R": "Sopraste com força, e a água se amontoou. A água que corria ficou de pé, como um monte. A água funda ficou dura no meio do mar."
+        },
+        "am": {
+          "L": "በአፍንጫህም እስትንፋስ ውኆች ተከመሩ፤ ፈሳሾቹ እንደ ክምር ቆሙ፤ ጥልቆቹም በባሕር ልብ ውስጥ ረጉ።",
+          "B": "በአፍንጫህ እስትንፋስ ውኆቹ ተቆለሉ፤ የሚፈሱት ውኆች እንደ ክምር ቀጥ ብለው ቆሙ፤ ጥልቁም በባሕሩ መካከል ጠነከረ።",
+          "R": "ኃይለኛ እስትንፋስ አወጣህ፤ ውኃውም ተቆለለ። የሚፈሰው ውኃ እንደ ክምር ቀጥ ብሎ ቆመ። ጥልቁ ውኃ በባሕሩ መካከል እንደ ድንጋይ ጠነከረ።"
         }
       },
       "decisions": [
@@ -1324,6 +1448,11 @@
           "L": "O inimigo disse: 'Perseguirei, alcançarei, repartirei [os] despojos; o meu desejo se fartará deles; desembainharei a minha espada; a minha mão os despojará.'",
           "B": "O inimigo disse: 'Vou persegui-los e alcançá-los; vou repartir os despojos e me fartar deles; vou desembainhar a espada, e a minha mão vai acabar com eles.'",
           "R": "O inimigo disse: 'Vou correr atrás deles e pegá-los. Vou dividir tudo o que eu tomar deles, e vou ter tudo o que eu quiser. Vou tirar a minha espada e destruí-los com a minha própria mão.'"
+        },
+        "am": {
+          "L": "ጠላት እንዲህ አለ፦ “አሳድዳለሁ፤ እደርስባቸዋለሁ፤ ምርኮን እካፈላለሁ፤ ነፍሴ በእነርሱ ትጠግባለች፤ ሰይፌን እመዝዛለሁ፤ እጄ ትወርሳቸዋለች።”",
+          "B": "ጠላት እንዲህ አለ፦ “አሳድጄ እይዛቸዋለሁ፤ ምርኮውን አከፋፍላለሁ፤ በእነርሱ ላይ ምኞቴን አረካለሁ፤ ሰይፌን እመዝዛለሁ፤ እጄም ታጠፋቸዋለች።”",
+          "R": "ጠላት እንዲህ አለ፦ “አሳድጄ እይዛቸዋለሁ። ከእነርሱ የምወስደውን አከፋፍላለሁ፤ የፈለግኩትን ሁሉ አገኛለሁ። ሰይፌን መዝዤ በገዛ እጄ አጠፋቸዋለሁ።”"
         }
       },
       "decisions": [
@@ -1437,6 +1566,11 @@
           "L": "Sopraste com o {{deity_pronoun:teu|Teu}} fôlego; o mar os cobriu; afundaram como chumbo nas águas poderosas.",
           "B": "Mas {{deity_pronoun:tu|Tu}} sopraste, e o mar se fechou sobre eles; afundaram como chumbo nas águas impetuosas.",
           "R": "Mas {{deity_pronoun:tu|Tu}} sopraste o {{deity_pronoun:teu|Teu}} fôlego, e o mar os cobriu. Eles afundaram como chumbo pesado na água funda e forte."
+        },
+        "am": {
+          "L": "በእስትንፋስህ እፍ አልህ፤ ባሕሩ ከደናቸው፤ በኃይለኛ ውኆች ውስጥ እንደ እርሳስ ሰጠሙ።",
+          "B": "አንተ ግን እፍ አልህ፤ ባሕሩም ተከደነባቸው፤ በኃያላን ውኆች ውስጥ እንደ እርሳስ ዘቀጡ።",
+          "R": "አንተ ግን እስትንፋስህን እፍ አልህ፤ ባሕሩም ሸፈናቸው። በጥልቁና በኃይለኛው ውኃ ውስጥ እንደ ከባድ እርሳስ ሰጠሙ።"
         }
       },
       "decisions": [
@@ -1555,6 +1689,11 @@
           "L": "Quem [é] como {{deity_pronoun:tu|Tu}} entre os deuses, ó {{divine_name:SENHOR|Javé}}? Quem [é] como {{deity_pronoun:tu|Tu}}, glorioso em santidade, temível em louvores, que fazes maravilhas?",
           "B": "Entre os deuses, quem se compara a {{deity_pronoun:ti|Ti}}, ó {{divine_name:SENHOR|Javé}}? Quem é como {{deity_pronoun:tu|Tu}}, esplêndido em santidade, temível em feitos dignos de louvor, que realizas maravilhas?",
           "R": "{{divine_name:SENHOR|Javé}}, algum dos deuses é como {{deity_pronoun:tu|Tu}}? Existe alguém como {{deity_pronoun:tu|Tu}}, tão glorioso e santo? Os {{deity_pronoun:teus|Teus}} grandes feitos enchem as pessoas de temor e louvor. Tu fazes maravilhas incríveis."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከአማልክት መካከል እንደ አንተ ያለ ማን ነው? በቅድስና የከበረ፣ በምስጋናዎች የሚያስፈራ፣ ድንቅን የሚያደርግ እንደ አንተ ያለ ማን ነው?",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከአማልክት መካከል ከአንተ ጋር የሚወዳደር ማን ነው? በቅድስና የተዋብህ፣ በሚመሰገኑ ሥራዎችህ የምታስፈራ፣ ድንቅን የምትሠራ፣ እንደ አንተ ያለ ማን ነው?",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከአማልክት መካከል አንተን የሚመስል አለን? እንደ አንተ የከበረና ቅዱስ የሆነ ማን አለ? ታላላቅ ሥራዎችህ ሰዎችን በፍርሃትና በምስጋና ይሞሏቸዋል። አስደናቂ ተአምራትን ታደርጋለህ።"
         }
       },
       "decisions": [
@@ -1680,6 +1819,11 @@
           "L": "Estendeste a {{deity_pronoun:tua|Tua}} mão direita; a terra os engoliu.",
           "B": "Estendeste a {{deity_pronoun:tua|Tua}} mão direita, e a terra os engoliu.",
           "R": "Estendeste a {{deity_pronoun:tua|Tua}} mão direita, e a terra engoliu os {{deity_pronoun:teus|Teus}} inimigos."
+        },
+        "am": {
+          "L": "ቀኝ እጅህን ዘረጋህ፤ ምድር ዋጠቻቸው።",
+          "B": "ቀኝ እጅህን በዘረጋህ ጊዜ መሬት ዋጠቻቸው።",
+          "R": "ቀኝ እጅህን ዘረጋህ፤ ምድርም ጠላቶችህን ዋጠቻቸው።"
         }
       },
       "decisions": [
@@ -1783,6 +1927,11 @@
           "L": "Conduziste no {{deity_pronoun:teu|Teu}} amor leal [o] povo que resgataste; guiaste[-o] com a {{deity_pronoun:tua|Tua}} força à morada da {{deity_pronoun:tua|Tua}} santidade.",
           "B": "Com amor fiel conduziste o povo que tinhas resgatado; com a {{deity_pronoun:tua|Tua}} força o guiaste até a {{deity_pronoun:tua|Tua}} santa morada.",
           "R": "Por causa do {{deity_pronoun:teu|Teu}} amor fiel, conduziste o povo que tinhas libertado. Com a {{deity_pronoun:tua|Tua}} força, levaste esse povo até a {{deity_pronoun:tua|Tua}} santa casa."
+        },
+        "am": {
+          "L": "የተቤዠኸውን ሕዝብ በጽኑ ፍቅርህ መራህ፤ በብርታትህ ወደ ቅድስናህ መኖሪያ አደረስሃቸው።",
+          "B": "በጽኑ ፍቅርህ የተቤዠኸውን ሕዝብ መራህ፤ በብርታትህም ወደ ቅዱስ መኖሪያህ አደረስሃቸው።",
+          "R": "ከጽኑ ፍቅርህ የተነሣ ነጻ ያወጣኸውን ሕዝብ መራህ። በብርታትህ ወደ ቅዱስ መኖሪያህ መራሃቸው።"
         }
       },
       "decisions": [
@@ -2007,6 +2156,49 @@
           "reason": "\"Resgatar\" is the verb used for redeeming the firstborn in 13:13-15, so the link of family redemption (m2) stays in one word family; \"remir\" is now rare. Readable says \"libertado\", as the English says \"set free\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020150130022"
+          ],
+          "choice": "\"ጽኑ ፍቅር\" (steadfast love) at every level",
+          "alternatives": [
+            "\"ታማኝ ፍቅር\" (faithful love), as the English Balanced and Readable",
+            "\"ምሕረት\" (mercy)"
+          ],
+          "reason": "The Pentateuch terms give \"ጽኑ ፍቅር\" for hesed: love that holds to the covenant. It is plain enough for Readable; \"ምሕረት\" says only part of it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020150130091"
+          ],
+          "choice": "\"መኖሪያ\" (dwelling, abode) for God's holy abode",
+          "alternatives": [
+            "\"ማደሪያ\""
+          ],
+          "reason": "\"ማደሪያ\" is kept for the tabernacle (mishkan) in the Pentateuch terms; this is a different Hebrew word, the place where God dwells and brings his people.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2067,6 +2259,11 @@
           "L": "Os povos ouviram; estremeceram; dores [de parto] tomaram os habitantes da Filístia.",
           "B": "As nações ouviram e tremeram; a angústia se apoderou dos que moravam na Filístia.",
           "R": "Outras nações ouviram o que aconteceu e tremeram de medo. O povo da Filístia ficou em agonia."
+        },
+        "am": {
+          "L": "አሕዛብ ሰሙ፤ ተንቀጠቀጡ፤ የፍልስጥኤምን ነዋሪዎች ምጥ ያዛቸው።",
+          "B": "ሕዝቦች ሰምተው ተንቀጠቀጡ፤ በፍልስጥኤም የሚኖሩትንም ጭንቅ ያዛቸው።",
+          "R": "ሌሎች ሕዝቦች የሆነውን ሰምተው በፍርሃት ተንቀጠቀጡ። የፍልስጥኤም ሰዎች በታላቅ ጭንቀት ተያዙ።"
         }
       },
       "decisions": [
@@ -2216,6 +2413,11 @@
           "L": "Então os chefes de Edom ficaram aterrorizados; [quanto aos] líderes de Moabe, o tremor os tomou; derreteram-se todos os habitantes de Canaã.",
           "B": "Então os chefes de clã de Edom ficaram apavorados; os governantes de Moabe foram tomados de tremor; todos os que moravam em Canaã perderam o ânimo.",
           "R": "Os líderes de Edom ficaram apavorados. Os governantes de Moabe tremeram de medo. Todo o povo de Canaã perdeu a coragem."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ የኤዶም አለቆች ደነገጡ፤ የሞዓብን ኃያላን መንቀጥቀጥ ያዛቸው፤ የከነዓን ነዋሪዎች ሁሉ ቀለጡ።",
+          "B": "በዚያን ጊዜ የኤዶም የጎሳ አለቆች በድንጋጤ ተመቱ፤ የሞዓብ ገዦች በመንቀጥቀጥ ተያዙ፤ በከነዓን የሚኖሩ ሁሉ ልባቸው ቀለጠ።",
+          "R": "የኤዶም መሪዎች እጅግ ደነገጡ። የሞዓብ ገዦች በፍርሃት ተንቀጠቀጡ። የከነዓን ሰዎች ሁሉ ወኔ ከዳቸው።"
         }
       },
       "decisions": [
@@ -2357,6 +2559,11 @@
           "L": "Caíram sobre eles terror e pavor; pela grandeza do {{deity_pronoun:teu|Teu}} braço ficaram imóveis como pedra, até que o {{deity_pronoun:teu|Teu}} povo passasse, ó {{divine_name:SENHOR|Javé}}, até que passasse o povo que adquiriste.",
           "B": "Medo e pavor caíram sobre eles; diante do poder do {{deity_pronoun:teu|Teu}} braço ficaram calados como pedra, enquanto o {{deity_pronoun:teu|Teu}} povo atravessava, ó {{divine_name:SENHOR|Javé}}, enquanto atravessava o povo que fizeste {{deity_pronoun:teu|Teu}}.",
           "R": "Terror e medo caíram sobre eles. O {{deity_pronoun:teu|Teu}} grande poder os deixou parados como uma pedra até o {{deity_pronoun:teu|Teu}} povo passar, {{divine_name:SENHOR|Javé}}. Eles ficaram parados até passar o povo que fizeste {{deity_pronoun:teu|Teu}}."
+        },
+        "am": {
+          "L": "ድንጋጤና ፍርሃት በላያቸው ወደቀ፤ በክንድህ ታላቅነት እንደ ድንጋይ ጸጥ አሉ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ሕዝብህ እስኪያልፍ ድረስ፣ የገዛኸው ሕዝብ እስኪያልፍ ድረስ።",
+          "B": "ፍርሃትና ሽብር ወረደባቸው፤ ከክንድህ ብርታት የተነሣ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ሕዝብህ እስኪሻገር ድረስ፣ የራስህ ያደረግኸው ሕዝብ እስኪሻገር ድረስ እንደ ድንጋይ ዝም ብለው ቆሙ።",
+          "R": "ሽብርና ፍርሃት ወደቀባቸው። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ሕዝብህ አልፎ እስኪሄድ ድረስ ታላቁ ኃይልህ እንደ ድንጋይ ጸጥ አደረጋቸው። የራስህ ያደረግኸው ሕዝብ አልፎ እስኪሄድ ድረስ ጸጥ ብለው ቆሙ።"
         }
       },
       "decisions": [
@@ -2501,6 +2708,11 @@
           "L": "Tu os farás entrar e os plantarás no monte da {{deity_pronoun:tua|Tua}} herança, [o] lugar que fizeste para {{deity_pronoun:tua|Tua}} habitação, ó {{divine_name:SENHOR|Javé}}, [o] santuário, ó Senhor, [que] as {{deity_pronoun:tuas|Tuas}} mãos estabeleceram.",
           "B": "Tu os levarás e os plantarás no monte da {{deity_pronoun:tua|Tua}} herança, o lugar que preparaste para a {{deity_pronoun:tua|Tua}} morada, ó {{divine_name:SENHOR|Javé}}, o santuário, ó Senhor, que as {{deity_pronoun:tuas|Tuas}} próprias mãos firmaram.",
           "R": "Tu vais levar o {{deity_pronoun:teu|Teu}} povo e plantá-lo no {{deity_pronoun:teu|Teu}} próprio monte. {{divine_name:SENHOR|Javé}}, esse é o lugar que escolheste para ser a {{deity_pronoun:tua|Tua}} casa. Senhor, as {{deity_pronoun:tuas|Tuas}} próprias mãos construíram esse lugar santo."
+        },
+        "am": {
+          "L": "ታገባቸዋለህ፤ በርስትህም ተራራ ላይ ትተክላቸዋለህ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ልትኖርበት በሠራኸው ስፍራ፣ ጌታ ሆይ፣ እጆችህ ባጸኑት መቅደስ።",
+          "B": "ታስገባቸዋለህ፤ በርስትህ ተራራ ላይም ትተክላቸዋለህ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ይህም ለመኖሪያህ ያዘጋጀኸው ስፍራ ነው፤ ጌታ ሆይ፣ የገዛ እጆችህ ያጸኑት መቅደስ ነው።",
+          "R": "ሕዝብህን አስገብተህ በገዛ ተራራህ ላይ ትተክላቸዋለህ። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ያ መኖሪያህ ያደረግኸው ስፍራ ነው። ጌታ ሆይ፣ ያን ቅዱስ ስፍራ የሠሩት የገዛ እጆችህ ናቸው።"
         }
       },
       "decisions": [
@@ -2633,6 +2845,25 @@
           "reason": "The second title is Adonai, \"Lord\", the title meaning master (m3), so it is \"Senhor\" in ordinary capitals, not \"SENHOR\", and takes no setting, as docs/pentateuch-portuguese-terms.md sets it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020150170101"
+          ],
+          "choice": "\"ጌታ ሆይ\" for Adonai beside \"... ሆይ\" in the divine_name span for YHWH",
+          "alternatives": [],
+          "reason": "The Pentateuch terms keep \"ጌታ\" for Adonai, so the two names of God in this verse stay apart even with the divine_name setting at its default.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2691,6 +2922,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} reinará para todo o sempre.\"",
           "B": "{{divine_name:O SENHOR|Javé}} reinará para todo o sempre!\"",
           "R": "{{divine_name:O SENHOR|Javé}} vai governar como rei para sempre, para todo o sempre!\""
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም እስከ ዘላለም ይነግሣል።»",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም እስከ ዘላለም ይነግሣል!»",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም እስከ ዘላለም ንጉሥ ሆኖ ይገዛል!»"
         }
       },
       "decisions": [
@@ -2825,6 +3061,11 @@
           "L": "Pois os cavalos de Faraó entraram com os seus carros e com os seus cavaleiros no mar, e {{divine_name:o SENHOR|Javé}} fez voltar sobre eles as águas do mar, e os filhos de Israel andaram em terra seca no meio do mar.",
           "B": "Os cavalos de Faraó, com os seus carros e os seus cavaleiros, tinham entrado no mar, e {{divine_name:o SENHOR|Javé}} tinha feito as águas do mar voltarem sobre eles; mas os israelitas tinham atravessado o meio do mar em terra seca.",
           "R": "Foi isto o que aconteceu: os cavalos, os carros de guerra e os cavaleiros de Faraó entraram no mar, e {{divine_name:o SENHOR|Javé}} fez a água voltar e cobri-los. Mas os israelitas tinham atravessado o mar em terra seca."
+        },
+        "am": {
+          "L": "የፈርዖን ፈረሶች ከሰረገሎቹና ከፈረሰኞቹ ጋር ወደ ባሕር ገብተው ነበርና፤ {{divine_name:እግዚአብሔር|ያህዌ}} የባሕሩን ውኆች በላያቸው መለሰባቸው፤ የእስራኤልም ልጆች በባሕሩ መካከል በደረቅ ምድር ሄዱ።",
+          "B": "የፈርዖን ፈረሶች ከሰረገሎቹና ከፈረሰኞቹ ጋር ወደ ባሕሩ ገብተው ነበር፤ {{divine_name:እግዚአብሔር|ያህዌ}} የባሕሩን ውኆች በላያቸው መልሶባቸው ነበር፤ የእስራኤል ልጆች ግን በባሕሩ መካከል በደረቅ ምድር ተሻግረው ነበር።",
+          "R": "የሆነውም ይህ ነው፤ የፈርዖን ፈረሶች፣ ሰረገሎችና ፈረሰኞች ወደ ባሕሩ ገቡ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ውኃውን መልሶ በላያቸው አፈሰሰው። እስራኤላውያን ግን ባሕሩን በደረቅ ምድር ተሻግረው ነበር።"
         }
       },
       "decisions": [
@@ -2954,6 +3195,11 @@
           "L": "E Miriã, a profetisa, a irmã de Arão, tomou o tamborim na sua mão, e todas as mulheres saíram atrás dela com tamborins e com danças.",
           "B": "Miriã, a profetisa, irmã de Arão, pegou um tamborim, e todas as mulheres saíram atrás dela, tocando tamborins e dançando.",
           "R": "Miriã, a irmã de Arão, era profetisa. Ela pegou um tamborim. Todas as mulheres a seguiram, tocando tamborins e dançando."
+        },
+        "am": {
+          "L": "የአሮንም እኅት ነቢይቱ ማርያም ከበሮውን በእጇ ያዘች፤ ሴቶቹም ሁሉ በከበሮና በሽብሸባ ተከትለዋት ወጡ።",
+          "B": "የአሮን እኅት ነቢይቱ ማርያም ከበሮ አነሣች፤ ሴቶቹም ሁሉ ከበሮ እየመቱና እያሸበሸቡ ተከትለዋት ወጡ።",
+          "R": "የአሮን እኅት ማርያም ነቢይት ነበረች። ከበሮ በእጇ ያዘች። ሴቶቹም ሁሉ ከበሮ እየመቱና እየጨፈሩ ተከተሏት።"
         }
       },
       "decisions": [
@@ -3106,6 +3352,28 @@
           "reason": "As in Genesis 31:27: \"tamborim\" is a small hand drum, the instrument of m3; \"pandeiro\" has jingles and is tied to samba, and \"adufe\" is a regional word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020150200072",
+            "o020150200143"
+          ],
+          "choice": "\"ከበሮ\" (hand drum) for the tambourine; \"ሽብሸባ\", \"ማሸብሸብ\" (L, B) and \"መጨፈር\" (R) for the dancing",
+          "alternatives": [
+            "\"አታሞ\""
+          ],
+          "reason": "\"ከበሮ\" is the common word for a drum played by hand, used in Ethiopian worship; \"ሽብሸባ\" is the swaying dance of praise, and Readable uses the everyday word for dancing.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3176,6 +3444,11 @@
           "L": "E Miriã lhes respondia: \"Cantem {{divine_name:ao SENHOR|a Javé}}, pois sumamente {{deity_pronoun:ele|Ele}} se exaltou; o cavalo e o seu cavaleiro {{deity_pronoun:ele|Ele}} lançou no mar.\"",
           "B": "Miriã puxava o refrão para eles: \"Cantem {{divine_name:ao SENHOR|a Javé}}, pois {{deity_pronoun:ele|Ele}} se ergueu em triunfo; cavalo e cavaleiro {{deity_pronoun:ele|Ele}} arremessou no mar.\"",
           "R": "Miriã puxava o canto para eles: \"Cantem {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} teve uma grande vitória. Ele jogou no mar os cavalos e os seus cavaleiros.\""
+        },
+        "am": {
+          "L": "ማርያምም መለሰችላቸው፦ «{{divine_name:ለእግዚአብሔር|ለያህዌ}} ዘምሩ፤ እርሱ እጅግ ታላቅ ሆኖ ተነሥቷልና፤ ፈረስንና ጋላቢውን ወደ ባሕር ወረወረ።»",
+          "B": "ማርያምም እየመራች እንዲህ ብላ ዘመረችላቸው፦ «{{divine_name:ለእግዚአብሔር|ለያህዌ}} ዘምሩ፤ እርሱ በድል አድራጊነት ከፍ ብሏልና፤ ፈረስንና ጋላቢን ወደ ባሕር ወረወረ።»",
+          "R": "ማርያምም መዝሙሩን እየመራች እንዲህ አለች፦ «ታላቅ ድል አድርጓልና {{divine_name:ለእግዚአብሔር|ለያህዌ}} ዘምሩ። ፈረሶቹንና ጋላቢዎቻቸውን ወደ ባሕር ጣላቸው።»"
         }
       },
       "decisions": [
@@ -3322,6 +3595,11 @@
           "L": "E Moisés fez Israel partir do mar dos Juncos, e saíram para o deserto de Sur; e andaram três dias no deserto e não acharam água.",
           "B": "Moisés fez Israel partir do mar Vermelho, e eles foram para o deserto de Sur. Durante três dias andaram pelo deserto sem encontrar água.",
           "R": "Depois Moisés levou os israelitas para longe do mar Vermelho, para o deserto de Sur. Eles andaram três dias pelo deserto e não encontraram água."
+        },
+        "am": {
+          "L": "ሙሴም እስራኤልን ከሸምበቆ ባሕር አስነሣ፤ ወደ ሱር ምድረ በዳም ወጡ፤ በምድረ በዳውም ሦስት ቀን ተጓዙ፤ ውኃም አላገኙም።",
+          "B": "ሙሴ እስራኤልን ከቀይ ባሕር አስነሥቶ ወሰዳቸው፤ ወደ ሱር ምድረ በዳም ወጡ። ሦስት ቀን በምድረ በዳው ተጓዙ፤ ነገር ግን ምንም ውኃ አላገኙም።",
+          "R": "ከዚያም ሙሴ እስራኤላውያንን ከቀይ ባሕር መርቶ ወደ ሱር ምድረ በዳ ወሰዳቸው። በምድረ በዳው ሦስት ቀን ተጓዙ፤ ምንም ውኃ አላገኙም።"
         }
       },
       "decisions": [
@@ -3461,6 +3739,11 @@
           "L": "E chegaram a Mara, e não puderam beber [a] água de Mara, pois [ela era] amarga; por isso o seu nome foi chamado Mara.",
           "B": "Quando chegaram a Mara, não conseguiram beber a água de lá, porque era amarga. Por isso o lugar recebeu o nome de Mara.",
           "R": "Eles chegaram a um lugar chamado Mara. Não conseguiram beber a água de lá porque era amarga. É por isso que o lugar se chama Mara, que quer dizer \"amarga\"."
+        },
+        "am": {
+          "L": "ወደ ማራም መጡ፤ የማራንም ውኃ መጠጣት አልቻሉም፤ መራራ ነበረና፤ ስለዚህ ስሙ ማራ ተባለ።",
+          "B": "ማራ በደረሱ ጊዜ በዚያ ያለውን ውኃ መጠጣት አልቻሉም፤ መራራ ነበረና። ስለዚህ ስፍራው ማራ ተባለ።",
+          "R": "ማራ ወደሚባል ስፍራ መጡ። በዚያ ያለው ውኃ መራራ ስለ ነበረ ሊጠጡት አልቻሉም። ስፍራው ማራ የተባለው ስለዚህ ነው፤ ማራ ማለት «መራራ» ማለት ነው።"
         }
       },
       "decisions": [
@@ -3570,6 +3853,23 @@
           "reason": "For the whole book: \"Mara\" is the usual Brazilian form, without the h Portuguese does not sound. Readable explains the name with the feminine \"amarga\", agreeing with \"água\", the bitter thing named.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020150230151"
+          ],
+          "choice": "\"ማራ ማለት «መራራ» ማለት ነው\" (Marah means bitter)",
+          "alternatives": [],
+          "reason": "The name and the Amharic word for bitter, \"መራራ\", sound close, so the explanation the English Readable adds reads naturally in Amharic too.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3632,6 +3932,11 @@
           "L": "E o povo murmurou contra Moisés, dizendo: \"Que beberemos?\"",
           "B": "O povo reclamou contra Moisés. \"O que vamos beber?\", diziam.",
           "R": "O povo reclamou com Moisés. \"O que vamos beber?\", perguntavam."
+        },
+        "am": {
+          "L": "ሕዝቡም «ምን እንጠጣለን?» ብለው በሙሴ ላይ አጉረመረሙ።",
+          "B": "ሕዝቡ በሙሴ ላይ አጉረመረሙ። «ምን ልንጠጣ ነው?» አሉ።",
+          "R": "ሕዝቡ ሙሴን አማረሩት። «ምን እንጠጣለን?» ብለው ጠየቁ።"
         }
       },
       "decisions": [
@@ -3807,6 +4112,11 @@
           "L": "E ele clamou {{divine_name:ao SENHOR|a Javé}}, e {{divine_name:o SENHOR|Javé}} lhe mostrou uma árvore, e ele [a] lançou na água, e a água se tornou doce. Ali {{deity_pronoun:ele|Ele}} lhes deu um estatuto e uma ordenança, e ali {{deity_pronoun:ele|Ele}} os pôs à prova.",
           "B": "Moisés clamou {{divine_name:ao SENHOR|a Javé}}, e {{divine_name:o SENHOR|Javé}} lhe indicou um pedaço de madeira. Ele o jogou na água, e a água ficou doce. Foi ali que {{divine_name:o SENHOR|Javé}} estabeleceu para eles um estatuto e uma ordenança, e foi ali que {{deity_pronoun:ele|Ele}} os pôs à prova.",
           "R": "Moisés clamou {{divine_name:ao SENHOR|a Javé}}, pedindo socorro, e {{divine_name:o SENHOR|Javé}} lhe mostrou um pedaço de madeira. Moisés jogou a madeira na água, e a água ficou boa para beber. Ali {{divine_name:o SENHOR|Javé}} deu ao povo uma regra e uma lei para guiar a vida deles. E ali {{deity_pronoun:ele|Ele}} os pôs à prova."
+        },
+        "am": {
+          "L": "እርሱም {{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}} ጮኸ፤ {{divine_name:እግዚአብሔር|ያህዌ}} እንጨትን አሳየው፤ ወደ ውኃውም ጣለው፤ ውኃውም ጣፋጭ ሆነ። በዚያ ሥርዓትንና ደንብን ሰጣቸው፤ በዚያም ፈተናቸው።",
+          "B": "ሙሴ {{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}} ጮኸ፤ {{divine_name:እግዚአብሔር|ያህዌ}} አንድ እንጨት አመለከተው። ሙሴ እንጨቱን ወደ ውኃው ጣለው፤ ውኃውም ጣፋጭ ሆነ። {{divine_name:እግዚአብሔር|ያህዌ}} ሥርዓትንና ደንብን የሰጣቸው በዚያ ነበር፤ የፈተናቸውም በዚያ ነበር።",
+          "R": "ሙሴ እንዲረዳው {{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}} ጮኸ፤ {{divine_name:እግዚአብሔር|ያህዌ}} አንድ እንጨት አሳየው። ሙሴ እንጨቱን ወደ ውኃው ጣለው፤ ውኃውም ለመጠጥ ጥሩ ሆነ። በዚያ {{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቡ የሚኖሩበትን ሥርዓትና ሕግ ሰጣቸው። በዚያም ፈተናቸው።"
         }
       },
       "decisions": [
@@ -4036,6 +4346,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} disse: \"Se ouvires atentamente a voz {{divine_name:do SENHOR|de Javé}}, o teu Deus, e fizeres o que é reto aos {{deity_pronoun:seus|Seus}} olhos, e deres ouvidos aos {{deity_pronoun:seus|Seus}} mandamentos, e guardares todos os {{deity_pronoun:seus|Seus}} estatutos, nenhuma das doenças que pus sobre o Egito porei sobre ti, pois eu [sou] {{divine_name:o SENHOR|Javé}} [que] te cura.\"",
           "B": "Ele disse: \"Se escutares com atenção a voz {{divine_name:do SENHOR|de Javé}}, o teu Deus, e fizeres o que {{deity_pronoun:ele|Ele}} considera certo, se prestares atenção aos {{deity_pronoun:seus|Seus}} mandamentos e guardares todos os {{deity_pronoun:seus|Seus}} estatutos, eu te pouparei de todas as doenças que mandei sobre os egípcios. Pois eu sou {{divine_name:o SENHOR|Javé}}, que te cura.\"",
           "R": "Ele disse: \"Escuta com atenção {{divine_name:o SENHOR|Javé}}, o teu Deus, e faze o que {{deity_pronoun:ele|Ele}} diz que é certo. Presta atenção aos {{deity_pronoun:seus|Seus}} mandamentos e obedece a todas as {{deity_pronoun:suas|Suas}} regras. Se fizeres isso, não vou te fazer sofrer nenhuma das doenças que mandei sobre os egípcios. Eu sou {{divine_name:o SENHOR|Javé}}, aquele que te cura.\""
+        },
+        "am": {
+          "L": "እንዲህም አለ፦ «የአምላክህን {{divine_name:የእግዚአብሔርን|የያህዌን}} ቃል በእርግጥ ብትሰማ፣ በፊቱም ትክክል የሆነውን ብታደርግ፣ ትእዛዛቱንም ብታደምጥ፣ ሥርዓቶቹንም ሁሉ ብትጠብቅ፣ በግብፅ ላይ ካመጣሁት በሽታ ሁሉ አንዱንም በአንተ ላይ አላመጣም፤ እኔ የምፈውስህ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝና።»",
+          "B": "እንዲህም አለ፦ «የአምላክህን {{divine_name:የእግዚአብሔርን|የያህዌን}} ቃል በጥንቃቄ ብትሰማ፣ እርሱ ትክክል ነው የሚለውንም ብታደርግ፣ ትእዛዛቱን ብትቀበልና ሥርዓቶቹን ሁሉ ብትጠብቅ፣ በግብፃውያን ላይ ካመጣሁት በሽታ አንዱንም በአንተ ላይ አላመጣም። እኔ የምፈውስህ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝና።»",
+          "R": "እንዲህም አለ፦ «አምላክህን {{divine_name:እግዚአብሔርን|ያህዌን}} በጥንቃቄ ስማ፤ እርሱ ትክክል ነው የሚለውንም አድርግ። ትእዛዛቱን አድምጥ፤ ሥርዓቶቹንም ሁሉ ጠብቅ። ይህን ብታደርግ በግብፃውያን ላይ ካመጣሁት በሽታ አንዱም እንዲደርስብህ አላደርግም። እኔ የምፈውስህ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ።»"
         }
       },
       "decisions": [
@@ -4188,6 +4503,27 @@
           "reason": "As with God's self-naming (9:5), Korean does not honor oneself; God speaks of \"your God Yahweh\" and then of \"his\" commands in the plain style.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020150260061",
+            "o020150260071"
+          ],
+          "choice": "\"የአምላክህን የእግዚአብሔርን ቃል\" order: \"your God\" before the name",
+          "alternatives": [
+            "\"የእግዚአብሔር የአምላክህን ቃል\""
+          ],
+          "reason": "With the genitive \"of\" on both nouns, Amharic reads more smoothly with \"your God\" first; the meaning is the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4259,6 +4595,11 @@
           "L": "E chegaram a Elim, e ali [havia] doze fontes de água e setenta palmeiras; e acamparam ali junto às águas.",
           "B": "Em seguida chegaram a Elim. Havia ali doze fontes de água e setenta palmeiras, e eles acamparam junto à água.",
           "R": "Depois os israelitas chegaram a um lugar chamado Elim. Ali havia doze fontes de água e setenta palmeiras. Então eles acamparam ali, perto da água."
+        },
+        "am": {
+          "L": "ወደ ኤሊምም መጡ፤ በዚያም አሥራ ሁለት የውኃ ምንጮችና ሰባ የዘንባባ ዛፎች ነበሩ፤ በዚያም በውኃው አጠገብ ሰፈሩ።",
+          "B": "ከዚያም ኤሊም ደረሱ። በዚያ አሥራ ሁለት የውኃ ምንጮችና ሰባ የዘንባባ ዛፎች ነበሩ፤ በውኃውም አጠገብ ሰፈሩ።",
+          "R": "ከዚያም እስራኤላውያን ኤሊም ወደሚባል ስፍራ መጡ። በዚያ አሥራ ሁለት የውኃ ምንጮችና ሰባ የዘንባባ ዛፎች ነበሩ። ስለዚህ በዚያ በውኃው አጠገብ ሰፈሩ።"
         }
       },
       "decisions": [

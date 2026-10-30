@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} disse a Moisés:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን ተናገረው። እንዲህም አለ፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -91,6 +96,25 @@
             "passé composé at every level"
           ],
           "reason": "The French style guide's tense by level. The speech that follows is law, in the future and the imperative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "capitalised pronouns as in the English setting"
+          ],
+          "reason": "The English marks pronouns for God with a reader setting in this chapter (from verse 3). The Ethiopic script has no capital letters, so the setting has nothing to change; pronouns for God (\"ፊቴን\", \"ለእኔ\") are written as for anyone else.",
           "uncertain": false,
           "footnote": false
         }
@@ -179,6 +203,11 @@
           "L": "\"E aos filhos de Israel dirás: '{{gender:Qualquer pessoa|Qualquer homem}} dos filhos de Israel ou dos imigrantes que moram como imigrantes em Israel que der algum dos seus descendentes a Moloque certamente será {{gender:morta|morto}}; o povo da terra {{gender:a|o}} apedrejará com pedras.",
           "B": "\"Dize aos israelitas: '{{gender:Qualquer pessoa|Qualquer homem}} dentre os israelitas ou dentre os estrangeiros que vivem em Israel que der algum dos seus filhos a Moloque, para ser passado pelo fogo, deverá ser {{gender:morta|morto}}. O povo da terra {{gender:a|o}} apedrejará.",
           "R": "\"Diz aos israelitas: '{{gender:Alguém|Um homem}} de Israel, ou um estrangeiro que mora em Israel, pode dar um dos seus filhos para ser queimado como sacrifício ao deus Moloque. Essa pessoa tem de ser morta: o povo da comunidade deve atirar pedras nela até que ela morra."
+        },
+        "am": {
+          "L": "«ለእስራኤልም ልጆች እንዲህ በላቸው፦ “ከእስራኤል ልጆች ወይም በእስራኤል በእንግድነት ከሚኖሩት መጻተኞች ከዘሩ ለሞሎክ የሚሰጥ ማንም ሰው ፈጽሞ ይገደል፤ የምድሪቱ ሕዝብ በድንጋይ ይውገሩት።",
+          "B": "«ለእስራኤል ልጆች እንዲህ በላቸው፦ “ከእስራኤል ልጆች ወይም በእስራኤል ከሚኖሩት መጻተኞች ማንም ሰው በእሳት እንዲያልፍ ከልጆቹ አንዱን ለሞሎክ ቢሰጥ ይገደል። የምድሪቱ ሕዝብ በድንጋይ ይውገሩት።",
+          "R": "«ለእስራኤላውያን ይህን ንገራቸው፦ “አንድ እስራኤላዊ ወይም በእስራኤል የሚኖር እንግዳ ከልጆቹ አንዱን ሞሎክ ለተባለው አምላክ በእሳት ተቃጥሎ እንዲሠዋ ይሰጥ ይሆናል። ያ ሰው መገደል አለበት። የማኅበረሰቡ ሰዎች እስኪሞት ድረስ በድንጋይ መውገር አለባቸው።"
         }
       },
       "decisions": [
@@ -401,6 +430,50 @@
           "reason": "For the book (18:21; 20:2-5): \"Moloque\" is the usual Brazilian form of the god's name, with -que for the final k as in \"Amaleque\"; Readable adds \"o deus\" as the English does. The doubled verb of the death sentence (m3) follows Exodus 21:12 and 31:14: \"certamente será morto\" at Literal, \"deverá ser morto\" at Balanced, \"tem de ser morto\" at Readable, through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030200020051",
+            "o030200020061",
+            "o030200020153"
+          ],
+          "choice": "no gender spans: \"ማንም ሰው\", \"የእስራኤል ልጆች\", \"ልጆቹ\" and the generic \"he\" of the verb",
+          "alternatives": [
+            "gender setting spans as in the English (anyone / any man; their / his; that person / him)"
+          ],
+          "reason": "\"ሰው\", \"ልጆች\" and the generic masculine suffix (\"ልጆቹ\", \"ይውገሩት\") already take in men and women, so Amharic has no second wording for the setting to offer. This holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200020171",
+            "o030200020181",
+            "o030200020212"
+          ],
+          "choice": "surely put to death: \"ፈጽሞ ይገደል\" (L), \"ይገደል\" (B), \"መገደል አለበት\" (R); stone: \"በድንጋይ መውገር\"",
+          "alternatives": [],
+          "reason": "The formula as settled in Exodus 21; it recurs through the chapter (verses 9-16, 27).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -490,6 +563,11 @@
           "L": "E eu, eu porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e {{gender:a|o}} cortarei do meio do seu povo, porque deu dos seus descendentes a Moloque, para tornar impuro o {{deity_pronoun:meu|Meu}} santuário e para profanar o {{deity_pronoun:meu|Meu}} santo nome.",
           "B": "Eu mesmo porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e {{gender:a|o}} eliminarei do meio do povo. Pois, ao dar um filho a Moloque, {{gender:essa pessoa|esse homem}} tornou impuro o {{deity_pronoun:meu|Meu}} santuário e profanou o {{deity_pronoun:meu|Meu}} santo nome.",
           "R": "Eu mesmo vou me voltar contra {{gender:essa pessoa|esse homem}}. Vou {{gender:eliminá-la|eliminá-lo}} do meio do povo. Ao dar um filho a Moloque, {{gender:essa pessoa|esse homem}} tornou impuro o {{deity_pronoun:meu|Meu}} lugar santo e desonrou o {{deity_pronoun:meu|Meu}} santo nome."
+        },
+        "am": {
+          "L": "እኔም፣ እኔ በዚያ ሰው ላይ ፊቴን አደርጋለሁ፤ ከሕዝቡም መካከል ቆርጬ አጠፋዋለሁ፤ መቅደሴን ለማርከስ፣ የተቀደሰውንም ስሜን ለማቃለል ከዘሩ ለሞሎክ ሰጥቷልና።",
+          "B": "እኔ ራሴ በዚያ ሰው ላይ ፊቴን አዞራለሁ፤ ከሕዝቡም መካከል ቆርጬ አጠፋዋለሁ። ልጁን ለሞሎክ በመስጠቱ መቅደሴን አርክሷል፤ የተቀደሰውንም ስሜን አቃሏል።",
+          "R": "እኔ ራሴ በዚያ ሰው ላይ እነሣበታለሁ። ከሕዝቡም መካከል አስወግደዋለሁ። ልጁን ለሞሎክ በመስጠቱ ቅዱስ ስፍራዬን አርክሷል። የተቀደሰውንም ስሜን አዋርዷል።"
         }
       },
       "decisions": [
@@ -671,6 +749,11 @@
           "L": "E, se o povo da terra de fato esconder os seus olhos de {{gender:essa pessoa|esse homem}} quando {{gender:ela|ele}} der dos seus descendentes a Moloque, para não {{gender:a|o}} matar,",
           "B": "Se o povo da terra fechar os olhos quando {{gender:essa pessoa|esse homem}} der um dos seus filhos a Moloque, e não {{gender:a|o}} matar,",
           "R": "O povo da comunidade pode fingir que não vê quando alguém dá um filho a Moloque. Pode deixar de matar essa pessoa."
+        },
+        "am": {
+          "L": "የምድሪቱም ሕዝብ ከዘሩ ለሞሎክ በሰጠ ጊዜ እንዳይገድሉት ከዚያ ሰው ዓይናቸውን ፈጽመው ቢሰውሩ፣",
+          "B": "የምድሪቱ ሕዝብ ያ ሰው ከልጆቹ አንዱን ለሞሎክ ሲሰጥ አይተው እንዳላዩ ሆነው ባይገድሉት፣",
+          "R": "የማኅበረሰቡ ሰዎች አንድ ሰው ልጁን ለሞሎክ ሲሰጥ እንዳላዩ ይሆኑ ይሆናል። ያንንም ሰው ላይገድሉት ይችላሉ።"
         }
       },
       "decisions": [
@@ -828,6 +911,11 @@
           "L": "então eu porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e contra o seu clã, e {{gender:a|o}} cortarei, e a todos os que se prostituem atrás {{gender:dela|dele}}, prostituindo-se atrás de Moloque, do meio do seu povo.",
           "B": "então eu porei o {{deity_pronoun:meu|Meu}} rosto contra {{gender:essa pessoa|esse homem}} e contra a sua família, e eliminarei do meio do povo tanto {{gender:ela|ele}} como todos os que {{gender:a|o}} seguem, prostituindo-se com Moloque.",
           "R": "Então eu vou me voltar contra essa pessoa e contra a família dela. Vou eliminar essa pessoa do meio do povo. Também vou eliminar todos os que se juntarem a ela para adorar Moloque. Eles estão sendo infiéis a {{deity_pronoun:mim|Mim}}, como uma esposa que corre atrás de outros homens."
+        },
+        "am": {
+          "L": "እኔ በዚያ ሰው ላይና በጎሳው ላይ ፊቴን አደርጋለሁ፤ እርሱንና ከእርሱ በኋላ ሞሎክን ተከትለው የሚያመነዝሩትን ሁሉ ከሕዝባቸው መካከል ቆርጬ አጠፋቸዋለሁ።",
+          "B": "እኔ በዚያ ሰው ላይና በቤተሰቡ ላይ ፊቴን አዞራለሁ፤ እርሱንና እርሱን ተከትለው ሞሎክን በማምለክ የሚያመነዝሩትን ሁሉ ከሕዝቡ መካከል ቆርጬ አጠፋቸዋለሁ።",
+          "R": "ያን ጊዜ በዚያ ሰውና በቤተሰቡ ላይ እነሣባቸዋለሁ። ያንን ሰው ከሕዝቡ መካከል አስወግደዋለሁ። ሞሎክን በማምለክ ከእርሱ ጋር የሚተባበሩትንም ሁሉ አስወግዳለሁ። እነርሱ ሌሎች ወንዶችን እንደምትከተል ሚስት ለእኔ ታማኝ አይደሉም።"
         }
       },
       "decisions": [
@@ -1028,6 +1116,11 @@
           "L": "E a pessoa que se voltar para os médiuns e para os espíritas, para se prostituir atrás deles, eu porei o {{deity_pronoun:meu|Meu}} rosto contra essa pessoa e a cortarei do meio do seu povo.",
           "B": "Se alguém se voltar para médiuns e espíritas e se prostituir ao segui-los, eu porei o {{deity_pronoun:meu|Meu}} rosto contra essa pessoa e a eliminarei do meio do povo.",
           "R": "Alguém pode procurar ajuda com pessoas que dizem que podem falar com os mortos ou com os espíritos. Isso é ser infiel a {{deity_pronoun:mim|Mim}}. Eu vou me voltar contra essa pessoa. Vou eliminá-la do meio do povo."
+        },
+        "am": {
+          "L": "ወደ ሙታን ጠሪዎችና ወደ ጠንቋዮች ዞሮ ተከትሏቸው የሚያመነዝረውን ሰው፣ በዚያ ሰው ላይ ፊቴን አደርጋለሁ፤ ከሕዝቡም መካከል ቆርጬ አጠፋዋለሁ።",
+          "B": "ማንም ሰው ወደ ሙታን ጠሪዎችና ወደ ጠንቋዮች ቢዞር፣ እነርሱንም በመከተል ቢያመነዝር፣ በዚያ ሰው ላይ ፊቴን አዞራለሁ፤ ከሕዝቡም መካከል ቆርጬ አጠፋዋለሁ።",
+          "R": "አንድ ሰው ከሙታን ወይም ከመናፍስት ጋር እንነጋገራለን ወደሚሉ ሰዎች እርዳታ ለማግኘት ይሄድ ይሆናል። ይህ ለእኔ ታማኝ አለመሆን ነው። በዚያ ሰው ላይ እነሣበታለሁ። ያንንም ሰው ከሕዝቡ መካከል አስወግደዋለሁ።"
         }
       },
       "decisions": [
@@ -1157,6 +1250,11 @@
           "L": "E vocês se consagrarão e serão santos, porque eu [sou] {{divine_name:o SENHOR|Javé}}, o Deus de vocês.",
           "B": "Consagrem-se e sejam santos, porque eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês.",
           "R": "Separem-se como santos. Sejam santos, porque eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês."
+        },
+        "am": {
+          "L": "ራሳችሁንም ቀድሱ፤ ቅዱሳንም ሁኑ፤ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝና።",
+          "B": "ራሳችሁን ቀድሳችሁ ጠብቁ፤ ቅዱሳንም ሁኑ፤ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝና።",
+          "R": "ራሳችሁን ቅዱሳን አድርጋችሁ ለዩ። ቅዱሳን ሁኑ፤ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝና።"
         }
       },
       "decisions": [
@@ -1256,6 +1354,11 @@
           "L": "E vocês guardarão os {{deity_pronoun:meus|Meus}} estatutos e os praticarão; eu [sou] {{divine_name:o SENHOR|Javé}}, que os faço santos.",
           "B": "Vocês guardarão os {{deity_pronoun:meus|Meus}} estatutos e os cumprirão. Eu sou {{divine_name:o SENHOR|Javé}}; eu faço vocês santos.",
           "R": "Obedeçam às {{deity_pronoun:minhas|Minhas}} leis e façam o que elas dizem. Eu sou {{divine_name:o SENHOR|Javé}}. Eu sou aquele que faz vocês santos."
+        },
+        "am": {
+          "L": "ሥርዓቶቼንም ጠብቁ፤ አድርጓቸውም፤ የምቀድሳችሁ እኔ {{divine_name:እግዚአብሔር|ያህዌ}} [ነኝ]።",
+          "B": "ሥርዓቶቼን ጠብቁ፤ ፈጽሟቸውም። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ፤ እቀድሳችኋለሁ።",
+          "R": "ሥርዓቶቼን ታዘዙ፤ የሚሉትንም አድርጉ። እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ። ቅዱሳን የማደርጋችሁ እኔ ነኝ።"
         }
       },
       "decisions": [
@@ -1387,6 +1490,11 @@
           "L": "Pois {{gender:qualquer pessoa|qualquer homem}} que amaldiçoar o seu pai ou a sua mãe certamente será {{gender:morta|morto}}; amaldiçoou o seu pai e a sua mãe; o seu sangue [está] sobre {{gender:ela|ele}}.",
           "B": "{{gender:Qualquer pessoa|Qualquer homem}} que amaldiçoar o pai ou a mãe deverá ser {{gender:morta|morto}}. Como amaldiçoou o pai ou a mãe, a culpa pela sua morte é {{gender:dela mesma|dele mesmo}}.",
           "R": "{{gender:Quem|O homem que}} amaldiçoar o pai ou a mãe tem de ser morto. Essa pessoa amaldiçoou um dos pais e é culpada pela própria morte."
+        },
+        "am": {
+          "L": "አባቱንና እናቱን የሚሰድብ ማንም ሰው ፈጽሞ ይገደል፤ አባቱንና እናቱን ሰድቧል፤ ደሙ በራሱ ላይ [ነው]።",
+          "B": "አባቱን ወይም እናቱን የሚሰድብ ሁሉ ይገደል። አባቱን ወይም እናቱን ስለ ሰደበ ለሞቱ ተጠያቂው ራሱ ነው።",
+          "R": "አባቱን ወይም እናቱን ክፉ ቃል የሚናገር ሁሉ መገደል አለበት። ያ ሰው ወላጁን ስለ ሰደበ ለሞቱ ተጠያቂ ራሱ ነው።"
         }
       },
       "decisions": [
@@ -1613,6 +1721,46 @@
           "reason": "For the chapter (verses 9, 11-13, 16, 27): Literal keeps the Hebrew \"his blood is on him\"; Balanced and Readable say what it means, that the guilt for the death rests on the offender and not on those who carry out the sentence (m2), as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200090051",
+            "o030200090141"
+          ],
+          "choice": "curse father or mother: \"የሚሰድብ\" (L, B), \"ክፉ ቃል የሚናገር\" (R)",
+          "alternatives": [],
+          "reason": "The Hebrew is that of Exodus 21:17, which Jesus quotes (Matthew 15:4; Mark 7:10); the Amharic follows Exodus 21:17 and the New Testament Balanced and Readable wording, with Literal keeping the Hebrew's \"father and mother\" in the second clause.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200090151",
+            "o030200090161"
+          ],
+          "choice": "his blood is on him: \"ደሙ በራሱ ላይ [ነው]\" (L); \"ለሞቱ ተጠያቂው ራሱ ነው\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew idiom; the other levels give its sense (m2), as the English does. The same holds for \"their blood is on them\" in verses 11-16 and 27.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1685,6 +1833,11 @@
           "L": "E o homem que adulterar com a mulher de um homem, que adulterar com a mulher do seu próximo, certamente será morto, o adúltero e a adúltera.",
           "B": "Quando um homem cometer adultério com uma mulher casada, a mulher de um compatriota, o homem e a mulher que cometeram adultério deverão ser mortos, os dois.",
           "R": "Um homem pode ter relações sexuais com a mulher de outro homem, a mulher de alguém de Israel. Nesse caso, tanto o homem como a mulher têm de ser mortos."
+        },
+        "am": {
+          "L": "ከሰው ሚስት ጋር የሚያመነዝር ሰው፣ ከባልንጀራው ሚስት ጋር የሚያመነዝር፣ አመንዝራውና አመንዝራይቱ ፈጽመው ይገደሉ።",
+          "B": "ሰው ከባለ ትዳር ሴት፣ ከእስራኤላዊ ወገኑ ሚስት ጋር ቢያመነዝር፣ ያመነዘሩት ወንዱና ሴቲቱ ሁለቱም ይገደሉ።",
+          "R": "አንድ ሰው ከሌላ ሰው ሚስት፣ ከእስራኤላዊ ሚስት ጋር የፆታ ግንኙነት ያደርግ ይሆናል። ያን ጊዜ ወንዱም ሴቲቱም መገደል አለባቸው።"
         }
       },
       "decisions": [
@@ -1806,6 +1959,11 @@
           "L": "E o homem que se deitar com a mulher do seu pai descobriu a nudez do seu pai; ambos certamente serão mortos; o sangue deles [está] sobre eles.",
           "B": "Se um homem se deitar com a mulher do seu pai, cometeu uma ofensa contra o seu pai. Os dois deverão ser mortos; a culpa pela morte deles é deles mesmos.",
           "R": "Se um homem tiver relações sexuais com a mulher do seu pai, ele fez um mal contra o seu pai. Os dois têm de ser mortos. Eles são culpados pela própria morte."
+        },
+        "am": {
+          "L": "ከአባቱ ሚስት ጋር የሚተኛ ሰው የአባቱን ዕርቃን ገልጧል፤ ሁለቱም ፈጽመው ይገደሉ፤ ደማቸው በራሳቸው ላይ [ነው]።",
+          "B": "ሰው ከአባቱ ሚስት ጋር የሥጋ ግንኙነት ቢያደርግ አባቱን በድሏል። ሁለቱም ይገደሉ፤ ለሞታቸው ተጠያቂዎቹ ራሳቸው ናቸው።",
+          "R": "ሰው ከአባቱ ሚስት ጋር የፆታ ግንኙነት ቢያደርግ በአባቱ ላይ በደል ፈጽሟል። ሁለቱም መገደል አለባቸው። ለሞታቸው ተጠያቂዎች ራሳቸው ናቸው።"
         }
       },
       "decisions": [
@@ -1953,6 +2111,11 @@
           "L": "E o homem que se deitar com a sua nora, ambos certamente serão mortos; fizeram uma confusão; o sangue deles [está] sobre eles.",
           "B": "Se um homem se deitar com a sua nora, os dois deverão ser mortos. Cometeram uma mistura perversa; a culpa pela morte deles é deles mesmos.",
           "R": "Se um homem tiver relações sexuais com a mulher do seu filho, os dois têm de ser mortos. Eles misturaram o que deve ficar separado. Eles são culpados pela própria morte."
+        },
+        "am": {
+          "L": "ከምራቱም ጋር የሚተኛ ሰው፣ ሁለቱም ፈጽመው ይገደሉ፤ መደበላለቅ አድርገዋል፤ ደማቸው በራሳቸው ላይ [ነው]።",
+          "B": "ሰው ከምራቱ ጋር የሥጋ ግንኙነት ቢያደርግ ሁለቱም ይገደሉ። ጠማማ መቀላቀል ፈጽመዋል፤ ለሞታቸው ተጠያቂዎቹ ራሳቸው ናቸው።",
+          "R": "ሰው ከልጁ ሚስት ጋር የፆታ ግንኙነት ቢያደርግ ሁለቱም መገደል አለባቸው። መለያየት የነበረበትን ነገር ቀላቅለዋል። ለሞታቸው ተጠያቂዎች ራሳቸው ናቸው።"
         }
       },
       "decisions": [
@@ -2097,6 +2260,11 @@
           "L": "E o homem que se deitar com um homem, como se deita com uma mulher, ambos fizeram uma abominação; certamente serão mortos; o sangue deles [está] sobre eles.",
           "B": "Se um homem se deitar com outro homem como se deita com uma mulher, os dois fizeram uma coisa abominável. Deverão ser mortos; a culpa pela morte deles é deles mesmos.",
           "R": "Se um homem tiver relações sexuais com outro homem como as teria com uma mulher, os dois fizeram uma coisa abominável. Eles têm de ser mortos. Eles são culpados pela própria morte."
+        },
+        "am": {
+          "L": "ከወንድም ጋር [እንደ] ሴት መኝታ የሚተኛ ሰው፣ ሁለቱም አስጸያፊ [ነገር] አድርገዋል፤ ፈጽመው ይገደሉ፤ ደማቸው በራሳቸው ላይ [ነው]።",
+          "B": "ሰው ከሴት ጋር እንደሚተኛ ከወንድ ጋር ቢተኛ፣ ሁለቱም አስጸያፊ ድርጊት ፈጽመዋል። ይገደሉ፤ ለሞታቸው ተጠያቂዎቹ ራሳቸው ናቸው።",
+          "R": "ሰው ከሴት ጋር እንደሚያደርገው ከሌላ ወንድ ጋር የፆታ ግንኙነት ቢያደርግ ሁለቱም የሚያስጠላ ነገር አድርገዋል። መገደል አለባቸው። ለሞታቸው ተጠያቂዎች ራሳቸው ናቸው።"
         }
       },
       "decisions": [
@@ -2246,6 +2414,11 @@
           "L": "E o homem que tomar uma mulher e a mãe dela, é depravação; no fogo queimarão a ele e a elas, para que não haja depravação no meio de vocês.",
           "B": "O homem que se casar com uma mulher e também com a mãe dela cometeu uma depravação. Ele e as duas mulheres serão queimados no fogo. Assim essa depravação não continuará no meio de vocês.",
           "R": "Um homem não deve se casar com uma mulher e com a mãe dela. Isso é uma coisa vergonhosa e má. Se ele fizer isso, ele e as duas mulheres têm de ser queimados no fogo. Então esse mal não existirá mais entre vocês."
+        },
+        "am": {
+          "L": "ሴትንና እናቷን የሚወስድ ሰው፣ ብልግና [ነው]፤ በመካከላችሁ ብልግና እንዳይኖር እርሱንና እነርሱን በእሳት ያቃጥሏቸው።",
+          "B": "ሴትንና እናቷን ደርቦ የሚያገባ ሰው ብልግና ፈጽሟል። እርሱና ሁለቱ ሴቶች በእሳት ይቃጠሉ። በዚህም እንዲህ ያለ ብልግና በመካከላችሁ አይኖርም።",
+          "R": "ሰው አንዲትን ሴትና እናቷን ሁለቱንም ማግባት የለበትም። ይህ አሳፋሪና ክፉ ነገር ነው። ይህን ቢያደርግ እርሱና ሁለቱም ሴቶች በእሳት መቃጠል አለባቸው። ያን ጊዜ ይህ ክፋት በመካከላችሁ አይገኝም።"
         }
       },
       "decisions": [
@@ -2400,6 +2573,11 @@
           "L": "E o homem que tiver cópula com um animal certamente será morto, e o animal vocês matarão.",
           "B": "O homem que tiver relações sexuais com um animal deverá ser morto, e vocês matarão também o animal.",
           "R": "Se um homem tiver relações sexuais com um animal, ele tem de ser morto. Vocês também têm de matar o animal."
+        },
+        "am": {
+          "L": "ከእንስሳም ጋር መኝታውን የሚሰጥ ሰው ፈጽሞ ይገደል፤ እንስሳውንም ግደሉት።",
+          "B": "ከእንስሳ ጋር የሥጋ ግንኙነት የሚያደርግ ሰው ይገደል፤ እንስሳውንም ደግሞ ግደሉት።",
+          "R": "ሰው ከእንስሳ ጋር የፆታ ግንኙነት ቢያደርግ መገደል አለበት። እንስሳውንም ደግሞ መግደል አለባችሁ።"
         }
       },
       "decisions": [
@@ -2510,6 +2688,11 @@
           "L": "E a mulher que se aproximar de qualquer animal para acasalar com ele, matarás a mulher e o animal; certamente serão mortos; o sangue deles [está] sobre eles.",
           "B": "Quando uma mulher se aproximar de um animal para se acasalar com ele, matarás a mulher e o animal. Os dois deverão ser mortos; a culpa pela morte deles é deles mesmos.",
           "R": "Uma mulher pode se aproximar de um animal para ter relações sexuais com ele. Nesse caso, tens de matar a mulher e o animal. Eles têm de ser mortos. Eles são culpados pela própria morte."
+        },
+        "am": {
+          "L": "ከእርሱም ጋር ለመገናኘት ወደ ማንኛውም እንስሳ የምትቀርብ ሴት፣ ሴቲቱንና እንስሳውን ግደል፤ ፈጽመው ይገደሉ፤ ደማቸው በራሳቸው ላይ [ነው]።",
+          "B": "ሴት እንስሳ እንዲገናኛት ወደ እርሱ ብትቀርብ ሴቲቱንና እንስሳውን ግደል። ሁለቱም ይገደሉ፤ ለሞታቸው ተጠያቂዎቹ ራሳቸው ናቸው።",
+          "R": "አንዲት ሴት ከእንስሳ ጋር የፆታ ግንኙነት ለማድረግ ወደ እርሱ ትሄድ ይሆናል። ያን ጊዜ ሴቲቱንም እንስሳውንም መግደል አለብህ። መገደል አለባቸው። ለሞታቸው ተጠያቂዎች ራሳቸው ናቸው።"
         }
       },
       "decisions": [
@@ -2657,6 +2840,11 @@
           "L": "E o homem que tomar a sua irmã, filha do seu pai ou filha da sua mãe, e vir a nudez dela, e ela vir a nudez dele, é uma vergonha, e serão cortados diante dos olhos dos filhos do seu povo; descobriu a nudez da sua irmã; levará a sua iniquidade.",
           "B": "Se um homem se casar com a sua irmã, filha do seu pai ou filha da sua mãe, e eles tiverem relações sexuais, isso é uma vergonha. Eles deverão ser eliminados à vista do seu povo. Ele teve relações sexuais com a sua irmã e sofrerá as consequências da sua culpa.",
           "R": "Um homem pode se casar com a sua irmã, filha do seu pai ou da sua mãe, e os dois podem ter relações sexuais. Isso é uma vergonha. Eles têm de ser eliminados do povo, à vista de todos. Ele teve relações sexuais com a sua irmã. Ele é culpado e será castigado."
+        },
+        "am": {
+          "L": "እኅቱን፣ የአባቱን ሴት ልጅ ወይም የእናቱን ሴት ልጅ የሚወስድ ሰው፣ እርሱም ዕርቃኗን ቢያይ እርሷም ዕርቃኑን ብታይ፣ ነውር [ነው]፤ በሕዝባቸው ልጆች ዓይን ፊት ተቆርጠው ይጥፉ፤ የእኅቱን ዕርቃን ገልጧል፤ በደሉን ይሸከማል።",
+          "B": "ሰው እኅቱን፣ የአባቱን ሴት ልጅ ወይም የእናቱን ሴት ልጅ አግብቶ የሥጋ ግንኙነት ቢያደርጉ ነውር ነው። በሕዝባቸው ፊት ተቆርጠው ይጥፉ። ከእኅቱ ጋር የሥጋ ግንኙነት አድርጓል፤ የበደሉንም ዋጋ ይሸከማል።",
+          "R": "ሰው የአባቱን ወይም የእናቱን ልጅ፣ እኅቱን ያገባ ይሆናል፤ የፆታ ግንኙነትም ያደርጉ ይሆናል። ይህ ነውር ነው። ሰዎች ሁሉ እያዩ ከሕዝቡ መካከል መወገድ አለባቸው። ከእኅቱ ጋር የፆታ ግንኙነት አድርጓል። በደለኛ ነው፤ ቅጣትም ይደርስበታል።"
         }
       },
       "decisions": [
@@ -2772,6 +2960,25 @@
           "reason": "This rare word means a reproach or disgrace (m2). \"Vergonha\" says it plainly at every level, as the English \"disgrace\" does; it has nothing to do with the common word for steadfast love that has the same letters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030200170241"
+          ],
+          "choice": "uncover nakedness as \"ዕርቃን መግለጥ\" at Literal; \"የሥጋ ግንኙነት\" (B), \"የፆታ ግንኙነት\" (R)",
+          "alternatives": [],
+          "reason": "As in chapter 18 (18:6): the Hebrew idiom at Literal, plain decent words at the other levels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2855,6 +3062,11 @@
           "L": "E o homem que se deitar com uma mulher indisposta e descobrir a nudez dela, pôs a nu a fonte dela, e ela descobriu a fonte do seu sangue; e ambos serão cortados do meio do seu povo.",
           "B": "Se um homem se deitar com uma mulher durante a menstruação e tiver relações sexuais com ela, ele deixou a descoberto o lugar de onde corre o sangue dela, e ela permitiu que fosse descoberto. Os dois deverão ser eliminados do meio do povo.",
           "R": "Um homem não deve ter relações sexuais com uma mulher enquanto ela está menstruada. Se fizer isso, ele descobriu o lugar de onde sai o sangue dela, e ela deixou que ele fizesse isso. Os dois têm de ser eliminados do povo."
+        },
+        "am": {
+          "L": "[በወር] ሕመሟ ላይ ካለች ሴት ጋር የሚተኛና ዕርቃኗን የሚገልጥ ሰው ምንጯን ገልጧል፤ እርሷም የደሟን ምንጭ ገልጣለች፤ ሁለቱም ከሕዝባቸው መካከል ተቆርጠው ይጥፉ።",
+          "B": "ሰው በወር አበባዋ ጊዜ ከሴት ጋር ቢተኛና የሥጋ ግንኙነት ቢያደርግ፣ የደሟን መፍሰሻ ገልጧል፤ እርሷም እንዲገለጥ ፈቅዳለች። ሁለቱም ከሕዝቡ መካከል ተቆርጠው ይጥፉ።",
+          "R": "ሰው በወር አበባዋ ጊዜ ከሴት ጋር የፆታ ግንኙነት ማድረግ የለበትም። ይህን ቢያደርግ ደሟ የሚፈስበትን ስፍራ ገልጧል፤ እርሷም እንዲያደርግ ፈቅዳለታለች። ሁለቱም ከሕዝቡ መካከል መወገድ አለባቸው።"
         }
       },
       "decisions": [
@@ -3031,6 +3243,11 @@
           "L": "E a nudez da irmã da tua mãe e da irmã do teu pai não descobrirás, porque ele pôs a nu a sua própria carne; levarão a sua iniquidade.",
           "B": "Não terás relações sexuais com a irmã da tua mãe nem com a irmã do teu pai, pois isso é pôr a nu um parente próximo. Eles sofrerão as consequências da sua culpa.",
           "R": "Não tenhas relações sexuais com a tua tia, irmã da tua mãe ou do teu pai. Isso seria ter relações com um parente próximo. As duas pessoas seriam culpadas e seriam castigadas."
+        },
+        "am": {
+          "L": "የእናትህን እኅትና የአባትህን እኅት ዕርቃን አትግለጥ፤ የሥጋ ዘመዱን ገልጧልና፤ በደላቸውን ይሸከማሉ።",
+          "B": "ከእናትህ እኅት ወይም ከአባትህ እኅት ጋር የሥጋ ግንኙነት አታድርግ፤ ይህ የቅርብ የሥጋ ዘመድን መግለጥ ነውና። የበደላቸውን ዋጋ ይሸከማሉ።",
+          "R": "ከአክስትህ፣ ከእናትህ እኅት ወይም ከአባትህ እኅት ጋር የፆታ ግንኙነት አታድርግ። ይህ ከቅርብ ዘመድ ጋር የሚፈጸም የፆታ ግንኙነት ነው። ሁለቱም በደለኞች ይሆናሉ፤ ቅጣትም ይደርስባቸዋል።"
         }
       },
       "decisions": [
@@ -3186,6 +3403,11 @@
           "L": "E o homem que se deitar com a sua tia descobriu a nudez do seu tio; levarão o seu pecado; morrerão sem filhos.",
           "B": "Se um homem se deitar com a mulher do seu tio, cometeu uma ofensa contra o seu tio. Eles sofrerão as consequências do seu pecado e morrerão sem filhos.",
           "R": "Se um homem tiver relações sexuais com a mulher do seu tio, ele fez um mal contra o seu tio. Eles serão castigados pelo seu pecado. Morrerão sem ter filhos."
+        },
+        "am": {
+          "L": "ከአክስቱም ጋር የሚተኛ ሰው የአጎቱን ዕርቃን ገልጧል፤ ኃጢአታቸውን ይሸከማሉ፤ ልጅ ሳይወልዱ ይሞታሉ።",
+          "B": "ሰው ከአጎቱ ሚስት ጋር የሥጋ ግንኙነት ቢያደርግ አጎቱን በድሏል። የኃጢአታቸውን ዋጋ ይሸከማሉ፤ ልጅም ሳይወልዱ ይሞታሉ።",
+          "R": "ሰው ከአጎቱ ሚስት ጋር የፆታ ግንኙነት ቢያደርግ በአጎቱ ላይ በደል ፈጽሟል። ስለ ኃጢአታቸው ይቀጣሉ። ልጅ ሳይወልዱ ይሞታሉ።"
         }
       },
       "decisions": [
@@ -3309,6 +3531,11 @@
           "L": "E o homem que tomar a mulher do seu irmão, é impureza; descobriu a nudez do seu irmão; ficarão sem filhos.",
           "B": "O homem que se casar com a mulher do seu irmão comete uma coisa impura. Cometeu uma ofensa contra o seu irmão; os dois ficarão sem filhos.",
           "R": "Um homem não deve se casar com a mulher do seu irmão. Isso é uma coisa impura. Ele fez um mal contra o seu irmão. O homem e a mulher não terão filhos."
+        },
+        "am": {
+          "L": "የወንድሙንም ሚስት የሚወስድ ሰው፣ ርኩሰት [ነው]፤ የወንድሙን ዕርቃን ገልጧል፤ ልጅ አልባ ይሆናሉ።",
+          "B": "የወንድሙን ሚስት የሚያገባ ሰው ርኩስ ነገር ያደርጋል። ወንድሙን በድሏል፤ ሁለቱም ልጅ አልባ ይሆናሉ።",
+          "R": "ሰው የወንድሙን ሚስት ማግባት የለበትም። ይህ ርኩስ ነገር ነው። በወንድሙ ላይ በደል ፈጽሟል። ሰውየውም ሴቲቱም ልጅ አይወልዱም።"
         }
       },
       "decisions": [
@@ -3461,6 +3688,11 @@
           "L": "E vocês guardarão todos os {{deity_pronoun:meus|Meus}} estatutos e todas as {{deity_pronoun:minhas|Minhas}} ordenanças, e os praticarão, e a terra para onde eu os estou levando para habitar nela não os vomitará.",
           "B": "Vocês guardarão todos os {{deity_pronoun:meus|Meus}} estatutos e todas as {{deity_pronoun:minhas|Minhas}} ordenanças e os cumprirão. Assim a terra para onde eu os estou levando, para que morem nela, não os vomitará.",
           "R": "Obedeçam a todas as {{deity_pronoun:minhas|Minhas}} leis e a todas as {{deity_pronoun:minhas|Minhas}} regras. Façam o que elas dizem. Então a terra para onde eu estou levando vocês para morar não vai expulsar vocês, como uma pessoa vomita."
+        },
+        "am": {
+          "L": "ሥርዓቶቼንም ሁሉ ፍርዶቼንም ሁሉ ጠብቁ፤ አድርጓቸውም፤ ትኖሩባት ዘንድ ወደ እርሷ የማገባችሁ ምድር እንዳትተፋችሁ።",
+          "B": "ሥርዓቶቼን ሁሉና ደንቦቼን ሁሉ ጠብቁ፤ ፈጽሟቸውም። ያን ጊዜ መኖሪያችሁ እንድትሆን የማገባችሁ ምድር አትተፋችሁም።",
+          "R": "ሥርዓቶቼንና ሕጎቼን ሁሉ ታዘዙ። የሚሉትንም አድርጉ። ያን ጊዜ ልትኖሩባት የምወስዳችሁ ምድር ሰው የበላውን እንደሚተፋ አውጥታ አትጥላችሁም።"
         }
       },
       "decisions": [
@@ -3584,6 +3816,11 @@
           "L": "E não andarão nos estatutos da nação que eu estou expulsando de diante de vocês, porque fizeram todas estas [coisas], e eu tive aversão a eles.",
           "B": "Não seguirão os costumes da nação que eu estou expulsando da frente de vocês. Eles fizeram todas essas coisas, e eu passei a ter aversão a eles.",
           "R": "Não vivam do jeito que as nações vivem. Eu estou expulsando essas nações da terra enquanto vocês chegam. Elas fizeram todas essas coisas, e por isso passei a odiá-las."
+        },
+        "am": {
+          "L": "ከፊታችሁም በምሰድደው ሕዝብ ሥርዓት አትሂዱ፤ እነዚህን ሁሉ አድርገዋልና፤ እኔም ተጸየፍኳቸው።",
+          "B": "ከፊታችሁ የማባርረውን ሕዝብ ልማድ አትከተሉ። እነዚህን ሁሉ አደረጉ፤ እኔም ተጸየፍኳቸው።",
+          "R": "ሌሎች ሕዝቦች እንደሚኖሩት አትኑሩ። እናንተ ስትገቡ እነርሱን ከምድሪቱ አስወጣቸዋለሁ። እነዚህን ሁሉ አድርገዋል፤ ስለዚህ ጠላኋቸው።"
         }
       },
       "decisions": [
@@ -3722,6 +3959,11 @@
           "L": "E eu disse a vocês: Vocês possuirão a terra deles, e eu, eu a darei a vocês para possuí-la, uma terra onde corre leite e mel. Eu [sou] {{divine_name:o SENHOR|Javé}}, o Deus de vocês, que os separei dos povos.",
           "B": "Eu disse a vocês que vocês tomarão posse da terra deles; eu mesmo a darei a vocês como propriedade, uma terra onde corre leite e mel. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês; eu separei vocês dos outros povos.",
           "R": "Eu prometi a vocês que vocês vão tomar a terra deles. Eu vou dar essa terra a vocês para ser de vocês. É uma terra rica, onde corre leite e mel. Eu sou {{divine_name:o SENHOR|Javé}}, o Deus de vocês. Eu separei vocês das outras nações."
+        },
+        "am": {
+          "L": "ደግሞም እንዲህ አልኳችሁ፤ እናንተ መሬታቸውን ትወርሳላችሁ፤ እኔም ትወርሷት ዘንድ፣ ወተትና ማር የምታፈስ ምድር፣ እሰጣችኋለሁ። ከሕዝቦች የለየኋችሁ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} [ነኝ]።",
+          "B": "ምድራቸውን እንደምትወርሱ ነግሬያችኋለሁ፤ ወተትና ማር የምታፈስ ምድር እንድትወርሷት እኔ ራሴ እሰጣችኋለሁ። እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ፤ ከሌሎች ሕዝቦች ለይቻችኋለሁ።",
+          "R": "ምድራቸውን እንደምትወስዱ ቃል ገብቼላችኋለሁ። የራሳችሁ እንድትሆን እሰጣችኋለሁ። ወተትና ማር የምታፈስ ለም ምድር ናት። እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ። ከሌሎች ሕዝቦች ለይቻችኋለሁ።"
         }
       },
       "decisions": [
@@ -3926,6 +4168,11 @@
           "L": "E vocês farão separação entre o animal puro e o impuro, e entre a ave impura e a pura, e não se tornarão detestáveis por animal, nem por ave, nem por nada que rasteja [sobre] o solo, que eu separei para vocês como impuro.",
           "B": "Por isso vocês farão distinção entre animais puros e impuros e entre aves impuras e puras. Não se tornarão detestáveis por causa de nenhum animal, ave ou ser que rasteja pelo chão, que eu separei para vocês como impuros.",
           "R": "Por isso vocês têm de separar os animais e as aves puros dos impuros. Não se tornem repugnantes comendo algum animal, ave ou bicho que rasteja pelo chão que eu disse a vocês que é impuro."
+        },
+        "am": {
+          "L": "ንጹሕ በሆነውና ርኩስ በሆነው እንስሳ መካከል፣ ርኩስ በሆነውና ንጹሕ በሆነው ወፍ መካከልም ለዩ፤ ርኩስ እንዲሆን በለየሁላችሁ በእንስሳም በወፍም በምድር ላይ በሚሳብ ማንኛውም ነገር ራሳችሁን አታስጸይፉ።",
+          "B": "ስለዚህ ንጹሕና ርኩስ በሆኑ እንስሶች መካከል፣ ርኩስና ንጹሕ በሆኑ ወፎችም መካከል ለዩ። ርኩስ እንዲሆኑ ለእናንተ በለየኋቸው በእንስሳ ወይም በወፍ ወይም በምድር ላይ በሚሳብ በማንኛውም ፍጡር ራሳችሁን አስጸያፊ አታድርጉ።",
+          "R": "ስለዚህ ንጹሓን እንስሶችንና ወፎችን ከርኩሳኑ መለየት አለባችሁ። ርኩስ ናቸው ብዬ የነገርኳችሁን ማንኛውንም እንስሳ ወይም ወፍ ወይም በምድር ላይ የሚሳብ ፍጡር በመብላት ራሳችሁን የሚያስጠላ አታድርጉ።"
         }
       },
       "decisions": [
@@ -4062,6 +4309,11 @@
           "L": "E vocês serão santos para {{deity_pronoun:mim|Mim}}, porque santo [sou] eu, {{divine_name:o SENHOR|Javé}}, e eu os separei dos povos para serem {{deity_pronoun:meus|Meus}}.",
           "B": "Sejam santos para {{deity_pronoun:mim|Mim}}, porque eu, {{divine_name:o SENHOR|Javé}}, sou santo. Eu separei vocês dos outros povos para que pertençam a {{deity_pronoun:mim|Mim}}.",
           "R": "Sejam santos e pertençam a {{deity_pronoun:mim|Mim}}, porque eu, {{divine_name:o SENHOR|Javé}}, sou santo. Eu separei vocês das outras nações para serem o {{deity_pronoun:meu|Meu}} próprio povo."
+        },
+        "am": {
+          "L": "ለእኔም ቅዱሳን ትሆናላችሁ፤ እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ቅዱስ ነኝና፤ የእኔም ትሆኑ ዘንድ ከሕዝቦች ለይቻችኋለሁ።",
+          "B": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ቅዱስ ስለ ሆንኩ ለእኔ ቅዱሳን ሁኑ። የእኔ እንድትሆኑ ከሌሎች ሕዝቦች ለይቻችኋለሁ።",
+          "R": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ቅዱስ ስለ ሆንኩ እናንተም ቅዱሳንና የእኔ መሆን አለባችሁ። የራሴ ሕዝብ እንድትሆኑ ከሌሎች ሕዝቦች ለይቻችኋለሁ።"
         }
       },
       "decisions": [
@@ -4192,6 +4444,11 @@
           "L": "E um homem ou uma mulher, se houver neles um médium ou um espírita, certamente serão mortos; com pedras os apedrejarão; o sangue deles [está] sobre eles.'\"",
           "B": "O homem ou a mulher que for médium ou espírita deverá ser morto. Serão apedrejados; a culpa pela morte deles é deles mesmos.'\"",
           "R": "Qualquer homem ou mulher que diga que pode falar com os mortos ou com os espíritos tem de ser morto. O povo deve atirar pedras neles até que morram. Eles são culpados pela própria morte.'\""
+        },
+        "am": {
+          "L": "ወንድም ሆነ ሴት፣ በእነርሱ ዘንድ ሙታን ጠሪ ወይም ጠንቋይ ቢኖር፣ ፈጽመው ይገደሉ፤ በድንጋይ ይውገሯቸው፤ ደማቸው በራሳቸው ላይ [ነው]።”»",
+          "B": "ሙታን ጠሪ ወይም ጠንቋይ የሆነ ወንድ ወይም ሴት ይገደሉ። በድንጋይ ይወገሩ፤ ለሞታቸው ተጠያቂዎቹ ራሳቸው ናቸው።”»",
+          "R": "ከሙታን ወይም ከመናፍስት ጋር እነጋገራለሁ የሚል ማንኛውም ወንድ ወይም ሴት መገደል አለበት። ሰዎች እስኪሞቱ ድረስ በድንጋይ ይውገሯቸው። ለሞታቸው ተጠያቂዎች ራሳቸው ናቸው።”»"
         }
       },
       "decisions": [
