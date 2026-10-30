@@ -195,6 +195,13 @@ class RemindersTest(TestCase):
         self.run_at("2026-10-30T13:00:00")
         self.assertEqual(mail.outbox, [])
 
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend")
+    def test_nothing_is_sent_or_marked_sent_without_smtp(self):
+        # The console backend only logs: a reader's day must not be used up.
+        ReaderState.objects.create(user=self.user, plans=plans("mark", mark={"start": "2026-10-01", "done": []}))
+        self.run_at("2026-10-30T12:00:00")
+        self.assertIsNone(EmailPrefs.objects.get().last_reminder)
+
     def test_unsubscribing_takes_a_post(self):
         url = unsubscribe_url(self.user).replace("https://api.openwordbible.org", "")
         r = APIClient().get(url)

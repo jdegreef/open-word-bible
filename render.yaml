@@ -176,9 +176,44 @@ services:
   # unset. To bring it back, set EMAIL_HOST, EMAIL_HOST_USER,
   # EMAIL_HOST_PASSWORD and DEFAULT_FROM_EMAIL on owb-api, then restore the
   # service from git history (render.yaml at 4ed6799).
-  # Reading-plan emails (backend/accounts/reminders.py) need a cron job too,
-  # once SMTP is set: every hour ("5 * * * *"), running
-  #   python backend/manage.py send_plan_reminders
-  # with owb-api's environment (DATABASE_URL, EMAIL_*, DEFAULT_FROM_EMAIL,
-  # OWB_SITE_URL, and DJANGO_SECRET_KEY, which signs the unsubscribe links).
-  # Until it runs, readers can turn the emails on but none are sent.
+
+  # Reading-plan emails (backend/accounts/reminders.py), every hour: each
+  # reader who turned them on gets the next day of their plan, at the hour
+  # they chose in their time zone. Billed separately from the API service.
+  # DJANGO_SECRET_KEY comes from owb-api because it signs the unsubscribe
+  # links the API checks. The EMAIL_* settings are set here in the
+  # dashboard (copy owb-api's), not read from owb-api with fromService: that
+  # is what made the Blueprint sync fail for owb-alerts while owb-api had
+  # none. Until EMAIL_HOST is set the job sends nothing and marks nothing
+  # sent (send_plan_reminders), so readers lose no days.
+  - type: cron
+    name: owb-reminders
+    runtime: python
+    plan: starter
+    schedule: "5 * * * *"
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/manage.py send_plan_reminders
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: owb-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        fromService:
+          type: web
+          name: owb-api
+          envVarKey: DJANGO_SECRET_KEY
+      - key: OWB_SITE_URL
+        value: https://openwordbible.org
+      - key: OWB_API_URL
+        value: https://api.openwordbible.org
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_HOST_USER
+        sync: false
+      - key: EMAIL_HOST_PASSWORD
+        sync: false
+      - key: DEFAULT_FROM_EMAIL
+        sync: false
