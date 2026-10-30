@@ -456,15 +456,18 @@ Published forms win; one form holds at L, B and R unless levels are given.
 - "Remember me": L and B *Acuérdate de mí, Dios mío, para bien*; R *Dios mío,
   acuérdate de mí y sé bueno conmigo*. 6:14 *Acuérdate, Dios mío, de Tobías y
   de Sanbalat, conforme a sus obras*.
-- 1:5; 9:32: *el Dios grande y temible, que guarda el pacto y el amor fiel con
-  los que lo aman* [Deut 7:9; 10:17]. 9:17, 31: L *un Dios de perdones,
-  compasivo y benévolo, lento para la ira y grande en amor fiel*; B *… de
+- 1:5; 9:32: *el Dios grande y temible, que guarda el pacto y el amor leal con
+  los que lo aman* (L; *amor fiel* at B, R) [Deut 7:9; 10:17]. 9:17, 31: L *un Dios de perdones,
+  compasivo y benévolo, lento para la ira y grande en amor leal*; B *… de
   compasión entrañable y de gracia, lento para enojarse, rico en amor fiel*;
   R *eres un Dios que perdona, lleno de ternura y de bondad; no te enojas
   fácilmente* [Exod 34:6].
 - *el libro de la ley de Moisés* at every level; *Esdras el escriba* (L, B),
   *Esdras, el maestro de la ley* (R). Booths *la fiesta de las Enramadas*
   [Ezra 3:4]; the booths *enramadas* (L, B), *refugios hechos de ramas* (R).
+  This name now holds for the whole Spanish Bible (Leviticus 23, Numbers 29,
+  Deuteronomy 16 and 31, John 7:2 at every level), replacing *Cabañas* and
+  *Tabernáculos*.
 - 10:1 (English 9:38) *un compromiso firme* (L, R), *un acuerdo formal* (B); *el
   documento sellado*.
 - Gates: *puerta de las Ovejas*, *puerta del Pescado*† [2 Chr 33:14], *puerta

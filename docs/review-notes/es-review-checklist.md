@@ -470,7 +470,7 @@ questions about a single verse.
 Each of these was checked in `content/` before it was listed. Pick one
 wording, record it in the terms doc, and align the other books.
 
-- [ ] **The Feast of Booths has three names.** It is *la fiesta de las
+- [x] **The Feast of Booths has three names.** It is *la fiesta de las
   Cabañas* in Leviticus, Numbers and Deuteronomy
   ([LEV 23:34](https://openwordbible.org/es/lev/23/#v34),
   [DEU 16:13](https://openwordbible.org/es/deu/16/#v13); lowercase
@@ -482,7 +482,8 @@ wording, record it in the terms doc, and align the other books.
   los Tabernáculos* at L and B and *las Enramadas* at R
   ([JHN 7:2](https://openwordbible.org/es/jhn/7/#v2)). NehSong settles
   *Enramadas* "[Ezra 3:4]" without mentioning the Pentateuch.
-- [ ] ***Ḥesed* at Literal.** The Pentateuch, Nehemiah, Joel, Jonah and
+  Fixed: *la fiesta de las Enramadas* (booths *enramadas* at L, B) at every level in Leviticus 23, Numbers 29, Deuteronomy 16 and 31 and John 7:2, with lowercase festival names at DEU L capitalised; NehSong terms note now says the name holds for the whole Bible.
+- [x] ***Ḥesed* at Literal.** The Pentateuch, Nehemiah, Joel, Jonah and
   Micah 7 say *amor fiel* at L
   ([GEN 24:12](https://openwordbible.org/es/gen/24/#v12),
   [EXO 34:6](https://openwordbible.org/es/exo/34/#v6),
@@ -501,7 +502,8 @@ wording, record it in the terms doc, and align the other books.
   against [PSA 18:51](https://openwordbible.org/es/psa/18/#v51) B *amor
   fiel*. LamTwelve already lists Joel 2:13 against Jonah 4:2 as an open
   question.
-- [ ] **God relenting is worded five ways at L.** The Samuel note says
+  Fixed: *amor leal* at L in the Pentateuch, Nehemiah, Job 37:13, Joel 2:13, Jonah 4:2 and Micah 7 (Exodus 34:6 quotations included); the temple refrain in 2 Chronicles 5:13, 7:3, 7:6 now reuses Psalm 136:1 at L and B; 2 Samuel 22:51 B *amor fiel*. Pentateuch, NehSong and LamTwelve notes updated.
+- [x] **God relenting is worded five ways at L.** The Samuel note says
   "never *arrepentirse*", and IsaJerEzr sets *retractarse*. The drafts have
   *desistió* ([EXO 32:14](https://openwordbible.org/es/exo/32/#v14)),
   *me pesa* / *le pese*
@@ -511,7 +513,8 @@ wording, record it in the terms doc, and align the other books.
   *ni me arrepentiré*
   ([PSA 106:45](https://openwordbible.org/es/psa/106/#v45),
   [EZK 24:14](https://openwordbible.org/es/ezk/24/#v14)).
-- [ ] **Blessed: *bienaventurado* against *dichoso*.** The NT table settles
+  Fixed: *retractarse* at L in Exodus 32:12, 14, 2 Samuel 24:16, 1 Chronicles 21:15, Psalm 106:45 and Ezekiel 24:14. God's *regret* in Genesis 6:6-7 and 1 Samuel 15 (*lamentar*, *pesar*, set by the Samuel note) and Numbers 23:19 *cambiar de parecer* are a different sense and were left.
+- [x] **Blessed: *bienaventurado* against *dichoso*.** The NT table settles
   *dichosos*, and Matthew, Luke, Revelation and Psalms follow it. James, 1
   Peter, Romans and 1 Timothy use *bienaventurado* at L and B
   ([JAS 1:12](https://openwordbible.org/es/jas/1/#v12),
@@ -519,7 +522,8 @@ wording, record it in the terms doc, and align the other books.
   [ROM 4:7](https://openwordbible.org/es/rom/4/#v7)). Romans 4:7 quotes
   [PSA 32:1](https://openwordbible.org/es/psa/32/#v1), which says *¡Dichoso
   ...!*.
-- [ ] **Numbers are written three ways.** Ezra, Nehemiah, Ezekiel, Exodus
+  Fixed: *dichoso(s)* at L and B in James 1:12, 1:25, 5:11, 1 Peter 3:14, 4:14, Romans 4:7-8 and 14:22. Left for review: 1 Timothy 1:11 and 6:15, where the word is a title of God (*el Dios bienaventurado*) and *dichoso* may not suit.
+- [x] **Numbers are written three ways.** Ezra, Nehemiah, Ezekiel, Exodus
   and Joshua write four-digit numbers with a space (*42 360*, *5 000*,
   [EZR 2:64](https://openwordbible.org/es/ezr/2/#v64)). 1 Chronicles, Judges,
   Mark and Revelation write them without one (*6800*,
@@ -528,6 +532,7 @@ wording, record it in the terms doc, and align the other books.
   round thousands in words. One units span uses a point:
   *Unos 22.000 litros* ([LUK 16:7](https://openwordbible.org/es/luk/16/#v7)
   B, R).
+  Fixed: every figure of four digits or more now takes a space (*6 800*, *22 000* in Luke 16), and round thousands written in words are figures in Judges, Samuel, Kings, Chronicles, Esther 3:9, Isaiah 36:8 (as 2 Kings 18:23), Matthew 16:9-10, Luke 9:14, 14:31, Romans 11:4 and Revelation 11:13. Left in words: a bare *mil* in set phrases (*jefes de mil*, *mil generaciones*, *mil años*, *uno entre mil*), poetry (Judges 5:8, Deuteronomy 32:30) and hyperbole (1 Corinthians 4:15, 14:19, Matthew 18:24). Hundreds in words (*doscientos cincuenta*) were not touched.
 - [ ] **The shofar.** It is *cuerno de carnero* at every level in Judges,
   Samuel, Psalms and Isaiah
   ([2SA 6:15](https://openwordbible.org/es/2sa/6/#v15),
@@ -539,7 +544,8 @@ wording, record it in the terms doc, and align the other books.
   *cuernos de carnero* / *trompetas* in
   [JOS 6:4](https://openwordbible.org/es/jos/6/#v4). LamTwelve says its
   wording is "as Isaiah", but Isaiah does not have it.
-- [ ] **The teraphim have seven wordings.** They are *dioses domésticos*,
+  Left for review: the Spanish follows the English level by level (L *trompeta*, B *cuerno de carnero*, R *trompeta* in Kings and the prophets; *cuerno de carnero* at every level where the English has "ram's horn" in Exodus, Leviticus, Psalms, Nehemiah, Isaiah 18:3), as LamTwelve says; the books disagree in the English too. Judges 3, 6, 7 and Joshua 6 L say *cuerno(s)* where the English L says "trumpet".
+- [x] **The teraphim have seven wordings.** They are *dioses domésticos*,
   *ídolos domésticos*, *ídolo doméstico*, *terafines*, *ídolos familiares*,
   *ídolos de la familia*, *ídolos de la casa* and *imágenes de los dioses de
   la familia*
@@ -549,13 +555,15 @@ wording, record it in the terms doc, and align the other books.
   [HOS 3:4](https://openwordbible.org/es/hos/3/#v4),
   [EZK 21:26](https://openwordbible.org/es/ezk/21/#v26)). The Samuel table
   gives *los dioses domésticos* (L), *el ídolo doméstico* (B, R).
+  Fixed: *dioses domésticos* (L), *ídolo(s) doméstico(s)* (B, R), as the Samuel table, in Genesis 31, Judges 17-18, Ezekiel 21:26, Hosea 3:4 and Zechariah 10:2. 1 Samuel 15:23 L keeps *ídolos domésticos* by its own decision.
 - [ ] ***Lepra* in the Gospels.** The OT never uses *lepra*, but Matthew,
   Mark and Luke say *leproso* / *lepra* at L and B, and *enfermedad de la
   piel* at R ([MAT 8:2](https://openwordbible.org/es/mat/8/#v2)). In
   [LUK 4:27](https://openwordbible.org/es/luk/4/#v27), Naaman's disease is
   *leprosos* (L) and *lepra* (B), but *enfermedad de la piel* in
   [2KI 5:1](https://openwordbible.org/es/2ki/5/#v1).
-- [ ] **Pharaoh as a name.** The OT says *el faraón*. The NT has *Faraón*
+  Left for review: the English Gospels say "leprosy" (L, B) and "skin disease" (R), and the Spanish follows them; a different Greek word from *tsaraʿat*, and a choice between the traditional word and the OT's *enfermedad de la piel*.
+- [x] **Pharaoh as a name.** The OT says *el faraón*. The NT has *Faraón*
   without the article
   ([ROM 9:17](https://openwordbible.org/es/rom/9/#v17),
   [HEB 11:24](https://openwordbible.org/es/heb/11/#v24),
@@ -563,51 +571,60 @@ wording, record it in the terms doc, and align the other books.
   vocatives at R ([ISA 19:12](https://openwordbible.org/es/isa/19/#v12),
   [EZK 31:18](https://openwordbible.org/es/ezk/31/#v18)). The drafter flags
   this at GEN 12:15.
-- [ ] ***Usted* and *Majestad* despite the rule.**
+  Fixed: *el faraón* in Acts 7:10, 13, 21, Romans 9:17 and Hebrews 11:24 at every level, and the GEN 12:15 decision says so. The R vocatives in Isaiah 19:12 and Ezekiel 31:18 open a sentence, so the capital stays.
+- [x] ***Usted* and *Majestad* despite the rule.**
   [NUM 36:2](https://openwordbible.org/es/num/36/#v2) R has *le ordenó a
   usted*. [ACT 26:6](https://openwordbible.org/es/act/26/#v6) and
   [ACT 26:12](https://openwordbible.org/es/act/26/#v12) R address Agrippa as
   *Majestad*, and
   [ACT 25:21](https://openwordbible.org/es/act/25/#v21) L has *Su Majestad*
   for the emperor. That may be right as a title, but it needs a decision.
+  Fixed: NUM 36:2 R *te ordenó*; *oh rey* in place of *Majestad* in Acts 26:7, 26:13 (B, R) and Judges 3:19 B, with their decisions. Left for review: ACT 25:21, 25 L *Su Majestad* is a title for the emperor, not an address.
 - [ ] **The *saris*.** KgsChr gives *eunucos* (L) / *funcionarios* (B, R).
   Esther has *eunuco* at L and B
   ([EST 2:3](https://openwordbible.org/es/est/2/#v3)), and
   [1KI 22:9](https://openwordbible.org/es/1ki/22/#v9) has *funcionario* even
   at L. Jeremiah also had an English conflict over this word (see
   `docs/review-notes/jeremiah-lamentations.md`, chapter 41).
-- [ ] **High places at R.** Samuel has *el santuario de la colina* (9
+  Left for review: the splits follow the sense in each passage, with decisions: 1 Kings 22:9 / 2 Chronicles 18:8 say *funcionario* at L because the English L says "official"; Esther keeps *eunuco* at L and B by the NehSong note (the harem), and Isaiah 39 and 56 have *eunuco* at every level.
+- [x] **High places at R.** Samuel has *el santuario de la colina* (9
   verses, [1SA 9:12](https://openwordbible.org/es/1sa/9/#v12)). Kings and
   Chronicles have *santuario(s) sobre la(s) colina(s)* (about 45,
   [2KI 17:9](https://openwordbible.org/es/2ki/17/#v9)). Isaiah, Jeremiah and
   Ezekiel have *santuarios en las colinas*
   ([JER 17:3](https://openwordbible.org/es/jer/17/#v3)).
-- [ ] **The inner room (*devir*) at R.** It is *el lugar santísimo* in Kings
+  Fixed: *santuario(s) sobre la(s) colina(s)* at R in 1 Samuel 9-10, 2 Kings 23:15, Numbers 33:52, Isaiah 15:2, Jeremiah 17:3, Ezekiel 16:16, 20:29, Hosea 10:8 and Micah 1:5; Samuel table updated to follow the Kings note.
+- [x] **The inner room (*devir*) at R.** It is *el lugar santísimo* in Kings
   ([1KI 6:19](https://openwordbible.org/es/1ki/6/#v19)) and *el cuarto
   interior* in Chronicles
   ([2CH 3:16](https://openwordbible.org/es/2ch/3/#v16),
   [2CH 5:7](https://openwordbible.org/es/2ch/5/#v7)). At B, 1 Kings uses both
   *santuario interior* and *cuarto interior*.
-- [ ] **"Restore the fortunes".** IsaJerEzr sets *restaurar la suerte*
+  Fixed: 2 Chronicles 5:7 and 5:9 R *el lugar santísimo*, as 1 Kings 8:6, 8 and the Kings table. 2 Chronicles 3:16 R keeps *el cuarto interior* by its decision (the English R says "inner room" there). The B *cuarto interior* in 1 Kings 6:29-30 is the inner and outer rooms, a different word.
+- [x] **"Restore the fortunes".** IsaJerEzr sets *restaurar la suerte*
   (L, B), and Jeremiah, Ezekiel and Amos follow it. The drafts also have
   *hará volver tu suerte* / *cambiará tu suerte*
   ([DEU 30:3](https://openwordbible.org/es/deu/30/#v3)), *cambie la suerte*
   at B ([PSA 14:7](https://openwordbible.org/es/psa/14/#v7)), and *hizo
   volver la cautividad* at L
   ([JOB 42:10](https://openwordbible.org/es/job/42/#v10)).
-- [ ] **"He aquí" at B.** The rule is that B and R leave it out, but 8
+  Fixed: *restaurar la suerte* in Deuteronomy 30:3 (L, B), Psalm 14:7 and 53:7 (B), Psalm 85:2 and 126:4 (L) and Job 42:10 (L).
+- [x] **"He aquí" at B.** The rule is that B and R leave it out, but 8
   B renderings keep it ([NUM 23:24](https://openwordbible.org/es/num/23/#v24),
   [JDG 19:9](https://openwordbible.org/es/jdg/19/#v9),
   [JER 47:2](https://openwordbible.org/es/jer/47/#v2) and five more in
   Jeremiah 48–50).
-- [ ] **Salem**: *Salén* in
+  Fixed: left out at B in Numbers 23:24, Jeremiah 47:2, 48:40, 49:19, 49:22, 50:12 and 50:44. Judges 19:9 was a false match (*noche aquí*).
+- [x] **Salem**: *Salén* in
   [GEN 14:18](https://openwordbible.org/es/gen/14/#v18) (an uncertain
   decision), *Salem* in [PSA 76:3](https://openwordbible.org/es/psa/76/#v3)
   and [HEB 7:1](https://openwordbible.org/es/heb/7/#v1).
+  Fixed: *Salem* in Genesis 14:18 at every level, with its decision.
 - [ ] **Nazōraios**: *el Nazoreo* at L in John and Matthew 2:23
   ([JHN 18:5](https://openwordbible.org/es/jhn/18/#v5)), but *el Nazareno*
   (capitalised) at L in Acts ([ACT 2:22](https://openwordbible.org/es/act/2/#v22)),
   and lowercase *nazareno* elsewhere.
+  Partly fixed: Matthew 26:71 L *el Nazareno* (the English L says "the Nazarene"), and Luke 18:37, 24:19 L capitalised *el Nazareno* as in Mark and Acts. Left for review: John's *el Nazoreo* (L) follows the English L "the Nazorean"; Matthew 2:23 lowercase *nazareno* is a word of origin, by its decision.
 
 ## 5. Passages to read closely
 
