@@ -40,8 +40,8 @@ quoting the Amharic words.
 - **Measures:** metric by default where the English converts, the original
   unit as the alternative; Literal keeps the original unit. Where the English
   has no units span, neither does the Amharic. Use the English values in
-  metric: cubit (ክንድ) 45 ሳ.ሜ., span (ስንዝር) 23 ሳ.ሜ., handbreadth (መዳፍ)
-  7.5 ሳ.ሜ.; shekel (ሰቅል) 11.5 ግራም, beka (ቤካ) 5.7 ግራም, gerah (ጌራ)
+  metric: cubit (ክንድ) 45 ሳንቲ ሜትር, span (ስንዝር) 23 ሳንቲ ሜትር, handbreadth (መዳፍ)
+  7.5 ሳንቲ ሜትር; shekel (ሰቅል) 11.5 ግራም, beka (ቤካ) 5.7 ግራም, gerah (ጌራ)
   0.6 ግራም, talent (መክሊት) 34 ኪሎ, mina (ምናን) 0.6 ኪሎ; ephah (ኢፍ)
   22 ሊትር, omer (ጎሞር) 2.2 ሊትር, seah 7 ሊትር, hin (ኢን) 3.7 ሊትር, homer and kor
   (ቆሮስ) 220 ሊትር. Decimals with a point (1.10 ሜትር), as Ethiopian print
@@ -151,3 +151,44 @@ Proper names take their usual Ethiopian form; keep one form through a book.
 | Amalek, Midian; the Jordan | አማሌቅ, ምድያም; ዮርዳኖስ |
 | Canaanites, Amorites, Hittites, Hivites | ከነዓናውያን, አሞራውያን, ኬጢያውያን, ኤውያውያን |
 | Perizzites, Jebusites, Girgashites; Philistines | ፌርዛውያን, ኢያቡሳውያን, ጌርጌሳውያን; ፍልስጥኤማውያን |
+
+## Settled while drafting Genesis and Exodus
+
+These came out of harmonising chapters drafted in parallel and hold for the
+rest of the Pentateuch.
+
+- **Address.** Family members, parents and in-laws included, say አንተ and
+  አንቺ to each other; respect is carried by አባቴ and እባክህ (Genesis 27:19,
+  Exodus 4:18). Moses and Aaron, as God's messengers, say አንተ to Pharaoh
+  (Exodus 3:18; 5:3; 7:16); his officials and the Hebrew foremen say እርስዎ.
+  A single honoured guest is ጌታዬ with እርስዎ, and the speaker is አገልጋይዎ.
+- **"Here I am"** (*hinneni*): እነሆኝ (L); «አቤት» (B, R).
+- **"Be fruitful and multiply"**: ተዋለዱ፣ ብዙ (ይዋለዱ፣ ይብዙ), not the 1962 Bible's
+  wording. **Image** (*tselem*) is መልክ; **likeness** (*demut*) is አምሳል.
+- **Most holy** of things and offerings is እጅግ ቅዱስ; ቅድስተ ቅዱሳን only for the
+  Most Holy Place.
+- **Wave offering**: የሚወዘወዝ መሥዋዕት for animal portions, የሚወዘወዝ መባ for
+  things given (gold, a sheaf). **Drink offering**: የመጠጥ ቁርባን. **Ordination**:
+  ሹመት; "fill the hand" እጅ መሙላት (L), መሾም (B, R).
+- **Feasts**: የቂጣ በዓል, የመከር በዓል, የሳምንታት በዓል, የመሰብሰብ በዓል.
+- **The tabernacle's craft words** are those of Exodus 25–40: bronze ነሐስ,
+  acacia ግራር, frames ሳንቃዎች, bars መወርወሪያዎች, bases መሠረቶች, clasps ቁልፎች,
+  loops ዙሮች, veil መጋረጃው, screen መከለያ, courtyard አደባባይ, pillars ምሰሶዎች,
+  fine twisted linen የተፈተለ ቀጭን በፍታ, blue, purple and scarlet yarn ሰማያዊ፣
+  ሐምራዊና ቀይ ፈትል, basin ሰን with its stand መቆሚያ. The priests' garments:
+  tunic ቀሚስ, robe መጎናጸፊያ, band of the ephod መቀነት, sash ቀበቶ, turban
+  ጥምጥም, caps ቆቦች, holy garments የቅድስና ልብሶች (L) / የተቀደሱ ልብሶች (B, R).
+- **The LORD's name proclaimed** (Exodus 34:6–7): ርኅሩኅና ቸር አምላክ፣ ለቁጣ
+  የዘገየ (L) / ቶሎ የማይቆጣ (B, R)፣ ጽኑ ፍቅር … ; later echoes keep it.
+- **Pharaoh's heart**: Literal keeps the three Hebrew verbs apart (*ḥazaq*
+  አጸና, *kabed* አከበደ, *qashah* አደነደነ); Balanced አደነደነ, Readable እልከኛ
+  አደረገ.
+- **Yam suf**: የሸምበቆ ባሕር (L), ቀይ ባሕር (B, R).
+- **Names**: Abram ↔ Abraham and Sarai ↔ Sarah change at Genesis 17;
+  Haran the man ሐራን, the city ካራን; Cush ኩሽ (a decision explains why not
+  ኢትዮጵያ); Phicol ፊኮል, Machpelah ማክፌላ, Beer-lahai-roi ብኤርላሃይሮኢ,
+  Judah's son Shelah ሴሎም, Reuel ራጉኤል, Bezalel ባስልኤል, Oholiab ኦሆሊያብ.
+- **Measures** are written in words for the unit: N ሜትር ያህል, N ሳንቲ ሜትር ያህል,
+  N ኪሎ ያህል, N ግራም ያህል, N ሊትር ያህል.
+- A -ም after a divine-name span goes outside it:
+  `{{divine_name:እግዚአብሔር|ያህዌ}}ም`.
