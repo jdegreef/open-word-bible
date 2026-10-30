@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés e lhe disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን ተናገረው። እንዲህም አለ፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -89,6 +94,25 @@
           "choice": "passé simple at Literal and Balanced (\"parla\", \"dit\"); passé composé at Readable (\"a dit\")",
           "alternatives": [],
           "reason": "French narrative tense by level, as in the rest of the book; the laws that follow use the future at Literal and Balanced and \"doit\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [
+            "capitalised pronouns as in the English setting"
+          ],
+          "reason": "The English marks pronouns for God with a reader setting in this chapter (verse 10). The Ethiopic script has no capital letters, so the setting has nothing to change in Amharic; pronouns for God are written as for anyone else, and here they are mostly endings on the verb (\"ፊቴን\", \"አጠፋዋለሁ\").",
           "uncertain": false,
           "footnote": false
         }
@@ -167,6 +191,11 @@
           "L": "\"Fala a Arão, e aos seus filhos, e a todos os filhos de Israel, e dize-lhes: Isto [é] o que {{divine_name:o SENHOR|Javé}} ordenou, dizendo:",
           "B": "\"Fala a Arão e aos seus filhos e a todos os israelitas e dize-lhes: Isto é o que {{divine_name:o SENHOR|Javé}} ordenou:",
           "R": "\"Fala com Arão, com os filhos dele e com todos os israelitas. Diz a eles que isto é o que {{divine_name:o SENHOR|Javé}} ordenou:"
+        },
+        "am": {
+          "L": "«ለአሮንና ለልጆቹ፣ ለእስራኤልም ልጆች ሁሉ ተናገር፤ እንዲህም በላቸው፤ {{divine_name:እግዚአብሔር|ያህዌ}} ያዘዘው ነገር ይህ ነው፤ እንዲህ ይላል፦",
+          "B": "«ለአሮንና ለልጆቹ፣ ለእስራኤል ልጆችም ሁሉ ተናገር፤ እንዲህም በላቸው፤ {{divine_name:እግዚአብሔር|ያህዌ}} ያዘዘው ይህ ነው፦",
+          "R": "«ለአሮን፣ ለልጆቹና ለእስራኤላውያን ሁሉ ተናገር። {{divine_name:እግዚአብሔር|ያህዌ}} ያዘዘው ይህ እንደ ሆነ ንገራቸው፦"
         }
       },
       "decisions": [
@@ -296,6 +325,11 @@
           "L": "{{gender:Qualquer pessoa|Qualquer homem}} da casa de Israel que imolar um boi, ou um cordeiro, ou uma cabra no acampamento, ou que [o] imolar fora do acampamento,",
           "B": "{{gender:Qualquer pessoa|Qualquer homem}} do povo de Israel que matar um boi, uma ovelha ou uma cabra, seja dentro do acampamento, seja fora dele,",
           "R": "Imagine que {{gender:alguém|um homem}} de Israel mate um boi, uma ovelha ou uma cabra, dentro ou fora do acampamento."
+        },
+        "am": {
+          "L": "ከእስራኤል ቤት ማንም ሰው በሰፈሩ ውስጥ በሬን ወይም ጠቦትን ወይም ፍየልን የሚያርድ፣ ወይም ከሰፈሩ ውጭ የሚያርድ፣",
+          "B": "ከእስራኤል ሕዝብ ማንም ሰው በሬን፣ በግን ወይም ፍየልን በሰፈሩ ውስጥም ሆነ ከሰፈሩ ውጭ ቢያርድ፣",
+          "R": "አንድ እስራኤላዊ በሬን፣ በግን ወይም ፍየልን በሰፈሩ ውስጥ ወይም ከሰፈሩ ውጭ አረደ እንበል።"
         }
       },
       "decisions": [
@@ -406,6 +440,45 @@
           "reason": "The Korean word already takes in women and men, so the gender setting has nothing to change; the same holds for \"그 사람\" (that person) after it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030170030011",
+            "o030170030021"
+          ],
+          "choice": "\"ማንም ሰው\" (anyone), \"ያ ሰው\" (that person) and the generic \"he\" of the verb, with no gender span",
+          "alternatives": [
+            "a gender setting span as in the English (anyone / any man)"
+          ],
+          "reason": "\"ሰው\" already means a person of either sex, and the masculine verb is the ordinary Amharic way to say \"anyone\", so there is no second wording for the setting to offer; the same holds for \"የእስራኤል ልጆች\" and for every span of this kind in the chapter. The doubled \"a man, a man\" (m1) is \"ማንም ሰው\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030170030091"
+          ],
+          "choice": "\"ጠቦት\" (lamb) at Literal; \"በግ\" (sheep) at Balanced and Readable",
+          "alternatives": [],
+          "reason": "The Hebrew word is a young sheep; Literal keeps \"lamb\", and the other levels say \"sheep\" as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -493,6 +566,11 @@
           "L": "e não o trouxer à entrada da tenda do encontro para apresentá-lo [como] oferta {{divine_name:ao SENHOR|a Javé}} diante do tabernáculo {{divine_name:do SENHOR|de Javé}}, sangue será imputado a {{gender:essa pessoa|esse homem}}; derramou sangue, e {{gender:essa pessoa será cortada|esse homem será cortado}} do meio do seu povo,",
           "B": "e não o trouxer à entrada da tenda do encontro para apresentá-lo como oferta {{divine_name:ao SENHOR|a Javé}} diante do tabernáculo {{divine_name:do SENHOR|de Javé}}, terá culpa de sangue. {{gender:Essa pessoa derramou sangue e deve ser eliminada|Esse homem derramou sangue e deve ser eliminado}} do meio do povo,",
           "R": "Se essa pessoa não levar o animal à entrada da tenda do encontro e não o der como oferta {{divine_name:ao SENHOR|a Javé}} diante da tenda {{divine_name:do SENHOR|de Javé}}, ela é culpada de derramar sangue. Essa pessoa derramou sangue e deve ser eliminada do meio do povo."
+        },
+        "am": {
+          "L": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ቁርባን አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ማደሪያ ፊት ያቀርበው ዘንድ ወደ መገናኛው ድንኳን ደጃፍ ባያመጣው፣ ደም በዚያ ሰው ላይ ይቆጠርበታል፤ ደም አፍስሷል፤ ያም ሰው ከሕዝቡ መካከል ተቆርጦ ይጥፋ፤",
+          "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ቁርባን አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ማደሪያ ፊት ለማቅረብ ወደ መገናኛው ድንኳን ደጃፍ ባያመጣው፣ ደም በማፍሰስ በደለኛ ሆኖ ይቆጠራል። ያ ሰው ደም አፍስሷል፤ ከሕዝቡም መካከል ተቆርጦ ይጥፋ፤",
+          "R": "ያ ሰው እንስሳውን ወደ መገናኛው ድንኳን መግቢያ አምጥቶ {{divine_name:በእግዚአብሔር|በያህዌ}} ድንኳን ፊት {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቁርባን አድርጎ ባያቀርበው፣ ደም በማፍሰስ በደለኛ ነው። ያ ሰው ደም አፍስሷል፤ ከሕዝቡም መካከል መወገድ አለበት።"
         }
       },
       "decisions": [
@@ -666,6 +744,27 @@
           "reason": "As 7:20 and Exodus 12:15: Literal keeps the Hebrew \"cut off\" as \"cortado\"; Balanced and Readable say \"eliminado do meio do povo\" for the penalty of being cut off (m3), where the English Readable says \"removed\". Under the gender setting, the words that must agree with \"essa pessoa\" or \"esse homem\" go inside the same span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030170040192"
+          ],
+          "choice": "cut off: \"ተቆርጦ ይጥፋ\" (L, B), \"መወገድ አለበት\" (R)",
+          "alternatives": [
+            "\"ይገደል\" (be put to death)"
+          ],
+          "reason": "As in Exodus 31:14, the Hebrew image of being cut off is kept at Literal and Balanced, in the jussive used through Leviticus; Readable says \"must be removed from the people\", as the English Readable does. It is not turned into a death sentence, which the text does not say (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -753,6 +852,11 @@
           "L": "para que os filhos de Israel tragam os seus sacrifícios, que eles sacrificam em campo aberto, e os tragam {{divine_name:ao SENHOR|a Javé}}, à entrada da tenda do encontro, ao sacerdote, e os sacrifiquem [como] sacrifícios de comunhão {{divine_name:ao SENHOR|a Javé}}.",
           "B": "para que os israelitas tragam {{divine_name:ao SENHOR|a Javé}} os sacrifícios que vêm fazendo em campo aberto. Eles os trarão ao sacerdote, à entrada da tenda do encontro, e os oferecerão {{divine_name:ao SENHOR|a Javé}} como sacrifícios de comunhão.",
           "R": "Esta regra existe para que os israelitas tragam {{divine_name:ao SENHOR|a Javé}} os animais que vêm sacrificando lá nos campos. Eles devem levá-los ao sacerdote, à entrada da tenda do encontro. Ali devem oferecê-los {{divine_name:ao SENHOR|a Javé}} como sacrifícios de comunhão."
+        },
+        "am": {
+          "L": "የእስራኤል ልጆች በሜዳ ላይ የሚሠዉትን መሥዋዕታቸውን ያመጡ ዘንድ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ወደ መገናኛው ድንኳን ደጃፍ ወደ ካህኑ ያመጧቸው ዘንድ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኅብረት መሥዋዕት አድርገውም ይሠዉአቸው ዘንድ [ነው]።",
+          "B": "ይህም የእስራኤል ልጆች በገላጣ ሜዳ ሲሠዉ የነበሩትን መሥዋዕቶች {{divine_name:ለእግዚአብሔር|ለያህዌ}} እንዲያመጡ ነው። በመገናኛው ድንኳን ደጃፍ ወደ ካህኑ ያምጧቸው፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኅብረት መሥዋዕት አድርገውም ይሠዉአቸው።",
+          "R": "ይህ ሥርዓት የተሰጠው እስራኤላውያን በሜዳ ላይ ሲሠዉ የነበሩትን እንስሶች {{divine_name:ለእግዚአብሔር|ለያህዌ}} እንዲያመጡ ነው። በመገናኛው ድንኳን መግቢያ ወደ ካህኑ ማምጣት አለባቸው። በዚያም {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኅብረት መሥዋዕት አድርገው ማቅረብ አለባቸው።"
         }
       },
       "decisions": [
@@ -898,6 +1002,11 @@
           "L": "E o sacerdote lançará o sangue sobre o altar {{divine_name:do SENHOR|de Javé}}, à entrada da tenda do encontro, e fará subir em fumaça a gordura como aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "B": "O sacerdote jogará o sangue no altar {{divine_name:do SENHOR|de Javé}}, à entrada da tenda do encontro, e fará subir em fumaça a gordura como aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "R": "O sacerdote deve jogar o sangue no altar {{divine_name:do SENHOR|de Javé}}, à entrada da tenda do encontro. Deve queimar a gordura. A fumaça será um cheiro que agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "ካህኑም ደሙን በመገናኛው ድንኳን ደጃፍ ባለው {{divine_name:በእግዚአብሔር|በያህዌ}} መሠዊያ ላይ ይረጨዋል፤ ስቡንም {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ አድርጎ ያጤሰዋል።",
+          "B": "ካህኑ ደሙን በመገናኛው ድንኳን ደጃፍ ባለው {{divine_name:በእግዚአብሔር|በያህዌ}} መሠዊያ ላይ ይርጨው፤ ስቡንም {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ አድርጎ ያቃጥለው።",
+          "R": "ካህኑ ደሙን በመገናኛው ድንኳን መግቢያ ባለው {{divine_name:በእግዚአብሔር|በያህዌ}} መሠዊያ ላይ መርጨት አለበት። ስቡንም ማቃጠል አለበት። ጢሱም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኝ መዓዛ ይሆናል።"
         }
       },
       "decisions": [
@@ -1062,6 +1171,11 @@
           "L": "E não sacrificarão mais os seus sacrifícios aos demônios-bode, atrás dos quais eles se prostituem. Isto será para eles um estatuto perpétuo, pelas suas gerações.",
           "B": "Eles não oferecerão mais os seus sacrifícios aos demônios-bode, atrás dos quais têm andado como uma prostituta. Este será um estatuto perpétuo para eles, por todas as suas gerações.",
           "R": "O povo deve parar de oferecer os seus sacrifícios aos demônios em forma de bode. Adorar esses demônios é como ser infiel no casamento. Esta é uma regra para eles para sempre, em todas as gerações que virão."
+        },
+        "am": {
+          "L": "ከእንግዲህም ወዲህ እያመነዘሩ ለሚከተሏቸው ፍየል መሰል አጋንንት መሥዋዕታቸውን አይሠዉ። ይህ ለእነርሱ በትውልዳቸው ሁሉ የዘላለም ሥርዓት ይሆናል።",
+          "B": "ከእንግዲህ ወዲህ እንደ አመንዝራ ሴት ለሚከተሏቸው ፍየል መሰል አጋንንት መሥዋዕታቸውን አያቅርቡ። ይህ ለእነርሱ በትውልዳቸው ሁሉ የዘላለም ሥርዓት ይሁን።",
+          "R": "ሕዝቡ ፍየል መሰል ለሆኑ አጋንንት መሥዋዕት ማቅረባቸውን ማቆም አለባቸው። እነዚህን ማምለክ ለትዳር ታማኝ እንዳለመሆን ነው። ይህ ለእነርሱ ለሚመጡት ዘመናት ሁሉ የሚኖር ሥርዓት ነው።"
         }
       },
       "decisions": [
@@ -1281,6 +1395,28 @@
           "reason": "The word is the ordinary word for male goats, here naming beings worshipped in that form (m1); the English says \"goat-demons\" at every level, and Portuguese \"demônios-bode\" says the same, with Readable spelling it out as \"demônios em forma de bode\". \"Sátiros\" brings in Greek myth; \"ídolos em forma de bode\" would name images, which the text does not mention. Literal and Balanced keep the picture of prostitution for unfaithfulness to God (m2); Readable explains it, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030170070062"
+          ],
+          "choice": "\"ፍየል መሰል አጋንንት\" (goat-like demons)",
+          "alternatives": [
+            "\"ጣዖታት\" (idols)",
+            "\"ፍየሎች\""
+          ],
+          "reason": "The English (m1) reads the word as beings worshipped in the form of goats; \"ፍየል መሰል አጋንንት\" says that, where \"ፍየሎች\" alone would mean the animals and \"ጣዖታት\" would lose the picture.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1356,6 +1492,11 @@
           "L": "E lhes dirás: {{gender:Qualquer pessoa|Qualquer homem}} da casa de Israel, ou dos estrangeiros que habitam no meio deles, que oferecer um holocausto ou um sacrifício",
           "B": "Dize-lhes também: {{gender:Qualquer pessoa|Qualquer homem}} do povo de Israel, ou dos estrangeiros que vivem entre eles, que oferecer um holocausto ou um sacrifício",
           "R": "Diz-lhes também isto: {{gender:Alguém|Um homem}} pode oferecer um holocausto ou algum outro sacrifício. Essa pessoa pode ser de Israel ou pode ser um estrangeiro que mora no meio deles."
+        },
+        "am": {
+          "L": "ደግሞም እንዲህ በላቸው፤ ከእስራኤል ቤት ወይም በመካከላቸው በእንግድነት ከሚኖሩት መጻተኞች የሚቃጠል መሥዋዕትን ወይም መሥዋዕትን የሚያቀርብ ማንም ሰው",
+          "B": "ደግሞም እንዲህ በላቸው፤ ከእስራኤል ሕዝብ ወይም በመካከላቸው ከሚኖሩት መጻተኞች የሚቃጠል መሥዋዕት ወይም ሌላ መሥዋዕት የሚያቀርብ ማንም ሰው",
+          "R": "ይህንንም ደግሞ ንገራቸው፤ አንድ ሰው የሚቃጠል መሥዋዕት ወይም ሌላ መሥዋዕት ያቀርብ ይሆናል። ያ ሰው እስራኤላዊ ወይም በመካከላቸው የሚኖር እንግዳ ሊሆን ይችላል።"
         }
       },
       "decisions": [
@@ -1478,6 +1619,11 @@
           "L": "e não o trouxer à entrada da tenda do encontro para oferecê-lo {{divine_name:ao SENHOR|a Javé}}, {{gender:essa pessoa será cortada|esse homem será cortado}} do seu povo.",
           "B": "e não o trouxer à entrada da tenda do encontro para oferecê-lo {{divine_name:ao SENHOR|a Javé}}, essa pessoa deve ser eliminada do povo.",
           "R": "Se essa pessoa não levar a oferta até a entrada da tenda do encontro para oferecê-la {{divine_name:ao SENHOR|a Javé}}, ela deve ser eliminada do meio do povo."
+        },
+        "am": {
+          "L": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ያቀርበው ዘንድ ወደ መገናኛው ድንኳን ደጃፍ ባያመጣው፣ ያ ሰው ከሕዝቡ ተቆርጦ ይጥፋ።",
+          "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ሊያቀርበው ወደ መገናኛው ድንኳን ደጃፍ ባያመጣው፣ ከሕዝቡ መካከል ተቆርጦ ይጥፋ።",
+          "R": "ያ ሰው መሥዋዕቱን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለማቅረብ ወደ መገናኛው ድንኳን መግቢያ ባያመጣው፣ ከሕዝቡ መካከል መወገድ አለበት።"
         }
       },
       "decisions": [
@@ -1600,6 +1746,11 @@
           "L": "E {{gender:qualquer pessoa|qualquer homem}} da casa de Israel ou dos estrangeiros que habitam no meio deles que comer qualquer sangue, eu porei o {{deity_pronoun:meu|Meu}} rosto contra a pessoa que comer o sangue e a eliminarei do meio do povo.",
           "B": "Se {{gender:uma pessoa|um homem}} do povo de Israel ou dos estrangeiros que vivem entre eles comer qualquer tipo de sangue, eu porei o {{deity_pronoun:meu|Meu}} rosto contra essa pessoa que comer o sangue e a eliminarei do meio do povo.",
           "R": "Alguém de Israel, ou um estrangeiro que mora no meio deles, pode comer sangue de algum tipo. Eu me voltarei contra quem comer sangue. Eliminarei essa pessoa do meio do povo."
+        },
+        "am": {
+          "L": "ከእስራኤልም ቤት ወይም በመካከላቸው በእንግድነት ከሚኖሩት መጻተኞች ማንኛውንም ደም የሚበላ ማንም ሰው ቢኖር፣ ደሙን በሚበላው ሰው ላይ ፊቴን አደርጋለሁ፤ ከሕዝቡም መካከል ቆርጬ አጠፋዋለሁ።",
+          "B": "ከእስራኤል ሕዝብ ወይም በመካከላቸው ከሚኖሩት መጻተኞች ማንም ሰው ማንኛውንም ደም ቢበላ፣ ደም በሚበላው በዚያ ሰው ላይ ፊቴን አዞራለሁ፤ ከሕዝቡም መካከል ቆርጬ አጠፋዋለሁ።",
+          "R": "አንድ እስራኤላዊ ወይም በመካከላቸው የሚኖር እንግዳ ማንኛውንም ዓይነት ደም ይበላ ይሆናል። ደም በሚበላ ሰው ላይ እነሣበታለሁ። ያንንም ሰው ከሕዝቡ መካከል አስወግደዋለሁ።"
         }
       },
       "decisions": [
@@ -1731,6 +1882,27 @@
           "reason": "Literal and Balanced keep the Hebrew picture of setting one's face against an enemy (m2), which Portuguese understands; Readable says \"me voltarei contra\", as the English \"turn against\". Portuguese \"pessoa\" is feminine like the Hebrew word (m3), so \"a eliminarei\" follows it naturally and, as the English decision wants, does not suggest that only a woman is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030170100132",
+            "o030170100141",
+            "o030170100142"
+          ],
+          "choice": "\"ፊቴን ... ላይ አደርጋለሁ\" (L), \"ፊቴን ... ላይ አዞራለሁ\" (B), \"... ላይ እነሣበታለሁ\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"I will set my face against\"; Balanced \"turn my face against\" reads as plain hostility in Amharic, and Readable says \"I will rise against him\", the sense of m2. The same wording is used in chapter 20.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1811,6 +1983,11 @@
           "L": "Porque a vida da carne está no sangue, e eu o dei a vocês sobre o altar para fazer expiação pelas vidas de vocês; porque o sangue, ele faz expiação pela vida.",
           "B": "A vida de toda criatura está no seu sangue. Eu dei o sangue a vocês para fazer expiação sobre o altar pela vida de vocês, porque é o sangue que faz expiação, por meio da vida que há nele.",
           "R": "A vida de todo ser vivo está no seu sangue. Eu dei o sangue a vocês para ser posto no altar e fazer expiação pela vida de vocês. O sangue pode fazer isso porque o sangue é a vida do animal."
+        },
+        "am": {
+          "L": "የሥጋ ሕይወት በደም ውስጥ ነውና፤ እኔም ስለ ነፍሳችሁ ያስተሰርይ ዘንድ በመሠዊያው ላይ ለእናንተ ሰጠሁት፤ ደም በሕይወቱ ያስተሰርያልና።",
+          "B": "የፍጡር ሁሉ ሕይወት በደሙ ውስጥ ነው። ደሙን በመሠዊያው ላይ ለነፍሳችሁ ማስተስረያ እንዲሆን ሰጥቻችኋለሁ፤ ደም በውስጡ ባለው ሕይወት ያስተሰርያልና።",
+          "R": "የሕያው ፍጡር ሁሉ ሕይወት ያለው በደሙ ውስጥ ነው። ለሕይወታችሁ ማስተስረያ እንዲሆን ደሙን በመሠዊያው ላይ እንድታደርጉት ሰጥቻችኋለሁ። ደም ይህን የሚያደርገው የእንስሳውን ሕይወት የያዘ ስለ ሆነ ነው።"
         }
       },
       "decisions": [
@@ -2070,6 +2247,11 @@
           "L": "Por isso eu disse aos filhos de Israel: 'Nenhuma pessoa dentre vocês comerá sangue, e o estrangeiro que habita no meio de vocês não comerá sangue.'",
           "B": "É por isso que eu disse aos israelitas: 'Nenhum de vocês poderá comer sangue, nem o estrangeiro que vive entre vocês.'",
           "R": "É por isso que eu disse aos israelitas: 'Nenhum de vocês pode comer sangue. E os estrangeiros que moram no meio de vocês também não podem comer sangue.'"
+        },
+        "am": {
+          "L": "ስለዚህ ለእስራኤል ልጆች፦ “ከእናንተ ማንም ሰው ደም አይብላ፤ በመካከላችሁም በእንግድነት የሚኖር መጻተኛ ደም አይብላ” አልኳቸው።",
+          "B": "ስለዚህ ለእስራኤል ልጆች፦ “ከእናንተ ማንም ደም አይብላ፤ በመካከላችሁ የሚኖርም መጻተኛ ቢሆን ደም አይብላ” ያልኳቸው ለዚህ ነው።",
+          "R": "ለእስራኤላውያን፦ “ከእናንተ ማንም ደም መብላት የለበትም። በመካከላችሁ የሚኖሩ እንግዶችም ደም መብላት የለባቸውም” ያልኳቸው ስለዚህ ነው።"
         }
       },
       "decisions": [
@@ -2187,6 +2369,11 @@
           "L": "E {{gender:qualquer pessoa|qualquer homem}} dos filhos de Israel ou dos estrangeiros que habitam no meio deles que caçar uma caça, animal ou ave que se pode comer, derramará o seu sangue e o cobrirá com pó.",
           "B": "Quando {{gender:alguém|um homem}} dentre os israelitas ou dentre os estrangeiros que vivem entre eles caçar um animal selvagem ou uma ave que se pode comer, deverá escorrer o seu sangue e cobri-lo com terra.",
           "R": "Alguém de Israel, ou um estrangeiro que mora no meio deles, pode caçar um animal selvagem ou uma ave que é permitida como alimento. Essa pessoa deve derramar o sangue no chão e cobrir o sangue com terra."
+        },
+        "am": {
+          "L": "ከእስራኤልም ልጆች ወይም በመካከላቸው በእንግድነት ከሚኖሩት መጻተኞች የሚበላ አውሬ ወይም ወፍ አድኖ የሚይዝ ማንም ሰው ደሙን ያፍስስ፤ በአፈርም ይሸፍነው።",
+          "B": "ከእስራኤል ልጆች ወይም በመካከላቸው ከሚኖሩት መጻተኞች ማንም ሰው የሚበላ የዱር እንስሳ ወይም ወፍ አድኖ ቢይዝ፣ ደሙን አፍስሶ በአፈር ይሸፍነው።",
+          "R": "አንድ እስራኤላዊ ወይም በመካከላቸው የሚኖር እንግዳ ለምግብነት የተፈቀደ የዱር እንስሳ ወይም ወፍ ያድን ይሆናል። ያ ሰው ደሙን መሬት ላይ አፍስሶ ደሙን በአፈር መሸፈን አለበት።"
         }
       },
       "decisions": [
@@ -2321,6 +2508,11 @@
           "L": "Porque a vida de toda carne, o seu sangue é a sua vida; e eu disse aos filhos de Israel: 'Vocês não comerão o sangue de nenhuma carne', porque a vida de toda carne, ela [é] o seu sangue; todo aquele que o comer será cortado.",
           "B": "Pois a vida de toda criatura é o seu sangue; o seu sangue é a sua vida. É por isso que eu disse aos israelitas: 'Vocês não devem comer o sangue de nenhuma criatura.' Pois a vida de toda criatura é o seu sangue, e quem o comer deve ser eliminado.",
           "R": "A vida de toda criatura está no seu sangue. É por isso que eu disse aos israelitas: 'Não comam o sangue de nenhuma criatura.' O sangue é a vida de toda criatura. Quem comer sangue deve ser eliminado do meio do povo."
+        },
+        "am": {
+          "L": "የሥጋ ሁሉ ሕይወት ደሙ ሕይወቱ ነውና፤ ለእስራኤልም ልጆች፦ “የማንኛውንም ሥጋ ደም አትብሉ” አልኳቸው፤ የሥጋ ሁሉ ሕይወት ደሙ ነውና፤ የሚበላውም ሁሉ ተቆርጦ ይጥፋ።",
+          "B": "የፍጡር ሁሉ ሕይወት ደሙ ነውና፤ ደሙ ሕይወቱ ነው። ስለዚህ ለእስራኤል ልጆች፦ “የማንኛውንም ፍጡር ደም አትብሉ” አልኳቸው። የፍጡር ሁሉ ሕይወት ደሙ ነውና፤ የሚበላውም ሁሉ ተቆርጦ ይጥፋ።",
+          "R": "የፍጡር ሁሉ ሕይወት በደሙ ውስጥ ነው። ለእስራኤላውያን፦ “የማንኛውንም ፍጡር ደም አትብሉ” ያልኳቸው ስለዚህ ነው። ደም የፍጡር ሁሉ ሕይወት ነው። ደም የሚበላ ሁሉ ከሕዝቡ መካከል መወገድ አለበት።"
         }
       },
       "decisions": [
@@ -2454,6 +2646,11 @@
           "L": "E toda pessoa que comer [um animal] morto ou despedaçado, seja natural da terra, seja estrangeiro, lavará as suas vestes, e se banhará em água, e estará impura até a tarde; e [então] ficará pura.",
           "B": "Qualquer pessoa, seja israelita de nascimento, seja estrangeira, que comer um animal que morreu por si ou que foi despedaçado por feras lavará as suas roupas e se banhará em água, e ficará impura até o anoitecer; depois disso ficará pura.",
           "R": "Quem comer um animal que morreu sozinho ou que foi morto por animais selvagens deve lavar as roupas e tomar banho. Isso vale para os que nasceram em Israel e para os estrangeiros. Essa pessoa ficará impura até o anoitecer. Depois disso ficará pura."
+        },
+        "am": {
+          "L": "የአገሩ ተወላጅም ሆነ መጻተኛ፣ የሞተውን ወይም በአውሬ የተቦጨቀውን የሚበላ ሰው ሁሉ ልብሱን ያጥባል፤ በውኃም ይታጠባል፤ እስከ ማታም ርኩስ ይሆናል፤ ከዚያም ንጹሕ ይሆናል።",
+          "B": "የአገሩ ተወላጅም ሆነ መጻተኛ፣ ሞቶ የተገኘውን ወይም በአውሬ የተቦጨቀውን እንስሳ የሚበላ ሁሉ ልብሱን ያጥብ፤ በውኃም ይታጠብ፤ እስከ ማታ ድረስ ርኩስ ይሆናል፤ ከዚያም ንጹሕ ይሆናል።",
+          "R": "በራሱ የሞተውን ወይም የዱር አውሬ የገደለውን እንስሳ የሚበላ ሁሉ ልብሱን ማጠብና ገላውን መታጠብ አለበት። ይህ በእስራኤል ለተወለዱትም ለእንግዶችም ይሠራል። እስከ ማታ ድረስ ርኩስ ይሆናል። ከዚያ በኋላ ንጹሕ ይሆናል።"
         }
       },
       "decisions": [
@@ -2590,6 +2787,11 @@
           "L": "E, se não [as] lavar e não banhar o seu corpo, levará a sua iniquidade.\"",
           "B": "Mas, se não lavar as roupas nem banhar o corpo, carregará a sua culpa.\"",
           "R": "Mas, se a pessoa não lavar as roupas e não tomar banho, terá de responder por isso.\""
+        },
+        "am": {
+          "L": "ባያጥብ ግን፣ ሥጋውንም ባይታጠብ፣ በደሉን ይሸከማል።»",
+          "B": "ልብሱን ባያጥብ ወይም ገላውን ባይታጠብ ግን የበደሉን ዋጋ ይሸከማል።»",
+          "R": "ልብሱን ባያጥብና ገላውን ባይታጠብ ግን በደለኛ ይሆናል፤ ቅጣትም ይደርስበታል።»"
         }
       },
       "decisions": [
