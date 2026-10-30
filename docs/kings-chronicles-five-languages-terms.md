@@ -260,7 +260,9 @@ block of chapters.
   servant" in prayer) are *đầy tớ* at every level, Literal included; *nô lệ*
   only for slavery itself. The sources are never *Sử Ký*, the title of
   Chronicles.
-- **Korean**: years, ages and large numbers in figures; the source books are
+- **Korean**: years, ages and large numbers in figures at every level (2 Kings
+  now too); measures `{{units:약 X|unit}}`, never X쯤, as the later notes; the
+  alternative's unit count in figures from 100; the source books are
   …왕 실록 at B (never 역대기, the title of Chronicles); prophets speak to kings
   in 합쇼체.
 
@@ -281,4 +283,3 @@ left for a reviewer:
   Warefai* (2 Samuel 5); Swahili *agano* and *mkataba* for a treaty.
 - Vietnamese judges of Israel now follow the Joshua–Ruth note: *quan xét*
   (L, B), *thủ lĩnh* (R), where the drafts had *thẩm phán*.
-- Korean measures say 약 X in some blocks and X쯤 in others.

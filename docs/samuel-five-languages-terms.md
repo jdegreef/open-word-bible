@@ -87,7 +87,7 @@ Decision text stays in English, quoting the words of the language.
 | the lords (rulers) of the Philistines | les princes des Philistins | los jefes de los filisteos | wakuu wa Wafilisti | các lãnh chúa Phi-li-tin | 블레셋 통치자들 |
 | "from Dan to Beersheba" | depuis Dan jusqu’à Beer-Shéba | desde Dan hasta Beerseba | tangu Dani mpaka Beer-sheba | từ Đan đến Bê-e-Sê-ba | 단에서 브엘세바까지 |
 | the City of David | la cité de David | la ciudad de David | mji wa Daudi | thành Đa-vít | 다윗 성 |
-| *ḥesed* (steadfast love L / faithful love B, R), also between people | amour loyal (L); amour fidèle (B, R) | amor leal (L); amor fiel (B, R) | upendo usiokoma (L); fadhili (B, R) | tình yêu thương thành tín (L); lòng nhân từ (B, R); God's *ḥesed* at R now follows the Psalms note, tình thương không hề thay đổi | 한결같은 사랑 (L); 인애 (B, R) |
+| *ḥesed* (steadfast love L / faithful love B, R), also between people | amour loyal (L); amour fidèle (B, R) | amor leal (L); amor fiel (B, R) | upendo usiokoma (L); fadhili (B, R) | tình yêu thương thành tín (L); lòng nhân từ (B, R); God's *ḥesed* at R now follows the Psalms note, tình thương không hề thay đổi | 한결같은 사랑 (L, B); 변함없는 사랑 (R) |
 | covenant (between David and Jonathan) | alliance | pacto | agano | giao ước | 언약 |
 | sackcloth | le sac | el cilicio | gunia | vải thô | 굵은 베 |
 | "Have you come in peace?" (*shalom*) | Viens-tu en paix ? | ¿Vienes en paz? | Je, umekuja kwa amani? | Ông đến có bình an không? | 평안한 일로 오십니까? (to a superior); 평안하냐? (해라체) |
@@ -196,7 +196,10 @@ block of chapters (1 Samuel 1–15, 16–31; 2 Samuel 1–12, 13–24).
   in 합쇼체. David speaks 하오체 with 그대 to Nathan, Gad and Barzillai
   (uncertain). Amnon is 형 to Absalom; Tamar calls Amnon 오라버니. Amasa's
   mother is 아비갈, kept apart from Nabal's wife 아비가일. Concubines are
-  후궁.
+  후궁. *Ḥesed* now follows the Psalms and Genesis notes (한결같은 사랑 at L
+  and B, 변함없는 사랑 at R), not 인애; measures follow the later notes
+  (`{{units:약 X|unit}}`, never X쯤); a king's concubines are 후궁 and other
+  men's 첩, as the Joshua–Ruth table.
 
 ## Before review
 
@@ -209,10 +212,9 @@ reviewer rather than settled by the drafter:
 - Numbers above one hundred: French and Swahili 1 Samuel 1–15 and
   Vietnamese 1 Samuel 1–15 write them in words; the other blocks use
   figures.
-- Korean measures say "약 X" in some blocks and "X쯤" in others.
 - Swahili "young men" at B is *vijana* in 1 Samuel 16–31 and *mtumishi* in
   1–15.
 - 2 Samuel 22:51 keeps the published Psalm 18:51 wording for *ḥesed* in
-  Swahili and Korean, which differs from the B and R choice above.
+  Swahili, which differs from the B and R choice above.
 - Vietnamese judges of Israel now follow the Joshua–Ruth note: *quan xét*
   (L, B), *thủ lĩnh* (R), where the drafts had *thẩm phán*.
