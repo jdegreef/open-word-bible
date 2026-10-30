@@ -1,12 +1,14 @@
 """Syncing a reader's bookmarks, highlights, reading place, reading-plan
 progress and settings (accounts/reading.py)."""
+import json
 import time
+from pathlib import Path
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIClient
 
-from accounts.models import ApiToken, Mark, ReaderState, ReadingPlace, new_secret
+from accounts.models import ApiToken, Mark, PassageNote, ReaderState, ReadingPlace, SavedWord, new_secret
 
 
 def device(user):
@@ -41,7 +43,7 @@ class ReadingSyncTest(TestCase):
                         place={"book": "JHN", "chapter": 3, "verse": "16", "at": 100})
         expected = {"marks": {"JHN.3.16": {"b": True, "h": "yellow", "text": "For God", "lang": "en", "at": 100}},
                     "place": {"book": "JHN", "chapter": 3, "verse": "16", "at": 100},
-                    "plans": None, "settings": None}
+                    "plans": None, "settings": None, "notes": {}, "words": {}, "myplans": {}}
         self.assertEqual(out, expected)
         self.assertEqual(self.client.get("/api/reading").json(), expected)
 
@@ -115,7 +117,8 @@ class ReadingSyncTest(TestCase):
         self.sync(marks={"JHN.3.16": {"b": True, "at": 1}}, place={"book": "JHN", "chapter": 3, "verse": "16", "at": 1})
         _, other = signed_in("other@example.org")
         self.assertEqual(other.get("/api/reading").json(),
-                         {"marks": {}, "place": None, "plans": None, "settings": None})
+                         {"marks": {}, "place": None, "plans": None, "settings": None,
+                          "notes": {}, "words": {}, "myplans": {}})
 
 
 def plans(active=None, at=0, **each):
@@ -194,4 +197,89 @@ class PlanAndSettingsSyncTest(TestCase):
         self.sync(plans=plans("mark", 1, mark={"start": "2026-10-12", "done": [1], "at": 1}),
                   settings={"v": {"level": "L"}, "at": 1})
         self.assertEqual(self.client.delete("/api/me").status_code, 204)
+        self.assertFalse(ReaderState.objects.exists())
+
+
+def source_lemmas():
+    """Two dictionary forms from the source data (never typed here):
+    the first Greek one in John 3, and the first Hebrew one in Genesis 1."""
+    data = Path(__file__).resolve().parents[2] / "data"
+    greek = json.loads((data / "grc" / "JHN.3.json").read_text(encoding="utf-8"))["verses"]["JHN.3.1"][0]
+    hebrew = json.loads((data / "hbo" / "GEN.1.json").read_text(encoding="utf-8"))["verses"]["GEN.1.1"][0]
+    return greek["lemma"], hebrew["lemma"]
+
+
+class StudySyncTest(TestCase):
+    """Collections, passage notes, the word list and the reader's own plans."""
+    def setUp(self):
+        self.user, self.client = signed_in()
+
+    def sync(self, client=None, **body):
+        r = (client or self.client).post("/api/reading", body, format="json")
+        self.assertEqual(r.status_code, 200, r.content)
+        return r.json()
+
+    def test_collections_are_kept_on_a_mark_and_alone_keep_it(self):
+        out = self.sync(marks={"JHN.3.16": {"t": ["Prayer", " prayer ", "Sunday's  sermon", ""], "text": "For God",
+                                            "lang": "en", "at": 100}})
+        self.assertEqual(out["marks"]["JHN.3.16"],
+                         {"t": ["Prayer", "Sunday's sermon"], "text": "For God", "lang": "en", "at": 100})
+        self.assertEqual(self.sync(marks={"JHN.3.16": {"at": 200}})["marks"]["JHN.3.16"], {"at": 200})
+        self.assertEqual(Mark.objects.get().tags, [])
+
+    def test_bad_collections_are_refused(self):
+        for tags in ("Prayer", [1], ["x"] * 21):
+            r = self.client.post("/api/reading", {"marks": {"JHN.3.16": {"t": tags, "at": 1}}}, format="json")
+            self.assertEqual(r.status_code, 400, tags)
+        self.assertFalse(Mark.objects.exists())
+
+    def test_a_passage_note_syncs_and_clears(self):
+        note = {"n": "The new birth", "text": "Jesus answered", "lang": "en", "t": ["Study"], "at": 100}
+        out = self.sync(notes={"JHN.3.3-8": note})
+        self.assertEqual(out["notes"], {"JHN.3.3-8": note})
+        phone = device(self.user)
+        self.assertEqual(self.sync(phone, notes={"JHN.3.3-8": {"n": "Older", "at": 50}})["notes"]["JHN.3.3-8"]["n"],
+                         "The new birth")
+        self.assertEqual(self.sync(phone, notes={"JHN.3.3-8": {"at": 300}})["notes"], {"JHN.3.3-8": {"at": 300}})
+        self.assertEqual(PassageNote.objects.get().note, "")
+
+    def test_a_passage_is_verses_of_one_chapter_in_order(self):
+        for passage in ("JHN.3.8-3", "JHN.3.3-3", "JHN.3.16", "JHN.3-4", "jhn.3.1-2"):
+            r = self.client.post("/api/reading", {"notes": {passage: {"n": "x", "at": 1}}}, format="json")
+            self.assertEqual(r.status_code, 400, passage)
+
+    def test_the_word_list_keeps_saved_words_and_notes(self):
+        greek, hebrew = source_lemmas()
+        out = self.sync(words={greek: {"s": True, "g": "was", "l": "grc", "at": 100},
+                               hebrew: {"n": "A preposition", "g": "in", "l": "hbo", "at": 120}})
+        self.assertEqual(out["words"][greek], {"s": True, "g": "was", "l": "grc", "at": 100})
+        self.assertEqual(out["words"][hebrew], {"n": "A preposition", "g": "in", "l": "hbo", "at": 120})
+        # Taking a word off the list reaches the other devices.
+        out = self.sync(device(self.user), words={hebrew: {"at": 200}})
+        self.assertEqual(out["words"][hebrew], {"at": 200})
+        self.assertEqual(SavedWord.objects.get(lemma=hebrew).note, "")
+
+    def test_a_word_is_greek_or_hebrew(self):
+        for lemma in ("love", " ", "x" * 65, "<script>"):
+            r = self.client.post("/api/reading", {"words": {lemma: {"s": True, "at": 1}}}, format="json")
+            self.assertEqual(r.status_code, 400, lemma)
+        self.assertFalse(SavedWord.objects.exists())
+
+    def test_own_plans_sync_and_delete(self):
+        plan = {"name": "  Advent   readings ", "days": [["LUK.1", "LUK.2"], ["MAT.1"]], "at": 100}
+        out = self.sync(myplans={"my-adv1": plan})
+        self.assertEqual(out["myplans"], {"my-adv1": {"name": "Advent readings",
+                                                      "days": [["LUK.1", "LUK.2"], ["MAT.1"]], "at": 100}})
+        phone = device(self.user)
+        self.assertEqual(self.sync(phone, myplans={"my-adv1": {"at": 50}})["myplans"]["my-adv1"]["at"], 100)
+        self.assertEqual(self.sync(phone, myplans={"my-adv1": {"at": 200}})["myplans"], {"my-adv1": {"at": 200}})
+
+    def test_bad_own_plans_are_refused(self):
+        for plans_ in ({"mark": {"name": "x", "days": [["MRK.1"]], "at": 1}},
+                       {"my-abcd": {"name": "", "days": [["MRK.1"]], "at": 1}},
+                       {"my-abcd": {"name": "x", "days": [], "at": 1}},
+                       {"my-abcd": {"name": "x", "days": [["Mark 1"]], "at": 1}},
+                       {"my-abcd": {"name": "x", "days": [["MRK.1"] * 31], "at": 1}}):
+            r = self.client.post("/api/reading", {"myplans": plans_}, format="json")
+            self.assertEqual(r.status_code, 400, plans_)
         self.assertFalse(ReaderState.objects.exists())

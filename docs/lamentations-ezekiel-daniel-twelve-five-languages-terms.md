@@ -328,10 +328,9 @@ Joel 4:16 = Amos 1:2; Habakkuk 2:14 = Isaiah 11:9; Zechariah 9:10 = Psalm
 72:8; Jonah 2 = the published Psalms it quotes; Ezekiel 37:27 = Jeremiah
 31:33 « je serai leur Dieu, et ils seront mon peuple » (2 Corinthians 6:16).
 Joel 2:13, Jonah 4:2 and Nahum 1:3 quote Exodus 34:6–7, whose French L reads
-« compatissant et favorable, lent à la colère, grand en amour fidèle »: keep
-those words except *ḥesed*, which follows whatever the founder rules on the
-English open question (until then, Joel follows the prophets' « amour loyal »
-at L and Jonah reuses Exodus's « amour fidèle »).
+« compatissant et favorable, lent à la colère, grand en amour loyal »: keep
+those words. French *ḥesed* is now « amour loyal » (L) / « amour fidèle » (B,
+R) in Exodus too, as the Psalms note sets, so Joel and Jonah match it.
 
 Where the New Testament quotes these books and the Hebrew means the same,
 the French keeps the published New Testament's key words at each level

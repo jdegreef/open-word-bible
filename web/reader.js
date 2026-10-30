@@ -484,6 +484,7 @@
         if (m && m.h) span.classList.add("hl-" + m.h);
         if (m && m.b) span.classList.add("bookmarked");
         if (m && m.n) span.classList.add("noted");
+        if (inPassageNote(part[0])) span.classList.add("passage-noted");
         if (current && current.id === r.id) span.setAttribute("aria-current", "true");
         // Poetry: the verse is a block of lines, each a block with a
         // hanging indent; a space between lines keeps copied text apart.
@@ -1370,6 +1371,8 @@
     panel.appendChild(moreBox(currentVerse));
     var mine = myNoteBox(currentVerse);
     if (mine) panel.appendChild(mine);
+    var passages = passageNotesBox(currentVerse);
+    if (passages) panel.appendChild(passages);
     // On phones the sheet opens at 60% height: its footnotes and uncertain
     // decisions come first, ahead of the word list (hidden on wide screens,
     // where the full notes are a scroll away).
@@ -1420,10 +1423,19 @@
         info.appendChild(el("p", "wi-grammar", DATA.grammar[key][settings.lang]));
         info.appendChild(el("p", "wi-gloss", "\u201c" + (HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss) + "\u201d"));
         info.appendChild(drawUses(word));
-        // Everything about this dictionary form (/word/).
+        // Everything about this dictionary form (/word/), and the reader's
+        // word list (web/site.js OWBStudy), which keeps it as looked up.
+        var wordInfo = { g: HEBREW ? word.gloss.replace(/\./g, " ") : word.gloss,
+                         l: HEBREW ? (word.lang === "A" ? "arc" : "hbo") : "grc" };
+        var links = el("p", "wi-links");
         var more = el("a", "fn-pop-more", t("word_page") + " \u2192");
         more.href = DATA.word_url + "?w=" + encodeURIComponent(word.lemma);
-        info.appendChild(more);
+        links.appendChild(more);
+        if (window.OWBStudy) {
+          window.OWBStudy.lookedUp(word.lemma, wordInfo);
+          links.appendChild(saveWordButton(word.lemma, wordInfo));
+        }
+        info.appendChild(links);
         info.hidden = false;
         var ids = [];
         current.decisions.forEach(function (d) { if (d.tokens.includes(word.id)) ids = ids.concat(d.tokens); });
@@ -1488,13 +1500,13 @@
     panel.appendChild(feedback(currentVerse || verseOf(current.refs[0])));
   }
 
-  // Bookmarks, highlights and the reader's own notes, kept in this browser
-  // as owb.marks by verse ("JHN.3.16"), so they hold whatever the settings
-  // or language. Each keeps the verse's words as shown when it was marked,
-  // for the saved verses page (site.js). {b: true, h: "yellow", n: "note",
-  // text, lang, at}; a mark cleared is kept as {at} so a signed-in reader's
-  // other devices clear it too (site.js syncs owb.marks with the account).
-  // A note is private: only its reader sees it.
+  // Bookmarks, highlights, the reader's own notes and collections, kept in
+  // this browser as owb.marks by verse ("JHN.3.16"), so they hold whatever
+  // the settings or language. Each keeps the verse's words as shown when it
+  // was marked, for the saved page (web/saved.js). {b: true, h: "yellow",
+  // n: "note", t: ["Prayer"], text, lang, at}; a mark cleared is kept as
+  // {at} so a signed-in reader's other devices clear it too (site.js syncs
+  // owb.marks with the account). A note is private: only its reader sees it.
   var MARKS = "owb.marks";
   var HUES = ["yellow", "green", "blue", "pink"];
   function marks() {
@@ -1522,7 +1534,7 @@
     vs.forEach(function (v) {
       var id = verseId(v), m = all[id] || {};
       for (var k in change) { if (change[k]) m[k] = change[k]; else delete m[k]; }
-      if (m.b || m.h || m.n) {
+      if (m.b || m.h || m.n || (m.t && m.t.length)) {
         var span = verseEl(v);
         m.text = verseWords(v);
         m.lang = (span && span.lang) || settings.lang;
@@ -1576,7 +1588,185 @@
     var all = el("a", "mark-all", t("saved_all"));
     all.href = DATA.saved;
     row.appendChild(all);
-    return row;
+    var box = el("div");
+    box.appendChild(row);
+    box.appendChild(collectionsRow(v));
+    return box;
+  }
+
+  // Under the mark row: the reader's collections ("Prayer", "Sunday's
+  // sermon") the verse is in, the others to add it to, and a new one.
+  function collectionsRow(v) {
+    var S = window.OWBStudy;
+    var m = marks()[verseId(v)] || {}, mine = m.t || [];
+    var box = el("div", "collections");
+    box.setAttribute("role", "group");
+    box.setAttribute("aria-label", t("collections"));
+    box.appendChild(el("span", "my-note-label", t("collections")));
+    var chips = el("p", "tag-chips");
+    function put(name, on) {
+      var list = S.withTag(mine, name, on);
+      setMark(v, { t: list.length ? list : null });
+      var field = document.getElementById("collection-new");
+      if (field) field.focus();
+    }
+    mine.forEach(function (name) {
+      var b = el("button", "tag-chip", name);
+      b.type = "button";
+      b.setAttribute("aria-pressed", "true");
+      b.setAttribute("aria-label", t("collection_remove").replace("{name}", name));
+      b.addEventListener("click", function () { put(name, false); });
+      chips.appendChild(b);
+    });
+    S.collections().filter(function (name) { return !S.hasTag(m, name); }).forEach(function (name) {
+      var b = el("button", "tag-chip", name);
+      b.type = "button";
+      b.setAttribute("aria-pressed", "false");
+      b.setAttribute("aria-label", t("collection_put").replace("{name}", name));
+      b.addEventListener("click", function () { put(name, true); });
+      chips.appendChild(b);
+    });
+    box.appendChild(chips);
+    var form = el("form", "collection-form");
+    var field = el("input", "collection-new");
+    field.id = "collection-new";
+    field.maxLength = 40;
+    field.placeholder = t("collection_new");
+    field.setAttribute("aria-label", t("collection_new"));
+    var add = el("button", "plan-undo", t("collection_add"));
+    add.type = "submit";
+    form.appendChild(field);
+    form.appendChild(add);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = S.cleanTag(field.value);
+      if (name) put(S.collections().filter(function (n) { return n.toLowerCase() === name.toLowerCase(); })[0] || name, true);
+    });
+    box.appendChild(form);
+    return box;
+  }
+
+  // Notes on a passage of several verses (owb.notes, by "JHN.3.16-21"),
+  // written from a selection's bar and shown in the panel of any verse of
+  // the passage. Private, and synced, like a verse's note.
+  var NOTES = "owb.notes";
+  function passageNotes() {
+    return window.OWBStudy ? window.OWBStudy.read(NOTES) : {};
+  }
+  // This chapter's passage notes that take in verse v ("16"), as [id, from, to].
+  function passagesWith(v) {
+    if (!/^\d+$/.test(String(v))) return [];
+    var all = passageNotes(), prefix = DATA.book + "." + DATA.chapter + ".", out = [];
+    Object.keys(all).forEach(function (id) {
+      if (id.indexOf(prefix) !== 0 || !all[id].n) return;
+      var r = id.slice(prefix.length).split("-");
+      if (+v >= +r[0] && +v <= +r[1]) out.push([id, +r[0], +r[1]]);
+    });
+    return out.sort(function (a, b) { return a[1] - b[1] || a[2] - b[2]; });
+  }
+  var passageCache = null;
+  function inPassageNote(v) {
+    if (!passageCache) {
+      passageCache = {};
+      var all = passageNotes(), prefix = DATA.book + "." + DATA.chapter + ".";
+      Object.keys(all).forEach(function (id) {
+        if (id.indexOf(prefix) !== 0 || !all[id].n) return;
+        var r = id.slice(prefix.length).split("-");
+        for (var n = +r[0]; n <= +r[1]; n++) passageCache[n] = true;
+      });
+    }
+    return !!passageCache[v];
+  }
+  document.addEventListener("owb:notes", function () { passageCache = null; });
+  document.addEventListener("owb:synced", function () { passageCache = null; });
+  function passageId(from, to) { return DATA.book + "." + DATA.chapter + "." + from + "-" + to; }
+  function passageName(from, to) {
+    var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    return name + " " + DATA.chapter + ":" + from + "\u2013" + to;
+  }
+  function setPassageNote(id, from, to, note) {
+    var all = passageNotes(), was = all[id] || {};
+    if (note) {
+      var words = [];
+      for (var n = from; n <= to; n++) words.push(verseWords(String(n)));
+      all[id] = { n: note, text: words.join(" ").trim(), lang: settings.lang, at: Date.now() };
+      if (was.t && was.t.length) all[id].t = was.t;
+    } else {
+      all[id] = { at: Date.now() };
+    }
+    window.OWBStudy.write(NOTES, all, "owb:notes");
+    passageCache = null;
+    var top = panelEl.scrollTop;
+    drawText();
+    drawPanel();
+    panelEl.scrollTop = top;
+  }
+  var passageEditing = null, passageDraft = "";
+  function passageNotesBox(v) {
+    var list = passagesWith(v);
+    // A new note, being written: shown whichever of its verses is open.
+    if (passageEditing && list.every(function (x) { return x[0] !== passageEditing[0]; })) list.push(passageEditing);
+    if (!list.length) return null;
+    var all = passageNotes();
+    var box = el("div", "passage-notes");
+    list.forEach(function (x) {
+      var id = x[0], from = x[1], to = x[2], note = (all[id] || {}).n || "";
+      var item = el("div", "my-note passage-note");
+      var editing = passageEditing && passageEditing[0] === id;
+      if (!editing) {
+        item.appendChild(el("p", "my-note-label", t("passage_note").replace("{ref}", passageName(from, to))));
+        item.appendChild(el("p", "my-note-text", note));
+        var edit = el("button", "plan-undo", t("my_note_edit"));
+        edit.type = "button";
+        edit.addEventListener("click", function () {
+          passageEditing = x;
+          passageDraft = note;
+          var top = panelEl.scrollTop;
+          drawPanel();
+          panelEl.scrollTop = top;
+          var f = document.getElementById("passage-note-text");
+          if (f) f.focus();
+        });
+        item.appendChild(edit);
+        box.appendChild(item);
+        return;
+      }
+      var label = el("label", "my-note-label", t("passage_note").replace("{ref}", passageName(from, to)));
+      label.htmlFor = "passage-note-text";
+      item.appendChild(label);
+      var field = el("textarea", "cite-text my-note-field");
+      field.id = "passage-note-text";
+      field.rows = 4;
+      field.maxLength = 5000;
+      field.value = passageDraft;
+      field.addEventListener("input", function () { passageDraft = field.value; });
+      item.appendChild(field);
+      item.appendChild(el("p", "fine my-note-private", t("my_note_private")));
+      var buttons = el("p", "my-note-buttons");
+      function done(save, text) {
+        passageEditing = null;
+        passageDraft = "";
+        if (save) setPassageNote(id, from, to, text);
+        else { var top = panelEl.scrollTop; drawPanel(); panelEl.scrollTop = top; }
+      }
+      var saveBtn = el("button", "button", t("my_note_save"));
+      saveBtn.type = "button";
+      saveBtn.addEventListener("click", function () { done(true, field.value.trim()); });
+      buttons.appendChild(saveBtn);
+      var cancel = el("button", "plan-undo", t("my_note_cancel"));
+      cancel.type = "button";
+      cancel.addEventListener("click", function () { done(false); });
+      buttons.appendChild(cancel);
+      if (note) {
+        var del = el("button", "plan-undo", t("my_note_delete"));
+        del.type = "button";
+        del.addEventListener("click", function () { done(true, ""); });
+        buttons.appendChild(del);
+      }
+      item.appendChild(buttons);
+      box.appendChild(item);
+    });
+    return box;
   }
 
   // The reader's own note on the verse, under the mark row: the note with
@@ -1639,6 +1829,24 @@
     }
     box.appendChild(buttons);
     return box;
+  }
+
+  // Add a dictionary form to the reader's word list, or take it off.
+  function saveWordButton(lemma, info) {
+    var b = el("button", "mark-bookmark save-word");
+    b.type = "button";
+    function show() {
+      var on = !!(window.OWBStudy.word(lemma) || {}).s;
+      b.textContent = t(on ? "word_saved" : "word_save");
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    b.addEventListener("click", function () {
+      var on = !!(window.OWBStudy.word(lemma) || {}).s;
+      window.OWBStudy.setWord(lemma, { s: !on }, info);
+      show();
+    });
+    show();
+    return b;
   }
 
   // By the panel's title: the previous and next verse (as k and j do).
@@ -1868,6 +2076,10 @@
     box.hidden = !moreOpen;
     var row = el("div", "more-links");
     row.appendChild(imageButton(v));
+    var handout = el("button", "copy-link", t("handout"));
+    handout.type = "button";
+    handout.addEventListener("click", function () { openHandout(v); });
+    row.appendChild(handout);
     var compare = el("a", "copy-link", t("compare"));
     compare.href = DATA.compare_url + "?v=" + verseId(v || verseOf(current.refs[0]));
     row.appendChild(compare);
@@ -2028,13 +2240,29 @@
   }
 
   // An image of the verse to share: its text at the reader's settings, the
-  // reference and level, in the site's fonts and the reader's colours.
+  // reference and level, in the site's fonts and the reader's colours; with
+  // the reader's own note under it, if they ask (a note is private, so it
+  // goes only when they choose it).
+  var imageNote = false;
   function imageButton(verse) {
+    var wrap = el("span", "image-share");
     var b = el("button", "copy-link", t("image"));
     b.type = "button";
+    wrap.appendChild(b);
+    var note = (marks()[verseId(verse)] || {}).n;
+    if (note) {
+      var label = el("label", "image-note");
+      var box = el("input");
+      box.type = "checkbox";
+      box.checked = imageNote;
+      box.addEventListener("change", function () { imageNote = box.checked; });
+      label.appendChild(box);
+      label.appendChild(document.createTextNode(" " + t("image_note")));
+      wrap.appendChild(label);
+    }
     b.addEventListener("click", function () {
       b.disabled = true;
-      verseImage(verse).then(function (file) {
+      verseImage(verse, note && imageNote ? note : "").then(function (file) {
         b.disabled = false;
         if (narrow() && navigator.canShare && navigator.canShare({ files: [file] })) {
           navigator.share({ files: [file] }).catch(function () { /* dismissed */ });
@@ -2048,7 +2276,7 @@
         setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
       }, function () { b.disabled = false; });
     });
-    return b;
+    return wrap;
   }
 
   function verseText(verse) {
@@ -2072,7 +2300,7 @@
     return lines;
   }
 
-  function verseImage(verse) {
+  function verseImage(verse, note) {
     var size = 1200, pad = 100;
     var css = getComputedStyle(document.documentElement);
     function v(name, fallback) { return (css.getPropertyValue(name) || fallback).trim(); }
@@ -2090,8 +2318,16 @@
       ctx.fillRect(0, 0, size, size);
       ctx.fillStyle = accent;
       ctx.fillRect(pad, pad, 72, 8);
+      // The reader's note, in italic under the verse: up to five lines.
+      var noteLines = [], noteSize = 30;
+      if (note) {
+        ctx.font = "italic " + noteSize + "px " + sans;
+        noteLines = wrapLines(ctx, note.replace(/\s+/g, " "), size - pad * 2 - 24);
+        if (noteLines.length > 5) { noteLines = noteLines.slice(0, 5); noteLines[4] = noteLines[4].replace(/\s*\S*$/, "") + "\u2026"; }
+      }
+      var noteRoom = noteLines.length ? noteLines.length * noteSize * 1.4 + 40 : 0;
       // The largest text size that fits the space above the reference.
-      var fontSize = 64, lines, room = size - pad * 2 - 230;
+      var fontSize = 64, lines, room = size - pad * 2 - 230 - noteRoom;
       do {
         ctx.font = fontSize + "px " + serif;
         lines = wrapLines(ctx, "\u201c" + words + "\u201d", size - pad * 2);
@@ -2102,6 +2338,14 @@
       ctx.textBaseline = "top";
       var y = pad + 60 + (room - lines.length * fontSize * 1.45) / 2;
       lines.forEach(function (line) { ctx.fillText(line, pad, y); y += fontSize * 1.45; });
+      if (noteLines.length) {
+        y = size - pad - 150 - noteRoom + 30;
+        ctx.fillStyle = accent;
+        ctx.fillRect(pad, y, 4, noteLines.length * noteSize * 1.4);
+        ctx.fillStyle = muted;
+        ctx.font = "italic " + noteSize + "px " + sans;
+        noteLines.forEach(function (line) { ctx.fillText(line, pad + 24, y); y += noteSize * 1.4; });
+      }
       ctx.fillStyle = accent;
       ctx.font = "600 48px " + display;
       ctx.fillText(ref, pad, size - pad - 110);
@@ -2116,6 +2360,168 @@
         }, "image/png");
       });
     });
+  }
+
+  // A handout for teaching: some verses of the chapter at the reader's
+  // settings, with their footnotes and, if asked, the reasoning behind each
+  // sentence (the decisions in this language and level) and room for notes,
+  // laid out for paper (style.css .handout). Printing is the browser's, so
+  // "Save as PDF" makes a file of it.
+  function numbered() {
+    return verses().map(function (x) { return x.verse; }).filter(function (v, i, all) {
+      return /^\d+$/.test(v) && all.indexOf(v) === i;
+    });
+  }
+  function openHandout(from) {
+    var nums = numbered();
+    if (!nums.length) return;
+    var dialog = document.getElementById("handout-dialog");
+    if (dialog) dialog.remove();
+    dialog = el("dialog", "handout-dialog");
+    dialog.id = "handout-dialog";
+    dialog.setAttribute("aria-labelledby", "handout-h");
+    var form = el("form", "account-form");
+    form.method = "dialog";
+    var h = el("h2", null, t("handout_title"));
+    h.id = "handout-h";
+    form.appendChild(h);
+    form.appendChild(el("p", "fine", t("handout_dek")));
+    function picker(name, value) {
+      var label = el("label", "handout-pick", t("handout_" + name) + " ");
+      var sel = el("select");
+      sel.name = name;
+      nums.forEach(function (n) {
+        var o = el("option", null, n);
+        o.value = n;
+        o.selected = n === value;
+        sel.appendChild(o);
+      });
+      label.appendChild(sel);
+      form.appendChild(label);
+      return sel;
+    }
+    var start = /^\d+$/.test(String(from)) ? String(from) : nums[0];
+    var fromSel = picker("from", start), toSel = picker("to", nums[nums.length - 1]);
+    var titleLabel = el("label", null, t("handout_heading"));
+    var title = el("input");
+    title.name = "title";
+    title.maxLength = 120;
+    title.placeholder = DATA.title;
+    titleLabel.appendChild(title);
+    form.appendChild(titleLabel);
+    function check(name, on) {
+      var label = el("label", "handout-check");
+      var box = el("input");
+      box.type = "checkbox";
+      box.name = name;
+      box.checked = on;
+      label.appendChild(box);
+      label.appendChild(document.createTextNode(" " + t("handout_" + name)));
+      form.appendChild(label);
+      return box;
+    }
+    var withNotes = check("footnotes", true), withWhy = check("reasoning", true), withLines = check("lines", false);
+    var buttons = el("p", "actions");
+    var go = el("button", "button", t("handout_print"));
+    go.type = "submit";
+    go.value = "print";
+    var cancel = el("button", "button ghost", t("my_note_cancel"));
+    cancel.type = "submit";
+    cancel.value = "cancel";
+    buttons.appendChild(go);
+    buttons.appendChild(cancel);
+    form.appendChild(buttons);
+    dialog.appendChild(form);
+    document.body.appendChild(dialog);
+    dialog.addEventListener("close", function () {
+      if (dialog.returnValue !== "print") return;
+      var a = +fromSel.value, b = +toSel.value;
+      if (b < a) { var x = a; a = b; b = x; }
+      printHandout(a, b, title.value.trim(), withNotes.checked, withWhy.checked, withLines.checked);
+    });
+    dialog.showModal();
+  }
+
+  function printHandout(from, to, heading, withNotes, withWhy, withLines) {
+    var old = document.getElementById("handout");
+    if (old) old.remove();
+    var box = el("section", "handout print-only");
+    box.id = "handout";
+    var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    var ref = name + " " + DATA.chapter + ":" + from + (to !== from ? "\u2013" + to : "");
+    box.appendChild(el("h1", null, heading || ref));
+    var head = document.getElementById("print-head");
+    box.appendChild(el("p", "handout-meta", (heading ? ref + " \u00b7 " : "") + (head ? head.textContent : "") ));
+    var inRange = function (v) { return /^\d+$/.test(v) && +v >= from && +v <= to; };
+    var records = DATA.records.filter(function (r) {
+      return splitVerses(r, r.renderings[textLang(r)][settings.level]).some(function (part) { return inRange(part[0]); });
+    });
+    var text = el("div", "handout-text");
+    var foot = [], why = [];
+    records.forEach(function (r) {
+      var lang = textLang(r);
+      var p = el("p");
+      if (lang !== settings.lang) p.lang = lang;
+      splitVerses(r, render(r.renderings[lang][settings.level])).forEach(function (part) {
+        if (!inRange(part[0]) || !part[1].trim()) return;
+        p.appendChild(el("sup", null, part[0]));
+        p.appendChild(document.createTextNode(" " + part[1].trim() + " "));
+      });
+      var ds = decisionsFor(r), all = ds.meaning.concat(ds.rendering);
+      all.filter(function (d) { return d.footnote; }).forEach(function (d) {
+        var mark = letter(foot.length);
+        p.appendChild(el("sup", "handout-fn", mark));
+        foot.push([mark, verseRange(r), noteText(d)]);
+      });
+      if (all.length) why.push([verseRange(r), all]);
+      text.appendChild(p);
+    });
+    box.appendChild(text);
+    if (withNotes && foot.length) {
+      var notes = el("section", "handout-notes");
+      notes.appendChild(el("h2", null, t("notes_foot")));
+      var ol = el("ol");
+      foot.forEach(function (f) {
+        var li = el("li");
+        li.appendChild(el("b", null, f[0] + " "));
+        li.appendChild(document.createTextNode(f[1] + ": " + f[2]));
+        ol.appendChild(li);
+      });
+      notes.appendChild(ol);
+      box.appendChild(notes);
+    }
+    if (withWhy && why.length) {
+      var reasons = el("section", "handout-why");
+      reasons.appendChild(el("h2", null, t("handout_why")));
+      if (t("notes_language")) reasons.appendChild(el("p", "fine", t("notes_language")));
+      why.forEach(function (w) {
+        reasons.appendChild(el("h3", null, name + " " + DATA.chapter + ":" + w[0]));
+        w[1].forEach(function (d) {
+          var item = el("div", "handout-decision");
+          item.appendChild(el("p", "handout-choice", (t("category")[d.category] || d.category) + ": " + render(d.choice) +
+            (d.uncertain ? " (" + t("uncertain") + ")" : "")));
+          item.appendChild(el("p", null, linked("p", null, d.reason, null).textContent));
+          reasons.appendChild(item);
+        });
+      });
+      box.appendChild(reasons);
+    }
+    if (withLines) {
+      var lines = el("section", "handout-lines");
+      lines.appendChild(el("h2", null, t("handout_notes_space")));
+      for (var i = 0; i < 12; i++) lines.appendChild(el("div", "handout-line"));
+      box.appendChild(lines);
+    }
+    box.appendChild(el("p", "handout-meta", t("handout_licence")));
+    document.body.appendChild(box);
+    document.body.classList.add("printing-handout");
+    function done() {
+      document.body.classList.remove("printing-handout");
+      box.remove();
+      window.removeEventListener("afterprint", done);
+    }
+    window.addEventListener("afterprint", done);
+    window.print();
   }
 
   // A word's punctuation on the Latin line: maqaf joins Hebrew words with
@@ -2551,7 +2957,28 @@
   }
   var whyBtn = barButton("sel-why", t("sel_why"), function () { openSelected(false); });
   var suggestBtn = barButton("sel-suggest", t("note"), function () { openSelected(true); });
-  [copyBtn, hueBox, whyBtn, suggestBtn].forEach(function (b) { selBar.appendChild(b); });
+  // The reader's own note on the selected verses: a verse's note for one,
+  // a passage note for several.
+  var myNoteBtn = barButton("sel-mynote", t("my_note_add"), function () {
+    var range = selectedRange();
+    var vs = range ? selectedVerses(range).filter(function (x) { return /^\d+$/.test(x.v) && x.record; }) : [];
+    if (!vs.length) return;
+    var first = vs[0], last = vs[vs.length - 1];
+    window.getSelection().removeAllRanges();
+    hideBar();
+    if (first.v === last.v) {
+      myNoteEditing = verseId(first.v);
+      myNoteDraft = (marks()[myNoteEditing] || {}).n || "";
+    } else {
+      var id = passageId(+first.v, +last.v);
+      passageEditing = [id, +first.v, +last.v];
+      passageDraft = (passageNotes()[id] || {}).n || "";
+    }
+    select(first.record, first.v);
+    var field = document.getElementById(first.v === last.v ? "my-note-text" : "passage-note-text");
+    if (field) field.focus();
+  });
+  [copyBtn, hueBox, whyBtn, suggestBtn, myNoteBtn].forEach(function (b) { selBar.appendChild(b); });
 
   var placing = null;
   document.addEventListener("selectionchange", function () {
@@ -2560,7 +2987,7 @@
       var range = selectedRange();
       if (!range || !quote(range)) { hideBar(); return; }
       copyBtn.hidden = !navigator.clipboard;
-      whyBtn.hidden = suggestBtn.hidden = plain();
+      whyBtn.hidden = suggestBtn.hidden = myNoteBtn.hidden = plain();
       var r = range.getBoundingClientRect();
       selBar.hidden = false;
       var below = window.matchMedia("(pointer: coarse)").matches || r.top < 120;
