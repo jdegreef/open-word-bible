@@ -213,8 +213,8 @@ form each verse uses, as the English does.
 | Assyria, Babylon, Egypt, Aram, Hamath, Nineveh, Lachish | l’Assyrie, Babylone, l’Égypte, Aram, Hamath, Ninive, Lakish | Asiria, Babilonia, Egipto, Aram, Hamat, Nínive, Laquis | Ashuru, Babeli, Misri, Aramu, Hamathi, Ninawi, Lakishi | A-si-ri, Ba-by-lôn, Ai Cập, A-ram, Ha-mát, Ni-ni-ve, La-ki | 앗시리아, 바빌론, 이집트, 아람, 하맛, 니느웨, 라기스 |
 | the Jordan, the Kidron, Gihon, Megiddo, Bethel, Dan, Ophir, Tarshish, Lebanon | le Jourdain, le Cédron, Guihôn, Meguiddo, Béthel, Dan, Ophir, Tarsis, le Liban | el Jordán, el Cedrón, Gihón, Meguido, Betel, Dan, Ofir, Tarsis, el Líbano | Yordani, Kidroni, Gihoni, Megido, Betheli, Dani, Ofiri, Tarshishi, Lebanoni | sông Giô-đanh, khe Xết-rôn, Ghi-hôn, Mê-ghi-đô, Bê-tên, Đan, Ô-phia, Ta-rê-si, Li-ban | 요단 강, 기드론, 기혼, 므깃도, 벧엘, 단, 오빌, 다시스, 레바논 |
 
-The Swahili New Testament spells Solomon *Solomoni* in Matthew 1 and John 10
-and *Sulemani* elsewhere; these books use *Sulemani*, as Samuel does.
+These books use *Sulemani*, as Samuel does; Matthew 1 and John 10, which
+once said *Solomoni*, now say *Sulemani* too.
 
 ## Address forms
 
@@ -278,8 +278,8 @@ left for a reviewer:
 - French "Your Majesty" at R is *ô roi* in most blocks, *mon seigneur le
   roi* in 2 Kings 1–12; French *archiviste* (Kings, Chronicles) against
   *chancelier* (2 Samuel 8:16) for the recorder.
-- Swahili *Bonde la Refaimu* (1 Chronicles 14:9) against *Bonde la
-  Warefai* (2 Samuel 5); Swahili *agano* and *mkataba* for a treaty.
+- Swahili *agano* and *mkataba* for a treaty. (The valley of Rephaim is now
+  *Bonde la Refaimu* everywhere, 2 Samuel 5 included.)
 - Vietnamese *thẩm phán* for judges, where the Joshua–Ruth drafts propose
   *quan xét*.
 - Korean measures say 약 X in some blocks and X쯤 in others.
