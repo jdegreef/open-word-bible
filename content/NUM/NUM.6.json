@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -91,6 +96,25 @@
             "passé composé at every level"
           ],
           "reason": "As in the rest of Numbers: the passé simple is the tense of written French narrative, and Readable uses the passé composé of spoken and school French. The law of the Nazirite and the blessing use the future and the subjunctive of wishes at every level, with \"devoir\" or the imperative at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040060010012"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of this chapter (6:25-27)",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God has nothing to change in Amharic.",
           "uncertain": false,
           "footnote": false
         }
@@ -166,6 +190,11 @@
           "L": "\"Fala aos filhos de Israel e dize-lhes: 'Um homem ou uma mulher, quando fizer um voto especial, o voto de nazireu, para se separar {{divine_name:ao SENHOR|a Javé}},",
           "B": "\"Fala aos israelitas e dize-lhes: 'Quando um homem ou uma mulher fizer um voto especial, o voto de nazireu, para ser separado {{divine_name:ao SENHOR|a Javé}},",
           "R": "\"Diz aos israelitas: 'Um homem ou uma mulher pode fazer uma promessa especial e se tornar nazireu, uma pessoa separada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ወንድ ወይም ሴት {{divine_name:ለእግዚአብሔር|ለያህዌ}} ራሱን ለመለየት ልዩ ስእለት፣ የናዝራዊነትን ስእለት ሲሳል፣",
+          "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ወንድ ወይም ሴት {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለመለየት ልዩ ስእለት፣ የናዝራዊነትን ስእለት ቢሳል፣",
+          "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “ወንድ ወይም ሴት ናዝራዊ ለመሆን ልዩ ስእለት ሊሳል ይችላል። ናዝራዊ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተለየ ሰው ነው።"
         }
       },
       "decisions": [
@@ -495,6 +524,51 @@
           "reason": "The English Balanced and Readable say \"they\" because a woman may take the vow (m3). Portuguese has no singular \"they\"; it drops the subject where it can and says \"o nazireu\" or \"essa pessoa\" where a subject is needed, as generic Portuguese does, so the rules read as applying to a woman too. Literal keeps the Hebrew \"he\" (\"ele\", \"seu\").",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060020141",
+            "o040060020152"
+          ],
+          "choice": "\"ናዝራዊ\" (plural \"ናዝራውያን\") for the Nazirite at every level, through the chapter; \"የናዝራዊነት ስእለት\" for the Nazirite vow; \"ስእለት\" (vow), \"መለየት\" (separate, separation)",
+          "alternatives": [
+            "\"ናዚር\" (the Hebrew word transliterated)",
+            "\"ለእግዚአብሔር የተለየ ሰው\" only, with no title"
+          ],
+          "reason": "\"ናዝራዊ\" is the word Amharic readers know for one under this vow (Samson, Judges 13:5), so the law reads as the source of that name. It is the same form the Amharic New Testament uses for \"the Nazarene\" (Matthew 2:23); in Numbers nothing suggests Nazareth, and Readable says at once what a Nazirite is (\"{{divine_name:ለእግዚአብሔር|ለያህዌ}} የተለየ ሰው\"), as the meaning \"one set apart\" (m1). A reviewer may prefer \"ናዚር\" to keep the two apart.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040060020071",
+            "o040060020091"
+          ],
+          "choice": "The Nazirite is \"he\" in the Amharic verbs and pronouns (\"ይሳል\", \"ራሱን\"), the generic masculine of the Hebrew, at every level",
+          "alternatives": [
+            "the plural \"they\" of the English Balanced and Readable"
+          ],
+          "reason": "The law opens to \"a man or a woman\" (m3) and then speaks of \"him\", as the Hebrew does; in Amharic the masculine singular is the ordinary way to say \"the person\" in a law, and a plural would read as a group making one vow.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -572,6 +646,11 @@
           "L": "do vinho e da bebida forte se separará; vinagre de vinho e vinagre de bebida forte não beberá, e nenhum suco de uvas beberá, e uvas frescas ou secas não comerá.",
           "B": "essa pessoa se absterá de vinho e de cerveja. Não beberá vinagre de vinho nem de cerveja, nem beberá suco de uva algum, nem comerá uvas, sejam frescas ou secas.",
           "R": "Ela não pode beber vinho nem cerveja, nem mesmo vinagre feito de vinho ou de cerveja. Não pode beber suco de uva nem comer uvas ou passas."
+        },
+        "am": {
+          "L": "ከወይን ጠጅና ከሚያሰክር መጠጥ ራሱን ይለያል፤ የወይን ጠጅ ሆምጣጤንና የሚያሰክር መጠጥ ሆምጣጤን አይጠጣም፤ ማናቸውንም የወይን ጭማቂ አይጠጣም፤ እርጥብም ሆነ የደረቀ የወይን ፍሬ አይበላም።",
+          "B": "ከወይን ጠጅና ከሚያሰክር መጠጥ ይራቅ። ከወይን ጠጅ ወይም ከሚያሰክር መጠጥ የተሠራ ሆምጣጤ አይጠጣ፤ ማናቸውንም የወይን ጭማቂ አይጠጣ፤ እርጥብም ሆነ የደረቀ የወይን ፍሬ አይብላ።",
+          "R": "የወይን ጠጅ ወይም ሌላ የሚያሰክር መጠጥ መጠጣት የለበትም። ከእነዚህ የተሠራ ሆምጣጤም ቢሆን መጠጣት የለበትም። የወይን ጭማቂ መጠጣት ወይም የወይን ፍሬ ወይም ዘቢብ መብላት የለበትም።"
         }
       },
       "decisions": [
@@ -731,6 +810,28 @@
           "reason": "As the English: Literal keeps the wider \"bebida forte\", Balanced and Readable say \"cerveja\", the most likely sense (m1). Readable says \"passas\" for dried grapes, as the English \"raisins\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060030022",
+            "o040060030071"
+          ],
+          "choice": "\"የወይን ጠጅ\" (wine); \"የሚያሰክር መጠጥ\" (strong drink) at every level; \"ሆምጣጤ\" (vinegar); \"ዘቢብ\" (raisins, R)",
+          "alternatives": [
+            "\"ጠላ\" (beer), for the English Balanced and Readable \"beer\""
+          ],
+          "reason": "The Amharic of Luke 1:15, which echoes this law, says \"የወይን ጠጅም ሆነ ሌላ የሚያሰክር መጠጥ\"; \"ጠላ\" would name one Ethiopian home brew. The rule reaches every product of the vine (m3), so Readable names raisins as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -802,6 +903,11 @@
           "L": "Todos os dias da sua separação, de tudo o que se faz da videira do vinho, desde as sementes até a casca, não comerá.",
           "B": "Durante todo o tempo em que estiver separado, não comerá nada que venha da videira, nem mesmo as sementes ou as cascas.",
           "R": "Enquanto durar a promessa, não pode comer nada que nasce na videira, nem mesmo as sementes ou as cascas."
+        },
+        "am": {
+          "L": "በመለየቱ ዘመን ሁሉ ከወይኑ ተክል ከሚገኝ ነገር ሁሉ፣ ከፍሬው ዘር ጀምሮ እስከ ልጣጩ ድረስ፣ አይበላም።",
+          "B": "ተለይቶ እስካለ ድረስ ከወይን ተክል የሚገኘውን ምንም ነገር፣ ዘሩንም ሆነ ልጣጩን እንኳ፣ አይብላ።",
+          "R": "ስእለቱ እስከሚቆይበት ጊዜ ድረስ ከወይን ተክል የሚገኘውን ምንም ነገር መብላት የለበትም፤ ዘሩንም ሆነ ልጣጩን እንኳ መብላት የለበትም።"
         }
       },
       "decisions": [
@@ -931,6 +1037,11 @@
           "L": "Todos os dias do voto da sua separação, navalha não passará sobre a sua cabeça; até que se cumpram os dias em que se separa {{divine_name:ao SENHOR|a Javé}}, será santo; deixará crescer as mechas do cabelo da sua cabeça.",
           "B": "Durante todo o tempo do voto de separação, nenhuma navalha tocará a sua cabeça. Até se completar o tempo que separou {{divine_name:ao SENHOR|a Javé}}, o nazireu é santo e deixará crescer o cabelo da cabeça.",
           "R": "Durante todo o tempo da promessa, não pode cortar o cabelo. Até acabar o tempo que separou para {{divine_name:o SENHOR|Javé}}, o nazireu é santo. Deve deixar o cabelo crescer."
+        },
+        "am": {
+          "L": "የመለየቱ ስእለት ዘመን ሁሉ ምላጭ በራሱ ላይ አያልፍም፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ራሱን የሚለይበት ዘመን እስኪፈጸም ድረስ ቅዱስ ይሆናል፤ የራሱንም ጠጉር ዘርፍ ያስረዝማል።",
+          "B": "የመለየቱ ስእለት ዘመን ሁሉ ምላጭ ራሱን አይንካ። {{divine_name:ለእግዚአብሔር|ለያህዌ}} የለየው ዘመን እስኪፈጸም ድረስ ቅዱስ ነው፤ የራሱንም ጠጉር ያሳድግ።",
+          "R": "ስእለቱ በሚቆይበት ዘመን ሁሉ ጠጉሩን መቁረጥ የለበትም። {{divine_name:ለእግዚአብሔር|ለያህዌ}} የለየው ጊዜ እስኪያልቅ ድረስ ቅዱስ ነው። ጠጉሩን ማሳደግ አለበት።"
         }
       },
       "decisions": [
@@ -1065,6 +1176,11 @@
           "L": "Todos os dias em que se separar {{divine_name:ao SENHOR|a Javé}}, não se aproximará de um morto.",
           "B": "Durante todo o tempo em que estiver separado {{divine_name:ao SENHOR|a Javé}}, não se aproximará de um cadáver.",
           "R": "Enquanto estiver separado para {{divine_name:o SENHOR|Javé}}, não pode chegar perto de um cadáver."
+        },
+        "am": {
+          "L": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ራሱን የሚለይበት ዘመን ሁሉ ወደ ሞተ ሰው አይቀርብም።",
+          "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ተለይቶ ባለበት ዘመን ሁሉ ወደ ሬሳ አይቅረብ።",
+          "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ተለይቶ እስካለ ድረስ ወደ ሬሳ መቅረብ የለበትም።"
         }
       },
       "decisions": [
@@ -1177,6 +1293,11 @@
           "L": "Por seu pai e por sua mãe, por seu irmão e por sua irmã, não se tornará impuro por eles quando morrerem, porque a consagração do seu Deus [está] sobre a sua cabeça.",
           "B": "Mesmo que morra o pai ou a mãe, o irmão ou a irmã, não se tornará impuro por causa deles, porque o sinal da sua consagração a Deus está sobre a cabeça.",
           "R": "Mesmo quando morrer o próprio pai ou a própria mãe, o irmão ou a irmã, não pode se tornar impuro. O cabelo comprido é sinal de que pertence a Deus."
+        },
+        "am": {
+          "L": "ለአባቱ ወይም ለእናቱ፣ ለወንድሙ ወይም ለእኅቱ፣ ሲሞቱ ስለ እነርሱ ራሱን አያረክስም፤ የአምላኩ መለያ በራሱ ላይ ነውና።",
+          "B": "አባቱ ወይም እናቱ፣ ወንድሙ ወይም እኅቱ ቢሞቱ እንኳ ስለ እነርሱ ራሱን አያርክስ፤ ለአምላኩ የመለየቱ ምልክት በራሱ ላይ ነውና።",
+          "R": "የገዛ አባቱ ወይም እናቱ፣ ወንድሙ ወይም እኅቱ ቢሞቱ እንኳ ራሱን ማርከስ የለበትም። ረጅሙ ጠጉሩ ለአምላኩ የተለየ መሆኑን የሚያሳይ ምልክት ነው።"
         }
       },
       "decisions": [
@@ -1316,6 +1437,25 @@
           "reason": "The word means consecration and the visible sign of it (m1). Literal keeps \"consagração\"; Balanced and Readable say what is on the head, as the English does. \"Diadema\" would point only to the high priest's gold plate.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060070101"
+          ],
+          "choice": "\"የአምላኩ መለያ\" (L), \"ለአምላኩ የመለየቱ ምልክት\" (B), \"ረጅሙ ጠጉሩ ... ምልክት\" (R) for \"the consecration of his God\"; \"አምላኩ\" for \"his God\"",
+          "alternatives": [],
+          "reason": "The Hebrew word (nezer) is both the state of being set apart and its sign, the uncut hair (m1); Literal keeps one noun, Balanced says \"the sign of his separation\", and Readable names the hair, as the English Readable does. Elohim with a possessive is \"አምላክ\" (the terms list).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1376,6 +1516,11 @@
           "L": "Todos os dias da sua separação, ele [é] santo {{divine_name:ao SENHOR|a Javé}}.",
           "B": "Durante todo o tempo da sua separação, o nazireu é santo {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Durante todo esse tempo, o nazireu é santo para {{divine_name:o SENHOR|Javé}}."
+        },
+        "am": {
+          "L": "በመለየቱ ዘመን ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ነው።",
+          "B": "ተለይቶ ባለበት ዘመን ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተቀደሰ ነው።",
+          "R": "በዚያ ዘመን ሁሉ ናዝራዊው {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ነው።"
         }
       },
       "decisions": [
@@ -1474,6 +1619,11 @@
           "L": "E se alguém morrer junto dele de repente, subitamente, e ele contaminar a sua cabeça consagrada, então rapará a sua cabeça no dia da sua purificação; no sétimo dia a rapará.",
           "B": "Se alguém morrer de repente ao seu lado e assim a cabeça consagrada se tornar impura, o nazireu rapará a cabeça no dia da sua purificação. No sétimo dia a rapará.",
           "R": "Pode ser que alguém morra de repente bem ao lado de um nazireu. Então o cabelo comprido, sinal da promessa, fica impuro. Sete dias depois, no dia em que o nazireu se torna puro, deve rapar a cabeça."
+        },
+        "am": {
+          "L": "ማንም ሰው በአጠገቡ በድንገት ፈጥኖ ቢሞት፣ የመለየቱንም ራስ ቢያረክስ፣ በሚነጻበት ቀን ራሱን ይላጫል፤ በሰባተኛው ቀን ይላጨዋል።",
+          "B": "አንድ ሰው በአጠገቡ በድንገት ቢሞትና በዚህ የተለየው ራሱ ቢረክስ፣ በሚነጻበት ቀን ራሱን ይላጭ፤ በሰባተኛው ቀን ይላጨው።",
+          "R": "አንድ ሰው ከናዝራዊው አጠገብ በድንገት ሊሞት ይችላል። በዚያ ጊዜ የስእለቱ ምልክት የሆነው የናዝራዊው ረጅም ጠጉር ይረክሳል። ከሰባት ቀን በኋላ፣ በሚነጻበት ቀን፣ ራሱን መላጨት አለበት።"
         }
       },
       "decisions": [
@@ -1562,6 +1712,23 @@
           "reason": "\"Cabeça consagrada\" is the natural Portuguese for the head of his consecration (m2), at Literal too. \"Rapar\" is the verb for shaving the head bare; \"purificação\" names the day the person becomes clean (m3), as \"puro/impuro\" are set for the whole Pentateuch.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060090061"
+          ],
+          "choice": "\"በድንገት ፈጥኖ\" (L) for the Hebrew's doubled \"in suddenness suddenly\"; \"በድንገት\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps two words for the Hebrew's emphatic pair, which means \"without any warning\" (m1); Balanced and Readable say it once.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1633,6 +1800,11 @@
           "L": "E no oitavo dia trará duas rolinhas ou dois pombinhos ao sacerdote, à entrada da tenda do encontro.",
           "B": "No oitavo dia levará duas rolinhas ou dois pombinhos ao sacerdote, à entrada da tenda do encontro.",
           "R": "No oitavo dia, deve levar duas rolinhas ou dois pombinhos ao sacerdote, na entrada da tenda do encontro."
+        },
+        "am": {
+          "L": "በስምንተኛውም ቀን ሁለት ዋኖሶችን ወይም ሁለት የርግብ ጫጩቶችን ወደ ካህኑ፣ ወደ መገናኛው ድንኳን ደጃፍ ያመጣል።",
+          "B": "በስምንተኛው ቀን ሁለት ዋኖሶችን ወይም ሁለት የርግብ ጫጩቶችን ወደ መገናኛው ድንኳን ደጃፍ ወደ ካህኑ ያምጣ።",
+          "R": "በስምንተኛው ቀን ሁለት ዋኖሶችን ወይም ሁለት የርግብ ጫጩቶችን ወደ መገናኛው ድንኳን በር ወደ ካህኑ ማምጣት አለበት።"
         }
       },
       "decisions": [
@@ -1725,6 +1897,26 @@
           "reason": "As Leviticus 5:7 says it in Portuguese at every level: \"rolinha\" is the everyday Brazilian name of the small dove, so Readable does not need the English Readable's change to \"doves\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060100051",
+            "o040060100091"
+          ],
+          "choice": "\"ዋኖስ\" (turtledove) and \"የርግብ ጫጩት\" (young pigeon) at every level; \"ደጃፍ\" (L, B), \"በር\" (R) for the entrance",
+          "alternatives": [],
+          "reason": "The words of Leviticus 1:14, as settled. \"ዋኖስ\" is the everyday Amharic name of the bird, so Readable keeps it where the English Readable says \"doves\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1807,6 +1999,11 @@
           "L": "E o sacerdote oferecerá um como oferta pelo pecado e um como holocausto, e fará expiação por ele, porque pecou por causa do morto; e consagrará a sua cabeça naquele mesmo dia.",
           "B": "O sacerdote oferecerá um como oferta pelo pecado e o outro como holocausto, e assim fará expiação pelo nazireu, porque pecou por causa do cadáver. Naquele mesmo dia o nazireu consagrará de novo a cabeça.",
           "R": "O sacerdote deve oferecer uma ave como oferta pelo pecado e a outra como holocausto. Assim ele fará expiação pelo nazireu, que errou ao ficar perto de um cadáver. Naquele mesmo dia, o nazireu deve separar de novo a cabeça para Deus."
+        },
+        "am": {
+          "L": "ካህኑም አንዱን ለኃጢአት መሥዋዕት፣ አንዱንም ለሚቃጠል መሥዋዕት ያቀርባል፤ በሬሳውም ምክንያት ኃጢአት ስለ ሠራ ያስተሰርይለታል፤ በዚያም ቀን ራሱን ይቀድሳል።",
+          "B": "ካህኑ አንዱን ለኃጢአት መሥዋዕት፣ ሌላውንም ለሚቃጠል መሥዋዕት ያቅርብ፤ በሬሳው ምክንያት ኃጢአት ስለ ሠራ እንዲሁ ያስተሰርይለት። በዚያው ቀን ናዝራዊው ራሱን እንደ ገና ይቀድስ።",
+          "R": "ካህኑ አንዱን ወፍ ለኃጢአት መሥዋዕት፣ ሌላውን ለሚቃጠል መሥዋዕት ማቅረብ አለበት። በዚህ መንገድ ወደ ሬሳ በመቅረቡ ስለ በደለው ናዝራዊ ያስተሰርይለታል። በዚያው ቀን ናዝራዊው ራሱን እንደ ገና ለአምላክ መለየት አለበት።"
         }
       },
       "decisions": [
@@ -1976,6 +2173,11 @@
           "L": "E separará {{divine_name:ao SENHOR|a Javé}} os dias da sua separação, e trará um cordeiro de um ano como oferta pela culpa; e os dias anteriores cairão, porque a sua separação foi contaminada.",
           "B": "Dedicará de novo {{divine_name:ao SENHOR|a Javé}} os dias da sua separação e levará um cordeiro de um ano como oferta pela culpa. Os dias anteriores não contam, porque a sua separação se tornou impura.",
           "R": "Deve começar de novo a sua promessa {{divine_name:ao SENHOR|a Javé}} e levar um cordeiro macho de um ano como oferta pela culpa. Os dias que já cumpriu não contam, porque o seu tempo de separação se tornou impuro."
+        },
+        "am": {
+          "L": "የመለየቱንም ዘመን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ይለያል፤ የዓመት ልጅ የሆነ ተባዕት ጠቦትም ለበደል መሥዋዕት ያመጣል፤ መለየቱ ስለ ረከሰ የቀደሙትም ቀኖች ከንቱ ይሆናሉ።",
+          "B": "የመለየቱን ዘመን እንደ ገና {{divine_name:ለእግዚአብሔር|ለያህዌ}} ይለይ፤ አንድ ዓመት የሆነው ተባዕት ጠቦትም ለበደል መሥዋዕት ያምጣ። መለየቱ ስለ ረከሰ የቀደሙት ቀኖች አይቆጠሩለትም።",
+          "R": "ስእለቱን {{divine_name:ለእግዚአብሔር|ለያህዌ}} እንደ ገና መጀመር አለበት። ለበደል መሥዋዕትም የአንድ ዓመት ተባዕት ጠቦት ማምጣት አለበት። ቀድሞ የጠበቃቸው ቀኖች አይቆጠሩለትም፤ የተለየበት ዘመን ረክሷልና።"
         }
       },
       "decisions": [
@@ -2064,6 +2266,26 @@
           "reason": "The term sheet's name, as in Leviticus 5-7; the meaning decision explains it as payment for wrong done to something holy.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060120071",
+            "o040060120091"
+          ],
+          "choice": "\"የዓመት ልጅ የሆነ ተባዕት ጠቦት\" (L), \"አንድ ዓመት የሆነው ተባዕት ጠቦት\" (B), \"የአንድ ዓመት ተባዕት ጠቦት\" (R) for \"a lamb, a son of its year\"; \"የበደል መሥዋዕት\" (guilt offering)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"son of its year\" in the form Leviticus 9:3 uses; the same wording returns in 6:14 and through chapter 7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2134,6 +2356,11 @@
           "L": "E esta [é] a lei do nazireu: no dia em que se cumprirem os dias da sua separação, ele será levado à entrada da tenda do encontro.",
           "B": "Esta é a instrução para o nazireu quando se completar o tempo da sua separação: ele será levado à entrada da tenda do encontro.",
           "R": "Estas são as regras para o dia em que termina a promessa do nazireu. Ele deve ser levado à entrada da tenda do encontro."
+        },
+        "am": {
+          "L": "የናዝራዊውም ሕግ ይህ ነው፤ የመለየቱ ዘመን በሚፈጸምበት ቀን ወደ መገናኛው ድንኳን ደጃፍ ያመጡታል።",
+          "B": "የመለየቱ ዘመን ሲፈጸም ስለ ናዝራዊው የተሰጠው ሕግ ይህ ነው፤ ወደ መገናኛው ድንኳን ደጃፍ ይቅረብ።",
+          "R": "ናዝራዊው ስእለቱን በሚጨርስበት ቀን የሚፈጸሙት ደንቦች እነዚህ ናቸው። ወደ መገናኛው ድንኳን በር መቅረብ አለበት።"
         }
       },
       "decisions": [
@@ -2231,6 +2458,23 @@
           "reason": "As the English per level (m2), as in Leviticus 7:11. The Hebrew \"he shall bring him\" has no named subject (m1), so every level uses the Portuguese passive \"será levado\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060130081"
+          ],
+          "choice": "\"ያመጡታል\" (they shall bring him, L) for the Hebrew's impersonal \"one shall bring him\"; \"ይቅረብ\" (B), \"መቅረብ አለበት\" (R)",
+          "alternatives": [],
+          "reason": "Amharic says an impersonal subject with the plural \"they\"; Balanced and Readable make the Nazirite the subject, as the English \"they are to be brought\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2313,6 +2557,11 @@
           "L": "E oferecerá a sua oferta {{divine_name:ao SENHOR|a Javé}}: um cordeiro de um ano, sem defeito, como holocausto, e uma cordeira de um ano, sem defeito, como oferta pelo pecado, e um carneiro sem defeito como sacrifício de comunhão,",
           "B": "Ali apresentará a sua oferta {{divine_name:ao SENHOR|a Javé}}: um cordeiro de um ano sem defeito para holocausto, uma cordeira de um ano sem defeito para oferta pelo pecado, um carneiro sem defeito para sacrifício de comunhão,",
           "R": "Ali o nazireu deve levar a sua oferta {{divine_name:ao SENHOR|a Javé}}: um cordeiro de um ano para holocausto, uma cordeira de um ano para oferta pelo pecado e um carneiro para sacrifício de comunhão. Cada animal deve ser perfeito, sem nenhum defeito."
+        },
+        "am": {
+          "L": "መባውንም {{divine_name:ለእግዚአብሔር|ለያህዌ}} ያቀርባል፤ ለሚቃጠል መሥዋዕት የዓመት ልጅ የሆነ ነውር የሌለበት አንድ ተባዕት ጠቦት፣ ለኃጢአት መሥዋዕትም የዓመት ልጅ የሆነች ነውር የሌለባት አንዲት እንስት ጠቦት፣ ለኅብረት መሥዋዕትም ነውር የሌለበት አንድ አውራ በግ፣",
+          "B": "በዚያም መባውን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ያቅርብ፤ ለሚቃጠል መሥዋዕት አንድ ዓመት የሆነው ነውር የሌለበት ተባዕት ጠቦት፣ ለኃጢአት መሥዋዕት አንድ ዓመት የሆናት ነውር የሌለባት እንስት ጠቦት፣ ለኅብረት መሥዋዕትም ነውር የሌለበት አውራ በግ፣",
+          "R": "በዚያም መባውን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ማቅረብ አለበት፤ ለሚቃጠል መሥዋዕት የአንድ ዓመት ተባዕት ጠቦት፣ ለኃጢአት መሥዋዕት የአንድ ዓመት እንስት ጠቦት፣ ለኅብረት መሥዋዕትም አውራ በግ ያቀርባል። እያንዳንዱ እንስሳ ምንም ነውር የሌለበት መሆን አለበት።"
         }
       },
       "decisions": [
@@ -2393,6 +2642,27 @@
           "reason": "The term sheet's names, as in Leviticus 3. Literal keeps the picture of the Hebrew verb \"bring near\" with \"가까이\"; the other levels use the ordinary \"바치다\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060140102",
+            "o040060140162",
+            "o040060140202"
+          ],
+          "choice": "\"የሚቃጠል መሥዋዕት\", \"የኃጢአት መሥዋዕት\", \"የኅብረት መሥዋዕት\"; \"ነውር የሌለበት\" (unblemished); \"እንስት ጠቦት\" (ewe lamb); \"አውራ በግ\" (ram)",
+          "alternatives": [],
+          "reason": "The terms list's and Leviticus's words for the offerings and animals, used again in chapter 7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2465,6 +2735,11 @@
           "L": "e um cesto de pães sem fermento, bolos de flor de farinha amassados com azeite, e obreias sem fermento untadas com azeite, e a oferta de cereal deles e as ofertas de bebida deles.",
           "B": "e um cesto de pães sem fermento, pães de flor de farinha amassados com azeite e obreias untadas com azeite, junto com as ofertas de cereal e as ofertas de bebida que os acompanham.",
           "R": "Deve levar também um cesto de pães sem fermento. Nele deve haver pães grossos da melhor farinha com azeite misturado na massa e bolachas finas com azeite passado por cima. Deve levar também as ofertas de cereal e as ofertas de bebida que acompanham os animais."
+        },
+        "am": {
+          "L": "የቂጣም ቅርጫት፣ ከላመ ዱቄት በዘይት የተለወሱ እንጎቻዎች፣ በዘይት የተቀቡ ስስ ቂጣዎች፣ የእህል ቁርባናቸውንና የመጠጥ ቁርባኖቻቸውን [ያመጣል]።",
+          "B": "እንዲሁም እርሾ ያልገባበት ዳቦ የያዘ ቅርጫት፣ ማለትም ከላመ ዱቄት በዘይት የተለወሱ እንጎቻዎችና በዘይት የተቀቡ ስስ ቂጣዎች፣ ከእነርሱም ጋር የሚሄደውን የእህል ቁርባንና የመጠጥ ቁርባን ያምጣ።",
+          "R": "እርሾ ያልገባበት ዳቦ የያዘ ቅርጫትም ማምጣት አለበት። በቅርጫቱም ውስጥ ዘይት ከተለወሰበት ምርጥ ዱቄት የተጋገሩ ወፍራም እንጎቻዎችና ዘይት የተቀቡ ስስ ቂጣዎች ይኑሩ። ከእንስሳቱ ጋር የሚቀርቡትን የእህል ቁርባንና የመጠጥ ቁርባንም ማምጣት አለበት።"
         }
       },
       "decisions": [
@@ -2598,6 +2873,27 @@
           "reason": "The two breads and the drink offering are named as in Leviticus 7:12 and 23:13 in Portuguese, at each level, so that the Nazirite's basket reads like the thanksgiving offering it echoes (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060150012",
+            "o040060150041",
+            "o040060150072"
+          ],
+          "choice": "\"የቂጣ ቅርጫት\" (L), \"እርሾ ያልገባበት ዳቦ የያዘ ቅርጫት\" (B, R); \"እንጎቻ\" (cake), \"ስስ ቂጣ\" (wafer); \"የመጠጥ ቁርባን\" (drink offering)",
+          "alternatives": [],
+          "reason": "The words of Exodus 29:2-3 and Leviticus 2:4 for the same breads and basket.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2666,6 +2962,11 @@
           "L": "E o sacerdote [os] apresentará diante {{divine_name:do SENHOR|de Javé}} e oferecerá a oferta pelo pecado dele e o holocausto dele.",
           "B": "O sacerdote os apresentará diante {{divine_name:do SENHOR|de Javé}} e oferecerá a oferta pelo pecado e o holocausto do nazireu.",
           "R": "O sacerdote deve apresentar essas ofertas {{divine_name:ao SENHOR|a Javé}}. Deve oferecer primeiro a oferta pelo pecado e depois o holocausto."
+        },
+        "am": {
+          "L": "ካህኑም {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያቀርባቸዋል፤ የኃጢአት መሥዋዕቱንና የሚቃጠል መሥዋዕቱን ያቀርባል።",
+          "B": "ካህኑ እነዚህን {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያቅርብ፤ የናዝራዊውን የኃጢአት መሥዋዕትና የሚቃጠል መሥዋዕት ያቅርብ።",
+          "R": "ካህኑ እነዚህን {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ማቅረብ አለበት። መጀመሪያ የኃጢአት መሥዋዕቱን፣ ከዚያም የሚቃጠለውን መሥዋዕት ማቅረብ አለበት።"
         }
       },
       "decisions": [
@@ -2793,6 +3094,11 @@
           "L": "E o carneiro oferecerá como sacrifício de comunhão {{divine_name:ao SENHOR|a Javé}}, com o cesto dos pães sem fermento; e o sacerdote oferecerá a oferta de cereal dele e a oferta de bebida dele.",
           "B": "O carneiro será oferecido {{divine_name:ao SENHOR|a Javé}} como sacrifício de comunhão, junto com o cesto de pães sem fermento, e o sacerdote apresentará também a oferta de cereal e a oferta de bebida que o acompanham.",
           "R": "Depois o sacerdote deve oferecer o carneiro {{divine_name:ao SENHOR|a Javé}} como sacrifício de comunhão, junto com o cesto de pães sem fermento. Deve oferecer também a oferta de cereal e a oferta de bebida que acompanham o carneiro."
+        },
+        "am": {
+          "L": "አውራ በጉንም ከቂጣው ቅርጫት ጋር {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኅብረት መሥዋዕት አድርጎ ያቀርበዋል፤ ካህኑም የእህል ቁርባኑንና የመጠጥ ቁርባኑን ያቀርባል።",
+          "B": "አውራ በጉ ከቂጣው ቅርጫት ጋር {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኅብረት መሥዋዕት ሆኖ ይቅረብ፤ ካህኑም ከእርሱ ጋር የሚሄደውን የእህል ቁርባንና የመጠጥ ቁርባን ያቅርብ።",
+          "R": "ከዚያም ካህኑ አውራ በጉን እርሾ ያልገባበትን ዳቦ ከያዘው ቅርጫት ጋር {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኅብረት መሥዋዕት አድርጎ ማቅረብ አለበት። ከእርሱ ጋር የሚቀርቡትን የእህል ቁርባንና የመጠጥ ቁርባን ደግሞ ማቅረብ አለበት።"
         }
       },
       "decisions": [
@@ -2907,6 +3213,11 @@
           "L": "E o nazireu rapará a sua cabeça consagrada à entrada da tenda do encontro, e tomará o cabelo da sua cabeça consagrada e [o] porá sobre o fogo que [está] debaixo do sacrifício de comunhão.",
           "B": "Então, à entrada da tenda do encontro, o nazireu rapará a cabeça consagrada, pegará o cabelo e o porá no fogo que está debaixo do sacrifício de comunhão.",
           "R": "Depois, na entrada da tenda do encontro, o nazireu deve rapar o cabelo comprido que mostrava que pertencia a Deus. Deve pôr o cabelo no fogo que está queimando debaixo do sacrifício de comunhão."
+        },
+        "am": {
+          "L": "ናዝራዊውም በመገናኛው ድንኳን ደጃፍ የመለየቱን ራስ ይላጫል፤ የመለየቱንም ራስ ጠጉር ወስዶ ከኅብረት መሥዋዕቱ በታች ባለው እሳት ላይ ያደርገዋል።",
+          "B": "ከዚያም ናዝራዊው በመገናኛው ድንኳን ደጃፍ የተለየውን ራሱን ይላጭ፤ ጠጉሩንም ወስዶ ከኅብረት መሥዋዕቱ በታች ባለው እሳት ላይ ያድርገው።",
+          "R": "ከዚያም ናዝራዊው በመገናኛው ድንኳን በር ለአምላክ የተለየ መሆኑን ያሳየውን ረጅም ጠጉሩን መላጨት አለበት። ጠጉሩንም ከኅብረት መሥዋዕቱ በታች በሚነድደው እሳት ላይ ማድረግ አለበት።"
         }
       },
       "decisions": [
@@ -3045,6 +3356,11 @@
           "L": "E o sacerdote tomará a espádua cozida do carneiro, e um bolo sem fermento do cesto, e uma obreia sem fermento, e [os] porá sobre as palmas das mãos do nazireu, depois que ele tiver rapado a sua consagração.",
           "B": "O sacerdote tomará a espádua cozida do carneiro, um pão e uma obreia sem fermento do cesto, e os porá nas mãos do nazireu, depois que ele tiver rapado o cabelo consagrado.",
           "R": "Depois que o nazireu rapar o cabelo, o sacerdote deve pegar a espádua cozida do carneiro, com um pão e uma bolacha do cesto. Deve pôr tudo isso nas mãos do nazireu."
+        },
+        "am": {
+          "L": "ካህኑም የተቀቀለውን የአውራ በጉን ወርች፣ ከቅርጫቱም አንድ የቂጣ እንጎቻና አንድ ስስ ቂጣ ወስዶ ናዝራዊው መለየቱን ከተላጨ በኋላ በናዝራዊው መዳፎች ላይ ያደርጋቸዋል።",
+          "B": "ናዝራዊው የተለየውን ጠጉሩን ከተላጨ በኋላ ካህኑ የተቀቀለውን የአውራ በጉን ወርች፣ ከቅርጫቱም እርሾ ያልገባበት አንድ እንጎቻና አንድ ስስ ቂጣ ወስዶ በናዝራዊው እጆች ላይ ያድርግ።",
+          "R": "ናዝራዊው ያንን ጠጉር ከተላጨ በኋላ ካህኑ የተቀቀለውን የአውራ በጉን ወርች ከቅርጫቱ ካለው ከአንድ እንጎቻና ከአንድ ስስ ቂጣ ጋር መውሰድ አለበት። እነዚህንም በናዝራዊው እጆች ላይ ማድረግ አለበት።"
         }
       },
       "decisions": [
@@ -3154,6 +3470,27 @@
           "reason": "\"Espádua\" is the Portuguese word for an animal's shoulder or foreleg (m1), the cut a reader can picture; \"ombro\" is said of people. \"Cozida\" means boiled, as m2 says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060190042"
+          ],
+          "choice": "\"ወርች\" (the shoulder, foreleg) at every level; \"የተቀቀለ\" (boiled)",
+          "alternatives": [
+            "\"ትከሻ\" (a person's shoulder)"
+          ],
+          "reason": "\"ወርች\" is the butcher's word for an animal's foreleg and shoulder (m1); \"ትከሻ\" is said of people.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3235,6 +3572,11 @@
           "L": "E o sacerdote os moverá [como] oferta movida diante {{divine_name:do SENHOR|de Javé}}; isso [é] santo para o sacerdote, junto com o peito da oferta movida e a coxa da oferta alçada; e depois o nazireu poderá beber vinho.",
           "B": "O sacerdote os moverá diante {{divine_name:do SENHOR|de Javé}} como oferta movida. Essas porções são santas e pertencem ao sacerdote, junto com o peito da oferta movida e a coxa da contribuição. Depois disso, o nazireu poderá beber vinho.",
           "R": "O sacerdote deve levantar essas porções e movê-las diante {{divine_name:do SENHOR|de Javé}}. Elas são santas e pertencem ao sacerdote, junto com o peito que foi movido e a coxa que foi separada. Depois disso, o nazireu pode beber vinho de novo."
+        },
+        "am": {
+          "L": "ካህኑም {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት የሚወዘወዝ መሥዋዕት አድርጎ ይወዘውዛቸዋል፤ ከሚወዘወዘው መሥዋዕት ፍርምባና ከሚነሣው መባ ጭን ጋር ለካህኑ ቅዱስ ነው፤ ከዚያም በኋላ ናዝራዊው የወይን ጠጅ ሊጠጣ ይችላል።",
+          "B": "ካህኑ እነዚህን የሚወዘወዝ መሥዋዕት አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይወዝውዛቸው። ከሚወዘወዘው መሥዋዕት ፍርምባና ከመባው ጭን ጋር ቅዱሳን ናቸው፤ የካህኑም ይሆናሉ። ከዚያ በኋላ ናዝራዊው የወይን ጠጅ ሊጠጣ ይችላል።",
+          "R": "ካህኑ እነዚህን ከፍ አድርጎ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት መወዝወዝ አለበት። እነዚህ ክፍሎች ቅዱስ ናቸው፤ ከተወዘወዘው ፍርምባና ለካህኑ ከተለየው ጭን ጋር የካህኑ ናቸው። ከዚያ በኋላ ናዝራዊው እንደ ገና የወይን ጠጅ ሊጠጣ ይችላል።"
         }
       },
       "decisions": [
@@ -3350,6 +3692,26 @@
           "reason": "As Leviticus 7:30-34 and 8:27 name them in Portuguese (m1, m2): \"oferta movida\" at every level, and for the contribution \"oferta alçada\" (L), \"contribuição\" (B) and \"separada\" (R).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060200041",
+            "o040060200152"
+          ],
+          "choice": "\"የሚወዘወዝ መሥዋዕት\" (wave offering); \"የሚነሣው መባ ጭን\" (L), \"የመባው ጭን\" (B), \"ለካህኑ የተለየው ጭን\" (R) for the thigh of the contribution; \"ፍርምባ\" (breast)",
+          "alternatives": [],
+          "reason": "The words of Exodus 29:24-27 and Leviticus 9:21, and the settled \"contribution\" (Literal \"lifted gift\", Balanced \"gift\"); Readable says the thigh was set apart for the priest (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3434,6 +3796,11 @@
           "L": "Esta [é] a lei do nazireu que fizer voto: a sua oferta {{divine_name:ao SENHOR|a Javé}} pela sua separação, além do que a sua mão alcançar; conforme o voto que fizer, assim fará, segundo a lei da sua separação.'\"",
           "B": "Esta é a instrução para o nazireu que faz um voto e para a oferta que deve {{divine_name:ao SENHOR|a Javé}} pela sua separação, além do que mais puder dar. Deve cumprir exatamente o que prometeu no voto, seguindo a instrução para a sua separação.'\"",
           "R": "Estas são as regras para o nazireu e para a oferta que deve levar {{divine_name:ao SENHOR|a Javé}}. Pode dar mais, se tiver condições. Mas deve fazer tudo o que prometeu, como mandam as regras para os nazireus.'\""
+        },
+        "am": {
+          "L": "ስእለት የሚሳለው የናዝራዊ ሕግ፣ ስለ መለየቱም {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚያቀርበው መባ ይህ ነው፤ ይህም እጁ ከሚያገኘው ሌላ ነው፤ በተሳለው ስእለት ቃል መሠረት በመለየቱ ሕግ እንዲሁ ያደርጋል።”»",
+          "B": "ስእለት ለሚሳል ናዝራዊ፣ ስለ መለየቱም {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለሚገባው መባ የተሰጠው ሕግ ይህ ነው፤ ይህም አቅሙ ከሚፈቅድለት ሌላ ነው። እንደ መለየቱ ሕግ፣ በስእለቱ የተሳለውን በትክክል ያድርግ።”»",
+          "R": "ለናዝራዊውና እርሱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለሚያመጣው መባ የተሰጡት ደንቦች እነዚህ ናቸው። ከቻለ ከዚህ በላይ ሊሰጥ ይችላል። ነገር ግን የናዝራዊ ደንቦች እንደሚሉት የተሳለውን ሁሉ መፈጸም አለበት።”»"
         }
       },
       "decisions": [
@@ -3504,6 +3871,24 @@
           "reason": "Literal keeps the Hebrew picture, which Korean can bear; Balanced and Readable say what it means, what the person can afford (\"형편이 되는 대로\", \"할 수 있다면\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060210121"
+          ],
+          "choice": "\"እጁ ከሚያገኘው ሌላ\" (L), \"አቅሙ ከሚፈቅድለት ሌላ\" (B) for \"besides what his hand can reach\"",
+          "alternatives": [],
+          "reason": "Literal keeps the hand; Balanced says what he can afford (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3563,6 +3948,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -3649,6 +4039,11 @@
           "L": "\"Fala a Arão e aos seus filhos, dizendo: 'Assim vocês abençoarão os filhos de Israel; digam-lhes:",
           "B": "\"Diz a Arão e aos seus filhos: 'É assim que vocês abençoarão os israelitas. Digam a eles:",
           "R": "\"Diz a Arão e aos seus filhos: 'É assim que vocês devem abençoar os israelitas. Digam a eles:"
+        },
+        "am": {
+          "L": "«ለአሮንና ለልጆቹ እንዲህ ብለህ ተናገር፦ “የእስራኤልን ልጆች እንዲህ ትባርካላችሁ፤ እንዲህ በሏቸው፦",
+          "B": "«አሮንንና ልጆቹን እንዲህ በላቸው፦ “የእስራኤልን ልጆች የምትባርኩት እንዲህ ነው፤ እንዲህ በሏቸው፦",
+          "R": "«አሮንንና ልጆቹን እንዲህ በላቸው፦ “እስራኤላውያንን የምትባርኩት እንዲህ ነው። እንዲህ በሏቸው፦"
         }
       },
       "decisions": [
@@ -3680,6 +4075,25 @@
           "choice": "say to them: the words are to be spoken",
           "alternatives": [],
           "reason": "The verb form here works as a command. The blessing is given in fixed words for the priests to say aloud over the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060230081"
+          ],
+          "choice": "Quotations three deep: « » (the LORD to Moses), “ ” (Moses to the priests), ‘ ’ (the blessing, 6:24-26)",
+          "alternatives": [],
+          "reason": "The style guide's marks for a quotation inside a quotation inside a quotation, which the English sets as double, single and double quotes.",
           "uncertain": false,
           "footnote": false
         }
@@ -3740,6 +4154,11 @@
           "L": "\"Que {{divine_name:o SENHOR|Javé}} te abençoe \\q e te proteja.",
           "B": "\"Que {{divine_name:o SENHOR|Javé}} te abençoe \\q e vele por ti.",
           "R": "\"Que {{divine_name:o SENHOR|Javé}} te faça o bem \\q e te mantenha seguro."
+        },
+        "am": {
+          "L": "‘{{divine_name:እግዚአብሔር|ያህዌ}} ይባርክህ፤ \\q ይጠብቅህም።",
+          "B": "‘{{divine_name:እግዚአብሔር|ያህዌ}} ይባርክህ፤ \\q ይንከባከብህም።",
+          "R": "‘{{divine_name:እግዚአብሔር|ያህዌ}} መልካም ያድርግልህ፤ \\q ከክፉም ሁሉ ይጠብቅህ።"
         }
       },
       "decisions": [
@@ -4006,6 +4425,50 @@
           "reason": "The verb means to keep watch and protect from harm (m2). Literal says \"proteger\", Balanced \"velar por\", watching over as a guard does, and Readable says it plainly, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060240012",
+            "o040060240033"
+          ],
+          "choice": "The blessing says \"you\" in the singular (\"-ህ\": \"ይባርክህ\", \"ወደ አንተ\") at every level",
+          "alternatives": [
+            "the plural \"-ችሁ\" (\"ይባርካችሁ\")"
+          ],
+          "reason": "The Hebrew blesses Israel as one, and each Israelite, with the singular \"you\"; Amharic can keep that, as English cannot, though the priests speak to the whole people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040060240011",
+            "o040060240012",
+            "o040060240032",
+            "o040060240033"
+          ],
+          "choice": "Drafted from the Hebrew, three lines each naming the LORD (m3): \"ይባርክህ ... ይጠብቅህም\" (L), \"ይንከባከብህም\" (B, watch over you), \"መልካም ያድርግልህ ... ከክፉም ሁሉ ይጠብቅህ\" (R, do good to you and keep you safe)",
+          "alternatives": [],
+          "reason": "\"እግዚአብሔር ይባርክህ\" and \"ይጠብቅህ\" are the everyday Amharic blessing words and stay at Literal; Balanced and Readable follow the English levels' sense (m2: guard, watch over, protect) in their own words, and the lines of 6:25-26 are worded independently of the familiar 1962 version.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4067,6 +4530,11 @@
           "L": "Que {{divine_name:o SENHOR|Javé}} faça a {{deity_pronoun:sua|Sua}} face brilhar sobre ti \\q e seja bondoso contigo.",
           "B": "Que {{divine_name:o SENHOR|Javé}} faça a {{deity_pronoun:sua|Sua}} face brilhar sobre ti \\q e te mostre o {{deity_pronoun:seu|Seu}} favor.",
           "R": "Que {{divine_name:o SENHOR|Javé}} olhe para ti com alegria \\q e seja bondoso contigo."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ፊቱን ወደ አንተ ያብራ፤ \\q ይራራልህም።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ፊቱ በአንተ ላይ ያብራ፤ \\q ሞገሱንም ያድልህ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በደስታ ይመልከትህ፤ \\q ቸርነቱንም ያሳይህ።"
         }
       },
       "decisions": [
@@ -4162,6 +4630,26 @@
           "reason": "The shining face is a look of goodwill (m1), kept at Literal and Balanced and explained at Readable as the English does. The second verb is kindness freely given (m2): \"ser bondoso\" and \"mostrar o seu favor\" say that without the sense of pity in \"misericórdia\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060250011",
+            "o040060250052"
+          ],
+          "choice": "\"ፊቱን ወደ አንተ ያብራ\" (L), \"ፊቱ በአንተ ላይ ያብራ\" (B), \"በደስታ ይመልከትህ\" (R) for \"make his face shine toward you\"; \"ይራራልህ\" (L), \"ሞገሱን ያድልህ\" (B), \"ቸርነቱን ያሳይህ\" (R) for \"be gracious to you\"",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"toward you\" and the single verb; Balanced says \"show you favor\" with \"ሞገስ\" (favour, grace freely given, m2); Readable explains the shining face as a look of goodwill (m1), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4225,6 +4713,11 @@
           "L": "Que {{divine_name:o SENHOR|Javé}} levante a {{deity_pronoun:sua|Sua}} face para ti \\q e ponha a paz para ti.\"'",
           "B": "Que {{divine_name:o SENHOR|Javé}} levante a {{deity_pronoun:sua|Sua}} face para olhar para ti \\q e te conceda a paz.\"'",
           "R": "Que {{divine_name:o SENHOR|Javé}} se volte para ti e cuide de ti, \\q e que {{deity_pronoun:ele|Ele}} te dê a paz.\"'"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ፊቱን ወደ አንተ ያንሣ፤ \\q ሰላምንም ያኑርልህ።’”",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ፊቱን ወደ አንተ አንሥቶ ይመልከትህ፤ \\q ሰላምንም ይስጥህ።’”",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ወደ አንተ ዘወር ብሎ ይንከባከብህ፤ \\q ሰላምንም ይስጥህ።’”"
         }
       },
       "decisions": [
@@ -4388,6 +4881,23 @@
           "reason": "Literal keeps the ordinary verb \"pôr\" so that it matches \"porão o meu nome\" in verse 27, as the English keeps \"set\" (r-en-1). Balanced says \"conceder\" and Readable \"dar\". \"A paz\" is whole well-being (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060260052"
+          ],
+          "choice": "\"ያኑርልህ\" (may he set, establish for you) at Literal; \"ይስጥህ\" (give) at Balanced and Readable",
+          "alternatives": [],
+          "reason": "The Hebrew verb is \"set, put\", that is, give and establish (m3); Literal keeps \"put in place\". \"ሰላም\" is the key term for peace, whole well-being (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4452,6 +4962,11 @@
           "L": "E porão o {{deity_pronoun:meu|Meu}} nome sobre os filhos de Israel, e eu [mesmo] os abençoarei.\"",
           "B": "Assim porão o {{deity_pronoun:meu|Meu}} nome sobre os israelitas, e eu mesmo os abençoarei.\"",
           "R": "Desse modo, porão o {{deity_pronoun:meu|Meu}} nome sobre os israelitas, e eu serei aquele que os abençoa.\""
+        },
+        "am": {
+          "L": "ስሜንም በእስራኤል ልጆች ላይ ያኖራሉ፤ እኔም [ራሴ] እባርካቸዋለሁ።»",
+          "B": "በዚህም ስሜን በእስራኤል ልጆች ላይ ያኖራሉ፤ እኔ ራሴም እባርካቸዋለሁ።»",
+          "R": "በዚህ መንገድ ስሜን በእስራኤላውያን ላይ ያኖራሉ፤ የምባርካቸውም እኔ ነኝ።»"
         }
       },
       "decisions": [
@@ -4521,6 +5036,25 @@
             "eu Mesmo, capitalised under the setting"
           ],
           "reason": "The English puts \"myself\" under the deity_pronoun setting. Portuguese \"mesmo\" is not a pronoun but a word that agrees with \"eu\", which never takes a span (docs/portuguese-style.md, section 7), and a capitalised \"Mesmo\" would read as a mistake; so only \"meu\" has a span here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040060270012"
+          ],
+          "choice": "\"ያኖራሉ\" (they shall put) for \"set my name on\", the same verb as \"ያኑርልህ\" in 6:26 L",
+          "alternatives": [],
+          "reason": "The Hebrew uses one verb for setting peace and setting the name (m1); Amharic \"አኖረ\" keeps the echo at Literal.",
           "uncertain": false,
           "footnote": false
         }

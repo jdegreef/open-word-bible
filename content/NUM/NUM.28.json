@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ሲል ተናገረው፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን ተናገረው። እንዲህም አለ፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -89,6 +94,25 @@
           "choice": "passé simple at Literal and Balanced (\"parla\"); passé composé at Readable (\"a dit\")",
           "alternatives": [],
           "reason": "The one narrative line of the chapter follows docs/french-style.md section 3; the laws that follow use the future at Literal and Balanced and the imperative or \"devoir\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040280010011"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God (verses 2 and 24 in English) has nothing to change; the Amharic text of this chapter has no such spans.",
           "uncertain": false,
           "footnote": false
         }
@@ -170,6 +194,11 @@
           "L": "\"Ordena aos filhos de Israel e dize-lhes: 'A {{deity_pronoun:minha|Minha}} oferta, o {{deity_pronoun:meu|Meu}} alimento para as {{deity_pronoun:minhas|Minhas}} ofertas queimadas, o {{deity_pronoun:meu|Meu}} aroma agradável, vocês terão o cuidado de {{deity_pronoun:me|Me}} apresentar no seu tempo determinado.'",
           "B": "\"Ordena aos israelitas e diz-lhes: 'Tenham o cuidado de {{deity_pronoun:me|Me}} apresentar no tempo determinado a {{deity_pronoun:minha|Minha}} oferta, o {{deity_pronoun:meu|Meu}} alimento, dado como as {{deity_pronoun:minhas|Minhas}} ofertas queimadas, de aroma agradável para {{deity_pronoun:mim|Mim}}.'",
           "R": "\"Ordena aos israelitas: 'Não deixem de {{deity_pronoun:me|Me}} trazer as {{deity_pronoun:minhas|Minhas}} ofertas, cada uma no tempo que eu marquei. Elas são o {{deity_pronoun:meu|Meu}} alimento, ofertas queimadas no fogo, e o cheiro delas {{deity_pronoun:me|Me}} agrada.'"
+        },
+        "am": {
+          "L": "«የእስራኤልን ልጆች እዘዛቸው፤ እንዲህም በላቸው፦ “መባዬን፣ በእሳት ለሚቀርቡት መሥዋዕቶቼ የሆነውን ምግቤን፣ ደስ የሚያሰኘኝን መዓዛዬን በተወሰነለት ጊዜ ታቀርቡልኝ ዘንድ ተጠንቀቁ።”",
+          "B": "«የእስራኤልን ልጆች እዘዛቸው፤ እንዲህም በላቸው፦ “መባዬን፣ ምግቤን፣ በእሳት የሚቀርቡልኝን መሥዋዕቶቼን፣ ደስ የሚያሰኘኝን መዓዛ በተወሰነለት ጊዜ ልታቀርቡልኝ ተጠንቀቁ።”",
+          "R": "«እስራኤላውያንን እንዲህ ብለህ እዘዛቸው፦ “መባዎቼን እያንዳንዱን እኔ በወሰንኩት ጊዜ ማምጣታችሁን እርግጠኛ ሁኑ። እነርሱ ምግቤ ናቸው፤ በመሠዊያው ላይ በእሳት የሚቀርቡ መሥዋዕቶች ናቸው፤ መዓዛቸውም ደስ ያሰኘኛል።”"
         }
       },
       "decisions": [
@@ -369,6 +398,48 @@
           "reason": "For chapters 28-29, with the terms of Leviticus 1:9 (docs/pentateuch-portuguese-terms.md): the gift on the altar fire is \"oferta queimada\" (Readable \"oferta queimada no fogo\"), and the phrase of m2 is \"aroma agradável\", which Readable turns into \"o cheiro ... agrada\", as Leviticus Readable does. \"O meu alimento\" keeps the picture of a meal at God's table (m1); the meaning note, not the wording, says that God does not need food. The commands are plural, \"vocês\", since the whole people is responsible (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280020102"
+          ],
+          "choice": "\"በእሳት የሚቀርብ መሥዋዕት\" (offering by fire) at every level, Readable adding \"በመሠዊያው ላይ\" (on the altar); \"ደስ የሚያሰኝ መዓዛ\" (soothing aroma), at Readable \"መዓዛው … ደስ ያሰኛል\"; \"መባ\" for the offering (qorban)",
+          "alternatives": [
+            "\"የምግብ መሥዋዕት\" (food offering)"
+          ],
+          "reason": "The Pentateuch terms list gives \"በእሳት የሚቀርብ መሥዋዕት\" for this word; \"ምግቤ\" (my food) already stands beside it in this verse, so the English Balanced \"food offering\" is not repeated. These formulas recur word for word through chapters 28 and 29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040280020021",
+            "o040280020031",
+            "o040280020041"
+          ],
+          "choice": "\"የእስራኤል ልጆች\" (L, B) and \"እስራኤላውያን\" (R) with no gender span",
+          "alternatives": [],
+          "reason": "\"ልጆች\" already includes daughters, so Amharic has no second wording for the English gender span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -441,6 +512,11 @@
           "L": "E lhes dirás: 'Esta [é] a oferta queimada que vocês apresentarão {{divine_name:ao SENHOR|a Javé}}: cordeiros, filhos de um ano, sem defeito, dois por dia, [como] holocausto contínuo.",
           "B": "Diz-lhes: 'Todos os dias vocês apresentarão {{divine_name:ao SENHOR|a Javé}}, como oferta queimada, dois cordeiros de um ano, sem defeito. Esse é o holocausto contínuo.",
           "R": "Diz a eles: 'Esta é a oferta queimada no fogo que vocês devem trazer {{divine_name:ao SENHOR|a Javé}}. Todos os dias, tragam dois cordeiros machos de um ano, sem nenhum defeito. Ofereçam esses cordeiros como holocausto todos os dias, sem falta."
+        },
+        "am": {
+          "L": "እንዲህም በላቸው፦ “{{divine_name:ለእግዚአብሔር|ለያህዌ}} የምታቀርቡት በእሳት የሚቀርብ መሥዋዕት ይህ ነው፤ የዓመት ልጆች የሆኑ ነውር የሌለባቸው ጠቦቶች፣ በየቀኑ ሁለት፣ የዘወትር የሚቃጠል መሥዋዕት።",
+          "B": "እንዲህም በላቸው፦ “በየቀኑ በእሳት የሚቀርብ መሥዋዕት አድርጋችሁ አንድ ዓመት የሆናቸውን ነውር የሌለባቸውን ሁለት ተባዕት ጠቦቶች {{divine_name:ለእግዚአብሔር|ለያህዌ}} አቅርቡ። ይህ የዘወትሩ የሚቃጠል መሥዋዕት ነው።",
+          "R": "እንዲህም በላቸው፦ “{{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የምታቀርቡት መሥዋዕት ይህ ነው፦ በየቀኑ አንድ ዓመት የሆናቸውን ምንም ጉድለት የሌለባቸውን ሁለት ተባዕት ጠቦቶች አምጡ። በየቀኑ ሳታቋርጡ የሚቃጠል መሥዋዕት አድርጋችሁ አቅርቧቸው።"
         }
       },
       "decisions": [
@@ -612,6 +688,27 @@
           "reason": "Literal keeps the idiom \"sons of a year\" (m2), as Exodus 29:38 does in Portuguese; Balanced says \"de um ano\". Readable says \"machos\" where the English Readable says \"male lambs\", as Leviticus 23:12 does; \"cordeiro\" names a young sheep of either sex.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280030151"
+          ],
+          "choice": "\"የዘወትር የሚቃጠል መሥዋዕት\" (continual burnt offering, L, B), \"ዕለታዊው የሚቃጠል መሥዋዕት\" / \"በየቀኑ\" (daily, R); \"ጠቦቶች\" (L), \"ተባዕት ጠቦቶች\" (male lambs, B, R); \"ነውር የሌለባቸው\" (L, B), \"ምንም ጉድለት የሌለባቸው\" (R)",
+          "alternatives": [
+            "\"የማያቋርጥ\""
+          ],
+          "reason": "As the Amharic Exodus 29:38-42, where the same daily offering is first commanded. The Hebrew noun means a young male sheep, which Balanced and Readable say outright as the English does. The same words serve every feast in chapters 28 and 29.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -681,6 +778,11 @@
           "L": "Um cordeiro oferecerás pela manhã, e o segundo cordeiro oferecerás entre as duas tardes;",
           "B": "Oferecerás um cordeiro de manhã e o outro ao entardecer.",
           "R": "Oferece um deles de manhã e o outro à tarde."
+        },
+        "am": {
+          "L": "አንዱን ጠቦት በጠዋት ታቀርባለህ፤ ሁለተኛውንም ጠቦት በሁለቱ ምሽቶች መካከል ታቀርባለህ።",
+          "B": "አንዱን ጠቦት በጠዋት፣ ሁለተኛውንም ምሽት ሲገባ አቅርቡ።",
+          "R": "አንዱን በጠዋት፣ ሌላውን ደግሞ ፀሐይ ስትጠልቅ አቅርቡ።"
         }
       },
       "decisions": [
@@ -860,6 +962,28 @@
           "reason": "The Hebrew turns from the plural of verse 3 to the singular, speaking to Israel as one body (m2). Portuguese can show this, as English cannot: it uses \"tu\", the form God uses to Israel addressed in the singular (docs/pentateuch-portuguese-terms.md), wherever the Hebrew verb is singular (verses 4, 7, 8, 21) and \"vocês\" elsewhere. \"Entre as duas tardes\" (L), \"ao entardecer\" (B) and \"à tarde\" (R) follow Exodus 29:39 and the English levels.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280040041",
+            "o040280040091"
+          ],
+          "choice": "Literal follows the Hebrew's change between singular and plural \"you\" (here \"ታቀርባለህ\"); Balanced and Readable say \"እናንተ\" (plural) through chapters 28 and 29; \"በሁለቱ ምሽቶች መካከል\" (L), \"ምሽት ሲገባ\" (B), \"ፀሐይ ስትጠልቅ\" (R)",
+          "alternatives": [
+            "singular at every level where the Hebrew has it"
+          ],
+          "reason": "The commands are for all Israel, which the Hebrew addresses now as one, now as many; in Amharic the switch would read as a change of hearer, so Balanced and Readable keep the plural. The evening phrase is as in Exodus 29:39.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -926,6 +1050,11 @@
           "L": "E um décimo do efa de flor de farinha para oferta de cereal, amassada com um quarto do him de azeite batido.",
           "B": "A oferta de cereal para cada cordeiro será de {{units:cerca de 2,2 litros|um décimo de efa}} de flor de farinha amassada com {{units:cerca de 1 litro|um quarto de him}} de azeite de olivas batidas.",
           "R": "Com cada cordeiro, tragam uma oferta de cereal de {{units:cerca de 2,2 litros|um décimo de efa}} da melhor farinha misturada com {{units:cerca de 1 litro|um quarto de him}} do melhor azeite."
+        },
+        "am": {
+          "L": "ለእህል ቁርባንም ተወቅጦ በወጣ በኢን አንድ አራተኛ ዘይት የተለወሰ የኢፍ አንድ አሥረኛ የላመ ዱቄት።",
+          "B": "ለእያንዳንዱ ጠቦት የሚቀርበው የእህል ቁርባን ተወቅጦ በወጣ {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የወይራ ዘይት የተለወሰ {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} የላመ ዱቄት ይሁን።",
+          "R": "ከእያንዳንዱ ጠቦት ጋር {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} ምርጥ የወይራ ዘይት የተለወሰ {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} የላመ ዱቄት የእህል ቁርባን ይቅረብ።"
         }
       },
       "decisions": [
@@ -1078,6 +1207,27 @@
           "reason": "For chapters 28-29, as Exodus 29:40 and Leviticus 23:13 set it: metric by default, the ancient measure as the alternative, where the English converts to quarts. With the ephah at 22 litros and the hin at 3,7 litros: a tenth of an ephah is 2,2 litros, two tenths 4,4 and three tenths 6,6; a quarter of a hin is \"cerca de 1 litro\", as Exodus rounds it, a third \"cerca de 1,2 litro\" and a half \"cerca de 2 litros\". Literal keeps \"efa\" and \"him\". \"Flor de farinha\" (L, B), \"a melhor farinha\" (R), \"amassada\" (L, B) and \"misturada\" (R) are the words of Leviticus 2:1 and 23:13; \"azeite batido\" is the pressed oil of Exodus 29:40 (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040280050022",
+            "o040280050092"
+          ],
+          "choice": "metric by default: \"2.2 ሊትር ያህል\" for a tenth of an ephah (two tenths 4.4, three tenths 6.6), \"1 ሊትር ያህል\" for a quarter of a hin (a third 1.2, a half 2); the Hebrew measure (\"የኢፍ አንድ አሥረኛ\", \"የኢን አንድ አራተኛ\") as the alternative",
+          "alternatives": [
+            "US quarts, as the English"
+          ],
+          "reason": "Amharic gives metric measures by default with the Hebrew unit as the alternative (the English uses US units), with the values of the Pentateuch terms list (ephah 22 litres, hin 3.7 litres) and of Exodus 29:40. Literal keeps the Hebrew units.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1143,6 +1293,11 @@
           "L": "[É] um holocausto contínuo, o que foi feito no monte Sinai, como aroma agradável, oferta queimada {{divine_name:ao SENHOR|a Javé}}.",
           "B": "É o holocausto contínuo, como foi oferecido no monte Sinai: aroma agradável, uma oferta queimada {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Esse é o holocausto diário que foi oferecido pela primeira vez no monte Sinai. É uma oferta queimada no fogo, e o seu cheiro agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "[ይህ] በሲና ተራራ የተደረገው፣ ደስ የሚያሰኝ መዓዛ እንዲሆን {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት የሆነው የዘወትር የሚቃጠል መሥዋዕት [ነው]።",
+          "B": "ይህ በሲና ተራራ እንደ ቀረበው ያለ የዘወትሩ የሚቃጠል መሥዋዕት ነው፤ ደስ የሚያሰኝ መዓዛ ያለው፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት ነው።",
+          "R": "ይህ በመጀመሪያ በሲና ተራራ የቀረበው ዕለታዊው የሚቃጠል መሥዋዕት ነው። በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
         }
       },
       "decisions": [
@@ -1263,6 +1418,11 @@
           "L": "E a sua oferta de bebida [será] um quarto do him para cada cordeiro; no lugar santo derrama oferta de bebida de bebida forte {{divine_name:ao SENHOR|a Javé}}.",
           "B": "A oferta de bebida será de {{units:cerca de 1 litro|um quarto de him}} para cada cordeiro. No lugar santo, derrama {{divine_name:ao SENHOR|a Javé}} a oferta de bebida forte.",
           "R": "Para cada cordeiro, traz também {{units:cerca de 1 litro|um quarto de him}} de bebida forte como oferta de bebida. Derrama essa bebida {{divine_name:ao SENHOR|a Javé}} no lugar santo."
+        },
+        "am": {
+          "L": "የመጠጥ ቁርባኑም ለአንዱ ጠቦት የኢን አንድ አራተኛ [ይሁን]፤ በቅዱሱ ስፍራ የሚያሰክር መጠጥ የመጠጥ ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} አፍስስ።",
+          "B": "የመጠጥ ቁርባኑ ለእያንዳንዱ ጠቦት {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} ይሁን። የሚያሰክረውን መጠጥ የመጠጥ ቁርባን አድርጋችሁ በቅዱሱ ስፍራ {{divine_name:ለእግዚአብሔር|ለያህዌ}} አፍስሱ።",
+          "R": "ለእያንዳንዱ ጠቦት ደግሞ {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የሚያሰክር መጠጥ የመጠጥ ቁርባን አድርጋችሁ አምጡ። በቅዱሱ ስፍራ {{divine_name:ለእግዚአብሔር|ለያህዌ}} አፍስሱት።"
         }
       },
       "decisions": [
@@ -1462,6 +1622,28 @@
           "reason": "As the English keeps \"strong drink\" at every level (r-en-1), Portuguese keeps \"bebida forte\", the word Leviticus 10:9 and Numbers 6:3 use in Portuguese, so the reader can see that it differs from the \"vinho\" of verse 14 (m1). \"Oferta de bebida\" is the name Leviticus 23:13 sets. The verb \"pour out\" is singular in the Hebrew, so \"derrama\" (tu), as verse 4 explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280070091"
+          ],
+          "choice": "\"የሚያሰክር መጠጥ\" (strong drink)",
+          "alternatives": [
+            "\"ጠጅ\"",
+            "\"የወይን ጠጅ\""
+          ],
+          "reason": "The Hebrew word names strong drink in general; \"ጠጅ\" would name the Ethiopian honey wine, and \"የወይን ጠጅ\" is kept for the word \"wine\" in verse 14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1538,6 +1720,11 @@
           "L": "E o segundo cordeiro oferecerás entre as duas tardes; como a oferta de cereal da manhã e como a sua oferta de bebida [o] oferecerás, oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "B": "O segundo cordeiro oferecerás ao entardecer, com uma oferta de cereal e uma oferta de bebida iguais às da manhã: uma oferta queimada, de aroma agradável {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Oferece o outro cordeiro à tarde, com a mesma oferta de cereal e a mesma oferta de bebida da manhã. É uma oferta queimada no fogo, e o seu cheiro agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "ሁለተኛውንም ጠቦት በሁለቱ ምሽቶች መካከል ታቀርባለህ፤ እንደ ጠዋቱ የእህል ቁርባንና እንደ መጠጥ ቁርባኑ ታቀርበዋለህ፤ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "B": "ሁለተኛውን ጠቦት ምሽት ሲገባ አቅርቡ፤ ከእርሱም ጋር እንደ ጠዋቱ ያለ የእህል ቁርባንና የመጠጥ ቁርባን አቅርቡ፤ ይህ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ነው።",
+          "R": "ሌላውን ጠቦት ፀሐይ ስትጠልቅ አቅርቡ፤ ከእርሱም ጋር በጠዋት ያቀረባችሁትን የመሰለ የእህል ቁርባንና የመጠጥ ቁርባን አቅርቡ። ይህ በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
         }
       },
       "decisions": [
@@ -1644,6 +1831,11 @@
           "L": "E no dia de sábado, dois cordeiros, filhos de um ano, sem defeito, e dois décimos [de efa] de flor de farinha [como] oferta de cereal amassada com azeite, e a sua oferta de bebida,",
           "B": "No dia de sábado, haverá dois cordeiros de um ano, sem defeito, com {{units:cerca de 4,4 litros|dois décimos de efa}} de flor de farinha amassada com azeite como oferta de cereal, e a sua oferta de bebida,",
           "R": "No dia de sábado, ofereçam dois cordeiros machos de um ano, sem nenhum defeito. Com eles, tragam uma oferta de cereal de {{units:cerca de 4,4 litros|dois décimos de efa}} da melhor farinha misturada com azeite, e a oferta de bebida que a acompanha."
+        },
+        "am": {
+          "L": "በሰንበትም ቀን የዓመት ልጆች የሆኑ ነውር የሌለባቸው ሁለት ጠቦቶች፣ ለእህል ቁርባንም በዘይት የተለወሰ የ[ኢፍ] ሁለት አሥረኛ የላመ ዱቄት፣ የመጠጥ ቁርባኑም፤",
+          "B": "በሰንበት ቀን አንድ ዓመት የሆናቸው ነውር የሌለባቸው ሁለት ተባዕት ጠቦቶች፣ ለእህል ቁርባንም በዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት፣ የመጠጥ ቁርባኑም ይቅረቡ፤",
+          "R": "በሰንበት ቀን አንድ ዓመት የሆናቸውን ምንም ጉድለት የሌለባቸውን ሁለት ተባዕት ጠቦቶች አቅርቡ። ከእነርሱም ጋር በወይራ ዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን፣ ከእርሱም ጋር የሚሄደውን የመጠጥ ቁርባን አምጡ።"
         }
       },
       "decisions": [
@@ -1783,6 +1975,11 @@
           "L": "holocausto de [cada] sábado no seu sábado, além do holocausto contínuo e da sua oferta de bebida.",
           "B": "como holocausto de cada sábado, além do holocausto contínuo e da sua oferta de bebida.",
           "R": "Esse é o holocausto de cada sábado. Ofereçam esse holocausto além do holocausto diário e da sua oferta de bebida."
+        },
+        "am": {
+          "L": "ከዘወትሩ የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ ሌላ፣ የ[እያንዳንዱ] ሰንበት የሚቃጠል መሥዋዕት በሰንበቱ [ይቅረብ]።",
+          "B": "ይህም ከዘወትሩ የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ በተጨማሪ የሚቀርብ የየሰንበቱ የሚቃጠል መሥዋዕት ነው።",
+          "R": "ይህ የእያንዳንዱ ሰንበት የሚቃጠል መሥዋዕት ነው። ከዕለታዊው የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ በተጨማሪ አቅርቡት።"
         }
       },
       "decisions": [
@@ -1908,6 +2105,11 @@
           "L": "E nos começos dos seus meses vocês apresentarão um holocausto {{divine_name:ao SENHOR|a Javé}}: dois novilhos, filhos do gado, e um carneiro, sete cordeiros, filhos de um ano, sem defeito;",
           "B": "No primeiro dia de cada mês, vocês trarão {{divine_name:ao SENHOR|a Javé}} um holocausto: dois novilhos, um carneiro e sete cordeiros de um ano, todos sem defeito.",
           "R": "No início de cada mês, na lua nova, tragam um holocausto {{divine_name:ao SENHOR|a Javé}}. Tragam dois novilhos, um carneiro e sete cordeiros machos de um ano. Todos devem estar sem nenhum defeito."
+        },
+        "am": {
+          "L": "በወሮቻችሁም መጀመሪያዎች {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት ታቀርባላችሁ፤ ከከብት መንጋ የሆኑ ሁለት ወይፈኖች፣ አንድ አውራ በግ፣ የዓመት ልጆች የሆኑ ነውር የሌለባቸው ሰባት ጠቦቶች።",
+          "B": "በየወሩ መጀመሪያ ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አቅርቡ፤ ሁለት ወይፈኖች፣ አንድ አውራ በግና አንድ ዓመት የሆናቸው ሰባት ተባዕት ጠቦቶች፣ ሁሉም ነውር የሌለባቸው ይሁኑ።",
+          "R": "አዲስ ወር በጀመረ ቁጥር {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት አምጡ። ሁለት ወይፈኖች፣ አንድ አውራ በግና አንድ ዓመት የሆናቸው ሰባት ተባዕት ጠቦቶች አምጡ። ከእነዚህ አንዳቸውም ምንም ጉድለት ሊኖርባቸው አይገባም።"
         }
       },
       "decisions": [
@@ -2068,6 +2270,32 @@
           "reason": "For chapters 28-29: \"novilho\" is the young bull of the offerings, as Leviticus 4:3 and 23:18 say; Literal adds \"filhos do gado\" for the Hebrew \"sons of the herd\" as Leviticus 4:3 does, and Balanced and Readable fold it into \"novilho\", as the English folds it into \"young bull\". \"Without defect\" covers every animal (m3): Balanced says \"todos sem defeito\", and Readable \"Todos devem estar sem nenhum defeito\", the sentence repeated through the festival lists.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280110061",
+            "o040280110071",
+            "o040280110081",
+            "o040280110091",
+            "o040280110102",
+            "o040280110151"
+          ],
+          "choice": "\"ወይፈን\" (young bull) for \"bull, son of the herd\", with \"ከከብት መንጋ የሆኑ\" at Literal; \"አውራ በግ\" (ram); \"አውራ ፍየል\" (male goat); the new moon \"የወር መባቻ\"",
+          "alternatives": [
+            "\"በሬ\" (ox)"
+          ],
+          "reason": "\"ወይፈን\" is a young bull, which is what \"son of the herd\" means; \"በሬ\" is a grown ox, usually a draught animal. These names hold through the feast lists of chapters 28 and 29.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2144,6 +2372,11 @@
           "L": "e três décimos [de efa] de flor de farinha [como] oferta de cereal amassada com azeite para cada novilho, e dois décimos [de efa] de flor de farinha [como] oferta de cereal amassada com azeite para o único carneiro,",
           "B": "A oferta de cereal para cada novilho será de {{units:cerca de 6,6 litros|três décimos de efa}} de flor de farinha amassada com azeite, e para o carneiro, {{units:cerca de 4,4 litros|dois décimos de efa}} de flor de farinha amassada com azeite,",
           "R": "Para cada novilho, tragam uma oferta de cereal de {{units:cerca de 6,6 litros|três décimos de efa}} da melhor farinha misturada com azeite. Para o carneiro, tragam uma oferta de cereal de {{units:cerca de 4,4 litros|dois décimos de efa}} da melhor farinha misturada com azeite."
+        },
+        "am": {
+          "L": "ለእያንዳንዱም ወይፈን በዘይት የተለወሰ የ[ኢፍ] ሦስት አሥረኛ የላመ ዱቄት የእህል ቁርባን፣ ለአንዱም አውራ በግ በዘይት የተለወሰ የ[ኢፍ] ሁለት አሥረኛ የላመ ዱቄት የእህል ቁርባን፣",
+          "B": "ለእያንዳንዱ ወይፈን የሚቀርበው የእህል ቁርባን በዘይት የተለወሰ {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}} የላመ ዱቄት፣ ለአውራ በጉም በዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት ይሁን፤",
+          "R": "ለእያንዳንዱ ወይፈን በወይራ ዘይት የተለወሰ {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አምጡ። ለአውራ በጉም በወይራ ዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አምጡ።"
         }
       },
       "decisions": [
@@ -2251,6 +2484,11 @@
           "L": "e um décimo [de efa], um décimo, de flor de farinha [como] oferta de cereal amassada com azeite para cada cordeiro: holocausto, aroma agradável, oferta queimada {{divine_name:ao SENHOR|a Javé}}.",
           "B": "e para cada cordeiro, {{units:cerca de 2,2 litros|um décimo de efa}} de flor de farinha amassada com azeite. Este é um holocausto, de aroma agradável, uma oferta queimada {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Para cada cordeiro, tragam {{units:cerca de 2,2 litros|um décimo de efa}} da melhor farinha misturada com azeite como oferta de cereal. Esse holocausto é uma oferta queimada no fogo, e o seu cheiro agrada {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "ለአንዱም ጠቦት በዘይት የተለወሰ የ[ኢፍ] አንድ አሥረኛ፣ አንድ አሥረኛ የላመ ዱቄት የእህል ቁርባን፤ የሚቃጠል መሥዋዕት፣ ደስ የሚያሰኝ መዓዛ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት [ነው]።",
+          "B": "ለእያንዳንዱም ጠቦት በዘይት የተለወሰ {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} የላመ ዱቄት ይሁን። ይህ የሚቃጠል መሥዋዕት፣ ደስ የሚያሰኝ መዓዛ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት ነው።",
+          "R": "ለእያንዳንዱ ጠቦት በወይራ ዘይት የተለወሰ {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አምጡ። ይህ የሚቃጠል መሥዋዕት በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
         }
       },
       "decisions": [
@@ -2424,6 +2662,11 @@
           "L": "E as suas ofertas de bebida serão meio him para o novilho, e um terço do him para o carneiro, e um quarto do him para o cordeiro, de vinho. Este [é] o holocausto de [cada] mês no seu mês, pelos meses do ano.",
           "B": "O vinho das ofertas de bebida que os acompanham será de {{units:cerca de 1,8 litro|meio him}} para cada novilho, {{units:cerca de 1,2 litro|um terço de him}} para o carneiro e {{units:cerca de 1 litro|um quarto de him}} para cada cordeiro. Este é o holocausto da lua nova, mês após mês, durante o ano.",
           "R": "Tragam também vinho como oferta de bebida: {{units:cerca de 1,8 litro|meio him}} para cada novilho, {{units:cerca de 1,2 litro|um terço de him}} para o carneiro e {{units:cerca de 1 litro|um quarto de him}} para cada cordeiro. Esse é o holocausto do início de cada mês, durante todo o ano."
+        },
+        "am": {
+          "L": "የመጠጥ ቁርባናቸውም ለወይፈኑ የኢን ግማሽ፣ ለአውራ በጉም የኢን አንድ ሦስተኛ፣ ለጠቦቱም የኢን አንድ አራተኛ የወይን ጠጅ ይሁን። ይህ ለዓመቱ ወሮች የ[እያንዳንዱ] ወር የሚቃጠል መሥዋዕት በወሩ [ነው]።",
+          "B": "ለመጠጥ ቁርባናቸው የሚቀርበው የወይን ጠጅ ለእያንዳንዱ ወይፈን {{units:2 ሊትር ያህል|የኢን ግማሽ}}፣ ለአውራ በጉ {{units:1.2 ሊትር ያህል|የኢን አንድ ሦስተኛ}}፣ ለእያንዳንዱ ጠቦትም {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} ይሁን። ይህ ዓመቱን ሙሉ በየወሩ መባቻ የሚቀርብ የሚቃጠል መሥዋዕት ነው።",
+          "R": "ደግሞም የወይን ጠጅ የመጠጥ ቁርባን አምጡ፤ ለእያንዳንዱ ወይፈን {{units:2 ሊትር ያህል|የኢን ግማሽ}}፣ ለአውራ በጉ {{units:1.2 ሊትር ያህል|የኢን አንድ ሦስተኛ}}፣ ለእያንዳንዱ ጠቦትም {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} ይሁን። ይህ ዓመቱን ሙሉ በየወሩ መጀመሪያ የሚቀርብ የሚቃጠል መሥዋዕት ነው።"
         }
       },
       "decisions": [
@@ -2566,6 +2809,11 @@
           "L": "E um bode das cabras [como] oferta pelo pecado {{divine_name:ao SENHOR|a Javé}}; além do holocausto contínuo será oferecido, e a sua oferta de bebida.",
           "B": "Ofereçam também {{divine_name:ao SENHOR|a Javé}} um bode como oferta pelo pecado, além do holocausto contínuo e da sua oferta de bebida.",
           "R": "Ofereçam também {{divine_name:ao SENHOR|a Javé}} um bode como oferta pelo pecado. Ofereçam esse bode além do holocausto diário e da sua oferta de bebida."
+        },
+        "am": {
+          "L": "ከፍየሎችም አንድ አውራ ፍየል {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለኃጢአት መሥዋዕት [ይሁን]፤ ከዘወትሩ የሚቃጠል መሥዋዕት ሌላ ይቅረብ፣ የመጠጥ ቁርባኑም።",
+          "B": "ደግሞም ከዘወትሩ የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ በተጨማሪ አንድ አውራ ፍየል {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኃጢአት መሥዋዕት ሆኖ ይቅረብ።",
+          "R": "ደግሞም አንድ አውራ ፍየል {{divine_name:ለእግዚአብሔር|ለያህዌ}} የኃጢአት መሥዋዕት አድርጋችሁ አቅርቡ። ይህንንም ከዕለታዊው የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ በተጨማሪ አቅርቡት።"
         }
       },
       "decisions": [
@@ -2705,6 +2953,11 @@
           "L": "E no primeiro mês, no décimo quarto dia do mês, [é] a Páscoa {{divine_name:ao SENHOR|a Javé}}.",
           "B": "No primeiro mês, no dia catorze do mês, celebra-se a Páscoa em honra {{divine_name:do SENHOR|de Javé}}.",
           "R": "A Páscoa em honra {{divine_name:do SENHOR|de Javé}} é no dia catorze do primeiro mês."
+        },
+        "am": {
+          "L": "በመጀመሪያውም ወር፣ ከወሩ በአሥራ አራተኛው ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚሆን ፋሲካ [ነው]።",
+          "B": "በመጀመሪያው ወር፣ ከወሩ በአሥራ አራተኛው ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ፋሲካ ይከበራል።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ፋሲካ በመጀመሪያው ወር በአሥራ አራተኛው ቀን ነው።"
         }
       },
       "decisions": [
@@ -2826,6 +3079,11 @@
           "L": "E no décimo quinto dia deste mês [haverá] festa; sete dias se comerão pães sem fermento.",
           "B": "No dia quinze deste mês haverá uma festa, e durante sete dias o pão que se comer será feito sem fermento.",
           "R": "No dia quinze desse mês começa uma festa. Durante sete dias, o pão que vocês comerem tem de ser feito sem fermento."
+        },
+        "am": {
+          "L": "በዚህም ወር በአሥራ አምስተኛው ቀን በዓል [ነው]፤ ሰባት ቀን ቂጣ ይበላል።",
+          "B": "በዚሁ ወር በአሥራ አምስተኛው ቀን በዓል ይከበራል፤ ለሰባት ቀንም ያለ እርሾ የተጋገረ ቂጣ ይበላ።",
+          "R": "በዚያው ወር በአሥራ አምስተኛው ቀን በዓል ይጀምራል። ለሰባት ቀን ያለ እርሾ የተጋገረ ቂጣ ብሉ።"
         }
       },
       "decisions": [
@@ -2978,6 +3236,11 @@
           "L": "No primeiro dia [haverá] santa convocação; nenhum trabalho servil vocês farão.",
           "B": "O primeiro dia será uma reunião sagrada, e nele vocês não farão nenhum dos seus trabalhos habituais.",
           "R": "No primeiro dia, façam uma reunião sagrada de adoração. Não façam o trabalho de todo dia."
+        },
+        "am": {
+          "L": "በመጀመሪያው ቀን የተቀደሰ ጉባኤ [ይሁን]፤ ምንም የተግባር ሥራ አትሥሩ።",
+          "B": "የመጀመሪያው ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ በዚያ ቀን የዘወትር ሥራችሁን አትሥሩ።",
+          "R": "በመጀመሪያው ቀን ለአምልኮ የተቀደሰ ስብሰባ አድርጉ። የዕለት ሥራችሁን አትሥሩ።"
         }
       },
       "decisions": [
@@ -3076,6 +3339,29 @@
           "reason": "The terms Leviticus 23:2 and 23:7 set in Portuguese for the holy days of Numbers 28-29 (m1, m2): \"santa convocação\" and \"trabalho servil\" at Literal, \"reunião sagrada\" and \"trabalhos habituais\" at Balanced, \"reunião sagrada de adoração\" and \"o trabalho de todo dia\" at Readable. They are repeated in verses 25-26 and chapter 29.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280180031",
+            "o040280180061",
+            "o040280180071"
+          ],
+          "choice": "\"የተቀደሰ ጉባኤ\" (holy convocation, L, B), \"ለአምልኮ የተቀደሰ ስብሰባ\" (R); \"ምንም የተግባር ሥራ አትሥሩ\" (L), \"የዘወትር ሥራችሁን አትሥሩ\" (B), \"የዕለት ሥራችሁን አትሥሩ\" (R) for \"any work of labor\"",
+          "alternatives": [
+            "\"ምንም ሥራ አትሥሩ\" (no work at all)"
+          ],
+          "reason": "\"የተቀደሰ ጉባኤ\" is the Pentateuch wording (Exodus 12:16). \"Work of labor\" is ordinary daily work, and is kept apart from \"any work\" on the Day of Atonement (29:7), which is \"ምንም ሥራ\". These words recur on every feast day.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3150,6 +3436,11 @@
           "L": "E vocês apresentarão oferta queimada, holocausto {{divine_name:ao SENHOR|a Javé}}: dois novilhos, filhos do gado, e um carneiro, e sete cordeiros, filhos de um ano; sem defeito eles serão para vocês.",
           "B": "Vocês trarão {{divine_name:ao SENHOR|a Javé}} uma oferta queimada, um holocausto de dois novilhos, um carneiro e sete cordeiros de um ano. Cuidem que sejam sem defeito.",
           "R": "Tragam uma oferta queimada no fogo para {{divine_name:o SENHOR|Javé}}. Ofereçam como holocausto dois novilhos, um carneiro e sete cordeiros machos de um ano. Cuidem que todos estejam sem nenhum defeito."
+        },
+        "am": {
+          "L": "በእሳት የሚቀርብ መሥዋዕት፣ የሚቃጠል መሥዋዕት {{divine_name:ለእግዚአብሔር|ለያህዌ}} ታቀርባላችሁ፤ ከከብት መንጋ የሆኑ ሁለት ወይፈኖች፣ አንድ አውራ በግ፣ የዓመት ልጆች የሆኑ ሰባት ጠቦቶች፤ ነውር የሌለባቸው ይሁኑላችሁ።",
+          "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት አቅርቡ፤ ይኸውም ሁለት ወይፈኖች፣ አንድ አውራ በግና አንድ ዓመት የሆናቸው ሰባት ተባዕት ጠቦቶች ያሉበት የሚቃጠል መሥዋዕት ነው። ነውር የሌለባቸው መሆናቸውን አረጋግጡ።",
+          "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት አምጡ። ሁለት ወይፈኖች፣ አንድ አውራ በግና አንድ ዓመት የሆናቸው ሰባት ተባዕት ጠቦቶች የሚቃጠል መሥዋዕት አድርጋችሁ አቅርቡ። ምንም ጉድለት እንደሌለባቸው እርግጠኛ ሁኑ።"
         }
       },
       "decisions": [
@@ -3292,6 +3583,11 @@
           "L": "E a sua oferta de cereal, flor de farinha amassada com azeite: três décimos [de efa] para o novilho e dois décimos para o carneiro vocês oferecerão.",
           "B": "Com eles, ofereçam como oferta de cereal flor de farinha amassada com azeite: {{units:cerca de 6,6 litros|três décimos de efa}} para cada novilho e {{units:cerca de 4,4 litros|dois décimos de efa}} para o carneiro.",
           "R": "Com eles, tragam uma oferta de cereal da melhor farinha misturada com azeite. Tragam {{units:cerca de 6,6 litros|três décimos de efa}} para cada novilho e {{units:cerca de 4,4 litros|dois décimos de efa}} para o carneiro."
+        },
+        "am": {
+          "L": "የእህል ቁርባናቸውም በዘይት የተለወሰ የላመ ዱቄት [ይሁን]፤ ለወይፈኑ የ[ኢፍ] ሦስት አሥረኛ፣ ለአውራ በጉም ሁለት አሥረኛ ታቀርባላችሁ።",
+          "B": "ከእነርሱም ጋር በዘይት የተለወሰ የላመ ዱቄት የእህል ቁርባን አቅርቡ፤ ለእያንዳንዱ ወይፈን {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}}፣ ለአውራ በጉም {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}}።",
+          "R": "ከእነርሱም ጋር በወይራ ዘይት የተለወሰ የላመ ዱቄት የእህል ቁርባን አምጡ። ለእያንዳንዱ ወይፈን {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}}፣ ለአውራ በጉም {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} አምጡ።"
         }
       },
       "decisions": [
@@ -3392,6 +3688,11 @@
           "L": "Um décimo [de efa], um décimo, oferecerás para cada cordeiro, para os sete cordeiros.",
           "B": "Para cada um dos sete cordeiros, oferece {{units:cerca de 2,2 litros|um décimo de efa}}.",
           "R": "Traz {{units:cerca de 2,2 litros|um décimo de efa}} para cada um dos sete cordeiros."
+        },
+        "am": {
+          "L": "ለሰባቱ ጠቦቶች ለእያንዳንዱ ጠቦት የ[ኢፍ] አንድ አሥረኛ፣ አንድ አሥረኛ ታቀርባለህ።",
+          "B": "ለሰባቱ ጠቦቶች ለእያንዳንዳቸው {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} አቅርቡ።",
+          "R": "ለሰባቱ ጠቦቶች ለእያንዳንዳቸው {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} አምጡ።"
         }
       },
       "decisions": [
@@ -3487,6 +3788,11 @@
           "L": "E um bode [como] oferta pelo pecado, para fazer expiação por vocês.",
           "B": "Ofereçam também um bode como oferta pelo pecado, para fazer expiação por vocês.",
           "R": "Ofereçam também um bode como oferta pelo pecado, para fazer expiação por vocês."
+        },
+        "am": {
+          "L": "ያስተሰርይላችሁም ዘንድ የኃጢአት መሥዋዕት የሚሆን አንድ አውራ ፍየል [ይቅረብ]።",
+          "B": "ደግሞም ያስተሰርይላችሁ ዘንድ አንድ አውራ ፍየል የኃጢአት መሥዋዕት አድርጋችሁ አቅርቡ።",
+          "R": "ደግሞም ኃጢአታችሁ እንዲሰረይላችሁ አንድ አውራ ፍየል የኃጢአት መሥዋዕት አድርጋችሁ አቅርቡ።"
         }
       },
       "decisions": [
@@ -3578,6 +3884,27 @@
           "reason": "The English Readable keeps \"make atonement\"; Korean Readable adds a short phrase so the Sino-Korean \"속죄하다\" is understood, following the meaning decision (removing the people's sin so they can stay near God).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280220042",
+            "o040280220051",
+            "o040280220052"
+          ],
+          "choice": "\"ያስተሰርይላችሁ ዘንድ\" (to make atonement for you, L, B); \"ኃጢአታችሁ እንዲሰረይላችሁ\" (so that your sin is forgiven you, R)",
+          "alternatives": [],
+          "reason": "As the Pentateuch terms list: Literal and Balanced keep the verb of atonement, Readable says what it does. The same words recur with every sin offering in chapters 28 and 29.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3644,6 +3971,11 @@
           "L": "Além do holocausto da manhã, que [é] para o holocausto contínuo, vocês oferecerão estes.",
           "B": "Tudo isso será oferecido além do holocausto da manhã, que faz parte do holocausto contínuo.",
           "R": "Ofereçam tudo isso além do cordeiro da manhã do holocausto diário."
+        },
+        "am": {
+          "L": "ለዘወትሩ የሚቃጠል መሥዋዕት ከሚሆነው ከጠዋቱ የሚቃጠል መሥዋዕት ሌላ እነዚህን ታቀርባላችሁ።",
+          "B": "ይህ ሁሉ የዘወትሩ የሚቃጠል መሥዋዕት ክፍል ከሆነው ከጠዋቱ የሚቃጠል መሥዋዕት በተጨማሪ ይቅረብ።",
+          "R": "እነዚህን ሁሉ ከዕለታዊው የሚቃጠል መሥዋዕት የጠዋት ጠቦት በተጨማሪ አቅርቡ።"
         }
       },
       "decisions": [
@@ -3754,6 +4086,11 @@
           "L": "Como estes vocês oferecerão por dia, sete dias, alimento de oferta queimada, aroma agradável {{divine_name:ao SENHOR|a Javé}}; além do holocausto contínuo será oferecido, e a sua oferta de bebida.",
           "B": "Ofereçam esse alimento a cada dia, durante sete dias, como oferta queimada, de aroma agradável {{divine_name:ao SENHOR|a Javé}}. Isso será oferecido além do holocausto contínuo e da sua oferta de bebida.",
           "R": "Tragam as mesmas ofertas todos os dias, durante sete dias. Elas são alimento para {{divine_name:o SENHOR|Javé}}, ofertas queimadas no fogo, e o cheiro delas {{deity_pronoun:lhe|Lhe}} agrada. Ofereçam essas ofertas além do holocausto diário e da sua oferta de bebida."
+        },
+        "am": {
+          "L": "እንደዚሁ ለሰባት ቀን በየቀኑ ታቀርባላችሁ፤ በእሳት የሚቀርብ መሥዋዕት ምግብ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ [ነው]፤ ከዘወትሩ የሚቃጠል መሥዋዕት ሌላ ይቅረብ፣ የመጠጥ ቁርባኑም።",
+          "B": "ይህን ምግብ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ አድርጋችሁ ለሰባት ቀን በየቀኑ አቅርቡ። ይህም ከዘወትሩ የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ በተጨማሪ ነው።",
+          "R": "እነዚህኑ መሥዋዕቶች ለሰባት ቀን በየቀኑ አምጡ። እነርሱ {{divine_name:የእግዚአብሔር|የያህዌ}} ምግብ ናቸው፤ በመሠዊያው ላይ በእሳት የሚቀርቡ መሥዋዕቶች ናቸው፤ መዓዛቸውም ደስ ያሰኘዋል። ከዕለታዊው የሚቃጠል መሥዋዕትና ከመጠጥ ቁርባኑ በተጨማሪ አቅርቧቸው።"
         }
       },
       "decisions": [
@@ -3892,6 +4229,11 @@
           "L": "E no sétimo dia haverá para vocês santa convocação; nenhum trabalho servil vocês farão.",
           "B": "O sétimo dia será para vocês uma reunião sagrada, e nele vocês não farão nenhum dos seus trabalhos habituais.",
           "R": "No sétimo dia, façam outra reunião sagrada de adoração. Não façam o trabalho de todo dia."
+        },
+        "am": {
+          "L": "በሰባተኛውም ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ ምንም የተግባር ሥራ አትሥሩ።",
+          "B": "ሰባተኛው ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ በዚያ ቀን የዘወትር ሥራችሁን አትሥሩ።",
+          "R": "በሰባተኛውም ቀን እንደገና ለአምልኮ የተቀደሰ ስብሰባ አድርጉ። የዕለት ሥራችሁን አትሥሩ።"
         }
       },
       "decisions": [
@@ -4004,6 +4346,11 @@
           "L": "E no dia das primícias, quando vocês apresentarem uma oferta de cereal nova {{divine_name:ao SENHOR|a Javé}} nas suas [festa das] Semanas, haverá para vocês santa convocação; nenhum trabalho servil vocês farão.",
           "B": "O dia das primícias, quando vocês trouxerem {{divine_name:ao SENHOR|a Javé}} uma oferta de cereal da nova colheita na festa das Semanas, será para vocês uma reunião sagrada. Não façam nenhum dos seus trabalhos habituais.",
           "R": "O dia das primícias é na festa das Semanas. Nesse dia, quando vocês trouxerem {{divine_name:ao SENHOR|a Javé}} uma oferta de cereal da nova colheita, façam uma reunião sagrada de adoração. Não façam o trabalho de todo dia."
+        },
+        "am": {
+          "L": "በበኩራትም ቀን፣ በሳምንታታችሁ [በዓል] አዲስ የእህል ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} በምታቀርቡበት ጊዜ የተቀደሰ ጉባኤ ይሁንላችሁ፤ ምንም የተግባር ሥራ አትሥሩ።",
+          "B": "በሳምንታት በዓላችሁ ከአዲሱ ሰብል የእህል ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የምታቀርቡበት የበኩራት ቀን የተቀደሰ ጉባኤ ይሁንላችሁ፤ በዚያ ቀን የዘወትር ሥራችሁን አትሥሩ።",
+          "R": "የበኩራት ቀን የሚውለው በሳምንታት በዓላችሁ ነው። በዚያ ቀን ከአዲሱ መከር የእህል ቁርባን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስታመጡ ለአምልኮ የተቀደሰ ስብሰባ አድርጉ። የዕለት ሥራችሁን አትሥሩ።"
         }
       },
       "decisions": [
@@ -4112,6 +4459,27 @@
           "reason": "\"Primícias\" is the word for the first produce of the harvest (m1), as Leviticus 23:17 and Exodus 34:22 use it in Portuguese. The Hebrew says only \"your weeks\" (m2); Literal brackets the words Portuguese needs, and Balanced and Readable name \"a festa das Semanas\", as Exodus 34:22 and Leviticus 23 do.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040280260072"
+          ],
+          "choice": "\"የሳምንታት በዓል\" (Festival of Weeks); \"በኩራት\" (firstfruits)",
+          "alternatives": [
+            "\"በዓለ ሃምሳ\""
+          ],
+          "reason": "As settled for Exodus 34:22; \"በዓለ ሃምሳ\" is kept for the New Testament Pentecost.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4182,6 +4550,11 @@
           "L": "E vocês apresentarão um holocausto como aroma agradável {{divine_name:ao SENHOR|a Javé}}: dois novilhos, filhos do gado, um carneiro, sete cordeiros, filhos de um ano,",
           "B": "Apresentem um holocausto de aroma agradável {{divine_name:ao SENHOR|a Javé}}: dois novilhos, um carneiro e sete cordeiros de um ano,",
           "R": "Tragam um holocausto cujo cheiro agrada {{divine_name:ao SENHOR|a Javé}}: dois novilhos, um carneiro e sete cordeiros machos de um ano."
+        },
+        "am": {
+          "L": "ደስ የሚያሰኝ መዓዛ እንዲሆን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚቃጠል መሥዋዕት ታቀርባላችሁ፤ ከከብት መንጋ የሆኑ ሁለት ወይፈኖች፣ አንድ አውራ በግ፣ የዓመት ልጆች የሆኑ ሰባት ጠቦቶች፤",
+          "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ እንዲሆን ሁለት ወይፈኖች፣ አንድ አውራ በግና አንድ ዓመት የሆናቸው ሰባት ተባዕት ጠቦቶች የሚቃጠል መሥዋዕት አድርጋችሁ አቅርቡ፤",
+          "R": "መዓዛው {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኝ የሚቃጠል መሥዋዕት አምጡ፤ ሁለት ወይፈኖች፣ አንድ አውራ በግና አንድ ዓመት የሆናቸው ሰባት ተባዕት ጠቦቶች።"
         }
       },
       "decisions": [
@@ -4276,6 +4649,11 @@
           "L": "e a sua oferta de cereal, flor de farinha amassada com azeite: três décimos [de efa] para cada novilho, dois décimos para o único carneiro,",
           "B": "com a sua oferta de cereal de flor de farinha amassada com azeite: {{units:cerca de 6,6 litros|três décimos de efa}} para cada novilho, {{units:cerca de 4,4 litros|dois décimos de efa}} para o carneiro,",
           "R": "Com eles, tragam uma oferta de cereal da melhor farinha misturada com azeite: {{units:cerca de 6,6 litros|três décimos de efa}} para cada novilho e {{units:cerca de 4,4 litros|dois décimos de efa}} para o carneiro."
+        },
+        "am": {
+          "L": "የእህል ቁርባናቸውም በዘይት የተለወሰ የላመ ዱቄት፤ ለእያንዳንዱ ወይፈን የ[ኢፍ] ሦስት አሥረኛ፣ ለአንዱ አውራ በግ ሁለት አሥረኛ፣",
+          "B": "ከእነርሱም ጋር በዘይት የተለወሰ የላመ ዱቄት የእህል ቁርባን አቅርቡ፤ ለእያንዳንዱ ወይፈን {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}}፣ ለአውራ በጉ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}}፣",
+          "R": "ከእነርሱም ጋር በወይራ ዘይት የተለወሰ የላመ ዱቄት የእህል ቁርባን አምጡ። ለእያንዳንዱ ወይፈን {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}}፣ ለአውራ በጉም {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} አምጡ።"
         }
       },
       "decisions": [
@@ -4375,6 +4753,11 @@
           "L": "um décimo [de efa], um décimo, para cada cordeiro, para os sete cordeiros,",
           "B": "e {{units:cerca de 2,2 litros|um décimo de efa}} para cada um dos sete cordeiros,",
           "R": "Tragam {{units:cerca de 2,2 litros|um décimo de efa}} para cada um dos sete cordeiros."
+        },
+        "am": {
+          "L": "ለሰባቱ ጠቦቶች ለእያንዳንዱ ጠቦት የ[ኢፍ] አንድ አሥረኛ፣ አንድ አሥረኛ፣",
+          "B": "ለሰባቱ ጠቦቶችም ለእያንዳንዳቸው {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}}፤",
+          "R": "ለሰባቱ ጠቦቶች ለእያንዳንዳቸው {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} አምጡ።"
         }
       },
       "decisions": [
@@ -4469,6 +4852,11 @@
           "L": "um bode das cabras, para fazer expiação por vocês.",
           "B": "e um bode para fazer expiação por vocês.",
           "R": "Ofereçam também um bode para fazer expiação por vocês."
+        },
+        "am": {
+          "L": "ያስተሰርይላችሁም ዘንድ ከፍየሎች አንድ አውራ ፍየል።",
+          "B": "ያስተሰርይላችሁም ዘንድ አንድ አውራ ፍየል አቅርቡ።",
+          "R": "ደግሞም ኃጢአታችሁ እንዲሰረይላችሁ አንድ አውራ ፍየል አቅርቡ።"
         }
       },
       "decisions": [
@@ -4572,6 +4960,11 @@
           "L": "Além do holocausto contínuo e da sua oferta de cereal [os] oferecerão; sem defeito eles serão para vocês; e as suas ofertas de bebida.",
           "B": "Ofereçam tudo isso além do holocausto contínuo e da sua oferta de cereal, e com isso as suas ofertas de bebida. Os animais devem ser sem defeito.",
           "R": "Tragam esses animais e as suas ofertas de bebida além do holocausto diário e da sua oferta de cereal. Todos os animais devem estar sem nenhum defeito."
+        },
+        "am": {
+          "L": "ከዘወትሩ የሚቃጠል መሥዋዕትና ከእህል ቁርባኑ ሌላ [እነዚህን] ታቀርባላችሁ፤ ነውር የሌለባቸው ይሁኑላችሁ፤ የመጠጥ ቁርባኖቻቸውም።",
+          "B": "እነዚህን ሁሉ ከዘወትሩ የሚቃጠል መሥዋዕትና ከእህል ቁርባኑ በተጨማሪ ከመጠጥ ቁርባኖቻቸው ጋር አቅርቡ። እንስሶቹ ነውር የሌለባቸው ይሁኑ።",
+          "R": "እነዚህን እንስሶችና የመጠጥ ቁርባኖቻቸውን ከዕለታዊው የሚቃጠል መሥዋዕትና ከእህል ቁርባኑ በተጨማሪ አምጡ። ከእንስሶቹ አንዳቸውም ምንም ጉድለት ሊኖርባቸው አይገባም።"
         }
       },
       "decisions": [
