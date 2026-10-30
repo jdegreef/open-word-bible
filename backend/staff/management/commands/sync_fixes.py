@@ -21,6 +21,7 @@ from django.core.mail import send_mail
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
+from accounts import controls
 from feedback.models import ReaderMessage
 from staff import jobs
 from staff.inbox import verse_label, verse_url
@@ -82,6 +83,12 @@ class Command(BaseCommand):
                 self.stdout.write(f"would tell the writer of message {m.id} ({m.verse}): {pr_url}")
                 continue
             subject, body = THANKS
+            if not controls.wants(m.user, "replies"):
+                # Not emailed: the account page shows the message done.
+                m.fixed_at, m.fix_url, m.status = timezone.now(), pr_url, ReaderMessage.Status.DONE
+                m.save(update_fields=["fixed_at", "fix_url", "status"])
+                record(None, "message.fixed", f"{m.get_kind_display()} on {m.verse}", message=m.id, url=pr_url)
+                continue
             quoted = "\n".join("> " + line for line in m.text.splitlines())
             try:
                 send_mail(subject.format(kind=m.get_kind_display().lower(), verse=verse_label(m.verse)),

@@ -177,7 +177,7 @@ def _take_link(secret, purposes):
     return link
 
 
-def _issue_token(user, label):
+def issue_token(user, label):
     user.last_login = timezone.now()
     user.save(update_fields=["last_login"])
     sync_super_admin(user)
@@ -205,7 +205,7 @@ def redeem_link(secret, label=""):
     elif created:
         user.set_unusable_password()
         user.save(update_fields=["password"])
-    return _issue_token(user, label)
+    return issue_token(user, label)
 
 
 @transaction.atomic
@@ -224,7 +224,7 @@ def reset_password(secret, password, label=""):
     user.set_password(password)
     user.save(update_fields=["password"])
     user.api_tokens.all().delete()
-    return _issue_token(user, label)
+    return issue_token(user, label)
 
 
 # Compared against when there is no such account, so a wrong address takes
@@ -250,7 +250,7 @@ def sign_in_with_password(email, password, ip=None, label=""):
         FailedSignIn.objects.create(email=email, ip=ip)
         FailedSignIn.objects.filter(created_at__lt=timezone.now() - timedelta(hours=1)).delete()
         return None
-    return _issue_token(user, label)
+    return issue_token(user, label)
 
 
 def delete_account(user):

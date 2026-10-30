@@ -6,7 +6,9 @@ Configuration comes from the environment:
   DJANGO_DEBUG          "1" for local development
   DJANGO_ALLOWED_HOSTS  comma-separated host names
   CSRF_TRUSTED_ORIGINS  comma-separated origins, e.g. https://api.openwordbible.org
-  OWB_SITE_URL          the reader site, for sign-in links (default https://openwordbible.org)
+  OWB_SITE_URL          the reader site, for sign-in links (default https://openwordbible.org);
+                        its host is also the relying party passkeys are made for
+  OWB_API_URL           this API, for links in emails (default https://api.openwordbible.org)
   CORS_ALLOWED_ORIGINS  sites that may call the API (default: OWB_SITE_URL)
   OWB_SUPER_ADMIN_EMAILS  comma-separated emails that are super admins (set
                         in the Render dashboard, so they are not published)
@@ -32,6 +34,7 @@ Configuration comes from the environment:
 import os
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 import dj_database_url
 
@@ -71,6 +74,7 @@ INSTALLED_APPS = [
     "api",
     "accounts",
     "feedback",
+    "groups",
     "staff",
 ]
 
@@ -181,6 +185,11 @@ CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", OWB_SITE_URL) + (
     ["http://localhost:8000", "http://127.0.0.1:8000", "http://localhost:8080"] if DEBUG else [])
 OWB_SUPER_ADMIN_EMAILS = [e.lower() for e in env_list("OWB_SUPER_ADMIN_EMAILS")]
 SIGN_IN_LINK_MINUTES = 20
+OWB_API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
+# Passkeys (accounts/passkeys.py) belong to the site's host, and the browser
+# says which of its origins made or used one.
+PASSKEY_RP_ID = urlparse(OWB_SITE_URL).hostname or "localhost"
+PASSKEY_ORIGINS = [o for o in CORS_ALLOWED_ORIGINS if (urlparse(o).hostname or "").endswith(PASSKEY_RP_ID)]
 
 # The admin (backend/staff/).
 OWB_GITHUB_TOKEN = os.environ.get("OWB_GITHUB_TOKEN", "")

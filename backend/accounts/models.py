@@ -104,10 +104,14 @@ class SignInLink(models.Model):
         SIGN_UP = "sign_up", "Confirm a new password"
         RESET = "reset", "Reset the password"
         GOOGLE = "google", "Signed in with Google"
+        CHANGE_EMAIL = "change_email", "Confirm a new email address"
 
     email = models.EmailField(db_index=True)
     token_hash = models.CharField(max_length=64, unique=True)
-    purpose = models.CharField(max_length=10, choices=Purpose.choices, default=Purpose.SIGN_IN)
+    purpose = models.CharField(max_length=16, choices=Purpose.choices, default=Purpose.SIGN_IN)
+    # Changing the address: the address it moves to. The link goes there, and
+    # email is the account's address until it is used.
+    new_email = models.EmailField(blank=True)
     # Sign-up: the chosen password, already hashed. It becomes the account's
     # password only when the link is used, so it never applies to an
     # address its owner has not confirmed.
@@ -145,6 +149,50 @@ class ApiToken(models.Model):
         return f"{self.user} ({self.label or 'device'})"
 
 
+class EmailPrefs(models.Model):
+    """Which emails a reader wants (the account page's Email section,
+    accounts/controls.py). Sign-in emails always come: they are asked for.
+    Without a row, the defaults: replies yes, reminders no."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="email_prefs")
+    replies = models.BooleanField(default=True, help_text="Editors' replies, and fixes a suggestion led to")
+    plan_reminders = models.BooleanField(default=False, help_text="Each day's reading in the reader's plan")
+    reminder_hour = models.PositiveSmallIntegerField(default=7, help_text="0 to 23, in timezone")
+    timezone = models.CharField(max_length=64, default="UTC", help_text="An IANA zone, as the browser gave it")
+    language = models.CharField(max_length=3, default="en", help_text="The site language the links go to")
+    last_reminder = models.DateField(null=True, blank=True, help_text="The reader's day the last one was for")
+
+    def __str__(self):
+        return f"Email choices ({self.user})"
+
+
+class Passkey(models.Model):
+    """A passkey (WebAuthn credential) that signs the reader in
+    (accounts/passkeys.py). Only its public key is kept."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="passkeys")
+    credential_id = models.CharField(max_length=1400, unique=True, help_text="base64url")
+    public_key = models.BinaryField()
+    sign_count = models.BigIntegerField(default=0)
+    transports = models.JSONField(default=list, blank=True)
+    label = models.CharField(max_length=200, blank=True, help_text="The browser it was made on")
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_used_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"Passkey ({self.user})"
+
+
+class PasskeyChallenge(models.Model):
+    """A challenge handed to a browser for one passkey ceremony, used once
+    within PASSKEY_MINUTES. user is set when adding a passkey to an account."""
+    challenge = models.CharField(max_length=128, unique=True, help_text="base64url")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True,
+                             related_name="+")
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+
 class Mark(models.Model):
     """A reader's bookmark, highlight and note on one verse, synced from the
     reader (web/reader.js keeps them in the browser as owb.marks;
@@ -162,6 +210,8 @@ class Mark(models.Model):
     note = models.TextField(blank=True, help_text="The reader's own note, private to them")
     text = models.TextField(blank=True, help_text="The verse's words as shown when it was marked")
     lang = models.CharField(max_length=3, blank=True)
+    tags = models.JSONField(default=list, blank=True,
+                            help_text='The reader\'s collections the verse is in: ["Prayer", ...]')
     updated_at = models.BigIntegerField()
 
     class Meta:
@@ -170,6 +220,50 @@ class Mark(models.Model):
 
     def __str__(self):
         return f"{self.verse} ({self.user})"
+
+
+class PassageNote(models.Model):
+    """A reader's note on a passage of several verses in one chapter
+    ("JHN.3.16-21"), synced like Mark (web/reader.js keeps them as
+    owb.notes). Private to its reader, like a verse's note; a note cleared
+    on one device stays as a row without one, so the clearing reaches the
+    others."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="passage_notes")
+    passage = models.CharField(max_length=20, help_text='"JHN.3.16-21"')
+    note = models.TextField(blank=True)
+    text = models.TextField(blank=True, help_text="The passage's words as shown when the note was written")
+    lang = models.CharField(max_length=3, blank=True)
+    tags = models.JSONField(default=list, blank=True)
+    updated_at = models.BigIntegerField()
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["user", "passage"], name="unique_passage_note")]
+        ordering = ["user", "passage"]
+
+    def __str__(self):
+        return f"{self.passage} ({self.user})"
+
+
+class SavedWord(models.Model):
+    """A Greek, Hebrew or Aramaic dictionary form in a reader's word list:
+    saved, or with the reader's note. Synced like Mark from the browser's
+    owb.words (web/site.js OWBStudy); a word with neither is kept without,
+    so taking it off the list reaches the other devices. The history of
+    words looked up stays in the browser (owb.lookups)."""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="saved_words")
+    lemma = models.CharField(max_length=64, help_text="As the source data spells it")
+    saved = models.BooleanField(default=False)
+    note = models.TextField(blank=True)
+    gloss = models.CharField(max_length=120, blank=True, help_text="Its commonest English gloss, for the list")
+    language = models.CharField(max_length=3, blank=True, help_text="grc, hbo or arc")
+    updated_at = models.BigIntegerField()
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["user", "lemma"], name="unique_saved_word")]
+        ordering = ["user", "lemma"]
+
+    def __str__(self):
+        return f"{self.lemma} ({self.user})"
 
 
 class ReadingPlace(models.Model):
@@ -193,6 +287,9 @@ class ReaderState(models.Model):
     choices, taken whole: the latest device to change one wins."""
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reader_state")
     plans = models.JSONField(default=dict)
+    # The reader's own plans (web/plans.js owb.myplans): {id: {name, days, at}},
+    # a deleted one kept as {at}.
+    custom_plans = models.JSONField(default=dict)
     prefs = models.JSONField(default=dict)
     prefs_at = models.BigIntegerField(default=0)
 

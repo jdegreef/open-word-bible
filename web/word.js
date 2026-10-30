@@ -122,6 +122,58 @@ if (typeof document !== "undefined") (function () {
       ds.appendChild(c);
     });
     box.appendChild(ds);
+    box.appendChild(studyBox(lemma, e));
+  }
+
+  // The reader's word list (web/site.js OWBStudy): save the word, keep a
+  // note on it, and remember it as looked up, on this device.
+  function studyBox(lemma, e) {
+    var S = window.OWBStudy;
+    var info = { g: e.g.length ? e.g[0][0] : "", l: e.lang };
+    var s = section(UI.mine);
+    if (!S) return s;
+    S.lookedUp(lemma, info);
+    var row = el("p", "word-save-row");
+    var save = el("button", "mark-bookmark save-word");
+    save.type = "button";
+    function show() {
+      var on = !!(S.word(lemma) || {}).s;
+      save.textContent = on ? UI.saved : UI.save;
+      save.setAttribute("aria-pressed", on ? "true" : "false");
+    }
+    save.addEventListener("click", function () {
+      S.setWord(lemma, { s: !(S.word(lemma) || {}).s }, info);
+      show();
+    });
+    show();
+    row.appendChild(save);
+    var all = el("a", "mark-all", UI.list);
+    all.href = DATA.savedUrl + "#words";
+    row.appendChild(all);
+    s.appendChild(row);
+    var label = el("label", "my-note-label", UI.note);
+    label.htmlFor = "word-note";
+    s.appendChild(label);
+    var field = el("textarea", "cite-text my-note-field");
+    field.id = "word-note";
+    field.rows = 3;
+    field.maxLength = 5000;
+    field.value = (S.word(lemma) || {}).n || "";
+    s.appendChild(field);
+    s.appendChild(el("p", "fine my-note-private", UI.note_private));
+    var buttons = el("p", "my-note-buttons");
+    var keep = el("button", "button", UI.note_save);
+    keep.type = "button";
+    var said = el("span", "form-note");
+    said.setAttribute("role", "status");
+    keep.addEventListener("click", function () {
+      S.setWord(lemma, { n: field.value.trim() || null }, info);
+      said.textContent = UI.note_kept;
+    });
+    buttons.appendChild(keep);
+    buttons.appendChild(said);
+    s.appendChild(buttons);
+    return s;
   }
 
   function fail(text) {
