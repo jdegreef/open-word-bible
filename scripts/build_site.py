@@ -2812,6 +2812,90 @@ def data_html(lang="en"):
 """
 
 
+class Audience(NamedTuple):
+    id: str
+    icon: str
+    steps: tuple  # of (icon, site path): where to start, in order
+    articles: tuple  # the slugs to read first
+
+
+# Who the translation is for (the Ochorus "For" band): each gets a page at
+# /for/<id>/ that starts them where it helps them most. The steps' words are
+# the catalog's audiences.<id>.steps, in the same order.
+AUDIENCES = (
+    Audience("preachers", "book",
+             (("book", "/jhn/1/?level=L"), ("scale", "/compare/?v=JHN.1.1"), ("key", "/terms/")),
+             ("showing-the-work", "three-levels-one-meaning", "when-manuscripts-disagree")),
+    Audience("translators", "languages",
+             (("book", "/jhn/1/?level=L"), ("key", "/terms/"), ("download", "/download/")),
+             ("translating-for-every-language", "never-typed-by-hand",
+              "ai-assisted-translation-and-human-review")),
+    Audience("seekers", "search",
+             (("book", "/jhn/1/?level=R"), ("info", "/#example-h"), ("check", "/about/status/")),
+             ("why-open-word-bible", "how-reliable-is-the-text", "what-the-dead-sea-scrolls-show")),
+)
+
+
+def audience_url(audience):
+    return f"/for/{audience.id}/"
+
+
+def audience_cards(audiences, lang="en"):
+    """A card for each audience, leading to its page."""
+    words = catalog(lang)["audiences"]
+    return "".join(f'<li><a class="data-card" href="{url(lang, audience_url(a))}">'
+                   f'<span class="tile sm">{icon(ICONS[a.icon])}</span>'
+                   f'<span><strong>{words[a.id]["name"]}</strong><span>{words[a.id]["card"]}</span></span></a></li>'
+                   for a in audiences)
+
+
+def home_audiences(lang="en"):
+    """The home page's way in for each audience (audience_page)."""
+    words = catalog(lang)["audiences"]
+    return f"""<section class="audiences" aria-labelledby="audiences-h">
+<p class="eyebrow">{words["eyebrow"]}</p>
+<h2 id="audiences-h">{words["heading"]}</h2>
+<p class="data-text">{words["text"]}</p>
+<ul class="data-cards">{audience_cards(AUDIENCES, lang)}</ul>
+</section>
+"""
+
+
+def audience_page(audience, lang="en"):
+    """Where one audience starts: the steps to take first, the articles to
+    read (those written in lang) and the other audiences."""
+    words = catalog(lang)["audiences"]
+    own = words[audience.id]
+    steps = "".join(f'<li><a class="data-card" href="{url(lang, path)}"><span class="tile sm">{icon(ICONS[ico])}</span>'
+                    f'<span><strong>{step["title"]}</strong><span>{step["text"]}</span></span></a></li>'
+                    for (ico, path), step in zip(audience.steps, own["steps"], strict=True))
+    written = {a["slug"]: a for a in load_articles(lang)}
+    reading = [written[slug] for slug in audience.articles if slug in written]
+    articles = f"""<section class="latest" aria-labelledby="audience-read-h">
+{sec_head("audience-read-h", "articles", words["read"], url(lang, "/articles/"), t(lang, "nav.all_articles"))}
+<ul class="a-grid">{article_list(reading, lang)}</ul>
+</section>
+""" if reading else ""
+    others = tuple(a for a in AUDIENCES if a != audience)
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{words["eyebrow"]} &middot; {own["name"]}</p>
+<h1>{own["heading"]}</h1>
+<p class="dek">{own["dek"]}</p>
+</header>
+<section class="data" aria-labelledby="audience-steps-h">
+{sec_head("audience-steps-h", audience.icon, words["steps"])}
+<ul class="data-cards">{steps}</ul>
+</section>
+{articles}<section class="data" aria-labelledby="audience-others-h">
+{sec_head("audience-others-h", "users", words["others"])}
+<ul class="data-cards">{audience_cards(others, lang)}</ul>
+</section>
+"""
+    return page(lang, own["name"], body, path=audience_url(audience), current="/",
+                description=own["dek"])
+
+
 def hero_search(lang="en"):
     """The home page's search box: a verse to go to or words to find, as
     the /search/ page takes them, with the search page's examples to try."""
@@ -2873,7 +2957,7 @@ def home_page(lang="en"):
 {point("check", 4)}
 </ul>
 </section>
-{home_plans(lang)}
+{home_audiences(lang)}{home_plans(lang)}
 {progress_html(lang)}
 {home_terms(lang)}
 {latest}{data_html(lang)}<section class="involve" id="help" aria-labelledby="involve-h">
@@ -4736,6 +4820,8 @@ def build(out):
         add("/search/", search_page(lang))
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))
+        for audience in AUDIENCES:
+            add(audience_url(audience), audience_page(audience, lang))
         plans = available_plans(lang)
         add("/plans/", plans_page(lang, plans), index=bool(plans))
         add("/terms/", terms_page(lang))
