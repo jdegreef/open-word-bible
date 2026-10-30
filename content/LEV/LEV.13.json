@@ -58,6 +58,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés e a Arão, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés e a Arão. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés e a Arão:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴንና አሮንን እንዲህ ሲል ተናገረ፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴንና አሮንን አነጋገራቸው፤ እንዲህም አለ፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴንና አሮንን እንዲህ አላቸው፦"
         }
       },
       "decisions": [
@@ -183,6 +188,11 @@
           "L": "\"Uma pessoa, quando houver na pele da sua carne um inchaço, ou uma crosta, ou uma mancha brilhante, e se tornar na pele da sua carne uma marca de doença escamosa, então ele será levado a Arão, o sacerdote, ou a um dos seus filhos, os sacerdotes.",
           "B": "\"Se aparecer na pele de alguém um inchaço, uma crosta ou uma mancha brilhante, e isso se transformar no que pode ser uma lesão de doença de pele grave, a pessoa será levada a Arão, o sacerdote, ou a um dos seus filhos, os sacerdotes.",
           "R": "\"Pode ser que alguém tenha na pele um inchaço, uma crosta ou uma mancha brilhante. Se isso começar a parecer uma ferida de uma doença de pele grave, a pessoa deve ser levada a Arão, o sacerdote, ou a um dos filhos dele que servem como sacerdotes."
+        },
+        "am": {
+          "L": "«ሰው በሥጋው ቆዳ ላይ እብጠት ወይም ቅርፊት ወይም የሚያንጸባርቅ ቦታ ቢወጣበት፣ በሥጋው ቆዳ ላይም የለምጽ ምልክት ቢሆንበት፣ ወደ ካህኑ ወደ አሮን ወይም ካህናት ከሆኑት ከልጆቹ ወደ አንዱ ይወሰዳል።",
+          "B": "«በአንድ ሰው የሰውነት ቆዳ ላይ እብጠት፣ ቅርፊት ወይም የሚያንጸባርቅ ቦታ ቢወጣና የከባድ የቆዳ በሽታ ቁስል የሚመስል ቢሆን፣ ሰውየው ወደ ካህኑ ወደ አሮን ወይም ካህናት ከሆኑት ከልጆቹ ወደ አንዱ ይወሰድ።",
+          "R": "«አንድ ሰው በቆዳው ላይ እብጠት፣ ቅርፊት ወይም የሚያንጸባርቅ ቦታ ሊወጣበት ይችላል። ይህም የከባድ የቆዳ በሽታ ቁስል መምሰል ከጀመረ፣ ሰውየው ወደ ካህኑ ወደ አሮን ወይም ካህናት ሆነው ከሚያገለግሉት ከልጆቹ ወደ አንዱ መወሰድ አለበት።"
         }
       },
       "decisions": [
@@ -569,6 +579,50 @@
           "reason": "The Hebrew is the general word for a human being, so the law is for men and women alike. Balanced and Readable say \"a pessoa\" through the chapter where the Hebrew says \"he\", with adjectives agreeing with it (\"declarar a pessoa impura\"); Literal keeps \"ele\" and \"o\", as the Hebrew and the English Literal do.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130020151"
+          ],
+          "choice": "\"ለምጽ\" at Literal; \"ከባድ የቆዳ በሽታ\" (serious skin disease) at Balanced and Readable, for every case in Leviticus 13-14",
+          "alternatives": [
+            "\"ለምጽ\" at every level",
+            "\"የሥጋ ደዌ\""
+          ],
+          "reason": "\"ለምጽ\" is the traditional word, kept at Literal and in the Amharic New Testament (Mark 1:40), but today it is heard as leprosy, which the Hebrew term does not mean; Balanced and Readable describe the condition, as the English does. The same Hebrew word for a growth in cloth or a house follows the English levels: \"ለምጽ\" at Literal, \"ሻጋታ\" (mould) at Balanced and Readable (13:47; 14:34).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130020142"
+          ],
+          "choice": "\"ምልክት\" (mark) at Literal; \"ቁስል\" (sore) at Balanced and Readable",
+          "alternatives": [
+            "\"ደዌ\"",
+            "\"ቁስል\" at every level"
+          ],
+          "reason": "The Hebrew word is literally a touch or stroke, a visible patch; Literal \"ምልክት\" keeps it from being read as an open wound, while Balanced and Readable say \"ቁስል\" as the English says \"sore\". The same pair is used through chapters 13-14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -659,6 +713,11 @@
           "L": "E o sacerdote examinará a marca na pele da carne, e [se] o pelo na marca tiver se tornado branco e a aparência da marca [for] mais funda que a pele da sua carne, [é] uma marca de doença escamosa; e o sacerdote o examinará e o declarará impuro.",
           "B": "O sacerdote examinará com atenção a lesão. Se os pelos nela tiverem ficado brancos e ela parecer mais funda que a superfície da pele, é uma lesão de doença de pele grave. Depois de examiná-la, o sacerdote declarará a pessoa impura.",
           "R": "O sacerdote deve olhar a ferida. Pode ser que os pelos dela tenham ficado brancos e que a ferida pareça mais funda que a pele. Então é uma doença de pele grave. Depois de olhar a pessoa, o sacerdote deve dizer que ela está impura."
+        },
+        "am": {
+          "L": "ካህኑም በሥጋው ቆዳ ላይ ያለውን ምልክት ያያል፤ በምልክቱም ውስጥ ያለው ጠጉር ወደ ነጭነት ቢለወጥ፣ የምልክቱም መልክ ከሥጋው ቆዳ የጠለቀ ቢሆን፣ የለምጽ ምልክት ነው፤ ካህኑም ያየዋል፤ ርኩስ ነው ይለዋል።",
+          "B": "ካህኑ ቁስሉን ይመርምር። በቁስሉ ውስጥ ያለው ጠጉር ነጭ ከሆነና ቁስሉ ከቆዳው ገጽ የጠለቀ ቢመስል፣ የከባድ የቆዳ በሽታ ቁስል ነው። ካህኑም ካየው በኋላ ሰውየው ርኩስ መሆኑን ያስታውቅ።",
+          "R": "ካህኑ ቁስሉን ማየት አለበት። በቁስሉ ውስጥ ያለው ጠጉር ነጭ ሆኖ ሊገኝ ይችላል፤ ቁስሉም ከቆዳው ዘልቆ የገባ ሊመስል ይችላል። እንዲህ ከሆነ ከባድ የቆዳ በሽታ ነው። ካህኑ ሰውየውን ካየ በኋላ ሰውየው ርኩስ እንደሆነ መናገር አለበት።"
         }
       },
       "decisions": [
@@ -857,6 +916,28 @@
           "reason": "For chapters 13 and 14: the priest's ruling (m1) is \"declarar puro\" and \"declarar impuro\" at Literal and Balanced, and \"dizer que a pessoa está pura / impura\" at Readable, as the English has \"pronounce\", \"declare\" and \"say\". Portuguese \"pronunciar\" does not mean to give a verdict, and \"tornar impuro\" would make the priest the cause. The hair that grows in the mark (m2) is \"pelo\", the word for body hair, at every level; \"cabelo\" is the hair of the head.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130030012",
+            "o030130030212"
+          ],
+          "choice": "One wording for each diagnostic formula through chapters 13-14: \"the priest shall look\" = \"ካህኑ ... ያያል\" (L), \"ይመርምር\" (B), \"ማየት አለበት\" (R); \"pronounce unclean / clean\" = \"ርኩስ ነው ይለዋል / ንጹሕ ነው ይለዋል\" (L), \"ሰውየው ርኩስ / ንጹሕ መሆኑን ያስታውቅ\" (B), \"ሰውየው ርኩስ / ንጹሕ እንደሆነ መናገር አለበት\" (R)",
+          "alternatives": [
+            "\"ያረክሰዋል / ያነጻዋል\" (makes him unclean / clean)"
+          ],
+          "reason": "The Hebrew verbs are declarative: the priest rules on the case, he does not cause the uncleanness, so every level uses a verb of saying or announcing rather than the causative of \"ርኩስ\" or \"ንጹሕ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -941,6 +1022,11 @@
           "L": "E se [for] uma mancha brilhante branca na pele da sua carne, e a sua aparência não [for] mais funda que a pele, e o seu pelo não tiver se tornado branco, então o sacerdote encerrará o [que tem a] marca sete dias.",
           "B": "Se, porém, houver na pele uma mancha brilhante branca que não pareça ir abaixo da superfície, e os seus pelos não tiverem ficado brancos, o sacerdote isolará a pessoa por sete dias.",
           "R": "Mas a mancha brilhante pode ser branca sem parecer mais funda que a pele, e os pelos dela podem não ter ficado brancos. Então o sacerdote deve isolar a pessoa dos outros por sete dias."
+        },
+        "am": {
+          "L": "ነጭ የሚያንጸባርቅ ቦታም በሥጋው ቆዳ ላይ ቢሆን፣ መልኩም ከቆዳው የጠለቀ ባይሆን፣ ጠጉሩም ወደ ነጭነት ባይለወጥ፣ ካህኑ ምልክቱ [ያለበትን] ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ነገር ግን በቆዳው ላይ ያለው ነጭ የሚያንጸባርቅ ቦታ ከቆዳው ገጽ የጠለቀ ባይመስልና ጠጉሩ ነጭ ባይሆን፣ ካህኑ ሰውየውን ለሰባት ቀን ለይቶ ያቆየው።",
+          "R": "ነገር ግን የሚያንጸባርቀው ቦታ ከቆዳው ዘልቆ የገባ ሳይመስል ነጭ ሊሆን ይችላል፤ በውስጡ ያለው ጠጉርም ነጭ ሳይሆን ሊቀር ይችላል። እንዲህ ከሆነ ካህኑ ሰውየውን ለሰባት ቀን ከሌሎች ለይቶ ማቆየት አለበት።"
         }
       },
       "decisions": [
@@ -1124,6 +1210,28 @@
           "reason": "For chapters 13 and 14: Literal keeps the verb's sense of shutting in with \"encerrar\", as the English Literal \"shut up\"; Balanced says \"isolar por sete dias\", and Readable adds \"dos outros\" as the English Readable does. \"Quarentena\" is avoided, as the English avoids \"quarantine\", since the law does not give health as its reason (m1). For a thing (verse 50) and a house (14:38) the verb is \"fechar\" or \"guardar à parte\". Literal brackets \"[que tem a]\", as the English \"[one with the]\" (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130040162"
+          ],
+          "choice": "\"shut up seven days\" = \"ሰባት ቀን ዘግቶ ያቆየዋል\" (L), \"ለሰባት ቀን ለይቶ ያቆየው\" (B), \"ለሰባት ቀን ከሌሎች ለይቶ ማቆየት አለበት\" (R); for an article \"ለይቶ ያስቀምጠው\" (B), \"ለብቻው ማስቀመጥ አለበት\" (R)",
+          "alternatives": [
+            "\"ያግልለዋል\"",
+            "\"ያስረዋል\""
+          ],
+          "reason": "Literal keeps the picture of shutting in; Balanced and Readable say what is meant, a week kept apart for observation, without suggesting prison. The same wording is kept wherever the formula recurs in chapters 13-14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1207,6 +1315,11 @@
           "L": "E o sacerdote o examinará no sétimo dia, e eis que a marca parou aos seus olhos; a marca não se espalhou na pele; então o sacerdote o encerrará sete dias pela segunda [vez].",
           "B": "No sétimo dia o sacerdote examinará a pessoa de novo. Se, a seu ver, a lesão não tiver mudado nem se espalhado na pele, ele a isolará por mais sete dias.",
           "R": "No sétimo dia o sacerdote deve olhar de novo. Se ele vir que a ferida não mudou nem se espalhou, deve isolar a pessoa dos outros por mais sete dias."
+        },
+        "am": {
+          "L": "ካህኑም በሰባተኛው ቀን ያየዋል፤ እነሆ፣ ምልክቱ በዓይኑ [እንደ ነበረ] ቢቆም፣ ምልክቱም በቆዳው ላይ ባይስፋፋ፣ ካህኑ ለሁለተኛ ጊዜ ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "በሰባተኛውም ቀን ካህኑ ሰውየውን እንደገና ይመርምር። እርሱ እንደሚያየው ቁስሉ ሳይለወጥና በቆዳው ላይ ሳይስፋፋ ቢቀር፣ ለሌላ ሰባት ቀን ለይቶ ያቆየው።",
+          "R": "በሰባተኛው ቀን ካህኑ እንደገና ማየት አለበት። ቁስሉ እንዳልተለወጠና እንዳልተስፋፋ ካየ፣ ሰውየውን ለሰባት ቀን ደግሞ ከሌሎች ለይቶ ማቆየት አለበት።"
         }
       },
       "decisions": [
@@ -1371,6 +1484,11 @@
           "L": "E o sacerdote o examinará no sétimo dia pela segunda [vez], e eis que a marca esmaeceu, e a marca não se espalhou na pele; então o sacerdote o declarará puro; [é] uma crosta; e ele lavará as suas roupas e será puro.",
           "B": "Ao fim dos outros sete dias, o sacerdote examinará a pessoa mais uma vez. Se a lesão tiver esmaecido e não se espalhado pela pele, é apenas uma crosta, e o sacerdote declarará a pessoa pura. Depois de lavar as roupas, ela estará pura.",
           "R": "No fim dos outros sete dias, o sacerdote deve olhar a ferida de novo. Pode ser que ela tenha ficado mais clara sem se espalhar. Então o sacerdote deve dizer que a pessoa está pura. É só uma crosta. A pessoa deve lavar as suas roupas. Então ela estará pura."
+        },
+        "am": {
+          "L": "ካህኑም በሰባተኛው ቀን ለሁለተኛ ጊዜ ያየዋል፤ እነሆ፣ ምልክቱ ቢደበዝዝ፣ ምልክቱም በቆዳው ላይ ባይስፋፋ፣ ካህኑ ንጹሕ ነው ይለዋል፤ ቅርፊት ነው፤ ልብሱንም ያጥባል፤ ንጹሕም ይሆናል።",
+          "B": "ሁለተኛው ሰባት ቀን ሲፈጸም ካህኑ እንደገና ይመርምረው። ቁስሉ ደብዝዞ በቆዳው ላይ ካልተስፋፋ ቅርፊት ብቻ ነው፤ ካህኑም ሰውየው ንጹሕ መሆኑን ያስታውቅ። ሰውየው ልብሱን ያጥብ፤ ንጹሕም ይሆናል።",
+          "R": "ሁለተኛው ሰባት ቀን ሲያልቅ ካህኑ እንደገና ማየት አለበት። ቁስሉ ሳይስፋፋ ደብዝዞ ሊሆን ይችላል። እንዲህ ከሆነ ካህኑ ሰውየው ንጹሕ እንደሆነ መናገር አለበት። ቅርፊት ብቻ ነው። ሰውየው ልብሱን ማጠብ አለበት። ከዚያም ንጹሕ ይሆናል።"
         }
       },
       "decisions": [
@@ -1536,6 +1654,11 @@
           "L": "Mas se a crosta de fato se espalhar na pele depois que ele se mostrou ao sacerdote para a sua purificação, então se mostrará ao sacerdote pela segunda [vez].",
           "B": "Mas, se a crosta se espalhar na pele depois que a pessoa se apresentou ao sacerdote e foi declarada pura, ela deve se apresentar outra vez ao sacerdote.",
           "R": "Mas a crosta pode se espalhar na pele depois que o sacerdote disse que a pessoa estava pura. Então a pessoa deve voltar ao sacerdote."
+        },
+        "am": {
+          "L": "ነገር ግን ለመንጻቱ ለካህኑ ከታየ በኋላ ቅርፊቱ በቆዳው ላይ በእርግጥ ቢስፋፋ፣ ለሁለተኛ ጊዜ ለካህኑ ይታያል።",
+          "B": "ነገር ግን ለካህኑ ታይቶ ንጹሕ ከተባለ በኋላ ቅርፊቱ በቆዳው ላይ ቢስፋፋ፣ ሰውየው እንደገና ወደ ካህኑ ይቅረብ።",
+          "R": "ነገር ግን ካህኑ ሰውየው ንጹሕ እንደሆነ ከተናገረ በኋላ ቅርፊቱ በቆዳው ላይ ሊስፋፋ ይችላል። እንዲህ ከሆነ ሰውየው ወደ ካህኑ ተመልሶ መሄድ አለበት።"
         }
       },
       "decisions": [
@@ -1660,6 +1783,11 @@
           "L": "E o sacerdote examinará, e eis que a crosta se espalhou na pele; então o sacerdote o declarará impuro; [é] doença escamosa.",
           "B": "Se o sacerdote vir que a crosta se espalhou na pele, declarará a pessoa impura: é uma doença de pele grave.",
           "R": "O sacerdote deve olhar de novo. Se a crosta tiver se espalhado, ele deve dizer que a pessoa está impura. É uma doença de pele grave."
+        },
+        "am": {
+          "L": "ካህኑም ያያል፤ እነሆ፣ ቅርፊቱ በቆዳው ላይ ቢስፋፋ፣ ካህኑ ርኩስ ነው ይለዋል፤ ለምጽ ነው።",
+          "B": "ካህኑ መርምሮ ቅርፊቱ በቆዳው ላይ መስፋፋቱን ቢያይ፣ ሰውየው ርኩስ መሆኑን ያስታውቅ፤ ከባድ የቆዳ በሽታ ነው።",
+          "R": "ካህኑ እንደገና ማየት አለበት። ቅርፊቱ ተስፋፍቶ ከሆነ ሰውየው ርኩስ እንደሆነ መናገር አለበት። ከባድ የቆዳ በሽታ ነው።"
         }
       },
       "decisions": [
@@ -1740,6 +1868,11 @@
           "L": "Quando uma marca de doença escamosa estiver numa pessoa, então ele será levado ao sacerdote.",
           "B": "Quem tiver uma lesão de doença de pele grave será levado ao sacerdote.",
           "R": "Quando alguém tiver uma ferida de uma doença de pele grave, deve ser levado ao sacerdote."
+        },
+        "am": {
+          "L": "የለምጽ ምልክት በሰው ላይ ቢሆን፣ ወደ ካህኑ ይወሰዳል።",
+          "B": "የከባድ የቆዳ በሽታ ቁስል ያለበት ማንኛውም ሰው ወደ ካህኑ ይወሰድ።",
+          "R": "አንድ ሰው የከባድ የቆዳ በሽታ ቁስል ካለበት ወደ ካህኑ መወሰድ አለበት።"
         }
       },
       "decisions": [
@@ -1830,6 +1963,11 @@
           "L": "E o sacerdote examinará, e eis que [há] um inchaço branco na pele, e ele tornou branco o pelo, e [há] um ponto de carne viva no inchaço,",
           "B": "O sacerdote examinará a pessoa. Se houver na pele um inchaço branco que tornou brancos os pelos, e houver carne viva no inchaço,",
           "R": "O sacerdote deve examinar a pele. Ele pode ver um inchaço branco que fez os pelos ficarem brancos, com carne viva no meio."
+        },
+        "am": {
+          "L": "ካህኑም ያያል፤ እነሆ፣ በቆዳው ላይ ነጭ እብጠት ቢኖር፣ ጠጉሩንም ወደ ነጭነት ቢለውጥ፣ በእብጠቱም ውስጥ ሕያው ሥጋ የሚታይበት ቦታ ቢኖር፣",
+          "B": "ካህኑ ይመርምረው። በቆዳው ላይ ጠጉሩን ያነጣ ነጭ እብጠት ቢኖርና በእብጠቱ ውስጥ የተገለጠ ሥጋ ቢታይ፣",
+          "R": "ካህኑ ቆዳውን ማየት አለበት። ጠጉሩን ያነጣ ነጭ እብጠት ሊያይ ይችላል፤ በውስጡም የተገለጠ ሥጋ ይታያል።"
         }
       },
       "decisions": [
@@ -2015,6 +2153,26 @@
           "reason": "For chapters 13 and 14: Portuguese \"carne viva\" says word for word what the Hebrew says, \"living flesh\", and is also the everyday phrase for raw, open flesh (m1), so every level keeps it where the English Balanced and Readable change to \"raw flesh\". Literal adds \"um ponto de\" for the first noun, as the English \"a raw spot of\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130100112"
+          ],
+          "choice": "\"የተገለጠ ሥጋ\" (exposed flesh) for raw flesh; Literal \"ሕያው ሥጋ\" (living flesh)",
+          "alternatives": [
+            "\"ጥሬ ሥጋ\""
+          ],
+          "reason": "\"ጥሬ ሥጋ\" means uncooked meat in Amharic; \"የተገለጠ ሥጋ\" names flesh laid open in the sore. Used again in 13:14-16.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2085,6 +2243,11 @@
           "L": "[é] uma doença escamosa antiga na pele da sua carne, e o sacerdote o declarará impuro; não o encerrará, porque ele [é] impuro.",
           "B": "é uma doença de pele grave de longa data. O sacerdote declarará a pessoa impura sem a isolar, porque não há dúvida de que ela está impura.",
           "R": "Então a pessoa tem uma doença de pele grave há muito tempo. O sacerdote deve dizer que ela está impura. Ele não precisa isolar a pessoa por sete dias para ter certeza, porque está claro que ela está impura."
+        },
+        "am": {
+          "L": "በሥጋው ቆዳ ላይ ያለ የቆየ ለምጽ ነው፤ ካህኑም ርኩስ ነው ይለዋል፤ ርኩስ ነውና ዘግቶ አያቆየውም።",
+          "B": "በሰውነቱ ቆዳ ላይ የቆየ ከባድ የቆዳ በሽታ ነው። ካህኑ ሰውየውን ለይቶ ማቆየት ሳያስፈልገው ሰውየው ርኩስ መሆኑን ያስታውቅ፤ ርኩስ መሆኑ አያጠራጥርምና።",
+          "R": "እንዲህ ከሆነ ሰውየው ከባድ የቆዳ በሽታ ለረጅም ጊዜ ኖሮበታል። ካህኑ ሰውየው ርኩስ እንደሆነ መናገር አለበት። ርኩስ መሆኑ ግልጽ ስለሆነ ለማረጋገጥ ለሰባት ቀን ከሌሎች ለይቶ ማቆየት አያስፈልገውም።"
         }
       },
       "decisions": [
@@ -2219,6 +2382,11 @@
           "L": "E se a doença escamosa de fato brotar na pele, e a doença escamosa cobrir toda a pele do [que tem a] marca, da sua cabeça até os seus pés, a toda a vista dos olhos do sacerdote,",
           "B": "Se a doença brotar por toda a pele e cobrir a pele inteira da pessoa com a lesão, da cabeça aos pés, por onde quer que o sacerdote olhe,",
           "R": "Às vezes a doença de pele se espalha até cobrir o corpo inteiro da pessoa, da cabeça aos pés. O sacerdote a vê por toda parte para onde olha."
+        },
+        "am": {
+          "L": "ለምጹም በቆዳው ላይ በእርግጥ ቢወጣ፣ ለምጹም ምልክቱ ያለበትን ሰው ቆዳ ሁሉ ከራሱ እስከ እግሩ ድረስ፣ የካህኑ ዓይን እስከሚያየው ሁሉ ቢሸፍን፣",
+          "B": "በሽታው በቆዳው ላይ ሁሉ ወጥቶ ቁስሉ ያለበትን ሰው ቆዳ ሁሉ ከራስ እስከ እግር፣ ካህኑ በሚያይበት ሁሉ ቢሸፍን፣",
+          "R": "አንዳንድ ጊዜ የቆዳው በሽታ ተስፋፍቶ የሰውየውን መላ ሰውነት ከራስ እስከ እግር ሊሸፍን ይችላል። ካህኑ በሚያይበት ቦታ ሁሉ በሽታውን ያያል።"
         }
       },
       "decisions": [
@@ -2352,6 +2520,11 @@
           "L": "e o sacerdote examinará, e eis que a doença escamosa cobriu toda a sua carne; então ele declarará puro o [que tem a] marca; tudo se tornou branco; ele [é] puro.",
           "B": "o sacerdote examinará a pessoa, e, se a doença tiver coberto o corpo inteiro, ele a declarará pura. Tudo ficou branco; ela está pura.",
           "R": "Se o sacerdote vir que a doença cobre o corpo inteiro e que tudo ficou branco, ele deve dizer que a pessoa está pura. Ela está pura."
+        },
+        "am": {
+          "L": "ካህኑም ያያል፤ እነሆ፣ ለምጹ ሥጋውን ሁሉ ቢሸፍን፣ ምልክቱ ያለበትን ንጹሕ ነው ይለዋል፤ ሁሉም ወደ ነጭነት ተለውጧል፤ ንጹሕ ነው።",
+          "B": "ካህኑ ይመርምረው፤ በሽታው መላ ሰውነቱን ቢሸፍን፣ ሰውየው ንጹሕ መሆኑን ያስታውቅ። ሁሉም ነጭ ሆኗል፤ ንጹሕ ነው።",
+          "R": "ካህኑ በሽታው መላ ሰውነቱን እንደሸፈነና ሁሉም ነጭ እንደሆነ ካየ፣ ሰውየው ንጹሕ እንደሆነ መናገር አለበት። ሰውየው ንጹሕ ነው።"
         }
       },
       "decisions": [
@@ -2450,6 +2623,11 @@
           "L": "Mas no dia [em que] aparecer nele carne viva, ele será impuro.",
           "B": "Mas, sempre que aparecer carne viva na pessoa, ela estará impura.",
           "R": "Mas, se em algum momento aparecer carne viva na pessoa, ela estará impura."
+        },
+        "am": {
+          "L": "ነገር ግን ሕያው ሥጋ በእርሱ ላይ በሚታይበት ቀን ርኩስ ይሆናል።",
+          "B": "ነገር ግን የተገለጠ ሥጋ በእርሱ ላይ በታየ ጊዜ ሁሉ ርኩስ ይሆናል።",
+          "R": "ነገር ግን የተገለጠ ሥጋ በማንኛውም ጊዜ ቢታይበት ርኩስ ይሆናል።"
         }
       },
       "decisions": [
@@ -2540,6 +2718,11 @@
           "L": "E o sacerdote examinará a carne viva e o declarará impuro; a carne viva, ela [é] impura; [é] doença escamosa.",
           "B": "O sacerdote examinará a carne viva e declarará a pessoa impura. A carne viva é impura; é uma doença de pele grave.",
           "R": "O sacerdote deve examinar a carne viva e dizer que a pessoa está impura. Carne viva é impura. Ela mostra uma doença de pele grave."
+        },
+        "am": {
+          "L": "ካህኑም ሕያውን ሥጋ ያያል፤ ርኩስ ነው ይለዋል፤ ሕያው ሥጋ ርኩስ ነው፤ ለምጽ ነው።",
+          "B": "ካህኑ የተገለጠውን ሥጋ ይመርምር፤ ሰውየው ርኩስ መሆኑን ያስታውቅ። የተገለጠ ሥጋ ርኩስ ነው፤ ከባድ የቆዳ በሽታ ነው።",
+          "R": "ካህኑ የተገለጠውን ሥጋ ማየትና ሰውየው ርኩስ እንደሆነ መናገር አለበት። የተገለጠ ሥጋ ርኩስ ነው። ከባድ የቆዳ በሽታ መኖሩን ያሳያል።"
         }
       },
       "decisions": [
@@ -2626,6 +2809,11 @@
           "L": "Ou se a carne viva voltar e se transformar em branco, então ele virá ao sacerdote.",
           "B": "Mas, se a carne viva mudar de novo e ficar branca, a pessoa irá ao sacerdote.",
           "R": "Mas a carne viva pode mudar e ficar branca. Então a pessoa deve ir ao sacerdote."
+        },
+        "am": {
+          "L": "ወይም ሕያው ሥጋ ተመልሶ ወደ ነጭነት ቢለወጥ፣ ወደ ካህኑ ይመጣል።",
+          "B": "ነገር ግን የተገለጠው ሥጋ እንደገና ተለውጦ ነጭ ቢሆን፣ ሰውየው ወደ ካህኑ ይሂድ።",
+          "R": "ነገር ግን የተገለጠው ሥጋ ተለውጦ ነጭ ሊሆን ይችላል። እንዲህ ከሆነ ሰውየው ወደ ካህኑ መሄድ አለበት።"
         }
       },
       "decisions": [
@@ -2716,6 +2904,11 @@
           "L": "E o sacerdote o examinará, e eis que a marca se transformou em branco; então o sacerdote declarará puro o [que tem a] marca; ele [é] puro.",
           "B": "O sacerdote examinará a pessoa e, se a lesão tiver ficado branca, declarará pura a pessoa com a lesão. Ela está pura.",
           "R": "O sacerdote deve examinar a pessoa. Se a ferida tiver ficado branca, ele deve dizer que a pessoa está pura. Ela está pura."
+        },
+        "am": {
+          "L": "ካህኑም ያየዋል፤ እነሆ፣ ምልክቱ ወደ ነጭነት ቢለወጥ፣ ካህኑ ምልክቱ ያለበትን ንጹሕ ነው ይለዋል፤ ንጹሕ ነው።",
+          "B": "ካህኑ ይመርምረው፤ ቁስሉ ነጭ ሆኖ ቢገኝ፣ ቁስሉ ያለበት ሰው ንጹሕ መሆኑን ያስታውቅ። ንጹሕ ነው።",
+          "R": "ካህኑ ሰውየውን ማየት አለበት። ቁስሉ ነጭ ከሆነ ሰውየው ንጹሕ እንደሆነ መናገር አለበት። ንጹሕ ነው።"
         }
       },
       "decisions": [
@@ -2797,6 +2990,11 @@
           "L": "E [quanto à] carne, quando houver nela, na sua pele, um furúnculo, e ele sarar,",
           "B": "Quando alguém tiver um furúnculo na pele e ele sarar,",
           "R": "Pode ser que alguém tenha na pele um furúnculo que sara."
+        },
+        "am": {
+          "L": "[የሰው] ሥጋም በቆዳው ላይ እባጭ ቢወጣበትና ቢድን፣",
+          "B": "አንድ ሰው በቆዳው ላይ እባጭ ወጥቶበት ቢድን፣",
+          "R": "አንድ ሰው በቆዳው ላይ የዳነ እባጭ ሊኖርበት ይችላል።"
         }
       },
       "decisions": [
@@ -2922,6 +3120,11 @@
           "L": "e houver no lugar do furúnculo um inchaço branco ou uma mancha brilhante branco-avermelhada, então ele se mostrará ao sacerdote.",
           "B": "e no lugar do furúnculo aparecer um inchaço branco ou uma mancha brilhante branco-avermelhada, a pessoa a mostrará ao sacerdote.",
           "R": "Depois pode aparecer um inchaço branco ou uma mancha brilhante branco-rosada no lugar onde estava o furúnculo. Então a pessoa deve mostrá-la ao sacerdote."
+        },
+        "am": {
+          "L": "በእባጩም ስፍራ ነጭ እብጠት ወይም ቀላ ያለ ነጭ የሚያንጸባርቅ ቦታ ቢሆን፣ ራሱን ለካህኑ ያሳያል።",
+          "B": "እባጩ በነበረበት ቦታ ነጭ እብጠት ወይም ቀላ ያለ ነጭ የሚያንጸባርቅ ቦታ ቢወጣ፣ ሰውየው ለካህኑ ያሳይ።",
+          "R": "በኋላም እባጩ በነበረበት ቦታ ነጭ እብጠት ወይም ቀላ ያለ ነጭ የሚያንጸባርቅ ቦታ ሊወጣ ይችላል። እንዲህ ከሆነ ሰውየው ለካህኑ ማሳየት አለበት።"
         }
       },
       "decisions": [
@@ -3060,6 +3263,11 @@
           "L": "E o sacerdote examinará, e eis que a sua aparência [é] mais baixa que a pele, e o seu pelo se tornou branco; então o sacerdote o declarará impuro; [é] uma marca de doença escamosa; irrompeu no furúnculo.",
           "B": "O sacerdote a examinará. Se ela parecer mais baixa que a pele em volta e os seus pelos tiverem ficado brancos, o sacerdote declarará a pessoa impura. É uma lesão de doença de pele grave que irrompeu onde estava o furúnculo.",
           "R": "O sacerdote deve olhar a mancha. Ela pode parecer mais baixa que a pele em volta, e os pelos nela podem ter ficado brancos. Então o sacerdote deve dizer que a pessoa está impura. Uma doença de pele grave apareceu onde estava o furúnculo."
+        },
+        "am": {
+          "L": "ካህኑም ያያል፤ እነሆ፣ መልኩ ከቆዳው የዘቀጠ ቢሆን፣ ጠጉሩም ወደ ነጭነት ቢለወጥ፣ ካህኑ ርኩስ ነው ይለዋል፤ የለምጽ ምልክት ነው፤ በእባጩ ውስጥ ወጥቷል።",
+          "B": "ካህኑ ይመርምረው። ከአካባቢው ቆዳ የዘቀጠ ቢመስልና ጠጉሩ ነጭ ቢሆን፣ ካህኑ ሰውየው ርኩስ መሆኑን ያስታውቅ። እባጩ በነበረበት ቦታ የወጣ የከባድ የቆዳ በሽታ ቁስል ነው።",
+          "R": "ካህኑ ማየት አለበት። ቦታው ከአካባቢው ቆዳ የዘቀጠ ሊመስል ይችላል፤ በውስጡ ያለው ጠጉርም ነጭ ሆኖ ሊገኝ ይችላል። እንዲህ ከሆነ ካህኑ ሰውየው ርኩስ እንደሆነ መናገር አለበት። እባጩ በነበረበት ቦታ ከባድ የቆዳ በሽታ ወጥቷል።"
         }
       },
       "decisions": [
@@ -3172,6 +3380,11 @@
           "L": "Mas se o sacerdote a examinar, e eis que não [há] nela pelo branco, e ela não [é] mais baixa que a pele, e ela [está] esmaecida, então o sacerdote o encerrará sete dias.",
           "B": "Mas, se o sacerdote não encontrar nela pelos brancos, e ela não for mais baixa que a pele e tiver esmaecido, ele isolará a pessoa por sete dias.",
           "R": "Mas o sacerdote pode ver que não há pelos brancos nela, que ela não é mais baixa que a pele e que ficou mais clara. Então ele deve isolar a pessoa dos outros por sete dias."
+        },
+        "am": {
+          "L": "ካህኑ ግን ቢያየው፣ እነሆ፣ በውስጡ ነጭ ጠጉር ባይኖር፣ ከቆዳውም የዘቀጠ ባይሆን፣ የደበዘዘም ቢሆን፣ ካህኑ ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ነገር ግን ካህኑ በውስጡ ነጭ ጠጉር ባያገኝ፣ ከቆዳውም የዘቀጠ ባይሆንና ቢደበዝዝ፣ ሰውየውን ለሰባት ቀን ለይቶ ያቆየው።",
+          "R": "ነገር ግን ካህኑ በውስጡ ነጭ ጠጉር እንደሌለ፣ ከቆዳውም እንዳልዘቀጠና እንደደበዘዘ ሊያይ ይችላል። እንዲህ ከሆነ ሰውየውን ለሰባት ቀን ከሌሎች ለይቶ ማቆየት አለበት።"
         }
       },
       "decisions": [
@@ -3256,6 +3469,11 @@
           "L": "E se de fato se espalhar na pele, então o sacerdote o declarará impuro; [é] uma marca.",
           "B": "Se ela se espalhar na pele, o sacerdote declarará a pessoa impura. É uma lesão da doença.",
           "R": "Se ela se espalhar na pele, o sacerdote deve dizer que a pessoa está impura. É uma ferida da doença."
+        },
+        "am": {
+          "L": "በቆዳው ላይም በእርግጥ ቢስፋፋ፣ ካህኑ ርኩስ ነው ይለዋል፤ ምልክት ነው።",
+          "B": "በቆዳው ላይ ቢስፋፋ ካህኑ ሰውየው ርኩስ መሆኑን ያስታውቅ። የበሽታው ቁስል ነው።",
+          "R": "በቆዳው ላይ ከተስፋፋ ካህኑ ሰውየው ርኩስ እንደሆነ መናገር አለበት። የበሽታው ቁስል ነው።"
         }
       },
       "decisions": [
@@ -3360,6 +3578,11 @@
           "L": "Mas se a mancha brilhante ficar no seu lugar [e] não se espalhou, [é] a cicatriz do furúnculo; e o sacerdote o declarará puro.",
           "B": "Se a mancha brilhante continuar no mesmo lugar e não se espalhar, é a cicatriz do furúnculo, e o sacerdote declarará a pessoa pura.",
           "R": "Mas a mancha brilhante pode continuar igual, sem se espalhar. Então é só a cicatriz que o furúnculo deixou. O sacerdote deve dizer que a pessoa está pura."
+        },
+        "am": {
+          "L": "የሚያንጸባርቀው ቦታ ግን በስፍራው ቢቆም [እና] ባይስፋፋ፣ የእባጩ ጠባሳ ነው፤ ካህኑም ንጹሕ ነው ይለዋል።",
+          "B": "የሚያንጸባርቀው ቦታ ባለበት ቢቆይና ባይስፋፋ የእባጩ ጠባሳ ነው፤ ካህኑም ሰውየው ንጹሕ መሆኑን ያስታውቅ።",
+          "R": "ነገር ግን የሚያንጸባርቀው ቦታ ሳይስፋፋ ባለበት ሊቆይ ይችላል። እንዲህ ከሆነ እባጩ የተወው ጠባሳ ብቻ ነው። ካህኑ ሰውየው ንጹሕ እንደሆነ መናገር አለበት።"
         }
       },
       "decisions": [
@@ -3449,6 +3672,11 @@
           "L": "Ou [quanto à] carne, quando houver na sua pele uma queimadura de fogo, e a carne viva da queimadura se tornar uma mancha brilhante branco-avermelhada ou branca,",
           "B": "Ou, quando alguém tiver uma queimadura na pele e a carne viva da queimadura se tornar uma mancha brilhante branco-avermelhada ou branca,",
           "R": "Pode ser que alguém sofra uma queimadura na pele. Depois pode aparecer uma mancha brilhante branco-rosada ou branca na carne viva onde foi a queimadura."
+        },
+        "am": {
+          "L": "ወይም [የሰው] ሥጋ በቆዳው ላይ የእሳት ቃጠሎ ቢኖርበት፣ የቃጠሎውም የተላጠ ቦታ ቀላ ያለ ነጭ ወይም ነጭ የሚያንጸባርቅ ቦታ ቢሆን፣",
+          "B": "ወይም አንድ ሰው በቆዳው ላይ ቃጠሎ ቢደርስበትና የቃጠሎው የተላጠ ቦታ ቀላ ያለ ነጭ ወይም ነጭ የሚያንጸባርቅ ቦታ ቢሆን፣",
+          "R": "አንድ ሰው ቆዳው በእሳት ሊቃጠል ይችላል። ከዚያም ቃጠሎው በነበረበት የተላጠ ቦታ ላይ ቀላ ያለ ነጭ ወይም ነጭ የሚያንጸባርቅ ቦታ ሊወጣ ይችላል።"
         }
       },
       "decisions": [
@@ -3567,6 +3795,11 @@
           "L": "então o sacerdote a examinará, e eis que o pelo na mancha brilhante se tornou branco, e a sua aparência [é] mais funda que a pele; [é] doença escamosa; irrompeu na queimadura; e o sacerdote o declarará impuro; [é] uma marca de doença escamosa.",
           "B": "o sacerdote a examinará. Se os pelos na mancha brilhante tiverem ficado brancos e a mancha parecer mais funda que a pele, é uma doença de pele grave que irrompeu na queimadura. O sacerdote declarará a pessoa impura; é uma lesão de doença de pele grave.",
           "R": "O sacerdote deve olhar a mancha. Os pelos nela podem ter ficado brancos, e a mancha pode parecer mais funda que a pele. Então uma doença de pele grave apareceu na queimadura. O sacerdote deve dizer que a pessoa está impura. É uma ferida de uma doença de pele grave."
+        },
+        "am": {
+          "L": "ካህኑም ያየዋል፤ እነሆ፣ በሚያንጸባርቀው ቦታ ውስጥ ያለው ጠጉር ወደ ነጭነት ቢለወጥ፣ መልኩም ከቆዳው የጠለቀ ቢሆን፣ ለምጽ ነው፤ በቃጠሎው ውስጥ ወጥቷል፤ ካህኑም ርኩስ ነው ይለዋል፤ የለምጽ ምልክት ነው።",
+          "B": "ካህኑ ይመርምረው። በሚያንጸባርቀው ቦታ ውስጥ ያለው ጠጉር ነጭ ቢሆንና ቦታው ከቆዳው የጠለቀ ቢመስል፣ በቃጠሎው ውስጥ የወጣ ከባድ የቆዳ በሽታ ነው። ካህኑ ሰውየው ርኩስ መሆኑን ያስታውቅ፤ የከባድ የቆዳ በሽታ ቁስል ነው።",
+          "R": "ካህኑ ማየት አለበት። በቦታው ውስጥ ያለው ጠጉር ነጭ ሆኖ ሊገኝ ይችላል፤ ቦታውም ከቆዳው ዘልቆ የገባ ሊመስል ይችላል። እንዲህ ከሆነ በቃጠሎው ውስጥ ከባድ የቆዳ በሽታ ወጥቷል። ካህኑ ሰውየው ርኩስ እንደሆነ መናገር አለበት። የከባድ የቆዳ በሽታ ቁስል ነው።"
         }
       },
       "decisions": [
@@ -3667,6 +3900,11 @@
           "L": "Mas se o sacerdote a examinar, e eis que não [há] na mancha brilhante pelo branco, e ela não [é] mais baixa que a pele, e ela [está] esmaecida, então o sacerdote o encerrará sete dias.",
           "B": "Mas, se o sacerdote não encontrar pelos brancos na mancha brilhante, e ela não for mais baixa que a pele e tiver esmaecido, ele isolará a pessoa por sete dias.",
           "R": "Mas o sacerdote pode não encontrar pelos brancos na mancha. Ela pode não ser mais baixa que a pele e pode ter ficado mais clara. Então ele deve isolar a pessoa dos outros por sete dias."
+        },
+        "am": {
+          "L": "ካህኑ ግን ቢያየው፣ እነሆ፣ በሚያንጸባርቀው ቦታ ውስጥ ነጭ ጠጉር ባይኖር፣ ከቆዳውም የዘቀጠ ባይሆን፣ የደበዘዘም ቢሆን፣ ካህኑ ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ነገር ግን ካህኑ በሚያንጸባርቀው ቦታ ውስጥ ነጭ ጠጉር ባያገኝ፣ ከቆዳውም የዘቀጠ ባይሆንና ቢደበዝዝ፣ ሰውየውን ለሰባት ቀን ለይቶ ያቆየው።",
+          "R": "ነገር ግን ካህኑ በቦታው ውስጥ ነጭ ጠጉር ላያገኝ ይችላል። ቦታው ከቆዳው የዘቀጠ ላይሆንና ደብዝዞ ሊሆን ይችላል። እንዲህ ከሆነ ሰውየውን ለሰባት ቀን ከሌሎች ለይቶ ማቆየት አለበት።"
         }
       },
       "decisions": [
@@ -3760,6 +3998,11 @@
           "L": "E o sacerdote o examinará no sétimo dia; se de fato se espalhar na pele, então o sacerdote o declarará impuro; [é] uma marca de doença escamosa.",
           "B": "No sétimo dia o sacerdote examinará a pessoa. Se a mancha tiver se espalhado na pele, o sacerdote declarará a pessoa impura; é uma lesão de doença de pele grave.",
           "R": "No sétimo dia o sacerdote deve examinar a pessoa de novo. Se a mancha tiver se espalhado na pele, ele deve dizer que a pessoa está impura. É uma ferida de uma doença de pele grave."
+        },
+        "am": {
+          "L": "ካህኑም በሰባተኛው ቀን ያየዋል፤ በቆዳው ላይ በእርግጥ ቢስፋፋ፣ ካህኑ ርኩስ ነው ይለዋል፤ የለምጽ ምልክት ነው።",
+          "B": "በሰባተኛው ቀን ካህኑ ሰውየውን ይመርምር። በቆዳው ላይ ተስፋፍቶ ከሆነ፣ ካህኑ ሰውየው ርኩስ መሆኑን ያስታውቅ፤ የከባድ የቆዳ በሽታ ቁስል ነው።",
+          "R": "በሰባተኛው ቀን ካህኑ ሰውየውን እንደገና ማየት አለበት። ቦታው በቆዳው ላይ ተስፋፍቶ ከሆነ፣ ሰውየው ርኩስ እንደሆነ መናገር አለበት። የከባድ የቆዳ በሽታ ቁስል ነው።"
         }
       },
       "decisions": [
@@ -3857,6 +4100,11 @@
           "L": "Mas se a mancha brilhante ficar no seu lugar, [e] não se espalhou na pele, e ela [está] esmaecida, [é] o inchaço da queimadura; e o sacerdote o declarará puro, porque [é] a cicatriz da queimadura.",
           "B": "Mas, se a mancha brilhante continuar onde está, sem se espalhar na pele, e tiver esmaecido, é o inchaço da queimadura. O sacerdote declarará a pessoa pura, porque é a cicatriz da queimadura.",
           "R": "Mas a mancha brilhante pode continuar igual, sem se espalhar, e ficar mais clara. Então é só o inchaço da queimadura. O sacerdote deve dizer que a pessoa está pura, porque é a cicatriz que a queimadura deixou."
+        },
+        "am": {
+          "L": "የሚያንጸባርቀው ቦታ ግን በስፍራው ቢቆም፣ በቆዳውም ላይ ባይስፋፋ፣ የደበዘዘም ቢሆን፣ የቃጠሎው እብጠት ነው፤ ካህኑም ንጹሕ ነው ይለዋል፤ የቃጠሎው ጠባሳ ነውና።",
+          "B": "ነገር ግን የሚያንጸባርቀው ቦታ ባለበት ቢቆይ፣ በቆዳው ላይ ባይስፋፋና ቢደበዝዝ፣ የቃጠሎው እብጠት ነው። ካህኑ ሰውየው ንጹሕ መሆኑን ያስታውቅ፤ የቃጠሎው ጠባሳ ነውና።",
+          "R": "ነገር ግን የሚያንጸባርቀው ቦታ ሳይስፋፋ ባለበት ሊቆይና ሊደበዝዝ ይችላል። እንዲህ ከሆነ ከቃጠሎው የመጣ እብጠት ብቻ ነው። ቃጠሎው የተወው ጠባሳ ስለሆነ ካህኑ ሰውየው ንጹሕ እንደሆነ መናገር አለበት።"
         }
       },
       "decisions": [
@@ -3940,6 +4188,11 @@
           "L": "E um homem ou uma mulher, quando houver nele uma marca, na cabeça ou na barba,",
           "B": "Quando um homem ou uma mulher tiver uma lesão na cabeça ou na barba,",
           "R": "Um homem ou uma mulher pode ter uma ferida na cabeça, ou um homem pode ter uma na barba."
+        },
+        "am": {
+          "L": "ወንድ ወይም ሴት በራስ ወይም በጢም ላይ ምልክት ቢኖርበት፣",
+          "B": "ወንድ ወይም ሴት በራስ ወይም በጢም ላይ ቁስል ቢኖርበት፣",
+          "R": "ወንድ ወይም ሴት በራሳቸው ላይ፣ ወይም ወንድ በጢሙ ላይ ቁስል ሊኖርባቸው ይችላል።"
         }
       },
       "decisions": [
@@ -4078,6 +4331,11 @@
           "L": "então o sacerdote examinará a marca, e eis que a sua aparência [é] mais funda que a pele, e nela [há] pelo amarelo fino; então o sacerdote o declarará impuro; [é] tinha; [é] doença escamosa da cabeça ou da barba.",
           "B": "o sacerdote examinará a lesão. Se ela parecer mais funda que a pele e houver nela pelos amarelos e finos, o sacerdote declarará a pessoa impura. É uma coceira escamosa, uma doença de pele grave da cabeça ou da barba.",
           "R": "O sacerdote deve olhar a ferida. Ela pode parecer mais funda que a pele e ter pelos amarelos e finos. Então o sacerdote deve dizer que a pessoa está impura. É uma mancha escamosa que coça, uma doença de pele grave da cabeça ou do queixo."
+        },
+        "am": {
+          "L": "ካህኑ ምልክቱን ያያል፤ እነሆ፣ መልኩ ከቆዳው የጠለቀ ቢሆን፣ በውስጡም ቀጭን ቢጫ ጠጉር ቢኖር፣ ካህኑ ርኩስ ነው ይለዋል፤ እከክ ነው፤ የራስ ወይም የጢም ለምጽ ነው።",
+          "B": "ካህኑ ቁስሉን ይመርምር። ከቆዳው የጠለቀ ቢመስልና በውስጡ ቀጭን ቢጫ ጠጉር ቢኖር፣ ካህኑ ሰውየው ርኩስ መሆኑን ያስታውቅ። ይህ ቅርፊታማ እከክ፣ የራስ ወይም የጢም ከባድ የቆዳ በሽታ ነው።",
+          "R": "ካህኑ ቁስሉን ማየት አለበት። ከቆዳው ዘልቆ የገባ ሊመስልና በውስጡ ቀጭን ቢጫ ጠጉር ሊኖር ይችላል። እንዲህ ከሆነ ካህኑ ሰውየው ርኩስ እንደሆነ መናገር አለበት። ይህ የሚያሳክክ ቅርፊታማ ቦታ፣ የራስ ወይም የአገጭ ከባድ የቆዳ በሽታ ነው።"
         }
       },
       "decisions": [
@@ -4265,6 +4523,28 @@
           "reason": "Here and in verses 31-37 and 14:54. Literal keeps one word for the one Hebrew term, \"tinha\", the old Portuguese name for a scaly disease of the scalp, as the English Literal keeps \"scall\"; today it also names a fungal infection, so Balanced and Readable describe it in common words instead, since its exact nature is not known (m1). \"Sarna\" is scabies, a different thing. Readable says \"queixo\" for the beard, as the English Readable says \"chin\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130300171"
+          ],
+          "choice": "\"እከክ\" (L), \"ቅርፊታማ እከክ\" (B), \"የሚያሳክክ ቅርፊታማ ቦታ\" (R) for the scall, through 13:30-37 and 14:54",
+          "alternatives": [
+            "\"ቋቁቻ\"",
+            "\"ቁምጣ\""
+          ],
+          "reason": "The Hebrew names an itching, scaly patch where hair grows; \"እከክ\" is the plain word for an itch, and Balanced and Readable add \"scaly\" as the English does. Proposed: a reviewer may prefer another local name for scalp disease.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4351,6 +4631,11 @@
           "L": "E se o sacerdote examinar a marca da tinha, e eis que a sua aparência não [é] mais funda que a pele, e não [há] nela pelo preto, então o sacerdote encerrará o [que tem a] marca da tinha sete dias.",
           "B": "Mas, se o sacerdote examinar a lesão da coceira escamosa e ela não parecer mais funda que a pele, e não houver nela pelos pretos, ele isolará a pessoa com a lesão por sete dias.",
           "R": "Mas, quando o sacerdote olhar a mancha que coça, ela pode não parecer mais funda que a pele. E pode não haver pelos pretos nela. Então o sacerdote deve isolar a pessoa dos outros por sete dias."
+        },
+        "am": {
+          "L": "ካህኑም የእከኩን ምልክት ቢያይ፣ እነሆ፣ መልኩ ከቆዳው የጠለቀ ባይሆን፣ በውስጡም ጥቁር ጠጉር ባይኖር፣ ካህኑ የእከኩ ምልክት [ያለበትን] ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ነገር ግን ካህኑ የቅርፊታማውን እከክ ቁስል ሲመረምር ከቆዳው የጠለቀ ባይመስልና በውስጡ ጥቁር ጠጉር ባይኖር፣ ቁስሉ ያለበትን ሰው ለሰባት ቀን ለይቶ ያቆየው።",
+          "R": "ነገር ግን ካህኑ የሚያሳክከውን ቦታ ሲያይ ከቆዳው ዘልቆ የገባ ላይመስል ይችላል። በውስጡም ጥቁር ጠጉር ላይኖር ይችላል። እንዲህ ከሆነ ካህኑ ሰውየውን ለሰባት ቀን ከሌሎች ለይቶ ማቆየት አለበት።"
         }
       },
       "decisions": [
@@ -4454,6 +4739,11 @@
           "L": "E o sacerdote examinará a marca no sétimo dia, e eis que a tinha não se espalhou, e não houve nela pelo amarelo, e a aparência da tinha não [é] mais funda que a pele,",
           "B": "No sétimo dia o sacerdote examinará a lesão. Se a coceira escamosa não tiver se espalhado, não tiverem aparecido nela pelos amarelos, e ela não parecer mais funda que a pele,",
           "R": "No sétimo dia o sacerdote deve olhar a ferida de novo. Pode ser que a mancha que coça não tenha se espalhado. Pode não haver pelos amarelos nela, e ela pode não parecer mais funda que a pele."
+        },
+        "am": {
+          "L": "ካህኑም በሰባተኛው ቀን ምልክቱን ያያል፤ እነሆ፣ እከኩ ባይስፋፋ፣ በውስጡም ቢጫ ጠጉር ባይኖር፣ የእከኩም መልክ ከቆዳው የጠለቀ ባይሆን፣",
+          "B": "በሰባተኛው ቀን ካህኑ ቁስሉን ይመርምር። ቅርፊታማው እከክ ባይስፋፋ፣ በውስጡ ቢጫ ጠጉር ባይወጣና ከቆዳው የጠለቀ ባይመስል፣",
+          "R": "በሰባተኛው ቀን ካህኑ ቁስሉን እንደገና ማየት አለበት። የሚያሳክከው ቦታ ላይስፋፋ ይችላል። በውስጡ ቢጫ ጠጉር ላይኖርና ከቆዳው ዘልቆ የገባ ላይመስል ይችላል።"
         }
       },
       "decisions": [
@@ -4543,6 +4833,11 @@
           "L": "então ele se raspará, mas a tinha não raspará; e o sacerdote encerrará o [que tem a] tinha sete dias pela segunda [vez].",
           "B": "a pessoa raspará os pelos, menos no lugar da coceira escamosa, e o sacerdote a isolará por mais sete dias.",
           "R": "Então a pessoa deve raspar os pelos, menos os da mancha que coça. O sacerdote deve isolar a pessoa dos outros por mais sete dias."
+        },
+        "am": {
+          "L": "ይላጫል፤ እከኩን ግን አይላጭም፤ ካህኑም እከኩ [ያለበትን] ለሁለተኛ ጊዜ ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ሰውየው ይላጭ፤ ቅርፊታማው እከክ ያለበትን ቦታ ግን አይላጭ፤ ካህኑም ለሌላ ሰባት ቀን ለይቶ ያቆየው።",
+          "R": "እንዲህ ከሆነ ሰውየው የሚያሳክከውን ቦታ ሳይነካ ጠጉሩን መላጨት አለበት። ካህኑም ሰውየውን ለሰባት ቀን ደግሞ ከሌሎች ለይቶ ማቆየት አለበት።"
         }
       },
       "decisions": [
@@ -4666,6 +4961,11 @@
           "L": "E o sacerdote examinará a tinha no sétimo dia, e eis que a tinha não se espalhou na pele, e a sua aparência não [é] mais funda que a pele; então o sacerdote o declarará puro, e ele lavará as suas roupas e será puro.",
           "B": "No sétimo dia o sacerdote examinará a coceira escamosa. Se ela não tiver se espalhado na pele e não parecer mais funda que a pele, ele declarará a pessoa pura. Ela deve lavar as suas roupas, e estará pura.",
           "R": "No sétimo dia o sacerdote deve olhar a mancha que coça. Se ela não tiver se espalhado e não parecer mais funda que a pele, ele deve dizer que a pessoa está pura. A pessoa deve lavar as suas roupas. Então ela estará pura."
+        },
+        "am": {
+          "L": "ካህኑም በሰባተኛው ቀን እከኩን ያያል፤ እነሆ፣ እከኩ በቆዳው ላይ ባይስፋፋ፣ መልኩም ከቆዳው የጠለቀ ባይሆን፣ ካህኑ ንጹሕ ነው ይለዋል፤ ልብሱንም ያጥባል፤ ንጹሕም ይሆናል።",
+          "B": "በሰባተኛው ቀን ካህኑ ቅርፊታማውን እከክ ይመርምር። በቆዳው ላይ ባይስፋፋና ከቆዳው የጠለቀ ባይመስል፣ ሰውየው ንጹሕ መሆኑን ያስታውቅ። ሰውየው ልብሱን ያጥብ፤ ንጹሕም ይሆናል።",
+          "R": "በሰባተኛው ቀን ካህኑ የሚያሳክከውን ቦታ ማየት አለበት። ካልተስፋፋና ከቆዳው ዘልቆ የገባ ካልመሰለ፣ ሰውየው ንጹሕ እንደሆነ መናገር አለበት። ሰውየው ልብሱን ማጠብ አለበት። ከዚያም ንጹሕ ይሆናል።"
         }
       },
       "decisions": [
@@ -4746,6 +5046,11 @@
           "L": "Mas se a tinha de fato se espalhar na pele depois da sua purificação,",
           "B": "Mas, se a coceira escamosa se espalhar na pele depois que a pessoa foi declarada pura,",
           "R": "Mas a mancha que coça pode se espalhar na pele depois que o sacerdote disse que a pessoa estava pura."
+        },
+        "am": {
+          "L": "ነገር ግን ከመንጻቱ በኋላ እከኩ በቆዳው ላይ በእርግጥ ቢስፋፋ፣",
+          "B": "ነገር ግን ንጹሕ ከተባለ በኋላ ቅርፊታማው እከክ በቆዳው ላይ ቢስፋፋ፣",
+          "R": "ነገር ግን ካህኑ ሰውየው ንጹሕ እንደሆነ ከተናገረ በኋላ የሚያሳክከው ቦታ በቆዳው ላይ ሊስፋፋ ይችላል።"
         }
       },
       "decisions": [
@@ -4838,6 +5143,11 @@
           "L": "e o sacerdote o examinar, e eis que a tinha se espalhou na pele, o sacerdote não procurará o pelo amarelo; ele [é] impuro.",
           "B": "e o sacerdote examinar a pessoa e vir que ela se espalhou na pele, não precisará procurar pelos amarelos. A pessoa está impura.",
           "R": "Se o sacerdote vir que a mancha se espalhou, não precisa procurar pelos amarelos. A pessoa está impura."
+        },
+        "am": {
+          "L": "ካህኑም ያየዋል፤ እነሆ፣ እከኩ በቆዳው ላይ ቢስፋፋ፣ ካህኑ ቢጫውን ጠጉር አይፈልግም፤ ርኩስ ነው።",
+          "B": "ካህኑም መርምሮ በቆዳው ላይ መስፋፋቱን ቢያገኝ፣ ቢጫ ጠጉር መፈለግ አያስፈልገውም። ሰውየው ርኩስ ነው።",
+          "R": "ካህኑ ቦታው መስፋፋቱን ካየ ቢጫ ጠጉር መፈለግ አያስፈልገውም። ሰውየው ርኩስ ነው።"
         }
       },
       "decisions": [
@@ -4933,6 +5243,11 @@
           "L": "Mas se aos seus olhos a tinha parou, e pelo preto brotou nela, a tinha sarou; ele [é] puro; e o sacerdote o declarará puro.",
           "B": "Mas, se a seu ver a coceira escamosa não tiver mudado e tiverem crescido nela pelos pretos, ela sarou. A pessoa está pura, e o sacerdote a declarará pura.",
           "R": "Mas o sacerdote pode ver que a mancha que coça continuou igual e que cresceram pelos pretos nela. Então ela sarou. A pessoa está pura, e o sacerdote deve dizer isso."
+        },
+        "am": {
+          "L": "ነገር ግን በዓይኑ እከኩ [እንደ ነበረ] ቢቆም፣ በውስጡም ጥቁር ጠጉር ቢበቅል፣ እከኩ ድኗል፤ ንጹሕ ነው፤ ካህኑም ንጹሕ ነው ይለዋል።",
+          "B": "ነገር ግን ካህኑ እንደሚያየው ቅርፊታማው እከክ ሳይለወጥ ቢቀርና በውስጡ ጥቁር ጠጉር ቢበቅል፣ ድኗል። ሰውየው ንጹሕ ነው፤ ካህኑም ሰውየው ንጹሕ መሆኑን ያስታውቅ።",
+          "R": "ነገር ግን ካህኑ የሚያሳክከው ቦታ ሳይለወጥ እንደቆየና በውስጡ ጥቁር ጠጉር እንደበቀለ ሊያይ ይችላል። እንዲህ ከሆነ ድኗል። ሰውየው ንጹሕ ነው፤ ካህኑም ንጹሕ እንደሆነ መናገር አለበት።"
         }
       },
       "decisions": [
@@ -5032,6 +5347,11 @@
           "L": "E um homem ou uma mulher, quando houver na pele da sua carne manchas brilhantes, manchas brilhantes brancas,",
           "B": "Quando um homem ou uma mulher tiver manchas brilhantes na pele, manchas brilhantes brancas,",
           "R": "Um homem ou uma mulher pode ter manchas brilhantes na pele, manchas brilhantes brancas."
+        },
+        "am": {
+          "L": "ወንድ ወይም ሴት በሥጋቸው ቆዳ ላይ የሚያንጸባርቁ ቦታዎች፣ ነጭ የሚያንጸባርቁ ቦታዎች ቢኖሩባቸው፣",
+          "B": "ወንድ ወይም ሴት በቆዳቸው ላይ የሚያንጸባርቁ ቦታዎች፣ ነጭ የሚያንጸባርቁ ቦታዎች ቢኖሩባቸው፣",
+          "R": "ወንድ ወይም ሴት በቆዳቸው ላይ የሚያንጸባርቁ ቦታዎች፣ ነጭ የሚያንጸባርቁ ቦታዎች ሊኖሩባቸው ይችላሉ።"
         }
       },
       "decisions": [
@@ -5122,6 +5442,11 @@
           "L": "e o sacerdote examinar, e eis que na pele da sua carne [há] manchas brilhantes de um branco esmaecido; [é] uma erupção; irrompeu na pele; ele [é] puro.",
           "B": "e o sacerdote vir que as manchas na pele são de um branco apagado, é uma erupção, nada mais, que irrompeu na pele. A pessoa está pura.",
           "R": "O sacerdote deve olhar as manchas. Se elas forem de um branco pálido, é só uma erupção que não faz mal. Ela apareceu na pele, mas a pessoa está pura."
+        },
+        "am": {
+          "L": "ካህኑም ያያል፤ እነሆ፣ በሥጋቸው ቆዳ ላይ ያሉት የሚያንጸባርቁ ቦታዎች የደበዘዙ ነጭ ቢሆኑ፣ ሽፍታ ነው፤ በቆዳው ላይ ወጥቷል፤ ንጹሕ ነው።",
+          "B": "ካህኑም ሲመረምር በቆዳቸው ላይ ያሉት ቦታዎች የደበዘዙ ነጭ ቢሆኑ፣ ከሽፍታ ያለፈ አይደለም፤ በቆዳው ላይ የወጣ ነው። ሰውየው ንጹሕ ነው።",
+          "R": "ካህኑ ማየት አለበት። ቦታዎቹ የደበዘዙ ነጭ ከሆኑ ጉዳት የሌለው ሽፍታ ብቻ ነው። በቆዳው ላይ ወጥቷል፤ ሰውየው ግን ንጹሕ ነው።"
         }
       },
       "decisions": [
@@ -5330,6 +5655,11 @@
           "L": "E um homem, quando [o cabelo da] sua cabeça cair, ele [é] calvo; ele [é] puro.",
           "B": "Quando um homem perde o cabelo da cabeça, ele é calvo, mas está puro.",
           "R": "Um homem pode perder o cabelo da cabeça. Ele fica careca, mas está puro."
+        },
+        "am": {
+          "L": "ሰውም [የራሱ ጠጉር] ቢረግፍ፣ ራሰ በራ ነው፤ ንጹሕ ነው።",
+          "B": "የአንድ ሰው የራሱ ጠጉር ቢረግፍ ራሰ በራ ነው፤ ቢሆንም ንጹሕ ነው።",
+          "R": "አንድ ሰው የራሱ ጠጉር ሊረግፍ ይችላል። ራሰ በራ ነው፤ ቢሆንም ንጹሕ ነው።"
         }
       },
       "decisions": [
@@ -5464,6 +5794,11 @@
           "L": "E se [o cabelo da] sua cabeça cair do lado do seu rosto, ele [é] calvo na fronte; ele [é] puro.",
           "B": "Se perder o cabelo da parte da frente da cabeça, ele é calvo na testa, mas está puro.",
           "R": "Ou ele pode perder o cabelo da frente da cabeça. Fica careca ali, mas está puro."
+        },
+        "am": {
+          "L": "[የራሱም ጠጉር] ከፊቱ ጠርዝ ጀምሮ ቢረግፍ፣ ግንባረ በራ ነው፤ ንጹሕ ነው።",
+          "B": "ከራሱ ፊት ለፊት ያለው ጠጉር ቢረግፍ ግንባረ በራ ነው፤ ቢሆንም ንጹሕ ነው።",
+          "R": "ወይም ከራሱ ፊት ለፊት ያለው ጠጉር ሊረግፍ ይችላል። በዚያ በኩል በራ ነው፤ ቢሆንም ንጹሕ ነው።"
         }
       },
       "decisions": [
@@ -5556,6 +5891,11 @@
           "L": "Mas quando houver na calva ou na fronte calva uma marca branco-avermelhada, [é] doença escamosa brotando na sua calva ou na sua fronte calva.",
           "B": "Mas, se aparecer uma lesão branco-avermelhada na sua calva ou na sua testa calva, é uma doença de pele grave que está brotando na sua calva ou na sua testa.",
           "R": "Mas pode aparecer uma ferida branco-rosada no lugar careca, atrás ou na frente. Então uma doença de pele grave está aparecendo ali."
+        },
+        "am": {
+          "L": "ነገር ግን በበራው ራስ ወይም በበራው ግንባር ላይ ቀላ ያለ ነጭ ምልክት ቢኖር፣ በበራው ራሱ ወይም በበራው ግንባሩ ላይ የሚወጣ ለምጽ ነው።",
+          "B": "ነገር ግን በበራው ራሱ ወይም ግንባሩ ላይ ቀላ ያለ ነጭ ቁስል ቢወጣ፣ በበራው ራሱ ወይም ግንባሩ ላይ የሚወጣ ከባድ የቆዳ በሽታ ነው።",
+          "R": "ነገር ግን በበራው ቦታ፣ ከኋላም ሆነ ከፊት፣ ቀላ ያለ ነጭ ቁስል ሊወጣ ይችላል። እንዲህ ከሆነ በዚያ ቦታ ከባድ የቆዳ በሽታ እየወጣ ነው።"
         }
       },
       "decisions": [
@@ -5651,6 +5991,11 @@
           "L": "E o sacerdote o examinará, e eis que o inchaço da marca [é] branco-avermelhado na sua calva ou na sua fronte calva, como a aparência da doença escamosa da pele da carne;",
           "B": "O sacerdote o examinará. Se a lesão inchada na sua calva ou na sua testa for branco-avermelhada, com a aparência de uma doença de pele grave no corpo,",
           "R": "O sacerdote deve examinar o homem. A ferida inchada na cabeça careca pode ser branco-rosada. Ela pode se parecer com uma doença de pele grave em outras partes do corpo."
+        },
+        "am": {
+          "L": "ካህኑም ያየዋል፤ እነሆ፣ የምልክቱ እብጠት በበራው ራሱ ወይም በበራው ግንባሩ ላይ ቀላ ያለ ነጭ ቢሆን፣ በሥጋ ቆዳ ላይ እንዳለ የለምጽ መልክ ቢሆን፣",
+          "B": "ካህኑ ይመርምረው። በበራው ራሱ ወይም ግንባሩ ላይ ያለው ያበጠ ቁስል ቀላ ያለ ነጭ ቢሆንና በሰውነት ላይ የሚወጣ ከባድ የቆዳ በሽታ ቢመስል፣",
+          "R": "ካህኑ ሰውየውን ማየት አለበት። በበራው ራሱ ላይ ያለው ያበጠ ቁስል ቀላ ያለ ነጭ ሊሆን ይችላል። በሌሎች የሰውነት ክፍሎች ላይ እንደሚታየው ከባድ የቆዳ በሽታ ሊመስል ይችላል።"
         }
       },
       "decisions": [
@@ -5738,6 +6083,11 @@
           "L": "ele [é] um homem com doença escamosa; ele [é] impuro; o sacerdote certamente o declarará impuro; a sua marca [está] na sua cabeça.",
           "B": "ele é um homem com uma doença de pele grave e está impuro. O sacerdote deve declará-lo impuro; a lesão está na cabeça dele.",
           "R": "Então o homem tem uma doença de pele grave e está impuro. O sacerdote deve dizer que ele está impuro. A ferida está na cabeça dele."
+        },
+        "am": {
+          "L": "ለምጻም ሰው ነው፤ ርኩስ ነው፤ ካህኑ ፈጽሞ ርኩስ ነው ይለዋል፤ ምልክቱ በራሱ ላይ ነው።",
+          "B": "ከባድ የቆዳ በሽታ ያለበት ሰው ነው፤ ርኩስም ነው። ካህኑ ሰውየው ርኩስ መሆኑን ያስታውቅ፤ ቁስሉ በራሱ ላይ ነው።",
+          "R": "እንዲህ ከሆነ ሰውየው ከባድ የቆዳ በሽታ አለበት፤ ርኩስም ነው። ካህኑ ሰውየው ርኩስ እንደሆነ መናገር አለበት። ቁስሉ በራሱ ላይ ነው።"
         }
       },
       "decisions": [
@@ -5846,6 +6196,11 @@
           "L": "E o que tem doença escamosa, em quem [está] a marca, as suas roupas estarão rasgadas, e a sua cabeça estará solta, e ele cobrirá o [seu] lábio superior, e 'Impuro! Impuro!' gritará.",
           "B": "A pessoa que tem a lesão de doença de pele grave andará com as roupas rasgadas e com os cabelos soltos. Cobrirá o lábio superior e gritará: 'Impuro, impuro!'",
           "R": "Quem tem essa doença deve usar roupas rasgadas e deixar o cabelo solto e despenteado. Deve cobrir o lábio de cima. Deve gritar: 'Impuro, impuro!'"
+        },
+        "am": {
+          "L": "ምልክቱም ያለበት ለምጻም ልብሱ የተቀደደ ይሆናል፤ [የ]ራሱም [ጠጉር] ይፈታል፤ ከላይኛው ከንፈሩም በላይ ይሸፍናል፤ “ርኩስ! ርኩስ!” ብሎም ይጮኻል።",
+          "B": "የከባድ የቆዳ በሽታ ቁስል ያለበት ሰው የተቀደደ ልብስ ይልበስ፤ ጠጉሩንም ሳያበጥር ይልቀቀው። የላይኛውን ከንፈሩን ሸፍኖ “ርኩስ! ርኩስ!” እያለ ይጩኽ።",
+          "R": "ይህ በሽታ ያለበት ማንኛውም ሰው የተቀደደ ልብስ መልበስና ጠጉሩን ሳያበጥር መልቀቅ አለበት። የላይኛውን ከንፈሩን መሸፈን አለበት። “ርኩስ ነኝ! ርኩስ ነኝ!” እያለም መጮኽ አለበት።"
         }
       },
       "decisions": [
@@ -6030,6 +6385,26 @@
           "reason": "The cry (m3) is a single word repeated. Portuguese adjectives show gender, and the law covers men and women, so a woman would cry \"Impura!\"; the text gives one form, and the masculine is the general form Portuguese uses in a rule for anyone. Literal keeps \"a sua cabeça estará solta\" with the English Literal; Balanced and Readable say \"os cabelos soltos\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o030130450142",
+            "o030130450151"
+          ],
+          "choice": "\"ርኩስ ነኝ! ርኩስ ነኝ!\" (I am unclean) at Readable",
+          "alternatives": [
+            "\"ርኩስ! ርኩስ!\""
+          ],
+          "reason": "A bare \"ርኩስ!\" can be heard as an insult shouted at someone else; Readable makes plain that the sick person is warning others about himself. Literal and Balanced keep the bare cry.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6100,6 +6475,11 @@
           "L": "Todos os dias em que a marca [estiver] nele, ele será impuro; ele [é] impuro; habitará sozinho; fora do acampamento [será] a sua habitação.",
           "B": "Durante todo o tempo em que tiver a lesão, a pessoa estará impura. Por estar impura, viverá sozinha e morará fora do acampamento.",
           "R": "A pessoa vai ficar impura enquanto tiver a ferida. Por estar impura, deve ficar sozinha. Ela deve morar fora do acampamento."
+        },
+        "am": {
+          "L": "ምልክቱ በእርሱ ላይ ባለበት ዘመን ሁሉ ርኩስ ይሆናል፤ ርኩስ ነው፤ ብቻውን ይኖራል፤ መኖሪያውም ከሰፈር ውጭ ይሆናል።",
+          "B": "ቁስሉ በእርሱ ላይ እስካለ ድረስ ርኩስ ነው። ርኩስ ስለሆነ ብቻውን ይኑር፤ መኖሪያውም ከሰፈሩ ውጭ ይሁን።",
+          "R": "ቁስሉ በእርሱ ላይ እስካለ ድረስ ሰውየው ርኩስ ይሆናል። ርኩስ ስለሆነ ብቻውን መኖር አለበት። መኖሪያውም ከሰፈሩ ውጭ መሆን አለበት።"
         }
       },
       "decisions": [
@@ -6222,6 +6602,11 @@
           "L": "E a roupa, quando houver nela uma marca de doença escamosa, numa roupa de lã ou numa roupa de linho,",
           "B": "Quando aparecer uma mancha de mofo numa roupa, seja de lã ou de linho,",
           "R": "Pode aparecer mofo numa roupa de lã ou de linho."
+        },
+        "am": {
+          "L": "ልብስም የለምጽ ምልክት ቢገኝበት፣ የሱፍ ልብስ ወይም የበፍታ ልብስ ቢሆን፣",
+          "B": "በልብስ ላይ፣ በሱፍም ሆነ በበፍታ ልብስ ላይ ሻጋታ ቢገኝ፣",
+          "R": "ከሱፍ ወይም ከበፍታ በተሠራ ልብስ ላይ ሻጋታ ሊወጣ ይችላል።"
         }
       },
       "decisions": [
@@ -6452,6 +6837,28 @@
           "reason": "For chapters 13 and 14 (14:34, 55, 57): Balanced and Readable say \"mofo\", the everyday Brazilian word for mold, for the spreading growth in cloth, leather and walls (m1), and \"mancha\" for the patch, as the English says \"mold\" and \"patch\". \"Bolor\" means the same but is more European. Literal keeps \"marca de doença escamosa\", the same words as for the skin, as the English Literal does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130470061"
+          ],
+          "choice": "In cloth, leather and houses: \"ለምጽ\" (with \"ምልክት\") at Literal; \"ሻጋታ\" (mould) at Balanced and Readable",
+          "alternatives": [
+            "\"ከባድ የቆዳ በሽታ\" in cloth",
+            "\"ብስባሽ\""
+          ],
+          "reason": "Hebrew uses the same word for the skin disease and for a spreading growth in cloth or walls; Literal keeps that one word, as the English Literal does, while Balanced and Readable name what is meant, as the English says \"mold\". Used through 13:47-59 and 14:34-57.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6523,6 +6930,11 @@
           "L": "ou na urdidura ou na trama do linho ou da lã, ou em couro ou em qualquer obra de couro,",
           "B": "ou na urdidura ou na trama do linho ou da lã, ou no couro ou em qualquer coisa feita de couro,",
           "R": "Pode estar nos fios do comprimento ou da largura de um tecido de linho ou de lã, ou no couro ou em qualquer coisa feita de couro."
+        },
+        "am": {
+          "L": "ወይም በበፍታው ወይም በሱፉ ድር ወይም ማግ ላይ፣ ወይም በቆዳ ወይም ከቆዳ በተሠራ በማንኛውም ነገር ላይ ቢሆን፣",
+          "B": "ወይም በበፍታ ወይም በሱፍ ድር ወይም ማግ ላይ፣ ወይም በቆዳ ወይም ከቆዳ በተሠራ በማንኛውም ነገር ላይ ቢገኝ፣",
+          "R": "በበፍታ ወይም በሱፍ ጨርቅ በቁመትም ሆነ በጎን በተሸመኑት ክሮች ላይ፣ ወይም በቆዳ ወይም ከቆዳ በተሠራ በማንኛውም ነገር ላይ ሊወጣ ይችላል።"
         }
       },
       "decisions": [
@@ -6685,6 +7097,27 @@
           "reason": "\"Urdidura\" and \"trama\" are the standard Portuguese words for the lengthwise and crosswise threads of a weave (m1), still in use, so Literal and Balanced keep them; Readable says what they are, as the English Readable does, and later just \"os fios\". \"Couro\" is both hide and leather, so every level says it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130480022",
+            "o030130480042"
+          ],
+          "choice": "\"ድር ወይም ማግ\" for warp or woof; Readable speaks of the threads (later \"ክሮቹ\")",
+          "alternatives": [
+            "\"የቁመት ክር ወይም የጎን ክር\" at every level"
+          ],
+          "reason": "\"ድር\" and \"ማግ\" are the Amharic weaver's own words for the lengthwise and crosswise threads; Readable explains them as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6768,6 +7201,11 @@
           "L": "e a marca for esverdeada ou avermelhada na roupa, ou no couro, ou na urdidura, ou na trama, ou em qualquer objeto de couro, [é] uma marca de doença escamosa, e será mostrada ao sacerdote.",
           "B": "e a mancha na roupa ou no couro, na urdidura ou na trama, ou em qualquer objeto de couro, for esverdeada ou avermelhada, é uma mancha de mofo e deve ser mostrada ao sacerdote.",
           "R": "Se a mancha no tecido, nos fios ou no couro for esverdeada ou avermelhada, é mofo. Deve ser mostrada ao sacerdote."
+        },
+        "am": {
+          "L": "ምልክቱም በልብሱ ወይም በቆዳው ወይም በድሩ ወይም በማጉ ወይም ከቆዳ በተሠራ በማንኛውም ዕቃ ላይ ወደ አረንጓዴ ያደላ ወይም ቀላ ያለ ቢሆን፣ የለምጽ ምልክት ነው፤ ለካህኑም ይታያል።",
+          "B": "በልብሱ ወይም በቆዳው፣ በድሩ ወይም በማጉ፣ ወይም ከቆዳ በተሠራ በማንኛውም ዕቃ ላይ ያለው ምልክት ወደ አረንጓዴ ያደላ ወይም ቀላ ያለ ቢሆን፣ ሻጋታ ነው፤ ለካህኑም ይታይ።",
+          "R": "በጨርቁ፣ በክሮቹ ወይም በቆዳው ላይ ያለው ምልክት ወደ አረንጓዴ ያደላ ወይም ቀላ ያለ ከሆነ ሻጋታ ነው። ለካህኑ መታየት አለበት።"
         }
       },
       "decisions": [
@@ -6867,6 +7305,11 @@
           "L": "E o sacerdote examinará a marca e encerrará o [objeto com a] marca sete dias.",
           "B": "O sacerdote examinará a mancha e guardará o objeto à parte por sete dias.",
           "R": "O sacerdote deve olhar o mofo. Depois deve guardar a coisa à parte por sete dias."
+        },
+        "am": {
+          "L": "ካህኑም ምልክቱን ያያል፤ ምልክቱ [ያለበትንም] ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ካህኑ ሻጋታውን ይመርምር፤ ዕቃውንም ለሰባት ቀን ለይቶ ያስቀምጠው።",
+          "R": "ካህኑ ሻጋታውን ማየት አለበት። ከዚያም ዕቃውን ለሰባት ቀን ለብቻው ማስቀመጥ አለበት።"
         }
       },
       "decisions": [
@@ -6991,6 +7434,11 @@
           "L": "E examinará a marca no sétimo dia; se a marca se espalhou na roupa, ou na urdidura, ou na trama, ou no couro, para tudo o que se faz do couro para uso, a marca [é] uma doença escamosa maligna; [é] impura.",
           "B": "No sétimo dia ele examinará a mancha. Se ela tiver se espalhado na roupa, na urdidura ou na trama, ou no couro, seja qual for o uso do couro, é um mofo que se alastra, e o objeto está impuro.",
           "R": "No sétimo dia ele deve olhar de novo. O mofo pode ter se espalhado no tecido, nos fios ou no couro, não importa para que o couro é usado. Então é o tipo de mofo que não para de crescer. A coisa está impura."
+        },
+        "am": {
+          "L": "በሰባተኛውም ቀን ምልክቱን ያያል፤ ምልክቱ በልብሱ ወይም በድሩ ወይም በማጉ ወይም ለማንኛውም ሥራ በተሠራ ቆዳ ላይ ቢስፋፋ፣ ምልክቱ አጥፊ ለምጽ ነው፤ ርኩስ ነው።",
+          "B": "በሰባተኛው ቀን ሻጋታውን ይመርምር። ሻጋታው በልብሱ፣ በድሩ ወይም በማጉ፣ ወይም ለማንኛውም ጥቅም በዋለ ቆዳ ላይ ተስፋፍቶ ከሆነ፣ የሚስፋፋ ሻጋታ ነው፤ ዕቃውም ርኩስ ነው።",
+          "R": "በሰባተኛው ቀን ካህኑ እንደገና ማየት አለበት። ሻጋታው በጨርቁ፣ በክሮቹ ወይም ለማንኛውም ጥቅም በዋለ ቆዳ ላይ ተስፋፍቶ ሊሆን ይችላል። እንዲህ ከሆነ እያደገ የሚሄድ ዓይነት ሻጋታ ነው። ዕቃው ርኩስ ነው።"
         }
       },
       "decisions": [
@@ -7131,6 +7579,27 @@
           "reason": "Here, in verse 52 and in 14:44: Literal keeps \"maligna\", as the English Literal keeps \"malignant\"; Balanced and Readable say what it means for mold (m1), a growth that keeps eating away. Balanced uses \"alastrar-se\" for this kind of mold, so as not to repeat the \"espalhar-se\" of the test just before it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130510221"
+          ],
+          "choice": "\"አጥፊ ለምጽ\" (L), \"የሚስፋፋ ሻጋታ\" (B), \"እያደገ የሚሄድ ዓይነት ሻጋታ\" (R), here and in 13:52; 14:44",
+          "alternatives": [
+            "\"ክፉ ለምጽ\""
+          ],
+          "reason": "The Hebrew adjective means destructive, eating away; Literal says so, Balanced and Readable follow the English levels in naming a mould that keeps spreading.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7220,6 +7689,11 @@
           "L": "E queimará a roupa, ou a urdidura, ou a trama, de lã ou de linho, ou qualquer objeto de couro em que estiver a marca, porque [é] uma doença escamosa maligna; será queimada no fogo.",
           "B": "Ele deve queimar a roupa, a urdidura ou a trama de lã ou de linho, ou o objeto de couro em que estiver a mancha. Por ser um mofo que se alastra, tem de ser queimado.",
           "R": "Ele deve queimar o tecido, os fios ou o couro que tiver mofo. É o tipo de mofo que não para de crescer, por isso deve ser queimado no fogo."
+        },
+        "am": {
+          "L": "ልብሱን ወይም ድሩን ወይም ማጉን፣ የሱፍም ሆነ የበፍታ፣ ወይም ምልክቱ ያለበትን ከቆዳ የተሠራ ማንኛውንም ዕቃ ያቃጥላል፤ አጥፊ ለምጽ ነውና፤ በእሳት ይቃጠላል።",
+          "B": "ልብሱን፣ የሱፍ ወይም የበፍታ ድሩን ወይም ማጉን፣ ወይም ሻጋታው ያለበትን ከቆዳ የተሠራ ዕቃ ያቃጥል። የሚስፋፋ ሻጋታ ስለሆነ በእሳት ተቃጥሎ ይጥፋ።",
+          "R": "ሻጋታው ያለበትን ጨርቅ፣ ክር ወይም ቆዳ ማቃጠል አለበት። እያደገ የሚሄድ ዓይነት ሻጋታ ስለሆነ በእሳት መቃጠል አለበት።"
         }
       },
       "decisions": [
@@ -7313,6 +7787,11 @@
           "L": "Mas se o sacerdote examinar, e eis que a marca não se espalhou na roupa, ou na urdidura, ou na trama, ou em qualquer objeto de couro,",
           "B": "Mas, se o sacerdote examinar e a mancha não tiver se espalhado na roupa, na urdidura ou na trama, ou no objeto de couro,",
           "R": "Mas o sacerdote pode ver que o mofo não se espalhou no tecido, nos fios ou no couro."
+        },
+        "am": {
+          "L": "ካህኑ ግን ቢያይ፣ እነሆ፣ ምልክቱ በልብሱ ወይም በድሩ ወይም በማጉ ወይም ከቆዳ በተሠራ በማንኛውም ዕቃ ላይ ባይስፋፋ፣",
+          "B": "ነገር ግን ካህኑ ሲመረምረው ሻጋታው በልብሱ፣ በድሩ ወይም በማጉ፣ ወይም ከቆዳ በተሠራው ዕቃ ላይ ባይስፋፋ፣",
+          "R": "ነገር ግን ካህኑ ሻጋታው በጨርቁ፣ በክሮቹ ወይም በቆዳው ላይ እንዳልተስፋፋ ሊያይ ይችላል።"
         }
       },
       "decisions": [
@@ -7400,6 +7879,11 @@
           "L": "então o sacerdote ordenará, e lavarão aquilo em que [está] a marca, e ele o encerrará sete dias pela segunda [vez].",
           "B": "o sacerdote mandará lavar o objeto em que está a mancha e o guardará à parte por mais sete dias.",
           "R": "Então o sacerdote deve mandar lavar a coisa que tem o mofo. Deve guardá-la à parte por mais sete dias."
+        },
+        "am": {
+          "L": "ካህኑ ያዝዛል፤ ምልክቱ ያለበትንም ያጥባሉ፤ ለሁለተኛ ጊዜ ሰባት ቀን ዘግቶ ያቆየዋል።",
+          "B": "ካህኑ ሻጋታው ያለበት ዕቃ እንዲታጠብ ያዝዝ፤ ለሌላ ሰባት ቀንም ለይቶ ያስቀምጠው።",
+          "R": "እንዲህ ከሆነ ካህኑ ሻጋታው ያለበትን ዕቃ ማሳጠብ አለበት። ለሰባት ቀን ደግሞ ለብቻው ማስቀመጥ አለበት።"
         }
       },
       "decisions": [
@@ -7507,6 +7991,11 @@
           "L": "E o sacerdote examinará depois de a marca ter sido lavada, e eis que a marca não mudou o seu aspecto, e a marca não se espalhou; [é] impura; tu a queimarás no fogo; [é] uma corrosão, no seu lado de trás ou no seu lado da frente.",
           "B": "Depois que o objeto for lavado, o sacerdote examinará a mancha de novo. Se a sua aparência não tiver mudado, mesmo que ela não se tenha espalhado, o objeto está impuro. Tu o queimarás no fogo; é uma corrosão que atingiu o avesso ou o lado direito.",
           "R": "Depois que a coisa for lavada, o sacerdote deve olhar o mofo de novo. Ele pode estar igual a antes, mesmo que não tenha se espalhado. Então a coisa está impura. Deves queimá-la no fogo. O mofo comeu o material, de um lado ou do outro."
+        },
+        "am": {
+          "L": "ካህኑም ምልክቱ ከታጠበ በኋላ ያያል፤ እነሆ፣ ምልክቱ መልኩን ባይለውጥ፣ ምልክቱም ባይስፋፋ፣ ርኩስ ነው፤ በእሳት ታቃጥለዋለህ፤ በጀርባውም ይሁን በፊቱ ላይ ያለ ብስባሽ ነው።",
+          "B": "ከታጠበም በኋላ ካህኑ ሻጋታውን እንደገና ይመርምር። ባይስፋፋም እንኳ መልኩ ካልተለወጠ ርኩስ ነው። በእሳት ታቃጥለዋለህ፤ ከጀርባውም ይሁን ከፊቱ የበላው ብስባሽ ነው።",
+          "R": "ዕቃው ከታጠበ በኋላ ካህኑ ሻጋታውን እንደገና ማየት አለበት። ባይስፋፋም እንኳ እንደ ቀድሞው ሆኖ ሊታይ ይችላል። እንዲህ ከሆነ ዕቃው ርኩስ ነው። በእሳት ማቃጠል አለብህ። ሻጋታው ከአንዱ ወይም ከሌላው ወገን በልቶታል።"
         }
       },
       "decisions": [
@@ -7737,6 +8226,25 @@
           "reason": "Portuguese cannot keep \"eye\" for appearance (m1) without being misread, so Literal says \"aspecto\", which still names how a thing looks. The rare word for the eating away (m2) is \"corrosão\" at Literal and Balanced, which keeps the sense of a hollow eaten into the cloth better than \"podridão\". For the two sides of a cloth (m3) Balanced uses \"o avesso\" and \"o lado direito\", the words for the inner and outer side of fabric.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030130550121"
+          ],
+          "choice": "\"መልኩን ባይለውጥ\" (has not changed its look) for \"has not changed its eye\"",
+          "alternatives": [
+            "\"ዓይኑን ባይለውጥ\""
+          ],
+          "reason": "In Amharic \"its eye\" would be heard as a real eye in the cloth; \"መልክ\" is the word the chapter already uses for the Hebrew \"appearance\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7822,6 +8330,11 @@
           "L": "Mas se o sacerdote examinou, e eis que a marca esmaeceu depois de ter sido lavada, então ele a arrancará da roupa, ou do couro, ou da urdidura, ou da trama.",
           "B": "Mas, se o sacerdote examinar e a mancha tiver esmaecido depois de lavada, ele arrancará a mancha da roupa, do couro, da urdidura ou da trama.",
           "R": "Mas o sacerdote pode ver que o mofo ficou mais claro depois de lavado. Então ele deve arrancar a parte com mofo do tecido, do couro ou dos fios."
+        },
+        "am": {
+          "L": "ካህኑም ቢያይ፣ እነሆ፣ ምልክቱ ከታጠበ በኋላ ቢደበዝዝ፣ ከልብሱ ወይም ከቆዳው ወይም ከድሩ ወይም ከማጉ ቀድዶ ያወጣዋል።",
+          "B": "ነገር ግን ካህኑ ሲመረምረው ሻጋታው ከታጠበ በኋላ ቢደበዝዝ፣ ያንን ክፍል ከልብሱ፣ ከቆዳው ወይም ከድሩ ወይም ከማጉ ቀድዶ ያውጣው።",
+          "R": "ነገር ግን ካህኑ ሻጋታው ከታጠበ በኋላ እንደደበዘዘ ሊያይ ይችላል። እንዲህ ከሆነ ሻጋታ ያለበትን ክፍል ከጨርቁ፣ ከቆዳው ወይም ከክሮቹ ቀድዶ ማውጣት አለበት።"
         }
       },
       "decisions": [
@@ -7920,6 +8433,11 @@
           "L": "E se aparecer outra vez na roupa, ou na urdidura, ou na trama, ou em qualquer objeto de couro, [é] algo brotando; tu queimarás no fogo aquilo em que [está] a marca.",
           "B": "Se a mancha aparecer de novo na roupa, na urdidura ou na trama, ou no objeto de couro, é o mofo brotando outra vez, e tu queimarás o que tiver a mancha.",
           "R": "Mas o mofo pode aparecer de novo no tecido, nos fios ou no couro. Isso quer dizer que ele está crescendo outra vez. Deves queimar a coisa que tem o mofo."
+        },
+        "am": {
+          "L": "በልብሱ ወይም በድሩ ወይም በማጉ ወይም ከቆዳ በተሠራ በማንኛውም ዕቃ ላይ እንደገና ቢታይ፣ እየወጣ ነው፤ ምልክቱ ያለበትን በእሳት ታቃጥለዋለህ።",
+          "B": "በልብሱ፣ በድሩ ወይም በማጉ፣ ወይም ከቆዳ በተሠራው ዕቃ ላይ እንደገና ቢታይ፣ እንደ አዲስ እየወጣ ነው፤ ሻጋታው ያለበትን ሁሉ ታቃጥለዋለህ።",
+          "R": "ነገር ግን ሻጋታው በጨርቁ፣ በክሮቹ ወይም በቆዳው ላይ እንደገና ሊታይ ይችላል። ይህ ማለት እንደገና እያደገ ነው። ሻጋታ ያለበትን ዕቃ ማቃጠል አለብህ።"
         }
       },
       "decisions": [
@@ -8015,6 +8533,11 @@
           "L": "E a roupa, ou a urdidura, ou a trama, ou qualquer objeto de couro que lavares, e a marca sair deles, então será lavado pela segunda [vez], e será puro.",
           "B": "Mas a roupa, a urdidura ou a trama, ou o objeto de couro que lavares e do qual a mancha tiver saído, será lavado uma segunda vez e estará puro.",
           "R": "Mas podes lavar o tecido, os fios ou o couro, e o mofo pode sair. Então lava-o uma segunda vez, e ele estará puro."
+        },
+        "am": {
+          "L": "የምታጥበውም ልብስ ወይም ድር ወይም ማግ ወይም ከቆዳ የተሠራ ማንኛውም ዕቃ፣ ምልክቱ ከእነርሱ ቢለቅ፣ ለሁለተኛ ጊዜ ይታጠባል፤ ንጹሕም ይሆናል።",
+          "B": "ነገር ግን ያጠብከው ልብስ፣ ድር ወይም ማግ፣ ወይም ከቆዳ የተሠራ ዕቃ ሻጋታው ከለቀቀው፣ ለሁለተኛ ጊዜ ይታጠብ፤ ንጹሕም ይሆናል።",
+          "R": "ነገር ግን ጨርቁን፣ ክሮቹን ወይም ቆዳውን ልታጥበው ትችላለህ፤ ሻጋታውም ሊጠፋ ይችላል። እንዲህ ከሆነ ለሁለተኛ ጊዜ እጠበው፤ ንጹሕም ይሆናል።"
         }
       },
       "decisions": [
@@ -8112,6 +8635,11 @@
           "L": "Esta [é] a lei da marca de doença escamosa numa roupa de lã ou de linho, ou na urdidura, ou na trama, ou em qualquer objeto de couro, para declará-lo puro ou para declará-lo impuro.\"",
           "B": "Esta é a lei do mofo na roupa de lã ou de linho, na urdidura ou na trama, ou em qualquer objeto de couro, para declará-lo puro ou impuro.\"",
           "R": "Estas são as regras sobre o mofo em tecido de lã ou de linho, nos fios dele ou em qualquer coisa feita de couro. Elas mostram como saber se a coisa está pura ou impura.\""
+        },
+        "am": {
+          "L": "በሱፍ ወይም በበፍታ ልብስ፣ ወይም በድር ወይም በማግ፣ ወይም ከቆዳ በተሠራ በማንኛውም ዕቃ ላይ ስላለው የለምጽ ምልክት፣ ንጹሕ ነው ወይም ርኩስ ነው ለማለት፣ ሕጉ ይህ ነው።»",
+          "B": "በሱፍ ወይም በበፍታ ልብስ፣ በድር ወይም በማግ፣ ወይም ከቆዳ በተሠራ በማንኛውም ዕቃ ላይ ስለሚወጣ ሻጋታ፣ ንጹሕ ወይም ርኩስ መሆኑን ለማስታወቅ፣ ሕጉ ይህ ነው።»",
+          "R": "ከሱፍ ወይም ከበፍታ በተሠራ ጨርቅ፣ በክሮቹ ወይም ከቆዳ በተሠራ ማንኛውም ነገር ላይ ስለሚወጣ ሻጋታ የሚናገሩት ሕጎች እነዚህ ናቸው። ዕቃው ንጹሕ ወይም ርኩስ መሆኑን እንዴት ማወቅ እንደሚቻል ያሳያሉ።»"
         }
       },
       "decisions": [
