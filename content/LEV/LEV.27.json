@@ -55,6 +55,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} falou a Moisés, dizendo:",
           "B": "{{divine_name:O SENHOR|Javé}} falou a Moisés. Ele disse:",
           "R": "{{divine_name:O SENHOR|Javé}} disse a Moisés:"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ለሙሴ እንዲህ ብሎ ተናገረ፦",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን ተናገረው። እንዲህም አለው፦",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
         }
       },
       "decisions": [
@@ -91,6 +96,25 @@
             "passé composé at every level"
           ],
           "reason": "As docs/french-style.md section 3, for the one narrative sentence that introduces the speech. The laws that follow use the future at Literal and Balanced and \"devoir\" or the present at Readable, as in the rest of Leviticus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270010021"
+          ],
+          "choice": "No deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The English of this chapter capitalises pronouns for God under the deity_pronoun setting (verses 21 and 28). Ethiopic script has no capital letters, so the Amharic has nothing for that setting to change and carries no deity_pronoun spans.",
           "uncertain": false,
           "footnote": false
         }
@@ -163,6 +187,11 @@
           "L": "\"Fala aos filhos de Israel e dize-lhes: 'Quando alguém fizer um voto especial, segundo a tua avaliação de pessoas, {{divine_name:ao SENHOR|a Javé}},",
           "B": "\"Fala aos israelitas e diz a eles: 'Quando alguém fizer um voto especial de dar {{divine_name:ao SENHOR|a Javé}} o valor de uma pessoa,",
           "R": "\"Diz aos israelitas: 'Alguém pode fazer uma promessa especial de dar uma pessoa {{divine_name:ao SENHOR|a Javé}}. Então deve pagar o preço fixado para essa pessoa."
+        },
+        "am": {
+          "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ሰው በሰዎች ግምትህ ልዩ ስእለትን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሲሳል፣",
+          "B": "«ለእስራኤል ልጆች እንዲህ ብለህ ንገራቸው፦ “ማንም ሰው የአንድን ሰው ዋጋ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለመስጠት ልዩ ስእለት ቢሳል፣",
+          "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “አንድ ሰው አንድን ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለመስጠት ልዩ ስእለት ሊሳል ይችላል። ያን ጊዜ ለዚያ ሰው የተወሰነውን ዋጋ መክፈል አለበት።"
         }
       },
       "decisions": [
@@ -455,6 +484,47 @@
           "reason": "For the chapter: the fixed \"your\" in this term (m2) is singular and names no one in particular, so Literal keeps it as \"a tua avaliação\" throughout, as 5:15 does, rather than switching to the \"vocês\" of the people addressed. Balanced and Readable leave it out and say \"o valor\" and \"o preço fixado\", as the English says \"valuation\" and \"set price\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270020112",
+            "o030270020113"
+          ],
+          "choice": "\"your valuation\" (erkekha) is \"ግምትህ\" at Literal, \"ግምቱ\" at Balanced and \"የተወሰነው ዋጋ\" (the set price) at Readable, through the chapter",
+          "alternatives": [
+            "ዋጋህ (your price)"
+          ],
+          "reason": "The Hebrew's \"your valuation\" is a fixed term for the official price, not the hearer's own estimate. Literal keeps the \"your\"; Balanced and Readable say \"the valuation\" and \"the set price\", as the English levels do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270020071"
+          ],
+          "choice": "No gender spans for \"ሰው\", \"ማንም\" or \"የእስራኤል ልጆች\"",
+          "alternatives": [],
+          "reason": "Where the English offers \"a person / a man\" and \"anyone / any man\" as a gender setting, the Amharic ሰው and ማንም already mean anyone, man or woman (meaning decision m3), so there is nothing for the setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -533,6 +603,11 @@
           "L": "então a tua avaliação para [alguém] do sexo masculino, de vinte anos até sessenta anos, será — a tua avaliação será cinquenta siclos de prata, pelo siclo do santuário.",
           "B": "o valor de um homem de vinte a sessenta anos de idade será de cinquenta siclos de prata, medidos pelo siclo do santuário.",
           "R": "Para um homem de vinte a sessenta anos, o preço fixado é de cinquenta siclos de prata, pesados pelo siclo oficial usado na tenda santa."
+        },
+        "am": {
+          "L": "ከሃያ ዓመት ዕድሜ ጀምሮ እስከ ስድሳ ዓመት ዕድሜ ድረስ ላለ ወንድ ግምትህ፣ ግምትህ በመቅደሱ ሰቅል 50 ሰቅል ብር ይሆናል።",
+          "B": "ከሃያ እስከ ስድሳ ዓመት ዕድሜ ላለ ወንድ ግምቱ በመቅደሱ ሰቅል ተመዝኖ {{units:575 ግራም ያህል ብር|50 ሰቅል ብር}} ይሆናል።",
+          "R": "ዕድሜው ከሃያ እስከ ስድሳ ዓመት ለሆነ ወንድ የተወሰነው ዋጋ በመቅደሱ መደበኛ ሰቅል ተመዝኖ {{units:575 ግራም ያህል ብር|50 ሰቅል ብር}} ነው።"
         }
       },
       "decisions": [
@@ -728,6 +803,28 @@
           "reason": "For the chapter, as in 5:15: the shekel is \"siclo\" at every level. The English keeps \"shekels\" without a units setting in these valuations, so the Portuguese does too, and the meaning note gives the weight (about 11,5 g). \"O siclo do santuário\" is the standard weight for payments to the sanctuary (m2); Readable says what it is, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270030131",
+            "o030270030141"
+          ],
+          "choice": "Shekels in a units span at Balanced and Readable: grams of silver by default (a shekel about 11.5 grams), the shekel as the alternative; Literal keeps the shekel",
+          "alternatives": [
+            "no span, as the English",
+            "ብር without grams"
+          ],
+          "reason": "Amharic measures are metric, so the valuations in this chapter read as weights of silver (50 shekels about 575 grams), as in Exodus 21:32; the reader setting gives the shekels back. The English keeps the shekel without a span. ብር is the metal, weighed in grams, not the birr. The sanctuary shekel stays as the standard the silver is weighed by (በመቅደሱ ሰቅል ተመዝኖ).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -790,6 +887,11 @@
           "L": "E, se for do sexo feminino, a tua avaliação será trinta siclos.",
           "B": "Se for uma mulher, o valor será de trinta siclos.",
           "R": "Para uma mulher, o preço fixado é de trinta siclos."
+        },
+        "am": {
+          "L": "ሴትም ብትሆን ግምትህ 30 ሰቅል ይሆናል።",
+          "B": "ሴት ከሆነች ግምቱ {{units:345 ግራም ያህል ብር|30 ሰቅል}} ነው።",
+          "R": "ለሴት የተወሰነው ዋጋ {{units:345 ግራም ያህል ብር|30 ሰቅል}} ነው።"
         }
       },
       "decisions": [
@@ -901,6 +1003,11 @@
           "L": "E, se [a pessoa for] de cinco anos até vinte anos, a tua avaliação do sexo masculino será vinte siclos, e para o sexo feminino, dez siclos.",
           "B": "Para alguém de cinco a vinte anos de idade, o valor será de vinte siclos para o sexo masculino e de dez siclos para o feminino.",
           "R": "Para um menino ou uma menina de cinco a vinte anos, o preço fixado é de vinte siclos para o menino e de dez siclos para a menina."
+        },
+        "am": {
+          "L": "ከአምስት ዓመት ዕድሜ ጀምሮ እስከ ሃያ ዓመት ዕድሜ ድረስ ቢሆን፣ ግምትህ ለወንድ 20 ሰቅል፣ ለሴትም 10 ሰቅል ይሆናል።",
+          "B": "ከአምስት እስከ ሃያ ዓመት ዕድሜ ላለ ሰው ግምቱ ለወንድ {{units:230 ግራም ያህል ብር|20 ሰቅል}}፣ ለሴት {{units:115 ግራም ያህል ብር|10 ሰቅል}} ነው።",
+          "R": "ዕድሜያቸው ከአምስት እስከ ሃያ ዓመት ለሆኑ ልጆች የተወሰነው ዋጋ ለወንድ ልጅ {{units:230 ግራም ያህል ብር|20 ሰቅል}}፣ ለሴት ልጅ {{units:115 ግራም ያህል ብር|10 ሰቅል}} ነው።"
         }
       },
       "decisions": [
@@ -1015,6 +1122,11 @@
           "L": "E, se [a pessoa for] de um mês até cinco anos, a tua avaliação do sexo masculino será cinco siclos de prata, e para o sexo feminino a tua avaliação [será] três siclos de prata.",
           "B": "Para uma criança de um mês a cinco anos de idade, o valor será de cinco siclos de prata para o sexo masculino e de três siclos de prata para o feminino.",
           "R": "Para uma criança de um mês a cinco anos, o preço fixado é de cinco siclos de prata para um menino e de três siclos de prata para uma menina."
+        },
+        "am": {
+          "L": "ከአንድ ወር ዕድሜ ጀምሮ እስከ አምስት ዓመት ዕድሜ ድረስ ቢሆን፣ ግምትህ ለወንድ 5 ሰቅል ብር፣ ለሴትም ግምትህ 3 ሰቅል ብር ይሆናል።",
+          "B": "ከአንድ ወር እስከ አምስት ዓመት ዕድሜ ላለ ሕፃን ግምቱ ለወንድ {{units:58 ግራም ያህል ብር|5 ሰቅል ብር}}፣ ለሴት {{units:35 ግራም ያህል ብር|3 ሰቅል ብር}} ነው።",
+          "R": "ዕድሜው ከአንድ ወር እስከ አምስት ዓመት ለሆነ ሕፃን የተወሰነው ዋጋ ለወንድ ልጅ {{units:58 ግራም ያህል ብር|5 ሰቅል ብር}}፣ ለሴት ልጅ {{units:35 ግራም ያህል ብር|3 ሰቅል ብር}} ነው።"
         }
       },
       "decisions": [
@@ -1106,6 +1218,11 @@
           "L": "E, se [a pessoa for] de sessenta anos para cima, se for do sexo masculino, a tua avaliação será quinze siclos, e para o sexo feminino, dez siclos.",
           "B": "Para alguém de sessenta anos ou mais, o valor será de quinze siclos para um homem e de dez siclos para uma mulher.",
           "R": "Para uma pessoa com mais de sessenta anos, o preço fixado é de quinze siclos para um homem e de dez siclos para uma mulher."
+        },
+        "am": {
+          "L": "ከስድሳ ዓመት ዕድሜ በላይ ቢሆን፣ ወንድ ቢሆን ግምትህ 15 ሰቅል፣ ለሴትም 10 ሰቅል ይሆናል።",
+          "B": "ስድሳ ዓመትና ከዚያ በላይ ዕድሜ ላለው ሰው ግምቱ ለወንድ {{units:173 ግራም ያህል ብር|15 ሰቅል}}፣ ለሴት {{units:115 ግራም ያህል ብር|10 ሰቅል}} ነው።",
+          "R": "ዕድሜው ከስድሳ ዓመት በላይ ለሆነ ሰው የተወሰነው ዋጋ ለወንድ {{units:173 ግራም ያህል ብር|15 ሰቅል}}፣ ለሴት {{units:115 ግራም ያህል ብር|10 ሰቅል}} ነው።"
         }
       },
       "decisions": [
@@ -1206,6 +1323,11 @@
           "L": "Mas, se ele for pobre demais para a tua avaliação, ele o apresentará diante do sacerdote, e o sacerdote o avaliará; conforme aquilo que a mão do que fez o voto puder alcançar, o sacerdote o avaliará.",
           "B": "Mas, se quem fez o voto for pobre demais para pagar o valor, a pessoa será apresentada ao sacerdote, e o sacerdote fixará um valor para ela, de acordo com o que quem fez o voto puder pagar.",
           "R": "Mas alguém pode ser pobre demais para pagar o preço fixado. Então a pessoa que foi prometida deve ser levada ao sacerdote. O sacerdote vai decidir um preço que quem fez a promessa possa pagar."
+        },
+        "am": {
+          "L": "ለግምትህ የማይበቃ ድሃ ቢሆን ግን፣ በካህኑ ፊት ያቁመዋል፤ ካህኑም ይገምተዋል፤ የሳለው ሰው እጅ እንደሚደርስበት መጠን ካህኑ ይገምተዋል።",
+          "B": "የሳለው ሰው ግምቱን መክፈል የማይችል ድሃ ቢሆን ግን፣ የተሳለው ሰው በካህኑ ፊት ይቅረብ፤ ካህኑም የሳለው ሰው መክፈል በሚችለው መጠን ዋጋውን ይወስንለት።",
+          "R": "አንድ ሰው ግን የተወሰነውን ዋጋ መክፈል የማይችል ድሃ ሊሆን ይችላል። እንዲህ ከሆነ በስእለት የተሰጠው ሰው ወደ ካህኑ መቅረብ አለበት። ካህኑም የሳለው ሰው ሊከፍል የሚችለውን ዋጋ ይወስናል።"
         }
       },
       "decisions": [
@@ -1329,6 +1451,11 @@
           "L": "E, se [for] um animal do qual [se] traz uma oferta {{divine_name:ao SENHOR|a Javé}}, tudo o que ele der dele {{divine_name:ao SENHOR|a Javé}} será santo.",
           "B": "Se o voto for de um animal da espécie que pode ser apresentada como oferta {{divine_name:ao SENHOR|a Javé}}, todo animal assim dado {{divine_name:ao SENHOR|a Javé}} se torna santo.",
           "R": "Alguém pode prometer um animal de uma espécie que pode ser oferecida {{divine_name:ao SENHOR|a Javé}}. Todo animal dado {{divine_name:ao SENHOR|a Javé}} dessa forma se torna santo."
+        },
+        "am": {
+          "L": "ሰዎች ከእርሱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ የሚያቀርቡት እንስሳ ቢሆን፣ ከእርሱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚሰጠው ሁሉ ቅዱስ ይሆናል።",
+          "B": "ስእለቱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ ሆኖ ሊቀርብ ከሚችል ዓይነት እንስሳ ከሆነ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተሰጠው እንዲህ ያለ እንስሳ ሁሉ ቅዱስ ይሆናል።",
+          "R": "አንድ ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ ሆኖ ሊቀርብ የሚችል እንስሳ ለመስጠት ሊሳል ይችላል። በዚህ መንገድ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተሰጠ ማንኛውም እንስሳ ቅዱስ ይሆናል።"
         }
       },
       "decisions": [
@@ -1444,6 +1571,11 @@
           "L": "Não o substituirá nem o trocará, um bom por um ruim ou um ruim por um bom; e, se de fato trocar animal por animal, ele e o seu substituto serão santos.",
           "B": "O dono não deverá trocá-lo nem pôr outro no seu lugar, um animal bom por um fraco ou um fraco por um bom. Se de fato substituir um animal por outro, tanto o primeiro como o que foi posto no seu lugar serão santos.",
           "R": "O dono não deve trocá-lo por outro animal, um melhor por um pior ou um pior por um melhor. Se trocar, os dois animais vão pertencer {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "መልካሙን በመጥፎ ወይም መጥፎውን በመልካም አይለውጠው፤ አይቀይረውም፤ እንስሳን በእንስሳ ፈጽሞ ቢቀይር ግን፣ እርሱና ምትኩ ቅዱሳን ይሆናሉ።",
+          "B": "ባለቤቱ መልካሙን በመጥፎ ወይም መጥፎውን በመልካም አይለውጥ፤ በሌላም አይተካው። አንዱን እንስሳ በሌላ ቢተካ ግን፣ የመጀመሪያውም ሆነ በእርሱ ፋንታ የገባው ሁለቱም ቅዱሳን ይሆናሉ።",
+          "R": "ባለቤቱ የተሻለውን በባሰው ወይም የባሰውን በተሻለው በሌላ እንስሳ መለወጥ የለበትም። ቢለውጥ ግን ሁለቱም እንስሶች {{divine_name:የእግዚአብሔር|የያህዌ}} ይሆናሉ።"
         }
       },
       "decisions": [
@@ -1589,6 +1721,11 @@
           "L": "E, se [for] algum animal impuro, do qual não [se] traz oferta {{divine_name:ao SENHOR|a Javé}}, ele apresentará o animal diante do sacerdote,",
           "B": "Se o voto for de um animal impuro, da espécie que não pode ser apresentada como oferta {{divine_name:ao SENHOR|a Javé}}, o animal será apresentado ao sacerdote,",
           "R": "Alguém pode prometer um animal impuro, que não pode ser oferecido {{divine_name:ao SENHOR|a Javé}}. Então o animal deve ser levado ao sacerdote."
+        },
+        "am": {
+          "L": "ሰዎች ከእርሱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ የማያቀርቡት ማንኛውም ርኩስ እንስሳ ቢሆን፣ እንስሳውን በካህኑ ፊት ያቁመው፤",
+          "B": "ስእለቱ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ ሆኖ ሊቀርብ ከማይችል ዓይነት ርኩስ እንስሳ ከሆነ፣ እንስሳው በካህኑ ፊት ይቅረብ፤",
+          "R": "አንድ ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሊቀርብ የማይችል ርኩስ እንስሳ ለመስጠት ሊሳል ይችላል። ያን ጊዜ እንስሳው ወደ ካህኑ መቅረብ አለበት።"
         }
       },
       "decisions": [
@@ -1696,6 +1833,11 @@
           "L": "e o sacerdote o avaliará, seja bom, seja ruim; conforme a tua avaliação, ó sacerdote, assim será.",
           "B": "e o sacerdote fixará o seu valor conforme ele seja bom ou fraco. O valor que ele fixar valerá.",
           "R": "O sacerdote vai decidir quanto ele vale, se é um animal bom ou fraco. O preço que o sacerdote fixar é definitivo."
+        },
+        "am": {
+          "L": "ካህኑም መልካምም ቢሆን መጥፎም ቢሆን ይገምተዋል፤ ካህን ሆይ፣ እንደ ግምትህ እንዲሁ ይሆናል።",
+          "B": "ካህኑም መልካም ወይም መጥፎ መሆኑን አይቶ ዋጋውን ይወስናል። ካህኑ የወሰነው ዋጋ ጸንቶ ይኖራል።",
+          "R": "ካህኑ እንስሳው ጥሩም ሆነ መጥፎ ምን ያህል እንደሚያወጣ ይወስናል። ካህኑ የወሰነው ዋጋ የመጨረሻ ነው።"
         }
       },
       "decisions": [
@@ -1835,6 +1977,11 @@
           "L": "E, se de fato o resgatar, acrescentará a sua quinta parte à tua avaliação.",
           "B": "Se o dono quiser resgatá-lo, deverá pagar o valor e mais um quinto.",
           "R": "Se o dono quiser comprar o animal de volta, deve pagar o preço fixado e mais um quinto."
+        },
+        "am": {
+          "L": "ቢቤዠውም በግምትህ ላይ አምስተኛውን ይጨምር።",
+          "B": "ባለቤቱ ሊቤዠው ቢፈልግ ግምቱን ከአንድ አምስተኛው ጋር ጨምሮ ይክፈል።",
+          "R": "ባለቤቱ እንስሳውን መልሶ መግዛት ከፈለገ የተወሰነውን ዋጋ በአንድ አምስተኛ ጨምሮ መክፈል አለበት።"
         }
       },
       "decisions": [
@@ -1999,6 +2146,25 @@
           "reason": "For the chapter, as chapter 25 has it for family land: \"resgatar\" is to buy back what has passed to another (m1). Readable says \"comprar de volta\", as the English Readable says \"buy back\" through the chapter. \"Remir\" is kept at Literal for the other verb, \"ransom\", in verses 27 and 29 (m2 there).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270130042"
+          ],
+          "choice": "Redeem (ga'al) is \"ቤዠ\" at Literal and Balanced and \"መልሶ መግዛት\" (buy back) at Readable, as in Leviticus 25",
+          "alternatives": [],
+          "reason": "The same verb as the Jubilee law of chapter 25 keeps one word for redemption across the two chapters; Readable says what it means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2080,6 +2246,11 @@
           "L": "E, quando alguém consagrar a sua casa [como] santa {{divine_name:para o SENHOR|para Javé}}, o sacerdote a avaliará, seja boa, seja ruim; como o sacerdote a avaliar, assim ficará.",
           "B": "Quando alguém consagrar uma casa como santa {{divine_name:para o SENHOR|para Javé}}, o sacerdote julgará se está em bom ou mau estado e fixará o seu valor. O valor que o sacerdote fixar será mantido.",
           "R": "Alguém pode separar a sua casa como santa {{divine_name:para o SENHOR|para Javé}}. Então o sacerdote vai decidir quanto ela vale, se é uma casa boa ou ruim. O preço que ele fixar não vai mudar."
+        },
+        "am": {
+          "L": "ሰውም ቤቱን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ አድርጎ ቢቀድስ፣ ካህኑ መልካምም ቢሆን መጥፎም ቢሆን ይገምተዋል፤ ካህኑ እንደ ገመተው እንዲሁ ይጸናል።",
+          "B": "ማንም ሰው ቤትን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ አድርጎ ቢለይ፣ ካህኑ ቤቱ በጥሩ ወይም በመጥፎ ሁኔታ ላይ መሆኑን አይቶ ዋጋውን ይወስን። ካህኑ የወሰነው ዋጋ ጸንቶ ይኖራል።",
+          "R": "አንድ ሰው ቤቱን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ አድርጎ ሊለይ ይችላል። ያን ጊዜ ካህኑ ቤቱ ጥሩም ሆነ መጥፎ ምን ያህል እንደሚያወጣ ይወስናል። ካህኑ የወሰነው ዋጋ አይለወጥም።"
         }
       },
       "decisions": [
@@ -2224,6 +2395,11 @@
           "L": "E, se aquele que [a] consagrou resgatar a sua casa, acrescentará a ela a quinta parte da prata da tua avaliação, e ela será dele.",
           "B": "Se quem consagrou a casa quiser resgatá-la, deverá pagar o seu valor em prata e mais um quinto, e ela voltará a ser sua.",
           "R": "Se o dono quiser comprar a casa de volta, deve pagar o preço fixado e mais um quinto. Então ela vai ser dele de novo."
+        },
+        "am": {
+          "L": "ቤቱን የቀደሰውም ሰው ቢቤዠው፣ የግምትህን ብር አምስተኛ በእርሱ ላይ ይጨምር፤ የእርሱም ይሆናል።",
+          "B": "ቤቱን የቀደሰው ሰው ሊቤዠው ቢፈልግ ዋጋውን በብር ከአንድ አምስተኛው ጋር ጨምሮ ይክፈል፤ ቤቱም ዳግመኛ የእርሱ ይሆናል።",
+          "R": "ባለቤቱ ቤቱን መልሶ መግዛት ከፈለገ የተወሰነውን ዋጋ በአንድ አምስተኛ ጨምሮ መክፈል አለበት። ያን ጊዜ ቤቱ እንደገና የእርሱ ይሆናል።"
         }
       },
       "decisions": [
@@ -2337,6 +2513,11 @@
           "L": "E, se alguém consagrar {{divine_name:ao SENHOR|a Javé}} parte do campo da sua propriedade, a tua avaliação será conforme a sua semente: a semente de um hômer de cevada a cinquenta siclos de prata.",
           "B": "Se alguém consagrar {{divine_name:ao SENHOR|a Javé}} parte de um campo que é terra da sua família, o seu valor seguirá a semente necessária para semeá-lo: cinquenta siclos de prata por {{units:cerca de 220 litros|um hômer}} de semente de cevada.",
           "R": "Alguém pode dar {{divine_name:ao SENHOR|a Javé}} parte da terra da sua família. Então o preço vai depender de quanta semente é preciso para plantá-la. O preço é de cinquenta siclos de prata para cada {{units:220 litros|hômer}} de semente de cevada."
+        },
+        "am": {
+          "L": "ሰውም ከርስቱ እርሻ ከፊሉን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቢቀድስ፣ ግምትህ እንደ ዘሩ መጠን ይሆናል፤ የአንድ ሆሜር ገብስ ዘር በ50 ሰቅል ብር ይሆናል።",
+          "B": "ማንም ሰው የቤተሰቡ ርስት ከሆነው እርሻ ከፊሉን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቢቀድስ፣ ዋጋው እርሻውን ለመዝራት በሚያስፈልገው ዘር መጠን ይወሰናል፤ {{units:220 ሊትር ያህል|አንድ ሆሜር}} የገብስ ዘር የሚዘራበት መሬት ዋጋ {{units:575 ግራም ያህል ብር|50 ሰቅል ብር}} ነው።",
+          "R": "አንድ ሰው ከቤተሰቡ መሬት ከፊሉን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሊሰጥ ይችላል። ያን ጊዜ ዋጋው መሬቱን ለመዝራት በሚያስፈልገው የዘር መጠን ይወሰናል። {{units:220 ሊትር ያህል|አንድ ሆሜር}} የገብስ ዘር የሚዘራበት መሬት ዋጋ {{units:575 ግራም ያህል ብር|50 ሰቅል ብር}} ነው።"
         }
       },
       "decisions": [
@@ -2527,6 +2708,26 @@
           "reason": "Metric by default with the original unit as the alternative, where the English converts (\"about 6 bushels\"), as docs/pentateuch-portuguese-terms.md sets it: the homer is taken as 220 litros (m2). It is spelled \"hômer\" to keep it apart from the much smaller \"ômer\" of Exodus 16, about 2,2 litros. Literal keeps the unit.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270160121"
+          ],
+          "choice": "\"220 ሊትር ያህል\" in a units span, with \"አንድ ሆሜር\" as the alternative, where the English has a units span on the homer; Literal keeps \"ሆሜር\"",
+          "alternatives": [
+            "ቆሮስ (the kor, a different Hebrew word)"
+          ],
+          "reason": "Amharic measures are metric: a homer is about 220 litres (the Pentateuch value for homer and kor), with the Hebrew measure as the alternative. The English gives US bushels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2591,6 +2792,11 @@
           "L": "Se consagrar o seu campo desde o ano do Jubileu, conforme a tua avaliação ficará.",
           "B": "Se o campo for consagrado a partir do ano do Jubileu, valerá a avaliação completa.",
           "R": "Se o campo for dado no ano do Jubileu, o preço completo continua o mesmo."
+        },
+        "am": {
+          "L": "ከኢዮቤልዩ ዓመት ጀምሮ እርሻውን ቢቀድስ፣ እንደ ግምትህ ይጸናል።",
+          "B": "እርሻው ከኢዮቤልዩ ዓመት ጀምሮ ቢቀደስ ሙሉው ግምት ይጸናል።",
+          "R": "እርሻው በኢዮቤልዩ ዓመት ከተሰጠ ሙሉው ዋጋ እንዳለ ይቆያል።"
         }
       },
       "decisions": [
@@ -2774,6 +2980,11 @@
           "L": "Mas, se consagrar o seu campo depois do Jubileu, o sacerdote calculará para ele a prata conforme os anos que restam até o ano do Jubileu, e ela será descontada da tua avaliação.",
           "B": "Mas, se o campo for consagrado depois do Jubileu, o sacerdote calculará o preço pelos anos que faltam até o próximo ano do Jubileu, e o valor será reduzido de acordo.",
           "R": "Mas o campo pode ser dado alguns anos depois do ano do Jubileu. Então o sacerdote vai calcular o preço contando os anos que faltam até o próximo Jubileu. O preço vai ser menor."
+        },
+        "am": {
+          "L": "ከኢዮቤልዩ በኋላ እርሻውን ቢቀድስ ግን፣ ካህኑ እስከ ኢዮቤልዩ ዓመት እንደ ቀሩት ዓመታት መጠን ብሩን ያሰላለታል፤ ከግምትህም ይቀነሳል።",
+          "B": "እርሻው ከኢዮቤልዩ በኋላ ቢቀደስ ግን፣ ካህኑ እስከሚቀጥለው የኢዮቤልዩ ዓመት በቀሩት ዓመታት ዋጋውን ያሰላል፤ ግምቱም በዚያው መጠን ይቀነሳል።",
+          "R": "ነገር ግን እርሻው ከኢዮቤልዩ ዓመት ከጥቂት ዓመታት በኋላ ሊሰጥ ይችላል። ያን ጊዜ ካህኑ እስከሚቀጥለው ኢዮቤልዩ የቀሩትን ዓመታት ቆጥሮ ዋጋውን ያሰላል። ዋጋውም ያንሳል።"
         }
       },
       "decisions": [
@@ -2886,6 +3097,11 @@
           "L": "E, se aquele que o consagrou de fato resgatar o campo, acrescentará a ele a quinta parte da prata da tua avaliação, e [o campo] ficará sendo dele.",
           "B": "Se quem consagrou o campo de fato o resgatar, deverá pagar o seu valor em prata e mais um quinto, e ele continuará sendo seu.",
           "R": "Se o dono quiser comprar o campo de volta, deve pagar o preço e mais um quinto. Então o campo vai ser dele de novo."
+        },
+        "am": {
+          "L": "እርሻውን የቀደሰውም ፈጽሞ ቢቤዠው፣ የግምትህን ብር አምስተኛ በእርሱ ላይ ይጨምር፤ ለእርሱም ይጸናለታል።",
+          "B": "እርሻውን የቀደሰው ሰው ቢቤዠው ዋጋውን በብር ከአንድ አምስተኛው ጋር ጨምሮ ይክፈል፤ እርሻውም የእርሱ ሆኖ ይቀራል።",
+          "R": "ባለቤቱ እርሻውን መልሶ መግዛት ከፈለገ ዋጋውን በአንድ አምስተኛ ጨምሮ መክፈል አለበት። ያን ጊዜ እርሻው እንደገና የእርሱ ይሆናል።"
         }
       },
       "decisions": [
@@ -2989,6 +3205,11 @@
           "L": "Mas, se não resgatar o campo, ou se vendeu o campo a outro homem, não será mais resgatado.",
           "B": "Mas, se não resgatar o campo, ou se o campo tiver sido vendido a outra pessoa, ele nunca mais poderá ser resgatado.",
           "R": "Mas, se o dono não comprar o campo de volta, ou se ele tiver sido vendido a outra pessoa, nunca mais poderá ser comprado de volta."
+        },
+        "am": {
+          "L": "እርሻውን ባይቤዠው ግን፣ ወይም እርሻውን ለሌላ ሰው ሸጦት ከሆነ፣ ከዚያ በኋላ አይቤዥም።",
+          "B": "እርሻውን ባይቤዠው ወይም እርሻው ለሌላ ሰው ተሽጦ ቢሆን ግን፣ ዳግመኛ ሊቤዥ አይችልም።",
+          "R": "ባለቤቱ እርሻውን መልሶ ካልገዛው ወይም ለሌላ ሰው ተሽጦ ከሆነ ግን፣ ፈጽሞ መልሶ ሊገዛ አይችልም።"
         }
       },
       "decisions": [
@@ -3119,6 +3340,11 @@
           "L": "E o campo, quando sair no Jubileu, será santo {{divine_name:para o SENHOR|para Javé}}, como o campo do anátema; será propriedade do sacerdote.",
           "B": "Quando o campo for liberado no Jubileu, será santo {{divine_name:para o SENHOR|para Javé}}, como um campo dedicado a {{deity_pronoun:ele|Ele}} por completo. Pertencerá ao sacerdote como terra sua.",
           "R": "No ano do Jubileu, quando a terra volta para os seus donos, esse campo vai pertencer {{divine_name:ao SENHOR|a Javé}}. Vai ser como a terra dada {{divine_name:ao SENHOR|a Javé}} para sempre. Vai pertencer ao sacerdote."
+        },
+        "am": {
+          "L": "እርሻውም በኢዮቤልዩ በወጣ ጊዜ ፈጽሞ እንደ ተለየ እርሻ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ይሆናል፤ የካህኑም ርስት ይሆናል።",
+          "B": "እርሻው በኢዮቤልዩ በሚለቀቅበት ጊዜ ፈጽሞ ለእርሱ እንደ ተለየ እርሻ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ይሆናል። የራሱ ርስት ሆኖ የካህኑ ይሆናል።",
+          "R": "በኢዮቤልዩ ዓመት መሬት ወደ ባለቤቶቹ በሚመለስበት ጊዜ ይህ እርሻ {{divine_name:የእግዚአብሔር|የያህዌ}} ይሆናል። ለዘለቄታው {{divine_name:ለእግዚአብሔር|ለያህዌ}} እንደ ተሰጠ መሬት ይሆናል። የካህኑ ይሆናል።"
         }
       },
       "decisions": [
@@ -3314,6 +3540,27 @@
           "reason": "For the chapter (verses 21, 28, 29): the word is something handed over to God wholly and for good, with no way back (m2; m1 at verse 28). Literal names it \"anátema\", the word Portuguese has for it; Balanced and Readable say what it means, as the English says \"devoted\". The verb is \"dedicar\", so that \"consagrar\" stays the word for an ordinary gift to the sanctuary that can be bought back (verses 14-22). Verse 29 says \"consagrado à destruição\" at Balanced and Readable, as the English says \"under the ban for destruction\" and \"devoted to destruction\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270210082"
+          ],
+          "choice": "The devoted thing (herem) is \"ፈጽሞ የተለየ\" (wholly set apart) in verses 21 and 28; \"ለጥፋት የተለየ\" (set apart for destruction) only in verse 29",
+          "alternatives": [
+            "እርም (forbidden, accursed: the cognate word now reads as taboo)",
+            "ለጥፋት የተለየ at every verse"
+          ],
+          "reason": "Here the word means something given over to the LORD for good (meaning decision m2): a field or a gift that can never be bought back. Only in verse 29, of a person under judgment, does it mean destruction, the sense the Pentateuch elsewhere gives ለጥፋት የተለየ.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3381,6 +3628,11 @@
           "L": "E, se consagrar {{divine_name:ao SENHOR|a Javé}} um campo que comprou, que não [é] do campo da sua propriedade,",
           "B": "Se alguém consagrar {{divine_name:ao SENHOR|a Javé}} um campo que comprou, que não faz parte da terra da sua família,",
           "R": "Alguém pode dar {{divine_name:ao SENHOR|a Javé}} um campo que comprou, que não faz parte da terra da sua família."
+        },
+        "am": {
+          "L": "ከርስቱ እርሻ ያልሆነውን የገዛውን እርሻ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቢቀድስ፣",
+          "B": "ማንም ሰው የቤተሰቡ ርስት ያልሆነውን የገዛውን እርሻ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቢቀድስ፣",
+          "R": "አንድ ሰው የቤተሰቡ መሬት ያልሆነውን የገዛውን እርሻ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ሊሰጥ ይችላል።"
         }
       },
       "decisions": [
@@ -3478,6 +3730,11 @@
           "L": "o sacerdote calculará para ele o montante da tua avaliação até o ano do Jubileu, e ele dará a tua avaliação naquele dia, [como] coisa santa {{divine_name:para o SENHOR|para Javé}}.",
           "B": "o sacerdote calculará o montante do valor até o ano do Jubileu, e essa pessoa deverá pagar o valor no mesmo dia, como oferta santa {{divine_name:para o SENHOR|para Javé}}.",
           "R": "O sacerdote vai calcular o preço dele até o ano do Jubileu. A pessoa deve pagar esse preço no mesmo dia. O dinheiro é uma oferta santa {{divine_name:para o SENHOR|para Javé}}."
+        },
+        "am": {
+          "L": "ካህኑ እስከ ኢዮቤልዩ ዓመት ድረስ የግምትህን መጠን ያሰላለታል፤ እርሱም በዚያ ቀን ግምትህን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ አድርጎ ይስጥ።",
+          "B": "ካህኑ እስከ ኢዮቤልዩ ዓመት ያለውን የግምቱን መጠን ያሰላል፤ ሰውየውም ግምቱን በዚያው ቀን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ስጦታ አድርጎ ይክፈል።",
+          "R": "ካህኑ እስከ ኢዮቤልዩ ዓመት ድረስ ያለውን ዋጋ ያሰላል። ሰውየው ያን ዋጋ በዚያው ቀን መክፈል አለበት። ገንዘቡ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የተሰጠ ቅዱስ ስጦታ ነው።"
         }
       },
       "decisions": [
@@ -3569,6 +3826,11 @@
           "L": "No ano do Jubileu o campo voltará àquele de quem o comprou, àquele de quem [é] a propriedade da terra.",
           "B": "No ano do Jubileu o campo voltará àquele de quem foi comprado, aquele a cuja família a terra pertence.",
           "R": "No ano do Jubileu o campo vai voltar para quem o vendeu, a pessoa cuja família é dona da terra."
+        },
+        "am": {
+          "L": "በኢዮቤልዩ ዓመት እርሻው ከእርሱ ወደ ገዛው፣ የምድሪቱ ርስት ወደ ሆነለት ሰው ይመለሳል።",
+          "B": "በኢዮቤልዩ ዓመት እርሻው ከእርሱ ወደ ተገዛው፣ የቤተሰቡ ርስት ወደ ሆነው ሰው ይመለሳል።",
+          "R": "በኢዮቤልዩ ዓመት እርሻው ወደ ሸጠው ሰው ይመለሳል፤ መሬቱ የቤተሰቡ ነውና።"
         }
       },
       "decisions": [
@@ -3653,6 +3915,11 @@
           "L": "E toda a tua avaliação será pelo siclo do santuário; vinte geras será o siclo.",
           "B": "Toda avaliação será feita pelo siclo do santuário, que é de vinte geras.",
           "R": "Todo preço deve ser calculado pelo siclo oficial usado na tenda santa. Esse siclo pesa vinte geras."
+        },
+        "am": {
+          "L": "ግምትህም ሁሉ በመቅደሱ ሰቅል ይሆናል፤ ሰቅሉ ሃያ ጌራ ይሆናል።",
+          "B": "ግምቱ ሁሉ ሃያ ጌራ በሆነው በመቅደሱ ሰቅል ይሁን።",
+          "R": "ዋጋው ሁሉ በመቅደሱ መደበኛ ሰቅል መሰላት አለበት። ያ ሰቅል ሃያ ጌራ ይመዝናል።"
         }
       },
       "decisions": [
@@ -3742,6 +4009,11 @@
           "L": "Mas o primogênito entre os animais, que como primogênito pertence {{divine_name:ao SENHOR|a Javé}} — ninguém o consagrará; seja boi, seja ovelha, ele [pertence] {{divine_name:ao SENHOR|a Javé}}.",
           "B": "Mas ninguém poderá consagrar o primogênito de um animal, pois o primogênito já pertence {{divine_name:ao SENHOR|a Javé}}. Seja do gado, seja do rebanho, ele é {{divine_name:do SENHOR|de Javé}}.",
           "R": "Mas ninguém pode prometer dar {{divine_name:ao SENHOR|a Javé}} o primeiro filhote de uma vaca ou de uma ovelha. Ele já pertence {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "ነገር ግን በከብቶች መካከል {{divine_name:ለእግዚአብሔር|ለያህዌ}} በኩር ሆኖ የተወለደውን በኩር ማንም አይቀድሰው፤ በሬም ቢሆን በግም ቢሆን {{divine_name:የእግዚአብሔር|የያህዌ}} ነው።",
+          "B": "ነገር ግን በኩር የሆነ እንስሳ ቀድሞውንም {{divine_name:የእግዚአብሔር|የያህዌ}} ስለ ሆነ ማንም ሊቀድሰው አይችልም። ከከብትም ሆነ ከበግና ከፍየል መንጋ ቢሆን {{divine_name:የእግዚአብሔር|የያህዌ}} ነው።",
+          "R": "ነገር ግን ማንም ሰው ከላም ወይም ከበግ በመጀመሪያ የተወለደውን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ለመስጠት ሊሳል አይችልም። ቀድሞውንም {{divine_name:የእግዚአብሔር|የያህዌ}} ነው።"
         }
       },
       "decisions": [
@@ -3894,6 +4166,11 @@
           "L": "E, se [for] entre os animais impuros, ele o remirá pela tua avaliação e lhe acrescentará a sua quinta parte; e, se não for resgatado, será vendido pela tua avaliação.",
           "B": "Se for um animal impuro, o dono poderá resgatá-lo pelo seu valor, acrescentando um quinto. Se não for resgatado, será vendido pelo seu valor.",
           "R": "Se o primeiro filhote for de um animal impuro, o dono pode comprá-lo de volta. Ele deve pagar o preço fixado e mais um quinto. Se não o comprar de volta, o animal deve ser vendido pelo preço fixado."
+        },
+        "am": {
+          "L": "ከርኩሳን ከብቶችም ቢሆን፣ በግምትህ ይዋጀዋል፤ አምስተኛውንም በእርሱ ላይ ይጨምራል፤ ባይቤዥም በግምትህ ይሸጣል።",
+          "B": "ርኩስ እንስሳ ከሆነ ባለቤቱ በግምቱ ይዋጀዋል፤ በእርሱም ላይ አምስተኛውን ይጨምራል። ካልተቤዠ ግን በግምቱ ይሸጥ።",
+          "R": "በመጀመሪያ የተወለደው እንስሳ ርኩስ ከሆነ ባለቤቱ መልሶ ሊገዛው ይችላል። የተወሰነውን ዋጋ በአንድ አምስተኛ ጨምሮ መክፈል አለበት። መልሶ ካልገዛው በተወሰነው ዋጋ መሸጥ አለበት።"
         }
       },
       "decisions": [
@@ -3965,6 +4242,25 @@
           ],
           "reason": "The meaning decision notes two Hebrew words for buying back; Korean keeps two verbs at Literal and Balanced, and Readable uses \"다시 사다\" for both.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270270042",
+            "o030270270111"
+          ],
+          "choice": "Ransom (padah) is \"ዋጀ\" (ይዋጀዋል), kept apart from redeem (ga'al) \"ቤዠ\" in the same verse",
+          "alternatives": [],
+          "reason": "The verse uses two Hebrew verbs for buying back (meaning decision m2). Literal and Balanced give each its own Amharic verb, so the reader can see the pair; verse 29 uses ዋጀ again for padah. Readable says \"buy back\" for both, as the English Readable does.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -4052,6 +4348,11 @@
           "L": "Contudo, nenhum anátema que alguém dedicar {{divine_name:ao SENHOR|a Javé}} como anátema, de tudo o que tem, seja de gente, seja de animal, seja do campo da sua propriedade, será vendido nem resgatado; todo anátema [é] coisa santíssima {{divine_name:para o SENHOR|para Javé}}.",
           "B": "Mas nada do que alguém dedicar totalmente {{divine_name:ao SENHOR|a Javé}} dentre o que possui, seja pessoa, seja animal, seja campo que tem como terra de família, poderá ser vendido ou resgatado. Tudo o que é dedicado assim é santíssimo {{divine_name:para o SENHOR|para Javé}}.",
           "R": "Mas alguém pode dar alguma coisa {{divine_name:ao SENHOR|a Javé}} como totalmente dedicada a {{deity_pronoun:ele|Ele}}. Pode ser uma pessoa, um animal ou a terra da família. Isso nunca pode ser vendido nem comprado de volta. Tudo o que é dedicado dessa forma é muito santo {{divine_name:para o SENHOR|para Javé}}."
+        },
+        "am": {
+          "L": "ነገር ግን ሰው ካለው ሁሉ፣ ከሰውም ከእንስሳም ከርስቱም እርሻ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ፈጽሞ የለየው ማንኛውም የተለየ ነገር አይሸጥም፤ አይቤዥምም፤ የተለየ ነገር ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} እጅግ ቅዱስ ነው።",
+          "B": "ነገር ግን ማንም ሰው ካለው ሁሉ፣ ሰውም ሆነ እንስሳ ወይም የቤተሰቡ ርስት የሆነ እርሻ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ፈጽሞ የለየው ነገር አይሸጥም፤ አይቤዥምም። ፈጽሞ የተለየ ነገር ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} እጅግ ቅዱስ ነው።",
+          "R": "ነገር ግን አንድ ሰው አንድን ነገር ለዘለቄታው {{divine_name:ለእግዚአብሔር|ለያህዌ}} ፈጽሞ ሊለይ ይችላል። ሰውም ሊሆን ይችላል፣ እንስሳ ወይም የቤተሰብ መሬት። ይህ ፈጽሞ ሊሸጥም ሆነ መልሶ ሊገዛ አይችልም። በዚህ መንገድ የተለየ ነገር ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} እጅግ ቅዱስ ነው።"
         }
       },
       "decisions": [
@@ -4179,6 +4480,11 @@
           "L": "Toda [pessoa] dedicada como anátema dentre os seres humanos não será remida; certamente será morta.",
           "B": "Quando um ser humano tiver sido consagrado à destruição, nenhum resgate poderá ser pago por ele; terá de ser morto.",
           "R": "Se uma pessoa tiver sido consagrada à destruição, ninguém pode pagar para libertá-la. Essa pessoa deve ser morta."
+        },
+        "am": {
+          "L": "ከሰው ወገን ለጥፋት የተለየ ማንኛውም ለጥፋት የተለየ ሰው አይዋጅም፤ ፈጽሞ ይገደል።",
+          "B": "ሰው ለጥፋት ከተለየ የሚዋጅበት ዋጋ አይከፈልለትም፤ ይገደል።",
+          "R": "አንድ ሰው ለጥፋት ከተለየ ማንም ዋጋ ከፍሎ ነጻ ሊያወጣው አይችልም። ያ ሰው መገደል አለበት።"
         }
       },
       "decisions": [
@@ -4340,6 +4646,11 @@
           "L": "E todo o dízimo da terra, da semente da terra [e] do fruto da árvore, [pertence] {{divine_name:ao SENHOR|a Javé}}; [é] coisa santa {{divine_name:para o SENHOR|para Javé}}.",
           "B": "Todo o dízimo da terra pertence {{divine_name:ao SENHOR|a Javé}}, tanto o cereal do que se semeia como o fruto das árvores. É santo {{divine_name:para o SENHOR|para Javé}}.",
           "R": "A décima parte de tudo o que a terra produz pertence {{divine_name:ao SENHOR|a Javé}}. Isso inclui o cereal dos campos e as frutas das árvores. É santa {{divine_name:para o SENHOR|para Javé}}."
+        },
+        "am": {
+          "L": "የምድሪቱም አሥራት ሁሉ፣ ከምድሪቱ ዘር [ና] ከዛፉ ፍሬ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ነው፤ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ነው።",
+          "B": "የምድሪቱ አሥራት ሁሉ፣ ከተዘራው እህልም ሆነ ከዛፎች ፍሬ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ነው። {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ነው።",
+          "R": "ምድሪቱ ከምታፈራው ሁሉ አንድ አሥረኛው {{divine_name:የእግዚአብሔር|የያህዌ}} ነው። ይህም ከእርሻ የሚገኘውን እህልና ከዛፎች የሚገኘውን ፍሬ ይጨምራል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ነው።"
         }
       },
       "decisions": [
@@ -4559,6 +4870,11 @@
           "L": "E, se alguém de fato resgatar parte do seu dízimo, acrescentará a ele a sua quinta parte.",
           "B": "Se alguém quiser resgatar parte do seu dízimo, deverá acrescentar um quinto ao seu valor.",
           "R": "Se alguém quiser comprar de volta uma parte do que separou como décima parte, deve pagar o seu valor e mais um quinto."
+        },
+        "am": {
+          "L": "ሰውም ከአሥራቱ ከፊሉን ፈጽሞ ቢቤዥ፣ አምስተኛውን በእርሱ ላይ ይጨምር።",
+          "B": "ማንም ሰው ከአሥራቱ ከፊሉን ሊቤዥ ቢፈልግ በዋጋው ላይ አንድ አምስተኛ ይጨምር።",
+          "R": "አንድ ሰው ከአሥረኛው ከፊሉን መልሶ መግዛት ቢፈልግ ዋጋውን በአንድ አምስተኛ ጨምሮ መክፈል አለበት።"
         }
       },
       "decisions": [
@@ -4648,6 +4964,11 @@
           "L": "E todo o dízimo do gado e do rebanho, tudo o que passa debaixo da vara, o décimo será santo {{divine_name:para o SENHOR|para Javé}}.",
           "B": "Quanto ao gado e ao rebanho, de todos os animais que passam debaixo da vara ao serem contados, cada décimo será santo {{divine_name:para o SENHOR|para Javé}}.",
           "R": "O pastor conta o gado, as ovelhas e as cabras enquanto passam debaixo do seu cajado. Cada décimo animal vai pertencer {{divine_name:ao SENHOR|a Javé}} como santo."
+        },
+        "am": {
+          "L": "የከብትና የበግ አሥራት ሁሉ፣ ከበትር በታች የሚያልፍ ሁሉ፣ አሥረኛው {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ይሆናል።",
+          "B": "የከብትንና የበግና የፍየልን መንጋ በተመለከተ፣ ሲቆጠሩ ከበትሩ በታች ከሚያልፉት እንስሶች ሁሉ እያንዳንዱ አሥረኛ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ቅዱስ ይሆናል።",
+          "R": "እረኛው ከብቶችን፣ በጎችንና ፍየሎችን በበትሩ ሥር ሲያልፉ ይቆጥራል። እያንዳንዱ አሥረኛ እንስሳ ቅዱስ ሆኖ {{divine_name:የእግዚአብሔር|የያህዌ}} ይሆናል።"
         }
       },
       "decisions": [
@@ -4776,6 +5097,11 @@
           "L": "Não examinará se [é] bom ou ruim, e não o trocará; e, se de fato o trocar, ele e o seu substituto serão santos; não será resgatado.'\"",
           "B": "O dono não deverá examinar os animais para separar os bons dos fracos, nem trocar um por outro. Se fizer a troca, tanto o animal como o que foi posto no seu lugar serão santos, e nenhum dos dois poderá ser resgatado.'\"",
           "R": "O dono não deve olhar para ver se o animal é bom ou ruim, e não deve trocá-lo por outro. Se trocar, os dois animais vão pertencer {{divine_name:ao SENHOR|a Javé}} como santos. Nenhum dos dois pode ser comprado de volta.'\""
+        },
+        "am": {
+          "L": "መልካም ወይም መጥፎ መሆኑን አይመርምር፤ አይለውጠውም፤ ፈጽሞ ቢለውጠው ግን፣ እርሱና ምትኩ ቅዱሳን ይሆናሉ፤ አይቤዥም።”»",
+          "B": "ባለቤቱ መልካሙን ከመጥፎው ለመለየት እንስሶቹን አይመርምር፤ አንዱንም በሌላው አይለውጥ። ቢለውጥ ግን፣ እንስሳውም በእርሱ ፋንታ የገባውም ሁለቱም ቅዱሳን ይሆናሉ፤ አንዳቸውም ሊቤዡ አይችሉም።”»",
+          "R": "ባለቤቱ እንስሳው ጥሩ ወይም መጥፎ መሆኑን ለማየት መመርመር የለበትም፤ በሌላም መለወጥ የለበትም። ቢለውጥ ግን ሁለቱም እንስሶች ቅዱሳን ሆነው {{divine_name:የእግዚአብሔር|የያህዌ}} ይሆናሉ። አንዳቸውም መልሰው ሊገዙ አይችሉም።”»"
         }
       },
       "decisions": [
@@ -4891,6 +5217,11 @@
           "L": "Estes [são] os mandamentos que {{divine_name:o SENHOR|Javé}} ordenou a Moisés para os filhos de Israel no monte Sinai.",
           "B": "Estes são os mandamentos que {{divine_name:o SENHOR|Javé}} deu a Moisés para os israelitas, no monte Sinai.",
           "R": "{{divine_name:O SENHOR|Javé}} deu todos estes mandamentos a Moisés no monte Sinai, para os israelitas."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በሲና ተራራ ለእስራኤል ልጆች ሙሴን ያዘዛቸው ትእዛዛት እነዚህ ናቸው።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በሲና ተራራ ላይ ለእስራኤል ልጆች እንዲሰጣቸው ሙሴን ያዘዛቸው ትእዛዛት እነዚህ ናቸው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እነዚህን ትእዛዛት ሁሉ ለእስራኤላውያን እንዲሆኑ በሲና ተራራ ላይ ለሙሴ ሰጠ።"
         }
       },
       "decisions": [
