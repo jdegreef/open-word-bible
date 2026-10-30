@@ -81,7 +81,7 @@ Decision text stays in English, quoting the Vietnamese or Korean words.
 | tithe (14:20; 28:22) | một phần mười | 십분의 일 |
 | righteous, righteousness (15:6) | công chính, sự công chính (as Romans 4:3) | 의, 의롭다 (as Romans 4:3) |
 | "he believed the LORD" (15:6) | tin `{{divine_name:CHÚA\|Gia-vê}}`, as Romans 4:3 | `{{divine_name:주\|야훼}}`를 믿다, as Romans 4:3 |
-| *ḥesed* | as Psalms and Proverbs: tình yêu thương thành tín (L, B) / tình thương thành tín (R); lòng nhân từ where it is kindness between people | 한결같은 사랑 (L, B) / 변함없는 사랑 (R); 친절, 은혜 between people |
+| *ḥesed* | as Psalms and Proverbs: tình yêu thương thành tín (L, B) / tình thương không hề thay đổi (R; this now follows the Psalms note, where the Genesis drafts had *tình thương thành tín*); lòng nhân từ where it is kindness between people | 한결같은 사랑 (L, B) / 변함없는 사랑 (R); 친절, 은혜 between people |
 | Sheol (37:35; 42:38; 44:29, 31) | Âm Phủ (L, B); nơi của người chết (R) | 스올 (L, B); 죽은 사람들이 있는 곳 (R) |
 | *ʿeved* (slave, servant) | đầy tớ; nô lệ where slavery itself is meant (Joseph sold) | 종; 노예 where slavery itself is meant |
 | "your servant" (polite self-reference) | đầy tớ của ông / tôi tớ ông (B); "tôi" at R where the English R says "I" | 당신의 종 / 이 종 (B); 저 at R |

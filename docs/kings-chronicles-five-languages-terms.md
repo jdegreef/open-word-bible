@@ -280,6 +280,6 @@ left for a reviewer:
   *chancelier* (2 Samuel 8:16) for the recorder.
 - Swahili *Bonde la Refaimu* (1 Chronicles 14:9) against *Bonde la
   Warefai* (2 Samuel 5); Swahili *agano* and *mkataba* for a treaty.
-- Vietnamese *thẩm phán* for judges, where the Joshua–Ruth drafts propose
-  *quan xét*.
+- Vietnamese judges of Israel now follow the Joshua–Ruth note: *quan xét*
+  (L, B), *thủ lĩnh* (R), where the drafts had *thẩm phán*.
 - Korean measures say 약 X in some blocks and X쯤 in others.
