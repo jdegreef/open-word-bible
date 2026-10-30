@@ -71,8 +71,8 @@ record) unless they say otherwise; L / B / R are Literal (직역), Balanced
   Literal keeps the unit**: `{{units:약 450미터|1,000규빗}}` (about 400 B
   renderings). This differs from the English (US units) and needs a rendering
   decision per block. The form is 약 X (not X쯤), and the alternative's number
-  is in figures from 100 (founder's ruling 5); see section 3, where much of
-  the Pentateuch and Kings does otherwise. Style 7; Nehemiah–Song Korean
+  is in figures from 100 (founder's ruling 5); section 3 records how the
+  Pentateuch and Kings were brought into line. Style 7; Nehemiah–Song Korean
   "Settings recap"; Lamentations–Twelve Korean "Units".
 - [ ] **`gender` spans only where Korean has two wordings**:
   `{{gender:형제자매|형제}}` for believers (about 200 B renderings, mostly Acts
@@ -161,8 +161,8 @@ record) unless they say otherwise; L / B / R are Literal (직역), Balanced
 - [ ] ***ḥesed***: 한결같은 사랑 (L, B) / 변함없는 사랑 (R), as the published
   Psalm 23:6 (about 400 renderings, 126 of them Balanced Psalms). Between
   people the drafts use 친절, 은혜 (Genesis), 인애, 친절 (Joshua–Ruth), 신의,
-  의리 (Judges), and Samuel–Chronicles use 인애 at B and R for God's *ḥesed*
-  too (section 3). Alternatives: 인애, 인자, 자비. Psalms "Recurring terms";
+  의리 (Judges); Samuel–Chronicles used 인애 at B and R, now aligned
+  (section 3). Alternatives: 인애, 인자, 자비. Psalms "Recurring terms";
   Genesis; Samuel table; Lamentations–Twelve Korean.
 - [ ] ***torah***: 율법 for the law of Moses and the book (율법책); 가르침 for
   God's *torah* in Psalms, Proverbs, Isaiah and Jeremiah 31:33 (with a
@@ -280,8 +280,9 @@ record) unless they say otherwise; L / B / R are Literal (직역), Balanced
 
 ### Style
 
-- [ ] **Narrative past in 했다, not 하였다** (Kings, Isaiah–Ezra). Much of the
-  Pentateuch, Judges and Revelation uses 하였다 (section 3). Kings "All five
+- [ ] **Narrative past in 했다, not 하였다** (Kings, Isaiah–Ezra), now at
+  Balanced and Readable in every book; Literal keeps 하였다 where it has it
+  (section 3). Kings "All five
   languages".
 - [ ] **Imperatives and archaic endings**: modern 해라체 imperatives (들어라,
   보아라, 하여라, 하지 마라); never 개역's -니라, -노니, -지어다, -리라, or -하라
@@ -403,7 +404,7 @@ decision can sit in two clusters.
 
 Each was checked in `content/` (Korean renderings as of this list).
 
-- [ ] ***Ḥesed* at B and R in Samuel–Chronicles is 인애**, where every other
+- [x] ***Ḥesed* at B and R in Samuel–Chronicles is 인애**, where every other
   book has 한결같은 사랑 (B) and 변함없는 사랑 (R). About 23 records:
   [1SA 20:8](https://openwordbible.org/ko/1sa/20/#v8),
   [2SA 9:1](https://openwordbible.org/ko/2sa/9/#v1),
@@ -414,7 +415,11 @@ Each was checked in `content/` (Korean renderings as of this list).
   [2SA 22:51](https://openwordbible.org/ko/2sa/22/#v51) already follows Psalm
   18:51, against the Samuel table. Genesis and Joshua–Ruth also differ for
   *ḥesed* between people (친절, 은혜 against 인애, 친절).
-- [ ] **Measures: X쯤 against 약 X.** The Nehemiah–Song and
+  Fixed: 24 Samuel–Chronicles records now say 한결같은 사랑 (B) and 변함없는 사랑
+  (R), also between people as the Samuel table intends (2 Chronicles 24:22 L
+  too); the Samuel table follows the Psalms and Genesis notes. Left for review:
+  the word for *ḥesed* between people in Genesis and Joshua–Ruth.
+- [x] **Measures: X쯤 against 약 X.** The Nehemiah–Song and
   Lamentations–Twelve notes say "always 약, never X쯤", but about 225 records
   use X쯤 inside the units span: nearly all of Exodus, Leviticus, Numbers,
   Judges, 1 Kings and 1 Chronicles, and part of 1 Samuel, 2 Kings and
@@ -423,12 +428,18 @@ Each was checked in `content/` (Korean renderings as of this list).
   [1KI 6:2](https://openwordbible.org/ko/1ki/6/#v2); against
   [1SA 1:24](https://openwordbible.org/ko/1sa/1/#v24) and Ezekiel). The Samuel
   and Kings notes recorded the split without settling it.
-- [ ] **Units: the alternative's number in words above 100**, against the
+  Fixed: every metric `units` span now reads 약 X (680 spans in 227 records),
+  as the later notes set; the Samuel and Kings notes say so. John 12:5's
+  wage span (일 년 품삯쯤) is not a measure and was left.
+- [x] **Units: the alternative's number in words above 100**, against the
   founder's ruling 5 (figures from 100): 백삼십 세겔, 백 규빗, 천 규빗
   ([NUM 7:13](https://openwordbible.org/ko/num/7/#v13),
   [EXO 27:18](https://openwordbible.org/ko/exo/27/#v18),
   [NUM 35:4](https://openwordbible.org/ko/num/35/#v4)).
-- [ ] **Regnal numbers in words in 2 Kings, in figures in 2 Chronicles.**
+  Fixed: 72 records; every alternative from 100 is in figures (130세겔,
+  1,000규빗, 300데나리온), Old and New Testament. Literal running text keeps
+  its words.
+- [x] **Regnal numbers in words in 2 Kings, in figures in 2 Chronicles.**
   [2KI 18:2](https://openwordbible.org/ko/2ki/18/#v2) "이십오 세 ... 이십구 년"
   against [2CH 29:1](https://openwordbible.org/ko/2ch/29/#v1) "25세 ... 29년";
   [2KI 22:1](https://openwordbible.org/ko/2ki/22/#v1) against
@@ -436,7 +447,11 @@ Each was checked in `content/` (Korean renderings as of this list).
   11:42 against [1KI 22:42](https://openwordbible.org/ko/1ki/22/#v42). The
   Kings note says figures; the Joshua–Ruth note says Korean spells numbers in
   Hangul.
-- [ ] **Narrative 하였다 against 했다.** The Kings note asks for 했다, and
+  Fixed: 2 Kings (and the few 1 Kings and 2 Chronicles cases) now write
+  regnal years, ages and years in figures at every level, Readable included
+  (25세, not 스물다섯 살), as the Kings note and the parallels in 2 Chronicles,
+  Isaiah 36–39 and Jeremiah 52; about 60 records. Samuel keeps its own words.
+- [x] **Narrative 하였다 against 했다.** The Kings note asks for 했다, and
   Samuel, Kings, Chronicles, Isaiah, Jeremiah, Daniel and Nehemiah use it
   throughout; at Balanced, 하였다 is about 60% of these endings in Exodus,
   Numbers and Deuteronomy, 45% in Genesis, 35% in Judges and Esther and
@@ -444,6 +459,10 @@ Each was checked in `content/` (Korean renderings as of this list).
   [JDG 2:11](https://openwordbible.org/ko/jdg/2/#v11) (주께서 보시기에 악한 일을
   하였고) with [1KI 15:26](https://openwordbible.org/ko/1ki/15/#v26) (주 보시기에
   악한 일을 했다); the Joshua–Ruth and Kings tables give different wordings.
+  Fixed: 하였- is 했- at Balanced and Readable in every book (1,446 records);
+  Literal keeps 하였다 where it has it (the Ezekiel formula 말하였다 (L) /
+  말했다 (B, R) is deliberate). The Judges verdict now uses the Kings formula
+  at each level (8 records), and the Joshua–Ruth note says so.
 - [ ] **Imperatives -하라 / -하지 말라 against -하여라 / -하지 마라.** The
   Pentateuch note prescribes -하라 for God's commands at L and B, and about
   350 Balanced commands in Exodus, Leviticus, Numbers and Deuteronomy use it
@@ -451,7 +470,11 @@ Each was checked in `content/` (Korean renderings as of this list).
   [EXO 20:13](https://openwordbible.org/ko/exo/20/#v13)); the
   Lamentations–Twelve note forbids -하라 in proclamations, and Joshua to
   Revelation use -하여라 / -해라 ([ISA 1:17](https://openwordbible.org/ko/isa/1/#v17)).
-- [ ] **"Thus says the LORD" without the honorific beyond the allowed
+  Left for review: the Pentateuch note chose -하라 deliberately for the law
+  codes, and the later rule is about prophetic proclamations; which register
+  suits law is a native reviewer's call, and changing it means recasting
+  about 350 commands per level.
+- [x] **"Thus says the LORD" without the honorific beyond the allowed
   exception.** The Isaiah–Ezra note keeps the formula honorific "except
   Isaiah 38:5 = 2 Kings 20:5", but L and B also drop it at
   [2KI 21:12](https://openwordbible.org/ko/2ki/21/#v12),
@@ -459,12 +482,17 @@ Each was checked in `content/` (Korean renderings as of this list).
   [2KI 22:18](https://openwordbible.org/ko/2ki/22/#v18),
   [2CH 34:24](https://openwordbible.org/ko/2ch/34/#v24) and
   [2CH 34:26](https://openwordbible.org/ko/2ch/34/#v26).
-- [ ] **God speaking of himself with -시-**, against "God never takes -시- in
+  Fixed: the five records now say 께서 이와 같이 말씀하신다 / 이렇게 말씀하신다 /
+  하시는 말씀이다 at L, B and R, with their decisions.
+- [x] **God speaking of himself with -시-**, against "God never takes -시- in
   his own mouth": [JOS 24:7](https://openwordbible.org/ko/jos/24/#v7),
   [PSA 81:16](https://openwordbible.org/ko/psa/81/#v16),
   [EZK 13:6](https://openwordbible.org/ko/ezk/13/#v6); compare
   [2SA 7:11](https://openwordbible.org/ko/2sa/7/#v11) and
   [ZEC 3:2](https://openwordbible.org/ko/zec/3/#v2), without.
+  Fixed: Joshua 24:7, Psalm 81:16 and Ezekiel 13:6 drop -시- and 께 at every
+  level, with their decisions. 2 Samuel 7:11 Literal keeps the narrator's
+  honorific by its own decision; left for review.
 - [ ] **표적 and 표징 for the same Hebrew *ʾot* (sign).** 표적 in Exodus,
   Numbers and Deuteronomy ([EXO 3:12](https://openwordbible.org/ko/exo/3/#v12),
   [EXO 4:8](https://openwordbible.org/ko/exo/4/#v8),
@@ -473,19 +501,28 @@ Each was checked in `content/` (Korean renderings as of this list).
   [ISA 7:14](https://openwordbible.org/ko/isa/7/#v14),
   [EZK 4:3](https://openwordbible.org/ko/ezk/4/#v3)). No terms doc covers the
   Old Testament word.
-- [ ] **Concubine: 첩 and 후궁.** The Joshua–Ruth table has 첩; the Samuel note
+  Left for review: 표징 is used mostly for symbolic acts and tokens (Isaiah,
+  Ezekiel), 표적 for wonders; whether Korean keeps that sense split, and
+  which church word wins, is open (style "Settled" leaves 표적 to a reviewer).
+- [x] **Concubine: 첩 and 후궁.** The Joshua–Ruth table has 첩; the Samuel note
   says "Concubines are 후궁". Rizpah is 첩 at
   [2SA 3:7](https://openwordbible.org/ko/2sa/3/#v7) and 후궁 at
   [2SA 21:11](https://openwordbible.org/ko/2sa/21/#v11); David's concubines are
   첩 at [2SA 5:13](https://openwordbible.org/ko/2sa/5/#v13) and 후궁 from
   [2SA 15:16](https://openwordbible.org/ko/2sa/15/#v16).
+  Fixed: a king's concubines are 후궁 and other men's 첩, as the drafts already
+  do in Kings, Chronicles, Esther, Song and Daniel; 2 Samuel 3:7, 5:13 and
+  1 Chronicles 3:9 now say 후궁 (3 records); the Samuel note says so.
 - [ ] **Third-person verses inside a psalm prayer.** Some keep 합쇼체
   ([PSA 48:9](https://openwordbible.org/ko/psa/48/#v9),
   [PSA 102:17](https://openwordbible.org/ko/psa/102/#v17),
   [PSA 145:3](https://openwordbible.org/ko/psa/145/#v3)); others switch to the
   plain style ([PSA 123:2](https://openwordbible.org/ko/psa/123/#v2),
   [PSA 85:9](https://openwordbible.org/ko/psa/85/#v9)). Settle one rule.
-- [ ] **Psalm titles at Readable vary**: *maskil* is 가르치는 노래
+  Left for review: the Psalms note follows the turns, but Psalms 48, 102 and
+  145 carry decisions for keeping one level through a continuous prayer;
+  changing them recasts whole stretches of verses.
+- [x] **Psalm titles at Readable vary**: *maskil* is 가르치는 노래
   ([PSA 32:1](https://openwordbible.org/ko/psa/32/#v1)), 가르치고 깨닫게 하는 노래
   ([PSA 42:1](https://openwordbible.org/ko/psa/42/#v1)), 가르침과 깨달음을 주는
   노래 ([PSA 52:1](https://openwordbible.org/ko/psa/52/#v1)), 가르침과 깨달음을
@@ -494,6 +531,9 @@ Each was checked in `content/` (Korean renderings as of this list).
   ‘백합’ at [PSA 45:1](https://openwordbible.org/ko/psa/45/#v1) and "백합화" at
   [PSA 69:1](https://openwordbible.org/ko/psa/69/#v1) and
   [PSA 80:1](https://openwordbible.org/ko/psa/80/#v1).
+  Fixed: *maskil* at Readable is 가르침과 깨달음을 주는 노래 in all 13 titles
+  (8 records changed); Psalms 69 and 80 now say ‘백합’ / ‘언약의 백합’이라는
+  곡조에 맞추어, as 45 and 60.
 - [ ] **Husband and wife outside the Genesis rule** (해요체 with 당신 both
   ways): Samson answers his wife in 하오체
   ([JDG 14:16](https://openwordbible.org/ko/jdg/14/#v16)), the Shunammite's
@@ -501,6 +541,8 @@ Each was checked in `content/` (Korean renderings as of this list).
   the king speaks 하오체 to Esther (Nehemiah–Song note), Hosea 해요체
   ([HOS 3:3](https://openwordbible.org/ko/hos/3/#v3)). Each has a decision;
   decide whether these exceptions stand.
+  Left for review: each exception has its own decision; whether it stands is
+  a native reviewer's judgment about the scene.
 
 ## 4. Passages to read closely
 

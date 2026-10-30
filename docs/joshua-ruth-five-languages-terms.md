@@ -122,6 +122,9 @@ any of them.
 - **Korean**: inheritance is 유산 (L, B); speech levels between characters
   follow the Genesis note, with 하게체 for an older man to a younger and
   하오체 between equals in tension.
+  Narrative endings and the Judges verdict formula now follow the Kings note:
+  했다 (not 하였다) at B and R, and 주의 눈에 / 주 보시기에 / 주께서 악하다고
+  하신 일을 했다 (L / B / R); the table's 하였다 forms stand at Literal only.
 - **Numbers**: figures where the English has figures; Korean spells numbers
   out in Hangul.
 
