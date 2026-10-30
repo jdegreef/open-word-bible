@@ -423,7 +423,7 @@ group can be settled once and then applied to all its verses.
 
 Each was checked in `content/`; the references are to the Vietnamese text.
 
-- [ ] **Judges: *quan xét* or *thẩm phán*.** The judges of Israel are *quan
+- [x] **Judges: *quan xét* or *thẩm phán*.** The judges of Israel are *quan
   xét* in [Judges 2:16](https://openwordbible.org/vi/jdg/2/#v16),
   [Ruth 1:1](https://openwordbible.org/vi/rut/1/#v1) (R *thủ lĩnh*) and
   [Acts 13:20](https://openwordbible.org/vi/act/13/#v20), but *thẩm phán* in
@@ -433,7 +433,8 @@ Each was checked in `content/`; the references are to the Vietnamese text.
   [2 Kings 23:22](https://openwordbible.org/vi/2ki/23/#v22). Joshua–Ruth
   settles *quan xét* (L, B) and *thủ lĩnh* (R); Samuel and Kings ("Before
   review") list the difference.
-- [ ] ***Ḥesed* at Readable has three forms.** *Tình thương không hề thay đổi*
+  *fixed:* the judges of Israel follow Joshua–Ruth, *quan xét* (L, B) / *thủ lĩnh* (R), in 1 Samuel 8:1–2, 2 Samuel 7:11, 1 Chronicles 17:6, 10 and 2 Kings 23:22 (6 records); court judges keep *thẩm phán*. Samuel and Kings notes updated.
+- [x] ***Ḥesed* at Readable has three forms.** *Tình thương không hề thay đổi*
   (Psalms; 90 occ, as [Psalm 18:51](https://openwordbible.org/vi/psa/18/#v51)),
   *tình thương thành tín* (Genesis note; 23 occ, as
   [2 Samuel 7:15](https://openwordbible.org/vi/2sa/7/#v15), beside the
@@ -442,7 +443,8 @@ Each was checked in `content/`; the references are to the Vietnamese text.
   echo, has *tình thương thành tín*
   ([Exodus 34:6](https://openwordbible.org/vi/exo/34/#v6)). Pick one R form
   for God's *ḥesed*.
-- [ ] **Threshing floor: *sân đạp lúa* (17 verses) or *sân đập lúa* (22).**
+  *fixed:* God's *ḥesed* at R is *tình thương không hề thay đổi* (the Psalms form) in Genesis, Exodus 15, 20, 34:6–7, Numbers 14, Deuteronomy, Ruth, 2 Samuel, 1 Kings 3 and 8, Chronicles, Nehemiah, Job 37, Daniel 9, Joel 2:13, Jonah 4:2 and Micah 7 (30 records), so the Exodus 34:6 echoes match Psalm 103:8. Genesis and Samuel notes updated. Proverbs' human *ḥesed* at R (*tình thương thành tín*) and Jonah 2:9 left as they are.
+- [x] **Threshing floor: *sân đạp lúa* (17 verses) or *sân đập lúa* (22).**
   [Genesis 50:10](https://openwordbible.org/vi/gen/50/#v10),
   [1 Chronicles 13:9](https://openwordbible.org/vi/1ch/13/#v9) and
   [Luke 3:17](https://openwordbible.org/vi/luk/3/#v17) against
@@ -450,6 +452,7 @@ Each was checked in `content/`; the references are to the Vietnamese text.
   [1 Chronicles 21:15](https://openwordbible.org/vi/1ch/21/#v15) and
   [Matthew 3:12](https://openwordbible.org/vi/mat/3/#v12). Joshua–Ruth has
   *sân đập lúa*.
+  *fixed:* *sân đập lúa* everywhere (18 records).
 - [ ] **God's jealousy: *kỵ tà* or *ghen*.** The Pentateuch note settles *kỵ
   tà* (Exodus 20:5; [Nahum 1:2](https://openwordbible.org/vi/nam/1/#v2);
   [Ezekiel 5:13](https://openwordbible.org/vi/ezk/5/#v13)), but God *ghen* in
@@ -457,6 +460,7 @@ Each was checked in `content/`; the references are to the Vietnamese text.
   [Joel 2:18](https://openwordbible.org/vi/jol/2/#v18),
   [Zechariah 1:14](https://openwordbible.org/vi/zec/1/#v14) and
   [Zechariah 8:2](https://openwordbible.org/vi/zec/8/#v2).
+  *left for review:* *kỵ tà* is consistent for the title "a jealous God" (*qanna*); *ghen* is used for the noun and verb of zeal for Zion, the land and the covenant in about 15 records (Ezekiel 16, 23, 36, 38, 39; Zephaniah; Psalms 78–79; 1 Kings 14:22; Joel; Zechariah), where *kỵ tà* does not fit the phrase. A choice of word, not a slip.
 - [ ] **Tirzah: *Tiệt-sa* or *Thiệt-sa*.** Nehemiah settles *Tiệt-sa*, and
   the decision at 1 Kings 14:17 says "kept through Kings"; yet the town is
   *Thiệt-sa* in [2 Kings 15:14](https://openwordbible.org/vi/2ki/15/#v14) and
@@ -464,60 +468,74 @@ Each was checked in `content/`; the references are to the Vietnamese text.
   [Numbers 26:33](https://openwordbible.org/vi/num/26/#v33), 27:1, 36:11 and
   [Joshua 17:3](https://openwordbible.org/vi/jos/17/#v3). Decide whether the
   daughter is kept apart from the town on purpose.
-- [ ] **Arab: *Ả-rập* or *A-rập*.** Nehemiah settles *Ả-rập*; *A-rập* remains
+  *partly fixed:* the town is *Tiệt-sa* in 2 Kings 15:14, 16 (2 records). Left for review: Zelophehad's daughter stays *Thiệt-sa* (Numbers 26:33; 27:1; 36:11; Joshua 17:3), kept apart from the town by the decisions there.
+- [x] **Arab: *Ả-rập* or *A-rập*.** Nehemiah settles *Ả-rập*; *A-rập* remains
   in [2 Chronicles 21:16](https://openwordbible.org/vi/2ch/21/#v16), 22:1,
   26:7 and [Isaiah 13:20](https://openwordbible.org/vi/isa/13/#v20).
-- [ ] ***Sử Ký* used for a source book.** Kings, Isaiah and Prophets reserve
+  *fixed:* *Ả-rập* (4 records).
+- [x] ***Sử Ký* used for a source book.** Kings, Isaiah and Prophets reserve
   *Sử Ký* for the title of Chronicles, but
   [Nehemiah 12:23](https://openwordbible.org/vi/neh/12/#v23) has *sách sử
   ký* (L) and *Sách Sử Ký* (B).
-- [ ] **Psalm 89 R still says *người phục vụ Ta*** for "my servant David", which
+  *fixed:* Nehemiah 12:23 *sách ghi chép* (L) / *sách biên niên* (B), as Ezra 4:15; Esther 2:23 and 10:2 *sách sử ký* also became *sách biên niên* (3 records).
+- [x] **Psalm 89 R still says *người phục vụ Ta*** for "my servant David", which
   Isaiah ("Address") calls off the rule (*đầy tớ* at every level):
   [Psalm 89:4](https://openwordbible.org/vi/psa/89/#v4) and
   [Psalm 89:21](https://openwordbible.org/vi/psa/89/#v21).
+  *fixed:* *Đa-vít, đầy tớ của Ta* at R (2 records); Isaiah note updated.
 - [ ] **The shades (*rephaim*): *vong linh* or *âm hồn*.** *Vong linh* at L in
   [Psalm 88:11](https://openwordbible.org/vi/psa/88/#v11) and
   [Isaiah 26:14](https://openwordbible.org/vi/isa/26/#v14); *âm hồn* at L in
   [Proverbs 2:18](https://openwordbible.org/vi/pro/2/#v18) and
   [Proverbs 9:18](https://openwordbible.org/vi/pro/9/#v18). Isaiah ("Before
   review") puts this to the founder.
-- [ ] **The tent of the testimony**: *lều chứng ước* in
+  *left for review:* the Isaiah note puts the choice to the founder.
+- [x] **The tent of the testimony**: *lều chứng ước* in
   [Numbers 9:15](https://openwordbible.org/vi/num/9/#v15) and 17:22,
   capitalised *Lều Chứng Ước* in
   [2 Chronicles 24:6](https://openwordbible.org/vi/2ch/24/#v6), *Lều Chứng
   Cớ* in [Acts 7:44](https://openwordbible.org/vi/act/7/#v44).
-- [ ] **The atonement cover**: *nắp thi ân* in the Pentateuch (Pentateuch
+  *fixed:* lowercase *lều chứng ước*, as Numbers, in 2 Chronicles 24:6 and Acts 7:44 (2 records).
+- [x] **The atonement cover**: *nắp thi ân* in the Pentateuch (Pentateuch
   note; [Exodus 25:17](https://openwordbible.org/vi/exo/25/#v17)), *nắp chuộc
   tội* in [Hebrews 9:5](https://openwordbible.org/vi/heb/9/#v5).
-- [ ] **The year of release in Deuteronomy**: *năm miễn trừ* (L) / *năm tha
+  *fixed:* Hebrews 9:5 *nắp thi ân*, as the Pentateuch note (1 record); Romans 3:25 keeps *phương tiện chuộc tội*.
+- [x] **The year of release in Deuteronomy**: *năm miễn trừ* (L) / *năm tha
   nợ* (B) in [Deuteronomy 15:9](https://openwordbible.org/vi/deu/15/#v9), but
   *năm giải trừ* (L) / *năm giải trừ nợ* (B) in
   [Deuteronomy 31:10](https://openwordbible.org/vi/deu/31/#v10).
+  *fixed:* Deuteronomy 31:10 *năm miễn trừ* (L) / *năm tha nợ* (B, R), as 15:1 and 15:9 (1 record).
 - [ ] **"I am" does not echo across the books.** The style guide says *Hằng
   Hữu* in John "echoes God's name in Exodus 3:14", but
   [Exodus 3:14](https://openwordbible.org/vi/exo/3/#v14) says *TA LÀ ĐẤNG TA
   LÀ*; Isaiah's *ʾani hu* is *Ta [là] Đấng ấy*
   ([Isaiah 43:10](https://openwordbible.org/vi/isa/43/#v10)), and Mark 14:62
   *Ta là [Đấng ấy]*. Decide which link the Vietnamese should show.
+  *left for review:* a theological choice of which link to show, which would re-translate Exodus 3:14, the Isaiah formula or John's *Hằng Hữu*.
 - [ ] **Joshua the high priest**: *Giê-sua con trai Giô-xa-đác* in
   [Ezra 3:2](https://openwordbible.org/vi/ezr/3/#v2), *Giô-suê con trai
   Giê-hô-xa-đác* in [Haggai 1:1](https://openwordbible.org/vi/hag/1/#v1) and
   Zechariah 3. A decision links them; a reviewer may prefer one form.
-- [ ] **A quarter hin**: *khoảng 0,9 lít* in
+  *left for review:* the two forms follow the two Hebrew spellings (Ezra–Nehemiah against Haggai–Zechariah), and a decision links them.
+- [x] **A quarter hin**: *khoảng 0,9 lít* in
   [Exodus 29:40](https://openwordbible.org/vi/exo/29/#v40), *khoảng 1 lít* in
   [Leviticus 23:13](https://openwordbible.org/vi/lev/23/#v13).
+  *fixed:* a hin is *khoảng 3,6 lít* and a quarter hin *khoảng 0,9 lít* everywhere, as Ezekiel and the majority (6 records).
 - [ ] **Locusts**: *ʾarbeh* is *cào cào* in
   [Psalm 105:34](https://openwordbible.org/vi/psa/105/#v34) but *châu chấu* in
   [1 Kings 8:37](https://openwordbible.org/vi/1ki/8/#v37) and Joel.
-- [ ] **"The God of heaven"**: *Đức Chúa Trời của các tầng trời* at L in
+  *left for review:* *cào cào* and *châu chấu* are split across about 40 records and several Hebrew words (Deuteronomy 28:38, Jeremiah, 2 Chronicles 7:13, Joel's four names); no terms doc sets a mapping.
+- [x] **"The God of heaven"**: *Đức Chúa Trời của các tầng trời* at L in
   [Psalm 136:26](https://openwordbible.org/vi/psa/136/#v26), *Đức Chúa Trời
   trên trời* in [Ezra 1:2](https://openwordbible.org/vi/ezr/1/#v2) and 2
   Chronicles 36:23.
+  *fixed:* *Đức Chúa Trời trên trời* at L in Psalm 136:26 and Jonah 1:9 (2 records), as the Isaiah note sets for every level; Isaiah note updated. Genesis 24:3, 7 (*của trời*, paired with "God of the earth") left as drafted.
 - [ ] **Numbers above one hundred**: all in words in 1 Samuel 1–15 (no figures
   at any level), and in words at L in 1 Kings 12–22
   ([1 Kings 12:21](https://openwordbible.org/vi/1ki/12/#v21)), against
   figures elsewhere and the rule "figures from 100". Samuel and Kings ("Before
   review").
+  *left for review:* the style guide says numbers in words in running text, the Prophets note says figures from 100, and words above one hundred run through most books (1 Samuel 16–31, 2 Samuel, Judges, the Gospels), not only the two blocks named. A book-wide convention for a reviewer.
 
 ## 5. Passages to read closely
 
