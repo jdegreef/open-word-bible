@@ -9,6 +9,9 @@ Run it every hour from a Render cron job with the API service's environment
 DJANGO_SECRET_KEY, which signs the unsubscribe links), e.g. schedule
 "5 * * * *". Each reader gets at most one a day, at or after the hour they
 chose in their own time zone, so a missed run catches up on the next.
+Without EMAIL_HOST (settings.py's console backend) it sends nothing: the
+emails would only reach the log, and each reader's day would still be
+marked as sent.
 """
 import logging
 
@@ -28,6 +31,9 @@ class Command(BaseCommand):
         parser.add_argument("--dry-run", action="store_true")
 
     def handle(self, *args, dry_run=False, **options):
+        if not dry_run and settings.EMAIL_BACKEND == "django.core.mail.backends.console.EmailBackend":
+            self.stdout.write("No EMAIL_HOST, so no reading-plan emails sent.")
+            return
         sent = skipped = failed = 0
         for user, prefs, state, day in reminders.due():
             email = reminders.reminder(user, prefs, state)
