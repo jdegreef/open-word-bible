@@ -56,8 +56,10 @@ Decision text stays in English, quoting the Amharic words.
 ## Address
 
 - Subjects, servants and soldiers speak to a king with እርስዎ, ጌታዬ ንጉሥ, and
-  call themselves ባሪያህ (L) / አገልጋይዎ (B, R) where the Hebrew uses the
-  courtly third person. David speaks so to Saul, Abigail to David.
+  call themselves ባሪያዎ (L) / አገልጋይዎ (B, R) where the Hebrew uses the
+  courtly third person (the respectful -ዎ, matching እርስዎ). A king's own sons
+  say አንተ to him, as family members do, and keep the courtly "your servant"
+  only where the Hebrew has it. David speaks so to Saul, Abigail to David.
 - A prophet bringing God's word to a king says አንተ (Samuel to Saul, Nathan
   to David), as Moses to Pharaoh.
 - Kings speak down with አንተ / እናንተ. Friends and equals say አንተ (David and
