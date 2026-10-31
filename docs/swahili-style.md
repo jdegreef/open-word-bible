@@ -118,7 +118,7 @@ English has one.
 | Son of Man | Mwana wa Adamu | The settled Swahili title (*Adamu* is also "humankind"); never under the gender setting. *Mwana wa Mtu* is more literal; recorded as uncertain where it first appears. |
 | Lamb of God | Mwanakondoo wa Mungu | |
 | Rabbi | Rabi | |
-| Messiah (1:41) | Masihi | Plainly, no setting; the explanation is `{{christos:Kristo|Masihi}}`. |
+| Messiah (1:41) | Masihi | Plainly, no setting; the explanation is `{{christos:Kristo|Aliyetiwa Mafuta}}` (also 4:25), since "Masihi, that is Masihi" would explain nothing. |
 | disciples | wanafunzi | Every level. |
 | slave (*doulos*) | mtumwa (L); mtumishi (B, R) | As the English: *mtumwa* at every level where slavery itself is the point (slave and free, bought and sold, slavery in Egypt, slavery to sin). |
 | Sir / Lord (*kyrie*) | bwana / Bwana | Swahili uses one word for both: lowercase *bwana* as polite address, *Bwana* for those who believe, as `docs/john-terms.md`. |

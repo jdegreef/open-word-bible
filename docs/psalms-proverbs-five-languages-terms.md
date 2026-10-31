@@ -158,6 +158,11 @@ any of them.
   *padres* already covers both.
 - Swahili: no gender spans except where two wordings exist (22:5); Kuzimu
   for Sheol at every level; deity_pronoun spans only on free pronouns.
+  Lyre (*kinnor*) *kinubi*, harp (*nevel*) *zeze* at every level, through
+  the Psalms, Samuel, Chronicles and the prophets (Psalm 150:3); the
+  ten-stringed harp *zeze ya nyuzi kumi* (33:2; 144:9), the ten-stringed
+  instrument alone *chombo cha nyuzi kumi* (92:4); *kinanda* only for
+  stringed instruments in general.
 - Vietnamese: "chúng con" for the people praying to God; God says *Ta*
   (spanned mid-sentence); "Lord GOD" is *Chúa là CHÚA*; Proverbs' father
   says *ta* (L) and *cha* (B, R).

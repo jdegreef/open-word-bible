@@ -257,7 +257,7 @@ Decision text stays in English, quoting the Spanish or Swahili words.
 - Names in their usual Swahili form: Yesu, Yohana, Petro, Yakobo, Mathayo,
   Marko, Luka, Paulo, Barnaba, Stefano, Filipo, Herode, Pilato, Yerusalemu,
   Galilaya, Kapernaumu, Nazareti, Bethlehemu, Musa, Eliya, Isaya, Daudi,
-  Ibrahimu, Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Mary's husband), Yosefu
+  Abrahamu (now follows the Pentateuch and John; formerly *Ibrahimu*), Sulemani, Ninawi, Habili, Zakaria, Zakayo, Yusufu (Mary's husband), Yosefu
   (of Arimathea, as John 19:38),
   Uyahudi (Judea, as John; never Yudea),
   Elisabeti, Gabrieli, Theofilo, Haruni, Sila, Timotheo, Filipi, Troa.

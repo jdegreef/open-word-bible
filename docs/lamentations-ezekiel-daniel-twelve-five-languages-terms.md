@@ -832,7 +832,7 @@ it there as a rendering decision.
 | the angel of the LORD | *malaika wa BWANA*. No `deity_pronoun` span |
 | Spirit / spirit / wind / breath (*ruach*) | *Roho* (capital) for God's Spirit (*Roho wa BWANA*, *Roho wangu*); *roho* for a human or other spirit; *upepo* for wind; *pumzi* for breath |
 | the God of heaven | *Mungu wa mbinguni*, as Ezra |
-| the Most High (*'elyon*, *'illaya'*) | *Aliye Juu Kabisa* at every level, as Genesis 14, Deuteronomy 32:8, the Psalms and Luke. Readable may say *Mungu Aliye Juu Kabisa*. Isaiah 14:14 has *Aliye Juu*, which these books do not follow |
+| the Most High (*'elyon*, *'illaya'*) | *Aliye Juu Kabisa* at every level, as Genesis 14, Deuteronomy 32:8, the Psalms and Luke. Readable may say *Mungu Aliye Juu Kabisa*. Isaiah 14:14, Luke 1 and Psalms 73–83 now say *Aliye Juu Kabisa* too |
 | idols (*gillulim*) | *sanamu chafu* (L); *sanamu* (B, R) |
 | abomination (*to'evah*) | *chukizo*, *machukizo* (L); *matendo ya kuchukiza* (B); *mambo ya kinyaa* (R), as Deuteronomy 18:12 |
 | detestable things (*shiqqutsim*) | *vitu vya kuchukiza* (L); *sanamu za kuchukiza* (B, R). Literal is kept apart from *machukizo* because Ezekiel puts the two words side by side. Jeremiah 7:30 L, where *machukizo* was used, stays as it is |
@@ -858,7 +858,7 @@ it there as a rendering decision.
 | chrysolite (1:16; 10:9) | *krisolito*, as Exodus 28:20 |
 | the soul (*nefesh*, 18:4, 20) | *nafsi* (L); *mtu* (B, R) |
 | prince (*nasi'*) | *mkuu* (L, B); *mtawala* (R) |
-| judgments / statutes (*mishpatim* / *chuqqot*) | *hukumu* / *amri* (L); *maagizo* / *amri* (B); *sheria* / *sheria* (R) (uncertain) |
+| judgments / statutes (*mishpatim* / *chuqqot*) | *hukumu* / *kanuni* (L); *maagizo* / *kanuni* (B); *sheria* / *sheria* (R) (uncertain). Statutes now follow the Pentateuch's *kanuni* (Ezekiel 20:11 quotes Leviticus 18:5); *amri* stays the word for commandments. The same in Amos 2:4, Zechariah 1:6 and Malachi 3:7, 22 |
 | wrath (*chemah*) | *ghadhabu* (L, B); *hasira* (R) |
 | *zanah* (chapters 16 and 23) | *kufanya ukahaba* (L, B; Jeremiah 3:1); *kutokuwa mwaminifu, kama mke mwenye wapenzi wengi* (R) |
 | Oholah, Oholibah (23:4) | *Ohola*, *Oholiba* at every level, with the English footnote |
@@ -971,7 +971,7 @@ and keeps the metric value the published Swahili already gives the ephah,
 | Micah 6:8 | L *Amekujulisha, ewe mwanadamu, lililo jema; na BWANA anatafuta nini kwako, isipokuwa kutenda haki na kupenda upendo usiokoma, na kutembea kwa unyenyekevu na Mungu wako?* B the same line, with *kupenda uaminifu* (uncertain). R *kutenda yaliyo ya haki, kupenda kuwa mwema na mwaminifu, na kuishi kwa unyenyekevu ukimtii Mungu wako*. *Mwanadamu* takes no `gender` span. Do not drift towards the Union Version wording of this line |
 | Habakkuk 2:4 | *lakini mwenye haki kwa uaminifu wake ataishi* (L); *lakini mwenye haki ataishi kwa uaminifu wake* (B); *lakini mtu anayetenda haki ataishi kwa kuwa mwaminifu* (R). *Uaminifu* (*'emunah*), not *imani*. *wake* covers both sexes, so there is no `gender` span. *mwenye haki ataishi* matches Romans 1:17, Galatians 3:11 and Hebrews 10:38, which have *imani* from the Greek (allusion decision) |
 | Habakkuk 3 | *Maombi ya nabii Habakuki, kwa shigionothi* (L, B), *wimbo* (R), as Psalm 7:1 *Shigayoni*; *Sela* stays at the end of the verse; 3:19 *Kwa kiongozi wa kwaya: kwa ala zangu za nyuzi* (L, B), *Kwa kiongozi wa waimbaji* (R), as Psalm 4:1 |
-| the satan (Zechariah 3:1–2) | *yule shetani*, lowercase (L); *Mshtaki* (B, R) (uncertain at L). Not the name *Shetani*, which 1 Chronicles 21:1 uses |
+| the satan (Zechariah 3:1–2) | *yule satani*, lowercase (L); *Mshtaki* (B, R) (uncertain at L). Not the name *Shetani*, which 1 Chronicles 21:1 uses. The Literal now follows Job 1–2 (Nehemiah–Song doc), which first had *yule satani* |
 | the angel who talked with me | *malaika aliyezungumza nami* at every level |
 | the Branch (Zechariah 3:8; 6:12) | *Chipukizi*, capitalized, as Jeremiah 23:5: *mtumishi {{deity_pronoun:wangu\|Wangu}}, Chipukizi*; *Mtu ambaye jina lake ni Chipukizi* |
 | the lampstand; the two olive trees (Zechariah 4) | *kinara cha taa cha dhahabu tupu*; *mizeituni miwili* (Revelation 11:4). 4:14: *wana wawili wa mafuta* (L), *wale wawili waliopakwa mafuta* (B, R); *Bwana wa dunia yote* |
@@ -1141,9 +1141,9 @@ nothing here needs a setting.
 
 *mwana wa binadamu* against *mwanadamu*; *Mzee wa Kale* (R);
 *mkeshaji*; *wasihiri*; *wakuu wa mikoa*; *mafungu sabini ya saba*;
-*malaika mtawala*; *yule shetani* (L, Zechariah 3); *kaharabu* and the
+*malaika mtawala*; *yule satani* (L, Zechariah 3); *kaharabu* and the
 *chashmal* line; *kijumba* and *eneo lililotengwa* (temple vision); Ezekiel's
-*mishpatim*/*chuqqot* split; the Amos refrain's *-li-*; the Joel locust
+*mishpatim*/*chuqqot* split (statutes now *kanuni*); the Amos refrain's *-li-*; the Joel locust
 names; *kupenda uaminifu* (Micah 6:8 B); *Jinsi ...!* for *'ekhah*; the new
 Egyptian place names (*Siene*/*Asuani*, *Sini*/*Pelusiamu*, *Aveni*/*Oni*).
 
