@@ -72,7 +72,7 @@ Decision text stays in English, quoting the Amharic words.
 |---|---|
 | Joshua son of Nun; Rahab; Achan; Caleb; Othniel; Achsah | የነዌ ልጅ ኢያሱ; ረዓብ; አካን; ካሌብ; ጎቶንያል; ዓክሳ |
 | Jericho; Ai; Gibeon, Gibeonites; Gilgal; Shiloh; Shechem | ኢያሪኮ; ጋይ; ገባዖን, ገባዖናውያን; ጌልገላ; ሴሎ; ሴኬም |
-| Ehud; Eglon; Shamgar; Deborah; Barak; Sisera; Jael; Jabin | ናዖድ; ዔግሎን; ሰሜጋር; ዲቦራ; ባርቅ; ሲሣራ; ኢያኤል; ኢያቢስ |
+| Ehud; Eglon; Shamgar; Deborah; Barak; Sisera; Jael; Jabin | ናዖድ; ዔግሎን; ሰሜጋር; ዲቦራ; ባርቅ; ሲሣራ; ኢያኤል; ኢያቢን |
 | Gideon (Jerubbaal); Jephthah; Samson; Manoah; Delilah; Micah | ጌዴዎን (ይሩበኣል); ዮፍታሔ; ሶምሶን; ማኑሄ; ደሊላ; ሚካ |
 | Ruth; Naomi; Boaz; Orpah; Elimelech; Mahlon; Chilion; Obed; Jesse | ሩት; ኑኃሚን; ቦዔዝ; ዖርፋ; አቤሜሌክ; መሐሎን; ኬሌዎን; ኢዮቤድ; እሴይ |
 | Elkanah; Hannah; Peninnah; Eli; Hophni; Phinehas; Samuel | ሕልቃና; ሐና; ፍናና; ዔሊ; ኦፍኒ; ፊንሐስ; ሳሙኤል |
