@@ -954,7 +954,7 @@ def books(lang=None):
 
 def book_progress(book, chapters_, lang="en"):
     """"All 4 chapters translated" / "2 of 21 chapters" / "1 chapter,
-    complete" (Philemon): a book's progress."""
+    translated" (Philemon): a book's progress."""
     done = sum(p.complete for p in chapters_)
     total = BOOK_CHAPTERS[book]
     key = "progress.one" if total == 1 else "progress.complete" if done == total else "progress.chapters"

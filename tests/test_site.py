@@ -1037,7 +1037,7 @@ class SiteTest(unittest.TestCase):
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
         self.assertIn("All 4 chapters translated", read)
-        self.assertIn("1 chapter, complete", read)
+        self.assertIn("1 chapter, translated", read)
         self.assertNotIn("1 of 1 chapters", read)
         # Each book is a tile in the index, opening in place (/read/#jhn).
         index = re.search(r'<nav class="book-index".*?</nav>', read, re.S)[0]
