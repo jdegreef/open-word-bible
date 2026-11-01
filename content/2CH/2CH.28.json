@@ -74,6 +74,11 @@
           "L": "Acaz [tinha] vinte anos quando começou a reinar, e reinou dezesseis anos em Jerusalém. E não fez o reto aos olhos {{divine_name:do SENHOR|de Javé}}, como Davi, seu pai.",
           "B": "Acaz tinha vinte anos quando começou a reinar, e reinou dezesseis anos em Jerusalém. Ele não fez o que era reto aos olhos {{divine_name:do SENHOR|de Javé}}, como o seu antepassado Davi tinha feito.",
           "R": "Acaz tinha vinte anos quando se tornou rei, e governou dezesseis anos em Jerusalém. Ele não fez o que {{divine_name:o SENHOR|Javé}} considerava certo, como o seu antepassado Davi tinha feito."
+        },
+        "am": {
+          "L": "አካዝም መንገሥ በጀመረ ጊዜ የሃያ ዓመት ሰው [ነበረ]፤ በኢየሩሳሌምም አሥራ ስድስት ዓመት ነገሠ። እንደ አባቱ እንደ ዳዊትም {{divine_name:በእግዚአብሔር|በያህዌ}} ዓይን ቅን የሆነውን አላደረገም።",
+          "B": "አካዝ መንገሥ በጀመረ ጊዜ ዕድሜው ሃያ ዓመት ነበር፤ በኢየሩሳሌምም አሥራ ስድስት ዓመት ነገሠ። አባቱ ዳዊት እንዳደረገው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ቅን የሆነውን አላደረገም።",
+          "R": "አካዝ ንጉሥ በሆነ ጊዜ ሃያ ዓመቱ ነበር፤ በኢየሩሳሌምም አሥራ ስድስት ዓመት ገዛ። አባቱ ዳዊት እንዳደረገው {{divine_name:እግዚአብሔር|ያህዌ}} ትክክል ነው የሚለውን አላደረገም።"
         }
       },
       "decisions": [
@@ -281,6 +286,46 @@
           "reason": "The verse repeats 2 Kings 16:2 (m1), and so does the Portuguese at each level: \"Acaz [tinha] vinte anos\" (L), the denied verdict, \"seu pai\" (L) and \"o seu antepassado Davi\" (B, R). Chronicles has only the divine name where Kings has \"the LORD his God\", so \", o seu Deus\" is left out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140280010041"
+          ],
+          "choice": "No deity_pronoun or gender spans in the Amharic of 2 Chronicles 28: the Ethiopic script has no capitals, and \"የእስራኤል ልጆች\", \"የይሁዳ ልጆች\" (verses 3, 10) already include women.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The setting that capitalises pronouns for God has nothing to change in Amharic, and \"ልጆች\" is not limited to sons.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280010151"
+          ],
+          "choice": "Copied from 2 Kings 16:2 at each level, without \"his God\" (\"በአምላኩ\"), which Chronicles leaves out (m1).",
+          "alternatives": [],
+          "reason": "The parallels rule: Kings' Amharic where the Hebrew is the same, Chronicles' own Hebrew where it differs.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -345,6 +390,11 @@
           "L": "E andou nos caminhos dos reis de Israel, e também fez imagens de metal fundido para os baalins.",
           "B": "Ele andou nos caminhos dos reis de Israel e também fez imagens de metal fundido para os baalins.",
           "R": "Ele viveu como os reis de Israel tinham vivido. Chegou a fazer ídolos de metal para os baalins."
+        },
+        "am": {
+          "L": "በእስራኤልም ነገሥታት መንገዶች ሄደ፤ ለበኣሊምም ደግሞ ቀልጠው የተሠሩ ምስሎችን አደረገ።",
+          "B": "በእስራኤል ነገሥታት መንገድ ሄደ፤ ደግሞም ለበኣሊም ከቀለጠ ብረት የተሠሩ ምስሎችን ሠራ።",
+          "R": "የእስራኤል ነገሥታት እንደ ኖሩት ኖረ። ለበኣሊምም እንኳ ብረት አቅልጦ ጣዖታትን ሠራ።"
         }
       },
       "decisions": [
@@ -433,6 +483,24 @@
           "reason": "The first clause keeps the Portuguese of 2 Kings 16:3 at each level, with the plural \"caminhos\" where Chronicles has \"ways\" (m1), as 22:3 does. The cast images (m2) take the words of 1 Kings 14:9 in Portuguese, and the Baals (m3) are \"os baalins\", as Judges 2:11.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280020022",
+            "o140280020061"
+          ],
+          "choice": "\"መንገዶች\" (plural) at Literal, where 2 Kings 16:3 has \"መንገድ\"; the cast images \"ቀልጠው የተሠሩ ምስሎች\" (L), \"ከቀለጠ ብረት የተሠሩ ምስሎች\" (B), \"ጣዖታት\" (R); the Baals \"በኣሊም\".",
+          "alternatives": [],
+          "reason": "Chronicles has \"ways\" where Kings has \"way\", and adds the images for the Baals (m1); Balanced and Readable keep Kings' wording for the shared clause.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -510,6 +578,11 @@
           "L": "E ele queimou incenso no vale de Ben-Hinom, e queimou os seus filhos no fogo, conforme as abominações das nações que {{divine_name:o SENHOR|Javé}} tinha expulsado de diante dos filhos de Israel.",
           "B": "Ele queimou incenso no vale de Ben-Hinom e queimou os seus filhos no fogo, seguindo as coisas abomináveis das nações que {{divine_name:o SENHOR|Javé}} tinha expulsado de diante dos israelitas.",
           "R": "Ele queimou incenso no vale de Ben-Hinom e chegou a queimar os seus próprios filhos no fogo como sacrifício. Imitou as coisas abomináveis que faziam as nações que {{divine_name:o SENHOR|Javé}} tinha expulsado da terra para dar lugar aos israelitas."
+        },
+        "am": {
+          "L": "እርሱም በሄኖም ልጅ ሸለቆ አጠነ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ከእስራኤል ልጆች ፊት እንዳሳደዳቸው እንደ ሕዝቦቹ አስጸያፊ ነገሮች ልጆቹን በእሳት አቃጠለ።",
+          "B": "በሄኖም ልጅ ሸለቆ ዕጣን አጠነ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ከእስራኤል ልጆች ፊት ያሳደዳቸው ሕዝቦች ያደርጉት የነበረውን አስጸያፊ ልማድ ተከትሎ ልጆቹን በእሳት አቃጠለ።",
+          "R": "በሄኖም ልጅ ሸለቆ ዕጣን አጠነ፤ የገዛ ልጆቹንም መሥዋዕት አድርጎ በእሳት አቃጠለ። {{divine_name:እግዚአብሔር|ያህዌ}} ለእስራኤላውያን ሲል ከምድሪቱ ያባረራቸው ሕዝቦች ያደርጉት የነበረውን አስጸያፊ ልማድ ተከተለ።"
         }
       },
       "decisions": [
@@ -743,6 +816,28 @@
           "reason": "As 2 Kings 16:3 in Portuguese: \"filhos\" already includes daughters and \"israelitas\" names the people, so Portuguese has no second wording for the English gender setting to offer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280030062",
+            "o140280030051"
+          ],
+          "choice": "\"ልጆቹን በእሳት አቃጠለ\" (\"burned his sons in the fire\") where 2 Kings 16:3 has \"ልጁን በእሳት አሳለፈ\"; the rest of the clause keeps Kings' wording; the valley is \"የሄኖም ልጅ ሸለቆ\", as Joshua 15:8 and 2 Kings 23:10.",
+          "alternatives": [
+            "ልጆቹን በእሳት አሳለፈ"
+          ],
+          "reason": "Chronicles' Hebrew has a different verb and the plural \"sons\" (m1, m2); the burning of incense in the valley is its own addition.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -810,6 +905,11 @@
           "L": "E sacrificou e queimou incenso nos altos, e sobre as colinas, e debaixo de toda árvore verdejante.",
           "B": "Ele ofereceu sacrifícios e queimou incenso nos altos, nas colinas e debaixo de toda árvore frondosa.",
           "R": "Ele ofereceu sacrifícios e queimou incenso nos santuários no alto dos morros, nas colinas e debaixo de toda árvore grande e frondosa."
+        },
+        "am": {
+          "L": "በኮረብታ መስገጃዎችና በኮረብቶች ላይ፣ ከለመለመም ዛፍ ሁሉ በታች ሠዋ፤ አጠነም።",
+          "B": "በኮረብታ መስገጃዎች፣ በኮረብቶች ላይና ቅጠሉ በለመለመ ዛፍ ሁሉ ሥር መሥዋዕት አቀረበ፤ ዕጣንም አጠነ።",
+          "R": "በኮረብታ መስገጃዎች፣ በኮረብቶች ላይና በለመለመ ትልቅ ዛፍ ሁሉ ሥር መሥዋዕት አቀረበ፤ ዕጣንም አጠነ።"
         }
       },
       "decisions": [
@@ -978,6 +1078,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}}, o seu Deus, o entregou na mão do rei de Arã, e eles o feriram e levaram dele um grande [número de] cativos e [os] trouxeram [a] Damasco. E ele também foi entregue na mão do rei de Israel, e este o feriu com uma grande derrota.",
           "B": "Por isso {{divine_name:o SENHOR|Javé}}, o seu Deus, o entregou ao rei dos arameus. Os arameus o derrotaram, levaram muitos do seu povo como prisioneiros e os trouxeram para Damasco. Ele também foi entregue ao rei de Israel, que lhe causou uma grande derrota.",
           "R": "Por isso {{divine_name:o SENHOR|Javé}}, o seu Deus, deixou que o rei dos arameus derrotasse Acaz. Os arameus venceram o exército de Acaz, levaram muitos do seu povo como prisioneiros e os trouxeram para Damasco. {{divine_name:O SENHOR|Javé}} também deixou que o rei de Israel o derrotasse, e muitos dos seus homens foram mortos."
+        },
+        "am": {
+          "L": "አምላኩ {{divine_name:እግዚአብሔር|ያህዌ}}ም በአራም ንጉሥ እጅ አሳልፎ ሰጠው፤ መቱትም፤ ከእርሱም ብዙ ምርኮኞችን ማርከው ወደ ደማስቆ አመጡ። ደግሞም በእስራኤል ንጉሥ እጅ ተሰጠ፤ እርሱም ታላቅ ምት መታው።",
+          "B": "ስለዚህ አምላኩ {{divine_name:እግዚአብሔር|ያህዌ}} ለአራም ንጉሥ አሳልፎ ሰጠው። አራማውያንም ድል አደረጉት፤ ከሕዝቡም እጅግ ብዙዎችን ማርከው ወደ ደማስቆ ወሰዱ። ለእስራኤልም ንጉሥ ደግሞ ተሰጠ፤ እርሱም ክፉኛ መታው።",
+          "R": "ስለዚህ አምላኩ {{divine_name:እግዚአብሔር|ያህዌ}} የአራም ንጉሥ አካዝን ድል እንዲያደርግ ፈቀደ። አራማውያን የአካዝን ሠራዊት መቱ፤ ከሕዝቡም ብዙዎችን ማርከው ወደ ደማስቆ ወሰዱ። {{divine_name:እግዚአብሔር|ያህዌ}} ደግሞ የእስራኤል ንጉሥ እንዲያሸንፈው ፈቀደ፤ ከሰዎቹም ብዙዎች ተገደሉ።"
         }
       },
       "decisions": [
@@ -1114,6 +1219,26 @@
           "reason": "Literal keeps the picture of the hand (m4), and Balanced and Readable say \"entregar a\" and \"deixar que ... derrotasse\", as the English does. The king and his people keep the words 2 Kings 16:5 uses in Portuguese: \"rei de Arã\" at Literal, \"rei dos arameus\" and \"os arameus\" at Balanced and Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280050061"
+          ],
+          "choice": "The king of Aram is \"የአራም ንጉሥ\" at every level; the Arameans who struck him are \"አራማውያን\" (B, R); \"Yahweh his God\" is \"አምላኩ {{divine_name:እግዚአብሔር|ያህዌ}}\", the name second.",
+          "alternatives": [
+            "የአራማውያን ንጉሥ"
+          ],
+          "reason": "As 1-2 Kings has the title; the people are named as a people at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1192,6 +1317,11 @@
           "L": "E Peca, filho de Remalias, matou em Judá cento e vinte mil em um só dia, todos eles homens valentes, porque tinham abandonado {{divine_name:o SENHOR|Javé}}, o Deus dos seus pais.",
           "B": "Num só dia, Peca, filho de Remalias, matou cento e vinte mil em Judá, todos eles homens valentes, porque tinham abandonado {{divine_name:o SENHOR|Javé}}, o Deus dos seus antepassados.",
           "R": "Num único dia, Peca, filho de Remalias, matou cento e vinte mil soldados de Judá, todos eles guerreiros corajosos. Isso aconteceu porque o povo de Judá tinha se afastado {{divine_name:do SENHOR|de Javé}}, o Deus dos seus antepassados."
+        },
+        "am": {
+          "L": "የሮሜልዩ ልጅ ፋቁሔም በአንድ ቀን በይሁዳ 120,000 ገደለ፤ ሁሉም ጀግኖች [ነበሩ]፤ የአባቶቻቸውን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} ትተው ነበርና።",
+          "B": "የሮሜልዩ ልጅ ፋቁሔ በአንድ ቀን ከይሁዳ 120,000 ሰዎችን ገደለ፤ ሁሉም ጀግኖች ነበሩ። ይህም የሆነው የአባቶቻቸውን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ተዉ ነው።",
+          "R": "የሮሜልዩ ልጅ ፋቁሔ በአንድ ቀን ብቻ 120,000 የይሁዳ ወታደሮችን ገደለ፤ ሁሉም ደፋር ተዋጊዎች ነበሩ። ይህ የደረሰው የይሁዳ ሰዎች የአባቶቻቸውን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ተዉ ነው።"
         }
       },
       "decisions": [
@@ -1375,6 +1505,11 @@
           "L": "E Zicri, um valente de Efraim, matou Maaseias, o filho do rei, e Azricão, o chefe da casa, e Elcana, o segundo do rei.",
           "B": "Zicri, um guerreiro efraimita, matou Maaseias, o filho do rei, Azricão, o oficial encarregado do palácio, e Elcana, que era o segundo depois do rei.",
           "R": "Zicri, um guerreiro de Efraim, matou três homens próximos do rei: Maaseias, o filho do rei; Azricão, que era o encarregado do palácio; e Elcana, o segundo homem mais importante depois do rei."
+        },
+        "am": {
+          "L": "የኤፍሬም ኃያል ሰው ዝክሪም የንጉሡን ልጅ መዕሤያን፣ የቤቱንም አለቃ ዓዝሪቃምን፣ ለንጉሡም ሁለተኛ የሆነውን ሕልቃናን ገደለ።",
+          "B": "ኤፍሬማዊው ጀግና ዝክሪ የንጉሡን ልጅ መዕሤያን፣ የቤተ መንግሥቱን አስተዳዳሪ ዓዝሪቃምንና ከንጉሡ ቀጥሎ ሁለተኛ የነበረውን ሕልቃናን ገደለ።",
+          "R": "ከኤፍሬም የመጣ ዝክሪ የተባለ ጦረኛ ለንጉሡ ቅርብ የነበሩትን ሦስት ሰዎች ገደለ፤ እነርሱም የንጉሡ ልጅ መዕሤያ፣ የቤተ መንግሥቱ ኃላፊ ዓዝሪቃምና የንጉሡ ምክትል ሕልቃና ነበሩ።"
         }
       },
       "decisions": [
@@ -1568,6 +1703,28 @@
           "reason": "The names keep the forms Chronicles' other chapters give them in Portuguese (\"Zicri\", \"Azricão\" and \"Elcana\" in 1 Chronicles; \"Maaseias\" as 26:11). The officer over the household (m3) is \"o chefe da casa\" at Literal and \"encarregado do palácio\" at Balanced and Readable, the words 2 Kings 15:5 and 19:2 use in Portuguese for that office.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280070021",
+            "o140280070061",
+            "o140280070101",
+            "o140280070141"
+          ],
+          "choice": "Names: Zichri \"ዝክሪ\", Maaseiah \"መዕሤያ\", Azrikam \"ዓዝሪቃም\", Elkanah \"ሕልቃና\" (as 1 Samuel 1); \"the ruler of the house\" \"የቤቱ አለቃ\" (L), \"የቤተ መንግሥቱ አስተዳዳሪ\" (B), as 2 Kings 18:18; \"the second to the king\" \"ለንጉሡ ሁለተኛ\" (L), \"ከንጉሡ ቀጥሎ ሁለተኛ\" (B), \"የንጉሡ ምክትል\" (R).",
+          "alternatives": [],
+          "reason": "New names spelled from the Hebrew; the offices are said as the English levels say them (m3, m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1647,6 +1804,11 @@
           "L": "E os filhos de Israel levaram cativos dos seus irmãos duzentos mil: mulheres, filhos e filhas; e também saquearam deles muito despojo, e levaram o despojo para Samaria.",
           "B": "Os israelitas levaram como prisioneiros duzentos mil dos seus próprios parentes: mulheres, filhos e filhas. Também tomaram deles muitos despojos e levaram os despojos para Samaria.",
           "R": "Os israelitas capturaram duzentos mil dos seus próprios parentes, mulheres e crianças, e os levaram embora. Também tomaram deles muitas coisas de valor e levaram tudo para Samaria."
+        },
+        "am": {
+          "L": "የእስራኤልም ልጆች ከወንድሞቻቸው 200,000 ሴቶችን፣ ወንዶች ልጆችንና ሴቶች ልጆችን ማረኩ፤ ደግሞም ከእነርሱ ብዙ ምርኮ ዘረፉ፤ ምርኮውንም ወደ ሰማርያ አመጡ።",
+          "B": "እስራኤላውያን ከገዛ ወገኖቻቸው 200,000 ሴቶችን፣ ወንዶች ልጆችንና ሴቶች ልጆችን ማረኩ። ደግሞም ከእነርሱ እጅግ ብዙ ምርኮ ዘርፈው ምርኮውን ወደ ሰማርያ አመጡ።",
+          "R": "እስራኤላውያን ከገዛ ወገኖቻቸው 200,000 ሴቶችንና ልጆችን ማርከው ወሰዱ። ደግሞም ከእነርሱ ብዙ ውድ ነገሮችን ዘርፈው ሁሉንም ወደ ሰማርያ አመጡ።"
         }
       },
       "decisions": [
@@ -1882,6 +2044,11 @@
           "L": "Mas havia ali um profeta {{divine_name:do SENHOR|de Javé}}, cujo nome [era] Odede, e ele saiu diante do exército que vinha a Samaria e lhes disse: \"Eis que, por causa do furor {{divine_name:do SENHOR|de Javé}}, o Deus dos seus pais, contra Judá, {{deity_pronoun:ele|Ele}} os entregou na mão de vocês; e vocês os mataram com uma fúria que chegou até o céu.",
           "B": "Mas estava ali um profeta {{divine_name:do SENHOR|de Javé}} chamado Odede. Ele saiu ao encontro do exército que chegava a Samaria e lhes disse: \"Vejam: foi porque {{divine_name:o SENHOR|Javé}}, o Deus dos seus antepassados, estava irado contra Judá que {{deity_pronoun:ele|Ele}} os entregou a vocês. Mas vocês os massacraram com uma fúria que chegou até o céu.",
           "R": "Mas em Samaria morava um profeta {{divine_name:do SENHOR|de Javé}} chamado Odede. Ele saiu ao encontro do exército que voltava para Samaria e disse aos soldados: \"Escutem! {{divine_name:O SENHOR|Javé}}, o Deus dos seus antepassados, estava irado com Judá, e por isso {{deity_pronoun:ele|Ele}} deixou que vocês os derrotassem. Mas vocês os mataram com tanta fúria que ela chegou até o céu."
+        },
+        "am": {
+          "L": "በዚያም ስሙ ዖዴድ የተባለ {{divine_name:የእግዚአብሔር|የያህዌ}} ነቢይ ነበረ፤ ወደ ሰማርያ በሚመጣውም ሠራዊት ፊት ወጥቶ እንዲህ አላቸው፦ «እነሆ፣ የአባቶቻችሁ አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} በይሁዳ ላይ ስለ ተቆጣ በእጃችሁ ሰጣቸው፤ እናንተም እስከ ሰማይ በደረሰ ቁጣ ገደላችኋቸው።",
+          "B": "ነገር ግን በዚያ ዖዴድ የተባለ {{divine_name:የእግዚአብሔር|የያህዌ}} ነቢይ ነበረ። እርሱም ሠራዊቱ ወደ ሰማርያ ሲመጣ ሊቀበላቸው ወጥቶ እንዲህ አላቸው፦ «የአባቶቻችሁ አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} በይሁዳ ላይ ስለ ተቆጣ ነው በእጃችሁ አሳልፎ የሰጣቸው። እናንተ ግን እስከ ሰማይ በደረሰ ቁጣ ፈጃችኋቸው።",
+          "R": "ነገር ግን በዚያ ዖዴድ የተባለ {{divine_name:የእግዚአብሔር|የያህዌ}} ነቢይ ይኖር ነበር። ሠራዊቱ ወደ ሰማርያ ሲመጣ ሊቀበላቸው ወጣ። እንዲህም አላቸው፦ «ስሙ! የአባቶቻችሁ አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} በይሁዳ ላይ ተቆጥቶ ስለ ነበረ እንድታሸንፏቸው አደረገ። እናንተ ግን እስከ ሰማይ በደረሰ ቁጣ ገደላችኋቸው።"
         }
       },
       "decisions": [
@@ -2075,6 +2242,25 @@
           "reason": "The picture of a fury reaching heaven (m3) is kept at every level, as the English keeps it, since it says that God has seen the slaughter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o140280090122"
+          ],
+          "choice": "Oded \"ዖዴድ\" (as 2 Chronicles 15:1) speaks to the army with \"እናንተ\"; \"look\" is \"እነሆ\" at Literal only, \"ስሙ!\" at Readable.",
+          "alternatives": [],
+          "reason": "A prophet addressing soldiers of the northern army; the speech runs to the end of verse 11, so the quotation opens here and closes there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2155,6 +2341,11 @@
           "L": "E agora vocês pretendem sujeitar os filhos de Judá e de Jerusalém [como] escravos e escravas para vocês. Não há, com vocês mesmos, culpas contra {{divine_name:o SENHOR|Javé}}, o seu Deus?",
           "B": "E agora vocês pretendem obrigar o povo de Judá e de Jerusalém a ser seus escravos e escravas. Mas vocês mesmos não são culpados de ofensas contra {{divine_name:o SENHOR|Javé}}, o seu Deus?",
           "R": "Agora vocês querem fazer dos homens e das mulheres de Judá e de Jerusalém seus escravos. Mas vocês também não pecaram contra {{divine_name:o SENHOR|Javé}}, o seu Deus?"
+        },
+        "am": {
+          "L": "አሁንም የይሁዳንና የኢየሩሳሌምን ልጆች ለራሳችሁ ወንዶች ባሪያዎችና ሴቶች ባሪያዎች አድርጋችሁ ልትገዟቸው ትላላችሁ። ከእናንተ ጋርስ፣ ከእናንተው ዘንድ በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ በደሎች የሉምን?",
+          "B": "አሁንም የይሁዳንና የኢየሩሳሌምን ሰዎች ወንዶችና ሴቶች ባሪያዎቻችሁ እንዲሆኑ ልታስገድዷቸው አስባችኋል። ነገር ግን እናንተ ራሳችሁ በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ በደል የፈጸማችሁ አይደላችሁምን?",
+          "R": "አሁን ደግሞ የይሁዳንና የኢየሩሳሌምን ወንዶችና ሴቶች ባሪያዎቻችሁ ልታደርጓቸው አቅዳችኋል። ነገር ግን እናንተስ በአምላካችሁ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ኃጢአት አልሠራችሁምን?"
         }
       },
       "decisions": [
@@ -2482,6 +2673,11 @@
           "L": "E agora ouçam-me e devolvam os cativos que vocês levaram cativos dos seus irmãos, porque o ardor da ira {{divine_name:do SENHOR|de Javé}} [está] sobre vocês.\"",
           "B": "Agora ouçam o que eu digo: mandem de volta os prisioneiros que vocês tomaram dos seus próprios parentes, porque a ira ardente {{divine_name:do SENHOR|de Javé}} está sobre vocês.\"",
           "R": "Por isso me escutem. Mandem de volta os prisioneiros que vocês tiraram dos seus próprios parentes. {{divine_name:O SENHOR|Javé}} está muito irado com vocês.\""
+        },
+        "am": {
+          "L": "አሁንም ስሙኝ፤ ከወንድሞቻችሁ የማረካችኋቸውን ምርኮኞች መልሱ፤ {{divine_name:የእግዚአብሔር|የያህዌ}} የሚነድ ቁጣ በእናንተ ላይ ነውና።»",
+          "B": "አሁንም ስሙኝ፤ ከገዛ ወገኖቻችሁ የማረካችኋቸውን ምርኮኞች መልሱ፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ጽኑ ቁጣ በእናንተ ላይ ነውና።»",
+          "R": "ስለዚህ ስሙኝ። ከገዛ ወገኖቻችሁ የወሰዳችኋቸውን እስረኞች መልሱ። {{divine_name:እግዚአብሔር|ያህዌ}} በእናንተ ላይ እጅግ ተቆጥቷል።»"
         }
       },
       "decisions": [
@@ -2649,6 +2845,11 @@
           "L": "E levantaram-se homens dentre os chefes dos filhos de Efraim, Azarias, filho de Jeoanã, Berequias, filho de Mesilemote, e Jeizquias, filho de Salum, e Amasa, filho de Hadlai, contra os que vinham do exército.",
           "B": "Então alguns dos chefes dos efraimitas, Azarias, filho de Jeoanã, Berequias, filho de Mesilemote, Jeizquias, filho de Salum, e Amasa, filho de Hadlai, se levantaram para enfrentar os que voltavam da guerra.",
           "R": "Então alguns dos líderes de Efraim se levantaram contra os soldados que voltavam da guerra. Eram eles: Azarias, filho de Jeoanã; Berequias, filho de Mesilemote; Jeizquias, filho de Salum; e Amasa, filho de Hadlai."
+        },
+        "am": {
+          "L": "ከኤፍሬምም ልጆች አለቆች [የሆኑ] ሰዎች፣ የይሆሐናን ልጅ ዓዛርያስ፣ የምሺሌሞት ልጅ በራክያ፣ የሰሎምም ልጅ ይሒዝቅያ፣ የሐድላይም ልጅ አሜሳይ ከሠራዊቱ በሚመጡት ላይ ተነሡ።",
+          "B": "ከዚያም ከኤፍሬማውያን አለቆች አንዳንዶቹ፣ የይሆሐናን ልጅ ዓዛርያስ፣ የምሺሌሞት ልጅ በራክያ፣ የሰሎም ልጅ ይሒዝቅያና የሐድላይ ልጅ አሜሳይ ከጦርነቱ የሚመለሱትን ለመቃወም ተነሡ።",
+          "R": "ከዚያም ከኤፍሬም መሪዎች አንዳንዶቹ ከጦርነቱ በሚመለሱት ወታደሮች ላይ ተነሡ። እነርሱም የይሆሐናን ልጅ ዓዛርያስ፣ የምሺሌሞት ልጅ በራክያ፣ የሰሎም ልጅ ይሒዝቅያና የሐድላይ ልጅ አሜሳይ ነበሩ።"
         }
       },
       "decisions": [
@@ -2791,6 +2992,32 @@
           "reason": "The names known from other books keep their Portuguese forms (\"Azarias\", \"Jeoanã\", \"Berequias\", \"Salum\", \"Amasa\"); \"Mesilemote\", \"Jeizquias\" and \"Hadlai\" are found only here and are written as Portuguese writes their sounds (m1).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280120061",
+            "o140280120081",
+            "o140280120091",
+            "o140280120111",
+            "o140280120122",
+            "o140280120152"
+          ],
+          "choice": "Names: Azariah son of Jehohanan \"የይሆሐናን ልጅ ዓዛርያስ\", Berechiah \"በራክያ\", Meshillemoth \"ምሺሌሞት\", Jehizkiah \"ይሒዝቅያ\", Shallum \"ሰሎም\" (as 2 Kings 15:10), Amasa \"አሜሳይ\" (as 2 Samuel), Hadlai \"ሐድላይ\".",
+          "alternatives": [
+            "ሕዝቅያስ for Jehizkiah"
+          ],
+          "reason": "The Hebrew spells Jehizkiah as Chronicles spells King Hezekiah; the English keeps the Ephraimite apart, and so does the Amharic (\"ይሒዝቅያ\", the king \"ሕዝቅያስ\"). Berechiah follows the Hebrew; Matthew 23:35 has the Greek form \"በራክዩ\".",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2880,6 +3107,11 @@
           "L": "E lhes disseram: \"Vocês não trarão os cativos para cá, porque vocês pretendem [trazer] culpa contra {{divine_name:o SENHOR|Javé}} sobre nós, para acrescentar aos nossos pecados e à nossa culpa; porque grande [é] a nossa culpa, e o ardor da ira [está] sobre Israel.\"",
           "B": "Eles lhes disseram: \"Vocês não devem trazer os prisioneiros para cá. O que vocês pretendem faria cair sobre nós culpa diante {{divine_name:do SENHOR|de Javé}} e aumentaria os nossos pecados e a nossa culpa. A nossa culpa já é grande, e a ira ardente está sobre Israel.\"",
           "R": "Eles disseram aos soldados: \"Não tragam os prisioneiros para cá! O que vocês querem fazer nos tornaria culpados diante {{divine_name:do SENHOR|de Javé}}. Isso aumentaria os pecados e a culpa que já temos. Já somos muito culpados, e {{divine_name:o SENHOR|Javé}} está muito irado com Israel.\""
+        },
+        "am": {
+          "L": "እንዲህም አሏቸው፦ «ምርኮኞቹን ወደዚህ አታምጡ፤ በእኛ ላይ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት በደልን፣ በኃጢአታችንና በበደላችን ላይ ልትጨምሩ ትላላችሁና፤ በደላችን ታላቅ ነውና፤ የሚነድም ቁጣ በእስራኤል ላይ ነው።»",
+          "B": "እንዲህም አሏቸው፦ «ምርኮኞቹን ወደዚህ ማምጣት የለባችሁም። ያሰባችሁት ነገር {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት በደልን ያመጣብናል፤ በኃጢአታችንና በበደላችንም ላይ ይጨምራል። በደላችን ቀድሞውንም ታላቅ ነው፤ ጽኑ ቁጣም በእስራኤል ላይ ነው።»",
+          "R": "ወታደሮቹንም እንዲህ አሏቸው፦ «እስረኞቹን ወደዚህ አታምጡ! ያቀዳችሁት ነገር {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት በደለኞች ያደርገናል። ቀድሞውንም ባለብን ኃጢአትና በደል ላይ ይጨምራል። እኛ ቀድሞውንም እጅግ በደለኞች ነን፤ {{divine_name:እግዚአብሔር|ያህዌ}} ደግሞ በእስራኤል ላይ እጅግ ተቆጥቷል።»"
         }
       },
       "decisions": [
@@ -3090,6 +3322,11 @@
           "L": "Então os homens armados deixaram os cativos e o despojo diante dos príncipes e de toda a assembleia.",
           "B": "Então os homens armados deixaram os prisioneiros e os despojos diante dos oficiais e de toda a assembleia.",
           "R": "Então os soldados deixaram os prisioneiros e os despojos com os líderes e com todo o povo que estava reunido ali."
+        },
+        "am": {
+          "L": "የታጠቁትም ሰዎች ምርኮኞቹንና የተዘረፈውን ዕቃ በአለቆቹና በጉባኤው ሁሉ ፊት ተዉ።",
+          "B": "ስለዚህ የታጠቁት ወታደሮች ምርኮኞቹንና የዘረፉትን ዕቃ በአለቆቹና በጉባኤው ሁሉ ፊት ተዉ።",
+          "R": "ስለዚህ ወታደሮቹ እስረኞቹንና የዘረፉትን ዕቃ ለመሪዎቹና በዚያ ለተሰበሰበው ሕዝብ ሁሉ ተዉ።"
         }
       },
       "decisions": [
@@ -3269,6 +3506,11 @@
           "L": "E os homens que tinham sido designados por nome se levantaram e tomaram os cativos, e vestiram do despojo todos os que estavam nus entre eles; e os vestiram, e os calçaram, e lhes deram de comer e de beber, e os ungiram, e conduziram em jumentos todos os que cambaleavam, e os levaram [a] Jericó, a cidade das palmeiras, junto aos seus irmãos. E voltaram [a] Samaria.",
           "B": "Então os homens que tinham sido escolhidos por nome para isso se levantaram e cuidaram dos prisioneiros. Com os despojos vestiram todos os que estavam nus entre eles. Deram-lhes roupas e sandálias, comida e bebida, e os ungiram com óleo. Puseram em jumentos todos os que estavam fracos demais para andar e os levaram aos seus parentes em Jericó, a cidade das palmeiras. Depois voltaram para Samaria.",
           "R": "Os homens que tinham sido escolhidos por nome para esse trabalho cuidaram dos prisioneiros. Usaram os despojos para dar roupas a todos os que não tinham. Deram a eles roupas e sandálias, algo para comer e beber, e óleo para aliviar a pele. Puseram em jumentos todos os que estavam fracos demais para andar. Levaram todos de volta ao seu próprio povo em Jericó, a cidade conhecida pelas suas palmeiras. Depois voltaram para Samaria."
+        },
+        "am": {
+          "L": "በስማቸውም የተጠሩት ሰዎች ተነሥተው ምርኮኞቹን ያዙ፤ ከመካከላቸውም የተራቆቱትን ሁሉ ከምርኮው አለበሱ፤ አለበሷቸውም፤ ጫማም አደረጉላቸው፤ አበሏቸውም፤ አጠጧቸውም፤ ቀቧቸውም፤ የሚደክመውንም ሁሉ በአህዮች ላይ አስቀምጠው መሯቸው፤ የዘንባባ ዛፎች ከተማ ወደ ሆነችው ወደ ኢያሪኮ ወደ ወንድሞቻቸው አጠገብ አመጧቸው፤ ወደ ሰማርያም ተመለሱ።",
+          "B": "ከዚያም ለዚህ ሥራ በስም የተመረጡት ሰዎች ተነሥተው ምርኮኞቹን ተረከቡ። ከምርኮውም ወስደው ከእነርሱ መካከል የተራቆቱትን ሁሉ አለበሱ። ልብስና ጫማ ሰጧቸው፤ አበሏቸው፤ አጠጧቸው፤ ዘይትም ቀቧቸው። መራመድ የተሳናቸውንም ሁሉ በአህዮች ላይ አስቀምጠው የዘንባባ ዛፎች ከተማ ወደ ሆነችው ወደ ኢያሪኮ ወደ ዘመዶቻቸው አደረሷቸው። ከዚያም ወደ ሰማርያ ተመለሱ።",
+          "R": "ለዚህ ሥራ በስም የተመረጡት ሰዎች እስረኞቹን ተረከቡ። ልብስ ለሌላቸው ሁሉ ከተዘረፈው ዕቃ ልብስ ሰጧቸው። ልብስና ጫማ፣ የሚበላና የሚጠጣ ሰጧቸው፤ ሰውነታቸውንም የሚያሳርፍ ዘይት ቀቧቸው። መራመድ የማይችሉትን ሁሉ በአህዮች ላይ አስቀመጡ። በዘንባባ ዛፎቿ ወደምትታወቀው ወደ ኢያሪኮ ወደ ገዛ ወገኖቻቸው መለሷቸው። ከዚያም ወደ ሰማርያ ተመለሱ።"
         }
       },
       "decisions": [
@@ -3465,6 +3707,11 @@
           "L": "Naquele tempo o rei Acaz enviou aos reis da Assíria para que o ajudassem.",
           "B": "Naquele tempo o rei Acaz mandou pedir ajuda aos reis da Assíria.",
           "R": "Naquele tempo o rei Acaz enviou mensageiros aos reis da Assíria para pedir ajuda."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ ንጉሡ አካዝ ይረዱት ዘንድ ወደ አሦር ነገሥታት ላከ።",
+          "B": "በዚያን ጊዜ ንጉሥ አካዝ ርዳታ ለመጠየቅ ወደ አሦር ነገሥታት ላከ።",
+          "R": "በዚያን ጊዜ ንጉሥ አካዝ ርዳታ እንዲጠይቁለት ወደ አሦር ነገሥታት መልእክተኞችን ላከ።"
         }
       },
       "decisions": [
@@ -3577,6 +3824,27 @@
           "reason": "Portuguese keeps the plural \"reis\" of the Hebrew text, as the English does (m1). \"Ajudar\" and \"ajuda\" are the chapter's word for help (m3), the word 26:7 uses for God's help to Uzziah, so the reader can hear where Ahaz looks for it; verses 21 and 23 keep it too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280160071"
+          ],
+          "choice": "\"ወደ አሦር ነገሥታት\" keeps the Hebrew plural \"kings\".",
+          "alternatives": [
+            "ወደ አሦር ንጉሥ"
+          ],
+          "reason": "2 Kings 16:7 names Tiglath-pileser and gives Ahaz's message; Chronicles has the plural (m1), and the Amharic does not take Kings' wording here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3640,6 +3908,11 @@
           "L": "E de novo os edomitas tinham vindo, e feriram Judá e levaram cativos.",
           "B": "Os edomitas tinham vindo de novo, atacado Judá e levado prisioneiros.",
           "R": "Os edomitas tinham atacado Judá outra vez e levado pessoas como prisioneiras."
+        },
+        "am": {
+          "L": "ኤዶማውያንም ደግሞ መጥተው ነበር፤ ይሁዳንም መቱ፤ ምርኮኞችንም ማረኩ።",
+          "B": "ኤዶማውያን እንደ ገና መጥተው ይሁዳን አጥቅተው ነበር፤ ምርኮኞችንም ወስደው ነበር።",
+          "R": "ኤዶማውያን እንደ ገና ይሁዳን አጥቅተው ሰዎችን ማርከው ወስደው ነበር።"
         }
       },
       "decisions": [
@@ -3832,6 +4105,11 @@
           "L": "E os filisteus tinham feito incursões contra as cidades da Sefelá e do Neguebe de Judá, e tomaram Bete-Semes, e Aijalom, e Gederote, e Socó e as suas aldeias, e Timna e as suas aldeias, e Ginzo e as suas aldeias; e habitaram ali.",
           "B": "Os filisteus tinham atacado as cidades da Sefelá e do Neguebe de Judá. Tomaram Bete-Semes, Aijalom e Gederote, e também Socó, Timna e Ginzo com as suas aldeias, e se estabeleceram ali.",
           "R": "Os filisteus também tinham atacado as cidades das colinas do oeste de Judá e do deserto do Neguebe, no sul. Tomaram as cidades de Bete-Semes, Aijalom, Gederote, Socó, Timna e Ginzo, junto com as aldeias em volta de Socó, Timna e Ginzo. Depois os filisteus foram morar ali."
+        },
+        "am": {
+          "L": "ፍልስጥኤማውያንም በሽፌላና በይሁዳ ኔጌብ ከተሞች ላይ ወረራ አድርገው ነበር፤ ቤትሳሚስን፣ አይሎንን፣ ግዴሮትን፣ ሶኮንና መንደሮቿን፣ ተምናንና መንደሮቿን፣ ጊምዞንና መንደሮቿን ያዙ፤ በዚያም ተቀመጡ።",
+          "B": "ፍልስጥኤማውያን በቆላማው አገርና በይሁዳ ኔጌብ የሚገኙትን ከተሞች ወርረው ነበር። ቤትሳሚስን፣ አይሎንንና ግዴሮትን፣ እንዲሁም ሶኮን፣ ተምናንና ጊምዞን ከመንደሮቻቸው ጋር ያዙ፤ በዚያም ተቀመጡ።",
+          "R": "ፍልስጥኤማውያንም በይሁዳ ምዕራባዊ ኮረብቶችና በደቡቡ በኔጌብ ምድረ በዳ ያሉትን ከተሞች ወርረው ነበር። የቤትሳሚስን፣ የአይሎንን፣ የግዴሮትን፣ የሶኮን፣ የተምናንና የጊምዞን ከተሞች፣ በሶኮ፣ በተምናና በጊምዞ ዙሪያ ካሉት መንደሮች ጋር ያዙ። ከዚያም ፍልስጥኤማውያን በዚያ ሰፈሩ።"
         }
       },
       "decisions": [
@@ -4088,6 +4366,11 @@
           "L": "Porque {{divine_name:o SENHOR|Javé}} humilhou Judá por causa de Acaz, rei de Israel, porque ele tinha deixado [o povo] sem freio em Judá e tinha cometido grande infidelidade contra {{divine_name:o SENHOR|Javé}}.",
           "B": "{{divine_name:O SENHOR|Javé}} humilhou Judá por causa de Acaz, rei de Israel, porque ele tinha deixado Judá perder todo o freio e tinha sido gravemente infiel {{divine_name:ao SENHOR|a Javé}}.",
           "R": "{{divine_name:O SENHOR|Javé}} humilhou Judá por causa de Acaz, o rei de Israel. Acaz tinha deixado o povo de Judá fazer tudo o que queria, e tinha sido totalmente infiel {{divine_name:ao SENHOR|a Javé}}."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ስለ እስራኤል ንጉሥ ስለ አካዝ ይሁዳን አዋርዶ ነበርና፤ [አካዝ] በይሁዳ [ሕዝቡን] መረን ለቅቆ ነበርና፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይም እጅግ ክሕደት ፈጽሞ ነበርና።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ስለ እስራኤል ንጉሥ ስለ አካዝ ይሁዳን አዋረደ፤ አካዝ ይሁዳን ልቅ አድርጎ ለቅቆት ነበርና፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይም ክፉኛ ክሕደት ፈጽሞ ነበር።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በእስራኤል ንጉሥ በአካዝ ምክንያት ይሁዳን አዋረደ። አካዝ የይሁዳ ሕዝብ የፈለጉትን እንዲያደርጉ ለቅቋቸው ነበር፤ {{divine_name:እግዚአብሔርን|ያህዌን}}ም ፈጽሞ ከድቶ ነበር።"
         }
       },
       "decisions": [
@@ -4200,6 +4483,28 @@
           "reason": "Portuguese keeps \"rei de Israel\" for the king of Judah, as the Hebrew and the English do (m2). The doubled word for breaking faith (m4) keeps the words of 26:16, \"cometer infidelidade\" at Literal and \"ser infiel\" at Balanced and Readable, each with a strengthening word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280190091",
+            "o140280190132"
+          ],
+          "choice": "\"የእስራኤል ንጉሥ\" is kept for Ahaz, king of Judah; \"acted unfaithfully\" (maʿal) is \"ክሕደት ፈጸመ\" (L, B), \"ከዳ\" (R); \"let run wild\" is \"መረን ለቀቀ\" (L), \"ልቅ አድርጎ ለቀቀ\" (B).",
+          "alternatives": [
+            "የይሁዳ ንጉሥ"
+          ],
+          "reason": "The Hebrew calls him king of Israel (m2, footnoted in the English); \"ክሕደት\" is the word for maʿal through 2 Chronicles.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4268,6 +4573,11 @@
           "L": "E Tilgate-Pilneser, rei da Assíria, veio contra ele, e o oprimiu e não o fortaleceu.",
           "B": "Tiglate-Pileser, rei da Assíria, veio contra ele e lhe trouxe aflição em vez de força.",
           "R": "Tiglate-Pileser, o rei da Assíria, veio contra Acaz. Ele não deixou Acaz mais forte; só lhe trouxe problemas."
+        },
+        "am": {
+          "L": "የአሦርም ንጉሥ ቴልጌልቴልፌልናሶር በእርሱ ላይ መጣ፤ አስጨነቀውም፤ አላበረታውምም።",
+          "B": "የአሦር ንጉሥ ቴልጌልቴልፌልናሶር በእርሱ ላይ መጣ፤ ከብርታት ይልቅ ጭንቀት አመጣበት።",
+          "R": "የአሦር ንጉሥ ቴልጌልቴልፌልናሶር አካዝን ሊወጋ መጣ። አላበረታውም፤ ይልቁንም አስቸገረው።"
         }
       },
       "decisions": [
@@ -4476,6 +4786,28 @@
           "reason": "As 1 Chronicles 5:6 and 5:26 in Portuguese: Literal keeps Chronicles' spelling, \"Tilgate-Pilneser\", and Balanced and Readable use the form 2 Kings 16:7 gives the king in Portuguese, \"Tiglate-Pileser\", so that readers recognise him (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280200031",
+            "o140280200041"
+          ],
+          "choice": "Tilgath-pilneser is \"ቴልጌልቴልፌልናሶር\", as 1 Chronicles 5:6, 26; 2 Kings 15-16 has \"ቴልጌልቴልፌልሶር\".",
+          "alternatives": [
+            "\"ቴልጌልቴልፌልሶር\" (2 Kings)"
+          ],
+          "reason": "Chronicles spells this king's name differently from Kings, and the parallels rule follows Chronicles' own spelling.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4553,6 +4885,11 @@
           "L": "Porque Acaz tomou uma parte da casa {{divine_name:do SENHOR|de Javé}}, e da casa do rei, e dos príncipes, e [a] deu ao rei da Assíria; mas [isso] não [lhe foi] de ajuda.",
           "B": "Acaz tomou uma parte das riquezas da casa {{divine_name:do SENHOR|de Javé}}, do palácio real e dos oficiais e a deu ao rei da Assíria, mas isso não lhe serviu de nada.",
           "R": "Acaz tirou coisas de valor do templo {{divine_name:do SENHOR|de Javé}}, do palácio real e dos seus líderes e as deu ao rei da Assíria. Mas isso não o ajudou."
+        },
+        "am": {
+          "L": "አካዝ {{divine_name:የእግዚአብሔርን|የያህዌን}} ቤትና የንጉሡን ቤት፣ አለቆቹንም አካፍሎ ለአሦር ንጉሥ ሰጥቶ ነበርና፤ ለእርሱ ግን ረዳት አልሆነለትም።",
+          "B": "አካዝ {{divine_name:ከእግዚአብሔር|ከያህዌ}} ቤተ መቅደስ፣ ከቤተ መንግሥቱና ከሹማምንቱ ሀብት ድርሻ ወስዶ ለአሦር ንጉሥ ሰጠ፤ ነገር ግን ምንም አልጠቀመውም።",
+          "R": "አካዝ {{divine_name:ከእግዚአብሔር|ከያህዌ}} ቤተ መቅደስ፣ ከቤተ መንግሥቱና ከመሪዎቹ ውድ ዕቃዎችን ወስዶ ለአሦር ንጉሥ ሰጠ። ይህ ግን አልረዳውም።"
         }
       },
       "decisions": [
@@ -4645,6 +4982,27 @@
           "reason": "2 Kings 16:8 calls the payment a bribe, \"suborno\" in Portuguese; Chronicles does not use that word (m2), so neither does the Portuguese. The men of rank keep the words of verse 14 at each level, and \"ajuda\" (L) and \"ajudar\" (R) keep the chapter's word of help (verse 16).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280210021"
+          ],
+          "choice": "\"አካፍሎ ... ሰጥቶ ነበር\" (L), \"ድርሻ ወስዶ ... ሰጠ\" (B) for \"took a share\"; Kings' \"ጉቦ\" (2 Kings 16:8) is not used.",
+          "alternatives": [
+            "ጉቦ"
+          ],
+          "reason": "Chronicles tells the payment to Assyria in its own words, adds the princes, and says it did not help him (m2); it does not call it a bribe.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4713,6 +5071,11 @@
           "L": "E no tempo da sua aflição ele se tornou ainda mais infiel {{divine_name:ao SENHOR|a Javé}}, esse mesmo rei Acaz.",
           "B": "No tempo da sua aflição, esse mesmo rei Acaz se tornou ainda mais infiel {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Quando Acaz estava em dificuldade, ele se tornou ainda mais infiel {{divine_name:ao SENHOR|a Javé}}. Assim era o rei Acaz."
+        },
+        "am": {
+          "L": "በተጨነቀበትም ጊዜ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ክሕደትን ጨመረ፤ ያው ንጉሡ አካዝ።",
+          "B": "በተጨነቀበት ጊዜ ይኸው ንጉሥ አካዝ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ የባሰ ክሕደት ፈጸመ።",
+          "R": "አካዝ በተቸገረ ጊዜ {{divine_name:እግዚአብሔርን|ያህዌን}} የባሰ ከዳ። ንጉሥ አካዝ እንዲህ ዓይነት ሰው ነበረ።"
         }
       },
       "decisions": [
@@ -4894,6 +5257,11 @@
           "L": "E ele sacrificou aos deuses de Damasco que o tinham ferido, e disse: \"Porque os deuses dos reis de Arã, eles os ajudam, a eles eu sacrificarei, e eles me ajudarão.\" Mas eles se tornaram para ele [causa] de o fazer tropeçar, e a todo o Israel.",
           "B": "Ele ofereceu sacrifícios aos deuses de Damasco, que o tinham derrotado, e disse: \"Já que os deuses dos reis dos arameus os ajudam, vou oferecer sacrifícios a eles para que me ajudem também.\" Mas eles foram a ruína dele e de todo o Israel.",
           "R": "Ele ofereceu sacrifícios aos deuses de Damasco, os deuses do povo que o tinha derrotado. Ele disse: \"Os deuses dos reis dos arameus ajudam esses reis. Por isso vou oferecer sacrifícios a eles, e eles vão me ajudar também.\" Mas esses deuses só trouxeram ruína para Acaz e para todo o Israel."
+        },
+        "am": {
+          "L": "ለመቱትም ለደማስቆ አማልክት ሠዋ፤ እንዲህም አለ፦ «የአራም ነገሥታት አማልክት እነርሱን ይረዷቸዋልና ለእነርሱ እሠዋለሁ፤ እነርሱም ይረዱኛል።» ነገር ግን እርሱንና እስራኤልን ሁሉ የሚያሰናክሉ ሆኑበት።",
+          "B": "ድል ላደረጉት ለደማስቆ አማልክት መሥዋዕት አቀረበ፤ እንዲህም አለ፦ «የአራም ነገሥታት አማልክት የሚረዷቸው ስለ ሆነ እኔንም እንዲረዱኝ መሥዋዕት አቀርብላቸዋለሁ።» እነርሱ ግን በእርሱና በእስራኤል ሁሉ ላይ ጥፋት አመጡ።",
+          "R": "ድል ላደረጉት ሕዝብ አማልክት፣ ለደማስቆ አማልክት መሥዋዕት አቀረበ። እንዲህም አለ፦ «የአራም ነገሥታትን አማልክታቸው ይረዷቸዋል። ስለዚህ እኔም መሥዋዕት አቀርብላቸዋለሁ፤ እኔንም ይረዱኛል።» ነገር ግን እነዚህ አማልክት በአካዝና በእስራኤል ሁሉ ላይ ጥፋትን ብቻ አመጡ።"
         }
       },
       "decisions": [
@@ -5068,6 +5436,11 @@
           "L": "E Acaz reuniu os utensílios da casa de Deus, e despedaçou os utensílios da casa de Deus, e fechou as portas da casa {{divine_name:do SENHOR|de Javé}}, e fez para si altares em cada esquina em Jerusalém.",
           "B": "Acaz juntou os utensílios da casa de Deus e os despedaçou. Fechou as portas da casa {{divine_name:do SENHOR|de Javé}} e fez para si altares em todas as esquinas de Jerusalém.",
           "R": "Acaz juntou as bacias e os outros objetos usados no templo de Deus e os quebrou em pedaços. Fechou as portas do templo {{divine_name:do SENHOR|de Javé}} e construiu altares para si em todas as esquinas das ruas de Jerusalém."
+        },
+        "am": {
+          "L": "አካዝም የእግዚአብሔርን ቤት ዕቃዎች ሰበሰበ፤ የእግዚአብሔርንም ቤት ዕቃዎች ቆራረጠ፤ {{divine_name:የእግዚአብሔርን|የያህዌን}} ቤት ደጆች ዘጋ፤ በኢየሩሳሌምም በየማዕዘኑ ሁሉ ለራሱ መሠዊያዎችን ሠራ።",
+          "B": "አካዝ የእግዚአብሔርን ቤተ መቅደስ ዕቃዎች ሰብስቦ ቆራረጣቸው። {{divine_name:የእግዚአብሔርን|የያህዌን}} ቤተ መቅደስ ደጆች ዘጋ፤ በኢየሩሳሌምም በየመንገዱ ማዕዘን ሁሉ ለራሱ መሠዊያዎችን ሠራ።",
+          "R": "አካዝ በእግዚአብሔር ቤተ መቅደስ የሚያገለግሉትን ሳሕኖችና ሌሎች ዕቃዎች ሰብስቦ ቆራረጣቸው። {{divine_name:የእግዚአብሔርን|የያህዌን}} ቤተ መቅደስ ደጆች ዘጋ፤ በኢየሩሳሌምም በየመንገዱ ማዕዘን ሁሉ ለራሱ መሠዊያዎችን አቆመ።"
         }
       },
       "decisions": [
@@ -5161,6 +5534,26 @@
           "reason": "\"Utensílios\" is the word 5:1 uses in Portuguese for the vessels of the temple. Portuguese \"esquina\" is already the corner of a street (m3), so Balanced needs no word for \"street\", and Readable adds \"das ruas\" for clarity.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280240062",
+            "o140280240161"
+          ],
+          "choice": "\"the house of God\" (Elohim) is \"የእግዚአብሔር ቤት\" (L), \"የእግዚአብሔር ቤተ መቅደስ\" (B, R), with no divine_name span; \"the house of Yahweh\" has the span.",
+          "alternatives": [],
+          "reason": "Elohim is the one God here and YHWH does not stand beside it, so \"እግዚአብሔር\" stands plain; only YHWH takes the setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5235,6 +5628,11 @@
           "L": "E em cada cidade, cidade de Judá, fez altos para queimar incenso a outros deuses, e provocou à ira {{divine_name:o SENHOR|Javé}}, o Deus dos seus pais.",
           "B": "Em cada uma das cidades de Judá ele fez altos para queimar incenso a outros deuses e provocou à ira {{divine_name:o SENHOR|Javé}}, o Deus dos seus antepassados.",
           "R": "Em todas as cidades de Judá, sem exceção, ele construiu santuários no alto dos morros para queimar incenso a outros deuses. Assim ele deixou {{divine_name:o SENHOR|Javé}}, o Deus dos seus antepassados, irado."
+        },
+        "am": {
+          "L": "በይሁዳም ከተማ ሁሉ በየከተማው ለሌሎች አማልክት ያጥን ዘንድ የኮረብታ መስገጃዎችን ሠራ፤ የአባቶቹንም አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አስቆጣ።",
+          "B": "በይሁዳ ከተሞች ሁሉ በየአንዳንዱ ለሌሎች አማልክት ዕጣን የሚያጥንባቸውን የኮረብታ መስገጃዎች ሠራ፤ የአባቶቹንም አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አስቆጣ።",
+          "R": "በይሁዳ በእያንዳንዱ ከተማ ለሌሎች አማልክት ዕጣን የሚያጥንባቸውን የኮረብታ መስገጃዎች ሠራ። በዚህም የአባቶቹን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አስቆጣ።"
         }
       },
       "decisions": [
@@ -5407,6 +5805,11 @@
           "L": "E o restante dos seus atos e todos os seus caminhos, os primeiros e os últimos, eis que estão escritos no livro dos reis de Judá e de Israel.",
           "B": "Os demais atos dele e todos os seus caminhos, do primeiro ao último, estão escritos no Livro dos Reis de Judá e de Israel.",
           "R": "Tudo o mais que Acaz fez e todos os seus caminhos, do começo ao fim, estão escritos no livro dos reis de Judá e de Israel."
+        },
+        "am": {
+          "L": "የቀረውም ሥራው፣ መንገዶቹም ሁሉ፣ የፊተኛውና የኋለኛው፣ እነሆ፣ በይሁዳና በእስራኤል ነገሥታት መጽሐፍ ተጽፈዋል።",
+          "B": "የቀረው ሥራውና መንገዶቹ ሁሉ ከመጀመሪያው እስከ መጨረሻው በይሁዳና በእስራኤል ነገሥታት መጽሐፍ ተጽፏል።",
+          "R": "አካዝ ያደረገው ሌላው ነገርና አካሄዱ ሁሉ ከመጀመሪያው እስከ መጨረሻው በይሁዳና በእስራኤል ነገሥታት መጽሐፍ ውስጥ ተጽፏል።"
         }
       },
       "decisions": [
@@ -5479,6 +5882,26 @@
           "choice": "the source formula of 16:11 and 27:7",
           "alternatives": [],
           "reason": "The source formula keeps the words 16:11 and 27:7 use in Portuguese at each level (m1, m2), with Judah named first, as the Hebrew has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280260071",
+            "o140280260101"
+          ],
+          "choice": "The sources formula as 27:7: \"እነሆ፣ ... ተጽፈዋል\" (L), \"... ተጽፏል\" (B, R); \"the first and the last\" \"የፊተኛውና የኋለኛው\" (L), \"ከመጀመሪያው እስከ መጨረሻው\" (B, R).",
+          "alternatives": [],
+          "reason": "Chronicles' form of the formula, not Kings' question (2 Kings 16:19).",
           "uncertain": false,
           "footnote": false
         }
@@ -5561,6 +5984,11 @@
           "L": "E Acaz descansou com os seus pais, e o sepultaram na cidade, em Jerusalém, porque não o levaram aos sepulcros dos reis de Israel. E Ezequias, seu filho, reinou em seu lugar.",
           "B": "Então Acaz descansou com os seus antepassados, e o sepultaram na cidade, em Jerusalém, mas não o levaram para os sepulcros dos reis de Israel. E o seu filho Ezequias reinou em seu lugar.",
           "R": "Então Acaz morreu e foi descansar com os seus antepassados. Ele foi sepultado na cidade de Jerusalém, mas não foi posto nos sepulcros dos reis de Israel. O seu filho Ezequias se tornou rei depois dele."
+        },
+        "am": {
+          "L": "አካዝም ከአባቶቹ ጋር አንቀላፋ፤ በከተማዪቱም በኢየሩሳሌም ቀበሩት፤ ወደ እስራኤል ነገሥታት መቃብር አላመጡትም ነበርና፤ ልጁም ሕዝቅያስ በእርሱ ፋንታ ነገሠ።",
+          "B": "ከዚያም አካዝ ሞተ፤ በከተማዪቱ በኢየሩሳሌም ቀበሩት፤ ነገር ግን ወደ እስራኤል ነገሥታት መቃብር አላመጡትም። ልጁም ሕዝቅያስ በእርሱ ፋንታ ነገሠ።",
+          "R": "ከዚያም አካዝ ሞተ። በኢየሩሳሌም ከተማ ተቀበረ፤ ነገር ግን በእስራኤል ነገሥታት መቃብር አልተቀበረም። ከእርሱም በኋላ ልጁ ሕዝቅያስ ነገሠ።"
         }
       },
       "decisions": [
@@ -5668,6 +6096,28 @@
           "choice": "the death formula of 2 Kings 16:20, changed as Chronicles changes it; Ezequias",
           "alternatives": [],
           "reason": "The death formula keeps the Portuguese of 2 Kings 16:20 at each level, with Readable's \"foi descansar com os seus antepassados\", as 16:13 sets it, since the Hebrew has \"lay down with his fathers\" (m3). Chronicles puts the burial \"in the city, in Jerusalem\" and outside the royal tombs (m1), so \"foi sepultado com eles na Cidade de Davi\" gives way to that, with \"porque\" (L) and \"mas\" (B, R) as the English (m4). The son is \"Ezequias\", as 2 Kings 16:20 has him in Portuguese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140280270102",
+            "o140280270151"
+          ],
+          "choice": "Copied from 2 Kings 16:20 for the death and the successor; the burial follows Chronicles: \"በከተማዪቱ በኢየሩሳሌም ቀበሩት\", \"ወደ እስራኤል ነገሥታት መቃብር አላመጡትም\". Hezekiah stays \"ሕዝቅያስ\".",
+          "alternatives": [
+            "በዳዊት ከተማ ከአባቶቹ ጋር ተቀበረ"
+          ],
+          "reason": "Kings buries Ahaz with his fathers in the City of David; Chronicles says he was not brought to the royal tombs (m1). Chronicles spells Hezekiah's name with a longer prefix, but it is the same king, and Amharic keeps the one form, as Matthew 1:9.",
           "uncertain": false,
           "footnote": false
         }
