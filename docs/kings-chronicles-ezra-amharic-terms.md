@@ -92,3 +92,28 @@ chapters.
 | Cyrus; Darius; Artaxerxes; Ahasuerus; Ezra; Zerubbabel; Jeshua son of Jozadak; Sheshbazzar | ቂሮስ; ዳርዮስ; አርጤክስስ; አሕሻዊሮስ; ዕዝራ; ዘሩባቤል (as Matthew 1); የኢዮሴዴቅ ልጅ ኢያሱ; ሰሳብሳር |
 | Samaria; Jezreel; Carmel; Shunem; Damascus; Tyre; Sidon; Ophir; Tarshish | ሰማርያ; ኢይዝራኤል; ቀርሜሎስ; ሱነም; ደማስቆ; ጢሮስ; ሲዶና; ኦፊር; ተርሴስ |
 | Assyria; Nineveh; Babylon; the Chaldeans; Persia | አሦር; ነነዌ; ባቢሎን; ከለዳውያን; ፋርስ |
+
+## Settled while drafting Kings and Ezra
+
+| English | Amharic |
+|---|---|
+| the sin of Jeroboam, which he made Israel sin | L የናባጥ ልጅ ኢዮርብዓም የሠራውና እስራኤልን ያሳተበት ኃጢአት; B … እስራኤልም እንዲሠሩ ያደረገበት ኃጢአት; R ኢዮርብዓም ኃጢአት ሠራ፤ እስራኤልንም ወደ ኃጢአት መራ |
+| he did not turn from the sins of Jeroboam | ፈቀቅ አላለም (L); አልተመለሰም (B, R) |
+| In the Nth year of X king of Judah, Y became king over Israel | L, B በይሁዳ ንጉሥ በX በN-ኛው ዓመት Y በእስራኤል ላይ ነገሠ |
+| look, they are written in the Book of the Annals | L እነሆ፣ … ተጽፏል |
+| ruler (*nagid*) | መሪ, as 1 Samuel 9:16 |
+| recorder (*mazkir*); scribe | ታሪክ ጸሐፊ; ጸሐፊ |
+| the king's servants; eunuch (*saris*) | ባሪያዎች (L), ሹማምንት (B, R); ጃንደረባ (L), ሹም (B, R) |
+| king of Aram; the Arameans | የአራም ንጉሥ; አራም (L), አራማውያን (B, R) |
+| chariots | ሰረገላ, ሰረገሎች |
+| queen mother; standing stones; idols (*gillulim*) | ንግሥት እናት; ሐውልቶች; ጣዖታት |
+| runners (the royal guard) | ሯጮች (L); ዘበኞች (B, R) |
+| exile (*higlah*) | አፈለሰ (L); ማርኮ ወሰደ (B, R) |
+| scale disease | ለምጽ, ለምጻም (L); ከባድ የቆዳ በሽታ (B, R) |
+| the hall of the temple (*heikhal*) | መቅደሱ (L); ዋናው አዳራሽ (B); ዋናው ክፍል (R) |
+| Ezra's "Beyond the River"; province | የወንዝ ማዶ (B የወንዝ ማዶ አውራጃ); አውራጃ |
+
+More names: Abishag አቢሳግ (አቢሳ is Abishai); Esarhaddon ኤሳርሐዶን; Tadmor
+ተድሞር (1 Kings 9:18 keeps the written ታማር); Ramoth-gilead ራሞት ገለዓድ.
+Both kings named Joram/Jehoram are ኢዮራም and both Abijahs are አብያ; the
+father's name tells them apart.
