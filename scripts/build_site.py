@@ -953,7 +953,7 @@ def books(lang=None):
 
 
 def book_progress(book, chapters_, lang="en"):
-    """"4 of 4 chapters, complete" / "2 of 21 chapters" / "1 chapter,
+    """"All 4 chapters translated" / "2 of 21 chapters" / "1 chapter,
     complete" (Philemon): a book's progress."""
     done = sum(p.complete for p in chapters_)
     total = BOOK_CHAPTERS[book]
@@ -3041,7 +3041,7 @@ def home_page(lang="en"):
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
-<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages")}</li>
+<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(LANGUAGES) - 1)}</li>
 </ul>
 </section>
 {verse_of_the_day(lang)}

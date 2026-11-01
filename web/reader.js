@@ -659,8 +659,9 @@
     }
   }
 
-  // Above the text: mark the sentences where a decision is uncertain, and
-  // list their verses ("5:9, 5:11"); each opens that verse's reasoning.
+  // Above the text: mark the sentences where a decision is uncertain and,
+  // while they are marked, list their verses ("5:9, 5:11"); each opens
+  // that verse's reasoning.
   function drawUnsureToggle(n) {
     var bar = document.getElementById("unsure-bar");
     var b = document.getElementById("unsure-toggle");
@@ -680,7 +681,7 @@
     b.textContent = t("unsure_toggle").replace("{n}", n);
     var old = bar.querySelector(".unsure-list");
     if (old) old.remove();
-    if (!n) return;
+    if (!n || !settings.uncertain) return;
     var list = el("span", "unsure-list");
     list.setAttribute("role", "group");
     list.setAttribute("aria-label", t("unsure_list"));

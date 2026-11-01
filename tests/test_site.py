@@ -1044,7 +1044,7 @@ class SiteTest(unittest.TestCase):
             section = re.search(rf'<section class="book-group" id="{book.lower()}"(.*?)</section>', read, re.S)[1]
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
-        self.assertIn("4 of 4 chapters, complete", read)
+        self.assertIn("All 4 chapters translated", read)
         self.assertIn("1 chapter, complete", read)
         self.assertNotIn("1 of 1 chapters", read)
         # An index of the books first, each linked to its section.
