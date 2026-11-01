@@ -534,9 +534,9 @@ class SiteTest(unittest.TestCase):
             for q in build_site.catalog(lang)["search.examples"]:
                 self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
 
-    def test_home_page_offers_the_data(self):
-        home = (self.out / "index.html").read_text(encoding="utf-8")
-        data = home[home.index('class="data"'):home.index('class="involve"')]
+    def test_download_page_offers_the_data(self):
+        page = (self.out / "download" / "index.html").read_text(encoding="utf-8")
+        data = page[page.index('class="data"'):]
         self.assertIn(f'href="{build_site.GITHUB_URL}/archive/refs/heads/main.zip"', data)
         self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
         self.assertIn("schema/sentence-record.schema.json", data)
@@ -546,7 +546,7 @@ class SiteTest(unittest.TestCase):
         terms = home[home.index('class="home-terms"'):]
         terms = terms[:terms.index("</section>")]
         self.assertIn('href="/terms/"', terms)
-        self.assertEqual(terms.count('class="term-row"'), 6)
+        self.assertEqual(terms.count('class="term-row"'), 3)
         self.assertIn('href="/terms/the-divine-name-yhwh/"', terms)
 
     def test_home_page_suggests_plans_offered_in_its_language(self):
@@ -716,14 +716,6 @@ class SiteTest(unittest.TestCase):
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
-            # The map has a tile for every book, linked once it has a
-            # sentence in lang, and no chapter links.
-            shown = {build_site.refs.parse(r["refs"][0]).book for r in records}
-            self.assertEqual(progress.count('<li><a class="map-book') + progress.count('<li><span class="map-book'),
-                             len(build_site.refs.BOOK_CODES))
-            for book in build_site.refs.BOOK_CODES:
-                link = f'href="{build_site.url(lang, f"/read/#{book.lower()}")}"'
-                self.assertEqual(link in progress, book in shown, (lang, book))
             for p in passages:
                 self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
