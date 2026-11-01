@@ -61,6 +61,11 @@
           "L": "E Asa fez o bom e o reto aos olhos {{divine_name:do SENHOR|de Javé}}, o seu Deus.",
           "B": "Asa fez o que era bom e reto aos olhos {{divine_name:do SENHOR|de Javé}}, o seu Deus.",
           "R": "Asa fez o que {{divine_name:o SENHOR|Javé}}, o seu Deus, considerava bom e certo."
+        },
+        "am": {
+          "L": "አሳም በአምላኩ {{divine_name:በእግዚአብሔር|በያህዌ}} ዓይን መልካምና ቅን የሆነውን አደረገ።",
+          "B": "አሳ በአምላኩ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት መልካምና ቅን የሆነውን አደረገ።",
+          "R": "አሳ አምላኩ {{divine_name:እግዚአብሔር|ያህዌ}} መልካምና ትክክል ነው የሚለውን አደረገ።"
         }
       },
       "decisions": [
@@ -258,6 +263,54 @@
           "reason": "The good verdict keeps the wording of 1 Kings 15:11 in Portuguese at each level, the book's formula, with \"bom\" and \"o seu Deus\" added and no comparison with David, as Chronicles has it (m2). The verses are numbered as in the Hebrew (m1), so Asa's prayer is 14:10 here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o140140010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of 2 Chronicles 14 (verses 6, 10, 12): pronouns for God are written plainly.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140010031",
+            "o140140010032",
+            "o140140010041",
+            "o140140010042",
+            "o140140010043",
+            "o140140010071",
+            "o140140010072"
+          ],
+          "choice": "The settled \"did right\" formula of 1 Kings 15:11 (L \"… ዓይን ቅን የሆነውን አደረገ\", B \"… ፊት …\", R \"… ትክክል ነው የሚለውን አደረገ\"), with Chronicles' \"መልካምና\" added and \"በአምላኩ\" (his God) for Kings' \"እንደ አባቱ እንደ ዳዊት\".",
+          "alternatives": [
+            "the Kings wording unchanged"
+          ],
+          "reason": "Chronicles' Hebrew reads \"the good and the right in the eyes of the LORD his God\". Chapter 14 follows the Hebrew numbering: this verse is 14:2 in English Bibles.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -329,6 +382,11 @@
           "L": "E ele removeu os altares dos [deuses] estrangeiros e os altos, e quebrou as colunas, e cortou os postes de Aserá.",
           "B": "Ele tirou os altares estrangeiros e os altos, despedaçou as colunas sagradas e cortou os postes de Aserá.",
           "R": "Ele acabou com os altares dos deuses estrangeiros e com os santuários no alto dos morros. Despedaçou as colunas de pedra usadas no culto e cortou os postes usados para adorar a deusa Aserá."
+        },
+        "am": {
+          "L": "የባዕድ [አማልክትን] መሠዊያዎችና የኮረብታ መስገጃዎችን አስወገደ፤ ሐውልቶቹንም ሰባበረ፤ አሼራዎቹንም ቆረጠ።",
+          "B": "የባዕድ አማልክትን መሠዊያዎችና የኮረብታ መስገጃዎችን አስወገደ፤ የማምለኪያ ሐውልቶቹን ሰባበረ፤ የአሼራ ማምለኪያ እንጨቶችንም ቆረጠ።",
+          "R": "ለባዕድ አማልክት የተሠሩትን መሠዊያዎችና የኮረብታ መስገጃዎችን አስወገደ። የድንጋይ ሐውልቶቹን ሰባበረ፤ አሼራን ለማምለክ የሚጠቀሙባቸውን የእንጨት ዘንጎችም ቆረጠ።"
         }
       },
       "decisions": [
@@ -531,6 +589,26 @@
           "reason": "The three objects keep the words of 1 Kings 14:23 in Portuguese at each level (m2), as the English keeps its wording through Kings and Chronicles (r-en-1). Literal brackets \"[deuses]\", which the Hebrew implies (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140020082",
+            "o140140020112"
+          ],
+          "choice": "Standing stones \"ሐውልቶች\" (L) / \"የማምለኪያ ሐውልቶች\" (B) / \"የድንጋይ ሐውልቶች\" (R), and Asherah poles \"አሼራዎች\" (L) / \"የአሼራ ማምለኪያ እንጨቶች\" (B) / \"… የእንጨት ዘንጎች\" (R), as 1 Kings 14:23.",
+          "alternatives": [],
+          "reason": "Settled for Kings; high places stay \"የኮረብታ መስገጃዎች\" at Readable too.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -602,6 +680,11 @@
           "L": "E ele disse a Judá que buscasse {{divine_name:o SENHOR|Javé}}, o Deus dos seus pais, e que cumprisse a lei e o mandamento.",
           "B": "Ele ordenou a Judá que buscasse {{divine_name:o SENHOR|Javé}}, o Deus dos seus antepassados, e que cumprisse a lei e os seus mandamentos.",
           "R": "Ele mandou o povo de Judá buscar {{divine_name:o SENHOR|Javé}}, que era o Deus dos seus antepassados, e obedecer à lei e aos seus mandamentos."
+        },
+        "am": {
+          "L": "ለይሁዳም የአባቶቻቸውን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} እንዲፈልጉ፣ ሕጉንና ትእዛዙን እንዲያደርጉ ተናገረ።",
+          "B": "ይሁዳ የአባቶቻቸውን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} እንዲፈልጉ፣ ሕጉንና ትእዛዛቱን እንዲፈጽሙ አዘዘ።",
+          "R": "የይሁዳን ሕዝብ የአባቶቻቸውን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} እንዲፈልጉና ሕጉንና ትእዛዛቱን እንዲጠብቁ አዘዘ።"
         }
       },
       "decisions": [
@@ -785,6 +868,11 @@
           "L": "E ele removeu de todas as cidades de Judá os altos e os altares de incenso; e o reino ficou em sossego diante dele.",
           "B": "Ele removeu os altos e os altares de incenso de todas as cidades de Judá, e o reino teve descanso sob o seu governo.",
           "R": "Ele tirou os santuários no alto dos morros e os altares de incenso de todas as cidades de Judá. Enquanto ele governou, o reino teve descanso."
+        },
+        "am": {
+          "L": "ከይሁዳም ከተሞች ሁሉ የኮረብታ መስገጃዎችንና የዕጣን መሠዊያዎችን አስወገደ፤ መንግሥቱም በፊቱ ጸጥ አለች።",
+          "B": "ከይሁዳ ከተሞች ሁሉ የኮረብታ መስገጃዎችንና የዕጣን መሠዊያዎችን አስወገደ፤ መንግሥቱም በእርሱ ዘመን ሰላም አገኘች።",
+          "R": "ከይሁዳ ከተሞች ሁሉ የኮረብታ መስገጃዎችንና የዕጣን መሠዊያዎችን አስወገደ። እርሱ በገዛበት ዘመን መንግሥቱ ሰላም ነበራት።"
         }
       },
       "decisions": [
@@ -877,6 +965,27 @@
           "reason": "\"Altares de incenso\" is Leviticus 26:30's word in Portuguese for the same rare Hebrew (m1). The kingdom's quiet keeps the words of 13:23 and Judges 3:11: \"ficou em sossego\" (L) and \"teve descanso\" (B, R), as in verse 5.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140040082"
+          ],
+          "choice": "\"የዕጣን መሠዊያዎች\" for the ḥammanim; \"ጸጥ አለች\" (L) / \"ሰላም አገኘች\" (B) for the land or kingdom being quiet, as 13:23 and verse 5.",
+          "alternatives": [
+            "\"የፀሐይ ምስሎች\""
+          ],
+          "reason": "The meaning decision reads the word as small incense altars.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -953,6 +1062,11 @@
           "L": "E ele construiu cidades fortificadas em Judá, porque a terra estava em sossego, e não houve guerra contra ele naqueles anos, porque {{divine_name:o SENHOR|Javé}} lhe tinha dado descanso.",
           "B": "Ele construiu cidades fortificadas em Judá, já que a terra tinha descanso. Ninguém fez guerra contra ele naqueles anos, porque {{divine_name:o SENHOR|Javé}} lhe tinha dado descanso.",
           "R": "Ele construiu em Judá cidades com muralhas fortes, porque a terra tinha descanso. Durante aqueles anos ninguém lutou contra ele, porque {{divine_name:o SENHOR|Javé}} lhe tinha dado descanso."
+        },
+        "am": {
+          "L": "በይሁዳም የተመሸጉ ከተሞችን ሠራ፤ ምድሪቱ ጸጥ ብላ ነበርና፤ {{divine_name:እግዚአብሔር|ያህዌ}}ም ዕረፍት ሰጥቶት ስለ ነበረ በእነዚያ ዓመታት ከእርሱ ጋር ጦርነት አልነበረም።",
+          "B": "ምድሪቱ ሰላም ስለ ነበረች በይሁዳ የተመሸጉ ከተሞችን ሠራ። {{divine_name:እግዚአብሔር|ያህዌ}} ዕረፍት ሰጥቶት ስለ ነበረ በእነዚያ ዓመታት ማንም ከእርሱ ጋር አልተዋጋም።",
+          "R": "ምድሪቱ ሰላም ስለ ነበረች በይሁዳ ጠንካራ ቅጥር ያላቸውን ከተሞች ሠራ። {{divine_name:እግዚአብሔር|ያህዌ}} ዕረፍት ሰጥቶት ስለ ነበረ በእነዚያ ዓመታት ማንም አልወጋውም።"
         }
       },
       "decisions": [
@@ -1124,6 +1238,11 @@
           "L": "E ele disse a Judá: \"Construamos estas cidades e [as] cerquemos [de] muro e torres, portas e trancas. A terra ainda está diante de nós, porque buscamos {{divine_name:o SENHOR|Javé}}, o nosso Deus; nós [{{deity_pronoun:o|O}}] buscamos, e {{deity_pronoun:ele|Ele}} nos deu descanso ao redor.\" E construíram e prosperaram.",
           "B": "Ele disse a Judá: \"Vamos construir estas cidades e cercá-las de muralhas, com torres, portões e trancas. A terra ainda é nossa, porque buscamos {{divine_name:o SENHOR|Javé}}, o nosso Deus. Nós {{deity_pronoun:o|O}} buscamos, e {{deity_pronoun:ele|Ele}} nos deu descanso por todos os lados.\" Assim eles construíram e prosperaram.",
           "R": "Ele disse ao povo de Judá: \"Vamos fortalecer estas cidades. Vamos construir muralhas em volta delas, com torres e portões que possam ser trancados. A terra ainda é nossa. Isso é porque buscamos {{divine_name:o SENHOR|Javé}}, o nosso Deus. Nós {{deity_pronoun:o|O}} buscamos, e {{deity_pronoun:ele|Ele}} nos livrou dos inimigos ao nosso redor e nos deu paz.\" Assim eles construíram as cidades e foram bem-sucedidos."
+        },
+        "am": {
+          "L": "ለይሁዳም እንዲህ አለ፦ «እነዚህን ከተሞች እንሥራ፤ በዙሪያቸውም ቅጥርንና ማማዎችን፣ መዝጊያዎችንና መወርወሪያዎችን እናድርግ። አምላካችንን {{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ፈለግን ምድሪቱ ገና በፊታችን ናት፤ ፈለግነው፤ በዙሪያችንም ሁሉ ዕረፍት ሰጠን።» ሠሩም፤ ተከናወነላቸውም።",
+          "B": "ይሁዳንም እንዲህ አላቸው፦ «እነዚህን ከተሞች እንሥራ፤ በዙሪያቸውም ቅጥሮችን፣ ማማዎችን፣ በሮችንና መወርወሪያዎችን እናድርግ። አምላካችንን {{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ፈለግን ምድሪቱ ገና የእኛ ናት። ፈለግነው፤ እርሱም በዙሪያችን ሁሉ ዕረፍት ሰጠን።» ስለዚህ ሠሩ፤ ተከናወነላቸውም።",
+          "R": "የይሁዳንም ሕዝብ እንዲህ አላቸው፦ «እነዚህን ከተሞች እንገንባ። በዙሪያቸው ቅጥሮችን እንሥራ፤ ማማዎችንና በመወርወሪያ የሚዘጉ በሮችንም እናድርግ። ምድሪቱ ገና የእኛ ናት። ይህም የሆነው አምላካችንን {{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ፈለግን ነው። እርሱን ፈለግነው፤ እርሱም በዙሪያችን ካሉት ጠላቶች ሰላም ሰጠን።» ስለዚህ ከተሞቹን ሠሩ፤ ተሳካላቸውም።"
         }
       },
       "decisions": [
@@ -1323,6 +1442,25 @@
           "reason": "Asa says \"buscar\" twice, as the Hebrew does (m2), at every level, where the English Readable says \"went looking for\" the second time: the verb is the key word of his reign (verse 3). Literal brackets the object \"[o]\", under the deity_pronoun setting as the English brackets \"[Him]\"; Balanced and Readable write \"o\" and \"ele\" with the span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140060201"
+          ],
+          "choice": "\"ፈለግነው\" repeats \"ስለ ፈለግን\", as the Hebrew repeats \"we have sought\"; \"the LORD our God\" is \"አምላካችንን {{divine_name:እግዚአብሔርን|ያህዌን}}\", the name second.",
+          "alternatives": [],
+          "reason": "The repetition carries the emphasis of Asa's words; the name order is the terms list's.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1405,6 +1543,11 @@
           "L": "E Asa tinha um exército que carregava escudo grande e lança: de Judá, trezentos mil; e de Benjamim, que carregavam escudo e retesavam o arco, duzentos e oitenta mil. Todos estes [eram] valentes guerreiros.",
           "B": "Asa tinha um exército de trezentos mil homens de Judá, armados com escudos grandes e lanças, e duzentos e oitenta mil de Benjamim, que carregavam escudos pequenos e atiravam com o arco. Todos eles eram guerreiros valentes.",
           "R": "Asa tinha um exército de trezentos mil homens de Judá, que carregavam escudos grandes e lanças. Também tinha duzentos e oitenta mil homens de Benjamim, que carregavam escudos pequenos e atiravam com arcos. Todos eles eram guerreiros corajosos."
+        },
+        "am": {
+          "L": "ለአሳም ታላቅ ጋሻና ጦር የሚይዝ ሠራዊት ነበረው፤ ከይሁዳ 300,000፣ ከብንያምም ጋሻ የሚይዙና ቀስት የሚስቡ 280,000፤ እነዚህ ሁሉ ጽኑዓን ኃያላን ነበሩ።",
+          "B": "አሳ ታላላቅ ጋሻና ጦር የያዙ ከይሁዳ 300,000 ሰዎች፣ ትናንሽ ጋሻ የያዙና ቀስት የሚስቡ ከብንያም 280,000 ሰዎች ያሉበት ሠራዊት ነበረው። እነዚህ ሁሉ ጽኑዓን ጦረኞች ነበሩ።",
+          "R": "አሳ ታላላቅ ጋሻና ጦር የሚይዙ ከይሁዳ 300,000 ሰዎች ሠራዊት ነበረው። ደግሞም ትናንሽ ጋሻ የሚይዙና በቀስት የሚወረውሩ ከብንያም 280,000 ሰዎች ነበሩት። ሁሉም ጀግኖች ተዋጊዎች ነበሩ።"
         }
       },
       "decisions": [
@@ -1498,6 +1641,26 @@
           "reason": "The round numbers are in words, as in 13:3, and the warriors keep the book's wording at each level (1 Chronicles 5:24; 13:3). \"Atiravam com o arco\" (B) as 1 Chronicles 8:40 in Portuguese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140070051",
+            "o140140070131"
+          ],
+          "choice": "\"ታላቅ ጋሻ\" for the tsinnah and \"ጋሻ\" (L) / \"ትናንሽ ጋሻ\" (B, R) for the magen, as 9:15-16; \"ጽኑዓን ኃያላን\" as 13:3.",
+          "alternatives": [],
+          "reason": "The same two shields are named in the same book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1569,6 +1732,11 @@
           "L": "E Zerá, o cuxita, saiu contra eles com um exército de mil milhares e trezentos carros, e chegou até Maressa.",
           "B": "Zerá, o cuxita, marchou contra eles com um exército de um milhão de homens e trezentos carros, e chegou até Maressa.",
           "R": "Então Zerá, o cuxita, saiu para lutar contra eles. Ele tinha um exército de um milhão de homens e trezentos carros de guerra. Chegou até a cidade de Maressa."
+        },
+        "am": {
+          "L": "ኩሻዊው ዛራም ሺህ ጊዜ ሺህ ከሆነ ሠራዊትና ከ300 ሰረገሎች ጋር በእነርሱ ላይ ወጣ፤ እስከ መሪሳም ድረስ መጣ።",
+          "B": "ኩሻዊው ዛራ አንድ ሚሊዮን ሰዎችና 300 ሰረገሎች ባሉት ሠራዊት በእነርሱ ላይ ዘመተ፤ እስከ መሪሳም ድረስ መጣ።",
+          "R": "ከዚያም ኩሻዊው ዛራ ሊወጋቸው ወጣ። አንድ ሚሊዮን ሰዎችና 300 ሰረገሎች ያሉት ሠራዊት ነበረው። መሪሳ እስከምትባለው ከተማ ድረስ መጣ።"
         }
       },
       "decisions": [
@@ -1746,6 +1914,28 @@
           "reason": "\"Zerá\" is the form of the same Hebrew name in Genesis 38:30 in Portuguese, and \"o cuxita\" the gentilic of 12:3 and 2 Samuel 18:21 (m1); \"etíope\" would name a modern country. Literal keeps \"mil milhares\" for \"a thousand thousands\"; Balanced and Readable say \"um milhão\", written in words as a round number (m2), as the English says \"a million\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140080031",
+            "o140140080042"
+          ],
+          "choice": "\"ኩሻዊው ዛራ\": Zerah as \"ዛራ\" (Genesis 36:13) and the Cushite as \"ኩሻዊ\" (2 Samuel 18:21; \"ኩሻውያን\" in 12:3 and 16:8); Mareshah \"መሪሳ\" as 11:8. Literal keeps \"ሺህ ጊዜ ሺህ\".",
+          "alternatives": [
+            "\"ኢትዮጵያዊው ዛራ\""
+          ],
+          "reason": "Cush keeps its own name, as in Genesis 10 and 2 Samuel 18, rather than the modern country's.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1812,6 +2002,11 @@
           "L": "E Asa saiu diante dele, e dispuseram [a] batalha no vale de Zefatá, junto a Maressa.",
           "B": "Asa saiu ao seu encontro, e eles tomaram posição para a batalha no vale de Zefatá, perto de Maressa.",
           "R": "Asa saiu para enfrentá-lo. Os exércitos se posicionaram para a batalha no vale de Zefatá, perto de Maressa."
+        },
+        "am": {
+          "L": "አሳም በፊቱ ወጣ፤ በመሪሳ አጠገብ ባለው በጽፋታ ሸለቆ ለጦርነት ተሰለፉ።",
+          "B": "አሳ ሊገጥመው ወጣ፤ በመሪሳ አጠገብ ባለው በጽፋታ ሸለቆ ለጦርነት ተሰለፉ።",
+          "R": "አሳ ሊገጥመው ወጣ። ሠራዊቶቹ በመሪሳ አጠገብ ባለው በጽፋታ ሸለቆ ለጦርነት ተሰለፉ።"
         }
       },
       "decisions": [
@@ -1901,6 +2096,26 @@
           "choice": "o vale de Zefatá",
           "alternatives": [],
           "reason": "The valley's name, found only here (m3), is written \"Zefatá\" with the Brazilian spelling of \"ph\" and the final stress of names in \"-ah\" (as \"Maressa\", \"Jesana\").",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140090062",
+            "o140140090071"
+          ],
+          "choice": "\"የጽፋታ ሸለቆ\" for the valley of Zephathah, a new name.",
+          "alternatives": [],
+          "reason": "Spelled from the Hebrew.",
           "uncertain": true,
           "footnote": false
         }
@@ -2003,6 +2218,11 @@
           "L": "E Asa clamou {{divine_name:ao SENHOR|a Javé}}, o seu Deus, e disse: \"{{divine_name:SENHOR|Javé}}, não há ninguém {{deity_pronoun:contigo|Contigo}} para ajudar entre o poderoso e o que não tem força. Ajuda-nos, {{divine_name:SENHOR|Javé}}, nosso Deus, porque em {{deity_pronoun:ti|Ti}} nos apoiamos, e em {{deity_pronoun:teu|Teu}} nome viemos contra esta multidão. {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} [és] o nosso Deus; que o homem não prevaleça contra {{deity_pronoun:ti|Ti}}.\"",
           "B": "Então Asa clamou {{divine_name:ao SENHOR|a Javé}}, o seu Deus: \"{{divine_name:SENHOR|Javé}}, não há ninguém além de {{deity_pronoun:ti|Ti}} para ajudar quando o fraco enfrenta o forte. Ajuda-nos, {{divine_name:SENHOR|Javé}}, nosso Deus, porque nos apoiamos em {{deity_pronoun:ti|Ti}}; é em {{deity_pronoun:teu|Teu}} nome que marchamos contra este exército enorme. {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} és o nosso Deus. Não permitas que um simples mortal prevaleça contra {{deity_pronoun:ti|Ti}}.\"",
           "R": "Então Asa clamou {{divine_name:ao SENHOR|a Javé}}, o seu Deus. Ele disse: \"{{divine_name:SENHOR|Javé}}, quando os fracos enfrentam os fortes, só {{deity_pronoun:tu|Tu}} podes ajudá-los. Ajuda-nos, {{divine_name:SENHOR|Javé}}, nosso Deus! Estamos confiando em {{deity_pronoun:ti|Ti}}. Viemos em {{deity_pronoun:teu|Teu}} nome lutar contra este exército enorme. {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} és o nosso Deus. Não deixes que meros seres humanos {{deity_pronoun:te|Te}} vençam.\""
+        },
+        "am": {
+          "L": "አሳም ወደ አምላኩ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኸ፤ እንዲህም አለ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በብርቱና ኃይል በሌለው መካከል ለመርዳት ከአንተ በቀር ማንም የለም። አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እርዳን፤ በአንተ ተደግፈናልና፤ በስምህም በዚህ ብዛት ላይ መጥተናል። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ አምላካችን ነህ፤ ሰው በአንተ ላይ አይበርታ።»",
+          "B": "ከዚያም አሳ ወደ አምላኩ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ብሎ ጮኸ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ደካማው ከብርቱው ጋር ሲቆም የሚረዳ ከአንተ በቀር ማንም የለም። አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በአንተ ስለምንደገፍ እርዳን፤ በዚህ ታላቅ ሠራዊት ላይ የወጣነው በስምህ ነው። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ አምላካችን ነህ፤ ሟች ሰው በአንተ ላይ አይጽና።»",
+          "R": "ከዚያም አሳ ወደ አምላኩ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኸ። እንዲህም አለ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ደካሞች ከብርቱዎች ጋር ሲጋጠሙ ሊረዳቸው የሚችል አንተ ብቻ ነህ። አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እርዳን! በአንተ እንታመናለን። ይህን ታላቅ ሠራዊት ለመዋጋት በስምህ ወጥተናል። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ አምላካችን ነህ። ተራ ሰዎች አንተን እንዲያሸንፉ አትፍቀድ።»"
         }
       },
       "decisions": [
@@ -2244,6 +2464,27 @@
           "reason": "Literal and Balanced keep \"apoiar-se\", the verb of 13:18 in Portuguese, so the reader hears that Asa relies on the LORD as Abijah's army did (m2), where the English Balanced says \"depending on\"; Readable says \"confiando\", as 13:18 does at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o140140100071"
+          ],
+          "choice": "Asa prays with \"አንተ\", and \"{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ\" for the vocative; \"ተደግፈናል\" (L, B) / \"እንታመናለን\" (R) for leaning on the LORD, as 13:18.",
+          "alternatives": [
+            "\"እርስዎ\""
+          ],
+          "reason": "Prayer to God uses the plain form throughout Scripture (style guide, section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2313,6 +2554,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} feriu os cuxitas diante de Asa e diante de Judá, e os cuxitas fugiram.",
           "B": "{{divine_name:O SENHOR|Javé}} derrotou os cuxitas diante de Asa e diante de Judá, e os cuxitas fugiram.",
           "R": "Assim {{divine_name:o SENHOR|Javé}} derrotou os cuxitas diante de Asa e do povo de Judá, e os cuxitas fugiram."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ኩሻውያንን በአሳ ፊትና በይሁዳ ፊት መታ፤ ኩሻውያንም ሸሹ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ኩሻውያንን በአሳና በይሁዳ ፊት መታ፤ ኩሻውያኑም ሸሹ።",
+          "R": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} ኩሻውያንን በአሳና በይሁዳ ሕዝብ ፊት ድል አደረገ፤ ኩሻውያኑም ሸሹ።"
         }
       },
       "decisions": [
@@ -2473,6 +2719,11 @@
           "L": "E Asa e o povo que [estava] com ele os perseguiram até Gerar, e dos cuxitas caíram [tantos] que não houve para eles recuperação, porque foram despedaçados diante {{divine_name:do SENHOR|de Javé}} e diante do {{deity_pronoun:seu|Seu}} acampamento. E levaram muitíssimo despojo.",
           "B": "Asa e as tropas que estavam com ele os perseguiram até Gerar. Caíram tantos cuxitas que eles não conseguiram se recuperar; foram esmagados diante {{divine_name:do SENHOR|de Javé}} e do {{deity_pronoun:seu|Seu}} exército. Os homens de Judá levaram muitíssimo despojo.",
           "R": "Asa e o seu exército perseguiram os cuxitas até Gerar. Morreram tantos cuxitas que o exército deles não conseguiu se recuperar. {{divine_name:O SENHOR|Javé}} e o {{deity_pronoun:seu|Seu}} exército os tinham esmagado. O exército de Judá levou uma quantidade enorme de despojo."
+        },
+        "am": {
+          "L": "አሳና ከእርሱ ጋር የነበረው ሕዝብም እስከ ጌራራ ድረስ አሳደዷቸው፤ ከኩሻውያንም መንሰራራት እስከማይችሉ ድረስ [ብዙዎች] ወደቁ፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊትና በሰፈሩ ፊት ተሰብረዋልና። እጅግ ብዙ ምርኮም ወሰዱ።",
+          "B": "አሳና ከእርሱ ጋር የነበረው ሠራዊት እስከ ጌራራ ድረስ አሳደዷቸው። ከኩሻውያን ብዙዎች ስለ ወደቁ ዳግመኛ ማንሰራራት አልቻሉም፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊትና በሠራዊቱ ፊት ተደመሰሱ። የይሁዳ ሰዎችም እጅግ ብዙ ምርኮ ወሰዱ።",
+          "R": "አሳና ሠራዊቱ እስከ ጌራራ ድረስ አሳደዷቸው። ከኩሻውያን እጅግ ብዙዎች ስለ ተገደሉ ሠራዊታቸው ዳግመኛ ሊያንሰራራ አልቻለም። {{divine_name:እግዚአብሔር|ያህዌ}}ና ሠራዊቱ ደምስሰዋቸው ነበር። የይሁዳም ሠራዊት እጅግ ብዙ ምርኮ ወሰደ።"
         }
       },
       "decisions": [
@@ -2604,6 +2855,25 @@
           "reason": "As the English, \"seu\" refers to the LORD (m2) and takes the deity_pronoun span; Portuguese \"seu\" could also be read as Asa's, and the span's capital in the alternative makes the reading plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o140140120072"
+          ],
+          "choice": "\"ጌራራ\" for Gerar, as Genesis 20:1; \"በሰፈሩ ፊት\" (L) / \"በሠራዊቱ ፊት\" (B, R) for the LORD's camp, Judah's army.",
+          "alternatives": [],
+          "reason": "The place keeps its Amharic from Genesis.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2682,6 +2952,11 @@
           "L": "E feriram todas as cidades ao redor de Gerar, porque o terror {{divine_name:do SENHOR|de Javé}} estava sobre elas; e saquearam todas as cidades, porque havia muito despojo nelas.",
           "B": "Atacaram todas as cidades ao redor de Gerar, pois o pavor {{divine_name:do SENHOR|de Javé}} tinha caído sobre elas. Saquearam todas aquelas cidades, já que havia nelas muito despojo.",
           "R": "Eles atacaram todas as cidades em volta de Gerar. As pessoas de lá estavam com muito medo {{divine_name:do SENHOR|de Javé}}. O exército de Judá levou tudo o que havia de valor naquelas cidades, porque havia muito para levar."
+        },
+        "am": {
+          "L": "በጌራራም ዙሪያ ያሉትን ከተሞች ሁሉ መቱ፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ፍርሃት በእነርሱ ላይ ነበረና፤ ከተሞቹንም ሁሉ በዘበዙ፤ በእነርሱ ውስጥ ብዙ ምርኮ ነበረና።",
+          "B": "በጌራራ ዙሪያ ያሉትን ከተሞች ሁሉ መቱ፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ፍርሃት በላያቸው ወድቆ ነበርና። በእነዚያም ከተሞች ብዙ ምርኮ ስለ ነበረ ከተሞቹን ሁሉ በዘበዙ።",
+          "R": "በጌራራ ዙሪያ ያሉትን ከተሞች ሁሉ ወጉ። በዚያ የሚኖሩት ሰዎች {{divine_name:እግዚአብሔርን|ያህዌን}} እጅግ ፈርተው ነበር። የሚወሰድ ብዙ ነገር ስለ ነበረ የይሁዳ ሠራዊት ከእነዚያ ከተሞች ውድ ነገሩን ሁሉ ወሰደ።"
         }
       },
       "decisions": [
@@ -2822,6 +3097,11 @@
           "L": "E também feriram as tendas do gado, e levaram cativas ovelhas em abundância, e camelos; e voltaram [a] Jerusalém.",
           "B": "Também atacaram os acampamentos dos pastores e levaram ovelhas e cabras em grande número, e camelos. Depois voltaram para Jerusalém.",
           "R": "Eles também atacaram os acampamentos das pessoas que criavam gado. Levaram muitas ovelhas, cabras e camelos. Depois voltaram para Jerusalém."
+        },
+        "am": {
+          "L": "የከብቶችንም ድንኳኖች ደግሞ መቱ፤ ብዙ በጎችንና ግመሎችንም ማረኩ፤ ወደ ኢየሩሳሌምም ተመለሱ።",
+          "B": "የእረኞችንም ሰፈሮች መቱ፤ እጅግ ብዙ በጎችንና ፍየሎችን፣ ግመሎችንም ማርከው ወሰዱ። ከዚያም ወደ ኢየሩሳሌም ተመለሱ።",
+          "R": "መንጋ የሚጠብቁ ሰዎች የሰፈሩባቸውንም ቦታዎች ወጉ። እጅግ ብዙ በጎችን፣ ፍየሎችንና ግመሎችን ወሰዱ። ከዚያም ወደ ኢየሩሳሌም ተመለሱ።"
         }
       },
       "decisions": [
