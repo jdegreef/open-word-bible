@@ -288,6 +288,18 @@
   document.addEventListener("owb:synced", fill);
 })();
 
+// The Read page's books open in place; a link to one (/read/#jhn), from the
+// header or the footer, opens it.
+(function () {
+  "use strict";
+  function openBook() {
+    var book = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (book && book.tagName === "DETAILS" && book.closest(".book-index")) book.open = true;
+  }
+  openBook();
+  window.addEventListener("hashchange", openBook);
+})();
+
 // Reading offline (web/sw.js). The worker keeps the pages read lately; the
 // Read page's "Save for offline" button stores a whole book in the
 // owb-books cache, and owb.saved remembers which, for the button and for

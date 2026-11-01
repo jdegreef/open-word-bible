@@ -343,7 +343,7 @@ class SiteTest(unittest.TestCase):
             first = (self.out / book.lower() / str(chaps[0].chapter) / "index.html").read_text(encoding="utf-8")
             self.assertIn(f'class="chap-book" href="/{book.lower()}/"', first)
             read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
-            self.assertIn(f'<h2 id="book-{book.lower()}"><a href="/{book.lower()}/">', read)
+            self.assertIn(f'<a class="book-page-link" href="/{book.lower()}/">', read)
             llms = (self.out / "llms.txt").read_text(encoding="utf-8")
             self.assertIn(f"({build_site.SITE_URL}/{book.lower()}/)", llms)
 
@@ -534,9 +534,9 @@ class SiteTest(unittest.TestCase):
             for q in build_site.catalog(lang)["search.examples"]:
                 self.assertIn(f'?q={html.escape(q.replace(" ", "+"))}"', home)
 
-    def test_home_page_offers_the_data(self):
-        home = (self.out / "index.html").read_text(encoding="utf-8")
-        data = home[home.index('class="data"'):home.index('class="involve"')]
+    def test_download_page_offers_the_data(self):
+        page = (self.out / "download" / "index.html").read_text(encoding="utf-8")
+        data = page[page.index('class="data"'):]
         self.assertIn(f'href="{build_site.GITHUB_URL}/archive/refs/heads/main.zip"', data)
         self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
         self.assertIn("schema/sentence-record.schema.json", data)
@@ -546,7 +546,7 @@ class SiteTest(unittest.TestCase):
         terms = home[home.index('class="home-terms"'):]
         terms = terms[:terms.index("</section>")]
         self.assertIn('href="/terms/"', terms)
-        self.assertEqual(terms.count('class="term-row"'), 6)
+        self.assertEqual(terms.count('class="term-row"'), 3)
         self.assertIn('href="/terms/the-divine-name-yhwh/"', terms)
 
     def test_home_page_suggests_plans_offered_in_its_language(self):
@@ -716,14 +716,6 @@ class SiteTest(unittest.TestCase):
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
             self.assertIn(f"<b>{len(records)}</b>", progress)
             self.assertIn(f"<b>{decisions}</b>", progress)
-            # The map has a tile for every book, linked once it has a
-            # sentence in lang, and no chapter links.
-            shown = {build_site.refs.parse(r["refs"][0]).book for r in records}
-            self.assertEqual(progress.count('<li><a class="map-book') + progress.count('<li><span class="map-book'),
-                             len(build_site.refs.BOOK_CODES))
-            for book in build_site.refs.BOOK_CODES:
-                link = f'href="{build_site.url(lang, f"/read/#{book.lower()}")}"'
-                self.assertEqual(link in progress, book in shown, (lang, book))
             for p in passages:
                 self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
@@ -1041,16 +1033,16 @@ class SiteTest(unittest.TestCase):
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
-            section = re.search(rf'<section class="book-group" id="{book.lower()}"(.*?)</section>', read, re.S)[1]
+            section = re.search(rf'<details id="{book.lower()}">(.*?)</details></div></details></li>', read, re.S)[1]
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
-        self.assertIn("4 of 4 chapters, complete", read)
-        self.assertIn("1 chapter, complete", read)
+        self.assertIn("All 4 chapters translated", read)
+        self.assertIn("1 chapter, translated", read)
         self.assertNotIn("1 of 1 chapters", read)
-        # An index of the books first, each linked to its section.
+        # Each book is a tile in the index, opening in place (/read/#jhn).
         index = re.search(r'<nav class="book-index".*?</nav>', read, re.S)[0]
         for book, _ in build_site.books():
-            self.assertIn(f'href="#{book.lower()}"', index)
+            self.assertIn(f'<details id="{book.lower()}">', index)
 
     def test_card_quotes_alternate_and_keep_apostrophes(self):
         # Speech inside the verse's speech turns to double quotes.

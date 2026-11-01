@@ -739,38 +739,6 @@ footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
 .stats b { display: block; font-family: var(--display); font-size: 44px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 6px; }
 .stats span { color: var(--muted); font-size: 14.5px; }
 .progress p { max-width: 72ch; }
-/* Home: the whole Bible as a map, a tile per book, by testament. A tile
-   fills as far as the book's chapters are drafted; one not started is
-   dotted and greyed out. */
-.book-map { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 20px 28px; margin: 24px 0 0; }
-.map-testament {
-  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow-card);
-}
-.map-books { display: grid; grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); gap: 6px; list-style: none; margin: 0; padding: 0; }
-.map-book {
-  position: relative; display: grid; place-items: center; height: 38px; padding: 0 4px; overflow: hidden; isolation: isolate;
-  border: 1px solid var(--accent); border-radius: var(--radius-sm); background: var(--accent); color: var(--accent-contrast);
-  font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap;
-  transition: transform var(--fast) ease, box-shadow var(--fast) ease;
-}
-a.map-book:hover { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--accent-soft-border); color: var(--accent-contrast); }
-a.map-book:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.map-book.part { background: var(--accent-soft); color: var(--accent); border-style: dashed; }
-.map-book.part::before {
-  content: ""; position: absolute; z-index: -1; left: 0; bottom: 0; height: 4px; width: var(--fill, 0%);
-  background: linear-gradient(90deg, var(--accent), var(--gold));
-}
-a.map-book.part:hover { color: var(--accent); }
-.map-book.none { background: none; border: 1px dotted var(--line-strong); color: var(--muted); font-weight: 500; opacity: .7; cursor: default; }
-.map-key { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 14px 0 0; font-size: 13.5px; color: var(--muted); }
-.map-key > span { display: inline-flex; align-items: center; gap: 8px; }
-.map-key .map-book { width: 22px; height: 16px; padding: 0; }
-.map-key .map-book.part::before { width: 50%; height: 3px; }
-@media (max-width: 760px) {
-  .book-map { grid-template-columns: minmax(0, 1fr); }
-  .map-testament { padding: 14px; }
-  .map-books { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); }
-}
 /* Books and their chapters: a progress bar and a pill per chapter, used
    by the home page, the Read page, the header's Read menu and the reader. */
 .meter { display: block; height: 6px; border-radius: 999px; background: var(--surface-2); overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); }
@@ -802,32 +770,36 @@ a.map-book.part:hover { color: var(--accent); }
 .book-row .chap-pills { grid-area: pills; }
 .saved-books { margin: 0 0 48px; }
 
-/* Read page: one section per book. */
-.book-group { margin: 0 0 48px; }
-.book-head { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
-.book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
-.book-head .meter { max-width: 260px; }
-.book-group { scroll-margin-top: calc(var(--header-h) + 16px); }
-.book-group > .chap-pills { margin: 0 0 14px; }
-/* On a phone a book's heading takes two lines: name and progress, then the
-   meter and the save button. */
-@media (max-width: 560px) {
-  .book-head { grid-template-columns: auto 1fr; }
-  .book-head .book-progress { white-space: normal; justify-self: end; text-align: right; }
-  .book-head .meter { max-width: none; }
-}
 .previews > summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; font-weight: 600;
   color: var(--accent); padding: 8px 0; }
 .previews[open] > summary { margin: 0 0 12px; }
-/* The index of books at the top of the Read page, under their testaments. */
+/* The Read page: a tile per book under its testament. A tile opens in
+   place across the whole row: its chapters, its page, saving it. */
 .book-index { display: grid; gap: 24px; margin: 0 0 48px; }
 .book-tiles { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); }
+.book-item:has(> details[open]) { grid-column: 1 / -1; }
+.book-item > details { height: 100%; scroll-margin-top: calc(var(--header-h) + 16px); }
 .book-tile { display: grid; gap: 6px; padding: 12px 14px; height: 100%; box-sizing: border-box; background: var(--surface);
-  border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); text-decoration: none; }
+  border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); text-decoration: none;
+  list-style: none; cursor: pointer; }
+.book-tile::-webkit-details-marker { display: none; }
 .book-tile:hover { border-color: var(--accent); }
+.book-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .book-tile-name { font-weight: 700; font-size: 15px; }
+.book-tile-name::after { content: " \25BE"; color: var(--muted); font-weight: 400; }
+details[open] > .book-tile { height: auto; border-color: var(--accent); border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  grid-template-columns: auto auto minmax(80px, 260px); align-items: center; column-gap: 18px; }
+details[open] > .book-tile .book-tile-name { font-family: var(--display); font-weight: 600; font-size: 22px; }
+details[open] > .book-tile .book-tile-name::after { content: " \25B4"; }
 .book-tile .book-progress { font-size: 12.5px; white-space: normal; }
+.book-open { padding: 14px; border: 1px solid var(--accent); border-top: 0; border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  background: var(--surface); }
+.book-open-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 14px 0 0; font-size: 14px; font-weight: 600; }
+@media (max-width: 560px) {
+  details[open] > .book-tile { grid-template-columns: 1fr auto; }
+  details[open] > .book-tile .meter { grid-column: 1 / -1; }
+}
 
 /* Continue reading, at the top of the Read menu once there is a place. */
 .dd-resume:not([hidden]) {
@@ -1895,6 +1867,8 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
 body.plain .passage { margin: 0 auto; }
 body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
+/* Verse numbers in the views for reading, when the reader shows them. */
+body.plain.numbered .verse sup:not(.fn) { display: inline; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
 body.plain .text { font-size: calc(22px * var(--read-scale)); }

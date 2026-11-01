@@ -953,8 +953,8 @@ def books(lang=None):
 
 
 def book_progress(book, chapters_, lang="en"):
-    """"4 of 4 chapters, complete" / "2 of 21 chapters" / "1 chapter,
-    complete" (Philemon): a book's progress."""
+    """"All 4 chapters translated" / "2 of 21 chapters" / "1 chapter,
+    translated" (Philemon): a book's progress."""
     done = sum(p.complete for p in chapters_)
     total = BOOK_CHAPTERS[book]
     key = "progress.one" if total == 1 else "progress.complete" if done == total else "progress.chapters"
@@ -1376,8 +1376,9 @@ def chapter_page(book, chapter, lang="en"):
   </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
+  {control("verse_numbers", "verse_numbers", [("1", t(lang, "reader.show")), ("0", t(lang, "reader.hide"))], " numbers-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span></p>
+<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -2141,34 +2142,34 @@ def offline_files(lang):
 
 
 def read_page(lang="en"):
-    """Every book translated so far: first an index of the books under their
-    testaments, then each book with a pill per chapter and, folded away, a
-    card per chapter with its opening verse."""
-    groups, tiles = [], {"old_testament": [], "new_testament": []}
+    """Every book translated so far, a tile each under its testament. A tile
+    opens in place (/read/#jhn opens it too, web/site.js): a pill per
+    chapter, the book's page, saving it for offline reading and, folded
+    away, a card per chapter with its opening verse."""
+    tiles = {"old_testament": [], "new_testament": []}
     for book, chaps in books(lang):
         done, total, progress = book_progress(book, chaps, lang)
         name = BOOK_NAMES[book][lang]
-        # The book's name leads to its page, where it has one.
-        heading = f'<a href="{url(lang, book_url(book))}">{name}</a>' if lang in book_languages(book) else name
+        # The book's page, where it has one.
+        page_link = (f'<a class="book-page-link" href="{url(lang, book_url(book))}">'
+                     f'{catalog(lang)["book_page"]["title"].replace("{book}", name)}&nbsp;&rarr;</a>'
+                     if lang in book_languages(book) else "")
         testament = "old_testament" if book in refs.OT_CODES else "new_testament"
         tiles[testament].append(
-            f'<li><a class="book-tile" href="#{book.lower()}"><span class="book-tile-name">{name}</span>'
+            f'<li class="book-item"><details id="{book.lower()}">'
+            f'<summary class="book-tile"><span class="book-tile-name">{name}</span>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'{meter(done, total)}</a></li>')
-        groups.append(
-            f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
-            f'<div class="book-head"><h2 id="book-{book.lower()}">{heading}</h2>'
-            f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'{meter(done, total)}{save_button(book, chaps, lang)}</div>'
-            f'<div class="chap-pills">{chapter_pills(chaps, lang, total=total)}</div>'
+            f'{meter(done, total)}</summary>'
+            f'<div class="book-open"><div class="chap-pills">{chapter_pills(chaps, lang, total=total)}</div>'
+            f'<p class="book-open-links">{page_link}{save_button(book, chaps, lang)}</p>'
             f'<details class="previews"><summary>{t(lang, "read.previews")}</summary>'
             f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul>'
-            f'</details></section>')
+            f'</details></div></details></li>')
     index = "".join(
         f'<section class="book-index-group" aria-labelledby="ix-{key}"><h2 class="label" id="ix-{key}">'
         f'{t(lang, "footer." + key)}</h2><ul class="book-tiles">{"".join(items)}</ul></section>'
         for key, items in tiles.items() if items)
-    cards = f'<nav class="book-index" aria-label="{t(lang, "read.books")}">{index}</nav>\n' + "".join(groups)
+    cards = f'<nav class="book-index" aria-label="{t(lang, "read.books")}">{index}</nav>\n'
     body = f"""
 <header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
@@ -2711,45 +2712,10 @@ def example_html(lang="en"):
 """
 
 
-def book_map(lang="en"):
-    """The home page's map of the whole Bible: a tile per book, by
-    testament, filled as far as its chapters are drafted in lang. A book
-    with chapters in lang links to it on the Read page; one not started is
-    a greyed-out tile. 66 tiles say what 34 progress bars could not: how
-    much of the Bible there is still to do."""
-    have = dict(books(lang))
-
-    def tile(book):
-        name = book_name(book, lang)
-        abbr = BOOK_ABBREVIATIONS[book].get(lang, name)
-        if book not in have:
-            return (f'<li><span class="map-book none" title="{name}: {t(lang, "footer.key_none")}">'
-                    f'<span aria-hidden="true">{abbr}</span><span class="sr-only">{name}: '
-                    f'{t(lang, "footer.key_none")}</span></span></li>')
-        done, total, progress = book_progress(book, have[book], lang)
-        fill = 100 * len(have[book]) / total
-        return (f'<li><a class="map-book{"" if done == total else " part"}" '
-                f'href="{url(lang, f"/read/#{book.lower()}")}" title="{name}: {progress}" style="--fill:{fill:.0f}%">'
-                f'<span aria-hidden="true">{abbr}</span><span class="sr-only">{name}: {progress}</span></a></li>')
-
-    def testament(key, codes):
-        started = sum(b in have for b in codes)
-        return (f'<section class="map-testament" aria-labelledby="map-{key}"><div class="testament-head">'
-                f'<h3 id="map-{key}">{t(lang, "footer." + key)}</h3>'
-                f'<span>{t(lang, "footer.started", done=started, total=len(codes))}</span></div>'
-                f'<ul class="map-books">{"".join(tile(b) for b in codes)}</ul></section>')
-
-    key = "".join(f'<span><span class="map-book{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
-                  for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
-    return (f'<div class="book-map">{testament("old_testament", refs.OT_CODES)}'
-            f'{testament("new_testament", refs.BOOK_CODES[39:])}</div>'
-            f'<p class="map-key">{key}</p>')
-
-
 def progress_html(lang="en"):
-    """The home page's progress: sentences, decisions, and the map of the
-    books, in the page's language only. A sentence's decisions in lang are
-    its meaning decisions and its rendering decisions for lang."""
+    """The home page's progress: sentences and decisions, in the page's
+    language only (the footer maps the books). A sentence's decisions in
+    lang are its meaning decisions and its rendering decisions for lang."""
     records = [r for r in all_records() if lang in r["renderings"]]
     decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
     return f"""
@@ -2761,7 +2727,6 @@ def progress_html(lang="en"):
 <div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
 <p>{t(lang, "home.progress_text")}</p>
-{book_map(lang)}
 </section>
 """
 
@@ -2890,8 +2855,8 @@ def votd_feed(lang="en", today=None):
 
 
 def data_html(lang="en"):
-    """The home page's offer to builders: the whole translation to
-    download, the API, and the data model, all CC0."""
+    """The download page's offer to builders: the whole translation and
+    its reasoning records, the API, and the data model, all CC0."""
     api = f"{API_URL}/api/passages/JHN/1/"
     cards = (
         ("download", f"{GITHUB_URL}/archive/refs/heads/main.zip", "home.data_zip", t(lang, "home.data_zip_text")),
@@ -3040,7 +3005,7 @@ def home_page(lang="en"):
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
-<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages")}</li>
+<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(LANGUAGES) - 1)}</li>
 </ul>
 </section>
 {verse_of_the_day(lang)}
@@ -3057,7 +3022,7 @@ def home_page(lang="en"):
 {home_audiences(lang)}{home_plans(lang)}
 {progress_html(lang)}
 {home_terms(lang)}
-{latest}{data_html(lang)}<section class="involve" id="help" aria-labelledby="involve-h">
+{latest}<section class="involve" id="help" aria-labelledby="involve-h">
 <div class="involve-text">
 <h2 id="involve-h">{t(lang, "home.involve")}</h2>
 <p>{t(lang, "home.involve_text")}</p>
@@ -3352,7 +3317,7 @@ def download_page(lang="en"):
 {"".join(sections)}
 <p class="fine">{built}</p>
 </div>
-"""
+{data_html(lang)}"""
     return page(lang, d["title"], body, path="/download/", current="/about/", description=d["description"])
 
 
@@ -3575,14 +3540,14 @@ def term_row(term, lang="en"):
 
 
 def home_terms(lang="en"):
-    """The home page's key terms: six of the most used, up to two of them
+    """The home page's key terms: three of the most used, one of them
     Hebrew, with a link to them all."""
     terms = list(validate.KEY_TERMS.values())
 
     def top(code):
         return sorted((x for x in terms if term_key(x)[0] == code), key=term_count, reverse=True)
-    hebrew = top("hbo")[:2]
-    shown = top("grc")[:6 - len(hebrew)] + hebrew
+    hebrew = top("hbo")[:1]
+    shown = top("grc")[:3 - len(hebrew)] + hebrew
     return f"""<section class="home-terms" aria-labelledby="terms-h">
 {sec_head("terms-h", "key", t(lang, "terms.heading"), url(lang, "/terms/"), t(lang, "nav.section_all", n=len(terms)))}
 <p class="terms-text">{t(lang, "home.terms_text")}</p>
