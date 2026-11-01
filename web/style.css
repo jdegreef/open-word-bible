@@ -1895,6 +1895,8 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
 body.plain .passage { margin: 0 auto; }
 body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
+/* Verse numbers in the views for reading, when the reader shows them. */
+body.plain.numbered .verse sup:not(.fn) { display: inline; }
 body.plain .verse { cursor: text; }
 body.plain .verse:hover { background: none; }
 body.plain .text { font-size: calc(22px * var(--read-scale)); }

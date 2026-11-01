@@ -30,7 +30,7 @@
   // reader's settings follow them to their other devices (site.js syncs
   // owb.settings with the account; the latest device's copy wins whole).
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
-                   headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0 };
+                   headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0, verse_numbers: 0 };
   var settingsAt = 0;
   function loadSettings() {
     try {
@@ -231,16 +231,17 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs", "red_letter"].forEach(function (name) {
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs", "red_letter",
+     "verse_numbers"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];
     });
     // The summary on the phone settings button: each shown choice's label.
     var summary = [];
     // "Show", "Hide" or "Red" means nothing without its label, so headings,
-    // cross-references and the words of Jesus are left out.
+    // cross-references, the words of Jesus and verse numbers are left out.
     var shown = ".control:not([hidden]) .seg:not([data-setting=headings]):not([data-setting=crossrefs])" +
-      ":not([data-setting=red_letter])";
+      ":not([data-setting=red_letter]):not([data-setting=verse_numbers])";
     document.querySelectorAll(shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
@@ -259,6 +260,11 @@
     if (head) head.textContent = DATA.title + " \u00b7 Open Word Bible \u00b7 " + summary.join(" \u00b7 ") +
       " \u00b7 " + location.host + location.pathname;
     document.body.classList.toggle("plain", plain());
+    // The views for reading hide verse numbers unless the reader shows
+    // them; Study always has them, so the choice is offered only there.
+    document.body.classList.toggle("numbered", plain() && settings.verse_numbers === 1);
+    var numbers = document.querySelector('[data-setting="verse_numbers"]');
+    if (numbers) numbers.parentNode.hidden = !plain();
     document.body.classList.toggle("red-letter", settings.red_letter === 1);
     document.body.classList.toggle("view-parallel", parallel());
     document.body.classList.toggle("view-interlinear", interlinear());
@@ -277,8 +283,9 @@
   var crossrefsSeg = document.querySelector('[data-setting="crossrefs"]');
   if (crossrefsSeg && !Object.keys(DATA.crossrefs).length) crossrefsSeg.parentNode.hidden = true;
 
-  // Reading view: the text alone, without verse numbers, footnote letters or
-  // the reasoning panel; verses are not buttons.
+  // Reading view: the text alone, without footnote letters or the reasoning
+  // panel, and without verse numbers unless the reader shows them; verses
+  // are not buttons.
   // Every view but Study is for reading: no reasoning panel, verses are not
   // buttons. Parallel sets another language beside each sentence;
   // Interlinear sets the original words over the English they became.
