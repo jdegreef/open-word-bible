@@ -2142,34 +2142,34 @@ def offline_files(lang):
 
 
 def read_page(lang="en"):
-    """Every book translated so far: first an index of the books under their
-    testaments, then each book with a pill per chapter and, folded away, a
-    card per chapter with its opening verse."""
-    groups, tiles = [], {"old_testament": [], "new_testament": []}
+    """Every book translated so far, a tile each under its testament. A tile
+    opens in place (/read/#jhn opens it too, web/site.js): a pill per
+    chapter, the book's page, saving it for offline reading and, folded
+    away, a card per chapter with its opening verse."""
+    tiles = {"old_testament": [], "new_testament": []}
     for book, chaps in books(lang):
         done, total, progress = book_progress(book, chaps, lang)
         name = BOOK_NAMES[book][lang]
-        # The book's name leads to its page, where it has one.
-        heading = f'<a href="{url(lang, book_url(book))}">{name}</a>' if lang in book_languages(book) else name
+        # The book's page, where it has one.
+        page_link = (f'<a class="book-page-link" href="{url(lang, book_url(book))}">'
+                     f'{catalog(lang)["book_page"]["title"].replace("{book}", name)}&nbsp;&rarr;</a>'
+                     if lang in book_languages(book) else "")
         testament = "old_testament" if book in refs.OT_CODES else "new_testament"
         tiles[testament].append(
-            f'<li><a class="book-tile" href="#{book.lower()}"><span class="book-tile-name">{name}</span>'
+            f'<li class="book-item"><details id="{book.lower()}">'
+            f'<summary class="book-tile"><span class="book-tile-name">{name}</span>'
             f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'{meter(done, total)}</a></li>')
-        groups.append(
-            f'<section class="book-group" id="{book.lower()}" aria-labelledby="book-{book.lower()}">'
-            f'<div class="book-head"><h2 id="book-{book.lower()}">{heading}</h2>'
-            f'<span class="book-progress{" done" if done == total else ""}">{progress}</span>'
-            f'{meter(done, total)}{save_button(book, chaps, lang)}</div>'
-            f'<div class="chap-pills">{chapter_pills(chaps, lang, total=total)}</div>'
+            f'{meter(done, total)}</summary>'
+            f'<div class="book-open"><div class="chap-pills">{chapter_pills(chaps, lang, total=total)}</div>'
+            f'<p class="book-open-links">{page_link}{save_button(book, chaps, lang)}</p>'
             f'<details class="previews"><summary>{t(lang, "read.previews")}</summary>'
             f'<ul class="a-grid">{"".join(passage_card(p.book, p.chapter, lang) for p in chaps)}</ul>'
-            f'</details></section>')
+            f'</details></div></details></li>')
     index = "".join(
         f'<section class="book-index-group" aria-labelledby="ix-{key}"><h2 class="label" id="ix-{key}">'
         f'{t(lang, "footer." + key)}</h2><ul class="book-tiles">{"".join(items)}</ul></section>'
         for key, items in tiles.items() if items)
-    cards = f'<nav class="book-index" aria-label="{t(lang, "read.books")}">{index}</nav>\n' + "".join(groups)
+    cards = f'<nav class="book-index" aria-label="{t(lang, "read.books")}">{index}</nav>\n'
     body = f"""
 <header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>

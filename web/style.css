@@ -802,32 +802,36 @@ a.map-book.part:hover { color: var(--accent); }
 .book-row .chap-pills { grid-area: pills; }
 .saved-books { margin: 0 0 48px; }
 
-/* Read page: one section per book. */
-.book-group { margin: 0 0 48px; }
-.book-head { display: grid; grid-template-columns: auto auto 1fr auto; align-items: center; gap: 8px 18px; margin: 0 0 16px; }
-.book-head h2 { font-family: var(--display); font-weight: 600; font-size: 28px; letter-spacing: -.01em; margin: 0; }
-.book-head .meter { max-width: 260px; }
-.book-group { scroll-margin-top: calc(var(--header-h) + 16px); }
-.book-group > .chap-pills { margin: 0 0 14px; }
-/* On a phone a book's heading takes two lines: name and progress, then the
-   meter and the save button. */
-@media (max-width: 560px) {
-  .book-head { grid-template-columns: auto 1fr; }
-  .book-head .book-progress { white-space: normal; justify-self: end; text-align: right; }
-  .book-head .meter { max-width: none; }
-}
 .previews > summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; font-weight: 600;
   color: var(--accent); padding: 8px 0; }
 .previews[open] > summary { margin: 0 0 12px; }
-/* The index of books at the top of the Read page, under their testaments. */
+/* The Read page: a tile per book under its testament. A tile opens in
+   place across the whole row: its chapters, its page, saving it. */
 .book-index { display: grid; gap: 24px; margin: 0 0 48px; }
 .book-tiles { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); }
+.book-item:has(> details[open]) { grid-column: 1 / -1; }
+.book-item > details { height: 100%; scroll-margin-top: calc(var(--header-h) + 16px); }
 .book-tile { display: grid; gap: 6px; padding: 12px 14px; height: 100%; box-sizing: border-box; background: var(--surface);
-  border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); text-decoration: none; }
+  border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); text-decoration: none;
+  list-style: none; cursor: pointer; }
+.book-tile::-webkit-details-marker { display: none; }
 .book-tile:hover { border-color: var(--accent); }
+.book-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .book-tile-name { font-weight: 700; font-size: 15px; }
+.book-tile-name::after { content: " \25BE"; color: var(--muted); font-weight: 400; }
+details[open] > .book-tile { height: auto; border-color: var(--accent); border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  grid-template-columns: auto auto minmax(80px, 260px); align-items: center; column-gap: 18px; }
+details[open] > .book-tile .book-tile-name { font-family: var(--display); font-weight: 600; font-size: 22px; }
+details[open] > .book-tile .book-tile-name::after { content: " \25B4"; }
 .book-tile .book-progress { font-size: 12.5px; white-space: normal; }
+.book-open { padding: 14px; border: 1px solid var(--accent); border-top: 0; border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  background: var(--surface); }
+.book-open-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 14px 0 0; font-size: 14px; font-weight: 600; }
+@media (max-width: 560px) {
+  details[open] > .book-tile { grid-template-columns: 1fr auto; }
+  details[open] > .book-tile .meter { grid-column: 1 / -1; }
+}
 
 /* Continue reading, at the top of the Read menu once there is a place. */
 .dd-resume:not([hidden]) {

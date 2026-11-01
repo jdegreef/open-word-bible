@@ -343,7 +343,7 @@ class SiteTest(unittest.TestCase):
             first = (self.out / book.lower() / str(chaps[0].chapter) / "index.html").read_text(encoding="utf-8")
             self.assertIn(f'class="chap-book" href="/{book.lower()}/"', first)
             read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
-            self.assertIn(f'<h2 id="book-{book.lower()}"><a href="/{book.lower()}/">', read)
+            self.assertIn(f'<a class="book-page-link" href="/{book.lower()}/">', read)
             llms = (self.out / "llms.txt").read_text(encoding="utf-8")
             self.assertIn(f"({build_site.SITE_URL}/{book.lower()}/)", llms)
 
@@ -1041,16 +1041,16 @@ class SiteTest(unittest.TestCase):
     def test_read_page_groups_chapters_by_book(self):
         read = (self.out / "read" / "index.html").read_text(encoding="utf-8")
         for book, chaps in build_site.books():
-            section = re.search(rf'<section class="book-group" id="{book.lower()}"(.*?)</section>', read, re.S)[1]
+            section = re.search(rf'<details id="{book.lower()}">(.*?)</details></div></details></li>', read, re.S)[1]
             for p in chaps:
                 self.assertIn(f'href="{p.url}"', section)
         self.assertIn("All 4 chapters translated", read)
         self.assertIn("1 chapter, complete", read)
         self.assertNotIn("1 of 1 chapters", read)
-        # An index of the books first, each linked to its section.
+        # Each book is a tile in the index, opening in place (/read/#jhn).
         index = re.search(r'<nav class="book-index".*?</nav>', read, re.S)[0]
         for book, _ in build_site.books():
-            self.assertIn(f'href="#{book.lower()}"', index)
+            self.assertIn(f'<details id="{book.lower()}">', index)
 
     def test_card_quotes_alternate_and_keep_apostrophes(self):
         # Speech inside the verse's speech turns to double quotes.
