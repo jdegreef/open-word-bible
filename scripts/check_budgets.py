@@ -29,7 +29,9 @@ BUDGETS = {
     # rendering decisions; 231 KB (psa/119, the longest chapter, 176
     # verses) on 2026-10-17 once Psalms had all six languages].
     # Since 2026-10-19 a page is measured with its chapter's shared reader
-    # data (chapter-data/), which every language's page loads.
+    # data (chapter-data/), which every language's page loads; 262 KB
+    # (ko/psa/119) on 2026-11-01 once the records, with every language's
+    # decisions, moved there from the page.
     "chapter_page_gz": 290 * KB,
     # The largest script or style sheet (not counting the reader data
     # scripts, chapter-data/ and reader-<lang>.js) [21 KB, reader.js; 26 KB on
@@ -46,7 +48,9 @@ BUDGETS = {
     # source words, interface text and book names were no longer copied into
     # every language's page (scripts/build_site.py chapter_shared,
     # reader_shared); 2,263 MB on 2026-10-23 with Portuguese and Amharic as
-    # site languages, each about 210 MB].
+    # site languages, each about 210 MB; 1,541 MB on 2026-11-01 once the
+    # sentence records came from chapter-data/ rather than every
+    # language's page (each language then about 130 MB)].
     # Grows with each book translated and each language added.
     "site_total": 2800 * MB,
 }

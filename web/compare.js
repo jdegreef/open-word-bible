@@ -3,8 +3,9 @@
 // decisions that say why ours reads as it does.
 //
 // The verse comes from the address (?v=JHN.3.16, or ?ref=John 3:16 from the
-// form). Our text and its decisions are read from the verse's chapter page
-// (its owb-data), which the reader caches for offline use anyway; the other
+// form). Our text and its decisions are read from the verse's chapter
+// data, the script its chapter page loads (found in the page, so with the
+// page's version), which the reader caches for offline use anyway; the other
 // Bibles from /editions/<BOOK>/<chapter>.json. Reader settings (inclusive
 // language, Christ or Messiah, ...) are the reader's own, from owb.settings.
 (function () {
@@ -59,17 +60,21 @@
     }
     return cache[url];
   }
-  // The reader's data for a chapter, from its page.
+  // The reader's data for a chapter (window.OWB_CHAPTER), from the script
+  // its page loads.
   function chapterData(code, chapter) {
     var url = chapterPage(code, chapter);
+    function text(r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    }
     if (!cache[url]) {
-      cache[url] = fetch(url).then(function (r) {
-        if (!r.ok) throw new Error(r.status);
-        return r.text();
-      }).then(function (page) {
-        var m = /<script type="application\/json" id="owb-data">([\s\S]*?)<\/script>/.exec(page);
+      cache[url] = fetch(url).then(text).then(function (page) {
+        var m = /<script src="(\/chapter-data\/[^"]+)"><\/script>/.exec(page);
         if (!m) throw new Error("no data");
-        return JSON.parse(m[1].replace(/<\\\//g, "</"));
+        return fetch(m[1]).then(text);
+      }).then(function (script) {
+        return JSON.parse(script.slice(script.indexOf("=") + 1).replace(/;\s*$/, "").replace(/<\\\//g, "</"));
       });
       cache[url].catch(function () { delete cache[url]; });
     }

@@ -1105,18 +1105,22 @@ class SiteTest(unittest.TestCase):
                     self.assertTrue(self.built(path).is_file(), path)
 
     def test_chapter_pages_share_what_is_the_same(self):
-        # The source words and each sentence's source are the same on every
-        # language's page of a chapter, and the interface text on every
-        # chapter page of a language: each is built once, not into every page.
+        # The records and source words are the same on every language's page
+        # of a chapter, and the interface text on every chapter page of a
+        # language: each is built once, not into every page.
         en, es = self.chapter_data("jhn/1"), self.chapter_data("es/jhn/1")
         self.assertEqual(en["words"], es["words"])
         self.assertEqual([r["source"] for r in en["records"]], [r["source"] for r in es["records"]])
+        self.assertEqual([r["renderings"] for r in en["records"]], [r["renderings"] for r in es["records"]])
         page = (self.out / "es/jhn/1/index.html").read_text(encoding="utf-8")
         own = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
-        for key in ("words", "ui", "bookRefs", "books", "crossrefs"):
+        for key in ("records", "words", "ui", "bookRefs", "books", "crossrefs"):
             self.assertNotIn(key, own)
-        self.assertTrue(all("source" not in r for r in own["records"]))
         self.assertEqual(es["ui"], build_site.catalog("es")["reader.ui"])
+        # Each page's reader keeps the meaning decisions and its own language's.
+        for data in (en, es):
+            langs = {d["language"] for r in data["records"] for d in r["decisions"]}
+            self.assertLessEqual(langs, {None, data["lang"]})
 
 
 def note(reason, alternatives=()):

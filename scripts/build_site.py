@@ -1218,24 +1218,13 @@ def ld_script(data):
 ORGANIZATION = {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL}
 
 
-def page_records(records, lang):
-    """The records as a page in lang carries them: every language's
-    renderings (the reader sets two side by side), but only the meaning
-    decisions and lang's own rendering decisions, the only ones the reader
-    shows. Each language's decisions would otherwise weigh on every page.
-    The source is left out: it is the same on every language's page, so it
-    comes with the chapter's shared data (chapter_shared)."""
-    return [{**{k: v for k, v in r.items() if k != "source"},
-             "decisions": [d for d in r["decisions"] if d["language"] in (None, lang)]}
-            for r in records]
-
-
 # The reader data that is the same on every language's page of a chapter,
 # one script a chapter (chapter_shared), and the reader data that is the
 # same on every chapter page of a language, one script a language
 # (reader_shared). A page loads both before reader.js, which adds them to
 # the page's own data. Built into every page, they were most of the site:
-# the words alone were six copies of about 100 MB.
+# the words alone were six copies of about 100 MB, and the records (each
+# with every language's renderings) a copy per language of the rest.
 CHAPTER_DATA_DIR = "chapter-data"
 
 
@@ -1253,14 +1242,15 @@ def chapter_data_path(book, chapter):
 
 @functools.cache
 def chapter_shared(book, chapter):
-    """A chapter's reader data in no language: the source words of each
-    verse, each sentence's source and the cross-references. As a script,
-    and its URL."""
+    """A chapter's reader data in no language: its sentence records, with
+    every language's renderings and decisions (reader.js keeps the meaning
+    decisions and the page language's own), the source words of each verse
+    and the cross-references. As a script, and its URL."""
     records, words = load_chapter(book, chapter)
     source = source_language(book)
     text, digest = shared_script("OWB_CHAPTER", {
+        "records": records,
         "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
-        "sources": {r["id"]: r["source"] for r in records},
         "crossrefs": chapter_crossrefs(records)})
     return text, f"{chapter_data_path(book, chapter)}?v={digest}"
 
@@ -1296,7 +1286,7 @@ def chapter_page(book, chapter, lang="en"):
     source = source_language(book)
     # What is the same on other pages comes in chapter_shared and reader_shared.
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
-            "source": source, "records": page_records(records, lang),
+            "source": source,
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             "compare": comparison_verses(records, lang),

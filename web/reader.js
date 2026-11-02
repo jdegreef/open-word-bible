@@ -1,6 +1,6 @@
 // Open Word Bible chapter reader. Data comes from the JSON block the build
 // embeds in the page, with what every language's page of the chapter
-// shares (window.OWB_CHAPTER: the source words, each sentence's source, the
+// shares (window.OWB_CHAPTER: the sentence records, the source words, the
 // cross-references) and what every chapter page of the language shares
 // (window.OWB_LANG: the interface text, the book names), from the two
 // scripts the page loads first (scripts/build_site.py chapter_shared,
@@ -9,9 +9,13 @@
   "use strict";
   var DATA = JSON.parse(document.getElementById("owb-data").textContent);
   [window.OWB_LANG, window.OWB_CHAPTER].forEach(function (shared) {
-    for (var k in shared) if (k !== "sources") DATA[k] = shared[k];
+    for (var k in shared) DATA[k] = shared[k];
   });
-  DATA.records.forEach(function (r) { r.source = window.OWB_CHAPTER.sources[r.id]; });
+  // The records carry every language's decisions; the reader shows the
+  // meaning decisions and this language's own.
+  DATA.records.forEach(function (r) {
+    r.decisions = r.decisions.filter(function (d) { return d.language === null || d.language === DATA.lang; });
+  });
   var STORE = "owb.settings";
 
   // Interface text in the page's language (i18n/<lang>.json, reader.ui).

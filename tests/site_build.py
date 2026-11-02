@@ -46,9 +46,8 @@ def page_data(page):
         # from one made now (a test may have changed what is translated).
         if loaded[path] != src:
             text = (built_site() / path.lstrip("/")).read_text(encoding="utf-8")
-        shared = json.loads(text[text.index("=") + 1:].rstrip().rstrip(";"))
-        data.update({k: v for k, v in shared.items() if k != "sources"})
-        for r in data["records"]:
-            if r["id"] in shared.get("sources", {}):
-                r["source"] = shared["sources"][r["id"]]
+        data.update(json.loads(text[text.index("=") + 1:].rstrip().rstrip(";")))
+    # As reader.js does: the meaning decisions and the page language's own.
+    for r in data["records"]:
+        r["decisions"] = [d for d in r["decisions"] if d["language"] in (None, data["lang"])]
     return data
