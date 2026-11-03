@@ -534,6 +534,69 @@
     more.focus({ preventScroll: true });
   }
 
+  // "Why?" at the end of each sentence (Study view): the few decisions that
+  // most shape how it reads, as the sense chosen and the main reading set
+  // aside, in the same pop-up as a footnote. Each opens its card in the
+  // panel; "See the reasoning" opens them all. What comes first: an
+  // uncertain call, then one with a footnote, then the meaning of words,
+  // grammar and manuscript readings, then any with an alternative.
+  var WHY_CATEGORIES = { word_sense: 1, grammar: 1, text_variant: 1, idiom: 1, theology: 1 };
+
+  function whyDecisions(r) {
+    var ds = decisionsFor(r), all = ds.meaning.concat(ds.rendering);
+    function score(d) {
+      return (d.uncertain ? 8 : 0) + (d.footnote ? 4 : 0) + (WHY_CATEGORIES[d.category] ? 2 : 0) +
+        (d.alternatives.length ? 1 : 0);
+    }
+    return all.map(function (d, i) { return { d: d, s: score(d), i: i }; })
+      .filter(function (x) { return x.d.category !== "setting_alternative"; })
+      .sort(function (a, b) { return b.s - a.s || a.i - b.i; })
+      .slice(0, 3).map(function (x) { return x.d; });
+  }
+
+  function openWhy(button, r) {
+    var same = popover && popover.opener === button;
+    closeNote(false);
+    if (same) return;
+    var box = el("div", "fn-pop why-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", t("why_title"));
+    var head = el("p", "fn-pop-head");
+    head.appendChild(el("span", "note-ref", verseRange(r)));
+    head.appendChild(el("span", "fn-pop-cat", t("why_title")));
+    box.appendChild(head);
+    var list = el("ul", "why-list");
+    whyDecisions(r).forEach(function (d) {
+      var item = el("li");
+      var b = el("button", "why-item");
+      b.type = "button";
+      b.appendChild(el("strong", null, render(d.choice)));
+      if (d.alternatives.length) {
+        b.appendChild(el("span", "why-not", t(d.uncertain ? "fn_or" : "why_not") + render(d.alternatives[0])));
+      }
+      if (d.uncertain) b.appendChild(el("span", "why-unsure", t("uncertain")));
+      b.addEventListener("click", function () { closeNote(false); select(r, null, d.id); });
+      item.appendChild(b);
+      list.appendChild(item);
+    });
+    box.appendChild(list);
+    if (t("notes_language")) box.appendChild(el("p", "fine", t("notes_language")));
+    var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
+    more.type = "button";
+    more.addEventListener("click", function () { closeNote(false); select(r); });
+    box.appendChild(more);
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = button;
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    var first = box.querySelector(".why-item") || more;
+    first.focus({ preventScroll: true });
+  }
+
   // Under the letter, kept inside the window.
   function placeNote() {
     if (!popover) return;
@@ -690,6 +753,15 @@
         if (i === parts.length - 1 && !plain()) {
           var echoes = echoTags(r);
           if (echoes) into.appendChild(echoes);
+          if (whyDecisions(r).length) {
+            var why = el("button", "why-mark", t("why_mark"));
+            why.type = "button";
+            why.setAttribute("aria-label", t("why_label").replace("{ref}", verseRange(r)));
+            why.setAttribute("aria-expanded", "false");
+            why.addEventListener("click", function (e) { e.stopPropagation(); openWhy(why, r); });
+            why.addEventListener("keydown", function (e) { e.stopPropagation(); });
+            into.appendChild(why);
+          }
         }
         span.addEventListener("click", function () {
           // Selecting text is not choosing the verse.
