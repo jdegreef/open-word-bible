@@ -2565,3 +2565,31 @@ button.button { font-family: inherit; cursor: pointer; }
 .groups-post-text { white-space: pre-wrap; overflow-wrap: anywhere; }
 .plan-ticks.small .tick { width: 8px; height: 8px; }
 .groups-invite .field-row input { flex: 1; min-width: 0; }
+
+/* The reader's edition (/<book>/read/, web/edition.js): a whole book set
+   like a printed one, with only the chapter numbers marking the way. */
+.edition { max-width: 34em; margin: 0 auto; padding-bottom: 64px; }
+.edition-head { padding: 40px 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.edition-head h1 { font-family: var(--display); font-weight: 600; letter-spacing: -.02em;
+  font-size: clamp(32px, 5vw, 46px); line-height: 1.15; margin: 0 0 12px; }
+.edition-head .dek { font-size: 18px; }
+.edition-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 18px; font-size: 14.5px; }
+.edition-text { font-family: var(--read-font); font-size: calc(22px * var(--read-scale));
+  line-height: calc(1.8 * var(--read-leading)); }
+.ed-chapter { min-height: 40vh; margin: 0 0 1.4em; }
+.ed-chapter[data-drawn] { min-height: 0; }
+.ed-chapter-h { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ed-body p { margin: 0; text-indent: 1.4em; }
+.ed-body p:first-child { text-indent: 0; }
+.ed-poem p { text-indent: 0; }
+.ed-line { display: block; padding-left: 1.5em; text-indent: -1.5em; }
+.ed-poem .ed-stanza { margin-top: .9em; }
+.ed-num { float: left; font-family: var(--display); font-weight: 600; color: var(--accent);
+  font-size: 2.9em; line-height: .9; margin: .06em .18em 0 0; }
+/* Poetry's hanging lines would run under a floated numeral: it takes its own line. */
+.ed-poem .ed-num { float: none; display: block; line-height: 1; margin: 0 0 .1em; }
+.ed-fallback { color: var(--muted); }
+.ed-loading { color: var(--muted); font-family: var(--sans, inherit); font-size: 15px; }
+/* On a chapter page, the way into the edition shows in the views for reading. */
+.chap-edition { display: none; text-decoration: none; }
+body.plain .chap-edition { display: inline-flex; }

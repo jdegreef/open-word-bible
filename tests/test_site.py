@@ -601,6 +601,36 @@ class SiteTest(unittest.TestCase):
         self.assertNotIn('data-setting="units"', gen1)
         self.assertIn("{{units:450 feet|300 cubits}}", json.dumps(self.chapter_data("gen/6")["records"]))
 
+    def test_every_book_has_a_readers_edition(self):
+        # /<book>/read/ in every language: a section for each chapter, which
+        # web/edition.js fills from the verse files; not indexed, since its
+        # text comes from script.
+        for lang in build_site.LANGUAGES:
+            for book, _ in build_site.books():
+                path = self.out / build_site.url(lang, build_site.edition_url(book)).lstrip("/") / "index.html"
+                self.assertTrue(path.is_file(), path)
+        page = (self.out / "jhn" / "read" / "index.html").read_text(encoding="utf-8")
+        chapters = [p.chapter for p in dict(build_site.books())["JHN"]]
+        self.assertEqual([int(c) for c in re.findall(r'class="ed-chapter" id="c(\d+)"', page)], chapters)
+        self.assertIn('<meta name="robots" content="noindex">', page)
+        self.assertNotIn("/jhn/read/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        data = json.loads(re.search(r'<script type="application/json" id="edition-data">(.*?)</script>', page, re.S)[1])
+        self.assertEqual((data["book"], data["lang"], data["chapters"]), ("JHN", "en", chapters))
+        # The book page and the chapter pages lead to it.
+        self.assertIn('href="/jhn/read/"', (self.out / "jhn" / "index.html").read_text(encoding="utf-8"))
+        self.assertIn('class="chap-goto chap-edition" href="/jhn/read/"',
+                      (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8"))
+        self.assertIn('class="chap-goto chap-edition" href="/es/jhn/read/"',
+                      (self.out / "es" / "jhn" / "3" / "index.html").read_text(encoding="utf-8"))
+
+    def test_verse_files_mark_paragraph_starts(self):
+        # Each chapter's verse file says which verses open a paragraph, for
+        # the reader's edition: the first always does.
+        jhn3 = json.loads((self.out / "verses" / "JHN" / "3.json").read_text(encoding="utf-8"))
+        self.assertEqual(jhn3["p"][0], 1)
+        self.assertEqual(jhn3["p"], sorted(jhn3["p"]))
+        self.assertTrue(set(map(str, jhn3["p"])) <= set(jhn3["v"]))
+
     def test_chapter_pages_offer_the_presets(self):
         # The built-in presets, in order, at the top of the wording settings,
         # with the box reader.js draws the reader's own presets in.
