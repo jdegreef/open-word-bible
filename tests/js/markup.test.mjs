@@ -65,6 +65,28 @@ test("the reader keeps a value for every setting", () => {
   }
 });
 
+test("the reader's presets are the build's, and set only real options", () => {
+  const reader = read("web/reader.js");
+  const order = JSON.parse(/var PRESET_ORDER = (\[[^\]]*\]);/.exec(reader)[1]);
+  const built = /^PRESETS = \(([^)]*)\)/m.exec(read("scripts/build_site.py"))[1];
+  assert.deepEqual(order, [...built.matchAll(/"([a-z]+)"/g)].map((m) => m[1]));
+  const body = /var PRESETS = \{([\s\S]*?)\n  \};/.exec(reader)[1];
+  const presets = vm.runInNewContext("({" + body + "})");
+  assert.deepEqual(Object.keys(presets), order);
+  for (const [name, values] of Object.entries(presets)) {
+    for (const [key, value] of Object.entries(values)) {
+      if (key === "level") assert.match(value, /^[LBR]$/, name);
+      else {
+        assert.ok(M.SETTINGS.includes(key), `${name}: ${key}`);
+        assert.ok(value === 0 || value === 1, `${name}: ${key}`);
+      }
+    }
+  }
+  // Standard is the defaults.
+  for (const name of M.SETTINGS) if (name in presets.standard) assert.equal(presets.standard[name], M.defaults()[name], name);
+  assert.equal(presets.standard.level, "B");
+});
+
 test("every setting used in content/ is one the reader knows", () => {
   const span = new RegExp(M.SPAN.source, "g"), used = new Set();
   for (const dir of readdirSync(join(ROOT, "content"), { withFileTypes: true })) {

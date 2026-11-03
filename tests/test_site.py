@@ -601,6 +601,17 @@ class SiteTest(unittest.TestCase):
         self.assertNotIn('data-setting="units"', gen1)
         self.assertIn("{{units:450 feet|300 cubits}}", json.dumps(self.chapter_data("gen/6")["records"]))
 
+    def test_chapter_pages_offer_the_presets(self):
+        # The built-in presets, in order, at the top of the wording settings,
+        # with the box reader.js draws the reader's own presets in.
+        page = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
+        wording = page[page.index('id="wording"'):]
+        found = re.findall(r'data-preset="([a-z]+)"', wording)
+        self.assertEqual(tuple(found), build_site.PRESETS)
+        self.assertLess(wording.index("presets-control"), wording.index('data-setting="gender"'))
+        self.assertIn('id="my-presets"', wording)
+        self.assertIn('id="hint-presets"', page)
+
     def test_old_testament_pages_offer_the_divine_name(self):
         # The divine name (the LORD or Yahweh) on Old Testament pages, the
         # title Christ (Christ or Messiah) on New Testament ones.

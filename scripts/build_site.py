@@ -1345,6 +1345,13 @@ def chapter_page(book, chapter, lang="en"):
     red_letter = ("\n  " + control("words_of_jesus", "red_letter", [("0", t(lang, "reader.black")),
                                                                      ("1", t(lang, "reader.red"))])
                   if any("wj" in r for r in records) else "")
+    # Presets set several choices at once (web/reader.js PRESETS); the
+    # reader's own saved presets are drawn under them by reader.js.
+    preset_buttons = "".join(f'<button type="button" data-preset="{name}">{t(lang, "reader.preset_" + name)}</button>'
+                             for name in PRESETS)
+    presets = (f'<div class="control presets-control"><span>{t(lang, "reader.presets")}</span> '
+               f'<span class="seg" role="group" aria-label="{t(lang, "reader.presets")}">{preset_buttons}</span></div>\n'
+               f'  <div class="my-presets" id="my-presets" hidden></div>')
     body = f"""
 <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false" aria-controls="settings">
   <span>{t(lang, "reader.settings")}</span> <span class="settings-summary" id="settings-summary"></span>
@@ -1357,6 +1364,7 @@ def chapter_page(book, chapter, lang="en"):
     <span class="wording-label">{t(lang, "reader.wording")}</span> <span class="wording-summary" id="wording-summary"></span>
   </button>
   <div class="wording" id="wording">
+  {presets}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
   {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
@@ -1368,7 +1376,7 @@ def chapter_page(book, chapter, lang="en"):
                             ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
   {control("verse_numbers", "verse_numbers", [("1", t(lang, "reader.show")), ("0", t(lang, "reader.hide"))], " numbers-control")}
 </div>
-<p class="hint"><span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
+<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -2542,6 +2550,10 @@ def examples(lang="en"):
                                        for r in chapter_records(e[0], e[1]))] or list(EXAMPLES)
 # The reader settings an example can switch, with the reader's labels for
 # the setting and its options.
+# The reader's built-in presets, in the order the settings bar shows them;
+# web/reader.js PRESETS holds what each one sets.
+PRESETS = ("standard", "classic", "plain")
+
 EXAMPLE_SETTINGS = {"divine_name": ("reader.name", ("reader.lord", "reader.yahweh")),
                     "christos": ("reader.title", ("reader.christ", "reader.messiah"))}
 
