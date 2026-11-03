@@ -6,6 +6,7 @@ from accounts import views as accounts
 from api import views
 from feedback import views as feedback
 from groups import views as groups
+from logia import views as logia
 
 admin.site.site_header = "Open Word Bible"
 admin.site.site_title = "Open Word Bible admin"
@@ -28,6 +29,8 @@ urlpatterns = [
     path("api/auth/sign-out", accounts.sign_out),
     path("api/auth/passkey/options", passkeys.sign_in_options),
     path("api/auth/passkey", passkeys.sign_in),
+    path("api/auth/handoff", logia.handoff),
+    path("api/auth/handoff/redeem", logia.redeem),
     path("api/me", accounts.me),
     path("api/me/devices", controls.devices),
     path("api/me/devices/sign-out-others", controls.sign_out_others),
@@ -49,6 +52,10 @@ urlpatterns = [
     path("api/groups/<int:group_id>/posts", groups.posts),
     path("api/groups/<int:group_id>/posts/<int:post_id>", groups.post),
     path("api/reading", accounts.reading),
+    path("api/logia/me", logia.me),
+    path("api/logia/saved/<str:key>", logia.saved),
+    path("api/logia/likes", logia.like_counts),
+    path("api/logia/likes/<str:key>", logia.liked),
     path("api/messages", feedback.messages),
     path("api/admin/", include("staff.urls")),
     path("healthz", views.healthz),

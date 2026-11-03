@@ -46,7 +46,7 @@ class SiteTest(unittest.TestCase):
     def test_account_pages_are_built_but_not_indexed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
-                             ("reset-password", 'id="reset-form"')):
+                             ("reset-password", 'id="reset-form"'), ("handoff", 'id="handoff"')):
             page = (self.out / name / "index.html").read_text(encoding="utf-8")
             self.assertIn('<meta name="robots" content="noindex">', page)
             self.assertIn(marker, page)
@@ -64,6 +64,15 @@ class SiteTest(unittest.TestCase):
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
             self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
             self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
+
+    def test_handoff_page_hands_readers_to_logia_in_each_language(self):
+        # Logia shares these accounts: /handoff/?site=logia signs the reader in
+        # here and sends them back (backend/logia/).
+        for lang in build_site.LANGUAGES:
+            page = (self.out / build_site.url(lang, "/handoff/").strip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<section class="auth" id="handoff" data-site="logia">', page)
+            self.assertIn(build_site.t(lang, "handoff.continue").replace("{site}", "Logia"), page)
+            self.assertIn('id="handoff-text"', page)
 
     def test_account_page_lists_the_readers_messages(self):
         page = (self.out / "es" / "account" / "index.html").read_text(encoding="utf-8")

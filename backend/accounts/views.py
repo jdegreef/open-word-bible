@@ -92,9 +92,13 @@ def error(detail, code, http_status):
 
 
 def foreign(request):
-    """A request from a page that is not Open Word Bible's."""
+    """A request from a page that is not Open Word Bible's. A partner site
+    (settings.PARTNER_SITES) may call the API but never sign in through it:
+    readers sign in here, and the partner gets a token by the hand-off
+    (logia/views.py)."""
     origin = request.headers.get("Origin")
-    return bool(origin and origin not in settings.CORS_ALLOWED_ORIGINS)
+    partners = {p.rstrip("/") for p in getattr(settings, "PARTNER_SITES", {}).values()}
+    return bool(origin and (origin not in settings.CORS_ALLOWED_ORIGINS or origin in partners))
 
 
 FOREIGN = ("Sign in on Open Word Bible.", "forbidden", status.HTTP_403_FORBIDDEN)
