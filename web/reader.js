@@ -554,7 +554,9 @@
       .slice(0, 3).map(function (x) { return x.d; });
   }
 
-  function openWhy(button, r) {
+  // only: the decisions to show (an uncertain phrase's own); without it,
+  // the sentence's whyDecisions.
+  function openWhy(button, r, only) {
     var same = popover && popover.opener === button;
     closeNote(false);
     if (same) return;
@@ -567,7 +569,7 @@
     head.appendChild(el("span", "fn-pop-cat", t("why_title")));
     box.appendChild(head);
     var list = el("ul", "why-list");
-    whyDecisions(r).forEach(function (d) {
+    (only || whyDecisions(r)).forEach(function (d) {
       var item = el("li");
       var b = el("button", "why-item");
       b.type = "button";
@@ -676,13 +678,25 @@
       var lang = textLang(r);
       var parts = versePieces(r, lang, settings.level);
       // Where a decision is marked uncertain, the meaning is open to question.
-      var unsure = ds.meaning.concat(ds.rendering).some(function (d) { return d.uncertain; });
+      var uncertain = ds.meaning.concat(ds.rendering).filter(function (d) { return d.uncertain; });
+      var unsure = uncertain.length > 0;
       if (unsure) unsureCount++;
+      // With uncertainty marked, an uncertain call about a few words marks
+      // just the English they became; one about most of the sentence (where
+      // a speech ends), or a sentence not yet linked word by word, marks the
+      // whole sentence. Each source word goes to the narrowest call on it.
+      var total = r.source.tokens.length, unsureTok = {}, broad = false;
+      if (settings.uncertain) {
+        uncertain.slice().sort(function (a, b) { return b.tokens.length - a.tokens.length; }).forEach(function (d) {
+          if (!hasLinks(r) || d.tokens.length * 2 >= total) { broad = true; return; }
+          d.tokens.forEach(function (id) { unsureTok[id] = d; });
+        });
+      }
       var chosen = current && current.id === r.id;
       var poem = poetic(r, lang);
       parts.forEach(function (part, i) {
         var span = el("span", (lang === settings.lang ? "verse" : "verse fallback") +
-                           (poem ? " poem" : "") + (settings.uncertain && unsure ? " unsure" : ""));
+                           (poem ? " poem" : "") + (broad ? " unsure" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
           span.tabIndex = 0;
@@ -727,6 +741,24 @@
           }
           var w = el("span", "aw" + (piece[2] ? " wj" : ""), text);
           w.dataset.tokens = piece[1].join(" ");
+          var doubt = [];
+          piece[1].forEach(function (id) {
+            var d = unsureTok[id];
+            if (d && doubt.indexOf(d) < 0) doubt.push(d);
+          });
+          if (doubt.length) {
+            // The other reading is one tap away.
+            w.classList.add("unsure-w");
+            w.tabIndex = 0;
+            w.setAttribute("role", "button");
+            w.setAttribute("aria-label", text + ": " + t("uncertain"));
+            w.setAttribute("aria-expanded", "false");
+            w.addEventListener("click", function (e) { e.stopPropagation(); openWhy(w, r, doubt); });
+            w.addEventListener("keydown", function (e) {
+              e.stopPropagation();
+              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openWhy(w, r, doubt); }
+            });
+          }
           // In the chosen sentence, pointing at an English word lights the
           // Greek it came from in the panel.
           if (chosen) {
