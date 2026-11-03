@@ -4,7 +4,7 @@ summary: Bao gồm hay truyền thống, Đấng Christ hay Đấng Mê-si-a, ng
 date: 2026-10-10
 order: 4
 section: method
-source: 2998c7f225f5
+source: f88c24659512
 ---
 Người đọc Kinh Thánh không đồng ý với nhau về một số điều mà, nói cho chính xác, chỉ là chuyện cách diễn đạt. Có nên nói “anh chị em” thay cho “anh em” khi cả hội thánh được nhắc đến không? Danh hiệu của Đức Giê-xu nên là “Đấng Christ” hay “Đấng Mê-si-a”? Đại từ chỉ Đức Chúa Trời có nên viết hoa không? Danh của Đức Chúa Trời nên viết là “CHÚA” hay “Gia-vê”? Open Word Bible để mỗi người đọc tự chọn.
 
@@ -12,7 +12,7 @@ Người đọc Kinh Thánh không đồng ý với nhau về một số điều
 
 - **Ngôn ngữ giới tính.** Mặc định là cách nói bao gồm, với cách nói truyền thống là một lựa chọn. Ở những chỗ bản gốc nói về mọi người, bản mặc định nói đúng như vậy. Bản tiếng Anh của Giăng 1:4 có hai lựa chọn, “the light of all people” (“ánh sáng cho mọi người”) và, theo cách truyền thống, “the light of men” (“ánh sáng của loài người”, nghĩa đen là “của đàn ông”). Trong tiếng Việt, “mọi người” đã bao gồm tất cả, nên câu ấy không cần cài đặt: “{{OWB:JHN.1.4.s1:B}}” Trong bản tiếng Việt, cài đặt này chủ yếu dùng cho chữ “anh chị em”, với “anh em” là lựa chọn truyền thống. Đức Chúa Trời, Đấng Christ và những người nam được nêu tên thì không bao giờ bị thay đổi.
 - **Danh hiệu.** Mặc định là “Đấng Christ”, với “Đấng Mê-si-a” là một lựa chọn. Từ Hy Lạp là một danh hiệu có nghĩa là “người được xức dầu”, và chính sách Phúc Âm Giăng giải thích điều đó ở 1:41.
-- **Đại từ chỉ Đức Chúa Trời.** Mặc định là “ngài” viết thường, giống như bản gốc vốn không có chữ hoa; “Ngài” viết hoa là một lựa chọn.
+- **Đại từ chỉ Đức Chúa Trời.** Mặc định là “Ngài” viết hoa, để bày tỏ lòng tôn kính; “ngài” viết thường là một lựa chọn, giống như bản gốc vốn không có chữ hoa.
 - **Danh của Đức Chúa Trời.** Trong Cựu Ước, danh riêng của Đức Chúa Trời mặc định được viết là “CHÚA”, theo tục lệ cổ xưa không đọc thành tiếng danh ấy, và “Gia-vê” là một lựa chọn.
 - **Đơn vị đo lường.** Ở những chỗ một đoạn văn có số đo, mặc định là đơn vị hiện đại, với đơn vị nguyên thủy là một lựa chọn. Con tàu của Nô-ê dài 135 mét, hay 300 cu-đê (Sáng Thế Ký 6:15); các chum nước ở Ca-na chứa 80 đến 120 lít, hay hai hoặc ba thùng (Giăng 2:6). Bản tiếng Việt dùng hệ mét, còn bản tiếng Anh dùng đơn vị của Mỹ (450 feet, 20 đến 30 gallon). Cấp độ Sát nghĩa luôn giữ đơn vị cổ.
 - **Ngôi thứ hai số nhiều trong tiếng Tây Ban Nha.** *Ustedes*, như người Mỹ La-tinh nói, hoặc *vosotros*, như ở Tây Ban Nha. Tiếng Việt không cần cài đặt này.

@@ -84,6 +84,9 @@ class VectorsTest(unittest.TestCase):
     def test_settings_match_the_reader(self):
         self.assertEqual(list(markup.SETTINGS), VECTORS["settings"])
 
+    def test_defaults_match_the_reader(self):
+        self.assertEqual(markup.DEFAULTS, VECTORS["defaults"])
+
     def test_cases(self):
         for case in VECTORS["cases"]:
             with self.subTest(case["name"]):

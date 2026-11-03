@@ -11,7 +11,7 @@ Readers of English Bibles disagree about some things that are, strictly, matters
 
 - **Gender language.** Inclusive by default, Traditional as an option. Where the original means everyone, the default says so: John 1:4 reads "{{OWB:JHN.1.4.s1:B}}", and Traditional reads "the light of men". God, Christ and named men are never changed.
 - **Title.** "Christ" by default, "Messiah" as an option. The Greek word is a title meaning "anointed one", and John's Gospel itself explains it in 1:41.
-- **Pronouns for God.** Lowercase "he" by default, like the original, which has no capital letters; "He" as an option.
+- **Pronouns for God.** Capitalised "He" by default, out of reverence; lowercase "he" as an option, like the original, which has no capital letters.
 - **Name of God.** In the Old Testament, God's personal name is written "the LORD" by default, following the ancient custom of not saying it aloud, and "Yahweh" as an option.
 - **Measures.** Where a passage has a measurement, modern units by default and the original units as an option. Noah's ark is 450 feet long, or 300 cubits (Genesis 6:15); the jars at Cana held 20 to 30 gallons, or two or three measures (John 2:6). The Literal level always keeps the ancient unit.
 - **Spanish plural "you".** *Ustedes*, as spoken in Latin America, or *vosotros*, as in Spain.

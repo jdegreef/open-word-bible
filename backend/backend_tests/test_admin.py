@@ -741,9 +741,9 @@ class ExportTest(AdminTestCase):
         d = self.admin.get("/api/admin/export/").json()
         en = next(lang for lang in d["languages"] if lang["code"] == "en")
         self.assertEqual(en["sentences"], {"L": 2, "B": 2, "R": 2})
-        self.assertIn({"name": "deity_pronoun", "options": ["he", "He"]}, en["settings"])
+        self.assertIn({"name": "deity_pronoun", "options": ["he", "He"], "default": 1}, en["settings"])
         es = next(lang for lang in d["languages"] if lang["code"] == "es")
-        self.assertIn({"name": "plural_you", "options": ["ustedes", "vosotros"]}, es["settings"])
+        self.assertIn({"name": "plural_you", "options": ["ustedes", "vosotros"], "default": 0}, es["settings"])
         self.assertEqual(len(d["books"]), 66)
 
     def test_preview(self):
@@ -751,6 +751,11 @@ class ExportTest(AdminTestCase):
         self.assertEqual(d["verses"], 3)
         self.assertEqual(d["missing"], 0)
         self.assertEqual(d["samples"][0], {"verse": "JHN.3.16", "label": "John 3:16", "text": "God gave His Son,"})
+        # Pronouns for God are capitalised by default; lowercase is asked for.
+        d = self.admin.get("/api/admin/export/preview/?lang=en&level=B").json()
+        self.assertEqual(d["samples"][0]["text"], "God gave His Son,")
+        d = self.admin.get("/api/admin/export/preview/?lang=en&level=B&settings=deity_pronoun:0").json()
+        self.assertEqual(d["samples"][0]["text"], "God gave his Son,")
         d = self.admin.get("/api/admin/export/preview/?lang=es&level=B").json()
         self.assertEqual((d["verses"], d["missing"], d["missing_by_book"]), (1, 2, {"JHN": 2}))
 
@@ -762,7 +767,7 @@ class ExportTest(AdminTestCase):
         z = zipfile.ZipFile(io.BytesIO(r.content))
         self.assertEqual(z.namelist(), ["manifest.json", "43-JHN.usfm"])
         john = z.read("43-JHN.usfm").decode()
-        self.assertIn("\\v 16 God gave his Son,\n\\v 17 not to condemn.\n\\v 18 x\n", john)
+        self.assertIn("\\v 16 God gave His Son,\n\\v 17 not to condemn.\n\\v 18 x\n", john)
         manifest = json.loads(z.read("manifest.json"))
         self.assertEqual((manifest["verses"], manifest["missing"]["count"]), (3, 0))
         action = AdminAction.objects.get(action="export.download")

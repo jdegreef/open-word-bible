@@ -1,10 +1,10 @@
 """Reader-setting alternatives inside translation text.
 
 A span looks like {{gender:all people|men}}: a setting name, then options
-separated by "|". The first option is the default. A settings dict maps a
-setting name to the index of the option to show. A setting name not in
-SETTINGS, a setting missing from the dict, or an index out of range all show
-the default.
+separated by "|". The first option is the default, except where DEFAULTS
+names another. A settings dict maps a setting name to the index of the
+option to show. A setting name not in SETTINGS, a setting missing from the
+dict, or an index out of range all show the default.
 """
 import re
 from typing import NamedTuple
@@ -12,6 +12,13 @@ from typing import NamedTuple
 # The settings a span may name: each has a control in the reader
 # (web/markup.js SETTINGS is the same list).
 SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you")
+
+# The option a setting shows until the reader picks one, where it is not the
+# first: pronouns for God are capitalised by default ("He"), though the span
+# is written lowercase first, {{deity_pronoun:he|He}}, because the
+# capitalised form is the lowercase one with capitals (validate checks).
+# web/markup.js DEFAULTS is the same.
+DEFAULTS = {"deity_pronoun": 1}
 
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 
@@ -226,13 +233,21 @@ def quotations(text, inside=False, inner=False):
     return out
 
 
+def default(name, options):
+    """The option a {{name:...}} span shows when no setting picks one."""
+    index = DEFAULTS.get(name, 0) if name in SETTINGS else 0
+    return options[index] if index < len(options) else options[0]
+
+
 def render(text, settings=None):
     settings = settings or {}
 
     def choose(m):
         options = m[2].split("|")
-        index = settings.get(m[1], 0) if m[1] in SETTINGS else 0
-        return options[index] if isinstance(index, int) and 0 <= index < len(options) else options[0]
+        index = settings.get(m[1]) if m[1] in SETTINGS else None
+        if isinstance(index, int) and 0 <= index < len(options):
+            return options[index]
+        return default(m[1], options)
 
     return SPAN.sub(choose, text)
 

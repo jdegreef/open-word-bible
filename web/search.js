@@ -151,12 +151,18 @@
 
   // The reader's settings (web/reader.js keeps them as owb.settings), so a
   // verse reads here as it does in the reader.
+  // Pronouns for God are capitalised by default (web/markup.js DEFAULTS,
+  // which this page may not load); a copy saved before that (no v, or v
+  // below 2) held lowercase only as the old default, so it is dropped.
+  var DEFAULTS = { deity_pronoun: 1 };
   function settings() {
     var s = { level: "B" };
     try {
-      var saved = JSON.parse(localStorage.getItem("owb.settings") || "{}");
+      var saved = JSON.parse(localStorage.getItem("owb.settings") || "{}") || {};
       for (var k in saved) s[k] = saved[k];
+      if (!(s.v >= 2)) delete s.deity_pronoun;
     } catch (e) { /* defaults */ }
+    for (var d in DEFAULTS) if (!(d in s)) s[d] = DEFAULTS[d];
     if (LEVELS.indexOf(s.level) < 0) s.level = "B";
     return s;
   }

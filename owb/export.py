@@ -213,7 +213,8 @@ def build(records, lang, level, fmt="usfm", numbering="english", settings=None, 
         "numbering_note": ("English Bible (KJV) verse numbers; psalm titles are chapter titles"
                            if numbering == "english" else
                            "the source text's numbers: Hebrew in the Old Testament, so a psalm title is verse 1"),
-        "settings": {name: labels[settings.get(name, 0)] for name, labels in known.items()},
+        "settings": {name: labels[settings.get(name, markup.DEFAULTS.get(name, 0))]
+                     for name, labels in known.items()},
         "books": in_file,
         "verses": len(verses),
         "combined": [{"verse": f"{e['book']}.{e['chapter']}.{e['verse']}", "holds": e["holds"]}

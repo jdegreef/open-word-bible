@@ -2565,11 +2565,11 @@ def example_piece(raw):
         options = m[2].split("|")
         out.append(html.escape(raw[at:m.start()]))
         if m[1] not in EXAMPLE_SETTINGS:
-            out.append(html.escape(options[0]))
+            out.append(html.escape(markup.default(m[1], options)))
             at = m.end()
             continue
         out.append(f'<span class="set" data-set="{m[1]}" data-o="{html.escape(json.dumps(options, ensure_ascii=False))}">'
-                   f'{html.escape(options[0])}</span>')
+                   f'{html.escape(markup.default(m[1], options))}</span>')
         at = m.end()
     out.append(html.escape(raw[at:]))
     return "".join(out)

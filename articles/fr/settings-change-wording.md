@@ -4,7 +4,7 @@ summary: Inclusif ou traditionnel, Christ ou Messie, il ou Il. Pourquoi ce sont 
 date: 2026-10-10
 order: 4
 section: method
-source: 2998c7f225f5
+source: f88c24659512
 ---
 Les lecteurs de la Bible ne s'accordent pas sur certaines questions qui sont, à strictement parler, des questions de formulation. Faut-il dire "frères et sœurs" plutôt que "frères" quand toute l'Église est visée ? Le titre de Jésus doit-il être "Christ" ou "Messie" ? Les pronoms qui désignent Dieu prennent-ils une majuscule ? Le nom de Dieu doit-il s'écrire "le SEIGNEUR" ou "Yahvé" ? Open Word Bible laisse chaque lecteur choisir.
 
@@ -12,7 +12,7 @@ Les lecteurs de la Bible ne s'accordent pas sur certaines questions qui sont, à
 
 - **Genre.** Inclusif par défaut, Traditionnel en option. Là où l'original parle de tout le monde, le texte par défaut le dit : Jean 1:4 dit "{{OWB:JHN.1.4.s1:B}}", et l'option Traditionnel dit "la lumière des hommes". Le dossier explique pourquoi : en français, "homme" est de moins en moins compris comme désignant tout être humain. Dieu, le Christ et les hommes nommés ne changent jamais.
 - **Titre.** "Christ" par défaut, "Messie" en option. Le mot grec est un titre qui veut dire "oint", et l'Évangile de Jean l'explique lui-même en 1:41.
-- **Pronoms pour Dieu.** "il" en minuscule par défaut, comme l'original, qui n'a pas de majuscules ; "Il" en option.
+- **Pronoms pour Dieu.** "Il" avec une majuscule par défaut, par révérence ; "il" en minuscule en option, comme l'original, qui n'a pas de majuscules.
 - **Nom de Dieu.** Dans l'Ancien Testament, le nom personnel de Dieu s'écrit "le SEIGNEUR" par défaut, selon l'usage ancien de ne pas le prononcer à voix haute, et "Yahvé" en option.
 - **Mesures.** Là où un passage donne une mesure, des unités modernes par défaut, et les unités de l'original en option. L'arche de Noé mesure 135 mètres de long, ou 300 coudées (Genèse 6:15) ; les jarres de Cana contenaient 80 à 120 litres, ou deux ou trois mesures (Jean 2:6). Le niveau Littérale garde toujours l'unité ancienne.
 

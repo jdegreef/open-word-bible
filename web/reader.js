@@ -33,12 +33,12 @@
   // with "at", when the reader last changed one, so that a signed-in
   // reader's settings follow them to their other devices (site.js syncs
   // owb.settings with the account; the latest device's copy wins whole).
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0, view: 0,
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0, plural_you: 0, view: 0,
                    headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0, verse_numbers: 0 };
   var settingsAt = 0;
   function loadSettings() {
     try {
-      var saved = JSON.parse(localStorage.getItem(STORE) || "{}") || {};
+      var saved = OWBMarkup.fromSaved(JSON.parse(localStorage.getItem(STORE) || "{}"));
       for (var k in settings) if (k in saved && k !== "lang") settings[k] = saved[k];
       settingsAt = saved.at || 0;
     } catch (e) { /* storage unavailable: use defaults */ }
@@ -48,7 +48,7 @@
 
   // A shared link may carry the sender's settings (?level=L&title=1): they
   // apply to this visit and are not saved unless the reader changes one.
-  var DEFAULTS = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, plural_you: 0 };
+  var DEFAULTS = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, plural_you: 0 };
   var PARAMS = { level: "level", gender: "gender", christos: "title", divine_name: "name",
                  deity_pronoun: "pronoun", plural_you: "plural" };
   (function () {
@@ -205,6 +205,7 @@
   function save() {
     var kept = {};
     for (var k in settings) if (k !== "lang") kept[k] = settings[k];
+    kept.v = OWBMarkup.SETTINGS_VERSION;
     kept.at = settingsAt = Date.now();
     try { localStorage.setItem(STORE, JSON.stringify(kept)); } catch (e) { /* ignore */ }
     document.dispatchEvent(new Event("owb:settings"));

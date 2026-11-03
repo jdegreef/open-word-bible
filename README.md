@@ -149,6 +149,11 @@ option is the default:
 
     the light of {{gender:all people|men}}
 
+The one exception is `deity_pronoun`: its span is written lowercase first,
+`{{deity_pronoun:he|He}}`, but the reader, the site and exports show the
+capitalised "He" until a reader picks lowercase (`DEFAULTS` in
+`owb/markup.py` and `web/markup.js`).
+
 Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
 `plural_you` (a future `spelling` setting needs a reader control first).
 `owb/markup.py` and `web/markup.js` list and render the spans;
