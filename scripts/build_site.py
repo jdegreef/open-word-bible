@@ -1511,7 +1511,8 @@ def book_page(book, lang="en"):
 <h1>{html.escape(name)}</h1>
 <p class="dek">{display(intro["summary"])}</p>
 <p class="notice">{ui["draft"]}</p>
-<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;&rarr;</a></p>
+<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;&rarr;</a>
+<a class="button ghost" href="{url(lang, edition_url(book))}">{catalog(lang)["edition"]["read"]}</a></p>
 </header>
 <div class="article-body">
 {article_html(intro["body"], None, lang, lang)}
@@ -1529,6 +1530,51 @@ def book_page(book, lang="en"):
                 description=intro["summary"], translated=book_languages(book))
 
 
+def edition_url(book):
+    return f"/{book.lower()}/read/"
+
+
+def edition_page(book, lang="en"):
+    """The reader's edition of a book: the whole book as one continuous
+    text, set like a printed book, at the reader's level and wording, with
+    no verse numbers, headings, footnotes or notes. web/edition.js fetches
+    each chapter's verses (verse_files) as the reader comes to it. The page
+    holds no text of its own, so it is not indexed: the chapter pages are
+    the book's text for search engines."""
+    name = BOOK_NAMES[book][lang]
+    chaps = [p.chapter for p in dict(books())[book]]
+    e = catalog(lang)["edition"]
+    data = {"book": book, "lang": lang, "chapters": chaps, "verses": f"/{VERSES_DIR}/",
+            "chapter": e["chapter"], "failed": e["failed"], "fallback": e["fallback"],
+            "levels": catalog(lang)["levels"]}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    levels = "".join(f'<button type="button" data-level="{code}">{html.escape(label)}</button>'
+                     for code, label in catalog(lang)["levels"].items())
+    sections = "".join(f'<section class="ed-chapter" id="c{c}" data-chapter="{c}" aria-labelledby="c{c}-h">'
+                       f'<h2 class="ed-chapter-h" id="c{c}-h">{html.escape(e["chapter"].replace("{n}", str(c)))}</h2>'
+                       f'<p class="ed-loading">{e["loading"]}</p></section>' for c in chaps)
+    home = url(lang, book_url(book) if lang in book_languages(book) else f"/read/#{book.lower()}")
+    body = f"""
+<article class="edition" id="edition" lang="{lang}">
+<header class="edition-head">
+<p class="eyebrow"><a href="{url(lang, "/read/")}">{t(lang, "read.title")}</a> · <a href="{home}">{html.escape(name)}</a></p>
+<h1>{html.escape(name)}</h1>
+<p class="dek">{e["dek"]}</p>
+<div class="edition-tools">
+<span class="seg" role="group" aria-label="{t(lang, "reader.level")}">{levels}</span>
+<a href="{url(lang, chapter_url(book, chaps[0]))}">{e["study"]}</a>
+</div>
+<noscript><p class="notice">{e["noscript"]}</p></noscript>
+</header>
+<div class="edition-text">{sections}</div>
+</article>
+<script type="application/json" id="edition-data">{blob}</script>
+<script src="{asset("markup.js")}"></script>
+<script src="{asset("edition.js")}"></script>
+"""
+    return page(lang, e["title"].replace("{book}", name), body, current="/read/", unlisted=edition_url(book))
+
+
 def chapter_strip(book, chapter, lang="en"):
     """Above a passage: its book, how far the book has got, and a pill for
     each chapter translated so far, this one marked."""
@@ -1541,6 +1587,8 @@ def chapter_strip(book, chapter, lang="en"):
             f'<span class="chap-pills">{chapter_pills(chaps, lang, chapter, BOOK_CHAPTERS[book])}</span>'
             f'<button type="button" class="chap-goto" data-open-search aria-keyshortcuts="/">'
             f'{icon(ICONS["search"], 15)}{t(lang, "reader.goto")}</button>'
+            f'<a class="chap-goto chap-edition" href="{url(lang, edition_url(book))}">'
+            f'{icon(ICONS["book"], 15)}{catalog(lang)["edition"]["read"]}</a>'
             f'<button type="button" class="chap-goto chap-listen" id="listen-start" hidden>'
             f'{icon(ICONS["listen"], 15)}{t(lang, "reader.listen")}</button>'
             f'<span class="chap-progress">{progress}</span></nav>')
@@ -1847,6 +1895,19 @@ def verse_files():
     for vid, langs in ours.items():
         ref = refs.parse(vid)
         by_chapter.setdefault((ref.book, ref.chapter), {"v": {}})["v"][str(ref.verse)] = langs
+    # "p": the verses that open a paragraph, for the reader's edition
+    # (web/edition.js). A paragraph that opens with a verse's second
+    # sentence (Philippians 4:5) cannot be marked by verse, so it is not.
+    for (book, chapter), entry in by_chapter.items():
+        records, words = load_chapter(book, chapter)
+        first = {}
+        for r in records:
+            for vid in r["refs"]:
+                first.setdefault(vid, r["id"])
+        starts = set(paragraph_starts(records, words))
+        verses = {refs.parse(vid).verse for r in records if r["id"] in starts for vid in r["refs"][:1]
+                  if refs.parse(vid).chapter == chapter and first[vid] == r["id"]}
+        entry["p"] = sorted(verses)
     for code in COMPARISON_EDITIONS:
         for ref, text in comparison_ours(code).items():
             if str(ref) in ours:
@@ -4706,7 +4767,7 @@ def service_worker():
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
     current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js",
-                                  "compare.js", "word.js", "saved.js", "groups.js")]
+                                  "compare.js", "word.js", "saved.js", "groups.js", "edition.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
     current += [reader_shared(lang)[1] for lang in LANGUAGES]
@@ -4973,6 +5034,8 @@ def build(out):
         for book, _ in books(lang):
             if lang in book_languages(book):
                 add(book_url(book), book_page(book, lang))
+        for book, _ in books():
+            add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
         add("/articles/", articles_page(articles, lang), index=bool(articles))
         if articles:
