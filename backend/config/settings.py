@@ -9,7 +9,9 @@ Configuration comes from the environment:
   OWB_SITE_URL          the reader site, for sign-in links (default https://openwordbible.org);
                         its host is also the relying party passkeys are made for
   OWB_API_URL           this API, for links in emails (default https://api.openwordbible.org)
-  CORS_ALLOWED_ORIGINS  sites that may call the API (default: OWB_SITE_URL)
+  CORS_ALLOWED_ORIGINS  sites that may call the API (default: OWB_SITE_URL; the
+                        partner sites below are added to it)
+  LOGIA_SITE_URL        Logia, which shares these accounts (default https://logia.faith)
   OWB_SUPER_ADMIN_EMAILS  comma-separated emails that are super admins (set
                         in the Render dashboard, so they are not published)
   EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, DEFAULT_FROM_EMAIL
@@ -76,6 +78,7 @@ INSTALLED_APPS = [
     "feedback",
     "groups",
     "staff",
+    "logia",
 ]
 
 MIDDLEWARE = [
@@ -183,6 +186,11 @@ REST_FRAMEWORK = {
 OWB_SITE_URL = os.environ.get("OWB_SITE_URL", "https://openwordbible.org").rstrip("/")
 CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", OWB_SITE_URL) + (
     ["http://localhost:8000", "http://127.0.0.1:8000", "http://localhost:8080"] if DEBUG else [])
+# Sites that share these accounts (backend/logia/): a reader signs in here and
+# is handed back with a single-use code. They may call the API (CORS), but
+# not the sign-in endpoints (accounts.views.foreign).
+PARTNER_SITES = {"logia": os.environ.get("LOGIA_SITE_URL", "https://logia.faith").rstrip("/")}
+CORS_ALLOWED_ORIGINS += list(PARTNER_SITES.values()) + (["http://localhost:8001"] if DEBUG else [])
 OWB_SUPER_ADMIN_EMAILS = [e.lower() for e in env_list("OWB_SUPER_ADMIN_EMAILS")]
 SIGN_IN_LINK_MINUTES = 20
 OWB_API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")

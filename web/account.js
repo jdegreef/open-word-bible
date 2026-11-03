@@ -352,6 +352,48 @@
     }
   }
 
+  // Handing a signed-in reader to a site that shares these accounts, such as
+  // Logia (/handoff/?site=logia&to=/jhn/1/; handoff_page in
+  // scripts/build_site.py). Not signed in: sign in first and come back here.
+  // Signed in: say as whom, and go on only when the reader presses Continue,
+  // with a single-use code the API puts in the link (backend/logia/views.py).
+  function handoffPage(root) {
+    var T = JSON.parse(document.getElementById("handoff-text").textContent);
+    var q = new URLSearchParams(location.search);
+    var site = q.get("site") || "";
+    var to = q.get("to") || "/";
+    var go = document.getElementById("handoff-go");
+    var error = document.getElementById("handoff-error");
+    if (site !== root.getAttribute("data-site")) {
+      error.textContent = T.unknown_site;
+      return;
+    }
+    var account = saved();
+    if (!account || !account.token) {
+      location.replace(PREFIX + "/login/?redirect=" + encodeURIComponent(location.pathname + location.search));
+      return;
+    }
+    document.getElementById("handoff-who").textContent = T.as.replace("{email}", account.user ? account.user.email : "");
+    go.disabled = false;
+    go.addEventListener("click", function () {
+      busy(go, true);
+      api("/api/auth/handoff", { method: "POST", body: { site: site, redirect: to } }, T).then(function (data) {
+        location.href = data.url;
+      }).catch(function (err) {
+        busy(go, false);
+        if (err.signedOut) location.reload();   // the token had expired: sign in again
+        else error.textContent = err.message;
+      });
+    });
+    // Another account: sign out here, then sign in and come back.
+    document.getElementById("handoff-other").addEventListener("click", function () {
+      var back = PREFIX + "/login/?redirect=" + encodeURIComponent(location.pathname + location.search);
+      api("/api/auth/sign-out", { method: "POST" }, T).catch(function () { /* signed out here anyway */ })
+        .then(function () { store(null); location.replace(back); });
+    });
+    go.focus();
+  }
+
   // Choosing a new password from a reset link.
   function resetPage(root) {
     var T = JSON.parse(document.getElementById("login-text").textContent);
@@ -679,4 +721,5 @@
   if ((root = document.getElementById("login"))) loginPage(root);
   else if ((root = document.getElementById("reset"))) resetPage(root);
   else if ((root = document.getElementById("account"))) accountPage(root);
+  else if ((root = document.getElementById("handoff"))) handoffPage(root);
 })();

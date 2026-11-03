@@ -4495,6 +4495,42 @@ def login_page(lang="en"):
     return page(lang, t(lang, "tools.sign_in"), body, unlisted="/login/")
 
 
+# Sites that share Open Word Bible accounts (backend/logia/; PARTNER_SITES in
+# backend/config/settings.py): code and name.
+PARTNERS = {"logia": "Logia"}
+
+
+def handoff_page(lang="en"):
+    """Handing a signed-in reader to a site that shares these accounts
+    (/handoff/?site=logia&to=/jhn/1/). A reader not signed in is sent to sign
+    in first and comes back here; a signed-in one sees who they are signed in
+    as and goes on only when they press Continue. web/account.js runs it, and
+    the API makes the link back (backend/logia/views.py). Not indexed."""
+    site, name = next(iter(PARTNERS.items()))
+
+    def h(key):
+        return t(lang, "handoff." + key).replace("{site}", name)
+
+    body = f"""
+<section class="auth" id="handoff" data-site="{site}">
+<div class="auth-card auth-message">
+{MARK}
+<h1>{h("title")}</h1>
+<p class="auth-dek">{h("dek")}</p>
+<p id="handoff-who" role="status"></p>
+<p class="form-error" id="handoff-error" role="alert"></p>
+<p><button class="button wide" type="button" id="handoff-go" disabled>{h("continue")}</button></p>
+<p class="fine">{h("shares")}</p>
+<p><button class="button ghost wide" type="button" id="handoff-other">{h("other")}</button></p>
+<p><a href="{url(lang, "/")}">{h("cancel")}</a></p>
+</div>
+</section>
+<script type="application/json" id="handoff-text">{_ui_json(lang, "handoff.ui")}</script>
+<script src="{asset("account.js")}" defer></script>
+"""
+    return page(lang, h("title"), body, unlisted="/handoff/")
+
+
 def reset_page(lang="en"):
     """Choosing a new password, from the link in a reset email
     (#token=); web/account.js runs it. Not indexed."""
@@ -5046,6 +5082,7 @@ def build(out):
         add("/account/", account_page(lang), index=False)
         add("/login/", login_page(lang), index=False)
         add("/reset-password/", reset_page(lang), index=False)
+        add("/handoff/", handoff_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
         add(MY_PLANS_PATH, my_plans_page(lang), index=False)
