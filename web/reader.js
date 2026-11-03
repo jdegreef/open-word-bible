@@ -34,12 +34,14 @@
   // reader's settings follow them to their other devices (site.js syncs
   // owb.settings with the account; the latest device's copy wins whole).
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0, plural_you: 0, view: 0,
-                   headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0, verse_numbers: 0 };
+                   headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0, verse_numbers: 0,
+                   presets: [] };
   var settingsAt = 0;
   function loadSettings() {
     try {
       var saved = OWBMarkup.fromSaved(JSON.parse(localStorage.getItem(STORE) || "{}"));
       for (var k in settings) if (k in saved && k !== "lang") settings[k] = saved[k];
+      if (!Array.isArray(settings.presets)) settings.presets = [];
       settingsAt = saved.at || 0;
     } catch (e) { /* storage unavailable: use defaults */ }
   }
@@ -82,6 +84,33 @@
     if (!changed) return;
     var s = q.toString();
     try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); } catch (e) { /* ignore */ }
+  }
+
+  // Presets: several choices at once. A built-in one sets the level and
+  // the wording settings it names; what it leaves out (plural "you", which
+  // is regional, and the view) stays as the reader has it.
+  // scripts/build_site.py PRESETS lists the same names, in this order.
+  var PRESETS = {
+    standard: { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0 },
+    classic: { level: "L", gender: 1, christos: 0, divine_name: 0, deity_pronoun: 1, units: 1 },
+    plain: { level: "R", gender: 0, christos: 1, divine_name: 0, deity_pronoun: 0, units: 0 }
+  };
+  var PRESET_ORDER = ["standard", "classic", "plain"];
+  // A reader's own preset keeps how the text reads, not how it is laid out.
+  // They are kept with the other settings (owb.settings), so they follow a
+  // signed-in reader to their other devices.
+  var PRESET_KEYS = ["level", "gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you",
+                     "headings", "crossrefs", "red_letter"];
+  var MAX_PRESETS = 6;
+
+  function presetMatches(values) {
+    return Object.keys(values).every(function (k) { return settings[k] === values[k]; });
+  }
+
+  function currentPreset() {
+    var values = {};
+    PRESET_KEYS.forEach(function (k) { values[k] = settings[k]; });
+    return values;
   }
 
   var current = null;   // selected record
@@ -220,6 +249,101 @@
     return { meaning: meaning, rendering: rendering };
   }
 
+  // The reader's own presets, under the built-in ones: each applies with
+  // one tap and can be removed; "Save these settings" names the current
+  // choices as a new one (or replaces the one of that name).
+  var presetsBox = document.getElementById("my-presets");
+  var naming = false;
+  // want names the control to focus after drawing; without it, focus
+  // stays on the control it was on.
+  function drawMyPresets(want) {
+    if (!presetsBox) return;
+    var focused = want || (document.activeElement && presetsBox.contains(document.activeElement)
+      ? document.activeElement.getAttribute("data-focus") : null);
+    presetsBox.hidden = false;
+    presetsBox.textContent = "";
+    var mine = settings.presets;
+    if (mine.length) {
+      var list = el("div", "my-preset-list");
+      list.setAttribute("role", "group");
+      list.setAttribute("aria-label", t("my_presets"));
+      mine.forEach(function (p, i) {
+        var chip = el("span", "my-preset");
+        var use = el("button", "my-preset-use", p.name);
+        use.type = "button";
+        use.setAttribute("aria-pressed", presetMatches(p.values) ? "true" : "false");
+        use.setAttribute("data-focus", "use" + i);
+        use.addEventListener("click", function () { setSettings(p.values); });
+        var drop = el("button", "my-preset-drop", "\u00d7");
+        drop.type = "button";
+        drop.setAttribute("aria-label", t("preset_remove").replace("{name}", p.name));
+        drop.title = drop.getAttribute("aria-label");
+        drop.setAttribute("data-focus", "save");
+        drop.addEventListener("click", function () {
+          settings.presets = mine.filter(function (_, j) { return j !== i; });
+          save();
+          drawControls();
+        });
+        chip.appendChild(use);
+        chip.appendChild(drop);
+        list.appendChild(chip);
+      });
+      presetsBox.appendChild(list);
+    }
+    if (naming) {
+      var form = el("form", "my-preset-form");
+      var input = document.createElement("input");
+      input.type = "text";
+      input.maxLength = 40;
+      input.required = true;
+      input.placeholder = t("preset_name");
+      input.setAttribute("aria-label", t("preset_name"));
+      input.setAttribute("data-focus", "name");
+      var keep = el("button", "my-preset-keep", t("preset_keep"));
+      keep.type = "submit";
+      var cancel = el("button", "my-preset-cancel", t("preset_cancel"));
+      cancel.type = "button";
+      cancel.setAttribute("data-focus", "save");
+      var full = el("p", "my-preset-full");
+      full.hidden = true;
+      full.setAttribute("role", "status");
+      form.appendChild(input);
+      form.appendChild(keep);
+      form.appendChild(cancel);
+      form.appendChild(full);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = input.value.replace(/\s+/g, " ").trim();
+        if (!name) return;
+        var others = mine.filter(function (p) { return p.name !== name; });
+        if (others.length >= MAX_PRESETS) {
+          full.textContent = t("preset_full").replace("{n}", MAX_PRESETS);
+          full.hidden = false;
+          return;
+        }
+        settings.presets = others.concat([{ name: name, values: currentPreset() }]);
+        naming = false;
+        save();
+        drawControls();
+        var made = presetsBox.querySelector('[data-focus="use' + (settings.presets.length - 1) + '"]');
+        if (made) made.focus();
+      });
+      cancel.addEventListener("click", function () { naming = false; drawMyPresets("save"); });
+      form.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { e.stopPropagation(); naming = false; drawMyPresets("save"); }
+      });
+      presetsBox.appendChild(form);
+    } else {
+      var add = el("button", "my-preset-add", t("preset_save"));
+      add.type = "button";
+      add.setAttribute("data-focus", "save");
+      add.addEventListener("click", function () { naming = true; drawMyPresets("name"); });
+      presetsBox.appendChild(add);
+    }
+    var back = focused && presetsBox.querySelector('[data-focus="' + focused + '"]');
+    if (back) back.focus();
+  }
+
   function drawControls() {
     document.querySelectorAll("[data-setting]").forEach(function (seg) {
       var name = seg.getAttribute("data-setting");
@@ -233,6 +357,17 @@
       });
     });
     document.getElementById("hint-level").textContent = t("hint_level")[settings.level];
+    var active = null;
+    document.querySelectorAll("[data-preset]").forEach(function (b) {
+      var name = b.getAttribute("data-preset"), on = presetMatches(PRESETS[name]);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      var hint = t("hint_presets")[PRESET_ORDER.indexOf(name)];
+      if (hint) b.title = hint;
+      if (on && !active) active = hint;
+    });
+    var presetHint = document.getElementById("hint-presets");
+    if (presetHint) presetHint.textContent = active || "";
+    drawMyPresets();
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
@@ -245,7 +380,8 @@
     var summary = [];
     // "Show", "Hide" or "Red" means nothing without its label, so headings,
     // cross-references, the words of Jesus and verse numbers are left out.
-    var shown = ".control:not([hidden]) .seg:not([data-setting=headings]):not([data-setting=crossrefs])" +
+    // Presets are left out too: their choices are named one by one.
+    var shown = ".control:not([hidden]):not(.presets-control) .seg:not([data-setting=headings]):not([data-setting=crossrefs])" +
       ":not([data-setting=red_letter]):not([data-setting=verse_numbers])";
     document.querySelectorAll(shown).forEach(function (seg) {
       var on = seg.querySelector('[aria-pressed="true"]');
@@ -2833,8 +2969,14 @@
   panelEl.addEventListener("touchcancel", endSwipe);
 
   function setSetting(name, value) {
+    var values = {};
+    values[name] = value;
+    setSettings(values);
+  }
+
+  function setSettings(values) {
     var top = panelEl.scrollTop;
-    settings[name] = value;
+    for (var k in values) settings[k] = values[k];
     dropSettingsParams();
     save();
     drawControls();
@@ -3033,6 +3175,8 @@
       openWording(wordingBtn.getAttribute("aria-expanded") !== "true");
     });
     document.addEventListener("click", function (e) {
+      // A click that redrew what it landed on (a preset) is not outside.
+      if (!e.target.isConnected) return;
       if (!wordingBtn.contains(e.target) && !wordingBox.contains(e.target)) openWording(false);
     });
     document.addEventListener("keydown", function (e) {
@@ -3047,6 +3191,10 @@
   toggle.addEventListener("click", function () {
     var open = toggle.getAttribute("aria-expanded") !== "true";
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  document.querySelectorAll("[data-preset]").forEach(function (b) {
+    b.addEventListener("click", function () { setSettings(PRESETS[b.getAttribute("data-preset")]); });
   });
 
   document.querySelectorAll("[data-setting]").forEach(function (seg) {
