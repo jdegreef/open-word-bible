@@ -4,7 +4,7 @@ summary: Jumuishi au kimapokeo, Kristo au Masihi, yeye au Yeye. Kwa nini haya ni
 date: 2026-10-10
 order: 4
 section: method
-source: 2998c7f225f5
+source: f88c24659512
 ---
 Wasomaji wa Biblia hutofautiana kuhusu mambo fulani ambayo, kwa usahihi, ni mambo ya maneno tu. Je, mahali ambapo wanaume na wanawake wote wanamaanishwa, maandiko yaseme "wahenga" au "mababu"? Je, cheo cha Yesu kiwe "Kristo" au "Masihi"? Je, viwakilishi vya Mungu viandikwe kwa herufi kubwa? Je, jina la Mungu liandikwe "BWANA" au "Yahwe"? Open Word Bible inamwachia kila msomaji achague.
 
@@ -12,7 +12,7 @@ Wasomaji wa Biblia hutofautiana kuhusu mambo fulani ambayo, kwa usahihi, ni mamb
 
 - **Jinsia.** Jumuishi ni chaguo la msingi, Kimapokeo ni chaguo jingine. Pale ambapo asili inawamaanisha watu wote, chaguo la msingi linasema hivyo. Kiswahili mara nyingi hakihitaji mpangilio huu, kwa sababu maneno kama "watu", "wanadamu" na "ndugu" tayari yanawahusu wanaume na wanawake: Yohana 1:4 inasoma "{{OWB:JHN.1.4.s1:B}}" katika kila mpangilio. Lakini pale ambapo Kiswahili kina maneno mawili kwa maana moja, mpangilio unatumika: katika Yohana 6:49 Yesu anasema "Wahenga wenu walikula mana jangwani", na Kimapokeo inasema "Mababu zenu". Mungu, Kristo na wanaume wanaotajwa kwa majina hawabadilishwi kamwe.
 - **Cheo.** "Kristo" ni chaguo la msingi, "Masihi" ni chaguo jingine. Neno la Kigiriki ni cheo chenye maana ya "aliyetiwa mafuta", na Injili ya Yohana yenyewe inalieleza katika 1:41.
-- **Viwakilishi vya Mungu.** Herufi ndogo ni chaguo la msingi ("yeye", "wake", "yake"), kama asili, isiyo na herufi kubwa; herufi kubwa ("Yeye", "Wake", "Yake") ni chaguo jingine.
+- **Viwakilishi vya Mungu.** Herufi kubwa ni chaguo la msingi ("Yeye", "Wake", "Yake"), kwa heshima; herufi ndogo ("yeye", "wake", "yake") ni chaguo jingine, kama asili, isiyo na herufi kubwa.
 - **Jina la Mungu.** Katika Agano la Kale, jina binafsi la Mungu linaandikwa "BWANA" kama chaguo la msingi, kwa kufuata desturi ya kale ya kutolitamka kwa sauti, na "Yahwe" ni chaguo jingine.
 - **Vipimo.** Pale ambapo kifungu kina kipimo, vipimo vya leo ni chaguo la msingi na vipimo vya asili ni chaguo jingine. Safina ya Nuhu ina urefu wa mita 135, au dhiraa 300 (Mwanzo 6:15); mitungi ya Kana ilishika lita 80 hadi 120, au vipimo viwili au vitatu (Yohana 2:6). Kiwango cha Halisi kinabaki daima na kipimo cha kale.
 

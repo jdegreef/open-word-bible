@@ -4,7 +4,7 @@ summary: Lenguaje inclusivo o tradicional, Cristo o Mesías, él o Él, ustedes 
 date: 2026-10-10
 order: 4
 section: method
-source: 2998c7f225f5
+source: f88c24659512
 ---
 Los lectores de la Biblia no se ponen de acuerdo en algunas cosas que, en rigor, son cuestiones de redacción. ¿Hay que decir «toda la humanidad» o «los hombres» cuando el original se refiere a todos? ¿El título de Jesús debe ser «Cristo» o «Mesías»? ¿Los pronombres que se refieren a Dios deben llevar mayúscula? ¿El nombre de Dios debe escribirse «el SEÑOR» o «Yahvé»? ¿Ustedes o vosotros? Open Word Bible deja que cada lector elija.
 
@@ -12,7 +12,7 @@ Los lectores de la Biblia no se ponen de acuerdo en algunas cosas que, en rigor,
 
 - **Lenguaje de género.** Inclusivo de forma predeterminada; Tradicional como opción. Donde el original se refiere a todos, la opción predeterminada lo dice: Juan 1:4 dice «{{OWB:JHN.1.4.s1:B}}», y la Tradicional dice «la luz de los hombres». Nunca se cambia lo que se dice de Dios, de Cristo ni de hombres con nombre propio.
 - **Título.** «Cristo» de forma predeterminada; «Mesías» como opción. La palabra griega es un título que significa «ungido», y el propio Evangelio de Juan lo explica en 1:41.
-- **Pronombres para Dios.** «él» en minúscula de forma predeterminada, como el original, que no tiene mayúsculas; «Él» como opción.
+- **Pronombres para Dios.** «Él» con mayúscula de forma predeterminada, por reverencia; «él» en minúscula como opción, como el original, que no tiene mayúsculas.
 - **Nombre de Dios.** En el Antiguo Testamento, el nombre propio de Dios se escribe «el SEÑOR» de forma predeterminada, siguiendo la antigua costumbre de no pronunciarlo, y «Yahvé» como opción.
 - **Medidas.** Donde un pasaje da una medida, unidades actuales de forma predeterminada y las unidades originales como opción. El arca de Noé mide 135 metros de largo, o 300 codos (Génesis 6:15); en las tinajas de Caná cabían entre 80 y 120 litros, o dos o tres medidas (Juan 2:6). El nivel Literal conserva siempre la unidad antigua.
 - **Segunda persona del plural.** *Ustedes*, como se habla en América Latina, o *vosotros*, como en la mayor parte de España.

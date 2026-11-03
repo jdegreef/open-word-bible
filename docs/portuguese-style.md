@@ -197,8 +197,8 @@ term at Readable with a decision, Portuguese may loosen it the same way.
 
 Settings change wording, never meaning, exactly as in English.
 
-- `deity_pronoun`: every pronoun for God or Christ, lowercase default,
-  capitalised alternative, only the capitalisation differing. **(checked)**
+- `deity_pronoun`: every pronoun for God or Christ, written lowercase first,
+  capitalised second (shown by default), only the capitalisation differing. **(checked)**
   The Portuguese forms: `{{deity_pronoun:ele|Ele}}`, `{{deity_pronoun:o|O}}`,
   `{{deity_pronoun:lhe|Lhe}}`, `{{deity_pronoun:dele|Dele}}`,
   `{{deity_pronoun:seu|Seu}}` (and `sua`, `seus`, `suas`),

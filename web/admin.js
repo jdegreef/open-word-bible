@@ -985,8 +985,9 @@
   function exportQuery(d) {
     var f = EXPORT, books = f.books;
     if (BOOK_SETS[books]) books = d.books.slice(BOOK_SETS[books][0], BOOK_SETS[books][1]).map(function (b) { return b.code; }).join(",");
-    var settings = Object.keys(f.settings).filter(function (k) { return f.settings[k] > 0; })
-      .map(function (k) { return k + ":" + f.settings[k]; }).join(",");
+    // Each setting picked here, default or not: the server's default for
+    // one is not always its first option (pronouns for God are "He").
+    var settings = Object.keys(f.settings).map(function (k) { return k + ":" + f.settings[k]; }).join(",");
     return "?lang=" + f.lang + "&level=" + f.level + "&type=" + f.type + "&numbering=" + f.numbering +
       (books ? "&books=" + books : "") + (settings ? "&settings=" + settings : "");
   }
@@ -1030,8 +1031,8 @@
         settingsBox.querySelectorAll("label").forEach(function (l) { l.remove(); });
         language().settings.forEach(function (s) {
           var sel = select("export-setting-" + s.name, s.options.map(function (o, i) {
-            return [String(i), o + (i === 0 ? " (default)" : "")];
-          }), String(f.settings[s.name] || 0));
+            return [String(i), o + (i === (s.default || 0) ? " (default)" : "")];
+          }), String(s.name in f.settings ? f.settings[s.name] : s.default || 0));
           sel.addEventListener("change", function () { f.settings[s.name] = +sel.value; changed(); });
           settingsBox.appendChild(h("label", { class: "admin-field" }, SETTING_NAME[s.name] || s.name, sel));
         });
@@ -1040,7 +1041,7 @@
         f.lang = langSel.value; f.level = levelSel.value; f.type = typeSel.value;
         f.numbering = numberingSel.value; f.books = bookSel.value;
         var keep = {};
-        language().settings.forEach(function (s) { if (f.settings[s.name]) keep[s.name] = f.settings[s.name]; });
+        language().settings.forEach(function (s) { if (s.name in f.settings) keep[s.name] = f.settings[s.name]; });
         f.settings = keep;
         result.textContent = "";
         note(status, "");

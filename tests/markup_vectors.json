@@ -1,6 +1,7 @@
 {
   "about": "Reader-setting spans and verse markers, implemented twice: owb/markup.py (validation, the build) and web/markup.js (the reader). Settings change wording, never meaning, so both must give the same text. tests/test_markup.py and tests/js/markup.test.mjs run every case. 'cases': text + settings -> rendered text, and (where given) that text split at its verse markers as [verse or null, text]. 'differences': inputs where the two implementations currently disagree, with each one's answer, so a change on either side is noticed.",
   "settings": ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you"],
+  "defaults": {"deity_pronoun": 1},
   "cases": [
     {"name": "plain text is unchanged",
      "text": "In the beginning was the Word.", "settings": {},
@@ -22,8 +23,12 @@
      "rendered": "The LORD said"},
     {"name": "divine_name alternate", "text": "{{divine_name:The LORD|Yahweh}} said", "settings": {"divine_name": 1},
      "rendered": "Yahweh said"},
-    {"name": "deity_pronoun default", "text": "and {{deity_pronoun:he|He}} said to {{deity_pronoun:him|Him}}", "settings": {},
+    {"name": "deity_pronoun default is capitalised", "text": "and {{deity_pronoun:he|He}} said to {{deity_pronoun:him|Him}}", "settings": {},
+     "rendered": "and He said to Him"},
+    {"name": "deity_pronoun lowercase", "text": "and {{deity_pronoun:he|He}} said to {{deity_pronoun:him|Him}}", "settings": {"deity_pronoun": 0},
      "rendered": "and he said to him"},
+    {"name": "deity_pronoun out of range shows its default", "text": "{{deity_pronoun:his|His}} word", "settings": {"deity_pronoun": 5},
+     "rendered": "His word"},
     {"name": "deity_pronoun alternate", "text": "and {{deity_pronoun:he|He}} said to {{deity_pronoun:him|Him}}", "settings": {"deity_pronoun": 1},
      "rendered": "and He said to Him"},
     {"name": "units default", "text": "about {{units:20 to 30 gallons|two or three measures}}", "settings": {},

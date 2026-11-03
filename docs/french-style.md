@@ -128,8 +128,8 @@ narration records the tense choice by level.
 
 Settings change wording, never meaning, exactly as in English.
 
-- `deity_pronoun`: every pronoun for God or Christ, lowercase default,
-  capitalised alternative, only the capitalisation differing. **(checked)**
+- `deity_pronoun`: every pronoun for God or Christ, written lowercase first,
+  capitalised second (shown by default), only the capitalisation differing. **(checked)**
   The French forms: `{{deity_pronoun:il|Il}}`, `{{deity_pronoun:lui|Lui}}`,
   `{{deity_pronoun:le|Le}}`, `{{deity_pronoun:l’|L’}}` (elided: write the
   next word straight after the span, "{{deity_pronoun:l’|L’}}ont"),

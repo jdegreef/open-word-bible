@@ -20,9 +20,9 @@
   var VERSE_ID = /^([1-3]?[A-Z]{2,3})\.(\d+)\.(\d+)$/;
   var LINES = / ?\\q ?/g;
 
-  var settings = { gender: 0, christos: 0, divine_name: 0, deity_pronoun: 0, units: 0, plural_you: 0 };
+  var settings = OWBMarkup.defaults();
   try {
-    var saved = JSON.parse(localStorage.getItem("owb.settings") || "{}");
+    var saved = OWBMarkup.fromSaved(JSON.parse(localStorage.getItem("owb.settings") || "{}"));
     for (var k in settings) if (k in saved) settings[k] = saved[k];
   } catch (e) { /* storage unavailable: the defaults */ }
   function render(text) { return OWBMarkup.render(text, settings).replace(LINES, " "); }

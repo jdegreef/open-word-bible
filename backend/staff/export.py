@@ -12,7 +12,7 @@ GET /api/admin/export/file/?lang=&level=&type=&numbering=&books=&settings=
 
 type is usfm or json (not "format", which DRF keeps for its own use);
 books is a comma-separated list of book codes (none: the whole Bible);
-settings is "name:index,..." (deity_pronoun:1 for "He"), each setting not
+settings is "name:index,..." (deity_pronoun:0 for lowercase "he"), each setting not
 named at its default. The text comes from the database, which each deploy
 brings up to date from content/ on main. Each download is logged in the
 activity log.
@@ -25,7 +25,7 @@ from django.utils import timezone
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
-from owb import export, languages, refs
+from owb import export, languages, markup, refs
 from texts.models import Edition, Verse
 from translation.models import ImportRun, Rendering
 
@@ -94,7 +94,8 @@ def options(request):
     recent = AdminAction.objects.filter(action="export.download")[:10]
     return Response({
         "languages": [{"code": c, "name": lang["name"], "sentences": counts.get(c, {}),
-                       "settings": [{"name": n, "options": o} for n, o in export.settings_for(c).items()]}
+                       "settings": [{"name": n, "options": o, "default": markup.DEFAULTS.get(n, 0)}
+                                    for n, o in export.settings_for(c).items()]}
                       for c, lang in languages.READING.items()],
         "levels": [{"code": c, "name": n} for c, n in export.LEVELS.items()],
         "formats": list(export.FORMATS),

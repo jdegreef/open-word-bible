@@ -166,8 +166,9 @@ Settings change wording, never meaning. **(checked)** Use a setting span
   `{{christos:Christ|the Messiah}}` (Balanced, Readable) for every Christos.
   Where the Greek has the article and Literal keeps it, write
   `the {{christos:Christ|Messiah}}`.
-- `deity_pronoun`: every pronoun for God or Christ, lowercase default,
-  capitalised alternative: `{{deity_pronoun:him|Him}}`. **(checked: only the
+- `deity_pronoun`: every pronoun for God or Christ, written lowercase first,
+  capitalised second: `{{deity_pronoun:him|Him}}`. Readers see the
+  capitalised form by default and can choose lowercase. **(checked: only the
   capitalisation may differ)** This covers every pronoun for God or Christ
   except "I": he/him/his/himself, "me/my/mine" when he speaks of himself, and
   "you/your" when someone speaks to him. Never the Spirit as "it". At the start
