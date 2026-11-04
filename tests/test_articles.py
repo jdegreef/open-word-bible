@@ -1,4 +1,5 @@
 """Articles (articles/*.md) and the colour-mode menu, as built into the site."""
+import json
 import re
 import sys
 import unittest
@@ -199,6 +200,9 @@ class ArticlesTest(unittest.TestCase):
 class SiteChromeTest(unittest.TestCase):
     def test_every_page_has_the_header_menu_skip_link_and_footer(self):
         out = built_site()
+        first = json.loads((ROOT / "content" / "MAT" / "MAT.1.json").read_text(encoding="utf-8"))["records"][0]
+        matthew = set(first["renderings"])
+        self.assertIn("am", matthew)
         for path in out.rglob("*.html"):
             text = path.read_text(encoding="utf-8")
             self.assertIn('<a class="skip" href="#main">', text, path)
@@ -207,10 +211,11 @@ class SiteChromeTest(unittest.TestCase):
             self.assertIn('aria-controls="site-nav"', text, path)
             self.assertIn('<footer class="site">', text, path)
             # Links stay in the page's language: /es/ pages link to /es/.
-            # (The menu lists the books translated into it; every language
-            # has Matthew.)
+            # (The menu lists the books translated into it: Matthew, in
+            # every language that has it.)
             lang = re.search(r'<html lang="([a-z]+)">', text)[1]
-            self.assertIn(f'href="{build_site.url(lang, "/read/#mat")}"', text, path)
+            if lang in matthew:
+                self.assertIn(f'href="{build_site.url(lang, "/read/#mat")}"', text, path)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<h2 id="credits">', about)
         self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
@@ -272,6 +277,9 @@ class ColourModesTest(unittest.TestCase):
 
     def test_every_page_has_the_gear_menu(self):
         out = built_site()
+        first = json.loads((ROOT / "content" / "MAT" / "MAT.1.json").read_text(encoding="utf-8"))["records"][0]
+        matthew = set(first["renderings"])
+        self.assertIn("am", matthew)
         for path in out.rglob("*.html"):
             text = path.read_text(encoding="utf-8")
             self.assertIn('class="tool-btn prefs-btn"', text, path)
