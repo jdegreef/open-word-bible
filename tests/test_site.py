@@ -608,7 +608,10 @@ class SiteTest(unittest.TestCase):
             # A language shows only the verses translated into it: never
             # one in English (Vietnamese and Korean have John so far).
             self.assertEqual(len(verses), len(build_site.votd_refs(lang)))
-            self.assertTrue(all("l" not in v for v in verses), lang)
+            translated = any(lang in build_site.votd_record(v)["renderings"]
+                             for v in build_site.VERSES_OF_THE_DAY)
+            # A language with none of them yet shows them in English, marked.
+            self.assertTrue(all(("l" in v) != translated for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
                 # The verse ends a sentence, so it reads on its own (Hindi ends one
                 # with the danda ।, Amharic
