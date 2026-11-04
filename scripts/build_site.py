@@ -587,7 +587,8 @@ def book_index(lang):
 
 def language_items(lang, path, translated=LANGUAGES, mark=""):
     """Each language in its own name, as list items: the current one as plain
-    text (followed by mark) and the others as links to this page in that
+    text (followed by mark) and the others, with their name in lang in
+    brackets after it (catalog "language_names"), as links to this page in that
     language: the home page from a page without a path, the plans or
     articles page from a plan or article not in that language, and the Read
     page from a book's page not in that language. web/site.js remembers
@@ -601,10 +602,15 @@ def language_items(lang, path, translated=LANGUAGES, mark=""):
             return "/plans/"
         return "/articles/" if path.startswith("/articles/") else "/read/"
 
+    names = catalog(lang)["language_names"]
+
+    def gloss(code):
+        return f' <span class="lang-gloss" lang="{lang}">({names[code]})</span>'
+
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
         else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
-             f'{owb_languages.native(code)}</a></li>'
+             f'{owb_languages.native(code)}{gloss(code)}</a></li>'
         for code in LANGUAGES)
 
 
