@@ -265,6 +265,10 @@ passage where the Greek is the same, and differ where the Greek differs.
   fig tree смоковница (L, B), инжировое дерево (R), its fruit смоквы (L),
   инжир (B, R); *euthys* тотчас at Literal, varied at Balanced and
   Readable (сразу, тут же) but kept where the English keeps it.
+  Settled in Luke: *epistata* Наставник; Luke's lake (*limnē*) озеро at
+  every level; *nomikos* законник (L), знаток Закона (B, R); *alēthōs*
+  "Поистине говорю вам", kept apart from *amēn*; Всевышний; Назорей or
+  Назарянин by the Greek word.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
