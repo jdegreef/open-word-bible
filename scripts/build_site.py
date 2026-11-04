@@ -529,7 +529,6 @@ def footer_links(lang):
     learn.append((url(lang, "/terms/"), t(lang, "nav.terms"), None))
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
                (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
-               (url(lang, "/about/status/"), catalog(lang)["status"]["nav"], None),
                (url(lang, "/download/"), catalog(lang)["download"]["nav"], None),
                (url(lang, "/about/#credits"), t(lang, "nav.credits"), None),
                (url(lang, "/#help"), t(lang, "nav.help"), None),
@@ -3046,7 +3045,7 @@ AUDIENCES = (
              ("translating-for-every-language", "never-typed-by-hand",
               "ai-assisted-translation-and-human-review")),
     Audience("seekers", "search",
-             (("book", "/jhn/1/?level=R"), ("info", "/#example-h"), ("check", "/about/status/")),
+             (("book", "/jhn/1/?level=R"), ("info", "/#example-h")),
              ("why-open-word-bible", "how-reliable-is-the-text", "what-the-dead-sea-scrolls-show")),
 )
 
@@ -3259,82 +3258,20 @@ APPROVED = REVIEW_STATUSES[2:]
 
 @functools.lru_cache(maxsize=None)
 def status_counts():
-    """The records counted for the status page and llms.txt: in all, by
-    review status, by language and by book (in canonical order)."""
+    """The records counted for llms.txt and the downloads: in all, how many
+    a named reviewer has approved, and how many each language renders."""
     records = _all_records()
-    statuses = dict.fromkeys(REVIEW_STATUSES, 0)
     by_lang = dict.fromkeys(LANGUAGES, 0)
-    by_book = {}
     for r in records:
-        statuses[r["status"]] += 1
         for code in r["renderings"]:
             by_lang[code] += 1
-        counts = by_book.setdefault(refs.parse(r["refs"][0]).book, {"all": 0, "approved": 0})
-        counts["all"] += 1
-        counts["approved"] += r["status"] in APPROVED
-    order = {code: i for i, code in enumerate(refs.BOOK_CODES)}
-    return {"all": len(records), "statuses": statuses, "drafts": statuses[REVIEW_STATUSES[0]],
-            "approved": sum(statuses[k] for k in APPROVED),
-            "languages": {code: n for code, n in by_lang.items() if n},
-            "books": dict(sorted(by_book.items(), key=lambda kv: order[kv[0]]))}
+    return {"all": len(records), "approved": sum(r["status"] in APPROVED for r in records),
+            "languages": {code: n for code, n in by_lang.items() if n}}
 
 
 def number(n, lang):
     """A count with the language's thousands separator."""
-    return f"{n:,}".replace(",", catalog(lang)["status"]["thousands"])
-
-
-REVIEW_ARTICLE = "ai-assisted-translation-and-human-review"
-
-
-def status_page(lang="en"):
-    """Where the translation stands: how many sentences are drafted and how
-    many a named reviewer has approved, counted from content/ at every
-    build, so it cannot fall out of date or claim more than the records."""
-    s = catalog(lang)["status"]
-    labels = catalog(lang)["reader.ui"]["review_status"]
-    c = status_counts()
-    esc = html.escape
-
-    def table(key, head, rows):
-        heads = "".join(f'<th scope="col">{h}</th>' for h in head)
-        cells = "".join(f'<tr><th scope="row">{row[0]}</th>{"".join(f"<td>{x}</td>" for x in row[1:])}</tr>'
-                        for row in rows)
-        return (f'<h2 id="{key}">{s[key]}</h2>\n<table class="status-table" aria-labelledby="{key}">'
-                f'<thead><tr>{heads}</tr></thead><tbody>{cells}</tbody></table>')
-
-    by_status = table("by_status", (s["status"], s["count"]),
-                      [(esc(labels[k]), number(n, lang)) for k, n in c["statuses"].items()])
-    by_lang = table("by_language", (s["language"], s["count"]),
-                    [(f'<span lang="{code}">{owb_languages.native(code)}</span>', number(n, lang))
-                     for code, n in c["languages"].items()])
-    by_book = table("by_book", (s["book"], s["count"], s["reviewed"]),
-                    [(f'<a href="{url(lang, "/read/")}#{book.lower()}">{esc(BOOK_NAMES[book][lang])}</a>',
-                      number(n["all"], lang), number(n["approved"], lang))
-                     for book, n in c["books"].items()])
-    # The article on review, in the page's language where it has one.
-    article = next((a for a in load_articles(lang) if a["slug"] == REVIEW_ARTICLE), None)
-    article_lang = lang if article else "en"
-    article = article or next(a for a in load_articles("en") if a["slug"] == REVIEW_ARTICLE)
-    attr = "" if article_lang == lang else ' hreflang="en" lang="en"'
-    body = f"""
-<div class="prose status">
-<p class="eyebrow">{s["title"]}</p>
-<h1>{s["heading"]}</h1>
-<p class="dek">{s["dek"]}</p>
-<div class="stats">
-<div><b>{number(c["all"], lang)}</b><span>{s["sentences"]}</span></div>
-<div><b>{number(c["drafts"], lang)}</b><span>{s["drafts"]}</span></div>
-<div><b>{number(c["approved"], lang)}</b><span>{s["reviewed"]}</span></div>
-</div>
-<p><a href="{url(article_lang, article_url(article))}"{attr}>{s["how"]}&nbsp;&rarr;</a></p>
-<p>{s["report"].replace("{issues}", GITHUB_URL + "/issues/new")}</p>
-{by_status}
-{by_lang}
-{by_book}
-</div>
-"""
-    return page(lang, s["title"], body, path="/about/status/", current="/about/", description=s["description"])
+    return f"{n:,}".replace(",", catalog(lang)["download"]["thousands"])
 
 
 # Ready-made downloads of the text (owb/export.py, which the admin's Export
@@ -3461,7 +3398,7 @@ def download_page(lang="en"):
 <p class="eyebrow">{d["title"]}</p>
 <h1>{d["heading"]}</h1>
 <p class="dek">{d["dek"]}</p>
-<p class="notice">{d["draft"].replace("{status}", url(lang, "/about/status/"))}</p>
+<p class="notice">{d["draft"]}</p>
 <ul>
 <li>{d["usfm_note"]}</li>
 <li>{d["json_note"]}</li>
@@ -3501,8 +3438,7 @@ At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are revi
 ## Key pages
 
 - [Read]({SITE_URL}/read/): every book and chapter translated so far.
-{intros}- [Translation status]({SITE_URL}/about/status/): sentences drafted and reviewed, by language and book.
-- [Key terms]({SITE_URL}/terms/): the key Greek and Hebrew words and the English each keeps.
+{intros}- [Key terms]({SITE_URL}/terms/): the key Greek and Hebrew words and the English each keeps.
 - [Articles]({SITE_URL}/articles/): the method, close readings and the history of the Bible's text.
 - [About]({SITE_URL}/about/): licences and source credits.
 - [What we believe]({SITE_URL}/about/beliefs/)
@@ -5139,7 +5075,6 @@ def build(out):
         add("/read/", read_page(lang))
         add("/about/", about_page(lang))
         add("/about/beliefs/", beliefs_page(lang))
-        add("/about/status/", status_page(lang))
         add("/download/", download_page(lang))
         add("/about/privacy/", legal_page(lang, "privacy", "/about/privacy/"))
         add("/about/terms-of-use/", legal_page(lang, "terms_of_use", "/about/terms-of-use/"))

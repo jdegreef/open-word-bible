@@ -264,27 +264,25 @@ class SiteTest(unittest.TestCase):
         self.assertIn('text += ". " + t(label) + alts.join("; ");', reader)
         self.assertIn('if (d.uncertain) text += " (" + t("uncertain") + ")";', reader)
 
-    def test_status_page_counts_the_records(self):
+    def test_status_counts_count_the_records(self):
         counts = build_site.status_counts()
         records = build_site._all_records()
         self.assertEqual(counts["all"], len(records))
-        self.assertEqual(sum(counts["statuses"].values()), len(records))
-        self.assertEqual(sum(b["all"] for b in counts["books"].values()), len(records))
         approved = sum(r["status"] in build_site.APPROVED for r in records)
         self.assertEqual(counts["approved"], approved)
+        for code, n in counts["languages"].items():
+            self.assertEqual(n, sum(code in r["renderings"] for r in records), code)
+
+    def test_there_is_no_status_page(self):
+        # The translation status page was removed: nothing builds or links to it.
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertNotIn("/about/status/", sitemap)
         for lang in build_site.LANGUAGES:
             path = build_site.url(lang, "/about/status/")
-            page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
-            self.assertIn(f"<b>{build_site.number(len(records), lang)}</b>", page)
-            self.assertIn(f"<b>{build_site.number(approved, lang)}</b>", page)
-            self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
-            self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
-                          .read_text(encoding="utf-8"))
-            # The article on review, in the page's language where it has one.
-            has = any(a["slug"] == build_site.REVIEW_ARTICLE for a in build_site.load_articles(lang))
-            review = build_site.url(lang if has else "en", "/articles/" + build_site.REVIEW_ARTICLE + "/")
-            self.assertIn(f'href="{review}"', page)
+            self.assertFalse((self.out / path.strip("/")).exists(), path)
+            for page in ("/", "/download/", "/for/seekers/"):
+                text = (self.out / build_site.url(lang, page).strip("/") / "index.html").read_text(encoding="utf-8")
+                self.assertNotIn("/about/status/", text, (lang, page))
 
     def test_downloads_are_built_for_every_language_and_level(self):
         records = build_site._all_records()
@@ -404,7 +402,7 @@ class SiteTest(unittest.TestCase):
         counts = build_site.status_counts()
         self.assertTrue(text.startswith("# Open Word Bible\n\n> "))
         self.assertIn(f"{counts['all']:,} sentences are drafted and {counts['approved']:,} are reviewed", text)
-        self.assertIn(f"({build_site.SITE_URL}/about/status/)", text)
+        self.assertNotIn("/about/status/", text)
         self.assertIn(f"({build_site.SITE_URL}/articles/showing-the-work/)", text)
 
     def test_chapter_has_a_notes_section(self):

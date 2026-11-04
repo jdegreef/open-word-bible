@@ -215,9 +215,8 @@ For search engines and AI tools, which mostly read a page as served:
   (`chapter_text`, `chapter_notes`); the reader redraws both in place.
 - Chapter pages, articles and the English about page (the records as a
   dataset) carry schema.org data.
-- `/about/status/` counts the sentences drafted and reviewed, by status,
-  language and book, from `content/` at every build.
-- `llms.txt` is a short guide to the site for AI tools, with the same counts.
+- `llms.txt` is a short guide to the site for AI tools, with how many
+  sentences are drafted and reviewed, counted from `content/` at every build.
 
 ### Languages
 
