@@ -79,6 +79,23 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(manifest["licence_url"], "https://creativecommons.org/publicdomain/zero/1.0/")
         self.assertNotIn("missing", manifest)
 
+    def test_paragraphs(self):
+        records = [rec(["JHN.3.1"], "There was a man."), rec(["JHN.3.2"], "He came by night."),
+                   rec(["JHN.3.3"], "Jesus answered."), rec(["PSA.3.2"], "LORD, how many \\q are my foes!")]
+        opens = frozenset({"JHN.3.1", "JHN.3.3", "PSA.3.2"})
+        john = unzip(export.build(records, "en", "B", paragraphs=opens)[2])["43-JHN.usfm"]
+        # A chapter opens a paragraph anyway; a start later in it is a \p before its verse.
+        self.assertIn("\\c 3\n\\p\n\\v 1 There was a man.\n\\v 2 He came by night.\n\\p\n\\v 3 Jesus", john)
+        books = json.loads(export.build(records, "en", "B", "json", paragraphs=opens)[2])["books"]
+        verses = books[1]["chapters"][0]["verses"]
+        self.assertEqual([v.get("paragraph", False) for v in verses], [True, False, True])
+        # Numbered as English, the start moves with its verse (our PSA.3.2 is Psalm 3:1).
+        psalm = json.loads(export.build(records, "en", "B", "json", paragraphs=opens)[2])["books"][0]
+        self.assertEqual(psalm["chapters"][0]["verses"][0],
+                         {"verse": 1, "paragraph": True, "text": "LORD, how many are my foes!"})
+        # Without paragraphs nothing changes.
+        self.assertNotIn("\\p\n\\v 3", unzip(export.build(records, "en", "B")[2])["43-JHN.usfm"])
+
     def test_same_text_same_bytes(self):
         self.assertEqual(export.build(RECORDS, "en", "B")[2], export.build(RECORDS, "en", "B")[2])
 
