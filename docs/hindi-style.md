@@ -303,6 +303,19 @@ Settled in Luke:
   मैं तुमसे सचमुच कहता हूँ, kept apart from *amēn*; परमप्रधान for the Most
   High; woe तुम पर हाय.
 
+Settled in John (with docs/john-terms.md):
+
+- वचन (the Word); मैं तुमसे सच सच कहता हूँ (every level, तुम also to one
+  person, as section 4); बने रहना for *menō* in the weighty sense; सहायक
+  (the Paraclete); सत्य का आत्मा; "मैं हूँ" for the absolute "I am" (8:24,
+  8:28, 8:58, 13:19); चिह्न, never चमत्कार; "the Jews" यहूदी at L, यहूदी
+  अगुवे (B, R) where the authorities are meant.
+- संसार (world) at every level; ज्योति (L, B), रोशनी (R) for light, as
+  Matthew 5:14; Jesus' hour घड़ी, समय at Readable where the English says
+  "time"; प्रेम करना for both Greek verbs of love; *paroimia* उपमा (L, B),
+  मिसाल (R); "Woman" as an address हे स्त्री (L), हे नारी (B), माँ to his
+  mother and बहन to other women (R).
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is
