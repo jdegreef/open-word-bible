@@ -195,7 +195,8 @@ Settings change wording, never meaning, exactly as in English.
   `{{deity_pronoun:нём|Нём}}`, `{{deity_pronoun:им|Им}}`, and when Jesus
   speaks of himself or is spoken to: `меня|Меня`, `мне|Мне`, `мной|Мной`,
   `мой|Мой` (and its forms), `ты|Ты`, `тебя|Тебя`, `тебе|Тебе`,
-  `тобой|Тобой`, `твой|Твой` (and its forms). "Я" for Jesus has no span. The
+  `тобой|Тобой`, `твой|Твой` (and its forms), and `я|Я` for Jesus or God
+  mid-sentence, so "я" is capitalised with "Меня" and not apart from it. The
   reflexive свой and себя take none. A pronoun at the start of a sentence
   is written plainly with its capital. Put a span wherever the English has
   one for the same person; Russian may need one where English does not (an
@@ -239,8 +240,10 @@ Matthew was drafted first, in parallel passages; these choices hold for the
 later books. In the Synoptic parallels, keep the wording of the Matthew
 passage where the Greek is the same, and differ where the Greek differs.
 
-- **Pronouns.** "я" for Jesus or God mid-sentence is lowercase and takes no
-  span; the reflexive свой, себя and сам take none either.
+- **Pronouns.** "я" for Jesus or God mid-sentence takes the span
+  `{{deity_pronoun:я|Я}}`, like меня and мне; the reflexive свой, себя and
+  сам take none. (Matthew was drafted first with "я" plain or capitalised
+  without a span, and is brought into line separately.)
 - **Speech broken by a verb of saying** ("Lord," he said, "you...") takes
   two pairs of marks, «Господин», — сказал он, — «ты...», because the
   English counts two quotations and the red letters follow the count.
@@ -258,7 +261,10 @@ passage where the Greek is the same, and differ where the Greek differs.
   иго; *skandalizō* споткнуться / оступиться (L), отпасть от веры (B), not
   соблазниться, which now means to be tempted; Hades ад (L), мир мёртвых
   (B, R); "Father" as an address Отец, not Отче; greetings Здравствуй, not
-  Радуйся.
+  Радуйся. Settled in Mark: unclean spirit нечистый дух at every level;
+  fig tree смоковница (L, B), инжировое дерево (R), its fruit смоквы (L),
+  инжир (B, R); *euthys* тотчас at Literal, varied at Balanced and
+  Readable (сразу, тут же) but kept where the English keeps it.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний

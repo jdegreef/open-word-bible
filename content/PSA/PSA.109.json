@@ -58,6 +58,11 @@
           "L": "Para o regente. De Davi. Salmo. Deus do meu louvor, não fiques calado.",
           "B": "Para o mestre de música. De Davi. Salmo. Ó Deus, a quem eu louvo, não fiques em silêncio.",
           "R": "Para quem dirige a música. Canção de Davi. Ó Deus, {{deity_pronoun:tu|Tu}} és aquele a quem eu louvo. Não fiques calado!"
+        },
+        "am": {
+          "L": "ለመዘምራን አለቃ፤ የዳዊት መዝሙር። የምስጋናዬ አምላክ ሆይ፣ ዝም አትበል።",
+          "B": "ለመዘምራን አለቃ። የዳዊት መዝሙር። የማመሰግንህ አምላክ ሆይ፣ ዝም አትበል።",
+          "R": "ለመዘምራን አለቃ። ዳዊት የዘመረው መዝሙር። አምላኬ ሆይ፣ የማመሰግነው አንተን ነው። ዝም አትበል!"
         }
       },
       "decisions": [
@@ -251,6 +256,46 @@
           "reason": "The whole psalm is addressed to God (verses 1, 21, 26), so the wishes of verses 6-20 are put to him as requests, which keeps one speech level and shows, as the meaning decision says, that the psalmist hands the case to God rather than cursing for himself.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191090010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 109",
+          "alternatives": [],
+          "reason": "Amharic has no deity_pronoun spans: the Ethiopic script has no capital letters, so the setting has nothing to change. God is spoken of with the ordinary pronouns (እርሱ, አንተ) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191090010041"
+          ],
+          "choice": "\"God of my praise\" as \"የምስጋናዬ አምላክ\" (L), \"የማመሰግንህ አምላክ\" (B), \"አምላኬ\" (R)",
+          "alternatives": [
+            "\"እግዚአብሔር\""
+          ],
+          "reason": "Elohim with a possessor (\"of my praise\", \"my\") is \"አምላክ\"; the heading words follow the terms list's table (ለመዘምራን አለቃ; የዳዊት መዝሙር; R ዳዊት የዘመረው መዝሙር).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -317,6 +362,11 @@
           "L": "Porque [a] boca [do] ímpio e [a] boca do engano abriram contra mim; falaram comigo [com] língua de falsidade.",
           "B": "Porque os ímpios abriram contra mim a boca cheia de engano; falam comigo com mentiras na língua.",
           "R": "As pessoas más estão me atacando com mentiras. Tudo o que me dizem é falso."
+        },
+        "am": {
+          "L": "የክፉውን አፍና የተንኮልን አፍ በእኔ ላይ ከፍተዋልና፤ በሐሰተኛ ምላስ ተናገሩኝ።",
+          "B": "ክፉዎች አታላይ አፋቸውን በእኔ ላይ ከፍተዋልና፤ በምላሳቸው ውሸት ይናገሩኛል።",
+          "R": "ክፉ ሰዎች በውሸት እያጠቁኝ ነው። የሚነግሩኝ ሁሉ ሐሰት ነው።"
         }
       },
       "decisions": [
@@ -450,6 +500,11 @@
           "L": "E com palavras de ódio me cercaram, e lutaram contra mim sem motivo.",
           "B": "Eles me cercaram com palavras cheias de ódio e me atacaram sem razão.",
           "R": "Eles me cercam e dizem coisas cheias de ódio. Eles me atacam, embora eu não tenha feito nada contra eles."
+        },
+        "am": {
+          "L": "በጥላቻ ቃላትም ከበቡኝ፤ ያለ ምክንያትም ተዋጉኝ።",
+          "B": "በጥላቻ ቃላት ዙሪያዬን ከበቡኝ፤ ያለ ምክንያትም አጠቁኝ።",
+          "R": "ከበውኝ የጥላቻ ነገር ይናገራሉ። ምንም ሳላደርጋቸው ያጠቁኛል።"
         }
       },
       "decisions": [
@@ -540,6 +595,11 @@
           "L": "Em troca do meu amor, eles me acusam; mas eu [sou] oração.",
           "B": "Eles pagam o meu amor me acusando, mas eu continuo orando.",
           "R": "Eu mostrei amor a eles, mas em troca eles me acusam. Mesmo assim, eu continuo orando."
+        },
+        "am": {
+          "L": "በፍቅሬ ፋንታ ይከሱኛል፤ እኔ ግን ጸሎት [ነኝ]።",
+          "B": "ለፍቅሬ በክስ ይመልሱልኛል፤ እኔ ግን መጸለዬን አልተውም።",
+          "R": "እኔ ፍቅር አሳየኋቸው፤ እነርሱ ግን በምላሹ ይከሱኛል። ቢሆንም መጸለዬን እቀጥላለሁ።"
         }
       },
       "decisions": [
@@ -700,6 +760,11 @@
           "L": "E puseram sobre mim o mal em troca do bem, e ódio em troca do meu amor.",
           "B": "Eles me retribuem com o mal pelo bem que fiz, e com ódio pelo meu amor.",
           "R": "Eu fiz o bem a eles, mas eles me fazem o mal. Eu os amei, mas eles me odeiam."
+        },
+        "am": {
+          "L": "በመልካም ፋንታ ክፉን፣ በፍቅሬም ፋንታ ጥላቻን በላዬ አደረጉ።",
+          "B": "ለሠራሁት መልካም ክፉ፣ ለፍቅሬም ጥላቻ ይመልሱልኛል።",
+          "R": "እኔ መልካም አደረግኩላቸው፤ እነርሱ ግን ክፉ ያደርጉብኛል። እኔ ወደድኳቸው፤ እነርሱ ግን ይጠሉኛል።"
         }
       },
       "decisions": [
@@ -793,6 +858,11 @@
           "L": "Põe sobre ele um ímpio, e que um acusador fique à sua direita.",
           "B": "Coloca alguém perverso no comando sobre ele; que um acusador se ponha à sua direita.",
           "R": "Que uma pessoa má seja o juiz dele. Que alguém fique ao lado dele no tribunal para acusá-lo."
+        },
+        "am": {
+          "L": "በእርሱ ላይ ክፉ ሰውን ሹም፤ ከሳሽም በቀኙ ይቁም።",
+          "B": "ክፉ ሰውን በእርሱ ላይ አለቃ አድርግበት፤ ከሳሽም በቀኙ በኩል ይቁም።",
+          "R": "ክፉ ሰው ይፍረድበት። በፍርድ ቤትም የሚከሰው ሰው በአጠገቡ ይቁም።"
         }
       },
       "decisions": [
@@ -898,6 +968,27 @@
           "reason": "The word is an opponent at law (meaning decision, with its footnote on \"the devil\"); \"고발하다\" keeps the courtroom picture and links the verses where the same root returns.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191090060042"
+          ],
+          "choice": "accuser (satan) as \"ከሳሽ\"",
+          "alternatives": [
+            "\"ሰይጣን\""
+          ],
+          "reason": "The meaning decision reads the word as an opponent at law standing at the accused man's right hand; \"ሰይጣን\" would name the devil.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -961,6 +1052,11 @@
           "L": "Quando ele for julgado, que saia culpado, e que a sua oração se torne pecado.",
           "B": "Quando ele for a julgamento, que a sentença seja de culpado, e que até a sua oração conte como pecado.",
           "R": "Quando ele for julgado, que o tribunal o declare culpado. Que até as orações dele contem como pecado."
+        },
+        "am": {
+          "L": "በተፈረደበት ጊዜ በደለኛ ሆኖ ይውጣ፤ ጸሎቱም ኃጢአት ትሁን።",
+          "B": "በተከሰሰ ጊዜ ፍርዱ ጥፋተኛ ይሁን፤ ጸሎቱም እንኳ እንደ ኃጢአት ትቆጠር።",
+          "R": "ፍርድ ቤት በቀረበ ጊዜ ጥፋተኛ ሆኖ ይገኝ። ጸሎቱም እንኳ እንደ ኃጢአት ትቆጠርበት።"
         }
       },
       "decisions": [
@@ -1054,6 +1150,11 @@
           "L": "Que sejam poucos os seus dias; que outro tome o seu cargo.",
           "B": "Que a sua vida seja curta, e que outro ocupe o seu posto.",
           "R": "Que a vida dele seja curta. Que outra pessoa fique com o trabalho dele como líder."
+        },
+        "am": {
+          "L": "ዘመኑ ጥቂት ይሁን፤ የኃላፊነት ሹመቱን ሌላ ይውሰድ።",
+          "B": "ዕድሜው አጭር ይሁን፤ ኃላፊነቱንም ሌላ ሰው ይረከብ።",
+          "R": "ሕይወቱ ይቀጭ። የመሪነት ሥራውንም ሌላ ሰው ይረከብ።"
         }
       },
       "decisions": [
@@ -1124,6 +1225,25 @@
           "reason": "Peter quotes this line of Judas in Acts 1:20 (m1), and the Portuguese keeps the words of Acts at each level, which also fit the Hebrew word for an appointed office (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191090080041"
+          ],
+          "choice": "\"የኃላፊነት ሹመቱን ሌላ ይውሰድ\" (L), \"ኃላፊነቱንም ሌላ ሰው ይረከብ\" (B), \"የመሪነት ሥራውንም ሌላ ሰው ይረከብ\" (R), as Acts 1:20",
+          "alternatives": [],
+          "reason": "Peter quotes this line of the verse in Acts 1:20, and the Hebrew (pequddah, an office of oversight) agrees with the Greek (episkopē), so the Amharic New Testament's wording is kept at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1184,6 +1304,11 @@
           "L": "Que os seus filhos fiquem órfãos, e a sua mulher, viúva.",
           "B": "Que os seus filhos percam o pai e a sua mulher fique viúva.",
           "R": "Que os filhos dele fiquem sem pai, e que a mulher dele fique viúva."
+        },
+        "am": {
+          "L": "ልጆቹ አባት የሌላቸው ይሁኑ፤ ሚስቱም መበለት ትሁን።",
+          "B": "ልጆቹ አባታቸውን ያጡ፤ ሚስቱም መበለት ሆና ትቅር።",
+          "R": "ልጆቹ ያለ አባት ይቅሩ፤ ሚስቱም ባሏ የሞተባት ትሁን።"
         }
       },
       "decisions": [
@@ -1265,6 +1390,11 @@
           "L": "E que os seus filhos vaguem e vaguem e mendiguem, e busquem [comida] longe das suas ruínas.",
           "B": "Que os seus filhos andem de um lado para outro como mendigos, procurando comida longe dos seus lares em ruínas.",
           "R": "Que os filhos dele andem de um lugar para outro pedindo esmola. Que procurem comida longe das ruínas das suas casas."
+        },
+        "am": {
+          "L": "ልጆቹም መንከራተትን ይንከራተቱ፤ ይለምኑም፤ ከፍርስራሾቻቸውም [ምግብ] ይፈልጉ።",
+          "B": "ልጆቹ ለማኞች ሆነው ይንከራተቱ፤ ከፈረሰው ቤታቸው ርቀው ምግብ ይፈልጉ።",
+          "R": "ልጆቹ ከቦታ ቦታ እየለመኑ ይንከራተቱ። ከፈረሰው ቤታቸው ርቀው ምግብ ይፈልጉ።"
         }
       },
       "decisions": [
@@ -1381,6 +1511,11 @@
           "L": "Que o credor lance as mãos sobre tudo o que [é] dele, e que estranhos saqueiem [o fruto do] seu trabalho.",
           "B": "Que o agiota tome tudo o que ele tem, e estranhos levem aquilo por que ele trabalhou.",
           "R": "Que as pessoas a quem ele deve dinheiro tomem tudo o que ele tem. Que estranhos roubem tudo aquilo por que ele trabalhou."
+        },
+        "am": {
+          "L": "አበዳሪ ያለውን ሁሉ ይንጠቀው፤ ባዕዳንም የድካሙን [ፍሬ] ይዝረፉ።",
+          "B": "አበዳሪ ያለውን ሁሉ ይውሰድበት፤ የደከመበትንም እንግዶች ይዝረፉት።",
+          "R": "ያበደሩት ሰዎች ያለውን ሁሉ ይውሰዱበት። የሠራበትንም ሁሉ እንግዶች ይስረቁት።"
         }
       },
       "decisions": [
@@ -1477,6 +1612,11 @@
           "L": "Que não haja quem lhe estenda amor leal, e que não haja quem tenha compaixão dos seus órfãos.",
           "B": "Que ninguém continue a lhe mostrar amor leal, e ninguém tenha pena dos seus filhos órfãos.",
           "R": "Que ninguém seja bondoso com ele. Que ninguém cuide dos filhos dele quando ficarem sem pai."
+        },
+        "am": {
+          "L": "ጽኑ ፍቅርን የሚዘረጋለት አይኑር፤ አባት ለሌላቸው [ልጆቹም] የሚራራ አይኑር።",
+          "B": "ጽኑ ፍቅርን የሚያሳየው ማንም አይኑር፤ አባት ለሌላቸው ልጆቹም የሚያዝን አይገኝ።",
+          "R": "ማንም ቸርነት አያድርግለት። ልጆቹ አባት በሌላቸው ጊዜ ማንም አይንከባከባቸው።"
         }
       },
       "decisions": [
@@ -1655,6 +1795,11 @@
           "L": "Que a sua posteridade seja para eliminação; na geração seguinte, que o nome deles seja apagado.",
           "B": "Que a sua descendência chegue ao fim, e o nome deles seja apagado numa só geração.",
           "R": "Que a família dele acabe, e que na geração seguinte não sobre ninguém para levar o nome deles."
+        },
+        "am": {
+          "L": "የኋላ ዘሩ ለመጥፋት ይሁን፤ በሚቀጥለው ትውልድ ስማቸው ይደምሰስ።",
+          "B": "የትውልድ መስመሩ ይቋረጥ፤ በአንድ ትውልድ ውስጥ ስማቸው ይጥፋ።",
+          "R": "የቤተሰቡ ዘር ይጥፋ፤ በሚቀጥለው ትውልድ ስማቸውን የሚጠራ ማንም አይቅር።"
         }
       },
       "decisions": [
@@ -1752,6 +1897,11 @@
           "L": "Que a iniquidade dos seus pais seja lembrada diante {{divine_name:do SENHOR|de Javé}}, e que o pecado da sua mãe não seja apagado.",
           "B": "Que {{divine_name:o SENHOR|Javé}} tenha sempre em mente a culpa dos seus antepassados, e que o pecado da sua mãe nunca seja apagado.",
           "R": "Que {{divine_name:o SENHOR|Javé}} se lembre do mal que os antepassados dele fizeram e nunca esqueça o pecado da mãe dele."
+        },
+        "am": {
+          "L": "የአባቶቹ በደል {{divine_name:በእግዚአብሔር|በያህዌ}} ዘንድ ይታሰብ፤ የእናቱም ኃጢአት አይደምሰስ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የቀድሞ አባቶቹን በደል ያስብ፤ የእናቱም ኃጢአት ፈጽሞ አይደምሰስ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} አያቶቹ የሠሩትን በደል ያስብ፤ የእናቱንም ኃጢአት ፈጽሞ አይርሳ።"
         }
       },
       "decisions": [
@@ -1867,6 +2017,11 @@
           "L": "Que estejam diante {{divine_name:do SENHOR|de Javé}} continuamente, e que {{deity_pronoun:ele|Ele}} elimine da terra a memória deles.",
           "B": "Que os pecados deles fiquem sempre diante {{divine_name:do SENHOR|de Javé}}, e que {{deity_pronoun:ele|Ele}} apague da terra toda lembrança deles.",
           "R": "Que {{divine_name:o SENHOR|Javé}} tenha sempre em mente os pecados deles, e que {{deity_pronoun:ele|Ele}} faça o mundo inteiro se esquecer deles."
+        },
+        "am": {
+          "L": "{{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ዘወትር ይኑሩ፤ መታሰቢያቸውንም ከምድር ያጥፋ።",
+          "B": "ኃጢአታቸው ሁልጊዜ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ይኑር፤ ከምድርም መታሰቢያቸውን ሁሉ ያጥፋ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ኃጢአታቸውን ሁልጊዜ ያስብ፤ ዓለም ሁሉ እንዲረሳቸውም ያድርግ።"
         }
       },
       "decisions": [
@@ -1987,6 +2142,11 @@
           "L": "Porque ele não se lembrou de praticar amor leal, e perseguiu {{gender:a pessoa pobre e necessitada|o homem pobre e necessitado}} e o abatido de coração, para [os] matar.",
           "B": "Pois ele nunca pensou em mostrar amor leal; perseguiu até a morte o pobre, o necessitado e o de coração quebrantado.",
           "R": "Ele nunca se importou em ser bondoso. Em vez disso, perseguiu pessoas pobres, que precisavam de ajuda, e pessoas de coração partido, querendo matá-las."
+        },
+        "am": {
+          "L": "ጽኑ ፍቅርን ማድረግ አላሰበምና፤ ጐስቋላውንና ምስኪኑን ሰው፣ ልቡ የተሰበረውንም ሊገድል አሳደደ።",
+          "B": "ጽኑ ፍቅርን ማሳየት ከቶ አላሰበምና፤ ድሀውንና ምስኪኑን፣ ልባቸው የተሰበረውንም እስከ ሞት አሳደደ።",
+          "R": "ቸርነት ማድረግ ፈጽሞ ግድ አልሰጠውም። ይልቁንም ድሆችንና እርዳታ የሚያስፈልጋቸውን፣ ልባቸው የተሰበረውንም ሰዎች ሊገድላቸው አድኖ አሳደዳቸው።"
         }
       },
       "decisions": [
@@ -2115,6 +2275,23 @@
           "reason": "The English offers \"man\" for \"person\". Korean \"사람\" is the ordinary word for anyone and is what Korean says here, so there is no second wording to offer (style guide section 7); the same holds for verse 31.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191090160081"
+          ],
+          "choice": "\"ሰው\" with no gender span",
+          "alternatives": [],
+          "reason": "The English offers \"person|man\"; Amharic \"ሰው\" already means a person of either sex.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2182,6 +2359,11 @@
           "L": "E ele amou a maldição, e ela veio sobre ele; e não se agradou da bênção, e ela ficou longe dele.",
           "B": "Ele gostava de amaldiçoar, e a maldição caiu sobre ele; não quis abençoar, e a bênção ficou longe dele.",
           "R": "Ele gostava de amaldiçoar os outros, e agora as maldições caem sobre ele. Nunca quis abençoar ninguém, e agora nenhuma bênção chega até ele."
+        },
+        "am": {
+          "L": "መርገምን ወደደ፤ ወደ እርሱም መጣ፤ በበረከትም ደስ አላለውም፤ ከእርሱም ራቀ።",
+          "B": "መራገምን ወደደ፤ እርግማኑም በራሱ ላይ ተመለሰ፤ መባረክን አልፈለገም፤ በረከትም ከእርሱ ራቀ።",
+          "R": "ሌሎችን መራገም ይወድ ነበር፤ አሁን እርግማን በእርሱ ላይ ወደቀ። ማንንም መባረክ አልፈለገም፤ አሁን ምንም በረከት አይመጣለትም።"
         }
       },
       "decisions": [
@@ -2287,6 +2469,11 @@
           "L": "E ele se vestiu de maldição como da sua roupa, e ela entrou como água no seu interior e como óleo nos seus ossos.",
           "B": "Ele vestiu a maldição como a sua roupa; ela penetrou como água no seu íntimo e se infiltrou como óleo até os seus ossos.",
           "R": "Amaldiçoar fazia parte dele, como as roupas que ele usava. Isso o encheu por inteiro, como a água que se espalha e o óleo que penetra fundo nos ossos."
+        },
+        "am": {
+          "L": "መርገምን እንደ ልብሱ ለበሰ፤ እንደ ውኃም ወደ ውስጡ፣ እንደ ዘይትም ወደ አጥንቶቹ ገባ።",
+          "B": "መራገምን እንደ ልብስ ለበሰ፤ እንደ ውኃ ወደ ውስጣዊ ማንነቱ ሰረገ፤ እንደ ዘይትም እስከ አጥንቶቹ ጠለቀ።",
+          "R": "መራገም እንደሚለብሰው ልብስ የማንነቱ ክፍል ሆነ። ውኃ እንደሚሰርግ፣ ዘይትም ወደ አጥንት እንደሚጠልቅ ሞላው።"
         }
       },
       "decisions": [
@@ -2397,6 +2584,11 @@
           "L": "Que ela seja para ele como a roupa [com que] ele se envolve, e como o cinto [que] ele sempre amarra.",
           "B": "Que ela seja o manto com que ele se envolve, o cinto que ele amarra todos os dias.",
           "R": "Que as maldições dele o cubram como um casaco e fiquem amarradas nele como um cinto que ele nunca tira."
+        },
+        "am": {
+          "L": "እንደሚጠቀለልበት ልብስ፣ ዘወትርም እንደሚታጠቀው መታጠቂያ ይሁንለት።",
+          "B": "የሚጠቀለልበት መጎናጸፊያ፣ በየዕለቱም የሚታጠቀው ቀበቶ ይሁንለት።",
+          "R": "እርግማኑ እንደ ካባ ይሸፍነው፤ ፈጽሞ እንደማይፈታው ቀበቶም ታስሮበት ይኑር።"
         }
       },
       "decisions": [
@@ -2512,6 +2704,11 @@
           "L": "Este [é] o salário dos meus acusadores da parte {{divine_name:do SENHOR|de Javé}}, e dos que falam mal contra a minha alma.",
           "B": "Que seja esse o pagamento que {{divine_name:o SENHOR|Javé}} dá aos meus acusadores, aos que falam mal contra mim.",
           "R": "Que seja assim que {{divine_name:o SENHOR|Javé}} castigue as pessoas que me acusam e contam mentiras maldosas sobre mim."
+        },
+        "am": {
+          "L": "ከሳሾቼና በነፍሴ ላይ ክፉ የሚናገሩ {{divine_name:ከእግዚአብሔር|ከያህዌ}} የሚቀበሉት ደመወዝ ይህ [ነው]።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሳሾቼን፣ በእኔ ላይ ክፉ የሚናገሩትን እንዲህ ይክፈላቸው።",
+          "R": "የሚከሱኝንና ስለ እኔ ክፉ ውሸት የሚናገሩትን {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይመልስላቸው።"
         }
       },
       "decisions": [
@@ -2645,6 +2842,11 @@
           "L": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:DEUS|Javé}}, meu Senhor, age comigo por amor do {{deity_pronoun:teu|Teu}} nome; porque o {{deity_pronoun:teu|Teu}} amor leal [é] bom, livra-me.",
           "B": "Mas {{deity_pronoun:tu|Tu}}, Senhor {{divine_name:DEUS|Javé}}, fica do meu lado pela honra do {{deity_pronoun:teu|Teu}} nome; livra-me, pois o {{deity_pronoun:teu|Teu}} amor leal é bom.",
           "R": "Mas {{deity_pronoun:tu|Tu}}, Senhor {{divine_name:DEUS|Javé}}, ajuda-me, para que as pessoas honrem o {{deity_pronoun:teu|Teu}} nome. O {{deity_pronoun:teu|Teu}} amor fiel é bom; então, livra-me!"
+        },
+        "am": {
+          "L": "አንተ ግን፣ {{divine_name:እግዚአብሔር|ያህዌ}} ጌታዬ ሆይ፣ ስለ ስምህ ስትል አድርግልኝ፤ ጽኑ ፍቅርህ መልካም ነውና ታደገኝ።",
+          "B": "አንተ ግን፣ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስለ ስምህ ክብር ከጎኔ ቁም፤ ጽኑ ፍቅርህ መልካም ነውና ታደገኝ።",
+          "R": "አንተ ግን፣ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ሰዎች ስምህን እንዲያከብሩ እርዳኝ። ጽኑ ፍቅርህ መልካም ነው፤ ስለዚህ ታደገኝ!"
         }
       },
       "decisions": [
@@ -2904,6 +3106,26 @@
           "reason": "Where the name stands with \"Lord\" (m2), the name is written \"DEUS\" so that the two do not read \"Senhor SENHOR\", as the Old Testament terms set it for Adonai YHWH and as 68:21 and 73:28 have it; Literal keeps the Hebrew order, name first.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191090210021",
+            "o191090210031"
+          ],
+          "choice": "L \"{{divine_name:እግዚአብሔር|ያህዌ}} ጌታዬ\" (YHWH my Lord, in the Hebrew order); B, R \"ጌታ {{divine_name:እግዚአብሔር|ያህዌ}}\"",
+          "alternatives": [],
+          "reason": "The Hebrew has the name first, then Adonai. Literal keeps that order, as the English Literal does; Balanced and Readable use the usual \"ጌታ\" + name of the terms list.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2968,6 +3190,11 @@
           "L": "Porque pobre e necessitado [sou] eu, e o meu coração está ferido dentro de mim.",
           "B": "Pois eu sou pobre e desamparado; o meu coração está traspassado dentro de mim.",
           "R": "Eu sou pobre e preciso de ajuda. O meu coração está partido e cheio de dor."
+        },
+        "am": {
+          "L": "እኔ ጐስቋላና ምስኪን ነኝና፤ ልቤም በውስጤ ተወግቷል።",
+          "B": "እኔ ድሀና ረዳት የሌለኝ ነኝና፤ ልቤ በውስጤ ቆስሏል።",
+          "R": "እኔ ድሀ ነኝ፤ እርዳታም ያስፈልገኛል። ልቤ ተሰብሯል፤ በሥቃይም ተሞልቷል።"
         }
       },
       "decisions": [
@@ -3080,6 +3307,11 @@
           "L": "Como a sombra quando se estende, eu me fui; fui sacudido como o gafanhoto.",
           "B": "Como a sombra que se alonga ao entardecer, eu vou passando; sou sacudido como um gafanhoto.",
           "R": "Estou desaparecendo como uma sombra no fim do dia. As pessoas me sacodem como se eu fosse um gafanhoto na roupa delas."
+        },
+        "am": {
+          "L": "እንደሚረዝም ጥላ አልፌአለሁ፤ እንደ አንበጣም ተራግፌአለሁ።",
+          "B": "ምሽት ላይ እንደሚረዝም ጥላ አልፋለሁ፤ እንደ አንበጣም እራገፋለሁ።",
+          "R": "ቀኑ ሲመሽ እንደሚጠፋ ጥላ እየጠፋሁ ነው። ሰዎች በልብሳቸው ላይ ያረፈን አንበጣ እንደሚያራግፉ ያራግፉኛል።"
         }
       },
       "decisions": [
@@ -3192,6 +3424,11 @@
           "L": "Os meus joelhos vacilaram por causa do jejum, e a minha carne emagreceu, sem gordura.",
           "B": "Os meus joelhos fraquejam de tanto ficar sem comer, e o meu corpo emagreceu, sem gordura nenhuma.",
           "R": "Fiquei tanto tempo sem comer que os meus joelhos estão fracos. Virei pele e osso."
+        },
+        "am": {
+          "L": "ከጾም የተነሣ ጉልበቶቼ ተብረከረኩ፤ ሥጋዬም ስብ አጥቶ ከሳ።",
+          "B": "ምግብ ከመተው የተነሣ ጉልበቶቼ ተብረከረኩ፤ ሰውነቴም ስብ የሌለው ሆኖ ከሳ።",
+          "R": "ለረጅም ጊዜ ምግብ ስላልበላሁ ጉልበቶቼ ደከሙ። ቆዳና አጥንት ብቻ ሆኜ ቀረሁ።"
         }
       },
       "decisions": [
@@ -3310,6 +3547,11 @@
           "L": "E eu me tornei um opróbrio para eles; eles me veem, sacodem a cabeça.",
           "B": "Eles me tratam com desprezo; quando me veem, sacodem a cabeça para mim.",
           "R": "As pessoas riem de mim. Elas me veem e balançam a cabeça para zombar de mim."
+        },
+        "am": {
+          "L": "እኔም ለእነርሱ መሰደቢያ ሆንኩ፤ ያዩኛል፤ ራሳቸውን ይነቀንቃሉ።",
+          "B": "በንቀት ያዩኛል፤ ሲያዩኝም ራሳቸውን ይነቀንቁብኛል።",
+          "R": "ሰዎች ይስቁብኛል። ሲያዩኝ ሊያሾፉብኝ ራሳቸውን ይነቀንቃሉ።"
         }
       },
       "decisions": [
@@ -3425,6 +3667,11 @@
           "L": "Ajuda-me, {{divine_name:SENHOR|Javé}}, meu Deus; salva-me segundo o {{deity_pronoun:teu|Teu}} amor leal.",
           "B": "{{divine_name:SENHOR|Javé}}, meu Deus, vem me ajudar! Salva-me, fiel ao {{deity_pronoun:teu|Teu}} amor leal.",
           "R": "{{divine_name:SENHOR|Javé}}, meu Deus, ajuda-me! Salva-me, como o {{deity_pronoun:teu|Teu}} amor fiel promete."
+        },
+        "am": {
+          "L": "አምላኬ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እርዳኝ፤ እንደ ጽኑ ፍቅርህ አድነኝ።",
+          "B": "አምላኬ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለእርዳታዬ ድረስ! ለጽኑ ፍቅርህ ታምነህ አድነኝ።",
+          "R": "አምላኬ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እርዳኝ! ጽኑ ፍቅርህ ቃል እንደ ገባው አድነኝ።"
         }
       },
       "decisions": [
@@ -3541,6 +3788,11 @@
           "L": "E que saibam que esta [é] a {{deity_pronoun:tua|Tua}} mão; {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, o fizeste.",
           "B": "Faze-os ver que isto é obra da {{deity_pronoun:tua|Tua}} própria mão, que foste {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, quem o fez.",
           "R": "Então os meus inimigos vão saber que foste {{deity_pronoun:tu|Tu}} quem fez isso, {{divine_name:SENHOR|Javé}}. Vão ver que o {{deity_pronoun:teu|Teu}} poder me salvou."
+        },
+        "am": {
+          "L": "ይህ እጅህ እንደ ሆነ ይወቁ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ አደረግኸው።",
+          "B": "ይህ የገዛ እጅህ ሥራ እንደ ሆነ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ያደረግኸው አንተ እንደ ሆንክ እንዲያዩ አድርግ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ይህን ያደረግኸው አንተ እንደ ሆንክ ጠላቶቼ ያውቃሉ። ያዳነኝም ኃይልህ እንደ ሆነ ያያሉ።"
         }
       },
       "decisions": [
@@ -3653,6 +3905,11 @@
           "L": "Que eles amaldiçoem, mas {{deity_pronoun:tu|Tu}} abençoarás; levantaram-se e foram envergonhados, e o {{deity_pronoun:teu|Teu}} servo se alegrará.",
           "B": "Eles podem amaldiçoar, mas {{deity_pronoun:tu|Tu}} abençoarás; quando se levantarem contra mim, serão envergonhados, enquanto o {{deity_pronoun:teu|Teu}} servo se alegra.",
           "R": "Eles podem me amaldiçoar, mas {{deity_pronoun:tu|Tu}} vais me abençoar. Eles me atacam, mas vão acabar envergonhados, e eu, o {{deity_pronoun:teu|Teu}} servo, vou ficar alegre."
+        },
+        "am": {
+          "L": "እነርሱ ይርገሙ፤ አንተ ግን ትባርካለህ፤ ተነሡ፤ አፈሩም፤ ባሪያህ ግን ደስ ይለዋል።",
+          "B": "እነርሱ ቢረግሙ አንተ ትባርካለህ፤ በእኔ ላይ ሲነሡ ያፍራሉ፤ አገልጋይህ ግን ደስ ይለዋል።",
+          "R": "እነርሱ ቢረግሙኝ አንተ ትባርከኛለህ። ያጠቁኛል፤ መጨረሻቸው ግን ኀፍረት ይሆናል፤ እኔ አገልጋይህ ግን ደስ ይለኛል።"
         }
       },
       "decisions": [
@@ -3832,6 +4089,11 @@
           "L": "Que os meus acusadores se vistam [de] desonra, e que se envolvam na sua vergonha como [num] manto.",
           "B": "Que os meus acusadores sejam vestidos de desonra e envolvidos na sua própria vergonha como num manto.",
           "R": "Que as pessoas que me acusam fiquem cobertas de desonra. Que a vergonha delas as envolva como um casaco."
+        },
+        "am": {
+          "L": "ከሳሾቼ ውርደትን ይልበሱ፤ ኀፍረታቸውንም እንደ መጎናጸፊያ ይከናነቡ።",
+          "B": "ከሳሾቼ ውርደትን ይልበሱ፤ የራሳቸውንም ኀፍረት እንደ ካባ ይጠቅለሉ።",
+          "R": "የሚከሱኝ ሰዎች በውርደት ይሸፈኑ። ኀፍረታቸው እንደ ካባ ይጠቅልላቸው።"
         }
       },
       "decisions": [
@@ -3928,6 +4190,11 @@
           "L": "Renderei muitas graças {{divine_name:ao SENHOR|a Javé}} com a minha boca, e no meio de muitos {{deity_pronoun:o|O}} louvarei.",
           "B": "Os meus lábios vão agradecer {{divine_name:ao SENHOR|a Javé}} sem parar; eu {{deity_pronoun:o|O}} louvarei no meio da multidão.",
           "R": "Vou agradecer {{divine_name:ao SENHOR|a Javé}} em voz alta, muitas e muitas vezes. Vou louvá-{{deity_pronoun:lo|Lo}} diante de muita gente."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} በአፌ እጅግ አመሰግናለሁ፤ በብዙዎችም መካከል አወድሰዋለሁ።",
+          "B": "ከንፈሮቼ {{divine_name:እግዚአብሔርን|ያህዌን}} ደጋግመው ያመሰግናሉ፤ በሕዝቡም መካከል አወድሰዋለሁ።",
+          "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} ደግሜ ደጋግሜ ጮክ ብዬ አመሰግናለሁ። በብዙ ሰዎችም ፊት አወድሰዋለሁ።"
         }
       },
       "decisions": [
@@ -4041,6 +4308,11 @@
           "L": "Porque {{deity_pronoun:ele|Ele}} se põe à direita do necessitado, para [o] salvar dos que julgam a sua alma.",
           "B": "Pois {{deity_pronoun:ele|Ele}} toma o {{deity_pronoun:seu|Seu}} lugar ao lado direito dos necessitados, para salvá-los dos que querem condená-los à morte.",
           "R": "Ele fica bem ao lado das pessoas necessitadas. Ele as salva daqueles que querem que elas sejam condenadas à morte."
+        },
+        "am": {
+          "L": "ነፍሱን ከሚፈርዱበት ያድነው ዘንድ በምስኪኑ ቀኝ ይቆማልና።",
+          "B": "ሞት እንዲፈረድባቸው ከሚሹ ያድናቸው ዘንድ በምስኪኖች ቀኝ ይቆማልና።",
+          "R": "እርዳታ የሚያስፈልጋቸውን ሰዎች በአጠገባቸው ቆሞ ይረዳቸዋል። ሞት እንዲፈረድባቸው ከሚፈልጉም ያድናቸዋል።"
         }
       },
       "decisions": [
@@ -4192,6 +4464,23 @@
             "salvá-[los] ... a alma deles"
           ],
           "reason": "The English needs \"them, their (him, his)\" for the needy one (r-en-1). In Portuguese \"o necessitado\" means anyone in need, and \"o\" and \"sua\" refer back to it as ordinary generic grammar, so there is nothing for the setting to change; Balanced and Readable use the plural, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191090310052"
+          ],
+          "choice": "\"ያድነው\", \"ነፍሱን\" (the generic singular) with no gender span",
+          "alternatives": [],
+          "reason": "The English offers \"them|him\"; the Amharic singular for \"the needy one\" stands for anyone in need, man or woman, so no span is needed.",
           "uncertain": false,
           "footnote": false
         }

@@ -59,6 +59,11 @@
           "L": "Salmo de Davi, quando ele fugiu de diante de Absalão, seu filho.",
           "B": "Salmo de Davi, quando fugiu do seu filho Absalão.",
           "R": "Canção de Davi, do tempo em que ele fugiu do seu filho Absalão."
+        },
+        "am": {
+          "L": "የዳዊት መዝሙር፤ ከልጁ ከአቤሴሎም ፊት በሸሸ ጊዜ።",
+          "B": "የዳዊት መዝሙር፤ ከልጁ ከአቤሴሎም በሸሸ ጊዜ።",
+          "R": "ዳዊት የዘመረው መዝሙር፤ ከልጁ ከአቤሴሎም ሸሽቶ በነበረበት ጊዜ።"
         }
       },
       "decisions": [
@@ -288,6 +293,49 @@
           "reason": "For the whole book: the title formula is \"Salmo de Davi\", without an article, as Portuguese writes titles (the English \"A psalm\" has none in brackets either). Readable says \"Canção\", as the English Readable says \"song\" (m2); \"cântico\" is kept for the Hebrew shir (\"Cântico dos degraus\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030010011",
+            "o190030010022"
+          ],
+          "choice": "The heading as a plain line: \"የዳዊት መዝሙር\" (L, B), \"ዳዊት የዘመረው መዝሙር\" (R), then the occasion; Absalom \"አቤሴሎም\" as 2 Samuel",
+          "alternatives": [
+            "\"መዝሙረ ዳዊት\""
+          ],
+          "reason": "The terms list for the Psalms and docs/amharic-style.md 7a give these heading words; the heading is verse 1, as in the Hebrew, with no quotation marks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190030010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of this psalm.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -349,6 +397,11 @@
           "L": "{{divine_name:SENHOR|Javé}}, quão numerosos se tornaram os meus adversários! \\q Muitos [estão] se levantando contra mim.",
           "B": "{{divine_name:SENHOR|Javé}}, como aumentaram os meus inimigos! \\q Muitos estão se levantando contra mim.",
           "R": "{{divine_name:SENHOR|Javé}}, eu tenho tantos inimigos! \\q Tanta gente está se voltando contra mim."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ባላጋራዎቼ እንዴት በዙ! \\q ብዙዎች በእኔ ላይ ይነሣሉ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ባላጋራዎቼ ምንኛ በዙ! \\q ብዙዎች በእኔ ላይ እየተነሡ ነው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቼ እጅግ ብዙ ናቸው! \\q ብዙ ሰዎች በእኔ ላይ ተነሥተዋል።"
         }
       },
       "decisions": [
@@ -510,6 +563,26 @@
           "reason": "For the whole book: when the psalmist speaks to God by name, the name stands alone, without \"ó\" or an article, as in the English (r-en-1) and in David's prayer in 1 Chronicles 17; the span still offers \"Javé\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030020041"
+          ],
+          "choice": "foes (tsarim) as \"ባላጋራዎች\" (L, B), \"ጠላቶች\" (R)",
+          "alternatives": [
+            "\"ጠላቶች\" at every level"
+          ],
+          "reason": "The terms list keeps \"ባላጋራዎች\" for tsarim and \"ጠላቶች\" for ʾoyevim (verse 8), so the two Hebrew words stay apart; Readable uses the everyday word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -575,6 +648,11 @@
           "L": "Muitos [estão] dizendo da minha alma: \\q \"Não há salvação para ele em Deus.\" Selá",
           "B": "Muitos dizem a meu respeito: \\q \"Deus não vai livrá-lo.\" Selá",
           "R": "Muita gente diz que Deus não vai me salvar. Selá"
+        },
+        "am": {
+          "L": "ብዙዎች ስለ ነፍሴ እንዲህ ይላሉ፦ \\q «በእግዚአብሔር ዘንድ ለእርሱ መዳን የለውም።» ሴላ",
+          "B": "ብዙዎች ስለ እኔ እንዲህ ይላሉ፦ \\q «እግዚአብሔር አያድነውም።» ሴላ",
+          "R": "ብዙ ሰዎች እግዚአብሔር እንደማያድነኝ ይናገራሉ። ሴላ"
         }
       },
       "decisions": [
@@ -864,6 +942,28 @@
           "reason": "For the whole book: the word's meaning is unknown (m3), so every level keeps it, as the English does, in its usual Brazilian spelling, set apart at the end of the line.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030072"
+          ],
+          "choice": "God (ʾelohim) as \"እግዚአብሔር\" where the psalms speak of the one God, \"አምላክ\" in address and with a possessive (\"አምላኬ\", \"my God\"); Selah as \"ሴላ\", kept at the end of its line at every level",
+          "alternatives": [
+            "\"አምላክ\" everywhere",
+            "leaving Selah out at Readable"
+          ],
+          "reason": "docs/amharic-style.md 7a: Elohim is \"እግዚአብሔር\" where the text plainly speaks of the one God; the divine name keeps its own span. Selah is a musical or liturgical mark whose meaning is lost (meaning decision m3), so it is kept as a word, as the English keeps it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -928,6 +1028,11 @@
           "L": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, [és] um escudo ao meu redor, \\q a minha glória, e [aquele que] levanta a minha cabeça.",
           "B": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, és um escudo que me protege de todos os lados. \\q Tu és a minha glória, e {{deity_pronoun:tu|Tu}} me fazes erguer de novo a cabeça.",
           "R": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, me proteges como um escudo à minha volta. \\q Tu me dás honra, e {{deity_pronoun:tu|Tu}} me ajudas a erguer a cabeça de novo."
+        },
+        "am": {
+          "L": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በዙሪያዬ ጋሻ [ነህ]፤ \\q ክብሬና ራሴን ከፍ የምታደርግ [ነህ]።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ግን በዙሪያዬ ሁሉ ጋሻ ነህ፤ \\q ክብሬ አንተ ነህ፤ ራሴንም እንደ ገና ቀና ታደርጋለህ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ግን በዙሪያዬ እንዳለ ጋሻ ትጠብቀኛለህ። \\q ክብርን ትሰጠኛለህ፤ ራሴንም እንደ ገና ቀና እንዳደርግ ትረዳኛለህ።"
         }
       },
       "decisions": [
@@ -1127,6 +1232,11 @@
           "L": "[Com] a minha voz clamo {{divine_name:ao SENHOR|a Javé}}, \\q e {{deity_pronoun:ele|Ele}} me responde do monte da {{deity_pronoun:sua|Sua}} santidade. Selá",
           "B": "Ergo a voz e clamo {{divine_name:ao SENHOR|a Javé}}, \\q e do {{deity_pronoun:seu|Seu}} monte santo {{deity_pronoun:ele|Ele}} me responde. Selá",
           "R": "Eu grito {{divine_name:ao SENHOR|a Javé}} pedindo socorro, \\q e {{deity_pronoun:ele|Ele}} me responde do {{deity_pronoun:seu|Seu}} monte santo. Selá"
+        },
+        "am": {
+          "L": "በድምፄ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ \\q እርሱም ከቅድስናው ተራራ ይመልስልኛል። ሴላ",
+          "B": "ድምፄን ከፍ አድርጌ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጣራለሁ፤ \\q እርሱም ከተቀደሰው ተራራው ይመልስልኛል። ሴላ",
+          "R": "ርዳታ ለማግኘት ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ \\q እርሱም ከተቀደሰው ተራራው ይመልስልኛል። ሴላ"
         }
       },
       "decisions": [
@@ -1285,6 +1395,11 @@
           "L": "Quanto a mim, eu me deitei e dormi; \\q acordei, \\q porque {{divine_name:o SENHOR|Javé}} me ampara.",
           "B": "Eu me deitei e adormeci, \\q e acordei de novo, \\q porque {{divine_name:o SENHOR|Javé}} me mantém de pé.",
           "R": "Eu me deitei e dormi. \\q Depois acordei de novo, \\q porque {{divine_name:o SENHOR|Javé}} cuida de mim."
+        },
+        "am": {
+          "L": "እኔስ ተኛሁ፤ አንቀላፋሁም፤ \\q ነቃሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ይደግፈኛልና።",
+          "B": "ተኛሁ፤ እንቅልፍም ወሰደኝ፤ \\q እንደ ገናም ነቃሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ደግፎ ይዞኛልና።",
+          "R": "ተኛሁ፤ አንቀላፋሁም። \\q ከዚያም እንደ ገና ነቃሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ይንከባከበኛልና።"
         }
       },
       "decisions": [
@@ -1400,6 +1515,11 @@
           "L": "Não terei medo de dezenas de milhares de pessoas \\q que ao redor se puseram contra mim.",
           "B": "Não tenho medo das dezenas de milhares \\q que tomaram posição contra mim por todos os lados.",
           "R": "Não vou ter medo, \\q mesmo que milhares e milhares de pessoas me cerquem para me atacar."
+        },
+        "am": {
+          "L": "ከአሥር ሺዎች ሕዝብ አልፈራም፤ \\q በዙሪያዬ ሁሉ በእኔ ላይ ከተሰለፉት።",
+          "B": "በአሥር ሺዎች የሚቆጠሩትን አልፈራም፤ \\q በየአቅጣጫው በእኔ ላይ የተሰለፉትን።",
+          "R": "አልፈራም፤ \\q ሺዎችና ሺዎች ሰዎች ሊያጠቁኝ ቢከብቡኝ እንኳ።"
         }
       },
       "decisions": [
@@ -1499,6 +1619,11 @@
           "L": "Levanta-te, {{divine_name:SENHOR|Javé}}! Salva-me, meu Deus! \\q Porque {{deity_pronoun:tu|Tu}} feriste todos os meus inimigos [na] face; \\q os dentes dos ímpios {{deity_pronoun:tu|Tu}} quebraste.",
           "B": "Levanta-te, {{divine_name:SENHOR|Javé}}! Livra-me, meu Deus! \\q Pois {{deity_pronoun:tu|Tu}} golpeaste todos os meus inimigos no queixo \\q e quebraste os dentes dos ímpios.",
           "R": "Levanta-te, {{divine_name:SENHOR|Javé}}! Salva-me, meu Deus! \\q Tu bateste no rosto de todos os meus inimigos. \\q Tu quebraste os dentes das pessoas más, para que elas não possam morder."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተነሥ! አምላኬ ሆይ፣ አድነኝ! \\q ጠላቶቼን ሁሉ ጉንጫቸውን መትተሃቸዋልና፤ \\q የክፉዎችን ጥርስ ሰብረሃል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተነሥ! አምላኬ ሆይ፣ ታደገኝ! \\q ጠላቶቼን ሁሉ መንጋጋቸውን መትተሃል፤ \\q የክፉዎችንም ጥርስ አርግፈሃል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተነሥ! አምላኬ ሆይ፣ አድነኝ! \\q ጠላቶቼን ሁሉ ፊታቸውን መታሃቸው። \\q መንከስ እንዳይችሉ የክፉ ሰዎችን ጥርስ ሰበርክ።"
         }
       },
       "decisions": [
@@ -1715,6 +1840,11 @@
           "L": "{{divine_name:Ao SENHOR|A Javé}} [pertence] a salvação; \\q sobre o {{deity_pronoun:teu|Teu}} povo [esteja] a {{deity_pronoun:tua|Tua}} bênção. Selá",
           "B": "É {{divine_name:o SENHOR|Javé}} quem salva. \\q Que a {{deity_pronoun:tua|Tua}} bênção repouse sobre o {{deity_pronoun:teu|Teu}} povo. Selá",
           "R": "{{divine_name:O SENHOR|Javé}} é aquele que salva. \\q Por favor, abençoa o {{deity_pronoun:teu|Teu}} povo. Selá"
+        },
+        "am": {
+          "L": "ማዳን {{divine_name:የእግዚአብሔር|የያህዌ}} ነው፤ \\q በረከትህ በሕዝብህ ላይ [ይሁን]። ሴላ",
+          "B": "የሚያድን {{divine_name:እግዚአብሔር|ያህዌ}} ነው። \\q በረከትህ በሕዝብህ ላይ ይረፍ። ሴላ",
+          "R": "የሚያድነው {{divine_name:እግዚአብሔር|ያህዌ}} ነው። \\q እባክህ ሕዝብህን ባርክ። ሴላ"
         }
       },
       "decisions": [
