@@ -55,6 +55,11 @@
           "L": "Aleluia! Louve {{divine_name:o SENHOR|Javé}}, minha alma!",
           "B": "Aleluia! Minha alma, louve {{divine_name:o SENHOR|Javé}}!",
           "R": "Louvem {{divine_name:o SENHOR|Iá}}! Com tudo o que eu sou, eu louvo {{divine_name:o SENHOR|Javé}}."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! ነፍሴ ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኚ!",
+          "B": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! ነፍሴ ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኚ!",
+          "R": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! በሙሉ ሁለንተናዬ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ።"
         }
       },
       "decisions": [
@@ -205,6 +210,67 @@
           "reason": "Psalms 146-150 each open and close with hallelu-yah (m1, m2). As in 111:1 and 113:1, Literal and Balanced say \"Aleluia\", which already holds the short name, and Readable says \"Louvem o SENHOR!\" with the setting \"Iá\". \"Louve ..., minha alma\" speaks to the psalmist's own soul in the third person, as \"Bendiga ..., minha alma\" does in 103:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 146.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460010011",
+            "o191460010021"
+          ],
+          "choice": "hallelu-yah translated, \"እግዚአብሔርን አመስግኑ!\" (alternative \"ያህን አመስግኑ!\"), at every level",
+          "alternatives": [
+            "\"ሃሌ ሉያ!\" (the borrowed word, as Revelation 19 on main)"
+          ],
+          "reason": "The renderings of Psalms 146-150 translate the call (meaning decision m1), and the English has \"Praise the LORD|Yah\" with a divine_name span, so the Amharic translates it too, as the terms list sets where the English translates it. Yah is the short form of the name: the default reads \"እግዚአብሔርን\" and the alternative \"ያህን\", the form the Hebrew has, as 68:5 and 77:12 on main.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-3",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460010031",
+            "o191460010041",
+            "o191460010042"
+          ],
+          "choice": "\"ነፍሴ ሆይ፣ ... አመስግኚ\" (my soul, praise, with the feminine command)",
+          "alternatives": [],
+          "reason": "The psalmist speaks to his own soul (meaning decision m3); \"ነፍስ\" takes the feminine in Amharic, so the command is \"አመስግኚ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -269,6 +335,11 @@
           "L": "Louvarei {{divine_name:o SENHOR|Javé}} na minha vida; cantarei louvores ao meu Deus enquanto eu [ainda] existir.",
           "B": "A vida inteira louvarei {{divine_name:o SENHOR|Javé}}; enquanto eu ainda estiver aqui, farei música para o meu Deus.",
           "R": "Vou louvar {{divine_name:o SENHOR|Javé}} a minha vida inteira. Vou cantar para o meu Deus enquanto eu viver."
+        },
+        "am": {
+          "L": "በሕይወቴ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ፤ ገና ሳለሁ ለአምላኬ እዘምራለሁ።",
+          "B": "በሕይወቴ ዘመን ሁሉ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ፤ በሕይወት እስካለሁ ድረስ ለአምላኬ እዘምራለሁ።",
+          "R": "ዕድሜዬን ሙሉ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ። በሕይወት እስካለሁ ድረስ ለአምላኬ እዘምራለሁ።"
         }
       },
       "decisions": [
@@ -400,6 +471,11 @@
           "L": "Não confiem em nobres, em {{gender:um ser humano|um filho de homem}}, em quem não [há] salvação.",
           "B": "Não se apoiem em governantes, em simples mortais, que não têm poder para salvar.",
           "R": "Não confiem em líderes poderosos nem em qualquer outro ser humano. Nenhuma pessoa pode de fato salvar alguém."
+        },
+        "am": {
+          "L": "በመኳንንት፣ ማዳን በሌለው በሰው ልጅ አትታመኑ።",
+          "B": "በገዥዎች፣ ማዳን በማይችሉ ሟች ሰዎች አትመኩ።",
+          "R": "በኃያላን መሪዎች ወይም በሌላ በማንኛውም ሰው አትታመኑ። ማንም ሰው በእውነት ማንንም ሊያድን አይችልም።"
         }
       },
       "decisions": [
@@ -554,6 +630,28 @@
           "reason": "The phrase means a mere human (meaning decision); Korean has an inclusive and a traditional wording, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460030042",
+            "o191460030051"
+          ],
+          "choice": "No gender span in verses 3-5: \"ሰው\", \"የሰው ልጅ\" and the masculine suffix already cover men and women",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "As docs/amharic-style.md 7b: the English offers \"a human being / a son of man\" and \"their / his\"; the Amharic words are already inclusive, so the setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -620,6 +718,11 @@
           "L": "O seu fôlego sai, ele volta à sua terra; naquele dia os seus planos perecem.",
           "B": "O fôlego os deixa, e eles voltam ao pó de onde vieram; naquele mesmo dia tudo o que planejaram acaba.",
           "R": "Quando eles dão o último suspiro, o corpo deles volta ao pó. Naquele dia, todos os planos deles chegam ao fim."
+        },
+        "am": {
+          "L": "እስትንፋሱ ይወጣል፤ ወደ መሬቱ ይመለሳል፤ በዚያም ቀን ዕቅዶቹ ይጠፋሉ።",
+          "B": "እስትንፋሳቸው ይለያቸዋል፤ ወደ መጡበትም አፈር ይመለሳሉ፤ በዚያው ቀን ያቀዱት ሁሉ ይጠፋል።",
+          "R": "የመጨረሻ እስትንፋሳቸውን ሲተነፍሱ ሥጋቸው ወደ አፈር ይመለሳል። በዚያ ቀን ዕቅዳቸው ሁሉ ያከትማል።"
         }
       },
       "decisions": [
@@ -793,6 +896,11 @@
           "L": "Bem-aventurado [aquele] cujo socorro [é] o Deus de Jacó, cuja esperança [está] {{divine_name:no SENHOR|em Javé}}, o seu Deus!",
           "B": "Como são felizes os que têm o Deus de Jacó para socorrê-los, cuja esperança está {{divine_name:no SENHOR|em Javé}}, o seu Deus!",
           "R": "Felizes de verdade são as pessoas que têm como ajudador o Deus de Jacó. Elas põem a sua esperança {{divine_name:no SENHOR|em Javé}}, o seu Deus."
+        },
+        "am": {
+          "L": "ምስጉን ነው የያዕቆብ አምላክ ረዳቱ የሆነለት፣ ተስፋውንም በአምላኩ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ያደረገ [ሰው]!",
+          "B": "የያዕቆብ አምላክ የሚረዳቸው፣ ተስፋቸውንም በአምላካቸው {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ያደረጉ እንዴት የተባረኩ ናቸው!",
+          "R": "የያዕቆብ አምላክ ረዳታቸው የሆነላቸው ሰዎች በእውነት ደስተኞች ናቸው። ተስፋቸውን በአምላካቸው {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ያደርጋሉ።"
         }
       },
       "decisions": [
@@ -897,6 +1005,30 @@
           "reason": "As in verse 4: \"seu\" refers back to \"aquele\", which already means anyone, so the English \"their|his\" needs no span in Portuguese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460050022",
+            "o191460050031",
+            "o191460050081",
+            "o191460050082"
+          ],
+          "choice": "\"የያዕቆብ አምላክ\" (the God of Jacob, El) and \"አምላኩ\" (his God, Elohim)",
+          "alternatives": [
+            "\"የያዕቆብ እግዚአብሔር\""
+          ],
+          "reason": "El and Elohim with a possessor or a genitive are \"አምላክ\", the Amharic for \"the God of someone\"; \"እግዚአብሔር\" is kept for God named without one (150:1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -967,6 +1099,11 @@
           "L": "que fez o céu e a terra, o mar e tudo o que neles [há], que guarda a fidelidade para sempre,",
           "B": "que fez o céu e a terra, o mar e tudo o que existe neles, que permanece fiel para sempre,",
           "R": "Ele fez o céu, a terra, o mar e tudo o que há neles. Ele continua fiel para sempre."
+        },
+        "am": {
+          "L": "ሰማይንና ምድርን፣ ባሕርንና በእነርሱ ውስጥ ያለውን ሁሉ የሠራ፣ ለዘላለም እውነትን የሚጠብቅ፣",
+          "B": "ሰማይንና ምድርን፣ ባሕርንና በውስጣቸው ያለውን ሁሉ የሠራ፣ ለዘላለም ታማኝ ሆኖ የሚኖር፣",
+          "R": "እርሱ ሰማይን፣ ምድርን፣ ባሕርንና በውስጣቸው ያለውን ሁሉ ሠራ። ለዘላለም ታማኝ ነው።"
         }
       },
       "decisions": [
@@ -1079,6 +1216,31 @@
           "reason": "The believers in Jerusalem pray these words in Acts 4:24 and Paul and Barnabas use them in Acts 14:15 (m1), so each level keeps the Portuguese of those verses: Literal as Acts 4:24, Balanced as Acts 14:15, Readable as Acts 4:24.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460060011",
+            "o191460060021",
+            "o191460060032",
+            "o191460060052",
+            "o191460060071"
+          ],
+          "choice": "\"ሰማይንና ምድርን፣ ባሕርንና በእነርሱ ውስጥ ያለውን ሁሉ የሠራ\" as Exodus 20:11 on main",
+          "alternatives": [
+            "\"የፈጠረ\", as Acts 4:24 and 14:15"
+          ],
+          "reason": "The words echo Exodus 20:11 (meaning decision m1), whose Hebrew verb is the same (ʿasah, \"made\"), so its Amharic is kept; Acts 4:24 and 14:15 take up the phrase in Greek and read \"የፈጠረ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1142,6 +1304,11 @@
           "L": "que faz justiça aos oprimidos, que dá pão aos famintos. {{divine_name:O SENHOR|Javé}} liberta os prisioneiros;",
           "B": "que faz justiça aos oprimidos e dá pão aos que têm fome. {{divine_name:O SENHOR|Javé}} solta os prisioneiros;",
           "R": "Ele defende as pessoas que são tratadas injustamente. Ele dá comida aos que têm fome. {{divine_name:O SENHOR|Javé}} liberta os prisioneiros."
+        },
+        "am": {
+          "L": "ለተገፉት ፍርድን የሚያደርግ፣ ለተራቡት እንጀራን የሚሰጥ። {{divine_name:እግዚአብሔር|ያህዌ}} እስረኞችን ይፈታል፤",
+          "B": "ለተገፉት ፍትሕን የሚያመጣ፣ ለተራቡትም እንጀራ የሚሰጥ። {{divine_name:እግዚአብሔር|ያህዌ}} እስረኞችን ነጻ ይለቃል፤",
+          "R": "ግፍ ለደረሰባቸው ሰዎች ትክክለኛውን ፍትሕ ያደርግላቸዋል። ለተራቡ ሰዎች ምግብ ይሰጣል። {{divine_name:እግዚአብሔር|ያህዌ}} እስረኞችን ነጻ ያወጣል።"
         }
       },
       "decisions": [
@@ -1247,6 +1414,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} abre [os olhos dos] cegos; {{divine_name:o SENHOR|Javé}} levanta [os que estão] curvados; {{divine_name:o SENHOR|Javé}} ama [os] justos;",
           "B": "{{divine_name:O SENHOR|Javé}} faz os cegos verem; {{divine_name:o SENHOR|Javé}} levanta os que estão curvados; {{divine_name:o SENHOR|Javé}} ama os justos;",
           "R": "{{divine_name:O SENHOR|Javé}} ajuda os cegos a ver. {{divine_name:O SENHOR|Javé}} levanta as pessoas que estão carregando um peso. {{divine_name:O SENHOR|Javé}} ama as pessoas que fazem o que é certo."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የዕውሮችን [ዓይን] ይከፍታል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የጎበጡትን ያቀናል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ጻድቃንን ይወዳል፤",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ዕውሮች እንዲያዩ ያደርጋል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የጎበጡትን ቀና ያደርጋል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ጻድቃንን ይወዳል፤",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ዕውሮች እንዲያዩ ይረዳል። {{divine_name:እግዚአብሔር|ያህዌ}} በችግር የተጫኑትን ቀና ያደርጋል። {{divine_name:እግዚአብሔር|ያህዌ}} ትክክል የሆነውን የሚያደርጉ ሰዎችን ይወዳል።"
         }
       },
       "decisions": [
@@ -1294,6 +1466,26 @@
             "the righteous"
           ],
           "reason": "As in the earlier psalms, Readable says what the righteous (tsaddiqim) are.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460080051",
+            "o191460080061"
+          ],
+          "choice": "\"የጎበጡትን ያቀናል\" (L), \"ቀና ያደርጋል\" (B, R)",
+          "alternatives": [],
+          "reason": "Worded as 145:14, where the same words stand (meaning decision m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1360,6 +1552,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} guarda os estrangeiros; [o] órfão e a viúva {{deity_pronoun:ele|Ele}} sustenta, mas [o] caminho dos ímpios {{deity_pronoun:ele|Ele}} entorta.",
           "B": "{{divine_name:O SENHOR|Javé}} protege os estrangeiros que vivem na terra; {{deity_pronoun:ele|Ele}} ampara o órfão e a viúva, mas {{deity_pronoun:ele|Ele}} transtorna o caminho dos ímpios.",
           "R": "{{divine_name:O SENHOR|Javé}} protege os estrangeiros. Ele cuida dos órfãos e das viúvas. Mas {{deity_pronoun:ele|Ele}} acaba com os planos das pessoas más."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} መጻተኞችን ይጠብቃል፤ አባት የሌለውንና መበለቲቱን ይደግፋል፤ የክፉዎችን መንገድ ግን ያጣምማል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በአገሩ የሚኖሩትን መጻተኞች ይጠብቃል፤ አባት የሌላቸውንና መበለቶችን ይደግፋል፤ የክፉዎችን መንገድ ግን ይገለብጣል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ስደተኞችን ይጠብቃል። አባት የሌላቸውን ልጆችና ባል የሌላቸውን ሴቶች ይንከባከባል። የክፉ ሰዎችን ዕቅድ ግን ያፈርሳል።"
         }
       },
       "decisions": [
@@ -1447,6 +1644,27 @@
           "reason": "A ger is a foreigner who has settled in the land without family or rights there. The Pentateuch terms give \"l'étranger, l'immigré\"; Literal uses \"immigrés\" to show that they live in the land, which Balanced says in a phrase.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460090041",
+            "o191460090051",
+            "o191460090062"
+          ],
+          "choice": "\"መጻተኞች\" (L, B), \"ስደተኞች\" (R); \"አባት የሌለው\", \"መበለት\"",
+          "alternatives": [],
+          "reason": "As the Pentateuch terms list for ger and Deuteronomy 10:18 on main, where the law names the same three (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1512,6 +1730,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} reinará para sempre, o teu Deus, Sião, de geração em geração. Aleluia!",
           "B": "{{divine_name:O SENHOR|Javé}} reinará como Rei para sempre; Sião, o teu Deus reinará de uma geração a outra. Aleluia!",
           "R": "{{divine_name:O SENHOR|Javé}} vai ser Rei para sempre! Povo de Sião, o Deus de vocês vai governar por todos os tempos que virão. Louvem {{divine_name:o SENHOR|Iá}}!"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ይነግሣል፤ ጽዮን ሆይ፣ አምላክሽ ለትውልድና ለትውልድ [ይነግሣል]። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ይነግሣል፤ ጽዮን ሆይ፣ አምላክሽ ከትውልድ እስከ ትውልድ ይገዛል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ንጉሥ ይሆናል! የጽዮን ሕዝብ ሆይ፣ አምላካችሁ ለዘመናት ሁሉ ይገዛል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!"
         }
       },
       "decisions": [
@@ -1580,6 +1803,27 @@
           "choice": "o teu Deus, Sião (L, B); Povo de Sião, o Deus de vocês (R)",
           "alternatives": [],
           "reason": "The psalm speaks to Zion as a city, with \"tu\", as 137:5 speaks to Jerusalem; Readable addresses the city's people (r-en-1) and so says \"vocês\". \"O SENHOR reinará para sempre\" echoes Exodus 15:18 (m1) in that verse's Portuguese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460100011",
+            "o191460100021",
+            "o191460100031",
+            "o191460100032"
+          ],
+          "choice": "\"እግዚአብሔር ለዘላለም ይነግሣል\" as Exodus 15:18",
+          "alternatives": [],
+          "reason": "The line takes up the end of the song at the sea (meaning decision m1); the Amharic of Exodus 15:18 on main is kept, without \"እስከ ዘላለም\", which this verse's Hebrew lacks. Zion is addressed with the feminine \"አምላክሽ\"; Readable addresses its people.",
           "uncertain": false,
           "footnote": false
         }

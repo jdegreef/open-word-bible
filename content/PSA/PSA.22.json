@@ -57,6 +57,11 @@
           "L": "Para o regente: sobre Aielete-Hassaar. Salmo de Davi.",
           "B": "Para o mestre de música. Sobre Aielete-Hassaar. Salmo de Davi.",
           "R": "Para quem dirige a música. Na melodia \"A Corça da Aurora\". Canção de Davi."
+        },
+        "am": {
+          "L": "ለመዘምራን አለቃ፤ በአየሌት ሐሻሐር። የዳዊት መዝሙር።",
+          "B": "ለመዘምራን አለቃ። በአየሌት ሐሻሐር። የዳዊት መዝሙር።",
+          "R": "ለመዘምራን አለቃ። «የንጋት ዋላ» በሚለው ዜማ። ዳዊት የዘመረው መዝሙር።"
         }
       },
       "decisions": [
@@ -266,6 +271,67 @@
           "reason": "Literal and Balanced keep the name of the tune (m3) in the Portuguese spelling of its sounds (no \"sh\", as \"sosanim\" in 45:1), as the Psalms keep \"Masquil\" and \"Selá\"; Readable translates it, as the English Readable does: \"corça\" is the female deer, \"aurora\" the dawn.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 22.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220010031",
+            "o190220010041",
+            "o190220010042"
+          ],
+          "choice": "Ayyeleth-hashshahar as the name \"አየሌት ሐሻሐር\" (L, B); Readable translates it as the tune «የንጋት ዋላ» (\"the doe of the dawn\")",
+          "alternatives": [
+            "a translation at every level"
+          ],
+          "reason": "As the terms list does for other heading words whose sense is uncertain (meaning decision m3): Literal and Balanced keep the name, Readable says what it probably was, as the English Readable. \"ዋላ\" is the female deer.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-3",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220010021"
+          ],
+          "choice": "\"ዳዊት የዘመረው መዝሙር\" (the psalm David sang) at Readable",
+          "alternatives": [
+            "\"የዳዊት መዝሙር\""
+          ],
+          "reason": "As docs/amharic-style.md 7a sets for psalm titles: Readable says plainly that the psalm is a song David sang.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -333,6 +399,11 @@
           "L": "Deus meu, Deus meu, por que me abandonaste? Longe da minha salvação [estão] as palavras do meu rugido.",
           "B": "Meu Deus, meu Deus, por que me abandonaste? Solto os meus gemidos como rugidos, e ainda assim o socorro está longe.",
           "R": "Meu Deus, meu Deus, por que me deixaste sozinho? Eu não paro de gritar de dor, mas {{deity_pronoun:tu|Tu}} continuas longe e não me salvas."
+        },
+        "am": {
+          "L": "አምላኬ፣ አምላኬ፣ ለምን ተውኸኝ? የጩኸቴ ቃላት ከመዳኔ የራቁ [ናቸው]።",
+          "B": "አምላኬ፣ አምላኬ፣ ለምን ተውኸኝ? በጭንቅ እየጮኽኩ እናገራለሁ፤ መዳን ግን አሁንም ከእኔ የራቀ ነው።",
+          "R": "አምላኬ፣ አምላኬ፣ ለምን ብቻዬን ተውኸኝ? በሥቃይ ሳላቋርጥ እጮኻለሁ፤ አንተ ግን ርቀህ ቆመሃል፤ አታድነኝምም።"
         }
       },
       "decisions": [
@@ -482,6 +553,30 @@
           "reason": "Jesus cries these words from the cross (m1). Each level keeps the exact wording of the Portuguese of Matthew 27:46 and Mark 15:34 at the same level, so that the reader hears the same cry in the psalm and in the Gospels. The Gospels give the cry first in Aramaic (\"Eli, Eli, lemá sabactâni\"); the psalm translates the Hebrew, which says the same. Here the speaker is the psalmist, so \"me\" takes no deity_pronoun span, unlike the Gospels.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220020011",
+            "o190220020021",
+            "o190220020032",
+            "o190220020042"
+          ],
+          "choice": "\"አምላኬ፣ አምላኬ፣ ለምን ተውኸኝ?\" (L, B) and \"ለምን ብቻዬን ተውኸኝ?\" (R), as Matthew 27:46 and Mark 15:34 in the Amharic New Testament",
+          "alternatives": [
+            "\"ለምን ጣልኸኝ?\" or \"ለምን ትተኸኛል?\" (the Balanced of Mark and Matthew)"
+          ],
+          "reason": "Jesus cries this verse on the cross, and the Gospels' translation agrees with the Hebrew; the psalm keeps the Gospels' Literal wording at Literal and Balanced, so the two read alike, and their Readable wording at Readable, which matches the English Readable \"left me all alone\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -548,6 +643,11 @@
           "L": "Deus meu, eu clamo de dia, e {{deity_pronoun:tu|Tu}} não respondes; e de noite, e não há silêncio para mim.",
           "B": "Meu Deus, clamo o dia inteiro, e {{deity_pronoun:tu|Tu}} não respondes; a noite inteira também, e não consigo ficar quieto.",
           "R": "Meu Deus, eu {{deity_pronoun:te|Te}} chamo durante o dia, mas {{deity_pronoun:tu|Tu}} não respondes. Chamo também à noite, e não consigo parar de clamar."
+        },
+        "am": {
+          "L": "አምላኬ፣ በቀን እጠራለሁ፤ አንተም አትመልስም፤ በሌሊትም፣ ለእኔም ዝምታ የለም።",
+          "B": "አምላኬ ሆይ፣ ቀኑን ሙሉ እጠራለሁ፤ አንተ ግን አትመልስልኝም፤ ሌሊቱን ሙሉም እጠራለሁ፤ ዝም ማለት አልችልም።",
+          "R": "አምላኬ ሆይ፣ በቀን ወደ አንተ እጣራለሁ፤ አንተ ግን አትመልስልኝም። በሌሊትም እጣራለሁ፤ መጮኼንም ማቆም አልችልም።"
         }
       },
       "decisions": [
@@ -624,6 +724,11 @@
           "L": "Mas {{deity_pronoun:tu|Tu}} [és] santo, entronizado [sobre] os louvores de Israel.",
           "B": "Mas {{deity_pronoun:tu|Tu}} és santo; os louvores de Israel são o {{deity_pronoun:teu|Teu}} trono.",
           "R": "Mas {{deity_pronoun:tu|Tu}} és santo. As canções de louvor de Israel são como um trono para {{deity_pronoun:ti|Ti}}."
+        },
+        "am": {
+          "L": "አንተ ግን ቅዱስ [ነህ]፣ በእስራኤል ምስጋናዎች ላይ የተቀመጥህ።",
+          "B": "አንተ ግን ቅዱስ ነህ፤ የእስራኤል ምስጋና የምትቀመጥበት ዙፋን ነው።",
+          "R": "አንተ ግን ቅዱስ ነህ። እስራኤል የሚዘምሩልህ ምስጋና ለአንተ እንደ ዙፋን ነው።"
         }
       },
       "decisions": [
@@ -719,6 +824,11 @@
           "L": "Em {{deity_pronoun:ti|Ti}} confiaram os nossos {{gender:antepassados|pais}}; confiaram, e {{deity_pronoun:tu|Tu}} os livraste.",
           "B": "Os nossos antepassados se apoiaram em {{deity_pronoun:ti|Ti}}; confiaram em {{deity_pronoun:ti|Ti}}, e {{deity_pronoun:tu|Tu}} os puseste a salvo.",
           "R": "Há muito tempo, o nosso povo confiou em {{deity_pronoun:ti|Ti}}. Eles confiaram em {{deity_pronoun:ti|Ti}}, e {{deity_pronoun:tu|Tu}} os salvaste."
+        },
+        "am": {
+          "L": "{{gender:ቅድመ አያቶቻችን|አባቶቻችን}} በአንተ ታመኑ፤ ታመኑ፤ አንተም አስመለጥሃቸው።",
+          "B": "ቅድመ አያቶቻችን በአንተ ተማመኑ፤ በአንተ ተማመኑ፤ አንተም በሰላም አወጣሃቸው።",
+          "R": "ጥንት ሕዝባችን በአንተ ታመኑ። በአንተ ታመኑ፤ አንተም አዳንሃቸው።"
         }
       },
       "decisions": [
@@ -848,6 +958,25 @@
           "reason": "Korean has both an inclusive word (\"조상\", ancestors) and the word-for-word \"아버지들\" (fathers), so Literal offers both as the English does; the people speak to God as \"저희\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190220050031"
+          ],
+          "choice": "\"our fathers\" as {{gender:ቅድመ አያቶቻችን|አባቶቻችን}}; Balanced \"ቅድመ አያቶቻችን\"",
+          "alternatives": [
+            "\"አባቶቻችን\" only"
+          ],
+          "reason": "As docs/amharic-style.md 7b proposes for \"ancestors\" offered as a gender span; the Balanced, which the English gives as \"ancestors\" with no setting, uses the inclusive word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -911,6 +1040,11 @@
           "L": "A {{deity_pronoun:ti|Ti}} clamaram e foram libertos; em {{deity_pronoun:ti|Ti}} confiaram e não foram envergonhados.",
           "B": "Clamaram a {{deity_pronoun:ti|Ti}} e escaparam; confiaram em {{deity_pronoun:ti|Ti}} e nunca foram humilhados.",
           "R": "Eles chamaram por {{deity_pronoun:ti|Ti}}, e {{deity_pronoun:tu|Tu}} os livraste. Confiaram em {{deity_pronoun:ti|Ti}}, e {{deity_pronoun:tu|Tu}} não os decepcionaste."
+        },
+        "am": {
+          "L": "ወደ አንተ ጮኹ፤ ዳኑም፤ በአንተ ታመኑ፤ አላፈሩምም።",
+          "B": "ወደ አንተ ጮኹ፤ አመለጡም፤ በአንተ ተማመኑ፤ ከቶም አላፈሩም።",
+          "R": "ወደ አንተ ተጣሩ፤ አንተም አዳንሃቸው። በአንተ ታመኑ፤ አንተም አላሳፈርካቸውም።"
         }
       },
       "decisions": [
@@ -991,6 +1125,11 @@
           "L": "Mas eu [sou] um verme e não um homem, escarnecido pela humanidade e desprezado pelo povo.",
           "B": "Mas eu sou um verme, e não mais um homem, alvo do escárnio de todos, desprezado pela multidão.",
           "R": "Mas eu me sinto como um verme, não como um ser humano. Todos me insultam e me olham com desprezo."
+        },
+        "am": {
+          "L": "እኔ ግን ትል [ነኝ]፤ ሰውም አይደለሁም፤ በሰው ዘንድ የተነቀፍኩ፣ በሕዝብም የተናቅኩ [ነኝ]።",
+          "B": "እኔ ግን ትል ነኝ፤ ከእንግዲህ ሰው አይደለሁም፤ ሰዎች የሚሳለቁብኝ፣ ሕዝቡም የናቀኝ ሆኛለሁ።",
+          "R": "እኔ ግን ሰው ሳልሆን ትል እንደ ሆንኩ ይሰማኛል። ሁሉም ይሰድቡኛል፤ ይንቁኛልም።"
         }
       },
       "decisions": [
@@ -1103,6 +1242,11 @@
           "L": "Todos os que me veem zombam de mim; escancaram [os] lábios, balançam [a] cabeça,",
           "B": "Todos os que me veem riem de mim; torcem os lábios e balançam a cabeça,",
           "R": "Todos os que me veem caçoam de mim. Fazem caretas para mim e balançam a cabeça."
+        },
+        "am": {
+          "L": "የሚያዩኝ ሁሉ ይሣለቁብኛል፤ ከንፈራቸውን ይከፍታሉ፤ ራሳቸውን ይነቀንቃሉ፤",
+          "B": "የሚያየኝ ሁሉ ይስቅብኛል፤ ከንፈራቸውን ያጣምማሉ፤ ራሳቸውንም ይነቀንቃሉ፤",
+          "R": "የሚያየኝ ሁሉ ያሾፍብኛል። ፊታቸውን እያጣመሙ ራሳቸውን ይነቀንቁብኛል።"
         }
       },
       "decisions": [
@@ -1205,6 +1349,11 @@
           "L": "\"Role [tudo] para {{divine_name:o SENHOR|Javé}}! Que {{deity_pronoun:ele|Ele}} o livre; que {{deity_pronoun:ele|Ele}} o salve, já que {{deity_pronoun:ele|Ele}} se agrada dele!\"",
           "B": "\"Deixe isso nas mãos {{divine_name:do SENHOR|de Javé}}! Que {{deity_pronoun:ele|Ele}} o livre; que {{deity_pronoun:ele|Ele}} o salve, já que {{deity_pronoun:ele|Ele}} tem tanto prazer nele!\"",
           "R": "Eles dizem: \"Deixe isso nas mãos {{divine_name:do SENHOR|de Javé}}! Que {{deity_pronoun:ele|Ele}} salve este homem! Se {{divine_name:o SENHOR|Javé}} gosta tanto dele, que {{deity_pronoun:ele|Ele}} venha livrá-lo!\""
+        },
+        "am": {
+          "L": "«ወደ {{divine_name:እግዚአብሔር|ያህዌ}} አንከባልል! እርሱ ያስጥለው፤ ደስ ይሰኝበታልና እርሱ ያድነው!»",
+          "B": "«{{divine_name:ለእግዚአብሔር|ለያህዌ}} ተወው! እርሱ ያውጣው፤ በእርሱ ይህን ያህል ደስ የሚሰኝ ከሆነ እርሱ ያድነው!»",
+          "R": "እንዲህ ይላሉ፦ «{{divine_name:ለእግዚአብሔር|ለያህዌ}} ተወው! እርሱ ይህን ሰው ያድነው! {{divine_name:እግዚአብሔር|ያህዌ}} በእርሱ ይህን ያህል ደስ የሚሰኝ ከሆነ፣ መጥቶ ያስጥለው!»"
         }
       },
       "decisions": [
@@ -1337,6 +1486,25 @@
           "reason": "The mockers speak to the sufferer, person to person, so the command is in the \"você\" form. The leaders at the cross echo these words (m2): the Portuguese of Matthew 27:43 says \"que ele o livre\", and every level keeps that verb for the first rescue verb. Matthew's \"se o quer\" follows the Greek; the Hebrew says \"since he delights in him\", so the psalm keeps \"já que ele se agrada dele\" (L) and \"já que tem tanto prazer nele\" (B).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220090011"
+          ],
+          "choice": "\"roll\" kept at Literal (\"አንከባልል\", roll [your cause]); \"ተወው\" (leave it) at Balanced and Readable",
+          "alternatives": [],
+          "reason": "The mockers' words (meaning decision m1) are quoted as the English quotes them; Matthew 27:43 echoes the verse in the Greek's own words (\"he trusts in God\"), so the psalm follows the Hebrew here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1401,6 +1569,11 @@
           "L": "Pois {{deity_pronoun:tu|Tu}} [és] quem me tirou do ventre, quem me fez confiar junto aos seios da minha mãe.",
           "B": "Contudo, foste {{deity_pronoun:tu|Tu}} que me tiraste do ventre e me guardaste seguro quando eu mamava no peito da minha mãe.",
           "R": "Mas {{deity_pronoun:tu|Tu}} me ajudaste a nascer. Quando eu ainda mamava no peito da minha mãe, {{deity_pronoun:tu|Tu}} me ensinaste a confiar em {{deity_pronoun:ti|Ti}}."
+        },
+        "am": {
+          "L": "አንተ ከሆድ ያወጣኸኝ፣ በእናቴ ጡቶች ላይ ሳለሁ እንድታመን ያደረግኸኝ [ነህ]ና።",
+          "B": "ሆኖም ስወለድ ያወጣኸኝ፣ የእናቴን ጡት ስጠባ በሰላም የጠበቅኸኝ አንተ ነህ።",
+          "R": "አንተ ግን እንድወለድ ረዳኸኝ። በእናቴ ጡት ሥር ሕፃን ሳለሁ በአንተ እንድታመን አስተማርኸኝ።"
         }
       },
       "decisions": [
@@ -1517,6 +1690,11 @@
           "L": "Sobre {{deity_pronoun:ti|Ti}} fui lançado desde o útero; desde o ventre da minha mãe {{deity_pronoun:tu|Tu}} [és] o meu Deus.",
           "B": "Desde que nasci fui entregue aos {{deity_pronoun:teus|Teus}} braços; desde quando eu estava no ventre da minha mãe, {{deity_pronoun:tu|Tu}} és o meu Deus.",
           "R": "Desde o dia em que nasci, {{deity_pronoun:tu|Tu}} cuidas de mim. Antes mesmo de eu nascer, {{deity_pronoun:tu|Tu}} já eras o meu Deus."
+        },
+        "am": {
+          "L": "ከማኅፀን ጀምሮ በአንተ ላይ ተጣልኩ፤ ከእናቴ ሆድ ጀምሮ አንተ አምላኬ [ነህ]።",
+          "B": "ከተወለድኩ ጀምሮ በእጆችህ ላይ ተጣልኩ፤ እናቴ ከፀነሰችኝ ጀምሮ አንተ አምላኬ ነህ።",
+          "R": "ከተወለድኩበት ቀን ጀምሮ ተንከባከብኸኝ። ገና ሳልወለድ እንኳ አንተ አምላኬ ነበርህ።"
         }
       },
       "decisions": [
@@ -1617,6 +1795,11 @@
           "L": "Não fiques longe de mim, porque a angústia [está] perto, porque não há quem ajude.",
           "B": "Não {{deity_pronoun:te|Te}} afastes de mim; a aflição está próxima, e não tenho quem me ajude.",
           "R": "Por isso, por favor, fica perto de mim! O perigo está chegando, e não há ninguém aqui para me ajudar."
+        },
+        "am": {
+          "L": "ከእኔ አትራቅ፤ መከራ ቀርቧልና፤ ረዳትም የለምና።",
+          "B": "ከእኔ ርቀህ አትቁም፤ ጭንቅ ደርሷል፤ የሚረዳኝም የለም።",
+          "R": "ስለዚህ እባክህ ከእኔ አጠገብ ሁን! መከራ እየቀረበ ነው፤ የሚረዳኝም ማንም የለም።"
         }
       },
       "decisions": [
@@ -1632,6 +1815,24 @@
           "choice": "far, near: a play on words",
           "alternatives": [],
           "reason": "The prayer turns on far and near: God seems far (verse 2), trouble is near, and the plea \"do not be far\" comes back in verse 20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190220120021",
+            "o190220120061"
+          ],
+          "choice": "\"አትራቅ ... ቀርቧል\" (do not be far ... is near)",
+          "alternatives": [],
+          "reason": "Amharic keeps the Hebrew play on far and near (meaning decision m1) with two verbs of one picture, and Literal keeps the Hebrew order of the clauses.",
           "uncertain": false,
           "footnote": false
         }
@@ -1694,6 +1895,11 @@
           "L": "Muitos touros me cercaram; fortes [touros] de Basã me rodearam.",
           "B": "Uma manada de touros fechou o cerco ao meu redor; os touros poderosos de Basã me apertam por todos os lados.",
           "R": "Os meus inimigos estão ao meu redor como uma manada de touros. São como os touros fortes e selvagens de Basã."
+        },
+        "am": {
+          "L": "ብዙ ኮርማዎች ከበቡኝ፤ የባሳን ብርቱ [ኮርማዎች] አጠሩኝ።",
+          "B": "የኮርማዎች መንጋ ዙሪያዬን ከበበኝ፤ የባሳን ብርቱ ኮርማዎች አጥረው ያዙኝ።",
+          "R": "ጠላቶቼ እንደ ኮርማዎች መንጋ ከበውኛል። እንደ ባሳን ብርቱና አስፈሪ ኮርማዎች ናቸው።"
         }
       },
       "decisions": [
@@ -1824,6 +2030,11 @@
           "L": "Abriram contra mim a sua boca, [como] um leão que despedaça e ruge.",
           "B": "Escancaram a boca contra mim, como um leão que ruge e despedaça a presa.",
           "R": "Eles abrem bem a boca para me atacar, como um leão que ruge, pronto para me despedaçar."
+        },
+        "am": {
+          "L": "እንደሚነጥቅና እንደሚያገሣ አንበሳ አፋቸውን በእኔ ላይ ከፈቱ።",
+          "B": "እንደሚያገሣና ያደነውን እንደሚገነጥል አንበሳ አፋቸውን ከፍተው ወደ እኔ ይመጣሉ።",
+          "R": "እንደሚያገሣና ሊገነጥለኝ እንደ ተዘጋጀ አንበሳ ሊያጠቁኝ አፋቸውን ከፍተዋል።"
         }
       },
       "decisions": [
@@ -1929,6 +2140,11 @@
           "L": "Como água fui derramado, e todos os meus ossos se soltaram; o meu coração ficou como cera; está derretido no meio das minhas entranhas.",
           "B": "A minha vida escorre como água derramada; cada osso em mim está fora do lugar. O meu coração é como cera, derretendo no fundo de mim.",
           "R": "As minhas forças acabaram, como água derramada no chão. Sinto que todos os meus ossos se soltaram. A minha coragem derreteu como cera no fogo."
+        },
+        "am": {
+          "L": "እንደ ውኃ ፈሰስኩ፤ አጥንቶቼም ሁሉ ተለያዩ፤ ልቤ እንደ ሰም ሆነ፤ በአንጀቴ መካከል ቀለጠ።",
+          "B": "ሕይወቴ እንደ ፈሰሰ ውኃ እያለቀ ነው፤ አጥንቶቼ ሁሉ ከመጋጠሚያቸው ወለቁ። ልቤ እንደ ሰም ሆኗል፤ በውስጤ ይቀልጣል።",
+          "R": "ብርታቴ በምድር ላይ እንደ ፈሰሰ ውኃ አልቋል። አጥንቶቼ ሁሉ የተላቀቁ ይመስለኛል። ሰም በእሳት እንደሚቀልጥ ድፍረቴ ቀልጦ ጠፍቷል።"
         }
       },
       "decisions": [
@@ -2050,6 +2266,11 @@
           "L": "Ressecou-se como um caco a minha força, e a minha língua [foi] colada às minhas mandíbulas; e no pó da morte {{deity_pronoun:tu|Tu}} me colocas.",
           "B": "A minha força está seca como um pedaço de vaso quebrado; a minha língua se prende ao maxilar, e {{deity_pronoun:tu|Tu}} me fazes descer ao pó da morte.",
           "R": "Estou seco e fraco como um vaso de barro quebrado. Tenho tanta sede que a língua gruda na boca. E {{deity_pronoun:tu|Tu}} estás me deitando no pó, como se eu já estivesse morto."
+        },
+        "am": {
+          "L": "ብርታቴ እንደ ገል ደረቀ፤ ምላሴም ከመንጋጋዬ ጋር ተጣበቀ፤ በሞትም ትቢያ ታኖረኛለህ።",
+          "B": "ብርታቴ እንደ ተሰበረ የሸክላ ገል ደርቋል፤ ምላሴ ከላንቃዬ ጋር ተጣብቋል፤ አንተም ወደ ሞት ትቢያ ታወርደኛለህ።",
+          "R": "እንደ ተሰበረ የሸክላ ድስት ደርቄ ደክሜአለሁ። ከጥማቴ የተነሣ ምላሴ በአፌ ውስጥ ተጣብቋል። አንተም የሞትኩ ያህል በትቢያ ውስጥ ታጋድመኛለህ።"
         }
       },
       "decisions": [
@@ -2181,6 +2402,11 @@
           "L": "Pois cães me cercaram; um bando de malfeitores me rodeou; como o leão [estão em] minhas mãos e meus pés.",
           "B": "Há cães por toda parte ao meu redor; um bando de malfeitores me cercou; como um leão, avançam sobre as minhas mãos e os meus pés.",
           "R": "Pessoas más estão ao meu redor como uma matilha de cães. Como um leão, atacam as minhas mãos e os meus pés."
+        },
+        "am": {
+          "L": "ውሾች ከበውኛልና፤ የክፉ አድራጊዎች ጉባኤ አጠረኝ፤ እንደ አንበሳ እጆቼንና እግሮቼን [ይዘዋል]።",
+          "B": "ውሾች ዙሪያዬን ከበዋል፤ የክፉ አድራጊዎች ቡድን አጥሮኛል፤ እንደ አንበሳ እጆቼንና እግሮቼን ያጠቃሉ።",
+          "R": "ክፉ ሰዎች እንደ ውሾች መንጋ ከበውኛል። እንደ አንበሳ እጆቼንና እግሮቼን ያጠቃሉ።"
         }
       },
       "decisions": [
@@ -2256,6 +2482,28 @@
           "reason": "Spanish follows the Hebrew text as handed down, \"like the lion\", as the English does (see the meaning decision). \"Traspasaron\", the reading of the old Greek translation familiar from older Spanish Bibles, is not used.",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220170071",
+            "o190220170072"
+          ],
+          "choice": "\"እንደ አንበሳ\" (like the lion), the Hebrew as handed down",
+          "alternatives": [
+            "\"ወጉ\" (they pierced), the familiar reading"
+          ],
+          "reason": "As meaning decision m1: the Masoretic text reads \"like the lion\"; the reading \"they pierced\", from the ancient versions, is not followed, and the New Testament does not quote this line.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2317,6 +2565,11 @@
           "L": "Conto todos os meus ossos; eles olham, eles fixam os olhos em mim.",
           "B": "Dá para contar cada um dos meus ossos, enquanto eles assistem e me encaram.",
           "R": "Estou tão magro que consigo contar os meus ossos. As pessoas ficam me olhando e se divertem vendo o meu sofrimento."
+        },
+        "am": {
+          "L": "አጥንቶቼን ሁሉ እቆጥራለሁ፤ እነርሱ ይመለከታሉ፤ ትኩር ብለው ያዩኛል።",
+          "B": "አጥንቶቼን አንድ በአንድ መቁጠር እችላለሁ፤ እነርሱ ግን ቆመው ትኩር ብለው ያዩኛል።",
+          "R": "ከክሳቴ የተነሣ አጥንቶቼን መቁጠር እችላለሁ። ሰዎች ትኩር ብለው ያዩኛል፤ በመከራዬም ደስ ይላቸዋል።"
         }
       },
       "decisions": [
@@ -2429,6 +2682,11 @@
           "L": "Repartem entre si as minhas vestes, e sobre a minha roupa lançam sorte.",
           "B": "Repartem entre si as minhas vestes e sobre a minha roupa lançam sortes.",
           "R": "Repartem entre si as minhas roupas e fazem um sorteio para ver quem fica com a minha túnica."
+        },
+        "am": {
+          "L": "ልብሶቼን በመካከላቸው ይከፋፈላሉ፤ በልብሴም ላይ ዕጣ ይጥላሉ።",
+          "B": "ልብሶቼን በመካከላቸው ይካፈላሉ፤ በልብሴም ላይ ዕጣ ይጣጣላሉ።",
+          "R": "ልብሶቼን በመካከላቸው ይከፋፈላሉ፤ ለልብሴም ዕጣ ይጣጣላሉ።"
         }
       },
       "decisions": [
@@ -2503,6 +2761,29 @@
           "reason": "John 19:24 quotes this verse (m1). Each level uses the words of the Portuguese of John 19:24 at the same level; only the tense differs, present here as the Hebrew and the English have it (\"they divide\"), past in John, where the soldiers have done it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220190011",
+            "o190220190061",
+            "o190220190071"
+          ],
+          "choice": "the wording of John 19:24 in the Amharic New Testament, level by level (\"ልብሶቼን በመካከላቸው ተከፋፈሉ፤ በልብሴም ላይ ዕጣ ጣሉ\"), in the present tense of the Hebrew",
+          "alternatives": [
+            "the past tense of John"
+          ],
+          "reason": "John quotes this verse as fulfilled at the cross, and the Greek agrees with the Hebrew; the psalm keeps John's words but describes what is happening, as the Hebrew does. Readable keeps \"casting lots\" (\"ዕጣ ይጣጣላሉ\"), the Amharic word for this kind of gamble.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2567,6 +2848,11 @@
           "L": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, não fiques longe; força minha, vem depressa em meu socorro!",
           "B": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, não fiques distante! Força minha, vem depressa me ajudar!",
           "R": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, por favor, não fiques longe! Tu és a minha força. Vem depressa me ajudar!"
+        },
+        "am": {
+          "L": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አትራቅ፤ ብርታቴ ሆይ፣ ለርዳታዬ ፍጠን!",
+          "B": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ርቀህ አትቁም! ብርታቴ ሆይ፣ ልትረዳኝ ፍጠን!",
+          "R": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ አትራቅ! ብርታቴ አንተ ነህ። ቶሎ መጥተህ እርዳኝ!"
         }
       },
       "decisions": [
@@ -2663,6 +2949,11 @@
           "L": "Livra a minha alma da espada, a minha única [vida] do poder do cão.",
           "B": "Salva a minha vida da espada; salva das patas do cão a única vida que tenho.",
           "R": "Salva-me de ser morto pela espada! Salva a minha vida desses cães!"
+        },
+        "am": {
+          "L": "ነፍሴን ከሰይፍ አድናት፤ ብቸኛዋን [ሕይወቴን] ከውሻ እጅ [አድናት]።",
+          "B": "ሕይወቴን ከሰይፍ አድን፤ ያለችኝን አንዲት ሕይወቴን ከውሻው መዳፍ አድናት።",
+          "R": "በሰይፍ ከመገደል አድነኝ! ሕይወቴን ከእነዚህ ውሾች አድናት!"
         }
       },
       "decisions": [
@@ -2756,6 +3047,11 @@
           "L": "Salva-me da boca do leão, e dos chifres dos bois selvagens {{deity_pronoun:tu|Tu}} me respondeste!",
           "B": "Salva-me da boca do leão! Mesmo quando os bois selvagens baixam os chifres contra mim, {{deity_pronoun:tu|Tu}} me respondeste!",
           "R": "Salva-me da boca do leão e dos chifres dos touros selvagens! E agora {{deity_pronoun:tu|Tu}} me respondeste!"
+        },
+        "am": {
+          "L": "ከአንበሳ አፍ አድነኝ፤ ከዱር በሬዎችም ቀንዶች መለስክልኝ!",
+          "B": "ከአንበሳው አፍ አድነኝ! የዱር በሬዎች ቀንዳቸውን ባዘቀዘቁብኝ ጊዜ እንኳ መለስክልኝ!",
+          "R": "ከአንበሳ መንጋጋና ከዱር በሬዎች ቀንድ አድነኝ! አሁንም መለስክልኝ!"
         }
       },
       "decisions": [
@@ -2803,6 +3099,27 @@
           "choice": "And now",
           "alternatives": [],
           "reason": "Readable marks the sudden turn (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220220051"
+          ],
+          "choice": "wild oxen \"የዱር በሬዎች\"",
+          "alternatives": [
+            "\"አውራሪስ\" (rhinoceros)"
+          ],
+          "reason": "The animal is the wild ox, the aurochs (meaning decision m2), as Deuteronomy 33:17 on main has it; the rhinoceros of older versions is a guess.",
           "uncertain": false,
           "footnote": false
         }
@@ -2868,6 +3185,11 @@
           "L": "Anunciarei o {{deity_pronoun:teu|Teu}} nome aos meus {{gender:irmãos e irmãs|irmãos}}; no meio da assembleia {{deity_pronoun:te|Te}} louvarei.",
           "B": "Darei a conhecer o {{deity_pronoun:teu|Teu}} nome aos meus {{gender:irmãos e irmãs|irmãos}}; no meio da assembleia cantarei os {{deity_pronoun:teus|Teus}} louvores.",
           "R": "Vou contar ao meu povo como {{deity_pronoun:tu|Tu}} és. Quando todos se reunirem para adorar, vou cantar louvores a {{deity_pronoun:ti|Ti}}."
+        },
+        "am": {
+          "L": "ስምህን {{gender:ለወንድሞቼና ለእኅቶቼ|ለወንድሞቼ}} አወራለሁ፤ በጉባኤ መካከል አመሰግንሃለሁ።",
+          "B": "ስምህን {{gender:ለወንድሞቼና ለእኅቶቼ|ለወንድሞቼ}} አስታውቃለሁ፤ ጉባኤው ሁሉ በተሰበሰበበት አመሰግንሃለሁ።",
+          "R": "አንተ ምን ዓይነት እንደ ሆንክ ለወገኖቼ እነግራለሁ። ሁሉም ለአምልኮ በተሰበሰቡ ጊዜ አመሰግንሃለሁ።"
         }
       },
       "decisions": [
@@ -3055,6 +3377,45 @@
           "reason": "Hebrews 2:12 quotes this verse (m1); the psalm keeps the Portuguese of Hebrews 2:12 at each level where the Hebrew says the same. At Literal the last verb is \"te louvarei\", since the Hebrew verb is \"praise\" where Hebrews follows the Greek \"sing hymns\". Readable says \"ao meu povo\" as the English Readable does and ends like Hebrews' Readable (\"vou cantar louvores a ti\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220230011",
+            "o190220230032",
+            "o190220230062"
+          ],
+          "choice": "the first line as Hebrews 2:12 in the Amharic New Testament (\"ስምህን {{gender:ለወንድሞቼና ለእኅቶቼ|ለወንድሞቼ}} አወራለሁ\", B \"አስታውቃለሁ\"); the second follows the Hebrew \"I will praise you\" (\"አመሰግንሃለሁ\")",
+          "alternatives": [
+            "\"እዘምርልሃለሁ\" (I will sing to you), as Hebrews"
+          ],
+          "reason": "Hebrews quotes the verse in the Septuagint's Greek, whose second line says \"I will sing your praise\"; where the two agree the psalm keeps the New Testament wording, and the gender span is the one Hebrews uses for the same word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220230032"
+          ],
+          "choice": "\"ለወገኖቼ\" (to my people) at Readable, with no span",
+          "alternatives": [],
+          "reason": "The English Readable says \"my people\" (meaning decision m3: fellow Israelites); \"ወገኖች\" includes men and women.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3123,6 +3484,11 @@
           "L": "[Vocês que] temem {{divine_name:o SENHOR|Javé}}, louvem-{{deity_pronoun:no|No}}! Todos [vocês], descendentes de Jacó, glorifiquem-{{deity_pronoun:no|No}}! E reverenciem-{{deity_pronoun:no|No}}, todos [vocês], descendentes de Israel!",
           "B": "Louvem-{{deity_pronoun:no|No}}, todos vocês que temem {{divine_name:o SENHOR|Javé}}! Que toda a família de Jacó {{deity_pronoun:lhe|Lhe}} dê honra; que todo o povo de Israel {{deity_pronoun:o|O}} reverencie!",
           "R": "Todos vocês que respeitam {{divine_name:o SENHOR|Javé}}, louvem a {{deity_pronoun:ele|Ele}}! Todos vocês, povo de Israel, família de Jacó, honrem a {{deity_pronoun:ele|Ele}} e fiquem maravilhados com a grandeza {{deity_pronoun:dele|Dele}}!"
+        },
+        "am": {
+          "L": "[እናንተ] {{divine_name:እግዚአብሔርን|ያህዌን}} የምትፈሩ፣ አመስግኑት! [እናንተ] የያዕቆብ ዘር ሁሉ፣ አክብሩት! የእስራኤልም ዘር ሁሉ፣ ፍሩት!",
+          "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} የምትፈሩ ሁሉ፣ አመስግኑት! የያዕቆብ ዘር ሁሉ ያክብረው፤ የእስራኤል ሕዝብ ሁሉ በአክብሮት ይፍራው!",
+          "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} የምታከብሩ ሁሉ፣ አመስግኑት! እናንተ የያዕቆብ ቤተሰብ የሆናችሁ የእስራኤል ሕዝብ ሁሉ፣ አክብሩት፤ ታላቅነቱንም አይታችሁ ተደነቁ!"
         }
       },
       "decisions": [
@@ -3270,6 +3636,11 @@
           "L": "Pois {{deity_pronoun:ele|Ele}} não desprezou, nem detestou, a aflição do aflito, e não escondeu dele o {{deity_pronoun:seu|Seu}} rosto; mas, quando ele clamou a {{deity_pronoun:ele|Ele}} por socorro, {{deity_pronoun:ele|Ele}} ouviu.",
           "B": "Pois {{deity_pronoun:ele|Ele}} não olhou com desprezo o sofrimento do miserável, nem se afastou dele com nojo; não desviou dele o {{deity_pronoun:seu|Seu}} rosto, mas o ouviu quando ele pediu socorro.",
           "R": "Deus não desprezou o pobre homem que sofria, nem se afastou dele com nojo. Deus não se escondeu dele. Quando ele pediu socorro, Deus o ouviu."
+        },
+        "am": {
+          "L": "የተጨነቀውን ሰው ጭንቀት አልናቀምና፤ አልተጸየፈውምም፤ ፊቱንም ከእርሱ አልሰወረም፤ ወደ እርሱ ለርዳታ በጮኸ ጊዜ ግን ሰማው።",
+          "B": "የተቸገረውን ሰው መከራ አልናቀምና፤ ተጸይፎም ከእርሱ አልራቀም፤ ፊቱንም አልሰወረበትም፤ ለርዳታ በጠራው ጊዜ ግን ሰማው።",
+          "R": "እግዚአብሔር የሚሠቃየውን ድሃ አልናቀውም፤ ተጸይፎም ከእርሱ ዘወር አላለም። እግዚአብሔር ከእርሱ አልተሰወረም። ለርዳታ በጮኸ ጊዜ እግዚአብሔር ሰማው።"
         }
       },
       "decisions": [
@@ -3388,6 +3759,11 @@
           "L": "De {{deity_pronoun:ti|Ti}} [vem] o meu louvor na grande assembleia; os meus votos cumprirei diante dos que {{deity_pronoun:o|O}} temem.",
           "B": "És {{deity_pronoun:tu|Tu}} quem me dá motivo de louvor na grande assembleia; cumprirei o que prometi à vista dos que {{deity_pronoun:o|O}} temem.",
           "R": "Por causa do que {{deity_pronoun:tu|Tu}} fizeste, vou {{deity_pronoun:te|Te}} louvar quando todo o povo se reunir. Vou cumprir as promessas que fiz, diante dos que {{deity_pronoun:o|O}} respeitam."
+        },
+        "am": {
+          "L": "በታላቅ ጉባኤ ምስጋናዬ ከአንተ ዘንድ [ነው]፤ ስእለቶቼን በሚፈሩት ፊት እፈጽማለሁ።",
+          "B": "በታላቁ ጉባኤ የማቀርበውን ምስጋና የምትሰጠኝ አንተ ነህ፤ እርሱን የሚፈሩት በሚያዩበት ስእለቴን እፈጽማለሁ።",
+          "R": "ስላደረግህልኝ ነገር ሕዝቡ ሁሉ በተሰበሰበ ጊዜ አመሰግንሃለሁ። እርሱን በሚያከብሩት ፊት የገባሁትን ቃል እፈጽማለሁ።"
         }
       },
       "decisions": [
@@ -3438,6 +3814,24 @@
           ],
           "reason": "Readable says how his praise comes from God.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220260051"
+          ],
+          "choice": "vows \"ስእለት\"",
+          "alternatives": [],
+          "reason": "As the Pentateuch terms: the thank offering promised in trouble (meaning decision m1); Readable says \"the promises I made\".",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -3504,6 +3898,11 @@
           "L": "Os humildes comerão e se fartarão; os que {{deity_pronoun:o|O}} buscam louvarão {{divine_name:o SENHOR|Javé}}. Viva o coração de vocês para sempre!",
           "B": "Os pobres comerão até ficar satisfeitos; os que {{deity_pronoun:o|O}} buscam louvarão {{divine_name:o SENHOR|Javé}}. Que uma vida nova encha o coração de vocês para sempre!",
           "R": "Os pobres vão comer e ter comida de sobra. Os que buscam {{divine_name:o SENHOR|Javé}} vão louvar a {{deity_pronoun:ele|Ele}}. A todos eles eu digo: \"Que vocês vivam para sempre com o coração alegre!\""
+        },
+        "am": {
+          "L": "ትሑታን ይበላሉ፤ ይጠግባሉም፤ እርሱን የሚሹ {{divine_name:እግዚአብሔርን|ያህዌን}} ያመሰግናሉ። ልባችሁ ለዘላለም በሕይወት ይኑር!",
+          "B": "ድሆች ይበላሉ፤ ይጠግባሉም፤ እርሱን የሚሹ {{divine_name:እግዚአብሔርን|ያህዌን}} ያመሰግናሉ። ልባችሁ ለዘላለም በአዲስ ሕይወት ይሞላ!",
+          "R": "ድሆች ይበላሉ፤ ይጠግባሉም። ወደ {{divine_name:እግዚአብሔር|ያህዌ}} የሚመለከቱ ያመሰግኑታል። ለሁሉም እንዲህ እላለሁ፦ «በደስተኛ ልብ ለዘላለም ኑሩ!»"
         }
       },
       "decisions": [
@@ -3642,6 +4041,11 @@
           "L": "Lembrarão e voltarão {{divine_name:ao SENHOR|a Javé}} todos os confins da terra; e todas as famílias das nações se prostrarão diante de {{deity_pronoun:ti|Ti}}.",
           "B": "Os povos dos lugares mais distantes da terra se lembrarão e voltarão para {{divine_name:o SENHOR|Javé}}; cada clã de cada nação se curvará diante de {{deity_pronoun:ti|Ti}}.",
           "R": "Pessoas do mundo inteiro vão se lembrar {{divine_name:do SENHOR|de Javé}} e voltar para {{deity_pronoun:ele|Ele}}. Famílias de todas as nações vão se curvar e {{deity_pronoun:te|Te}} adorar."
+        },
+        "am": {
+          "L": "የምድር ዳርቻዎች ሁሉ ያስባሉ፤ ወደ {{divine_name:እግዚአብሔር|ያህዌ}}ም ይመለሳሉ፤ የሕዝቦችም ጎሳዎች ሁሉ በፊትህ ይሰግዳሉ።",
+          "B": "እስከ ምድር ዳርቻ ያሉ ሰዎች ያስታውሳሉ፤ ወደ {{divine_name:እግዚአብሔር|ያህዌ}}ም ይመለሳሉ፤ የየሕዝቡ ጎሳዎች ሁሉ በፊትህ ዝቅ ብለው ይሰግዳሉ።",
+          "R": "በዓለም ሁሉ ያሉ ሰዎች {{divine_name:እግዚአብሔርን|ያህዌን}} ያስታውሳሉ፤ ወደ እርሱም ይመለሳሉ። ከየሕዝቡ የመጡ ቤተሰቦች ሁሉ ተንበርክከው ያመልኩሃል።"
         }
       },
       "decisions": [
@@ -3751,6 +4155,11 @@
           "L": "Pois {{divine_name:ao SENHOR|a Javé}} [pertence] a realeza, e [{{deity_pronoun:ele|Ele}} está] governando sobre as nações.",
           "B": "Pois o reino pertence {{divine_name:ao SENHOR|a Javé}}, e {{deity_pronoun:ele|Ele}} governa as nações.",
           "R": "{{divine_name:O SENHOR|Javé}} é Rei, e {{deity_pronoun:ele|Ele}} governa todas as nações."
+        },
+        "am": {
+          "L": "መንግሥት {{divine_name:የእግዚአብሔር|የያህዌ}} ነውና፤ [እርሱም] በሕዝቦች ላይ ይገዛል።",
+          "B": "መንግሥቱ {{divine_name:የእግዚአብሔር|የያህዌ}} ነውና፤ እርሱም ሕዝቦችን ያስተዳድራል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ንጉሥ ነው፤ ሕዝቦችንም ሁሉ ይገዛል።"
         }
       },
       "decisions": [
@@ -3837,6 +4246,11 @@
           "L": "Todos os gordos da terra comeram e se prostraram; diante {{deity_pronoun:dele|Dele}} se ajoelharão todos os que descem [ao] pó, e [quem] não manteve viva a própria alma.",
           "B": "Os prósperos da terra comerão e se prostrarão em adoração; os que estão a caminho do pó, que não têm poder para conservar a própria vida, dobrarão os joelhos diante {{deity_pronoun:dele|Dele}}.",
           "R": "Os ricos do mundo inteiro vão comer e adorar a {{deity_pronoun:ele|Ele}}. Até as pessoas que estão morrendo, que não conseguem salvar a própria vida, vão se ajoelhar diante {{deity_pronoun:dele|Dele}}."
+        },
+        "am": {
+          "L": "የምድር ወፍራሞች ሁሉ በሉ፤ ሰገዱም፤ ወደ ትቢያ የሚወርዱ ሁሉ፣ ነፍሱንም በሕይወት ያላቆየ [ሁሉ] በፊቱ ይንበረከካሉ።",
+          "B": "የምድር ባለጠጎች ይበላሉ፤ ይሰግዳሉም፤ ወደ ትቢያ የሚወርዱ፣ የራሳቸውን ሕይወት ማቆየት የማይችሉ ሁሉ በፊቱ ይንበረከካሉ።",
+          "R": "በየቦታው ያሉ ሀብታሞች ይበላሉ፤ ይሰግዱለታልም። የሚሞቱ ሰዎች እንኳ፣ ራሳቸውን ማዳን የማይችሉ፣ ተንበርክከው ይሰግዱለታል።"
         }
       },
       "decisions": [
@@ -3960,6 +4374,25 @@
           "reason": "The English Literal puts \"their\" under the gender setting, with \"his\" as the alternative. Portuguese \"a própria alma\" (\"[whoever] has not kept their own soul alive\") does not mark the owner's sex, so there is nothing for the setting to change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190220300113"
+          ],
+          "choice": "\"ነፍሱን\" (his soul) with no gender span",
+          "alternatives": [
+            "a gender span, as the English Literal"
+          ],
+          "reason": "The masculine suffix is generic in Amharic and covers anyone, so Amharic has one wording here (docs/amharic-style.md 7b).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4021,6 +4454,11 @@
           "L": "A descendência {{deity_pronoun:o|O}} servirá; será contado acerca do Senhor à geração [vindoura].",
           "B": "Uma nova geração de descendentes {{deity_pronoun:o|O}} servirá, e lhes falarão do Senhor nos tempos que virão.",
           "R": "Os filhos que ainda vão nascer vão servir a {{deity_pronoun:ele|Ele}}. As pessoas vão contar à próxima geração quem é o Senhor."
+        },
+        "am": {
+          "L": "ዘር ያገለግለዋል፤ ስለ ጌታ ለ[ሚመጣው] ትውልድ ይነገራል።",
+          "B": "አዲስ የዘር ትውልድ ያገለግለዋል፤ በሚቀጥለውም ዘመን ስለ ጌታ ይነገራቸዋል።",
+          "R": "በሚመጡት ዓመታት ልጆች ያገለግሉታል። ሰዎች ስለ ጌታ ለሚቀጥለው ትውልድ ይነግራሉ።"
         }
       },
       "decisions": [
@@ -4052,6 +4490,27 @@
           ],
           "reason": "The Hebrew text ends the verse with \"to the generation\"; the ancient Greek translation joins it to the next verse, \"a generation to come will declare\".",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190220310043"
+          ],
+          "choice": "Adonai \"ጌታ\"",
+          "alternatives": [
+            "\"እግዚአብሔር\""
+          ],
+          "reason": "The Hebrew has Adonai here, not the divine name (meaning decision m1), so no divine_name span; \"ጌታ\" as the terms list.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -4115,6 +4574,11 @@
           "L": "Virão e anunciarão a {{deity_pronoun:sua|Sua}} justiça a um povo [que ainda vai] nascer: que {{deity_pronoun:ele|Ele}} agiu.",
           "B": "Virão e falarão da {{deity_pronoun:sua|Sua}} justiça a um povo que ainda não nasceu: {{deity_pronoun:ele|Ele}} fez isso!",
           "R": "Vão contar às pessoas que ainda não nasceram as coisas justas que {{deity_pronoun:ele|Ele}} fez. Vão dizer: \"Deus fez isso!\""
+        },
+        "am": {
+          "L": "ይመጣሉ፤ እርሱ እንዳደረገውም ጽድቁን ገና ለሚወለድ ሕዝብ ይናገራሉ።",
+          "B": "ይመጣሉ፤ ገና ላልተወለደ ሕዝብ ጽድቁን ይናገራሉ፤ እርሱ ይህን አድርጓል!",
+          "R": "ገና ላልተወለዱ ሰዎች እርሱ ያደረገውን ትክክለኛ ሥራ ይነግራሉ። «እግዚአብሔር ይህን አደረገ!» ይላሉ።"
         }
       },
       "decisions": [
