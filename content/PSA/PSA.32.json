@@ -56,6 +56,11 @@
           "L": "De Davi. Masquil. Bem-aventurado [aquele cuja] transgressão foi perdoada, [cujo] pecado foi encoberto!",
           "B": "De Davi. Masquil. Como é feliz aquele que tem a sua rebeldia perdoada, que tem o seu pecado coberto!",
           "R": "De Davi. Uma canção para ensinar. Felizes de verdade são as pessoas cujas faltas Deus perdoou, cujos pecados {{deity_pronoun:ele|Ele}} cobriu!"
+        },
+        "am": {
+          "L": "የዳዊት ማስኪል። የተባረከ ነው መተላለፉ ይቅር የተባለለት፣ ኃጢአቱም የተከደነለት [ሰው]!",
+          "B": "የዳዊት ማስኪል። ዓመፁ ይቅር የተባለለት፣ ኃጢአቱም የተሸፈነለት ሰው እንዴት የተባረከ ነው!",
+          "R": "ዳዊት የዘመረው የማስተማሪያ መዝሙር። እግዚአብሔር ጥፋታቸውን ይቅር ያላቸው፣ ኃጢአታቸውንም የሸፈነላቸው ሰዎች እንዴት ደስተኞች ናቸው!"
         }
       },
       "decisions": [
@@ -431,6 +436,47 @@
           "reason": "First of the thirteen maskil psalms: the Hebrew word is kept as a name at Literal and Balanced, since its exact sense is unknown (m2), as in the other titles; Readable gives the likely sense, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190320010041",
+            "o190320010061"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 32",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320010021"
+          ],
+          "choice": "maskil kept as the name \"ማስኪል\" (L, B); \"የማስተማሪያ መዝሙር\" (a song for teaching, R)",
+          "alternatives": [
+            "ትምህርት"
+          ],
+          "reason": "The kind of song the word names is no longer known (m2), so Literal and Balanced keep the Hebrew word as a name, as the terms list does for the Psalm headings; Readable follows the English Readable and says what the word probably means, from the verb behind it that returns in verse 8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -497,6 +543,11 @@
           "L": "Bem-aventurado [é] o ser humano a quem {{divine_name:o SENHOR|Javé}} não conta a iniquidade, e em cujo espírito não [há] engano!",
           "B": "Como é feliz aquele cuja culpa {{divine_name:o SENHOR|Javé}} não conta contra ele, aquele que não tem engano no espírito!",
           "R": "Feliz de verdade é a pessoa de quem {{divine_name:o SENHOR|Javé}} não cobra os pecados, a pessoa que não tenta esconder nada."
+        },
+        "am": {
+          "L": "የተባረከ ነው {{divine_name:እግዚአብሔር|ያህዌ}} በደሉን የማይቆጥርበት ሰው፣ በመንፈሱም ተንኰል የሌለበት!",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በደሉን የማይቆጥርበት፣ በመንፈሱም ተንኰል የሌለበት ሰው እንዴት የተባረከ ነው!",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ኃጢአታቸውን የማይቆጥርባቸው፣ ምንም ነገር ለመደበቅ የማይሞክሩ ሰዎች እንዴት ደስተኞች ናቸው!"
         }
       },
       "decisions": [
@@ -622,6 +673,28 @@
           "reason": "The verbs of Romans 4:8 in Portuguese (\"contará\", \"vai contar contra ele\", \"nunca vai cobrar o pecado\") for the same reckoning (m1). \"O ser humano\" and \"a pessoa\" already include men and women (m3), so no gender setting is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320020011",
+            "o190320020041"
+          ],
+          "choice": "Romans 4:7-8 wording kept: \"የተባረከ ነው\" (L, B), \"እንዴት ደስተኞች ናቸው\" (R), \"ይቅር የተባለለት\", \"የማይቆጥርበት\"",
+          "alternatives": [
+            "ምስጉን ነው (L, the terms list for ʾashrei)"
+          ],
+          "reason": "Paul quotes verses 1-2 in Romans 4:7-8, and the Hebrew agrees with the Greek, so these verses keep the words of the Amharic New Testament, including \"blessed\" at Literal where the Psalms otherwise say \"ምስጉን\". Where the Hebrew differs they follow it: verse 1 speaks of one person, not \"those\", and verse 2 has \"iniquity\" (\"በደል\", not \"ኃጢአት\") with no \"never\" (\"ከቶ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -685,6 +758,11 @@
           "L": "Pois, quando eu me calei, os meus ossos se desgastaram com o meu rugido o dia todo.",
           "B": "Enquanto fiquei calado, os meus ossos se gastaram com os meus gemidos o dia inteiro.",
           "R": "Quando guardei o meu pecado só para mim, o meu corpo foi ficando fraco. Eu gemia o dia todo."
+        },
+        "am": {
+          "L": "ዝም ባልኩ ጊዜ፣ ቀኑን ሁሉ በጩኸቴ አጥንቶቼ አርጅተዋልና።",
+          "B": "ዝም ባልኩ ጊዜ፣ ቀኑን ሙሉ ከመቃተቴ የተነሣ አጥንቶቼ ደቀቁ።",
+          "R": "ኃጢአቴን ሳልናዘዝ ዝም ባልኩ ጊዜ ሰውነቴ ደከመ። ቀኑን ሙሉ አቃሰትኩ።"
         }
       },
       "decisions": [
@@ -838,6 +916,11 @@
           "L": "Pois dia e noite a {{deity_pronoun:tua|Tua}} mão pesava sobre mim; a minha seiva se transformou [como] pelas secas do verão. Selá",
           "B": "Dia e noite a {{deity_pronoun:tua|Tua}} mão pesava sobre mim; a vida em mim secou como na seca do verão. Selá",
           "R": "Dia e noite eu sentia que {{deity_pronoun:tu|Tu}} me apertavas com força. As minhas forças secaram como a água no calor do verão. Selá"
+        },
+        "am": {
+          "L": "ቀንና ሌሊት እጅህ በእኔ ላይ ከብዳለችና፤ እርጥበቴ በበጋ ድርቅ [እንደሚሆን] ተለወጠ። ሴላ",
+          "B": "ቀንና ሌሊት እጅህ አጥብቃ ተጫነችኝ፤ በውስጤ ያለው ሕይወት በበጋ ድርቅ እንደሚሆን ደረቀ። ሴላ",
+          "R": "ቀንና ሌሊት አጥብቀህ ስትጫነኝ ተሰማኝ። ኃይሌ በበጋ ሙቀት እንደሚደርቅ ውኃ ደረቀ። ሴላ"
         }
       },
       "decisions": [
@@ -1055,6 +1138,25 @@
           "reason": "The meaning of the word is no longer known (meaning decision m4); it is probably a musical or liturgical direction. The Psalms terms note keeps it as a name, as the English does. It stands the same way wherever it comes in this block.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320040111"
+          ],
+          "choice": "Selah as \"ሴላ\", kept at the end of its line at every level",
+          "alternatives": [],
+          "reason": "The meaning of the word is no longer known (m4); Amharic keeps it as a name, in the place the Hebrew and the English have it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1130,6 +1232,11 @@
           "L": "O meu pecado eu {{deity_pronoun:te|Te}} dei a conhecer, e a minha iniquidade não encobri; eu disse: \"Confessarei as minhas transgressões {{divine_name:ao SENHOR|a Javé}}\", e {{deity_pronoun:tu|Tu}} perdoaste a culpa do meu pecado. Selá",
           "B": "Eu {{deity_pronoun:te|Te}} revelei o meu pecado; não escondi a minha maldade. Eu disse: \"Vou admitir a minha rebeldia diante {{divine_name:do SENHOR|de Javé}}\", e {{deity_pronoun:tu|Tu}} tiraste de mim o meu pecado e a sua culpa. Selá",
           "R": "Eu {{deity_pronoun:te|Te}} contei o meu pecado. Parei de esconder as coisas erradas que eu tinha feito. Eu disse: \"Vou confessar {{divine_name:ao SENHOR|a Javé}} que fui rebelde.\" E {{deity_pronoun:tu|Tu}} me perdoaste de tudo. Selá"
+        },
+        "am": {
+          "L": "ኃጢአቴን ለአንተ አስታወቅኩ፤ በደሌንም አልከደንኩም፤ «መተላለፌን {{divine_name:ለእግዚአብሔር|ለያህዌ}} እናዘዛለሁ» አልኩ፤ አንተም የኃጢአቴን በደል ይቅር አልክ። ሴላ",
+          "B": "ኃጢአቴን ለአንተ ገለጥኩ፤ ጥፋቴንም አልሸሸግኩም። «ዓመፄን {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት እናዘዛለሁ» አልኩ፤ አንተም ኃጢአቴንና በደሉን አስወገድክልኝ። ሴላ",
+          "R": "ስለ ኃጢአቴ ነገርኩህ። የሠራኋቸውን ክፉ ነገሮች መደበቅ ተውኩ። «እንዳመፅኩ {{divine_name:ለእግዚአብሔር|ለያህዌ}} እናዘዛለሁ» አልኩ። አንተም ሁሉንም ይቅር አልከኝ። ሴላ"
         }
       },
       "decisions": [
@@ -1305,6 +1412,11 @@
           "L": "Por isso, ore a {{deity_pronoun:ti|Ti}} todo fiel em tempo de encontrar; certamente, na enchente de grandes águas, elas não o alcançarão.",
           "B": "Por isso, que todos os fiéis orem a {{deity_pronoun:ti|Ti}} no tempo em que {{deity_pronoun:tu|Tu}} podes ser encontrado. Mesmo quando grandes águas vierem como enchente, não chegarão até eles.",
           "R": "Por isso, todos os que são leais a {{deity_pronoun:ti|Ti}} devem orar a {{deity_pronoun:ti|Ti}} enquanto ainda há tempo de {{deity_pronoun:te|Te}} encontrar. Então, quando os problemas subirem como uma enchente, não vão alcançá-los."
+        },
+        "am": {
+          "L": "ስለዚህ ታማኝ ሁሉ [አንተ] በምትገኝበት ጊዜ ወደ አንተ ይጸልይ፤ በእርግጥ በታላቅ ውኃ ጎርፍ [ጊዜ] ወደ እርሱ አይደርሱም።",
+          "B": "ስለዚህ ታማኝ የሆነ ሁሉ አንተ በምትገኝበት ጊዜ ወደ አንተ ይጸልይ። ታላቅ ውኃ እየጎረፈ ቢመጣ እንኳ ጎርፉ አይደርስበትም።",
+          "R": "ስለዚህ ለአንተ ታማኝ የሆነ ሁሉ አንተን የሚያገኝበት ጊዜ ሳያልፍ ወደ አንተ ይጸልይ። ያን ጊዜ መከራ እንደ ጎርፍ ቢነሣ እንኳ አይደርስበትም።"
         }
       },
       "decisions": [
@@ -1450,6 +1562,24 @@
           "reason": "The English needs a span for \"them/him\"; in Portuguese the pronoun \"o\" refers back to \"todo fiel\" (in verse 10, to \"quem confia\"), and a generic \"ele\" there already means anyone, so there is nothing to choose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190320060132"
+          ],
+          "choice": "No gender span on \"ወደ እርሱ\", \"አይደርስበትም\"",
+          "alternatives": [],
+          "reason": "The English offers \"them\" or \"him\" for the faithful person. The Amharic generic masculine already means anyone, man or woman, so there is nothing for the setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1515,6 +1645,11 @@
           "L": "Tu [és] um esconderijo para mim; da angústia {{deity_pronoun:tu|Tu}} me guardarás; [com] gritos de livramento {{deity_pronoun:tu|Tu}} me cercarás. Selá",
           "B": "Tu és o abrigo onde eu me escondo; {{deity_pronoun:tu|Tu}} me guardas da aflição e me cercas de gritos alegres de livramento. Selá",
           "R": "Tu és o lugar onde eu me escondo. Tu me guardas dos problemas. Tu me cercas de gritos de alegria, porque {{deity_pronoun:tu|Tu}} me salvaste. Selá"
+        },
+        "am": {
+          "L": "አንተ ለእኔ መሸሸጊያ [ነህ]፤ ከመከራ ትጠብቀኛለህ፤ በማዳን እልልታ ትከብበኛለህ። ሴላ",
+          "B": "አንተ የምሸሸግብህ መጠጊያዬ ነህ፤ ከጭንቀት ትጠብቀኛለህ፤ በዙሪያዬም የመዳን የደስታ ድምፅ ታሰማለህ። ሴላ",
+          "R": "አንተ የምደበቅብህ ስፍራ ነህ። ከመከራ ትጠብቀኛለህ። ስላዳንከኝ በደስታ እልልታ ትከብበኛለህ። ሴላ"
         }
       },
       "decisions": [
@@ -1674,6 +1809,11 @@
           "L": "Eu te instruirei e te ensinarei no caminho em que deves andar; eu [te] aconselharei, [com] o {{deity_pronoun:meu|Meu}} olho sobre ti.",
           "B": "Eu te darei entendimento e te mostrarei o caminho que deves seguir; eu te aconselharei e manterei os {{deity_pronoun:meus|Meus}} olhos sobre ti.",
           "R": "Eu vou te ajudar a entender. Vou te ensinar o caminho que deves seguir na vida. Vou te dar conselhos e não vou tirar os {{deity_pronoun:meus|Meus}} olhos de ti."
+        },
+        "am": {
+          "L": "አስተዋይ አደርግሃለሁ፤ በምትሄድበትም መንገድ አስተምርሃለሁ፤ ዓይኔን በአንተ ላይ [አድርጌ] እመክርሃለሁ።",
+          "B": "ማስተዋልን እሰጥሃለሁ፤ የምትሄድበትንም መንገድ አሳይሃለሁ፤ እመክርሃለሁ፤ ዓይኔንም ከአንተ ላይ አላነሣም።",
+          "R": "እንድታስተውል እረዳሃለሁ። እንዴት መኖር እንዳለብህ አስተምርሃለሁ። እመክርሃለሁ፤ በዓይኔም እጠብቅሃለሁ።"
         }
       },
       "decisions": [
@@ -1829,6 +1969,26 @@
           "reason": "Taking the LORD as the speaker (m1), God answers one person, and God speaks to one person with \"tu\" throughout the Portuguese Old Testament; the pronouns are not deity pronouns, since they refer to the psalmist.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190320080011",
+            "o190320080061"
+          ],
+          "choice": "God speaks to the hearer with the singular \"አንተ\" (\"አስተምርሃለሁ\", \"እመክርሃለሁ\")",
+          "alternatives": [],
+          "reason": "Here God answers the psalmist (m1) and speaks to one person, as the Hebrew does; the familiar singular is the form God uses in all the books drafted so far.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1901,6 +2061,11 @@
           "L": "Não sejam como o cavalo, como a mula, [que] não têm entendimento; com freio e cabresto [é] o seu arreio para [o] conter, [senão] não se aproxima de você.",
           "B": "Não sejam como o cavalo ou a mula, sem entendimento, que precisam de arreios de freio e cabresto para serem contidos, senão não chegam perto de você.",
           "R": "Não sejam como um cavalo ou uma mula, que não entendem nada. Eles precisam ser controlados com freio e rédeas, senão não vêm até você."
+        },
+        "am": {
+          "L": "ማስተዋል እንደሌለው እንደ ፈረስ፣ እንደ በቅሎ አትሁኑ፤ ልጓሙና ዛቡ ለመግታት መታጠቂያው [ነው]፤ [አለዚያ] ወደ አንተ አይቀርብም።",
+          "B": "ማስተዋል እንደሌለው ፈረስ ወይም በቅሎ አትሁኑ፤ እርሱ በልጓምና በዛብ ካልተገታ በቀር ወደ እናንተ አይቀርብም።",
+          "R": "እንደማያስተውል ፈረስ ወይም በቅሎ አትሁኑ። እርሱ በልጓምና በዛብ መገታት አለበት፤ አለዚያ ወደ እናንተ አይመጣም።"
         }
       },
       "decisions": [
@@ -1995,6 +2160,25 @@
           "reason": "The command is plural, to everyone listening (m1), so \"vocês\" (\"Não sejam\"); the last words are singular in Hebrew and mean whoever handles the animal, so \"você\", the ordinary form between people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320090111",
+            "o190320090121"
+          ],
+          "choice": "\"ወደ እናንተ\" (near you, plural) at Balanced and Readable; \"ወደ አንተ\" (singular) at Literal",
+          "alternatives": [],
+          "reason": "The Hebrew warns a plural \"you\" (do not be) and then says the animal will not come near \"you\" in the singular. Literal keeps the change; Balanced and Readable keep one \"you\" with the plural command, so the line does not seem to turn to someone else.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2059,6 +2243,11 @@
           "L": "Muitas [são as] dores do ímpio, mas quem confia {{divine_name:no SENHOR|em Javé}}, o amor leal o cercará.",
           "B": "Os ímpios têm muitos sofrimentos, mas quem confia {{divine_name:no SENHOR|em Javé}} fica cercado de amor leal.",
           "R": "As pessoas más têm muitos problemas. Mas as pessoas que confiam {{divine_name:no SENHOR|em Javé}} vão ter o amor fiel {{deity_pronoun:dele|Dele}} ao seu redor."
+        },
+        "am": {
+          "L": "የክፉ ሰው ሕመም ብዙ [ነው]፤ {{divine_name:በእግዚአብሔር|በያህዌ}} የሚታመነውን ግን ጽኑ ፍቅር ይከብበዋል።",
+          "B": "ክፉዎች ብዙ ሐዘን አለባቸው፤ {{divine_name:በእግዚአብሔር|በያህዌ}} የሚታመን ግን በጽኑ ፍቅር ይከበባል።",
+          "R": "ክፉ ሰዎች ብዙ መከራ አለባቸው። {{divine_name:በእግዚአብሔር|በያህዌ}} የሚታመኑ ሰዎች ግን ጽኑ ፍቅሩ በዙሪያቸው ይሆናል።"
         }
       },
       "decisions": [
@@ -2152,6 +2341,27 @@
           "reason": "Readable says whose love it is, the LORD's.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320100061"
+          ],
+          "choice": "ḥesed as \"ጽኑ ፍቅር\" at every level",
+          "alternatives": [
+            "ታማኝ ፍቅር"
+          ],
+          "reason": "The terms list gives one word for loyal love through the Psalms, where the English says \"loyal love\" (L, B) and \"faithful love\" (R).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2215,6 +2425,11 @@
           "L": "Alegrem-se {{divine_name:no SENHOR|em Javé}} e regozijem-se, justos; e gritem de alegria, todos [vocês, os] retos de coração.",
           "B": "Celebrem {{divine_name:no SENHOR|em Javé}} e fiquem alegres, vocês, justos; cantem de alegria, todos vocês que têm o coração reto!",
           "R": "Vocês que fazem o que é certo, fiquem alegres por causa {{divine_name:do SENHOR|de Javé}} e festejem! Todos vocês que têm o coração sincero, gritem de alegria!"
+        },
+        "am": {
+          "L": "ጻድቃን ሆይ፣ {{divine_name:በእግዚአብሔር|በያህዌ}} ደስ ይበላችሁ፤ ሐሤትም አድርጉ፤ ልባችሁ የቀና ሁሉ እልል በሉ።",
+          "B": "እናንተ ጻድቃን፣ {{divine_name:በእግዚአብሔር|በያህዌ}} ተደሰቱ፤ ሐሤትም አድርጉ፤ ልባችሁ ቅን የሆነ ሁላችሁ፣ በደስታ እልል በሉ!",
+          "R": "ትክክል የሆነውን የምታደርጉ ሰዎች ሆይ፣ ስለ {{divine_name:እግዚአብሔር|ያህዌ}} ደስ ይበላችሁ፤ ፈንጥዙም! ልባችሁ ቅን የሆነ ሁላችሁ፣ በደስታ እልል በሉ!"
         }
       },
       "decisions": [

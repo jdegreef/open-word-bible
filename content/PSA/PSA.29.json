@@ -62,6 +62,11 @@
           "L": "Salmo de Davi. Atribuam {{divine_name:ao SENHOR|a Javé}}, filhos de deuses, atribuam {{divine_name:ao SENHOR|a Javé}} glória e força.",
           "B": "Salmo de Davi. Reconheçam {{divine_name:o SENHOR|Javé}}, seres celestiais; reconheçam que a glória e a força pertencem {{divine_name:ao SENHOR|a Javé}}.",
           "R": "Canção de Davi. Todos vocês, seres que vivem no céu, louvem {{divine_name:o SENHOR|Javé}}! Digam como {{divine_name:o SENHOR|Javé}} é glorioso e forte!"
+        },
+        "am": {
+          "L": "የዳዊት መዝሙር። እናንተ የአማልክት ልጆች፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስጡ፤ ክብርንና ብርታትን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስጡ።",
+          "B": "የዳዊት መዝሙር። እናንተ ሰማያውያን ፍጡራን፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አክብሩ፤ ክብርና ብርታት {{divine_name:የእግዚአብሔር|የያህዌ}} መሆናቸውን ዕወቁ።",
+          "R": "ዳዊት የዘመረው መዝሙር። በሰማይ የምትኖሩ ፍጡራን ሁሉ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! {{divine_name:እግዚአብሔር|ያህዌ}} ምን ያህል ክቡርና ብርቱ እንደ ሆነ ተናገሩ!"
         }
       },
       "decisions": [
@@ -368,6 +373,83 @@
           "reason": "Verses 1-2 say almost what 1 Chronicles 16:28-29 (and Psalm 96:7-9) say, with \"sons of gods\" where Chronicles has \"families of the peoples\". Literal keeps the Portuguese of 1 Chronicles 16:28-29 word for word where the Hebrew is the same (\"Atribuam ao SENHOR ... glória e força\", \"a glória do seu nome\", \"no esplendor da santidade\"); Balanced and Readable follow the English, which differs here from Chronicles, and keep Chronicles' \"curvem-se diante do SENHOR em santo esplendor\" (B) in verse 2. The heavenly beings are addressed as a group with \"vocês\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 29.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290010051",
+            "o190290010061"
+          ],
+          "choice": "sons of gods \"የአማልክት ልጆች\" (L); \"ሰማያውያን ፍጡራን\" (heavenly beings, B), \"በሰማይ የምትኖሩ ፍጡራን\" (R)",
+          "alternatives": [],
+          "reason": "As meaning decision m2: the beings around God's throne; Literal keeps the Hebrew phrase, Balanced and Readable say who they are.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-3",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290010031"
+          ],
+          "choice": "ascribe as \"ስጡ\" (give) at Literal",
+          "alternatives": [
+            "\"አክብሩ\""
+          ],
+          "reason": "The Hebrew verb is simply \"give\" (meaning decision m3); the threefold \"ስጡ\" keeps the psalm's repetition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-4",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290010011"
+          ],
+          "choice": "\"ዳዊት የዘመረው መዝሙር\" (the psalm David sang) at Readable",
+          "alternatives": [
+            "\"የዳዊት መዝሙር\""
+          ],
+          "reason": "As docs/amharic-style.md 7a sets for psalm titles: Readable says plainly that the psalm is a song David sang.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -432,6 +514,11 @@
           "L": "Atribuam {{divine_name:ao SENHOR|a Javé}} a glória do {{deity_pronoun:seu|Seu}} nome; prostrem-se diante {{divine_name:do SENHOR|de Javé}} no esplendor da santidade.",
           "B": "Reconheçam a glória que pertence ao nome {{divine_name:do SENHOR|de Javé}}; curvem-se diante {{divine_name:do SENHOR|de Javé}} em santo esplendor.",
           "R": "Louvem {{divine_name:o SENHOR|Javé}} pela glória do {{deity_pronoun:seu|Seu}} nome. Curvem-se diante {{divine_name:do SENHOR|de Javé}} em santo esplendor."
+        },
+        "am": {
+          "L": "የስሙን ክብር {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስጡ፤ በቅድስና ግርማ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስገዱ።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ስም የሚገባውን ክብር ስጡ፤ በተቀደሰ ግርማ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስገዱ።",
+          "R": "ስሙ ምን ያህል ክቡር እንደ ሆነ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ። በተቀደሰ ግርማ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስገዱ።"
         }
       },
       "decisions": [
@@ -545,6 +632,11 @@
           "L": "A voz {{divine_name:do SENHOR|de Javé}} [está] sobre as águas; o Deus da glória troveja, {{divine_name:o SENHOR|Javé}}, sobre muitas águas.",
           "B": "A voz {{divine_name:do SENHOR|de Javé}} ressoa sobre as águas; o Deus glorioso troveja; {{divine_name:o SENHOR|Javé}} está acima das águas imensas.",
           "R": "A voz {{divine_name:do SENHOR|de Javé}} se ouve sobre o mar. O Deus glorioso fala como um trovão. {{divine_name:O SENHOR|Javé}} reina sobre as grandes águas."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ በውኆች ላይ [ነው]፤ የክብር አምላክ ያንጎደጉዳል፤ {{divine_name:እግዚአብሔር|ያህዌ}} በብዙ ውኆች ላይ።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ በውኆች ላይ ያስተጋባል፤ ክቡሩ አምላክ ያንጎደጉዳል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ከታላላቅ ውኆች በላይ ነው።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ በባሕሩ ላይ ይሰማል። ክቡሩ አምላክ እንደ ነጎድጓድ ይናገራል። {{divine_name:እግዚአብሔር|ያህዌ}} በታላላቅ ውኆች ላይ ይገዛል።"
         }
       },
       "decisions": [
@@ -594,6 +686,28 @@
           ],
           "reason": "Readable says what being over the waters means (m2).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290030011",
+            "o190290030021"
+          ],
+          "choice": "\"{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ\" (the voice of the LORD) the same at every level through verses 3-9",
+          "alternatives": [
+            "\"ነጎድጓድ\" (thunder) for the voice"
+          ],
+          "reason": "The psalm repeats \"the voice of the LORD\" seven times; the thunder is what is meant (meaning decision m1), but the repetition is kept at every level, as the English keeps it, and Readable says \"like thunder\" once.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -655,6 +769,11 @@
           "L": "A voz {{divine_name:do SENHOR|de Javé}} [está] em poder; a voz {{divine_name:do SENHOR|de Javé}} [está] em majestade.",
           "B": "A voz {{divine_name:do SENHOR|de Javé}} tem força; a voz {{divine_name:do SENHOR|de Javé}} tem o esplendor de um rei.",
           "R": "A voz {{divine_name:do SENHOR|de Javé}} é forte. A voz {{divine_name:do SENHOR|de Javé}} é grandiosa e majestosa como a de um rei."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ በኃይል [ነው]፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ በግርማ [ነው]።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ብርቱ ነው፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ እንደ ንጉሥ ግርማ ያለው ነው።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ብርቱ ነው። {{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ታላቅና ንጉሣዊ ነው።"
         }
       },
       "decisions": [
@@ -734,6 +853,11 @@
           "L": "A voz {{divine_name:do SENHOR|de Javé}} parte cedros; {{divine_name:o SENHOR|Javé}} estilhaça os cedros do Líbano.",
           "B": "A voz {{divine_name:do SENHOR|de Javé}} racha os cedros; {{divine_name:o SENHOR|Javé}} faz em pedaços os cedros do Líbano.",
           "R": "A voz {{divine_name:do SENHOR|de Javé}} quebra cedros enormes. Ele parte em pedaços até os grandes cedros do Líbano."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ዝግባዎችን ይሰብራል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የሊባኖስን ዝግባዎች ይሰባብራል።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ የዝግባ ዛፎችን ይቀነጥሳል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የሊባኖስን ዝግባዎች ሰባብሮ ይጥላል።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ትላልቅ የዝግባ ዛፎችን ይሰብራል። ታላላቆቹን የሊባኖስ ዝግባዎች እንኳ ይሰባብራቸዋል።"
         }
       },
       "decisions": [
@@ -850,6 +974,11 @@
           "L": "Ele os faz saltar como um bezerro, o Líbano e o Siriom como um filhote de boi selvagem.",
           "B": "Ele faz o Líbano pular como um bezerro e o Siriom saltar como um boi selvagem novo.",
           "R": "Ele faz tremer as montanhas do Líbano e o monte Hermom. Elas pulam como um bezerro ou um boi selvagem novo."
+        },
+        "am": {
+          "L": "እንደ ጥጃ ያዘልላቸዋል፤ ሊባኖስንና ሲርዮንን እንደ ዱር በሬ ግልገል።",
+          "B": "ሊባኖስን እንደ ጥጃ ያዘልለዋል፤ ሲርዮንንም እንደ ዱር በሬ ግልገል ያፈናጥረዋል።",
+          "R": "የሊባኖስን ተራሮችና የኤርሞንን ተራራ ያናውጣቸዋል። እንደ ጥጃ ወይም እንደ ዱር በሬ ግልገል ይዘላሉ።"
         }
       },
       "decisions": [
@@ -924,6 +1053,26 @@
           "reason": "The rəʾēm is the wild ox (the aurochs), now extinct. French has no common word for it; \"buffle\" names a large wild bovine a French reader can picture.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290060052",
+            "o190290060081"
+          ],
+          "choice": "Sirion \"ሲርዮን\" (L, B), \"የኤርሞን ተራራ\" (R); wild ox \"የዱር በሬ\"",
+          "alternatives": [],
+          "reason": "Sirion is the Sidonian name for Hermon, as Deuteronomy 3:9 on main gives both names; Readable names the mountain, as the English Readable. The wild ox as Psalm 22:22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -981,6 +1130,11 @@
           "L": "A voz {{divine_name:do SENHOR|de Javé}} talha chamas de fogo.",
           "B": "A voz {{divine_name:do SENHOR|de Javé}} esculpe chamas de fogo.",
           "R": "A voz {{divine_name:do SENHOR|de Javé}} lança raios."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ የእሳት ነበልባሎችን ይጠርባል።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ የእሳት ነበልባሎችን ቀርጾ ያወጣል።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ መብረቅን ይልካል።"
         }
       },
       "decisions": [
@@ -1079,6 +1233,11 @@
           "L": "A voz {{divine_name:do SENHOR|de Javé}} faz [o] deserto se contorcer; {{divine_name:o SENHOR|Javé}} faz contorcer-se o deserto de Cades.",
           "B": "A voz {{divine_name:do SENHOR|de Javé}} faz o deserto tremer; {{divine_name:o SENHOR|Javé}} sacode o deserto de Cades.",
           "R": "A voz {{divine_name:do SENHOR|de Javé}} faz o deserto tremer. Ele faz estremecer o deserto de Cades."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ምድረ በዳን ያንቀጠቅጣል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የቃዴስን ምድረ በዳ ያንቀጠቅጣል።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ምድረ በዳውን ያንቀጠቅጣል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የቃዴስን ምድረ በዳ ያናውጣል።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ምድረ በዳውን ያናውጣል። የቃዴስን ምድረ በዳ ያንቀጠቅጠዋል።"
         }
       },
       "decisions": [
@@ -1178,6 +1337,11 @@
           "L": "A voz {{divine_name:do SENHOR|de Javé}} faz [as] corças dar à luz e desnuda [as] florestas; e no {{deity_pronoun:seu|Seu}} templo tudo diz: \"Glória!\"",
           "B": "A voz {{divine_name:do SENHOR|de Javé}} faz as corças entrar em trabalho de parto e deixa os bosques despidos; e no {{deity_pronoun:seu|Seu}} templo todos gritam: \"Glória!\"",
           "R": "A voz {{divine_name:do SENHOR|de Javé}} faz as corças darem cria. Ela arranca as folhas das árvores da floresta. E no {{deity_pronoun:seu|Seu}} templo todos gritam: \"Glória!\""
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ዋላዎችን ያስወልዳል፤ ጫካዎችንም ይገፍፋል፤ በመቅደሱም ሁሉ፦ «ክብር!» ይላል።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ዋላዎችን ምጥ ያስይዛል፤ ደኖችንም ያራቁታል፤ በመቅደሱም ሁሉም፦ «ክብር!» ብለው ይጮኻሉ።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ድምፅ ዋላዎችን ያስወልዳል። የጫካውን ዛፎች ቅጠል ይገፍፋል። በመቅደሱም ሁሉም፦ «ክብር!» ብለው ይጮኻሉ።"
         }
       },
       "decisions": [
@@ -1208,6 +1372,27 @@
           "choice": "his temple: God's heavenly palace",
           "alternatives": [],
           "reason": "The heavenly beings called on in verse 1 answer from God's temple in heaven (11:4) with the cry \"Glory!\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290090041"
+          ],
+          "choice": "does \"ዋላዎች\" (female deer)",
+          "alternatives": [
+            "\"ዛፎች\" (oaks), a proposed reading"
+          ],
+          "reason": "As meaning decision m1, the Hebrew as it stands.",
           "uncertain": false,
           "footnote": false
         }
@@ -1272,6 +1457,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} se sentou no trono sobre o dilúvio, e {{divine_name:o SENHOR|Javé}} se assenta [como] Rei para sempre.",
           "B": "{{divine_name:O SENHOR|Javé}} se sentou no {{deity_pronoun:seu|Seu}} trono acima do dilúvio; {{divine_name:o SENHOR|Javé}} está sentado como Rei para todo o sempre.",
           "R": "{{divine_name:O SENHOR|Javé}} era Rei sobre o grande dilúvio. {{divine_name:O SENHOR|Javé}} será Rei para sempre."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በጥፋት ውኃ ላይ ተቀመጠ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ንጉሥ [ሆኖ] ይቀመጣል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከጥፋት ውኃ በላይ በዙፋኑ ተቀመጠ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ንጉሥ ሆኖ ተቀምጧል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በታላቁ የጥፋት ውኃ ላይ ንጉሥ ነበረ። {{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ንጉሥ ይሆናል።"
         }
       },
       "decisions": [
@@ -1301,6 +1491,25 @@
           "choice": "sat: sat enthroned as king",
           "alternatives": [],
           "reason": "To sit (yashav) here is to sit on the throne and rule (2:4; 9:8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190290100022"
+          ],
+          "choice": "the flood (mabbul) \"የጥፋት ውኃ\"",
+          "alternatives": [],
+          "reason": "The word used only of Noah's flood (meaning decision m1), as Genesis 7 on main.",
           "uncertain": false,
           "footnote": false
         }
@@ -1368,6 +1577,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} dará força ao {{deity_pronoun:seu|Seu}} povo; {{divine_name:o SENHOR|Javé}} abençoará o {{deity_pronoun:seu|Seu}} povo com a paz.",
           "B": "{{divine_name:O SENHOR|Javé}} vai tornar forte o {{deity_pronoun:seu|Seu}} povo; {{divine_name:o SENHOR|Javé}} dará ao {{deity_pronoun:seu|Seu}} povo a bênção da paz.",
           "R": "{{divine_name:O SENHOR|Javé}} vai fortalecer o {{deity_pronoun:seu|Seu}} povo. {{divine_name:O SENHOR|Javé}} vai abençoar o povo e dar paz a ele."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሕዝቡ ብርታትን ይሰጣል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቡን በሰላም ይባርካል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቡን ያበረታል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለሕዝቡ የሰላምን በረከት ይሰጣል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቡን ያበረታል። {{divine_name:እግዚአብሔር|ያህዌ}} ይባርካቸዋል፤ ሰላምንም ይሰጣቸዋል።"
         }
       },
       "decisions": [
