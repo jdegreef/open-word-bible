@@ -41,7 +41,7 @@ these books need. Decision text stays in English, quoting the Amharic words.
 | with stringed instruments; on the sheminith; according to the gittith | በባለ አውታር መሣሪያዎች; በሸሚኒት (1 Chr 15:21); በጊቲት |
 | A song of ascents | የመውጣት መዝሙር |
 | Selah | ሴላ, kept at the end of its line at every level, as the English |
-| Hallelujah (*halelu-yah*) | ሃሌ ሉያ (Revelation 19 on main); where the English translates it, «{{divine_name:እግዚአብሔርን\|ያህዌን}} አመስግኑ» |
+| Hallelujah (*halelu-yah*) | ሃሌ ሉያ (Revelation 19 on main); where the English translates it, «{{divine_name:እግዚአብሔርን\|ያህን}} አመስግኑ» (the alternative is "Yah", as the English span) |
 
 ## God and worship
 
