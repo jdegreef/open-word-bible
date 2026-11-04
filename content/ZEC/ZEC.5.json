@@ -60,6 +60,11 @@
           "L": "E outra vez levantei os meus olhos e vi, e eis que um rolo voando!",
           "B": "Outra vez olhei para cima e vi um rolo voando.",
           "R": "Olhei para cima de novo e vi um rolo voando pelo ar."
+        },
+        "am": {
+          "L": "ደግሞም ዓይኖቼን አነሣሁ፤ አየሁም፤ እነሆም፣ የሚበር ጥቅልል መጽሐፍ!",
+          "B": "ደግሞም ቀና ብዬ ስመለከት የሚበር ጥቅልል መጽሐፍ አየሁ።",
+          "R": "ደግሞም ቀና ብዬ በአየር ላይ የሚበር ጥቅልል መጽሐፍ አየሁ።"
         }
       },
       "decisions": [
@@ -298,6 +303,46 @@
           "reason": "The scroll (m2) is \"rolo\" at every level, the word Jeremiah 36:2 and Ezekiel 2:9 use in Portuguese; \"voando\" keeps the picture plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of this chapter.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380050010061"
+          ],
+          "choice": "the flying scroll as \"የሚበር ጥቅልል መጽሐፍ\", then \"ጥቅልሉ\"",
+          "alternatives": [
+            "\"መጽሐፍ\" alone"
+          ],
+          "reason": "A scroll is a rolled sheet, not a bound book, so \"ጥቅልል\" says what it looked like; the terms list sets the phrase for the vision.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -374,6 +419,11 @@
           "L": "E ele me disse: \"O que você vê?\" E eu disse: \"Vejo um rolo voando; o seu comprimento [é] de vinte côvados, e a sua largura de dez côvados.\"",
           "B": "Ele me perguntou: \"O que você está vendo?\" Respondi: \"Um rolo voando, com {{units:cerca de 9 metros|vinte côvados}} de comprimento e {{units:cerca de 4,5 metros|dez côvados}} de largura.\"",
           "R": "Ele me perguntou: \"O que você está vendo?\" Eu disse: \"Vejo um rolo voando. Ele tem {{units:cerca de 9 metros|vinte côvados}} de comprimento e {{units:cerca de 4,5 metros|dez côvados}} de largura.\""
+        },
+        "am": {
+          "L": "እርሱም፦ «ምን ታያለህ?» አለኝ። እኔም፦ «የሚበር ጥቅልል መጽሐፍ አያለሁ፤ ርዝመቱ በክንድ ሃያ፣ ስፋቱም በክንድ አሥር [ነው]» አልኩ።",
+          "B": "እርሱም፦ «ምን ታያለህ?» ብሎ ጠየቀኝ። እኔም፦ «ርዝመቱ {{units:9 ሜትር ያህል|ሃያ ክንድ}}፣ ስፋቱም {{units:4.5 ሜትር ያህል|አሥር ክንድ}} የሆነ የሚበር ጥቅልል መጽሐፍ» ብዬ መለስኩ።",
+          "R": "እርሱም፦ «ምን ታያለህ?» ብሎ ጠየቀኝ። እኔም፦ «የሚበር ጥቅልል መጽሐፍ አያለሁ። ርዝመቱ {{units:9 ሜትር ያህል|ሃያ ክንድ}}፣ ስፋቱም {{units:4.5 ሜትር ያህል|አሥር ክንድ}} ነው» አልኩ።"
         }
       },
       "decisions": [
@@ -573,6 +623,31 @@
           "reason": "The units setting has metric measures by default, where the English has feet, with the cubit (45 cm) as the alternative, as the Old Testament terms set it; Literal keeps the cubits.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380050020111",
+            "o380050020121",
+            "o380050020132",
+            "o380050020142",
+            "o380050020151",
+            "o380050020162"
+          ],
+          "choice": "units in metres by default, \"9 ሜትር ያህል\" (twenty cubits) and \"4.5 ሜትር ያህል\" (ten cubits), with the cubits as the alternative; Literal keeps the cubits",
+          "alternatives": [
+            "US feet, as the English default"
+          ],
+          "reason": "Amharic readers measure in metres, so the units setting gives metres by default, at 45 centimetres to the cubit as the Pentateuch list sets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -657,6 +732,11 @@
           "L": "E ele me disse: \"Esta [é] a maldição que sai sobre a face de toda a terra; pois todo aquele que furta será eliminado daqui conforme ela, e todo aquele que jura será eliminado daqui conforme ela.",
           "B": "Então ele me disse: \"Esta é a maldição que está saindo sobre toda a terra. Conforme diz um lado do rolo, todo ladrão será eliminado; e, conforme diz o outro lado, todo aquele que jura falsamente será eliminado.",
           "R": "Então ele me disse: \"Esta é a maldição que está saindo sobre toda a terra. Um lado do rolo diz que todos os que roubam vão ser expulsos da terra. O outro lado diz que todos os que juram falsamente também vão ser expulsos."
+        },
+        "am": {
+          "L": "እርሱም እንዲህ አለኝ፦ «ይህ በምድሪቱ ሁሉ ፊት ላይ የሚወጣው እርግማን ነው፤ የሚሰርቅ ሁሉ እንደ እርሱ ቃል ከዚህ ይጠረጋልና፤ የሚምልም ሁሉ እንደ እርሱ ቃል ከዚህ ይጠረጋል።",
+          "B": "ከዚያም እንዲህ አለኝ፦ «ይህ በምድሪቱ ሁሉ ላይ የሚወጣው እርግማን ነው። በአንዱ ወገን እንደ ተጻፈው ሌባ ሁሉ ተጠራርጎ ይወገዳል፤ በሌላውም ወገን እንደ ተጻፈው በሐሰት የሚምል ሁሉ ተጠራርጎ ይወገዳል።",
+          "R": "ከዚያም እንዲህ አለኝ፦ «ይህ በምድሪቱ ሁሉ ላይ የሚወጣው እርግማን ነው። የጥቅልሉ አንዱ ወገን የሚሰርቅ ሁሉ ከምድሪቱ እንደሚወገድ ይናገራል። ሌላው ወገን ደግሞ በሐሰት የሚምል ሁሉ እንደሚወገድ ይናገራል።"
         }
       },
       "decisions": [
@@ -874,6 +954,34 @@
           "reason": "\"A maldição\", as the Old Testament terms set it for the covenant curse (m1). The verb (m2) is taken as the result of the curse, as the English does: \"eliminado\", cleared out of the land, at Literal and Balanced, and \"expulsos da terra\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380050030151",
+            "o380050030201",
+            "o380050030131",
+            "o380050030132",
+            "o380050030141",
+            "o380050030142",
+            "o380050030181",
+            "o380050030182",
+            "o380050030191",
+            "o380050030192"
+          ],
+          "choice": "will be purged out as \"ይጠረጋል\" (L), \"ተጠራርጎ ይወገዳል\" (B), \"ይወገዳል\" (R); from here ... according to it as \"እንደ እርሱ ቃል ከዚህ\" (L), one side / the other side (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew's repeated phrase; Balanced and Readable read it as the two sides of the scroll, as the meaning decision does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -964,6 +1072,11 @@
           "L": "Eu a fiz sair, declara {{divine_name:o SENHOR|Javé}} dos Exércitos, e ela entrará na casa do ladrão e na casa daquele que jura falsamente pelo {{deity_pronoun:meu|Meu}} nome; e ela pousará no meio da casa dele e a consumirá, tanto as suas madeiras como as suas pedras.\"",
           "B": "Eu a enviei, declara {{divine_name:o SENHOR|Javé}} dos Exércitos, e ela entrará na casa do ladrão e na casa de todo aquele que jura falsamente pelo {{deity_pronoun:meu|Meu}} nome. Ela ficará dentro daquela casa e a destruirá, com madeiras e pedras.\"",
           "R": "Estou enviando esta maldição, diz {{divine_name:o SENHOR|Javé}} dos Exércitos. Ela vai entrar na casa de quem rouba e na casa de quem jura falsamente pelo {{deity_pronoun:meu|Meu}} nome. Ela vai ficar naquela casa até destruí-la por completo, tanto a madeira como as pedras.\""
+        },
+        "am": {
+          "L": "አውጥቼዋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፤ ወደ ሌባውም ቤት፣ በስሜም በሐሰት ወደሚምለው ቤት ይገባል፤ በቤቱም መካከል ያድራል፤ ቤቱንም ከእንጨቱም ከድንጋዩም ጋር ያጠፋዋል።»",
+          "B": "አውጥቼዋለሁ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ ወደ ሌባው ቤትና በስሜ በሐሰት ወደሚምለው ሰው ቤት ይገባል። በዚያም ቤት ውስጥ ይቀመጣል፤ እንጨቱንም ድንጋዩንም ሳይቀር ቤቱን ያጠፋዋል።»",
+          "R": "ይህን እርግማን እልከዋለሁ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። ወደሚሰርቅ ሰው ሁሉ ቤትና በስሜ በሐሰት ወደሚምል ሰው ሁሉ ቤት ይገባል። በዚያም ቤት ውስጥ ይቆያል፤ እንጨቱንም ድንጋዩንም ጨምሮ ቤቱን ፈጽሞ ያጠፋዋል።»"
         }
       },
       "decisions": [
@@ -1268,6 +1381,28 @@
           "reason": "The English Literal puts \"his house\" under the gender setting (r-en-1). Portuguese \"aquele que\", \"todo aquele que\" and \"quem\" already mean anyone, and the \"dele\" that refers back to them is ordinary generic Portuguese (docs/portuguese-style.md, section 7), so no level has a span. \"Pousar\" at Literal keeps the picture of staying the night (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380050040142",
+            "o380050040173",
+            "o380050040191",
+            "o380050040211"
+          ],
+          "choice": "\"በቤቱ\" (in his house) with no gender span",
+          "alternatives": [
+            "a gender span like the English one"
+          ],
+          "reason": "The suffix refers back to \"the one who swears\", and Amharic's generic suffix covers women and men alike, so the setting would have nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1343,6 +1478,11 @@
           "L": "E o anjo que falava comigo saiu e me disse: \"Levante os seus olhos, por favor, e veja o que é isto que está saindo.\"",
           "B": "Então o anjo que falava comigo se adiantou e me disse: \"Olhe para cima e veja o que é isto que está saindo.\"",
           "R": "Então o anjo que falava comigo se aproximou. Ele disse: \"Olhe para cima e veja o que está saindo.\""
+        },
+        "am": {
+          "L": "ከእኔ ጋር የሚነጋገረው መልአክም ወጣ፤ እንዲህም አለኝ፦ «እባክህ፣ ዓይኖችህን አንሣ፤ ይህ የሚወጣው ምን እንደ ሆነ እይ።»",
+          "B": "ከዚያም ከእኔ ጋር የሚነጋገረው መልአክ ወደ ፊት ወጥቶ፦ «ቀና ብለህ ይህ የሚወጣው ምን እንደ ሆነ ተመልከት» አለኝ።",
+          "R": "ከዚያም ከእኔ ጋር የሚነጋገረው መልአክ ወደ ፊት መጣ። እንዲህም አለኝ፦ «ቀና ብለህ የሚወጣውን ተመልከት።»"
         }
       },
       "decisions": [
@@ -1555,6 +1695,11 @@
           "L": "Então eu disse: \"Que [é] isso?\" Ele disse: \"Este [é] o efa que está saindo.\" E disse: \"Este [é] o olho deles em toda a terra.\"",
           "B": "Perguntei: \"O que é isso?\" Ele disse: \"É um cesto de efa que está saindo.\" E acrescentou: \"Assim é o povo em toda a terra.\"",
           "R": "Perguntei: \"O que é isso?\" Ele disse: \"É um cesto grande de medir cereais, e ele está saindo.\" Ele disse também: \"Isso mostra como são as pessoas em toda a terra.\""
+        },
+        "am": {
+          "L": "እኔም፦ «ይህ ምንድን [ነው]?» አልኩ። እርሱም፦ «ይህ የሚወጣው ኢፍ ነው» አለ። ደግሞም፦ «ይህ በምድሪቱ ሁሉ ዓይናቸው ነው» አለ።",
+          "B": "እኔም፦ «ምንድን ነው?» ብዬ ጠየቅኩ። እርሱም፦ «ይህ የሚወጣው የኢፍ መስፈሪያ ቅርጫት ነው» አለ። ቀጥሎም፦ «በምድሪቱ ሁሉ ያሉት ሰዎች እንዲህ ናቸው» አለ።",
+          "R": "እኔም፦ «ምንድን ነው?» ብዬ ጠየቅኩ። እርሱም፦ «ይህ እህል የሚሰፈርበት ትልቅ ቅርጫት ነው፤ እየወጣም ነው» አለ። ደግሞም፦ «ይህ በምድሪቱ ሁሉ ያሉት ሰዎች ምን እንደሚመስሉ ያሳያል» አለ።"
         }
       },
       "decisions": [
@@ -1757,6 +1902,27 @@
           "reason": "The ephah here is the container (m1), so it takes no units setting. Literal keeps \"o efa\", the form Ezekiel 45:10 has in Portuguese; Balanced says \"cesto de efa\" and Readable says what it was, as the English does (r-en-1). \"Their eye\" (m2) is kept at Literal and explained at Balanced and Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380050060062",
+            "o380050060101",
+            "o380050060102"
+          ],
+          "choice": "the ephah as \"ኢፍ\" (L, the Pentateuch list's name for the measure), \"የኢፍ መስፈሪያ ቅርጫት\" (B), \"እህል የሚሰፈርበት ትልቅ ቅርጫት\" (R), then \"ቅርጫቱ\" (B, R); their eye as \"ዓይናቸው\" (L)",
+          "alternatives": [],
+          "reason": "The container is named after the grain measure it held. Literal keeps the Hebrew's word and its \"their eye\"; Balanced and Readable say what the meaning decision reads, what the people are like.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1823,6 +1989,11 @@
           "L": "E eis que uma tampa redonda de chumbo foi levantada, e ali [estava] uma mulher sentada no meio do efa!",
           "B": "Então a tampa de chumbo foi levantada, e havia uma mulher sentada dentro do cesto.",
           "R": "Então a tampa de chumbo do cesto foi levantada, e eu vi uma mulher sentada dentro dele."
+        },
+        "am": {
+          "L": "እነሆም፣ ክብ የእርሳስ ክዳን ተነሣ፤ በኢፉም መካከል አንዲት ሴት ተቀምጣ ነበር!",
+          "B": "ከዚያም የእርሳሱ ክዳን ተነሣ፤ በቅርጫቱም ውስጥ አንዲት ሴት ተቀምጣ ነበር።",
+          "R": "ከዚያም የቅርጫቱ የእርሳስ ክዳን ተነሣ፤ በውስጡም አንዲት ሴት ተቀምጣ አየሁ።"
         }
       },
       "decisions": [
@@ -1985,6 +2156,11 @@
           "L": "E ele disse: \"Esta [é] a Maldade.\" E a lançou no meio do efa e lançou o peso de chumbo sobre a sua boca.",
           "B": "Ele disse: \"Esta é a Maldade.\" Então a empurrou de volta para dentro do cesto e apertou a tampa de chumbo sobre a abertura.",
           "R": "O anjo disse: \"Esta mulher é a Maldade.\" Então ele a empurrou de volta para dentro do cesto e fechou com força a pesada tampa de chumbo."
+        },
+        "am": {
+          "L": "እርሱም፦ «ይህች ክፋት ናት» አለ። ወደ ኢፉም መካከል ጣላት፤ የእርሳሱንም ድንጋይ በአፉ ላይ ጣለ።",
+          "B": "እርሱም፦ «ይህች ክፋት ናት» አለ። ከዚያም ወደ ቅርጫቱ ውስጥ መልሶ ገፋት፤ የእርሳሱንም ክዳን በአፉ ላይ ጫነው።",
+          "R": "መልአኩም፦ «ይህች ሴት ክፋት ናት» አለ። ከዚያም ወደ ቅርጫቱ ውስጥ መልሶ ገፋት፤ ከባዱን የእርሳስ ክዳንም በላዩ ላይ በኃይል ዘጋው።"
         }
       },
       "decisions": [
@@ -2167,6 +2343,25 @@
           "reason": "The word is used as a name for the woman (m1), so it has a capital, as the English does (r-en-1). \"Maldade\" is a feminine noun in Portuguese too, so the woman of the vision fits the word as she does in Hebrew; \"iniquidade\" is kept for 'awon (3:4, 9).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380050080032"
+          ],
+          "choice": "Wickedness as \"ክፋት\", with the feminine \"ይህች ... ናት\"",
+          "alternatives": [],
+          "reason": "Amharic has no capital letter to mark a personified name; the feminine pronoun and verb tie the word to the woman in the basket, the figure the meaning decision describes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2255,6 +2450,11 @@
           "L": "E levantei os meus olhos e vi, e eis que duas mulheres saindo, com vento nas suas asas; e elas tinham asas como as asas da cegonha, e levantaram o efa entre a terra e os céus.",
           "B": "Então olhei para cima, e havia duas mulheres saindo, com o vento nas suas asas. Elas tinham asas como as de uma cegonha, e levantaram o cesto entre a terra e o céu.",
           "R": "Então olhei para cima e vi duas mulheres saindo voando, com o vento nas asas. As asas delas eram como as asas de uma cegonha. Elas levantaram o cesto no ar, entre a terra e o céu."
+        },
+        "am": {
+          "L": "ዓይኖቼን አነሣሁ፤ አየሁም፤ እነሆም፣ ሁለት ሴቶች ይወጡ ነበር፤ ነፋስም በክንፎቻቸው ነበረ፤ እንደ ሽመላ ክንፍ ያሉ ክንፎችም ነበሯቸው፤ ኢፉንም በምድርና በሰማያት መካከል አነሡት።",
+          "B": "ከዚያም ቀና ብዬ ስመለከት ሁለት ሴቶች ነፋስ በክንፎቻቸው ውስጥ ሆኖ ሲወጡ አየሁ። እንደ ሽመላ ክንፍ ያሉ ክንፎች ነበሯቸው፤ ቅርጫቱንም በምድርና በሰማይ መካከል አነሡት።",
+          "R": "ከዚያም ቀና ብዬ ስመለከት ሁለት ሴቶች ነፋስ በክንፎቻቸው ውስጥ ሆኖ እየበረሩ ሲወጡ አየሁ። ክንፎቻቸው እንደ ሽመላ ክንፎች ነበሩ። ቅርጫቱንም በምድርና በሰማይ መካከል ወደ አየር አነሡት።"
         }
       },
       "decisions": [
@@ -2363,6 +2563,25 @@
           "reason": "\"Korongo\" is the common Swahili name for the stork, a large bird with broad wings, which is the point of the comparison.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380050090132"
+          ],
+          "choice": "the stork as \"ሽመላ\", as Deuteronomy 14:18 and Jeremiah 8:7 on main",
+          "alternatives": [],
+          "reason": "The bird's name as on main.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2430,6 +2649,11 @@
           "L": "E eu disse ao anjo que falava comigo: \"Para onde elas estão levando o efa?\"",
           "B": "Perguntei ao anjo que falava comigo: \"Para onde elas estão levando o cesto?\"",
           "R": "Perguntei ao anjo que falava comigo: \"Para onde elas estão levando o cesto?\""
+        },
+        "am": {
+          "L": "እኔም ከእኔ ጋር ለሚነጋገረው መልአክ፦ «ኢፉን ወዴት ይወስዱታል?» አልኩት።",
+          "B": "ከእኔ ጋር የሚነጋገረውን መልአክ፦ «ቅርጫቱን ወዴት ይወስዱታል?» ብዬ ጠየቅኩት።",
+          "R": "ከእኔ ጋር የሚነጋገረውን መልአክ፦ «ቅርጫቱን ወዴት ይወስዱታል?» ብዬ ጠየቅኩት።"
         }
       },
       "decisions": [
@@ -2537,6 +2761,11 @@
           "L": "E ele me disse: \"Para construir para ele uma casa na terra de Sinear; e, quando ela estiver preparada, ele será colocado ali sobre a sua base.\"",
           "B": "Ele respondeu: \"Para a terra de Sinear, para construir uma casa para ele. Quando a casa estiver pronta, o cesto será colocado ali sobre a sua base.\"",
           "R": "Ele respondeu: \"Para a Babilônia. Ali vão construir um templo para ele. Quando o templo estiver pronto, o cesto vai ser colocado ali sobre o seu pedestal.\""
+        },
+        "am": {
+          "L": "እርሱም፦ «በሰናዖር ምድር ቤት ሊሠሩለት ነው፤ በተዘጋጀም ጊዜ በዚያ በመሠረቱ ላይ ይቀመጣል» አለኝ።",
+          "B": "እርሱም፦ «ቤት ሊሠሩለት ወደ ሰናዖር ምድር ነው። ቤቱ በተዘጋጀ ጊዜ ቅርጫቱ በዚያ በመሠረቱ ላይ ይቀመጣል» ብሎ መለሰልኝ።",
+          "R": "እርሱም፦ «ወደ ባቢሎን አገር ነው። በዚያ ቤተ መቅደስ ይሠራለታል። ቤተ መቅደሱ በተዘጋጀ ጊዜ ቅርጫቱ በዚያ በመቆሚያው ላይ ይቀመጣል» ብሎ መለሰልኝ።"
         }
       },
       "decisions": [
@@ -2689,6 +2918,26 @@
             "Sinar"
           ],
           "reason": "Shinar (m1) is \"Sinear\", the form Genesis 11:2 and Daniel 1:2 have in Portuguese; Readable says \"a Babilônia\", as the English Readable says \"Babylonia\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380050110062",
+            "o380050110071"
+          ],
+          "choice": "Shinar as \"ሰናዖር\" (L, B), as Genesis 10:10 and Daniel 1:2 on main; \"ባቢሎን አገር\" (R)",
+          "alternatives": [],
+          "reason": "The old name for Babylonia keeps its form on main; Readable names Babylon, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
