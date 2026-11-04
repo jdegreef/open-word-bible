@@ -1134,13 +1134,16 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
             para = None
             in_disputed = not in_disputed
             if in_disputed:
-                note = ui["disputed_note"].replace("{ref}", disputed_info["ref"])
+                note = ui[disputed_info["message"]].replace("{ref}", disputed_info["ref"])
                 # The reader's button to the note's reasoning, so the text
                 # below does not move when it is drawn; it does nothing
                 # without JavaScript, and is hidden then (chapter_page).
                 why = (f'<button type="button" class="fn-pop-more">{esc(ui["fn_reasoning"], quote=False)} \u2192</button>'
                        if disputed_info["note"] else "")
-                out.append(f'<div class="disputed-block"><div class="disputed-note"><p>{esc(note, quote=False)}</p>{why}</div>')
+                art = disputed_info["article"]
+                more = (f'<a class="disputed-article" href="{esc(art["url"])}"{lang_attr(art["lang"], lang)}>'
+                        f'{esc(art["title"], quote=False)}</a>' if art else "")
+                out.append(f'<div class="disputed-block"><div class="disputed-note"><p>{esc(note, quote=False)}</p>{why}{more}</div>')
             else:
                 out.append("</div>")
         heading = headings().get(r["id"])
@@ -1289,6 +1292,8 @@ def chapter_page(book, chapter, lang="en"):
             "source": source,
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
+            # The article on how manuscripts differ, from a manuscript-reading footnote.
+            "variants": article_link(VARIANTS_ARTICLE, lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
@@ -1303,6 +1308,8 @@ def chapter_page(book, chapter, lang="en"):
                        "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
+    # The panel's map of the places in a sentence (web/map.js, loaded when first needed).
+    data["map"] = {"script": asset("map.js"), "base": basemap_file()[1]}
     data["saved"] = url(lang, "/saved/")
     # The reader shows a word's grammar in the page's language only.
     data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
@@ -1639,26 +1646,70 @@ def chapter_turns(book, chapter, lang="en"):
 
 
 # Passages whose place in the text is disputed, translated in [square
-# brackets] (docs/john-terms.md), as (first verse, last verse). A chapter's
-# cards quote the first verse outside them.
-DISPUTED = (("JHN.7.53", "JHN.8.11"),)
+# brackets] (docs/john-terms.md), as (first, last, the message of the note
+# set above them in reader.ui, the article that tells their story). first is
+# a verse, or a sentence where the passage starts inside a verse: Mark's
+# short ending follows 16:8 in the same verse. A chapter's cards quote the
+# first verse outside them.
+DISPUTED = (("JHN.7.53", "JHN.8.11", "disputed_note", "the-woman-caught-in-adultery"),
+            ("MRK.16.8.s2", "MRK.16.20", "disputed_note_mark", "the-ending-of-mark"))
+
+
+def _place(rid_or_vid):
+    """Where a verse or a sentence stands, to compare with DISPUTED's ends: a
+    verse stands before its sentences."""
+    m = re.fullmatch(r"(.+)\.s(\d+)", rid_or_vid)
+    return (refs.parse(m[1]).sort_key(), int(m[2])) if m else (refs.parse(rid_or_vid).sort_key(), 0)
+
+
+def _disputed_entry(place):
+    for entry in DISPUTED:
+        if _place(entry[0]) <= place and place[0] <= refs.parse(entry[1]).sort_key():
+            return entry
+    return None
 
 
 def disputed(vid):
-    key = refs.parse(vid).sort_key()
-    return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+    """True for a verse wholly inside a disputed passage."""
+    return _disputed_entry(_place(vid)) is not None
+
+
+def disputed_record(r):
+    """The DISPUTED entry a sentence is part of, or None."""
+    return _disputed_entry(_place(r["id"]))
 
 
 @functools.lru_cache(maxsize=None)
 def name_cards():
-    """data/names.json (people, places and peoples), by (Strong's number,
-    lemma). Each has one or more senses; a sense with "verses" is the one
-    for those verses, a sense without is the one for every other verse."""
-    path = ROOT / "data" / "names.json"
-    if not path.exists():
-        return {}
-    data = json.loads(path.read_text(encoding="utf-8"))
-    return {(n["strong"], n["lemma"]): n["senses"] for n in data["names"]}
+    """data/names.json (people, places and peoples) and data/glossary.json
+    (words a reader may need explained: feasts, offerings, offices), by
+    (Strong's number, lemma). Each has one or more senses; a sense with
+    "verses" is the one for those verses, a sense without is the one for
+    every other verse. A glossary sense's kind is "concept"."""
+    cards = {}
+    for name, key in (("names.json", "names"), ("glossary.json", "glossary")):
+        path = ROOT / "data" / name
+        if path.exists():
+            data = json.loads(path.read_text(encoding="utf-8"))
+            cards.update({(n["strong"], n["lemma"]): n["senses"] for n in data[key]})
+    return cards
+
+
+@functools.lru_cache(maxsize=None)
+def places():
+    """data/places.json: where each place in data/names.json is, by
+    "strong|lemma|name" (scripts/extract_places.py)."""
+    path = ROOT / "data" / "places.json"
+    return json.loads(path.read_text(encoding="utf-8"))["places"] if path.exists() else {}
+
+
+@functools.lru_cache(maxsize=None)
+def basemap_file():
+    """data/basemap.json for the reader's maps (web/map.js), and its URL
+    with a content hash. The reader fetches it the first time it draws a
+    map."""
+    text = (ROOT / "data" / "basemap.json").read_text(encoding="utf-8")
+    return text, f"/basemap.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 def word_strong(word):
@@ -1717,6 +1768,10 @@ def word_cards(records, words, lang="en"):
                     key = ("name", w["lemma"], sense["name"])
                     card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
                             "kind": sense["kind"], "note": sense["note"]}
+                    # A place OpenBible.info locates: where it is, for the panel's map.
+                    where = places().get(f"{word_strong(w)}|{w['lemma']}|{sense['name']}")
+                    if sense["kind"] == "place" and where:
+                        card.update(where)
             if card:
                 if key not in index:
                     index[key] = len(cards)
@@ -1813,14 +1868,31 @@ def disputed_block(records, lang="en"):
     """The reader's view of a disputed passage on this page: its records, its
     reference, and the manuscript-reading decision that explains it (shown
     from the note above the passage). None when the page has none."""
-    ids = [r["id"] for r in records if any(disputed(v) for v in r["refs"])]
+    ids = [r["id"] for r in records if disputed_record(r)]
     if not ids:
         return None
     first = next(r for r in records if r["id"] == ids[0])
     note = next((d["id"] for d in first["decisions"] if d["category"] == "text_variant"), None)
-    a, b = next((refs.parse(x), refs.parse(y)) for x, y in DISPUTED if disputed(first["refs"][0]))
+    entry = disputed_record(first)
+    a, b = refs.parse(first["refs"][0]), refs.parse(entry[1])
     span = f"{a.chapter}:{a.verse}\u2013" + (f"{b.verse}" if a.chapter == b.chapter else f"{b.chapter}:{b.verse}")
-    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
+    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note,
+            "message": entry[2], "article": article_link(entry[3], lang)}
+
+
+# The article a manuscript-reading footnote links to (web/reader.js openNote).
+VARIANTS_ARTICLE = "when-manuscripts-disagree"
+
+
+@functools.lru_cache(maxsize=None)
+def article_link(slug, lang="en"):
+    """{"url", "title", "lang"} of an article, in lang where it is translated
+    and in English otherwise; None for one not written."""
+    for code in dict.fromkeys((lang, "en")):
+        found = next((a for a in load_articles(code) if a["slug"] == slug), None)
+        if found:
+            return {"url": url(lang if code == lang else "en", article_url(found)), "title": found["title"], "lang": code}
+    return None
 
 
 def psalm_title(vid):
@@ -5033,7 +5105,7 @@ def sitemap(paths):
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared):
+                   downloads, chapter_shared, reader_shared, article_link, places, basemap_file):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -5107,6 +5179,7 @@ def build(out):
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
+    files["basemap.json"] = basemap_file()[0]
     files.update(verse_files())
     files.update(editions_files())
     files.update(word_files())
@@ -5124,7 +5197,7 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "admin.js", "admin.css"):
+                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")

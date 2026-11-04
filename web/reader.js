@@ -524,6 +524,8 @@
       select(n.record, null, n.decision.id);
     });
     box.appendChild(more);
+    // A manuscript reading: how and why manuscripts differ, in an article.
+    if (n.decision.category === "text_variant" && DATA.variants) box.appendChild(articleLink(DATA.variants, "fn-pop-article"));
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     document.body.appendChild(box);
     popover = box;
@@ -597,6 +599,53 @@
     placeNote();
     var first = box.querySelector(".why-item") || more;
     first.focus({ preventScroll: true });
+  }
+
+  // The glossary card (kind "concept") of any of these source words.
+  function glossaryCard(ids) {
+    for (var i = 0; i < ids.length; i++) {
+      var n = DATA.cards.tokens[ids[i]], c = n === undefined ? null : DATA.cards.list[n];
+      if (c && c.kind === "concept") return c;
+    }
+    return null;
+  }
+
+  function openGloss(button, c) {
+    var same = popover && popover.opener === button;
+    closeNote(false);
+    if (same) return;
+    var box = el("div", "fn-pop gl-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", c.title);
+    var head = el("p", "fn-pop-head");
+    head.appendChild(el("span", "note-ref", c.title));
+    var lemma = el("span", "wcard-lemma", c.lemma);
+    lemma.lang = DATA.source;
+    head.appendChild(lemma);
+    head.appendChild(el("span", "fn-pop-cat", t("card_kind").concept));
+    box.appendChild(head);
+    var note = el("p", "fn-pop-text", c.note);
+    if (settings.lang !== "en") note.lang = "en";
+    box.appendChild(note);
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = button;
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    box.tabIndex = -1;
+    box.focus({ preventScroll: true });
+  }
+
+  // A link to an article ({url, title, lang}), in English where it is not
+  // translated yet.
+  function articleLink(a, cls) {
+    var link = el("a", cls, a.title);
+    link.href = a.url;
+    if (a.lang !== settings.lang) link.lang = a.lang;
+    return link;
   }
 
   // Under the letter, kept inside the window.
@@ -746,6 +795,20 @@
             var d = unsureTok[id];
             if (d && doubt.indexOf(d) < 0) doubt.push(d);
           });
+          // A word to know (data/glossary.json): what it means, one tap away.
+          var gloss = !doubt.length && !plain() && glossaryCard(piece[1]);
+          if (gloss) {
+            w.classList.add("gl-w");
+            w.tabIndex = 0;
+            w.setAttribute("role", "button");
+            w.setAttribute("aria-label", t("glossary_label").replace("{word}", text));
+            w.setAttribute("aria-expanded", "false");
+            w.addEventListener("click", function (e) { e.stopPropagation(); openGloss(w, gloss); });
+            w.addEventListener("keydown", function (e) {
+              e.stopPropagation();
+              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openGloss(w, gloss); }
+            });
+          }
           if (doubt.length) {
             // The other reading is one tap away.
             w.classList.add("unsure-w");
@@ -817,7 +880,7 @@
   function disputedNote() {
     var d = DATA.disputed;
     var note = el("div", "disputed-note");
-    note.appendChild(el("p", null, t("disputed_note").replace("{ref}", d.ref)));
+    note.appendChild(el("p", null, t(d.message || "disputed_note").replace("{ref}", d.ref)));
     var rec = DATA.records.filter(function (r) { return r.id === d.records[0]; })[0];
     if (d.note && rec && !plain()) {
       var why = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
@@ -825,6 +888,8 @@
       why.addEventListener("click", function () { select(rec, null, d.note); });
       note.appendChild(why);
     }
+    // The article that tells the passage's story.
+    if (d.article) note.appendChild(articleLink(d.article, "disputed-article"));
     return note;
   }
 
@@ -1462,6 +1527,27 @@
   // Key terms and the people, places and peoples in the chosen sentence
   // (DATA.cards, from data/key_terms.json and data/names.json). Tapping one
   // lights its words in the Greek or Hebrew above.
+  // Where it happens: a map of the chosen sentence's places (web/map.js,
+  // loaded the first time), with the rest of the page's faintly around them.
+  function drawMap(panel) {
+    var seen = {}, placed = [];
+    current.source.tokens.forEach(function (id) {
+      var i = DATA.cards.tokens[id], c = i === undefined ? null : DATA.cards.list[i];
+      if (c && c.at && !seen[i]) { seen[i] = true; placed.push(c); }
+    });
+    if (!placed.length || !DATA.map) return;
+    var fig = el("figure", "pmap");
+    panel.appendChild(fig);
+    var go = function () {
+      OWBMap.draw(fig, placed, DATA.cards.list.filter(function (c) { return c.at; }), { base: DATA.map.base, t: t });
+    };
+    if (window.OWBMap) return go();
+    var js = document.createElement("script");
+    js.src = DATA.map.script;
+    js.onload = go;
+    document.head.appendChild(js);
+  }
+
   function drawWordCards(panel) {
     var byCard = {};
     current.source.tokens.forEach(function (id) {
@@ -1632,6 +1718,7 @@
     var key = keyNotes();
     if (key) panel.appendChild(key);
 
+    drawMap(panel);
     var wordsHead = el("div", "words-head");
     wordsHead.appendChild(el("h3", null, t("greek")));
     wordsHead.appendChild(scriptControl());

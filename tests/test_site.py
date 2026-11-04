@@ -170,6 +170,25 @@ class SiteTest(unittest.TestCase):
         self.assertIn('data-v="7:53"', block[1])
         self.assertIn('data-v="11"', block[1])
         self.assertNotIn('data-v="12"', block[1])
+        # The note links the article that tells the passage's story.
+        self.assertIn('class="disputed-article" href="/articles/the-woman-caught-in-adultery/"', text)
+
+    def test_marks_later_endings_are_set_apart(self):
+        # Mark's short ending follows 16:8 in the same verse, so the passage
+        # starts at a sentence: 16:8 itself stays in the text.
+        _, text = self.chapter_text("mrk/16")
+        block = re.search(r'<div class="disputed-block"><div class="disputed-note">(.*?)</div>(.*?)</div>', text, re.S)
+        self.assertIsNotNone(block)
+        self.assertIn("end at 16:8", block[1])
+        self.assertIn('href="/articles/the-ending-of-mark/"', block[1])
+        self.assertIn('data-record="MRK.16.8.s2"', block[2])
+        self.assertIn('data-record="MRK.16.20.s1"', block[2])
+        self.assertNotIn('data-record="MRK.16.8.s1"', block[2])
+        self.assertFalse(build_site.disputed("MRK.16.8"))
+        self.assertTrue(build_site.disputed("MRK.16.9"))
+        # A manuscript-reading footnote links the article on how manuscripts differ.
+        data = self.chapter_data("mrk/16")
+        self.assertEqual(data["variants"]["url"], "/articles/when-manuscripts-disagree/")
 
     def test_chapter_pages_carry_linked_data(self):
         for path, source in (("1ti/5", "SBLGNT"), ("gen/1", "Open Scriptures Hebrew Bible"),
@@ -1033,6 +1052,59 @@ class SiteTest(unittest.TestCase):
         gen5 = self.chapter_data("gen/5")["cards"]["list"]
         self.assertIn("Lamech, descendant of Cain", [c["title"] for c in gen4])
         self.assertIn("Lamech, father of Noah", [c["title"] for c in gen5])
+
+    def test_every_script_and_style_a_page_loads_is_built(self):
+        # A page that names /x.js?v=... must find x.js in the build (the
+        # reader's edition once shipped without web/edition.js).
+        missing = set()
+        for path in self.out.rglob("index.html"):
+            page = path.read_text(encoding="utf-8")
+            for src in re.findall(r'(?:src|href)="(/[\w.-]+\.(?:js|css))\?v=', page):
+                if not (self.out / src.lstrip("/")).is_file():
+                    missing.add(src)
+        self.assertEqual(missing, set())
+    def test_places_have_a_point_and_the_panel_a_map(self):
+        # data/places.json (scripts/extract_places.py) locates the places in
+        # data/names.json, keyed by their Strong's number, lemma and name.
+        places = json.loads((build_site.ROOT / "data" / "places.json").read_text(encoding="utf-8"))
+        names = json.loads((build_site.ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+        senses = {f"{n['strong']}|{n['lemma']}|{s['name']}" for n in names for s in n["senses"] if s["kind"] == "place"}
+        self.assertIn("CC BY 4.0", places["source"])
+        self.assertTrue(set(places["places"]) <= senses)
+        self.assertGreater(len(places["places"]), len(senses) * 0.9)
+        # Every place is on the land the maps draw.
+        west, south, east, north = json.loads(
+            (build_site.ROOT / "data" / "basemap.json").read_text(encoding="utf-8"))["box"]
+        for key, p in places["places"].items():
+            lon, lat = p["at"]
+            self.assertTrue(west <= lon <= east and south <= lat <= north, key)
+        # John 4: Sychar's site is uncertain, Jerusalem's known; the cards carry it.
+        cards = {c["title"]: c for c in self.chapter_data("jhn/4")["cards"]["list"]}
+        self.assertFalse(cards["Sychar"]["sure"])
+        self.assertTrue(cards["Jerusalem"]["sure"])
+        self.assertTrue(cards["Samaria"]["area"])
+        # The page names the map's script and land, and the build has both.
+        data = self.chapter_data("jhn/4")["map"]
+        for url in (data["script"], data["base"]):
+            self.assertTrue((self.out / url.split("?")[0].lstrip("/")).is_file(), url)
+        base = json.loads((self.out / "basemap.json").read_text(encoding="utf-8"))
+        self.assertTrue(base["land"] and base["lakes"] and base["rivers"])
+
+    def test_glossary_is_well_formed(self):
+        # Words to know: AI drafts, kind "concept", no word that is also a
+        # name; their lemmas are checked against the source data above.
+        glossary = json.loads((build_site.ROOT / "data" / "glossary.json").read_text(encoding="utf-8"))
+        names = json.loads((build_site.ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+        self.assertEqual(glossary["status"], "ai_draft")
+        named = {(n["strong"], n["lemma"]) for n in names}
+        for entry in glossary["glossary"]:
+            self.assertNotIn((entry["strong"], entry["lemma"]), named)
+            for sense in entry["senses"]:
+                self.assertEqual(sense["kind"], "concept")
+                self.assertTrue(sense["name"] and sense["note"])
+                self.assertNotIn("{{", sense["note"])
+        cards = self.chapter_data("jhn/5")["cards"]["list"]
+        self.assertIn(("Sabbath", "concept"), [(c["title"], c.get("kind")) for c in cards])
 
     def test_site_can_be_installed_and_read_offline(self):
         manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))

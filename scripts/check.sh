@@ -43,6 +43,7 @@ if $fast; then
     step "Word extracts are up to date"
     python3 scripts/extract_tokens.py --check
     python3 scripts/extract_comparison.py --check
+    python3 scripts/extract_places.py --check
   else
     step "No changed books: validation and extract checks skipped"
   fi
@@ -57,6 +58,7 @@ python3 -m owb.validate content/*/*.json
 step "Word extracts are up to date"
 python3 scripts/extract_tokens.py --check
 python3 scripts/extract_comparison.py --check
+python3 scripts/extract_places.py --check
 
 step "Build the site"
 python3 scripts/build_site.py
