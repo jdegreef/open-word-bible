@@ -63,6 +63,11 @@
           "L": "Начало Евангелия Иисуса {{christos:Христа|Мессии}}.",
           "B": "Начало Евангелия об Иисусе {{christos:Христе|Мессии}}.",
           "R": "Так началась Радостная весть об Иисусе {{christos:Христе|Мессии}}."
+        },
+        "hi": {
+          "L": "यीशु मसीह के सुसमाचार का आरंभ।",
+          "B": "यीशु मसीह के विषय में सुसमाचार का आरंभ।",
+          "R": "यीशु मसीह के बारे में सुसमाचार इस तरह शुरू हुआ।"
         }
       },
       "decisions": [
@@ -344,6 +349,49 @@
           "reason": "'Евангелие' is the living word, but to many readers it names a book. Readable says what it is, joyful news, as in Matthew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41001001005"
+          ],
+          "choice": "\"मसीह\" with no christos span",
+          "alternatives": [
+            "\"ख्रीष्ट\"",
+            "a span \"मसीह|ख्रीष्ट\""
+          ],
+          "reason": "The English offers \"Christ\" or \"the Messiah\" as a setting. Hindi \"मसीह\" is both the familiar name in \"यीशु मसीह\" and the word Messiah itself, so the choice the setting offers is already made and the Hindi has no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001001003"
+          ],
+          "choice": "\"सुसमाचार\" at every level, Readable included",
+          "alternatives": [
+            "\"अच्छी ख़बर\" (R)"
+          ],
+          "reason": "\"सुसमाचार\" is the established Hindi church word and itself means good news, so Readable needs no other word. Used through Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -426,6 +474,11 @@
           "L": "Как написано в Исаии, пророке: «Вот, {{deity_pronoun:я|Я}} посылаю {{deity_pronoun:моего|Моего}} вестника перед {{deity_pronoun:твоим|Твоим}} лицом, который приготовит {{deity_pronoun:твой|Твой}} путь;",
           "B": "Всё произошло так, как написано у пророка Исаии: «Я посылаю {{deity_pronoun:моего|Моего}} вестника впереди {{deity_pronoun:тебя|Тебя}}; он приготовит {{deity_pronoun:тебе|Тебе}} дорогу.",
           "R": "Давным-давно Бог сказал через пророка Исаию: «Я посылаю {{deity_pronoun:моего|Моего}} вестника впереди {{deity_pronoun:тебя|Тебя}}. Он приготовит для {{deity_pronoun:тебя|Тебя}} дорогу."
+        },
+        "hi": {
+          "L": "जैसा यशायाह भविष्यद्वक्ता [की पुस्तक] में लिखा गया है, \"देख, मैं अपना संदेशवाहक तेरे मुख के आगे भेजता हूँ, जो तेरा मार्ग तैयार करेगा;",
+          "B": "यह वैसे ही हुआ जैसा यशायाह भविष्यद्वक्ता की पुस्तक में लिखा है: \"देख, मैं अपने संदेशवाहक को तुझसे आगे भेज रहा हूँ; वह तेरा रास्ता तैयार करेगा।",
+          "R": "बहुत पहले परमेश्वर ने यशायाह नबी के द्वारा कहा था, \"देख! मैं अपने संदेशवाहक को तुझसे आगे भेज रहा हूँ। वह तेरे लिए रास्ता तैयार करेगा।"
         }
       },
       "decisions": [
@@ -856,6 +909,72 @@
           "reason": "The word this translation uses for a prophet at every level, as the style guide settles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41001002012",
+            "n41001002015",
+            "n41001002020"
+          ],
+          "choice": "no deity_pronoun span",
+          "alternatives": [
+            "capitalised pronouns"
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. Respect for God and Jesus is carried by the honorific third person and by the forms of address, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001002015",
+            "n41001002020"
+          ],
+          "choice": "\"तेरे\", \"तुझसे\" in God's words to the coming one",
+          "alternatives": [
+            "\"आपके\", \"आपसे\""
+          ],
+          "reason": "In the quotation God speaks to the one whose way is prepared. The intimate \"तू\" is the Father's address to the Son, as in the same quotation at Matthew 11:10 and in the voice of 1:11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001002007"
+          ],
+          "choice": "\"भविष्यद्वक्ता\" (L, B); \"नबी\" (R)",
+          "alternatives": [
+            "\"नबी\" at every level"
+          ],
+          "reason": "The book's word for prophet; Readable uses the everyday \"नबी\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -946,6 +1065,11 @@
           "L": "голос вопиющего в пустыне: “Приготовьте путь Господа, прямыми делайте тропы {{deity_pronoun:его|Его}}”», \\v 4 явился Иоанн, крестящий в пустыне и проповедующий крещение покаяния для прощения грехов.",
           "B": "Голос зовёт в пустыне: “Приготовьте путь Господу, выпрямите дороги, по которым {{deity_pronoun:он|Он}} пойдёт.”» \\v 4 Тогда в пустыне появился Иоанн Креститель и призывал людей принять крещение покаяния, чтобы получить прощение грехов.",
           "R": "Кто-то кричит в пустыне: “Приготовьте дорогу для Господа! Сделайте прямыми {{deity_pronoun:его|Его}} тропы!”» \\v 4 Этим вестником был Иоанн Креститель. Он пришёл в пустыню и говорил людям, чтобы они оставили свои грехи и крестились, и тогда Бог простит их."
+        },
+        "hi": {
+          "L": "निर्जन प्रदेश में पुकारनेवाले की आवाज़: 'प्रभु का रास्ता तैयार करो, उनके मार्ग सीधे बनाओ,'\" \\v 4 यूहन्ना बपतिस्मा देनेवाला निर्जन प्रदेश में आया, पापों की क्षमा के लिए मन फिराव के बपतिस्मे का प्रचार करते हुए।",
+          "B": "निर्जन प्रदेश में एक आवाज़ पुकार रही है: 'प्रभु का मार्ग तैयार करो, जिन रास्तों से वे आएँगे उन्हें सीधा करो।'\" \\v 4 तब यूहन्ना बपतिस्मा देनेवाला निर्जन प्रदेश में प्रकट हुआ। वह लोगों को बुलाता था कि मन फिराकर बपतिस्मा लें, ताकि उनके पाप क्षमा हों।",
+          "R": "सुनसान इलाक़े में कोई ज़ोर से पुकार रहा है: 'प्रभु के लिए रास्ता तैयार करो! उनके रास्ते सीधे करो!'\" \\v 4 वह संदेशवाहक यूहन्ना बपतिस्मा देनेवाला था। वह सुनसान इलाक़े में आया और लोगों से कहने लगा कि वे अपने पापों से मुड़ें और बपतिस्मा लें, ताकि परमेश्वर उन्हें क्षमा करें।"
         }
       },
       "decisions": [
@@ -1487,6 +1611,71 @@
           "reason": "The Greek of the quotation is the same as in Matthew 3:3, so Balanced and Readable keep the wording settled there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001003005",
+            "n41001004007"
+          ],
+          "choice": "\"निर्जन प्रदेश\" (L, B); \"सुनसान इलाक़ा\" (R) for the wilderness, through Mark",
+          "alternatives": [
+            "\"जंगल\""
+          ],
+          "reason": "The wilderness was dry, empty country away from towns, not forest, so \"जंगल\" is not used, as in Matthew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001004003",
+            "n41001004004"
+          ],
+          "choice": "\"यूहन्ना बपतिस्मा देनेवाला\"",
+          "alternatives": [
+            "\"यूहन्ना बपतिस्मादाता\""
+          ],
+          "reason": "Mark says \"the one who baptizes\" where Matthew has a noun. The Hindi title is already a participle (\"the one who gives baptism\"), so it says what Mark says and stays the name readers know from Matthew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001004010"
+          ],
+          "choice": "\"मन फिराव\" (L, B); \"अपने पापों से मुड़ें\" (R)",
+          "alternatives": [
+            "\"पश्चाताप\""
+          ],
+          "reason": "\"मन फिराना\" says both the change of mind and the turning of life; \"पश्चाताप\" means only regret. Readable spells out the turn. Used through Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1573,6 +1762,11 @@
           "L": "И выходила к нему вся Иудейская страна и все жители Иерусалима, и крестились от него в реке Иордан, исповедуя свои грехи.",
           "B": "К нему шла вся Иудея и все жители Иерусалима. Они исповедовали свои грехи, и он крестил их в реке Иордан.",
           "R": "К нему приходили люди со всей Иудеи и из города Иерусалима. Они рассказывали Богу о своих грехах, и Иоанн крестил их в реке Иордан."
+        },
+        "hi": {
+          "L": "और सारा यहूदिया देश और यरूशलेम के सब रहनेवाले उसके पास निकलकर जाते थे, और अपने पापों को मानते हुए यरदन नदी में उससे बपतिस्मा लेते थे।",
+          "B": "सारा यहूदिया देश और यरूशलेम के सब लोग उसके पास निकलकर आते रहे। वे अपने पाप मान लेते थे, और वह उन्हें यरदन नदी में बपतिस्मा देता था।",
+          "R": "सारे यहूदिया से और यरूशलेम शहर से लोग उसके पास आए। उन्होंने परमेश्वर के सामने माना कि उन्होंने क्या-क्या ग़लत किया है, और यूहन्ना ने उन्हें यरदन नदी में बपतिस्मा दिया।"
         }
       },
       "decisions": [
@@ -1806,6 +2000,11 @@
           "L": "И Иоанн был одет в верблюжий волос, и [носил] кожаный пояс вокруг своих бёдер, и ел саранчу и дикий мёд.",
           "B": "Одежда Иоанна была из верблюжьей шерсти, а на бёдрах у него был кожаный пояс. Он питался саранчой и диким мёдом.",
           "R": "Иоанн носил одежду из верблюжьей шерсти и кожаный пояс. Он ел саранчу, похожую на больших кузнечиков, и мёд диких пчёл."
+        },
+        "hi": {
+          "L": "और यूहन्ना ऊँट के बालों का वस्त्र पहने रहता था और अपनी कमर पर चमड़े का पटुका [बाँधे रहता था], और टिड्डियाँ और जंगली मधु खाता था।",
+          "B": "यूहन्ना ऊँट के बालों से बुने वस्त्र पहनता था और कमर पर चमड़े का पटुका बाँधता था। वह टिड्डियाँ और जंगली मधु खाकर रहता था।",
+          "R": "यूहन्ना ऊँट के बालों से बने कपड़े पहनता था, और उसकी कमर पर चमड़े की पेटी होती थी। वह टिड्डियाँ, जो एक तरह के कीड़े हैं, और जंगल में मिलनेवाला शहद खाता था।"
         }
       },
       "decisions": [
@@ -2064,6 +2263,11 @@
           "L": "И он проповедовал, говоря: «Идёт за мной [тот, кто] сильнее меня; я не достоин, нагнувшись, развязать ремень {{deity_pronoun:его|Его}} сандалий.",
           "B": "Вот что он возвещал: «За мной идёт тот, кто сильнее меня. Я не достоин даже наклониться и развязать ремень {{deity_pronoun:его|Его}} сандалий.",
           "R": "Он говорил людям: «За мной идёт тот, кто гораздо больше меня. Я недостоин даже наклониться и развязать {{deity_pronoun:его|Его}} сандалии."
+        },
+        "hi": {
+          "L": "और वह यह कहते हुए प्रचार करता था, \"मेरे बाद वे आते हैं जो मुझसे अधिक सामर्थी हैं; मैं इस योग्य नहीं कि झुककर उनकी जूतियों का बंद खोलूँ।",
+          "B": "उसका संदेश यह था: \"मेरे बाद वे आ रहे हैं जो मुझसे अधिक सामर्थी हैं। मैं तो इस योग्य भी नहीं कि झुककर उनकी जूतियों का बंद खोलूँ।",
+          "R": "वह लोगों से कहता था, \"मेरे बाद कोई आ रहे हैं जो मुझसे बहुत बड़े हैं। मैं इस लायक़ भी नहीं कि झुककर उनकी जूतियाँ खोलूँ।"
         }
       },
       "decisions": [
@@ -2299,6 +2503,28 @@
           "reason": "The word means fit or sufficient for a task. 'Не достоин' is how Russian says one is not fit for such a task, and it matches Matthew 3:11, where the same word is used.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001007006",
+            "n41001007020"
+          ],
+          "choice": "honorific \"वे\", \"उनकी\" for the one coming",
+          "alternatives": [
+            "plain \"वह\", \"उसकी\""
+          ],
+          "reason": "John speaks of the one greater than himself with the honorific, as Hindi speaks of a superior, as at Matthew 3:11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2372,6 +2598,11 @@
           "L": "Я крестил вас водой, {{deity_pronoun:он|Он}} же будет крестить вас в Святом Духе.»",
           "B": "Я крестил вас водой, а {{deity_pronoun:он|Он}} будет крестить вас Святым Духом.»",
           "R": "Я крестил вас водой. А {{deity_pronoun:он|Он}} будет крестить вас Святым Духом.»"
+        },
+        "hi": {
+          "L": "मैंने तुम्हें पानी से बपतिस्मा दिया है, पर वे तुम्हें पवित्र आत्मा में बपतिस्मा देंगे।\"",
+          "B": "मैंने तुम्हें पानी से बपतिस्मा दिया है, पर वे तुम्हें पवित्र आत्मा से बपतिस्मा देंगे।\"",
+          "R": "मैंने तुम्हें बपतिस्मा देने के लिए पानी का इस्तेमाल किया। पर वे तुम्हें पवित्र आत्मा से बपतिस्मा देंगे।\""
         }
       },
       "decisions": [
@@ -2561,6 +2792,28 @@
           "reason": "The Greek has a bare case with 'water' and 'in' with 'Spirit'. Literal keeps the difference; Balanced and Readable use the instrumental for both, the natural Russian.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001008004",
+            "n41001008009"
+          ],
+          "choice": "\"पानी से\", \"पवित्र आत्मा में\" (L); \"से\" for both (B, R)",
+          "alternatives": [
+            "\"पानी में\" (L)"
+          ],
+          "reason": "Here the Greek has no preposition with \"water\" (Matthew 3:11 has \"in\"), and \"in\" with \"Spirit\". Literal keeps the difference with \"से\" and \"में\"; Balanced and Readable say \"से\" for both, as Hindi speaks of baptism.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2642,6 +2895,11 @@
           "L": "И было в те дни: пришёл Иисус из Назарета Галилейского и был крещён Иоанном в Иордане.",
           "B": "В те дни Иисус пришёл из Назарета в Галилее, и Иоанн крестил {{deity_pronoun:его|Его}} в Иордане.",
           "R": "В то время Иисус пришёл из города Назарета в Галилее. Иоанн крестил {{deity_pronoun:его|Его}} в реке Иордан."
+        },
+        "hi": {
+          "L": "और उन दिनों में ऐसा हुआ कि यीशु गलील के नासरत से आए, और यरदन में यूहन्ना से बपतिस्मा लिया।",
+          "B": "उन्हीं दिनों यीशु गलील के नासरत से आए, और यूहन्ना ने उन्हें यरदन में बपतिस्मा दिया।",
+          "R": "उस समय यीशु गलील प्रदेश के नासरत गाँव से आए। यूहन्ना ने उन्हें यरदन नदी में बपतिस्मा दिया।"
         }
       },
       "decisions": [
@@ -2775,6 +3033,28 @@
           "reason": "The Greek says 'into the Jordan'. Russian cannot say 'крещён в Иордан'; the meaning note says Jesus went down into the river, which 'в Иордане' still implies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001009007",
+            "n41001009008"
+          ],
+          "choice": "honorific \"आए\", \"उन्हें\" for Jesus",
+          "alternatives": [
+            "plain \"आया\", \"उसे\""
+          ],
+          "reason": "Jesus takes the honorific third person in the narrative throughout the book, as in Matthew. This is ordinary modern Hindi for a respected person, not an addition to the text.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2855,6 +3135,11 @@
           "L": "И тотчас, выходя из воды, {{deity_pronoun:он|Он}} увидел разрывающиеся небеса и Духа, как голубя, сходящего на {{deity_pronoun:него|Него}}.",
           "B": "В тот же миг, когда {{deity_pronoun:он|Он}} выходил из воды, {{deity_pronoun:он|Он}} увидел, как разорвались небеса и Дух, словно голубь, спускается на {{deity_pronoun:него|Него}}.",
           "R": "Сразу, когда Иисус выходил из воды, {{deity_pronoun:он|Он}} увидел, что небо разорвалось. И {{deity_pronoun:он|Он}} увидел, как Дух спускается на {{deity_pronoun:него|Него}}, словно голубь."
+        },
+        "hi": {
+          "L": "और तुरंत पानी से ऊपर आते हुए उन्होंने आकाश को फटते और आत्मा को कबूतर के समान अपने ऊपर उतरते देखा।",
+          "B": "जैसे ही वे पानी से ऊपर आए, उन्होंने देखा कि आकाश फट गया है और आत्मा कबूतर की तरह उन पर उतर रहा है।",
+          "R": "पानी से बाहर आते ही यीशु ने देखा कि आकाश फटकर खुल गया है। और उन्होंने आत्मा को कबूतर की तरह अपने ऊपर उतरते देखा।"
         }
       },
       "decisions": [
@@ -3214,6 +3499,49 @@
           "reason": "Mark's verb is a violent tearing, not Matthew's 'opened', so the Russian differs from Matthew here as the Greek does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001010002"
+          ],
+          "choice": "\"तुरंत\" (L, every time); varied with the sentence (B, R)",
+          "alternatives": [
+            "\"तुरंत\" at every level",
+            "one fixed word at Readable"
+          ],
+          "reason": "Mark's frequent \"immediately\" (euthys) is always \"तुरंत\" at Literal, so the reader can follow Mark's quick pace. Balanced and Readable say it as the sentence needs (\"तुरंत\", \"उसी समय\", \"जैसे ही\" or \"-ते ही\", \"फ़ौरन\"), or let a clause carry it, so that it does not become one repeated word. The same treatment holds through Mark.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001010008"
+          ],
+          "choice": "\"फटते\", \"फट गया\"",
+          "alternatives": [
+            "\"खुलते\", \"खुल गया\""
+          ],
+          "reason": "Mark's word is a violent tearing (meaning note), not Matthew's \"opened\" (Matthew 3:16), so the Hindi differs from Matthew here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3292,6 +3620,11 @@
           "L": "И голос был с небес: «Ты {{deity_pronoun:мой|Мой}} Сын, возлюбленный; к {{deity_pronoun:тебе|Тебе}} {{deity_pronoun:я|Я}} благоволю.»",
           "B": "Тогда с неба прозвучал голос: «Ты — {{deity_pronoun:мой|Мой}} любимый Сын. Я радуюсь о {{deity_pronoun:тебе|Тебе}}.»",
           "R": "Тогда голос с неба сказал: «Ты — {{deity_pronoun:мой|Мой}} Сын, и {{deity_pronoun:я|Я}} люблю {{deity_pronoun:тебя|Тебя}}. Я очень доволен {{deity_pronoun:тобой|Тобой}}.»"
+        },
+        "hi": {
+          "L": "और स्वर्ग से एक आवाज़ आई: \"तू मेरा पुत्र है, वह प्रिय; तुझसे मुझे प्रसन्नता है।\"",
+          "B": "तब स्वर्ग से एक आवाज़ आई: \"तू मेरा प्यारा पुत्र है। मैं तुझसे बहुत प्रसन्न हूँ।\"",
+          "R": "तब स्वर्ग से एक आवाज़ ने कहा, \"तू मेरा पुत्र है, और मैं तुझसे प्रेम करता हूँ। मैं तुझसे बहुत ख़ुश हूँ।\""
         }
       },
       "decisions": [
@@ -3500,6 +3833,28 @@
           "reason": "In Mark the voice speaks to Jesus himself ('You are'), where Matthew has 'This is', so the Russian follows the Greek and differs from Matthew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001011007",
+            "n41001011015"
+          ],
+          "choice": "\"तू\", \"तुझसे\" in the Father's words to Jesus",
+          "alternatives": [
+            "\"यह मेरा पुत्र है\" (as Matthew 3:17)"
+          ],
+          "reason": "In Mark the voice speaks to Jesus himself (meaning note), where Matthew has \"This is\". A father speaks to his son with the intimate \"तू\", the same address God uses to the coming one in 1:2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3571,6 +3926,11 @@
           "L": "И тотчас Дух выгоняет {{deity_pronoun:его|Его}} в пустыню.",
           "B": "Тут же Дух властно отправил {{deity_pronoun:его|Его}} в пустыню.",
           "R": "Сразу после этого Дух заставил Иисуса уйти в пустыню."
+        },
+        "hi": {
+          "L": "और तुरंत आत्मा उन्हें निर्जन प्रदेश में धकेल देता है।",
+          "B": "इसके तुरंत बाद आत्मा उन्हें ज़ोर देकर निर्जन प्रदेश में ले गया।",
+          "R": "इसके तुरंत बाद आत्मा ने यीशु को ज़ोर देकर सुनसान इलाक़े में भेज दिया।"
         }
       },
       "decisions": [
@@ -3780,6 +4140,25 @@
           "reason": "Mark's verb means to drive out with force, stronger than Matthew's 'led up'. Each level keeps the force; Literal keeps the present tense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41001012006"
+          ],
+          "choice": "\"धकेल देता है\" (L); past tense (B, R)",
+          "alternatives": [
+            "\"धकेल दिया\" (L)"
+          ],
+          "reason": "Literal keeps Mark's historic present wherever he has it; Balanced and Readable use the past, as Hindi tells a story. Used through Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3863,6 +4242,11 @@
           "L": "И {{deity_pronoun:он|Он}} был в пустыне сорок дней, искушаемый сатаной, и был с дикими зверями, и ангелы служили {{deity_pronoun:ему|Ему}}.",
           "B": "Он пробыл в пустыне сорок дней, и сатана искушал {{deity_pronoun:его|Его}}. Он был среди диких зверей, и ангелы заботились о {{deity_pronoun:нём|Нём}}.",
           "R": "Иисус был в пустыне сорок дней, и сатана пытался заставить {{deity_pronoun:его|Его}} согрешить. Там с {{deity_pronoun:ним|Ним}} были дикие звери, и ангелы заботились о {{deity_pronoun:нём|Нём}}."
+        },
+        "hi": {
+          "L": "और वे चालीस दिन निर्जन प्रदेश में रहे, और शैतान उनकी परीक्षा करता रहा; और वे जंगली पशुओं के साथ थे, और स्वर्गदूत उनकी सेवा करते थे।",
+          "B": "वे चालीस दिन निर्जन प्रदेश में रहे, और उस समय शैतान उनकी परीक्षा करता रहा। वे जंगली जानवरों के बीच थे, और स्वर्गदूत उनकी देखभाल करते थे।",
+          "R": "यीशु चालीस दिन सुनसान इलाक़े में रहे, और शैतान उनसे पाप करवाने की कोशिश करता रहा। वहाँ जंगली जानवर उनके साथ थे, और स्वर्गदूत उनकी देखभाल करते थे।"
         }
       },
       "decisions": [
@@ -4009,6 +4393,26 @@
           "reason": "Mark names the adversary \"Satan\", so Amharic says \"ሰይጣን\" and keeps \"ዲያብሎስ\" for the Greek word for the devil. \"መፈተን\" covers both testing and tempting; Readable says what the testing aimed at, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41001013008",
+            "n41001013011"
+          ],
+          "choice": "\"शैतान उनकी परीक्षा करता रहा\" (L)",
+          "alternatives": [
+            "\"शैतान से परखे जाते हुए\""
+          ],
+          "reason": "A Hindi passive with an agent (\"शैतान के द्वारा परखे जाते हुए\") is stiff, so Literal makes Satan the subject and keeps the ongoing sense of the participle with \"करता रहा\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4107,6 +4511,11 @@
           "L": "И после того как Иоанн был передан [под стражу], пришёл Иисус в Галилею, проповедуя Евангелие Божье \\v 15 и говоря: «Исполнилось время, и приблизилось Царство Божье; покайтесь и верьте в Евангелие.»",
           "B": "После того как Иоанна арестовали, Иисус пришёл в Галилею и возвещал Божье Евангелие. \\v 15 «Назначенное время настало», — говорил {{deity_pronoun:он|Он}}, — «и Царство Божье приблизилось. Покайтесь и верьте в Евангелие.»",
           "R": "Когда Иоанна посадили в тюрьму, Иисус пошёл в Галилею и рассказывал людям Радостную весть от Бога. \\v 15 Он говорил: «Пришло время, которое обещал Бог. Царство Божье уже близко. Оставьте свои грехи и вернитесь к Богу, и верьте Радостной вести!»"
+        },
+        "hi": {
+          "L": "और यूहन्ना के पकड़वाए जाने के बाद यीशु परमेश्वर के सुसमाचार का प्रचार करते हुए गलील में आए \\v 15 और कहते थे, \"समय पूरा हो गया है, और परमेश्वर का राज्य निकट आ पहुँचा है; मन फिराओ और सुसमाचार पर विश्वास करो।\"",
+          "B": "यूहन्ना के पकड़वाए जाने के बाद यीशु गलील में आए और परमेश्वर के सुसमाचार का प्रचार करने लगे। \\v 15 \"ठहराया हुआ समय पूरा हो गया है,\" उन्होंने कहा, \"और परमेश्वर का राज्य पास आ गया है। मन फिराओ और सुसमाचार पर विश्वास करो।\"",
+          "R": "यूहन्ना को जेल में डाल दिए जाने के बाद यीशु गलील गए और लोगों को परमेश्वर का सुसमाचार सुनाने लगे। \\v 15 उन्होंने कहा, \"परमेश्वर का ठहराया हुआ समय आ गया है। परमेश्वर का राज्य पास आ रहा है। अपने पापों से मुड़ो और परमेश्वर की ओर लौट आओ, और सुसमाचार पर विश्वास करो!\""
         }
       },
       "decisions": [
@@ -4517,6 +4926,49 @@
           "reason": "The term this translation uses for God's rule at every level, with the modern form 'Божье'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001015010",
+            "n41001015012"
+          ],
+          "choice": "\"परमेश्वर का राज्य\" at every level",
+          "alternatives": [
+            "\"परमेश्वर की बादशाहत\""
+          ],
+          "reason": "The book's key term for the kingdom of God, the same at every level, as \"स्वर्ग का राज्य\" is in Matthew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001014004"
+          ],
+          "choice": "\"पकड़वाए जाने\" (L, B); \"जेल में डाल दिए जाने\" (R)",
+          "alternatives": [
+            "\"गिरफ़्तार होने\""
+          ],
+          "reason": "The Greek \"handed over\" is kept at Literal and Balanced with \"पकड़वाना\", which says that someone delivered him up; Readable says what it meant for John, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4600,6 +5052,11 @@
           "L": "И, проходя у моря Галилейского, {{deity_pronoun:он|Он}} увидел Симона и Андрея, брата Симона, забрасывающих [сеть] в море, ведь они были рыбаками.",
           "B": "Когда Иисус шёл по берегу Галилейского озера, {{deity_pronoun:он|Он}} увидел Симона и его брата Андрея, которые забрасывали сеть в воду. Они жили рыбной ловлей.",
           "R": "Однажды Иисус шёл вдоль Галилейского озера. Он увидел Симона и его брата Андрея. Они забрасывали сеть в озеро, чтобы ловить рыбу, потому что были рыбаками."
+        },
+        "hi": {
+          "L": "और गलील के समुद्र के किनारे-किनारे जाते हुए उन्होंने शमौन और शमौन के भाई अन्द्रियास को समुद्र में [जाल] डालते देखा, क्योंकि वे मछुए थे।",
+          "B": "गलील की झील के किनारे जाते हुए यीशु ने शमौन और शमौन के भाई अन्द्रियास को पानी में जाल डालते देखा। मछली पकड़ना ही उनका काम था।",
+          "R": "एक दिन यीशु गलील की झील के किनारे चल रहे थे। उन्होंने शमौन और उसके भाई अन्द्रियास को मछलियाँ पकड़ने के लिए झील में जाल डालते देखा, क्योंकि वे मछुए थे।"
         }
       },
       "decisions": [
@@ -4852,6 +5309,27 @@
           "reason": "The Sea of Galilee is a freshwater lake. Literal keeps the Greek 'sea'; Balanced and Readable call it a lake, as settled in Matthew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001016005"
+          ],
+          "choice": "\"समुद्र\" (L); \"झील\" (B, R), through Mark",
+          "alternatives": [
+            "\"समुद्र\" at every level"
+          ],
+          "reason": "The Sea of Galilee is a freshwater lake. Literal keeps Mark's word \"sea\"; Balanced and Readable call it a lake, so readers do not picture the ocean, as in Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4928,6 +5406,11 @@
           "L": "И сказал им Иисус: «Идите за {{deity_pronoun:мной|Мной}}, и {{deity_pronoun:я|Я}} сделаю, [что] вы станете ловцами людей.»",
           "B": "Иисус сказал им: «Идите за {{deity_pronoun:мной|Мной}}. Я сделаю вас ловцами людей.»",
           "R": "Иисус сказал им: «Идите за {{deity_pronoun:мной|Мной}}. Я научу вас ловить людей, а не рыбу.»"
+        },
+        "hi": {
+          "L": "और यीशु ने उनसे कहा, \"मेरे पीछे आओ, और मैं तुम्हें मनुष्यों के मछुए बनाऊँगा।\"",
+          "B": "यीशु ने उनसे कहा, \"मेरे पीछे हो लो। मैं तुम्हें मनुष्यों के मछुए बनाऊँगा।\"",
+          "R": "यीशु ने उनसे कहा, \"मेरे साथ चलो। मैं तुम्हें सिखाऊँगा कि मछलियों की जगह लोगों को कैसे इकट्ठा करें।\""
         }
       },
       "decisions": [
@@ -5245,6 +5728,48 @@
           "reason": "Mark adds 'to become', which Matthew lacks; Literal keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41001017014"
+          ],
+          "choice": "\"मनुष्यों\" (L, B); \"लोगों\" (R), with no gender span",
+          "alternatives": [
+            "{{gender:लोगों|पुरुषों}}"
+          ],
+          "reason": "The English offers \"people\" or \"men\" as a setting. Hindi \"मनुष्य\" and \"लोग\" already mean human beings, women and men alike, so there is nothing for a gender setting to change. Applies through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001017011"
+          ],
+          "choice": "\"तुम\" from Jesus to the disciples",
+          "alternatives": [
+            "\"आप\""
+          ],
+          "reason": "Jesus says \"तुम\" to those he speaks to, one or many, throughout the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5314,6 +5839,11 @@
           "L": "И тотчас, оставив сети, они последовали за {{deity_pronoun:ним|Ним}}.",
           "B": "Они тут же бросили сети и пошли за {{deity_pronoun:ним|Ним}}.",
           "R": "Они сразу оставили свои сети и пошли за {{deity_pronoun:ним|Ним}}."
+        },
+        "hi": {
+          "L": "और तुरंत जालों को छोड़कर वे उनके पीछे हो लिए।",
+          "B": "वे उसी समय अपने जाल छोड़कर उनके पीछे हो लिए।",
+          "R": "वे तुरंत अपने जाल छोड़कर उनके साथ चल पड़े।"
         }
       },
       "decisions": [
@@ -5456,6 +5986,11 @@
           "L": "И, пройдя немного, {{deity_pronoun:он|Он}} увидел Иакова, [сына] Зеведея, и Иоанна, брата его, и их в лодке, чинящих сети, \\v 20 и тотчас {{deity_pronoun:он|Он}} позвал их.",
           "B": "Пройдя немного дальше, {{deity_pronoun:он|Он}} увидел Иакова, сына Зеведея, и его брата Иоанна. Они были в лодке и приводили в порядок сети. \\v 20 Он сразу позвал их.",
           "R": "Иисус прошёл немного дальше и увидел Иакова и Иоанна, сыновей Зеведея. Они сидели в своей лодке и чинили рыболовные сети. \\v 20 Иисус сразу позвал их идти с {{deity_pronoun:ним|Ним}}."
+        },
+        "hi": {
+          "L": "और थोड़ा आगे बढ़कर उन्होंने जब्दी के [पुत्र] याकूब और उसके भाई यूहन्ना को देखा, और वे नाव में जालों को सुधार रहे थे, \\v 20 और तुरंत उन्होंने उन्हें बुलाया।",
+          "B": "थोड़ा आगे जाकर उन्होंने जब्दी के पुत्र याकूब और उसके भाई यूहन्ना को देखा, जो अपनी नाव में अपने जालों की मरम्मत कर रहे थे। \\v 20 यीशु ने उन्हें उसी समय बुलाया।",
+          "R": "यीशु थोड़ा और आगे गए और उन्होंने जब्दी के बेटों, याकूब और यूहन्ना को देखा। वे अपनी नाव में अपने जाल ठीक कर रहे थे। \\v 20 यीशु ने तुरंत उन्हें अपने साथ चलने के लिए बुलाया।"
         }
       },
       "decisions": [
@@ -5648,6 +6183,11 @@
           "L": "И, оставив своего отца Зеведея в лодке с наёмными работниками, они ушли за {{deity_pronoun:ним|Ним}}.",
           "B": "Оставив отца Зеведея в лодке с наёмными работниками, они пошли за {{deity_pronoun:ним|Ним}}.",
           "R": "Они оставили своего отца Зеведея в лодке с работниками, которым он платил, и пошли с Иисусом."
+        },
+        "hi": {
+          "L": "और वे अपने पिता जब्दी को मज़दूरों के साथ नाव में छोड़कर उनके पीछे चले गए।",
+          "B": "अपने पिता जब्दी को मज़दूरों के साथ नाव में छोड़कर वे उनके पीछे चल दिए।",
+          "R": "उन्होंने अपने पिता जब्दी को उसके मज़दूरों के साथ नाव में छोड़ा और यीशु के साथ चल पड़े।"
         }
       },
       "decisions": [
@@ -5794,6 +6334,11 @@
           "L": "И входят в Капернаум.",
           "B": "Они пришли в Капернаум.",
           "R": "Потом они пришли в город Капернаум."
+        },
+        "hi": {
+          "L": "और वे कफ़रनहूम में जाते हैं।",
+          "B": "वे कफ़रनहूम पहुँचे।",
+          "R": "फिर वे कफ़रनहूम नगर में गए।"
         }
       },
       "decisions": [
@@ -5940,6 +6485,11 @@
           "L": "И тотчас в субботу, [войдя] в синагогу, {{deity_pronoun:он|Он}} учил.",
           "B": "В субботу {{deity_pronoun:он|Он}} сразу пошёл в синагогу и учил там.",
           "R": "В субботу, в еженедельный день отдыха, Иисус пошёл в синагогу — дом, где иудеи собирались для молитвы, — и учил людей."
+        },
+        "hi": {
+          "L": "और तुरंत सब्त के दिन आराधनालय में [जाकर] वे उपदेश देते थे।",
+          "B": "सब्त के दिन वे सीधे आराधनालय में गए और वहाँ उपदेश देने लगे।",
+          "R": "सब्त के दिन, यानी हफ़्ते के आराम के दिन, यीशु आराधनालय में गए, जहाँ यहूदी आराधना के लिए इकट्ठे होते थे। वहाँ वे लोगों को उपदेश देने लगे।"
         }
       },
       "decisions": [
@@ -6147,6 +6697,11 @@
           "L": "И изумлялись {{deity_pronoun:его|Его}} учению, ведь {{deity_pronoun:он|Он}} учил их как имеющий власть, а не как книжники.",
           "B": "Люди поражались {{deity_pronoun:его|Его}} учению. Он учил их не так, как учители Закона, а как тот, кто имеет власть.",
           "R": "Люди удивлялись {{deity_pronoun:его|Его}} учению. Он учил не так, как учители Закона. Он учил как тот, у кого есть настоящая власть."
+        },
+        "hi": {
+          "L": "और [लोग] उनके उपदेश से चकित हुए, क्योंकि [यीशु] उन्हें अधिकार रखनेवाले की तरह सिखाते थे, और शास्त्रियों की तरह नहीं।",
+          "B": "उनके उपदेश से लोग दंग रह गए, क्योंकि वे व्यवस्था के शिक्षकों की तरह नहीं, बल्कि अधिकार रखनेवाले की तरह उन्हें सिखाते थे।",
+          "R": "लोग यीशु के उपदेश से हैरान थे। वे व्यवस्था के शिक्षकों की तरह नहीं सिखाते थे। वे ऐसे सिखाते थे जैसे उनके पास सचमुच अधिकार हो।"
         }
       },
       "decisions": [
@@ -6406,6 +6961,47 @@
           "reason": "They were teachers of the Law of Moses, not copyists, which is what 'книжник' suggests today. The style guide settles this for the whole book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001022018"
+          ],
+          "choice": "\"शास्त्री\" (L); \"व्यवस्था के शिक्षक\" (B, R)",
+          "alternatives": [
+            "\"शास्त्री\" at every level"
+          ],
+          "reason": "The scribes were teachers of the Law, not copyists; Balanced and Readable say so, Literal keeps the traditional term. Used through Mark.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41001022002",
+            "n41001022009"
+          ],
+          "choice": "\"[लोग]\", \"[यीशु]\" (L)",
+          "alternatives": [
+            "\"वे ... वे\""
+          ],
+          "reason": "Both subjects would be the plural \"वे\" in Hindi (the crowd, and Jesus with the honorific), so Literal names each in brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6489,6 +7085,11 @@
           "L": "И тотчас был в их синагоге человек с нечистым духом, и он вскричал, \\v 24 говоря: «Что [общего] у нас с {{deity_pronoun:тобой|Тобой}}, Иисус Назарянин?",
           "B": "Тут же в их синагоге оказался человек с нечистым духом, и он закричал: \\v 24 «Что {{deity_pronoun:тебе|Тебе}} до нас, Иисус из Назарета?",
           "R": "И тут в синагоге оказался человек, в котором был нечистый дух. Он закричал: \\v 24 «Иисус из Назарета, что {{deity_pronoun:тебе|Тебе}} от нас нужно?"
+        },
+        "hi": {
+          "L": "और तुरंत उनके आराधनालय में अशुद्ध आत्मा के वश में एक मनुष्य था, और वह चिल्ला उठा \\v 24 और बोला, \"हे यीशु नासरी, हमारा और आपका क्या [वास्ता]?",
+          "B": "उसी समय उनके आराधनालय में एक मनुष्य था जिसमें अशुद्ध आत्मा थी। वह चीख उठा, \\v 24 \"हे नासरत के यीशु, आपका हमसे क्या लेना-देना?",
+          "R": "उसी समय आराधनालय में एक आदमी था जिसमें एक बुरी आत्मा थी। वह चिल्लाया, \\v 24 \"हे नासरत के यीशु, आप हमें क्यों तंग कर रहे हैं?"
         }
       },
       "decisions": [
@@ -6870,6 +7471,49 @@
           "reason": "Literal keeps the traditional title formed from the place name; Balanced and Readable say plainly where Jesus came from.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001023010",
+            "n41001023011"
+          ],
+          "choice": "\"अशुद्ध आत्मा\" (L, B); \"बुरी आत्मा\" (R), through Mark",
+          "alternatives": [
+            "\"अशुद्ध आत्मा\" (R)"
+          ],
+          "reason": "Readable says \"evil\", as the English does and as Matthew's Hindi Readable does, since \"अशुद्ध\" suggests dirt to a new reader. The spirit takes feminine agreement (\"निकल गई\"), as \"आत्मा\" does in Hindi; the Holy Spirit takes masculine agreement where he acts as a person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001024005"
+          ],
+          "choice": "\"आप\" from the spirit to Jesus",
+          "alternatives": [
+            "\"तू\", \"तुम\""
+          ],
+          "reason": "Everyone who speaks to Jesus says \"आप\" in this translation, opponents included.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6935,6 +7579,11 @@
           "L": "Ты пришёл погубить нас?",
           "B": "Ты здесь, чтобы погубить нас?",
           "R": "Ты пришёл, чтобы уничтожить нас?"
+        },
+        "hi": {
+          "L": "क्या आप हमें नाश करने आए?",
+          "B": "क्या आप हमें नाश करने आए हैं?",
+          "R": "क्या आप हमें मिटाने आए हैं?"
         }
       },
       "decisions": [
@@ -7041,6 +7690,11 @@
           "L": "Знаю {{deity_pronoun:тебя|Тебя}}, кто {{deity_pronoun:ты|Ты}}: Святой Божий.»",
           "B": "Я знаю, кто {{deity_pronoun:ты|Ты}}: Святой Божий!»",
           "R": "Я знаю, кто {{deity_pronoun:ты|Ты}}. Ты — Святой Божий!»"
+        },
+        "hi": {
+          "L": "मैं आपको जानता हूँ कि आप कौन हैं: परमेश्वर के पवित्र जन।\"",
+          "B": "मैं जानता हूँ कि आप कौन हैं: परमेश्वर के पवित्र जन!\"",
+          "R": "मैं जानता हूँ कि आप कौन हैं। आप परमेश्वर के पवित्र जन हैं!\""
         }
       },
       "decisions": [
@@ -7222,6 +7876,11 @@
           "L": "И пригрозил ему Иисус, говоря: «Умолкни и выйди из него!»",
           "B": "Иисус строго приказал ему: «Молчи! Выйди из этого человека!»",
           "R": "Иисус строго заговорил со нечистым духом. Он сказал: «Замолчи! Выйди из этого человека!»"
+        },
+        "hi": {
+          "L": "और यीशु ने यह कहते हुए उसे डाँटा, \"चुप हो जाओ, और उसमें से निकल आओ!\"",
+          "B": "यीशु ने उसे कड़ाई से आज्ञा दी, \"चुप रहो! इस आदमी में से निकल जाओ!\"",
+          "R": "यीशु ने उस बुरी आत्मा को कड़ाई से डाँटा। उन्होंने कहा, \"चुप हो जाओ! इस आदमी में से निकल जाओ!\""
         }
       },
       "decisions": [
@@ -7452,6 +8111,28 @@
           "reason": "The verb is a stern command. 'Запретил' today means only to forbid; 'пригрозил' keeps the sternness.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001025007",
+            "n41001025009"
+          ],
+          "choice": "\"तुम\" form (\"चुप हो जाओ\") from Jesus to the spirit",
+          "alternatives": [
+            "\"तू\" form (\"चुप हो जा\")"
+          ],
+          "reason": "Jesus says \"तुम\" to anyone he addresses in this translation, as to Satan at Matthew 4:10; the command itself carries the force.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7528,6 +8209,11 @@
           "L": "И нечистый дух, сотрясши его и вскрикнув громким голосом, вышел из него.",
           "B": "Нечистый дух забил человека в судорогах, громко закричал и вышел из него.",
           "R": "Нечистый дух сильно затряс человека. Потом он громко закричал и вышел из него."
+        },
+        "hi": {
+          "L": "और अशुद्ध आत्मा उसे मरोड़कर और ऊँची आवाज़ से चिल्लाकर उसमें से निकल गई।",
+          "B": "अशुद्ध आत्मा ने उस आदमी को झकझोरा, ज़ोर से चीखी, और उसमें से निकल गई।",
+          "R": "बुरी आत्मा ने उस आदमी को ज़ोर से हिलाया। फिर वह ज़ोर से चिल्लाई और उसमें से निकल गई।"
         }
       },
       "decisions": [
@@ -7638,6 +8324,11 @@
           "L": "И изумились все, так что спрашивали друг друга, говоря: «Что это?",
           "B": "Все были поражены и стали обсуждать между собой: «Что это такое?",
           "R": "Все люди удивились. Они спрашивали друг друга: «Что происходит?"
+        },
+        "hi": {
+          "L": "और सब चकित हुए, यहाँ तक कि वे आपस में यह कहते हुए विवाद करने लगे, \"यह क्या है?",
+          "B": "सब पर आश्चर्य छा गया, और वे आपस में चर्चा करने लगे: \"यह क्या है?",
+          "R": "सब लोग हैरान रह गए। वे एक-दूसरे से पूछने लगे, \"यह क्या हो रहा है?"
         }
       },
       "decisions": [
@@ -7770,6 +8461,11 @@
           "L": "Новое учение со властью! И нечистым духам {{deity_pronoun:он|Он}} повелевает, и они повинуются {{deity_pronoun:ему|Ему}}.»",
           "B": "Новое учение, и с какой властью! По {{deity_pronoun:его|Его}} приказу даже нечистые духи слушаются.»",
           "R": "Этот человек учит новому, и {{deity_pronoun:он|Он}} учит с властью! Он приказывает даже нечистым духам, и они {{deity_pronoun:его|Его}} слушаются!»"
+        },
+        "hi": {
+          "L": "अधिकार के साथ नया उपदेश! वह अशुद्ध आत्माओं को भी आज्ञा देता है, और वे उसकी आज्ञा मानती हैं।\"",
+          "B": "अधिकार के साथ एक नई तरह का उपदेश! उसके कहने पर तो अशुद्ध आत्माएँ भी उसकी बात मानती हैं।\"",
+          "R": "यह आदमी कुछ नया सिखाता है, और अधिकार के साथ सिखाता है! वह बुरी आत्माओं को भी हुक्म देता है, और वे उसकी बात मानती हैं!\""
         }
       },
       "decisions": [
@@ -7873,6 +8569,28 @@
           "reason": "They are struck with awe at his authority, and a Korean speaker in awe refers to the person respectfully; the scribes in 2:6-7 and 2:16, who disapprove, speak of him without the honorific.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001027021",
+            "n41001027024"
+          ],
+          "choice": "plain \"वह\", \"उसकी\" for Jesus in the crowd's mouth",
+          "alternatives": [
+            "honorific \"वे\", \"उनकी\""
+          ],
+          "reason": "The narrator uses the honorific for Jesus, but the crowd, talking among themselves about a stranger, speak of him plainly, as in Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7948,6 +8666,11 @@
           "L": "И вышел слух о {{deity_pronoun:нём|Нём}} тотчас повсюду, во всю окрестность Галилеи.",
           "B": "Весть о {{deity_pronoun:нём|Нём}} сразу разнеслась повсюду, по всей округе Галилеи.",
           "R": "Очень скоро люди по всей Галилее услышали об Иисусе."
+        },
+        "hi": {
+          "L": "और उनकी चर्चा तुरंत गलील के आस-पास के सारे प्रदेश में हर जगह फैल गई।",
+          "B": "उनकी चर्चा उसी समय गलील के आस-पास के सारे इलाक़े में चारों ओर फैल गई।",
+          "R": "बहुत जल्दी गलील के सारे इलाक़े में लोगों ने यीशु के बारे में सुन लिया।"
         }
       },
       "decisions": [
@@ -8089,6 +8812,11 @@
           "L": "И тотчас, выйдя из синагоги, они пришли в дом Симона и Андрея с Иаковом и Иоанном.",
           "B": "Из синагоги они сразу пошли в дом, где жили Симон и Андрей, и с ними пошли Иаков и Иоанн.",
           "R": "Сразу после этого они вышли из синагоги и пошли в дом Симона и Андрея. Иаков и Иоанн пошли с ними."
+        },
+        "hi": {
+          "L": "और तुरंत आराधनालय से निकलकर वे याकूब और यूहन्ना के साथ शमौन और अन्द्रियास के घर आए।",
+          "B": "आराधनालय से निकलकर वे सीधे उस घर में गए जहाँ शमौन और अन्द्रियास रहते थे, और याकूब और यूहन्ना भी उनके साथ थे।",
+          "R": "इसके तुरंत बाद वे आराधनालय से निकलकर शमौन और अन्द्रियास के घर गए। याकूब और यूहन्ना भी उनके साथ गए।"
         }
       },
       "decisions": [
@@ -8201,6 +8929,11 @@
           "L": "Тёща же Симона лежала в жару, и тотчас говорят {{deity_pronoun:ему|Ему}} о ней.",
           "B": "Тёща Симона лежала больная, в жару, и {{deity_pronoun:ему|Ему}} не медля сказали о ней.",
           "R": "Тёща Симона лежала в постели с высокой температурой. Они сразу сказали Иисусу, что она больна."
+        },
+        "hi": {
+          "L": "और शमौन की सास बुख़ार में पड़ी थी, और तुरंत [लोग] उसके विषय में उनसे कहते हैं।",
+          "B": "शमौन की सास बुख़ार से बीमार पड़ी थी, और उन्होंने बिना देर किए यीशु को उसके बारे में बताया।",
+          "R": "शमौन की सास बुख़ार से बिस्तर पर पड़ी थी। उन्होंने तुरंत यीशु को बताया कि वह बीमार है।"
         }
       },
       "decisions": [
@@ -8353,6 +9086,11 @@
           "L": "И, подойдя, {{deity_pronoun:он|Он}} поднял её, взяв за руку; и оставил её жар, и она служила им.",
           "B": "Он подошёл, взял её за руку и поднял. Жар оставил её, и она стала заботиться о них.",
           "R": "Иисус подошёл к ней. Он взял её за руку и помог ей встать. Жар прошёл, и она начала готовить им еду."
+        },
+        "hi": {
+          "L": "और उन्होंने पास जाकर उसका हाथ पकड़कर उसे उठाया; और बुख़ार ने उसे छोड़ दिया, और वह उनकी सेवा करने लगी।",
+          "B": "उन्होंने पास जाकर उसका हाथ पकड़ा और उसे उठाया। उसका बुख़ार उतर गया, और वह उनकी आवभगत करने लगी।",
+          "R": "यीशु उसके पास गए। उन्होंने उसका हाथ पकड़कर उसे उठने में मदद की। बुख़ार चला गया, और वह उन्हें खाना परोसने लगी।"
         }
       },
       "decisions": [
@@ -8522,6 +9260,11 @@
           "L": "Когда же настал вечер, когда зашло солнце, приносили к {{deity_pronoun:нему|Нему}} всех больных и бесноватых.",
           "B": "Когда настал вечер и солнце село, к {{deity_pronoun:нему|Нему}} стали приводить всех больных и одержимых бесами.",
           "R": "В тот вечер, когда солнце зашло, люди привели к Иисусу всех больных и всех, в ком были бесы."
+        },
+        "hi": {
+          "L": "और साँझ होने पर, जब सूरज डूब गया, [लोग] सब बीमारों और दुष्टात्मा-ग्रस्त लोगों को उनके पास लाने लगे।",
+          "B": "शाम को, जब सूरज डूब चुका था, लोग सब बीमारों को और उन्हें जिन पर दुष्टात्माओं का क़ब्ज़ा था, उनके पास लाने लगे।",
+          "R": "उस शाम, सूरज डूबने के बाद, लोग सब बीमारों को यीशु के पास ले आए, और उन सबको भी जिनमें दुष्टात्माएँ थीं।"
         }
       },
       "decisions": [
@@ -8770,6 +9513,11 @@
           "L": "И весь город собрался у двери.",
           "B": "Весь город собрался у дверей.",
           "R": "Почти весь город собрался у дверей дома."
+        },
+        "hi": {
+          "L": "और सारा नगर द्वार पर इकट्ठा हो गया था।",
+          "B": "पूरा नगर दरवाज़े के बाहर जमा हो गया था।",
+          "R": "नगर के लगभग सब लोग घर के दरवाज़े के आसपास इकट्ठे हो गए।"
         }
       },
       "decisions": [
@@ -8972,6 +9720,11 @@
           "L": "И {{deity_pronoun:он|Он}} исцелил многих, страдавших разными болезнями, и изгнал многих бесов, и не позволял бесам говорить, потому что они знали {{deity_pronoun:его|Его}}.",
           "B": "Он исцелил многих людей с самыми разными болезнями и выгнал много бесов. Бесам {{deity_pronoun:он|Он}} не давал говорить, потому что они знали {{deity_pronoun:его|Его}}.",
           "R": "Иисус исцелил много людей, у которых были разные болезни. Он заставил многих бесов выйти из людей. Но {{deity_pronoun:он|Он}} не позволял бесам говорить, потому что они знали, кто {{deity_pronoun:он|Он}}."
+        },
+        "hi": {
+          "L": "और उन्होंने बहुतों को, जो तरह-तरह की बीमारियों से बीमार थे, चंगा किया, और बहुत-सी दुष्टात्माओं को निकाला; और वे दुष्टात्माओं को बोलने नहीं देते थे, क्योंकि वे उन्हें जानती थीं।",
+          "B": "उन्होंने तरह-तरह के रोगों से पीड़ित बहुत-से लोगों को चंगा किया और बहुत-सी दुष्टात्माओं को निकाल दिया। वे दुष्टात्माओं को कुछ भी बोलने नहीं देते थे, क्योंकि दुष्टात्माएँ उन्हें जानती थीं।",
+          "R": "यीशु ने बहुत-से लोगों को चंगा किया जिन्हें तरह-तरह की बीमारियाँ थीं। उन्होंने बहुत-सी दुष्टात्माओं को लोगों में से निकल जाने पर मजबूर किया। पर वे दुष्टात्माओं को बोलने नहीं देते थे, क्योंकि वे जानती थीं कि यीशु कौन हैं।"
         }
       },
       "decisions": [
@@ -9150,6 +9903,28 @@
           "reason": "The English Balanced leaves \"cast out\" as old church language. Portuguese \"expulsar\" is the ordinary verb for driving someone out and has the same force, so Balanced keeps it, as Matthew does (8:16); Readable says \"obrigou ... a sair\", as the English Readable does. The same in 1:39.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001034009",
+            "n41001034011"
+          ],
+          "choice": "\"दुष्टात्माओं को निकाला\" (L, B); \"निकल जाने पर मजबूर किया\" (R)",
+          "alternatives": [
+            "\"निकाल दिया\" (R)"
+          ],
+          "reason": "\"निकालना\" is the ordinary Hindi verb for driving someone out and has the force of the Greek; Readable says it more strongly, as the English Readable does. The feminine \"जानती थीं\" makes clear that the demons, not Jesus, are the ones who knew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9225,6 +10000,11 @@
           "L": "И рано утром, ещё совсем ночью, встав, {{deity_pronoun:он|Он}} вышел и ушёл в пустынное место, и там молился.",
           "B": "Задолго до рассвета {{deity_pronoun:он|Он}} встал и вышел. Он ушёл в безлюдное место и там молился.",
           "R": "На следующий день, очень рано, когда было ещё темно, Иисус встал и вышел из дома. Он пошёл туда, где {{deity_pronoun:он|Он}} мог побыть один, и там молился."
+        },
+        "hi": {
+          "L": "और भोर को, जब अभी बहुत रात थी, वे उठकर निकले और एक निर्जन स्थान में चले गए, और वहाँ प्रार्थना करते रहे।",
+          "B": "दिन निकलने से बहुत पहले वे उठे और बाहर गए। वे एक निर्जन स्थान में चले गए और वहाँ प्रार्थना करते रहे।",
+          "R": "अगले दिन बहुत सवेरे, अँधेरा रहते ही, यीशु उठे और घर से निकल गए। वे ऐसी जगह गए जहाँ वे अकेले रह सकें, और वहाँ उन्होंने प्रार्थना की।"
         }
       },
       "decisions": [
@@ -9380,6 +10160,27 @@
           "reason": "French keeps the word \"désert\" of 1:3-13 (see 1:3), so the link the meaning decision points out stays visible at Literal and Balanced; Readable says what the place was for.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001035010",
+            "n41001035011"
+          ],
+          "choice": "\"निर्जन स्थान\" (L, B)",
+          "alternatives": [
+            "\"सुनसान जगह\""
+          ],
+          "reason": "The Greek uses the word for the wilderness of 1:3-13 (meaning note), so Literal and Balanced echo \"निर्जन प्रदेश\" with \"निर्जन स्थान\"; Readable says what the place was for.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9461,6 +10262,11 @@
           "L": "И усердно искали {{deity_pronoun:его|Его}} Симон и бывшие с ним, \\v 37 и нашли {{deity_pronoun:его|Его}}, и говорят {{deity_pronoun:ему|Ему}}: «Все ищут {{deity_pronoun:тебя|Тебя}}.»",
           "B": "Симон и остальные отправились {{deity_pronoun:его|Его}} разыскивать. \\v 37 Найдя {{deity_pronoun:его|Его}}, они сказали: «Все {{deity_pronoun:тебя|Тебя}} ищут!»",
           "R": "Симон и его товарищи пошли искать Иисуса. \\v 37 Они нашли {{deity_pronoun:его|Его}} и сказали {{deity_pronoun:ему|Ему}}: «Все люди ищут {{deity_pronoun:тебя|Тебя}}!»"
+        },
+        "hi": {
+          "L": "और शमौन और उसके साथी उन्हें ढूँढ़ते हुए उनके पीछे गए, \\v 37 और उन्होंने उन्हें पाया और उनसे कहते हैं, \"सब लोग आपको ढूँढ़ रहे हैं।\"",
+          "B": "शमौन और उसके साथी उन्हें खोजते-खोजते वहाँ पहुँचे। \\v 37 उन्हें पाकर उन्होंने कहा, \"सब लोग आपको ढूँढ़ रहे हैं!\"",
+          "R": "शमौन और उसके साथी यीशु को ढूँढ़ने निकले। \\v 37 जब वे उनसे मिले, तो उन्होंने कहा, \"सब लोग आपको ढूँढ़ रहे हैं!\""
         }
       },
       "decisions": [
@@ -9557,6 +10363,27 @@
           "reason": "As the style guide and John 1:49 in Korean: people address Jesus formally, and since \"당신\" would be rude to a respected teacher, a title stands in for the pronoun.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41001037010"
+          ],
+          "choice": "\"आप\" from the disciples to Jesus",
+          "alternatives": [
+            "\"तुम\""
+          ],
+          "reason": "People speaking to Jesus say \"आप\" in this translation, as anyone would to a teacher.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9636,6 +10463,11 @@
           "L": "И говорит им: «Пойдём в другое место, в ближние городки, чтобы и там {{deity_pronoun:я|Я}} проповедовал, ведь для этого {{deity_pronoun:я|Я}} вышел.»",
           "B": "Он ответил: «Пойдём дальше, в соседние городки, чтобы {{deity_pronoun:я|Я}} возвестил весть и там. Ведь для этого {{deity_pronoun:я|Я}} и вышел.»",
           "R": "Иисус сказал им: «Пойдём в другие городки поблизости, чтобы {{deity_pronoun:я|Я}} и там рассказывал людям Радостную весть. Ведь для этого {{deity_pronoun:я|Я}} и пришёл.»"
+        },
+        "hi": {
+          "L": "और वे उनसे कहते हैं, \"आओ, हम कहीं और, आस-पास के क़स्बों में चलें, ताकि मैं वहाँ भी प्रचार करूँ, क्योंकि मैं इसी लिए निकला हूँ।\"",
+          "B": "उन्होंने उत्तर दिया, \"आओ, हम आस-पास के क़स्बों में चलें, ताकि मैं वहाँ भी संदेश का प्रचार करूँ। मैं इसी लिए निकला हूँ।\"",
+          "R": "यीशु ने उनसे कहा, \"चलो, हम पास के दूसरे क़स्बों में चलें, ताकि मैं वहाँ भी लोगों को सुसमाचार सुनाऊँ। मैं इसी लिए आया हूँ।\""
         }
       },
       "decisions": [
@@ -9788,6 +10620,28 @@
           "reason": "Mark's word joins \"village\" and \"town\": larger places than villages, the market towns of Galilee. Readable says simply \"ሌሎች ከተሞች\" (other towns).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001038009"
+          ],
+          "choice": "\"क़स्बे\"",
+          "alternatives": [
+            "\"गाँव\"",
+            "\"नगर\""
+          ],
+          "reason": "The Greek word names market towns, larger than villages and smaller than cities; Hindi \"क़स्बा\" is exactly that.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9865,6 +10719,11 @@
           "L": "И {{deity_pronoun:он|Он}} ходил, проповедуя в их синагогах по всей Галилее и изгоняя бесов.",
           "B": "Он ходил по синагогам всей Галилеи, возвещал весть и выгонял бесов.",
           "R": "Иисус ходил по всей Галилее. Он проповедовал в синагогах и заставлял бесов выходить из людей."
+        },
+        "hi": {
+          "L": "और वे सारे गलील में उनके आराधनालयों में प्रचार करते हुए और दुष्टात्माओं को निकालते हुए गए।",
+          "B": "वे सारे गलील में उनके आराधनालयों में गए, जहाँ उन्होंने संदेश का प्रचार किया और दुष्टात्माओं को निकाला।",
+          "R": "यीशु सारे गलील में घूमे। उन्होंने उनके आराधनालयों में प्रचार किया और लोगों में से दुष्टात्माओं को निकाला।"
         }
       },
       "decisions": [
@@ -10031,6 +10890,11 @@
           "L": "И приходит к {{deity_pronoun:нему|Нему}} прокажённый, умоляя {{deity_pronoun:его|Его}} и становясь на колени, и говоря {{deity_pronoun:ему|Ему}}: «Если {{deity_pronoun:ты|Ты}} хочешь, {{deity_pronoun:ты|Ты}} можешь меня очистить.»",
           "B": "К {{deity_pronoun:нему|Нему}} пришёл человек, больной проказой. Упав на колени, он умолял {{deity_pronoun:его|Его}}: «Если {{deity_pronoun:ты|Ты}} хочешь, {{deity_pronoun:ты|Ты}} можешь сделать меня чистым.»",
           "R": "К Иисусу пришёл человек, больной проказой — тяжёлой кожной болезнью. Он встал на колени и стал просить {{deity_pronoun:его|Его}}: «Если {{deity_pronoun:ты|Ты}} хочешь, {{deity_pronoun:ты|Ты}} можешь исцелить меня и сделать чистым!»"
+        },
+        "hi": {
+          "L": "और एक कोढ़ी उनके पास आता है, और उनसे विनती करते हुए और घुटने टेककर उनसे कहता है, \"यदि आप चाहें, तो मुझे शुद्ध कर सकते हैं।\"",
+          "B": "कोढ़ का एक रोगी उनके पास आया। उसने घुटने टेककर उनसे विनती की, \"यदि आप चाहें, तो मुझे शुद्ध कर सकते हैं।\"",
+          "R": "एक आदमी, जिसे चमड़ी का बुरा रोग था, यीशु के पास आया। उसने घुटनों के बल बैठकर उनसे गिड़गिड़ाकर कहा, \"अगर आप चाहें, तो मुझे चंगा करके शुद्ध कर सकते हैं!\""
         }
       },
       "decisions": [
@@ -10333,6 +11197,27 @@
           "reason": "'Прокажённый' labels the man by his disease; Balanced and Readable speak of a man who has it, as in Matthew 8:2. Readable explains that it was a skin disease.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001040005"
+          ],
+          "choice": "\"कोढ़ी\" (L); \"कोढ़ का रोगी\" (B); \"चमड़ी का बुरा रोग\" (R)",
+          "alternatives": [
+            "\"कोढ़ी\" at every level"
+          ],
+          "reason": "The Greek word covered several skin diseases that made a person unclean under the Law, not only what is now called leprosy. The same wording as Matthew 8:2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10407,6 +11292,11 @@
           "L": "И, разгневавшись, протянув руку, {{deity_pronoun:он|Он}} коснулся [его] и говорит ему: «Хочу, очистись.»",
           "B": "Охваченный гневом, {{deity_pronoun:он|Он}} протянул руку и коснулся его. «Хочу», — сказал {{deity_pronoun:он|Он}} ему. — «Будь чист!»",
           "R": "Иисус рассердился. Он протянул руку и коснулся этого человека. Он сказал: «Я хочу. Стань здоровым и чистым!»"
+        },
+        "hi": {
+          "L": "और उन्होंने क्रोधित होकर, अपना हाथ बढ़ाकर उसे छुआ और उससे कहते हैं, \"मैं चाहता हूँ; शुद्ध हो जाओ।\"",
+          "B": "क्रोध से भरकर उन्होंने अपना हाथ बढ़ाया और उसे छुआ। \"मैं चाहता हूँ,\" उन्होंने उससे कहा। \"शुद्ध हो जाओ!\"",
+          "R": "यीशु को क्रोध आया। उन्होंने अपना हाथ बढ़ाकर उस आदमी को छुआ। उन्होंने कहा, \"मैं चाहता हूँ। चंगे और शुद्ध हो जाओ!\""
         }
       },
       "decisions": [
@@ -10626,6 +11516,11 @@
           "L": "И тотчас отошла от него проказа, и он очистился.",
           "B": "В тот же миг болезнь оставила его, и он стал чист.",
           "R": "Сразу кожная болезнь прошла, и человек стал здоровым и чистым."
+        },
+        "hi": {
+          "L": "और तुरंत उसका कोढ़ उससे जाता रहा, और वह शुद्ध हो गया।",
+          "B": "उसी क्षण उसका रोग जाता रहा, और वह शुद्ध हो गया।",
+          "R": "उसी समय उसकी चमड़ी का रोग चला गया, और वह चंगा और शुद्ध हो गया।"
         }
       },
       "decisions": [
@@ -10754,6 +11649,11 @@
           "L": "И, строго пригрозив ему, {{deity_pronoun:он|Он}} тотчас отослал его \\v 44 и говорит ему: «Смотри, никому ничего не говори, но пойди, покажи себя священнику и принеси за своё очищение то, что повелел Моисей, во свидетельство им.»",
           "B": "Иисус строго предупредил его и сразу отпустил. \\v 44 «Смотри, никому об этом не рассказывай», — сказал {{deity_pronoun:он|Он}}. — «Лучше пойди, пусть священник осмотрит тебя. Потом принеси за своё очищение то, что повелел Моисей. Это будет для них доказательством.»",
           "R": "Иисус сразу отослал его и строго предупредил. \\v 44 Он сказал: «Никому об этом не рассказывай. Пойди и покажись священнику. Потом принеси жертву, которую Моисей велел приносить тем, кто очистился. Так они узнают, что ты чист.»"
+        },
+        "hi": {
+          "L": "और उसे कड़ी चेतावनी देकर उन्होंने तुरंत उसे विदा किया, \\v 44 और उससे कहते हैं, \"देखो, किसी से कुछ न कहना, पर जाकर अपने आप को याजक को दिखाओ, और अपने शुद्ध होने के लिए जो कुछ मूसा ने ठहराया, उसे चढ़ाओ, ताकि उनके लिए गवाही हो।\"",
+          "B": "यीशु ने उसे कड़ी चेतावनी देकर तुरंत विदा कर दिया। \\v 44 \"ध्यान रहे, किसी को इसके बारे में कुछ मत बताना,\" उन्होंने कहा। \"बल्कि जाकर याजक से अपनी जाँच करवाओ, और अपने शुद्ध होने के लिए वह भेंट चढ़ाओ जिसकी आज्ञा मूसा ने दी। यह उनके लिए प्रमाण होगा।\"",
+          "R": "यीशु ने उसे कड़ी चेतावनी देकर तुरंत भेज दिया। \\v 44 उन्होंने कहा, \"इसके बारे में किसी को मत बताना। जाकर अपने आप को याजक को दिखाओ। फिर वह भेंट चढ़ाओ जिसकी आज्ञा मूसा ने उन लोगों के लिए दी है जो शुद्ध हो जाते हैं। इससे उन्हें पता चल जाएगा कि तुम शुद्ध हो गए हो।\""
         }
       },
       "decisions": [
@@ -10893,6 +11793,27 @@
           "reason": "The word means proof, not spoken testimony. Literal keeps the traditional phrase; Balanced and Readable say what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41001044024"
+          ],
+          "choice": "\"गवाही\" (L); \"प्रमाण\" (B); \"पता चल जाएगा\" (R)",
+          "alternatives": [
+            "\"गवाही\" at every level"
+          ],
+          "reason": "The word here means proof, so Balanced and Readable say so; Literal keeps the word for testimony.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10984,6 +11905,11 @@
           "L": "Он же, выйдя, начал много проповедовать и разглашать слово, так что {{deity_pronoun:он|Он}} уже не мог открыто войти в город, но был вне, в пустынных местах; и приходили к {{deity_pronoun:нему|Нему}} отовсюду.",
           "B": "Но тот человек ушёл и начал всем рассказывать и разносить весть о том, что произошло, так что Иисус уже не мог открыто войти ни в один город. Он оставался вне городов, в безлюдных местах, и всё равно люди отовсюду шли к {{deity_pronoun:нему|Нему}}.",
           "R": "Но человек ушёл и стал рассказывать многим людям, что случилось. Он разнёс эту весть повсюду. Из-за этого Иисус больше не мог входить в город так, чтобы люди {{deity_pronoun:его|Его}} видели. Поэтому {{deity_pronoun:он|Он}} оставался в безлюдных местах. Но люди всё равно приходили к {{deity_pronoun:нему|Нему}} отовсюду."
+        },
+        "hi": {
+          "L": "पर वह निकलकर बहुत प्रचार करने और इस बात को फैलाने लगा, यहाँ तक कि [यीशु] फिर खुलकर किसी नगर में नहीं जा सकते थे, पर बाहर निर्जन स्थानों में रहते थे; और [लोग] चारों ओर से उनके पास आते रहे।",
+          "B": "पर वह आदमी जाकर सबको बताने लगा और इस बात को इतना फैलाया कि यीशु फिर किसी नगर में खुलेआम नहीं जा सके। वे बाहर निर्जन स्थानों में रहते थे, फिर भी लोग हर तरफ़ से उनके पास आते रहे।",
+          "R": "पर वह आदमी चला गया और बहुत लोगों को बताने लगा कि क्या हुआ था। उसने यह बात हर जगह फैला दी। इस कारण यीशु किसी नगर में ऐसे नहीं जा सकते थे कि लोग उन्हें देखें। इसलिए वे बाहर सुनसान जगहों में रहे। फिर भी लोग हर जगह से उनके पास आते रहे।"
         }
       },
       "decisions": [
@@ -11137,6 +12063,27 @@
             "la parole"
           ],
           "reason": "Here the Greek word means the matter, what had happened (meaning decision m2). \"Répandre la parole\" would suggest God's word; \"répandre la nouvelle\" is the French idiom for spreading news.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n41001045013"
+          ],
+          "choice": "\"[यीशु]\" (L); \"वह आदमी\", \"यीशु\" (B, R)",
+          "alternatives": [
+            "\"वह ... वे\""
+          ],
+          "reason": "The Greek moves from the healed man's \"he\" to Jesus' \"he\". The honorific already tells them apart in Hindi, but each is named so that the change of subject is plain.",
           "uncertain": false,
           "footnote": false
         }

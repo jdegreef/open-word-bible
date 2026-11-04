@@ -282,6 +282,55 @@ where the Greek differs.
   सच कहता हूँ at every level, with no आमीन; the weeping and gnashing of
   teeth, the fulfilment formula and "whoever has ears" each have one form.
 
+Settled in Mark:
+
+- **Nukta** in loanwords where standard Hindi writes it (क़ब्र, बाक़ी, ग़रीब,
+  मज़ाक़, चोग़ा, बग़ीचा), consistently.
+- **euthys** is तुरंत at Literal; Balanced and Readable vary it with the
+  sentence (जैसे ही, उसी समय, तुरंत), one decision per passage file.
+- **God spoken of** by Jesus or anyone else takes honorific forms
+  (उन्होंने, वे), as in the narrative.
+- **Words.** The mat (*krabattos*) is बिछौना (L, B), बिस्तर (R); the
+  Herodians हेरोदी; the divorce certificate तलाक़नामा, not त्यागपत्र (which
+  now means a resignation letter).
+
+Settled in Luke:
+
+- *epistata* ("Master") is हे स्वामी; parable masters स्वामी (L), मालिक (B,
+  R), addressed with आप; प्रभु stays for God and Jesus.
+- Luke's lake (*limnē*) is झील at every level; *nomikos* व्यवस्थापक (L),
+  व्यवस्था का ज्ञाता (B), परमेश्वर की व्यवस्था के जानकार (R); *alēthōs*
+  मैं तुमसे सचमुच कहता हूँ, kept apart from *amēn*; परमप्रधान for the Most
+  High; woe तुम पर हाय.
+
+Settled in John (with docs/john-terms.md):
+
+- वचन (the Word); मैं तुमसे सच सच कहता हूँ (every level, तुम also to one
+  person, as section 4); बने रहना for *menō* in the weighty sense; सहायक
+  (the Paraclete); सत्य का आत्मा; "मैं हूँ" for the absolute "I am" (8:24,
+  8:28, 8:58, 13:19); चिह्न, never चमत्कार; "the Jews" यहूदी at L, यहूदी
+  अगुवे (B, R) where the authorities are meant.
+- संसार (world) at every level; ज्योति (L, B), रोशनी (R) for light, as
+  Matthew 5:14; Jesus' hour घड़ी, समय at Readable where the English says
+  "time"; प्रेम करना for both Greek verbs of love; *paroimia* उपमा (L, B),
+  मिसाल (R); "Woman" as an address हे स्त्री (L), हे नारी (B), माँ to his
+  mother and बहन to other women (R).
+
+Settled in Acts:
+
+- मार्ग (the Way); मसीही (Christians); पवित्र जन (L), पवित्र लोग (B, R) for
+  the holy ones; पिन्तेकुस्त; अन्य भाषाओं में बोलना (tongues); परमेश्वर की
+  आराधना करनेवाले for *sebomenoi*, परमेश्वर का भय माननेवाले for
+  *phoboumenoi*; *hairesis* दल for a party, पंथ for a sect.
+- Offices: proconsul प्रांतपति (L, B), रोमी शासक (R); governor राज्यपाल;
+  tribune सेनापति; church elders पुरनिए (L), बुज़ुर्ग अगुवे (B), कलीसिया के
+  अगुवे (R).
+- Address: speeches to crowds and councils आप; believers among themselves
+  तुम; prayer to God तू; prayer to the risen Jesus आप, as everyone
+  addresses him in the Gospels.
+- The brothers-and-sisters span: `{{gender:भाइयो और बहनो|भाइयो}}` in the
+  vocative, `{{gender:भाई-बहनों|भाइयों}}` in the oblique.
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is
