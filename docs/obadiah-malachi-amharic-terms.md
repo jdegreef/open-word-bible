@@ -16,7 +16,7 @@ the Amharic words.
 - "Thus says the LORD" «{{dn}} እንዲህ ይላል»; "declares the LORD" «ይላል {{dn}}»
   after the words; "the word of the LORD came to X" «{{divine_name:የእግዚአብሔር|የያህዌ}}
   ቃል ወደ X መጣ»; oracle (*massa*) የትንቢት ቃል; woe ወዮ; in that day በዚያ ቀን;
-  the day of the LORD የ{{dn}} ቀን; remnant ቅሬታ; YHWH Tsevaot L «{{dn}}
+  the day of the LORD {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን; remnant ቅሬታ; YHWH Tsevaot L «{{dn}}
   ጸባኦት», B, R «የሠራዊት አምላክ {{dn}}». Suffixes go after `}}` only where
   they are -ም; any other inflection goes inside both options.
 - ḥesed ጽኑ ፍቅር; the covenant formula «ሕዝቤ ይሆናሉ፤ እኔም አምላካቸው እሆናለሁ».
@@ -73,7 +73,7 @@ Haggai 2:6 (Hebrews 12:26); Zechariah 9:9 (Matthew 21:5; John 12:15); 11:12–13
 - Habakkuk 3 is a prayer-psalm: its heading and Selah follow the Psalms list
   (ሴላ at the end of its line, «ለመዘምራን አለቃ» in 3:19).
 - Zechariah's visions: the angel who talked with me «ከእኔ ጋር የሚነጋገረው
-  መልአክ»; the angel of the LORD «የ{{dn}} መልአክ»; the Branch (*tsemaḥ*,
+  መልአክ»; the angel of the LORD «{{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ»; the Branch (*tsemaḥ*,
   3:8; 6:12) as Jeremiah 23:5 and 33:15 on main; the lampstand መቅረዝ; the
   flying scroll የሚበር ጥቅልል መጽሐፍ.
 - Malachi's disputations keep one frame: "But you say, How …?" L «እናንተ
