@@ -67,6 +67,11 @@
           "L": "Oráculo: a palavra {{divine_name:do SENHOR|de Javé}} a respeito de Israel. Declara {{divine_name:o SENHOR|Javé}}, que estende [os] céus e funda [a] terra e forma o espírito do {{gender:ser humano|homem}} dentro dele:",
           "B": "Mensagem: a palavra {{divine_name:do SENHOR|de Javé}} a respeito de Israel. É isto que declara {{divine_name:o SENHOR|Javé}}, que estende os céus, lança os alicerces da terra e forma o espírito humano dentro de cada pessoa:",
           "R": "Esta é uma mensagem {{divine_name:do SENHOR|de Javé}} a respeito de Israel. {{divine_name:O SENHOR|Javé}} estendeu o céu e lançou os alicerces da terra. Ele dá a cada pessoa um espírito dentro dela. É isto que {{deity_pronoun:ele|Ele}} diz:"
+        },
+        "am": {
+          "L": "የትንቢት ቃል። ስለ እስራኤል {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል። ሰማያትን የሚዘረጋ፣ ምድርንም የሚመሠርት፣ የሰውንም መንፈስ በውስጡ የሚሠራ {{divine_name:እግዚአብሔር|ያህዌ}} ይላል፦",
+          "B": "የትንቢት ቃል። ስለ እስራኤል {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል። ሰማያትን የሚዘረጋ፣ የምድርን መሠረት የሚጥል፣ የሰውንም መንፈስ በእያንዳንዱ ሰው ውስጥ የሚሠራ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦",
+          "R": "ይህ ስለ እስራኤል {{divine_name:ከእግዚአብሔር|ከያህዌ}} የመጣ መልእክት ነው። {{divine_name:እግዚአብሔር|ያህዌ}} ሰማይን ዘረጋ፤ የምድርንም መሠረት ጣለ። ለእያንዳንዱም ሰው በውስጡ መንፈስን ይሰጣል። እርሱ እንዲህ ይላል፦"
         }
       },
       "decisions": [
@@ -357,6 +362,48 @@
           "reason": "The English Literal has two spans, \"a person ... them\". Portuguese needs only one, on the noun: \"dele\" agrees with both \"ser humano\" and \"homem\", so the pronoun takes no span (docs/portuguese-style.md, section 7).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380120010031",
+            "o380120010071",
+            "o380120010141"
+          ],
+          "choice": "no deity_pronoun spans in Amharic; no gender span on \"the spirit of a person within them\": \"የሰውንም መንፈስ በውስጡ\"",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God has nothing to change; the English spans on \"he\", \"his\", \"me\" and \"my\" in this chapter have no Amharic counterpart. \"ሰው\" with the suffix -ው already means any human being, so the English gender span has no second Amharic wording (amharic-style.md 7b).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o380120010011",
+            "o380120010061",
+            "o380120010071"
+          ],
+          "choice": "oracle \"የትንቢት ቃል\" (L, B), \"መልእክት\" (R), as 9:1; \"declares the LORD\" at the head of the oracle as \"{{divine_name:እግዚአብሔር|ያህዌ}} ይላል፦\" (L), \"{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦\" (B), after the titles that describe him",
+          "alternatives": [],
+          "reason": "Elsewhere neʾum YHWH follows the words it marks (\"ይላል {{divine_name:እግዚአብሔር|ያህዌ}}\"); here the words follow it, and Amharic puts the verb after the descriptions of the Creator, so the formula closes the heading and opens the speech with \"፦\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -430,6 +477,11 @@
           "L": "Eis que faço de Jerusalém um cálice de atordoamento para todos os povos ao redor; e também Judá estará no cerco contra Jerusalém.",
           "B": "Vou fazer de Jerusalém um cálice que fará cambalear todos os povos ao redor. Judá também será envolvida no cerco contra Jerusalém.",
           "R": "Vou fazer Jerusalém ficar como um cálice de vinho forte, que faz todas as nações ao redor dela cambalearem como bêbados. Quando os inimigos cercarem Jerusalém e a atacarem, Judá também vai ser atacada."
+        },
+        "am": {
+          "L": "እነሆ፣ ኢየሩሳሌምን በዙሪያዋ ላሉ ሕዝቦች ሁሉ የሚያንገዳግድ ጽዋ አደርጋታለሁ፤ ይሁዳም ደግሞ በኢየሩሳሌም ላይ በሚሆነው ከበባ ውስጥ ይሆናል።",
+          "B": "ኢየሩሳሌምን በዙሪያዋ ያሉትን ሕዝቦች ሁሉ የሚያንገዳግድ ጽዋ ላደርጋት ነው። ይሁዳም ደግሞ በኢየሩሳሌም ላይ በሚደረገው ከበባ ውስጥ ይገባል።",
+          "R": "ኢየሩሳሌምን በዙሪያዋ ያሉትን ሕዝቦች ሁሉ እንደ ሰካራም የሚያንገዳግድ የብርቱ ወይን ጠጅ ጽዋ አደርጋታለሁ። ጠላቶች ኢየሩሳሌምን ከበው ሲወጓት ይሁዳም ደግሞ ጥቃት ይደርስበታል።"
         }
       },
       "decisions": [
@@ -612,6 +664,11 @@
           "L": "E acontecerá naquele dia [que] farei de Jerusalém uma pedra pesada para todos os povos; todos os que a carregarem certamente se ferirão; e todas as nações da terra se ajuntarão contra ela.",
           "B": "Naquele dia farei de Jerusalém uma pedra pesada para todos os povos; todos os que tentarem levantá-la ficarão gravemente feridos. E todas as nações da terra se reunirão contra ela.",
           "R": "Naquele dia vou fazer Jerusalém ficar como uma pedra pesada para todas as nações. Todos os que tentarem levantá-la vão se machucar muito. Todas as nações da terra vão se juntar para atacá-la."
+        },
+        "am": {
+          "L": "በዚያም ቀን እንዲህ ይሆናል፤ ኢየሩሳሌምን ለሕዝቦች ሁሉ የሸክም ድንጋይ አደርጋታለሁ፤ የሚሸከሟትም ሁሉ ፈጽመው ይቆራረጣሉ፤ የምድርም አሕዛብ ሁሉ በእርሷ ላይ ይሰበሰባሉ።",
+          "B": "በዚያ ቀን ኢየሩሳሌምን ለሕዝቦች ሁሉ ከባድ ድንጋይ አደርጋታለሁ፤ ሊያነሣት የሚሞክር ሁሉ ክፉኛ ይቆስላል። የምድርም አሕዛብ ሁሉ በእርሷ ላይ ይሰበሰባሉ።",
+          "R": "በዚያ ጊዜ ኢየሩሳሌምን ለሕዝቦች ሁሉ እንደ ከባድ ድንጋይ አደርጋታለሁ። ሊያነሣት የሚሞክር ሁሉ ክፉኛ ይጎዳል። የምድር ሕዝቦች ሁሉ ሊወጓት በአንድነት ይመጣሉ።"
         }
       },
       "decisions": [
@@ -783,6 +840,30 @@
           "reason": "\"Naquele dia\" at every level, as set for the whole book at 2:15, where the English Readable says \"At that time\" (also verses 4, 6, 8, 9, 11 and chapters 13-14); Literal keeps the Hebrew \"E acontecerá\", as Isaiah 2:2 has it in Portuguese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120030011",
+            "o380120030012",
+            "o380120030021",
+            "o380120030022",
+            "o380120030031",
+            "o380120030032"
+          ],
+          "choice": "\"And it will be in that day [that]\" \"በዚያም ቀን እንዲህ ይሆናል፤\" (L), as Hosea 2:23 L on main; \"በዚያ ቀን\" (B); \"በዚያ ጊዜ\" (R)",
+          "alternatives": [],
+          "reason": "The formula recurs through chapters 12-14 (12:3, 9; 13:2, 4; 14:6, 8, 13) and reads the same each time; Literal keeps the Hebrew \"and it will be\" without brackets, since \"እንዲህ ይሆናል\" is its Amharic form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -867,6 +948,11 @@
           "L": "Naquele dia, declara {{divine_name:o SENHOR|Javé}}, ferirei todo cavalo com pânico e o seu cavaleiro com loucura; mas sobre a casa de Judá abrirei os {{deity_pronoun:meus|Meus}} olhos, e todo cavalo dos povos ferirei com cegueira.",
           "B": "Naquele dia, declara {{divine_name:o SENHOR|Javé}}, ferirei todos os cavalos com terror e os seus cavaleiros com loucura. Manterei os {{deity_pronoun:meus|Meus}} olhos abertos sobre a casa de Judá, mas ferirei com cegueira os cavalos dos povos.",
           "R": "Naquele dia, diz {{divine_name:o SENHOR|Javé}}, vou fazer todos os cavalos entrarem em pânico e os seus cavaleiros ficarem loucos. Vou cuidar do povo de Judá, mas vou deixar cegos todos os cavalos dos exércitos inimigos."
+        },
+        "am": {
+          "L": "በዚያ ቀን፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ ፈረሱን ሁሉ በመደናገር፣ ጋላቢውንም በእብደት እመታለሁ፤ በይሁዳም ቤት ላይ ዓይኖቼን እከፍታለሁ፤ የሕዝቦችንም ፈረስ ሁሉ በዕውርነት እመታለሁ።",
+          "B": "በዚያ ቀን፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ ፈረሶችን ሁሉ በመደናገር፣ ጋላቢዎቻቸውንም በእብደት እመታለሁ። በይሁዳ ቤት ላይ ዓይኖቼን ከፍቼ እጠብቃለሁ፤ የሕዝቦችን ፈረሶች ግን በዕውርነት እመታለሁ።",
+          "R": "በዚያ ጊዜ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ ፈረሶችን ሁሉ አደናግራለሁ፤ ጋላቢዎቻቸውንም አሳብዳለሁ። የይሁዳን ሕዝብ እጠብቃለሁ፤ የጠላት ሠራዊቶችን ፈረሶች ሁሉ ግን አሳውራለሁ።"
         }
       },
       "decisions": [
@@ -1005,6 +1091,27 @@
           "reason": "The three curses of Deuteronomy 28:28 (m1) are \"loucura\", \"cegueira\" and \"pânico\", plain Portuguese words a reader can recognise there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120040082",
+            "o380120040102",
+            "o380120040212"
+          ],
+          "choice": "panic, madness, blindness \"መደናገር\", \"እብደት\", \"ዕውርነት\" (L, B; R the verbs \"አደናግራለሁ\", \"አሳብዳለሁ\", \"አሳውራለሁ\"), the words of Deuteronomy 28:28 on main",
+          "alternatives": [],
+          "reason": "The meaning decision says these are the curses of Deuteronomy 28:28 turned on the enemy; the same three words make the echo audible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1074,6 +1181,11 @@
           "L": "E os clãs de Judá dirão no seu coração: \"Os habitantes de Jerusalém [são] força para mim {{divine_name:no SENHOR|em Javé}} dos Exércitos, o Deus deles.\"",
           "B": "Então os clãs de Judá dirão a si mesmos: \"O povo de Jerusalém é a nossa força, por meio {{divine_name:do SENHOR|de Javé}} dos Exércitos, o Deus deles.\"",
           "R": "Então as famílias de Judá vão pensar: \"O povo de Jerusalém nos dá força, porque {{divine_name:o SENHOR|Javé}} dos Exércitos é o Deus deles.\""
+        },
+        "am": {
+          "L": "የይሁዳም ጎሳዎች በልባቸው፦ «የኢየሩሳሌም ነዋሪዎች በአምላካቸው {{divine_name:በእግዚአብሔር|በያህዌ}} ጸባኦት ለእኔ ብርታት ናቸው» ይላሉ።",
+          "B": "የይሁዳ ጎሳዎችም በልባቸው፦ «የኢየሩሳሌም ሕዝብ አምላካቸው በሆነው በሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ብርታታችን ናቸው» ይላሉ።",
+          "R": "የይሁዳ ጎሳዎችም በልባቸው፦ «የኢየሩሳሌም ሕዝብ ብርታት ይሰጡናል፤ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካቸው ነውና» ይላሉ።"
         }
       },
       "decisions": [
@@ -1270,6 +1382,11 @@
           "L": "Naquele dia farei os clãs de Judá como um braseiro no meio da lenha e como uma tocha de fogo no meio dos feixes; e devorarão, à direita e à esquerda, todos os povos ao redor; e Jerusalém habitará de novo no seu lugar, em Jerusalém.",
           "B": "Naquele dia farei os clãs de Judá como um braseiro posto num monte de lenha, como uma tocha acesa no meio de feixes de trigo. Eles consumirão todos os povos ao redor, à direita e à esquerda, enquanto Jerusalém permanecerá segura no seu lugar.",
           "R": "Naquele dia vou fazer as famílias de Judá ficarem como uma panela de brasas num monte de lenha, ou como uma tocha acesa no meio de feixes de trigo. Elas vão destruir todas as nações ao seu redor, de todos os lados. Mas Jerusalém vai continuar segura onde está."
+        },
+        "am": {
+          "L": "በዚያ ቀን የይሁዳን ጎሳዎች በእንጨት መካከል እንዳለ የእሳት ድስት፣ በነዶም መካከል እንዳለ የእሳት ችቦ አደርጋቸዋለሁ፤ በዙሪያቸው ያሉትንም ሕዝቦች ሁሉ በቀኝና በግራ ይበላሉ፤ ኢየሩሳሌምም እንደ ገና በስፍራዋ፣ በኢየሩሳሌም ትኖራለች።",
+          "B": "በዚያ ቀን የይሁዳን ጎሳዎች በእንጨት ክምር ውስጥ እንደ ተቀመጠ የፍም ድስት፣ በእህል ነዶ መካከል እንዳለ የሚንበለበል ችቦ አደርጋቸዋለሁ። በቀኝም በግራም በዙሪያቸው ያሉትን ሕዝቦች ሁሉ ያጠፋሉ፤ ኢየሩሳሌም ግን በስፍራዋ ተደላድላ ትኖራለች።",
+          "R": "በዚያ ጊዜ የይሁዳን ጎሳዎች በእንጨት ክምር ውስጥ እንዳለ ፍም የሞላበት ድስት፣ ወይም በእህል ነዶዎች መካከል እንዳለ የሚነድ ችቦ አደርጋቸዋለሁ። በዙሪያቸው ያሉትን ሕዝቦች ሁሉ በየአቅጣጫው ያጠፋሉ። ኢየሩሳሌም ግን ባለችበት በሰላም ትኖራለች።"
         }
       },
       "decisions": [
@@ -1492,6 +1609,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} salvará primeiro as tendas de Judá, para que o esplendor da casa de Davi e o esplendor dos habitantes de Jerusalém não se engrandeçam sobre Judá.",
           "B": "{{divine_name:O SENHOR|Javé}} livrará primeiro as tendas de Judá, para que a honra da casa de Davi e a do povo de Jerusalém não sejam exaltadas acima de Judá.",
           "R": "{{divine_name:O SENHOR|Javé}} vai livrar primeiro o povo das cidades e aldeias de Judá. Assim, a família real de Davi e o povo de Jerusalém não vão pensar que são mais importantes do que o resto de Judá."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም የይሁዳን ድንኳኖች አስቀድሞ ያድናል፤ ይኸውም የዳዊት ቤት ክብርና የኢየሩሳሌም ነዋሪዎች ክብር በይሁዳ ላይ ታላቅ እንዳይሆን ነው።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} አስቀድሞ የይሁዳን ድንኳኖች ይታደጋል፤ ይህም የዳዊት ቤትና የኢየሩሳሌም ሕዝብ ክብር ከይሁዳ በላይ ከፍ እንዳይል ነው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በመጀመሪያ በይሁዳ ከተሞችና መንደሮች የሚኖሩትን ሰዎች ይታደጋል። ከዚያም የዳዊት ንጉሣዊ ቤተሰብና የኢየሩሳሌም ሕዝብ ከሌላው የይሁዳ ሕዝብ እንደሚበልጡ አያስቡም።"
         }
       },
       "decisions": [
@@ -1636,6 +1758,11 @@
           "L": "Naquele dia {{divine_name:o SENHOR|Javé}} defenderá os habitantes de Jerusalém, e o que tropeça entre eles naquele dia será como Davi; e a casa de Davi, como Deus, como o anjo {{divine_name:do SENHOR|de Javé}} diante deles.",
           "B": "Naquele dia {{divine_name:o SENHOR|Javé}} protegerá como um escudo o povo de Jerusalém. Naquele dia, até o mais fraco entre eles será como Davi, e a casa de Davi será como Deus, como o anjo {{divine_name:do SENHOR|de Javé}} à frente deles.",
           "R": "Naquele dia {{divine_name:o SENHOR|Javé}} vai proteger o povo de Jerusalém. Até o mais fraco deles vai ser tão forte como o rei Davi. A família de Davi vai ser como Deus, como o anjo {{divine_name:do SENHOR|de Javé}} que vai à frente deles."
+        },
+        "am": {
+          "L": "በዚያ ቀን {{divine_name:እግዚአብሔር|ያህዌ}} በኢየሩሳሌም የሚኖሩትን ይጋርዳል፤ በዚያም ቀን ከመካከላቸው የሚሰናከለው እንደ ዳዊት ይሆናል፤ የዳዊትም ቤት እንደ አምላክ፣ በፊታቸው እንዳለ እንደ {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ ይሆናል።",
+          "B": "በዚያ ቀን {{divine_name:እግዚአብሔር|ያህዌ}} የኢየሩሳሌምን ሕዝብ ይከልላል። በዚያ ቀን ከመካከላቸው እጅግ ደካማው እንኳ እንደ ዳዊት ይሆናል፤ የዳዊትም ቤት እንደ አምላክ፣ በፊታቸው እንደሚሄድ እንደ {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ ይሆናል።",
+          "R": "በዚያ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} የኢየሩሳሌምን ሕዝብ ይጠብቃል። ከእነርሱ እጅግ ደካማ የሆነው እንኳ እንደ ንጉሥ ዳዊት ብርቱ ይሆናል። የዳዊትም ቤተሰብ እንደ አምላክ፣ እንደሚመራቸውም እንደ {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ ይሆናል።"
         }
       },
       "decisions": [
@@ -1803,6 +1930,27 @@
           "reason": "As the term sheet and Genesis 16:7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120080162",
+            "o380120080172",
+            "o380120080181"
+          ],
+          "choice": "\"like God\" (kelohim) \"እንደ አምላክ\"; the angel of the LORD \"{{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ\"",
+          "alternatives": [],
+          "reason": "The divine name stands in the same verse, so Elohim is \"አምላክ\", as the terms list has it where Elohim stands beside YHWH; the comparison is of the house of David to a divine leader, the meaning decision says.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1872,6 +2020,11 @@
           "L": "E acontecerá naquele dia [que] buscarei destruir todas as nações que vêm contra Jerusalém.",
           "B": "Naquele dia tratarei de destruir todas as nações que vierem contra Jerusalém.",
           "R": "Naquele dia vou fazer com que sejam destruídas todas as nações que atacarem Jerusalém."
+        },
+        "am": {
+          "L": "በዚያም ቀን እንዲህ ይሆናል፤ በኢየሩሳሌም ላይ የሚመጡትን አሕዛብ ሁሉ ለማጥፋት እፈልጋለሁ።",
+          "B": "በዚያ ቀን በኢየሩሳሌም ላይ የሚመጡትን አሕዛብ ሁሉ ለማጥፋት እነሣለሁ።",
+          "R": "በዚያ ጊዜ ኢየሩሳሌምን የሚወጉ ሕዝቦች ሁሉ መጥፋታቸውን አረጋግጣለሁ።"
         }
       },
       "decisions": [
@@ -1998,6 +2151,11 @@
           "L": "E derramarei sobre a casa de Davi e sobre os habitantes de Jerusalém um espírito de graça e de súplicas, e olharão para {{deity_pronoun:mim|Mim}}, a quem traspassaram; e o prantearão como se pranteia por um [filho] único, e chorarão amargamente por ele como se chora amargamente por um primogênito.",
           "B": "Sobre a casa de Davi e sobre o povo de Jerusalém derramarei um espírito de graça e de súplica. Olharão para {{deity_pronoun:mim|Mim}}, a quem traspassaram, e o prantearão como se pranteia um filho único, e chorarão amargamente por ele como por um filho primogênito.",
           "R": "Vou derramar sobre a família de Davi e sobre o povo de Jerusalém um espírito de bondade e de oração pedindo misericórdia. Olharão para {{deity_pronoun:mim|Mim}}, a quem traspassaram. Vão chorar por ele como os pais choram por um filho único. Vão chorar amargamente por ele como se chora a morte do filho mais velho."
+        },
+        "am": {
+          "L": "በዳዊትም ቤትና በኢየሩሳሌም ነዋሪዎች ላይ የጸጋንና የልመናን መንፈስ አፈስሳለሁ፤ ወደ እኔም፣ ወደ ወጉት፣ ይመለከታሉ፤ ለአንድያ [ልጅ] እንደሚያለቅሱም ያለቅሱለታል፤ ለበኩርም እንደሚመረሩ ይመረሩለታል።",
+          "B": "በዳዊት ቤትና በኢየሩሳሌም ሕዝብ ላይ የጸጋንና ምሕረትን የመለመንን መንፈስ አፈስሳለሁ። እነርሱም የወጉትን እኔን ይመለከታሉ፤ ለአንድያ ልጅ እንደሚያለቅሱ ያለቅሱለታል፤ ለበኩር ልጅም እንደሚያለቅሱ አምርረው ያለቅሱለታል።",
+          "R": "በዳዊት ቤተሰብና በኢየሩሳሌም ሕዝብ ላይ የጸጋንና ምሕረትን የመለመንን መንፈስ አፈስሳለሁ። የወጉትን እኔን ያያሉ። ወላጆች ለአንድያ ልጃቸው እንደሚያለቅሱ ያለቅሱለታል። ሰዎች የበኩር ልጃቸው ሲሞት እንደሚያለቅሱ አምርረው ያለቅሱለታል።"
         }
       },
       "decisions": [
@@ -2377,6 +2535,51 @@
           "reason": "\"Graça\" and \"súplica\" (m1) are the Portuguese words for God's favour and pleading for mercy; Readable spells them out, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120100112",
+            "o380120100122",
+            "o380120100141",
+            "o380120100151",
+            "o380120100162"
+          ],
+          "choice": "quoted in John 19:37 and taken up in Revelation 1:7: John's \"ወደ ወጉት ይመለከታሉ\" (L) and \"የወጉትን\" (B, R) kept, with the Hebrew \"me\": \"ወደ እኔም፣ ወደ ወጉት፣ ይመለከታሉ\" (L), \"የወጉትን እኔን ይመለከታሉ / ያያሉ\" (B, R); \"mourn\" \"ያለቅሳሉ\", as Revelation 1:7",
+          "alternatives": [
+            "\"ወደ እርሱ\" (to him)"
+          ],
+          "reason": "John quotes the words without \"me\"; the Hebrew text has \"me\" (the meaning decision and its footnote), and then \"him\". Both are kept as the Hebrew has them, and the verb \"ወጋ\" (pierce) is the one John and Revelation use, so the quotation can be recognised.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120100091",
+            "o380120100102"
+          ],
+          "choice": "grace (ḥen) \"ጸጋ\" at every level; supplication \"ልመና\" (L), \"ምሕረትን መለመን\" (B, R); an only [son] \"አንድያ\", firstborn \"በኩር\"",
+          "alternatives": [],
+          "reason": "\"ጸጋ\" is the key term kept at every level, Readable included, though the English Readable says \"kindness\"; the spirit given is God's gift that moves the people to seek mercy (the meaning decision).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2445,6 +2648,11 @@
           "L": "Naquele dia o pranto em Jerusalém será grande, como o pranto de Hadade-Rimom na planície de Megido.",
           "B": "Naquele dia o pranto em Jerusalém será tão grande como o pranto em Hadade-Rimom, na planície de Megido.",
           "R": "Naquele dia o povo de Jerusalém vai chorar tão amargamente como o povo chorou em Hadade-Rimom, no vale de Megido."
+        },
+        "am": {
+          "L": "በዚያ ቀን በኢየሩሳሌም ያለው ልቅሶ በመጊዶ ሜዳ እንደ ነበረው እንደ ሃዳድሪሞን ልቅሶ ታላቅ ይሆናል።",
+          "B": "በዚያ ቀን በኢየሩሳሌም ያለው ልቅሶ በመጊዶ ሜዳ በሃዳድሪሞን እንደ ተደረገው ልቅሶ ታላቅ ይሆናል።",
+          "R": "በዚያ ጊዜ የኢየሩሳሌም ሕዝብ በመጊዶ ሸለቆ በሃዳድሪሞን ሰዎች እንዳለቀሱት አምርረው ያለቅሳሉ።"
         }
       },
       "decisions": [
@@ -2579,6 +2787,25 @@
           "reason": "The place (m1) is written as Portuguese writes its sounds, \"Hadade-Rimom\", with the vowel Portuguese adds and the final \"m\" of \"Rimom\"; \"Megido\" as 2 Chronicles 35:22 has it in Portuguese, where Readable takes \"vale\" from.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120110101"
+          ],
+          "choice": "Hadad-rimmon \"ሃዳድሪሞን\" (new; Hadad as 1 Kings 11:14, Rimmon as Numbers 33:19); Megiddo \"መጊዶ\", as 2 Kings 23:29; the plain (biqʿah) \"ሜዳ\" (L, B), \"ሸለቆ\" (R, the English \"valley\")",
+          "alternatives": [],
+          "reason": "The meaning decision takes this as the mourning for Josiah, killed at Megiddo; the town's name keeps the form used in Kings.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2659,6 +2886,11 @@
           "L": "E a terra pranteará, clã por clã, cada um à parte: o clã da casa de Davi à parte, e as suas mulheres à parte; o clã da casa de Natã à parte, e as suas mulheres à parte;",
           "B": "A terra inteira pranteará, cada clã separadamente: o clã da casa de Davi separadamente, e as suas mulheres separadamente; o clã da casa de Natã separadamente, e as suas mulheres separadamente;",
           "R": "Todas as pessoas da terra vão chorar, cada família sozinha. A família de Davi vai chorar sozinha, e as mulheres dela sozinhas. A família de Natã vai chorar sozinha, e as mulheres dela sozinhas."
+        },
+        "am": {
+          "L": "ምድሪቱም ታለቅሳለች፤ እያንዳንዱ ጎሳ ለብቻው፤ የዳዊት ቤት ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤ የናታን ቤት ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤",
+          "B": "ምድሪቱ ሁሉ ታለቅሳለች፤ እያንዳንዱ ጎሳ ለብቻው፤ የዳዊት ቤት ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤ የናታን ቤት ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤",
+          "R": "በምድሪቱ ያለ ሰው ሁሉ ያለቅሳል፤ እያንዳንዱ ጎሳ ለብቻው ያለቅሳል። የዳዊት ቤተሰብ ለብቻቸው፣ ሚስቶቻቸውም ለብቻቸው ያለቅሳሉ። የናታን ቤተሰብ ለብቻቸው፣ ሚስቶቻቸውም ለብቻቸው ያለቅሳሉ።"
         }
       },
       "decisions": [
@@ -2782,6 +3014,26 @@
           "reason": "The phrase is repeated at every level as the Hebrew repeats it (m1), as the English does (r-en-1). \"Natã\" is the usual Brazilian form of Nathan (m2), as 2 Samuel 5:14 has it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120120012",
+            "o380120120031"
+          ],
+          "choice": "mourn \"አለቀሰ\" through 12:10-14, as Matthew 24:30 and Revelation 1:7 (\"የምድር ነገዶች ሁሉ ያለቅሳሉ\"); clan (mishpaḥah) \"ጎሳ\"",
+          "alternatives": [],
+          "reason": "Matthew 24:30 and Revelation 1:7 take up this mourning of the tribes; the same verb keeps the link.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2854,6 +3106,11 @@
           "L": "o clã da casa de Levi à parte, e as suas mulheres à parte; o clã dos simeítas à parte, e as suas mulheres à parte;",
           "B": "o clã da casa de Levi separadamente, e as suas mulheres separadamente; o clã dos simeítas separadamente, e as suas mulheres separadamente;",
           "R": "A família de Levi vai chorar sozinha, e as mulheres dela sozinhas. A família de Simei vai chorar sozinha, e as mulheres dela sozinhas."
+        },
+        "am": {
+          "L": "የሌዊ ቤት ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤ የሰሜአውያን ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤",
+          "B": "የሌዊ ቤት ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤ የሰሜአውያን ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው፤",
+          "R": "የሌዊ ቤተሰብ ለብቻቸው፣ ሚስቶቻቸውም ለብቻቸው ያለቅሳሉ። የሰሜኢ ቤተሰብ ለብቻቸው፣ ሚስቶቻቸውም ለብቻቸው ያለቅሳሉ።"
         }
       },
       "decisions": [
@@ -2932,6 +3189,25 @@
           "reason": "The clan (m1) is \"os simeítas\", from \"Simei\", kept apart from \"os simeonitas\", the tribe of Simeon; Readable says \"a família de Simei\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380120130082"
+          ],
+          "choice": "the Shimeites \"ሰሜአውያን\" (L, B), as Numbers 3:21; Shimei \"ሰሜኢ\" (R), as Numbers 3:18",
+          "alternatives": [],
+          "reason": "The clan is the Levite family of Gershon's son Shimei, whose name keeps the form used in Numbers.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2998,6 +3274,11 @@
           "L": "todos os clãs que restarem, clã por clã, cada um à parte, e as suas mulheres à parte.",
           "B": "e todos os clãs que restarem, cada clã separadamente, e as suas mulheres separadamente.",
           "R": "Todas as outras famílias vão fazer o mesmo. Cada família vai chorar sozinha, e as mulheres de cada uma sozinhas."
+        },
+        "am": {
+          "L": "የቀሩትም ጎሳዎች ሁሉ፣ እያንዳንዱ ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው [ያለቅሳሉ]።",
+          "B": "የቀሩትም ጎሳዎች ሁሉ፣ እያንዳንዱ ጎሳ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው ያለቅሳሉ።",
+          "R": "ሌሎቹም ጎሳዎች ሁሉ እንዲሁ ያደርጋሉ። እያንዳንዱ ቤተሰብ ለብቻው፣ ሚስቶቻቸውም ለብቻቸው ያለቅሳሉ።"
         }
       },
       "decisions": [
