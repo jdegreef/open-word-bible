@@ -127,9 +127,13 @@ not change relationship between verses.
   where standard Hindi writes it (ज़मीन, फ़ैसला). Biblical names keep their
   established Bible spelling (below).
 - **Punctuation.** The full stop is the danda । (U+0964). The comma, `?`
-  and `!` are as in English. Quotation marks are “ ” outside and ‘ ’ for a
-  quotation inside a quotation. **A sentence still ends with its own mark
-  inside the closing quotation mark** (“...मेरे पीछे हो लो।”), so the verse
+  and `!` are as in English. Quotation marks are typed straight in the
+  records, `"` outside and `'` for a quotation inside a quotation, as in the
+  English, Portuguese and Korean records; the site shows them curly (“ ”,
+  ‘ ’). Curly marks typed in a record confuse the red letters
+  (`owb/markup.py` reads a sentence that begins inside a speech only from
+  straight marks or guillemets). **A sentence still ends with its own mark
+  inside the closing quotation mark** ("...मेरे पीछे हो लो।"), so the verse
   reads as a sentence on its own.
 - **Numbers.** Write figures in international (Arabic) digits (12, 5000),
   not Devanagari digits. Spell out short numbers in running text
