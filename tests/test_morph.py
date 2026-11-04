@@ -70,6 +70,15 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe("N-DSF", "am"), "ስም · ተቀባይ፣ ነጠላ፣ ሴት")
         # A verb with no voice (X) leaves no stray Ethiopic comma.
         self.assertFalse(morph.describe("V-PXI-3S", "am").split(" · ")[1].endswith("፣"))
+        self.assertEqual(morph.describe("V-2AAI-3S", "hi"),
+                         "क्रिया · द्वितीय एओरिस्ट (सामान्य भूत), निश्चयार्थ, कर्तृवाच्य · अन्य पुरुष, एकवचन")
+        self.assertEqual(morph.describe("N-DSF", "hi"), "संज्ञा · संप्रदान कारक, एकवचन, स्त्रीलिंग")
+        self.assertEqual(morph.describe("V-PXI-3S", "hi"), "क्रिया · वर्तमान, निश्चयार्थ · अन्य पुरुष, एकवचन")
+        self.assertEqual(morph.describe("V-2AAI-3S", "ru"),
+                         "Глагол · второй аорист, изъявительное наклонение, действительный залог"
+                         " · 3-е лицо, единственное число")
+        self.assertEqual(morph.describe("N-DSF", "ru"),
+                         "Существительное · дательный, единственное число, женский род")
 
     def test_every_hebrew_code_in_the_extracts_is_described(self):
         words = [w for path in (ROOT / "data" / "hbo").glob("*.json")
@@ -101,6 +110,11 @@ class MorphTest(unittest.TestCase):
                          "Verbo · Qal · narrativo pasado (wayyiqtol) · 3.ª persona masculino singular")
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "am"),
                          "ግስ · Qal · የኃላፊ ትረካ (ወይይቅጦል) · ሦስተኛ መደብ ወንድ ነጠላ")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "hi"),
+                         "क्रिया · Qal · भूतकाल का वर्णन (वय्यिक़्तोल) · अन्य पुरुष पुल्लिंग एकवचन")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "ru"),
+                         "Глагол · Qal · повествовательное прошедшее (ваййиктол)"
+                         " · 3-е лицо мужской род единственное число")
         # Aramaic stems share letters with Hebrew ones but not names.
         self.assertEqual(morph.describe_hebrew("Vai3ms", "en", "A"),
                          "Verb · Aphel · imperfect (yiqtol) · 3rd person masculine singular")

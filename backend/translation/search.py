@@ -39,7 +39,8 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 # The document kinds, by the names the API uses and the site's one-letter codes.
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
-CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese"}
+CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese",
+           "ru": "owb_russian"}
 SIMPLE = "owb_simple"
 MIN_QUERY = 2
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")

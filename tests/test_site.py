@@ -507,7 +507,10 @@ class SiteTest(unittest.TestCase):
             self.assertIn(f"gentium-book-plus-{script}-400-normal.woff2", files)
         self.assertIn("noto-serif-hebrew-hebrew-400-normal.woff2", files)
         self.assertIn("noto-serif-ethiopic-ethiopic-400-normal.woff2", files)
-        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt", "OFL-NotoEthiopic.txt"):
+        self.assertIn("noto-serif-devanagari-devanagari-400-normal.woff2", files)
+        self.assertIn("gentium-book-plus-cyrillic-400-normal.woff2", files)
+        for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt", "OFL-NotoEthiopic.txt",
+                        "OFL-NotoDevanagari.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
@@ -605,12 +608,16 @@ class SiteTest(unittest.TestCase):
             # A language shows only the verses translated into it: never
             # one in English (Vietnamese and Korean have John so far).
             self.assertEqual(len(verses), len(build_site.votd_refs(lang)))
-            self.assertTrue(all("l" not in v for v in verses), lang)
+            translated = any(lang in build_site.votd_record(v)["renderings"]
+                             for v in build_site.VERSES_OF_THE_DAY)
+            # A language with none of them yet shows them in English, marked.
+            self.assertTrue(all(("l" in v) != translated for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
-                # The verse ends a sentence, so it reads on its own (Amharic
+                # The verse ends a sentence, so it reads on its own (Hindi ends one
+                # with the danda ।, Amharic
                 # ends one with ።; a closing quotation mark may follow: ” ’,
                 # Amharic », or French » after a no-break space).
-                self.assertRegex(v["t"], r"[.?!።](?:[”’»]|\u00a0»)?$", vid)
+                self.assertRegex(v["t"], r"[.?!።।](?:[”’»]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))

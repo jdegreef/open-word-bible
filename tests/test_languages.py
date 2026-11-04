@@ -1,5 +1,5 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/), the footer's language
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/), the footer's language
 switch, and the message catalogs in i18n/."""
 import json
 import re
@@ -206,7 +206,12 @@ class LanguagesTest(unittest.TestCase):
     def test_a_chapter_page_carries_only_its_own_rendering_decisions(self):
         # Every language's renderings (the reader sets two side by side), but
         # only the meaning decisions and the page language's own wording ones.
-        for lang in build_site.LANGUAGES:
+        # The languages Matthew 1 is drafted in (a language added since may
+        # not have it yet).
+        first = json.loads((ROOT / "content" / "MAT" / "MAT.1.json").read_text(encoding="utf-8"))["records"][0]
+        drafted = [lang for lang in build_site.LANGUAGES if lang in first["renderings"]]
+        self.assertIn("am", drafted)
+        for lang in drafted:
             page = self.read(build_site.url(lang, "/mat/1/").strip("/") + "/index.html")
             data = page_data(page)
             decisions = [d for r in data["records"] for d in r["decisions"]]

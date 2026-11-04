@@ -89,6 +89,40 @@
 @font-face { font-family: "Noto Sans Ethiopic"; font-style: normal; font-weight: 700; font-display: swap;
   src: url(/fonts/noto-sans-ethiopic-ethiopic-700-normal.woff2) format("woff2"); unicode-range: U+030E,U+1200-1399,U+2D80-2DDE,U+AB01-AB2E,U+1E7E0-1E7E6,U+1E7E8-1E7EB,U+1E7ED-1E7EE,U+1E7F0-1E7FE; }
 
+/* Russian's Cyrillic letters in Gentium Book Plus, from
+   @fontsource/gentium-book-plus@5.2.7. Fraunces has none, so Cyrillic
+   headings fall back to Gentium; Hanken Grotesk has only the extended
+   letters, so the interface sets Russian in the system's sans. */
+@font-face { font-family: "Gentium Book Plus"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-400-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Gentium Book Plus"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-400-italic.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Gentium Book Plus"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-700-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Gentium Book Plus"; font-style: italic; font-weight: 700; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-700-italic.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: "Gentium Book Plus"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-ext-400-normal.woff2) format("woff2"); unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F; }
+@font-face { font-family: "Gentium Book Plus"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-ext-400-italic.woff2) format("woff2"); unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F; }
+@font-face { font-family: "Gentium Book Plus"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-ext-700-normal.woff2) format("woff2"); unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F; }
+@font-face { font-family: "Gentium Book Plus"; font-style: italic; font-weight: 700; font-display: swap;
+  src: url(/fonts/gentium-book-plus-cyrillic-ext-700-italic.woff2) format("woff2"); unicode-range: U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F; }
+
+/* Hindi's Devanagari script (देवनागरी): Noto Serif Devanagari beside Gentium
+   and Fraunces, Noto Sans Devanagari beside Hanken Grotesk. From
+   @fontsource/noto-serif-devanagari@5.3.0 and
+   @fontsource/noto-sans-devanagari@5.3.0. */
+@font-face { font-family: "Noto Serif Devanagari"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-serif-devanagari-devanagari-400-normal.woff2) format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+@font-face { font-family: "Noto Serif Devanagari"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-serif-devanagari-devanagari-700-normal.woff2) format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+@font-face { font-family: "Noto Sans Devanagari"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-sans-devanagari-devanagari-400-normal.woff2) format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+@font-face { font-family: "Noto Sans Devanagari"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-sans-devanagari-devanagari-700-normal.woff2) format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
+
 /* Atkinson Hyperlegible, the Readable typeface in the gear menu, made by the
    Braille Institute for low-vision readers. Generated from
    @fontsource/atkinson-hyperlegible@5.2.8. */
@@ -111,11 +145,11 @@
 
 :root {
   --header-h: 64px;
-  --display: "Fraunces", "Noto Serif Ethiopic", "Iowan Old Style", Georgia, serif;
-  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", Georgia, serif;
+  --display: "Fraunces", "Gentium Book Plus", "Noto Serif Ethiopic", "Noto Serif Devanagari", "Iowan Old Style", Georgia, serif;
+  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", "Noto Serif Devanagari", Georgia, serif;
   --greek: "Gentium Book Plus", "Gentium Plus", serif;
   --hebrew: "Noto Serif Hebrew", serif;
-  --sans: "Hanken Grotesk", "Noto Sans Ethiopic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: "Hanken Grotesk", "Noto Sans Ethiopic", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 12px;
   --radius-sm: 9px;
   --fast: 150ms;
