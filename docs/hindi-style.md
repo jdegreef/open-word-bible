@@ -331,6 +331,20 @@ Settled in Acts:
 - The brothers-and-sisters span: `{{gender:भाइयो और बहनो|भाइयो}}` in the
   vocative, `{{gender:भाई-बहनों|भाइयों}}` in the oblique.
 
+Settled in Romans:
+
+- धार्मिकता; धर्मी ठहराना; विश्वास; व्यवस्था for God's law, नियम for law as a
+  ruling principle (3:27; 7:21-8:2, B and R); व्यवस्था के काम; works काम,
+  never कर्म (which carries the idea of karma); अनुग्रह (grace) kept apart
+  from कृपा (kindness); अपराध (trespass); गर्व करना (boast); गिनना
+  (count).
+- Flesh (*sarx*) शरीर (L, B), शारीरिक स्वभाव (R) where the sense is moral;
+  the body (*sōma*) देह at L and B where flesh is in the context (Romans
+  6-8), शरीर elsewhere.
+- *mē genoito*: ऐसा कभी न हो! (L), कदापि नहीं! (B), बिलकुल नहीं! (R).
+- "Sons": `{{gender:की सन्तान|के पुत्र}}`, the postposition inside each
+  option.
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is
