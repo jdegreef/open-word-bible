@@ -1857,6 +1857,7 @@ def disputed_block(records, lang="en"):
 VARIANTS_ARTICLE = "when-manuscripts-disagree"
 
 
+@functools.lru_cache(maxsize=None)
 def article_link(slug, lang="en"):
     """{"url", "title", "lang"} of an article, in lang where it is translated
     and in English otherwise; None for one not written."""
