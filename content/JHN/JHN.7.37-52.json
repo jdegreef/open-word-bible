@@ -76,6 +76,11 @@
           "L": "በበዓሉም መጨረሻ ቀን፣ በታላቁ [ቀን]፣ ኢየሱስ ቆሞ እንዲህ እያለ ጮኸ፦ «ማንም ቢጠማ ወደ እኔ ይምጣ፤ ይጠጣም።",
           "B": "በበዓሉ የመጨረሻ ቀን፣ በታላቁ ቀን፣ ኢየሱስ ቆሞ ድምፁን ከፍ አድርጎ እንዲህ አለ፦ «የተጠማ ማንም ቢኖር ወደ እኔ መጥቶ ይጠጣ።",
           "R": "የበዓሉ የመጨረሻ ቀን ነበር፤ ከበዓሉ ቀኖች ሁሉ ዋነኛው ቀን ነበር። ኢየሱስ ቆሞ ለሕዝቡ በታላቅ ድምፅ እንዲህ አለ፦ «የተጠማ ሰው ቢኖር ወደ እኔ መጥቶ ይጠጣ።"
+        },
+        "ru": {
+          "L": "В последний же день, великий [день] праздника, Иисус стоял и воскликнул, говоря: «Если кто жаждет, пусть идёт ко {{deity_pronoun:мне|Мне}} и пьёт.",
+          "B": "В последний, великий день праздника Иисус встал и громко сказал: «Если кто-то испытывает жажду, пусть придёт ко {{deity_pronoun:мне|Мне}} и пьёт.",
+          "R": "Это был последний день праздника, самый важный. Иисус встал и громко обратился к людям: «Если кто-то хочет пить, пусть приходит ко {{deity_pronoun:мне|Мне}} и пьёт."
         }
       },
       "alignments": [
@@ -503,6 +508,28 @@
           "reason": "Amharic's generic third person (ማንም, ሰው, the masculine verb ending used of anyone) already includes women and men, so a gender span would have nothing to change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43007037019",
+            "n43007037021"
+          ],
+          "choice": "\"пусть идёт\" with no gender span; {{deity_pronoun:мне|Мне}} and the other pronouns for Jesus or God in this passage take the deity_pronoun setting",
+          "alternatives": [
+            "{{gender:пусть они идут|пусть он идёт}}"
+          ],
+          "reason": "The English needs a gender span for the pronoun that takes up \"anyone\"; the Russian command \"пусть идёт\" has no pronoun, so none is needed. Pronouns for Christ follow the deity_pronoun setting, as in English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -576,6 +603,11 @@
           "L": "በእኔ የሚያምን፣ መጽሐፍ እንዳለው፣ “ከሆዱ የሕያው ውኃ ወንዞች ይፈስሳሉ።”»",
           "B": "በእኔ የሚያምን ሰው፣ መጽሐፍ እንደሚለው፣ “ከውስጡ የሕያው ውኃ ወንዞች ይፈልቃሉ።”»",
           "R": "መጽሐፍ እንደሚለው፣ በእኔ ከሚያምን ሰው ውስጥ ሕይወት የሚሰጥ ውኃ እንደ ወንዝ ይፈስሳል።»"
+        },
+        "ru": {
+          "L": "Кто верит в {{deity_pronoun:меня|Меня}}, как сказало Писание: “Из его чрева потекут реки живой воды.”»",
+          "B": "О том, кто верит в {{deity_pronoun:меня|Меня}}, как раз и сказано в Писании: “Из глубины его существа польются реки живой воды.”»",
+          "R": "Как и говорит Писание, из глубины души того, кто верит в {{deity_pronoun:меня|Меня}}, потекут реки живой воды.»"
         }
       },
       "alignments": [
@@ -1007,6 +1039,47 @@
           "reason": "In Amharic ሆድ is used for the inner self (ሆደ ሰፊ), but 'from his belly' read aloud sounds bodily; Literal keeps it, Balanced says 'from within'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43007038013"
+          ],
+          "choice": "\"его\" with no setting",
+          "alternatives": [
+            "{{deity_pronoun:его|Его}}"
+          ],
+          "reason": "As in English, the pronoun is left plain, with no deity_pronoun setting, because a setting would decide whom it refers to, the believer or Christ. The text follows the reading of meaning decision m1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43007038012"
+          ],
+          "choice": "\"чрево\" (L); \"глубина его существа\" (B); \"глубина души\" (R)",
+          "alternatives": [
+            "\"утроба\""
+          ],
+          "reason": "The word means the inmost being of a person (meaning decision m2); Literal keeps the bodily word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1085,6 +1158,11 @@
           "L": "ይህንም የተናገረው በእርሱ ያመኑት ሊቀበሉት ስላለው መንፈስ ነው፤ ኢየሱስ ገና ስላልከበረ መንፈስ ገና [አልተሰጠም] ነበርና።",
           "B": "ይህን የተናገረው በእርሱ የሚያምኑ ሰዎች በኋላ ስለሚቀበሉት መንፈስ ነው። ኢየሱስ ገና ስላልከበረ መንፈስ ገና አልተሰጠም ነበር።",
           "R": "ኢየሱስ ይህን የተናገረው ስለ መንፈስ ነበር። በእርሱ ያመኑ ሰዎች መንፈስን በኋላ ይቀበላሉ። በዚያን ጊዜ ግን መንፈስ ገና አልተሰጠም ነበር፤ ምክንያቱም ኢየሱስ ገና አልከበረም ነበር። ይህም የሚሆነው በመስቀል ላይ በሚሞትበትና ወደ አብ በሚመለስበት ጊዜ ነው።"
+        },
+        "ru": {
+          "L": "Это же {{deity_pronoun:он|Он}} сказал о Духе, которого предстояло получить поверившим в {{deity_pronoun:него|Него}}; ведь Дух ещё не был [дан], потому что Иисус ещё не был прославлен.",
+          "B": "Он говорил о Духе, которого вскоре должны были получить те, кто поверил в {{deity_pronoun:него|Него}}. Дух ещё не был дан, потому что Иисус ещё не был прославлен.",
+          "R": "Иисус говорил о Духе. Люди, которые поверили в {{deity_pronoun:него|Него}}, должны были получить Духа позже. Тогда Дух ещё не был дан, потому что Иисус ещё не был прославлен. Это должно было произойти через {{deity_pronoun:его|Его}} смерть на кресте и {{deity_pronoun:его|Его}} возвращение к Отцу."
         }
       },
       "alignments": [
@@ -1418,6 +1496,49 @@
           "reason": "ማክበር is the book's word for glorify; its passive ከበረ says that Jesus enters his glory, while ተከበረ would sound like being shown respect by people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43007039016",
+            "n43007039017"
+          ],
+          "choice": "\"[дан]\" (L); \"дан\" (B, R)",
+          "alternatives": [
+            "\"ещё не было Духа\""
+          ],
+          "reason": "\"The Spirit was not yet\" would seem to deny that the Spirit existed, which John does not mean (meaning decision m2); every level supplies \"given\", Literal in brackets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43007039021"
+          ],
+          "choice": "\"прославлен\"",
+          "alternatives": [
+            "\"возвеличен\""
+          ],
+          "reason": "Glorify is a key term (style guide, section 6); Readable keeps it and says what it refers to (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1489,6 +1610,11 @@
           "L": "ስለዚህ ከሕዝቡ [አንዳንዶቹ] እነዚህን ቃላት ሰምተው፣ «ይህ በእውነት ነቢዩ ነው» ይሉ ነበር።",
           "B": "ከሕዝቡ መካከል እነዚህን ቃላት የሰሙ አንዳንዶች «ይህ ሰው በእውነት ነቢዩ ነው» ይሉ ነበር።",
           "R": "ከሕዝቡ መካከል አንዳንድ ሰዎች ኢየሱስ የተናገረውን ሰሙ። እንዲህም አሉ፦ «ይህ ሰው በእርግጥ እግዚአብሔር እንደሚልከው ተስፋ የሰጠው ነቢይ ነው!»"
+        },
+        "ru": {
+          "L": "Итак, [некоторые] из толпы, услышав эти слова, говорили: «Это поистине тот Пророк.»",
+          "B": "Некоторые в толпе, слышавшие эти слова, говорили: «Он действительно тот Пророк.»",
+          "R": "Некоторые люди в толпе услышали, что сказал Иисус. Они говорили: «Этот человек на самом деле — тот Пророк, которого Бог обещал послать!»"
         }
       },
       "alignments": [
@@ -1802,6 +1928,11 @@
           "L": "ሌሎቹ ደግሞ «ይህ {{christos:ክርስቶስ|መሲሕ}} ነው» ይሉ ነበር። አንዳንዶቹ ግን እንዲህ ይሉ ነበር፦ «{{christos:ክርስቶስ|መሲሕ}} ከገሊላ ይመጣልን?",
           "B": "ሌሎች «ይህ ሰው {{christos:ክርስቶስ|መሲሕ}} ነው» አሉ። አንዳንዶች ግን እንዲህ ብለው ተቃወሙ፦ «{{christos:ክርስቶስ|መሲሕ}} ከገሊላ ሊመጣ ይችላልን?",
           "R": "ሌሎች ሰዎች «እርሱ {{christos:ክርስቶስ|መሲሕ}} ነው!» አሉ። አንዳንዶቹ ግን እንዲህ አሉ፦ «{{christos:ክርስቶስ|መሲሕ}} ከገሊላ አይመጣም!"
+        },
+        "ru": {
+          "L": "Другие говорили: «Это {{christos:Христос|Мессия}}.» А некоторые говорили: «Разве из Галилеи {{christos:Христос|Мессия}} приходит?",
+          "B": "Другие говорили: «Этот человек — {{christos:Христос|Мессия}}.» Но некоторые возражали: «Неужели {{christos:Христос|Мессия}} придёт из Галилеи?",
+          "R": "Другие говорили: «Он — {{christos:Христос|Мессия}}!» Но некоторые говорили: «{{christos:Христос|Мессия}} не должен прийти из Галилеи!"
         }
       },
       "alignments": [
@@ -2129,6 +2260,28 @@
           "reason": "The speakers honour the Messiah they are waiting for but not the man in front of them; Korean must choose, and the contrast keeps John's irony. The christos span stands alone, since Korean has no article.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43007041006",
+            "n43007041016"
+          ],
+          "choice": "{{christos:Христос|Мессия}}, also in verse 42",
+          "alternatives": [
+            "\"Христос\" with no setting"
+          ],
+          "reason": "The title takes the christos setting, as in English; Russian has no article, so the bare title reads as \"the Christ\" in either option.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2206,6 +2359,11 @@
           "L": "ከዳዊት ዘርና ዳዊት ከነበረባት መንደር ከቤተ ልሔም {{christos:ክርስቶስ|መሲሕ}} እንደሚመጣ መጽሐፍ አልተናገረምን?»",
           "B": "{{christos:ክርስቶስ|መሲሕ}} ከዳዊት የዘር ሐረግ፣ ዳዊትም ከኖረባት መንደር ከቤተ ልሔም እንደሚመጣ መጽሐፍ ይናገራል፤ አይደለምን?»",
           "R": "መጽሐፍ {{christos:ክርስቶስ|መሲሕ}} ከንጉሥ ዳዊት ቤተሰብ እንደሚመጣ ይናገራል። ደግሞም ዳዊት ከኖረባት ከተማ ከቤተ ልሔም እንደሚመጣ ይናገራል።»"
+        },
+        "ru": {
+          "L": "Разве не сказало Писание, что из семени Давида и из Вифлеема, селения, где был Давид, приходит {{christos:Христос|Мессия}}?»",
+          "B": "Писание ведь говорит, что {{christos:Христос|Мессия}} происходит из рода Давида и из Вифлеема, родного селения Давида, не так ли?»",
+          "R": "Писание говорит, что {{christos:Христос|Мессия}} придёт из семьи царя Давида. Оно говорит, что {{deity_pronoun:он|Он}} придёт из Вифлеема — городка, где жил Давид.»"
         }
       },
       "alignments": [
@@ -2532,6 +2690,11 @@
           "L": "ስለዚህ በእርሱ ምክንያት በሕዝቡ መካከል መለያየት ሆነ።",
           "B": "ስለዚህ ሕዝቡ በእርሱ ምክንያት ተከፋፈለ።",
           "R": "ስለዚህ በሕዝቡ መካከል የነበሩ ሰዎች በኢየሱስ ምክንያት በቡድን ተከፋፈሉ። ስለ እርሱ ሊስማሙ አልቻሉም።"
+        },
+        "ru": {
+          "L": "Итак, произошло в толпе разделение из-за {{deity_pronoun:него|Него}}.",
+          "B": "Так толпа разделилась из-за {{deity_pronoun:него|Него}}.",
+          "R": "Так люди в толпе разделились на группы из-за Иисуса. Они не могли договориться о {{deity_pronoun:нём|Нём}}."
         }
       },
       "alignments": [
@@ -2702,6 +2865,11 @@
           "L": "ከእነርሱም አንዳንዶቹ ሊይዙት ፈለጉ፤ ነገር ግን ማንም እጆቹን አልጫነበትም።",
           "B": "ከእነርሱ አንዳንዶቹ ሊይዙት ፈለጉ፤ ሆኖም ማንም እጁን አላሳረፈበትም።",
           "R": "ከእነርሱ አንዳንዶቹ ሊያስሩት ፈለጉ፤ ነገር ግን ማንም አልያዘውም።"
+        },
+        "ru": {
+          "L": "Некоторые же из них хотели {{deity_pronoun:его|Его}} схватить, но никто не наложил на {{deity_pronoun:него|Него}} рук.",
+          "B": "Некоторые из них хотели взять {{deity_pronoun:его|Его}} под стражу, но никто {{deity_pronoun:его|Его}} не тронул.",
+          "R": "Некоторые из них хотели арестовать {{deity_pronoun:его|Его}}, но никто {{deity_pronoun:его|Его}} не схватил."
         }
       },
       "alignments": [
@@ -2969,6 +3137,11 @@
           "L": "ስለዚህ አገልጋዮቹ ወደ ካህናት አለቆችና ወደ ፈሪሳውያን መጡ፤ እነዚያም «ለምን አላመጣችሁትም?» አሏቸው።",
           "B": "ስለዚህ የቤተ መቅደስ ጠባቂዎቹ ወደ ካህናት አለቆችና ወደ ፈሪሳውያን ተመለሱ፤ እነርሱም «ለምን አላመጣችሁትም?» ብለው ጠየቋቸው።",
           "R": "ስለዚህ የቤተ መቅደስ ጠባቂዎቹ ወደ ካህናት አለቆችና ወደ ፈሪሳውያን ተመለሱ። መሪዎቹም «ለምን ይዛችሁት አልመጣችሁም?» ብለው ጠየቋቸው።"
+        },
+        "ru": {
+          "L": "Итак, служители пришли к старшим священникам и фарисеям, и те сказали им: «Почему вы не привели {{deity_pronoun:его|Его}}?»",
+          "B": "Тогда храмовая стража вернулась к старшим священникам и фарисеям, и те спросили их: «Почему вы {{deity_pronoun:его|Его}} не привели?»",
+          "R": "Храмовые стражники вернулись к старшим священникам и фарисеям. Те спросили их: «Почему вы не привели {{deity_pronoun:его|Его}} сюда?»"
         }
       },
       "alignments": [
@@ -3328,6 +3501,28 @@
           "reason": "The council's temple police, as at 7:32; Literal keeps the general word for men in service.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43007045004",
+            "n43007045007"
+          ],
+          "choice": "\"служители\" (L); \"храмовая стража\" (B, R); \"старшие священники\" at every level",
+          "alternatives": [
+            "\"первосвященники\""
+          ],
+          "reason": "The officers are the temple police (meaning decision m1); \"старшие священники\" keeps the leading priests apart from the one high priest (style guide, section 6).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3392,6 +3587,11 @@
           "L": "አገልጋዮቹም «ሰው ከቶ እንደዚህ አልተናገረም» ብለው መለሱ።",
           "B": "ጠባቂዎቹም «እንደዚህ የተናገረ ማንም ሰው የለም!» ብለው መለሱ።",
           "R": "ጠባቂዎቹም «እርሱ እንደሚናገረው የሚናገር ሰው ከዚህ በፊት ሰምተን አናውቅም!» ብለው መለሱ።"
+        },
+        "ru": {
+          "L": "Служители ответили: «Никогда ещё человек так не говорил.»",
+          "B": "Стражники ответили: «Никто никогда так не говорил!»",
+          "R": "Стражники ответили: «Мы никогда не слышали, чтобы кто-нибудь говорил так, как {{deity_pronoun:он|Он}}!»"
         }
       },
       "alignments": [
@@ -3630,6 +3830,25 @@
           "reason": "ሰው means a human being of either sex, so it already says what the English setting offers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43007046007"
+          ],
+          "choice": "\"человек\" with no gender span",
+          "alternatives": [
+            "{{gender:человек|муж}}"
+          ],
+          "reason": "The English Literal has a gender span; Russian \"человек\" already means any human being (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3696,6 +3915,11 @@
           "L": "ስለዚህ ፈሪሳውያን እንዲህ ብለው መለሱላቸው፦ «እናንተም ደግሞ ተታለላችሁን?",
           "B": "ፈሪሳውያኑም እንዲህ አሉ፦ «እናንተም ደግሞ ተታለላችሁ ማለት ነው?",
           "R": "ፈሪሳውያኑም እንዲህ አሉ፦ «እርሱ እናንተንም ጭምር አታለላችሁ እንዴ!"
+        },
+        "ru": {
+          "L": "Итак, фарисеи ответили им: «Неужели и вы обмануты?",
+          "B": "Фарисеи возразили: «Неужели и вы попались на обман?",
+          "R": "Фарисеи ответили: «Только не говорите, что {{deity_pronoun:он|Он}} обманул и вас!"
         }
       },
       "alignments": [
@@ -3914,6 +4138,11 @@
           "L": "ከአለቆች ማንም በእርሱ አምኗልን? ወይስ ከፈሪሳውያን [ማንም]?",
           "B": "ከአለቆች መካከል በእርሱ ያመነ አንድ ሰው እንኳ አለን? ከፈሪሳውያንስ አንድ እንኳ አለን?",
           "R": "ከመሪዎቻችን በእርሱ ያመነ ማንም የለም። ከፈሪሳውያንም ያመነ የለም!"
+        },
+        "ru": {
+          "L": "Разве кто-нибудь из начальников поверил в {{deity_pronoun:него|Него}}, или из фарисеев?",
+          "B": "Разве хоть один из правителей поверил в {{deity_pronoun:него|Него}}? Или хоть один фарисей?",
+          "R": "Никто из наших вождей не поверил в {{deity_pronoun:него|Него}}. И никто из фарисеев тоже!"
         }
       },
       "alignments": [
@@ -4166,6 +4395,11 @@
           "L": "ነገር ግን ሕግን የማያውቀው ይህ ሕዝብ የተረገሙ ናቸው።»",
           "B": "ሕግን የማያውቀው ይህ ሕዝብ ግን የተረገመ ነው።»",
           "R": "ይህ ሕዝብ ግን ስለ ሙሴ ሕግ ምንም አያውቅም። በእግዚአብሔር እርግማን ሥር ናቸው!»"
+        },
+        "ru": {
+          "L": "А эта толпа, которая не знает Закона, — прокляты.»",
+          "B": "А эта толпа, не знающая Закона, — они под проклятием.»",
+          "R": "А эта толпа ничего не знает о Законе Моисея. Они прокляты Богом!»"
         }
       },
       "alignments": [
@@ -4466,6 +4700,11 @@
           "L": "ቀደም ብሎ ወደ እርሱ የመጣው፣ ከእነርሱም አንዱ የሆነው ኒቆዲሞስ እንዲህ ይላቸዋል፦",
           "B": "ከዚያም ከእነርሱ አንዱ የሆነውና ቀደም ሲል ወደ ኢየሱስ መጥቶ የነበረው ኒቆዲሞስ እንዲህ አላቸው፦",
           "R": "ኒቆዲሞስ ከእነዚያ ፈሪሳውያን አንዱ ነበር። እርሱ ከጥቂት ጊዜ በፊት ኢየሱስን ለማየት የመጣው ሰው ነበር። አሁን ተነሥቶ እንዲህ አላቸው፦"
+        },
+        "ru": {
+          "L": "Говорит им Никодим — тот, кто приходил к {{deity_pronoun:нему|Нему}} раньше, — один из них:",
+          "B": "Тогда Никодим, сам один из них, тот самый, что прежде приходил к Иисусу, сказал им:",
+          "R": "Никодим был одним из этих фарисеев. Это он когда-то приходил к Иисусу. Теперь он заговорил и сказал им:"
         }
       },
       "alignments": [
@@ -4689,6 +4928,27 @@
           "reason": "John tells past events in the present; Literal keeps his historic present, Balanced and Readable use the past, as the book's terms note sets. This holds for the rest of the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43007050001"
+          ],
+          "choice": "\"Говорит\" (L); \"сказал\" (B, R)",
+          "alternatives": [
+            "the present at every level"
+          ],
+          "reason": "Literal keeps John's historic present; Balanced and Readable use the past, as Russian stories normally do (the book's terms).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4763,6 +5023,11 @@
           "L": "«ሕጋችን አስቀድሞ ከእርሱ ሳይሰማና የሚያደርገውን ሳያውቅ ሰውን ይፈርድበታልን?»",
           "B": "«ሕጋችን አንድን ሰው አስቀድሞ ሳይሰማውና ያደረገውን ሳያጣራ ይፈርድበታልን?»",
           "R": "«ሕጋችን በመጀመሪያ ሰውን እንድንሰማውና ያደረገውን እንድናጣራ ያዛል። ከዚያ በኋላ ብቻ ልንፈርድበት እንችላለን። እንዲህ አይደለም?»"
+        },
+        "ru": {
+          "L": "«Неужели наш Закон осуждает человека, не выслушав его сперва и не узнав, что он делает?»",
+          "B": "«Разве наш Закон выносит приговор кому-либо, прежде чем выслушает его и выяснит, что он сделал?»",
+          "R": "«Наш Закон говорит, что сначала мы должны выслушать человека и узнать, что он сделал. Только потом можно его судить. Разве не так?»"
         }
       },
       "alignments": [
@@ -5137,6 +5402,28 @@
           "reason": "Amharic's generic third person (ማንም, ሰው, the masculine verb ending used of anyone) already includes women and men, so a gender span would have nothing to change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43007051007",
+            "n43007051013"
+          ],
+          "choice": "\"человека\", \"кому-либо\", \"его\", \"он\" with no gender span",
+          "alternatives": [
+            "{{gender:человека|мужа}}"
+          ],
+          "reason": "The English has gender spans for the person accused, man or woman (meaning decision m3). Russian \"человек\" and \"кто-либо\" are already inclusive, and the pronouns that refer back to them need no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5205,6 +5492,11 @@
           "L": "እነርሱም መልሰው እንዲህ አሉት፦ «አንተም ደግሞ ከገሊላ ነህን?",
           "B": "እነርሱም እንዲህ ብለው መለሱለት፦ «አንተም ገሊላዊ ነህን?",
           "R": "እነርሱም እንዲህ ብለው መለሱለት፦ «አንተም እንደ እርሱ ከገሊላ ነህ?"
+        },
+        "ru": {
+          "L": "Они ответили и сказали ему: «Неужели и ты из Галилеи?",
+          "B": "Они ответили ему: «Ты что, тоже галилеянин?",
+          "R": "Они ответили ему: «Ты что, тоже из Галилеи, как {{deity_pronoun:он|Он}}?"
         }
       },
       "alignments": [
@@ -5439,6 +5731,11 @@
           "L": "መርምር፤ ከገሊላ ነቢይ እንደማይነሣም እይ።»",
           "B": "መጻሕፍትን መርምርና ከገሊላ ምንም ነቢይ እንደማይነሣ ራስህ እይ።»",
           "R": "መጻሕፍትን ብትመለከት ከገሊላ ነቢይ እንደማይመጣ ታያለህ።»"
+        },
+        "ru": {
+          "L": "Исследуй и увидишь, что из Галилеи пророк не восстаёт.»",
+          "B": "Исследуй Писания и сам увидишь: из Галилеи пророк не приходит.»",
+          "R": "Загляни в Писания, и ты увидишь, что ни один пророк не приходит из Галилеи.»"
         }
       },
       "alignments": [
