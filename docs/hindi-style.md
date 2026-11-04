@@ -122,9 +122,9 @@ not change relationship between verses.
 
 - **Script.** Hindi is written in Devanagari only, with no Latin letters
   and no Greek. Use standard modern Hindi spelling (Central Hindi
-  Directorate): anusvara or the nasal consonant as current usage has it
-  (हिन्दी / हिंदी: pick one per book and keep it), and the nukta in loanwords
-  where standard Hindi writes it (ज़मीन, फ़ैसला). Biblical names keep their
+  Directorate): the anusvara for a nasal before a consonant, with the fixed
+  exceptions in section 7b, and the nukta in loanwords where standard Hindi
+  writes it (ज़मीन, फ़ैसला). Biblical names keep their
   established Bible spelling (below).
 - **Punctuation.** The full stop is the danda । (U+0964). The comma, `?`
   and `!` are as in English. Quotation marks are typed straight in the
@@ -246,6 +246,41 @@ Settings change wording, never meaning, exactly as in English.
   describes: mark each break inside a verse with `\q `, following the
   Hebrew accents' division (`python3 scripts/poetry_lines.py` prints it),
   at every level.
+
+## 7b. Conventions settled in Matthew
+
+Matthew was drafted first, in parallel passages; these choices came out of
+harmonising it and hold for the later books. In the Synoptic parallels, keep
+the wording of the Matthew passage where the Greek is the same, and differ
+where the Greek differs.
+
+- **Spelling.** Anusvara, not the nasal consonant (संतुलित, अंत, तुरंत,
+  आरंभ), except the fixed forms शान्ति, अनन्त, मन्दिर, सन्तान, दृष्टान्त and
+  names (अन्द्रियास). Chandrabindu where it is pronounced (अँधेरा).
+- **Honorifics.** The narrator uses honorific forms for Jesus and God. When
+  Jesus speaks of himself in the third person (मनुष्य का पुत्र, "the Son",
+  the Messiah), the title takes plain singular forms (आएगा, उसका). The Father
+  speaking of the Son says यह, इससे (3:17; 17:5). Opponents, the crowd and
+  the soldiers speak of Jesus plainly (इसने, उसे); to him they say आप,
+  mockers included. Herod, John and the prophets are plain.
+- **Words.** Reward (*misthos*) is प्रतिफल; parable is दृष्टान्त at every
+  level; wilderness is निर्जन प्रदेश (L, B), सुनसान इलाक़ा (R), not जंगल
+  (forest); the Sea of Galilee is समुद्र (L), झील (B, R); centurion
+  सूबेदार; magi ज्योतिषी; governor राज्यपाल; the council महासभा; covenant
+  वाचा; leaven ख़मीर; vineyard दाख की बारी (L, B), अंगूर का बाग़ (R);
+  Hades अधोलोक (L, B), मृत्यु का लोक (R); *doulos* दास at every level,
+  सेवक for *diakonos*. *ethnos* in Balanced and Readable is देश or लोग, not
+  जाति, which also means caste.
+- **Coins.** The talent is `{{units:चाँदी के पाँच थैले|पाँच तालन्त}}` where
+  the English has bags of silver, and a sum in wages where the English has
+  one (18:24); Literal keeps तालन्त. The denarius is दीनार; the thirty
+  pieces of silver चाँदी के तीस टुकड़े (L), सिक्के (B, R).
+- **Gender.** Spans for "sons" meaning children of God or of the kingdom
+  (`{{gender:सन्तान|पुत्र}}`) and for *anēr* meaning a person
+  (`{{gender:व्यक्ति|आदमी}}`), besides *adelphos* (proposed).
+- **Fixed sayings** match through the book: "Truly I tell you" is मैं तुमसे
+  सच कहता हूँ at every level, with no आमीन; the weeping and gnashing of
+  teeth, the fulfilment formula and "whoever has ears" each have one form.
 
 ## 8. Status
 
