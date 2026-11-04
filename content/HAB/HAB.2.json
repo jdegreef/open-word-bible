@@ -70,6 +70,11 @@
           "L": "Na minha guarita ficarei de pé, \\q e me posicionarei sobre [a] muralha; \\q e vigiarei para ver o que {{deity_pronoun:ele|Ele}} falará comigo \\q e o que responderei quanto à minha queixa.",
           "B": "Ficarei no meu posto de vigia \\q e tomarei o meu lugar sobre a muralha. \\q Vigiarei para saber o que {{deity_pronoun:ele|Ele}} me dirá \\q e como devo responder quanto à minha queixa.",
           "R": "Vou ficar de guarda no meu posto \\q e esperar em cima da muralha da cidade. \\q Vou vigiar para ver o que {{divine_name:o SENHOR|Javé}} vai me dizer \\q e o que devo dizer sobre a minha queixa."
+        },
+        "am": {
+          "L": "በመጠበቂያ ስፍራዬ እቆማለሁ፤ \\q በቅጥሩም ላይ ራሴን አቆማለሁ፤ \\q ከእኔ ጋር ምን እንደሚናገር ለማየት እጠባበቃለሁ፤ \\q ስለ ክርክሬም ምን እንደምመልስ።",
+          "B": "በመጠበቂያ ስፍራዬ እቆማለሁ፤ \\q በቅጥሩም ላይ ቦታዬን እይዛለሁ። \\q ምን እንደሚለኝ፣ \\q ስለ ክርክሬም ምን መመለስ እንዳለብኝ ለማወቅ እጠባበቃለሁ።",
+          "R": "በመጠበቂያዬ ላይ ዘብ እቆማለሁ፤ \\q በከተማዪቱም ቅጥር ላይ እጠብቃለሁ። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ምን እንደሚለኝ፣ \\q ስለ ክርክሬም ምን ማለት እንዳለብኝ ለማየት እጠባበቃለሁ።"
         }
       },
       "decisions": [
@@ -218,6 +223,48 @@
           "reason": "Habakkuk is no longer speaking to God but telling what he will do, so the narrative \"tôi\" is used, as the terms note gives for the prophet's own voice; he says \"con\" when he speaks to God (1:2-17).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350020010101",
+            "o350020010111",
+            "o350020010112"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God has nothing to change; the English spans on the pronouns for God in this chapter have no Amharic counterpart, and pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o350020010072",
+            "o350020010082",
+            "o350020010101",
+            "o350020010131"
+          ],
+          "choice": "\"to see\" moves to the last line: \"… ምን እንደሚለኝ፣ / ስለ ክርክሬም … ለማወቅ እጠባበቃለሁ\" (B, R)",
+          "alternatives": [],
+          "reason": "Amharic puts the verb at the end, so Balanced and Readable gather both questions under one \"I will watch to learn\" in the last line; Literal keeps the Hebrew order, with the second question added after the verb.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -288,6 +335,11 @@
           "L": "E {{divine_name:o SENHOR|Javé}} me respondeu e disse: \\q Escreve [a] visão e deixa[-a] clara nas tábuas, \\q para que corra quem a lê.",
           "B": "Então {{divine_name:o SENHOR|Javé}} me respondeu: \\q Põe a visão por escrito; deixa-a bem clara em tábuas, \\q para que quem a ler possa correr.",
           "R": "Então {{divine_name:o SENHOR|Javé}} me respondeu: \\q Põe a visão por escrito. Escreve tudo de forma clara em tábuas, \\q para que quem a ler possa correr para levar a mensagem."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም መለሰልኝ፤ እንዲህም አለ፦ \\q ራእዩን ጻፍ፤ በጽላቶቹም ላይ ግልጽ አድርገው፤ \\q የሚያነበው ይሮጥ ዘንድ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}}ም እንዲህ ብሎ መለሰልኝ፦ \\q ራእዩን ጻፈው፤ በጽላት ላይ ግልጽ አድርገው፤ \\q የሚያነበው ሁሉ መሮጥ እንዲችል።",
+          "R": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ብሎ መለሰልኝ፦ \\q ራእዩን ጻፈው። በጽላት ላይ ግልጽ አድርገህ ጻፈው፤ \\q የሚያነበው ሁሉ መልእክቱን ይዞ እንዲሮጥ።"
         }
       },
       "decisions": [
@@ -474,6 +526,26 @@
           "reason": "The LORD speaks to the prophet alone, so every level says \"tu\" (\"Escreve\", \"deixa\"), as God speaks to one person in the Old Testament. As in the English, his answer follows a colon without quotation marks, as the prophets' \"Assim diz o SENHOR\" does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020020032",
+            "o350020020041"
+          ],
+          "choice": "God's words after \"እንዲህ አለ፦\" with no guillemets",
+          "alternatives": [],
+          "reason": "The English sets God's answer (2:2–20) as the body of the book with no quotation marks, so the Amharic introduces it with \"፦\" and no « », as Job's speeches are set; the quotation structure stays that of the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -548,6 +620,11 @@
           "L": "Pois ainda [há] visão para o tempo marcado; \\q ela anseia pelo fim e não mentirá. \\q Se ela se demorar, aguarda-a, \\q pois vir, virá; não tardará.",
           "B": "Pois a visão ainda espera o seu tempo marcado; \\q ela corre para o fim e não se mostrará falsa. \\q Ainda que pareça demorar, espera por ela; \\q ela virá sem falta e não tardará.",
           "R": "A visão é para um tempo que Deus marcou. \\q Ela está correndo para o fim, e não vai falhar. \\q Se parecer que está demorando, espera. \\q Ela vai chegar com certeza. Não vai se atrasar."
+        },
+        "am": {
+          "L": "ራእዩ ገና ለቀጠሮው ጊዜ ነውና፤ \\q ወደ መጨረሻው ይገሠግሣል፤ ሐሰትም አይሆንም። \\q ቢቆይም ተጠባበቀው፤ \\q በእርግጥ ይመጣልና፤ አይዘገይም።",
+          "B": "ራእዩ ገና የቀጠሮውን ጊዜ ይጠብቃልና፤ \\q ወደ ፍጻሜው ይፋጠናል፤ ሐሰት ሆኖም አይገኝም። \\q ቢቆይ እንኳ ጠብቀው፤ \\q ያለ ጥርጥር ይመጣል፤ አይዘገይም።",
+          "R": "ራእዩ እግዚአብሔር ለወሰነው ጊዜ ነው። \\q ወደ ፍጻሜው እየተጣደፈ ነው፤ ሳይፈጸምም አይቀርም። \\q የዘገየ ቢመስልም ጠብቀው። \\q በእርግጥ ይመጣል። አይዘገይም።"
         }
       },
       "decisions": [
@@ -632,6 +709,30 @@
           "reason": "Hebrews 10:37 echoes this line from the Greek translation, which reads it of a person, \"aquele que vem virá e não tardará\" (m2). Habakkuk follows the Hebrew, where \"it\" is the vision, and keeps the words the two share, \"virá\" and \"não tardará\" (L, B). Literal shows the doubled verb with \"vir, virá\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020030141",
+            "o350020030151",
+            "o350020030161",
+            "o350020030171"
+          ],
+          "choice": "\"ይመጣል … አይዘገይም\" with the vision as subject",
+          "alternatives": [
+            "\"የሚመጣው ይመጣል\" (the coming one will come, Hebrews 10:37)"
+          ],
+          "reason": "Hebrews 10:37 quotes this line in its Greek form, where a person is coming (\"የሚመጣው ይመጣል፤ አይዘገይምም\"). The Hebrew speaks of the vision, so the Amharic follows the Hebrew and keeps only the verbs of Hebrews' Amharic, \"ይመጣል\" and \"አይዘገይም\". The Hebrew uses two verbs for delay; \"ቢቆይ\" (if it lingers) is kept apart from \"አይዘገይም\" (it will not be late). Readable names God as setting the time, as the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -698,6 +799,11 @@
           "L": "Eis que [está] inchado; a sua alma não é reta dentro dele; \\q mas o justo pela sua fidelidade viverá.",
           "B": "Olha o orgulhoso: os seus desejos não são retos dentro dele; \\q mas o justo viverá pela sua fidelidade.",
           "R": "Olha para o inimigo orgulhoso. O coração dele não é correto. \\q Mas a pessoa que é justa viverá por ser fiel."
+        },
+        "am": {
+          "L": "እነሆ፣ ተኩራርቷል፤ በውስጡ ያለችው ነፍሱ ቀጥተኛ አይደለችም፤ \\q ጻድቅ ግን በታማኝነቱ በሕይወት ይኖራል።",
+          "B": "ትዕቢተኛውን ተመልከት፤ ምኞቱ በውስጡ ቀጥተኛ አይደለም፤ \\q ጻድቅ ግን በታማኝነቱ በሕይወት ይኖራል።",
+          "R": "ትዕቢተኛውን ጠላት ተመልከት። ልቡ ቅን አይደለም። \\q ጻድቅ የሆነ ሰው ግን ታማኝ በመሆኑ በሕይወት ይኖራል።"
         }
       },
       "decisions": [
@@ -1042,6 +1148,52 @@
           "reason": "The English needs a setting to choose between \"their\" and \"his\". Portuguese \"sua\" agrees with \"fidelidade\" and does not say whose, so it already reads of anyone righteous, and there is no second wording to offer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020040072",
+            "o350020040081",
+            "o350020040082",
+            "o350020040083",
+            "o350020040091"
+          ],
+          "choice": "\"ጻድቅ ግን በታማኝነቱ በሕይወት ይኖራል\" (L, B); \"ጻድቅ የሆነ ሰው ግን ታማኝ በመሆኑ በሕይወት ይኖራል\" (R)",
+          "alternatives": [
+            "\"በእምነቱ\" (by his faith)",
+            "\"በእምነት\" (by faith, Romans 1:17; Galatians 3:11)"
+          ],
+          "reason": "Romans 1:17, Galatians 3:11 and Hebrews 10:38 quote this line from the Greek (m3), and their Amharic reads \"ጻድቅ … በእምነት በሕይወት ይኖራል\" (Hebrews \"ጻድቄ\", my righteous one). The Amharic keeps their \"ጻድቅ\" and \"በሕይወት ይኖራል\", and Readable their \"ጻድቅ የሆነ ሰው\", but follows the Hebrew \"his faithfulness\" (m2, as the English r-en-1): \"ታማኝነት\" is the Amharic for *ʾemunah*, steady loyalty to God, and \"-ቱ\" is \"his\". \"እምነት\" (faith, belief) is the word of the Greek quotations and is not used here.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350020040083"
+          ],
+          "choice": "\"በታማኝነቱ\" with no gender span",
+          "alternatives": [
+            "\"በታማኝነቱ ወይም በታማኝነቷ\""
+          ],
+          "reason": "The English offers \"their\" or \"his\". The Amharic generic \"ጻድቅ\" with the masculine suffix already covers any righteous person, man or woman, so the setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1132,6 +1284,11 @@
           "L": "E, além disso, o vinho é traiçoeiro; \\q o homem arrogante não ficará em repouso, \\q ele, que alarga a sua garganta como o Sheol, e [é] como a morte e não se sacia; \\q ele ajunta para si todas as nações \\q e reúne para si todos os povos.",
           "B": "Além disso, o vinho trai o homem arrogante; \\q ele nunca descansa. \\q Abre a garganta tanto quanto o mundo dos mortos; como a morte, nunca se satisfaz. \\q Ajunta para si todas as nações \\q e reúne todos os povos como seus.",
           "R": "O vinho engana o homem orgulhoso, \\q e ele nunca descansa. \\q O seu apetite é tão grande quanto o mundo dos mortos. Como a morte, ele sempre quer mais. \\q Ele junta todas as nações para si \\q e toma todos os povos como seus."
+        },
+        "am": {
+          "L": "ደግሞም የወይን ጠጅ ከዳተኛ ነው፤ \\q ትዕቢተኛ ሰው አያርፍም፤ \\q ጉሮሮውን እንደ ሲኦል የሚያሰፋ፤ እርሱም እንደ ሞት [ነው]፤ አይጠግብምም፤ \\q ሕዝቦችን ሁሉ ለራሱ ይሰበስባል፤ \\q ወገኖችንም ሁሉ ለራሱ ያከማቻል።",
+          "B": "ደግሞም የወይን ጠጅ ትዕቢተኛውን ሰው ይከዳዋል፤ \\q እርሱ ከቶ አያርፍም። \\q ጉሮሮውን እንደ ሙታን ዓለም ይከፍታል፤ እንደ ሞትም ከቶ አይጠግብም። \\q ሕዝቦችን ሁሉ ለራሱ ይሰበስባል፤ \\q ወገኖችንም ሁሉ የራሱ አድርጎ ያከማቻል።",
+          "R": "የወይን ጠጅ ትዕቢተኛውን ሰው ያታልለዋል፤ \\q እርሱም ከቶ አያርፍም። \\q ምኞቱ እንደ መቃብር ሰፊ ነው፤ እንደ ሞትም ሁልጊዜ ተጨማሪ ይፈልጋል። \\q ሕዝቦችን ሁሉ ለራሱ ይሰበስባል፤ \\q ወገኖችንም ሁሉ የራሱ ያደርጋል።"
         }
       },
       "decisions": [
@@ -1292,6 +1449,30 @@
           "reason": "For the whole book, as the Old Testament terms and Isaiah 5:14 set it: \"o Sheol\" at Literal and \"o mundo dos mortos\" at Balanced and Readable, where the English Readable says \"the grave\" (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020050111",
+            "o350020050112",
+            "o350020050202",
+            "o350020050242"
+          ],
+          "choice": "Sheol \"ሲኦል\" (L), \"ሙታን ዓለም\" (B), \"መቃብር\" (R); the nations … the peoples \"ሕዝቦች … ወገኖች\"",
+          "alternatives": [
+            "\"ሲኦል\" at every level"
+          ],
+          "reason": "Sheol follows the terms list (\"ሲኦል\" at Literal; the world of the dead at Balanced, since \"ሲኦል\" now reads as hell), and Readable says \"the grave\", as the English Readable. Where *goyim* and *ʿammim* stand in parallel lines, they are \"ሕዝቦች\" and \"ወገኖች\", as the Psalms list and Jeremiah 51:58.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1373,6 +1554,11 @@
           "L": "Não levantarão todos estes uma sátira contra ele, \\q uma canção de zombaria e enigmas a respeito dele, e dirão: \\q Ai daquele que multiplica o que não é seu! Até quando? \\q E [daquele que] se carrega de penhores!",
           "B": "Não entoarão todos eles uma canção de zombaria contra ele, \\q com desprezo e enigmas a seu respeito, dizendo: \\q Ai daquele que amontoa o que não é seu! Até quando isso vai continuar? \\q Ele se sobrecarrega de bens tomados como penhor!",
           "R": "Todas as nações que ele conquistou vão cantar canções para zombar dele. \\q Vão caçoar dele com enigmas e dizer: \\q Que desgraça vai cair sobre aquele que toma o que não lhe pertence! Até quando isso vai durar? \\q Ele fica rico com o que toma das pessoas que lhe devem."
+        },
+        "am": {
+          "L": "እነዚህ ሁሉ በእርሱ ላይ የመሣለቂያ ምሳሌ አያነሡምን? \\q የፌዝ ቅኔንና እንቆቅልሽን ስለ እርሱ [አያነሡምን]? እንዲህም አይሉምን፦ \\q ወዮ የእርሱ ያልሆነውን ለሚያበዛ! እስከ መቼ? \\q በራሱም ላይ መያዣን ለሚያከብድ!",
+          "B": "እነዚህ ሁሉ በእርሱ ላይ የፌዝ ዘፈን በማንሣት፣ \\q በንቀትና በእንቆቅልሽ ስለ እርሱ እንዲህ አይሉምን፦ \\q የእርሱ ያልሆነውን ለሚያከማች ወዮለት! ይህ እስከ መቼ ይቀጥላል? \\q በመያዣ በተወሰደ ዕቃ ራሱን ያከብዳል!",
+          "R": "ድል ያደረጋቸው ሕዝቦች ሁሉ እርሱን ለማሾፍ ዘፈን ይዘፍናሉ። \\q በእንቆቅልሽ እያፌዙበት እንዲህ ይላሉ፦ \\q የእርሱ ያልሆነውን ለሚወስድ ወዮለት! ይህ እስከ መቼ ይዘልቃል? \\q ዕዳ ካለባቸው ሰዎች በሚወስደው ነገር ይበለጽጋል።"
         }
       },
       "decisions": [
@@ -1586,6 +1772,27 @@
           "reason": "For the whole chapter: the taunt takes the words of Isaiah 14:4 in Portuguese, \"sátira\" at Literal and \"canção de zombaria\" at Balanced, and the cry hoy the wording Isaiah set (\"Ai de\", Readable \"Que desgraça vai cair sobre\"), with \"daquele que\" for the singular participles (m2). As in the English, no quotation marks enclose the taunt, which runs through the five woes without a marked end.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020060111"
+          ],
+          "choice": "Woe formula: L \"ወዮ … ለሚ…!\" with the woe first, as the Hebrew and Isaiah 5:8, 20 (Literal); B, R \"… ለሚ… ወዮለት!\" at the end of the clause, as Isaiah 5 and Jeremiah 22:13 (Balanced, Readable)",
+          "alternatives": [
+            "\"እንዴት ያሳዝናል\" (how sad, R)"
+          ],
+          "reason": "The five woes (2:6, 9, 12, 15, 19) keep one wording. Amharic \"ወዮለት\" is the living word for this cry of doom, and its Readable sense is what the English Readable \"How terrible it will be for\" spells out, so Readable keeps it, as Isaiah's and Jeremiah's Readable do. As in the English, the taunt song has no quotation marks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1654,6 +1861,11 @@
           "L": "Não se levantarão de repente os que te mordem, \\q e não despertarão os que te fazem tremer? \\q E tu te tornarás presa para eles.",
           "B": "Não se levantarão de repente os teus credores, \\q e não despertarão os que te fazem tremer? \\q Então te tornarás o despojo deles.",
           "R": "De repente, as pessoas a quem deves vão vir cobrar, \\q e vão acordar e te fazer tremer. \\q Então elas vão roubar tudo o que tens."
+        },
+        "am": {
+          "L": "ነካሾችህ ድንገት አይነሡምን? \\q የሚያንቀጠቅጡህስ አይነቁምን? \\q ለእነርሱም ምርኮ ትሆናለህ።",
+          "B": "አበዳሪዎችህ ድንገት አይነሡብህምን? \\q የሚያንቀጠቅጡህስ አይነቁምን? \\q ያን ጊዜ ምርኮ ትሆናቸዋለህ።",
+          "R": "ያበደሩህ ሰዎች ዕዳቸውን ለመሰብሰብ በድንገት ይመጣሉ፤ \\q ይነሣሉ፤ ያንቀጠቅጡሃልም። \\q ከዚያም ያለህን ሁሉ ይዘርፉሃል።"
         }
       },
       "decisions": [
@@ -1753,6 +1965,26 @@
           "reason": "Where the taunt turns from \"him\" to \"you\" (m2), every level says \"tu\", as the prophets speak to a king or a city as one; it continues so through verses 8, 10, 16 and 17.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020070041",
+            "o350020070042"
+          ],
+          "choice": "\"ነካሾችህ\" (those who bite you) at Literal",
+          "alternatives": [
+            "\"አበዳሪዎችህ\" (your creditors) at every level"
+          ],
+          "reason": "The Hebrew word means both \"biting\" and \"lending at interest\" (m1); Literal keeps the picture, and Balanced and Readable say creditors, as the English levels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1827,6 +2059,11 @@
           "L": "Porque tu saqueaste muitas nações, \\q todo o resto dos povos te saqueará, \\q por causa do sangue humano e da violência [feita à] terra, \\q [à] cidade e a todos os que nela habitam.",
           "B": "Já que saqueaste muitas nações, \\q todos os povos que restaram te saquearão, \\q por causa do sangue humano que derramaste e da violência contra a terra, \\q contra a cidade e todos os que nela habitam.",
           "R": "Tu roubaste muitas nações, \\q por isso os povos que sobraram vão te roubar. \\q Mataste muita gente. Foste violento com a terra, \\q com a cidade e com todos os que vivem nela."
+        },
+        "am": {
+          "L": "አንተ ብዙ ሕዝቦችን ዘርፈሃልና፤ \\q ከወገኖች የቀሩት ሁሉ ይዘርፉሃል፤ \\q ስለ ሰው ደም፣ በምድርም ላይ [ስለ ተደረገ] ግፍ፣ \\q በከተማዪቱና በእርሷ በሚኖሩ ሁሉ ላይ።",
+          "B": "ብዙ ሕዝቦችን ስለ ዘረፍህ፣ \\q ከወገኖች የቀሩት ሁሉ ይዘርፉሃል፤ \\q ስላፈሰስኸው የሰው ደምና በምድሪቱ ላይ ስለ ፈጸምኸው ግፍ፣ \\q በከተማዪቱና በውስጧ በሚኖሩት ሁሉ ላይ ስለ ፈጸምኸው።",
+          "R": "ብዙ ሕዝቦችን ዘርፈሃል፤ \\q ስለዚህ የቀሩት ሕዝቦች ይዘርፉሃል። \\q ብዙ ሰዎችን ገድለሃል። በምድሪቱ ላይ ግፍ ፈጽመሃል፤ \\q በከተማዪቱና በዚያ በሚኖረው ሰው ሁሉ ላይ።"
         }
       },
       "decisions": [
@@ -2037,6 +2274,30 @@
           "reason": "The second half of the verse returns word for word in verse 17 (m2), so each level words it the same way in both places. \"Sangue humano\" says \"blood of humankind\" without a word for men alone, so no gender setting is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020080031",
+            "o350020080062",
+            "o350020080102",
+            "o350020080111",
+            "o350020080122",
+            "o350020080141"
+          ],
+          "choice": "one wording for the last two lines here and in 2:17 at each level; plunder \"ዘረፈ\"; the city \"ከተማዪቱ\"",
+          "alternatives": [],
+          "reason": "The Hebrew repeats the refrain word for word in 2:17 (m3 there), so each level reads the same in both places. The same verb for plundering is used for both sides of the reversal (m1), \"ዘርፈሃል … ይዘርፉሃል\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2107,6 +2368,11 @@
           "L": "Ai daquele que ganha lucro mau para a sua casa, \\q para pôr o seu ninho no alto, \\q para se livrar da mão da desgraça!",
           "B": "Ai daquele que obtém lucro desonesto para a sua casa, \\q para pôr o seu ninho bem no alto, \\q para ficar a salvo do alcance da desgraça!",
           "R": "Que desgraça vai cair sobre aquele que enriquece enganando os outros para tornar grande a sua família! \\q Ele constrói a sua casa bem no alto, como um ninho de pássaro, \\q para que nenhum problema o alcance."
+        },
+        "am": {
+          "L": "ወዮ ለቤቱ ክፉ ትርፍ ለሚያገኝ፣ \\q ጎጆውን በከፍታ ላይ ያደርግ ዘንድ፣ \\q ከክፉም መዳፍ ያመልጥ ዘንድ!",
+          "B": "ለቤቱ በክፋት ትርፍ ለሚሰበስብ፣ \\q ጎጆውን ከፍ አድርጎ ለመሥራት፣ \\q ከጥፋትም እጅ ለመዳን ለሚሞክር ወዮለት!",
+          "R": "ቤተሰቡን ታላቅ ለማድረግ በማጭበርበር ለሚበለጽግ ወዮለት! \\q እንደ ወፍ ጎጆ ቤቱን ከፍ አድርጎ ይሠራል፤ \\q ይህንም የሚያደርገው ምንም ችግር እንዳይደርስበት ነው።"
         }
       },
       "decisions": [
@@ -2230,6 +2496,11 @@
           "L": "Planejaste vergonha para a tua casa, \\q eliminando muitos povos, e pecando [contra] a tua alma.",
           "B": "Os teus planos trouxeram vergonha para a tua casa; \\q eliminando muitos povos, perdeste a tua própria vida.",
           "R": "Os teus planos trouxeram vergonha para a tua família. \\q Destruíste muitas nações e por isso perdeste a tua própria vida."
+        },
+        "am": {
+          "L": "ለቤትህ ኀፍረትን መከርህ፤ \\q ብዙ ሕዝቦችን በማጥፋት፣ በነፍስህም ላይ ኃጢአት በመሥራት።",
+          "B": "ተንኮልህ በቤትህ ላይ ኀፍረትን አመጣ፤ \\q ብዙ ሕዝቦችን በማጥፋትህ የገዛ ሕይወትህን አጠፋህ።",
+          "R": "ዕቅድህ በቤተሰብህ ላይ ኀፍረት አመጣ። \\q ብዙ ሕዝቦችን አጠፋህ፤ ስለዚህ የራስህን ሕይወት አጣህ።"
         }
       },
       "decisions": [
@@ -2351,6 +2622,11 @@
           "L": "Pois [a] pedra clamará do muro, \\q e [a] viga do madeiramento lhe responderá.",
           "B": "As próprias pedras gritarão do muro, \\q e uma viga do madeiramento lhes responderá.",
           "R": "As pedras das paredes da tua casa vão gritar contra ti, \\q e as vigas de madeira vão responder a elas."
+        },
+        "am": {
+          "L": "ድንጋይ ከቅጥሩ ይጮኻልና፤ \\q ከእንጨቱም ወራጅ ይመልስለታል።",
+          "B": "ድንጋዮች እንኳ ከቅጥሩ ይጮኻሉ፤ \\q ከእንጨቱ ሥራ ያለ ወራጅም ይመልስላቸዋል።",
+          "R": "የቤትህ ግድግዳ ድንጋዮች በአንተ ላይ ይጮኻሉ፤ \\q የእንጨት ወራጆቹም ይመልሱላቸዋል።"
         }
       },
       "decisions": [
@@ -2470,6 +2746,11 @@
           "L": "Ai daquele que edifica uma cidade com sangue \\q e estabelece uma povoação com injustiça!",
           "B": "Ai daquele que constrói uma cidade com derramamento de sangue \\q e funda uma povoação com maldade!",
           "R": "Que desgraça vai cair sobre aquele que constrói uma cidade matando pessoas \\q e levanta uma povoação fazendo o mal!"
+        },
+        "am": {
+          "L": "ወዮ ከተማን በደም ለሚሠራ፣ \\q መንደርንም በዓመፅ ለሚያጸና!",
+          "B": "ከተማን በደም መፋሰስ ለሚሠራ፣ \\q መንደርንም በዓመፅ ለሚመሠርት ወዮለት!",
+          "R": "ሰዎችን እየገደለ ከተማ ለሚሠራ፣ \\q ክፉ ነገር እያደረገ ከተማ ለሚቆረቁር ወዮለት!"
         }
       },
       "decisions": [
@@ -2675,6 +2956,29 @@
           "reason": "The line takes the words of Micah 3:10 (m1), so Literal and Balanced keep that verse's Portuguese. The second noun is \"povoação\", a town, beside \"cidade\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020120021",
+            "o350020120031",
+            "o350020120042",
+            "o350020120061",
+            "o350020120072"
+          ],
+          "choice": "\"ከተማን በደም ለሚሠራ\" for the words Micah 3:10 shares; town (*qiryah*) \"መንደር\" (L, B)",
+          "alternatives": [],
+          "reason": "The first line has the words of Micah 3:10 (m1), whose Amharic is being drafted at the same time; the two should read alike where the Hebrew is the same. *ʿawlah* (injustice) is \"ዓመፅ\", kept apart from *ḥamas* \"ግፍ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2746,6 +3050,11 @@
           "L": "Acaso não [vem], eis, {{divine_name:do SENHOR|de Javé}} dos Exércitos \\q que os povos se cansem só para o fogo \\q e as nações se fatiguem por nada?",
           "B": "Não foi {{divine_name:o SENHOR|Javé}} dos Exércitos quem decretou \\q que os povos trabalhem só para o fogo \\q e as nações se esgotem por nada?",
           "R": "{{divine_name:O SENHOR|Javé}} dos Exércitos decidiu \\q que tudo o que as nações constroem com tanto esforço vai acabar queimado. \\q Elas se esgotam por nada."
+        },
+        "am": {
+          "L": "እነሆ፣ [ይህ] {{divine_name:ከእግዚአብሔር|ከያህዌ}} ጸባኦት ዘንድ አይደለምን? \\q ሕዝቦች ለእሳት ብቻ ይደክማሉ፤ \\q ወገኖችም ለከንቱ ይዝላሉ።",
+          "B": "የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} የወሰነው ይህ አይደለምን? \\q ሕዝቦች የሚደክሙት ለእሳት ብቻ ነው፤ \\q ወገኖችም የሚዝሉት ለከንቱ ነው።",
+          "R": "የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ወስኗል፤ \\q ሕዝቦች ለመሥራት የሚደክሙበት ነገር ሁሉ በእሳት ይቃጠላል። \\q የሚደክሙትም ለከንቱ ነው።"
         }
       },
       "decisions": [
@@ -2962,6 +3271,32 @@
           "reason": "The title is \"o SENHOR dos Exércitos\" at every level, as in the prophets in Portuguese, where the English Literal says \"of hosts\". The two lines take the verbs of Jeremiah 51:58 at each level (m1), in Habakkuk's order.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020130041",
+            "o350020130051",
+            "o350020130062",
+            "o350020130071",
+            "o350020130091",
+            "o350020130102",
+            "o350020130121",
+            "o350020130131"
+          ],
+          "choice": "YHWH Tsevaot \"እግዚአብሔር ጸባኦት\" (L), \"የሠራዊት አምላክ እግዚአብሔር\" (B, R); Jeremiah 51:58's \"ሕዝቦች … ይደክማሉ\", \"ወገኖች … ይዝላሉ\", \"ለእሳት\", \"ለከንቱ\", in Habakkuk's order",
+          "alternatives": [],
+          "reason": "The terms list settles the title. The second and third lines take up Jeremiah 51:58 (m1), so they keep the words of its Amharic; Habakkuk has fire with the peoples and nothing with the nations, the other way round from Jeremiah, and the Amharic follows Habakkuk. Literal puts the prefix \"ከ\" (from) inside both options of the name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3028,6 +3363,11 @@
           "L": "Pois a terra se encherá do conhecimento da glória {{divine_name:do SENHOR|de Javé}}, \\q como as águas cobrem o mar.",
           "B": "Pois a terra estará tão cheia do conhecimento da glória {{divine_name:do SENHOR|de Javé}} \\q quanto o mar está cheio de água.",
           "R": "Todas as pessoas da terra vão conhecer a glória {{divine_name:do SENHOR|de Javé}}. \\q A terra vai ficar cheia desse conhecimento, assim como os oceanos estão cheios de água."
+        },
+        "am": {
+          "L": "ምድር {{divine_name:የእግዚአብሔርን|የያህዌን}} ክብር በማወቅ ትሞላለችና፤ \\q ውኃ ባሕርን እንደሚሸፍን።",
+          "B": "ምድር {{divine_name:የእግዚአብሔርን|የያህዌን}} ክብር በማወቅ ትሞላለችና፤ \\q ባሕር በውኃ እንደ ተሞላ።",
+          "R": "በምድር ላይ ያለ ሰው ሁሉ {{divine_name:የእግዚአብሔርን|የያህዌን}} ክብር ያውቃል። \\q ውቅያኖሶች በውኃ እንደ ተሞሉ፣ ምድርም በዚህ እውቀት ትሞላለች።"
         }
       },
       "decisions": [
@@ -3269,6 +3609,30 @@
           "reason": "The line repeats Isaiah 11:9 (m1), so each level reuses that verse's Portuguese (\"o conhecimento do SENHOR\", \"como as águas cobrem o mar\", \"tão cheia ... quanto o mar está cheio de água\", \"assim como os oceanos estão cheios de água\"), adding \"da glória\" where Habakkuk adds it and \"se encherá\" at Literal for his \"will be filled\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020140021",
+            "o350020140042",
+            "o350020140061",
+            "o350020140071",
+            "o350020140082",
+            "o350020140091"
+          ],
+          "choice": "the Amharic of Isaiah 11:9 at each level, with \"ክብር\" (the glory of) added",
+          "alternatives": [],
+          "reason": "The verse repeats Isaiah 11:9 (m1) with \"the glory of\" added and small changes in the last words that do not change the sense, so each level copies Isaiah 11:9's Amharic and adds \"ክብር\"; the name then takes the genitive and object marking inside both options.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3336,6 +3700,11 @@
           "L": "Ai daquele que dá de beber ao seu próximo, \\q misturando o teu furor e [os] embriagando, \\q para olhar a nudez deles!",
           "B": "Ai daquele que faz os seus vizinhos beberem, \\q derramando o seu furor até que fiquem bêbados, \\q para poder contemplar a nudez deles!",
           "R": "Que desgraça vai cair sobre aquele que embebeda os seus vizinhos, \\q servindo vinho misturado com a sua ira, \\q para poder olhar o corpo nu deles!"
+        },
+        "am": {
+          "L": "ወዮ ባልንጀራውን ለሚያጠጣ፣ \\q ቁጣህን እየቀላቀልህ [እነርሱንም] እያሰከርህ፣ \\q ዕርቃናቸውን ለመመልከት!",
+          "B": "ባልንጀሮቹን ለሚያጠጣ፣ \\q እስኪሰክሩም ድረስ ቁጣውን ለሚያፈስስ፣ \\q ዕርቃናቸውንም ለመመልከት ለሚሻ ወዮለት!",
+          "R": "ባልንጀሮቹን ለሚያሰክር፣ \\q ከቁጣው ጋር የተቀላቀለ ወይን ለሚያፈስስ፣ \\q ዕራቁት ገላቸውንም ለማየት ለሚሻ ወዮለት!"
         }
       },
       "decisions": [
@@ -3475,6 +3844,11 @@
           "L": "Estás farto de desonra em vez de glória; \\q bebe, tu também, e mostra-te incircunciso! \\q O cálice da mão direita {{divine_name:do SENHOR|de Javé}} se voltará para ti, \\q e ignomínia [cairá] sobre a tua glória.",
           "B": "Ficarás cheio de vergonha em vez de glória. \\q Bebe, tu também, e mostra-te incircunciso! \\q O cálice que está na mão direita {{divine_name:do SENHOR|de Javé}} chegará a ti, \\q e a desonra cobrirá a tua glória.",
           "R": "Vais ficar coberto de vergonha em vez de honra. \\q Agora é a tua vez de beber e ficar nu e humilhado! \\q {{divine_name:O SENHOR|Javé}} segura na {{deity_pronoun:sua|Sua}} mão direita um cálice de castigo, e ele vai ser passado a ti. \\q A tua glória vai virar vergonha."
+        },
+        "am": {
+          "L": "ከክብር ይልቅ ኀፍረትን ጠገብህ፤ \\q አንተም ደግሞ ጠጣ፤ ያልተገረዝክ መሆንህም ይገለጥ! \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀኝ እጅ ጽዋ ወደ አንተ ይዞራል፤ \\q በክብርህም ላይ ታላቅ ውርደት [ይሆናል]።",
+          "B": "ከክብር ይልቅ ኀፍረት ይሞላብሃል። \\q አንተም ደግሞ ጠጣ፤ ያልተገረዝክ መሆንህም ይገለጥ! \\q {{divine_name:በእግዚአብሔር|በያህዌ}} ቀኝ እጅ ያለው ጽዋ ወደ አንተ ይዞራል፤ \\q ውርደትም ክብርህን ይሸፍናል።",
+          "R": "ከክብር ይልቅ ኀፍረት ይከናነብሃል። \\q አሁን ጠጥተህ ዕራቁትህንና ተዋርደህ የምትታይበት ተራ ደርሷል! \\q {{divine_name:እግዚአብሔር|ያህዌ}} በቀኝ እጁ የቅጣት ጽዋ ይዟል፤ ወደ አንተም ይተላለፋል። \\q ክብርህ ወደ ኀፍረት ይለወጣል።"
         }
       },
       "decisions": [
@@ -3648,6 +4022,11 @@
           "L": "Pois a violência [feita ao] Líbano te cobrirá, \\q e a destruição dos animais [que] os aterrorizou, \\q por causa do sangue humano e da violência [feita à] terra, \\q [à] cidade e a todos os que nela habitam.",
           "B": "A violência que fizeste ao Líbano cairá sobre ti, \\q e também a matança que aterrorizou os seus animais, \\q por causa do sangue humano que derramaste e da violência contra a terra, \\q contra a cidade e todos os que nela habitam.",
           "R": "Derrubaste as florestas do Líbano e mataste os seus animais. Agora essa violência vai cair sobre ti. \\q A matança dos animais, que os deixou apavorados, vai te soterrar. \\q Mataste muita gente. Foste violento com a terra, \\q com a cidade e com todos os que vivem nela."
+        },
+        "am": {
+          "L": "በሊባኖስ ላይ [የተደረገው] ግፍ ይከድንሃልና፤ \\q ያስደነገጣቸውም የእንስሳት ጥፋት፤ \\q ስለ ሰው ደም፣ በምድርም ላይ [ስለ ተደረገ] ግፍ፣ \\q በከተማዪቱና በእርሷ በሚኖሩ ሁሉ ላይ።",
+          "B": "በሊባኖስ ላይ ያደረግኸው ግፍ ያጥለቀልቅሃል፤ \\q እንስሶቿን ያስደነገጠው እልቂትም እንዲሁ፤ \\q ስላፈሰስኸው የሰው ደምና በምድሪቱ ላይ ስለ ፈጸምኸው ግፍ፣ \\q በከተማዪቱና በውስጧ በሚኖሩት ሁሉ ላይ ስለ ፈጸምኸው።",
+          "R": "የሊባኖስን ደኖች ቆረጥህ፤ እንስሶቿንም ገደልህ። አሁን ያ ግፍ በአንተ ላይ ይመለሳል። \\q ያስደነገጣቸው የእንስሶቹ እልቂት ይቀብርሃል። \\q ብዙ ሰዎችን ገድለሃል። በምድሪቱ ላይ ግፍ ፈጽመሃል፤ \\q በከተማዪቱና በዚያ በሚኖረው ሰው ሁሉ ላይ።"
         }
       },
       "decisions": [
@@ -3785,6 +4164,31 @@
           "reason": "The published Vietnamese form of Lebanon; the refrain that follows repeats verse 8 word for word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020170031",
+            "o350020170082",
+            "o350020170091",
+            "o350020170102",
+            "o350020170111",
+            "o350020170121",
+            "o350020170141"
+          ],
+          "choice": "the last two lines word for word as in 2:8 at each level; Lebanon \"ሊባኖስ\"",
+          "alternatives": [],
+          "reason": "The Hebrew repeats the refrain of 2:8 (m3), and the Amharic repeats that verse's wording at each level. Lebanon keeps its form in Isaiah and Jeremiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3860,6 +4264,11 @@
           "L": "De que aproveita uma imagem esculpida, que o seu artífice a esculpiu, \\q uma imagem fundida e um mestre de mentira? \\q Pois o que a formou confia na sua própria obra \\q quando faz ídolos mudos.",
           "B": "De que serve um ídolo, depois que o seu artífice o esculpiu, \\q ou uma imagem de metal, um mestre de mentiras? \\q O seu artífice confia naquilo que ele mesmo modelou \\q quando fabrica ídolos que não falam.",
           "R": "De que adianta um ídolo que alguém esculpiu \\q ou uma estátua de metal? Ela só ensina mentiras. \\q As pessoas que fazem ídolos confiam naquilo que fizeram, \\q mas os seus ídolos nem conseguem falar."
+        },
+        "am": {
+          "L": "ሠሪው የቀረጸው የተቀረጸ ምስል ምን ይጠቅማል? \\q ቀልጦ የተሠራ ምስልና የሐሰት አስተማሪስ? \\q የሠራው ሰው በሠራው ይታመናልና፤ \\q ዲዳ የሆኑ ከንቱ ጣዖታትን ሲሠራ።",
+          "B": "ሠሪው ከቀረጸው በኋላ የተቀረጸ ምስል ምን ጥቅም አለው? \\q ወይስ ቀልጦ የተሠራ ምስል፣ የሐሰት አስተማሪ? \\q ሠሪው ራሱ በቀረጸው ነገር ይታመናል፤ \\q መናገር የማይችሉ ጣዖታትን ሲሠራ።",
+          "R": "አንድ ሰው የቀረጸው ጣዖት ምን ይጠቅማል? \\q ወይስ ከብረት የተሠራ ምስል? የሚያስተምረው ሐሰትን ብቻ ነው። \\q ጣዖት የሚሠሩ ሰዎች በሠሩት ነገር ይታመናሉ፤ \\q ጣዖቶቻቸው ግን መናገር እንኳ አይችሉም።"
         }
       },
       "decisions": [
@@ -3920,6 +4329,26 @@
           "choice": "People who make idols ... they (R)",
           "alternatives": [],
           "reason": "Literal and Balanced keep the Hebrew singular, the craftsman who carves the idol. Readable uses the plural, since he stands for anyone who makes idols, so that no gender span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020180031",
+            "o350020180071",
+            "o350020180161"
+          ],
+          "choice": "carved image (*pesel*) \"የተቀረጸ ምስል\"; cast image \"ቀልጦ የተሠራ ምስል\"; idols (*ʾelilim*) \"ከንቱ ጣዖታት\" (L), \"ጣዖታት\" (B)",
+          "alternatives": [],
+          "reason": "As the prophets' terms list; Literal keeps \"ከንቱ\", which carries the Hebrew word's sense of worthlessness.",
           "uncertain": false,
           "footnote": false
         }
@@ -3999,6 +4428,11 @@
           "L": "Ai daquele que diz à madeira: \"Desperta!\" \\q \"Acorda!\", à pedra silenciosa. \\q Ela ensinará? \\q Eis que ela [está] revestida de ouro e prata, \\q e não há fôlego algum dentro dela.",
           "B": "Ai daquele que diz a um pedaço de pau: \"Acorda!\" \\q ou a uma pedra sem vida: \"Levanta-te!\" \\q Pode ela ensinar? \\q Está coberta de ouro e prata, \\q mas não há nenhum fôlego nela.",
           "R": "Que desgraça vai cair sobre quem diz a um pedaço de madeira: \"Acorda!\" \\q ou diz a uma pedra que não fala: \"Levanta-te!\" \\q Será que um ídolo pode ensinar alguma coisa a alguém? \\q Pode estar coberto de ouro e prata, \\q mas não tem vida nenhuma."
+        },
+        "am": {
+          "L": "ወዮ እንጨትን «ንቃ!» ለሚል፣ \\q ዝም ያለውን ድንጋይ «ተነሥ!» [ለሚል]! \\q እርሱ ያስተምራልን? \\q እነሆ፣ በወርቅና በብር ተለብጧል፤ \\q በውስጡም ምንም እስትንፋስ የለም።",
+          "B": "እንጨትን «ንቃ!» ለሚል፣ \\q ሕይወት የሌለውንም ድንጋይ «ተነሥ!» ለሚል ወዮለት! \\q ሊያስተምር ይችላልን? \\q በወርቅና በብር ተለብጧል፤ \\q በውስጡ ግን ምንም እስትንፋስ የለም።",
+          "R": "አንድን እንጨት «ንቃ!» ለሚል፣ \\q መናገር የማይችለውንም ድንጋይ «ተነሥ!» ለሚል ሁሉ ወዮለት! \\q ጣዖት ማንንም አንዳች ነገር ሊያስተምር ይችላልን? \\q በወርቅና በብር ተለብጦ ሊሆን ይችላል፤ \\q ነገር ግን በውስጡ ምንም ሕይወት የለም።"
         }
       },
       "decisions": [
@@ -4127,6 +4561,11 @@
           "L": "Mas {{divine_name:o SENHOR|Javé}} [está] no {{deity_pronoun:seu|Seu}} santo templo; \\q silêncio diante {{deity_pronoun:dele|Dele}}, toda a terra!",
           "B": "Mas {{divine_name:o SENHOR|Javé}} está no {{deity_pronoun:seu|Seu}} santo templo; \\q toda a terra, faça silêncio diante {{deity_pronoun:dele|Dele}}.",
           "R": "Mas {{divine_name:o SENHOR|Javé}} está no {{deity_pronoun:seu|Seu}} santo templo. \\q Todos na terra devem ficar calados na {{deity_pronoun:sua|Sua}} presença."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን በቅዱስ መቅደሱ [ነው]፤ \\q ምድር ሁሉ፣ በፊቱ ዝም በዪ!",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን በቅዱስ መቅደሱ ነው፤ \\q ምድር ሁሉ፣ በፊቱ ጸጥ በዪ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን በቅዱስ መቅደሱ ነው። \\q በምድር ያለ ሰው ሁሉ በፊቱ ዝም ይበል።"
         }
       },
       "decisions": [
@@ -4341,6 +4780,29 @@
             "cale-se diante dele toda a terra"
           ],
           "reason": "The first line keeps the Portuguese of Psalm 11:4 (m1). The call hush is the interjection \"Silêncio!\" at Literal and \"faça silêncio\" at Balanced, drafted from the Hebrew word away from the familiar Portuguese wording of this verse; Readable says \"devem ficar calados\", as the English Readable says \"should be silent\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020200012",
+            "o350020200021",
+            "o350020200022",
+            "o350020200031",
+            "o350020200041"
+          ],
+          "choice": "the first line as Psalm 11:4 (\"በቅዱስ መቅደሱ\") at each level; hush \"ዝም\" (L, R), \"ጸጥ\" (B), as Zephaniah 1:7",
+          "alternatives": [],
+          "reason": "The first line has the words of Psalm 11:4 (m1), and keeps that verse's Amharic. The call to silence is the one word of Zephaniah 1:7 (*has*), and keeps its Amharic: \"ዝም\" at Literal and Readable, \"ጸጥ\" at Balanced. Zephaniah addresses people (\"ዝም በሉ\"); here the Hebrew addresses \"all the earth\" in the singular, so Literal and Balanced use the feminine singular imperative \"በዪ\" to the earth, and Readable \"ይበል\" (let everyone).",
           "uncertain": false,
           "footnote": false
         }
