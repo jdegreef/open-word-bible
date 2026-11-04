@@ -64,6 +64,11 @@
           "L": "Eis que {{divine_name:o SENHOR|Javé}} [está] para esvaziar a terra e deixá-la desolada, \\q e {{deity_pronoun:ele|Ele}} torcerá a sua superfície e espalhará os seus habitantes.",
           "B": "Vejam! {{divine_name:O SENHOR|Javé}} vai esvaziar a terra e deixá-la arrasada; \\q {{deity_pronoun:ele|Ele}} vai deformar a face dela e dispersar os que nela vivem.",
           "R": "Escutem! {{divine_name:O SENHOR|Javé}} vai esvaziar a terra e deixá-la em ruínas. \\q Ele vai virar a superfície dela de cabeça para baixo e espalhar as pessoas que moram nela."
+        },
+        "am": {
+          "L": "እነሆ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ምድርን ባዶ ሊያደርጋትና ሊያፈርሳት ነው፤ \\q ፊቷንም ያጣምማል፤ ነዋሪዎቿንም ይበትናል።",
+          "B": "ተመልከቱ! {{divine_name:እግዚአብሔር|ያህዌ}} ምድርን ሊገፍፋትና ባድማ ሊያደርጋት ነው፤ \\q ገጽታዋን ያዛባል፤ በእርሷ ላይ የሚኖሩትንም ይበትናል።",
+          "R": "ስሙ! {{divine_name:እግዚአብሔር|ያህዌ}} ምድርን ባዶ ሊያደርጋትና ፍርስራሽ ሊያደርጋት ነው። \\q ገጿን ይገለብጣል፤ በእርሷ ላይ የሚኖሩትንም ሰዎች ይበትናል።"
         }
       },
       "decisions": [
@@ -238,6 +243,43 @@
           "reason": "Following the Isaiah-wide choice: Literal keeps \"eis que\" for the particle that calls attention, as in the earlier chapters; Balanced and Readable use the plural imperative of \"vocês\", as the English uses \"Look!\" and \"Listen!\" rather than \"behold\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of this chapter",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalizes pronouns for God has nothing to change in Amharic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230240010041",
+            "o230240010042"
+          ],
+          "choice": "\"ምድር\" for the earth (ʾerets) through chapters 24-27, and \"ዓለም\" for the world (tevel)",
+          "alternatives": [],
+          "reason": "Amharic \"ምድር\" serves for both the land and the whole earth, as the Hebrew word does; the context and the meaning decision show that the whole world is meant.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -321,6 +363,11 @@
           "L": "E será, como [com o] povo, assim [com o] sacerdote; \\q como [com o] escravo, assim [com] o seu senhor; \\q como [com a] escrava, assim [com] a sua senhora; \\q como [com o] comprador, assim [com o] vendedor; \\q como [com o] que empresta, assim [com o] que toma emprestado; \\q como [com o] credor, assim [com aquele] que tem um credor contra si.",
           "B": "O mesmo acontecerá ao povo e ao sacerdote, \\q ao servo e ao seu senhor, à serva e à sua senhora, \\q ao comprador e ao vendedor, a quem empresta e a quem pede emprestado, \\q a quem cobra uma dívida e a quem a deve.",
           "R": "Todos vão sofrer do mesmo jeito. Não vai importar quem a pessoa é: \\q gente simples ou sacerdote, servo ou senhor, empregada ou a patroa dela, \\q quem compra ou quem vende, quem empresta ou quem pede emprestado, quem tem dinheiro a receber ou quem tem dívida a pagar."
+        },
+        "am": {
+          "L": "እንዲህም ይሆናል፤ በሕዝቡ እንደሚሆን፣ እንዲሁ በካህኑ፤ \\q በባሪያው እንደሚሆን፣ እንዲሁ በጌታው፤ \\q በገረዲቱ እንደሚሆን፣ እንዲሁ በእመቤቷ፤ \\q በገዢው እንደሚሆን፣ እንዲሁ በሻጩ፤ \\q በአበዳሪው እንደሚሆን፣ እንዲሁ በተበዳሪው፤ \\q በባለ ገንዘቡ እንደሚሆን፣ እንዲሁ ባለ ገንዘብ በሚጠይቀው።",
+          "B": "ለሕዝቡና ለካህኑ፣ \\q ለአገልጋዩና ለጌታው፣ ለገረዲቱና ለእመቤቷ፣ \\q ለገዢውና ለሻጩ፣ ለአበዳሪውና ለተበዳሪው፣ \\q ዕዳ ለሚሰበስበውና ዕዳ ላለበት ሁሉ አንድ ዓይነት ይሆናል።",
+          "R": "ሁሉም ሰው እኩል መከራ ይደርስበታል። ማን ብትሆን ለውጥ የለውም፦ \\q ተራ ሰው ወይም ካህን፣ አገልጋይ ወይም ጌታ፣ ሴት አገልጋይ ወይም እመቤቷ፣ \\q የሚገዛ ወይም የሚሸጥ፣ የሚያበድር ወይም የሚበደር፣ ገንዘብ የሚጠይቅ ወይም ዕዳ ያለበት።"
         }
       },
       "decisions": [
@@ -480,6 +527,11 @@
           "L": "Totalmente esvaziada será a terra, e totalmente saqueada, \\q porque {{divine_name:o SENHOR|Javé}} falou esta palavra.",
           "B": "A terra será esvaziada por completo e saqueada de ponta a ponta, \\q pois esta é a palavra que {{divine_name:o SENHOR|Javé}} falou.",
           "R": "A terra vai ficar completamente vazia e vai perder tudo o que tem. \\q {{divine_name:O SENHOR|Javé}} disse que isso vai acontecer."
+        },
+        "am": {
+          "L": "ምድር ፈጽማ ትራቆታለች፤ ፈጽማም ትበዘበዛለች፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ይህን ቃል ተናግሯልና።",
+          "B": "ምድር ፈጽማ ትራቆታለች፤ ከዳር እስከ ዳርም ትበዘበዛለች፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} የተናገረው ቃል ይህ ነውና።",
+          "R": "ምድር ፈጽማ ባዶ ትሆናለች፤ ያላትም ሁሉ ይዘረፋል። \\q ይህ እንደሚሆን {{divine_name:እግዚአብሔር|ያህዌ}} ተናግሯል።"
         }
       },
       "decisions": [
@@ -580,6 +632,11 @@
           "L": "A terra secou [e] murchou; \\q o mundo definhou [e] murchou; \\q a altura do povo da terra definhou.",
           "B": "A terra seca e murcha; \\q o mundo se resseca e murcha; \\q os mais orgulhosos do povo da terra definham.",
           "R": "A terra seca e vai murchando. \\q O mundo inteiro murcha e fica fraco. \\q Até as pessoas mais importantes do mundo perdem as forças."
+        },
+        "am": {
+          "L": "ምድር ደረቀች፣ ጠወለገች፤ \\q ዓለም ደከመች፣ ጠወለገች፤ \\q የምድር ሕዝብ ከፍተኞች ደከሙ።",
+          "B": "ምድር ትደርቃለች፤ ትጠወልጋለች፤ \\q ዓለም ትኮማተራለች፤ ትጠወልጋለች፤ \\q ከምድር ሕዝብ መካከል እጅግ የሚኮሩት ይመነምናሉ።",
+          "R": "ምድር ትደርቃለች፤ ትጠወልጋለችም። \\q ዓለም ሁሉ ይጠወልጋል፤ ይደክማልም። \\q በምድር ላይ ያሉ ታላላቅ ሰዎች እንኳ ይደክማሉ።"
         }
       },
       "decisions": [
@@ -700,6 +757,11 @@
           "L": "E a terra foi profanada debaixo dos seus habitantes, \\q porque transgrediram instruções, ultrapassaram [o] estatuto, quebraram [a] aliança eterna.",
           "B": "A terra está contaminada debaixo dos que nela vivem, \\q pois pisaram por cima das instruções, passaram ao largo do decreto e quebraram a aliança que devia durar para sempre.",
           "R": "As pessoas do mundo deixaram a terra impura. \\q Desobedeceram aos ensinamentos de Deus e não deram atenção às {{deity_pronoun:suas|Suas}} leis. Quebraram a aliança que deveria durar para sempre."
+        },
+        "am": {
+          "L": "ምድርም ከነዋሪዎቿ በታች ረከሰች፤ \\q ትምህርቶችን ተላልፈዋልና፤ ሥርዓትን አልፈዋል፤ የዘላለሙን ቃል ኪዳን አፍርሰዋል።",
+          "B": "ምድር በላይዋ በሚኖሩት ሰዎች ምክንያት ረክሳለች፤ \\q ትምህርቶችን ተላልፈዋልና፤ ሥርዓትን ቸል ብለዋል፤ ለዘላለም እንዲኖር የተሰጠውንም ቃል ኪዳን አፍርሰዋል።",
+          "R": "የምድር ሕዝብ ምድርን አርክሰዋታል። \\q የእግዚአብሔርን ትምህርት አልታዘዙም፤ ሕጎቹንም ችላ ብለዋል። ለዘላለም እንዲኖር የታሰበውን ቃል ኪዳን አፍርሰዋል።"
         }
       },
       "decisions": [
@@ -855,6 +917,26 @@
           "reason": "The terms note keeps \"가르침\" for *torah* in Isaiah, as the English \"instruction\"; \"율법\" stays for the law of Moses in Ezra.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230240050071",
+            "o230240050091"
+          ],
+          "choice": "\"ትምህርቶች\" / \"ትምህርት\" for torot (instructions)",
+          "alternatives": [],
+          "reason": "As Isaiah 41-48 in this draft, where torah is \"ትምህርት\"; the decree (ḥoq) is \"ሥርዓት\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -926,6 +1008,11 @@
           "L": "Por isso uma maldição devorou [a] terra, \\q e os que habitam nela carregam [a sua] culpa; \\q por isso os habitantes [da] terra foram queimados, \\q e da humanidade restam poucos.",
           "B": "É por isso que uma maldição consome a terra, \\q e os que vivem nela pagam pela sua culpa. \\q É por isso que os habitantes da terra são queimados, \\q e só resta um punhado de seres humanos.",
           "R": "Por isso uma maldição está destruindo a terra. \\q As pessoas que vivem nela estão pagando pelos seus pecados. \\q Por isso os moradores da terra são queimados, e quase ninguém fica vivo."
+        },
+        "am": {
+          "L": "ስለዚህ እርግማን ምድርን በላ፤ \\q በእርሷም የሚኖሩት በደላቸውን ተሸከሙ፤ \\q ስለዚህ የምድር ነዋሪዎች ተቃጠሉ፤ \\q ጥቂትም ሰው ቀረ።",
+          "B": "ስለዚህ እርግማን ምድርን ይበላታል፤ \\q በላይዋ የሚኖሩትም የበደላቸውን ዋጋ ይከፍላሉ። \\q ስለዚህ የምድር ነዋሪዎች ተቃጥለው ያልቃሉ፤ \\q ከሰው ልጆችም ጥቂቶች ብቻ ይቀራሉ።",
+          "R": "ስለዚህ እርግማን ምድርን እያጠፋት ነው። \\q በላይዋ የሚኖሩ ሰዎች የኃጢአታቸውን ዋጋ እየከፈሉ ነው። \\q የምድር ሕዝብ የተቃጠሉት ስለዚህ ነው፤ በሕይወት የቀረ ሰውም ጥቂት ነው።"
         }
       },
       "decisions": [
@@ -1033,6 +1120,11 @@
           "L": "O vinho novo secou, a videira definhou; \\q todos os alegres de coração gemeram.",
           "B": "O vinho novo acaba, a videira murcha, \\q e todos os que tinham o coração em festa agora gemem.",
           "R": "Não há mais vinho novo, e as videiras estão morrendo. \\q Todos os que viviam alegres agora estão gemendo."
+        },
+        "am": {
+          "L": "አዲሱ የወይን ጠጅ ደረቀ፤ የወይን ተክሉ ደከመ፤ \\q ልባቸው ደስ ያለው ሁሉ ቃተቱ።",
+          "B": "አዲሱ የወይን ጠጅ ያልቃል፤ የወይን ተክሉ ይጠወልጋል፤ \\q ልባቸው ደስ ይለው የነበሩ ሁሉ አሁን ይቃትታሉ።",
+          "R": "አዲስ የወይን ጠጅ የለም፤ የወይን ተክሎቹም እየደረቁ ነው። \\q ቀድሞ ደስተኛ የነበረ ሁሉ አሁን ያቃስታል።"
         }
       },
       "decisions": [
@@ -1125,6 +1217,11 @@
           "L": "Cessou a alegria dos tamborins, \\q parou o alvoroço dos que exultam, \\q cessou a alegria da lira.",
           "B": "Acabou o ritmo alegre dos tamborins, \\q calou-se a algazarra dos que festejam, \\q acabou a alegria da lira.",
           "R": "Ninguém mais toca músicas alegres em tamborins ou harpas. \\q As festas barulhentas chegaram ao fim."
+        },
+        "am": {
+          "L": "የከበሮ ደስታ ቆመ፤ \\q የሐሤተኞች ሁካታ ጸጥ አለ፤ \\q የበገና ደስታ ቆመ።",
+          "B": "የከበሮዎቹ አስደሳች ምት አበቃ፤ \\q የፈንጠዝያኞቹ ጫጫታ ጸጥ አለ፤ \\q የበገናው ደስታ አበቃ።",
+          "R": "ከእንግዲህ ማንም በከበሮና በበገና አስደሳች ዜማ አይጫወትም። \\q ጫጫታ የበዛባቸው ግብዣዎች አብቅተዋል።"
         }
       },
       "decisions": [
@@ -1236,6 +1333,11 @@
           "L": "Com canção não bebem vinho; \\q amarga é a bebida forte para os que a bebem.",
           "B": "Já não bebem o seu vinho ao som de canções; \\q a cerveja fica amarga na boca de quem bebe.",
           "R": "As pessoas não cantam mais enquanto bebem vinho. \\q A cerveja tem gosto amargo para elas."
+        },
+        "am": {
+          "L": "በዘፈን የወይን ጠጅ አይጠጡም፤ \\q የሚያሰክር መጠጥ ለሚጠጡት መራራ ነው።",
+          "B": "ከእንግዲህ የወይን ጠጃቸውን በዘፈን ታጅበው አይጠጡም፤ \\q የሚያሰክረውም መጠጥ በጠጪው አፍ ይመርራል።",
+          "R": "ሰዎች የወይን ጠጅ ሲጠጡ ከእንግዲህ አይዘፍኑም። \\q መጠጡም መራራ ይሆንባቸዋል።"
         }
       },
       "decisions": [
@@ -1326,6 +1428,11 @@
           "L": "Foi quebrada a cidade do vazio; \\q toda casa foi fechada à entrada.",
           "B": "A cidade do caos está despedaçada; \\q toda casa está fechada, e ninguém consegue entrar.",
           "R": "A cidade do caos foi derrubada. \\q Todas as casas estão trancadas, e ninguém consegue entrar."
+        },
+        "am": {
+          "L": "የባዶነት ከተማ ተሰበረች፤ \\q መግቢያ እንዳይኖር ቤት ሁሉ ተዘጋ።",
+          "B": "የትርምስ ከተማ ተሰባበረች፤ \\q ቤት ሁሉ ተዘግቷል፤ ማንም ሊገባ አይችልም።",
+          "R": "የትርምስ ከተማ ፈራርሳለች። \\q ማንም እንዳይገባ ቤት ሁሉ ተቆልፏል።"
         }
       },
       "decisions": [
@@ -1460,6 +1567,11 @@
           "L": "Um clamor por causa do vinho [há] nas ruas; \\q todo contentamento escureceu; \\q o júbilo da terra foi para o exílio.",
           "B": "Nas ruas há gritos por causa do vinho; \\q todo contentamento escureceu como a tarde que cai; \\q o júbilo da terra foi levado para o exílio.",
           "R": "Nas ruas, as pessoas gritam porque não há vinho. \\q Toda a felicidade se apagou como a luz do pôr do sol. \\q A alegria foi tirada da terra."
+        },
+        "am": {
+          "L": "በአደባባዮች ስለ ወይን ጠጅ ጩኸት [አለ]፤ \\q ደስታ ሁሉ ጨለመ፤ \\q የምድር ሐሤት ወደ ምርኮ ሄደ።",
+          "B": "በመንገዶች ላይ ስለ ወይን ጠጅ ጩኸት ይሰማል፤ \\q ደስታ ሁሉ ጨልሞ እንደ ምሽት ሆኗል፤ \\q የምድር ሐሤት ተማርኮ ተወስዷል።",
+          "R": "በመንገዶች ላይ ያሉ ሰዎች የወይን ጠጅ ስለሌለ ይጮኻሉ። \\q ፀሐይ ስትጠልቅ ብርሃን እንደሚጠፋ፣ ደስታ ሁሉ ጠፍቷል። \\q ደስታ ከምድር ተወስዷል።"
         }
       },
       "decisions": [
@@ -1568,6 +1680,11 @@
           "L": "Desolação ficou na cidade, \\q e [a] porta foi esmagada [em] ruína.",
           "B": "Só a desolação ficou na cidade, \\q e a porta foi reduzida a escombros.",
           "R": "Só ruínas ficaram na cidade. \\q A porta dela foi despedaçada."
+        },
+        "am": {
+          "L": "በከተማዪቱ ባድማነት ቀረ፤ \\q በሩም ተሰባብሮ ፍርስራሽ ሆነ።",
+          "B": "በከተማዪቱ የቀረው ባድማነት ብቻ ነው፤ \\q በሩም ተሰባብሮ የድንጋይ ክምር ሆኗል።",
+          "R": "በከተማዪቱ የቀረው ፍርስራሽ ብቻ ነው። \\q በሯ ተሰባብሯል።"
         }
       },
       "decisions": [
@@ -1669,6 +1786,11 @@
           "L": "Porque assim será no meio da terra, entre os povos: \\q como o varejar da oliveira, \\q como os rebuscos quando terminou a vindima.",
           "B": "Porque é assim que vai ser no coração da terra, entre os povos: \\q como uma oliveira depois de varejada, \\q como as últimas uvas colhidas quando a vindima já acabou.",
           "R": "É isso que vai acontecer com os povos no mundo inteiro. \\q Eles vão ser como uma oliveira depois que as azeitonas foram derrubadas: restam só algumas nos galhos. \\q Vão ser como uma videira depois da colheita: restam só algumas uvas."
+        },
+        "am": {
+          "L": "በምድር መካከል፣ በሕዝቦች መካከል እንዲህ ይሆናልና፤ \\q እንደ ተመታ የወይራ ዛፍ፣ \\q የወይን ለቀማ ካለቀ በኋላ እንደሚቀር ቃርሚያ።",
+          "B": "በምድር መካከል፣ በሕዝቦች መካከል እንዲህ ይሆናልና፦ \\q ፍሬው ከተራገፈ በኋላ እንዳለ የወይራ ዛፍ፣ \\q መከሩ ካለቀ በኋላ እንደሚለቀም የመጨረሻ ወይን።",
+          "R": "በምድር ሁሉ ላይ በሚኖሩ ሕዝቦች ላይ የሚደርሰው ይህ ነው። \\q ፍሬው ከተራገፈ በኋላ ጥቂት ፍሬ ብቻ እንደሚቀርበት የወይራ ዛፍ ይሆናሉ። \\q ወይኑ ከተለቀመ በኋላ ጥቂት ዘለላ ብቻ እንደሚቀርበት የወይን ተክል ይሆናሉ።"
         }
       },
       "decisions": [
@@ -1790,6 +1912,11 @@
           "L": "Eles levantam a sua voz, gritam de alegria; \\q por causa da majestade {{divine_name:do SENHOR|de Javé}} clamam desde o mar.",
           "B": "Estes erguem a voz e cantam de alegria; \\q desde o ocidente aclamam a majestade {{divine_name:do SENHOR|de Javé}}.",
           "R": "Mas as pessoas que ficarem vão gritar e cantar de alegria. \\q Lá do oeste vão louvar a grandeza {{divine_name:do SENHOR|de Javé}}."
+        },
+        "am": {
+          "L": "እነርሱ ድምፃቸውን ያነሣሉ፤ እልል ይላሉ፤ \\q ስለ {{divine_name:የእግዚአብሔር|የያህዌ}} ግርማ ከባሕር ይጮኻሉ።",
+          "B": "እነዚህ ድምፃቸውን ከፍ አድርገው በደስታ እልል ይላሉ፤ \\q ከምዕራብ ስለ {{divine_name:የእግዚአብሔር|የያህዌ}} ግርማ በታላቅ ድምፅ ይጮኻሉ።",
+          "R": "የተረፉት ሰዎች ግን በደስታ ይጮኻሉ፤ ይዘምራሉም። \\q ከምዕራብ {{divine_name:እግዚአብሔር|ያህዌ}} ምን ያህል ታላቅ እንደ ሆነ ያወድሳሉ።"
         }
       },
       "decisions": [
@@ -1910,6 +2037,11 @@
           "L": "Por isso, no oriente glorifiquem {{divine_name:o SENHOR|Javé}}; \\q nas terras costeiras do mar [glorifiquem] o nome {{divine_name:do SENHOR|de Javé}}, [o] Deus de Israel.",
           "B": "Por isso, honrem {{divine_name:o SENHOR|Javé}} nas terras do nascente; \\q nas terras costeiras do mar, honrem o nome {{divine_name:do SENHOR|de Javé}}, o Deus de Israel.",
           "R": "Por isso, o povo do leste deve honrar {{divine_name:o SENHOR|Javé}}. \\q Os povos de terras distantes, do outro lado do mar, devem honrar o nome {{divine_name:do SENHOR|de Javé}}, o Deus de Israel."
+        },
+        "am": {
+          "L": "ስለዚህ በምሥራቅ {{divine_name:እግዚአብሔርን|ያህዌን}} አክብሩ፤ \\q በባሕር ደሴቶች የእስራኤልን አምላክ {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም [አክብሩ]።",
+          "B": "ስለዚህ በንጋት ምድር {{divine_name:እግዚአብሔርን|ያህዌን}} አክብሩ፤ \\q በባሕር ጠረፎች የእስራኤልን አምላክ {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም አክብሩ።",
+          "R": "ስለዚህ በምሥራቅ ያሉ ሰዎች {{divine_name:እግዚአብሔርን|ያህዌን}} ያክብሩ። \\q ከባሕር ማዶ በሩቅ አገሮች ያሉ ሰዎችም የእስራኤልን አምላክ {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም ያክብሩ።"
         }
       },
       "decisions": [
@@ -2092,6 +2224,23 @@
           "reason": "The coastlands are \"as terras costeiras\" (L, B), as the book records at 11:11, where the same phrase \"the coastlands of the sea\" first occurs; Readable says \"terras distantes\" as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"አክብሩ\" for both the English Literal \"glorify\" and the Balanced \"honor\"",
+          "alternatives": [],
+          "reason": "Amharic \"አከበረ\" covers both senses of the Hebrew verb; the coastlands are \"ደሴቶች\" (L) and \"ጠረፎች\" (B) as the terms list.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2170,6 +2319,11 @@
           "L": "Desde a asa da terra ouvimos cânticos: \"Esplendor ao justo!\" \\q E eu disse: \"Magreza para mim, magreza para mim! Ai de mim! \\q [Os] traidores traíram, \\q e [com] traição [os] traidores traíram.\"",
           "B": "Desde os confins da terra ouvimos cânticos: \"O esplendor pertence ao justo!\" \\q Mas eu disse: \"Estou definhando, definhando! Ai de mim! \\q Os desleais continuam agindo com deslealdade; \\q com deslealdade os desleais traem.\"",
           "R": "Ouvimos canções que vêm dos lugares mais distantes da terra: \"O esplendor pertence a quem é justo!\" \\q Mas eu disse: \"Estou definhando! Estou definhando! Que desgraça para mim! \\q As pessoas em quem não se pode confiar continuam traindo os outros. \\q Elas traem e traem de novo.\""
+        },
+        "am": {
+          "L": "ከምድር ክንፍ፦ «ለጻድቁ ግርማ!» የሚል ዝማሬ ሰማን። \\q እኔ ግን እንዲህ አልኩ፦ «ከሳሁ፣ ከሳሁ! ወዮልኝ! \\q ከዳተኞች ከዱ፤ \\q ከዳተኞች በክዳት ከዱ።»",
+          "B": "ከምድር ዳርቻ፦ «ግርማ ለጻድቁ ነው!» የሚል ዝማሬ ሰምተናል። \\q እኔ ግን እንዲህ አልኩ፦ «እመነምናለሁ፤ እመነምናለሁ! ወዮልኝ! \\q ታማኝ ያልሆኑት ታማኝነትን ማፍረሳቸውን አልተዉም፤ \\q ታማኝ ያልሆኑት በክዳት ሥራ ታማኝነትን ያፈርሳሉ።»",
+          "R": "ከምድር ዳርቻዎች፦ «ግርማ ጻድቅ ለሆነው ነው!» የሚል ዝማሬ ሰምተናል። \\q እኔ ግን እንዲህ አልኩ፦ «እየመነመንኩ ነው! እየመነመንኩ ነው! ምን ያህል ከፋብኝ! \\q የማይታመኑ ሰዎች ሌሎችን መክዳታቸውን አልተዉም። \\q ይከዳሉ፤ ደግመውም ይከዳሉ።»"
         }
       },
       "decisions": [
@@ -2455,6 +2609,29 @@
           "reason": "Balanced keeps the one root repeated (m3) with one Portuguese family of words, as the English \"faithless ... faith\"; Literal keeps \"traidores traíram\", Readable plain \"traindo\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230240160081",
+            "o230240160091",
+            "o230240160092",
+            "o230240160101",
+            "o230240160111",
+            "o230240160112"
+          ],
+          "choice": "\"ወዮልኝ\" for \"woe to me\" (ʾoy li)",
+          "alternatives": [],
+          "reason": "The prophet's own cry of grief; the formula \"ወዮ\" of the terms list with the first-person suffix. Readable follows its English (\"How terrible it is for me\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2517,6 +2694,11 @@
           "L": "Pavor, e cova, e laço \\q [estão] sobre ti, habitante da terra!",
           "B": "O pavor, o poço e a armadilha \\q estão sobre vocês, moradores da terra!",
           "R": "Todos vocês que vivem na terra, \\q o terror, um poço fundo e uma armadilha esperam por vocês!"
+        },
+        "am": {
+          "L": "ሽብርና ጉድጓድ፣ ወጥመድም \\q የምድር ነዋሪ ሆይ፣ በአንተ ላይ [ናቸው]!",
+          "B": "ፍርሃትና ጉድጓድ ወጥመድም \\q በምድር የምትኖሩ ሆይ፣ በላያችሁ ናቸው!",
+          "R": "በምድር ላይ የምትኖሩ ሰዎች ሁሉ ሆይ፣ \\q ሽብር፣ ጥልቅ ጉድጓድና ወጥመድ ይጠብቃችኋል!"
         }
       },
       "decisions": [
@@ -2699,6 +2881,11 @@
           "L": "E será [que] quem fugir do som do pavor cairá na cova, \\q e quem subir do meio da cova será apanhado no laço; \\q porque janelas do alto foram abertas, \\q e [os] fundamentos [da] terra tremeram.",
           "B": "Quem fugir do grito de pavor cairá no poço, \\q e quem subir do fundo do poço será pego na armadilha. \\q Pois as janelas lá do alto se abriram, \\q e os alicerces da terra estremecem.",
           "R": "Quem fugir dos gritos de terror vai cair no poço. \\q Quem sair do poço vai ficar preso na armadilha. \\q As janelas do céu se abriram para despejar água, \\q e a terra treme até os seus alicerces."
+        },
+        "am": {
+          "L": "እንዲህም ይሆናል፤ ከሽብሩ ድምፅ የሚሸሽ ወደ ጉድጓዱ ይወድቃል፤ \\q ከጉድጓዱም መካከል የሚወጣ በወጥመዱ ይያዛል፤ \\q ከላይ መስኮቶች ተከፍተዋልና፤ \\q የምድርም መሠረቶች ተናወጡ።",
+          "B": "ከፍርሃት ድምፅ የሚሸሽ ሁሉ ወደ ጉድጓዱ ይወድቃል፤ \\q ከጉድጓዱ የሚወጣም ሁሉ በወጥመዱ ይያዛል። \\q በላይ ያሉት መስኮቶች ወለል ብለው ተከፍተዋልና፤ \\q የምድርም መሠረቶች ይናወጣሉ።",
+          "R": "ከሽብር ድምፅ የሚሸሽ ሁሉ ወደ ጉድጓዱ ይወድቃል። \\q ከጉድጓዱ የሚወጣ ሁሉ በወጥመዱ ይያዛል። \\q ውኃ ለማውረድ በሰማይ ያሉ መስኮቶች ተከፍተዋል፤ \\q ምድርም እስከ መሠረቷ ድረስ ትናወጣለች።"
         }
       },
       "decisions": [
@@ -2813,6 +3000,11 @@
           "L": "Totalmente quebrada está a terra; \\q totalmente fendida está [a] terra; \\q totalmente abalada está [a] terra.",
           "B": "A terra se despedaça; \\q a terra se racha de lado a lado; \\q a terra cambaleia e estremece.",
           "R": "A terra se quebra em pedaços. \\q A terra se abre de um lado a outro. \\q A terra treme com violência."
+        },
+        "am": {
+          "L": "ምድር ፈጽማ ተሰበረች፤ \\q ምድር ፈጽማ ተሰነጠቀች፤ \\q ምድር ፈጽማ ተናወጠች።",
+          "B": "ምድር ተሰባብራ ደቀቀች፤ \\q ምድር ከዳር እስከ ዳር ተሰንጥቃለች፤ \\q ምድር ትንገዳገዳለች፤ ትንቀጠቀጣለችም።",
+          "R": "ምድር ተሰባብራ ትፈራርሳለች። \\q ምድር ተሰንጥቃ ትከፈታለች። \\q ምድር በኃይል ትናወጣለች።"
         }
       },
       "decisions": [
@@ -2904,6 +3096,11 @@
           "L": "A terra cambaleará, cambaleará como o bêbado, \\q e balançará como a choupana; \\q e a sua rebeldia pesará sobre ela, \\q e cairá e não tornará a levantar-se.",
           "B": "A terra cambaleará de um lado para outro como um bêbado; \\q balançará como a cabana de um vigia. \\q A sua rebeldia pesa sobre ela; \\q ela cairá e não se levantará mais.",
           "R": "A terra vai tropeçar de um lado para o outro como alguém que está bêbado. \\q Vai balançar como uma cabana pequena no meio do campo. \\q A sua rebeldia vai pesar tanto sobre ela que ela vai cair e nunca mais vai se levantar."
+        },
+        "am": {
+          "L": "ምድር እንደ ሰካራም ትንገዳገዳለች፤ ትንገዳገዳለች፤ \\q እንደ ዳስም ትወዛወዛለች፤ \\q ዓመፃዋም በላይዋ ትከብዳለች፤ \\q ትወድቃለች፤ ደግማም አትነሣም።",
+          "B": "ምድር እንደ ሰካራም ወዲያና ወዲህ ትንገዳገዳለች፤ \\q እንደ ጠባቂ ዳስ ትወዛወዛለች። \\q ዓመፃዋ ይጫናታል፤ \\q ትወድቃለች፤ ዳግመኛም አትነሣም።",
+          "R": "ምድር እንደ ሰከረ ሰው ትንገዳገዳለች። \\q በእርሻ ውስጥ እንዳለ ትንሽ ዳስ ወዲያና ወዲህ ትወዛወዛለች። \\q ዓመፃዋ እጅግ ስለሚከብድባት ትወድቃለች፤ ዳግመኛም ፈጽሞ አትነሣም።"
         }
       },
       "decisions": [
@@ -3043,6 +3240,11 @@
           "L": "E será naquele dia \\q [que] {{divine_name:o SENHOR|Javé}} visitará [em juízo] o exército do alto, no alto, \\q e os reis do solo, sobre o solo.",
           "B": "Naquele dia {{divine_name:o SENHOR|Javé}} pedirá contas ao exército das alturas, lá no alto, \\q e aos reis da terra, aqui embaixo, na terra.",
           "R": "Naquele dia {{divine_name:o SENHOR|Javé}} vai castigar os poderes do céu, lá no alto, \\q e os reis que governam a terra, aqui embaixo."
+        },
+        "am": {
+          "L": "በዚያም ቀን እንዲህ ይሆናል፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} በከፍታ ያለውን የከፍታውን ሠራዊት፣ \\q በምድር ላይ ያሉትንም የምድር ነገሥታት [ለፍርድ] ይጎበኛል።",
+          "B": "በዚያ ቀን {{divine_name:እግዚአብሔር|ያህዌ}} በላይ በከፍታ ያለውን የሰማይ ሠራዊት \\q በምድር ላይ ያሉትንም የምድር ነገሥታት ተጠያቂ ያደርጋል።",
+          "R": "በዚያን ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ከፍ ብለው በሰማይ ያሉትን ኃይላት፣ \\q እዚህ በምድር ላይ የሚገዙትንም ነገሥታት ይቀጣል።"
         }
       },
       "decisions": [
@@ -3140,6 +3342,21 @@
           "reason": "Following the Isaiah-wide choice, the formula \"in that day\" is \"naquele dia\" at every level, including Readable where the English Readable says \"at that time\"; \"naquele tempo\" is kept for the other Hebrew phrase, \"at that time\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [],
+          "choice": "The verb \"ይጎበኛል\" closes the third line (Literal)",
+          "alternatives": [],
+          "reason": "Amharic puts the verb last, so the two objects stand on their own lines as the English does and the verb follows the second.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3207,6 +3424,11 @@
           "L": "E serão ajuntados [como] se ajuntam prisioneiros numa cova, \\q e serão encerrados numa prisão, \\q e depois de muitos dias serão visitados.",
           "B": "Serão reunidos como prisioneiros, dentro de uma cova, \\q e trancados numa prisão; \\q depois de muitos dias, serão levados a julgamento.",
           "R": "Eles vão ser reunidos como prisioneiros e jogados numa cova funda. \\q Vão ficar trancados numa prisão. \\q Depois de muito tempo, vão receber o seu castigo."
+        },
+        "am": {
+          "L": "እስረኞች ወደ ጉድጓድ እንደሚሰበሰቡ ይሰበሰባሉ፤ \\q በወህኒ ቤትም ይዘጋሉ፤ \\q ከብዙ ቀንም በኋላ ይጎበኛሉ።",
+          "B": "እስረኞች እንደሚታጎሩ ወደ ጉድጓድ ይታጎራሉ፤ \\q በወህኒ ቤትም ይቆለፍባቸዋል፤ \\q ከብዙ ቀን በኋላም ለፍርድ ይቀርባሉ።",
+          "R": "እንደ እስረኞች በአንድነት ተሰብስበው ወደ ጥልቅ ጉድጓድ ይጣላሉ። \\q በእስር ቤት ይዘጋባቸዋል። \\q ከረጅም ጊዜ በኋላ ቅጣታቸውን ይቀበላሉ።"
         }
       },
       "decisions": [
@@ -3330,6 +3552,11 @@
           "L": "E a lua corará, e o sol se envergonhará, \\q porque {{divine_name:o SENHOR|Javé}} dos Exércitos reinará no monte Sião e em Jerusalém, \\q e diante dos {{deity_pronoun:seus|Seus}} anciãos [haverá] glória.",
           "B": "A lua ficará corada e o sol baixará a cabeça, \\q porque {{divine_name:o SENHOR|Javé}} dos Exércitos assumirá o reinado no monte Sião e em Jerusalém, \\q e diante dos {{deity_pronoun:seus|Seus}} anciãos haverá glória.",
           "R": "A lua e o sol vão parecer envergonhados, \\q porque {{divine_name:o SENHOR|Javé}} dos Exércitos vai governar como rei no monte Sião e em Jerusalém. \\q Os líderes do {{deity_pronoun:seu|Seu}} povo vão ver a {{deity_pronoun:sua|Sua}} glória."
+        },
+        "am": {
+          "L": "ጨረቃም ታፍራለች፤ ፀሐይም ትዋረዳለች፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት በጽዮን ተራራና በኢየሩሳሌም ይነግሣልና፤ \\q በሽማግሌዎቹም ፊት ክብር [ይሆናል]።",
+          "B": "ጨረቃ ታፍራለች፤ ፀሐይም አንገቷን ትደፋለች፤ \\q የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} በጽዮን ተራራና በኢየሩሳሌም ንጉሥ ሆኖ ይገዛልና፤ \\q በሽማግሌዎቹም ፊት ክብር ይሆናል።",
+          "R": "ጨረቃና ፀሐይ ያፈሩ ይመስላሉ፤ \\q የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} በጽዮን ተራራና በኢየሩሳሌም ንጉሥ ሆኖ ይገዛልና። \\q የሕዝቡ መሪዎች ክብሩን ያያሉ።"
         }
       },
       "decisions": [

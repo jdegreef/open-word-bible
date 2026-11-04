@@ -58,6 +58,11 @@
           "L": "Rendam graças {{divine_name:ao SENHOR|a Javé}}, porque [{{deity_pronoun:ele|Ele}} é] bom, porque o {{deity_pronoun:seu|Seu}} amor leal [é] para sempre.",
           "B": "Rendam graças {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} é bom; o {{deity_pronoun:seu|Seu}} amor leal dura para sempre.",
           "R": "Agradeçam {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} é bom! O {{deity_pronoun:seu|Seu}} amor leal dura para sempre."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ መልካም ነውና፤ ጽኑ ፍቅሩ ለዘላለም ነውና።",
+          "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ እርሱ መልካም ነው፤ ጽኑ ፍቅሩም ለዘላለም ይኖራል።",
+          "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ እርሱ መልካም ነው! ጽኑ ፍቅሩም ለዘላለም ይኖራል።"
         }
       },
       "decisions": [
@@ -207,6 +212,45 @@
           "reason": "The temple's refrain of thanks (m2) has the words of 1 Chronicles 16:34 in Portuguese at each level, as Psalm 118:1, 29 and 136 repeat them. Readable keeps \"amor leal\" here, as the Chronicles refrain does at every level, although the Psalms elsewhere say \"amor fiel\" at Readable (r-en-1); the refrain stays one sentence wherever it is sung.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191070010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 107",
+          "alternatives": [],
+          "reason": "Amharic has no deity_pronoun spans: the Ethiopic script has no capital letters, so the setting has nothing to change. God is spoken of with the ordinary pronouns (እርሱ, አንተ) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070010071",
+            "o191070010062"
+          ],
+          "choice": "The refrain as Ezra 3:11 and 1 Chronicles 16:34: L «… መልካም ነውና፤ ጽኑ ፍቅሩ ለዘላለም ነውና።»; B, R «እርሱ መልካም ነው፤ ጽኑ ፍቅሩም ለዘላለም ይኖራል።»",
+          "alternatives": [],
+          "reason": "The Hebrew of this verse is word for word that of 1 Chronicles 16:34, so its Amharic is kept, and the refrain reads the same wherever it comes back (106:1; 118:1, 29; 136).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -268,6 +312,11 @@
           "L": "Que digam [isso] os resgatados {{divine_name:do SENHOR|de Javé}}, os que {{deity_pronoun:ele|Ele}} resgatou da mão do adversário,",
           "B": "Que o digam aqueles que {{divine_name:o SENHOR|Javé}} resgatou, os que {{deity_pronoun:ele|Ele}} libertou das garras do inimigo,",
           "R": "Todas as pessoas que {{divine_name:o SENHOR|Javé}} libertou devem dizer isso! Ele as livrou do poder dos seus inimigos."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የቤዣቸው ይህን ይበሉ፤ ከባላጋራ እጅ የቤዣቸው፣",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የቤዣቸው ሰዎች ይህን ይናገሩ፤ ከጠላት እጅ ነጻ ያወጣቸው፣",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ነጻ ያወጣቸው ሰዎች ሁሉ ይህን ይናገሩ! ከጠላቶቻቸው ኃይል ታደጋቸው።"
         }
       },
       "decisions": [
@@ -354,6 +403,28 @@
           "reason": "The verb is buying back a relative or his land (m1). \"Resgatar\" keeps that picture of paying to set someone free in everyday Portuguese, where \"redimir\" is a church word; Readable says \"libertou\", as the English says \"set free\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070020021",
+            "o191070020051",
+            "o191070020052"
+          ],
+          "choice": "redeem (gaʾal) as \"ቤዠ\" (L, B); Readable \"ነጻ ያወጣቸው\" (set free)",
+          "alternatives": [
+            "\"ዋጀ\""
+          ],
+          "reason": "The terms list keeps \"ቤዠ\" for gaʾal and \"ዋጀ\" for padah (ransom). Readable says plainly what the redeeming was, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -421,6 +492,11 @@
           "L": "e das terras {{deity_pronoun:ele|Ele}} os ajuntou, do oriente e do ocidente, do norte e do mar.",
           "B": "e os trouxe de volta de outras terras, do oriente e do ocidente, do norte e do sul.",
           "R": "Ele os reuniu de países distantes, do leste, do oeste, do norte e do sul."
+        },
+        "am": {
+          "L": "ከየአገሩም የሰበሰባቸው፣ ከምሥራቅና ከምዕራብ፣ ከሰሜንና ከባሕር።",
+          "B": "ከልዩ ልዩ አገሮች፣ ከምሥራቅና ከምዕራብ፣ ከሰሜንና ከደቡብ የሰበሰባቸው።",
+          "R": "ከሩቅ አገሮች፣ ከምሥራቅ፣ ከምዕራብ፣ ከሰሜንና ከደቡብ ሰበሰባቸው።"
         }
       },
       "decisions": [
@@ -574,6 +650,11 @@
           "L": "Vaguearam no deserto, por um caminho desolado; uma cidade [para] morar não encontraram.",
           "B": "Uns andaram perdidos pelo deserto, por uma trilha árida, e não acharam cidade onde morar.",
           "R": "Algumas pessoas estavam perdidas no deserto. Andavam por uma terra vazia e não conseguiam achar nenhuma cidade para morar."
+        },
+        "am": {
+          "L": "በምድረ በዳ፣ በባድማ መንገድ ተቅበዘበዙ፤ የሚኖሩባትን ከተማ አላገኙም።",
+          "B": "አንዳንዶቹ በምድረ በዳ፣ ጠፍ በሆነ መንገድ ተቅበዘበዙ፤ የሚኖሩበትንም ከተማ አላገኙም።",
+          "R": "አንዳንድ ሰዎች በምድረ በዳ ጠፍተው ነበር። ባዶ በሆነ ምድር ተጓዙ፤ የሚኖሩበትንም ከተማ ማግኘት አልቻሉም።"
         }
       },
       "decisions": [
@@ -720,6 +801,11 @@
           "L": "Famintos, sedentos também, a sua alma desfalecia dentro deles.",
           "B": "Famintos e sedentos, sentiam a vida se esvair de dentro deles.",
           "R": "Não tinham comida nem água, e estavam quase morrendo."
+        },
+        "am": {
+          "L": "ተርበው፣ ደግሞም ተጠምተው፣ ነፍሳቸው በውስጣቸው ትዝል ነበር።",
+          "B": "ተርበውና ተጠምተው ሕይወታቸው ከውስጣቸው እያለቀች እንደ ሆነ ተሰማቸው።",
+          "R": "ምግብም ውኃም አልነበራቸውም፤ ለሞትም ተቃርበው ነበር።"
         }
       },
       "decisions": [
@@ -855,6 +941,11 @@
           "L": "Então clamaram {{divine_name:ao SENHOR|a Javé}} na sua angústia; das suas aflições {{deity_pronoun:ele|Ele}} os livrou.",
           "B": "Na sua angústia clamaram {{divine_name:ao SENHOR|a Javé}}, e {{deity_pronoun:ele|Ele}} os livrou das suas aflições.",
           "R": "No meio da aflição, eles clamaram {{divine_name:ao SENHOR|a Javé}} pedindo socorro, e {{deity_pronoun:ele|Ele}} os livrou do sofrimento."
+        },
+        "am": {
+          "L": "በጭንቀታቸውም ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ ከመከራቸውም ታደጋቸው።",
+          "B": "በጭንቀታቸው ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ተጣሩ፤ እርሱም ከመከራቸው ታደጋቸው።",
+          "R": "በችግራቸው ጊዜ እርዳታ ለማግኘት ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ እርሱም ከሥቃያቸው ታደጋቸው።"
         }
       },
       "decisions": [
@@ -989,6 +1080,25 @@
           "reason": "The first refrain (m1) keeps one wording at each level in verses 6, 13, 19 and 28, with only the verb of rescue changing: \"livrou\" (6), \"salvou\" (13, 19), \"tirou\" (28). \"Clamar\" is the cry for help of Israel in Egypt (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070060012"
+          ],
+          "choice": "The first refrain (6, 13, 19, 28) has one wording; only its last verb changes, as the Hebrew does: \"ታደጋቸው\" (6), \"አዳናቸው\" (13, 19), \"አወጣቸው\" (28)",
+          "alternatives": [],
+          "reason": "The refrain is meant to be heard as the same words each time; distress (tsar) is \"ጭንቀት\" and troubles (metsuqot) \"መከራ\" (R \"ችግር\", \"ሥቃይ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1052,6 +1162,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} os guiou por um caminho reto, para irem a uma cidade [para] morar.",
           "B": "Ele os conduziu por uma estrada plana até chegarem a uma cidade onde morar.",
           "R": "Ele os levou direto para uma cidade onde podiam fazer o seu lar."
+        },
+        "am": {
+          "L": "በቀና መንገድም መራቸው፤ ወደሚኖሩባት ከተማ ይሄዱ ዘንድ።",
+          "B": "ወደሚኖሩበት ከተማ እስኪደርሱ ድረስ በቀና መንገድ መራቸው።",
+          "R": "ቤታቸውን ሠርተው ወደሚኖሩበት ከተማ በቀጥታ መራቸው።"
         }
       },
       "decisions": [
@@ -1145,6 +1260,11 @@
           "L": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} [pelo] {{deity_pronoun:seu|Seu}} amor leal e [pelas] {{deity_pronoun:suas|Suas}} maravilhas para com os filhos da humanidade.",
           "B": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor leal e pelas {{deity_pronoun:suas|Suas}} maravilhas em favor da humanidade.",
           "R": "Que eles agradeçam {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor fiel e pelas coisas maravilhosas que {{deity_pronoun:ele|Ele}} faz pelas pessoas."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩ፣ ለሰው ልጆችም [ስላደረጋቸው] ድንቅ ሥራዎቹ ያመስግኑት።",
+          "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩና ለሰው ልጆች ስለሚያደርጋቸው ድንቅ ሥራዎች ያመስግኑት።",
+          "R": "ስለ ጽኑ ፍቅሩና ለሰዎች ስለሚያደርጋቸው አስደናቂ ነገሮች {{divine_name:እግዚአብሔርን|ያህዌን}} ማመስገን አለባቸው።"
         }
       },
       "decisions": [
@@ -1386,6 +1506,25 @@
           "reason": "\"Children of humankind\" (m4) means people in general, so the Portuguese says it without \"homens\", and with no gender setting, as the English has none here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191070080011"
+          ],
+          "choice": "The second refrain (8, 15, 21, 31) has one wording at each level",
+          "alternatives": [],
+          "reason": "Amharic puts the verb last, so \"let them give thanks\" (\"ያመስግኑት\") closes the line, after both reasons for thanks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1447,6 +1586,11 @@
           "L": "Porque {{deity_pronoun:ele|Ele}} saciou a alma sedenta, e a alma faminta {{deity_pronoun:ele|Ele}} encheu de bem.",
           "B": "Porque {{deity_pronoun:ele|Ele}} dá de beber a quem tem sede e enche de coisas boas o faminto.",
           "R": "Ele dá água às pessoas que têm sede e boa comida às pessoas que têm fome."
+        },
+        "am": {
+          "L": "የተጠማችውን ነፍስ አጥግቧልና፤ የተራበችውንም ነፍስ በመልካም [ነገር] ሞልቷል።",
+          "B": "የተጠሙትን ያረካልና፤ የተራቡትንም በመልካም ምግብ ያጠግባል።",
+          "R": "ለተጠሙ ሰዎች ውኃ ይሰጣል፤ ለተራቡትም መልካም ምግብ ይሰጣል።"
         }
       },
       "decisions": [
@@ -1638,6 +1782,11 @@
           "L": "Os que estavam sentados em trevas e em sombra de morte, presos em aflição e ferro,",
           "B": "Uns viviam nas trevas, na escuridão mais negra, presos na miséria e no ferro,",
           "R": "Algumas pessoas estavam sentadas no escuro, na escuridão mais profunda. Eram prisioneiros, presos com correntes de ferro e cheios de sofrimento."
+        },
+        "am": {
+          "L": "በጨለማና በድቅድቅ ጨለማ የተቀመጡ፣ በመከራና በብረት የታሰሩ፣",
+          "B": "አንዳንዶቹ በጨለማ፣ በድቅድቅ ጨለማ ውስጥ ይኖሩ ነበር፤ በጉስቁልናና በብረት ተይዘው ነበር፤",
+          "R": "አንዳንድ ሰዎች በጨለማ፣ በድቅድቅ ጨለማ ውስጥ ተቀምጠው ነበር። በብረት ሰንሰለትና በሥቃይ የታሰሩ እስረኞች ነበሩ።"
         }
       },
       "decisions": [
@@ -1743,6 +1892,28 @@
           "reason": "Literal keeps the Hebrew picture of deadly darkness (m2) as \"sombra de morte\", the words Portuguese readers know from 23:4; Balanced and Readable say \"escuridão mais negra\", \"mais profunda\", as the English does. The same words come back in verse 14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070100021",
+            "o191070100032"
+          ],
+          "choice": "deep darkness (tsalmawet) as \"ድቅድቅ ጨለማ\"",
+          "alternatives": [
+            "\"የሞት ጥላ\""
+          ],
+          "reason": "The meaning decision reads the word as the deepest darkness of the prison; \"የሞት ጥላ\" (shadow of death) follows the old reading of the word and would add a meaning the line does not need here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1803,6 +1974,11 @@
           "L": "porque se rebelaram contra as palavras de Deus, e o conselho do Altíssimo desprezaram.",
           "B": "porque desafiaram o que Deus disse e desprezaram o plano do Altíssimo.",
           "R": "Isso aconteceu porque eles tinham se voltado contra o que Deus disse. Tinham se recusado a ouvir os conselhos do Deus que está acima de tudo."
+        },
+        "am": {
+          "L": "የእግዚአብሔርን ቃል ዐምፀዋልና፤ የልዑልንም ምክር ንቀዋልና።",
+          "B": "እግዚአብሔር የተናገረውን ተቃውመው፣ የልዑልንም ዓላማ ንቀው ነበርና።",
+          "R": "ይህ የሆነው እግዚአብሔር የተናገረውን ስለ ተቃወሙ ነው። ከሁሉ በላይ የሆነው አምላክ የሰጣቸውን ምክር ለመስማት እምቢ ብለው ነበር።"
         }
       },
       "decisions": [
@@ -1907,6 +2083,27 @@
           "reason": "The earlier Psalms set these forms for the Most High. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070110041"
+          ],
+          "choice": "\"the words of God\" (El) as \"የእግዚአብሔር ቃል\"; the Most High as \"ልዑል\" (R \"ከሁሉ በላይ የሆነው አምላክ\", as 57:3)",
+          "alternatives": [
+            "\"የአምላክ ቃል\""
+          ],
+          "reason": "El stands alone for the one God, with no possessor, so it is \"እግዚአብሔር\" with no divine_name span (the span is only for YHWH).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1969,6 +2166,11 @@
           "L": "Então {{deity_pronoun:ele|Ele}} abateu o coração deles com fadiga; tropeçaram, e não [havia] quem ajudasse.",
           "B": "Por isso {{deity_pronoun:ele|Ele}} quebrou o orgulho deles com trabalhos pesados; caíram, e ninguém veio ajudar.",
           "R": "Por isso {{deity_pronoun:ele|Ele}} os fez humildes com trabalho duro. Eles caíram, e ninguém os ajudou."
+        },
+        "am": {
+          "L": "ስለዚህ ልባቸውን በድካም አዋረደ፤ ተሰናከሉ፤ የሚረዳም አልነበረም።",
+          "B": "ስለዚህ በከባድ ድካም ትዕቢታቸውን ሰበረ፤ ወደቁ፤ የሚረዳቸውም አልመጣም።",
+          "R": "ስለዚህ በከባድ ሥራ አዋረዳቸው። ወደቁ፤ ማንም አልረዳቸውም።"
         }
       },
       "decisions": [
@@ -2087,6 +2289,11 @@
           "L": "Então clamaram {{divine_name:ao SENHOR|a Javé}} na sua angústia; das suas aflições {{deity_pronoun:ele|Ele}} os salvou.",
           "B": "Na sua angústia clamaram {{divine_name:ao SENHOR|a Javé}}, e {{deity_pronoun:ele|Ele}} os salvou das suas aflições.",
           "R": "No meio da aflição, eles clamaram {{divine_name:ao SENHOR|a Javé}} pedindo socorro, e {{deity_pronoun:ele|Ele}} os salvou do sofrimento."
+        },
+        "am": {
+          "L": "በጭንቀታቸውም ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ ከመከራቸውም አዳናቸው።",
+          "B": "በጭንቀታቸው ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ተጣሩ፤ እርሱም ከመከራቸው አዳናቸው።",
+          "R": "በችግራቸው ጊዜ እርዳታ ለማግኘት ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ እርሱም ከሥቃያቸው አዳናቸው።"
         }
       },
       "decisions": [
@@ -2214,6 +2421,11 @@
           "L": "Ele os tirou das trevas e da sombra de morte, e as amarras deles {{deity_pronoun:ele|Ele}} despedaçou.",
           "B": "Ele os tirou das trevas e da escuridão mais negra e rebentou as correntes que os prendiam.",
           "R": "Ele os tirou do escuro e da escuridão profunda. Ele quebrou as correntes deles."
+        },
+        "am": {
+          "L": "ከጨለማና ከድቅድቅ ጨለማ አወጣቸው፤ እስራታቸውንም በጣጠሰ።",
+          "B": "ከጨለማውና ከድቅድቁ ጨለማ መርቶ አወጣቸው፤ ያሰሯቸውንም ሰንሰለቶች በጠሰ።",
+          "R": "ከጨለማውና ከድቅድቁ ጨለማ መርቶ አወጣቸው። ሰንሰለታቸውንም ሰባበረ።"
         }
       },
       "decisions": [
@@ -2308,6 +2520,11 @@
           "L": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} [pelo] {{deity_pronoun:seu|Seu}} amor leal e [pelas] {{deity_pronoun:suas|Suas}} maravilhas para com os filhos da humanidade.",
           "B": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor leal e pelas {{deity_pronoun:suas|Suas}} maravilhas em favor da humanidade.",
           "R": "Que eles agradeçam {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor fiel e pelas coisas maravilhosas que {{deity_pronoun:ele|Ele}} faz pelas pessoas."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩ፣ ለሰው ልጆችም [ስላደረጋቸው] ድንቅ ሥራዎቹ ያመስግኑት።",
+          "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩና ለሰው ልጆች ስለሚያደርጋቸው ድንቅ ሥራዎች ያመስግኑት።",
+          "R": "ስለ ጽኑ ፍቅሩና ለሰዎች ስለሚያደርጋቸው አስደናቂ ነገሮች {{divine_name:እግዚአብሔርን|ያህዌን}} ማመስገን አለባቸው።"
         }
       },
       "decisions": [
@@ -2453,6 +2670,11 @@
           "L": "Porque {{deity_pronoun:ele|Ele}} despedaçou portas de bronze, e trancas de ferro {{deity_pronoun:ele|Ele}} cortou.",
           "B": "Porque {{deity_pronoun:ele|Ele}} arrebenta portas de bronze e corta trancas de ferro.",
           "R": "Ele é capaz de derrubar portões de bronze e cortar barras de ferro."
+        },
+        "am": {
+          "L": "የነሐስ በሮችን ሰብሯልና፤ የብረት መወርወሪያዎችንም ቆርጧል።",
+          "B": "የነሐስ በሮችን ይሰባብራልና፤ የብረት መወርወሪያዎችንም ቆራርጦ ይጥላል።",
+          "R": "እርሱ የነሐስ በሮችን ሊሰብር፣ የብረት መወርወሪያዎችንም ሊቆርጥ ይችላል።"
         }
       },
       "decisions": [
@@ -2570,6 +2792,11 @@
           "L": "Insensatos, por causa do caminho da sua rebeldia e por causa das suas iniquidades, foram afligidos.",
           "B": "Uns eram insensatos, e os seus caminhos de rebeldia e as suas maldades trouxeram sofrimento sobre eles.",
           "R": "Algumas pessoas foram tolas. Porque se voltaram contra Deus e fizeram o mal, ficaram doentes e sofreram."
+        },
+        "am": {
+          "L": "ሰነፎች ከመተላለፋቸው መንገድ የተነሣ፣ ከበደላቸውም የተነሣ ተጨነቁ።",
+          "B": "አንዳንዶቹ ሰነፎች ነበሩ፤ የዓመፅ መንገዳቸውና በደላቸው መከራ አመጣባቸው።",
+          "R": "አንዳንድ ሰዎች ማስተዋል የጎደላቸው ነበሩ። በእግዚአብሔር ላይ ስላመፁና ክፉ ስላደረጉ ታመሙ፤ ተሠቃዩም።"
         }
       },
       "decisions": [
@@ -2674,6 +2901,27 @@
           "reason": "The word is not a lack of brains but a stubborn refusal of God's ways (m2). \"Insensato\" says that in the language of Proverbs; Readable's \"tolas\" is the plain word, agreeing with \"pessoas\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070170011"
+          ],
+          "choice": "fools (ʾewilim) as \"ሰነፎች\" (L, B); Readable \"ማስተዋል የጎደላቸው\"",
+          "alternatives": [
+            "\"ሞኞች\""
+          ],
+          "reason": "The terms list keeps \"ሰነፍ\" for ʾewil and \"ሞኝ\" for kesil; Readable says what the folly is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2736,6 +2984,11 @@
           "L": "Toda comida a sua alma abominava, e chegaram às portas da morte.",
           "B": "Não suportavam nem ver comida e chegaram perto das portas da morte.",
           "R": "Não conseguiam comer nada, e estavam quase morrendo."
+        },
+        "am": {
+          "L": "ነፍሳቸው መብልን ሁሉ ተጸየፈች፤ ወደ ሞትም ደጆች ደረሱ።",
+          "B": "ምግብ ማየት እንኳ ጠሉ፤ ወደ ሞት ደጆችም ተቃረቡ።",
+          "R": "ምንም ነገር መብላት አልቻሉም፤ ሊሞቱም ተቃርበው ነበር።"
         }
       },
       "decisions": [
@@ -2871,6 +3124,11 @@
           "L": "Então clamaram {{divine_name:ao SENHOR|a Javé}} na sua angústia; das suas aflições {{deity_pronoun:ele|Ele}} os salvou.",
           "B": "Na sua angústia clamaram {{divine_name:ao SENHOR|a Javé}}, e {{deity_pronoun:ele|Ele}} os salvou das suas aflições.",
           "R": "No meio da aflição, eles clamaram {{divine_name:ao SENHOR|a Javé}} pedindo socorro, e {{deity_pronoun:ele|Ele}} os salvou do sofrimento."
+        },
+        "am": {
+          "L": "በጭንቀታቸውም ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ ከመከራቸውም አዳናቸው።",
+          "B": "በጭንቀታቸው ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ተጣሩ፤ እርሱም ከመከራቸው አዳናቸው።",
+          "R": "በችግራቸው ጊዜ እርዳታ ለማግኘት ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ እርሱም ከሥቃያቸው አዳናቸው።"
         }
       },
       "decisions": [
@@ -2999,6 +3257,11 @@
           "L": "Ele enviou a {{deity_pronoun:sua|Sua}} palavra e os curou, e [os] livrou das suas covas.",
           "B": "Ele enviou a {{deity_pronoun:sua|Sua}} palavra e os curou; {{deity_pronoun:ele|Ele}} os arrancou da cova da morte.",
           "R": "Bastou {{deity_pronoun:ele|Ele}} falar, e eles foram curados. Ele os livrou da morte."
+        },
+        "am": {
+          "L": "ቃሉን ላከ፤ ፈወሳቸውም፤ ከጉድጓዶቻቸውም ታደጋቸው።",
+          "B": "ቃሉን ልኮ ፈወሳቸው፤ ከሞት ጉድጓድም ጎትቶ አወጣቸው።",
+          "R": "አንድ ቃል ብቻ ተናገረ፤ እነርሱም ተፈወሱ። ከሞትም ጠበቃቸው።"
         }
       },
       "decisions": [
@@ -3135,6 +3398,11 @@
           "L": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} [pelo] {{deity_pronoun:seu|Seu}} amor leal e [pelas] {{deity_pronoun:suas|Suas}} maravilhas para com os filhos da humanidade.",
           "B": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor leal e pelas {{deity_pronoun:suas|Suas}} maravilhas em favor da humanidade.",
           "R": "Que eles agradeçam {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor fiel e pelas coisas maravilhosas que {{deity_pronoun:ele|Ele}} faz pelas pessoas."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩ፣ ለሰው ልጆችም [ስላደረጋቸው] ድንቅ ሥራዎቹ ያመስግኑት።",
+          "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩና ለሰው ልጆች ስለሚያደርጋቸው ድንቅ ሥራዎች ያመስግኑት።",
+          "R": "ስለ ጽኑ ፍቅሩና ለሰዎች ስለሚያደርጋቸው አስደናቂ ነገሮች {{divine_name:እግዚአብሔርን|ያህዌን}} ማመስገን አለባቸው።"
         }
       },
       "decisions": [
@@ -3282,6 +3550,11 @@
           "L": "E que ofereçam sacrifícios de ação de graças, e que contem as {{deity_pronoun:suas|Suas}} obras com gritos de alegria.",
           "B": "Que tragam ofertas de gratidão e, com gritos de alegria, contem o que {{deity_pronoun:ele|Ele}} fez.",
           "R": "Que eles ofereçam sacrifícios para agradecer a {{deity_pronoun:ele|Ele}} e gritem de alegria contando o que {{deity_pronoun:ele|Ele}} fez."
+        },
+        "am": {
+          "L": "የምስጋናንም መሥዋዕት ይሠዉ፤ ሥራዎቹንም በእልልታ ይናገሩ።",
+          "B": "የምስጋና መሥዋዕት ያቅርቡ፤ ያደረገውንም በደስታ እልልታ ይንገሩ።",
+          "R": "እርሱን ለማመስገን መሥዋዕት ያቅርቡ፤ ያደረገውንም ሲናገሩ በደስታ እልል ይበሉ።"
         }
       },
       "decisions": [
@@ -3395,6 +3668,11 @@
           "L": "Os que descem ao mar em navios, fazendo negócios em muitas águas,",
           "B": "Uns saíram ao mar em navios, negociando por vastas águas,",
           "R": "Algumas pessoas navegavam pelo mar em navios. Eram comerciantes e levavam mercadorias pelo grande oceano."
+        },
+        "am": {
+          "L": "በመርከቦች ወደ ባሕር የሚወርዱ፣ በብዙ ውኆች ላይ ንግድ የሚያደርጉ፣",
+          "B": "አንዳንዶቹ በመርከቦች ወደ ባሕር ተጓዙ፤ በሰፊው ውኃ ላይ ይነግዱ ነበር፤",
+          "R": "አንዳንድ ሰዎች በመርከብ በባሕር ላይ ይጓዙ ነበር። ዕቃ ጭነው ሰፊውን ውቅያኖስ የሚያቋርጡ ነጋዴዎች ነበሩ።"
         }
       },
       "decisions": [
@@ -3519,6 +3797,11 @@
           "L": "eles viram as obras {{divine_name:do SENHOR|de Javé}} e as {{deity_pronoun:suas|Suas}} maravilhas no abismo.",
           "B": "eles mesmos viram o que {{divine_name:o SENHOR|Javé}} faz, as {{deity_pronoun:suas|Suas}} maravilhas lá no alto-mar.",
           "R": "Viram com os próprios olhos o que {{divine_name:o SENHOR|Javé}} é capaz de fazer e as coisas maravilhosas que {{deity_pronoun:ele|Ele}} faz no mar profundo."
+        },
+        "am": {
+          "L": "እነርሱ {{divine_name:የእግዚአብሔርን|የያህዌን}} ሥራዎች፣ በጥልቁም ውስጥ ድንቆቹን አዩ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚያደርገውን፣ በጥልቁ ባሕር ላይ ያለውን ድንቅ ሥራውን ራሳቸው አዩ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ምን ሊያደርግ እንደሚችል፣ በጥልቁ ባሕርም ላይ የሚያደርጋቸውን አስደናቂ ነገሮች በገዛ ዓይናቸው አዩ።"
         }
       },
       "decisions": [
@@ -3629,6 +3912,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} falou e levantou um vento de tempestade, e este ergueu alto as suas ondas.",
           "B": "À {{deity_pronoun:sua|Sua}} palavra levantou-se uma ventania, que fez subir as ondas do mar.",
           "R": "Ele deu uma ordem, e um vento forte começou a soprar. O vento fez ondas enormes no mar."
+        },
+        "am": {
+          "L": "ተናገረም፤ ዐውሎ ነፋስንም አስነሣ፤ እርሱም ማዕበሉን ከፍ ከፍ አደረገ።",
+          "B": "በቃሉ ብርቱ ነፋስ ተነሣ፤ የባሕሩንም ማዕበል ወደ ላይ አስነሣ።",
+          "R": "ትእዛዝ ሰጠ፤ ኃይለኛ ነፋስም መንፈስ ጀመረ። በባሕሩ ላይ ትልቅ ማዕበል አስነሣ።"
         }
       },
       "decisions": [
@@ -3754,6 +4042,11 @@
           "L": "Subiram [aos] céus, desceram [aos] abismos; a sua alma se derreteu no mal.",
           "B": "Eram lançados para o alto, até o céu, e para baixo, até as profundezas; em tal perigo perderam a coragem.",
           "R": "Os marinheiros eram jogados para cima, em direção ao céu, e para baixo, até o fundo do mar. Ficaram tão apavorados que perderam toda a coragem."
+        },
+        "am": {
+          "L": "ወደ ሰማያት ወጡ፤ ወደ ጥልቆችም ወረዱ፤ ነፍሳቸው ከክፉው የተነሣ ቀለጠች።",
+          "B": "ወደ ሰማይ ተወረወሩ፤ ወደ ጥልቁም ወረዱ፤ ከአደጋው ብዛት ወኔያቸው ከዳቸው።",
+          "R": "መርከበኞቹ ወደ ሰማይ ተወርውረው እንደገና ወደ ጥልቁ ወረዱ። እጅግ ከመፍራታቸው የተነሣ ድፍረታቸው ሁሉ ጠፋ።"
         }
       },
       "decisions": [
@@ -3881,6 +4174,11 @@
           "L": "Cambalearam e oscilaram como um bêbado, e toda a sua habilidade foi tragada.",
           "B": "Balançavam e cambaleavam como quem está bêbado, e toda a sua experiência no mar não serviu de nada.",
           "R": "Balançavam e tropeçavam como pessoas bêbadas, e nada do que sabiam fazer podia ajudá-los."
+        },
+        "am": {
+          "L": "እንደ ሰካራም ተንገዳገዱ፤ ተወላገዱም፤ ብልሃታቸውም ሁሉ ተዋጠ።",
+          "B": "እንደ ሰከረ ሰው ተንገዳገዱ፤ ተወዛወዙም፤ የባሕር ችሎታቸውም ሁሉ ከንቱ ሆነ።",
+          "R": "እንደ ሰካራሞች ተወዛወዙ፤ ተደነቃቀፉም። የሚያውቁት ነገር ሁሉ ሊረዳቸው አልቻለም።"
         }
       },
       "decisions": [
@@ -3979,6 +4277,11 @@
           "L": "Então clamaram {{divine_name:ao SENHOR|a Javé}} na sua angústia; e das suas aflições {{deity_pronoun:ele|Ele}} os tirou.",
           "B": "Na sua angústia clamaram {{divine_name:ao SENHOR|a Javé}}, e {{deity_pronoun:ele|Ele}} os tirou das suas aflições.",
           "R": "No meio da aflição, eles clamaram {{divine_name:ao SENHOR|a Javé}} pedindo socorro, e {{deity_pronoun:ele|Ele}} os tirou do sofrimento em segurança."
+        },
+        "am": {
+          "L": "በጭንቀታቸውም ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ ከመከራቸውም አወጣቸው።",
+          "B": "በጭንቀታቸው ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ተጣሩ፤ እርሱም ከመከራቸው አወጣቸው።",
+          "R": "በችግራቸው ጊዜ እርዳታ ለማግኘት ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጮኹ፤ እርሱም ከሥቃያቸው በሰላም አወጣቸው።"
         }
       },
       "decisions": [
@@ -4104,6 +4407,11 @@
           "L": "Ele fez a tempestade virar um sussurro, e as suas ondas se calaram.",
           "B": "Ele transformou a ventania numa brisa suave, e as ondas ao redor deles silenciaram.",
           "R": "Ele fez a tempestade ficar tão quieta quanto um sussurro, e as ondas se acalmaram."
+        },
+        "am": {
+          "L": "ዐውሎውን እንደ ሹክሹክታ አደረገው፤ ማዕበሎቻቸውም ጸጥ አሉ።",
+          "B": "ብርቱውን ነፋስ ወደ ለስላሳ እስትንፋስ ለወጠው፤ በዙሪያቸው ያለው ማዕበልም ጸጥ አለ።",
+          "R": "ዐውሎ ነፋሱን እንደ ሹክሹክታ ጸጥ አደረገው፤ ማዕበሉም ተረጋጋ።"
         }
       },
       "decisions": [
@@ -4216,6 +4524,11 @@
           "L": "E alegraram-se porque se aquietaram, e {{deity_pronoun:ele|Ele}} os guiou ao porto do seu desejo.",
           "B": "Como se alegraram quando tudo ficou calmo! E {{deity_pronoun:ele|Ele}} os levou ao porto que tanto desejavam.",
           "R": "Os marinheiros ficaram felizes quando tudo se acalmou, e {{deity_pronoun:ele|Ele}} os levou em segurança ao porto aonde queriam ir."
+        },
+        "am": {
+          "L": "ጸጥ ስላሉም ደስ አላቸው፤ ወደሚመኙትም ወደብ መራቸው።",
+          "B": "ሁሉ ጸጥ ባለ ጊዜ እንዴት ደስ አላቸው! ወደ ናፈቁትም ወደብ አደረሳቸው።",
+          "R": "ሁሉ ነገር በተረጋጋ ጊዜ መርከበኞቹ ደስ አላቸው፤ እርሱም ሊሄዱበት ወደ ፈለጉት ወደብ በሰላም መራቸው።"
         }
       },
       "decisions": [
@@ -4352,6 +4665,11 @@
           "L": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} [pelo] {{deity_pronoun:seu|Seu}} amor leal e [pelas] {{deity_pronoun:suas|Suas}} maravilhas para com os filhos da humanidade.",
           "B": "Que rendam graças {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor leal e pelas {{deity_pronoun:suas|Suas}} maravilhas em favor da humanidade.",
           "R": "Que eles agradeçam {{divine_name:ao SENHOR|a Javé}} pelo {{deity_pronoun:seu|Seu}} amor fiel e pelas coisas maravilhosas que {{deity_pronoun:ele|Ele}} faz pelas pessoas."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩ፣ ለሰው ልጆችም [ስላደረጋቸው] ድንቅ ሥራዎቹ ያመስግኑት።",
+          "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ጽኑ ፍቅሩና ለሰው ልጆች ስለሚያደርጋቸው ድንቅ ሥራዎች ያመስግኑት።",
+          "R": "ስለ ጽኑ ፍቅሩና ለሰዎች ስለሚያደርጋቸው አስደናቂ ነገሮች {{divine_name:እግዚአብሔርን|ያህዌን}} ማመስገን አለባቸው።"
         }
       },
       "decisions": [
@@ -4501,6 +4819,11 @@
           "L": "E que {{deity_pronoun:o|O}} exaltem na assembleia do povo, e no conselho dos anciãos {{deity_pronoun:o|O}} louvem.",
           "B": "Que {{deity_pronoun:o|O}} exaltem onde o povo se reúne e {{deity_pronoun:o|O}} louvem onde os anciãos se sentam em conselho.",
           "R": "Que eles {{deity_pronoun:o|O}} honrem quando todo o povo se reunir e {{deity_pronoun:o|O}} louvem diante dos líderes."
+        },
+        "am": {
+          "L": "በሕዝብ ጉባኤም ከፍ ከፍ ያድርጉት፤ በሽማግሌዎችም ሸንጎ ያመስግኑት።",
+          "B": "ሕዝቡ በሚሰበሰብበት ከፍ ከፍ ያድርጉት፤ ሽማግሌዎችም ለምክር በሚቀመጡበት ያወድሱት።",
+          "R": "ሕዝቡ ሁሉ በአንድነት ሲሰበሰብ ያክብሩት፤ በመሪዎችም ፊት ያመስግኑት።"
         }
       },
       "decisions": [
@@ -4593,6 +4916,11 @@
           "L": "Ele faz de rios um deserto e de fontes de água uma terra sedenta,",
           "B": "Ele é capaz de secar rios até virarem deserto e transformar fontes de água em terra ressequida,",
           "R": "Deus é capaz de fazer os rios secarem e virarem deserto. Ele pode transformar fontes de água em chão seco e sedento."
+        },
+        "am": {
+          "L": "ወንዞችን ምድረ በዳ፣ የውኃ ምንጮችንም የተጠማ መሬት ያደርጋል፤",
+          "B": "ወንዞችን አድርቆ ምድረ በዳ፣ የውኃ ምንጮችንም ደረቅ ምድር ሊያደርግ ይችላል፤",
+          "R": "እግዚአብሔር ወንዞችን አድርቆ ምድረ በዳ ሊያደርጋቸው ይችላል። የውኃ ምንጮችንም ደረቅና የተጠማ መሬት ሊያደርጋቸው ይችላል።"
         }
       },
       "decisions": [
@@ -4715,6 +5043,11 @@
           "L": "a terra de fruto em salina, por causa da maldade dos que habitam nela.",
           "B": "e terra fértil em campo de sal, pelo mal que fazem os que vivem ali.",
           "R": "Ele pode transformar terra fértil em chão salgado, que não serve para nada, porque as pessoas que vivem ali são más."
+        },
+        "am": {
+          "L": "ፍሬያማ ምድርንም ጨው የሞላበት ባድማ [ያደርጋል]፣ በእርሷ ከሚኖሩት ክፋት የተነሣ።",
+          "B": "በዚያ የሚኖሩ ሰዎች ስለሚሠሩት ክፋትም ለሙን የእርሻ ምድር የጨው ሜዳ ያደርገዋል።",
+          "R": "በዚያ የሚኖሩ ሰዎች ክፉዎች ስለ ሆኑ፣ ለም የእርሻ ምድርን የማይጠቅም ጨዋማ መሬት ሊያደርገው ይችላል።"
         }
       },
       "decisions": [
@@ -4810,6 +5143,11 @@
           "L": "Ele faz do deserto um lago de água, e da terra seca fontes de água.",
           "B": "Ele faz do deserto um lago e da terra seca, fontes que jorram.",
           "R": "Ele também pode transformar um deserto num lago e a terra seca em fontes de água."
+        },
+        "am": {
+          "L": "ምድረ በዳውን የውኃ ኩሬ፣ ደረቁንም ምድር የውኃ ምንጮች ያደርጋል።",
+          "B": "ምድረ በዳውን የውኃ ኩሬ፣ ደረቁንም አገር የሚፈልቁ ምንጮች ያደርጋል።",
+          "R": "ደግሞም ምድረ በዳን ሐይቅ፣ ደረቅ ምድርንም የውኃ ምንጮች ሊያደርግ ይችላል።"
         }
       },
       "decisions": [
@@ -4888,6 +5226,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} faz habitar ali os famintos, e eles estabelecem uma cidade [para] morar.",
           "B": "Ali {{deity_pronoun:ele|Ele}} instala os famintos, e eles constroem uma cidade onde morar.",
           "R": "Ele leva pessoas famintas para morar ali, e elas constroem uma cidade para fazer o seu lar."
+        },
+        "am": {
+          "L": "የተራቡትንም በዚያ ያኖራል፤ የሚኖሩባትንም ከተማ ይመሠርታሉ።",
+          "B": "በዚያ የተራቡትን ያሰፍራል፤ እነርሱም የሚኖሩበትን ከተማ ይሠራሉ።",
+          "R": "የተራቡ ሰዎችን በዚያ እንዲኖሩ ያመጣቸዋል፤ እነርሱም ቤታቸውን ሠርተው ከተማ ይመሠርታሉ።"
         }
       },
       "decisions": [
@@ -4967,6 +5310,11 @@
           "L": "E semeiam campos e plantam vinhas, e produzem fruto [de] colheita.",
           "B": "Semeiam os campos e plantam vinhas, e recolhem uma colheita farta.",
           "R": "Plantam lavouras nos campos e uvas nas vinhas, e colhem uma grande safra."
+        },
+        "am": {
+          "L": "እርሻዎችን ይዘራሉ፤ የወይን ቦታዎችንም ይተክላሉ፤ የመከርንም ፍሬ ያፈራሉ።",
+          "B": "እርሻዎችን ይዘራሉ፤ ወይንም ይተክላሉ፤ ብዙ መከርም ይሰበስባሉ።",
+          "R": "በእርሻቸው እህል ይዘራሉ፤ በወይን ቦታቸውም ወይን ይተክላሉ፤ ብዙ መከርም ይሰበስባሉ።"
         }
       },
       "decisions": [
@@ -5047,6 +5395,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} os abençoa, e eles se multiplicam muito, e o gado deles {{deity_pronoun:ele|Ele}} não deixa diminuir.",
           "B": "Ele os abençoa, e eles se multiplicam cada vez mais; {{deity_pronoun:ele|Ele}} não deixa os seus rebanhos diminuírem.",
           "R": "Ele os abençoa, e as famílias deles ficam cada vez maiores. Ele não deixa os seus rebanhos de gado diminuírem."
+        },
+        "am": {
+          "L": "ይባርካቸዋል፤ እጅግም ይበዛሉ፤ ከብቶቻቸውንም አያሳንስም።",
+          "B": "ይባርካቸዋል፤ ቁጥራቸውም እየበዛ ይሄዳል፤ መንጋዎቻቸውም እንዲያንሱ አይተውም።",
+          "R": "ይባርካቸዋል፤ ቤተሰቦቻቸውም እየበዙ ይሄዳሉ። የከብቶቻቸው መንጋ እንዳያንስ ይጠብቃል።"
         }
       },
       "decisions": [
@@ -5139,6 +5492,11 @@
           "L": "Então eles diminuem e são abatidos por opressão, mal e tristeza.",
           "B": "Depois eles diminuem e são humilhados por um domínio cruel, por desgraças e aflição.",
           "R": "Mas depois eles ficam em menor número e são esmagados por maus-tratos, por problemas e por tristeza."
+        },
+        "am": {
+          "L": "ደግሞም ያንሳሉ፤ በግፍ፣ በክፉና በኀዘን ይዋረዳሉ።",
+          "B": "ከዚያም ያንሳሉ፤ በጨካኝ አገዛዝ፣ በመከራና በኀዘን ይዋረዳሉ።",
+          "R": "ከዚያ በኋላ ግን ቁጥራቸው ያንሳል፤ በጭካኔ፣ በችግርና በኀዘን ይደቆሳሉ።"
         }
       },
       "decisions": [
@@ -5235,6 +5593,11 @@
           "L": "[Ele] derrama desprezo sobre os nobres e os faz vaguear num ermo sem caminho.",
           "B": "Ele cobre de desprezo os poderosos e os deixa perdidos num ermo sem estrada.",
           "R": "Ele envergonha os governantes orgulhosos e os faz andar perdidos num deserto onde não há estrada."
+        },
+        "am": {
+          "L": "በመኳንንት ላይ ንቀትን ያፈስሳል፤ መንገድ በሌለበት ባድማም ያቅበዘብዛቸዋል።",
+          "B": "በኃያላን ላይ ንቀትን ያከማቻል፤ መንገድ በሌለበት ጠፍ ምድርም ጠፍተው እንዲቀሩ ያደርጋቸዋል።",
+          "R": "ትዕቢተኞችን ገዢዎች ያዋርዳል፤ መንገድ በሌለበት ምድረ በዳም ጠፍተው እንዲንከራተቱ ያደርጋቸዋል።"
         }
       },
       "decisions": [
@@ -5330,6 +5693,11 @@
           "L": "Mas {{deity_pronoun:ele|Ele}} põe o necessitado no alto, longe da aflição, e faz [as suas] famílias como um rebanho.",
           "B": "Mas {{deity_pronoun:ele|Ele}} levanta o necessitado da sua miséria e faz as famílias deles crescerem como rebanhos de ovelhas.",
           "R": "Mas {{deity_pronoun:ele|Ele}} tira os pobres das suas dificuldades e lhes dá famílias grandes, numerosas como um rebanho de ovelhas."
+        },
+        "am": {
+          "L": "ምስኪኑን ግን ከመከራ [አውጥቶ] ከፍ ባለ ስፍራ ያኖረዋል፤ ቤተሰቦችንም እንደ መንጋ ያደርጋል።",
+          "B": "ምስኪኑን ግን ከጉስቁልናው ያነሣዋል፤ ቤተሰቦቹንም እንደ በጎች መንጋ ያበዛል።",
+          "R": "ድሆችን ግን ከችግራቸው ያወጣቸዋል፤ እንደ በግ መንጋ የበዙ ብዙ ልጆችንም ይሰጣቸዋል።"
         }
       },
       "decisions": [
@@ -5424,6 +5792,11 @@
           "L": "Os retos veem [isso] e se alegram, e toda injustiça fecha a sua boca.",
           "B": "Os que vivem com retidão veem isso com alegria, e toda maldade fica sem ter o que dizer.",
           "R": "As pessoas honestas veem isso e ficam felizes, e as pessoas más não têm mais nada a dizer."
+        },
+        "am": {
+          "L": "ቅኖች አይተው ደስ ይላቸዋል፤ ዓመፅም ሁሉ አፉን ይዘጋል።",
+          "B": "በቅንነት የሚኖሩ ይህን አይተው ደስ ይላቸዋል፤ ክፋትም ሁሉ የሚናገረውን ያጣል።",
+          "R": "ቅን ሰዎች ይህን አይተው ደስ ይላቸዋል፤ ክፉዎችም የሚናገሩትን ያጣሉ።"
         }
       },
       "decisions": [
@@ -5538,6 +5911,11 @@
           "L": "Quem [é] sábio, que guarde estas [coisas], e que considerem os atos de amor leal {{divine_name:do SENHOR|de Javé}}.",
           "B": "Quem é sábio, preste atenção a essas coisas e medite no amor leal que {{divine_name:o SENHOR|Javé}} mostrou tantas vezes.",
           "R": "Quem é sábio vai guardar tudo isso no coração e pensar nas muitas vezes em que {{divine_name:o SENHOR|Javé}} mostrou o {{deity_pronoun:seu|Seu}} amor fiel."
+        },
+        "am": {
+          "L": "ጠቢብ የሆነ ሁሉ እነዚህን [ነገሮች] ይጠብቅ፤ {{divine_name:እግዚአብሔር|ያህዌ}} በጽኑ ፍቅር ያደረጋቸውንም ሥራዎች ያስተውሉ።",
+          "B": "ጠቢብ የሆነ ሁሉ እነዚህን ነገሮች ልብ ይበል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ደጋግሞ ያሳየውንም ጽኑ ፍቅር ያስተውል።",
+          "R": "ጥበበኛ የሆነ ሁሉ ይህን ሁሉ በልቡ ይይዛል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ጽኑ ፍቅሩን ያሳየበትን ብዙ ጊዜም ያስባል።"
         }
       },
       "decisions": [
@@ -5722,6 +6100,25 @@
             "que eles guardem"
           ],
           "reason": "The English needs \"them (him)\" for the wise person (r-en-1); Portuguese \"quem ... que guarde\" needs no pronoun at all, so there is nothing for the setting to change. The change to the plural \"que considerem\" (m1) is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191070430021"
+          ],
+          "choice": "\"ጠቢብ የሆነ ሁሉ\" with no gender span",
+          "alternatives": [],
+          "reason": "The English offers \"them|him\" for the one who is wise; Amharic \"ሁሉ\" with the generic verb already covers men and women, so no span is needed.",
           "uncertain": false,
           "footnote": false
         }

@@ -55,6 +55,11 @@
           "L": "E Zofar, o naamatita, respondeu e disse:",
           "B": "Então Zofar, o naamatita, respondeu:",
           "R": "Então Zofar, o naamatita, disse:"
+        },
+        "am": {
+          "L": "ነዕማታዊውም ሶፋር መለሰ፤ እንዲህም አለ፦",
+          "B": "ከዚያም ነዕማታዊው ሶፋር እንዲህ ሲል መለሰ፦",
+          "R": "ነዕማታዊው ሶፋር እንዲህ አለ፦"
         }
       },
       "decisions": [
@@ -130,6 +135,45 @@
           "reason": "The speech introductions are narrative, so French uses the passé simple at Literal and Balanced and the passé composé at Readable; the speeches themselves are in the present and passé composé.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180110010012",
+            "o180110010042"
+          ],
+          "choice": "The speech opening keeps the book's formula: «ነዕማታዊውም ሶፋር መለሰ፤ እንዲህም አለ፦» (Literal), «ከዚያም ነዕማታዊው ሶፋር እንዲህ ሲል መለሰ፦» (Balanced), «ነዕማታዊው ሶፋር እንዲህ አለ፦» (Readable).",
+          "alternatives": [],
+          "reason": "The same wording opens every speech in Job (8:1). Zophar speaks to Job with «አንተ», as the friends do throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180110010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Job 11 (the English has them from 11:4).",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting has nothing to change in Amharic.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -192,6 +236,11 @@
           "L": "Acaso uma multidão de palavras não terá resposta? \\q Ou um homem de lábios terá razão?",
           "B": "Será que uma enxurrada de palavras dessas vai ficar sem resposta? \\q Será que um homem vai ter razão só por falar?",
           "R": "Será que todas essas palavras vão ficar sem resposta? \\q Será que um homem tem razão só porque fala muito?"
+        },
+        "am": {
+          "L": "የብዙ ቃል መልስ ሳያገኝ ይቀራልን? \\q ወይስ የከንፈር ሰው ትክክል ሆኖ ይገኛልን?",
+          "B": "ይህን ያህል የቃላት ጎርፍ ያለ መልስ ይቀራልን? \\q ሰው በብዙ ንግግር ትክክል ሆኖ ይገኛልን?",
+          "R": "ይህ ሁሉ ቃል መልስ ሳያገኝ ይቅር? \\q ሰው ብዙ ስለ ተናገረ ብቻ ትክክል ሆኖ ይገኛል?"
         }
       },
       "decisions": [
@@ -350,6 +399,11 @@
           "L": "As suas palavras vazias farão calar {{gender:as pessoas|os homens}}? \\q E você zomba, e ninguém [o] envergonha?",
           "B": "Será que a sua conversa vazia vai reduzir {{gender:as pessoas|os homens}} ao silêncio? \\q Quando você zomba, ninguém vai envergonhá-lo?",
           "R": "Será que a sua conversa vazia vai fazer todo mundo se calar? \\q Quando você zomba, ninguém vai fazer você sentir vergonha?"
+        },
+        "am": {
+          "L": "ከንቱ ንግግርህ ሰዎችን ዝም ያሰኛልን? \\q አንተም ትሣለቃለህ፤ የሚያሳፍርህም የለምን?",
+          "B": "ባዶ ንግግርህ ሰዎችን ዝም ማሰኘት አለበትን? \\q ስትሣለቅስ የሚያሳፍርህ ሰው አይኖርምን?",
+          "R": "ባዶ ወሬህ ሁሉንም ዝም ያሰኝ? \\q ስትሣለቅስ የሚያሳፍርህ ሰው አይገኝ?"
         }
       },
       "decisions": [
@@ -421,6 +475,26 @@
           "reason": "The word means people in general, men and women, so the gender setting gives \"people\" by default. Readable says \"everyone\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o180110030021"
+          ],
+          "choice": "«ሰዎች» with no gender span, where the English has {{gender:people|men}} (also 11:11, 11:12)",
+          "alternatives": [
+            "{{gender:ሰዎች|ወንዶች}}"
+          ],
+          "reason": "The Hebrew means people in general, and Amharic «ሰዎች» and «ሰው» already include men and women, so there is nothing for the setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -484,6 +558,11 @@
           "L": "E você disse: 'O meu ensino [é] puro, \\q e eu sou limpo aos {{deity_pronoun:teus|Teus}} olhos.'",
           "B": "Pois você diz: 'O meu ensino é correto, \\q e eu sou puro diante dos {{deity_pronoun:teus|Teus}} olhos.'",
           "R": "Você diz a Deus: 'O que eu ensino está certo, \\q e {{deity_pronoun:tu|Tu}} podes ver que sou puro.'"
+        },
+        "am": {
+          "L": "አንተም፦ “ትምህርቴ የጠራ ነው፤ \\q እኔም በዓይንህ ፊት ንጹሕ ነኝ” ብለሃል።",
+          "B": "አንተ፦ “ትምህርቴ ትክክል ነው፤ \\q በፊትህም ንጹሕ ነኝ” ትላለህና።",
+          "R": "እግዚአብሔርን፦ “የማስተምረው ትክክል ነው፤ \\q ንጹሕ መሆኔንም ታያለህ” ትለዋለህ።"
         }
       },
       "decisions": [
@@ -615,6 +694,28 @@
           "reason": "Inside the quotation Job is made to speak to God (m2), so the words take \"tu\", the form for every address to God, while Zophar's own words to Job keep \"você\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o180110040062",
+            "o180110040063"
+          ],
+          "choice": "Job's words quoted by Zophar take the inner marks “ ”, as the English has single quotation marks inside the speech",
+          "alternatives": [
+            "« »"
+          ],
+          "reason": "The quotation structure follows the English level mark for mark; the English sets this quotation one level down, inside Zophar's speech, and Amharic's inner marks are “ ”. The verb of saying follows the quotation, as Amharic orders it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -679,6 +780,11 @@
           "L": "Mas quem dera Deus falasse \\q e abrisse os {{deity_pronoun:seus|Seus}} lábios com você!",
           "B": "Mas quem dera Deus falasse \\q e abrisse os {{deity_pronoun:seus|Seus}} lábios contra você!",
           "R": "Mas eu gostaria que Deus falasse \\q e que {{deity_pronoun:ele|Ele}} mesmo argumentasse contra você!"
+        },
+        "am": {
+          "L": "ነገር ግን ምነው አምላክ ቢናገር! \\q ከአንተም ጋር ከንፈሩን ቢከፍት!",
+          "B": "ነገር ግን ምነው አምላክ ቢናገር! \\q በአንተም ላይ ከንፈሩን ቢከፍት!",
+          "R": "ምነው አምላክ ራሱ ቢናገርና \\q ከአንተ ጋር ቢሟገት!"
         }
       },
       "decisions": [
@@ -806,6 +912,11 @@
           "L": "e lhe contasse os segredos da sabedoria, \\q pois dupla é a sabedoria sólida! \\q E saiba que Deus deixa esquecer em seu favor [parte] da sua iniquidade.",
           "B": "e lhe mostrasse os segredos da sabedoria, \\q pois a verdadeira sabedoria tem dois lados. \\q Saiba, então, que Deus deixou passar parte da sua culpa.",
           "R": "Eu queria que {{deity_pronoun:ele|Ele}} contasse a você os segredos da sabedoria, \\q porque a verdadeira sabedoria é muito mais profunda do que parece. \\q Saiba que Deus está castigando você menos do que os seus pecados merecem."
+        },
+        "am": {
+          "L": "የጥበብንም ምሥጢር ቢነግርህ፤ \\q ትክክለኛ ጥበብ እጥፍ ነውና! \\q አምላክም ከበደልህ [ከፊሉን] እንዳስረሳልህ እወቅ።",
+          "B": "የጥበብንም ምሥጢር ቢያሳይህ፤ \\q እውነተኛ ጥበብ ሁለት ገጽታ አላትና። \\q እንግዲህ አምላክ ከበደልህ ከፊሉን እንዳለፈልህ እወቅ።",
+          "R": "ምነው የጥበብን ምሥጢር ቢነግርህ! \\q እውነተኛ ጥበብ ከሚመስለው እጅግ ጥልቅ ነውና። \\q አምላክ ኃጢአትህ ከሚገባው ያነሰ ቅጣት እንደሚቀጣህ እወቅ።"
         }
       },
       "decisions": [
@@ -944,6 +1055,11 @@
           "L": "Acaso você achará as profundezas de Deus? \\q Ou chegará até o limite do Todo-Poderoso?",
           "B": "Você consegue descobrir as profundezas de Deus? \\q Consegue alcançar os limites do Todo-Poderoso?",
           "R": "Você consegue entender tudo sobre Deus? \\q Consegue descobrir tudo o que há para saber sobre o Deus Todo-Poderoso?"
+        },
+        "am": {
+          "L": "የአምላክን ጥልቀት መርምረህ ልታገኝ ትችላለህን? \\q ወይስ ሁሉን የሚችልን ፍጻሜ ልታገኝ ትችላለህን?",
+          "B": "የአምላክን ጥልቀት ልትደርስበት ትችላለህን? \\q የሁሉን የሚችልንስ ዳርቻ ልትደርስ ትችላለህን?",
+          "R": "ስለ አምላክ ሁሉን ነገር ልትረዳ ትችላለህ? \\q ስለ ሁሉን የሚችል አምላክ ሊታወቅ የሚችለውን ሁሉ ልታውቅ ትችላለህ?"
         }
       },
       "decisions": [
@@ -1072,6 +1188,11 @@
           "L": "[É como] as alturas dos céus; que você pode fazer? \\q Mais profunda que o Sheol; que você pode saber?",
           "B": "É mais alta que os céus; que você pode fazer? \\q É mais profunda que o mundo dos mortos; que você pode saber?",
           "R": "É mais alta que o céu. O que você pode fazer? \\q É mais funda que o mundo dos mortos. O que você pode saber?"
+        },
+        "am": {
+          "L": "[እንደ] ሰማያት ከፍታ ነው፤ ምን ልታደርግ ትችላለህ? \\q ከሲኦል ይጠልቃል፤ ምን ልታውቅ ትችላለህ?",
+          "B": "ከሰማይ ይልቅ ከፍ ያለ ነው፤ ምን ልታደርግ ትችላለህ? \\q ከሙታን ዓለም ይልቅ ጥልቅ ነው፤ ምን ልታውቅ ትችላለህ?",
+          "R": "ከሰማይ ከፍ ይላል። ምን ማድረግ ትችላለህ? \\q ከሙታን ዓለም ይጠልቃል። ምን ማወቅ ትችላለህ?"
         }
       },
       "decisions": [
@@ -1182,6 +1303,28 @@
           "reason": "The book's wording for Sheol: \"o Sheol\" at Literal, \"o mundo dos mortos\" at Balanced and Readable, which names the place of the dead (m2) without a Hebrew word; the English Readable \"the grave\" would confuse it with the word for a burial place (10:19).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o180110080062"
+          ],
+          "choice": "Sheol «ሲኦል» (Literal); «የሙታን ዓለም» (Balanced, Readable)",
+          "alternatives": [
+            "«ሲኦል» at every level",
+            "«መቃብር» (the English Readable \"the grave\")"
+          ],
+          "reason": "«ሲኦል» now reads as hell, the place of punishment, which the Hebrew does not mean here; Balanced and Readable say the world of the dead, as the terms list sets. Readable keeps that wording rather than \"the grave\", so that the same Amharic stands for Sheol through the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1243,6 +1386,11 @@
           "L": "A sua medida [é] mais longa que a terra \\q e mais larga que o mar.",
           "B": "Ela é mais extensa que a terra \\q e mais larga que o mar.",
           "R": "É maior que a terra inteira \\q e mais larga que o oceano."
+        },
+        "am": {
+          "L": "መጠኑ ከምድር ይረዝማል፤ \\q ከባሕርም ይሰፋል።",
+          "B": "መጠኑ ከምድር ይልቅ ይረዝማል፤ \\q ከባሕርም ይልቅ ይሰፋል።",
+          "R": "ከምድር ሁሉ ይበልጣል፤ \\q ከውቅያኖስም ይሰፋል።"
         }
       },
       "decisions": [
@@ -1337,6 +1485,11 @@
           "L": "Se {{deity_pronoun:ele|Ele}} passa e prende, \\q e convoca uma assembleia, \\q quem {{deity_pronoun:o|O}} fará voltar?",
           "B": "Se {{deity_pronoun:ele|Ele}} passa e prende alguém \\q e reúne o tribunal, \\q quem {{deity_pronoun:o|O}} pode impedir?",
           "R": "Se Deus passa e põe alguém na prisão \\q e o chama a julgamento, \\q ninguém pode impedi-{{deity_pronoun:lo|Lo}}."
+        },
+        "am": {
+          "L": "ቢያልፍና ቢያስር፣ \\q ጉባኤንም ቢጠራ፣ \\q ማን ሊመልሰው ይችላል?",
+          "B": "ቢያልፍና አንድን ሰው ቢያስር፣ \\q ችሎትንም ቢሰበስብ፣ \\q ማን ሊከለክለው ይችላል?",
+          "R": "እግዚአብሔር መጥቶ አንድን ሰው ወደ እስር ቤት ቢያስገባ፣ \\q ለፍርድም ቢጠራው፣ \\q ማንም ሊከለክለው አይችልም።"
         }
       },
       "decisions": [
@@ -1454,6 +1607,11 @@
           "L": "Pois {{deity_pronoun:ele|Ele}} conhece {{gender:as pessoas|os homens}} de falsidade; \\q e vê a maldade, e não [a] considerará?",
           "B": "Pois {{deity_pronoun:ele|Ele}} sabe quem é falso; \\q quando vê a maldade, será que não vai notá-la?",
           "R": "Deus sabe quem são os mentirosos. \\q Quando vê o mal, {{deity_pronoun:ele|Ele}} presta atenção nele."
+        },
+        "am": {
+          "L": "እርሱ የሐሰት ሰዎችን ያውቃልና፤ \\q ክፋትንም ያያል፤ አያስተውለውምን?",
+          "B": "እርሱ አታላዮችን ያውቃልና፤ \\q ክፋትን ሲያይ ልብ አይለውምን?",
+          "R": "እግዚአብሔር ውሸታሞች እነማን እንደ ሆኑ ያውቃል። \\q ክፋትን ሲያይ ልብ ይለዋል።"
         }
       },
       "decisions": [
@@ -1592,6 +1750,11 @@
           "L": "Mas {{gender:a pessoa oca|o homem oco}} ganhará coração, \\q e a cria do jumento selvagem nascerá humana!",
           "B": "{{gender:Uma pessoa sem juízo|Um homem sem juízo}} vai criar juízo \\q quando a cria de um jumento selvagem nascer humana.",
           "R": "Uma pessoa tola só vai ficar sábia \\q quando uma jumenta selvagem der à luz um ser humano!"
+        },
+        "am": {
+          "L": "ባዶ ሰው ግን ልብ ያገኛል፤ \\q የሜዳ አህያ ውርንጫም ሰው ሆኖ ይወለዳል!",
+          "B": "ማስተዋል የጎደለው ሰው ጠቢብ የሚሆነው \\q የሜዳ አህያ ውርንጫ ሰው ሆኖ ሲወለድ ነው።",
+          "R": "ሞኝ ሰው ጠቢብ የሚሆነው \\q የሜዳ አህያ ሰው ስትወልድ ብቻ ነው!"
         }
       },
       "decisions": [
@@ -1787,6 +1950,11 @@
           "L": "Se você mesmo firmar o seu coração \\q e estender as suas palmas para {{deity_pronoun:ele|Ele}},",
           "B": "Se você endireitar o seu coração \\q e estender as mãos para {{deity_pronoun:ele|Ele}},",
           "R": "Mas, se você voltar o seu coração para Deus \\q e levantar as mãos para {{deity_pronoun:ele|Ele}} em oração,"
+        },
+        "am": {
+          "L": "አንተ ራስህ ልብህን ብታቀና፣ \\q መዳፎችህንም ወደ እርሱ ብትዘረጋ፣",
+          "B": "ልብህን ብታቀና፣ \\q እጆችህንም ወደ እርሱ ብትዘረጋ፣",
+          "R": "ነገር ግን ልብህን ወደ እግዚአብሔር ብትመልስ፣ \\q በጸሎትም እጆችህን ወደ እርሱ ብታነሣ፣"
         }
       },
       "decisions": [
@@ -1921,6 +2089,11 @@
           "L": "se [há] maldade na sua mão, afaste-a para longe, \\q e não deixe a injustiça morar nas suas tendas,",
           "B": "se há algum mal na sua mão, lance-o para longe, \\q e não deixe a injustiça habitar nas suas tendas,",
           "R": "se você está fazendo algo errado, pare com isso, \\q e não deixe nenhum mal ficar na sua casa,"
+        },
+        "am": {
+          "L": "በእጅህ ክፋት ቢኖር፣ አርቀው፤ \\q በድንኳኖችህም ግፍ እንዲያድር አትፍቀድ፤",
+          "B": "በእጅህ በደል ቢኖር አርቀው፤ \\q በድንኳኖችህም ግፍ አይኑር፤",
+          "R": "ክፉ ነገር እያደረግህ ብትሆን ተው፤ \\q በቤትህም ምንም ክፋት እንዲኖር አትፍቀድ፤"
         }
       },
       "decisions": [
@@ -2041,6 +2214,11 @@
           "L": "então, sim, você levantará o seu rosto sem mancha; \\q você estará firme e não temerá.",
           "B": "então você levantará o rosto sem vergonha; \\q ficará firme e não terá medo.",
           "R": "Então você vai poder andar de cabeça erguida, sem vergonha nenhuma. \\q Você vai ser forte e não vai ter medo."
+        },
+        "am": {
+          "L": "ያን ጊዜ በእርግጥ ፊትህን ያለ ነውር ታነሣለህ፤ \\q የጸናህ ትሆናለህ፤ አትፈራምም።",
+          "B": "ያን ጊዜ ያለ እፍረት ፊትህን ቀና ታደርጋለህ፤ \\q ጸንተህ ትቆማለህ፤ አትፈራምም።",
+          "R": "ያን ጊዜ ያለ እፍረት ቀና ብለህ መሄድ ትችላለህ። \\q ትበረታለህ፤ አትፈራምም።"
         }
       },
       "decisions": [
@@ -2167,6 +2345,11 @@
           "L": "Pois você esquecerá [a sua] aflição; \\q como águas que passaram você [a] lembrará.",
           "B": "Você vai esquecer o seu sofrimento; \\q vai se lembrar dele como de águas que já passaram.",
           "R": "Você vai esquecer os seus problemas. \\q Vai se lembrar deles só como da água que já passou."
+        },
+        "am": {
+          "L": "አንተ መከራህን ትረሳለህና፤ \\q እንዳለፈ ውኃ ታስበዋለህ።",
+          "B": "መከራህን ትረሳለህ፤ \\q እንደ ፈሰሰ ውኃ ታስታውሰዋለህ።",
+          "R": "ችግሮችህን ትረሳለህ። \\q የምታስታውሳቸው እንዳለፈ ውኃ ብቻ ነው።"
         }
       },
       "decisions": [
@@ -2261,6 +2444,11 @@
           "L": "E [a sua] vida surgirá mais brilhante que o meio-dia; \\q [ainda que] esteja escura, será como a manhã.",
           "B": "A sua vida será mais luminosa que o meio-dia; \\q a escuridão dela se tornará como a manhã.",
           "R": "A sua vida vai brilhar mais que o sol do meio-dia. \\q Até os seus momentos mais escuros vão ser como a manhã."
+        },
+        "am": {
+          "L": "ሕይወትህም ከቀትር ይልቅ ይበራል፤ \\q ቢጨልምም እንደ ንጋት ይሆናል።",
+          "B": "ሕይወትህ ከቀትር ይልቅ ያበራል፤ \\q ጨለማውም እንደ ንጋት ይሆናል።",
+          "R": "ሕይወትህ ከቀትር ፀሐይ ይልቅ ያበራል። \\q እጅግ የጨለመው ጊዜህ እንኳ እንደ ማለዳ ይሆናል።"
         }
       },
       "decisions": [
@@ -2391,6 +2579,11 @@
           "L": "E você estará seguro, porque há esperança; \\q olhará ao redor [e] se deitará em segurança.",
           "B": "Você vai se sentir seguro, porque há esperança; \\q vai olhar ao redor e descansar em segurança.",
           "R": "Você vai se sentir protegido, porque tem esperança. \\q Vai olhar em volta e depois se deitar sem medo."
+        },
+        "am": {
+          "L": "ተስፋ አለና ትተማመናለህ፤ \\q ዙሪያህን ትመለከታለህ፤ ተማምነህም ትተኛለህ።",
+          "B": "ተስፋ ስላለ ተማምነህ ትኖራለህ፤ \\q ዙሪያህን ትመለከታለህ፤ በሰላምም ታርፋለህ።",
+          "R": "ተስፋ ስላለህ ደኅንነት ይሰማሃል። \\q ዙሪያህን ተመልክተህ ያለ ፍርሃት ትተኛለህ።"
         }
       },
       "decisions": [
@@ -2501,6 +2694,11 @@
           "L": "E você se deitará, e ninguém [o] fará ter medo; \\q e muitos buscarão o seu favor.",
           "B": "Você vai se deitar sem que ninguém o assuste, \\q e muitos buscarão o seu favor.",
           "R": "Você vai descansar, e ninguém vai assustar você. \\q Muitas pessoas virão pedir a sua ajuda."
+        },
+        "am": {
+          "L": "ትተኛለህ፤ የሚያስፈራህም የለም፤ \\q ብዙዎችም ፊትህን ይለምናሉ።",
+          "B": "ማንም ሳያስፈራህ ትተኛለህ፤ \\q ብዙዎችም ሞገስህን ይፈልጋሉ።",
+          "R": "ታርፋለህ፤ ማንም አያስፈራህም። \\q ብዙ ሰዎችም እርዳታህን ለመጠየቅ ይመጣሉ።"
         }
       },
       "decisions": [
@@ -2621,6 +2819,11 @@
           "L": "Mas os olhos dos perversos desfalecerão, \\q e o refúgio pereceu para eles, \\q e a sua esperança [é] o expirar da vida.",
           "B": "Mas os olhos dos perversos vão se consumir; \\q não haverá escapatória para eles, \\q e a única esperança deles será dar o último suspiro.",
           "R": "Mas os perversos vão procurar ajuda e não vão encontrar. \\q Eles não vão ter como escapar. \\q A única coisa que podem esperar é a morte."
+        },
+        "am": {
+          "L": "የክፉዎች ዓይኖች ግን ይደክማሉ፤ \\q መጠጊያም ከእነርሱ ጠፍቷል፤ \\q ተስፋቸውም የነፍስ መውጣት ነው።",
+          "B": "የክፉዎች ዓይኖች ግን ይፈዛሉ፤ \\q ማምለጫም አይኖራቸውም፤ \\q ብቸኛ ተስፋቸውም የመጨረሻ ትንፋሻቸው ነው።",
+          "R": "ክፉ ሰዎች ግን እርዳታ ይፈልጋሉ፤ አያገኙም። \\q የሚያመልጡበት መንገድ አይኖራቸውም። \\q ተስፋ የሚያደርጉት ብቸኛው ነገር ሞት ነው።"
         }
       },
       "decisions": [

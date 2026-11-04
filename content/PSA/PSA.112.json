@@ -60,6 +60,11 @@
           "L": "Aleluia! Bem-aventurado [é] {{gender:o ser humano|o homem}} [que] teme {{divine_name:o SENHOR|Javé}}, [que] muito se agrada dos {{deity_pronoun:seus|Seus}} mandamentos!",
           "B": "Aleluia! Como são felizes todos os que temem {{divine_name:o SENHOR|Javé}} e têm grande prazer nos {{deity_pronoun:seus|Seus}} mandamentos!",
           "R": "Louvem {{divine_name:o SENHOR|Iá}}! Felizes de verdade são as pessoas que temem {{divine_name:o SENHOR|Javé}} e gostam de fazer o que {{deity_pronoun:ele|Ele}} manda."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈራ፣ በትእዛዛቱም እጅግ ደስ የሚለው ሰው ምስጉን ነው!",
+          "B": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈራ፣ በትእዛዛቱም እጅግ ደስ የሚሰኝ ሰው የተባረከ ነው!",
+          "R": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩና እርሱ ያዘዘውን ማድረግ የሚወዱ ሰዎች ሕይወታቸው በእውነት መልካም ነው።"
         }
       },
       "decisions": [
@@ -357,6 +362,46 @@
           "reason": "'Ashre as the book has it (1:1), in the plural, since Balanced and Readable make the portrait plural as the English does (r-en-2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191120010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 112",
+          "alternatives": [],
+          "reason": "Amharic has no deity_pronoun spans: the Ethiopic script has no capital letters, so the setting has nothing to change. God is spoken of with the ordinary pronouns (እርሱ, አንተ) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191120010041"
+          ],
+          "choice": "No gender spans: \"ሰው\" and the generic singular (L, B), the plural at Readable",
+          "alternatives": [
+            "gender spans, as the English"
+          ],
+          "reason": "The English offers \"the person|the man\", \"they|he\" through the psalm. Amharic \"ሰው\" and the singular verb already speak of anyone, man or woman, so Literal and Balanced keep the Hebrew singular with no span (as 2 Corinthians 9:9 does for verse 9), and Readable uses the plural, as its English and 2 Corinthians 9:9 Readable do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -418,6 +463,11 @@
           "L": "Poderosa na terra será a sua descendência; a geração dos retos será abençoada.",
           "B": "Os seus descendentes serão poderosos na terra, pois a família dos retos é abençoada.",
           "R": "Os filhos deles vão se tornar fortes e importantes na terra. Deus abençoa as famílias das pessoas que fazem o que é certo."
+        },
+        "am": {
+          "L": "ዘሩ በምድር ላይ ኃያል ይሆናል፤ የቅኖች ትውልድ ይባረካል።",
+          "B": "ዘሮቹ በምድሪቱ ላይ ብርቱዎች ይሆናሉ፤ የቅኖች ትውልድ የተባረከ ነውና።",
+          "R": "ልጆቻቸው በምድሪቱ ላይ ብርቱዎችና የተከበሩ ይሆናሉ። እግዚአብሔር ትክክል የሆነውን የሚያደርጉ ሰዎችን ቤተሰቦች ይባርካል።"
         }
       },
       "decisions": [
@@ -571,6 +621,11 @@
           "L": "Bens e riquezas [há] na sua casa, e a sua justiça permanece para sempre.",
           "B": "As suas casas estão cheias de bens e riquezas, e a sua justiça permanece para sempre.",
           "R": "As casas deles estão cheias de coisas boas, e a justiça deles nunca vai acabar."
+        },
+        "am": {
+          "L": "ሀብትና ብልጽግና በቤቱ [አለ]፤ ጽድቁም ለዘላለም ይኖራል።",
+          "B": "ቤቱ በሀብትና በብልጽግና የተሞላ ነው፤ ጽድቁም ለዘላለም ይኖራል።",
+          "R": "ቤታቸው በመልካም ነገር የተሞላ ነው፤ ጽድቃቸውም ለዘላለም ይኖራል።"
         }
       },
       "decisions": [
@@ -666,6 +721,25 @@
           "reason": "The same words as 111:3, said there of the LORD and here of the one who fears him (m1); verse 9 repeats them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191120030042"
+          ],
+          "choice": "\"ጽድቁም ለዘላለም ይኖራል\" at every level (R \"ጽድቃቸውም\"), as 111:3 and verse 9",
+          "alternatives": [],
+          "reason": "The same Hebrew line ends 111:3, 112:3 and 112:9, and 2 Corinthians 9:9 quotes it as \"ጽድቁ ለዘላለም ይኖራል\"; one wording for all three.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -729,6 +803,11 @@
           "L": "Luz nasce nas trevas para os retos; [ele é] gracioso e compassivo e justo.",
           "B": "Quando a escuridão chega, uma luz brilha para os retos: eles são bondosos, cheios de compaixão e justos.",
           "R": "Quando os tempos são escuros, a luz vai brilhar para as pessoas que fazem o que é certo. Elas são bondosas e se importam com os outros, e vivem de modo correto."
+        },
+        "am": {
+          "L": "ለቅኖች በጨለማ ውስጥ ብርሃን ይወጣል፤ [እርሱ] ቸርና ርኅሩኅ፣ ጻድቅም [ነው]።",
+          "B": "ጨለማ በወደቀ ጊዜ ለቅኖች ብርሃን ይበራል፤ እርሱ ቸር፣ ርኅሩኅና ጻድቅ ነው።",
+          "R": "የጨለማ ጊዜ ሲመጣ ትክክል የሆነውን ለሚያደርጉ ሰዎች ብርሃን ይወጣላቸዋል። እነርሱ ደጎችና አዛኞች ናቸው፤ በትክክልም ይኖራሉ።"
         }
       },
       "decisions": [
@@ -865,6 +944,11 @@
           "L": "Bem [vai] {{gender:ao ser humano|ao homem}} que se compadece e empresta; ele conduz os seus negócios com justiça.",
           "B": "As coisas vão bem para quem é bondoso e empresta aos outros, e trata dos seus negócios com justiça.",
           "R": "A vida vai bem para as pessoas que emprestam com alegria a quem precisa. Elas são justas em todos os seus negócios."
+        },
+        "am": {
+          "L": "የሚራራና የሚያበድር ሰው መልካም ይሆንለታል፤ ጉዳዩን በፍርድ ያከናውናል።",
+          "B": "ቸር ሆኖ ለሌሎች የሚያበድርና ሥራውን በፍትሕ የሚያከናውን ሰው ነገር ይሳካለታል።",
+          "R": "ለተቸገሩ በደስታ የሚያበድሩ ሰዎች ሕይወታቸው ይቃናል። በሥራቸው ሁሉ ትክክለኞች ናቸው።"
         }
       },
       "decisions": [
@@ -1017,6 +1101,11 @@
           "L": "Porque para sempre ele não será abalado; o justo será [lembrado] em memória eterna.",
           "B": "Eles nunca serão derrubados; o justo será lembrado para sempre.",
           "R": "Nada vai conseguir derrubá-los. As pessoas sempre vão se lembrar dos que fazem o que é certo."
+        },
+        "am": {
+          "L": "ለዘላለም አይናወጥምና፤ ጻድቅ ለዘላለም ይታሰባል።",
+          "B": "ከቶ አይወድቅም፤ ጻድቅ ለዘላለም ይታወሳል።",
+          "R": "ምንም ነገር ሊጥላቸው አይችልም። ሰዎች ትክክል የሆነውን የሚያደርጉትን ሁልጊዜ ያስታውሷቸዋል።"
         }
       },
       "decisions": [
@@ -1188,6 +1277,11 @@
           "L": "De má notícia ele não terá medo; firme [está] o seu coração, confiando {{divine_name:no SENHOR|em Javé}}.",
           "B": "Más notícias não os assustam; o coração deles está firme, porque confiam {{divine_name:no SENHOR|em Javé}}.",
           "R": "Eles não têm medo de más notícias. Ficam calmos e seguros, porque confiam {{divine_name:no SENHOR|em Javé}}."
+        },
+        "am": {
+          "L": "ከክፉ ወሬ አይፈራም፤ ልቡ ጽኑ ነው፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ይታመናል።",
+          "B": "ክፉ ወሬ አያስደነግጠውም፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ስለሚታመን ልቡ ጸንቶ ይቆማል።",
+          "R": "ክፉ ወሬ አያስፈራቸውም። {{divine_name:በእግዚአብሔር|በያህዌ}} ስለሚታመኑ ተረጋግተውና ጸንተው ይኖራሉ።"
         }
       },
       "decisions": [
@@ -1343,6 +1437,11 @@
           "L": "Firmado [está] o seu coração; ele não terá medo, até que veja [a derrota dos] seus adversários.",
           "B": "O coração deles está sustentado, e eles não terão medo, até verem o que acontece com os seus inimigos.",
           "R": "O coração deles é forte, por isso não vão ter medo. Um dia vão ver os seus inimigos derrotados."
+        },
+        "am": {
+          "L": "ልቡ የተደገፈ ነው፤ አይፈራም፤ በባላጋራዎቹ ላይ እስኪያይ ድረስ።",
+          "B": "ልቡ የጸና ነው፤ አይፈራምም፤ በባላጋራዎቹ ላይ የሚደርሰውን እስኪያይ ድረስ።",
+          "R": "ልባቸው ብርቱ ነው፤ ስለዚህ አይፈሩም። አንድ ቀን ጠላቶቻቸው ድል ሆነው ያያሉ።"
         }
       },
       "decisions": [
@@ -1502,6 +1601,11 @@
           "L": "Espalhou, deu aos pobres; a sua justiça permanece para sempre; o seu chifre será exaltado com honra.",
           "B": "Distribuíram com generosidade, repartindo os seus dons entre os necessitados; a justiça deles permanece para sempre, e a sua força será exaltada com honra.",
           "R": "Elas dão de boa vontade aos pobres. A justiça delas vai durar para sempre. Elas vão ser fortes e honradas."
+        },
+        "am": {
+          "L": "በተነ፣ ለድሆች ሰጠ፤ ጽድቁ ለዘላለም ይኖራል፤ ቀንዱም በክብር ከፍ ከፍ ይላል።",
+          "B": "ስጦታውን በየቦታው በተነ፤ ለተቸገሩትም ሰጠ፤ ጽድቁ ለዘላለም ይኖራል፤ ብርታቱም በክብር ከፍ ይላል።",
+          "R": "ለድሆች በልግስና ይሰጣሉ። ጽድቃቸው ለዘላለም ይኖራል። ብርቱዎችና የተከበሩም ይሆናሉ።"
         }
       },
       "decisions": [
@@ -1634,6 +1738,25 @@
           "reason": "Paul quotes these lines in 2 Corinthians 9:9 (m2), so Literal and Readable keep the words of its Portuguese, which fit the Hebrew; Balanced keeps the plural portrait of the psalm (r-en-2), where 2 Corinthians has one giver, and says \"os necessitados\" for the Hebrew word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191120090011"
+          ],
+          "choice": "«በተነ፣ ለድሆች ሰጠ፤ ጽድቁ ለዘላለም ይኖራል» (L), B «ስጦታውን በየቦታው በተነ፤ ለተቸገሩትም ሰጠ፤ ጽድቁ ለዘላለም ይኖራል», R «ለድሆች በልግስና ይሰጣሉ። ጽድቃቸው ለዘላለም ይኖራል», as 2 Corinthians 9:9",
+          "alternatives": [],
+          "reason": "Paul quotes the first two lines, and the Hebrew agrees with the Greek, so the Amharic New Testament's wording is kept; the last line (the horn) follows the Hebrew. \"horn\" is \"ቀንድ\" at Literal and \"ብርታት\" (strength) at Balanced, as the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1698,6 +1821,11 @@
           "L": "O ímpio verá e se irritará; rangerá os seus dentes e se derreterá; o desejo dos ímpios perecerá.",
           "B": "Os ímpios veem isso e se enfurecem; rangem os dentes e se desfazem; o que os ímpios desejam se perde.",
           "R": "As pessoas más vão ver isso e ficar com raiva. Vão ranger os dentes e desaparecer. O que elas querem nunca vai acontecer."
+        },
+        "am": {
+          "L": "ክፉ ሰው ያያል፤ ይናደዳልም፤ ጥርሱን ያፋጫል፤ ይቀልጣልም፤ የክፉዎች ምኞት ትጠፋለች።",
+          "B": "ክፉዎች ይህን አይተው ይበሳጫሉ፤ ጥርሳቸውን ያፋጫሉ፤ ቀልጠውም ይጠፋሉ፤ ክፉዎች የሚመኙት ይጠፋል።",
+          "R": "ክፉ ሰዎች ይህን አይተው ይቆጣሉ። ጥርሳቸውን ያፋጫሉ፤ እየደከሙም ይጠፋሉ። የሚፈልጉት ፈጽሞ አይሆንም።"
         }
       },
       "decisions": [
