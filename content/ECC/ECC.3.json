@@ -59,6 +59,11 @@
           "L": "Para tudo [há] um tempo marcado, \\q e um tempo para cada assunto debaixo dos céus:",
           "B": "Há um momento fixado para tudo, \\q uma hora para cada coisa debaixo dos céus:",
           "R": "Cada coisa tem o seu tempo. \\q Há um tempo para cada atividade neste mundo:"
+        },
+        "am": {
+          "L": "ለሁሉም ነገር የተወሰነ ጊዜ [አለው]፤ \\q ከሰማያትም በታች ላለ ጉዳይ ሁሉ ጊዜ [አለው]፦",
+          "B": "ለሁሉም ነገር የተወሰነ ጊዜ አለ፤ \\q ከሰማይ በታች ለሚደረግ ጉዳይ ሁሉ ጊዜ አለ፦",
+          "R": "ሁሉም ነገር የራሱ ጊዜ አለው። \\q በዚህ ዓለም ለሚደረግ ተግባር ሁሉ ጊዜ አለ፦"
         }
       },
       "decisions": [
@@ -300,6 +305,57 @@
           "reason": "The poem of verses 2-8 is among the best-known passages in Portuguese Bibles, and the familiar wording pulls hard. Literal says \"um tempo para\" with the verb, as the English Literal shows the Hebrew form; Balanced says \"hora\", the Portuguese word for the right moment (\"chegou a hora\", m3), and sets the halves side by side without \"e\", as the English Balanced does; Readable says \"um tempo para\" with plain words. The lines break where the English breaks them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030010011",
+            "o210030010012",
+            "o210030010021",
+            "o210030010031",
+            "o210030010032",
+            "o210030010041",
+            "o210030010042",
+            "o210030010051",
+            "o210030010061",
+            "o210030010071",
+            "o210030010072"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [
+            "a deity_pronoun span"
+          ],
+          "reason": "The English capitalises pronouns for God as a reader setting. The Ethiopic script has no capital letters, so the setting has nothing to change in Amharic and the text has no span. This holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030010021",
+            "o210030010032"
+          ],
+          "choice": "\"የተወሰነ ጊዜ\" (appointed time) and \"ጊዜ\" (time)",
+          "alternatives": [
+            "\"ዘመን\""
+          ],
+          "reason": "zeman is a set time and ʿet the right moment; \"የተወሰነ ጊዜ\" and \"ጊዜ\" keep the two apart, and \"ጊዜ\" alone then carries the whole poem. The familiar wording of the opening line is avoided.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -367,6 +423,11 @@
           "L": "um tempo para dar à luz e um tempo para morrer, \\q um tempo para plantar e um tempo para arrancar o plantado;",
           "B": "hora de dar à luz, hora de morrer, \\q hora de plantar, hora de arrancar as plantas,",
           "R": "um tempo para nascer e um tempo para morrer, \\q um tempo para plantar e um tempo para arrancar plantas,"
+        },
+        "am": {
+          "L": "የመውለድ ጊዜ፣ የመሞትም ጊዜ፤ \\q የመትከል ጊዜ፣ የተተከለውንም የመንቀል ጊዜ፤",
+          "B": "የመውለድ ጊዜ፣ የመሞት ጊዜ፤ \\q የመትከል ጊዜ፣ የተተከለውን የመንቀል ጊዜ፤",
+          "R": "የልደት ጊዜና የሞት ጊዜ፤ \\q የመትከል ጊዜና ተክልን የመንቀል ጊዜ፤"
         }
       },
       "decisions": [
@@ -494,6 +555,50 @@
           "reason": "The English Readable uses nouns for the first pair; Portuguese reads more simply with the verbs \"nascer\" and \"morrer\", which say the same (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030020011",
+            "o210030020032",
+            "o210030020051",
+            "o210030020072"
+          ],
+          "choice": "each line a pair of nouns, \"የX ጊዜ፣ የY(ም) ጊዜ\" (L, B); \"የX ጊዜና የY ጊዜ\" (R)",
+          "alternatives": [
+            "\"ለX ጊዜ አለው፤ ለYም ጊዜ አለው\""
+          ],
+          "reason": "The Hebrew lines are bare noun phrases, \"a time of X and a time of Y\", with no verb. Amharic keeps that shape with the verbal noun in a genitive (\"የመውለድ ጊዜ\"), drafted fresh rather than in the familiar \"ለ... ጊዜ አለው\" pattern. Literal keeps the Hebrew \"and\" as -ም; Balanced drops it as the English Balanced does; Readable joins each pair with -ና. The shape holds through verse 8.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030020022"
+          ],
+          "choice": "\"የመውለድ ጊዜ\" (giving birth, L, B)",
+          "alternatives": [
+            "\"የመወለድ ጊዜ\" (being born)"
+          ],
+          "reason": "The Hebrew verb is active, to bear a child, as the English Literal and Balanced have it; Readable says \"የልደት ጊዜ\" (a time for birth), as the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -560,6 +665,11 @@
           "L": "um tempo para matar e um tempo para curar, \\q um tempo para romper e um tempo para edificar;",
           "B": "hora de matar, hora de curar, \\q hora de pôr abaixo, hora de levantar,",
           "R": "um tempo para matar e um tempo para curar, \\q um tempo para derrubar e um tempo para construir,"
+        },
+        "am": {
+          "L": "የመግደል ጊዜ፣ የመፈወስም ጊዜ፤ \\q የማፍረስ ጊዜ፣ የመሥራትም ጊዜ፤",
+          "B": "የመግደል ጊዜ፣ የመፈወስ ጊዜ፤ \\q የማፍረስ ጊዜ፣ የመገንባት ጊዜ፤",
+          "R": "የመግደል ጊዜና ከሕመም የማዳን ጊዜ፤ \\q የማፍረስ ጊዜና የመገንባት ጊዜ፤"
         }
       },
       "decisions": [
@@ -656,6 +766,11 @@
           "L": "um tempo para chorar e um tempo para rir, \\q um tempo para lamentar e um tempo para dançar;",
           "B": "hora de chorar, hora de rir, \\q hora de prantear os mortos, hora de dançar,",
           "R": "um tempo para chorar e um tempo para dar risada, \\q um tempo para ficar de luto e um tempo para dançar,"
+        },
+        "am": {
+          "L": "የማልቀስ ጊዜ፣ የመሳቅም ጊዜ፤ \\q ሙሾ የማውረድ ጊዜ፣ የመጨፈርም ጊዜ፤",
+          "B": "የማልቀስ ጊዜ፣ የመሳቅ ጊዜ፤ \\q የሙሾ ጊዜ፣ የጭፈራ ጊዜ፤",
+          "R": "የማልቀስ ጊዜና የመሳቅ ጊዜ፤ \\q የሐዘን ጊዜና የጭፈራ ጊዜ፤"
         }
       },
       "decisions": [
@@ -686,6 +801,26 @@
           "choice": "dance: skip or leap for joy",
           "alternatives": [],
           "reason": "The verb (raqad) is to skip or leap (Psalm 114:4; 1 Chronicles 15:29). Mourning and dancing are the funeral and the wedding feast.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030040061"
+          ],
+          "choice": "\"ሙሾ የማውረድ ጊዜ\" (L), \"የሙሾ ጊዜ\" (B) for wailing",
+          "alternatives": [
+            "\"የማዘን ጊዜ\""
+          ],
+          "reason": "The Hebrew verb is mourning aloud for the dead (the meaning decision); Amharic \"ሙሾ\" is exactly the lament sung over the dead. Readable says \"የሐዘን ጊዜ\" (grieving).",
           "uncertain": false,
           "footnote": false
         }
@@ -757,6 +892,11 @@
           "L": "um tempo para lançar fora pedras e um tempo para recolher pedras, \\q um tempo para abraçar e um tempo para ficar longe de abraçar;",
           "B": "hora de espalhar pedras, hora de juntar pedras, \\q hora de abraçar, hora de evitar o abraço,",
           "R": "um tempo para jogar pedras fora e um tempo para juntá-las, \\q um tempo para dar abraços e um tempo para não dar abraços,"
+        },
+        "am": {
+          "L": "ድንጋዮችን የመጣል ጊዜ፣ ድንጋዮችንም የመሰብሰብ ጊዜ፤ \\q የማቀፍ ጊዜ፣ ከማቀፍም የመራቅ ጊዜ፤",
+          "B": "ድንጋዮችን የመበተን ጊዜ፣ ድንጋዮችን የመሰብሰብ ጊዜ፤ \\q የማቀፍ ጊዜ፣ ከማቀፍ የመቆጠብ ጊዜ፤",
+          "R": "ድንጋዮችን የመጣል ጊዜና መልሶ የመሰብሰብ ጊዜ፤ \\q የመተቃቀፍ ጊዜና ያለመተቃቀፍ ጊዜ፤"
         }
       },
       "decisions": [
@@ -891,6 +1031,11 @@
           "L": "um tempo para buscar e um tempo para perder, \\q um tempo para guardar e um tempo para lançar fora;",
           "B": "hora de procurar, hora de dar por perdido, \\q hora de guardar, hora de jogar fora,",
           "R": "um tempo para procurar as coisas e um tempo para desistir delas como perdidas, \\q um tempo para guardar e um tempo para jogar fora,"
+        },
+        "am": {
+          "L": "የመፈለግ ጊዜ፣ የማጣትም ጊዜ፤ \\q የመጠበቅ ጊዜ፣ የመጣልም ጊዜ፤",
+          "B": "የመፈለግ ጊዜ፣ እንደ ጠፋ የመተው ጊዜ፤ \\q የመጠበቅ ጊዜ፣ የመጣል ጊዜ፤",
+          "R": "ነገሮችን የመፈለግ ጊዜና እንደ ጠፉ ቆጥሮ የመተው ጊዜ፤ \\q የማስቀመጥ ጊዜና የመጣል ጊዜ፤"
         }
       },
       "decisions": [
@@ -975,6 +1120,11 @@
           "L": "um tempo para rasgar e um tempo para costurar, \\q um tempo para ficar calado e um tempo para falar;",
           "B": "hora de rasgar, hora de remendar, \\q hora de ficar em silêncio, hora de falar,",
           "R": "um tempo para rasgar a roupa e um tempo para costurá-la, \\q um tempo para ficar quieto e um tempo para falar,"
+        },
+        "am": {
+          "L": "የመቅደድ ጊዜ፣ የመስፋትም ጊዜ፤ \\q ዝም የማለት ጊዜ፣ የመናገርም ጊዜ፤",
+          "B": "የመቅደድ ጊዜ፣ የመጣፍ ጊዜ፤ \\q ዝም የማለት ጊዜ፣ የመናገር ጊዜ፤",
+          "R": "ልብስን የመቅደድ ጊዜና መልሶ የመስፋት ጊዜ፤ \\q ዝም የማለት ጊዜና የመናገር ጊዜ፤"
         }
       },
       "decisions": [
@@ -1075,6 +1225,11 @@
           "L": "um tempo para amar e um tempo para odiar, \\q um tempo de guerra e um tempo de paz.",
           "B": "hora de amar, hora de odiar, \\q hora de guerra, hora de paz.",
           "R": "um tempo para amar e um tempo para odiar, \\q um tempo para a guerra e um tempo para a paz."
+        },
+        "am": {
+          "L": "የመውደድ ጊዜ፣ የመጥላትም ጊዜ፤ \\q የጦርነት ጊዜ፣ የሰላምም ጊዜ።",
+          "B": "የመውደድ ጊዜ፣ የመጥላት ጊዜ፤ \\q የጦርነት ጊዜ፣ የሰላም ጊዜ።",
+          "R": "የመውደድ ጊዜና የመጥላት ጊዜ፤ \\q የጦርነት ጊዜና የሰላም ጊዜ።"
         }
       },
       "decisions": [
@@ -1152,6 +1307,11 @@
           "L": "Que ganho [tem] o trabalhador daquilo em que labuta?",
           "B": "O que os trabalhadores ganham com todo o seu trabalho duro?",
           "R": "Então, de que adianta todo esse trabalho duro para quem trabalha?"
+        },
+        "am": {
+          "L": "ሠራተኛው ከሚደክምበት ነገር ምን ትርፍ [አለው]?",
+          "B": "ሠራተኞች ከድካማቸው ሁሉ ምን ያተርፋሉ?",
+          "R": "ታዲያ የሚሠሩ ሰዎች ከድካማቸው ሁሉ ምን ጥቅም ያገኛሉ?"
         }
       },
       "decisions": [
@@ -1244,6 +1404,32 @@
           "reason": "The English needs the setting for \"they toil|he toils\"; the Portuguese verb has no pronoun and no gender, so no span is needed (see 2:14).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030090011",
+            "o210030090021",
+            "o210030090031",
+            "o210030090032",
+            "o210030090041",
+            "o210030090042",
+            "o210030090051",
+            "o210030090061"
+          ],
+          "choice": "no gender span where the English has one: the Amharic wording already covers men and women",
+          "alternatives": [
+            "a span with a masculine alternative"
+          ],
+          "reason": "Amharic \"ሰው\", \"ሰዎች\" and the generic masculine verb already include men and women, so there is only one wording and no span. This holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1311,6 +1497,11 @@
           "L": "Vi a tarefa que Deus deu aos {{gender:filhos da humanidade|filhos dos homens}} para com ela se ocuparem.",
           "B": "Vi a tarefa que Deus deu aos seres humanos para mantê-los ocupados.",
           "R": "Vi o trabalho que Deus deu às pessoas para mantê-las ocupadas."
+        },
+        "am": {
+          "L": "እግዚአብሔር የሰው ልጆች ይጠመዱበት ዘንድ የሰጣቸውን ሥራ አየሁ።",
+          "B": "እግዚአብሔር የሰው ልጆችን ሊያስጠምድበት የሰጣቸውን ሥራ አይቻለሁ።",
+          "R": "እግዚአብሔር ሰዎችን እንዲጠመዱበት የሰጣቸውን ሥራ አይቻለሁ።"
         }
       },
       "decisions": [
@@ -1443,6 +1634,11 @@
           "L": "Tudo {{deity_pronoun:ele|Ele}} fez belo no seu tempo; também {{deity_pronoun:ele|Ele}} pôs a eternidade no coração deles, mas de modo que {{gender:o ser humano|o homem}} não consegue descobrir a obra que Deus fez do princípio ao fim.",
           "B": "Deus fez tudo apropriado ao seu próprio tempo. Também pôs no coração deles o senso da eternidade, mas as pessoas ainda não conseguem compreender a obra que Deus fez do começo ao fim.",
           "R": "Deus fez cada coisa certa para o seu tempo. Também pôs nas pessoas o desejo do que dura para sempre. Mas elas ainda não conseguem entender tudo o que Deus fez, do começo ao fim."
+        },
+        "am": {
+          "L": "ሁሉን በጊዜው ውብ አድርጎ ሠራው፤ ደግሞም ዘላለምን በልባቸው አኖረ፤ ሆኖም ሰው እግዚአብሔር ከመጀመሪያ እስከ መጨረሻ የሠራውን ሥራ ሊደርስበት አይችልም።",
+          "B": "እግዚአብሔር ሁሉን በየጊዜው ተስማሚ አድርጎ ሠራው። ደግሞም የዘላለምን ስሜት በልባቸው አኖረ፤ ነገር ግን ሰዎች እግዚአብሔር ከመጀመሪያ እስከ መጨረሻ የሠራውን ሥራ አሁንም ሊደርሱበት አይችሉም።",
+          "R": "እግዚአብሔር እያንዳንዱን ነገር ለራሱ ጊዜ ትክክል አድርጎ ሠራው። ዘላለማዊ የሆነውን የመናፈቅ ስሜትም በሰዎች ውስጥ አኖረ። ነገር ግን እግዚአብሔር ከመጀመሪያ እስከ መጨረሻ ያደረገውን ሁሉ አሁንም ሊረዱ አይችሉም።"
         }
       },
       "decisions": [
@@ -1783,6 +1979,11 @@
           "L": "Sei que não há nada bom para eles, a não ser alegrar-se e fazer o bem na sua vida.",
           "B": "Sei que não há nada melhor para eles do que se alegrar e fazer o bem enquanto viverem.",
           "R": "Sei que o melhor que as pessoas podem fazer é ser felizes e fazer o bem enquanto estão vivas."
+        },
+        "am": {
+          "L": "ደስ ከመሰኘትና በሕይወቱ መልካም ከማድረግ በቀር ለእነርሱ መልካም ነገር እንደሌለ አውቃለሁ።",
+          "B": "በሕይወት እስካሉ ድረስ ደስ ከመሰኘትና መልካም ከማድረግ የሚሻል ነገር እንደሌላቸው አውቃለሁ።",
+          "R": "ሰዎች ሊያደርጉት የሚችሉት ከሁሉ የተሻለ ነገር በሕይወት ሳሉ ደስ መሰኘትና መልካም ማድረግ እንደ ሆነ አውቃለሁ።"
         }
       },
       "decisions": [
@@ -1928,6 +2129,11 @@
           "L": "E também todo {{gender:ser humano|homem}} que come e bebe e vê o bem em toda a sua labuta: isso [é] dom de Deus.",
           "B": "E também, quando alguém come e bebe e encontra prazer em todo o seu trabalho duro, isso é um dom de Deus.",
           "R": "Quando as pessoas comem, bebem e aproveitam o seu trabalho duro, isso é um presente de Deus."
+        },
+        "am": {
+          "L": "ደግሞም የሚበላና የሚጠጣ፣ በድካሙም ሁሉ መልካምን የሚያይ ሰው ሁሉ፣ ያ የእግዚአብሔር ስጦታ [ነው]።",
+          "B": "ደግሞም ማንም ሰው ሲበላና ሲጠጣ፣ በድካሙም ሁሉ ሲደሰት፣ ይህ የእግዚአብሔር ስጦታ ነው።",
+          "R": "ሰዎች ሲበሉና ሲጠጡ፣ በድካማቸውም ሲደሰቱ፣ ይህ ከእግዚአብሔር የተገኘ ስጦታ ነው።"
         }
       },
       "decisions": [
@@ -2065,6 +2271,11 @@
           "L": "Sei que tudo o que Deus faz será para sempre; a isso não há o que acrescentar, e disso não há o que tirar; e Deus [assim] fez para que temam diante {{deity_pronoun:dele|Dele}}.",
           "B": "Sei que tudo o que Deus faz dura para sempre; nada se pode acrescentar a isso e nada se pode tirar. Deus fez isso para que as pessoas {{deity_pronoun:o|O}} temam.",
           "R": "Sei que tudo o que Deus faz vai durar para sempre. Ninguém pode acrescentar nada a isso nem tirar nada disso. Deus faz assim para que as pessoas {{deity_pronoun:o|O}} honrem com reverência."
+        },
+        "am": {
+          "L": "እግዚአብሔር የሚያደርገው ሁሉ ለዘላለም እንደሚኖር አውቃለሁ፤ በእርሱ ላይ የሚጨመር የለም፤ ከእርሱም የሚቀነስ የለም፤ እግዚአብሔርም በፊቱ ይፈሩ ዘንድ [ይህን] አደረገ።",
+          "B": "እግዚአብሔር የሚያደርገው ሁሉ ለዘላለም እንደሚጸና አውቃለሁ፤ በእርሱ ላይ ምንም ሊጨመር ከእርሱም ምንም ሊቀነስ አይችልም። እግዚአብሔር ይህን ያደረገው ሰዎች እንዲፈሩት ነው።",
+          "R": "እግዚአብሔር የሚያደርገው ሁሉ ለዘላለም እንደሚኖር አውቃለሁ። ማንም በእርሱ ላይ ምንም ሊጨምር ወይም ከእርሱ ምንም ሊቀንስ አይችልም። እግዚአብሔር ይህን የሚያደርገው ሰዎች በፍርሃት እንዲያከብሩት ነው።"
         }
       },
       "decisions": [
@@ -2388,6 +2599,11 @@
           "L": "O que é já foi, e o que há de ser já foi; e Deus busca o que foi afugentado.",
           "B": "O que existe já existiu, e o que vai existir já existiu; e Deus busca de novo o que passou.",
           "R": "O que está acontecendo agora já aconteceu antes, e o que vai acontecer já aconteceu antes. Deus faz voltar o que passou."
+        },
+        "am": {
+          "L": "ያለው አስቀድሞ ነበረ፤ የሚሆነውም አስቀድሞ ሆኗል፤ እግዚአብሔርም የተባረረውን ይፈልጋል።",
+          "B": "ያለው ሁሉ አስቀድሞ ነበረ፤ የሚሆነውም ሁሉ አስቀድሞ ሆኗል፤ እግዚአብሔርም ያለፈውን ይፈልገዋል።",
+          "R": "አሁን የሚሆነው ሁሉ ከዚህ በፊት ሆኗል፤ ወደፊት የሚሆነውም ሁሉ ከዚህ በፊት ሆኗል። ያለፈውንም እግዚአብሔር መልሶ ያመጣዋል።"
         }
       },
       "decisions": [
@@ -2509,6 +2725,11 @@
           "L": "E ainda vi debaixo do sol: o lugar do direito, ali [estava] a impiedade; e o lugar da justiça, ali [estava] a impiedade.",
           "B": "Vi ainda outra coisa debaixo do sol: no lugar do direito havia impiedade, e no lugar da justiça havia impiedade.",
           "R": "Também vi isto aqui na terra: onde devia haver justiça, havia maldade. Onde as pessoas deviam fazer o que é certo, havia maldade."
+        },
+        "am": {
+          "L": "ደግሞም ከፀሐይ በታች አየሁ፤ የፍርድ ስፍራ፣ በዚያ ክፋት [ነበረ]፤ የጽድቅም ስፍራ፣ በዚያ ክፋት [ነበረ]።",
+          "B": "ከፀሐይ በታች ሌላም ነገር አየሁ፤ በፍትሕ ስፍራ ክፋት ነበረ፤ በጽድቅም ስፍራ ክፋት ነበረ።",
+          "R": "በዚህ ምድር ላይ ይህንም አየሁ፤ ፍትሕ መኖር በሚገባው ስፍራ ክፋት ነበረ። ሰዎች ትክክለኛውን ማድረግ በሚገባቸው ስፍራ ክፋት ነበረ።"
         }
       },
       "decisions": [
@@ -2674,6 +2895,11 @@
           "L": "Eu disse no meu coração: \"O justo e o ímpio Deus julgará, pois [há] um tempo para cada assunto, e para cada obra, ali.\"",
           "B": "Eu disse a mim mesmo: \"Deus julgará tanto o justo como o ímpio, pois cada assunto tem o seu tempo, e cada obra, o seu tempo ali.\"",
           "R": "Eu disse a mim mesmo: \"Deus vai julgar tanto quem faz o que é certo como quem faz o que é errado. Há um tempo para cada coisa, e para cada ação há um tempo em que Deus vai julgá-la.\""
+        },
+        "am": {
+          "L": "እኔ በልቤ እንዲህ አልኩ፦ «እግዚአብሔር ጻድቁንና ክፉውን ይፈርዳል፤ ለጉዳይ ሁሉ፣ ለሥራም ሁሉ በዚያ ጊዜ [አለ]ና።»",
+          "B": "ለራሴ እንዲህ አልኩ፦ «ለጉዳይ ሁሉ ጊዜ አለውና፤ በዚያም ለሥራ ሁሉ ጊዜ አለውና፤ እግዚአብሔር ጻድቁንም ክፉውንም ይፈርዳል።»",
+          "R": "ለራሴ እንዲህ አልኩ፦ «እግዚአብሔር ትክክል የሚያደርጉትንም ስሕተት የሚያደርጉትንም ይፈርዳል። ለጉዳይ ሁሉ ጊዜ አለ፤ ለሥራም ሁሉ እግዚአብሔር የሚፈርድበት ጊዜ አለ።»"
         }
       },
       "decisions": [
@@ -2835,6 +3061,11 @@
           "L": "Eu disse no meu coração acerca dos {{gender:filhos da humanidade|filhos dos homens}}: \"[É] para Deus prová-los e mostrar que eles [são] animais, eles mesmos.\"",
           "B": "Eu disse a mim mesmo a respeito dos seres humanos: \"Deus os está provando, para lhes mostrar que não passam de animais.\"",
           "R": "Também disse a mim mesmo: \"Deus está provando as pessoas para mostrar a elas que não passam de animais.\""
+        },
+        "am": {
+          "L": "እኔ ስለ ሰው ልጆች በልቤ እንዲህ አልኩ፦ «እግዚአብሔር ይፈትናቸው ዘንድ፣ እነርሱም ራሳቸው እንስሳት መሆናቸውን ያሳያቸው ዘንድ [ነው]።»",
+          "B": "ስለ ሰው ልጆች ለራሴ እንዲህ አልኩ፦ «እግዚአብሔር የሚፈትናቸው እንስሳት ብቻ መሆናቸውን ሊያሳያቸው ነው።»",
+          "R": "ደግሞም ለራሴ እንዲህ አልኩ፦ «እግዚአብሔር ሰዎችን የሚፈትናቸው እንስሳት ብቻ መሆናቸውን ሊያሳያቸው ነው።»"
         }
       },
       "decisions": [
@@ -3022,6 +3253,11 @@
           "L": "Pois o destino dos {{gender:filhos da humanidade|filhos dos homens}} e o destino do animal: um só destino [é] deles; como morre este, assim morre aquele, e um só espírito [há] em todos; e a vantagem {{gender:do ser humano|do homem}} sobre o animal [é] nenhuma, pois tudo [é] sopro.",
           "B": "Pois o que acontece aos seres humanos e o que acontece aos animais é o mesmo: um só destino chega a ambos. Como morre um, assim morre o outro. Todos têm o mesmo espírito, e o ser humano não tem nenhuma vantagem sobre o animal, pois tudo é um sopro.",
           "R": "O que acontece com as pessoas também acontece com os animais. A mesma coisa acontece com ambos: os dois morrem. Todos têm o mesmo espírito que lhes dá vida. As pessoas não estão em situação melhor do que os animais. Tudo é como um sopro que não dura."
+        },
+        "am": {
+          "L": "የሰው ልጆች ዕጣ ፈንታና የእንስሳ ዕጣ ፈንታ፣ አንድ ዕጣ ፈንታ ለእነርሱ [ነው]ና፤ ይህ እንደሚሞት እንዲሁ ያ ይሞታል፤ ለሁሉም አንድ መንፈስ [አለ]፤ ሰውም ከእንስሳ ብልጫ የለውም፤ ሁሉም እስትንፋስ [ነው]ና።",
+          "B": "በሰው ልጆች ላይ የሚደርሰውና በእንስሳት ላይ የሚደርሰው አንድ ነውና፤ አንድ ዕጣ ፈንታ ሁለቱንም ያገኛቸዋል። አንዱ እንደሚሞት ሌላውም እንዲሁ ይሞታል። ሁሉም አንድ መንፈስ አላቸው፤ ሰው ከእንስሳ ምንም ብልጫ የለውም፤ ሁሉም እስትንፋስ ነውና።",
+          "R": "በሰዎች ላይ የሚደርሰው በእንስሳትም ላይ ይደርሳል። በሁለቱም ላይ ያው ነገር ይደርሳል፤ ሁለቱም ይሞታሉ። ሁሉም ሕይወትን የሚሰጣቸው ያው መንፈስ አላቸው። ሰዎች ከእንስሳት የተሻሉ አይደሉም። ሁሉም ነገር እንደማይዘልቅ እስትንፋስ ነው።"
         }
       },
       "decisions": [
@@ -3273,6 +3509,27 @@
           "reason": "As the English: ruach, the life-breath God gives (m2), is \"espírito\", so that it is not confused with hevel, which every level renders \"sopro\" (1:2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190152"
+          ],
+          "choice": "\"መንፈስ\" for ruaḥ (spirit)",
+          "alternatives": [
+            "\"እስትንፋስ\""
+          ],
+          "reason": "The Hebrew ruaḥ here is the breath of life that God gives (the meaning decision). Amharic says \"መንፈስ\", keeping \"እስትንፋስ\" for hevel alone, so that the book's key word is never confused with it; the same holds in 3:21; 11:5; 12:7 (in 8:8, where the English says \"wind\", it is \"ነፋስ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3344,6 +3601,11 @@
           "L": "Todos vão para um só lugar; todos vieram do pó, e todos voltam ao pó.",
           "B": "Tudo vai para o mesmo lugar: tudo veio do pó, e tudo volta ao pó.",
           "R": "Pessoas e animais acabam todos no mesmo lugar. Todos vieram do pó, e todos vão voltar ao pó."
+        },
+        "am": {
+          "L": "ሁሉም ወደ አንድ ስፍራ ይሄዳል፤ ሁሉም ከአፈር ነበረ፤ ሁሉም ወደ አፈር ይመለሳል።",
+          "B": "ሁሉም ወደ አንድ ስፍራ ይሄዳል፤ ሁሉም ከአፈር መጥቷል፤ ሁሉም ወደ አፈር ይመለሳል።",
+          "R": "ሰዎችም እንስሳትም ሁሉ መጨረሻቸው አንድ ስፍራ ነው። ሁሉም ከአፈር መጡ፤ ሁሉም ወደ አፈር ይመለሳሉ።"
         }
       },
       "decisions": [
@@ -3484,6 +3746,11 @@
           "L": "Quem sabe [se] o espírito dos {{gender:filhos da humanidade|filhos dos homens}} sobe para cima, e [se] o espírito do animal desce para baixo, para a terra?",
           "B": "Quem sabe se o espírito humano sobe para o alto e se o espírito do animal desce para a terra?",
           "R": "Quem pode ter certeza de que o espírito de uma pessoa sobe, e o espírito de um animal desce para o chão?"
+        },
+        "am": {
+          "L": "የሰው ልጆች መንፈስ ወደ ላይ ከፍ ብሎ ይወጣ እንደ ሆነ፣ የእንስሳም መንፈስ ወደ ታች ወደ ምድር ዝቅ ብሎ ይወርድ እንደ ሆነ ማን ያውቃል?",
+          "B": "የሰው መንፈስ ወደ ላይ ይወጣ እንደ ሆነ፣ የእንስሳም መንፈስ ወደ ምድር ይወርድ እንደ ሆነ ማን ያውቃል?",
+          "R": "የሰው መንፈስ ወደ ላይ እንደሚሄድ፣ የእንስሳም መንፈስ ወደ መሬት እንደሚወርድ ማን እርግጠኛ ሊሆን ይችላል?"
         }
       },
       "decisions": [
@@ -3621,6 +3888,11 @@
           "L": "Por isso vi que não há nada melhor do que {{gender:o ser humano|o homem}} se alegrar nas suas obras, pois essa [é] a sua porção; pois quem o levará a ver o que haverá depois dele?",
           "B": "Assim vi que não há nada melhor para as pessoas do que se alegrar no seu trabalho, pois essa é a sua parte. Pois quem pode levá-las a ver o que vai acontecer depois delas?",
           "R": "Por isso vi que o melhor que as pessoas podem fazer é aproveitar o seu trabalho. É isso que a vida dá a elas. Afinal, quem pode mostrar a elas o que vai acontecer depois que elas se forem?"
+        },
+        "am": {
+          "L": "ስለዚህ ሰው በሥራው ደስ ከሚሰኝ የሚሻል ነገር እንደሌለ አየሁ፤ ያ ድርሻው ነውና፤ ከእርሱ በኋላ የሚሆነውን ያይ ዘንድ ማን ያመጣዋልና?",
+          "B": "ስለዚህ ለሰዎች በሥራቸው ከመደሰት የሚሻል ነገር እንደሌለ አየሁ፤ ያ ድርሻቸው ነውና። ከእነርሱ በኋላ የሚሆነውን እንዲያዩ ማን ሊያደርጋቸው ይችላል?",
+          "R": "ስለዚህ ሰዎች ሊያደርጉት የሚችሉት ከሁሉ የተሻለ ነገር በሥራቸው መደሰት እንደ ሆነ አየሁ። ሕይወት የሰጣቸው ድርሻ ያ ነው። ለመሆኑ ከሞቱ በኋላ የሚሆነውን ማን ሊያሳያቸው ይችላል?"
         }
       },
       "decisions": [
