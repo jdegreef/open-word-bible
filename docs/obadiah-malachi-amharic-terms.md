@@ -31,7 +31,7 @@ the Amharic words.
 |---|---|
 | Obadiah; Edom; Esau; Teman; Mount Esau | አብድዩ; ኤዶም; ዔሳው; ቴማን; የዔሳው ተራራ |
 | Jonah son of Amittai; Nineveh; Tarshish; Joppa | የአማቴ ልጅ ዮናስ (2 Kings 14:25); ነነዌ; ተርሴስ; ኢዮጴ |
-| Micah of Moresheth; Bethlehem Ephrathah | ሞሬታዊው ሚክያስ; ቤተ ልሔም ኤፍራታ |
+| Micah of Moresheth; Bethlehem Ephrathah | ሞሬሽታዊው ሚክያስ (as Jeremiah 26:18); ቤተ ልሔም ኤፍራታ |
 | Nahum the Elkoshite | ኤልቆሻዊው ናሆም |
 | Habakkuk; shigionoth | ዕንባቆም; ሽጋዮኖት (as Psalm 7's ሽጋዮን) |
 | Zephaniah son of Cushi | የኩሲ ልጅ ሶፎንያስ |
