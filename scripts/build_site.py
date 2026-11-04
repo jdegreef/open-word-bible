@@ -1308,6 +1308,8 @@ def chapter_page(book, chapter, lang="en"):
                        "compare": [list(COMPARISON.get(lang, COMPARISON_DEFAULT)), list(COMPARISON_DEFAULT)]}}
     # Each morphology code's description in every language, once per page.
     data["uses"] = word_uses()[1]
+    # The panel's map of the places in a sentence (web/map.js, loaded when first needed).
+    data["map"] = {"script": asset("map.js"), "base": basemap_file()[1]}
     data["saved"] = url(lang, "/saved/")
     # The reader shows a word's grammar in the page's language only.
     data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
@@ -1693,6 +1695,23 @@ def name_cards():
     return cards
 
 
+@functools.lru_cache(maxsize=None)
+def places():
+    """data/places.json: where each place in data/names.json is, by
+    "strong|lemma|name" (scripts/extract_places.py)."""
+    path = ROOT / "data" / "places.json"
+    return json.loads(path.read_text(encoding="utf-8"))["places"] if path.exists() else {}
+
+
+@functools.lru_cache(maxsize=None)
+def basemap_file():
+    """data/basemap.json for the reader's maps (web/map.js), and its URL
+    with a content hash. The reader fetches it the first time it draws a
+    map."""
+    text = (ROOT / "data" / "basemap.json").read_text(encoding="utf-8")
+    return text, f"/basemap.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
 def word_strong(word):
     """A word's Strong's number as names.json keys it: G or H and digits."""
     prefix = "H" if word["id"].startswith("o") else "G"
@@ -1749,6 +1768,10 @@ def word_cards(records, words, lang="en"):
                     key = ("name", w["lemma"], sense["name"])
                     card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
                             "kind": sense["kind"], "note": sense["note"]}
+                    # A place OpenBible.info locates: where it is, for the panel's map.
+                    where = places().get(f"{word_strong(w)}|{w['lemma']}|{sense['name']}")
+                    if sense["kind"] == "place" and where:
+                        card.update(where)
             if card:
                 if key not in index:
                     index[key] = len(cards)
@@ -5082,7 +5105,7 @@ def sitemap(paths):
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared, article_link):
+                   downloads, chapter_shared, reader_shared, article_link, places, basemap_file):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -5156,6 +5179,7 @@ def build(out):
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
+    files["basemap.json"] = basemap_file()[0]
     files.update(verse_files())
     files.update(editions_files())
     files.update(word_files())
@@ -5173,7 +5197,7 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "edition.js", "admin.js", "admin.css"):
+                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")

@@ -2230,6 +2230,31 @@ ruby.il rt { font-family: var(--greek); font-size: .58em; color: var(--accent); 
 ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
 
 /* Key terms and names in the chosen sentence (the panel). */
+/* The panel's map of a sentence's places (web/map.js). Colours follow the
+   theme: land from the surface, water a blue mixed into the background. */
+.pmap { margin: 4px 0 14px; }
+.pmap h3 { margin-bottom: 6px; }
+.pmap-svg { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  font-family: var(--sans); }
+.pmap-sea, .pmap-lake { fill: color-mix(in srgb, #6f9ab3 30%, var(--bg)); }
+.pmap-land { fill: var(--surface-2); stroke: color-mix(in srgb, var(--line-strong) 45%, transparent); stroke-width: .6; }
+.pmap-lake { stroke: color-mix(in srgb, #6f9ab3 60%, var(--bg)); stroke-width: .6; }
+.pmap-river { fill: none; stroke: color-mix(in srgb, #6f9ab3 70%, var(--bg)); stroke-width: 1.4; }
+.pmap-other { fill: var(--muted); opacity: .55; }
+.pmap-other-name { font-size: 10.5px; fill: var(--muted); }
+.pmap-site { fill: var(--accent); }
+.pmap-unsure { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: var(--accent); stroke-width: 1.6;
+  stroke-dasharray: 3.5 2.5; }
+.pmap-name { font-size: 13px; font-weight: 700; fill: var(--accent); }
+.pmap-area { font-size: 11px; font-weight: 700; letter-spacing: .14em; fill: var(--accent); text-anchor: middle; }
+.pmap-name, .pmap-area, .pmap-other-name { paint-order: stroke; stroke: var(--surface-2); stroke-width: 3px;
+  stroke-linejoin: round; }
+.pmap-key { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+.pmap-key-sure::before, .pmap-key-unsure::before { content: ""; display: inline-block; width: 8px; height: 8px;
+  margin-right: 6px; border-radius: 50%; vertical-align: 0; }
+.pmap-key-sure::before { background: var(--accent); }
+.pmap-key-unsure::before { width: 9px; height: 9px; border: 1.5px dashed var(--accent); box-sizing: border-box; }
+.pmap-credit { margin-left: auto; }
 .wcards { display: grid; gap: 6px; margin-top: 8px; }
 .wcard {
   display: grid; gap: 2px; width: 100%; text-align: left; padding: 9px 12px; cursor: pointer;

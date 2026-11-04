@@ -1527,6 +1527,27 @@
   // Key terms and the people, places and peoples in the chosen sentence
   // (DATA.cards, from data/key_terms.json and data/names.json). Tapping one
   // lights its words in the Greek or Hebrew above.
+  // Where it happens: a map of the chosen sentence's places (web/map.js,
+  // loaded the first time), with the rest of the page's faintly around them.
+  function drawMap(panel) {
+    var seen = {}, placed = [];
+    current.source.tokens.forEach(function (id) {
+      var i = DATA.cards.tokens[id], c = i === undefined ? null : DATA.cards.list[i];
+      if (c && c.at && !seen[i]) { seen[i] = true; placed.push(c); }
+    });
+    if (!placed.length || !DATA.map) return;
+    var fig = el("figure", "pmap");
+    panel.appendChild(fig);
+    var go = function () {
+      OWBMap.draw(fig, placed, DATA.cards.list.filter(function (c) { return c.at; }), { base: DATA.map.base, t: t });
+    };
+    if (window.OWBMap) return go();
+    var js = document.createElement("script");
+    js.src = DATA.map.script;
+    js.onload = go;
+    document.head.appendChild(js);
+  }
+
   function drawWordCards(panel) {
     var byCard = {};
     current.source.tokens.forEach(function (id) {
@@ -1697,6 +1718,7 @@
     var key = keyNotes();
     if (key) panel.appendChild(key);
 
+    drawMap(panel);
     var wordsHead = el("div", "words-head");
     wordsHead.appendChild(el("h3", null, t("greek")));
     wordsHead.appendChild(scriptControl());

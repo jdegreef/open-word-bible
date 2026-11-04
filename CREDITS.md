@@ -94,6 +94,23 @@ verse numbering. The reader shows them in the margin and with each verse's
 reasoning, credited to OpenBible.info. They are an aid to study, not part of
 the translation.
 
+## Places and maps
+
+Where the Bible's places are comes from OpenBible.info's Bible Geocoding Data
+(<https://www.openbible.info/geo/>), licensed under CC BY 4.0, pinned in
+`sources.lock.json` as
+[openbibleinfo/Bible-Geocoding-Data](https://github.com/openbibleinfo/Bible-Geocoding-Data)
+(`data/ancient.jsonl`). `data/places.json` is derived from it and carries its
+CC BY 4.0 licence: each place in `data/names.json` that it locates, with its
+best identification's point and whether that identification is confident
+enough to draw the site as known. Only points are used; the repository's
+geometry files include OpenStreetMap data under ODbL and are not used.
+
+The land, lakes and rivers in `data/basemap.json` come from Natural Earth
+(<https://www.naturalearthdata.com/>), 1:10m, which is in the public domain,
+pinned as [nvkelso/natural-earth-vector](https://github.com/nvkelso/natural-earth-vector).
+The reader credits both under each map.
+
 ## Fonts
 
 The reading text and Greek are set in Gentium Book Plus, Copyright (c)

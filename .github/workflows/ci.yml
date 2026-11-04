@@ -83,6 +83,8 @@ jobs:
       # A unit test ran this until the tests began reading CI's build.
       - name: Comparison extracts are up to date
         run: python3 scripts/extract_comparison.py --check
+      - name: Place and map extracts are up to date
+        run: python3 scripts/extract_places.py --check
       - name: Build the site
         run: python3 scripts/build_site.py
       - name: Site size budgets

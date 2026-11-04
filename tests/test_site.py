@@ -1063,6 +1063,30 @@ class SiteTest(unittest.TestCase):
                 if not (self.out / src.lstrip("/")).is_file():
                     missing.add(src)
         self.assertEqual(missing, set())
+    def test_places_have_a_point_and_the_panel_a_map(self):
+        # data/places.json (scripts/extract_places.py) locates the places in
+        # data/names.json, keyed by their Strong's number, lemma and name.
+        places = json.loads((build_site.ROOT / "data" / "places.json").read_text(encoding="utf-8"))
+        names = json.loads((build_site.ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+        senses = {f"{n['strong']}|{n['lemma']}|{s['name']}" for n in names for s in n["senses"] if s["kind"] == "place"}
+        self.assertIn("CC BY 4.0", places["source"])
+        self.assertTrue(set(places["places"]) <= senses)
+        self.assertGreater(len(places["places"]), len(senses) * 0.9)
+        for key, p in places["places"].items():
+            lon, lat = p["at"]
+            self.assertTrue(-10 <= lon <= 62 and 12 <= lat <= 46, key)
+        # John 4: Sychar's site is uncertain, Jerusalem's known; the cards carry it.
+        cards = {c["title"]: c for c in self.chapter_data("jhn/4")["cards"]["list"]}
+        self.assertFalse(cards["Sychar"]["sure"])
+        self.assertTrue(cards["Jerusalem"]["sure"])
+        self.assertTrue(cards["Samaria"]["area"])
+        # The page names the map's script and land, and the build has both.
+        data = self.chapter_data("jhn/4")["map"]
+        for url in (data["script"], data["base"]):
+            self.assertTrue((self.out / url.split("?")[0].lstrip("/")).is_file(), url)
+        base = json.loads((self.out / "basemap.json").read_text(encoding="utf-8"))
+        self.assertTrue(base["land"] and base["lakes"] and base["rivers"])
+
     def test_glossary_is_well_formed(self):
         # Words to know: AI drafts, kind "concept", no word that is also a
         # name; their lemmas are checked against the source data above.
