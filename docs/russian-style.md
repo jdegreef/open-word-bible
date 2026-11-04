@@ -276,6 +276,12 @@ passage where the Greek is the same, and differ where the Greek differs.
   Jews" иудеи at L, иудейские власти (B) and иудейские вожди (R) where the
   authorities are meant; пастух; «Женщина» (L, B), «Мама» (R) for Jesus'
   address to his mother.
+  Settled in Acts: Путь (the Way); старейшины (elders); блюстители
+  (overseers); почитающие Бога for *sebomenoi*, боящиеся Бога for
+  *phoboumenoi*; эллинисты (L), грекоязычные (B, R); Пятидесятница;
+  проконсул (L, B), римский правитель (R); тысяченачальник (L), командир
+  (B, R); благовествовать (L), возвещать Радостную весть (B); Савл for the
+  apostle; партия for *hairesis* as a party.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
