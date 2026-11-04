@@ -269,6 +269,19 @@ passage where the Greek is the same, and differ where the Greek differs.
   every level; *nomikos* законник (L), знаток Закона (B, R); *alēthōs*
   "Поистине говорю вам", kept apart from *amēn*; Всевышний; Назорей or
   Назарянин by the Greek word.
+  Settled in John (with docs/john-terms.md): Слово; «Истинно, истинно
+  говорю вам» (L, B), «Говорю вам правду» (R); пребывать (L, B), оставаться
+  (R); Заступник; «Я есть» for the absolute "I am" (8:24, 8:28, 8:58,
+  13:19), «Это Я» in 18:5-8; знамение (L, B), знак (R), never чудо; "the
+  Jews" иудеи at L, иудейские власти (B) and иудейские вожди (R) where the
+  authorities are meant; пастух; «Женщина» (L, B), «Мама» (R) for Jesus'
+  address to his mother.
+  Settled in Acts: Путь (the Way); старейшины (elders); блюстители
+  (overseers); почитающие Бога for *sebomenoi*, боящиеся Бога for
+  *phoboumenoi*; эллинисты (L), грекоязычные (B, R); Пятидесятница;
+  проконсул (L, B), римский правитель (R); тысяченачальник (L), командир
+  (B, R); благовествовать (L), возвещать Радостную весть (B); Савл for the
+  apostle; партия for *hairesis* as a party.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
