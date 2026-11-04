@@ -59,6 +59,11 @@
           "L": "Quem creu no nosso anúncio? \\q E o braço {{divine_name:do SENHOR|de Javé}}, sobre quem foi revelado?",
           "B": "Quem creu na notícia que chegou até nós? \\q E o braço {{divine_name:do SENHOR|de Javé}}, a quem foi mostrado?",
           "R": "Quem acreditou na mensagem que nós ouvimos? \\q Quem viu {{divine_name:o SENHOR|Javé}} mostrar o {{deity_pronoun:seu|Seu}} poder?"
+        },
+        "am": {
+          "L": "ወሬያችንን ማን አመነ? \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ክንድስ ለማን ተገለጠ?",
+          "B": "የደረሰንን ወሬ ማን አመነ? \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ክንድስ ለማን ተገለጠ?",
+          "R": "የሰማነውን ወሬ ማን አመነ? \\q {{divine_name:እግዚአብሔር|ያህዌ}} ኃይሉን ሲያሳይ ያየ ማን ነው?"
         }
       },
       "decisions": [
@@ -268,6 +273,47 @@
           "reason": "John 12:38 and Romans 10:16 quote this line from the Greek, which opens with \"Senhor\"; the Hebrew has no address, so Isaiah leaves it out and keeps the rest of their Portuguese where the Hebrew allows: \"Quem creu no nosso anúncio?\" at Literal, as both Gospel and letter have it, and \"acreditou na mensagem\" at Readable, as John's Readable. Balanced follows the reading \"the news that reached us\" (m2), as the English Balanced does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530010042"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English capitalised-pronoun setting has nothing to change in Amharic; the pronouns stay as written.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010021",
+            "o230530010042"
+          ],
+          "choice": "John 12:38 and Romans 10:16 kept: \"ወሬያችንን ማን አመነ? ... ክንድስ ለማን ተገለጠ?\"",
+          "alternatives": [
+            "\"ጌታ ሆይ፣\" at the start, as John 12:38"
+          ],
+          "reason": "John 12:38 and Romans 10:16 quote this verse from the Greek, which opens with \"Lord\" (ጌታ ሆይ); the Hebrew has no address, so the Amharic leaves it out and otherwise keeps John's Literal wording; Balanced and Readable follow their English (\"the news that reached us\", \"the news we heard\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -349,6 +395,11 @@
           "L": "E ele cresceu como um rebento diante {{deity_pronoun:dele|Dele}}, e como uma raiz de chão árido; \\q não [havia] nele forma nem esplendor \\q para que olhássemos para ele, nem aparência que nos fizesse desejá-lo.",
           "B": "Ele cresceu diante {{deity_pronoun:dele|Dele}} como um rebento pequeno, como uma raiz que brota do chão ressecado. \\q Não tinha porte nobre nem esplendor que atraísse os nossos olhos, \\q nem boa aparência que nos fizesse querer estar perto dele.",
           "R": "Ele cresceu diante {{divine_name:do SENHOR|de Javé}} como um broto verde e pequeno, como uma raiz que fura a terra seca. \\q Não havia nada de grandioso ou de bonito nele que nos fizesse reparar nele. \\q A aparência dele não nos fazia querer ficar perto dele."
+        },
+        "am": {
+          "L": "በፊቱም እንደ ለጋ ቀንበጥ፣ ከደረቅ መሬትም እንደ ወጣ ሥር አደገ፤ \\q መልክም ግርማም አልነበረውም፤ \\q እንድናየው፣ እንድንመኘውም ገጽታ [አልነበረውም]።",
+          "B": "በፊቱ እንደ ትንሽ ቀንበጥ፣ ከደረቀ ምድር እንደሚበቅል ሥር አደገ። \\q ዓይናችንን የሚስብ የክብር ቁመናም ሆነ ግርማ አልነበረውም፤ \\q እንድንናፍቀውም የሚያደርግ ማራኪ መልክ አልነበረውም።",
+          "R": "{{divine_name:በእግዚአብሔር|በያህዌ}} ፊት እንደ ትንሽ አረንጓዴ ቀንበጥ፣ ከደረቅ መሬት ገፍቶ እንደሚወጣ ሥር አደገ። \\q ትኩረታችንን የሚስብ ታላቅ ወይም ያማረ ነገር አልነበረውም። \\q መልኩም ወደ እርሱ እንድንቀርብ አላደረገንም።"
         }
       },
       "decisions": [
@@ -514,6 +565,11 @@
           "L": "[Era] desprezado e abandonado {{gender:pelas pessoas|pelos homens}}, \\q um homem de dores e conhecedor da doença; \\q e como [quando] se escondem os rostos diante dele, \\q [era] desprezado, e não lhe demos valor.",
           "B": "Ele era desprezado e evitado por todos, \\q um homem cheio de dores, que conhecia bem a doença. \\q As pessoas viravam o rosto para não olhar para ele; \\q ele era desprezado, e nós o consideramos um nada.",
           "R": "As pessoas o desprezavam e não queriam saber dele. \\q A vida dele era cheia de dor, e a doença não era novidade para ele. \\q As pessoas viravam o rosto para não olhar para ele. \\q Elas o desprezavam, e nós achávamos que ele não valia nada."
+        },
+        "am": {
+          "L": "በሰዎች የተናቀና የተገለለ [ነበረ]፤ \\q የሥቃይ ሰው፣ በሽታንም የሚያውቅ፤ \\q ፊትም ከእርሱ እንደሚሸሸግ፣ \\q የተናቀ [ነበረ]፤ እኛም ዋጋ አልሰጠነውም።",
+          "B": "ሰው ሁሉ ናቀው፤ ገሸሽም አደረገው፤ \\q የሥቃይ ሰው ነበረ፤ በሽታም ለእርሱ እንግዳ አልነበረም። \\q ሰዎች ፊታቸውን ከእርሱ ያዞሩ ነበር፤ \\q ተናቀ፤ እኛም እንደ ምንም ቆጠርነው።",
+          "R": "ሰዎች ናቁት፤ ከእርሱም ጋር ምንም መገናኘት አልፈለጉም። \\q ሕይወቱ በሥቃይ የተሞላ ነበር፤ በሽታም ለእርሱ አዲስ ነገር አልነበረም። \\q ሰዎች ፊታቸውን ከእርሱ ያዞሩ ነበር። \\q ናቁት፤ እኛም ምንም ዋጋ እንደሌለው አሰብን።"
         }
       },
       "decisions": [
@@ -655,6 +711,25 @@
           "reason": "Literal keeps the two nouns as they are (m1): \"dores\", pain of body or mind, and \"doença\", the same word as in verse 4. \"Homem de dores\" is also the familiar Portuguese phrase, which here is the literal one; the rest of the line is worded from the Hebrew. Balanced and Readable say it as a sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530030031"
+          ],
+          "choice": "No gender span: \"በሰዎች\"",
+          "alternatives": [
+            "{{gender:በሰዎች|በወንዶች}}"
+          ],
+          "reason": "The English Literal offers \"people\" or \"men\"; Amharic \"ሰዎች\" covers both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -726,6 +801,11 @@
           "L": "Contudo, as nossas doenças ele mesmo levou, \\q e as nossas dores ele as carregou; \\q e nós, nós o consideramos atingido, golpeado por Deus e humilhado.",
           "B": "Mas eram as nossas doenças que ele carregava, \\q as nossas dores que ele punha sobre os ombros, \\q enquanto nós o tínhamos por um homem atingido por uma praga, \\q abatido por Deus e humilhado.",
           "R": "Mas, na verdade, ele estava carregando as nossas doenças. \\q Ele estava levando o peso das nossas dores. \\q E nós pensávamos que Deus o tinha castigado, derrubado e feito sofrer."
+        },
+        "am": {
+          "L": "ነገር ግን በሽታዎቻችንን እርሱ ራሱ ወሰደ፤ \\q ሕመሞቻችንንም ተሸከማቸው፤ \\q እኛም እኛ በመቅሠፍት እንደ ተመታ፣ በእግዚአብሔር እንደ ተቀጣ፣ እንደ ተዋረደም አሰብነው።",
+          "B": "ነገር ግን የወሰደው በሽታዎቻችንን ነበር፤ \\q የተሸከመውም ሕመሞቻችንን ነበር፤ \\q እኛ ግን መቅሠፍት እንደ ወረደበት፣ \\q እግዚአብሔር እንደ መታውና እንዳዋረደው ሰው ቆጠርነው።",
+          "R": "እርሱ ግን በእውነት በሽታዎቻችንን ይሸከም ነበር። \\q የሕመሞቻችንን ሸክም ይሸከም ነበር። \\q እኛ ግን እግዚአብሔር መቶት፣ ደብድቦ እንደ ጣለውና እንዳሠቃየው አሰብን።"
         }
       },
       "decisions": [
@@ -865,6 +945,28 @@
           "reason": "Matthew 8:17 quotes this line (m3) as \"Ele mesmo tomou as nossas fraquezas e carregou as nossas doenças\". Isaiah keeps Matthew's \"ele mesmo\", \"carregou\" and \"doenças\", and follows the Hebrew nouns, sicknesses and pains (\"doenças\", \"dores\"), where Matthew's Greek has \"weaknesses\" and \"diseases\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040021",
+            "o230530040052"
+          ],
+          "choice": "Matthew 8:17 kept for the verbs: \"... ወሰደ፤ ...ንም ተሸከመ\"; the nouns follow the Hebrew",
+          "alternatives": [
+            "Matthew 8:17 \"ድካሞቻችንን ወሰደ፤ በሽታዎቻችንንም ተሸከመ\""
+          ],
+          "reason": "Matthew 8:17 translates the first two lines straight from the Hebrew (\"he took our weaknesses and carried our diseases\"). The Amharic keeps Matthew's verbs and their order and names what the Hebrew names: sicknesses (\"በሽታዎቻችንን\") and pains (\"ሕመሞቻችንን\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -939,6 +1041,11 @@
           "L": "Mas ele [foi] perfurado em razão das nossas transgressões, \\q triturado em razão das nossas iniquidades; \\q a disciplina da nossa paz [estava] sobre ele, \\q e pelo seu vergão há cura para nós.",
           "B": "Mas foi pelas nossas rebeldias que ele foi perfurado, \\q foi pela nossa culpa que ele foi triturado. \\q Sobre ele caiu a disciplina que nos deu a paz, \\q e as marcas das pancadas que ele levou nos trouxeram cura.",
           "R": "Mas ele foi ferido por causa das vezes em que nós nos voltamos contra Deus. \\q Ele foi esmagado por causa dos nossos pecados. \\q Ele recebeu o castigo que nos deu paz. \\q Ele foi espancado, e isso nos curou."
+        },
+        "am": {
+          "L": "እርሱ ግን ከመተላለፋችን የተነሣ ተወጋ፤ \\q ከበደላችን የተነሣ ተቀጠቀጠ፤ \\q የሰላማችን ቅጣት በእርሱ ላይ [ነበረ]፤ \\q በሰንበሩም እኛ ተፈወስን።",
+          "B": "ነገር ግን የተወጋው ስለ ዓመፃችን ነው፤ \\q የተቀጠቀጠውም ስለ በደላችን ነው። \\q ሰላም ያስገኘልን ቅጣት በእርሱ ላይ ወደቀ፤ \\q በሰንበሩም ፈውስ አገኘን።",
+          "R": "ነገር ግን የቆሰለው በእግዚአብሔር ላይ ስላመፅን ነው። \\q የተቀጠቀጠውም ስለ ኃጢአታችን ነው። \\q ሰላም ያስገኘልንን ቅጣት እርሱ ተቀበለ። \\q የደረሰበት ድብደባ ፈወሰን።"
         }
       },
       "decisions": [
@@ -1101,6 +1208,27 @@
           "reason": "1 Peter 2:24 quotes the last line (m3), so each level keeps the words of its Portuguese for the welt a blow leaves: \"vergão\" (L), \"as marcas das pancadas\" (B), \"espancado\" (R). Isaiah keeps the Hebrew \"us\" where Peter says \"you\". The verbs of the first two lines are \"perfurado\" and \"triturado\" (m1), worded from the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050093"
+          ],
+          "choice": "1 Peter 2:24 kept: \"በሰንበሩም ... ተፈወስን\"",
+          "alternatives": [
+            "\"በቁስሉ\""
+          ],
+          "reason": "1 Peter 2:24 quotes this line (\"by his welts you have been healed\"); the Amharic keeps its word \"ሰንበር\" (welt, the mark of a beating) and the verb, in the first person plural of the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1172,6 +1300,11 @@
           "L": "Todos nós nos desgarramos como ovelhas; \\q cada um para o seu caminho nos voltamos; \\q e {{divine_name:o SENHOR|Javé}} fez a iniquidade de todos nós atingi-lo.",
           "B": "Cada um de nós se perdeu como ovelha desgarrada; \\q cada um tomou o seu próprio rumo, \\q e {{divine_name:o SENHOR|Javé}} fez a culpa de todos nós desabar sobre ele.",
           "R": "Todos nós nos perdemos como ovelhas que se afastam do rebanho. \\q Cada um foi para o seu lado. \\q E {{divine_name:o SENHOR|Javé}} fez os pecados de todos nós caírem sobre ele."
+        },
+        "am": {
+          "L": "ሁላችንም እንደ በጎች ባዘንን፤ \\q እያንዳንዳችን ወደ ገዛ መንገዳችን ዞርን፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}}ም የሁላችንንም በደል በእርሱ ላይ እንዲወድቅ አደረገ።",
+          "B": "ሁላችንም እንደ በጎች ተሳስተን ሄድን፤ \\q እያንዳንዳችን በራሳችን መንገድ ዘወር አልን፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ግን የሁላችንንም በደል በእርሱ ላይ እንዲወድቅ አደረገ።",
+          "R": "ሁላችንም እንደ ጠፉ በጎች ተቅበዘበዝን። \\q እያንዳንዳችን በየራሳችን መንገድ ሄድን። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ግን የሁላችንንም ኃጢአት በእርሱ ላይ እንዲወድቅ አደረገ።"
         }
       },
       "decisions": [
@@ -1240,6 +1373,23 @@
             "fez cair sobre ele"
           ],
           "reason": "1 Peter 2:25 echoes the first line (m2) with \"ovelhas desgarradas\", which Literal and Balanced keep. The verb of the last line means to make something strike or land on someone (m1); Literal says \"atingi-lo\" and Balanced \"desabar sobre ele\", which keep that force and the link to verse 12, where the same verb means to step in for others.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060022"
+          ],
+          "choice": "\"እንደ ጠፉ በጎች\" (R), as 1 Peter 2:25",
+          "alternatives": [],
+          "reason": "1 Peter 2:25 echoes this verse (\"you were straying like sheep\"); Readable shares its Balanced wording; Literal and Balanced keep the Hebrew verb \"strayed\" (\"ባዘንን\", \"ተሳስተን ሄድን\").",
           "uncertain": false,
           "footnote": false
         }
@@ -1321,6 +1471,11 @@
           "L": "Ele foi oprimido, e ele se deixou humilhar, mas não abriu a boca; \\q como o cordeiro que é conduzido ao matadouro, \\q e como a ovelha que fica muda diante dos seus tosquiadores, \\q [assim] ele não abriu a boca.",
           "B": "Ele foi duramente maltratado e se curvou debaixo disso, mas não abriu a boca. \\q Como um cordeiro levado para ser abatido, \\q como uma ovelha calada diante de quem a tosquia, \\q ele não abriu a boca.",
           "R": "As pessoas foram cruéis com ele, e ele deixou que o fizessem sofrer. \\q Mas ele não disse uma palavra. \\q Ele era como um cordeiro que está sendo levado para ser morto. \\q Era como uma ovelha que não faz nenhum barulho enquanto cortam a sua lã. \\q Ele não disse uma palavra."
+        },
+        "am": {
+          "L": "ተጨቆነ፤ እርሱም ራሱን አዋረደ፤ አፉንም አልከፈተም፤ \\q ለመታረድ እንደሚወሰድ በግ፣ \\q በሸላቾቿም ፊት ድምፅ እንደማታሰማ እንስት በግ፣ \\q [እንዲሁ] አፉን አልከፈተም።",
+          "B": "ግፍ ደረሰበት፤ እርሱም ዝቅ ብሎ ተቀበለው፤ ቢሆንም አፉን አልከፈተም። \\q ሊታረድ እንደሚወሰድ ጠቦት፣ \\q በሚሸልቷት ፊት ድምፅ እንደማታሰማ እንስት በግ፣ \\q አፉን አልከፈተም።",
+          "R": "ሰዎች በጭካኔ ያዙት፤ እርሱም እንዲያሠቃዩት ፈቀደላቸው። \\q ነገር ግን አንድም ቃል አልተናገረም። \\q ሊታረድ እንደሚወሰድ ጠቦት ነበረ። \\q ሱፏን ሲሸልቱ ድምፅ እንደማታሰማ በግ ነበረ። \\q አንድም ቃል አልተናገረም።"
         }
       },
       "decisions": [
@@ -1462,6 +1617,28 @@
           "reason": "Acts 8:32 quotes verses 7-8 from the Greek (m2), which has the sheep led to slaughter and the lamb before the shearer. Isaiah follows the Hebrew, a lamb to the slaughter and a ewe before her shearers, and keeps Acts' words for them at each level: \"matadouro\" (L), \"levado para ser abatido\" and \"calado\" (B), \"cortam a sua lã\" (R). Acts puts the servant's pronouns under the deity_pronoun setting because it applies them to Jesus; Isaiah, as the English, does not.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070082",
+            "o230530070103"
+          ],
+          "choice": "Acts 8:32 kept: \"ለመታረድ ... በግ\", \"ድምፅ እንደማያሰማ\", \"አፉን አልከፈተም\"; the Hebrew followed for the ewe",
+          "alternatives": [
+            "\"ጠቦት\" for the second animal, as Acts 8:32"
+          ],
+          "reason": "Acts 8:32 quotes the Greek of this verse. The Amharic keeps Acts' phrases where the Hebrew agrees; but the Hebrew has the opening line (oppressed and afflicted), a ewe (\"እንስት በግ\", Acts \"ጠቦት\", lamb) before \"her shearers\", and \"he did not open his mouth\" twice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1538,6 +1715,11 @@
           "L": "Por opressão e por julgamento ele foi levado; \\q e da sua geração, quem se importou? \\q Pois ele foi cortado da terra dos vivos; \\q pela transgressão do meu povo o golpe [caiu] sobre ele.",
           "B": "Uma sentença cruel o levou embora, \\q e entre os da sua época, quem pensou nisso? \\q Ele foi arrancado da terra dos vivos; \\q porque o meu povo se rebelou, o golpe caiu sobre ele.",
           "R": "Ele foi julgado injustamente e levado embora. \\q Ninguém daquele tempo se importou com o que aconteceu com ele. \\q A vida dele foi cortada. \\q Ele foi ferido por causa do mal que o meu povo tinha feito."
+        },
+        "am": {
+          "L": "በጭቆናና በፍርድ ተወሰደ፤ \\q ትውልዱንስ ማን አስተዋለ? \\q ከሕያዋን ምድር ተቆርጧልና፤ \\q ስለ ሕዝቤ መተላለፍ ምቱ በእርሱ ላይ [ወደቀ]።",
+          "B": "በጨካኝ ፍርድ ተወሰደ፤ \\q በዘመኑ ከነበሩት ሰዎች ስለ እርሱ ያሰበ ማን ነበር? \\q ከሕያዋን ምድር ተነጥቋልና፤ \\q ሕዝቤ ስላመፀ ምቱ በእርሱ ላይ ወደቀ።",
+          "R": "ያለ አግባብ ተፈርዶበት ተወሰደ። \\q በዚያን ጊዜ ይኖሩ ከነበሩት ሰዎች በእርሱ ላይ የደረሰው ነገር ያሳሰበው ማንም አልነበረም። \\q ሕይወቱ ተቀጠፈ። \\q ሕዝቤ በሠራው በደል ምክንያት ተመትቶ ወደቀ።"
         }
       },
       "decisions": [
@@ -1666,6 +1848,27 @@
           "reason": "Acts 8:33 quotes this verse from the Greek, which differs from the Hebrew (\"In his humiliation justice was taken away\"; \"who will describe his generation?\"; \"his life is taken from the earth\"). Isaiah follows the Hebrew and the meaning notes (m1, m2), so the words differ from Acts here; only \"a sua geração\" (L) is shared.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530080051"
+          ],
+          "choice": "The Hebrew followed, not Acts 8:33; only \"ትውልዱንስ ማን\" is shared",
+          "alternatives": [
+            "Acts 8:33 \"በውርደቱ ፍርዱ ተወሰደበት ... ሕይወቱ ከምድር ተወስዳለችና\""
+          ],
+          "reason": "Acts 8:33 quotes the Greek, which reads differently (\"in his humiliation justice was taken from him ... for his life is taken from the earth\"). The Amharic follows the Hebrew and the meaning decisions: an unjust sentence, no one of his generation who cared, cut off from the land of the living, struck for the rebellion of \"my people\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1740,6 +1943,11 @@
           "L": "E [alguém] pôs a sua cova com [os] maus, \\q e com um rico nas suas mortes, \\q ainda que ele não tivesse feito violência, \\q nem [houvesse] engano na sua boca.",
           "B": "O lugar do seu enterro foi marcado entre os maus, \\q e na morte ele ficou junto de um rico, \\q embora nunca tivesse agido com violência nem falado com engano.",
           "R": "Ele foi enterrado no meio de gente má. \\q Quando morreu, ficou junto de um homem rico. \\q Mas ele nunca tinha sido violento e nunca tinha contado uma mentira."
+        },
+        "am": {
+          "L": "[አንዱ] መቃብሩን ከክፉዎች ጋር መደበ፤ \\q በሞቱም ከሀብታም ጋር [ሆነ]፤ \\q ምንም እንኳ ግፍ ባይሠራም፣ \\q በአፉም ተንኮል ባይኖርም።",
+          "B": "የመቃብሩ ስፍራ ከክፉዎች መካከል ተደረገ፤ \\q ሲሞትም ከሀብታም ሰው ጋር ተኛ፤ \\q ይህም ግፍ ፈጽሞ ሳይሠራ፣ ተንኮልም ሳይናገር ነው።",
+          "R": "በክፉ ሰዎች መካከል ተቀበረ። \\q በሞተ ጊዜ ከሀብታም ሰው ጋር ነበረ። \\q ነገር ግን ማንንም በኃይል ጎድቶ አያውቅም፤ ፈጽሞም ዋሽቶ አያውቅም።"
         }
       },
       "decisions": [
@@ -1811,6 +2019,28 @@
             "dolo"
           ],
           "reason": "1 Peter 2:22 quotes the last line (m2) as \"nem foi achado engano na sua boca\", so Literal and Balanced keep \"engano\" and \"boca\". Peter's Greek says \"sin\" where the Hebrew says \"violence\"; Isaiah keeps \"violência\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530090101",
+            "o230530090131"
+          ],
+          "choice": "\"ግፍ\" for ḥamas; \"በአፉም ተንኮል\" as 1 Peter 2:22",
+          "alternatives": [
+            "\"ኃጢአት\" as 1 Peter 2:22"
+          ],
+          "reason": "1 Peter 2:22 quotes the Greek, which has \"sin\" where the Hebrew has \"violence\", and adds \"found\". The Amharic follows the Hebrew (\"ግፍ\") and keeps Peter's \"in his mouth ... deceit\" (\"በአፉ ... ተንኮል\").",
           "uncertain": false,
           "footnote": false
         }
@@ -1887,6 +2117,11 @@
           "L": "Mas {{divine_name:o SENHOR|Javé}} teve prazer [em] esmagá-lo; {{deity_pronoun:ele|Ele}} [o] fez adoecer. \\q Se a sua alma fizer uma oferta pela culpa, \\q ele verá descendência, alongará [os seus] dias, \\q e o prazer {{divine_name:do SENHOR|de Javé}} terá êxito pela sua mão.",
           "B": "Mas {{divine_name:o SENHOR|Javé}} se agradou de esmagá-lo e de entregá-lo à doença. \\q Se ele se oferecer como oferta pela culpa, \\q verá filhos e terá vida longa, \\q e por meio das suas mãos o que agrada {{divine_name:ao SENHOR|a Javé}} vai prosperar.",
           "R": "Mas {{divine_name:o SENHOR|Javé}} quis esmagá-lo e deixá-lo doente. \\q Se ele der a sua vida para pagar pela culpa, \\q vai ver os seus filhos. Vai viver muito tempo. \\q E, por meio dele, o que {{divine_name:o SENHOR|Javé}} quer vai dar certo."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን ሊቀጠቅጠው ወደደ፤ አሳመመው፤ \\q ነፍሱ የበደል መሥዋዕት ብታደርግ፣ \\q ዘርን ያያል፤ ቀኖችን ያረዝማል፤ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ደስታም በእጁ ይሳካል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን ሊቀጠቅጠውና ሊያሳምመው ወደደ። \\q ራሱን የበደል መሥዋዕት አድርጎ ካቀረበ፣ \\q ልጆችን ያያል፤ ረጅም ዘመንም ይኖራል፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኘውም በእጁ ይሳካል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን ሊቀጠቅጠውና ሊያሳምመው ፈለገ። \\q የበደልን ዕዳ ለመክፈል ሕይወቱን ካቀረበ፣ \\q ልጆቹን ያያል፤ ረጅም ዕድሜም ይኖራል። \\q {{divine_name:እግዚአብሔር|ያህዌ}} የሚፈልገውም በእርሱ በኩል ይሳካል።"
         }
       },
       "decisions": [
@@ -2077,6 +2312,27 @@
           "reason": "The guilt offering of Leviticus 5 (m3) keeps the Old Testament's term \"a oferta pela culpa\"; \"oferta pelo pecado\" is the name of a different sacrifice. \"Teve prazer\" (L) and \"o prazer do SENHOR\" keep the one root of the first and last lines (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530100071"
+          ],
+          "choice": "\"የበደል መሥዋዕት\" for ʾasham",
+          "alternatives": [
+            "\"የኃጢአት መሥዋዕት\""
+          ],
+          "reason": "The guilt offering of Leviticus 5-7, as on main, kept apart from the sin offering; Readable says what it did (\"to pay the debt of guilt\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2149,6 +2405,11 @@
           "L": "Depois da fadiga da sua alma ele verá, ficará saciado; \\q pelo seu conhecimento o justo, o {{deity_pronoun:meu|Meu}} servo, justificará os muitos, \\q e as iniquidades deles ele mesmo carregará.",
           "B": "Depois de todo o sofrimento da sua alma, ele verá e ficará plenamente satisfeito. \\q O {{deity_pronoun:meu|Meu}} servo, o justo, declarará justos os muitos pelo seu conhecimento, \\q e tomará sobre os ombros a culpa deles.",
           "R": "Depois de todo o seu sofrimento, ele vai ver e vai ficar satisfeito. \\q O {{deity_pronoun:meu|Meu}} servo faz o que é certo, e, por meio do que ele conhece, vai fazer com que muitas pessoas sejam aceitas por Deus. \\q Ele vai carregar o peso dos pecados delas."
+        },
+        "am": {
+          "L": "ነፍሱ ከደከመችበት ድካም በኋላ ያያል፤ ይረካልም፤ \\q ጻድቁ፣ ባሪያዬ፣ በእውቀቱ ብዙዎቹን ያጸድቃል፤ \\q በደሎቻቸውንም እርሱ ራሱ ይሸከማል።",
+          "B": "ነፍሱ ከደከመችበት ከባድ ድካም በኋላ ያያል፤ ይረካልም። \\q ጻድቁ አገልጋዬ በእውቀቱ ብዙዎችን ጻድቃን ያደርጋል፤ \\q በደላቸውንም በትከሻው ይሸከማል።",
+          "R": "ከሥቃዩ ሁሉ በኋላ ያያል፤ ይረካልም። \\q አገልጋዬ ትክክል የሆነውን ያደርጋል፤ በእውቀቱም ብዙ ሰዎችን በእግዚአብሔር ፊት ትክክለኞች ያደርጋል። \\q የኃጢአታቸውንም ሸክም ይሸከማል።"
         }
       },
       "decisions": [
@@ -2361,6 +2622,11 @@
           "L": "Por isso eu lhe darei uma parte entre os muitos, e com [os] fortes ele repartirá [o] despojo, \\q porque despejou a sua alma até a morte, \\q e com os transgressores foi contado; \\q e ele mesmo carregou [o] pecado de muitos, \\q e em favor dos transgressores fará súplica.",
           "B": "Por isso eu lhe darei uma parte entre os muitos, e ele dividirá os despojos com os poderosos, \\q porque esvaziou a sua vida até a morte \\q e foi contado entre os transgressores. \\q Foi ele quem carregou o pecado de muitos, \\q e ele intercede em favor dos rebeldes.",
           "R": "Por isso eu vou dar a ele a sua parte entre os muitos. Ele vai dividir o prêmio da vitória com os fortes. \\q Isso porque ele deu a sua vida até morrer. \\q As pessoas o contaram como um dos rebeldes. \\q Mas ele carregou os pecados de muitas pessoas \\q e pede a Deus em favor dos rebeldes."
+        },
+        "am": {
+          "L": "ስለዚህ በብዙዎች መካከል ድርሻን እሰጠዋለሁ፤ ከኃያላንም ጋር ምርኮን ይካፈላል፤ \\q ነፍሱን እስከ ሞት አፍስሷልና፤ \\q ከዓመፀኞችም ጋር ተቆጠረ፤ \\q እርሱ ራሱ የብዙዎችን ኃጢአት ተሸከመ፤ \\q ስለ ዓመፀኞችም ይማልዳል።",
+          "B": "ስለዚህ በብዙዎች መካከል ድርሻ እሰጠዋለሁ፤ ከኃያላንም ጋር ምርኮውን ይከፋፈላል፤ \\q ሕይወቱን እስከ ሞት ድረስ አፍስሶ ሰጥቷልና፤ \\q ከዓመፀኞችም ጋር ተቆጥሯልና። \\q የብዙዎችን ኃጢአት የተሸከመ እርሱ ነው፤ \\q ስለ ዓመፀኞችም ይማልዳል።",
+          "R": "ስለዚህ በብዙዎች መካከል ድርሻውን እሰጠዋለሁ። ከብርቱዎች ጋር የድሉን ሽልማት ይካፈላል። \\q ይህም እስኪሞት ድረስ ሕይወቱን ስላፈሰሰ ነው። \\q ሰዎች ከዓመፀኞች እንደ አንዱ ቆጠሩት። \\q እርሱ ግን የብዙ ሰዎችን ኃጢአት ተሸከመ፤ \\q ለዓመፀኞችም ወደ እግዚአብሔር ይማልዳል።"
         }
       },
       "decisions": [
@@ -2486,6 +2752,25 @@
             "com os rebeldes"
           ],
           "reason": "Jesus quotes this line of himself in Luke 22:37 (m2), so Literal and Balanced keep the words of Luke's Portuguese, \"contado com/entre os transgressores\"; Readable follows the English Readable, \"um dos rebeldes\". The same verb \"carregar\" is kept for bearing sin here and in verses 4 and 11, so the reader can hear the repetition (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530120151"
+          ],
+          "choice": "Luke 22:37 kept: \"ከዓመፀኞች ጋር ተቆጠረ\"",
+          "alternatives": [],
+          "reason": "Jesus quotes this line in Luke 22:37 and the Hebrew agrees with the Greek, so the Amharic New Testament's words are kept (Readable says \"counted him as one of the rebels\", as its English; Luke Readable has \"as a criminal\").",
           "uncertain": false,
           "footnote": false
         }

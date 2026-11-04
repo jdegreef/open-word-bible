@@ -79,6 +79,11 @@
           "L": "[O] Espírito do Senhor {{divine_name:DEUS|Javé}} [está] sobre mim, \\q porque {{divine_name:o SENHOR|Javé}} me ungiu para anunciar boas-novas aos humildes; \\q {{deity_pronoun:ele|Ele}} me enviou para enfaixar [os] partidos de coração, \\q para proclamar aos cativos libertação, e aos presos, [olhos] bem abertos,",
           "B": "O Espírito do Senhor {{divine_name:DEUS|Javé}} repousa sobre mim, \\q pois {{divine_name:o SENHOR|Javé}} me ungiu para levar boas-novas aos humildes. \\q Ele me enviou para fazer curativos nos corações partidos, \\q para anunciar liberdade aos cativos e, para os que estão acorrentados, olhos bem abertos,",
           "R": "O Espírito do Senhor {{divine_name:DEUS|Javé}} está sobre mim. \\q {{divine_name:O SENHOR|Javé}} me ungiu e me escolheu para este trabalho. Ele me enviou para levar boas-novas aos pobres. \\q Ele me enviou para curar as pessoas de coração partido. \\q Ele me enviou para dizer aos cativos que estão livres e aos presos que vão ver a luz de novo."
+        },
+        "am": {
+          "L": "የጌታ {{divine_name:እግዚአብሔር|ያህዌ}} መንፈስ በእኔ ላይ [ነው]፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ለትሑታን ወንጌልን እሰብክ ዘንድ ቀብቶኛልና፤ \\q ልባቸው የተሰበረውን እጠግን ዘንድ ልኮኛል፤ \\q ለታሰሩት መፈታትን፣ ለእስረኞችም [የዓይን] ፈጽሞ መከፈትን እንዳውጅ፣",
+          "B": "የጌታ {{divine_name:እግዚአብሔር|ያህዌ}} መንፈስ በእኔ ላይ ነው፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ለትሑታን ወንጌልን እንዳበሥር ቀብቶኛልና። \\q የተሰበሩ ልቦችን እንድጠግን ልኮኛል፤ \\q ለታሰሩት መፈታትን፣ በሰንሰለት ላሉትም ዓይኖቻቸው በሰፊው እንደሚከፈቱ እንዳውጅ፣",
+          "R": "የጌታ {{divine_name:እግዚአብሔር|ያህዌ}} መንፈስ በእኔ ላይ ነው። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ቀብቶኛል፤ ለዚህም ሥራ መርጦኛል። ለድሆች የምሥራችን እንድነግር ልኮኛል። \\q ልባቸው የተሰበረውን ሰዎች እንድፈውስ ልኮኛል። \\q እስረኞች እንደሚፈቱ፣ የታሰሩትም እንደ ገና ብርሃን እንደሚያዩ እንድነግራቸው ልኮኛል።"
         }
       },
       "decisions": [
@@ -369,6 +374,54 @@
           "reason": "The speaker is not named (m1), and the English writes his \"me\" without a span, so Portuguese does too; the spans stay on the pronouns for the LORD who sends him. Luke 4:18, where Jesus is the speaker, has them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of Isaiah 61.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230610010011",
+            "o230610010061",
+            "o230610010092",
+            "o230610010111",
+            "o230610010152",
+            "o230610010162",
+            "o230610010183",
+            "o230610010191",
+            "o230610010201"
+          ],
+          "choice": "The Amharic of Luke 4:18 where the Hebrew agrees: \"የ... መንፈስ በእኔ ላይ [ነው]\", \"ቀብቶኛልና\", \"ወንጌልን እሰብክ ዘንድ\" (L; B \"እንዳበሥር\"; R \"የምሥራችን እንድነግር\"), \"ለታሰሩት መፈታትን ... እንዳውጅ ልኮኛል\"; elsewhere the Hebrew",
+          "alternatives": [
+            "Luke's wording throughout, with \"ለዕውሮችም ማየትን\" (recovery of sight to the blind)"
+          ],
+          "reason": "Jesus reads this passage in Luke 4:18-19, and the Greek there follows the Greek translation of Isaiah. Where it agrees with the Hebrew, Isaiah keeps the Luke Amharic. It departs where the Hebrew differs: \"the Lord GOD\" and the divine name (\"ጌታ {{divine_name:እግዚአብሔር|ያህዌ}}\", Adonai YHWH, the Lord first as the terms list sets) where Luke has \"the Lord\"; \"the lowly\" (ʿanawim) \"ትሑታን\" at L and B, Luke's \"ድሆች\" (the poor) kept at R as the English R; the line on binding up the broken-hearted, which the Hebrew has; and the last line, where the Hebrew promises the bound \"eyes opened wide\" (meaning decision m4: from the dark of the prison) and the Greek says \"recovery of sight to the blind\". Isaiah follows the Hebrew and does not add Luke's \"set the oppressed free\", which comes from 58:6.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -437,6 +490,11 @@
           "L": "para proclamar um ano de favor {{divine_name:do SENHOR|de Javé}} \\q e um dia de vingança do nosso Deus, \\q para consolar todos os enlutados,",
           "B": "para anunciar um ano de favor {{divine_name:do SENHOR|de Javé}} \\q e um dia em que o nosso Deus se vinga, \\q para consolar todos os que estão de luto,",
           "R": "Ele me enviou para anunciar que chegou o tempo de {{divine_name:o SENHOR|Javé}} mostrar bondade. \\q É o dia de o nosso Deus castigar os {{deity_pronoun:seus|Seus}} inimigos. \\q Ele me enviou para consolar todos os que estão tristes."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔርን|የያህዌን}} የተወደደ ዓመት፣ \\q የአምላካችንንም የበቀል ቀን እንዳውጅ፣ \\q ያዘኑትንም ሁሉ አጽናና ዘንድ፣",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሞገሱን የሚያሳይበትን ዓመት፣ \\q አምላካችንም የሚበቀልበትን ቀን እንዳውጅ፣ \\q ያዘኑትንም ሁሉ እንዳጽናና፣",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ቸርነቱን የሚያሳይበት ጊዜ እንደ ደረሰ እንዳውጅ ልኮኛል። \\q አምላካችን ጠላቶቹን የሚቀጣበት ቀን ይህ ነው። \\q ያዘኑትን ሁሉ እንዳጽናና ልኮኛል።"
         }
       },
       "decisions": [
@@ -597,6 +655,32 @@
           "reason": "Luke 4:19 ends with this line (m3), \"[o] ano favorável do Senhor\" (L), \"o ano do favor do Senhor\" (B), \"mostrar bondade\" (R). Isaiah keeps \"favor\" and Readable's \"mostrar bondade\", with the Hebrew's \"a year\" and God's name; the word is the same \"favor\" as in 49:8 and 60:10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230610020012",
+            "o230610020021",
+            "o230610020031",
+            "o230610020042",
+            "o230610020052",
+            "o230610020061"
+          ],
+          "choice": "the year of favor as Luke 4:19: \"የተወደደ ዓመት ... እንዳውጅ\" (L), \"... ሞገሱን የሚያሳይበትን ዓመት እንዳውጅ\" (B), \"... ቸርነቱን የሚያሳይበት\" (R), with the divine name where Luke has \"the Lord\"; \"a day of vengeance\" \"የበቀል ቀን\"",
+          "alternatives": [
+            "\"የሞገስ ዓመት\" (year of favor) at L, closer to the Hebrew ratson"
+          ],
+          "reason": "The Hebrew and the Greek agree on the year of favor, so each level keeps the Luke Amharic. Luke stops before the day of vengeance (meaning decision m3); the line is the Hebrew's, kept plain. \"ያዘኑትን ... አጽናና\" (comfort those who mourn) uses the verb of Matthew 5:4 (\"የሚያዝኑ ... ይጽናናሉ\"), which echoes this line.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -681,6 +765,11 @@
           "L": "para prover aos que choram em Sião, para lhes dar um turbante em vez de cinza, \\q óleo de alegria em vez de luto, \\q um manto de louvor em vez de um espírito apagado; \\q e serão chamados carvalhos de retidão, \\q plantação {{divine_name:do SENHOR|de Javé}}, para mostrar a {{deity_pronoun:sua|Sua}} beleza.",
           "B": "para cuidar dos que estão de luto em Sião, para lhes dar um turbante de festa no lugar da cinza, \\q o óleo do júbilo no lugar da tristeza, \\q uma capa de louvor no lugar de um espírito que se apaga. \\q Eles serão chamados carvalhos de retidão, \\q plantados {{divine_name:pelo SENHOR|por Javé}} para mostrar a {{deity_pronoun:sua|Sua}} beleza.",
           "R": "Ele me enviou para cuidar das pessoas de Sião que estão de luto. \\q Elas têm cinza na cabeça, mas vão ganhar um belo turbante para usar. \\q Estão tristes, mas vão receber um óleo que traz alegria. \\q O espírito delas está fraco, mas vão ser vestidas de louvor como de um casaco. \\q As pessoas vão chamá-las de grandes carvalhos de retidão. {{divine_name:O SENHOR|Javé}} as plantou para mostrar a {{deity_pronoun:sua|Sua}} beleza."
+        },
+        "am": {
+          "L": "ለጽዮን አልቃሾች እሰጥ ዘንድ፣ በአመድ ፋንታ ጥምጥምን፣ \\q በልቅሶ ፋንታ የደስታ ዘይትን፣ \\q በከሰመ መንፈስ ፋንታ የምስጋና መጎናጸፊያን እሰጣቸው ዘንድ [ልኮኛል]፤ \\q እነርሱም የጽድቅ ባሉጦች ይባላሉ፤ \\q ውበቱን ያሳይ ዘንድ {{divine_name:እግዚአብሔር|ያህዌ}} የተከላቸው [ተክል]።",
+          "B": "በጽዮን የሚያለቅሱትን እንድረዳ፣ በአመድ ፋንታ የበዓል ጥምጥም እንድሰጣቸው፣ \\q በሐዘን ፋንታ የደስታ ዘይት፣ \\q በደከመ መንፈስ ፋንታም የምስጋና ካባ እንዳለብሳቸው ልኮኛል። \\q የጽድቅ ባሉጦች ተብለው ይጠራሉ፤ \\q ውበቱን ለማሳየት {{divine_name:እግዚአብሔር|ያህዌ}} የተከላቸው ናቸው።",
+          "R": "በጽዮን ያሉትን የሚያለቅሱ ሰዎች እንድንከባከብ ልኮኛል። \\q በራሳቸው ላይ አመድ አለ፤ ነገር ግን የሚያምር ጥምጥም ይጠመጥማሉ። \\q ያዝናሉ፤ ነገር ግን ደስታን የሚያመጣ ዘይት ይቀበላሉ። \\q መንፈሳቸው ደክሟል፤ ነገር ግን ምስጋናን እንደ ካባ ይለብሳሉ። \\q ሰዎች የጽድቅ ታላላቅ ባሉጦች ብለው ይጠሯቸዋል። {{divine_name:እግዚአብሔር|ያህዌ}} ውበቱን ለማሳየት ተክሏቸዋል።"
         }
       },
       "decisions": [
@@ -786,6 +875,31 @@
           "reason": "The word for the faint spirit is the one used of the dimly burning wick in 42:3 (m2), so Literal and Balanced keep the picture of a flame going out. Tsedeq is \"retidão\", the book's word (1:21); the line is worded apart from the familiar Portuguese versions of this passage, and \"para mostrar a sua beleza\" repeats 60:21 (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230610030061",
+            "o230610030081",
+            "o230610030131",
+            "o230610030201"
+          ],
+          "choice": "a turban instead of ashes \"በአመድ ፋንታ ጥምጥም\"; the wrap \"መጎናጸፊያ\" (L), \"ካባ\" (B, R); oaks \"ባሉጦች\"",
+          "alternatives": [
+            "\"አክሊል\" (crown) or \"የአበባ ጉንጉን\" (garland) for the headdress",
+            "\"ዛፎች\" (trees) for the oaks"
+          ],
+          "reason": "The headdress is the festive turban that replaces the ashes of mourning (meaning decision m1); the Hebrew sound-play of the two words cannot be kept in Amharic. \"ባሉጥ\" is the oak or terebinth, as in 1 Samuel 10:3 and 1 Chronicles 10:12. The passage was drafted fresh from the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -853,6 +967,11 @@
           "L": "E reconstruirão as ruínas antigas; \\q as desolações dos antigos levantarão; \\q e renovarão as cidades em ruína, \\q as desolações de geração e geração.",
           "B": "Eles vão reconstruir o que está em ruínas desde muito tempo atrás \\q e restaurar os lugares que ficaram vazios no tempo dos antepassados; \\q vão renovar as cidades arrasadas, \\q desertas por uma geração após outra.",
           "R": "Eles vão reconstruir as ruínas antigas. \\q Vão consertar lugares destruídos há muito tempo. \\q Vão deixar como novas as cidades arruinadas, \\q cidades que estão vazias há muitos anos."
+        },
+        "am": {
+          "L": "የጥንቱንም ፍርስራሽ ይሠራሉ፤ \\q የቀድሞውንም ባድማ ያቆማሉ፤ \\q የፈረሱትንም ከተሞች ያድሳሉ፤ \\q የትውልድና የትውልድ ባድማዎችን [ያድሳሉ]።",
+          "B": "ከጥንት ጀምሮ ፈርሶ የኖረውን መልሰው ይሠራሉ፤ \\q በአባቶቻቸው ዘመን ባዶ የቀሩትን ስፍራዎች ያቆማሉ፤ \\q የወደሙትን ከተሞች፣ \\q ከትውልድ እስከ ትውልድ ባድማ ሆነው የኖሩትን እንደ ገና ያድሳሉ።",
+          "R": "የጥንቱን ፍርስራሽ መልሰው ይሠራሉ። \\q ከብዙ ጊዜ በፊት የፈረሱትን ስፍራዎች ይጠግናሉ። \\q የፈረሱትን ከተሞች እንደ ገና አዲስ ያደርጋሉ። \\q እነዚህ ከተሞች ለብዙ ዓመታት ባዶ ሆነው ቆይተዋል።"
         }
       },
       "decisions": [
@@ -975,6 +1094,11 @@
           "L": "E estrangeiros estarão de pé e apascentarão os rebanhos de vocês, \\q e filhos de terra estrangeira [serão] os seus lavradores e os seus vinhateiros.",
           "B": "Estranhos estarão prontos para pastorear os rebanhos de vocês, \\q e gente de terras estrangeiras vai arar os seus campos e cuidar das suas videiras.",
           "R": "Gente de outros países virá cuidar das ovelhas de vocês. \\q Estrangeiros vão arar os campos de vocês e cuidar das suas parreiras."
+        },
+        "am": {
+          "L": "እንግዶችም ቆመው መንጎቻችሁን ያሰማራሉ፤ \\q የባዕድ አገር ልጆችም አራሾቻችሁና ወይን ተካዮቻችሁ [ይሆናሉ]።",
+          "B": "የውጭ ሰዎች መንጎቻችሁን ለማሰማራት ተዘጋጅተው ይቆማሉ፤ \\q የባዕድ አገር ሰዎችም እርሻችሁን ያርሳሉ፤ ወይናችሁንም ይንከባከባሉ።",
+          "R": "የሌሎች አገሮች ሰዎች መጥተው በጎቻችሁን ይጠብቃሉ። \\q የውጭ አገር ሰዎች እርሻችሁን ያርሳሉ፤ የወይን ተክሎቻችሁንም ይንከባከባሉ።"
         }
       },
       "decisions": [
@@ -1030,6 +1154,29 @@
             "tu"
           ],
           "reason": "Here \"you\" is plural, the people of Zion, not the city addressed as a woman (m1), so Portuguese says \"vocês\", as God speaks to a group.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230610050042",
+            "o230610050072",
+            "o230610050083"
+          ],
+          "choice": "\"your\" as the plural \"-ችሁ\" (መንጎቻችሁን, እርሻችሁን) from here to the end of the chapter",
+          "alternatives": [
+            "the feminine singular \"-ሽ\" of chapter 60"
+          ],
+          "reason": "The Hebrew now speaks to the people of Zion in the plural (meaning decision m1), and Amharic shows the change in every suffix, as the Hebrew does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1103,6 +1250,11 @@
           "L": "Mas vocês, sacerdotes {{divine_name:do SENHOR|de Javé}} serão chamados; \\q servos do nosso Deus se dirá de vocês; \\q a riqueza das nações vocês comerão, \\q e na glória delas vocês se gloriarão.",
           "B": "E vocês serão conhecidos como sacerdotes {{divine_name:do SENHOR|de Javé}}; \\q falarão de vocês como os que servem o nosso Deus. \\q Vocês viverão da riqueza das nações \\q e terão orgulho da glória delas.",
           "R": "Vocês serão chamados sacerdotes {{divine_name:do SENHOR|de Javé}}. \\q As pessoas vão dizer que vocês servem o nosso Deus. \\q Vocês vão aproveitar as riquezas das nações, \\q e a glória delas vai deixar vocês orgulhosos."
+        },
+        "am": {
+          "L": "እናንተ ግን {{divine_name:የእግዚአብሔር|የያህዌ}} ካህናት ትባላላችሁ፤ \\q የአምላካችን አገልጋዮች ይሏችኋል፤ \\q የሕዝቦችን ሀብት ትበላላችሁ፤ \\q በክብራቸውም ትመካላችሁ።",
+          "B": "እናንተም {{divine_name:የእግዚአብሔር|የያህዌ}} ካህናት ተብላችሁ ትታወቃላችሁ፤ \\q ሰዎችም አምላካችንን የምታገለግሉ ብለው ይጠሯችኋል። \\q በሕዝቦች ሀብት ትኖራላችሁ፤ \\q በክብራቸውም ትኮራላችሁ።",
+          "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ካህናት ትባላላችሁ። \\q ሰዎች አምላካችንን የምታገለግሉ እንደ ሆናችሁ ይናገራሉ። \\q በሕዝቦች ሀብት ትደሰታላችሁ፤ \\q ክብራቸውም ያኮራችኋል።"
         }
       },
       "decisions": [
@@ -1214,6 +1366,11 @@
           "L": "Em lugar da vergonha de vocês, o dobro; \\q e [em lugar da] humilhação, eles gritarão de alegria [pela] sua porção; \\q por isso na terra deles possuirão o dobro; \\q alegria eterna será deles.",
           "B": "Em lugar da vergonha, vocês terão porção dobrada; \\q em vez da humilhação, eles vão cantar de alegria pelo que receberem. \\q Por isso na sua própria terra tomarão posse de porção dobrada, \\q e uma alegria que nunca acaba será deles.",
           "R": "Vocês passaram vergonha, mas agora vão receber o dobro. \\q Vocês foram humilhados, mas agora eles vão gritar de alegria pelo que recebem. \\q Na sua terra vão receber o dobro do que tinham antes. \\q A alegria deles vai durar para sempre."
+        },
+        "am": {
+          "L": "በእፍረታችሁ ፋንታ እጥፍ [ይሆንላችኋል]፤ \\q በውርደትም ፋንታ በድርሻቸው እልል ይላሉ፤ \\q ስለዚህ በምድራቸው እጥፍ ይወርሳሉ፤ \\q የዘላለም ደስታ ለእነርሱ ይሆናል።",
+          "B": "በእፍረታችሁ ፋንታ እጥፍ ድርሻ ይኖራችኋል፤ \\q በውርደት ፋንታ በተሰጣቸው ድርሻ እልል ይላሉ። \\q ስለዚህ በገዛ ምድራቸው እጥፍ ድርሻ ይወርሳሉ፤ \\q የማያልቅ ደስታም የእነርሱ ይሆናል።",
+          "R": "አፍራችሁ ነበር፤ አሁን ግን እጥፍ ትቀበላላችሁ። \\q ተዋርዳችሁ ነበር፤ አሁን ግን በሚቀበሉት ነገር እልል ይላሉ። \\q በምድራቸው ከበፊቱ እጥፍ ይቀበላሉ። \\q ደስታቸው ለዘላለም ይኖራል።"
         }
       },
       "decisions": [
@@ -1338,6 +1495,11 @@
           "L": "Pois eu, {{divine_name:o SENHOR|Javé}}, amo a justiça; \\q odeio o roubo com injustiça; \\q e darei o salário deles com fidelidade, \\q e uma aliança eterna farei com eles.",
           "B": "Pois eu, {{divine_name:o SENHOR|Javé}}, sou amigo da justiça \\q e odeio o roubo junto com a maldade. \\q Eu lhes pagarei fielmente o seu salário \\q e farei com eles uma aliança que dura para sempre.",
           "R": "Eu, {{divine_name:o SENHOR|Javé}}, amo o que é justo. \\q Odeio o roubo e todo tipo de maldade. \\q Serei fiel e darei ao {{deity_pronoun:meu|Meu}} povo aquilo que ele ganhou. \\q Farei com eles uma aliança que vai durar para sempre."
+        },
+        "am": {
+          "L": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ፍርድን እወዳለሁና፤ \\q ከበደል ጋር ዝርፊያን እጠላለሁ፤ \\q ዋጋቸውንም በታማኝነት እሰጣለሁ፤ \\q ከእነርሱም ጋር የዘላለም ቃል ኪዳን እገባለሁ።",
+          "B": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ፍትሕን የምወድ ነኝና፤ \\q ከክፋት ጋር የተቀላቀለ ዝርፊያንም እጠላለሁ። \\q ዋጋቸውን በታማኝነት እከፍላቸዋለሁ፤ \\q ለዘላለም የሚኖርም ቃል ኪዳን ከእነርሱ ጋር እገባለሁ።",
+          "R": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ትክክለኛውን ነገር እወዳለሁ። \\q ስርቆትንና ማንኛውንም ክፋት እጠላለሁ። \\q ታማኝ ሆኜ ሕዝቤ የሠሩበትን እሰጣቸዋለሁ። \\q ለዘላለም የሚኖር ቃል ኪዳን ከእነርሱ ጋር እገባለሁ።"
         }
       },
       "decisions": [
@@ -1416,6 +1578,28 @@
           "reason": "God speaks in the first person in verses 8-9 (\"I, the LORD\"), so the honorific drops away, as the terms note sets for God's speech.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230610080051",
+            "o230610080112"
+          ],
+          "choice": "justice (mishpat) \"ፍርድ\" (L), \"ፍትሕ\" (B), \"ትክክለኛውን ነገር\" (R, the English \"what is fair\"); faithfulness \"ታማኝነት\"",
+          "alternatives": [
+            "\"ፍርድ\" at every level"
+          ],
+          "reason": "As the terms list: \"ፍርድ\" also means a verdict, so Balanced says \"ፍትሕ\" where the sense is justice; Readable follows the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1491,6 +1675,11 @@
           "L": "E a descendência deles será conhecida entre as nações, \\q e os seus descendentes no meio dos povos; \\q todos os que os virem os reconhecerão, \\q que eles [são] uma descendência [que] {{divine_name:o SENHOR|Javé}} abençoou.",
           "B": "Os filhos deles serão famosos entre as nações, \\q e os seus descendentes entre os povos. \\q Quem os vir vai reconhecê-los \\q como uma geração de filhos que {{divine_name:o SENHOR|Javé}} abençoou.",
           "R": "Os seus filhos e netos serão famosos entre as nações. \\q Todos os que os virem vão saber que {{divine_name:o SENHOR|Javé}} os abençoou."
+        },
+        "am": {
+          "L": "ዘራቸውም በሕዝቦች መካከል ይታወቃል፤ \\q ልጆቻቸውም በወገኖች መካከል [ይታወቃሉ]፤ \\q የሚያዩአቸው ሁሉ ያውቋቸዋል፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} የባረከው ዘር እንደ ሆኑ።",
+          "B": "ልጆቻቸው በሕዝቦች መካከል ዝነኞች ይሆናሉ፤ \\q ዘሮቻቸውም በወገኖች መካከል ይታወቃሉ። \\q ያያቸው ሁሉ \\q {{divine_name:እግዚአብሔር|ያህዌ}} የባረካቸው የልጆች ትውልድ መሆናቸውን ያውቃል።",
+          "R": "ልጆቻቸውና የልጅ ልጆቻቸው በሕዝቦች መካከል ዝነኞች ይሆናሉ። \\q የሚያያቸው ሁሉ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ባረካቸው ያውቃል።"
         }
       },
       "decisions": [
@@ -1508,6 +1697,27 @@
           "choice": "offspring the LORD has blessed: the promise to Abraham fulfilled",
           "alternatives": [],
           "reason": "God promised to bless Abraham's offspring and make them a blessing to the nations (Genesis 12:2-3; 22:17-18). In 65:23 the people are again \"offspring blessed by the LORD\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230610090022",
+            "o230610090062"
+          ],
+          "choice": "the nations \"ሕዝቦች\" and the peoples \"ወገኖች\" in the paired lines",
+          "alternatives": [
+            "\"ሕዝቦች\" for both"
+          ],
+          "reason": "As the terms list sets where the two Hebrew words stand side by side.",
           "uncertain": false,
           "footnote": false
         }
@@ -1591,6 +1801,11 @@
           "L": "Com alegria me alegrarei {{divine_name:no SENHOR|em Javé}}; a minha alma exultará no meu Deus, \\q pois {{deity_pronoun:ele|Ele}} me vestiu [com] roupas de salvação; \\q [com] um manto de retidão {{deity_pronoun:ele|Ele}} me envolveu, \\q como um noivo [que] faz de sacerdote [com] um turbante, \\q e como uma noiva [que] se orna [com] as suas joias.",
           "B": "A minha alegria {{divine_name:no SENHOR|em Javé}} transborda; todo o meu ser se encanta com o meu Deus. \\q Ele me vestiu com roupas de salvação \\q e me envolveu numa capa de retidão, \\q como um noivo que usa turbante como um sacerdote, \\q como uma noiva enfeitada com as suas joias.",
           "R": "Tenho uma grande alegria por causa {{divine_name:do SENHOR|de Javé}}. De todo o coração eu celebro o meu Deus. \\q Ele me vestiu de salvação como de roupas novas. \\q Ele me envolveu em retidão como num casaco. \\q Sou como um noivo que usa um belo turbante como um sacerdote. \\q Sou como uma noiva que põe as suas joias."
+        },
+        "am": {
+          "L": "{{divine_name:በእግዚአብሔር|በያህዌ}} ደስ እያለኝ ደስ ይለኛል፤ ነፍሴም በአምላኬ ሐሴት ታደርጋለች፤ \\q የመዳንን ልብስ አልብሶኛልና፤ \\q የጽድቅንም መጎናጸፊያ አጎናጽፎኛል፤ \\q ሙሽራ እንደ ካህን ጥምጥም እንደሚጠመጥም፣ \\q ሙሽሪትም በጌጣጌጧ እንደምታጌጥ።",
+          "B": "{{divine_name:በእግዚአብሔር|በያህዌ}} ደስታዬ ሞልቶ ይፈስሳል፤ መላ ሕይወቴ በአምላኬ ሐሴት ያደርጋል። \\q የመዳንን ልብስ አልብሶኛል፤ \\q የጽድቅንም ካባ አጎናጽፎኛል፤ \\q ካህን እንደሚያደርገው ጥምጥም እንደ ጠመጠመ ሙሽራ፣ \\q በጌጣጌጧም እንዳጌጠች ሙሽሪት ሆኛለሁ።",
+          "R": "{{divine_name:በእግዚአብሔር|በያህዌ}} ምክንያት በደስታ ተሞልቻለሁ። በፍጹም ልቤ በአምላኬ ደስ ይለኛል። \\q መዳንን እንደ አዲስ ልብስ አልብሶኛል። \\q ጽድቅን እንደ ካባ አጎናጽፎኛል። \\q እንደ ካህን ያማረ ጥምጥም የጠመጠመ ሙሽራ መስያለሁ። \\q ጌጣጌጧን የምታደርግ ሙሽሪት መስያለሁ።"
         }
       },
       "decisions": [
@@ -1686,6 +1901,26 @@
           "reason": "The speaker may be Zion or the anointed one (m1). Portuguese adjectives show gender, so Readable says \"Tenho uma grande alegria\" rather than \"Estou cheio/cheia de alegria\", which would decide who speaks; Literal and Balanced need no adjective.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230610100011",
+            "o230610100021"
+          ],
+          "choice": "\"ደስ እያለኝ ደስ ይለኛል\" for the doubled verb (rejoicing I will rejoice)",
+          "alternatives": [
+            "\"እጅግ ደስ ይለኛል\" (I greatly rejoice)"
+          ],
+          "reason": "Literal keeps the Hebrew repetition, as the English Literal does; Balanced and Readable say the intensity in ordinary Amharic.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1762,6 +1997,11 @@
           "L": "Pois, como a terra [que] faz sair os seus brotos, \\q e como um jardim [que] faz germinar as suas sementes, \\q assim o Senhor {{divine_name:DEUS|Javé}} fará germinar a retidão e o louvor diante de todas as nações.",
           "B": "Como o chão faz brotar as plantas novas, \\q como um jardim faz as sementes romperem a terra, \\q assim o Senhor {{divine_name:DEUS|Javé}} fará a retidão e o louvor crescerem à vista de todas as nações.",
           "R": "As plantas saem da terra, e as sementes crescem num jardim. \\q Do mesmo jeito, o Senhor {{divine_name:DEUS|Javé}} vai fazer a retidão e o louvor crescerem. \\q Todas as nações vão ver isso."
+        },
+        "am": {
+          "L": "ምድር ቡቃያዋን እንደምታወጣ፣ \\q የአትክልት ቦታም የተዘራበትን እንደሚያበቅል፣ \\q እንዲሁ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ጽድቅንና ምስጋናን በሕዝቦች ሁሉ ፊት ያበቅላል።",
+          "B": "መሬት አዲስ ቡቃያዋን እንደምታወጣ፣ \\q የአትክልት ቦታም ዘሩን ከአፈር እንደሚያበቅል፣ \\q እንዲሁ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ጽድቅንና ምስጋናን በሕዝቦች ሁሉ ፊት ያበቅላል።",
+          "R": "ተክሎች ከመሬት ይበቅላሉ፤ ዘሮችም በአትክልት ቦታ ያድጋሉ። \\q እንዲሁም ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ጽድቅንና ምስጋናን ያበቅላል። \\q ሕዝቦች ሁሉ ያዩታል።"
         }
       },
       "decisions": [
