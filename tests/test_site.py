@@ -1072,9 +1072,12 @@ class SiteTest(unittest.TestCase):
         self.assertIn("CC BY 4.0", places["source"])
         self.assertTrue(set(places["places"]) <= senses)
         self.assertGreater(len(places["places"]), len(senses) * 0.9)
+        # Every place is on the land the maps draw.
+        west, south, east, north = json.loads(
+            (build_site.ROOT / "data" / "basemap.json").read_text(encoding="utf-8"))["box"]
         for key, p in places["places"].items():
             lon, lat = p["at"]
-            self.assertTrue(-10 <= lon <= 62 and 12 <= lat <= 46, key)
+            self.assertTrue(west <= lon <= east and south <= lat <= north, key)
         # John 4: Sychar's site is uncertain, Jerusalem's known; the cards carry it.
         cards = {c["title"]: c for c in self.chapter_data("jhn/4")["cards"]["list"]}
         self.assertFalse(cards["Sychar"]["sure"])

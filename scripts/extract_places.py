@@ -40,9 +40,9 @@ NATURAL_EARTH = "natural-earth"
 # OpenBible's identification score (out of 1000) from which a site is
 # drawn as known: Capernaum (842) is, Cana (690) and Sychar (620) are not.
 SURE = 800
-# The lands of the Bible, Spain to Persia, Asia Minor to Ethiopia:
-# (west, south, east, north) in degrees.
-BOX = (-10.0, 12.0, 62.0, 46.0)
+# The lands of the Bible, Spain to the Indus (India, Esther 1:1), Asia
+# Minor to Ethiopia: (west, south, east, north) in degrees.
+BOX = (-10.0, 12.0, 72.0, 46.0)
 # Simplification tolerance in degrees: about a kilometre for coasts.
 TOLERANCE = {"land": 0.01, "lakes": 0.004, "rivers": 0.01}
 # OpenBible's place types drawn as a label over an area, not as a dot.
