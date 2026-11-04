@@ -282,6 +282,18 @@ where the Greek differs.
   सच कहता हूँ at every level, with no आमीन; the weeping and gnashing of
   teeth, the fulfilment formula and "whoever has ears" each have one form.
 
+Settled in Mark:
+
+- **Nukta** in loanwords where standard Hindi writes it (क़ब्र, बाक़ी, ग़रीब,
+  मज़ाक़, चोग़ा, बग़ीचा), consistently.
+- **euthys** is तुरंत at Literal; Balanced and Readable vary it with the
+  sentence (जैसे ही, उसी समय, तुरंत), one decision per passage file.
+- **God spoken of** by Jesus or anyone else takes honorific forms
+  (उन्होंने, वे), as in the narrative.
+- **Words.** The mat (*krabattos*) is बिछौना (L, B), बिस्तर (R); the
+  Herodians हेरोदी; the divorce certificate तलाक़नामा, not त्यागपत्र (which
+  now means a resignation letter).
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is

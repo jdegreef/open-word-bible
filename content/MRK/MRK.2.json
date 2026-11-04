@@ -70,6 +70,11 @@
           "L": "И когда через [несколько] дней {{deity_pronoun:он|Он}} снова вошёл в Капернаум, стало слышно, что {{deity_pronoun:он|Он}} в доме.",
           "B": "Через несколько дней {{deity_pronoun:он|Он}} вернулся в Капернаум, и разнёсся слух, что {{deity_pronoun:он|Он}} дома.",
           "R": "Через несколько дней Иисус вернулся в город Капернаум. Люди услышали, что {{deity_pronoun:он|Он}} остановился там в одном доме."
+        },
+        "hi": {
+          "L": "और [कुछ] दिनों के बाद जब वे फिर कफ़रनहूम में आए, तो यह सुना गया कि वे घर में हैं।",
+          "B": "कुछ दिनों बाद वे फिर कफ़रनहूम लौट आए, और यह ख़बर फैल गई कि वे घर पर हैं।",
+          "R": "कुछ दिनों के बाद यीशु फिर कफ़रनहूम नगर लौटे। लोगों ने सुना कि वे वहाँ एक घर में ठहरे हुए हैं।"
         }
       },
       "decisions": [
@@ -225,6 +230,28 @@
           "reason": "The Ethiopic script has no capital letters, so the deity_pronoun setting has nothing to change in Amharic. This holds for every pronoun for Jesus in Mark 2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41002001002",
+            "n41002001012"
+          ],
+          "choice": "no deity_pronoun span; honorific \"आए\", \"वे ... हैं\" for Jesus",
+          "alternatives": [
+            "capitalised pronouns"
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. Respect for Jesus is carried by the honorific third person, at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -303,6 +330,11 @@
           "L": "И собралось много [людей], так что уже не было места, даже у двери, и {{deity_pronoun:он|Он}} говорил им слово.",
           "B": "Столько людей набилось в дом, что не осталось места даже за дверью, и {{deity_pronoun:он|Он}} возвещал им слово.",
           "R": "Пришло так много людей, что дом был полон. Не осталось места даже у двери. Иисус рассказывал им весть от Бога."
+        },
+        "hi": {
+          "L": "और बहुत लोग इकट्ठे हो गए, यहाँ तक कि द्वार के पास भी जगह न रही; और वे उन्हें वचन सुना रहे थे।",
+          "B": "इतने लोग इकट्ठे हो गए कि दरवाज़े के बाहर भी जगह न बची, और वे उन्हें वचन सुना रहे थे।",
+          "R": "इतने लोग आए कि घर भर गया। दरवाज़े के बाहर भी जगह नहीं बची। यीशु उन्हें परमेश्वर का संदेश सुना रहे थे।"
         }
       },
       "decisions": [
@@ -479,6 +511,27 @@
           "reason": "Readable says whose word it is, since 'слово' alone means little to new readers, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002002016"
+          ],
+          "choice": "\"वचन\" (L, B); \"परमेश्वर का संदेश\" (R)",
+          "alternatives": [
+            "\"वचन\" (R)"
+          ],
+          "reason": "\"वचन\" is the church word for God's message; Readable says whose message it is, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -550,6 +603,11 @@
           "L": "И приходят, неся к {{deity_pronoun:нему|Нему}} парализованного, которого несли четверо.",
           "B": "Тогда к {{deity_pronoun:нему|Нему}} пришли люди с парализованным, которого несли четверо из них.",
           "R": "Четыре человека принесли больного, который не мог двигаться. Они хотели принести его к Иисусу."
+        },
+        "hi": {
+          "L": "और [लोग] एक लकवे के मारे हुए को, जिसे चार [आदमी] उठाए हुए थे, उनके पास लेकर आते हैं।",
+          "B": "तब कुछ लोग लकवे के एक रोगी को उनके पास लाए। उसे चार आदमी उठाए हुए थे।",
+          "R": "चार आदमी एक ऐसे आदमी को उठाकर लाए जो अपना शरीर हिला नहीं सकता था। वे उसे यीशु के पास ले जाना चाहते थे।"
         }
       },
       "decisions": [
@@ -801,6 +859,25 @@
           "reason": "Russian 'четверо' already means four people, so Literal needs no bracket where the English supplies [men].",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41002003002"
+          ],
+          "choice": "\"लेकर आते हैं\" (L); past tense (B, R)",
+          "alternatives": [
+            "\"लेकर आए\" (L)"
+          ],
+          "reason": "Literal keeps Mark's historic present, as through the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -885,6 +962,11 @@
           "L": "И, не имея возможности приблизиться к {{deity_pronoun:нему|Нему}} из-за толпы, они раскрыли крышу [дома], где {{deity_pronoun:он|Он}} был, и, проломав [её], спускают постель, на которой лежал парализованный.",
           "B": "Из-за толпы они не могли поднести его к Иисусу, поэтому разобрали часть крыши над тем местом, где {{deity_pronoun:он|Он}} был. Проломав её, они спустили носилки, на которых лежал парализованный.",
           "R": "Но людей было слишком много, и они не могли подойти с ним к Иисусу. Тогда они забрались наверх и проделали дыру в крыше над {{deity_pronoun:ним|Ним}}. Потом они спустили больного вниз на его носилках."
+        },
+        "hi": {
+          "L": "और भीड़ के कारण उनके पास [उसे] न पहुँचा सकने से उन्होंने उस छत को उधेड़ दिया जहाँ वे थे, और खोदकर वह बिछौना नीचे उतारते हैं जिस पर लकवे का मारा हुआ लेटा था।",
+          "B": "भीड़ के कारण वे उसे यीशु के पास न ले जा सके, इसलिए जहाँ यीशु थे, उसके ऊपर की छत का कुछ हिस्सा उन्होंने हटा दिया। छत में छेद करके उन्होंने वह बिछौना नीचे उतारा जिस पर लकवे का रोगी लेटा था।",
+          "R": "पर वहाँ बहुत लोग थे, और वे उसे यीशु के पास नहीं ले जा सके। इसलिए वे छत पर चढ़ गए और यीशु के ठीक ऊपर छत में एक छेद बना दिया। फिर उन्होंने उस आदमी को उसके बिस्तर समेत नीचे उतार दिया।"
         }
       },
       "decisions": [
@@ -1158,6 +1240,28 @@
           "reason": "The word is a poor man's mat or pallet. Literal keeps the plain 'bed' it was used as; Balanced and Readable say 'носилки', since the man was carried and let down on it, as in Matthew 9:2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002004018"
+          ],
+          "choice": "\"बिछौना\" (L, B); \"बिस्तर\" (R), through this story",
+          "alternatives": [
+            "\"खाट\"",
+            "\"खटिया\""
+          ],
+          "reason": "Mark's word is a poor man's pallet or bedroll that can be rolled up and carried, not the bed of Matthew 9:2, where the Hindi says \"खाट\". \"बिछौना\" is bedding laid on the floor; Readable says \"बिस्तर\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1235,6 +1339,11 @@
           "L": "И Иисус, увидев их веру, говорит парализованному: «Дитя, прощаются тебе грехи.»",
           "B": "Иисус увидел, как они верят в {{deity_pronoun:него|Него}}, и сказал парализованному: «Сын мой, твои грехи прощены.»",
           "R": "Иисус увидел, что они верят в {{deity_pronoun:него|Него}}. Поэтому {{deity_pronoun:он|Он}} сказал больному: «Друг мой, Бог прощает тебе грехи.»"
+        },
+        "hi": {
+          "L": "और यीशु उनका विश्वास देखकर उस लकवे के मारे हुए से कहते हैं, \"बेटे, तुम्हारे पाप क्षमा हुए।\"",
+          "B": "यीशु ने उनका विश्वास देखकर लकवे के रोगी से कहा, \"बेटा, तुम्हारे पाप क्षमा हुए।\"",
+          "R": "यीशु ने देखा कि इन लोगों को उन पर विश्वास है। तब उन्होंने उस आदमी से कहा, \"बेटा, परमेश्वर तुम्हारे पाप माफ़ करते हैं।\""
         }
       },
       "decisions": [
@@ -1594,6 +1703,50 @@
           "reason": "The word is a warm address to someone younger, not a statement that he was a child. Balanced and Readable use the warm forms settled at Matthew 9:2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002005011"
+          ],
+          "choice": "\"बेटे\" (L); \"बेटा\" (B, R)",
+          "alternatives": [
+            "\"बालक\"",
+            "\"मेरे बच्चे\""
+          ],
+          "reason": "The Greek \"child\" is a warm address to a grown man. Hindi speaks so with \"बेटा\", as Matthew 9:2 does; \"बालक\" would call him a boy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002005011",
+            "n41002005013"
+          ],
+          "choice": "\"तुम्हारे\" from Jesus to the man",
+          "alternatives": [
+            "\"तेरे\""
+          ],
+          "reason": "Jesus says \"तुम\" to one person or many throughout the book, the warm familiar form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1669,6 +1822,11 @@
           "L": "Были же там некоторые из книжников, сидевшие и рассуждавшие в своих сердцах:",
           "B": "Там сидели некоторые учители Закона, и они рассуждали про себя:",
           "R": "Там сидели несколько учителей Закона. Они подумали:"
+        },
+        "hi": {
+          "L": "पर वहाँ कुछ शास्त्री बैठे थे और अपने मनों में विचार कर रहे थे,",
+          "B": "वहाँ व्यवस्था के कुछ शिक्षक बैठे थे, और वे अपने मन में सोच रहे थे,",
+          "R": "वहाँ व्यवस्था के कुछ शिक्षक बैठे थे। वे मन ही मन सोचने लगे,"
         }
       },
       "decisions": [
@@ -1810,6 +1968,27 @@
           "reason": "They were teachers of the Law of Moses, not copyists. The style guide settles this term for the whole book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002006005"
+          ],
+          "choice": "\"शास्त्री\" (L); \"व्यवस्था के शिक्षक\" (B, R)",
+          "alternatives": [
+            "\"शास्त्री\" at every level"
+          ],
+          "reason": "The scribes were teachers of the Law, not copyists; Balanced and Readable say so, as at 1:22.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1876,6 +2055,11 @@
           "L": "«Почему этот так говорит?",
           "B": "«Почему этот человек так говорит?",
           "R": "«Как этот человек может говорить такое?"
+        },
+        "hi": {
+          "L": "\"यह [आदमी] ऐसे क्यों बोलता है?",
+          "B": "\"यह आदमी ऐसी बातें क्यों करता है?",
+          "R": "\"यह आदमी ऐसी बातें कैसे कह सकता है?"
         }
       },
       "decisions": [
@@ -2051,6 +2235,27 @@
           "reason": "Russian 'этот' alone already carries the scorn at Literal; Balanced adds 'человек' for natural Russian and lets the tone come through 'так говорит'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002007002"
+          ],
+          "choice": "plain \"यह\", \"बोलता है\" for Jesus in the scribes' thoughts",
+          "alternatives": [
+            "honorific \"ये\", \"बोलते हैं\""
+          ],
+          "reason": "The scribes speak of Jesus with contempt (meaning note), so they use the plain third person, which in Hindi also carries the scorn.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2123,6 +2328,11 @@
           "L": "Он богохульствует! Кто может прощать грехи, кроме одного Бога?»",
           "B": "Он оскорбляет Бога! Кто, кроме одного Бога, может прощать грехи?»",
           "R": "Он оскорбляет Бога! Только Бог может прощать грехи!»"
+        },
+        "hi": {
+          "L": "यह ईश-निंदा करता है! एक परमेश्वर के सिवा पाप कौन क्षमा कर सकता है?\"",
+          "B": "यह तो परमेश्वर की निंदा है! परमेश्वर के सिवा और कौन पाप क्षमा कर सकता है?\"",
+          "R": "यह परमेश्वर का अपमान कर रहा है! केवल परमेश्वर ही पाप क्षमा कर सकते हैं!\""
         }
       },
       "decisions": [
@@ -2263,6 +2473,27 @@
           "reason": "Literal keeps the church verb; Balanced and Readable say what blaspheming is, as in Matthew 9:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002007005"
+          ],
+          "choice": "\"ईश-निंदा करता है\" (L); \"परमेश्वर की निंदा\" (B); \"परमेश्वर का अपमान\" (R)",
+          "alternatives": [
+            "\"ईश-निंदा\" at every level"
+          ],
+          "reason": "Literal keeps the term for blasphemy; Balanced and Readable say plainly that it insults God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2347,6 +2578,11 @@
           "L": "И тотчас Иисус, узнав своим духом, что они так рассуждают про себя, говорит им: «Почему вы рассуждаете так в своих сердцах?",
           "B": "Иисус сразу понял своим духом, о чём они думают. «Почему вы так рассуждаете в своих сердцах?» — спросил {{deity_pronoun:он|Он}} их.",
           "R": "Иисус тут же понял своим духом, о чём они думают. Он сказал им: «Почему вы так думаете?"
+        },
+        "hi": {
+          "L": "और तुरंत यीशु ने अपनी आत्मा में जानकर कि वे अपने मन में ऐसा विचार कर रहे हैं, उनसे कहते हैं, \"तुम अपने मनों में ये बातें क्यों सोचते हो?",
+          "B": "यीशु ने उसी क्षण अपनी आत्मा में जान लिया कि वे क्या सोच रहे हैं। \"तुम अपने मन में ये बातें क्यों सोच रहे हो?\" उन्होंने उनसे पूछा।",
+          "R": "यीशु तुरंत अपनी आत्मा में जान गए कि वे क्या सोच रहे हैं। उन्होंने उनसे कहा, \"तुम ऐसी बातें क्यों सोच रहे हो?"
         }
       },
       "decisions": [
@@ -2580,6 +2816,28 @@
           "reason": "Mark's frequent 'immediately' (euthys): Literal keeps 'тотчас' throughout; Balanced and Readable vary it in everyday words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002008002"
+          ],
+          "choice": "\"तुरंत\" (L, every time); varied with the sentence (B, R)",
+          "alternatives": [
+            "\"तुरंत\" at every level",
+            "one fixed word at Readable"
+          ],
+          "reason": "Mark's frequent \"immediately\" (euthys) is always \"तुरंत\" at Literal, so the reader can follow Mark's quick pace. Balanced and Readable say it as the sentence needs (\"तुरंत\", \"उसी समय\", \"जैसे ही\" or \"-ते ही\", \"फ़ौरन\"), or let a clause carry it, so that it does not become one repeated word. The same treatment holds through Mark. In this chapter also 2:12.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2662,6 +2920,11 @@
           "L": "Что легче: сказать парализованному: “Прощаются тебе грехи”, или сказать: “Встань, и возьми свою постель, и ходи”?",
           "B": "«Что легче сказать этому парализованному: “Твои грехи прощены” — или “Встань, возьми свои носилки и иди”?",
           "R": "Что легче сказать этому человеку: “Твои грехи прощены” — или: “Встань, возьми свои носилки и иди”?"
+        },
+        "hi": {
+          "L": "कौन-सा सहज है, लकवे के मारे हुए से यह कहना कि 'तुम्हारे पाप क्षमा हुए,' या यह कहना कि 'उठो, और अपना बिछौना उठाओ, और चलो'?",
+          "B": "\"लकवे के इस रोगी से क्या कहना सहज है: 'तुम्हारे पाप क्षमा हुए,' या 'उठो, अपना बिछौना उठाओ और चलो'?",
+          "R": "क्या इस आदमी से यह कहना ज़्यादा आसान है कि 'तुम्हारे पाप माफ़ हुए,' या यह कहना कि 'उठो, अपना बिस्तर उठाओ और चलो'?"
         }
       },
       "decisions": [
@@ -2816,6 +3079,11 @@
           "L": "Но чтобы вы знали, что власть имеет Сын Человеческий на земле прощать грехи», — говорит {{deity_pronoun:он|Он}} парализованному, —",
           "B": "Но {{deity_pronoun:я|Я}} хочу, чтобы вы знали: Сын Человеческий имеет на земле право прощать грехи.» Потом {{deity_pronoun:он|Он}} повернулся к парализованному.",
           "R": "Я покажу вам, что Сын Человеческий имеет власть прощать грехи здесь, на земле.» Тогда Иисус заговорил с больным."
+        },
+        "hi": {
+          "L": "पर इसलिए कि तुम जान लो कि मनुष्य के पुत्र को पृथ्वी पर पाप क्षमा करने का अधिकार है\"—वे लकवे के मारे हुए से कहते हैं—",
+          "B": "पर मैं चाहता हूँ कि तुम निश्चय जान लो कि मनुष्य के पुत्र को पृथ्वी पर पाप क्षमा करने का अधिकार है।\" तब वे लकवे के रोगी की ओर मुड़े।",
+          "R": "मैं तुम्हें दिखाऊँगा कि मनुष्य के पुत्र को यहाँ धरती पर पाप माफ़ करने का अधिकार है।\" फिर यीशु ने उस आदमी से बात की जो हिल नहीं सकता था।"
         }
       },
       "decisions": [
@@ -3109,6 +3377,28 @@
           "reason": "A title Jesus uses of himself, kept in its familiar form at every level and never under the gender setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002010008",
+            "n41002010010"
+          ],
+          "choice": "\"मनुष्य का पुत्र\" at every level, with no gender span",
+          "alternatives": [
+            "\"मनुष्य की सन्तान\""
+          ],
+          "reason": "A title, Jesus' name for himself, kept in its familiar form and never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3184,6 +3474,11 @@
           "L": "«Тебе говорю: встань, возьми свою постель и иди в свой дом.»",
           "B": "«Встань, говорю тебе. Возьми свои носилки и иди домой.»",
           "R": "Он сказал: «Встань! Возьми свои носилки и иди домой!»"
+        },
+        "hi": {
+          "L": "\"तुमसे मैं कहता हूँ, उठो, अपना बिछौना उठाओ, और अपने घर जाओ।\"",
+          "B": "\"उठो, मैं तुमसे कहता हूँ। अपना बिछौना उठाओ और घर जाओ।\"",
+          "R": "उन्होंने कहा, \"उठो! अपना बिस्तर उठाओ और घर जाओ!\""
         }
       },
       "decisions": [
@@ -3267,6 +3562,25 @@
             "Je te le dis"
           ],
           "reason": "\"You\" stands first in the Greek for emphasis (meaning decision m1). Literal keeps the order; Balanced gives the weight with \"ordonner\", since a plain \"je te le dis\" sounds like a remark.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n41002011001"
+          ],
+          "choice": "\"तुमसे मैं कहता हूँ\" (L)",
+          "alternatives": [
+            "\"मैं तुमसे कहता हूँ\""
+          ],
+          "reason": "The Greek puts \"to you\" first for emphasis (meaning note); Literal keeps it first.",
           "uncertain": false,
           "footnote": false
         }
@@ -3353,6 +3667,11 @@
           "L": "И он встал и, тотчас взяв постель, вышел перед всеми, так что все изумлялись и прославляли Бога, говоря: «Никогда мы такого не видели!»",
           "B": "Тот встал, сразу взял носилки и вышел у всех на глазах. Все были поражены и прославляли Бога. «Никогда мы не видели ничего подобного!» — говорили они.",
           "R": "Человек встал. Он тут же взял свои носилки и вышел, и все это видели. Люди были поражены и славили Бога. Они говорили: «Мы никогда не видели ничего подобного!»"
+        },
+        "hi": {
+          "L": "और वह उठा, और तुरंत बिछौना उठाकर सबके सामने निकल गया, यहाँ तक कि सब चकित हुए और यह कहते हुए परमेश्वर की महिमा करने लगे, \"हमने ऐसा कभी नहीं देखा!\"",
+          "B": "वह उठा, तुरंत अपना बिछौना उठाया और सबके देखते-देखते बाहर चला गया। सब दंग रह गए और परमेश्वर की महिमा करने लगे। \"हमने ऐसा कभी नहीं देखा!\" उन्होंने कहा।",
+          "R": "वह आदमी उठा। उसने तुरंत अपना बिस्तर उठाया और सबके सामने बाहर चला गया। सब लोग हैरान रह गए, और उन्होंने परमेश्वर की बड़ाई की। उन्होंने कहा, \"हमने ऐसा कभी नहीं देखा!\""
         }
       },
       "decisions": [
@@ -3487,6 +3806,27 @@
           "reason": "Readable uses the simpler verb with the same meaning, as the English Readable says 'praised'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002012015"
+          ],
+          "choice": "\"महिमा करने लगे\" (L, B); \"बड़ाई की\" (R)",
+          "alternatives": [
+            "\"महिमा की\" (R)"
+          ],
+          "reason": "\"महिमा करना\" is the key term for glorifying God; Readable uses the everyday \"बड़ाई करना\" for praising him, as the English Readable says \"praised\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3565,6 +3905,11 @@
           "L": "И {{deity_pronoun:он|Он}} снова вышел к морю, и весь народ приходил к {{deity_pronoun:нему|Нему}}, и {{deity_pronoun:он|Он}} учил их.",
           "B": "Он снова вышел на берег озера. Весь народ шёл к {{deity_pronoun:нему|Нему}}, и {{deity_pronoun:он|Он}} учил их.",
           "R": "Иисус снова пришёл на берег Галилейского озера. Вокруг {{deity_pronoun:него|Него}} собралось много народа, и {{deity_pronoun:он|Он}} учил их."
+        },
+        "hi": {
+          "L": "और वे फिर समुद्र के किनारे निकल गए; और सारी भीड़ उनके पास आती रही, और वे उन्हें सिखाते रहे।",
+          "B": "वे एक बार फिर झील के किनारे गए। सारी भीड़ उनके पास आती रही, और वे उन्हें सिखाते रहे।",
+          "R": "यीशु फिर गलील की झील के किनारे गए। लोगों की बड़ी भीड़ उनके चारों ओर इकट्ठी हो गई, और वे उन्हें सिखाने लगे।"
         }
       },
       "decisions": [
@@ -3683,6 +4028,27 @@
           "reason": "The Sea of Galilee is a freshwater lake, as at 1:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002013006"
+          ],
+          "choice": "\"समुद्र\" (L); \"झील\" (B, R)",
+          "alternatives": [
+            "\"समुद्र\" at every level"
+          ],
+          "reason": "The Sea of Galilee is a freshwater lake, as at 1:16.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3761,6 +4127,11 @@
           "L": "И, проходя, {{deity_pronoun:он|Он}} увидел Левия, [сына] Алфея, сидящего у сбора пошлин, и говорит ему: «Следуй за {{deity_pronoun:мной|Мной}}.»",
           "B": "Проходя мимо, {{deity_pronoun:он|Он}} заметил Левия, сына Алфея, который сидел на месте сбора пошлин. «Следуй за {{deity_pronoun:мной|Мной}}», — сказал {{deity_pronoun:он|Он}} ему.",
           "R": "Иисус шёл дальше и увидел человека по имени Левий, сына Алфея. Левий сидел там, где собирал налоги. Иисус сказал ему: «Идём со {{deity_pronoun:мной|Мной}}, будь {{deity_pronoun:моим|Моим}} учеником.»"
+        },
+        "hi": {
+          "L": "और आगे जाते हुए उन्होंने हलफई के [पुत्र] लेवी को महसूल की चौकी पर बैठे देखा, और उससे कहते हैं, \"मेरे पीछे हो लो।\"",
+          "B": "आगे बढ़ते हुए उन्होंने हलफई के पुत्र लेवी को कर की चौकी पर बैठे देखा। \"मेरे पीछे चलो,\" उन्होंने उससे कहा।",
+          "R": "आगे जाते हुए यीशु ने हलफई के बेटे लेवी नाम के एक आदमी को देखा। लेवी उस जगह बैठा था जहाँ वह कर वसूलता था। यीशु ने उससे कहा, \"आओ, मेरे साथ चलो और मेरे चेले बन जाओ।\""
         }
       },
       "decisions": [
@@ -4002,6 +4373,26 @@
           "reason": "Readable says what following means. As settled in Matthew, disciples are 'ученики' at every level, Readable included, so Readable says 'учеником' where the English says 'follower'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002014011"
+          ],
+          "choice": "\"महसूल की चौकी\" (L); \"कर की चौकी\" (B)",
+          "alternatives": [
+            "\"कर का दफ़्तर\""
+          ],
+          "reason": "The same words as at Matthew 9:9: the booth where tolls and taxes were taken; Readable describes it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4068,6 +4459,11 @@
           "L": "И, встав, он последовал за {{deity_pronoun:ним|Ним}}.",
           "B": "Тот встал и последовал за {{deity_pronoun:ним|Ним}}.",
           "R": "Левий встал и пошёл с {{deity_pronoun:ним|Ним}}."
+        },
+        "hi": {
+          "L": "और वह उठकर उनके पीछे हो लिया।",
+          "B": "वह उठा और उनके पीछे चल पड़ा।",
+          "R": "लेवी उठा और उनके साथ चल पड़ा।"
         }
       },
       "decisions": [
@@ -4175,6 +4571,11 @@
           "L": "И бывает, [что] {{deity_pronoun:он|Он}} возлежит [за столом] в его доме, и многие мытари и грешники возлежали с Иисусом и {{deity_pronoun:его|Его}} учениками, ведь их было много, и они следовали за {{deity_pronoun:ним|Ним}}.",
           "B": "Потом Иисус обедал в доме Левия, и многие сборщики налогов и грешники сидели за столом вместе с {{deity_pronoun:ним|Ним}} и {{deity_pronoun:его|Его}} учениками. Таких людей было много среди тех, кто шёл за {{deity_pronoun:ним|Ним}}.",
           "R": "Потом Иисус ел в доме Левия. С {{deity_pronoun:ним|Ним}} и {{deity_pronoun:его|Его}} учениками ели многие сборщики налогов и другие люди, которых считали грешниками. Много таких людей ходило за Иисусом."
+        },
+        "hi": {
+          "L": "और ऐसा होता है कि वे उसके घर में [भोजन पर] टेक लगाए बैठे हैं, और बहुत-से महसूल लेनेवाले और पापी यीशु और उनके चेलों के साथ टेक लगाए बैठे थे; क्योंकि वे बहुत थे, और वे उनके पीछे चलते थे।",
+          "B": "बाद में यीशु लेवी के घर में भोजन कर रहे थे, और बहुत-से कर वसूलनेवाले और पापी उनके और उनके चेलों के साथ भोजन में शामिल थे। उनके पीछे चलनेवालों में ऐसे बहुत-से लोग थे।",
+          "R": "बाद में यीशु ने लेवी के घर में खाना खाया। बहुत-से कर वसूलनेवाले और दूसरे लोग भी, जो पापी कहलाते थे, वहाँ उनके और उनके चेलों के साथ खा रहे थे। ऐसे बहुत-से लोग यीशु के पीछे चल रहे थे।"
         }
       },
       "decisions": [
@@ -4597,6 +4998,47 @@
           "reason": "As settled in Matthew, disciples are 'ученики' at every level, Readable included.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002015011"
+          ],
+          "choice": "\"महसूल लेनेवाले\" (L); \"कर वसूलनेवाले\" (B, R)",
+          "alternatives": [
+            "\"चुंगी लेनेवाले\""
+          ],
+          "reason": "Literal keeps the traditional term for toll collectors; Balanced and Readable use the everyday word for tax, as in Matthew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002015019"
+          ],
+          "choice": "\"चेले\" (R)",
+          "alternatives": [
+            "\"अनुयायी\"",
+            "\"पीछे चलनेवाले\""
+          ],
+          "reason": "\"चेला\" is already the everyday Hindi word for a teacher's follower, so Readable keeps it where the English Readable says \"followers\". Used through Mark.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4683,6 +5125,11 @@
           "L": "И книжники из фарисеев, увидев, что {{deity_pronoun:он|Он}} ест с грешниками и мытарями, говорили {{deity_pronoun:его|Его}} ученикам: «Почему {{deity_pronoun:он|Он}} ест с мытарями и грешниками?»",
           "B": "Учители Закона из фарисеев увидели, что {{deity_pronoun:он|Он}} ест с грешниками и сборщиками налогов, и спросили {{deity_pronoun:его|Его}} учеников: «Почему {{deity_pronoun:он|Он}} ест со сборщиками налогов и грешниками?»",
           "R": "Учители Закона, которые были фарисеями, увидели это. Они спросили {{deity_pronoun:его|Его}} учеников: «Почему {{deity_pronoun:он|Он}} ест вместе со сборщиками налогов и грешниками?»"
+        },
+        "hi": {
+          "L": "और फ़रीसियों के शास्त्री यह देखकर कि वे पापियों और महसूल लेनेवालों के साथ खा रहे हैं, उनके चेलों से कहने लगे, \"वह महसूल लेनेवालों और पापियों के साथ क्यों खाता है?\"",
+          "B": "फ़रीसी दल के कुछ व्यवस्था के शिक्षकों ने उन्हें पापियों और कर वसूलनेवालों के साथ खाते देखा, और उनके चेलों से पूछा, \"वह कर वसूलनेवालों और पापियों के साथ क्यों खा रहा है?\"",
+          "R": "व्यवस्था के कुछ शिक्षकों ने, जो फ़रीसी थे, यह देखा। उन्होंने यीशु के चेलों से पूछा, \"वह कर वसूलनेवालों और पापियों के साथ खाना क्यों खाता है?\""
         }
       },
       "decisions": [
@@ -4810,6 +5257,27 @@
           "reason": "Teachers of the law address a rival teacher's disciples as inferiors, and their disapproval shows in giving Jesus no honorific; the narrator keeps the honorific for Jesus throughout.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002016024"
+          ],
+          "choice": "plain \"वह ... खाता है\" in the critics' question",
+          "alternatives": [
+            "honorific \"वे ... खाते हैं\""
+          ],
+          "reason": "The narrator uses the honorific for Jesus, but these critics, speaking of him to his disciples, would not, as at Matthew 9:11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4895,6 +5363,11 @@
           "L": "И, услышав [это], Иисус говорит им: «Не имеют нужды во враче сильные, но больные; {{deity_pronoun:я|Я}} пришёл призвать не праведных, но грешников.»",
           "B": "Иисус услышал это и сказал им: «Здоровым не нужен врач, он нужен больным. Я пришёл призвать не праведных, а грешников.»",
           "R": "Иисус услышал, что они говорят. Он сказал им: «Здоровым врач не нужен. Он нужен больным. Я пришёл звать не хороших людей. Я пришёл звать грешников.»"
+        },
+        "hi": {
+          "L": "और यह सुनकर यीशु उनसे कहते हैं, \"जो बलवान हैं उन्हें वैद्य की आवश्यकता नहीं, पर जो बीमार हैं [उन्हें है]; मैं धर्मियों को नहीं, पर पापियों को बुलाने आया हूँ।\"",
+          "B": "यीशु ने यह सुनकर उनसे कहा, \"जो स्वस्थ हैं उन्हें वैद्य की ज़रूरत नहीं होती, बीमारों को होती है। मैं धर्मियों को नहीं, बल्कि पापियों को बुलाने आया हूँ।\"",
+          "R": "यीशु ने उनकी बात सुनी। उन्होंने उनसे कहा, \"तंदुरुस्त लोगों को डॉक्टर की ज़रूरत नहीं होती। बीमारों को होती है। मैं अच्छे लोगों को बुलाने नहीं आया। मैं पापियों को बुलाने आया हूँ।\""
         }
       },
       "decisions": [
@@ -5071,6 +5544,27 @@
           "reason": "As in Matthew 9:13: Jesus means people who are, or think they are, right with God. Readable says \"good people\", as the English Readable does; \"ጻድቃን\" stays the word at Literal and Balanced.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002017021"
+          ],
+          "choice": "\"धर्मियों\" (L, B); \"अच्छे लोगों\" (R)",
+          "alternatives": [
+            "\"धर्मियों\" (R)"
+          ],
+          "reason": "\"धर्मी\" is the key term for the righteous; Readable uses plain words for those counted righteous, as the English does and as at Matthew 9:13.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5142,6 +5636,11 @@
           "L": "И ученики Иоанна и фарисеи постились.",
           "B": "Ученики Иоанна и фарисеи держали пост.",
           "R": "В то время ученики Иоанна и фарисеи постились. Они какое-то время ничего не ели, чтобы поклоняться Богу."
+        },
+        "hi": {
+          "L": "और यूहन्ना के चेले और फ़रीसी उपवास कर रहे थे।",
+          "B": "यूहन्ना के चेले और फ़रीसी उपवास रख रहे थे।",
+          "R": "उस समय यूहन्ना के चेले और फ़रीसी उपवास कर रहे थे। वे परमेश्वर की आराधना के लिए कुछ समय तक भोजन नहीं करते थे।"
         }
       },
       "decisions": [
@@ -5323,6 +5822,11 @@
           "L": "И приходят и говорят {{deity_pronoun:ему|Ему}}: «Почему ученики Иоанна и ученики фарисеев постятся, а {{deity_pronoun:твои|Твои}} ученики не постятся?»",
           "B": "Люди пришли и спросили {{deity_pronoun:его|Его}}: «Ученики Иоанна постятся, и ученики фарисеев тоже. Почему же {{deity_pronoun:твои|Твои}} ученики не постятся?»",
           "R": "Какие-то люди пришли к Иисусу и спросили {{deity_pronoun:его|Его}}: «Ученики Иоанна и ученики фарисеев постятся. Почему {{deity_pronoun:твои|Твои}} ученики не постятся?»"
+        },
+        "hi": {
+          "L": "और [लोग] आकर उनसे कहते हैं, \"यूहन्ना के चेले और फ़रीसियों के चेले क्यों उपवास करते हैं, पर आपके चेले उपवास नहीं करते?\"",
+          "B": "कुछ लोगों ने आकर उनसे पूछा, \"यूहन्ना के चेले उपवास करते हैं, और फ़रीसियों के चेले भी। आपके चेले उपवास क्यों नहीं करते?\"",
+          "R": "कुछ लोग यीशु के पास आए और उनसे पूछा, \"यूहन्ना के चेले और फ़रीसियों के चेले उपवास करते हैं। आपके चेले उपवास क्यों नहीं करते?\""
         }
       },
       "decisions": [
@@ -5402,6 +5906,27 @@
             "no subject (L)"
           ],
           "reason": "As the style guide and Mark 1:37: people address Jesus formally, and a title replaces the pronoun \"you\". Korean needs a subject for \"they come\", which the Greek leaves unnamed (meaning decision), so Literal brackets it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002018028"
+          ],
+          "choice": "\"आपके\" in address to Jesus",
+          "alternatives": [
+            "\"तुम्हारे\""
+          ],
+          "reason": "Everyone who speaks to Jesus says \"आप\", as anyone would to a teacher.",
           "uncertain": false,
           "footnote": false
         }
@@ -5485,6 +6010,11 @@
           "L": "И сказал им Иисус: «Разве могут {{gender:гости|сыновья}} свадебного чертога поститься, пока с ними жених?",
           "B": "Иисус ответил: «Как могут гости на свадьбе поститься, пока жених с ними?",
           "R": "Иисус сказал им: «На свадьбе друзья жениха не отказываются от еды, пока он с ними."
+        },
+        "hi": {
+          "L": "और यीशु ने उनसे कहा, \"क्या विवाह-कक्ष के पुत्र, जब तक दूल्हा उनके साथ है, उपवास कर सकते हैं?",
+          "B": "यीशु ने उत्तर दिया, \"जब तक दूल्हा बारातियों के साथ है, क्या वे उपवास कर सकते हैं?",
+          "R": "यीशु ने उनसे कहा, \"जब शादी होती है, तो जब तक दूल्हा अपने दोस्तों के साथ होता है, तब तक वे उपवास नहीं करते।"
         }
       },
       "decisions": [
@@ -5765,6 +6295,28 @@
           "reason": "The English Literal has no gender span here. 'Sons of the bridal chamber' is an idiom for the wedding guests, men and women, so Russian Literal gives 'гости' by default and the word-for-word 'сыновья' as the alternative, as at Matthew 9:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002019009",
+            "n41002019011"
+          ],
+          "choice": "\"विवाह-कक्ष के पुत्र\" (L); \"बाराती\" (B); \"दूल्हे के दोस्त\" (R)",
+          "alternatives": [
+            "\"विवाह के मेहमान\""
+          ],
+          "reason": "The same wording as Matthew 9:15. Literal keeps the Greek idiom; Balanced uses \"बाराती\", the groom's party at an Indian wedding; Readable says who they are.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5837,6 +6389,11 @@
           "L": "Сколько времени жених с ними, они не могут поститься;",
           "B": "Пока жених с ними, о посте не может быть и речи.",
           "R": "Пока жених рядом, они не могут поститься."
+        },
+        "hi": {
+          "L": "जितने समय तक दूल्हा उनके साथ है, वे उपवास नहीं कर सकते।",
+          "B": "जब तक दूल्हा उनके साथ है, उपवास का प्रश्न ही नहीं उठता।",
+          "R": "जब तक दूल्हा वहाँ है, वे उपवास नहीं कर सकते।"
         }
       },
       "decisions": [
@@ -5942,6 +6499,11 @@
           "L": "Но придут дни, когда будет взят от них жених, и тогда они будут поститься в тот день.",
           "B": "Но придут дни, когда жениха заберут у них; в тот день они будут поститься.",
           "R": "Но придёт день, когда жениха уведут от них. Тогда они будут поститься."
+        },
+        "hi": {
+          "L": "पर वे दिन आएँगे जब दूल्हा उनसे अलग किया जाएगा, और तब उस दिन वे उपवास करेंगे।",
+          "B": "पर ऐसे दिन आ रहे हैं जब दूल्हा उनसे छीन लिया जाएगा; उस दिन वे उपवास करेंगे।",
+          "R": "पर वह दिन आएगा जब दूल्हे को उनसे दूर ले जाया जाएगा। तब वे उपवास करेंगे।"
         }
       },
       "decisions": [
@@ -6092,6 +6654,11 @@
           "L": "Никто не пришивает заплату из несевшей ткани к ветхой одежде; а иначе заплата оттянет от неё, новое от старого, и прореха станет хуже.",
           "B": "Никто не пришивает заплату из новой, ещё не севшей ткани к старой одежде. Иначе новая заплата сядет и оторвётся от старой ткани, и дыра станет ещё больше.",
           "R": "Никто не чинит старую одежду куском новой ткани. Новая ткань сядет, когда её намочат, и оторвётся от старой. Тогда дыра станет больше."
+        },
+        "hi": {
+          "L": "कोई भी पुराने वस्त्र पर बिना सिकुड़े कपड़े का पैबंद नहीं सिलता; नहीं तो वह पैबंद उसमें से खिंच जाता है, नया पुराने में से, और फटन और बुरी हो जाती है।",
+          "B": "कोई भी पुराने वस्त्र पर नए, बिना सिकुड़े कपड़े का पैबंद नहीं सिलता। अगर सिले, तो नया पैबंद सिकुड़कर पुराने कपड़े से खिंच जाएगा, और फटन और बढ़ जाएगी।",
+          "R": "पुराने कपड़ों का छेद भरने के लिए कोई नए कपड़े का टुकड़ा नहीं लगाता। भीगने पर नया कपड़ा सिकुड़ जाएगा और पुराने कपड़े से खिंचकर अलग हो जाएगा। तब छेद और बड़ा हो जाएगा।"
         }
       },
       "decisions": [
@@ -6297,6 +6864,11 @@
           "L": "И никто не наливает новое вино в старые мехи; а иначе вино прорвёт мехи, и вино пропадает, и мехи.",
           "B": "И никто не наливает молодое вино в старые мехи. Иначе вино разорвёт мехи, и пропадут и вино, и мехи.",
           "R": "И никто не наливает новое вино в старые кожаные мешки. Новое вино разорвёт старые мешки, и пропадут и вино, и мешки."
+        },
+        "hi": {
+          "L": "और कोई नया दाखरस पुरानी मशकों में नहीं भरता; नहीं तो दाखरस मशकों को फाड़ देगा, और दाखरस नष्ट हो जाता है और मशकें भी।",
+          "B": "और कोई नया दाखरस पुरानी मशकों में नहीं भरता। अगर भरे, तो दाखरस मशकों को फाड़ देगा, और दाखरस और मशकें दोनों बरबाद हो जाएँगी।",
+          "R": "और लोग नया दाखरस चमड़े के पुराने थैलों में नहीं भरते। नया दाखरस पुराने थैलों को फाड़ देगा, और दाखरस और थैले दोनों बरबाद हो जाएँगे।"
         }
       },
       "decisions": [
@@ -6460,6 +7032,27 @@
           "reason": "'Мехи' is the traditional word for wineskins; Readable says what they were.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002022007"
+          ],
+          "choice": "\"मशकें\" (L, B); \"चमड़े के थैले\" (R)",
+          "alternatives": [
+            "\"मशकें\" (R)"
+          ],
+          "reason": "\"मशक\" is the Hindi word for a leather water or wine bag; Readable describes it, as at Matthew 9:17.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6528,6 +7121,11 @@
           "L": "Но новое вино — в свежие мехи.»",
           "B": "Молодому вину нужны новые мехи.»",
           "R": "Новое вино наливают в новые мешки.»"
+        },
+        "hi": {
+          "L": "पर नया दाखरस नई मशकों में [भरा जाता है]।\"",
+          "B": "नए दाखरस के लिए नई मशकें चाहिए।\"",
+          "R": "नया दाखरस नए थैलों में ही भरना चाहिए।\""
         }
       },
       "decisions": [
@@ -6733,6 +7331,11 @@
           "L": "И было: в субботу {{deity_pronoun:он|Он}} проходил через засеянные поля, и {{deity_pronoun:его|Его}} ученики начали прокладывать путь, срывая колосья.",
           "B": "Однажды в субботу Иисус проходил через поля с хлебом, и {{deity_pronoun:его|Его}} ученики, идя по дороге, стали срывать колосья.",
           "R": "Однажды в субботу Иисус со своими учениками шёл через пшеничные поля. По дороге они срывали колосья, чтобы поесть зёрна."
+        },
+        "hi": {
+          "L": "और ऐसा हुआ कि सब्त के दिन वे अनाज के खेतों में से होकर जा रहे थे, और उनके चेले रास्ता बनाते हुए बालें तोड़ने लगे।",
+          "B": "एक सब्त के दिन यीशु अनाज के खेतों में से होकर जा रहे थे, और उनके चेले रास्ते में चलते-चलते बालें तोड़ने लगे।",
+          "R": "एक सब्त के दिन यीशु अपने चेलों के साथ अनाज के कुछ खेतों में से होकर जा रहे थे। चलते-चलते चेले खाने के लिए अनाज की कुछ बालें तोड़ने लगे।"
         }
       },
       "decisions": [
@@ -6967,6 +7570,11 @@
           "L": "И фарисеи говорили {{deity_pronoun:ему|Ему}}: «Смотри, почему они делают в субботу то, чего не позволено?»",
           "B": "Фарисеи сказали {{deity_pronoun:ему|Ему}}: «Смотри! Почему они делают в субботу то, что запрещает Закон?»",
           "R": "Фарисеи сказали Иисусу: «Смотри! Твои ученики нарушают закон о субботе. Почему они так делают?»"
+        },
+        "hi": {
+          "L": "और फ़रीसी उनसे कहने लगे, \"देखिए, ये सब्त के दिन वह काम क्यों कर रहे हैं जो उचित नहीं?\"",
+          "B": "फ़रीसियों ने उनसे कहा, \"देखिए! ये सब्त के दिन ऐसा काम क्यों कर रहे हैं जिसकी व्यवस्था मनाही करती है?\"",
+          "R": "फ़रीसियों ने यीशु से कहा, \"देखिए! आपके चेले सब्त का नियम तोड़ रहे हैं। वे ऐसा क्यों कर रहे हैं?\""
         }
       },
       "decisions": [
@@ -7113,6 +7721,27 @@
           "reason": "This is a command spoken to Jesus, not the storyteller's \"behold\", which Literal gives as \"እነሆ\". The Pharisees say \"አንተ\" to Jesus, as everyone does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002024006"
+          ],
+          "choice": "\"देखिए\" from the Pharisees to Jesus",
+          "alternatives": [
+            "\"देखो\""
+          ],
+          "reason": "Opponents too address Jesus with \"आप\", as anyone in the scene would address a teacher, as at Matthew 12:2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7193,6 +7822,11 @@
           "L": "И говорит им: «Неужели вы никогда не читали, что сделал Давид, когда имел нужду и проголодался сам и те, кто [был] с ним?",
           "B": "Он ответил: «Разве вы не читали, что сделал Давид, когда он и его спутники были в нужде и голодали?",
           "R": "Иисус ответил: «Вы ведь читали в Писании, что сделал Давид, когда он и его люди были голодны и им нечего было есть."
+        },
+        "hi": {
+          "L": "और [यीशु] उनसे कहते हैं, \"क्या तुमने कभी नहीं पढ़ा कि दाऊद ने क्या किया, जब उसे ज़रूरत थी और वह और उसके साथी भूखे थे?",
+          "B": "उन्होंने उत्तर दिया, \"क्या तुमने नहीं पढ़ा कि जब दाऊद और उसके साथी ज़रूरत में थे और भूखे थे, तब उसने क्या किया?",
+          "R": "यीशु ने उत्तर दिया, \"तुमने पवित्रशास्त्र में पढ़ा है कि जब दाऊद और उसके आदमी भूखे थे और उनके पास खाने को कुछ नहीं था, तब दाऊद ने क्या किया।"
         }
       },
       "decisions": [
@@ -7378,6 +8012,11 @@
           "L": "Как он вошёл в дом Божий при первосвященнике Авиафаре, и ел хлебы предложения, которые не позволено есть никому, кроме священников, и дал также тем, кто был с ним?»",
           "B": "Во дни первосвященника Авиафара он вошёл в дом Божий и ел священный хлеб, выложенный перед Богом, который по Закону можно есть только священникам. И он дал его даже своим спутникам.»",
           "R": "Это было во времена первосвященника Авиафара. Давид вошёл в Божий дом и ел особый хлеб, который приносили в дар Богу. Закон говорит, что этот хлеб можно есть только священникам. Но Давид ел его и дал своим людям тоже.»"
+        },
+        "hi": {
+          "L": "कैसे वह अबियातार महायाजक के [समय में] परमेश्वर के घर में गया और भेंट की रोटियाँ खाईं, जिन्हें याजकों के सिवा किसी और को खाना उचित नहीं, और अपने साथियों को भी दीं?\"",
+          "B": "अबियातार महायाजक के दिनों में वह परमेश्वर के घर में गया और उसने वे रोटियाँ खाईं जो परमेश्वर के सामने रखी जाती थीं, जिन्हें व्यवस्था के अनुसार केवल याजक ही खा सकते हैं। उसने अपने साथियों को भी कुछ रोटियाँ दीं।\"",
+          "R": "अबियातार महायाजक के समय में दाऊद परमेश्वर के घर में गया और उसने वे ख़ास रोटियाँ खाईं जो परमेश्वर को चढ़ाई गई थीं। व्यवस्था कहती है कि केवल याजक ही वे रोटियाँ खा सकते हैं। पर दाऊद ने उन्हें खाया, और अपने आदमियों को भी कुछ रोटियाँ दीं।\""
         }
       },
       "decisions": [
@@ -7728,6 +8367,28 @@
           "reason": "The loaves set out before God in the house of worship. Literal keeps the traditional name; Balanced and Readable say what the bread was, as in Matthew 12:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n41002026013",
+            "n41002026015"
+          ],
+          "choice": "\"भेंट की रोटियाँ\" (L); \"परमेश्वर के सामने रखी\" (B); \"ख़ास रोटियाँ ... चढ़ाई गई\" (R)",
+          "alternatives": [
+            "\"भेंट की रोटियाँ\" at every level"
+          ],
+          "reason": "Literal keeps the traditional name for the loaves of the presentation; Balanced and Readable say what the bread was, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7806,6 +8467,11 @@
           "L": "И говорил им: «Суббота возникла ради человека, а не человек ради субботы;",
           "B": "Потом {{deity_pronoun:он|Он}} сказал им: «Суббота создана для человека, а не человек для субботы.",
           "R": "Потом {{deity_pronoun:он|Он}} сказал: «Бог дал субботу, чтобы помочь людям. Он создал людей не для того, чтобы они служили субботе."
+        },
+        "hi": {
+          "L": "और उन्होंने उनसे कहा, \"सब्त मनुष्य के लिए बना, न कि मनुष्य सब्त के लिए;",
+          "B": "फिर उन्होंने उनसे कहा, \"सब्त मनुष्य के लिए बनाया गया, न कि मनुष्य सब्त के लिए।",
+          "R": "फिर उन्होंने कहा, \"परमेश्वर ने सब्त लोगों की भलाई के लिए बनाया। उन्होंने लोगों को सब्त की सेवा के लिए नहीं बनाया।"
         }
       },
       "decisions": [
@@ -8038,6 +8704,28 @@
           "reason": "The English has a gender span on 'humankind/man'. Russian 'человек' already means any human being, so no setting is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n41002027008",
+            "n41002027013"
+          ],
+          "choice": "\"मनुष्य\" (L, B); \"लोगों\" (R), with no gender span",
+          "alternatives": [
+            "{{gender:मानवजाति|मनुष्य}}"
+          ],
+          "reason": "The English offers \"humankind\" or \"people\" beside \"man\" as a setting. Hindi \"मनुष्य\" and \"लोग\" already mean human beings, women and men alike, so there is nothing for a gender setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8110,6 +8798,11 @@
           "L": "так что Сын Человеческий — Господин и субботы.»",
           "B": "Поэтому Сын Человеческий — Господин даже над субботой.»",
           "R": "Значит, Сын Человеческий — Господь, который властвует даже над субботой.»"
+        },
+        "hi": {
+          "L": "इसलिए मनुष्य का पुत्र सब्त का भी प्रभु है।\"",
+          "B": "इसलिए मनुष्य का पुत्र सब्त पर भी प्रभु है।\"",
+          "R": "इसलिए मनुष्य का पुत्र ही वह प्रभु है जो सब्त के दिन पर भी अधिकार रखता है।\""
         }
       },
       "decisions": [
@@ -8225,6 +8918,28 @@
             "'Господь' at every level"
           ],
           "reason": "The Greek is the same as Matthew 12:8, and the Russian keeps the words settled there: 'Господин' for authority over the Sabbath, and Readable 'Господь' for the one who rules it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n41002028002",
+            "n41002028005"
+          ],
+          "choice": "plain singular \"है\", \"रखता है\" for the Son of Man",
+          "alternatives": [
+            "honorific \"हैं\", \"रखते हैं\""
+          ],
+          "reason": "When Jesus speaks of himself in the third person by this title, the title takes plain singular forms, as in Matthew. \"प्रभु\" (Lord) is the book's word for Jesus' authority.",
           "uncertain": false,
           "footnote": false
         }
