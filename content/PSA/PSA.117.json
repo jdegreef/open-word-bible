@@ -58,6 +58,11 @@
           "L": "Louvem {{divine_name:o SENHOR|Javé}}, todas as nações; exaltem-{{deity_pronoun:no|No}}, todos os povos!",
           "B": "Todas as nações, louvem {{divine_name:o SENHOR|Javé}}! Todos os povos, cantem louvores a {{deity_pronoun:ele|Ele}}!",
           "R": "Todas as nações, louvem {{divine_name:o SENHOR|Javé}}! Povos de todo lugar, deem honra a {{deity_pronoun:ele|Ele}}!"
+        },
+        "am": {
+          "L": "አሕዛብ ሁላችሁ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ ሕዝቦች ሁሉ፣ አወድሱት!",
+          "B": "እናንተ አሕዛብ ሁሉ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! እናንተ ሕዝቦች ሁሉ፣ ምስጋናውን ዘምሩ!",
+          "R": "እናንተ ሕዝቦች ሁሉ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! በየስፍራው ያላችሁ ሰዎች ሁሉ፣ አክብሩት!"
         }
       },
       "decisions": [
@@ -176,6 +181,46 @@
           "reason": "Paul quotes this verse in Romans 15:11 (m2), so the Portuguese keeps the words and order of its Portuguese at each level, with the name in place of Romans' \"o Senhor\"; the second line keeps the Hebrew imperative (\"exaltem-no\", \"cantem louvores\", \"deem honra\"), where Romans has \"que ... o louvem\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191170010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 117",
+          "alternatives": [],
+          "reason": "Amharic has no deity_pronoun spans: the Ethiopic script has no capital letters, so the setting has nothing to change. God is spoken of with the ordinary pronouns (እርሱ, አንተ) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170010051"
+          ],
+          "choice": "«አሕዛብ ሁላችሁ፣ ... አመስግኑ» (L), «እናንተ አሕዛብ ሁሉ, ...» (B), «እናንተ ሕዝቦች ሁሉ, ...» (R), as Romans 15:11, with \"{{divine_name:እግዚአብሔርን|ያህዌን}}\" for the New Testament's \"ጌታን\"; the second line follows the Hebrew",
+          "alternatives": [
+            "\"ሕዝቦች\" for goyim at Literal and Balanced"
+          ],
+          "reason": "Paul quotes the verse in Romans 15:11, so its Amharic opening is kept, \"አሕዛብ\" included (the terms list allows it where the New Testament quotes the verse). The Hebrew has the name YHWH, so it takes the divine_name span; its second line is a command (\"extol him, all the peoples\"), where the Greek has \"let all the peoples praise him\", so the Amharic follows the Hebrew there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -241,6 +286,11 @@
           "L": "Porque forte sobre nós [é] o {{deity_pronoun:seu|Seu}} amor leal, e a fidelidade {{divine_name:do SENHOR|de Javé}} [é] para sempre. Aleluia!",
           "B": "Pois o {{deity_pronoun:seu|Seu}} amor leal por nós é imenso, e {{divine_name:o SENHOR|Javé}} permanece fiel para sempre. Aleluia!",
           "R": "O {{deity_pronoun:seu|Seu}} amor fiel por nós é muito grande, e {{divine_name:o SENHOR|Javé}} vai ser fiel para sempre. Louvem {{divine_name:o SENHOR|Iá}}!"
+        },
+        "am": {
+          "L": "ጽኑ ፍቅሩ በእኛ ላይ ብርቱ ነውና፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ታማኝነትም ለዘላለም [ነው]። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
+          "B": "ለእኛ ያለው ጽኑ ፍቅሩ እጅግ ታላቅ ነውና፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ታማኝ ሆኖ ይኖራል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
+          "R": "ለእኛ ያለው ጽኑ ፍቅሩ እጅግ ታላቅ ነው፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሁልጊዜ ታማኝ ይሆናል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!"
         }
       },
       "decisions": [
