@@ -316,6 +316,21 @@ Settled in John (with docs/john-terms.md):
   मिसाल (R); "Woman" as an address हे स्त्री (L), हे नारी (B), माँ to his
   mother and बहन to other women (R).
 
+Settled in Acts:
+
+- मार्ग (the Way); मसीही (Christians); पवित्र जन (L), पवित्र लोग (B, R) for
+  the holy ones; पिन्तेकुस्त; अन्य भाषाओं में बोलना (tongues); परमेश्वर की
+  आराधना करनेवाले for *sebomenoi*, परमेश्वर का भय माननेवाले for
+  *phoboumenoi*; *hairesis* दल for a party, पंथ for a sect.
+- Offices: proconsul प्रांतपति (L, B), रोमी शासक (R); governor राज्यपाल;
+  tribune सेनापति; church elders पुरनिए (L), बुज़ुर्ग अगुवे (B), कलीसिया के
+  अगुवे (R).
+- Address: speeches to crowds and councils आप; believers among themselves
+  तुम; prayer to God तू; prayer to the risen Jesus आप, as everyone
+  addresses him in the Gospels.
+- The brothers-and-sisters span: `{{gender:भाइयो और बहनो|भाइयो}}` in the
+  vocative, `{{gender:भाई-बहनों|भाइयों}}` in the oblique.
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is
