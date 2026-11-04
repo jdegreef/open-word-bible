@@ -294,6 +294,15 @@ Settled in Mark:
   Herodians हेरोदी; the divorce certificate तलाक़नामा, not त्यागपत्र (which
   now means a resignation letter).
 
+Settled in Luke:
+
+- *epistata* ("Master") is हे स्वामी; parable masters स्वामी (L), मालिक (B,
+  R), addressed with आप; प्रभु stays for God and Jesus.
+- Luke's lake (*limnē*) is झील at every level; *nomikos* व्यवस्थापक (L),
+  व्यवस्था का ज्ञाता (B), परमेश्वर की व्यवस्था के जानकार (R); *alēthōs*
+  मैं तुमसे सचमुच कहता हूँ, kept apart from *amēn*; परमप्रधान for the Most
+  High; woe तुम पर हाय.
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is
