@@ -67,6 +67,11 @@
           "L": "Julga-me, ó Deus, e defende a minha causa contra uma nação infiel; {{gender:da pessoa|do homem}} de engano e de injustiça livra-me.",
           "B": "Julga a meu favor, ó Deus, e assume a minha causa contra uma nação sem lealdade; livra-me das pessoas que mentem e praticam o mal.",
           "R": "Ó Deus, mostra que eu estou certo. Defende-me contra as pessoas que não são leais a {{deity_pronoun:ti|Ti}}. Salva-me das pessoas que mentem e são injustas."
+        },
+        "am": {
+          "L": "እግዚአብሔር ሆይ፣ ፍረድልኝ፤ ታማኝ ካልሆነ ሕዝብ ጋር ያለኝን ክርክር ተሟገትልኝ፤ ከአታላይና ከዓመፀኛ ሰው አድነኝ።",
+          "B": "እግዚአብሔር ሆይ፣ ፍርድ ስጥልኝ፤ ታማኝነት በሌለው ሕዝብ ፊት ጉዳዬን ያዝልኝ፤ ከሚዋሹና ግፍ ከሚሠሩ ሰዎች አድነኝ።",
+          "R": "እግዚአብሔር ሆይ፣ ትክክለኛ መሆኔን አሳይ። ለአንተ ታማኝ ካልሆኑ ሰዎች ተከላከልልኝ። ከሚዋሹና ፍትሕ ከሚያጓድሉ ሰዎች አድነኝ።"
         }
       },
       "decisions": [
@@ -205,6 +210,44 @@
           "reason": "As the English: the phrase means anyone deceitful and unjust. The article changes with the noun, so the whole phrase \"da pessoa\" / \"do homem\" is under the setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalises pronouns for God has nothing to change in Amharic; the Amharic text has no deity_pronoun spans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190430010082"
+          ],
+          "choice": "\"ሰው\" (person) with no gender span",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "The English offers an inclusive and a traditional wording here. The Amharic word (ሰው, የሰው ልጆች, or the generic singular suffix) already speaks of men and women alike, so there is no second wording to offer and no span (docs/amharic-style.md 7b). This holds for the rest of the psalm.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -273,6 +316,11 @@
           "L": "Pois {{deity_pronoun:tu|Tu}} [és] o Deus da minha fortaleza; por que me rejeitaste? Por que ando de luto sob a opressão do inimigo?",
           "B": "Pois {{deity_pronoun:tu|Tu}} és Deus, a minha fortaleza. Por que me afastaste de {{deity_pronoun:ti|Ti}}? Por que ando vestido de luto, enquanto o inimigo me aperta?",
           "R": "Tu és Deus e me guardas em segurança. Então por que me rejeitaste? Por que estou tão triste? Por que os meus inimigos me tratam tão mal?"
+        },
+        "am": {
+          "L": "አንተ የምሽጌ አምላክ ነህና፤ ለምን ጣልከኝ? በጠላት ግፍ ለምን እያዘንኩ እመላለሳለሁ?",
+          "B": "አንተ ምሽጌ የሆንከው አምላክ ነህና። ለምን ገፋኸኝ? ጠላት እያስጨነቀኝ ለምን የሐዘን ልብስ ለብሼ እመላለሳለሁ?",
+          "R": "አንተ እግዚአብሔር ነህ፤ ተጠብቄ እንድኖርም ታደርገኛለህ። ታዲያ ለምን ተውከኝ? ለምን እንዲህ አዝኛለሁ? ጠላቶቼስ ለምን እንዲህ ያንገላቱኛል?"
         }
       },
       "decisions": [
@@ -336,6 +384,26 @@
           "choice": "the second question worded as in 42:10",
           "alternatives": [],
           "reason": "The question repeats 42:10 (m2), so each level repeats the Portuguese of 42:10 word for word: \"Por que ando de luto sob a opressão do inimigo?\" (L), \"Por que ando vestido de luto, enquanto o inimigo me aperta?\" (B).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190430020072",
+            "o190430020111"
+          ],
+          "choice": "the second question in the same Amharic as 42:10 at each level",
+          "alternatives": [],
+          "reason": "The Hebrew repeats 42:10 here (see the meaning decision), so the Amharic does too.",
           "uncertain": false,
           "footnote": false
         }
@@ -409,6 +477,11 @@
           "L": "Envia a {{deity_pronoun:tua|Tua}} luz e a {{deity_pronoun:tua|Tua}} verdade; que elas me conduzam, que me tragam ao monte da {{deity_pronoun:tua|Tua}} santidade e às {{deity_pronoun:tuas|Tuas}} moradas.",
           "B": "Que a {{deity_pronoun:tua|Tua}} luz e a {{deity_pronoun:tua|Tua}} verdade saiam para me guiar; que elas me conduzam ao {{deity_pronoun:teu|Teu}} santo monte, ao lugar onde {{deity_pronoun:tu|Tu}} habitas.",
           "R": "Manda a {{deity_pronoun:tua|Tua}} luz e a {{deity_pronoun:tua|Tua}} verdade para me mostrar o caminho. Que elas me levem de volta ao {{deity_pronoun:teu|Teu}} santo monte, ao lugar onde {{deity_pronoun:tu|Tu}} moras."
+        },
+        "am": {
+          "L": "ብርሃንህንና እውነትህን ላክ፤ እነርሱ ይምሩኝ፤ ወደ ተቀደሰው ተራራህና ወደ ማደሪያዎችህ ያድርሱኝ።",
+          "B": "ይመሩኝ ዘንድ ብርሃንህና እውነትህ ይውጡ፤ ወደ ተቀደሰው ተራራህ፣ ወደምትኖርበት ስፍራ ያውጡኝ።",
+          "R": "መንገዱን እንዲያሳዩኝ ብርሃንህንና እውነትህን ላክ። ወደ ተቀደሰው ተራራህ፣ ወደምትኖርበት ስፍራ መልሰው ይውሰዱኝ።"
         }
       },
       "decisions": [
@@ -542,6 +615,11 @@
           "L": "E irei ao altar de Deus, a Deus, a alegria do meu júbilo, e {{deity_pronoun:te|Te}} darei graças com [a] lira, ó Deus, meu Deus.",
           "B": "Então subirei ao altar de Deus, a Deus, que é a minha alegria e o meu júbilo, e com a lira {{deity_pronoun:te|Te}} darei graças, ó Deus, meu Deus.",
           "R": "Então irei até o altar de Deus. Deus me deixa tão feliz! Vou tocar a harpa e {{deity_pronoun:te|Te}} agradecer, ó Deus, meu Deus."
+        },
+        "am": {
+          "L": "ወደ እግዚአብሔርም መሠዊያ እገባለሁ፤ የደስታዬ ሐሤት ወደ ሆነው ወደ እግዚአብሔር፤ እግዚአብሔር ሆይ፣ አምላኬ፣ በበገና አመሰግንሃለሁ።",
+          "B": "ከዚያም ወደ እግዚአብሔር መሠዊያ፣ ደስታዬና ሐሤቴ ወደ ሆነው ወደ እግዚአብሔር እወጣለሁ፤ እግዚአብሔር ሆይ፣ አምላኬ ሆይ፣ በበገና አመሰግንሃለሁ።",
+          "R": "ከዚያም ወደ እግዚአብሔር መሠዊያ እሄዳለሁ። እግዚአብሔር እጅግ ደስ ያሰኘኛል! እግዚአብሔር ሆይ፣ አምላኬ ሆይ፣ በገና እየደረደርኩ አመሰግንሃለሁ።"
         }
       },
       "decisions": [
@@ -590,6 +668,27 @@
             "lyre"
           ],
           "reason": "Readable uses the better-known word for a stringed instrument plucked by hand.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430040102"
+          ],
+          "choice": "the lyre (kinnor) as \"በገና\" at every level",
+          "alternatives": [
+            "\"መሰንቆ\""
+          ],
+          "reason": "As 1 Chronicles 15:21 on main, where the kinnor is \"በገና\" and the nevel (harp) \"መሰንቆ\"; the English Readable's \"harp\" is the same instrument.",
           "uncertain": false,
           "footnote": false
         }
@@ -666,6 +765,11 @@
           "L": "Por que você está abatida, ó minha alma, e por que se agita dentro de mim? Espere em Deus, pois ainda darei graças a {{deity_pronoun:ele|Ele}}, a salvação da minha face e o meu Deus.",
           "B": "Por que você está tão abatida, ó minha alma? Por que essa agitação dentro de mim? Espere em Deus; ainda darei graças a {{deity_pronoun:ele|Ele}}, aquele que me salva, o meu Deus.",
           "R": "Eu digo a mim mesmo: Por que você está tão triste? Por que está tão inquieto? Continue esperando em Deus! Ainda vou louvá-{{deity_pronoun:lo|Lo}}. Ele me salva. Ele é o meu Deus."
+        },
+        "am": {
+          "L": "ነፍሴ ሆይ፣ ለምን አቀረቀርሽ? በውስጤስ ለምን ትታወኪያለሽ? እግዚአብሔርን ተስፋ አድርጊ፤ የፊቴ መድኃኒትና አምላኬ የሆነውን ገና አመሰግነዋለሁና።",
+          "B": "ነፍሴ ሆይ፣ ለምን እንዲህ አቀረቀርሽ? ይህስ ውስጣዊ ሁከት ለምንድን ነው? እግዚአብሔርን ተስፋ አድርገሽ ጠብቂ፤ እርሱን፣ የሚያድነኝን አምላኬን፣ እንደ ገና አመሰግነዋለሁ።",
+          "R": "ነፍሴን እንዲህ እላታለሁ፦ ለምን እንዲህ አዘንሽ? ለምንስ እንዲህ ተረበሽሽ? በእግዚአብሔር ተስፋ ማድረግሽን አታቋርጪ! እንደ ገና አመሰግነዋለሁ። እርሱ ያድነኛል፤ እርሱ አምላኬ ነው።"
         }
       },
       "decisions": [
@@ -764,6 +868,25 @@
           "choice": "the refrain worded exactly as 42:12",
           "alternatives": [],
           "reason": "The Hebrew repeats 42:12 exactly (m4), so each level repeats the Portuguese of 42:12, with the soul addressed as \"você\" as decided at 42:6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190430050142"
+          ],
+          "choice": "the refrain in exactly the Amharic of 42:12",
+          "alternatives": [],
+          "reason": "The Hebrew of 43:5 is the same as 42:12, so the Amharic is the same at every level.",
           "uncertain": false,
           "footnote": false
         }

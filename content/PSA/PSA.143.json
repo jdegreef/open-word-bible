@@ -68,6 +68,11 @@
           "L": "Salmo de Davi. {{divine_name:SENHOR|Javé}}, ouve a minha oração; dá ouvidos às minhas súplicas; na {{deity_pronoun:tua|Tua}} fidelidade responde-me, na {{deity_pronoun:tua|Tua}} justiça.",
           "B": "Salmo de Davi. {{divine_name:SENHOR|Javé}}, ouve a minha oração; escuta quando suplico por misericórdia. Responde-me na {{deity_pronoun:tua|Tua}} fidelidade e na {{deity_pronoun:tua|Tua}} justiça.",
           "R": "Canção de Davi. {{divine_name:SENHOR|Javé}}, ouve a minha oração. Escuta quando eu {{deity_pronoun:te|Te}} peço socorro. Responde-me, porque {{deity_pronoun:tu|Tu}} és fiel e {{deity_pronoun:tu|Tu}} fazes o que é certo."
+        },
+        "am": {
+          "L": "የዳዊት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጸሎቴን ስማ፤ ልመናዬን አድምጥ፤ በታማኝነትህ መልስልኝ፣ በጽድቅህ።",
+          "B": "የዳዊት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጸሎቴን ስማ፤ ምሕረትህን ስለምን አድምጠኝ። በታማኝነትህና በጽድቅህ መልስልኝ።",
+          "R": "ዳዊት የዘመረው መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጸሎቴን ስማ። እንድትረዳኝ ስለምንህ አድምጠኝ። አንተ ታማኝ ነህ፤ ትክክል የሆነውንም ታደርጋለህ፤ ስለዚህ መልስልኝ።"
         }
       },
       "decisions": [
@@ -177,6 +182,25 @@
           "reason": "As the terms note and the style guide (의 for righteousness); Readable turns the nouns into what God is and does, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 143.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -245,6 +269,11 @@
           "L": "E não entres em juízo com o {{deity_pronoun:teu|Teu}} servo, pois nenhum vivente é justo diante de {{deity_pronoun:ti|Ti}}.",
           "B": "Não leves o {{deity_pronoun:teu|Teu}} servo a julgamento, pois nenhum ser vivo pode ser declarado justo diante de {{deity_pronoun:ti|Ti}}.",
           "R": "Por favor, não me leves ao tribunal para me julgar. Eu sou o {{deity_pronoun:teu|Teu}} servo. Ninguém que vive é inocente aos {{deity_pronoun:teus|Teus}} olhos."
+        },
+        "am": {
+          "L": "ከባሪያህም ጋር ወደ ፍርድ አትግባ፤ በፊትህ ሕያው ሁሉ አይጸድቅምና።",
+          "B": "አገልጋይህን ወደ ፍርድ አታቅርብ፤ በፊትህ የሚጸድቅ ሕያው ማንም የለምና።",
+          "R": "እባክህ ወደ ፍርድ አቅርበህ አትፍረድብኝ። እኔ አገልጋይህ ነኝ። በአንተ ፊት ንጹሕ የሆነ አንድም ሕያው ሰው የለም።"
         }
       },
       "decisions": [
@@ -418,6 +447,45 @@
           "reason": "Paul echoes this line in Romans 3:20 and Galatians 2:16 (m1). Balanced keeps their Portuguese, \"declarado justo diante dele\", \"nenhum ser humano será declarado justo\", which also says the court sense of the verb (m3). Literal keeps the Hebrew, an active \"is righteous\", rather than Paul's passive \"será justificada\"; Readable says \"inocente\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191430020081"
+          ],
+          "choice": "\"አይጸድቅም\" (is not righteous, is not found in the right)",
+          "alternatives": [
+            "\"ጻድቅ አይደለም\""
+          ],
+          "reason": "The line is echoed in Romans 3:20 and Galatians 2:16 (meaning decision m1), not quoted word for word; the verb of the court, \"be in the right\" (m3), is the \"ጸደቀ\" the Amharic of those verses uses, so a reader can hear the echo.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191430020051"
+          ],
+          "choice": "\"ባሪያህ\" (L), \"አገልጋይህ\" (B, R) for \"your servant\"",
+          "alternatives": [],
+          "reason": "As the terms list sets for \"your servant\" in prayer.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -487,6 +555,11 @@
           "L": "Pois [o] inimigo perseguiu a minha alma; esmagou a minha vida contra o chão; fez-me habitar em lugares escuros como os mortos de há muito tempo.",
           "B": "O inimigo me caçou e reduziu a minha vida a pó; deixou-me morando em lugares escuros, como gente morta há séculos.",
           "R": "O meu inimigo me perseguiu e me derrubou no chão. Ele me faz viver na escuridão, como se eu tivesse morrido há muito tempo."
+        },
+        "am": {
+          "L": "ጠላት ነፍሴን አሳዷልና፤ ሕይወቴን ወደ ምድር ቀጥቅጧል፤ ከጥንት እንደ ሞቱት በጨለማ ስፍራዎች አኖረኝ።",
+          "B": "ጠላት አሳድዶ ያዘኝ፤ ሕይወቴንም ደቁሶ ከአፈር ጋር ደባለቀው፤ ከብዙ ዘመን በፊት እንደ ሞቱ ሰዎች በጨለማ ስፍራ እንድኖር አደረገኝ።",
+          "R": "ጠላቴ አሳደደኝ፤ ደብድቦም መሬት ላይ ጣለኝ። ከብዙ ዘመን በፊት የሞትኩ ይመስል በጨለማ ውስጥ እንድኖር ያደርገኛል።"
         }
       },
       "decisions": [
@@ -598,6 +671,11 @@
           "L": "Por isso o meu espírito desfalece dentro de mim; no meu íntimo o meu coração está atônito.",
           "B": "O meu espírito afunda dentro de mim, e o meu coração está atordoado no meu peito.",
           "R": "Eu me sinto fraco e a ponto de desistir. Lá dentro de mim, estou em choque."
+        },
+        "am": {
+          "L": "ስለዚህ መንፈሴ በውስጤ ዛለ፤ ልቤ በውስጤ ደነዘዘ።",
+          "B": "መንፈሴ በውስጤ ደከመ፤ ልቤም በውስጤ ደነገጠ።",
+          "R": "ደክሜአለሁ፤ ተስፋም ልቆርጥ ነው። በውስጤ እጅግ ደንግጫለሁ።"
         }
       },
       "decisions": [
@@ -716,6 +794,11 @@
           "L": "Lembro-me [dos] dias de antigamente; medito em todo o {{deity_pronoun:teu|Teu}} agir; sobre [a] obra das {{deity_pronoun:tuas|Tuas}} mãos reflito.",
           "B": "Trago à memória os dias passados há muito tempo; penso em tudo o que {{deity_pronoun:tu|Tu}} fizeste e reflito sobre o que as {{deity_pronoun:tuas|Tuas}} mãos realizaram.",
           "R": "Eu me lembro do que aconteceu há muito tempo. Penso em tudo o que {{deity_pronoun:tu|Tu}} fizeste. Penso bastante nas grandes coisas que {{deity_pronoun:tu|Tu}} fizeste com as {{deity_pronoun:tuas|Tuas}} próprias mãos."
+        },
+        "am": {
+          "L": "የጥንቱን ዘመን አስታውሳለሁ፤ ሥራህን ሁሉ አሰላስላለሁ፤ በእጅህ ሥራ አስባለሁ።",
+          "B": "ያለፈውን የጥንት ዘመን አስታውሳለሁ፤ ያደረግኸውን ሁሉ አሰላስላለሁ፤ እጆችህ የሠሩትንም አስባለሁ።",
+          "R": "ከብዙ ዘመን በፊት የሆነውን አስታውሳለሁ። ያደረግኸውን ሁሉ አስባለሁ። በገዛ እጆችህ ያደረግሃቸውን ታላላቅ ነገሮች በጥልቅ አስባለሁ።"
         }
       },
       "decisions": [
@@ -831,6 +914,11 @@
           "L": "Estendi as minhas mãos para {{deity_pronoun:ti|Ti}}; a minha alma [é] como uma terra exausta por {{deity_pronoun:ti|Ti}}. Selá",
           "B": "Estendo as minhas mãos para {{deity_pronoun:ti|Ti}}; todo o meu ser espera por {{deity_pronoun:ti|Ti}} como um chão esgotado pela seca. Selá",
           "R": "Eu estendo as minhas mãos para {{deity_pronoun:ti|Ti}} em oração. Preciso de {{deity_pronoun:ti|Ti}} como a terra seca precisa de chuva. Selá"
+        },
+        "am": {
+          "L": "እጆቼን ወደ አንተ ዘረጋሁ፤ ነፍሴ ለአንተ እንደ ደከመ ምድር [ናት]። ሴላ",
+          "B": "እጆቼን ወደ አንተ እዘረጋለሁ፤ ሁለንተናዬ በድርቅ እንደ ዛለ መሬት አንተን ይናፍቃል። ሴላ",
+          "R": "በጸሎት እጆቼን ወደ አንተ እዘረጋለሁ። ደረቅ መሬት ዝናብ እንደሚያስፈልገው አንተ ያስፈልገኛል። ሴላ"
         }
       },
       "decisions": [
@@ -1057,6 +1145,11 @@
           "L": "Depressa responde-me, {{divine_name:SENHOR|Javé}}; o meu espírito se esgota. Não escondas de mim a {{deity_pronoun:tua|Tua}} face, ou serei como os que descem [à] cova.",
           "B": "{{divine_name:SENHOR|Javé}}, apressa-{{deity_pronoun:te|Te}} e responde-me; o meu espírito está desfalecendo. Não mantenhas a {{deity_pronoun:tua|Tua}} face escondida de mim, ou serei como os que afundam na cova.",
           "R": "{{divine_name:SENHOR|Javé}}, responde-me depressa. Não aguento mais muito tempo. Não {{deity_pronoun:te|Te}} afastes de mim, ou vou morrer como todos os que descem para a sepultura."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፈጥነህ መልስልኝ፤ መንፈሴ አለቀ። ፊትህን ከእኔ አትሰውር፤ ወደ ጉድጓድ እንደሚወርዱት እንዳልሆን።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፈጥነህ መልስልኝ፤ መንፈሴ ደክሟል። ፊትህን ከእኔ አትሰውር፤ አለዚያ ወደ ጉድጓድ እንደሚሰምጡት እሆናለሁ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፈጥነህ መልስልኝ። ከዚህ በላይ መቋቋም አልችልም። ፊትህን ከእኔ አታዙር፤ አለዚያ ወደ መቃብር እንደሚወርዱት ሁሉ እሞታለሁ።"
         }
       },
       "decisions": [
@@ -1150,6 +1243,25 @@
           "reason": "The words that close 28:1 (m2), as that verse's Portuguese has them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191430070121",
+            "o191430070131"
+          ],
+          "choice": "\"ወደ ጉድጓድ እንደሚወርዱት\" (L), \"ወደ ጉድጓድ እንደሚሰምጡት\" (B)",
+          "alternatives": [],
+          "reason": "The same words close 28:1 (meaning decision m2); the Amharic of 28:1 is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1223,6 +1335,11 @@
           "L": "Faze-me ouvir o {{deity_pronoun:teu|Teu}} amor leal pela manhã, pois em {{deity_pronoun:ti|Ti}} confiei; faze-me conhecer [o] caminho [por onde] devo andar, pois a {{deity_pronoun:ti|Ti}} elevo a minha alma.",
           "B": "Cada manhã, deixa-me ouvir falar do {{deity_pronoun:teu|Teu}} amor leal, pois é em {{deity_pronoun:ti|Ti}} que me apoio. Ensina-me por qual estrada andar, porque todo o meu ser se ergue para {{deity_pronoun:ti|Ti}}.",
           "R": "De manhã, deixa-me ouvir sobre o {{deity_pronoun:teu|Teu}} amor fiel, porque eu confio em {{deity_pronoun:ti|Ti}}. Mostra-me o caminho que devo seguir, porque desejo estar {{deity_pronoun:contigo|Contigo}} de todo o coração."
+        },
+        "am": {
+          "L": "ጽኑ ፍቅርህን በማለዳ አሰማኝ፤ በአንተ ታምኛለሁና። የምሄድበትን መንገድ አስታውቀኝ፤ ነፍሴን ወደ አንተ አነሣለሁና።",
+          "B": "በየማለዳው ጽኑ ፍቅርህን አሰማኝ፤ የምመካው በአንተ ነውና። የምሄድበትን መንገድ አስተምረኝ፤ ሁለንተናዬን ወደ አንተ አነሣለሁና።",
+          "R": "በማለዳ ስለ ታማኝ ፍቅርህ አሰማኝ፤ በአንተ እታመናለሁ። የምሄድበትን መንገድ አሳየኝ። በሙሉ ልቤ አንተን እናፍቃለሁ።"
         }
       },
       "decisions": [
@@ -1293,6 +1410,25 @@
           "reason": "Balanced and Readable say what the idiom means (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191430080031"
+          ],
+          "choice": "\"ጽኑ ፍቅር\" (L, B), \"ታማኝ ፍቅር\" (R) for chesed",
+          "alternatives": [],
+          "reason": "The terms list's word for chesed; Readable follows the English Readable \"faithful love\", as 5:8 on main.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1354,6 +1490,11 @@
           "L": "Livra-me dos meus inimigos, {{divine_name:SENHOR|Javé}}; junto a {{deity_pronoun:ti|Ti}} eu me escondi.",
           "B": "Arranca-me das mãos dos meus inimigos, {{divine_name:SENHOR|Javé}}; eu me abriguei em {{deity_pronoun:ti|Ti}}.",
           "R": "{{divine_name:SENHOR|Javé}}, salva-me dos meus inimigos. Eu vim até {{deity_pronoun:ti|Ti}} para me esconder."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከጠላቶቼ አድነኝ፤ በአንተ ዘንድ ተሸሸግኩ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከጠላቶቼ ነጥቀህ አድነኝ፤ በአንተ ዘንድ ተጠግቻለሁ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከጠላቶቼ አድነኝ። ልደበቅ ወደ አንተ መጥቻለሁ።"
         }
       },
       "decisions": [
@@ -1456,6 +1597,11 @@
           "L": "Ensina-me a fazer a {{deity_pronoun:tua|Tua}} vontade, pois {{deity_pronoun:tu|Tu}} [és] o meu Deus; que o {{deity_pronoun:teu|Teu}} bom Espírito me conduza numa terra plana.",
           "B": "Ensina-me a fazer o que {{deity_pronoun:te|Te}} agrada, pois {{deity_pronoun:tu|Tu}} és o meu Deus. Que o {{deity_pronoun:teu|Teu}} Espírito, que é bom, me guie por terreno plano.",
           "R": "Ensina-me a fazer o que {{deity_pronoun:tu|Tu}} queres, porque {{deity_pronoun:tu|Tu}} és o meu Deus. Que o {{deity_pronoun:teu|Teu}} bom Espírito me conduza por um caminho plano e seguro."
+        },
+        "am": {
+          "L": "ፈቃድህን አደርግ ዘንድ አስተምረኝ፤ አንተ አምላኬ [ነህ]ና፤ መልካሙ መንፈስህ በደልዳላ ምድር ይምራኝ።",
+          "B": "ደስ የሚያሰኝህን አደርግ ዘንድ አስተምረኝ፤ አንተ አምላኬ ነህና። መልካም የሆነው መንፈስህ በደልዳላ ምድር ይምራኝ።",
+          "R": "የምትፈልገውን እንዳደርግ አስተምረኝ፤ አንተ አምላኬ ነህ። መልካሙ መንፈስህ ደልዳላና አስተማማኝ በሆነ መንገድ ይምራኝ።"
         }
       },
       "decisions": [
@@ -1569,6 +1715,28 @@
           "reason": "The English reads God's own Spirit (meaning decision); the honorific \"-신\" marks this in Korean without naming the Holy Spirit, which the Hebrew does not.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191430100061",
+            "o191430100062"
+          ],
+          "choice": "\"አምላኬ\" (my God) for Elohim with a possessor",
+          "alternatives": [
+            "\"እግዚአብሔር\""
+          ],
+          "reason": "As the Psalms agree for Elohim: \"አምላክ\" with a possessive suffix and in address, \"እግዚአብሔር\" where the psalm speaks of the one God without one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1635,6 +1803,11 @@
           "L": "Por amor do {{deity_pronoun:teu|Teu}} nome, {{divine_name:SENHOR|Javé}}, conserva-me a vida; na {{deity_pronoun:tua|Tua}} justiça tira a minha alma da angústia.",
           "B": "{{divine_name:SENHOR|Javé}}, pela honra do {{deity_pronoun:teu|Teu}} nome, conserva-me a vida; na {{deity_pronoun:tua|Tua}} justiça tira-me da minha aflição.",
           "R": "{{divine_name:SENHOR|Javé}}, mantém-me vivo e mostra a todos como {{deity_pronoun:tu|Tu}} és. Tu sempre fazes o que é certo; então tira-me da minha aflição."
+        },
+        "am": {
+          "L": "ስለ ስምህ ብለህ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ሕያው አድርገኝ፤ በጽድቅህ ነፍሴን ከጭንቀት አውጣ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለስምህ ክብር ስትል በሕይወት አኑረኝ፤ በጽድቅህ ከጭንቀቴ አውጣኝ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በሕይወት አኑረኝ፤ ማንነትህንም ለሰዎች ሁሉ አሳይ። አንተ ሁልጊዜ ትክክል የሆነውን ታደርጋለህ፤ ስለዚህ ከመከራዬ አውጣኝ።"
         }
       },
       "decisions": [
@@ -1775,6 +1948,11 @@
           "L": "E no {{deity_pronoun:teu|Teu}} amor leal {{deity_pronoun:tu|Tu}} exterminarás os meus inimigos e destruirás todos os adversários da minha alma, pois eu [sou] o {{deity_pronoun:teu|Teu}} servo.",
           "B": "No {{deity_pronoun:teu|Teu}} amor leal {{deity_pronoun:tu|Tu}} darás fim aos meus inimigos e acabarás com todos os que atacam a minha vida, pois eu sou o {{deity_pronoun:teu|Teu}} servo.",
           "R": "Como {{deity_pronoun:tu|Tu}} me amas com fidelidade, {{deity_pronoun:tu|Tu}} vais destruir os meus inimigos. Tu vais acabar com todos os que estão contra mim, porque eu sou o {{deity_pronoun:teu|Teu}} servo."
+        },
+        "am": {
+          "L": "በጽኑ ፍቅርህም ጠላቶቼን ታጠፋለህ፤ የነፍሴንም ባላጋራዎች ሁሉ ትደመስሳለህ፤ እኔ ባሪያህ [ነኝ]ና።",
+          "B": "በጽኑ ፍቅርህ ጠላቶቼን ታጠፋለህ፤ ሕይወቴን የሚያጠቁትንም ሁሉ ትደመስሳለህ፤ እኔ አገልጋይህ ነኝና።",
+          "R": "በታማኝ ፍቅር ስለምትወደኝ ጠላቶቼን ታጠፋለህ። የሚቃወሙኝን ሁሉ ታስወግዳለህ፤ እኔ አገልጋይህ ነኝና።"
         }
       },
       "decisions": [

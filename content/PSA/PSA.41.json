@@ -53,6 +53,11 @@
           "L": "Para o regente: salmo de Davi.",
           "B": "Para o mestre de música. Salmo de Davi.",
           "R": "Para quem dirige a música. Canção de Davi."
+        },
+        "am": {
+          "L": "ለመዘምራን አለቃ፤ የዳዊት መዝሙር።",
+          "B": "ለመዘምራን አለቃ። የዳዊት መዝሙር።",
+          "R": "ለመዘምራን አለቃ። ዳዊት የዘመረው መዝሙር።"
         }
       },
       "decisions": [
@@ -99,6 +104,46 @@
           "choice": "the last psalm of Book One",
           "alternatives": [],
           "reason": "Psalm 41 closes the first of the five books of the Psalms (Psalms 1-41). Like Psalm 1 it begins \"How blessed\", and verse 14 is the praise that ends the book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalises pronouns for God has nothing to change in Amharic; the Amharic text has no deity_pronoun spans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410010011",
+            "o190410010012",
+            "o190410010021",
+            "o190410010031",
+            "o190410010032"
+          ],
+          "choice": "the heading as \"ለመዘምራን አለቃ\" and \"የዳዊት መዝሙር\" (Readable \"ዳዊት የዘመረው መዝሙር\")",
+          "alternatives": [],
+          "reason": "The heading formulas settled for all the Psalms, so that every heading of the book reads alike.",
           "uncertain": false,
           "footnote": false
         }
@@ -163,6 +208,11 @@
           "L": "Bem-aventurado [é] aquele que atenta para o fraco; no dia da angústia {{divine_name:o SENHOR|Javé}} o livrará.",
           "B": "Como são felizes os que cuidam do fraco! Quando vier a angústia, {{divine_name:o SENHOR|Javé}} os livrará.",
           "R": "Felizes de verdade são as pessoas que cuidam dos pobres e dos fracos. Quando vierem os problemas, {{divine_name:o SENHOR|Javé}} vai livrá-las."
+        },
+        "am": {
+          "L": "ለደካማው የሚያስብ ምስጉን ነው፤ በመከራ ቀን {{divine_name:እግዚአብሔር|ያህዌ}} ያድነዋል።",
+          "B": "ለደካሞች የሚያስቡ የተባረኩ ናቸው! መከራ በመጣ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ያድናቸዋል።",
+          "R": "ለድሆችና ለደካሞች የሚያስቡ ሰዎች በእውነት ደስተኞች ናቸው። መከራ ሲመጣ {{divine_name:እግዚአብሔር|ያህዌ}} ያድናቸዋል።"
         }
       },
       "decisions": [
@@ -287,6 +337,44 @@
           "reason": "The English needs gender spans for \"them/him\" and \"their/his\". In Portuguese \"aquele que atenta para o fraco\" already means anyone, and the \"o\", \"ele\" and \"seu\" that refer back to it are ordinary generic Portuguese (in verse 7 the subject is simply left unsaid), so there is nothing to choose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410020011"
+          ],
+          "choice": "\"How blessed\" (ʾashrei) as \"ምስጉን ነው\" (Literal), \"የተባረኩ ናቸው\" (Balanced), \"ደስተኞች ናቸው\" (Readable)",
+          "alternatives": [
+            "\"ብፁዕ ነው\""
+          ],
+          "reason": "The Psalms' settled wording for this word, one form per level as the English levels pitch it; \"ብፁዕ\" is Ge'ez and is kept for the Beatitudes' makarios.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "the generic singular (\"ለደካማው የሚያስብ\", the suffix -ው) with no gender span",
+          "alternatives": [
+            "a gender span on each pronoun"
+          ],
+          "reason": "The English Literal offers \"them\" or \"him\". The Amharic singular here speaks of anyone who cares for the weak, man or woman, as ሰው does, so there is no second wording to offer and no span (docs/amharic-style.md 7b). This holds for the rest of the psalm.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -357,6 +445,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} o guardará e o manterá vivo, e ele será chamado bem-aventurado na terra; e não o entregues ao desejo dos seus inimigos!",
           "B": "{{divine_name:O SENHOR|Javé}} os protegerá e os manterá vivos; eles serão considerados felizes na terra. Não os entregues à vontade dos seus inimigos!",
           "R": "{{divine_name:O SENHOR|Javé}} vai protegê-las e mantê-las vivas. As pessoas da terra vão dizer como a vida delas é boa. {{divine_name:SENHOR|Javé}}, não deixes que os inimigos delas façam com elas o que querem!"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቀዋል፤ በሕይወትም ያኖረዋል፤ በምድሪቱም ምስጉን ይባላል፤ ለጠላቶቹም ምኞት አሳልፈህ አትስጠው!",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቃቸዋል፤ በሕይወትም ያኖራቸዋል፤ በምድሪቱም የተባረኩ ተብለው ይቆጠራሉ። ለጠላቶቻቸው ፈቃድ አሳልፈህ አትስጣቸው!",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቃቸዋል፤ በሕይወትም ያኖራቸዋል። በምድሪቱ ያሉ ሰዎች ኑሮአቸው መልካም እንደ ሆነ ይናገራሉ። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቻቸው የፈለጉትን እንዲያደርጉባቸው አትፍቀድ!"
         }
       },
       "decisions": [
@@ -485,6 +578,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} o sustentará no leito de enfermidade; toda a sua cama {{deity_pronoun:tu|Tu}} transformaste na sua doença.",
           "B": "{{divine_name:O SENHOR|Javé}} os sustentará no leito de doença; quando estão doentes, {{deity_pronoun:tu|Tu}} transformas em saúde todo o seu leito de enfermidade.",
           "R": "Quando elas estiverem doentes na cama, {{divine_name:o SENHOR|Javé}} vai dar forças a elas. {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} vais fazê-las ficar boas de novo."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በሕመም አልጋ ላይ ይደግፈዋል፤ በበሽታው ጊዜ መኝታውን ሁሉ ገለበጥህለት።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በሕመም አልጋቸው ላይ ደግፎ ይይዛቸዋል፤ ሲታመሙም የሕመም አልጋቸውን ሁሉ ወደ ጤንነት ትለውጥላቸዋለህ።",
+          "R": "ታመው በአልጋ ላይ ሲተኙ {{divine_name:እግዚአብሔር|ያህዌ}} ብርታት ይሰጣቸዋል። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እንደ ገና ትፈውሳቸዋለህ።"
         }
       },
       "decisions": [
@@ -622,6 +720,11 @@
           "L": "Quanto a mim, eu disse: \"{{divine_name:SENHOR|Javé}}, sê gracioso comigo; cura a minha alma, pois pequei contra {{deity_pronoun:ti|Ti}}.\"",
           "B": "Eu disse: \"{{divine_name:SENHOR|Javé}}, mostra-me a {{deity_pronoun:tua|Tua}} graça! Cura-me, porque foi contra {{deity_pronoun:ti|Ti}} que eu pequei.\"",
           "R": "Eu disse: \"{{divine_name:SENHOR|Javé}}, sê bondoso comigo, por favor. Eu pequei contra {{deity_pronoun:ti|Ti}}. Por favor, cura-me.\""
+        },
+        "am": {
+          "L": "እኔስ እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ በአንተ ላይ ኃጢአት ሠርቻለሁና ነፍሴን ፈውሳት።»",
+          "B": "እኔም እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ! ኃጢአት የሠራሁት በአንተ ላይ ነውና ፈውሰኝ።»",
+          "R": "እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ ራራልኝ። በአንተ ላይ ኃጢአት ሠርቻለሁ። እባክህ ፈውሰኝ።»"
         }
       },
       "decisions": [
@@ -672,6 +775,28 @@
             "my soul"
           ],
           "reason": "Nefesh here is the whole person (as in 6:5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410050041",
+            "o190410050042"
+          ],
+          "choice": "\"be gracious to me\" (ḥanan) as \"ራራልኝ\"",
+          "alternatives": [
+            "\"ማረኝ\""
+          ],
+          "reason": "\"ማረኝ\" leans toward pardon (\"forgive me\"); the Hebrew asks for God's favour and kindness, which \"ራራልኝ\" (have pity on me, be kind to me) says. Used for this verb through Psalms 41-53 (41:11; 51:3).",
           "uncertain": false,
           "footnote": false
         }
@@ -738,6 +863,11 @@
           "L": "Os meus inimigos falam mal de mim: \"Quando ele morrerá, e perecerá o seu nome?\"",
           "B": "Os meus inimigos dizem coisas cruéis sobre mim: \"Quando é que ele vai morrer e ser apagado da memória?\"",
           "R": "Os meus inimigos dizem maldades sobre mim. Eles dizem: \"Quando é que ele vai morrer? Quando é que todo mundo vai se esquecer dele?\""
+        },
+        "am": {
+          "L": "ጠላቶቼ ስለ እኔ ክፉ ይናገራሉ፦ «መቼ ይሞታል? ስሙስ መቼ ይጠፋል?»",
+          "B": "ጠላቶቼ ስለ እኔ የጭካኔ ቃል ይናገራሉ፦ «መቼ ሞቶ ከትዝታ ይጠፋል?»",
+          "R": "ጠላቶቼ ስለ እኔ ክፉ ነገር ይናገራሉ። እንዲህ ይላሉ፦ «መቼ ይሞታል? ሰው ሁሉ መቼ ይረሳዋል?»"
         }
       },
       "decisions": [
@@ -838,6 +968,11 @@
           "L": "E, se [algum] vem ver [-me], fala palavras vazias; o seu coração ajunta maldade para si; sai para fora [e] fala [disso].",
           "B": "Quando algum deles vem me visitar, diz o que não pensa, enquanto por dentro ajunta más notícias; depois sai e as espalha.",
           "R": "Quando eles vêm me ver, fingem que são bondosos. Mas no coração estão procurando más notícias sobre mim. Depois saem e contam para todo mundo."
+        },
+        "am": {
+          "L": "[ከእነርሱ አንዱ] ሊያየኝ ቢመጣ ከንቱ ቃል ይናገራል፤ ልቡ ለራሱ ክፋትን ይሰበስባል፤ ወደ ውጭ ወጥቶ [ስለዚያ] ይናገራል።",
+          "B": "ከእነርሱ አንዳንዶቹ ሊጠይቁኝ ሲመጡ ከልባቸው ያልሆነ ቃል ይናገራሉ፤ በውስጣቸው ግን ክፉ ወሬ ይሰበስባሉ፤ ከዚያም ወጥተው ያወሩታል።",
+          "R": "ሊጠይቁኝ ሲመጡ ደግ መስለው ይቀርባሉ። በልባቸው ግን ስለ እኔ መጥፎ ወሬ ይፈልጋሉ። ከዚያም ወጥተው ለሰው ሁሉ ያወራሉ።"
         }
       },
       "decisions": [
@@ -928,6 +1063,27 @@
           "reason": "Readable says what the empty words are: false sympathy.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410070021",
+            "o190410070032"
+          ],
+          "choice": "\"come to visit\" as \"ሊጠይቁኝ\"",
+          "alternatives": [
+            "\"ሊያዩኝ\""
+          ],
+          "reason": "Amharic calls a visit to a sick person \"ሕመምተኛ መጠየቅ\", which is the scene the meaning decision describes; Literal keeps the Hebrew's \"to see\" (\"ሊያየኝ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -993,6 +1149,11 @@
           "L": "Juntos contra mim cochicham todos os que me odeiam; contra mim tramam o mal para mim, [dizendo]:",
           "B": "Todos os que me odeiam cochicham juntos a meu respeito; tramam o mal contra mim, dizendo:",
           "R": "Todos os que me odeiam cochicham sobre mim. Eles fazem planos maus contra mim e dizem:"
+        },
+        "am": {
+          "L": "የሚጠሉኝ ሁሉ በአንድነት በእኔ ላይ ያንሾካሹካሉ፤ በእኔ ላይ ጉዳት ያስቡብኛል፤ [እንዲህ ይላሉ]፦",
+          "B": "የሚጠሉኝ ሁሉ ስለ እኔ በአንድነት ያንሾካሹካሉ፤ ሊጎዱኝም እያሴሩ እንዲህ ይላሉ፦",
+          "R": "የሚጠሉኝ ሁሉ ስለ እኔ ያንሾካሹካሉ። በእኔ ላይ ክፉ ዕቅድ ያወጣሉ፤ እንዲህም ይላሉ፦"
         }
       },
       "decisions": [
@@ -1109,6 +1270,11 @@
           "L": "\"Uma coisa de perdição foi derramada sobre ele, e agora que se deitou não se levantará mais.\"",
           "B": "\"Alguma coisa mortal foi derramada nele; agora que caiu, nunca mais vai se levantar.\"",
           "R": "\"Uma coisa terrível tomou conta dele. Agora ele está de cama e nunca mais vai se levantar.\""
+        },
+        "am": {
+          "L": "«የከንቱነት ነገር በላዩ ፈሰሰበት፤ አሁን ስለ ተኛም ዳግመኛ አይነሣም።»",
+          "B": "«የሚገድል ነገር ወደ ውስጡ ፈስሷል፤ አሁን ስለ ወደቀ ከቶ ዳግመኛ አይነሣም።»",
+          "R": "«አንድ አስከፊ ነገር ይዞታል። አሁን አልጋ ላይ ወድቋል፤ ከእንግዲህ ከቶ አይነሣም።»"
         }
       },
       "decisions": [
@@ -1211,6 +1377,11 @@
           "L": "Até o homem da minha paz, em quem eu confiava, que comia o meu pão, levantou contra mim o calcanhar.",
           "B": "Até o amigo com quem eu vivia em paz, aquele em quem eu confiava, que comia o meu pão, levantou o calcanhar contra mim.",
           "R": "Até o meu melhor amigo se virou contra mim. Eu confiava nele. Ele comia à minha mesa."
+        },
+        "am": {
+          "L": "የታመንኩበት፣ እንጀራዬን የሚበላ የሰላሜ ሰው እንኳ ተረከዙን በእኔ ላይ አነሣ።",
+          "B": "ከእኔ ጋር በሰላም የኖረው ወዳጄ፣ የታመንኩበት፣ እንጀራዬን የሚበላው እርሱ እንኳ ተረከዙን በእኔ ላይ አነሣ።",
+          "R": "የቅርብ ወዳጄ እንኳ በእኔ ላይ ተነሣ። በእርሱ ታምኜ ነበር። እንጀራዬን አብሮኝ ይበላ ነበር።"
         }
       },
       "decisions": [
@@ -1339,6 +1510,28 @@
           "reason": "Jesus quotes this verse in John 13:18 (m4), whose Portuguese reads \"Aquele que come o meu pão levantou contra mim o seu calcanhar\" (L), \"levantou o calcanhar contra mim\" (B) and \"se virou contra mim\" (R). The psalm keeps those words at each level; the Hebrew has \"comia\" (ate, past) where John's Greek has the present.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410100021",
+            "o190410100111"
+          ],
+          "choice": "the New Testament's wording of John 13:18: \"እንጀራዬን የሚበላ ተረከዙን በእኔ ላይ አነሣ\" (Literal, Balanced); Readable \"በእኔ ላይ ተነሣ\", \"እንጀራዬን አብሮኝ\" as John's Readable",
+          "alternatives": [
+            "\"ተረከዙን አገነነብኝ\" (made great the heel)"
+          ],
+          "reason": "Jesus quotes this line of Judas (John 13:18). The Hebrew \"made great the heel\" and John's Greek \"lifted up the heel\" picture the same betrayal, so the Amharic keeps the words the Amharic New Testament already has.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1403,6 +1596,11 @@
           "L": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, sê gracioso comigo e levanta-me, para que eu lhes retribua.",
           "B": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, mostra-me a {{deity_pronoun:tua|Tua}} graça e levanta-me, para que eu possa retribuir a eles.",
           "R": "Mas, {{divine_name:SENHOR|Javé}}, sê bondoso comigo, por favor. Devolve-me a saúde, para que eu possa dar a eles o que merecem."
+        },
+        "am": {
+          "L": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ ብድራታቸውንም እመልስላቸው ዘንድ አስነሣኝ።",
+          "B": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ ብድራታቸውንም እንድከፍላቸው አንሣኝ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ ራራልኝ። ብድራታቸውን እንድከፍላቸው እንደ ገና ፈውሰኝ።"
         }
       },
       "decisions": [
@@ -1520,6 +1718,11 @@
           "L": "Por isto sei que {{deity_pronoun:tu|Tu}} tens prazer em mim: que o meu inimigo não grita em triunfo sobre mim.",
           "B": "É assim que eu sei que {{deity_pronoun:tu|Tu}} estás contente comigo: o meu inimigo não vai cantar vitória sobre mim.",
           "R": "Então vou saber que {{deity_pronoun:tu|Tu}} estás feliz comigo. O meu inimigo não vai vencer nem comemorar a minha derrota."
+        },
+        "am": {
+          "L": "በዚህ በእኔ ደስ እንደምትሰኝ አውቃለሁ፤ ጠላቴ በእኔ ላይ የድል ጩኸት አይጮኽምና።",
+          "B": "በእኔ ደስ እንደምትሰኝ በዚህ አውቃለሁ፤ ጠላቴ በእኔ ላይ ድል አድርጎ እልል አይልም።",
+          "R": "ያን ጊዜ በእኔ ደስ እንደምትሰኝ አውቃለሁ። ጠላቴ አያሸንፈኝም፤ በእኔም ላይ እልል አይልም።"
         }
       },
       "decisions": [
@@ -1618,6 +1821,11 @@
           "L": "E, quanto a mim, na minha integridade {{deity_pronoun:tu|Tu}} me sustentaste, e {{deity_pronoun:tu|Tu}} me puseste diante da {{deity_pronoun:tua|Tua}} face para sempre.",
           "B": "Quanto a mim, {{deity_pronoun:tu|Tu}} me seguras na minha integridade e me deixas ficar diante da {{deity_pronoun:tua|Tua}} face para sempre.",
           "R": "Tu me sustentas, porque o meu coração é fiel a {{deity_pronoun:ti|Ti}}. Tu vais me deixar ficar {{deity_pronoun:contigo|Contigo}} para sempre."
+        },
+        "am": {
+          "L": "እኔንስ በንጹሕ አቋሜ ደገፍከኝ፤ በፊትህም ለዘላለም አቆምከኝ።",
+          "B": "እኔን ግን በንጹሕ አቋሜ አጽንተህ ትይዘኛለህ፤ በፊትህም ለዘላለም እንድቆም ታደርገኛለህ።",
+          "R": "ልቤ ለአንተ ታማኝ ስለ ሆነ ትደግፈኛለህ። ለዘላለም ከአንተ ጋር እንድኖር ትፈቅድልኛለህ።"
         }
       },
       "decisions": [
@@ -1669,6 +1877,26 @@
           ],
           "reason": "Readable says what integrity means here (m1).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410130022"
+          ],
+          "choice": "integrity (tom) as \"ንጹሕ አቋም\"",
+          "alternatives": [
+            "\"ፍጹምነት\""
+          ],
+          "reason": "\"ፍጹምነት\" would suggest sinlessness, which the meaning decision rules out; \"ንጹሕ አቋም\" is the everyday word for an upright, undivided character.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -1736,6 +1964,11 @@
           "L": "Bendito [seja] {{divine_name:o SENHOR|Javé}}, o Deus de Israel, desde a eternidade até a eternidade! Amém e amém.",
           "B": "Bendito seja {{divine_name:o SENHOR|Javé}}, o Deus de Israel, desde os tempos antigos até os tempos que virão! Amém e amém.",
           "R": "Louvado seja {{divine_name:o SENHOR|Javé}}, o Deus de Israel! Ele sempre foi digno de louvor, e sempre será. Amém! Amém!"
+        },
+        "am": {
+          "L": "የእስራኤል አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ከዘላለም እስከ ዘላለም የተባረከ [ይሁን]። አሜን፣ አሜንም።",
+          "B": "የእስራኤል አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ከጥንት ጀምሮ እስከ ዘላለም ይባረክ! አሜን፣ አሜን።",
+          "R": "የእስራኤልን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! ሁልጊዜ ምስጋና ይገባው ነበር፤ ለዘላለምም ይገባዋል። አሜን! አሜን!"
         }
       },
       "decisions": [
@@ -1826,6 +2059,27 @@
             "Bendito seja ... para todo o sempre"
           ],
           "reason": "For the whole book: the praise that closes Book One (m1) has the wording of 1 Chronicles 16:36 in Portuguese, the same doxology as Psalm 106:48, at each level, and the other book endings (72:18-19; 89:53; 106:48) should repeat it where their Hebrew is the same. The doubled \"Amém e amém\" (m3) is kept as the Hebrew has it; Readable makes it two cries, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410140011",
+            "o190410140081",
+            "o190410140092"
+          ],
+          "choice": "the doxology in the wording of 1 Chronicles 16:36 (Literal \"… ከዘላለም እስከ ዘላለም የተባረከ [ይሁን]\", Balanced \"… ከጥንት ጀምሮ እስከ ዘላለም ይባረክ!\", Readable \"… አመስግኑ! ሁልጊዜ ምስጋና ይገባው ነበር፤ ለዘላለምም ይገባዋል\")",
+          "alternatives": [],
+          "reason": "The Hebrew of this blessing is the same as 1 Chronicles 16:36 and is echoed at the close of Books Two to Four (72:18-19; 89:53; 106:48), so the Amharic keeps one wording for it.",
           "uncertain": false,
           "footnote": false
         }
