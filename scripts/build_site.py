@@ -1948,6 +1948,26 @@ def comparison_ours(code):
     return moved
 
 
+@functools.lru_cache(maxsize=None)
+def paragraph_verses():
+    """{(book, chapter): frozenset of verse ids that open a paragraph}, our
+    numbering (paragraph_starts). A paragraph that opens with a verse's
+    second sentence (Philippians 4:5) cannot be marked by verse, so it is
+    not."""
+    out = {}
+    for book, chapter in chapters():
+        records, words = load_chapter(book, chapter)
+        first = {}
+        for r in records:
+            for vid in r["refs"]:
+                first.setdefault(vid, r["id"])
+        starts = set(paragraph_starts(records, words))
+        out[book, chapter] = frozenset(
+            vid for r in records if r["id"] in starts for vid in r["refs"][:1]
+            if refs.parse(vid).chapter == chapter and first[vid] == r["id"])
+    return out
+
+
 def verse_files():
     """{path: text} for every chapter of the Bible (see VERSES_DIR)."""
     ours, seen = {}, set()
@@ -1968,18 +1988,10 @@ def verse_files():
         ref = refs.parse(vid)
         by_chapter.setdefault((ref.book, ref.chapter), {"v": {}})["v"][str(ref.verse)] = langs
     # "p": the verses that open a paragraph, for the reader's edition
-    # (web/edition.js). A paragraph that opens with a verse's second
-    # sentence (Philippians 4:5) cannot be marked by verse, so it is not.
+    # (web/edition.js).
+    starts = paragraph_verses()
     for (book, chapter), entry in by_chapter.items():
-        records, words = load_chapter(book, chapter)
-        first = {}
-        for r in records:
-            for vid in r["refs"]:
-                first.setdefault(vid, r["id"])
-        starts = set(paragraph_starts(records, words))
-        verses = {refs.parse(vid).verse for r in records if r["id"] in starts for vid in r["refs"][:1]
-                  if refs.parse(vid).chapter == chapter and first[vid] == r["id"]}
-        entry["p"] = sorted(verses)
+        entry["p"] = sorted(refs.parse(vid).verse for vid in starts.get((book, chapter), ()))
     for code in COMPARISON_EDITIONS:
         for ref, text in comparison_ours(code).items():
             if str(ref) in ours:
@@ -3369,6 +3381,7 @@ def downloads():
     language with text, at every level, in every format."""
     records = _all_records()
     expected = [v for book, chapter in chapters() for v in chapter_verses(book, chapter)]
+    paragraphs = frozenset().union(*paragraph_verses().values())
     commit, date = build_commit()
     licence = (ROOT / "LICENSE").read_text(encoding="utf-8")
     have = status_counts()["languages"]
@@ -3378,7 +3391,7 @@ def downloads():
             continue
         for level in export.LEVELS:
             for fmt in DOWNLOAD_FORMATS:
-                name, _, data, m = export.build(records, lang, level, fmt, expected=expected,
+                name, _, data, m = export.build(records, lang, level, fmt, expected=expected, paragraphs=paragraphs,
                                                 generated_at=date, commit=commit)
                 buf = io.BytesIO()
                 if fmt == "usfm":
