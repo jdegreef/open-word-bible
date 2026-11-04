@@ -82,6 +82,11 @@
           "L": "Eis que eu envio o {{deity_pronoun:meu|Meu}} mensageiro, \\q que preparará o caminho diante de {{deity_pronoun:mim|Mim}}; \\q e de repente virá ao {{deity_pronoun:seu|Seu}} templo o Senhor a quem vocês buscam, e o mensageiro da aliança, de quem vocês se agradam; eis que {{deity_pronoun:ele|Ele}} vem, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "B": "Vejam, eu estou enviando o {{deity_pronoun:meu|Meu}} mensageiro, \\q que preparará o caminho à {{deity_pronoun:minha|Minha}} frente. \\q Então, de repente, o Senhor que vocês buscam virá ao {{deity_pronoun:seu|Seu}} templo; o mensageiro da aliança, que vocês desejam, está vindo, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "R": "Olhem! Eu vou enviar o {{deity_pronoun:meu|Meu}} mensageiro \\q para preparar o caminho para {{deity_pronoun:mim|Mim}}. \\q Então, de repente, o Senhor que vocês estão procurando virá ao {{deity_pronoun:seu|Seu}} templo. O mensageiro da aliança, aquele que vocês querem ver, está vindo, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos."
+        },
+        "am": {
+          "L": "እነሆ፣ መልእክተኛዬን እልካለሁ፤ \\q እርሱም በፊቴ መንገድን ያዘጋጃል፤ \\q የምትሹትም ጌታ በድንገት ወደ መቅደሱ ይመጣል፤ ደስ የምትሰኙበትም የቃል ኪዳኑ መልእክተኛ፤ እነሆ፣ ይመጣል፤ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።",
+          "B": "መልእክተኛዬን እልካለሁ፤ \\q እርሱም ከእኔ አስቀድሞ መንገድን ያዘጋጃል። \\q ከዚያም የምትፈልጉት ጌታ በድንገት ወደ ቤተ መቅደሱ ይመጣል፤ የምትናፍቁት የቃል ኪዳኑ መልእክተኛ ይመጣል፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።",
+          "R": "ተመልከቱ! መልእክተኛዬን እልካለሁ፤ \\q እርሱም መንገዱን ያዘጋጅልኛል። \\q ከዚያም የምትፈልጉት ጌታ በድንገት ወደ ቤተ መቅደሱ ይመጣል። ልታዩት የምትፈልጉት የቃል ኪዳኑ መልእክተኛ ይመጣል፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።"
         }
       },
       "decisions": [
@@ -463,6 +468,50 @@
           "reason": "Ha'adon is \"o Senhor\", the capital Portuguese gives Adonai and God's titles; \"o mensageiro da aliança\" stays lowercase, as the English, since the text does not settle who he is (m4), and \"mensageiro\" keeps the link with \"o meu mensageiro\" and the prophet's name. The pronouns for the coming Lord carry the setting, as in the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o390030010031",
+            "o390030010152"
+          ],
+          "choice": "no deity_pronoun spans in the Amharic of Malachi 3",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030010031",
+            "o390030010042",
+            "o390030010051",
+            "o390030010152"
+          ],
+          "choice": "Matthew 11:10, Mark 1:2 and Luke 7:27: \"መልእክተኛዬን … እልካለሁ\" and \"እርሱም … መንገድ … ያዘጋጃል\", as the Amharic Gospels; \"before me\" \"በፊቴ\" (L), \"ከእኔ አስቀድሞ\" (B), \"ያዘጋጅልኛል\" (R), from the Hebrew",
+          "alternatives": [
+            "\"በፊትህ … መንገድህን\" (before your face, your way), as the Gospels"
+          ],
+          "reason": "The Gospels apply the verse to John the Baptist in Greek that differs from the Hebrew: they read \"before your face\" and \"your way\", where the Hebrew has \"before me\" (meaning decision m3). The verse is drafted fresh from the Hebrew, keeping the Gospels' words where both say the same thing (\"my messenger\", \"I send\", \"prepare the way\"). \"ያዘጋጃል\" is also the verb of Isaiah 40:3 on main (\"መንገድ አዘጋጁ\"), which the Hebrew echoes (meaning decision m2). The Lord (ha'adon) is \"ጌታ\"; the messenger of the covenant \"የቃል ኪዳኑ መልእክተኛ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -538,6 +587,11 @@
           "L": "Mas quem pode suportar o dia da {{deity_pronoun:sua|Sua}} vinda? \\q E quem é o que fica de pé quando {{deity_pronoun:ele|Ele}} aparece? \\q Pois {{deity_pronoun:ele|Ele}} [é] como o fogo do refinador \\q e como o sabão dos lavandeiros.",
           "B": "Mas quem poderá suportar o dia da {{deity_pronoun:sua|Sua}} vinda? \\q Quem conseguirá se manter de pé quando {{deity_pronoun:ele|Ele}} aparecer? \\q Pois {{deity_pronoun:ele|Ele}} será como o fogo do refinador \\q e como o sabão dos que lavam roupa.",
           "R": "Mas quem vai conseguir sobreviver ao dia em que {{deity_pronoun:ele|Ele}} vier? \\q Quem vai conseguir ficar de pé quando {{deity_pronoun:ele|Ele}} aparecer? \\q Ele será como o fogo que deixa o metal puro, \\q como um sabão forte que deixa a roupa limpa."
+        },
+        "am": {
+          "L": "ነገር ግን የመምጣቱን ቀን ማን ሊቋቋመው ይችላል? \\q በሚገለጥበትስ ጊዜ የሚቆም ማን ነው? \\q እርሱ እንደ አንጣሪ እሳት፣ \\q እንደ ልብስ አጣቢዎችም ሳሙና [ነው]ና።",
+          "B": "ነገር ግን የመምጣቱን ቀን ማን ሊቋቋመው ይችላል? \\q በሚገለጥበትስ ጊዜ ጸንቶ ሊቆም የሚችል ማን ነው? \\q እርሱ እንደ አንጣሪ እሳት፣ \\q እንደ ልብስ አጣቢዎችም ሳሙና ይሆናልና።",
+          "R": "ነገር ግን እርሱ የሚመጣበትን ቀን ማን በሕይወት ሊያልፈው ይችላል? \\q በሚገለጥበት ጊዜ ማን ሊቆም ይችላል? \\q እርሱ ብረትን እንደሚያጠራ እሳት፣ \\q ልብስን እንደሚያነጻ ጠንካራ ሳሙና ይሆናል።"
         }
       },
       "decisions": [
@@ -676,6 +730,27 @@
           "reason": "The question echoes Joel 2:11 (m1), so each level uses the verb Joel's Portuguese has there: \"suportar\" at Literal and Balanced, \"sobreviver\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030020021",
+            "o390030020121",
+            "o390030020133"
+          ],
+          "choice": "who can endure \"ማን ሊቋቋመው ይችላል?\" (L, B), as Joel 2:11 on main; refiner \"አንጣሪ\" (from \"አነጠረ\", Isaiah 48:10); launderers' soap \"የልብስ አጣቢዎች ሳሙና\", as Jeremiah 2:22",
+          "alternatives": [],
+          "reason": "The question echoes Joel 2:11 (meaning decision m1), so it keeps Joel's Amharic words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -756,6 +831,11 @@
           "L": "E {{deity_pronoun:ele|Ele}} se assentará refinando e purificando a prata, \\q e purificará os filhos de Levi e os refinará \\q como o ouro e como a prata; \\q e eles serão {{divine_name:do SENHOR|de Javé}}, \\q apresentando uma oferta com retidão.",
           "B": "Ele se assentará como quem refina e purifica a prata; \\q {{deity_pronoun:ele|Ele}} purificará os descendentes de Levi e os refinará \\q como ouro e prata, \\q para que pertençam {{divine_name:ao SENHOR|a Javé}} \\q e tragam ofertas com retidão.",
           "R": "Ele se sentará como um trabalhador que derrete a prata para deixá-la pura. \\q Ele vai purificar os sacerdotes da tribo de Levi, \\q como se purificam o ouro e a prata. \\q Então eles vão trazer ofertas {{divine_name:ao SENHOR|a Javé}} \\q do jeito certo."
+        },
+        "am": {
+          "L": "እርሱም ብርን እንደሚያነጥርና እንደሚያጠራ ይቀመጣል፤ \\q የሌዊንም ልጆች ያነጻቸዋል፤ ያነጥራቸዋልም \\q እንደ ወርቅና እንደ ብር፤ \\q {{divine_name:ለእግዚአብሔር|ለያህዌ}}ም ይሆናሉ፤ \\q በጽድቅ መባን የሚያቀርቡ [ሆነው]።",
+          "B": "ብርን እንደሚያነጥርና እንደሚያጠራ ሰው ይቀመጣል፤ \\q የሌዊን ዘሮች ያነጻቸዋል፤ ያነጥራቸዋልም \\q እንደ ወርቅና እንደ ብር፤ \\q በዚህም {{divine_name:የእግዚአብሔር|የያህዌ}} ይሆናሉ፤ \\q በጽድቅም መባ ያቀርባሉ።",
+          "R": "ብርን አቅልጦ እንደሚያነጥር ሠራተኛ ይቀመጣል። \\q ከሌዊ ነገድ የሆኑትን ካህናት ያነጻቸዋል፤ \\q ወርቅና ብር እንደሚጠሩ። \\q ከዚያም መባቸውን {{divine_name:ለእግዚአብሔር|ለያህዌ}} \\q በትክክለኛው መንገድ ያቀርባሉ።"
         }
       },
       "decisions": [
@@ -961,6 +1041,11 @@
           "L": "E a oferta de Judá e de Jerusalém será agradável {{divine_name:ao SENHOR|a Javé}}, \\q como nos dias antigos \\q e como nos anos de outrora.",
           "B": "Então a oferta de Judá e de Jerusalém será agradável {{divine_name:ao SENHOR|a Javé}}, \\q como foi nos dias passados, \\q em anos de muito tempo atrás.",
           "R": "Então {{divine_name:o SENHOR|Javé}} ficará contente com as ofertas do povo de Judá e de Jerusalém, \\q como {{deity_pronoun:ele|Ele}} ficava muito tempo atrás, \\q em anos que já passaram."
+        },
+        "am": {
+          "L": "የይሁዳና የኢየሩሳሌም መባም {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ ይሆናል፤ \\q እንደ ቀድሞው ዘመን፣ \\q እንደ ጥንቱም ዓመታት።",
+          "B": "ከዚያም የይሁዳና የኢየሩሳሌም መባ {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል፤ \\q በቀድሞው ዘመን እንደ ነበረው፣ \\q ባለፉት ዓመታት እንደ ነበረው።",
+          "R": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} በይሁዳና በኢየሩሳሌም ሕዝብ መባ ደስ ይለዋል፤ \\q ከብዙ ዘመን በፊት ደስ ይለው እንደ ነበረ፣ \\q ባለፉት ዓመታት።"
         }
       },
       "decisions": [
@@ -1109,6 +1194,11 @@
           "L": "E eu me aproximarei de vocês para o juízo, \\q e serei uma testemunha pronta [a agir] contra os feiticeiros, contra os adúlteros, \\q e contra os que juram em falso, \\q e contra os que oprimem o assalariado no salário, a viúva e o órfão, e que desviam o estrangeiro, e não {{deity_pronoun:me|Me}} temem, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "B": "Eu me aproximarei de vocês para julgar. \\q Serei rápido em testemunhar contra os feiticeiros e os adúlteros \\q e os que juram em falso, \\q contra os que roubam o salário dos trabalhadores, que oprimem as viúvas e os órfãos e negam justiça aos estrangeiros, e que não {{deity_pronoun:me|Me}} temem, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "R": "Eu virei para julgar vocês. \\q Vou ser rápido em falar contra os que praticam feitiçaria e os que cometem adultério \\q e os que mentem debaixo de juramento. \\q Vou falar contra os que enganam os trabalhadores no pagamento e maltratam as viúvas e os órfãos, e contra os que negam justiça aos estrangeiros que moram entre vocês. Nenhum deles {{deity_pronoun:me|Me}} teme, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos."
+        },
+        "am": {
+          "L": "ለፍርድም ወደ እናንተ እቀርባለሁ፤ \\q በመተተኞችና በአመንዝሮች ላይ ፈጣን ምስክር እሆናለሁ፤ \\q በሐሰትም በሚምሉ ላይ፣ \\q የምንደኛውን ደመወዝ በሚቀሙ፣ መበለቲቱንና ድሀ አደጉን በሚያስጨንቁ፣ መጻተኛውንም [ከፍርድ] በሚያስወግዱ፣ እኔንም በማይፈሩ ላይ [ምስክር እሆናለሁ]፣ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።",
+          "B": "ለፍርድ ወደ እናንተ እቀርባለሁ። \\q በመተተኞችና በአመንዝሮች ላይ ፈጥኜ እመሰክራለሁ፤ \\q በሐሰት በሚምሉም ላይ፣ \\q የቅጥር ሠራተኞችን ደመወዝ በሚያጭበረብሩ፣ መበለቶችንና ድሀ አደጎችን በሚጨቁኑ፣ መጻተኞችንም ፍትሕ በሚነፍጉ፣ እኔንም በማይፈሩ ላይ እመሰክራለሁ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።",
+          "R": "እናንተን ለመፍረድ እመጣለሁ። \\q መተት በሚያደርጉና በሚያመነዝሩ ላይ \\q በሐሰትም በሚምሉ ላይ ፈጥኜ እመሰክራለሁ። \\q ሠራተኞችን ደመወዛቸውን በሚያጭበረብሩ፣ መበለቶችንና ወላጅ የሌላቸውን ልጆች በሚበድሉ፣ በመካከላችሁ ለሚኖሩ ስደተኞችም ፍትሕ በሚከለክሉ ላይ እመሰክራለሁ። ከእነርሱ አንዳቸውም አይፈሩኝም፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።"
         }
       },
       "decisions": [
@@ -1274,6 +1364,27 @@
           "reason": "\"Órfão\" is the ordinary Portuguese word for the fatherless child, so every level uses it; the sojourner is \"o estrangeiro\", as the terms list has it for ger, with Readable adding \"que moram entre vocês\" as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030050072",
+            "o390030050083",
+            "o390030050171"
+          ],
+          "choice": "sorcerers \"መተተኞች\" (as Exodus 7:11 and Deuteronomy 18:10); adulterers \"አመንዝሮች\"; the fatherless \"ድሀ አደግ\" (L, B); the sojourner (ger) \"መጻተኛ\" (L, B), \"ስደተኛ\" (R)",
+          "alternatives": [],
+          "reason": "The sins are those the law names (meaning decision m2), so the law's Amharic words are used, as the Pentateuch list sets them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1337,6 +1448,11 @@
           "L": "Pois eu, {{divine_name:o SENHOR|Javé}}, não mudo; \\q e vocês, filhos de Jacó, não chegaram ao fim.",
           "B": "Eu sou {{divine_name:o SENHOR|Javé}} e não mudo; \\q por isso vocês, descendentes de Jacó, não foram destruídos.",
           "R": "Eu sou {{divine_name:o SENHOR|Javé}}, e eu nunca mudo. \\q É por isso que vocês, o povo de Jacó, não foram destruídos."
+        },
+        "am": {
+          "L": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} አልለወጥምና፤ \\q እናንተም የያዕቆብ ልጆች ሆይ፣ አላለቃችሁም።",
+          "B": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ፤ አልለወጥም፤ \\q ስለዚህ እናንተ የያዕቆብ ዘሮች አልጠፋችሁም።",
+          "R": "እኔ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ፤ ከቶ አልለወጥም። \\q ስለዚህ እናንተ የያዕቆብ ሕዝብ አልጠፋችሁም።"
         }
       },
       "decisions": [
@@ -1535,6 +1651,25 @@
           "reason": "The English Literal puts \"children / sons of Jacob\" under the gender setting; Portuguese \"filhos\" already includes daughters (docs/pentateuch-portuguese-terms.md), so Literal says \"filhos de Jacó\" with no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o390030060071"
+          ],
+          "choice": "no gender span: \"የያዕቆብ ልጆች\" (L)",
+          "alternatives": [
+            "a gender span on \"children / sons\""
+          ],
+          "reason": "The English offers \"children / sons of Jacob\". \"ልጆች\" already includes daughters, so the Amharic has no span, as the Pentateuch list sets for \"the sons of Israel\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1614,6 +1749,11 @@
           "L": "Desde os dias dos pais de vocês, vocês se desviaram dos {{deity_pronoun:meus|Meus}} estatutos e não [os] guardaram. \\q Voltem para {{deity_pronoun:mim|Mim}}, e eu voltarei para vocês, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos. \\q Mas vocês dizem: \"Em que voltaremos?\"",
           "B": "Desde os dias dos antepassados de vocês, vocês se desviaram dos {{deity_pronoun:meus|Meus}} estatutos e não os guardaram. \\q Voltem para {{deity_pronoun:mim|Mim}}, e eu voltarei para vocês, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos. \\q Mas vocês perguntam: \"De que maneira voltaremos?\"",
           "R": "Desde o tempo dos seus antepassados, vocês se afastaram das {{deity_pronoun:minhas|Minhas}} leis e não as obedeceram. \\q Voltem para {{deity_pronoun:mim|Mim}}, e eu voltarei para vocês, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos. \\q Mas vocês perguntam: \"Como podemos voltar?\""
+        },
+        "am": {
+          "L": "ከአባቶቻችሁ ዘመን ጀምሮ ከሥርዓቶቼ ፈቀቅ ብላችኋል፤ አልጠበቃችኋቸውምም። \\q ወደ እኔ ተመለሱ፤ እኔም ወደ እናንተ እመለሳለሁ፣ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት። \\q እናንተ ግን፦ «የምንመለሰው እንዴት ነው?» ትላላችሁ።",
+          "B": "ከአባቶቻችሁ ዘመን ጀምሮ ከሥርዓቶቼ ርቃችኋል፤ አልጠበቃችኋቸውምም። \\q ወደ እኔ ተመለሱ፤ እኔም እንደገና ወደ እናንተ እመለሳለሁ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q እናንተ ግን፦ «በምን መንገድ እንመለሳለን?» ብላችሁ ትጠይቃላችሁ።",
+          "R": "ከአባቶቻችሁ ዘመን ጀምሮ ከሕጎቼ ዞር ብላችኋል፤ አልታዘዛችኋቸውምም። \\q ወደ እኔ ተመለሱ፤ እኔም ወደ እናንተ እመለሳለሁ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q እናንተ ግን፦ «እንዴት ልንመለስ እንችላለን?» ብላችሁ ትጠይቃላችሁ።"
         }
       },
       "decisions": [
@@ -1827,6 +1967,29 @@
           "reason": "The call (m1) is the same at every level, with the one Portuguese verb \"voltar\" for the one Hebrew verb said twice, as the English Literal keeps it; \"voltem para mim\" is the wording of Joel 2:12 in Portuguese, and Zechariah 1:3 shares these words. The people's question uses the same verb, so the dispute turns on it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030070071",
+            "o390030070092",
+            "o390030070161"
+          ],
+          "choice": "return (shuv) \"ተመለሰ\" at every level: \"ወደ እኔ ተመለሱ፤ እኔም ወደ እናንተ እመለሳለሁ\"; statutes \"ሥርዓቶች\" (L, B), laws \"ሕጎች\" (R)",
+          "alternatives": [
+            "\"ኑ\" (come back, R)"
+          ],
+          "reason": "One verb carries the call and the people's question, as the prophets list sets \"return\"; Zechariah 1:3 has the same words in Hebrew (meaning decision m1) and should read alike. Balanced adds \"እንደገና\" for the English \"again\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1899,6 +2062,11 @@
           "L": "Acaso roubará um mortal a Deus? Pois vocês {{deity_pronoun:me|Me}} roubam. \\q Mas vocês dizem: \"Em que {{deity_pronoun:te|Te}} roubamos?\" \\q [No] dízimo e na contribuição.",
           "B": "Pode um mortal roubar a Deus? Pois vocês estão {{deity_pronoun:me|Me}} roubando. \\q Mas vocês perguntam: \"De que maneira {{deity_pronoun:te|Te}} roubamos?\" \\q Nos dízimos e nas ofertas.",
           "R": "Alguém deveria roubar a Deus? Pois vocês estão {{deity_pronoun:me|Me}} roubando! \\q Mas vocês perguntam: \"Como estamos {{deity_pronoun:te|Te}} roubando?\" \\q Vocês {{deity_pronoun:me|Me}} roubam quando não trazem os seus dízimos e as suas ofertas."
+        },
+        "am": {
+          "L": "ሰው እግዚአብሔርን ይዘርፋልን? ሆኖም እናንተ እኔን ትዘርፉኛላችሁ። \\q እናንተ ግን፦ «የዘረፍንህ እንዴት ነው?» ትላላችሁ። \\q በአሥራቱና በሚነሣው መባ [ነው]።",
+          "B": "ሰው እግዚአብሔርን ይዘርፋልን? ሆኖም እናንተ ትዘርፉኛላችሁ። \\q እናንተ ግን፦ «በምን መንገድ እንዘርፍሃለን?» ብላችሁ ትጠይቃላችሁ። \\q በአሥራትና በመባ ነው።",
+          "R": "ማንም እግዚአብሔርን ሊዘርፍ ይገባልን? ሆኖም እናንተ እየዘረፋችሁኝ ነው! \\q እናንተ ግን፦ «የምንዘርፍህ እንዴት ነው?» ብላችሁ ትጠይቃላችሁ። \\q አሥራታችሁንና ስጦታችሁን ባለማምጣታችሁ ትዘርፉኛላችሁ።"
         }
       },
       "decisions": [
@@ -2067,6 +2235,26 @@
           "reason": "The tithe (m1) is \"o dízimo\" at every level. The terumah, the portion set apart for the priests, is \"contribuição\" at Literal, which keeps it distinct from minchah (\"oferta\", 1:10), and \"ofertas\" at Balanced and Readable, as the English says \"offerings\"; \"oferta alçada\" is the archaic church term.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030080112",
+            "o390030080123"
+          ],
+          "choice": "the tithe \"አሥራት\"; the contribution (terumah) \"የሚነሣ መባ\" (L), \"መባ\" (B), \"ስጦታ\" (R); rob \"ዘረፈ\"",
+          "alternatives": [],
+          "reason": "As the settled Pentateuch terms for the tithe and the contribution (meaning decision m1). \"ሆኖም\" opens the LORD's reply so that \"እናንተ ግን\" is kept for the disputation frame.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2132,6 +2320,11 @@
           "L": "Com maldição vocês são amaldiçoados, \\q pois vocês {{deity_pronoun:me|Me}} roubam, \\q a nação inteira.",
           "B": "Vocês estão debaixo de maldição, \\q porque estão {{deity_pronoun:me|Me}} roubando, \\q a nação inteira.",
           "R": "Vocês estão debaixo de maldição, \\q porque a nação inteira está {{deity_pronoun:me|Me}} roubando."
+        },
+        "am": {
+          "L": "በመርገም ተረግማችኋል፤ \\q እኔን ትዘርፉኛላችሁና፤ \\q እናንተ ሕዝብ ሁላችሁ።",
+          "B": "ከመርገም በታች ናችሁ፤ \\q እኔን ትዘርፉኛላችሁና፤ \\q እናንተ ሕዝብ ሁላችሁ።",
+          "R": "ከመርገም በታች ናችሁ፤ \\q ሕዝቡ ሁሉ እየዘረፈኝ ነውና።"
         }
       },
       "decisions": [
@@ -2261,6 +2454,11 @@
           "L": "Tragam o dízimo inteiro para a casa do tesouro, para que haja alimento na {{deity_pronoun:minha|Minha}} casa, \\q e provem-{{deity_pronoun:me|Me}}, por favor, nisto, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos, \\q [para ver] se eu não abrirei para vocês as janelas dos céus \\q e não derramarei sobre vocês bênção até que não haja mais necessidade.",
           "B": "Tragam o dízimo completo para a casa do tesouro, para que haja alimento na {{deity_pronoun:minha|Minha}} casa. \\q Testem-{{deity_pronoun:me|Me}} nisto, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos, \\q e vejam se eu não abro para vocês as janelas do céu \\q e não derramo sobre vocês uma bênção até que tenham mais do que o suficiente.",
           "R": "Tragam para os armazéns do templo a décima parte inteira da colheita de vocês, para que haja comida na {{deity_pronoun:minha|Minha}} casa. \\q Façam este teste {{deity_pronoun:comigo|Comigo}}, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos. \\q Vejam se eu não abro para vocês as janelas do céu \\q e não derramo bênçãos sobre vocês até vocês terem mais do que precisam."
+        },
+        "am": {
+          "L": "በቤቴ ምግብ ይሆን ዘንድ አሥራቱን ሁሉ ወደ ግምጃ ቤቱ አምጡ፤ \\q እባካችሁ፣ በዚህም ፈትኑኝ፣ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፤ \\q የሰማያትን መስኮቶች ባልከፍትላችሁ፣ \\q ፍላጎትም እስከማይኖር ድረስ በረከትን ባላፈስላችሁ [እዩ]።",
+          "B": "በቤቴ ምግብ እንዲኖር አሥራቱን በሙሉ ወደ ግምጃ ቤቱ አምጡ። \\q በዚህ ፈትኑኝ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q የሰማይን መስኮቶች ከፍቼ \\q ከሚበቃችሁ በላይ በረከትን ባላፈስላችሁ እዩ።",
+          "R": "በቤቴ ምግብ እንዲኖር የመከራችሁን አሥረኛ ሁሉ በቤተ መቅደሱ ወዳሉት ግምጃ ቤቶች አምጡ። \\q በዚህ መንገድ ፈትኑኝ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q የሰማዩን መስኮቶች ከፍቼ \\q ከምትፈልጉት በላይ በረከትን ባላፈስላችሁ እስቲ እዩ።"
         }
       },
       "decisions": [
@@ -2438,6 +2636,25 @@
           "reason": "A well-known verse, drafted from the gloss. \"A casa do tesouro\" (L, B) keeps the Hebrew \"house of the store\", the temple storerooms of m1, which Readable names. The invitation to test the LORD (m2) is \"provar\" at Literal, the verb verse 15 repeats, and \"testar\" at Balanced and Readable, so that the people's later complaint (\"testam a Deus\") turns his words back on him at each level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030100072"
+          ],
+          "choice": "the storehouse \"ግምጃ ቤት\", as Nehemiah 13:12; \"see if I do not open … and pour out\" \"… ባልከፍትላችሁ … ባላፈስላችሁ እዩ\"",
+          "alternatives": [],
+          "reason": "The storerooms are those Nehemiah names (meaning decision m1). The Hebrew oath form \"if I do not\" is the Amharic challenge \"…ባላደርግ እዩ\" (\"see if I don't\"), which says the LORD surely will; Literal brackets the \"see\" the Hebrew leaves unsaid.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2517,6 +2734,11 @@
           "L": "E repreenderei por vocês o devorador, \\q e ele não destruirá o fruto da terra de vocês, \\q e a videira de vocês no campo não será estéril, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "B": "Repreenderei o devorador em favor de vocês, \\q para que não destrua as colheitas da terra de vocês, \\q e as suas videiras no campo não deixarão de dar fruto, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "R": "Vou acabar com as pragas que comem as plantações de vocês. \\q As suas videiras não vão deixar de dar uvas, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos."
+        },
+        "am": {
+          "L": "ስለ እናንተም በላተኛውን እገሥጻለሁ፤ \\q የምድራችሁንም ፍሬ አያጠፋም፤ \\q በእርሻም ያለው ወይናችሁ ፍሬ አልባ አይሆንም፤ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።",
+          "B": "ስለ እናንተ በላተኛውን እገሥጻለሁ፤ \\q የምድራችሁን ሰብል አያጠፋም፤ \\q በእርሻችሁ ያሉ የወይን ተክሎቻችሁም ፍሬ ማፍራታቸውን አያቋርጡም፤ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።",
+          "R": "ሰብላችሁን የሚበሉትን ተባዮች አስቆማለሁ። \\q የወይን ተክሎቻችሁም ፍሬ ማፍራታቸውን አያቆሙም፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።"
         }
       },
       "decisions": [
@@ -2675,6 +2897,11 @@
           "L": "E todas as nações chamarão vocês de bem-aventurados, \\q pois vocês serão uma terra de delícias, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "B": "Então todas as nações chamarão vocês de bem-aventurados, \\q porque vocês serão uma terra agradável, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "R": "Então as pessoas de todas as nações vão dizer que vocês são felizes, \\q porque a terra de vocês será um lugar maravilhoso para viver, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos."
+        },
+        "am": {
+          "L": "አሕዛብም ሁሉ ብፁዓን ይሏችኋል፤ \\q እናንተ የደስታ ምድር ትሆናላችሁና፤ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።",
+          "B": "ከዚያም አሕዛብ ሁሉ ብፁዓን ይሏችኋል፤ \\q ደስ የምታሰኝ ምድር ትሆናላችሁና፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።",
+          "R": "ከዚያም ከሕዝቦች ሁሉ የመጡ ሰዎች የተባረካችሁ እንደ ሆናችሁ ይናገራሉ፤ \\q ምድራችሁ ለመኖር እጅግ ያማረች ስፍራ ትሆናለችና፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።"
         }
       },
       "decisions": [
@@ -2732,6 +2959,24 @@
             "chamar de abençoados"
           ],
           "reason": "The verb means to count someone happy and fortunate (m2), the word family of \"bem-aventurado\", which Portuguese uses for the Beatitudes; Readable says \"felizes\", as Matthew's Readable does. \"Abençoado\" would mean that someone has received a blessing. Verse 15 repeats the verb with the same words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030120012"
+          ],
+          "choice": "call blessed (ishsher) \"ብፁዓን ይሏችኋል\" (L, B), and the same verb in 3:15",
+          "alternatives": [],
+          "reason": "The verb returns in verse 15 (meaning decision m2), where the complainers \"call the arrogant blessed\", so it keeps one Amharic word in both places at Literal and Balanced.",
           "uncertain": false,
           "footnote": false
         }
@@ -2799,6 +3044,11 @@
           "L": "As palavras de vocês têm sido duras contra {{deity_pronoun:mim|Mim}}, diz {{divine_name:o SENHOR|Javé}}. \\q Mas vocês dizem: \\q \"O que falamos entre nós contra {{deity_pronoun:ti|Ti}}?\"",
           "B": "Vocês disseram coisas duras contra {{deity_pronoun:mim|Mim}}, diz {{divine_name:o SENHOR|Javé}}. \\q Mas vocês perguntam: \\q \"O que dissemos contra {{deity_pronoun:ti|Ti}}?\"",
           "R": "Vocês disseram coisas terríveis sobre {{deity_pronoun:mim|Mim}}, diz {{divine_name:o SENHOR|Javé}}. \\q Mas vocês perguntam: \"O que dissemos sobre {{deity_pronoun:ti|Ti}}?\""
+        },
+        "am": {
+          "L": "ቃላችሁ በእኔ ላይ ከብዷል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q እናንተ ግን፦ \\q «በአንተ ላይ የተነጋገርነው ምንድን ነው?» ትላላችሁ።",
+          "B": "በእኔ ላይ ክፉ ቃል ተናግራችኋል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q እናንተ ግን፦ \\q «በአንተ ላይ ምን ተናገርን?» ብላችሁ ትጠይቃላችሁ።",
+          "R": "ስለ እኔ አስከፊ ነገር ተናግራችኋል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q እናንተ ግን፦ «ስለ አንተ ምን ተናገርን?» ብላችሁ ትጠይቃላችሁ።"
         }
       },
       "decisions": [
@@ -2916,6 +3166,11 @@
           "L": "Vocês disseram: \\q \"Inútil [é] servir a Deus; \\q e que proveito [há] em termos guardado as {{deity_pronoun:suas|Suas}} obrigações \\q e em termos andado de luto \\q diante {{divine_name:do SENHOR|de Javé}} dos Exércitos?",
           "B": "Vocês disseram: \"É inútil servir a Deus. \\q O que ganhamos em cumprir as {{deity_pronoun:suas|Suas}} exigências \\q e andar por aí como quem está de luto \\q diante {{divine_name:do SENHOR|de Javé}} dos Exércitos?",
           "R": "Vocês disseram: \"Não adianta nada servir a Deus. \\q De que nos serve obedecer a {{deity_pronoun:ele|Ele}} \\q e andar de luto \\q diante {{divine_name:do SENHOR|de Javé}} dos Exércitos?"
+        },
+        "am": {
+          "L": "እንዲህ ብላችኋል፦ \\q «እግዚአብሔርን ማገልገል ከንቱ ነው፤ \\q ትእዛዙን መጠበቃችን ምን ትርፍ አለው? \\q በሐዘንስ መመላለሳችን \\q {{divine_name:በእግዚአብሔር|በያህዌ}} ጸባኦት ፊት [ምን ትርፍ አለው]?",
+          "B": "እንዲህ ብላችኋል፦ «እግዚአብሔርን ማገልገል ዋጋ የለውም። \\q ትእዛዞቹን በመጠበቅ \\q እንደ ሐዘንተኞችም በመመላለስ \\q በሠራዊት አምላክ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ምን እናገኛለን?",
+          "R": "እንዲህ ብላችኋል፦ «እግዚአብሔርን ማገልገል ጥቅም የለውም። \\q እርሱን መታዘዛችን \\q በሐዘንም መመላለሳችን \\q በሠራዊት አምላክ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ምን ጠቀመን?"
         }
       },
       "decisions": [
@@ -3041,6 +3296,25 @@
           "reason": "These are not words addressed to God, as the retorts are, but what the people say to one another (meaning decision), so they take 해라체; they still speak of God as \"그분\". The quotation runs on into verse 15, as in the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o390030140011"
+          ],
+          "choice": "the people's words open here with «, and close at the end of verse 15, as the English",
+          "alternatives": [],
+          "reason": "The complaint runs over two verses, so the quotation opens in this record and closes in the next. \"ከንቱ\" (L) and \"ዋጋ የለውም\" (B) give the Hebrew \"futile\"; profit \"ትርፍ\", as Ecclesiastes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3107,6 +3381,11 @@
           "L": "E agora \\q nós chamamos de bem-aventurados os arrogantes; \\q não só são edificados os que praticam a maldade, \\q mas também provam a Deus e escapam.\"",
           "B": "Por isso, agora nós consideramos bem-aventurados os arrogantes. \\q Os que fazem o mal não só prosperam; \\q eles testam a Deus e saem impunes.\"",
           "R": "Agora nós achamos que os orgulhosos é que são felizes. \\q As pessoas que fazem o mal se dão bem. \\q Elas testam a Deus, e nada acontece com elas.\""
+        },
+        "am": {
+          "L": "አሁንም \\q እኛ ትዕቢተኞችን ብፁዓን እንላለን፤ \\q ክፋትን የሚያደርጉ ይታነጻሉ ብቻ ሳይሆን፣ \\q እግዚአብሔርንም ይፈትናሉ፤ ያመልጣሉም።»",
+          "B": "ስለዚህ አሁን ትዕቢተኞችን ብፁዓን ብለን እንቆጥራለን። \\q ክፉ አድራጊዎች የሚበለጽጉ ብቻ አይደሉም፤ \\q እግዚአብሔርን ይፈትናሉ፤ ምንም ሳይደርስባቸውም ያመልጣሉ።»",
+          "R": "አሁን ትዕቢተኞችን ደስተኞች ናቸው ብለን እናስባለን። \\q ክፉ የሚያደርጉ ሰዎች ይሳካላቸዋል። \\q እግዚአብሔርን ይፈትናሉ፤ ምንም አይደርስባቸውም።»"
         }
       },
       "decisions": [
@@ -3263,6 +3542,11 @@
           "L": "Então os que temiam {{divine_name:o SENHOR|Javé}} falaram uns com os outros; \\q e {{divine_name:o SENHOR|Javé}} prestou atenção e ouviu, \\q e um livro de memória foi escrito diante {{deity_pronoun:dele|Dele}} \\q para os que temiam {{divine_name:o SENHOR|Javé}} e estimavam o {{deity_pronoun:seu|Seu}} nome.",
           "B": "Então os que temiam {{divine_name:o SENHOR|Javé}} conversaram uns com os outros, \\q e {{divine_name:o SENHOR|Javé}} prestou atenção e os ouviu. \\q Um livro de memória foi escrito na {{deity_pronoun:sua|Sua}} presença \\q a respeito dos que temiam {{divine_name:o SENHOR|Javé}} e honravam o {{deity_pronoun:seu|Seu}} nome.",
           "R": "Então as pessoas que temiam {{divine_name:o SENHOR|Javé}} conversaram umas com as outras, \\q e {{divine_name:o SENHOR|Javé}} prestou atenção e ouviu o que elas diziam. \\q Foi escrito na {{deity_pronoun:sua|Sua}} presença um registro \\q das pessoas que temiam {{divine_name:o SENHOR|Javé}} e honravam o {{deity_pronoun:seu|Seu}} nome."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩ እርስ በርሳቸው ተነጋገሩ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}}ም አደመጠ፤ ሰማም፤ \\q በፊቱም የመታሰቢያ መጽሐፍ ተጻፈ፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ለሚፈሩና ስሙን ለሚያስቡ።",
+          "B": "በዚያን ጊዜ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩ እርስ በርሳቸው ተነጋገሩ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}}ም አደመጠ፤ ሰማቸውም። \\q በፊቱም የመታሰቢያ መጽሐፍ ተጻፈ፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ስለሚፈሩና ስሙን ስለሚያከብሩ ሰዎች።",
+          "R": "በዚያን ጊዜ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩ ሰዎች እርስ በርሳቸው ተነጋገሩ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}}ም አደመጠ፤ የተናገሩትንም ሰማ። \\q በፊቱም መዝገብ ተጻፈ፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩትንና ስሙን የሚያከብሩትን የሚዘረዝር።"
         }
       },
       "decisions": [
@@ -3449,6 +3733,26 @@
           "reason": "The record of those to be remembered (m2) is \"um livro de memória\" at Literal and Balanced, keeping the Hebrew \"book of remembrance\"; Readable says \"um registro\", as the English Readable says \"a record\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030160131",
+            "o390030160173"
+          ],
+          "choice": "a book of remembrance \"የመታሰቢያ መጽሐፍ\" (L, B), \"መዝገብ\" (R); esteem his name \"ስሙን ያስባሉ\" (L), \"ስሙን ያከብራሉ\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew verb \"think, consider\"; Balanced and Readable say \"honour\", as the English, the sense meaning decision m3 gives.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3529,6 +3833,11 @@
           "L": "E eles serão {{deity_pronoun:meus|Meus}}, diz {{divine_name:o SENHOR|Javé}} dos Exércitos, \\q para o dia em que eu agir, \\q uma propriedade especial; \\q e eu os pouparei \\q como um homem poupa o seu filho que o serve.",
           "B": "Eles serão {{deity_pronoun:meus|Meus}}, diz {{divine_name:o SENHOR|Javé}} dos Exércitos, \\q o {{deity_pronoun:meu|Meu}} tesouro especial \\q no dia em que eu agir. \\q Eu os pouparei \\q como um pai poupa o filho que o serve.",
           "R": "Eles vão pertencer a {{deity_pronoun:mim|Mim}}, diz {{divine_name:o SENHOR|Javé}} dos Exércitos. \\q No dia em que eu agir, eles serão o {{deity_pronoun:meu|Meu}} tesouro especial. \\q Eu terei compaixão deles, \\q como um pai tem compaixão de um filho que o serve."
+        },
+        "am": {
+          "L": "ለእኔም ይሆናሉ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፣ \\q ለማደርግበት ቀን፣ \\q የግል ሀብት፤ \\q እራራላቸዋለሁም፤ \\q ሰው የሚያገለግለውን ልጁን እንደሚራራለት።",
+          "B": "የእኔ ይሆናሉ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q ውድ ሀብቴ ይሆናሉ \\q በማደርግበት ቀን። \\q እራራላቸዋለሁ፤ \\q አባት የሚያገለግለውን ልጁን እንደሚራራለት።",
+          "R": "የእኔ ይሆናሉ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q በማደርግበት ቀን ውድ ሀብቴ ይሆናሉ። \\q ምሕረት አደርግላቸዋለሁ፤ \\q አባት ለሚያገለግለው ልጁ ምሕረት እንደሚያደርግ።"
         }
       },
       "decisions": [
@@ -3731,6 +4040,25 @@
           "reason": "Segullah keeps the Portuguese published at Exodus 19:5 (m1): \"propriedade especial\" at Literal and \"tesouro especial\" at Balanced and Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030170101"
+          ],
+          "choice": "special possession (segullah) \"የግል ሀብት\" (L), \"ውድ ሀብት\" (B, R), as Exodus 19:5 on main; the day when I act \"በማደርግበት ቀን\", the same in 3:21",
+          "alternatives": [],
+          "reason": "The word recalls the LORD's words at Sinai (meaning decision m1), so it keeps the Amharic of Exodus 19:5.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3799,6 +4127,11 @@
           "L": "E vocês voltarão a ver \\q [a diferença] entre o justo e o ímpio, \\q entre o que serve a Deus \\q e o que não {{deity_pronoun:o|O}} serve.",
           "B": "Então vocês verão outra vez a diferença \\q entre o justo e o ímpio, \\q entre quem serve a Deus \\q e quem não {{deity_pronoun:o|O}} serve.",
           "R": "Então vocês vão ver de novo a diferença \\q entre as pessoas que fazem o que é certo e as que fazem o mal, \\q entre as que servem a Deus \\q e as que não servem."
+        },
+        "am": {
+          "L": "እናንተም ተመልሳችሁ ታያላችሁ \\q በጻድቁና በክፉው መካከል [ያለውን ልዩነት]፣ \\q እግዚአብሔርን በሚያገለግለው \\q እርሱንም በማያገለግለው መካከል።",
+          "B": "ከዚያም እንደገና ልዩነቱን ታያላችሁ፤ \\q በጻድቁና በክፉው መካከል፣ \\q እግዚአብሔርን በሚያገለግለውና \\q እርሱን በማያገለግለው መካከል።",
+          "R": "ከዚያም ልዩነቱን እንደገና ታያላችሁ፤ \\q ትክክል የሆነውን በሚያደርጉና ክፉ በሚያደርጉ ሰዎች መካከል፣ \\q እግዚአብሔርን በሚያገለግሉና \\q በማያገለግሉት መካከል።"
         }
       },
       "decisions": [
@@ -3964,6 +4297,11 @@
           "L": "Pois eis que o dia vem, \\q ardendo como um forno, \\q e todos os arrogantes e todo aquele que pratica a maldade serão palha; \\q e o dia que vem os incendiará, diz {{divine_name:o SENHOR|Javé}} dos Exércitos, \\q de modo que não lhes deixará nem raiz nem ramo.",
           "B": "Pois vejam: o dia está chegando, \\q ardente como uma fornalha, \\q quando todos os arrogantes e todos os que praticam o mal serão palha. \\q O dia que está chegando vai incendiá-los, diz {{divine_name:o SENHOR|Javé}} dos Exércitos, \\q e não lhes deixará nem raiz nem ramo.",
           "R": "Olhem! O dia está chegando. \\q Ele vai queimar como um forno quente. \\q Todos os orgulhosos e todos os que fazem o mal serão como palha seca. \\q Naquele dia eles serão queimados por completo, diz {{divine_name:o SENHOR|Javé}} dos Exércitos. \\q Não vai sobrar nada deles, nem raiz nem galho."
+        },
+        "am": {
+          "L": "እነሆ፣ ቀኑ ይመጣልና፤ \\q እንደ ምድጃ የሚነድድ፤ \\q ትዕቢተኞች ሁሉ ክፋትንም የሚያደርጉ ሁሉ ገለባ ይሆናሉ፤ \\q የሚመጣውም ቀን ያቃጥላቸዋል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፤ \\q ሥርንም ቅርንጫፍንም አይተውላቸውም።",
+          "B": "ቀኑ ይመጣልና፤ \\q እንደ እቶን የሚነድድ፤ \\q በዚያም ትዕቢተኞች ሁሉና ክፉ አድራጊዎች ሁሉ ገለባ ይሆናሉ። \\q የሚመጣው ቀን ያነድዳቸዋል፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q ሥርም ቅርንጫፍም አያስቀርላቸውም።",
+          "R": "ተመልከቱ! ቀኑ ይመጣል። \\q እንደ ጋለ ምድጃ ይነድዳል። \\q ትዕቢተኞች ሁሉና ክፉ የሚያደርጉ ሁሉ እንደ ደረቅ ገለባ ይሆናሉ። \\q በዚያ ቀን ይቃጠላሉ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q ሥርም ሆነ ቅርንጫፍ ምንም አይቀርላቸውም።"
         }
       },
       "decisions": [
@@ -4095,6 +4433,25 @@
           "reason": "The text follows the Hebrew numbering, as the English does (meaning decision); Korean readers know Malachi 3:19-24 as 4:1-6, so the footnote of the meaning decision applies to them too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030190062"
+          ],
+          "choice": "oven \"ምድጃ\" (L), furnace \"እቶን\" (B), hot oven \"የጋለ ምድጃ\" (R); stubble \"ገለባ\"",
+          "alternatives": [],
+          "reason": "The words follow the English levels and the forms on main (Hosea 7:4 \"ምድጃ\", Isaiah 48:10 \"እቶን\"). The verse number is the Hebrew one (4:1 in many Bibles), as the meaning decision explains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4168,6 +4525,11 @@
           "L": "Mas para vocês que temem o {{deity_pronoun:meu|Meu}} nome nascerá um sol de justiça, \\q e cura [haverá] nas suas asas; \\q e vocês sairão e saltitarão como bezerros do estábulo.",
           "B": "Mas para vocês que reverenciam o {{deity_pronoun:meu|Meu}} nome nascerá o sol da justiça, \\q trazendo cura nas suas asas. \\q Vocês sairão saltando como bezerros soltos do estábulo.",
           "R": "Mas para vocês que honram o {{deity_pronoun:meu|Meu}} nome, o sol da justiça vai nascer. \\q Os seus raios vão trazer cura. \\q Vocês vão sair pulando de alegria como bezerros soltos do curral."
+        },
+        "am": {
+          "L": "ስሜን ለምትፈሩ ለእናንተ ግን የጽድቅ ፀሐይ ትወጣለች፤ \\q በክንፎቿም ፈውስ [ይሆናል]፤ \\q እናንተም ትወጣላችሁ፤ እንደ ጋጣ ጥጆችም ትፈነጫላችሁ።",
+          "B": "ስሜን ለምትፈሩ ለእናንተ ግን የጽድቅ ፀሐይ ትወጣለች፤ \\q በክንፎቿም ፈውስን ታመጣለች። \\q ከጋጣ እንደ ተለቀቁ ጥጆችም እየፈነጫችሁ ትወጣላችሁ።",
+          "R": "ስሜን ለምታከብሩ ለእናንተ ግን የጽድቅ ፀሐይ ትወጣለች። \\q ጨረሮቿ ፈውስ ያመጣሉ። \\q ከጋጣቸው እንደ ተለቀቁ ጥጆች በደስታ እየዘለላችሁ ትወጣላችሁ።"
         }
       },
       "decisions": [
@@ -4382,6 +4744,26 @@
           "reason": "The phrase readers know (m1, m3) is kept at every level, as the English keeps it: \"o sol da justiça\", with \"um sol de justiça\" at Literal, which has no article as the Hebrew. Elsewhere this root is \"retidão\" (3:3), but \"sol da retidão\" would hide the familiar picture; \"justiça\" here means God's putting things right, as m1 says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030200051",
+            "o390030200121"
+          ],
+          "choice": "the sun of righteousness \"የጽድቅ ፀሐይ\" at every level; calves of the stall \"የጋጣ ጥጆች\", as Amos 6:4",
+          "alternatives": [],
+          "reason": "The phrase stays a picture of the LORD's righteousness dawning (meaning decision m1), not a title; Luke 1:78 (\"ንጋት\", the dawn) alludes to it but does not quote it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4452,6 +4834,11 @@
           "L": "E vocês pisarão os ímpios, \\q pois eles se tornarão cinza \\q sob as plantas dos pés de vocês, \\q no dia em que eu agir, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "B": "Vocês pisotearão os ímpios; \\q eles serão cinza \\q debaixo dos pés de vocês \\q no dia em que eu agir, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos.",
           "R": "Vocês vão pisar nos maus como se eles fossem cinza \\q debaixo dos seus pés. \\q Isso vai acontecer no dia em que eu agir, \\q diz {{divine_name:o SENHOR|Javé}} dos Exércitos."
+        },
+        "am": {
+          "L": "ክፉዎችንም ትረግጣላችሁ፤ \\q አመድ ይሆናሉና \\q ከእግራችሁ መዳፍ በታች፣ \\q በማደርግበት ቀን፣ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።",
+          "B": "ክፉዎችን ትረግጣላችሁ፤ \\q አመድ ይሆናሉ \\q ከእግራችሁ በታች፣ \\q በማደርግበት ቀን፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።",
+          "R": "ክፉዎችን እንደ አመድ ትረግጣላችሁ፤ \\q ከእግራችሁ በታች ይሆናሉ። \\q ይህም በማደርግበት ቀን ይሆናል፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።"
         }
       },
       "decisions": [
@@ -4558,6 +4945,11 @@
           "L": "Lembrem-se da Lei de Moisés, {{deity_pronoun:meu|Meu}} servo, \\q que eu lhe ordenei em Horebe para todo o Israel, \\q estatutos e ordenanças.",
           "B": "Lembrem-se da Lei do {{deity_pronoun:meu|Meu}} servo Moisés, \\q dos estatutos e das ordenanças que eu lhe ordenei em Horebe para todo o Israel.",
           "R": "Lembrem-se da Lei do {{deity_pronoun:meu|Meu}} servo Moisés. \\q Eu dei a ele essas leis e essas regras no monte Horebe para todo o povo de Israel."
+        },
+        "am": {
+          "L": "የባሪያዬን የሙሴን ሕግ አስቡ፤ \\q ለእስራኤል ሁሉ በኮሬብ ያዘዝኩትን፣ \\q ሥርዓቶችንና ፍርዶችን።",
+          "B": "የአገልጋዬን የሙሴን ሕግ አስቡ፤ \\q ለእስራኤል ሁሉ በኮሬብ ያዘዝኩትን ሥርዓቶችንና ደንቦችን።",
+          "R": "የአገልጋዬን የሙሴን ሕግ አስታውሱ። \\q ለእስራኤል ሕዝብ ሁሉ በኮሬብ ተራራ እነዚያን ሕጎችና ደንቦች ሰጠሁት።"
         }
       },
       "decisions": [
@@ -4768,6 +5160,27 @@
           "reason": "Here torah is the Law of Moses itself, as the English says, so Portuguese writes \"a Lei\" with the capital the style guide gives the Law of Moses (section 5), as Ezra 3:2 does in Portuguese; elsewhere in Malachi torah is \"instrução\" (2:6-9). \"Meu servo\" is kept at every level for the LORD's title for Moses, as the English; \"Horebe\" as the terms list. \"Estatutos e ordenanças\" follow the terms list for the pair.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030220021",
+            "o390030220082",
+            "o390030220132"
+          ],
+          "choice": "the law of Moses \"የሙሴ ሕግ\"; my servant \"ባሪያዬ\" (L), \"አገልጋዬ\" (B, R); Horeb \"ኮሬብ\"; statutes and judgments \"ሥርዓቶችና ፍርዶች\" (L), \"ሥርዓቶችና ደንቦች\" (B), \"ሕጎችና ደንቦች\" (R)",
+          "alternatives": [],
+          "reason": "As Deuteronomy 4:5 on main and the settled terms for mishpatim; here torah is the law given at Horeb, so \"ሕግ\" rather than the \"ትምህርት\" of 2:6-9.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4839,6 +5252,11 @@
           "L": "Eis que eu envio a vocês \\q o profeta Elias \\q antes que venha o dia {{divine_name:do SENHOR|de Javé}}, \\q o grande e temível [dia].",
           "B": "Vejam, eu estou enviando a vocês \\q o profeta Elias \\q antes que chegue o dia {{divine_name:do SENHOR|de Javé}}, \\q aquele grande e terrível dia.",
           "R": "Olhem! Eu vou enviar a vocês \\q o profeta Elias \\q antes que chegue o dia {{divine_name:do SENHOR|de Javé}}. \\q Será um dia grande e terrível."
+        },
+        "am": {
+          "L": "እነሆ፣ እኔ ወደ እናንተ እልካለሁ \\q ነቢዩን ኤልያስን፣ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን ከመምጣቱ በፊት፣ \\q ታላቁና የሚያስፈራው [ቀን]።",
+          "B": "እኔ እልክላችኋለሁ \\q ነቢዩን ኤልያስን፣ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን ከመምጣቱ በፊት፣ \\q ያ ታላቅና አስፈሪ ቀን።",
+          "R": "ተመልከቱ! እኔ እልክላችኋለሁ \\q ነቢዩን ኤልያስን፣ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን ከመምጣቱ በፊት። \\q ያ ቀን ታላቅና አስፈሪ ይሆናል።"
         }
       },
       "decisions": [
@@ -5069,6 +5487,46 @@
           "reason": "Where Malachi repeats Joel 3:4 (m3), each level reuses its Portuguese: \"antes que venha o dia do SENHOR, o grande e temível [dia]\" (L), \"antes que chegue o dia do SENHOR, aquele grande e terrível dia\" (B), \"Será um dia grande e terrível\" (R). \"Elias\" is the Portuguese form the Gospels use (Luke 1:17; Matthew 17:11), and \"o profeta Elias\" is the order Portuguese gives a title.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030230101",
+            "o390030230122",
+            "o390030230133"
+          ],
+          "choice": "the great and fearful day as Joel 3:4 on main: \"ታላቁና የሚያስፈራው [ቀን]\" (L), \"ያ ታላቅና አስፈሪ ቀን\" (B), \"ያ ቀን ታላቅና አስፈሪ ይሆናል\" (R); Elijah the prophet \"ነቢዩ ኤልያስ\"",
+          "alternatives": [],
+          "reason": "The Hebrew is the same as Joel 3:4 (meaning decision m3), so Joel's Amharic is copied level by level. The New Testament takes up the promise of Elijah (Matthew 11:14; 17:10-11; Mark 9:11-12; Luke 1:17) without quoting this verse's words; \"ኤልያስ\" and \"ነቢዩ ኤልያስ\" are the forms of the Amharic Gospels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o390030230061"
+          ],
+          "choice": "\"I am sending\" ends the first line and Elijah follows on the second",
+          "alternatives": [],
+          "reason": "The English sets \"I am sending to you\" and \"Elijah the prophet\" on two lines. Amharic puts the object before the verb in prose; in these lines the verb comes first and Elijah follows, so that each line keeps its own part of the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5141,6 +5599,11 @@
           "L": "E ele converterá o coração dos pais aos filhos \\q e o coração dos filhos aos seus pais, \\q para que eu não venha \\q e fira a terra [como] coisa consagrada à destruição.",
           "B": "Ele converterá o coração dos pais aos filhos \\q e o coração dos filhos aos seus pais, \\q para que eu não venha \\q e fira a terra, consagrando-a à destruição.",
           "R": "Ele vai reaproximar os pais e os filhos, \\q para que o coração de uns se volte para os outros. \\q Senão, eu virei \\q e destruirei a terra completamente."
+        },
+        "am": {
+          "L": "እርሱም የአባቶችን ልብ ወደ ልጆቻቸው \\q የልጆችንም ልብ ወደ አባቶቻቸው ይመልሳል፤ \\q እኔ መጥቼ \\q ምድሪቱን ለጥፋት ለይቼ እንዳልመታ።",
+          "B": "የአባቶችን ልብ ወደ ልጆቻቸው፣ \\q የልጆችንም ልብ ወደ አባቶቻቸው ይመልሳል፤ \\q ይህም መጥቼ \\q ምድሪቱን ፈጽሜ እንዳላጠፋ ነው።",
+          "R": "አባቶችንና ልጆቻቸውን እንደገና ያቀራርባል፤ \\q ልባቸውም እርስ በርሱ ይመለሳል። \\q አለበለዚያ እኔ መጥቼ \\q ምድሪቱን ፈጽሜ አጠፋታለሁ።"
         }
       },
       "decisions": [
@@ -5468,6 +5931,51 @@
             "com anátema"
           ],
           "reason": "Cherem is the ban (m3), the word of Jericho and the Canaanite cities, so it takes the Portuguese set for it in Deuteronomy 7:2 and Joshua 6:17: \"coisa consagrada à destruição\" at Literal, \"consagrar à destruição\" at Balanced, \"destruir completamente\" at Readable. The familiar \"ferir a terra com maldição\" is avoided: it would confuse the ban with the curse (me'erah) of 2:2 and 3:9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o390030240012",
+            "o390030240021",
+            "o390030240062"
+          ],
+          "choice": "Luke 1:17: \"የአባቶችን ልብ ወደ ልጆቻቸው … ይመልሳል\" (L, B) and \"አባቶችንና ልጆቻቸውን እንደገና ያቀራርባል\" (R), as the Amharic of Luke; the verb \"ይመልሳል\" as Matthew 17:11 (\"ሁሉንም ነገር ይመልሳል\")",
+          "alternatives": [],
+          "reason": "Luke 1:17 takes up the first half of the verse, and the Hebrew agrees with its Greek, so Luke's Amharic is kept at each level; the second half (\"the hearts of children to their fathers\") is drafted from the Hebrew in the same shape. Matthew 17:11 (\"he will restore all things\") echoes the Greek translation of this verse, so its verb is kept (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o390030240031",
+            "o390030240051",
+            "o390030240071",
+            "o390030240091"
+          ],
+          "choice": "no gender span on \"ልጆች\"; the ban (ḥerem) \"ለጥፋት ለይቼ\" (L), \"ፈጽሜ … ማጥፋት\" (B, R)",
+          "alternatives": [
+            "a gender span on \"children / sons\""
+          ],
+          "reason": "\"ልጆች\" already includes daughters, so the Amharic has no span where the English L offers \"children / sons\". The ban is \"devoted to destruction\", \"ለጥፋት የተለየ\", as Joshua on main (meaning decision m3).",
           "uncertain": false,
           "footnote": false
         }
