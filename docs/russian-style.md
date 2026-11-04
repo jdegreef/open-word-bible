@@ -233,6 +233,41 @@ Settings change wording, never meaning, exactly as in English.
   Hebrew accents' division (`python3 scripts/poetry_lines.py` prints it),
   at every level.
 
+## 7b. Conventions settled in Matthew
+
+Matthew was drafted first, in parallel passages; these choices hold for the
+later books. In the Synoptic parallels, keep the wording of the Matthew
+passage where the Greek is the same, and differ where the Greek differs.
+
+- **Pronouns.** "я" for Jesus or God mid-sentence is lowercase and takes no
+  span; the reflexive свой, себя and сам take none either.
+- **Speech broken by a verb of saying** ("Lord," he said, "you...") takes
+  two pairs of marks, «Господин», — сказал он, — «ты...», because the
+  English counts two quotations and the red letters follow the count.
+  Russian usually writes one pair here; a reviewer who prefers it needs the
+  quotation count changed in every language.
+- **Third-level quotations** use ‘ ’ inside “ ” inside « » (22:4; 22:44).
+- **Words.** *idou* is вот at Literal, left out at Balanced and Readable;
+  the Sea of Galilee is море (L), озеро (B, R); magi волхвы (L, B), мудрецы
+  (R); the Beatitudes Блаженны (L, B), Счастливы (R); parable притча at every
+  level; disciples ученики at every level, Readable included; *doulos* раб at
+  every level, слуга for *diakonos* and *pais*; masters in parables
+  господин; centurion сотник (L, B), римский офицер (R); the council
+  Синедрион (L, B), Совет (R); governor наместник; Rabbi Равви; *parousia*
+  пришествие; leaven закваска; weeds сорняки, not плевелы; yoke ярмо, not
+  иго; *skandalizō* споткнуться / оступиться (L), отпасть от веры (B), not
+  соблазниться, which now means to be tempted; Hades ад (L), мир мёртвых
+  (B, R); "Father" as an address Отец, not Отче; greetings Здравствуй, not
+  Радуйся.
+- **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
+  where the English has bags of silver; small coins are
+  `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
+  кодрант}}`; the thirty pieces of silver тридцать серебряных монет.
+- **Fixed sayings** match through the book: "Истинно говорю вам" (L, B);
+  the weeping and gnashing of teeth; "Змеиное отродье" (B) for the brood of
+  vipers; the fulfilment formula «чтобы исполнилось слово, сказанное через
+  пророка».
+
 ## 8. Status
 
 A Russian rendering added to a record does not change its status. Nothing
