@@ -524,6 +524,8 @@
       select(n.record, null, n.decision.id);
     });
     box.appendChild(more);
+    // A manuscript reading: how and why manuscripts differ, in an article.
+    if (n.decision.category === "text_variant" && DATA.variants) box.appendChild(articleLink(DATA.variants, "fn-pop-article"));
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     document.body.appendChild(box);
     popover = box;
@@ -597,6 +599,15 @@
     placeNote();
     var first = box.querySelector(".why-item") || more;
     first.focus({ preventScroll: true });
+  }
+
+  // A link to an article ({url, title, lang}), in English where it is not
+  // translated yet.
+  function articleLink(a, cls) {
+    var link = el("a", cls, a.title);
+    link.href = a.url;
+    if (a.lang !== settings.lang) link.lang = a.lang;
+    return link;
   }
 
   // Under the letter, kept inside the window.
@@ -817,7 +828,7 @@
   function disputedNote() {
     var d = DATA.disputed;
     var note = el("div", "disputed-note");
-    note.appendChild(el("p", null, t("disputed_note").replace("{ref}", d.ref)));
+    note.appendChild(el("p", null, t(d.message || "disputed_note").replace("{ref}", d.ref)));
     var rec = DATA.records.filter(function (r) { return r.id === d.records[0]; })[0];
     if (d.note && rec && !plain()) {
       var why = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
@@ -825,6 +836,8 @@
       why.addEventListener("click", function () { select(rec, null, d.note); });
       note.appendChild(why);
     }
+    // The article that tells the passage's story.
+    if (d.article) note.appendChild(articleLink(d.article, "disputed-article"));
     return note;
   }
 

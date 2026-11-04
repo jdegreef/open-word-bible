@@ -170,6 +170,25 @@ class SiteTest(unittest.TestCase):
         self.assertIn('data-v="7:53"', block[1])
         self.assertIn('data-v="11"', block[1])
         self.assertNotIn('data-v="12"', block[1])
+        # The note links the article that tells the passage's story.
+        self.assertIn('class="disputed-article" href="/articles/the-woman-caught-in-adultery/"', text)
+
+    def test_marks_later_endings_are_set_apart(self):
+        # Mark's short ending follows 16:8 in the same verse, so the passage
+        # starts at a sentence: 16:8 itself stays in the text.
+        _, text = self.chapter_text("mrk/16")
+        block = re.search(r'<div class="disputed-block"><div class="disputed-note">(.*?)</div>(.*?)</div>', text, re.S)
+        self.assertIsNotNone(block)
+        self.assertIn("end at 16:8", block[1])
+        self.assertIn('href="/articles/the-ending-of-mark/"', block[1])
+        self.assertIn('data-record="MRK.16.8.s2"', block[2])
+        self.assertIn('data-record="MRK.16.20.s1"', block[2])
+        self.assertNotIn('data-record="MRK.16.8.s1"', block[2])
+        self.assertFalse(build_site.disputed("MRK.16.8"))
+        self.assertTrue(build_site.disputed("MRK.16.9"))
+        # A manuscript-reading footnote links the article on how manuscripts differ.
+        data = self.chapter_data("mrk/16")
+        self.assertEqual(data["variants"]["url"], "/articles/when-manuscripts-disagree/")
 
     def test_chapter_pages_carry_linked_data(self):
         for path, source in (("1ti/5", "SBLGNT"), ("gen/1", "Open Scriptures Hebrew Bible"),

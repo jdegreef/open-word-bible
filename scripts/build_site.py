@@ -1134,13 +1134,16 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
             para = None
             in_disputed = not in_disputed
             if in_disputed:
-                note = ui["disputed_note"].replace("{ref}", disputed_info["ref"])
+                note = ui[disputed_info["message"]].replace("{ref}", disputed_info["ref"])
                 # The reader's button to the note's reasoning, so the text
                 # below does not move when it is drawn; it does nothing
                 # without JavaScript, and is hidden then (chapter_page).
                 why = (f'<button type="button" class="fn-pop-more">{esc(ui["fn_reasoning"], quote=False)} \u2192</button>'
                        if disputed_info["note"] else "")
-                out.append(f'<div class="disputed-block"><div class="disputed-note"><p>{esc(note, quote=False)}</p>{why}</div>')
+                art = disputed_info["article"]
+                more = (f'<a class="disputed-article" href="{esc(art["url"])}"{lang_attr(art["lang"], lang)}>'
+                        f'{esc(art["title"], quote=False)}</a>' if art else "")
+                out.append(f'<div class="disputed-block"><div class="disputed-note"><p>{esc(note, quote=False)}</p>{why}{more}</div>')
             else:
                 out.append("</div>")
         heading = headings().get(r["id"])
@@ -1289,6 +1292,8 @@ def chapter_page(book, chapter, lang="en"):
             "source": source,
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
+            # The article on how manuscripts differ, from a manuscript-reading footnote.
+            "variants": article_link(VARIANTS_ARTICLE, lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
@@ -1639,14 +1644,37 @@ def chapter_turns(book, chapter, lang="en"):
 
 
 # Passages whose place in the text is disputed, translated in [square
-# brackets] (docs/john-terms.md), as (first verse, last verse). A chapter's
-# cards quote the first verse outside them.
-DISPUTED = (("JHN.7.53", "JHN.8.11"),)
+# brackets] (docs/john-terms.md), as (first, last, the message of the note
+# set above them in reader.ui, the article that tells their story). first is
+# a verse, or a sentence where the passage starts inside a verse: Mark's
+# short ending follows 16:8 in the same verse. A chapter's cards quote the
+# first verse outside them.
+DISPUTED = (("JHN.7.53", "JHN.8.11", "disputed_note", "the-woman-caught-in-adultery"),
+            ("MRK.16.8.s2", "MRK.16.20", "disputed_note_mark", "the-ending-of-mark"))
+
+
+def _place(rid_or_vid):
+    """Where a verse or a sentence stands, to compare with DISPUTED's ends: a
+    verse stands before its sentences."""
+    m = re.fullmatch(r"(.+)\.s(\d+)", rid_or_vid)
+    return (refs.parse(m[1]).sort_key(), int(m[2])) if m else (refs.parse(rid_or_vid).sort_key(), 0)
+
+
+def _disputed_entry(place):
+    for entry in DISPUTED:
+        if _place(entry[0]) <= place and place[0] <= refs.parse(entry[1]).sort_key():
+            return entry
+    return None
 
 
 def disputed(vid):
-    key = refs.parse(vid).sort_key()
-    return any(refs.parse(a).sort_key() <= key <= refs.parse(b).sort_key() for a, b in DISPUTED)
+    """True for a verse wholly inside a disputed passage."""
+    return _disputed_entry(_place(vid)) is not None
+
+
+def disputed_record(r):
+    """The DISPUTED entry a sentence is part of, or None."""
+    return _disputed_entry(_place(r["id"]))
 
 
 @functools.lru_cache(maxsize=None)
@@ -1813,14 +1841,30 @@ def disputed_block(records, lang="en"):
     """The reader's view of a disputed passage on this page: its records, its
     reference, and the manuscript-reading decision that explains it (shown
     from the note above the passage). None when the page has none."""
-    ids = [r["id"] for r in records if any(disputed(v) for v in r["refs"])]
+    ids = [r["id"] for r in records if disputed_record(r)]
     if not ids:
         return None
     first = next(r for r in records if r["id"] == ids[0])
     note = next((d["id"] for d in first["decisions"] if d["category"] == "text_variant"), None)
-    a, b = next((refs.parse(x), refs.parse(y)) for x, y in DISPUTED if disputed(first["refs"][0]))
+    entry = disputed_record(first)
+    a, b = refs.parse(first["refs"][0]), refs.parse(entry[1])
     span = f"{a.chapter}:{a.verse}\u2013" + (f"{b.verse}" if a.chapter == b.chapter else f"{b.chapter}:{b.verse}")
-    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note}
+    return {"records": ids, "ref": f"{BOOK_NAMES[a.book][lang]} {span}", "note": note,
+            "message": entry[2], "article": article_link(entry[3], lang)}
+
+
+# The article a manuscript-reading footnote links to (web/reader.js openNote).
+VARIANTS_ARTICLE = "when-manuscripts-disagree"
+
+
+def article_link(slug, lang="en"):
+    """{"url", "title", "lang"} of an article, in lang where it is translated
+    and in English otherwise; None for one not written."""
+    for code in dict.fromkeys((lang, "en")):
+        found = next((a for a in load_articles(code) if a["slug"] == slug), None)
+        if found:
+            return {"url": url(lang if code == lang else "en", article_url(found)), "title": found["title"], "lang": code}
+    return None
 
 
 def psalm_title(vid):
