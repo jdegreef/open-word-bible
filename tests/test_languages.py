@@ -111,21 +111,34 @@ class LanguagesTest(unittest.TestCase):
         listed = f"<loc>{build_site.SITE_URL}/es/articles/</loc>" in sitemap
         self.assertEqual(listed, bool(build_site.load_articles("es")))
 
+    def test_every_catalog_names_every_language(self):
+        for code in languages.CODES:
+            names = build_site.catalog(code)["language_names"]
+            self.assertEqual(list(names), list(languages.CODES), code)
+            self.assertTrue(all(names.values()), code)
+
     def test_footer_switches_to_the_same_page_in_each_language(self):
         en = self.read("jhn/1/index.html")
         es = self.read("es/jhn/1/index.html")
+
+        def link(href, code, native, page, name):
+            """A link to another language: its own name, then its name in
+            the page's language in brackets."""
+            return (f'<a href="{href}" lang="{code}" hreflang="{code}" data-lang="{code}">{native} '
+                    f'<span class="lang-gloss" lang="{page}">({name})</span></a>')
+
         self.assertIn('<span lang="en" aria-current="true">English</span>', en)
-        self.assertIn('<a href="/es/jhn/1/" lang="es" hreflang="es" data-lang="es">Español</a>', en)
-        self.assertIn('<a href="/fr/jhn/1/" lang="fr" hreflang="fr" data-lang="fr">Français</a>', en + es)
+        self.assertIn(link("/es/jhn/1/", "es", "Español", "en", "Spanish"), en)
+        self.assertIn(link("/fr/jhn/1/", "fr", "Français", "en", "French"), en)
         self.assertIn('<span lang="fr" aria-current="true">Français</span>', self.read("fr/jhn/1/index.html"))
-        self.assertIn('<a href="/sw/jhn/1/" lang="sw" hreflang="sw" data-lang="sw">Kiswahili</a>', en + es)
+        self.assertIn(link("/sw/jhn/1/", "sw", "Kiswahili", "es", "suajili"), es)
         self.assertIn('<span lang="sw" aria-current="true">Kiswahili</span>', self.read("sw/jhn/1/index.html"))
-        self.assertIn('<a href="/vi/jhn/1/" lang="vi" hreflang="vi" data-lang="vi">Tiếng Việt</a>', en)
+        self.assertIn(link("/vi/jhn/1/", "vi", "Tiếng Việt", "en", "Vietnamese"), en)
         self.assertIn('<span lang="ko" aria-current="true">한국어</span>', self.read("ko/jhn/1/index.html"))
-        self.assertIn('<a href="/am/jhn/1/" lang="am" hreflang="am" data-lang="am">አማርኛ</a>', en)
+        self.assertIn(link("/am/jhn/1/", "am", "አማርኛ", "en", "Amharic"), en)
         self.assertIn('<span lang="am" aria-current="true">አማርኛ</span>', self.read("am/mat/1/index.html"))
         self.assertIn('<span lang="es" aria-current="true">Español</span>', es)
-        self.assertIn('<a href="/jhn/1/" lang="en" hreflang="en" data-lang="en">English</a>', es)
+        self.assertIn(link("/jhn/1/", "en", "English", "es", "inglés"), es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
         # The 404 page, which has no path, offers each language's home page.
         self.assertIn('href="/es/" lang="es"', self.read("404.html"))
