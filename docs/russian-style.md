@@ -261,7 +261,10 @@ passage where the Greek is the same, and differ where the Greek differs.
   иго; *skandalizō* споткнуться / оступиться (L), отпасть от веры (B), not
   соблазниться, which now means to be tempted; Hades ад (L), мир мёртвых
   (B, R); "Father" as an address Отец, not Отче; greetings Здравствуй, not
-  Радуйся.
+  Радуйся. Settled in Mark: unclean spirit нечистый дух at every level;
+  fig tree смоковница (L, B), инжировое дерево (R), its fruit смоквы (L),
+  инжир (B, R); *euthys* тотчас at Literal, varied at Balanced and
+  Readable (сразу, тут же) but kept where the English keeps it.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
