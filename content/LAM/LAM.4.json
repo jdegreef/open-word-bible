@@ -63,6 +63,11 @@
           "L": "어찌하여 금이 빛을 잃고, 순금이 변하였는가! \\q 거룩한 돌들이 모든 거리 어귀에 쏟아져 있다.",
           "B": "어찌하여 금이 그 광채를 잃고, 가장 좋은 금이 변해 버렸는가! \\q 거룩한 보석들이 길모퉁이마다 흩어져 있다.",
           "R": "슬프다! 금이 빛을 잃었다. 가장 좋은 금이 변해 버렸다. \\q 거룩한 보석들이 길모퉁이마다 흩어져 있다."
+        },
+        "am": {
+          "L": "ወዮ፣ እንዴት ወርቁ ደበዘዘ፣ ጥሩው ወርቅ ተለወጠ! \\q የቅድስና ድንጋዮች በየመንገዱ ራስ ላይ ፈሰሱ።",
+          "B": "ወርቁ እንዴት ድምቀቱን አጣ! ምርጡ ወርቅ ተለወጠ! \\q የተቀደሱት ድንጋዮች በየመንገዱ ማዕዘን ተበትነዋል።",
+          "R": "ወርቁ እንዴት ድምቀቱን አጣ! ምርጡ ወርቅ ተለውጧል። \\q ቅዱሳቱ ድንጋዮች በየመንገዱ ማዕዘን ተበትነዋል።"
         }
       },
       "decisions": [
@@ -208,6 +213,48 @@
           "reason": "The book's title word keeps one wording at the head of each of its three poems; see 1:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250040010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Lamentations 4.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040010011"
+          ],
+          "choice": "\"How ...!\" (ʾekhah) as in 1:1 and 2:1: \"ወዮ፣ እንዴት ...!\" (L), \"እንዴት ...!\" (B, R)",
+          "alternatives": [
+            "\"እንዴት\" alone at Literal"
+          ],
+          "reason": "One wording for the book's title cry at the head of chapters 1, 2 and 4.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -276,6 +323,11 @@
           "L": "시온의 귀한 {{gender:자녀들|아들들}}, 순금에 견주어 달던 이들이 \\q 어찌하여 질그릇으로, 토기장이의 손이 만든 것으로 여겨지는가!",
           "B": "순금만큼 값지던 시온의 귀한 {{gender:자녀들|아들들}}이 \\q 어찌하여 이제는 토기장이가 빚은 흔한 질그릇처럼 여겨지는가!",
           "R": "시온 백성은 순금만큼 귀한 사람들이었다. \\q 그러나 이제는 토기장이가 만든 값싼 질그릇처럼 취급을 받는다."
+        },
+        "am": {
+          "L": "ከጥሩ ወርቅ ጋር የሚመዘኑት የከበሩት የጽዮን ልጆች፣ \\q እንዴት እንደ ሸክላ ማሰሮዎች፣ እንደ ሸክላ ሠሪ እጅ ሥራ ተቆጠሩ!",
+          "B": "አንድ ጊዜ በጥሩ ወርቅ ይመዘኑ የነበሩት የጽዮን ውድ ልጆች፣ \\q አሁን እንዴት እንደ ተራ የሸክላ ድስቶች፣ የሸክላ ሠሪ እጅ ሥራ ተቆጠሩ!",
+          "R": "የጽዮን ሕዝብ ውድ ነበሩ፤ እንደ ንጹሕ ወርቅ ዋጋ ነበራቸው። \\q አሁን ግን ሸክላ ሠሪ እንደሚሠራቸው ርካሽ የሸክላ ድስቶች ተቆጠሩ።"
         }
       },
       "decisions": [
@@ -444,6 +496,28 @@
           "reason": "Where the English offers \"children\" and \"sons\", Korean has the same two wordings, as in the Korean Psalms and Prophets. Readable says \"시온 백성\", which needs no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250040020011",
+            "o250040020021"
+          ],
+          "choice": "no gender span: \"የጽዮን ልጆች\"",
+          "alternatives": [
+            "a gender span \"ልጆች\"",
+            " \"ወንዶች ልጆች\""
+          ],
+          "reason": "Amharic \"ልጆች\" already covers sons and daughters (m1: the people of Jerusalem), so the English span has one wording in Amharic. Romans 9:21 and 2 Corinthians 4:7 (in the cross-references) use the potter and clay jars without quoting this verse.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -512,6 +586,11 @@
           "L": "승냥이들도 젖을 내어 그 새끼들을 먹이는데, \\q 내 백성의 딸은 광야의 타조들같이 잔인하게 [되었다].",
           "B": "승냥이도 젖을 물려 새끼를 기르는데, \\q 사랑하는 내 백성은 광야의 타조처럼 무정해졌다.",
           "R": "들짐승인 승냥이도 제 젖으로 새끼를 먹인다. \\q 그런데 내 백성은 새끼를 돌보지 않는 광야의 타조처럼 잔인해졌다."
+        },
+        "am": {
+          "L": "ቀበሮዎች እንኳ ጡታቸውን ይሰጣሉ፤ ግልገሎቻቸውን ያጠባሉ። \\q የሕዝቤ ልጅ በምድረ በዳ እንዳሉ ሰጎኖች ጨካኝ [ሆነች]።",
+          "B": "ቀበሮዎች እንኳ ጡታቸውን ሰጥተው ግልገሎቻቸውን ያጠባሉ፤ \\q የምወደው ሕዝቤ ግን በምድረ በዳ እንዳሉ ሰጎኖች ጨካኝ ሆኗል።",
+          "R": "የዱር ቀበሮዎች እንኳ ግልገሎቻቸውን በገዛ ወተታቸው ይመግባሉ። \\q ሕዝቤ ግን ልጆቻቸውን እንደማይንከባከቡ በምድረ በዳ እንዳሉ ሰጎኖች ጨካኝ ሆኗል።"
         }
       },
       "decisions": [
@@ -597,6 +676,29 @@
           "reason": "Readable explains why the ostrich is named.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040030031",
+            "o250040030131",
+            "o250040030132"
+          ],
+          "choice": "jackals \"ቀበሮዎች\", ostriches \"ሰጎኖች\", as Job 30:29",
+          "alternatives": [
+            "\"ዘንዶዎች\""
+          ],
+          "reason": "The scribes' reading names jackals (m1); the drafted Job pairs the same two animals with these words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -664,6 +766,11 @@
           "L": "젖먹이의 혀가 목말라 입천장에 붙고, \\q 어린아이들이 빵을 구하나 그들에게 떼어 줄 자가 없다.",
           "B": "젖먹이는 목이 말라 혀가 입천장에 달라붙고, \\q 어린아이들은 빵을 달라고 조르지만 나누어 주는 이가 없다.",
           "R": "아기들은 너무 목이 말라 혀가 입천장에 달라붙었다. \\q 어린아이들이 빵을 달라고 하지만 아무도 주지 않는다."
+        },
+        "am": {
+          "L": "ጡት የሚጠባው ሕፃን ምላስ ከጥማት የተነሣ ከትናጋው ጋር ተጣበቀ፤ \\q ሕፃናት እንጀራ ለመኑ፤ የሚቆርስላቸው የለም።",
+          "B": "ጡት የሚጠባው ሕፃን ምላስ ከጥማት የተነሣ ከላንቃው ጋር ተጣብቋል፤ \\q ሕፃናት እንጀራ ይለምናሉ፤ ነገር ግን የሚያካፍላቸው የለም።",
+          "R": "ሕፃናት በጣም ከመጠማታቸው የተነሣ ምላሳቸው ከላንቃቸው ጋር ተጣብቋል። \\q ትናንሽ ልጆች እንጀራ ይለምናሉ፤ ማንም ግን አይሰጣቸውም።"
         }
       },
       "decisions": [
@@ -712,6 +819,25 @@
             "palate"
           ],
           "reason": "Balanced and Readable use the everyday phrase for \"palate\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040040101"
+          ],
+          "choice": "the tongue cleaves to the palate \"ከትናጋው ጋር ተጣበቀ\" (L), \"ከላንቃው ጋር ተጣብቋል\" (B, R)",
+          "alternatives": [],
+          "reason": "The words of the Amharic Psalm 137:6 for the same picture, level by level.",
           "uncertain": false,
           "footnote": false
         }
@@ -779,6 +905,11 @@
           "L": "맛있는 음식을 먹던 자들이 거리에서 황폐해지고, \\q 진홍색 옷을 입고 자란 자들이 잿더미를 끌어안는다.",
           "B": "한때 좋은 음식을 먹던 사람들이 거리에서 쓰러져 죽어 가고, \\q 붉은 옷을 입고 자란 사람들이 이제는 쓰레기 더미에 매달린다.",
           "R": "가장 좋은 음식을 먹던 사람들이 이제는 거리에서 굶주려 쓰러져 있다. \\q 비싼 붉은 옷을 입고 자란 사람들이 이제는 쓰레기 더미 위에 누워 있다."
+        },
+        "am": {
+          "L": "ጣፋጭ ምግብ ይበሉ የነበሩ በመንገዶች ላይ ባድማ ሆኑ፤ \\q በቀይ ግምጃ ያደጉ የአመድ ክምርን አቀፉ።",
+          "B": "ቀድሞ ምርጥ ምግብ ይበሉ የነበሩ በመንገዶች ላይ ወድቀው ጠፍተዋል፤ \\q በቀይ ግምጃ ያደጉ አሁን የቆሻሻ ክምር ታቅፈዋል።",
+          "R": "ቀድሞ ምርጥ ምግብ ይበሉ የነበሩ ሰዎች አሁን በመንገዶች ላይ በራብ ወድቀዋል። \\q ውድ ቀይ ልብስ ለብሰው ያደጉ አሁን በቆሻሻ ክምር ላይ ተኝተዋል።"
         }
       },
       "decisions": [
@@ -916,6 +1047,11 @@
           "L": "내 백성의 딸의 죄악이 소돔의 죄보다 크다. \\q 소돔은 한순간에 뒤엎어졌고, 아무 손도 그 위에 휘둘러지지 않았다.",
           "B": "사랑하는 내 백성이 받은 벌이 소돔이 그 죄로 받은 벌보다 크다. \\q 소돔은 사람의 손이 닿지도 않았는데 한순간에 뒤엎어졌다.",
           "R": "내 백성은 소돔이 죄 때문에 받은 벌보다 더 큰 벌을 받았다. \\q 소돔은 아무도 손대지 않았는데 한순간에 망했다."
+        },
+        "am": {
+          "L": "የሕዝቤም ልጅ በደል ከሰዶም ኃጢአት በለጠ፤ \\q በቅጽበት የተገለበጠችው፣ እጆችም ያልተነሡባት።",
+          "B": "የምወደው ሕዝቤ ቅጣት ሰዶም ስለ ኃጢአቷ ከተቀበለችው ቅጣት በለጠ፤ \\q ሰዶም በቅጽበት ተገለበጠች፤ የሰው እጅም አልተነሣባትም።",
+          "R": "ሰዶም ስለ ኃጢአቷ ከተቀጣችው በላይ ሕዝቤ ተቀጥቷል። \\q ሰዶም በቅጽበት ጠፋች፤ የሰውም እጅ አልተነሣባትም።"
         }
       },
       "decisions": [
@@ -1010,6 +1146,25 @@
           "reason": "Balanced and Readable give the sense chosen in m1, the punishment, instead of the usual \"guilt\" and \"sin\" for this word ('awon, as in verse 13 and 5:7); Literal keeps \"iniquity\", which can carry either sense. Verse 22 does the same for Zion.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040060021",
+            "o250040060052"
+          ],
+          "choice": "iniquity (ʿawon) \"በደል\", sin (ḥattat) \"ኃጢአት\" (L); \"ቅጣት\" (B), with its English",
+          "alternatives": [],
+          "reason": "The words also name the punishment they bring (m1); Literal keeps the words, Balanced says the punishment. Luke 10:12 (in the cross-references) compares Sodom without quoting this verse.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1077,6 +1232,11 @@
           "L": "그 성의 귀족들은 눈보다 깨끗하고 젖보다 희었으며, \\q 몸은 산호보다 붉고 그 모습은 청옥 같았다.",
           "B": "그 성의 귀족들은 눈보다 빛나고 우유보다 희었으며, \\q 몸은 산호보다 붉게 빛나고 그 모습은 청금석처럼 아름다웠다.",
           "R": "시온의 귀족들은 한때 눈보다 깨끗하고 우유보다 희었다. \\q 몸은 산호처럼 붉게 빛났고, 값비싼 푸른 보석처럼 빛났다."
+        },
+        "am": {
+          "L": "መሳፍንቷ ከበረዶ ይልቅ ንጹሓን፣ ከወተትም ይልቅ ነጮች ነበሩ፤ \\q ሰውነታቸው ከቀይ ዕንቁ ይልቅ ቀይ ነበር፤ መልካቸው እንደ ሰንፔር [ነበር]።",
+          "B": "መሳፍንቷ ከበረዶ ይልቅ የሚያበሩ፣ ከወተትም ይልቅ ነጭ ነበሩ፤ \\q ሰውነታቸው ከቀይ ዕንቁ ይልቅ ይቀላ ነበር፤ እንደ ሰማያዊ ዕንቁም ውብ ነበሩ።",
+          "R": "የጽዮን መሳፍንት ቀድሞ ከበረዶ ይልቅ ንጹሓን፣ ከወተትም ይልቅ ነጮች ነበሩ። \\q ሰውነታቸው እንደ ቀይ ዕንቁ ይቀላ ነበር፤ እንደ ውድ ሰማያዊ ድንጋዮችም ያበሩ ነበር።"
         }
       },
       "decisions": [
@@ -1234,6 +1394,29 @@
           "reason": "The word is not the usual one for officials (sar, \"고관\" / \"관리\" / \"지도자\" in this book), and the meaning decision reads it as Zion's nobles, so Korean uses \"귀족들\" at every level and keeps \"고관\" for sar.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040070082",
+            "o250040070091",
+            "o250040070101"
+          ],
+          "choice": "corals \"ቀይ ዕንቁ\"; sapphire \"ሰንፔር\" (L), lapis lazuli \"ሰማያዊ ዕንቁ\" (B), \"ውድ ሰማያዊ ድንጋዮች\" (R); princes \"መሳፍንት\" at every level, as the English",
+          "alternatives": [
+            "\"ኮራል\""
+          ],
+          "reason": "Amharic has no common word for coral; \"ቀይ ዕንቁ\" says a costly red stone (m3). The princes keep one word at every level here, as the English decision does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1305,6 +1488,11 @@
           "L": "그들의 모습이 검은 것보다 어둡게 되어 거리에서 알아보는 자가 없다. \\q 그들의 살가죽이 뼈에 달라붙어 막대기처럼 말라 버렸다.",
           "B": "이제는 얼굴이 숯검정보다 검어져 거리에서 아무도 그들을 알아보지 못한다. \\q 살가죽이 뼈에 달라붙어 마른 나무처럼 바싹 말랐다.",
           "R": "이제 그들의 얼굴은 숯검정보다 검어서 거리에서 아무도 그들을 알아보지 못한다. \\q 살가죽은 뼈에 달라붙어 나무처럼 말라 버렸다."
+        },
+        "am": {
+          "L": "መልካቸው ከጥቁረት ይልቅ ጠቆረ፤ በመንገዶች ላይ አይታወቁም፤ \\q ቆዳቸው በአጥንታቸው ላይ ተጨማደደ፤ እንደ እንጨት ደረቀ።",
+          "B": "አሁን ከጥላሸት ይልቅ ጠቁረዋል፤ በመንገድ ላይ ማንም አያውቃቸውም። \\q ቆዳቸው ከአጥንታቸው ጋር ተጣብቋል፤ እንደ ደረቀ ዱላ ሆኗል።",
+          "R": "አሁን ፊታቸው ከጥላሸት ይልቅ ጠቁሯል፤ በመንገድ ላይ ማንነታቸውን የሚያውቅ የለም። \\q ቆዳቸው በአጥንታቸው ላይ ተጨማዶ እንደ እንጨት ደርቋል።"
         }
       },
       "decisions": [
@@ -1422,6 +1610,11 @@
           "L": "칼에 죽은 자들이 굶주려 죽은 자들보다 나았다. \\q 굶주린 자들은 밭의 소산이 없어 찔린 자처럼 쇠약해져 간다.",
           "B": "칼에 맞아 죽은 사람들이 굶어 죽은 사람들보다 나았다. \\q 굶주린 사람들은 들에서 거둘 양식이 없어 칼에 찔린 듯이 시들어 간다.",
           "R": "싸움터에서 칼에 죽는 것이 굶어 죽는 것보다 나았다. \\q 굶주린 사람들은 들에서 나는 먹을 것이 없어 칼에 찔린 사람처럼 서서히 죽어 간다."
+        },
+        "am": {
+          "L": "በሰይፍ የተገደሉት በራብ ከተገደሉት ይሻሉ ነበር፤ \\q እነርሱ ከእርሻ ፍሬ [በማጣት] ተወግተው ይመነምናሉና።",
+          "B": "በሰይፍ የተገደሉት በራብ ከተገደሉት ይሻላሉ፤ \\q እነዚህ ከእርሻ ምግብ በማጣታቸው እንደ ተወጉ ሆነው ይመነምናሉ።",
+          "R": "በራብ ከመሞት በጦርነት መገደል ይሻል ነበር። \\q የተራቡት ከእርሻ የሚገኝ ምግብ ስለሌለ እንደ ተወጉ ሰዎች ቀስ በቀስ ይመነምናሉ።"
         }
       },
       "decisions": [
@@ -1527,6 +1720,11 @@
           "L": "자비로운 여자들의 손이 자기 자식들을 삶았다. \\q 내 백성의 딸이 멸망할 때에 그 자식들이 그들의 음식이 되었다.",
           "B": "마음이 여린 여자들이 제 손으로 자식들을 삶았다. \\q 사랑하는 내 백성이 무너질 때에 자식들이 그들의 먹을거리가 되었다.",
           "R": "한때 다정하던 어머니들이 자기 아이들을 삶았다. \\q 내 백성이 망할 때 그들이 아이들을 먹었다."
+        },
+        "am": {
+          "L": "የርኅሩኆች ሴቶች እጆች የገዛ ልጆቻቸውን ቀቀሉ፤ \\q በሕዝቤ ልጅ ስብራት ምግብ ሆኑላቸው።",
+          "B": "ርኅሩኅ ልብ ያላቸው ሴቶች በገዛ እጃቸው ልጆቻቸውን ቀቀሉ፤ \\q የምወደው ሕዝቤ በተሰበረ ጊዜ ምግብ ሆኑላቸው።",
+          "R": "ቀድሞ ደግና አፍቃሪ እናቶች የነበሩ ሴቶች የገዛ ልጆቻቸውን ቀቀሉ። \\q ሕዝቤ በጠፋ ጊዜ በሉአቸው።"
         }
       },
       "decisions": [
@@ -1592,6 +1790,26 @@
           "choice": "They ate them",
           "alternatives": [],
           "reason": "Readable says plainly what \"they became food for them\" means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040100031"
+          ],
+          "choice": "compassionate (raḥmaniyyot) \"ርኅሩኆች\"; the destruction (shever) \"ስብራት\" (L), as 2:11 and 3:48",
+          "alternatives": [
+            "\"ደጎች\""
+          ],
+          "reason": "\"ርኅሩኅ\" is of the same root as the mercies of 3:22, as in the Hebrew, which makes the horror sharper.",
           "uncertain": false,
           "footnote": false
         }
@@ -1664,6 +1882,11 @@
           "L": "{{divine_name:주|야훼}}께서 그분의 격분을 끝까지 이루시고 그분의 불타는 진노를 부으셨다. \\q 시온에 불을 놓으시니, 그 불이 그 기초를 삼켰다.",
           "B": "{{divine_name:주|야훼}}께서 격분을 끝까지 다 쏟으시고, 불타는 진노를 퍼부으셨다. \\q 시온에 불을 지르시니, 그 불이 성의 기초까지 삼켜 버렸다.",
           "R": "{{divine_name:주|야훼}}께서 분노를 모두 쏟아 내셨다. 불같은 분노를 퍼부으셨다. \\q 시온에 불을 놓으셔서 그 성을 기초까지 다 태워 버리셨다."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} መዓቱን ፈጸመ፤ የሚነድደውን ቁጣውን አፈሰሰ፤ \\q በጽዮንም እሳትን አነደደ፤ መሠረቶቿንም በላ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} መዓቱን እስከ መጨረሻ ፈጸመ፤ የሚነድደውን ቁጣውን አፈሰሰ። \\q በጽዮን እሳት አነደደ፤ እሳቱም እስከ መሠረቶቿ በላት።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ቁጣውን ሁሉ ለቀቀ። የሚነድደውን ቁጣውን አፈሰሰ። \\q በጽዮን እሳት አነደደ፤ እሳቱም ከተማዪቱን እስከ መሠረቷ ድረስ አቃጠላት።"
         }
       },
       "decisions": [
@@ -1766,6 +1989,11 @@
           "L": "세상의 왕들과 세상에 사는 모든 자들은 믿지 않았다, \\q 대적과 원수가 예루살렘의 성문들로 들어오리라고는.",
           "B": "세상의 왕들도, 이 세상에 사는 어느 누구도 믿지 못했을 것이다, \\q 대적이나 원수가 예루살렘 성문 안으로 들어올 수 있으리라고는.",
           "R": "세상의 어떤 왕도, 세상의 어떤 사람도 믿지 않았다, \\q 원수가 예루살렘 성문 안으로 쳐들어올 수 있으리라고는."
+        },
+        "am": {
+          "L": "የምድር ነገሥታት፣ በዓለም የሚኖሩትም ሁሉ አላመኑም፣ \\q ባላጋራና ጠላት ወደ ኢየሩሳሌም በሮች እንደሚገቡ።",
+          "B": "የምድር ነገሥታትም ሆኑ በዓለም የሚኖር ማንም ባላመኑ ነበር፤ \\q ጠላት ወይም አጥቂ በኢየሩሳሌም በሮች ሰተት ብሎ ሊገባ እንደሚችል።",
+          "R": "ከምድር ነገሥታትም ሆነ በዓለም ከሚኖሩ ሰዎች ማንም አላመነም፤ \\q ጠላት በኢየሩሳሌም በሮች ሰተት ብሎ ሊገባ ይችላል ብሎ።"
         }
       },
       "decisions": [
@@ -1885,6 +2113,11 @@
           "L": "[그것은] 그 성의 예언자들의 죄와 그 성의 제사장들의 죄악 때문이었다. \\q 그들이 그 성 가운데서 의인들의 피를 흘렸다.",
           "B": "그것은 그 성의 예언자들이 지은 죄와 제사장들의 죄악 때문이었다. \\q 그들이 성 한가운데서 의로운 사람들의 피를 흘렸기 때문이다.",
           "R": "이런 일이 일어난 것은 그 성의 예언자들이 죄를 짓고 제사장들이 악한 일을 했기 때문이다. \\q 그들은 성 안에서 죄 없는 사람들을 죽였다."
+        },
+        "am": {
+          "L": "[ይህ የሆነው] ከነቢያቷ ኃጢአት፣ ከካህናቷ በደል የተነሣ ነው፤ \\q በመካከሏ የጻድቃንን ደም ያፈሰሱ።",
+          "B": "ይህ የሆነው ስለ ነቢያቷ ኃጢአትና ስለ ካህናቷ በደል ነው፤ \\q በከተማዪቱ መካከል የጻድቃንን ደም አፍስሰዋልና።",
+          "R": "ይህ የሆነው ነቢያቷ ኃጢአት ስለ ሠሩና ካህናቷ ክፉ ስላደረጉ ነው። \\q በከተማዪቱ ውስጥ ንጹሓን ሰዎችን ገደሉ።"
         }
       },
       "decisions": [
@@ -2036,6 +2269,11 @@
           "L": "그들이 거리에서 눈먼 자들처럼 헤매었다. 그들이 피로 더럽혀져서 \\q [아무도] 그들의 옷을 만질 수 없었다.",
           "B": "그들은 눈먼 사람처럼 거리를 비틀거리며 다녔다. 피로 몹시 더럽혀져서 \\q 아무도 그들의 옷을 만질 수 없었다.",
           "R": "그들은 눈먼 사람들처럼 거리에서 비틀거렸다. 그들은 피로 너무 더럽혀져서 \\q 아무도 그들의 옷에 손을 댈 수 없었다."
+        },
+        "am": {
+          "L": "በመንገዶች ላይ እንደ ዕውሮች ተቅበዘበዙ፤ በደም ረከሱ፤ \\q ስለዚህ ልብሳቸውን ሊነካ የሚችል [ማንም] አልነበረም።",
+          "B": "እንደ ዕውሮች በመንገዶች እየተደናበሩ ሄዱ፤ በደም እጅግ ረከሱ፤ \\q ስለዚህም ማንም ልብሳቸውን ሊነካ አልቻለም።",
+          "R": "እንደ ዕውር ሰዎች በመንገዶች ላይ ይደናበራሉ። በደም በጣም ስለ ተበከሉ \\q ልብሳቸውን ማንም ሊነካ አይችልም።"
         }
       },
       "decisions": [
@@ -2175,6 +2413,11 @@
           "L": "\"물러가라! 부정하다!\" 사람들이 그들에게 외쳤다. \"물러가라! 물러가라! 만지지 마라!\" \\q 참으로 그들이 도망하고 또 떠돌아다녔다. \\q 민족들 가운데서 사람들이 말하였다. \"그들은 더 이상 [여기에] 머물러 살지 못할 것이다.\"",
           "B": "\"물러가라! 부정한 자들아!\" 사람들이 그들에게 소리쳤다. \"물러가라! 물러가라! 우리를 만지지 마라!\" \\q 그래서 그들은 도망하여 이곳저곳 떠돌았다. \\q 이방 민족들 가운데서도 사람들이 말했다. \"그들은 더는 여기에 머물 수 없다.\"",
           "R": "사람들이 그들에게 소리쳤다. \"저리 가라! 너희는 부정하다! 저리 가라! 저리 가라! 우리를 만지지 마라!\" \\q 그래서 그들은 도망하여 이곳저곳 떠돌아다녔다. \\q 다른 나라 사람들도 말했다. \"그들은 우리와 함께 살 수 없다.\""
+        },
+        "am": {
+          "L": "«ዞር በሉ! ርኩስ!» ብለው ጠሩባቸው፤ «ዞር በሉ! ዞር በሉ! አትንኩ!» \\q ሸሽተዋልና፤ ደግሞም ተቅበዝብዘዋልና፤ \\q በሕዝቦች መካከልም እንዲህ አሉ፦ «ከእንግዲህ [በዚህ] በእንግድነት አይቀመጡም።»",
+          "B": "«ሂዱ! ርኩስ!» እያሉ ሰዎች ጮኹባቸው፤ «ሂዱ! ሂዱ! አትንኩን!» \\q ስለዚህ ሸሹ፤ ከቦታ ቦታም ተንከራተቱ፤ \\q በሕዝቦች መካከልም ሰዎች እንዲህ አሉ፦ «ከእንግዲህ በዚህ መቀመጥ አይችሉም።»",
+          "R": "ሰዎች እንዲህ እያሉ ጮኹባቸው፦ «ራቁ! ርኩሳን ናችሁ! ራቁ! ራቁ! አትንኩን!» \\q ስለዚህ ሸሹ፤ ከቦታ ቦታም ተንከራተቱ። \\q በሌሎች ሕዝቦች መካከል ያሉ ሰዎችም እንዲህ አሉ፦ «ከእኛ ጋር እዚህ መኖር አይችሉም።»"
         }
       },
       "decisions": [
@@ -2289,6 +2532,29 @@
           "reason": "The cries are shouted at the whole group of prophets and priests, so the commands are plural, with ustedes forms by default and vosotros forms as the alternative. Literal keeps the Hebrew's singular cry \"¡Inmundo!\"; Balanced and Readable make it plural to agree with the commands.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040150011",
+            "o250040150021",
+            "o250040150031"
+          ],
+          "choice": "the warning cry \"ርኩስ!\" (L, B), \"ርኩሳን ናችሁ!\" (R)",
+          "alternatives": [
+            "\"ንጹሕ አይደለም!\""
+          ],
+          "reason": "The leper's cry of Leviticus 13:45 (m1), with the Pentateuch's word \"ርኩስ\". The quotations open and close where the English has them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2358,6 +2624,11 @@
           "L": "{{divine_name:주|야훼}}의 얼굴이 그들을 흩으셨으니, 그분께서 다시는 그들을 돌아보지 않으실 것이다. \\q 그들이 제사장들의 얼굴을 들어 주지 않았고, 장로들을 은혜롭게 대하지 않았다.",
           "B": "{{divine_name:주|야훼}}께서 친히 그들을 흩으셨으니, 다시는 그들을 돌보아 주지 않으실 것이다. \\q 제사장들은 존경을 받지 못했고, 장로들은 아무 호의도 얻지 못했다.",
           "R": "{{divine_name:주|야훼}}께서 몸소 그들을 흩으셨다. 이제는 그들을 돌보지 않으실 것이다. \\q 아무도 제사장들을 존경하지 않았고, 장로들에게 친절하게 대하지 않았다."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ፊት በተናቸው፤ ከእንግዲህ አይመለከታቸውም፤ \\q የካህናትን ፊት አላከበሩም፤ ለሽማግሌዎችም አልራሩም።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ፊት ራሱ በተናቸው፤ ከእንግዲህ በርኅራኄ አይመለከታቸውም። \\q ለካህናት አክብሮት አልተሰጠም፤ ለሽማግሌዎችም ደግነት አልታየም።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ራሱ በተናቸው። ከእንግዲህ አይንከባከባቸውም። \\q ካህናቱን ያከበረ፣ ለሽማግሌዎቹም ደግነት ያሳየ ማንም አልነበረም።"
         }
       },
       "decisions": [
@@ -2442,6 +2713,27 @@
           "reason": "Balanced and Readable say what \"the face of the LORD\" means here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040160071",
+            "o250040160081",
+            "o250040160101"
+          ],
+          "choice": "\"they did not lift up the face of priests\" as \"የካህናትን ፊት አላከበሩም\"",
+          "alternatives": [
+            "\"ፊት አላነሡም\""
+          ],
+          "reason": "The Hebrew idiom means showing honour (m3); Amharic \"ፊት ማንሣት\" does not, so Literal keeps \"the face\" and says \"honour\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2511,6 +2803,11 @@
           "L": "우리 눈이 아직도 우리의 도움을 [바라보다가] 헛되이 쇠하였다. \\q 우리가 바라보고 또 바라보았으나, 구원하지 못할 민족이었다.",
           "B": "우리는 도움을 기다리느라 눈이 빠지도록 바라보았지만 헛일이었다. \\q 망대에 올라 우리를 구원하지 못할 민족을 기다렸다.",
           "R": "우리는 누가 우리를 도와주러 오는지 눈이 빠지도록 바라보았지만, 아무 소용이 없었다. \\q 망대에서 우리를 구해 줄 나라를 기다렸지만, 그 나라는 우리를 구하지 못했다."
+        },
+        "am": {
+          "L": "ዓይኖቻችን ገና ርዳታችንን [በመጠባበቅ] በከንቱ ደከሙ፤ \\q በመጠባበቂያችንም ሊያድን የማይችልን ሕዝብ ተጠባበቅን።",
+          "B": "ዓይኖቻችን ከንቱ የሆነውን ርዳታ በመጠባበቅ ገና ደከሙ፤ \\q ከመጠበቂያ ማማችን ሊያድነን የማይችልን ሕዝብ ተጠባበቅን።",
+          "R": "ዓይኖቻችን እስኪደክሙ ድረስ የሚረዳን እንጠብቅ ነበር፤ ግን ምንም አልጠቀመም። \\q ከመጠበቂያ ማማዎቻችን ሆነን የሚያድነን ሕዝብ ተጠባበቅን፤ እርሱ ግን ሊያድነን አልቻለም።"
         }
       },
       "decisions": [
@@ -2695,6 +2992,11 @@
           "L": "그들이 우리의 걸음을 노려서 우리가 우리의 광장을 다니지 못하였다. \\q 우리의 끝이 가까웠고, 우리의 날들이 다 찼으니, 우리의 끝이 왔다.",
           "B": "그들이 우리 발걸음을 엿보니, 우리는 우리 광장에서도 다닐 수 없었다. \\q 우리의 끝이 가까웠다. 우리의 날들이 다했다. 우리의 끝이 왔다.",
           "R": "원수들이 우리가 움직일 때마다 지켜보아서 우리는 성읍 광장에도 나갈 수 없었다. \\q 우리의 끝이 가까웠다. 우리의 때가 다 되었다. 우리의 끝이 왔다."
+        },
+        "am": {
+          "L": "በአደባባዮቻችን እንዳንሄድ እርምጃችንን አደኑ፤ \\q ፍጻሜያችን ቀረበ፤ ዘመናችን ተፈጸመ፤ ፍጻሜያችን መጥቷልና።",
+          "B": "በገዛ አደባባዮቻችን እንዳንሄድ ፈለጋችንን ተከታተሉ፤ \\q ፍጻሜያችን ቀረበ፤ ዘመናችን አለቀ፤ ፍጻሜያችን መጥቷልና።",
+          "R": "ጠላቶቻችን እያንዳንዱን እንቅስቃሴያችንን ይከታተሉ ስለ ነበር በከተማችን አደባባዮች መሄድ አልቻልንም። \\q ፍጻሜያችን ቀርቧል። ጊዜያችን አልቋል። ፍጻሜያችን መጥቷል።"
         }
       },
       "decisions": [
@@ -2817,6 +3119,11 @@
           "L": "우리를 쫓는 자들이 하늘의 독수리보다 빨랐다. \\q 산 위에서 그들이 우리를 바싹 쫓았고, 광야에서 우리를 노려 숨어 기다렸다.",
           "B": "우리를 뒤쫓는 자들은 하늘을 나는 독수리보다 빨랐다. \\q 산을 넘어 우리를 쫓아오고, 광야에 숨어 우리를 기다렸다.",
           "R": "우리를 쫓는 원수들은 하늘을 나는 독수리보다 빨랐다. \\q 그들은 산을 넘어 우리를 쫓아왔고, 광야에 숨어서 우리를 잡으려고 기다렸다."
+        },
+        "am": {
+          "L": "አሳዳጆቻችን ከሰማይ ንስሮች ይልቅ ፈጣኖች ነበሩ፤ \\q በተራሮች ላይ አጥብቀው አሳደዱን፤ በምድረ በዳ አደቡብን።",
+          "B": "ያሳደዱን ከሰማይ ንስሮች ይልቅ ፈጣኖች ነበሩ፤ \\q በተራሮች ላይ አሳደዱን፤ በምድረ በዳም ሸመቁብን።",
+          "R": "ያሳደዱን ጠላቶች በሰማይ ከሚበርሩ ንስሮች ይልቅ ፈጣኖች ነበሩ። \\q በተራሮች አቋርጠው አሳደዱን፤ ሊይዙንም በምድረ በዳ ተደበቁ።"
         }
       },
       "decisions": [
@@ -2935,6 +3242,11 @@
           "L": "우리 코의 숨, 곧 {{divine_name:주|야훼}}의 기름 부음 받은 이가 그들의 함정에 사로잡혔다. \\q 우리가 그를 두고 \"우리가 그의 그늘 아래에서 민족들 가운데 살 것이다\" 하고 말하던 이였다.",
           "B": "우리 생명의 숨결과 같은 {{divine_name:주|야훼}}의 기름 부음 받은 이가 그들의 덫에 걸렸다. \\q 우리가 \"그의 보호를 받으며 뭇 민족 가운데서 살 것이다\" 하고 말하던 바로 그였다.",
           "R": "{{divine_name:주|야훼}}께서 기름 부어 세우신 우리 왕은 우리에게 생명의 숨결처럼 귀했다. 그런데 그가 그들의 덫에 걸렸다. \\q 우리는 \"그가 우리를 지켜 줄 것이니, 우리는 다른 민족들 가운데서도 안전하게 살 것이다\" 하고 말했었다."
+        },
+        "am": {
+          "L": "የአፍንጫችን እስትንፋስ፣ {{divine_name:እግዚአብሔር|ያህዌ}} የቀባው፣ በጉድጓዶቻቸው ተያዘ፤ \\q ስለ እርሱ፦ «በጥላው ሥር በሕዝቦች መካከል እንኖራለን» ያልነው።",
+          "B": "የሕይወታችን እስትንፋስ የሆነው፣ {{divine_name:እግዚአብሔር|ያህዌ}} የቀባው በወጥመዳቸው ተያዘ፤ \\q ስለ እርሱ፦ «በእርሱ ጥበቃ ሥር በሕዝቦች መካከል እንኖራለን» ብለን የነበረው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የቀባው ንጉሣችን እንደ ሕይወት እስትንፋስ ውድ ነበረን። ነገር ግን በወጥመዳቸው ተያዘ። \\q እኛም፦ «ይጠብቀናል፤ በሕዝቦችም መካከል በሰላም እንኖራለን» ብለን ነበር።"
         }
       },
       "decisions": [
@@ -3149,6 +3461,29 @@
           "reason": "The anointed here is the captured king, a man, and the English gives him no deity span; Korean likewise speaks of him without the honorific, while the LORD who anointed him keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040200031",
+            "o250040200041",
+            "o250040200051"
+          ],
+          "choice": "the LORD's anointed \"እግዚአብሔር የቀባው\" (L, B), \"እግዚአብሔር የቀባው ንጉሣችን\" (R)",
+          "alternatives": [
+            "\"መሲሑ\""
+          ],
+          "reason": "As the Joshua-Samuel list; the king (Zedekiah, captured in the flight of 2 Kings 25:4-6) is not named, as in the Hebrew, and Readable says \"our king\" with its English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3218,6 +3553,11 @@
           "L": "기뻐하고 즐거워하여라, 우스 땅에 사는 딸 에돔아. \\q 그 잔이 너에게도 넘어갈 것이니, 네가 취하여 벌거벗을 것이다.",
           "B": "우스 땅에 사는 딸 에돔아, 기뻐하고 즐거워하여라! \\q 그러나 그 잔이 너에게도 돌아갈 것이니, 너도 취하여 벌거벗게 될 것이다.",
           "R": "우스 땅에 사는 에돔 백성아, 지금은 실컷 즐거워하여라! \\q 그러나 너희도 하나님의 분노의 잔을 마셔야 할 것이다. 너희도 취하여 벌거벗은 채 수치를 당할 것이다."
+        },
+        "am": {
+          "L": "በዖፅ ምድር የምትኖሪ የኤዶም ልጅ ሆይ፣ ደስ ይበልሽ፤ ሐሤትም አድርጊ፤ \\q ጽዋው ወደ አንቺም ደግሞ ያልፋል፤ ትሰክሪያለሽ፤ ዕርቃንሽንም ትገልጫለሽ።",
+          "B": "በዖፅ ምድር የምትኖሪ የኤዶም ልጅ ሆይ፣ ደስ ይበልሽ፤ ሐሤትም አድርጊ! \\q ነገር ግን ጽዋው ለአንቺም ይተላለፋል፤ ትሰክሪያለሽ፤ ራስሽንም ዕርቃንሽን ታስቀሪያለሽ።",
+          "R": "በዖፅ ምድር የምትኖሩ የኤዶም ሰዎች ሆይ፣ አሁን ደስ ይበላችሁ! \\q ነገር ግን እናንተም ከእግዚአብሔር የቁጣ ጽዋ ትጠጣላችሁ። ትሰክራላችሁ፤ በኀፍረትም ዕርቃናችሁን ትተኛላችሁ።"
         }
       },
       "decisions": [
@@ -3400,6 +3740,28 @@
           "reason": "As the book's other daughter titles, with Readable naming the people and addressing them as \"너희\". Uz keeps the Protestant spelling of Genesis.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250040210031",
+            "o250040210041",
+            "o250040210072",
+            "o250040210081"
+          ],
+          "choice": "daughter of Edom \"የኤዶም ልጅ\" (L, B), \"የኤዶም ሰዎች\" (R); Uz \"ዖፅ\", as Job 1:1",
+          "alternatives": [],
+          "reason": "The pattern of \"የጽዮን ልጅ\" (1:6). Readable addresses the people in the plural, with its English; \"God\" in \"the cup of God's anger\" is not the name and has no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3471,6 +3833,11 @@
           "L": "딸 시온아, 네 죄악이 끝났다. 그분께서 다시는 너를 포로로 끌려가게 하지 않으실 것이다. \\q 딸 에돔아, 그분께서 네 죄악을 벌하시고 네 죄들을 드러내실 것이다.",
           "B": "딸 시온아, 네가 받을 벌이 다 끝났다. 그분께서 너를 더는 포로로 잡혀 있게 하지 않으실 것이다. \\q 그러나 딸 에돔아, 그분께서 네 죄를 벌하시고 네 죄들을 드러내실 것이다.",
           "R": "시온 백성아, 너희가 받을 벌은 끝났다. {{divine_name:주|야훼}}께서 너희를 더는 포로로 붙잡혀 있게 하지 않으실 것이다. \\q 그러나 에돔 백성아, {{divine_name:주|야훼}}께서 너희 죄를 벌하실 것이다. 너희 죄를 모든 사람 앞에 드러내실 것이다."
+        },
+        "am": {
+          "L": "የጽዮን ልጅ ሆይ፣ በደልሽ ተፈጸመ፤ ከእንግዲህ አያፈልስሽም፤ \\q የኤዶም ልጅ ሆይ፣ በደልሽን ይቀጣል፤ ኃጢአትሽን ይገልጣል።",
+          "B": "የጽዮን ልጅ ሆይ፣ ቅጣትሽ ተፈጽሟል፤ ከእንግዲህ በምርኮ አያቆይሽም። \\q የኤዶም ልጅ ሆይ፣ ግን በደልሽን ይቀጣል፤ ኃጢአትሽንም ይገልጣል።",
+          "R": "የጽዮን ሕዝብ ሆይ፣ ቅጣታችሁ አብቅቷል። {{divine_name:እግዚአብሔር|ያህዌ}} ከእንግዲህ በምርኮ አያቆያችሁም። \\q የኤዶም ሕዝብ ሆይ፣ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ስለ ኃጢአታችሁ ይቀጣችኋል። ኃጢአታችሁን ለሁሉ ይገልጣል።"
         }
       },
       "decisions": [
@@ -3557,6 +3924,28 @@
           "choice": "the LORD",
           "alternatives": [],
           "reason": "Readable names the LORD, the unnamed \"he\" of both lines (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250040220051",
+            "o250040220061",
+            "o250040220072",
+            "o250040220073"
+          ],
+          "choice": "divine_name spans where Readable names \"the LORD\", as its English",
+          "alternatives": [
+            "\"እርሱ\""
+          ],
+          "reason": "The Hebrew has only \"he\"; Readable names the LORD, as its English does, and the name takes the usual span.",
           "uncertain": false,
           "footnote": false
         }
