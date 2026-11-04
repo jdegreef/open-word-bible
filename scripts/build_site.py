@@ -5078,7 +5078,7 @@ def sitemap(paths):
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared):
+                   downloads, chapter_shared, reader_shared, article_link):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
