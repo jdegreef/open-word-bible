@@ -68,6 +68,11 @@
           "L": "De Davi. Salmo. Declaração {{divine_name:do SENHOR|de Javé}} ao meu senhor: \"Senta-{{deity_pronoun:te|Te}} à {{deity_pronoun:minha|Minha}} direita, até que eu ponha os {{deity_pronoun:teus|Teus}} inimigos [como] estrado para os {{deity_pronoun:teus|Teus}} pés.\"",
           "B": "De Davi. Salmo. {{divine_name:O SENHOR|Javé}} declara ao meu senhor: \"Ocupa o {{deity_pronoun:teu|Teu}} lugar à {{deity_pronoun:minha|Minha}} direita, até que eu ponha os {{deity_pronoun:teus|Teus}} inimigos debaixo dos {{deity_pronoun:teus|Teus}} pés, como estrado.\"",
           "R": "De Davi. Uma canção. {{divine_name:O SENHOR|Javé}} disse ao meu senhor, o rei: \"Senta-{{deity_pronoun:te|Te}} aqui ao {{deity_pronoun:meu|Meu}} lado, à {{deity_pronoun:minha|Minha}} direita, no lugar de honra. Eu vou derrotar os {{deity_pronoun:teus|Teus}} inimigos e colocá-los debaixo dos {{deity_pronoun:teus|Teus}} pés.\""
+        },
+        "am": {
+          "L": "የዳዊት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ለጌታዬ የተናገረው ቃል፦ «በቀኜ ተቀመጥ፣ ጠላቶችህን ለእግርህ መረገጫ እስካደርግ ድረስ።»",
+          "B": "የዳዊት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ጌታዬን እንዲህ ይለዋል፦ «በቀኝ እጄ ተቀመጥ፣ ጠላቶችህን ለእግርህ መረገጫ እስካደርግልህ ድረስ።»",
+          "R": "ዳዊት የዘመረው መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ንጉሡን ጌታዬን እንዲህ አለው፦ «በዚህ በቀኜ፣ በክብር ስፍራ፣ ተቀመጥ፤ ጠላቶችህን ድል አድርጌ ከእግርህ በታች እስካደርጋቸው ድረስ።»"
         }
       },
       "decisions": [
@@ -436,6 +441,47 @@
           "reason": "The Hebrew \"my lord\" is the ordinary address to a king (m3), so the psalm writes \"senhor\" in lowercase, as the English does; the Gospels and Acts, reading it of Jesus, write \"meu Senhor\", and the meaning note gives that reading. The LORD speaks to the king with \"tu\", and every pronoun for him takes the deity_pronoun span, as in the English (r-en-1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191100010041"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 110",
+          "alternatives": [],
+          "reason": "Amharic has no deity_pronoun spans: the Ethiopic script has no capital letters, so the setting has nothing to change. The English puts the king's pronouns under the setting too (its rendering decision); in Amharic he is \"አንተ\" and \"እርሱ\" at every level, as God is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191100010072",
+            "o191100010111"
+          ],
+          "choice": "God's words as Acts 2:34-35 in the Amharic New Testament (L «በቀኜ ተቀመጥ፣ ጠላቶችህን ለእግርህ መረገጫ እስካደርግ ድረስ»; B «በቀኝ እጄ ...»; R as Matthew 22:44 and Acts 2:34-35 R); the first \"LORD\" is \"{{divine_name:እግዚአብሔር|ያህዌ}}\", not the New Testament's \"ጌታ\"",
+          "alternatives": [
+            "\"ጌታ ጌታዬን\""
+          ],
+          "reason": "Jesus (Matthew 22:44), Peter (Acts 2:34-35) and Hebrews 1:13 quote the verse, and the Hebrew agrees with the Greek of Acts and Hebrews (\"a footstool for your feet\"; Matthew has \"under your feet\"). The Greek has kyrios for the name, so the New Testament says \"ጌታ\"; the Hebrew has YHWH, which takes the divine_name span. \"my lord\" (adoni) is \"ጌታዬ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -500,6 +546,11 @@
           "L": "O cetro da {{deity_pronoun:tua|Tua}} força {{divine_name:o SENHOR|Javé}} enviará de Sião: domina no meio dos {{deity_pronoun:teus|Teus}} inimigos!",
           "B": "De Sião {{divine_name:o SENHOR|Javé}} estenderá o cetro do {{deity_pronoun:teu|Teu}} poder: governa no meio dos inimigos que {{deity_pronoun:te|Te}} cercam!",
           "R": "{{divine_name:O SENHOR|Javé}} vai fazer o {{deity_pronoun:teu|Teu}} poder de rei se estender a partir de Sião, Jerusalém. Governa sobre os inimigos que estão ao {{deity_pronoun:teu|Teu}} redor!"
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የብርታትህን በትር ከጽዮን ይልካል፤ በጠላቶችህ መካከል ግዛ!",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የኃይልህን በትረ መንግሥት ከጽዮን ይዘረጋል፤ ጠላቶችህ በከበቡህ መካከል ግዛ!",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የንግሥናህን ኃይል ከጽዮን፣ ከኢየሩሳሌም፣ ያስፋፋል። በዙሪያህ ባሉት ጠላቶችህ ላይ ግዛ!"
         }
       },
       "decisions": [
@@ -574,6 +625,27 @@
           "reason": "Readable says what the scepter stands for (m1) and that Zion is Jerusalem.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191100020061"
+          ],
+          "choice": "the psalmist addresses the king with \"አንተ\" (ግዛ, ጠላቶችህ), not the courtly \"እርስዎ\"",
+          "alternatives": [
+            "\"እርስዎ\""
+          ],
+          "reason": "A subject would say \"እርስዎ\" to a king, but the New Testament reads the psalm as spoken to the Messiah and its Amharic addresses him with \"አንተ\" (Hebrews 1:13; 5:6), as Psalm 45 does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -644,6 +716,11 @@
           "L": "O {{deity_pronoun:teu|Teu}} povo [é] oferta voluntária no dia da {{deity_pronoun:tua|Tua}} força, em esplendores de santidade; do ventre da aurora, a {{deity_pronoun:ti|Ti}} [pertence] o orvalho da {{deity_pronoun:tua|Tua}} juventude.",
           "B": "O {{deity_pronoun:teu|Teu}} povo se oferece de boa vontade no dia em que {{deity_pronoun:tu|Tu}} marchas com força, em esplendor e santidade. Do ventre da aurora a {{deity_pronoun:tua|Tua}} juventude vem a {{deity_pronoun:ti|Ti}}, fresca como o orvalho.",
           "R": "No dia em que {{deity_pronoun:tu|Tu}} fores para a batalha, o {{deity_pronoun:teu|Teu}} povo vai se apresentar de boa vontade. Eles virão vestidos de santo esplendor. A {{deity_pronoun:tua|Tua}} força vai continuar jovem e fresca, como o orvalho que vem com cada nova manhã."
+        },
+        "am": {
+          "L": "ሕዝብህ በኃይልህ ቀን የፈቃድ መሥዋዕቶች [ናቸው]፤ በቅድስና ግርማ፤ ከንጋት ማኅፀን የወጣትነትህ ጠል ለአንተ [ነው]።",
+          "B": "ኃይልህን ይዘህ በምትወጣበት ቀን ሕዝብህ በፈቃዳቸው ራሳቸውን ያቀርባሉ፤ በግርማና በቅድስና። ከንጋት ማኅፀን ወጣትነትህ እንደ ጠል ትኩስ ሆኖ ወደ አንተ ይመጣል።",
+          "R": "ወደ ጦርነት በምትሄድበት ቀን ሕዝብህ በደስታ በፈቃዳቸው ይነሣሉ። በቅዱስ ግርማ ተሸልመው ይመጣሉ። በየማለዳው እንደሚወርድ ጠል ብርታትህ ወጣትና ትኩስ ሆኖ ይኖራል።"
         }
       },
       "decisions": [
@@ -794,6 +871,23 @@
           "reason": "The word is a gift freely given (m1); \"oferta voluntária\" is its name in the Portuguese of the Law, and Literal keeps it, with the people themselves as the offering. The singular reads better in Portuguese than the Hebrew plural.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191100030021"
+          ],
+          "choice": "freewill offerings (nedavot) as \"የፈቃድ መሥዋዕቶች\"",
+          "alternatives": [],
+          "reason": "The term of the Pentateuch list; Balanced and Readable say what it means here, that the people offer themselves willingly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -859,6 +953,11 @@
           "L": "{{divine_name:O SENHOR|Javé}} jurou e não mudará de ideia: \"Tu [és] sacerdote para sempre, segundo a ordem de Melquisedeque.\"",
           "B": "{{divine_name:O SENHOR|Javé}} jurou e não voltará atrás: \"Tu és sacerdote para sempre, da ordem de Melquisedeque.\"",
           "R": "{{divine_name:O SENHOR|Javé}} fez um juramento, e {{deity_pronoun:ele|Ele}} nunca vai mudar de ideia. Ele disse: \"Tu és sacerdote para sempre, o mesmo tipo de sacerdote que Melquisedeque foi.\""
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ማለ፤ አይጸጸትምም፦ «አንተ እንደ መልከ ጼዴቅ ሥርዓት ለዘላለም ካህን [ነህ]።»",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ማለ፤ መሐላውንም አያነሣም፦ «አንተ እንደ መልከ ጼዴቅ ሥርዓት ለዘላለም ካህን ነህ።»",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በመሐላ ቃል ገብቷል፤ ሐሳቡንም ፈጽሞ አይለውጥም። እንዲህ አለ፦ «አንተ ለዘላለም ካህን ነህ፤ መልከ ጼዴቅ እንደ ነበረው ዓይነት ካህን ነህ።»"
         }
       },
       "decisions": [
@@ -1014,6 +1113,25 @@
           "reason": "Hebrews quotes this oath of Jesus (m4: Hebrews 5:6; 6:20; 7:17, 21), so the Portuguese keeps Hebrews' words at each level, which the Hebrew allows (m2): \"ordem\" renders \"the manner of\" as Hebrews' Greek does. Readable says \"Tu és sacerdote para sempre\" as Hebrews does, rather than the English Readable's \"You will always be\". \"Melquisedeque\" is spelled as in Genesis 14:18.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191100040111"
+          ],
+          "choice": "«አንተ እንደ መልከ ጼዴቅ ሥርዓት ለዘላለም ካህን [ነህ]።» (L, B), R «አንተ ለዘላለም ካህን ነህ፤ መልከ ጼዴቅ እንደ ነበረው ዓይነት ካህን ነህ።», as Hebrews 5:6",
+          "alternatives": [],
+          "reason": "Hebrews quotes the oath (5:6; 7:17, 21); the Hebrew agrees with the Greek, so the Amharic New Testament's wording is kept at each level. Melchizedek is \"መልከ ጼዴቅ\", as Genesis 14 and Hebrews.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1077,6 +1195,11 @@
           "L": "O Senhor, à {{deity_pronoun:tua|Tua}} direita, despedaça reis no dia da {{deity_pronoun:sua|Sua}} ira.",
           "B": "O Senhor está ao {{deity_pronoun:teu|Teu}} lado direito e, quando chegar o dia da {{deity_pronoun:sua|Sua}} ira, {{deity_pronoun:ele|Ele}} despedaçará reis.",
           "R": "O Senhor está bem ao {{deity_pronoun:teu|Teu}} lado, ó Rei. Quando chegar o dia de {{deity_pronoun:ele|Ele}} mostrar a {{deity_pronoun:sua|Sua}} ira, {{deity_pronoun:ele|Ele}} vai esmagar reis."
+        },
+        "am": {
+          "L": "በቀኝህ ያለው ጌታ በቁጣው ቀን ነገሥታትን ይቀጠቅጣል።",
+          "B": "ጌታ በቀኝህ ቆሟል፤ የቁጣው ቀን በመጣ ጊዜ ነገሥታትን ይቀጠቅጣል።",
+          "R": "ንጉሥ ሆይ፣ ጌታ በአጠገብህ ነው። ቁጣውን የሚያሳይበት ቀን ሲመጣ ነገሥታትን ይደቁሳል።"
         }
       },
       "decisions": [
@@ -1250,6 +1373,11 @@
           "L": "Ele julga entre as nações, [a terra] está cheia [de] cadáveres; {{deity_pronoun:ele|Ele}} despedaça [a] cabeça sobre [a] vasta terra.",
           "B": "Ele executa julgamento sobre as nações, e os mortos ficam espalhados por toda parte; {{deity_pronoun:ele|Ele}} esmaga os líderes por toda a vasta terra.",
           "R": "Ele vai julgar as nações. Haverá cadáveres por toda parte. Ele vai esmagar os líderes do mundo inteiro."
+        },
+        "am": {
+          "L": "በሕዝቦች መካከል ይፈርዳል፤ [ምድሪቱ] በሬሳዎች ተሞልታለች፤ በሰፊው ምድር ላይ ራስን ይቀጠቅጣል።",
+          "B": "በሕዝቦች ላይ ይፈርዳል፤ ሙታንም በየቦታው ይወድቃሉ፤ በሰፊው ምድር ላይ ያሉትን መሪዎች ይቀጠቅጣል።",
+          "R": "በሕዝቦች ላይ ይፈርዳል። ሬሳዎች በየቦታው ይወድቃሉ። በሰፊው ዓለም ሁሉ ያሉትን መሪዎች ይደቁሳል።"
         }
       },
       "decisions": [
@@ -1405,6 +1533,11 @@
           "L": "Da torrente no caminho {{deity_pronoun:ele|Ele}} bebe; por isso {{deity_pronoun:ele|Ele}} levanta [a {{deity_pronoun:sua|Sua}}] cabeça.",
           "B": "No caminho {{deity_pronoun:ele|Ele}} bebe de um riacho, e por isso {{deity_pronoun:ele|Ele}} mantém a cabeça erguida.",
           "R": "Ele vai parar para beber de um riacho à beira do caminho. Depois {{deity_pronoun:ele|Ele}} vai se levantar, forte e vitorioso."
+        },
+        "am": {
+          "L": "በመንገድ ላይ ካለው ጅረት ይጠጣል፤ ስለዚህ [ራሱን] ቀና ያደርጋል።",
+          "B": "በመንገድ ላይ ከወንዝ ውኃ ይጠጣል፤ ስለዚህም ራሱን ቀና አድርጎ ይቆማል።",
+          "R": "በመንገዱ አጠገብ ካለው ጅረት ለመጠጣት ይቆማል። ከዚያም በብርታትና በድል ይነሣል።"
         }
       },
       "decisions": [

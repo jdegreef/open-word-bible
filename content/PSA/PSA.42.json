@@ -54,6 +54,11 @@
           "L": "Para o regente: Masquil dos filhos de Corá.",
           "B": "Para o mestre de música. Masquil dos filhos de Corá.",
           "R": "Para quem dirige a música. Uma canção da família de Corá, para ensinar e dar entendimento."
+        },
+        "am": {
+          "L": "ለመዘምራን አለቃ፤ የቆሬ ልጆች ማስኪል።",
+          "B": "ለመዘምራን አለቃ። የቆሬ ልጆች ማስኪል።",
+          "R": "ለመዘምራን አለቃ። ለማስተማርና ማስተዋልን ለመስጠት የቆሬ ልጆች የዘመሩት መዝሙር።"
         }
       },
       "decisions": [
@@ -264,6 +269,66 @@
           "reason": "For the Psalms of the sons of Korah (42-49, 84-88): \"Corá\" is the Portuguese form of the Levite's name already used in Exodus 6:21 and Numbers 16, so the singers are named after the same man. Literal and Balanced keep \"filhos\", which already includes daughters; Readable says \"família\", as the English Readable says \"family\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the English setting that capitalises pronouns for God has nothing to change in Amharic; the Amharic text has no deity_pronoun spans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190420010021"
+          ],
+          "choice": "maskil as the name \"ማስኪል\" (Literal, Balanced); Readable explains it, as the English does",
+          "alternatives": [
+            "\"የጥበብ መዝሙር\""
+          ],
+          "reason": "The sense of the heading word is no longer known (see the meaning decision), so Literal and Balanced keep it as a name, as the terms list settles for all the maskil psalms; Readable gives the likely purpose.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-3",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190420010032",
+            "o190420010041"
+          ],
+          "choice": "\"the sons of Korah\" as \"የቆሬ ልጆች\" at every level",
+          "alternatives": [
+            "\"የቆሬ ቤተሰብ\" (Readable)"
+          ],
+          "reason": "The temple singers descended from Korah (Numbers 26:11); \"ልጆች\" means descendants as well as sons, so one wording serves every level and every Korah heading (Psalms 42-49).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -329,6 +394,11 @@
           "L": "Como o cervo brama pelas correntes de água, assim a minha alma brama por {{deity_pronoun:ti|Ti}}, ó Deus.",
           "B": "Como a corça que anseia pelas águas correntes, assim eu anseio por {{deity_pronoun:ti|Ti}}, ó Deus, com todo o meu ser.",
           "R": "O cervo tem sede e procura um riacho. Assim também eu, ó Deus, sinto muita falta de {{deity_pronoun:ti|Ti}}."
+        },
+        "am": {
+          "L": "አጋዘን ለውኃ ጅረቶች ተጠምታ እንደምትቃትት፣ እንዲሁ ነፍሴ ለአንተ ትቃትታለች፣ እግዚአብሔር ሆይ።",
+          "B": "ወራጅ ውኃ ለማግኘት እንደምትቃትት ሴት አጋዘን፣ እግዚአብሔር ሆይ፣ እኔም በሙሉ ሁለንተናዬ አንተን እናፍቃለሁ።",
+          "R": "አጋዘን ውኃ ጠምቷት የውኃ ጅረት ትፈልጋለች። እግዚአብሔር ሆይ፣ እኔም እንዲሁ አንተን እናፍቃለሁ።"
         }
       },
       "decisions": [
@@ -455,6 +525,49 @@
           "reason": "The verb is a longing that cries aloud with thirst (m1). Portuguese \"bramar\" is the cry of a deer or other animal, so Literal keeps the sound; Balanced says \"anseia\", the longing itself, as the English Balanced says \"longs\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190420020101"
+          ],
+          "choice": "Elohim as \"እግዚአብሔር\" (\"እግዚአብሔር ሆይ\" in address), \"አምላክ\" for \"my God\", \"the God of …\", \"the living God\"; no divine_name span",
+          "alternatives": [
+            "\"አምላክ ሆይ\" in address"
+          ],
+          "reason": "Book Two (Psalms 42-72) mostly says Elohim where Book One says the divine name. Elohim here is the one God, so it is \"እግዚአብሔር\", as the terms list settles; it never takes the divine_name span, which marks YHWH alone (42:9). \"አምላክ ሆይ\" is kept for Psalm 45:7, where Hebrews 1:8 has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190420020012",
+            "o190420020021"
+          ],
+          "choice": "the deer as a female \"አጋዘን\" that \"pants\" with thirst (\"ተጠምታ … ትቃትታለች\")",
+          "alternatives": [
+            "\"ዋላ … ይናፍቃል\""
+          ],
+          "reason": "The Hebrew verb is feminine and pictures a thirst that can be heard (see the meaning decisions); \"ቃተተ\" (to pant, groan) says that, and it keeps this well-known verse clear of the 1962 Bible's wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -521,6 +634,11 @@
           "L": "Tem sede a minha alma de Deus, do Deus vivo; quando virei e comparecerei diante da face de Deus?",
           "B": "Tenho sede de Deus, do Deus que vive. Quando poderei ir e estar diante da face de Deus?",
           "R": "Tenho sede de Deus, o Deus que está vivo. Quando vou poder ir à {{deity_pronoun:sua|Sua}} casa e estar com {{deity_pronoun:ele|Ele}} de novo?"
+        },
+        "am": {
+          "L": "ነፍሴ እግዚአብሔርን፣ ሕያው አምላክን ተጠማች፤ መቼ መጥቼ በእግዚአብሔር ፊት እታያለሁ?",
+          "B": "እግዚአብሔርን፣ ሕያው አምላክን ተጠማሁ። መቼ መጥቼ በእግዚአብሔር ፊት እቆማለሁ?",
+          "R": "እግዚአብሔርን፣ ሕያው የሆነውን አምላክ ተጠማሁ። መቼ ወደ ቤቱ ሄጄ እንደ ገና ከእርሱ ጋር እሆናለሁ?"
         }
       },
       "decisions": [
@@ -643,6 +761,11 @@
           "L": "As minhas lágrimas têm sido o meu pão de dia e de noite, enquanto [eles] me dizem o dia todo: \"Onde [está] o seu Deus?\"",
           "B": "De dia e de noite as lágrimas são o meu alimento, enquanto o dia inteiro as pessoas me perguntam: \"Onde está o seu Deus?\"",
           "R": "Eu choro o dia todo e a noite toda; lágrimas são tudo o que tenho para comer. O dia inteiro as pessoas me perguntam: \"Onde está o seu Deus?\""
+        },
+        "am": {
+          "L": "እንባዬ ቀንና ሌሊት እንጀራ ሆነልኝ፤ ቀኑን ሙሉ፦ «አምላክህ የት [አለ]?» ይሉኛልና።",
+          "B": "ቀንና ሌሊት እንባዬን ተመገብኩ፤ ሰዎችም ቀኑን ሙሉ፦ «አምላክህ የት ነው?» ይሉኛል።",
+          "R": "ቀኑን ሙሉ፣ ሌሊቱንም ሙሉ አለቅሳለሁ፤ ያለኝ ምግብ እንባ ብቻ ነው። ሰዎች ቀኑን ሙሉ፦ «አምላክህ የት ነው?» ይሉኛል።"
         }
       },
       "decisions": [
@@ -793,6 +916,11 @@
           "L": "Destas [coisas] eu me lembro, e derramo a minha alma dentro de mim: como eu passava com a multidão, conduzindo-os em procissão até a casa de Deus, com voz de júbilo e de ação de graças, uma multidão em festa.",
           "B": "Derramo o meu coração ao me lembrar destas coisas: como eu caminhava com a multidão e a conduzia até a casa de Deus, entre gritos de alegria e cânticos de gratidão, uma grande multidão celebrando a festa.",
           "R": "O meu coração se parte quando me lembro de como as coisas eram. Eu ia com as multidões até a casa de Deus. Eu as guiava pelo caminho. Nós gritávamos de alegria e cantávamos canções de gratidão. Uma enorme multidão estava celebrando a festa."
+        },
+        "am": {
+          "L": "እነዚህን [ነገሮች] አስታውሳለሁ፤ ነፍሴንም በውስጤ አፈስሳለሁ፤ ከሕዝቡ ብዛት ጋር እንዴት እሄድ እንደ ነበር፣ በእልልታና በምስጋና ድምፅ በዓል የሚያከብረውን ሕዝብ እየመራሁ ወደ እግዚአብሔር ቤት እንዴት እወስዳቸው እንደ ነበር።",
+          "B": "እነዚህን ነገሮች ሳስብ ልቤን አፈስሳለሁ፤ ከሕዝቡ ጋር እንዴት እሄድ እንደ ነበር፣ በእልልታና በምስጋና መዝሙር መካከል በዓሉን የሚያከብረውን ታላቅ ሕዝብ እየመራሁ ወደ እግዚአብሔር ቤት እንዴት እወጣ እንደ ነበር።",
+          "R": "ቀድሞ እንዴት እንደ ነበረ ሳስታውስ ልቤ ይሰበራል። ከብዙ ሕዝብ ጋር ወደ እግዚአብሔር ቤት እሄድ ነበር። በጉዞአቸውም እመራቸው ነበር። በደስታ እልል እንል ነበር፤ የምስጋና መዝሙርም እንዘምር ነበር። ብዙ ሕዝብ በዓሉን ያከብር ነበር።"
         }
       },
       "decisions": [
@@ -935,6 +1063,11 @@
           "L": "Por que você está abatida, ó minha alma, e [por que] se agita dentro de mim? Espere em Deus, pois ainda darei graças a {{deity_pronoun:ele|Ele}}, [pela] salvação da {{deity_pronoun:sua|Sua}} face.",
           "B": "Por que você está tão abatida, ó minha alma? Por que essa agitação dentro de mim? Espere em Deus; ainda darei graças a {{deity_pronoun:ele|Ele}} pelo socorro que vem da {{deity_pronoun:sua|Sua}} presença.",
           "R": "Eu digo a mim mesmo: Por que você está tão triste? Por que está tão inquieto? Continue esperando em Deus! Ainda vou louvá-{{deity_pronoun:lo|Lo}}. Quando {{deity_pronoun:ele|Ele}} está comigo, {{deity_pronoun:ele|Ele}} me salva."
+        },
+        "am": {
+          "L": "ነፍሴ ሆይ፣ ለምን አቀረቀርሽ? በውስጤስ ለምን ትታወኪያለሽ? እግዚአብሔርን ተስፋ አድርጊ፤ ስለ ፊቱ ማዳን ገና አመሰግነዋለሁና።",
+          "B": "ነፍሴ ሆይ፣ ለምን እንዲህ አቀረቀርሽ? ይህስ ውስጣዊ ሁከት ለምንድን ነው? እግዚአብሔርን ተስፋ አድርገሽ ጠብቂ፤ ከፊቱ ስለሚመጣው ማዳን እንደ ገና አመሰግነዋለሁ።",
+          "R": "ነፍሴን እንዲህ እላታለሁ፦ ለምን እንዲህ አዘንሽ? ለምንስ እንዲህ ተረበሽሽ? በእግዚአብሔር ተስፋ ማድረግሽን አታቋርጪ! እንደ ገና አመሰግነዋለሁ። እርሱ ከእኔ ጋር ሲሆን ያድነኛል።"
         }
       },
       "decisions": [
@@ -1169,6 +1302,27 @@
           "reason": "Portuguese \"esperar\" means both to wait and to hope, the two sides of the Hebrew verb; so \"Espere em Deus\" says what the English Balanced needs \"wait ... in hope\" for. Readable says \"Continue esperando em Deus!\", as the English \"Keep hoping\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190420060031"
+          ],
+          "choice": "the soul addressed as feminine (\"ነፍሴ ሆይ … አቀረቀርሽ\"); Readable \"ነፍሴን እንዲህ እላታለሁ፦\" for \"I tell myself:\"",
+          "alternatives": [
+            "\"ለራሴ እንዲህ እላለሁ\" with a masculine \"you\""
+          ],
+          "reason": "ነፍስ is feminine in Amharic, as nefesh is in Hebrew, so the psalmist's words to his own soul take the feminine \"you\"; Readable names the soul so the feminine reads naturally. The refrain is worded the same in 42:12 and 43:5, except where the Hebrew of this first refrain differs (\"the salvation of his face\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1240,6 +1394,11 @@
           "L": "Meu Deus, a minha alma está abatida dentro de mim; por isso eu me lembro de {{deity_pronoun:ti|Ti}} desde a terra do Jordão e dos Hermons, desde o monte Mizar.",
           "B": "Meu Deus, estou abatido por dentro; por isso vou me lembrar de {{deity_pronoun:ti|Ti}} aqui, na região do Jordão e nos picos do Hermom, no monte Mizar.",
           "R": "Meu Deus, estou muito triste. Por isso penso em {{deity_pronoun:ti|Ti}} aqui, bem longe, no norte, onde nasce o rio Jordão, perto do monte Hermom e do monte Mizar."
+        },
+        "am": {
+          "L": "አምላኬ ሆይ፣ ነፍሴ በውስጤ አቀረቀረች፤ ስለዚህ ከዮርዳኖስ ምድርና ከኤርሞኖች፣ ከሚጽዓር ተራራ አስብሃለሁ።",
+          "B": "አምላኬ ሆይ፣ በውስጤ አቀርቅሬአለሁ፤ ስለዚህ በዚህ በዮርዳኖስ አገርና በኤርሞን ጫፎች ላይ፣ በሚጽዓር ተራራ ላይ ሆኜ አስብሃለሁ።",
+          "R": "አምላኬ ሆይ፣ እጅግ አዝኛለሁ። ስለዚህ ከዚህ ከሩቁ ሰሜን፣ የዮርዳኖስ ወንዝ ከሚጀምርበት፣ ከኤርሞን ተራራና ከሚጽዓር ተራራ አጠገብ ሆኜ አስብሃለሁ።"
         }
       },
       "decisions": [
@@ -1304,6 +1463,27 @@
           "choice": "far away in the north",
           "alternatives": [],
           "reason": "Readable says where these places are (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190420070121"
+          ],
+          "choice": "Mizar as the name \"ሚጽዓር\"; Hermon \"ኤርሞን\" as Joshua 12:1",
+          "alternatives": [
+            "\"ታናሹ ተራራ\" (the little mountain)"
+          ],
+          "reason": "The place is unknown (see the meaning decision), so it stays a name; Hermon keeps the form already used on main.",
           "uncertain": false,
           "footnote": false
         }
@@ -1375,6 +1555,11 @@
           "L": "Abismo chama abismo ao som das {{deity_pronoun:tuas|Tuas}} cachoeiras; todos os {{deity_pronoun:teus|Teus}} vagalhões e as {{deity_pronoun:tuas|Tuas}} ondas passaram sobre mim.",
           "B": "Um abismo clama a outro abismo no rugido das {{deity_pronoun:tuas|Tuas}} cascatas; todas as {{deity_pronoun:tuas|Tuas}} ondas, que arrebentam e rolam, passaram por cima de mim.",
           "R": "As {{deity_pronoun:tuas|Tuas}} cachoeiras rugem, e as águas profundas chamam umas às outras. É como se as {{deity_pronoun:tuas|Tuas}} ondas estivessem quebrando em cima de mim e eu estivesse me afogando."
+        },
+        "am": {
+          "L": "በፏፏቴዎችህ ድምፅ ጥልቁ ጥልቁን ይጠራል፤ ሞገዶችህና ማዕበሎችህ ሁሉ በላዬ አለፉ።",
+          "B": "በፏፏቴዎችህ ጩኸት አንዱ ጥልቅ ሌላውን ጥልቅ ይጣራል፤ የሚሰበሩ ሞገዶችህና ማዕበሎችህ ሁሉ በራሴ ላይ አለፉ።",
+          "R": "ፏፏቴዎችህ ያጓራሉ፤ ጥልቅ ውኆችም እርስ በርሳቸው ይጠራራሉ። ሞገዶችህ በላዬ ላይ እየተላተሙ የምሰጥም ያህል ነው።"
         }
       },
       "decisions": [
@@ -1511,6 +1696,11 @@
           "L": "De dia {{divine_name:o SENHOR|Javé}} ordena o {{deity_pronoun:seu|Seu}} amor leal, e de noite o {{deity_pronoun:seu|Seu}} cântico [está] comigo, uma oração ao Deus da minha vida.",
           "B": "De dia {{divine_name:o SENHOR|Javé}} envia o {{deity_pronoun:seu|Seu}} amor leal, e à noite o {{deity_pronoun:seu|Seu}} cântico fica comigo, uma oração ao Deus que me dá a vida.",
           "R": "Durante o dia {{divine_name:o SENHOR|Javé}} me mostra o {{deity_pronoun:seu|Seu}} amor fiel. À noite eu canto para {{deity_pronoun:ele|Ele}} e oro a Deus, que me mantém vivo."
+        },
+        "am": {
+          "L": "ቀን ቀን {{divine_name:እግዚአብሔር|ያህዌ}} ጽኑ ፍቅሩን ያዝዛል፤ በሌሊትም መዝሙሩ ከእኔ ጋር [ነው]፤ ለሕይወቴ አምላክ የሚቀርብ ጸሎት።",
+          "B": "በቀን {{divine_name:እግዚአብሔር|ያህዌ}} ጽኑ ፍቅሩን ይልካል፤ በሌሊትም መዝሙሩ ከእኔ ጋር ይኖራል፤ ሕይወትን ለሚሰጠኝ አምላክ የማቀርበው ጸሎት ነው።",
+          "R": "በቀን {{divine_name:እግዚአብሔር|ያህዌ}} ጽኑ ፍቅሩን ያሳየኛል። በሌሊት ለእርሱ እዘምራለሁ፤ በሕይወት ወደሚያኖረኝ አምላክም እጸልያለሁ።"
         }
       },
       "decisions": [
@@ -1639,6 +1829,11 @@
           "L": "Direi a Deus, minha rocha: \"Por que me esqueceste? Por que ando de luto sob a opressão do inimigo?\"",
           "B": "Clamo a Deus, a minha rocha: \"Por que {{deity_pronoun:te|Te}} esqueceste de mim? Por que ando vestido de luto, enquanto o inimigo me aperta?\"",
           "R": "Ó Deus, {{deity_pronoun:tu|Tu}} és a minha rocha. Por isso eu {{deity_pronoun:te|Te}} pergunto: \"Por que {{deity_pronoun:tu|Tu}} me esqueceste? Por que estou tão triste? Por que os meus inimigos me tratam tão mal?\""
+        },
+        "am": {
+          "L": "ዓለቴ ለሆነው ለእግዚአብሔር እንዲህ እላለሁ፦ «ለምን ረሳኸኝ? በጠላት ግፍ ለምን እያዘንኩ እመላለሳለሁ?»",
+          "B": "ዓለቴ ወደ ሆነው ወደ እግዚአብሔር እንዲህ ብዬ እጮኻለሁ፦ «ለምን ከልብህ አወጣኸኝ? ጠላት እያስጨነቀኝ ለምን የሐዘን ልብስ ለብሼ እመላለሳለሁ?»",
+          "R": "እግዚአብሔር ሆይ፣ አንተ ዓለቴ ነህ። ስለዚህ እንዲህ ብዬ እጠይቅሃለሁ፦ «ለምን ረሳኸኝ? ለምን እንዲህ አዝኛለሁ? ጠላቶቼስ ለምን እንዲህ ያንገላቱኛል?»"
         }
       },
       "decisions": [
@@ -1756,6 +1951,11 @@
           "L": "Com um esmagamento nos meus ossos os meus adversários me afrontam, enquanto me dizem o dia todo: \"Onde [está] o seu Deus?\"",
           "B": "Os meus adversários me insultam com uma afronta que esmaga os meus ossos, enquanto o dia inteiro me perguntam: \"Onde está o seu Deus?\"",
           "R": "Os meus inimigos zombam de mim, e isso me fere por dentro, como se os meus ossos estivessem quebrados. O dia inteiro eles me perguntam: \"Onde está o seu Deus?\""
+        },
+        "am": {
+          "L": "አጥንቶቼን በሚያደቅ ስብራት ባላጋራዎቼ ይሰድቡኛል፤ ቀኑን ሙሉ፦ «አምላክህ የት [አለ]?» ይሉኛልና።",
+          "B": "ባላጋራዎቼ አጥንቴን በሚያደቅ ስድብ ይዘልፉኛል፤ ቀኑን ሙሉ፦ «አምላክህ የት ነው?» ይሉኛል።",
+          "R": "ጠላቶቼ ያፌዙብኛል፤ አጥንቶቼ እንደ ተሰበሩ ያህል በውስጤ ያመኛል። ቀኑን ሙሉ፦ «አምላክህ የት ነው?» ይሉኛል።"
         }
       },
       "decisions": [
@@ -1863,6 +2063,11 @@
           "L": "Por que você está abatida, ó minha alma, e por que se agita dentro de mim? Espere em Deus, pois ainda darei graças a {{deity_pronoun:ele|Ele}}, a salvação da minha face e o meu Deus.",
           "B": "Por que você está tão abatida, ó minha alma? Por que essa agitação dentro de mim? Espere em Deus; ainda darei graças a {{deity_pronoun:ele|Ele}}, aquele que me salva, o meu Deus.",
           "R": "Eu digo a mim mesmo: Por que você está tão triste? Por que está tão inquieto? Continue esperando em Deus! Ainda vou louvá-{{deity_pronoun:lo|Lo}}. Ele me salva. Ele é o meu Deus."
+        },
+        "am": {
+          "L": "ነፍሴ ሆይ፣ ለምን አቀረቀርሽ? በውስጤስ ለምን ትታወኪያለሽ? እግዚአብሔርን ተስፋ አድርጊ፤ የፊቴ መድኃኒትና አምላኬ የሆነውን ገና አመሰግነዋለሁና።",
+          "B": "ነፍሴ ሆይ፣ ለምን እንዲህ አቀረቀርሽ? ይህስ ውስጣዊ ሁከት ለምንድን ነው? እግዚአብሔርን ተስፋ አድርገሽ ጠብቂ፤ እርሱን፣ የሚያድነኝን አምላኬን፣ እንደ ገና አመሰግነዋለሁ።",
+          "R": "ነፍሴን እንዲህ እላታለሁ፦ ለምን እንዲህ አዘንሽ? ለምንስ እንዲህ ተረበሽሽ? በእግዚአብሔር ተስፋ ማድረግሽን አታቋርጪ! እንደ ገና አመሰግነዋለሁ። እርሱ ያድነኛል፤ እርሱ አምላኬ ነው።"
         }
       },
       "decisions": [

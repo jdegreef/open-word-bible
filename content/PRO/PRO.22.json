@@ -60,6 +60,11 @@
           "L": "Um [bom] nome [é] preferível a grandes riquezas; \\q o favor [é] melhor que a prata e que o ouro.",
           "B": "Vale a pena escolher o bom nome em vez de grande fortuna; \\q a estima dos outros supera a prata e o ouro.",
           "R": "Ter fama de boa pessoa vale mais do que ser muito rico. \\q Ser respeitado é melhor do que ter prata e ouro."
+        },
+        "am": {
+          "L": "[መልካም] ስም ከብዙ ሀብት ይልቅ የሚመረጥ [ነው]፤ \\q ሞገስም ከብርና ከወርቅ ይሻላል።",
+          "B": "መልካም ስም ከብዙ ሀብት ይልቅ ተመራጭ ነው፤ \\q በሰው ዘንድ መከበርም ከብርና ከወርቅ ይበልጣል።",
+          "R": "ደግ ሰው ተብሎ መታወቅ እጅግ ሀብታም ከመሆን ይበልጣል። \\q መከበርም ብርና ወርቅ ከማግኘት ይሻላል።"
         }
       },
       "decisions": [
@@ -110,6 +115,25 @@
             "name"
           ],
           "reason": "Literal supplies the word the Hebrew implies, in brackets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "no deity_pronoun spans in the Amharic of Proverbs 22",
+          "alternatives": [
+            "spans like the English ones (verse 12)"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
           "uncertain": false,
           "footnote": false
         }
@@ -172,6 +196,11 @@
           "L": "O rico e o pobre se encontram; \\q {{divine_name:o SENHOR|Javé}} [é] o Criador de todos eles.",
           "B": "Ricos e pobres têm algo em comum: \\q foi {{divine_name:o SENHOR|Javé}} quem fez a todos.",
           "R": "Os ricos e os pobres são iguais numa coisa. \\q {{divine_name:O SENHOR|Javé}} fez cada um deles."
+        },
+        "am": {
+          "L": "ሀብታምና ድሃ ይገናኛሉ፤ \\q የሁሉም ሠሪ {{divine_name:እግዚአብሔር|ያህዌ}} [ነው]።",
+          "B": "ሀብታምና ድሃ በአንድ ነገር ይመሳሰላሉ፤ \\q የሁሉንም ፈጣሪ {{divine_name:እግዚአብሔር|ያህዌ}} ነው።",
+          "R": "ሀብታሞችና ድሆች በአንድ ነገር አንድ ናቸው። \\q ሁሉንም የፈጠራቸው {{divine_name:እግዚአብሔር|ያህዌ}} ነው።"
         }
       },
       "decisions": [
@@ -272,6 +301,11 @@
           "L": "O prudente vê o mal e se esconde, \\q mas os ingênuos passam adiante e pagam a pena.",
           "B": "Quem é prudente vê o perigo chegando e se protege, \\q mas os ingênuos seguem em frente e sofrem as consequências.",
           "R": "Os sábios veem o perigo à frente e saem do caminho. \\q Mas quem não pensa no futuro continua andando e se machuca."
+        },
+        "am": {
+          "L": "ብልህ ክፉን ያያል፤ ይሸሸጋል፤ \\q አላዋቂዎች ያልፋሉ፤ ይቀጣሉ።",
+          "B": "ብልህ ሰው ጥፋት ሲመጣ አይቶ ይሸሸጋል፤ \\q አላዋቂዎች ግን ዝም ብለው ይቀጥላሉ፤ ጉዳቱንም ይቀበላሉ።",
+          "R": "ብልህ ሰዎች አደጋን አይተው ከመንገድ ይርቃሉ። \\q አስቀድመው የማያስቡ ሰዎች ግን ዝም ብለው ይሄዳሉ፤ ይጎዳሉም።"
         }
       },
       "decisions": [
@@ -345,6 +379,48 @@
           "reason": "27:12 repeats this saying with small differences in the joining words (m2). It is drafted here first; 27:12 should keep these words wherever its Hebrew is the same. 'arum is \"o prudente\" (13:16) and pethi \"o ingênuo\", as the book has them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220030011",
+            "o200220030062"
+          ],
+          "choice": "the sensible (ʿarum) as \"ብልህ\", the simple (peti) as \"አላዋቂ\"",
+          "alternatives": [
+            "\"ጥበበኛ\" for ʿarum",
+            "\"ጅል\" or \"የዋህ\" for peti"
+          ],
+          "reason": "\"ብልህ\" is the shrewd, careful person, the word the terms list uses for prudence (ʿormah, \"ብልሃት\"), kept apart from \"ጠቢብ\" (wise, ḥakham). \"አላዋቂ\" is the terms list's word for the inexperienced who believe anything; \"የዋህ\" would praise them. Readable says \"አስቀድመው የማያስቡ ሰዎች\" as the English Readable explains them. This saying returns in 27:12, and the two read alike (the Hebrew here adds \"and\" twice, which Amharic carries in the chain of verbs).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200220030052"
+          ],
+          "choice": "no gender spans in this chapter: \"ይሸሸጋል\", \"ነፍሱን\", \"በሥራው\" with the generic masculine",
+          "alternatives": [
+            "gender spans as in the English Literal"
+          ],
+          "reason": "In Amharic a saying about \"whoever\" takes the ordinary masculine singular, which is heard as anyone, man or woman, so the setting has no second wording to switch to (verses 3, 5, 6, 8, 9, 11, 16, 22, 25, 29).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -406,6 +482,11 @@
           "L": "A recompensa da humildade, o temor {{divine_name:do SENHOR|de Javé}}, \\q [é] riqueza, honra e vida.",
           "B": "A humildade e o temor {{divine_name:do SENHOR|de Javé}} trazem a sua recompensa: \\q riqueza, honra e vida.",
           "R": "Seja humilde e honre {{divine_name:o SENHOR|Javé}} com reverência. \\q Então você vai receber riqueza, honra e vida."
+        },
+        "am": {
+          "L": "የትሕትናና {{divine_name:እግዚአብሔርን|ያህዌን}} የመፍራት ዋጋ \\q ሀብትና ክብር ሕይወትም [ነው]።",
+          "B": "ትሕትናና {{divine_name:እግዚአብሔርን|ያህዌን}} መፍራት ዋጋ ያስገኛሉ፤ \\q ይኸውም ሀብት፣ ክብርና ሕይወት ነው።",
+          "R": "ትሑት ሁን፤ {{divine_name:እግዚአብሔርን|ያህዌን}}ም በአክብሮት ፍራ። \\q ያን ጊዜ ሀብትን፣ ክብርንና ሕይወትን ታገኛለህ።"
         }
       },
       "decisions": [
@@ -440,6 +521,28 @@
             "consequence"
           ],
           "reason": "The word (eqev) means what comes at the heel of something, its outcome (Psalm 19:12).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220040031",
+            "o200220040041"
+          ],
+          "choice": "the fear of the LORD as \"{{divine_name:እግዚአብሔርን|ያህዌን}} መፍራት\"",
+          "alternatives": [
+            "\"ፈሪሀ እግዚአብሔር\""
+          ],
+          "reason": "The terms list's wording: the plain verbal noun says what the Hebrew phrase means, the reverent awe that obeys; the Ge'ez compound is a church phrase that does not take the divine name setting.",
           "uncertain": false,
           "footnote": false
         }
@@ -505,6 +608,11 @@
           "L": "Espinhos [e] laços [estão] no caminho do perverso; \\q quem guarda a sua vida ficará longe deles.",
           "B": "Espinhos e armadilhas há no caminho do perverso; \\q quem dá valor à vida fica bem longe deles.",
           "R": "As pessoas desonestas andam por um caminho cheio de espinhos e armadilhas. \\q Se você quer proteger a sua vida, fique longe desse caminho."
+        },
+        "am": {
+          "L": "እሾህና ወጥመድ በጠማማ [ሰው] መንገድ [አለ]፤ \\q ነፍሱን የሚጠብቅ ከእነርሱ ይርቃል።",
+          "B": "በጠማማ ሰው መንገድ ላይ እሾህና ወጥመድ አለ፤ \\q ለሕይወቱ የሚሳሳ ግን ከእነርሱ አጥብቆ ይርቃል።",
+          "R": "ታማኝ ያልሆኑ ሰዎች የሚሄዱበት መንገድ እሾህና ወጥመድ የሞላበት ነው። \\q ሕይወትህን መጠበቅ ከፈለግህ ከዚያ መንገድ ራቅ።"
         }
       },
       "decisions": [
@@ -588,6 +696,11 @@
           "L": "Inicie a criança conforme o caminho dela; \\q mesmo quando envelhecer, não se afastará dele.",
           "B": "Ponha a criança desde cedo na estrada por onde ela deve ir, \\q e mesmo depois de velha ela não vai deixá-la.",
           "R": "Ensine as crianças a viver do jeito certo enquanto são pequenas. \\q Quando ficarem velhas, vão continuar vivendo assim."
+        },
+        "am": {
+          "L": "ልጅን እንደ መንገዱ አሠልጥን፤ \\q ባረጀም ጊዜ እንኳ ከእርሱ ዘወር አይልም።",
+          "B": "ልጆችን በሚገባቸው መንገድ ላይ አስጀምራቸው፤ \\q ባረጁም ጊዜ ከእርሱ አይወጡም።",
+          "R": "ልጆች ገና ትንሽ ሳሉ ትክክለኛውን የአኗኗር መንገድ አስተምራቸው። \\q ባረጁም ጊዜ በዚያው መንገድ ይኖራሉ።"
         }
       },
       "decisions": [
@@ -761,6 +874,25 @@
           "reason": "The English Literal puts the pronouns under the gender setting (r-en-1) because the saying is about any child (m3). Portuguese \"a criança\" already means a boy or a girl, and \"dela\" agrees with that noun, so the line is inclusive without a setting; \"o menino\" would narrow it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220060101"
+          ],
+          "choice": "\"ከእርሱ ዘወር አይልም\" (he will not turn aside from it)",
+          "alternatives": [
+            "\"ከእርሱ ፈቀቅ አይልም\""
+          ],
+          "reason": "The verb (sur) is to turn aside; \"ዘወር አለ\" says it plainly. The other wording is the one most readers remember from an older Amharic Bible, and this verse is drafted fresh from the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -823,6 +955,11 @@
           "L": "O rico governa os pobres, \\q e quem pede emprestado [é] escravo do homem que empresta.",
           "B": "Os ricos mandam nos pobres, \\q e quem toma empréstimo vira escravo de quem emprestou.",
           "R": "Os ricos têm poder sobre os pobres. \\q Se você pede dinheiro emprestado, fica nas mãos de quem emprestou."
+        },
+        "am": {
+          "L": "ሀብታም ድሆችን ይገዛል፤ \\q ተበዳሪም ለአበዳሪ ሰው ባሪያ [ነው]።",
+          "B": "ሀብታሞች በድሆች ላይ ይሠለጥናሉ፤ \\q የሚበደርም የአበዳሪው ባሪያ ይሆናል።",
+          "R": "ሀብታሞች በድሆች ላይ ሥልጣን አላቸው። \\q ገንዘብ ብትበደር ባበደረህ ሰው ቁጥጥር ሥር ትወድቃለህ።"
         }
       },
       "decisions": [
@@ -943,6 +1080,11 @@
           "L": "Quem semeia a injustiça colherá a desgraça, \\q e a vara da sua fúria chegará ao fim.",
           "B": "Quem semeia injustiça colhe desastre, \\q e a vara que ergue com raiva vai falhar.",
           "R": "Quem faz o mal vai receber de volta problemas, como o lavrador colhe o que plantou. \\q O poder que usava com raiva será tirado dele."
+        },
+        "am": {
+          "L": "ግፍን የሚዘራ መከራን ያጭዳል፤ \\q የቁጣውም በትር ያልቃል።",
+          "B": "ግፍን የሚዘሩ ጥፋትን ያጭዳሉ፤ \\q በቁጣ የሚያነሡትም በትር ከንቱ ይሆናል።",
+          "R": "ክፉ የሚያደርጉ ሰዎች ገበሬ የዘራውን እንደሚያጭድ መከራን መልሰው ያገኛሉ። \\q በቁጣ የተጠቀሙበትም ኃይል ይወሰድባቸዋል።"
         }
       },
       "decisions": [
@@ -1076,6 +1218,11 @@
           "L": "[Quem tem] o olho bom será abençoado, \\q pois dá do seu pão ao pobre.",
           "B": "Quem é generoso será abençoado, \\q porque reparte a sua comida com o pobre.",
           "R": "Quem dá com generosidade vai ser abençoado. \\q Essas pessoas repartem a comida com os pobres."
+        },
+        "am": {
+          "L": "ዓይኑ መልካም የሆነ እርሱ ይባረካል፤ \\q ከእንጀራው ለድሃ ይሰጣልና።",
+          "B": "ለጋስ ሰው ይባረካል፤ \\q ምግቡን ለድሃ ያካፍላልና።",
+          "R": "በልግስና የሚሰጡ ሰዎች ይባረካሉ። \\q ምግባቸውን ለድሆች ያካፍላሉ።"
         }
       },
       "decisions": [
@@ -1171,6 +1318,11 @@
           "L": "Expulse o zombador, e a contenda sairá; \\q cessarão a disputa e o insulto.",
           "B": "Ponha o zombador para fora, e a briga vai junto; \\q acabam as discussões e os insultos.",
           "R": "Mande embora o zombador, e a briga também vai embora. \\q As discussões e os insultos vão parar."
+        },
+        "am": {
+          "L": "ፌዘኛን አስወጣ፤ ጠብም ይወጣል፤ \\q ክርክርና ስድብም ይቀራል።",
+          "B": "ፌዘኛን አባርረው፤ ጭቅጭቅም አብሮ ይሄዳል፤ \\q ክርክርና ስድብም ያከትማል።",
+          "R": "ፌዘኛውን አሰናብተው፤ ጠቡም አብሮ ይሄዳል። \\q ጭቅጭቁና ስድቡም ይቆማል።"
         }
       },
       "decisions": [
@@ -1202,6 +1354,28 @@
             "lawsuit and disgrace"
           ],
           "reason": "The word for dispute (din) can mean a court case. Insult (qalon) is the dishonor heaped on people in a quarrel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220100021"
+          ],
+          "choice": "the mocker (lets) as \"ፌዘኛ\"",
+          "alternatives": [
+            "\"ዋዘኛ\"",
+            "\"ተሳዳቢ\""
+          ],
+          "reason": "The terms list's word: \"ፌዘኛ\" is the one who scoffs and sneers at others and at correction, which is what the lets does in Proverbs; \"ዋዘኛ\" is only a joker.",
           "uncertain": false,
           "footnote": false
         }
@@ -1265,6 +1439,11 @@
           "L": "Quem ama a pureza de coração \\q [e tem] graça nos seus lábios, o rei [é] seu amigo.",
           "B": "Quem ama um coração puro \\q e fala com graça terá o rei como amigo.",
           "R": "Ame o que é puro e fale com bondade. \\q Então até o rei vai querer ser seu amigo."
+        },
+        "am": {
+          "L": "የልብ ንጽሕናን የሚወድድ \\q [እና] በከንፈሩ ሞገስ [ያለው]፣ ንጉሥ ወዳጁ [ነው]።",
+          "B": "ንጹሕ ልብን የሚወድድ \\q በጸጋም የሚናገር ንጉሥ ወዳጅ ይሆነዋል።",
+          "R": "ንጹሕ የሆነውን ውደድ፤ በደግነትም ተናገር። \\q ያን ጊዜ ንጉሥ እንኳ ወዳጅህ ሊሆን ይፈልጋል።"
         }
       },
       "decisions": [
@@ -1362,6 +1541,11 @@
           "L": "Os olhos {{divine_name:do SENHOR|de Javé}} guardam o conhecimento, \\q mas {{deity_pronoun:ele|Ele}} transtorna as palavras do traidor.",
           "B": "Os olhos {{divine_name:do SENHOR|de Javé}} protegem o conhecimento, \\q mas {{deity_pronoun:ele|Ele}} reduz a nada as palavras do infiel.",
           "R": "{{divine_name:O SENHOR|Javé}} protege o que é verdadeiro. \\q Mas {{deity_pronoun:ele|Ele}} arruína os planos de quem mente."
+        },
+        "am": {
+          "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ዓይኖች እውቀትን ይጠብቃሉ፤ \\q የከሃዲውን ቃል ግን ይገለብጣል።",
+          "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ዓይኖች እውቀትን ይጠብቃሉ፤ \\q የከሃዲዎችን ቃል ግን ከንቱ ያደርጋል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እውነት የሆነውን ይጠብቃል። \\q የሚዋሹ ሰዎችን ዕቅድ ግን ያፈርሳል።"
         }
       },
       "decisions": [
@@ -1455,6 +1639,11 @@
           "L": "O preguiçoso diz: \"[Há] um leão lá fora! \\q No meio das ruas serei morto!\"",
           "B": "O preguiçoso diz: \"Há um leão lá fora! \\q Vou ser assassinado no meio da rua!\"",
           "R": "O preguiçoso diz: \"Não posso sair. Há um leão lá fora! \\q Ele vai me matar na rua!\""
+        },
+        "am": {
+          "L": "ታካች እንዲህ ይላል፦ «በውጭ አንበሳ [አለ]! \\q በአደባባዮች መካከል እገደላለሁ!»",
+          "B": "ታካች እንዲህ ይላል፦ «አንበሳ በውጭ አለ! \\q በአደባባይ ላይ እገደላለሁ!»",
+          "R": "ታካች ሰው እንዲህ ይላል፦ «መውጣት አልችልም፤ በውጭ አንበሳ አለ! \\q በመንገድ ላይ ይገድለኛል!»"
         }
       },
       "decisions": [
@@ -1507,6 +1696,27 @@
             "devorado"
           ],
           "reason": "ratsah is the word for murder (m1), so Balanced says \"assassinado\", which keeps the comedy of a lion committing murder. 26:13 tells the same excuse in other words; its drafter can match \"Há um leão\" and \"no meio da rua\" where the Hebrew agrees.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220130021"
+          ],
+          "choice": "the sluggard (ʿatsel) as \"ታካች\"",
+          "alternatives": [
+            "\"ሰነፍ\""
+          ],
+          "reason": "In modern Amharic \"ሰነፍ\" first means lazy, but in Proverbs it is kept for the fool ʾewil, as the terms list sets; the sluggard is \"ታካች\" at every level so the two never meet. 26:13 repeats this saying and keeps this wording.",
           "uncertain": false,
           "footnote": false
         }
@@ -1569,6 +1779,11 @@
           "L": "Cova profunda [é] a boca das [mulheres] estranhas; \\q o amaldiçoado {{divine_name:pelo SENHOR|por Javé}} cairá ali.",
           "B": "A conversa das mulheres alheias é uma cova profunda; \\q quem está debaixo da ira {{divine_name:do SENHOR|de Javé}} cai nela.",
           "R": "As palavras doces de uma mulher que pertence a outro homem são como uma cova funda. \\q As pessoas com quem {{divine_name:o SENHOR|Javé}} está irado caem nela."
+        },
+        "am": {
+          "L": "የባዕዳን ሴቶች አፍ ጥልቅ ጉድጓድ [ነው]፤ \\q {{divine_name:በእግዚአብሔር|በያህዌ}} የተረገመ [ሰው] በዚያ ይወድቃል።",
+          "B": "የአመንዝራ ሴቶች ንግግር ጥልቅ ጉድጓድ ነው፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} የተቆጣበት ሰው ይወድቅበታል።",
+          "R": "የአመንዝራ ሴት ጣፋጭ ቃል እንደ ጥልቅ ጉድጓድ ነው። \\q {{divine_name:እግዚአብሔር|ያህዌ}} የተቆጣባቸው ሰዎች ይወድቁበታል።"
         }
       },
       "decisions": [
@@ -1728,6 +1943,27 @@
           "reason": "As the terms note: Literal and Balanced keep the Hebrew's \"strange\", a woman outside one's marriage (meaning decision m1); Readable says plainly who she is. \"음녀\" is an older word that names her by her sin rather than by what the Hebrew calls her.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220140041"
+          ],
+          "choice": "strange women (zarot) as \"ባዕዳን ሴቶች\" (Literal), \"አመንዝራ ሴቶች\" (Balanced, Readable)",
+          "alternatives": [
+            "\"እንግዶች ሴቶች\""
+          ],
+          "reason": "As the terms list sets: Literal keeps the Hebrew's \"strange\", Balanced and Readable say what is meant, as the English \"forbidden\" and \"immoral\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1791,6 +2027,11 @@
           "L": "A tolice [está] amarrada no coração da criança; \\q a vara da disciplina a lançará para longe dela.",
           "B": "A tolice está bem amarrada ao coração da criança, \\q mas a vara da disciplina a manda para longe.",
           "R": "As crianças são tolas por natureza. \\q A correção firme vai tirar delas essa tolice."
+        },
+        "am": {
+          "L": "ስንፍና በልጅ ልብ የታሰረ [ነው]፤ \\q የተግሣጽ በትር ከእርሱ ያርቀዋል።",
+          "B": "ስንፍና በልጅ ልብ ውስጥ አጥብቆ ታስሯል፤ \\q የተግሣጽ በትር ግን ከእርሱ ያርቀዋል።",
+          "R": "የልጅ ልብ በተፈጥሮው ወደ ስንፍና ያዘነብላል። \\q ጠንከር ያለ ተግሣጽ ያን ስንፍና ከእርሱ ያወጣዋል።"
         }
       },
       "decisions": [
@@ -1843,6 +2084,28 @@
           ],
           "reason": "Readable gives the purpose of the rod in plain words; the footnote on the meaning decision explains the picture.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200220150011",
+            "o200220150061"
+          ],
+          "choice": "folly (ʾivvelet) as \"ስንፍና\"; discipline (musar) as \"ተግሣጽ\"",
+          "alternatives": [
+            "\"ሞኝነት\" for ʾivvelet"
+          ],
+          "reason": "\"ስንፍና\" is the noun of \"ሰነፍ\", the terms list's word for the fool ʾewil, so the fool and his folly share a root as in the Hebrew; \"ሞኝነት\" is kept for kesilut, the folly of the kesil (\"ሞኝ\"). \"ተግሣጽ\" is the terms list's word for musar, correction that trains.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1908,6 +2171,11 @@
           "L": "Quem oprime o pobre para aumentar para si, \\q [ou] dá ao rico, [chega] só à falta.",
           "B": "Quem explora o pobre para enriquecer, \\q ou dá presentes ao rico, só acaba na necessidade.",
           "R": "Há quem engane os pobres para ficar rico. \\q Outros dão presentes aos ricos para ganhar favores. \\q Os dois vão acabar pobres."
+        },
+        "am": {
+          "L": "ለራሱ ለማብዛት ድሃን የሚያስጨንቅ፣ \\q [ወይም] ለሀብታም የሚሰጥ፣ ወደ ችግር ብቻ [ይደርሳል]።",
+          "B": "ለመበልጸግ ድሃን የሚበዘብዝ፣ \\q ወይም ለሀብታም ስጦታ የሚሰጥ መጨረሻው ችግር ብቻ ነው።",
+          "R": "አንዳንዶች ለመበልጸግ ድሆችን ያታልላሉ። \\q ሌሎች ደግሞ ሞገስ ለማግኘት ለሀብታሞች ስጦታ ይሰጣሉ። \\q የሁለቱም መጨረሻ ድህነት ነው።"
         }
       },
       "decisions": [
@@ -2013,6 +2281,11 @@
           "L": "Incline o seu ouvido e ouça as palavras dos sábios, \\q e aplique o seu coração ao meu conhecimento,",
           "B": "Incline o ouvido e escute o que os sábios disseram, \\q e dedique a mente ao conhecimento que eu lhe dou,",
           "R": "Ouça com atenção o que os sábios dizem. \\q Pense bem no que estou ensinando a você."
+        },
+        "am": {
+          "L": "ጆሮህን አዘንብል፤ የጠቢባንንም ቃል ስማ፤ \\q ልብህንም በእውቀቴ ላይ አድርግ፤",
+          "B": "ጆሮህን አዘንብለህ ጠቢባን የተናገሩትን ስማ፤ \\q የማስተምርህንም እውቀት በልብህ ያዝ፤",
+          "R": "ጠቢባን የሚሉትን በጥንቃቄ አድምጥ። \\q የማስተምርህንም አጥብቀህ አስብበት።"
         }
       },
       "decisions": [
@@ -2113,6 +2386,28 @@
           "reason": "The phrase names the collection that runs to 24:22 (m1), so Literal says \"as palavras dos sábios\", the name the Portuguese headings use for it. The teacher speaks to the pupil with \"você\", as the father does in 1-9.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200220170022"
+          ],
+          "choice": "the pupil addressed as \"አንተ\" (ጆሮህን, ልብህን) through the words of the wise",
+          "alternatives": [
+            "\"እናንተ\"",
+            "\"እርስዎ\""
+          ],
+          "reason": "The Hebrew speaks to one hearer in the singular, a teacher to his pupil (later \"my son\", \"ልጄ\", 23:15); Amharic uses the familiar singular, which here speaks to every reader.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2178,6 +2473,11 @@
           "L": "pois [é] agradável se você as guardar dentro de você, \\q [e] elas [estiverem] prontas juntas nos seus lábios.",
           "B": "pois é bom guardá-las bem dentro de você, \\q todas prontas nos seus lábios.",
           "R": "É bom lembrar essas palavras. \\q Assim você vai estar sempre pronto para dizê-las."
+        },
+        "am": {
+          "L": "በውስጥህ ብትጠብቃቸው ደስ የሚያሰኝ ነውና፤ \\q በከንፈሮችህም ላይ በአንድነት የተዘጋጁ ይሆናሉ።",
+          "B": "በውስጥህ ጠልቀው ብትይዛቸው መልካም ነውና፤ \\q ሁሉም በከንፈሮችህ ላይ ዝግጁ ይሆናሉ።",
+          "R": "እነርሱን ማስታወስ መልካም ነው። \\q ያን ጊዜ ሁልጊዜ ለመናገር ዝግጁ ትሆናለህ።"
         }
       },
       "decisions": [
@@ -2276,6 +2576,11 @@
           "L": "Para que a sua confiança esteja {{divine_name:no SENHOR|em Javé}}, \\q eu as dei a conhecer a você hoje, sim, a você.",
           "B": "Hoje eu ensino você, sim, você, \\q para que ponha a sua confiança {{divine_name:no SENHOR|em Javé}}.",
           "R": "Estou ensinando estas coisas a você hoje para que você confie {{divine_name:no SENHOR|em Javé}}. \\q Sim, estou ensinando a você."
+        },
+        "am": {
+          "L": "መታመንህ {{divine_name:በእግዚአብሔር|በያህዌ}} እንዲሆን፣ \\q ዛሬ ለአንተ፣ ለአንተ እንኳ [እነርሱን] አስታውቄሃለሁ።",
+          "B": "ዛሬ አንተን፣ አዎን፣ አንተን አስተምርሃለሁ፤ \\q ይህም {{divine_name:በእግዚአብሔር|በያህዌ}} እንድትታመን ነው።",
+          "R": "{{divine_name:በእግዚአብሔር|በያህዌ}} እንድትታመን እነዚህን ነገሮች ዛሬ አስተምርሃለሁ። \\q አዎን፣ የማስተምረው አንተን ነው።"
         }
       },
       "decisions": [
@@ -2370,6 +2675,11 @@
           "L": "Não escrevi para você trinta [ditos] \\q de conselho e conhecimento,",
           "B": "Não escrevi para você trinta ditados \\q cheios de conselho e conhecimento,",
           "R": "Escrevi trinta ditados para você. \\q Eles estão cheios de bons conselhos e conhecimento."
+        },
+        "am": {
+          "L": "ሠላሳ [አባባሎችን] አልጻፍኩልህምን? \\q የምክርና የእውቀት [አባባሎችን]፣",
+          "B": "ሠላሳ አባባሎችን አልጻፍኩልህምን? \\q ምክርና እውቀት የሞላባቸውን፣",
+          "R": "ሠላሳ አባባሎችን ጽፌልሃለሁ። \\q በመልካም ምክርና በእውቀት የተሞሉ ናቸው።"
         }
       },
       "decisions": [
@@ -2449,6 +2759,26 @@
           "reason": "As the English, the word is read as \"thirty\" (m1). \"Ditados\" is the plain Portuguese word for short sayings; Literal brackets \"ditos\" as the English brackets \"sayings\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200220200021"
+          ],
+          "choice": "the question placed at the end of the first line, the second line set as its apposition",
+          "alternatives": [
+            "one question across both verses, as the English"
+          ],
+          "reason": "Amharic puts the verb last, so a question that runs through verses 20 and 21 cannot end in verse 21 as the English does without moving verse 20's words; Literal and Balanced ask the question in verse 20 and add the purpose in verse 21 with the tag \"አይደለምን?\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2514,6 +2844,11 @@
           "L": "para fazer você conhecer a certeza das palavras verdadeiras, \\q para levar de volta palavras verdadeiras aos que enviam você?",
           "B": "para ensinar a você o que é certo e confiável, \\q e para que você leve uma resposta verdadeira a quem enviou você?",
           "R": "Eles ensinam o que é verdadeiro e certo. \\q Assim você vai poder dar uma resposta verdadeira às pessoas que mandaram você."
+        },
+        "am": {
+          "L": "የእውነተኛ ቃላትን እርግጠኝነት ላስታውቅህ፣ \\q ለሚልኩህም እውነተኛ ቃል እንድትመልስ [አይደለምን]?",
+          "B": "ትክክልና አስተማማኝ የሆነውን ላስተምርህ፣ \\q ለሚልኩህም እውነተኛ መልስ ይዘህ እንድትመለስ አይደለምን?",
+          "R": "እነርሱ እውነትና ትክክል የሆነውን ያስተምሩሃል። \\q ያን ጊዜ ለላኩህ ሰዎች እውነተኛ ወሬ ማቅረብ ትችላለህ።"
         }
       },
       "decisions": [
@@ -2611,6 +2946,11 @@
           "L": "Não roube o pobre porque ele [é] pobre, \\q e não esmague o aflito no portão,",
           "B": "Não roube o pobre só porque ele é pobre, \\q nem esmague o necessitado no tribunal,",
           "R": "Não tire nada dos pobres só porque eles são fracos. \\q Não trate os necessitados com injustiça no tribunal."
+        },
+        "am": {
+          "L": "ድሃ ስለ ሆነ ድሃውን አትዝረፍ፤ \\q ጐስቋላውንም በበር ላይ አታድቅቅ፤",
+          "B": "ድሃውን ድሃ ስለ ሆነ ብቻ አትዝረፈው፤ \\q ችግረኛውንም በፍርድ ሸንጎ አታጥቃው፤",
+          "R": "ድሆች አቅም ስለሌላቸው ብቻ ንብረታቸውን አትውሰድባቸው። \\q በፍርድ ቤትም በችግረኞች ላይ ፍትሕ አታጓድል።"
         }
       },
       "decisions": [
@@ -2740,6 +3080,11 @@
           "L": "pois {{divine_name:o SENHOR|Javé}} defenderá a causa deles \\q e roubará a vida dos que os roubam.",
           "B": "pois {{divine_name:o SENHOR|Javé}} vai assumir a causa deles \\q e tirar a vida dos que os saqueiam.",
           "R": "{{divine_name:O SENHOR|Javé}} vai defender os pobres no tribunal. \\q Ele vai tirar a vida de quem os rouba."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ክርክራቸውን ይሟገትላቸዋልና፤ \\q የሚዘርፏቸውንም ነፍሳቸውን ይዘርፋል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ጉዳያቸውን ይይዝላቸዋልና፤ \\q የሚበዘብዟቸውንም ሕይወታቸውን ይወስዳል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በፍርድ ቤት ይቆምላቸዋል። \\q የሚዘርፏቸውንም ሰዎች ሕይወት ይወስዳል።"
         }
       },
       "decisions": [
@@ -2836,6 +3181,11 @@
           "L": "Não faça amizade com o dono da ira, \\q e com a pessoa de fúrias não ande,",
           "B": "Não faça amizade com quem é esquentado, \\q nem ande com quem explode de raiva,",
           "R": "Não fique amigo de quem fica com raiva com facilidade. \\q Não passe tempo com pessoas que perdem a calma."
+        },
+        "am": {
+          "L": "ከቁጣ ባለቤት ጋር አትወዳጅ፤ \\q ከንዴተኛም ሰው ጋር አትሂድ፤",
+          "B": "ቁጡ ከሆነ ሰው ጋር ወዳጅነት አትመሥርት፤ \\q ቶሎ ከሚናደዱም ጋር አትዋል፤",
+          "R": "ቶሎ ከሚቆጣ ሰው ጋር ጓደኛ አትሁን። \\q ንዴታቸውን መቆጣጠር ከማይችሉ ሰዎች ጋር ጊዜ አታሳልፍ።"
         }
       },
       "decisions": [
@@ -2931,6 +3281,11 @@
           "L": "para que você não aprenda os caminhos dele \\q e tome uma armadilha para si mesmo.",
           "B": "para não aprender os costumes dessa pessoa \\q e armar uma cilada para a própria vida.",
           "R": "Você pode ficar igual a elas. \\q Então vai ficar preso numa armadilha."
+        },
+        "am": {
+          "L": "መንገዱን እንዳትማር፣ \\q ለነፍስህም ወጥመድ እንዳትወስድ።",
+          "B": "አለዚያ መንገዱን ትማራለህ፤ \\q ለገዛ ሕይወትህም ወጥመድ ታጠምዳለህ።",
+          "R": "አንተም እንደ እነርሱ ልትሆን ትችላለህ። \\q ያን ጊዜ በወጥመድ ትያዛለህ።"
         }
       },
       "decisions": [
@@ -3026,6 +3381,11 @@
           "L": "Não esteja entre os que batem a mão, \\q entre os que ficam por fiadores de dívidas.",
           "B": "Não seja daqueles que apertam a mão num compromisso \\q e garantem os empréstimos dos outros.",
           "R": "Não prometa pagar as dívidas de outra pessoa."
+        },
+        "am": {
+          "L": "እጅ ከሚመቱት መካከል አትሁን፤ \\q ለዕዳ ዋስ ከሚሆኑት መካከል [አትሁን]።",
+          "B": "ቃል ለመግባት እጅ ከሚጨባበጡት \\q የሌሎችንም ብድር ዋስ ከሚሆኑት አንዱ አትሁን።",
+          "R": "የሌላ ሰውን ዕዳ ለመክፈል ቃል አትግባ።"
         }
       },
       "decisions": [
@@ -3110,6 +3470,11 @@
           "L": "Se você não tiver com que pagar, \\q por que [alguém] tiraria a sua cama de debaixo de você?",
           "B": "Se você não puder pagar, \\q por que deixar que levem até a cama em que você dorme?",
           "R": "Se você não puder pagar, pode perder tudo, até a sua cama."
+        },
+        "am": {
+          "L": "የምትከፍለው ከሌለህ፣ \\q [ሰው] አልጋህን ከበታችህ ለምን ይውሰድ?",
+          "B": "መክፈል ካልቻልህ፣ \\q የምትተኛበትን አልጋ እንኳ ለምን ይወስዱብህ?",
+          "R": "መክፈል ካልቻልህ ያለህን ሁሉ፣ አልጋህን እንኳ ልታጣ ትችላለህ።"
         }
       },
       "decisions": [
@@ -3205,6 +3570,11 @@
           "L": "Não mude o marco antigo \\q que os seus pais fizeram.",
           "B": "Não mude de lugar o velho marco de divisa \\q que os seus antepassados puseram.",
           "R": "Não mude as pedras antigas que marcam onde termina cada terreno. \\q Os seus antepassados as colocaram ali."
+        },
+        "am": {
+          "L": "የጥንቱን ድንበር አታንቀሳቅስ፣ \\q አባቶችህ ያቆሙትን።",
+          "B": "የቀድሞውን የድንበር ምልክት ድንጋይ አታንሳ፤ \\q ቅድመ አያቶችህ ያኖሩት ነውና።",
+          "R": "የመሬትን ወሰን የሚያሳዩትን የጥንት ድንጋዮች ከቦታቸው አታንሳ። \\q ቅድመ አያቶችህ ያኖሯቸው ናቸው።"
         }
       },
       "decisions": [
@@ -3289,6 +3659,11 @@
           "L": "Você vê uma pessoa habilidosa no seu trabalho? \\q Ela se apresentará diante de reis; \\q não se apresentará diante de [gente] obscura.",
           "B": "Você vê alguém competente no seu trabalho? \\q Vai servir a reis, e não a gente sem importância.",
           "R": "Veja as pessoas que fazem o seu trabalho com grande habilidade. \\q Elas vão trabalhar para reis, e não para gente sem importância."
+        },
+        "am": {
+          "L": "በሥራው የተካነን ሰው አየህን? \\q በነገሥታት ፊት ይቆማል፤ \\q በተራ ሰዎች ፊት አይቆምም።",
+          "B": "በሥራው የተካነ ሰው አይተሃልን? \\q እርሱ ነገሥታትን ያገለግላል እንጂ ተራ ሰዎችን አይደለም።",
+          "R": "ሥራቸውን በታላቅ ችሎታ የሚሠሩ ሰዎችን ተመልከት። \\q የሚሠሩት ለነገሥታት ነው እንጂ ለተራ ሰዎች አይደለም።"
         }
       },
       "decisions": [

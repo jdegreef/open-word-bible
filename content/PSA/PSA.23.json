@@ -56,6 +56,11 @@
           "L": "Salmo de Davi. \\q {{divine_name:O SENHOR|Javé}} [é] o meu pastor; \\q não carecerei [de nada].",
           "B": "Salmo de Davi. \\q {{divine_name:O SENHOR|Javé}} é o meu pastor; \\q jamais passarei necessidade.",
           "R": "Canção de Davi. \\q {{divine_name:O SENHOR|Javé}} cuida de mim como um pastor. \\q Tenho tudo de que preciso."
+        },
+        "am": {
+          "L": "የዳዊት መዝሙር። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እረኛዬ [ነው]፤ \\q ምንም አይጎድልብኝም።",
+          "B": "የዳዊት መዝሙር። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እረኛዬ ነው፤ \\q ከቶ አልቸገርም።",
+          "R": "ዳዊት የዘመረው መዝሙር። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንደ እረኛ ይንከባከበኛል። \\q የሚያስፈልገኝ ሁሉ አለኝ።"
         }
       },
       "decisions": [
@@ -296,6 +301,66 @@
           "reason": "The verb is lacking what one needs, the word of Israel in the wilderness (m3). The line is among the best known in Portuguese, and the familiar Bibles' wordings are not ours to reuse, so each level says it in its own words: Literal \"carecer\", the plain verb for lacking, with the object it needs in brackets; Balanced \"passar necessidade\", the everyday Brazilian way of saying one is never in want. Readable follows the English \"I have everything I need\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No deity_pronoun spans in the Amharic of Psalm 23.",
+          "alternatives": [
+            "spans like the English ones"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010051",
+            "o190230010061"
+          ],
+          "choice": "\"ምንም አይጎድልብኝም\" (nothing will be lacking to me, L), \"ከቶ አልቸገርም\" (B)",
+          "alternatives": [
+            "the familiar \"የሚያሳጣኝም የለም\""
+          ],
+          "reason": "The psalm is drafted afresh from the Hebrew: the verb is \"lack, be without\" with no object (meaning decision m3), which \"ምንም አይጎድልብኝም\" says directly; the remembered wording of the older Bible is not reproduced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-3",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010021"
+          ],
+          "choice": "\"ዳዊት የዘመረው መዝሙር\" at Readable",
+          "alternatives": [
+            "\"የዳዊት መዝሙር\""
+          ],
+          "reason": "As docs/amharic-style.md 7a for psalm titles.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -358,6 +423,11 @@
           "L": "Em pastos de capim novo {{deity_pronoun:ele|Ele}} me faz deitar; \\q junto a águas de repouso {{deity_pronoun:ele|Ele}} me conduz.",
           "B": "Ele me deixa deitar em campos de capim verde e fresco; \\q {{deity_pronoun:ele|Ele}} me leva com cuidado até a água onde posso descansar.",
           "R": "Ele me deixa descansar em campos de capim macio e verde. \\q Ele me leva até águas calmas, onde posso beber e descansar."
+        },
+        "am": {
+          "L": "በለጋ ሣር መሰማሪያዎች ያስተኛኛል፤ \\q የዕረፍት ውኃዎች ወዳሉበት ይመራኛል።",
+          "B": "አረንጓዴ ለጋ ሣር ባለበት መስክ ያሳርፈኛል፤ \\q ወደማርፍበት ውኃ በእርጋታ ይመራኛል።",
+          "R": "ለስላሳ አረንጓዴ ሣር ባለበት መስክ እንዳርፍ ያደርገኛል። \\q ጠጥቼ ወደማርፍበት ጸጥ ያለ ውኃ ይወስደኛል።"
         }
       },
       "decisions": [
@@ -431,6 +501,28 @@
           "reason": "Hangul has no capital letters, so the setting has nothing to change; respect is carried by 그분, 께서 and -시- at every level (style guide section 7). This holds for the whole psalm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230020021",
+            "o190230020072"
+          ],
+          "choice": "\"ለጋ ሣር\" (tender new grass); \"ይመራኛል\" (he leads me)",
+          "alternatives": [
+            "\"የለመለመ መስክ\""
+          ],
+          "reason": "The Hebrew pictures the fresh growth after rain; \"ለጋ\" is the plain word for it. The leading is the shepherd's gentle guiding to water (meaning decision m1), which Balanced makes explicit with \"በእርጋታ\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -494,6 +586,11 @@
           "L": "A minha alma {{deity_pronoun:ele|Ele}} traz de volta; \\q {{deity_pronoun:ele|Ele}} me guia por trilhas de justiça \\q por causa do {{deity_pronoun:seu|Seu}} nome.",
           "B": "Ele me devolve a vida \\q e me conduz pelas trilhas do que é certo, \\q fiel ao {{deity_pronoun:seu|Seu}} nome.",
           "R": "Ele me dá forças de novo. \\q Ele me mostra o caminho certo por onde andar. \\q Ele faz isso por causa de quem {{deity_pronoun:ele|Ele}} é."
+        },
+        "am": {
+          "L": "ነፍሴን ይመልሳታል፤ \\q በጽድቅ ፈለጎች ይመራኛል \\q ስለ ስሙ ሲል።",
+          "B": "ሕይወቴን ይመልስልኛል፤ \\q ትክክል በሆነው ጎዳና ይመራኛል፤ \\q ለስሙ ታማኝ ሆኖ።",
+          "R": "እንደ ገና ብርቱ ያደርገኛል። \\q የምሄድበትን ትክክለኛ መንገድ ያሳየኛል። \\q ይህን የሚያደርገው ስለ ማንነቱ ነው።"
         }
       },
       "decisions": [
@@ -627,6 +724,25 @@
           "reason": "The word is a worn track (m2). \"Trilha\" is the Brazilian word for a path beaten by feet, and keeps the picture of a flock led along it; \"veredas\" is the familiar Bibles' word and now sounds literary.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230030042"
+          ],
+          "choice": "\"ፈለጎች\" (tracks, worn paths) at Literal",
+          "alternatives": [
+            "\"መንገድ\""
+          ],
+          "reason": "The Hebrew word is the cart-track or worn path (meaning decision m2); Literal keeps the picture, Balanced and Readable say \"the right way\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -700,6 +816,11 @@
           "L": "Mesmo quando eu andar por um vale de escuridão profunda, não temerei mal [algum], \\q pois {{deity_pronoun:tu|Tu}} [estás] comigo; \\q a {{deity_pronoun:tua|Tua}} vara e o {{deity_pronoun:teu|Teu}} cajado, eles me confortam.",
           "B": "Mesmo que o meu caminho desça por um vale da mais densa escuridão, não terei medo de nenhum perigo, \\q porque {{deity_pronoun:tu|Tu}} estás ali comigo; \\q o {{deity_pronoun:teu|Teu}} bastão e o {{deity_pronoun:teu|Teu}} cajado me dão coragem.",
           "R": "Mesmo quando eu passar por um vale muito escuro e perigoso, não vou ter medo, \\q porque {{deity_pronoun:tu|Tu}} estás bem ali do meu lado. \\q Tu me proteges com o {{deity_pronoun:teu|Teu}} bastão e me guias com o {{deity_pronoun:teu|Teu}} cajado, e isso me consola."
+        },
+        "am": {
+          "L": "ድቅድቅ ጨለማ ባለበት ሸለቆ ውስጥ ብሄድ እንኳ ጉዳትን አልፈራም፤ \\q አንተ ከእኔ ጋር [ነህ]ና፤ \\q ዱላህና ምርኩዝህ፣ እነርሱ ያጽናኑኛል።",
+          "B": "መንገዴ ድቅድቅ ጨለማ በዋጠው ሸለቆ ውስጥ ቢያልፍ እንኳ ምንም ጉዳት አያስፈራኝም፤ \\q አንተ በዚያ ከእኔ ጋር ስለ ሆንክ፤ \\q ዱላህና ምርኩዝህ ልብ ይሰጡኛል።",
+          "R": "በጣም ጨለማና አደገኛ በሆነ ሸለቆ ውስጥ ባልፍ እንኳ አልፈራም፤ \\q አንተ አጠገቤ ስላለህ። \\q በዱላህ ትጠብቀኛለህ፤ በምርኩዝህ ትመራኛለህ፤ ይህም ያጽናናኛል።"
         }
       },
       "decisions": [
@@ -918,6 +1039,30 @@
           "reason": "The rod is a shepherd's club for driving off wild animals (m3). Literal keeps \"vara\", the gloss; Balanced and Readable say \"bastão\", a stout stick that can be used to strike, rather than \"vara\", which suggests a thin switch.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040051",
+            "o190230040121",
+            "o190230040132"
+          ],
+          "choice": "deep darkness \"ድቅድቅ ጨለማ\"; rod \"ዱላ\" (the shepherd's club), staff \"ምርኩዝ\" (his walking stick)",
+          "alternatives": [
+            "\"የሞት ጥላ\" (the shadow of death)",
+            "\"በትር\" for the rod"
+          ],
+          "reason": "As meaning decision m1, the Hebrew word means deep darkness; m3 names the rod as the shepherd's weapon against wild animals, which \"ዱላ\" is, beside the walking stick he leans on and guides with.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -986,6 +1131,11 @@
           "L": "Tu arrumas uma mesa diante de mim, na frente dos meus adversários; \\q {{deity_pronoun:tu|Tu}} renovaste a minha cabeça com óleo; \\q a minha taça [está] transbordando.",
           "B": "Tu me serves uma refeição enquanto os meus inimigos assistem; \\q {{deity_pronoun:tu|Tu}} refrescas a minha cabeça com óleo, \\q e a minha taça está cheia até a borda.",
           "R": "Tu me ofereces uma festa, e os meus inimigos só podem ficar olhando. \\q Tu derramas óleo na minha cabeça para me honrar. \\q Tu enches a minha taça até derramar."
+        },
+        "am": {
+          "L": "በባላጋራዎቼ ፊት በፊቴ ገበታ ታዘጋጃለህ፤ \\q ራሴን በዘይት አደስክ፤ \\q ጽዋዬ ሞልቶ [ይፈስሳል]።",
+          "B": "ባላጋራዎቼ እያዩ በፊቴ ማዕድ ታዘጋጅልኛለህ፤ \\q ራሴን በዘይት ታድሳለህ፤ \\q ጽዋዬም ጢም ብሎ ሞልቷል።",
+          "R": "ጠላቶቼ እያዩ ግብዣ ታዘጋጅልኛለህ። \\q ልታከብረኝ ራሴ ላይ ዘይት ታፈሳለህ። \\q ጽዋዬን ሞልተህ ታትረፈርፈዋለህ።"
         }
       },
       "decisions": [
@@ -1076,6 +1226,27 @@
           "reason": "The oil is a host's welcome to a guest, not the anointing of a king (m2), so no level says \"ungir\". The cup is a drinking cup at a meal: \"taça\" says that, where \"cálice\" now suggests the cup of the Lord's Supper.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230050051",
+            "o190230050061"
+          ],
+          "choice": "foes \"ባላጋራዎች\" (tsarim); \"refreshed with oil\" as \"በዘይት አደስክ\"",
+          "alternatives": [
+            "\"ቀባህ\" (anointed)"
+          ],
+          "reason": "As the terms list for tsarim; the verb is not the word for anointing a king or priest but for refreshing a guest with oil (meaning decision m2), so the familiar \"anointed\" is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1146,6 +1317,11 @@
           "L": "Certamente o bem e o amor leal me perseguirão todos os dias da minha vida, \\q e voltarei [a morar] na casa {{divine_name:do SENHOR|de Javé}} por longos dias.",
           "B": "A bondade e o amor leal hão de vir no meu encalço em cada dia que eu viver, \\q e voltarei para casa, para a casa {{divine_name:do SENHOR|de Javé}}, por todos os dias que virão.",
           "R": "Tenho certeza de que a bondade e o amor fiel vão correr atrás de mim todos os dias da minha vida. \\q E vou voltar a morar na casa {{divine_name:do SENHOR|de Javé}} até o fim dos meus dias."
+        },
+        "am": {
+          "L": "በእርግጥ መልካምነትና ጽኑ ፍቅር በሕይወቴ ዘመን ሁሉ ያሳድዱኛል፤ \\q ለዘመናት ርዝመትም [ልኖር] ወደ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤት እመለሳለሁ።",
+          "B": "መልካምነትና ጽኑ ፍቅር በምኖርበት ቀን ሁሉ በእርግጥ ተከትለው ይደርሱብኛል፤ \\q እኔም በሚመጡት ዘመኖቼ ሁሉ ወደ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤት እመለሳለሁ።",
+          "R": "በሕይወቴ ዘመን ሁሉ መልካምነትና ታማኝ ፍቅር ከኋላዬ እየሮጡ እንደሚከተሉኝ እርግጠኛ ነኝ። \\q በሕይወት እስካለሁም ድረስ በ{{divine_name:የእግዚአብሔር|የያህዌ}} ቤት ለመኖር እመለሳለሁ።"
         }
       },
       "decisions": [
@@ -1360,6 +1536,48 @@
             "me acompanharão"
           ],
           "reason": "The verb is the pursuit of an enemy (m1): goodness and love chase the psalmist. \"Seguir\" and \"acompanhar\" lose the chase; \"vir no encalço\" is the Portuguese for coming hard on someone's heels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060042"
+          ],
+          "choice": "\"ያሳድዱኛል\" (they will pursue me) at Literal; \"ተከትለው ይደርሱብኛል\" (B), \"ከኋላዬ እየሮጡ ይከተሉኛል\" (R)",
+          "alternatives": [
+            "\"ይከተሉኛል\" (they will follow me) at every level"
+          ],
+          "reason": "The Hebrew verb is the one used of enemies chasing (meaning decision m1): Literal keeps its force, and Balanced and Readable say it in words that do not sound hostile in Amharic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060082",
+            "o190230060092",
+            "o190230060101"
+          ],
+          "choice": "\"I will return\" as \"እመለሳለሁ\", house of the LORD \"{{divine_name:የእግዚአብሔር|የያህዌ}} ቤት\"",
+          "alternatives": [
+            "\"እኖራለሁ\" (I will dwell)"
+          ],
+          "reason": "As meaning decision m3, the Hebrew as written reads \"I will return\"; the house of the LORD follows the Kings and Chronicles term, and Readable adds \"to live\", as the English Readable.",
           "uncertain": false,
           "footnote": false
         }

@@ -61,6 +61,11 @@
           "L": "{{divine_name:주|야훼}}여, 저희에게 일어난 일을 기억하십시오. \\q 저희가 당한 치욕을 살펴보십시오.",
           "B": "{{divine_name:주|야훼}}여, 저희에게 닥친 일을 기억해 주십시오. \\q 저희가 얼마나 수치를 당하는지 보아 주십시오.",
           "R": "{{divine_name:주|야훼}}여, 저희에게 일어난 일을 기억해 주십시오. \\q 사람들이 저희를 얼마나 업신여기는지 보십시오."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የደረሰብንን አስብ፤ \\q ተመልከት፤ ውርደታችንንም እይ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የመጣብንን አስብ፤ \\q ተመልከት፤ እንዴትም እንደ ተዋረድን እይ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የደረሰብንን አስብ። \\q ተመልከት፤ ሰዎች እንዴት እንደሚንቁን እይ።"
         }
       },
       "decisions": [
@@ -213,6 +218,48 @@
           "reason": "Chapter 5 is the people speaking to the LORD from the first verse to the last, so every verse takes the prayer style and the humble \"저희\", as communal prayers do in the Korean Psalms and Jeremiah 14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250050010011"
+          ],
+          "choice": "No deity_pronoun spans in the Amharic of Lamentations 5.",
+          "alternatives": [
+            "spans like the English ones (verses 19-22)"
+          ],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050010011"
+          ],
+          "choice": "remember (zakhar) \"አስብ\", as the prayers of Psalm 74:2 and 79:8",
+          "alternatives": [
+            "\"አስታውስ\""
+          ],
+          "reason": "The people's prayer (m1) uses the plea of the communal laments in the Psalms, with the same verb.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -274,6 +321,11 @@
           "L": "저희 기업이 낯선 자들에게, \\q 저희 집들이 이방인들에게 넘어갔습니다.",
           "B": "저희가 물려받은 땅이 낯선 사람들에게 넘어가고, \\q 저희 집들이 이방인들에게 넘어갔습니다.",
           "R": "하나님께서 저희에게 주신 땅이 낯선 사람들의 것이 되었습니다. \\q 저희 집에는 이방인들이 삽니다."
+        },
+        "am": {
+          "L": "ርስታችን ለእንግዶች ተላለፈ፤ \\q ቤቶቻችንም ለባዕዳን።",
+          "B": "ርስታችን ለእንግዶች ተሰጠ፤ \\q ቤቶቻችንም ለባዕዳን።",
+          "R": "እግዚአብሔር የራሳችን አድርጎ የሰጠን ምድር ለእንግዶች ተሰጠ። \\q ባዕዳን በቤቶቻችን ይኖራሉ።"
         }
       },
       "decisions": [
@@ -322,6 +374,27 @@
           "choice": "The land God gave us as our own has gone",
           "alternatives": [],
           "reason": "Readable explains \"inheritance\" (m1) and gives the second line a subject and verb of its own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050020011",
+            "o250050020012"
+          ],
+          "choice": "inheritance (naḥalah) \"ርስት\"",
+          "alternatives": [
+            "\"ውርስ\""
+          ],
+          "reason": "The settled word for naḥalah (the Pentateuch list); Readable says what it is, with its English, naming God without the name.",
           "uncertain": false,
           "footnote": false
         }
@@ -385,6 +458,11 @@
           "L": "저희는 아버지 없는 고아가 되었고, \\q 저희 어머니들은 과부 같습니다.",
           "B": "저희는 아버지 없는 고아가 되었고, \\q 어머니들은 과부와 같습니다.",
           "R": "저희는 아버지가 없는 고아가 되었습니다. \\q 저희 어머니들은 과부와 같습니다."
+        },
+        "am": {
+          "L": "ድሀ አደጎች ሆንን፤ አባትም የለም፤ \\q እናቶቻችን እንደ መበለቶች [ናቸው]።",
+          "B": "ድሀ አደጎች ሆንን፤ አባት የለንም፤ \\q እናቶቻችን እንደ መበለቶች ናቸው።",
+          "R": "አባት የሌለን ወላጅ አልባ ልጆች ሆንን። \\q እናቶቻችን እንደ መበለቶች ሆነዋል።"
         }
       },
       "decisions": [
@@ -415,6 +493,26 @@
           "choice": "and there is no father",
           "alternatives": [],
           "reason": "The word \"and\" is in the reading given in the margin of the Hebrew manuscripts but not in the written text. The sense is the same either way.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050030011",
+            "o250050030072"
+          ],
+          "choice": "orphans \"ድሀ አደጎች\" (L, B), \"ወላጅ አልባ ልጆች\" (R); widows \"መበለቶች\", as 1:1",
+          "alternatives": [],
+          "reason": "The pair of the unprotected (m1) in the Pentateuch's words; Readable uses the everyday word.",
           "uncertain": false,
           "footnote": false
         }
@@ -479,6 +577,11 @@
           "L": "저희 물을 은을 주고 마셨고, \\q 저희 나무도 값을 치르고 들여옵니다.",
           "B": "저희가 마시는 물도 돈을 내야 하고, \\q 저희 땔감도 값을 치러야 얻습니다.",
           "R": "저희 마실 물도 돈을 내고 사야 합니다. \\q 저희 땔감까지 사야 합니다."
+        },
+        "am": {
+          "L": "ውኃችንን በብር ጠጣን፤ \\q እንጨታችን በዋጋ ይመጣል።",
+          "B": "የምንጠጣውን ውኃ በገንዘብ መግዛት አለብን፤ \\q የገዛ እንጨታችንም የሚደርሰን በዋጋ ብቻ ነው።",
+          "R": "የራሳችንን የመጠጥ ውኃ መግዛት አለብን። \\q የማገዶ እንጨታችንን እንኳ በገንዘብ እንገዛለን።"
         }
       },
       "decisions": [
@@ -527,6 +630,25 @@
           "choice": "for silver",
           "alternatives": [],
           "reason": "Literal keeps the metal, which was also the word for money; Balanced and Readable say what it was used as (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050040022"
+          ],
+          "choice": "for silver \"በብር\" at Literal; \"በገንዘብ\" (B, R)",
+          "alternatives": [
+            "\"በብር ሳንቲም\""
+          ],
+          "reason": "Silver here is money (m3); Literal keeps the word, which a modern reader also hears as money (the birr), so the sense comes through; the other levels say money.",
           "uncertain": false,
           "footnote": false
         }
@@ -591,6 +713,11 @@
           "L": "저희 목 위에까지 쫓김을 당하니, \\q 저희가 지쳤으나 쉼을 얻지 못합니다.",
           "B": "뒤쫓는 자들이 저희 목덜미에 닿을 듯합니다. \\q 저희는 지쳤으나 쉴 수가 없습니다.",
           "R": "원수들이 바로 뒤에서 저희를 쫓아옵니다. \\q 저희는 지쳤는데도 쉬지 못합니다."
+        },
+        "am": {
+          "L": "በአንገታችን ላይ ተሳደድን፤ \\q ደከምን፤ ዕረፍትም አልተሰጠንም።",
+          "B": "አሳዳጆቻችን አንገታችን ላይ ደርሰዋል፤ \\q ደክመናል፤ ዕረፍትም አልተሰጠንም።",
+          "R": "ጠላቶቻችን ያሳድዱናል፤ ከኋላችንም ቀርበዋል። \\q ደክመናል፤ ዕረፍትም አናገኝም።"
         }
       },
       "decisions": [
@@ -744,6 +871,11 @@
           "L": "저희가 이집트에 손을 내밀었고, \\q 앗시리아에도 [손을 내밀어] 빵으로 배부르려 하였습니다.",
           "B": "저희는 이집트에 충성을 맹세하고, \\q 앗시리아에도 굽히고 들어가 먹을 빵을 얻으려 했습니다.",
           "R": "저희는 이집트와 손을 잡았고, \\q 먹을 것을 얻으려고 앗시리아와도 손을 잡았습니다."
+        },
+        "am": {
+          "L": "ለግብፅ እጅ ሰጠን፤ \\q [ለ]አሦርም እንጀራ እንጠግብ ዘንድ።",
+          "B": "ለግብፅ ራሳችንን አስገዛን፤ \\q ለአሦርም፣ በቂ እንጀራ እንድናገኝ።",
+          "R": "ከግብፅ ጋር ስምምነት አደረግን፤ \\q ከአሦርም ጋር፣ የምንበላው በቂ ምግብ ለማግኘት ብቻ።"
         }
       },
       "decisions": [
@@ -811,6 +943,26 @@
           "reason": "Balanced and Readable say what the gesture meant (m1); Literal keeps the picture.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050060021",
+            "o250050060031"
+          ],
+          "choice": "given the hand \"እጅ ሰጠን\" (L), \"ራሳችንን አስገዛን\" (B); Egypt \"ግብፅ\", Assyria \"አሦር\", as 2 Kings",
+          "alternatives": [],
+          "reason": "Amharic \"እጅ መስጠት\" also means to submit (m1), so Literal keeps the idiom without losing the sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -874,6 +1026,11 @@
           "L": "저희 조상들은 죄를 짓고 없어졌으며, \\q 저희는 그들의 죄악을 짊어졌습니다.",
           "B": "저희 조상들은 죄를 짓고 사라졌는데, \\q 저희가 그들의 죄의 짐을 지고 있습니다.",
           "R": "저희 조상들은 죄를 지었고 이제는 죽고 없습니다. \\q 그런데 그들의 죄 때문에 저희가 고통을 당합니다."
+        },
+        "am": {
+          "L": "አባቶቻችን ኃጢአት ሠሩ፤ የሉም፤ \\q እኛም በደላቸውን ተሸከምን።",
+          "B": "አባቶቻችን ኃጢአት ሠሩ፤ አሁን የሉም፤ \\q እኛም የበደላቸውን ሸክም እንሸከማለን።",
+          "R": "ቀደምቶቻችን ኃጢአት ሠሩ፤ አሁን ሞተዋል። \\q እኛ ግን ስለ ኃጢአታቸው እንሠቃያለን።"
         }
       },
       "decisions": [
@@ -1003,6 +1160,11 @@
           "L": "종들이 저희를 다스리는데, \\q 그들의 손에서 [저희를] 빼낼 자가 없습니다.",
           "B": "종들이 저희를 다스리는데, \\q 그들의 손아귀에서 저희를 건져 줄 이가 없습니다.",
           "R": "종이던 자들이 저희를 다스립니다. \\q 그들에게서 저희를 구해 줄 사람이 아무도 없습니다."
+        },
+        "am": {
+          "L": "ባሪያዎች ገዙን፤ \\q ከእጃቸው የሚያስጥል የለም።",
+          "B": "ባሪያዎች ይገዙናል፤ \\q ከሥልጣናቸውም የሚያድነን የለም።",
+          "R": "ባሪያዎች ገዦቻችን ሆኑ፤ \\q ከእነርሱም የሚያድነን ማንም የለም።"
         }
       },
       "decisions": [
@@ -1113,6 +1275,28 @@
           "reason": "The point is that men of the lowest rank now rule; \"đầy tớ\" is kept for God's servants and for \"your servant\" in prayer, and \"nô lệ\" for slavery itself, which is meant here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050080011",
+            "o250050080021"
+          ],
+          "choice": "slaves \"ባሪያዎች\" at every level",
+          "alternatives": [
+            "\"አገልጋዮች\""
+          ],
+          "reason": "The reversal is the point (m1): those of the lowest rank now rule; \"ባሪያ\" is the settled word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1176,6 +1360,11 @@
           "L": "저희는 목숨을 [걸고] 저희 빵을 들여옵니다, \\q 광야의 칼 때문에.",
           "B": "저희는 목숨을 걸고 먹을 것을 구해 옵니다. \\q 광야에 칼을 든 자들이 있기 때문입니다.",
           "R": "저희는 먹을 것을 구하러 갈 때마다 목숨을 겁니다. \\q 들판에서 무기를 든 약탈자들이 저희를 덮치기 때문입니다."
+        },
+        "am": {
+          "L": "ሕይወታችንን [አደጋ ላይ ጥለን] እንጀራችንን እናመጣለን፤ \\q ከምድረ በዳው ሰይፍ የተነሣ።",
+          "B": "ሕይወታችንን ለአደጋ አጋልጠን እንጀራችንን እናመጣለን፤ \\q በምድረ በዳ ካለው ሰይፍ የተነሣ።",
+          "R": "ምግብ ለማግኘት ብቻ ሕይወታችንን ለአደጋ እናጋልጣለን፤ \\q የታጠቁ ወንበዴዎች በገጠር ያጠቁናልና።"
         }
       },
       "decisions": [
@@ -1289,6 +1478,11 @@
           "L": "저희 살갗이 화덕처럼 뜨거워졌습니다, \\q 굶주림의 타는 열기 때문에.",
           "B": "저희 살갗이 화덕처럼 달아오릅니다. \\q 굶주림으로 열이 펄펄 끓습니다.",
           "R": "저희 살갗이 화덕처럼 뜨겁습니다. \\q 굶주림 때문에 열이 몹시 납니다."
+        },
+        "am": {
+          "L": "ቆዳችን እንደ እቶን ጋለ፤ \\q ከራብ ትኩሳት የተነሣ።",
+          "B": "ቆዳችን እንደ እቶን ይነድዳል፤ \\q ከራብ በመጣ ትኩሳት።",
+          "R": "ቆዳችን እንደ እቶን ሞቋል፤ \\q ራብ በትኩሳት እንድንቃጠል አድርጎናልና።"
         }
       },
       "decisions": [
@@ -1399,6 +1593,11 @@
           "L": "그들이 시온에서 여자들을, \\q 유다 성읍들에서 처녀들을 겁탈하였습니다.",
           "B": "시온에서 여자들이 겁탈을 당했고, \\q 유다 성읍들에서 처녀들이 겁탈을 당했습니다.",
           "R": "원수의 군인들이 시온에서 여자들을 겁탈했고, \\q 유다 성읍들에서 결혼하지 않은 젊은 여자들을 겁탈했습니다."
+        },
+        "am": {
+          "L": "በጽዮን ሴቶችን ደፈሩ፤ \\q በይሁዳ ከተሞች ደናግልን።",
+          "B": "በጽዮን ሴቶች ተደፈሩ፤ \\q በይሁዳ ከተሞችም ደናግል።",
+          "R": "የጠላት ወታደሮች በጽዮን ያሉትን ሴቶች ደፈሩ፤ \\q በይሁዳ ከተሞች ያሉትን ያላገቡ ወጣት ሴቶችንም።"
         }
       },
       "decisions": [
@@ -1498,6 +1697,25 @@
           "reason": "Elsewhere in the book Balanced says \"jeunes filles\"; here the outrage done to unmarried women is the point (m2), and the English Balanced keeps \"virgins\", so French does too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050110041"
+          ],
+          "choice": "virgins \"ደናግል\" at Balanced here, with its English",
+          "alternatives": [
+            "\"ወጣት ሴቶች\""
+          ],
+          "reason": "Balanced elsewhere says \"ወጣት ሴቶች\" for the same Hebrew where its English says \"young women\"; here its English keeps \"virgins\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1559,6 +1777,11 @@
           "L": "고관들이 그들의 손에 매달렸고, \\q 장로들의 얼굴이 존중을 받지 못했습니다.",
           "B": "관리들은 손이 묶인 채 매달렸고, \\q 장로들은 아무 존경도 받지 못했습니다.",
           "R": "저희 지도자들은 손이 묶인 채 매달렸습니다. \\q 아무도 장로들을 존경하지 않았습니다."
+        },
+        "am": {
+          "L": "መሳፍንት በእጃቸው ተሰቀሉ፤ \\q የሽማግሌዎች ፊት አልተከበረም።",
+          "B": "ሹማምንት በእጃቸው ተንጠለጠሉ፤ \\q ለሽማግሌዎችም ክብር አልተሰጠም።",
+          "R": "መሪዎቻችን በእጃቸው ተንጠለጠሉ። \\q ሽማግሌዎችን ያከበረ ማንም አልነበረም።"
         }
       },
       "decisions": [
@@ -1634,6 +1857,30 @@
           "reason": "Balanced and Readable say plainly what \"the faces ... were not honored\" means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o250050120021",
+            "o250050120022",
+            "o250050120023",
+            "o250050120031"
+          ],
+          "choice": "\"by their hands\" as \"በእጃቸው\"",
+          "alternatives": [
+            "\"በእጃቸው ታስረው\""
+          ],
+          "reason": "The Hebrew leaves open whose hands (the princes' or the enemies'); Amharic \"በእጃቸው\" keeps the same openness.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1694,6 +1941,11 @@
           "L": "젊은이들이 맷돌을 졌고, \\q 소년들이 나무[짐] 아래에서 비틀거렸습니다.",
           "B": "젊은이들은 맷돌을 끌고, \\q 아이들은 나뭇짐에 눌려 비틀거립니다.",
           "R": "젊은이들은 종처럼 억지로 맷돌을 돌리고, \\q 소년들은 무거운 땔나무 짐을 지고 비틀거립니다."
+        },
+        "am": {
+          "L": "ጎበዛዝት ወፍጮን ተሸከሙ፤ \\q ብላቴኖችም ከእንጨት በታች ተሰናከሉ።",
+          "B": "ወጣቶች የወፍጮ ድንጋዮችን ይጎትታሉ፤ \\q ልጆችም ከእንጨት ሸክም በታች ይንገዳገዳሉ።",
+          "R": "ወጣቶች እንደ ባሪያዎች እህል እንዲፈጩ ይገደዳሉ፤ \\q ልጆችም በከባድ የማገዶ ሸክም ሥር ይደናቀፋሉ።"
         }
       },
       "decisions": [
@@ -1821,6 +2073,11 @@
           "L": "장로들이 성문에서 그쳤고, \\q 젊은이들이 그들의 음악에서 [그쳤습니다].",
           "B": "장로들은 성문에서 자취를 감추었고, \\q 젊은이들은 음악을 그쳤습니다.",
           "R": "장로들은 더는 성문에 앉아 있지 않습니다. \\q 젊은이들은 더는 악기를 연주하지 않습니다."
+        },
+        "am": {
+          "L": "ሽማግሌዎች ከበሩ ቀሩ፤ \\q ጎበዛዝትም ከዜማቸው።",
+          "B": "ሽማግሌዎች ከከተማዪቱ በር ጠፍተዋል፤ \\q ወጣቶችም ከዜማቸው።",
+          "R": "ሽማግሌዎች ከእንግዲህ በከተማዪቱ በር አይቀመጡም። \\q ወጣቶችም ከእንግዲህ ዜማቸውን አይጫወቱም።"
         }
       },
       "decisions": [
@@ -1931,6 +2188,11 @@
           "L": "저희 마음의 기쁨이 그쳤고, \\q 저희 춤이 애통으로 바뀌었습니다.",
           "B": "저희 마음에서 기쁨이 사라졌고, \\q 저희 춤은 슬픔으로 바뀌었습니다.",
           "R": "저희 마음에는 이제 기쁨이 없습니다. \\q 춤을 추는 대신 슬피 웁니다."
+        },
+        "am": {
+          "L": "የልባችን ደስታ ቀረ፤ \\q ጭፈራችን ወደ ልቅሶ ተለወጠ።",
+          "B": "ደስታ ከልባችን ጠፍቷል፤ \\q ጭፈራችን ወደ ልቅሶ ተለውጧል።",
+          "R": "በልባችን ውስጥ ከእንግዲህ ደስታ የለም። \\q በጭፈራ ፋንታ እናለቅሳለን።"
         }
       },
       "decisions": [
@@ -2043,6 +2305,11 @@
           "L": "저희 머리의 면류관이 떨어졌습니다. \\q 이제 저희에게 화가 있습니다. 저희가 죄를 지었습니다!",
           "B": "저희 머리에서 면류관이 떨어졌습니다. \\q 저희에게 화가 있습니다. 저희가 죄를 지었기 때문입니다!",
           "R": "머리에서 면류관이 떨어지듯 저희는 영광을 잃었습니다. \\q 아, 저희는 이제 끝났습니다. 저희가 죄를 지었기 때문입니다!"
+        },
+        "am": {
+          "L": "የራሳችን አክሊል ወደቀ፤ \\q ኃጢአት ሠርተናልና አሁን ወዮልን!",
+          "B": "አክሊላችን ከራሳችን ወደቀ፤ \\q ኃጢአት ሠርተናልና ወዮልን!",
+          "R": "ክብራችን ከራሳችን እንደ ወደቀ አክሊል ጠፍቷል። \\q ኃጢአት ሠርተናልና ይህ ምንኛ አስከፊ ነው!"
         }
       },
       "decisions": [
@@ -2193,6 +2460,27 @@
           "reason": "Literal and Balanced keep \"화가 있다\", the Korean prophets' word for 'oy. Spoken of oneself, Readable uses the plain cry the Korean Isaiah gives for the same words in 6:5.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050160041",
+            "o250050160051"
+          ],
+          "choice": "woe (ʾoy) \"ወዮልን\"",
+          "alternatives": [
+            "\"ዋይ ዋይ\""
+          ],
+          "reason": "The cry of woe, as the New Testament's \"ወዮላችሁ\"; Readable says it plainly, with its English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2256,6 +2544,11 @@
           "L": "이 때문에 저희 마음이 병들었고, \\q 이것들 때문에 저희 눈이 어두워졌습니다.",
           "B": "이 일 때문에 저희 마음이 병들고, \\q 이런 일들 때문에 저희 눈이 흐려집니다.",
           "R": "그래서 저희는 마음이 아픕니다. \\q 그래서 저희 눈은 눈물로 흐려졌습니다."
+        },
+        "am": {
+          "L": "ስለዚህ ልባችን ደከመ፤ \\q ስለ እነዚህም ዓይኖቻችን ፈዘዙ፣",
+          "B": "ስለዚህ ልባችን ታመመ፤ \\q ስለ እነዚህ ነገሮች ዓይኖቻችን ደከሙ፣",
+          "R": "ልባችን የታመመው ስለዚህ ነው። \\q ዓይኖቻችን በእንባ የፈዘዙትም ስለዚህ ነው።"
         }
       },
       "decisions": [
@@ -2389,6 +2682,11 @@
           "L": "시온 산이 황폐하여 \\q 여우들이 그 위를 돌아다니기 때문입니다.",
           "B": "시온 산이 폐허가 되어 \\q 승냥이들이 그 위를 어슬렁거리기 때문입니다.",
           "R": "저희는 텅 빈 폐허가 된 시온 산 때문에 슬퍼합니다. \\q 승냥이들이 그 위를 돌아다닙니다."
+        },
+        "am": {
+          "L": "ባድማ ስለ ሆነው ስለ ጽዮን ተራራ፤ \\q ቀበሮዎች በእርሱ ላይ ይርመሰመሳሉ።",
+          "B": "ፈራርሶ ስለ ቀረው ስለ ጽዮን ተራራ፤ \\q ቀበሮዎችም በላዩ ይዞራሉ።",
+          "R": "ባዶና ፍርስራሽ ሆኖ ስለ ቀረው ስለ ጽዮን ተራራ እናዝናለን። \\q ቀበሮዎች በላዩ ይዞራሉ።"
         }
       },
       "decisions": [
@@ -2482,6 +2780,27 @@
           "reason": "The Hebrew word is the usual one for foxes, but the animals that haunt ruins here are taken to be jackals, as the meaning decision's footnote says. Literal keeps the word's ordinary sense; Balanced and Readable name the animal meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050180051"
+          ],
+          "choice": "jackals (shuʿalim) \"ቀበሮዎች\"",
+          "alternatives": [
+            "\"ተኩላዎች\""
+          ],
+          "reason": "Amharic \"ቀበሮ\" covers fox and jackal, the animals of the ruins (m1); it is the same word as 4:3, as the English has \"jackals\" for both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2545,6 +2864,11 @@
           "L": "{{divine_name:주|야훼}}여, 주님께서는 영원히 [왕좌에] 앉아 계시고, \\q 주님의 보좌는 대대로 [있습니다].",
           "B": "{{divine_name:주|야훼}}여, 주님께서는 영원히 왕좌에 앉아 계시고, \\q 주님의 보좌는 대대로 이어집니다.",
           "R": "그러나 {{divine_name:주|야훼}}여, 주님께서는 영원히 왕으로 다스리실 것입니다. \\q 주님의 다스리심은 모든 세대에 이어질 것입니다."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ለዘላለም [በዙፋንህ] ትቀመጣለህ፤ \\q ዙፋንህ ከትውልድ እስከ ትውልድ [ነው]።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ለዘላለም ትነግሣለህ፤ \\q ዙፋንህ ለትውልድ ሁሉ ጸንቶ ይኖራል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ግን ለዘላለም ንጉሥ ሆነህ ትገዛለህ። \\q አገዛዝህ ለትውልድ ሁሉ ይቀጥላል።"
         }
       },
       "decisions": [
@@ -2632,6 +2956,28 @@
           "reason": "A pronoun for God that begins a sentence is capitalized in either setting, so it is written plain, as in the English; inside a sentence it takes the deity_pronoun span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050190011",
+            "o250050190021",
+            "o250050190032",
+            "o250050190041"
+          ],
+          "choice": "to generation and generation \"ከትውልድ እስከ ትውልድ\" (L), as Psalm 79:13",
+          "alternatives": [],
+          "reason": "The Psalms' wording for the same phrase. Hebrews 1:8-12 (in the cross-references) quotes Psalms 45 and 102, not this verse.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2695,6 +3041,11 @@
           "L": "어찌하여 주님께서는 저희를 영원히 잊으시며, \\q 이토록 오랫동안 저희를 버리십니까?",
           "B": "어찌하여 주님께서는 저희를 영영 잊으시고, \\q 그토록 오래 저희를 버려두십니까?",
           "R": "어찌하여 저희를 영원히 잊으십니까? \\q 어찌하여 이렇게 오랫동안 저희를 내버려 두십니까?"
+        },
+        "am": {
+          "L": "ለዘላለም ለምን ትረሳናለህ? \\q ለረጅም ዘመንስ ለምን ትተወናለህ?",
+          "B": "ለዘለቄታው ለምን ትረሳናለህ? \\q ይህን ያህል ዘመንስ ለምን ትጥለናለህ?",
+          "R": "ለምን ለዘላለም ትረሳናለህ? \\q ይህን ያህል ጊዜ ለምን ብቻችንን ተውኸን?"
         }
       },
       "decisions": [
@@ -2810,6 +3161,11 @@
           "L": "{{divine_name:주|야훼}}여, 저희를 주님께로 돌이키십시오. 그러면 저희가 돌아가겠습니다. \\q 저희 날들을 옛날처럼 새롭게 하여 주십시오.",
           "B": "{{divine_name:주|야훼}}여, 저희를 주님께로 돌아서게 해 주십시오. 그러면 저희가 돌아가겠습니다. \\q 저희의 날들을 옛날처럼 새롭게 해 주십시오.",
           "R": "{{divine_name:주|야훼}}여, 저희를 주님께로 다시 데려가 주십시오. 그러면 저희가 돌아가겠습니다. \\q 저희 삶을 옛날처럼 다시 새롭게 해 주십시오."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ መልሰን፤ እኛም እንመለሳለን፤ \\q ዘመናችንን እንደ ቀድሞው አድስ፣",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እንድንመለስ ወደ አንተ መልሰን፤ \\q ዘመናችንን እንደ ጥንቱ አዲስ አድርግ፣",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ መልሰን፤ እኛም እንመለሳለን። \\q ሕይወታችንን እንደ ቀድሞው እንደገና አዲስ አድርግ።"
         }
       },
       "decisions": [
@@ -2962,6 +3318,30 @@
           "reason": "The Hebrew uses one verb twice, God turning the people and the people turning; Vietnamese pairs words from the same family so the echo, and the order (God acts first), stay clear.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250050210011",
+            "o250050210012",
+            "o250050210031",
+            "o250050210052"
+          ],
+          "choice": "bring us back ... we will return \"መልሰን ... እንመለሳለን\", one verb as the Hebrew, as 3:40",
+          "alternatives": [
+            "\"ንስሓ እንገባለን\""
+          ],
+          "reason": "The Hebrew plays on one verb (shuv), God's act first (m1); Amharic \"መለሰ / ተመለሰ\" keeps the play.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3024,6 +3404,11 @@
           "L": "주님께서 저희를 아주 버리시고 \\q 저희에게 몹시 진노하신 것이 아니라면 [그리하여 주십시오].",
           "B": "주님께서 저희를 완전히 버리시고 \\q 저희에게 끝없이 진노하시는 것이 아니라면, 그렇게 해 주십시오.",
           "R": "주님께서 저희를 완전히 버리신 것이 아니라면 이렇게 해 주십시오. \\q 저희에게 끝없이 화가 나신 것이 아니라면 이렇게 해 주십시오."
+        },
+        "am": {
+          "L": "ፈጽመህ ካልጣልኸን በቀር፣ \\q [እና] እጅግ ካልተቆጣኸን በቀር።",
+          "B": "ፈጽመህ ካልጣልኸን በቀር፣ \\q ቁጣህም በእኛ ላይ ወሰን የሌለው ካልሆነ በቀር።",
+          "R": "ይህን አድርግ፤ ፈጽመህ ካልጣልኸን በቀር፣ \\q ቁጣህ በእኛ ላይ ማብቂያ ከሌለው በቀር።"
         }
       },
       "decisions": [
@@ -3151,6 +3536,28 @@
             "one sentence across the two verses"
           ],
           "reason": "The Hebrew \"unless\" hangs on the plea of 5:21. Korean puts the condition before the verb, so to keep each verse's content after its own number, 5:22 repeats the plea briefly (bracketed at Literal) after the condition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o250050220011",
+            "o250050220081"
+          ],
+          "choice": "the book ends on verse 22; verse 21 is not repeated after it",
+          "alternatives": [
+            "repeating verse 21"
+          ],
+          "reason": "As the English and the meaning decision (m4): the custom of reading verse 21 again belongs to public reading, not to the text.",
           "uncertain": false,
           "footnote": false
         }
