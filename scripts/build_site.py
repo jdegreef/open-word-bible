@@ -5169,7 +5169,7 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "admin.js", "admin.css"):
+                 "word.js", "saved.js", "groups.js", "edition.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")

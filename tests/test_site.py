@@ -1053,6 +1053,17 @@ class SiteTest(unittest.TestCase):
         self.assertIn("Lamech, descendant of Cain", [c["title"] for c in gen4])
         self.assertIn("Lamech, father of Noah", [c["title"] for c in gen5])
 
+    def test_every_script_and_style_a_page_loads_is_built(self):
+        # A page that names /x.js?v=... must find x.js in the build (the
+        # reader's edition once shipped without web/edition.js).
+        missing = set()
+        for path in self.out.rglob("index.html"):
+            page = path.read_text(encoding="utf-8")
+            for src in re.findall(r'(?:src|href)="(/[\w.-]+\.(?:js|css))\?v=', page):
+                if not (self.out / src.lstrip("/")).is_file():
+                    missing.add(src)
+        self.assertEqual(missing, set())
+
     def test_site_can_be_installed_and_read_offline(self):
         manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))
         for icon in manifest["icons"]:
