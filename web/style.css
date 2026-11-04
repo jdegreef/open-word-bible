@@ -1316,6 +1316,12 @@ a.a-ref:hover { border-color: var(--accent); }
 .text-tool { margin: 0 0 12px; }
 .text-tool[hidden] { display: none; }
 .verse.unsure { text-decoration: underline dotted var(--warn); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+/* A word to know (data/glossary.json): a faint underline, its meaning on a tap. */
+.gl-w { cursor: help; text-decoration: underline dotted color-mix(in srgb, var(--accent) 55%, transparent);
+  text-decoration-thickness: 1.5px; text-underline-offset: 5px; }
+.gl-w:hover, .gl-w[aria-expanded="true"] { text-decoration-color: var(--accent); }
+.gl-w:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 3px; }
+.gl-pop .wcard-lemma { color: var(--muted); }
 /* An uncertain phrase (web/reader.js drawText): its words tinted and
    underlined, and a tap opens the call with its other reading. */
 .unsure-w { background: var(--warn-bg); border-radius: 3px; cursor: pointer;

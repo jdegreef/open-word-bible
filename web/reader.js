@@ -601,6 +601,44 @@
     first.focus({ preventScroll: true });
   }
 
+  // The glossary card (kind "concept") of any of these source words.
+  function glossaryCard(ids) {
+    for (var i = 0; i < ids.length; i++) {
+      var n = DATA.cards.tokens[ids[i]], c = n === undefined ? null : DATA.cards.list[n];
+      if (c && c.kind === "concept") return c;
+    }
+    return null;
+  }
+
+  function openGloss(button, c) {
+    var same = popover && popover.opener === button;
+    closeNote(false);
+    if (same) return;
+    var box = el("div", "fn-pop gl-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", c.title);
+    var head = el("p", "fn-pop-head");
+    head.appendChild(el("span", "note-ref", c.title));
+    var lemma = el("span", "wcard-lemma", c.lemma);
+    lemma.lang = DATA.source;
+    head.appendChild(lemma);
+    head.appendChild(el("span", "fn-pop-cat", t("card_kind").concept));
+    box.appendChild(head);
+    var note = el("p", "fn-pop-text", c.note);
+    if (settings.lang !== "en") note.lang = "en";
+    box.appendChild(note);
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = button;
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    box.tabIndex = -1;
+    box.focus({ preventScroll: true });
+  }
+
   // A link to an article ({url, title, lang}), in English where it is not
   // translated yet.
   function articleLink(a, cls) {
@@ -757,6 +795,20 @@
             var d = unsureTok[id];
             if (d && doubt.indexOf(d) < 0) doubt.push(d);
           });
+          // A word to know (data/glossary.json): what it means, one tap away.
+          var gloss = !doubt.length && !plain() && glossaryCard(piece[1]);
+          if (gloss) {
+            w.classList.add("gl-w");
+            w.tabIndex = 0;
+            w.setAttribute("role", "button");
+            w.setAttribute("aria-label", t("glossary_label").replace("{word}", text));
+            w.setAttribute("aria-expanded", "false");
+            w.addEventListener("click", function (e) { e.stopPropagation(); openGloss(w, gloss); });
+            w.addEventListener("keydown", function (e) {
+              e.stopPropagation();
+              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openGloss(w, gloss); }
+            });
+          }
           if (doubt.length) {
             // The other reading is one tap away.
             w.classList.add("unsure-w");

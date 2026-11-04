@@ -1063,6 +1063,21 @@ class SiteTest(unittest.TestCase):
                 if not (self.out / src.lstrip("/")).is_file():
                     missing.add(src)
         self.assertEqual(missing, set())
+    def test_glossary_is_well_formed(self):
+        # Words to know: AI drafts, kind "concept", no word that is also a
+        # name; their lemmas are checked against the source data above.
+        glossary = json.loads((build_site.ROOT / "data" / "glossary.json").read_text(encoding="utf-8"))
+        names = json.loads((build_site.ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+        self.assertEqual(glossary["status"], "ai_draft")
+        named = {(n["strong"], n["lemma"]) for n in names}
+        for entry in glossary["glossary"]:
+            self.assertNotIn((entry["strong"], entry["lemma"]), named)
+            for sense in entry["senses"]:
+                self.assertEqual(sense["kind"], "concept")
+                self.assertTrue(sense["name"] and sense["note"])
+                self.assertNotIn("{{", sense["note"])
+        cards = self.chapter_data("jhn/5")["cards"]["list"]
+        self.assertIn(("Sabbath", "concept"), [(c["title"], c.get("kind")) for c in cards])
 
     def test_site_can_be_installed_and_read_offline(self):
         manifest = json.loads((self.out / "manifest.webmanifest").read_text(encoding="utf-8"))

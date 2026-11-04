@@ -1679,14 +1679,18 @@ def disputed_record(r):
 
 @functools.lru_cache(maxsize=None)
 def name_cards():
-    """data/names.json (people, places and peoples), by (Strong's number,
-    lemma). Each has one or more senses; a sense with "verses" is the one
-    for those verses, a sense without is the one for every other verse."""
-    path = ROOT / "data" / "names.json"
-    if not path.exists():
-        return {}
-    data = json.loads(path.read_text(encoding="utf-8"))
-    return {(n["strong"], n["lemma"]): n["senses"] for n in data["names"]}
+    """data/names.json (people, places and peoples) and data/glossary.json
+    (words a reader may need explained: feasts, offerings, offices), by
+    (Strong's number, lemma). Each has one or more senses; a sense with
+    "verses" is the one for those verses, a sense without is the one for
+    every other verse. A glossary sense's kind is "concept"."""
+    cards = {}
+    for name, key in (("names.json", "names"), ("glossary.json", "glossary")):
+        path = ROOT / "data" / name
+        if path.exists():
+            data = json.loads(path.read_text(encoding="utf-8"))
+            cards.update({(n["strong"], n["lemma"]): n["senses"] for n in data[key]})
+    return cards
 
 
 def word_strong(word):
