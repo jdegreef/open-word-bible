@@ -14,7 +14,9 @@ verse to its English number (owb/versification.py); numbering="source" keeps
 ours. A
 psalm title, which English Bibles print unnumbered, becomes the chapter's
 title (USFM \\d); a Hebrew verse that holds two English ones (PSA.13.6 is
-Psalm 13:5-6) becomes a verse bridge (\\v 5-6).
+Psalm 13:5-6) becomes a verse bridge (\\v 5-6). Given the verses that open
+a paragraph (the site's, from the source text's own marks), a USFM chapter
+starts a new paragraph (\\p) at each, and a JSON verse says "paragraph".
 
 Only our translation is exported: no Greek or Hebrew, no word data.
 
@@ -94,14 +96,15 @@ def verse_texts(records, lang, level, settings=None):
     return dict(sorted(out.items(), key=lambda kv: refs.parse(kv[0]).sort_key()))
 
 
-def numbered(verses, numbering="english"):
+def numbered(verses, numbering="english", paragraphs=frozenset()):
     """The verses as they are numbered in the file:
-    ([{"book", "chapter", "verse", "to"?, "holds"?, "text"}],
+    ([{"book", "chapter", "verse", "to"?, "holds"?, "paragraph"?, "text"}],
     {(book, chapter): title}). With English numbering a verse goes to its
     English number; verses whose English numbers overlap are joined into
     one entry, a bridge ("to") when it covers several verses of a chapter,
     else numbered as its first and listing the verses it "holds"; a verse
-    with no English number is a title."""
+    with no English number is a title. An entry whose first verse is in
+    paragraphs (our verse ids) opens a paragraph."""
     entries, titles = [], {}
     for vid, text in verses.items():
         ref = refs.parse(vid)
@@ -115,11 +118,13 @@ def numbered(verses, numbering="english"):
             last[0] = sorted(set(last[0]) | set(english), key=refs.Ref.sort_key)
             last[1].append(text)
         else:
-            entries.append([english, [text]])
+            entries.append([english, [text], vid in paragraphs])
     out = []
-    for numbers, texts in sorted(entries, key=lambda e: e[0][0].sort_key()):
+    for numbers, texts, opens in sorted(entries, key=lambda e: e[0][0].sort_key()):
         first, end = numbers[0], numbers[-1]
         entry = {"book": first.book, "chapter": first.chapter, "verse": first.verse, "text": " ".join(texts)}
+        if opens:
+            entry["paragraph"] = True
         if end.chapter != first.chapter:
             # A bridge can't cross chapters (Hebrew ISA.63.19 is English
             # Isaiah 63:19 and 64:1): the text goes under the first verse.
@@ -152,6 +157,8 @@ def usfm_book(code, lang, level, entries, titles):
             if (code, chapter) in titles:
                 lines.append(f"\\d {titles[code, chapter]}")
             lines.append("\\p")
+        elif e.get("paragraph"):
+            lines.append("\\p")
         number = f"{e['verse']}-{e['to']}" if "to" in e else str(e["verse"])
         lines.append(f"\\v {number} {e['text']}")
     return "\n".join(lines) + "\n"
@@ -170,17 +177,18 @@ def json_books(lang, entries, titles):
                 chapter["title"] = titles[e["book"], e["chapter"]]
             chapter["verses"] = []
             chapters.append(chapter)
-        verse = {k: e[k] for k in ("verse", "to", "holds", "text") if k in e}
+        verse = {k: e[k] for k in ("verse", "to", "holds", "paragraph", "text") if k in e}
         chapters[-1]["verses"].append(verse)
     return books
 
 
 def build(records, lang, level, fmt="usfm", numbering="english", settings=None, books=None,
-          expected=None, generated_at="", commit=""):
+          expected=None, generated_at="", commit="", paragraphs=frozenset()):
     """The export of records in lang at level: (filename, content type,
     bytes, manifest). books limits it to those book codes (None: all).
     expected, if given, is every verse id the source text has (our
-    numbering), so the manifest can list those not yet translated."""
+    numbering), so the manifest can list those not yet translated.
+    paragraphs is the verse ids (our numbering) that open a paragraph."""
     if lang not in languages.READING:
         raise ValueError(f"unknown language {lang!r}")
     if level not in LEVELS:
@@ -194,7 +202,7 @@ def build(records, lang, level, fmt="usfm", numbering="english", settings=None, 
     wanted = set(books) if books else None
     records = [r for r in records if wanted is None or refs.parse(r["refs"][0]).book in wanted]
     verses = verse_texts(records, lang, level, settings)
-    entries, titles = numbered(verses, numbering)
+    entries, titles = numbered(verses, numbering, paragraphs)
 
     status = {}
     for r in records:
