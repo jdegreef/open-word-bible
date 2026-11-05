@@ -24,6 +24,15 @@ Each language has two files:
 | Swahili | [sw-review-checklist.md](sw-review-checklist.md) | [sw-uncertain.md](sw-uncertain.md) |
 | Vietnamese | [vi-review-checklist.md](vi-review-checklist.md) | [vi-uncertain.md](vi-uncertain.md) |
 | Korean | [ko-review-checklist.md](ko-review-checklist.md) | [ko-uncertain.md](ko-uncertain.md) |
+| Amharic | [amharic-review-guide.md](../amharic-review-guide.md) | [am-review-priorities.md](am-review-priorities.md), section 1 |
+
+Amharic has a guide (`docs/amharic-review-guide.md`: the levels, the settings,
+what to check, how review works in the admin and where to start) and a
+generated priorities list, `am-review-priorities.md`, made by
+`python3 scripts/review_priorities.py am --write`: every uncertain decision
+with a question for the reviewer, about forty passages to read first, the
+name forms the drafters coined, and the decisions that mention the older
+Amharic Bibles.
 
 A choice that is settled differently is changed in its terms doc (`docs/*terms*.md`),
 and every passage drafted under it is revised to match.
