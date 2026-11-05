@@ -290,6 +290,11 @@ passage where the Greek is the same, and differ where the Greek differs.
   «Да не будет!» (L), «Ни в коем случае!» (B), «Конечно, нет!» (R);
   Christ with a preposition inside each option (`{{christos:во Христе|в
   Мессии}}`); no ибо at Literal.
+  Settled in 1 Corinthians: глупость / глупый / глупец for the *mōria*
+  family (not юродство); хвалиться (L, B); раздуваться [от гордости] (L, B),
+  гордиться (R); камень преткновения for *skandalon*; блуд (L), распутство
+  (B), сексуальный грех (R) for *porneia*; Кифа (Пётр at R); Вечеря Господня
+  (B, R); глава for "head" in 11:3.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
