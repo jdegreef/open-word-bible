@@ -282,6 +282,14 @@ passage where the Greek is the same, and differ where the Greek differs.
   проконсул (L, B), римский правитель (R); тысяченачальник (L), командир
   (B, R); благовествовать (L), возвещать Радостную весть (B); Савл for the
   apostle; партия for *hairesis* as a party.
+  Settled in Romans: праведность; оправдать at every level; вера / верить;
+  Закон for God's law, закон for a ruling principle (3:27; 7:21-8:2); дела
+  Закона; плоть (L, B), человеческая / греховная природа (R) where the
+  sense is moral; Дух; умилостивление (L), искупительная жертва (B, R);
+  примирение; усыновление; обетование (L, B), обещание (R); *mē genoito*
+  «Да не будет!» (L), «Ни в коем случае!» (B), «Конечно, нет!» (R);
+  Christ with a preposition inside each option (`{{christos:во Христе|в
+  Мессии}}`); no ибо at Literal.
 - **Coins.** The talent is `{{units:пять мешков серебра|пять талантов}}`
   where the English has bags of silver; small coins are
   `{{units:копейку|один ассарий}}`, `{{units:последнюю копейку|последний
