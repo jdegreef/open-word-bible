@@ -1,5 +1,7 @@
 # Amharic: 1–2 Kings, 1–2 Chronicles and Ezra
 
+> **Reference:** `docs/amharic-glossary.md` is the consolidated Amharic glossary for the whole Bible and the reference for every book; where this per-batch list and the glossary differ, the glossary wins.
+
 **Status: proposed, awaiting a native Amharic reviewer.** The choices used to
 draft 1–2 Kings, 1–2 Chronicles and Ezra in Amharic, so that books drafted in
 parallel read as one translation. `docs/amharic-style.md`,

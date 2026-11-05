@@ -1,5 +1,7 @@
 # Amharic: Obadiah to Malachi
 
+> **Reference:** `docs/amharic-glossary.md` is the consolidated Amharic glossary for the whole Bible and the reference for every book; where this per-batch list and the glossary differ, the glossary wins.
+
 **Status: proposed, awaiting a native Amharic reviewer.** The choices used to
 draft the last nine books of the Old Testament in Amharic (Obadiah, Jonah,
 Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, Malachi), so that books

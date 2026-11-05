@@ -1,5 +1,7 @@
 # Amharic: Joshua to 2 Samuel
 
+> **Reference:** `docs/amharic-glossary.md` is the consolidated Amharic glossary for the whole Bible and the reference for every book; where this per-batch list and the glossary differ, the glossary wins.
+
 **Status: proposed, awaiting a native Amharic reviewer.** The choices used to
 draft Joshua, Judges, Ruth and 1–2 Samuel in Amharic, so that books drafted
 in parallel read as one translation. `docs/amharic-style.md` and
