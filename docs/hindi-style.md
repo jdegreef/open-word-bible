@@ -345,6 +345,16 @@ Settled in Romans:
 - "Sons": `{{gender:की सन्तान|के पुत्र}}`, the postposition inside each
   option.
 
+Settled in 1 Corinthians:
+
+- बुद्धि / बुद्धिमान (wisdom), ज्ञान (knowledge), मूर्खता / मूर्ख; आत्मिक
+  (spiritual), never आध्यात्मिक; स्वाभाविक (*psychikos*, L); विवेक
+  (conscience); वरदान (gifts); भेद (mystery); उन्नति (building up, L, B).
+- *porneia* यौन अनैतिकता (L), यौन पाप (B, R); the Lord's Supper प्रभु का भोज
+  (L), प्रभु-भोज (B, R), with देह for the Lord's body as Luke 22:19.
+- The Corinthians' slogans stand in quotation marks; Readable adds "तुममें
+  से कुछ कहते हैं".
+
 ## 8. Status
 
 A Hindi rendering added to a record does not change its status. Nothing is
