@@ -68,6 +68,16 @@
           "L": "ስለዚህ የምወዳችሁና የምናፍቃችሁ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ ደስታዬና አክሊሌ ሆይ፣ እንዲሁ በጌታ ጸንታችሁ ቁሙ፣ የተወደዳችሁ ሆይ።",
           "B": "ስለዚህ የምወዳችሁና ላያችሁ የምናፍቅ ውድ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ ደስታዬና አክሊሌ ሆይ፦ ውድ ወዳጆቼ፣ በዚህ መንገድ በጌታ ጸንታችሁ ቁሙ።",
           "R": "ስለዚህ ውድ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ እወዳችኋለሁ፤ ናፍቃችሁኛልም። እናንተ ደስታዬና የድል አክሊሌ ናችሁ። ውድ ወዳጆቼ ሆይ፣ እንዳሳየኋችሁ በጌታ ጸንታችሁ መቆማችሁን ቀጥሉ።"
+        },
+        "hi": {
+          "L": "इसलिए, मेरे प्रिय और मनचाहे {{gender:भाइयो और बहनो|भाइयो}}, मेरे आनंद और मुकुट, इसी तरह प्रभु में स्थिर रहो, प्रियो।",
+          "B": "तो मेरे प्रिय {{gender:भाइयो और बहनो|भाइयो}}, जिनसे मैं प्रेम करता हूँ और जिनसे मिलने को तरसता हूँ, मेरे आनंद और मेरे मुकुट: प्रियो, इसी तरह प्रभु में स्थिर रहो।",
+          "R": "तो मेरे प्यारे {{gender:भाइयो और बहनो|भाइयो}}, मैं तुमसे प्रेम करता हूँ और तुम्हें बहुत याद करता हूँ। तुम मेरा आनंद हो, और मेरी जीत का मुकुट हो। प्यारे दोस्तो, जैसा मैंने तुम्हें बताया है, वैसे ही प्रभु में मज़बूती से खड़े रहो।"
+        },
+        "ru": {
+          "L": "Итак, {{gender:братья и сёстры|братья}} мои, возлюбленные и желанные, радость и венец мой, так стойте в Господе, возлюбленные.",
+          "B": "Итак, мои дорогие {{gender:братья и сёстры|братья}}, которых я люблю и по которым тоскую, моя радость и мой венец: стойте так твёрдо в Господе, дорогие мои.",
+          "R": "Итак, мои дорогие {{gender:братья и сёстры|братья}}, я люблю вас и скучаю по вам. Вы моя радость и мой победный венок. Продолжайте твёрдо стоять в Господе, как я вам показал, дорогие друзья."
         }
       },
       "decisions": [
@@ -348,6 +358,87 @@
           "reason": "The Greek word is the wreath given to a victor (meaning decision m2), not a royal crown; \"አክሊል\" is the word for a wreath or garland of honour, where \"ዘውድ\" would make it a king's.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004001002"
+          ],
+          "choice": "{{gender:भाइयो और बहनो|भाइयो}}",
+          "alternatives": [
+            "\"भाइयो\" alone"
+          ],
+          "reason": "Paul writes to the whole church, which includes the women he names in verse 2 (meaning decision m1), so the inclusive vocative is the default and \"भाइयो\" the alternative, as the style guide has it for adelphoi. The same through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n50004001009"
+          ],
+          "choice": "\"जीत का मुकुट\" (R)",
+          "alternatives": [
+            "\"मुकुट\" alone"
+          ],
+          "reason": "The crown is the victor's wreath (meaning decision m2), not a king's crown; Readable says so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004001002"
+          ],
+          "choice": "{{gender:братья и сёстры|братья}}",
+          "alternatives": [
+            "братья"
+          ],
+          "reason": "As in English: Paul writes to the whole church, including the women he names in verse 2. The traditional \"братья\" stays available as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004001009"
+          ],
+          "choice": "победный венок",
+          "alternatives": [
+            "венец",
+            "корона"
+          ],
+          "reason": "The word is the victor's wreath (m2); Readable says \"победный венок\" so that it is not heard as a royal crown.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -415,6 +506,16 @@
           "L": "ኤዎድያን እለምናለሁ፤ ሲንጤኪንም እለምናለሁ፤ በጌታ ያንኑ እንዲያስቡ።",
           "B": "ኤዎድያን እማጸናለሁ፤ ሲንጤኪንም እማጸናለሁ፤ በጌታ እርስ በርሳቸው እንዲስማሙ።",
           "R": "ኤዎድያንና ሲንጤኪን፣ የጌታ እንደ ሆኑ ሰዎች እርስ በርሳቸው እንዲስማሙ እለምናቸዋለሁ።"
+        },
+        "hi": {
+          "L": "मैं यूओदिया से विनती करता हूँ, और सुन्तुखे से विनती करता हूँ, कि वे प्रभु में एक ही बात सोचें।",
+          "B": "मैं यूओदिया से भी आग्रह करता हूँ और सुन्तुखे से भी आग्रह करता हूँ कि वे प्रभु में एक मन रहें।",
+          "R": "मैं यूओदिया और सुन्तुखे से बिनती करता हूँ कि वे प्रभु के लोग होने के नाते आपस में मेल रखें।"
+        },
+        "ru": {
+          "L": "Еводию умоляю и Синтихию умоляю думать одно и то же в Господе.",
+          "B": "Я призываю Еводию и призываю Синтихию прийти к согласию друг с другом в Господе.",
+          "R": "Я очень прошу Еводию и Синтихию жить в согласии друг с другом, ведь обе они принадлежат Господу."
         }
       },
       "decisions": [
@@ -533,6 +634,29 @@
           "reason": "Paul makes the same appeal to each woman separately (meaning decision m1), so Literal and Balanced repeat the verb as he does; Readable joins them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004002001",
+            "n50004002004"
+          ],
+          "choice": "Еводия; Синтихия",
+          "alternatives": [
+            "Эводия",
+            "Синтика"
+          ],
+          "reason": "The traditional Russian Bible forms of the two names, as the style guide prefers for proper names.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -618,6 +742,16 @@
           "L": "አዎን፣ እውነተኛ የቀንበር ጓደኛዬ ሆይ፣ አንተንም ደግሞ እለምንሃለሁ፤ እነርሱን እርዳቸው፤ እነዚህ [ሴቶች] ከቀሌምንጦስና ስማቸው በሕይወት መጽሐፍ ካለው ከሌሎቹ አብረውኝ ከሚሠሩት ጋር በወንጌል ከእኔ ጋር አብረው ተጋድለዋል።",
           "B": "አዎን፣ እውነተኛ አጋሬ ሆይ፣ እነዚህን ሴቶች እንድትረዳቸው አንተንም እለምንሃለሁ። እነርሱ ከቀሌምንጦስና ስማቸው በሕይወት መጽሐፍ ካለው ከሌሎቹ የሥራ ባልደረቦቼ ጋር ስለ ወንጌል ከእኔ ጋር ጎን ለጎን ተጋድለዋል።",
           "R": "ታማኝ አጋሬ ሆይ፣ አንተም እባክህ እነዚህን ሴቶች እርዳቸው። እነርሱ ከቀሌምንጦስና ከሌሎቹ የሥራ ባልደረቦቼ ጋር የምሥራቹን ለማዳረስ ከእኔ ጋር ተግተው ሠርተዋል። ስማቸው በሕይወት መጽሐፍ ተጽፏል።"
+        },
+        "hi": {
+          "L": "हाँ, हे सच्चे जुए के साथी, मैं तुमसे भी कहता हूँ, उन [स्त्रियों] की सहायता करो, जिन्होंने क्लेमेंस और मेरे बाक़ी सहकर्मियों के साथ सुसमाचार में मेरे साथ संघर्ष किया, जिनके नाम जीवन की पुस्तक में [हैं]।",
+          "B": "हाँ, मेरे सच्चे साथी, मैं तुमसे भी कहता हूँ कि इन स्त्रियों की सहायता करो। इन्होंने क्लेमेंस और मेरे बाक़ी सहकर्मियों के साथ मिलकर सुसमाचार के लिए मेरे कंधे से कंधा मिलाकर संघर्ष किया है, जिनके नाम जीवन की पुस्तक में हैं।",
+          "R": "और मेरे वफ़ादार साथी, तुम इन स्त्रियों की मदद करना। इन्होंने सुसमाचार फैलाने में मेरे साथ कड़ी मेहनत की है, और क्लेमेंस और मेरे दूसरे सहकर्मियों ने भी। उनके नाम जीवन की पुस्तक में लिखे हैं।"
+        },
+        "ru": {
+          "L": "Да, прошу и тебя, истинный сотоварищ по ярму, помогай им, [женщинам,] которые подвизались вместе со мной в Евангелии, с Климентом и с остальными моими соработниками, чьи имена — в книге жизни.",
+          "B": "Да, и тебя прошу, мой верный товарищ, помоги этим женщинам. Они сражались плечом к плечу со мной за Евангелие вместе с Климентом и остальными моими соработниками, чьи имена в книге жизни.",
+          "R": "А ты, мой верный товарищ, пожалуйста, помоги этим женщинам. Они усердно трудились вместе со мной, чтобы распространять Радостную весть, вместе с Климентом и другими моими помощниками. Их имена записаны в книге жизни."
         }
       },
       "decisions": [
@@ -921,6 +1055,69 @@
           "reason": "The Greek is read as a description of an unnamed loyal partner (meaning decision m1), one man, so the singular \"አንተ\" is used. Literal keeps the picture of two yoked together; the other levels say partner.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n50004003008"
+          ],
+          "choice": "\"उन [स्त्रियों]\" (L); \"इन स्त्रियों\" (B, R)",
+          "alternatives": [
+            "\"उनकी\" alone"
+          ],
+          "reason": "The Greek pronouns are feminine: the people to be helped are Euodia and Syntyche. The Hindi pronoun would not show it, so every level names them as women, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n50004003004"
+          ],
+          "choice": "\"तुमसे ... करो\" at every level",
+          "alternatives": [
+            "\"तुझसे ... कर\" (intimate singular)"
+          ],
+          "reason": "Paul addresses one person here (the Greek 'you' is singular). As docs/hindi-style.md section 4 settles, a speaker in the New Testament says तुम to one person as to many; the intimate तू is kept for prayer to God, so the address is तुम at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004003005",
+            "n50004003006"
+          ],
+          "choice": "ты, тебя",
+          "alternatives": [
+            "вы"
+          ],
+          "reason": "The yokefellow is one person, so Russian uses the singular \"ты\", as the Greek does, while the church is addressed as \"вы\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -985,6 +1182,16 @@
           "L": "በጌታ ሁልጊዜ ደስ ይበላችሁ፤ እንደ ገና እላለሁ፤ ደስ ይበላችሁ።",
           "B": "በጌታ ሁልጊዜ ደስ ይበላችሁ። እንደ ገና እላለሁ፦ ደስ ይበላችሁ!",
           "R": "ሁልጊዜ በጌታ በደስታ ተሞሉ። እንደ ገና እላችኋለሁ፦ በደስታ ተሞሉ!"
+        },
+        "hi": {
+          "L": "प्रभु में सदा आनंद करो; मैं फिर कहूँगा, आनंद करो।",
+          "B": "प्रभु में सदा आनंदित रहो। मैं फिर कहता हूँ: आनंदित रहो!",
+          "R": "प्रभु में हमेशा आनंद से भरे रहो। मैं फिर कहता हूँ: आनंद से भरे रहो!"
+        },
+        "ru": {
+          "L": "Радуйтесь в Господе всегда; снова скажу: радуйтесь.",
+          "B": "Всегда радуйтесь в Господе. Повторю ещё раз: радуйтесь!",
+          "R": "Всегда будьте полны радости в Господе. Скажу ещё раз: будьте полны радости!"
         }
       },
       "decisions": [
@@ -1104,6 +1311,16 @@
           "L": "ገርነታችሁ ለሰዎች ሁሉ ይታወቅ።",
           "B": "ገርነታችሁ ለሰው ሁሉ ግልጥ ይሁን።",
           "R": "ምን ያህል ገሮችና ቸሮች እንደ ሆናችሁ ሰው ሁሉ ይይ።"
+        },
+        "hi": {
+          "L": "तुम्हारी कोमलता सब मनुष्यों पर प्रकट हो।",
+          "B": "तुम्हारी कोमलता सब लोगों पर प्रकट हो।",
+          "R": "सब लोग देखें कि तुम कितने कोमल और दयालु हो।"
+        },
+        "ru": {
+          "L": "Ваша кротость пусть будет известна всем людям.",
+          "B": "Пусть ваша кротость будет видна всем людям.",
+          "R": "Пусть все люди видят, какие вы мягкие и добрые."
         }
       },
       "decisions": [
@@ -1311,6 +1528,49 @@
           "reason": "\"ሰዎች\" and \"ሰው ሁሉ\" already include women and men, so Amharic has no second wording for the setting to offer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004005006"
+          ],
+          "choice": "\"सब मनुष्यों\" (L); \"सब लोगों\" (B, R), with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "The English has a gender span on \"all people\". The Hindi \"मनुष्य\" and \"लोग\" already mean people of both sexes, so there is nothing for the setting to change (style guide, section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004005005",
+            "n50004005006"
+          ],
+          "choice": "всем людям, with no gender setting",
+          "alternatives": [
+            "{{gender:всем людям|всем мужам}}"
+          ],
+          "reason": "The English puts \"people|men\" under the gender setting. Russian \"люди\" is already inclusive, so the style guide sets no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1371,6 +1631,16 @@
           "L": "ጌታ ቅርብ [ነው]።",
           "B": "ጌታ ቅርብ ነው።",
           "R": "ጌታ ቅርብ ነው።"
+        },
+        "hi": {
+          "L": "प्रभु निकट [हैं]।",
+          "B": "प्रभु निकट हैं।",
+          "R": "प्रभु पास हैं।"
+        },
+        "ru": {
+          "L": "Господь близко.",
+          "B": "Господь близко.",
+          "R": "Господь близко."
         }
       },
       "decisions": [
@@ -1545,6 +1815,16 @@
           "L": "ስለ ምንም አትጨነቁ፤ ይልቁንም በሁሉ ነገር በጸሎትና በልመና ከምስጋና ጋር የምትጠይቁት ነገር ለእግዚአብሔር ይታወቅ፤ \\v 7 ማስተዋልን ሁሉ የሚበልጠው የእግዚአብሔር ሰላምም {{christos:በክርስቶስ|በመሲሕ}} ኢየሱስ ልባችሁንና ሐሳባችሁን እንደ ዘብ ይጠብቃል።",
           "B": "ስለ ምንም ነገር አትጨነቁ። ይልቁንም በሁሉ ነገር የምትፈልጉትን በጸሎትና በልመና ከምስጋና ጋር ለእግዚአብሔር አቅርቡ። \\v 7 ከማስተዋላችን ሁሉ በላይ የሆነው የእግዚአብሔር ሰላምም {{christos:በክርስቶስ|በመሲሕ}} ኢየሱስ ልባችሁንና አእምሮአችሁን በዘብነት ይጠብቃል።",
           "R": "ስለ ምንም ነገር አትጨነቁ። ምንም ቢደርስባችሁ ስለ ጉዳዩ ለእግዚአብሔር ንገሩት። የሚያስፈልጋችሁን ለምኑት፤ ስትለምኑትም አመስግኑት። \\v 7 አእምሮአችን ሊረዳው ከሚችለው በላይ የሆነው የእግዚአብሔር ሰላምም ልባችሁንና ሐሳባችሁን ይጠብቃል፤ ምክንያቱም {{christos:ከክርስቶስ|ከመሲሕ}} ኢየሱስ ጋር አንድ ሆናችኋል።"
+        },
+        "hi": {
+          "L": "किसी बात की चिंता मत करो; पर हर बात में प्रार्थना और विनती के द्वारा धन्यवाद के साथ तुम्हारे निवेदन परमेश्वर के सामने प्रकट किए जाएँ; \\v 7 और परमेश्वर की शान्ति, जो सारी समझ से परे है, मसीह यीशु में तुम्हारे हृदयों और तुम्हारे विचारों की पहरेदारी करेगी।",
+          "B": "किसी भी बात की चिंता मत करो। बल्कि हर बात में प्रार्थना और विनती के द्वारा, धन्यवाद के साथ, अपने निवेदन परमेश्वर के सामने रखो। \\v 7 तब परमेश्वर की शान्ति, जो हमारी सारी समझ से परे है, मसीह यीशु में तुम्हारे हृदयों और तुम्हारे मन की पहरेदारी करेगी।",
+          "R": "किसी भी बात की चिंता मत करो। जो कुछ भी हो, उसके बारे में परमेश्वर से बात करो। जो तुम्हें चाहिए, वह उनसे माँगो, और माँगते समय उनका धन्यवाद करो। \\v 7 तब परमेश्वर की शान्ति, जो हमारी समझ से कहीं बढ़कर है, तुम्हारे दिलों और विचारों पर पहरा देगी, क्योंकि तुम मसीह यीशु से जुड़े हुए हो।"
+        },
+        "ru": {
+          "L": "Ни о чём не тревожьтесь, но во всём молитвой и прошением с благодарением ваши просьбы пусть открываются Богу; \\v 7 и мир Божий, превосходящий всякое разумение, будет охранять ваши сердца и ваши мысли {{christos:во Христе|в Мессии}} Иисусе.",
+          "B": "Ни о чём не тревожьтесь. Напротив, во всём приносите свои просьбы Богу в молитве и прошении, с благодарностью. \\v 7 И Божий мир, который выше всякого нашего понимания, будет стоять на страже ваших сердец и ваших мыслей {{christos:во Христе|в Мессии}} Иисусе.",
+          "R": "Ни о чём не беспокойтесь. Что бы ни случилось, говорите об этом с Богом. Просите {{deity_pronoun:его|Его}} о том, что вам нужно, и благодарите {{deity_pronoun:его|Его}}, когда просите. \\v 7 И Божий мир, который больше, чем может понять наш ум, будет охранять ваши сердца и мысли, потому что вы соединены с {{christos:Христом|Мессией}} Иисусом."
         }
       },
       "decisions": [
@@ -1893,6 +2173,71 @@
           "reason": "The Greek verb is a soldier's word for guarding a city (meaning decision); \"ዘብ\" keeps that picture, which the plain \"ይጠብቃል\" would lose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n50004006019",
+            "n50004007019"
+          ],
+          "choice": "no deity_pronoun spans; no christos setting",
+          "alternatives": [
+            "\"deity_pronoun\" spans",
+            "\"ख्रीष्ट\""
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change; respect for God comes from the honorific (\"उनसे माँगो\", \"उनका धन्यवाद\"). \"मसीह\" is both the name and the word Messiah, so the christos choice is already made (style guide, section 7). The same through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004007010"
+          ],
+          "choice": "\"पहरेदारी करेगी\" (L, B); \"पहरा देगी\" (R)",
+          "alternatives": [
+            "\"रक्षा करेगी\""
+          ],
+          "reason": "The verb is a military guard's (meaning decision m6); \"पहरा\" keeps the picture of a sentry, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004007003"
+          ],
+          "choice": "мир",
+          "alternatives": [
+            "покой"
+          ],
+          "reason": "Key term: peace is \"мир\" at every level, God's peace as in the greetings.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1975,6 +2320,16 @@
           "L": "የቀረውንም [በተመለከተ]፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እውነት የሆነውን ሁሉ፣ ክቡር የሆነውን ሁሉ፣ ትክክል የሆነውን ሁሉ፣ ንጹሕ የሆነውን ሁሉ፣ ተወዳጅ የሆነውን ሁሉ፣ መልካም የሚወራለትን ሁሉ፣ በጎነት ቢኖር፣ ምስጋናም ቢኖር፣ እነዚህን አስቡ።",
           "B": "በመጨረሻም፣ {{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፦ እውነት የሆነውን ሁሉ፣ ክቡር የሆነውን ሁሉ፣ ትክክለኛ የሆነውን ሁሉ፣ ንጹሕ የሆነውን ሁሉ፣ ተወዳጅ የሆነውን ሁሉ፣ በመልካም የሚነገርለትን ሁሉ፣ በጎነት ያለበትንና ምስጋና የሚገባውን ሁሉ፣ እነዚህን ነገሮች አሰላስሉ።",
           "R": "በመጨረሻም፣ {{gender:ወንድሞቼና እኅቶቼ|ወንድሞቼ}} ሆይ፣ አእምሮአችሁን በመልካም ነገሮች ሙሉ፤ እውነትና ክቡር በሆኑ፣ ትክክልና ንጹሕ በሆኑ፣ ተወዳጅና በሌሎች በሚደነቁ ነገሮች። እጅግ መልካም የሆነውንና ምስጋና የሚገባውን ሁሉ አስቡ።"
+        },
+        "hi": {
+          "L": "बाक़ी बातों के विषय में, {{gender:भाइयो और बहनो|भाइयो}}, जो कुछ सत्य है, जो कुछ आदरणीय है, जो कुछ उचित है, जो कुछ पवित्र है, जो कुछ सुहावना है, जो कुछ सुनाम है, यदि कोई सद्गुण और यदि कोई प्रशंसा [की बात हो], तो इन्हीं बातों पर विचार करो।",
+          "B": "अंत में, {{gender:भाइयो और बहनो|भाइयो}}: जो कुछ सत्य है, जो कुछ आदर के योग्य है, जो कुछ उचित है, जो कुछ पवित्र है, जो कुछ सुहावना है, जो कुछ अच्छा कहा जाता है, यदि कोई सद्गुण है, कोई बात प्रशंसा के योग्य है, तो अपना मन इन्हीं बातों पर लगाए रखो।",
+          "R": "आख़िर में, मेरे {{gender:भाइयो और बहनो|भाइयो}}, अपने मन को अच्छी बातों से भर लो: ऐसी बातें जो सच हैं और आदर के योग्य हैं, जो सही हैं और पवित्र हैं, जो सुंदर हैं और जिनकी लोग सराहना करते हैं। जो कुछ उत्तम है और प्रशंसा के योग्य है, उसी के बारे में सोचते रहो।"
+        },
+        "ru": {
+          "L": "В остальном, {{gender:братья и сёстры|братья}}, что только истинно, что честно, что справедливо, что чисто, что любезно, что достославно, если [есть] какая добродетель и если какая похвала, — об этом помышляйте.",
+          "B": "Наконец, {{gender:братья и сёстры|братья}}: всё, что истинно, всё, что достойно уважения, всё, что справедливо, всё, что чисто, всё, что прекрасно, всё, о чём говорят доброе, — если есть какая-то добродетель, что-то достойное похвалы, — пусть ваши мысли будут заняты этим.",
+          "R": "Наконец, мои {{gender:братья и сёстры|братья}}, наполняйте свои мысли хорошим: тем, что правдиво и достойно уважения, правильно и чисто, прекрасно и ценится другими. Думайте обо всём, что превосходно и заслуживает похвалы."
         }
       },
       "decisions": [
@@ -2223,6 +2578,70 @@
           "reason": "In this list of virtues any decent person would recognise (meaning decision), the word means what is right and fair; \"ትክክለኛ\" says that, where \"ጽድቅ\" would bring in Paul's term for right standing with God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004008006"
+          ],
+          "choice": "\"सत्य\" (L, B); \"सच\" (R)",
+          "alternatives": [
+            "\"सत्य\" at every level"
+          ],
+          "reason": "The style guide's key term for truth: \"सत्य\" at Literal and Balanced, the everyday \"सच\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004008001",
+            "n50004008002"
+          ],
+          "choice": "\"बाक़ी बातों के विषय में\" (L); \"अंत में\" (B); \"आख़िर में\" (R)",
+          "alternatives": [
+            "\"अंत में\" (L)"
+          ],
+          "reason": "As in 3:1, Literal keeps \"as for the rest\"; here the final instructions do follow (meaning decision m1), so Balanced and Readable say finally.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n50004008004",
+            "n50004008006"
+          ],
+          "choice": "истинно (L, B); правдиво (R)",
+          "alternatives": [
+            "истинно at every level"
+          ],
+          "reason": "The style guide's key term for truth: \"истина\" at Literal and Balanced, \"правда\" at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2301,6 +2720,16 @@
           "L": "በእኔ የተማራችሁትንና የተቀበላችሁትን፣ የሰማችሁትንና ያያችሁትን፣ እነዚህን አድርጉ፤ የሰላምም አምላክ ከእናንተ ጋር ይሆናል።",
           "B": "ከእኔ የተማራችሁትንና የተቀበላችሁትን፣ በእኔ የሰማችሁትንና ያያችሁትን በተግባር ላይ አውሉ። የሰላም አምላክም ከእናንተ ጋር ይሆናል።",
           "R": "ከእኔ የተማራችሁትን ሁሉ፣ ያስተማርኳችሁን ሁሉ፣ ስናገር የሰማችሁትንና ሳደርግ ያያችሁትን ሁሉ ማድረጋችሁን ቀጥሉ። ከዚያም ሰላምን የሚሰጠው አምላክ ከእናንተ ጋር ይሆናል።"
+        },
+        "hi": {
+          "L": "जो बातें तुमने मुझसे सीखीं, और ग्रहण कीं, और सुनीं, और मुझमें देखीं, उन्हीं का पालन करो; और शान्ति के परमेश्वर तुम्हारे साथ होंगे।",
+          "B": "जो कुछ तुमने मुझसे सीखा और ग्रहण किया, और जो कुछ मुझसे सुना और मुझमें देखा, उसी पर चलो। और शान्ति के परमेश्वर तुम्हारे साथ होंगे।",
+          "R": "जो कुछ तुमने मुझसे सीखा, जो कुछ मैंने तुम्हें सिखाया, और जो कुछ तुमने मुझे कहते सुना और करते देखा, वह सब करते रहो। तब परमेश्वर, जो शान्ति देते हैं, तुम्हारे साथ रहेंगे।"
+        },
+        "ru": {
+          "L": "Чему вы и научились, и что приняли, и слышали, и видели во мне, — это исполняйте; и Бог мира будет с вами.",
+          "B": "Исполняйте то, чему вы научились и что приняли от меня, что слышали и видели во мне. И Бог мира будет с вами.",
+          "R": "Продолжайте делать всё, чему научились у меня, всё, чему я вас учил, и всё, что вы слышали от меня и видели в моих делах. Тогда Бог, который даёт мир, будет с вами."
         }
       },
       "decisions": [
