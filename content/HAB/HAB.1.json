@@ -55,6 +55,11 @@
           "L": "O oráculo que Habacuque, o profeta, viu.",
           "B": "A mensagem que o profeta Habacuque viu.",
           "R": "Esta é a mensagem que o profeta Habacuque recebeu numa visão."
+        },
+        "am": {
+          "L": "ነቢዩ ዕንባቆም ያየው የትንቢት ቃል።",
+          "B": "ነቢዩ ዕንባቆም ያየው የትንቢት ቃል።",
+          "R": "ነቢዩ ዕንባቆም በራእይ የተቀበለው የትንቢት ቃል ይህ ነው።"
         }
       },
       "decisions": [
@@ -335,6 +340,29 @@
           "reason": "For the whole book: massa' is \"oráculo\" at Literal and \"mensagem\" at Balanced and Readable, the wording Isaiah 13:1 and Nahum 1:1 set in Portuguese, although the English Balanced keeps \"oracle\" here. The prophet's name takes its usual Portuguese form, \"Habacuque\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010010012",
+            "o350010010041"
+          ],
+          "choice": "oracle (*massa*) \"የትንቢት ቃል\" at every level; Habakkuk \"ዕንባቆም\"",
+          "alternatives": [
+            "\"ሸክም\" (burden)",
+            "\"መልእክት\" (message, as the English Readable)"
+          ],
+          "reason": "The terms list for the prophets settles *massa* as \"የትንቢት ቃል\" (as Isaiah 13:1 and Proverbs 30:1), and Readable keeps it, as Isaiah's Readable does, since it already says plainly that this is a message from God. The name keeps its established Amharic form \"ዕንባቆም\" (the terms list for Obadiah to Malachi). \"saw\" is \"ያየው\" at Literal and Balanced; Readable says \"በራእይ የተቀበለው\" (received in a vision), as the English Readable and m3.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -401,6 +429,11 @@
           "L": "Até quando, {{divine_name:SENHOR|Javé}}, clamarei por socorro, e {{deity_pronoun:tu|Tu}} não ouvirás? \\q Grito a {{deity_pronoun:ti|Ti}}: \"Violência!\", e {{deity_pronoun:tu|Tu}} não salvas.",
           "B": "Até quando, {{divine_name:SENHOR|Javé}}, terei de pedir socorro sem que {{deity_pronoun:tu|Tu}} escutes? \\q Clamo a {{deity_pronoun:ti|Ti}}: \"Violência!\", mas {{deity_pronoun:tu|Tu}} não salvas.",
           "R": "{{divine_name:SENHOR|Javé}}, até quando vou ter de chamar por {{deity_pronoun:ti|Ti}} pedindo ajuda, até que {{deity_pronoun:tu|Tu}} me escutes? \\q Grito a {{deity_pronoun:ti|Ti}} que há violência por toda parte, mas {{deity_pronoun:tu|Tu}} não nos livras."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለእርዳታ የምጮኸው እስከ መቼ ነው? አንተ ግን አትሰማም፤ \\q «ግፍ!» እያልኩ ወደ አንተ እጣራለሁ፤ አንተ ግን አታድንም።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ሳትሰማኝ እስከ መቼ ለእርዳታ እጮኻለሁ? \\q «ግፍ!» እያልኩ ወደ አንተ እጣራለሁ፤ አንተ ግን አታድንም።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለእርዳታ ወደ አንተ የምጣራው እስከ መቼ ነው? መቼ ነው የምትሰማኝ? \\q ግፍ በየቦታው መሙላቱን ወደ አንተ እጮኻለሁ፤ አንተ ግን አታድነንም።"
         }
       },
       "decisions": [
@@ -607,6 +640,50 @@
           "reason": "For the whole book: Habakkuk speaks to God with \"tu\", as the psalms of lament do (m1), and the opening cry takes the words of Psalm 13:2 in Portuguese, \"Até quando, SENHOR\". Where Portuguese drops a subject pronoun there is no span; where it keeps one for clarity or emphasis (\"e tu não salvas\"), it takes the span, as the English \"you\" does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350010020061",
+            "o350010020081",
+            "o350010020082",
+            "o350010020111"
+          ],
+          "choice": "no deity_pronoun spans in Amharic",
+          "alternatives": [],
+          "reason": "The Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God has nothing to change; the English spans on the pronouns for God in this chapter have no Amharic counterpart, and pronouns and verb forms for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-am-2",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010020031",
+            "o350010020091"
+          ],
+          "choice": "the vocative \"እግዚአብሔር ሆይ\" (alternative \"ያህዌ ሆይ\") at every level; violence (*ḥamas*) \"ግፍ\"",
+          "alternatives": [
+            "\"ዓመፅ\""
+          ],
+          "reason": "Amharic marks a vocative with \"ሆይ\", as in the Psalms (Psalm 3:2; 89:47). *ḥamas* is wrong done by force, the cry of the oppressed (m2): \"ግፍ\" says that, and is kept for *ḥamas* through the book (1:3, 9; 2:8, 17). Readable has no quotation marks, as the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -680,6 +757,11 @@
           "L": "Por que {{deity_pronoun:tu|Tu}} me fazes ver a iniquidade, e [por que] olhas para a aflição? \\q Destruição e violência [estão] diante de mim; \\q há contenda, e a discórdia se levanta.",
           "B": "Por que {{deity_pronoun:tu|Tu}} me fazes ver a maldade? Por que toleras a opressão? \\q Destruição e violência estão diante de mim; \\q surgem brigas e conflitos.",
           "R": "Por que {{deity_pronoun:tu|Tu}} me fazes ver as pessoas praticando o mal? Por que {{deity_pronoun:tu|Tu}} apenas olhas enquanto elas causam sofrimento? \\q Para onde quer que eu olhe, há destruição e violência. \\q As pessoas discutem e brigam."
+        },
+        "am": {
+          "L": "በደልን እንዳይ ለምን ታደርገኛለህ? መከራንስ [ለምን] ትመለከታለህ? \\q ጥፋትና ግፍ በፊቴ [አሉ]፤ \\q ጠብ አለ፤ ክርክርም ይነሣል።",
+          "B": "ክፋትን እንዳይ ለምን ታደርገኛለህ? መከራንስ ለምን ዝም ብለህ ትታገሣለህ? \\q ጥፋትና ግፍ በፊቴ አሉ፤ \\q ጠብና ክርክር ይነሣሉ።",
+          "R": "ሰዎች ክፉ ሲያደርጉ እንዳይ ለምን ታደርገኛለህ? ችግር ሲፈጥሩስ ለምን ዝም ብለህ ትመለከታለህ? \\q ወደ የትም ብመለከት ጥፋትና ግፍ አለ። \\q ሰዎች ይጨቃጨቃሉ፤ ይጣላሉም።"
         }
       },
       "decisions": [
@@ -839,6 +921,11 @@
           "L": "Por isso a instrução se entorpece, \\q e a justiça nunca sai; \\q pois o ímpio cerca o justo; \\q por isso a justiça sai torcida.",
           "B": "Por isso a instrução perde a força, \\q e a justiça nunca prevalece. \\q Os ímpios cercam os justos, \\q e assim a justiça sai distorcida.",
           "R": "É por isso que o ensino de Deus não tem poder, \\q e a justiça nunca vence. \\q Os maus cercam os que fazem o que é certo, \\q e por isso a justiça é torcida."
+        },
+        "am": {
+          "L": "ስለዚህ ሕጉ ይደነዝዛል፤ \\q ፍርድም ከቶ አይወጣም፤ \\q ክፉ ሰው ጻድቁን ይከብባልና፤ \\q ስለዚህ ፍርድ ተጣሞ ይወጣል።",
+          "B": "ስለዚህ ሕጉ ኃይሉን ያጣል፤ \\q ፍትሕም ከቶ አያሸንፍም። \\q ክፉዎች ጻድቃንን ይከብባሉ፤ \\q ስለዚህ ፍትሕ ተጣሞ ይወጣል።",
+          "R": "የእግዚአብሔር ትምህርት ኃይል ያጣው ለዚህ ነው፤ \\q ፍትሕም ከቶ አያሸንፍም። \\q ክፉ ሰዎች ትክክል የሚያደርጉትን ይከብባሉ፤ \\q ስለዚህ ፍትሕ ይጣመማል።"
         }
       },
       "decisions": [
@@ -1042,6 +1129,29 @@
           "reason": "As the English and as Jeremiah and Ezekiel have torah in Portuguese (m1): \"instrução\" at Literal and Balanced, \"ensino\" at Readable, with \"de Deus\" added as the English Readable adds \"God's\". Mishpat is \"justiça\" at every level, as in the prophets.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010040041",
+            "o350010040081",
+            "o350010040171"
+          ],
+          "choice": "*torah* \"ሕጉ\" (L, B), \"የእግዚአብሔር ትምህርት\" (R); *mishpat* \"ፍርድ\" (L), \"ፍትሕ\" (B, R)",
+          "alternatives": [
+            "\"ትምህርቱ\" (L, B)"
+          ],
+          "reason": "\"ሕግ\" is the established Amharic word for *torah*, and it covers God's teaching as well as rules, which is the sense here (m1); \"ትምህርት\" alone would read as schooling. Readable says \"God's teaching\", as the English Readable. *mishpat* as justice follows the terms list: \"ፍርድ\" at Literal, \"ፍትሕ\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1112,6 +1222,11 @@
           "L": "Vejam entre as nações e observem, \\q e maravilhem-se, fiquem pasmados! \\q Pois [eu] realizo uma obra nos dias de vocês, \\q [em que] vocês não crerão, se for contada.",
           "B": "Olhem para as nações e observem, \\q e fiquem espantados, muito espantados! \\q Pois estou realizando uma obra nos dias de vocês, \\q em que vocês não creriam, mesmo que alguém a contasse a vocês.",
           "R": "Olhem o que está acontecendo entre as nações! \\q Fiquem espantados e admirados! \\q Eu vou fazer uma coisa no tempo de vocês \\q em que vocês não acreditariam, mesmo que alguém contasse isso a vocês."
+        },
+        "am": {
+          "L": "በሕዝቦች መካከል እዩ፤ አስተውሉም፤ \\q ተደነቁ፤ እጅግም ተደነቁ! \\q በዘመናችሁ ሥራን እሠራለሁና፤ \\q ቢነገራችሁ የማታምኑትን [ሥራ]።",
+          "B": "ሕዝቦችን እዩ፤ ተመልከቱም፤ \\q እጅግም ተደነቁ! \\q በዘመናችሁ አንድ ሥራ እሠራለሁና፤ \\q ቢነገራችሁ እንኳ ከቶ የማታምኑት ሥራ ነው።",
+          "R": "በሕዝቦች መካከል የሚሆነውን ተመልከቱ! \\q ተደነቁ፤ ተገረሙም! \\q በዘመናችሁ አንድ ነገር አደርጋለሁ፤ \\q ማንም ቢነግራችሁ እንኳ አታምኑም።"
         }
       },
       "decisions": [
@@ -1345,6 +1460,34 @@
           "reason": "Paul quotes this verse in Acts 13:41 from the Greek translation (m3), which has \"desprezadores\" and \"desapareçam\" where the Hebrew has \"entre as nações\" and a second verb of astonishment. Each level follows the Hebrew and keeps the Portuguese of Acts 13:41 for the words the two share: \"Vejam ... maravilhem-se\" (L), \"Olhem ... fiquem espantados\" (B), \"realizo uma obra nos dias de vocês\", \"crer\" (L, B) and \"acreditar ... mesmo que alguém contasse isso a vocês\" (R). God speaks to the prophet and his people together, so \"vocês\" (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010050021",
+            "o350010050022",
+            "o350010050042",
+            "o350010050051",
+            "o350010050071",
+            "o350010050081",
+            "o350010050111",
+            "o350010050131"
+          ],
+          "choice": "the wording of Acts 13:41 where the Hebrew agrees with the Greek: \"ተደነቁ\", \"በዘመናችሁ ሥራን እሠራለሁና\" (L), \"በዘመናችሁ አንድ ሥራ እሠራለሁና … ከቶ የማታምኑት ሥራ ነው\" (B), \"በዘመናችሁ አንድ ነገር አደርጋለሁ … አታምኑም\" (R); \"በሕዝቦች መካከል\" (among the nations) from the Hebrew",
+          "alternatives": [
+            "\"እናንተ ናቃዮች\" (you scoffers, Acts 13:41)"
+          ],
+          "reason": "Paul quotes this verse in its Greek form (m3), which reads \"you scoffers\" and adds \"and perish\"; the Hebrew has \"among the nations\" and no \"perish\", so those words follow the Hebrew, while the rest keeps the Amharic of Acts 13:41 at each level. The Hebrew \"if it is told\" is passive: \"ቢነገራችሁ\" (L, B). The doubled verb of astonishment (m2) is \"ተደነቁ፤ እጅግም ተደነቁ\" at Literal, so that the repetition shows. *goyim* is \"ሕዝቦች\" through the book, as in Ezekiel and the Psalms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1422,6 +1565,11 @@
           "L": "Pois eis que eu levanto os caldeus, \\q aquela nação amarga e impetuosa, \\q que marcha pelas extensões da terra \\q para tomar posse de moradas que não [são] suas.",
           "B": "Pois estou levantando os caldeus, \\q essa nação feroz e impetuosa, \\q que avança pela vastidão da terra \\q para se apoderar de moradas que não lhe pertencem.",
           "R": "Vou dar poder aos babilônios. \\q Eles são cruéis e rápidos para atacar. \\q Marcham pela terra inteira \\q para tomar casas que pertencem a outros."
+        },
+        "am": {
+          "L": "እነሆ፣ ከለዳውያንን አስነሣለሁና፤ \\q መራራውንና ችኩሉን ያንን ሕዝብ፣ \\q በምድር ስፋት ሁሉ የሚዘምተውን፣ \\q የእርሱ ያልሆኑትን መኖሪያዎች ይወርስ ዘንድ።",
+          "B": "ከለዳውያንን አስነሣለሁና፤ \\q እነርሱ ጨካኝና ችኩል ሕዝብ ናቸው፤ \\q በሰፊው ምድር ላይ ይዘምታሉ፤ \\q የራሳቸው ያልሆነውንም መኖሪያ ይነጥቃሉ።",
+          "R": "ባቢሎናውያንን ወደ ሥልጣን አመጣለሁ። \\q እነርሱ ጨካኞችና ለማጥቃት ፈጣኖች ናቸው። \\q በምድር ሁሉ ላይ ይዘምታሉ፤ \\q የሌሎች ሰዎች የሆኑትንም ቤቶች ይወስዳሉ።"
         }
       },
       "decisions": [
@@ -1615,6 +1763,28 @@
           "reason": "For the whole book: as Jeremiah 21:4 and Isaiah set the name in Portuguese (m1), \"os caldeus\" at Literal and Balanced and \"os babilônios\" at Readable, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010060051",
+            "o350010060052",
+            "o350010060061",
+            "o350010060062"
+          ],
+          "choice": "the Chaldeans \"ከለዳውያን\" (L, B), \"ባቢሎናውያን\" (R); the nation (*goy*) \"ሕዝብ\"",
+          "alternatives": [],
+          "reason": "As in Jeremiah (21:4, 9): Literal and Balanced keep the Hebrew name, and Readable names the Babylonians, as the English Readable and m1. Habakkuk speaks of the nation in the singular (\"it\"); Literal keeps \"እርሱ\" and the singular verb in 1:7–11, while Balanced and Readable say \"they\", as the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1679,6 +1849,11 @@
           "L": "Terrível e temível [é] ela; \\q dela mesma procedem a sua justiça e a sua dignidade.",
           "B": "Eles são temidos e terríveis; \\q fazem a sua própria lei e reclamam a sua própria honra.",
           "R": "As pessoas têm pavor deles. \\q Eles fazem as suas próprias regras e não prestam contas a ninguém."
+        },
+        "am": {
+          "L": "እርሱ የሚያስፈራና የሚያስደነግጥ [ነው]፤ \\q ፍርዱና ክብሩ ከራሱ ይወጣሉ።",
+          "B": "እነርሱ የሚያስፈሩና የሚያስደነግጡ ናቸው፤ \\q የራሳቸውን ሕግ ያወጣሉ፤ ለራሳቸውም ክብር ይሰጣሉ።",
+          "R": "ሰዎች በጣም ይፈሯቸዋል። \\q የራሳቸውን ሕግ ያወጣሉ፤ ለማንም አይገዙም።"
         }
       },
       "decisions": [
@@ -1874,6 +2049,11 @@
           "L": "Mais ligeiros que leopardos [são] os seus cavalos, e mais ferozes que lobos da tarde; \\q e os seus cavaleiros galopam com arrogância; \\q e os seus cavaleiros vêm de longe; \\q voam como águia que se apressa a devorar.",
           "B": "Os seus cavalos são mais velozes que leopardos, \\q mais ferozes que lobos ao anoitecer. \\q Os seus cavaleiros avançam em disparada; \\q os seus soldados a cavalo vêm de longe; \\q mergulham como uma águia que se lança para devorar.",
           "R": "Os seus cavalos são mais rápidos que leopardos \\q e mais ferozes que lobos famintos ao pôr do sol. \\q Os seus soldados a cavalo avançam em disparada. \\q Eles vêm de longe. \\q Descem como águias que se lançam para pegar a sua comida."
+        },
+        "am": {
+          "L": "ፈረሶቹ ከነብሮች ይልቅ ፈጣኖች፣ ከማታ ተኩላዎችም ይልቅ ጨካኞች [ናቸው]፤ \\q ፈረሰኞቹም በኩራት ይጋልባሉ፤ \\q ፈረሰኞቹም ከሩቅ ይመጣሉ፤ \\q ለመብላት እንደሚቸኩል ንስር ይበርራሉ።",
+          "B": "ፈረሶቻቸው ከነብሮች ይልቅ ፈጣኖች፣ \\q በማታ ከሚያድኑ ተኩላዎችም ይልቅ ጨካኞች ናቸው። \\q ፈረሰኞቻቸው ወደ ፊት ይገሠግሣሉ፤ \\q ጋላቢዎቻቸው ከሩቅ ይመጣሉ፤ \\q ለመንጠቅ እንደሚቸኩል ንስር ይወረወራሉ።",
+          "R": "ፈረሶቻቸው ከነብሮች ይፈጥናሉ፤ \\q ፀሐይ ስትጠልቅ ከሚያድኑ ከተራቡ ተኩላዎችም ይልቅ ጨካኞች ናቸው። \\q ፈረሰኛ ወታደሮቻቸው ወደ ፊት ይገሠግሣሉ። \\q ከሩቅ ይመጣሉ። \\q ምግባቸውን ለመያዝ እንደሚቸኩሉ ንስሮች ይወረወራሉ።"
         }
       },
       "decisions": [
@@ -1956,6 +2136,27 @@
           "reason": "Balanced and Readable say \"their\" for \"its\" (see verse 7). \"Charge ahead\" gives the sense of the uncertain verb (m2). Readable adds \"hungry\" (m1) and \"to catch their food\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010080052",
+            "o350010080061"
+          ],
+          "choice": "wolves of the evening \"የማታ ተኩላዎች\" (L), \"በማታ የሚያድኑ ተኩላዎች\" (B), as Zephaniah 3:3",
+          "alternatives": [
+            "\"የምሽት ተኩላዎች\""
+          ],
+          "reason": "Zephaniah 3:3 has the same Hebrew phrase, and the two books keep one wording at Literal and Balanced. Readable says plainly \"hungry wolves that hunt at sunset\", as the English Readable (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2023,6 +2224,11 @@
           "L": "Toda ela vem para a violência; \\q a massa dos seus rostos [está voltada] para a frente; \\q e ajunta cativos como areia.",
           "B": "Todos eles vêm decididos a praticar violência; \\q os seus rostos estão voltados para a frente, \\q e eles ajuntam cativos como areia.",
           "R": "Todos eles vêm para praticar violência. \\q O seu exército continua avançando, \\q e eles fazem mais prisioneiros do que se pode contar."
+        },
+        "am": {
+          "L": "ሁሉም ለግፍ ይመጣል፤ \\q የፊታቸውም ብዛት ወደ ፊት [ያቀና ነው]፤ \\q ምርኮኞችንም እንደ አሸዋ ይሰበስባል።",
+          "B": "ሁሉም ግፍ ለማድረግ ቆርጠው ይመጣሉ፤ \\q ፊታቸው ወደ ፊት የተቀና ነው፤ \\q ምርኮኞችንም እንደ አሸዋ ይሰበስባሉ።",
+          "R": "ሁሉም ግፍ ለመፈጸም ይመጣሉ። \\q ሠራዊታቸው ወደ ፊት መግፋቱን ይቀጥላል፤ \\q ማንም ሊቆጥረው ከሚችለው በላይ ብዙ ሰዎችን ማርከው ይወስዳሉ።"
         }
       },
       "decisions": [
@@ -2160,6 +2366,11 @@
           "L": "E ela zomba dos reis, \\q e governantes [são] motivo de riso para ela; \\q ela ri de toda fortaleza, \\q e amontoa terra e a toma.",
           "B": "Eles zombam dos reis \\q e fazem pouco dos governantes; \\q riem de toda fortaleza, \\q pois amontoam terra e a tomam.",
           "R": "Eles caçoam dos reis \\q e riem dos governantes. \\q Riem de todos os fortes, \\q porque fazem rampas de terra e os conquistam."
+        },
+        "am": {
+          "L": "እርሱም በነገሥታት ላይ ያፌዛል፤ \\q ገዦችም ለእርሱ መሣቂያ [ናቸው]፤ \\q በምሽግ ሁሉ ላይ ይሥቃል፤ \\q አፈርንም ቆልሎ ይይዘዋል።",
+          "B": "በነገሥታት ላይ ያፌዛሉ፤ \\q በገዦችም ይሣለቃሉ፤ \\q በምሽግ ሁሉ ላይ ይሥቃሉ፤ \\q አፈር ቆልለው ይይዙታልና።",
+          "R": "በነገሥታት ላይ ያፌዛሉ፤ \\q በገዦችም ይሥቃሉ። \\q በምሽግ ሁሉ ላይ ይሥቃሉ፤ \\q ከአፈር መወጣጫ ሠርተው ይይዙታልና።"
         }
       },
       "decisions": [
@@ -2265,6 +2476,11 @@
           "L": "Então passa [como o] vento e atravessa, e se torna culpada, \\q esta cuja força [é] o seu deus.",
           "B": "Então passam como o vento e seguem adiante, homens culpados \\q cuja própria força é o seu deus.",
           "R": "Então eles passam correndo como o vento e continuam o seu caminho. \\q Eles são culpados, porque adoram a sua própria força."
+        },
+        "am": {
+          "L": "በዚያን ጊዜ [እንደ] ነፋስ ጠርጎ ያልፋል፤ ይሻገራልም፤ በደለኛም ይሆናል፤ \\q ይህ፣ ኃይሉ አምላኩ የሆነው።",
+          "B": "ከዚያም እንደ ነፋስ ጠራርገው ያልፋሉ፤ ይሄዳሉም፤ እነርሱ በደለኞች ናቸው፤ \\q የገዛ ኃይላቸው አምላካቸው ነው።",
+          "R": "ከዚያም እንደ ነፋስ እየተጣደፉ ያልፋሉ፤ መሄዳቸውንም ይቀጥላሉ። \\q የገዛ ኃይላቸውን ስለሚያመልኩ በደለኞች ናቸው።"
         }
       },
       "decisions": [
@@ -2423,6 +2639,11 @@
           "L": "Não és {{deity_pronoun:tu|Tu}} desde a antiguidade, {{divine_name:SENHOR|Javé}}, meu Deus, meu Santo? Não morreremos. \\q {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} a puseste para o juízo; \\q e, ó Rocha, {{deity_pronoun:tu|Tu}} a estabeleceste para repreender.",
           "B": "Não és {{deity_pronoun:tu|Tu}} desde a eternidade, {{divine_name:SENHOR|Javé}}, meu Deus, meu Santo? Não morreremos. \\q {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} os designaste para executar o juízo; \\q ó Rocha, {{deity_pronoun:tu|Tu}} os estabeleceste para trazer correção.",
           "R": "{{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} existes desde o princípio de tudo. Tu és o meu Deus, o meu Deus santo. Não vamos morrer. \\q {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} escolheste os babilônios para executar o {{deity_pronoun:teu|Teu}} juízo. \\q Tu és a nossa Rocha, e {{deity_pronoun:tu|Tu}} os enviaste para nos corrigir."
+        },
+        "am": {
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ፣ ቅዱሴ ሆይ፣ ከቀድሞ ዘመን ጀምሮ [ያለህ] አንተ አይደለህምን? አንሞትም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለፍርድ መድበኸዋል፤ \\q ዓለት ሆይ፣ ለመውቀስ አጽንተኸዋል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አምላኬ፣ ቅዱሴ፣ አንተ ከዘላለም ያለህ አይደለህምን? አንሞትም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፍርድን እንዲፈጽሙ መደብሃቸው፤ \\q ዓለት ሆይ፣ እንዲያርሙ አቆምሃቸው።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ከመጀመሪያው ጀምሮ ነበርህ። አንተ አምላኬ፣ ቅዱስ አምላኬ ነህ። አንሞትም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፍርድህን እንዲፈጽሙ ባቢሎናውያንን መርጠሃቸዋል። \\q አንተ ዓለታችን ነህ፤ እኛን እንዲያርሙ ልከሃቸዋል።"
         }
       },
       "decisions": [
@@ -2597,6 +2818,30 @@
           "reason": "As the published Psalms address God; the capital marks it as a name for God, as the English \"Rock\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010120051",
+            "o350010120052",
+            "o350010120061",
+            "o350010120062"
+          ],
+          "choice": "Elohim with a possessor \"አምላክ\" (\"አምላኬ\", my God; \"አምላኩ\", his god, 1:11); \"my Holy One\" \"ቅዱሴ\" (L, B)",
+          "alternatives": [
+            "\"እግዚአብሔር\""
+          ],
+          "reason": "Habakkuk uses Elohim only with a possessor (1:11, 12; 3:18) and Eloah once (3:3): as the terms lists settle, these are \"አምላክ\", while YHWH is \"እግዚአብሔር\" with \"ያህዌ\" as the setting's alternative. Readable says \"ቅዱስ አምላኬ\" (my holy God), as the English Readable. The addressee of a prayer is \"አንተ\" at every level, as the style guide requires.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2671,6 +2916,11 @@
           "L": "[Tu és] puro de olhos [demais] para ver o mal, \\q e olhar para a aflição {{deity_pronoun:tu|Tu}} não podes. \\q Por que olhas para os que agem traiçoeiramente, \\q [por que] {{deity_pronoun:te|Te}} calas quando o ímpio engole [aquele que é] mais justo que ele?",
           "B": "Os {{deity_pronoun:teus|Teus}} olhos são puros demais para olhar o mal, \\q e {{deity_pronoun:tu|Tu}} não podes contemplar a opressão. \\q Por que, então, {{deity_pronoun:tu|Tu}} olhas para os traiçoeiros \\q e ficas calado enquanto os ímpios engolem os que são mais justos que eles?",
           "R": "Os {{deity_pronoun:teus|Teus}} olhos são tão puros que {{deity_pronoun:tu|Tu}} não suportas olhar o mal. \\q Tu não toleras a maldade. \\q Então por que {{deity_pronoun:tu|Tu}} toleras essa gente traiçoeira? \\q Por que {{deity_pronoun:tu|Tu}} ficas calado enquanto os maus destroem os que são melhores do que eles?"
+        },
+        "am": {
+          "L": "[አንተ] ክፉን ለማየት ዓይንህ እጅግ ንጹሕ [ነው]፤ \\q በደልንም መመልከት አይቻልህም፤ \\q ከዳተኞችን ለምን ትመለከታለህ? \\q ክፉ ሰው ከራሱ የበለጠ ጻድቅ የሆነውን ሲውጥ [ለምን] ዝም ትላለህ?",
+          "B": "ዓይኖችህ ክፉን ለማየት እጅግ ንጹሓን ናቸው፤ \\q በደልንም ልትመለከት አትችልም። \\q ታዲያ ከዳተኞችን ለምን ትመለከታለህ? \\q ክፉዎችስ ከእነርሱ የሚሻሉ ጻድቃንን ሲውጡ ለምን ዝም ትላለህ?",
+          "R": "ዓይኖችህ ንጹሓን ስለ ሆኑ ክፉ ነገርን ማየት አትችልም። \\q በደልን ልትታገሥ አትችልም። \\q ታዲያ እነዚህን ከዳተኞች ለምን ትታገሣለህ? \\q ክፉ ሰዎች ከእነርሱ የተሻሉትን ሲያጠፉ ለምን ዝም ትላለህ?"
         }
       },
       "decisions": [
@@ -2813,6 +3063,11 @@
           "L": "E {{deity_pronoun:tu|Tu}} fizeste a humanidade como os peixes do mar, \\q como os répteis [que] não têm quem os governe.",
           "B": "Fizeste as pessoas como peixes no mar, \\q como criaturas que rastejam, sem ninguém que as governe.",
           "R": "Fizeste as pessoas como peixes no mar, \\q como pequenos bichos do mar que não têm um líder para protegê-los."
+        },
+        "am": {
+          "L": "ሰውንም እንደ ባሕር ዓሣዎች አደረግኸው፤ \\q በላያቸው ገዥ እንደሌላቸው እንደሚሳቡ ፍጥረታት።",
+          "B": "ሰዎችን በባሕር እንዳሉ ዓሣዎች አደረግሃቸው፤ \\q ገዥ እንደሌላቸው እንደሚሳቡ ፍጥረታት።",
+          "R": "ሰዎችን በባሕር ውስጥ እንዳሉ ዓሣዎች አደረግሃቸው፤ \\q የሚጠብቃቸው መሪ እንደሌላቸው ትናንሽ የባሕር ፍጥረታት።"
         }
       },
       "decisions": [
@@ -2942,6 +3197,11 @@
           "L": "Toda ela ele puxa com anzol; \\q arrasta-a na sua rede \\q e a ajunta na sua rede de arrasto; \\q por isso se alegra e exulta.",
           "B": "O inimigo puxa a todos com anzol; \\q arrasta-os na sua rede \\q e os ajunta na sua rede de pesca; \\q por isso se alegra e festeja.",
           "R": "Os babilônios pegam as pessoas com anzóis. \\q Eles as arrastam com redes \\q e as recolhem em redes de pesca. \\q Depois fazem festa e ficam felizes."
+        },
+        "am": {
+          "L": "ሁሉንም በመንጠቆ ያወጣል፤ \\q በመረቡ ይጎትታል፤ \\q በትልቁም መረቡ ይሰበስባል፤ \\q ስለዚህ ደስ ይለዋል፤ ሐሤትም ያደርጋል።",
+          "B": "ጠላት ሁሉንም በመንጠቆ ያወጣቸዋል፤ \\q በመረቡ ይጎትታቸዋል፤ \\q በዓሣ ማጥመጃ መረቡም ይሰበስባቸዋል፤ \\q ስለዚህ ደስ ይለዋል፤ ይፈነጥዛልም።",
+          "R": "ባቢሎናውያን ሰዎችን በመንጠቆ ይይዛሉ። \\q በመረብ ይጎትቷቸዋል፤ \\q በዓሣ ማጥመጃ መረብም ይሰበስቧቸዋል። \\q ከዚያም ይፈነጥዛሉ፤ ደስም ይላቸዋል።"
         }
       },
       "decisions": [
@@ -3135,6 +3395,29 @@
           "reason": "Literal keeps the Hebrew singular \"all of it\", which refers back to \"a humanidade\" in verse 14, so Portuguese can say \"Toda ela\" and keep the feminine through the verse; Balanced and Readable say \"todos\" and \"as pessoas\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-am-1",
+          "layer": "rendering",
+          "language": "am",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010150052",
+            "o350010150072",
+            "o350010150073"
+          ],
+          "choice": "net (*ḥerem*) \"መረብ\"; dragnet (*mikmeret*) \"ትልቁ መረብ\" (L), \"የዓሣ ማጥመጃ መረብ\" (B, R); the same words in 1:16–17",
+          "alternatives": [
+            "\"አሽክላ\" (a snare)"
+          ],
+          "reason": "Amharic has one common word for a net; the second Hebrew word is told apart by size at Literal and by its use at Balanced and Readable, as the English \"dragnet\" and \"fishing net\". \"አሽክላ\" is a trap for animals, not a net for fish.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3208,6 +3491,11 @@
           "L": "Por isso ele oferece sacrifícios à sua rede \\q e queima ofertas à sua rede de arrasto, \\q pois por elas a sua porção [é] gorda \\q e o seu alimento, farto.",
           "B": "Por isso oferece sacrifícios à sua rede \\q e queima incenso à sua rede de pesca, \\q pois por meio delas vive na fartura \\q e come a melhor comida.",
           "R": "Por isso eles oferecem sacrifícios às suas redes \\q e queimam incenso para elas, \\q porque as suas redes lhes dão uma vida de luxo \\q e a melhor comida."
+        },
+        "am": {
+          "L": "ስለዚህ ለመረቡ ይሠዋል፤ \\q ለትልቁም መረቡ መሥዋዕት ያጤሳል፤ \\q በእነርሱ ድርሻው የሰባ [ነው]ና፤ \\q ምግቡም የወፈረ።",
+          "B": "ስለዚህ ለመረቡ መሥዋዕት ያቀርባል፤ \\q ለዓሣ ማጥመጃ መረቡም ዕጣን ያጥናል፤ \\q በእነርሱ በብዙ ድሎት ይኖራልና፤ \\q የሰባውንም ምግብ ይበላል።",
+          "R": "ስለዚህ ለመረቦቻቸው መሥዋዕት ያቀርባሉ፤ \\q ዕጣንም ያጥኑላቸዋል፤ \\q መረቦቻቸው የተንደላቀቀ ኑሮ፣ \\q ምርጥ ምግብም ይሰጧቸዋልና።"
         }
       },
       "decisions": [
@@ -3336,6 +3624,11 @@
           "L": "Acaso ele vai, por isso, esvaziar a sua rede \\q e matar nações continuamente, sem poupar?",
           "B": "Será que ele vai continuar esvaziando a sua rede, \\q matando nações sem piedade, sem parar?",
           "R": "Será que eles vão continuar esvaziando as suas redes para pegar mais? \\q Será que nunca vão parar de matar nações sem piedade?"
+        },
+        "am": {
+          "L": "ስለዚህ መረቡን ባዶ ያደርጋልን? \\q ሳይራራስ ሕዝቦችን ዘወትር ይገድላልን?",
+          "B": "መረቡን ባዶ ማድረጉን ይቀጥላልን? \\q ሕዝቦችን ያለ ርኅራኄ እየገደለ ከቶ አያቆምምን?",
+          "R": "ተጨማሪ ለመያዝ መረቦቻቸውን ባዶ ማድረጋቸውን ይቀጥላሉ? \\q ያለ ርኅራኄ ሕዝቦችን መግደላቸውን ከቶ አያቆሙም?"
         }
       },
       "decisions": [
