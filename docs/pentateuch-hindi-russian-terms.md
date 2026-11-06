@@ -127,9 +127,10 @@ wording and decisions.
 | tribe; clan; father's house | गोत्र; कुल; पितृकुल (L), परिवार (B, R) | колено (L, B), племя (R), as Hebrews; род; отцовский дом (L), семья (B, R) |
 | the Sabbath | सब्त | суббота |
 | the Passover; Unleavened Bread | फ़सह (as the New Testament); अख़मीरी रोटी का पर्व | Пасха; праздник Пресных хлебов |
+| the Feast of Weeks; of Booths; of Ingathering | सप्ताहों का पर्व; झोपड़ियों का पर्व (as John 7:2); फ़सल बटोरने का पर्व | праздник Недель; праздник Кущей (as John 7:2), кущи for the huts; праздник Сбора урожая |
 | the Day of Atonement | प्रायश्चित का दिन | День умилостивления |
 | serious skin disease (*tsaraʿat*) | गंभीर चर्म रोग, "कोढ़" in a decision | тяжёлая кожная болезнь, "проказа" in a decision |
-| steadfast love (*ḥesed*) | अटल प्रेम (L, B); अटल प्रेम or करुणा (R) | неизменная любовь (L, B); верная любовь or милость (R) |
+| steadfast love (*ḥesed*) | अटल प्रेम (L, B); अटल प्रेम or करुणा (R); between people, a favour or kindness: अटल प्रेम (L), कृपा (B, R) | неизменная любовь (L, B); верная любовь or милость (R); between people, a favour or kindness: неизменная любовь (L), милость (B, R) |
 | Sheol | शिओल (L); अधोलोक (B, R) | шеол (L); мир мёртвых (B, R), as Revelation's Hades |
 | the land flowing with milk and honey | ऐसा देश जिसमें दूध और मधु की धाराएँ बहती हैं | земля, где течёт молоко и мёд |
 | the wilderness | निर्जन प्रदेश, as Matthew 3:1 | пустыня |
