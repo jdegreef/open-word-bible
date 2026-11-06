@@ -3335,6 +3335,7 @@ def downloads():
         for level in export.LEVELS:
             for fmt in DOWNLOAD_FORMATS:
                 name, _, data, m = export.build(records, lang, level, fmt, expected=expected, paragraphs=paragraphs,
+                                                words_of_jesus=words_of_jesus.marked(),
                                                 generated_at=date, commit=commit)
                 buf = io.BytesIO()
                 if fmt == "usfm":

@@ -17,6 +17,9 @@ title (USFM \\d); a Hebrew verse that holds two English ones (PSA.13.6 is
 Psalm 13:5-6) becomes a verse bridge (\\v 5-6). Given the verses that open
 a paragraph (the site's, from the source text's own marks), a USFM chapter
 starts a new paragraph (\\p) at each, and a JSON verse says "paragraph".
+Given where Jesus speaks (owb/words_of_jesus.py), USFM marks his words
+(\\wj ... \\wj*, closed and reopened at a verse boundary) and a JSON verse
+lists them as "wj": [[start, end], ...] in its text.
 
 Only our translation is exported: no Greek or Hebrew, no word data.
 
@@ -64,6 +67,55 @@ def settings_for(lang):
     return {**SETTING_LABELS, **languages.settings(lang)}
 
 
+# Stand-ins for the start and end of Jesus's words while a rendering is
+# rendered and split into verses; no rendering holds them.
+WJ_OPEN, WJ_CLOSE = "\x02", "\x03"
+
+
+def mark_words_of_jesus(text, ranges):
+    """text with WJ_OPEN/WJ_CLOSE around each of ranges ([[start, end], ...],
+    where Jesus speaks: owb/words_of_jesus.py). Quotation marks never sit
+    inside a {{setting:...}} span, so neither do the stand-ins."""
+    for start, end in sorted(ranges, reverse=True):
+        text = text[:start] + WJ_OPEN + text[start:end] + WJ_CLOSE + text[end:]
+    return text
+
+
+def wj_runs(text):
+    """(text without stand-ins, [[start, end], ...]) for one verse. A run
+    the verse opens without closing (or closes without opening) runs to its
+    end (or from its start)."""
+    plain_text, runs, start = "", [], None
+    first = next((c for c in text if c in (WJ_OPEN, WJ_CLOSE)), None)
+    if first == WJ_CLOSE:
+        start = 0
+    for c in text:
+        if c == WJ_OPEN:
+            start = len(plain_text)
+        elif c == WJ_CLOSE:
+            if start is not None and len(plain_text) > start:
+                runs.append([start, len(plain_text)])
+            start = None
+        else:
+            plain_text += c
+    if start is not None and len(plain_text) > start:
+        runs.append([start, len(plain_text)])
+    return plain_text, runs
+
+
+def usfm_text(text):
+    """One verse's text for USFM, its words of Jesus marked \\wj ... \\wj*."""
+    plain_text, runs = wj_runs(text)
+    for start, end in reversed(runs):
+        # Keep the marker off the spaces at either end of a run.
+        while end > start and plain_text[end - 1] == " ":
+            end -= 1
+        while start < end and plain_text[start] == " ":
+            start += 1
+        plain_text = plain_text[:start] + "\\wj " + plain_text[start:end] + "\\wj*" + plain_text[end:]
+    return plain_text
+
+
 def record_verses(r):
     """{verse id: {lang: {level: text}}} for one record, split at its verse
     markers. A record's markers follow its refs in order."""
@@ -83,11 +135,23 @@ def plain(text, settings=None):
     return " ".join(markup.flat(markup.render(text, settings)).split())
 
 
-def verse_texts(records, lang, level, settings=None):
+def verse_texts(records, lang, level, settings=None, words_of_jesus=None):
     """{verse id: plain text}, our numbering, in Bible order. Two sentences
-    in one verse (Philippians 4:5) are joined in record order."""
+    in one verse (Philippians 4:5) are joined in record order. With
+    words_of_jesus ({record id: marking}), his words are between WJ_OPEN and
+    WJ_CLOSE: where a record carries them already ("wj", as the site's
+    loader adds them before it curls the quotes), those ranges; else
+    found from the marking."""
     out = {}
     for r in records:
+        text = r["renderings"].get(lang, {}).get(level)
+        if words_of_jesus is not None and text is not None:
+            ranges = r.get("wj", {}).get(lang, {}).get(level)
+            if ranges is None and r.get("id") in words_of_jesus:
+                from owb import words_of_jesus as wj
+                ranges = wj.ranges(text, words_of_jesus[r["id"]])
+            if ranges:
+                r = {**r, "renderings": {lang: {level: mark_words_of_jesus(text, ranges)}}}
         for vid, langs in record_verses(r).items():
             text = langs.get(lang, {}).get(level)
             if text:
@@ -111,6 +175,7 @@ def numbered(verses, numbering="english", paragraphs=frozenset()):
         english = list(versification.to_english(ref)) if numbering == "english" else [ref]
         if not english:
             key = (ref.book, ref.chapter)
+            text = wj_runs(text)[0]
             titles[key] = f"{titles[key]} {text}" if key in titles else text
             continue
         last = entries[-1] if entries else None
@@ -160,7 +225,7 @@ def usfm_book(code, lang, level, entries, titles):
         elif e.get("paragraph"):
             lines.append("\\p")
         number = f"{e['verse']}-{e['to']}" if "to" in e else str(e["verse"])
-        lines.append(f"\\v {number} {e['text']}")
+        lines.append(f"\\v {number} {usfm_text(e['text'])}")
     return "\n".join(lines) + "\n"
 
 
@@ -177,18 +242,22 @@ def json_books(lang, entries, titles):
                 chapter["title"] = titles[e["book"], e["chapter"]]
             chapter["verses"] = []
             chapters.append(chapter)
-        verse = {k: e[k] for k in ("verse", "to", "holds", "paragraph", "text") if k in e}
+        verse = {k: e[k] for k in ("verse", "to", "holds", "paragraph") if k in e}
+        verse["text"], runs = wj_runs(e["text"])
+        if runs:
+            verse["wj"] = runs
         chapters[-1]["verses"].append(verse)
     return books
 
 
 def build(records, lang, level, fmt="usfm", numbering="english", settings=None, books=None,
-          expected=None, generated_at="", commit="", paragraphs=frozenset()):
+          expected=None, generated_at="", commit="", paragraphs=frozenset(), words_of_jesus=None):
     """The export of records in lang at level: (filename, content type,
     bytes, manifest). books limits it to those book codes (None: all).
     expected, if given, is every verse id the source text has (our
     numbering), so the manifest can list those not yet translated.
-    paragraphs is the verse ids (our numbering) that open a paragraph."""
+    paragraphs is the verse ids (our numbering) that open a paragraph;
+    words_of_jesus is {record id: marking} (owb/words_of_jesus.py)."""
     if lang not in languages.READING:
         raise ValueError(f"unknown language {lang!r}")
     if level not in LEVELS:
@@ -201,7 +270,7 @@ def build(records, lang, level, fmt="usfm", numbering="english", settings=None, 
     settings = {name: index for name, index in (settings or {}).items() if name in known}
     wanted = set(books) if books else None
     records = [r for r in records if wanted is None or refs.parse(r["refs"][0]).book in wanted]
-    verses = verse_texts(records, lang, level, settings)
+    verses = verse_texts(records, lang, level, settings, words_of_jesus)
     entries, titles = numbered(verses, numbering, paragraphs)
 
     status = {}
