@@ -60,6 +60,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने मूसा से बात की और कहा,",
+          "B": "{{divine_name:प्रभु|याहवे}} ने मूसा से बात की। उन्होंने कहा,",
+          "R": "{{divine_name:प्रभु|याहवे}} ने मूसा से कहा,"
+        },
+        "ru": {
+          "L": "И говорил {{divine_name:ГОСПОДЬ|Яхве}} Моисею, говоря:",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} обратился к Моисею. Он сказал:",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею:"
         }
       },
       "decisions": [
@@ -195,6 +205,16 @@
           "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “እኔ ወደምሰጣችሁ ወደ መኖሪያችሁ ምድር በገባችሁ ጊዜ፣",
           "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “የምትኖሩባት ምድር፣ እኔ የምሰጣችሁ ምድር በገባችሁ ጊዜ፣",
           "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “መኖሪያችሁ እንድትሆን ወደምሰጣችሁ ምድር ትገባላችሁ።"
+        },
+        "hi": {
+          "L": "\"{{gender:इस्राएल की सन्तान|इस्राएल के पुत्रों}} से बात करो और उनसे कहो, 'जब तुम अपने निवास के देश में आओ, जिसे मैं तुम्हें दे रहा हूँ,",
+          "B": "\"इस्राएलियों से बात करो और उनसे कहो: 'जब तुम उस देश में पहुँचो जहाँ तुम बसोगे, वह देश जो मैं तुम्हें दे रहा हूँ,",
+          "R": "\"इस्राएलियों से कहो: 'तुम उस देश में पहुँचोगे जो मैं तुम्हें रहने के लिए दे रहा हूँ।"
+        },
+        "ru": {
+          "L": "«Говори {{gender:детям Израиля|сынам Израиля}} и скажи им: “Когда войдёте в землю ваших жилищ, которую {{deity_pronoun:я|Я}} даю вам,",
+          "B": "«Говори с израильтянами и скажи им: “Когда вы войдёте в землю, где будете жить, в землю, которую {{deity_pronoun:я|Я}} даю вам,",
+          "R": "«Скажи израильтянам: “Вы войдёте в землю, которую {{deity_pronoun:я|Я}} даю вам, чтобы она стала вашим домом."
         }
       },
       "decisions": [
@@ -306,6 +326,50 @@
           "reason": "\"ልጆች\" already includes daughters, so Amharic has no second wording for the setting to offer; the phrase is written plainly through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040150020031",
+            "o040150020041"
+          ],
+          "choice": "the sons of Israel: Literal \"इस्राएल की सन्तान\" in a gender span (setting: \"इस्राएल के पुत्रों\"); Balanced and Readable \"इस्राएली\", with no span",
+          "alternatives": [
+            "\"इस्राएल के पुत्र\" at every level"
+          ],
+          "reason": "The phrase means the whole people, women as well as men. At Literal Hindi has two wordings, the inclusive \"सन्तान\" by default and the traditional \"पुत्र\" with the gender setting. Balanced and Readable say \"इस्राएली\", which already includes everyone, so the English span there has nothing to change in Hindi. Likewise Hindi pronouns for \"the person\" (उसका, उसे, वह) do not mark gender, so where the English has a gender span on a pronoun (verses 28, 30, 31) the Hindi has none. The same through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040150020011"
+          ],
+          "choice": "{{gender:дети Израиля|сыны Израиля}} (L); \"израильтяне\" (B, R), with no span",
+          "alternatives": [
+            "дети Израиля at every level",
+            "сыны Израиля with no setting"
+          ],
+          "reason": "Following the Pentateuch note, Literal has \"дети Израиля\" by default with the traditional \"сыны Израиля\" as the gender alternative; Balanced and Readable say \"израильтяне\", which already includes men and women, so they need no span where the English has one. Elsewhere in this chapter the English \"them / him\" spans have no Russian counterpart: \"человек\" and the pronouns that agree with it already speak of anyone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -394,6 +458,16 @@
           "L": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ የሚቃጠል መሥዋዕት ወይም መሥዋዕት፣ ስእለትን ለመፈጸም ወይም የፈቃድ መሥዋዕት አድርጋችሁ ወይም በበዓሎቻችሁ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ለማድረግ ከላም መንጋ ወይም ከበግ መንጋ ስታዘጋጁ፣",
           "B": "ከላም መንጋ ወይም ከበግና ከፍየል መንጋ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ ማለትም የሚቃጠል መሥዋዕት ወይም ሌላ መሥዋዕት፣ ስእለትን ለመፈጸም ወይም የፈቃድ መሥዋዕት አድርጋችሁ ወይም በተወሰኑት በዓሎቻችሁ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ እንዲሆን ስታቀርቡ፣",
           "R": "ከከብቶቻችሁ ወይም ከበጎቻችሁና ከፍየሎቻችሁ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በመሠዊያው ላይ በእሳት የሚቀርብ መሥዋዕት ታመጡ ይሆናል። የሚቃጠል መሥዋዕት ወይም ሌላ መሥዋዕት ሊሆን ይችላል። ስእለታችሁን ለመፈጸም፣ ወይም በገዛ ፈቃዳችሁ የምትሰጡት ስጦታ አድርጋችሁ፣ ወይም በልዩ በዓሎቻችሁ ታመጡት ይሆናል። መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
+        },
+        "hi": {
+          "L": "और तुम {{divine_name:प्रभु|याहवे}} के लिए आग में चढ़ाई गई भेंट तैयार करो, होमबलि या मेलबलि, किसी मन्नत को पूरा करने के लिए, या स्वेच्छा की भेंट के रूप में, या अपने नियत पर्वों में, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध बनाने को, गाय-बैलों में से या भेड़-बकरियों में से,",
+          "B": "और तुम गाय-बैलों में से या भेड़-बकरियों में से {{divine_name:प्रभु|याहवे}} के लिए आग में चढ़ाई गई भेंट चढ़ाओ, होमबलि या कोई और बलि, चाहे मन्नत पूरी करने के लिए, चाहे स्वेच्छा की भेंट के रूप में, चाहे अपने नियत पर्वों में, ताकि {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध हो,",
+          "R": "मान लो तुम {{divine_name:प्रभु|याहवे}} के लिए वेदी पर आग में चढ़ाई गई भेंट लाते हो, अपने गाय-बैलों में से या भेड़-बकरियों में से कोई पशु। वह होमबलि हो सकती है या कोई और बलि। तुम उसे किसी मन्नत को पूरा करने के लिए ला सकते हो, या ऐसे दान के रूप में जो तुम अपनी इच्छा से देते हो, या अपने किसी ख़ास पर्व पर। उसकी सुगंध {{divine_name:प्रभु|याहवे}} को भाती है।"
+        },
+        "ru": {
+          "L": "и совершите огненную жертву {{divine_name:ГОСПОДУ|Яхве}}, всесожжение или жертву, во исполнение обета, или как добровольное приношение, или в ваши установленные праздники, чтобы сделать приятный запах {{divine_name:ГОСПОДУ|Яхве}}, из крупного скота или из мелкого скота,",
+          "B": "и принесёте {{divine_name:ГОСПОДУ|Яхве}} огненную жертву из крупного или мелкого скота — всесожжение или жертву, во исполнение обета, или как добровольное приношение, или в ваши установленные праздники, чтобы это был приятный запах для {{divine_name:ГОСПОДА|Яхве}},",
+          "R": "Может быть, вы принесёте {{divine_name:ГОСПОДУ|Яхве}} огненную жертву, сожжённую на жертвеннике, — быка, овцу или козу из вашего стада. Это может быть всесожжение или другая жертва. Вы можете принести её, чтобы исполнить обещание, или как дар, который вы сами решили дать, или в один из ваших особых праздников. Её запах радует {{divine_name:ГОСПОДА|Яхве}}."
         }
       },
       "decisions": [
@@ -601,6 +675,89 @@
           "reason": "As the Pentateuch terms and Leviticus set: the Amharic phrase says how the gift reached God, and \"food offering\" would read oddly in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150030061"
+          ],
+          "choice": "\"मेलबलि\" (L) and \"कोई और बलि\" (B, R) for \"a sacrifice\" (zevach)",
+          "alternatives": [
+            "\"बलि\" alone"
+          ],
+          "reason": "Zevach beside the burnt offering is the sacrifice that is shared in a meal (m2), so Literal names it \"मेलबलि\", as the note gives for the shared offerings, while Balanced and Readable follow the English \"a sacrifice\" with \"कोई और बलि\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150030021"
+          ],
+          "choice": "\"आग में चढ़ाई गई भेंट\" for the offering by fire (ishsheh), at Readable too",
+          "alternatives": [
+            "\"हव्य\""
+          ],
+          "reason": "The note's term for the food offering, as in Leviticus at every level. Readable adds \"वेदी पर\", as the English Readable adds \"burned on the altar\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150030021"
+          ],
+          "choice": "\"огненная жертва\" for the offering by fire (ishsheh)",
+          "alternatives": [
+            "жертва, сжигаемая на огне",
+            "пища для ГОСПОДА"
+          ],
+          "reason": "The Pentateuch note fixes \"огненная жертва\" at every level: it keeps the Hebrew link with fire, as the English Literal does. Readable adds \"сожжённую на жертвеннике\" to say what happens to it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150030141",
+            "o040150030151"
+          ],
+          "choice": "\"приятный запах\" (L, B); \"её запах радует ГОСПОДА\" (R)",
+          "alternatives": [
+            "благоухание"
+          ],
+          "reason": "The note gives \"приятный запах\" at Literal and Balanced and a plain clause at Readable, saying that God gladly accepts the offering (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -675,6 +832,16 @@
           "L": "መባውን {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚያቀርበው ሰው የኢን አንድ አራተኛ ዘይት የተለወሰ የ[ኢፍ] አንድ አሥረኛ የላመ ዱቄት የእህል ቁርባን አድርጎ ያቅርብ።",
           "B": "መባውን የሚያመጣው ሰው {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አድርጎ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ያቅርብ፤ ዱቄቱም {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} ዘይት የተለወሰ ይሁን።",
           "R": "መባውን የሚያመጣው ሰው ደግሞ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የእህል ቁርባን መስጠት አለበት። ይህም {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የወይራ ዘይት የተለወሰ {{units:2.2 ሊትር ያህል|የኢፍ አንድ አሥረኛ}} የላመ ዱቄት ነው።"
+        },
+        "hi": {
+          "L": "तो जो अपना चढ़ावा निकट लाता है, वह {{divine_name:प्रभु|याहवे}} के लिए अन्नबलि निकट लाए, [एपा का] दसवाँ भाग मैदा, जो हीन के चौथाई भाग तेल से सना हो।",
+          "B": "तो चढ़ावा लानेवाला {{divine_name:प्रभु|याहवे}} के लिए अन्नबलि चढ़ाए: {{units:लगभग 2.2 लीटर|एपा का दसवाँ भाग}} मैदा, जो {{units:लगभग 1 लीटर|हीन के चौथाई भाग}} तेल से सना हो।",
+          "R": "तब चढ़ावा लानेवाले को {{divine_name:प्रभु|याहवे}} के लिए अन्नबलि भी लानी है। वह {{units:लगभग 2.2 लीटर|एपा के दसवें भाग}} मैदे की हो, जिसमें {{units:लगभग 1 लीटर|हीन के चौथाई भाग}} जैतून का तेल मिला हो।"
+        },
+        "ru": {
+          "L": "то пусть принесёт приносящий приношение своё {{divine_name:ГОСПОДУ|Яхве}} хлебное приношение — лучшей муки десятую часть [ефы], смешанной с четвертью гина масла.",
+          "B": "то тот, кто приносит приношение, пусть представит {{divine_name:ГОСПОДУ|Яхве}} хлебное приношение — {{units:около 2,2 литра|десятую часть ефы}} лучшей муки, смешанной с {{units:примерно литром|четвертью гина}} масла.",
+          "R": "Тогда тот, кто приносит жертву, должен также дать {{divine_name:ГОСПОДУ|Яхве}} хлебное приношение. Это {{units:около 2,2 литра|десятая часть ефы}} лучшей муки, смешанной с {{units:примерно литром|четвертью гина}} оливкового масла."
         }
       },
       "decisions": [
@@ -975,6 +1142,72 @@
           "reason": "Amharic readers measure in litres, so the metric figure is the default, as in French and Swahili and in the Amharic Leviticus (ephah 22 litres, hin 3.7 litres).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040150040071",
+            "o040150040102"
+          ],
+          "choice": "metric measures by default: \"लगभग 2.2 लीटर\", \"लगभग 1 लीटर\" (setting: \"एपा का दसवाँ भाग\", \"हीन के चौथाई भाग\")",
+          "alternatives": [
+            "US measures, as the English"
+          ],
+          "reason": "Balanced and Readable give metric measures, with the ancient ones as the alternative, where the English gives quarts. A tenth of an ephah is about 2.2 litres and a hin about 3.7 litres, so a quarter hin is about a litre. Literal keeps the ancient measures. The same through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040150040071",
+            "o040150040092",
+            "o040150040102"
+          ],
+          "choice": "{{units:около 2,2 литра|десятую часть ефы}}; {{units:примерно литром|четвертью гина}}",
+          "alternatives": [
+            "the original measures only",
+            "US quarts as in the English"
+          ],
+          "reason": "The English converts to US quarts; Russian, as the Pentateuch note says, shows litres by default (an ephah about 22 litres, so a tenth about 2.2; a hin about 3.7 litres, so a quarter about a litre), with the Hebrew measure as the alternative. Literal keeps the Hebrew measures. The same holds for the other amounts in this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150040061"
+          ],
+          "choice": "\"лучшая мука\" for the fine flour",
+          "alternatives": [
+            "тонкая мука",
+            "пшеничная мука"
+          ],
+          "reason": "The point is flour of the best quality (m3); \"лучшая мука\" says so in current Russian, where \"пшеничная мука\" names only the grain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1050,6 +1283,16 @@
           "L": "ለአንዱም ጠቦት ከሚቃጠለው መሥዋዕት ወይም ከመሥዋዕቱ ጋር ለመጠጥ ቁርባን የኢን አንድ አራተኛ የወይን ጠጅ ታዘጋጃለህ።",
           "B": "ከሚቃጠለው መሥዋዕት ወይም ከመሥዋዕቱ ጋር ለእያንዳንዱ ጠቦት {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የወይን ጠጅ ለመጠጥ ቁርባን አዘጋጁ።",
           "R": "ለእያንዳንዱ ጠቦት በመሠዊያው ላይ የሚፈስ {{units:1 ሊትር ያህል|የኢን አንድ አራተኛ}} የወይን ጠጅ የመጠጥ ቁርባን አድርጋችሁ አምጡ።"
+        },
+        "hi": {
+          "L": "और अर्घ के लिए दाखमधु, हीन का चौथाई भाग, तुम होमबलि के साथ या बलि के लिए, हर एक मेम्ने के लिए तैयार करो।",
+          "B": "होमबलि या बलि के साथ तुम हर एक मेम्ने के लिए अर्घ के रूप में {{units:लगभग 1 लीटर|हीन का चौथाई भाग}} दाखमधु भी तैयार करो।",
+          "R": "हर एक मेम्ने के साथ अर्घ के रूप में {{units:लगभग 1 लीटर|हीन का चौथाई भाग}} दाखमधु भी लाना, जो वेदी के पास उंडेला जाए।"
+        },
+        "ru": {
+          "L": "И вина для возлияния, четверть гина, приготовь при всесожжении или для жертвы, на одного ягнёнка.",
+          "B": "Вместе со всесожжением или жертвой приготовь также {{units:около литра|четверть гина}} вина для возлияния на каждого ягнёнка.",
+          "R": "На каждого ягнёнка принеси ещё {{units:около литра|четверть гина}} вина для возлияния: его выливают у жертвенника."
         }
       },
       "decisions": [
@@ -1285,6 +1528,48 @@
           "reason": "Amharic marks the number of \"you\"; Literal follows the Hebrew's change between the plural and the singular, which addresses each worshipper, while the other levels keep one plural address through the law.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150050022"
+          ],
+          "choice": "\"अर्घ\" for the drink offering (nesekh)",
+          "alternatives": [
+            "\"पेय-भेंट\""
+          ],
+          "reason": "\"अर्घ\" is the Hindi word for a liquid poured out as an offering, which is what the drink offering was (m1). Readable adds that it was poured out at the altar, as the English Readable does. The same through Numbers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150050022"
+          ],
+          "choice": "\"возлияние\" for the drink offering",
+          "alternatives": [
+            "питьевое приношение"
+          ],
+          "reason": "\"Возлияние\" is the established Russian word for wine poured out with a sacrifice (m1) and is used for it throughout the Pentateuch; Readable adds what is done with it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1356,6 +1641,16 @@
           "L": "ወይም ለአውራ በግ የኢን አንድ ሦስተኛ ዘይት የተለወሰ የ[ኢፍ] ሁለት አሥረኛ የላመ ዱቄት የእህል ቁርባን ታዘጋጃለህ።",
           "B": "ለአውራ በግ ደግሞ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አዘጋጁ፤ ዱቄቱም {{units:1.2 ሊትር ያህል|የኢን አንድ ሦስተኛ}} ዘይት የተለወሰ ይሁን።",
           "R": "አውራ በግ ብታቀርቡ {{units:1.2 ሊትር ያህል|የኢን አንድ ሦስተኛ}} የወይራ ዘይት የተለወሰ {{units:4.4 ሊትር ያህል|የኢፍ ሁለት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አምጡ።"
+        },
+        "hi": {
+          "L": "या मेढ़े के लिए तुम अन्नबलि तैयार करो, [एपा के] दो दसवें भाग मैदा, जो हीन के तीसरे भाग तेल से सना हो।",
+          "B": "मेढ़े के लिए {{units:लगभग 4.4 लीटर|एपा के दो दसवें भाग}} मैदे की अन्नबलि तैयार करो, जो {{units:लगभग 1.2 लीटर|हीन के तीसरे भाग}} तेल से सना हो।",
+          "R": "यदि तुम मेढ़ा चढ़ाओ, तो {{units:लगभग 4.4 लीटर|एपा के दो दसवें भाग}} मैदे की अन्नबलि लाना, जिसमें {{units:लगभग 1.2 लीटर|हीन के तीसरे भाग}} जैतून का तेल मिला हो।"
+        },
+        "ru": {
+          "L": "Или для барана приготовь хлебное приношение — лучшей муки две десятых [ефы], смешанной с маслом, третью гина.",
+          "B": "Для барана приготовь хлебное приношение — {{units:около 4,4 литра|две десятых ефы}} лучшей муки, смешанной с {{units:примерно 1,2 литра|третью гина}} масла.",
+          "R": "Если ты приносишь барана, принеси хлебное приношение: {{units:около 4,4 литра|две десятых ефы}} лучшей муки, смешанной с {{units:примерно 1,2 литра|третью гина}} оливкового масла."
         }
       },
       "decisions": [
@@ -1463,6 +1758,16 @@
           "L": "ለመጠጥ ቁርባንም የኢን አንድ ሦስተኛ የወይን ጠጅ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ አድርገህ ታቀርባለህ።",
           "B": "ለመጠጥ ቁርባንም {{units:1.2 ሊትር ያህል|የኢን አንድ ሦስተኛ}} የወይን ጠጅ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ አድርጋችሁ አቅርቡ።",
           "R": "እንዲሁም {{units:1.2 ሊትር ያህል|የኢን አንድ ሦስተኛ}} የወይን ጠጅ የመጠጥ ቁርባን አድርጋችሁ አምጡ። መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
+        },
+        "hi": {
+          "L": "और अर्घ के लिए दाखमधु, हीन का तीसरा भाग, तुम निकट लाओ, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध।",
+          "B": "अर्घ के लिए {{units:लगभग 1.2 लीटर|हीन का तीसरा भाग}} दाखमधु भी चढ़ाओ, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध।",
+          "R": "अर्घ के रूप में {{units:लगभग 1.2 लीटर|हीन का तीसरा भाग}} दाखमधु भी लाना। उसकी सुगंध {{divine_name:प्रभु|याहवे}} को भाती है।"
+        },
+        "ru": {
+          "L": "И вина для возлияния, треть гина, принеси — приятный запах {{divine_name:ГОСПОДУ|Яхве}}.",
+          "B": "Принеси также {{units:около 1,2 литра|треть гина}} вина для возлияния — приятный запах для {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Принеси ещё {{units:около 1,2 литра|треть гина}} вина для возлияния. Его запах радует {{divine_name:ГОСПОДА|Яхве}}."
         }
       },
       "decisions": [
@@ -1552,6 +1857,16 @@
           "L": "ከላም መንጋ ወይፈንን የሚቃጠል መሥዋዕት ወይም ስእለትን ለመፈጸም መሥዋዕት ወይም የኅብረት መሥዋዕት አድርገህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስታዘጋጅ፣",
           "B": "ወይፈንን የሚቃጠል መሥዋዕት ወይም ስእለትን ለመፈጸም የሚቀርብ መሥዋዕት ወይም የኅብረት መሥዋዕት አድርጋችሁ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስታዘጋጁ፣",
           "R": "ወይፈንን የሚቃጠል መሥዋዕት ወይም ስእለትን ለመፈጸም መሥዋዕት ወይም የኅብረት መሥዋዕት አድርጋችሁ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ታመጡ ይሆናል።"
+        },
+        "hi": {
+          "L": "और जब तुम गाय-बैलों में से एक बछड़े को होमबलि या बलि के रूप में तैयार करो, किसी मन्नत को पूरा करने के लिए, या {{divine_name:प्रभु|याहवे}} के लिए मेलबलि के रूप में,",
+          "B": "जब तुम एक बछड़े को होमबलि के रूप में, या मन्नत पूरी करने की बलि के रूप में, या {{divine_name:प्रभु|याहवे}} के लिए मेलबलि के रूप में तैयार करो,",
+          "R": "मान लो तुम एक बछड़ा होमबलि के रूप में लाते हो, या किसी मन्नत को पूरा करने की बलि के रूप में, या {{divine_name:प्रभु|याहवे}} के लिए मेलबलि के रूप में।"
+        },
+        "ru": {
+          "L": "И когда приготовишь сына крупного скота во всесожжение или в жертву, во исполнение обета или в мирную жертву {{divine_name:ГОСПОДУ|Яхве}},",
+          "B": "Когда приготовишь молодого быка во всесожжение, или в жертву во исполнение обета, или в мирную жертву {{divine_name:ГОСПОДУ|Яхве}},",
+          "R": "Может быть, ты принесёшь молодого быка во всесожжение, или в жертву, чтобы исполнить обещание, или в мирную жертву {{divine_name:ГОСПОДУ|Яхве}}."
         }
       },
       "decisions": [
@@ -1638,6 +1953,45 @@
           "reason": "The term sheet's word for the *shelamim*, as Exodus and Leviticus give it in Korean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150080031"
+          ],
+          "choice": "\"गाय-बैलों में से एक बछड़ा\" (a young one of the herd)",
+          "alternatives": [
+            "\"बैल का बच्चा\""
+          ],
+          "reason": "Hindi \"बछड़ा\" already means a young bull, so Literal needs no bracket where the English supplies \"[bull]\"; \"गाय-बैलों में से\" keeps the Hebrew \"of the herd\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150080031",
+            "o040150080041"
+          ],
+          "choice": "\"сына крупного скота\" (L); \"молодого быка\" (B, R)",
+          "alternatives": [
+            "тельца"
+          ],
+          "reason": "Literal keeps the Hebrew idiom \"son of the herd\", as the English Literal does in its own way; the other levels say what it means, a young bull (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1711,6 +2065,16 @@
           "L": "ከወይፈኑ ጋር የኢን ግማሽ ዘይት የተለወሰ የ[ኢፍ] ሦስት አሥረኛ የላመ ዱቄት የእህል ቁርባን ያቅርብ።",
           "B": "ከወይፈኑ ጋር {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን ይቅረብ፤ ዱቄቱም {{units:1.9 ሊትር ያህል|የኢን ግማሽ}} ዘይት የተለወሰ ይሁን።",
           "R": "ከወይፈኑ ጋር {{units:1.9 ሊትር ያህል|የኢን ግማሽ}} የወይራ ዘይት የተለወሰ {{units:6.6 ሊትር ያህል|የኢፍ ሦስት አሥረኛ}} የላመ ዱቄት የእህል ቁርባን አምጡ።"
+        },
+        "hi": {
+          "L": "तो वह बछड़े के साथ अन्नबलि निकट लाए, [एपा के] तीन दसवें भाग मैदा, जो आधे हीन तेल से सना हो।",
+          "B": "तो बछड़े के साथ अन्नबलि चढ़ाई जाए: {{units:लगभग 6.6 लीटर|एपा के तीन दसवें भाग}} मैदा, जो {{units:लगभग 1.8 लीटर|आधे हीन}} तेल से सना हो।",
+          "R": "बछड़े के साथ {{units:लगभग 6.6 लीटर|एपा के तीन दसवें भाग}} मैदे की अन्नबलि भी लाना, जिसमें {{units:लगभग 1.8 लीटर|आधा हीन}} जैतून का तेल मिला हो।"
+        },
+        "ru": {
+          "L": "то пусть принесёт он с сыном крупного скота хлебное приношение — лучшей муки три десятых [ефы], смешанной с маслом, половиной гина.",
+          "B": "то вместе с молодым быком пусть будет принесено хлебное приношение — {{units:около 6,6 литра|три десятых ефы}} лучшей муки, смешанной с {{units:примерно 1,8 литра|половиной гина}} масла.",
+          "R": "Вместе с быком принеси хлебное приношение: {{units:около 6,6 литра|три десятых ефы}} лучшей муки, смешанной с {{units:примерно 1,8 литра|половиной гина}} оливкового масла."
         }
       },
       "decisions": [
@@ -1833,6 +2197,16 @@
           "L": "ለመጠጥ ቁርባንም የኢን ግማሽ የወይን ጠጅ ታቀርባለህ፤ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ [ነው]።",
           "B": "ለመጠጥ ቁርባንም {{units:1.9 ሊትር ያህል|የኢን ግማሽ}} የወይን ጠጅ አቅርቡ። ይህ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ ደስ የሚያሰኝ መዓዛ ነው።",
           "R": "እንዲሁም {{units:1.9 ሊትር ያህል|የኢን ግማሽ}} የወይን ጠጅ የመጠጥ ቁርባን አድርጋችሁ አምጡ። ይህ በእሳት የሚቀርብ መሥዋዕት ነው፤ መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል።"
+        },
+        "hi": {
+          "L": "और अर्घ के लिए दाखमधु, आधा हीन, तुम निकट लाओ, आग में चढ़ाई गई भेंट, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध।",
+          "B": "और अर्घ के लिए {{units:लगभग 1.8 लीटर|आधा हीन}} दाखमधु चढ़ाओ। यह आग में चढ़ाई गई भेंट है, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध।",
+          "R": "अर्घ के रूप में {{units:लगभग 1.8 लीटर|आधा हीन}} दाखमधु भी लाना। यह आग में चढ़ाई गई भेंट है, और इसकी सुगंध {{divine_name:प्रभु|याहवे}} को भाती है।"
+        },
+        "ru": {
+          "L": "И вина принеси для возлияния половину гина — огненная жертва, приятный запах {{divine_name:ГОСПОДУ|Яхве}}.",
+          "B": "И принеси {{units:около 1,8 литра|половину гина}} вина для возлияния. Это огненная жертва, приятный запах для {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Принеси ещё {{units:около 1,8 литра|половину гина}} вина для возлияния. Это огненная жертва, и её запах радует {{divine_name:ГОСПОДА|Яхве}}."
         }
       },
       "decisions": [
@@ -1925,6 +2299,16 @@
           "L": "ለአንዱ በሬ ወይም ለአንዱ አውራ በግ ወይም ከጠቦቶች ወይም ከፍየሎች ለአንዱ እንዲሁ ይደረግ።",
           "B": "ለእያንዳንዱ በሬ ወይም አውራ በግ፣ ለእያንዳንዱም ጠቦት ወይም የፍየል ግልገል እንዲሁ ይደረግ።",
           "R": "ለእያንዳንዱ በሬ፣ ለእያንዳንዱ አውራ በግ፣ ለእያንዳንዱም ጠቦት ወይም የፍየል ግልገል እንዲሁ አድርጉ።"
+        },
+        "hi": {
+          "L": "हर एक बैल के लिए, या हर एक मेढ़े के लिए, या भेड़-बकरियों के बच्चे के लिए, मेम्नों में से या बकरियों में से, ऐसा ही किया जाए।",
+          "B": "हर एक बछड़े या मेढ़े के लिए, और हर एक मेम्ने या बकरी के बच्चे के लिए ऐसा ही किया जाए।",
+          "R": "हर बछड़े, हर मेढ़े और हर मेम्ने या बकरी के बच्चे के लिए ऐसा ही करना।"
+        },
+        "ru": {
+          "L": "Так пусть делается для одного быка, или для одного барана, или для ягнёнка из овец или из коз.",
+          "B": "Так нужно делать для каждого быка или барана, для каждого ягнёнка или козлёнка.",
+          "R": "Делай так для каждого быка, каждого барана и каждого ягнёнка или козлёнка."
         }
       },
       "decisions": [
@@ -2043,6 +2427,16 @@
           "L": "እንደምታዘጋጁት ቁጥር፣ እንደ ቁጥራቸው ለእያንዳንዱ እንዲሁ ታደርጋላችሁ።",
           "B": "የምታዘጋጇቸው እንስሶች ስንትም ቢሆኑ ለእያንዳንዳቸው እንዲሁ አድርጉ።",
           "R": "ምንም ያህል ብዙ ቢሆኑ ለምታመጡት ለእያንዳንዱ እንስሳ እንዲሁ አድርጉ።"
+        },
+        "hi": {
+          "L": "जितनी [संख्या] तुम तैयार करो, उसके अनुसार हर एक के लिए ऐसा ही करना, उनकी संख्या के अनुसार।",
+          "B": "तुम जितने भी पशु तैयार करो, उनमें से हर एक के लिए ऐसा ही करना।",
+          "R": "तुम जितने भी पशु लाओ, हर एक के लिए ऐसा ही करना।"
+        },
+        "ru": {
+          "L": "По числу, которое приготовите, так делайте для каждого по числу их.",
+          "B": "Сколько бы животных вы ни приготовили, делайте так для каждого из них.",
+          "R": "Делай так для каждого животного, которое приносишь, сколько бы их ни было."
         }
       },
       "decisions": [
@@ -2150,6 +2544,16 @@
           "L": "በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ሲያቀርብ የአገሩ ተወላጅ ሁሉ እነዚህን እንዲሁ ያድርግ።",
           "B": "የአገሩ ተወላጅ የሆነ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ያለው በእሳት የሚቀርብ መሥዋዕት ሲያቀርብ እነዚህን ነገሮች በዚህ መንገድ ያድርግ።",
           "R": "እስራኤላዊ ሆኖ የተወለደ ሁሉ መዓዛው {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኝ በእሳት የሚቀርብ መሥዋዕት ሲያመጣ እነዚህን ነገሮች በዚህ መንገድ ማድረግ አለበት።"
+        },
+        "hi": {
+          "L": "हर देशी इन [बातों] को इसी रीति से करे, जब वह आग में चढ़ाई गई भेंट, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध, निकट लाए।",
+          "B": "जो कोई इस्राएल में जन्मा है, वह जब {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध की आग में चढ़ाई गई भेंट चढ़ाए, तो ये काम इसी रीति से करे।",
+          "R": "हर जन्मजात इस्राएली को, जब वह ऐसी आग में चढ़ाई गई भेंट लाए जिसकी सुगंध {{divine_name:प्रभु|याहवे}} को भाती है, ये काम इसी तरह करने हैं।"
+        },
+        "ru": {
+          "L": "Всякий коренной житель пусть делает это так, принося огненную жертву, приятный запах {{divine_name:ГОСПОДУ|Яхве}}.",
+          "B": "Каждый, кто родился в Израиле, пусть делает это так, когда приносит огненную жертву, приятный запах для {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Каждый, кто родился израильтянином, должен делать это так, когда приносит огненную жертву, запах которой радует {{divine_name:ГОСПОДА|Яхве}}."
         }
       },
       "decisions": [
@@ -2308,6 +2712,26 @@
           "reason": "As Leviticus 16:29 and 24:22 say it in Portuguese: Literal \"o natural\", one born in the land; Balanced and Readable say plainly that he is an Israelite by birth (m1), so that \"nativo\" is not read as the earlier peoples of Canaan.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150130022"
+          ],
+          "choice": "\"इस्राएल में जन्मा\" (B), \"जन्मजात इस्राएली\" (R) for the native",
+          "alternatives": [
+            "\"देशी\" at every level"
+          ],
+          "reason": "Literal keeps \"देशी\" (native). Balanced and Readable say that he is an Israelite by birth (m1), so that the word is not taken for the earlier peoples of Canaan, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2391,6 +2815,16 @@
           "L": "መጻተኛም በእናንተ ዘንድ ቢቀመጥ፣ ወይም በትውልዶቻችሁ ሁሉ በመካከላችሁ የሚኖር ማንም ቢሆን፣ በእሳት የሚቀርብ መሥዋዕት፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ቢያዘጋጅ፣ እናንተ እንደምታደርጉት እርሱም እንዲሁ ያድርግ።",
           "B": "በመካከላችሁ የሚኖር መጻተኛ ወይም በሚመጡት ትውልዶች ከእናንተ ጋር ያለ ሌላ ማንም ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ ያለው በእሳት የሚቀርብ መሥዋዕት ቢያቀርብ፣ እናንተ እንደምታደርጉት ያድርግ።",
           "R": "እንግዶች አሁንም ሆነ ወደ ፊት ከእናንተ ጋር ይኖሩ ይሆናል። ከእነርሱ አንዱ መዓዛው {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኝ በእሳት የሚቀርብ መሥዋዕት ቢያመጣ፣ እናንተ እንደምታደርጉት ማድረግ አለበት።"
+        },
+        "hi": {
+          "L": "और यदि कोई परदेशी तुम्हारे साथ परदेशी होकर रहे, या जो कोई तुम्हारी पीढ़ी-पीढ़ी में तुम्हारे बीच [रहे], और वह आग में चढ़ाई गई भेंट, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध, तैयार करे, तो जैसे तुम करते हो, वैसे ही वह करे।",
+          "B": "यदि कोई परदेशी तुम्हारे साथ रहता हो, या आनेवाली पीढ़ियों में कोई और तुम्हारे बीच रहे, और वह {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध की आग में चढ़ाई गई भेंट चढ़ाए, तो वह भी ठीक वैसे ही करे जैसे तुम करते हो।",
+          "R": "तुम्हारे बीच परदेशी भी रह सकते हैं, अभी या आनेवाले वर्षों में। यदि उनमें से कोई ऐसी आग में चढ़ाई गई भेंट लाए जिसकी सुगंध {{divine_name:प्रभु|याहवे}} को भाती है, तो उसे भी ठीक वैसे ही करना है जैसे तुम करते हो।"
+        },
+        "ru": {
+          "L": "И если будет жить у вас пришелец, или кто [бы ни был] среди вас в роды ваши, и приготовит огненную жертву, приятный запах {{divine_name:ГОСПОДУ|Яхве}}, — как делаете вы, так пусть делает и он.",
+          "B": "Если у вас живёт пришелец или кто-то другой, кто будет среди вас в грядущих поколениях, и он приносит огненную жертву, приятный запах для {{divine_name:ГОСПОДА|Яхве}}, пусть делает это так же, как делаете вы.",
+          "R": "С вами могут жить чужеземцы, сейчас или в будущие годы. Если кто-то из них приносит огненную жертву, запах которой радует {{divine_name:ГОСПОДА|Яхве}}, он должен делать это так же, как вы."
         }
       },
       "decisions": [
@@ -2522,6 +2956,49 @@
           "reason": "For the whole book, as Leviticus 19:33-34 and docs/pentateuch-portuguese-terms.md set it: Literal says \"imigrante\" and \"morar como imigrante\", keeping the noun and verb of one Hebrew root; Balanced and Readable say \"estrangeiro\", the plain word for an outsider living among Israel (m1). The English Balanced and Readable say \"they\" for this person; Portuguese \"estrangeiro\" with a generic \"ele\" (or none) already covers a man or a woman.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150140041"
+          ],
+          "choice": "\"परदेशी\" (ger) at every level",
+          "alternatives": [
+            "\"अजनबी\" (R)"
+          ],
+          "reason": "The note's term for the outsider who lives among Israel (m1). It is already plain Hindi, so Readable keeps it where the English says \"strangers\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150140041"
+          ],
+          "choice": "\"пришелец\" (L, B); \"чужеземец\" (R)",
+          "alternatives": [
+            "иноземец",
+            "приезжий"
+          ],
+          "reason": "The note gives \"пришелец\" for the ger at Literal and Balanced, the familiar word for an outsider who has settled among Israel (m1), and the plainer \"чужеземец\" at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2603,6 +3080,16 @@
           "L": "ጉባኤውን [በተመለከተ]፣ ለእናንተና [ከእናንተ ጋር] ለሚቀመጠው መጻተኛ አንድ ሥርዓት [ይሁን]፤ በትውልዶቻችሁ ሁሉ የዘላለም ሥርዓት ነው፤ እናንተ እንደ ሆናችሁ መጻተኛውም {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት እንዲሁ ይሆናል።",
           "B": "ለጉባኤው፣ ለእናንተም ሆነ ከእናንተ ጋር ለሚኖረው መጻተኛ፣ አንድ ሥርዓት ይሁን። ይህ በትውልዶቻችሁ ሁሉ የዘላለም ሥርዓት ነው፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት መጻተኛው ልክ እንደ እናንተ ነው።",
           "R": "ማኅበሩ ሁሉ፣ እናንተም ሆናችሁ ከእናንተ ጋር የሚኖሩት እንግዶች፣ አንድ ዓይነት ሕግ መጠበቅ አለባችሁ። ይህ ሕግ ለዘሮቻችሁ ሁሉ ጸንቶ ይኖራል። {{divine_name:በእግዚአብሔር|በያህዌ}} ዓይን እንግዶች ልክ እንደ እናንተ ናቸው።"
+        },
+        "hi": {
+          "L": "सभा, एक ही विधि तुम्हारे लिए और उस परदेशी के लिए [हो] जो [तुम्हारे साथ] रहता है, तुम्हारी पीढ़ी-पीढ़ी के लिए सदा की विधि; जैसे तुम, वैसे ही परदेशी {{divine_name:प्रभु|याहवे}} के सामने हो।",
+          "B": "सभा के लिए, तुम्हारे लिए और तुम्हारे साथ रहनेवाले परदेशी के लिए, एक ही विधि हो। यह तुम्हारी सब पीढ़ियों के लिए सदा की विधि है: {{divine_name:प्रभु|याहवे}} के सामने परदेशी ठीक तुम्हारे समान है।",
+          "R": "पूरी मंडली को एक ही नियम मानना है, तुम्हें भी और तुम्हारे साथ रहनेवाले परदेशियों को भी। यह नियम तुम्हारे सब वंशजों के लिए सदा बना रहेगा। {{divine_name:प्रभु|याहवे}} की दृष्टि में परदेशी ठीक तुम्हारे जैसे हैं।"
+        },
+        "ru": {
+          "L": "[Для] собрания — одно установление для вас и для пришельца, живущего [у вас], установление вечное в роды ваши: как вы, так и пришелец будет пред {{divine_name:ГОСПОДОМ|Яхве}}.",
+          "B": "Для собрания пусть будет одно установление — для вас и для пришельца, который живёт у вас. Это вечное установление во всех ваших поколениях: перед {{divine_name:ГОСПОДОМ|Яхве}} пришелец должен быть таким же, как вы.",
+          "R": "Вся община должна соблюдать один и тот же закон — и вы, и чужеземцы, которые живут с вами. Этот закон будет действовать для всех ваших потомков. В глазах {{divine_name:ГОСПОДА|Яхве}} чужеземцы такие же, как вы."
         }
       },
       "decisions": [
@@ -2708,6 +3195,66 @@
           "reason": "The term sheet's words; Readable says \"공동체\" and \"이어질 법\" in plain words, as the English Readable says \"community\" and \"law\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o040150150012"
+          ],
+          "choice": "\"सभा,\" standing first",
+          "alternatives": [
+            "\"सभा के लिए\""
+          ],
+          "reason": "Literal lets \"the assembly\" stand at the head of the sentence, as the Hebrew does (m1); Hindi needs no bracket for this, where the English adds \"[As for]\". Balanced says \"सभा के लिए\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150150012"
+          ],
+          "choice": "\"собрание\" for the assembly (qahal)",
+          "alternatives": [
+            "община"
+          ],
+          "reason": "The note keeps \"собрание\" for qahal and \"община\" for ʿedah, so a reader can tell the two Hebrew words apart; Readable says \"вся община\", as the English Readable says \"the whole community\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150150071",
+            "o040150150081"
+          ],
+          "choice": "\"вечное установление\"",
+          "alternatives": [
+            "вечный закон"
+          ],
+          "reason": "The note's term for \"a statute forever\", a rule that lasts (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2780,6 +3327,16 @@
           "L": "ለእናንተና ከእናንተ ጋር ለሚቀመጠው መጻተኛ አንድ ሕግና አንድ ፍርድ ይሆናል።”»",
           "B": "ለእናንተና ከእናንተ ጋር ለሚኖረው መጻተኛ አንድ ሕግና አንድ ደንብ ይሁን።”»",
           "R": "ያው ሕግና ያው ደንብ ለእናንተም ከእናንተ ጋር ለሚኖሩት እንግዶችም ነው።”»"
+        },
+        "hi": {
+          "L": "एक ही व्यवस्था और एक ही न्याय तुम्हारे लिए और उस परदेशी के लिए हो जो तुम्हारे साथ रहता है।'\"",
+          "B": "तुम पर और तुम्हारे साथ रहनेवाले परदेशी पर एक ही व्यवस्था और एक ही नियम लागू हो।'\"",
+          "R": "तुम्हारे लिए और तुम्हारे साथ रहनेवाले परदेशियों के लिए एक ही व्यवस्था और एक ही नियम है।'\""
+        },
+        "ru": {
+          "L": "Один закон и одно правило да будут для вас и для пришельца, живущего у вас.”»",
+          "B": "Один закон и одно правило пусть действуют для вас и для пришельца, который живёт у вас.”»",
+          "R": "Один и тот же закон и одни и те же правила — для вас и для чужеземцев, которые живут с вами.”»"
         }
       },
       "decisions": [
@@ -2913,6 +3470,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने मूसा से बात की और कहा,",
+          "B": "{{divine_name:प्रभु|याहवे}} ने मूसा से बात की। उन्होंने कहा,",
+          "R": "{{divine_name:प्रभु|याहवे}} ने मूसा से कहा,"
+        },
+        "ru": {
+          "L": "И говорил {{divine_name:ГОСПОДЬ|Яхве}} Моисею, говоря:",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} обратился к Моисею. Он сказал:",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею:"
         }
       },
       "decisions": [
@@ -3007,6 +3574,16 @@
           "L": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ወደማገባችሁ ምድር በገባችሁ ጊዜ፣",
           "B": "«ለእስራኤል ልጆች ተናገር፤ እንዲህም በላቸው፦ “ወደማመጣችሁ ምድር በገባችሁ ጊዜ፣",
           "R": "«ለእስራኤላውያን እንዲህ በላቸው፦ “ወደ አንዲት ምድር አገባችኋለሁ።"
+        },
+        "hi": {
+          "L": "\"{{gender:इस्राएल की सन्तान|इस्राएल के पुत्रों}} से बात करो और उनसे कहो, 'जब तुम उस देश में आओ जहाँ मैं तुम्हें ले जा रहा हूँ,",
+          "B": "\"इस्राएलियों से बात करो और उनसे कहो: 'जब तुम उस देश में पहुँचो जहाँ मैं तुम्हें ले जा रहा हूँ,",
+          "R": "\"इस्राएलियों से कहो: 'मैं तुम्हें एक देश में ले जा रहा हूँ।"
+        },
+        "ru": {
+          "L": "«Говори {{gender:детям Израиля|сынам Израиля}} и скажи им: “Когда войдёте в землю, в которую {{deity_pronoun:я|Я}} веду вас,",
+          "B": "«Говори с израильтянами и скажи им: “Когда вы придёте в землю, куда {{deity_pronoun:я|Я}} веду вас,",
+          "R": "«Скажи израильтянам: “Я веду вас в одну землю."
         }
       },
       "decisions": [
@@ -3111,6 +3688,16 @@
           "L": "ከምድሪቱም እንጀራ በበላችሁ ጊዜ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚነሣ መባ ታነሣላችሁ።",
           "B": "የምድሪቱን ምርት በምትበሉበት ጊዜ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ ለዩ።",
           "R": "በዚያች ምድር የሚበቅለውን ምግብ ስትበሉ ከእርሱ ጥቂቱን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ስጦታ አድርጋችሁ መለየት አለባችሁ።"
+        },
+        "hi": {
+          "L": "तो ऐसा होगा, कि जब तुम उस देश की रोटी में से खाओ, तब तुम {{divine_name:प्रभु|याहवे}} के लिए उठाई हुई भेंट उठाना।",
+          "B": "तब जब तुम उस देश की उपज का भोजन खाओ, तो {{divine_name:प्रभु|याहवे}} के लिए उठाई हुई भेंट अलग करना।",
+          "R": "जब तुम उस देश में उगा हुआ भोजन खाओ, तो उसमें से कुछ {{divine_name:प्रभु|याहवे}} के लिए भेंट के रूप में अलग करना।"
+        },
+        "ru": {
+          "L": "то будет: когда будете есть от хлеба земли, возносите возношение {{divine_name:ГОСПОДУ|Яхве}}.",
+          "B": "то, когда будете есть пищу, которую родит земля, отделяйте возношение для {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Когда будете есть пищу, которая растёт в той земле, вы должны отделять часть её в дар {{divine_name:ГОСПОДУ|Яхве}}."
         }
       },
       "decisions": [
@@ -3293,6 +3880,48 @@
           "reason": "\"Contribuição\" is the word Numbers 5:9 uses in Portuguese for a portion taken off and given to the LORD (m1), and Readable says \"oferta especial\" there too. Literal keeps the verb \"levantar\", as the English Literal \"lift up\"; Balanced and Readable say \"separar\". It is not \"a oferta movida\" of Leviticus 7:30, a different word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150190061"
+          ],
+          "choice": "\"उठाई हुई भेंट\" for the contribution (terumah); \"उठाना\" (L), \"अलग करना\" (B) for the verb",
+          "alternatives": [
+            "\"दान\""
+          ],
+          "reason": "The term of Exodus 25 and 35 for a portion set apart for the LORD (m1). Literal keeps the play of noun and verb, \"lift up a lifted offering\"; Balanced says what the lifting means, setting it aside. Readable says simply \"भेंट\", a gift, as the English says \"gift\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150190051",
+            "o040150190061"
+          ],
+          "choice": "\"возношение\" for the contribution (terumah); \"возносить\" (L), \"отделять\" (B)",
+          "alternatives": [
+            "приношение",
+            "дар at every level"
+          ],
+          "reason": "\"Возношение\" is the settled Russian term for terumah, a portion lifted out and set apart for the LORD (m1). Literal keeps the matching verb \"возносить\", as the Hebrew repeats its root; Balanced says what is done, \"отделять\". Readable says \"дар\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3363,6 +3992,16 @@
           "L": "ከመጀመሪያው ሊጣችሁ አንድ እንጎቻ የሚነሣ መባ አድርጋችሁ ታነሣላችሁ፤ እንደ አውድማው የሚነሣ መባ እንዲሁ ታነሡታላችሁ።",
           "B": "ከመጀመሪያው ሊጣችሁ አንድ እንጎቻ መባ አድርጋችሁ ለዩ፤ ከአውድማው መባ እንደምትለዩ አድርጋችሁ ለዩት።",
           "R": "ከመጀመሪያው ሊጣችሁ አንድ ዳቦ ስጦታ አድርጋችሁ ስጡ። ይህን ከአውድማው የእህሉን ክፍል በምትሰጡበት መንገድ አድርጉት።"
+        },
+        "hi": {
+          "L": "अपने गूँधे हुए आटे के पहले भाग में से एक पोई उठाई हुई भेंट के रूप में उठाना; जैसे खलिहान की उठाई हुई भेंट, वैसे ही तुम उसे उठाना।",
+          "B": "अपने गूँधे हुए आटे के पहले भाग में से एक रोटी उठाई हुई भेंट के रूप में अलग करना। उसे वैसे ही अलग करना जैसे तुम खलिहान की उठाई हुई भेंट अलग करते हो।",
+          "R": "अपने गूँधे हुए आटे के पहले भाग से एक रोटी भेंट के रूप में देना। यह वैसे ही करना जैसे तुम खलिहान के अनाज में से एक भाग देते हो।"
+        },
+        "ru": {
+          "L": "[От] начатков теста вашего лепёшку возносите в возношение; как возношение с гумна, так возносите её.",
+          "B": "От первого теста отделяйте одну лепёшку в возношение. Отделяйте её так же, как отделяете возношение с гумна.",
+          "R": "Отдавайте в дар одну лепёшку от первого теста. Делайте это так же, как отдаёте часть зерна с гумна."
         }
       },
       "decisions": [
@@ -3477,6 +4116,47 @@
           "reason": "The Hebrew word is a ring-shaped cake; \"እንጎቻ\" is the round flat bread Amharic knows. The contribution follows the terms settled in Exodus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150200031"
+          ],
+          "choice": "\"पोई\" (L), \"रोटी\" (B, R) for the loaf (challah)",
+          "alternatives": [
+            "\"टिकिया\""
+          ],
+          "reason": "The challah was a round cake of bread (m2). Literal says \"पोई\", a round flat loaf; Balanced and Readable say the everyday \"रोटी\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150200031"
+          ],
+          "choice": "\"лепёшка\" for the loaf",
+          "alternatives": [
+            "хлеб",
+            "каравай"
+          ],
+          "reason": "The Hebrew word is a round flat cake of bread (m2); \"лепёшка\" names that shape, where \"хлеб\" or \"каравай\" would suggest a large loaf.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3545,6 +4225,16 @@
           "L": "ከመጀመሪያው ሊጣችሁ በትውልዶቻችሁ ሁሉ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የሚነሣ መባ ትሰጣላችሁ።",
           "B": "በትውልዶቻችሁ ሁሉ ከመጀመሪያው ሊጣችሁ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መባ ስጡ።",
           "R": "እናንተና ዘሮቻችሁ ከመጀመሪያው ሊጣችሁ ይህን ስጦታ ሁልጊዜ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መስጠት አለባችሁ።"
+        },
+        "hi": {
+          "L": "अपने गूँधे हुए आटे के पहले भाग में से तुम अपनी पीढ़ी-पीढ़ी में {{divine_name:प्रभु|याहवे}} को उठाई हुई भेंट देना।",
+          "B": "अपनी सब पीढ़ियों में तुम अपने गूँधे हुए आटे के पहले भाग में से {{divine_name:प्रभु|याहवे}} को उठाई हुई भेंट देना।",
+          "R": "तुम्हें और तुम्हारे वंशजों को अपने गूँधे हुए आटे के पहले भाग से यह भेंट {{divine_name:प्रभु|याहवे}} को सदा देनी है।"
+        },
+        "ru": {
+          "L": "От начатков теста вашего давайте {{divine_name:ГОСПОДУ|Яхве}} возношение в роды ваши.",
+          "B": "Во всех ваших поколениях давайте {{divine_name:ГОСПОДУ|Яхве}} возношение от первого теста.",
+          "R": "Вы и ваши потомки всегда должны давать {{divine_name:ГОСПОДУ|Яхве}} этот дар от первого теста."
         }
       },
       "decisions": [
@@ -3636,6 +4326,16 @@
           "L": "ብትስቱም፣ {{divine_name:እግዚአብሔር|ያህዌ}} ለሙሴ የተናገራቸውን እነዚህን ትእዛዛት ሁሉ ባታደርጉ፣",
           "B": "ሳታስቡ ብትስቱና {{divine_name:እግዚአብሔር|ያህዌ}} ለሙሴ የተናገራቸውን እነዚህን ትእዛዛት ሁሉ ሳትጠብቁ ብትቀሩ፣",
           "R": "ሳታስቡ ስሕተት ትሠሩ ይሆናል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለሙሴ የሰጣቸውን እነዚህን ትእዛዛት ሁሉ ላትጠብቁ ትችላላችሁ።"
+        },
+        "hi": {
+          "L": "और यदि तुम भूल करो, और इन सब आज्ञाओं को न मानो जो {{divine_name:प्रभु|याहवे}} ने मूसा से कही हैं,",
+          "B": "अब मान लो तुम अनजाने में भटक जाओ और इन सब आज्ञाओं का पालन न करो जो {{divine_name:प्रभु|याहवे}} ने मूसा से कहीं,",
+          "R": "मान लो तुम अनजाने में कोई ग़लती करते हो, और उन सब आज्ञाओं का पालन नहीं करते जो {{divine_name:प्रभु|याहवे}} ने मूसा को दीं।"
+        },
+        "ru": {
+          "L": "И если ошибётесь и не исполните всех этих заповедей, которые говорил {{divine_name:ГОСПОДЬ|Яхве}} Моисею,",
+          "B": "Допустим, вы невольно собьётесь с пути и не исполните всех этих заповедей, которые {{divine_name:ГОСПОДЬ|Яхве}} дал через Моисея,",
+          "R": "Может быть, вы поступите неправильно, не желая того, и не исполните всех этих заповедей, которые {{divine_name:ГОСПОДЬ|Яхве}} дал Моисею."
         }
       },
       "decisions": [
@@ -3870,6 +4570,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በሙሴ እጅ ያዘዛችሁን ሁሉ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ካዘዘበት ቀን ጀምሮ ወደ ፊትም በትውልዶቻችሁ ሁሉ፣",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በሙሴ በኩል ያዘዛችሁን ሁሉ፣ {{divine_name:እግዚአብሔር|ያህዌ}} መጀመሪያ ካዘዘበት ቀን ጀምሮ በትውልዶቻችሁ ሁሉ፣",
           "R": "ይህም {{divine_name:እግዚአብሔር|ያህዌ}} በሙሴ በኩል ያዘዛችሁን ማንኛውንም ነገር፣ {{divine_name:እግዚአብሔር|ያህዌ}} መጀመሪያ ትእዛዝ ከሰጠበት ቀን ጀምሮ በሚመጡት ትውልዶች ሁሉ ማለት ነው።"
+        },
+        "hi": {
+          "L": "वह सब जो {{divine_name:प्रभु|याहवे}} ने मूसा के हाथ से तुम्हें आज्ञा दी, उस दिन से जब {{divine_name:प्रभु|याहवे}} ने आज्ञा दी और आगे तुम्हारी पीढ़ी-पीढ़ी तक,",
+          "B": "वह सब जो {{divine_name:प्रभु|याहवे}} ने मूसा के द्वारा तुम्हें आज्ञा दी है, उस दिन से जब {{divine_name:प्रभु|याहवे}} ने पहली बार आज्ञाएँ दीं और आगे तुम्हारी सब पीढ़ियों तक,",
+          "R": "इसका अर्थ है कोई भी बात जिसकी आज्ञा {{divine_name:प्रभु|याहवे}} ने मूसा के द्वारा तुम्हें दी, उस दिन से जब {{divine_name:प्रभु|याहवे}} ने पहली बार आज्ञाएँ दीं और आगे आनेवाली सब पीढ़ियों तक।"
+        },
+        "ru": {
+          "L": "всего, что повелел вам {{divine_name:ГОСПОДЬ|Яхве}} рукой Моисея, со дня, когда повелел {{divine_name:ГОСПОДЬ|Яхве}}, и далее в роды ваши,",
+          "B": "всего, что {{divine_name:ГОСПОДЬ|Яхве}} повелел вам через Моисея, с того дня, как {{divine_name:ГОСПОДЬ|Яхве}} дал первые повеления, и далее во всех ваших поколениях,",
+          "R": "Это значит — что-то из того, что {{divine_name:ГОСПОДЬ|Яхве}} повелел вам через Моисея, с того дня, когда {{divine_name:ГОСПОДЬ|Яхве}} впервые дал повеления, и для всех поколений после."
         }
       },
       "decisions": [
@@ -4001,6 +4711,16 @@
           "L": "እንዲህ ይሆናል፤ ከማኅበሩ ዓይን ተሰውሮ በስሕተት ተደርጎ ከሆነ፣ ማኅበሩ ሁሉ ከላም መንጋ አንድ ወይፈን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ እንዲሆን የሚቃጠል መሥዋዕት አድርጎ፣ ከእህል ቁርባኑና ከመጠጥ ቁርባኑ ጋር እንደ ደንቡ፣ ከፍየሎችም አንድ አውራ ፍየል የኃጢአት መሥዋዕት አድርጎ ያዘጋጅ።",
           "B": "ማኅበሩ ሳያውቅ በስሕተት ተደርጎ ከሆነ፣ ማኅበሩ ሁሉ አንድ ወይፈን {{divine_name:ለእግዚአብሔር|ለያህዌ}} ደስ የሚያሰኝ መዓዛ የሚቃጠል መሥዋዕት አድርጎ፣ ከታዘዘው የእህል ቁርባኑና የመጠጥ ቁርባኑ ጋር ያዘጋጅ፤ አንድ አውራ ፍየልም የኃጢአት መሥዋዕት አድርጎ ያቅርብ።",
           "R": "ማኅበሩ ሳያውቅ በስሕተት ይህን አድርጎ ከሆነ፣ ሕዝቡ ሁሉ አንድ ወይፈን የሚቃጠል መሥዋዕት አድርጎ ማምጣት አለበት። መዓዛውም {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ ያሰኛል። ሕጉ እንደሚለው ከእርሱ ጋር የሚቀርቡትን የእህል ቁርባንና የመጠጥ ቁርባን፣ አንድ አውራ ፍየልም የኃጢአት መሥዋዕት አድርገው ማምጣት አለባቸው።"
+        },
+        "hi": {
+          "L": "तो ऐसा होगा, कि यदि वह मंडली की आँखों से [छिपकर] भूल से हुआ हो, तो सारी मंडली एक बछड़ा होमबलि के रूप में, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध के रूप में, नियम के अनुसार उसकी अन्नबलि और उसके अर्घ के साथ, और पापबलि के रूप में बकरियों में से एक बकरा तैयार करे।",
+          "B": "यदि यह अनजाने में हुआ हो, और मंडली को इसका पता न रहा हो, तो सारी मंडली एक बछड़ा होमबलि के रूप में चढ़ाए, {{divine_name:प्रभु|याहवे}} के लिए सुखद सुगंध, और ठहराए हुए नियम के अनुसार उसके साथ उसकी अन्नबलि और अर्घ भी, और पापबलि के रूप में एक बकरा भी।",
+          "R": "यदि मंडली ने यह ग़लती से की, बिना जाने, तो सब लोगों को होमबलि के रूप में एक बछड़ा लाना है। उसकी सुगंध {{divine_name:प्रभु|याहवे}} को भाती है। उसके साथ उन्हें वह अन्नबलि और अर्घ भी लाना है जो व्यवस्था में ठहराया गया है, और पापबलि के रूप में एक बकरा भी।"
+        },
+        "ru": {
+          "L": "то будет: если по ошибке, вдали от глаз общины, сделано это, то пусть вся община приготовит одного молодого быка, сына крупного скота, во всесожжение, в приятный запах {{divine_name:ГОСПОДУ|Яхве}}, и хлебное приношение его, и возлияние его по правилу, и одного козла из коз в жертву за грех.",
+          "B": "если это было сделано неумышленно и община не знала об этом, пусть вся община приготовит одного молодого быка во всесожжение, приятный запах для {{divine_name:ГОСПОДА|Яхве}}, вместе с положенным хлебным приношением и возлиянием, и одного козла в жертву за грех.",
+          "R": "Если община сделала это по ошибке, не зная об этом, весь народ должен принести одного молодого быка во всесожжение. Его запах радует {{divine_name:ГОСПОДА|Яхве}}. Ещё они должны принести хлебное приношение и возлияние, которые к нему полагаются, как велит закон, и одного козла в жертву за грех."
         }
       },
       "decisions": [
@@ -4121,6 +4841,70 @@
           "reason": "The term sheet's word for the *ḥattat*, as in the Korean Exodus and Leviticus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150240042"
+          ],
+          "choice": "\"मंडली\" for the congregation (edah)",
+          "alternatives": [
+            "\"समुदाय\" (R)"
+          ],
+          "reason": "The note's term for Israel gathered as a people. It is plain enough for Readable, which keeps it where the English says \"the community\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150240242"
+          ],
+          "choice": "\"жертва за грех\" for the sin offering",
+          "alternatives": [
+            "грехоочистительная жертва"
+          ],
+          "reason": "The term the Pentateuch note fixes for the offering that removes the stain of sin (m3), at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150240062"
+          ],
+          "choice": "\"по ошибке\" (L, R); \"неумышленно\" (B)",
+          "alternatives": [
+            "нечаянно",
+            "по неведению"
+          ],
+          "reason": "The Hebrew speaks of a wrong done by mistake, without intent. Literal keeps the plain \"по ошибке\"; Balanced uses the legal word \"неумышленно\"; Readable repeats \"по ошибке\" with \"не зная об этом\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4212,6 +4996,16 @@
           "L": "ካህኑም ለእስራኤል ልጆች ማኅበር ሁሉ ያስተሰርይላቸዋል፤ ይቅርም ይባልላቸዋል፤ ስሕተት ነበረና፤ መባቸውንም፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕት፣ የኃጢአት መሥዋዕታቸውንም ስለ ስሕተታቸው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት አምጥተዋልና።",
           "B": "ካህኑ ለእስራኤል ልጆች ማኅበር ሁሉ ያስተሰርይላቸዋል፤ ይቅርም ይባላሉ፤ ምክንያቱም ስሕተት ነበረ፤ ስለ ስሕተታቸውም መባቸውን፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በእሳት የሚቀርብ መሥዋዕትና የኃጢአት መሥዋዕታቸውን {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት አምጥተዋል።",
           "R": "ካህኑ ለእስራኤላውያን ማኅበር ሁሉ ኃጢአታቸው እንዲሰረይላቸው ያደርጋል፤ ይቅርም ይባላሉ። ምክንያቱም ሳያስቡ ስሕተት ሠርተዋል፤ ስለ እርሱም መባቸውን {{divine_name:ለእግዚአብሔር|ለያህዌ}} አምጥተዋል፤ ይኸውም በእሳት የሚቀርብ መሥዋዕትና የኃጢአት መሥዋዕት ነው።"
+        },
+        "hi": {
+          "L": "और याजक {{gender:इस्राएल की सन्तान|इस्राएल के पुत्रों}} की सारी मंडली के लिए प्रायश्चित करे, और वह उन्हें क्षमा किया जाएगा, क्योंकि वह भूल थी, और वे अपना चढ़ावा, {{divine_name:प्रभु|याहवे}} के लिए आग में चढ़ाई गई भेंट, और अपनी भूल के लिए अपनी पापबलि {{divine_name:प्रभु|याहवे}} के सामने ले आए हैं।",
+          "B": "याजक इस्राएलियों की सारी मंडली के लिए प्रायश्चित करे, और उन्हें क्षमा मिलेगी, क्योंकि वह भूल थी, और वे अपनी भूल के लिए अपना चढ़ावा, {{divine_name:प्रभु|याहवे}} के लिए आग में चढ़ाई गई भेंट, और अपनी पापबलि {{divine_name:प्रभु|याहवे}} के सामने ले आए हैं।",
+          "R": "याजक इस्राएलियों की पूरी मंडली के लिए प्रायश्चित करेगा, और उन्हें क्षमा मिलेगी। क्योंकि उन्होंने अनजाने में ग़लती की थी, और वे उसके लिए {{divine_name:प्रभु|याहवे}} के पास अपने चढ़ावे ले आए हैं: आग में चढ़ाई गई भेंट और पापबलि।"
+        },
+        "ru": {
+          "L": "И совершит священник умилостивление за всю общину {{gender:детей Израиля|сынов Израиля}}, и прощено будет им, потому что ошибка [это была], и они принесли своё приношение, огненную жертву {{divine_name:ГОСПОДУ|Яхве}}, и свою жертву за грех пред {{divine_name:ГОСПОДОМ|Яхве}} за ошибку свою.",
+          "B": "Священник совершит умилостивление за всю общину израильтян, и им будет прощено, потому что это была ошибка, и они принесли своё приношение, огненную жертву {{divine_name:ГОСПОДУ|Яхве}}, и свою жертву за грех перед {{divine_name:ГОСПОДОМ|Яхве}} за свою ошибку.",
+          "R": "Священник совершит умилостивление за всю общину израильтян, и им будет прощено. Ведь они поступили неправильно, не желая того, и принесли {{divine_name:ГОСПОДУ|Яхве}} за это свои жертвы: огненную жертву и жертву за грех."
         }
       },
       "decisions": [
@@ -4319,6 +5113,28 @@
           "reason": "As the term sheet and the Korean Leviticus 4:20: the people receive forgiveness, leaving God as the one who forgives (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150250012"
+          ],
+          "choice": "\"совершить умилостивление за\"",
+          "alternatives": [
+            "очистить",
+            "искупить"
+          ],
+          "reason": "The note's term for kipper at Literal and Balanced; Readable keeps it, as the English Readable keeps \"make atonement\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4398,6 +5214,16 @@
           "L": "ለእስራኤል ልጆች ማኅበር ሁሉ በመካከላቸውም ለሚቀመጠው መጻተኛ ይቅር ይባልላቸዋል፤ ለሕዝቡ ሁሉ በስሕተት [ሆኗልና]።",
           "B": "የእስራኤል ልጆች ማኅበር ሁሉ፣ በመካከላቸው የሚኖረው መጻተኛም ይቅር ይባላሉ፤ ሕዝቡ ሁሉ በስሕተቱ ተካፍሏልና።",
           "R": "የእስራኤላውያን ማኅበር ሁሉ ይቅር ይባላሉ፤ በመካከላቸው የሚኖሩት እንግዶችም እንዲሁ። ሕዝቡ ሁሉ ሳያስብ ስሕተት ሠርቷልና።"
+        },
+        "hi": {
+          "L": "और {{gender:इस्राएल की सन्तान|इस्राएल के पुत्रों}} की सारी मंडली को और उस परदेशी को जो उनके बीच रहता है, क्षमा किया जाएगा, क्योंकि सब लोगों से [वह] भूल से [हुआ]।",
+          "B": "इस्राएलियों की सारी मंडली को क्षमा मिलेगी, और उनके बीच रहनेवाले परदेशी को भी, क्योंकि सारे लोग उस भूल में शामिल थे।",
+          "R": "इस्राएलियों की पूरी मंडली को क्षमा मिलेगी, और उनके बीच रहनेवाले परदेशियों को भी। सारी जाति ने अनजाने में ग़लती की थी।"
+        },
+        "ru": {
+          "L": "И прощено будет всей общине {{gender:детей Израиля|сынов Израиля}} и пришельцу, живущему среди них, потому что со всем народом [это случилось] по ошибке.",
+          "B": "Вся община израильтян будет прощена, и пришелец, который живёт среди них, тоже, потому что весь народ оказался вовлечён в эту ошибку.",
+          "R": "Вся община израильтян будет прощена, и чужеземцы, которые живут среди них, тоже. Весь народ поступил неправильно, не желая того."
         }
       },
       "decisions": [
@@ -4503,6 +5329,16 @@
           "L": "አንድ ሰውም በስሕተት ኃጢአት ቢሠራ፣ [ያ ሰው] የዓመት ልጅ የሆነች እንስት ፍየል የኃጢአት መሥዋዕት አድርጎ ያቅርብ።",
           "B": "አንድ ሰው ሳያስብ ኃጢአት ቢሠራ፣ አንድ ዓመት የሆናትን እንስት ፍየል የኃጢአት መሥዋዕት አድርጎ ያምጣ።",
           "R": "አንድ ሰው ብቻ ሳያስብ ኃጢአት ቢሠራ፣ ያ ሰው አንድ ዓመት የሆናትን እንስት ፍየል የኃጢአት መሥዋዕት አድርጎ ማምጣት አለበት።"
+        },
+        "hi": {
+          "L": "और यदि एक प्राणी भूल से पाप करे, तो [वह] पापबलि के लिए एक वर्ष की बकरी निकट लाए।",
+          "B": "यदि कोई एक व्यक्ति अनजाने में पाप करे, तो वह पापबलि के लिए एक वर्ष की बकरी लाए।",
+          "R": "यदि केवल एक व्यक्ति अनजाने में पाप करे, तो उसे पापबलि के रूप में एक वर्ष की बकरी लानी है।"
+        },
+        "ru": {
+          "L": "А если одна душа согрешит по ошибке, то пусть принесёт козу, дочь года своего, в жертву за грех.",
+          "B": "Если согрешит неумышленно один человек, пусть он принесёт годовалую козу в жертву за грех.",
+          "R": "Если только один человек согрешит, не желая того, он должен принести в жертву за грех козу, которой один год."
         }
       },
       "decisions": [
@@ -4570,6 +5406,45 @@
             "\"그 해의 딸\""
           ],
           "reason": "The idiom means a year old (meaning decision); a word-for-word Korean phrase would not be understood, so Literal too gives the age.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150270021"
+          ],
+          "choice": "\"प्राणी\" for nefesh (L); \"व्यक्ति\" (B, R)",
+          "alternatives": [
+            "\"जीव\""
+          ],
+          "reason": "Literal keeps a word close to the Hebrew \"soul, living being\" used for a single person; Balanced and Readable say \"व्यक्ति\" (person), as the English says \"person\". \"एक वर्ष की\" renders \"a daughter of its year\" (m2) at every level, since the Hebrew idiom does not carry into Hindi.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150270021",
+            "o040150270031"
+          ],
+          "choice": "\"одна душа\" (L); \"один человек\" (B, R)",
+          "alternatives": [
+            "один человек at every level"
+          ],
+          "reason": "Literal keeps the Hebrew word nefesh as \"душа\", the older Russian way of counting persons; the other levels say \"человек\", which means anyone, man or woman.",
           "uncertain": false,
           "footnote": false
         }
@@ -4653,6 +5528,16 @@
           "L": "ካህኑም በስሕተት ኃጢአት ሠርቶ ለሳተው ሰው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያስተሰርያል፤ ያስተሰርይለታል፤ ይቅርም ይባልለታል።",
           "B": "ካህኑ ሳያስብ ስቶ ኃጢአት ለሠራው ሰው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ያስተሰርይለታል፤ ማስተስረያው ሲደረግም ያ ሰው ይቅር ይባላል።",
           "R": "ካህኑ {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት ለዚያ ሰው ኃጢአቱ እንዲሰረይለት ያደርጋል፤ ያም ሰው ይቅር ይባላል።"
+        },
+        "hi": {
+          "L": "और याजक {{divine_name:प्रभु|याहवे}} के सामने उस प्राणी के लिए प्रायश्चित करे जिसने भूल से पाप करके भूल की, कि उसके लिए प्रायश्चित करे, और उसे क्षमा किया जाएगा।",
+          "B": "याजक उस व्यक्ति के लिए, जो भटक गया और अनजाने में पाप कर बैठा, {{divine_name:प्रभु|याहवे}} के सामने प्रायश्चित करे। जब उसके लिए प्रायश्चित हो जाएगा, तो उसे क्षमा मिलेगी।",
+          "R": "याजक {{divine_name:प्रभु|याहवे}} के सामने उस व्यक्ति के लिए प्रायश्चित करेगा, और उसे क्षमा मिलेगी।"
+        },
+        "ru": {
+          "L": "И совершит священник умилостивление за душу ошибившуюся, согрешившую по ошибке, пред {{divine_name:ГОСПОДОМ|Яхве}}, чтобы совершить умилостивление за неё, и прощено будет ей.",
+          "B": "Священник совершит перед {{divine_name:ГОСПОДОМ|Яхве}} умилостивление за того, кто сбился с пути и согрешил неумышленно. Когда умилостивление будет совершено, этот человек будет прощён.",
+          "R": "Священник совершит за этого человека умилостивление перед {{divine_name:ГОСПОДОМ|Яхве}}, и человек будет прощён."
         }
       },
       "decisions": [
@@ -4906,6 +5791,16 @@
           "L": "ከእስራኤል ልጆች መካከል ለአገሩ ተወላጅና በመካከላቸው ለሚቀመጠው መጻተኛ፣ በስሕተት ለሚያደርግ ሰው አንድ ሕግ ይሁንላችሁ።",
           "B": "በእስራኤል ልጆች መካከል የአገሩ ተወላጅ ቢሆን ወይም በመካከላቸው የሚኖር መጻተኛ፣ ሳያስብ ስሕተት ለሚሠራ ሰው ሁሉ አንድ ሕግ ይኑራችሁ።",
           "R": "ይህ ያው ሕግ ሳያስብ ስሕተት ለሚሠራ ሁሉ ነው፤ በእስራኤላውያን መካከል ለተወለዱትም በመካከላቸው ለሚኖሩት እንግዶችም።"
+        },
+        "hi": {
+          "L": "{{gender:इस्राएल की सन्तान|इस्राएल के पुत्रों}} में के देशी के लिए और उनके बीच रहनेवाले परदेशी के लिए: तुम्हारे लिए एक ही व्यवस्था हो, उसके लिए जो भूल से कुछ करे।",
+          "B": "चाहे कोई इस्राएलियों में जन्मा हो या उनके बीच रहनेवाला परदेशी हो, जो कोई अनजाने में ग़लत काम करे, उसके लिए तुम्हारी एक ही व्यवस्था हो।",
+          "R": "यही व्यवस्था हर उस व्यक्ति के लिए है जो अनजाने में ग़लत काम करे, चाहे वह इस्राएलियों में जन्मा हो या उनके बीच रहनेवाला परदेशी।"
+        },
+        "ru": {
+          "L": "Коренному жителю среди {{gender:детей Израиля|сынов Израиля}} и пришельцу, живущему среди них, — один закон да будет у вас для делающего по ошибке.",
+          "B": "Будь то коренной житель среди израильтян или пришелец, который живёт среди них, у вас должен быть один закон для всякого, кто поступит неправильно неумышленно.",
+          "R": "Этот же закон — для каждого, кто поступил неправильно, не желая того: и для тех, кто родился среди израильтян, и для чужеземцев, которые живут среди них."
         }
       },
       "decisions": [
@@ -5010,6 +5905,16 @@
           "L": "ነገር ግን ከአገሩ ተወላጅም ሆነ ከመጻተኛው እጁን ከፍ አድርጎ የሚያደርግ ሰው {{divine_name:እግዚአብሔርን|ያህዌን}} ይሰድባል፤ ያ ሰው ከሕዝቡ መካከል ተቆርጦ ይጥፋ።",
           "B": "ነገር ግን የአገሩ ተወላጅም ሆነ መጻተኛ ሆን ብሎ በድፍረት ኃጢአት የሚሠራ ሰው {{divine_name:እግዚአብሔርን|ያህዌን}} ይሰድባል፤ ያ ሰው ከሕዝቡ መካከል ተቆርጦ ይጥፋ።",
           "R": "ነገር ግን አንድ ሰው ሆን ብሎ በግልጽ በማመፅ ኃጢአት ይሠራ ይሆናል። በእስራኤል የተወለደም ሆነ እንግዳ፣ ያ ሰው {{divine_name:እግዚአብሔርን|ያህዌን}} ይሰድባል። ያ ሰው ከሕዝቡ መካከል መወገድ አለበት።"
+        },
+        "hi": {
+          "L": "पर जो प्राणी ऊँचे हाथ से कुछ करे, चाहे देशी हो या परदेशी, वह {{divine_name:प्रभु|याहवे}} की निन्दा करता है; और वह प्राणी अपने लोगों के बीच में से काट डाला जाए।",
+          "B": "पर जो कोई जान-बूझकर ढिठाई से पाप करे, चाहे वह इस्राएल में जन्मा हो या परदेशी, वह {{divine_name:प्रभु|याहवे}} का अपमान करता है, और उस व्यक्ति को लोगों के बीच में से काट डाला जाए।",
+          "R": "पर हो सकता है कोई जान-बूझकर, खुलेआम ढिठाई से पाप करे। चाहे वह इस्राएल में जन्मा हो या परदेशी हो, वह {{divine_name:प्रभु|याहवे}} का अपमान कर रहा है। उस व्यक्ति को लोगों में से निकाल दिया जाए।"
+        },
+        "ru": {
+          "L": "А душа, которая поступит дерзкой рукой, из коренных ли жителей или из пришельцев, — она хулит {{divine_name:ГОСПОДА|Яхве}}; и будет истреблена душа та из среды народа своего.",
+          "B": "Но всякий, кто согрешит дерзко, будь он коренной житель или пришелец, оскорбляет {{divine_name:ГОСПОДА|Яхве}}, и этот человек должен быть истреблён из народа.",
+          "R": "Но кто-то может согрешить нарочно, открыто бросая вызов. Родился ли он в Израиле или он чужеземец, он оскорбляет {{divine_name:ГОСПОДА|Яхве}}. Такой человек должен быть отлучён от народа."
         }
       },
       "decisions": [
@@ -5258,6 +6163,93 @@
           "reason": "Literal keeps the Hebrew picture of the raised hand; cut off follows the Amharic Leviticus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150300051"
+          ],
+          "choice": "\"जान-बूझकर ढिठाई से\" for \"with a high hand\" (B, R)",
+          "alternatives": [
+            "\"ऊँचे हाथ से\" at every level"
+          ],
+          "reason": "Literal keeps the Hebrew picture \"ऊँचे हाथ से\". Balanced and Readable say what it means, openly and on purpose, in defiance (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150300142"
+          ],
+          "choice": "\"काट डाला जाए\" (L, B); \"लोगों में से निकाल दिया जाए\" (R) for \"be cut off\"",
+          "alternatives": [
+            "\"नाश किया जाए\"",
+            "\"मार डाला जाए\""
+          ],
+          "reason": "As in 9:13 and Leviticus: Literal and Balanced keep the picture of being cut off from the people (m3); Readable says \"removed from the people\". \"नाश किया जाए\" or \"मार डाला जाए\" would decide how the person is removed, which the text leaves open. The same in verse 31 and in 19:13, 20.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150300042",
+            "o040150300051"
+          ],
+          "choice": "\"дерзкой рукой\" (L); \"дерзко\" (B); \"нарочно, открыто бросая вызов\" (R)",
+          "alternatives": [
+            "с поднятой рукой",
+            "умышленно"
+          ],
+          "reason": "Literal keeps the Hebrew picture of the raised hand; Balanced and Readable say what it means, a sin done on purpose and in defiance (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150300142"
+          ],
+          "choice": "\"истреблена будет ... из среды народа своего\" (L); \"должен быть истреблён из народа\" (B); \"должен быть отлучён от народа\" (R) for being cut off (karat)",
+          "alternatives": [
+            "отсечь",
+            "исключить из народа"
+          ],
+          "reason": "As in Leviticus, for the whole of Numbers: Literal and Balanced keep the traditional \"истребить\" for the Hebrew \"cut off\"; Readable says \"отлучить от народа\", which says the person is removed from the people (m3) without deciding how. \"Отсечь\" keeps the picture of cutting but is not the established term.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5334,6 +6326,16 @@
           "L": "{{divine_name:የእግዚአብሔርን|የያህዌን}} ቃል ንቋልና፤ ትእዛዙንም ሽሯልና፤ ያ ሰው ፈጽሞ ተቆርጦ ይጥፋ፤ በደሉ በላዩ ነው።”»",
           "B": "ያ ሰው {{divine_name:እግዚአብሔር|ያህዌ}} የተናገረውን ንቋል፤ ትእዛዙንም ጥሷል፤ ስለዚህ ፈጽሞ ተቆርጦ ይጥፋ። በደሉ በራሱ ላይ ነው።”»",
           "R": "ያ ሰው {{divine_name:እግዚአብሔር|ያህዌ}} የተናገረውን እንደ ከንቱ ቆጥሯል፤ ትእዛዙንም ጥሷል። ስለዚህ ያ ሰው ያለ ምንም ጥርጥር መወገድ አለበት። ለኃጢአቱ ተጠያቂው ራሱ ነው።”»"
+        },
+        "hi": {
+          "L": "क्योंकि उसने {{divine_name:प्रभु|याहवे}} के वचन को तुच्छ जाना, और उनकी आज्ञा को तोड़ दिया है; वह प्राणी निश्चय काट डाला जाए; उसका अधर्म उसी पर [है]।'\"",
+          "B": "उस व्यक्ति ने {{divine_name:प्रभु|याहवे}} की बात को तुच्छ जाना और उनकी आज्ञा तोड़ी है, इसलिए उसे पूरी रीति से काट डाला जाए। उसका दोष उसी पर रहेगा।'\"",
+          "R": "उस व्यक्ति ने {{divine_name:प्रभु|याहवे}} की बात को व्यर्थ समझा और उनकी आज्ञा तोड़ी है। इसलिए उसे निश्चय ही लोगों में से निकाल दिया जाए। अपने पाप का ज़िम्मेदार वह स्वयं है।'\""
+        },
+        "ru": {
+          "L": "Ибо слово {{divine_name:ГОСПОДА|Яхве}} она презрела и заповедь {{deity_pronoun:его|Его}} нарушила; истреблена, истреблена будет душа та, беззаконие её — на ней.”»",
+          "B": "Этот человек пренебрёг словом {{divine_name:ГОСПОДА|Яхве}} и нарушил {{deity_pronoun:его|Его}} заповедь, поэтому он должен быть полностью истреблён из народа. Вина его лежит на нём.”»",
+          "R": "Этот человек посчитал слово {{divine_name:ГОСПОДА|Яхве}} ничего не стоящим и нарушил {{deity_pronoun:его|Его}} заповедь. Поэтому он непременно должен быть отлучён от народа. Он сам отвечает за свой грех.”»"
         }
       },
       "decisions": [
@@ -5416,6 +6418,67 @@
           "reason": "The pronouns refer to \"that person\", who may be a man or a woman, so they use the gender setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040150310061"
+          ],
+          "choice": "no deity_pronoun span; honorific \"उनकी\" for God",
+          "alternatives": [
+            "deity_pronoun spans"
+          ],
+          "reason": "Devanagari has no capital letters, so the English deity_pronoun setting has nothing to change in Hindi, and the Hindi text has no deity_pronoun spans. Respect for God comes from the honorific third person (\"उनकी आज्ञा\") at every level. The same through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150310121"
+          ],
+          "choice": "\"अधर्म\" (L), \"दोष\" (B) for avon",
+          "alternatives": [
+            "\"पाप\""
+          ],
+          "reason": "The note's terms: Literal \"अधर्म\", Balanced \"दोष\", here the guilt that rests on the person (m3). Readable says \"अपने पाप का ज़िम्मेदार\", as the English says \"responsible for their own sin\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o040150310081",
+            "o040150310091"
+          ],
+          "choice": "\"истреблена, истреблена будет\" (L)",
+          "alternatives": [
+            "непременно будет истреблена"
+          ],
+          "reason": "Literal repeats the verb as the Hebrew doubles it for emphasis (m2); Balanced says \"полностью\", Readable \"непременно\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5488,6 +6551,16 @@
           "L": "የእስራኤልም ልጆች በምድረ በዳ ሳሉ በሰንበት ቀን እንጨት የሚለቅም ሰው አገኙ።",
           "B": "አንድ ጊዜ የእስራኤል ልጆች በምድረ በዳ ሳሉ ከእነርሱ አንዳንዶቹ በሰንበት ቀን እንጨት የሚሰበስብ ሰው አገኙ።",
           "R": "አንድ ጊዜ እስራኤላውያን በምድረ በዳ ሳሉ ከእነርሱ አንዳንዶቹ አንድ ሰው በሰንበት ቀን እንጨት ሲለቅም አዩ።"
+        },
+        "hi": {
+          "L": "और {{gender:इस्राएल की सन्तान|इस्राएल के पुत्र}} निर्जन प्रदेश में थे, और उन्होंने सब्त के दिन एक मनुष्य को लकड़ियाँ बीनते हुए पाया।",
+          "B": "एक बार, जब इस्राएली निर्जन प्रदेश में थे, उनमें से कुछ ने एक आदमी को सब्त के दिन लकड़ियाँ इकट्ठी करते देखा।",
+          "R": "एक बार, जब इस्राएली निर्जन प्रदेश में थे, उनमें से कुछ लोगों ने एक आदमी को सब्त के दिन लकड़ियाँ बीनते देखा।"
+        },
+        "ru": {
+          "L": "И были {{gender:дети Израиля|сыны Израиля}} в пустыне, и нашли человека, собиравшего дрова в день субботний.",
+          "B": "Однажды, когда израильтяне были в пустыне, некоторые из них застали человека, который собирал дрова в субботний день.",
+          "R": "Однажды, когда израильтяне были в пустыне, некоторые из них увидели человека, который собирал хворост в субботу."
         }
       },
       "decisions": [
@@ -5554,6 +6627,27 @@
           "choice": "\"ngày Sa-bát\"; \"lượm củi\" / \"nhặt củi\"",
           "alternatives": [],
           "reason": "The term sheet's word for the Sabbath; collecting sticks or bits of wood (meaning decision) is \"lượm củi\" or \"nhặt củi\" in everyday Vietnamese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150320042"
+          ],
+          "choice": "\"निर्जन प्रदेश\" for the wilderness at every level",
+          "alternatives": [
+            "\"रेगिस्तान\" (R)"
+          ],
+          "reason": "The note's term, as Matthew 3:1. Readable keeps it where the English says \"desert\", since it is the same place and the same word in the Hebrew.",
           "uncertain": false,
           "footnote": false
         }
@@ -5633,6 +6727,16 @@
           "L": "እንጨት ሲለቅም ያገኙትም ወደ ሙሴና ወደ አሮን ወደ ማኅበሩም ሁሉ አመጡት።",
           "B": "እንጨት ሲሰበስብ የያዙት ሰዎች ወደ ሙሴና ወደ አሮን ወደ ማኅበሩም ሁሉ አመጡት።",
           "R": "ያገኙት ሰዎች ወደ ሙሴ፣ ወደ አሮንና ወደ ማኅበሩ ሁሉ ወሰዱት።"
+        },
+        "hi": {
+          "L": "और जिन्होंने उसे लकड़ियाँ बीनते हुए पाया था, वे उसे मूसा और हारून और सारी मंडली के पास ले आए।",
+          "B": "जिन्होंने उसे लकड़ियाँ इकट्ठी करते पकड़ा था, वे उसे मूसा, हारून और सारी मंडली के पास ले आए।",
+          "R": "जिन लोगों ने उसे देखा था, वे उसे मूसा, हारून और पूरी मंडली के पास ले गए।"
+        },
+        "ru": {
+          "L": "И привели его нашедшие его собирающим дрова к Моисею и к Аарону и ко всей общине.",
+          "B": "Те, кто застал его за сбором дров, привели его к Моисею, Аарону и всей общине.",
+          "R": "Люди, которые его нашли, привели его к Моисею, Аарону и всей общине."
         }
       },
       "decisions": [
@@ -5722,6 +6826,16 @@
           "L": "በእርሱ ላይ ምን መደረግ እንዳለበት ገና አልተገለጠም ነበርና በጥበቃ ውስጥ አኖሩት።",
           "B": "በእርሱ ላይ ምን መደረግ እንዳለበት ገና ግልጽ ስላልነበረ በጥበቃ ሥር አቆዩት።",
           "R": "በእርሱ ላይ ምን መደረግ እንዳለበት ገና ስላላወቁ በጥበቃ ሥር አቆዩት።"
+        },
+        "hi": {
+          "L": "और उन्होंने उसे पहरे में रखा, क्योंकि यह प्रगट नहीं किया गया था कि उसके साथ क्या किया जाए।",
+          "B": "उन्होंने उसे पहरे में रखा, क्योंकि अभी स्पष्ट नहीं हुआ था कि उसके साथ क्या किया जाए।",
+          "R": "उन्होंने उसे पहरे में रखा, क्योंकि उन्हें अभी पता नहीं था कि उसके साथ क्या किया जाए।"
+        },
+        "ru": {
+          "L": "И посадили его под стражу, потому что не было объявлено, что надо сделать с ним.",
+          "B": "Его держали под стражей, потому что ещё не было ясно, что с ним делать.",
+          "R": "Его держали под охраной, потому что ещё не знали, что с ним нужно сделать."
         }
       },
       "decisions": [
@@ -5832,6 +6946,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ አለው፦ «ሰውዬው ፈጽሞ ይገደል፤ ማኅበሩ ሁሉ ከሰፈሩ ውጭ በድንጋይ ይውገሩት።»",
           "B": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ሰውዬው ይገደል። ማኅበሩ ሁሉ ከሰፈሩ ውጭ በድንጋይ ይውገሩት።»",
           "R": "ከዚያም {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦ «ሰውዬው መገደል አለበት። ሕዝቡ ሁሉ ከሰፈሩ ውጭ አውጥተው እስኪሞት ድረስ በድንጋይ ይውገሩት።»"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने मूसा से कहा, \"वह मनुष्य निश्चय मार डाला जाए; सारी मंडली छावनी के बाहर उसे पत्थरों से पत्थरवाह करे।\"",
+          "B": "तब {{divine_name:प्रभु|याहवे}} ने मूसा से कहा, \"उस आदमी को मार डाला जाए। सारी मंडली छावनी के बाहर उसे पत्थरवाह करे।\"",
+          "R": "तब {{divine_name:प्रभु|याहवे}} ने मूसा से कहा, \"उस आदमी को मार डाला जाए। सब लोग उसे छावनी के बाहर ले जाएँ और उस पर तब तक पत्थर मारें जब तक वह मर न जाए।\""
+        },
+        "ru": {
+          "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Смертью умрёт человек этот; пусть побьёт его камнями вся община вне стана.»",
+          "B": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Этот человек должен быть предан смерти. Пусть вся община побьёт его камнями за станом.»",
+          "R": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Этот человек должен умереть. Пусть весь народ выведет его за лагерь и бросает в него камни, пока он не умрёт.»"
         }
       },
       "decisions": [
@@ -5882,6 +7006,27 @@
           "choice": "throw stones at him until he dies",
           "alternatives": [],
           "reason": "Readable explains \"stone\" and says that the stoning is the death sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150350142"
+          ],
+          "choice": "\"стан\" (L, B); \"лагерь\" (R)",
+          "alternatives": [
+            "лагерь at every level"
+          ],
+          "reason": "Settled for the Russian Pentateuch: \"стан\", the traditional word for Israel's camp in the wilderness, at Literal and Balanced; the everyday \"лагерь\" at Readable.",
           "uncertain": false,
           "footnote": false
         }
@@ -5967,6 +7112,16 @@
           "L": "ማኅበሩም ሁሉ ከሰፈሩ ውጭ አወጡት፤ በድንጋይም ወገሩት፤ ሞተም፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዳዘዘው።",
           "B": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዳዘዘው ማኅበሩ ሁሉ ከሰፈሩ ውጭ አውጥተው በድንጋይ ወግረው ገደሉት።",
           "R": "ስለዚህ ሕዝቡ ሁሉ ከሰፈሩ ውጭ አውጥተው እስኪሞት ድረስ በድንጋይ ወገሩት። {{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዳዘዘው አደረጉ።"
+        },
+        "hi": {
+          "L": "और सारी मंडली उसे छावनी के बाहर ले गई, और उन्होंने उसे पत्थरों से पत्थरवाह किया, और वह मर गया, जैसे {{divine_name:प्रभु|याहवे}} ने मूसा को आज्ञा दी थी।",
+          "B": "तब सारी मंडली ने उसे छावनी के बाहर ले जाकर पत्थरवाह किया और वह मर गया, जैसे {{divine_name:प्रभु|याहवे}} ने मूसा को आज्ञा दी थी।",
+          "R": "तब सब लोग उसे छावनी के बाहर ले गए और उस पर तब तक पत्थर मारे जब तक वह मर न गया। उन्होंने ठीक वही किया जिसकी आज्ञा {{divine_name:प्रभु|याहवे}} ने मूसा को दी थी।"
+        },
+        "ru": {
+          "L": "И вывела его вся община за стан, и побили его камнями, и он умер, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
+          "B": "И вся община вывела его за стан и побила камнями до смерти, как {{divine_name:ГОСПОДЬ|Яхве}} повелел Моисею.",
+          "R": "Тогда весь народ вывел его за лагерь и бросал в него камни, пока он не умер. Они сделали так, как {{divine_name:ГОСПОДЬ|Яхве}} повелел Моисею."
         }
       },
       "decisions": [
@@ -6068,6 +7223,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን እንዲህ ብሎ ተናገረው፦",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሙሴን እንዲህ አለው፦"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने मूसा से कहा,",
+          "B": "{{divine_name:प्रभु|याहवे}} ने मूसा से कहा,",
+          "R": "{{divine_name:प्रभु|याहवे}} ने मूसा से कहा,"
+        },
+        "ru": {
+          "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею, говоря:",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею:",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею:"
         }
       },
       "decisions": [
@@ -6169,6 +7334,16 @@
           "L": "«ለእስራኤል ልጆች ተናገር፤ በትውልዶቻቸውም ሁሉ በልብሶቻቸው ማዕዘኖች ላይ ለራሳቸው ዘርፍ እንዲያደርጉ፣ በእያንዳንዱም ማዕዘን ዘርፍ ላይ ሰማያዊ ፈትል እንዲያኖሩ ንገራቸው።",
           "B": "«ለእስራኤል ልጆች ተናገር። በየትውልዳቸው በልብሶቻቸው ማዕዘኖች ላይ ዘርፍ እንዲያደርጉ፣ በእያንዳንዱም ማዕዘን ዘርፍ ላይ ሰማያዊ ፈትል እንዲያስሩ ንገራቸው።",
           "R": "«በልብሶቻቸው ማዕዘኖች ላይ ለዘመናት ሁሉ ዘርፍ ማድረግ እንዳለባቸው ለእስራኤላውያን ንገራቸው። በእያንዳንዱም ማዕዘን ባለው ዘርፍ ላይ ሰማያዊ ፈትል ማሰር አለባቸው።"
+        },
+        "hi": {
+          "L": "\"{{gender:इस्राएल की सन्तान|इस्राएल के पुत्रों}} से बात करो और उनसे कहो कि वे अपनी पीढ़ी-पीढ़ी में अपने वस्त्रों के कोनों पर झब्बे बनाएँ, और हर कोने के झब्बे पर नीले रंग की एक डोरी लगाएँ।",
+          "B": "\"इस्राएलियों से बात करो। उनसे कहो कि वे हर पीढ़ी में अपने कपड़ों के कोनों पर झब्बे बनाएँ, और हर कोने के झब्बे में नीली डोरी बाँधें।",
+          "R": "\"इस्राएलियों से कहो कि आनेवाले सारे समय में उन्हें अपने कपड़ों के कोनों पर झब्बे बनाने हैं। हर कोने के झब्बे पर उन्हें एक नीली डोरी बाँधनी है।"
+        },
+        "ru": {
+          "L": "«Говори {{gender:детям Израиля|сынам Израиля}} и скажи им, чтобы делали себе кисти на углах одежд своих в роды свои и чтобы прикрепляли к кисти на углу шнур синий.",
+          "B": "«Говори с израильтянами. Скажи им, чтобы во всех поколениях они делали кисти на углах своей одежды и прикрепляли к кисти на каждом углу синий шнур.",
+          "R": "«Скажи израильтянам, что на все времена они должны делать кисти на углах своей одежды. К кисти на каждом углу они должны привязывать синий шнур."
         }
       },
       "decisions": [
@@ -6394,6 +7569,51 @@
           "reason": "The tassels hang from the corners of the outer cloak; \"ሰማያዊ\" and \"ፈትል\" are the words Exodus used for the blue yarn of the tabernacle.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150380091"
+          ],
+          "choice": "\"झब्बा\" for the tassel (tsitsit)",
+          "alternatives": [
+            "\"झालर\""
+          ],
+          "reason": "\"झब्बा\" is a bunch of threads hanging down, which is what the tassel was (m1); \"झालर\" would be a fringe along the whole edge.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150380091",
+            "o040150380191"
+          ],
+          "choice": "\"кисти\" for the tassels; \"синий шнур\" for the cord of blue",
+          "alternatives": [
+            "бахрома",
+            "голубой шнур",
+            "шнур из пурпурной шерсти"
+          ],
+          "reason": "\"Кисти\" names the twisted threads hanging from the garment (m1); the dye was a costly blue or violet (m3), and \"синий\" is the plain Russian colour word, where \"голубой\" would suggest a pale sky-blue.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6486,6 +7706,16 @@
           "L": "“ዘርፍ ይሆንላችኋል፤ ታዩታላችሁ፤ {{divine_name:የእግዚአብሔርን|የያህዌን}} ትእዛዛት ሁሉ ታስባላችሁ፤ ታደርጓቸዋላችሁም፤ ተከትላችኋቸው ዝሙት የምትፈጽሙባቸውን ልባችሁንና ዓይናችሁን ተከትላችሁ አትዞሩም፤",
           "B": "“ይህን ዘርፍ ባያችሁ ቁጥር {{divine_name:የእግዚአብሔርን|የያህዌን}} ትእዛዛት ሁሉ ታስታውሳላችሁ፤ ይህም ትእዛዛቱን እንድትፈጽሙ፣ ታማኝነትን አጥታችሁ የገዛ ልባችሁንና የገዛ ዓይናችሁን ተከትላችሁ እንዳትቅበዘበዙ ነው፤",
           "R": "“ዘርፉን ስትመለከቱ {{divine_name:የእግዚአብሔርን|የያህዌን}} ትእዛዛት ሁሉ ታስታውሳላችሁ፤ ትታዘዟቸዋላችሁም። ልባችሁ የሚመኘውንና ዓይናችሁ የሚያየውን ሁሉ ዝም ብላችሁ አትከተሉም። እነርሱን መከተል በትዳር ውስጥ ታማኝ አለመሆን ነው።"
+        },
+        "hi": {
+          "L": "'और वह तुम्हारे लिए झब्बा होगा, और तुम उसे देखो और {{divine_name:प्रभु|याहवे}} की सब आज्ञाओं को स्मरण करो और उन्हें मानो, और अपने मन के और अपनी आँखों के पीछे न भटको, जिनके पीछे तुम व्यभिचार करते हो,",
+          "B": "'जब भी तुम यह झब्बा देखोगे, तो तुम्हें {{divine_name:प्रभु|याहवे}} की सब आज्ञाएँ याद आएँगी, ताकि तुम उनका पालन करो और अपने ही मन और अपनी ही आँखों के पीछे भटककर विश्वासघात न करो,",
+          "R": "'जब तुम झब्बे को देखोगे, तो तुम्हें {{divine_name:प्रभु|याहवे}} की सब आज्ञाएँ याद आएँगी और तुम उनका पालन करोगे। तुम वह सब नहीं करोगे जो तुम्हारा मन चाहे और तुम्हारी आँखें देखें। ऐसा करना वैसा ही है जैसे कोई अपने विवाह में विश्वासघात करे।"
+        },
+        "ru": {
+          "L": "“И будет это у вас кистью, и будете смотреть на неё, и вспоминать все заповеди {{divine_name:ГОСПОДА|Яхве}}, и исполнять их, и не будете ходить вслед сердца вашего и вслед глаз ваших, за которыми вы блудите,",
+          "B": "“Когда будете видеть эту кисть, она будет напоминать вам о всех заповедях {{divine_name:ГОСПОДА|Яхве}}, чтобы вы исполняли их и не бродили вслед своего сердца и своих глаз, неверно идя за ними,",
+          "R": "“Когда вы будете смотреть на кисть, вы вспомните все заповеди {{divine_name:ГОСПОДА|Яхве}} и будете их исполнять. Вы не будете просто следовать за тем, чего хочет ваше сердце и что видят ваши глаза. Идти за ними — это как изменять в браке."
         }
       },
       "decisions": [
@@ -6672,6 +7902,45 @@
           "reason": "As at 14:33, Literal keeps the Hebrew picture; Balanced and Readable say what it means, unfaithfulness to God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150390211"
+          ],
+          "choice": "\"व्यभिचार करते हो\" (L), \"विश्वासघात\" (B, R)",
+          "alternatives": [
+            "\"वेश्यावृत्ति करते हो\""
+          ],
+          "reason": "Literal keeps the picture of unfaithfulness in marriage, the Hebrew word for unfaithfulness to God (m3). Balanced says \"विश्वासघात\"; Readable explains the picture, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040150390211"
+          ],
+          "choice": "\"блудите\" (L); \"неверно идя за ними\" (B); \"как изменять в браке\" (R)",
+          "alternatives": [
+            "изменяете",
+            "распутничаете"
+          ],
+          "reason": "The Hebrew pictures unfaithfulness to God as sexual unfaithfulness (m3). Literal keeps the picture with \"блудить\"; Balanced says unfaithfulness; Readable spells out the comparison, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6743,6 +8012,16 @@
           "L": "ይህም ትእዛዛቴን ሁሉ እንድታስቡና እንድታደርጓቸው፣ ለአምላካችሁም ቅዱሳን እንድትሆኑ ነው።",
           "B": "ይህም ትእዛዛቴን ሁሉ እንድታስታውሱና እንድትፈጽሙ፣ ለአምላካችሁም ቅዱሳን እንድትሆኑ ነው።",
           "R": "ስለዚህ ትእዛዛቴን ሁሉ አስታውሱ፤ ታዘዟቸውም። ያን ጊዜ ቅዱሳን፣ ለአምላካችሁ የተለያችሁ ትሆናላችሁ።"
+        },
+        "hi": {
+          "L": "ताकि तुम स्मरण करो और मेरी सब आज्ञाओं को मानो, और अपने परमेश्वर के लिए पवित्र रहो।",
+          "B": "ताकि तुम मेरी सब आज्ञाएँ याद रखो और उनका पालन करो, और अपने परमेश्वर के लिए पवित्र रहो।",
+          "R": "इसलिए मेरी सब आज्ञाएँ याद रखो और उनका पालन करो। तब तुम पवित्र रहोगे, अपने परमेश्वर के लिए अलग किए हुए।"
+        },
+        "ru": {
+          "L": "чтобы вы помнили и исполняли все {{deity_pronoun:мои|Мои}} заповеди и были святы вашему Богу.",
+          "B": "чтобы вы помнили и исполняли все {{deity_pronoun:мои|Мои}} заповеди и были святы для вашего Бога.",
+          "R": "Поэтому помните все {{deity_pronoun:мои|Мои}} заповеди и исполняйте их. Тогда вы будете святы, отделены для вашего Бога."
         }
       },
       "decisions": [
@@ -6869,6 +8148,16 @@
           "L": "አምላክ እሆናችሁ ዘንድ ከግብፅ ምድር ያወጣኋችሁ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} [ነኝ]፤ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} [ነኝ]።”»",
           "B": "አምላካችሁ እሆን ዘንድ ከግብፅ ምድር ያወጣኋችሁ እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ። እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ።”»",
           "R": "እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ። አምላካችሁ እንድሆን ከግብፅ ምድር አወጣኋችሁ። እኔ አምላካችሁ {{divine_name:እግዚአብሔር|ያህዌ}} ነኝ።”»"
+        },
+        "hi": {
+          "L": "मैं {{divine_name:प्रभु|याहवे}} तुम्हारा परमेश्वर [हूँ], जो तुम्हें मिस्र देश से निकाल लाया, कि तुम्हारा परमेश्वर ठहरूँ; मैं {{divine_name:प्रभु|याहवे}} तुम्हारा परमेश्वर [हूँ]।'\"",
+          "B": "मैं {{divine_name:प्रभु|याहवे}} तुम्हारा परमेश्वर हूँ, जो तुम्हें मिस्र देश से निकाल लाया, ताकि तुम्हारा परमेश्वर ठहरूँ। मैं {{divine_name:प्रभु|याहवे}} तुम्हारा परमेश्वर हूँ।'\"",
+          "R": "मैं {{divine_name:प्रभु|याहवे}} तुम्हारा परमेश्वर हूँ। मैं तुम्हें मिस्र देश से निकाल लाया, ताकि मैं तुम्हारा परमेश्वर बनूँ। मैं {{divine_name:प्रभु|याहवे}} तुम्हारा परमेश्वर हूँ।'\""
+        },
+        "ru": {
+          "L": "Я — {{divine_name:ГОСПОДЬ|Яхве}}, Бог ваш, который вывел вас из земли Египта, чтобы быть вам Богом; {{deity_pronoun:я|Я}} — {{divine_name:ГОСПОДЬ|Яхве}}, Бог ваш.”»",
+          "B": "Я — {{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог, который вывел вас из земли Египта, чтобы быть вашим Богом. Я — {{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог.”»",
+          "R": "Я — {{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог. Я вывел вас из земли Египта, чтобы быть вашим Богом. Я — {{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог.”»"
         }
       },
       "decisions": [
