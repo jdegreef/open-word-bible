@@ -96,6 +96,36 @@ class BuildTest(unittest.TestCase):
         # Without paragraphs nothing changes.
         self.assertNotIn("\\p\n\\v 3", unzip(export.build(records, "en", "B")[2])["43-JHN.usfm"])
 
+    def test_words_of_jesus(self):
+        records = [
+            {"id": "JHN.11.43.s1", "refs": ["JHN.11.43"], "status": "ai_draft",
+             "renderings": {"en": {"B": 'He cried out, "Lazarus, come out!"'}}},
+            # A speech that runs on into the next verse is closed and reopened there.
+            {"id": "JHN.3.15.s1", "refs": ["JHN.3.15", "JHN.3.16"], "status": "ai_draft",
+             "renderings": {"en": {"B": "so that all may live. \\v 16 "
+                                        "For God {{gender:loved all people|loved men}}."}}},
+            {"id": "JHN.11.35.s1", "refs": ["JHN.11.35"], "status": "ai_draft",
+             "renderings": {"en": {"B": "Jesus wept."}}},
+        ]
+        wj = {"JHN.11.43.s1": "quoted", "JHN.3.15.s1": "all"}
+        john = unzip(export.build(records, "en", "B", words_of_jesus=wj)[2])["43-JHN.usfm"]
+        self.assertIn('\\v 43 He cried out, "\\wj Lazarus, come out!\\wj*"', john)
+        self.assertIn("\\v 15 \\wj so that all may live.\\wj*\n\\v 16 \\wj For God loved all people.\\wj*", john)
+        self.assertIn("\\v 35 Jesus wept.\n", john)
+        verses = json.loads(export.build(records, "en", "B", "json", words_of_jesus=wj)[2])["books"][0]["chapters"]
+        lazarus = verses[1]["verses"][1]
+        self.assertEqual(lazarus["text"][slice(*lazarus["wj"][0])], "Lazarus, come out!")
+        self.assertNotIn("wj", verses[1]["verses"][0])
+        # Without the markings, the text is the same and nothing is marked.
+        self.assertNotIn("\\wj", unzip(export.build(records, "en", "B")[2])["43-JHN.usfm"])
+        # The site's loader finds the ranges before it curls the quotes, and the
+        # record carries them: those are used, not found again in curled text.
+        curled = {"id": "JHN.11.43.s1", "refs": ["JHN.11.43"], "status": "ai_draft",
+                  "renderings": {"en": {"B": "He cried out, \u201cLazarus, come out!\u201d"}},
+                  "wj": {"en": {"B": [[15, 33]]}}}
+        john = unzip(export.build([curled], "en", "B", words_of_jesus=wj)[2])["43-JHN.usfm"]
+        self.assertIn("\\v 43 He cried out, \u201c\\wj Lazarus, come out!\\wj*\u201d", john)
+
     def test_same_text_same_bytes(self):
         self.assertEqual(export.build(RECORDS, "en", "B")[2], export.build(RECORDS, "en", "B")[2])
 
