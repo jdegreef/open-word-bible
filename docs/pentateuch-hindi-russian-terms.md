@@ -93,7 +93,7 @@ wording and decisions.
 |---|---|---|
 | the sons of Israel | `{{gender:इस्राएल की सन्तान\|इस्राएल के पुत्र}}` (L); इस्राएली (B, R), no span | `{{gender:дети Израиля\|сыны Израиля}}` (L); израильтяне (B, R), no span |
 | Israel, Israelite(s) | इस्राएल, इस्राएली | Израиль, израильтянин, израильтяне |
-| Egypt, Egyptians; Pharaoh | मिस्र, मिस्री; फ़िरौन | Египет, египтяне; фараон |
+| Egypt, Egyptians; Pharaoh; Hebrew(s) | मिस्र, मिस्री; फ़िरौन; इब्रानी (as Philippians 3:5) | Египет, египтяне; фараон; еврей, евреи |
 | covenant | वाचा | завет |
 | bless, blessing; curse | आशीष देना, आशीष; शाप देना, शाप | благословлять, благословение; проклинать, проклятие |
 | holy; the Most Holy Place | पवित्र; परमपवित्र स्थान | святой; Святое святых (as Hebrews) |
@@ -126,7 +126,7 @@ wording and decisions.
 | the congregation (*ʿedah*); the assembly (*qahal*) | मंडली; सभा | община; собрание |
 | tribe; clan; father's house | गोत्र; कुल; पितृकुल (L), परिवार (B, R) | колено (L, B), племя (R), as Hebrews; род; отцовский дом (L), семья (B, R) |
 | the Sabbath | सब्त | суббота |
-| the Passover; Unleavened Bread | फसह; अख़मीरी रोटी का पर्व | Пасха; праздник Пресных хлебов |
+| the Passover; Unleavened Bread | फ़सह (as the New Testament); अख़मीरी रोटी का पर्व | Пасха; праздник Пресных хлебов |
 | the Day of Atonement | प्रायश्चित का दिन | День умилостивления |
 | serious skin disease (*tsaraʿat*) | गंभीर चर्म रोग, "कोढ़" in a decision | тяжёлая кожная болезнь, "проказа" in a decision |
 | steadfast love (*ḥesed*) | अटल प्रेम (L, B); अटल प्रेम or करुणा (R) | неизменная любовь (L, B); верная любовь or милость (R) |
