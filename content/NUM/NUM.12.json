@@ -72,6 +72,16 @@
           "L": "ማርያምና አሮንም ስለ ወሰዳት ስለ ኩሻዊቷ ሴት በሙሴ ላይ ተናገሩ፤ ኩሻዊት ሴት ወስዶ ነበርና።",
           "B": "ማርያምና አሮን ሙሴ ስላገባት ስለ ኩሻዊቷ ሴት በሙሴ ላይ ተናገሩ፤ ኩሻዊት ሴት አግብቶ ነበርና።",
           "R": "ማርያምና አሮን ሙሴ ከኩሽ የመጣች ሴት ስላገባ ይነቅፉት ጀመር።"
+        },
+        "hi": {
+          "L": "और मिरियम और हारून ने उस कूशी स्त्री के कारण मूसा के विरोध में बातें कीं, जिसे उसने ले लिया था; क्योंकि उसने एक कूशी स्त्री ले ली थी।",
+          "B": "मिरियम और हारून उस कूशी स्त्री के कारण मूसा के विरोध में बोलने लगे जिससे उसने विवाह किया था, क्योंकि उसने एक कूशी स्त्री से विवाह किया था।",
+          "R": "मिरियम और हारून मूसा की निंदा करने लगे, क्योंकि उसने कूश देश की एक स्त्री से विवाह किया था।"
+        },
+        "ru": {
+          "L": "И говорила Мариам, а с ней Аарон, против Моисея из-за жены-кушитки, которую он взял; потому что он взял в жёны кушитку.",
+          "B": "Мариам и Аарон стали говорить против Моисея из-за кушитки, на которой он женился, — ведь он женился на кушитке.",
+          "R": "Мариам и Аарон начали осуждать Моисея за то, что он женился на женщине из Куша."
         }
       },
       "decisions": [
@@ -403,6 +413,91 @@
           "reason": "Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God has nothing to change in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o040120010011",
+            "o040120010012",
+            "o040120010021"
+          ],
+          "choice": "\"मिरियम और हारून\", Miriam named first, at every level",
+          "alternatives": [
+            "[]"
+          ],
+          "reason": "The Hebrew verb is feminine singular, so Miriam leads (m1). Hindi has to make the verb plural for two subjects, so the order of the names alone shows who leads, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120010101",
+            "o040120010141"
+          ],
+          "choice": "\"विवाह किया था\" (B, R); \"ले लिया था\" (L)",
+          "alternatives": [
+            "[]"
+          ],
+          "reason": "\"Taken\" here means married (m3); Literal keeps the Hebrew verb, which Hindi can also use of taking a wife.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o040120010012",
+            "o040120010021"
+          ],
+          "choice": "\"говорила Мариам, и Аарон\"",
+          "alternatives": [],
+          "reason": "The Hebrew verb is feminine singular, so Miriam leads (m1). Literal keeps the singular verb with Aaron added after it; Balanced and Readable use the plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120010082",
+            "o040120010131"
+          ],
+          "choice": "\"кушитка\"; \"из Куша\" (R)",
+          "alternatives": [
+            "ефиоплянка",
+            "эфиопка"
+          ],
+          "reason": "Cush is probably the land south of Egypt (m2). Russian keeps the name, \"кушитка\", rather than the Synodal \"Ефиоплянка\", which names a later country.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -478,6 +573,16 @@
           "L": "እነርሱም፦ «{{divine_name:እግዚአብሔር|ያህዌ}} የተናገረው በእርግጥ በሙሴ ብቻ ነውን? በእኛስ ደግሞ አልተናገረምን?» አሉ። {{divine_name:እግዚአብሔር|ያህዌ}}ም [ይህን] ሰማ።",
           "B": "«{{divine_name:እግዚአብሔር|ያህዌ}} የተናገረው በሙሴ በኩል ብቻ ነውን?» አሉ። «በእኛስ በኩል አልተናገረምን?» {{divine_name:እግዚአብሔር|ያህዌ}}ም ይህን ሰማ።",
           "R": "እንዲህም አሉ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} የተናገረው በሙሴ በኩል ብቻ ነው? {{divine_name:እግዚአብሔር|ያህዌ}} በእኛም በኩል ተናግሯል!» {{divine_name:እግዚአብሔር|ያህዌ}}ም የተናገሩትን ሰማ።"
+        },
+        "hi": {
+          "L": "और उन्होंने कहा, \"क्या {{divine_name:प्रभु|याहवे}} ने सचमुच केवल मूसा ही के द्वारा बात की है? क्या उन्होंने हमारे द्वारा भी बात नहीं की?\" और {{divine_name:प्रभु|याहवे}} ने [यह] सुना।",
+          "B": "\"क्या {{divine_name:प्रभु|याहवे}} ने केवल मूसा के द्वारा ही बात की है?\" उन्होंने कहा। \"क्या उन्होंने हमारे द्वारा भी बात नहीं की?\" और {{divine_name:प्रभु|याहवे}} ने यह सुन लिया।",
+          "R": "उन्होंने कहा, \"क्या केवल मूसा ही ऐसा है जिसके द्वारा {{divine_name:प्रभु|याहवे}} ने बात की है? {{divine_name:प्रभु|याहवे}} ने हमारे द्वारा भी बात की है!\" और {{divine_name:प्रभु|याहवे}} ने उनकी बात सुन ली।"
+        },
+        "ru": {
+          "L": "И сказали они: «Разве только через Моисея говорил {{divine_name:ГОСПОДЬ|Яхве}}? Разве не и через нас говорил {{deity_pronoun:он|Он}}?» И услышал [это] {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "B": "«Разве {{divine_name:ГОСПОДЬ|Яхве}} говорил только через Моисея?» — сказали они. — «Разве {{deity_pronoun:он|Он}} не говорил и через нас?» И {{divine_name:ГОСПОДЬ|Яхве}} услышал это.",
+          "R": "Они говорили: «Разве {{divine_name:ГОСПОДЬ|Яхве}} говорил только через Моисея? {{divine_name:ГОСПОДЬ|Яхве}} говорил и через нас!» И {{divine_name:ГОСПОДЬ|Яхве}} услышал, что они сказали."
         }
       },
       "decisions": [
@@ -596,6 +701,27 @@
           "reason": "Vietnamese marks a question expecting \"no\" with \"có phải ... sao\" and one expecting \"yes\" with \"chẳng phải ... sao\", the two answers the meaning decision names. Readable turns them into statements, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o040120020011"
+          ],
+          "choice": "no deity_pronoun spans: honorific \"उन्होंने\" for God",
+          "alternatives": [
+            "deity_pronoun spans, as in the English"
+          ],
+          "reason": "Devanagari has no capital letters, so the setting has nothing to change in Hindi, and the Hindi has no deity_pronoun spans. Respect for God comes from the honorific third person, used by Miriam and Aaron too when they speak of him.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -668,6 +794,16 @@
           "L": "ሰውየው ሙሴም በምድር ፊት ላይ ካሉት ሰዎች ሁሉ ይልቅ እጅግ ትሑት [ነበረ]።",
           "B": "ሙሴ ግን በምድር ላይ ካሉት ሰዎች ሁሉ ይልቅ እጅግ ትሑት ነበረ።",
           "R": "ሙሴ በጣም ትሑት ሰው ነበረ። በምድር ላይ እንደ እርሱ ትሑት የሆነ ማንም አልነበረም።"
+        },
+        "hi": {
+          "L": "और वह पुरुष मूसा बहुत नम्र [था], भूमि के ऊपर रहनेवाले सब मनुष्यों से अधिक।",
+          "B": "मूसा अत्यंत नम्र था, पृथ्वी पर के किसी भी दूसरे मनुष्य से अधिक।",
+          "R": "मूसा बहुत नम्र व्यक्ति था। पृथ्वी पर कोई और उसके जैसा नम्र नहीं था।"
+        },
+        "ru": {
+          "L": "А человек Моисей [был] весьма кроток, более всех людей, которые на лице земли.",
+          "B": "А Моисей был необычайно кроток, больше любого другого человека на земле.",
+          "R": "Моисей был очень смиренным человеком. Никто на земле не был таким смиренным, как он."
         }
       },
       "decisions": [
@@ -816,6 +952,48 @@
           "reason": "The word describes someone lowly who does not claim standing for himself (m2). \"Humilde\" says that plainly at every level; \"manso\" (gentle) would stress a calm temper, which is not the point. \"Ser humano\" already includes men and women, so no setting is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120030041"
+          ],
+          "choice": "\"नम्र\" (humble)",
+          "alternatives": [
+            "\"दीन\"",
+            "\"विनम्र\""
+          ],
+          "reason": "Lowly, not claiming status for himself (m2). \"नम्र\" is the common word at every level; \"मनुष्य\" and \"कोई\" take in men and women alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120030021"
+          ],
+          "choice": "\"кроток\" (L, B); \"смиренный\" (R)",
+          "alternatives": [
+            "скромный"
+          ],
+          "reason": "The word means lowly, not claiming status for oneself (m2). Literal and Balanced use \"кроткий\", Readable the more common \"смиренный\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -895,6 +1073,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ድንገት ሙሴንና አሮንን ማርያምንም፦ «ሦስታችሁም ወደ መገናኛው ድንኳን ውጡ» አላቸው። ሦስቱም ወጡ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሳይታሰብ ሙሴን፣ አሮንንና ማርያምን፦ «ሦስታችሁም ወደ መገናኛው ድንኳን ውጡ» አላቸው። ሦስቱም ወጡ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ወዲያውኑ ሙሴን፣ አሮንንና ማርያምን፦ «ሦስታችሁም ወደ መገናኛው ድንኳን ኑ» አላቸው። ስለዚህ ሦስቱም ሄዱ።"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने अचानक मूसा से और हारून से और मिरियम से कहा, \"तुम तीनों मिलन के तंबू के पास निकल आओ।\" और वे तीनों निकल आए।",
+          "B": "{{divine_name:प्रभु|याहवे}} ने अचानक मूसा, हारून और मिरियम से कहा, \"तुम तीनों मिलन के तंबू के पास बाहर आओ।\" और वे तीनों बाहर आए।",
+          "R": "{{divine_name:प्रभु|याहवे}} ने तुरंत मूसा, हारून और मिरियम से कहा, \"तुम तीनों मिलन के तंबू के पास आओ।\" तब वे तीनों वहाँ गए।"
+        },
+        "ru": {
+          "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} внезапно Моисею, и Аарону, и Мариам: «Выйдите вы трое к шатру встречи.» И вышли они трое.",
+          "B": "Неожиданно {{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею, Аарону и Мариам: «Выйдите вы трое к шатру встречи.» И они трое вышли.",
+          "R": "Тут же {{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею, Аарону и Мариам: «Выйдите все трое к шатру встречи.» И они трое пошли."
         }
       },
       "decisions": [
@@ -1030,6 +1218,26 @@
           "reason": "The term sheet's name for the tent, kept at Readable too so that the place is recognisable through the book. Recorded once for chapters 12-18.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120040031"
+          ],
+          "choice": "\"अचानक\" (B); \"तुरंत\" (R)",
+          "alternatives": [
+            "[]"
+          ],
+          "reason": "Hindi \"अचानक\" (suddenly) reads naturally before the verb, so Balanced keeps it; Readable says \"at once\", as the English Readable says \"right away\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1107,6 +1315,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም በደመና ዓምድ ወረደ፤ በድንኳኑም ደጃፍ ቆመ፤ አሮንንና ማርያምንም ጠራ፤ ሁለቱም ወጡ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በደመና ዓምድ ወርዶ በድንኳኑ ደጃፍ ቆመ። አሮንንና ማርያምን ጠራ፤ ሁለቱም ወደ ፊት ቀረቡ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንደ ዓምድ በቆመ ደመና ውስጥ ወርዶ በድንኳኑ በር ቆመ። አሮንንና ማርያምን ጠራ፤ ሁለቱም ወደ ፊት መጡ።"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} बादल के खंभे में उतरे और तंबू के द्वार पर खड़े हुए, और उन्होंने हारून और मिरियम को बुलाया; और वे दोनों निकल आए।",
+          "B": "{{divine_name:प्रभु|याहवे}} बादल के खंभे में उतरकर तंबू के द्वार पर खड़े हुए। उन्होंने हारून और मिरियम को बुलाया, और वे दोनों आगे आए।",
+          "R": "{{divine_name:प्रभु|याहवे}} एक ऊँचे बादल में उतरे और तंबू के द्वार पर खड़े हुए। उन्होंने हारून और मिरियम को बुलाया, और वे दोनों आगे आए।"
+        },
+        "ru": {
+          "L": "И сошёл {{divine_name:ГОСПОДЬ|Яхве}} в столпе облачном, и стал у входа в шатёр, и позвал Аарона и Мариам; и вышли они оба.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} сошёл в облачном столпе и встал у входа в шатёр. Он позвал Аарона и Мариам, и они оба вышли вперёд.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сошёл в высоком облаке и встал у входа в шатёр. Он позвал Аарона и Мариам, и они оба вышли вперёд."
         }
       },
       "decisions": [
@@ -1260,6 +1478,16 @@
           "L": "እንዲህም አለ፦ «እስኪ ቃሌን ስሙ፤ \\q ከእናንተ ነቢይ ቢኖር፣ \\q [እኔ] {{divine_name:እግዚአብሔር|ያህዌ}} በራእይ ራሴን እገልጥለታለሁ፤ \\q በሕልምም እናገረዋለሁ።",
           "B": "ከዚያም እንዲህ አለ፦ «የምናገረውን ስሙ፤ \\q በመካከላችሁ ነቢይ በተገኘ ጊዜ \\q እኔ {{divine_name:እግዚአብሔር|ያህዌ}} በራእይ ራሴን እገልጥለታለሁ፤ \\q በሕልምም አነጋግረዋለሁ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ አለ፦ «የምናገረውን ስሙ፤ \\q ነቢይ ቢኖራችሁ እኔ {{divine_name:እግዚአብሔር|ያህዌ}} በራእይ ራሴን አሳየዋለሁ፤ ወይም በሕልም አነጋግረዋለሁ።"
+        },
+        "hi": {
+          "L": "और उन्होंने कहा, \"अब मेरी बातें सुनो: \\q यदि तुम्हारे बीच कोई भविष्यद्वक्ता हो, \\q [तो मैं,] {{divine_name:प्रभु|याहवे}}, दर्शन में अपने आप को उस पर प्रगट करता हूँ; \\q स्वप्न में मैं उससे बात करता हूँ।",
+          "B": "तब उन्होंने कहा, \"मेरी बात सुनो: \\q जब भी तुम्हारे बीच कोई भविष्यद्वक्ता होता है, \\q तो मैं, {{divine_name:प्रभु|याहवे}}, दर्शन में अपने आप को उस पर प्रगट करता हूँ; \\q स्वप्न में मैं उससे बात करता हूँ।",
+          "R": "{{divine_name:प्रभु|याहवे}} ने कहा, \"मेरी बात सुनो: \\q यदि तुम्हारे बीच कोई नबी हो, तो मैं, {{divine_name:प्रभु|याहवे}}, दर्शन में अपने आप को उस पर प्रगट करता हूँ, या स्वप्न में उससे बात करता हूँ।"
+        },
+        "ru": {
+          "L": "И сказал {{deity_pronoun:он|Он}}: «Слушайте же {{deity_pronoun:мои|Мои}} слова: \\q если есть у вас пророк, \\q {{deity_pronoun:я|Я}}, {{divine_name:ГОСПОДЬ|Яхве}}, в видении открываюсь ему; \\q во сне говорю с ним.",
+          "B": "Потом {{deity_pronoun:он|Он}} сказал: «Послушайте, что {{deity_pronoun:я|Я}} скажу: \\q когда у вас есть пророк, \\q {{deity_pronoun:я|Я}}, {{divine_name:ГОСПОДЬ|Яхве}}, открываюсь ему в видении, \\q во сне говорю с ним.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал: «Послушайте, что {{deity_pronoun:я|Я}} скажу: \\q если у вас есть пророк, {{deity_pronoun:я|Я}}, {{divine_name:ГОСПОДЬ|Яхве}}, являюсь ему в видении или говорю с ним во сне."
         }
       },
       "decisions": [
@@ -1472,6 +1700,65 @@
           "reason": "The speech is set as poetry in this translation; Amharic keeps the same number of breaks as the English level but, being verb-final, puts the break before the verb phrase where the English line order cannot be kept (12:8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040120060011"
+          ],
+          "choice": "God says \"तुम\" to Aaron and Miriam",
+          "alternatives": [
+            "\"तू\""
+          ],
+          "reason": "As through the Pentateuch, God speaking to people says \"तुम\", to one or many.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120060012"
+          ],
+          "choice": "\"नबी\" (R); \"भविष्यद्वक्ता\" (L, B)",
+          "alternatives": [
+            "[]"
+          ],
+          "reason": "The Hindi New Testament's words for prophet, as in 11:29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120060111"
+          ],
+          "choice": "\"открываюсь\" / \"являюсь\" without a pronoun",
+          "alternatives": [],
+          "reason": "The English \"make Myself known\" has a deity_pronoun span; Russian says it with a reflexive verb, which has no pronoun to capitalise.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1540,6 +1827,16 @@
           "L": "ባሪያዬ ሙሴ ግን እንዲህ አይደለም፤ \\q እርሱ በቤቴ ሁሉ ታማኝ [ነው]።",
           "B": "አገልጋዬ ሙሴ ግን እንዲህ አይደለም፤ \\q እርሱ በቤቴ ሁሉ ታማኝ ነው።",
           "R": "አገልጋዬ ሙሴ ግን ከዚህ የተለየ ነው። \\q በቤቴ ሁሉ ታማኝ ነው፤ ሁሉን በአደራ የሰጠሁት እርሱን ነው።"
+        },
+        "hi": {
+          "L": "मेरे दास मूसा के साथ ऐसा नहीं है; \\q वह मेरे सारे घर में विश्वासयोग्य [है]।",
+          "B": "मेरे दास मूसा के साथ ऐसा नहीं है; \\q मेरे सारे घराने में उस पर भरोसा किया गया है।",
+          "R": "पर मेरे दास मूसा के साथ बात अलग है। \\q वही है जिसे मैंने अपने घराने की हर बात सौंप रखी है।"
+        },
+        "ru": {
+          "L": "Не так с {{deity_pronoun:моим|Моим}} рабом Моисеем; \\q во всём {{deity_pronoun:моём|Моём}} доме он верен.",
+          "B": "Но не так с {{deity_pronoun:моим|Моим}} рабом Моисеем: \\q ему доверен весь {{deity_pronoun:мой|Мой}} дом.",
+          "R": "Но с {{deity_pronoun:моим|Моим}} рабом Моисеем всё иначе. \\q Ему {{deity_pronoun:я|Я}} доверяю всё в {{deity_pronoun:моём|Моём}} доме."
         }
       },
       "decisions": [
@@ -1709,6 +2006,50 @@
           "reason": "Hebrews quotes this verse and the Hebrew agrees with the Greek on \"faithful in all my house\", so the Amharic of Hebrews is kept. Literal keeps \"slave\" for the Hebrew word, as the terms list sets; Readable adds the English Readable's \"I trust him with everything\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120070031",
+            "o040120070071"
+          ],
+          "choice": "\"दास\" at every level; \"विश्वासयोग्य\" (L), \"उस पर भरोसा किया गया है\" (B, R)",
+          "alternatives": [
+            "\"सेवक\" at Balanced and Readable"
+          ],
+          "reason": "The Pentateuch note keeps \"दास\" at every level, as in the New Testament. Balanced and Readable say that Moses is trusted with the whole household (m2), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120070031",
+            "o040120070071"
+          ],
+          "choice": "\"раб\" at every level; \"верен\" (L), \"доверен\" (B, R)",
+          "alternatives": [
+            "слуга"
+          ],
+          "reason": "As the Pentateuch note sets, Moses is \"раб\" of the LORD at every level, where the English Balanced and Readable say \"servant\": one who belongs to the LORD and acts for him (m1). Balanced and Readable say he is trusted with the whole household (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1793,6 +2134,16 @@
           "L": "አፍ ለአፍ ከእርሱ ጋር እናገራለሁ፤ በግልጥ እንጂ በእንቆቅልሽ አይደለም፤ \\q {{divine_name:የእግዚአብሔርን|የያህዌን}}ም መልክ ያያል። \\q ታዲያ ባሪያዬን፣ ሙሴን፣ \\q ለመቃወም ስለ ምን አልፈራችሁም?»",
           "B": "ከእርሱ ጋር አፍ ለአፍ እነጋገራለሁ፤ በእንቆቅልሽ ሳይሆን በግልጥ፤ \\q እርሱም {{divine_name:የእግዚአብሔርን|የያህዌን}} መልክ ያያል። \\q ታዲያ አገልጋዬን ሙሴን \\q ለመቃወም እንዴት አልፈራችሁም?»",
           "R": "ከእርሱ ጋር በቀጥታ እነጋገራለሁ፤ በግልጥ እንጂ በእንቆቅልሽ አይደለም። እርሱም {{divine_name:የእግዚአብሔርን|የያህዌን}} መልክ ያያል። \\q ታዲያ አገልጋዬን ሙሴን ለመቃወም ለምን አልፈራችሁም?»"
+        },
+        "hi": {
+          "L": "मुँह से मुँह मैं उससे बात करता हूँ, और साफ़-साफ़, पहेलियों में नहीं, \\q और {{divine_name:प्रभु|याहवे}} का स्वरूप वह देखता है। \\q तो तुम क्यों नहीं डरे \\q मेरे दास के विरोध में, मूसा के विरोध में बोलने से?\"",
+          "B": "मैं उससे आमने-सामने बात करता हूँ, खुलकर, पहेलियों में नहीं, \\q और वह {{divine_name:प्रभु|याहवे}} का स्वरूप देखता है। \\q फिर तुम्हें यह कैसे हुआ कि तुम नहीं डरे \\q और मेरे दास मूसा के विरोध में बोले?\"",
+          "R": "मैं उससे सीधे बात करता हूँ, साफ़-साफ़, पहेलियों में नहीं, और वह {{divine_name:प्रभु|याहवे}} का स्वरूप देखता है। \\q तो तुम मेरे दास मूसा के विरोध में बोलने से क्यों नहीं डरे?\""
+        },
+        "ru": {
+          "L": "Устами к устам говорю {{deity_pronoun:я|Я}} с ним, и явно, а не загадками, \\q и образ {{divine_name:ГОСПОДА|Яхве}} он видит. \\q Почему же вы не побоялись \\q говорить против {{deity_pronoun:моего|Моего}} раба, против Моисея?»",
+          "B": "Я говорю с ним уста к устам, открыто, а не загадками, \\q и он видит образ {{divine_name:ГОСПОДА|Яхве}}. \\q Как же вы не побоялись \\q говорить против {{deity_pronoun:моего|Моего}} раба Моисея?»",
+          "R": "Я говорю с ним прямо, ясно, а не загадками, и он видит образ {{divine_name:ГОСПОДА|Яхве}}. \\q Почему же вы не побоялись говорить против {{deity_pronoun:моего|Моего}} раба Моисея?»"
         }
       },
       "decisions": [
@@ -1968,6 +2319,48 @@
           "reason": "Literal and Balanced keep the Hebrew picture as the English does; in Portuguese \"boca a boca\" here plainly means speaking directly (m1), and the context keeps it from the sense of first aid. Readable says \"diretamente\". \"Face a face\" is kept for Exodus 33:11, where the Hebrew says that.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120080011",
+            "o040120080021",
+            "o040120080031"
+          ],
+          "choice": "\"मुँह से मुँह\" (L); \"आमने-सामने\" (B); \"सीधे\" (R)",
+          "alternatives": [
+            "[]"
+          ],
+          "reason": "Literal keeps the Hebrew picture; Balanced uses the Hindi idiom for face to face, as in Exodus 33:11; Readable says \"directly\" (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120080011",
+            "o040120080031"
+          ],
+          "choice": "\"уста к устам\" (B); \"прямо\" (R)",
+          "alternatives": [],
+          "reason": "\"Mouth to mouth\" means directly, in person (m1). Balanced keeps the picture, which Russian knows; Readable says what it means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2033,6 +2426,16 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ቁጣም በእነርሱ ላይ ነደደ፤ ሄደም።",
           "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ቁጣ በእነርሱ ላይ ተቀጣጠለ፤ ከዚያም ሄደ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በእነርሱ በጣም ተቆጣ፤ ከዚያም ሄደ።"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} का क्रोध उन पर भड़का, और वे चले गए।",
+          "B": "{{divine_name:प्रभु|याहवे}} का क्रोध उन पर भड़क उठा, और वे वहाँ से चले गए।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन पर बहुत क्रोधित हुए, और वे चले गए।"
+        },
+        "ru": {
+          "L": "И воспылал гнев {{divine_name:ГОСПОДА|Яхве}} на них, и {{deity_pronoun:он|Он}} ушёл.",
+          "B": "Гнев {{divine_name:ГОСПОДА|Яхве}} вспыхнул на них, и {{deity_pronoun:он|Он}} удалился.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} очень разгневался на них, и {{deity_pronoun:он|Он}} ушёл."
         }
       },
       "decisions": [
@@ -2161,6 +2564,16 @@
           "L": "ደመናውም ከድንኳኑ በላይ ራቀ፤ እነሆም፣ ማርያም እንደ በረዶ ለምጻም ሆነች፤ አሮንም ወደ ማርያም ዞረ፤ እነሆም፣ ለምጻም ሆናለች።",
           "B": "ደመናው ከድንኳኑ በላይ በራቀ ጊዜ ማርያም እንደ በረዶ ሆና በከባድ የቆዳ በሽታ ተመትታ ነበር። አሮንም ወደ ማርያም ዞር ሲል በበሽታው ተይዛ አያት።",
           "R": "ደመናው ከድንኳኑ በላይ በራቀ ጊዜ ማርያም ድንገት በከባድ የቆዳ በሽታ ተያዘች። ቆዳዋ እንደ በረዶ ሆኖ ነበር። አሮንም ወደ እርሷ ዞር ብሎ የደረሰባትን አየ።"
+        },
+        "hi": {
+          "L": "और बादल तंबू के ऊपर से हट गया, और देखो, मिरियम गंभीर चर्म रोग से मारी गई, हिम के समान; और हारून ने मिरियम की ओर मुँह फेरा, और देखो, [वह] गंभीर चर्म रोग से मारी गई [थी]।",
+          "B": "जैसे ही बादल तंबू के ऊपर से हटा, मिरियम को गंभीर चर्म रोग हो गया, और वह हिम के समान हो गई। हारून ने मिरियम की ओर मुड़कर देखा, तो उसे वह रोग हो गया था।",
+          "R": "जब बादल तंबू के ऊपर से हटा, तो मिरियम को अचानक एक गंभीर चर्म रोग हो गया। उसकी त्वचा बर्फ़ जैसी दिखने लगी। हारून ने उसकी ओर मुड़कर देखा कि उसे क्या हुआ है।"
+        },
+        "ru": {
+          "L": "И облако отошло от шатра, и вот, Мариам поражена тяжёлой кожной болезнью, как снег; и обернулся Аарон к Мариам, и вот, [она] поражена тяжёлой кожной болезнью.",
+          "B": "Когда облако отошло от шатра, Мариам оказалась поражена тяжёлой кожной болезнью, белая, как снег. Аарон повернулся к Мариам и увидел, что она больна.",
+          "R": "Когда облако ушло от шатра, у Мариам вдруг появилась тяжёлая кожная болезнь. Её кожа стала белой, как снег. Аарон повернулся к ней и увидел, что с ней случилось."
         }
       },
       "decisions": [
@@ -2421,6 +2834,68 @@
           "reason": "As the Pentateuch terms set: the Hebrew word names a skin disease that made a person unclean, not modern leprosy (m1), which \"ለምጽ\" now suggests; Literal keeps the traditional word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120100071",
+            "o040120100141"
+          ],
+          "choice": "\"गंभीर चर्म रोग\" (scale disease) at every level",
+          "alternatives": [
+            "\"कोढ़\""
+          ],
+          "reason": "The Pentateuch note's term, as in Leviticus 13: a skin disease that made a person unclean, not modern leprosy (m1). \"कोढ़\", the word of older Hindi Bibles, now means leprosy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120100071",
+            "o040120100141"
+          ],
+          "choice": "\"тяжёлая кожная болезнь\"",
+          "alternatives": [
+            "проказа"
+          ],
+          "reason": "The Hebrew tsaraat is \"тяжёлая кожная болезнь\" at every level, as the Pentateuch note sets, rather than the traditional \"проказа\" (the Synodal word), which now means leprosy, a disease this is not (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120100052",
+            "o040120100132"
+          ],
+          "choice": "\"вот\"",
+          "alternatives": [],
+          "reason": "Literal keeps \"вот\" for the Hebrew hinneh, what is suddenly seen (m3); Balanced and Readable say it with \"оказалась\", \"вдруг\" and \"увидел\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2497,6 +2972,16 @@
           "L": "አሮንም ሙሴን አለው፦ «እባክህ፣ ጌታዬ፣ ሞኝነት ያደረግንበትንና ኃጢአት የሠራንበትን ኃጢአት እባክህ በእኛ ላይ አትጫንብን።",
           "B": "አሮንም ሙሴን እንዲህ አለው፦ «እባክህ፣ ጌታዬ፣ በሞኝነታችን ስለ ሠራነው ኃጢአት ቅጣቱን አትጫንብን።",
           "R": "አሮንም ሙሴን እንዲህ አለው፦ «እባክህ፣ ጌታዬ፣ በኃጢአታችን ምክንያት እንድንሠቃይ አታድርገን። በሞኝነት አድርገናል፤ በድለናልም።"
+        },
+        "hi": {
+          "L": "और हारून ने मूसा से कहा, \"हे मेरे स्वामी, कृपया, कृपा करके हम पर वह पाप न डालिए जिसमें हमने मूर्खता की और जिसमें हमने पाप किया।",
+          "B": "हारून ने मूसा से कहा, \"हे मेरे स्वामी, कृपया उस पाप का दंड हम पर न डालिए जो हमने अपनी मूर्खता में किया।",
+          "R": "हारून ने मूसा से कहा, \"हे मेरे स्वामी, कृपया हमें हमारे पाप की सज़ा न भुगतने दीजिए। हमने मूर्खता की है, और हमने ग़लत काम किया है।"
+        },
+        "ru": {
+          "L": "И сказал Аарон Моисею: «Прошу, господин мой, не возлагай же на нас греха, в котором мы поступили безрассудно и в котором согрешили.",
+          "B": "Аарон сказал Моисею: «Прошу тебя, господин мой, не заставляй нас нести наказание за грех, который мы совершили по безрассудству.",
+          "R": "Аарон сказал Моисею: «Прошу тебя, господин мой, не наказывай нас за наш грех. Мы поступили глупо, мы сделали зло."
         }
       },
       "decisions": [
@@ -2658,6 +3143,48 @@
           "reason": "By the rule settled in Genesis and Exodus, family members say \"አንተ\" to one another and show respect through the words they choose; \"ጌታዬ\" and \"እባክህ\" carry Aaron's humble plea (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040120110051",
+            "o040120110061",
+            "o040120110062"
+          ],
+          "choice": "Aaron says \"आप\" (\"डालिए\", \"दीजिए\") to Moses, with \"हे मेरे स्वामी\"",
+          "alternatives": [
+            "\"तुम\""
+          ],
+          "reason": "Brothers say \"तुम\", but here Aaron pleads humbly with Moses as with a superior, \"my lord\" (m1); Hindi carries that humility with \"आप\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o040120110031"
+          ],
+          "choice": "\"господин мой\"",
+          "alternatives": [],
+          "reason": "Aaron, though the elder brother, pleads with Moses as with a superior (m1). As the Pentateuch note sets, the deference is carried by \"господин\", while the verbs keep \"ты\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2733,6 +3260,16 @@
           "L": "እባክህ፣ ከእናቱ ማኅፀን ሲወጣ የሥጋው እኩሌታ እንደ ተበላበት እንደ ሞተው አትሁን።»",
           "B": "ከእናቱ ማኅፀን ሲወጣ ግማሽ ሥጋው እንደ ተበላሸ፣ ሞቶ እንደ ተወለደ ሕፃን አታድርጋት።»",
           "R": "እባክህ ሞቶ እንደ ተወለደና ግማሽ ሰውነቱ ቀድሞ እንደ በሰበሰ ሕፃን አታድርጋት።»"
+        },
+        "hi": {
+          "L": "कृपया उसे उस मरे हुए के समान न होने दीजिए, जिसका आधा मांस अपनी माँ के गर्भ से निकलते समय ही गल गया हो।\"",
+          "B": "उसे उस बच्चे के समान न होने दीजिए जो मरा हुआ पैदा होता है, जिसका आधा शरीर माँ के गर्भ से निकलते समय ही गल चुका होता है।\"",
+          "R": "कृपया उसे उस बच्चे के समान न होने दीजिए जो पैदा होते समय ही मरा हुआ हो, और जिसका आधा शरीर पहले ही सड़ चुका हो।\""
+        },
+        "ru": {
+          "L": "Не дай же ей быть как мёртвый, у которого, когда он выходит из чрева матери своей, съедена половина плоти его.»",
+          "B": "Не дай ей стать как мертворождённый младенец, у которого половина тела уже истлела, когда он выходит из чрева матери.»",
+          "R": "Пожалуйста, не дай ей стать как младенец, который родился мёртвым и у которого половина тела уже разложилась.»"
         }
       },
       "decisions": [
@@ -2881,6 +3418,16 @@
           "L": "ሙሴም {{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}} እንዲህ ብሎ ጮኸ፦ «አምላክ ሆይ፣ እባክህ ፈውሳት፤ እባክህ!»",
           "B": "ስለዚህ ሙሴ {{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}} እንዲህ ብሎ ጮኸ፦ «አምላክ ሆይ፣ እባክህ ፈውሳት!»",
           "R": "ስለዚህ ሙሴ {{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}} እንዲህ ብሎ ጮኸ፦ «አምላክ ሆይ፣ እባክህ ፈውሳት! እባክህ!»"
+        },
+        "hi": {
+          "L": "और मूसा ने यह कहते हुए {{divine_name:प्रभु|याहवे}} की दुहाई दी, \"हे परमेश्वर, कृपया, उसे चंगा कर, कृपया!\"",
+          "B": "तब मूसा ने {{divine_name:प्रभु|याहवे}} की दुहाई दी, \"हे परमेश्वर, कृपया उसे चंगा कर दे!\"",
+          "R": "तब मूसा ने {{divine_name:प्रभु|याहवे}} की दुहाई दी, \"हे परमेश्वर, उसे चंगा कर दे! कृपया!\""
+        },
+        "ru": {
+          "L": "И возопил Моисей к {{divine_name:ГОСПОДУ|Яхве}}, говоря: «Боже, прошу, исцели же её!»",
+          "B": "И Моисей воззвал к {{divine_name:ГОСПОДУ|Яхве}}: «О Боже, прошу, исцели её!»",
+          "R": "Тогда Моисей закричал {{divine_name:ГОСПОДУ|Яхве}}: «Исцели её, Боже! Прошу {{deity_pronoun:тебя|Тебя}}!»"
         }
       },
       "decisions": [
@@ -2994,6 +3541,25 @@
           "reason": "The cry uses the general word for God (m1) while the narrative names YHWH beside it (\"{{divine_name:ወደ እግዚአብሔር|ወደ ያህዌ}}\"), so by the terms list it is \"አምላክ\"; \"እግዚአብሔር\" would read as the divine name with no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o040120130061"
+          ],
+          "choice": "\"Боже\"",
+          "alternatives": [],
+          "reason": "Moses' short cry uses El, the general word for God (m1), so Russian has the vocative \"Боже\", not ГОСПОДИ.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3079,6 +3645,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ሙሴን አለው፦ «አባቷስ በፊቷ ላይ ምራቁን ቢተፋባት ሰባት ቀን አታፍርምን? ሰባት ቀን ከሰፈሩ ውጭ ተዘግታ ትቆይ፤ ከዚያም በኋላ [ተመልሳ] ትሰብሰብ።»",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሙሴ እንዲህ ሲል መለሰለት፦ «አባቷ በፊቷ ላይ ምራቁን ብቻ ቢተፋባት እንኳ ሰባት ቀን በኀፍረት አትቆይምን? ሰባት ቀን ከሰፈሩ ውጭ ተለይታ ትቆይ፤ ከዚያም በኋላ ተመልሳ ልትገባ ትችላለች።»",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሙሴ እንዲህ ሲል መለሰለት፦ «አባቷ በፊቷ ላይ ምራቁን ቢተፋባት ኖሮ ሰባት ቀን ታፍር ነበር። ስለዚህ ሰባት ቀን ከሰፈሩ ውጭ መቆየት አለባት። ከዚያ በኋላ ተመልሳ ልትገባ ትችላለች።»"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने मूसा से कहा, \"और यदि उसके पिता ने उसके मुँह पर थूका ही होता, तो क्या वह सात दिन लज्जित न रहती? वह सात दिन छावनी के बाहर बंद रखी जाए, और उसके बाद वह [भीतर] लाई जा सकती है।\"",
+          "B": "{{divine_name:प्रभु|याहवे}} ने मूसा को उत्तर दिया, \"यदि उसके पिता ने उसके मुँह पर केवल थूका होता, तो क्या वह सात दिन तक लज्जा न उठाती? वह सात दिन छावनी के बाहर बंद रहे; उसके बाद वह फिर भीतर लाई जा सकती है।\"",
+          "R": "{{divine_name:प्रभु|याहवे}} ने मूसा को उत्तर दिया, \"यदि उसके पिता ने उसके मुँह पर थूका होता, तो वह सात दिन तक लज्जित रहती। इसलिए उसे सात दिन तक छावनी के बाहर रहना होगा। उसके बाद उसे फिर भीतर लाया जा सकता है।\""
+        },
+        "ru": {
+          "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «А если бы отец её плюнул, плюнул ей в лицо, разве не была бы она в стыде семь дней? Пусть она будет заперта семь дней вне стана, а после будет принята [назад].»",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} ответил Моисею: «Если бы её отец только плюнул ей в лицо, разве не несла бы она свой позор семь дней? Пусть её на семь дней выведут за стан, а потом её можно будет принять обратно.»",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} ответил Моисею: «Если бы отец плюнул ей в лицо, ей было бы стыдно семь дней. Поэтому пусть она семь дней побудет за пределами лагеря. Потом её можно будет взять обратно.»"
         }
       },
       "decisions": [
@@ -3311,6 +3887,16 @@
           "L": "ማርያምም ሰባት ቀን ከሰፈሩ ውጭ ተዘግታ ቆየች፤ ማርያምም [ተመልሳ] እስክትሰበሰብ ድረስ ሕዝቡ አልተጓዘም።",
           "B": "ስለዚህ ማርያም ሰባት ቀን ከሰፈሩ ውጭ ተለይታ ቆየች፤ ሕዝቡም እርሷ ተመልሳ እስክትገባ ድረስ ሰፈሩን ነቅሎ አልተጓዘም።",
           "R": "ስለዚህ ማርያም ሰባት ቀን ከሰፈሩ ውጭ መቆየት ነበረባት። ሕዝቡም እርሷ ተመልሳ እስክትገባ ድረስ አልተጓዙም።"
+        },
+        "hi": {
+          "L": "और मिरियम सात दिन छावनी के बाहर बंद रखी गई, और जब तक मिरियम [भीतर] न लाई गई, तब तक लोगों ने कूच नहीं किया।",
+          "B": "इसलिए मिरियम सात दिन तक छावनी के बाहर बंद रही, और जब तक वह फिर भीतर न लाई गई, लोगों ने डेरा नहीं उठाया।",
+          "R": "इसलिए मिरियम को सात दिन तक छावनी के बाहर रहना पड़ा। जब तक उसे फिर भीतर नहीं लाया गया, लोग आगे नहीं बढ़े।"
+        },
+        "ru": {
+          "L": "И была заперта Мариам вне стана семь дней, и народ не отправлялся в путь, пока не была принята [назад] Мариам.",
+          "B": "Так Мариам была семь дней вне стана, и народ не снимался с места, пока её не приняли обратно.",
+          "R": "Мариам пришлось семь дней пробыть за пределами лагеря. Народ не уходил дальше, пока её не взяли обратно."
         }
       },
       "decisions": [
@@ -3431,6 +4017,16 @@
           "L": "ከዚያም በኋላ ሕዝቡ ከሐጼሮት ተጓዙ፤ በፋራንም ምድረ በዳ ሰፈሩ።",
           "B": "ከዚያ በኋላ ሕዝቡ ከሐጼሮት ተነሥተው በፋራን ምድረ በዳ ሰፈሩ።",
           "R": "ከዚያም ሕዝቡ ሐጼሮትን ትተው በፋራን ምድረ በዳ ሰፈራቸውን ተከሉ።"
+        },
+        "hi": {
+          "L": "और उसके बाद लोगों ने हसेरोत से कूच किया और पारान के निर्जन प्रदेश में डेरा डाला।",
+          "B": "इसके बाद लोगों ने हसेरोत से कूच किया और पारान के निर्जन प्रदेश में डेरा डाला।",
+          "R": "फिर लोग हसेरोत से निकले और पारान के निर्जन प्रदेश में उन्होंने अपनी छावनी डाली।"
+        },
+        "ru": {
+          "L": "А после отправился народ из Асирофа и расположился станом в пустыне Фаран.",
+          "B": "После этого народ отправился из Асирофа и расположился станом в пустыне Фаран.",
+          "R": "Потом народ ушёл из Асирофа и разбил лагерь в пустыне Фаран."
         }
       },
       "decisions": [
