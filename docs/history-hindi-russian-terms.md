@@ -46,7 +46,7 @@ The Pentateuch table holds. In addition:
 | king; queen; kingdom | राजा; रानी; राज्य | царь; царица; царство |
 | reign, become king | राज्य करना, राजा बनना | царствовать, воцариться (L, B), стать царём (R) |
 | my lord the king | मेरे स्वामी राजा (people say आप to the king) | господин мой царь (ты, as the style guide: courtly address is in the words) |
-| prophet; seer | भविष्यद्वक्ता (as the New Testament); दर्शी | пророк; прозорливец |
+| prophet; seer | भविष्यद्वक्ता (L, B), नबी (R), as the New Testament; दर्शी | пророк; прозорливец |
 | anoint; the LORD's anointed | अभिषेक करना; `{{divine_name:प्रभु\|याहवे}}` का अभिषिक्त | помазать; помазанник `{{divine_name:ГОСПОДА\|Яхве}}` |
 | the house of the LORD; the temple (*hekhal*) | `{{divine_name:प्रभु\|याहवे}}` का भवन; मंदिर | дом `{{divine_name:ГОСПОДА\|Яхве}}`; храм |
 | the high places (*bamot*) | ऊँचे स्थान | высоты (L), святилища на холмах (B, R), as Deuteronomy |
