@@ -58,6 +58,19 @@ class MaculaGreekTest(unittest.TestCase):
         tok = macula_greek.load_tokens("JHN.1.1")[4]
         self.assertEqual((tok.lemma, tok.morph, tok.strong, tok.gloss), ("λόγος", "N-NSM", "3056", "Word"))
 
+    def test_romans_16_25_27_come_from_nestle_1904(self):
+        # The pinned SBLGNT has no 16:25-27; MACULA's Nestle 1904 supplies them,
+        # after 16:24 and before 1 Corinthians, and nothing else.
+        self.assertEqual(sblgnt.load_verses("ROM.16.25", "ROM.16.27"), [])
+        toks = macula_greek.load_tokens("ROM.16.24", "ROM.16.27")
+        self.assertEqual((toks[0].id, toks[-1].id), ("n45016024001", "n45016027015"))
+        verses = list(macula_greek._all_tokens())
+        at = verses.index(refs.Ref("ROM", 16, 27))
+        self.assertEqual((verses[at - 1], verses[at + 1]), (refs.Ref("ROM", 16, 26), refs.Ref("1CO", 1, 1)))
+        self.assertEqual(set(macula_greek.supplement_verses()), macula_greek.SUPPLEMENT)
+        self.assertEqual(macula_greek.text_id_for(["ROM.16.25", "ROM.16.27"]), "Nestle1904@macula-greek")
+        self.assertEqual(macula_greek.text_id_for(["ROM.16.24", "ROM.16.25"]), "SBLGNT@v1.2")
+
 
 class MaculaHebrewTest(unittest.TestCase):
     def test_streamed_verses_match_the_loaded_ones(self):
