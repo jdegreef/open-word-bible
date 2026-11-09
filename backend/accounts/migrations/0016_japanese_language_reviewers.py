@@ -4,7 +4,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("accounts", "0014_hindi_russian_language_reviewers"),
+        ("accounts", "0015_ukrainian_language_reviewers"),
     ]
 
     operations = [
@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
                 condition=models.Q(
                     models.Q(("kind", "scholar_reviewer"), ("language__in", ["grc", "hbo"])),
                     models.Q(("kind", "language_reviewer"),
-                             ("language__in", ["en", "es", "fr", "sw", "vi", "ko", "pt", "am", "hi", "ru", "ja"])),
+                             ("language__in", ["en", "es", "fr", "sw", "vi", "ko", "pt", "am", "hi", "ru",
+                                               "uk", "ja"])),
                     models.Q(("kind__in", ["super_admin", "editor", "reporting", "users", "email"]),
                              ("language", "")),
                     _connector="OR",
