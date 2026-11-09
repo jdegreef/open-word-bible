@@ -253,6 +253,34 @@ Settings change wording, never meaning, exactly as in English.
 - `plural_you` is Spanish only.
 - A setting span holds no quotation brackets (`owb/markup.py` checks).
 
+## 7a. Conventions settled in the first books
+
+James and Ephesians were drafted first, in parallel chapters; these choices
+hold for the later books.
+
+- **Address.** わたしの{{gender:きょうだいたち|兄弟たち}}、 at the start of the
+  sentence; "my beloved brothers" わたしの愛する{{gender:きょうだいたち|兄弟たち}}
+  (L, B), 愛する{{gender:きょうだいたち|兄弟たち}} (R); a single brother
+  `{{gender:きょうだい|兄弟}}`. Plural "you" to the readers: あなたがた (L, B),
+  みなさん (R).
+- **Gender spans the English needs and Japanese does not.** English pronoun
+  spans (them/him, they/he) and spans on *anthrōpos* or *anēr* for people in
+  general become その人, 自分, 人, 人々, or nothing, with no span; note it once
+  in a passage (setting_alternative).
+- **God's actions in a letter** take the same light respect forms as in
+  narration (与えてくださる, 約束された, おできになる) at every level; quoted
+  Scripture stays plain.
+- **Commands** 〜なさい (L, B), 〜てください (R). *idou* 見なさい (L, B),
+  見てください (R), not 見よ.
+- **Words.** trials 試練, tempt 誘惑する; endurance (*hypomonē*) 忍耐, and
+  patience (*makrothymia*) 辛抱 / 寛容, kept apart; double-minded 二心; blessed
+  (*makarios*) 幸い (L, B); works 行い (L, B), 行動 (R); justify 義とされる (L, B),
+  神に正しい者と認められる (R); mercy あわれみ (kana); world (*kosmos*) 世 (L, B),
+  この世 (R); bless God ほめたたえる (L, B), 賛美する (R); curse 呪う; the
+  assembly (*synagōgē*, James 2:2) 集会; elders 長老たち (L, B); heal 癒やす (L,
+  B), いやす (R); forgive 赦す (L, B), ゆるす (R); *parousia* 来臨 (L, B), 主が来ら
+  れる (R); Gehenna ゲヘナ (L, B), 地獄 (R).
+
 ## 8. Status
 
 A Japanese rendering added to a record does not change its status. Nothing
