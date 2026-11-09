@@ -33,8 +33,9 @@ LEVELS = _DEFS["level"]["enum"]
 LAYERS = _DEFS["decision"]["properties"]["layer"]["enum"]
 CATEGORIES = _DEFS["decision"]["properties"]["category"]["enum"]
 MEANING_CATEGORIES = _DEFS["decision"]["then"]["properties"]["category"]["enum"]
-# The edition each source language is translated from.
-TEXT_ID_FOR = {"grc": "SBLGNT@v1.2", "hbo": macula_hebrew.TEXT_ID, "arc": macula_hebrew.TEXT_ID}
+# The edition each source language is translated from. Greek is the SBLGNT,
+# except the few verses it does not print (macula_greek.text_id_for).
+TEXT_ID_FOR = {"grc": macula_greek.TEXT_ID, "hbo": macula_hebrew.TEXT_ID, "arc": macula_hebrew.TEXT_ID}
 RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 
@@ -265,7 +266,8 @@ def validate_record(record, known_tokens=None, original_language=True):
             errors.append(f"source.language: {source.get('language')!r} not allowed")
         if source.get("text_id") not in TEXT_IDS:
             errors.append(f"source.text_id: {source.get('text_id')!r} not allowed")
-        elif source.get("text_id") != TEXT_ID_FOR.get(source.get("language")):
+        elif source.get("text_id") != (macula_greek.text_id_for(verse_ids) if source.get("language") == "grc"
+                                       else TEXT_ID_FOR.get(source.get("language"))):
             errors.append(f"source.text_id: {source.get('text_id')!r} is not the text "
                           f"for {source.get('language')!r}")
         source_tokens = source.get("tokens") or []

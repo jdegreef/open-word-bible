@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from owb import refs  # noqa: E402
-from owb.sources import macula_greek, macula_hebrew, sblgnt  # noqa: E402
+from owb.sources import macula_greek, macula_hebrew  # noqa: E402
 from owb.validate import source_text  # noqa: E402
 
 
@@ -37,7 +37,8 @@ def skeleton(start, end=None, lang="en"):
             "refs": [str(v) for v in verses],
             "source": {
                 "language": macula_hebrew.source_language(toks) if hebrew else "grc",
-                "text_id": macula_hebrew.TEXT_ID if hebrew else sblgnt.TEXT_ID,
+                "text_id": (macula_hebrew.TEXT_ID if hebrew
+                            else macula_greek.text_id_for(t.ref for t in toks)),
                 "tokens": [t.id for t in toks],
                 "text": source_text(toks),
             },
