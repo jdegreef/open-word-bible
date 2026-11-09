@@ -139,6 +139,9 @@ class Command(BaseCommand):
         for code, _ in refs.NT_BOOKS:
             for ref, v in sblgnt.load_book(code).items():
                 verses.append((ref.book, ref.chapter, ref.verse, v.text))
+        # The verses the SBLGNT does not print (Romans 16:25-27), from Nestle 1904.
+        for ref, text in macula_greek.supplement_verses().items():
+            verses.append((ref.book, ref.chapter, ref.verse, text))
         tokens = (t for toks in macula_greek._all_tokens().values() for t in toks)
         words = (dict(id=t.id, book=t.ref.book, chapter=t.ref.chapter, verse=t.ref.verse,
                       position=t.position, seq=seq, text=t.text, after=t.after,
