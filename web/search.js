@@ -36,7 +36,9 @@
   // composed again, so a Korean syllable stays one character (NFD splits it
   // into its letters).
   function fold(s) {
-    return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC").toLowerCase()
+    return s.replace(/[\uff01-\uff5e]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xfee0); })
+      .replace(/\u3000/g, " ")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC").toLowerCase()
       .replace(/\u0111/g, "d")
       .replace(/[\u2018\u2019\u02bc]/g, "'").replace(/[\u201c\u201d\u00ab\u00bb]/g, '"');
   }
@@ -54,6 +56,9 @@
     return { text: out, start: start, end: end };
   }
 
+  // Kanji, hiragana and katakana (as the backend's search.CJK_RUN).
+  var CJK = /[\u3005-\u3007\u3041-\u3096\u309d\u309e\u30a1-\u30fa\u30fc-\u30ff\u31f0-\u31ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]/u;
+
   function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 
   // The query's terms: "quoted phrases" whole, other words one by one. A
@@ -68,8 +73,11 @@
         if (p && terms.indexOf(p) < 0) terms.push(p);
       });
     }
+    // Japanese has no spaces between words, so a term in kanji or kana
+    // matches anywhere, not only at the start of a word.
     return terms.map(function (t) {
-      return { text: t, re: new RegExp("(^|[^\\p{L}\\p{N}])(" + escapeRe(t).replace(/ +/g, "\\s+") + ")", "gu") };
+      var start = CJK.test(t) ? "()" : "(^|[^\\p{L}\\p{N}])";
+      return { text: t, re: new RegExp(start + "(" + escapeRe(t).replace(/ +/g, "\\s+") + ")", "gu") };
     });
   }
 
