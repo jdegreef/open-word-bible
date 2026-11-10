@@ -31,10 +31,12 @@
 
   // ---- Text --------------------------------------------------------------
 
-  // Lower case, accents removed, curly quotes straightened: what matching
-  // compares, so "corazon" finds "corazón" and "duc" finds "Đức". The rest is
-  // composed again, so a Korean syllable stays one character (NFD splits it
-  // into its letters).
+  // Lower case, accents removed, full-width letters, digits and signs as
+  // ASCII ("３：１６" as "3:16", as Japanese input types them), curly quotes
+  // straightened: what matching compares, so "corazon" finds "corazón" and
+  // "duc" finds "Đức". The rest is composed again, so a Korean syllable stays
+  // one character (NFD splits it into its letters) and the kana voicing marks
+  // are kept (ガ is not カ), as in the API's search.fold.
   function fold(s) {
     return s.replace(/[\uff01-\uff5e]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xfee0); })
       .replace(/\u3000/g, " ")
