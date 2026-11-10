@@ -116,12 +116,15 @@ def line_errors(text):
 # outermost marks are straight double quotes (English, Swahili, Vietnamese,
 # Korean) or guillemets (Spanish, French); quotations inside them use single
 # quotes, curly quotes, or straight double quotes again at the third level.
+# Japanese uses corner brackets: 「 」 outside, 『 』 inside, and
+# 「 」 again at the third level. They always open and close as they
+# look, and are never apostrophes.
 # A straight quote opens at the start or after a space, bracket or dash,
 # when a word follows it, and closes anywhere else (as
 # build_site.smart_quotes curls it). A straight single quote can also be an
 # apostrophe; see quotations().
-_QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019]")
-_PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018"}
+_QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019\u300c\u300d\u300e\u300f]")
+_PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018", "\u300d": "\u300c", "\u300f": "\u300e"}
 
 
 def _opens_here(text, pos):
@@ -133,8 +136,11 @@ def _quotations(text, depth, level=1):
     or 2: inside a quotation inside the outer one), as ranges of the
     quotations level deep (1, the outermost; 2, those inside them);
     raises ValueError."""
-    outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
-    inner = "\u201c" if outer == "\u00ab" else "'"
+    if re.search("[\u300c-\u300f]", text):
+        outer, inner = "\u300c", "\u300e"
+    else:
+        outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
+        inner = "\u201c" if outer == "\u00ab" else "'"
     stack, ranges = [outer, inner][:depth], []
     start = 0
     # A setting span holds no quotation marks (quotations() checks), only
@@ -145,7 +151,7 @@ def _quotations(text, depth, level=1):
         after = text[pos + 1:pos + 2]
         if pos in in_span:
             continue
-        if ch in "\u00ab\u201c\u2018" or (ch in "\"'" and _opens_here(text, pos)
+        if ch in "\u00ab\u201c\u2018\u300c\u300e" or (ch in "\"'" and _opens_here(text, pos)
                                          and after and not after.isspace()):
             if stack and stack[-1] == ch:
                 raise ValueError(f"quotation mark at {pos} opens inside a quotation of its own kind")
@@ -207,7 +213,7 @@ def quotations(text, inside=False, inner=False):
     quotation of the kind already innermost), or a quotation mark sits
     inside a {{setting:...}} span."""
     for s in spans(text):
-        if re.search("[\"\u00ab\u00bb\u201c\u201d]", text[s.start:s.end]):
+        if re.search("[\"\u00ab\u00bb\u201c\u201d\u300c-\u300f]", text[s.start:s.end]):
             raise ValueError(f"quotation mark inside the setting span at {s.start}")
     first = None
     if inner:

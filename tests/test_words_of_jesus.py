@@ -20,6 +20,18 @@ class QuotationsTest(unittest.TestCase):
         self.assertEqual(quoted("Jésus lui répondit : « En vérité. »"), ["En vérité."])
         self.assertEqual(quoted("Jesús le respondió: «En verdad te digo»."), ["En verdad te digo"])
 
+    def test_japanese_corner_brackets(self):
+        self.assertEqual(quoted("イエスは答えられた。「はっきり言っておく。」"), ["はっきり言っておく。"])
+        self.assertEqual(quoted("「行け」と言い、また「来い」と言った。"), ["行け", "来い"])
+        # 『』 inside 「」 belongs to it, and 「」 again inside that.
+        text = "彼は言った。「わたしは『主よ、「来てください」と言え』と言った。」"
+        self.assertEqual(quoted(text), [text[text.index("「") + 1:-1]])
+        self.assertEqual([text[s:e] for s, e in markup.quotations(text, inner=True)],
+                         ["主よ、「来てください」と言え"])
+        # A sentence that begins inside a speech an earlier one opened.
+        self.assertEqual(quoted("世を救うためである。」 そして去った。", inside=True), ["世を救うためである。"])
+        self.assertEqual(quoted("霊から生まれる者は霊である。", inside=True), ["霊から生まれる者は霊である。"])
+
     def test_a_sentence_can_begin_or_end_inside_a_quotation(self):
         self.assertEqual(quoted('of the Spirit." Then he left.'), ["of the Spirit."])
         self.assertEqual(quoted('Jesus replied, "Truly, truly.'), ["Truly, truly."])

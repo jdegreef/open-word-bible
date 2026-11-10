@@ -616,10 +616,10 @@ class SiteTest(unittest.TestCase):
             self.assertTrue(all(("l" in v) != translated for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
                 # The verse ends a sentence, so it reads on its own (Hindi ends one
-                # with the danda ।, Amharic
-                # ends one with ።; a closing quotation mark may follow: ” ’,
-                # Amharic », or French » after a no-break space).
-                self.assertRegex(v["t"], r"[.?!።।](?:[”’»]|\u00a0»)?$", vid)
+                # with the danda ।, Amharic with ።, Japanese with 。; a closing
+                # quotation mark may follow: ” ’, Amharic », French » after a
+                # no-break space, or Japanese 」 』).
+                self.assertRegex(v["t"], r"[.?!።।。？！](?:[”’»」』]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
