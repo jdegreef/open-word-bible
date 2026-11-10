@@ -59,6 +59,10 @@
   // Kanji, hiragana and katakana (as the backend's search.CJK_RUN).
   var CJK = /[\u3005-\u3007\u3041-\u3096\u309d\u309e\u30a1-\u30fa\u30fc-\u30ff\u31f0-\u31ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f]/u;
 
+  // A query long enough to search: MIN characters, or one kanji or kana,
+  // which is a word in Japanese (as the API's MIN_QUERY).
+  function longEnough(q) { return q.length >= MIN || (q.length === 1 && CJK.test(q)); }
+
   function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 
   // The query's terms: "quoted phrases" whole, other words one by one. A
@@ -321,7 +325,7 @@
 
   function remember(q) {
     q = (q || "").trim();
-    if (q.length < MIN) return;
+    if (!longEnough(q)) return;
     var list = recent().filter(function (s) { return fold(s) !== fold(q); });
     list.unshift(q);
     try { localStorage.setItem(RECENT, JSON.stringify(list.slice(0, 6))); } catch (e) { /* this visit only */ }
@@ -414,8 +418,8 @@
       var kind = why(e);
       if (kind === "abort") return;
       // Enter still goes to the search page, which says the same.
-      rows = q.length >= MIN ? [showAll(q)] : [];
-      if (UI) rows = rows.concat(pages(q.length >= MIN ? q : ""));
+      rows = longEnough(q) ? [showAll(q)] : [];
+      if (UI) rows = rows.concat(pages(longEnough(q) ? q : ""));
       message = list.getAttribute(kind === "offline" ? "data-offline" : "data-error") || "";
       active = 0;
       busy(false);
@@ -427,7 +431,7 @@
       var q = input.value.trim();
       if (asking) asking.abort();
       asking = null;
-      if (q.length < MIN) {
+      if (!longEnough(q)) {
         loadUi().then(function () {
           if (input.value.trim() !== q) return;
           rows = pages(""); message = ""; active = 0;
@@ -506,7 +510,7 @@
 
     input.addEventListener("input", function () {
       clearTimeout(timer);
-      if (input.value.trim().length >= MIN) busy(true);
+      if (longEnough(input.value.trim())) busy(true);
       timer = setTimeout(update, 200);
     });
     input.addEventListener("keydown", function (e) {
@@ -520,11 +524,11 @@
         var q = input.value.trim();
         // The rows shown are for what was typed before: wait for the
         // answer, unless the reader chose a row.
-        if (list.hasAttribute("aria-busy") && active === 0 && q.length >= MIN) {
+        if (list.hasAttribute("aria-busy") && active === 0 && longEnough(q)) {
           enterWaiting = true;
           if (!asking) { clearTimeout(timer); update(); }
         } else if (rows[active]) go(rows[active]);
-        else if (q.length >= MIN) go({ href: searchUrl(SEARCH_BASE, q) });
+        else if (longEnough(q)) go({ href: searchUrl(SEARCH_BASE, q) });
       } else if (e.key === "Tab") {
         e.preventDefault();
       }
@@ -717,7 +721,7 @@
       links = []; active = -1;
       results.textContent = "";
       results.classList.remove("is-loading");
-      if (q.length < MIN || !answer) {
+      if (!longEnough(q) || !answer) {
         idle();
         say(q && UI ? ui("prompt") : "");
         return;
@@ -855,7 +859,7 @@
     function run() {
       var q = state.q.trim();
       failedKind = null;
-      if (q.length < MIN) {
+      if (!longEnough(q)) {
         if (asking) { asking.abort(); asking = null; }
         answer = null;
         results.removeAttribute("aria-busy");

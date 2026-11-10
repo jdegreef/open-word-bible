@@ -58,6 +58,8 @@ CJK = "owb_cjk"
 # (・) between the parts of a name is punctuation, so it ends a run.
 CJK_RUN = re.compile("[\u3005-\u3007\u3041-\u3096\u309d\u309e\u30a1-\u30fa\u30fc-\u30ff\u31f0-\u31ff"
                      "\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\U00020000-\U0003134f]+")
+# The shortest query searched: two characters, or one kanji or kana (a word
+# in Japanese, where one Latin letter is not).
 MIN_QUERY = 2
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 VERSE_MARK = re.compile(r"\\v \d+ ?")
@@ -601,7 +603,7 @@ def search(lang, q, kind=None, offset=0, limit=20, sort="relevance", per=8):
     q = q.replace("\x00", "").strip()[:200]
     answer = {"query": q, "lang": lang}
     query_terms = terms(q)
-    if len(q) < MIN_QUERY or not query_terms:
+    if (len(q) < MIN_QUERY and not CJK_RUN.fullmatch(q)) or not query_terms:
         return {**answer, "reference": None, "totals": {}, "results": [], "suggestion": None}
     query = tsquery(lang, query_terms)
     if kind:
