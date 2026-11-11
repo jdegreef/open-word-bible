@@ -282,6 +282,17 @@ hold for the later books.
   B), いやす (R); forgive 赦す (L, B), ゆるす (R); *parousia* 来臨 (L, B), 主が来ら
   れる (R); Gehenna ゲヘナ (L, B), 地獄 (R).
 
+## 7b. The Old Testament (settled before it is drafted)
+
+- **The divine name** (YHWH) is `{{divine_name:主|ヤハウェ}}` at every level:
+  主 by default, the usual form in Japanese Bibles, with the name itself as
+  the reader setting, as the English has LORD / Yahweh. Particles go outside
+  the span (`{{divine_name:主|ヤハウェ}}は`). *Adonai* ("Lord") is 主 with no
+  span; *Elohim* is 神. エホバ is not used.
+- **Lines.** Poetry is set in lines (`\q `), following the Hebrew accents'
+  division of the verse (`scripts/poetry_lines.py`), at every level, as
+  `docs/english-style.md` section 10 describes.
+
 ## 8. Status
 
 A Japanese rendering added to a record does not change its status. Nothing
