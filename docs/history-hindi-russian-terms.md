@@ -103,3 +103,36 @@ holds. In addition:
 
 Uzziah is also called Azariah in Kings (अजर्याह / Азария), as the Hebrew
 does; keep each name where the Hebrew has it.
+
+## 2 Samuel
+
+Forms first used in 2 Samuel, for Kings, Chronicles and Psalms to reuse.
+
+| English | Hindi | Russian |
+|---|---|---|
+| Ish-bosheth, Mephibosheth, Ziba, Asahel | ईशबोशेत, मपीबोशेत, सीबा, असाहेल | Иевосфей, Мемфивосфей, Сива, Асаил |
+| Amnon, Tamar, Jonadab, Adonijah | अम्नोन, तामार, योनादाब, अदोनिय्याह | Амнон, Фамарь, Ионадав, Адония |
+| Ahithophel, Hushai, Ittai the Gittite, Shimei, Amasa | अहीतोपेल, हूशै, इत्तै, शिमी, अमासा | Ахитофел, Хусий, Еффей гефянин, Семей, Амессай |
+| Zadok, Abiathar, Ahimaaz, Benaiah, Barzillai | सादोक (as Matthew 1:14), अबियातार, अहीमास, बनायाह, बर्ज़िल्लै | Садок, Авиафар, Ахимаас, Ванея, Верзеллий |
+| Cherethites and Pelethites; Mahanaim; Beersheba | करेती और पलेती; महनैम; बेर्शेबा | хелефеи и фелефеи; Маханаим; Беэр-Шева (kept apart from Вирсавия, Bathsheba) |
+| the city of David | दाऊद का नगर (as Luke 2:11) | город Давида |
+| the Three; the Thirty | तीनों; तीसों | Трое; Тридцать |
+
+- **"How the mighty have fallen"** (1:19, 25, 27). Hindi: वीर योद्धा कैसे गिर
+  पड़े! (L), हाय, वीर योद्धा कैसे गिर पड़े! (B), हाय, बहादुर योद्धा कैसे मारे गए!
+  (R). Russian: Как пали сильные! (L), Как пали богатыри! (B), Как пали храбрые
+  воины! (R).
+- **Address.** Hindi: people say आप and मेरे स्वामी राजा to David (महाराज where
+  the English B or R has "Your Majesty"); David says तू to God, God says तुम to
+  people; Nathan and David say आप to each other ("वह पुरुष आप ही हैं!", 12:7).
+  Russian: ты throughout, господин мой царь to the king, вы only for a Hebrew
+  plural.
+- **Servants.** The king's officials: Hindi दास (L), अधिकारी (B, R); Russian
+  рабы (L), приближённые (B, R).
+- **Hesed.** The LORD's is अटल प्रेम / неизменная любовь; between people Hindi
+  अटल प्रेम (L), कृपा (B, R) and Russian неизменная любовь (L), милость (B, R).
+- **2 Samuel 22 (Psalm 18).** Drafted here first; Psalm 18 reuses it where the
+  Hebrew is the same. The crag (*sela*) and the rock (*tsur*) stay apart:
+  ऊँची चट्टान / चट्टान; утёс / скала (твердыня for the stronghold). Sheol is
+  शिओल (L), अधोलोक (B), मृत्यु का लोक (R); шеол (L), мир мёртвых (B, R). 22:50
+  keeps the wording of Romans 15:9 in each language.
