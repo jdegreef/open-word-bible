@@ -219,6 +219,7 @@ never meaning decisions.
 | Amen; Hosanna | アーメン; ホサナ | |
 | Rabbi; Teacher | ラビ; 先生 | |
 | slave (*doulos*) | 奴隷 (L); しもべ (B, R) | As the English: Literal says slave, Balanced and Readable servant, except where slavery itself is the point (slave and free), where 奴隷 stays at every level. |
+| deacon (*diakonos* as a church office: Romans 16:1; Philippians 1:1; 1 Timothy 3:8, 12) | 執事 | Every level. *diakonos* as a plain servant or minister (Christ in Romans 15:8, Paul of the gospel in Ephesians 3:7) is 仕える者 / 奉仕者, as the context asks. |
 | flesh (Paul's moral sense) | 肉 (L, B); 罪に傾く人間の性質 (R) | With a decision where it first appears. |
 | brothers (*adelphoi*, the believers) | `{{gender:きょうだいたち\|兄弟たち}}` | See section 7. |
 
