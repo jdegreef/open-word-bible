@@ -78,6 +78,11 @@
           "L": "Коли ж {{deity_pronoun:він|Він}} зійшов з гори, пішли за {{deity_pronoun:ним|Ним}} численні натовпи.",
           "B": "Коли Ісус спускався з гори, за {{deity_pronoun:ним|Ним}} ішли великі натовпи.",
           "R": "Ісус зійшов з гори, і за {{deity_pronoun:ним|Ним}} пішло дуже багато людей."
+        },
+        "ja": {
+          "L": "さて、[イエスが]山から下りて来られると、大勢の群衆がイエスに従った。",
+          "B": "イエスが山から下りて来られると、大勢の群衆がついて来た。",
+          "R": "イエスが山から下りて来られると、大勢の人々がついて来ました。"
         }
       },
       "decisions": [
@@ -271,6 +276,25 @@
           "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. The honorific third person for Jesus (\"वे\", \"उनके\") carries the respect at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40008001001"
+          ],
+          "choice": "narration in the plain style (L, B) and です・ます (R), with light respect for what Jesus does (\"下りて来られる\", \"言われた\")",
+          "alternatives": [],
+          "reason": "The shared Gospel terms set this for Matthew's narration. Those who come to Jesus in this passage (8:2-13) speak politely; Jesus answers plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -356,6 +380,11 @@
           "L": "І ось прокажений, підійшовши, вклонився {{deity_pronoun:йому|Йому}}, кажучи: «Господи, якщо {{deity_pronoun:ти|Ти}} хочеш, {{deity_pronoun:ти|Ти}} можеш мене очистити.»",
           "B": "І тоді до {{deity_pronoun:нього|Нього}} підійшов чоловік, хворий на проказу, і вклонився {{deity_pronoun:йому|Йому}} до землі. «Господи», — сказав він, — «якщо {{deity_pronoun:ти|Ти}} хочеш, {{deity_pronoun:ти|Ти}} можеш зробити мене чистим.»",
           "R": "До Ісуса прийшов чоловік, який мав тяжку шкірну хворобу, і вклонився {{deity_pronoun:йому|Йому}}. Він сказав: «Господи, якщо {{deity_pronoun:ти|Ти}} хочеш, {{deity_pronoun:ти|Ти}} можеш мене вилікувати й зробити чистим.»"
+        },
+        "ja": {
+          "L": "すると、なんと、重い皮膚病にかかった人が近寄って来て、[イエスの]前にひれ伏し、言った。「主よ、もしお望みになるなら、あなたはわたしを清くすることがおできになります。」",
+          "B": "ちょうどそのとき、重い皮膚病を患っている人が近寄って来て、イエスの前にひれ伏した。「主よ」とその人は言った。「お望みでしたら、あなたはわたしを清くすることがおできになります。」",
+          "R": "重い皮膚の病気の人が、イエスのところに来て、その前にひれ伏しました。その人は言いました。「主よ、あなたがそうしたいと思ってくださるなら、わたしの病気を治して、清くすることがおできになります。」"
         }
       },
       "decisions": [
@@ -822,6 +851,68 @@
           "reason": "As the Ukrainian style guide settles, people speaking to Jesus say \"ти\", petitioners included; the vocative \"Господи\" carries the respect.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008002003"
+          ],
+          "choice": "\"重い皮膚病にかかった人\" (L), \"重い皮膚病を患っている人\" (B), \"重い皮膚の病気の人\" (R); the man's words as in Mark 1:40, with \"主よ\" added",
+          "alternatives": [
+            "the older Japanese word for leprosy"
+          ],
+          "reason": "The law's word covered many skin diseases (m1). Matthew has the same Greek as Mark 1:40, so the Japanese keeps Mark's wording; the older word names Hansen's disease and is now a word of discrimination.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008002008"
+          ],
+          "choice": "\"主よ\" at every level, here and for the centurion (8:6, 8)",
+          "alternatives": [
+            "\"先生\" (B, R), as for other strangers"
+          ],
+          "reason": "Strangers usually say \"先生\" to Jesus at Balanced and Readable, but the meaning decision (m4) makes the address count: in Matthew those who come in faith call Jesus Lord, and the reader hears the full sense. So \"主よ\" stays at every level, as Mark does for the woman of 7:28. The man speaks politely, as a petitioner.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-3",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008002002"
+          ],
+          "choice": "\"すると、なんと\" (L); \"ちょうどそのとき\" (B); not rendered (R)",
+          "alternatives": [
+            "\"見よ\""
+          ],
+          "reason": "Matthew's pointing word in narration, as the narrative books on main render it; Balanced carries its force in the time phrase, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -909,6 +1000,11 @@
           "L": "І, простягнувши руку, {{deity_pronoun:він|Він}} доторкнувся до нього, кажучи: «Хочу, очистися.» І зараз же очистилася його проказа.",
           "B": "Ісус простягнув руку й доторкнувся до нього. «Хочу», — сказав {{deity_pronoun:він|Він}}. — «Будь чистим!» І тієї ж миті його проказа зникла.",
           "R": "Ісус простягнув руку й доторкнувся до чоловіка. «Хочу», — сказав {{deity_pronoun:він|Він}}. — «Будь чистим!» І відразу шкірна хвороба зникла, і чоловік став чистим."
+        },
+        "ja": {
+          "L": "そして[イエスは]手を伸ばして彼に触れ、言われた。「わたしは望む。清くなれ。」するとすぐに、彼の重い皮膚病は清められた。",
+          "B": "イエスは手を伸ばしてその人に触れられた。「わたしは望む」とイエスは言われた。「清くなれ。」すると、たちどころに、その人の病は取り去られた。",
+          "R": "イエスは手を伸ばして、その人に触れられました。「そうしたいのだ」とイエスは言われました。「病気が治って、清くなれ。」すると、すぐに、その人の皮膚の病気は消えて、その人は清くなりました。"
         }
       },
       "decisions": [
@@ -1007,6 +1103,25 @@
           "reason": "The Greek says the leprosy was cleansed; Hindi does not say a disease is made clean, so Literal makes the man the subject and keeps the verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008003008"
+          ],
+          "choice": "\"わたしは望む\" (L, B), \"そうしたいのだ\" (R), as in Mark 1:41",
+          "alternatives": [],
+          "reason": "Jesus answers with the man's own word, as in Mark, and the Japanese keeps Mark's wording for the same Greek.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1103,6 +1218,11 @@
           "L": "І каже йому Ісус: «Дивись, нікому не кажи, але йди, себе покажи священникові й принеси дар, який заповів Мойсей, на свідчення їм.»",
           "B": "Тоді Ісус сказав йому: «Гляди ж, нікому не розповідай. Натомість іди, нехай священник тебе огляне, і принеси дар, який заповів Мойсей, як доказ для них.»",
           "R": "Тоді Ісус сказав йому: «Нікому про це не розповідай. Але йди й покажися священникові, щоб він тебе оглянув. Потім принеси жертву, яку наказав Мойсей. Тоді люди знатимуть, що ти здоровий.»"
+        },
+        "ja": {
+          "L": "そしてイエスは彼に言われる。「だれにも言わないように気をつけなさい。ただ行って、祭司に自分を見せなさい。そして、モーセが命じた供え物を献げなさい。彼らへの証しのためである。」",
+          "B": "それから、イエスはその人に言われた。「だれにも話さないように気をつけなさい。ただ行って、祭司に体を調べてもらいなさい。そして、モーセが定めた供え物を献げなさい。それが人々への証拠となる。」",
+          "R": "それから、イエスはその人に言われました。「このことを、だれにも話してはいけない。行って、祭司に体を見せなさい。そして、モーセが命じたささげ物をしなさい。そうすれば、あなたが治ったことが、人々にはっきりわかる。」"
         }
       },
       "decisions": [
@@ -1285,6 +1405,26 @@
           "reason": "Literal keeps the Greek's historic present.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008004002",
+            "n40008004023"
+          ],
+          "choice": "present \"言われる\" (L), past (B, R); \"証し\" (L), \"証拠\" (B), \"はっきりわかる\" (R), as in Mark 1:44",
+          "alternatives": [],
+          "reason": "Matthew tells this in the present tense; Literal keeps it, and Balanced and Readable narrate in the past (also in 8:7). The testimony is proof that the man is clean (m2), worded as in Mark's parallel.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1381,6 +1521,11 @@
           "L": "Коли ж {{deity_pronoun:він|Він}} увійшов до Капернаума, підійшов до {{deity_pronoun:нього|Нього}} сотник, благаючи {{deity_pronoun:його|Його}} \\v 6 і кажучи: «Господи, мій слуга лежить удома паралізований, тяжко страждаючи.»",
           "B": "Коли Ісус увійшов до Капернаума, до {{deity_pronoun:нього|Нього}} підійшов сотник і став {{deity_pronoun:його|Його}} благати. \\v 6 «Господи», — сказав він, — «мій слуга лежить удома паралізований і тяжко страждає.»",
           "R": "Коли Ісус прийшов до міста Капернаума, до {{deity_pronoun:нього|Нього}} підійшов римський офіцер і попросив про допомогу. \\v 6 Він сказав: «Господи, мій слуга лежить удома. Він не може рухатися і дуже страждає.»"
+        },
+        "ja": {
+          "L": "さて、[イエスが]カファルナウムに入られると、百人隊長が[イエスの]もとに来て、懇願し、\\v 6 言った。「主よ、わたしのしもべが、体がまひして家で床に就いており、ひどく苦しめられています。」",
+          "B": "イエスがカファルナウムに入られると、一人の百人隊長が近づいて来て、懇願した。\\v 6 「主よ」と彼は言った。「わたしのしもべが、体がまひして家に寝ており、ひどく苦しんでおります。」",
+          "R": "イエスがカファルナウムの町に入られると、ローマ軍の百人隊長が、イエスのところに来て、助けを願いました。\\v 6 その人は言いました。「主よ、わたしの家にいるしもべが、床に寝たままなのです。体が動かせず、とても苦しんでいます。」"
         }
       },
       "decisions": [
@@ -1839,6 +1984,29 @@
           "reason": "Pais can mean a boy or a household servant; \"слуга\" keeps the household sense the centurion's words in 8:9 point to, and stays apart from \"раб\" for doulos.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008005008",
+            "n40008006005"
+          ],
+          "choice": "\"百人隊長\" (L, B), \"ローマ軍の百人隊長\" (R); \"しもべ\" for the boy-servant at every level",
+          "alternatives": [
+            "\"ローマ軍の隊長\" (R)",
+            "\"子\" for the servant"
+          ],
+          "reason": "Readable keeps the shared term and adds who the officer was, as the English says a Roman army officer (m1). The word for the servant can mean a boy or a household servant (m2); \"しもべ\" fits both and keeps it apart from \"奴隷\", the word for the slave of 8:9 at Literal. The centurion speaks humbly and politely.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1918,6 +2086,11 @@
           "L": "І каже йому: «Я, прийшовши, вилікую його.»",
           "B": "Ісус сказав йому: «Я прийду й зцілю його.»",
           "R": "Ісус відповів йому: «Я прийду й вилікую його.»"
+        },
+        "ja": {
+          "L": "そして[イエスは]彼に言われる。「わたしが行って、彼を癒やそう。」",
+          "B": "イエスはその人に言われた。「わたしが行って、癒やしてあげよう。」",
+          "R": "イエスは言われました。「わたしが行って、治してあげよう。」"
         }
       },
       "decisions": [
@@ -2055,6 +2228,11 @@
           "L": "І, відповідаючи, сотник сказав: «Господи, я не гідний, щоб {{deity_pronoun:ти|Ти}} увійшов під мій дах, але тільки скажи словом, і одужає мій слуга.",
           "B": "Сотник відповів: «Господи, я не вартий того, щоб {{deity_pronoun:ти|Ти}} заходив до мого дому. Тільки дай наказ, і мій слуга одужає.",
           "R": "Офіцер відповів: «Господи, я не вартий того, щоб {{deity_pronoun:ти|Ти}} приходив до мене додому. Просто накажи, і мій слуга видужає."
+        },
+        "ja": {
+          "L": "すると百人隊長は答えて言った。「主よ、わたしは、あなたがわたしの屋根の下に入ってくださるのにふさわしい者ではありません。むしろ、ただ言葉でお命じください。そうすれば、わたしのしもべは癒やされます。",
+          "B": "百人隊長は答えた。「主よ、わたしは、あなたに家に来ていただけるような者ではありません。ただ命令の言葉をくだされば、それで、わたしのしもべは治ります。",
+          "R": "百人隊長は答えました。「主よ、わたしは、あなたに家に来ていただけるような者ではありません。ただ命令してくだされば、しもべは治ります。"
         }
       },
       "decisions": [
@@ -2303,6 +2481,11 @@
           "L": "Бо і я людина під владою, яка має під собою воїнів, і кажу цьому: “Іди”, і він іде, і іншому: “Приходь”, і він приходить, і моєму рабові: “Зроби це”, і він робить.»",
           "B": "Я й сам людина підвладна, і в мене під рукою є воїни. Кажу одному: “Іди”, і він іде, а іншому: “Прийди”, і він приходить. Кажу своєму рабові: “Зроби це”, і він робить.»",
           "R": "Я сам підкоряюся старшим командирам, і в мене є свої воїни. Я кажу одному воїнові: “Іди”, і він іде. Кажу іншому: “Іди сюди”, і він приходить. Кажу своєму рабові: “Зроби це”, і він робить.»"
+        },
+        "ja": {
+          "L": "わたしも権威の下にある人間で、わたしの下には兵士たちがいます。そして、この者に『行け』と言えば行き、ほかの者に『来い』と言えば来ます。また、わたしの奴隷に『これをしろ』と言えば、[それを]します。」",
+          "B": "わたし自身も上の者の権威の下にある人間で、わたしの下には兵士たちがいます。一人に『行け』と言えば行きますし、別の者に『来い』と言えば来ます。わたしのしもべに『これをしろ』と言えば、そのとおりにします。」",
+          "R": "わたしも、上の隊長たちの命令に従う者です。そして、わたしの下には兵士たちがいます。一人の兵士に『行け』と言えば、その兵士は行きます。別の兵士に『来い』と言えば、来ます。しもべに『これをしなさい』と言えば、そのとおりにします。」"
         }
       },
       "decisions": [
@@ -2571,6 +2754,25 @@
             "\"слуга\""
           ],
           "reason": "The Ukrainian key-term table keeps \"раб\" for doulos throughout, and \"слуга\" for pais (8:6), so the two Greek words stay apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40008009025"
+          ],
+          "choice": "\"奴隷\" (L); \"しもべ\" (B, R)",
+          "alternatives": [],
+          "reason": "The general rule for the slave word: Literal says slave, Balanced and Readable servant; the meaning decision (m2) keeps that he was owned. His orders to his men are plain commands (\"行け\", \"来い\"), as an officer gives them.",
           "uncertain": false,
           "footnote": false
         }
