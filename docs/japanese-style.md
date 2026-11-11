@@ -219,6 +219,7 @@ never meaning decisions.
 | Amen; Hosanna | アーメン; ホサナ | |
 | Rabbi; Teacher | ラビ; 先生 | |
 | slave (*doulos*) | 奴隷 (L); しもべ (B, R) | As the English: Literal says slave, Balanced and Readable servant, except where slavery itself is the point (slave and free), where 奴隷 stays at every level. |
+| deacon (*diakonos* as a church office: Romans 16:1; Philippians 1:1; 1 Timothy 3:8, 12) | 執事 | Every level. *diakonos* as a plain servant or minister (Christ in Romans 15:8, Paul of the gospel in Ephesians 3:7) is 仕える者 / 奉仕者, as the context asks. |
 | flesh (Paul's moral sense) | 肉 (L, B); 罪に傾く人間の性質 (R) | With a decision where it first appears. |
 | brothers (*adelphoi*, the believers) | `{{gender:きょうだいたち\|兄弟たち}}` | See section 7. |
 
@@ -280,6 +281,17 @@ hold for the later books.
   assembly (*synagōgē*, James 2:2) 集会; elders 長老たち (L, B); heal 癒やす (L,
   B), いやす (R); forgive 赦す (L, B), ゆるす (R); *parousia* 来臨 (L, B), 主が来ら
   れる (R); Gehenna ゲヘナ (L, B), 地獄 (R).
+
+## 7b. The Old Testament (settled before it is drafted)
+
+- **The divine name** (YHWH) is `{{divine_name:主|ヤハウェ}}` at every level:
+  主 by default, the usual form in Japanese Bibles, with the name itself as
+  the reader setting, as the English has LORD / Yahweh. Particles go outside
+  the span (`{{divine_name:主|ヤハウェ}}は`). *Adonai* ("Lord") is 主 with no
+  span; *Elohim* is 神. エホバ is not used.
+- **Lines.** Poetry is set in lines (`\q `), following the Hebrew accents'
+  division of the verse (`scripts/poetry_lines.py`), at every level, as
+  `docs/english-style.md` section 10 describes.
 
 ## 8. Status
 
