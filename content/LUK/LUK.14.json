@@ -3641,6 +3641,11 @@
           "L": "І {{deity_pronoun:він|Він}} казав також тому, хто запросив {{deity_pronoun:його|Його}}: «Коли влаштовуєш обід чи вечерю, не клич своїх друзів, ані своїх {{gender:братів і сестер|братів}}, ані своїх родичів, ані багатих сусідів, щоб і вони, бува, не запросили тебе навзаєм і не було тобі віддячено.",
           "B": "Тоді {{deity_pronoun:він|Він}} сказав і господареві: «Коли влаштовуєш обід чи вечерю, не запрошуй своїх друзів, своїх {{gender:братів і сестер|братів}}, родичів чи заможних сусідів. Вони можуть запросити тебе навзаєм, і це буде твоєю відплатою.",
           "R": "Ісус звернувся також до чоловіка, який запросив {{deity_pronoun:його|Його}} на обід. Він сказав: «Коли кличеш людей на обід, не запрошуй своїх друзів, своїх {{gender:братів і сестер|братів}}, родичів чи багатих сусідів. Вони можуть теж запросити тебе до себе. Так тобі віддячать за твій обід."
+        },
+        "ja": {
+          "L": "また[イエスは]御自分を招いた人にも言っておられた。「昼食や夕食の席を設けるときは、あなたの友人も、あなたの{{gender:きょうだい|兄弟}}も、あなたの親類も、金持ちの隣人も呼んではならない。彼らもまたあなたを招き返して、それがあなたへのお返しとなってしまうかもしれないからである。",
+          "B": "イエスは、招いてくれた主人にも言われた。「昼食会や夕食会を開くときには、友人も、{{gender:きょうだい|兄弟}}も、親類も、裕福な隣人も招いてはならない。その人たちもあなたを招き返して、それで返礼が済んでしまうかもしれない。",
+          "R": "イエスは、ご自分を食事に招いた人にも言われました。「人を食事に招くときには、友だちや、{{gender:きょうだい|兄弟}}や、親類や、お金持ちの近所の人を招いてはいけない。その人たちも、あなたを自分の家に招いてくれるだろう。そうすれば、それでお返しをしてもらったことになってしまう。"
         }
       },
       "decisions": [
@@ -3850,6 +3855,45 @@
           "reason": "The word here means the host's brothers and sisters (meaning decision m4). Hindi has two real ways to say it, \"भाई-बहन\" and \"भाई\", with the same postposition, so the span changes only the noun, as the English does; the inclusive form is the default.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42014012019"
+          ],
+          "choice": "{{gender:きょうだい|兄弟}} at every level",
+          "alternatives": [],
+          "reason": "The host's brothers and sisters are meant (m4). \"きょうだい\" in kana is the inclusive word for siblings, with \"兄弟\" as the traditional alternative, as the English has brothers and sisters / brothers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014012009",
+            "n42014012011"
+          ],
+          "choice": "\"昼食や夕食\" (L); \"昼食会や夕食会\" (B); \"食事\" (R)",
+          "alternatives": [],
+          "reason": "A midday and an evening meal, so any meal a person hosts (m1); Balanced says they are meals with guests, Readable says simply \"a meal\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3931,6 +3975,11 @@
           "L": "Але коли влаштовуєш гостину, клич убогих, калік, кульгавих, сліпих;",
           "B": "Натомість, коли влаштовуєш бенкет, запрошуй бідних, покалічених, кульгавих і сліпих.",
           "R": "Натомість, коли влаштовуєш велике частування, запроси бідних людей. Запроси людей з покаліченим тілом, людей, які не можуть ходити, і людей, які не бачать."
+        },
+        "ja": {
+          "L": "むしろ、宴会を催すときは、貧しい人々、体の不自由な人々、足の不自由な人々、目の見えない人々を招きなさい。",
+          "B": "宴会を開くときには、むしろ、貧しい人々や、手足を損なった人々、足の不自由な人々、目の見えない人々を招きなさい。",
+          "R": "大きな食事会を開くときには、そうではなく、貧しい人たちを招きなさい。体に障がいのある人や、歩けない人や、目の見えない人を招きなさい。"
         }
       },
       "decisions": [
@@ -4101,6 +4150,26 @@
           "reason": "The crippled are the maimed, disabled in body (meaning decision m3). Literal keeps older plain words, Balanced uses the respectful modern \"अपंग\", and Readable describes each condition, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014013007",
+            "n42014013008"
+          ],
+          "choice": "\"体の不自由な人々\" (L), \"手足を損なった人々\" (B), \"体に障がいのある人\" (R); \"足の不自由な人々\" (L, B), \"歩けない人\" (R)",
+          "alternatives": [],
+          "reason": "The first word is a damaged or missing limb, the second the inability to walk (m3); each level keeps the two apart, and the same words return in 14:21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4189,6 +4258,11 @@
           "L": "і блаженний будеш, бо вони не мають чим віддячити тобі; бо буде віддячено тобі у воскресінні праведних.»",
           "B": "І ти будеш блаженний, бо вони не мають чим тобі віддячити. Твоя нагорода прийде під час воскресіння праведних.»",
           "R": "Тоді Бог благословить тебе, бо ці люди не мають чим тобі віддячити. Бог віддячить тобі тоді, коли ті, хто живе правильно перед {{deity_pronoun:ним|Ним}}, воскреснуть із мертвих.»"
+        },
+        "ja": {
+          "L": "そうすれば、あなたは幸いな者となる。彼らにはあなたにお返しをするものがないからである。正しい者たちの復活のときに、あなたはお返しを受けるのである。」",
+          "B": "そうすれば、あなたは幸いである。その人たちはお返しができないからである。正しい人々が復活するときに、あなたは報いを受ける。」",
+          "R": "そうすれば、神があなたを幸せにしてくださる。その人たちは、あなたに何もお返しができないからだ。神の前に正しい人たちが死からよみがえるときに、神があなたに報いてくださる。」"
         }
       },
       "decisions": [
@@ -4423,6 +4497,26 @@
           "reason": "The raising of God's people at the last day (meaning decision m3), with the key term \"धर्मी\" for righteous; Readable explains both words, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014014002",
+            "n42014014009"
+          ],
+          "choice": "\"幸い\" (L, B); \"神があなたを幸せにしてくださる\" (R); \"お返しを受ける\" (L), \"報いを受ける\" (B), \"神が……報いてくださる\" (R)",
+          "alternatives": [],
+          "reason": "\"Blessed\" is God's favor (m1), the word of the Beatitudes, worded as there; the passive \"will be repaid\" points to God (m2). Readable names God in both, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4512,6 +4606,11 @@
           "L": "Почувши це, один із тих, що сиділи [за столом] з [{{deity_pronoun:ним|Ним}}], сказав {{deity_pronoun:йому|Йому}}: «Блаженний той, хто їстиме хліб у Царстві Божому!»",
           "B": "Один із гостей за столом почув це й сказав {{deity_pronoun:йому|Йому}}: «Блаженний кожен, хто сидітиме за столом у Царстві Божому!»",
           "R": "Один із гостей почув, що сказав Ісус. Він сказав {{deity_pronoun:йому|Йому}}: «Щасливі ті, хто їстиме на бенкеті в Царстві Божому!»"
+        },
+        "ja": {
+          "L": "[イエスと]共に[食卓に]横になっていた者の一人がこれらのことを聞いて、イエスに言った。「神の国でパンを食べる者は、幸いです！」",
+          "B": "同席していた客の一人がこれを聞いて、イエスに言った。「神の国で食卓に着く人は、なんと幸いなことでしょう！」",
+          "R": "一緒に食事をしていた客の一人が、イエスの話を聞いて言いました。「神の国のごちそうの席で食事をする人は、なんと幸せでしょう！」"
         }
       },
       "decisions": [
@@ -4689,6 +4788,26 @@
           "reason": "The book's term for the kingdom of God, at every level (style guide section 6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42014015007",
+            "n42014015009"
+          ],
+          "choice": "the guest speaks politely to Jesus",
+          "alternatives": [],
+          "reason": "A fellow guest speaks to a teacher at a Pharisee's table, so his pious saying (m3) is in the polite style. \"幸い\" (L, B) and \"幸せ\" (R) match the Beatitude wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4791,6 +4910,11 @@
           "L": "А {{deity_pronoun:він|Він}} сказав йому: «Один чоловік улаштовував велику вечерю і запросив багатьох. \\v 17 І в годину вечері послав свого раба сказати запрошеним: “Приходьте, бо вже [все] готове.”",
           "B": "Він відповів йому: «Один чоловік улаштовував велику вечерю і запросив на неї багатьох. \\v 17 Коли настав час вечері, він послав свого раба сказати запрошеним: “Приходьте, усе вже готове.”",
           "R": "Ісус відповів: «Один чоловік задумав велику вечерю й запросив багато людей. \\v 17 Коли настав час їсти, він послав свого раба сказати гостям: “Приходьте! Уже все готове.”"
+        },
+        "ja": {
+          "L": "そこで[イエスは]彼に言われた。「ある人が大きな夕食会を催そうとして、多くの人を招いた。\\v 17 そして夕食の時刻に、自分の奴隷を遣わして、招いておいた人々に『おいでください。もう[すべて]用意ができましたから』と言わせた。",
+          "B": "イエスはその人に言われた。「ある人が盛大な夕食会を開こうとして、大勢の人を招いておいた。\\v 17 夕食の時刻になったので、しもべを遣わして、招いておいた客たちに、『おいでください。もうすっかり用意ができました』と言わせた。",
+          "R": "イエスは答えられました。「ある人が、大きな夕食会を開くことにして、たくさんの人を招いた。\\v 17 食事の時間になったので、その人はしもべを送って、招いておいた客たちに言わせた。『さあ、おいでください！もう全部用意ができました。』"
         }
       },
       "decisions": [
@@ -5172,6 +5296,44 @@
           "reason": "The slave speaks for his master to invited guests; Balanced and Readable give him the polite form a servant uses to guests, while Literal keeps the plain command of the Greek.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014017004"
+          ],
+          "choice": "\"奴隷\" (L); \"しもべ\" (B, R), through 14:16-24",
+          "alternatives": [],
+          "reason": "The word means a slave owned by a master (m2); Literal keeps \"奴隷\" and Balanced and Readable say \"しもべ\", as the English says slave and servant. His owner is \"主人\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42014017013"
+          ],
+          "choice": "the servant speaks politely to the guests (\"おいでください\")",
+          "alternatives": [],
+          "reason": "The servant carries his master's second invitation (m1) to people of standing, so the message is courteous.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5250,6 +5412,11 @@
           "L": "І почали всі, наче в один [голос], відмовлятися.",
           "B": "Але всі як один почали відмовлятися.",
           "R": "Але кожен із них почав пояснювати, чому не може прийти."
+        },
+        "ja": {
+          "L": "すると、皆が一様に断り始めた。",
+          "B": "ところが、招かれた人たちは皆そろって、断りを言い始めた。",
+          "R": "ところが、招かれた人たちはみな、来られない理由を言い始めた。"
         }
       },
       "decisions": [
@@ -5304,6 +5471,25 @@
             "accord"
           ],
           "reason": "Literal supplies a noun so the phrase makes sense in English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014018003",
+            "n42014018004"
+          ],
+          "choice": "\"一様に\" (L); \"皆そろって\" (B)",
+          "alternatives": [],
+          "reason": "The phrase most likely means that they all did the same thing (m1). Japanese needs no noun for the missing word, so Literal has no bracket here.",
           "uncertain": false,
           "footnote": false
         }
@@ -5395,6 +5581,11 @@
           "L": "Перший сказав йому: “Я купив поле, і мені треба піти подивитися його. Прошу тебе, вважай мене вибаченим.”",
           "B": "Перший сказав йому: “Я купив ділянку землі, і мені треба піти її оглянути. Прошу, вибач мені.”",
           "R": "Перший сказав: “Я купив поле. Мені треба піти подивитися на нього. Будь ласка, перекажи своєму панові, що мені шкода, але я не можу прийти.”"
+        },
+        "ja": {
+          "L": "最初の者は彼に言った。『畑を買ったので、出かけて行って、それを見なければなりません。お願いします、わたしのことはお断りしたものとしてください。』",
+          "B": "最初の人はしもべに言った。『畑を買ったので、どうしても見に行かなければなりません。どうか、失礼させてください。』",
+          "R": "最初の人は言った。『畑を買ったので、見に行かなければなりません。ご主人に、行けなくてすみませんとお伝えください。』"
         }
       },
       "decisions": [
@@ -5557,6 +5748,27 @@
           "reason": "The guests speak to the master's slave as to an inferior, with \"तुम\" (style guide section 4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014018019",
+            "n42014018021",
+            "n42014018023"
+          ],
+          "choice": "\"お断りしたものとしてください\" (L); \"失礼させてください\" (B); \"行けなくてすみませんとお伝えください\" (R)",
+          "alternatives": [],
+          "reason": "The words are a courteous formula for declining (m2). Literal keeps the shape of \"have me excused\"; Balanced uses the Japanese polite formula, and Readable says what it means here, as the English Readable does. The same words serve 14:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5645,6 +5857,11 @@
           "L": "І інший сказав: “Я купив пʼять запряжок волів і йду випробувати їх. Прошу тебе, вважай мене вибаченим.”",
           "B": "Інший сказав: “Я купив пʼять пар волів і йду їх випробувати. Прошу, вибач мені.”",
           "R": "Інший сказав: “Я купив десять волів, щоб орати землю. Я йду подивитися, як вони працюють. Будь ласка, перекажи своєму панові, що мені шкода.”"
+        },
+        "ja": {
+          "L": "また別の者は言った。『牛を五くびき買ったので、それを試しに行くところです。お願いします、わたしのことはお断りしたものとしてください。』",
+          "B": "別の人は言った。『二頭一組の牛を五組買ったので、その働きぶりを試しに行くところです。どうか、失礼させてください。』",
+          "R": "別の人は言った。『畑を耕す牛を十頭買ったので、よく働くかどうか、見に行くところです。ご主人に、すみませんとお伝えください。』"
         }
       },
       "decisions": [
@@ -5783,6 +6000,26 @@
           "reason": "Five yoke of oxen are ten oxen in five ploughing teams (meaning decision m1). Hindi \"जोड़ी\" already says \"pairs\"; Readable gives the number and their use, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014019004",
+            "n42014019007"
+          ],
+          "choice": "\"五くびき\" (L); \"二頭一組の牛を五組\" (B); \"十頭\" (R)",
+          "alternatives": [],
+          "reason": "Oxen worked in pairs under a yoke, so five yoke are ten oxen (m1). Literal keeps the yoke as the counter; Balanced and Readable make the number clear.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5866,6 +6103,11 @@
           "L": "І інший сказав: “Я взяв жінку, і через це не можу прийти.”",
           "B": "Ще інший сказав: “Я оженився, і тому не можу прийти.”",
           "R": "Ще один сказав: “Я щойно одружився. Тому я не можу прийти.”"
+        },
+        "ja": {
+          "L": "また別の者は言った。『妻をめとりました。それで、行くことができません。』",
+          "B": "また別の人は言った。『妻を迎えたところです。そういうわけで、伺うことができません。』",
+          "R": "また別の人は言った。『結婚したばかりです。だから、行くことはできません。』"
         }
       },
       "decisions": [
@@ -6004,6 +6246,11 @@
           "L": "І раб, прийшовши, сповістив це своєму панові.",
           "B": "Раб повернувся і розповів про все це своєму панові.",
           "R": "Раб повернувся й розповів своєму панові, що всі сказали."
+        },
+        "ja": {
+          "L": "奴隷はやって来て、これらのことを自分の主人に報告した。",
+          "B": "しもべは帰って来て、このことを主人に伝えた。",
+          "R": "しもべは帰って、みんなが言ったことを主人に伝えた。"
         }
       },
       "decisions": [
@@ -6181,6 +6428,11 @@
           "L": "Тоді господар дому, розгнівавшись, сказав своєму рабові: “Вийди швидко на вулиці й провулки міста, і бідних, і калік, і сліпих, і кульгавих приведи сюди.”",
           "B": "Тоді господар дому розгнівався й сказав своєму рабові: “Біжи швидше на майдани й вулички міста і приведи сюди бідних, покалічених, сліпих і кульгавих.”",
           "R": "Господар дому розгнівався. Він сказав своєму рабові: “Швидше! Іди на широкі вулиці й вузькі провулки в місті. Знайди бідних людей і тих, хто покалічений, сліпий чи не може ходити. Приведи їх сюди.”"
+        },
+        "ja": {
+          "L": "すると家の主人は怒って、自分の奴隷に言った。『急いで町の大通りや路地に出て行き、貧しい人々、体の不自由な人々、目の見えない人々、足の不自由な人々をここに連れて来なさい。』",
+          "B": "家の主人は怒って、しもべに言った。『急いで町の広場や路地に出て行き、貧しい人々や、手足を損なった人々、目の見えない人々、足の不自由な人々を、ここに連れて来なさい。』",
+          "R": "家の主人は怒って、しもべに言った。『急いで、町の広い通りや細い路地に出て行きなさい。貧しい人たちや、体に障がいのある人や、目の見えない人や、歩けない人を見つけて、ここに連れて来なさい。』"
         }
       },
       "decisions": [
@@ -6313,6 +6565,28 @@
           "reason": "A master speaks to his slave as to an inferior, with \"तुम\" (style guide section 4); the slave answers with \"आप\" (14:22).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014021029",
+            "n42014021031",
+            "n42014021033",
+            "n42014021035"
+          ],
+          "choice": "the same words for the four groups as in 14:13",
+          "alternatives": [],
+          "reason": "The master in the story does what Jesus told the Pharisee to do (m3), so the list is worded as in 14:13 at each level, in Luke's new order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6397,6 +6671,11 @@
           "L": "І сказав раб: “Пане, сталося, як ти наказав, і ще є місце.”",
           "B": "Потім раб сказав: “Пане, твій наказ виконано, але ще є вільні місця.”",
           "R": "Згодом раб сказав: “Пане, я зробив, що ти мені звелів. Але ще є місце для інших людей.”"
+        },
+        "ja": {
+          "L": "そして奴隷は言った。『ご主人様、お命じになったことは行われました。そして、まだ場所があります。』",
+          "B": "やがてしもべが言った。『ご主人様、仰せのとおりにいたしましたが、まだ席が空いております。』",
+          "R": "しばらくして、しもべは言った。『ご主人様、言われたとおりにしました。でも、まだ席があります。』"
         }
       },
       "decisions": [
@@ -6581,6 +6860,25 @@
           "reason": "The slave addresses his owner (meaning decision m1) with \"आप\", as slaves do their master (style guide section 4). \"स्वामी\" and \"मालिक\" keep the human master of the story apart from \"प्रभु\", the title of Jesus and of God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42014022005"
+          ],
+          "choice": "\"ご主人様\" and polite speech from the servant; the master speaks plainly",
+          "alternatives": [],
+          "reason": "The slave addresses his owner (m1), so he speaks as a servant to his master, and the master gives plain commands (14:21, 23).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6674,6 +6972,11 @@
           "L": "І сказав пан рабові: “Вийди на дороги й до огорож і змусь [людей] увійти, щоб наповнився мій дім.",
           "B": "Пан сказав рабові: “Іди на польові дороги й до живоплотів і наполегливо проси людей увійти, щоб мій дім був повний.",
           "R": "Тоді пан сказав рабові: “Вийди за місто, на дороги й стежки вздовж живоплотів. Запрошуй людей увійти і не приймай відмови. Я хочу, щоб мій дім був повний."
+        },
+        "ja": {
+          "L": "すると主人は奴隷に言った。『街道や垣根のところに出て行き、[人々を]無理にでも入って来させなさい。わたしの家がいっぱいになるように。",
+          "B": "主人はしもべに言った。『町の外の街道や垣根のあたりに出て行って、人々に強く勧めて入ってもらいなさい。わたしの家をいっぱいにしたいのだ。",
+          "R": "主人はしもべに言った。『町の外の道や、垣根沿いの小道に出て行きなさい。そこにいる人たちに、ぜひ来てくださいと言って、断られても強く勧めて、入ってもらいなさい。わたしの家を人でいっぱいにしたいのだ。"
         }
       },
       "decisions": [
@@ -6890,6 +7193,25 @@
           "reason": "The verb means to urge strongly, to press those who hang back (meaning decision m1), not to use force; each level says so in its own way, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014023015"
+          ],
+          "choice": "\"無理にでも入って来させなさい\" (L); \"強く勧めて入ってもらいなさい\" (B); \"断られても強く勧めて\" (R)",
+          "alternatives": [],
+          "reason": "The verb can mean force, but here it is pressing an invitation on people who would hang back (m1). Literal keeps the strength of the word; Balanced and Readable give the sense of an insistent invitation, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6976,6 +7298,11 @@
           "L": "Бо кажу вам, що жоден із тих чоловіків, які були запрошені, не скуштує моєї вечері.”»",
           "B": "Бо кажу вам усім: жоден із тих чоловіків, кого я запросив спершу, не скуштує моєї вечері.”»",
           "R": "Кажу вам: ті чоловіки, яких я запросив раніше, не скуштують ані шматочка моєї вечері.”»"
+        },
+        "ja": {
+          "L": "あなたがたに言っておくが、招かれていたあの男たちのうち、だれ一人として、わたしの夕食を味わう者はいない。』」",
+          "B": "あなたがた皆に言っておくが、初めに招いたあの人たちは、だれ一人、わたしの夕食を味わうことはない。』」",
+          "R": "言っておくが、前に招いたあの人たちは、わたしの夕食を一口も食べることはない。』」"
         }
       },
       "decisions": [
@@ -7228,6 +7555,25 @@
             "\"तुमसे\""
           ],
           "reason": "The master is still speaking, but \"you\" is plural (meaning decision m1); Balanced shows it with \"तुम सब\", as the English says \"you all\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42014024003",
+            "n42014024007"
+          ],
+          "choice": "\"あなたがた\" (L), \"あなたがた皆\" (B); \"あの男たち\" (L), \"あの人たち\" (B, R)",
+          "alternatives": [],
+          "reason": "The master still speaks, but \"you\" is plural, as though he spoke past the servant to all who hear (m1); Japanese marks the plural. The word for the guests is adult men (m3); Literal keeps it, and with no gender span, since specific men are meant.",
           "uncertain": false,
           "footnote": false
         }
