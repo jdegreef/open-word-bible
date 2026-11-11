@@ -137,6 +137,10 @@ class SearchTest(unittest.TestCase):
 
     def test_fold(self):
         self.assertEqual(build_site.fold("Señor Corazón"), "senor corazon")
+        # The kana voicing marks are not accents (ガ is not カ), and full-width
+        # digits are digits, so Japanese book names match as they are typed.
+        self.assertEqual(build_site.fold("ガラテヤ３"), "ガラテヤ3")
+        self.assertIn("ガラテヤの信徒への手紙", {b["code"]: b for b in self.index("ja")["books"]}["GAL"]["aliases"])
 
     @unittest.skipUnless(shutil.which("node"), "node not installed")
     def test_script_parses(self):

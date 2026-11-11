@@ -18,6 +18,14 @@ drops ("I am") or shortens ("runn" while typing "running") still match. A
 query word matches an entry in its stemmed forms, in the entry's own
 language only, or word for word as the start of a word (tsquery explains
 why). A "quoted phrase" matches word for word, in order.
+
+Japanese is written without spaces, and Postgres's parser takes a run of
+kanji and kana as one word, so a word could only be found at the start of
+a clause. Japanese entries (owb_cjk, migration 0011) are indexed by
+character bigrams instead (ngrams): each run of kanji and kana becomes its
+overlapping pairs and its last character, and a Japanese query term
+becomes the phrase of its pairs, so it matches anywhere inside a run. The
+entries keep their text as it is; only the vector is built from the pairs.
 """
 import functools
 import hashlib
@@ -40,8 +48,18 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
 CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese",
-           "ru": "owb_russian"}
+           "ru": "owb_russian", "ja": "owb_cjk"}
 SIMPLE = "owb_simple"
+# Entries in languages written without spaces between words: indexed and
+# queried by character bigrams (ngrams).
+CJK = "owb_cjk"
+# A run of kanji, hiragana or katakana (with the long-vowel mark and the
+# iteration marks), the characters Japanese writes words in. The middle dot
+# (・) between the parts of a name is punctuation, so it ends a run.
+CJK_RUN = re.compile("[\u3005-\u3007\u3041-\u3096\u309d\u309e\u30a1-\u30fa\u30fc-\u30ff\u31f0-\u31ff"
+                     "\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\U00020000-\U0003134f]+")
+# The shortest query searched: two characters, or one kanji or kana (a word
+# in Japanese, where one Latin letter is not).
 MIN_QUERY = 2
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 VERSE_MARK = re.compile(r"\\v \d+ ?")
@@ -53,18 +71,51 @@ def config(lang):
     return CONFIGS.get(lang, SIMPLE)
 
 
+def bigrams(run):
+    """A run's overlapping pairs of characters ("神の愛": 神の, の愛); a single
+    character stands alone."""
+    return [run[i:i + 2] for i in range(len(run) - 1)] or [run]
+
+
+def ngrams(text):
+    """text as owb_cjk indexes it: each run of kanji and kana as its pairs and
+    then its last character on its own, so a one-character query (a single
+    kanji) can match at any place in a run, the end included, as a prefix.
+    "神の愛を" becomes "神の の愛 愛を を"; other text is left as it is."""
+    def pieces(m):
+        run = m[0]
+        return " " + " ".join(bigrams(run) + ([run[-1]] if len(run) > 1 else [])) + " "
+    return CJK_RUN.sub(pieces, text)
+
+
+def cjk_terms(text):
+    """A term's pieces for an owb_cjk query: each run of kanji and kana, and
+    the words between them ("ペトロ2": ペトロ, 2)."""
+    return [p for p in re.split(f"({CJK_RUN.pattern})", text) if p and not p.isspace()]
+
+
+# The kana voicing marks (゛ ゜) are combining marks but not accents: without
+# them ガ would be カ. They are kept, and compose again with their kana.
+KANA_MARKS = {0x3099, 0x309A}
+# Full-width ASCII (Ｈ, ３, ：) and the ideographic space, as Japanese input
+# often types them: "ヨハネによる福音書３：１６" is "ヨハネによる福音書3:16".
+WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
+
+
 @functools.cache
 def _marks():
-    """Every combining mark, for str.translate to remove."""
-    return dict.fromkeys(c for c in range(sys.maxunicode + 1) if unicodedata.combining(chr(c)))
+    """Every combining mark but the kana voicing marks, for str.translate to remove."""
+    return dict.fromkeys(c for c in range(sys.maxunicode + 1)
+                         if unicodedata.combining(chr(c)) and c not in KANA_MARKS)
 
 
 def fold(text):
-    """Lower case, accents removed, curly quotes straightened (as the site's
-    search.js folds text)."""
+    """Lower case, accents removed, full-width letters, digits and signs made
+    ASCII, curly quotes straightened (as the site's search.js folds text)."""
     # Composed again after the marks go, so a Korean syllable stays one
     # character, as Postgres indexes it (NFD splits it into its letters).
-    text = unicodedata.normalize("NFC", unicodedata.normalize("NFD", text.lower()).translate(_marks()))
+    text = unicodedata.normalize("NFC", unicodedata.normalize("NFD", text.translate(WIDE).lower())
+                                 .translate(_marks()))
     text = text.replace("\u0111", "d")   # Vietnamese đ, as unaccent does
     return re.sub("[‘’ʼ]", "'", re.sub("[“”«»]", '"', text))
 
@@ -109,6 +160,15 @@ def fields(doc):
 
 
 ENTRY_COLUMNS = ("language", "kind", "position", "sub", "config", "title", "extra", "body", "doc")
+# What the vector is built from, where it differs from the entry's text: the
+# bigrams of an owb_cjk entry's fields (NULL for the others).
+INDEXED_COLUMNS = ("title_v", "extra_v", "body_v")
+
+
+def indexed(config_name, doc_fields):
+    """The text each field is indexed as: its bigrams for owb_cjk, else None
+    (the field itself)."""
+    return tuple(ngrams(f) for f in doc_fields) if config_name == CJK else (None, None, None)
 
 
 def _copy(cursor, table, columns, rows):
@@ -264,26 +324,33 @@ def _rebuild_language(site, lang, full):
         # New entries go through a scratch table, so each row is written
         # once, with its vector, rather than inserted and then updated.
         cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
-            position integer, sub integer, config text, title text, extra text, body text, doc jsonb)
+            position integer, sub integer, config text, title text, extra text, body text, doc jsonb,
+            title_v text, extra_v text, body_v text)
             ON COMMIT DROP""")
         # A generator: a full rebuild's rows, held at once, are as big again
         # as the documents.
-        rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *fields(docs[i][0]),
-                 json.dumps(docs[i][0], ensure_ascii=False)) for i, position, sub in places)
-        _copy(cursor, "search_load", ENTRY_COLUMNS, rows)
+        rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *f,
+                 json.dumps(docs[i][0], ensure_ascii=False), *indexed(docs[i][1], f))
+                for i, position, sub in places for f in [fields(docs[i][0])])
+        _copy(cursor, "search_load", ENTRY_COLUMNS + INDEXED_COLUMNS, rows)
         cursor.execute(f"""INSERT INTO {entries} ({', '.join(ENTRY_COLUMNS)}, vector)
             SELECT {', '.join(ENTRY_COLUMNS)},
-              setweight(to_tsvector(config::regconfig, title), 'A')
-              || setweight(to_tsvector(config::regconfig, extra), 'B')
-              || setweight(to_tsvector(config::regconfig, body), 'C')
-              || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')
+              setweight(to_tsvector(config::regconfig, coalesce(title_v, title)), 'A')
+              || setweight(to_tsvector(config::regconfig, coalesce(extra_v, extra)), 'B')
+              || setweight(to_tsvector(config::regconfig, coalesce(body_v, body)), 'C')
+              || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', coalesce(title_v, title),
+                                                              coalesce(extra_v, extra),
+                                                              coalesce(body_v, body))), 'D')
             FROM search_load ORDER BY position, sub""")
         # Dropped now as well as at commit: inside a test the transaction
         # never commits, and the next rebuild would find it still there.
         cursor.execute("DROP TABLE search_load")
         found = Counter()
         for doc, _ in docs:
-            found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(" ".join(fields(doc)))))
+            # Words for "did you mean": a run of kanji and kana is a clause,
+            # not a word, so it is left out.
+            found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(" ".join(fields(doc))))
+                         if not CJK_RUN.search(w))
         SearchWord.objects.filter(language=lang).delete()
         _copy(cursor, words, ("language", "word", "count"), ((lang, w, n) for w, n in found.items()))
         # Fresh statistics for the planner. Without them it can take the
@@ -337,7 +404,13 @@ def tsquery(lang, query_terms):
     as prefixes, nor across languages: Spanish "verbo" stems to "verb",
     which would otherwise find English notes about verbs. A quoted phrase
     matches word for word only, in order: a stemmer drops common words
-    ("from", "above"), and "born from above" would shrink to "born"."""
+    ("from", "above"), and "born from above" would shrink to "born".
+
+    In owb_cjk entries, indexed by bigrams (ngrams), a run of kanji and kana
+    matches as the phrase of its pairs, so anywhere inside a clause, and a
+    single kanji or kana as the start of a pair; the words between runs
+    match as elsewhere. Within a term or a quoted phrase, the runs and words
+    must all be there but need not touch."""
     configs = sorted({config(lang), config("en")})
     columns, params = [], []
     for cfg in configs:
@@ -346,7 +419,11 @@ def tsquery(lang, query_terms):
             prefix = text if len(text) == 1 else f"{text}:*"
             # Only letters and digits reach to_tsquery, so a query can't
             # inject tsquery operators.
-            if phrase:
+            if cfg == CJK:
+                sql, more = _cjk_query(text, phrase)
+                parts.append(sql)
+                params += more
+            elif phrase:
                 parts.append("phraseto_tsquery(%s::regconfig, %s)")
                 params += [SIMPLE, text]
             elif cfg == SIMPLE:
@@ -357,6 +434,26 @@ def tsquery(lang, query_terms):
                 params += [cfg, text, SIMPLE, prefix]
         columns.append(" && ".join(parts) + f" AS {cfg}")
     return Query("SELECT " + ", ".join(columns), params, configs)
+
+
+def _cjk_query(text, phrase):
+    """One term (or quoted phrase) as an owb_cjk tsquery: (sql, params)."""
+    parts, params = [], []
+    for piece in cjk_terms(text):
+        if CJK_RUN.fullmatch(piece):
+            if len(piece) == 1:
+                parts.append("to_tsquery(%s::regconfig, %s)")
+                params += [CJK, f"{piece}:*"]
+            else:
+                parts.append("phraseto_tsquery(%s::regconfig, %s)")
+                params += [CJK, " ".join(bigrams(piece))]
+        elif phrase or not re.fullmatch(r"\w+", piece):
+            parts.append("phraseto_tsquery(%s::regconfig, %s)")
+            params += [CJK, piece]
+        else:
+            parts.append("to_tsquery(%s::regconfig, %s)")
+            params += [CJK, piece if len(piece) == 1 else f"{piece}:*"]
+    return "(" + " && ".join(parts) + ")", params
 
 
 def _table():
@@ -474,7 +571,9 @@ def suggest(lang, query_terms):
     common word in lang's documents, if that query finds something."""
     changed, words = False, []
     for text, phrase in query_terms:
-        if phrase or len(text) < 3:
+        # Japanese has no word list to suggest from (a run of kana and kanji
+        # is a clause, not a word).
+        if phrase or len(text) < 3 or CJK_RUN.search(text):
             words.append(text)
             continue
         if counts(lang, tsquery(lang, [(text, False)])):
@@ -504,7 +603,7 @@ def search(lang, q, kind=None, offset=0, limit=20, sort="relevance", per=8):
     q = q.replace("\x00", "").strip()[:200]
     answer = {"query": q, "lang": lang}
     query_terms = terms(q)
-    if len(q) < MIN_QUERY or not query_terms:
+    if (len(q) < MIN_QUERY and not CJK_RUN.fullmatch(q)) or not query_terms:
         return {**answer, "reference": None, "totals": {}, "results": [], "suggestion": None}
     query = tsquery(lang, query_terms)
     if kind:

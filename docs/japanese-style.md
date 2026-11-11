@@ -292,9 +292,13 @@ Where a book's `data/headings/<BOOK>.json` or `data/summaries/<BOOK>.json`
 has languages other than English, add `"ja"` beside them, written from Open
 Word Bible's own Japanese wording. They are AI drafts until reviewed.
 
-## 10. Search (known gap)
+## 10. Search
 
-Site search runs on Postgres full-text search, whose parser treats a run of
-kanji and kana between punctuation as one word. Until the backend indexes
-Japanese by character n-grams, Japanese search finds a phrase only from the
-start of a clause. This does not affect drafting.
+Japanese is written without spaces, so site search indexes Japanese
+sentences by character pairs (`backend/translation/search.py`, `ngrams`): a
+word is found anywhere inside a clause, and a single kanji is found on its
+own. The kana voicing marks count (ガリラヤ is not カリラヤ), and full-width
+digits and letters in a query are read as ASCII (ヨハネによる福音書３：１６).
+This does not affect drafting, but a word written in kanji in one place and
+kana in another (御心 / みこころ) is two words to search: keep one spelling
+through a book, as the conventions above do.
