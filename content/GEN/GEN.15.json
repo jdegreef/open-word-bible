@@ -88,6 +88,11 @@
           "L": "После этих событий было слово {{divine_name:ГОСПОДА|Яхве}} к Авраму в видении, говорящее: «Не бойся, Аврам; {{deity_pronoun:я|Я}} щит тебе; награда твоя [будет] очень велика.»",
           "B": "Некоторое время спустя к Авраму в видении пришло слово {{divine_name:ГОСПОДА|Яхве}}: «Не бойся, Аврам. Я твой щит, и твоя награда будет очень велика.»",
           "R": "Через какое-то время {{divine_name:ГОСПОДЬ|Яхве}} заговорил с Аврамом в видении. Он сказал: «Не бойся, Аврам. Я буду защищать тебя, как щит, и щедро награжу тебя.»"
+        },
+        "ja": {
+          "L": "これらの事の後、{{divine_name:主|ヤハウェ}}の言葉が幻のうちにアブラムに臨んで、言われた。「アブラムよ、恐れるな。わたしはあなたの盾である。あなたの報いは非常に大きい。」",
+          "B": "これらの事の後、{{divine_name:主|ヤハウェ}}の言葉が幻の中でアブラムに臨んだ。「アブラムよ、恐れることはない。わたしはあなたの盾である。あなたの受ける報いは非常に大きい。」",
+          "R": "その後、{{divine_name:主|ヤハウェ}}は幻の中でアブラムに語りかけられました。「アブラムよ、恐れることはない。わたしが盾のようにあなたを守る。そして、あなたにたくさんの報いを与えよう。」"
         }
       },
       "decisions": [
@@ -311,6 +316,27 @@
           "reason": "As the Russian style guide sets (sections 7 and 7b), God's pronouns take the deity_pronoun span in Russian even where the English, whose \"I\" is always a capital, has none; a pronoun opening a sentence is written plainly with its capital. This holds through the passage.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150010051",
+            "o010150010061",
+            "o010150010092"
+          ],
+          "choice": "the word of the LORD came: \"{{divine_name:主|ヤハウェ}}の言葉が……臨んだ\" (L, B); \"語りかけられました\" (R)",
+          "alternatives": [],
+          "reason": "臨む is the Japanese idiom for a prophetic word coming to someone, which the meaning decision says this is; Readable says plainly that the LORD spoke.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -400,6 +426,11 @@
           "L": "И сказал Аврам: «Владыка {{divine_name:ГОСПОДИ|Яхве}}, что {{deity_pronoun:ты|Ты}} дашь мне, а я хожу бездетным, и наследник моего дома — это Елиезер из Дамаска?»",
           "B": "Но Аврам ответил: «Владыка {{divine_name:ГОСПОДИ|Яхве}}, что {{deity_pronoun:ты|Ты}} мне дашь? Я всё ещё бездетен, и всё, что у меня есть, достанется Елиезеру из Дамаска.»",
           "R": "Но Аврам сказал: «Владыка {{divine_name:ГОСПОДИ|Яхве}}, какая мне польза от награды, если у меня нет детей? Всё, что у меня есть, после моей смерти получит Елиезер из Дамаска.»"
+        },
+        "ja": {
+          "L": "そしてアブラムは言った。「{{divine_name:主なる神|主ヤハウェ}}よ、あなたはわたしに何をくださるのですか？わたしは子のないまま[世を]去ろうとしており、わたしの家の跡継ぎは、ダマスコのエリエゼルなのです。」",
+          "B": "しかしアブラムは答えた。「{{divine_name:主なる神|主ヤハウェ}}よ、あなたはわたしに何をくださるのですか？わたしにはまだ子がなく、わたしの持ち物はすべて、ダマスコのエリエゼルのものになってしまいます。」",
+          "R": "しかしアブラムは言いました。「{{divine_name:主なる神|主ヤハウェ}}よ、わたしには子どもがいないのに、報いをいただいて何になるのでしょう？わたしが死んだら、持ち物を全部受け継ぐのは、ダマスコのエリエゼルなのです。」"
         }
       },
       "decisions": [
@@ -716,6 +747,46 @@
           "reason": "As the Pentateuch note sets for Adonai YHWH: \"Владыка\" for Adonai, the divine name in the vocative inside the span. Russian needs no special capitals for the pair, so it does not follow the English \"Lord GOD\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010150020031",
+            "o010150020041"
+          ],
+          "choice": "Adonai YHWH: \"{{divine_name:主なる神|主ヤハウェ}}\", with the address particle outside (\"……よ\")",
+          "alternatives": [],
+          "reason": "The English span is Lord GOD / Lord Yahweh. Japanese \"主、主\" would repeat itself, so the default follows the familiar Japanese form for this title, 主なる神, and the setting gives 主ヤハウェ. The span covers both words, as the English one does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010150020012",
+            "o010150020061"
+          ],
+          "choice": "Abram speaks to God politely (です・ます, \"くださる\"), addressing him as \"あなた\"",
+          "alternatives": [],
+          "reason": "People speaking to God use です・ます (style guide 4 and OT supplement); Japanese has no capital letters, so the English deity_pronoun span is written plainly (style guide 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -800,6 +871,11 @@
           "L": "И сказал Аврам: «Вот, мне {{deity_pronoun:ты|Ты}} не дал потомства, и вот, [человек] из моего дома будет моим наследником.»",
           "B": "И Аврам продолжал: «Раз {{deity_pronoun:ты|Ты}} не дал мне ребёнка, моим наследником будет тот, кто родился в моём доме.»",
           "R": "Аврам сказал: «Ты не дал мне детей, поэтому всё, что у меня есть, получит один из моих рабов.»"
+        },
+        "ja": {
+          "L": "そしてアブラムは言った。「ご覧ください。あなたはわたしに子孫をお与えになりませんでした。ですから、わたしの家の者が、わたしの跡を継ぐことになります。」",
+          "B": "アブラムは続けて言った。「あなたがわたしに子をお与えにならないので、わたしの家で生まれた者が跡を継ぐことになります。」",
+          "R": "アブラムは言いました。「あなたはわたしに子どもをくださいませんでした。ですから、わたしのしもべの一人が、わたしの持ち物を全部受け継ぐことになります。」"
         }
       },
       "decisions": [
@@ -929,6 +1005,11 @@
           "L": "И вот, слово {{divine_name:ГОСПОДА|Яхве}} [было] к нему: «Не он будет твоим наследником; но тот, кто выйдет из твоего тела, он будет твоим наследником.»",
           "B": "Тогда к нему было слово {{divine_name:ГОСПОДА|Яхве}}: «Нет, не он будет твоим наследником. Твоим наследником будет твой собственный сын, рождённый от тебя.»",
           "R": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал Авраму: «Твой раб не получит твоего имущества. У тебя будет свой сын, и он получит всё.»"
+        },
+        "ja": {
+          "L": "するとなんと、{{divine_name:主|ヤハウェ}}の言葉が彼に臨んで、言われた。「この者があなたの跡を継ぐのではない。あなた自身の体から出る者、その者があなたの跡を継ぐ。」",
+          "B": "すると{{divine_name:主|ヤハウェ}}の言葉が彼に臨んだ。「いや、その者があなたの跡を継ぐのではない。あなた自身から生まれる子が、あなたの跡を継ぐのである。」",
+          "R": "すると{{divine_name:主|ヤハウェ}}はアブラムに言われました。「あなたのしもべが、あなたの物を受け継ぐのではない。あなたには自分の息子が生まれ、その子がすべてを受け継ぐ。」"
         }
       },
       "decisions": [
@@ -946,6 +1027,25 @@
           "choice": "who will come out from your inward parts: your own son",
           "alternatives": [],
           "reason": "The phrase means a child of Abram's own body (2 Samuel 7:12).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150040012"
+          ],
+          "choice": "hinneh in narration: \"するとなんと\" (L only)",
+          "alternatives": [
+            "\"見よ\""
+          ],
+          "reason": "Literal keeps the narrator's \"behold\" with \"なんと\", the book's form in narration (1:31, 22:13): it carries the surprise without a command, where the NT convention 見なさい (a call to a hearer) would not fit. Balanced and Readable drop it, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1047,6 +1147,11 @@
           "L": "И {{deity_pronoun:он|Он}} вывел его наружу и сказал: «Посмотри же на небеса и сосчитай звёзды, если ты сможешь сосчитать их.» И {{deity_pronoun:он|Он}} сказал ему: «Таким будет твоё семя.»",
           "B": "Он вывел Аврама наружу и сказал: «Посмотри на небо и попробуй сосчитать звёзды, если сможешь.» Потом {{deity_pronoun:он|Он}} сказал ему: «Столько будет твоих потомков.»",
           "R": "Потом Бог вывел Аврама из шатра и сказал: «Посмотри на небо и сосчитай звёзды, если сможешь. Столько у тебя будет потомков.»"
+        },
+        "ja": {
+          "L": "そして[主は]アブラムを外に連れ出して言われた。「さあ、天を見上げて、星を数えなさい。もし数えることができるなら。」そして彼に言われた。「あなたの子孫はこのようになる。」",
+          "B": "主はアブラムを外に連れ出して言われた。「空を見上げて、星を数えてみなさい。数えられるものなら。」そして言われた。「あなたの子孫はあのようになる。」",
+          "R": "それから神はアブラムを外に連れ出して言われました。「空を見上げて、星を数えてごらん。数えられるならば。あなたの子孫は、あのように多くなる。」"
         }
       },
       "decisions": [
@@ -1149,6 +1254,25 @@
           "reason": "Close to Romans 4:18 in this translation, which quotes these words (\"Так будет твоё семя\" at Literal, \"Столько будет твоего потомства\" at Balanced), worded here from the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010150050012"
+          ],
+          "choice": "subject: \"[主は]\" (L), \"主は\" (B), \"神は\" (R)",
+          "alternatives": [],
+          "reason": "The Hebrew has only \"he\". Japanese needs a subject after the shift from Abram's speech; Balanced names him 主 (Adonai, no span: the English Balanced has no divine-name span here), Readable 神 as the English Readable says God. Never 彼 for God (style guide 4), so Literal supplies 主 in brackets.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1226,6 +1350,11 @@
           "L": "И поверил он {{divine_name:ГОСПОДУ|Яхве}}, и {{deity_pronoun:он|Он}} зачёл ему это в праведность.",
           "B": "Аврам поверил {{divine_name:ГОСПОДУ|Яхве}}, и {{divine_name:ГОСПОДЬ|Яхве}} зачёл ему это как праведность.",
           "R": "Аврам поверил {{divine_name:ГОСПОДУ|Яхве}}. И {{divine_name:ГОСПОДЬ|Яхве}} признал Аврама праведным, потому что он поверил."
+        },
+        "ja": {
+          "L": "そして彼は{{divine_name:主|ヤハウェ}}を信じた。すると[主は]それを彼の義と見なされた。",
+          "B": "アブラムは{{divine_name:主|ヤハウェ}}を信じた。{{divine_name:主|ヤハウェ}}はそれを彼の義と認められた。",
+          "R": "アブラムは{{divine_name:主|ヤハウェ}}を信じました。それで{{divine_name:主|ヤハウェ}}は、信じたアブラムを、ご自分の前に正しい者と認められました。"
         }
       },
       "decisions": [
@@ -1519,6 +1648,27 @@
           "reason": "Romans 4:3 in this translation quotes this verse (\"И поверил Авраам Богу, и это было зачтено ему в праведность\" at Literal; \"как праведность\" at Balanced), so Genesis uses the same words where the Hebrew matches. The Hebrew has the divine name where Romans has \"Бог\", and an active verb (\"he counted it\"), which Genesis keeps. Russian \"поверил\" already holds the sense of trusting (m1), so Balanced keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150060012",
+            "o010150060033",
+            "o010150060051"
+          ],
+          "choice": "believed: \"信じた\" at every level; counted as righteousness: \"義と見なされた\" (L), \"義と認められた\" (B), \"正しい者と認められました\" (R)",
+          "alternatives": [],
+          "reason": "信じる is kept at every level (style guide 6), so the verse Paul quotes (Romans 4:3; Galatians 3:6) reads as in the NT Japanese; 義 is the key term at L and B, and Readable says \"right before God\" as the style guide allows.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1610,6 +1760,11 @@
           "L": "И {{deity_pronoun:он|Он}} сказал ему: «Я {{divine_name:ГОСПОДЬ|Яхве}}, который вывел тебя из Ура Халдейского, чтобы дать тебе эту землю во владение.»",
           "B": "И ещё {{deity_pronoun:он|Он}} сказал ему: «Я {{divine_name:ГОСПОДЬ|Яхве}}. Я вывел тебя из Ура Халдейского, чтобы дать тебе эту землю, чтобы она стала твоей.»",
           "R": "И ещё {{deity_pronoun:он|Он}} сказал Авраму: «Я {{divine_name:ГОСПОДЬ|Яхве}}. Я вывел тебя из Ура в Халдее, чтобы дать тебе эту землю, чтобы она стала твоей.»"
+        },
+        "ja": {
+          "L": "そして彼に言われた。「わたしは、この地をあなたに与えて、それを所有させるために、カルデア人のウルからあなたを連れ出した{{divine_name:主|ヤハウェ}}である。」",
+          "B": "主はまた言われた。「わたしは{{divine_name:主|ヤハウェ}}である。あなたにこの地を与えて自分のものとさせるため、カルデア人のウルからあなたを連れ出したのである。」",
+          "R": "主はまた、アブラムに言われました。「わたしは{{divine_name:主|ヤハウェ}}である。この土地をあなたのものとして与えるために、わたしはあなたをカルデアのウルから連れ出したのだ。」"
         }
       },
       "decisions": [
@@ -1650,6 +1805,26 @@
             "कल्दियों का ऊर"
           ],
           "reason": "\"कसदी\" is the form of Acts 7:4 for the Chaldeans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150070072",
+            "o010150070081"
+          ],
+          "choice": "Ur of the Chaldeans: \"カルデア人のウル\" (L, B); \"カルデアのウル\" (R)",
+          "alternatives": [],
+          "reason": "As the English: Readable names the region. カルデア as in Acts 7:4.",
           "uncertain": false,
           "footnote": false
         }
@@ -1730,6 +1905,11 @@
           "L": "И он сказал: «Владыка {{divine_name:ГОСПОДИ|Яхве}}, как мне узнать, что я буду владеть ею?»",
           "B": "Но Аврам сказал: «Владыка {{divine_name:ГОСПОДИ|Яхве}}, как мне убедиться, что я буду владеть ею?»",
           "R": "Но Аврам спросил: «Владыка {{divine_name:ГОСПОДИ|Яхве}}, как мне знать наверняка, что эта земля будет моей?»"
+        },
+        "ja": {
+          "L": "そして彼は言った。「{{divine_name:主なる神|主ヤハウェ}}よ、わたしがそれを所有することを、何によって知ることができるのでしょうか？」",
+          "B": "しかしアブラムは言った。「{{divine_name:主なる神|主ヤハウェ}}よ、わたしがこの地を自分のものにすると、どうして確かめることができるでしょうか？」",
+          "R": "しかしアブラムは尋ねました。「{{divine_name:主なる神|主ヤハウェ}}よ、この土地がわたしのものになると、どうしたらわかるのでしょうか？」"
         }
       },
       "decisions": [
@@ -1835,6 +2015,11 @@
           "L": "И {{deity_pronoun:он|Он}} сказал ему: «Возьми {{deity_pronoun:мне|Мне}} трёхлетнюю телицу, и трёхлетнюю козу, и трёхлетнего барана, и горлицу, и молодого голубя.»",
           "B": "Он ответил: «Принеси {{deity_pronoun:мне|Мне}} трёхлетнюю телицу, трёхлетнюю козу и трёхлетнего барана, а также горлицу и молодого голубя.»",
           "R": "Бог сказал ему: «Принеси {{deity_pronoun:мне|Мне}} молодую корову, козу и барана, каждому по три года, а ещё горлицу и молодого голубя.»"
+        },
+        "ja": {
+          "L": "そして彼に言われた。「わたしのために、三歳の雌の子牛と、三歳の雌やぎと、三歳の雄羊と、山鳩と、家鳩のひなを取って来なさい。」",
+          "B": "主は答えられた。「三歳の雌牛と三歳の雌やぎと三歳の雄羊、それに山鳩と鳩のひなを、わたしのもとに持って来なさい。」",
+          "R": "神はアブラムに言われました。「若い雌牛と、雌のやぎと、雄の羊を連れて来なさい。どれも三歳のものだ。それから、山ばとと、はとのひなも持って来なさい。」"
         }
       },
       "decisions": [
@@ -1950,6 +2135,11 @@
           "L": "И он взял ему всё это, и рассёк их пополам, и положил каждую часть напротив другой; а птиц он не рассёк.",
           "B": "Аврам принёс всех их, рассёк каждое животное пополам и положил половины одну напротив другой, а птиц рассекать не стал.",
           "R": "Аврам принёс всех этих животных, разрезал их пополам и положил половины в два ряда, одну напротив другой. Но птиц он пополам не разрезал."
+        },
+        "ja": {
+          "L": "そして彼はこれらすべてを彼のもとに持って来て、それらを真ん中から切り裂き、それぞれの半分を互いに向かい合わせて置いた。しかし鳥は切り裂かなかった。",
+          "B": "アブラムはそれらをすべて持って来て、真ん中から二つに裂き、裂いたものを互いに向かい合わせて置いた。ただし鳥は裂かなかった。",
+          "R": "アブラムはこれらの動物をみな持って来て、半分に切り、向かい合わせに二列に並べました。でも、鳥は半分に切りませんでした。"
         }
       },
       "decisions": [
@@ -2052,6 +2242,11 @@
           "L": "И спустились хищные птицы на туши, и Аврам отгонял их.",
           "B": "Когда на туши слетались хищные птицы, Аврам отгонял их.",
           "R": "Стервятники слетались, чтобы клевать мёртвых животных, но Аврам прогонял их."
+        },
+        "ja": {
+          "L": "そして猛禽が死骸の上に降りて来たので、アブラムはそれらを追い払った。",
+          "B": "猛禽が死骸めがけて舞い降りて来ると、アブラムはそれを追い払った。",
+          "R": "はげわしが死んだ動物を食べようと降りて来ましたが、アブラムはそれを追い払いました。"
         }
       },
       "decisions": [
@@ -2195,6 +2390,11 @@
           "L": "И было: солнце [было] к заходу, и глубокий сон напал на Аврама; и вот, ужас, тьма великая, нападает на него.",
           "B": "Когда солнце заходило, Аврама охватил глубокий сон, а с ним — великая и страшная тьма.",
           "R": "Когда солнце садилось, Аврам заснул глубоким сном. Его окутала страшная тьма, и ему стало очень страшно."
+        },
+        "ja": {
+          "L": "そして日が沈みかけたとき、深い眠りがアブラムに臨んだ。するとなんと、恐れ、大いなる暗闇が彼に臨んだ。",
+          "B": "日が沈みかけたころ、アブラムは深い眠りに落ちた。すると、恐ろしい大いなる暗闇が彼を襲った。",
+          "R": "日が沈みかけたとき、アブラムは深い眠りに落ちました。ひどい暗闇がアブラムを包み、アブラムはとても恐ろしくなりました。"
         }
       },
       "decisions": [
@@ -2320,6 +2520,11 @@
           "L": "И {{deity_pronoun:он|Он}} сказал Авраму: «Знай наверняка, что пришельцами будут твои потомки в земле не своей, и будут служить им, и будут угнетены четыреста лет.",
           "B": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал Авраму: «Знай, что твои потомки будут пришельцами в чужой земле. Их обратят в рабство и будут угнетать четыреста лет.",
           "R": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал Авраму: «Я хочу, чтобы ты знал: твои потомки будут жить как чужеземцы в земле, которая им не принадлежит. Люди той земли сделают их рабами и будут жестоко обращаться с ними четыреста лет."
+        },
+        "ja": {
+          "L": "そして[主は]アブラムに言われた。「あなたは確かに知っておきなさい。あなたの子孫は自分たちのものでない地で寄留者となり、彼らはそこで奴隷として仕え、四百年の間苦しめられる。",
+          "B": "そして{{divine_name:主|ヤハウェ}}はアブラムに言われた。「よく知っておきなさい。あなたの子孫は、自分たちのものでない土地で寄留者となる。彼らは奴隷にされ、四百年の間虐げられる。",
+          "R": "そして{{divine_name:主|ヤハウェ}}はアブラムに言われました。「よく知っておいてほしい。あなたの子孫は、自分たちのものでない国で、よそ者として暮らすことになる。その国の人々はあなたの子孫を奴隷にして、四百年の間ひどく苦しめる。"
         }
       },
       "decisions": [
@@ -2507,6 +2712,25 @@
           "reason": "As the Pentateuch note sets for the resident foreigner: \"пришелец\" at Literal and Balanced, \"чужеземец\" at Readable. Its first use in Genesis.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150130061"
+          ],
+          "choice": "sojourner (ger): \"寄留者\" (L, B); \"よそ者として暮らす\" (R)",
+          "alternatives": [],
+          "reason": "As the NT drafts settled for Hebrews 11:9 (寄留する / よそ者として暮らす).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2590,6 +2814,11 @@
           "L": "Но и народ, которому они будут служить, {{deity_pronoun:я|Я}} буду судить, а потом они выйдут с большим имуществом.",
           "B": "Но {{deity_pronoun:я|Я}} совершу суд над народом, который их поработит, и потом они выйдут с большим богатством.",
           "R": "Но {{deity_pronoun:я|Я}} накажу народ, который сделает их рабами. А потом твои потомки уйдут из той земли с большим богатством."
+        },
+        "ja": {
+          "L": "しかしわたしは、彼らが仕えるその国民をさばく。その後、彼らは多くの財産を携えて出て来る。",
+          "B": "しかしわたしは、彼らを奴隷にするその国民にさばきを下す。その後、彼らは多くの財産を携えてそこから出て来る。",
+          "R": "しかし、あなたの子孫を奴隷にするその国を、わたしは罰する。その後、あなたの子孫はたくさんの財産を持って、その国を出て来る。"
         }
       },
       "decisions": [
@@ -2725,6 +2954,11 @@
           "L": "А ты отойдёшь к твоим отцам в мире; ты будешь похоронен в доброй старости.",
           "B": "А ты с миром отойдёшь к своим предкам и будешь похоронен в глубокой старости.",
           "R": "А ты умрёшь спокойно, в глубокой старости, и тебя похоронят."
+        },
+        "ja": {
+          "L": "あなた自身は、平安のうちにあなたの先祖たちのもとに行き、良い老年のうちに葬られる。",
+          "B": "あなた自身は、平安のうちに先祖たちのもとに行き、長寿を全うして葬られる。",
+          "R": "あなたは、とても長生きをしてから安らかに死に、葬られる。"
         }
       },
       "decisions": [
@@ -2759,6 +2993,25 @@
           "choice": "\"về cùng tổ phụ con\" (L); \"về với tổ tiên mình\" (B); \"qua đời\" (R)",
           "alternatives": [],
           "reason": "To die and join those who died before (meaning decision); Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150150052"
+          ],
+          "choice": "in peace (shalom): \"平安のうちに\" (L, B); \"安らかに\" (R)",
+          "alternatives": [],
+          "reason": "Inner peace at the end of life, not peace between parties: 平安 by the style guide's split (section 6).",
           "uncertain": false,
           "footnote": false
         }
@@ -2841,6 +3094,11 @@
           "L": "А четвёртое поколение вернётся сюда, потому что не полно ещё беззаконие аморреев.»",
           "B": "Твои потомки вернутся сюда в четвёртом поколении, ведь вина аморреев ещё не достигла полной меры.»",
           "R": "Через четыре поколения твои потомки вернутся сюда. Я подожду до того времени, потому что аморреи, которые здесь живут, ещё не стали настолько злыми, чтобы их наказать.»"
+        },
+        "ja": {
+          "L": "そして四代目に、彼らはここに戻って来る。アモリ人の咎が、今まだ満ちていないからである。」",
+          "B": "あなたの子孫は四代目にここに戻って来る。アモリ人の悪が、まだ極みに達していないからである。」",
+          "R": "四代たってから、あなたの子孫はここに帰って来る。わたしはそれまで待つ。ここに住むアモリ人の悪は、まだ罰を受けなければならないほどにはなっていないからだ。」"
         }
       },
       "decisions": [
@@ -3064,6 +3322,11 @@
           "L": "И было: солнце зашло, и стала тьма, и вот, дымящаяся печь и огненный факел, который прошёл между этими частями.",
           "B": "Когда солнце зашло и стало темно, между половинами животных прошли дымящаяся печь и пылающий факел.",
           "R": "Когда солнце зашло и стало темно, появились печь, из которой шёл дым, и горящий факел. Они прошли между половинами животных."
+        },
+        "ja": {
+          "L": "そして日が沈んで暗くなったとき、なんと、煙を上げる炉と燃える松明が、これらの裂かれたものの間を通り過ぎた。",
+          "B": "日が沈んで暗くなると、煙を上げる炉と燃える松明が、裂かれた動物の間を通り過ぎた。",
+          "R": "日が沈んで暗くなると、煙の出ているつぼと、燃えているたいまつが現れました。それは、半分に切った動物の間を通って行きました。"
         }
       },
       "decisions": [
@@ -3183,6 +3446,28 @@
           "reason": "The Hebrew \"tannur\" is a clay oven; \"печь\" names it plainly in Russian.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150170071",
+            "o010150170081",
+            "o010150170092",
+            "o010150170101"
+          ],
+          "choice": "smoking fire pot, flaming torch: \"煙を上げる炉\", \"燃える松明\" (L, B); \"煙の出ているつぼ\", \"燃えているたいまつ\" (R)",
+          "alternatives": [],
+          "reason": "Readable uses the everyday words and writes たいまつ in kana (松明 is a reading outside the Jōyō list).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3280,6 +3565,11 @@
           "L": "В тот день {{divine_name:ГОСПОДЬ|Яхве}} заключил с Аврамом завет, говоря: «Твоему семени {{deity_pronoun:я|Я}} даю эту землю, от реки Египетской до реки великой, реки Евфрата:",
           "B": "В тот день {{divine_name:ГОСПОДЬ|Яхве}} заключил с Аврамом завет: «Я даю эту землю твоим потомкам, от реки Египетской до великой реки Евфрата,",
           "R": "В тот день {{divine_name:ГОСПОДЬ|Яхве}} заключил с Аврамом завет. Он сказал: «Я даю эту землю твоим потомкам, от реки на границе Египта до великой реки Евфрата."
+        },
+        "ja": {
+          "L": "その日、{{divine_name:主|ヤハウェ}}はアブラムと契約を結んで言われた。「あなたの子孫に、わたしはこの地を与える。エジプトの川から大いなる川、ユーフラテス川まで、",
+          "B": "その日、{{divine_name:主|ヤハウェ}}はアブラムと契約を結ばれた。「わたしはこの地をあなたの子孫に与える。エジプトの川から大河ユーフラテスに至るまで、",
+          "R": "その日、{{divine_name:主|ヤハウェ}}はアブラムと契約を結んで言われました。「わたしは、この土地をあなたの子孫に与える。エジプトとの境の川から、大きなユーフラテス川までの土地だ。"
         }
       },
       "decisions": [
@@ -3421,6 +3711,48 @@
           "reason": "The Hebrew \"cut a covenant\" means made one (meaning decision m1); Hindi says \"वाचा बाँधना\", as Acts 3:25 does, with the note's word \"वाचा\" at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150180031",
+            "o010150180071"
+          ],
+          "choice": "made (cut) a covenant: \"契約を結ぶ\"",
+          "alternatives": [],
+          "reason": "契約 as settled for Genesis 9 and the NT drafts; 結ぶ is the Japanese verb for making a covenant, as the English \"made\" (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010150180091",
+            "o010150180101",
+            "o010150180141",
+            "o010150180201"
+          ],
+          "choice": "The land's borders (15:18) and the peoples in it (15:19-21) are set as phrases before a verb Japanese cannot hold over to 15:21; each record ends on 、 at L and B, and Readable restates \"……の土地\"",
+          "alternatives": [],
+          "reason": "Keeps each verse's content in its own record while the list runs on, as the English does with commas and a colon.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3499,6 +3831,11 @@
           "L": "кенеев, и кенезеев, и кедмонеев,",
           "B": "землю кенеев, кенезеев, кедмонеев,",
           "R": "землю кенеев, кенезеев, кедмонеев,"
+        },
+        "ja": {
+          "L": "[すなわち]ケニ人、ケナズ人、カドモニ人、",
+          "B": "ケニ人、ケナズ人、カドモニ人、",
+          "R": "そこには、ケニ人、ケナズ人、カドモニ人、"
         }
       },
       "decisions": [
@@ -3617,6 +3954,27 @@
           "reason": "Hindi puts \"the land of\" after the whole list of peoples, so the phrase the English has at the start of this verse comes at the end of verse 21 in Balanced and Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150190022",
+            "o010150190042",
+            "o010150190062"
+          ],
+          "choice": "Kenites \"ケニ人\", Kenizzites \"ケナズ人\", Kadmonites \"カドモニ人\"",
+          "alternatives": [],
+          "reason": "Peoples transcribed from the Hebrew with 人, as カナン人 in 13:7.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3696,9 +4054,34 @@
           "L": "и хеттов, и ферезеев, и рефаимов,",
           "B": "хеттов, ферезеев, рефаимов,",
           "R": "хеттов, ферезеев, рефаимов,"
+        },
+        "ja": {
+          "L": "ヘト人、ペリジ人、レファイム人、",
+          "B": "ヘト人、ペリジ人、レファイム人、",
+          "R": "ヘト人、ペリジ人、レファイム人、"
         }
       },
-      "decisions": [],
+      "decisions": [
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150200022"
+          ],
+          "choice": "Hittites: \"ヘト人\"",
+          "alternatives": [],
+          "reason": "As settled for Genesis 23 (sons of Heth / ヘト人), so the Hittites are one people through the book.",
+          "uncertain": false,
+          "footnote": false
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -3780,9 +4163,35 @@
           "L": "и аморреев, и хананеев, и гергесеев, и иевусеев.»",
           "B": "аморреев, хананеев, гергесеев и иевусеев.»",
           "R": "аморреев, хананеев, гергесеев и иевусеев.»"
+        },
+        "ja": {
+          "L": "アモリ人、カナン人、ギルガシ人、エブス人の[地を]。」",
+          "B": "アモリ人、カナン人、ギルガシ人、エブス人の土地である。」",
+          "R": "アモリ人、カナン人、ギルガシ人、エブス人が住んでいる。」"
         }
       },
-      "decisions": [],
+      "decisions": [
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010150210062",
+            "o010150210082"
+          ],
+          "choice": "Girgashites \"ギルガシ人\", Jebusites \"エブス人\"",
+          "alternatives": [],
+          "reason": "Transcribed from the Hebrew with 人.",
+          "uncertain": false,
+          "footnote": false
+        }
+      ],
       "status": "ai_draft"
     }
   ]
