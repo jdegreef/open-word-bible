@@ -61,6 +61,16 @@
           "L": "የመውጣት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከጥልቅ ወደ አንተ እጮኻለሁ።",
           "B": "የመውጣት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከጥልቅ ውኆች ወደ አንተ እጣራለሁ።",
           "R": "የመውጣት መዝሙር፤ ወደ ኢየሩሳሌም ሲወጡ የሚዘመር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በከባድ ችግር ውስጥ ነኝ፤ ወደ አንተም እጮኻለሁ።"
+        },
+        "hi": {
+          "L": "चढ़ाई का गीत। गहराइयों में से मैं तुझे पुकारता हूँ, हे {{divine_name:प्रभु|याहवे}}।",
+          "B": "चढ़ाई का गीत। हे {{divine_name:प्रभु|याहवे}}, गहरे जल में से मैं तुझे पुकारता हूँ।",
+          "R": "यरूशलेम की ओर जाने की यात्रा का गीत। हे {{divine_name:प्रभु|याहवे}}, मैं बड़ी मुसीबत में हूँ, और तुझे पुकार रहा हूँ।"
+        },
+        "ru": {
+          "L": "Песнь восхождения. Из глубин я взываю к {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}.",
+          "B": "Песнь восхождения. Из глубоких вод я взываю к {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}.",
+          "R": "Песня для пути в Иерусалим. {{divine_name:ГОСПОДИ|Яхве}}, я в большой беде и зову {{deity_pronoun:тебя|Тебя}}."
         }
       },
       "decisions": [
@@ -202,6 +212,49 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191300010041",
+            "o191300010042"
+          ],
+          "choice": "no deity_pronoun spans; \"प्रभु\" without the setting for Adonai (verses 2, 3, 6)",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalmist speaks to God with \"तू\". This psalm calls God both by the name (with the divine_name setting) and by the title Adonai, \"Lord\", which is \"प्रभु\" with no setting, so the two stay distinct when the setting shows the name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300010011",
+            "o191300010022"
+          ],
+          "choice": "Песнь восхождения (L, B); Песня для пути в Иерусалим (R)",
+          "alternatives": [
+            "Песнь степеней",
+            "Песнь восхождений"
+          ],
+          "reason": "As in 120:1: one form of the title per level through the Songs of Ascents.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -274,6 +327,16 @@
           "L": "ጌታዬ ሆይ፣ ድምፄን ስማ፤ ጆሮዎችህ የልመናዬን ድምፅ የሚያደምጡ ይሁኑ።",
           "B": "ጌታ ሆይ፣ ስጣራ ስማኝ! ምሕረት ለማግኘት ወደማቀርበው ጩኸት ጆሮህን አዘንብል።",
           "R": "ጌታ ሆይ፣ ስማኝ! ምሕረትህን ስለምንህ አድምጠኝ።"
+        },
+        "hi": {
+          "L": "हे मेरे प्रभु, मेरी आवाज़ सुन; तेरे कान मेरे गिड़गिड़ाने की आवाज़ पर लगे रहें।",
+          "B": "हे प्रभु, मेरी पुकार सुन! दया के लिए मेरी दुहाई की ओर कान लगा।",
+          "R": "हे प्रभु, मेरी सुन! जब मैं तुझसे दया की भीख माँगता हूँ, तो ध्यान दे।"
+        },
+        "ru": {
+          "L": "Господь мой, услышь голос мой; да будут уши {{deity_pronoun:твои|Твои}} внимательны к голосу молений моих.",
+          "B": "Господи, услышь меня, когда я зову! Обрати {{deity_pronoun:твой|Твой}} слух к моей мольбе о милости.",
+          "R": "Господи, услышь меня! Будь внимателен, когда я умоляю {{deity_pronoun:тебя|Тебя}} о милости."
         }
       },
       "decisions": [
@@ -487,6 +550,46 @@
           "reason": "The terms list gives \"ጌታ\" for Adonai; Literal keeps the \"my\" of the Hebrew form, as the English Literal does (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300020011"
+          ],
+          "choice": "\"हे मेरे प्रभु\" (L); \"हे प्रभु\" (B, R)",
+          "alternatives": [],
+          "reason": "Adonai in address is \"my Lord\" at Literal and \"Lord\" at Balanced and Readable, as the English has it (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300020011"
+          ],
+          "choice": "Господь мой (L); Господи (B, R)",
+          "alternatives": [
+            "Владыка"
+          ],
+          "reason": "'Adonai is \"Господь мой\" at Literal, keeping \"my\" (m1), and Господи in address at Balanced and Readable, the forms used in the other blocks of psalms; never in capitals, which mark the divine name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -552,6 +655,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህ}} ሆይ፣ አንተ በደልን ብትጠብቅ፣ ጌታዬ ሆይ፣ ማን ይቆማል?",
           "B": "{{divine_name:እግዚአብሔር|ያህ}} ሆይ፣ አንተ በደልን ሁሉ ብትቆጥር፣ ጌታ ሆይ፣ በፊትህ ማን ሊቆም ይችላል?",
           "R": "{{divine_name:እግዚአብሔር|ያህ}} ሆይ፣ አንተ ኃጢአታችንን ሁሉ በመዝገብ ብትይዝ፣ ጌታ ሆይ፣ በፊትህ ሊቆም የሚችል ማን ነው?"
+        },
+        "hi": {
+          "L": "यदि तू अधर्मों का लेखा रखे, हे {{divine_name:प्रभु|याह}}, हे मेरे प्रभु, तो कौन खड़ा रहेगा?",
+          "B": "हे {{divine_name:प्रभु|याह}}, यदि तू हर दोष का हिसाब रखता, तो हे प्रभु, तेरे सामने कौन खड़ा रह सकता?",
+          "R": "हे {{divine_name:प्रभु|याह}}, अगर तू हमारे सब पापों की सूची रखता, तो हे प्रभु, कौन तेरे सामने कभी टिक सकता?"
+        },
+        "ru": {
+          "L": "Если {{deity_pronoun:ты|Ты}} будешь замечать беззакония, {{divine_name:ГОСПОДИ|Ях}}, Господь мой, кто устоит?",
+          "B": "{{divine_name:ГОСПОДИ|Ях}}, если бы {{deity_pronoun:ты|Ты}} вёл счёт всякой вине, Господи, кто мог бы устоять перед {{deity_pronoun:тобой|Тобой}}?",
+          "R": "{{divine_name:ГОСПОДИ|Ях}}, если бы {{deity_pronoun:ты|Ты}} записывал все наши грехи, кто вообще мог бы устоять перед {{deity_pronoun:тобой|Тобой}}, Господи?"
         }
       },
       "decisions": [
@@ -713,6 +826,45 @@
           "reason": "The alternative gives the short form the Hebrew has (meaning decision m1), as the English span does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300030021"
+          ],
+          "choice": "\"अधर्मों\" (L); \"दोष\" (B); \"पापों\" (R)",
+          "alternatives": [],
+          "reason": "Iniquity is \"अधर्म\" at Literal and \"दोष\" at Balanced, as the Pentateuch note has it; Readable says \"sins\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191300030041"
+          ],
+          "choice": "{{divine_name:ГОСПОДИ|Ях}}",
+          "alternatives": [
+            "Яхве"
+          ],
+          "reason": "Yah, the short form of the divine name (m1): the default reads ГОСПОДИ like the English \"LORD\" and the divine_name setting gives Ях, as in 122:4. Adonai beside it is Господь мой / Господи, as in verse 2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -777,6 +929,16 @@
           "L": "ነገር ግን ትፈራ ዘንድ ይቅርታ በአንተ ዘንድ [አለ]።",
           "B": "ነገር ግን ይቅርታ በአንተ ዘንድ ይገኛል፤ ስለዚህም አንተ ትፈራለህ።",
           "R": "አንተ ግን ይቅር ትላለህ፤ ስለዚህ ሰዎች ያከብሩሃል።"
+        },
+        "hi": {
+          "L": "पर तेरे पास क्षमा [है], ताकि तेरा भय माना जाए।",
+          "B": "पर क्षमा तेरे पास मिलती है, और इसी से लोग तेरा भय मानते हैं।",
+          "R": "पर तू क्षमा करता है, ताकि लोग तेरा आदर और भय मानें।"
+        },
+        "ru": {
+          "L": "Но у {{deity_pronoun:тебя|Тебя}} прощение, чтобы {{deity_pronoun:тебя|Тебя}} боялись.",
+          "B": "Но у {{deity_pronoun:тебя|Тебя}} есть прощение, и потому перед {{deity_pronoun:тобой|Тобой}} благоговеют.",
+          "R": "Но {{deity_pronoun:ты|Ты}} прощаешь, чтобы люди почитали {{deity_pronoun:тебя|Тебя}}."
         }
       },
       "decisions": [
@@ -894,6 +1056,16 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} ተስፋ አደርጋለሁ፤ ነፍሴ ተስፋ ታደርጋለች፤ በቃሉም ተስፋ አደርጋለሁ።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} በተስፋ እጠብቃለሁ፤ በሁለንተናዬ እጠብቃለሁ፤ በገባውም ቃል ተስፋ አደርጋለሁ።",
           "R": "በሁለንተናዬ {{divine_name:እግዚአብሔርን|ያህዌን}} እጠብቃለሁ። የገባውን ቃል እንዲፈጽም ተስፋ አደርጋለሁ።"
+        },
+        "hi": {
+          "L": "मैं {{divine_name:प्रभु|याहवे}} की बाट जोहता हूँ, मेरा प्राण बाट जोहता है, और उनके वचन पर मैं आशा रखता हूँ।",
+          "B": "मैं {{divine_name:प्रभु|याहवे}} की प्रतीक्षा कर रहा हूँ; अपने पूरे मन से मैं प्रतीक्षा करता हूँ, और जो वचन उन्होंने दिया है, उस पर आशा रखता हूँ।",
+          "R": "मैं पूरे मन से {{divine_name:प्रभु|याहवे}} की राह देखता हूँ। जिसका उन्होंने वादा किया है, मैं उसी की आशा रखता हूँ।"
+        },
+        "ru": {
+          "L": "Я жду {{divine_name:ГОСПОДА|Яхве}}, ждёт душа моя, и на слово {{deity_pronoun:его|Его}} я надеюсь.",
+          "B": "Я жду {{divine_name:ГОСПОДА|Яхве}}; всем своим существом я жду и надеюсь на то, что {{deity_pronoun:он|Он}} обещал.",
+          "R": "Всем своим существом я жду {{divine_name:ГОСПОДА|Яхве}}. Я надеюсь на то, что {{deity_pronoun:он|Он}} обещал."
         }
       },
       "decisions": [
@@ -1008,6 +1180,25 @@
           "reason": "Verses 1-4 speak to God; here the LORD is named in the third person (\"his word\"), so the voice is speech about him (style guide section 7a), and verses 7-8 turn to Israel.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300050041",
+            "o191300050042"
+          ],
+          "choice": "душа моя (L); всем своим существом (B, R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"I\", \"myself\" or \"with all that I am\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1077,6 +1268,16 @@
           "L": "ጠባቂዎች ንጋትን፣ ጠባቂዎች ንጋትን [ከሚጠብቁ] ይልቅ ነፍሴ ጌታዬን [ትጠብቃለች]።",
           "B": "የሌሊት ዘበኞች ንጋትን ከሚናፍቁ ይልቅ፣ አዎን፣ የሌሊት ዘበኞች ንጋትን ከሚናፍቁ ይልቅ ጌታን እናፍቃለሁ።",
           "R": "በሌሊት የሚጠብቁ ዘበኞች ንጋት እንዲመጣ ከሚፈልጉት ይልቅ ጌታ እንዲመጣ እፈልጋለሁ። አዎን፣ እነርሱ ንጋትን ከሚፈልጉት ይበልጥ!"
+        },
+        "hi": {
+          "L": "मेरा प्राण मेरे प्रभु की [बाट जोहता है] पहरेदारों से बढ़कर जो भोर की [बाट जोहते हैं], पहरेदार जो भोर की।",
+          "B": "रात के पहरेदार भोर की जितनी लालसा करते हैं, उससे बढ़कर मैं प्रभु की लालसा करता हूँ, हाँ, पहरेदारों के भोर की लालसा से भी बढ़कर।",
+          "R": "रात की ड्यूटी पर तैनात पहरेदार जितना सुबह होने की राह देखते हैं, उससे ज़्यादा मैं प्रभु के आने की राह देखता हूँ। हाँ, उनसे भी ज़्यादा!"
+        },
+        "ru": {
+          "L": "Душа моя [ждёт] Господа моего более, чем стражи — утра, стражи — утра.",
+          "B": "Я жажду Господа больше, чем ночные стражи жаждут утра, да, больше, чем ночные стражи — утра.",
+          "R": "Я хочу, чтобы пришёл Господь, больше, чем стражи на ночном дежурстве хотят, чтобы наступило утро. Да, больше, чем они хотят утра!"
         }
       },
       "decisions": [
@@ -1150,6 +1351,44 @@
           "reason": "'Adonai, \"my Lord\" (as in verse 2), here not in address.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300060011",
+            "o191300060012"
+          ],
+          "choice": "душа моя (L); я (B, R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"I\", \"myself\" or \"with all that I am\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300060022"
+          ],
+          "choice": "Господа моего (L); Господа (B, R)",
+          "alternatives": [],
+          "reason": "'Adonai as in verse 2, here not in address.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1221,6 +1460,16 @@
           "L": "እስራኤል ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} ተስፋ አድርግ፤ ጽኑ ፍቅር {{divine_name:በእግዚአብሔር|በያህዌ}} ዘንድ ነውና፤ በእርሱም ዘንድ ብዙ ቤዛነት [አለ]።",
           "B": "እስራኤል ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} በተስፋ ጠብቅ! ጽኑ ፍቅር {{divine_name:በእግዚአብሔር|በያህዌ}} ዘንድ ይገኛልና፤ በእርሱም ዘንድ የተትረፈረፈ ቤዛነት አለ።",
           "R": "እስራኤል ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} ተስፋ አድርግ! {{divine_name:እግዚአብሔር|ያህዌ}} ለአንተ ጽኑ ፍቅር አለው፤ ነጻ ሊያወጣህም ከበቂ በላይ ዝግጁ ነው።"
+        },
+        "hi": {
+          "L": "हे इस्राएल, {{divine_name:प्रभु|याहवे}} पर आशा रखो, क्योंकि {{divine_name:प्रभु|याहवे}} के पास अटल प्रेम [है], और उनके पास भरपूर छुटकारा [है]।",
+          "B": "हे इस्राएल, आशा के साथ {{divine_name:प्रभु|याहवे}} की बाट जोहो! क्योंकि {{divine_name:प्रभु|याहवे}} के पास अटल प्रेम है, और उनके पास पूरा-पूरा छुटकारा है।",
+          "R": "हे इस्राएल, {{divine_name:प्रभु|याहवे}} पर आशा रखो! {{divine_name:प्रभु|याहवे}} तुमसे अटल प्रेम रखते हैं, और वे तुम्हें छुड़ाने के लिए हर समय तैयार हैं।"
+        },
+        "ru": {
+          "L": "Надейся, Израиль, на {{divine_name:ГОСПОДА|Яхве}}, ведь у {{divine_name:ГОСПОДА|Яхве}} — неизменная любовь, и обильно у {{deity_pronoun:него|Него}} искупление.",
+          "B": "Израиль, с надеждой жди {{divine_name:ГОСПОДА|Яхве}}! Ведь у {{divine_name:ГОСПОДА|Яхве}} — неизменная любовь, и у {{deity_pronoun:него|Него}} — искупление в полной мере.",
+          "R": "Израиль, надейся на {{divine_name:ГОСПОДА|Яхве}}! {{divine_name:ГОСПОДЬ|Яхве}} неизменно любит тебя, и {{deity_pronoun:он|Он}} более чем готов освободить тебя."
         }
       },
       "decisions": [
@@ -1510,6 +1759,50 @@
           "reason": "The settled pair keeps padah (\"ransom\", \"ዋጀ\") apart from gaʾal (the kinsman's \"ቤዠ\"); the noun \"ቤዛነት\" is the ransom that sets free (meaning decision m3). Readable says \"set free\", as the English does. Israel is addressed in the singular (\"አንተ\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300070082",
+            "o191300070111"
+          ],
+          "choice": "\"अटल प्रेम\" at every level; \"छुटकारा\" (L, B), \"छुड़ाना\" (R)",
+          "alternatives": [
+            "\"करुणा\""
+          ],
+          "reason": "The LORD's hesed is \"अटल प्रेम\" at every level, as the poetry note settles; the English varies \"loyal love\" and \"faithful love\", Hindi keeps one term. Redemption, setting free (meaning m3), is \"छुटकारा\", as in the New Testament in this translation. Israel is spoken to with \"तुम\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300070082"
+          ],
+          "choice": "неизменная любовь (L, B); неизменно любит (R)",
+          "alternatives": [
+            "верная любовь",
+            "милость"
+          ],
+          "reason": "Hesed, the LORD's: the poetry note keeps неизменная любовь at every level where the English varies loyal love and faithful love; Readable turns the noun into a verb, неизменно любит, keeping the same word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1576,6 +1869,16 @@
           "L": "እርሱም እስራኤልን ከበደሉ ሁሉ ይዋጃል።",
           "B": "እስራኤልን ከበደሉ ሁሉ የሚዋጀው እርሱ ነው።",
           "R": "እስራኤልን ከኃጢአቱ ሁሉ ነጻ የሚያወጣው እርሱ ነው።"
+        },
+        "hi": {
+          "L": "और वे इस्राएल को उसके सब अधर्मों से छुड़ाएँगे।",
+          "B": "वही इस्राएल को उसके सब दोषों से छुड़ाएँगे।",
+          "R": "वही इस्राएल को उसके सब पापों से छुड़ाएँगे।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} искупит Израиль от всех беззаконий его.",
+          "B": "Именно {{deity_pronoun:он|Он}} искупит Израиль от всей его вины.",
+          "R": "Он — тот, кто освободит Израиль от всех его грехов."
         }
       },
       "decisions": [
@@ -1624,6 +1927,24 @@
             "redeem"
           ],
           "reason": "As in verse 7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191300080061"
+          ],
+          "choice": "беззаконий (L); вины (B)",
+          "alternatives": [],
+          "reason": "'Awon as the Pentateuch note settles: беззаконие at Literal, вина at Balanced; Readable says грехи, as the English says sins.",
           "uncertain": false,
           "footnote": false
         }
