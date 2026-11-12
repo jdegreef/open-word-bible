@@ -73,6 +73,11 @@
           "L": "Руководителю хора: песнь; псалом. \\q Восклицайте Богу, вся земля!",
           "B": "Руководителю хора. Песнь. Псалом. \\q Восклицайте Богу, вся земля!",
           "R": "Для руководителя музыкантов. Песня, псалом. \\q Радостно кричите Богу, все люди на земле!"
+        },
+        "ja": {
+          "L": "指揮する者のために。歌、賛歌。 \\q 神に向かって喜び叫べ、全地よ！",
+          "B": "音楽を導く者のために。歌、賛歌。 \\q 全地よ、神に向かって喜びの声を上げよ！",
+          "R": "音楽を導く人のために。歌。 \\q 世界中の人々よ、喜びの声を上げて、神に叫べ！"
         }
       },
       "decisions": [
@@ -280,6 +285,45 @@
           "reason": "Readable keeps the two words for the song distinct, as the English Readable does; \"песня\" is the note's Readable word for shir, and \"псалом\" is kept for mizmor here so the pair does not read as one word twice.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660010021",
+            "o190660010031"
+          ],
+          "choice": "shir mizmor \"歌、賛歌\" (L, B), \"歌\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter's title rule for the paired words (PSA-1), though the English R keeps both (\"A song, a psalm\"); two words for one song (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190660010041"
+          ],
+          "choice": "hari'u \"喜び叫べ\" (L), \"喜びの声を上げよ\" (B), \"喜びの声を上げて…叫べ\" (R), to all the earth",
+          "alternatives": [],
+          "reason": "Calls to praise to the earth and the nations take 〜せよ at every level, Readable too (Psalter conventions); the shout is a loud cry of joy and acclaim (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -355,6 +399,11 @@
           "L": "Воспевайте славу имени {{deity_pronoun:его|Его}}; \\q сделайте хвалу {{deity_pronoun:его|Его}} славной!",
           "B": "Пойте во славу {{deity_pronoun:его|Его}} имени; \\q воздайте {{deity_pronoun:ему|Ему}} хвалу, полную славы!",
           "R": "Пойте и играйте, прославляя {{deity_pronoun:его|Его}} великое имя. \\q Хвалите {{deity_pronoun:его|Его}} так, чтобы было видно, как {{deity_pronoun:он|Он}} прекрасен!"
+        },
+        "ja": {
+          "L": "その方の名の栄光を、ほめ歌え。 \\q その方への賛美を、栄光とせよ！",
+          "B": "その方の名の誉れを、ほめ歌え。 \\q 栄光に満ちた賛美を、その方にささげよ！",
+          "R": "神の名がどんなに偉大かを、ほめ歌え。 \\q 神がどんなにすばらしい方かがわかるように、賛美せよ！"
         }
       },
       "decisions": [
@@ -425,6 +474,28 @@
           ],
           "reason": "Readable says what glorious praise is (m2).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660020041",
+            "o190660020051",
+            "o190660020061",
+            "o190660020062"
+          ],
+          "choice": "simu khavod tehillato \"その方への賛美を、栄光とせよ\" (L), \"栄光に満ちた賛美を、その方にささげよ\" (B, R by sense)",
+          "alternatives": [],
+          "reason": "The phrase is read as giving God glorious praise (m2, uncertain); zimmer ほめ歌う (m1).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -509,6 +580,11 @@
           "L": "Скажите Богу: «Как страшны дела {{deity_pronoun:твои|Твои}}! \\q По великой силе {{deity_pronoun:твоей|Твоей}} \\q пресмыкаются перед {{deity_pronoun:тобой|Тобой}} враги {{deity_pronoun:твои|Твои}}.",
           "B": "Скажите Богу: «Как грозны {{deity_pronoun:твои|Твои}} дела! \\q Так велика {{deity_pronoun:твоя|Твоя}} сила, \\q что враги {{deity_pronoun:твои|Твои}} раболепствуют перед {{deity_pronoun:тобой|Тобой}}.",
           "R": "Скажите Богу: «То, что {{deity_pronoun:ты|Ты}} делаешь, удивительно! \\q Ты так силён, что враги кланяются {{deity_pronoun:тебе|Тебе}}, даже если не от сердца."
+        },
+        "ja": {
+          "L": "神に言え。「あなたのみわざは、なんと畏るべきことか！ \\q あなたの力の大きさのゆえに、 \\q あなたの敵は、あなたにへつらい従う。",
+          "B": "神に言え。「あなたのみわざは、なんと恐るべきものか！ \\q あなたの力があまりに大きいので、 \\q あなたの敵は、あなたの前に縮み上がり、へつらう。",
+          "R": "神にこう言え。「あなたのなさることは、驚くべきことばかりだ！ \\q あなたがとても強いので、敵はあなたの前にひれ伏す。本心からではなくても。"
         }
       },
       "decisions": [
@@ -638,6 +714,25 @@
           "reason": "The verb is bowing to the victor with false submission (meaning m2). Literal gives the cowering, Balanced adds the flattery, as the English \"cower and fawn\" does; Readable says they do not mean it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660030081"
+          ],
+          "choice": "yekhachashu \"へつらい従う\" (L), \"縮み上がり、へつらう\" (B), \"ひれ伏す。本心からではなくても\" (R)",
+          "alternatives": [],
+          "reason": "The verb is false, crawling submission (m2). The quotation opens here and closes at the end of 66:4 (m3), at every level as the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -719,6 +814,11 @@
           "L": "Вся земля поклонится {{deity_pronoun:тебе|Тебе}} и будет воспевать {{deity_pronoun:тебя|Тебя}}; \\q будут воспевать имя {{deity_pronoun:твоё|Твоё}}.» Села",
           "B": "Вся земля склоняется перед {{deity_pronoun:тобой|Тобой}} и поёт {{deity_pronoun:тебе|Тебе}}; \\q поют {{deity_pronoun:твоему|Твоему}} имени.» Села",
           "R": "Все на земле будут поклоняться {{deity_pronoun:тебе|Тебе}}. \\q Они будут петь {{deity_pronoun:тебе|Тебе}} песни, прославляющие {{deity_pronoun:твоё|Твоё}} имя.» Села"
+        },
+        "ja": {
+          "L": "全地はあなたにひれ伏し、あなたをほめ歌い、 \\q あなたの名をほめ歌う。」セラ",
+          "B": "全地はあなたにひれ伏し、あなたに向かって歌い、 \\q あなたの名をほめ歌う。」セラ",
+          "R": "地上のすべての人が、あなたを礼拝する。 \\q 彼らはあなたに歌を歌う。あなたの名をたたえる歌を。」セラ"
         }
       },
       "decisions": [
@@ -814,6 +914,27 @@
           "reason": "A word whose meaning is no longer known, probably a musical direction (meaning decision m3); see Psalm 46:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660040031",
+            "o190660040052",
+            "o190660040071"
+          ],
+          "choice": "yishtachawu \"ひれ伏し\" (L, B), \"礼拝する\" (R)",
+          "alternatives": [],
+          "reason": "Bowing to the ground in worship (m2), as what the earth does or will do (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -891,6 +1012,11 @@
           "L": "Придите и посмотрите на дела Божьи, \\q страшен [{{deity_pronoun:он|Он}} в] деяниях к {{gender:детям человеческим|сынам человеческим}}.",
           "B": "Придите и посмотрите на дела Бога: \\q как грозны {{deity_pronoun:его|Его}} деяния среди людей!",
           "R": "Придите и посмотрите, что сделал Бог! \\q То, что {{deity_pronoun:он|Он}} делает среди людей, удивительно."
+        },
+        "ja": {
+          "L": "来て、神のみわざを見よ。 \\q 人の子らに対する[その]行いは、畏るべきもの。",
+          "B": "来て、神のみわざを見なさい。 \\q 人々に対するその方のなさりようは、なんと畏るべきことか！",
+          "R": "さあ、来て、神がなさったことを見なさい！ \\q 神が人々の間でなさることは、驚くべきことだ。"
         }
       },
       "decisions": [
@@ -996,6 +1122,26 @@
           "reason": "As in the English Literal: the default includes everyone, the alternative keeps the Hebrew \"sons\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660050081",
+            "o190660050091"
+          ],
+          "choice": "bene 'adam \"人の子ら\" (L), \"人々\" (B, R), with no gender span",
+          "alternatives": [],
+          "reason": "Human beings (m3); the Psalter rule for bene adam (PSA-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1076,6 +1222,11 @@
           "L": "Он обратил море в сушу; \\q через реку прошли пешком; \\q там возрадуемся о {{deity_pronoun:нём|Нём}}.",
           "B": "Он превратил море в сухую землю; \\q реку перешли пешком. \\q Там будем радоваться о {{deity_pronoun:нём|Нём}}!",
           "R": "Он сделал море сушей, \\q и они прошли через реку пешком. \\q Будем радоваться о {{deity_pronoun:нём|Нём}}, как радовались они там!"
+        },
+        "ja": {
+          "L": "その方は、海を乾いた地に変えられた。 \\q 川を、彼らは徒歩で渡った。 \\q そこで、わたしたちはその方を喜ぼう。",
+          "B": "その方は海を乾いた地に変えられ、 \\q 人々は川を歩いて渡った。 \\q そこで、わたしたちはその方を喜ぼう！",
+          "R": "神は、海を乾いた地に変えられた。 \\q 人々は、自分の足で川を歩いて渡った。 \\q あのとき彼らがそこで喜んだように、わたしたちも神を喜ぼう！"
         }
       },
       "decisions": [
@@ -1130,6 +1281,26 @@
             "there let us rejoice"
           ],
           "reason": "Readable makes clear how \"there\" fits (m2).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660060071",
+            "o190660060081"
+          ],
+          "choice": "sham nismechah-bo \"そこで、わたしたちはその方を喜ぼう\" (L, B), \"あのとき彼らがそこで喜んだように、わたしたちも…\" (R)",
+          "alternatives": [],
+          "reason": "The singers join the crossing of the Red Sea and the Jordan (m1, m2, uncertain); Readable spells it out as the English R.",
           "uncertain": true,
           "footnote": false
         }
@@ -1216,6 +1387,11 @@
           "L": "[Он] владычествует силой своей вовек; \\q очи {{deity_pronoun:его|Его}} наблюдают за народами; \\q непокорные — да не превозносятся. Села",
           "B": "Он царствует в своей силе вовек, \\q и {{deity_pronoun:его|Его}} глаза зорко следят за народами. \\q Пусть мятежники не поднимают головы. Села",
           "R": "Он правит вечно своей силой. \\q Его глаза всегда смотрят на народы. \\q Пусть бунтари и не думают, что они велики. Села"
+        },
+        "ja": {
+          "L": "その方は、その力によってとこしえに治め、 \\q その目は諸国の民を見張る。 \\q 逆らう者たちが、高ぶることのないように。セラ",
+          "B": "その方は、力をもってとこしえに治め、 \\q その目は諸国の民を見守っておられる。 \\q 逆らう者たちは、思い上がってはならない。セラ",
+          "R": "神は、その力で、いつまでも治められる。 \\q 神の目は、いつも国々に注がれている。 \\q 逆らう人たちは、自分がえらいなどと思わないほうがいい。セラ"
         }
       },
       "decisions": [
@@ -1324,6 +1500,28 @@
           "reason": "As the poetry note sets: Literal keeps \"जातियाँ\" for the nations, and Balanced and Readable say \"देश\", since \"जाति\" also means caste.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660070071",
+            "o190660070072",
+            "o190660070081",
+            "o190660070101"
+          ],
+          "choice": "hassorerim 'al-yarumu \"逆らう者たちが、高ぶることのないように\" (L), \"思い上がってはならない\" (B), \"…思わないほうがいい\" (R)",
+          "alternatives": [],
+          "reason": "The verb as read (m1), a warning to the rebels; goyim 諸国の民 (L, B), 国々 (R).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1400,6 +1598,11 @@
           "L": "Благословите, племена, Бога нашего \\q и дайте услышать голос хвалы {{deity_pronoun:ему|Ему}},",
           "B": "Племена мира, благословите нашего Бога, \\q пусть звучит голос хвалы {{deity_pronoun:ему|Ему}},",
           "R": "Все народы, хвалите нашего Бога! \\q Пусть все слышат, как громко вы хвалите {{deity_pronoun:его|Его}}."
+        },
+        "ja": {
+          "L": "もろもろの民よ、わたしたちの神をほめたたえよ。 \\q その方への賛美の声を聞かせよ。",
+          "B": "もろもろの民よ、わたしたちの神をほめたたえよ。 \\q その方への賛美の声を響かせよ。",
+          "R": "すべての民よ、わたしたちの神をほめたたえよ！ \\q あなたたちが大声でその方を賛美するのを、みんなに聞かせよ。"
         }
       },
       "decisions": [
@@ -1442,6 +1645,26 @@
           "choice": "a sentence that runs on",
           "alternatives": [],
           "reason": "Verse 9 says who this God is, so this verse ends with a comma at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190660080021",
+            "o190660080062"
+          ],
+          "choice": "The English sentence runs on into 66:9 (\"…his praise, who placed…\"); Japanese closes 66:8 with 。 and begins 66:9 \"その方は\" / \"神は\"",
+          "alternatives": [],
+          "reason": "The call widens to the peoples (m2); 'ammim もろもろの民 (L, B), 民 (R), barekh ほめたたえる (Psalter conventions).",
           "uncertain": false,
           "footnote": false
         }
@@ -1524,6 +1747,11 @@
           "L": "сохранившего душу нашу в живых \\q и не давшего ноге нашей поскользнуться.",
           "B": "того, кто сохраняет нам жизнь \\q и не дал нашим ногам оступиться.",
           "R": "Он сохранил нам жизнь. \\q Он не дал нам упасть."
+        },
+        "ja": {
+          "L": "その方は、わたしたちの魂を命のうちに置き、 \\q わたしたちの足がよろめくのをお許しにならなかった。",
+          "B": "その方は、わたしたちを生かし、 \\q わたしたちの足がつまずかないようにしてくださった。",
+          "R": "神は、わたしたちを生かしてくださった。 \\q わたしたちが倒れないようにしてくださった。"
         }
       },
       "decisions": [
@@ -1575,6 +1803,31 @@
             "our soul"
           ],
           "reason": "Balanced and Readable say \"us\" for nefesh, as the convention is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660090041",
+            "o190660090042",
+            "o190660090051",
+            "o190660090061",
+            "o190660090062",
+            "o190660090071",
+            "o190660090072"
+          ],
+          "choice": "velo'-natan lammot raglenu \"足がよろめくのをお許しにならなかった\" (L), \"足がつまずかないようにしてくださった\" (B), \"倒れないようにしてくださった\" (R)",
+          "alternatives": [],
+          "reason": "The negative for God takes お〜にならない, not 〜られない (Psalter rule); the slipping foot is falling into disaster (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1653,6 +1906,11 @@
           "L": "Потому что {{deity_pronoun:ты|Ты}} испытал нас, Боже; \\q {{deity_pronoun:ты|Ты}} переплавил нас, как переплавляют серебро.",
           "B": "Ведь {{deity_pronoun:ты|Ты}} подверг нас испытанию, Боже; \\q {{deity_pronoun:ты|Ты}} очистил нас, как очищают серебро.",
           "R": "Боже, {{deity_pronoun:ты|Ты}} испытал нас. \\q Ты сделал нас чистыми, как огонь делает чистым серебро."
+        },
+        "ja": {
+          "L": "まことに、あなたはわたしたちを試された、神よ。 \\q 銀を精錬するように、あなたはわたしたちを精錬された。",
+          "B": "神よ、あなたはわたしたちを試し、 \\q 銀を精錬するように、わたしたちを精錬された。",
+          "R": "神よ、あなたはわたしたちを試された。 \\q 火で銀を純粋にするように、わたしたちを清められた。"
         }
       },
       "decisions": [
@@ -1721,6 +1979,28 @@
             "\"chúng ta\" throughout"
           ],
           "reason": "Verses 6-9 speak about God to the gathered peoples, so \"chúng ta\" includes the hearers; verses 10-12 speak to God, where Vietnamese says \"chúng tôi\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660100041",
+            "o190660100042",
+            "o190660100051",
+            "o190660100052"
+          ],
+          "choice": "tseraftanu kitsrof-kasef \"銀を精錬するように…精錬された\" (L, B), \"火で銀を純粋にするように…清められた\" (R)",
+          "alternatives": [],
+          "reason": "Refining is purifying by fire (m1); Readable supplies the fire, as the English R.",
           "uncertain": false,
           "footnote": false
         }
@@ -1799,6 +2079,11 @@
           "L": "Ты ввёл нас в сеть, \\q {{deity_pronoun:ты|Ты}} положил тяжкое бремя на бёдра наши.",
           "B": "Ты завёл нас в западню, \\q {{deity_pronoun:ты|Ты}} взвалил тяжкий груз нам на спину.",
           "R": "Ты позволил нам попасться, как зверям в сеть. \\q Ты нагрузил нас тяжёлыми бедами."
+        },
+        "ja": {
+          "L": "あなたは、わたしたちを網の中に入れ、 \\q わたしたちの腰に、押しつぶす重荷を置かれた。",
+          "B": "あなたは、わたしたちをわなに導き入れ、 \\q わたしたちの背に、重い荷を載せられた。",
+          "R": "あなたは、わたしたちが、網にかかった獣のように捕らえられるままにされた。 \\q わたしたちの上に、重い苦しみを積み上げられた。"
         }
       },
       "decisions": [
@@ -1855,6 +2140,27 @@
           ],
           "reason": "The Hebrew says \"hips\", where loads were borne; Balanced and Readable use the familiar place for a burden.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660110021",
+            "o190660110022",
+            "o190660110041"
+          ],
+          "choice": "metsudah \"網\" (L, R), \"わな\" (B); mu'aqah \"押しつぶす重荷\" (L), \"重い荷\" (B), \"重い苦しみ\" (R)",
+          "alternatives": [],
+          "reason": "Both words are uncertain (m1, m2): a hunter's net or a stronghold, a crushing weight; the English reading is followed.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1939,6 +2245,11 @@
           "L": "Ты посадил людей над головой нашей; \\q мы прошли через огонь и через воду, \\q и {{deity_pronoun:ты|Ты}} вывел нас к изобилию.",
           "B": "Ты позволил смертным попирать наши головы; \\q мы прошли сквозь огонь и воду, \\q но {{deity_pronoun:ты|Ты}} вывел нас к обильному достатку.",
           "R": "Ты позволил врагам топтать нас. \\q Мы прошли через огонь и через наводнения. \\q Но потом {{deity_pronoun:ты|Ты}} вывел нас туда, где у нас всего с избытком."
+        },
+        "ja": {
+          "L": "あなたは、人をわたしたちの頭の上に乗らせた。 \\q わたしたちは火の中、水の中を通った。 \\q しかし、あなたは、わたしたちを満ちあふれる所へ導き出された。",
+          "B": "あなたは、ただの人間どもに、わたしたちの頭の上を踏みにじらせた。 \\q わたしたちは火の中、水の中を通った。 \\q しかし、あなたは、わたしたちを、あふれるほど豊かな所へ導き出された。",
+          "R": "あなたは、敵がわたしたちを踏みつけるままにされた。 \\q わたしたちは火の中も、洪水の中も通った。 \\q しかし、そのあとで、あなたは、わたしたちを有り余るほど豊かな所へ連れ出してくださった。"
         }
       },
       "decisions": [
@@ -2007,6 +2318,49 @@
             "mortals"
           ],
           "reason": "Readable names who the riders are.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660120011",
+            "o190660120021",
+            "o190660120032"
+          ],
+          "choice": "hirkavta 'enosh lerosh enu \"人を…頭の上に乗らせた\" (L), \"ただの人間どもに…踏みにじらせた\" (B), \"敵が…踏みつけるままにされた\" (R)",
+          "alternatives": [],
+          "reason": "Conquerors trampling the people (m1). The causative stays plain (乗らせた, 踏みにじらせた), as the Psalter rule for causatives (PSA-1); 'enosh is a collective \"man\", mortals.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660120081",
+            "o190660120082"
+          ],
+          "choice": "larewayah \"満ちあふれる所へ\" (L), \"あふれるほど豊かな所へ\" (B), \"有り余るほど豊かな所へ\" (R)",
+          "alternatives": [
+            "広い所へ"
+          ],
+          "reason": "Overflowing abundance (m3, uncertain); the Greek and some versions read \"a place of rest\".",
           "uncertain": true,
           "footnote": false
         }
@@ -2086,6 +2440,11 @@
           "L": "Войду [в] дом {{deity_pronoun:твой|Твой}} со всесожжениями, \\q исполню {{deity_pronoun:тебе|Тебе}} обеты мои,",
           "B": "Я войду в {{deity_pronoun:твой|Твой}} дом со всесожжениями \\q и исполню свои обеты {{deity_pronoun:тебе|Тебе}},",
           "R": "Я приду в {{deity_pronoun:твой|Твой}} храм с животными, чтобы сжечь их на жертвеннике. \\q Я отдам {{deity_pronoun:тебе|Тебе}} то, что обещал."
+        },
+        "ja": {
+          "L": "わたしは焼き尽くすささげ物を携えて、あなたの家に入り、 \\q わたしの誓願を、あなたに果たす。",
+          "B": "わたしは焼き尽くすささげ物をささげに、あなたの家に入り、 \\q あなたへの誓願を果たす。",
+          "R": "わたしは、焼いてささげるいけにえを携えて、あなたの神殿に行く。 \\q あなたに約束したものを、ささげる。"
         }
       },
       "decisions": [
@@ -2191,6 +2550,26 @@
           "reason": "The term the Pentateuch note fixes for the burnt offering, at Literal and Balanced; Readable says what it is, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660130031",
+            "o190660130032"
+          ],
+          "choice": "'olot \"焼き尽くすささげ物\" (L, B), \"焼いてささげるいけにえ\" (R), as the Leviticus notes",
+          "alternatives": [],
+          "reason": "Sacrifices burned whole on the altar (m2). The speaker turns to \"I\" (m1). The English runs on into 66:14 (\"…my vows, which my lips…\"); Japanese closes 66:13 and begins 66:14 with \"それは\" / \"その約束を\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2270,6 +2649,11 @@
           "L": "которые раскрыли уста мои \\q и произнёс рот мой в бедствии моём.",
           "B": "обещания, что сорвались с моих губ, \\q что дали мои уста, когда я был в беде.",
           "R": "Я дал эти обещания, \\q когда был в беде."
+        },
+        "ja": {
+          "L": "それは、わたしの唇が開いて[語り]、 \\q わたしの苦しみのときに、わたしの口が語ったものだ。",
+          "B": "それは、苦しみのときに、わたしの唇からほとばしり、 \\q わたしの口が誓った誓願だ。",
+          "R": "わたしがその約束をしたのは、 \\q 苦しんでいたときだった。"
         }
       },
       "decisions": [
@@ -2304,6 +2688,25 @@
             "which"
           ],
           "reason": "Balanced and Readable say what \"which\" refers to: the vows of verse 13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660140021"
+          ],
+          "choice": "patsu \"開いて[語り]\" (L), \"ほとばしり\" (B)",
+          "alternatives": [],
+          "reason": "Opening the lips wide, speaking out (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2386,6 +2789,11 @@
           "L": "Всесожжения из откормленных [животных] вознесу {{deity_pronoun:тебе|Тебе}} с дымом овнов; \\q принесу быков с козлами. Села",
           "B": "Я вознесу {{deity_pronoun:тебе|Тебе}} всесожжения из откормленных животных вместе с дымом овнов, восходящим к {{deity_pronoun:тебе|Тебе}}; \\q я принесу в жертву быков вместе с козлами. Села",
           "R": "Я сожгу для {{deity_pronoun:тебя|Тебя}} самых лучших откормленных животных. Дым от баранов поднимется к {{deity_pronoun:тебе|Тебе}}. \\q Я принесу {{deity_pronoun:тебе|Тебе}} и быков, и козлов. Села"
+        },
+        "ja": {
+          "L": "肥えた獣の焼き尽くすささげ物を、雄羊の煙と共に、あなたにささげる。 \\q 牛を、雄やぎと共にささげる。セラ",
+          "B": "肥えた家畜を焼き尽くすささげ物として、雄羊を焼く煙と共に、あなたにささげ、 \\q 雄牛を雄やぎと共に、いけにえとしてささげる。セラ",
+          "R": "最上の肥えた動物を、あなたのために焼いてささげよう。雄羊を焼く煙が、あなたのもとに立ち上る。 \\q 雄牛も雄やぎも、あなたにささげよう。セラ"
         }
       },
       "decisions": [
@@ -2475,6 +2883,26 @@
           "reason": "Its meaning is unknown (see the meaning decision on Selah), so every level keeps the word rather than guess, and keeps it apart from the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660150061",
+            "o190660150081"
+          ],
+          "choice": "qetoret 'elim \"雄羊の煙\" (L), \"雄羊を焼く煙\" (B, R); 'e'eseh \"ささげる\" (L, B), \"ささげよう\" (R)",
+          "alternatives": [],
+          "reason": "qetoret here is the smoke rising from the sacrifice, not incense (m1); \"make\" is to offer as a sacrifice (m2). 'attudim 雄やぎ as the Leviticus notes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2554,6 +2982,11 @@
           "L": "Придите, слушайте, и я расскажу, все боящиеся Бога, \\q что {{deity_pronoun:он|Он}} сделал для души моей.",
           "B": "Придите, послушайте, все чтущие Бога; \\q я расскажу, что {{deity_pronoun:он|Он}} сделал для меня.",
           "R": "Придите и послушайте, все, кто с благоговением почитает Бога. \\q Я расскажу вам, что {{deity_pronoun:он|Он}} сделал для меня."
+        },
+        "ja": {
+          "L": "来て、聞け、神を恐れる者たちよ。わたしは語ろう、 \\q その方が、わたしの魂のためになさったことを。",
+          "B": "神を畏れる人々よ、みな来て、聞きなさい。 \\q その方が、わたしのためになさったことを語ろう。",
+          "R": "神をおそれ敬う人たちよ、みんな、来て聞きなさい。 \\q 神がわたしにしてくださったことを話そう。"
         }
       },
       "decisions": [
@@ -2604,6 +3037,26 @@
             "my soul"
           ],
           "reason": "Balanced and Readable say \"me\" for nefesh.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660160051",
+            "o190660160061"
+          ],
+          "choice": "yir'e 'Elohim \"神を恐れる者たち\" (L), \"神を畏れる人々\" (B), \"神をおそれ敬う人たち\" (R)",
+          "alternatives": [],
+          "reason": "Fear of God as the Psalter conventions; those who worship him (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2683,6 +3136,11 @@
           "L": "К {{deity_pronoun:нему|Нему}} устами моими я воззвал, \\q и превознесение [было] под языком моим.",
           "B": "Своими устами я воззвал к {{deity_pronoun:нему|Нему}}, \\q и хвала, возвышающая {{deity_pronoun:его|Его}}, была готова у меня на языке.",
           "R": "Я звал {{deity_pronoun:его|Его}} на помощь. \\q И даже пока я молился, я был готов хвалить {{deity_pronoun:его|Его}}."
+        },
+        "ja": {
+          "L": "その方に、わたしは口をもって呼びかけ、 \\q あがめる[言葉]が、わたしの舌の下に[あった]。",
+          "B": "わたしは自分の口で、その方に呼びかけた。 \\q その方をあがめる賛美が、わたしの舌の下に備えられていた。",
+          "R": "わたしは、助けてくださいと、神に叫んだ。 \\q 祈っているときでさえ、わたしは神を賛美する用意ができていた。"
         }
       },
       "decisions": [
@@ -2730,6 +3188,29 @@
           "alternatives": [],
           "reason": "Readable says what the call was.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660170041",
+            "o190660170042",
+            "o190660170051",
+            "o190660170061",
+            "o190660170062"
+          ],
+          "choice": "veromam tachat leshoni \"あがめる[言葉]が、わたしの舌の下に\" (L), \"あがめる賛美が…舌の下に備えられていた\" (B), \"賛美する用意ができていた\" (R)",
+          "alternatives": [],
+          "reason": "Under the tongue means ready to be spoken (m1); romam is praise that lifts God high (m2, uncertain).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2808,6 +3289,11 @@
           "L": "Нечестие, если бы я видел [его] в сердце моём, \\q не услышал бы Господь.",
           "B": "Господь не услышал бы меня, \\q если бы я хранил в сердце неправду.",
           "R": "Господь не стал бы меня слушать, \\q если бы я любил свой грех и держался за него."
+        },
+        "ja": {
+          "L": "もし、わたしが心のうちに悪を見ていたなら、 \\q 主はお聞きにならなかっただろう。",
+          "B": "もし、わたしが心に悪を抱いていたなら、 \\q 主は、わたしの祈りをお聞きにならなかっただろう。",
+          "R": "もし、わたしが自分の罪を好んで、手放さずにいたなら、 \\q 主は、わたしの祈りを聞いてくださらなかっただろう。"
         }
       },
       "decisions": [
@@ -2917,6 +3403,25 @@
           "reason": "Hindi \"प्रभु\" stands both for the divine name and for Adonai (meaning m3). The divine name always has a divine_name span (setting: \"याहवे\"); Adonai, as here, is plain \"प्रभु\", so the setting tells the two apart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190660180021"
+          ],
+          "choice": "The condition comes first at every level (\"もし…なら、 / 主は…\"), where the English B and R put the main clause first",
+          "alternatives": [],
+          "reason": "Japanese puts a condition before its result; the condition did not happen (m2). The negative for God takes お聞きにならなかった, not 聞かれなかった, which could read \"could not\" (Psalter rule). 'Adonai is 主 with no span (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2992,6 +3497,11 @@
           "L": "Но поистине Бог услышал; \\q {{deity_pronoun:он|Он}} внял голосу молитвы моей.",
           "B": "Но Бог действительно услышал меня; \\q {{deity_pronoun:он|Он}} внимательно выслушал мою молитву.",
           "R": "Но Бог услышал! \\q Он услышал меня, когда я молился."
+        },
+        "ja": {
+          "L": "しかし、まことに、神は聞かれた。 \\q わたしの祈りの声に、耳を傾けられた。",
+          "B": "しかし、神は確かに聞いてくださった。 \\q わたしの祈りに、じっと耳を傾けてくださった。",
+          "R": "しかし、神は聞いてくださった！ \\q わたしが祈ったとき、聞いてくださった。"
         }
       },
       "decisions": [
@@ -3020,6 +3530,25 @@
           "choice": "paid attention: listened closely",
           "alternatives": [],
           "reason": "The verb (qashav, causative) is to give attention with the ear (5:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660190011"
+          ],
+          "choice": "'akhen \"しかし、まことに\" (L), \"しかし…確かに\" (B), \"しかし\" (R)",
+          "alternatives": [],
+          "reason": "\"But in fact\" (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -3102,6 +3631,11 @@
           "L": "Благословен Бог, \\q который не отверг молитвы моей \\q и неизменной любви своей от меня!",
           "B": "Благословен Бог, \\q который не отверг моей молитвы \\q и не отнял от меня своей неизменной любви!",
           "R": "Хвала Богу! \\q Он не отвернулся от моей молитвы \\q и не лишил меня своей неизменной любви."
+        },
+        "ja": {
+          "L": "神は、ほめたたえられよ。 \\q その方は、わたしの祈りを退けることも、 \\q その誠実をわたしから取り去ることも、なさらなかった！",
+          "B": "神が、ほめたたえられるように。 \\q 神は、わたしの祈りを退けることも、 \\q その変わらぬいつくしみを、わたしから取り去ることもなさらなかった！",
+          "R": "神をほめたたえよう！ \\q 神は、わたしの祈りを退けることはなさらなかった。 \\q 変わらぬいつくしみを、わたしに示し続けてくださっている。"
         }
       },
       "decisions": [
@@ -3226,6 +3760,50 @@
           "choice": "\"своей неизменной любви\" (R)",
           "alternatives": [],
           "reason": "The English Readable turns hesed into a verb (\"has not stopped loving me faithfully\"); Russian keeps God's hesed as \"неизменная любовь\" at every level, as the poetry note sets, so Readable says he has not taken it from me.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660200011",
+            "o190660200021"
+          ],
+          "choice": "barukh 'Elohim \"ほめたたえられよ\" (L), \"ほめたたえられるように\" (B), \"ほめたたえよう！\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter's barukh forms (PSA-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190660200041",
+            "o190660200051",
+            "o190660200071",
+            "o190660200072",
+            "o190660200073",
+            "o190660200061"
+          ],
+          "choice": "lo'-hesir … \"退けることも…取り去ることも、なさらなかった\" (L, B)",
+          "alternatives": [],
+          "reason": "One verb governs both the prayer and the loyal love (m2); Japanese gives each its own verb under one negative 〜ことはなさらない (the Psalter's negative for God).",
           "uncertain": false,
           "footnote": false
         }
