@@ -221,7 +221,7 @@ recorded in decisions at 119:1-11 and kept through the psalm.
 | the Feast of Weeks; of Booths; of Ingathering | सप्ताहों का पर्व; झोपड़ियों का पर्व (as John 7:2); फ़सल बटोरने का पर्व |
 | the Day of Atonement | प्रायश्चित का दिन |
 | serious skin disease (*tsaraʿat*) | गंभीर चर्म रोग, "कोढ़" in a decision |
-| the house of the LORD; the temple (*hekhal*) | `{{divine_name:प्रभु\|याहवे}}` का भवन; मंदिर |
+| the house of the LORD; the temple (*hekhal*) | `{{divine_name:प्रभु\|याहवे}}` का भवन (L, and B or R where the English says "house"), मन्दिर (B, R where the English says "temple"), as Kings and the New Testament; *hekhal* मन्दिर. मन्दिर keeps the nasal consonant, one of the style guide's fixed spellings. |
 | the high places (*bamot*) | ऊँचे स्थान |
 | Baal, the Baals; Asherah, the Asherim | बाल, बाल देवता; अशेरा, अशेरा के खंभे |
 | bless (God); praise (*hallel*); give thanks (*hodu*) | धन्य कहना; स्तुति करना; धन्यवाद करना |
