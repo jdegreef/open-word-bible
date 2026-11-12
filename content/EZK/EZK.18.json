@@ -71,6 +71,11 @@
           "L": "И было слово {{divine_name:ГОСПОДА|Яхве}} ко мне, говоря:",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} обратился ко мне:",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} дал мне такое слово:"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の言葉がわたしに臨んで言った。",
+          "B": "{{divine_name:主|ヤハウェ}}の言葉がわたしに臨んだ。",
+          "R": "{{divine_name:主|ヤハウェ}}は、わたしに次のように語られました。"
         }
       },
       "decisions": [
@@ -282,6 +287,11 @@
           "L": "Что с вами, говорящими эту поговорку о земле Израиля: «Отцы едят кислый виноград, а у детей зубы притупляются»?",
           "B": "Что вы имеете в виду, повторяя эту поговорку о земле Израиля: «{{gender:Родители|Отцы}} едят кислый виноград, а оскомина на зубах у детей»?",
           "R": "Почему вы всё повторяете эту поговорку о земле Израиля: «{{gender:Родители|Отцы}} едят кислый виноград, а кисло во рту у детей»?"
+        },
+        "ja": {
+          "L": "あなたがたがイスラエルの地について、「父たちが酸っぱいぶどうを食べ、子らの歯が浮く」と言って、このことわざを用いているのは、どういうことか？",
+          "B": "あなたがたは、イスラエルの地について、「{{gender:親|父親}}が酸っぱいぶどうを食べると、歯が浮くのは子どもだ」ということわざを繰り返しているが、それはどういうことか？",
+          "R": "あなたたちは、なぜイスラエルの地について、「{{gender:親|父親}}が酸っぱいぶどうを食べたのに、子どもの口が酸っぱくなる」ということわざを、言い続けているのか？"
         }
       },
       "decisions": [
@@ -668,6 +678,50 @@
           "reason": "The same gender setting as the English Balanced and Readable: the fathers stand for every parent.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180020041",
+            "o260180020062",
+            "o260180020141",
+            "o260180020171"
+          ],
+          "choice": "mashal here \"ことわざ\" (every level; a saying, not the story of 17:2); boser \"酸っぱいぶどう\"; qahah \"歯が浮く\" (L, B), R \"口が酸っぱくなる\" as the English R \"get the sour taste\". To be the same wording as JER 31:29.",
+          "alternatives": [
+            "\"歯がうずく\"",
+            "\"歯が鈍くなる\" (too literal for Japanese)"
+          ],
+          "reason": "m1, m3: the teeth set on edge by sour fruit; 歯が浮く is the Japanese idiom for that feeling. m2: Jeremiah quotes the same proverb, so the two books should read alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260180020121",
+            "o260180020162"
+          ],
+          "choice": "'avot \"親\" (B, R) as the English gender span; banim \"子ども\" with no span (already inclusive); L \"父たち…子ら\" as the English L.",
+          "alternatives": [],
+          "reason": "Style §7: the inclusive form is the default, the traditional one the alternative, as DEU 24:16 and EZK 5:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -753,6 +807,11 @@
           "L": "Жив {{deity_pronoun:я|Я}}, — слово Владыки {{divine_name:ГОСПОДА|Яхве}}, — не будет у вас больше [повода] употреблять эту поговорку в Израиле.",
           "B": "Жив {{deity_pronoun:я|Я}}, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}, — эту поговорку больше не будут повторять в Израиле.",
           "R": "Клянусь своей жизнью, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}, — вы больше не будете повторять эту поговорку в Израиле."
+        },
+        "ja": {
+          "L": "わたしは生きている――{{divine_name:主なる神|主ヤハウェ}}の言葉――。あなたがたがイスラエルでこのことわざを用いることは、もう決してない。",
+          "B": "わたしは生きている、と{{divine_name:主なる神|主ヤハウェ}}は告げる。このことわざが、イスラエルで再び口にされることはない。",
+          "R": "わたしは生きている。そのわたしが誓って言う、と{{divine_name:主なる神|主ヤハウェ}}は言う。あなたたちは、もう二度とイスラエルでこのことわざを口にすることはない。"
         }
       },
       "decisions": [
@@ -870,6 +929,23 @@
           "reason": "The prophets note's wording for \"declares the Lord GOD\", with \"Владыка\" for Adonai, as the Russian Ezekiel 11-14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180030061"
+          ],
+          "choice": "'im in a negative oath \"決して…ない\" (L), where the positive oath has \"必ず\".",
+          "alternatives": [],
+          "reason": "Japanese 必ず does not combine with a negative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -962,6 +1038,11 @@
           "L": "Вот, все души — {{deity_pronoun:мои|Мои}}; как душа отца, так и душа сына — {{deity_pronoun:мои|Мои}}. Душа, которая грешит, — она умрёт.",
           "B": "Каждая жизнь принадлежит {{deity_pronoun:мне|Мне}}: и жизнь {{gender:родителя|отца}}, и жизнь {{gender:ребёнка|сына}} — обе принадлежат {{deity_pronoun:мне|Мне}}. Умрёт тот человек, который грешит.",
           "R": "Каждый человек принадлежит {{deity_pronoun:мне|Мне}}, и {{gender:родители|отцы}}, и {{gender:дети|сыновья}}. Умрёт тот, кто грешит."
+        },
+        "ja": {
+          "L": "見なさい、すべての魂はわたしのものである。父の魂も子の魂も、同じようにわたしのものである。罪を犯す魂、それが死ぬ。",
+          "B": "すべての命はわたしのものである。{{gender:親|父親}}の命も{{gender:子|息子}}の命も、どちらもわたしのものである。罪を犯す者、その者が死ぬ。",
+          "R": "すべての人はわたしのものである。{{gender:親|父親}}も{{gender:子ども|息子}}も同じである。罪を犯す人、その人が死ぬのだ。"
         }
       },
       "decisions": [
@@ -1386,6 +1467,50 @@
           "reason": "The English gender setting at the same places: here the father and the son stand for every parent and child.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180040032",
+            "o260180040062",
+            "o260180040083",
+            "o260180040122"
+          ],
+          "choice": "nefesh \"魂\" (L), \"命\" / \"者\" (B), \"人\" (R), as the English soul / life, person; \"罪を犯す魂、それが死ぬ\" (L), \"罪を犯す者、その者が死ぬ\" (B), \"罪を犯す人、その人が死ぬのだ\" (R), word for word again in 18:20.",
+          "alternatives": [
+            "\"命\" at L",
+            "\"者\" for every nefesh at B"
+          ],
+          "reason": "m1: the living person, the whole life (footnoted); L keeps the one Hebrew word, B and R say the person, as PRO and PSA handle nefesh.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260180040072",
+            "o260180040092"
+          ],
+          "choice": "\"親\" / \"子\" (B), \"親\" / \"子ども\" (R) as the English gender spans.",
+          "alternatives": [],
+          "reason": "Style §7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1463,6 +1588,11 @@
           "L": "И человек, если он праведен и творит правосудие и праведность,",
           "B": "Допустим, есть человек праведный, который поступает справедливо и правильно,",
           "R": "Допустим, есть праведный человек. Он поступает честно и правильно."
+        },
+        "ja": {
+          "L": "また、もし人が正しい者であって、公正と正義を行うなら、",
+          "B": "ある人が正しい人で、公正で正しいことを行うとする。",
+          "R": "ある人が正しい人だとしよう。その人は、公平で正しいことをする。"
         }
       },
       "decisions": [
@@ -1713,6 +1843,47 @@
           "reason": "Mishpat and tsedaqah (m2): Literal keeps the two nouns, Balanced and Readable turn them into adverbs after the verb, as the English uses adjectives.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180050041",
+            "o260180050061",
+            "o260180050072"
+          ],
+          "choice": "tsaddiq \"正しい者\" (L), \"正しい人\" (B, R); mishpat utsdaqah \"公正と正義\" (L), \"公正で正しいこと\" (B), \"公平で正しいこと\" (R), the same at each level through 18:5-27.",
+          "alternatives": [],
+          "reason": "Watchman and prophetic conventions (EZK 3:20; ISA 1:17, 1:21); one form per level so the cases read as one law.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o260180050012",
+            "o260180050031"
+          ],
+          "choice": "L keeps the case as one conditional sentence over 18:5-9, each verse a run of \"〜ず、\" clauses; B and R set the case (\"…とする\" / \"…としよう\") and list the deeds in sentences.",
+          "alternatives": [],
+          "reason": "m1: set out like the cases in the Law; Japanese keeps each verse's deeds after its own marker.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1807,6 +1978,11 @@
           "L": "на горах не ел, и глаз своих не поднимал к грязным идолам дома Израиля, и жены своего ближнего не осквернял, и к женщине во [время её] нечистоты не приближался,",
           "B": "который не ест жертвенной пищи в святилищах на горах и не обращает взгляда к идолам дома Израиля, который не оскверняет жену своего ближнего и не сближается с женщиной во время её месячных,",
           "R": "Он не ест жертвенной пищи в святилищах на горах. Он не ищет помощи у идолов народа Израиля. Он не вступает в связь с чужой женой. Он не ложится с женщиной во время её месячных."
+        },
+        "ja": {
+          "L": "山々の上で食べず、イスラエルの家の汚らわしい偶像に目を上げず、隣人の妻を汚さず、月経の汚れの中にある女に近づかず、",
+          "B": "その人は、山の上の礼拝所で食事をせず、イスラエルの家の偶像を仰ぎ見ず、隣人の妻を汚さず、月経中の女に近づかない。",
+          "R": "その人は、山の上の礼拝所で食事をしない。イスラエルの人々の偶像に助けを求めない。隣人の妻と姦淫しない。生理中の女の人と性的な関係を持たない。"
         }
       },
       "decisions": [
@@ -2138,6 +2314,46 @@
           "reason": "Literal keeps the Hebrew's polite \"come near\"; Balanced and Readable give its meaning plainly, as the English does and as the Russian Leviticus 18:19 does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180060022",
+            "o260180060041",
+            "o260180060191"
+          ],
+          "choice": "\"eat on the mountains\" \"山々の上で食べる\" (L), \"山の上の礼拝所で食事をする\" (B, R); niddah \"月経の汚れ\" (L), \"月経中\" (B), \"生理中\" (R) (LEV 15:19, 18:19). The same wording in 18:11 and 18:15.",
+          "alternatives": [],
+          "reason": "m1: sacrificial meals at the hill shrines (R's word for bamot); m3: the Leviticus laws, in their Japanese words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180060091"
+          ],
+          "choice": "gillulim \"汚らわしい偶像\" (L), \"偶像\" (B, R); nasa' 'enav \"目を上げる\" (L), \"仰ぎ見る\" (B), \"助けを求める\" (R).",
+          "alternatives": [],
+          "reason": "Ezekiel convention for gillulim; m2: looked to them in worship and for help.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2225,6 +2441,11 @@
           "L": "и никого не притеснял, залог свой должнику возвращал, грабежа не совершал, хлеб свой голодному давал и нагого покрывал одеждой,",
           "B": "который никого не притесняет, а возвращает должнику его залог, который не грабит, а даёт свой хлеб голодному и одевает нагого,",
           "R": "Он никого не обижает. Если кто-то отдал ему вещь в залог, что вернёт долг, он возвращает её. Он никого не грабит. Он даёт еду голодным и одежду тем, кому нечего надеть."
+        },
+        "ja": {
+          "L": "人を虐げず、負債のある者に質を返し、強奪をせず、飢えた者に自分のパンを与え、裸の者に衣服を着せ、",
+          "B": "また、人を虐げず、借りた者から取った質を返し、強奪をせず、飢えた者に自分の食べ物を与え、裸の者に衣服を着せる。",
+          "R": "だれも食い物にしない。お金を貸すとき、返す約束のしるしとして預かった物は、返してやる。だれからも奪わない。飢えている人に食べ物を与え、着る物のない人に服を与える。"
         }
       },
       "decisions": [
@@ -2332,6 +2553,26 @@
           "reason": "The pledge of the law (m1) is \"залог\", as the Russian Deuteronomy 24:12-13; Readable explains what it is, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180070041",
+            "o260180070031"
+          ],
+          "choice": "chavolah \"質\" (L, B), \"返す約束のしるしとして預かった物\" (R), as EXO 22:25 and DEU 24:12; hona \"虐げる\" (L, B), \"食い物にする\" (R). The same in 18:12 and 18:16.",
+          "alternatives": [],
+          "reason": "m1: the law of pledges, in the Pentateuch's Japanese words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2419,6 +2660,11 @@
           "L": "в рост не давал и надбавки не брал, от неправды отводил свою руку, суд истинный совершал между человеком и человеком,",
           "B": "который не даёт в долг под проценты и не берёт лишнего, удерживает свою руку от неправды и справедливо судит людей между собой,",
           "R": "Когда он даёт деньги взаймы, он не берёт процентов и не наживается на этом. Он не делает ничего плохого. Когда люди спорят, он решает их спор честно."
+        },
+        "ja": {
+          "L": "利子を取って貸さず、利息を取らず、不正から手を引き、人と人との間で真実の公正を行い、",
+          "B": "利子を取って貸さず、上乗せを取らず、不正から手を引き、人と人との間を公正に裁く。",
+          "R": "お金を貸すとき、利子を取らない。それでもうけようとしない。悪いことから遠ざかる。人々の争いを裁くときは公平である。"
         }
       },
       "decisions": [
@@ -2535,6 +2781,26 @@
           "reason": "Neshek and tarbit, the two words for profit on a loan (m1), in the wording of the Russian Leviticus 25:36-37 (\"процент и надбавка\"); \"лихва\" is no longer current.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180080012",
+            "o260180080042"
+          ],
+          "choice": "neshekh \"利子\", tarbit \"利息\" (L), \"上乗せ\" (B), \"もうけ\" (R), as LEV 25:36. The same in 18:13 and 18:17.",
+          "alternatives": [],
+          "reason": "m1: the laws against making money from a needy neighbour, in the Leviticus words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2621,6 +2887,11 @@
           "L": "по {{deity_pronoun:моим|Моим}} установлениям ходил и {{deity_pronoun:мои|Мои}} правила соблюдал, поступая верно, — он праведен; он непременно будет жить, — слово Владыки {{divine_name:ГОСПОДА|Яхве}}.",
           "B": "и который следует {{deity_pronoun:моим|Моим}} установлениям и верно соблюдает {{deity_pronoun:мои|Мои}} правила. Такой человек праведен; он непременно будет жить, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}.",
           "R": "Он живёт по {{deity_pronoun:моим|Моим}} законам и старательно соблюдает {{deity_pronoun:мои|Мои}} правила. Такой человек праведен. Он обязательно будет жить, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}."
+        },
+        "ja": {
+          "L": "わたしの定めに歩み、わたしの掟を守って真実を行うなら、彼は正しい者であり、必ず生きる――{{divine_name:主なる神|主ヤハウェ}}の言葉――。",
+          "B": "わたしの定めに従って歩み、わたしの掟を忠実に守る。このような人こそ正しい人であり、必ず生きる、と{{divine_name:主なる神|主ヤハウェ}}は告げる。",
+          "R": "わたしのきまりに従って生き、わたしのおきてを注意深く守る。このような人は正しい人だ。その人は必ず生きる、と{{divine_name:主なる神|主ヤハウェ}}は言う。"
         }
       },
       "decisions": [
@@ -2932,6 +3203,50 @@
           "reason": "The verdict of the case (m1); the doubled verb is kept as an emphatic adverb, here and through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180090012",
+            "o260180090032",
+            "o260180090021"
+          ],
+          "choice": "chuqqot \"定め\" (L, B), \"きまり\" (R); mishpatim \"掟\" (L, B), \"おきて\" (R); \"walk in\" \"…に歩む\" (L), \"…に従って歩む\" (B), \"…に従って生きる\" (R). Through 18-20.",
+          "alternatives": [
+            "\"掟\" for chuqqot and \"定め\" for mishpatim, as EZK 5:6-7"
+          ],
+          "reason": "The Pentateuch and Psalms terms (LEV 18:5, DEU 4:1, PSA 119 table): chuqqim 定め / mishpatim 掟. EZK 5:6-7 has the two nouns the other way round (mishpatim 定め, chuqqot 掟); a reviewer should bring 5:6-7 into line.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180090091",
+            "o260180090101",
+            "o260180090111"
+          ],
+          "choice": "chayoh yichyeh \"必ず生きる\" (every level); ne'um \"――…の言葉――\" (L), \"、と…は告げる\" (B), \"、と…は言う\" (R).",
+          "alternatives": [],
+          "reason": "Ezekiel conventions; the verdict of each case keeps one form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3012,6 +3327,11 @@
           "L": "Но [если] он родит сына, насильника, проливающего кровь, и тот сделает что-либо одно из этого,",
           "B": "Но допустим, у него родился сын — жестокий человек, который проливает кровь и делает что-нибудь из этого,",
           "R": "Но допустим, у этого человека есть сын, жестокий человек, который убивает людей. Он делает всё это зло,"
+        },
+        "ja": {
+          "L": "しかし彼が、乱暴で血を流す息子をもうけ、その子がこれらのうちの一つでも行い、",
+          "B": "しかし、その人に乱暴で血を流す息子が生まれ、その息子がこれらのことのどれかを行うとする。",
+          "R": "しかし、この人に息子がいて、その息子が乱暴で人を殺すとしよう。その息子は、こうした悪いことをする。"
         }
       },
       "decisions": [
@@ -3141,6 +3461,11 @@
           "L": "хотя сам он ничего этого не делал, — а он и на горах ест, и жену своего ближнего оскверняет,",
           "B": "хотя сам отец ничего такого не делал. Этот сын ест жертвенную пищу в святилищах на горах, оскверняет жену своего ближнего,",
           "R": "хотя его отец ничего такого не делал. Сын ест жертвенную пищу в святилищах на горах. Он вступает в связь с чужой женой."
+        },
+        "ja": {
+          "L": "――彼自身はこれらのことを何一つ行わなかったのに――その子は山々の上で食べ、隣人の妻を汚し、",
+          "B": "父自身はそのようなことを何一つ行わなかったのに、この息子は山の上の礼拝所で食事をし、隣人の妻を汚し、",
+          "R": "父親はそのようなことを何一つしなかった。それなのに、この息子は、山の上の礼拝所で食事をする。隣人の妻と姦淫する。"
         }
       },
       "decisions": [
@@ -3208,6 +3533,23 @@
             "он"
           ],
           "reason": "Balanced and Readable name the father as the one who did none of these things (m1), as the English does, and name \"этот сын\" as the one who does the evil.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o260180110012"
+          ],
+          "choice": "L sets \"he himself did none of these\" off with dashes, keeping the Hebrew's unclear \"he\"; B and R name the father, as the English B and R.",
+          "alternatives": [],
+          "reason": "m1 (uncertain): the father did none of these evil things.",
           "uncertain": false,
           "footnote": false
         }
@@ -3295,6 +3637,11 @@
           "L": "бедного и нищего притесняет, грабежи совершает, залога не возвращает, и к грязным идолам поднимает свои глаза, мерзость делает,",
           "B": "притесняет бедного и нищего, грабит, не возвращает залога, обращает взгляд к идолам, делает мерзкие дела,",
           "R": "Он обижает бедных и нищих. Он грабит людей. Он не возвращает вещь, которую ему дали в залог. Он ищет помощи у идолов и делает отвратительные дела."
+        },
+        "ja": {
+          "L": "貧しい者と乏しい者を虐げ、強奪をし、質を返さず、汚らわしい偶像に目を上げ、忌み嫌うべきことを行い、",
+          "B": "貧しい者や乏しい者を虐げ、強奪をし、質を返さず、偶像を仰ぎ見、忌まわしいことを行い、",
+          "R": "貧しい人や困っている人を食い物にする。人から奪う。返す約束のしるしとして預かった物を返さない。偶像に助けを求め、ひどく汚らわしいことをする。"
         }
       },
       "decisions": [
@@ -3378,6 +3725,25 @@
             "гнусность"
           ],
           "reason": "To'evah is \"мерзость\" at Literal, the word of the Russian Pentateuch and Proverbs and of Ezekiel 5-9 and 43-44, kept apart from \"гнусность\" for shiqquts (5:11, 11:18); Balanced and Readable say what was done.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180120131"
+          ],
+          "choice": "to'evah \"忌み嫌うべきこと\" (L), \"忌まわしいこと\" (B), \"ひどく汚らわしいこと\" (R).",
+          "alternatives": [],
+          "reason": "Ezekiel convention (EZK 5:9).",
           "uncertain": false,
           "footnote": false
         }
@@ -3471,6 +3837,11 @@
           "L": "в рост даёт и надбавку берёт, — будет ли он жить? Не будет жить! Все эти мерзости он сделал; он непременно будет предан смерти; его кровь будет на нём.",
           "B": "и даёт в долг под проценты и берёт лишнее. Будет ли такой человек жить? Нет, не будет! Он сделал все эти мерзкие дела; он непременно будет предан смерти. Его кровь будет на его собственной голове.",
           "R": "Когда он даёт деньги взаймы, он берёт проценты и наживается на этом. Будет ли такой человек жить? Нет, не будет! Он сделал все эти отвратительные дела, поэтому он должен умереть. Он сам будет виноват в своей смерти."
+        },
+        "ja": {
+          "L": "利子を取って貸し、利息を取る[なら]、彼は生きるだろうか？彼は生きない！彼はこれらすべての忌み嫌うべきことを行った。彼は必ず死刑に処される。彼の血は彼の上にある。",
+          "B": "利子を取って貸し、上乗せを取る。そのような者が生きるだろうか？彼は生きない！これらの忌まわしいことをすべて行ったのだから、彼は必ず死刑に処される。その死の責任は彼自身にある。",
+          "R": "お金を貸すときに利子を取り、それでもうける。このような人が生きるだろうか？いや、生きない！彼は、これらのひどく汚らわしいことをすべてしたのだから、死ななければならない。自分が死ぬのは自分のせいである。"
         }
       },
       "decisions": [
@@ -3666,6 +4037,27 @@
           "reason": "The Law's formula for a capital crime (m2), in the wording of the Russian Pentateuch (\"будет предан смерти\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180130131",
+            "o260180130141",
+            "o260180130151"
+          ],
+          "choice": "mot yumat \"必ず死刑に処される\" (L, B), \"死ななければならない\" (R); damav bo yihyeh \"彼の血は彼の上にある\" (L), \"その死の責任は彼自身にある\" (B), \"自分が死ぬのは自分のせいである\" (R), as LEV 20:9.",
+          "alternatives": [],
+          "reason": "m1, m2: the Law's formulas, in the Leviticus Japanese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3753,6 +4145,11 @@
           "L": "Но вот, [если] он родит сына, и тот увидит все грехи своего отца, которые тот делал, и увидит, и не сделает подобного им,",
           "B": "Но допустим, у этого человека, в свою очередь, родился сын, и сын видит все грехи, которые совершал его отец, и, видя их, не поступает так же,",
           "R": "Но допустим, у этого человека есть сын. Сын видит все грехи, которые совершал его отец. Он задумывается над ними и не делает того же самого."
+        },
+        "ja": {
+          "L": "しかし見なさい、彼が息子をもうけ、その子が、自分の父が行ったすべての罪を見て、それをよく見て、そのようには行わず、",
+          "B": "しかし、この人にも息子が生まれ、その息子が、父の犯したすべての罪を見て、それを見ながらも、同じことを行わないとする。",
+          "R": "しかし、この息子にも息子がいるとしよう。その子は、父親が犯したすべての罪を見る。それについてよく考えて、同じことをしない。"
         }
       },
       "decisions": [
@@ -3808,6 +4205,23 @@
             "видит"
           ],
           "reason": "Readable gives the sense of the second \"sees\", to consider and take warning (m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180140112"
+          ],
+          "choice": "vayyir'eh (the second \"see\") \"よく見て\" (L), \"見ながらも\" (B), \"よく考えて\" (R).",
+          "alternatives": [],
+          "reason": "m1 (uncertain): he considers and takes warning.",
           "uncertain": false,
           "footnote": false
         }
@@ -3897,6 +4311,11 @@
           "L": "на горах не ел, и глаз своих не поднимал к грязным идолам дома Израиля, жены своего ближнего не осквернял,",
           "B": "который не ест жертвенной пищи в святилищах на горах и не обращает взгляда к идолам дома Израиля, который не оскверняет жену своего ближнего,",
           "R": "Он не ест жертвенной пищи в святилищах на горах и не ищет помощи у идолов народа Израиля. Он не вступает в связь с чужой женой."
+        },
+        "ja": {
+          "L": "山々の上で食べず、イスラエルの家の汚らわしい偶像に目を上げず、隣人の妻を汚さず、",
+          "B": "その子は、山の上の礼拝所で食事をせず、イスラエルの家の偶像を仰ぎ見ず、隣人の妻を汚さない。",
+          "R": "その子は、山の上の礼拝所で食事をしない。イスラエルの人々の偶像に助けを求めない。隣人の妻と姦淫しない。"
         }
       },
       "decisions": [
@@ -3930,6 +4349,27 @@
           "choice": "the same list as verse 6",
           "alternatives": [],
           "reason": "The grandson keeps the same laws as his grandfather (verse 6). The law about a woman's monthly period is not repeated here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180150022",
+            "o260180150091",
+            "o260180150131"
+          ],
+          "choice": "Word for word as 18:6 at each level, where the Hebrew repeats it.",
+          "alternatives": [],
+          "reason": "m1: the same list as verse 6.",
           "uncertain": false,
           "footnote": false
         }
@@ -4019,6 +4459,11 @@
           "L": "и никого не притеснял, залога не брал, и грабежа не совершал; хлеб свой голодному давал и нагого покрывал одеждой,",
           "B": "который никого не притесняет и не требует залога, который не грабит, а даёт свой хлеб голодному и одевает нагого,",
           "R": "Он никого не обижает и не требует вещей в залог, когда даёт взаймы. Он никого не грабит. Он даёт еду голодным и одежду тем, кому нечего надеть."
+        },
+        "ja": {
+          "L": "人を虐げず、質を取らず、強奪をせず、飢えた者に自分のパンを与え、裸の者に衣服を着せ、",
+          "B": "また、人を虐げず、質を取らず、強奪をせず、飢えた者に自分の食べ物を与え、裸の者に衣服を着せる。",
+          "R": "だれも食い物にしない。お金を貸すとき、返す約束のしるしとして物を預かることもしない。だれからも奪わない。飢えている人に食べ物を与え、着る物のない人に服を与える。"
         }
       },
       "decisions": [
@@ -4035,6 +4480,26 @@
           "choice": "has not taken a pledge: he goes beyond returning it",
           "alternatives": [],
           "reason": "In verse 7 the righteous man returns a pledge; here the grandson does not even take one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180160041",
+            "o260180160061"
+          ],
+          "choice": "As 18:7 word for word, except chavol lo' chaval \"質を取らず\" (L, B), \"…物を預かることもしない\" (R).",
+          "alternatives": [],
+          "reason": "m1: he goes beyond returning it; the rest repeats verse 7.",
           "uncertain": false,
           "footnote": false
         }
@@ -4130,6 +4595,11 @@
           "L": "от бедного отводил свою руку, процента и надбавки не брал; {{deity_pronoun:мои|Мои}} правила исполнял, по {{deity_pronoun:моим|Моим}} установлениям ходил, — он не умрёт за беззаконие своего отца; он непременно будет жить.",
           "B": "который удерживает свою руку и не обижает бедного, не берёт ни процентов, ни лишнего, который исполняет {{deity_pronoun:мои|Мои}} правила и следует {{deity_pronoun:моим|Моим}} установлениям. Он не умрёт за вину своего отца; он непременно будет жить.",
           "R": "Он не обижает бедных. Он не берёт процентов и не наживается на займах. Он соблюдает {{deity_pronoun:мои|Мои}} правила и живёт по {{deity_pronoun:моим|Моим}} законам. Такой человек не умрёт из-за грехов своего отца. Он обязательно будет жить."
+        },
+        "ja": {
+          "L": "貧しい者から手を引き、利子も利息も取らず、わたしの掟を行い、わたしの定めに歩むなら、彼は自分の父の咎のために死ぬことはない。必ず生きる。",
+          "B": "貧しい者を傷つけることから手を引き、利子も上乗せも取らず、わたしの掟を行い、わたしの定めに従って歩む。その人は父の罪のために死ぬことはなく、必ず生きる。",
+          "R": "貧しい人を傷つけない。お金を貸すときに利子を取らず、それでもうけない。わたしのおきてを守り、わたしのきまりに従って生きる。このような人は、父親の罪のために死ぬことはない。必ず生きる。"
         }
       },
       "decisions": [
@@ -4256,6 +4726,25 @@
           "reason": "'Awon in the wording the Russian Ezekiel uses (4:4-6, 14:10): \"беззаконие\" at Literal, \"вина\" at Balanced, \"грехи\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180170152"
+          ],
+          "choice": "'avon \"咎\" (L), \"罪\" (B, R), as the Ezekiel convention (EZK 3:18).",
+          "alternatives": [],
+          "reason": "The English B says guilt; Japanese 罪 covers both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4346,6 +4835,11 @@
           "L": "Его отец, так как он притеснял притеснением, грабил брата грабежом и делал то, что нехорошо, среди своего народа, — вот, он умрёт за своё беззаконие.",
           "B": "А его отец умрёт за свою собственную вину, потому что он вымогал, грабил своего брата и делал то, что нехорошо, среди своего народа.",
           "R": "А его отец умрёт за свои собственные грехи, потому что он обманывал людей, грабил своего брата и делал зло среди своего народа."
+        },
+        "ja": {
+          "L": "彼の父は、虐げを行い、兄弟から強奪をし、自分の民の中で良くないことを行ったので、見なさい、自分の咎のために死ぬ。",
+          "B": "しかし父のほうは、人から搾り取り、兄弟から奪い、自分の民の中で良くないことを行ったので、自分の罪のために死ぬ。",
+          "R": "しかし、父親は自分の罪のために死ぬ。人々をだまし、兄弟から奪い、自分の民の中で悪いことをしたからだ。"
         }
       },
       "decisions": [
@@ -4478,6 +4972,11 @@
           "L": "А вы говорите: «Почему сын не несёт беззакония отца?» Сын творил правосудие и праведность, все {{deity_pronoun:мои|Мои}} установления соблюдал и исполнял их; он непременно будет жить.",
           "B": "А вы спрашиваете: «Почему сын не разделяет вины своего отца?» Сын поступал справедливо и правильно и старательно соблюдал все {{deity_pronoun:мои|Мои}} установления, поэтому он непременно будет жить.",
           "R": "Но вы спрашиваете: «Почему сын не наказан за грехи своего отца?» Сын поступал честно и правильно. Он старательно соблюдал все {{deity_pronoun:мои|Мои}} законы, поэтому он обязательно будет жить."
+        },
+        "ja": {
+          "L": "しかし、あなたがたは言う。「なぜ、子は父の咎を負わないのか？」子は公正と正義を行い、わたしのすべての定めを守って、それを行ったので、必ず生きる。",
+          "B": "それでも、あなたがたは尋ねる。「なぜ、子が父の罪を共に負わないのか？」その子は公正で正しいことを行い、わたしのすべての定めを注意深く守ったので、必ず生きる。",
+          "R": "それでも、あなたたちは尋ねる。「なぜ、息子は父親の罪のために罰を受けないのか？」その息子は公平で正しいことをした。わたしのきまりをすべて注意深く守った。だから、必ず生きる。"
         }
       },
       "decisions": [
@@ -4565,6 +5064,26 @@
             "отвечает за грех отца"
           ],
           "reason": "To \"bear the iniquity\" is to carry the guilt and its punishment (m2): Literal keeps the Hebrew phrase, Balanced and Readable give its sense, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180190041",
+            "o260180190062"
+          ],
+          "choice": "nasa' ba'avon \"咎を負う\" (L), \"罪を共に負う\" (B), \"罪のために罰を受ける\" (R), the same in 18:20.",
+          "alternatives": [],
+          "reason": "m2: carry the guilt and its punishment.",
           "uncertain": false,
           "footnote": false
         }
@@ -4668,6 +5187,11 @@
           "L": "Душа, которая грешит, — она умрёт. Сын не понесёт беззакония отца, и отец не понесёт беззакония сына. Праведность праведного на нём будет, и нечестие нечестивого на нём будет.",
           "B": "Умрёт тот человек, который грешит. {{gender:Ребёнок|Сын}} не понесёт вины {{gender:родителя|отца}}, и {{gender:родитель|отец}} не понесёт вины {{gender:ребёнка|сына}}. Праведность праведного останется при нём, и нечестие нечестивого останется при нём.",
           "R": "Умрёт тот, кто грешит. {{gender:Дети|Сыновья}} не будут наказаны за грехи {{gender:родителей|отцов}}, и {{gender:родители|отцы}} не будут наказаны за грехи {{gender:детей|сыновей}}. Хорошие люди получат награду за своё добро, а злые люди — наказание за своё зло."
+        },
+        "ja": {
+          "L": "罪を犯す魂、それが死ぬ。子は父の咎を負わず、父は子の咎を負わない。正しい者の正しさは彼の上にあり、悪しき者の悪は彼の上にある。",
+          "B": "罪を犯す者、その者が死ぬ。{{gender:子|息子}}は{{gender:親|父親}}の罪を共に負わず、{{gender:親|父親}}は{{gender:子|息子}}の罪を共に負わない。正しい人の正しさはその人自身のものとなり、悪しき者の悪はその者自身のものとなる。",
+          "R": "罪を犯す人、その人が死ぬのだ。{{gender:子ども|息子}}は{{gender:親|父親}}の罪のために罰を受けず、{{gender:親|父親}}は{{gender:子ども|息子}}の罪のために罰を受けない。正しい人は、自分がした正しいことの報いを受け、悪い人は、自分がした悪いことの罰を受ける。"
         }
       },
       "decisions": [
@@ -5037,6 +5561,46 @@
           "reason": "Readable states the sense plainly, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180200012",
+            "o260180200151",
+            "o260180200192"
+          ],
+          "choice": "The first sentence word for word as 18:4 at each level; tsedaqah alone \"正しさ\" (L, B; B also \"正しい行い\"), \"正しいこと\" (R), as EZK 3:20; rish'ah \"悪\" (L, B), \"悪いこと\" (R).",
+          "alternatives": [],
+          "reason": "m2: the soul as in verse 4. The watchman passage (3:20) has 正しさ for a person's own righteousness; mishpat utsdaqah as a pair stays 公正と正義 (L).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260180200051",
+            "o260180200092"
+          ],
+          "choice": "\"子\" / \"親\" (B), \"子ども\" / \"親\" (R) as the English gender spans (DEU 24:16).",
+          "alternatives": [],
+          "reason": "Style §7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5130,6 +5694,11 @@
           "L": "А нечестивый, если он обратится от всех своих грехов, которые сделал, и будет соблюдать все {{deity_pronoun:мои|Мои}} установления, и творить правосудие и праведность, — он непременно будет жить; он не умрёт.",
           "B": "Но если нечестивые отвернутся от всех грехов, которые они совершили, будут соблюдать все {{deity_pronoun:мои|Мои}} установления и поступать справедливо и правильно, они непременно будут жить; они не умрут.",
           "R": "Но допустим, злые люди перестанут делать всё то плохое, что они делали. Они начнут соблюдать все {{deity_pronoun:мои|Мои}} законы и поступать честно и правильно. Тогда они обязательно будут жить. Они не умрут."
+        },
+        "ja": {
+          "L": "しかし悪しき者が、自分の行ったすべての罪から立ち帰り、わたしのすべての定めを守り、公正と正義を行うなら、彼は必ず生きる。死ぬことはない。",
+          "B": "しかし、悪しき者が自分の犯したすべての罪から立ち帰り、わたしのすべての定めを守り、公正で正しいことを行うなら、その者は必ず生き、死ぬことはない。",
+          "R": "しかし、悪い人が、それまでしてきた罪をすべてやめたとしよう。わたしのきまりをすべて守り、公平で正しいことをする。それなら、その人は必ず生きる。死ぬことはない。"
         }
       },
       "decisions": [
@@ -5295,6 +5864,26 @@
           "reason": "As in the English, Balanced and Readable use the plural for \"the wicked\", which means anyone; Literal keeps the Hebrew singular. \"The wicked\" is \"нечестивые\" (L, B) and \"злые люди\" (R), as the Russian Psalms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180210031",
+            "o260180210012"
+          ],
+          "choice": "shuv min (the wicked turning from sin) \"立ち帰る\" (L, B), \"やめる\" (R); the righteous turning from righteousness (18:24, 26) \"離れる\" (L, B), \"やめる\" (R); rasha' \"悪しき者\" (L, B), \"悪い人\" (R).",
+          "alternatives": [],
+          "reason": "立ち帰る is the prophets' word for turning back to God (JER 3), so it is kept for the turn to life; the English B and R plural \"people ... they\" needs no Japanese pronoun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5377,6 +5966,11 @@
           "L": "Все его преступления, которые он совершил, не вспомнятся ему; за свою праведность, которую он творил, он будет жить.",
           "B": "Ни одно из преступлений, которые они совершили, не будет вспомнено против них. Благодаря праведности, которую они проявили, они будут жить.",
           "R": "Ни один из их грехов не будет поставлен им в вину. Они будут жить, потому что поступали правильно."
+        },
+        "ja": {
+          "L": "彼が行ったすべての背きは、彼に対して思い出されることはない。彼が行った正しさによって、彼は生きる。",
+          "B": "その者が犯した背きは、一つも思い起こされることはない。その者が行ってきた正しい行いのゆえに、その者は生きる。",
+          "R": "その人がしてきた罪は、一つも責められることはない。その人は正しいことをしたので、生きる。"
         }
       },
       "decisions": [
@@ -5476,6 +6070,25 @@
           "reason": "Pesha in the wording the Russian Ezekiel uses (14:11): \"преступления\" at Literal and Balanced, \"грехи\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180220021"
+          ],
+          "choice": "pesha'im \"背き\" (L, B), \"罪\" (R), as the English transgressions / rebellious acts / sins.",
+          "alternatives": [],
+          "reason": "Ezekiel convention for pasha'.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5562,6 +6175,11 @@
           "L": "Разве {{deity_pronoun:я|Я}} хоть сколько-нибудь хочу смерти нечестивого, — слово Владыки {{divine_name:ГОСПОДА|Яхве}}, — а не того, чтобы он обратился от своих путей и жил?",
           "B": "Разве смерть нечестивых доставляет {{deity_pronoun:мне|Мне}} радость? — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}. — Разве {{deity_pronoun:я|Я}} не хочу, чтобы они оставили свои пути и жили?",
           "R": "Вы думаете, {{deity_pronoun:я|Я}} рад, когда умирают злые люди? — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}. — Нет! Я хочу, чтобы они оставили свои злые пути и жили."
+        },
+        "ja": {
+          "L": "わたしは本当に悪しき者の死を喜ぶだろうか？――{{divine_name:主なる神|主ヤハウェ}}の言葉――。彼がその道から立ち帰って生きることを[喜ぶ]のではないか？",
+          "B": "悪しき者が死ぬことを、わたしが喜ぶだろうか？と{{divine_name:主なる神|主ヤハウェ}}は告げる。むしろ、その者が自分の道から立ち帰って生きることを、わたしは望んでいるのではないか？",
+          "R": "悪い人が死ぬのを、わたしが喜んでいるとでも思うのか、と{{divine_name:主なる神|主ヤハウェ}}は言う。そんなことはない！わたしは、彼らが悪い道から離れて、生きることを望んでいる。"
         }
       },
       "decisions": [
@@ -5813,6 +6431,11 @@
           "L": "А когда праведный отвратится от своей праведности и будет делать неправду, по всем мерзостям, которые делает нечестивый, будет делать, — будет ли он жить? Все его праведные дела, которые он делал, не вспомнятся; за своё вероломство, которое он совершил, и за свой грех, которым он согрешил, за них он умрёт.",
           "B": "Но если праведные отвернутся от своей праведности и станут делать зло, совершая все те же мерзкие дела, что делают нечестивые, будут ли они жить? Ни одно из праведных дел, которые они делали, не будет вспомнено. За вероломство, в котором они виновны, и за грехи, которые они совершили, они умрут.",
           "R": "Но допустим, праведные люди перестанут поступать правильно и начнут делать зло. Они делают те же отвратительные дела, что и злые люди. Будут ли они жить? Нет! Ни одно из их добрых дел не будет вспомнено. Они умрут, потому что изменили {{deity_pronoun:мне|Мне}} и совершали грехи."
+        },
+        "ja": {
+          "L": "しかし、正しい者が自分の正しさから離れて不正を行い、悪しき者が行うすべての忌み嫌うべきことと同じように行うなら、彼は生きるだろうか？彼が行ったすべての正しい行いは思い出されない。彼が犯した背信の罪と、彼が犯した罪のために、それらのために、彼は死ぬ。",
+          "B": "しかし、正しい人が自分の正しさから離れて不正を行い、悪しき者が行うのと同じ忌まわしいことをすべて行うなら、その人は生きるだろうか？その人が行ってきた正しい行いは、一つも思い起こされない。その人が犯した背信の罪と、その人が犯した罪のゆえに、その人は死ぬ。",
+          "R": "しかし、正しい人が正しいことをやめて、悪いことをし始めたとしよう。悪い人がするのと同じ、ひどく汚らわしいことをする。その人は生きるだろうか？いや、生きない！その人がしてきた正しいことは、一つも覚えられない。その人は、わたしに忠実でなく、罪を犯したので、死ぬ。"
         }
       },
       "decisions": [
@@ -5948,6 +6571,26 @@
           "reason": "Ma'al is a breach of trust against God (m2): \"вероломство\" at Literal and Balanced, as 14:13; Readable says against whom, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180240202",
+            "o260180240221"
+          ],
+          "choice": "ma'al \"背信の罪\" (L, B), \"わたしに忠実でない\" (R), as 17:20; R tsaddiq \"正しい人\" also where the English R says good people.",
+          "alternatives": [],
+          "reason": "m2: a breach of trust against God; one R word for tsaddiq through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6037,6 +6680,11 @@
           "L": "А вы говорите: «Неправ путь Господа.» Слушайте же, дом Израиля: разве {{deity_pronoun:мой|Мой}} путь неправ? Не ваши ли пути неправы?",
           "B": "А вы говорите: «Путь Господа несправедлив.» Послушай, дом Израиля: разве {{deity_pronoun:мой|Мой}} путь несправедлив? Не ваши ли пути несправедливы?",
           "R": "Но вы говорите: «Господь поступает несправедливо.» Послушайте, народ Израиля. Разве {{deity_pronoun:я|Я}} поступаю несправедливо? Нет, это вы поступаете несправедливо!"
+        },
+        "ja": {
+          "L": "しかし、あなたがたは言う。「主の道は正しくない。」さあ、聞け、イスラエルの家よ。わたしの道が正しくないのか？正しくないのは、あなたがたの道ではないか？",
+          "B": "それでも、あなたがたは言う。「主のやり方は公平でない。」イスラエルの家よ、聞きなさい。公平でないのは、わたしのやり方なのか？公平でないのは、あなたがたのやり方ではないか？",
+          "R": "それなのに、あなたたちは言う。「主のなさることは公平ではない。」イスラエルの人々よ、聞きなさい。わたしのすることが不公平なのか？いや、不公平なのは、あなたたちのすることだ！"
         }
       },
       "decisions": [
@@ -6224,6 +6872,27 @@
           "reason": "Readable says what \"way\" means here, the LORD's dealings, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180250031",
+            "o260180250041",
+            "o260180250051"
+          ],
+          "choice": "lo' yittakhen derekh 'adonai \"主の道は正しくない\" (L), \"主のやり方は公平でない\" (B), \"主のなさることは公平ではない\" (R, the people's respect form for God); word for word in 18:29 and 33:17, 20.",
+          "alternatives": [],
+          "reason": "m1: not fair, not measured by a just standard; 'adonai is 主 with no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6310,6 +6979,11 @@
           "L": "Когда праведный отвратится от своей праведности и будет делать неправду, и умрёт за это, — за свою неправду, которую сделал, он умрёт.",
           "B": "Если праведные отвернутся от своей праведности и станут делать зло, они умрут за это; за зло, которое они сделали, они умрут.",
           "R": "Если праведные люди перестанут поступать правильно и начнут делать зло, они умрут. Они умрут из-за того зла, которое сделали."
+        },
+        "ja": {
+          "L": "正しい者が自分の正しさから離れて不正を行い、そのために死ぬなら、彼は自分が行った不正のために死ぬのである。",
+          "B": "正しい人が自分の正しさから離れて不正を行うなら、その人はそのために死ぬ。自分が行った不正のゆえに死ぬのである。",
+          "R": "正しい人が正しいことをやめて、悪いことをし始めるなら、その人は死ぬ。自分がした悪いことのために死ぬのだ。"
         }
       },
       "decisions": [
@@ -6415,6 +7089,11 @@
           "L": "И когда нечестивый отвратится от своего нечестия, которое он делал, и будет творить правосудие и праведность, — он сохранит свою душу живой.",
           "B": "И если нечестивые отвернутся от нечестия, которое совершили, и станут поступать справедливо и правильно, они спасут свою жизнь.",
           "R": "И если злые люди перестанут делать зло и начнут поступать честно и правильно, они спасут свою жизнь."
+        },
+        "ja": {
+          "L": "また、悪しき者が自分の行った悪から立ち帰り、公正と正義を行うなら、彼は自分の魂を生かす。",
+          "B": "また、悪しき者が自分の犯した悪から立ち帰り、公正で正しいことを行うなら、その者は自分の命を救う。",
+          "R": "また、悪い人が悪いことをやめて、公平で正しいことをし始めるなら、その人は自分の命を救う。"
         }
       },
       "decisions": [
@@ -6533,6 +7212,11 @@
           "L": "Так как он рассудил и обратился от всех своих преступлений, которые совершил, — он непременно будет жить; он не умрёт.",
           "B": "Так как они одумались и отвернулись от всех преступлений, которые совершили, они непременно будут жить; они не умрут.",
           "R": "Они задумались о том, что делают, и перестали грешить. Поэтому они обязательно будут жить. Они не умрут."
+        },
+        "ja": {
+          "L": "彼は顧みて、自分が行ったすべての背きから立ち帰ったので、必ず生きる。死ぬことはない。",
+          "B": "その者は考え直して、自分が犯したすべての背きから立ち帰ったので、必ず生き、死ぬことはない。",
+          "R": "その人は自分のしていることをよく考えて、罪を犯すのをやめた。だから、必ず生きる。死ぬことはない。"
         }
       },
       "decisions": [
@@ -6638,6 +7322,11 @@
           "L": "А дом Израиля говорит: «Неправ путь Господа.» Мои ли пути неправы, дом Израиля? Не ваши ли пути неправы?",
           "B": "Но дом Израиля говорит: «Путь Господа несправедлив.» Разве {{deity_pronoun:мои|Мои}} пути несправедливы, дом Израиля? Не ваши ли пути несправедливы?",
           "R": "Но народ Израиля говорит: «Господь поступает несправедливо.» Народ Израиля, разве {{deity_pronoun:я|Я}} поступаю несправедливо? Нет, это вы поступаете несправедливо!"
+        },
+        "ja": {
+          "L": "しかし、イスラエルの家は言う。「主の道は正しくない。」イスラエルの家よ、わたしの道が正しくないのか？正しくないのは、あなたがたの道ではないか？",
+          "B": "それでも、イスラエルの家は言う。「主のやり方は公平でない。」イスラエルの家よ、わたしのやり方が公平でないのか？公平でないのは、あなたがたのやり方ではないか？",
+          "R": "それなのに、イスラエルの人々は言う。「主のなさることは公平ではない。」イスラエルの人々よ、わたしのすることが不公平なのか？いや、不公平なのは、あなたたちのすることだ！"
         }
       },
       "decisions": [
@@ -6713,6 +7402,27 @@
           "choice": "Worded as verse 25, with the Hebrew's plural \"my ways\" here",
           "alternatives": [],
           "reason": "The charge and the answer repeat verse 25; only the number of \"way\" differs in the Hebrew, and Literal and Balanced follow it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180290061",
+            "o260180290082",
+            "o260180290142"
+          ],
+          "choice": "Word for word as 18:25 at each level, where the Hebrew repeats it.",
+          "alternatives": [],
+          "reason": "m1: the same charge and answer as verse 25.",
           "uncertain": false,
           "footnote": false
         }
@@ -6812,6 +7522,11 @@
           "L": "Поэтому каждого по его путям {{deity_pronoun:я|Я}} буду судить вас, дом Израиля, — слово Владыки {{divine_name:ГОСПОДА|Яхве}}. Обратитесь и отвратитесь от всех ваших преступлений, чтобы не было это для вас камнем преткновения беззакония.",
           "B": "Поэтому, дом Израиля, {{deity_pronoun:я|Я}} буду судить каждого из вас по его путям, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}. Покайтесь и отвернитесь от всех своих преступлений, чтобы вина не погубила вас.",
           "R": "Поэтому, народ Израиля, {{deity_pronoun:я|Я}} буду судить каждого из вас по его делам, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}. Вернитесь ко {{deity_pronoun:мне|Мне}}! Перестаньте грешить, чтобы ваши грехи не погубили вас."
+        },
+        "ja": {
+          "L": "それゆえ、イスラエルの家よ、わたしはあなたがたを、各々その道に従って裁く――{{divine_name:主なる神|主ヤハウェ}}の言葉――。立ち帰れ。あなたがたのすべての背きから身を翻せ。咎があなたがたのつまずきとならないために。",
+          "B": "それゆえ、イスラエルの家よ、わたしはあなたがた一人一人を、その歩みに従って裁く、と{{divine_name:主なる神|主ヤハウェ}}は告げる。立ち帰って、すべての背きから離れなさい。そうすれば、罪があなたがたを倒すことはない。",
+          "R": "だから、イスラエルの人々よ、わたしは、あなたたち一人一人を、その行いに従って裁く、と{{divine_name:主なる神|主ヤハウェ}}は言う。わたしのもとに戻って来なさい！すべての罪から離れなさい！そうすれば、罪があなたたちを滅ぼすことはない。"
         }
       },
       "decisions": [
@@ -6992,6 +7707,48 @@
           "reason": "Readable makes plain that turning means coming back to the LORD, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180300111",
+            "o260180300122"
+          ],
+          "choice": "shuvu \"立ち帰れ\" (L), \"立ち帰りなさい\" (B), \"わたしのもとに戻って来なさい\" (R); hashivu \"身を翻せ\" (L), \"離れなさい\" (B, R). Commands to the house of Israel in the oracle forms (L 〜せよ, B, R 〜しなさい).",
+          "alternatives": [
+            "\"悔い改めなさい\" (B)"
+          ],
+          "reason": "Jeremiah's shuv pair (立ち帰る / 戻って来る) for the call to return; \"悔い改める\" (the English B \"Repent\") is kept for the NT word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180300182",
+            "o260180300191"
+          ],
+          "choice": "mikhshol 'avon \"咎がつまずきとなる\" (L), \"罪があなたがたを倒す\" (B), \"罪があなたたちを滅ぼす\" (R).",
+          "alternatives": [],
+          "reason": "m2; Ezekiel's mikhshol つまずき (EZK 3:20) at L.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7086,6 +7843,11 @@
           "L": "Отбросьте от себя все ваши преступления, которыми вы преступали, и сделайте себе новое сердце и новый дух; и зачем вам умирать, дом Израиля?",
           "B": "Отбросьте все преступления, которые вы совершили, и сотворите себе новое сердце и новый дух. Зачем вам умирать, дом Израиля?",
           "R": "Избавьтесь от всех грехов, которые вы совершили. Пусть у вас будет новое сердце и новый дух. Народ Израиля, зачем вам умирать?"
+        },
+        "ja": {
+          "L": "あなたがたが背いて犯したすべての背きを、あなたがたの上から投げ捨てよ。そして、自分たちのために新しい心と新しい霊を造れ。イスラエルの家よ、どうしてあなたがたは死ぬのか？",
+          "B": "あなたがたが犯したすべての背きを投げ捨て、自分のために新しい心と新しい霊を造りなさい。イスラエルの家よ、どうして死のうとするのか？",
+          "R": "あなたたちが犯した罪を、すべて捨ててしまいなさい。新しい心と新しい霊を持ちなさい。イスラエルの人々よ、どうして死ななければならないのか？"
         }
       },
       "decisions": [
@@ -7327,6 +8089,26 @@
           "reason": "\"Дух\" for the inner life, will and attitude (m2), as 11:19.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260180310111",
+            "o260180310132"
+          ],
+          "choice": "lev chadash veruach chadashah \"新しい心と新しい霊\" at every level, to match 11:19 and 36:26.",
+          "alternatives": [],
+          "reason": "m1, m2: ruach is the inner life here; Ezekiel's ruach is 霊 at every level, never 聖霊.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7409,6 +8191,11 @@
           "L": "Ведь {{deity_pronoun:я|Я}} не хочу смерти умирающего, — слово Владыки {{divine_name:ГОСПОДА|Яхве}}. Итак, обратитесь и живите!",
           "B": "Смерть кого бы то ни было не доставляет {{deity_pronoun:мне|Мне}} радости, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}. Поэтому покайтесь и живите!",
           "R": "Я не хочу, чтобы кто-нибудь умирал, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}. Поэтому вернитесь ко {{deity_pronoun:мне|Мне}} и живите!"
+        },
+        "ja": {
+          "L": "わたしは死ぬ者の死を喜ばないからだ――{{divine_name:主なる神|主ヤハウェ}}の言葉――。だから、立ち帰って生きよ！",
+          "B": "わたしは、だれの死をも喜ばない、と{{divine_name:主なる神|主ヤハウェ}}は告げる。だから、立ち帰って生きなさい！",
+          "R": "わたしは、だれにも死んでほしくない、と{{divine_name:主なる神|主ヤハウェ}}は言う。だから、わたしのもとに戻って来て、生きなさい！"
         }
       },
       "decisions": [
