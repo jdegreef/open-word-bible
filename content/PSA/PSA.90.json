@@ -70,6 +70,16 @@
           "L": "የእግዚአብሔር ሰው የሙሴ ጸሎት። \\q ጌታዬ ሆይ፣ አንተ መኖሪያ ሆነህልናል \\q በትውልድና በትውልድ።",
           "B": "የእግዚአብሔር ሰው የሙሴ ጸሎት። \\q ጌታ ሆይ፣ በትውልድ ሁሉ መኖሪያችን ሆነሃል።",
           "R": "የእግዚአብሔር ሰው ሙሴ የጸለየው ጸሎት። \\q ጌታ ሆይ፣ አንተ ሁልጊዜ መኖሪያችን ነበርህ፤ \\q ከትውልድ እስከ ትውልድ።"
+        },
+        "hi": {
+          "L": "परमेश्वर के जन मूसा की प्रार्थना। \\q हे मेरे प्रभु, तू हमारे लिए निवासस्थान रहा है \\q पीढ़ी और पीढ़ी में।",
+          "B": "परमेश्वर के जन मूसा की प्रार्थना। \\q हे प्रभु, हर पीढ़ी में तू ही हमारा घर रहा है।",
+          "R": "परमेश्वर के जन मूसा की प्रार्थना। \\q हे प्रभु, तू सदा से हमारा घर रहा है, \\q एक पीढ़ी से दूसरी पीढ़ी तक।"
+        },
+        "ru": {
+          "L": "Молитва Моисея, человека Божьего. \\q Господь мой, жилищем {{deity_pronoun:ты|Ты}} был для нас \\q из рода в род.",
+          "B": "Молитва Моисея, человека Божьего. \\q Господи, {{deity_pronoun:ты|Ты}} был нашим домом во всех поколениях.",
+          "R": "Молитва Моисея, человека Божьего. \\q Господи, {{deity_pronoun:ты|Ты}} всегда был нашим домом, \\q из поколения в поколение."
         }
       },
       "decisions": [
@@ -264,6 +274,111 @@
           "reason": "\"The man of God\" is \"የእግዚአብሔር ሰው\", as the terms list and Deuteronomy 33:1; the heading follows the pattern of the other prayers (86:1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "\"प्रभु\" for the title Adonai; \"{{divine_name:प्रभु|याहवे}}\" for the name YHWH; no deity_pronoun spans",
+          "alternatives": [
+            "\"यहोवा\""
+          ],
+          "reason": "This verse calls God Adonai, \"Lord\", which Hindi says \"प्रभु\" with no setting. Hindi also says \"प्रभु\" for the name YHWH (verse 13 and through these psalms), but there the text carries the divine_name setting, whose alternative \"याहवे\" gives the name itself; with it on, a reader can tell the name from the title. Devanagari has no capital letters, so the deity_pronoun setting has nothing to change: Moses speaks to God with the devotional \"तू\", as people pray in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900010022",
+            "o190900010031",
+            "o190900010042"
+          ],
+          "choice": "\"परमेश्वर के जन मूसा\"; \"प्रार्थना\"",
+          "alternatives": [],
+          "reason": "Moses keeps his name and title as in Deuteronomy 33:1 in this translation (\"परमेश्वर के जन मूसा\", meaning m3), and a tefillah is \"प्रार्थना\", as the poetry note's table for titles has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900010061"
+          ],
+          "choice": "\"निवासस्थान\" (L); \"घर\" (B, R)",
+          "alternatives": [
+            "\"शरणस्थान\""
+          ],
+          "reason": "The word is a dwelling, a home that is also a shelter (meaning m4). Literal keeps \"निवासस्थान\"; Balanced and Readable say \"घर\", as the English says \"home\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900010011",
+            "o190900010022",
+            "o190900010031"
+          ],
+          "choice": "\"Молитва Моисея, человека Божьего\" at every level",
+          "alternatives": [
+            "Молитва Моисея, Божьего человека"
+          ],
+          "reason": "The title has \"Моисей\", the Pentateuch form, and \"человек Божий\", as the history note settles for \"the man of God\"; \"молитва\" is the poetry note's word for tefillah. Book IV of the Psalms begins here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900010051"
+          ],
+          "choice": "\"Господь мой\" (L); \"Господи\" (B, R)",
+          "alternatives": [
+            "Владыка мой"
+          ],
+          "reason": "'Adonai is \"Господь\", as the poetry note settles; Literal keeps \"my\" as \"Господь мой\", the form Psalms 1-41 and 73-89 use when the psalmist addresses the Lord.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -337,6 +452,16 @@
           "L": "ተራሮች ሳይወለዱ፣ \\q ምድርንና ዓለምን ሳታምጥ፣ \\q ከዘላለም እስከ ዘላለም አንተ እግዚአብሔር [ነህ]።",
           "B": "ተራሮች ከመወለዳቸው በፊት፣ \\q ምድርንና ዓለምን ሁሉ በምጥ ከማስገኘትህ በፊት፣ \\q ከዘላለም እስከ ዘላለም አንተ እግዚአብሔር ነህ።",
           "R": "ተራሮች ከመሠራታቸው በፊት፣ \\q ምድርንና ዓለምን ከመፍጠርህ በፊት፣ \\q አንተ እግዚአብሔር ነበርህ። ሁልጊዜም ነበርህ፤ ሁልጊዜም ትኖራለህ።"
+        },
+        "hi": {
+          "L": "इससे पहले कि पहाड़ उत्पन्न हुए, \\q और तूने पृथ्वी और जगत को जन्म दिया, \\q हाँ, अनादि काल से अनन्त काल तक तू परमेश्वर [है]।",
+          "B": "इससे पहले कि पहाड़ जन्मे, \\q इससे पहले कि तूने पीड़ा सहकर पृथ्वी और सारे जगत को जन्म दिया, \\q अनादि काल से अनन्त काल तक तू ही परमेश्वर है।",
+          "R": "पहाड़ों के बनने से पहले, \\q इससे पहले कि तूने पृथ्वी और संसार को बनाया, \\q तू परमेश्वर था। तू सदा से है, और सदा रहेगा।"
+        },
+        "ru": {
+          "L": "Прежде чем родились горы \\q и {{deity_pronoun:ты|Ты}} в муках произвёл землю и вселенную, \\q от вечности и до вечности {{deity_pronoun:ты|Ты}} — Бог.",
+          "B": "Прежде чем появились на свет горы, \\q прежде чем {{deity_pronoun:ты|Ты}} в муках родил землю и весь мир, \\q от бесконечного прошлого до бесконечного будущего {{deity_pronoun:ты|Ты}} — Бог.",
+          "R": "Прежде чем появились горы, \\q прежде чем {{deity_pronoun:ты|Ты}} создал землю и мир, \\q {{deity_pronoun:ты|Ты}} был Богом. Ты всегда был, и {{deity_pronoun:ты|Ты}} всегда будешь."
         }
       },
       "decisions": [
@@ -431,6 +556,45 @@
           "reason": "The Hebrew has El, not Elohim with a possessor; as elsewhere in these psalms El is \"እግዚአብሔር\", the one God, rather than \"አምላክ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900020042"
+          ],
+          "choice": "\"जन्म दिया\" (L); \"पीड़ा सहकर ... जन्म दिया\" (B)",
+          "alternatives": [],
+          "reason": "The verb pictures a birth with labour pains (meaning m1). Literal and Balanced keep the picture, Balanced with the pain as the English has it; Readable says \"बनाया\", as the English Readable says the earth was brought into being.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900020042"
+          ],
+          "choice": "\"в муках произвёл\" (L); \"в муках родил\" (B)",
+          "alternatives": [
+            "создал",
+            "сотворил"
+          ],
+          "reason": "The verb is the word for giving birth in labour (m1); Literal and Balanced keep the picture, Readable says \"создал\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -497,6 +661,16 @@
           "L": "ሰውን ወደ ደቀቀ [አፈር] ትመልሰዋለህ፤ \\q «የአዳም ልጆች ሆይ፣ ተመለሱ» ትላለህ።",
           "B": "ሟች የሆነውን ሰው ወደ አፈር ትመልሰዋለህ፤ \\q «የአዳም ልጆች ሆይ፣ ተመለሱ» ትላለህ።",
           "R": "ሰዎችን ወደ አፈር ትመልሳቸዋለህ። \\q «እናንተ ሰዎች፣ ተመለሱ» ትላለህ።"
+        },
+        "hi": {
+          "L": "तू मनुष्य को पिसी हुई [धूल] में लौटा देता है, \\q और कहता है, \"हे {{gender:आदम की सन्तान|आदम के पुत्रो}}, लौट जाओ।\"",
+          "B": "तू नश्वर मनुष्यों को धूल में लौटा देता है; \\q तू कहता है, \"हे आदम की सन्तान, लौट जाओ।\"",
+          "R": "तू लोगों को फिर से धूल बना देता है। \\q तू कहता है, \"हे मनुष्यो, लौट जाओ।\""
+        },
+        "ru": {
+          "L": "Ты возвращаешь человека в прах \\q и говоришь: «Вернитесь, {{gender:дети Адама|сыны Адама}}.»",
+          "B": "Ты возвращаешь смертных в прах; \\q {{deity_pronoun:ты|Ты}} говоришь: «Вернитесь, дети Адама.»",
+          "R": "Ты превращаешь людей обратно в прах. \\q Ты говоришь: «Вернитесь, люди.»"
         }
       },
       "decisions": [
@@ -704,6 +878,45 @@
           "reason": "\"ሰው\" and \"ልጆች\" already cover men and women, so the English spans (mortals / man; children / sons of Adam) have no second Amharic wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190900030021",
+            "o190900030071",
+            "o190900030081"
+          ],
+          "choice": "\"मनुष्य\" with no span; \"{{gender:आदम की सन्तान|आदम के पुत्रो}}\"",
+          "alternatives": [],
+          "reason": "Hindi \"मनुष्य\" already means any human being, so the first word needs no span where the English has \"mortals|man\". \"Children of Adam\" means human beings (meaning m1); the gender setting gives \"आदम की सन्तान\" by default and the traditional \"आदम के पुत्रो\" as the alternative, as the English Literal does. Balanced and Readable have no span, as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190900030021",
+            "o190900030081"
+          ],
+          "choice": "\"человека\" with no setting; \"{{gender:дети Адама|сыны Адама}}\"",
+          "alternatives": [
+            "{{gender:смертного|человека}}"
+          ],
+          "reason": "Russian \"человек\" is not marked for sex and needs no setting, as the Pentateuch note settles; for \"sons of Adam\" Literal gives \"дети Адама\" by default with the traditional \"сыны Адама\" as the alternative, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -776,6 +989,16 @@
           "L": "ሺህ ዓመት በዓይንህ \\q እንዳለፈ እንደ ትናንት ቀን፣ \\q እንደ ሌሊትም የዘብ ተራ [ነው]ና።",
           "B": "በዓይንህ ሺህ ዓመት አልፎ እንደ ሄደ እንደ ትናንት ነውና፤ \\q ወይም እንደ አንድ የሌሊት የዘብ ተራ።",
           "R": "ለአንተ ሺህ ዓመት ቀድሞ እንዳለፈ እንደ አንድ ቀን ነው፤ \\q ወይም እንደ ጥቂት የሌሊት ሰዓታት።"
+        },
+        "hi": {
+          "L": "क्योंकि तेरी दृष्टि में हज़ार वर्ष \\q बीते हुए कल के दिन के समान [हैं] जब वह बीत जाता है, \\q और रात के एक पहर [के समान]।",
+          "B": "क्योंकि तेरी दृष्टि में हज़ार वर्ष कल के उस दिन के समान हैं जो बीत चुका, \\q या रात के एक पहर के समान।",
+          "R": "तेरे लिए हज़ार वर्ष ऐसे हैं जैसे एक दिन जो बीत चुका हो, \\q या रात के कुछ घंटे।"
+        },
+        "ru": {
+          "L": "Ведь тысяча лет в {{deity_pronoun:твоих|Твоих}} глазах \\q как вчерашний день, когда он миновал, \\q и [как] ночная стража.",
+          "B": "Ведь в {{deity_pronoun:твоих|Твоих}} глазах тысяча лет — как вчерашний день, который уже прошёл, \\q или как одна ночная стража.",
+          "R": "Для {{deity_pronoun:тебя|Тебя}} тысяча лет — как один день, который уже прошёл, \\q или как несколько часов ночи."
         }
       },
       "decisions": [
@@ -886,6 +1109,45 @@
           "reason": "2 Peter 3:8 draws on this verse; the shared words keep its Amharic, while the rest follows the Hebrew (\"yesterday when it passes\", \"a watch in the night\"), which Peter does not quote.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900040092"
+          ],
+          "choice": "\"पहर\" (L, B); \"रात के कुछ घंटे\" (R)",
+          "alternatives": [],
+          "reason": "A watch was one part of the night (meaning m1). Hindi has its own word for a watch of the night or day, \"पहर\", which Literal and Balanced use; Readable says \"a few hours\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900040092"
+          ],
+          "choice": "\"ночная стража\" (L, B)",
+          "alternatives": [
+            "смена караула"
+          ],
+          "reason": "A watch was one of the parts into which the night was divided (m1); Literal and Balanced keep the word, Readable says \"несколько часов ночи\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -952,6 +1214,16 @@
           "L": "[እንደ ጎርፍ] ጠራርገህ ትወስዳቸዋለህ፤ እንደ እንቅልፍ ናቸው፤ \\q በማለዳ እንደገና እንደሚበቅል ሣር [ናቸው]።",
           "B": "እንደ ጎርፍ ጠራርገህ ትወስዳቸዋለህ፤ እንደ አላፊ እንቅልፍ ናቸው። \\q ማለዳ ሲሆን እንደገና እንደሚበቅል ሣር ናቸው።",
           "R": "ጎርፍ እንደሚያደርገው ሰዎችን ጠራርገህ ትወስዳለህ። ሕይወታቸው እንደ አንድ ሌሊት እንቅልፍ አጭር ነው። \\q በማለዳ እንደሚለመልም ሣር ናቸው።"
+        },
+        "hi": {
+          "L": "तू उन्हें [बाढ़ के समान] बहा ले जाता है; वे [मानो] नींद [हैं]; \\q भोर को वे घास के समान [हैं जो] फिर से उग आती है।",
+          "B": "तू उन्हें बाढ़ के समान बहा ले जाता है। वे पल भर की नींद हैं। \\q भोर होते ही वे उस घास के समान हैं जो फिर से उग आती है।",
+          "R": "तू लोगों को ऐसे बहा ले जाता है जैसे बाढ़ सब कुछ बहा ले जाती है। उनका जीवन रात की नींद जितना छोटा है। \\q वे उस घास के समान हैं जो सुबह हरी-भरी उग आती है।"
+        },
+        "ru": {
+          "L": "Ты смываешь их [как потоком]; они — [как] сон; \\q утром [они] как трава, [что] вновь вырастает.",
+          "B": "Ты смываешь их, как наводнение. Они — краткий сон. \\q Когда наступает утро, они как трава, что снова пробивается.",
+          "R": "Ты уносишь людей, как наводнение. Их жизнь коротка, как ночной сон. \\q Они как трава, которая утром вырастает свежей."
         }
       },
       "decisions": [
@@ -1088,6 +1360,16 @@
           "L": "በማለዳ ያብባል፤ እንደገናም ይበቅላል፤ \\q ወደ ማታ ይጠወልጋል፤ ይደርቃልም።",
           "B": "በማለዳ ያብባል፤ ይለመልማልም፤ \\q ሲመሽ ግን ይጠወልጋል፤ ይደርቃልም።",
           "R": "በማለዳ ለምለምና እያደገ ነው። \\q ሲመሽ ግን ጠውልጎ ደርቋል።"
+        },
+        "hi": {
+          "L": "भोर को वह लहलहाती और फिर से उगती है; \\q साँझ तक वह मुरझाकर सूख जाती है।",
+          "B": "भोर को वह खिलती और हरी-भरी बढ़ती है; \\q साँझ तक वह कुम्हलाकर सूख जाती है।",
+          "R": "सुबह वह हरी-भरी और बढ़ती हुई होती है। \\q शाम तक वह मुरझाकर सूख चुकी होती है।"
+        },
+        "ru": {
+          "L": "Утром она цветёт и вновь вырастает; \\q к вечеру вянет и засыхает.",
+          "B": "Утром она расцветает и зеленеет; \\q к вечеру никнет и высыхает.",
+          "R": "Утром она зелёная и растёт. \\q А к вечеру она уже увяла и засохла."
         }
       },
       "decisions": [
@@ -1173,6 +1455,16 @@
           "L": "በቁጣህ እናልቃለንና፤ \\q በመዓትህም እንደነግጣለን።",
           "B": "በቁጣህ እንመነምናለንና፤ \\q በመዓትህም በድንጋጤ እንዋጣለን።",
           "R": "ቁጣህ እያጠፋን ነው። \\q መዓትህ በፍርሃት ይሞላናል።"
+        },
+        "hi": {
+          "L": "क्योंकि हम तेरे क्रोध से मिट जाते हैं, \\q और तेरे प्रकोप से हम घबरा जाते हैं।",
+          "B": "क्योंकि तेरे क्रोध से हम घुलते जाते हैं, \\q और तेरे प्रकोप से हम भय से काँप उठते हैं।",
+          "R": "तेरा क्रोध हमें नष्ट कर रहा है। \\q तेरा प्रकोप हमें डर से भर देता है।"
+        },
+        "ru": {
+          "L": "Ведь мы приходим к концу в {{deity_pronoun:твоём|Твоём}} гневе, \\q и {{deity_pronoun:твоей|Твоей}} яростью мы ввергнуты в ужас.",
+          "B": "Ведь {{deity_pronoun:твой|Твой}} гнев истощает нас, \\q и {{deity_pronoun:твоя|Твоя}} ярость наводит на нас ужас.",
+          "R": "Твой гнев губит нас. \\q Твоя ярость наполняет нас страхом."
         }
       },
       "decisions": [
@@ -1204,6 +1496,26 @@
             "dismayed"
           ],
           "reason": "The verb (bahal) means to be shaken with alarm (6:3-4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900070032",
+            "o190900070043"
+          ],
+          "choice": "\"क्रोध\" (anger); \"प्रकोप\" (fury)",
+          "alternatives": [],
+          "reason": "The psalm has two words for God's anger in verses 7, 9 and 11. Hindi keeps them apart with \"क्रोध\" for anger and \"प्रकोप\" for the burning fury, at every level where the English keeps two words.",
           "uncertain": false,
           "footnote": false
         }
@@ -1275,6 +1587,16 @@
           "L": "በደላችንን በፊትህ አኖርህ፤ \\q የተሰወረውንም [ኃጢአታችንን] በፊትህ ብርሃን።",
           "B": "በደላችንን በፊትህ ዘረጋህ፤ \\q የሰወርነውም በፊትህ ብርሃን ተገለጠ።",
           "R": "ኃጢአታችንን ሁሉ ታያለህ። \\q የደበቅነው ኃጢአት እንኳ በብርሃን ውስጥ እንዳለ ነገር ለአንተ ግልጥ ነው።"
+        },
+        "hi": {
+          "L": "तूने हमारे अधर्म के कामों को अपने सामने रखा है, \\q हमारे छिपे हुए [पापों] को अपने मुख के प्रकाश में।",
+          "B": "तूने हमारे दोष अपने सामने खोलकर रख दिए हैं; \\q जो हमने छिपाया, वह तेरे मुख के प्रकाश में चमक उठा है।",
+          "R": "तू हमारे सब पाप देखता है। \\q जो पाप हमने छिपाए हैं, वे भी तुझे ऐसे साफ़ दिखते हैं जैसे तेज़ रोशनी में रखी चीज़ें।"
+        },
+        "ru": {
+          "L": "Ты поставил наши беззакония перед собой, \\q наше сокрытое — в свете {{deity_pronoun:твоего|Твоего}} лица.",
+          "B": "Ты разложил наши вины перед собой; \\q то, что мы скрывали, озарено светом {{deity_pronoun:твоего|Твоего}} лица.",
+          "R": "Ты видишь все наши грехи. \\q Даже грехи, которые мы скрыли, видны {{deity_pronoun:тебе|Тебе}}, как вещи при ярком свете."
         }
       },
       "decisions": [
@@ -1320,6 +1642,46 @@
           "choice": "the light of your face: God's sight",
           "alternatives": [],
           "reason": "Elsewhere the light of God's face is his favor (4:7; 89:16); here nothing can hide from it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900080031"
+          ],
+          "choice": "\"беззакония\" (L); \"вины\" (B)",
+          "alternatives": [
+            "грехи"
+          ],
+          "reason": "As the Pentateuch note settles for 'avon; Readable says \"грехи\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190900080042"
+          ],
+          "choice": "\"перед собой\" with no deity_pronoun span",
+          "alternatives": [
+            "перед {{deity_pronoun:тобой|Тобой}}"
+          ],
+          "reason": "Russian says this with the reflexive \"собой\", which takes no span (style guide section 7), where the English has a span on \"you\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1392,6 +1754,16 @@
           "L": "ዘመናችን ሁሉ በመዓትህ ያልፋልና፤ \\q ዓመታችንን እንደ ሲቃ እንፈጽማለን።",
           "B": "ዘመናችን ሁሉ በመዓትህ ሥር ያልፋል፤ \\q ዓመታችንም እንደ ሲቃ ያበቃል።",
           "R": "ስለ ተቆጣህ ዘመናችን ያልፋል። \\q ዓመታችን እንደ ትንፋሽ ቶሎ ያበቃሉ።"
+        },
+        "hi": {
+          "L": "क्योंकि हमारे सब दिन तेरे प्रकोप में ढलते जाते हैं; \\q हम अपने वर्ष एक आह के समान पूरे करते हैं।",
+          "B": "हमारे सब दिन तेरे प्रकोप के नीचे बीतते जाते हैं; \\q हमारे वर्ष एक आह के समान समाप्त हो जाते हैं।",
+          "R": "क्योंकि तू क्रोधित है, हमारे दिन बीतते जाते हैं। \\q हमारे वर्ष एक साँस की तरह जल्दी ख़त्म हो जाते हैं।"
+        },
+        "ru": {
+          "L": "Ведь все наши дни уходят в {{deity_pronoun:твоей|Твоей}} ярости; \\q мы заканчиваем наши годы, как вздох.",
+          "B": "Все наши дни утекают под {{deity_pronoun:твоим|Твоим}} гневом; \\q наши годы кончаются, как вздох.",
+          "R": "Из-за того что {{deity_pronoun:ты|Ты}} гневаешься, наши дни ускользают. \\q Наши годы кончаются быстро, как дыхание."
         }
       },
       "decisions": [
@@ -1423,6 +1795,23 @@
           "choice": "turn away: pass, decline",
           "alternatives": [],
           "reason": "The days \"turn\" like the day turning toward evening (Jeremiah 6:4): they decline and are gone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900090041"
+          ],
+          "choice": "\"ढलते जाते हैं\"",
+          "alternatives": [],
+          "reason": "The days \"turn\" as a day turns toward evening (meaning m2); Hindi \"ढलना\" is said of the day declining, so Literal keeps the picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -1507,6 +1896,16 @@
           "L": "የዕድሜያችን ዘመን በእርሱ ሰባ ዓመት [ነው]፤ ብርታትም [ቢኖር] ሰማንያ ዓመት፤ \\q ትምክህቱም ድካምና መከራ [ነው]፤ \\q ፈጥኖ ያልፋልና፤ እኛም እንበርራለን።",
           "B": "ዕድሜያችን ሰባ ዓመት ነው፤ ለብርቱዎችም ሰማንያ፤ \\q መልካሙ ዘመኑ እንኳ ድካምና ሐዘን ነው፤ \\q ፈጥኖ ያልፋልና፤ እኛም በርረን እንሄዳለን።",
           "R": "የምንኖረው ሰባ ዓመት ነው፤ ብርታት ካለን ደግሞ ምናልባት ሰማንያ። \\q ግን መልካሙ ዘመናችን እንኳ በከባድ ሥራና በችግር የተሞላ ነው። \\q ቶሎ ያልፋል፤ ከዚያም እኛ እንሄዳለን።"
+        },
+        "hi": {
+          "L": "हमारे वर्षों के दिन — उनमें सत्तर वर्ष [हैं], या यदि बल [हो] तो अस्सी वर्ष; \\q और उनका गर्व परिश्रम और कष्ट [है], \\q क्योंकि वह जल्दी बीत जाता है, और हम उड़ जाते हैं।",
+          "B": "हमारी आयु सत्तर वर्ष की होती है, या बलवान की अस्सी वर्ष की; \\q फिर भी उसका सबसे अच्छा भाग भी परिश्रम और दुःख है, \\q क्योंकि वह शीघ्र बीत जाती है, और हम उड़ जाते हैं।",
+          "R": "हम सत्तर वर्ष जीते हैं, या शायद अस्सी, यदि हममें बल हो। \\q पर हमारे सबसे अच्छे वर्ष भी कड़ी मेहनत और परेशानी से भरे होते हैं। \\q वे जल्दी बीत जाते हैं, और फिर हम चले जाते हैं।"
+        },
+        "ru": {
+          "L": "Дни наших лет — в них семьдесят лет, а если при силе — восемьдесят лет; \\q и гордость их — труд и беда, \\q потому что [она] быстро проходит, и мы улетаем.",
+          "B": "Наша жизнь длится семьдесят лет, а у сильных — восемьдесят; \\q но даже лучшее в ней — труд и скорбь, \\q ведь она проносится мимо, и мы улетаем.",
+          "R": "Мы живём семьдесят лет, а может быть, восемьдесят, если хватит сил. \\q Но даже наши лучшие годы полны тяжёлого труда и бед. \\q Они быстро проходят, и нас уже нет."
         }
       },
       "decisions": [
@@ -1553,6 +1952,44 @@
           "choice": "we fly away: we die",
           "alternatives": [],
           "reason": "Life passes like a bird taking flight; the psalm does not say where.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900100162"
+          ],
+          "choice": "\"हम उड़ जाते हैं\" (L, B); \"हम चले जाते हैं\" (R)",
+          "alternatives": [],
+          "reason": "Flying away is a picture of dying (meaning m3). Literal and Balanced keep the picture, as the English does; Readable says \"we are gone\" with the Hindi \"चले जाना\", which is also said of someone who has died.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900100102"
+          ],
+          "choice": "\"гордость их\"",
+          "alternatives": [
+            "лучшее в них"
+          ],
+          "reason": "Literal keeps the word \"pride\" (m1: the best of them); Balanced and Readable say what it means.",
           "uncertain": false,
           "footnote": false
         }
@@ -1623,6 +2060,16 @@
           "L": "የቁጣህን ኃይል የሚያውቅ ማን ነው? \\q መዓትህንስ ለአንተ እንደሚገባው ፍርሃት [የሚያውቅ ማን ነው]?",
           "B": "የቁጣህን ብርታት ማን ያውቃል? \\q መዓትህ ለአንተ የሚገባውን ፍርሃት ያህል ነው።",
           "R": "ቁጣህ ምን ያህል ብርቱ እንደ ሆነ በእውነት የሚያውቅ ማንም የለም። \\q ቁጣህ ለአንተ የሚገባውን ፍርሃትና አክብሮት ያህል ታላቅ ነው።"
+        },
+        "hi": {
+          "L": "तेरे क्रोध की शक्ति को कौन जानता है, \\q और [कौन जानता है] तेरे प्रकोप को, [जो] तेरे [योग्य] भय के समान [है]?",
+          "B": "तेरे क्रोध का बल कौन जानता है? \\q तेरा प्रकोप उतना ही बड़ा है जितना वह भय जिसके तू योग्य है।",
+          "R": "कोई सचमुच नहीं जानता कि तेरा क्रोध कितना प्रबल है। \\q तेरा क्रोध उतना ही बड़ा है जितना वह भय और आदर जिसके तू योग्य है।"
+        },
+        "ru": {
+          "L": "Кто знает силу {{deity_pronoun:твоего|Твоего}} гнева \\q и [кто знает] {{deity_pronoun:твою|Твою}} ярость, [которая] как страх, [подобающий] {{deity_pronoun:тебе|Тебе}}?",
+          "B": "Кто знает мощь {{deity_pronoun:твоего|Твоего}} гнева? \\q Твоя ярость равна благоговению, которого {{deity_pronoun:ты|Ты}} достоин.",
+          "R": "Никто по-настоящему не знает, как силён {{deity_pronoun:твой|Твой}} гнев. \\q Твой гнев так же велик, как страх и почтение, которых {{deity_pronoun:ты|Ты}} достоин."
         }
       },
       "decisions": [
@@ -1724,6 +2171,16 @@
           "L": "እንግዲህ ዘመናችንን መቁጠር አስተምረን፤ \\q የጥበብን ልብ እናገኝ ዘንድ።",
           "B": "ስለዚህ ዘመናችንን በአግባቡ መቁጠር አስተምረን፤ \\q ልባችን ጥበበኛ ይሆን ዘንድ።",
           "R": "ሕይወታችን ምን ያህል አጭር እንደ ሆነ እንድናስተውል አስተምረን፤ \\q በጥበብ እንድንኖር።"
+        },
+        "hi": {
+          "L": "इसलिए [हमें] अपने दिन गिनना सिखा, \\q कि हम बुद्धि का मन ले आएँ।",
+          "B": "इसलिए हमें अपने दिन ठीक से गिनना सिखा, \\q ताकि हमारे मन बुद्धिमान होते जाएँ।",
+          "R": "हमें यह समझना सिखा कि हमारा जीवन कितना छोटा है, \\q ताकि हम बुद्धिमानी से जिएँ।"
+        },
+        "ru": {
+          "L": "Так научи [нас] вести счёт нашим дням, \\q чтобы мы обрели сердце мудрости.",
+          "B": "Научи же нас верно считать наши дни, \\q чтобы наши сердца стали мудрыми.",
+          "R": "Научи нас понимать, как коротка наша жизнь, \\q чтобы мы жили мудро."
         }
       },
       "decisions": [
@@ -1801,6 +2258,26 @@
           "reason": "The verb means to bring in, perhaps as a harvest is brought in (m2); \"recolher\" is the Portuguese word for gathering in a crop and keeps that picture, where \"trazer\" alone would be unclear.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900120012"
+          ],
+          "choice": "\"вести счёт нашим дням\" (L); \"верно считать наши дни\" (B)",
+          "alternatives": [
+            "счислять дни наши"
+          ],
+          "reason": "Drafted from the Hebrew in present-day words; the familiar Slavonic-flavoured wording is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1868,6 +2345,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተመለስ! እስከ መቼ? \\q ስለ ባሪያዎችህም ተጸጸት።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ እኛ ተመለስ! እስከ መቼ እንጠብቃለን? \\q ለአገልጋዮችህ ራራላቸው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ እኛ ተመለስ! እስከ መቼ ርቀህ ትኖራለህ? \\q ለአገልጋዮችህ ደግ ሁን።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, लौट आ! कब तक? \\q और अपने दासों पर तरस खा।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, हमारी ओर फिर लौट आ! हमें कब तक ठहरना होगा? \\q अपने दासों पर दया कर।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, हमारे पास लौट आ! तू कब तक दूर रहेगा? \\q अपने दासों पर कृपा कर।"
+        },
+        "ru": {
+          "L": "Вернись, {{divine_name:ГОСПОДИ|Яхве}}! Доколе? \\q И сжалься над {{deity_pronoun:твоими|Твоими}} рабами.",
+          "B": "Обратись к нам, {{divine_name:ГОСПОДИ|Яхве}}! Сколько нам ещё ждать? \\q Пожалей {{deity_pronoun:твоих|Твоих}} рабов.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, вернись к нам! Долго ли {{deity_pronoun:ты|Ты}} будешь далеко? \\q Будь добр к {{deity_pronoun:твоим|Твоим}} рабам."
         }
       },
       "decisions": [
@@ -1936,6 +2423,46 @@
           "choice": "\"ተመለስ … ተጸጸት\" (return … relent) at Literal, the words of Moses' prayer in Exodus 32:12 on main",
           "alternatives": [],
           "reason": "The meaning decision reads the line as Moses' own plea of Exodus 32:12; Literal keeps that verse's verbs, Balanced and Readable say \"have pity\", as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900130071"
+          ],
+          "choice": "\"अपने दासों\" at every level",
+          "alternatives": [],
+          "reason": "The psalmist's people call themselves God's servants (ʿeved); the poetry note keeps \"दास\" at every level, as Moses is God's \"दास\" in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900130071"
+          ],
+          "choice": "\"рабы\" at every level",
+          "alternatives": [
+            "слуги"
+          ],
+          "reason": "'Eved is \"раб\" at every level, as the poetry and Pentateuch notes settle; the English \"servants\" is a choice for English.",
           "uncertain": false,
           "footnote": false
         }
@@ -2009,6 +2536,16 @@
           "L": "በማለዳ በጽኑ ፍቅርህ አጥግበን፤ \\q በዘመናችን ሁሉ እልል እንድንልና ደስ እንዲለን።",
           "B": "ጎሕ ሲቀድ በጽኑ ፍቅርህ ሙላን፤ \\q በሕይወት እስካለንም ድረስ እልል እንላለን፤ ደስም ይለናል።",
           "R": "በየማለዳው ሕይወታችንን በጽኑ ፍቅርህ ሙላው። \\q ያን ጊዜ በሕይወታችን ዘመን ሁሉ በደስታ እንዘምራለን፤ ደስተኞችም እንሆናለን።"
+        },
+        "hi": {
+          "L": "भोर को [अपने] अटल प्रेम से हमें तृप्त कर, \\q कि हम जयजयकार करें और अपने सब दिनों में आनंदित रहें।",
+          "B": "पौ फटते ही हमें अपने अटल प्रेम से भर दे, \\q और हम जीवन भर जयजयकार करेंगे और आनंद मनाएँगे।",
+          "R": "हर सुबह हमारे जीवन को अपने अटल प्रेम से भर दे। \\q तब हम जीवन भर आनंद से गाएँगे और ख़ुश रहेंगे।"
+        },
+        "ru": {
+          "L": "Насыть нас утром {{deity_pronoun:твоей|Твоей}} неизменной любовью, \\q чтобы мы ликовали и радовались во все наши дни.",
+          "B": "Наполни нас на рассвете {{deity_pronoun:твоей|Твоей}} неизменной любовью, \\q и мы будем ликовать и радоваться, пока живём.",
+          "R": "Каждое утро наполняй нашу жизнь {{deity_pronoun:твоей|Твоей}} неизменной любовью. \\q Тогда мы будем петь от радости и будем счастливы всю жизнь."
         }
       },
       "decisions": [
@@ -2060,6 +2597,47 @@
             "loyal love"
           ],
           "reason": "As in the earlier psalms, Readable says \"faithful love\" for chesed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900140031"
+          ],
+          "choice": "\"अटल प्रेम\" at every level",
+          "alternatives": [],
+          "reason": "God's hesed (meaning m1) is \"अटल प्रेम\" at every level in the poetry note; the English Readable says \"faithful love\", but Hindi keeps one term so the word can be followed through the psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900140031"
+          ],
+          "choice": "\"неизменная любовь\" at every level",
+          "alternatives": [
+            "верная любовь",
+            "милость"
+          ],
+          "reason": "The poetry note settles God's hesed as \"неизменная любовь\" at every level; where the English Readable says \"faithful love\", Russian keeps the one term (through Psalms 90-101).",
           "uncertain": false,
           "footnote": false
         }
@@ -2128,6 +2706,16 @@
           "L": "ባስጨነቅኸን ቀናት ልክ ደስ አሰኘን፤ \\q ክፉ ባየንባቸው ዓመታት [ልክ]።",
           "B": "ባዋረድኸን ቀናት ልክ የደስታ ቀናትን ስጠን፤ \\q ባሳለፍናቸውም የመከራ ዓመታት ልክ የሐሤት ዓመታትን።",
           "R": "ባሠቃየኸን ዘመን ልክ ደስ አሰኘን። \\q ላሳለፍናቸው ክፉ ዓመታት ምትክ መልካም ዓመታትን ስጠን።"
+        },
+        "hi": {
+          "L": "जितने दिन तूने हमें दुःख दिया, उनके अनुसार हमें आनंदित कर, \\q [और] जितने वर्ष हमने विपत्ति देखी।",
+          "B": "जितने दिन तूने हमें दबाया, उतने ही दिन हमें आनंद दे, \\q और जितने वर्ष हमने कठिनाई झेली, उतने ही वर्ष हर्ष दे।",
+          "R": "जितने समय तूने हमें दुःख सहने दिया, उतने ही समय तक हमें ख़ुशी दे। \\q जो बुरे वर्ष हमने काटे, उनके बदले हमें अच्छे वर्ष दे।"
+        },
+        "ru": {
+          "L": "Обрадуй нас по [числу] дней, [когда] {{deity_pronoun:ты|Ты}} угнетал нас, \\q лет, [когда] мы видели зло.",
+          "B": "Дай нам дни радости за дни, когда {{deity_pronoun:ты|Ты}} смирял нас, \\q и годы веселья за годы бедствий, которые мы знали.",
+          "R": "Сделай нас счастливыми на столько же времени, сколько {{deity_pronoun:ты|Ты}} заставлял нас страдать. \\q Дай нам хорошие годы вместо плохих лет, которые мы пережили."
         }
       },
       "decisions": [
@@ -2247,6 +2835,16 @@
           "L": "ሥራህ ለባሪያዎችህ ይገለጥ፤ \\q ግርማህም በልጆቻቸው ላይ።",
           "B": "አገልጋዮችህ ሥራህን ይዩ፤ \\q ልጆቻቸውም ክብርህን ይዩ።",
           "R": "አገልጋዮችህ የምታደርጋቸውን ታላላቅ ነገሮች ይዩ። \\q ልጆቻቸውም ምን ያህል ክቡር እንደ ሆንህ ይዩ።"
+        },
+        "hi": {
+          "L": "तेरा काम तेरे दासों पर प्रकट हो, \\q और तेरा प्रताप उनकी सन्तान पर।",
+          "B": "तेरे दास तेरे कामों को देखें, \\q और उनकी सन्तान तेरा वैभव देखे।",
+          "R": "तेरे दास उन महान कामों को देखें जो तू करता है। \\q उनकी सन्तान देखे कि तू कितना महिमावान है।"
+        },
+        "ru": {
+          "L": "Пусть явится {{deity_pronoun:твоим|Твоим}} рабам {{deity_pronoun:твоё|Твоё}} дело, \\q и {{deity_pronoun:твоё|Твоё}} великолепие — на их детях.",
+          "B": "Пусть {{deity_pronoun:твои|Твои}} рабы увидят {{deity_pronoun:твои|Твои}} дела, \\q и пусть их дети увидят {{deity_pronoun:твоё|Твоё}} великолепие.",
+          "R": "Пусть {{deity_pronoun:твои|Твои}} рабы увидят, какие великие дела {{deity_pronoun:ты|Ты}} совершаешь. \\q Пусть их дети увидят, как {{deity_pronoun:ты|Ты}} славен."
         }
       },
       "decisions": [
@@ -2357,6 +2955,16 @@
           "L": "የጌታ የአምላካችንም ቸርነት በእኛ ላይ ይሁን፤ \\q የእጃችንንም ሥራ አጽናልን፤ \\q አዎን፣ የእጃችንን ሥራ አጽናው።",
           "B": "ጌታ አምላካችን ቸርነቱን ያሳየን፤ \\q የእጃችንን ሥራ ዘላቂ አድርግልን፤ \\q አዎን፣ የእጃችንን ሥራ ዘላቂ አድርገው።",
           "R": "ጌታ አምላካችን መልካም ያድርግልን። \\q የምንሠራውን ሥራ የተሳካና ዘላቂ አድርግልን። \\q አዎን፣ ሥራችንን ዘላቂ አድርገው!"
+        },
+        "hi": {
+          "L": "और प्रभु हमारे परमेश्वर की कृपा हम पर हो, \\q और हमारे हाथों के काम को हमारे लिए स्थिर कर; \\q हाँ, हमारे हाथों के काम को, उसे स्थिर कर।",
+          "B": "प्रभु हमारे परमेश्वर हम पर अपनी कृपा दिखाएँ। \\q हमारे हाथों के काम को टिकाऊ बना; \\q हाँ, हमारे हाथों के काम को टिकाऊ बना।",
+          "R": "प्रभु हमारे परमेश्वर हम पर भलाई करें। \\q हम जो काम करते हैं, उसे सफल और टिकाऊ बना। \\q हाँ, हमारे काम को टिकाऊ बना!"
+        },
+        "ru": {
+          "L": "И пусть будет доброта Господа, Бога нашего, на нас, \\q и дело наших рук утверди для нас; \\q да, дело наших рук утверди.",
+          "B": "Пусть Господь, наш Бог, явит нам свою доброту. \\q Дай прочность труду наших рук; \\q да, труду наших рук дай прочность.",
+          "R": "Пусть Господь, наш Бог, будет добр к нам. \\q Сделай так, чтобы наш труд удавался и оставался. \\q Да, пусть наш труд не пропадёт!"
         }
       },
       "decisions": [
@@ -2423,6 +3031,45 @@
             "be upon us"
           ],
           "reason": "Balanced and Readable say what it means for God's kindness to be on his people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190900170051"
+          ],
+          "choice": "honorific third person (\"दिखाएँ\", \"करें\"), then \"तू\" (\"बना\")",
+          "alternatives": [],
+          "reason": "The first line speaks of the Lord in the third person and the next lines turn to him, as the Hebrew does; Hindi gives God the honorific third person and then the devotional \"तू\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900170021"
+          ],
+          "choice": "\"доброта\"",
+          "alternatives": [
+            "благоволение",
+            "милость"
+          ],
+          "reason": "No'am is pleasantness, favour (m1); \"доброта\" says it plainly and keeps it apart from the words for hesed and for grace.",
           "uncertain": false,
           "footnote": false
         }
