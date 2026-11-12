@@ -62,6 +62,16 @@
           "L": "እኔ መከራን ያየሁ ሰው [ነኝ]፤ \\q በመዓቱ በትር ሥር።",
           "B": "እኔ መከራን ያሳለፍኩ ሰው ነኝ፤ \\q በቁጣው በትር ሥር።",
           "R": "እኔ እጅግ የተሠቃየሁ ሰው ነኝ፤ \\q የእግዚአብሔር ቁጣ በትር መታኝ።"
+        },
+        "hi": {
+          "L": "मैं वह पुरुष [हूँ जिसने] \\q उनके रोष की छड़ी के नीचे दुःख देखा है।",
+          "B": "मैं वह पुरुष हूँ जिसने \\q उनके क्रोध की छड़ी के नीचे दुःख भोगा है।",
+          "R": "मैं वह पुरुष हूँ जिसने बहुत दुःख सहा है, \\q परमेश्वर के क्रोध की छड़ी की मार खाई है।"
+        },
+        "ru": {
+          "L": "Я — человек, [который] видел бедствие \\q под жезлом {{deity_pronoun:его|Его}} ярости.",
+          "B": "Я — человек, переживший бедствие \\q под жезлом {{deity_pronoun:его|Его}} гнева.",
+          "R": "Я — человек, который так много выстрадал, \\q когда Бог в гневе бил меня жезлом."
         }
       },
       "decisions": [
@@ -317,6 +327,89 @@
           "reason": "\"ሰው\" names a person without stressing the male sex, as the meaning decision's one who speaks for the city; the first person of the verbs already says that he speaks of himself. Readable names God, as its English does (\"የእግዚአብሔር\"), not the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030010062"
+          ],
+          "choice": "\"उनके\", with no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so Hindi has no deity_pronoun spans in this chapter. The honorific plural (\"उनके\", \"उन्होंने\") shows from the first verse that the unnamed \"he\" is God (m3), and keeps him apart from the man who speaks, who takes plain forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030010021",
+            "o250030010022"
+          ],
+          "choice": "\"पुरुष\" for geber",
+          "alternatives": [
+            "\"मनुष्य\"",
+            "\"आदमी\""
+          ],
+          "reason": "The man who speaks in this chapter (m2) is a geber, the same word as in verses 27, 35 and 39; Hindi keeps \"पुरुष\" for it so that the link can be heard, and uses \"मनुष्य\" or \"लोग\" where the English level says anyone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030010022"
+          ],
+          "choice": "\"человек\", with masculine forms for the speaker",
+          "alternatives": [
+            "\"муж\""
+          ],
+          "reason": "A new voice, a man who speaks for the suffering city (m2). \"Человек\" is kept at every level so that \"a man\" in verse 27, the same Hebrew word, can be heard as the same; his past-tense words are masculine, unlike Zion's in chapters 1-2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030010061"
+          ],
+          "choice": "{{deity_pronoun:его|Его}} for God not yet named",
+          "alternatives": [
+            "\"его\" plainly"
+          ],
+          "reason": "The \"his\" is God's, though he is not named until verse 18 (m3); the span marks it as the English does. Readable names God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -383,6 +476,16 @@
           "L": "እርሱ ነዳኝ፤ አስኬደኝም \\q በጨለማ [ውስጥ]፣ በብርሃንም አይደለም።",
           "B": "መራኝ፤ እንድሄድም አደረገኝ \\q በጨለማ ውስጥ፣ በብርሃን አይደለም።",
           "R": "እንደ እንስሳ ነዳኝ፤ \\q ብርሃን ወደሌለበት ጨለማ ወሰደኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने मुझे हाँका है और [मुझे] चलाया है \\q अंधकार में, और उजियाले में नहीं।",
+          "B": "उन्होंने मुझे हाँककर \\q उजियाले में नहीं, अंधकार में चलाया है।",
+          "R": "उन्होंने मुझे पशु की तरह हाँका है, \\q ऐसे अंधकार में जहाँ कोई उजाला नहीं।"
+        },
+        "ru": {
+          "L": "Меня {{deity_pronoun:он|Он}} гнал и заставил ходить \\q [во] тьме, а не [во] свете.",
+          "B": "Он увёл меня и заставил идти \\q во тьме, а не в свете.",
+          "R": "Он гнал меня, как животное, \\q во тьму, где нет света."
         }
       },
       "decisions": [
@@ -498,6 +601,16 @@
           "L": "በእውነት በእኔ ላይ እጁን ደጋግሞ ይመልሳል \\q ቀኑን ሁሉ።",
           "B": "አዎን፣ በእጁ የሚመታው እኔን ነው፤ \\q ደጋግሞ፣ ቀኑን ሙሉ።",
           "R": "በእጁ ይመታኛል፤ \\q ደጋግሞ፣ ቀኑን ሙሉ።"
+        },
+        "hi": {
+          "L": "निश्चय वे बार-बार मेरे ही विरुद्ध अपना हाथ फेरते हैं, \\q दिन भर।",
+          "B": "हाँ, वे मुझ ही को अपने हाथ से मारते हैं, \\q बार-बार, दिन भर।",
+          "R": "वे अपने हाथ से मुझे मारते ही रहते हैं, \\q बार-बार, सारा दिन।"
+        },
+        "ru": {
+          "L": "Только против меня {{deity_pronoun:он|Он}} снова и снова обращает свою руку \\q весь день.",
+          "B": "Да, именно меня {{deity_pronoun:он|Он}} бьёт своей рукой \\q раз за разом, весь день.",
+          "R": "Он всё бьёт и бьёт меня своей рукой, \\q снова и снова, весь день."
         }
       },
       "decisions": [
@@ -626,6 +739,16 @@
           "L": "ሥጋዬንና ቆዳዬን አስረጀ፤ \\q አጥንቶቼን ሰበረ።",
           "B": "ሥጋዬንና ቆዳዬን አደከመ፤ \\q አጥንቶቼንም ሰባበረ።",
           "R": "ሰውነቴ እንዲመነምን አደረገ። \\q አጥንቶቼን ሰበረ።"
+        },
+        "hi": {
+          "L": "उन्होंने मेरे मांस और मेरी खाल को गला दिया है; \\q उन्होंने मेरी हड्डियाँ तोड़ दी हैं।",
+          "B": "उन्होंने मेरे मांस और खाल को जर्जर कर दिया है \\q और मेरी हड्डियाँ चूर-चूर कर दी हैं।",
+          "R": "उन्होंने मेरे शरीर को सुखा दिया है। \\q उन्होंने मेरी हड्डियाँ तोड़ दी हैं।"
+        },
+        "ru": {
+          "L": "Он истощил мою плоть и мою кожу, \\q {{deity_pronoun:он|Он}} сокрушил мои кости.",
+          "B": "Он изнурил мою плоть и кожу \\q и раздробил мои кости.",
+          "R": "Он заставил моё тело чахнуть. \\q Он переломал мне кости."
         }
       },
       "decisions": [
@@ -754,6 +877,16 @@
           "L": "በእኔ ላይ ሠራ፤ ከበበኝም \\q በመርዝና በድካም።",
           "B": "በእኔ ላይ የከበባ ቅጥር ሠራ፤ \\q በመራራ መርዝና በመከራ ዘጋኝ።",
           "R": "ሠራዊት ከተማን እንደሚወጋ ወጋኝ። \\q በመራራ ሥቃይና በችግር ከበበኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने मेरे विरुद्ध [घेराबंदी] बाँधी है और [मुझे] घेर लिया है \\q विष और कष्ट [से]।",
+          "B": "उन्होंने मेरे विरुद्ध मोर्चे बाँधे हैं \\q और मुझे कड़वे विष और कष्ट से घेर लिया है।",
+          "R": "उन्होंने मुझ पर ऐसे हमला किया है जैसे सेना किसी नगर पर हमला करती है। \\q उन्होंने मुझे कड़वे दुःख और मुसीबत से घेर लिया है।"
+        },
+        "ru": {
+          "L": "Он построил [осаду] против меня и окружил [меня] \\q горечью и тяготами.",
+          "B": "Он воздвиг против меня осадные валы \\q и окружил меня горькой отравой и тяготами.",
+          "R": "Он напал на меня, как войско нападает на город. \\q Он окружил меня горькими страданиями и бедами."
         }
       },
       "decisions": [
@@ -843,6 +976,25 @@
           "reason": "The word stands for bitter suffering (m2); \"መርዝ\" with \"መራራ\" keeps both the poison and the bitterness, and returns with wormwood in 3:19.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030050041"
+          ],
+          "choice": "\"горечью\"",
+          "alternatives": [
+            "\"ядом\""
+          ],
+          "reason": "The Hebrew word is a bitter, poisonous plant (m2); Literal says \"горечь\", Balanced \"горькая отрава\", keeping the bitterness that returns in verses 15 and 19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -907,6 +1059,16 @@
           "L": "በጨለማ ስፍራዎች አኖረኝ፤ \\q ከጥንት እንደ ሞቱት።",
           "B": "በጨለማ ስፍራ እንድኖር አደረገኝ፤ \\q ከብዙ ዘመን በፊት እንደ ሞቱ ሰዎች።",
           "R": "በጨለማ ውስጥ እንድኖር አደረገኝ፤ \\q ከሞቱ ብዙ ዘመን እንደ ሆናቸው ሰዎች።"
+        },
+        "hi": {
+          "L": "उन्होंने मुझे अंधेरे स्थानों में बसाया है, \\q बहुत पहले के मरे हुओं के समान।",
+          "B": "उन्होंने मुझे अंधेरे स्थानों में रहने को छोड़ दिया है, \\q उन लोगों के समान जो युगों पहले मर चुके हैं।",
+          "R": "उन्होंने मुझे अंधकार में रहने पर विवश किया है, \\q उन लोगों की तरह जो बहुत पहले मर चुके हैं।"
+        },
+        "ru": {
+          "L": "В тёмных местах {{deity_pronoun:он|Он}} поселил меня, \\q как давно умерших.",
+          "B": "Он заставил меня жить во тьме, \\q как тех, кто умер давным-давно.",
+          "R": "Он заставил меня жить во тьме, \\q как людей, которые давно умерли."
         }
       },
       "decisions": [
@@ -1044,6 +1206,49 @@
           "reason": "The Hebrew is the same (m1), so the two verses read alike, set here in two lines.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030060012",
+            "o250030060032",
+            "o250030060041"
+          ],
+          "choice": "the wording of Psalm 143:3",
+          "alternatives": [],
+          "reason": "The Hebrew line is the same as Psalm 143:3 (m1), so Literal and Balanced copy that psalm's Hindi wording (\"अंधेरे स्थानों में ... बहुत पहले के मरे हुओं के समान\"); Readable follows its own English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030060012",
+            "o250030060032",
+            "o250030060041"
+          ],
+          "choice": "the wording of Psalm 143:3 kept apart",
+          "alternatives": [
+            "copying Psalm 143:3 word for word"
+          ],
+          "reason": "The same Hebrew words stand in Psalm 143:3 (m1); this line keeps its own Russian wording here, and the consistency pass can bring the two together.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1110,6 +1315,16 @@
           "L": "በዙሪያዬ ቅጥር ሠራ፤ አልወጣምም፤ \\q የነሐስ [እግር ብረቴን] አከበደ።",
           "B": "በዙሪያዬ አጥሮ ዘጋኝ፤ መውጣትም አልችልም፤ \\q በሰንሰለት አከበደኝ።",
           "R": "በዙሪያዬ ቅጥር ሠራ፤ መውጣት አልችልም። \\q ከባድ ሰንሰለት አሰረብኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने मेरे चारों ओर बाड़ा बाँधा है, और मैं बाहर नहीं निकल सकता; \\q उन्होंने मेरी पीतल [की बेड़ियाँ] भारी कर दी हैं।",
+          "B": "उन्होंने मुझे घेरकर बंद कर दिया है, और मैं निकल नहीं सकता; \\q उन्होंने मुझे ज़ंजीरों से लाद दिया है।",
+          "R": "उन्होंने मेरे चारों ओर दीवार खड़ी कर दी है, और मैं बाहर नहीं निकल सकता। \\q उन्होंने मुझ पर भारी ज़ंजीरें डाल दी हैं।"
+        },
+        "ru": {
+          "L": "Он обнёс меня стеной, и я не могу выйти; \\q {{deity_pronoun:он|Он}} отяготил мои медные [оковы].",
+          "B": "Он окружил меня стеной, и мне не выбраться; \\q {{deity_pronoun:он|Он}} отяготил меня цепями.",
+          "R": "Он построил вокруг меня стену, и я не могу выйти. \\q Он надел на меня тяжёлые цепи."
         }
       },
       "decisions": [
@@ -1256,6 +1471,16 @@
           "L": "ብጮኽና ርዳታ ብለምንም፣ \\q ጸሎቴን ይዘጋል።",
           "B": "ብጮኽና ርዳታ ብለምንም እንኳ \\q ጸሎቴን ያግዳል።",
           "R": "እጮኻለሁ፤ ርዳታም እለምናለሁ፤ \\q እርሱ ግን ጸሎቴን ላለመስማት ጆሮውን ይዘጋል።"
+        },
+        "hi": {
+          "L": "जब मैं चिल्लाता और सहायता के लिए पुकारता हूँ, तब भी \\q वे मेरी प्रार्थना को रोक देते हैं।",
+          "B": "जब मैं चिल्लाकर सहायता की बिनती करता हूँ, तब भी \\q वे मेरी प्रार्थना को बाहर ही रोक देते हैं।",
+          "R": "मैं चिल्लाता और सहायता के लिए पुकारता हूँ, \\q पर वे मेरी प्रार्थना की ओर से अपने कान बंद कर लेते हैं।"
+        },
+        "ru": {
+          "L": "Даже когда я кричу и взываю о помощи, \\q {{deity_pronoun:он|Он}} заграждает мою молитву.",
+          "B": "Даже когда я кричу и умоляю о помощи, \\q {{deity_pronoun:он|Он}} не пропускает моей молитвы.",
+          "R": "Я кричу и зову на помощь, \\q но {{deity_pronoun:он|Он}} не слушает моей молитвы."
         }
       },
       "decisions": [
@@ -1369,6 +1594,16 @@
           "L": "መንገዶቼን በተጠረበ ድንጋይ ዘጋ፤ \\q ጎዳናዎቼን አጣመመ።",
           "B": "መንገዴን በተጠረበ ድንጋይ ዘጋው፤ \\q ጎዳናዎቼንም ጠማማ አደረገ።",
           "R": "በመንገዴ ላይ የድንጋይ ቅጥር ሠራ። \\q ጎዳናዎቼን ጠመዝማዛ አደረጋቸው።"
+        },
+        "hi": {
+          "L": "उन्होंने गढ़े हुए पत्थरों से मेरे मार्गों को घेर दिया है; \\q उन्होंने मेरी डगरों को टेढ़ा कर दिया है।",
+          "B": "उन्होंने गढ़े हुए पत्थरों से मेरा मार्ग बंद कर दिया है; \\q उन्होंने मेरी डगरों को टेढ़ा-मेढ़ा कर दिया है।",
+          "R": "उन्होंने मेरे रास्ते के आर-पार पत्थर की दीवार खड़ी कर दी है। \\q उन्होंने मेरे रास्तों को टेढ़ा-मेढ़ा कर दिया है।"
+        },
+        "ru": {
+          "L": "Он преградил мои пути тёсаным камнем, \\q мои тропы {{deity_pronoun:он|Он}} искривил.",
+          "B": "Он перегородил мою дорогу тёсаным камнем, \\q {{deity_pronoun:он|Он}} запутал мои тропы.",
+          "R": "Он построил каменную стену поперёк моей дороги. \\q Он сделал мои пути извилистыми."
         }
       },
       "decisions": [
@@ -1465,6 +1700,16 @@
           "L": "እርሱ ለእኔ የሚያደባ ድብ፣ \\q በተሸሸገ ስፍራ ያለ አንበሳ [ነው]።",
           "B": "ለእኔ እንደሚያደባ ድብ፣ \\q በተደበቀበት እንደሚያደፍጥ አንበሳ ነው።",
           "R": "እንደ ድብ ሊያጠቃኝ ያደባል፤ \\q በቁጥቋጦ ውስጥ እንደ ተደበቀ አንበሳ ነው።"
+        },
+        "hi": {
+          "L": "वे मेरे लिए घात में बैठा रीछ [हैं], \\q छिपने के स्थानों में [बैठा] सिंह।",
+          "B": "मेरे लिए वे घात में बैठे रीछ के समान हैं, \\q छिपकर दुबके हुए सिंह के समान।",
+          "R": "वे रीछ की तरह मुझ पर हमला करने की ताक में रहते हैं, \\q झाड़ियों में छिपे सिंह की तरह।"
+        },
+        "ru": {
+          "L": "Медведь в засаде {{deity_pronoun:он|Он}} для меня, \\q лев в укрытиях.",
+          "B": "Для меня {{deity_pronoun:он|Он}} — как медведь, подстерегающий в засаде, \\q как лев, притаившийся в укрытии.",
+          "R": "Он подстерегает меня, как медведь, \\q как лев, спрятавшийся в кустах."
         }
       },
       "decisions": [
@@ -1593,6 +1838,16 @@
           "L": "መንገዶቼን አሳተ፤ ቦጫጨቀኝም፤ \\q ባድማ አደረገኝ።",
           "B": "ከመንገድ ጎትቶ አወጣኝ፤ ቦጫጨቀኝም፤ \\q ፈራርሼ እንድቀር አደረገኝ።",
           "R": "ከመንገድ ጎትቶ አውጥቶ ቦጫጨቀኝ። \\q ፈራርሼ ብቻዬን እንድቀር አደረገኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने मेरे मार्गों को मोड़ दिया है, और मुझे फाड़ डाला है; \\q उन्होंने मुझे उजाड़ कर दिया है।",
+          "B": "उन्होंने मुझे मार्ग से घसीटकर टुकड़े-टुकड़े कर डाला; \\q उन्होंने मुझे उजाड़कर छोड़ दिया है।",
+          "R": "उन्होंने मुझे रास्ते से घसीटकर फाड़ डाला। \\q उन्होंने मुझे बर्बाद और अकेला छोड़ दिया है।"
+        },
+        "ru": {
+          "L": "Мои пути {{deity_pronoun:он|Он}} свернул и растерзал меня, \\q {{deity_pronoun:он|Он}} сделал меня опустошённым.",
+          "B": "Он стащил меня с дороги и растерзал, \\q {{deity_pronoun:он|Он}} оставил меня разорённым.",
+          "R": "Он стащил меня с тропы и разорвал на куски. \\q Он оставил меня разорённым и одиноким."
         }
       },
       "decisions": [
@@ -1723,6 +1978,16 @@
           "L": "ቀስቱን ገተረ፤ አቆመኝም \\q ለፍላጻ እንደ ዒላማ።",
           "B": "ቀስቱን ገተረ፤ \\q ለፍላጻዎቹም ዒላማ አድርጎ አቆመኝ።",
           "R": "የቀስቱን አውታር ሳበ፤ \\q ለፍላጻዎቹም ዒላማ አደረገኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने अपना धनुष रौंदकर चढ़ाया और मुझे खड़ा किया है \\q तीर के लिए निशाने के समान।",
+          "B": "उन्होंने अपना धनुष चढ़ाया है \\q और मुझे तीरों का निशाना बनाया है।",
+          "R": "उन्होंने अपने धनुष की डोरी खींची है \\q और मुझे अपने तीरों का निशाना बनाया है।"
+        },
+        "ru": {
+          "L": "Он натянул свой лук и поставил меня, \\q как мишень для стрелы.",
+          "B": "Он натянул свой лук \\q и сделал меня мишенью для стрел.",
+          "R": "Он натянул тетиву своего лука \\q и сделал меня мишенью для своих стрел."
         }
       },
       "decisions": [
@@ -1854,6 +2119,16 @@
           "L": "ወደ ኩላሊቶቼ አስገባ \\q የኮሮጆውን ልጆች።",
           "B": "ወደ ውስጤ ጠልቆ ሰደደ \\q የኮሮጆውን ፍላጻዎች።",
           "R": "ፍላጻዎቹን ወረወረብኝ፤ \\q እስከ ውስጤም ጠልቀው ገቡ።"
+        },
+        "hi": {
+          "L": "उन्होंने मेरे गुर्दों में उतार दिए हैं \\q अपने तरकश के पुत्र।",
+          "B": "उन्होंने मेरे भीतर गहरे तक उतार दिए हैं \\q अपने तरकश के तीर।",
+          "R": "उन्होंने अपने तीर \\q मेरे भीतर गहरे तक मारे हैं।"
+        },
+        "ru": {
+          "L": "Он вонзил в мои почки \\q сыновей своего колчана.",
+          "B": "Он глубоко вонзил в моё нутро \\q стрелы из своего колчана.",
+          "R": "Он пустил свои стрелы \\q глубоко в меня."
         }
       },
       "decisions": [
@@ -1938,6 +2213,27 @@
           "reason": "Literal keeps the Hebrew figure (m2) in Amharic words; \"ኮሮጆ\" is the arrow case, and the kidneys stand for the inmost self as in Job 16:13.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030130022",
+            "o250030130031"
+          ],
+          "choice": "\"почки\", \"сыновей своего колчана\" (Literal)",
+          "alternatives": [
+            "\"утроба\"",
+            "\"стрелы\""
+          ],
+          "reason": "Literal keeps both Hebrew pictures, the kidneys as the inmost self (m3) and the arrows as the quiver's sons (m2); Balanced and Readable say what they mean.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2006,6 +2302,16 @@
           "L": "ለሕዝቤ ሁሉ መሳለቂያ ሆንኩ፤ \\q ቀኑን ሁሉ የመዘበቻ ዘፈናቸው።",
           "B": "ለሕዝቤ ሁሉ መቀለጃ ሆንኩ፤ \\q ቀኑን ሙሉ በዘፈን ያላግጡብኛል።",
           "R": "ሕዝቤ ሁሉ ይስቁብኛል። \\q ቀኑን ሙሉ እኔን የሚያሾፉ ዘፈኖችን ይዘፍናሉ።"
+        },
+        "hi": {
+          "L": "मैं अपने सब लोगों के लिए हँसी का पात्र बन गया हूँ, \\q दिन भर उनका ठट्ठे का गीत।",
+          "B": "मैं अपने सब लोगों के लिए मज़ाक़ बन गया हूँ, \\q वह गीत जिससे वे दिन भर मेरा ठट्ठा करते हैं।",
+          "R": "मेरे सब लोग मुझ पर हँसते हैं। \\q वे सारा दिन मेरा मज़ाक़ उड़ानेवाले गीत गाते हैं।"
+        },
+        "ru": {
+          "L": "Я стал посмешищем для всего моего народа, \\q их насмешливой песней весь день.",
+          "B": "Я стал предметом шуток для всего моего народа, \\q они весь день поют обо мне насмешливую песню.",
+          "R": "Весь мой народ смеётся надо мной. \\q Целыми днями они поют песни, в которых издеваются надо мной."
         }
       },
       "decisions": [
@@ -2124,6 +2430,16 @@
           "L": "መራራ ነገርን አጠገበኝ፤ \\q እሬትን እስክረካ አጠጣኝ።",
           "B": "መራራ ነገር አጠገበኝ፤ \\q ከዚህ በላይ መሸከም እስከማልችል ድረስ እሬትን አጠጣኝ።",
           "R": "የሚያበላኝ መራራ ነገር ብቻ ነው። \\q መራራ እሬትን አጠጣኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने मुझे कड़वी वस्तुओं से भर दिया है; \\q उन्होंने मुझे नागदौना पेट भर पिलाया है।",
+          "B": "उन्होंने मुझे कड़वी वस्तुओं से तृप्त कर दिया है \\q और मुझे इतना नागदौना पिलाया है कि मैं और सह न सका।",
+          "R": "उन्होंने मुझे खाने को केवल कड़वी चीज़ें दी हैं। \\q उन्होंने मुझे कड़वा नागदौना पिलाया है।"
+        },
+        "ru": {
+          "L": "Он насытил меня горечью, \\q {{deity_pronoun:он|Он}} напоил меня досыта полынью.",
+          "B": "Он накормил меня досыта горьким \\q и поил полынью, пока я не смог больше вынести.",
+          "R": "Он давал мне есть только горькое. \\q Он заставил меня пить горькую полынь."
         }
       },
       "decisions": [
@@ -2215,6 +2531,48 @@
           "reason": "\"እሬት\" is the Amharic byword for bitterness (aloe) and the word for laʿanah in the Amharic Deuteronomy 29:17 (\"መርዝንና እሬትን\", the same pair as here and 3:19) and Proverbs 5:4; the plant differs, the picture (m1) is the same.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030150041"
+          ],
+          "choice": "\"नागदौना\"",
+          "alternatives": [
+            "\"कड़वी बूटी\""
+          ],
+          "reason": "Wormwood (m1) is \"नागदौना\" in Hindi, the bitter plant of the same family; it stays the same in verse 19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030150041"
+          ],
+          "choice": "\"полынь\"",
+          "alternatives": [
+            "\"желчь\""
+          ],
+          "reason": "A bitter plant, a picture of bitter suffering (m1); the plant's own name is kept at every level, as in verse 19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2282,6 +2640,16 @@
           "L": "ጥርሶቼንም በጠጠር ሰበረ፤ \\q በአመድ ውስጥ ደፈቀኝ።",
           "B": "ጥርሶቼ በጠጠር እንዲሰበሩ አደረገ፤ \\q በአመድ ውስጥ ረገጠኝ።",
           "R": "ድንጋይ እያኘክሁ ጥርሶቼ እንዲሰበሩ አደረገ። \\q ወደ አመድ ውስጥ ገፍቶ ጣለኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने कंकड़ों से मेरे दाँत तोड़ दिए हैं; \\q उन्होंने मुझे राख में दबा दिया है।",
+          "B": "उन्होंने मेरे दाँत कंकड़ों पर तुड़वा दिए हैं; \\q उन्होंने मुझे राख में रौंद डाला है।",
+          "R": "उन्होंने मेरे दाँत पत्थरों पर तुड़वा दिए हैं। \\q उन्होंने मुझे राख में धकेल दिया है।"
+        },
+        "ru": {
+          "L": "Он сокрушил гравием мои зубы, \\q {{deity_pronoun:он|Он}} вдавил меня в пепел.",
+          "B": "Он заставил меня ломать зубы о гравий, \\q {{deity_pronoun:он|Он}} втоптал меня в пепел.",
+          "R": "Он заставил меня ломать зубы о камни. \\q Он бросил меня в пепел."
         }
       },
       "decisions": [
@@ -2409,6 +2777,16 @@
           "L": "ነፍሴ ከሰላም ተጣለች፤ \\q መልካምን ረሳሁ።",
           "B": "ነፍሴ ከሰላም ተለየች፤ \\q መልካም ነገር ምን እንደ ሆነ ረሳሁ።",
           "R": "ምንም ሰላም አልቀረልኝም። \\q ደስታ ምን እንደሚመስል ረሳሁ።"
+        },
+        "hi": {
+          "L": "मेरा प्राण शान्ति से दूर फेंक दिया गया है; \\q मैं भलाई को भूल गया हूँ।",
+          "B": "मेरा प्राण शान्ति से कट गया है; \\q मैं भूल गया हूँ कि भलाई क्या होती है।",
+          "R": "मेरे पास बिलकुल शान्ति नहीं बची। \\q मैं भूल गया हूँ कि ख़ुश रहना कैसा होता है।"
+        },
+        "ru": {
+          "L": "Отвергнута от мира моя душа, \\q я забыл о добре.",
+          "B": "Моя душа лишилась мира, \\q я забыл, что такое добро.",
+          "R": "У меня совсем не осталось покоя. \\q Я забыл, что значит быть счастливым."
         }
       },
       "decisions": [
@@ -2471,6 +2849,28 @@
           "choice": "I have no peace; to be happy",
           "alternatives": [],
           "reason": "Readable says 'I' for 'my soul' (m3) and says what 'good' means here (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030170031",
+            "o250030170032"
+          ],
+          "choice": "\"मेरा प्राण\" (L, B); \"मैं\" (R)",
+          "alternatives": [
+            "\"मेरी आत्मा\""
+          ],
+          "reason": "As the poetry note settles for nefesh: \"प्राण\" at Literal, and at Balanced and Readable as the English level does it (here \"my soul\" at Balanced, \"I\" at Readable). \"आत्मा\" is kept for the spirit. The same in verses 20, 24, 25, 51 and 58.",
           "uncertain": false,
           "footnote": false
         }
@@ -2540,6 +2940,16 @@
           "L": "እኔም አልኩ፦ «የሚያጸናኝ ኃይሌ ጠፋ፤ \\q {{divine_name:ከእግዚአብሔር|ከያህዌ}} የነበረኝም ተስፋ።»",
           "B": "ስለዚህ እንዲህ አልኩ፦ «ብርታቴ አለቀ፤ \\q {{divine_name:ከእግዚአብሔር|ከያህዌ}} ተስፋ ያደረግኩትም ሁሉ ጠፋ።»",
           "R": "ስለዚህ እንዲህ አልኩ፦ «ከዚህ በላይ መቀጠል አልችልም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ይረዳኛል ብዬ ከእንግዲህ ተስፋ አላደርግም።»"
+        },
+        "hi": {
+          "L": "और मैंने कहा, \"मेरा स्थायी बल नष्ट हो गया है, \\q और {{divine_name:प्रभु|याहवे}} से मेरी आशा [भी]।\"",
+          "B": "तब मैंने कहा, \"मेरा बल जाता रहा, \\q और वह सब भी जिसकी आशा मैं {{divine_name:प्रभु|याहवे}} से करता था।\"",
+          "R": "तब मैंने कहा, \"मैं अब और नहीं सह सकता। \\q मुझे अब आशा नहीं कि {{divine_name:प्रभु|याहवे}} मेरी सहायता करेंगे।\""
+        },
+        "ru": {
+          "L": "И я сказал: «Погибла моя стойкость \\q и моя надежда на {{divine_name:ГОСПОДА|Яхве}}.»",
+          "B": "И я сказал: «Сила моя иссякла, \\q и всё, на что я надеялся от {{divine_name:ГОСПОДА|Яхве}}.»",
+          "R": "И я сказал: «Я больше не могу. \\q Я больше не надеюсь, что {{divine_name:ГОСПОДЬ|Яхве}} мне поможет.»"
         }
       },
       "decisions": [
@@ -2672,6 +3082,16 @@
           "L": "መከራዬንና መንከራተቴን አስብ፤ \\q እሬቱንና መርዙን።",
           "B": "እንዴት እንደ ተጎሳቆልኩና ቤት አልባ እንደ ሆንኩ አስብ፤ \\q እሬቱንና መራራውን መርዝ።",
           "R": "እንዴት እንደምሠቃይና ቤት እንደሌለኝ አስብ፤ \\q ይህ ሁሉ እንደ መርዝ ምን ያህል መራራ እንደ ሆነ።"
+        },
+        "hi": {
+          "L": "मेरे दुःख और मेरे बेघर होने को स्मरण कर, \\q नागदौने और विष को।",
+          "B": "स्मरण कर कि मैं कितना दुःखी और बेघर हूँ, \\q वह नागदौना और कड़वा विष।",
+          "R": "याद कर कि मैं कैसे दुःख उठा रहा हूँ और मेरा कोई घर नहीं, \\q यह सब कितना कड़वा है, विष के समान।"
+        },
+        "ru": {
+          "L": "Вспомни моё бедствие и мои скитания, \\q полынь и горечь.",
+          "B": "Вспомни, как я страдаю и скитаюсь без дома, \\q полынь и горькую отраву.",
+          "R": "Вспомни, как я страдаю и как мне негде жить, \\q как это горько, словно отрава."
         }
       },
       "decisions": [
@@ -2853,6 +3273,27 @@
           "reason": "The man takes up Zion's words (m3), so Literal uses the same pair, and Balanced and Readable the same words as their own 1:7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030190021",
+            "o250030190032"
+          ],
+          "choice": "\"бедствие и скитания\", as 1:7",
+          "alternatives": [
+            "\"страдание и бездомность\""
+          ],
+          "reason": "The words are Zion's in 1:7 (m3), now in the man's mouth; the same Russian words are used so the echo is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2918,6 +3359,16 @@
           "L": "ነፍሴ በእርግጥ ታስባለች፤ \\q በውስጤም ዝቅ ትላለች።",
           "B": "ነፍሴ ይህን ዘወትር ታስባለች፤ \\q በውስጤም ተዋርዳለች።",
           "R": "ዘወትር ስለዚህ አስባለሁ፤ \\q መንፈሴም እጅግ ይደቃል።"
+        },
+        "hi": {
+          "L": "मेरा प्राण निश्चय स्मरण करता है \\q और मेरे भीतर झुक जाता है।",
+          "B": "मेरा प्राण उसे बार-बार स्मरण करता है \\q और मेरे भीतर झुका जाता है।",
+          "R": "मैं हर समय इसके बारे में सोचता रहता हूँ, \\q और मेरा मन बहुत उदास हो जाता है।"
+        },
+        "ru": {
+          "L": "Моя душа непрестанно помнит \\q и поникает во мне.",
+          "B": "Моя душа всё время помнит об этом \\q и склоняется во мне.",
+          "R": "Я думаю об этом всё время, \\q и мне так тяжело."
         }
       },
       "decisions": [
@@ -3035,6 +3486,16 @@
           "L": "ይህን ወደ ልቤ እመልሳለሁ፤ \\q ስለዚህ ተስፋ አደርጋለሁ፦",
           "B": "ነገር ግን ይህን አስባለሁ፤ \\q በዚህም የተነሣ በተስፋ እጠብቃለሁ፦",
           "R": "ከዚያም ሌላ ነገር አስባለሁ፤ \\q ይህም ተስፋ ይሰጠኛል፦"
+        },
+        "hi": {
+          "L": "यह [बात] मैं अपने मन में फिर लाता हूँ; \\q इसलिए मैं आशा रखूँगा:",
+          "B": "फिर भी मैं यह बात मन में लाता हूँ, \\q और इसी के कारण मैं आशा से बाट जोहूँगा:",
+          "R": "पर तब मैं किसी और बात के बारे में सोचता हूँ, \\q और उससे मुझे आशा मिलती है:"
+        },
+        "ru": {
+          "L": "Вот что я возвращаю в своё сердце, \\q поэтому буду надеяться:",
+          "B": "И всё же я снова вспоминаю об этом, \\q и потому буду ждать с надеждой:",
+          "R": "Но потом я думаю о другом, \\q и это даёт мне надежду:"
         }
       },
       "decisions": [
@@ -3189,6 +3650,16 @@
           "L": "ያልጠፋነው {{divine_name:በእግዚአብሔር|በያህዌ}} ጽኑ ፍቅር [ነው]፤ \\q ርኅራኄው አልተቋረጠምና።",
           "B": "ፈጽመን ያልጠፋነው {{divine_name:በእግዚአብሔር|በያህዌ}} ጽኑ ፍቅር ነው፤ \\q ርኅራኄው አልጎደለምና።",
           "R": "እስከ ዛሬ በሕይወት ያለነው {{divine_name:በእግዚአብሔር|በያህዌ}} ጽኑ ፍቅር ነው። \\q ርኅራኄው ፈጽሞ አይሟጠጥም።"
+        },
+        "hi": {
+          "L": "[यह] {{divine_name:प्रभु|याहवे}} का अटल प्रेम [है] कि हम मिट नहीं गए, \\q क्योंकि उनकी करुणा का अंत नहीं हुआ।",
+          "B": "{{divine_name:प्रभु|याहवे}} के अटल प्रेम के कारण ही हम नष्ट नहीं हुए, \\q क्योंकि उनकी करुणा कभी चुकी नहीं।",
+          "R": "हम अब भी जीवित हैं, क्योंकि {{divine_name:प्रभु|याहवे}} का अटल प्रेम हमारे साथ है। \\q उनकी करुणा कभी समाप्त नहीं होती।"
+        },
+        "ru": {
+          "L": "[По] неизменной любви {{divine_name:ГОСПОДА|Яхве}} мы не истреблены, \\q потому что не кончилось {{deity_pronoun:его|Его}} сострадание.",
+          "B": "Благодаря неизменной любви {{divine_name:ГОСПОДА|Яхве}} мы не уничтожены, \\q потому что {{deity_pronoun:его|Его}} сострадание не иссякло.",
+          "R": "Мы ещё живы благодаря неизменной любви {{divine_name:ГОСПОДА|Яхве}}. \\q Его сострадание никогда не кончается."
         }
       },
       "decisions": [
@@ -3465,6 +3936,93 @@
           "reason": "Verses 22-24 are among the best-loved in the book; the Amharic follows the Hebrew order (the love first, the not being consumed after, m2) in an Amharic cleft, and avoids the wording of existing Amharic Bibles, as the brief requires.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030220011"
+          ],
+          "choice": "\"अटल प्रेम\" (every level)",
+          "alternatives": [
+            "\"करुणा\"",
+            "\"दया\""
+          ],
+          "reason": "The LORD's hesed is \"अटल प्रेम\" at every level, as the poetry note and the Psalms have it, where the English varies \"loyal love\" and \"faithful love\". The Hebrew plural (m3) is not marked; the same in verse 32.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030220091"
+          ],
+          "choice": "\"करुणा\" for rachamim, singular",
+          "alternatives": [
+            "\"दया\"",
+            "\"करुणाएँ\""
+          ],
+          "reason": "\"Mercies\" (rachamim) is \"करुणा\", as the Psalms have it, and kept distinct from \"अटल प्रेम\" (m4). Hindi uses \"करुणा\" as a mass noun, so the plural \"mercies\" and the \"they\" of verse 23 come out singular.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030220011"
+          ],
+          "choice": "\"неизменная любовь\" at every level",
+          "alternatives": [
+            "\"милость\"",
+            "\"верная любовь\" (Readable)"
+          ],
+          "reason": "The poetry note's fixed word for God's hesed, his faithful covenant love (m3), at every level, Readable included, though the English Readable says \"faithful love\". The Hebrew plural is given in the singular, as the English does; the Synodal \"милость\" is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030220091"
+          ],
+          "choice": "\"сострадание\"",
+          "alternatives": [
+            "\"милосердие\""
+          ],
+          "reason": "The word is tender compassion, kept apart from hesed (m4); \"сострадание\" is used here and for the verb in verse 32, so the link holds, and the line does not run with the Synodal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3528,6 +4086,16 @@
           "L": "በየማለዳው አዲስ [ናቸው]፤ \\q ታማኝነትህ ታላቅ [ነው]።",
           "B": "በየማለዳው አዲስ ይሆናሉ፤ \\q ታማኝነትህ እንዴት ታላቅ ነው!",
           "R": "በየቀኑ ጠዋት እንደ አዲስ ይመጣሉ። \\q አንተ እንዴት ታማኝ ነህ!"
+        },
+        "hi": {
+          "L": "[वह] भोर-भोर नई [होती है]; \\q तेरी सच्चाई बड़ी [है]।",
+          "B": "वह हर भोर नई होती है; \\q तेरी विश्वासयोग्यता कितनी महान है!",
+          "R": "वह हर सुबह नई होती है। \\q तू कितना विश्वासयोग्य है!"
+        },
+        "ru": {
+          "L": "Новы [они] каждое утро; \\q велика {{deity_pronoun:твоя|Твоя}} верность.",
+          "B": "Каждое утро они новы; \\q как велика {{deity_pronoun:твоя|Твоя}} верность!",
+          "R": "Каждое утро они снова новые. \\q Как {{deity_pronoun:ты|Ты}} верен!"
         }
       },
       "decisions": [
@@ -3690,6 +4258,47 @@
           "reason": "\"ታማኝነት\" as the terms list; \"ታላቅ\" for the Hebrew \"great\", as the English. The man now speaks to God with \"አንተ\" (m2). Hebrews 10:23 (in the cross-references) calls God faithful but does not quote this verse.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030230041",
+            "o250030230042"
+          ],
+          "choice": "\"सच्चाई\" (L); \"विश्वासयोग्यता\" (B); \"विश्वासयोग्य\" (R)",
+          "alternatives": [],
+          "reason": "God's emunah is \"सच्चाई\" at Literal and \"विश्वासयोग्यता\" at Balanced and Readable, as the poetry note settles. The man now turns to speak to God (m2), with तू.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030230041"
+          ],
+          "choice": "\"верность\"",
+          "alternatives": [
+            "\"истина\""
+          ],
+          "reason": "God's firmness and reliability (m3), \"верность\" as the poetry note gives for emunah; the man now speaks to God (m2), so the pronoun takes the span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3758,6 +4367,16 @@
           "L": "ነፍሴ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ድርሻዬ [ነው]» ትላለች፤ \\q «ስለዚህ እርሱን በተስፋ እጠብቃለሁ።»",
           "B": "ለራሴ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ድርሻዬ ነው» እላለሁ፤ \\q «ስለዚህም በተስፋ እጠብቀዋለሁ።»",
           "R": "ለራሴ እንዲህ እላለሁ፦ «ያለኝ {{divine_name:እግዚአብሔር|ያህዌ}} ብቻ ነው። \\q ስለዚህ ተስፋዬን በእርሱ ላይ አደርጋለሁ።»"
+        },
+        "hi": {
+          "L": "\"मेरा भाग {{divine_name:प्रभु|याहवे}} [हैं],\" मेरा प्राण कहता है; \\q \"इसलिए मैं आशा से उनकी बाट जोहूँगा।\"",
+          "B": "\"{{divine_name:प्रभु|याहवे}} मेरा भाग हैं,\" मैं अपने आप से कहता हूँ, \\q \"इसलिए मैं आशा के साथ उनकी बाट जोहूँगा।\"",
+          "R": "मैं अपने आप से कहता हूँ, \"{{divine_name:प्रभु|याहवे}} ही मेरा सब कुछ हैं। \\q इसलिए मैं उन्हीं पर आशा रखूँगा।\""
+        },
+        "ru": {
+          "L": "«Моя доля — {{divine_name:ГОСПОДЬ|Яхве}}», — говорит моя душа, \\q «поэтому я буду надеяться на {{deity_pronoun:него|Него}}.»",
+          "B": "«{{divine_name:ГОСПОДЬ|Яхве}} — моя доля в жизни», — говорю я себе, \\q «и потому я буду с надеждой ждать {{deity_pronoun:его|Его}}.»",
+          "R": "Я говорю себе: «{{divine_name:ГОСПОДЬ|Яхве}} — это всё, что мне нужно. \\q Поэтому я буду надеяться на {{deity_pronoun:него|Него}}.»"
         }
       },
       "decisions": [
@@ -3901,6 +4520,49 @@
           "reason": "\"ድርሻ\" is the terms list's word for ḥeleq and the word of the drafted Psalms for the same confession (16:5; 73:26; 142:5); Readable says \"all I have\", with its English. The older \"ዕድል ፈንታ\" is avoided as the wording of existing Bibles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030240011",
+            "o250030240021"
+          ],
+          "choice": "\"मेरा भाग {{divine_name:प्रभु|याहवे}} [हैं]\" (L); \"... मेरा भाग हैं\" (B); \"... ही मेरा सब कुछ हैं\" (R)",
+          "alternatives": [
+            "\"मेरा हिस्सा\""
+          ],
+          "reason": "The psalmists' confession (m1) keeps the Psalms' Hindi: \"मेरा भाग {{divine_name:प्रभु|याहवे}} [हैं]\" is Psalm 119:57 Literal, and \"मेरा सब कुछ\" is how Psalm 142:5 says \"my portion\" at Balanced and Readable, which is what the English Readable \"all I have\" says here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030240011"
+          ],
+          "choice": "\"Моя доля — ГОСПОДЬ\" (Literal); \"ГОСПОДЬ — моя доля в жизни\" (Balanced); \"ГОСПОДЬ — это всё, что мне нужно\" (Readable)",
+          "alternatives": [
+            "\"удел\""
+          ],
+          "reason": "The psalmists' confession (m1), worded as Psalm 119:57 has it at each level, so the line reads the same in both books.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3967,6 +4629,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሚጠብቁት፣ \\q ለምትፈልገውም ነፍስ መልካም [ነው]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በተስፋ ለሚጠብቁት ሁሉ፣ \\q ለሚፈልጉትም ሁሉ መልካም ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እስኪሠራ ድረስ ለሚጠብቁት ሁሉ መልካም ነው፤ \\q ርዳታ ለማግኘት ወደ እርሱ ለሚመጡ ሁሉ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} अपनी बाट जोहनेवालों के लिए भले [हैं], \\q उस प्राण के लिए जो उन्हें खोजता है।",
+          "B": "{{divine_name:प्रभु|याहवे}} उन सब के लिए भले हैं जो आशा से उनकी बाट जोहते हैं, \\q हर उस व्यक्ति के लिए जो उन्हें खोजता है।",
+          "R": "{{divine_name:प्रभु|याहवे}} हर उस व्यक्ति के लिए भले हैं जो उनके कुछ करने की बाट जोहता है, \\q उन सब के लिए जो सहायता के लिए उनके पास आते हैं।"
+        },
+        "ru": {
+          "L": "Благ {{divine_name:ГОСПОДЬ|Яхве}} к ждущим {{deity_pronoun:его|Его}}, \\q к душе, ищущей {{deity_pronoun:его|Его}}.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} добр ко всем, кто с надеждой ждёт {{deity_pronoun:его|Его}}, \\q к каждому, кто ищет {{deity_pronoun:его|Его}}.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} добр ко всем, кто ждёт, когда {{deity_pronoun:он|Он}} будет действовать, \\q ко всем, кто приходит к {{deity_pronoun:нему|Нему}} за помощью."
         }
       },
       "decisions": [
@@ -4108,6 +4780,16 @@
           "L": "መጠበቅ፣ በዝምታም [መጠበቅ] መልካም [ነው]፤ \\q {{divine_name:የእግዚአብሔርን|የያህዌን}} ማዳን።",
           "B": "በዝምታ መጠበቅ መልካም ነው፤ \\q {{divine_name:የእግዚአብሔርን|የያህዌን}} ማዳን።",
           "R": "በጸጥታ መጠበቅ መልካም ነው፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} እስኪያድነን ድረስ።"
+        },
+        "hi": {
+          "L": "भला [है] कि कोई बाट जोहे, और चुपचाप, \\q {{divine_name:प्रभु|याहवे}} के उद्धार की।",
+          "B": "भला है कि चुपचाप \\q {{divine_name:प्रभु|याहवे}} के उद्धार की बाट जोहें।",
+          "R": "अच्छा है कि हम शान्त रहकर \\q बाट जोहें कि {{divine_name:प्रभु|याहवे}} हमें बचाएँ।"
+        },
+        "ru": {
+          "L": "Хорошо, когда ждут, и в молчании, \\q спасения {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Хорошо молча ждать \\q спасения от {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Хорошо спокойно ждать, \\q когда {{divine_name:ГОСПОДЬ|Яхве}} спасёт нас."
         }
       },
       "decisions": [
@@ -4222,6 +4904,16 @@
           "L": "ሰው ቀንበርን ቢሸከም መልካም [ነው]፤ \\q በወጣትነቱ።",
           "B": "ሰው ቀንበርን ቢሸከም መልካም ያደርጋል፤ \\q ገና ወጣት ሳለ።",
           "R": "ሰው ከባድ ሸክምን መሸከም ቢማር መልካም ነው፤ \\q ገና ወጣት ሳለ።"
+        },
+        "hi": {
+          "L": "पुरुष के लिए भला [है] कि वह जूआ उठाए \\q अपनी जवानी में।",
+          "B": "पुरुष के लिए अच्छा है कि वह जूआ उठाए \\q जब वह अभी जवान है।",
+          "R": "पुरुष के लिए अच्छा है कि वह कठिन बोझ उठाना सीखे \\q जब वह अभी जवान है।"
+        },
+        "ru": {
+          "L": "Хорошо человеку, когда он несёт ярмо \\q в своей юности.",
+          "B": "Хорошо человеку принять на себя ярмо, \\q пока он ещё молод.",
+          "R": "Хорошо человеку научиться нести тяжёлый груз, \\q пока он ещё молод."
         }
       },
       "decisions": [
@@ -4374,6 +5066,16 @@
           "L": "ብቻውን ይቀመጥ፤ ዝምም ይበል፤ \\q በእርሱ ላይ ጭኖታልና።",
           "B": "ብቻውን ይቀመጥ፤ ዝምም ይበል፤ \\q እርሱ በላዩ ላይ በጫነበት ጊዜ።",
           "R": "እግዚአብሔር ያንን ሸክም በላዩ ላይ ሲጭን፣ \\q ብቻውን ተቀምጦ ዝም ይበል።"
+        },
+        "hi": {
+          "L": "वह अकेला बैठे और चुप रहे, \\q क्योंकि उन्होंने [यह] उस पर रखा है।",
+          "B": "वह अलग बैठे और चुप रहे \\q जब उन्होंने यह उस पर रखा हो।",
+          "R": "जब परमेश्वर उस पर वह बोझ डालें, \\q तब उसे अकेले बैठकर चुप रहना चाहिए।"
+        },
+        "ru": {
+          "L": "Пусть сидит он одиноко и молчит, \\q потому что {{deity_pronoun:он|Он}} возложил [его] на него.",
+          "B": "Пусть сидит он в одиночестве и молчит, \\q когда {{deity_pronoun:он|Он}} возложил это на него.",
+          "R": "Когда Бог кладёт на него этот груз, \\q ему лучше сидеть одному и молчать."
         }
       },
       "decisions": [
@@ -4521,6 +5223,16 @@
           "L": "አፉን በአፈር ውስጥ ያድርግ፤ \\q ምናልባት ተስፋ ይኖር ይሆናል።",
           "B": "ፊቱን በአፈር ውስጥ ደፍቶ ይተኛ፤ \\q ገና ተስፋ ሊኖረው ይችላል።",
           "R": "ፊቱን እስከ መሬት ድረስ ዝቅ አድርጎ ይስገድ። \\q ገና ተስፋ ሊኖር ይችላል።"
+        },
+        "hi": {
+          "L": "वह अपना मुँह धूल में रखे; \\q कदाचित आशा हो।",
+          "B": "वह अपना मुँह धूल में टिकाए पड़ा रहे; \\q शायद उसके लिए अब भी आशा हो।",
+          "R": "उसे झुककर अपना मुँह ज़मीन से लगा देना चाहिए। \\q शायद अब भी आशा हो।"
+        },
+        "ru": {
+          "L": "Пусть положит он свои уста в прах, \\q может быть, есть надежда.",
+          "B": "Пусть склонится лицом в прах: \\q может быть, для него ещё есть надежда.",
+          "R": "Ему лучше поклониться, коснувшись лицом земли. \\q Может быть, надежда ещё есть."
         }
       },
       "decisions": [
@@ -4634,6 +5346,16 @@
           "L": "ለሚመታው ጉንጩን ይስጥ፤ \\q ስድብንም ይጥገብ።",
           "B": "ለሚመታው ጉንጩን ይስጥ፤ \\q ስድብንም እስኪበቃው ይቀበል።",
           "R": "ሰዎች ፊቱን በጥፊ እንዲመቱት ይፍቀድ፤ \\q የፈለጉትን ያህልም እንዲሰድቡት።"
+        },
+        "hi": {
+          "L": "वह अपने मारनेवाले की ओर [अपना] गाल कर दे; \\q वह निंदा से तृप्त हो जाए।",
+          "B": "वह अपने मारनेवाले की ओर अपना गाल कर दे \\q और भरपूर अपमान सह ले।",
+          "R": "उसे लोगों को अपने गाल पर थप्पड़ मारने देना चाहिए \\q और जितना वे चाहें, उतना अपमान सह लेना चाहिए।"
+        },
+        "ru": {
+          "L": "Пусть подставит [свою] щёку бьющему его, \\q пусть насытится поношением.",
+          "B": "Пусть подставит щёку тому, кто его бьёт, \\q и сполна примет оскорбления.",
+          "R": "Пусть позволит людям бить его по лицу \\q и оскорблять его сколько угодно."
         }
       },
       "decisions": [
@@ -4763,6 +5485,16 @@
           "L": "ለዘላለም አይደለምና \\q ጌታ የሚጥለው።",
           "B": "ጌታ ሰዎችን የሚጥለው \\q ለዘለቄታው አይደለምና።",
           "R": "ጌታ ጀርባውን የሚሰጠን \\q ለዘላለም አይደለም።"
+        },
+        "hi": {
+          "L": "क्योंकि सदा के लिए \\q प्रभु त्याग नहीं देते।",
+          "B": "क्योंकि प्रभु लोगों को \\q सदा के लिए नहीं त्यागते।",
+          "R": "प्रभु हमसे सदा के लिए \\q मुँह नहीं फेरेंगे।"
+        },
+        "ru": {
+          "L": "Ведь не навеки \\q отвергает Господь.",
+          "B": "Ведь Господь не отвергает людей \\q навсегда.",
+          "R": "Господь не отвернётся от нас \\q навсегда."
         }
       },
       "decisions": [
@@ -4891,6 +5623,16 @@
           "L": "ቢያሳዝንም ይራራልና፤ \\q እንደ ጽኑ ፍቅሩ ብዛት።",
           "B": "ሐዘንን ቢያመጣም ርኅራኄን ያሳያል፤ \\q ጽኑ ፍቅሩ እጅግ ታላቅ ነውና።",
           "R": "ሐዘንን ሊያመጣ ይችላል፤ ነገር ግን ርኅራኄንም ያሳያል፤ \\q ጽኑ ፍቅሩ እጅግ ታላቅ ነውና።"
+        },
+        "hi": {
+          "L": "क्योंकि यदि उन्होंने शोक दिया है, तो वे करुणा भी करेंगे \\q अपने अटल प्रेम की बहुतायत के अनुसार।",
+          "B": "चाहे वे शोक दें, फिर भी वे करुणा करेंगे, \\q क्योंकि उनका अटल प्रेम इतना महान है।",
+          "R": "वे दुःख दे सकते हैं, पर वे दया भी दिखाएँगे, \\q क्योंकि उनका अटल प्रेम बहुत बड़ा है।"
+        },
+        "ru": {
+          "L": "Ведь если {{deity_pronoun:он|Он}} навёл скорбь, то и сжалится \\q по множеству своей неизменной любви.",
+          "B": "Хотя {{deity_pronoun:он|Он}} и наводит скорбь, {{deity_pronoun:он|Он}} проявит сострадание, \\q так велика {{deity_pronoun:его|Его}} неизменная любовь.",
+          "R": "Он может послать горе, но {{deity_pronoun:он|Он}} и пожалеет, \\q потому что {{deity_pronoun:его|Его}} неизменная любовь так велика."
         }
       },
       "decisions": [
@@ -4996,6 +5738,46 @@
           "reason": "The verb is the one behind the mercies of verse 22 (m1); Amharic keeps the link with one root at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030320041",
+            "o250030320042"
+          ],
+          "choice": "\"करुणा करेंगे\" (L, B)",
+          "alternatives": [
+            "\"दया करेंगे\""
+          ],
+          "reason": "The verb is the root of the \"mercies\" of verse 22 (m1), so Literal and Balanced use \"करुणा\" again; Readable says \"दया\", the everyday word, as the English says \"mercy\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030320042"
+          ],
+          "choice": "\"проявит сострадание\"",
+          "alternatives": [
+            "\"помилует\""
+          ],
+          "reason": "The verb of the \"mercies\" of verse 22 (m1); Balanced keeps the same Russian word, \"сострадание\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5063,6 +5845,16 @@
           "L": "ከልቡ አያስጨንቅምና፤ \\q የሰው ልጆችንም አያሳዝንም።",
           "B": "እርሱ ሆን ብሎ መከራን አያመጣምና፤ \\q በሰው ልጆችም ላይ ሐዘንን።",
           "R": "ሰዎችን ማሠቃየት አይፈልግም፤ \\q ሊጎዳቸውም አይወድም።"
+        },
+        "hi": {
+          "L": "क्योंकि वे अपने मन से दुःख नहीं देते, \\q न {{gender:मनुष्य की सन्तान|मनुष्य के पुत्रों}} को शोकित करते हैं।",
+          "B": "क्योंकि वे अपनी इच्छा से विपत्ति नहीं लाते, \\q न {{gender:मनुष्यों|मनुष्य के पुत्रों}} पर शोक।",
+          "R": "वे लोगों को दुःख देना नहीं चाहते, \\q न उन्हें चोट पहुँचाना।"
+        },
+        "ru": {
+          "L": "Ведь не от своего сердца {{deity_pronoun:он|Он}} угнетает \\q и огорчает {{gender:детей человеческих|сынов человеческих}}.",
+          "B": "Ведь не по своему желанию {{deity_pronoun:он|Он}} наводит бедствие \\q и скорбь на {{gender:людей|сынов человеческих}}.",
+          "R": "Он не хочет, чтобы люди страдали, \\q и не хочет причинять им боль."
         }
       },
       "decisions": [
@@ -5216,6 +6008,48 @@
           "reason": "Amharic \"የሰው ልጆች\" and \"ሰዎች\" already mean human beings of both sexes (m2), so the two English wordings are one wording in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030330061",
+            "o250030330071"
+          ],
+          "choice": "\"लोगों\", with no gender span",
+          "alternatives": [
+            "{{gender:लोगों|पुरुषों}}"
+          ],
+          "reason": "Literal and Balanced carry the English gender spans, in the Psalms' form for \"the sons of man\". At Readable, where the English has \"people|men\", Hindi \"लोग\" already takes in men and women, so there is no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030330061",
+            "o250030330071"
+          ],
+          "choice": "{{gender:детей человеческих|сынов человеческих}} (Literal), {{gender:людей|сынов человеческих}} (Balanced); \"люди\" with no span (Readable)",
+          "alternatives": [
+            "a gender span at Readable as the English has"
+          ],
+          "reason": "Human beings (m2). Literal and Balanced use the Psalms forms for bene adam with the traditional wording as the alternative; Russian \"люди\" is already inclusive, so Readable needs no span, unlike the English \"people|men\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5281,6 +6115,16 @@
           "L": "ከእግሩ በታች መጨፍለቅ፣ \\q የምድሪቱን እስረኞች ሁሉ፣",
           "B": "የምድሪቱ እስረኞች ሁሉ \\q ከእግር በታች ሲደቁ፣",
           "R": "አንዳንድ ሰዎች እስረኞችን \\q ከእግራቸው በታች ይረግጣሉ።"
+        },
+        "hi": {
+          "L": "अपने पाँवों तले कुचलना \\q देश के सब बंदियों को,",
+          "B": "जब देश के सब बंदी \\q पाँवों तले कुचले जाते हैं,",
+          "R": "कुछ लोग बंदियों को \\q अपने पाँवों तले कुचलते हैं।"
+        },
+        "ru": {
+          "L": "Сокрушать под своими ногами \\q всех узников земли,",
+          "B": "Когда всех узников в стране \\q топчут ногами,",
+          "R": "Некоторые люди топчут узников \\q ногами."
         }
       },
       "decisions": [
@@ -5427,6 +6271,16 @@
           "L": "የሰውን ፍርድ ማጣመም፣ \\q በልዑሉ ፊት፣",
           "B": "ማንም ፍትሕ ሲከለከል፣ \\q በልዑሉ ፊት፣",
           "R": "አንዳንዶች የሌሎችን መብት ይነፍጋሉ፤ \\q በልዑል አምላክ ፊት እንኳ።"
+        },
+        "hi": {
+          "L": "किसी पुरुष का न्याय बिगाड़ना \\q परमप्रधान के सम्मुख,",
+          "B": "जब किसी से उसका न्याय छीना जाता है \\q परमप्रधान की उपस्थिति में,",
+          "R": "कुछ लोग दूसरों का हक़ मार लेते हैं, \\q परमप्रधान परमेश्वर के ठीक सामने।"
+        },
+        "ru": {
+          "L": "отклонять суд человека \\q пред лицом Всевышнего,",
+          "B": "когда кого-то лишают справедливости \\q перед лицом Всевышнего,",
+          "R": "Некоторые лишают других их прав \\q прямо на глазах у Всевышнего Бога."
         }
       },
       "decisions": [
@@ -5566,6 +6420,27 @@
           "reason": "As the Psalms (\"ልዑሉ\") and the Pentateuch list for El Elyon (\"ልዑል አምላክ\"); mishpat as the terms list.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030350061"
+          ],
+          "choice": "\"Всевышний\"",
+          "alternatives": [
+            "\"Вышний\""
+          ],
+          "reason": "The poetry note's form for Elyon, God as ruler over all (m2); Readable adds \"Бог\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5633,6 +6508,16 @@
           "L": "ሰውን በክርክሩ ማጣመም — \\q ጌታ [በበጎ] አያየውም።",
           "B": "ሰው በክርክሩ ሲበደል — \\q ጌታ አይደግፍም።",
           "R": "አንዳንዶች በፍርድ ቤት ሌሎችን ያጭበረብራሉ። \\q ጌታ ከዚህ አንዱንም አይቀበልም።"
+        },
+        "hi": {
+          "L": "किसी मनुष्य का मुक़दमा बिगाड़ना— \\q प्रभु [इसे भली दृष्टि से] नहीं देखते।",
+          "B": "जब किसी के मुक़दमे में उसके साथ बेईमानी होती है— \\q तो प्रभु इसे स्वीकार नहीं करते।",
+          "R": "कुछ लोग अदालत में दूसरों को ठगते हैं। \\q प्रभु इनमें से किसी बात को पसंद नहीं करते।"
+        },
+        "ru": {
+          "L": "притеснять человека в его тяжбе — \\q Господь не смотрит [на это с одобрением].",
+          "B": "когда кого-то обманывают в суде — \\q Господь этого не одобряет.",
+          "R": "Некоторые обманывают других в суде. \\q Господь ничего этого не одобряет."
         }
       },
       "decisions": [
@@ -5766,6 +6651,16 @@
           "L": "ይህ ተናግሮ የሆነለት ማን ነው፣ \\q ጌታ ያላዘዘው ከሆነ?",
           "B": "ማን ሊናገርና ሊያስፈጽም ይችላል፣ \\q ጌታ ያላዘዘው ከሆነ?",
           "R": "አንድ ነገር እንደሚሆን ተናግሮ እንዲሆን ማድረግ የሚችል ማንም የለም፤ \\q ጌታ ካላዘዘ በቀር።"
+        },
+        "hi": {
+          "L": "वह कौन [है जिसने] कहा और वह हो गया, \\q [यदि] प्रभु ने आज्ञा न दी [हो]?",
+          "B": "कौन कुछ कहकर उसे पूरा कर सकता है \\q यदि प्रभु ने उसकी आज्ञा न दी हो?",
+          "R": "कोई यह नहीं कह सकता कि क्या होगा और उसे पूरा नहीं कर सकता, \\q जब तक प्रभु ने उसकी आज्ञा न दी हो।"
+        },
+        "ru": {
+          "L": "Кто [тот, кто] сказал — и сбылось, \\q [если] Господь не повелел?",
+          "B": "Кто может сказать — и это сбудется, \\q если Господь этого не повелел?",
+          "R": "Никто не может предсказать, что случится, и сделать так, чтобы это сбылось, \\q если Господь этого не повелел."
         }
       },
       "decisions": [
@@ -5896,6 +6791,16 @@
           "L": "ከልዑሉ አፍ \\q ክፉውና መልካሙ አይወጡምን?",
           "B": "ጥፋትም መልካምም \\q ከልዑሉ አፍ አይወጡምን?",
           "R": "መጥፎ ጊዜም ጥሩ ጊዜም \\q በልዑል አምላክ ቃል አይመጡምን?"
+        },
+        "hi": {
+          "L": "क्या परमप्रधान के मुँह से \\q विपत्तियाँ और भलाई [दोनों] नहीं निकलतीं?",
+          "B": "क्या विपत्ति और भलाई दोनों \\q परमप्रधान के मुँह से नहीं निकलतीं?",
+          "R": "क्या बुरे दिन और अच्छे दिन दोनों \\q परमप्रधान परमेश्वर के वचन से नहीं आते?"
+        },
+        "ru": {
+          "L": "Не из уст ли Всевышнего \\q исходят бедствия и доброе?",
+          "B": "Разве не из уст Всевышнего \\q исходят и беда, и добро?",
+          "R": "Разве не по слову Всевышнего Бога \\q приходят и плохие, и хорошие времена?"
         }
       },
       "decisions": [
@@ -5988,6 +6893,28 @@
           "reason": "As in the English, the word is not \"o mal\", which in Portuguese would suggest moral evil (m1); \"desgraça\" is disaster.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030380051",
+            "o250030380052"
+          ],
+          "choice": "\"विपत्तियाँ\" (L); \"विपत्ति\" (B); \"बुरे दिन\" (R)",
+          "alternatives": [
+            "\"बुराई\""
+          ],
+          "reason": "The word means disaster, not moral evil (m1). Hindi \"बुराई\" would suggest wrongdoing, so the levels say \"विपत्ति\" or \"बुरे दिन\", as the English avoids \"evil\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6053,6 +6980,16 @@
           "L": "ሕያው ሰው ለምን ያጉረመርማል፣ \\q ሰው ስለ ኃጢአቱ?",
           "B": "በሕይወት ያለ ሰው ሁሉ ለምን ያጉረመርማል፣ \\q ስለ ኃጢአቱ የተቀጣ ሰው?",
           "R": "በሕይወት ያሉ ሰዎች ለምን ያጉረመርማሉ፣ \\q ስለ ኃጢአታቸው ሲቀጡ?"
+        },
+        "hi": {
+          "L": "जीवित मनुष्य क्यों कुड़कुड़ाए, \\q पुरुष अपने पापों के विषय में?",
+          "B": "कोई भी जीवित मनुष्य क्यों शिकायत करे, \\q कोई भी जिसे उसके पापों का दंड मिला हो?",
+          "R": "जो लोग अब भी जीवित हैं, वे क्यों शिकायत करें \\q जब उन्हें उनके पापों का दंड मिलता है?"
+        },
+        "ru": {
+          "L": "Зачем роптать человеку живущему, \\q мужу — за свои грехи?",
+          "B": "Зачем роптать живому человеку, \\q каждому, кто наказан за свои грехи?",
+          "R": "Зачем жаловаться людям, которые ещё живы, \\q когда их наказывают за их грехи?"
         }
       },
       "decisions": [
@@ -6121,6 +7058,25 @@
           "reason": "Balanced and Readable use inclusive words, since anyone is meant; Literal keeps 'a man' (geber).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030390051"
+          ],
+          "choice": "\"мужу\"",
+          "alternatives": [
+            "\"человеку\""
+          ],
+          "reason": "Literal keeps two words for the two Hebrew words (a human, a man); here the second is not the \"man\" of verse 1 but the ordinary word, and the line means anyone (m1), as Balanced and Readable say.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6187,6 +7143,16 @@
           "L": "መንገዳችንን እንመርምር፤ እንፈትሽም፤ \\q ወደ {{divine_name:እግዚአብሔር|ያህዌ}}ም እንመለስ።",
           "B": "አኗኗራችንን በጥንቃቄ እንመርምር፤ እንፈትነውም፤ \\q ወደ {{divine_name:እግዚአብሔር|ያህዌ}}ም እንመለስ።",
           "R": "እንዴት ስንኖር እንደ ነበር በጥንቃቄ እንመልከት፤ \\q ወደ {{divine_name:እግዚአብሔር|ያህዌ}}ም እንመለስ።"
+        },
+        "hi": {
+          "L": "आओ, हम अपने मार्गों को खोजें और [उन्हें] परखें, \\q और {{divine_name:प्रभु|याहवे}} की ओर लौटें।",
+          "B": "आओ, हम ध्यान से अपने चालचलन की जाँच करें और उसे परखें, \\q और {{divine_name:प्रभु|याहवे}} की ओर फिरें।",
+          "R": "आओ, हम ध्यान से देखें कि हम कैसे जीते आए हैं, \\q और {{divine_name:प्रभु|याहवे}} के पास लौट आएँ।"
+        },
+        "ru": {
+          "L": "Исследуем наши пути и испытаем [их], \\q и вернёмся к {{divine_name:ГОСПОДУ|Яхве}}.",
+          "B": "Вглядимся в то, как мы живём, и проверим себя, \\q и обратимся к {{divine_name:ГОСПОДУ|Яхве}}.",
+          "R": "Давайте внимательно посмотрим, как мы жили, \\q и вернёмся к {{divine_name:ГОСПОДУ|Яхве}}."
         }
       },
       "decisions": [
@@ -6416,6 +7382,16 @@
           "L": "ልባችንን ከመዳፎቻችን ጋር \\q በሰማያት ወዳለው ወደ እግዚአብሔር እናንሣ።",
           "B": "ልባችንንም እጆቻችንንም \\q በሰማይ ወዳለው ወደ እግዚአብሔር እናንሣ።",
           "R": "እጆቻችንን በሰማይ ወዳለው ወደ እግዚአብሔር እናንሣ፤ \\q ልባችንንም ደግሞ እንስጠው።"
+        },
+        "hi": {
+          "L": "आओ, हम [अपनी] हथेलियों के साथ अपना हृदय भी \\q स्वर्ग में [विराजमान] परमेश्वर की ओर उठाएँ।",
+          "B": "आओ, हम अपने हाथों के साथ अपने हृदय भी \\q स्वर्ग में परमेश्वर की ओर उठाएँ।",
+          "R": "आओ, हम स्वर्ग में परमेश्वर की ओर अपने हाथ उठाएँ \\q और अपना हृदय भी उन्हें दे दें।"
+        },
+        "ru": {
+          "L": "Поднимем наше сердце вместе с ладонями \\q к Богу на небесах.",
+          "B": "Поднимем не только руки, но и сердца \\q к Богу на небе.",
+          "R": "Давайте поднимем руки к Богу на небе \\q и отдадим {{deity_pronoun:ему|Ему}} также свои сердца."
         }
       },
       "decisions": [
@@ -6549,6 +7525,16 @@
           "L": "እኛስ ተላለፍን፤ ዐመፅንም፤ \\q አንተስ ይቅር አላልህም።",
           "B": "እኛ ኃጢአት ሠራን፤ ዐመፅንም፤ \\q አንተም ይቅር አላልህም።",
           "R": "እኛ ኃጢአት ሠራን፤ በአንተም ላይ ዐመፅን፤ \\q አንተም ይቅር አላልኸንም።"
+        },
+        "hi": {
+          "L": "जहाँ तक हमारी बात है, हमने अपराध और बलवा किया है; \\q जहाँ तक तेरी बात है, तूने क्षमा नहीं किया।",
+          "B": "हमने पाप और विद्रोह किया है, \\q और तूने क्षमा नहीं किया।",
+          "R": "हमने पाप किया है और तेरे विरुद्ध विद्रोह किया है, \\q और तूने हमें क्षमा नहीं किया।"
+        },
+        "ru": {
+          "L": "Мы — мы преступили и восстали; \\q {{deity_pronoun:ты|Ты}} — {{deity_pronoun:ты|Ты}} не простил.",
+          "B": "Мы согрешили и восстали, \\q и {{deity_pronoun:ты|Ты}} не простил.",
+          "R": "Мы грешили и восставали против {{deity_pronoun:тебя|Тебя}}, \\q и {{deity_pronoun:ты|Ты}} не простил нас."
         }
       },
       "decisions": [
@@ -6698,6 +7684,26 @@
           "reason": "The contrastive \"-ስ\" sets the two sides against each other (m1) without added words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o250030420011",
+            "o250030420041"
+          ],
+          "choice": "\"Мы — мы ... ты — ты ...\"",
+          "alternatives": [
+            "\"Мы преступили ... а ты не простил\""
+          ],
+          "reason": "The Hebrew sets the two sides against each other with emphatic pronouns (m1); Literal repeats them, as the English \"As for us ... as for you\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6764,6 +7770,16 @@
           "L": "በቁጣ ተከናነብህ፤ አሳደድኸንም፤ \\q ገደልህ፤ አልራራህም።",
           "B": "ቁጣን ለበስህ፤ አሳደህም ያዝኸን፤ \\q ገደልህ፤ አልራራህም።",
           "R": "እጅግ ተቆጣህ፤ አሳደድኸንም። \\q ገደልኸን፤ ምንም ምሕረት አላደረግህም።"
+        },
+        "hi": {
+          "L": "तूने [अपने आप को] क्रोध से ढाँप लिया और हमारा पीछा किया है; \\q तूने घात किया है, तूने तरस नहीं खाया।",
+          "B": "तूने क्रोध को ओढ़ लिया और हमें खदेड़ डाला है; \\q तूने मारा और तरस न खाया।",
+          "R": "तू इतना क्रोधित था, और तूने हमारा पीछा किया। \\q तूने हमें मार डाला और कोई दया नहीं दिखाई।"
+        },
+        "ru": {
+          "L": "Ты покрыл [себя] гневом и преследовал нас; \\q {{deity_pronoun:ты|Ты}} убивал, {{deity_pronoun:ты|Ты}} не щадил.",
+          "B": "Ты облёкся в гнев и гнался за нами; \\q {{deity_pronoun:ты|Ты}} убивал и не щадил.",
+          "R": "Ты так гневался и гнался за нами. \\q Ты убивал нас и не жалел."
         }
       },
       "decisions": [
@@ -6846,6 +7862,26 @@
           "reason": "The reflexive is in the verb, so Literal needs no bracket where the English has one.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030430011"
+          ],
+          "choice": "reflexive \"себя\", \"облёкся\" without a span",
+          "alternatives": [
+            "\"{{deity_pronoun:себя|Себя}}\""
+          ],
+          "reason": "The English has a span on \"yourself\"; Russian says it with the reflexive, which takes none.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6911,6 +7947,16 @@
           "L": "ራስህን በደመና ሸፈንህ፤ \\q ጸሎት እንዳያልፍ።",
           "B": "ራስህን በደመና ሰወርህ፤ \\q ምንም ጸሎት ሊያልፈው አይችልም።",
           "R": "ራስህን በደመና ሸፈንህ፤ \\q ጸሎታችን ወደ አንተ እንዳይደርስ።"
+        },
+        "hi": {
+          "L": "तूने अपने आप को बादल से ढाँप लिया है, \\q कि प्रार्थना पार न जा सके।",
+          "B": "तूने अपने आप को ऐसे बादल के पीछे छिपा लिया है \\q जिसके पार कोई प्रार्थना नहीं जा सकती।",
+          "R": "तूने अपने आप को बादल से ढक लिया, \\q ताकि हमारी प्रार्थनाएँ तुझ तक न पहुँच सकें।"
+        },
+        "ru": {
+          "L": "Ты покрыл себя облаком, \\q чтобы не прошла молитва.",
+          "B": "Ты скрылся за облаком, \\q сквозь которое не пройдёт ни одна молитва.",
+          "R": "Ты закрылся облаком, \\q чтобы наши молитвы не доходили до {{deity_pronoun:тебя|Тебя}}."
         }
       },
       "decisions": [
@@ -7026,6 +8072,16 @@
           "L": "ጥራጊና የተናቀ ነገር አደረግኸን \\q በሕዝቦች መካከል።",
           "B": "ቆሻሻና ጥራጊ አደረግኸን \\q በሕዝቦች መካከል።",
           "R": "እንደ ቆሻሻ አደረግኸን \\q በሌሎች ሕዝቦች ዓይን።"
+        },
+        "hi": {
+          "L": "खुरचन और कूड़ा तूने हमें बना दिया है \\q लोगों के बीच।",
+          "B": "तूने हमें मैला और कूड़ा बना दिया है \\q देश-देश के लोगों के बीच।",
+          "R": "तूने हमें कचरे जैसा बना दिया है \\q दूसरे राष्ट्रों की दृष्टि में।"
+        },
+        "ru": {
+          "L": "Отбросами и мусором {{deity_pronoun:ты|Ты}} делаешь нас \\q среди племён.",
+          "B": "Ты сделал нас грязью и мусором \\q среди племён.",
+          "R": "Ты сделал нас мусором \\q в глазах других народов."
         }
       },
       "decisions": [
@@ -7116,6 +8172,48 @@
           "reason": "Paul's \"scum of the world\" echoes this verse (m2) without quoting it; using his Amharic word lets the echo be heard, and the rest follows the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030450011",
+            "o250030450022"
+          ],
+          "choice": "\"खुरचन और कूड़ा\"",
+          "alternatives": [
+            "\"मैल और कचरा\""
+          ],
+          "reason": "Paul's words in 1 Corinthians 4:13 echo this line (m2); Literal uses the two words of that verse in this translation (\"कूड़े\", \"खुरचन\") so that the echo can be heard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030450011",
+            "o250030450022"
+          ],
+          "choice": "\"отбросы и мусор\" (Literal); \"грязь и мусор\" (Balanced); \"мусор\" (Readable)",
+          "alternatives": [
+            "\"сор и отребье\""
+          ],
+          "reason": "What is scraped off and thrown away (m1); Paul's \"the scum of the world\" in 1 Corinthians 4:13 uses other words in Greek, so no wording is copied from there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7181,6 +8279,16 @@
           "L": "በእኛ ላይ አፋቸውን ከፈቱ፣ \\q ጠላቶቻችን ሁሉ።",
           "B": "ጠላቶቻችን ሁሉ፣ እያንዳንዳቸው \\q በእኛ ላይ አፋቸውን ከፍተዋል።",
           "R": "ጠላቶቻችን ሁሉ \\q ሊያፌዙብን አፋቸውን ይከፍታሉ።"
+        },
+        "hi": {
+          "L": "उन्होंने हमारे विरुद्ध अपना मुँह खोला है, \\q हमारे सब शत्रुओं ने।",
+          "B": "हमारे शत्रुओं ने, उनमें से हर एक ने, \\q हमारे विरुद्ध अपना मुँह फाड़ा है।",
+          "R": "हमारे सब शत्रु \\q हमारा मज़ाक़ उड़ाने के लिए मुँह फाड़ते हैं।"
+        },
+        "ru": {
+          "L": "Раскрыли на нас свой рот \\q все наши враги.",
+          "B": "Наши враги, все до одного, \\q широко раскрыли на нас рот.",
+          "R": "Все наши враги \\q раскрывают рот, чтобы посмеяться над нами."
         }
       },
       "decisions": [
@@ -7336,6 +8444,16 @@
           "L": "ፍርሃትና ጉድጓድ ሆኑብን፤ \\q ጥፋትና ስብራት።",
           "B": "ድንጋጤና ጉድጓድ ደረሱብን፤ \\q ጥፋትና ውድቀት።",
           "R": "ፈርተናል፤ ተጠምደናልም፤ \\q ፈራርሰናል፤ ጠፍተናልም።"
+        },
+        "hi": {
+          "L": "आतंक और गड्ढा हमारे भाग में आए हैं, \\q उजाड़ और विनाश।",
+          "B": "ख़ौफ़ और खाई ने हमें आ घेरा है, \\q बर्बादी और विनाश।",
+          "R": "हम डरे हुए हैं और फँस गए हैं, \\q बर्बाद और नष्ट हो गए हैं।"
+        },
+        "ru": {
+          "L": "Ужас и яма стали нашими, \\q опустошение и сокрушение.",
+          "B": "Нас настигли страх и западня, \\q разорение и гибель.",
+          "R": "Мы в ужасе и в ловушке, \\q мы разорены и уничтожены."
         }
       },
       "decisions": [
@@ -7486,6 +8604,48 @@
           "reason": "The saying is also in Isaiah 24:17 and Jeremiah 48:43 (m1), not yet drafted in Amharic; \"ሽብር\" is kept for magor, \"terror on every side\" (2:22). The Hebrew sound-play cannot be kept.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030470011",
+            "o250030470021",
+            "o250030470022"
+          ],
+          "choice": "\"ख़ौफ़ और खाई\"",
+          "alternatives": [
+            "\"भय और गड्ढा\""
+          ],
+          "reason": "The Hebrew pairs two words that sound alike (m1); Balanced echoes it with \"ख़ौफ़ और खाई\" (terror and pit), as the English \"panic and the pit\" does. Literal keeps the plain \"आतंक और गड्ढा\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030470011",
+            "o250030470022"
+          ],
+          "choice": "\"ужас и яма\" (Literal); \"страх и западня\" (Balanced)",
+          "alternatives": [
+            "\"страх и яма\""
+          ],
+          "reason": "A saying of the prophets in which the two Hebrew words chime (m1); Literal keeps the pit, Balanced the trap the pit stands for.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7553,6 +8713,16 @@
           "L": "ዓይኔ የውኃ ፈሳሾችን ታወርዳለች \\q ስለ ሕዝቤ ልጅ ስብራት።",
           "B": "ከዓይኖቼ የእንባ ፈሳሾች ይወርዳሉ፤ \\q የምወደው ሕዝቤ ስለ ጠፋ።",
           "R": "ከዓይኖቼ እንባ እንደ ወንዝ ይፈስሳል፤ \\q ሕዝቤ ስለ ጠፋ።"
+        },
+        "hi": {
+          "L": "मेरी आँख से जल की धाराएँ बहती हैं \\q मेरी प्रजा की बेटी के विनाश के कारण।",
+          "B": "मेरी आँखों से आँसुओं की धाराएँ बहती हैं \\q मेरी प्यारी प्रजा के विनाश के कारण।",
+          "R": "मेरी आँखों से नदियों की तरह आँसू बहते हैं, \\q क्योंकि मेरे लोग नष्ट कर दिए गए हैं।"
+        },
+        "ru": {
+          "L": "Моё око изливается потоками воды \\q из-за сокрушения дочери моего народа.",
+          "B": "Из моих глаз текут потоки слёз \\q о гибели моего дорогого народа.",
+          "R": "Слёзы текут из моих глаз рекой, \\q потому что мой народ погиб."
         }
       },
       "decisions": [
@@ -7656,6 +8826,28 @@
           "reason": "The same phrase as 2:11 (m2) at Literal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030480071",
+            "o250030480081"
+          ],
+          "choice": "\"дочь моего народа\" (Literal); \"мой дорогой народ\" (Balanced); \"мой народ\" (Readable)",
+          "alternatives": [
+            "\"дщерь народа моего\""
+          ],
+          "reason": "The forms settled at 2:11 for the people pictured as a beloved daughter (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7722,6 +8914,16 @@
           "L": "ዓይኔ ታፈስሳለች፤ አታቋርጥምም፤ \\q ዕረፍት የለምና፣",
           "B": "ዓይኖቼ እንባ ያፈስሳሉ፤ አያቋርጡምም፤ \\q ዕረፍትም አያገኙም፤",
           "R": "እንባዬ መፍሰሱን ይቀጥላል። \\q አያቋርጥም፤"
+        },
+        "hi": {
+          "L": "मेरी आँख बहती रहती है और थमती नहीं, \\q [उसे] कोई विश्राम नहीं,",
+          "B": "मेरी आँखें आँसू बहाती हैं और रुकती नहीं; \\q उन्हें कोई चैन नहीं,",
+          "R": "मेरे आँसू बहते ही रहेंगे। \\q वे नहीं रुकेंगे"
+        },
+        "ru": {
+          "L": "Моё око изливается и не перестаёт, \\q [потому что] нет передышки,",
+          "B": "Мои глаза льют слёзы и не перестают, \\q им нет покоя,",
+          "R": "Мои слёзы будут течь. \\q Они не перестанут"
         }
       },
       "decisions": [
@@ -7849,6 +9051,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ቁልቁል እስኪመለከት፣ \\q ከሰማይም እስኪያይ ድረስ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ቁልቁል እስኪመለከት፣ \\q ከሰማይም እስኪያይ ድረስ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሰማይ ቁልቁል እስኪመለከት፣ \\q እኛንም እስኪያይ ድረስ።"
+        },
+        "hi": {
+          "L": "जब तक {{divine_name:प्रभु|याहवे}} झुककर \\q स्वर्ग से न देखें।",
+          "B": "जब तक {{divine_name:प्रभु|याहवे}} नीचे दृष्टि करके \\q स्वर्ग से न देखें।",
+          "R": "जब तक {{divine_name:प्रभु|याहवे}} स्वर्ग से नीचे झाँककर \\q हमें न देखें।"
+        },
+        "ru": {
+          "L": "пока не посмотрит вниз \\q и не увидит с небес {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "B": "пока {{divine_name:ГОСПОДЬ|Яхве}} не посмотрит вниз \\q и не увидит с небес.",
+          "R": "до тех пор, пока {{divine_name:ГОСПОДЬ|Яхве}} не посмотрит с неба \\q и не увидит нас."
         }
       },
       "decisions": [
@@ -7965,6 +9177,16 @@
           "L": "ዓይኔ ነፍሴን ታሠቃያለች \\q ከከተማዬ ሴቶች ልጆች ሁሉ የተነሣ።",
           "B": "ዓይኖቼ የሚያዩት ነፍሴን ያሳዝናል፤ \\q በከተማዬ ሴቶች ሁሉ ላይ ከደረሰው የተነሣ።",
           "R": "በማየው ነገር ልቤ ይደማል፤ \\q በከተማዬ ሴቶች ሁሉ ላይ የሚደርሰውን።"
+        },
+        "hi": {
+          "L": "मेरी आँख मेरे प्राण से कठोरता करती है \\q मेरे नगर की सब बेटियों के कारण।",
+          "B": "जो मेरी आँखें देखती हैं, वह मेरे प्राण को दुःख देता है, \\q मेरे नगर की सब स्त्रियों के कारण।",
+          "R": "जो मैं देखता हूँ, उससे मेरा मन दुखता है, \\q जो कुछ मेरे नगर की सब स्त्रियों के साथ हो रहा है।"
+        },
+        "ru": {
+          "L": "Моё око терзает мою душу \\q из-за всех дочерей моего города.",
+          "B": "То, что видят мои глаза, мучает мою душу \\q из-за всех женщин моего города.",
+          "R": "Сердце болит от того, что я вижу, \\q что происходит со всеми женщинами моего города."
         }
       },
       "decisions": [
@@ -8084,6 +9306,16 @@
           "L": "እንደ ወፍ አጥብቀው አደኑኝ፤ \\q ያለ ምክንያት ጠላቶቼ የሆኑት።",
           "B": "ጠላቶቼ ሊሆኑ ምንም ምክንያት ያልነበራቸው ሰዎች \\q እንደ ወፍ አደኑኝ።",
           "R": "ጠላቶቼ እኔን የሚጠሉበት ምንም ምክንያት አልነበራቸውም፤ \\q ነገር ግን እንደ ወፍ አደኑኝ።"
+        },
+        "hi": {
+          "L": "उन्होंने पक्षी के समान मेरा शिकार ही शिकार किया है, \\q जो अकारण मेरे शत्रु हैं।",
+          "B": "जिनके पास मेरे शत्रु होने का कोई कारण न था, \\q उन्होंने पक्षी के समान मेरा शिकार किया।",
+          "R": "मेरे शत्रुओं के पास मुझसे घृणा करने का कोई कारण न था, \\q फिर भी उन्होंने पक्षी की तरह मेरा शिकार किया।"
+        },
+        "ru": {
+          "L": "Охотясь, охотились на меня, как на птицу, \\q те, кто враги мне без причины.",
+          "B": "Те, у кого не было причин враждовать со мной, \\q выследили меня, как птицу.",
+          "R": "У моих врагов не было причин ненавидеть меня, \\q но они охотились на меня, как на птицу."
         }
       },
       "decisions": [
@@ -8141,6 +9373,26 @@
           "choice": "like a bird: taken with nets and snares",
           "alternatives": [],
           "reason": "Birds were caught with nets and traps (Psalm 124:7; Proverbs 6:5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o250030520011",
+            "o250030520021"
+          ],
+          "choice": "\"Охотясь, охотились\"",
+          "alternatives": [
+            "\"Упорно охотились\""
+          ],
+          "reason": "Literal keeps the doubled verb that stresses the chase (m2) with a participle and verb, as Russian can.",
           "uncertain": false,
           "footnote": false
         }
@@ -8210,6 +9462,16 @@
           "L": "ሕይወቴን በጉድጓድ ውስጥ አጠፉ፤ \\q ድንጋይም በላዬ ጣሉ።",
           "B": "ሕይወቴን ለማጥፋት ወደ ጉድጓድ ወረወሩኝ፤ \\q ድንጋይም በላዬ ጣሉ።",
           "R": "ሊገድሉኝ ወደ ጉድጓድ ጣሉኝ፤ \\q ድንጋይም በላዩ ገጠሙበት።"
+        },
+        "hi": {
+          "L": "उन्होंने गड्ढे में मेरे जीवन का अंत कर दिया है \\q और मुझ पर पत्थर डाल दिया है।",
+          "B": "उन्होंने मेरा जीवन मिटाने के लिए मुझे गड्ढे में धकेल दिया \\q और मुझ पर पत्थर रख दिया।",
+          "R": "उन्होंने मुझे मार डालने के लिए एक गड्ढे में फेंक दिया \\q और उसके ऊपर पत्थर रख दिया।"
+        },
+        "ru": {
+          "L": "Они пресекли мою жизнь в яме \\q и бросили на меня камень.",
+          "B": "Они столкнули меня в яму, чтобы покончить со мной, \\q и привалили сверху камень.",
+          "R": "Они бросили меня в яму, чтобы убить, \\q и положили сверху камень."
         }
       },
       "decisions": [
@@ -8308,6 +9570,48 @@
           "reason": "The pit is a cistern and a picture of the grave (m2, m3); \"ጉድጓድ\" holds both. The Amharic Jeremiah (38:6, Jeremiah in the cistern) is not yet drafted, so the two may need harmonising.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030530022"
+          ],
+          "choice": "\"गड्ढा\" (every level)",
+          "alternatives": [
+            "\"क़ब्र\" (B, R), as the Psalms"
+          ],
+          "reason": "Here the pit is a real cistern as well as a picture of the grave (m2, m3), so every level keeps \"गड्ढा\", where the Psalms say \"क़ब्र\" at Balanced and Readable for the Pit as death. The same in verse 55.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030530022"
+          ],
+          "choice": "\"яма\" at every level",
+          "alternatives": [
+            "\"ров\"",
+            "\"могила\""
+          ],
+          "reason": "A cistern and a picture of the grave (m2, m3); \"яма\" holds both, and is the Psalms' Literal word for the Pit. Here the literal pit is meant, so Balanced and Readable keep it too.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8372,6 +9676,16 @@
           "L": "ውኆች በራሴ ላይ ፈሰሱ፤ \\q እኔም አልኩ፦ «ተቆርጫለሁ።»",
           "B": "ውኃው ከራሴ በላይ ወጣ፤ \\q እኔም አልኩ፦ «ተቆርጫለሁ!»",
           "R": "ውኃ ራሴን ሸፈነው፤ \\q እኔም አሰብኩ፦ «ይህ የእኔ ፍጻሜ ነው!»"
+        },
+        "hi": {
+          "L": "जल मेरे सिर के ऊपर से बह गया; \\q मैंने कहा, \"मैं कट गया।\"",
+          "B": "पानी मेरे सिर के ऊपर चढ़ आया, \\q और मैंने कहा, \"मैं मिट गया!\"",
+          "R": "पानी ने मेरा सिर ढक लिया, \\q और मैंने सोचा, \"अब मेरा अंत आ गया!\""
+        },
+        "ru": {
+          "L": "Воды сомкнулись над моей головой; \\q я сказал: «Я отрезан.»",
+          "B": "Воды поднялись над моей головой, \\q и я сказал: «Я погиб!»",
+          "R": "Вода покрыла меня с головой, \\q и я подумал: «Это мой конец!»"
         }
       },
       "decisions": [
@@ -8485,6 +9799,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስምህን ጠራሁ \\q ከጥልቁ ጉድጓድ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስምህን ጠራሁ \\q ከጉድጓዱ ጥልቅ ውስጥ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ ጮኽኩ \\q ከጉድጓዱ ጥልቅ ውስጥ ሆኜ።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मैंने तेरा नाम पुकारा, \\q सबसे निचले गड्ढे में से।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मैंने तेरा नाम पुकारा, \\q गड्ढे की तली से।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मैंने तुझे पुकारा, \\q गड्ढे की गहराई में से।"
+        },
+        "ru": {
+          "L": "Я призвал {{deity_pronoun:твоё|Твоё}} имя, {{divine_name:ГОСПОДИ|Яхве}}, \\q из глубочайшей ямы.",
+          "B": "Я призвал {{deity_pronoun:твоё|Твоё}} имя, {{divine_name:ГОСПОДИ|Яхве}}, \\q со дна ямы.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, я воззвал к {{deity_pronoun:тебе|Тебе}} \\q из самой глубины ямы."
         }
       },
       "decisions": [
@@ -8563,6 +9887,27 @@
           "reason": "Readable says 'called out to you' for 'called on your name' (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030550011"
+          ],
+          "choice": "past tense \"призвал\", \"воззвал\"",
+          "alternatives": [
+            "present \"призываю\""
+          ],
+          "reason": "Verses 55-61 tell the rescue as past (m2), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8633,6 +9978,16 @@
           "L": "ድምፄን ሰማህ፦ \\q «ከ[እፎይታ] ልመናዬ፣ ከርዳታ ጩኸቴ ጆሮህን አትሰውር!»",
           "B": "ድምፄን ሰማህ፦ \\q «የእፎይታ ልመናዬን፣ የርዳታ ጩኸቴን ላለመስማት ጆሮህን አትድፈን!»",
           "R": "ስለምንህ ሰማኸኝ፦ \\q «ርዳታ ለማግኘት ስጮኽ መስማትህን አታቋርጥ!»"
+        },
+        "hi": {
+          "L": "तूने मेरी आवाज़ सुनी: \\q \"मेरी राहत [की बिनती] से, मेरी सहायता की पुकार से अपना कान न छिपा!\"",
+          "B": "तूने मेरी आवाज़ सुनी: \\q \"राहत के लिए मेरी बिनती की ओर से, सहायता के लिए मेरी पुकार की ओर से अपने कान बंद न कर!\"",
+          "R": "जब मैंने गिड़गिड़ाकर कहा, तब तूने मेरी सुनी, \\q \"जब मैं सहायता के लिए पुकारूँ, तब सुनना बंद न कर!\""
+        },
+        "ru": {
+          "L": "Ты услышал мой голос: \\q «Не закрывай своего уха от моей [мольбы об] облегчении, от моего вопля о помощи!»",
+          "B": "Ты услышал мой голос: \\q «Не закрывай ушей от моей мольбы об избавлении, от моего крика о помощи!»",
+          "R": "Ты услышал меня, когда я умолял: \\q «Не переставай слушать, когда я кричу о помощи!»"
         }
       },
       "decisions": [
@@ -8765,6 +10120,16 @@
           "L": "በጠራሁህ ቀን ቀረብህ፤ \\q እንዲህም አልህ፦ «አትፍራ!»",
           "B": "ወደ አንተ በጠራሁበት ቀን ቀረብህ፤ \\q እንዲህም አልኸኝ፦ «አትፍራ!»",
           "R": "ወደ አንተ በጠራሁ ጊዜ ወደ እኔ ቀረብህ። \\q እንዲህም አልኸኝ፦ «አትፍራ!»"
+        },
+        "hi": {
+          "L": "जिस दिन मैंने तुझे पुकारा, तू निकट आया; \\q तूने कहा, \"मत डर!\"",
+          "B": "जिस दिन मैंने तुझे पुकारा, तू पास आया \\q और कहा, \"मत डर!\"",
+          "R": "जब मैंने तुझे पुकारा, तब तू मेरे पास आया। \\q तूने कहा, \"मत डर!\""
+        },
+        "ru": {
+          "L": "Ты приблизился в день, [когда] я призвал {{deity_pronoun:тебя|Тебя}}; \\q {{deity_pronoun:ты|Ты}} сказал: «Не бойся!»",
+          "B": "В тот день, когда я воззвал к {{deity_pronoun:тебе|Тебе}}, {{deity_pronoun:ты|Ты}} приблизился \\q и сказал: «Не бойся!»",
+          "R": "Когда я позвал {{deity_pronoun:тебя|Тебя}}, {{deity_pronoun:ты|Ты}} подошёл ко мне. \\q Ты сказал: «Не бойся!»"
         }
       },
       "decisions": [
@@ -8902,6 +10267,16 @@
           "L": "ጌታ ሆይ፣ የነፍሴን ክርክር ተሟገትህ፤ \\q ሕይወቴን ቤዠህ።",
           "B": "ጌታ ሆይ፣ ስለ እኔ ተሟገትህልኝ፤ \\q ሕይወቴንም ቤዠህ።",
           "R": "ጌታ ሆይ፣ በፍርድ ቤት ቆመህ ተከራከርህልኝ። \\q ሕይወቴን አዳንህ።"
+        },
+        "hi": {
+          "L": "हे प्रभु, तूने मेरे प्राण के मुक़दमे लड़े हैं; \\q तूने मेरे जीवन को छुड़ाया है।",
+          "B": "हे प्रभु, तूने मेरी ओर से मेरा मुक़दमा लड़ा है \\q और मेरे जीवन को छुड़ा लिया है।",
+          "R": "हे प्रभु, तूने अदालत में मेरा पक्ष लिया है। \\q तूने मेरी जान बचाई है।"
+        },
+        "ru": {
+          "L": "Ты вёл, Господь, тяжбы моей души, \\q {{deity_pronoun:ты|Ты}} искупил мою жизнь.",
+          "B": "Господи, {{deity_pronoun:ты|Ты}} защитил моё дело \\q и выкупил мою жизнь.",
+          "R": "Господи, {{deity_pronoun:ты|Ты}} заступился за меня на суде. \\q Ты спас мою жизнь."
         }
       },
       "decisions": [
@@ -9040,6 +10415,69 @@
           "reason": "The Pentateuch list's verb for gaʾal, the act of the next of kin (m3); Readable says \"rescued\", with its English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030580051"
+          ],
+          "choice": "\"छुड़ाया\" (L, B); \"बचाई\" (R)",
+          "alternatives": [
+            "\"मोल लेकर छुड़ाया\""
+          ],
+          "reason": "The verb is the next of kin's act of setting free (m3); here the picture is a legal defender, not a payment, so Literal and Balanced say \"छुड़ाना\" and Readable \"बचाना\", as the English says \"rescued\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030580051"
+          ],
+          "choice": "\"искупил\" (Literal); \"выкупил\" (Balanced); \"спас\" (Readable)",
+          "alternatives": [
+            "\"избавил\""
+          ],
+          "reason": "God acts as the man's next of kin who sets him free (m3); Literal and Balanced keep the buying back, Readable says rescued, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030580021"
+          ],
+          "choice": "\"Господь\" (Literal); vocative \"Господи\" (Balanced, Readable)",
+          "alternatives": [
+            "\"Господи\" at every level"
+          ],
+          "reason": "Adonai addressed, as the Psalms forms: \"Господь\" at Literal, \"Господи\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9105,6 +10543,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የተበደልኩትን አይተሃል፤ \\q ፍርዴን ፍረድ!",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እንዴት እንደ ተበደልኩ አይተሃል፤ \\q ለጉዳዬ ፍርድ ስጥ!",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እንዴት እንደ ተበደልኩ አይተሃል። \\q አሁን ጉዳዬን ፍረድ፤ ነገሩንም አስተካክል!"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, तूने मेरे साथ हुआ अन्याय देखा है; \\q मेरा न्याय कर!",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, तूने देखा है कि मेरे साथ कैसा अन्याय हुआ है; \\q मेरे मुक़दमे का फ़ैसला कर!",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, तूने देखा है कि मेरे साथ कैसा अन्याय हुआ है। \\q अब मेरा न्याय कर और सब कुछ ठीक कर दे!"
+        },
+        "ru": {
+          "L": "Ты видел, {{divine_name:ГОСПОДИ|Яхве}}, причинённую мне неправду; \\q рассуди моё дело!",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} видел, как со мной поступили несправедливо; \\q вынеси решение по моему делу!",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} видел, как несправедливо со мной обошлись. \\q Теперь рассуди моё дело и восстанови справедливость!"
         }
       },
       "decisions": [
@@ -9219,6 +10667,16 @@
           "L": "በቀላቸውን ሁሉ አየህ፤ \\q በእኔ ላይ ያሰቡትን ሁሉ።",
           "B": "ቂማቸውን ሁሉ አየህ፤ \\q በእኔ ላይ የሸረቡትን ሴራ ሁሉ።",
           "R": "እኔን ለመበቀል እንዴት እንደሚፈልጉ አየህ፤ \\q ሊጎዱኝ ያቀዱትንም ሁሉ።"
+        },
+        "hi": {
+          "L": "तूने उनका सारा पलटा लेना देखा है, \\q मेरे विरुद्ध उनकी सब युक्तियाँ।",
+          "B": "तूने उनका सारा द्वेष देखा है, \\q मेरे विरुद्ध उनके सब षड्यंत्र।",
+          "R": "तूने देखा है कि वे मुझसे कैसे बदला लेना चाहते हैं, \\q और मुझे हानि पहुँचाने की उनकी सब योजनाएँ।"
+        },
+        "ru": {
+          "L": "Ты видел всю их мстительность, \\q все их замыслы против меня.",
+          "B": "Ты видел всю их злобу, \\q все их козни против меня.",
+          "R": "Ты видел, как они хотят отомстить мне, \\q и все их планы навредить мне."
         }
       },
       "decisions": [
@@ -9315,6 +10773,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስድባቸውን ሰማህ፤ \\q በእኔ ላይ ያሰቡትን ሁሉ፣",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስድባቸውን ሰማህ፤ \\q በእኔ ላይ የሸረቡትን ሴራ ሁሉ፣",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስድባቸውን ሰምተሃል፤ \\q በእኔ ላይ ያቀዱትንም ሁሉ።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, तूने उनकी निंदा सुनी है, \\q मेरे विरुद्ध उनकी सब युक्तियाँ,",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, तूने उनके ताने सुने हैं, \\q मेरे विरुद्ध उनके सब षड्यंत्र,",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, तूने उनके ताने सुने हैं \\q और मेरे विरुद्ध उनकी सब योजनाएँ भी।"
+        },
+        "ru": {
+          "L": "Ты слышал их поношение, {{divine_name:ГОСПОДИ|Яхве}}, \\q все их замыслы против меня,",
+          "B": "Ты слышал их оскорбления, {{divine_name:ГОСПОДИ|Яхве}}, \\q все их козни против меня,",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} слышал их оскорбления \\q и все их планы против меня."
         }
       },
       "decisions": [
@@ -9445,6 +10913,16 @@
           "L": "በእኔ ላይ የተነሡትን ሰዎች ከንፈር፣ \\q ቀኑንም ሁሉ በእኔ ላይ ማጉረምረማቸውን።",
           "B": "የሚያጠቁኝ የሚናገሩትን፣ \\q ቀኑንም ሙሉ በእኔ ላይ እንዴት እንደሚያንሾካሹኩ።",
           "R": "የሚያጠቁኝ የሚናገሩትን ሰምተሃል፤ \\q ቀኑን ሙሉ ስለ እኔ እንዴት እንደሚያንሾካሹኩ።"
+        },
+        "hi": {
+          "L": "मेरे विरुद्ध उठनेवालों के होंठ, \\q और दिन भर मेरे विरुद्ध उनकी फुसफुसाहट।",
+          "B": "मेरे आक्रमणकारी क्या कहते हैं, \\q और दिन भर मेरे विरुद्ध कैसे कानाफूसी करते हैं।",
+          "R": "तूने सुना है कि मुझ पर हमला करनेवाले क्या कहते हैं \\q और सारा दिन मेरे बारे में कैसे कानाफूसी करते हैं।"
+        },
+        "ru": {
+          "L": "уста восстающих на меня \\q и их шёпот против меня весь день.",
+          "B": "что говорят нападающие на меня \\q и как они шепчутся против меня весь день.",
+          "R": "Ты слышал, что говорят мои враги \\q и как они весь день шепчутся обо мне."
         }
       },
       "decisions": [
@@ -9560,6 +11038,16 @@
           "L": "መቀመጣቸውንና መነሣታቸውን — ተመልከት! \\q እኔ የመዘበቻ ዘፈናቸው [ነኝ]።",
           "B": "ቢቀመጡም ቢነሡም ተመልከታቸው፤ \\q እኔ በዘፈን የሚያላግጡብኝ ነኝ።",
           "R": "ተመልከታቸው! ቢቀመጡም ቢቆሙም፣ \\q እኔን የሚያሾፉ ዘፈኖችን ይዘፍናሉ።"
+        },
+        "hi": {
+          "L": "उनका बैठना और उनका उठना—देख! \\q मैं उनका ठट्ठे का गीत [हूँ]।",
+          "B": "उन्हें देख, चाहे वे बैठें या उठें: \\q मैं वह गीत हूँ जिससे वे मेरा ठट्ठा करते हैं।",
+          "R": "उन्हें देख! चाहे वे बैठे हों या खड़े, \\q वे मेरा मज़ाक़ उड़ाने के लिए गीत गाते हैं।"
+        },
+        "ru": {
+          "L": "Их сидение и их вставание — смотри! \\q Я — их насмешливая песня.",
+          "B": "Посмотри на них, сидят ли они или встают: \\q я — песня, которой они надо мной насмехаются.",
+          "R": "Посмотри на них! Сидят они или стоят, \\q они поют песни, чтобы посмеяться надо мной."
         }
       },
       "decisions": [
@@ -9675,6 +11163,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ብድራታቸውን መልስባቸው፤ \\q እንደ እጆቻቸው ሥራ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የሚገባቸውን ክፈላቸው፤ \\q እጆቻቸው ስለ ሠሩት ሥራ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ብድራታቸውን ክፈላቸው፤ \\q ስላደረጉት ክፉ ነገር ሁሉ።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, उन्हें [उनका] बदला लौटा दे, \\q उनके हाथों के काम के अनुसार।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, जैसा वे योग्य हैं, वैसा उन्हें बदला दे, \\q जो उनके हाथों ने किया है उसके लिए।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, उन्हें बदला दे \\q उन बुरे कामों के लिए जो उन्होंने किए हैं।"
+        },
+        "ru": {
+          "L": "Воздай им [их] возмездие, {{divine_name:ГОСПОДИ|Яхве}}, \\q по делу их рук.",
+          "B": "Воздай им, {{divine_name:ГОСПОДИ|Яхве}}, по заслугам, \\q за то, что сделали их руки.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, отплати им \\q за всё зло, которое они сделали."
         }
       },
       "decisions": [
@@ -9790,6 +11288,45 @@
           "reason": "The same Hebrew (m3), the same Amharic. 2 Timothy 4:14 (in the cross-references) echoes the thought without quoting this verse.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030640052",
+            "o250030640061"
+          ],
+          "choice": "\"उनके हाथों के काम के अनुसार\"",
+          "alternatives": [],
+          "reason": "The words are those of Psalm 28:4 (m3), and Literal keeps that psalm's Hindi wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030640011"
+          ],
+          "choice": "imperative \"Воздай\", \"отплати\"",
+          "alternatives": [
+            "future \"Ты воздашь\""
+          ],
+          "reason": "The verb is future in form but read as a plea (m2), as all three English levels read it; verses 65-66 likewise.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9856,6 +11393,16 @@
           "L": "የልብን መሸፈኛ ስጣቸው፤ \\q እርግማንህ በእነርሱ ላይ [ይሁን]!",
           "B": "የተሸፈነና የደነደነ ልብ ስጣቸው፤ \\q እርግማንህ በእነርሱ ላይ ይሁን!",
           "R": "እልከኞችና ዕውሮች አድርጋቸው። \\q እርግማንህን በላያቸው አውርድ!"
+        },
+        "hi": {
+          "L": "उन्हें मन का परदा दे; \\q तेरा शाप उन पर [हो]!",
+          "B": "उनके मन पर परदा डाल और उसे कठोर कर दे; \\q तेरा शाप उन पर पड़े!",
+          "R": "उन्हें हठी और अंधा बना दे। \\q उन पर अपना शाप डाल!"
+        },
+        "ru": {
+          "L": "Дай им покрывало на сердце; \\q {{deity_pronoun:твоё|Твоё}} проклятие — на них!",
+          "B": "Дай им сердце, покрытое пеленой и ожесточённое; \\q пусть {{deity_pronoun:твоё|Твоё}} проклятие будет на них!",
+          "R": "Сделай их упрямыми и слепыми. \\q Наложи на них своё проклятие!"
         }
       },
       "decisions": [
@@ -9974,6 +11521,16 @@
           "L": "በቁጣ አሳድዳቸው፤ አጥፋቸውም \\q {{divine_name:ከእግዚአብሔር|ከያህዌ}} ሰማያት በታች።",
           "B": "በቁጣ አሳድደህ ያዛቸው፤ አጥፋቸውም \\q {{divine_name:ከእግዚአብሔር|ከያህዌ}} ሰማያት በታች።",
           "R": "በቁጣህ አሳድደህ አጥፋቸው። \\q {{divine_name:ከእግዚአብሔር|ከያህዌ}} ሰማይ በታች ደምስሳቸው።"
+        },
+        "hi": {
+          "L": "क्रोध में [उनका] पीछा कर और उन्हें नष्ट कर दे \\q {{divine_name:प्रभु|याहवे}} के आकाश के नीचे से।",
+          "B": "क्रोध में उन्हें खदेड़ और उन्हें मिटा दे \\q {{divine_name:प्रभु|याहवे}} के आकाश के नीचे से।",
+          "R": "अपने क्रोध में उनका पीछा कर और उन्हें नष्ट कर दे। \\q {{divine_name:प्रभु|याहवे}} के आकाश के नीचे से उन्हें मिटा डाल।"
+        },
+        "ru": {
+          "L": "Преследуй [их] во гневе и истреби их \\q из-под небес {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Гонись за ними во гневе и истреби их \\q из-под небес {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Гонись за ними в своём гневе и уничтожь их. \\q Сотри их с земли под небом {{divine_name:ГОСПОДА|Яхве}}."
         }
       },
       "decisions": [
