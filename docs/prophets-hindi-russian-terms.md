@@ -102,4 +102,30 @@ Testament form. The main quotations: Isaiah 6:9-10; 7:14; 8:14; 9:1-2; 11:10;
 
 ## Settled while drafting
 
-(Recorded here as the blocks are harmonised.)
+Recorded as the blocks are harmonised.
+
+- **Torah** in the Prophets (God's teaching through the prophets): Hindi
+  शिक्षा at every level; Russian наставление at every level. Where the New
+  Testament quotes a line with "law" (Jeremiah 31:33 in Hebrews 8:10), its
+  word is kept there, with a decision.
+- **Woe** at Readable, Russian: «Беда ждёт тех, кто…».
+- **The Servant** (Isaiah 42-53): Hindi मेरा दास, God addressing him with तुम
+  (2 Corinthians 6:2 quotes 49:8 so); Russian мой раб, but мой слуга inside
+  42:1-4, which Matthew 12:18-21 quotes.
+- **Redeemer** (*goʾel*): Hindi छुटकारा दिलानेवाला (L, B), छुड़ानेवाला (R);
+  Russian Искупитель.
+- **Mighty One of Jacob**: Hindi याकूब का सामर्थी (Genesis 49:24); Russian
+  Сильный Иаковлев (Genesis 49:24, Psalm 132).
+- **"All flesh"**: Hindi सब देहधारी (L, as 1 Peter 1:24), सारी मनुष्य जाति (B).
+- **Massa headings**, Hindi: X के विषय में भारी वचन (L), X के विषय में संदेश (B),
+  यह X के बारे में एक संदेश है (R).
+- **Zion and Jerusalem pictured as a woman** take feminine forms in both
+  languages (Russian too, against the grammatical gender), as Lamentations.
+- **Hesed as Israel's loyalty to God** (Hosea 4:1, 6:4, 6:6, 10:12, 12:7),
+  not kindness between people: Hindi अटल प्रेम (L, B), सच्चा प्रेम (R);
+  Russian неизменная любовь (L), преданная любовь (B, R). Hosea 6:6 keeps
+  Matthew 9:13's frame with a footnoted decision.
+- **Isaiah 7:14**: युवती / девушка, see the Isaiah entry above.
+- **Daniel**: "peoples, nations and languages" in Russian follows the poetry
+  note's rule (племена, народы и языки); "the Ancient of Days" दिनों के
+  प्राचीन / Ветхий днями (L, B).
