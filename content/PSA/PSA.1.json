@@ -84,6 +84,11 @@
           "L": "Блажен {{gender:человек|муж}}, который не ходит по совету нечестивых, \\q и на пути грешников не стоит, \\q и на месте насмешников не сидит!",
           "B": "Блажен тот, кто не следует советам нечестивых, \\q не стоит на пути, которым идут грешники, \\q не сидит там, где собираются насмешники!",
           "R": "Счастлив человек, который не слушается советов злых людей, \\q не стоит на одной дороге с грешниками \\q и не садится рядом с теми, кто насмехается."
+        },
+        "uk": {
+          "L": "{{gender:Блаженна людина|Блаженний чоловік}}, що не ходить за порадою нечестивих, \\q і на шляху грішників не стоїть, \\q і на місці насмішників не сидить!",
+          "B": "{{gender:Блаженна та людина|Блаженний той чоловік}}, що не живе за порадами нечестивих, \\q не зупиняється на стежці, якою ходять грішники, \\q і не сідає там, де збираються насмішники!",
+          "R": "Справді добре живеться тій людині, що не слухає порад злих людей, \\q не стоїть на дорозі разом із грішниками \\q і не сідає з тими, хто насміхається."
         }
       },
       "decisions": [
@@ -697,6 +702,48 @@
           "reason": "The counsel is advice and plans (m4), not a council meeting, so Russian says \"по совету\", \"советам\". \"Нечестивые\" (L, B) and \"злые люди\" (R) are the Psalms' fixed words for the wicked. \"Путь\" is the Psalms' word for a way of life at Literal and Balanced (1:6); Readable says \"дорога\" here and \"жизнь\" in 1:6, as the English does. The seat of mockers is \"место насмешников\", where mockers gather.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010071"
+          ],
+          "choice": "\"нечестиві\" (L, B), \"злі люди\" (R) for the wicked, through the book",
+          "alternatives": [
+            "\"безбожні\"",
+            "\"грішні\""
+          ],
+          "reason": "\"Нечестиві\" names people who live with no regard for God, as the Hebrew does; \"безбожні\" now suggests unbelief as an opinion. Readable says it plainly, as the English \"wicked people\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010011"
+          ],
+          "choice": "\"Блаженна людина\" (L, B); \"Справді добре живеться\" (R)",
+          "alternatives": [
+            "\"Щаслива людина\""
+          ],
+          "reason": "The cry of how well someone fares is \"блаженний\" at L and B, the word of the Beatitudes in the Ukrainian Gospels; Readable says it in everyday words, as the English does. The gender setting chooses \"людина\" or \"чоловік\", with the agreeing adjective inside the span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -779,6 +826,11 @@
           "L": "Но в Законе {{divine_name:ГОСПОДА|Яхве}} — его отрада, \\q и {{deity_pronoun:его|Его}} Закон он шепчет [про себя] днём и ночью.",
           "B": "Напротив, Закон {{divine_name:ГОСПОДА|Яхве}} — его радость, \\q и он тихо повторяет его про себя днём и ночью.",
           "R": "Нет, этот человек любит наставление {{divine_name:ГОСПОДА|Яхве}}, повторяет его и размышляет о нём днём и ночью."
+        },
+        "uk": {
+          "L": "Але в настанові {{divine_name:ГОСПОДА|Ягве}} — {{gender:її|його}} втіха, \\q і над {{deity_pronoun:його|Його}} настановою {{gender:вона|він}} шепоче вдень і вночі.",
+          "B": "Навпаки, настанова {{divine_name:ГОСПОДА|Ягве}} — {{gender:її|його}} радість, \\q і {{gender:вона|він}} стиха повторює її собі вдень і вночі.",
+          "R": "Навпаки, ця людина любить навчання {{divine_name:ГОСПОДА|Ягве}} і повторює його, роздумуючи над ним вдень і вночі."
         }
       },
       "decisions": [
@@ -1260,6 +1312,50 @@
           "reason": "The verb is about words said under the breath (m2); \"размышляет\" alone would make it silent thought. Readable keeps both the repeating and the thinking, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010020041"
+          ],
+          "choice": "\"ГОСПОДЬ\" (default) and \"Ягве\" (alternative), inflected inside each option of the divine_name span, for the divine name through the book",
+          "alternatives": [
+            "\"Яхве\"",
+            "\"Єгова\""
+          ],
+          "reason": "The capitals mirror the English \"the LORD\" and keep the name apart from Adonai, \"Господь\"; the setting shows the name itself as \"Ягве\", with г for the Hebrew h as Ukrainian transcribes it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063"
+          ],
+          "choice": "\"настанова\" (L, B), \"навчання\" (R) for the LORD's torah, through the book",
+          "alternatives": [
+            "\"Закон\""
+          ],
+          "reason": "The English reads torah here as instruction, not a legal code; \"Закон\" would suggest the code of Moses alone. Psalm 119 keeps the same word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1352,6 +1448,11 @@
           "L": "И он — как дерево, пересаженное к протокам вод, \\q что даёт свой плод в своё время, \\q и листва его не увядает; \\q и всё, что он делает, удаётся.",
           "B": "Такой человек — как дерево, высаженное у водных каналов, \\q которое приносит плод, когда приходит его пора, \\q и листья которого никогда не засыхают. \\q Всё, что он делает, ему удаётся.",
           "R": "Такой человек — как дерево, посаженное у ручьёв. \\q Оно даёт плоды в нужное время, \\q и его листья не сохнут. \\q Всё, что этот человек делает, получается хорошо."
+        },
+        "uk": {
+          "L": "І {{gender:вона|він}} як дерево, пересаджене над потоками води, \\q що дає свій плід своєї пори, \\q і листя його не вʼяне; \\q і все, що {{gender:вона|він}} робить, вдається.",
+          "B": "{{gender:Вона|Він}} — як дерево, посаджене біля водних потоків, \\q що родить плід, коли настає його пора, \\q і чиє листя ніколи не всихає. \\q Усе, що {{gender:вона|він}} робить, має добрий кінець.",
+          "R": "Ця людина — як дерево, посаджене біля струмків. \\q Воно дає плоди вчасно, \\q і листя його не засихає. \\q Усе, що робить ця людина, вдається."
         }
       },
       "decisions": [
@@ -1619,6 +1720,11 @@
           "L": "Не таковы нечестивые, \\q но [они] — как мякина, которую развевает ветер.",
           "B": "Нечестивые совсем не такие. \\q Они — как мякина, которую разносит ветер.",
           "R": "Злые люди совсем не такие. \\q Они как сухая шелуха от зерна, которую уносит ветер."
+        },
+        "uk": {
+          "L": "Не так нечестиві, \\q а [вони] як полова, яку розвіює вітер.",
+          "B": "Нечестиві зовсім не такі. \\q Вони — як полова, яку розносить вітер.",
+          "R": "Злі люди зовсім не такі. \\q Вони як суха лушпина зерна, яку здуває вітер."
         }
       },
       "decisions": [
@@ -1895,6 +2001,11 @@
           "L": "Поэтому не поднимутся нечестивые на суде, \\q ни грешники — в общине праведных.",
           "B": "Вот почему нечестивые не устоят, когда придёт суд, \\q и грешникам не будет места в общине праведных.",
           "R": "Поэтому, когда Бог будет судить, злые люди не смогут устоять. \\q Грешникам не будет места среди тех, кто поступает правильно."
+        },
+        "uk": {
+          "L": "Тому не встоять нечестиві на суді, \\q ані грішники в громаді праведних.",
+          "B": "Ось чому нечестиві не встоять, коли настане суд, \\q і грішникам не буде місця в громаді праведних.",
+          "R": "Тож коли Бог судитиме, злі люди не встоять. \\q Грішникам не буде місця серед тих, хто чинить правильно."
         }
       },
       "decisions": [
@@ -2063,6 +2174,27 @@
           "reason": "The word (edah) is the gathered community of God's people (m2), \"община\" as in the Pentateuch; \"собрание\" is kept for qahal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010050091"
+          ],
+          "choice": "\"праведні\" (L, B), \"ті, хто чинить правильно\" (R) for the righteous, through the book",
+          "alternatives": [
+            "\"справедливі\""
+          ],
+          "reason": "\"Праведний\" is the Bible's word for one who lives rightly before God; Readable says what such people do, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2139,6 +2271,11 @@
           "L": "Ведь {{divine_name:ГОСПОДЬ|Яхве}} [есть] знающий путь праведных, \\q а путь нечестивых пропадёт.",
           "B": "Ведь {{divine_name:ГОСПОДЬ|Яхве}} знает путь праведных и бережёт его, \\q а путь нечестивых ведёт к гибели.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} хранит жизнь тех, кто поступает правильно. \\q А жизнь злых людей закончится гибелью."
+        },
+        "uk": {
+          "L": "Бо {{divine_name:ГОСПОДЬ|Ягве}} знає дорогу праведних, \\q а дорога нечестивих загине.",
+          "B": "Бо {{divine_name:ГОСПОДЬ|Ягве}} знає шлях праведних і дбає про нього, \\q а шлях нечестивих веде до загибелі.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} пильнує життя тих, хто чинить правильно. \\q А життя злих людей закінчиться загибеллю."
         }
       },
       "decisions": [
