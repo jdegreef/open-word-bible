@@ -78,6 +78,11 @@
           "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: «Сойди в дом царя Иуды и скажи там это слово,",
           "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: «Сойди во дворец царя Иуды и передай там это слово.",
           "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: «Сойди во дворец, где живёт царь Иуды, и передай там это слово."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はこう言われる。「ユダの王の家に下って行き、そこでこの言葉を語りなさい。",
+          "B": "{{divine_name:主|ヤハウェ}}はこう言われる。「ユダの王宮に下って行き、そこでこの言葉を告げなさい。",
+          "R": "{{divine_name:主|ヤハウェ}}はこう言われる。「ユダの王が住む王宮に下って行き、そこでこのお告げを伝えなさい。"
         }
       },
       "decisions": [
@@ -315,6 +320,49 @@
           "reason": "\"The house of the king\" is the royal palace; Balanced and Readable say so, Literal keeps \"дом\", which also means the royal family.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240220010011",
+            "o240220010021",
+            "o240220010031",
+            "o240220010041"
+          ],
+          "choice": "God's words to Jeremiah open with 「 and run to 22:5; his commands to Jeremiah take the narrative forms \"下って行き…語りなさい\" (L), \"告げなさい\" (B), \"伝えなさい\" (R), and the message to the king (22:2-5) is set in 『』 in the oracle forms, as in the prose sermons of 7:2 and 11:2.",
+          "alternatives": [],
+          "reason": "The JER conventions: 「」 for God's words to Jeremiah, 『』 for the message he gives.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220010051",
+            "o240220010061"
+          ],
+          "choice": "beit melekh Yehudah \"ユダの王の家\" (L), \"ユダの王宮\" (B), \"ユダの王が住む王宮\" (R).",
+          "alternatives": [
+            "ユダの王の宮殿"
+          ],
+          "reason": "王宮 is the 2 Kings form for the king's house at B and R (m2: the palace below the temple).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -407,6 +455,11 @@
           "L": "и скажи: “Слушай слово {{divine_name:ГОСПОДА|Яхве}}, царь Иуды, сидящий на престоле Давида, ты, и твои рабы, и твой народ, входящие этими воротами.",
           "B": "Скажи: “Слушай слово {{divine_name:ГОСПОДА|Яхве}}, царь Иуды, ты, сидящий на престоле Давида, ты и твои приближённые, и твой народ, кто входит через эти ворота.",
           "R": "Скажи: “Царь Иуды, ты, который правит с престола Давида, слушай это слово {{divine_name:ГОСПОДА|Яхве}}. Слушайте, ты, твои приближённые и весь твой народ, который входит через эти ворота."
+        },
+        "ja": {
+          "L": "そして言いなさい。『{{divine_name:主|ヤハウェ}}の言葉を聞け、ダビデの王座に座っているユダの王よ、あなたも、あなたの家臣たちも、これらの門を入って来るあなたの民も。",
+          "B": "こう言いなさい。『ダビデの王座に着いているユダの王よ、{{divine_name:主|ヤハウェ}}の言葉を聞きなさい。あなたも、あなたの家臣たちも、これらの門から入って来るあなたの民も聞きなさい。",
+          "R": "こう言いなさい。『ダビデの王座から国を治めるユダの王よ、{{divine_name:主|ヤハウェ}}からのこのお告げを聞きなさい。あなたも、あなたの家臣たちも、この門を通って入って来るあなたの民もみな、聞きなさい。"
         }
       },
       "decisions": [
@@ -647,6 +700,30 @@
           "reason": "The words Jeremiah is to say are God's message, so the king is addressed as God addresses people, with तुम; a subject speaking for himself would say आप to a king.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220020121",
+            "o240220020122",
+            "o240220020123"
+          ],
+          "choice": "'avadekha \"あなたの家臣たち\" at every level; the same in 22:4.",
+          "alternatives": [
+            "あなたのしもべたち",
+            "役人たち"
+          ],
+          "reason": "m2: the king's officials at court; 家臣たち as JER 21:7 and 2 Kings 24:10-12 for a king's servants.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -745,6 +822,11 @@
           "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Совершайте правосудие и праведность и избавляйте ограбленного от руки притеснителя. Пришельца, сироту и вдову не обижайте, не притесняйте, и невинной крови не проливайте на этом месте.",
           "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Поступайте справедливо и праведно. Избавляйте ограбленного от власти притеснителя. Не обижайте пришельца, сироту и вдову, не применяйте к ним насилия и не проливайте невинной крови на этом месте.",
           "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: Поступайте честно и правильно. Спасайте ограбленных от тех, кто их притесняет. Не обижайте и не мучайте чужеземцев, сирот и вдов и не убивайте невинных людей на этом месте."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はこう言われる。公正と正義を行え。かすめ取られた者を、虐げる者の手から救い出せ。寄留者、みなしご、やもめを苦しめるな。暴虐を行うな。この場所で罪のない者の血を流すな。",
+          "B": "{{divine_name:主|ヤハウェ}}はこう言われる。公正と正義を行いなさい。物を奪われた者を、虐げる者の手から助け出しなさい。寄留者やみなしごややもめを虐げてはならない。彼らに暴力をふるってはならない。この場所で、罪のない人の血を流してはならない。",
+          "R": "{{divine_name:主|ヤハウェ}}はこう言われる。公平で正しいことをしなさい。物を奪われた人を、苦しめる者から守りなさい。よそから来た人や、父親のいない子どもや、やもめをいじめたり、ひどい目にあわせたりしてはいけない。この場所で、罪のない人を殺してはいけない。"
         }
       },
       "decisions": [
@@ -1051,6 +1133,32 @@
           "reason": "The ger, the outsider living among Israel without land, in the forms the Pentateuch note sets.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220030051",
+            "o240220030061",
+            "o240220030062",
+            "o240220030111",
+            "o240220030112",
+            "o240220030121",
+            "o240220030131",
+            "o240220030132"
+          ],
+          "choice": "mishpat utsedaqah \"公正と正義\" (L, B), \"公平で正しいこと\" (R); ger, yatom, 'almanah \"寄留者、みなしご、やもめ\" (L, B), \"よそから来た人、父親のいない子ども、やもめ\" (R), as JER 7:6.",
+          "alternatives": [],
+          "reason": "The prophetic and JER key-word forms; commands in the oracle forms 〜せよ / 〜するな (L), 〜しなさい / 〜してはならない (B), 〜しなさい / 〜してはいけない (R).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1155,6 +1263,11 @@
           "L": "Ведь если вы действительно будете исполнять это слово, то будут входить воротами этого дома цари, сидящие за Давида на его престоле, едущие на колесницах и на конях, он, и его рабы, и его народ.",
           "B": "Ведь если вы будете старательно исполнять то, что велит это слово, то через ворота этого дворца будут входить цари, сидящие на престоле Давида, едущие на колесницах и на конях, каждый со своими приближёнными и своим народом.",
           "R": "Если вы действительно будете исполнять это повеление, цари из рода Давида будут и дальше править с его престола. Они будут въезжать на колесницах и на конях через ворота этого дворца вместе со своими приближёнными и своим народом."
+        },
+        "ja": {
+          "L": "もしあなたがたがこの言葉を確かに行うなら、この家の門から、ダビデのためにその王座に着く王たちが、戦車と馬に乗って入って来る。彼も、彼の家臣たちも、彼の民も。",
+          "B": "もしあなたがたが、この言葉を守って行うなら、ダビデの王座に着く王たちが、戦車と馬に乗り、それぞれ家臣と民を連れて、この王宮の門から入って来る。",
+          "R": "もしあなたたちが、この命令に本当に従うなら、ダビデの家から出る王たちが、これからもダビデの王座から国を治める。王たちは、家臣たちや民と一緒に、戦車や馬に乗って、この王宮の門を通って行く。"
         }
       },
       "decisions": [
@@ -1223,6 +1336,28 @@
           "choice": "kings from David's family will go on ruling",
           "alternatives": [],
           "reason": "Readable spells out that the promise is for David's line to continue.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220040031",
+            "o240220040041"
+          ],
+          "choice": "The doubled verb 'asoh ta'asu \"確かに行う\" (L), \"守って行う\" (B), \"本当に従う\" (R).",
+          "alternatives": [
+            "必ず行う"
+          ],
+          "reason": "m1: careful, real obedience.",
           "uncertain": false,
           "footnote": false
         }
@@ -1314,6 +1449,11 @@
           "L": "А если вы не послушаете этих слов, — собой клянусь, — слово {{divine_name:ГОСПОДА|Яхве}}, — что этот дом станет развалинами.”»",
           "B": "А если вы не послушаете этих слов, клянусь собой, говорит {{divine_name:ГОСПОДЬ|Яхве}}, этот дворец станет развалинами.”»",
           "R": "А если вы не будете слушаться этих слов, клянусь собой, говорит {{divine_name:ГОСПОДЬ|Яхве}}, этот дворец превратится в развалины.”»"
+        },
+        "ja": {
+          "L": "しかし、もしあなたがたがこれらの言葉を聞かないなら、わたしは自分にかけて誓う――{{divine_name:主|ヤハウェ}}の言葉――。この家は廃墟となる。』」",
+          "B": "しかし、もしあなたがたがこれらの言葉に聞き従わないなら、わたしは自分自身にかけて誓う、と{{divine_name:主|ヤハウェ}}は告げる。この王宮は廃墟となる。』」",
+          "R": "しかし、もしあなたたちがこれらの言葉に従わないなら、わたしは自分にかけて誓う、と{{divine_name:主|ヤハウェ}}は言う。この王宮は廃墟になってしまう。』」"
         }
       },
       "decisions": [
@@ -1430,6 +1570,27 @@
           "reason": "The Ethiopic script has no capital letters, so the deity_pronoun setting has nothing to change in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220050071",
+            "o240220050072",
+            "o240220050081"
+          ],
+          "choice": "bi nishba'ti \"わたしは自分にかけて誓う\" (L, R), \"自分自身にかけて\" (B); the deity_pronoun span of the English is not used in Japanese.",
+          "alternatives": [],
+          "reason": "m1: God binds himself by his own life; the message and God's words close together (』」) as in the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1520,6 +1681,11 @@
           "L": "Ведь так говорит {{divine_name:ГОСПОДЬ|Яхве}} о доме царя Иуды: \\q Галаад ты для {{deity_pronoun:меня|Меня}}, вершина Ливана; \\q но истинно {{deity_pronoun:я|Я}} сделаю тебя пустыней, \\q необитаемыми городами.",
           "B": "Ведь так говорит {{divine_name:ГОСПОДЬ|Яхве}} о дворце царя Иуды: \\q Для {{deity_pronoun:меня|Меня}} ты как Галаад, как вершины Ливана, \\q но {{deity_pronoun:я|Я}} непременно сделаю тебя пустыней, \\q подобной городам, где никто не живёт.",
           "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} о дворце царя Иуды: \\q Для {{deity_pronoun:меня|Меня}} ты прекрасен, как леса Галаада, великолепен, как вершины Ливанских гор. \\q Но {{deity_pronoun:я|Я}} превращу тебя в пустыню, \\q подобную городам, где никто не живёт."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、ユダの王の家についてこう言われる。 \\q あなたはわたしにとってギレアド、レバノンの頂だ。 \\q しかし、わたしは必ずあなたを荒れ野とし、 \\q 人の住まない町々とする。",
+          "B": "{{divine_name:主|ヤハウェ}}は、ユダの王宮についてこう言われる。 \\q あなたはわたしにとって、ギレアドのよう、レバノンの頂のようだ。 \\q しかし、わたしは必ずあなたを荒れ野にし、 \\q 人の住まない町々のようにする。",
+          "R": "{{divine_name:主|ヤハウェ}}は、ユダの王が住む王宮について、こう言われる。 \\q あなたはわたしにとって、ギレアドの森のようにりっぱで、レバノンの山々の頂のように美しい。 \\q しかし、わたしはあなたを砂漠に変え、 \\q だれも住まない町々のようにする。"
         }
       },
       "decisions": [
@@ -1652,6 +1818,28 @@
           "reason": "Gilead and Lebanon keep the forms of Genesis and the earlier books in this translation.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220060141",
+            "o240220060151",
+            "o240220060161",
+            "o240220060162"
+          ],
+          "choice": "'im lo' 'ashitkha, an oath form, \"必ず…とする\" (L, B); R a plain future \"砂漠に変え\" as the English R.",
+          "alternatives": [],
+          "reason": "m2: \"I will surely make you\"; midbar 荒れ野 (L, B), 砂漠 (R); the palace is addressed as あなた (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1738,6 +1926,11 @@
           "L": "И {{deity_pronoun:я|Я}} освящу против тебя губителей, каждого с его оружием, \\q и они срубят твои отборные кедры \\q и бросят [их] в огонь.",
           "B": "Я назначу против тебя губителей, каждого со своим оружием. \\q Они срубят твои лучшие кедры \\q и бросят их в огонь.",
           "R": "Я пошлю против тебя губителей, и каждый будет вооружён. \\q Они срубят твои лучшие кедровые балки \\q и бросят их в огонь."
+        },
+        "ja": {
+          "L": "わたしは、あなたに対して滅ぼす者たちを聖別する。それぞれが自分の武器を持っている。 \\q 彼らはあなたの選り抜きの杉を切り倒し、 \\q [それを]火の中に投げ込む。",
+          "B": "わたしは、あなたに対して滅ぼす者たちを任命する。それぞれが武器を持っている。 \\q 彼らはあなたの見事な杉を切り倒し、 \\q 火の中に投げ込む。",
+          "R": "わたしは、あなたを滅ぼす者たちを送る。一人一人が武器を持っている。 \\q 彼らは、あなたのりっぱな杉の柱や梁を切り倒し、 \\q 火の中に投げ込む。"
         }
       },
       "decisions": [
@@ -1820,6 +2013,26 @@
             "\"준비하여\""
           ],
           "reason": "Literal keeps \"consecrate\", the word of holy war (meaning decision m1); Balanced and Readable say what it amounts to.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220070011",
+            "o240220070012"
+          ],
+          "choice": "qiddashti \"聖別する\" (L); \"任命する\" (B), \"送る\" (R) as the English.",
+          "alternatives": [
+            "備える"
+          ],
+          "reason": "m1: set apart for a holy war; Literal keeps the cultic verb.",
           "uncertain": false,
           "footnote": false
         }
@@ -1915,6 +2128,11 @@
           "L": "И многие народы будут проходить мимо этого города и говорить друг другу: «За что {{divine_name:ГОСПОДЬ|Яхве}} так поступил с этим великим городом?»",
           "B": "Люди из многих народов будут проходить мимо этого города и говорить друг другу: «Почему {{divine_name:ГОСПОДЬ|Яхве}} так поступил с этим великим городом?»",
           "R": "Люди из многих народов будут проходить мимо этого города. Они будут спрашивать друг друга: «Почему {{divine_name:ГОСПОДЬ|Яхве}} сделал такое с таким великим городом?»"
+        },
+        "ja": {
+          "L": "多くの国々がこの都のそばを通り過ぎ、それぞれ隣の者に言う。「なぜ{{divine_name:主|ヤハウェ}}は、この大きな都にこのようなことをされたのか？」",
+          "B": "多くの国の人々がこの都のそばを通り過ぎ、互いに言う。「なぜ{{divine_name:主|ヤハウェ}}は、この大いなる都をこのように扱われたのか？」",
+          "R": "多くの国の人々が、この都のそばを通り過ぎ、互いに尋ねる。「どうして{{divine_name:主|ヤハウェ}}は、こんなに大きな都に、こんなことをなさったのだろう？」"
         }
       },
       "decisions": [
@@ -1951,6 +2169,26 @@
           "choice": "people of many nations",
           "alternatives": [],
           "reason": "\"Nations\" here means people from those nations who travel past; Balanced and Readable say so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240220080131",
+            "o240220080141"
+          ],
+          "choice": "The passing nations speak of the LORD with respect forms (\"された\", \"扱われた\", \"なさった\").",
+          "alternatives": [],
+          "reason": "People speaking of God take respect forms (JER conventions, 2:6, 8:19).",
           "uncertain": false,
           "footnote": false
         }
@@ -2038,6 +2276,11 @@
           "L": "И скажут: «За то, что они оставили завет {{divine_name:ГОСПОДА|Яхве}}, их Бога, и поклонялись другим богам и служили им.»",
           "B": "И им ответят: «Потому что они отвергли завет {{divine_name:ГОСПОДА|Яхве}}, их Бога, поклонялись другим богам и служили им.»",
           "R": "Другие ответят: «Потому что этот народ оставил завет, который был у него с {{divine_name:ГОСПОДОМ|Яхве}}, его Богом. Они поклонялись другим богам и служили им.»"
+        },
+        "ja": {
+          "L": "そして彼らは言う。「彼らが自分たちの神、{{divine_name:主|ヤハウェ}}の契約を捨て、ほかの神々にひれ伏して、それらに仕えたからだ。」",
+          "B": "すると、答えが返ってくる。「彼らが自分たちの神、{{divine_name:主|ヤハウェ}}の契約を捨て、ほかの神々を拝んで、それらに仕えたからだ。」",
+          "R": "するとほかの人たちが答える。「それは、この民が、自分たちの神、{{divine_name:主|ヤハウェ}}と結んだ契約を捨てたからだ。彼らは、ほかの神々を拝み、それらに仕えたのだ。」"
         }
       },
       "decisions": [
@@ -2178,6 +2421,11 @@
           "L": "Не плачьте об умершем \\q и не сокрушайтесь о нём; \\q плачьте горько об уходящем, \\q потому что он больше не вернётся \\q и не увидит земли, где родился.",
           "B": "Не плачьте о том, кто умер, \\q не скорбите о нём. \\q Плачьте, не переставая, о том, кто уходит, \\q потому что он никогда не вернётся \\q и больше не увидит родной земли.",
           "R": "Не плачьте о царе, который умер, \\q и не скорбите о нём. \\q Лучше горько плачьте о царе, которого уводят, \\q потому что он никогда не вернётся \\q и больше не увидит своей родины."
+        },
+        "ja": {
+          "L": "死んだ者のために泣くな。 \\q 彼のために嘆くな。 \\q 去って行く者のために泣きに泣け。 \\q 彼は二度と帰って来ず、 \\q 自分の生まれた地を見ることがないからだ。",
+          "B": "死んだ者のために泣いてはならない。 \\q 彼のために嘆いてはならない。 \\q 去って行く者のために、泣き続けなさい。 \\q 彼は二度と帰らず、 \\q 故郷を見ることもないからだ。",
+          "R": "死んだ王のために泣いてはいけない。 \\q 嘆いてはいけない。 \\q それよりも、連れ去られて行く王のために、激しく泣きなさい。 \\q その王は二度と戻って来ず、 \\q 故郷をもう一度見ることもないからだ。"
         }
       },
       "decisions": [
@@ -2240,6 +2488,24 @@
           "choice": "the king who has died; the king who is being taken away",
           "alternatives": [],
           "reason": "Readable names both as kings, which verses 11-12 make clear; it does not name them in the verse itself.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220100071",
+            "o240220100081"
+          ],
+          "choice": "bekhu bakho \"泣きに泣け\" (L), \"泣き続けなさい\" (B), \"激しく泣きなさい\" (R).",
+          "alternatives": [],
+          "reason": "m2: the doubled verb, weep bitterly without stopping; Literal echoes the doubling.",
           "uncertain": false,
           "footnote": false
         }
@@ -2336,6 +2602,11 @@
           "L": "Ведь так говорит {{divine_name:ГОСПОДЬ|Яхве}} о Селлуме, сыне Иосии, царе Иуды, царствовавшем вместо Иосии, своего отца, который вышел из этого места: Он больше не вернётся сюда.",
           "B": "Ведь так говорит {{divine_name:ГОСПОДЬ|Яхве}} о Селлуме, сыне Иосии, царе Иуды, который воцарился вместо своего отца Иосии и ушёл из этого места: Он никогда не вернётся сюда.",
           "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} о Селлуме, сыне Иосии, который стал царём Иуды после своего отца Иосии и которого увели из этого места: Он никогда не вернётся сюда."
+        },
+        "ja": {
+          "L": "なぜなら、{{divine_name:主|ヤハウェ}}は、父ヨシヤに代わって王となり、この場所から出て行ったユダの王、ヨシヤの子シャルムについて、こう言われるからだ。彼は二度とここに帰って来ない。",
+          "B": "{{divine_name:主|ヤハウェ}}は、父ヨシヤに代わって王となり、この場所から去って行ったユダの王、ヨシヤの子シャルムについて、こう言われる。彼は二度とここに戻って来ない。",
+          "R": "{{divine_name:主|ヤハウェ}}は、父ヨシヤのあとにユダの王となり、この場所から連れ去られたヨシヤの息子シャルムについて、こう言われる。シャルムは二度とここに戻って来ない。"
         }
       },
       "decisions": [
@@ -2613,6 +2884,51 @@
           "reason": "The Hebrew calls this king Shallum, so every level keeps the name in the form 1 Chronicles 3:15 uses; he is the king called Иоахаз in 2 Kings 23:30-34 (the meaning decision), and the name is not changed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220110061",
+            "o240220110071",
+            "o240220110081"
+          ],
+          "choice": "Shallum son of Josiah \"ヨシヤの子シャルム\" (L, B), \"ヨシヤの息子シャルム\" (R): the Hebrew name at every level, as the English R keeps it; the footnote (m1) says he is Jehoahaz (ヨアハズ, 2 Kings 23:30-34).",
+          "alternatives": [
+            "ヨアハズ"
+          ],
+          "reason": "JER conventions: シャルム (L, B), R by the English R.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o240220110111",
+            "o240220110112",
+            "o240220110151",
+            "o240220110161"
+          ],
+          "choice": "The two relative clauses (\"who reigned … who went out\") go before the name, as Japanese needs; \"king of Judah\" stays with the name.",
+          "alternatives": [],
+          "reason": "Japanese puts modifiers before the noun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2698,6 +3014,11 @@
           "L": "Ведь в том месте, куда его увели в плен, там он и умрёт, и этой земли больше не увидит.",
           "B": "Он умрёт там, куда его увели пленником, и никогда больше не увидит этой земли.",
           "R": "Он умрёт в той стране, куда его увели пленником. Он больше никогда не увидит этой земли."
+        },
+        "ja": {
+          "L": "なぜなら、彼は、彼らが彼を捕らえ移したその場所で死に、この地を再び見ることはないからだ。",
+          "B": "彼は、捕囚として連れ去られたその場所で死に、この地を二度と見ることはない。",
+          "R": "彼は、捕虜にして連れて行かれた国で死ぬ。この地をもう二度と見ることはない。"
         }
       },
       "decisions": [
@@ -2732,6 +3053,25 @@
           "choice": "no \"for\" at the start (Balanced, Readable)",
           "alternatives": [],
           "reason": "The opening word here marks a contrast with \"he will not return\" (\"but\", \"instead\"); Balanced and Readable leave it unspoken and let the sentences follow one another.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220120041"
+          ],
+          "choice": "higlu \"捕らえ移した\" (L), \"捕囚として連れ去られた\" (B), \"捕虜にして連れて行かれた\" (R).",
+          "alternatives": [],
+          "reason": "The galah forms of 2 Kings and the prophetic conventions.",
           "uncertain": false,
           "footnote": false
         }
@@ -2826,6 +3166,11 @@
           "L": "Горе строящему свой дом без праведности \\q и свои верхние покои без правосудия, \\q заставляющему своего ближнего работать даром \\q и не дающему ему его платы,",
           "B": "Горе тому, кто строит свой дворец без праведности \\q и свои верхние покои без справедливости, \\q кто заставляет соотечественников работать даром \\q и не платит им заработанного.",
           "R": "Беда ждёт царя, который строит свой дворец, поступая неправильно, \\q и пристраивает верхние комнаты, обманывая людей. \\q Он заставляет свой народ работать даром \\q и не платит людям за их труд."
+        },
+        "ja": {
+          "L": "ああ、災いだ、正義によらずに自分の家を建て、 \\q 公正によらずに自分の上の部屋を[建てる]者は！ \\q 彼は隣人をただで働かせ、 \\q その報酬を彼に与えない。",
+          "B": "ああ、災いだ、正義を踏みにじって自分の王宮を建て、 \\q 公正を無視して上の階の部屋を造る者は！ \\q 彼は同胞をただで働かせ、 \\q その賃金を払わない。",
+          "R": "ああ、悪いことをして王宮を建てる王は、なんとひどい目にあうことか！ \\q 人々をだまして、上の階に部屋を増やしている。 \\q 自分の国の人々をただで働かせ、 \\q 働いた分のお金を払わない。"
         }
       },
       "decisions": [
@@ -3118,6 +3463,50 @@
           "reason": "The cry hoy in the forms Isaiah uses in this translation; \"Увы\" is kept for the funeral cry of verse 18.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220130011"
+          ],
+          "choice": "hoy \"ああ、災いだ、…者は！\" (L, B), \"ああ、…王は、なんとひどい目にあうことか！\" (R).",
+          "alternatives": [],
+          "reason": "The prophetic hoy form (ISA 5:8); the inverted は keeps the builder at the end of the line, and the description goes on in new sentences (\"彼は…\") so that 22:14 can begin on its own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220130041",
+            "o240220130042",
+            "o240220130051",
+            "o240220130071",
+            "o240220130072",
+            "o240220130081"
+          ],
+          "choice": "belo' tsedeq … belo' mishpat \"正義によらずに … 公正によらずに\" (L), \"正義を踏みにじって … 公正を無視して\" (B).",
+          "alternatives": [
+            "正義なしに"
+          ],
+          "reason": "m3: by wrongdoing, not merely without virtue.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3209,6 +3598,11 @@
           "L": "говорящему: «Построю себе дом [больших] размеров \\q и просторные верхние покои», \\q и прорубающему в нём окна, \\q и обшивающему [его] кедром, и красящему [его] киноварью.",
           "B": "Он говорит: «Построю себе огромный дворец \\q с просторными верхними покоями». \\q Он прорубает в нём окна, \\q обшивает его кедром и красит киноварью.",
           "R": "Он говорит: «Построю себе огромный дворец \\q с большими комнатами наверху». \\q Он делает в нём окна, \\q обшивает стены кедром и красит их ярко-красной краской."
+        },
+        "ja": {
+          "L": "彼は言う。「わたしは自分のために広い家を建て、 \\q 広々とした上の部屋を造ろう。」 \\q そして、それに窓を切り開き、 \\q 杉の板を張り、朱色に塗る。",
+          "B": "彼は言う。「わたしは自分のために大きな王宮を建てよう。 \\q 広々とした上の階の部屋も。」 \\q 彼はそれに窓を開け、 \\q 杉の板を張り、朱色に塗る。",
+          "R": "彼は言う。「わたしは自分のために大きな王宮を建てよう。 \\q 上の階には広い部屋を造ろう。」 \\q 彼は窓を取り付け、 \\q 壁に杉の板を張り、真っ赤に塗る。"
         }
       },
       "decisions": [
@@ -3297,6 +3691,26 @@
             "\"tôi\""
           ],
           "reason": "A king speaking of himself says \"ta\", as the terms note gives for the kings in Kings; it is not God's \"Ta\" and takes no span, though here it opens the quotation and so has a capital.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220140141",
+            "o240220140142"
+          ],
+          "choice": "bashshashar \"朱色に\" (L, B), \"真っ赤に\" (R).",
+          "alternatives": [],
+          "reason": "m2: a costly bright red paint; R as the English R \"bright red\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3389,6 +3803,11 @@
           "L": "Разве ты царствуешь потому, что соперничаешь в кедре? \\q Твой отец — разве не ел и не пил \\q и не совершал правосудия и праведности? \\q Тогда [было] хорошо ему.",
           "B": "Разве ты станешь царём оттого, что превзойдёшь других в кедре? \\q Разве твой отец не ел и не пил \\q и при этом не поступал справедливо и праведно? \\q И всё у него было хорошо.",
           "R": "Разве ты станешь настоящим царём оттого, что у тебя больше кедра, чем у других? \\q У твоего отца была еда и питьё, \\q и он поступал честно и правильно, \\q и поэтому у него всё было хорошо."
+        },
+        "ja": {
+          "L": "あなたは杉で競っているから王なのか？ \\q あなたの父は、食べ、飲み、 \\q 公正と正義を行ったではないか？ \\q そのとき、彼は幸いであった。",
+          "B": "杉の建物で人に勝とうとすれば、あなたは王になるのか？ \\q あなたの父は食べたり飲んだりしながら、 \\q 公正と正義をも行ったではないか？ \\q そのとき、すべてがうまくいった。",
+          "R": "ほかのだれよりも多くの杉を使えば、本当の王になれるのか？ \\q あなたの父は、食べる物も飲む物もあった。 \\q そして、公平で正しいことをした。 \\q だから、すべてがうまくいったのだ。"
         }
       },
       "decisions": [
@@ -3545,6 +3964,29 @@
           "reason": "Kings in the prophets' oracles are spoken of with plain singular forms, as in the history books' narrative; the honorific is kept for God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220150011",
+            "o240220150012",
+            "o240220150041",
+            "o240220150051",
+            "o240220150052"
+          ],
+          "choice": "hatimlokh ki 'attah metachareh ba'arez \"杉で競っているから王なのか\" (L), \"杉の建物で人に勝とうとすれば、王になるのか\" (B), \"多くの杉を使えば、本当の王になれるのか\" (R).",
+          "alternatives": [],
+          "reason": "m1: does outdoing others in cedar buildings make a king? The king is now addressed as あなた.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3628,6 +4070,11 @@
           "L": "Он судил дело бедного и нищего; тогда [было] хорошо. \\q Не это ли — знать {{deity_pronoun:меня|Меня}}? — слово {{divine_name:ГОСПОДА|Яхве}}.",
           "B": "Он защищал дело бедного и нищего, и тогда всё было хорошо. \\q Разве не это значит знать {{deity_pronoun:меня|Меня}}? — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
           "R": "Он защищал права бедных и нуждающихся, и всё было хорошо. \\q Вот что значит знать {{deity_pronoun:меня|Меня}}, говорит {{divine_name:ГОСПОДЬ|Яхве}}."
+        },
+        "ja": {
+          "L": "彼は貧しい者と乏しい者の訴えを裁いた。そのとき、幸いであった。 \\q それこそ、わたしを知ることではないか？――{{divine_name:主|ヤハウェ}}の言葉――",
+          "B": "彼は貧しい者と乏しい者の訴えを取り上げて裁いた。そのとき、すべてがうまくいった。 \\q それこそが、わたしを知るということではないか、と{{divine_name:主|ヤハウェ}}は告げる。",
+          "R": "彼は、貧しい人や困っている人の権利を守った。それで、すべてがうまくいった。 \\q それこそが、わたしを知るということだ、と{{divine_name:主|ヤハウェ}}は言う。"
         }
       },
       "decisions": [
@@ -3707,6 +4154,28 @@
             "\"빈민\""
           ],
           "reason": "The Psalms note's words for the poor and needy, with plainer Korean at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220160091",
+            "o240220160092",
+            "o240220160101",
+            "o240220160102"
+          ],
+          "choice": "hadda'at 'oti \"わたしを知ること\" (L), \"わたしを知るということ\" (B, R).",
+          "alternatives": [],
+          "reason": "m2: knowing the LORD is doing justice for the weak; the question is kept at L and B and is a statement at R, as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -3805,6 +4274,11 @@
           "L": "А твои глаза и твоё сердце ни на что \\q не [направлены], кроме твоей корысти, \\q и на то, чтобы проливать кровь невинного, \\q и на то, чтобы творить притеснение и вымогательство.",
           "B": "А твои глаза и твоё сердце направлены ни на что иное, \\q как только на нечестную наживу, \\q на то, чтобы проливать невинную кровь, \\q чтобы притеснять и вымогать.",
           "R": "А ты думаешь только о том, как разбогатеть обманом, \\q как убивать невинных людей, \\q как угнетать людей и отнимать у них то, что им принадлежит."
+        },
+        "ja": {
+          "L": "しかし、あなたの目とあなたの心は、何にも[向いていない]。 \\q ただあなたの不正な利得と、 \\q 罪のない者の血を流すことと、 \\q 虐げとゆすりを行うことにだけ[向いている]。",
+          "B": "しかし、あなたの目と心が向けられているのは、 \\q 不正な利益と、 \\q 罪のない者の血を流すことと、 \\q 虐げとゆすりを行うことだけだ。",
+          "R": "しかし、あなたが気にかけているのは、人をだまして金持ちになることと、 \\q 罪のない人を殺すことと、 \\q 人々を踏みつけて、その物を奪い取ることだけだ。"
         }
       },
       "decisions": [
@@ -3869,6 +4343,30 @@
           "choice": "crushing people and taking what is theirs",
           "alternatives": [],
           "reason": "Readable explains \"oppression and extortion\" in plain words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220170081",
+            "o240220170082",
+            "o240220170141",
+            "o240220170142",
+            "o240220170161",
+            "o240220170162"
+          ],
+          "choice": "bits'ekha \"あなたの不正な利得\" (L), \"不正な利益\" (B), \"人をだまして金持ちになること\" (R); ha'osheq vehammerutsah \"虐げとゆすり\" (L, B).",
+          "alternatives": [],
+          "reason": "m2: profit gained by violence or fraud.",
           "uncertain": false,
           "footnote": false
         }
@@ -3969,6 +4467,11 @@
           "L": "Поэтому так говорит {{divine_name:ГОСПОДЬ|Яхве}} об Иоакиме, сыне Иосии, царе Иуды: \\q Не будут оплакивать его: \\q «Увы, брат мой!» или «Увы, сестра!» \\q Не будут оплакивать его: \\q «Увы, господин!» или «Увы, его величество!»",
           "B": "Поэтому так говорит {{divine_name:ГОСПОДЬ|Яхве}} об Иоакиме, сыне Иосии, царе Иуды: \\q Никто не будет оплакивать его, восклицая: \\q «Увы, брат мой! Увы, сестра моя!» \\q Никто не будет оплакивать его, восклицая: \\q «Увы, господин мой! Увы, его величество!»",
           "R": "Поэтому вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} об Иоакиме, сыне Иосии, царе Иуды: \\q Никто не будет плакать на его похоронах: \\q «Какое горе, брат мой! Какое горе, сестра моя!» \\q Никто не будет оплакивать его и говорить: \\q «Какое горе, наш господин! Какое горе, наш великий царь!»"
+        },
+        "ja": {
+          "L": "それゆえ、{{divine_name:主|ヤハウェ}}は、ユダの王、ヨシヤの子ヨヤキムについてこう言われる。 \\q 人々は彼のために嘆いて、 \\q 「ああ、わたしの兄弟よ」とも「ああ、姉妹よ」とも言わない。 \\q 人々は彼のために嘆いて、 \\q 「ああ、主君よ」とも「ああ、その威光よ」とも言わない。",
+          "B": "それゆえ、{{divine_name:主|ヤハウェ}}は、ユダの王、ヨシヤの子ヨヤキムについてこう言われる。 \\q だれも彼のために嘆いて、 \\q 「ああ、わたしの兄弟よ。ああ、わたしの姉妹よ」とは叫ばない。 \\q だれも彼のために嘆いて、 \\q 「ああ、わたしの主君よ。ああ、陛下よ」とは叫ばない。",
+          "R": "だから、{{divine_name:主|ヤハウェ}}は、ユダの王、ヨシヤの息子ヨヤキムについて、こう言われる。 \\q だれも彼の葬式で泣いて、 \\q 「ああ、悲しい、わたしの兄弟！ああ、悲しい、わたしの姉妹！」とは言わない。 \\q だれも彼のために泣いて、 \\q 「ああ、悲しい、わたしたちのご主人さま！ああ、悲しい、偉大な王さま！」とは言わない。"
         }
       },
       "decisions": [
@@ -4280,6 +4783,49 @@
           "reason": "Jehoiakim in the form 2 Kings 23:34-36 uses in this translation.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220180061",
+            "o240220180071",
+            "o240220180081"
+          ],
+          "choice": "Jehoiakim son of Josiah \"ヨシヤの子ヨヤキム\" (L, B), \"ヨシヤの息子ヨヤキム\" (R), as 2 Kings 23:34; kept apart from ヨヤキン.",
+          "alternatives": [],
+          "reason": "The 2 Kings and JER name forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220180141",
+            "o240220180221",
+            "o240220180241",
+            "o240220180242"
+          ],
+          "choice": "hoy in the funeral cries \"ああ、…よ\" (L, B), \"ああ、悲しい、…\" (R); 'adon \"主君\" (L, B), \"ご主人さま\" (R), not 主, so it is not read as God; hodoh \"その威光\" (L), \"陛下\" (B), \"偉大な王さま\" (R).",
+          "alternatives": [],
+          "reason": "m1, m2: the set cries of a funeral lament; the English has two quotations per line at L and one at B and R, and the Japanese follows.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4358,6 +4904,11 @@
           "L": "Погребением осла он будет погребён, \\q вытащенный и выброшенный за ворота Иерусалима.",
           "B": "Его похоронят так, как хоронят осла, \\q выволокут и выбросят за ворота Иерусалима.",
           "R": "Его похоронят, как дохлого осла. \\q Его тело выволокут и выбросят за ворота Иерусалима."
+        },
+        "ja": {
+          "L": "ろばの埋葬で、彼は葬られる。 \\q 引きずられ、エルサレムの門の外へ投げ捨てられる。",
+          "B": "彼は、ろばが葬られるように葬られる。 \\q 引きずり出され、エルサレムの門の外へ投げ捨てられる。",
+          "R": "彼は、死んだろばのように葬られる。 \\q その死体は引きずられて、エルサレムの門の外へ投げ捨てられる。"
         }
       },
       "decisions": [
@@ -4497,6 +5048,11 @@
           "L": "Взойди на Ливан и кричи, \\q и в Васане подай свой голос, \\q и кричи с Аварима, \\q потому что сокрушены все твои любовники.",
           "B": "Поднимись на Ливан и кричи; \\q пусть твой голос раздастся в Васане; \\q кричи с гор Аварима, \\q потому что все твои любовники разбиты.",
           "R": "Жители Иерусалима, поднимитесь на Ливан и кричите; \\q кричите в земле Васан; \\q взывайте с гор Аварима, \\q потому что все ваши союзники разбиты."
+        },
+        "ja": {
+          "L": "レバノンに登って叫べ。 \\q バシャンで声をあげよ。 \\q アバリムから叫べ。 \\q あなたの恋人たちはみな打ち砕かれたからだ。",
+          "B": "レバノンに登って叫びなさい。 \\q バシャンであなたの声を響かせなさい。 \\q アバリムの山々から叫びなさい。 \\q あなたの恋人たちはみな打ち砕かれたからだ。",
+          "R": "エルサレムの人々よ、レバノンに登って大声をあげなさい。 \\q バシャンの地で叫びなさい。 \\q アバリムの山々から叫びなさい。 \\q あなたたちが頼りにしていた国々は、みな打ち砕かれたからだ。"
         }
       },
       "decisions": [
@@ -4787,6 +5343,45 @@
           "reason": "Readable names the people addressed and says what the lovers stand for; addressing \"жители\" it uses the plural \"вы\", where Literal and Balanced keep the feminine singular \"ты\" for the city.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220200121",
+            "o240220200122"
+          ],
+          "choice": "me'ahavayikh \"あなたの恋人たち\" (L, B), as JER 4:30; R \"あなたたちが頼りにしていた国々\" (the English R \"allies\").",
+          "alternatives": [],
+          "reason": "m3: the allies Judah trusted; Jerusalem as a woman is あなた (L, B); R names the people of Jerusalem as the English R does, so R uses あなたたち through 22:20-23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220200081",
+            "o240220200082"
+          ],
+          "choice": "me'avarim \"アバリムから\" (L), \"アバリムの山々から\" (B, R).",
+          "alternatives": [],
+          "reason": "Abarim as NUM 27:12 and DEU 32:49 (アバリム); the English B and R say the Abarim mountains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4875,6 +5470,11 @@
           "L": "Я говорил тебе во время твоего благополучия; \\q ты сказала: «Не буду слушать.» \\q Таков твой путь от твоей юности, \\q что ты не слушала {{deity_pronoun:моего|Моего}} голоса.",
           "B": "Я говорил тебе, когда ты была в безопасности, \\q но ты сказала: «Не буду слушать.» \\q Так ты поступала с юных лет: \\q ты не слушалась {{deity_pronoun:моего|Моего}} голоса.",
           "R": "Я предупреждал вас, когда жизнь была лёгкой, \\q но вы сказали: «Не будем слушать.» \\q Вы поступаете так с самой юности; \\q вы никогда не слушались {{deity_pronoun:меня|Меня}}."
+        },
+        "ja": {
+          "L": "わたしは、あなたが安らかであったときに、あなたに語った。 \\q あなたは言った。「わたしは聞かない。」 \\q これが、あなたの若いころからのあなたの道だ。 \\q あなたはわたしの声に聞き従わなかった。",
+          "B": "あなたが安心していたとき、わたしはあなたに語った。 \\q しかし、あなたは言った。「わたしは聞かない。」 \\q 若いころから、あなたはずっとこうだった。 \\q わたしの声に聞き従わなかった。",
+          "R": "暮らしが楽だったとき、わたしはあなたたちに警告した。 \\q しかし、あなたたちは言った。「わたしたちは聞かない。」 \\q 若いころから、あなたたちはずっとこうだった。 \\q 一度もわたしに従ったことがない。"
         }
       },
       "decisions": [
@@ -4947,6 +5547,27 @@
             "masculine forms"
           ],
           "reason": "The one addressed in verses 20-23 is Jerusalem pictured as a woman (meaning m1 at verse 20); Hindi verbs show gender, so the feminine forms keep the picture, as the Hebrew's feminine forms do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220210041",
+            "o240220210051",
+            "o240220210061"
+          ],
+          "choice": "R \"わたしたちは聞かない\" for lo' 'eshma', as R addresses the people of Jerusalem (22:20).",
+          "alternatives": [
+            "わたしは聞かない"
+          ],
+          "reason": "Readable keeps the plural address it chose at 22:20.",
           "uncertain": false,
           "footnote": false
         }
@@ -5036,6 +5657,11 @@
           "L": "Всех твоих пастухов будет пасти ветер, \\q и твои любовники пойдут в плен; \\q тогда ты будешь постыжена и посрамлена \\q за всё твоё зло.",
           "B": "Ветер угонит всех твоих пастухов, \\q и твои любовники будут уведены в плен. \\q Тогда ты испытаешь стыд и позор \\q за всё твоё нечестие.",
           "R": "Ветер разгонит всех ваших вождей, \\q и ваших союзников уведут в плен. \\q Тогда вы будете опозорены и унижены \\q за всё зло, которое сделали."
+        },
+        "ja": {
+          "L": "風があなたの牧者たちをみな牧し、 \\q あなたの恋人たちは捕囚となって行く。 \\q そのとき、あなたは恥を受け、辱められる。 \\q あなたのすべての悪のゆえに。",
+          "B": "風があなたの牧者たちをみな追い立て、 \\q あなたの恋人たちは捕囚として連れて行かれる。 \\q そのとき、あなたは恥を受け、辱められる。 \\q あなたのすべての悪のために。",
+          "R": "風が、あなたたちの指導者たちをみな吹き飛ばし、 \\q あなたたちが頼りにしていた国々は、捕虜として連れて行かれる。 \\q そのとき、あなたたちは恥をかき、辱められる。 \\q あなたたちがしてきた、すべての悪のために。"
         }
       },
       "decisions": [
@@ -5168,6 +5794,25 @@
           "reason": "The Hebrew plays on \"shepherd\": the wind will shepherd the shepherds (meaning m1). Literal keeps the play with चराना; Balanced says \"herd away\", and Readable names the shepherds as leaders.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220220021",
+            "o240220220022",
+            "o240220220031"
+          ],
+          "choice": "kol ro'ayikh tir'eh ruach \"風があなたの牧者たちをみな牧し\" (L), keeping the play; \"追い立て\" (B), \"吹き飛ばし\" (R).",
+          "alternatives": [],
+          "reason": "m1: the rulers driven off as wind drives chaff; ro'im 牧者たち (L, B), 指導者たち (R), as JER 2:8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5251,6 +5896,11 @@
           "L": "Живущая на Ливане, \\q гнездящаяся в кедрах, \\q как ты будешь стонать, когда придут на тебя муки, \\q боль, как у рождающей!",
           "B": "Ты, живущая на Ливане, \\q свившая гнездо среди кедров, \\q как ты будешь стонать, когда придут на тебя муки, \\q боль, как у женщины в родах!",
           "R": "Вы живёте во дворцах из ливанского кедра, \\q уютно, как птицы в гнезде. \\q Но как же вы будете стонать, когда на вас придёт боль, \\q боль, как у женщины, которая рожает!"
+        },
+        "ja": {
+          "L": "レバノンに住む者よ、 \\q 杉の間に巣を作る者よ、 \\q 陣痛があなたに臨むとき、あなたはどんなにうめくことか。 \\q 子を産む[女]のような苦しみが。",
+          "B": "レバノンに住む者よ、 \\q 杉の木々の間に巣を作る者よ、 \\q 痛みがあなたを襲うとき、あなたはどんなにうめくことだろう。 \\q 子を産む女のような痛みが。",
+          "R": "あなたたちは、レバノンの杉で造った王宮に住み、 \\q 巣の中の鳥のように安心している。 \\q しかし、痛みが襲うとき、あなたたちはどんなにうめくことだろう。 \\q 子どもを産む女の人のような痛みが。"
         }
       },
       "decisions": [
@@ -5379,6 +6029,27 @@
           "reason": "Korean puts the time clause before the main verb, so the groan closes the last line; the line breaks follow Korean order.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220230081"
+          ],
+          "choice": "nechant \"うめく\" at every level.",
+          "alternatives": [
+            "あわれまれる"
+          ],
+          "reason": "m2 reads the verb as a form of \"groan\" (uncertain, footnoted).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5468,6 +6139,11 @@
           "L": "Жив {{deity_pronoun:я|Я}}, — слово {{divine_name:ГОСПОДА|Яхве}}, — даже если бы Кония, сын Иоакима, царь Иуды, был перстнем-печатью на {{deity_pronoun:моей|Моей}} правой руке, и оттуда {{deity_pronoun:я|Я}} сорвал бы тебя.",
           "B": "Как верно то, что {{deity_pronoun:я|Я}} жив, говорит {{divine_name:ГОСПОДЬ|Яхве}}: Кония, сын Иоакима, царь Иуды, даже если бы ты был перстнем-печатью на {{deity_pronoun:моей|Моей}} правой руке, {{deity_pronoun:я|Я}} всё равно сорвал бы тебя.",
           "R": "Как верно то, что {{deity_pronoun:я|Я}} жив, говорит {{divine_name:ГОСПОДЬ|Яхве}}: Кония, сын Иоакима, царь Иуды, даже если бы ты был перстнем с {{deity_pronoun:моей|Моей}} печатью на {{deity_pronoun:моей|Моей}} правой руке, {{deity_pronoun:я|Я}} всё равно сорвал бы тебя."
+        },
+        "ja": {
+          "L": "わたしは生きている――{{divine_name:主|ヤハウェ}}の言葉――。たとえユダの王、ヨヤキムの子コンヤが、わたしの右の手の印章の指輪であっても、わたしはそこからあなたを引き抜く。",
+          "B": "わたしは生きている、と{{divine_name:主|ヤハウェ}}は告げる。ユダの王、ヨヤキムの子コンヤよ、たとえあなたが、わたしの右の手にはめた印章の指輪であっても、わたしはあなたを引き抜く。",
+          "R": "わたしは生きている。そのわたしが誓って言う、と{{divine_name:主|ヤハウェ}}は言う。ユダの王、ヨヤキムの息子コンヤよ、たとえあなたが、わたしの印を刻んだ指輪で、わたしの右の手にはめられていたとしても、わたしはあなたを引き抜く。"
         }
       },
       "decisions": [
@@ -5856,6 +6532,50 @@
           "reason": "The Hebrew uses the short form Coniah here and in verse 28, so every level keeps it; he is the king called Иехония in 2 Kings 24 and Matthew 1:11-12 (the meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220240011",
+            "o240220240021",
+            "o240220240031",
+            "o240220240041"
+          ],
+          "choice": "chai 'ani ne'um YHWH \"わたしは生きている――{D}の言葉――\" (L), \"わたしは生きている、と{D}は告げる\" (B), \"わたしは生きている。そのわたしが誓って言う、と{D}は言う\" (R), as the God's-oath form of NUM 14:28, ZEP 2:9 and EZK 5:11.",
+          "alternatives": [],
+          "reason": "One form for God's oath through the prophets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220240081",
+            "o240220240131"
+          ],
+          "choice": "Konyahu \"コンヤ\" at every level, as the English R keeps Coniah (m1 footnote: Jehoiachin, Jeconiah); chotam \"印章の指輪\" (L, B), \"わたしの印を刻んだ指輪\" (R), as HAG 2:23.",
+          "alternatives": [
+            "ヨヤキン"
+          ],
+          "reason": "JER conventions: Coniah コンヤ (L, B), R by the English R; kept apart from ヨヤキム.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5951,6 +6671,11 @@
           "L": "И {{deity_pronoun:я|Я}} отдам тебя в руку ищущих твоей жизни, и в руку тех, кого ты страшишься, и в руку Навуходорносора, царя Вавилона, и в руку халдеев.",
           "B": "Я отдам тебя тем, кто хочет тебя убить, тем, кого ты боишься, Навуходорносору, царю Вавилона, и халдеям.",
           "R": "Я отдам тебя людям, которые хотят тебя убить, тем, кого ты боишься: Навуходорносору, царю Вавилона, и вавилонянам."
+        },
+        "ja": {
+          "L": "わたしはあなたを、あなたの命を求める者たちの手に、あなたが恐れている者たちの手に、バビロンの王ネブカドネツァルの手に、カルデア人の手に渡す。",
+          "B": "わたしはあなたを、あなたの命をねらう者たち、あなたが恐れている者たち、バビロンの王ネブカドネツァルとカルデア人の手に渡す。",
+          "R": "わたしはあなたを、あなたを殺そうとしている人々、あなたが恐れている人々の手に渡す。それは、バビロンの王ネブカドネツァルとバビロン人だ。"
         }
       },
       "decisions": [
@@ -6030,6 +6755,29 @@
           "choice": "the people you are afraid of: Nebuchadrezzar ...",
           "alternatives": [],
           "reason": "Readable treats the last two names as saying who the feared enemies are, rather than repeating \"into the hand of\" four times.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220250111",
+            "o240220250151",
+            "o240220250152"
+          ],
+          "choice": "Nevukhadre'tsar \"ネブカドネツァル\" (the one form for both Hebrew spellings, as DAN and 2 Kings); haKasdim \"カルデア人\" (L, B), \"バビロン人\" (R, the English R \"Babylonians\").",
+          "alternatives": [
+            "ネブカドレツァル"
+          ],
+          "reason": "JER conventions; m1 explains the spelling, so the Japanese need not mark it.",
           "uncertain": false,
           "footnote": false
         }
@@ -6121,6 +6869,11 @@
           "L": "И {{deity_pronoun:я|Я}} брошу тебя и твою мать, которая тебя родила, в другую землю, где вы не родились, и там вы умрёте.",
           "B": "Я выброшу тебя и мать, которая тебя родила, в чужую страну, где никто из вас не родился, и там вы оба умрёте.",
           "R": "Я выброшу тебя и твою мать в другую страну, где никто из вас не родился, и вы оба там умрёте."
+        },
+        "ja": {
+          "L": "わたしは、あなたと、あなたを産んだあなたの母を、あなたがたが生まれたのではないほかの地に投げ出す。そして、あなたがたはそこで死ぬ。",
+          "B": "わたしは、あなたと、あなたを産んだ母を、あなたがたのどちらも生まれたことのないほかの国に投げ出す。あなたがたは二人ともそこで死ぬ。",
+          "R": "わたしは、あなたとあなたの母を、ほかの国へ投げ出す。そこは、あなたたちのどちらも生まれたことのない国だ。あなたたちは二人とも、そこで死ぬ。"
         }
       },
       "decisions": [
@@ -6186,6 +6939,26 @@
           "choice": "neither of you; you will both die",
           "alternatives": [],
           "reason": "Balanced and Readable show that the plural verbs include the king's mother.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220260121",
+            "o240220260151"
+          ],
+          "choice": "The plural yulladtem, tamutu \"あなたがた\" (L, B), \"あなたたち\" (R), the king and his mother.",
+          "alternatives": [],
+          "reason": "m2: plural, the king and his mother together.",
           "uncertain": false,
           "footnote": false
         }
@@ -6272,6 +7045,11 @@
           "L": "А в землю, куда они стремятся душой вернуться, туда не вернутся.",
           "B": "Они будут тосковать по этой земле и стремиться вернуться, но никогда не вернутся в неё.",
           "R": "Они будут очень хотеть вернуться домой, в эту землю, но никогда не вернутся."
+        },
+        "ja": {
+          "L": "しかし、彼らが帰ろうと心から願うその地に、そこに彼らは帰らない。",
+          "B": "彼らはこの地に帰りたいと切に願うが、決して帰って来ることはない。",
+          "R": "彼らは、ふるさとであるこの地に帰りたいと強く願う。しかし、決して帰って来ることはない。"
         }
       },
       "decisions": [
@@ -6322,6 +7100,29 @@
           "choice": "the longing comes first (Balanced, Readable)",
           "alternatives": [],
           "reason": "The Hebrew begins with \"the land\" for emphasis; Balanced and Readable begin with the longing and end with the refusal, which keeps the stress on \"never\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220270051",
+            "o240220270071",
+            "o240220270072"
+          ],
+          "choice": "menass'im 'et nafsham \"心から願う\" (L), \"切に願う\" (B), \"強く願う\" (R).",
+          "alternatives": [
+            "魂を上げる"
+          ],
+          "reason": "m1: lift up the soul, long for; the idiom is not kept word for word at L, since \"魂を上げる\" is not Japanese.",
           "uncertain": false,
           "footnote": false
         }
@@ -6420,6 +7221,11 @@
           "L": "Разве этот человек, Кония, — презренный, разбитый горшок, \\q сосуд, который никому не нужен? \\q Почему они выброшены, он и его потомство, \\q и брошены в землю, которой они не знали?",
           "B": "Разве этот человек, Кония, — никчёмный, разбитый горшок, \\q кувшин, который никому не нужен? \\q Почему он и его дети выброшены \\q и заброшены в землю, которой они не знают?",
           "R": "Неужели Кония — как разбитый горшок, на который смотрят с презрением, \\q как кувшин, который больше никому не нужен? \\q Почему его и его детей выбросили \\q и отправили в страну, которую они никогда не знали?"
+        },
+        "ja": {
+          "L": "この人コンヤは、さげすまれ、砕かれたつぼなのか？ \\q だれも喜ばない器なのか？ \\q なぜ、彼と彼の子孫は投げ出され、 \\q 彼らの知らない地に投げ捨てられたのか？",
+          "B": "この人コンヤは、価値のない、壊れたつぼなのか？ \\q だれも欲しがらない器なのか？ \\q なぜ、彼とその子らは投げ出され、 \\q 知らない地に投げ捨てられたのか？",
+          "R": "コンヤは、人に見下される、壊れたつぼのようなものなのか？ \\q もうだれも欲しがらない器なのか？ \\q なぜ、コンヤとその子どもたちは投げ出され、 \\q 一度も知ったことのない国へ送られたのか？"
         }
       },
       "decisions": [
@@ -6484,6 +7290,27 @@
           "choice": "children (Balanced, Readable)",
           "alternatives": [],
           "reason": "Literal keeps \"offspring\"; here Balanced and Readable say \"children\", and in verse 30, where the line of kings is meant, \"descendants\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220280011",
+            "o240220280012",
+            "o240220280081"
+          ],
+          "choice": "'etsev \"つぼ\", keli \"器\" (every level).",
+          "alternatives": [],
+          "reason": "m1: a cheap clay jar.",
           "uncertain": false,
           "footnote": false
         }
@@ -6559,6 +7386,11 @@
           "L": "Земля, земля, земля, \\q слушай слово {{divine_name:ГОСПОДА|Яхве}}!",
           "B": "Земля, земля, земля, \\q слушай слово {{divine_name:ГОСПОДА|Яхве}}!",
           "R": "Земля! Земля! Земля! \\q Слушай весть от {{divine_name:ГОСПОДА|Яхве}}!"
+        },
+        "ja": {
+          "L": "地よ、地よ、地よ、 \\q {{divine_name:主|ヤハウェ}}の言葉を聞け！",
+          "B": "地よ、地よ、地よ、 \\q {{divine_name:主|ヤハウェ}}の言葉を聞きなさい！",
+          "R": "地よ！地よ！地よ！ \\q {{divine_name:主|ヤハウェ}}からのお告げを聞きなさい！"
         }
       },
       "decisions": [
@@ -6611,6 +7443,29 @@
             "Terre at every level"
           ],
           "reason": "The word can mean the land of Judah or the whole earth (meaning decision m2). Literal keeps the wider \"terre\"; Balanced and Readable take the land of Judah, where the king's line is judged.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220290011",
+            "o240220290021",
+            "o240220290031"
+          ],
+          "choice": "'erets \"地\" at every level, which can mean both the land and the earth.",
+          "alternatives": [
+            "国よ"
+          ],
+          "reason": "m2 leaves open whether the land of Judah or the whole earth is meant (uncertain); 地 keeps both.",
           "uncertain": false,
           "footnote": false
         }
@@ -6712,6 +7567,11 @@
           "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Запишите этого человека бездетным, \\q человеком, [который] не преуспеет в свои дни; \\q потому что не преуспеет никто из его потомства, сидя на престоле Давида \\q и правя снова в Иуде.",
           "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Запишите этого человека бездетным, \\q человеком, который не добьётся успеха за свою жизнь, \\q потому что никому из его потомков не удастся сесть на престол Давида \\q и снова править в Иуде.",
           "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: Запишите этого человека в списки так, будто у него нет детей, \\q как человека, который ничего не добьётся в жизни. \\q Никому из его потомков не удастся сесть на престол Давида \\q и снова править в Иуде."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はこう言われる。この人を子のない者と書き記せ。 \\q 生涯栄えることのない男と。 \\q 彼の子孫からは、ダビデの王座に着いて栄え、 \\q 再びユダを治める者は一人も出ないからだ。",
+          "B": "{{divine_name:主|ヤハウェ}}はこう言われる。この人を子のない者として記録しなさい。 \\q 生きている間、成功することのない者として。 \\q 彼の子孫のだれ一人として、ダビデの王座に着くことに成功せず、 \\q 再びユダを治めることもないからだ。",
+          "R": "{{divine_name:主|ヤハウェ}}はこう言われる。この人を、子どもがいなかった者として、記録に書き記しなさい。 \\q 生きている間、何をしてもうまくいかない者として。 \\q 彼の子孫のだれ一人として、ダビデの王座に着くことはできず、 \\q 再びユダを治めることもない。"
         }
       },
       "decisions": [
@@ -6824,6 +7684,25 @@
           "choice": "\"ልጅ እንደሌለው\" (L, B)",
           "alternatives": [],
           "reason": "Matthew 1:11-12 lists Jeconiah (\"ኢኮንያን\") in the line of Joseph but does not quote this verse, so the Amharic follows the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240220300081"
+          ],
+          "choice": "'ariri \"子のない者\" (L, B), \"子どもがいなかった者\" (R).",
+          "alternatives": [],
+          "reason": "m1: listed as having no heir to the throne, though he had sons (footnoted, with Matthew 1:11-12).",
           "uncertain": false,
           "footnote": false
         }
