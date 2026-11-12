@@ -29,7 +29,7 @@ Lời hứa là sợi chỉ xuyên suốt. Lời Đức Chúa Trời phán với
 
 ## Open Word Bible dịch Sáng Thế Ký như thế nào
 
-**Danh của Đức Chúa Trời.** Danh riêng của Đức Chúa Trời, bốn chữ cái Hê-bơ-rơ thường được viết là YHWH, xuất hiện hơn một trăm bốn mươi lần trong Sáng Thế Ký. Theo một cách làm rất xưa, bản văn viết danh ấy là "CHÚA" bằng chữ in hoa; một thiết lập cho người đọc hiển thị "Gia-vê" thay vào đó. Xem [danh của Đức Chúa Trời](/terms/the-divine-name-yhwh/) và [Các danh và danh hiệu của Đức Chúa Trời](/articles/names-and-titles-of-god/).
+**Danh của Đức Chúa Trời.** Danh riêng của Đức Chúa Trời, bốn chữ cái Hê-bơ-rơ thường được viết là YHWH, xuất hiện hơn một trăm bốn mươi lần trong Sáng Thế Ký. Theo một cách làm rất xưa, bản văn viết danh ấy là "CHÚA" bằng chữ in hoa; một thiết lập cho người đọc hiển thị "Gia-vê" thay vào đó. Xem [danh của Đức Chúa Trời](/terms/the-divine-name-yhwh/) và [Danh và danh hiệu của Đức Chúa Trời](/articles/names-and-titles-of-god/).
 
 **Câu đầu tiên.** "Lúc khởi đầu, Đức Chúa Trời sáng tạo" cũng có thể được hiểu là "Khi Đức Chúa Trời bắt đầu sáng tạo", dẫn vào câu 2. Bản nháp theo cách hiểu thứ nhất và ghi chú cách hiểu thứ hai. Xem ["Lúc khởi đầu": dịch Sáng Thế Ký 1:1–2](/articles/in-the-beginning/).
 
