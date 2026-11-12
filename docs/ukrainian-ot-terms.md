@@ -114,7 +114,7 @@ span, as in the books already drafted.
 | the congregation (*ʿedah*); the assembly (*qahal*) | громада; зібрання |
 | tribe; clan; father's house | племʼя (every level; not коліно); рід; батьківський дім (L), родина (B, R) |
 | the Sabbath; Passover; Unleavened Bread | субота; Пасха; свято Опрісноків (L, B), свято Прісного хліба (R) |
-| Feast of Weeks; Booths; Ingathering | свято Тижнів; свято Кучок (as John 7:2); свято Збору врожаю |
+| Feast of Weeks; Booths; Ingathering | свято Тижнів; свято Кущів (L, B), свято Наметів (R), as John 7:2, the booths кущі (L, B); свято Збору врожаю |
 | the Day of Atonement | День Очищення |
 | serious skin disease (*tsaraʿat*) | тяжка шкірна хвороба, "проказа" in a decision |
 | steadfast love (*ḥesed*) | незмінна любов (L, B); вірна любов or милість (R); between people, a kindness: незмінна любов (L), доброта (B, R) |
