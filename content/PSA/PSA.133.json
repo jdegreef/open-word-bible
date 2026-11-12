@@ -78,6 +78,16 @@
           "L": "Песнь восхождения. Давида. Вот, как хорошо и как приятно жительство {{gender:братьев и сестёр|братьев}} — да, вместе!",
           "B": "Песнь восхождения. Давида. Смотрите, как хорошо, как прекрасно, когда {{gender:братья и сёстры|братья}} живут вместе в согласии!",
           "R": "Песня для пути в Иерусалим. Написал Давид. Как хорошо и как приятно, когда {{gender:братья и сёстры|братья}} живут вместе в мире!"
+        },
+        "ja": {
+          "L": "上りの歌。ダビデによる。ああ、なんと良く、なんと快いことか、{{gender:きょうだいたち|兄弟たち}}が住むことは――そうだ、共に！",
+          "B": "都に上る歌。ダビデによる。見なさい、{{gender:きょうだいたち|兄弟たち}}が心を一つにして共に暮らすのは、なんと良く、なんと麗しいことか！",
+          "R": "エルサレムへ上る旅の歌。ダビデによる。{{gender:きょうだいたち|兄弟たち}}が仲よく一緒に暮らすのは、本当にすばらしく、楽しいことだ！"
+        },
+        "uk": {
+          "L": "Пісня сходжень. Давидів. Ось, як добре і як приємно жити {{gender:братам і сестрам|братам}} — так, разом!",
+          "B": "Пісня сходжень. Давидів. Дивіться, як добре, як гарно, коли {{gender:брати й сестри живуть|брати живуть}} разом у злагоді!",
+          "R": "Пісня для подорожі вгору до Єрусалима. Її склав Давид. Як це добре і як приємно, коли {{gender:брати й сестри живуть|брати живуть}} разом у мирі!"
         }
       },
       "decisions": [
@@ -370,6 +380,46 @@
           "reason": "The word takes in the whole family and people (m4); the default says братья и сёстры and the gender setting gives the traditional братья, as in 122:8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191330010101"
+          ],
+          "choice": "'achim \"{{gender:きょうだいたち|兄弟たち}}\" (inclusive default, traditional alternative) at every level, as the English gender span",
+          "alternatives": [],
+          "reason": "Family and fellow members of the people (m4, uncertain); style guide §7 form.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191330010041",
+            "o191330010111",
+            "o191330010121"
+          ],
+          "choice": "hinneh \"ああ\" (L), \"見なさい\" (B), dropped (R); gam-yachad \"そうだ、共に\" (L), \"心を一つにして共に\" (B), \"仲よく一緒に\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rule for hinneh; \"also together\" is \"truly as one\" (m5). Drafted afresh, not in the wording of a familiar version.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -456,6 +506,16 @@
           "L": "[Это] — как доброе масло на голове, стекающее на бороду, бороду Аарона, стекающее на ворот одежд его,",
           "B": "Это как драгоценное масло помазания на голове, которое стекает на бороду, на бороду Аарона, и дальше на ворот его одежд,",
           "R": "Это как особое масло, которое возливали на голову Аарона, когда его ставили священником. Масло стекало по его бороде на ворот его одежд."
+        },
+        "ja": {
+          "L": "それは頭の上の良い油のよう、ひげに、アロンのひげに流れ下り、彼の衣のえりに流れ下る[油のよう]。",
+          "B": "それは、頭に注がれた貴い油が、ひげに、アロンのひげに流れ落ち、さらに彼の衣のえりにまで流れ落ちるようだ。",
+          "R": "それは、アロンが祭司に任じられたとき、その頭に注がれた特別な油のようだ。油は彼のひげを伝って流れ、衣のえりにまで落ちた。"
+        },
+        "uk": {
+          "L": "[Це] — як добра олія на голові, що стікає на бороду, бороду Аарона, яка стікає на комір його одягу,",
+          "B": "Це як чудова олія помазання на голові, що стікає по бороді, по Аароновій бороді, і спливає на комір його вбрання,",
+          "R": "Це як особлива олія, яку вилили на голову Аарона, коли його поставили священником. Олія стікала по його бороді на комір його одягу."
         }
       },
       "decisions": [
@@ -566,6 +626,44 @@
           "reason": "\"የቅብዓት ዘይት\" is the Exodus 30 term on main for the oil of Aaron's anointing (meaning decision m1), named here as the English Balanced does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191330020022",
+            "o191330020091",
+            "o191330020121"
+          ],
+          "choice": "hashemen hattov \"良い油\" (L), \"頭に注がれた貴い油\" (B), \"頭に注がれた特別な油\" (R); pi middotaw \"衣のえり\" (every level)",
+          "alternatives": [],
+          "reason": "The anointing of the high priest Aaron (m1); the opening of the robes is read as the collar (m2, uncertain).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191330020011"
+          ],
+          "choice": "L closes 133:2 with 。 and repeats \"…のよう\" in 133:3, where the English runs on with a comma",
+          "alternatives": [],
+          "reason": "Each verse keeps its own picture after its own marker.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -652,6 +750,16 @@
           "L": "как роса Ермона, стекающая на горы Сиона; ведь там {{divine_name:ГОСПОДЬ|Яхве}} заповедал благословение — жизнь вовеки.",
           "B": "как роса Ермона, нисходящая на холмы Сиона. Ведь именно там {{divine_name:ГОСПОДЬ|Яхве}} назначил благословение — жизнь без конца.",
           "R": "Это как обильная роса горы Ермон, которая падает на холмы Сиона. Именно там {{divine_name:ГОСПОДЬ|Яхве}} обещал благословить свой народ жизнью, которая никогда не кончится."
+        },
+        "ja": {
+          "L": "[また]ヘルモンの露のよう、シオンの山々に下る[露のよう]。まことに、そこで{{divine_name:主|ヤハウェ}}は祝福を、とこしえまでの命を、お命じになった。",
+          "B": "また、シオンの山々に降りるヘルモンの露のようだ。まことに、{{divine_name:主|ヤハウェ}}はそこで祝福をお定めになった。終わることのない命を。",
+          "R": "それは、ヘルモン山のたっぷりとした露が、シオンの丘に降りるようだ。そこで、{{divine_name:主|ヤハウェ}}は、終わることのない命をご自分の民に与えて、祝福すると約束してくださった。"
+        },
+        "uk": {
+          "L": "як роса Гермону, що сходить на гори Сіону; бо там {{divine_name:ГОСПОДЬ|Ягве}} заповів благословення: життя навіки.",
+          "B": "як роса Гермону, що спадає на пагорби Сіону. Бо саме там {{divine_name:ГОСПОДЬ|Ягве}} постановив благословення, життя без кінця.",
+          "R": "Це як рясна роса гори Гермон, що падає на пагорби Сіону. Саме там {{divine_name:ГОСПОДЬ|Ягве}} пообіцяв благословити свій народ життям, яке ніколи не закінчиться."
         }
       },
       "decisions": [
@@ -796,6 +904,27 @@
           "choice": "no deity_pronoun spans",
           "alternatives": [],
           "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; Readable's \"अपने लोगों\" refers to the LORD's people without a span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191330030021",
+            "o191330030091",
+            "o191330030131"
+          ],
+          "choice": "Chermon \"ヘルモン\" (L, B), \"ヘルモン山\" (R); tsiwwah \"お命じになった\" (L), \"お定めになった\" (B), \"約束してくださった\" (R); chayyim 'ad-ha'olam \"とこしえまでの命\" (L), \"終わることのない命\" (B, R)",
+          "alternatives": [],
+          "reason": "Name as PSA-5 (42:7); お〜になる avoids 命じられた, which reads passive; \"commanded the blessing\" is ordering it to come (m3).",
           "uncertain": false,
           "footnote": false
         }

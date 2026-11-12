@@ -75,6 +75,16 @@
           "L": "Молитва угнетённого, когда он изнемогает и изливает перед {{divine_name:ГОСПОДОМ|Яхве}} свою жалобу.",
           "B": "Молитва человека в тяжкой беде, который изнемог и изливает жалобу перед {{divine_name:ГОСПОДОМ|Яхве}}.",
           "R": "Молитва для того, кто страдает и ослабел и рассказывает {{divine_name:ГОСПОДУ|Яхве}} обо всём, что у него на сердце."
+        },
+        "ja": {
+          "L": "苦しむ者の祈り。その人が弱り果て、{{divine_name:主|ヤハウェ}}の前に自分の嘆きを注ぎ出すときのもの。",
+          "B": "深い苦しみの中にある人の祈り。疲れ果てて、{{divine_name:主|ヤハウェ}}の前に嘆きを注ぎ出すときのもの。",
+          "R": "苦しんで弱っている人が、{{divine_name:主|ヤハウェ}}に、そのことをすべて打ち明けるための祈り。"
+        },
+        "uk": {
+          "L": "Молитва пригнобленого, коли {{gender:така людина знемагає|він знемагає}} і виливає свою скаргу перед {{divine_name:ГОСПОДОМ|Ягве}}.",
+          "B": "Молитва людини в тяжкій біді, яка знесилилася й виливає скаргу перед {{divine_name:ГОСПОДОМ|Ягве}}.",
+          "R": "Молитва для того, хто страждає й почувається слабким і розповідає {{divine_name:ГОСПОДУ|Ягве}} про все."
         }
       },
       "decisions": [
@@ -438,6 +448,28 @@
           "reason": "The poetry note's table of titles: tefillah is \"молитва\" at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191020010011",
+            "o191020010022",
+            "o191020010041",
+            "o191020010081"
+          ],
+          "choice": "tefillah le'ani \"苦しむ者の祈り\" (L), \"深い苦しみの中にある人の祈り\" (B); \"その人\" / no pronoun, with no gender span; sicho \"嘆き\"",
+          "alternatives": [],
+          "reason": "A prayer for anyone in trouble (m2); the English gender span at L (that one, their / he, his) is not needed in Japanese. Grows faint is weak and overcome (m3); the complaint is an anxious pouring out of trouble (m4). The psalm is prose in the English and stays without \\q.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -516,6 +548,16 @@
           "L": "{{divine_name:ГОСПОДИ|Яхве}}, услышь мою молитву, и мой вопль о помощи пусть дойдёт до {{deity_pronoun:тебя|Тебя}}.",
           "B": "{{divine_name:ГОСПОДИ|Яхве}}, выслушай мою молитву; пусть мой зов о помощи достигнет {{deity_pronoun:тебя|Тебя}}.",
           "R": "{{divine_name:ГОСПОДИ|Яхве}}, услышь, как я молюсь! Пусть мой крик о помощи дойдёт до {{deity_pronoun:тебя|Тебя}}."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、わたしの祈りを聞いてください。助けを求めるわたしの叫びを、あなたのもとに届かせてください。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしの祈りに耳を傾けてください。助けを求めるわたしの声を、あなたに届かせてください。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしの祈りを聞いてください！助けを求めるわたしの叫びが、あなたに届くようにしてください。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДИ|Ягве}}, почуй мою молитву, і нехай мій крик про допомогу дійде до {{deity_pronoun:тебе|Тебе}}.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, вислухай мою молитву; нехай мій заклик про допомогу досягне {{deity_pronoun:тебе|Тебе}}.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, почуй мене, коли я молюся! Нехай мій крик про допомогу дійде до {{deity_pronoun:тебе|Тебе}}."
         }
       },
       "decisions": [
@@ -549,6 +591,25 @@
           "choice": "\"दुहाई\" (L); \"सहायता के लिए मेरी पुकार\" (B), \"मदद के लिए मेरी पुकार\" (R)",
           "alternatives": [],
           "reason": "The word is a cry for rescue (meaning m1). \"दुहाई\" is exactly the Hindi cry for help in trouble; Balanced and Readable spell it out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020020042"
+          ],
+          "choice": "shav'ati \"助けを求めるわたしの叫び\"; the jussive 'let it come' as a request 〜させてください / 〜ようにしてください",
+          "alternatives": [],
+          "reason": "The cry is a shout for rescue (m1); a wish addressed to God is made a request, as the Psalter does (PSA-3, 25:2).",
           "uncertain": false,
           "footnote": false
         }
@@ -640,6 +701,16 @@
           "L": "Не скрывай от меня {{deity_pronoun:твоего|Твоего}} лица в день моей беды; приклони ко мне {{deity_pronoun:твоё|Твоё}} ухо; в день, [когда] я взываю, поспеши, ответь мне.",
           "B": "Не отворачивай от меня {{deity_pronoun:твоего|Твоего}} лица в день, когда беда теснит меня. Склонись и выслушай меня; в день, когда я зову, ответь скорее.",
           "R": "Не отворачивайся от меня, когда я в беде. Выслушай меня! Когда я зову {{deity_pronoun:тебя|Тебя}}, ответь мне сразу."
+        },
+        "ja": {
+          "L": "わたしの苦難の日に、あなたの顔をわたしから隠さないでください。あなたの耳をわたしに傾けてください。わたしが呼ぶその日に、急いで、わたしに答えてください。",
+          "B": "苦しみがわたしに迫る日に、あなたの顔を背けないでください。身をかがめて、わたしに耳を傾けてください。わたしが呼び求める日に、すぐに答えてください。",
+          "R": "わたしが困っているとき、わたしから顔を背けないでください。わたしの言うことを聞いてください！わたしが呼ぶとき、すぐに答えてください。"
+        },
+        "uk": {
+          "L": "Не ховай від мене {{deity_pronoun:твого|Твого}} обличчя в день моєї скорботи; прихили до мене {{deity_pronoun:твоє|Твоє}} вухо; у день, коли я кличу, поспіши, відповідай мені.",
+          "B": "Не відвертай від мене свого обличчя в день, коли біда тяжко тисне на мене. Нахилися й вислухай мене; у день, коли я кличу, швидко відповідай.",
+          "R": "Не відвертайся від мене, коли я в біді. Вислухай мене! Коли я кличу до {{deity_pronoun:тебе|Тебе}}, відповідай мені зараз же."
         }
       },
       "decisions": [
@@ -711,6 +782,28 @@
           "choice": "\"जिस दिन ... उस दिन\" before the request",
           "alternatives": [],
           "reason": "Hindi puts the time clause before the verb, so \"on the day of my distress\" comes first; the psalm's two requests and two \"days\" keep their order.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020030021",
+            "o191020030031",
+            "o191020030081",
+            "o191020030101"
+          ],
+          "choice": "'al-taster panekha \"顔を…隠さないでください\" (L), \"顔を背けないでください\" (B, R); hatteh 'oznekha \"耳を…傾けてください\" (L, B)",
+          "alternatives": [],
+          "reason": "Hiding the face is turning away (m1); inclining the ear is listening closely (m2). Negative requests to God 〜ないでください.",
           "uncertain": false,
           "footnote": false
         }
@@ -793,6 +886,16 @@
           "L": "Ведь мои дни исчезли в дыму, и мои кости обожжены, как очаг.",
           "B": "Ведь мои дни уходят дымом, и кости мои опалены, как очаг.",
           "R": "Моя жизнь исчезает, как дым. Моё тело горит, как в лихорадке, раскалённое, как печь."
+        },
+        "ja": {
+          "L": "まことに、わたしの日々は煙のうちに尽き、わたしの骨は炉のように焼けている。",
+          "B": "わたしの日々は煙となって消え、わたしの骨はかまどのように焦げている。",
+          "R": "わたしの命は、煙のように消えていく。わたしの体は、熱があるかのように、かまどのように熱く燃えている。"
+        },
+        "uk": {
+          "L": "Бо мої дні скінчилися в диму, і мої кості, як вогнище, обгоріли.",
+          "B": "Бо мої дні йдуть із димом, і мої кості обпалені, як вогнище.",
+          "R": "Моє життя зникає, як дим. Моє тіло палає, наче в гарячці, гаряче, як піч."
         }
       },
       "decisions": [
@@ -867,6 +970,29 @@
           ],
           "reason": "A hearth is a place where fire burns (meaning m1); \"चूल्हा\" is the everyday Hindi word for it at every level.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020040062",
+            "o191020040071",
+            "o191020040041",
+            "o191020040052",
+            "o191020040081"
+          ],
+          "choice": "keqed \"炉のように\" (L), \"かまどのように\" (B, R)",
+          "alternatives": [],
+          "reason": "The hearth is a place of burning (m1, uncertain); days in smoke and burned bones are life wasting away (m2).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -948,6 +1074,16 @@
           "L": "Побито, как трава, и иссохло моё сердце, ведь я забыл есть мой хлеб.",
           "B": "Сердце моё сражено и высохло, как трава; я даже не вспоминаю о еде.",
           "R": "Я раздавлен, как трава, высохшая на солнце. Мне так горько, что я даже забываю поесть."
+        },
+        "ja": {
+          "L": "わたしの心は草のように打たれ、枯れた。わたしは自分のパンを食べることさえ忘れたからだ。",
+          "B": "わたしの心は打ちひしがれ、草のように枯れてしまった。食べることさえ忘れてしまう。",
+          "R": "わたしはつぶされたような気持ちだ。日に照らされて枯れた草のようだ。悲しくて、食べることさえ忘れてしまう。"
+        },
+        "uk": {
+          "L": "Побите, як трава, і всохло моє серце, бо я забув їсти мій хліб.",
+          "B": "Моє серце прибите й висохло, як трава; я навіть не памʼятаю, що треба їсти.",
+          "R": "Я почуваюся розчавленим, як трава, висушена сонцем. Мені так сумно, що я навіть забуваю поїсти."
         }
       },
       "decisions": [
@@ -1019,6 +1155,29 @@
             "\"मेरा हृदय ... मारा गया\""
           ],
           "reason": "Literal keeps the Hebrew's order, with the subject after the verbs, as Hindi poetry allows; Balanced and Readable put it first.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020050011",
+            "o191020050022",
+            "o191020050032",
+            "o191020050051",
+            "o191020050061"
+          ],
+          "choice": "hukkah-kha'esev \"草のように打たれ\" (L), \"打ちひしがれ、草のように枯れて\" (B), \"日に照らされて枯れた草\" (R); lachmi \"自分のパン\" (L)",
+          "alternatives": [],
+          "reason": "Struck like grass is scorched by the sun (m1); forgetting to eat is being too weak to eat (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1098,6 +1257,16 @@
           "L": "От звука моего стенания мои кости прилипли к моей плоти.",
           "B": "От непрестанных стонов я так исхудал, что кости прилипли к коже.",
           "R": "Я стону так много, что от меня остались одни кожа да кости."
+        },
+        "ja": {
+          "L": "わたしのうめきの声のゆえに、わたしの骨は肉にくっついた。",
+          "B": "うめき続けたために、わたしの骨は皮にはりついてしまった。",
+          "R": "わたしはうめいてばかりいて、骨と皮だけになってしまった。"
+        },
+        "uk": {
+          "L": "Від голосу мого стогону мої кості прилипли до мого тіла.",
+          "B": "Я так стогну, що виснажився: мої кості прилипли до шкіри.",
+          "R": "Я так багато стогну, що від мене лишилися тільки шкіра й кістки."
         }
       },
       "decisions": [
@@ -1152,6 +1321,27 @@
           "choice": "\"हड्डियों का ढाँचा भर\"",
           "alternatives": [],
           "reason": "Bones clinging to flesh means wasting away (meaning m1); the Hindi idiom \"हड्डियों का ढाँचा\" says what the English \"skin and bones\" says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020060031",
+            "o191020060041",
+            "o191020060052"
+          ],
+          "choice": "\"骨は肉にくっついた\" (L), \"骨は皮にはりついて\" (B), \"骨と皮だけ\" (R)",
+          "alternatives": [],
+          "reason": "Bones clinging to the flesh is being wasted away (m1); R uses the Japanese idiom 骨と皮.",
           "uncertain": false,
           "footnote": false
         }
@@ -1229,6 +1419,16 @@
           "L": "Я подобен пустынной сове в пустыне; я стал как сыч на развалинах.",
           "B": "Я как сова в пустыне, как маленький сыч среди развалин.",
           "R": "Я одинок, как дикая птица в пустыне или сова, что живёт в разрушенных домах."
+        },
+        "ja": {
+          "L": "わたしは荒れ野のみみずくのようだ。廃墟のふくろうのようになった。",
+          "B": "わたしは荒れ野にいるみみずく、廃墟にいる小さなふくろうのようだ。",
+          "R": "わたしは、荒れ野にいる野鳥のように、壊れた建物に住むふくろうのように、ひとりぼっちだ。"
+        },
+        "uk": {
+          "L": "Я подібний до пугача пустелі; я став, як сова руїн.",
+          "B": "Я як сова в пустелі, як маленький сич на руїнах.",
+          "R": "Я такий самотній, як дикий птах у пустелі чи сова, що живе в зруйнованих будівлях."
         }
       },
       "decisions": [
@@ -1376,6 +1576,28 @@
           "reason": "The two birds cannot be identified for certain; both are birds of desolate places (m1). Russian names two kinds of owl, as the English does, and the Readable says only \"wild bird\" and \"owl\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020070022",
+            "o191020070052"
+          ],
+          "choice": "qe'at midbar \"荒れ野のみみずく\" (L, B), \"荒れ野にいる野鳥\" (R); kos choravot \"廃墟のふくろう\" (L), \"廃墟にいる小さなふくろう\" (B)",
+          "alternatives": [
+            "ペリカン"
+          ],
+          "reason": "Two birds of lonely places (m1, uncertain); two owl words keep them apart, as the English.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1451,6 +1673,16 @@
           "L": "Я не сплю и стал как одинокая птица на кровле.",
           "B": "Сон не приходит ко мне; я как одинокая птица на крыше.",
           "R": "Я не могу уснуть. Я как птица, которая сидит совсем одна на крыше."
+        },
+        "ja": {
+          "L": "わたしは眠らずにいて、屋根の上のひとりぼっちの鳥のようになった。",
+          "B": "眠りが訪れない。わたしは、屋根の上にただ一羽とまっている鳥のようだ。",
+          "R": "わたしは眠れない。屋根の上にひとりぼっちでとまっている鳥のようだ。"
+        },
+        "uk": {
+          "L": "Я не сплю, і я став, як самотній птах на даху.",
+          "B": "Сон не приходить; я як одинокий птах, що сидить на покрівлі.",
+          "R": "Я не можу заснути. Я як птах, що сидить зовсім сам на даху."
         }
       },
       "decisions": [
@@ -1482,6 +1714,27 @@
           "choice": "a bird alone on a roof",
           "alternatives": [],
           "reason": "Houses had flat roofs. A single bird sitting there, apart from the rest, is a picture of loneliness. The word (tsippor) is a small bird.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020080011",
+            "o191020080032",
+            "o191020080061"
+          ],
+          "choice": "shaqadti \"眠らずにいて\" (L), \"眠りが訪れない\" (B), \"眠れない\" (R)",
+          "alternatives": [],
+          "reason": "I am wakeful is I lie awake (m1); the bird alone on the roof is the picture of loneliness (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1563,6 +1816,16 @@
           "L": "Весь день поносят меня мои враги; глумящиеся надо мной клянутся мной.",
           "B": "Враги мои весь день оскорбляют меня; насмешники сделали моё имя проклятием.",
           "R": "Мои враги весь день смеются надо мной. Когда они проклинают других, они упоминают моё имя."
+        },
+        "ja": {
+          "L": "一日中、わたしの敵はわたしをののしり、わたしをあざける者たちは、わたしを[呪いに]使って誓う。",
+          "B": "敵は一日中わたしをののしり、わたしをあざ笑う者たちは、わたしの名を呪いの言葉にする。",
+          "R": "わたしの敵は、一日中わたしをばかにする。人を呪うとき、彼らはわたしの名前を使う。"
+        },
+        "uk": {
+          "L": "Увесь день мої вороги зневажають мене; ті, що глузують з мене, клянуться мною.",
+          "B": "Мої вороги ганьблять мене цілий день; ті, хто насміхається з мене, роблять моє імʼя прокляттям.",
+          "R": "Мої вороги цілий день глузують з мене. Вони згадують моє імʼя, коли проклинають інших."
         }
       },
       "decisions": [
@@ -1636,6 +1899,27 @@
           "alternatives": [],
           "reason": "To swear by someone here is to use his fate as a curse (\"may you end up like him\", meaning m2). Literal keeps the oath with \"नाम लेकर\", which Hindi needs to make sense of swearing \"by me\"; Balanced and Readable say what it means, as the English does.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020090051",
+            "o191020090062",
+            "o191020090071"
+          ],
+          "choice": "cherfuni \"ののしり\" (as through Psalm 69); bi nishba'u \"わたしを[呪いに]使って誓う\" (L), \"わたしの名を呪いの言葉にする\" (B, R)",
+          "alternatives": [],
+          "reason": "Those who mock me are those who make a fool of me (m1, uncertain); swearing by me is using me as a curse (m2).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1715,6 +1999,16 @@
           "L": "Ведь пепел я ел, как хлеб, и питьё моё со слезами смешивал,",
           "B": "Ведь пепел — мой хлеб, и слёзы падают в моё питьё,",
           "R": "Пепел — моя пища, и слёзы капают в моё питьё."
+        },
+        "ja": {
+          "L": "まことに、わたしは灰をパンのように食べ、わたしの飲み物に涙を混ぜてきた。",
+          "B": "わたしが食べるパンは灰であり、飲むものには涙が落ちる。",
+          "R": "灰がわたしの食べ物で、飲み物には涙がしたたり落ちる。"
+        },
+        "uk": {
+          "L": "Бо попіл, як хліб, я їв, і моє питво зі сльозами змішував,",
+          "B": "Бо попіл — хліб, який я їм, і сльози падають у те, що я пʼю,",
+          "R": "Попіл — моя їжа, і сльози капають у моє питво."
         }
       },
       "decisions": [
@@ -1786,6 +2080,26 @@
             "\"रोना\""
           ],
           "reason": "Mixing drink \"with weeping\" means with tears; \"आँसू मिलाए हैं\" is the natural Hindi. Ashes are the sign of mourning (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191020100021",
+            "o191020100071"
+          ],
+          "choice": "The verse closes with 。 and 102:11 restarts with the cause (…のゆえに / それは)",
+          "alternatives": [],
+          "reason": "The English sentence runs on into 102:11 (m2); Japanese closes the verse and gives the cause in the next. Ashes are the sign of mourning (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1868,6 +2182,16 @@
           "L": "из-за {{deity_pronoun:твоего|Твоего}} негодования и {{deity_pronoun:твоего|Твоего}} гнева, ведь {{deity_pronoun:ты|Ты}} поднял меня и бросил.",
           "B": "из-за {{deity_pronoun:твоей|Твоей}} ярости и {{deity_pronoun:твоего|Твоего}} гнева; {{deity_pronoun:ты|Ты}} поднял меня и отшвырнул прочь.",
           "R": "Это потому, что {{deity_pronoun:ты|Ты}} гневаешься на меня. Ты поднял меня, а потом отбросил прочь."
+        },
+        "ja": {
+          "L": "あなたの憤りと激しい怒りのゆえに。まことに、あなたはわたしを持ち上げ、そして投げ捨ててしまわれた。",
+          "B": "それは、あなたの激しい憤りと怒りのためだ。あなたはわたしを持ち上げ、そして投げ捨ててしまわれた。",
+          "R": "それは、あなたがわたしに怒っておられるからだ。あなたはわたしを持ち上げ、それから投げ捨ててしまわれた。"
+        },
+        "uk": {
+          "L": "через {{deity_pronoun:твоє|Твоє}} обурення і {{deity_pronoun:твою|Твою}} лють, бо {{deity_pronoun:ти|Ти}} підняв мене й кинув.",
+          "B": "через {{deity_pronoun:твою|Твою}} лють і {{deity_pronoun:твій|Твій}} гнів; {{deity_pronoun:ти|Ти}} підхопив мене й відкинув геть.",
+          "R": "Це тому, що {{deity_pronoun:ти|Ти}} гніваєшся на мене. Ти підняв мене, а потім відкинув."
         }
       },
       "decisions": [
@@ -1898,6 +2222,28 @@
           "choice": "lifted me up and thrown me down: tossed aside",
           "alternatives": [],
           "reason": "The picture may be of someone picked up and hurled away, or of a dry stalk lifted by the wind (Job 30:22). God, who once raised him up, has cast him off.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020110021",
+            "o191020110032",
+            "o191020110051",
+            "o191020110062"
+          ],
+          "choice": "za'am / qetsef \"憤り\" / \"激しい怒り\"; nesa'tani vattashlikheni \"持ち上げ、そして投げ捨ててしまわれた\"",
+          "alternatives": [],
+          "reason": "Suffering is felt as God's anger (m1); lifted up and thrown down is tossed aside (m2). 投げ捨てられた could read as a passive, so 投げ捨ててしまわれた.",
           "uncertain": false,
           "footnote": false
         }
@@ -1977,6 +2323,16 @@
           "L": "Мои дни — как удлинившаяся тень, и я, как трава, засыхаю.",
           "B": "Мои дни — как тень, что вытягивается к закату; я засыхаю, как трава.",
           "R": "Моя жизнь — как тень на закате: она становится всё длиннее, а потом исчезает. Я засыхаю, как трава."
+        },
+        "ja": {
+          "L": "わたしの日々は伸びていく影のよう。わたしは草のように枯れていく。",
+          "B": "わたしの日々は、日が沈むときに長く伸びる影のようだ。わたしは草のように枯れていく。",
+          "R": "わたしの命は、夕日のときの影のように、長く伸びて、やがて消えてしまう。わたしは草のように乾いていく。"
+        },
+        "uk": {
+          "L": "Мої дні — як тінь, що видовжується, і я, як трава, всихаю.",
+          "B": "Мої дні — тінь, що видовжується, коли сідає сонце; я всихаю, як трава.",
+          "R": "Моє життя — як тінь на заході сонця, що довшає, перш ніж зникнути. Я засихаю, як трава."
         }
       },
       "decisions": [
@@ -2030,6 +2386,26 @@
             "\"फैली हुई छाया\""
           ],
           "reason": "A shadow stretched out is the long shadow of evening, the end of life (meaning m1). Hindi \"ढलती छाया\" is the evening shadow and keeps the image without adding words; Balanced and Readable add the setting sun, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020120022",
+            "o191020120031"
+          ],
+          "choice": "ketsel natui \"伸びていく影\" (L), \"日が沈むときに長く伸びる影\" (B), \"夕日のときの影\" (R)",
+          "alternatives": [],
+          "reason": "The stretched shadow is the evening of life (m1); B and R supply the sunset as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -2112,6 +2488,16 @@
           "L": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, вовек восседаешь [на престоле], и память о {{deity_pronoun:тебе|Тебе}} — из рода в род.",
           "B": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, вечно царствуешь на {{deity_pronoun:твоём|Твоём}} престоле, и {{deity_pronoun:твоё|Твоё}} имя живёт из поколения в поколение.",
           "R": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, правишь как Царь вечно. Люди во все времена будут помнить, кто {{deity_pronoun:ты|Ты}}."
+        },
+        "ja": {
+          "L": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたはとこしえに[王座に]座しておられ、あなたの記念は代々に[及ぶ]。",
+          "B": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたはとこしえに王座に着いておられ、あなたの名は代々にわたって語り継がれる。",
+          "R": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたはいつまでも王として治めておられる。どの時代の人々も、あなたがどんな方かを覚えている。"
+        },
+        "uk": {
+          "L": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, навіки сидиш [на престолі], і памʼять про {{deity_pronoun:тебе|Тебе}} — з роду в рід.",
+          "B": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, — Цар на {{deity_pronoun:твоєму|Твоєму}} престолі навіки, і {{deity_pronoun:твоє|Твоє}} імʼя живе від покоління до покоління.",
+          "R": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, правиш як Цар вічно. Люди в кожну епоху памʼятатимуть, хто {{deity_pronoun:ти|Ти}}."
         }
       },
       "decisions": [
@@ -2184,6 +2570,26 @@
           "choice": "\"तेरा स्मरण\" (L); \"तेरा नाम\" (B)",
           "alternatives": [],
           "reason": "Your remembrance is your name as people remember it (meaning m2). Literal keeps \"स्मरण\"; Balanced says \"नाम\" as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020130041",
+            "o191020130052"
+          ],
+          "choice": "teshev \"[王座に]座しておられ\" (L), \"王座に着いておられ\" (B), \"王として治めておられる\" (R); zikhrekha \"あなたの記念\" (L), \"あなたの名\" (B)",
+          "alternatives": [],
+          "reason": "To sit is to sit enthroned as King (m1); the remembrance is the name as it is remembered (m2), as zekher in 97:12.",
           "uncertain": false,
           "footnote": false
         }
@@ -2265,6 +2671,16 @@
           "L": "Ты восстанешь, {{deity_pronoun:ты|Ты}} сжалишься над Сионом, ведь [пришло] время помиловать его, ведь настал назначенный срок.",
           "B": "Ты встанешь и пожалеешь Сион; пришёл час проявить к нему доброту, настало время, которое {{deity_pronoun:ты|Ты}} назначил.",
           "R": "Ты встанешь и проявишь к Сиону своё милосердие. Сейчас время быть добрым к нему. Настал день, который {{deity_pronoun:ты|Ты}} выбрал."
+        },
+        "ja": {
+          "L": "あなたは立ち上がり、シオンをあわれまれる。まことに、シオンに恵みを示す時、定めの時が来たからである。",
+          "B": "あなたは立ち上がって、シオンをあわれんでくださる。シオンに恵みを示す時が来た。あなたが定められた時が来たのだ。",
+          "R": "あなたは立ち上がって、シオンにあわれみを示してくださる。今こそ、シオンにやさしくしてくださる時だ。あなたが選んでおかれた日が来た。"
+        },
+        "uk": {
+          "L": "Ти встанеш; {{deity_pronoun:ти|Ти}} змилуєшся над Сіоном, бо [настав] час виявити йому ласку, бо призначений час прийшов.",
+          "B": "Ти встанеш і пожалієш Сіон; настала година бути до нього добрим, прийшов час, який {{deity_pronoun:ти|Ти}} призначив.",
+          "R": "Ти встанеш і виявиш Сіонові {{deity_pronoun:твоє|Твоє}} милосердя. Тепер час бути до нього добрим. Настав день, який {{deity_pronoun:ти|Ти}} вибрав."
         }
       },
       "decisions": [
@@ -2335,6 +2751,28 @@
           "alternatives": [],
           "reason": "Russian \"Сион\" is masculine, so the pronouns follow it where the Hebrew and the English say \"her\"; the same in verse 15, as earlier psalms do for the city.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020140041",
+            "o191020140051",
+            "o191020140061",
+            "o191020140101"
+          ],
+          "choice": "teracham \"あわれまれる\" (L), \"あわれんでくださる\" (B); lechenenah \"恵みを示す\" (L, B), \"やさしくしてくださる\" (R); mo'ed \"定めの時\" (L), \"あなたが定められた時\" (B)",
+          "alternatives": [],
+          "reason": "Zion lies in ruins (m1, uncertain); the appointed time is the time God has set (m2). The Hebrew's 'her' is rendered シオン, since Japanese does not use 彼女 for a city.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2415,6 +2853,16 @@
           "L": "Ведь {{deity_pronoun:твои|Твои}} рабы любят его камни и жалеют его прах.",
           "B": "Ведь {{deity_pronoun:твои|Твои}} рабы дорожат даже его камнями и скорбят о его прахе.",
           "R": "Твой народ любит каждый камень этого города. Им жаль его, лежащего во прахе."
+        },
+        "ja": {
+          "L": "まことに、あなたのしもべたちは、その石を愛し、そのちりをあわれむ。",
+          "B": "あなたのしもべたちは、その石の一つ一つをいとおしみ、そのちりを見て悲しむ。",
+          "R": "あなたの民は、この都の石を一つ一つ大切に思っている。ちりの中に倒れているこの都を、かわいそうに思っている。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:твої|Твої}} раби люблять його каміння, і його порох їм жаль.",
+          "B": "Бо {{deity_pronoun:твої|Твої}} раби дорожать навіть його камінням і сумують над його порохом.",
+          "R": "Твій народ любить кожен камінь цього міста. Їм жаль його, що лежить у поросі."
         }
       },
       "decisions": [
@@ -2470,6 +2918,26 @@
             "\"तेरे सेवक\""
           ],
           "reason": "The psalmist's \"your servants\" is \"दास\" at every level the English keeps the word, as the poetry note has it; Readable says \"तेरे लोग\", as the English Readable says \"your people\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020150021",
+            "o191020150081"
+          ],
+          "choice": "ratsu \"愛し\" (L), \"いとおしみ\" (B), \"大切に思っている\" (R); yechonenu \"あわれむ\" (L), \"見て悲しむ\" (B)",
+          "alternatives": [],
+          "reason": "Taking pleasure in the stones and pitying the dust is love for the ruined city (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2553,6 +3021,16 @@
           "L": "И народы будут бояться имени {{divine_name:ГОСПОДА|Яхве}}, и все цари земли — {{deity_pronoun:твоей|Твоей}} славы.",
           "B": "Тогда народы будут благоговеть перед именем {{divine_name:ГОСПОДА|Яхве}}, и все цари земли затрепещут перед {{deity_pronoun:твоей|Твоей}} славой.",
           "R": "Тогда народы будут чтить имя {{divine_name:ГОСПОДА|Яхве}}. Все цари на земле затрепещут, когда увидят {{deity_pronoun:твою|Твою}} славу."
+        },
+        "ja": {
+          "L": "こうして、諸国の民は{{divine_name:主|ヤハウェ}}の名を恐れ、地のすべての王たちは、あなたの栄光を[恐れる]。",
+          "B": "そのとき、諸国の民は{{divine_name:主|ヤハウェ}}の名を畏れ、地のすべての王たちは、あなたの栄光の前におののく。",
+          "R": "そのとき、国々の人々は{{divine_name:主|ヤハウェ}}の名をおそれ敬う。地上の王たちはみな、あなたの栄光を見て震える。"
+        },
+        "uk": {
+          "L": "І народи боятимуться імені {{divine_name:ГОСПОДА|Ягве}}, і всі царі землі — {{deity_pronoun:твоєї|Твоєї}} слави.",
+          "B": "Тоді народи благоговітимуть перед імʼям {{divine_name:ГОСПОДА|Ягве}}, і кожен цар на землі тремтітиме перед {{deity_pronoun:твоєю|Твоєю}} славою.",
+          "R": "Тоді народи шануватимуть імʼя {{divine_name:ГОСПОДА|Ягве}}. Усі царі землі тремтітимуть, коли побачать {{deity_pronoun:твою|Твою}} славу."
         }
       },
       "decisions": [
@@ -2604,6 +3082,27 @@
             "\"जातियाँ\" at every level"
           ],
           "reason": "The nations are \"जातियाँ\" at Literal; Balanced and Readable avoid \"जाति\", which also means caste, as the poetry note says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020160041",
+            "o191020160051",
+            "o191020160102"
+          ],
+          "choice": "yir'u \"恐れ\" (L), \"畏れ\" (B), \"おそれ敬う\" (R); malkhei ha'arets \"地の王たち\" (L, B), \"地上の王たち\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter's fear words and its form for the kings of the earth; the name of the LORD is the LORD as he has shown himself (m1). The psalmist turns to God again with 'your glory' (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -2681,6 +3180,16 @@
           "L": "Ведь {{divine_name:ГОСПОДЬ|Яхве}} построил Сион; {{deity_pronoun:он|Он}} явился во славе своей.",
           "B": "Ведь {{divine_name:ГОСПОДЬ|Яхве}} заново отстроит Сион; {{deity_pronoun:он|Он}} явится во всей своей славе.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} снова отстроит Сион. Он придёт и покажет свою славу."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}がシオンを建て、ご自分の栄光のうちに姿を現されたからである。",
+          "B": "{{divine_name:主|ヤハウェ}}はシオンを再び建て、栄光のうちに姿を現される。",
+          "R": "{{divine_name:主|ヤハウェ}}は、シオンをもう一度建て直してくださる。その方は来て、ご自分の栄光を示してくださる。"
+        },
+        "uk": {
+          "L": "Бо {{divine_name:ГОСПОДЬ|Ягве}} збудував Сіон; {{deity_pronoun:він|Він}} зʼявився у своїй славі.",
+          "B": "Бо {{divine_name:ГОСПОДЬ|Ягве}} знову збудує Сіон; {{deity_pronoun:він|Він}} зʼявиться в усій своїй славі.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} знову відбудує Сіон. Він прийде й покаже свою славу."
         }
       },
       "decisions": [
@@ -2820,6 +3329,26 @@
           "reason": "The English has a span on \"his glory\"; Russian refers back to the subject with the reflexive \"свой\", which takes no span. The same wherever \"свой\" stands for God's in these psalms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020170021",
+            "o191020170051"
+          ],
+          "choice": "banah \"建て\" (L), \"再び建て\" (B), \"もう一度建て直して\" (R); past at L, future at B and R",
+          "alternatives": [],
+          "reason": "The perfects are as good as done (m1); L keeps the Hebrew's past, B and R speak of the future as the English. Built is rebuilt (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2898,6 +3427,16 @@
           "L": "Он обратился к молитве обездоленных и не презрел их молитвы.",
           "B": "Он выслушает молитву обездоленных и не отмахнётся от их молений.",
           "R": "Он выслушает молитвы тех, у кого ничего нет. Он не оставит их без внимания."
+        },
+        "ja": {
+          "L": "その方は、窮乏した者の祈りに顔を向け、彼らの祈りをさげすむことはなさらなかった。",
+          "B": "その方は、何もかも失った者たちが祈るとき、耳を傾け、その祈りを退けることはなさらない。",
+          "R": "その方は、何も持っていない人たちの祈りを聞いてくださる。その人たちを無視することはなさらない。"
+        },
+        "uk": {
+          "L": "Він звернувся до молитви злиденних і не зневажив їхньої молитви.",
+          "B": "Він вислухає, коли молитимуться злиденні, і не відмахнеться від їхніх молитов.",
+          "R": "Він вислухає молитви людей, які нічого не мають. Він не знехтує ними."
         }
       },
       "decisions": [
@@ -2947,6 +3486,27 @@
             "\"दरिद्र\""
           ],
           "reason": "The word is someone stripped bare, utterly destitute (meaning m1). \"कंगाल\" says that; \"दरिद्र\" stays for the poetry note's \"needy\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020180042",
+            "o191020180011",
+            "o191020180061"
+          ],
+          "choice": "ha'ar'ar \"窮乏した者\" (L), \"何もかも失った者たち\" (B), \"何も持っていない人たち\" (R); lo'-vazah \"さげすむことはなさらなかった\" (L)",
+          "alternatives": [],
+          "reason": "The destitute is someone stripped bare (m1), kept apart from 'evyon 乏しい者; the perfects are a sure future (m2), L past, B and R future. God's negative 〜ことはなさらない.",
           "uncertain": false,
           "footnote": false
         }
@@ -3026,6 +3586,16 @@
           "L": "Пусть это будет записано для грядущего поколения, и народ, [который ещё будет] сотворён, восхвалит {{divine_name:ГОСПОДА|Ях}},",
           "B": "Запишите это для поколения, которое ещё придёт, и народ, который ещё будет сотворён, восхвалит {{divine_name:ГОСПОДА|Ях}},",
           "R": "Запишите это для тех, кто будет жить в грядущие годы. Тогда люди, которые ещё не родились, восхвалят {{divine_name:ГОСПОДА|Ях}}."
+        },
+        "ja": {
+          "L": "このことが、後の世代のために書き記されるように。造られる民が、{{divine_name:主|ヤハ}}を賛美するように。",
+          "B": "このことを、後に来る世代のために書き記せ。まだ造られていない民が、{{divine_name:主|ヤハ}}を賛美するようになる。",
+          "R": "このことを書き記して、これから先に生きる人々に残せ。そうすれば、まだ生まれていない人々が、{{divine_name:主|ヤハ}}を賛美するようになる。"
+        },
+        "uk": {
+          "L": "Нехай це буде записане для прийдешнього покоління, і народ, [ще] не створений, хвалитиме {{divine_name:ГОСПОДА|Яг}},",
+          "B": "Запишіть це для покоління, яке ще прийде, і народ, якого ще не створено, хвалитиме {{divine_name:ГОСПОДА|Яг}},",
+          "R": "Запишіть це для людей, які житимуть у прийдешні роки. Тоді люди, які ще не народилися, хвалитимуть {{divine_name:ГОСПОДА|Яг}}."
         }
       },
       "decisions": [
@@ -3151,6 +3721,46 @@
           "reason": "Yah is the short form of the divine name (m1); as the poetry note sets out, the default is the usual \"ГОСПОДЬ\" and the alternative \"Ях\", where the English has \"the LORD\" and \"Yah\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020190081",
+            "o191020190052",
+            "o191020190061"
+          ],
+          "choice": "yehallel-Yah \"{{divine_name:主|ヤハ}}を賛美する\"; 'am nivra' \"造られる民\" (L), \"まだ造られていない民\" (B), \"まだ生まれていない人々\" (R)",
+          "alternatives": [],
+          "reason": "Yah is the short form of the divine name (m1); the people to be created is a people God will make (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191020190081"
+          ],
+          "choice": "The verse closes with 。 and 102:20 gives the reason for the praise (…からである / 彼らに伝えよ)",
+          "alternatives": [],
+          "reason": "The English sentence runs on into 102:20 (m3); Japanese closes each verse and restarts.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3230,6 +3840,16 @@
           "L": "что {{deity_pronoun:он|Он}} посмотрел вниз со своей святой высоты; {{divine_name:ГОСПОДЬ|Яхве}} с небес посмотрел на землю,",
           "B": "что {{divine_name:ГОСПОДЬ|Яхве}} склонился со своих святых высот и посмотрел с небес на землю,",
           "R": "Скажите им, что {{divine_name:ГОСПОДЬ|Яхве}} посмотрел вниз из своего святого жилища в вышине. С небес {{deity_pronoun:он|Он}} посмотрел на землю."
+        },
+        "ja": {
+          "L": "その方が聖なる高みから見下ろし、{{divine_name:主|ヤハウェ}}が天から地を眺められたからである。",
+          "B": "{{divine_name:主|ヤハウェ}}が、ご自分の聖なる高い所から身をかがめ、天から地を見渡されたからである。",
+          "R": "彼らに伝えよ。{{divine_name:主|ヤハウェ}}は、天の聖なる住まいから見下ろし、天から地をご覧になった、と。"
+        },
+        "uk": {
+          "L": "що {{deity_pronoun:він|Він}} поглянув зі своєї святої висоти; {{divine_name:ГОСПОДЬ|Ягве}} подивився з небес на землю,",
+          "B": "що {{divine_name:ГОСПОДЬ|Ягве}} схилився зі своїх святих висот і поглянув із неба на землю,",
+          "R": "Скажіть їм, що {{divine_name:ГОСПОДЬ|Ягве}} подивився вниз зі своєї святої оселі вгорі. З неба {{deity_pronoun:він|Він}} дивився на землю."
         }
       },
       "decisions": [
@@ -3284,6 +3904,26 @@
             "\"ऊँचा स्थान\" alone"
           ],
           "reason": "The height is God's holy dwelling in heaven (meaning m1), not a \"high place\" of worship; \"पवित्र\" and \"नीचे झाँका\" keep it apart from the \"ऊँचे स्थान\" (bamot) of the history books.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020200032",
+            "o191020200041"
+          ],
+          "choice": "merom qodsho \"聖なる高み\" (L), \"聖なる高い所\" (B), \"天の聖なる住まい\" (R)",
+          "alternatives": [],
+          "reason": "The holy height is his holy dwelling in heaven (m1). R supplies 'Tell them' as the English R.",
           "uncertain": false,
           "footnote": false
         }
@@ -3361,6 +4001,16 @@
           "L": "чтобы услышать стон узника, чтобы освободить {{gender:детей|сынов}} смерти,",
           "B": "чтобы выслушать стенания пленников и освободить обречённых на смерть,",
           "R": "Он выслушал узников, когда они стонали. Он освободил людей, приговорённых к смерти."
+        },
+        "ja": {
+          "L": "捕らわれ人のうめきを聞き、死の子らを解き放つために。",
+          "B": "捕らわれ人のうめきに耳を傾け、死に定められた者たちを解き放つためである。",
+          "R": "その方は、捕らわれている人たちのうめき声を聞いてくださった。死刑を言い渡された人たちを、自由にしてくださった。"
+        },
+        "uk": {
+          "L": "щоб почути стогін вʼязня, щоб звільнити {{gender:дітей|синів}} смерті,",
+          "B": "щоб вислухати стогін полонених і звільнити тих, кого приречено на смерть,",
+          "R": "Він слухав, як стогнуть вʼязні. Він звільнив людей, яких засудили на смерть."
         }
       },
       "decisions": [
@@ -3520,6 +4170,26 @@
           "reason": "As the English Literal: the phrase means anyone condemned to die (m1), so the default is inclusive \"детей\", with \"сынов\" as the alternative, the pair the Pentateuch note uses for the sons of Israel.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191020210051",
+            "o191020210061"
+          ],
+          "choice": "benei temutah \"死の子ら\" (L), \"死に定められた者たち\" (B), \"死刑を言い渡された人たち\" (R), with no gender span",
+          "alternatives": [],
+          "reason": "Sons of death are those doomed to die (m1); 子ら is inclusive, so the English gender span (children / sons) is not needed. The prisoners may be the exiles (m2, uncertain).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3598,6 +4268,16 @@
           "L": "чтобы возвещать на Сионе имя {{divine_name:ГОСПОДА|Яхве}} и хвалу {{deity_pronoun:его|Его}} в Иерусалиме,",
           "B": "чтобы люди прославляли имя {{divine_name:ГОСПОДА|Яхве}} на Сионе и пели {{deity_pronoun:ему|Ему}} хвалу в Иерусалиме,",
           "R": "Так люди будут рассказывать о {{divine_name:ГОСПОДЕ|Яхве}} на Сионе. Они будут хвалить {{deity_pronoun:его|Его}} в Иерусалиме."
+        },
+        "ja": {
+          "L": "シオンで{{divine_name:主|ヤハウェ}}の名を、エルサレムでその方への賛美を語り告げるために。",
+          "B": "こうして人々は、シオンで{{divine_name:主|ヤハウェ}}の名を告げ知らせ、エルサレムでその方を賛美するようになる。",
+          "R": "こうして人々は、シオンで{{divine_name:主|ヤハウェ}}のことを語り、エルサレムでその方を賛美する。"
+        },
+        "uk": {
+          "L": "щоб звіщати на Сіоні імʼя {{divine_name:ГОСПОДА|Ягве}} і {{deity_pronoun:його|Його}} хвалу в Єрусалимі,",
+          "B": "щоб люди сповіщали імʼя {{divine_name:ГОСПОДА|Ягве}} на Сіоні й співали {{deity_pronoun:йому|Йому}} хвалу в Єрусалимі,",
+          "R": "Тож люди говоритимуть про {{divine_name:ГОСПОДА|Ягве}} на Сіоні. Вони хвалитимуть {{deity_pronoun:його|Його}} в Єрусалимі."
         }
       },
       "decisions": [
@@ -3630,6 +4310,25 @@
           "choice": "people",
           "alternatives": [],
           "reason": "Balanced and Readable supply a subject for the verb (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020220012"
+          ],
+          "choice": "lesapper \"語り告げるために\" (L); \"人々は\" supplied (B, R)",
+          "alternatives": [],
+          "reason": "To recount is the purpose of the rescue (m1); B and R supply the people as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -3709,6 +4408,16 @@
           "L": "когда соберутся вместе племена, и царства, чтобы служить {{divine_name:ГОСПОДУ|Яхве}}.",
           "B": "когда народы и царства соберутся, чтобы служить {{divine_name:ГОСПОДУ|Яхве}}.",
           "R": "Это случится, когда народы и царства соберутся вместе, чтобы поклоняться {{divine_name:ГОСПОДУ|Яхве}}."
+        },
+        "ja": {
+          "L": "もろもろの民と王国が共に集まり、{{divine_name:主|ヤハウェ}}に仕えるときに。",
+          "B": "もろもろの民と国々がみな集まって、{{divine_name:主|ヤハウェ}}に仕えるときに。",
+          "R": "それは、国々と王国が一緒に集まって、{{divine_name:主|ヤハウェ}}を礼拝するときに起こる。"
+        },
+        "uk": {
+          "L": "коли зберуться разом народи й царства, щоб служити {{divine_name:ГОСПОДУ|Ягве}}.",
+          "B": "коли народи й царства всі зберуться, щоб служити {{divine_name:ГОСПОДУ|Ягве}}.",
+          "R": "Це станеться, коли народи й царства зійдуться разом, щоб поклонятися {{divine_name:ГОСПОДУ|Ягве}}."
         }
       },
       "decisions": [
@@ -3755,6 +4464,27 @@
           "choice": "\"आराधना\" (R); \"सेवा\" (L, B)",
           "alternatives": [],
           "reason": "To serve the LORD here is to worship him (meaning m1); Readable says so, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020230052",
+            "o191020230021",
+            "o191020230042"
+          ],
+          "choice": "la'avod \"仕える\" (L, B), \"礼拝する\" (R)",
+          "alternatives": [],
+          "reason": "To serve here is to worship (m1): the nations come to worship (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -3832,6 +4562,16 @@
           "L": "Он сломил в пути мою силу; {{deity_pronoun:он|Он}} сократил мои дни.",
           "B": "На жизненном пути {{deity_pronoun:он|Он}} истощил мою силу и сократил мои дни.",
           "R": "На середине моей жизни Бог отнял у меня силу. Он сделал мою жизнь короткой."
+        },
+        "ja": {
+          "L": "その方は道の途中で、わたしの力を弱らせ、わたしの日々を短くなさった。",
+          "B": "人生の道の途中で、その方はわたしの力をくじき、わたしの日々を少なくなさった。",
+          "R": "人生の半ばで、神はわたしから力を奪ってしまわれた。わたしの命を短くなさった。"
+        },
+        "uk": {
+          "L": "Він упокорив у дорозі мою силу; {{deity_pronoun:він|Він}} вкоротив мої дні.",
+          "B": "На дорозі життя {{deity_pronoun:він|Він}} виснажив мою силу й зробив мої дні нечисленними.",
+          "R": "На половині мого життя Бог забрав мою силу. Він зробив моє життя коротким."
         }
       },
       "decisions": [
@@ -3881,6 +4621,26 @@
             "he"
           ],
           "reason": "Readable names God, who is meant by \"he\", at the start of the sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020240041",
+            "o191020240022"
+          ],
+          "choice": "kochi \"わたしの力\" (the word as read); baderekh \"道の途中で\" (L), \"人生の道の途中で\" (B), \"人生の半ばで\" (R); qitsar \"短くなさった\"",
+          "alternatives": [],
+          "reason": "The text is read 'my strength' (m1, footnote); in the way is in the course of life (m2). 短くされた could read as a passive, so 短くなさった.",
           "uncertain": false,
           "footnote": false
         }
@@ -3965,6 +4725,16 @@
           "L": "Я говорю: Боже мой, не забирай меня в середине моих дней; {{deity_pronoun:твои|Твои}} годы — из рода в род.",
           "B": "И я говорю: Боже мой, не забирай меня, когда прожита лишь половина моих дней, {{deity_pronoun:ты|Ты}}, чьи годы длятся из века в век.",
           "R": "Поэтому я молюсь: Боже мой, не забирай меня, когда я прожил лишь половину жизни. Ты живёшь во все века."
+        },
+        "ja": {
+          "L": "わたしは言う。わたしの神よ、わたしの日々の半ばで、わたしを取り去らないでください。あなたの年は、世々代々に[続く]。",
+          "B": "だから、わたしは言う。わたしの神よ、わたしの日々が半分しか終わらないうちに、わたしを取り去らないでください。あなたの年は、代から代へと続く。",
+          "R": "だから、わたしは祈る。わたしの神よ、わたしが人生の半分しか生きていないうちに、わたしを連れ去らないでください。あなたは、いつの時代までも生きておられる。"
+        },
+        "uk": {
+          "L": "Я кажу: Боже мій, не забирай мене посеред моїх днів; {{deity_pronoun:твої|Твої}} роки — з роду в рід.",
+          "B": "Тож я кажу: Боже мій, не забирай мене, коли минула лише половина моїх днів, {{deity_pronoun:ти|Ти}}, чиї роки тривають з віку у вік.",
+          "R": "Тож я молюся: Боже мій, не забирай мене, коли я прожив лише половину життя. Ти живеш крізь усі віки."
         }
       },
       "decisions": [
@@ -4016,6 +4786,28 @@
             "\"मुझे मरने न दे\""
           ],
           "reason": "To be taken up in the middle of one's days is to die young (meaning m1). Hindi \"उठा लेना\" is also said of God taking someone in death, so the image stays at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020250041",
+            "o191020250052",
+            "o191020250061",
+            "o191020250091"
+          ],
+          "choice": "'al-ta'aleni \"取り去らないでください\" (L, B), \"連れ去らないでください\" (R); no quotation marks, as the English",
+          "alternatives": [],
+          "reason": "Take me up in the middle of my days is let me die young (m1); your years are God's life without end (m2). The English has no quotation marks here, so neither does the Japanese.",
           "uncertain": false,
           "footnote": false
         }
@@ -4095,6 +4887,16 @@
           "L": "Издревле {{deity_pronoun:ты|Ты}} основал землю, и небеса — дело {{deity_pronoun:твоих|Твоих}} рук.",
           "B": "Давным-давно {{deity_pronoun:ты|Ты}} основал землю; небеса — дело {{deity_pronoun:твоих|Твоих}} рук.",
           "R": "Давным-давно {{deity_pronoun:ты|Ты}} создал землю и прочно утвердил её. Ты сделал небо своими руками."
+        },
+        "ja": {
+          "L": "昔、あなたは地の基を据えられた。天も、あなたの手のわざである。",
+          "B": "いにしえに、あなたは地の基を据えられた。天は、あなたの手が造られたものである。",
+          "R": "ずっと昔、あなたは地を造り、しっかりと据えられた。空も、あなたご自身の手で造られた。"
+        },
+        "uk": {
+          "L": "Колись землю {{deity_pronoun:ти|Ти}} заснував, і діло {{deity_pronoun:твоїх|Твоїх}} рук — небеса.",
+          "B": "Давно {{deity_pronoun:ти|Ти}} поставив землю на її основи; небеса — це те, що зробили {{deity_pronoun:твої|Твої}} руки.",
+          "R": "Давно {{deity_pronoun:ти|Ти}} створив землю й міцно поставив її на місце. Твої власні руки створили небо."
         }
       },
       "decisions": [
@@ -4219,6 +5021,27 @@
           "reason": "Hebrews 1:10-12 quotes verses 26-28 (m1) from the Greek. Where the Hebrew differs it is followed: \"Издревле\" / \"Давным-давно\" (formerly) for Hebrews' \"в начале\", no \"Господи\" in address, and \"дело\" (singular, as the Hebrew) where Hebrews' Literal has \"дела\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020260031",
+            "o191020260051",
+            "o191020260061"
+          ],
+          "choice": "As HEB 1:10's Japanese (\"地の基を据え\", \"あなたの手のわざ\"), with respect forms for God addressed in a prayer",
+          "alternatives": [],
+          "reason": "Hebrews 1:10-12 quotes the passage (m1), and the Hebrew agrees with it here, so its words are kept; Hebrews has plain verbs because God speaks, the psalm has the Psalter's respect forms because a man prays. The Creator outlasts creation (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4303,6 +5126,16 @@
           "L": "Они погибнут, а {{deity_pronoun:ты|Ты}} пребудешь; и все они, как одежда, обветшают; как одеяние, {{deity_pronoun:ты|Ты}} сменишь их, и они сменятся.",
           "B": "Они исчезнут, а {{deity_pronoun:ты|Ты}} останешься; все они износятся, как плащ. Как изношенную одежду, {{deity_pronoun:ты|Ты}} сменишь их, и их не станет.",
           "R": "Земля и небо придут к концу, а {{deity_pronoun:ты|Ты}} останешься. Все они износятся, как старая одежда. Ты сменишь их, как люди меняют одежду, и их не станет."
+        },
+        "ja": {
+          "L": "それらは滅びるが、あなたは立ち続けられる。それらはみな衣のように古びる。着物を替えるように、あなたはそれらを替え、それらは替わり去る。",
+          "B": "それらは終わりを迎えるが、あなたはいつまでもとどまられる。それらはみな、衣服のように古びてすり切れる。着古した服のように、あなたはそれらを取り替え、それらは消え去る。",
+          "R": "地も空も、いつかは終わる。しかし、あなたはいつまでも残られる。それらはみな、古い服のようにすり切れる。人が服を取り替えるように、あなたはそれらを取り替え、それらはなくなってしまう。"
+        },
+        "uk": {
+          "L": "Вони загинуть, а {{deity_pronoun:ти|Ти}} стоятимеш; і всі вони, як одежа, зносяться; як одяг, {{deity_pronoun:ти|Ти}} зміниш їх, і вони минуть.",
+          "B": "Їм прийде кінець, а {{deity_pronoun:ти|Ти}} стоїш твердо; усі вони постаріють і стоншаться, як плащ. Як зношений одяг, {{deity_pronoun:ти|Ти}} заміниш їх, і їх не стане.",
+          "R": "Земля і небо скінчаться, а {{deity_pronoun:ти|Ти}} залишишся. Вони всі зносяться, як старий одяг. Ти заміниш їх, як люди міняють одяг, і їх не стане."
         }
       },
       "decisions": [
@@ -4423,6 +5256,28 @@
           "reason": "Hebrews quotes the verse (m2). The Hebrew says \"you will change them\", where Hebrews follows the Greek \"you will roll them up\" (\"свернёшь\"), so the psalm has \"сменишь\". The Hebrew uses one verb twice (m1): the Literal keeps \"сменишь ... сменятся\", which is also Hebrews' \"сменятся\"; Balanced and Readable say \"их не станет\", as the English \"they will be gone\". The Literal has \"пребудешь\" for the Hebrew future where Hebrews has \"пребываешь\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020270091",
+            "o191020270102",
+            "o191020270021",
+            "o191020270041"
+          ],
+          "choice": "tachalifem veyachalofu \"あなたはそれらを替え、それらは替わり去る\" (L), \"取り替え…消え去る\" (B, R); not HEB 1:12's 巻く",
+          "alternatives": [],
+          "reason": "One verb is used twice, God changes them and they pass on (m1); L keeps the same root in Japanese. Hebrews 1:12 follows the Greek 'roll up' (m2); the Hebrew 'change' is followed here, with HEB 1:11's 滅びる / 衣のように古びる where they agree.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4498,6 +5353,16 @@
           "L": "Но {{deity_pronoun:ты|Ты}} — тот же, и годы {{deity_pronoun:твои|Твои}} не кончатся.",
           "B": "Но {{deity_pronoun:ты|Ты}} всегда тот же, и {{deity_pronoun:твоим|Твоим}} годам не будет конца.",
           "R": "Но {{deity_pronoun:ты|Ты}} никогда не меняешься, и {{deity_pronoun:твоим|Твоим}} годам никогда не будет конца."
+        },
+        "ja": {
+          "L": "しかし、あなたは同じ方であり、あなたの年は尽きることがない。",
+          "B": "しかし、あなたは変わることのない方。あなたの年は終わることがない。",
+          "R": "しかし、あなたは決して変わらない。あなたの命は、いつまでも終わらない。"
+        },
+        "uk": {
+          "L": "Але {{deity_pronoun:ти|Ти}} — той самий, і {{deity_pronoun:твої|Твої}} роки не скінчаться.",
+          "B": "Але {{deity_pronoun:ти|Ти}} — той, хто не змінюється, і {{deity_pronoun:твої|Твої}} роки ніколи не закінчаться.",
+          "R": "Але {{deity_pronoun:ти|Ти}} ніколи не змінюєшся. Твоє життя ніколи не скінчиться."
         }
       },
       "decisions": [
@@ -4591,6 +5456,27 @@
           "reason": "Hebrews quotes the line (m2), and here the Hebrew and the Greek say the same: \"you are he\" means \"you are the same\" (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020280012",
+            "o191020280021",
+            "o191020280051"
+          ],
+          "choice": "\"あなたは同じ方であり、あなたの年は尽きることがない\" (L) as HEB 1:12 L; \"あなたの年は終わることがない\" (B) as HEB 1:12 B",
+          "alternatives": [],
+          "reason": "You are he is you are the same (m1); Hebrews 1:12 quotes it (m2) and its Japanese is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4669,6 +5555,16 @@
           "L": "Дети {{deity_pronoun:твоих|Твоих}} рабов будут жить [в безопасности], и их потомство утвердится перед {{deity_pronoun:тобой|Тобой}}.",
           "B": "Дети {{deity_pronoun:твоих|Твоих}} рабов поселятся в земле, и их потомки будут в безопасности перед {{deity_pronoun:тобой|Тобой}}.",
           "R": "Дети {{deity_pronoun:твоего|Твоего}} народа будут жить в безопасности. Их внуки и правнуки будут с {{deity_pronoun:тобой|Тобой}}, под {{deity_pronoun:твоей|Твоей}} надёжной защитой."
+        },
+        "ja": {
+          "L": "あなたのしもべたちの子らは[安らかに]住み、その子孫は、あなたの前に堅く立てられる。",
+          "B": "あなたのしもべたちの子らはこの地に住まいを定め、その子孫は、あなたの前で守られる。",
+          "R": "あなたの民の子どもたちは、安心して暮らす。その子どもたちの子どもたちも、あなたに守られて、あなたのそばにいる。"
+        },
+        "uk": {
+          "L": "Діти {{deity_pronoun:твоїх|Твоїх}} рабів житимуть [у безпеці], і їхнє потомство буде утверджене перед {{deity_pronoun:тобою|Тобою}}.",
+          "B": "Діти {{deity_pronoun:твоїх|Твоїх}} рабів матимуть свій дім у краї, і їхні нащадки будуть у безпеці перед {{deity_pronoun:твоїм|Твоїм}} обличчям.",
+          "R": "Діти {{deity_pronoun:твого|Твого}} народу житимуть у безпеці. Діти їхніх дітей залишатимуться з {{deity_pronoun:тобою|Тобою}}, у безпеці під {{deity_pronoun:твоєю|Твоєю}} опікою."
         }
       },
       "decisions": [
@@ -4720,6 +5616,27 @@
           "alternatives": [],
           "reason": "Each level says what dwelling means here (m1); Literal brackets it.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191020290031",
+            "o191020290011",
+            "o191020290061"
+          ],
+          "choice": "yishkonu \"[安らかに]住み\" (L), \"この地に住まいを定め\" (B), \"安心して暮らす\" (R); zar'am \"その子孫\" (L, B)",
+          "alternatives": [],
+          "reason": "To dwell is to live settled and safe (m1); God's lasting years give his people a future (m2).",
+          "uncertain": false,
           "footnote": false
         }
       ],

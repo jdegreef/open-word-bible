@@ -313,11 +313,11 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(sum(manifest["status"].values()),
                          sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
         self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
-        # Editions with gaps list them by book too (French may have none left).
+        # Editions with gaps list them by book too. Since 2026-11-12 every
+        # language has every verse, so there may be no gaps left anywhere.
         for _, _, m in built.values():
             self.assertEqual(sum(m["missing"]["by_book"].values()), m["missing"]["count"])
             self.assertEqual(m["missing"]["count"], len(m["missing"]["verses"]))
-        self.assertTrue(any(m["missing"]["count"] for _, _, m in built.values()))
         self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
         # The page lists every file, in every site language, and the footer links it.
         for lang in build_site.LANGUAGES:
@@ -991,8 +991,9 @@ class SiteTest(unittest.TestCase):
         if not any("es" in r["renderings"] for r in records) and "es" not in build_site.summaries()[("1TI", 5)]:
             page = (self.out / "es" / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
             self.assertIn('<p class="chapter-summary" lang="en">', page)
-        with_es = [{"renderings": {"en": {}, "es": {}}}]
-        self.assertEqual(build_site.chapter_summary("1TI", 5, with_es, "es"), "")
+        # A chapter whose text has a language its summary lacks shows none.
+        with_xx = [{"renderings": {"en": {}, "xx": {}}}]
+        self.assertEqual(build_site.chapter_summary("1TI", 5, with_xx, "xx"), "")
         self.assertEqual(build_site.chapter_summary("JHN", 999, records, "en"), "")
 
     def test_chapter_strip_shows_the_whole_book(self):

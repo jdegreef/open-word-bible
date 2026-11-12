@@ -77,6 +77,16 @@
           "L": "И {{deity_pronoun:он|Он}} сказал мне: «Сын человеческий, встань на свои ноги, чтобы {{deity_pronoun:я|Я}} говорил с тобой.»",
           "B": "Он сказал мне: «Сын человеческий, встань на ноги, и {{deity_pronoun:я|Я}} буду говорить с тобой.»",
           "R": "Он сказал мне: «Сын человеческий, встань. Я хочу поговорить с тобой.»"
+        },
+        "ja": {
+          "L": "そしてその方はわたしに言われた。「人の子よ、自分の足で立ちなさい。わたしがあなたと語るためである。」",
+          "B": "その方はわたしに言われた。「人の子よ、自分の足で立ち上がりなさい。わたしはあなたと語る。」",
+          "R": "その方はわたしに言われました。「人よ、立ち上がりなさい。わたしはあなたと話したい。」"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:він|Він}} сказав мені: «Сину людський, стань на свої ноги, і {{deity_pronoun:я|Я}} говоритиму з тобою.»",
+          "B": "Він сказав мені: «Сину людський, стань на ноги, і {{deity_pronoun:я|Я}} говоритиму з тобою.»",
+          "R": "Він сказав мені: «Сину людський, встань. Я хочу говорити з тобою.»"
         }
       },
       "decisions": [
@@ -545,6 +555,89 @@
           "reason": "As in the earlier books: a pronoun for God at the start of a sentence is written plainly with its capital; elsewhere, including \"я\" when God speaks of himself, it takes the deity_pronoun span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020010031",
+            "o260020010041"
+          ],
+          "choice": "ben-'adam, God's address to Ezekiel through the book: \"人の子よ\" (L, B), \"人よ\" (R); never a title and never under the gender setting.",
+          "alternatives": [
+            "\"人の子よ\" at every level",
+            "\"人間よ\" (R)"
+          ],
+          "reason": "ben-'adam means a human being, a mortal before God (m1, footnoted). \"人の子よ\" is the established Japanese address (Daniel 8:17) and keeps the Hebrew idiom at Literal and Balanced. At Readable, where new readers know \"人の子\" as Jesus' title (the NT Son of Man), \"人よ\" says plainly what God calls him, as Luke 5:20 \"人よ\". The English keeps \"son of man\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [],
+          "choice": "God's words to Ezekiel are plain at every level; his commands are \"〜なさい\" (L, B) / \"〜しなさい\" (R), his prohibitions \"〜してはならない\" (L, B) / \"〜してはいけない\" (R); the narrative \"he said\" with God as subject is \"言われた\" (L, B) / \"言われました\" (R), with \"その方\" (never 彼) where a subject is needed.",
+          "alternatives": [],
+          "reason": "As God's commands to Jeremiah in the narrative (Jeremiah 1:7-8); the messages Ezekiel is to give use the oracle forms (〜せよ L). The English deity_pronoun spans become \"その方\" or nothing (style 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020010031"
+          ],
+          "choice": "\"сину людський\", lowercase, with no gender span, at every level",
+          "alternatives": [
+            "\"людино\"",
+            "\"Сину Людський\""
+          ],
+          "reason": "Following the Ezekiel terms note: the address calls Ezekiel a mortal before God and is kept at every level, Readable included; it is lowercase so that it is not read as the New Testament title \"Син Людський\", and Ezekiel is a particular man, so there is no gender span. The vocative is the living Ukrainian form. Later uses refer back here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260020010011"
+          ],
+          "choice": "deity_pronoun spans on God's \"я\" mid-sentence as well as on \"мене\", \"мій\" and the rest",
+          "alternatives": [
+            "spans only where the English has one"
+          ],
+          "reason": "English writes \"I\" with a capital in any case, but Ukrainian \"я\" is lowercase, so the style guide puts \"{{deity_pronoun:я|Я}}\" on God's \"I\" mid-sentence, so that it is capitalised together with \"Мене\". A pronoun at the start of a sentence is written plainly with its capital. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -634,6 +727,16 @@
           "L": "И вошёл в меня Дух, когда {{deity_pronoun:он|Он}} говорил мне, и поставил меня на мои ноги, и я слышал {{deity_pronoun:его|Его}}, говорящего мне.",
           "B": "Когда {{deity_pronoun:он|Он}} говорил со мной, в меня вошёл Дух и поставил меня на ноги, и я слышал, как {{deity_pronoun:он|Он}} говорит со мной.",
           "R": "Пока {{deity_pronoun:он|Он}} говорил, в меня вошёл Дух и поднял меня на ноги. Потом я услышал, как {{deity_pronoun:он|Он}} говорит со мной."
+        },
+        "ja": {
+          "L": "そしてその方がわたしに語られたとき、霊がわたしの中に入り、わたしを自分の足で立たせた。そしてわたしは、その方がわたしに語っておられるのを聞いた。",
+          "B": "その方がわたしに語られると、霊がわたしの中に入り、わたしを自分の足で立たせた。そして、わたしはその方がわたしに語られるのを聞いた。",
+          "R": "その方が語られると、霊がわたしの中に入り、わたしを立ち上がらせました。そして、わたしはその方が語りかけられるのを聞きました。"
+        },
+        "uk": {
+          "L": "І Дух увійшов у мене, коли {{deity_pronoun:він|Він}} говорив до мене, і поставив мене на мої ноги, і я чув {{deity_pronoun:його|Його}}, що говорив до мене.",
+          "B": "Коли {{deity_pronoun:він|Він}} говорив до мене, Дух увійшов у мене й поставив мене на ноги, і я чув, як {{deity_pronoun:він|Він}} говорить до мене.",
+          "R": "Коли {{deity_pronoun:він|Він}} говорив, Дух увійшов у мене і поставив мене на ноги. Тоді я почув, як {{deity_pronoun:він|Він}} говорить до мене."
         }
       },
       "decisions": [
@@ -836,6 +939,25 @@
           "reason": "As in English: God's Spirit, who gives Ezekiel the strength to stand (m1), takes a capital, unlike the spirit in the creatures (1:12).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020020031"
+          ],
+          "choice": "ruach \"霊\" (every level), for the English capital \"Spirit\".",
+          "alternatives": [],
+          "reason": "The LORD's Spirit giving Ezekiel strength (m1, uncertain, footnoted); the OT Japanese does not say 聖霊, and \"霊\" leaves the reading open as the meaning decision does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -937,6 +1059,16 @@
           "L": "И {{deity_pronoun:он|Он}} сказал мне: «Сын человеческий, {{deity_pronoun:я|Я}} посылаю тебя к {{gender:детям Израиля|сынам Израиля}}, к народам мятежным, которые восстали против {{deity_pronoun:меня|Меня}}; они и их отцы отступали от {{deity_pronoun:меня|Меня}} до самого этого дня.",
           "B": "Он сказал мне: «Сын человеческий, {{deity_pronoun:я|Я}} посылаю тебя к израильтянам, к мятежным народам, которые восстали против {{deity_pronoun:меня|Меня}}. Они и их предки бунтуют против {{deity_pronoun:меня|Меня}} до этого самого дня.",
           "R": "Он сказал мне: «Сын человеческий, {{deity_pronoun:я|Я}} посылаю тебя к израильтянам. Это народы, которые отвернулись от {{deity_pronoun:меня|Меня}}. Они и их предки грешили против {{deity_pronoun:меня|Меня}} до сегодняшнего дня."
+        },
+        "ja": {
+          "L": "そしてその方はわたしに言われた。「人の子よ、わたしはあなたをイスラエルの子らに、わたしに背いた反逆の国々に遣わす。彼らもその先祖たちも、今日この日に至るまで、わたしに背いてきた。",
+          "B": "その方はわたしに言われた。「人の子よ、わたしはあなたをイスラエルの人々に、わたしに背いた反逆の国々に遣わす。彼らもその先祖たちも、今日この日まで、わたしに背き続けてきた。",
+          "R": "その方はわたしに言われました。「人よ、わたしはあなたをイスラエルの人々のところに遣わす。彼らは、わたしに逆らう国々のようになってしまった。彼らもその先祖たちも、今日に至るまで、わたしに罪を犯し続けてきた。"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:він|Він}} сказав мені: «Сину людський, {{deity_pronoun:я|Я}} посилаю тебе до {{gender:нащадків Ізраїля|синів Ізраїля}}, до бунтівних народів, які збунтувалися проти {{deity_pronoun:мене|Мене}}; вони і їхні батьки повставали проти {{deity_pronoun:мене|Мене}} аж до цього самого дня.",
+          "B": "Він сказав мені: «Сину людський, {{deity_pronoun:я|Я}} посилаю тебе до ізраїльтян, до бунтівних народів, які повстали проти {{deity_pronoun:мене|Мене}}. Вони та їхні предки бунтували проти {{deity_pronoun:мене|Мене}} аж до цього дня.",
+          "R": "Він сказав мені: «Сину людський, {{deity_pronoun:я|Я}} посилаю тебе до ізраїльтян. Це народи, які відвернулися від {{deity_pronoun:мене|Мене}}. Вони та їхні предки грішили проти {{deity_pronoun:мене|Мене}} аж до сьогоднішнього дня."
         }
       },
       "decisions": [
@@ -1256,6 +1388,68 @@
           "reason": "The form the Pentateuch note sets for \"the sons of Israel\": a gender span at Literal, where the English has none, and the plain \"израильтяне\" at Balanced and Readable, where the English has a span, since the Russian word already means the whole people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020030132",
+            "o260020030151",
+            "o260020030191",
+            "o260020030121"
+          ],
+          "choice": "marad \"背く\" (L, B), \"逆らう\" (R); pasha' \"背く\" (L, B), \"罪を犯す\" (R, as the English R \"sinned\"); goyim \"国々\" (every level).",
+          "alternatives": [],
+          "reason": "The prophetic forms for rebellion (2 Kings 18:7 marad 背く; Isaiah 1 pesha' 背く). Israel is called \"nations\" as if it were one of the foreign peoples (m1); Readable makes that explicit with \"国々のようになってしまった\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260020030091",
+            "o260020030101"
+          ],
+          "choice": "bene Yisra'el \"イスラエルの子ら\" (L), \"イスラエルの人々\" (B, R), with no gender span.",
+          "alternatives": [],
+          "reason": "\"人々\" is already inclusive, so the English gender span (Israelites / sons of Israel) is not needed (style 7a, as Leviticus).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o260020030071"
+          ],
+          "choice": "\"{{gender:нащадків Ізраїля|синів Ізраїля}}\" (L); \"ізраїльтян\" (B, R), no span",
+          "alternatives": [
+            "the English spans as they stand"
+          ],
+          "reason": "As the Old Testament terms note settles for the whole Old Testament: Literal keeps the phrase with the gender span, Balanced and Readable say \"ізраїльтяни\", which already takes in men and women. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1346,6 +1540,16 @@
           "L": "И {{gender:дети|сыновья}} — с жёстким лицом и твёрдым сердцем; {{deity_pronoun:я|Я}} посылаю тебя к ним, и ты скажешь им: Так говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}.",
           "B": "Их потомки дерзки и упрямы. Я посылаю тебя к ним, и ты скажешь им: Так говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}.",
           "R": "Их потомки бесстыдны и упрямы. Я посылаю тебя к ним, и ты должен сказать им: Вот что говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}."
+        },
+        "ja": {
+          "L": "その子らは、顔が固く、心がかたくなである。わたしはあなたを彼らに遣わす。あなたは彼らに言いなさい。{{divine_name:主なる神|主ヤハウェ}}はこう言われる、と。",
+          "B": "その子孫たちは厚かましく、かたくなである。わたしはあなたを彼らのもとに遣わす。あなたは彼らに言いなさい。{{divine_name:主なる神|主ヤハウェ}}はこう言われる、と。",
+          "R": "その子孫たちは恥知らずで、がんこだ。わたしはあなたを彼らのところに遣わす。あなたは彼らに、{{divine_name:主なる神|主ヤハウェ}}はこう言われる、と告げなければならない。"
+        },
+        "uk": {
+          "L": "А {{gender:діти|сини}} — тверді обличчям і уперті серцем; {{deity_pronoun:я|Я}} посилаю тебе до них, і ти скажеш їм: Так говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "B": "Їхні нащадки зухвалі й уперті. Я посилаю тебе до них, і ти скажеш їм: Так говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "R": "Їхні нащадки безсоромні й уперті. Я посилаю тебе до них, і ти мусиш сказати їм: Так говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}."
         }
       },
       "decisions": [
@@ -1708,6 +1912,71 @@
           "reason": "The prophets' formula as the note's table sets it, with \"Владыка ГОСПОДЬ\" for the Lord GOD, as in Psalms and Isaiah (\"Владыка\" inflects, the divine name inflects inside its span). As in English, the message Ezekiel is to give takes no quotation marks.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020040141",
+            "o260020040151",
+            "o260020040121",
+            "o260020040131"
+          ],
+          "choice": "Adonai YHWH \"主なる神\" with the reader setting \"主ヤハウェ\" (one divine_name span, as the English \"the Lord GOD\"); koh 'amar \"…はこう言われる\" at every level.",
+          "alternatives": [],
+          "reason": "As Isaiah and Jeremiah: the message Ezekiel speaks uses the respect form 言われる; the English B and R reword the formula, but Japanese keeps one form for it through the book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020040021",
+            "o260020040031",
+            "o260020040042",
+            "o260020040051"
+          ],
+          "choice": "qeshe panim vechizqe lev \"顔が固く、心がかたくな\" (L), \"厚かましく、かたくな\" (B), \"恥知らずで、がんこ\" (R).",
+          "alternatives": [],
+          "reason": "Shameless and obstinate (m1). Literal keeps face and heart; the other levels say the sense (がんこ as Deuteronomy 9:6 R). The children are not marked for gender in Japanese (子ら, 子孫).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020040121"
+          ],
+          "choice": "\"Так говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}\" at every level",
+          "alternatives": [
+            "\"Ось що каже\" at Readable"
+          ],
+          "reason": "The Old Testament terms note fixes the messenger formula for every level, so that it reads the same through the prophets. \"Declares the Lord GOD\" is \"говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}\" (L, B) and \"каже\" (R). Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1794,6 +2063,16 @@
           "L": "И они — послушают ли или воздержатся, ведь они дом мятежа, — узнают, что пророк был среди них.",
           "B": "Послушают они или откажутся, — ведь они мятежный дом, — они узнают, что среди них был пророк.",
           "R": "Это непослушный народ. Но послушают они или нет, они узнают, что среди них был пророк."
+        },
+        "ja": {
+          "L": "彼らは、聞くにしても、拒むにしても――彼らは反逆の家だから――、自分たちの中に預言者がいたことを知る。",
+          "B": "彼らが聞き入れても、拒んでも――彼らは反逆の家なのだ――、自分たちの中に預言者がいたことを知るようになる。",
+          "R": "彼らは、わたしに従おうとしない民だ。しかし、彼らが聞いても聞かなくても、自分たちの中に預言者がいたことを知るようになる。"
+        },
+        "uk": {
+          "L": "І вони — чи послухають, чи відмовляться, бо вони дім бунту, — пізнають, що пророк був серед них.",
+          "B": "Чи послухають вони, чи відмовляться, — бо вони бунтівний дім, — вони пізнають, що пророк був серед них.",
+          "R": "Це люди, які не хочуть слухатися. Але чи послухають вони, чи ні, вони знатимуть, що серед них був пророк."
         }
       },
       "decisions": [
@@ -2145,6 +2424,47 @@
           "reason": "The wording for this phrase each time it returns (2:7; 3:11; 3:27).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020050071",
+            "o260020050081"
+          ],
+          "choice": "bet meri \"反逆の家\" (L, B), \"わたしに従おうとしない民\" (R, as the English R \"people who refuse to obey\"); the same through the book (2:6, 8; 3:9, 26-27; 12; 17; 24; 44).",
+          "alternatives": [],
+          "reason": "A people defined by rebellion (m1, footnoted). \"家\" keeps the Hebrew \"house\" at Literal and Balanced, as \"イスラエルの家\"; Readable says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020050071"
+          ],
+          "choice": "\"дім бунту\" (L); \"бунтівний дім\" (B); \"люди, які не хочуть слухатися\" (R)",
+          "alternatives": [
+            "\"дім непокори\""
+          ],
+          "reason": "Following the Ezekiel terms table for bet meri; kept through the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2252,6 +2572,16 @@
           "L": "А ты, сын человеческий, не бойся их и не бойся их слов, хотя терновник и колючки с тобой и ты сидишь среди скорпионов. Не бойся их слов и не страшись их лиц, ведь они дом мятежа.",
           "B": "А ты, сын человеческий, не бойся ни их, ни их слов, хотя тебя окружают колючки и терновник и ты живёшь среди скорпионов. Не бойся их слов и не пугайся их взглядов, ведь они мятежный дом.",
           "R": "Но ты, сын человеческий, не бойся ни их самих, ни того, что они говорят. Они будут вокруг тебя, как колючки и терновник, и ты будешь жить как среди скорпионов. Но не бойся того, что они говорят, и не пугайся того, как они на тебя смотрят. Это непослушный народ."
+        },
+        "ja": {
+          "L": "そしてあなたは、人の子よ、彼らを恐れてはならない。彼らの言葉を恐れてはならない。たとえいばらとあざみがあなたと共にあり、あなたがさそりの中に住んでいても。彼らの言葉を恐れてはならない。彼らの顔におびえてはならない。彼らは反逆の家だからである。",
+          "B": "人の子よ、あなたは彼らを恐れてはならない。彼らの言うことを恐れてはならない。たとえいばらとあざみがあなたを取り囲み、あなたがさそりの中に住んでいてもである。彼らの言葉を恐れてはならない。彼らの顔つきにおびえてはならない。彼らは反逆の家なのだ。",
+          "R": "人よ、あなたは彼らを怖がってはいけない。彼らの言うことを怖がってはいけない。彼らは、あなたの周りのとげのある草やいばらのようになり、あなたはさそりの中で暮らすことになる。それでも、彼らの言うことを怖がってはいけない。彼らがあなたを見る目つきにおびえてはいけない。彼らは、わたしに従おうとしない民だ。"
+        },
+        "uk": {
+          "L": "А ти, сину людський, не бійся їх і не бійся їхніх слів, хоч будяки і терни з тобою і ти сидиш серед скорпіонів. Їхніх слів не бійся і перед їхніми обличчями не жахайся, бо вони дім бунту.",
+          "B": "А ти, сину людський, не бійся ні їх, ні їхніх слів, хоч довкола тебе терни й будяки і ти живеш серед скорпіонів. Не бійся їхніх слів і не лякайся їхніх поглядів, бо вони бунтівний дім.",
+          "R": "Але ти, сину людський, не бійся ні їх, ні того, що вони кажуть. Вони будуть, як терни й будяки довкола тебе, і ти житимеш серед скорпіонів. Але не бійся того, що вони кажуть, і не лякайся того, як вони на тебе дивляться. Це люди, які не хочуть слухатися."
         }
       },
       "decisions": [
@@ -2326,6 +2656,27 @@
           "alternatives": [],
           "reason": "The wording set at verse 5.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020060111",
+            "o260020060122",
+            "o260020060151"
+          ],
+          "choice": "sarvim vesallonim \"いばらとあざみ\" (L, B), \"とげのある草やいばら\" (R); 'aqrabbim \"さそり\" (kana, every level).",
+          "alternatives": [],
+          "reason": "Prickly plants (m1, uncertain, footnoted); Japanese uses the common pair for thorny weeds, as the English pairs briers and thorns. The people's hostility is the point (m2).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2409,6 +2760,16 @@
           "L": "И ты будешь говорить им {{deity_pronoun:мои|Мои}} слова, послушают ли они или воздержатся, ведь они — мятеж.",
           "B": "Ты должен говорить им {{deity_pronoun:мои|Мои}} слова, послушают они или откажутся, ведь они мятежны.",
           "R": "Ты должен говорить им то, что {{deity_pronoun:я|Я}} говорю, послушают они или нет, потому что они не хотят слушаться."
+        },
+        "ja": {
+          "L": "そしてあなたは、彼らが聞くにしても、拒むにしても、わたしの言葉を彼らに語りなさい。彼らは反逆そのものだからである。",
+          "B": "彼らが聞き入れても、拒んでも、あなたはわたしの言葉を彼らに語りなさい。彼らは反逆する者たちなのだ。",
+          "R": "彼らが聞いても聞かなくても、あなたはわたしが言うことを彼らに伝えなさい。彼らは、わたしに従おうとしないからだ。"
+        },
+        "uk": {
+          "L": "І ти говоритимеш їм {{deity_pronoun:мої|Мої}} слова, чи послухають, чи відмовляться, бо вони — бунт.",
+          "B": "Ти мусиш говорити їм {{deity_pronoun:мої|Мої}} слова, чи послухають вони, чи відмовляться, бо вони бунтівні.",
+          "R": "Ти мусиш казати їм те, що кажу {{deity_pronoun:я|Я}}, чи послухають вони, чи ні, бо вони не хочуть слухатися."
         }
       },
       "decisions": [
@@ -2541,6 +2902,16 @@
           "L": "А ты, сын человеческий, слушай, что {{deity_pronoun:я|Я}} говорю тебе; не будь мятежным, как дом мятежа. Открой свой рот и ешь то, что {{deity_pronoun:я|Я}} даю тебе.»",
           "B": "А ты, сын человеческий, слушай, что {{deity_pronoun:я|Я}} говорю тебе. Не восставай, как этот мятежный дом. Открой рот и съешь то, что {{deity_pronoun:я|Я}} даю тебе.»",
           "R": "Но ты, сын человеческий, слушай, что {{deity_pronoun:я|Я}} тебе говорю. Не отказывайся слушаться {{deity_pronoun:меня|Меня}}, как они. Открой рот и съешь то, что {{deity_pronoun:я|Я}} даю тебе.»"
+        },
+        "ja": {
+          "L": "そしてあなたは、人の子よ、わたしがあなたに語ることを聞きなさい。反逆の家のように反逆してはならない。あなたの口を開け、わたしがあなたに与えるものを食べなさい。」",
+          "B": "しかし人の子よ、あなたは、わたしがあなたに語ることを聞きなさい。あの反逆の家のように反逆してはならない。口を開けて、わたしがあなたに与えるものを食べなさい。」",
+          "R": "しかし人よ、あなたは、わたしが言うことを聞かなければならない。あの民のように、わたしに従わないようではいけない。口を開けて、わたしがあなたに与えるものを食べなさい。」"
+        },
+        "uk": {
+          "L": "А ти, сину людський, слухай, що {{deity_pronoun:я|Я}} говорю тобі; не будь бунтівним, як дім бунту. Відкрий свої уста і їж, що {{deity_pronoun:я|Я}} даю тобі.»",
+          "B": "А ти, сину людський, слухай, що {{deity_pronoun:я|Я}} тобі кажу. Не бунтуй, як той бунтівний дім. Відкрий уста і їж те, що {{deity_pronoun:я|Я}} тобі даю.»",
+          "R": "Але ти, сину людський, мусиш слухати, що {{deity_pronoun:я|Я}} тобі кажу. Не відмовляйся слухатися {{deity_pronoun:мене|Мене}}, як вони. Відкрий уста і зʼїж те, що {{deity_pronoun:я|Я}} тобі даю.»"
         }
       },
       "decisions": [
@@ -2698,6 +3069,16 @@
           "L": "И я посмотрел, и вот, рука протянута ко мне, и вот, в ней свиток книги.",
           "B": "Тогда я посмотрел и увидел протянутую ко мне руку, а в ней был исписанный свиток.",
           "R": "Потом я увидел руку, протянутую ко мне. В ней был свиток с записями."
+        },
+        "ja": {
+          "L": "そしてわたしが見ると、なんと、手がわたしの方に差し伸べられていた。そしてなんと、その中に書物の巻物があった。",
+          "B": "そこでわたしが見ると、手がわたしの方に差し伸べられているのが見えた。その手の中には、文字の書かれた巻物があった。",
+          "R": "それから、わたしの方に伸ばされた手が見えました。その手は、文字の書かれた巻物を持っていました。"
+        },
+        "uk": {
+          "L": "І я дивився, і ось — рука простягнена до мене, і ось — у ній сувій книги.",
+          "B": "Тоді я подивився і побачив руку, простягнену до мене, а в ній був списаний сувій.",
+          "R": "Тоді я побачив руку, що простяглася до мене. Вона тримала сувій, на якому було написано."
         }
       },
       "decisions": [
@@ -2881,6 +3262,26 @@
           "reason": "A megillah is a scroll, rolled up, not a bound book (m1). Each level makes clear that it is rolled; Literal keeps \"of a book\" (sefer).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020090081",
+            "o260020090091"
+          ],
+          "choice": "megillat sefer \"書物の巻物\" (L), \"文字の書かれた巻物\" (B, R).",
+          "alternatives": [],
+          "reason": "A written scroll (m1); \"巻物\" is the word of Isaiah 29:11 and Daniel 9:2 R.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2970,6 +3371,16 @@
           "L": "И {{deity_pronoun:он|Он}} развернул его передо мной, и он [был] исписан спереди и сзади, и написаны на нём плачи, и стон, и горе.",
           "B": "Он развернул его передо мной, и он был исписан с лицевой и с оборотной стороны. На нём были написаны плачи, стенания и горе.",
           "R": "Он развернул его передо мной. Свиток был исписан с обеих сторон. В нём были погребальные песни, горькие стоны и слова о горе."
+        },
+        "ja": {
+          "L": "そしてその方はそれをわたしの前に広げられた。それは表にも裏にも書かれており、そこには哀歌と嘆きと悲しみが書かれていた。",
+          "B": "その方はそれをわたしの前に広げられた。それには表にも裏にも文字が書かれていた。そこに書かれていたのは、哀歌と嘆きと悲しみであった。",
+          "R": "その方は、わたしの前でそれを開かれました。その両面に、文字が書かれていました。そこには、葬式の歌や、悲しい叫び、悲しみの言葉がいっぱい書かれていました。"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:він|Він}} розгорнув його переді мною, і він [був] списаний спереду і ззаду, і написані на ньому плачі, і ридання, і горе.",
+          "B": "Він розгорнув його переді мною, і він був списаний з обох боків. На ньому були написані плачі, ридання й горе.",
+          "R": "Він розгорнув його переді мною. Письмо було з обох боків. Там було повно похоронних пісень, сумних голосінь і слів горя."
         }
       },
       "decisions": [
@@ -3062,6 +3473,27 @@
           "choice": "laments, mourning and woe \"ልቅሶ\", \"ሐዘን\", \"ወዮታ\" (Literal, Balanced); Readable \"ሙሾ፣ የሐዘን ጩኸትና የወዮታ ቃላት\"",
           "alternatives": [],
           "reason": "Readable names the funeral songs with \"ሙሾ\", the Amharic dirge sung over the dead, for the English \"funeral songs\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o260020100101",
+            "o260020100112",
+            "o260020100122"
+          ],
+          "choice": "qinim vahegeh vahi \"哀歌と嘆きと悲しみ\" (L, B), \"葬式の歌や、悲しい叫び、悲しみの言葉\" (R).",
+          "alternatives": [],
+          "reason": "qinah is the funeral lament (2 Samuel 1:17 哀歌); Readable says what the songs are, as the English R \"funeral songs\".",
           "uncertain": false,
           "footnote": false
         }

@@ -72,6 +72,16 @@
           "L": "Я люблю [{{deity_pronoun:его|Его}}], потому что {{divine_name:ГОСПОДЬ|Яхве}} слышит мой голос, мои мольбы.",
           "B": "Я люблю {{divine_name:ГОСПОДА|Яхве}}, ведь {{deity_pronoun:он|Он}} слышит, когда я взываю к {{deity_pronoun:нему|Нему}} и молю о милости.",
           "R": "Я люблю {{divine_name:ГОСПОДА|Яхве}}, потому что {{deity_pronoun:он|Он}} слышит меня, когда я молюсь и прошу {{deity_pronoun:его|Его}} о помощи."
+        },
+        "ja": {
+          "L": "わたしは[その方を]愛する。{{divine_name:主|ヤハウェ}}が、わたしの声、わたしの嘆願を聞いてくださるから。",
+          "B": "わたしは{{divine_name:主|ヤハウェ}}を愛する。わたしが呼び求め、あわれみを願うとき、その方は聞いてくださるから。",
+          "R": "わたしは{{divine_name:主|ヤハウェ}}を愛している。わたしが祈って助けを求めると、その方は聞いてくださるからだ。"
+        },
+        "uk": {
+          "L": "Я люблю [{{deity_pronoun:його|Його}}], бо {{divine_name:ГОСПОДЬ|Ягве}} чує мій голос, мої благання.",
+          "B": "Я люблю {{divine_name:ГОСПОДА|Ягве}}, бо {{deity_pronoun:він|Він}} слухає, коли я кличу до {{deity_pronoun:нього|Нього}} і благаю про милість.",
+          "R": "Я люблю {{divine_name:ГОСПОДА|Ягве}}, бо {{deity_pronoun:він|Він}} чує мене, коли я молюся і прошу в {{deity_pronoun:нього|Нього}} допомоги."
         }
       },
       "decisions": [
@@ -202,6 +212,46 @@
           "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; God is spoken of with the honorific third person and addressed with the devotional तू (verses 8, 16, 17).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191160010011"
+          ],
+          "choice": "\"[その方を]\" in brackets for the object the Hebrew leaves unspoken; B and R name the LORD as the English does",
+          "alternatives": [
+            "\"わたしは愛する\" alone"
+          ],
+          "reason": "Japanese 愛する needs an object to read as a sentence; the bracket shows it is supplied (m1, uncertain)",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191160010031"
+          ],
+          "choice": "Psalms 116-119 keep the Psalter's plain style at every level, light respect forms for God's acts (聞いてくださる, 耳を傾けてくださった), and God addressed as あなた",
+          "alternatives": [
+            "です・ます"
+          ],
+          "reason": "PSA-1 conventions for the whole Psalter; noted once for this block of psalms",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -280,6 +330,16 @@
           "L": "Ведь {{deity_pronoun:он|Он}} приклонил {{deity_pronoun:его|Его}} ухо ко мне, и во дни мои я буду взывать.",
           "B": "Раз {{deity_pronoun:он|Он}} приклонил ко мне своё ухо, я буду взывать к {{deity_pronoun:нему|Нему}} все свои дни.",
           "R": "Он склоняется, чтобы выслушать меня, поэтому я буду молиться {{deity_pronoun:ему|Ему}} каждый день своей жизни."
+        },
+        "ja": {
+          "L": "まことに、その方はわたしに耳を傾けてくださった。わたしは自分の日々に呼び求める。",
+          "B": "その方がわたしに耳を傾けてくださったので、わたしは生涯、その方を呼び求めよう。",
+          "R": "その方は身をかがめて、わたしの言うことを聞いてくださる。だから、わたしは生きている間、毎日その方に祈ろう。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:він|Він}} прихилив до мене своє вухо, і в мої дні я кликатиму.",
+          "B": "Оскільки {{deity_pronoun:він|Він}} прихилив до мене вухо, я кликатиму до {{deity_pronoun:нього|Нього}} всі мої дні.",
+          "R": "Він нахиляється, щоб послухати мене, тож я молитимусь {{deity_pronoun:йому|Йому}} кожен день мого життя."
         }
       },
       "decisions": [
@@ -429,6 +489,16 @@
           "L": "Окружили меня узы смерти, и муки шеола нашли меня; беду и скорбь я нашёл.",
           "B": "Верёвки смерти обвились вокруг меня, и муки мира мёртвых настигли меня; я встретил беду и горе.",
           "R": "Как будто смерть связала меня верёвками. Я боялся, что скоро окажусь в мире мёртвых. Я был полон беды и печали."
+        },
+        "ja": {
+          "L": "死の綱がわたしを取り巻き、陰府の苦しみがわたしを捕らえた。苦難と悲しみを、わたしは見いだした。",
+          "B": "死の縄がわたしに巻きつき、陰府の苦しみがわたしをつかんだ。わたしは苦難と悲嘆に出会った。",
+          "R": "死がわたしを縄で縛りつけたかのようだった。わたしは、もうすぐ死者の世界に行くのだと恐れた。わたしは苦しみと悲しみでいっぱいだった。"
+        },
+        "uk": {
+          "L": "Обвили мене пута смерті, і муки шеолу знайшли мене; біду й горе я знайшов.",
+          "B": "Мотузки смерті обмоталися довкола мене, і жах світу мертвих схопив мене; я зустрів біду й смуток.",
+          "R": "Мені здавалося, ніби смерть звʼязала мене мотузками. Я боявся, що скоро опинюся у світі мертвих. Я був повний біди й смутку."
         }
       },
       "decisions": [
@@ -632,6 +702,28 @@
           "reason": "The poetry note's forms for Sheol, the world of the dead, as in 2 Samuel 22 and Psalm 18.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160030021",
+            "o191160030051"
+          ],
+          "choice": "chevlei mavet \"死の綱\" (L), \"死の縄\" (B, R) and Sheol \"陰府\" (L, B), \"死者の世界\" (R)",
+          "alternatives": [
+            "\"墓\" (R)"
+          ],
+          "reason": "As 18:5-6, which this verse echoes (m1), and the Psalter rule for Sheol",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -710,6 +802,16 @@
           "L": "И имя {{divine_name:ГОСПОДА|Яхве}} я призвал: Прошу, {{divine_name:ГОСПОДИ|Яхве}}, избавь мою душу!",
           "B": "И я воззвал к {{divine_name:ГОСПОДУ|Яхве}} по имени: Прошу, {{divine_name:ГОСПОДИ|Яхве}}, спаси мою жизнь!",
           "R": "И я помолился {{divine_name:ГОСПОДУ|Яхве}}: {{divine_name:ГОСПОДИ|Яхве}}, пожалуйста, спаси мою жизнь!"
+        },
+        "ja": {
+          "L": "そして、{{divine_name:主|ヤハウェ}}の名を、わたしは呼んだ。どうか、{{divine_name:主|ヤハウェ}}よ、わたしの魂を助け出してください！",
+          "B": "そこで、わたしは{{divine_name:主|ヤハウェ}}の名を呼んで叫んだ。どうか、{{divine_name:主|ヤハウェ}}よ、わたしの命を助け出してください！",
+          "R": "それで、わたしは{{divine_name:主|ヤハウェ}}に祈った。{{divine_name:主|ヤハウェ}}よ、どうか、わたしの命を救ってください！"
+        },
+        "uk": {
+          "L": "І імʼя {{divine_name:ГОСПОДА|Ягве}} я прикликав: Благаю, {{divine_name:ГОСПОДИ|Ягве}}, визволи мою душу!",
+          "B": "Тож я закликав {{divine_name:ГОСПОДА|Ягве}} на імʼя: Благаю, {{divine_name:ГОСПОДИ|Ягве}}, урятуй моє життя!",
+          "R": "Тоді я помолився {{divine_name:ГОСПОДУ|Ягве}}: {{divine_name:ГОСПОДИ|Ягве}}, будь ласка, врятуй моє життя!"
         }
       },
       "decisions": [
@@ -878,6 +980,27 @@
           "reason": "The English sets the prayer off with a colon and no quotation marks (also in verses 10 and 11); Russian does the same so that each level opens the same quotations as the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191160040041"
+          ],
+          "choice": "The prayer follows the verb of calling without quotation brackets, as the English has none",
+          "alternatives": [
+            "「どうか…ください」"
+          ],
+          "reason": "Quotation marks must match the English count (none); the prayer is set off by 。 alone",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -953,6 +1076,16 @@
           "L": "Милостив {{divine_name:ГОСПОДЬ|Яхве}} и праведен, и наш Бог милосерден.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} являет милость и поступает праведно; наш Бог нежен и милосерден.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} добр и всегда поступает правильно. Наш Бог милосерден."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は恵み深く、正しい。わたしたちの神はあわれみ深い。",
+          "B": "{{divine_name:主|ヤハウェ}}は恵みを示し、正しいことを行われる。わたしたちの神は、優しく、あわれみ深い。",
+          "R": "{{divine_name:主|ヤハウェ}}はやさしく、いつも正しいことをなさる。わたしたちの神は、あわれんでくださる。"
+        },
+        "uk": {
+          "L": "Милостивий {{divine_name:ГОСПОДЬ|Ягве}} і праведний, і наш Бог — милосердний.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} виявляє милість і чинить те, що праведне; наш Бог ніжний і милосердний.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} добрий і завжди чинить правильно. Наш Бог має милосердя."
         }
       },
       "decisions": [
@@ -1059,6 +1192,16 @@
           "L": "Хранит простодушных {{divine_name:ГОСПОДЬ|Яхве}}; я был низведён, и {{deity_pronoun:он|Он}} спас меня.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} охраняет беззащитных; когда я изнемог, {{deity_pronoun:он|Он}} избавил меня.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} защищает тех, кто не может защитить себя сам. Когда я был слаб и беспомощен, {{deity_pronoun:он|Он}} спас меня."
+        },
+        "ja": {
+          "L": "浅はかな者たちを守る方、[それは]{{divine_name:主|ヤハウェ}}。わたしは弱り果てたが、その方はわたしを救ってくださった。",
+          "B": "{{divine_name:主|ヤハウェ}}は、身を守るすべのない人たちを見守っておられる。わたしが力尽きて倒れたとき、その方はわたしを救ってくださった。",
+          "R": "{{divine_name:主|ヤハウェ}}は、自分を守ることのできない人たちを守ってくださる。わたしが弱って何もできなかったとき、その方はわたしを救ってくださった。"
+        },
+        "uk": {
+          "L": "Оберігає простодушних {{divine_name:ГОСПОДЬ|Ягве}}; я був принижений, і {{deity_pronoun:він|Він}} спас мене.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} пильнує людей, які не мають захисту; коли я впав безпорадний, {{deity_pronoun:він|Він}} визволив мене.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захищає людей, які не можуть захистити себе. Коли я був слабкий і безпорадний, {{deity_pronoun:він|Він}} урятував мене."
         }
       },
       "decisions": [
@@ -1170,6 +1313,27 @@
           "reason": "Here the simple are those with no cunning or defense (meaning decision), not the gullible of Proverbs, so Literal says \"простодушные\" rather than the Proverbs word \"простак\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160060021"
+          ],
+          "choice": "petayim \"浅はかな者たち\" (L, as 19:8), \"身を守るすべのない人たち\" (B), \"自分を守ることのできない人たち\" (R)",
+          "alternatives": [
+            "\"素朴な者たち\""
+          ],
+          "reason": "m1 reads the word as people with no cunning or defense (uncertain); L keeps the Psalter's word for the simple",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1248,6 +1412,16 @@
           "L": "Вернись, душа моя, к твоему покою, потому что {{divine_name:ГОСПОДЬ|Яхве}} облагодетельствовал тебя.",
           "B": "Вернись к своему покою, душа моя, ведь {{divine_name:ГОСПОДЬ|Яхве}} обошёлся с тобой по-доброму.",
           "R": "Я снова могу отдохнуть и успокоиться, потому что {{divine_name:ГОСПОДЬ|Яхве}} был так добр ко мне."
+        },
+        "ja": {
+          "L": "わたしの魂よ、おまえの安らぎに帰れ。{{divine_name:主|ヤハウェ}}がおまえに豊かに報いてくださったのだから。",
+          "B": "わたしの魂よ、おまえの憩いに戻りなさい。{{divine_name:主|ヤハウェ}}が、おまえに良くしてくださったのだから。",
+          "R": "わたしはまた、安心して休むことができる。{{divine_name:主|ヤハウェ}}が、わたしにこんなに良くしてくださったのだから。"
+        },
+        "uk": {
+          "L": "Вернися, душе моя, до свого спокою, бо {{divine_name:ГОСПОДЬ|Ягве}} щедро обдарував тебе.",
+          "B": "Повернися до свого спокою, душе моя, бо {{divine_name:ГОСПОДЬ|Ягве}} виявив тобі доброту.",
+          "R": "Я можу знову відпочити й заспокоїтися, бо {{divine_name:ГОСПОДЬ|Ягве}} був такий добрий до мене."
         }
       },
       "decisions": [
@@ -1364,6 +1538,26 @@
           "reason": "The psalmist speaks to his own soul (m1); Hindi keeps तू for address to God, so the soul is addressed with तुम, as in Psalms 42-43.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160070021"
+          ],
+          "choice": "The soul addressed as \"おまえ\" (L, B); R in the first person as the English R",
+          "alternatives": [
+            "\"あなた\""
+          ],
+          "reason": "As 42-43 and 103: あなた is kept for God",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1447,6 +1641,16 @@
           "L": "Ведь {{deity_pronoun:ты|Ты}} избавил мою душу от смерти, мои глаза — от слёз, мою ногу — от преткновения.",
           "B": "Ты вытащил меня из смерти, уберёг мои глаза от слёз и мои ноги — от падения.",
           "R": "Ты спас меня от смерти. Ты осушил мои слёзы и не дал мне упасть."
+        },
+        "ja": {
+          "L": "まことに、あなたは、わたしの魂を死から、わたしの目を涙から、わたしの足をつまずきから、助け出してくださった。",
+          "B": "あなたはわたしを死から引き戻し、わたしの目を涙から、わたしの足をつまずきから守ってくださった。",
+          "R": "あなたは、わたしを死から救ってくださった。わたしの涙をふき、わたしが倒れないようにしてくださった。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:ти|Ти}} визволив мою душу від смерті, моє око від сліз, мою ногу від спотикання.",
+          "B": "Ти повернув мене від смерті, вберіг мої очі від плачу, а ноги — від падіння.",
+          "R": "Ти врятував мене від смерті. Ти осушив мої сльози і не дав мені впасти."
         }
       },
       "decisions": [
@@ -1574,6 +1778,16 @@
           "L": "Я буду ходить пред {{divine_name:ГОСПОДОМ|Яхве}} в землях живых.",
           "B": "Я буду проводить свою жизнь в присутствии {{divine_name:ГОСПОДА|Яхве}}, здесь, в землях живых.",
           "R": "Я буду жить и проводить свои дни в присутствии {{divine_name:ГОСПОДА|Яхве}}."
+        },
+        "ja": {
+          "L": "わたしは{{divine_name:主|ヤハウェ}}の前を歩む、生ける者たちの地で。",
+          "B": "わたしは生きている者たちの地で、{{divine_name:主|ヤハウェ}}の前を歩んでいこう。",
+          "R": "わたしは生き続け、{{divine_name:主|ヤハウェ}}の前で毎日を過ごそう。"
+        },
+        "uk": {
+          "L": "Я ходитиму перед {{divine_name:ГОСПОДОМ|Ягве}} в землях живих.",
+          "B": "Я житиму своє життя в присутності {{divine_name:ГОСПОДА|Ягве}}, тут, у землях живих.",
+          "R": "Я житиму далі, і мої дні минатимуть у присутності {{divine_name:ГОСПОДА|Ягве}}."
         }
       },
       "decisions": [
@@ -1679,6 +1893,16 @@
           "L": "Я верил, даже когда говорил: Я сильно угнетён.",
           "B": "Я сохранял веру, даже когда говорил: Я страдаю ужасно.",
           "R": "Я продолжал верить, даже когда говорил: Мои страдания ужасны."
+        },
+        "ja": {
+          "L": "わたしは信じた、わたしは大いに苦しめられている、と語ったときにも。",
+          "B": "わたしはひどく苦しんでいる、と口にしたときにも、わたしは信じ続けた。",
+          "R": "わたしの苦しみはひどい、と言ったときにも、わたしは信じ続けた。"
+        },
+        "uk": {
+          "L": "Я вірив, навіть коли казав: Я дуже пригноблений.",
+          "B": "Я зберігав віру, навіть коли казав: Я страшенно страждаю.",
+          "R": "Я далі довіряв, навіть коли казав: Мої страждання жахливі."
         }
       },
       "decisions": [
@@ -1813,6 +2037,50 @@
           "reason": "Paul quotes the Greek Old Testament, \"I believed, therefore I spoke\"; the Hebrew is read here as \"I believed, even when I said\" (meaning decision), so the Russian translates the Hebrew and does not take the wording of 2 Corinthians 4:13.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160100011",
+            "o191160100021",
+            "o191160100031"
+          ],
+          "choice": "\"信じた\" as 2 Corinthians 4:13 (わたしは信じた), but ki adabber as \"語ったときにも\" (m1), not 2 Corinthians' \"それゆえ、わたしは語った\"",
+          "alternatives": [
+            "\"わたしは信じた。それゆえ、わたしは語った\" (2CO 4:13 Japanese)"
+          ],
+          "reason": "Translated from the Hebrew as the meaning decisions read it (m1, uncertain); the Greek of Paul's quotation follows the Septuagint",
+          "uncertain": true,
+          "footnote": true
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160100011"
+          ],
+          "choice": "\"вірити\" (L), \"зберігати віру\" (B), \"довіряти\" (R) for the psalmist's believing",
+          "alternatives": [
+            "\"уповати\""
+          ],
+          "reason": "Paul quotes this line in 2 Corinthians 4:13 with the verb of faith, so Literal keeps \"вірити\"; the other levels say what holding firm means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1889,6 +2157,16 @@
           "L": "Я сказал в моём смятении: всякий человек — лжец.",
           "B": "В своём смятении я сказал: Всякий человек лжив.",
           "R": "Когда мне было очень страшно, я сказал: Никому нельзя доверять!"
+        },
+        "ja": {
+          "L": "わたしは、あわてふためいたときに言った。人はみな偽る者だ、と。",
+          "B": "うろたえたとき、わたしは言った。人間はだれもが偽りだ、と。",
+          "R": "ひどくおびえたとき、わたしは、だれも信用できない、と言った。"
+        },
+        "uk": {
+          "L": "Я сказав у своєму сполоху: кожна людина — брехлива.",
+          "B": "У своїй паніці я сказав: Кожна людина — неправдива.",
+          "R": "Коли мене охопив жах, я сказав: Нікому не можна довіряти!"
         }
       },
       "decisions": [
@@ -2033,6 +2311,16 @@
           "L": "Что я воздам {{divine_name:ГОСПОДУ|Яхве}} [за] все {{deity_pronoun:его|Его}} благодеяния мне?",
           "B": "Чем я могу отплатить {{divine_name:ГОСПОДУ|Яхве}} за всю {{deity_pronoun:его|Его}} доброту ко мне?",
           "R": "Что я могу дать {{divine_name:ГОСПОДУ|Яхве}} за всё доброе, что {{deity_pronoun:он|Он}} сделал для меня?"
+        },
+        "ja": {
+          "L": "わたしへのその方のすべての恵みに[対して]、わたしは{{divine_name:主|ヤハウェ}}に何を返そうか？",
+          "B": "{{divine_name:主|ヤハウェ}}がわたしに示してくださったすべての恵みに、わたしはどう報いたらよいだろうか？",
+          "R": "{{divine_name:主|ヤハウェ}}がわたしにしてくださったたくさんの良いことに、わたしは何をお返しできるだろうか？"
+        },
+        "uk": {
+          "L": "Що я поверну {{divine_name:ГОСПОДУ|Ягве}} [за] всі {{deity_pronoun:його|Його}} добродійства мені?",
+          "B": "Чим я можу віддячити {{divine_name:ГОСПОДУ|Ягве}} за всю {{deity_pronoun:його|Його}} доброту до мене?",
+          "R": "Що я можу дати {{divine_name:ГОСПОДУ|Ягве}} за все добре, що {{deity_pronoun:він|Він}} зробив для мене?"
         }
       },
       "decisions": [
@@ -2139,6 +2427,16 @@
           "L": "Чашу спасения я подниму, и имя {{divine_name:ГОСПОДА|Яхве}} я призову.",
           "B": "Я высоко подниму чашу спасения и призову имя {{divine_name:ГОСПОДА|Яхве}}.",
           "R": "Я подниму чашу, чтобы поблагодарить {{divine_name:ГОСПОДА|Яхве}} за то, что {{deity_pronoun:он|Он}} спас меня, и буду призывать {{deity_pronoun:его|Его}} имя в молитве."
+        },
+        "ja": {
+          "L": "救いの杯を、わたしは掲げ、{{divine_name:主|ヤハウェ}}の名を呼ぶ。",
+          "B": "わたしは救いの杯を高く掲げ、{{divine_name:主|ヤハウェ}}の名を呼び求めよう。",
+          "R": "わたしを救ってくださった{{divine_name:主|ヤハウェ}}に感謝して杯を高く上げ、その方の名を呼んで祈ろう。"
+        },
+        "uk": {
+          "L": "Чашу спасіння я підніму, і імʼя {{divine_name:ГОСПОДА|Ягве}} прикликатиму.",
+          "B": "Я високо підніму чашу спасіння і проголошу імʼя {{divine_name:ГОСПОДА|Ягве}}.",
+          "R": "Я підніму чашу, щоб подякувати {{divine_name:ГОСПОДУ|Ягве}} за порятунок, і в молитві закликатиму {{deity_pronoun:його|Його}} імʼя."
         }
       },
       "decisions": [
@@ -2176,6 +2474,28 @@
             "the cup of salvation"
           ],
           "reason": "Readable says what the cup is for (m1).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160130011",
+            "o191160130021"
+          ],
+          "choice": "kos yeshu'ot \"救いの杯\" (L, B); R spells it out as a cup of thanks for being saved, as the English R",
+          "alternatives": [
+            "\"救いの数々の杯\""
+          ],
+          "reason": "The plural is one of fullness; m1 reads it as a cup raised in thanks (uncertain)",
           "uncertain": true,
           "footnote": false
         }
@@ -2257,6 +2577,16 @@
           "L": "Мои обеты {{divine_name:ГОСПОДУ|Яхве}} я исполню, [да], перед всем {{deity_pronoun:его|Его}} народом.",
           "B": "То, что я обещал {{divine_name:ГОСПОДУ|Яхве}}, я исполню на глазах у всего {{deity_pronoun:его|Его}} народа.",
           "R": "Я сделаю то, что обещал {{divine_name:ГОСПОДУ|Яхве}}, и весь {{deity_pronoun:его|Его}} народ увидит это."
+        },
+        "ja": {
+          "L": "わたしは{{divine_name:主|ヤハウェ}}への誓願を果たそう、[そうだ]、その方のすべての民の前で。",
+          "B": "{{divine_name:主|ヤハウェ}}への誓願を、わたしは果たそう、その方の民がみな見守る前で。",
+          "R": "わたしは{{divine_name:主|ヤハウェ}}に約束したことを果たそう。その方の民がみな、それを見るだろう。"
+        },
+        "uk": {
+          "L": "Мої обітниці {{divine_name:ГОСПОДУ|Ягве}} я виконаю, [так], перед усім {{deity_pronoun:його|Його}} народом.",
+          "B": "Те, що я пообіцяв {{divine_name:ГОСПОДУ|Ягве}}, я виконаю на очах усього {{deity_pronoun:його|Його}} народу.",
+          "R": "Я зроблю те, що пообіцяв {{divine_name:ГОСПОДУ|Ягве}}, і весь {{deity_pronoun:його|Його}} народ побачить це."
         }
       },
       "decisions": [
@@ -2305,6 +2635,27 @@
           "choice": "vows (nedarim) as \"ስእለት\"; verse 18 repeats verse 14 word for word",
           "alternatives": [],
           "reason": "The term settled in Genesis; the two verses have the same Hebrew and the same Amharic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160140011"
+          ],
+          "choice": "neder \"誓願\" (L, B), \"約束したこと\" (R); 116:18 has the same words",
+          "alternatives": [
+            "\"誓い\""
+          ],
+          "reason": "Pentateuch and Psalter forms (PSA-7)",
           "uncertain": false,
           "footnote": false
         }
@@ -2384,6 +2735,16 @@
           "L": "Дорога в глазах {{divine_name:ГОСПОДА|Яхве}} смерть {{deity_pronoun:его|Его}} верных.",
           "B": "Смерть {{deity_pronoun:его|Его}} верных тяжко весит в глазах {{divine_name:ГОСПОДА|Яхве}}.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} не допускает, чтобы {{deity_pronoun:его|Его}} верные люди умирали напрасно. Их жизнь драгоценна для {{deity_pronoun:него|Него}}."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の目に尊い、その方の誠実な者たちの死は。",
+          "B": "ご自分に誠実な人たちの死は、{{divine_name:主|ヤハウェ}}の目に重く尊い。",
+          "R": "{{divine_name:主|ヤハウェ}}は、ご自分に忠実な人たちの死を軽くお考えにならない。その人たちの命は、その方にとって大切なのだ。"
+        },
+        "uk": {
+          "L": "Дорога в очах {{divine_name:ГОСПОДА|Ягве}} смерть {{deity_pronoun:його|Його}} вірних.",
+          "B": "Смерть {{deity_pronoun:його|Його}} вірних важить багато в очах {{divine_name:ГОСПОДА|Ягве}}.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} не дає своїм відданим людям легко загинути. Їхнє життя дороге для {{deity_pronoun:нього|Нього}}."
         }
       },
       "decisions": [
@@ -2479,6 +2840,28 @@
           "reason": "Hasidim are those bound to the LORD in loyal love (meaning decision); \"верные\" says this, where \"святые\" would point to holiness.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160150011",
+            "o191160150052"
+          ],
+          "choice": "yaqar \"尊い\" (L), \"重く尊い\" (B), R \"軽くお考えにならない\" with \"大切\"; chasidaw \"その方の誠実な者たち\" (L), \"ご自分に誠実な人たち\" (B), \"ご自分に忠実な人たち\" (R)",
+          "alternatives": [
+            "\"高価な\"; \"軽く見られることはない\" (reads as passive)"
+          ],
+          "reason": "m1 (uncertain): costly, of great worth, so that God does not let them die lightly; chasid as the Psalter rule",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2562,6 +2945,16 @@
           "L": "Прошу, {{divine_name:ГОСПОДИ|Яхве}}, ведь я — {{deity_pronoun:твой|Твой}} раб; я — {{deity_pronoun:твой|Твой}} раб, сын {{deity_pronoun:твоей|Твоей}} рабыни; {{deity_pronoun:ты|Ты}} развязал мои узы.",
           "B": "Да, {{divine_name:ГОСПОДИ|Яхве}}, я принадлежу {{deity_pronoun:тебе|Тебе}} как {{deity_pronoun:твой|Твой}} раб, раб, рождённый от {{deity_pronoun:твоей|Твоей}} рабыни; {{deity_pronoun:ты|Ты}} развязал верёвки, которые связывали меня.",
           "R": "{{divine_name:ГОСПОДИ|Яхве}}, я и правда {{deity_pronoun:твой|Твой}} раб. Я принадлежу {{deity_pronoun:тебе|Тебе}} с рождения, потому что моя мать тоже была {{deity_pronoun:твоей|Твоей}} рабыней. Ты освободил меня от того, что держало меня."
+        },
+        "ja": {
+          "L": "どうか、{{divine_name:主|ヤハウェ}}よ、まことに、わたしはあなたのしもべ。わたしはあなたのしもべ、あなたのはしための子。あなたはわたしの縄目を解いてくださった。",
+          "B": "ああ、{{divine_name:主|ヤハウェ}}よ、わたしはあなたのしもべとして、あなたのものだ。あなたに仕える女から生まれたしもべだ。あなたは、わたしを縛っていた縄を解いてくださった。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしは本当にあなたのしもべだ。母もあなたに仕えていたので、わたしは生まれたときからあなたのものだ。あなたは、わたしを縛っていたものから、わたしを自由にしてくださった。"
+        },
+        "uk": {
+          "L": "Благаю, {{divine_name:ГОСПОДИ|Ягве}}, справді я — {{deity_pronoun:твій|Твій}} раб; я — {{deity_pronoun:твій|Твій}} раб, син {{deity_pronoun:твоєї|Твоєї}} рабині; {{deity_pronoun:ти|Ти}} розвʼязав мої пута.",
+          "B": "Так, {{divine_name:ГОСПОДИ|Ягве}}, я належу {{deity_pronoun:тобі|Тобі}} як {{deity_pronoun:твій|Твій}} раб, раб, народжений від {{deity_pronoun:твоєї|Твоєї}} рабині; {{deity_pronoun:ти|Ти}} розвʼязав мотузки, що звʼязували мене.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, я справді {{deity_pronoun:твій|Твій}} раб. Я належу {{deity_pronoun:тобі|Тобі}} від народження, бо моя мати теж була {{deity_pronoun:твоєю|Твоєю}} рабинею. Ти звільнив мене від того, що тримало мене."
         }
       },
       "decisions": [
@@ -2720,6 +3113,28 @@
           "reason": "The poetry note keeps \"раб\" for the psalmist's \"your servant\" at every level, and its feminine \"рабыня\" for the maidservant: one born into the household.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160160051",
+            "o191160160091"
+          ],
+          "choice": "'eved \"しもべ\" at every level, 'amah \"はしため\" (L), \"あなたに仕える女\" (B)",
+          "alternatives": [
+            "\"奴隷\""
+          ],
+          "reason": "The English says servant at every level in the Psalms; slave only for literal slavery (PSA-1)",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2797,6 +3212,16 @@
           "L": "Тебе я принесу жертву благодарения, и имя {{divine_name:ГОСПОДА|Яхве}} я призову.",
           "B": "Я принесу {{deity_pronoun:тебе|Тебе}} благодарственную жертву и призову {{divine_name:ГОСПОДА|Яхве}} по имени.",
           "R": "Я принесу {{deity_pronoun:тебе|Тебе}} жертву, чтобы поблагодарить {{deity_pronoun:тебя|Тебя}}, и буду молиться {{divine_name:ГОСПОДУ|Яхве}}."
+        },
+        "ja": {
+          "L": "あなたに、わたしは感謝のいけにえをささげ、{{divine_name:主|ヤハウェ}}の名を呼ぶ。",
+          "B": "わたしはあなたに感謝のいけにえをささげ、{{divine_name:主|ヤハウェ}}の名を呼び求めよう。",
+          "R": "あなたに感謝するために、わたしはささげ物をささげ、{{divine_name:主|ヤハウェ}}に祈ろう。"
+        },
+        "uk": {
+          "L": "Тобі я принесу жертву подяки, і імʼя {{divine_name:ГОСПОДА|Ягве}} прикликатиму.",
+          "B": "Я принесу {{deity_pronoun:тобі|Тобі}} жертву подяки і закликатиму {{divine_name:ГОСПОДА|Ягве}} на імʼя.",
+          "R": "Я принесу {{deity_pronoun:тобі|Тобі}} жертву, щоб подякувати {{deity_pronoun:тобі|Тобі}}, і молитимусь {{divine_name:ГОСПОДУ|Ягве}}."
         }
       },
       "decisions": [
@@ -2908,6 +3333,16 @@
           "L": "Мои обеты {{divine_name:ГОСПОДУ|Яхве}} я исполню, [да], перед всем {{deity_pronoun:его|Его}} народом,",
           "B": "То, что я обещал {{divine_name:ГОСПОДУ|Яхве}}, я исполню на глазах у всего {{deity_pronoun:его|Его}} народа,",
           "R": "Я сделаю то, что обещал {{divine_name:ГОСПОДУ|Яхве}}, и весь {{deity_pronoun:его|Его}} народ увидит это."
+        },
+        "ja": {
+          "L": "わたしは{{divine_name:主|ヤハウェ}}への誓願を果たそう、[そうだ]、その方のすべての民の前で、",
+          "B": "{{divine_name:主|ヤハウェ}}への誓願を、わたしは果たそう、その方の民がみな見守る前で、",
+          "R": "わたしは{{divine_name:主|ヤハウェ}}に約束したことを果たそう。その方の民がみな、それを見るだろう。"
+        },
+        "uk": {
+          "L": "Мої обітниці {{divine_name:ГОСПОДУ|Ягве}} я виконаю, [так], перед усім {{deity_pronoun:його|Його}} народом,",
+          "B": "Те, що я пообіцяв {{divine_name:ГОСПОДУ|Ягве}}, я виконаю на очах усього {{deity_pronoun:його|Його}} народу,",
+          "R": "Я зроблю те, що пообіцяв {{divine_name:ГОСПОДУ|Ягве}}, і весь {{deity_pronoun:його|Його}} народ побачить це."
         }
       },
       "decisions": [
@@ -2951,6 +3386,26 @@
           "choice": "a sentence that runs on",
           "alternatives": [],
           "reason": "The sentence continues into verse 19, so this verse ends with a comma at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191160180031"
+          ],
+          "choice": "Word for word as 116:14, but L and B end with \"、\" and run on into 116:19 (the place), as the English",
+          "alternatives": [
+            "Closing with 。 as 116:14"
+          ],
+          "reason": "m3: the sentence runs on; Japanese can add the place after the verb",
           "uncertain": false,
           "footnote": false
         }
@@ -3030,6 +3485,16 @@
           "L": "во дворах дома {{divine_name:ГОСПОДА|Яхве}}, посреди тебя, Иерусалим. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
           "B": "во дворах дома {{divine_name:ГОСПОДА|Яхве}}, в тебе, Иерусалим. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
           "R": "Я сделаю это во дворах дома {{divine_name:ГОСПОДА|Яхве}} в Иерусалиме. Хвалите {{divine_name:ГОСПОДА|Ях}}!"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の家の庭で、エルサレムよ、おまえのただ中で。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "B": "{{divine_name:主|ヤハウェ}}の家の庭で、エルサレムよ、おまえのただ中で。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "R": "エルサレムにある{{divine_name:主|ヤハウェ}}の神殿の庭で、わたしはそうしよう。{{divine_name:主|ヤハ}}を賛美しよう！"
+        },
+        "uk": {
+          "L": "у дворах дому {{divine_name:ГОСПОДА|Ягве}}, посеред тебе, Єрусалиме. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "B": "у дворах дому {{divine_name:ГОСПОДА|Ягве}}, у тобі, Єрусалиме. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "R": "Я зроблю це на подвірʼях храму {{divine_name:ГОСПОДА|Ягве}} в Єрусалимі. Хваліть {{divine_name:ГОСПОДА|Яг}}!"
         }
       },
       "decisions": [
@@ -3118,6 +3583,26 @@
             "तू"
           ],
           "reason": "The city is addressed (m2); Hindi keeps तू for God, so Jerusalem is तुम.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191160190051"
+          ],
+          "choice": "Jerusalem addressed \"おまえ\"",
+          "alternatives": [
+            "\"あなた\""
+          ],
+          "reason": "As Zion addressed in 87:3; あなた is kept for God",
           "uncertain": false,
           "footnote": false
         }

@@ -68,6 +68,16 @@
           "L": "Руководителю хора. Псалом Давида.",
           "B": "Руководителю хора. Псалом Давида.",
           "R": "Для руководителя музыкантов. Песнь Давида."
+        },
+        "ja": {
+          "L": "指揮する者のために。ダビデの賛歌。",
+          "B": "音楽を導く者のために。ダビデの賛歌。",
+          "R": "音楽を導く人のために。ダビデの歌。"
+        },
+        "uk": {
+          "L": "Для диригента. Псалом Давида.",
+          "B": "Для диригента хору. Псалом Давида.",
+          "R": "Для того, хто керує співом. Пісня Давида."
         }
       },
       "decisions": [
@@ -222,6 +232,16 @@
           "L": "Услышь, Боже, голос мой в жалобе моей; \\q от страха перед врагом сохрани жизнь мою.",
           "B": "Боже, выслушай меня, когда я изливаю свою жалобу; \\q сохрани меня от врага, которого я страшусь.",
           "R": "Боже, выслушай меня, когда я рассказываю {{deity_pronoun:тебе|Тебе}} о своих бедах. \\q Защити меня от врагов: мне страшно."
+        },
+        "ja": {
+          "L": "聞いてください、神よ、わたしの嘆きの声を。 \\q 敵の恐ろしさから、わたしの命を守ってください。",
+          "B": "神よ、わたしが嘆きを注ぎ出すとき、わたしの声を聞いてください。 \\q わたしが恐れる敵から、わたしを守ってください。",
+          "R": "神よ、わたしが苦しみを打ち明けるのを、聞いてください。 \\q 敵から、わたしを守ってください。わたしは敵がこわい。"
+        },
+        "uk": {
+          "L": "Почуй, Боже, мій голос у моїй скарзі; \\q від жаху перед ворогом збережи моє життя.",
+          "B": "Боже, вислухай мене, коли я виливаю свою скаргу; \\q убережи мене від ворога, якого я боюся.",
+          "R": "Боже, послухай мене, коли я розповідаю {{deity_pronoun:тобі|Тобі}} про свої біди. \\q Убережи мене від моїх ворогів; вони лякають мене."
         }
       },
       "decisions": [
@@ -311,6 +331,25 @@
           "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi and the Hindi has no deity_pronoun spans (style guide, section 7). The psalmist speaks to God with \"तू\" and of God with the honorific plural (verses 8, 10, 11). This holds for the whole psalm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640020071"
+          ],
+          "choice": "titsor \"守ってください\" at every level",
+          "alternatives": [],
+          "reason": "The Hebrew imperfect is a request here (m2); Psalter requests are 〜てください.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -387,6 +426,16 @@
           "L": "Укрой меня от тайного совета злодеев, \\q от сборища делающих беззаконие,",
           "B": "Укрой меня от нечестивых, когда они тайно сговариваются, \\q от беспокойной толпы творящих зло,",
           "R": "Спрячь меня от злых людей, которые строят тайные планы. \\q Спрячь меня от шайки тех, кто делает зло."
+        },
+        "ja": {
+          "L": "わたしを隠してください、悪をなす者たちのひそかな集まりから、 \\q 悪を行う者たちの騒がしい群れから。",
+          "B": "悪をなす者たちのひそかな謀から、わたしをかくまってください。 \\q 悪を行う者たちの騒がしい群れから、わたしを守ってください。",
+          "R": "悪い人たちが、ひそかに計画を立てている。わたしを彼らから隠してください。 \\q 悪いことをする人たちの仲間から、わたしを隠してください。"
+        },
+        "uk": {
+          "L": "Сховай мене від таємної ради лиходіїв, \\q від натовпу тих, хто чинить нечестя,",
+          "B": "Укрий мене від нечестивих, коли вони потай змовляються, \\q від неспокійного натовпу тих, хто чинить зло,",
+          "R": "Сховай мене від злих людей, які складають таємні плани. \\q Сховай мене від зграї людей, що чинять погане."
         }
       },
       "decisions": [
@@ -431,6 +480,46 @@
           "choice": "a sentence that runs on",
           "alternatives": [],
           "reason": "The sentence continues into verse 4, so this verse ends with a comma at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190640030061"
+          ],
+          "choice": "The English sentence runs on from 64:3 to 64:5 (\"…workers of wickedness, who sharpen…\"); Japanese closes 64:3 with 。 and makes the plotters the subject of 64:4-5 (\"彼らは…\")",
+          "alternatives": [],
+          "reason": "A Japanese relative clause would have to come before 64:3's nouns and move 64:4 into 64:3; a new sentence keeps each verse's content in its own verse (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640030031",
+            "o190640030051",
+            "o190640030061"
+          ],
+          "choice": "mere'im \"悪をなす者たち\" (L, B), \"悪い人たち\" (R); po'alei 'awen \"悪を行う者たち\" (L, B), \"悪いことをする人たち\" (R)",
+          "alternatives": [],
+          "reason": "The two terms are kept apart as in the Psalter conventions (PSA-1, PSA-3).",
           "uncertain": false,
           "footnote": false
         }
@@ -511,6 +600,16 @@
           "L": "которые изострили, как меч, язык свой, \\q натянули [лук], стрелу свою — горькое слово,",
           "B": "которые точат свои языки, как меч, \\q и, как стрелы, накладывают на лук горькие слова,",
           "R": "Они делают свои слова острыми, как мечи. \\q Их жестокие слова — как стрелы."
+        },
+        "ja": {
+          "L": "彼らは剣のように自分の舌を研ぎ、 \\q 苦い言葉という矢をつがえ、",
+          "B": "彼らは舌を剣のように鋭く研ぎ、 \\q 苦い言葉を矢のように弓につがえ、",
+          "R": "彼らは、自分の言葉を剣のように鋭くする。 \\q 彼らのひどい言葉は、矢のようだ。"
+        },
+        "uk": {
+          "L": "які нагострюють свій язик, як меч, \\q [і] натягують свою стрілу — гірке слово,",
+          "B": "які гострять свої язики, як меч, \\q і накладають на лук гіркі слова, як стріли,",
+          "R": "Вони роблять свої слова гострими, як мечі. \\q Їхні жорстокі слова — як стріли."
         }
       },
       "decisions": [
@@ -556,6 +655,29 @@
           "choice": "a sentence that runs on",
           "alternatives": [],
           "reason": "The sentence continues into verse 5, so this verse ends with a comma at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640040051",
+            "o190640040061",
+            "o190640040062",
+            "o190640040071",
+            "o190640040081"
+          ],
+          "choice": "darkhu chitsam davar mar \"苦い言葉という矢をつがえ\" (L), \"苦い言葉を矢のように弓につがえ\" (B), \"ひどい言葉は、矢のようだ\" (R)",
+          "alternatives": [],
+          "reason": "The bitter word is the arrow they aim (m2); darakh is bending the bow, said in Japanese as fitting the arrow to it.",
           "uncertain": false,
           "footnote": false
         }
@@ -636,6 +758,16 @@
           "L": "чтобы стрелять из укрытий в непорочного; \\q внезапно стреляют в {{gender:них|него}} и не боятся.",
           "B": "чтобы из засады стрелять в непорочных; \\q вдруг пускают стрелы, ничего не страшась.",
           "R": "Они прячутся и стреляют в тех, кто не сделал ничего плохого. \\q Они стреляют внезапно и ничего не боятся."
+        },
+        "ja": {
+          "L": "隠れた所から潔白な者を射ようとする。 \\q 不意にその人を射て、恐れることがない。",
+          "B": "隠れた所から、潔白な人を射ようとする。 \\q 不意に矢を放ち、少しも恐れない。",
+          "R": "彼らは隠れて、何も悪いことをしていない人を射る。 \\q 突然射て、何もこわがらない。"
+        },
+        "uk": {
+          "L": "щоб стріляти зі схованок у непорочного; \\q раптово вони стріляють у нього і не бояться.",
+          "B": "щоб стріляти із засідки в непорочних; \\q раптом вони пускають стріли, без жодного страху.",
+          "R": "Вони ховаються й стріляють у людей, які нічого поганого не зробили. \\q Вони стріляють раптово й нічого не бояться."
         }
       },
       "decisions": [
@@ -783,6 +915,43 @@
           "reason": "As in the English Literal, the default speaks of the blameless as a group and the alternative keeps the Hebrew singular \"him\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640050031"
+          ],
+          "choice": "tam \"潔白な者\" (L), \"潔白な人\" (B), \"何も悪いことをしていない人\" (R)",
+          "alternatives": [],
+          "reason": "A person of integrity (m1); tom / tam 潔白 as the Psalter (PSA-3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190640050051",
+            "o190640050052"
+          ],
+          "choice": "\"その人を\" with no gender span where the English L has {{gender:them|him}}",
+          "alternatives": [],
+          "reason": "Japanese その人 is not marked for gender (style 7a); the same holds for the gender spans of 64:7 and later in Psalms 62-69.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -864,6 +1033,16 @@
           "L": "Утверждают себе дело злое; \\q говорят о том, чтобы скрыть силки; \\q говорят: «Кто увидит их?»",
           "B": "Они ободряют друг друга в своём злом замысле \\q и обсуждают, где тайно поставить западни; \\q они говорят: «Кто их заметит?»",
           "R": "Они помогают друг другу замышлять зло. \\q Они говорят о том, где спрятать свои ловушки. \\q Они говорят: «Никто их не увидит.»"
+        },
+        "ja": {
+          "L": "彼らは悪い事柄を自分たちのために強め、 \\q わなを隠すことを語り合い、 \\q 「だれがそれらを見るだろうか？」と言う。",
+          "B": "彼らは悪だくみの中で互いを励まし合い、 \\q だれにも見えない所にわなを仕掛けようと話し合い、 \\q 「だれがそれに気づくだろうか？」と言う。",
+          "R": "彼らは、悪い計画を立てるのに助け合う。 \\q わなをどこに隠そうかと話し合う。 \\q 彼らは言う。「だれにも見られはしない。」"
+        },
+        "uk": {
+          "L": "Вони зміцнюють собі лиху справу; \\q говорять, як сховати пастки; \\q кажуть: «Хто їх побачить?»",
+          "B": "Вони підбадьорюють одне одного в лихому задумі \\q й говорять про те, щоб ставити пастки там, де ніхто не бачить; \\q вони кажуть: «Хто їх помітить?»",
+          "R": "Вони допомагають одне одному задумувати зло. \\q Вони говорять про те, де сховати свої пастки. \\q Вони кажуть: «Ніхто їх не побачить.»"
         }
       },
       "decisions": [
@@ -918,6 +1097,30 @@
           ],
           "reason": "Portuguese pronouns show gender: with the masculine \"laços\", \"os\" can mean the snares or the plotters, as the Hebrew can (m2). \"Armadilhas\" would make it the snares only; Readable says that, as the English Readable does.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640060091",
+            "o190640060101",
+            "o190640060111",
+            "o190640060112"
+          ],
+          "choice": "mi yir'eh-lamo \"だれがそれらを見るだろうか？\" (L), \"だれがそれに気づくだろうか？\" (B), \"だれにも見られはしない。\" (R)",
+          "alternatives": [
+            "だれが自分たちを見るだろうか"
+          ],
+          "reason": "\"Them\" may be the snares or the plotters themselves (m2, uncertain); それら / それ point to the snares, as the English, and Readable gives the sense as a statement, as the English R.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -997,6 +1200,16 @@
           "L": "Выискивают неправды: \\q «Мы довершили замысел, хорошо обдуманный!» \\q И нутро человека и сердце — глубоки.",
           "B": "Они выискивают преступления и говорят: \\q «У нас безупречный замысел, всё продумано до конца!» \\q Как глубоки мысли и сердце человека!",
           "R": "Они ищут, как сделать зло. \\q Они говорят: «Наш план совершенен!» \\q Никто не может понять ум и сердце человека."
+        },
+        "ja": {
+          "L": "彼らは不正を探り出す。 \\q 「わたしたちは、よく練り上げた企てを仕上げた！」 \\q 人の内側と心は深い。",
+          "B": "彼らは悪事を探り出して言う。 \\q 「完璧な計画だ。よく練り上げてある！」 \\q 人の思いと心は、なんと深いことか！",
+          "R": "彼らは、悪いことをする方法を探す。 \\q 彼らは言う。「わたしたちの計画は完璧だ！」 \\q 人の心の中は、だれにもわからない。"
+        },
+        "uk": {
+          "L": "Вони вишукують неправди: \\q «Ми довершили ретельно продуманий задум!» \\q І нутро {{gender:людини|чоловіка}} і серце — глибокі.",
+          "B": "Вони вишукують злочини й кажуть: \\q «У нас бездоганний задум, усе ретельно продумано!» \\q Які глибокі думки й серце людини!",
+          "R": "Вони шукають способів чинити погане. \\q Вони кажуть: «Наш план досконалий!» \\q Ніхто не може зрозуміти людського розуму й серця."
         }
       },
       "decisions": [
@@ -1112,6 +1325,29 @@
           "reason": "The English Literal has a gender span here; Russian \"человек\" already includes men and women, so the style guide leaves it without one.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640070031",
+            "o190640070041",
+            "o190640070051"
+          ],
+          "choice": "tamnu chefes mechuppas, read as the plotters' boast in quotes: \"わたしたちは、よく練り上げた企てを仕上げた！\" (L), \"完璧な計画だ。よく練り上げてある！\" (B, R)",
+          "alternatives": [
+            "彼らは企てを仕上げた"
+          ],
+          "reason": "The text and its sense are uncertain (m1, footnoted); the English reading is followed. The deep inner being and heart are hidden thoughts (m2); 人 needs no gender span.",
+          "uncertain": true,
+          "footnote": true
         }
       ],
       "status": "ai_draft"
@@ -1188,6 +1424,16 @@
           "L": "Но поражает их Бог стрелой; \\q внезапно [приходят] раны их.",
           "B": "Но Бог пускает в них стрелу, \\q и в одно мгновение они ранены.",
           "R": "Но Бог стреляет в них стрелами, \\q и вдруг они ранены."
+        },
+        "ja": {
+          "L": "しかし神は、彼らに矢を射られる。 \\q 不意に、彼らの傷が[生じる]。",
+          "B": "しかし神が彼らに矢を放たれる。 \\q 不意に、彼らは傷を負う。",
+          "R": "しかし神が、彼らに矢を射られる。 \\q すると突然、彼らは傷つく。"
+        },
+        "uk": {
+          "L": "Але Бог стріляє в них стрілою; \\q раптово приходять їхні рани.",
+          "B": "Але Бог пускає в них стрілу; \\q умить вони поранені.",
+          "R": "Але Бог стріляє в них стрілами, \\q і раптом вони поранені."
         }
       },
       "decisions": [
@@ -1242,6 +1488,26 @@
             "a different word from verse 5"
           ],
           "reason": "The plotters shot \"suddenly\" in verse 5; God's arrow comes \"suddenly\" too (see the meaning decision). Literal and Readable use the same word as in verse 5 so the echo is heard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640080041",
+            "o190640080031"
+          ],
+          "choice": "pit'om \"不意に\" (L, B), \"突然\" (R), the same word as in 64:5",
+          "alternatives": [],
+          "reason": "The plotters' own \"suddenly\" is turned back on them (m2); Japanese repeats the word of 64:5 at each level.",
           "uncertain": false,
           "footnote": false
         }
@@ -1323,6 +1589,16 @@
           "L": "И доводят его до падения — язык их [обращается] против них; \\q качают [головой] все, видящие их.",
           "B": "Их собственные слова подставляют им подножку и валят их; \\q каждый, кто видит их, качает головой.",
           "R": "То, что они говорили, обернётся против них, и они упадут. \\q Каждый, кто увидит их, покачает головой."
+        },
+        "ja": {
+          "L": "彼らは彼をつまずかせ――彼らの舌が彼ら自身に逆らう。 \\q 彼らを見る者はみな、[頭を]振る。",
+          "B": "彼ら自身の言葉が、彼らをつまずかせて倒す。 \\q 彼らを見る者はみな、頭を振る。",
+          "R": "彼らが言ったことが、彼ら自身に返ってきて、彼らは倒れる。 \\q 彼らを見る人はみな、あきれて首を振る。"
+        },
+        "uk": {
+          "L": "І вони змушують його спіткнутися — їхній язик проти них; \\q усі, хто дивиться на них, хитають [головами].",
+          "B": "Власні слова підставляють їм ногу й валять їх; \\q кожен, хто їх бачить, хитає головою.",
+          "R": "Те, що вони сказали, обернеться проти них, і вони впадуть. \\q Кожен, хто їх побачить, хитатиме на них головою."
         }
       },
       "decisions": [
@@ -1379,6 +1655,30 @@
           ],
           "reason": "Balanced and Readable keep the plural (m1).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640090011",
+            "o190640090012",
+            "o190640090013",
+            "o190640090041",
+            "o190640090021",
+            "o190640090031"
+          ],
+          "choice": "vayyakhshiluhu \"彼をつまずかせ\" (L), \"彼らをつまずかせて倒す\" (B, R); yitnodedu \"[頭を]振る\" (L), \"頭を振る\" (B), \"あきれて首を振る\" (R)",
+          "alternatives": [],
+          "reason": "The clause is hard (m1, uncertain): their own words bring them down; the head-shaking is scorn (m2, uncertain).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1459,6 +1759,16 @@
           "L": "И убоятся все люди, \\q и возвестят деяние Божье, \\q и уразумеют дело {{deity_pronoun:его|Его}}.",
           "B": "Тогда всех охватит благоговейный страх; \\q они возвестят о том, что сделал Бог, \\q и глубоко задумаются о {{deity_pronoun:его|Его}} делах.",
           "R": "Тогда все наполнятся страхом. \\q Они расскажут другим о том, что сделал Бог, \\q и будут внимательно думать об этом."
+        },
+        "ja": {
+          "L": "すべての人は恐れ、 \\q 神のなさったことを告げ、 \\q そのみわざを悟る。",
+          "B": "そのとき、人はみな畏れに打たれ、 \\q 神がなさったことを告げ知らせ、 \\q そのみわざを深く思う。",
+          "R": "すると、人々はみな、おそれに満たされる。 \\q 彼らは、神がなさったことを人々に知らせ、 \\q そのことをよく考える。"
+        },
+        "uk": {
+          "L": "І всі люди бояться; \\q і звіщають діло Боже, \\q і розуміють {{deity_pronoun:його|Його}} справу.",
+          "B": "Тоді всіх охоплює благоговіння; \\q вони звіщають, що зробив Бог, \\q і глибоко роздумують про {{deity_pronoun:його|Його}} діла.",
+          "R": "Тоді всіх охоплює страх. \\q Вони розповідають іншим, що зробив Бог, \\q і уважно думають про це."
         }
       },
       "decisions": [
@@ -1489,6 +1799,26 @@
           "choice": "tense",
           "alternatives": [],
           "reason": "As in verse 8, the past forms describe what will surely happen; they are rendered as present.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640100011",
+            "o190640100012"
+          ],
+          "choice": "vayyir'u \"恐れ\" (L), \"畏れに打たれ\" (B), \"おそれに満たされる\" (R)",
+          "alternatives": [],
+          "reason": "The fear is awe before God's act (m1); the Psalter's fear-of-God words (恐れる L, 畏れる B, おそれ R).",
           "uncertain": false,
           "footnote": false
         }
@@ -1571,6 +1901,16 @@
           "L": "Да возрадуется праведный о {{divine_name:ГОСПОДЕ|Яхве}} и найдёт убежище в {{deity_pronoun:нём|Нём}}; \\q и да хвалятся все прямые сердцем.",
           "B": "Пусть праведный радуется о {{divine_name:ГОСПОДЕ|Яхве}} и ищет у {{deity_pronoun:него|Него}} прибежища; \\q пусть все честные сердцем славят {{deity_pronoun:его|Его}}.",
           "R": "Пусть те, кто поступает правильно, радуются благодаря {{divine_name:ГОСПОДУ|Яхве}}. \\q Пусть они прибегают к {{deity_pronoun:нему|Нему}} за защитой. \\q Пусть празднуют все, у кого честное сердце!"
+        },
+        "ja": {
+          "L": "正しい者は、{{divine_name:主|ヤハウェ}}にあって喜び、その方に身を避けるように。 \\q 心のまっすぐな者たちはみな、誇るように。",
+          "B": "正しい人が{{divine_name:主|ヤハウェ}}を喜び、その方を避け所とするように。 \\q 心の正しい人たちがみな、その方を誇りとするように。",
+          "R": "正しいことをする人が、{{divine_name:主|ヤハウェ}}のゆえに喜ぶように。 \\q その方のもとに逃げ込んで、守られるように。 \\q 心の正直な人がみな、喜び祝うように！"
+        },
+        "uk": {
+          "L": "Нехай праведний радіє в {{divine_name:ГОСПОДІ|Ягве}} і шукає притулку в {{deity_pronoun:ньому|Ньому}}; \\q і нехай хваляться всі праведні серцем.",
+          "B": "Нехай праведні радіють у {{divine_name:ГОСПОДІ|Ягве}} і роблять {{deity_pronoun:його|Його}} своїм притулком; \\q нехай віддають хвалу всі, у кого серце праве.",
+          "R": "Нехай люди, які чинять правильно, радіють через {{divine_name:ГОСПОДА|Ягве}}. \\q Нехай вони біжать до {{deity_pronoun:нього|Нього}} по захист. \\q Нехай святкують усі, у кого чесне серце!"
         }
       },
       "decisions": [
@@ -1661,6 +2001,29 @@
           "choice": "\"{{divine_name:प्रभु|याहवे}}\"",
           "alternatives": [],
           "reason": "The divine name takes the span used in every Hindi book of this translation, with honorific plural agreement. Because Hindi \"प्रभु\" also renders Adonai (\"Lord\", as at 62:13), the setting is how a reader tells the two apart: with it on, only the divine name reads \"याहवे\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190640110041",
+            "o190640110042",
+            "o190640110061",
+            "o190640110062",
+            "o190640110011"
+          ],
+          "choice": "vechasah bo \"その方に身を避ける\" (L), \"その方を避け所とする\" (B), \"その方のもとに逃げ込んで、守られる\" (R); yithallelu \"誇る\" (L), \"その方を誇りとする\" (B), \"喜び祝う\" (R)",
+          "alternatives": [],
+          "reason": "chasah as the Psalter conventions; the boasting is glorying in God (m1); wishes 〜ように (m2).",
           "uncertain": false,
           "footnote": false
         }
