@@ -72,6 +72,16 @@
           "L": "እግዚአብሔር ሆይ፣ ፍረድልኝ፤ ታማኝ ካልሆነ ሕዝብ ጋር ያለኝን ክርክር ተሟገትልኝ፤ ከአታላይና ከዓመፀኛ ሰው አድነኝ።",
           "B": "እግዚአብሔር ሆይ፣ ፍርድ ስጥልኝ፤ ታማኝነት በሌለው ሕዝብ ፊት ጉዳዬን ያዝልኝ፤ ከሚዋሹና ግፍ ከሚሠሩ ሰዎች አድነኝ።",
           "R": "እግዚአብሔር ሆይ፣ ትክክለኛ መሆኔን አሳይ። ለአንተ ታማኝ ካልሆኑ ሰዎች ተከላከልልኝ። ከሚዋሹና ፍትሕ ከሚያጓድሉ ሰዎች አድነኝ።"
+        },
+        "hi": {
+          "L": "हे परमेश्वर, मेरा न्याय कर, और ऐसी जाति के विरुद्ध मेरा मुक़दमा लड़ जो भक्त नहीं; छल और अन्याय करनेवाले {{gender:व्यक्ति|पुरुष}} से मुझे छुड़ा।",
+          "B": "हे परमेश्वर, मेरे पक्ष में न्याय कर, और निष्ठाहीन राष्ट्र के विरुद्ध मेरा मुक़दमा अपने हाथ में ले; झूठ बोलनेवाले और बुरा करनेवाले लोगों से मुझे बचा।",
+          "R": "हे परमेश्वर, दिखा दे कि मैं सही हूँ। उन लोगों के विरुद्ध मेरा बचाव कर जो तेरे प्रति वफ़ादार नहीं हैं। मुझे उन लोगों से बचा जो झूठ बोलते हैं और अन्याय करते हैं।"
+        },
+        "ru": {
+          "L": "Суди меня, Боже, и веди моё дело против народа неверного; от человека лжи и неправды избавь меня.",
+          "B": "Боже, рассуди меня и защити моё дело против народа, в котором нет верности; спаси меня от людей, которые лгут и творят зло.",
+          "R": "Боже, покажи, что я прав. Защити меня от людей, которые не верны {{deity_pronoun:тебе|Тебе}}. Спаси меня от тех, кто лжёт и поступает нечестно."
         }
       },
       "decisions": [
@@ -248,6 +258,120 @@
           "reason": "The English offers an inclusive and a traditional wording here. The Amharic word (ሰው, የሰው ልጆች, or the generic singular suffix) already speaks of men and women alike, so there is no second wording to offer and no span (docs/amharic-style.md 7b). This holds for the rest of the psalm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190430010081"
+          ],
+          "choice": "{{gender:व्यक्ति|पुरुष}}",
+          "alternatives": [
+            "पुरुष"
+          ],
+          "reason": "As in the English, the phrase means anyone deceitful and unjust: व्यक्ति (person), with पुरुष (man) as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190430010051"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [
+            "capitalised pronoun spans, as in English"
+          ],
+          "reason": "Hindi has no capital letters; God is set apart by तू in address and honorific forms in the third person, so the Hindi has no deity_pronoun spans in this psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430010051"
+          ],
+          "choice": "निष्ठाहीन राष्ट्र",
+          "alternatives": [
+            "निष्ठाहीन जाति"
+          ],
+          "reason": "At Balanced and Readable a nation is राष्ट्र or देश, not जाति, which can also mean caste; Literal keeps जाति, as the poetry note has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-4",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430010071"
+          ],
+          "choice": "जो भक्त नहीं",
+          "alternatives": [
+            "जो विश्वासयोग्य नहीं"
+          ],
+          "reason": "Hasid, one who keeps loyal love (m3), is भक्त at Literal throughout Psalms 42-72 (50:5; 52:11), so the nation that is \"not hasid\" is one that is not भक्त. Balanced and Readable say what it lacks, loyalty.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190430010082"
+          ],
+          "choice": "\"человека\" without a gender span",
+          "alternatives": [
+            "\"мужа\""
+          ],
+          "reason": "The English Literal has \"person\" with \"man\" as the alternative. Russian \"человек\" already means anyone, man or woman, so no setting is needed (as the style guide says for человек).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430010011"
+          ],
+          "choice": "Psalm 43 drafted with Psalm 42",
+          "alternatives": [],
+          "reason": "Psalm 43 continues Psalm 42 (m1); it keeps its wording for the repeated lines (43:2 = 42:10) and the refrain (43:5).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -321,6 +445,16 @@
           "L": "አንተ የምሽጌ አምላክ ነህና፤ ለምን ጣልከኝ? በጠላት ግፍ ለምን እያዘንኩ እመላለሳለሁ?",
           "B": "አንተ ምሽጌ የሆንከው አምላክ ነህና። ለምን ገፋኸኝ? ጠላት እያስጨነቀኝ ለምን የሐዘን ልብስ ለብሼ እመላለሳለሁ?",
           "R": "አንተ እግዚአብሔር ነህ፤ ተጠብቄ እንድኖርም ታደርገኛለህ። ታዲያ ለምን ተውከኝ? ለምን እንዲህ አዝኛለሁ? ጠላቶቼስ ለምን እንዲህ ያንገላቱኛል?"
+        },
+        "hi": {
+          "L": "क्योंकि तू ही मेरे गढ़ का परमेश्वर [है]; तूने मुझे क्यों त्याग दिया? मैं शत्रु के अत्याचार के नीचे शोक करता हुआ क्यों फिरता हूँ?",
+          "B": "क्योंकि तू ही परमेश्वर है, मेरा गढ़। तूने मुझे क्यों दूर धकेल दिया? जब शत्रु मुझे कड़ाई से दबाता है, तब मैं शोक के वस्त्र पहने क्यों फिरता हूँ?",
+          "R": "तू ही परमेश्वर है, और तू मुझे सुरक्षित रखता है। तो फिर तूने मुझे क्यों ठुकरा दिया? मैं इतना उदास क्यों हूँ? मेरे शत्रु मुझसे इतना बुरा व्यवहार क्यों करते हैं?"
+        },
+        "ru": {
+          "L": "Ведь {{deity_pronoun:ты|Ты}} — Бог крепости моей; почему {{deity_pronoun:ты|Ты}} отверг меня? Почему я хожу в скорби под гнётом врага?",
+          "B": "Ведь {{deity_pronoun:ты|Ты}} — Бог, моя крепость. Почему {{deity_pronoun:ты|Ты}} оттолкнул меня? Почему я хожу в траурной одежде, а враг теснит меня?",
+          "R": "Ты — Бог, и {{deity_pronoun:ты|Ты}} хранишь меня. Почему же {{deity_pronoun:ты|Ты}} отвернулся от меня? Почему мне так плохо? Почему враги так жестоко обращаются со мной?"
         }
       },
       "decisions": [
@@ -406,6 +540,47 @@
           "reason": "The Hebrew repeats 42:10 here (see the meaning decision), so the Amharic does too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430020081",
+            "o190430020091",
+            "o190430020101"
+          ],
+          "choice": "the second question as in 42:10",
+          "alternatives": [],
+          "reason": "The question \"Why do I walk about mourning under the oppression of an enemy?\" repeats 42:10 word for word in the Hebrew, so each level keeps the wording it has there. Only the first question differs (rejected, त्याग दिया, for forgotten).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430020072",
+            "o190430020111"
+          ],
+          "choice": "the last question as in 42:10",
+          "alternatives": [],
+          "reason": "The Hebrew repeats 42:10 (m2), so each level repeats its wording there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -482,6 +657,16 @@
           "L": "ብርሃንህንና እውነትህን ላክ፤ እነርሱ ይምሩኝ፤ ወደ ተቀደሰው ተራራህና ወደ ማደሪያዎችህ ያድርሱኝ።",
           "B": "ይመሩኝ ዘንድ ብርሃንህና እውነትህ ይውጡ፤ ወደ ተቀደሰው ተራራህ፣ ወደምትኖርበት ስፍራ ያውጡኝ።",
           "R": "መንገዱን እንዲያሳዩኝ ብርሃንህንና እውነትህን ላክ። ወደ ተቀደሰው ተራራህ፣ ወደምትኖርበት ስፍራ መልሰው ይውሰዱኝ።"
+        },
+        "hi": {
+          "L": "अपना प्रकाश और अपना सत्य भेज; वे मेरी अगुवाई करें; वे मुझे तेरे पवित्र पर्वत पर और तेरे निवासस्थानों तक पहुँचाएँ।",
+          "B": "तेरा प्रकाश और तेरा सत्य मेरा मार्गदर्शन करने को निकलें; वे मुझे तेरे पवित्र पर्वत पर, उस स्थान तक ले चलें जहाँ तू रहता है।",
+          "R": "अपना प्रकाश और अपना सत्य भेज कि वे मुझे रास्ता दिखाएँ। वे मुझे वापस तेरे पवित्र पर्वत पर ले चलें, उस स्थान पर जहाँ तू रहता है।"
+        },
+        "ru": {
+          "L": "Пошли свет {{deity_pronoun:твой|Твой}} и истину {{deity_pronoun:твою|Твою}}; пусть они ведут меня, пусть приведут меня на гору святости {{deity_pronoun:твоей|Твоей}} и к жилищам {{deity_pronoun:твоим|Твоим}}.",
+          "B": "Пусть {{deity_pronoun:твой|Твой}} свет и {{deity_pronoun:твоя|Твоя}} истина выйдут, чтобы вести меня; пусть они приведут меня на {{deity_pronoun:твою|Твою}} святую гору, туда, где {{deity_pronoun:ты|Ты}} живёшь.",
+          "R": "Пошли {{deity_pronoun:твой|Твой}} свет и {{deity_pronoun:твою|Твою}} истину, чтобы они показали мне дорогу. Пусть они приведут меня обратно на {{deity_pronoun:твою|Твою}} святую гору, туда, где {{deity_pronoun:ты|Ты}} живёшь."
         }
       },
       "decisions": [
@@ -620,6 +805,16 @@
           "L": "ወደ እግዚአብሔርም መሠዊያ እገባለሁ፤ የደስታዬ ሐሤት ወደ ሆነው ወደ እግዚአብሔር፤ እግዚአብሔር ሆይ፣ አምላኬ፣ በበገና አመሰግንሃለሁ።",
           "B": "ከዚያም ወደ እግዚአብሔር መሠዊያ፣ ደስታዬና ሐሤቴ ወደ ሆነው ወደ እግዚአብሔር እወጣለሁ፤ እግዚአብሔር ሆይ፣ አምላኬ ሆይ፣ በበገና አመሰግንሃለሁ።",
           "R": "ከዚያም ወደ እግዚአብሔር መሠዊያ እሄዳለሁ። እግዚአብሔር እጅግ ደስ ያሰኘኛል! እግዚአብሔር ሆይ፣ አምላኬ ሆይ፣ በገና እየደረደርኩ አመሰግንሃለሁ።"
+        },
+        "hi": {
+          "L": "और मैं परमेश्वर की वेदी के पास जाऊँगा, परमेश्वर के पास, जो मेरे आनंद का हर्ष हैं; और हे परमेश्वर, मेरे परमेश्वर, मैं वीणा के साथ तेरा धन्यवाद करूँगा।",
+          "B": "तब मैं परमेश्वर की वेदी के पास जाऊँगा, उस परमेश्वर के पास जो मेरा आनंद और मेरा हर्ष हैं; और हे परमेश्वर, मेरे परमेश्वर, मैं वीणा बजाकर तेरा धन्यवाद करूँगा।",
+          "R": "तब मैं परमेश्वर की वेदी के पास जाऊँगा। परमेश्वर मुझे बहुत ही आनंदित करते हैं! हे परमेश्वर, मेरे परमेश्वर, मैं वीणा बजाऊँगा और तेरा धन्यवाद करूँगा।"
+        },
+        "ru": {
+          "L": "И приду я к жертвеннику Божьему, к Богу, радости ликования моего, и буду благодарить {{deity_pronoun:тебя|Тебя}} на лире, Боже, Боже мой.",
+          "B": "Тогда я приду к Божьему жертвеннику, к Богу, моей радости и веселью, и под звуки лиры буду благодарить {{deity_pronoun:тебя|Тебя}}, Боже, Боже мой.",
+          "R": "Тогда я пойду к Божьему жертвеннику. Бог даёт мне такую радость! Я буду играть на арфе и благодарить {{deity_pronoun:тебя|Тебя}}, Боже, Боже мой."
         }
       },
       "decisions": [
@@ -689,6 +884,28 @@
             "\"መሰንቆ\""
           ],
           "reason": "As 1 Chronicles 15:21 on main, where the kinnor is \"በገና\" and the nevel (harp) \"መሰንቆ\"; the English Readable's \"harp\" is the same instrument.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430040101"
+          ],
+          "choice": "वीणा",
+          "alternatives": [
+            "सारंगी",
+            "सितार"
+          ],
+          "reason": "The kinnor, a small hand-plucked lyre, is वीणा at every level; the word is familiar in Hindi, so Readable keeps it where the English changes \"lyre\" to \"harp\".",
           "uncertain": false,
           "footnote": false
         }
@@ -770,6 +987,16 @@
           "L": "ነፍሴ ሆይ፣ ለምን አቀረቀርሽ? በውስጤስ ለምን ትታወኪያለሽ? እግዚአብሔርን ተስፋ አድርጊ፤ የፊቴ መድኃኒትና አምላኬ የሆነውን ገና አመሰግነዋለሁና።",
           "B": "ነፍሴ ሆይ፣ ለምን እንዲህ አቀረቀርሽ? ይህስ ውስጣዊ ሁከት ለምንድን ነው? እግዚአብሔርን ተስፋ አድርገሽ ጠብቂ፤ እርሱን፣ የሚያድነኝን አምላኬን፣ እንደ ገና አመሰግነዋለሁ።",
           "R": "ነፍሴን እንዲህ እላታለሁ፦ ለምን እንዲህ አዘንሽ? ለምንስ እንዲህ ተረበሽሽ? በእግዚአብሔር ተስፋ ማድረግሽን አታቋርጪ! እንደ ገና አመሰግነዋለሁ። እርሱ ያድነኛል፤ እርሱ አምላኬ ነው።"
+        },
+        "hi": {
+          "L": "हे मेरे प्राण, तुम क्यों झुके हुए हो, और क्यों मेरे भीतर व्याकुल हो? परमेश्वर की बाट जोहो, क्योंकि मैं फिर उनका धन्यवाद करूँगा, जो मेरे मुख का उद्धार और मेरे परमेश्वर हैं।",
+          "B": "हे मेरे प्राण, तुम इतने क्यों झुक गए हो? मेरे भीतर यह बेचैनी क्यों है? आशा रखकर परमेश्वर की बाट जोहो; मैं फिर उनका धन्यवाद करूँगा, जो मुझे बचाते हैं, जो मेरे परमेश्वर हैं।",
+          "R": "मैं अपने आप से कहता हूँ: तुम इतने उदास क्यों हो? तुम इतने बेचैन क्यों हो? परमेश्वर पर आशा रखे रहो! मैं फिर उनकी स्तुति करूँगा। वे मुझे बचाते हैं। वे मेरे परमेश्वर हैं।"
+        },
+        "ru": {
+          "L": "Почему ты поникла, душа моя, и почему ты в смятении во мне? Жди Бога, ведь я ещё буду благодарить {{deity_pronoun:его|Его}}, спасение лица моего и Бога моего.",
+          "B": "Почему ты так поникла, душа моя? Откуда во мне эта тревога? Жди Бога с надеждой: я снова буду благодарить {{deity_pronoun:его|Его}}, того, кто спасает меня, моего Бога.",
+          "R": "Я говорю себе: почему ты так грустишь? Почему ты так тревожишься? Продолжай надеяться на Бога! Я снова буду хвалить {{deity_pronoun:его|Его}}. Он спасает меня. Он — мой Бог."
         }
       },
       "decisions": [
@@ -887,6 +1114,46 @@
           "choice": "the refrain in exactly the Amharic of 42:12",
           "alternatives": [],
           "reason": "The Hebrew of 43:5 is the same as 42:12, so the Amharic is the same at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430050011"
+          ],
+          "choice": "one wording of the refrain per level in 42:6, 42:12 and 43:5; the soul addressed as तुम",
+          "alternatives": [
+            "तू क्यों झुका हुआ है"
+          ],
+          "reason": "Psalms 42 and 43 are one poem with one refrain (42:6, 42:12, 43:5), so each level words it the same way in all three places; 42:6 differs only where its Hebrew does (\"the salvation of his face\" for \"the salvation of my face and my God\", and no second \"why\", supplied in brackets at Literal). The psalmist speaks to his own soul. Hindi तू is kept for speech to God in this translation, so the soul is addressed with तुम (झुके हुए हो, जोहो); the soul (प्राण) is masculine. Readable makes the self-address plain with मैं अपने आप से कहता हूँ, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430050142"
+          ],
+          "choice": "the refrain as in 42:6 and 42:12",
+          "alternatives": [],
+          "reason": "The refrain has one wording at each level in its three places (42:6, 42:12, 43:5); this one is word for word 42:12.",
           "uncertain": false,
           "footnote": false
         }
