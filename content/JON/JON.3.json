@@ -62,6 +62,16 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ቃልም ሁለተኛ ጊዜ ወደ ዮናስ መጣ፤ እንዲህም አለ፦",
           "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ቃል ሁለተኛ ጊዜ ወደ ዮናስ መጣ፦",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዮናስ ይህን መልእክት ለሁለተኛ ጊዜ ሰጠው፦"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} का वचन दूसरी बार योना के पास पहुँचा:",
+          "B": "{{divine_name:प्रभु|याहवे}} का वचन दूसरी बार योना के पास पहुँचा:",
+          "R": "{{divine_name:प्रभु|याहवे}} ने योना को दूसरी बार यह संदेश दिया:"
+        },
+        "ru": {
+          "L": "И было слово {{divine_name:ГОСПОДА|Яхве}} к Ионе во второй раз, говоря:",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} обратился к Ионе во второй раз:",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} во второй раз дал Ионе такое слово:"
         }
       },
       "decisions": [
@@ -189,6 +199,27 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns and verb forms for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030010011",
+            "o320030010012",
+            "o320030010021"
+          ],
+          "choice": "the wording of 1:1 at each level",
+          "alternatives": [],
+          "reason": "Each level repeats its own wording of 1:1, with दूसरी बार, so that the reader sees the story start over.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -266,6 +297,16 @@
           "L": "«ተነሥ፤ ወደ ታላቂቱ ከተማ ወደ ነነዌ ሂድ፤ እኔ የምነግርህንም አዋጅ ለእርሷ አውጅ።»",
           "B": "«ተነሥ፤ ወደዚያች ታላቅ ከተማ ወደ ነነዌ ሂድ፤ የምሰጥህንም መልእክት ለእርሷ አውጅ።»",
           "R": "«ተነሥና ወደ ታላቂቱ ከተማ ወደ ነነዌ ሂድ። የምሰጥህን መልእክት ለሕዝቧ አስታውቅ።»"
+        },
+        "hi": {
+          "L": "\"उठो, उस बड़े नगर नीनवे को जाओ, और उसमें वह घोषणा पुकारो जो मैं तुमसे कह रहा हूँ।\"",
+          "B": "\"उठो, उस बड़े नगर नीनवे को जाओ, और उसमें वह संदेश पुकारो जो मैं तुम्हें दे रहा हूँ।\"",
+          "R": "\"उठो और नीनवे के बड़े नगर को जाओ। वहाँ के लोगों को वह संदेश सुनाओ जो मैं तुम्हें देता हूँ।\""
+        },
+        "ru": {
+          "L": "«Встань, иди в Ниневию, город великий, и возвести ей возвещение, которое {{deity_pronoun:я|Я}} говорю тебе.»",
+          "B": "«Встань, иди в Ниневию, этот великий город, и возвести ей весть, которую {{deity_pronoun:я|Я}} даю тебе.»",
+          "R": "«Вставай и иди в великий город Ниневию. Объяви её жителям весть, которую {{deity_pronoun:я|Я}} тебе дам.»"
         }
       },
       "decisions": [
@@ -391,6 +432,68 @@
           "reason": "The command repeats 1:2; the Hebrew uses one root for the verb and its object (call out the proclamation), which Literal keeps in \"አዋጅ ... አውጅ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030020011",
+            "o320030020021",
+            "o320030020072",
+            "o320030020102"
+          ],
+          "choice": "the wording of 1:2 for the repeated command; घोषणा (L), संदेश (B, R)",
+          "alternatives": [],
+          "reason": "\"Arise, go to Nineveh, the great city, and call out\" keeps each level's wording of 1:2, so that the repeated command can be heard. Here the Hebrew says \"call out to it\", not \"against it\" as in 1:2, so Literal and Balanced say उसमें; Readable names the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o320030020131"
+          ],
+          "choice": "No deity_pronoun spans in Hindi",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so where the English marks God's pronouns with the deity_pronoun setting the Hindi has no span; God speaks with मैं and is honorific in the third person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030020102"
+          ],
+          "choice": "возвести ей возвещение (L); возвести ей весть (B); объяви её жителям весть (R)",
+          "alternatives": [
+            "проповедуй"
+          ],
+          "reason": "Literal keeps the Hebrew's verb and its noun from the same root; Jonah is to say only what God gives him.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -468,6 +571,16 @@
           "L": "ዮናስም ተነሣ፤ {{divine_name:በእግዚአብሔር|በያህዌ}} ቃል መሠረትም ወደ ነነዌ ሄደ። ነነዌም ለእግዚአብሔር ታላቅ ከተማ፣ የሦስት ቀን መንገድ ነበረች።",
           "B": "ስለዚህ ዮናስ ተነሥቶ {{divine_name:እግዚአብሔር|ያህዌ}} እንደ ነገረው ወደ ነነዌ ሄደ። ነነዌም እጅግ ታላቅ ከተማ ነበረች፤ ለማቋረጥ የሦስት ቀን መንገድ ነበር።",
           "R": "በዚህ ጊዜ ዮናስ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ታዘዘ። ተነሥቶም ወደ ነነዌ ሄደ። ነነዌ እጅግ ታላቅ ከተማ ነበረች። እርሷን አቋርጦ ለማለፍ የሦስት ቀን የእግር መንገድ ይፈጅ ነበር።"
+        },
+        "hi": {
+          "L": "और योना उठा और {{divine_name:प्रभु|याहवे}} के वचन के अनुसार नीनवे को गया। और नीनवे परमेश्वर के लिए एक बड़ा नगर था, तीन दिन की पैदल यात्रा का।",
+          "B": "तब योना उठा और {{divine_name:प्रभु|याहवे}} के कहने के अनुसार नीनवे को गया। नीनवे बहुत ही बड़ा नगर था, उसे पार करने में तीन दिन की पैदल यात्रा लगती थी।",
+          "R": "इस बार योना ने {{divine_name:प्रभु|याहवे}} की बात मानी। वह उठा और नीनवे को गया। नीनवे बहुत बड़ा नगर था। उसे पैदल पार करने में तीन दिन लगते थे।"
+        },
+        "ru": {
+          "L": "И встал Иона и пошёл в Ниневию по слову {{divine_name:ГОСПОДА|Яхве}}. А Ниневия была город великий у Бога, на три дня ходьбы.",
+          "B": "И Иона встал и пошёл в Ниневию, как велел ему {{divine_name:ГОСПОДЬ|Яхве}}. А Ниневия была огромным городом: чтобы пройти её, нужно было три дня.",
+          "R": "На этот раз Иона послушался {{divine_name:ГОСПОДА|Яхве}}. Он встал и пошёл в Ниневию. Ниневия была очень большим городом. Чтобы пройти её насквозь, нужно было идти три дня."
         }
       },
       "decisions": [
@@ -695,6 +808,50 @@
           "reason": "As the English levels and the footnoted meaning decision: Literal keeps the Hebrew phrase, Balanced and Readable give its sense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030030101",
+            "o320030030111",
+            "o320030030121",
+            "o320030030122",
+            "o320030030131"
+          ],
+          "choice": "परमेश्वर के लिए एक बड़ा नगर (L); बहुत ही बड़ा नगर (B); बहुत बड़ा नगर (R)",
+          "alternatives": [
+            "परमेश्वर की दृष्टि में बड़ा"
+          ],
+          "reason": "Literal keeps \"a great city to God\"; Balanced and Readable say what the idiom means, a very great city (m1). Every level keeps तीन दिन for its size.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030030122"
+          ],
+          "choice": "город великий у Бога",
+          "alternatives": [
+            "великий город Божий"
+          ],
+          "reason": "Literal keeps \"great to God\", a Hebrew way of saying \"exceedingly great\"; Balanced and Readable give the sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -772,6 +929,16 @@
           "L": "ዮናስም የአንድ ቀን መንገድ ወደ ከተማዪቱ ይገባ ጀመር፤ አወጀም፤ እንዲህም አለ፦ «ገና አርባ ቀን፤ ነነዌም ትገለበጣለች!»",
           "B": "ዮናስ የአንድ ቀን መንገድ ያህል ወደ ከተማዪቱ ገብቶ እንዲህ ብሎ ማወጅ ጀመረ፦ «ገና አርባ ቀን ቀርቷል፤ ከዚያም ነነዌ ትገለበጣለች!»",
           "R": "ዮናስ ወደ ከተማዪቱ ገብቶ ቀኑን ሙሉ ተመላለሰ፤ እንዲህም እያለ ያውጅ ነበር፦ «በአርባ ቀን ውስጥ ነነዌ ትገለባበጣለች!»"
+        },
+        "hi": {
+          "L": "और योना नगर में जाने लगा, एक दिन की पैदल यात्रा, और उसने पुकारकर कहा, \"अभी चालीस दिन, और नीनवे उलट दिया [जाएगा]!\"",
+          "B": "योना ने नगर में एक दिन की पैदल यात्रा से शुरुआत की, और उसने पुकारकर कहा, \"चालीस दिन और, फिर नीनवे उलट दिया जाएगा!\"",
+          "R": "योना नगर में गया और पूरे एक दिन चलता रहा। वह पुकारता गया, \"चालीस दिन में नीनवे उलट-पुलट कर दिया जाएगा!\""
+        },
+        "ru": {
+          "L": "И начал Иона ходить по городу, [путь] одного дня, и возвещал, и говорил: «Ещё сорок дней, и Ниневия [будет] низвергнута!»",
+          "B": "Иона прошёл по городу один день пути и возвещал: «Ещё сорок дней — и Ниневия будет низвергнута!»",
+          "R": "Иона вошёл в город и целый день ходил по нему и кричал: «Через сорок дней Ниневия будет перевёрнута вверх дном!»"
         }
       },
       "decisions": [
@@ -1002,6 +1169,48 @@
           "reason": "\"ገለበጠ\" is the verb used of Sodom in Genesis 19:25 on main, and it can also mean \"be turned\", so it holds both senses the footnoted meaning decision names.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030040141"
+          ],
+          "choice": "उलट दिया जाएगा (L, B); उलट-पुलट कर दिया जाएगा (R)",
+          "alternatives": [
+            "नष्ट कर दिया जाएगा"
+          ],
+          "reason": "The Hebrew verb means \"overturned\", as Sodom was, and can also mean turned around, changed (m1). Hindi उलटना carries both: ruin and a complete turnabout. Readable says उलट-पुलट, the everyday form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030040141"
+          ],
+          "choice": "низвергнута (L, B); перевёрнута вверх дном (R)",
+          "alternatives": [
+            "разрушена"
+          ],
+          "reason": "The verb is the one used for the overthrow of Sodom; it can also mean \"turned around\". Russian keeps a verb of overturning rather than plain \"разрушена\", so that the second sense can still be heard, as the meaning decision notes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1078,6 +1287,16 @@
           "L": "የነነዌም ሰዎች በእግዚአብሔር አመኑ፤ ጾምንም አወጁ፤ ከትልቃቸው አንሥቶ እስከ ትንሻቸው ድረስ ማቅ ለበሱ።",
           "B": "የነነዌ ሰዎች እግዚአብሔርን አመኑ። ጾም አወጁ፤ ትልቅ ትንሹ ሳይቀር ሁሉም ማቅ ለበሱ።",
           "R": "የነነዌ ሰዎች የእግዚአብሔርን መልእክት አመኑ። ለመጾምም ወሰኑ፤ ሁሉም ሻካራ ማቅ ለበሱ። ይህንንም ያደረጉት ከታላላቆቹ ሰዎች ጀምሮ እስከ ተራው ሰው ድረስ ሁሉም ናቸው።"
+        },
+        "hi": {
+          "L": "और नीनवे के {{gender:लोगों|पुरुषों}} ने परमेश्वर पर विश्वास किया, और उन्होंने उपवास का प्रचार किया और टाट पहना, उनके बड़े से लेकर उनके छोटे तक।",
+          "B": "नीनवे के लोगों ने परमेश्वर पर विश्वास किया। उन्होंने उपवास की घोषणा की और बड़े से लेकर छोटे तक, सब ने टाट पहना।",
+          "R": "नीनवे के लोगों ने परमेश्वर के संदेश पर विश्वास किया। उन्होंने तय किया कि वे भोजन नहीं करेंगे, और सब ने मोटा टाट पहन लिया। सबसे बड़े लोगों से लेकर सबसे छोटे लोगों तक, सब ने ऐसा ही किया।"
+        },
+        "ru": {
+          "L": "И поверили {{gender:жители Ниневии|мужи ниневийские}} Богу, и объявили пост, и оделись во вретища, от великого из них до малого из них.",
+          "B": "Жители Ниневии поверили Богу. Они объявили пост и оделись во вретища, от самых знатных до самых простых.",
+          "R": "Жители Ниневии поверили тому, что сказал Бог. Они решили не есть, и все оделись в грубую одежду из мешковины. Так сделали все, от самых важных людей до самых незначительных."
         }
       },
       "decisions": [
@@ -1332,6 +1551,83 @@
           "reason": "Fasting (\"ጾም\") is an everyday word for Ethiopian readers, so the Readable need not paraphrase it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o320030050012"
+          ],
+          "choice": "{{gender:लोगों|पुरुषों}} (L)",
+          "alternatives": [],
+          "reason": "\"The men of Nineveh\" means all its people, as Matthew 12:41 has it: Literal takes the same gender setting as Matthew's Literal (नीनवे के {{gender:लोग|पुरुष}}), in the oblique form ने requires; Balanced and Readable say लोग.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o320030050052",
+            "o320030050061",
+            "o320030050081"
+          ],
+          "choice": "भोजन नहीं करेंगे; मोटा टाट (R)",
+          "alternatives": [],
+          "reason": "Readable explains a fast as going without food and adds मोटा to show what sackcloth was, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o320030050021",
+            "o320030050031"
+          ],
+          "choice": "{{gender:жители Ниневии|мужи ниневийские}}",
+          "alternatives": [
+            "{{gender:люди Ниневии|мужи Ниневии}}"
+          ],
+          "reason": "The span is worded as in Matthew 12:41 (\"мужи ниневийские\"), which tells of this repentance.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030050081"
+          ],
+          "choice": "вретище (L, B); грубая одежда из мешковины (R)",
+          "alternatives": [
+            "мешковина"
+          ],
+          "reason": "Sackcloth takes the forms used in Isaiah and Jeremiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1416,6 +1712,16 @@
           "L": "ቃሉም ወደ ነነዌ ንጉሥ ደረሰ፤ እርሱም ከዙፋኑ ተነሥቶ ካባውን ከላዩ አስወገደ፤ ማቅም ተከናነበ፤ በአመዱም ላይ ተቀመጠ።",
           "B": "ወሬው ወደ ነነዌ ንጉሥ በደረሰ ጊዜ ንጉሡ ከዙፋኑ ተነሣ፤ የንግሥና ካባውን አውልቆ በማቅ ተሸፈነ፤ በአመድም ውስጥ ተቀመጠ።",
           "R": "የነነዌ ንጉሥ ይህን በሰማ ጊዜ ከዙፋኑ ተነሣ። የንግሥና ልብሱን አውልቆ ማቅ ለበሰ። ከዚያም በአመድ ላይ ተቀመጠ።"
+        },
+        "hi": {
+          "L": "और यह बात नीनवे के राजा तक पहुँची, और वह अपने सिंहासन पर से उठा, और अपना वस्त्र अपने ऊपर से उतारा, और टाट ओढ़ लिया, और राख पर बैठ गया।",
+          "B": "जब यह समाचार नीनवे के राजा तक पहुँचा, तो वह अपने सिंहासन से उठा, अपना राजसी वस्त्र उतार दिया, टाट ओढ़ लिया और राख में बैठ गया।",
+          "R": "जब नीनवे के राजा ने इसके बारे में सुना, तो वह अपने सिंहासन से उठ खड़ा हुआ। उसने अपने राजसी वस्त्र उतार दिए और टाट पहन लिया। फिर वह राख में बैठ गया।"
+        },
+        "ru": {
+          "L": "И дошло слово до царя Ниневии, и встал он с престола своего, и снял с себя одеяние своё, и покрылся вретищем, и сел на пепел.",
+          "B": "Когда весть дошла до царя Ниневии, он встал с престола, снял с себя царскую мантию, покрылся вретищем и сел в пепел.",
+          "R": "Когда царь Ниневии услышал об этом, он встал со своего трона. Он снял свои царские одежды и надел одежду из мешковины. Потом он сел в пепел."
         }
       },
       "decisions": [
@@ -1503,6 +1809,25 @@
           "choice": "ʾadderet \"robe\" as \"ካባ\" (as 1 Kings 11:29-30 on main); \"covered himself with sackcloth\" as \"ማቅ ተከናነበ\" (L) and \"በማቅ ተሸፈነ\" (B)",
           "alternatives": [],
           "reason": "The king's outer cloak, not the priestly robe (\"መጎናጸፊያ\"); the verb of covering is kept at Literal and Balanced and again in 3:8 L (\"ይከናነቡ\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o320030060091",
+            "o320030060092"
+          ],
+          "choice": "राजसी वस्त्र (B, R)",
+          "alternatives": [],
+          "reason": "The Hebrew word is a fine cloak, here the king's; Balanced and Readable add राजसी to make that plain.",
           "uncertain": false,
           "footnote": false
         }
@@ -1596,6 +1921,16 @@
           "L": "አሳወጀም፤ በነነዌም ውስጥ በንጉሡና በመኳንንቱ ትእዛዝ እንዲህ አለ፦ «ሰውና እንስሳ፣ ከብትና መንጋ ምንም ነገር አይቅመሱ፤ አይሰማሩም፤ ውኃንም አይጠጡ።",
           "B": "ከዚያም በነነዌ እንዲህ የሚል አዋጅ አስነገረ፦ «በንጉሡና በመኳንንቱ ትእዛዝ፦ ሰውም ሆነ እንስሳ፣ ከብትም ሆነ መንጋ ምንም አይቅመሱ። አይሰማሩ፤ ውኃም አይጠጡ።",
           "R": "ከዚያም በነነዌ ለሚኖሩ ሁሉ እንዲህ የሚል ትእዛዝ ላከ፦ «ይህ ከንጉሡና ከመኳንንቱ የተሰጠ ትእዛዝ ነው፦ ሰውም ሆነ እንስሳ ምንም አይብላ። ከብቶች፣ በጎችና ፍየሎች አይሰማሩ። ማንም፣ እንስሳትም እንኳ ቢሆኑ፣ ውኃ አይጠጣ።"
+        },
+        "hi": {
+          "L": "और उसने नीनवे में यह प्रचार करवाया और कहा, राजा और उसके बड़े लोगों की आज्ञा से, यह कहते हुए: \"मनुष्य और पशु, गाय-बैल और भेड़-बकरी, कुछ भी न चखें; न वे चरें, और न जल पीएँ।",
+          "B": "तब उसने नीनवे में यह घोषणा करवाई: \"राजा और उसके सामंतों की आज्ञा से: कोई मनुष्य या पशु, गाय-बैल या भेड़-बकरी, कुछ भी न चखे। वे न चरें और न पानी पीएँ।",
+          "R": "तब उसने नीनवे के सब लोगों के पास यह आदेश भेजा: \"यह राजा और उसके सामंतों की आज्ञा है: कोई भी मनुष्य या पशु कुछ भी न खाए। गाय-बैलों और भेड़-बकरियों को चरने न दिया जाए। कोई भी, पशु तक, पानी न पीए।"
+        },
+        "ru": {
+          "L": "И велел он объявить и сказать в Ниневии по указу царя и вельмож его так: «Человек и скот, крупный и мелкий скот, пусть ничего не вкушают; пусть не пасутся и воды пусть не пьют.",
+          "B": "Затем он велел объявить в Ниневии: «По указу царя и его вельмож: пусть ни человек, ни животное, ни крупный, ни мелкий скот ничего не вкушают. Пусть не пасутся и не пьют воды.",
+          "R": "Потом он разослал по всей Ниневии такой приказ: «Вот повеление царя и его вельмож: никто, ни человек, ни животное, не должен ничего есть. Не выпускайте пастись коров, овец и коз. Никто, даже животные, не должен пить воды."
         }
       },
       "decisions": [
@@ -1777,6 +2112,65 @@
           "reason": "The proclamation is an official order of the king and his nobles (the meaning decision); the decree runs as one quotation to the end of 3:9.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o320030070082"
+          ],
+          "choice": "मनुष्य with no gender span",
+          "alternatives": [
+            "{{gender:मनुष्य|आदमी}}"
+          ],
+          "reason": "The English gives \"humans\" (verse 7) and \"his\" (verse 8) a gender setting. Hindi मनुष्य already means a human being of either sex, and अपने (\"his own\") has no gender, so the Hindi needs no span here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030070062"
+          ],
+          "choice": "बड़े लोग (L); सामंत (B, R)",
+          "alternatives": [],
+          "reason": "The king's \"great ones\" are बड़े लोग at Literal and सामंत, nobles, at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o320030070082"
+          ],
+          "choice": "Человек и скот, with no gender span",
+          "alternatives": [
+            "{{gender:Люди|Человек}} и скот"
+          ],
+          "reason": "The English Literal has a gender span on \"man and beast\"; Russian \"человек\" already means any human being, man or woman, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1864,6 +2258,16 @@
           "L": "ሰውና እንስሳም ማቅ ይከናነቡ፤ በኃይልም ወደ እግዚአብሔር ይጣሩ፤ እያንዳንዱም ከክፉ መንገዱ፣ በመዳፋቸውም ካለው ግፍ ይመለስ።",
           "B": "ሰዎችም እንስሳትም ማቅ ይልበሱ። በሙሉ ኃይላቸውም ወደ እግዚአብሔር ይጩኹ፤ እያንዳንዱም ከክፉ መንገዱና ከሚሠራው ግፍ ይመለስ።",
           "R": "ሰዎችም እንስሳትም ሁሉ ማቅ ይልበሱ። ሁሉም በሙሉ ኃይላቸው ወደ እግዚአብሔር ይጸልዩ። ሁሉም ክፉ ነገር ማድረጋቸውን ይተዉ፤ ሌሎችንም መጉዳት ያቁሙ።"
+        },
+        "hi": {
+          "L": "और मनुष्य और पशु टाट ओढ़ें, और वे बल से परमेश्वर को पुकारें, और वे हर एक अपने बुरे मार्ग से, और उस उपद्रव से जो उनकी हथेलियों में [है], फिरें।",
+          "B": "मनुष्य और पशु, सब टाट ओढ़ें। वे अपनी पूरी शक्ति से परमेश्वर को पुकारें, और हर एक अपने बुरे मार्गों से और अपने किए हुए उपद्रव से फिरे।",
+          "R": "हर कोई, मनुष्य और पशु, टाट पहने। हर कोई अपनी पूरी ताक़त से परमेश्वर से प्रार्थना करे। सब लोग बुरे काम करना और दूसरों को सताना छोड़ दें।"
+        },
+        "ru": {
+          "L": "И пусть покроются вретищами человек и скот, и пусть взывают к Богу с силой, и пусть обратится каждый от своего злого пути и от насилия, которое в их ладонях.",
+          "B": "Пусть и люди, и животные покроются вретищем. Пусть изо всех сил взывают к Богу, и пусть каждый обратится от своего злого пути и от насилия, которое он творит.",
+          "R": "Все, люди и животные, должны надеть мешковину. Все должны изо всех сил молиться Богу. Все должны перестать делать зло и обижать других."
         }
       },
       "decisions": [
@@ -2073,6 +2477,49 @@
           "reason": "The word on main for the same phrase; \"ተመለሰ\" is the prophets' word for turning back, used again of God in 3:9-10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030080141",
+            "o320030080142",
+            "o320030080161",
+            "o320030080162",
+            "o320030080163"
+          ],
+          "choice": "अपने किए हुए उपद्रव (B); दूसरों को सताना (R)",
+          "alternatives": [
+            "उनके हाथों का उपद्रव"
+          ],
+          "reason": "Literal keeps \"the violence that is in their palms\"; Balanced and Readable say what it means, the wrong they do with their own hands (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030080162"
+          ],
+          "choice": "от насилия, которое в их ладонях",
+          "alternatives": [
+            "от насилия рук их"
+          ],
+          "reason": "Literal keeps the Hebrew picture \"in their palms\", the wrong done with their own hands; Balanced and Readable give the sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2146,6 +2593,16 @@
           "L": "እግዚአብሔር ይመለስና ይጸጸት፣ ከቁጣውም መንደድ ይመለስ፣ እኛም አንጠፋ እንደ ሆነ ማን ያውቃል?»",
           "B": "ማን ያውቃል? እግዚአብሔር ተመልሶ ይጸጸት ይሆናል፤ ከብርቱ ቁጣውም ይመለስ ይሆናል፤ እኛም አንጠፋም።»",
           "R": "ማን ያውቃል? ምናልባት እግዚአብሔር ሐሳቡን ለውጦ በእኛ ላይ መቆጣቱን ይተው ይሆናል። ያን ጊዜ አንሞትም።»"
+        },
+        "hi": {
+          "L": "कौन जानता है? परमेश्वर फिरें और पछताएँ, और अपने क्रोध की जलन से फिर जाएँ, और हम नाश न हों।\"",
+          "B": "कौन जानता है? शायद परमेश्वर अब भी फिरें और अपना मन बदल लें; शायद वे अपने भड़के हुए क्रोध से लौट आएँ, और हम नाश न हों।\"",
+          "R": "कौन जानता है? हो सकता है परमेश्वर अपना मन बदल लें और हम पर क्रोधित न रहें। तब हम नहीं मरेंगे।\""
+        },
+        "ru": {
+          "L": "Кто знает? Повернёт, может быть, и пожалеет Бог, и отвратится от пылающего гнева своего, и мы не погибнем.»",
+          "B": "Кто знает? Может быть, Бог ещё повернёт и смилуется; может быть, {{deity_pronoun:он|Он}} отвратит свой пылающий гнев, и мы не погибнем.»",
+          "R": "Кто знает? Может быть, Бог изменит своё решение и перестанет на нас гневаться. Тогда мы не умрём.»"
         }
       },
       "decisions": [
@@ -2409,6 +2866,52 @@
           "reason": "The Hebrew opening is the same as Joel 2:14 (the meaning decision), so it reads alike; the rest follows Jonah. \"Perish\" is \"አንጠፋም\" (L, B) and \"አንሞትም\" (R), as the captain's words in 1:6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030090042",
+            "o320030090091",
+            "o320030090092",
+            "o320030090101"
+          ],
+          "choice": "पछताना (L); मन बदलना (B, R); नाश न हों (L, B)",
+          "alternatives": [
+            "तरस खाना"
+          ],
+          "reason": "Literal says पछताना for God's relenting, as Exodus 32:14 and Jeremiah 18:8 do at that level; Balanced and Readable say मन बदलना. Literal and Balanced keep हम नाश न हों, the captain's words in 1:6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030090031",
+            "o320030090042"
+          ],
+          "choice": "пожалеет (L); смилуется (B); изменит своё решение (R)",
+          "alternatives": [
+            "раскается"
+          ],
+          "reason": "The hope \"Who knows? He may turn and relent\" is the same as Joel 2:14, and each level keeps Joel's Russian verb for \"relent\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2496,6 +2999,16 @@
           "L": "እግዚአብሔርም ሥራቸውን፣ ከክፉ መንገዳቸው መመለሳቸውን አየ፤ እግዚአብሔርም አደርግባቸዋለሁ ብሎ ስለ ተናገረው ክፉ ነገር ተጸጸተ፤ አላደረገውም።",
           "B": "እግዚአብሔር ያደረጉትን፣ ከክፉ መንገዳቸው እንዴት እንደ ተመለሱ ባየ ጊዜ፣ አመጣባቸዋለሁ ብሎ ስለ ተናገረው ጥፋት ተጸጸተ፤ አላደረገውም።",
           "R": "እግዚአብሔር ያደረጉትን አየ። ክፉ ነገር ማድረጋቸውን እንደ ተዉ አየ። ስለዚህ ሐሳቡን ለወጠ፤ አመጣባቸዋለሁ ያለውንም ጥፋት አላመጣባቸውም።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने उनके कामों को देखा, कि वे अपने बुरे मार्ग से फिर गए थे; और परमेश्वर उस बुराई के विषय में पछताए जो उन्होंने उनसे करने को कहा था, और उन्होंने [उसे] नहीं किया।",
+          "B": "जब परमेश्वर ने उनके काम देखे, कि वे अपने बुरे मार्गों से कैसे फिर गए, तो परमेश्वर ने उस विपत्ति के विषय में अपना मन बदल लिया जो उन्होंने उन पर लाने को कहा था, और उसे नहीं लाए।",
+          "R": "परमेश्वर ने देखा कि उन्होंने क्या किया। उन्होंने देखा कि वे बुरे काम करना छोड़ चुके थे। तब परमेश्वर ने अपना मन बदल लिया और उन पर वह विपत्ति नहीं लाए जिसे लाने की बात उन्होंने कही थी।"
+        },
+        "ru": {
+          "L": "И увидел Бог дела их, что они обратились от своего злого пути; и пожалел Бог о зле, о котором {{deity_pronoun:он|Он}} сказал, что сделает им, и не сделал.",
+          "B": "Когда Бог увидел их дела, как они обратились от своих злых путей, Бог отказался от бедствия, которое {{deity_pronoun:он|Он}} грозил навести на них, и не навёл его.",
+          "R": "Бог увидел, что они сделали. Он увидел, что они перестали делать зло. Поэтому {{deity_pronoun:он|Он}} изменил своё решение и не навёл на них беду, о которой говорил."
         }
       },
       "decisions": [
@@ -2688,6 +3201,46 @@
           "choice": "raʿah as \"ክፉ\" twice at Literal (\"ክፉ መንገዳቸው ... ክፉ ነገር\"), \"ክፉ ... ጥፋት\" at Balanced and Readable; niḥam \"ተጸጸተ\" (L, B), as Amos 7:3 and 2 Samuel 24:16 (\"ስለ ክፉው ነገር ተጸጸተ\"), \"ሐሳቡን ለወጠ\" (R)",
           "alternatives": [],
           "reason": "The meaning decision: one word for their wickedness and for the disaster; Literal keeps it, the other levels follow their English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030100082",
+            "o320030100122"
+          ],
+          "choice": "बुरे ... बुराई (L)",
+          "alternatives": [],
+          "reason": "Literal keeps the one word for their wickedness and for what God threatened (बुरे मार्ग, बुराई), so the reader can see it is the same Hebrew word (m1); Balanced and Readable say विपत्ति for the threatened disaster.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320030100082",
+            "o320030100122"
+          ],
+          "choice": "зло ... зле (L); злых путей ... бедствия (B); зло ... беду (R)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "One Hebrew word means both their wickedness and the disaster God threatened; Literal keeps \"зло\" for both, Balanced and Readable give each its sense.",
           "uncertain": false,
           "footnote": false
         }

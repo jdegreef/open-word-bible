@@ -60,6 +60,16 @@
           "L": "አጽናኑ፣ አጽናኑ ሕዝቤን፤ \\q ይላል አምላካችሁ።",
           "B": "ለሕዝቤ መጽናናትን አምጡ፤ መጽናናትን አምጡ፤ \\q ይላል አምላካችሁ።",
           "R": "አምላካችሁ እንዲህ ይላል፦ \\q ሕዝቤን አጽናኑ። አዎን፣ አጽናኗቸው።"
+        },
+        "hi": {
+          "L": "सांत्वना दो, सांत्वना दो मेरी प्रजा को, \\q तुम्हारे परमेश्वर कहते हैं।",
+          "B": "सांत्वना दो, मेरी प्रजा को सांत्वना दो, \\q तुम्हारे परमेश्वर कहते हैं।",
+          "R": "तुम्हारे परमेश्वर यह कहते हैं: \\q मेरे लोगों को तसल्ली दो। हाँ, उन्हें तसल्ली दो।"
+        },
+        "ru": {
+          "L": "Утешайте, утешайте {{deity_pronoun:мой|Мой}} народ, \\q говорит ваш Бог.",
+          "B": "Несите утешение, несите утешение {{deity_pronoun:моему|Моему}} народу, \\q говорит ваш Бог.",
+          "R": "Ваш Бог говорит: \\q Утешайте {{deity_pronoun:мой|Мой}} народ. Да, утешайте его."
         }
       },
       "decisions": [
@@ -308,6 +318,93 @@
           "reason": "The Ethiopic script has no capital letters, so pronouns for God read the same with either setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400010011",
+            "o230400010021"
+          ],
+          "choice": "\"सांत्वना दो, सांत्वना दो\" (L, B); \"तसल्ली दो\" (R), in the plural तुम form",
+          "alternatives": [
+            "शान्ति दो",
+            "ढाढ़स बँधाओ"
+          ],
+          "reason": "The doubled command (meaning m2) is kept at Literal and Balanced; \"सांत्वना\" is consolation, while \"शान्ति\" would say 'peace', another Hebrew word. Readable uses the everyday \"तसल्ली\". The command goes to more than one hearer, so the plural तुम form \"दो\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400010031",
+            "o230400010032",
+            "o230400010051",
+            "o230400010052"
+          ],
+          "choice": "\"मेरी प्रजा\" ... \"तुम्हारे परमेश्वर\"",
+          "alternatives": [
+            "मेरे लोग"
+          ],
+          "reason": "The covenant pair 'my people ... your God' (meaning m3) uses \"प्रजा\" at Literal and Balanced, as Isaiah 1:3 and 2 Kings 20:5 do (Readable says \"मेरे लोग\", as at 1:3), and the honorific plural for God in the third person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400010011",
+            "o230400010021"
+          ],
+          "choice": "\"Утешайте, утешайте\" (L); \"Несите утешение, несите утешение\" (B)",
+          "alternatives": [
+            "\"Утешьте\" (perfective)"
+          ],
+          "reason": "The doubled command is plural (m2): the imperfective plural \"утешайте\" keeps the repetition and the call to go on comforting; Balanced keeps the doubling with a fuller phrase, as the English does. Readable says it once and repeats it with \"Да\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230400010032"
+          ],
+          "choice": "{{deity_pronoun:мой|Мой}}",
+          "alternatives": [],
+          "reason": "God speaks in the first person through these chapters; every Russian pronoun for God takes the deity_pronoun span, including \"мой\" and a mid-sentence \"я\", where the English has none for \"my\"; a sentence-initial \"Я\" and the reflexive \"свой\" take none.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -391,6 +488,16 @@
           "L": "ወደ ኢየሩሳሌም ልብ ተናገሩ፤ ጥሩላትም፤ \\q የግዳጅ ዘመኗ እንደ ተፈጸመ፣ \\q በደሏ እንደ ተከፈለ፣ \\q ስለ ኃጢአቷ ሁሉ {{divine_name:ከእግዚአብሔር|ከያህዌ}} እጅ ዕጥፍ እንደ ተቀበለች።",
           "B": "ወደ ኢየሩሳሌም ልብ ተናገሩ፤ ጥሩላትም፤ \\q የግዳጅ ሥራዋ ዘመን እንዳበቃ፣ \\q የበደሏ ቅጣት እንደ ተከፈለ፣ \\q ስለ ኃጢአቷ ሁሉ {{divine_name:ከእግዚአብሔር|ከያህዌ}} እጅ ዕጥፍ እንደ ተቀበለች ንገሯት።",
           "R": "ለኢየሩሳሌም ሕዝብ የሚያጽናና ቃል ተናገሩ። \\q የመከራቸው ዘመን እንዳበቃ ጥሩላቸው። \\q የኃጢአታቸው ዋጋ ተከፍሏል። \\q ስለ ኃጢአታቸው ሁሉ {{divine_name:ከእግዚአብሔር|ከያህዌ}} ዕጥፍ ቅጣት ተቀብለዋል።"
+        },
+        "hi": {
+          "L": "यरूशलेम के मन से बातें करो, और उसे पुकारकर कहो \\q कि उसकी कठिन सेवा पूरी हो गई, \\q कि उसके अधर्म का दाम भर दिया गया, \\q कि उसने {{divine_name:प्रभु|याहवे}} के हाथ से अपने सब पापों का दुगुना पा लिया है।",
+          "B": "यरूशलेम से उसके मन को छूनेवाली बातें कहो, और उसे पुकारकर बताओ \\q कि उसकी बेगार का समय पूरा हो गया, \\q कि उसके दोष का दंड चुका दिया गया, \\q कि उसने {{divine_name:प्रभु|याहवे}} के हाथ से अपने सब पापों का दुगुना पा लिया है।",
+          "R": "यरूशलेम के लोगों से प्यार से बात करो। \\q उन्हें पुकारकर बताओ कि उनके दुख का समय ख़त्म हो गया है। \\q उनके पाप का दाम चुका दिया गया है। \\q उन्होंने अपने सब पापों के लिए {{divine_name:प्रभु|याहवे}} से दुगुना दंड पा लिया है।"
+        },
+        "ru": {
+          "L": "Говорите к сердцу Иерусалима и возвещайте ей, \\q что завершилась её служба, \\q что её беззаконие оплачено, \\q что она получила из руки {{divine_name:ГОСПОДА|Яхве}} вдвое за все свои грехи.",
+          "B": "Обратитесь к сердцу Иерусалима и объявите ей, \\q что время её подневольного труда окончено, \\q что наказание за её вину отбыто, \\q что она получила из руки {{divine_name:ГОСПОДА|Яхве}} вдвое за все свои грехи.",
+          "R": "Говорите ласково с жителями Иерусалима. \\q Объявите им, что время их страданий окончено. \\q Цена за их грех уплачена. \\q Они получили от {{divine_name:ГОСПОДА|Яхве}} двойное наказание за все свои грехи."
         }
       },
       "decisions": [
@@ -523,6 +630,69 @@
           "reason": "Amharic can say \"speak to someone's heart\" for speaking tenderly, so Literal and Balanced keep the picture; Readable says \"words that comfort\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400020021",
+            "o230400020031"
+          ],
+          "choice": "\"यरूशलेम के मन से बातें करो\" (L); \"उसके मन को छूनेवाली बातें कहो\" (B)",
+          "alternatives": [
+            "यरूशलेम से कोमलता से बोलो"
+          ],
+          "reason": "Literal keeps the idiom 'speak to the heart'; Balanced keeps the heart and says what the idiom means, speaking so as to reassure and win over (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400020091",
+            "o230400020111"
+          ],
+          "choice": "\"बेगार\" for her service",
+          "alternatives": [
+            "सेवा"
+          ],
+          "reason": "Balanced, like the English, names the hard term of forced service (meaning m2); \"बेगार\" is forced, unpaid labor.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400020041",
+            "o230400020062",
+            "o230400020092"
+          ],
+          "choice": "\"ей\", \"её\", \"она\" for Jerusalem (feminine)",
+          "alternatives": [
+            "\"ему\", \"его\", \"он\", agreeing with the masculine noun \"Иерусалим\""
+          ],
+          "reason": "The Hebrew speaks of the city as a woman who has served her term (m1); Russian keeps the personification with feminine pronouns and verbs, as Lamentations (\"она, Иерусалим\") and Isaiah 49-66 do where Zion or Jerusalem is pictured as a woman, while the name keeps masculine agreement where it is simply a place. Readable speaks of the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -594,6 +764,16 @@
           "L": "የሚጮኽ ድምፅ፦ \\q በምድረ በዳ {{divine_name:የእግዚአብሔር|የያህዌ}} መንገድ አዘጋጁ፤ \\q በበረሃው ሜዳ ለአምላካችን አውራ ጎዳና ቀና አድርጉ።",
           "B": "የሚጣራ ድምፅ አለ፦ \\q በምድረ በዳ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መንገድ አዘጋጁ፤ \\q በበረሃው ሜዳ ለአምላካችን ቀጥ ያለ አውራ ጎዳና አብጁ።",
           "R": "አንድ ሰው እንዲህ እያለ ይጮኻል፦ \\q በምድረ በዳ {{divine_name:ለእግዚአብሔር|ለያህዌ}} መንገድ አዘጋጁ። \\q በበረሃው ውስጥ ለአምላካችን ቀጥ ያለ አውራ ጎዳና ሥሩ።"
+        },
+        "hi": {
+          "L": "एक आवाज़ पुकार रही है: \\q निर्जन प्रदेश में {{divine_name:प्रभु|याहवे}} का रास्ता तैयार करो; \\q मरुभूमि में हमारे परमेश्वर के लिए राजमार्ग सीधा करो।",
+          "B": "एक आवाज़ पुकार रही है: \\q निर्जन प्रदेश में {{divine_name:प्रभु|याहवे}} का मार्ग तैयार करो; \\q मरुभूमि के पार हमारे परमेश्वर के लिए सीधा राजमार्ग बनाओ।",
+          "R": "कोई ज़ोर से पुकार रहा है: \\q सुनसान इलाक़े में से {{divine_name:प्रभु|याहवे}} के लिए रास्ता तैयार करो। \\q रेगिस्तान के पार हमारे परमेश्वर के लिए सीधा राजमार्ग बनाओ।"
+        },
+        "ru": {
+          "L": "Голос вопиющего: \\q В пустыне приготовьте путь {{divine_name:ГОСПОДА|Яхве}}, \\q прямой сделайте в степи большую дорогу для нашего Бога.",
+          "B": "Голос зовёт: \\q В пустыне приготовьте путь {{divine_name:ГОСПОДУ|Яхве}}, \\q через степь проложите прямую дорогу для нашего Бога.",
+          "R": "Кто-то кричит: \\q Приготовьте дорогу для {{divine_name:ГОСПОДА|Яхве}} через пустыню! \\q Постройте прямую дорогу через степь для нашего Бога!"
         }
       },
       "decisions": [
@@ -829,6 +1009,100 @@
           "reason": "The Gospels quote this verse from the Greek, where the voice cries in the wilderness and the paths are \"his\". In the Hebrew, as the meaning decision says, \"in the wilderness\" belongs to \"prepare the way\", and the road is for \"the LORD\" and \"our God\", so Isaiah follows the Hebrew in those points and keeps the New Testament's words for the voice, the way and the levelling.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230400030011",
+            "o230400030021",
+            "o230400030031",
+            "o230400030032",
+            "o230400030041"
+          ],
+          "choice": "\"निर्जन प्रदेश में\" with the command, not with the voice",
+          "alternatives": [
+            "निर्जन प्रदेश में पुकारनेवाले की आवाज़ (Matthew 3:3; Mark 1:3; Luke 3:4; John 1:23)"
+          ],
+          "reason": "In the Hebrew, as its accents and the parallel 'in the desert plain' show, 'in the wilderness' goes with 'clear the way' (meaning m1). The Gospels quote the Greek Old Testament, which reads 'a voice crying in the wilderness', and their Hindi says \"निर्जन प्रदेश में पुकारनेवाले की आवाज़\". Isaiah translates the Hebrew but keeps the Gospels' words where they agree: \"रास्ता / मार्ग तैयार करो\", \"सीधा\", the wilderness as \"निर्जन प्रदेश\" (L, B) and \"सुनसान इलाक़ा\" (R), and Readable's \"कोई ज़ोर से पुकार रहा है\".",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400030051",
+            "o230400030091"
+          ],
+          "choice": "\"राजमार्ग\" for the highway",
+          "alternatives": [
+            "सड़क"
+          ],
+          "reason": "A built-up road for a king's coming (meaning m2); \"राजमार्ग\" says both the road and its royal use.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230400030011",
+            "o230400030021",
+            "o230400030031",
+            "o230400030032"
+          ],
+          "choice": "\"в пустыне\" begins the call: \"Голос вопиющего: В пустыне приготовьте...\"",
+          "alternatives": [
+            "\"Голос вопиющего в пустыне: Приготовьте...\" (Matthew 3:3; Mark 1:3; Luke 3:4; John 1:23)"
+          ],
+          "reason": "In the Hebrew \"in the wilderness\" goes with \"clear the way\" (m1); the Gospels quote the Greek, which joins it to the voice. Each level keeps the Gospels' Russian words for the voice and the command (\"Голос вопиющего\", \"Голос зовёт\", \"Кто-то кричит\"; \"Приготовьте путь\", \"Приготовьте дорогу для\") but follows the Hebrew's division, and has the divine name where the Gospels have \"Господь\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400030082",
+            "o230400030091"
+          ],
+          "choice": "\"в степи\", \"большую дорогу\" (L); \"через степь\", \"прямую дорогу\" (B, R)",
+          "alternatives": [
+            "\"на равнине\"",
+            "\"тропы\" (the Gospels' Greek)"
+          ],
+          "reason": "The arabah is the dry steppe; the Hebrew has a built highway for God (m2), where the Gospels' Greek has \"paths\", so the second line is Isaiah's own.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -906,6 +1180,16 @@
           "L": "ሸለቆ ሁሉ ከፍ ይላል፤ \\q ተራራና ኮረብታ ሁሉ ይዋረዳል፤ \\q ወጣ ገባ የሆነውም የተስተካከለ ምድር ይሆናል፤ \\q ሸካራ የሆነውም ሰፊ ሜዳ [ይሆናል]።",
           "B": "ሸለቆ ሁሉ ከፍ ይላል፤ \\q ተራራና ኮረብታ ሁሉ ዝቅ ይደረጋል፤ \\q ወጣ ገባው መሬት ይደለደላል፤ \\q ሸካራውም ከፍታ ገላጣ ሜዳ ይሆናል።",
           "R": "ሸለቆ ሁሉ ከፍ ይደረጋል። \\q ተራራና ኮረብታ ሁሉ ዝቅ ይደረጋል። \\q ወጣ ገባው ኮረብታማ መሬት ይስተካከላል። \\q ገደላማ ሸንተረሮችም ሰፊ ሜዳማ ምድር ይሆናሉ።"
+        },
+        "hi": {
+          "L": "हर घाटी ऊँची की जाएगी, \\q और हर पहाड़ और टीला नीचा किया जाएगा, \\q और ऊबड़-खाबड़ [भूमि] समतल भूमि बन जाएगी, \\q और बीहड़ स्थान चौड़ा मैदान।",
+          "B": "हर घाटी ऊपर उठेगी, \\q और हर पहाड़ और पहाड़ी नीची होगी; \\q टूटी-फूटी भूमि समतल की जाएगी, \\q और बीहड़ ऊँचाइयाँ खुला मैदान बनेंगी।",
+          "R": "हर घाटी ऊँची की जाएगी। \\q हर पहाड़ और पहाड़ी नीची की जाएगी। \\q ऊबड़-खाबड़, पहाड़ी ज़मीन समतल की जाएगी। \\q खड़ी चोटियाँ चौड़ी, समतल ज़मीन बन जाएँगी।"
+        },
+        "ru": {
+          "L": "Всякая долина поднимется, \\q и всякая гора и холм понизятся, \\q и неровное [место] станет ровным, \\q и кручи — равниной.",
+          "B": "Каждая долина поднимется, \\q и каждая гора и холм опустятся; \\q изрытая земля станет гладкой, \\q и крутые высоты — открытой равниной.",
+          "R": "Каждую долину поднимут. \\q Каждую гору и холм сделают ниже. \\q Неровную, холмистую землю сделают ровной. \\q Крутые хребты станут широкой ровной землёй."
         }
       },
       "decisions": [
@@ -985,6 +1269,51 @@
           "reason": "Luke 3:5 quotes the verse from the Greek, where every valley is \"filled\" and the crooked ways made straight; the Hebrew says the valley is \"lifted up\" and the uneven ground made level, so those words follow the Hebrew and the rest keeps Luke's Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400040091",
+            "o230400040112"
+          ],
+          "choice": "the Hebrew's 'lifted up' and 'level ground ... a plain', with Luke 3:5's \"हर पहाड़ और टीला / पहाड़ी\" where the two agree",
+          "alternatives": [
+            "हर घाटी भर दी जाएगी ... टेढ़े [स्थान] सीधे (Luke 3:5)"
+          ],
+          "reason": "Luke 3:5 quotes the Greek Old Testament, which says 'filled' and 'the crooked will become straight'. The Hebrew says the valleys will be lifted up and the uneven ground made level, so the Hindi follows the Hebrew and keeps Luke's wording only for the mountains and hills.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400040011",
+            "o230400040021",
+            "o230400040031"
+          ],
+          "choice": "\"поднимется\" (L, B), \"поднимут\" (R)",
+          "alternatives": [
+            "\"наполнится\", \"будет засыпана\" (Luke 3:5)"
+          ],
+          "reason": "Luke 3:5 quotes the Greek, \"every valley will be filled\"; the Hebrew says \"lifted up\", so Russian says so, and keeps Luke's wording where the Hebrew agrees (\"всякая гора и холм понизятся\" at Literal, \"каждая\" at Balanced and Readable).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1055,6 +1384,16 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ክብርም ይገለጣል፤ \\q ሥጋ ሁሉም በአንድነት ያየዋል፤ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} አፍ ተናግሯልና።",
           "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ክብር ይገለጣል፤ \\q ሰው ሁሉ በአንድነት ያየዋል፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} በገዛ አፉ ተናግሮታልና።",
           "R": "ያን ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ክብሩን ይገልጣል፤ \\q በየስፍራው ያሉ ሰዎች ሁሉ በአንድነት ያዩታል። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ራሱ ይህን ተናግሯል።"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} की महिमा प्रकट होगी, \\q और सब देहधारी एक साथ [उसे] देखेंगे, \\q क्योंकि {{divine_name:प्रभु|याहवे}} के मुँह ने कहा है।",
+          "B": "{{divine_name:प्रभु|याहवे}} की महिमा प्रकट की जाएगी, \\q और हर मनुष्य उसे एक साथ देखेगा, \\q क्योंकि {{divine_name:प्रभु|याहवे}} ने अपने ही मुँह से यह कहा है।",
+          "R": "तब {{divine_name:प्रभु|याहवे}} अपनी महिमा दिखाएँगे, \\q और सब जगह के सब लोग उसे एक साथ देखेंगे। \\q {{divine_name:प्रभु|याहवे}} ने ख़ुद यह कहा है।"
+        },
+        "ru": {
+          "L": "И откроется слава {{divine_name:ГОСПОДА|Яхве}}, \\q и увидит [её] всякая плоть вместе, \\q потому что уста {{divine_name:ГОСПОДА|Яхве}} изрекли.",
+          "B": "Слава {{divine_name:ГОСПОДА|Яхве}} откроется, \\q и все люди вместе увидят её, \\q потому что {{divine_name:ГОСПОДЬ|Яхве}} сказал это своими устами.",
+          "R": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} покажет свою славу, \\q и все люди повсюду вместе увидят её. \\q {{divine_name:ГОСПОДЬ|Яхве}} сам так сказал."
         }
       },
       "decisions": [
@@ -1249,6 +1588,72 @@
           "reason": "Luke 3:6 quotes the Greek \"all flesh will see the salvation of God\"; the Hebrew has \"the glory of the LORD will be revealed, and all flesh will see it together\". Isaiah keeps Luke's words for \"all flesh\" and \"see\" at each level and follows the Hebrew for the glory.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230400050091",
+            "o230400050111"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [
+            "capitalised pronouns for God"
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. Respect for God comes from the honorific third person (वे, उनका, उन्होंने) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400050061"
+          ],
+          "choice": "\"सब देहधारी\" (L); \"हर मनुष्य\" (B); \"सब लोग\" (R)",
+          "alternatives": [
+            "सब शरीरधारी परमेश्वर के उद्धार को देखेंगे (Luke 3:6)"
+          ],
+          "reason": "Luke 3:6 quotes the Greek Old Testament, 'all flesh will see the salvation of God'; the Hebrew says they will see the LORD's glory together, and the Hindi follows the Hebrew. Literal's 'all flesh' takes the form of 1 Peter 1:24, which quotes the next verse, so that 40:5 and 40:6 say it alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400050042",
+            "o230400050051",
+            "o230400050061"
+          ],
+          "choice": "\"увидит всякая плоть\" (L); \"все люди... увидят\" (B, R)",
+          "alternatives": [
+            "\"увидит всякая плоть спасение Божье\" (Luke 3:6)"
+          ],
+          "reason": "Luke 3:6 has \"all flesh will see the salvation of God\" from the Greek; the Hebrew has \"all flesh will see it together\", the glory (m2). Russian keeps Luke's \"всякая плоть\" (L) and \"все люди\" (B, R) for \"all flesh\" (m1), without the Greek's added words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1325,6 +1730,16 @@
           "L": "ድምፅ፦ «ጩኽ» ይላል። \\q [አንዱም]፦ «ምን ብዬ ልጩኽ?» አለ። \\q ሥጋ ሁሉ ሣር [ነው]፤ \\q ታማኝነቱም ሁሉ እንደ ሜዳ አበባ [ነው]።",
           "B": "ድምፅ፦ «ጩኽ» ይላል። \\q አንድ ሰውም፦ «ምን ብዬ ልጩኽ?» ብሎ መለሰ። \\q ሰው ሁሉ ሣር ነው፤ \\q ታማኝነቱም ሁሉ እንደ ዱር አበባ ነው።",
           "R": "አንድ ድምፅ፦ «መልእክት ጩኽ» አለ። \\q አንድ ሰውም፦ «ምን መልእክት ልጩኽ?» ብሎ ጠየቀ። \\q ሰው ሁሉ እንደ ሣር ነው። \\q ታማኝነታቸውም እንኳ እንደ ዱር አበባ ቶሎ ያልፋል።"
+        },
+        "hi": {
+          "L": "एक आवाज़ कहती है, \"पुकारो।\" \\q और [किसी ने] कहा, \"मैं क्या पुकारूँ?\" \\q सब देहधारी घास [हैं], \\q और उनकी सारी वफ़ादारी मैदान के फूल के समान [है]।",
+          "B": "एक आवाज़ कहती है, \"पुकारो।\" \\q और किसी ने उत्तर दिया, \"मैं क्या पुकारूँ?\" \\q मनुष्य जाति घास है, \\q और उसकी सारी वफ़ादारी जंगली फूल के समान है।",
+          "R": "एक आवाज़ ने कहा, \"एक संदेश ज़ोर से सुनाओ।\" \\q किसी ने पूछा, \"मैं कौन-सा संदेश सुनाऊँ?\" \\q हर मनुष्य घास के समान है। \\q उनकी वफ़ादारी भी जंगली फूल से ज़्यादा देर नहीं टिकती।"
+        },
+        "ru": {
+          "L": "Голос говорит: «Взывай.» \\q И сказал [кто-то]: «Что мне возглашать?» \\q Всякая плоть — трава, \\q и вся её верность — как полевой цветок.",
+          "B": "Голос говорит: «Возвещай.» \\q И кто-то ответил: «Что мне возвещать?» \\q Все люди — трава, \\q и вся их верность — как полевой цветок.",
+          "R": "Голос сказал: «Объяви весть.» \\q Кто-то спросил: «Какую весть мне объявить?» \\q Люди — как трава. \\q Даже их верность живёт не дольше полевого цветка."
         }
       },
       "decisions": [
@@ -1545,6 +1960,53 @@
           "reason": "1 Peter 1:24-25 quotes verses 6-8 from the Greek, which reads \"all its glory\"; the Hebrew has ḥesed, the loyalty the meaning decision names, which the terms list gives as ታማኝነት where the English says \"loyalty\". The rest keeps the words of the Amharic New Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060111"
+          ],
+          "choice": "\"वफ़ादारी\" for hesed here",
+          "alternatives": [
+            "अटल प्रेम",
+            "कृपा",
+            "उनकी सारी महिमा (1 Peter 1:24)"
+          ],
+          "reason": "Here hesed is the loyalty people show, which fades like a flower (meaning m2). The history note's \"अटल प्रेम\" ('unshakable love') would contradict the picture, and \"कृपा\" is kindness shown to others, so all levels say \"वफ़ादारी\". 1 Peter 1:24 follows the Greek Old Testament, 'all its glory'; the Hindi follows the Hebrew and keeps Peter's \"सब देहधारी घास\" and \"फूल के समान\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400060071",
+            "o230400060082",
+            "o230400060111"
+          ],
+          "choice": "\"Всякая плоть — трава\" (L), \"Все люди — трава\" (B), \"Люди — как трава\" (R); \"верность\"",
+          "alternatives": [
+            "\"слава\" (1 Peter 1:24)",
+            "\"милость\""
+          ],
+          "reason": "1 Peter 1:24 quotes verses 6-8 from the Greek, which has \"glory\"; the Hebrew has hesed, people's loyalty that does not last (m2), so Russian says \"верность\" and keeps 1 Peter's wording for the rest of the line. The history note's \"милость\" for hesed between people names kindness shown, which is not the sense here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1616,6 +2078,16 @@
           "L": "ሣሩ ይደርቃል፤ አበባውም ይጠወልጋል፤ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ነፋስ ነፍሶበታልና፤ \\q በእርግጥ ሕዝቡ ሣር [ነው]።",
           "B": "ሣሩ ይደርቃል፤ አበባውም ይጠወልጋል፤ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ነፋስ በላዩ ይነፍሳልና። \\q አዎን፣ ሕዝቡ ሣር ብቻ ነው።",
           "R": "ሣር ይደርቃል፤ አበቦችም ይጠወልጋሉ፤ \\q ይህም {{divine_name:እግዚአብሔር|ያህዌ}} ነፋሱን በላያቸው ሲልክ ነው። \\q ሕዝቡም እንደዚያ ሣር ነው።"
+        },
+        "hi": {
+          "L": "घास सूख जाती है, फूल मुरझा जाता है, \\q क्योंकि {{divine_name:प्रभु|याहवे}} की हवा उस पर चलती है; \\q सचमुच लोग घास [हैं]।",
+          "B": "घास सूख जाती है और फूल मुरझा जाता है \\q जब {{divine_name:प्रभु|याहवे}} की हवा उस पर से चलती है; \\q हाँ, लोग घास ही हैं।",
+          "R": "घास सूख जाती है और फूल मुरझा जाते हैं \\q जब {{divine_name:प्रभु|याहवे}} उन पर अपनी हवा चलाते हैं। \\q लोग भी उसी घास के समान हैं।"
+        },
+        "ru": {
+          "L": "Засыхает трава, увядает цветок, \\q потому что ветер {{divine_name:ГОСПОДА|Яхве}} дует на неё; \\q воистину, народ — трава.",
+          "B": "Трава засыхает, и цветок опадает, \\q когда над ней проносится ветер {{divine_name:ГОСПОДА|Яхве}}; \\q да, народ — всего лишь трава.",
+          "R": "Трава засыхает, и цветок опадает, \\q когда {{divine_name:ГОСПОДЬ|Яхве}} посылает на них свой ветер. \\q Люди — как эта трава."
         }
       },
       "decisions": [
@@ -1704,6 +2176,48 @@
           "reason": "The Greek that 1 Peter quotes says the flower \"fell off\"; the Hebrew verb means to wither or fade, so Isaiah says ይጠወልጋል, keeping 1 Peter's \"ሣሩ ይደርቃል\" for the grass. Verse 7 is not in 1 Peter's quotation, which follows the Greek.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400070061"
+          ],
+          "choice": "\"सूख जाती है\", \"मुरझा जाता है\"",
+          "alternatives": [
+            "घास सूख गई, और फूल झड़ गया (1 Peter 1:24)"
+          ],
+          "reason": "1 Peter 1:24 keeps \"घास सूख जाती है\" (B, R), which the Hebrew shares; the Hebrew's second verb means to wilt, not 'fall off' as in the Greek Peter quotes, so the flower \"मुरझा जाता है\". The wind is the hot desert wind the LORD sends (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400070011",
+            "o230400070031"
+          ],
+          "choice": "\"Трава засыхает, и цветок опадает\" (B, R)",
+          "alternatives": [
+            "\"увядает\""
+          ],
+          "reason": "Balanced and Readable keep the wording of 1 Peter 1:24 for the line the Hebrew shares with it; Literal says \"увядает\" for the Hebrew verb, which is wither or droop.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1772,6 +2286,16 @@
           "L": "ሣሩ ይደርቃል፤ አበባውም ይጠወልጋል፤ \\q የአምላካችን ቃል ግን ለዘላለም ይቆማል።",
           "B": "ሣሩ ይደርቃል፤ አበባውም ይጠወልጋል፤ \\q የአምላካችን ቃል ግን ለዘላለም ጸንቶ ይኖራል።",
           "R": "ሣር ይደርቃል፤ አበቦችም ይጠወልጋሉ። \\q አምላካችን የሚናገረው ግን ለዘላለም ይኖራል።"
+        },
+        "hi": {
+          "L": "घास सूख जाती है, फूल मुरझा जाता है, \\q पर हमारे परमेश्वर का वचन सदा बना रहेगा।",
+          "B": "घास सूख जाती है और फूल मुरझा जाते हैं, \\q पर हमारे परमेश्वर का वचन युग-युग तक अटल रहता है।",
+          "R": "घास सूख जाती है और फूल मुरझा जाते हैं। \\q पर हमारे परमेश्वर जो कहते हैं, वह हमेशा बना रहेगा।"
+        },
+        "ru": {
+          "L": "Засыхает трава, увядает цветок, \\q а слово нашего Бога устоит вовек.",
+          "B": "Трава засыхает, и цветок опадает, \\q но слово нашего Бога пребывает вечно.",
+          "R": "Трава засыхает, и цветок опадает. \\q Но то, что говорит наш Бог, остаётся навсегда."
         }
       },
       "decisions": [
@@ -1863,6 +2387,51 @@
           "reason": "1 Peter 1:25 has \"the word of the Lord\" from the Greek; the Hebrew has \"the word of our God\". Balanced keeps 1 Peter's \"ለዘላለም ጸንቶ ይኖራል\"; Literal keeps the Hebrew verb \"stand\", which the meaning decision reads as remaining valid.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400080071",
+            "o230400080052",
+            "o230400080081"
+          ],
+          "choice": "\"सदा बना रहेगा\" (L); \"हमेशा बना रहेगा\" (R)",
+          "alternatives": [
+            "सदा खड़ा रहेगा"
+          ],
+          "reason": "1 Peter 1:25 quotes this line as \"प्रभु का वचन सदा बना रहता है\" (L, B) and \"हमेशा बना रहता है\" (R); Isaiah keeps its verb. The Hebrew has 'the word of our God' and a future, so those stay as the Hebrew says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400080052",
+            "o230400080061",
+            "o230400080071"
+          ],
+          "choice": "\"слово нашего Бога устоит вовек\" (L); \"пребывает вечно\" (B); \"остаётся навсегда\" (R)",
+          "alternatives": [
+            "\"слово Господа\" (1 Peter 1:25)"
+          ],
+          "reason": "1 Peter 1:25 quotes the line from the Greek, \"the word of the Lord remains forever\"; the Hebrew has \"our God\", so Russian says \"нашего Бога\" and keeps 1 Peter's verbs at Balanced and Readable. Literal says \"устоит\", the Hebrew \"will stand\": remain valid and come true (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1945,6 +2514,16 @@
           "L": "የምሥራች ነጋሪ ጽዮን ሆይ፣ ለራስሽ ወደ ረጅም ተራራ ውጪ፤ \\q የምሥራች ነጋሪ ኢየሩሳሌም ሆይ፣ ድምፅሽን በኃይል አንሺ፤ \\q አንሺ፤ አትፍሪ፤ \\q ለይሁዳ ከተሞች፦ «እነሆ፣ አምላካችሁ!» በዪ።",
           "B": "ጽዮን ሆይ፣ የምሥራች የምታመጪ፣ ወደ ረጅም ተራራ ውጪ። \\q ኢየሩሳሌም ሆይ፣ የምሥራች የምታመጪ፣ በሙሉ ኃይልሽ ጩኺ። \\q ጩኺ፤ አትፍሪም። \\q ለይሁዳ ከተሞች፦ «አምላካችሁ ይኸውላችሁ!» በዪ።",
           "R": "የጽዮን ሕዝብ ሆይ፣ የምትናገሩት የምሥራች አላችሁ! ወደ ረጅም ተራራ ውጡ። \\q የኢየሩሳሌም ሕዝብ ሆይ፣ የምሥራቹን በቻላችሁት መጠን ጮክ ብላችሁ ተናገሩ። \\q ጩኹ፤ አትፍሩም። \\q ለይሁዳ ከተሞች፦ «ተመልከቱ፣ አምላካችሁ እዚህ ነው!» በሉ።"
+        },
+        "hi": {
+          "L": "हे सिय्योन, शुभ समाचार सुनानेवाली, ऊँचे पहाड़ पर चढ़ जाओ; \\q हे यरूशलेम, शुभ समाचार सुनानेवाली, ज़ोर से अपनी आवाज़ ऊँची करो; \\q [उसे] ऊँचा करो, मत डरो; \\q यहूदा के नगरों से कहो, \"देखो, तुम्हारे परमेश्वर!\"",
+          "B": "हे सिय्योन, तुम जो शुभ समाचार लाती हो, ऊँचे पहाड़ पर चढ़ जाओ। \\q हे यरूशलेम, तुम जो शुभ समाचार लाती हो, पूरे बल से पुकारो। \\q पुकारो और मत डरो। \\q यहूदा के नगरों से कहो, \"यह रहे तुम्हारे परमेश्वर!\"",
+          "R": "हे सिय्योन के लोगो, तुम्हारे पास सुनाने के लिए शुभ समाचार है! ऊँचे पहाड़ पर चढ़ जाओ। \\q हे यरूशलेम के लोगो, जितनी ज़ोर से हो सके, शुभ समाचार पुकारकर सुनाओ। \\q पुकारकर सुनाओ, और मत डरो। \\q यहूदा के नगरों से कहो, \"देखो, तुम्हारे परमेश्वर यहाँ हैं!\""
+        },
+        "ru": {
+          "L": "Взойди на высокую гору, Сион, несущая добрую весть; \\q возвысь с силой свой голос, Иерусалим, несущая добрую весть; \\q возвысь, не бойся; \\q скажи городам Иуды: «Вот ваш Бог!»",
+          "B": "Поднимись на высокую гору, Сион, ты, кто несёт добрую весть. \\q Кричи изо всех сил, Иерусалим, ты, кто несёт добрую весть. \\q Кричи и не бойся. \\q Скажи городам Иуды: «Вот ваш Бог!»",
+          "R": "Жители Сиона, у вас есть добрая весть! Поднимитесь на высокую гору. \\q Жители Иерусалима, кричите эту добрую весть как можно громче. \\q Кричите и не бойтесь. \\q Скажите городам Иуды: «Смотрите, ваш Бог здесь!»"
         }
       },
       "decisions": [
@@ -2168,6 +2747,52 @@
           "reason": "The word is a feminine participle: Zion herself is the messenger, so Literal and Balanced address her as \"አንቺ\". \"የምሥራች\" is the plain word for good news; ወንጌል would read as the Christian gospel here. Readable addresses the people, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090071",
+            "o230400090111",
+            "o230400090121"
+          ],
+          "choice": "\"शुभ समाचार सुनानेवाली\" (L); \"तुम जो शुभ समाचार लाती हो\" (B), feminine",
+          "alternatives": [
+            "सिय्योन को शुभ समाचार सुनानेवाले"
+          ],
+          "reason": "The Hebrew participle is feminine and in apposition to Zion: Zion herself is the messenger (meaning m1). Hindi shows it with the feminine form. \"शुभ समाचार\" is news of victory or rescue, the word Romans 10:15 uses at Readable; \"सुसमाचार\" is kept for the gospel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400090061",
+            "o230400090071",
+            "o230400090111"
+          ],
+          "choice": "\"Сион, несущая добрую весть\" (L, feminine, Zion personified as a woman herald); \"Сион, ты, кто несёт добрую весть\" (B)",
+          "alternatives": [
+            "\"вестница Сиона\" (the herald to Zion)"
+          ],
+          "reason": "Zion herself is the messenger who brings the news to the towns of Judah (m1), so the city is addressed and the participle describes it; \"добрая весть\" is news of victory or rescue (m2), kept apart from the New Testament's \"Радостная весть\" for the gospel.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2249,6 +2874,16 @@
           "L": "እነሆ፣ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}}! እንደ ብርቱ ይመጣል፤ \\q ክንዱም ይገዛለታል፤ \\q እነሆ፣ ዋጋው ከእርሱ ጋር [ነው]፤ \\q ብድራቱም በፊቱ [ነው]።",
           "B": "ተመልከቱ፤ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} በኃይል ይመጣል፤ \\q ክንዱም ይገዛለታል። \\q ተመልከቱ፤ ዋጋውን ይዞ ይመጣል፤ \\q ያገኘውም በፊቱ ይሄዳል።",
           "R": "ተመልከቱ! ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} በኃይል ይመጣል። \\q በገዛ ብርታቱ ይገዛል። \\q ተመልከቱ! ያገኘውን ዋጋ ይዞ ይመጣል። \\q የሠራበትም ዋጋ በፊቱ ይሄዳል።"
+        },
+        "hi": {
+          "L": "देखो, प्रभु {{divine_name:परमेश्वर|याहवे}}! वे सामर्थी के समान आते हैं, \\q और उनकी भुजा उनके लिए प्रभुता करती है; \\q देखो, उनकी मज़दूरी उनके साथ [है], \\q और उनका प्रतिफल उनके आगे [है]।",
+          "B": "देखो, प्रभु {{divine_name:परमेश्वर|याहवे}} सामर्थ के साथ आ रहे हैं, \\q और उनकी भुजा उनके लिए राज्य करेगी। \\q देखो, वे अपना इनाम अपने साथ लाते हैं; \\q जो कुछ उन्होंने जीता है, वह उनके आगे-आगे चलता है।",
+          "R": "देखो! प्रभु {{divine_name:परमेश्वर|याहवे}} सामर्थ के साथ आ रहे हैं। \\q वे अपने ही बल से राज्य करेंगे। \\q देखो! जो इनाम उन्होंने जीता है, उसे वे अपने साथ ला रहे हैं। \\q जो कुछ उन्होंने कमाया है, वह उनके आगे-आगे चलता है।"
+        },
+        "ru": {
+          "L": "Вот Владыка {{divine_name:ГОСПОДЬ|Яхве}}! Как могучий, {{deity_pronoun:он|Он}} приходит, \\q и {{deity_pronoun:его|Его}} рука властвует для {{deity_pronoun:него|Него}}; \\q вот, {{deity_pronoun:его|Его}} награда с {{deity_pronoun:ним|Ним}}, \\q и {{deity_pronoun:его|Его}} воздаяние перед {{deity_pronoun:ним|Ним}}.",
+          "B": "Смотрите, Владыка {{divine_name:ГОСПОДЬ|Яхве}} идёт с силой, \\q и {{deity_pronoun:его|Его}} рука будет править для {{deity_pronoun:него|Него}}. \\q Смотрите, {{deity_pronoun:он|Он}} несёт с собой свою награду; \\q то, что {{deity_pronoun:он|Он}} завоевал, идёт впереди {{deity_pronoun:него|Него}}.",
+          "R": "Смотрите! Владыка {{divine_name:ГОСПОДЬ|Яхве}} идёт с силой. \\q Он будет править своей собственной силой. \\q Смотрите! Он несёт с собой награду, которую {{deity_pronoun:он|Он}} добыл. \\q То, что {{deity_pronoun:он|Он}} заработал, идёт впереди {{deity_pronoun:него|Него}}."
         }
       },
       "decisions": [
@@ -2321,6 +2956,50 @@
             "\"ሽልማት\" (prize)"
           ],
           "reason": "As the terms lists: Adonai is ጌታ, before the name at every level. ዋጋ is the word the Amharic New Testament uses for reward, also in Revelation 22:12, which echoes this verse (\"ዋጋዬ ከእኔ ጋር ነው\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230400100062",
+            "o230400100071"
+          ],
+          "choice": "\"प्रभु {{divine_name:परमेश्वर|याहवे}}\" for 'the Lord GOD'",
+          "alternatives": [
+            "प्रभु {{divine_name:प्रभु|याहवे}}"
+          ],
+          "reason": "Adonai is \"प्रभु\", and YHWH after it is \"परमेश्वर\" by default so that 'Lord' is not said twice, as Psalms and 2 Samuel 7 do; the divine_name setting shows the name. Elsewhere \"प्रभु\" alone is both YHWH and Adonai, and the setting tells them apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400100021",
+            "o230400100031"
+          ],
+          "choice": "Владыка {{divine_name:ГОСПОДЬ|Яхве}}",
+          "alternatives": [
+            "Господь {{divine_name:ГОСПОДЬ|Яхве}}"
+          ],
+          "reason": "The Lord GOD (Adonai YHWH) takes the form the Prophets note settles, as in Psalms: \"Владыка\" for Adonai, so that it does not stand beside the divine name as a second \"Господь\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2397,6 +3076,16 @@
           "L": "እንደ እረኛ መንጋውን ያሰማራል፤ \\q በክንዱ ጠቦቶችን ይሰበስባል፤ \\q በዕቅፉም ይሸከማቸዋል፤ \\q የሚያጠቡትን [በጎች] ይመራል።",
           "B": "እንደ እረኛ መንጋውን ያሰማራል። \\q ጠቦቶቹን በክንዱ ይሰበስባል፤ \\q በደረቱም አቅፎ ይሸከማቸዋል፤ \\q የሚያጠቡትንም በጎች በጥንቃቄ ይመራል።",
           "R": "እረኛ በጎቹን እንደሚጠብቅ እርሱም ሕዝቡን ይጠብቃል። \\q ጠቦቶቹን በክንዶቹ አንሥቶ በዕቅፉ ይይዛቸዋል። \\q ግልገሎቻቸውን የሚያጠቡትን እናት በጎች በእርጋታ ይመራል።"
+        },
+        "hi": {
+          "L": "चरवाहे के समान वे अपने झुंड को चराएँगे; \\q अपनी भुजा में वे मेमनों को इकट्ठा करेंगे, \\q और अपनी गोद में [उन्हें] उठाए चलेंगे; \\q दूध पिलानेवाली [भेड़ों] को वे धीरे-धीरे ले चलेंगे।",
+          "B": "चरवाहे के समान वे अपने झुंड को चराएँगे। \\q वे मेमनों को अपनी बाँहों में इकट्ठा करेंगे \\q और उन्हें अपनी छाती से लगाए उठाए चलेंगे, \\q और दूध पिलानेवाली भेड़ों को सँभालकर ले चलेंगे।",
+          "R": "जैसे चरवाहा अपनी भेड़ों की देखभाल करता है, वैसे ही वे अपने लोगों की देखभाल करेंगे। \\q वे मेमनों को अपनी बाँहों में उठाकर अपने पास रखेंगे। \\q जो भेड़ें अपने बच्चों को दूध पिला रही हैं, उन्हें वे कोमलता से ले चलेंगे।"
+        },
+        "ru": {
+          "L": "Как пастух, {{deity_pronoun:он|Он}} будет пасти своё стадо; \\q на руку свою {{deity_pronoun:он|Он}} соберёт ягнят \\q и на груди своей понесёт [их]; \\q дойных [овец] {{deity_pronoun:он|Он}} поведёт.",
+          "B": "Как пастух, {{deity_pronoun:он|Он}} будет пасти своё стадо. \\q Он соберёт ягнят на руки \\q и понесёт их, прижав к груди, \\q и бережно поведёт кормящих овец.",
+          "R": "Он будет заботиться о своём народе, как пастух заботится об овцах. \\q Он возьмёт ягнят на руки и прижмёт их к себе. \\q Он бережно поведёт овец, которые кормят своих ягнят."
         }
       },
       "decisions": [
@@ -2528,6 +3217,16 @@
           "L": "ውኆችን በእፍኙ የሰፈረ፣ ሰማያትንም በስንዝር የለካ ማን ነው? \\q የምድርንም አፈር በመስፈሪያ የሰበሰበ፣ \\q ተራሮችንም በሚዛን፣ \\q ኮረብቶችንም በመመዘኛ የመዘነ [ማን ነው]?",
           "B": "ባሕሮችን በእፍኙ የሰፈረ፣ ወይም ሰማዩን በስንዝሩ የለካ ማን ነው? \\q የምድርን አፈር በቅርጫት የሰበሰበ ማን ነው? \\q ወይም ተራሮችን በሚዛን ላይ ያስቀመጠ፣ \\q ኮረብቶችንም በሁለት ሚዛን የመዘነ ማን ነው?",
           "R": "ውቅያኖሶችን ሁሉ በእጁ ይዞ ሊለካ የሚችል ማን ነው? ሰማይን በስንዝሩ ሊለካ የሚችል ማን ነው? \\q የምድርን አፈር ሁሉ በቅርጫት ሊከትት የሚችል ማን ነው? \\q ተራሮችንና ኮረብቶችን በሚዛን ሊመዝን የሚችል ማን ነው?"
+        },
+        "hi": {
+          "L": "किसने अपनी हथेली के गड्ढे में जल को नापा है, और बित्ते से आकाश को मापा है, \\q और माप के पात्र में पृथ्वी की धूल को भरा है, \\q और पहाड़ों को काँटे से \\q और पहाड़ियों को तराज़ू में तौला है?",
+          "B": "किसने समुद्रों को अपनी अंजलि में नापा है, या अपनी उँगलियों के फैलाव से आकाश को मापा है? \\q किसने पृथ्वी की धूल को टोकरी में भरा है, \\q या पहाड़ों को काँटे पर \\q और पहाड़ियों को तराज़ू के पलड़ों पर तौला है?",
+          "R": "कौन सारे समुद्रों को अपने हाथ में लेकर नाप सकता है? कौन अपनी हथेली की चौड़ाई से आकाश को नाप सकता है? \\q कौन पृथ्वी की सारी धूल को एक टोकरी में भर सकता है? \\q कौन पहाड़ों और पहाड़ियों को तराज़ू पर तौल सकता है?"
+        },
+        "ru": {
+          "L": "Кто измерил горстью своей воды и пядью разметил небеса, \\q и вместил в меру прах земли, \\q и взвесил горы на весах, \\q и холмы на чашах весов?",
+          "B": "Кто измерил моря горстью руки или разметил небо растянутыми пальцами? \\q Кто собрал прах земли в корзину, \\q или положил горы на весы, \\q и холмы — на чаши весов?",
+          "R": "Кто мог бы измерить все океаны, зачерпнув их рукой? Кто мог бы измерить небо шириной ладони? \\q Кто мог бы собрать всю пыль земли в корзину? \\q Кто мог бы взвесить горы и холмы на весах?"
         }
       },
       "decisions": [
@@ -2675,6 +3374,45 @@
           "reason": "The English gives the measure as a word, not a setting, so the Amharic does too; ስንዝር is the Amharic name of the same hand measure.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400120062",
+            "o230400120092"
+          ],
+          "choice": "\"बित्ता\" (L); \"उँगलियों का फैलाव\" (B); \"माप का पात्र\" (L); \"टोकरी\" (B)",
+          "alternatives": [
+            "तिहाई"
+          ],
+          "reason": "A span is the width of the spread hand, which Hindi calls a \"बित्ता\"; the dry measure, literally 'a third', is given as a measuring vessel at Literal and as a familiar basket at Balanced, as the English does. There is no units span in the English, so none in Hindi.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400120062",
+            "o230400120092"
+          ],
+          "choice": "\"пядью\", \"в меру\" (L)",
+          "alternatives": [],
+          "reason": "The span is the width of a spread hand and the measure a small dry measure (m2); Literal keeps the old names without a units setting, as the English does, and Balanced and Readable describe the hand and use a basket.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2743,6 +3481,16 @@
           "L": "{{divine_name:የእግዚአብሔርን|የያህዌን}} መንፈስ የለካ ማን ነው? \\q ወይስ አማካሪው ሆኖ ያስተማረው [ማን ነው]?",
           "B": "{{divine_name:የእግዚአብሔርን|የያህዌን}} መንፈስ የመዘነ ማን ነው? \\q ከአማካሪዎቹስ ያስተማረው ማን ነው?",
           "R": "{{divine_name:የእግዚአብሔርን|የያህዌን}} አሳብ ማን ሊረዳ ይችላል? \\q እርሱን የመከረ ወይም አንዳች ነገር ያስተማረው ማን አለ?"
+        },
+        "hi": {
+          "L": "किसने {{divine_name:प्रभु|याहवे}} के आत्मा को नापा है, \\q या उनका सलाहकार होकर [किसने] उन्हें बताया है?",
+          "B": "किसने {{divine_name:प्रभु|याहवे}} के आत्मा की थाह ली है? \\q उनके किस सलाहकार ने कभी उन्हें सिखाया है?",
+          "R": "{{divine_name:प्रभु|याहवे}} के मन को कौन समझ सकता है? \\q किसने कभी उन्हें सलाह दी है या कुछ सिखाया है?"
+        },
+        "ru": {
+          "L": "Кто измерил дух {{divine_name:ГОСПОДА|Яхве}}, \\q и [как] {{deity_pronoun:его|Его}} советник наставит {{deity_pronoun:его|Его}}?",
+          "B": "Кто постиг Дух {{divine_name:ГОСПОДА|Яхве}}? \\q Кто из {{deity_pronoun:его|Его}} советников когда-либо наставлял {{deity_pronoun:его|Его}}?",
+          "R": "Кто может знать, что думает {{divine_name:ГОСПОДЬ|Яхве}}? \\q Кто когда-нибудь давал {{deity_pronoun:ему|Ему}} совет или чему-нибудь {{deity_pronoun:его|Его}} научил?"
         }
       },
       "decisions": [
@@ -2880,6 +3628,54 @@
           "reason": "Paul quotes this verse from the Greek, \"who has known the mind of the Lord, or who has been his counselor?\" The Hebrew asks who has measured the spirit of the LORD, so Literal and Balanced say \"መንፈስ\" with the Hebrew verb; Readable says \"his mind\", as the English Readable does. The counselor and the teaching keep the words of the Amharic New Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400130021",
+            "o230400130041",
+            "o230400130062",
+            "o230400130081"
+          ],
+          "choice": "the Hebrew's 'measured the spirit', with the words of Romans 11:34 and 1 Corinthians 2:16 for the counselor and the teaching",
+          "alternatives": [
+            "प्रभु के मन को किसने जाना है (Romans 11:34; 1 Corinthians 2:16)"
+          ],
+          "reason": "Paul quotes the Greek Old Testament, 'who has known the mind of the Lord'. The Hebrew says 'measured the spirit of the LORD', so Literal and Balanced say that; Readable gives its sense, the LORD's mind (meaning m1), as the English does. Where the Hebrew agrees the Hindi keeps Paul's words: \"सलाहकार\", \"किसने कभी उन्हें सलाह दी है\", \"सिखाया\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400130041",
+            "o230400130051",
+            "o230400130062",
+            "o230400130082"
+          ],
+          "choice": "\"дух\" (L), \"Дух\" (B), \"что думает\" (R); \"советник\", \"наставит\" (L)",
+          "alternatives": [
+            "\"ум Господа\" (Romans 11:34; 1 Corinthians 2:16)"
+          ],
+          "reason": "Romans 11:34 and 1 Corinthians 2:16 quote the Greek, \"the mind of the Lord\"; the Hebrew has \"spirit\", meaning the LORD's mind and purposes (m1). Literal and Balanced keep \"дух\", Readable gives the sense with the words of Romans 11:34 at Readable (\"знал, что думает\", \"давал ему совет\"); Literal keeps Paul's \"советник\" and \"наставит\". The divine name stands where Paul has \"Господь\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2958,6 +3754,16 @@
           "L": "ከማን ጋር ተማከረ? [ማንስ] ማስተዋልን ሰጠው? \\q በፍርድም መንገድ አስተማረው? \\q እውቀትንም አስተማረው? \\q የማስተዋልንም መንገድ አሳወቀው?",
           "B": "ማስተዋልን ያገኝ ዘንድ ምክር የጠየቀው ማንን ነው? \\q በፍትሕ መንገድ ያሠለጠነው ማን ነው? \\q ወይስ እውቀትን ያስተማረው፣ \\q ወይስ የማስተዋልን ጎዳና ያመለከተው ማን ነው?",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከማንም ምክር መጠየቅ አስፈልጎት ያውቃልን? \\q ትክክልና ፍትሐዊ የሆነውን ያስተማረው ማን ነው? \\q የሚያውቀውን ያስተማረው ማን ነው? \\q ወይስ ነገሮችን እንዴት እንደሚረዳ ያሳየው ማን ነው?"
+        },
+        "hi": {
+          "L": "उन्होंने किससे सलाह ली, और [किसने] उन्हें समझ दी, \\q और उन्हें न्याय के पथ की शिक्षा दी, \\q और उन्हें ज्ञान सिखाया, \\q और उन्हें समझ का मार्ग बताया?",
+          "B": "उन्होंने कभी किससे सलाह माँगी कि उन्हें अंतर्दृष्टि मिले? \\q किसने उन्हें न्याय के पथ पर चलना सिखाया, \\q या उन्हें ज्ञान दिया, \\q या उन्हें विवेक का मार्ग दिखाया?",
+          "R": "क्या {{divine_name:प्रभु|याहवे}} को कभी किसी से सलाह लेने की ज़रूरत पड़ी? \\q क्या किसी ने उन्हें सिखाया कि क्या सही और न्यायपूर्ण है? \\q क्या किसी ने उन्हें वह सिखाया जो वे जानते हैं, \\q या उन्हें दिखाया कि बातों को कैसे समझें?"
+        },
+        "ru": {
+          "L": "С кем {{deity_pronoun:он|Он}} советовался, и [кто] вразумил {{deity_pronoun:его|Его}}, \\q и научил {{deity_pronoun:его|Его}} пути правосудия, \\q и научил {{deity_pronoun:его|Его}} знанию, \\q и указал {{deity_pronoun:ему|Ему}} путь разумения?",
+          "B": "У кого {{deity_pronoun:он|Он}} когда-либо спрашивал совета, чтобы обрести понимание? \\q Кто наставил {{deity_pronoun:его|Его}} на путь правосудия, \\q или научил {{deity_pronoun:его|Его}} знанию, \\q или указал {{deity_pronoun:ему|Ему}} дорогу к рассудительности?",
+          "R": "Разве {{divine_name:ГОСПОДУ|Яхве}} когда-нибудь нужно было просить у кого-то совета? \\q Разве кто-нибудь учил {{deity_pronoun:его|Его}}, что правильно и справедливо? \\q Разве кто-нибудь учил {{deity_pronoun:его|Его}} тому, что {{deity_pronoun:он|Он}} знает, \\q или показывал {{deity_pronoun:ему|Ему}}, как понимать вещи?"
         }
       },
       "decisions": [
@@ -3065,6 +3871,16 @@
           "L": "እነሆ፣ ሕዝቦች ከባልዲ እንደሚንጠባጠብ ጠብታ [ናቸው]፤ \\q በሚዛንም ላይ እንዳለ ትቢያ ይቆጠራሉ፤ \\q እነሆ፣ ደሴቶችን እንደ ደቃቅ ትቢያ ያነሣል።",
           "B": "ሕዝቦች ከባልዲ ከሚወድቅ ጠብታ አይበልጡም፤ \\q በሚዛን ላይ እንደ ቀረ ትቢያ ይቆጠራሉ። \\q ጠረፎችን እንደ ደቃቅ ዱቄት ያነሣል።",
           "R": "በእግዚአብሔር ፊት ሕዝቦች ከባልዲ እንደ ወደቀች አንዲት የውኃ ጠብታ ናቸው። \\q በሚዛን ላይ እንዳለ ትንሽ ትቢያ ናቸው። \\q ሩቅ አገሮችን እንደ ትቢያ ማንሣት ይችላል።"
+        },
+        "hi": {
+          "L": "देखो, जातियाँ डोल की एक बूँद के समान [हैं], \\q और तराज़ू पर की धूल के समान गिनी जाती हैं; \\q देखो, वे द्वीपों को बारीक धूल की तरह उठाते हैं।",
+          "B": "देश डोल से टपकी एक बूँद से बढ़कर नहीं; \\q वे तराज़ू पर पड़ी धूल के बराबर गिने जाते हैं। \\q वे द्वीपों को महीन चूर्ण की तरह उठा लेते हैं।",
+          "R": "परमेश्वर के सामने देश बाल्टी से गिरी पानी की एक बूँद के समान हैं। \\q वे तराज़ू पर पड़ी थोड़ी-सी धूल के समान हैं। \\q वे दूर-दूर के देशों को धूल की तरह उठा सकते हैं।"
+        },
+        "ru": {
+          "L": "Вот, народы — как капля из ведра, \\q и как пыль на весах они считаются; \\q вот, острова {{deity_pronoun:он|Он}} поднимает, как пылинку.",
+          "B": "Народы — не больше капли, упавшей из ведра; \\q они значат не больше пыли на весах. \\q Он поднимает острова, как мелкую пыль.",
+          "R": "Для Бога народы — как одна капля воды из ведра. \\q Они — как пылинка на весах. \\q Он может поднять далёкие земли, как пыль."
         }
       },
       "decisions": [
@@ -3132,6 +3948,48 @@
           "choice": "ʾiyyim: \"ደሴቶች\" (L), \"ጠረፎች\" (B), \"ሩቅ አገሮች\" (R)",
           "alternatives": [],
           "reason": "As the terms list for the prophets; Readable follows the English \"lands far away\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400150091"
+          ],
+          "choice": "\"जातियाँ\" (L); \"देश\" (B, R); \"द्वीप\" (L, B), \"दूर-दूर के देश\" (R) for the coastlands",
+          "alternatives": [
+            "तट"
+          ],
+          "reason": "The nations follow the poetry note: \"जातियाँ\" at Literal, \"देश\" at Balanced and Readable, where \"जाति\" can mean caste. The coastlands are \"द्वीप\" as in Psalm 72:10; Readable says what they stand for, the far edges of the world (meaning m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400150091"
+          ],
+          "choice": "\"острова\" (L, B); \"далёкие земли\" (R)",
+          "alternatives": [
+            "\"побережья\""
+          ],
+          "reason": "The islands and coasts of the Mediterranean, the far edges of the known world (m2); \"острова\" is the word Psalm 72:10 uses in this translation, and Readable says what they stand for, as the English Readable does. Kept through Isaiah 40-46.",
           "uncertain": false,
           "footnote": false
         }
@@ -3202,6 +4060,16 @@
           "L": "ሊባኖስም ለማንደጃ አይበቃም፤ \\q አራዊቱም ለሚቃጠል መሥዋዕት አይበቁም።",
           "B": "ሊባኖስ ለእሳቱ የሚበቃ እንጨት አያቀርብም፤ \\q አራዊቱም ለሚቃጠል መሥዋዕት አይበቁም።",
           "R": "የሊባኖስ ደኖች ዛፎች ሁሉ ለእርሱ ለሚቀርብ መሥዋዕት የሚበቃ ማገዶ አይሆኑም። \\q በዚያ ያሉ እንስሳት ሁሉ ለእርሱ ለመሠዋት አይበቁም።"
+        },
+        "hi": {
+          "L": "और लबानोन जलाने के लिए काफ़ी नहीं, \\q और उसके पशु होमबलि के लिए काफ़ी नहीं।",
+          "B": "लबानोन आग के लिए पूरी लकड़ी न दे सकेगा, \\q न उसके जंगली पशु होमबलि के लिए पूरे होंगे।",
+          "R": "लबानोन के जंगलों के सारे पेड़ भी उनके लिए चढ़ाई जानेवाली बलि की आग के लिए पूरी लकड़ी न दे पाएँगे। \\q वहाँ के सारे पशु भी उनके लिए बलि चढ़ाने को काफ़ी न होंगे।"
+        },
+        "ru": {
+          "L": "И Ливана недостаточно для сожжения, \\q и его животных недостаточно для всесожжения.",
+          "B": "Ливан не дал бы довольно дров для огня, \\q и его зверей не хватило бы для всесожжения.",
+          "R": "Всех деревьев в лесах Ливана не хватило бы на дрова для жертвы {{deity_pronoun:ему|Ему}}. \\q Всех животных там не хватило бы, чтобы принести {{deity_pronoun:ему|Ему}} жертву."
         }
       },
       "decisions": [
@@ -3320,6 +4188,16 @@
           "L": "ሕዝቦች ሁሉ በፊቱ እንደ ምንም [ናቸው]፤ \\q ከኢምንትና ከቅርጽ የለሽነት እንደሚያንሱ በእርሱ ዘንድ ይቆጠራሉ።",
           "B": "ከእርሱ ጋር ሲነጻጸሩ ሕዝቦች ሁሉ ምንም አይደሉም፤ \\q በእርሱ ዘንድ ከምንም ያነሱ፣ ባዶ ቅርጽ የለሽነት ሆነው ይቆጠራሉ።",
           "R": "ከእርሱ ጋር ሲነጻጸሩ ሕዝቦች ሁሉ ምንም ናቸው። \\q ከምንም እንደሚያንሱ፣ ባዶና ዋጋ ቢሶች እንደ ሆኑ ይቆጥራቸዋል።"
+        },
+        "hi": {
+          "L": "सब जातियाँ उनके सामने कुछ नहीं के समान [हैं]; \\q वे उनकी दृष्टि में कुछ नहीं और आकारहीन ख़ालीपन से भी कम गिनी जाती हैं।",
+          "B": "उनके सामने सब देश कुछ भी नहीं; \\q उनकी दृष्टि में वे कुछ नहीं से भी कम, आकारहीन ख़ालीपन जैसे हैं।",
+          "R": "उनकी तुलना में सब देश कुछ भी नहीं हैं। \\q वे उन्हें कुछ नहीं से भी कम, खोखला और निकम्मा समझते हैं।"
+        },
+        "ru": {
+          "L": "Все народы — как ничто перед {{deity_pronoun:ним|Ним}}; \\q меньше ничтожества и пустоты они считаются у {{deity_pronoun:него|Него}}.",
+          "B": "Рядом с {{deity_pronoun:ним|Ним}} все народы — ничто; \\q для {{deity_pronoun:него|Него}} они меньше, чем ничто, — пустота.",
+          "R": "По сравнению с {{deity_pronoun:ним|Ним}} все народы — ничто. \\q Он считает их меньше, чем ничем, пустыми и никчёмными."
         }
       },
       "decisions": [
@@ -3388,6 +4266,45 @@
           "choice": "tohu \"ቅርጽ የለሽነት\"",
           "alternatives": [],
           "reason": "The meaning decision hears the formless void before creation; the word keeps the Amharic of Genesis 1:2, as in 34:11 and 40:23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400170062"
+          ],
+          "choice": "\"आकारहीन ख़ालीपन\" for tohu",
+          "alternatives": [
+            "व्यर्थ",
+            "सुनसान"
+          ],
+          "reason": "The word is the one Genesis 1:2 uses for the formless earth (meaning m2), which the Hindi of Genesis gives as \"आकारहीन और ख़ाली\"; Literal and Balanced keep that echo here and in verse 23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400170062"
+          ],
+          "choice": "\"пустота\" (L, B)",
+          "alternatives": [],
+          "reason": "The word is tohu, the emptiness before creation (m2); \"пустота\" is the word Genesis 1:2 has for it in this translation, kept here and in 40:23.",
           "uncertain": false,
           "footnote": false
         }
@@ -3459,6 +4376,16 @@
           "L": "እንግዲህ እግዚአብሔርን በማን ትመስሉታላችሁ? \\q ምን ዓይነት አምሳልስ ከእርሱ ጋር ታነጻጽራላችሁ?",
           "B": "እንግዲህ እግዚአብሔር ማንን ይመስላል ትላላችሁ? \\q ከእርሱ ጎን ልታቆሙት የምትችሉት ምን ምስል አለ?",
           "R": "እንግዲያውስ እግዚአብሔርን ከማን ጋር ልታወዳድሩት ትችላላችሁ? \\q እርሱን ይመስላል የምትሉት ምን ነገር አለ?"
+        },
+        "hi": {
+          "L": "तो तुम परमेश्वर की तुलना किससे करोगे, \\q और कौन-सी समानता उनके बराबर ठहराओगे?",
+          "B": "तो तुम किसे परमेश्वर के समान बताओगे? \\q कौन-सी आकृति तुम उनके बराबर खड़ी कर सकते हो?",
+          "R": "तो तुम परमेश्वर की तुलना किससे कर सकते हो? \\q तुम किस चीज़ के बारे में कह सकते हो कि वह उनके जैसी दिखती है?"
+        },
+        "ru": {
+          "L": "И с кем вы сравните Бога, \\q и какое подобие поставите рядом с {{deity_pronoun:ним|Ним}}?",
+          "B": "Так на кого, по-вашему, похож Бог? \\q Какое изображение вы могли бы поставить рядом с {{deity_pronoun:ним|Ним}}?",
+          "R": "С кем же вы можете сравнить Бога? \\q О чём вы можете сказать, что оно похоже на {{deity_pronoun:него|Него}}?"
         }
       },
       "decisions": [
@@ -3623,6 +4550,16 @@
           "L": "የተቀረጸው ምስል? ባለ ሙያ በማቅለጥ ሠራው፤ \\q አንጥረኛም በወርቅ ይለብጠዋል፤ \\q የብርንም ሰንሰለቶች ያነጥራል።",
           "B": "የተቀረጸ ምስል? ባለ ሙያ ብረቱን አቅልጦ ይሠራዋል፤ \\q ወርቅ አንጥረኛ በወርቅ ይለብጠዋል፤ \\q ለሰንሰለቶቹም ብርን ያነጥራል።",
           "R": "ጣዖት የሚሠራው ብረትን አቅልጦ በቅርጽ ውስጥ በሚያፈስ ሠራተኛ ነው። \\q ከዚያም ወርቅ አንጥረኛ በወርቅ ይሸፍነዋል፤ \\q የብር ሰንሰለቶችንም ይሠራለታል።"
+        },
+        "hi": {
+          "L": "मूरत? कारीगर ने [उसे] ढाला, \\q और सुनार उस पर सोना मढ़ता है, \\q और चाँदी की ज़ंजीरें तपाकर गढ़ता है।",
+          "B": "मूरत? कारीगर उसे ढालता है, \\q सुनार उस पर सोना चढ़ाता है \\q और उसकी ज़ंजीरों के लिए चाँदी तपाता है।",
+          "R": "मूरत को एक कारीगर बनाता है, जो धातु को साँचे में ढालता है। \\q फिर सुनार उस पर सोना चढ़ाता है \\q और उसके लिए चाँदी की ज़ंजीरें बनाता है।"
+        },
+        "ru": {
+          "L": "Идол? Мастер отлил [его], \\q и литейщик обкладывает его золотом, \\q и выплавляет серебряные цепочки.",
+          "B": "Идол? Мастер отливает его, \\q золотых дел мастер покрывает его золотом \\q и очищает серебро для его цепочек.",
+          "R": "Идола делает работник, который заливает металл в форму. \\q Потом золотых дел мастер покрывает его золотом \\q и делает для него серебряные цепочки."
         }
       },
       "decisions": [
@@ -3688,6 +4625,29 @@
           "choice": "pesel: \"የተቀረጸ ምስል\" (L, B); \"ጣዖት\" (R)",
           "alternatives": [],
           "reason": "The terms list for the prophets sets የተቀረጸ ምስል for pesel, even where, as here, the figure is cast; Readable says the plain \"ጣዖት\", as the English says \"idol\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400190012",
+            "o230400190021"
+          ],
+          "choice": "\"मूरत\" for the idol",
+          "alternatives": [
+            "मूर्ति",
+            "प्रतिमा"
+          ],
+          "reason": "\"मूरत\" is the word 1 Chronicles 16:26 uses for idols; it is plain and carries Isaiah's scorn for a god made by hand.",
           "uncertain": false,
           "footnote": false
         }
@@ -3764,6 +4724,16 @@
           "L": "ለእንደዚህ ያለ መባ የደኸየው \\q የማይበሰብስን እንጨት ይመርጣል፤ \\q ብልሃተኛ ባለ ሙያ ለራሱ ይፈልጋል፤ \\q የማይናወጥ የተቀረጸ ምስል ያቆምለት ዘንድ።",
           "B": "እንዲህ ያለ ውድ መባ ማቅረብ የማይችል \\q የማይበሰብስ ግንድ ይመርጣል፤ \\q ብልሃተኛ ቀራጭም ይፈልጋል፤ \\q የማይወድቅ ምስል እንዲያቆምለት።",
           "R": "ወርቅ ለመስጠት እጅግ ድሃ የሆነ ሰው የማይበሰብስ እንጨት ይመርጣል። \\q ከዚያም የማይወድቅ ጣዖት እንዲሠራለት ብልሃተኛ ሠራተኛ ይፈልጋል።"
+        },
+        "hi": {
+          "L": "जो [ऐसी] भेंट के लिए [बहुत] कंगाल है, \\q वह ऐसी लकड़ी चुनता है [जो] न सड़े; \\q वह अपने लिए कुशल कारीगर ढूँढ़ता है \\q कि ऐसी मूरत खड़ी करे [जो] न डगमगाए।",
+          "B": "जो इतनी महँगी भेंट नहीं दे सकता, \\q वह लकड़ी का ऐसा कुंदा चुनता है जो न सड़े, \\q और एक कुशल कारीगर ढूँढ़ता है \\q कि ऐसी मूरत जमाए जो लुढ़क न जाए।",
+          "R": "जो आदमी सोना देने के लिए बहुत ग़रीब है, वह ऐसी लकड़ी चुनता है जो न सड़े। \\q फिर वह एक कुशल कारीगर ढूँढ़ता है कि ऐसी मूरत बनाए जो गिर न पड़े।"
+        },
+        "ru": {
+          "L": "Тот, кто [слишком] беден [для такого] приношения, \\q выбирает дерево, [которое] не сгниёт; \\q ищет себе искусного мастера, \\q чтобы поставить идола, [который] не пошатнётся.",
+          "B": "Тот, кому не по средствам такое богатое приношение, \\q выбирает брус дерева, который не гниёт, \\q и ищет умелого резчика, \\q чтобы установить идола, который не опрокинется.",
+          "R": "Человек, который слишком беден, чтобы дать золото, выбирает дерево, которое не сгниёт. \\q Потом он находит умелого мастера, чтобы тот сделал идола, который не упадёт."
         }
       },
       "decisions": [
@@ -3891,6 +4861,16 @@
           "L": "አታውቁምን? አልሰማችሁምን? \\q ከመጀመሪያ አልተነገራችሁምን? \\q ከምድር መሠረቶች [ጀምሮ] አላስተዋላችሁምን?",
           "B": "አታውቁምን? አልሰማችሁምን? \\q ገና ከመጀመሪያው አልተነገራችሁምን? \\q የምድር መሠረቶች ከተጣሉ ጀምሮ አላስተዋላችሁምን?",
           "R": "አታውቁምን? አልሰማችሁምን? \\q ይህ ከብዙ ዘመን በፊት፣ ገና ከመጀመሪያው ተነግሯችኋል። \\q ምድር ከተፈጠረች ጀምሮ ልታስተውሉት ይገባ ነበር።"
+        },
+        "hi": {
+          "L": "क्या तुम नहीं जानते? क्या तुम नहीं सुनते? \\q क्या आरंभ से तुम्हें बताया नहीं गया? \\q क्या तुमने पृथ्वी की नींव [पड़ने के समय से] नहीं समझा?",
+          "B": "क्या तुम नहीं जानते? क्या तुमने नहीं सुना? \\q क्या शुरू ही से तुम्हें यह बताया नहीं गया? \\q क्या तुमने पृथ्वी की नींव डाले जाने के समय से यह नहीं समझा?",
+          "R": "क्या तुम नहीं जानते? क्या तुमने नहीं सुना? \\q तुम्हें यह बहुत पहले, बिलकुल शुरू में ही बता दिया गया था। \\q जब से पृथ्वी बनी, तब से ही तुम्हें यह समझ लेना चाहिए था।"
+        },
+        "ru": {
+          "L": "Разве вы не знаете? Разве вы не слышите? \\q Разве не было сказано вам от начала? \\q Разве вы не поняли [со времени] оснований земли?",
+          "B": "Разве вы не знаете? Разве вы не слышали? \\q Разве вам не было возвещено с самого начала? \\q Разве вы не поняли этого с тех пор, как были положены основания земли?",
+          "R": "Разве вы не знаете? Разве вы не слышали? \\q Вам говорили это давным-давно, с самого начала. \\q Вы должны были понять это ещё тогда, когда была создана земля."
         }
       },
       "decisions": [
@@ -4009,6 +4989,16 @@
           "L": "[እርሱ] ከምድር ክበብ በላይ የሚቀመጥ ነው፤ \\q ነዋሪዎቿም እንደ ፌንጣዎች [ናቸው]፤ \\q ሰማያትን እንደ ስስ መጋረጃ የሚዘረጋ፣ \\q እንደ መኖሪያ ድንኳንም የሚዘረጋቸው።",
           "B": "እርሱ ከክቡ የምድር አድማስ በላይ በዙፋኑ የተቀመጠ ነው፤ \\q በእርሷ ላይ የሚኖሩት ሰዎች እንደ ፌንጣዎች ይታያሉ። \\q ሰማዩን እንደ ስስ ጨርቅ ይዘረጋል፤ \\q እንደ መኖሪያ ድንኳንም ይዘረጋዋል።",
           "R": "እግዚአብሔር ከምድር በላይ ከፍ ብሎ በዙፋኑ ይቀመጣል። \\q ከዚያ ሲታዩ በምድር ያሉ ሰዎች እንደ ፌንጣ ያንሳሉ። \\q ሰማዩን እንደ ስስ መጋረጃ ይዘረጋል። \\q የሚኖርበት ድንኳን አድርጎ ይዘረጋዋል።"
+        },
+        "hi": {
+          "L": "[ये] वही हैं जो पृथ्वी के घेरे के ऊपर विराजमान हैं, \\q और उसके रहनेवाले टिड्डों के समान [हैं]; \\q जो आकाश को महीन कपड़े की तरह तानते हैं \\q और उसे रहने के तंबू की तरह फैलाते हैं।",
+          "B": "वे ही हैं जो पृथ्वी के गोल क्षितिज के ऊपर ऊँचे सिंहासन पर विराजमान हैं, \\q और उस पर रहनेवाले लोग टिड्डों जैसे दिखते हैं। \\q वे आकाश को झीने कपड़े की तरह तानते हैं \\q और उसे रहने के तंबू की तरह फैलाते हैं।",
+          "R": "परमेश्वर पृथ्वी से बहुत ऊपर अपने सिंहासन पर बैठे हैं। \\q वहाँ से पृथ्वी के लोग टिड्डों जितने छोटे दिखते हैं। \\q वे आकाश को पतले परदे की तरह फैलाते हैं। \\q वे उसे रहने के तंबू की तरह तान देते हैं।"
+        },
+        "ru": {
+          "L": "[Это] тот, кто восседает над кругом земли, \\q и её жители — как кузнечики; \\q тот, кто распростирает небеса, как тонкую ткань, \\q и раскидывает их, как шатёр для жилья.",
+          "B": "Он восседает высоко над круглым краем земли, \\q и живущие на ней кажутся кузнечиками. \\q Он развёртывает небо, как лёгкую ткань, \\q и раскидывает его, как шатёр для жилья.",
+          "R": "Бог сидит на своём престоле высоко над землёй. \\q Оттуда люди на земле кажутся маленькими, как кузнечики. \\q Он раскидывает небо, как тонкую занавесь. \\q Он растягивает его, как шатёр, чтобы жить в нём."
         }
       },
       "decisions": [
@@ -4143,6 +5133,16 @@
           "L": "መኳንንትን ወደ ኢምንት የሚያመጣ፣ \\q የምድርን ፈራጆች እንደ ቅርጽ የለሽነት የሚያደርግ [እርሱ ነው]።",
           "B": "ታላላቅ ሹማምንትን ኢምንት ያደርጋል፤ \\q የምድርን ፈራጆችም እንደ ባዶ ቅርጽ የለሽነት ያደርጋቸዋል።",
           "R": "ኃያላን ገዥዎችን ይዞ ምንም ያደርጋቸዋል። \\q የዓለምን ፈራጆች ዋጋ ቢሶች ያደርጋቸዋል።"
+        },
+        "hi": {
+          "L": "जो हाकिमों को कुछ नहीं कर देते हैं; \\q वे पृथ्वी के न्यायियों को आकारहीन ख़ालीपन के समान बना देते हैं।",
+          "B": "वे ऊँचे अधिकारियों को कुछ नहीं बना देते हैं \\q और पृथ्वी के न्यायियों को आकारहीन ख़ालीपन जैसा कर देते हैं।",
+          "R": "वे बड़े-बड़े शासकों को लेकर कुछ नहीं बना देते हैं। \\q वे संसार के न्यायियों को निकम्मा कर देते हैं।"
+        },
+        "ru": {
+          "L": "Тот, кто обращает вельмож в ничто; \\q судей земли {{deity_pronoun:он|Он}} делает как пустоту.",
+          "B": "Он обращает высоких правителей в ничто \\q и делает судей земли подобными пустоте до сотворения мира.",
+          "R": "Он берёт могущественных правителей и делает их ничем. \\q Он делает судей мира никчёмными."
         }
       },
       "decisions": [
@@ -4278,6 +5278,16 @@
           "L": "ገና ሳይተከሉ፣ ገና ሳይዘሩ፣ \\q ግንዳቸውም በምድር ውስጥ ገና ሥር ሳይሰድድ፣ \\q እርሱ ደግሞ በላያቸው ይነፍሳል፤ እነርሱም ይደርቃሉ፤ \\q ዐውሎ ነፋስም እንደ ገለባ ይወስዳቸዋል።",
           "B": "ገና እንደ ተተከሉ፣ ገና እንደ ተዘሩ፣ \\q ግንዳቸው በአፈር ውስጥ ገና ሥር እንደ ሰደደ፣ \\q እፍ ይልባቸዋል፤ እነርሱም ይጠወልጋሉ፤ \\q ብርቱ ነፋስም እንደ ገለባ ጠራርጎ ይወስዳቸዋል።",
           "R": "እነዚህ ገዥዎች እንደ ለጋ ተክሎች ናቸው። ገና መተከላቸው ነው፤ ገና በምድር ውስጥ መቀመጣቸው ነው። \\q ሥሮቻቸው ገና ማደግ መጀመራቸው ነው። \\q ከዚያም እግዚአብሔር እፍ ይልባቸዋል፤ እነርሱም ይደርቃሉ። \\q ዐውሎ ነፋስ እንደ ገለባ ይወስዳቸዋል።"
+        },
+        "hi": {
+          "L": "वे मुश्किल से रोपे गए, मुश्किल से बोए गए, \\q मुश्किल से उनके तने ने भूमि में जड़ पकड़ी, \\q कि वे उन पर फूँक भी मारते हैं और वे सूख जाते हैं, \\q और आँधी उन्हें भूसे की तरह उड़ा ले जाती है।",
+          "B": "अभी वे रोपे ही गए, अभी वे बोए ही गए, \\q अभी उनके तने ने मिट्टी में जड़ भी न पकड़ी, \\q कि वे उन पर फूँक मारते हैं और वे मुरझा जाते हैं, \\q और आँधी उन्हें भूसे की तरह उड़ा ले जाती है।",
+          "R": "ये शासक नए पौधों के समान हैं। वे अभी-अभी रोपे गए हैं। वे अभी-अभी ज़मीन में लगे हैं। \\q उनकी जड़ें अभी बढ़ने भी नहीं लगीं। \\q तब परमेश्वर उन पर फूँक मारते हैं, और वे सूख जाते हैं। \\q आँधी उन्हें भूसे की तरह उड़ा ले जाती है।"
+        },
+        "ru": {
+          "L": "Едва они посажены, едва посеяны, \\q едва укоренился в земле их стебель, \\q как {{deity_pronoun:он|Он}} дунул на них, и они засохли, \\q и буря уносит их, как солому.",
+          "B": "Едва их посадили, едва посеяли, \\q едва их стебель пустил корни в почву, \\q как {{deity_pronoun:он|Он}} дохнёт на них, и они засыхают, \\q и вихрь уносит их, как солому.",
+          "R": "Эти правители — как молодые растения. Их едва посадили. Они едва в земле. \\q Их корни только начали расти. \\q Тогда Бог дует на них, и они засыхают. \\q Буря уносит их, как солому."
         }
       },
       "decisions": [
@@ -4394,6 +5404,16 @@
           "L": "እንግዲህ በማን ትመስሉኛላችሁ? እኩያውስ እሆን ዘንድ? \\q ይላል ቅዱሱ።",
           "B": "እኩያ እንዳለኝ አድርጋችሁ ከማን ጋር ታስተካክሉኛላችሁ? \\q ይላል ቅዱሱ።",
           "R": "ከማን ጋር ልታወዳድሩኝ ትችላላችሁ? እኔን የሚተካከል ማን አለ? \\q ይህን የሚጠይቀው ቅዱሱ ነው።"
+        },
+        "hi": {
+          "L": "तो तुम मेरी तुलना किससे करोगे, कि मैं [उसके] बराबर ठहरूँ? \\q पवित्र [परमेश्वर] कहते हैं।",
+          "B": "तुम किसे मेरे बराबर खड़ा करोगे, मानो कोई मेरे समान हो? \\q पवित्र परमेश्वर कहते हैं।",
+          "R": "तुम मेरी तुलना किससे कर सकते हो? क्या कोई मेरे बराबर है? \\q पवित्र परमेश्वर यही पूछते हैं।"
+        },
+        "ru": {
+          "L": "И с кем вы сравните {{deity_pronoun:меня|Меня}}, чтобы {{deity_pronoun:я|Я}} был [ему] равен? \\q — говорит Святой.",
+          "B": "Кого вы поставите рядом со {{deity_pronoun:мной|Мной}}, будто у {{deity_pronoun:меня|Меня}} есть равный? \\q — говорит Святой.",
+          "R": "С кем вы можете сравнить {{deity_pronoun:меня|Меня}}? Равен ли кто-нибудь {{deity_pronoun:мне|Мне}}? \\q Так спрашивает Святой."
         }
       },
       "decisions": [
@@ -4444,6 +5464,27 @@
             "\"거룩하신 분께서 말씀하신다\""
           ],
           "reason": "God names himself (meaning decision m2: the question of verse 18 now from God himself); the terms note's form for God's own mouth, as \"이스라엘의 거룩한 이\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o230400250061"
+          ],
+          "choice": "\"पवित्र [परमेश्वर]\" (L); \"पवित्र परमेश्वर\" (B, R)",
+          "alternatives": [
+            "पवित्र"
+          ],
+          "reason": "In Hindi \"पवित्र\" on its own is an adjective; 'the Holy One' as a title needs a noun, so the Hindi supplies \"परमेश्वर\", bracketed at Literal. With 'of Israel' the title is \"इस्राएल का पवित्र\", as the prophets note settles.",
           "uncertain": false,
           "footnote": false
         }
@@ -4533,6 +5574,16 @@
           "L": "ዓይኖቻችሁን ወደ ላይ አንሡ፤ እዩም፤ እነዚህን የፈጠረ ማን ነው? \\q ሠራዊታቸውን በቁጥር የሚያወጣ፣ \\q ሁሉንም በስም የሚጠራ [እርሱ ነው]፤ \\q ከኃይሉ ብዛትና ከብርታቱ ጽናት የተነሣ \\q አንዱም አይጎድልም።",
           "B": "ወደ ላይ ተመልከቱ፤ እዩም። እነዚህን የፈጠረ ማን ነው? \\q ሰልፎቻቸውን በሙሉ ቁጥር የሚያወጣ እርሱ ነው፤ \\q እያንዳንዱንም በስሙ ይጠራል። \\q ኃይሉ እጅግ ታላቅ፣ ብርታቱም እጅግ ብርቱ ስለ ሆነ \\q አንዱም ሳይመጣ አይቀርም።",
           "R": "ወደ ሰማይ ተመልከቱ። ከዋክብትን ሁሉ የፈጠረ ማን ነው? \\q እግዚአብሔር እንደ ሠራዊት ያወጣቸዋል፤ ቁጥራቸውንም በትክክል ያውቃል። \\q እያንዳንዳቸውን በስማቸው ይጠራል። \\q እጅግ ብርቱና ኃያል ስለ ሆነ ከእነርሱ አንድ እንኳ አይጎድልም።"
+        },
+        "hi": {
+          "L": "अपनी आँखें ऊपर उठाकर देखो: इनको किसने सृजा? \\q वे, जो उनकी सेना को गिनती के अनुसार निकालते हैं, \\q और उन सब को नाम ले-लेकर बुलाते हैं; \\q [उनकी] शक्ति की महानता और सामर्थ में बलवान [होने] के कारण \\q उनमें से एक भी नहीं छूटता।",
+          "B": "ऊपर देखो। इन्हें किसने रचा? \\q वे ही हैं जो उनकी पाँतियों को पूरी गिनती से कूच कराते हैं \\q और हर एक को नाम लेकर बुलाते हैं। \\q उनकी शक्ति इतनी विशाल, उनका बल इतना महान है \\q कि एक भी हाज़िर होने से नहीं चूकता।",
+          "R": "आकाश की ओर देखो। सब तारों को किसने बनाया? \\q परमेश्वर उन्हें सेना की तरह बाहर ले आते हैं, और वे ठीक-ठीक जानते हैं कि वे कितने हैं। \\q वे हर एक को उसके नाम से बुलाते हैं। \\q वे इतने बलवान और शक्तिशाली हैं कि उनमें से एक भी नहीं छूटता।"
+        },
+        "ru": {
+          "L": "Поднимите ввысь ваши глаза и посмотрите: кто сотворил их? \\q Тот, кто выводит их воинство по числу, \\q всех их {{deity_pronoun:он|Он}} называет по имени; \\q по великому [{{deity_pronoun:его|Его}}] могуществу и [будучи] крепок силой, \\q ни одно не пропадает.",
+          "B": "Взгляните ввысь и посмотрите. Кто сотворил всё это? \\q Это {{deity_pronoun:он|Он}} выводит их ряды полным числом \\q и каждого вызывает по имени. \\q Так велико {{deity_pronoun:его|Его}} могущество, так велика {{deity_pronoun:его|Его}} сила, \\q что ни одного не недостаёт.",
+          "R": "Посмотрите на небо. Кто создал все звёзды? \\q Бог выводит их, как войско, и {{deity_pronoun:он|Он}} точно знает, сколько их. \\q Он зовёт каждую по имени. \\q Он так силён и могуч, что ни одна из них не пропадает."
         }
       },
       "decisions": [
@@ -4659,6 +5710,16 @@
           "L": "ያዕቆብ ሆይ፣ ለምን ትላለህ፤ እስራኤል ሆይ፣ ለምንስ ትናገራለህ፦ \\q «መንገዴ {{divine_name:ከእግዚአብሔር|ከያህዌ}} ተሰውሯል፤ \\q ፍርዴም ከአምላኬ ያልፋል»?",
           "B": "ያዕቆብ ሆይ፣ ለምን ትላለህ? እስራኤል ሆይ፣ ለምንስ አጥብቀህ ትናገራለህ፦ \\q «መንገዴ {{divine_name:ከእግዚአብሔር|ከያህዌ}} ተሰውሯል፤ \\q አምላኬም ጉዳዬን ቸል ብሎታል»?",
           "R": "እናንተ የእስራኤል ሕዝብ፣ የያዕቆብ ዘሮች፣ ለምን ታማርራላችሁ? \\q እንዲህ ትላላችሁ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} በእኔ ላይ የሚደርሰውን አያይም። \\q አምላኬ ፍትሕ የማግኘት መብቴን ቸል ብሎታል።»"
+        },
+        "hi": {
+          "L": "हे याकूब, तुम क्यों कहते हो, और हे इस्राएल, तुम क्यों बोलते हो, \\q \"मेरा मार्ग {{divine_name:प्रभु|याहवे}} से छिपा है, \\q और मेरा हक़ मेरे परमेश्वर के सामने से निकल जाता है\"?",
+          "B": "हे याकूब, तुम क्यों कहते हो, हे इस्राएल, तुम क्यों यह बात दोहराते हो, \\q \"मेरा मार्ग {{divine_name:प्रभु|याहवे}} से छिपा है, \\q और मेरे परमेश्वर मेरे मुक़दमे को अनदेखा कर देते हैं\"?",
+          "R": "हे इस्राएल के लोगो, हे याकूब के वंशजो, तुम क्यों शिकायत करते हो? \\q तुम कहते हो, \"{{divine_name:प्रभु|याहवे}} नहीं देखते कि मेरे साथ क्या हो रहा है। \\q मेरे परमेश्वर ने मेरे साथ न्याय होने के मेरे हक़ को अनदेखा कर दिया है।\""
+        },
+        "ru": {
+          "L": "Почему ты говоришь, Иаков, и утверждаешь, Израиль: \\q «Скрыт мой путь от {{divine_name:ГОСПОДА|Яхве}}, \\q и моё право проходит мимо моего Бога»?",
+          "B": "Почему ты говоришь, Иаков, почему твердишь, Израиль: \\q «Мой путь скрыт от {{divine_name:ГОСПОДА|Яхве}}, \\q и мой Бог упускает из виду моё дело»?",
+          "R": "Народ Израиля, потомки Иакова, почему вы жалуетесь? \\q Вы говорите: «{{divine_name:ГОСПОДЬ|Яхве}} не видит, что со мной происходит. \\q Мой Бог не обращает внимания на моё право на справедливость.»"
         }
       },
       "decisions": [
@@ -4752,6 +5813,46 @@
           "reason": "For the whole book: where God or the prophet speaks to Jacob or Israel addressed as one, with singular verbs, every level uses \"tu\", as God speaks to one person and as 1:22 sets it for Jerusalem; the people addressed in the plural are \"vocês\". Where Readable names \"povo de Israel\" or \"família de Jacó\", as the English Readable says \"people of Israel\", the singular noun keeps the \"tu\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230400270011"
+          ],
+          "choice": "तुम for Jacob / Israel, addressed as one people",
+          "alternatives": [
+            "तू"
+          ],
+          "reason": "God and the prophet address Israel with तुम, as the prophets note says; तू is kept for speech to God. Jacob and Israel are the people's two names, and Readable says so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400270031",
+            "o230400270051"
+          ],
+          "choice": "\"Иаков\", \"Израиль\" (L, B); \"Народ Израиля, потомки Иакова\" (R)",
+          "alternatives": [],
+          "reason": "Jacob and Israel are the two names of the people, set in parallel through Isaiah 40-49; Literal and Balanced keep both names as the Hebrew pairs them, and Readable says they mean the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4832,6 +5933,16 @@
           "L": "አታውቅምን? ወይስ አልሰማህምን? {{divine_name:እግዚአብሔር|ያህዌ}} የዘላለም አምላክ፣ የምድር ዳርቻዎች ፈጣሪ [ነው]። \\q አይዝልም፤ አይደክምምም፤ \\q ማስተዋሉም አይመረመርም።",
           "B": "አታውቅምን? ወይስ አልሰማህምን? {{divine_name:እግዚአብሔር|ያህዌ}} የዘመናት ሁሉ አምላክ፣ ምድርን እስከ ዳርቻዋ የፈጠረ ነው። \\q አይዝልም ወይም አይደክምም፤ \\q ማስተዋሉም ከመመርመር በላይ ነው።",
           "R": "ይህን አታውቅምን? አልሰማህምን? {{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም የሚኖር አምላክ ነው። ምድርን ሁሉ ከዳር እስከ ዳር ፈጠረ። \\q ፈጽሞ አይደክምም፤ አይዝልምም። \\q ምን ያህል ጠቢብ እንደ ሆነ ማንም ፈጽሞ ሊረዳ አይችልም።"
+        },
+        "hi": {
+          "L": "क्या तुम नहीं जानते, या क्या तुमने नहीं सुना? {{divine_name:प्रभु|याहवे}} सनातन परमेश्वर [हैं], पृथ्वी के छोरों के सृजनहार। \\q वे न थकते हैं, न निढाल होते हैं; \\q उनकी समझ की कोई थाह नहीं।",
+          "B": "क्या तुम नहीं जानते? या क्या तुमने नहीं सुना? {{divine_name:प्रभु|याहवे}} युग-युग के परमेश्वर हैं, पृथ्वी के दूर-दूर के छोरों तक के रचनेवाले। \\q वे न थकते हैं, न निढाल होते हैं, \\q और उनकी समझ की थाह कोई नहीं ले सकता।",
+          "R": "क्या तुम यह नहीं जानते? क्या तुमने यह नहीं सुना? {{divine_name:प्रभु|याहवे}} वह परमेश्वर हैं जो सदा जीवित रहते हैं। उन्होंने सारी पृथ्वी को, एक छोर से दूसरे छोर तक, बनाया है। \\q वे कभी नहीं थकते, न कभी कमज़ोर पड़ते हैं। \\q कोई भी पूरी तरह नहीं समझ सकता कि वे कितने बुद्धिमान हैं।"
+        },
+        "ru": {
+          "L": "Разве ты не знаешь, или разве ты не слышал? Бог вечности — {{divine_name:ГОСПОДЬ|Яхве}}, Творец концов земли. \\q Он не изнемогает, и {{deity_pronoun:он|Он}} не утомляется; \\q нет исследования {{deity_pronoun:его|Его}} разумению.",
+          "B": "Разве ты не знаешь? Или ты не слышал? {{divine_name:ГОСПОДЬ|Яхве}} — Бог всех веков, Создатель земли до самых дальних её краёв. \\q Он не устаёт и не изнемогает, \\q и {{deity_pronoun:его|Его}} разум невозможно постичь.",
+          "R": "Разве ты этого не знаешь? Разве ты не слышал? {{divine_name:ГОСПОДЬ|Яхве}} — Бог, который живёт вечно. Он создал всю землю от края до края. \\q Он никогда не устаёт и не изнемогает. \\q Никто никогда не сможет до конца понять, как {{deity_pronoun:он|Он}} мудр."
         }
       },
       "decisions": [
@@ -4946,6 +6057,46 @@
           "reason": "The meaning decision notes that the two verbs return in verses 30 and 31; Amharic keeps one word for each so the reader hears the LORD's strength given to those who wait for him.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400280131",
+            "o230400280151"
+          ],
+          "choice": "\"थकना\" for 'grow faint'; \"निढाल होना\" (L, B), \"कमज़ोर पड़ना\" (R) for 'grow weary'",
+          "alternatives": [
+            "श्रमित होना"
+          ],
+          "reason": "The same two verbs return in verses 30 and 31 (meaning m2), so each keeps one Hindi word through the three verses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400280131",
+            "o230400280151"
+          ],
+          "choice": "\"изнемогает\" ... \"утомляется\" (L), as in verses 30 and 31",
+          "alternatives": [],
+          "reason": "The same two verbs describe the young in verse 30 and are denied of those who wait for the LORD in verse 31 (m2); Literal gives each Hebrew verb one Russian verb in all three verses so the link can be seen.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5013,6 +6164,16 @@
           "L": "[እርሱ] ለዛለው ብርታትን ይሰጣል፤ \\q ጉልበት ለሌለውም ኃይልን ያበዛል።",
           "B": "ለዛሉት ብርታትን ይሰጣል፤ \\q ኃይል ለሌላቸውም ብርታታቸውን ይጨምራል።",
           "R": "ለደከሙ ሰዎች ብርታትን ይሰጣል። \\q ደካሞችን ያበረታል።"
+        },
+        "hi": {
+          "L": "[वे] थके हुए को बल देते हैं, \\q और जिसमें शक्ति नहीं, उसकी सामर्थ बढ़ाते हैं।",
+          "B": "वे थके-माँदे को बल देते हैं \\q और जिनमें शक्ति नहीं, उनकी सामर्थ बढ़ाते हैं।",
+          "R": "वे थके हुए लोगों को बल देते हैं। \\q वे कमज़ोर लोगों को बलवान बनाते हैं।"
+        },
+        "ru": {
+          "L": "[Он] даёт утомлённому силу, \\q и не имеющему крепости {{deity_pronoun:он|Он}} умножает мощь.",
+          "B": "Он даёт силу изнемогшим \\q и умножает мощь тех, у кого её нет.",
+          "R": "Он даёт силу уставшим людям. \\q Он делает слабых сильными."
         }
       },
       "decisions": [
@@ -5095,6 +6256,16 @@
           "L": "ወጣቶችም ይዝላሉ፤ ይደክማሉም፤ \\q ጎልማሶችም ፈጽመው ይሰናከላሉ።",
           "B": "ወጣቶች ይዝላሉ፤ ኃይላቸውም ያልቃል፤ \\q በብርታታቸው ዘመን ያሉ ጎልማሶች ተሰናክለው ይወድቃሉ።",
           "R": "ወጣቶች እንኳ ይደክማሉ፤ ጉልበታቸውም ያልቃል። \\q ከሁሉ የበረቱ ጎልማሶች እንኳ ተሰናክለው ይወድቃሉ።"
+        },
+        "hi": {
+          "L": "और जवान थक जाते और निढाल हो जाते हैं, \\q और नौजवान ठोकर खाकर गिर ही पड़ते हैं।",
+          "B": "जवान थक जाते हैं और निढाल हो जाते हैं; \\q भरी जवानी के पुरुष ठोकर खाकर गिर पड़ते हैं।",
+          "R": "जवान लोग भी थक जाते हैं और कमज़ोर पड़ जाते हैं। \\q सबसे बलवान जवान भी लड़खड़ाकर गिर पड़ते हैं।"
+        },
+        "ru": {
+          "L": "И юноши изнемогают и утомляются, \\q и молодые мужчины непременно спотыкаются.",
+          "B": "Юноши изнемогают и выбиваются из сил; \\q молодые мужчины в расцвете сил спотыкаются и падают.",
+          "R": "Даже молодые люди устают, и у них кончаются силы. \\q Даже самые сильные юноши спотыкаются и падают."
         }
       },
       "decisions": [
@@ -5203,6 +6374,16 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} የሚጠባበቁ ግን ብርታታቸውን ይቀይራሉ፤ \\q እንደ ንስሮች በክንፍ ይመጥቃሉ፤ \\q ይሮጣሉ እንጂ አይደክሙም፤ \\q ይሄዳሉ እንጂ አይዝሉም።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} በተስፋ የሚጠባበቁ ግን አዲስ ብርታት ይለብሳሉ። \\q ክንፋቸውን ዘርግተው እንደ ንስሮች ከፍ ብለው ይወጣሉ። \\q ሳይደክሙ ይሮጣሉ፤ \\q ሳይዝሉ ይጓዛሉ።",
           "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} በተስፋ የሚጠብቁ ሰዎች ግን አዲስ ብርታት ይሰጣቸዋል። \\q እንደ ንስሮች ከፍ ብለው ይበርራሉ። \\q ይሮጣሉ፤ ግን አይደክሙም። \\q ይሄዳሉ፤ ግን አይዝሉም።"
+        },
+        "hi": {
+          "L": "पर जो {{divine_name:प्रभु|याहवे}} की बाट जोहते हैं, वे [अपना] बल बदलेंगे; \\q वे उकाबों की तरह पंखों पर ऊपर उठेंगे; \\q वे दौड़ेंगे और निढाल न होंगे; \\q वे चलेंगे और न थकेंगे।",
+          "B": "पर जो {{divine_name:प्रभु|याहवे}} की बाट जोहते हैं, वे नया बल पाते जाएँगे। \\q वे उकाबों के समान फैले पंखों पर ऊँचे उड़ेंगे। \\q वे दौड़ेंगे और निढाल न होंगे; \\q वे चलेंगे और न थकेंगे।",
+          "R": "पर जो लोग {{divine_name:प्रभु|याहवे}} की राह देखते और उन पर आशा रखते हैं, उन्हें नया बल मिलेगा। \\q वे उकाबों की तरह ऊँचे उड़ेंगे। \\q वे दौड़ेंगे और कमज़ोर नहीं पड़ेंगे। \\q वे चलेंगे और नहीं थकेंगे।"
+        },
+        "ru": {
+          "L": "Но ждущие {{divine_name:ГОСПОДА|Яхве}} обменяют [свою] силу; \\q взлетят на крыльях, как орлы; \\q побегут и не утомятся; \\q пойдут и не изнемогут.",
+          "B": "Но те, кто ждёт {{divine_name:ГОСПОДА|Яхве}}, обретут новую силу. \\q Они поднимутся высоко на распростёртых крыльях, как орлы. \\q Они будут бежать и не выбьются из сил; \\q будут идти и не устанут.",
+          "R": "Но люди, которые ждут {{divine_name:ГОСПОДА|Яхве}} и надеются на {{deity_pronoun:него|Него}}, получат новые силы. \\q Они взлетят высоко, как орлы. \\q Они будут бежать и не устанут. \\q Они будут идти и не ослабеют."
         }
       },
       "decisions": [
@@ -5408,6 +6589,49 @@
             "\"ኃይላቸውን ያድሳሉ\" (renew)"
           ],
           "reason": "The meaning decision reads the verb as exchanging spent strength for new, as one changes clothes; Literal keeps that picture, and Balanced says \"put on fresh strength\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310012",
+            "o230400310031"
+          ],
+          "choice": "\"बाट जोहते हैं\" (L, B); \"राह देखते और उन पर आशा रखते हैं\" (R); \"[अपना] बल बदलेंगे\" (L), \"नया बल पाते जाएँगे\" (B)",
+          "alternatives": [
+            "आशा रखते हैं"
+          ],
+          "reason": "Waiting for the LORD is \"बाट जोहना\", as Psalm 27:14 and 37:9; Readable adds the hope it implies (meaning m1). Literal keeps 'exchange' (meaning m2), Balanced says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230400310031",
+            "o230400310041"
+          ],
+          "choice": "\"обменяют [свою] силу\" (L); \"обретут новую силу\" (B)",
+          "alternatives": [
+            "\"обновятся в силе\""
+          ],
+          "reason": "The verb means to exchange, trading spent strength for new as one changes clothes (m2); Literal keeps the picture, Balanced and Readable give the sense, as the English does.",
           "uncertain": false,
           "footnote": false
         }
