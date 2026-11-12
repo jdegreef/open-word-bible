@@ -75,6 +75,16 @@
           "L": "በስምንተኛው ወር፣ በዳርዮስ በሁለተኛው ዓመት፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል ወደ አዶ ልጅ ወደ በራክዩ ልጅ ወደ ነቢዩ ዘካርያስ መጣ፤ እንዲህም አለ፦",
           "B": "ዳርዮስ በነገሠ በሁለተኛው ዓመት በስምንተኛው ወር {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል የአዶ ልጅ የበራክዩ ልጅ ወደ ሆነው ወደ ነቢዩ ዘካርያስ መጣ፦",
           "R": "ዳርዮስ በነገሠ በሁለተኛው ዓመት፣ በዓመቱ ስምንተኛ ወር፣ {{divine_name:እግዚአብሔር|ያህዌ}} ለነቢዩ ዘካርያስ መልእክት ሰጠው። ዘካርያስ የበራክዩ ልጅ፣ የአዶም የልጅ ልጅ ነበረ። መልእክቱም ይህ ነው፦"
+        },
+        "hi": {
+          "L": "आठवें महीने में, दारा के दूसरे वर्ष में, {{divine_name:प्रभु|याहवे}} का वचन इद्दो के पुत्र बिरिक्याह के पुत्र ज़कर्याह भविष्यद्वक्ता के पास पहुँचा:",
+          "B": "दारा के राज्य के दूसरे वर्ष के आठवें महीने में {{divine_name:प्रभु|याहवे}} का वचन ज़कर्याह भविष्यद्वक्ता के पास पहुँचा, जो इद्दो के पुत्र बिरिक्याह का पुत्र था:",
+          "R": "राजा दारा के राज्य के दूसरे वर्ष के आठवें महीने में {{divine_name:प्रभु|याहवे}} ने ज़कर्याह नबी को यह संदेश दिया। ज़कर्याह बिरिक्याह का बेटा और इद्दो का पोता था। संदेश यह है:"
+        },
+        "ru": {
+          "L": "В восьмой месяц, во второй год Дария, было слово {{divine_name:ГОСПОДА|Яхве}} к Захарии, сыну Варахии, сына Иддо, пророку, говоря:",
+          "B": "В восьмой месяц второго года царствования Дария {{divine_name:ГОСПОДЬ|Яхве}} обратился к пророку Захарии, сыну Варахии, сына Иддо:",
+          "R": "В восьмой месяц года, во второй год царствования Дария, {{divine_name:ГОСПОДЬ|Яхве}} дал такое слово пророку Захарии, сыну Варахии и внуку Иддо:"
         }
       },
       "decisions": [
@@ -418,6 +428,149 @@
           "reason": "As in the other prophets on main. The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic, and this chapter has no deity_pronoun spans.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380010010081"
+          ],
+          "choice": "प्रभु for both YHWH and Adonai; the divine_name setting tells them apart",
+          "alternatives": [
+            "यहोवा"
+          ],
+          "reason": "Hindi प्रभु translates both the divine name YHWH and the title Adonai (\"Lord\", 4:14; 6:5). Wherever the Hebrew has the name, प्रभु stands inside a divine_name span whose alternative is याहवे, so a reader who switches the setting sees which is which; where प्रभु stands alone it is Adonai. यहोवा (the Old Version's form) is not used. God takes honorific plural agreement (वे, कहते हैं) in both options.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010010052",
+            "o380010010101",
+            "o380010010121",
+            "o380010010141"
+          ],
+          "choice": "ज़कर्याह, बिरिक्याह, इद्दो; दारा",
+          "alternatives": [
+            "जकर्याह",
+            "बेरेक्याह"
+          ],
+          "reason": "Zechariah and Iddo keep the forms of Ezra 5:1 and 6:14, where the same prophet is named (ज़कर्याह, इद्दो), and ज़कर्याह is also the form of Matthew 23:35. Berechiah keeps the form Matthew 23:35 gives for Zechariah's father, बिरिक्याह (meaning m4). Darius is दारा, as Ezra 4:24. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010010061",
+            "o380010010071",
+            "o380010010081",
+            "o380010010091",
+            "o380010010152"
+          ],
+          "choice": "{{divine_name:प्रभु|याहवे}} का वचन X के पास पहुँचा (L, B); {{divine_name:प्रभु|याहवे}} ने X को यह संदेश दिया (R); भविष्यद्वक्ता (L, B), नबी (R)",
+          "alternatives": [],
+          "reason": "The formula \"the word of the LORD came to X\" has one wording per level through the Prophets, as the terms note sets it and as Jeremiah and Zephaniah have it; Literal does not translate \"saying\" as a separate word, the colon introduces the words. \"Prophet\" is भविष्यद्वक्ता at Literal and Balanced and the everyday नबी at Readable, as in the New Testament. The date keeps \"the second year of Darius\" (L), \"of Darius's reign\" (B, R), as Ezra 4:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-4",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010010111",
+            "o380010010121",
+            "o380010010131",
+            "o380010010141"
+          ],
+          "choice": "इद्दो के पुत्र बिरिक्याह का पुत्र (L, B); बिरिक्याह का बेटा और इद्दो का पोता (R)",
+          "alternatives": [
+            "बिरिक्याह के पुत्र, इद्दो के पुत्र"
+          ],
+          "reason": "Hindi puts the chain of fathers before the name, so \"son of Berechiah, son of Iddo\" reads इद्दो के पुत्र बिरिक्याह के पुत्र ज़कर्याह. Readable says grandson, as the English does, since Ezra 5:1 calls Zechariah simply \"son of Iddo\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010010061",
+            "o380010010071",
+            "o380010010081",
+            "o380010010091"
+          ],
+          "choice": "\"было слово ГОСПОДА к ...\" (L); \"ГОСПОДЬ обратился к ...\" (B); \"ГОСПОДЬ дал такое слово ...\" (R)",
+          "alternatives": [
+            "\"было слово ГОСПОДНЕ к ...\""
+          ],
+          "reason": "The prophets note's wording for \"the word of the LORD came to\", the same at every heading of Zechariah (1:7; 4:8; 6:9; 7:1, 4, 8; 8:1, 18) as in Jeremiah, Haggai and the rest of the Twelve.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010010051",
+            "o380010010052",
+            "o380010010101",
+            "o380010010111",
+            "o380010010121",
+            "o380010010131",
+            "o380010010141"
+          ],
+          "choice": "Захария, сын Варахии, сына Иддо; Дарий",
+          "alternatives": [
+            "\"Захария, сын Берехии\""
+          ],
+          "reason": "The names keep the forms already used: Захария, сын Варахии as Matthew 23:35 names him, Захария, сын Иддо and Дарий as Ezra 5:1 and 6:14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -481,6 +634,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በአባቶቻችሁ ላይ በቁጣ ተቆጣ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በቅድመ አያቶቻችሁ ላይ እጅግ ተቆጥቶ ነበር።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በቅድመ አያቶቻችሁ ላይ በጣም ተቆጥቶ ነበር።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} तुम्हारे पूर्वजों पर [बड़े] क्रोध से क्रोधित हुए थे।",
+          "B": "{{divine_name:प्रभु|याहवे}} तुम्हारे पूर्वजों पर बहुत क्रोधित हुए थे।",
+          "R": "{{divine_name:प्रभु|याहवे}} तुम्हारे पूर्वजों पर बहुत क्रोधित हुए थे।"
+        },
+        "ru": {
+          "L": "Прогневался {{divine_name:ГОСПОДЬ|Яхве}} на ваших отцов [великим] гневом.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} сильно гневался на ваших предков.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} очень гневался на ваших предков."
         }
       },
       "decisions": [
@@ -611,6 +774,67 @@
           "reason": "Amharic can keep the Hebrew's verb with its own noun, so Literal needs no supplied word; Balanced and Readable say \"እጅግ\" / \"በጣም\" (very).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010020041"
+          ],
+          "choice": "पूर्वज at every level",
+          "alternatives": [
+            "पिता",
+            "पुरखा"
+          ],
+          "reason": "\"Your fathers\" means the generations before the exile (meaning m2). Hindi पूर्वज says this at every level, as Jeremiah 7:25-26 has it in this translation; पिता would suggest the hearers' own fathers only.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o380010020011",
+            "o380010020051"
+          ],
+          "choice": "[बड़े] क्रोध से क्रोधित",
+          "alternatives": [],
+          "reason": "The Hebrew strengthens the verb with its own noun (meaning m1). Literal keeps the repetition and brackets \"great\", as the English Literal does; Balanced and Readable say बहुत क्रोधित.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010020041",
+            "o380010020042"
+          ],
+          "choice": "отцы (L); предки (B, R)",
+          "alternatives": [
+            "\"отцы\" at every level"
+          ],
+          "reason": "As in Jeremiah: Literal keeps the Hebrew \"fathers\", Balanced and Readable say \"предки\", the generations before the exile (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -689,6 +913,16 @@
           "L": "ስለዚህ እንዲህ በላቸው፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ ወደ እኔ ተመለሱ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፤ እኔም ወደ እናንተ እመለሳለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።»",
           "B": "ስለዚህ እንዲህ በላቸው፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ወደ እኔ ተመለሱ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ እኔም እንደገና ወደ እናንተ እመለሳለሁ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።»",
           "R": "ስለዚህ ለሕዝቡ እንዲህ በላቸው፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ወደ እኔ ተመለሱ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ እኔም ወደ እናንተ እመለሳለሁ፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።»"
+        },
+        "hi": {
+          "L": "इसलिए उनसे कहो, \"सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: मेरी ओर लौटो, सेनाओं के {{divine_name:प्रभु|याहवे}} की यह वाणी है, ताकि मैं तुम्हारी ओर लौटूँ, सेनाओं के {{divine_name:प्रभु|याहवे}} कहते हैं।\"",
+          "B": "इसलिए उनसे कहो, \"सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: मेरी ओर लौटो, सेनाओं के {{divine_name:प्रभु|याहवे}} की यह वाणी है, और मैं तुम्हारी ओर लौटूँगा, सेनाओं के {{divine_name:प्रभु|याहवे}} कहते हैं।\"",
+          "R": "इसलिए लोगों से कहो, \"सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: मेरे पास लौट आओ, सेनाओं के {{divine_name:प्रभु|याहवे}} कहते हैं, और मैं तुम्हारे पास लौट आऊँगा, सेनाओं के {{divine_name:प्रभु|याहवे}} कहते हैं।\""
+        },
+        "ru": {
+          "L": "Итак, скажи им: «Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Обратитесь ко {{deity_pronoun:мне|Мне}}, — слово {{divine_name:ГОСПОДА|Яхве}} Саваофа, — и {{deity_pronoun:я|Я}} обращусь к вам, говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф.»",
+          "B": "Итак, скажи им: «Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Вернитесь ко {{deity_pronoun:мне|Мне}}, говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф, и {{deity_pronoun:я|Я}} вернусь к вам, говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф.»",
+          "R": "Итак, скажи народу: «Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств: Вернитесь ко {{deity_pronoun:мне|Мне}}, говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств, и {{deity_pronoun:я|Я}} вернусь к вам, говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств.»"
         }
       },
       "decisions": [
@@ -997,6 +1231,121 @@
           "reason": "Malachi 3:7 repeats this call in the same Hebrew, so both books read alike; only Zechariah's own frame differs, with \"declares the LORD of hosts\" between the two halves.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010030051",
+            "o380010030061",
+            "o380010030101",
+            "o380010030111",
+            "o380010030151",
+            "o380010030161"
+          ],
+          "choice": "सेनाओं के {{divine_name:प्रभु|याहवे}}",
+          "alternatives": [
+            "सेनाओं का यहोवा"
+          ],
+          "reason": "\"YHWH of hosts\" is सेनाओं के प्रभु at every level, as Isaiah and Romans 9:29 have it in this translation. The English Balanced and Readable say \"of Armies\"; सेनाओं already means armies, so one form serves all three levels. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010030031",
+            "o380010030041",
+            "o380010030091",
+            "o380010030141"
+          ],
+          "choice": "यों कहते हैं (L), यह कहते हैं (B, R); की यह वाणी है (L, B), कहते हैं (R); the plain verb \"says\" कहते हैं at every level",
+          "alternatives": [],
+          "reason": "The three formulas follow the terms note for the Prophets, one wording per level, as Isaiah and Zephaniah have them: \"Thus says\" is यों कहते हैं at Literal and यह कहते हैं at Balanced and Readable; the solemn ne'um (\"declares\") is की यह वाणी है at Literal and Balanced and कहते हैं at Readable; the ordinary verb \"says\" at the end of the verse is कहते हैं at every level. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380010030082"
+          ],
+          "choice": "No deity_pronoun spans in Hindi",
+          "alternatives": [],
+          "reason": "The English marks God's pronouns (\"me\", \"my\", \"he\") with the deity_pronoun setting. Devanagari has no capital letters, so the Hindi has no such spans; respect for God is carried by the honorific third person (वे, उनका, उन्होंने). God speaking to his people uses तुम, and the angel praying to God uses तू (verse 12). This holds for every record of this file.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010030031",
+            "o380010030041",
+            "o380010030051",
+            "o380010030061",
+            "o380010030091",
+            "o380010030101",
+            "o380010030111"
+          ],
+          "choice": "\"Так говорит ГОСПОДЬ Саваоф\" (L, B), \"Вот что говорит ГОСПОДЬ Воинств\" (R); \"— слово ГОСПОДА Саваофа\" (L), \"говорит ГОСПОДЬ Саваоф / Воинств\" (B, R)",
+          "alternatives": [
+            "\"ГОСПОДЬ Сил\"",
+            "\"сказал ГОСПОДЬ\""
+          ],
+          "reason": "The prophets note's formulas, one wording per level through Zechariah: \"Thus says\", \"declares\" and \"says\" the LORD of hosts. Саваоф is the traditional form of \"of hosts\" at Literal and Balanced, as in Isaiah; Readable says what it means, \"Воинств\", as the English \"of Armies\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380010030081",
+            "o380010030082"
+          ],
+          "choice": "{{deity_pronoun:мне|Мне}}, {{deity_pronoun:я|Я}}",
+          "alternatives": [],
+          "reason": "God speaks in the first person on most pages of Zechariah; every pronoun for God takes the deity_pronoun setting, as in Isaiah, except a pronoun that begins a sentence and the reflexive свой, себя.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1095,6 +1444,16 @@
           "L": "የቀደሙት ነቢያት፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ እባካችሁ፣ ከክፉ መንገዳችሁና ከክፉ ሥራችሁ ተመለሱ» ብለው እንደ ጠሯቸው እንደ አባቶቻችሁ አትሁኑ። እነርሱ ግን አልሰሙም፤ እኔንም አላደመጡም፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "የቀደሙት ነቢያት፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ከክፉ መንገዳችሁና ከክፉ ሥራችሁ ተመለሱ» ብለው እንደ ጠሯቸው እንደ ቅድመ አያቶቻችሁ አትሁኑ። እነርሱ ግን አልሰሙም፤ እኔንም አላደመጡም፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "እንደ ቅድመ አያቶቻችሁ አትሁኑ። ከብዙ ጊዜ በፊት ነቢያቱ፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ከምትኖሩበት ክፉ መንገድና ከምትሠሩት ክፉ ሥራ ተመለሱ» ብለው ጠሯቸው። ቅድመ አያቶቻችሁ ግን አልሰሙም፤ እኔንም አላደመጡም፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "तुम अपने पूर्वजों के समान न बनो, जिनसे पहले के भविष्यद्वक्ताओं ने पुकारकर कहा, \"सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: अपने बुरे मार्गों से और अपने बुरे कामों से फिरो तो।\" पर उन्होंने न सुना और न मेरी ओर ध्यान दिया, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "अपने पूर्वजों के समान न बनो, जिनसे पहले के भविष्यद्वक्ताओं ने पुकारकर कहा था, \"सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: अपने बुरे मार्गों और अपने बुरे कामों से फिरो।\" पर उन्होंने न मेरी सुनी, न मेरी ओर ध्यान दिया, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "अपने पूर्वजों जैसे मत बनो। बहुत पहले नबियों ने उन्हें पुकारकर कहा था, \"सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: अपना बुरा चालचलन और अपने बुरे काम छोड़ दो।\" पर तुम्हारे पूर्वजों ने नहीं सुना। उन्होंने मेरी बात पर कोई ध्यान नहीं दिया, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "Не будьте как ваши отцы, к которым взывали прежние пророки, говоря: «Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Обратитесь же от ваших злых путей и от ваших злых дел.» Но они не слушали и не внимали {{deity_pronoun:мне|Мне}}, — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Не будьте как ваши предки, к которым взывали прежние пророки: «Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Отвратитесь от ваших злых путей и злых дел.» Но они не хотели слушать и не внимали {{deity_pronoun:мне|Мне}}, говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Не будьте как ваши предки. Давным-давно пророки взывали к ним: «Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств: Оставьте злой путь, которым вы живёте, и злые дела, которые вы делаете.» Но ваши предки не хотели слушать. Они не обращали на {{deity_pronoun:меня|Меня}} внимания, говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -1220,6 +1579,44 @@
           "reason": "Amharic puts the relative clause before the noun it describes, so the fathers to whom the prophets called come after the call; Readable splits the sentence in two, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010040151"
+          ],
+          "choice": "फिरो तो",
+          "alternatives": [
+            "कृपया फिरो"
+          ],
+          "reason": "The small particle na softens the command into an appeal (meaning m2). Literal shows it with the pleading तो; कृपया would sound like an office request. Balanced and Readable let the tone carry it, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010040151"
+          ],
+          "choice": "же (L); not shown (B, R)",
+          "alternatives": [
+            "\"прошу\""
+          ],
+          "reason": "The small softening word of the Hebrew is \"же\" at Literal; Balanced and Readable let the tone carry the appeal, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1288,6 +1685,16 @@
           "L": "አባቶቻችሁ፣ እነርሱ የት [አሉ]? ነቢያቱስ ለዘላለም ይኖራሉን?",
           "B": "ቅድመ አያቶቻችሁ አሁን የት አሉ? ነቢያቱስ ለዘላለም ይኖራሉን?",
           "R": "ቅድመ አያቶቻችሁ አሁን የት አሉ? ነቢያቱስ ለዘላለም ኖሩን?"
+        },
+        "hi": {
+          "L": "तुम्हारे पूर्वज, वे कहाँ [हैं]? और भविष्यद्वक्ता, क्या वे सदा जीवित रहते हैं?",
+          "B": "तुम्हारे पूर्वज, वे अब कहाँ हैं? और भविष्यद्वक्ता, क्या वे सदा जीवित रहते हैं?",
+          "R": "तुम्हारे पूर्वज अब कहाँ हैं? और क्या वे नबी सदा जीवित रहे?"
+        },
+        "ru": {
+          "L": "Ваши отцы — где они? И пророки — разве вечно будут жить?",
+          "B": "Ваши предки — где они теперь? И пророки — разве живут вечно?",
+          "R": "Где теперь ваши предки? И разве пророки жили вечно?"
         }
       },
       "decisions": [
@@ -1426,6 +1833,16 @@
           "L": "ነገር ግን ባሪያዎቼን ነቢያትን ያዘዝኳቸው ቃሎቼና ሥርዓቶቼ አባቶቻችሁን አልደረሱባቸውምን? እነርሱም ተመለሱ፤ እንዲህም አሉ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንደ መንገዳችንና እንደ ሥራችን ሊያደርግብን እንዳሰበ እንዲሁ አደረገብን።»",
           "B": "ነገር ግን አገልጋዮቼ ነቢያት እንዲናገሩ ያዘዝኳቸው ቃሎቼና ሥርዓቶቼ ቅድመ አያቶቻችሁን አልደረሱባቸውምን? እነርሱም ንስሓ ገብተው፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ሊያደርግብን እንዳሰበ እንደ መንገዳችንና እንደ ሥራችን መጠን አደረገብን» አሉ።",
           "R": "ነገር ግን አገልጋዮቼ ነቢያት እንዲናገሩ የሰጠኋቸው ቃሎችና ሕጎች ቅድመ አያቶቻችሁን አልደረሱባቸውምን? እነርሱም ተመልሰው እንዲህ አሉ፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ሊያደርግብን ያሰበውን አድርጎብናል። ስለ ኖርንበት መንገድና ስለ ሠራነው ሥራ ቀጥቶናል።»"
+        },
+        "hi": {
+          "L": "पर मेरे वचन और मेरी विधियाँ, जिनकी आज्ञा मैंने अपने दास भविष्यद्वक्ताओं को दी थी, क्या उन्होंने तुम्हारे पूर्वजों को आ न पकड़ा? तब उन्होंने मन फिराया और कहा, \"जैसा सेनाओं के {{divine_name:प्रभु|याहवे}} ने हमारे साथ करने की ठानी थी, हमारे मार्गों और हमारे कामों के अनुसार, वैसा ही उन्होंने हमारे साथ किया है।\"",
+          "B": "पर मेरे वचन और मेरी विधियाँ, जिन्हें सुनाने की आज्ञा मैंने अपने दास भविष्यद्वक्ताओं को दी थी, क्या उन्होंने तुम्हारे पूर्वजों को आ न पकड़ा? तब उन्होंने मन फिराया और कहा, \"सेनाओं के {{divine_name:प्रभु|याहवे}} ने हमारे मार्गों और हमारे कामों के अनुसार हमारे साथ वैसा ही किया है, जैसा उन्होंने करने की ठानी थी।\"",
+          "R": "पर जो वचन और नियम मैंने अपने दास नबियों को सुनाने के लिए दिए थे, क्या उन्होंने आख़िरकार तुम्हारे पूर्वजों को आ नहीं पकड़ा? तब वे मेरी ओर लौट आए और कहने लगे, \"सेनाओं के {{divine_name:प्रभु|याहवे}} ने हमारे साथ वही किया जो उन्होंने करने की ठानी थी। हम जैसे जिए और जो काम हमने किए, उनके लिए उन्होंने हमें दंड दिया है।\""
+        },
+        "ru": {
+          "L": "Но {{deity_pronoun:мои|Мои}} слова и {{deity_pronoun:мои|Мои}} установления, которые {{deity_pronoun:я|Я}} заповедал {{deity_pronoun:моим|Моим}} рабам-пророкам, разве не настигли они ваших отцов? И они обратились и сказали: «Как замыслил {{divine_name:ГОСПОДЬ|Яхве}} Саваоф поступить с нами по нашим путям и по нашим делам, так {{deity_pronoun:он|Он}} и поступил с нами.»",
+          "B": "Но {{deity_pronoun:мои|Мои}} слова и {{deity_pronoun:мои|Мои}} постановления, которые {{deity_pronoun:я|Я}} поручил возвещать {{deity_pronoun:моим|Моим}} рабам-пророкам, — разве не настигли они ваших предков? Тогда те покаялись и сказали: «{{divine_name:ГОСПОДЬ|Яхве}} Саваоф поступил с нами по нашим путям и делам, как {{deity_pronoun:он|Он}} и замыслил.»",
+          "R": "Но слова и законы, которые {{deity_pronoun:я|Я}} дал {{deity_pronoun:моим|Моим}} рабам-пророкам, чтобы они их возвещали, — разве не настигли они ваших предков? Тогда те обратились и сказали: «{{divine_name:ГОСПОДЬ|Яхве}} Воинств сделал с нами то, что {{deity_pronoun:он|Он}} задумал. Он наказал нас за то, как мы жили, и за то, что мы делали.»"
         }
       },
       "decisions": [
@@ -1649,6 +2066,48 @@
           "reason": "As for the LORD's servants in Isaiah and Jeremiah on main: Literal keeps the word for a slave, Balanced and Readable the word for one who serves. \"ደረሰባቸው\" is used of a pursuer catching someone, the picture of the meaning decision.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010060101"
+          ],
+          "choice": "आ पकड़ना",
+          "alternatives": [
+            "पूरे होना"
+          ],
+          "reason": "The verb pictures the words as a pursuer catching up with someone (meaning m1). Hindi आ पकड़ना keeps the picture at every level, and Readable adds आख़िरकार to show that the warning came true in the end.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010060101"
+          ],
+          "choice": "настигли",
+          "alternatives": [
+            "\"сбылись на\""
+          ],
+          "reason": "The Hebrew pictures God's words overtaking the ancestors like a pursuer (m1); \"настигли\" keeps the picture at every level, as the English \"overtaken\" and \"catch up with\" do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1736,6 +2195,16 @@
           "L": "በአሥራ አንደኛው ወር፣ ማለትም በሳባጥ ወር፣ በሃያ አራተኛው ቀን፣ በዳርዮስ በሁለተኛው ዓመት፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል ወደ አዶ ልጅ ወደ በራክዩ ልጅ ወደ ነቢዩ ዘካርያስ መጣ፤ እንዲህም አለ፦",
           "B": "ዳርዮስ በነገሠ በሁለተኛው ዓመት፣ በአሥራ አንደኛው ወር በሳባጥ በሃያ አራተኛው ቀን {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል የአዶ ልጅ የበራክዩ ልጅ ወደ ሆነው ወደ ነቢዩ ዘካርያስ መጣ፦",
           "R": "ዳርዮስ በነገሠ በሁለተኛው ዓመት፣ በዓመቱ አሥራ አንደኛ ወር በሳባጥ በሃያ አራተኛው ቀን፣ {{divine_name:እግዚአብሔር|ያህዌ}} ለበራክዩ ልጅና ለአዶ የልጅ ልጅ ለነቢዩ ዘካርያስ ሌላ መልእክት ሰጠው። መልእክቱም ይህ ነው፦"
+        },
+        "hi": {
+          "L": "ग्यारहवें महीने के, जो शबात महीना है, चौबीसवें दिन, दारा के दूसरे वर्ष में, {{divine_name:प्रभु|याहवे}} का वचन इद्दो के पुत्र बिरिक्याह के पुत्र ज़कर्याह भविष्यद्वक्ता के पास पहुँचा:",
+          "B": "दारा के राज्य के दूसरे वर्ष में, ग्यारहवें महीने अर्थात् शबात महीने के चौबीसवें दिन, {{divine_name:प्रभु|याहवे}} का वचन ज़कर्याह भविष्यद्वक्ता के पास पहुँचा, जो इद्दो के पुत्र बिरिक्याह का पुत्र था:",
+          "R": "राजा दारा के राज्य के दूसरे वर्ष में, शबात महीने के चौबीसवें दिन, जो साल का ग्यारहवाँ महीना है, {{divine_name:प्रभु|याहवे}} ने ज़कर्याह नबी को एक और संदेश दिया। ज़कर्याह बिरिक्याह का बेटा और इद्दो का पोता था। संदेश यह है:"
+        },
+        "ru": {
+          "L": "В двадцать четвёртый день одиннадцатого месяца — это месяц Шеват, — во второй год Дария было слово {{divine_name:ГОСПОДА|Яхве}} к Захарии, сыну Варахии, сына Иддо, пророку, говоря:",
+          "B": "В двадцать четвёртый день Шевата, одиннадцатого месяца, во второй год царствования Дария {{divine_name:ГОСПОДЬ|Яхве}} обратился к пророку Захарии, сыну Варахии, сына Иддо:",
+          "R": "В двадцать четвёртый день Шевата, одиннадцатого месяца года, во второй год царствования Дария, {{divine_name:ГОСПОДЬ|Яхве}} дал ещё одно слово пророку Захарии, сыну Варахии и внуку Иддо:"
         }
       },
       "decisions": [
@@ -1942,6 +2411,53 @@
           "reason": "The Babylonian month names are given in their traditional Amharic Bible forms; Literal keeps the Hebrew's \"that is, the month of Shebat\" as Esther 3:7 does for Adar.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010070091"
+          ],
+          "choice": "शबात",
+          "alternatives": [
+            "शेबात"
+          ],
+          "reason": "The month name is transcribed from the Hebrew, as Nehemiah 1:1 transcribes Kislev (किसलेव). The heading repeats verse 1's wording at each level; Readable adds \"another\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010070012",
+            "o380010070021",
+            "o380010070061",
+            "o380010070091",
+            "o380010070102",
+            "o380010070122"
+          ],
+          "choice": "Шеват",
+          "alternatives": [
+            "\"Шват\""
+          ],
+          "reason": "The month's name is transliterated as the other Hebrew months are (месяц Кислев in Nehemiah 1:1); the heading follows verse 1 at each level, with \"ещё одно\" at Readable as the English \"another\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2026,6 +2542,16 @@
           "L": "በሌሊት አየሁ፤ እነሆም፣ አንድ ሰው በቀይ ፈረስ ላይ ተቀምጦ ነበር! እርሱም በጥልቁ ስፍራ ባሉት በባርሰነት ዛፎች መካከል ቆሞ ነበር፤ ከበስተ ኋላውም ቀይ፣ ቡናማና ነጭ ፈረሶች [ነበሩ]።",
           "B": "በሌሊት ራእይ አየሁ፤ በቀይ ፈረስ ላይ የተቀመጠ አንድ ሰው ነበር። እርሱም በሸለቆው ውስጥ ባሉት የባርሰነት ዛፎች መካከል ቆሞ ነበር፤ ከበስተ ኋላውም ቀይ፣ ቡናማና ነጭ ፈረሶች ነበሩ።",
           "R": "በሌሊት ራእይ አየሁ። አንድ ሰው በቀይ ፈረስ ላይ ተቀምጦ ነበር። እርሱም በጥልቅ ሸለቆ ውስጥ በባርሰነት ዛፎች መካከል ቆሞ ነበር። ከበስተ ኋላውም ቀይ፣ ቀይ ቡናማና ነጭ ፈረሶች ነበሩ።"
+        },
+        "hi": {
+          "L": "मैंने रात को देखा, और देखो, एक पुरुष लाल घोड़े पर सवार [था]! और वह उन मेंहदियों के बीच खड़ा था जो खड्ड में [थीं], और उसके पीछे घोड़े [थे], लाल, कुम्मैत और सफ़ेद।",
+          "B": "मैंने रात में एक दर्शन देखा: एक पुरुष लाल घोड़े पर सवार था। वह खड्ड में मेंहदी के पेड़ों के बीच खड़ा था, और उसके पीछे लाल, लाल-भूरे और सफ़ेद घोड़े थे।",
+          "R": "रात को मैंने एक दर्शन देखा। एक आदमी लाल घोड़े पर सवार था। वह एक गहरी घाटी में मेंहदी के पेड़ों के बीच खड़ा था। उसके पीछे लाल, लाल-भूरे और सफ़ेद घोड़े थे।"
+        },
+        "ru": {
+          "L": "Видел я ночью, и вот — человек, едущий на рыжем коне, и он стоял среди миртов, что в низине, а позади него — кони рыжие, гнедые и белые.",
+          "B": "Ночью я увидел видение: человек верхом на рыжем коне. Он стоял среди миртовых деревьев в лощине, а позади него были рыжие, гнедые и белые кони.",
+          "R": "Ночью мне было видение. Я увидел человека, который ехал на рыжем коне. Он стоял среди миртовых деревьев в глубокой долине. Позади него были кони рыжие, красновато-бурые и белые."
         }
       },
       "decisions": [
@@ -2279,6 +2805,68 @@
           "reason": "Isaiah on main uses both \"ባርሰነት\" and \"አደስ\" for the myrtle; \"ባርሰነት\" is kept here for all four mentions. The horse colours use plain colour words; Readable spells out \"reddish brown\" as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010080121",
+            "o380010080122",
+            "o380010080181"
+          ],
+          "choice": "मेंहदी (myrtle); कुम्मैत (L), लाल-भूरे (B, R)",
+          "alternatives": [
+            "हदस"
+          ],
+          "reason": "The myrtle is मेंहदी, as Nehemiah 8:15 and Isaiah 55:13 have it in this translation. Sorrel, a reddish-brown horse (meaning m5), is the horse-colour word कुम्मैत at Literal; Balanced and Readable describe the colour.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010080032"
+          ],
+          "choice": "देखो",
+          "alternatives": [],
+          "reason": "Literal keeps the word that marks what is seen in the vision, as the English Literal keeps \"look\"; Balanced and Readable simply tell what he saw and add दर्शन, as the English adds \"vision\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010080142",
+            "o380010080181"
+          ],
+          "choice": "вот (L); not shown (B, R); в низине (L), в лощине (B), в глубокой долине (R); гнедые (L, B), красновато-бурые (R)",
+          "alternatives": [
+            "\"буланые\""
+          ],
+          "reason": "Literal keeps \"вот\", the word that marks what is seen in a vision. The low, shaded place (m4) is a hollow or ravine. Sorrel means reddish brown (m5): \"гнедые\" at Literal and Balanced; Readable says the colour plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2358,6 +2946,16 @@
           "L": "እኔም፦ «ጌታዬ ሆይ፣ እነዚህ ምንድን ናቸው?» አልኩ። ከእኔ ጋር የሚነጋገረው መልአክም፦ «እነዚህ ምን እንደ ሆኑ እኔ አሳይሃለሁ» አለኝ።",
           "B": "እኔም፦ «ጌታዬ ሆይ፣ እነዚህ ምንድን ናቸው?» ብዬ ጠየቅኩ። ከእኔ ጋር የሚነጋገረው መልአክም፦ «ምን እንደ ሆኑ አሳይሃለሁ» ብሎ መለሰልኝ።",
           "R": "እኔም፦ «ጌታዬ ሆይ፣ እነዚህ ምንድን ናቸው?» ብዬ ጠየቅኩ። ከእኔ ጋር የሚነጋገረው መልአክም፦ «ምን እንደ ሆኑ አሳይሃለሁ» አለኝ።"
+        },
+        "hi": {
+          "L": "तब मैंने कहा, \"हे मेरे स्वामी, ये क्या [हैं]?\" और उस स्वर्गदूत ने जो मुझसे बातें करता था, मुझसे कहा, \"मैं ही तुम्हें दिखाऊँगा कि ये क्या हैं।\"",
+          "B": "मैंने पूछा, \"हे मेरे स्वामी, ये क्या हैं?\" जो स्वर्गदूत मुझसे बातें करता था, उसने उत्तर दिया, \"मैं तुम्हें दिखाऊँगा कि ये क्या हैं।\"",
+          "R": "मैंने पूछा, \"महोदय, ये क्या हैं?\" जो स्वर्गदूत मुझसे बातें करता था, उसने कहा, \"मैं तुम्हें बताऊँगा कि ये क्या हैं।\""
+        },
+        "ru": {
+          "L": "И я сказал: «Что это, господин мой?» И сказал мне ангел, который говорил со мной: «Я сам покажу тебе, что это.»",
+          "B": "Я спросил: «Что это, господин мой?» Ангел, который говорил со мной, ответил: «Я покажу тебе, что это.»",
+          "R": "Я спросил: «Господин мой, что это?» Ангел, который говорил со мной, сказал: «Я покажу тебе, что это значит.»"
         }
       },
       "decisions": [
@@ -2590,6 +3188,82 @@
           "reason": "One wording for the interpreting angel through chapters 1-6, as the terms list sets. Zechariah addresses him politely with \"ጌታዬ ሆይ\", the address Daniel uses to the angel (Daniel 12:8); the angel, like God, speaks to the prophet with \"አንተ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010090072",
+            "o380010090081",
+            "o380010090082",
+            "o380010090091",
+            "o380010090092"
+          ],
+          "choice": "वह स्वर्गदूत जो मुझसे बातें करता था, at every level",
+          "alternatives": [
+            "बोलनेवाला दूत"
+          ],
+          "reason": "As the English sets for Zechariah's visions, the angel who explains them keeps one description at every level and in every vision (meaning m1), so the reader can follow him from scene to scene. He speaks to Zechariah with तुम.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o380010090041",
+            "o380010090042"
+          ],
+          "choice": "हे मेरे स्वामी (L, B); महोदय (R)",
+          "alternatives": [
+            "हे मेरे प्रभु"
+          ],
+          "reason": "\"My lord\" is a polite address to someone of higher rank (meaning m2), not a name of God; Hindi keeps प्रभु for God. The forms are those of Daniel 12:8, where Daniel addresses an angel the same way.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010090041",
+            "o380010090042",
+            "o380010090071",
+            "o380010090072",
+            "o380010090081",
+            "o380010090082",
+            "o380010090091",
+            "o380010090092"
+          ],
+          "choice": "ангел, который говорил со мной (every level, every vision); господин мой",
+          "alternatives": [
+            "\"ангел, говоривший со мной\"",
+            "\"ангел, говоривший во мне\""
+          ],
+          "reason": "As in the English, the angel who explains the visions keeps one description at every level and in every vision of Zechariah 1-6, so the reader can follow him. \"My lord\" is a polite address to one of higher rank (m2), lowercase.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2666,6 +3340,16 @@
           "L": "በባርሰነት ዛፎቹ መካከል ቆሞ የነበረው ሰውም መለሰ፤ እንዲህም አለ፦ «እነዚህ {{divine_name:እግዚአብሔር|ያህዌ}} በምድር ላይ እንዲመላለሱ የላካቸው ናቸው።»",
           "B": "በባርሰነት ዛፎቹ መካከል የቆመው ሰውም፦ «እነዚህ {{divine_name:እግዚአብሔር|ያህዌ}} ምድርን እንዲቃኙ የላካቸው ናቸው» ብሎ አስረዳ።",
           "R": "በባርሰነት ዛፎቹ መካከል የቆመው ሰውም፦ «እነዚህ {{divine_name:እግዚአብሔር|ያህዌ}} በምድር ሁሉ እየዞሩ የሚሆነውን እንዲያዩ የላካቸው ናቸው» አለ።"
+        },
+        "hi": {
+          "L": "और जो पुरुष मेंहदियों के बीच खड़ा था, उसने उत्तर देकर कहा, \"ये वे [हैं] जिन्हें {{divine_name:प्रभु|याहवे}} ने पृथ्वी पर इधर-उधर घूमने को भेजा है।\"",
+          "B": "तब मेंहदी के पेड़ों के बीच खड़े पुरुष ने समझाया, \"ये वे हैं जिन्हें {{divine_name:प्रभु|याहवे}} ने पृथ्वी पर गश्त लगाने के लिए भेजा है।\"",
+          "R": "तब मेंहदी के पेड़ों के बीच खड़े आदमी ने कहा, \"इन्हें {{divine_name:प्रभु|याहवे}} ने भेजा है, कि ये सारी पृथ्वी पर घूमें और देखें कि क्या हो रहा है।\""
+        },
+        "ru": {
+          "L": "И отвечал человек, стоявший среди миртов, и сказал: «Это те, которых послал {{divine_name:ГОСПОДЬ|Яхве}} ходить по земле.»",
+          "B": "Тогда человек, стоявший среди миртовых деревьев, объяснил: «Это те, кого {{divine_name:ГОСПОДЬ|Яхве}} послал обходить землю дозором.»",
+          "R": "Тогда человек, стоявший среди миртовых деревьев, сказал: «Это те, кого {{divine_name:ГОСПОДЬ|Яхве}} послал пройти по всей земле и посмотреть, что там происходит.»"
         }
       },
       "decisions": [
@@ -2773,6 +3457,44 @@
           "reason": "The same three wordings are used for the verb in 1:11 and 6:7, so the horsemen and the chariots read alike.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010100112"
+          ],
+          "choice": "इधर-उधर घूमना (L); गश्त लगाना (B); घूमें और देखें कि क्या हो रहा है (R)",
+          "alternatives": [],
+          "reason": "The verb means going to and fro like scouts (meaning m1). Balanced uses the word for a patrol; Readable spells out its purpose, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010100112"
+          ],
+          "choice": "ходить по земле (L); обходить землю дозором (B); пройти по всей земле и посмотреть, что там происходит (R)",
+          "alternatives": [
+            "\"патрулировать землю\""
+          ],
+          "reason": "The riders go to and fro over the earth like scouts (m1). Balanced names the patrol with a native phrase; Readable spells out its purpose, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2853,6 +3575,16 @@
           "L": "እነርሱም በባርሰነት ዛፎቹ መካከል ቆሞ ለነበረው {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ መለሱ፤ እንዲህም አሉ፦ «በምድር ላይ ተመላለስን፤ እነሆም፣ ምድር ሁሉ ተቀምጣለች፤ ጸጥም ብላለች።»",
           "B": "እነርሱም በባርሰነት ዛፎቹ መካከል ለቆመው {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ፦ «ምድርን ሁሉ ቃኘን፤ ምድር ሁሉ ጸጥ ብላ አርፋለች» ብለው ነገሩት።",
           "R": "እነርሱም በባርሰነት ዛፎቹ መካከል ለቆመው {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ፦ «በምድር ሁሉ ዞረናል። ዓለም ሁሉ ሰላምና ጸጥታ ነው» አሉት።"
+        },
+        "hi": {
+          "L": "और उन्होंने {{divine_name:प्रभु|याहवे}} के दूत को, जो मेंहदियों के बीच खड़ा था, उत्तर दिया और कहा, \"हमने पृथ्वी पर इधर-उधर घूमकर देखा है, और देखो, सारी पृथ्वी शान्त बैठी है और चैन से [है]।\"",
+          "B": "उन्होंने {{divine_name:प्रभु|याहवे}} के दूत को, जो मेंहदी के पेड़ों के बीच खड़ा था, बताया, \"हमने सारी पृथ्वी पर गश्त लगाई है, और सारी पृथ्वी शान्त और चैन से है।\"",
+          "R": "उन्होंने {{divine_name:प्रभु|याहवे}} के दूत को, जो मेंहदी के पेड़ों के बीच खड़ा था, बताया, \"हम सारी पृथ्वी पर घूम आए हैं। सारी दुनिया में शान्ति और चैन है।\""
+        },
+        "ru": {
+          "L": "И отвечали они Ангелу {{divine_name:ГОСПОДА|Яхве}}, стоявшему среди миртов, и сказали: «Мы прошли по земле, и вот — вся земля сидит и покоится.»",
+          "B": "Они доложили Ангелу {{divine_name:ГОСПОДА|Яхве}}, стоявшему среди миртовых деревьев: «Мы обошли дозором всю землю, и вся она тиха и спокойна.»",
+          "R": "Они сказали Ангелу {{divine_name:ГОСПОДА|Яхве}}, который стоял среди миртовых деревьев: «Мы прошли по всей земле. Весь мир живёт спокойно и тихо.»"
         }
       },
       "decisions": [
@@ -3050,6 +3782,50 @@
           "reason": "As the Pentateuch list and the terms list set; the two angels of the visions keep their own titles at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010110031",
+            "o380010110041"
+          ],
+          "choice": "{{divine_name:प्रभु|याहवे}} का दूत",
+          "alternatives": [
+            "प्रभु का स्वर्गदूत"
+          ],
+          "reason": "\"The angel of the LORD\" keeps the form of Judges 6 in this translation, {{divine_name:प्रभु|याहवे}} का दूत, at every level. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010110031",
+            "o380010110041"
+          ],
+          "choice": "Ангел {{divine_name:ГОСПОДА|Яхве}}",
+          "alternatives": [
+            "\"ангел ГОСПОДЕНЬ\""
+          ],
+          "reason": "The Pentateuch note's form for \"the angel of the LORD\", with a capital, as in Genesis, Judges and Isaiah 37:36; kept apart from the angel who talked with Zechariah, written lowercase.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3131,6 +3907,16 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} መልአክም መለሰ፤ እንዲህም አለ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት ሆይ፣ እነዚህን ሰባ ዓመታት የተቆጣሃቸውን ኢየሩሳሌምንና የይሁዳን ከተሞች የማትምራቸው እስከ መቼ ነው?»",
           "B": "ከዚያም {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እነዚህን ሰባ ዓመታት ከተቆጣሃቸው ከኢየሩሳሌምና ከይሁዳ ከተሞች ርኅራኄህን የምትከለክለው እስከ መቼ ነው?» አለ።",
           "R": "ከዚያም {{divine_name:የእግዚአብሔር|የያህዌ}} መልአክ እንዲህ አለ፦ «የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለኢየሩሳሌምና ለይሁዳ ከተሞች የምትራራላቸው መቼ ነው? ይኸው ሰባ ዓመት ሙሉ ተቆጥተሃቸዋል።»"
+        },
+        "hi": {
+          "L": "तब {{divine_name:प्रभु|याहवे}} के दूत ने उत्तर देकर कहा, \"हे सेनाओं के {{divine_name:प्रभु|याहवे}}, तू कब तक यरूशलेम पर और यहूदा के नगरों पर दया न करेगा, जिन पर तू इन सत्तर वर्षों से क्रोधित रहा है?\"",
+          "B": "तब {{divine_name:प्रभु|याहवे}} के दूत ने कहा, \"हे सेनाओं के {{divine_name:प्रभु|याहवे}}, तू कब तक यरूशलेम और यहूदा के नगरों पर अपनी दया रोके रखेगा, जिन पर तू इन सत्तर वर्षों से क्रोधित है?\"",
+          "R": "तब {{divine_name:प्रभु|याहवे}} के दूत ने कहा, \"हे सेनाओं के {{divine_name:प्रभु|याहवे}}, यरूशलेम और यहूदा के नगरों पर दया करने में तू और कितनी देर लगाएगा? तू सत्तर वर्षों से उन पर क्रोधित है।\""
+        },
+        "ru": {
+          "L": "И отвечал Ангел {{divine_name:ГОСПОДА|Яхве}} и сказал: «{{divine_name:ГОСПОДИ|Яхве}} Саваоф, доколе {{deity_pronoun:ты|Ты}} не помилуешь Иерусалим и города Иуды, на которые {{deity_pronoun:ты|Ты}} гневаешься вот уже семьдесят лет?»",
+          "B": "Тогда Ангел {{divine_name:ГОСПОДА|Яхве}} сказал: «{{divine_name:ГОСПОДИ|Яхве}} Саваоф, доколе {{deity_pronoun:ты|Ты}} будешь отказывать в милосердии Иерусалиму и городам Иуды, на которые {{deity_pronoun:ты|Ты}} гневаешься уже семьдесят лет?»",
+          "R": "Тогда Ангел {{divine_name:ГОСПОДА|Яхве}} сказал: «{{divine_name:ГОСПОДИ|Яхве}} Воинств, сколько ещё ждать, пока {{deity_pronoun:ты|Ты}} проявишь милосердие к Иерусалиму и городам Иуды? Ты гневаешься на них уже семьдесят лет.»"
         }
       },
       "decisions": [
@@ -3289,6 +4075,47 @@
           "reason": "Prayer and lament to God use \"አንተ\" throughout the Amharic Bible; \"ሆይ\" marks the vocative where the English has a bare name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o380010120091"
+          ],
+          "choice": "तू (the angel to God)",
+          "alternatives": [
+            "आप"
+          ],
+          "reason": "The angel prays to the LORD, and Hindi prayer addresses God with the intimate तू, as the Psalms do in this translation. Elsewhere in the book God in the third person takes the honorific plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o380010120051",
+            "o380010120061"
+          ],
+          "choice": "{{divine_name:ГОСПОДИ|Яхве}} Саваоф / Воинств (vocative); {{deity_pronoun:ты|Ты}}",
+          "alternatives": [],
+          "reason": "The angel addresses the LORD, so the name stands in the vocative inside the default option, and \"ты\" for God takes the deity_pronoun setting; a \"Ты\" that begins a sentence is written plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3360,6 +4187,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ከእኔ ጋር ለሚነጋገረው መልአክ በመልካም ቃል፣ በሚያጽናና ቃል መለሰለት።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}}ም ከእኔ ጋር ለሚነጋገረው መልአክ በመልካምና በሚያጽናና ቃል መለሰለት።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከእኔ ጋር ለሚነጋገረው መልአክ መለሰለት። ደግ ቃል፣ የሚያጽናና ቃልም ነገረው።"
+        },
+        "hi": {
+          "L": "और {{divine_name:प्रभु|याहवे}} ने उस स्वर्गदूत को जो मुझसे बातें करता था, अच्छे वचनों, शान्ति देनेवाले वचनों से उत्तर दिया।",
+          "B": "तब {{divine_name:प्रभु|याहवे}} ने उस स्वर्गदूत को, जो मुझसे बातें करता था, भले और शान्ति देनेवाले वचनों से उत्तर दिया।",
+          "R": "{{divine_name:प्रभु|याहवे}} ने उस स्वर्गदूत को उत्तर दिया जो मुझसे बातें करता था। उन्होंने उससे दया भरी बातें कहीं, ढाढ़स बँधानेवाली बातें।"
+        },
+        "ru": {
+          "L": "И отвечал {{divine_name:ГОСПОДЬ|Яхве}} ангелу, который говорил со мной, словами добрыми, словами утешительными.",
+          "B": "И {{divine_name:ГОСПОДЬ|Яхве}} ответил ангелу, который говорил со мной, добрыми и утешительными словами.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} ответил ангелу, который говорил со мной. Он сказал ему добрые слова, слова утешения."
         }
       },
       "decisions": [
@@ -3495,6 +4332,16 @@
           "L": "ከእኔ ጋር የሚነጋገረው መልአክም እንዲህ አለኝ፦ «እንዲህ ብለህ ጩኽ፦ “{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ ለኢየሩሳሌምና ለጽዮን በታላቅ ቅናት ቀንቻለሁ።",
           "B": "ከዚያም ከእኔ ጋር የሚነጋገረው መልአክ እንዲህ አለኝ፦ «ይህን አውጅ፦ “የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ለኢየሩሳሌምና ለጽዮን እጅግ እቀናለሁ።",
           "R": "ከዚያም ከእኔ ጋር የሚነጋገረው መልአክ እንዲህ አለኝ፦ «ይህን መልእክት አውጅ፦ “የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ለኢየሩሳሌምና ለጽዮን እጅግ እቀናለሁ። እወዳቸዋለሁ፤ እጠብቃቸዋለሁም።"
+        },
+        "hi": {
+          "L": "तब उस स्वर्गदूत ने जो मुझसे बातें करता था, मुझसे कहा, \"पुकारकर कहो, 'सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: मैं यरूशलेम के लिए और सिय्योन के लिए बड़ी जलन से जलता रहा हूँ।",
+          "B": "तब उस स्वर्गदूत ने जो मुझसे बातें करता था, मुझसे कहा, \"यह प्रचार करो: 'सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: मुझे यरूशलेम और सिय्योन के लिए गहरी जलन है।",
+          "R": "तब उस स्वर्गदूत ने जो मुझसे बातें करता था, कहा, \"यह संदेश सुनाओ: 'सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: मुझे यरूशलेम और सिय्योन के लिए बहुत जलन है। मैं उनसे प्रेम करता हूँ और उनकी रक्षा करूँगा।"
+        },
+        "ru": {
+          "L": "И сказал мне ангел, который говорил со мной: «Возвещай, говоря: “Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Я возревновал о Иерусалиме и о Сионе ревностью великой.",
+          "B": "Тогда ангел, который говорил со мной, сказал мне: «Возвести: “Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Я горячо ревную о Иерусалиме и о Сионе.",
+          "R": "Тогда ангел, который говорил со мной, сказал: «Возвести такую весть: “Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств: Я горячо ревную о Иерусалиме и о Сионе. Я люблю их и буду их защищать."
         }
       },
       "decisions": [
@@ -3724,6 +4571,51 @@
           "reason": "\"ለ... ቀና\" is zeal for what is one's own, as Joel 2:18 and Ezekiel 39:25 on main say of the LORD; Literal keeps the Hebrew's verb with its own noun (\"በታላቅ ቅናት ቀንቻለሁ\"). Readable adds the English Readable's gloss \"I love them and will protect them\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010140121",
+            "o380010140151"
+          ],
+          "choice": "जलन",
+          "alternatives": [
+            "ईर्ष्या",
+            "उत्साह"
+          ],
+          "reason": "The LORD's jealousy is zeal for what belongs to him and fierce protection of it (meaning m1), not envy. Hindi जलन carries this as Joel 2:18 has it in this translation; ईर्ष्या would mean envy of a rival. Literal keeps the cognate noun (बड़ी जलन से जलता रहा हूँ); Readable adds what the jealousy means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010140121",
+            "o380010140151"
+          ],
+          "choice": "возревновал ... ревностью великой (L); горячо ревную (B, R); Я люблю их и буду их защищать (R)",
+          "alternatives": [
+            "\"пламенно люблю\""
+          ],
+          "reason": "God's jealousy is zeal for what belongs to him and fierce protection of it (m1). Russian \"ревновать о\" carries both; Readable adds what it means, as the English does. The speech within the speech opens with “ and runs on to verse 17, as the English quotation does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3800,6 +4692,16 @@
           "L": "ተዘልለው በተቀመጡት ሕዝቦችም ላይ በታላቅ ቁጣ እቆጣለሁ፤ እኔ [ብቻ] ጥቂት ተቆጥቼ ነበርና፤ እነርሱ ግን ለጥፋት አገዙ።",
           "B": "ተማምነው በተቀመጡት ሕዝቦች ላይ ደግሞ እጅግ ተቆጥቻለሁ። እኔ በሕዝቤ ላይ የተቆጣሁት ጥቂት ብቻ ነበር፤ እነርሱ ግን ጥፋቱን አባባሱት።",
           "R": "ደኅና ነን ብለው በሚያስቡት ሕዝቦች ላይ ደግሞ በጣም ተቆጥቻለሁ። እኔ በሕዝቤ ላይ የተቆጣሁት ጥቂት ብቻ ነበር። እነዚያ ሕዝቦች ግን ከልክ አልፈው መከራቸውን እጅግ አባባሱት።"
+        },
+        "hi": {
+          "L": "और मैं उन जातियों पर, जो निश्चिन्त हैं, बड़े क्रोध से क्रोधित हूँ; क्योंकि मैं थोड़ा [ही] क्रोधित था, पर उन्होंने [उसे] विपत्ति की ओर बढ़ाने में सहायता की।",
+          "B": "पर उन राष्ट्रों पर, जो इतने निश्चिन्त हैं, मैं बहुत क्रोधित हूँ। मैं अपनी प्रजा पर थोड़ा ही क्रोधित था, पर उन्होंने विपत्ति को और बढ़ा दिया।",
+          "R": "और मैं उन देशों पर बहुत क्रोधित हूँ जो सोचते हैं कि वे सुरक्षित हैं। मैं अपने लोगों पर थोड़ा ही क्रोधित था। पर उन देशों ने हद पार कर दी और उनका दुःख बहुत बढ़ा दिया।"
+        },
+        "ru": {
+          "L": "И великим гневом {{deity_pronoun:я|Я}} гневаюсь на народы беспечные; ведь {{deity_pronoun:я|Я}} гневался [лишь] немного, а они содействовали беде.",
+          "B": "И {{deity_pronoun:я|Я}} сильно гневаюсь на народы, которые живут так беспечно. Я лишь немного гневался на {{deity_pronoun:мой|Мой}} народ, а они усилили бедствие.",
+          "R": "И {{deity_pronoun:я|Я}} очень гневаюсь на народы, которые думают, что они в безопасности. Я лишь немного гневался на {{deity_pronoun:мой|Мой}} народ. Но эти народы зашли слишком далеко и сделали его страдания гораздо тяжелее."
         }
       },
       "decisions": [
@@ -3890,6 +4792,45 @@
           "reason": "As the Amharic glossary sets for the goyim in the Old Testament (\"አሕዛብ\" only in New Testament quotations); \"ተዘልለው መቀመጥ\" is to sit carelessly at ease, the complacency of the meaning decision.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010150061",
+            "o380010150062"
+          ],
+          "choice": "जातियाँ (L); राष्ट्र (B); देश (R)",
+          "alternatives": [],
+          "reason": "\"The nations\" follows the rule of the poetry and Prophets notes: जातियाँ at Literal, राष्ट्र or देश at Balanced and Readable. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o380010150101",
+            "o380010150111"
+          ],
+          "choice": "на {{deity_pronoun:мой|Мой}} народ (B, R)",
+          "alternatives": [],
+          "reason": "The Hebrew leaves the object of God's limited anger unsaid; Balanced and Readable name his people, as the English does (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3970,6 +4911,16 @@
           "L": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ በርኅራኄ ወደ ኢየሩሳሌም ተመልሻለሁ፤ ቤቴ በእርሷ ውስጥ ይሠራል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፤ በኢየሩሳሌምም ላይ ገመድ ይዘረጋል።”",
           "B": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ በርኅራኄ ወደ ኢየሩሳሌም ተመልሻለሁ። ቤቴ በእርሷ ውስጥ እንደ ገና ይሠራል፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}፤ በኢየሩሳሌምም ላይ የመለኪያ ገመድ ይዘረጋል።”",
           "R": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ርኅራኄዬን ላሳያት ወደ ኢየሩሳሌም ተመልሻለሁ። ቤተ መቅደሴ በዚያ እንደ ገና ይሠራል፣ ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። ሠራተኞችም በኢየሩሳሌም ላይ የመለኪያ ገመዳቸውን ይዘረጋሉ።”"
+        },
+        "hi": {
+          "L": "इसलिए {{divine_name:प्रभु|याहवे}} यों कहते हैं: मैं दया के साथ यरूशलेम की ओर लौट आया हूँ; उसमें मेरा भवन बनाया जाएगा, सेनाओं के {{divine_name:प्रभु|याहवे}} की यह वाणी है, और यरूशलेम पर डोरी तानी जाएगी।'",
+          "B": "इसलिए {{divine_name:प्रभु|याहवे}} यह कहते हैं: मैं दया के साथ यरूशलेम में लौट आया हूँ। उसमें मेरा भवन फिर से बनाया जाएगा, सेनाओं के {{divine_name:प्रभु|याहवे}} की यह वाणी है, और यरूशलेम पर नापने की डोरी तानी जाएगी।'",
+          "R": "इसलिए {{divine_name:प्रभु|याहवे}} यह कहते हैं: मैं यरूशलेम पर दया करने के लिए उसके पास लौट आया हूँ। वहाँ मेरा मन्दिर फिर से बनाया जाएगा, सेनाओं के {{divine_name:प्रभु|याहवे}} कहते हैं। कारीगर यरूशलेम पर अपनी नापने की डोरियाँ तानेंगे।'"
+        },
+        "ru": {
+          "L": "Поэтому так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Я вернулся к Иерусалиму с милосердием; {{deity_pronoun:мой|Мой}} дом будет построен в нём, — слово {{divine_name:ГОСПОДА|Яхве}} Саваофа, — и мерный шнур будет протянут над Иерусалимом.”",
+          "B": "Поэтому так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Я вернулся к Иерусалиму с милосердием. Мой дом будет отстроен в нём, говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф, и над Иерусалимом протянут мерный шнур.”",
+          "R": "Поэтому вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: Я вернулся в Иерусалим, чтобы проявить к нему милосердие. Мой храм снова будет построен там, говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств. Строители протянут над Иерусалимом свои мерные шнуры.”"
         }
       },
       "decisions": [
@@ -4117,6 +5068,47 @@
           "reason": "For the whole book (also 2:5): the builder's line (m3) is \"cordel\", the word Jeremiah 31:39 uses in Portuguese for the same picture; Balanced and Readable say what it is for, \"de medir\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010160152"
+          ],
+          "choice": "डोरी (L); नापने की डोरी (B, R); मन्दिर (R)",
+          "alternatives": [],
+          "reason": "The line is a builder's measuring line (meaning m3), नापने की डोरी as Ezekiel 47:3; Literal keeps the bare word. Readable says मन्दिर for \"my house\" and names the builders, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010160152",
+            "o380010160161"
+          ],
+          "choice": "мерный шнур",
+          "alternatives": [
+            "\"вервь\"",
+            "\"измерительная верёвка\""
+          ],
+          "reason": "The measuring line of builders laying out the city (m3); the same word in 2:1-2 (Hebrew 2:5-6) for the man with the line.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4199,6 +5191,16 @@
           "L": "ደግሞም እንዲህ ብለህ ጩኽ፦ “{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ ከተሞቼ ደግሞ በመልካም ነገር ይትረፈረፋሉ፤ {{divine_name:እግዚአብሔር|ያህዌ}}ም ደግሞ ጽዮንን ያጽናናል፤ ኢየሩሳሌምንም ደግሞ ይመርጣል።”»",
           "B": "ደግሞም ይህን አውጅ፦ “የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ከተሞቼ እንደ ገና በብልጽግና ይትረፈረፋሉ፤ {{divine_name:እግዚአብሔር|ያህዌ}}ም ጽዮንን እንደ ገና ያጽናናል፤ ኢየሩሳሌምንም እንደ ገና ይመርጣል።”»",
           "R": "ይህንም ደግሞ አውጅ፦ “የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ከተሞቼ እንደ ገና በመልካም ነገሮች ይሞላሉ። {{divine_name:እግዚአብሔር|ያህዌ}} ጽዮንን እንደ ገና ያጽናናል፤ ኢየሩሳሌምንም እንደ ገና የራሱ አድርጎ ይመርጣታል።”»"
+        },
+        "hi": {
+          "L": "फिर पुकारकर कहो, 'सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: मेरे नगर फिर भलाई से उमड़ेंगे, और {{divine_name:प्रभु|याहवे}} फिर सिय्योन को शान्ति देंगे, और फिर यरूशलेम को चुनेंगे।'\"",
+          "B": "यह भी प्रचार करो: 'सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: मेरे नगर फिर से समृद्धि से उमड़ उठेंगे, और {{divine_name:प्रभु|याहवे}} फिर सिय्योन को शान्ति देंगे और फिर यरूशलेम को चुनेंगे।'\"",
+          "R": "यह भी सुनाओ: 'सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: मेरे नगर फिर से अच्छी चीज़ों से भर जाएँगे। {{divine_name:प्रभु|याहवे}} फिर सिय्योन को शान्ति देंगे, और एक बार फिर वे यरूशलेम को अपना नगर चुन लेंगे।'\""
+        },
+        "ru": {
+          "L": "Ещё возвещай, говоря: “Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Снова переполнятся {{deity_pronoun:мои|Мои}} города добром, и снова утешит {{divine_name:ГОСПОДЬ|Яхве}} Сион, и снова изберёт Иерусалим.”»",
+          "B": "Возвести и это: “Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: Мои города снова будут переполнены благополучием, и {{divine_name:ГОСПОДЬ|Яхве}} снова утешит Сион и снова изберёт Иерусалим.”»",
+          "R": "Возвести и это: “Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств: Мои города снова будут полны всякого добра. {{divine_name:ГОСПОДЬ|Яхве}} снова утешит Сион и снова изберёт Иерусалим для себя.”»"
         }
       },
       "decisions": [
@@ -4332,6 +5334,25 @@
           "choice": "\"again\" four times as \"ደግሞ\" at Literal",
           "alternatives": [],
           "reason": "Literal repeats one word for the Hebrew's fourfold \"again\" (the first in \"call out again\"), so the stress the meaning decision notes is kept; Balanced and Readable vary with \"እንደ ገና\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o380010170112"
+          ],
+          "choice": "भलाई (L); समृद्धि (B); अच्छी चीज़ें (R)",
+          "alternatives": [],
+          "reason": "\"Good\" here means prosperity (meaning m2): Literal keeps the plain word, Balanced names it, Readable says what fills the towns.",
           "uncertain": false,
           "footnote": false
         }
