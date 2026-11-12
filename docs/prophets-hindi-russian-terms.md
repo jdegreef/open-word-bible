@@ -27,7 +27,7 @@ One wording per level, through all seventeen books.
 
 | Hebrew (English L / R) | Hindi | Russian |
 |---|---|---|
-| *koh ʾamar YHWH* (Thus says the LORD / This is what the LORD says) | `{{divine_name:प्रभु\|याहवे}}` यों कहते हैं (L, B); `{{divine_name:प्रभु\|याहवे}}` यह कहते हैं (R) | Так говорит `{{divine_name:ГОСПОДЬ\|Яхве}}` (L, B); Вот что говорит `{{divine_name:ГОСПОДЬ\|Яхве}}` (R) |
+| *koh ʾamar YHWH* (Thus says the LORD / This is what the LORD says) | `{{divine_name:प्रभु\|याहवे}}` यों कहते हैं (L); `{{divine_name:प्रभु\|याहवे}}` यह कहते हैं (B, R), as Kings | Так говорит `{{divine_name:ГОСПОДЬ\|Яхве}}` (L, B); Вот что говорит `{{divine_name:ГОСПОДЬ\|Яхве}}` (R) |
 | *neʾum YHWH* (declares the LORD / says the LORD) | `{{divine_name:प्रभु\|याहवे}}` की यह वाणी है (L, B); `{{divine_name:प्रभु\|याहवे}}` कहते हैं (R) | — слово `{{divine_name:ГОСПОДА\|Яхве}}` (L); говорит `{{divine_name:ГОСПОДЬ\|Яхве}}` (B, R) |
 | the word of the LORD came to X | `{{divine_name:प्रभु\|याहवे}}` का वचन X के पास पहुँचा (L, B); `{{divine_name:प्रभु\|याहवे}}` ने X को यह संदेश दिया (R) | И было слово `{{divine_name:ГОСПОДА\|Яхве}}` к X (L); `{{divine_name:ГОСПОДЬ\|Яхве}}` обратился к X (B); `{{divine_name:ГОСПОДЬ\|Яхве}}` дал X такое слово (R) |
 | *ʾAdonai YHWH* (the Lord GOD) | प्रभु `{{divine_name:परमेश्वर\|याहवे}}`, as Psalms and 2 Samuel 7 | Владыка `{{divine_name:ГОСПОДЬ\|Яхве}}`, inflected, as Psalms |
@@ -79,9 +79,10 @@ Testament form. The main quotations: Isaiah 6:9-10; 7:14; 8:14; 9:1-2; 11:10;
 
 - **Isaiah.** "The Holy One of Israel" one form; the Servant passages
   (42:1-9; 49:1-13; 50:4-11; 52:13-53:12) drafted with care. Cyrus कुस्रू /
-  Кир (as Ezra). Isaiah 7:14 *ʿalmah*: Hindi कुँवारी / Russian дева as the
-  Hebrew allows, with a decision on Matthew 1:23 and the English level's
-  choice.
+  Кир (as Ezra). Isaiah 7:14 *ʿalmah*: the meaning decision is "the young
+  woman", so Hindi युवती / Russian девушка at every level, with a footnoted
+  decision naming Matthew 1:23's कुँवारी / дева (from the Greek *parthenos*).
+  A rendering may not narrow the meaning decision.
 - **Jeremiah.** Baruch, the Rechabites, the kings of Judah as Kings;
   Nebuchadnezzar (Jeremiah also writes Nebuchadrezzar: keep each as the
   Hebrew has it, one form each); "the LORD our righteousness".
