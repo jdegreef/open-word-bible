@@ -68,7 +68,7 @@ A Bíblia wycliffita só foi impressa muito mais tarde: o Novo Testamento em 173
 
 ## Um ponto de partida diferente
 
-A Open Word Bible compartilha a convicção dos tradutores wycliffitas de que os leitores comuns devem poder ler a Bíblia na sua própria língua e de que os tradutores devem explicar o seu método. Mas ela difere em dois pontos importantes. Traduz a partir do hebraico do **Códice de Leningrado de Westminster** e do grego do **SBL Greek New Testament**, e não de uma tradução latina. E não precisa da permissão de ninguém para ser lida ou copiada: a tradução e todo o seu raciocínio são publicados sob uma licença CC0. Ela é feita com ajuda de IA, e os seus rascunhos ainda não foram aprovados por revisores humanos identificados. Veja [Tradução com ajuda de IA e revisão humana](/articles/ai-assisted-translation-and-human-review/).
+A Open Word Bible compartilha a convicção dos tradutores wycliffitas de que os leitores comuns devem poder ler a Bíblia na sua própria língua e de que os tradutores devem explicar o seu método. Mas ela difere em dois pontos importantes. Traduz a partir do hebraico do **Códice de Leningrado de Westminster** e do grego do **Novo Testamento Grego da SBL**, e não de uma tradução latina. E não precisa da permissão de ninguém para ser lida ou copiada: a tradução e todo o seu raciocínio são publicados sob uma licença CC0. Ela é feita com ajuda de IA, e os seus rascunhos ainda não foram aprovados por revisores humanos identificados. Veja [Tradução com ajuda de IA e revisão humana](/articles/ai-assisted-translation-and-human-review/).
 
 ## Fontes
 

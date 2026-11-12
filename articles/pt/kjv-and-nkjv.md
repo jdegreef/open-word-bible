@@ -59,7 +59,7 @@ A característica mais marcante da NKJV está nas suas notas de rodapé. Em vez 
 
 O prefácio apresenta isso como uma forma de deixar o leitor julgar por si mesmo, sem afirmar que uma tradição esteja sempre certa.
 
-As notas revelam alguns padrões interessantes. Às vezes o Texto Recebido fica sozinho contra os outros dois. O exemplo mais claro é 1 João 5:7–8, a passagem conhecida como Comma Johanneum:
+As notas revelam alguns padrões interessantes. Às vezes o Texto Recebido fica sozinho contra os outros dois. O exemplo mais claro é 1 João 5:7–8, a passagem conhecida como Comma joanino:
 
 > For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. (1 João 5:7, KJV)
 >
@@ -110,7 +110,7 @@ Eles também imprimiram traduções alternativas nas margens e revisaram o texto
 
 Por trás das discussões sobre essas duas Bíblias está uma pergunta que toda tradução precisa responder: qual texto grego deve ser traduzido? A resposta da NKJV foi traduzir um e mostrar os outros nas notas de rodapé. É uma forma honesta de lidar com uma discordância, e é o único lugar em que a maioria dos leitores de Bíblias inglesas consegue ver a questão textual.
 
-A Open Word Bible usa outro texto, mas tem uma atitude parecida. O seu Novo Testamento é traduzido do SBL Greek New Testament, uma edição crítica moderna, e o seu Antigo Testamento do Westminster Leningrad Codex. Onde os manuscritos discordam, os seus registros de raciocínio dizem isso e explicam a escolha, para que o leitor que prefere outro texto possa ver exatamente onde ele faria diferença. Os seus rascunhos são feitos com ajuda de IA e aguardam revisão por revisores humanos nomeados; ela usa a King James e a New King James apenas para comparação; e é publicada sob a licença CC0.
+A Open Word Bible usa outro texto, mas tem uma atitude parecida. O seu Novo Testamento é traduzido do Novo Testamento Grego da SBL, uma edição crítica moderna, e o seu Antigo Testamento do Códice de Leningrado de Westminster. Onde os manuscritos discordam, os seus registros de raciocínio dizem isso e explicam a escolha, para que o leitor que prefere outro texto possa ver exatamente onde ele faria diferença. Os seus rascunhos são feitos com ajuda de IA e aguardam revisão por revisores humanos nomeados; ela usa a King James e a New King James apenas para comparação; e é publicada sob a licença CC0.
 
 ## Fontes
 

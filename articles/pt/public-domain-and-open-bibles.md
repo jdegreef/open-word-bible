@@ -74,7 +74,7 @@ Eles vêm com notas de tradução, estudos de palavras e outros auxílios sob a 
 
 Agências maiores também se moveram. A **Biblica**, que mantém a NIV sob direitos autorais, publicou várias das suas traduções em outras grandes línguas, como a Open Kiswahili Contemporary Bible e Bíblias em árabe, iorubá, lingala e português, sob uma licença CC BY-SA, como parte de uma iniciativa "Open Bible". Muitas traduções em línguas minoritárias também são distribuídas hoje gratuitamente no eBible.org e em sites parecidos, algumas sob licenças abertas e outras sob licenças mais restritivas.
 
-Os textos nas línguas originais também importam. O **SBL Greek New Testament** (2010) tem licença CC BY 4.0, e o **Códice de Leningrado de Westminster**, uma edição digital do manuscrito completo mais antigo da Bíblia hebraica, está em domínio público (veja [Os códices de Alepo e de Leningrado](/articles/aleppo-and-leningrad-codices/)). Os conjuntos de dados linguísticos abertos construídos a partir deles, como a Open Scriptures Hebrew Bible e os conjuntos de dados MACULA, têm licença CC BY.
+Os textos nas línguas originais também importam. O **Novo Testamento Grego da SBL** (2010) tem licença CC BY 4.0, e o **Códice de Leningrado de Westminster**, uma edição digital do manuscrito completo mais antigo da Bíblia hebraica, está em domínio público (veja [Os códices de Alepo e de Leningrado](/articles/aleppo-and-leningrad-codices/)). Os conjuntos de dados linguísticos abertos construídos a partir deles, como a Open Scriptures Hebrew Bible e os conjuntos de dados MACULA, têm licença CC BY.
 
 ## Os prós e os contras
 
@@ -89,7 +89,7 @@ A Open Word Bible escolheu a opção mais aberta disponível. A sua tradução, 
 - **Sem permissões, sem condições.** Qualquer pessoa pode citá-la, imprimi-la, vendê-la, gravá-la, adaptá-la ou traduzi-la, sem linha de crédito e sem licença para acompanhar.
 - **Funciona em toda parte.** A CC0 foi pensada para ter o mesmo efeito em países que não reconhecem uma simples declaração de domínio público.
 - **Feita para tradutores.** Cada frase vem em três níveis, Literal, Equilibrada e Acessível, que compartilham um único conjunto de decisões de sentido, com o raciocínio de cada escolha. Quem traduz para outras línguas pode usar as decisões, além do texto em inglês (veja [Três níveis, um sentido](/articles/three-levels-one-meaning/)).
-- **Fontes livres.** Ela traduz a partir do SBL Greek New Testament e do Códice de Leningrado de Westminster, e usa outras Bíblias, protegidas por direitos autorais ou não, só para comparação, nunca como base para a sua formulação.
+- **Fontes livres.** Ela traduz a partir do Novo Testamento Grego da SBL e do Códice de Leningrado de Westminster, e usa outras Bíblias, protegidas por direitos autorais ou não, só para comparação, nunca como base para a sua formulação.
 
 O projeto é jovem, e os seus rascunhos são feitos com ajuda de IA. Nenhum é marcado como revisado até que revisores humanos identificados, que leem hebraico ou grego, o tenham aprovado (veja [Tradução com ajuda de IA e revisão humana](/articles/ai-assisted-translation-and-human-review/)). Ser livre para usar não torna uma tradução boa. Isso precisa ser conquistado pela revisão e pela crítica, e um texto aberto facilita as duas.
 

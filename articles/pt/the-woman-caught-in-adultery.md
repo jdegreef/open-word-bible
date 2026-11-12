@@ -64,7 +64,7 @@ O registro de 7:53 considerou três opções e anotou as três:
 - imprimi-la sem nenhuma marca, como se fosse simplesmente João;
 - imprimi-la no seu lugar habitual, destacada entre colchetes como uma passagem cujo lugar em João é discutido.
 
-Escolheu a terceira, o caminho que o SBL Greek New Testament também segue com os seus colchetes duplos. Na tradução, isso é um par de colchetes: um se abre no início de 7:53, e o outro se fecha no fim de 8:11. No nível Literal, os colchetes também marcam palavras acrescentadas pela tradução, por isso os registros dizem que, dentro da passagem, eles mantêm esse uso, e só o par externo marca a própria passagem.
+Escolheu a terceira, o caminho que o Novo Testamento Grego da SBL também segue com os seus colchetes duplos. Na tradução, isso é um par de colchetes: um se abre no início de 7:53, e o outro se fecha no fim de 8:11. No nível Literal, os colchetes também marcam palavras acrescentadas pela tradução, por isso os registros dizem que, dentro da passagem, eles mantêm esse uso, e só o par externo marca a própria passagem.
 
 O leitor vai um passo além. Nas páginas dos capítulos, a passagem inteira fica à parte, num bloco próprio, debaixo de uma nota curta: os manuscritos mais antigos de João não a têm, e a maioria das Bíblias a imprime, como aqui, à parte e entre colchetes. Um link na nota abre o raciocínio por trás dela.
 

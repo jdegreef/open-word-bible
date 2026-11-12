@@ -59,7 +59,7 @@ O crítico mais temível foi **Thomas More**, o estudioso humanista e, mais tard
 
 Pode-se ver a diferença em 1 Coríntios 13:13. O texto de Tyndale de 1526, em ortografia moderna, diz: "Now abideth faith, hope, and love, even these three: but the chief of these is love" ("Agora permanecem a fé, a esperança e o amor, estes três; mas o principal deles é o amor"). A King James Version voltou à palavra mais antiga: "And now abideth faith, hope, charity, these three; but the greatest of these is charity" ("E agora permanecem a fé, a esperança, a caridade, estes três; mas o maior deles é a caridade"). Uma tradução moderna como a Open Word Bible diz, como Tyndale, "a maior é o amor".
 
-A Open Word Bible registra o mesmo tipo de escolha. Em Mateus 3:2, onde João Batista chama as pessoas ao arrependimento, uma decisão de significado define a palavra como uma mudança de mentalidade e de modo de vida, uma volta para Deus, e enumera "sentir pesar" e "fazer penitência" como as leituras que não adotou. O nível Acessível explicita o sentido:
+A Open Word Bible registra o mesmo tipo de escolha. Em Mateus 3:2, onde João Batista chama as pessoas ao arrependimento, uma decisão de sentido define a palavra como uma mudança de mentalidade e de modo de vida, uma volta para Deus, e enumera "sentir pesar" e "fazer penitência" como as leituras que não adotou. O nível Acessível explicita o sentido:
 
 > {{OWB:MAT.3.1.s1:R}}
 

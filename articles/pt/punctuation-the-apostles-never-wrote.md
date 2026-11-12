@@ -8,7 +8,7 @@ source: c22b704e68b7
 ---
 Os primeiros manuscritos do Novo Testamento foram escritos em letras maiúsculas, muitas vezes sem espaço entre as palavras, com pouquíssima pontuação e nenhuma aspa. As vírgulas, os pontos finais, os pontos de interrogação e as aspas de toda Bíblia moderna, em qualquer língua, foram colocados ali por editores e tradutores.
 
-Na maior parte das vezes isso não cria dificuldade. A gramática deixa claro onde uma frase termina e a seguinte começa. Mas, de vez em quando, uma vírgula decide o que um versículo diz. A Open Word Bible registra essas escolhas como decisões de sentido na categoria *pontuação* e marca as difíceis como incertas. Em geral ela segue a pontuação do SBL Greek New Testament, a edição que traduz, mas as vírgulas dos editores também são um julgamento, e o registro diz isso quando a tradução as lê de outro modo.
+Na maior parte das vezes isso não cria dificuldade. A gramática deixa claro onde uma frase termina e a seguinte começa. Mas, de vez em quando, uma vírgula decide o que um versículo diz. A Open Word Bible registra essas escolhas como decisões de sentido na categoria *pontuação* e marca as difíceis como incertas. Em geral ela segue a pontuação do Novo Testamento Grego da SBL, a edição que traduz, mas as vírgulas dos editores também são um julgamento, e o registro diz isso quando a tradução as lê de outro modo.
 
 ## Romanos 9:5: vírgula ou ponto final?
 

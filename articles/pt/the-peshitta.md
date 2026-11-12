@@ -11,7 +11,7 @@ A maioria dos cristãos do Ocidente conhece a história da Bíblia em grego e em
 
 ## Edessa e os primeiros Evangelhos siríacos
 
-O siríaco é um dialeto do aramaico, a família de línguas que produziu também os [Targuns](/articles/the-targums/) judaicos. Era a língua local de **Edessa**, hoje Şanlıurfa, no sudeste da Turquia, e tornou-se a língua literária dos cristãos da Síria à Pérsia. Já havia uma comunidade cristã em Edessa no fim do século II.
+O siríaco é um dialeto do aramaico, a família de línguas que produziu também os [Targumim](/articles/the-targums/) judaicos. Era a língua local de **Edessa**, hoje Şanlıurfa, no sudeste da Turquia, e tornou-se a língua literária dos cristãos da Síria à Pérsia. Já havia uma comunidade cristã em Edessa no fim do século II.
 
 O primeiro livro dos Evangelhos que muitos cristãos siríacos conheceram não tinha quatro Evangelhos, mas um só. Por volta de 170 d.C., **Taciano**, antigo discípulo de Justino Mártir, entrelaçou os quatro numa única narrativa, o **Diatessarão** ("através dos quatro"). Ele foi o texto padrão dos Evangelhos nas igrejas siríacas por dois séculos ou mais. No século V, Teodoreto, bispo de Ciro, escreveu que tinha encontrado mais de duzentas cópias nas suas igrejas e as substituído pelos quatro Evangelhos separados. Nenhuma cópia completa sobreviveu em siríaco.
 
@@ -35,7 +35,7 @@ A Igreja do Oriente tornou-se uma das grandes igrejas missionárias do primeiro 
 
 Às vezes se diz que a Peshitta preserva as palavras originais do Novo Testamento, porque Jesus falava aramaico. Alguns na Igreja do Oriente têm essa opinião. A maioria dos estudiosos, inclusive os especialistas em siríaco, discorda. Os livros do Novo Testamento foram escritos em grego, a Peshitta concorda com a tradição dos manuscritos gregos e mostra sinais de ter sido traduzida dela, e nasceu de versões siríacas anteriores que podem ser rastreadas. O siríaco é também um dialeto posterior ao aramaico galileu que Jesus falava.
 
-Para a Open Word Bible, que traduz o SBL Greek New Testament e o Westminster Leningrad Codex, as versões siríacas estão entre as testemunhas pesadas quando um registro de raciocínio discute uma questão textual. Em [Gênesis 4:8](/gen/4/), por exemplo, o siríaco é uma das versões que dão a Caim palavras que faltam no hebraico, e o registro de raciocínio diz isso.
+Para a Open Word Bible, que traduz o Novo Testamento Grego da SBL e o Códice de Leningrado de Westminster, as versões siríacas estão entre as testemunhas pesadas quando um registro de raciocínio discute uma questão textual. Em [Gênesis 4:8](/gen/4/), por exemplo, o siríaco é uma das versões que dão a Caim palavras que faltam no hebraico, e o registro de raciocínio diz isso.
 
 ## Fontes
 

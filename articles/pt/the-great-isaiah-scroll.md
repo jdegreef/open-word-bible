@@ -1,13 +1,13 @@
 ---
 title: O Grande Rolo de Isaías e o que ele mostrou
-summary: O único livro completo da Bíblia entre os manuscritos do Mar Morto é uma cópia de Isaías cerca de mil anos mais antiga que os manuscritos medievais. Comparar os dois é um dos melhores testes que temos do cuidado com que o Antigo Testamento foi copiado.
+summary: O único livro completo da Bíblia entre os Manuscritos do Mar Morto é uma cópia de Isaías cerca de mil anos mais antiga que os manuscritos medievais. Comparar os dois é um dos melhores testes que temos do cuidado com que o Antigo Testamento foi copiado.
 date: 2026-10-11
 order: 27
 section: history
 part: ot
 source: 747d6430d6dc
 ---
-De todos os manuscritos do Mar Morto, um se tornou o símbolo de toda a descoberta: o **Grande Rolo de Isaías**, conhecido pelos estudiosos como **1QIsa-a** (Caverna 1, Qumran, Isaías, primeira cópia). Ele estava entre os sete primeiros rolos encontrados em 1947 e é o único livro bíblico entre os manuscritos que sobreviveu completo, com os sessenta e seis capítulos, do primeiro versículo ao último.
+De todos os Manuscritos do Mar Morto, um se tornou o símbolo de toda a descoberta: o **Grande Rolo de Isaías**, conhecido pelos estudiosos como **1QIsa-a** (Caverna 1, Qumran, Isaías, primeira cópia). Ele estava entre os sete primeiros rolos encontrados em 1947 e é o único livro bíblico entre os manuscritos que sobreviveu completo, com os sessenta e seis capítulos, do primeiro versículo ao último.
 
 Ele é também um experimento natural. Antes de 1947, os manuscritos hebraicos completos mais antigos de Isaías eram de por volta de 900–1000 d.C. O Grande Rolo de Isaías foi copiado cerca de mil anos antes. Ponha os dois lado a lado, e você pode ver o que um milênio de cópias à mão fez com o texto.
 
@@ -55,7 +55,7 @@ Ainda assim, é um resultado poderoso. Os manuscritos massoréticos em que o nos
 
 ## Isaías e a Open Word Bible
 
-Quando a Open Word Bible traduz Isaías, o seu ponto de partida é o Westminster Leningrad Codex, um texto massorético. Nos três versículos acima, o rascunho atual mantém a leitura massorética: "ele verá" em [Isaías 53:11](/isa/53/), o leão em 21:8 e "alguém perguntou" em 40:6. Mas a escolha não está escondida. O registro de raciocínio de cada frase nomeia o Grande Rolo de Isaías, diz o que ele lê e explica a decisão, e uma nota de rodapé dá ao leitor a leitura do rolo. Em 53:11, a decisão está marcada como incerta, e o registro observa que o sentido é parecido de um jeito ou de outro. É assim que uma tradução deve lidar com o que os manuscritos do Mar Morto nos ensinaram: com gratidão, com cuidado e abertamente.
+Quando a Open Word Bible traduz Isaías, o seu ponto de partida é o Códice de Leningrado de Westminster, um texto massorético. Nos três versículos acima, o rascunho atual mantém a leitura massorética: "ele verá" em [Isaías 53:11](/isa/53/), o leão em 21:8 e "alguém perguntou" em 40:6. Mas a escolha não está escondida. O registro de raciocínio de cada frase nomeia o Grande Rolo de Isaías, diz o que ele lê e explica a decisão, e uma nota de rodapé dá ao leitor a leitura do rolo. Em 53:11, a decisão está marcada como incerta, e o registro observa que o sentido é parecido de um jeito ou de outro. É assim que uma tradução deve lidar com o que os Manuscritos do Mar Morto nos ensinaram: com gratidão, com cuidado e abertamente.
 
 ## Fontes
 

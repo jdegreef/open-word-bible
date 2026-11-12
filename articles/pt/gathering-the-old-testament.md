@@ -70,7 +70,7 @@ Na Reforma, os protestantes voltaram ao cânon hebraico. A Bíblia alemã de Lut
 
 ## Aquilo em que todos concordam
 
-Essas diferenças são reais, mas dizem respeito às bordas. Os trinta e nove livros do Antigo Testamento protestante, que são os vinte e quatro da Bíblia hebraica, são aceitos como Escritura pelos judeus e por todas as tradições cristãs. A Open Word Bible traduz esses livros a partir do hebraico do Westminster Leningrad Codex. Os livros deuterocanônicos, muitos dos quais só sobrevivem completos em grego, não fazem parte do programa de tradução atual.
+Essas diferenças são reais, mas dizem respeito às bordas. Os trinta e nove livros do Antigo Testamento protestante, que são os vinte e quatro da Bíblia hebraica, são aceitos como Escritura pelos judeus e por todas as tradições cristãs. A Open Word Bible traduz esses livros a partir do hebraico do Códice de Leningrado de Westminster. Os livros deuterocanônicos, muitos dos quais só sobrevivem completos em grego, não fazem parte do programa de tradução atual.
 
 ## Fontes
 

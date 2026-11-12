@@ -18,7 +18,7 @@ O Salmo 8 mostra a expressão em ação. O salmista olha para o céu à noite e 
 
 > {{OWB:PSA.8.5.s1:L}}
 
-Esse é o nível Literal, com as configurações do leitor como estão. As duas metades do versículo dizem a mesma coisa duas vezes, como a poesia hebraica muitas vezes faz: "o ser humano" e "um mortal" traduzem palavras paralelas para um ser humano, pequeno e mortal debaixo de um céu imenso. A decisão de sentido do versículo diz exatamente isso. (As Bíblias em português numeram esse versículo como 8:4; a Open Word Bible segue a numeração hebraica, que conta o título como versículo 1.)
+Esse é o nível Literal, com as configurações de leitura como estão. As duas metades do versículo dizem a mesma coisa duas vezes, como a poesia hebraica muitas vezes faz: "o ser humano" e "um mortal" traduzem palavras paralelas para um ser humano, pequeno e mortal debaixo de um céu imenso. A decisão de sentido do versículo diz exatamente isso. (As Bíblias em português numeram esse versículo como 8:4; a Open Word Bible segue a numeração hebraica, que conta o título como versículo 1.)
 
 Como a expressão significa qualquer ser humano, homem ou mulher, ela fica sob a configuração de gênero do leitor neste salmo. Por padrão, o nível Literal diz "um mortal", e o leitor que prefere a formulação tradicional pode mudar a configuração para ver "o filho do homem". A configuração muda a formulação, não o sentido: as duas dizem "um ser humano". A formulação tradicional é mantida como alternativa por uma razão que o registro dá. Hebreus 2:6–8 cita esse salmo e o lê a respeito de Jesus, o único ser humano já "coroado de glória e de honra". O leitor que compara as duas passagens deve poder ver as mesmas palavras nas duas.
 

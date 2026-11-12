@@ -71,7 +71,7 @@ A **decisão de sentido** de cada unidade diz o que ela era e quanto valia, apro
 
 O nível **Literal** sempre mantém a unidade antiga. O leitor que estuda o texto vê talentos, côvados e efas, como o original os tem.
 
-Os níveis **Equilibrada** e **Acessível** dão por padrão um equivalente moderno, e a configuração **Medidas** permite ao leitor voltar à unidade original. No leitor, ela só aparece nas páginas que têm medidas. Como toda configuração do leitor, ela muda a formulação, nunca o sentido: trezentos côvados e 135 metros são o mesmo comprimento (veja [As configurações mudam a formulação, nunca o sentido](/articles/settings-change-wording/)). As dimensões da arca, na Equilibrada, são:
+Os níveis **Equilibrada** e **Acessível** dão por padrão um equivalente moderno, e a configuração **Medidas** permite ao leitor voltar à unidade original. No leitor, ela só aparece nas páginas que têm medidas. Como toda configuração de leitura, ela muda a formulação, nunca o sentido: trezentos côvados e 135 metros são o mesmo comprimento (veja [As configurações mudam a formulação, nunca o sentido](/articles/settings-change-wording/)). As dimensões da arca, na Equilibrada, são:
 
 > {{OWB:GEN.6.15.s1:B}}
 

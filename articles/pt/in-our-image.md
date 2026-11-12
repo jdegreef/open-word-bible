@@ -43,7 +43,7 @@ Uma decisão menor está no fim do versículo. Numa lista de animais, "toda a te
 
 A palavra para os seres humanos que Deus faz é {{LEMMA:GEN.1.26:4}}. Ela só se torna o nome próprio Adão mais adiante na história (4:25; 5:1–3). Aqui ela não tem artigo, e as palavras que vêm depois, "que *eles* dominem" e "homem e mulher", mostram que ela significa os seres humanos como um todo.
 
-Por isso a formulação padrão é inclusiva: "a humanidade" no nível Literal, "os seres humanos" na Equilibrada e na Acessível. Mas muitos leitores conhecem estes versículos com "o homem", a palavra tradicional em português nesse sentido, e isso é uma questão de formulação, não de sentido. Por isso é uma configuração do leitor. Mude a configuração de gênero para a tradicional e o versículo diz "Façamos o homem à nossa imagem". Veja [As configurações mudam a formulação, nunca o sentido](/articles/settings-change-wording/).
+Por isso a formulação padrão é inclusiva: "a humanidade" no nível Literal, "os seres humanos" na Equilibrada e na Acessível. Mas muitos leitores conhecem estes versículos com "o homem", a palavra tradicional em português nesse sentido, e isso é uma questão de formulação, não de sentido. Por isso é uma configuração de leitura. Mude a configuração de gênero para a tradicional e o versículo diz "Façamos o homem à nossa imagem". Veja [As configurações mudam a formulação, nunca o sentido](/articles/settings-change-wording/).
 
 O versículo 27 traz então as três linhas de poesia que respondem ao versículo 26:
 

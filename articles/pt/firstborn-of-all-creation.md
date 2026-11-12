@@ -54,7 +54,7 @@ O nível Literal mantém as palavras tradicionais, "o primogênito de toda a cri
 
 > {{OWB:COL.1.15.s1:B}}
 
-A Acessível diz: "O Filho é o primogênito: ele tem o primeiro lugar sobre tudo o que Deus criou." Uma decisão de tradução dá o motivo para os dois: que o título não seja lido como "a primeira coisa criada". Uma nota de rodapé no versículo expõe a decisão de sentido para o leitor que quiser ver o argumento.
+A Acessível diz: "O Filho é o primogênito: ele tem o primeiro lugar sobre tudo o que Deus criou." Uma decisão de formulação dá o motivo para os dois: que o título não seja lido como "a primeira coisa criada". Uma nota de rodapé no versículo expõe a decisão de sentido para o leitor que quiser ver o argumento.
 
 ## O primeiro nas duas criações
 

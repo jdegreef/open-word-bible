@@ -18,7 +18,7 @@ Há três motivos principais.
 
 Primeiro, **a Septuaginta é uma tradução**, e os tradutores fazem escolhas. Uma palavra hebraica com mais de um sentido tem de ser posta em grego com uma só palavra, e a palavra grega pode pender para um lado.
 
-Segundo, **a Septuaginta às vezes foi traduzida de um texto hebraico diferente**. Antes de os massoretas padronizarem o texto hebraico, no início da Idade Média, circulava mais de uma forma de alguns livros. Os manuscritos do Mar Morto mostraram que algumas leituras antes conhecidas só pelo grego também existiam em hebraico (veja [O que os manuscritos do Mar Morto mostram](/articles/what-the-dead-sea-scrolls-show/)). Nesses lugares, o grego pode preservar uma leitura hebraica mais antiga ou diferente.
+Segundo, **a Septuaginta às vezes foi traduzida de um texto hebraico diferente**. Antes de os massoretas padronizarem o texto hebraico, no início da Idade Média, circulava mais de uma forma de alguns livros. Os Manuscritos do Mar Morto mostraram que algumas leituras antes conhecidas só pelo grego também existiam em hebraico (veja [O que os Manuscritos do Mar Morto mostram](/articles/what-the-dead-sea-scrolls-show/)). Nesses lugares, o grego pode preservar uma leitura hebraica mais antiga ou diferente.
 
 Terceiro, **os tradutores às vezes leram as mesmas consoantes de outro modo**. O hebraico era escrito sem vogais, e várias letras se parecem. Uma palavra podia ser lida de duas maneiras, e os tradutores gregos às vezes escolheram a maneira contrária à da tradição massorética posterior.
 
@@ -98,7 +98,7 @@ Hebreus 1 apresenta uma corrente de textos do Antigo Testamento para mostrar que
 
 A busca por essa citação leva a um lugar interessante. O texto hebraico padrão não tem nada parecido. O hebraico mais próximo é o Salmo 97:7, "curvem-se diante dele, todos vocês, deuses", que a Septuaginta traduz como "adorem-no, todos os seus anjos". Mas a formulação de Hebreus combina mais com uma linha do grego do Cântico de Moisés, Deuteronômio 32:43, que é mais longo em grego do que em hebraico.
 
-Aqui os manuscritos do Mar Morto mudaram o quadro. Um manuscrito hebraico de Deuteronômio encontrado em Qumran tem uma forma de 32:43 mais longa do que a do hebraico padrão, incluindo a linha "curvem-se diante dele, todos os deuses". Assim, o grego não estava inventando. Estava traduzindo uma forma hebraica do versículo que o texto padrão posterior não tem.
+Aqui os Manuscritos do Mar Morto mudaram o quadro. Um manuscrito hebraico de Deuteronômio encontrado em Qumran tem uma forma de 32:43 mais longa do que a do hebraico padrão, incluindo a linha "curvem-se diante dele, todos os deuses". Assim, o grego não estava inventando. Estava traduzindo uma forma hebraica do versículo que o texto padrão posterior não tem.
 
 A Open Word Bible segue o hebraico padrão em Deuteronômio 32:43, e a sua nota de rodapé ali dá o texto mais longo de Qumran e o grego, e menciona tanto Hebreus 1:6 quanto Romanos 15:10, que cita outra linha do mesmo versículo. O registro de Hebreus 1:6 identifica a fonte como Deuteronômio 32:43 na sua forma grega, compara com o Salmo 97:7 e acrescenta que, no Cântico, "Deus é aquele que é adorado; o autor aplica as palavras ao Filho".
 

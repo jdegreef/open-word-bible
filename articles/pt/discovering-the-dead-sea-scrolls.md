@@ -1,6 +1,6 @@
 ---
-title: A descoberta dos manuscritos do Mar Morto
-summary: Um pastor, uma caverna, alguns jarros de barro e a maior descoberta de manuscritos do século XX. Como os manuscritos do Mar Morto foram encontrados, comprados, estudados e, por fim, publicados.
+title: A descoberta dos Manuscritos do Mar Morto
+summary: Um pastor, uma caverna, alguns jarros de barro e a maior descoberta de manuscritos do século XX. Como os Manuscritos do Mar Morto foram encontrados, comprados, estudados e, por fim, publicados.
 date: 2026-10-11
 order: 26
 section: history
@@ -9,7 +9,7 @@ source: 26ef95d35e6d
 ---
 No inverno de 1946–47, um jovem pastor beduíno chamado **Muhammed edh-Dhib**, da tribo Ta'amireh, procurava uma cabra perdida entre os penhascos perto da margem noroeste do Mar Morto. Ele jogou uma pedra numa abertura na rocha e ouviu algo se quebrar. Quando ele e os seus companheiros subiram até lá mais tarde, encontraram jarros altos de barro e, dentro de alguns deles, rolos de couro antigo envoltos em linho.
 
-Esses rolos foram os primeiros dos **manuscritos do Mar Morto**. Na década seguinte, onze cavernas perto das ruínas de Khirbet Qumran forneceriam os restos de cerca de novecentos manuscritos, escritos aproximadamente entre o século III a.C. e o século I d.C. Entre eles estão as cópias mais antigas dos livros da Bíblia hebraica já encontradas.
+Esses rolos foram os primeiros dos **Manuscritos do Mar Morto**. Na década seguinte, onze cavernas perto das ruínas de Khirbet Qumran forneceriam os restos de cerca de novecentos manuscritos, escritos aproximadamente entre o século III a.C. e o século I d.C. Entre eles estão as cópias mais antigas dos livros da Bíblia hebraica já encontradas.
 
 ## Não foi a primeira descoberta
 
@@ -28,7 +28,7 @@ Estudiosos das American Schools of Oriental Research em Jerusalém, entre eles J
 
 As fotografias de Trever acabaram sendo mais importantes do que qualquer um esperava. Quando ele viu os rolos de novo em 1966, o couro tinha escurecido e o texto estava mais difícil de ler do que ele lembrava. As suas fotos de 1948 ainda são usadas como registro de como eram os rolos quando saíram das cavernas.
 
-Mar Samuel levou os seus quatro rolos para os Estados Unidos. Sem conseguir vendê-los durante anos, ele publicou um pequeno anúncio no *Wall Street Journal* em 1º de junho de 1954, oferecendo "The Four Dead Sea Scrolls" ("os quatro manuscritos do Mar Morto"). O anúncio foi respondido, por meio de intermediários, em nome de **Yigael Yadin**, filho de Sukenik, que os comprou para o Estado de Israel por 250 mil dólares. Os sete primeiros rolos estão hoje expostos no **Santuário do Livro**, no Museu de Israel, em Jerusalém, um edifício projetado para lembrar a tampa de um dos jarros em que foram encontrados.
+Mar Samuel levou os seus quatro rolos para os Estados Unidos. Sem conseguir vendê-los durante anos, ele publicou um pequeno anúncio no *Wall Street Journal* em 1º de junho de 1954, oferecendo "The Four Dead Sea Scrolls" ("os quatro Manuscritos do Mar Morto"). O anúncio foi respondido, por meio de intermediários, em nome de **Yigael Yadin**, filho de Sukenik, que os comprou para o Estado de Israel por 250 mil dólares. Os sete primeiros rolos estão hoje expostos no **Santuário do Livro**, no Museu de Israel, em Jerusalém, um edifício projetado para lembrar a tampa de um dos jarros em que foram encontrados.
 
 ## Onze cavernas
 
@@ -73,7 +73,7 @@ Como sabemos a idade deles? Três métodos independentes concordam.
 
 ## Falsificações no mercado
 
-Os preços altos atraíram falsificadores. Depois de 2002, cerca de setenta novos fragmentos de "manuscritos do Mar Morto" apareceram no mercado de antiguidades, muitos deles comprados por colecionadores e instituições cristãs nos Estados Unidos. Os estudiosos começaram a desconfiar deles. Em 2020, uma investigação encomendada pelo Museum of the Bible, em Washington, concluiu que todos os dezesseis fragmentos do museu eram falsificações modernas, provavelmente escritas em couro antigo e depois tratadas para parecer antigas. Essas conclusões não atingem os rolos genuínos, cuja história desde as cavernas até os museus está bem documentada. Mas mostram por que essa história importa.
+Os preços altos atraíram falsificadores. Depois de 2002, cerca de setenta novos fragmentos de "Manuscritos do Mar Morto" apareceram no mercado de antiguidades, muitos deles comprados por colecionadores e instituições cristãs nos Estados Unidos. Os estudiosos começaram a desconfiar deles. Em 2020, uma investigação encomendada pelo Museum of the Bible, em Washington, concluiu que todos os dezesseis fragmentos do museu eram falsificações modernas, provavelmente escritas em couro antigo e depois tratadas para parecer antigas. Essas conclusões não atingem os rolos genuínos, cuja história desde as cavernas até os museus está bem documentada. Mas mostram por que essa história importa.
 
 ## O longo caminho até a publicação
 

@@ -17,7 +17,7 @@ Onde o registro termina às vezes é, em si, uma decisão. Os manuscritos antigo
 
 ## O que um registro contém
 
-- **As palavras originais**, carregadas de uma edição fixa do texto-fonte. Para o Novo Testamento, é o SBL Greek New Testament, com a gramática palavra por palavra do projeto MACULA; para o Antigo Testamento, o Códice de Leningrado de Westminster. Toque numa palavra no painel para ver a sua forma de dicionário, a sua gramática e uma glosa.
+- **As palavras originais**, carregadas de uma edição fixa do texto-fonte. Para o Novo Testamento, é o Novo Testamento Grego da SBL, com a gramática palavra por palavra do projeto MACULA; para o Antigo Testamento, o Códice de Leningrado de Westminster. Toque numa palavra no painel para ver a sua forma de dicionário, a sua gramática e uma glosa.
 - **Uma glosa literal**: as palavras na ordem do original, tão perto do palavra por palavra quanto a língua permite. Ela não foi feita para ler bem. Deixa ver a forma da frase. Por enquanto, essa glosa está em inglês.
 - **A tradução em três níveis**, Literal, Equilibrada e Acessível, em cada língua. Veja [Três níveis, um sentido](/articles/three-levels-one-meaning/).
 - **As decisões.** Cada uma indica as palavras de que trata, a escolha feita, as alternativas consideradas e o motivo, em linguagem simples. Cada uma também tem uma categoria, como sentido de palavra, gramática, alusão, cultura ou variante textual, para que você veja de relance a que tipo de pergunta ela responde. Por enquanto, essas notas estão escritas em inglês.

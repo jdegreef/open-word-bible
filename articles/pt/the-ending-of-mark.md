@@ -71,7 +71,7 @@ Um manuscrito acrescenta ainda mais. O Códice Washingtoniano, uma cópia dos Ev
 
 Nela, os discípulos respondem à repreensão de Jesus dando desculpas: esta era de iniquidade e de incredulidade, dizem eles, está sob Satanás, que não permite que a verdade e o poder de Deus sejam compreendidos. Jesus responde que o limite dos anos do poder de Satanás chegou ao fim, embora outras coisas terríveis se aproximem, e que ele foi entregue à morte pelos pecadores para que eles voltem à verdade e herdem a glória da justiça no céu. Jerônimo conhecia parte dessa passagem por algumas cópias do seu tempo, por isso ela é mais antiga do que o próprio Washingtoniano. Mas nenhum outro manuscrito grego conservado a traz.
 
-O registro da Open Word Bible para 16:14 a menciona numa decisão de variante textual com uma nota de rodapé: um manuscrito do século V acrescenta depois deste versículo uma passagem em que os discípulos desculpam a sua incredulidade e Jesus lhes responde, e ela não se encontra em nenhum outro lugar. A tradução não a inclui, porque o SBL Greek New Testament não a inclui.
+O registro da Open Word Bible para 16:14 a menciona numa decisão de variante textual com uma nota de rodapé: um manuscrito do século V acrescenta depois deste versículo uma passagem em que os discípulos desculpam a sua incredulidade e Jesus lhes responde, e ela não se encontra em nenhum outro lugar. A tradução não a inclui, porque o Novo Testamento Grego da SBL não a inclui.
 
 O lógion de Freer é uma pequena janela para a maneira como o fim de Marcos cresceu. Copistas que sentiam que o Evangelho precisava de um encerramento mais completo forneceram um e, uma vez que havia um encerramento mais completo, alguns sentiram que ele, por sua vez, precisava ser completado.
 
@@ -89,7 +89,7 @@ Vale a pena separar duas perguntas que facilmente se confundem. Uma é se 16:9�
 
 ## O que a Open Word Bible publica
 
-A tradução segue o SBL Greek New Testament, editado por Michael Holmes. Essa edição publica tanto o final curto quanto o final longo depois de 16:8, entre colchetes duplos, que no seu sistema marcam uma passagem que não fazia parte do texto original, mas é antiga e muito lida.
+A tradução segue o Novo Testamento Grego da SBL, editado por Michael Holmes. Essa edição publica tanto o final curto quanto o final longo depois de 16:8, entre colchetes duplos, que no seu sistema marcam uma passagem que não fazia parte do texto original, mas é antiga e muito lida.
 
 A Open Word Bible faz o mesmo na tradução. O registro do final curto explica como: um colchete de abertura no início do final curto e um colchete de fechamento depois do seu "Amém". O final longo tem o seu próprio par, que se abre no início de 16:9 e se fecha no fim de 16:20. No nível Literal, os colchetes também marcam palavras acrescentadas na tradução, por isso os registros dizem que dentro da passagem eles mantêm esse uso e só o par externo marca a passagem em si.
 

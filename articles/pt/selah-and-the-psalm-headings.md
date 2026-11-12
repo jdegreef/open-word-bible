@@ -34,11 +34,11 @@ Os nossos registros tomam a mesma decisão todas as vezes que Selá aparece, e a
 
 A razão dada são os dados acima: provavelmente é uma indicação para o canto ou para a música, talvez uma pausa ou um interlúdio; a tradução grega a verte com uma palavra que significa "interlúdio"; e ela não faz parte do que é dito. As alternativas mencionadas são "pausa", "interlúdio" e "levantar".
 
-A decisão de tradução decorre disso. Todos os níveis, Literal, Equilibrada e Acessível, mantêm a palavra "Selá" como está, separada da frase. As alternativas consideradas e rejeitadas são imprimir "(pausa)" e omiti-la. A razão é curta: o seu significado é desconhecido, por isso todos os níveis mantêm a palavra em vez de adivinhar.
+A decisão de formulação decorre disso. Todos os níveis, Literal, Equilibrada e Acessível, mantêm a palavra "Selá" como está, separada da frase. As alternativas consideradas e rejeitadas são imprimir "(pausa)" e omiti-la. A razão é curta: o seu significado é desconhecido, por isso todos os níveis mantêm a palavra em vez de adivinhar.
 
 É uma escolha deliberada, e outras traduções fizeram escolhas diferentes. A King James Version mantém "Selah". Algumas versões modernas põem um palpite no seu lugar; a New Living Translation, por exemplo, imprime "Interlude" ("Interlúdio"). Outras às vezes a passaram para a margem ou para uma nota de rodapé. Imprimir um palpite faz o texto parecer mais claro do que o nosso conhecimento. Omitir a palavra esconde algo que está no texto hebraico. Mantê-la, com uma decisão que diz claramente o que sabemos e o que não sabemos, é o caminho honesto, e custa ao leitor apenas um instante de pausa, que talvez seja exatamente o que a palavra pedia.
 
-Um pequeno ajuste é feito. Em alguns versículos, o hebraico põe Selá no meio do versículo, depois da primeira linha, como em Salmo 57:4 e Habacuque 3:3. A nossa decisão de tradução para esses versículos a passa para o fim, para que o versículo seja lido como um todo, e diz isso.
+Um pequeno ajuste é feito. Em alguns versículos, o hebraico põe Selá no meio do versículo, depois da primeira linha, como em Salmo 57:4 e Habacuque 3:3. A nossa decisão de formulação para esses versículos a passa para o fim, para que o versículo seja lido como um todo, e diz isso.
 
 O Salmo 46 mostra como Selá pode dar forma a um salmo. Ela aparece ali três vezes, depois do versículo 4 e depois do refrão dos versículos 8 e 12, que soa duas vezes:
 
@@ -82,13 +82,13 @@ Aqui os três níveis seguem caminhos diferentes, e o motivo é o propósito de 
 
 A **Literal** e a **Equilibrada** mantêm os termos hebraicos como nomes quando o seu sentido é desconhecido: "Mictão de Davi", "Sobre alamote", "Sobre Aielete-Hassaar". Traduzem o que é claro e mantêm o que não é. O Salmo 57 é uma pequena exceção, já que "Não destruas" é hebraico simples; todos os níveis o traduzem, e a Equilibrada acrescenta "Na melodia", entendendo-o como o nome de uma melodia.
 
-A **Acessível** dá o sentido mais provável, e as suas decisões de tradução estão marcadas como incertas quando o palpite é um palpite. Eis o título do Salmo 22 nesse nível:
+A **Acessível** dá o sentido mais provável, e as suas decisões de formulação estão marcadas como incertas quando o palpite é um palpite. Eis o título do Salmo 22 nesse nível:
 
 > {{OWB:PSA.22.1.s1:R}}
 
-O Salmo 56 se torna "Na melodia 'A Pomba Calada ao Longe'", e o "sobre alamote" do Salmo 46 se torna "Para vozes agudas". Quando nem um sentido provável está ao alcance, a Acessível diz apenas o que é certo: para "mictão", a decisão de tradução é simplesmente "Canção", porque o seu significado é desconhecido, e a Acessível diz apenas que é uma canção.
+O Salmo 56 se torna "Na melodia 'A Pomba Calada ao Longe'", e o "sobre alamote" do Salmo 46 se torna "Para vozes agudas". Quando nem um sentido provável está ao alcance, a Acessível diz apenas o que é certo: para "mictão", a decisão de formulação é simplesmente "Canção", porque o seu significado é desconhecido, e a Acessível diz apenas que é uma canção.
 
-É assim que a Open Word Bible separa o significado da redação. A decisão de significado diz o que se sabe e o que não se sabe, e a marca como incerta. A decisão de tradução escolhe para cada nível uma redação que corresponda a esse estado do conhecimento. A Acessível pode ser mais ousada na redação porque a decisão de significado ao lado diz claramente quanto dela é palpite. (Veja [Três níveis, um sentido](/articles/three-levels-one-meaning/).)
+É assim que a Open Word Bible separa o sentido da formulação. A decisão de sentido diz o que se sabe e o que não se sabe, e a marca como incerta. A decisão de formulação escolhe para cada nível uma formulação que corresponda a esse estado do conhecimento. A Acessível pode ser mais ousada na formulação porque a decisão de sentido ao lado diz claramente quanto dela é palpite. (Veja [Três níveis, um sentido](/articles/three-levels-one-meaning/).)
 
 ## Os títulos fazem parte das Escrituras?
 
@@ -100,7 +100,7 @@ Alguns estudiosos também perguntaram se certas notas pertencem ao salmo anterio
 
 Seria fácil para uma tradução encobrir essas lacunas. Ela poderia imprimir um palpite confiante para cada termo, ou deixar de fora discretamente as palavras que ninguém entende. Muitos leitores nunca perceberiam.
 
-A Open Word Bible segue o outro caminho. Quando o significado de uma palavra se perdeu, o registro diz isso, apresenta os dados e as principais propostas, e deixa a redação decorrer disso. Selá continua sendo Selá. "Mictão" continua sendo "mictão" na Literal e na Equilibrada, e se torna simplesmente "canção" na Acessível. O leitor não perde nada que alguém realmente saiba, e não recebe nada que ninguém sabe. Como todos os nossos rascunhos, esses registros foram feitos com a ajuda de IA e aguardam a revisão de revisores humanos identificados pelo nome.
+A Open Word Bible segue o outro caminho. Quando o significado de uma palavra se perdeu, o registro diz isso, apresenta os dados e as principais propostas, e deixa a formulação decorrer disso. Selá continua sendo Selá. "Mictão" continua sendo "mictão" na Literal e na Equilibrada, e se torna simplesmente "canção" na Acessível. O leitor não perde nada que alguém realmente saiba, e não recebe nada que ninguém sabe. Como todos os nossos rascunhos, esses registros foram feitos com a ajuda de IA e aguardam a revisão de revisores humanos identificados pelo nome.
 
 Há algo de apropriado nisso. Os salmos foram cantados durante séculos por pessoas que sabiam exatamente o que Selá significava, e continuaram a ser cantados por pessoas que não sabem. As palavras ainda funcionam.
 

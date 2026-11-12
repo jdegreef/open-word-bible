@@ -38,7 +38,7 @@ As versões modernas seguiram três caminhos. Algumas, como a RSV e as suas suce
 
 ### O que a Open Word Bible faz
 
-Os nossos registros dão ao Sheol um único sentido em toda parte: o lugar ou reino dos mortos, e não, em particular, um lugar de castigo. As decisões de tradução escolhem depois a formulação de cada nível.
+Os nossos registros dão ao Sheol um único sentido em toda parte: o lugar ou reino dos mortos, e não, em particular, um lugar de castigo. As decisões de formulação escolhem depois a formulação de cada nível.
 
 - A **Literal** sempre mantém "Sheol", para que o leitor possa ver o nome.
 - A **Equilibrada** e a **Acessível** dizem o que o Sheol é: "o mundo dos mortos", quase sempre com essas mesmas palavras. Em português, essa expressão serve tanto ao registro cuidado da Equilibrada quanto à linguagem simples da Acessível.
@@ -57,7 +57,7 @@ Os autores do Novo Testamento herdaram a palavra com o seu sentido do Antigo Tes
 
 > {{OWB:ACT.2.27.s1:B}}
 
-A nossa decisão de sentido diz que aqui o Hades corresponde ao hebraico Sheol, para onde vão todos os mortos, e que não é um lugar de castigo. A decisão de tradução dá o raciocínio da formulação: "inferno" sugere castigo, que não está em questão, e "a sepultura" é estreito demais. Por isso, a Literal mantém "Hades", e a Equilibrada e a Acessível dizem "o mundo dos mortos". O mesmo salmo em hebraico, no Salmo 16:10, diz "Sheol" na Literal e "o mundo dos mortos" na Equilibrada e na Acessível. Os dois versículos se correspondem, como devem, já que um cita o outro.
+A nossa decisão de sentido diz que aqui o Hades corresponde ao hebraico Sheol, para onde vão todos os mortos, e que não é um lugar de castigo. A decisão de formulação dá o raciocínio da formulação: "inferno" sugere castigo, que não está em questão, e "a sepultura" é estreito demais. Por isso, a Literal mantém "Hades", e a Equilibrada e a Acessível dizem "o mundo dos mortos". O mesmo salmo em hebraico, no Salmo 16:10, diz "Sheol" na Literal e "o mundo dos mortos" na Equilibrada e na Acessível. Os dois versículos se correspondem, como devem, já que um cita o outro.
 
 O Hades aparece dez vezes no texto grego padrão do Novo Testamento. Alguns desses usos conservam o sentido antigo sem mudança. Jesus diz que Cafarnaum, que esperava ser elevada até o céu, vai descer ao Hades (Mateus 11:23); o registro chama o Hades ali de "o lugar mais baixo, o oposto do céu" e remete a Isaías 14:15. Em Mateus 16:18, "as portas do Hades" não vão dominar a Igreja; o registro lê isso como o poder da morte, lembrando "as portas do Sheol" em Isaías 38:10, e marca como incerto o sentido exato da expressão. No Apocalipse, Jesus tem "as chaves da morte e do Hades" (1:18), o que o registro explica como autoridade sobre a morte e o reino dos mortos.
 
@@ -97,7 +97,7 @@ Muitos leitores já ouviram dizer que o vale de Hinom era o depósito de lixo de
 
 ### O que a Open Word Bible faz
 
-Para a geena, os níveis se dividem de outro modo que para o Sheol e o Hades. A Literal mantém o nome do lugar, "geena", em todos os usos, para que o leitor possa ver o que Jesus disse. A Equilibrada e a Acessível dizem "inferno". A decisão de tradução de Marcos 9:43 explica por quê: elas usam a palavra comum para o lugar do julgamento final, que é o que o nome representa.
+Para a geena, os níveis se dividem de outro modo que para o Sheol e o Hades. A Literal mantém o nome do lugar, "geena", em todos os usos, para que o leitor possa ver o que Jesus disse. A Equilibrada e a Acessível dizem "inferno". A decisão de formulação de Marcos 9:43 explica por quê: elas usam a palavra comum para o lugar do julgamento final, que é o que o nome representa.
 
 Portanto, "inferno" aparece, sim, no nosso texto Equilibrada e Acessível, mas só para a geena. É a única palavra grega cujo sentido corresponde ao que a palavra significa hoje. Quando o registro de Mateus 16:18 diz que "inferno" confundiria o Hades com a geena, é essa distinção que ele está protegendo.
 
@@ -109,7 +109,7 @@ Segunda Pedro 2:4 tem uma palavra que não se encontra em nenhum outro lugar da 
 
 Nas histórias gregas, como explica a nossa decisão de sentido, o Tártaro era a parte mais profunda do mundo subterrâneo, muito abaixo do Hades, onde os deuses tinham aprisionado os titãs rebeldes. Os autores judeus que escreviam em grego também usavam o nome, e o texto grego de 1 Enoque menciona o Tártaro entre os lugares sobre os quais um anjo é posto. Pedro toma emprestada uma palavra que os seus leitores conheciam para a prisão dos espíritos rebeldes. A decisão destaca que é um lugar de detenção antes do julgamento, não o próprio julgamento final: os anjos estão "guardados para o julgamento".
 
-É por isso que a decisão de tradução mantém "Tártaro" em todos os níveis e acrescenta "a prisão mais profunda" na Acessível. Ela lista "inferno" como uma alternativa e a rejeita, porque "inferno" sugeriria o castigo final, que Pedro situa mais tarde.
+É por isso que a decisão de formulação mantém "Tártaro" em todos os níveis e acrescenta "a prisão mais profunda" na Acessível. Ela lista "inferno" como uma alternativa e a rejeita, porque "inferno" sugeriria o castigo final, que Pedro situa mais tarde.
 
 ## O lago de fogo
 

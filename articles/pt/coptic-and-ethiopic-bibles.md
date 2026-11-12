@@ -52,7 +52,7 @@ Durante muito tempo, os estudiosos supuseram que os livros eram medievais. Teste
 
 A Igreja Ortodoxa Etíope Tewahedo tem o cânon bíblico mais amplo de todas as igrejas. A sua lista costuma ser contada em oitenta e um livros, embora a contagem e o conteúdo variem de uma lista para outra.
 
-Ela inclui livros que não se encontram na Bíblia de nenhuma outra igreja. Os mais famosos são **1 Enoque** e **Jubileus**, ambos escritos em círculos judaicos antes da época de Jesus. Fragmentos dos dois foram encontrados entre os [manuscritos do Mar Morto](/articles/what-the-dead-sea-scrolls-show/), mas as únicas cópias completas de cada um deles sobrevivem em gueze. A carta de Judas cita 1 Enoque diretamente:
+Ela inclui livros que não se encontram na Bíblia de nenhuma outra igreja. Os mais famosos são **1 Enoque** e **Jubileus**, ambos escritos em círculos judaicos antes da época de Jesus. Fragmentos dos dois foram encontrados entre os [Manuscritos do Mar Morto](/articles/what-the-dead-sea-scrolls-show/), mas as únicas cópias completas de cada um deles sobrevivem em gueze. A carta de Judas cita 1 Enoque diretamente:
 
 > A respeito deles também profetizou Enoque, o sétimo depois de Adão, dizendo: "Eis que o Senhor veio com as suas santas miríades." (Judas 14)
 

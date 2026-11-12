@@ -43,7 +43,7 @@ Desde então, o Códice de Leningrado tem sido a base de:
 
 - a **Biblia Hebraica Stuttgartensia** (BHS, 1967–1977), durante décadas a Bíblia hebraica padrão de estudantes e tradutores;
 - a **Biblia Hebraica Quinta** (BHQ), a sua sucessora, publicada livro por livro desde 2004;
-- o **Westminster Leningrad Codex** (WLC), uma transcrição digital de livre acesso, produzida inicialmente no Westminster Theological Seminary e mantida pelo J. Alan Groves Center, que por sua vez está na base de projetos abertos como a Open Scriptures Hebrew Bible e o MACULA Hebrew.
+- o **Códice de Leningrado de Westminster** (WLC), uma transcrição digital de livre acesso, produzida inicialmente no Westminster Theological Seminary e mantida pelo J. Alan Groves Center, que por sua vez está na base de projetos abertos como a Open Scriptures Hebrew Bible e o MACULA Hebrew.
 
 Em 1990, uma equipe do West Semitic Research Project, liderada por Bruce Zuckerman, fotografou todas as páginas em São Petersburgo. As fotografias foram publicadas em 1998 como um fac-símile completo, editado por David Noel Freedman e outros, para que qualquer pessoa pudesse conferir as edições impressas com o próprio manuscrito. As imagens em cores hoje podem ser vistas na internet.
 
@@ -57,7 +57,7 @@ Para quem lê uma tradução, essas diferenças quase nunca mudam o sentido. O q
 
 ## Por que a Open Word Bible usa o Códice de Leningrado
 
-A Open Word Bible traduz o Antigo Testamento a partir do **Westminster Leningrad Codex**, com dados palavra por palavra do MACULA Hebrew e da Open Scriptures Hebrew Bible. São três as razões.
+A Open Word Bible traduz o Antigo Testamento a partir do **Códice de Leningrado de Westminster**, com dados palavra por palavra do MACULA Hebrew e da Open Scriptures Hebrew Bible. São três as razões.
 
 - **Ele é completo.** Todos os livros e todos os versículos estão ali, num só manuscrito, de modo que não é preciso costurar fontes.
 - **Ele é o padrão acadêmico.** É o texto por trás da BHS e da BHQ, que quase toda tradução moderna consulta, de modo que as nossas decisões podem ser comparadas diretamente com as delas.

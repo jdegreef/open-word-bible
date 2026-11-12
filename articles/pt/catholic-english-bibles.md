@@ -84,7 +84,7 @@ As Bíblias católicas trazem um *imprimatur*, uma declaração de um bispo de q
 
 ## Comparando tradições
 
-A Open Word Bible não é uma tradução católica, protestante ou judaica; ela não busca aprovação eclesiástica e usa as traduções existentes, inclusive as descritas aqui, só para comparação, nunca como base da sua formulação. Ela traduz o Novo Testamento a partir do SBL Greek New Testament e o Antigo Testamento a partir do Códice de Leningrado de Westminster, por isso o seu Antigo Testamento segue, por enquanto, o cânon hebraico. Onde um versículo foi lido de maneiras diferentes em tradições diferentes, como Gênesis 3:15, o seu registro de raciocínio para essa frase expõe as evidências e a decisão. Os seus rascunhos são feitos com ajuda de IA e continuam não revisados até que revisores humanos identificados os aprovem. O texto é dedicado ao domínio público sob CC0.
+A Open Word Bible não é uma tradução católica, protestante ou judaica; ela não busca aprovação eclesiástica e usa as traduções existentes, inclusive as descritas aqui, só para comparação, nunca como base da sua formulação. Ela traduz o Novo Testamento a partir do Novo Testamento Grego da SBL e o Antigo Testamento a partir do Códice de Leningrado de Westminster, por isso o seu Antigo Testamento segue, por enquanto, o cânon hebraico. Onde um versículo foi lido de maneiras diferentes em tradições diferentes, como Gênesis 3:15, o seu registro de raciocínio para essa frase expõe as evidências e a decisão. Os seus rascunhos são feitos com ajuda de IA e continuam não revisados até que revisores humanos identificados os aprovem. O texto é dedicado ao domínio público sob CC0.
 
 ## Fontes
 

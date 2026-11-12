@@ -53,7 +53,7 @@ As edições mais recentes se apoiam na **Editio Critica Maior**, uma edição m
 
 Duas edições recentes foram produzidas de forma independente da comissão do Nestle-Aland.
 
-O **SBL Greek New Testament** (2010), editado por **Michael W. Holmes** e publicado pela Society of Biblical Literature e pela Logos Bible Software, foi feito comparando quatro edições anteriores, Westcott e Hort, Tregelles, Robinson–Pierpont e o texto grego por trás da NIV, e decidindo entre elas. Holmes relatou que ele difere do texto do Nestle-Aland e da UBS em mais de 540 lugares, a maioria pequenos. O seu texto tem licença livre (hoje é distribuído sob a licença Creative Commons Atribuição), o que fez dele a base de muitas ferramentas digitais, e a Lexham English Bible o traduz.
+O **Novo Testamento Grego da SBL** (2010), editado por **Michael W. Holmes** e publicado pela Society of Biblical Literature e pela Logos Bible Software, foi feito comparando quatro edições anteriores, Westcott e Hort, Tregelles, Robinson–Pierpont e o texto grego por trás da NIV, e decidindo entre elas. Holmes relatou que ele difere do texto do Nestle-Aland e da UBS em mais de 540 lugares, a maioria pequenos. O seu texto tem licença livre (hoje é distribuído sob a licença Creative Commons Atribuição), o que fez dele a base de muitas ferramentas digitais, e a Lexham English Bible o traduz.
 
 O **Greek New Testament, Produced at Tyndale House, Cambridge** (2017), editado por **Dirk Jongkind** e **Peter Williams**, reexaminou os manuscritos antigos com atenção especial aos hábitos dos escribas, à ortografia e à divisão em parágrafos, e imprime os livros numa ordem encontrada em muitos manuscritos antigos, com as Cartas Gerais antes das de Paulo.
 
@@ -65,7 +65,7 @@ Essas edições diferem entre si em algumas centenas de lugares, e a maioria des
 - **Texto Majoritário (bizantino)**: a World English Bible.
 - **Textos críticos próximos de Westcott e Hort**: a Revised Version (1881) e a American Standard Version (1901).
 - **Nestle-Aland / UBS**: a maioria das traduções modernas, entre elas a RSV e a NRSV, a NASB, a NIV, a ESV, a NLT e a CSB, cada uma seguindo a edição escolhida, com desvios ocasionais próprios.
-- **SBL Greek New Testament**: a Lexham English Bible e a Open Word Bible.
+- **Novo Testamento Grego da SBL**: a Lexham English Bible e a Open Word Bible.
 
 A **NKJV** é um caso especial. Ela traduz o Textus Receptus, mas as suas notas de rodapé indicam onde o texto crítico (marcado "NU", de Nestle-Aland e UBS) e o Texto Majoritário (marcado "M") diferem. É uma das poucas traduções que deixam o leitor ver as três tradições ao mesmo tempo.
 
@@ -77,7 +77,7 @@ Três passagens mostram quanto a escolha do texto importa e como as traduções 
 
 **A mulher surpreendida em adultério (João 7:53–8:11).** Essa história não está nos manuscritos gregos mais antigos de João, e em alguns posteriores ela aparece em outro lugar, depois de João 7:36 ou de 21:25, ou em Lucas, depois de 21:38. Muitos estudiosos acham que é uma tradição antiga e autêntica sobre Jesus que foi parar mais tarde no Evangelho de João. As traduções modernas quase sempre a imprimem, normalmente entre colchetes ou em itálico, ou destacada com uma nota; a edição da SBL a imprime entre colchetes duplos.
 
-**A Comma Johanneum (1 João 5:7–8).** A King James Version diz:
+**O Comma joanino (1 João 5:7–8).** A King James Version diz:
 
 > For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the spirit, and the water, and the blood: and these three agree in one.
 
@@ -95,7 +95,7 @@ As palavras sobre os três no céu, conhecidas como **Comma Johanneum**, aparece
 
 Nenhuma dessas diferenças muda qualquer ensino cristão central, que é ensinado em outras passagens que não estão em dúvida. Mas elas afetam o que o leitor tem nas mãos, e as traduções têm o dever de dizer o que estão fazendo. O pior resultado é um leitor que descobre por acaso que um versículo está "faltando" e supõe que algo foi escondido. Uma nota curta ajuda muito a evitar isso (veja [Quando os manuscritos discordam](/articles/when-manuscripts-disagree/)).
 
-A Open Word Bible traduz o Novo Testamento a partir do SBL Greek New Testament, fixado numa versão exata, para que cada palavra possa ser rastreada até a sua fonte. Onde uma variante textual afeta o sentido, ou onde a edição marca uma passagem como duvidosa, o registro de raciocínio dessa frase diz isso e cita os dados. Os seus rascunhos são feitos com a ajuda de IA e não estão revisados até que revisores humanos identificados pelo nome os aprovem; outras traduções são usadas apenas para comparação, nunca como base para a sua redação; e o resultado é dedicado ao domínio público sob a licença CC0.
+A Open Word Bible traduz o Novo Testamento a partir do Novo Testamento Grego da SBL, fixado numa versão exata, para que cada palavra possa ser rastreada até a sua fonte. Onde uma variante textual afeta o sentido, ou onde a edição marca uma passagem como duvidosa, o registro de raciocínio dessa frase diz isso e cita os dados. Os seus rascunhos são feitos com a ajuda de IA e não estão revisados até que revisores humanos identificados pelo nome os aprovem; outras traduções são usadas apenas para comparação, nunca como base para a sua redação; e o resultado é dedicado ao domínio público sob a licença CC0.
 
 ## Fontes
 

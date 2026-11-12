@@ -75,7 +75,7 @@ Durante todo esse período, o hebraico era escrito só com consoantes. As vogais
 
 ## Por que isso importa para uma tradução
 
-A Open Word Bible traduz o Antigo Testamento a partir do hebraico do Westminster Leningrad Codex, uma transcrição cuidadosa de um manuscrito concluído em 1008 d.C. Esse manuscrito está no fim de um caminho muito longo: das palavras faladas aos rolos escritos por escribas profissionais, às coleções, às cópias de cópias, à tradição massorética. O restante desta série acompanha esse caminho e pergunta, em cada etapa, como podemos saber que o que chegou até nós é o que foi escrito.
+A Open Word Bible traduz o Antigo Testamento a partir do hebraico do Códice de Leningrado de Westminster, uma transcrição cuidadosa de um manuscrito concluído em 1008 d.C. Esse manuscrito está no fim de um caminho muito longo: das palavras faladas aos rolos escritos por escribas profissionais, às coleções, às cópias de cópias, à tradição massorética. O restante desta série acompanha esse caminho e pergunta, em cada etapa, como podemos saber que o que chegou até nós é o que foi escrito.
 
 ## Fontes
 

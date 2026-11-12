@@ -12,7 +12,7 @@ Visite hoje uma sinagoga e talvez você veja o rolo da Torá ser tirado da arca,
 
 ## De onde vêm as regras
 
-As regras estão no Talmude babilônico (concluído por volta de 500–600 d.C.), num tratado posterior chamado *Soferim* ("Escribas") e no código de leis de **Maimônides** (1138–1204). São regras rabínicas da Antiguidade tardia e de depois. Elas não descrevem como todo escriba trabalhava na época dos profetas, e os manuscritos do Mar Morto mostram que a prática anterior era mais variada (Tov 2004). O que elas mostram é como o texto foi protegido nos séculos em que se copiou o texto massorético, a base do nosso Antigo Testamento.
+As regras estão no Talmude babilônico (concluído por volta de 500–600 d.C.), num tratado posterior chamado *Soferim* ("Escribas") e no código de leis de **Maimônides** (1138–1204). São regras rabínicas da Antiguidade tardia e de depois. Elas não descrevem como todo escriba trabalhava na época dos profetas, e os Manuscritos do Mar Morto mostram que a prática anterior era mais variada (Tov 2004). O que elas mostram é como o texto foi protegido nos séculos em que se copiou o texto massorético, a base do nosso Antigo Testamento.
 
 ## As regras
 
@@ -32,7 +32,7 @@ O Talmude diz que os primeiros escribas eram chamados *soferim* porque *contavam
 
 ## Funcionou?
 
-Os manuscritos hebraicos da Idade Média, copiados em países diferentes, concordam num grau notável. Quando Benjamin Kennicott comparou centenas deles no século XVIII, a maioria das diferenças eram grafias que não mudavam o sentido. Os manuscritos do Mar Morto nos permitem olhar mil anos mais para trás. Os rolos bíblicos de Massada e de Wadi Murabba'at, dos séculos I e II d.C., são quase idênticos ao texto medieval nas consoantes (veja [O que os manuscritos do Mar Morto mostram](/articles/what-the-dead-sea-scrolls-show/)). As regras não criaram o texto massorético. Elas preservaram um texto que já existia.
+Os manuscritos hebraicos da Idade Média, copiados em países diferentes, concordam num grau notável. Quando Benjamin Kennicott comparou centenas deles no século XVIII, a maioria das diferenças eram grafias que não mudavam o sentido. Os Manuscritos do Mar Morto nos permitem olhar mil anos mais para trás. Os rolos bíblicos de Massada e de Wadi Murabba'at, dos séculos I e II d.C., são quase idênticos ao texto medieval nas consoantes (veja [O que os Manuscritos do Mar Morto mostram](/articles/what-the-dead-sea-scrolls-show/)). As regras não criaram o texto massorético. Elas preservaram um texto que já existia.
 
 ## O que as regras não conseguem fazer
 

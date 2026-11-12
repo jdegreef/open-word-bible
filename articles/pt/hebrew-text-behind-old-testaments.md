@@ -1,6 +1,6 @@
 ---
 title: O texto hebraico por trás dos Antigos Testamentos
-summary: Quase todo Antigo Testamento moderno é traduzido do texto massorético, geralmente na forma impressa a partir do Códice de Leningrado. Mas às vezes as traduções seguem a Septuaginta ou os manuscritos do Mar Morto. Eis quando fazem isso, quatro exemplos famosos e como ler as notas de rodapé que o indicam.
+summary: Quase todo Antigo Testamento moderno é traduzido do texto massorético, geralmente na forma impressa a partir do Códice de Leningrado. Mas às vezes as traduções seguem a Septuaginta ou os Manuscritos do Mar Morto. Eis quando fazem isso, quatro exemplos famosos e como ler as notas de rodapé que o indicam.
 date: 2026-10-14
 order: 75
 section: compare
@@ -8,7 +8,7 @@ source: 3f3ae1c5422d
 ---
 O Antigo Testamento de quase toda Bíblia moderna, judaica ou cristã, é traduzido do mesmo texto hebraico: o **texto massorético**, a forma da Bíblia hebraica preservada por escribas judeus e fixada, com vogais, acentos e notas, pelos estudiosos conhecidos como massoretas, no início da Idade Média (veja [Os massoretas](/articles/the-masoretes/)). Esse acordo é notável, e significa que as traduções do Antigo Testamento diferem muito menos no seu texto-base do que as do Novo Testamento (compare com [Os textos gregos por trás dos Novos Testamentos](/articles/greek-texts-behind-new-testaments/)).
 
-Mas o acordo não é completo. Os tradutores também consultam testemunhas mais antigas, entre elas a Septuaginta grega e os manuscritos do Mar Morto, e em alguns lugares decidem que uma delas preserva uma leitura melhor que a do texto massorético. As traduções diferem na frequência com que fazem isso, e as notas de rodapé são o lugar onde procurar.
+Mas o acordo não é completo. Os tradutores também consultam testemunhas mais antigas, entre elas a Septuaginta grega e os Manuscritos do Mar Morto, e em alguns lugares decidem que uma delas preserva uma leitura melhor que a do texto massorético. As traduções diferem na frequência com que fazem isso, e as notas de rodapé são o lugar onde procurar.
 
 ## O Códice de Leningrado e as suas edições impressas
 
@@ -16,8 +16,8 @@ O manuscrito completo mais antigo da Bíblia hebraica é o **Códice de Leningra
 
 - A **Biblia Hebraica**, organizada por Rudolf Kittel, cuja terceira edição (1937) foi a primeira a imprimir o Códice de Leningrado. Costuma ser chamada de BHK.
 - A **Biblia Hebraica Stuttgartensia** (BHS, 1967–1977), durante décadas o texto que todo tradutor tinha sobre a mesa. O seu aparato, no pé da página, lista leituras das versões antigas e correções propostas.
-- A **Biblia Hebraica Quinta** (BHQ), a sua sucessora, publicada livro por livro desde 2004 e ainda em andamento. Ela apresenta evidências mais completas, inclusive os manuscritos do Mar Morto, e um comentário que explica os seus juízos.
-- O **Westminster Leningrad Codex** (WLC), uma transcrição digital do Códice de Leningrado produzida originalmente no Westminster Theological Seminary e mantida pelo J. Alan Groves Center. Ele serve de base para muitos projetos digitais gratuitos.
+- A **Biblia Hebraica Quinta** (BHQ), a sua sucessora, publicada livro por livro desde 2004 e ainda em andamento. Ela apresenta evidências mais completas, inclusive os Manuscritos do Mar Morto, e um comentário que explica os seus juízos.
+- O **Códice de Leningrado de Westminster** (WLC), uma transcrição digital do Códice de Leningrado produzida originalmente no Westminster Theological Seminary e mantida pelo J. Alan Groves Center. Ele serve de base para muitos projetos digitais gratuitos.
 
 O prefácio de uma tradução moderna geralmente indica o seu texto hebraico. A NIV e a ESV, por exemplo, dizem traduzir do texto massorético tal como impresso nas edições da Biblia Hebraica, consultando outras testemunhas antigas onde o hebraico é difícil. O Tanakh da NJPS, uma tradução judaica, segue o texto massorético de modo muito estrito e põe as alternativas propostas apenas nas suas notas (veja [Traduções judaicas para o inglês](/articles/jewish-english-translations/)).
 
@@ -26,8 +26,8 @@ O prefácio de uma tradução moderna geralmente indica o seu texto hebraico. A 
 O texto massorético é uma tradição muito cuidadosa, mas é uma tradição medieval, e não era a única forma das Escrituras hebraicas na Antiguidade.
 
 - A **Septuaginta**, traduzida para o grego a partir do século III a.C., foi feita com base em manuscritos hebraicos que às vezes diferiam do ancestral do texto massorético (veja [A Septuaginta](/articles/the-septuagint/)).
-- Os **manuscritos do Mar Morto**, copiados aproximadamente entre o século III a.C. e o século I d.C., incluem fragmentos de todos os livros da Bíblia hebraica, menos Ester (veja [A descoberta dos manuscritos do Mar Morto](/articles/discovering-the-dead-sea-scrolls/)). A maioria concorda de perto com a tradição massorética, mas alguns ficam do lado da Septuaginta ou oferecem leituras que não se encontram em nenhum outro lugar (veja [O que os manuscritos do Mar Morto mostram](/articles/what-the-dead-sea-scrolls-show/)).
-- O **Pentateuco samaritano**, a Peshitta siríaca, os Targuns aramaicos e a Vulgata latina acrescentam mais evidências.
+- Os **Manuscritos do Mar Morto**, copiados aproximadamente entre o século III a.C. e o século I d.C., incluem fragmentos de todos os livros da Bíblia hebraica, menos Ester (veja [A descoberta dos Manuscritos do Mar Morto](/articles/discovering-the-dead-sea-scrolls/)). A maioria concorda de perto com a tradição massorética, mas alguns ficam do lado da Septuaginta ou oferecem leituras que não se encontram em nenhum outro lugar (veja [O que os Manuscritos do Mar Morto mostram](/articles/what-the-dead-sea-scrolls-show/)).
+- O **Pentateuco Samaritano**, a Peshitta siríaca, os Targumim aramaicos e a Vulgata latina acrescentam mais evidências.
 
 Onde essas testemunhas diferem, os tradutores usam os métodos da crítica textual para decidir qual leitura explica melhor as outras (veja [Como a crítica textual recupera o texto](/articles/how-textual-criticism-works/)). A maioria das traduções modernas se afasta do texto massorético apenas de vez em quando, mas todas fazem isso em algum lugar.
 
@@ -61,7 +61,7 @@ No texto massorético, 1 Samuel 11 começa de modo abrupto: Naás, o amonita, ce
 
 Um rolo de Samuel da Caverna 4 de Qumran, conhecido como **4QSam-a**, contém neste ponto um parágrafo a mais. Ele explica que Naás vinha oprimindo as tribos de Gade e de Rúben, arrancando-lhes o olho direito, e que sete mil homens tinham fugido para Jabes-Gileade; depois, "cerca de um mês mais tarde", Naás subiu. O historiador Josefo, do século I, também conhecia essa história. A expressão "cerca de um mês mais tarde" difere muito pouco, em hebraico, do massorético "ele ficou calado", o que pode explicar como o parágrafo desapareceu da tradição massorética, se os olhos de um copista saltaram entre palavras parecidas.
 
-A **NRSV** (1989) acrescentou o parágrafo ao seu texto, um dos usos mais ousados dos manuscritos do Mar Morto numa grande tradução inglesa, e a sua edição atualizada o mantém. Muitas outras traduções, entre elas a ESV, mantêm o texto massorético, às vezes com uma nota. Os estudiosos ainda discordam sobre se o parágrafo é original ou uma ampliação.
+A **NRSV** (1989) acrescentou o parágrafo ao seu texto, um dos usos mais ousados dos Manuscritos do Mar Morto numa grande tradução inglesa, e a sua edição atualizada o mantém. Muitas outras traduções, entre elas a ESV, mantêm o texto massorético, às vezes com uma nota. Os estudiosos ainda discordam sobre se o parágrafo é original ou uma ampliação.
 
 ## Salmo 145: a letra que falta
 
@@ -81,7 +81,7 @@ Alguns estudiosos argumentam que a linha foi acrescentada mais tarde para preenc
 
 ## Outros exemplos
 
-Quem compara traduções vai encontrar muitos casos menores. Em Gênesis 4:8, o texto massorético diz que Caim falou com Abel, mas não diz o que ele disse; o Pentateuco samaritano, a Septuaginta e outras versões acrescentam "Vamos ao campo", e a World English Bible e muitas traduções modernas incluem isso. Em Isaías 53:11, o Grande Rolo de Isaías e a Septuaginta dizem que o servo "verá a luz", e a World English Bible, como várias outras traduções, os segue. Até as traduções que em geral seguem o texto massorético, como a World English Bible, se afastam dele em lugares como esses.
+Quem compara traduções vai encontrar muitos casos menores. Em Gênesis 4:8, o texto massorético diz que Caim falou com Abel, mas não diz o que ele disse; o Pentateuco Samaritano, a Septuaginta e outras versões acrescentam "Vamos ao campo", e a World English Bible e muitas traduções modernas incluem isso. Em Isaías 53:11, o Grande Rolo de Isaías e a Septuaginta dizem que o servo "verá a luz", e a World English Bible, como várias outras traduções, os segue. Até as traduções que em geral seguem o texto massorético, como a World English Bible, se afastam dele em lugares como esses.
 
 ## Como ler as notas de rodapé
 
@@ -89,16 +89,16 @@ As traduções sinalizam essas escolhas nas suas notas, e cada uma tem as suas c
 
 - **"Dead Sea Scrolls", "Q Ms" ou "Qumran"**: a leitura vem de um manuscrito do Mar Morto.
 - **"Septuagint", "LXX" ou "Gk"**: a leitura segue a tradução grega.
-- **"Syr", "Vg", "Tg"** ou **"Sam"**: a versão siríaca, a Vulgata latina, o Targum aramaico ou o Pentateuco samaritano.
+- **"Syr", "Vg", "Tg"** ou **"Sam"**: a versão siríaca, a Vulgata latina, o Targum aramaico ou o Pentateuco Samaritano.
 - **"MT" ou "Hebrew"**: a leitura do texto massorético, geralmente dada quando a tradução se afasta dele.
 - **"Cn"** (na NRSV) ou **"Emendation"**: uma correção proposta pelos estudiosos sem apoio direto nos manuscritos.
 - **"Meaning of Hebrew uncertain"**: o texto não está em dúvida, mas o seu sentido está.
 
-As Bíblias em português usam abreviaturas parecidas, como "TM" para o texto massorético, "LXX" ou "gr." para a Septuaginta e "Qumran" para os manuscritos do Mar Morto. Uma nota que dá "hebraico" ou "TM" com uma leitura diferente indica que a tradução deixou o texto padrão naquele ponto. Se uma tradução não tem nenhuma nota desse tipo, pode ser que siga o texto massorético do começo ao fim, ou simplesmente que não esteja contando isso a você.
+As Bíblias em português usam abreviaturas parecidas, como "TM" para o texto massorético, "LXX" ou "gr." para a Septuaginta e "Qumran" para os Manuscritos do Mar Morto. Uma nota que dá "hebraico" ou "TM" com uma leitura diferente indica que a tradução deixou o texto padrão naquele ponto. Se uma tradução não tem nenhuma nota desse tipo, pode ser que siga o texto massorético do começo ao fim, ou simplesmente que não esteja contando isso a você.
 
 ## Mostrar as evidências
 
-A Open Word Bible traduz o Antigo Testamento do Westminster Leningrad Codex, com dados palavra por palavra do MACULA Hebrew e da Open Scriptures Hebrew Bible, e copia cada palavra hebraica desses dados em vez de digitá-la (veja [Por que nunca digitamos grego ou hebraico à mão](/articles/never-typed-by-hand/)). Onde ela segue outra testemunha, ou onde uma variante como as de cima afeta o sentido, o registro de raciocínio daquela frase nomeia as testemunhas e explica a decisão, de modo que a escolha fica visível, em vez de enterrada numa abreviatura. Os seus rascunhos são feitos com ajuda de IA e ficam sem revisão até que revisores humanos nomeados os aprovem; outras traduções são usadas apenas para comparação, nunca como base para a sua formulação; e o resultado é dedicado ao domínio público sob a licença CC0.
+A Open Word Bible traduz o Antigo Testamento do Códice de Leningrado de Westminster, com dados palavra por palavra do MACULA Hebrew e da Open Scriptures Hebrew Bible, e copia cada palavra hebraica desses dados em vez de digitá-la (veja [Por que nunca digitamos grego ou hebraico à mão](/articles/never-typed-by-hand/)). Onde ela segue outra testemunha, ou onde uma variante como as de cima afeta o sentido, o registro de raciocínio daquela frase nomeia as testemunhas e explica a decisão, de modo que a escolha fica visível, em vez de enterrada numa abreviatura. Os seus rascunhos são feitos com ajuda de IA e ficam sem revisão até que revisores humanos nomeados os aprovem; outras traduções são usadas apenas para comparação, nunca como base para a sua formulação; e o resultado é dedicado ao domínio público sob a licença CC0.
 
 ## Fontes
 

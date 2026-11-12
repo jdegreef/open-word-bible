@@ -16,9 +16,9 @@ Este artigo percorre esses versículos um por um, com as razões que os registro
 
 Os números de versículo do Novo Testamento vêm de Robert Estienne, um impressor de Paris, que os acrescentou ao seu Novo Testamento grego de 1551. Veja [Os números de capítulos e versículos](/articles/chapter-and-verse-numbers/). O texto grego de Estienne foi o que, com pequenas mudanças, se tornou o Textus Receptus, o "texto recebido" por trás da King James Version. Ele se apoiava principalmente nas edições de Erasmo, que usaram um pequeno número de manuscritos tardios, e tinha todos esses versículos.
 
-Nos três séculos seguintes, manuscritos mais antigos ficaram ao alcance dos estudiosos: o Codex Alexandrinus, depois o Codex Vaticanus e o Codex Sinaiticus, depois os papiros. Veja [O Códice Sinaítico e o Códice Vaticano](/articles/sinaiticus-and-vaticanus/). Muitas e muitas vezes, essas cópias mais antigas eram mais curtas. Os editores concluíram que, na maioria desses lugares, o texto mais curto era o mais antigo, e que os escribas tinham acrescentado palavras, muitas vezes por boas razões.
+Nos três séculos seguintes, manuscritos mais antigos ficaram ao alcance dos estudiosos: o Códice Alexandrino, depois o Códice Vaticano e o Códice Sinaítico, depois os papiros. Veja [O Códice Sinaítico e o Códice Vaticano](/articles/sinaiticus-and-vaticanus/). Muitas e muitas vezes, essas cópias mais antigas eram mais curtas. Os editores concluíram que, na maioria desses lugares, o texto mais curto era o mais antigo, e que os escribas tinham acrescentado palavras, muitas vezes por boas razões.
 
-A Open Word Bible traduz o SBL Greek New Testament, editado por Michael Holmes. Como as outras grandes edições críticas modernas, ele deixa de fora a maioria desses versículos e mantém a numeração tradicional, de modo que o versículo 22 de Mateus 17 continua sendo chamado de versículo 22.
+A Open Word Bible traduz o Novo Testamento Grego da SBL, editado por Michael Holmes. Como as outras grandes edições críticas modernas, ele deixa de fora a maioria desses versículos e mantém a numeração tradicional, de modo que o versículo 22 de Mateus 17 continua sendo chamado de versículo 22.
 
 ## O que o leitor vê na Open Word Bible
 
@@ -30,13 +30,13 @@ Eis Mateus 17:20 no nível Equilibrada, a frase que traz a nota sobre o versícu
 
 A nota diz que a edição SBL não tem versículo 21 e o cita: "Mas esta espécie não sai senão por oração e jejum." Depois dá as razões.
 
-As configurações do leitor nunca trazem de volta um versículo que falta. Na Open Word Bible, as configurações mudam a formulação, nunca o sentido. Saber se um versículo pertence ao texto é uma questão de sentido e de evidências, por isso é respondida por uma decisão e uma nota de rodapé, iguais em todos os níveis. Veja [As configurações mudam a formulação, nunca o sentido](/articles/settings-change-wording/).
+As configurações de leitura nunca trazem de volta um versículo que falta. Na Open Word Bible, as configurações mudam a formulação, nunca o sentido. Saber se um versículo pertence ao texto é uma questão de sentido e de evidências, por isso é respondida por uma decisão e uma nota de rodapé, iguais em todos os níveis. Veja [As configurações mudam a formulação, nunca o sentido](/articles/settings-change-wording/).
 
 ## Palavras emprestadas de outro Evangelho
 
 A maioria dos versículos que faltam nos Evangelhos tem uma fonte clara: as mesmas palavras, ou quase as mesmas, aparecem em outro lugar. Os escribas conheciam bem os Evangelhos, muitas vezes de cor. Quando uma passagem de um Evangelho parecia mais curta que a passagem paralela de outro, era natural completá-la, às vezes de propósito e às vezes de memória. Os estudiosos chamam isso de *harmonização*. Veja [Como os escribas erravam](/articles/how-scribes-made-mistakes/).
 
-**Mateus 17:21.** "Mas esta espécie não sai senão por oração e jejum." O registro observa que a primeira mão do Codex Sinaiticus, o Codex Vaticanus e algumas traduções antigas não têm o versículo. Ele está em muitos manuscritos posteriores e provavelmente foi acrescentado a partir de Marcos 9:29, a história paralela, onde muitos manuscritos também acrescentam "e jejum".
+**Mateus 17:21.** "Mas esta espécie não sai senão por oração e jejum." O registro observa que a primeira mão do Códice Sinaítico, o Códice Vaticano e algumas traduções antigas não têm o versículo. Ele está em muitos manuscritos posteriores e provavelmente foi acrescentado a partir de Marcos 9:29, a história paralela, onde muitos manuscritos também acrescentam "e jejum".
 
 **Mateus 18:11.** "Pois o Filho do Homem veio salvar o que estava perdido." Os manuscritos antigos passam direto do versículo 10 para o 12. O registro observa que muitos posteriores acrescentam um versículo muito parecido com Lucas 19:10, provavelmente tirado de lá para introduzir a parábola da ovelha perdida.
 
@@ -50,9 +50,9 @@ A maioria dos versículos que faltam nos Evangelhos tem uma fonte clara: as mesm
 
 **Marcos 15:28.** "E cumpriu-se a Escritura que diz: E ele foi contado com os sem lei." As palavras citam Isaías 53:12, que Jesus cita em Lucas 22:37. O registro observa que os manuscritos mais antigos não têm o versículo e que o próprio Marcos raramente cita as Escrituras dessa maneira, por isso ele provavelmente foi tirado de Lucas.
 
-**Lucas 17:36.** "Dois homens estarão no campo; um será levado e o outro deixado." O registro observa que o Codex Bezae e algumas traduções antigas o têm, mas os manuscritos gregos mais antigos, entre eles o Papiro 75, o Sinaiticus e o Vaticanus, não. Provavelmente foi copiado de Mateus 24:40.
+**Lucas 17:36.** "Dois homens estarão no campo; um será levado e o outro deixado." O registro observa que o Códice de Beza e algumas traduções antigas o têm, mas os manuscritos gregos mais antigos, entre eles o Papiro 75, o Sinaítico e o Vaticano, não. Provavelmente foi copiado de Mateus 24:40.
 
-**Lucas 23:17.** "Ora, ele era obrigado a soltar-lhes um homem na festa." Muitos manuscritos o têm, mas o papiro antigo P75, o Codex Alexandrinus e o Codex Vaticanus não. O Codex Bezae o traz em outro lugar, depois de 23:19. O registro conclui que a sua posição variável sugere que ele foi acrescentado a partir de Marcos 15:6 ou de Mateus 27:15.
+**Lucas 23:17.** "Ora, ele era obrigado a soltar-lhes um homem na festa." Muitos manuscritos o têm, mas o papiro antigo P75, o Códice Alexandrino e o Códice Vaticano não. O Códice de Beza o traz em outro lugar, depois de 23:19. O registro conclui que a sua posição variável sugere que ele foi acrescentado a partir de Marcos 15:6 ou de Mateus 27:15.
 
 Nenhum desses versículos emprestados acrescenta nada novo. Em todos os casos, as palavras continuam na Bíblia, no lugar de onde foram emprestadas.
 
@@ -64,9 +64,9 @@ Um segundo grupo de acréscimos preenche uma lacuna da história, respondendo a 
 
 > {{OWB:JHN.5.3.s1:B}}
 
-O registro observa que os manuscritos mais antigos, entre eles dois papiros antigos e os códices Sinaiticus e Vaticanus, não têm essas palavras. Alguns manuscritos têm só uma parte delas, outros as marcam como duvidosas, e a sua formulação varia bastante de cópia para cópia. Essa variação é em si uma pista: uma passagem copiada desde o início tende a ser copiada de modo bastante uniforme, enquanto uma explicação posterior é contada de vários jeitos. As palavras parecem ter sido acrescentadas para explicar o que o doente diz no versículo 7. Como o fim do versículo 3 também falta, a nota cobre os "versículos 3b–4", e uma nota de rodapé dá as palavras acrescentadas por inteiro.
+O registro observa que os manuscritos mais antigos, entre eles dois papiros antigos e os códices Sinaítico e Vaticano, não têm essas palavras. Alguns manuscritos têm só uma parte delas, outros as marcam como duvidosas, e a sua formulação varia bastante de cópia para cópia. Essa variação é em si uma pista: uma passagem copiada desde o início tende a ser copiada de modo bastante uniforme, enquanto uma explicação posterior é contada de vários jeitos. As palavras parecem ter sido acrescentadas para explicar o que o doente diz no versículo 7. Como o fim do versículo 3 também falta, a nota cobre os "versículos 3b–4", e uma nota de rodapé dá as palavras acrescentadas por inteiro.
 
-**Atos 15:34.** "Mas pareceu bem a Silas ficar ali." Em 15:33, Judas e Silas são mandados de volta a Jerusalém, mas em 15:40 Paulo escolhe Silas em Antioquia. O registro observa que alguns manuscritos explicam isso com o versículo 34, e que o Codex Bezae vai mais longe: "e Judas partiu sozinho". Mas Paulo podia ter mandado chamar Silas, e o versículo não está nos manuscritos antigos que a edição SBL segue aqui.
+**Atos 15:34.** "Mas pareceu bem a Silas ficar ali." Em 15:33, Judas e Silas são mandados de volta a Jerusalém, mas em 15:40 Paulo escolhe Silas em Antioquia. O registro observa que alguns manuscritos explicam isso com o versículo 34, e que o Códice de Beza vai mais longe: "e Judas partiu sozinho". Mas Paulo podia ter mandado chamar Silas, e o versículo não está nos manuscritos antigos que a edição SBL segue aqui.
 
 **Atos 28:29.** Depois das últimas palavras de Paulo aos líderes judeus em Roma, muitos manuscritos posteriores acrescentam que os judeus foram embora discutindo acaloradamente entre si. O registro observa que o versículo falta nos manuscritos mais antigos, por isso a tradução passa do versículo 28 para o 30.
 
@@ -100,7 +100,7 @@ O registro não finge que isso está resolvido. A sua decisão de variante textu
 
 Esses números de versículo vazios são só os casos mais visíveis. Com muito mais frequência, a diferença entre Bíblias mais antigas e mais novas é uma palavra ou uma expressão dentro de um versículo, e os registros tratam disso do mesmo modo. Em Marcos 9:45, por exemplo, alguns manuscritos posteriores acrescentam "no fogo que não se apaga"; o registro o observa.
 
-Duas passagens mais longas são outra questão. A história da mulher surpreendida em adultério (João 7:53–8:11) e os finais de Marcos (depois de 16:8) também faltam nos manuscritos mais antigos. Mas são longas, muito queridas e muito antigas, e a edição SBL as imprime entre colchetes duplos. A Open Word Bible as imprime entre colchetes simples, com notas completas. Veja [A mulher apanhada em adultério](/articles/the-woman-caught-in-adultery/) e [Como termina o Evangelho de Marcos?](/articles/the-ending-of-mark/). As palavras de 1 João 5:7 conhecidas como Comma Joanina têm a sua própria história; veja [A Comma Joanina](/articles/the-johannine-comma/).
+Duas passagens mais longas são outra questão. A história da mulher surpreendida em adultério (João 7:53–8:11) e os finais de Marcos (depois de 16:8) também faltam nos manuscritos mais antigos. Mas são longas, muito queridas e muito antigas, e a edição SBL as imprime entre colchetes duplos. A Open Word Bible as imprime entre colchetes simples, com notas completas. Veja [A mulher apanhada em adultério](/articles/the-woman-caught-in-adultery/) e [Como termina o Evangelho de Marcos?](/articles/the-ending-of-mark/). As palavras de 1 João 5:7 conhecidas como Comma joanino têm a sua própria história; veja [O Comma joanino](/articles/the-johannine-comma/).
 
 ## Perdeu-se alguma coisa?
 

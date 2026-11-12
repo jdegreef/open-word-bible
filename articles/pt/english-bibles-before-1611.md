@@ -30,7 +30,7 @@ Os exemplares muitas vezes ficavam acorrentados a uma estante ou a uma coluna da
 
 Alguns desses exilados se estabeleceram em **Genebra**. Ali, um grupo de estudiosos ingleses, liderado por **William Whittingham**, produziu um Novo Testamento em 1557 e uma Bíblia completa em 1560, dedicada a Elizabeth I.
 
-A **Geneva Bible** era um tipo novo de livro para os leitores ingleses:
+A **Bíblia de Genebra** era um tipo novo de livro para os leitores ingleses:
 
 - Foi a primeira Bíblia inglesa traduzida inteiramente do hebraico e do grego, revisando as versões inglesas anteriores à luz dos originais.
 - Foi a primeira Bíblia inglesa completa com **versículos numerados**, seguindo os que Robert Estienne tinha introduzido no seu Novo Testamento grego de 1551.
@@ -57,9 +57,9 @@ Ela foi muitas vezes descartada como rígida, mas era cuidadosa, e os tradutores
 
 ## O que os tradutores da King James herdaram
 
-Em 1604, havia três Bíblias inglesas principais em uso: a Bishops' Bible nas igrejas, a Geneva Bible nas casas e o Novo Testamento de Reims entre os católicos. Todas, menos a de Reims, se apoiavam fortemente em Tyndale. Tinham sido feitas por exilados e bispos, puritanos e católicos, às vezes sob perseguição e às vezes sob licença real. A mesma palavra grega podia ser "church" ("igreja") ou "congregation" ("congregação"), "elder" ("ancião") ou "priest" ("sacerdote"), dependendo de quem traduzia e por quê, e um leitor de Genebra e um leitor de Reims encontravam explicações muito diferentes na margem. Quando os tradutores da King James escreveram que queriam "to make a good one better" ("tornar melhor uma boa"), era nessa linhagem de Bíblias que eles pensavam.
+Em 1604, havia três Bíblias inglesas principais em uso: a Bishops' Bible nas igrejas, a Bíblia de Genebra nas casas e o Novo Testamento de Reims entre os católicos. Todas, menos a de Reims, se apoiavam fortemente em Tyndale. Tinham sido feitas por exilados e bispos, puritanos e católicos, às vezes sob perseguição e às vezes sob licença real. A mesma palavra grega podia ser "church" ("igreja") ou "congregation" ("congregação"), "elder" ("ancião") ou "priest" ("sacerdote"), dependendo de quem traduzia e por quê, e um leitor de Genebra e um leitor de Reims encontravam explicações muito diferentes na margem. Quando os tradutores da King James escreveram que queriam "to make a good one better" ("tornar melhor uma boa"), era nessa linhagem de Bíblias que eles pensavam.
 
-A Open Word Bible procura pôr essas escolhas à vista, e não em notas partidárias. Cada decisão de significado registra as alternativas consideradas e as razões da escolha, para que o leitor possa discordar sabendo do que se trata. Os rascunhos são feitos com a ajuda de IA e aguardam revisores humanos identificados pelo nome. Como os tradutores de Genebra, o projeto trabalha a partir do hebraico e do grego; diferentemente deles, não impõe nenhuma restrição a quem queira copiar o resultado.
+A Open Word Bible procura pôr essas escolhas à vista, e não em notas partidárias. Cada decisão de sentido registra as alternativas consideradas e as razões da escolha, para que o leitor possa discordar sabendo do que se trata. Os rascunhos são feitos com a ajuda de IA e aguardam revisores humanos identificados pelo nome. Como os tradutores de Genebra, o projeto trabalha a partir do hebraico e do grego; diferentemente deles, não impõe nenhuma restrição a quem queira copiar o resultado.
 
 ## Fontes
 

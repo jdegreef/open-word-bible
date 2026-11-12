@@ -61,6 +61,6 @@ Por isso o nível Equilibrada diz que a paz de Deus "montará guarda sobre" os c
 
 Na linguagem bíblica, o coração é o centro da pessoa inteira, e a segunda palavra é um pensamento ou um plano. Coração e mente juntos significam toda a vida interior.
 
-A frase termina com "em Cristo Jesus". É ali que a guarda acontece: na união com ele. A Acessível explicita isso: "porque vocês estão unidos a" ele. Isso acrescenta um "porque" que o grego deixa implícito, por isso a decisão de tradução está marcada como incerta e sinalizada para os revisores conferirem.
+A frase termina com "em Cristo Jesus". É ali que a guarda acontece: na união com ele. A Acessível explicita isso: "porque vocês estão unidos a" ele. Isso acrescenta um "porque" que o grego deixa implícito, por isso a decisão de formulação está marcada como incerta e sinalizada para os revisores conferirem.
 
 [Abra Filipenses 4](/php/4/) para ler a passagem inteira com as suas notas.

@@ -19,7 +19,7 @@ O próprio texto da Vulgata tinha sido copiado à mão durante mil anos e aprese
 
 ## As primeiras Bíblias hebraicas impressas
 
-Os impressores judeus logo adotaram a nova tecnologia. A primeira Bíblia hebraica completa impressa apareceu em **Soncino**, na Itália, em 1488. A edição antiga mais influente foi a **Segunda Bíblia Rabínica**, impressa em Veneza pelo impressor cristão **Daniel Bomberg** em 1524–25 e editada por **Jacob ben Hayyim**, um estudioso judeu que reuniu e comparou manuscritos e imprimiu as notas massoréticas ao lado do texto, com os Targuns aramaicos e comentários medievais.
+Os impressores judeus logo adotaram a nova tecnologia. A primeira Bíblia hebraica completa impressa apareceu em **Soncino**, na Itália, em 1488. A edição antiga mais influente foi a **Segunda Bíblia Rabínica**, impressa em Veneza pelo impressor cristão **Daniel Bomberg** em 1524–25 e editada por **Jacob ben Hayyim**, um estudioso judeu que reuniu e comparou manuscritos e imprimiu as notas massoréticas ao lado do texto, com os Targumim aramaicos e comentários medievais.
 
 A edição de Ben Hayyim tornou-se o texto hebraico padrão por quatro séculos. Foi a base do Antigo Testamento da King James Version e das duas primeiras edições da *Biblia Hebraica* de Kittel (1906 e 1913). Só em 1937 a terceira edição da *Biblia Hebraica* passou a usar o **Códice de Leningrado**, mais antigo e de maior autoridade (veja [Os códices de Alepo e de Leningrado](/articles/aleppo-and-leningrad-codices/)).
 
@@ -31,7 +31,7 @@ Enquanto isso, o estudioso holandês **Desidério Erasmo** e o impressor de Basi
 
 Mesmo assim, a edição de Erasmo foi um marco. Pôs o Novo Testamento grego nas mãos de estudiosos de toda a Europa, e foi usada por Lutero para a sua tradução alemã (1522) e por Tyndale para o seu Novo Testamento inglês (1526).
 
-Erasmo revisou o seu texto várias vezes. Uma mudança famosa diz respeito a **1 João 5:7–8**. As suas duas primeiras edições omitiam as palavras sobre "o Pai, o Verbo e o Espírito Santo" no céu, a chamada *Comma Johanneum*, porque elas não estavam nos seus manuscritos gregos. Depois de críticas, ele as incluiu na terceira edição (1522), quando apareceu um manuscrito grego que as continha. Esse manuscrito, hoje em Dublin e conhecido como Codex Montfortianus, foi provavelmente feito no século XVI, e as palavras não aparecem em nenhum manuscrito grego anterior ao fim da Idade Média. As edições modernas as omitem.
+Erasmo revisou o seu texto várias vezes. Uma mudança famosa diz respeito a **1 João 5:7–8**. As suas duas primeiras edições omitiam as palavras sobre "o Pai, o Verbo e o Espírito Santo" no céu, a chamada *Comma Johanneum*, porque elas não estavam nos seus manuscritos gregos. Depois de críticas, ele as incluiu na terceira edição (1522), quando apareceu um manuscrito grego que as continha. Esse manuscrito, hoje em Dublin e conhecido como Códice Montfortiano, foi provavelmente feito no século XVI, e as palavras não aparecem em nenhum manuscrito grego anterior ao fim da Idade Média. As edições modernas as omitem.
 
 ## O Texto Recebido
 
@@ -43,7 +43,7 @@ Os tradutores da **King James Version**, de 1611, trabalharam principalmente com
 
 ## Capítulos e versículos
 
-Os números de capítulos e versículos das nossas Bíblias também não são originais. As divisões modernas em capítulos costumam ser atribuídas a **Stephen Langton**, professor em Paris e depois arcebispo de Cantuária, por volta de 1200, trabalhando com a Bíblia latina. Os manuscritos massoréticos já marcavam o fim de cada versículo no Antigo Testamento, e a numeração desses versículos entrou nas Bíblias impressas no século XVI. A edição de Stephanus de 1551 introduziu os números de versículos do Novo Testamento; a primeira Bíblia inglesa a usar versículos do começo ao fim foi a **Geneva Bible**, de 1560. Essas divisões são úteis para encontrar passagens, mas às vezes cortam uma frase ou um pensamento num lugar estranho.
+Os números de capítulos e versículos das nossas Bíblias também não são originais. As divisões modernas em capítulos costumam ser atribuídas a **Stephen Langton**, professor em Paris e depois arcebispo de Cantuária, por volta de 1200, trabalhando com a Bíblia latina. Os manuscritos massoréticos já marcavam o fim de cada versículo no Antigo Testamento, e a numeração desses versículos entrou nas Bíblias impressas no século XVI. A edição de Stephanus de 1551 introduziu os números de versículos do Novo Testamento; a primeira Bíblia inglesa a usar versículos do começo ao fim foi a **Bíblia de Genebra**, de 1560. Essas divisões são úteis para encontrar passagens, mas às vezes cortam uma frase ou um pensamento num lugar estranho.
 
 ## De volta aos manuscritos
 
@@ -55,9 +55,9 @@ Para a Bíblia hebraica, as edições padrão baseiam-se hoje no Códice de Leni
 
 ## Da impressão ao digital
 
-A mudança mais recente é digital. As edições críticas são produzidas hoje com a ajuda de bancos de dados e de análise por computador. Manuscritos como o Codex Sinaiticus, o Codex Vaticanus, o Códice de Alepo e os Manuscritos do Mar Morto podem ser vistos on-line por qualquer pessoa. E textos eletrônicos de licença livre tornam possível construir ferramentas e traduções que antes exigiriam permissões caras.
+A mudança mais recente é digital. As edições críticas são produzidas hoje com a ajuda de bancos de dados e de análise por computador. Manuscritos como o Códice Sinaítico, o Códice Vaticano, o Códice de Alepo e os Manuscritos do Mar Morto podem ser vistos on-line por qualquer pessoa. E textos eletrônicos de licença livre tornam possível construir ferramentas e traduções que antes exigiriam permissões caras.
 
-A Open Word Bible depende disso. O seu Novo Testamento é traduzido do **SBL Greek New Testament** (2010), uma edição crítica editada por Michael Holmes e publicada sob licença livre, com dados linguísticos palavra por palavra do **MACULA Greek**. O seu Antigo Testamento é traduzido do **Westminster Leningrad Codex**, uma transcrição de domínio público do Códice de Leningrado, com dados do **MACULA Hebrew** e da **Open Scriptures Hebrew Bible**. Cada fonte está fixada numa versão exata, para que cada palavra deste site possa ser conferida com ela, e nenhum grego ou hebraico é jamais digitado à mão (veja [Por que nunca digitamos grego ou hebraico à mão](/articles/never-typed-by-hand/)). De certo modo, é a promessa da imprensa levada um passo adiante: não só cópias idênticas do texto, mas acesso aberto às evidências por trás dele.
+A Open Word Bible depende disso. O seu Novo Testamento é traduzido do **Novo Testamento Grego da SBL** (2010), uma edição crítica editada por Michael Holmes e publicada sob licença livre, com dados linguísticos palavra por palavra do **MACULA Greek**. O seu Antigo Testamento é traduzido do **Códice de Leningrado de Westminster**, uma transcrição de domínio público do Códice de Leningrado, com dados do **MACULA Hebrew** e da **Open Scriptures Hebrew Bible**. Cada fonte está fixada numa versão exata, para que cada palavra deste site possa ser conferida com ela, e nenhum grego ou hebraico é jamais digitado à mão (veja [Por que nunca digitamos grego ou hebraico à mão](/articles/never-typed-by-hand/)). De certo modo, é a promessa da imprensa levada um passo adiante: não só cópias idênticas do texto, mas acesso aberto às evidências por trás dele.
 
 ## Fontes
 

@@ -19,7 +19,7 @@ Para o **Novo Testamento**, os críticos textuais trabalham com três tipos de e
 - **Traduções antigas**, ou versões: latina, siríaca, copta e, mais tarde, armênia, georgiana, etíope, gótica e outras. Algumas delas foram feitas nos séculos II e III, a partir de manuscritos gregos mais antigos que a maioria dos que sobreviveram.
 - **Citações nos primeiros autores cristãos**, os "pais da Igreja", que citaram o Novo Testamento com tanta frequência que, como se costuma dizer, grande parte dele poderia ser reconstruída só a partir dos seus escritos. As suas citações podem ser datadas e situadas geograficamente, embora às vezes eles citassem de memória.
 
-Para o **Antigo Testamento**, as principais testemunhas são os manuscritos massoréticos, os manuscritos do Mar Morto, o Pentateuco samaritano e as traduções antigas: a Septuaginta grega, os Targuns aramaicos, a Peshitta siríaca e a Vulgata latina. Cada uma delas é descrita em outro artigo desta série.
+Para o **Antigo Testamento**, as principais testemunhas são os manuscritos massoréticos, os Manuscritos do Mar Morto, o Pentateuco Samaritano e as traduções antigas: a Septuaginta grega, os Targumim aramaicos, a Peshitta siríaca e a Vulgata latina. Cada uma delas é descrita em outro artigo desta série.
 
 ## Evidência externa: pesar as testemunhas
 
@@ -61,7 +61,7 @@ A **probabilidade transcricional** puxa para os dois lados. Um escriba poderia m
 
 A **probabilidade intrínseca** pergunta o que Marcos escreveria. "Filho de Deus" é um título-chave no seu Evangelho: a voz do céu chama Jesus de "meu Filho amado" no seu batismo (1:11), e o centurião junto à cruz diz: "Verdadeiramente este homem era o Filho de Deus" (15:39). O título combina com Marcos. Mas isso também poderia ser o motivo pelo qual um escriba o acrescentou.
 
-Bons estudiosos pesam as mesmas evidências e chegam a lugares diferentes. Bart Ehrman argumenta que o título foi acrescentado. A edição Nestle-Aland o imprime entre colchetes, o seu sinal de que os editores não tinham certeza. O SBL Greek New Testament o deixa de fora, e a Open Word Bible o segue, com uma nota de rodapé que dá a leitura mais longa e marca a decisão como incerta:
+Bons estudiosos pesam as mesmas evidências e chegam a lugares diferentes. Bart Ehrman argumenta que o título foi acrescentado. A edição Nestle-Aland o imprime entre colchetes, o seu sinal de que os editores não tinham certeza. O Novo Testamento Grego da SBL o deixa de fora, e a Open Word Bible o segue, com uma nota de rodapé que dá a leitura mais longa e marca a decisão como incerta:
 
 > {{OWB:MRK.1.1.s1:B}}
 
@@ -79,7 +79,7 @@ A partir do século XVII, estudiosos como **John Mill** (1707), **Bengel** (1734
 
 Em 1881, os estudiosos de Cambridge **Brooke Foss Westcott** e **Fenton John Anthony Hort** publicaram *The New Testament in the Original Greek*, com uma exposição minuciosa do seu método. O seu texto, baseado sobretudo no Vaticano e no Sinaítico, definiu a direção para o século seguinte.
 
-No século XX, a edição **Nestle-Aland** (*Novum Testamentum Graece*), hoje na 28ª edição (2012), e o estreitamente relacionado **Greek New Testament das Sociedades Bíblicas Unidas** se tornaram os textos padrão para estudiosos e tradutores. O **SBL Greek New Testament** (2010), organizado por Michael Holmes, e o **Tyndale House Greek New Testament** (2017) são edições críticas independentes que chegam a resultados muito semelhantes.
+No século XX, a edição **Nestle-Aland** (*Novum Testamentum Graece*), hoje na 28ª edição (2012), e o estreitamente relacionado **Greek New Testament das Sociedades Bíblicas Unidas** se tornaram os textos padrão para estudiosos e tradutores. O **Novo Testamento Grego da SBL** (2010), organizado por Michael Holmes, e o **Tyndale House Greek New Testament** (2017) são edições críticas independentes que chegam a resultados muito semelhantes.
 
 ## Os computadores e o CBGM
 
@@ -97,7 +97,7 @@ O Antigo Testamento tem os seus próprios desafios. Como o texto massorético fo
 
 A crítica textual não pode produzir os autógrafos originais. O que ela pode produzir é um texto que, na imensa maioria dos lugares, tem o apoio das evidências mais antigas e melhores, e um registro claro dos lugares onde as evidências estão divididas. As edições críticas marcam esses lugares, e as boas traduções mencionam os importantes nas suas notas.
 
-A Open Word Bible traduz o Novo Testamento a partir do SBL Greek New Testament e o Antigo Testamento a partir do Westminster Leningrad Codex. Onde nos afastamos desses textos, ou onde uma variante afeta o sentido, o registro de raciocínio da frase diz isso, nomeia as testemunhas e explica a escolha. A crítica textual é, no fundo, a disciplina de mostrar as suas evidências, e este projeto também é.
+A Open Word Bible traduz o Novo Testamento a partir do Novo Testamento Grego da SBL e o Antigo Testamento a partir do Códice de Leningrado de Westminster. Onde nos afastamos desses textos, ou onde uma variante afeta o sentido, o registro de raciocínio da frase diz isso, nomeia as testemunhas e explica a escolha. A crítica textual é, no fundo, a disciplina de mostrar as suas evidências, e este projeto também é.
 
 ## Fontes
 

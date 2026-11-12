@@ -14,7 +14,7 @@ Comece por uma história, e não por uma definição. No livro de Rute, duas jov
 
 > {{OWB:RUT.1.8.s1:B}}
 
-A decisão de significado deste versículo descreve a *ḥesed* como a bondade mostrada por lealdade, além do que o dever exige, a alguém a quem se está ligado. As jovens não deviam mais nada a Noemi. Os seus maridos tinham morrido, e o costume lhes permitiria voltar para casa e casar de novo. Mesmo assim, elas tinham se mantido fiéis. Noemi pede a Deus que se mantenha fiel a elas do mesmo modo.
+A decisão de sentido deste versículo descreve a *ḥesed* como a bondade mostrada por lealdade, além do que o dever exige, a alguém a quem se está ligado. As jovens não deviam mais nada a Noemi. Os seus maridos tinham morrido, e o costume lhes permitiria voltar para casa e casar de novo. Mesmo assim, elas tinham se mantido fiéis. Noemi pede a Deus que se mantenha fiel a elas do mesmo modo.
 
 Mais tarde, Rute vai até Boaz à noite e lhe pede que aja como resgatador da família e se case com ela. Ele responde:
 
@@ -34,7 +34,7 @@ O uso mais importante da palavra vem no monte Sinai. Israel acaba de fazer o bez
 
 > {{OWB:EXO.34.6.s1:B}}
 
-A palavra é {{HEBREW:EXO.34.6:14}}, e o versículo seguinte acrescenta que Deus a mantém "por milhares" sem, no entanto, deixar o culpado sem castigo. A decisão de significado a descreve como uma bondade e um amor que são leais a uma relação e não desistem. É o amor que Deus prometeu nos mandamentos (20:6) e mostrou ao tirar o seu povo do Egito (15:13).
+A palavra é {{HEBREW:EXO.34.6:14}}, e o versículo seguinte acrescenta que Deus a mantém "por milhares" sem, no entanto, deixar o culpado sem castigo. A decisão de sentido a descreve como uma bondade e um amor que são leais a uma relação e não desistem. É o amor que Deus prometeu nos mandamentos (20:6) e mostrou ao tirar o seu povo do Egito (15:13).
 
 Esses versículos se tornam a confissão de Israel sobre quem Deus é. O registro enumera os lugares que os ecoam: Números 14:18, Salmos 86:15, 103:8 e 145:8, Neemias 9:17, Joel 2:13 e Jonas 4:2. Jonas os cita como uma queixa: ele fugiu porque sabia que Deus era assim e que pouparia Nínive.
 
@@ -66,19 +66,19 @@ Os estudiosos discutiram qual lado da palavra importa mais. Nelson Glueck, num e
 
 ## O que a Open Word Bible faz
 
-Os registros usam um pequeno conjunto de traduções, escolhidas para que cada uma mantenha a lealdade que há na palavra. Uma decisão de tradução em Rute 1:8 diz isso diretamente: "bondade" sozinha deixaria a lealdade de fora.
+Os registros usam um pequeno conjunto de traduções, escolhidas para que cada uma mantenha a lealdade que há na palavra. Uma decisão de formulação em Rute 1:8 diz isso diretamente: "bondade" sozinha deixaria a lealdade de fora.
 
 Em português, a *ḥesed* do Senhor é, em geral, "amor leal" nos níveis Literal e Equilibrada, em todo o Antigo Testamento. Assim, em Êxodo 34:6, Deus é "grande em amor leal e fidelidade" na Literal e "cheio de amor leal e fidelidade" na Equilibrada. Na Acessível, os Salmos e os profetas dizem "amor fiel", como em Lamentações 3:22 acima, salvo no refrão de ação de graças do templo, que mantém "amor leal" em todos os níveis, como se vê no Salmo 136.
 
 Quando a *ḥesed* é mostrada entre pessoas, o português diz "lealdade" na Literal e na Equilibrada e "bondade leal", ou "bondoso e leal", na Acessível. "Amor" sugeriria romance numa cena como a de Boaz e Rute. É o que acontece em Rute 3:10, acima; em Josué 2:12, onde Raabe pede aos espiões que mostrem à sua família a *ḥesed* que ela lhes mostrou; e em 2 Samuel 9:1, onde Davi procura alguém da casa de Saul a quem mostrar *ḥesed* por causa de Jônatas.
 
-A diferença é apenas de redação. As decisões de significado descrevem o mesmo sentido em todos esses lugares: um amor que se mantém fiel dentro de um vínculo. Na edição inglesa, as palavras foram fixadas em tabelas de termos para grupos diferentes de livros ("steadfast love" e "faithful love" na Lei, nos livros históricos e em Rute; "loyal love" e "faithful love" nos Salmos e nos profetas), e as notas do projeto apontam um lugar onde elas se encontram de forma desajeitada: quando Joel e Jonas citam Êxodo 34:6, o inglês dos dois ainda não coincide. É uma questão em aberto para a revisão. Em português, Jonas já repete as palavras de Joel 2:13 em cada nível.
+A diferença é apenas de formulação. As decisões de sentido descrevem o mesmo sentido em todos esses lugares: um amor que se mantém fiel dentro de um vínculo. Na edição inglesa, as palavras foram fixadas em tabelas de termos para grupos diferentes de livros ("steadfast love" e "faithful love" na Lei, nos livros históricos e em Rute; "loyal love" e "faithful love" nos Salmos e nos profetas), e as notas do projeto apontam um lugar onde elas se encontram de forma desajeitada: quando Joel e Jonas citam Êxodo 34:6, o inglês dos dois ainda não coincide. É uma questão em aberto para a revisão. Em português, Jonas já repete as palavras de Joel 2:13 em cada nível.
 
 Alguns versículos se afastam do padrão, cada um com uma razão registrada.
 
 - **Gênesis 24:27.** O servo de Abraão louva a Deus por não ter retirado do seu senhor "o seu amor leal e a sua fidelidade". A Equilibrada transforma o par em "Ele não deixou de ser bondoso e fiel ao meu senhor", e a Acessível diz que Deus "cumpriu as suas promessas de amor ao meu senhor".
-- **Ester 2:9.** Ester "alcançou bondade" diante do oficial encarregado das mulheres. Uma decisão de significado explica que aqui, quando é um superior que a mostra, a palavra significa boa vontade, e uma decisão de tradução diz que a "lealdade" habitual induziria ao erro. A Equilibrada diz "conquistou o favor dele".
-- **Miqueias 6:8.** O resumo do profeta sobre o que Deus pede é "praticar a justiça, amar a *ḥesed* e andar humildemente com o seu Deus". O hebraico põe o verbo "amar" diante do substantivo, e "to love loyal love" é um inglês difícil. Por decisão do fundador, a Literal o mantém ("amar o amor leal"), a Equilibrada diz "amar a lealdade" e a Acessível diz que Deus quer que vocês "gostem de ser bondosos e leais". A decisão de tradução observa que o desvio é apenas de redação.
+- **Ester 2:9.** Ester "alcançou bondade" diante do oficial encarregado das mulheres. Uma decisão de sentido explica que aqui, quando é um superior que a mostra, a palavra significa boa vontade, e uma decisão de formulação diz que a "lealdade" habitual induziria ao erro. A Equilibrada diz "conquistou o favor dele".
+- **Miqueias 6:8.** O resumo do profeta sobre o que Deus pede é "praticar a justiça, amar a *ḥesed* e andar humildemente com o seu Deus". O hebraico põe o verbo "amar" diante do substantivo, e "to love loyal love" é um inglês difícil. Por decisão do fundador, a Literal o mantém ("amar o amor leal"), a Equilibrada diz "amar a lealdade" e a Acessível diz que Deus quer que vocês "gostem de ser bondosos e leais". A decisão de formulação observa que o desvio é apenas de formulação.
 - **Isaías 40:6.** "Toda carne é erva, e toda a sua *ḥesed* é como a flor do campo." Dita das pessoas, a palavra significa a fidelidade delas, que não dura. Os registros dizem "lealdade" na Literal e na Equilibrada e "fidelidade" na Acessível, e uma nota de rodapé observa que a Septuaginta diz aqui "glória", a forma que 1 Pedro 1:24 cita.
 
 ## Quando o grego diz "misericórdia"

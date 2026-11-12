@@ -12,7 +12,7 @@ Uma tradução precisa decidir quais palavras está traduzindo. Este artigo expl
 
 ## Um texto fixo
 
-A Open Word Bible traduz uma única edição publicada do grego: o SBL Greek New Testament, editado por Michael Holmes e publicado em 2010, fixado numa versão exata. O seu editor pesou os manuscritos e imprimiu o texto que julgou mais provavelmente original. Para o Antigo Testamento, a base é o Códice de Leningrado de Westminster, uma edição digital do manuscrito completo mais antigo da Bíblia hebraica. Partir de edições fixas significa que cada palavra da tradução pode ser rastreada até um texto-fonte conhecido, e que cada resultado pode ser conferido de novo mais tarde. Veja [Por que nunca digitamos grego ou hebraico à mão](/articles/never-typed-by-hand/).
+A Open Word Bible traduz uma única edição publicada do grego: o Novo Testamento Grego da SBL, editado por Michael Holmes e publicado em 2010, fixado numa versão exata. O seu editor pesou os manuscritos e imprimiu o texto que julgou mais provavelmente original. Para o Antigo Testamento, a base é o Códice de Leningrado de Westminster, uma edição digital do manuscrito completo mais antigo da Bíblia hebraica. Partir de edições fixas significa que cada palavra da tradução pode ser rastreada até um texto-fonte conhecido, e que cada resultado pode ser conferido de novo mais tarde. Veja [Por que nunca digitamos grego ou hebraico à mão](/articles/never-typed-by-hand/).
 
 Seguir uma edição não é o mesmo que esconder as suas escolhas. Onde os manuscritos diferem de um modo que o leitor poderia notar, o registro da frase tem uma decisão de sentido na categoria *variante textual*. Ela indica a leitura seguida, dá as alternativas e explica os dados em linguagem simples. Já há mais de mil decisões desse tipo nos livros traduzidos até agora.
 
@@ -81,7 +81,7 @@ Nos dois lugares, a tradução segue a edição da SBL e mantém as palavras. El
 
 ## O Antigo Testamento também
 
-As variantes não são só uma questão do Novo Testamento. Os manuscritos do Mar Morto incluem uma cópia quase completa de Isaías, o Grande Rolo de Isaías, copiado mais de mil anos antes do Códice de Leningrado. Os dois concordam de perto, mas não em cada palavra. Em Isaías, os registros da Open Word Bible pesam dezenas de leituras do rolo, em geral mantendo o hebraico do Códice de Leningrado e anotando a formulação do rolo.
+As variantes não são só uma questão do Novo Testamento. Os Manuscritos do Mar Morto incluem uma cópia quase completa de Isaías, o Grande Rolo de Isaías, copiado mais de mil anos antes do Códice de Leningrado. Os dois concordam de perto, mas não em cada palavra. Em Isaías, os registros da Open Word Bible pesam dezenas de leituras do rolo, em geral mantendo o hebraico do Códice de Leningrado e anotando a formulação do rolo.
 
 De vez em quando, o registro segue o rolo. Em Isaías 14:4, o texto hebraico tradicional tem uma palavra que não aparece em nenhum outro lugar, de sentido desconhecido. O rolo tem uma palavra com uma letra diferente que significa "ataque" ou "fúria", e a Septuaginta grega aponta na mesma direção. A tradução segue o rolo, marca a decisão como incerta e dá uma nota de rodapé. Veja [O Grande Rolo de Isaías](/articles/the-great-isaiah-scroll/).
 

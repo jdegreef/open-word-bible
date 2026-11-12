@@ -58,7 +58,7 @@ Nem todo caso é tão claro. Lucas 22:43–44, em que um anjo fortalece Jesus e 
 
 Muitas variantes importantes são uma única palavra. Em Marcos 1:41, um homem com uma doença de pele pede a Jesus que o purifique. A maioria dos manuscritos diz que Jesus foi "movido de compaixão". Uns poucos, entre eles o Códice de Beza e algumas cópias da Vetus Latina, dizem que ele ficou irado: {{GREEK:MRK.1.41:2}}. Em Hebreus 2:9, quase todos os manuscritos dizem que Jesus provou a morte por todos "pela graça de Deus", mas uns poucos, e vários escritores antigos, entre eles Orígenes, dizem "à parte de Deus": {{GREEK:HEB.2.9:20-21}}.
 
-Nos dois lugares, a leitura mais rara é também a mais difícil. Um escriba tinha mais probabilidade de suavizar a ira em compaixão do que o contrário, e mais probabilidade de transformar uma expressão surpreendente numa familiar. O SBL Greek New Testament, que a Open Word Bible traduz, imprime a leitura mais difícil nas duas vezes:
+Nos dois lugares, a leitura mais rara é também a mais difícil. Um escriba tinha mais probabilidade de suavizar a ira em compaixão do que o contrário, e mais probabilidade de transformar uma expressão surpreendente numa familiar. O Novo Testamento Grego da SBL, que a Open Word Bible traduz, imprime a leitura mais difícil nas duas vezes:
 
 > {{OWB:MRK.1.41.s1:B}}
 

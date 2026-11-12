@@ -59,7 +59,7 @@ Os dois manuscritos não têm algumas passagens que aparecem nos manuscritos pos
 
 - **Marcos 16:9–20.** Os dois terminam o Evangelho de Marcos em 16:8. No Vaticano, o escriba deixou uma coluna em branco depois de 16:8, o único espaço assim na parte do Novo Testamento do códice, talvez sabendo que algumas cópias tinham mais texto.
 - **João 7:53–8:11**, a história da mulher apanhada em adultério, está ausente dos dois.
-- **1 João 5:7–8**, a formulação ampliada sobre "o Pai, a Palavra e o Espírito Santo", conhecida como *Comma Johanneum*, está ausente dos dois, e de todos os manuscritos gregos anteriores à Idade Média.
+- **1 João 5:7–8**, a formulação ampliada sobre "o Pai, o Verbo e o Espírito Santo", conhecida como *Comma Johanneum*, está ausente dos dois, e de todos os manuscritos gregos anteriores à Idade Média.
 
 Essas passagens são discutidas em [Até que ponto o texto da Bíblia é confiável?](/articles/how-reliable-is-the-text/). As traduções modernas baseadas em edições críticas em geral as marcam como não pertencentes ao texto mais antigo, e o Sinaítico e o Vaticano são duas das principais razões.
 
@@ -67,11 +67,11 @@ Essas passagens são discutidas em [Até que ponto o texto da Bíblia é confiá
 
 > {{OWB:MRK.16.8.s1:B}}
 
-O final curto e o final longo (16:9–20) vêm em seguida, impressos como o SBL Greek New Testament os imprime, entre colchetes duplos, com notas sobre por que são considerados acréscimos posteriores. Nada fica escondido; o leitor vê as evidências e a decisão.
+O final curto e o final longo (16:9–20) vêm em seguida, impressos como o Novo Testamento Grego da SBL os imprime, entre colchetes duplos, com notas sobre por que são considerados acréscimos posteriores. Nada fica escondido; o leitor vê as evidências e a decisão.
 
 ## Por que eles importam
 
-Westcott e Hort, cujo Novo Testamento grego de 1881 marcou uma virada nesse campo, apoiaram-se muito no Vaticano e no Sinaítico. Estudiosos posteriores os criticaram por depender demais, em especial, do Vaticano, e a descoberta dos papiros ampliou as evidências. Mas os papiros tenderam a confirmar, e não a derrubar, o alto valor atribuído a esses dois códices. As edições críticas por trás das traduções modernas, inclusive o SBL Greek New Testament que a Open Word Bible traduz, ainda os tratam como testemunhas principais.
+Westcott e Hort, cujo Novo Testamento grego de 1881 marcou uma virada nesse campo, apoiaram-se muito no Vaticano e no Sinaítico. Estudiosos posteriores os criticaram por depender demais, em especial, do Vaticano, e a descoberta dos papiros ampliou as evidências. Mas os papiros tenderam a confirmar, e não a derrubar, o alto valor atribuído a esses dois códices. As edições críticas por trás das traduções modernas, inclusive o Novo Testamento Grego da SBL que a Open Word Bible traduz, ainda os tratam como testemunhas principais.
 
 ## Fontes
 
