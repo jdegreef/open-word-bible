@@ -32,8 +32,9 @@ BUDGETS = {
     # data (chapter-data/), which every language's page loads; 262 KB
     # (ko/psa/119) on 2026-11-01 once the records, with every language's
     # decisions, moved there from the page; 294 KB (am/jhn/6) on 2026-11-09
-    # once John had Japanese, the eleventh language.
-    "chapter_page_gz": 360 * KB,
+    # once John had Japanese, the eleventh language; 385 KB (am/psa/119) on
+    # 2026-11-12 once Psalm 119 had Japanese too.
+    "chapter_page_gz": 400 * KB,
     # The largest script or style sheet (not counting the reader data
     # scripts, chapter-data/ and reader-<lang>.js) [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync;
