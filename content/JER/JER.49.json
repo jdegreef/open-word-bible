@@ -82,6 +82,16 @@
           "L": "ስለ አሞን ልጆች። {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q እስራኤል ልጆች የሉትምን? \\q ወራሽስ የለውምን? \\q ታዲያ ሚልኮም ጋድን ለምን ወረሰ፣ \\q ሕዝቡም በከተሞቹ ለምን ተቀመጠ?",
           "B": "ስለ አሞናውያን። {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q እስራኤል ልጆች የሉትምን? \\q ወራሽ የለውምን? \\q ታዲያ ሚልኮም ጋድን ለምን ያዘ? \\q ሕዝቡስ በከተሞቹ ለምን ይኖራል?",
           "R": "ስለ አሞናውያን። {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q እስራኤል ልጆች የሉትም እንዴ? \\q ምድሩን የሚወርስ ማንም የለም? \\q ታዲያ የአሞናውያን አምላክ ሚልኮም የጋድን ምድር ለምን ያዘ? \\q ሕዝቡስ በጋድ ከተሞች ለምን ይኖራል?"
+        },
+        "hi": {
+          "L": "{{gender:अम्मोन की सन्तान|अम्मोन के पुत्रों}} के विषय में। {{divine_name:प्रभु|याहवे}} यों कहते हैं: \\q क्या इस्राएल के पास {{gender:सन्तान|पुत्र}} नहीं? \\q क्या उसका कोई वारिस नहीं? \\q तो फिर मिल्कोम ने गाद पर क्यों अधिकार कर लिया है, \\q और उसकी प्रजा उसके नगरों में क्यों बस गई है?",
+          "B": "अम्मोनियों के विषय में। {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q क्या इस्राएल के पास {{gender:सन्तान|पुत्र}} नहीं? \\q क्या उसका कोई वारिस नहीं? \\q तो फिर मिल्कोम ने गाद को क्यों हथिया लिया है, \\q और उसकी प्रजा उसके नगरों में क्यों रहती है?",
+          "R": "अम्मोनियों के बारे में। {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q क्या इस्राएल की कोई सन्तान नहीं? \\q क्या उसके देश का कोई वारिस नहीं? \\q तो फिर अम्मोनियों के देवता मिल्कोम ने गाद के देश को क्यों ले लिया है? \\q उसके लोग गाद के नगरों में क्यों रहते हैं?"
+        },
+        "ru": {
+          "L": "О {{gender:детях Аммона|сынах Аммона}}. Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Разве нет {{gender:детей|сыновей}} у Израиля? \\q Разве нет у него наследника? \\q Почему же Милхом завладел Гадом \\q и народ его поселился в его городах?",
+          "B": "Об аммонитянах. Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Разве у Израиля нет {{gender:детей|сыновей}}? \\q Разве нет у него наследника? \\q Почему же Милхом захватил Гад \\q и его народ живёт в городах Гада?",
+          "R": "Об аммонитянах. Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Неужели у Израиля нет детей? \\q Неужели некому унаследовать его землю? \\q Почему же Милхом, бог аммонитян, захватил землю Гада? \\q Почему его народ живёт в городах Гада?"
         }
       },
       "decisions": [
@@ -360,6 +370,114 @@
           "reason": "Amharic ልጆች is inclusive, so the English children/sons setting has no second wording here; the same holds through these chapters (\"የምሥራቅ ልጆች\", \"የእስራኤል ልጆች\", \"የሰው ልጅ\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490010031",
+            "o240490010041"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}} यों कहते हैं\" (L); \"... यह कहते हैं\" (B, R)",
+          "alternatives": [
+            "\"{{divine_name:प्रभु|याहवे}} यह कहते हैं\" at every level"
+          ],
+          "reason": "The prophets' formula for \"Thus says the LORD\" is fixed for the whole of the Prophets: Literal keeps the older \"यों\", Balanced and Readable say \"यह कहते हैं\", as 1-2 Kings do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490010012"
+          ],
+          "choice": "\"इस्राएल के पास {{gender:सन्तान|पुत्र}}\"",
+          "alternatives": [
+            "\"{{gender:इस्राएल की सन्तान|इस्राएल के पुत्र}}\""
+          ],
+          "reason": "\"के पास\" (have) lets both options of the gender setting stand without changing the agreement of the sentence. Readable says \"सन्तान\" (children) without a setting, as the English Readable says \"children\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490010151",
+            "o240490010152"
+          ],
+          "choice": "\"मिल्कोम\"",
+          "alternatives": [
+            "\"उनका राजा\""
+          ],
+          "reason": "The Hebrew can be read \"their king\"; with the English and the meaning decision the name of Ammon's god is given, in the form of 1 Kings 11:5. Readable adds who Milcom is, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490010011",
+            "o240490010012",
+            "o240490010021"
+          ],
+          "choice": "О {{gender:детях Аммона|сынах Аммона}} (L); Об аммонитянах (B, R)",
+          "alternatives": [
+            "Пророчество об аммонитянах"
+          ],
+          "reason": "Jeremiah's oracles on the nations open with \"concerning\" (le-), not with the word massa, so every level writes a plain \"О / Об\" heading, kept apart from \"Пророчество о\" for massa. Literal keeps \"sons of Ammon\" with the gender span, as 9:25 in this translation; Balanced and Readable say \"аммонитяне\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490010151"
+          ],
+          "choice": "Милхом; бог аммонитян (R)",
+          "alternatives": [
+            "Молох"
+          ],
+          "reason": "The Ammonite god keeps the form of 1 Kings 11:5 in this translation; Readable says who he is, as the English does (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -451,6 +569,16 @@
           "L": "ስለዚህ እነሆ፣ ቀኖች ይመጣሉ፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ በአሞን ልጆች ረባት ላይ የጦርነት ጩኸት የማሰማበት፤ እርሷም የፍርስራሽ ክምር ትሆናለች፤ \\q ሴቶች ልጆቿም በእሳት ይቃጠላሉ፤ \\q እስራኤልም የወረሱትን ይወርሳል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "ስለዚህ ቀኖች ይመጣሉ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ በአሞናውያን ከተማ በረባት ላይ የጦርነት ጩኸት የማስተጋባበት። እርሷም የፍርስራሽ ክምር ትሆናለች፤ \\q መንደሮቿም በእሳት ይጋያሉ። \\q ያን ጊዜ እስራኤል ያባረሩትን ያባርራል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "ስለዚህ ጊዜ ይመጣል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ የአሞናውያን ዋና ከተማ የሆነችው የረባት ሕዝብ የጦርነት ጩኸት እንዲሰማ የማደርግበት። ረባት የፍርስራሽ ክምር ትሆናለች፤ \\q በዙሪያዋ ያሉት መንደሮችም ይቃጠላሉ። \\q ያን ጊዜ እስራኤል ምድሩን ከወሰዱበት ሰዎች መልሶ ይወስዳል፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "इसलिए देखो, ऐसे दिन आ रहे हैं, {{divine_name:प्रभु|याहवे}} की यह वाणी है, जब मैं {{gender:अम्मोन की सन्तान|अम्मोन के पुत्रों}} के रब्बा के विरुद्ध युद्ध की ललकार सुनवाऊँगा, और वह उजाड़ टीला बन जाएगा; \\q और उसकी बेटियाँ आग से जला दी जाएँगी, \\q और इस्राएल अपने बेदख़ल करनेवालों को बेदख़ल करेगा, {{divine_name:प्रभु|याहवे}} कहते हैं।",
+          "B": "इसलिए ऐसे दिन आ रहे हैं, {{divine_name:प्रभु|याहवे}} की यह वाणी है, जब मैं अम्मोनियों के रब्बा के विरुद्ध युद्ध की ललकार गुँजाऊँगा। वह खंडहरों का टीला बन जाएगा, \\q और उसके गाँव आग में जल जाएँगे। \\q तब इस्राएल उन्हें निकाल देगा जिन्होंने उसे निकाला था, {{divine_name:प्रभु|याहवे}} कहते हैं।",
+          "R": "इसलिए ऐसा समय आ रहा है, {{divine_name:प्रभु|याहवे}} कहते हैं, जब मैं अम्मोनियों की राजधानी रब्बा के लोगों को युद्ध का शोर सुनवाऊँगा। रब्बा खंडहरों का ढेर बन जाएगा, \\q और उसके आसपास के गाँव जल जाएँगे। \\q तब इस्राएल अपना देश उनसे वापस ले लेगा जिन्होंने उसे छीना था, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "Поэтому вот, приходят дни, — слово {{divine_name:ГОСПОДА|Яхве}}, — когда {{deity_pronoun:я|Я}} дам услышать боевой клич против Раввы {{gender:детей Аммона|сынов Аммона}}, и станет она пустынным холмом развалин; \\q и её дочери будут сожжены огнём, \\q и Израиль вытеснит тех, кто вытеснил его, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "B": "Поэтому приходят дни, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — когда {{deity_pronoun:я|Я}} подниму боевой клич против Раввы аммонитян. Она станет грудой развалин, \\q и её селения сгорят в огне. \\q Тогда Израиль прогонит тех, кто прогнал его, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Поэтому приходит время, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — когда {{deity_pronoun:я|Я}} заставлю жителей Раввы, столицы аммонитян, услышать шум битвы. Равва превратится в груду развалин, \\q и селения вокруг неё сгорят. \\q Тогда Израиль вернёт себе землю у тех, кто её отнял, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -615,6 +743,89 @@
           "reason": "The terms list for the prophets: the inverted order marks the formula as a formula, as the Hebrew does, and reads naturally in Amharic. Used through Jeremiah 49-51.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490020051"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}} की यह वाणी है\" (L, B); \"{{divine_name:प्रभु|याहवे}} कहते हैं\" (R)",
+          "alternatives": [
+            "\"{{divine_name:प्रभु|याहवे}} कहते हैं\" at every level"
+          ],
+          "reason": "The fixed wording of the Prophets for \"declares the LORD\" (neum). The other formula at the end of the verse, \"says the LORD\" (amar), is \"{{divine_name:प्रभु|याहवे}} कहते हैं\" at every level, as in Isaiah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490020172"
+          ],
+          "choice": "\"गाँव\"",
+          "alternatives": [
+            "\"बेटियाँ\""
+          ],
+          "reason": "Balanced and Readable say what the city's \"daughters\" are, the villages that belonged to it; Literal keeps \"बेटियाँ\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490020051",
+            "o240490020061",
+            "o240490020241",
+            "o240490020251"
+          ],
+          "choice": "— слово ГОСПОДА (L); говорит ГОСПОДЬ (B, R)",
+          "alternatives": [],
+          "reason": "The prophets note's wording for neum YHWH; the closing \"says the LORD\" (amar YHWH) is \"говорит ГОСПОДЬ\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490020172",
+            "o240490020173"
+          ],
+          "choice": "дочери (L); селения (B, R)",
+          "alternatives": [],
+          "reason": "The \"daughters\" are the villages that belonged to Rabbah (m2); Literal keeps the image, Balanced and Readable say what is meant, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -699,6 +910,16 @@
           "L": "ሐሴቦን ሆይ፣ ጋይ ጠፍታለችና ዋይ በዪ፤ የረባት ሴቶች ልጆች ሆይ፣ ጩኹ! \\q ማቅ ታጠቁ፤ \\q አልቅሱ፤ \\q በቅጥሮቹም መካከል ወዲያና ወዲህ ሩጡ! \\q ሚልኮም ወደ ምርኮ ይሄዳልና፤ \\q ካህናቱና አለቆቹ በአንድነት [ይሄዳሉ]።",
           "B": "ሐሴቦን ሆይ፣ ጋይ ፈርሳለችና ዋይ በዪ! እናንት የረባት መንደሮች፣ ጩኹ! \\q ማቅ ልበሱ፤ \\q አልቅሱም፤ \\q በድንጋይ ቅጥሮቹ ውስጥ ወዲያና ወዲህ ሩጡ! \\q ሚልኮም ተማርኮ ይወሰዳልና፤ \\q ካህናቱና ሹማምንቱም አብረውት ይወሰዳሉ።",
           "R": "ሐሴቦን ሆይ፣ ጋይ ጠፍታለችና በሐዘን ጩኺ! እናንት በረባት ዙሪያ ያላችሁ መንደሮች፣ ጩኹ! \\q ማቅ ልበሱ፤ \\q አልቅሱም። \\q በድንጋይ አጥሮቹ ውስጥ ወዲያና ወዲህ ሩጡ። \\q አምላካችሁ ሚልኮም ወደ ባዕድ አገር ተማርኮ ይወሰዳልና፤ \\q ካህናቱና መሪዎቹም አብረውት ይወሰዳሉ።"
+        },
+        "hi": {
+          "L": "हे हेशबोन, हाय-हाय करो, क्योंकि ऐ उजाड़ दिया गया है; हे रब्बा की बेटियो, चिल्लाओ! \\q टाट बाँधो; \\q विलाप करो, \\q और बाड़ों के बीच इधर-उधर दौड़ो! \\q क्योंकि मिल्कोम बंधुआई में जाएगा, \\q उसके याजक और उसके हाकिम एक साथ।",
+          "B": "हे हेशबोन, विलाप करो, क्योंकि ऐ उजड़ गया है! हे रब्बा के गाँवो, चिल्लाओ! \\q टाट ओढ़ लो \\q और शोक मनाओ; \\q पत्थर की बाड़ों के भीतर इधर-उधर दौड़ो! \\q क्योंकि मिल्कोम बंधुआई में जाएगा, \\q और उसके साथ उसके याजक और अधिकारी भी।",
+          "R": "हे हेशबोन, दुख से चिल्लाओ, क्योंकि ऐ नगर नष्ट हो गया है! हे रब्बा के आसपास के गाँवो, चीख़ो! \\q टाट पहनो \\q और शोक मनाओ। \\q पत्थर की बाड़ों के भीतर इधर-उधर भागो। \\q क्योंकि तुम्हारा देवता मिल्कोम पराए देश में ले जाया जाएगा, \\q और उसके साथ उसके याजक और अगुवे भी।"
+        },
+        "ru": {
+          "L": "Рыдай, Есевон, ведь опустошён Гай; кричите, дочери Раввы! \\q Опояшьтесь вретищем, \\q плачьте \\q и мечитесь среди оград! \\q Ведь Милхом пойдёт в изгнание, \\q его священники и его князья вместе.",
+          "B": "Рыдай, Есевон, ведь Гай разорён! Кричите, селения Раввы! \\q Наденьте мешковину \\q и плачьте, \\q мечитесь туда и сюда за каменными оградами! \\q Ведь Милхом уйдёт в изгнание, \\q а с ним его священники и вельможи.",
+          "R": "Плачь от горя, Есевон, ведь Гай уничтожен! Кричите, селения вокруг Раввы! \\q Наденьте мешковину \\q и плачьте. \\q Бегайте туда и сюда за каменными оградами. \\q Ведь Милхома, вашего бога, уведут в чужую страну, \\q а с ним его священников и начальников."
         }
       },
       "decisions": [
@@ -863,6 +1084,86 @@
           "reason": "Exile here is being carried off as a captive, as the Kings terms list (ማርኮ ወሰደ); the god goes with his people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490030011"
+          ],
+          "choice": "\"हाय-हाय करो\" (L); \"विलाप करो\" (B); \"दुख से चिल्लाओ\" (R)",
+          "alternatives": [
+            "\"रोओ\""
+          ],
+          "reason": "The wording Isaiah uses for \"Wail\" (13:6; 14:31), one per level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490030192"
+          ],
+          "choice": "\"हाकिम\" (L); \"अधिकारी\" (B); \"अगुवे\" (R)",
+          "alternatives": [
+            "\"राजकुमार\""
+          ],
+          "reason": "Sar, an official of a court, takes Jeremiah's wording at each level (as 8:1); it is not a king's son.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490030101"
+          ],
+          "choice": "вретище (L); мешковина (B, R)",
+          "alternatives": [],
+          "reason": "As 2 Samuel 3:31 and 21:10 in this translation: Literal keeps the traditional word, the other levels say what the cloth was.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490030192"
+          ],
+          "choice": "князья (L); вельможи (B); начальники (R)",
+          "alternatives": [],
+          "reason": "The king's officials (sarim) take the three forms settled for Ezra and used in Jeremiah 24:1.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -940,6 +1241,16 @@
           "L": "ስለ ሸለቆዎቹ ለምን ትመኪያለሽ፣ \\q ስለሚፈስሰው ሸለቆሽ፣ \\q አንቺ ከዳተኛ ልጅ፣ \\q በመዝገቦቿ የምትታመን፣ [እንዲህ የምትዪ]፦ \\q «በእኔ ላይ ማን ይመጣል?»",
           "B": "ስለ ሸለቆዎችሽ ለምን ትመኪያለሽ? \\q ሸለቆሽ እጅግ ለም ነው፤ \\q አንቺ ከዳተኛ ልጅ። \\q በሀብትሽ ታምነሽ \\q «በእኔ ላይ ማን ሊመጣ ይችላል?» ትያለሽ።",
           "R": "ስለ ሸለቆዎችሽ ለምን ትኩራሪያለሽ? \\q ሸለቆዎችሽ ለምና ፍሬያማ ናቸው፤ \\q አንቺ ታማኝ ያልሆንሽ ልጅ። \\q በሀብትሽ ትተማመኛለሽ፤ \\q «ማን ሊወጋኝ ይደፍራል?» ትያለሽ።"
+        },
+        "hi": {
+          "L": "तुम तराइयों पर क्यों घमंड करती हो, \\q तुम्हारी तराई बहती हुई, \\q हे विश्वासघाती बेटी, \\q जो अपने ख़ज़ानों पर भरोसा रखती है: \\q \"मुझ पर कौन चढ़ाई करेगा?\"",
+          "B": "तुम अपनी तराइयों पर क्यों घमंड करती हो, \\q अपनी इतनी उपजाऊ तराई पर, \\q हे विश्वासघाती बेटी? \\q तुम अपने ख़ज़ानों पर भरोसा रखती हो \\q और कहती हो, \"मुझ पर कौन चढ़ाई करेगा?\"",
+          "R": "तुम अपनी तराइयों पर क्यों डींग मारती हो, \\q अपनी हरी-भरी उपजाऊ तराइयों पर, \\q हे बेवफ़ा बेटी? \\q तुम अपनी धन-दौलत पर भरोसा रखती हो \\q और कहती हो, \"किसकी हिम्मत है कि मुझ पर हमला करे?\""
+        },
+        "ru": {
+          "L": "Что ты хвалишься долинами, \\q твоей текущей долиной, \\q дочь неверная, \\q надеющаяся на свои сокровища: \\q «Кто придёт ко мне?»",
+          "B": "Зачем ты хвалишься своими долинами, \\q своей плодородной долиной, \\q неверная дочь? \\q Ты надеешься на свои сокровища \\q и говоришь: «Кто посмеет прийти на меня?»",
+          "R": "Зачем ты хвастаешься своими долинами, \\q своими богатыми, плодородными долинами, \\q неверная дочь? \\q Ты надеешься на своё богатство \\q и говоришь: «Кто осмелится напасть на меня?»"
         }
       },
       "decisions": [
@@ -1056,6 +1367,48 @@
           "reason": "The Hebrew addresses the people as a daughter; Amharic marks that in every verb, so the oracle keeps the feminine through the verse.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490040062",
+            "o240490040072"
+          ],
+          "choice": "feminine forms (\"करती हो\", \"बेटी\")",
+          "alternatives": [
+            "masculine forms"
+          ],
+          "reason": "Ammon is spoken to as a daughter, so Hindi uses feminine verbs throughout the verse, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490040041",
+            "o240490040051"
+          ],
+          "choice": "текущая долина",
+          "alternatives": [
+            "плодородная долина"
+          ],
+          "reason": "Literal keeps the Hebrew picture of a valley that flows (m1), a valley running with water and so rich; Balanced and Readable say \"плодородная\", as the English says \"rich\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1139,6 +1492,16 @@
           "L": "እነሆ፣ በዙሪያሽ ካሉት ሁሉ ሽብርን አመጣብሻለሁ፣ ይላል ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት፤ \\q እያንዳንዳችሁም ወደ ፊቱ ትባረራላችሁ፤ \\q የሚሸሹትንም የሚሰበስብ የለም።",
           "B": "በዙሪያሽ ካሉት ሁሉ ሽብር ላመጣብሽ ነው፣ ይላል ጌታ፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q ሁላችሁም ወደ ፊት እየሮጣችሁ ትባረራላችሁ፤ \\q የሚሸሹትንም የሚሰበስብ የለም።",
           "R": "በዙሪያሽ ካሉት ሕዝቦች ሁሉ ሽብር አመጣብሻለሁ፣ ይላል ጌታ፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}። \\q ሁላችሁም ሕይወታችሁን ለማዳን እየሮጣችሁ ትባረራላችሁ፤ \\q የተበተኑትንም መልሶ የሚሰበስብ ማንም አይኖርም።"
+        },
+        "hi": {
+          "L": "देखो, मैं तुम पर आतंक ला रहा हूँ, प्रभु, सेनाओं के {{divine_name:परमेश्वर|याहवे}} की यह वाणी है, तुम्हारे चारों ओर के सब लोगों की ओर से; \\q और तुम में से हर एक सीधा आगे की ओर खदेड़ा जाएगा, \\q और भागे हुओं को कोई इकट्ठा न करेगा।",
+          "B": "मैं तुम्हारे चारों ओर के सब लोगों की ओर से तुम पर आतंक लाने पर हूँ, प्रभु, सेनाओं के {{divine_name:परमेश्वर|याहवे}} की यह वाणी है। \\q तुम खदेड़ दिए जाओगे, हर एक सिर पर पाँव रखकर भागेगा, \\q और भागनेवालों को कोई इकट्ठा न करेगा।",
+          "R": "मैं तुम्हारे आसपास के सब देशों के लोगों से तुम्हें डरवाने जा रहा हूँ, प्रभु, सेनाओं के {{divine_name:परमेश्वर|याहवे}} कहते हैं। \\q तुम सब भगा दिए जाओगे, हर कोई अपनी जान बचाने को भागेगा, \\q और बिखरे हुए लोगों को कोई फिर इकट्ठा नहीं करेगा।"
+        },
+        "ru": {
+          "L": "Вот, {{deity_pronoun:я|Я}} навожу на тебя ужас, — слово Владыки {{divine_name:ГОСПОДА|Яхве}} Саваофа, — от всех, кто вокруг тебя; \\q и будете вы изгнаны, каждый прямо перед собой, \\q и никто не соберёт беглецов.",
+          "B": "Я наведу на тебя ужас от всех, кто вокруг тебя, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}} Саваоф. \\q Вы будете разогнаны, каждый побежит куда глаза глядят, \\q и никто не соберёт беглецов.",
+          "R": "Я наведу на тебя ужас от всех народов вокруг тебя, — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}} Воинств. \\q Вас всех прогонят, каждый будет спасать свою жизнь, \\q и никто не соберёт разбежавшихся людей."
         }
       },
       "decisions": [
@@ -1258,6 +1621,51 @@
           "reason": "The terms list gives ጸባኦት at Literal and \"the God of Armies\" at the other levels; the two titles are put together in that order.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490050061",
+            "o240490050071",
+            "o240490050081"
+          ],
+          "choice": "\"प्रभु, सेनाओं के {{divine_name:परमेश्वर|याहवे}}\"",
+          "alternatives": [
+            "\"सेनाओं के प्रभु {{divine_name:परमेश्वर|याहवे}}\""
+          ],
+          "reason": "\"The Lord GOD of hosts\" takes Isaiah's form (10:16, 24): Adonai is \"प्रभु\", and the divine name, which the English writes GOD here, is \"परमेश्वर\" with \"याहवे\" as the setting's alternative, so that \"प्रभु\" is not said twice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490050061",
+            "o240490050062",
+            "o240490050071",
+            "o240490050081"
+          ],
+          "choice": "Владыка ГОСПОДЬ Саваоф (L, B); Владыка ГОСПОДЬ Воинств (R)",
+          "alternatives": [],
+          "reason": "The prophets note's forms for \"the Lord GOD\" and \"of hosts\", inflected inside the span at Literal (\"слово Владыки ГОСПОДА Саваофа\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1325,6 +1733,16 @@
           "L": "ከዚያ በኋላ ግን የአሞንን ልጆች ምርኮ እመልሳለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "ከዚያ በኋላ ግን የአሞናውያንን ዕጣ ፈንታ እመልሳለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "በኋላ ግን ለአሞናውያን እንደ ገና መልካም አደርግላቸዋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "पर इसके बाद मैं {{gender:अम्मोन की सन्तान|अम्मोन के पुत्रों}} की दशा फेर दूँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "फिर भी उसके बाद मैं अम्मोनियों की दशा फेर दूँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "पर बाद में मैं अम्मोनियों के दिन फिर से अच्छे कर दूँगा, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "Но после этого {{deity_pronoun:я|Я}} восстановлю благополучие {{gender:детей Аммона|сынов Аммона}}, — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Но потом {{deity_pronoun:я|Я}} восстановлю благополучие аммонитян, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Но позже {{deity_pronoun:я|Я}} снова сделаю жизнь аммонитян хорошей, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -1398,6 +1816,51 @@
             "\"ምርኮአቸውን እመልሳለሁ\" at every level"
           ],
           "reason": "Literal keeps the Hebrew turn of phrase as Deuteronomy 30:3 on main; Balanced and Readable say what it means, as Psalms 14:7 and 85:2. The same at 49:39.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490060031",
+            "o240490060051"
+          ],
+          "choice": "\"की दशा फेर दूँगा\" (L, B); \"के दिन फिर से अच्छे कर दूँगा\" (R)",
+          "alternatives": [
+            "\"बंधुआई से लौटा लाऊँगा\""
+          ],
+          "reason": "\"Restore the fortunes\" takes the wording of Deuteronomy 30:3 at each level, and keeps it wherever the phrase returns (verse 39).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490060031",
+            "o240490060041",
+            "o240490060051"
+          ],
+          "choice": "восстановлю благополучие (L, B); снова сделаю жизнь ... хорошей (R)",
+          "alternatives": [
+            "верну из плена"
+          ],
+          "reason": "\"Restore the fortunes\" keeps the wording of Deuteronomy 30:3 in this translation at each level, here and wherever it returns in these chapters (49:39).",
           "uncertain": false,
           "footnote": false
         }
@@ -1476,6 +1939,16 @@
           "L": "ስለ ኤዶም። {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ \\q በቴማን ከእንግዲህ ጥበብ የለምን? \\q ከአስተዋዮች ምክር ጠፍቷልን? \\q ጥበባቸውስ ተበላሽቷልን?",
           "B": "ስለ ኤዶም። የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q በቴማን የቀረ ጥበብ የለምን? \\q ጠቢባን የሚመክሩት አጥተዋልን? \\q ጥበባቸውስ ጎምዝዟልን?",
           "R": "ስለ ኤዶም። የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q በቴማን የቀሩ ጠቢባን የሉም? \\q ብልሆቹ ከእንግዲህ ጥሩ ምክር መስጠት አይችሉም? \\q ጥበባቸው ሁሉ በስብሶ ጠፍቷል?"
+        },
+        "hi": {
+          "L": "एदोम के विषय में। सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: \\q क्या तेमान में अब बुद्धि नहीं रही? \\q क्या समझदारों में से युक्ति मिट गई है? \\q क्या उनकी बुद्धि सड़ गई है?",
+          "B": "एदोम के विषय में। सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q क्या तेमान में कोई बुद्धि नहीं बची? \\q क्या बुद्धिमानों के पास अब कोई सलाह नहीं रही? \\q क्या उनकी बुद्धि बिगड़ गई है?",
+          "R": "एदोम के बारे में। सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q क्या तेमान में कोई बुद्धिमान नहीं बचा? \\q क्या समझदार लोग अब अच्छी सलाह नहीं दे सकते? \\q क्या उनकी सारी बुद्धि सड़कर बेकार हो गई है?"
+        },
+        "ru": {
+          "L": "О Едоме. Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: \\q Разве нет больше мудрости в Фемане? \\q Пропал ли совет у разумных? \\q Испортилась ли их мудрость?",
+          "B": "О Едоме. Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: \\q Неужели не осталось мудрости в Фемане? \\q Неужели у мудрых иссяк совет? \\q Неужели их мудрость прокисла?",
+          "R": "Об Едоме. Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств: \\q Неужели в Фемане не осталось мудрых людей? \\q Неужели умные больше не могут дать хороший совет? \\q Неужели вся их мудрость сгнила?"
         }
       },
       "decisions": [
@@ -1603,6 +2076,91 @@
           "reason": "Much of the oracle on Edom (verses 7-22) is shared with Obadiah 1-9 (m2), which is not yet drafted in Portuguese; these verses are drafted from the Hebrew, and Obadiah should keep their Portuguese where the Hebrew is the same (verses 9-10, 14-16). \"Temã\" as Genesis 36:11 has it in Portuguese, apart from \"Temá\" (25:23).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490070051"
+          ],
+          "choice": "\"सेनाओं के {{divine_name:प्रभु|याहवे}}\"",
+          "alternatives": [
+            "\"सेनाओं के यहोवा\""
+          ],
+          "reason": "The LORD of hosts has one form at every level, as Romans 9:29 and the history books; the English Balanced and Readable \"of Armies\" is the same title.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490070081",
+            "o240490070101"
+          ],
+          "choice": "the Edom oracle (verses 7-16) worded for reuse",
+          "alternatives": [
+            "separate wording in Obadiah"
+          ],
+          "reason": "Obadiah 1-9 repeats much of this oracle; its Hindi is to copy this wording where the Hebrew is the same, so the lines here are kept close to the Hebrew at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490070012",
+            "o240490070092"
+          ],
+          "choice": "Едом; Феман",
+          "alternatives": [
+            "Эдом; Теман"
+          ],
+          "reason": "Edom keeps the form of Genesis 36 and Isaiah 34 in this translation, and Teman the form Genesis 36:11 gives Esau's grandson, after whom the region is named (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490070041",
+            "o240490070051"
+          ],
+          "choice": "ГОСПОДЬ Саваоф (L, B); ГОСПОДЬ Воинств (R)",
+          "alternatives": [],
+          "reason": "The prophets note's forms for \"the LORD of hosts\", as Romans 9:29 at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1676,6 +2234,16 @@
           "L": "ሽሹ፤ ተመለሱ፤ ለመኖር ወደ ጥልቅ ውረዱ፤ \\q እናንት የድዳን ነዋሪዎች! \\q የምቀጣበትን ጊዜ፣ የዔሳውን ጥፋት በእርሱ ላይ አመጣለሁና።",
           "B": "ሩጡ! ዘወር ብላችሁ ሽሹ! በጥልቅ ምድር ተሸሸጉ፤ \\q እናንት በድዳን የምትኖሩ! \\q የምቀጣበትን ጊዜ፣ ጥፋትን በዔሳው ላይ አመጣለሁና።",
           "R": "ሽሹ! ተመለሱ! ማንም በማያያችሁ ጥልቅ ስፍራ ተደበቁ፤ \\q እናንት የድዳን ሰዎች! \\q በዔሳው ዘሮች በኤዶም ላይ ጥፋት አመጣለሁ። የምቀጣቸው ጊዜ ደርሷል።"
+        },
+        "hi": {
+          "L": "भागो, पीछे मुड़ो, रहने के लिए गहरे में उतर जाओ, \\q हे ददान के निवासियो! \\q क्योंकि मैं एसाव पर उसकी विपत्ति लाऊँगा, उस समय जब मैं उसे दंड दूँगा।",
+          "B": "भागो! मुड़कर भाग जाओ! भूमि में गहरे जा छिपो, \\q हे ददान में रहनेवालो! \\q क्योंकि मैं एसाव पर विपत्ति ला रहा हूँ, वह समय जब मैं उसे दंड दूँगा।",
+          "R": "भाग जाओ! पीछे लौट जाओ! गहरे में जाकर नज़रों से छिप जाओ, \\q हे ददान के लोगो! \\q मैं एसाव के वंशजों, यानी एदोम पर विपत्ति लाने जा रहा हूँ। उन्हें दंड देने का मेरा समय आ गया है।"
+        },
+        "ru": {
+          "L": "Бегите, повернитесь, уйдите вглубь, чтобы жить [там], \\q жители Дедана! \\q Ведь бедствие Исава {{deity_pronoun:я|Я}} наведу на него, время, когда {{deity_pronoun:я|Я}} накажу его.",
+          "B": "Бегите! Повернитесь и спасайтесь! Спрячьтесь глубоко в земле, \\q жители Дедана! \\q Ведь {{deity_pronoun:я|Я}} навожу бедствие на Исава, пришло время {{deity_pronoun:мне|Мне}} наказать его.",
+          "R": "Убегайте! Поворачивайте назад! Спрячьтесь глубоко, чтобы вас не нашли, \\q жители Дедана! \\q Я наведу беду на потомков Исава, на Едом. Пришло время {{deity_pronoun:мне|Мне}} наказать их."
         }
       },
       "decisions": [
@@ -1740,6 +2308,66 @@
           "choice": "Esau's people, Edom",
           "alternatives": [],
           "reason": "Readable says that Esau stands for the nation Edom (m3), and uses \"them\" for the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490080051"
+          ],
+          "choice": "\"मेरा\" without a span",
+          "alternatives": [
+            "a deity_pronoun span on \"मेरा\""
+          ],
+          "reason": "Hindi has no deity_pronoun spans: Devanagari has no capital letters, and respect for God is carried by the honorific third person (वे, उनका) instead.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490080091",
+            "o240490080131"
+          ],
+          "choice": "\"एसाव\" at every level; Readable adds \"यानी एदोम\"",
+          "alternatives": [
+            "\"एदोम\""
+          ],
+          "reason": "Esau stands for the nation descended from him; Literal and Balanced keep the name as the Hebrew does, and Readable says who is meant, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490080091"
+          ],
+          "choice": "потомки Исава, Едом",
+          "alternatives": [
+            "Исав"
+          ],
+          "reason": "Esau stands for the nation descended from him (m3); Readable says so and speaks of \"them\", as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1814,6 +2442,16 @@
           "L": "ወይን ለቃሚዎች ወደ አንተ ቢመጡ፣ \\q ቃርሚያ አይተዉምን? \\q ሌቦች በሌሊት [ቢመጡ]፣ የሚበቃቸውን ብቻ ያጠፋሉ።",
           "B": "ወይን ለቃሚዎች ወደ አንተ ቢመጡ \\q ጥቂት ወይን አያስቀሩምን? \\q ሌቦች በሌሊት ቢመጡ የፈለጉትን ያህል ብቻ ያበላሻሉ።",
           "R": "ሰዎች ወይን ሲለቅሙ \\q ጥቂት ወይን ያስቀራሉ። \\q ሌቦች በሌሊት ሲመጡ የፈለጉትን ብቻ ይወስዳሉ።"
+        },
+        "hi": {
+          "L": "यदि अंगूर तोड़नेवाले तुम्हारे पास आते, \\q तो क्या वे कुछ बचे हुए अंगूर न छोड़ते? \\q यदि रात को चोर [आते], तो वे उतना ही बिगाड़ते जितना उनके लिए बहुत होता।",
+          "B": "यदि अंगूर तोड़नेवाले तुम्हारे पास आते, \\q तो क्या वे कुछ अंगूर पीछे न छोड़ देते? \\q यदि रात को चोर आते, तो वे उतना ही बिगाड़ते जितना वे चाहते।",
+          "R": "जब लोग अंगूर तोड़ते हैं, \\q तो कुछ अंगूर पीछे छोड़ देते हैं। \\q जब रात को चोर आते हैं, तो वे बस उतना ही ले जाते हैं जितना उन्हें चाहिए।"
+        },
+        "ru": {
+          "L": "Если бы сборщики винограда пришли к тебе, \\q разве не оставили бы они остатков? \\q Если бы воры [пришли] ночью, они погубили бы [лишь] столько, сколько им нужно.",
+          "B": "Если бы к тебе пришли сборщики винограда, \\q разве не оставили бы они несколько гроздей? \\q Если бы ночью пришли воры, они испортили бы лишь столько, сколько им хотелось.",
+          "R": "Когда люди собирают виноград, \\q они оставляют на лозах несколько гроздей. \\q Когда ночью приходят воры, они забирают только то, что им нужно."
         }
       },
       "decisions": [
@@ -1916,6 +2554,46 @@
           "reason": "Korean marks \"only\" with the particle \"만\", which is grammar, not an added word, so it is not bracketed (style guide).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490090121"
+          ],
+          "choice": "\"जितना उनके लिए बहुत होता\" (L); \"जितना वे चाहते\" (B)",
+          "alternatives": [
+            "\"सब कुछ\""
+          ],
+          "reason": "The Hebrew \"their sufficiency\" is what is enough for the thieves; the verse contrasts them with God, who will leave Edom nothing (verse 10).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490090021",
+            "o240490090071"
+          ],
+          "choice": "сборщики винограда; остатки (L), несколько гроздей (B, R)",
+          "alternatives": [],
+          "reason": "The words shared with Obadiah 5 (m1); Obadiah is to copy this wording. Literal keeps \"остатки\" for the gleanings, Balanced and Readable say what was left on the vine (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1998,6 +2676,16 @@
           "L": "እኔ ግን ዔሳውን ገፈፍኩት፤ መሸሸጊያዎቹን ገለጥኩ፤ \\q ሊሰወርም አይችልም። \\q ዘሩ፣ ወንድሞቹና ጎረቤቶቹም ጠፉ፤ እርሱም የለም።",
           "B": "እኔ ግን ዔሳውን ራቁቱን አስቀርቼዋለሁ፤ መሸሸጊያዎቹንም ገልጫለሁ፤ \\q ራሱንም መሰወር አይችልም። \\q ልጆቹ፣ ዘመዶቹና ጎረቤቶቹ ጠፍተዋል፤ እርሱም የለም።",
           "R": "እኔ ግን ኤዶምን ራቁቱን አስቀረዋለሁ። ሕዝቡ የሚደበቁበትን ስፍራ ሁሉ እገልጣለሁ፤ \\q ስለዚህ ከእንግዲህ መደበቅ አይችሉም። \\q ልጆቻቸው፣ ዘመዶቻቸውና ጎረቤቶቻቸው ይጠፋሉ፤ ኤዶምም ከእንግዲህ አይኖርም።"
+        },
+        "hi": {
+          "L": "पर मैंने एसाव को नंगा कर दिया है; मैंने उसके छिपने के स्थान खोल दिए हैं, \\q और वह छिप न सकेगा। \\q उसका वंश नष्ट हो गया है, और उसके भाई और उसके पड़ोसी, और वह रहा ही नहीं।",
+          "B": "पर मैंने एसाव को पूरी तरह नंगा कर दिया है; मैंने उसके छिपने के स्थान उघाड़ दिए हैं, \\q और वह अपने आप को छिपा नहीं सकता। \\q उसकी सन्तान, उसके सगे-संबंधी और उसके पड़ोसी नष्ट हो गए हैं, और वह मिट गया है।",
+          "R": "पर मैं एदोम को पूरी तरह नंगा कर दूँगा। मैं वे सब जगहें खोल दूँगा जहाँ उसके लोग छिपते हैं, \\q ताकि वे फिर छिप न सकें। \\q उनके बच्चे, रिश्तेदार और पड़ोसी नष्ट हो जाएँगे, और एदोम मिट जाएगा।"
+        },
+        "ru": {
+          "L": "Но {{deity_pronoun:я|Я}} обнажил Исава, открыл его тайники, \\q и скрыться он не сможет. \\q Истреблено потомство его, и братья его, и соседи его, и нет его.",
+          "B": "Но {{deity_pronoun:я|Я}} обнажил Исава, раскрыл его тайники, \\q и ему не спрятаться. \\q Его дети, родные и соседи истреблены, и его больше нет.",
+          "R": "Но {{deity_pronoun:я|Я}} оставлю Едом совсем голым. Я открою все места, где прячутся его жители, \\q и они больше не смогут спрятаться. \\q Их дети, родные и соседи будут истреблены, и Едома не станет."
         }
       },
       "decisions": [
@@ -2084,6 +2772,66 @@
           "reason": "Balanced and Readable say \"relatives\" for \"brothers\", since the word means kin in general, not only men. Literal keeps \"brothers\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490100142",
+            "o240490100152"
+          ],
+          "choice": "\"सगे-संबंधी\" (B); \"रिश्तेदार\" (R)",
+          "alternatives": [
+            "\"भाई\""
+          ],
+          "reason": "The word means kin in general; Literal keeps \"भाई\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490100142"
+          ],
+          "choice": "родные",
+          "alternatives": [
+            "братья"
+          ],
+          "reason": "The \"brothers\" are Edom's kin in general (m3); Balanced and Readable say \"родные\", as the English says \"relatives\". Literal keeps \"братья\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490100031"
+          ],
+          "choice": "future tense",
+          "alternatives": [
+            "perfect"
+          ],
+          "reason": "Readable puts the verbs in the future, since they describe judgment to come (m2), and says \"Едом\" for Esau, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2153,6 +2901,16 @@
           "L": "ድሀ አደጎችህን ተዋቸው፤ እኔ በሕይወት አኖራቸዋለሁ፤ \\q መበለቶችህም በእኔ ይታመኑ።",
           "B": "ድሀ አደጎችህን ተዋቸው፤ በሕይወት አኖራቸዋለሁ። \\q መበለቶችህም በእኔ ይታመኑ።",
           "R": "አባት የሌላቸውን ልጆችህን ለእኔ ተዋቸው፤ በሕይወት አኖራቸዋለሁ። \\q መበለቶችህም በእኔ ሊታመኑ ይችላሉ።"
+        },
+        "hi": {
+          "L": "अपने अनाथों को छोड़ दो; मैं [उन्हें] जीवित रखूँगा; \\q और तुम्हारी विधवाएँ मुझ पर भरोसा रखें।",
+          "B": "अपने अनाथों को छोड़ जाओ; मैं उन्हें जीवित रखूँगा। \\q तुम्हारी विधवाएँ मुझ पर भरोसा रखें।",
+          "R": "अपने बिन बाप के बच्चों को मेरे पास छोड़ दो। मैं उन्हें जीवित रखूँगा। \\q तुम्हारी विधवाएँ मुझ पर भरोसा रख सकती हैं।"
+        },
+        "ru": {
+          "L": "Оставь сирот твоих, {{deity_pronoun:я|Я}} сохраню [им] жизнь; \\q и вдовы твои пусть надеются на {{deity_pronoun:меня|Меня}}.",
+          "B": "Оставь своих сирот, {{deity_pronoun:я|Я}} сохраню им жизнь. \\q Пусть твои вдовы надеются на {{deity_pronoun:меня|Меня}}.",
+          "R": "Оставь {{deity_pronoun:мне|Мне}} своих детей, у которых нет отца. Я сохраню им жизнь. \\q Твои вдовы могут надеяться на {{deity_pronoun:меня|Меня}}."
         }
       },
       "decisions": [
@@ -2293,6 +3051,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላልና፦ እነሆ፣ ጽዋውን እንዲጠጡ ፍርድ ያልተፈረደባቸው በእርግጥ ይጠጣሉ፤ \\q አንተስ ከቅጣት ፈጽሞ የምታመልጥ ነህን? \\q ከቅጣት አታመልጥም፤ \\q ነገር ግን በእርግጥ ትጠጣለህ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላልና፦ ጽዋውን መጠጣት የማይገባቸው እንኳ ሊጠጡት ግድ ከሆነ፣ \\q አንተ ከቅጣት የምታመልጥ ይመስልሃልን? \\q አታመልጥም፤ \\q መጠጣት አለብህ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ የቅጣቱን ጽዋ መጠጣት የማይገባቸው ሰዎች እንኳ ሊጠጡት ግድ ነው። \\q ታዲያ አንተ ከቅጣት የምታመልጥ ይመስልሃል? \\q አታመልጥም! \\q መጠጣት አለብህ።"
+        },
+        "hi": {
+          "L": "क्योंकि {{divine_name:प्रभु|याहवे}} यों कहते हैं: देखो, जिनका दंड कटोरा पीना न था, वे निश्चय [उसे] पीएँगे; \\q और तुम, क्या तुम ही वह हो जो निश्चय निर्दोष ठहरकर छूट जाएगा? \\q तुम निर्दोष ठहरकर न छूटोगे, \\q बल्कि तुम निश्चय [उसे] पीओगे।",
+          "B": "क्योंकि {{divine_name:प्रभु|याहवे}} यह कहते हैं: यदि उन्हें भी कटोरा पीना पड़ रहा है जो उसके योग्य न थे, \\q तो क्या तुम सचमुच सोचते हो कि तुम बिना दंड पाए छूट जाओगे? \\q तुम बिना दंड पाए नहीं छूटोगे; \\q तुम्हें उसे पीना ही पड़ेगा।",
+          "R": "{{divine_name:प्रभु|याहवे}} यह कहते हैं: जो लोग दंड के कटोरे में से पीने के योग्य न थे, उन्हें भी उसे पीना पड़ रहा है। \\q तो क्या तुम सोचते हो कि तुम दंड से बच जाओगे? \\q तुम नहीं बचोगे! \\q तुम्हें उसे पीना ही पड़ेगा।"
+        },
+        "ru": {
+          "L": "Ведь так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Вот, те, кому не было суждено пить чашу, непременно будут пить [её]; \\q а ты ли тот, кто останется безнаказанным? \\q Ты не останешься безнаказанным, \\q но непременно будешь пить [её].",
+          "B": "Ведь так говорит {{divine_name:ГОСПОДЬ|Яхве}}: Если даже те, кто не заслужил пить из чаши, должны пить её, \\q неужели ты думаешь, что останешься безнаказанным? \\q Ты не останешься безнаказанным: \\q ты непременно выпьешь её.",
+          "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: Даже те, кто не заслужил пить из чаши наказания, должны её выпить. \\q Так неужели ты думаешь, что избежишь наказания? \\q Ты не избежишь его! \\q Ты должен выпить эту чашу."
         }
       },
       "decisions": [
@@ -2425,6 +3193,46 @@
           "reason": "The cup (m1) is \"o cálice\", as 25:15 sets it, and the question and answer keep the Portuguese of 25:29 at each level, with \"tu\" for Edom where 25:29 has \"vocês\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490120102",
+            "o240490120121",
+            "o240490120211"
+          ],
+          "choice": "\"दंड के कटोरे\"",
+          "alternatives": [
+            "\"कटोरे\""
+          ],
+          "reason": "Readable says what the cup stands for, as the English Readable does: God's judgment that the nations must drink.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490120102"
+          ],
+          "choice": "чаша наказания",
+          "alternatives": [
+            "чаша"
+          ],
+          "reason": "Readable says what the cup stands for (m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2508,6 +3316,16 @@
           "L": "በራሴ ምያለሁና፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ \\q ባሶራ ድንጋጤ፣ ስድብ፣ ባድማና እርግማን ትሆናለች፤ \\q ከተሞቿም ሁሉ ለዘላለም ፍርስራሽ ይሆናሉ።",
           "B": "በራሴ እምላለሁና፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ \\q ባሶራ ማስደንገጫ፣ መሰደቢያ፣ ባድማና መረገሚያ ትሆናለች፤ \\q ከተሞቿም ሁሉ ለዘላለም ፍርስራሽ ይሆናሉ።",
           "R": "በራሴ እምላለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ \\q የባሶራ ከተማ ሰዎች አይተው የሚደነግጡባት፣ የሚያዋርዷት፣ ባዶ ምድረ በዳና ሰዎች በስሟ የሚረግሙባት ትሆናለች። \\q በዙሪያዋ ያሉት ከተሞችም ሁሉ ለዘላለም ፈርሰው ይቀራሉ።"
+        },
+        "hi": {
+          "L": "क्योंकि मैंने अपनी ही शपथ खाई है, {{divine_name:प्रभु|याहवे}} की यह वाणी है, \\q कि बोस्रा भय का कारण, निंदा, उजाड़ और शाप बन जाएगा; \\q और उसके सब नगर सदा के लिए खंडहर बन जाएँगे।",
+          "B": "क्योंकि मैं अपनी ही शपथ खाता हूँ, {{divine_name:प्रभु|याहवे}} की यह वाणी है, \\q कि बोस्रा भय का कारण, अपमान, उजाड़ और शाप बन जाएगा, \\q और उसके सब नगर सदा के लिए खंडहर पड़े रहेंगे।",
+          "R": "मैं अपनी ही शपथ खाकर कहता हूँ, {{divine_name:प्रभु|याहवे}} कहते हैं, \\q कि बोस्रा नगर भय का कारण, अपमान, सूना उजाड़ और शाप बन जाएगा। \\q उसके आसपास के सब नगर सदा के लिए खंडहर पड़े रहेंगे।"
+        },
+        "ru": {
+          "L": "Ведь самим собой {{deity_pronoun:я|Я}} поклялся, — слово {{divine_name:ГОСПОДА|Яхве}}, — \\q что ужасом, позором, пустошью и проклятием станет Боцра; \\q и все её города станут вечными развалинами.",
+          "B": "Ведь {{deity_pronoun:я|Я}} клянусь самим собой, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — \\q что Боцра станет ужасом, позором, пустошью и проклятием, \\q и все её города навсегда останутся в развалинах.",
+          "R": "Я клянусь самим собой, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — \\q что город Боцра станет ужасом, позором, пустой землёй и проклятием. \\q Все города вокруг него навсегда останутся в развалинах."
         }
       },
       "decisions": [
@@ -2625,6 +3443,96 @@
           "reason": "Jeremiah repeats the list (24:9; 25:18; 42:18; 44:12); the words are those of 25:18 and 42:18 as drafted, so the echo is heard.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490130072",
+            "o240490130082",
+            "o240490130092",
+            "o240490130103"
+          ],
+          "choice": "\"भय का कारण ... शाप\"",
+          "alternatives": [
+            "\"विस्मय\""
+          ],
+          "reason": "Shammah is \"भय का कारण\" (an object of horror), as Deuteronomy 28:37, and the curse \"शाप\" at every level; \"reproach\" is \"निंदा\" at Literal and \"अपमान\" at Balanced and Readable, as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490130072",
+            "o240490130082",
+            "o240490130092",
+            "o240490130103"
+          ],
+          "choice": "ужас, позор, пустошь, проклятие",
+          "alternatives": [
+            "поношение"
+          ],
+          "reason": "The words of the Jeremiah lists in this translation (24:9): \"ужас\" for horror, \"позор\" for reproach, \"проклятие\" for curse at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490130121"
+          ],
+          "choice": "Боцра",
+          "alternatives": [
+            "Восор"
+          ],
+          "reason": "Bozrah keeps the form of Genesis 36:33 and Isaiah 34:6 and 63:1 in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-3",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490130022"
+          ],
+          "choice": "самим собой, no deity_pronoun span",
+          "alternatives": [
+            "{{deity_pronoun:собой|Собой}}"
+          ],
+          "reason": "The English has a span on \"myself\"; Russian \"собой\" is reflexive, which takes no span in this translation, as Genesis 22:16.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2701,6 +3609,16 @@
           "L": "{{divine_name:ከእግዚአብሔር|ከያህዌ}} ወሬ ሰምቻለሁ፤ \\q መልእክተኛም በሕዝቦች መካከል ተልኳል፦ \\q «ተሰብሰቡ፤ በእርሷም ላይ ኑ፤ \\q ለሰልፍም ተነሡ!»",
           "B": "{{divine_name:ከእግዚአብሔር|ከያህዌ}} ወሬ ሰምቻለሁ፤ \\q መልእክተኛ ወደ ሕዝቦች ተልኳል፦ \\q «ተሰብሰቡ፤ በእርሷ ላይ ዝመቱ! \\q ለጦርነት ተነሡ!»",
           "R": "{{divine_name:ከእግዚአብሔር|ከያህዌ}} መልእክት ሰምቻለሁ። \\q እንዲህ እንዲል መልእክተኛ ወደ ሕዝቦች ተልኳል፦ \\q «በአንድነት ተባበሩና ኤዶምን ውጉ! \\q ለጦርነት ተዘጋጁ!»"
+        },
+        "hi": {
+          "L": "मैंने {{divine_name:प्रभु|याहवे}} की ओर से एक समाचार सुना है, \\q और जातियों के बीच एक दूत भेजा गया है: \\q \"इकट्ठे हो जाओ और उस पर चढ़ाई करो, \\q और युद्ध के लिए उठो!\"",
+          "B": "मैंने {{divine_name:प्रभु|याहवे}} की ओर से समाचार सुना है; \\q देशों के बीच एक दूत भेजा गया है: \\q \"इकट्ठे होकर उस पर चढ़ाई करो! \\q युद्ध के लिए उठो!\"",
+          "R": "मैंने {{divine_name:प्रभु|याहवे}} की ओर से एक संदेश सुना है। \\q देशों के पास एक दूत यह कहने के लिए भेजा गया है, \\q \"मिलकर एदोम पर हमला करो! \\q युद्ध के लिए तैयार हो जाओ!\""
+        },
+        "ru": {
+          "L": "Весть {{deity_pronoun:я|Я}} услышал от {{divine_name:ГОСПОДА|Яхве}}, \\q и посланник послан к народам: \\q «Соберитесь и придите на неё, \\q и поднимитесь на битву!»",
+          "B": "Я услышал весть от {{divine_name:ГОСПОДА|Яхве}}; \\q к народам послан вестник: \\q «Соберитесь и выступите против неё! \\q Поднимайтесь на войну!»",
+          "R": "Я услышал весть от {{divine_name:ГОСПОДА|Яхве}}. \\q Вестника послали к народам, чтобы он сказал: \\q «Объединяйтесь и нападите на Едом! \\q Готовьтесь к битве!»"
         }
       },
       "decisions": [
@@ -2829,6 +3747,66 @@
           "reason": "As the Psalms and Genesis on main: አሕዛብ is kept for the New Testament's Gentiles. Obadiah 1-4 shares this verse and the next two, and reads the same there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490140062"
+          ],
+          "choice": "\"जातियों\" (L); \"देशों\" (B, R)",
+          "alternatives": [
+            "\"जातियों\" at every level"
+          ],
+          "reason": "The nations are \"जातियाँ\" at Literal and \"देश\" at Balanced and Readable, as the poetry and prophets notes settle, since \"जाति\" also means caste.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490140011",
+            "o240490140052"
+          ],
+          "choice": "весть; посланник (L), вестник (B, R)",
+          "alternatives": [],
+          "reason": "The words shared with Obadiah 1 (m1); Obadiah is to copy this wording. The prophet speaks here (m2), so \"я\" takes no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490140102"
+          ],
+          "choice": "Едом",
+          "alternatives": [
+            "неё"
+          ],
+          "reason": "Readable names the one attacked, as the English does (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2896,6 +3874,16 @@
           "L": "እነሆ፣ በሕዝቦች መካከል ታናሽ አድርጌሃለሁና፤ \\q በሰዎችም መካከል የተናቅህ [አድርጌሃለሁ]።",
           "B": "በሕዝቦች መካከል ታናሽ አደርግሃለሁና፤ \\q በሰዎች ሁሉ ዘንድም የተናቅህ ትሆናለህ።",
           "R": "በሕዝቦች መካከል ደካማና የማትረባ አደርግሃለሁ። \\q ሁሉም ይንቅሃል።"
+        },
+        "hi": {
+          "L": "क्योंकि देखो, मैंने तुम्हें जातियों में छोटा कर दिया है, \\q मनुष्यों में तुच्छ।",
+          "B": "क्योंकि देखो, मैं तुम्हें देशों में छोटा कर दूँगा, \\q सब मनुष्यों में तुच्छ।",
+          "R": "मैं तुम्हें देशों के बीच कमज़ोर और मामूली बना दूँगा। \\q सब लोग तुम्हें तुच्छ समझेंगे।"
+        },
+        "ru": {
+          "L": "Ведь вот, малым {{deity_pronoun:я|Я}} сделал тебя среди народов, \\q презираемым среди людей.",
+          "B": "Ведь вот, {{deity_pronoun:я|Я}} сделаю тебя малым среди народов, \\q презираемым всеми людьми.",
+          "R": "Я сделаю тебя слабым и ничтожным среди народов. \\q Все будут смотреть на тебя с презрением."
         }
       },
       "decisions": [
@@ -2944,6 +3932,26 @@
           "choice": "I will make",
           "alternatives": [],
           "reason": "Balanced and Readable put the verb in the future, since the judgment is still to come (m2). Literal keeps \"I have made\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490150041"
+          ],
+          "choice": "сделаю",
+          "alternatives": [
+            "сделал"
+          ],
+          "reason": "Balanced and Readable put the verb in the future, since the judgment is still to come (m2), as the English does; Literal keeps the completed form. Obadiah 2 is to copy this wording.",
           "uncertain": false,
           "footnote": false
         }
@@ -3031,6 +4039,16 @@
           "L": "የምታስፈራው ሽብርህ፣ የልብህም ትዕቢት አታለለህ፤ \\q አንተ በዓለት ንቃቃት ውስጥ የምትኖር፣ \\q የኮረብታውን ከፍታ የያዝክ። \\q ጎጆህን እንደ ንስር ከፍ ብታደርግ እንኳ፣ \\q ከዚያ አወርድሃለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "በሌሎች ላይ የምትለቀው ሽብርና የልብህ ትዕቢት አታለሉህ፤ \\q አንተ በዓለት ንቃቃት ውስጥ የምትኖር፣ \\q የኮረብቶችን ከፍታ የያዝክ። \\q ጎጆህን እንደ ንስር ጎጆ ከፍ አድርገህ ብትሠራ እንኳ፣ \\q ከዚያ አወርድሃለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "ሁሉም የሚፈራህ መስሎሃል፤ ትዕቢትህም አታሎሃል። \\q በዓለታማ ገደሎች ውስጥ በተሰወሩ ስፍራዎች ትኖራለህ። \\q የኮረብቶችን ጫፍ ይዘሃል። \\q ነገር ግን መኖሪያህን እንደ ንስር ጎጆ ከፍ አድርገህ ብትሠራ እንኳ፣ \\q ከዚያ አወርድሃለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "तुम्हारे आतंक ने तुम्हें धोखा दिया है, तुम्हारे मन के अहंकार ने, \\q हे चट्टान की दरारों में बसनेवाले, \\q जो पहाड़ी की ऊँचाई को थामे हुए है। \\q चाहे तुम उकाब की तरह अपना घोंसला ऊँचा बनाओ, \\q वहाँ से मैं तुम्हें नीचे उतार लाऊँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "जो आतंक तुम दूसरों में फैलाते हो, उसने और तुम्हारे मन के घमंड ने तुम्हें धोखा दिया है, \\q हे चट्टान की दरारों में रहनेवाले, \\q जो पहाड़ी की ऊँचाइयों पर क़ब्ज़ा किए हुए है। \\q चाहे तुम अपना घोंसला उकाब के घोंसले जितना ऊँचा बनाओ, \\q मैं तुम्हें वहाँ से नीचे उतार लाऊँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "तुम सोचते हो कि सब तुमसे डरते हैं, और तुम्हारे घमंड ने तुम्हें धोखा दिया है। \\q तुम चट्टानी पहाड़ों में छिपने की जगहों में रहते हो। \\q तुमने पहाड़ियों की चोटियों पर क़ब्ज़ा कर रखा है। \\q पर चाहे तुम अपना घर उकाब के घोंसले जितना ऊँचा बनाओ, \\q मैं तुम्हें वहाँ से नीचे गिरा दूँगा, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "Ужас, [который] ты наводишь, обманул тебя, гордость сердца твоего, \\q живущий в расселинах скалы, \\q держащий высоту холма. \\q Хотя бы ты, как орёл, высоко устроил гнездо своё, \\q и оттуда {{deity_pronoun:я|Я}} свергну тебя, — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Ужас, который ты наводишь на других, и гордость твоего сердца обманули тебя, \\q ты, живущий в расселинах скалы, \\q занимающий вершины холмов. \\q Даже если ты совьёшь гнездо так же высоко, как орёл, \\q {{deity_pronoun:я|Я}} и оттуда сброшу тебя, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Ты думаешь, что все тебя боятся, и гордость обманула тебя. \\q Ты живёшь в укрытиях среди скал. \\q Ты занимаешь вершины холмов. \\q Но даже если ты поселишься так же высоко, как гнездо орла, \\q {{deity_pronoun:я|Я}} и оттуда сброшу тебя вниз, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -3139,6 +4157,91 @@
           "reason": "God speaks to Edom as one with \"tu\" through verses 11-16, as he speaks to the nations addressed as one; verses 14-16 share their words with Obadiah 1-4 (see verse 7).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490160142"
+          ],
+          "choice": "\"उकाब\"",
+          "alternatives": [
+            "\"गरुड़\""
+          ],
+          "reason": "The great bird of prey is \"उकाब\" at every level; \"गरुड़\" brings in the mythical bird of Hindu tradition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490160151"
+          ],
+          "choice": "\"अपना घर\"",
+          "alternatives": [
+            "\"अपना घोंसला\""
+          ],
+          "reason": "Readable says what the nest stands for, the people's high home in the mountains, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490160072",
+            "o240490160081",
+            "o240490160082",
+            "o240490160131",
+            "o240490160141",
+            "o240490160142",
+            "o240490160151",
+            "o240490160171"
+          ],
+          "choice": "расселины скалы; как орёл ... гнездо; оттуда свергну (L), сброшу (B, R)",
+          "alternatives": [],
+          "reason": "The lines shared with Obadiah 3-4 (m3); Obadiah is to copy this wording where its Hebrew is the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490160011"
+          ],
+          "choice": "Ужас, [который] ты наводишь",
+          "alternatives": [
+            "Твоя страшность"
+          ],
+          "reason": "\"Your terror\" is the fear Edom strikes into others (m1); Literal brackets the words Russian needs to say so.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3212,6 +4315,16 @@
           "L": "ኤዶምም ድንጋጤ ትሆናለች፤ \\q በአጠገቧ የሚያልፍ ሁሉ \\q ይደነግጣል፤ ስለ ቁስሎቿም ሁሉ ያፏጫል።",
           "B": "ኤዶም ማስደንገጫ ትሆናለች፤ \\q በአጠገቧ የሚያልፍ ሁሉ \\q ይደነግጣል፤ በደረሰባትም ቁስል ሁሉ እየተሳለቀ ያፏጫል።",
           "R": "ኤዶም አስደንጋጭ ስፍራ ትሆናለች። \\q በአጠገቧ የሚያልፍ ሁሉ ይደነግጣል። \\q በደረሰባትም ጥፋት ሁሉ ምክንያት ያፌዝባታል።"
+        },
+        "hi": {
+          "L": "और एदोम भय का कारण बन जाएगा; \\q जो कोई उसके पास से गुज़रेगा, \\q वह चकित होगा और उसकी सब मार पर सीटी बजाएगा।",
+          "B": "एदोम भय का कारण बन जाएगा; \\q जो कोई उसके पास से गुज़रेगा, \\q वह स्तब्ध रह जाएगा और उसके सब घावों को देखकर उपहास में सीटी बजाएगा।",
+          "R": "एदोम ऐसा उजड़ जाएगा कि लोग डर जाएँगे। \\q जो कोई वहाँ से गुज़रेगा, वह सदमे में आ जाएगा। \\q उस पर जो विपत्तियाँ आई हैं, उन्हें देखकर लोग उसका मज़ाक़ उड़ाएँगे।"
+        },
+        "ru": {
+          "L": "И станет Едом ужасом; \\q всякий, проходящий мимо него, \\q ужаснётся и будет свистеть над всеми его ранами.",
+          "B": "Едом станет ужасом; \\q всякий, кто пройдёт мимо, \\q ужаснётся и с насмешкой засвистит, видя все его раны.",
+          "R": "Едом станет ужасом. \\q Всякий, кто будет проходить мимо, придёт в ужас. \\q Люди будут смеяться над ним из-за всех бедствий, которые его поразили."
         }
       },
       "decisions": [
@@ -3383,6 +4496,48 @@
           "reason": "Whistling at a ruin was a gesture of scorn; Literal keeps the gesture, Readable says what it means. The same wording at 50:13 and 51:37.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490170032",
+            "o240490170071",
+            "o240490170082"
+          ],
+          "choice": "\"चकित होगा और ... सीटी बजाएगा\" (L); \"स्तब्ध रह जाएगा ... उपहास में सीटी बजाएगा\" (B); \"मज़ाक़ उड़ाएँगे\" (R)",
+          "alternatives": [
+            "\"आह भरेगा\""
+          ],
+          "reason": "The appalled passer-by who hisses takes the wording of 1 Kings 9:8 and 2 Chronicles 29:8 at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490170082"
+          ],
+          "choice": "свистеть (L); с насмешкой засвистит (B); смеяться (R)",
+          "alternatives": [],
+          "reason": "Hissing was a sign of shock and scorn (m1); Literal keeps the gesture as 1 Kings 9:8 does in this translation, Balanced adds the scorn, Readable says what it meant, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3461,6 +4616,16 @@
           "L": "ሰዶምና ገሞራ ጎረቤቶቻቸውም እንደ ተገለበጡ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ \\q በዚያ ማንም አይኖርም፤ \\q የሰው ልጅም በእርሷ እንግዳ ሆኖ አይቀመጥም።",
           "B": "ሰዶምና ገሞራ በአጠገባቸውም ያሉት ከተሞች እንደ ተገለበጡ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ \\q በዚያ ማንም አይኖርም፤ \\q ማንም ሰው በእርሷ አይሰፍርም።",
           "R": "ኤዶም እንደ ሰዶምና እንደ ገሞራ፣ በአጠገባቸውም እንዳሉት ከተሞች ትጠፋለች፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q በዚያ ማንም አይኖርም። \\q ማንም ለጥቂት ጊዜ እንኳ አይቀመጥባትም።"
+        },
+        "hi": {
+          "L": "जैसे सदोम और अमोरा और उनके पड़ोसियों के उलट दिए जाने के समय [हुआ], {{divine_name:प्रभु|याहवे}} कहते हैं, \\q वहाँ कोई न रहेगा, \\q और कोई {{gender:मनुष्य की सन्तान|मनुष्य का पुत्र}} उसमें परदेशी होकर न टिकेगा।",
+          "B": "जैसे सदोम और अमोरा और उनके पास के नगर उलट दिए गए थे, {{divine_name:प्रभु|याहवे}} कहते हैं, \\q वैसे ही वहाँ कोई न रहेगा; \\q कोई मनुष्य उसमें न बसेगा।",
+          "R": "एदोम वैसे ही नष्ट हो जाएगा जैसे सदोम और अमोरा और उनके पास के नगर नष्ट हुए थे, {{divine_name:प्रभु|याहवे}} कहते हैं। \\q वहाँ कोई नहीं रहेगा। \\q कोई थोड़े समय के लिए भी वहाँ नहीं ठहरेगा।"
+        },
+        "ru": {
+          "L": "Как при ниспровержении Содома и Гоморры и их соседей, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — \\q не будет жить там никто, \\q и не поселится в нём {{gender:человек|сын человеческий}}.",
+          "B": "Как было, когда были ниспровергнуты Содом, Гоморра и соседние с ними города, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — \\q никто не будет там жить, \\q ни один человек не поселится в нём.",
+          "R": "Едом будет разрушен, как Содом, Гоморра и соседние с ними города, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q Никто не будет там жить. \\q Никто не остановится там даже ненадолго."
         }
       },
       "decisions": [
@@ -3634,6 +4799,69 @@
           "reason": "ሰው is inclusive in Amharic. Here \"የሰው ልጅ\" is the Hebrew idiom for a person, not the New Testament title. 49:33 and 50:40 repeat these lines in the same words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490180141",
+            "o240490180151"
+          ],
+          "choice": "\"{{gender:मनुष्य की सन्तान|मनुष्य का पुत्र}}\"",
+          "alternatives": [
+            "\"मनुष्य\""
+          ],
+          "reason": "\"Son of man\" here is a Hebrew way of saying a human being; the gender setting gives the traditional form, in the wording of the Psalms. It is kept apart from Jesus' title \"मनुष्य का पुत्र\" by the default.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490180012",
+            "o240490180021",
+            "o240490180032"
+          ],
+          "choice": "\"सदोम और अमोरा\"",
+          "alternatives": [
+            "\"सदोम और गमोरा\""
+          ],
+          "reason": "The names as the New Testament has them (Matthew 10:15).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490180141",
+            "o240490180151"
+          ],
+          "choice": "{{gender:человек|сын человеческий}}",
+          "alternatives": [
+            "сын человеческий without a span"
+          ],
+          "reason": "\"Son of man\" is a Hebrew way of saying a human being (m2); as in the English, the gender setting gives the traditional form at Literal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3732,6 +4960,16 @@
           "L": "እነሆ፣ እንደ አንበሳ ከዮርዳኖስ ጫካ \\q ወደማይደርቀው መሰማሪያ ይወጣል፤ \\q በቅጽበት ከእርሷ አስሮጠዋለሁና፤ \\q የተመረጠውንም በእርሷ ላይ እሾማለሁ። \\q እንደ እኔ ያለ ማን ነው? ማንስ ይጠራኛል? \\q በፊቴስ የሚቆም ይህ እረኛ ማን ነው?",
           "B": "ጠላት እንደ አንበሳ ከዮርዳኖስ ዳር ካለው ጥቅጥቅ ጫካ ወጥቶ \\q ውኃ በማያጣው መሰማሪያ ላይ ይመጣል። \\q በቅጽበት ኤዶምን ከምድሯ አባርራታለሁ፤ \\q የመረጥኩትንም በላይዋ እሾማለሁ። \\q እንደ እኔ ያለ ማን ነው? ማንስ ሊጠይቀኝ ይችላል? \\q በፊቴ ሊቆም የሚችል እረኛ ማን ነው?",
           "R": "ጠላት ከዮርዳኖስ ወንዝ ዳር ካለው ጥቅጥቅ ቁጥቋጦ እንደሚወጣ አንበሳ \\q በለመለመ መስክ ያሉትን በጎች ሊያጠቃ ይመጣል። \\q በቅጽበት የኤዶምን ሕዝብ ከምድራቸው አባርራቸዋለሁ። \\q ከዚያም የመረጥኩትን በምድሪቱ ላይ እሾማለሁ። \\q እንደ እኔ ያለ ማንም የለም። ማንም ሊገዳደረኝ አይችልም። \\q በፊቴ ሊቆም የሚችል ገዥ የለም።"
+        },
+        "hi": {
+          "L": "देखो, वह सिंह की तरह यरदन की घनी झाड़ियों से \\q सदा बहते [जल] की चराई पर चढ़ आता है; \\q क्योंकि मैं पल भर में उसे वहाँ से भगा दूँगा, \\q और जो कोई चुना हुआ है, उसे मैं उस पर ठहराऊँगा। \\q क्योंकि मेरे समान कौन है, और कौन मुझे बुलाकर हिसाब माँगेगा? \\q और वह चरवाहा कौन है जो मेरे सामने खड़ा रह सके?",
+          "B": "देखो, एक शत्रु सिंह की तरह यरदन के किनारे की घनी झाड़ियों से \\q उन चरागाहों पर चढ़ आएगा जो कभी नहीं सूखते। \\q मैं पल भर में एदोम को उसके देश से खदेड़ दूँगा, \\q और जिसे मैं चुनूँ, उसे उस पर ठहराऊँगा। \\q क्योंकि मेरे समान कौन है? कौन मुझसे हिसाब माँग सकता है? \\q कौन-सा चरवाहा मेरा सामना कर सकता है?",
+          "R": "एक शत्रु यरदन नदी के किनारे की घनी झाड़ियों में से सिंह की तरह निकलेगा \\q और हरे चरागाहों में भेड़ों पर टूट पड़ेगा। \\q मैं पल भर में एदोम के लोगों को उनके देश से भगा दूँगा। \\q फिर जिसे मैं चुनूँगा, उसे उस देश पर अधिकार दूँगा। \\q मेरे समान कोई नहीं है। कोई मुझे चुनौती नहीं दे सकता। \\q कोई भी शासक मेरे सामने टिक नहीं सकता।"
+        },
+        "ru": {
+          "L": "Вот, как лев, выходит он из зарослей Иордана \\q на вечнозелёное пастбище; \\q ведь в одно мгновение {{deity_pronoun:я|Я}} прогоню его оттуда, \\q и кто избран, того {{deity_pronoun:я|Я}} поставлю над ним. \\q Ведь кто подобен {{deity_pronoun:мне|Мне}}, и кто призовёт {{deity_pronoun:меня|Меня}} [к ответу]? \\q И кто тот пастух, который устоит передо {{deity_pronoun:мной|Мной}}?",
+          "B": "Вот, враг выйдет, как лев, из густых зарослей у Иордана \\q на пастбища, которые никогда не пересыхают. \\q В одно мгновение {{deity_pronoun:я|Я}} прогоню Едом с его земли \\q и поставлю над ним того, кого изберу. \\q Ведь кто подобен {{deity_pronoun:мне|Мне}}? Кто может потребовать от {{deity_pronoun:меня|Меня}} ответа? \\q Какой пастух устоит против {{deity_pronoun:меня|Меня}}?",
+          "R": "Враг придёт, как лев из густых кустов у реки Иордан, \\q чтобы напасть на овец на зелёных пастбищах. \\q В один миг {{deity_pronoun:я|Я}} прогоню жителей Едома с их земли. \\q Потом {{deity_pronoun:я|Я}} поставлю над ней того, кого выберу. \\q Никто не подобен {{deity_pronoun:мне|Мне}}. Никто не может бросить {{deity_pronoun:мне|Мне}} вызов. \\q Ни один правитель не устоит против {{deity_pronoun:меня|Меня}}."
         }
       },
       "decisions": [
@@ -3923,6 +5161,66 @@
           "reason": "The meaning decision reads the thicket along the river, the lion's lair; one wording serves both oracles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490190031"
+          ],
+          "choice": "\"एक शत्रु ... एदोम\"",
+          "alternatives": [
+            "\"वह\""
+          ],
+          "reason": "Balanced and Readable name the one who comes up and the one driven out, as the English does, so that the lion is not read as God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490190031",
+            "o240490190111"
+          ],
+          "choice": "враг; Едом",
+          "alternatives": [
+            "он; его"
+          ],
+          "reason": "Balanced and Readable name the one who comes up and the one driven out (m2), as the English does, so that the lion is not read as God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490190241"
+          ],
+          "choice": "правитель",
+          "alternatives": [
+            "пастух"
+          ],
+          "reason": "Readable says \"ruler\" for \"shepherd\" (m3), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4011,6 +5309,16 @@
           "L": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} በኤዶም ላይ ያቀደውን ዕቅድ ስሙ፤ \\q አሳቡንም፣ \\q በቴማን ነዋሪዎች ላይ ያሰበውን [ስሙ]፤ \\q በእርግጥ የመንጋውን ታናናሾች ይጎትቷቸዋል፤ \\q በእርግጥ ስለ እነርሱ መሰማሪያቸውን ባድማ ያደርጋል።",
           "B": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} በኤዶም ላይ ያወጣውን ዕቅድ፣ \\q ያሰበውንም አሳብ \\q በቴማን ሕዝብ ላይ ስሙ፤ \\q የመንጋው ታናናሾች እንኳ ተጎትተው ይወሰዳሉ፤ \\q ስለ እነርሱም መሰማሪያቸውን ባድማ ያደርገዋል።",
           "R": "ስለዚህ {{divine_name:እግዚአብሔር|ያህዌ}} በኤዶም ላይ ያቀደውን፣ \\q በቴማን ሕዝብ ላይ ሊያደርግ \\q የወሰነውን ስሙ። \\q የመንጋው ትንንሽ ጠቦቶች እንኳ ተጎትተው ይወሰዳሉ። \\q መስኮቻቸውንም ባዶ ምድረ በዳ ያደርጋቸዋል።"
+        },
+        "hi": {
+          "L": "इसलिए {{divine_name:प्रभु|याहवे}} की वह युक्ति सुनो जो उन्होंने एदोम के विरुद्ध ठानी है, \\q और उनकी वे योजनाएँ \\q जो उन्होंने तेमान के निवासियों के विरुद्ध बाँधी हैं: \\q निश्चय वे उन्हें घसीट ले जाएँगे, भेड़-बकरियों के छोटे बच्चों को; \\q निश्चय वे उनके कारण उनकी चराई को उजाड़ कर देंगे।",
+          "B": "इसलिए वह योजना सुनो जो {{divine_name:प्रभु|याहवे}} ने एदोम के विरुद्ध बनाई है, \\q वे इरादे जो उन्होंने \\q तेमान के लोगों के विरुद्ध ठाने हैं: \\q झुंड के छोटे-छोटे बच्चे भी घसीटकर ले जाए जाएँगे; \\q वे उनके कारण उनकी चराई को उजाड़ बना देंगे।",
+          "R": "इसलिए सुनो कि {{divine_name:प्रभु|याहवे}} ने एदोम के विरुद्ध क्या योजना बनाई है, \\q उन्होंने क्या करने का निश्चय किया है \\q तेमान के लोगों के साथ। \\q झुंड के सबसे छोटे मेम्ने भी घसीटकर ले जाए जाएँगे। \\q वे उनके चरागाहों को सूना उजाड़ बना देंगे।"
+        },
+        "ru": {
+          "L": "Поэтому слушайте замысел {{divine_name:ГОСПОДА|Яхве}}, который {{deity_pronoun:он|Он}} замыслил против Едома, \\q и {{deity_pronoun:его|Его}} намерения, \\q которые {{deity_pronoun:он|Он}} задумал против жителей Фемана: \\q истинно, утащат их, малых из стада; \\q истинно, {{deity_pronoun:он|Он}} опустошит из-за них их пастбище.",
+          "B": "Поэтому слушайте, какой замысел {{divine_name:ГОСПОДЬ|Яхве}} принял против Едома, \\q какие намерения {{deity_pronoun:он|Он}} составил \\q против жителей Фемана: \\q даже малых ягнят из стада утащат; \\q {{deity_pronoun:он|Он}} обратит их пастбище в пустошь из-за них.",
+          "R": "Поэтому слушайте, что {{divine_name:ГОСПОДЬ|Яхве}} задумал против Едома, \\q что {{deity_pronoun:он|Он}} решил сделать \\q с жителями Фемана. \\q Даже самых маленьких ягнят из стада утащат. \\q Он превратит их пастбища в пустую землю."
         }
       },
       "decisions": [
@@ -4104,6 +5412,47 @@
           "reason": "The English speaks of the LORD in the third person here, so Korean gives him the honorific, as when the prophet speaks.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490200021"
+          ],
+          "choice": "\"उन्होंने\", \"उनकी\" without spans",
+          "alternatives": [
+            "deity_pronoun spans on the pronouns for God"
+          ],
+          "reason": "Where the English has deity_pronoun spans, Hindi has none; God in the third person takes the honorific plural, which already marks respect.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490200161",
+            "o240490200211"
+          ],
+          "choice": "истинно ... истинно",
+          "alternatives": [
+            "непременно"
+          ],
+          "reason": "The oath form \"if not\" (m1) is kept as a strong assertion at Literal, twice, as in the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4175,6 +5524,16 @@
           "L": "ከውድቀታቸው ድምፅ የተነሣ \\q ምድር ትናወጣለች፤ \\q ጩኸት! ድምፁ በሸምበቆ ባሕር ይሰማል።",
           "B": "ከውድቀታቸው ድምፅ የተነሣ \\q ምድር ትንቀጠቀጣለች፤ \\q ጩኸታቸውም እስከ ቀይ ባሕር ድረስ ይሰማል።",
           "R": "ኤዶም ስትወድቅ \\q ድምፁ ምድርን ያናውጣል። \\q ሰዎች ጩኸቱን እስከ ቀይ ባሕር ድረስ ይሰሙታል።"
+        },
+        "hi": {
+          "L": "उनके गिरने के शब्द से \\q पृथ्वी काँप उठती है; \\q एक चिल्लाहट! उसका शब्द सरकंडों के समुद्र तक सुनाई देता है।",
+          "B": "उनके गिरने के धमाके से \\q पृथ्वी हिल उठती है; \\q उनकी चीख़ लाल समुद्र तक सुनाई देती है।",
+          "R": "जब एदोम गिरेगा, \\q तो उसके शोर से पृथ्वी काँप उठेगी। \\q लोग उसकी चीख़-पुकार दूर लाल समुद्र तक सुनेंगे।"
+        },
+        "ru": {
+          "L": "От шума их падения \\q содрогается земля; \\q крик! У Тростникового моря слышен его звук.",
+          "B": "От шума их падения \\q дрожит земля; \\q их крик слышен даже у Красного моря.",
+          "R": "Когда Едом падёт, \\q от шума затрясётся земля. \\q Крики будут слышны даже у Красного моря."
         }
       },
       "decisions": [
@@ -4349,6 +5708,48 @@
           "reason": "As the English: Literal keeps the Hebrew name, the other levels the name readers know.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490210062",
+            "o240490210071"
+          ],
+          "choice": "\"सरकंडों का समुद्र\" (L); \"लाल समुद्र\" (B, R)",
+          "alternatives": [
+            "\"लाल समुद्र\" at every level"
+          ],
+          "reason": "As in Exodus 13:18 and 15:4: Literal keeps \"Sea of Reeds\", Balanced and Readable give the familiar name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490210062",
+            "o240490210071"
+          ],
+          "choice": "Тростниковое море (L); Красное море (B, R)",
+          "alternatives": [],
+          "reason": "As in Exodus 15:4 in this translation: Literal keeps \"Sea of Reeds\", Balanced and Readable give the familiar name (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4431,6 +5832,16 @@
           "L": "እነሆ፣ እንደ ንስር ይወጣል፤ ይወርዳልም፤ \\q ክንፎቹንም በባሶራ ላይ ይዘረጋል፤ \\q በዚያም ቀን የኤዶም ኃያላን ልብ \\q ምጥ እንደ ያዛት ሴት ልብ ይሆናል።",
           "B": "እንደ ንስር ተነሥቶ ይወርዳል፤ \\q ክንፎቹንም በባሶራ ላይ ይዘረጋል። \\q በዚያ ቀን የኤዶም ጦረኞች ልብ \\q ምጥ እንደ ያዛት ሴት ልብ ይሆናል።",
           "R": "ጠላት እንደ ንስር በርሮ ይወጣል፤ ወደ ታችም ይወርዳል፤ \\q ክንፎቹንም በባሶራ ላይ ይዘረጋል። \\q በዚያ ቀን የኤዶም ወታደሮች በፍርሃት ይርዳሉ፤ \\q ምጥ እንደ ያዛት ሴት ይሆናሉ።"
+        },
+        "hi": {
+          "L": "देखो, वह उकाब की तरह ऊपर उठेगा और झपटेगा, \\q और बोस्रा पर अपने पंख फैलाएगा; \\q और उस दिन एदोम के वीर योद्धाओं का मन \\q प्रसव-पीड़ा में पड़ी स्त्री के मन जैसा हो जाएगा।",
+          "B": "देखो! वह उकाब की तरह ऊपर उठता और झपटता है, \\q और बोस्रा पर अपने पंख फैला देता है। \\q उस दिन एदोम के वीर योद्धाओं का मन \\q प्रसव-पीड़ा में पड़ी स्त्री के मन जैसा होगा।",
+          "R": "देखो! शत्रु उकाब की तरह ऊपर उड़ेगा और झपट्टा मारेगा, \\q और बोस्रा पर अपने पंख फैला देगा। \\q उस दिन एदोम के सैनिक बहुत डर जाएँगे, \\q ठीक बच्चा जनती हुई स्त्री की तरह।"
+        },
+        "ru": {
+          "L": "Вот, как орёл, поднимется он и налетит \\q и распрострёт свои крылья над Боцрой; \\q и будет сердце воинов-богатырей Едома в тот день \\q как сердце женщины в родах.",
+          "B": "Вот! Как орёл, он поднимается, налетает \\q и распростирает крылья над Боцрой. \\q В тот день у воинов Едома будет сердце, \\q как сердце женщины в родах.",
+          "R": "Смотрите! Враг взлетит и бросится вниз, как орёл, \\q и распрострёт свои крылья над Боцрой. \\q В тот день воины Едома будут в ужасе, \\q как женщина, которая рожает."
         }
       },
       "decisions": [
@@ -4579,6 +5990,47 @@
           "reason": "The verse repeats 48:40-41 (m1), and each level keeps their Portuguese, adding only the verb of rising and Bozrah and Edom for Moab.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490220101",
+            "o240490220152"
+          ],
+          "choice": "\"उस दिन\"; \"प्रसव-पीड़ा में पड़ी स्त्री\"",
+          "alternatives": [
+            "\"उन दिनों\""
+          ],
+          "reason": "\"In that day\" is \"उस दिन\" at every level, as the prophets note settles; the woman in labor stands for helpless terror (m3), and Readable says so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490220111"
+          ],
+          "choice": "воины-богатыри (L); воины (B, R)",
+          "alternatives": [],
+          "reason": "The gibborim take the history note's \"воины-богатыри\" at Literal; Balanced and Readable say \"воины\", as the English says \"warriors\" and \"soldiers\". 48:40-41, where the Hebrew is the same, should match this wording.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4653,6 +6105,16 @@
           "L": "ስለ ደማስቆ። ሐማትና አርፋድ አፍረዋል፤ \\q ክፉ ወሬ ሰምተዋልና፤ ቀልጠዋል። \\q በባሕር ውስጥ ጭንቀት አለ፤ \\q ጸጥ ሊል አይችልም።",
           "B": "ስለ ደማስቆ። ሐማትና አርፋድ ደንግጠዋል፤ \\q ክፉ ወሬ ሰምተዋልና፤ ልባቸውም ቀልጧል። \\q እንደ ባሕር ተናውጠዋል፤ \\q ባሕሩም ጸጥ ሊል አይችልም።",
           "R": "ስለ ደማስቆ። የሐማትና የአርፋድ ሰዎች አፍረዋል፤ ፈርተዋልም። \\q ክፉ ወሬ ሰምተዋል፤ ድፍረታቸውም ሁሉ ጠፍቷል። \\q እንደ ማዕበላማ ባሕር ዕረፍት አጥተዋል፤ \\q ባሕሩም ፈጽሞ ጸጥ አይልም።"
+        },
+        "hi": {
+          "L": "दमिश्क के विषय में। हमात और अर्पाद लज्जित हुए हैं, \\q क्योंकि उन्होंने बुरा समाचार सुना है; वे पिघल गए हैं। \\q समुद्र में व्याकुलता है; \\q वह शांत नहीं रह सकता।",
+          "B": "दमिश्क के विषय में। हमात और अर्पाद घबरा गए हैं, \\q क्योंकि उन्होंने बुरा समाचार सुना है, और उनका साहस पिघल गया है। \\q वे समुद्र की तरह व्याकुल हैं, \\q जो शांत नहीं रह सकता।",
+          "R": "दमिश्क के बारे में। हमात और अर्पाद के लोग लज्जित और डरे हुए हैं। \\q उन्होंने बुरी ख़बर सुनी है, और उनकी सारी हिम्मत टूट गई है। \\q वे तूफ़ानी समुद्र की तरह बेचैन हैं, \\q जो कभी शांत नहीं होता।"
+        },
+        "ru": {
+          "L": "О Дамаске. Посрамлены Емаф и Арпад, \\q ведь худую весть они услышали; растаяли [они]. \\q На море тревога; \\q успокоиться оно не может.",
+          "B": "О Дамаске. Смущены Емаф и Арпад, \\q ведь они услышали дурную весть, и их мужество растаяло. \\q Они волнуются, как море, \\q которое не может утихнуть.",
+          "R": "О Дамаске. Жители Емафа и Арпада опозорены и напуганы. \\q Они услышали плохую весть и совсем пали духом. \\q Они беспокойны, как бурное море, \\q которое никогда не бывает спокойным."
         }
       },
       "decisions": [
@@ -4785,6 +6247,50 @@
           "reason": "The cities (m1) take the forms 2 Kings 18:34 and Isaiah 10:9 give them in Portuguese; the heading follows 46:2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490230101",
+            "o240490230102",
+            "o240490230111"
+          ],
+          "choice": "\"वे समुद्र की तरह व्याकुल हैं\"",
+          "alternatives": [
+            "\"समुद्र में व्याकुलता है\""
+          ],
+          "reason": "Balanced gives the comparison that the line means, as the English Balanced does; Literal keeps \"in the sea\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490230012",
+            "o240490230031",
+            "o240490230042"
+          ],
+          "choice": "Дамаск; Емаф; Арпад",
+          "alternatives": [
+            "Хамат"
+          ],
+          "reason": "The three Aramean cities keep the forms of the history books in this translation (2 Samuel 8:9; 2 Kings 19:13).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4857,6 +6363,16 @@
           "L": "ደማስቆ ደከመች፤ ለመሸሽ ዘወር አለች፤ ድንጋጤም ያዛት፤ \\q ጭንቀትና ምጥ እንደምትወልድ [ሴት] ያዟት።",
           "B": "ደማስቆ ኃይሏ ደከመ፤ ለመሸሽ ዘወር አለች፤ ድንጋጤም ያዛት፤ \\q ምጥ እንደ ያዛት ሴት ጭንቀትና ሕመም ያዟታል።",
           "R": "የደማስቆ ሰዎች ምንም ኃይል አልቀረላቸውም። በድንጋጤ ለመሸሽ ዘወር ይላሉ። \\q እንደምትወልድ ሴት ሥቃይና ጭንቀት ይዟቸዋል።"
+        },
+        "hi": {
+          "L": "दमिश्क निर्बल हो गई है; वह भागने को मुड़ी है, और घबराहट ने [उसे] पकड़ लिया है; \\q संकट और पीड़ाओं ने उसे जकड़ लिया है, बच्चा जननेवाली [स्त्री] की तरह।",
+          "B": "दमिश्क की शक्ति जाती रही है; वह भागने को मुड़ी है, और घबराहट ने उसे जकड़ लिया है; \\q संकट और पीड़ा ने उसे प्रसव-पीड़ा में पड़ी स्त्री की तरह पकड़ लिया है।",
+          "R": "दमिश्क के लोगों में कोई शक्ति नहीं बची। वे घबराकर भागने को मुड़ते हैं। \\q वे बच्चा जनती हुई स्त्री की तरह दर्द और पीड़ा में हैं।"
+        },
+        "ru": {
+          "L": "Ослабел Дамаск; повернулся он, чтобы бежать, и дрожь охватила [его]; \\q скорбь и муки схватили его, как [женщину] рождающую.",
+          "B": "Дамаск обессилел; он обратился в бегство, и его охватила паника; \\q тоска и боль сжали его, как женщину в родах.",
+          "R": "У жителей Дамаска не осталось сил. Они в панике бегут прочь. \\q Им больно и страшно, как женщине, которая рожает."
         }
       },
       "decisions": [
@@ -4890,6 +6406,47 @@
           "choice": "The people of Damascus",
           "alternatives": [],
           "reason": "Readable speaks of the people instead of the city as a woman.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490240011"
+          ],
+          "choice": "feminine forms for Damascus (\"हो गई है\", \"मुड़ी है\")",
+          "alternatives": [
+            "masculine forms"
+          ],
+          "reason": "The city is pictured as a woman in this verse; Literal and Balanced keep the feminine, and Readable speaks of the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490240021"
+          ],
+          "choice": "Дамаск, masculine",
+          "alternatives": [
+            "Damascus as \"she\""
+          ],
+          "reason": "The Hebrew and the English speak of the city as a woman; Russian \"Дамаск\" is masculine, so the pronouns follow the noun and the comparison with a woman in labour carries the image.",
           "uncertain": false,
           "footnote": false
         }
@@ -4957,6 +6514,16 @@
           "L": "የምስጋና ከተማ፣ \\q የደስታዬ ከተማ እንዴት አልተተወችም?",
           "B": "የታወቀችው ከተማ፣ \\q የደስታዬ ከተማ ለምን አልተተወችም?",
           "R": "ሰዎች ያቺን የታወቀች ከተማ፣ \\q እጅግ ደስ ያሰኘችኝን ከተማ ለምን ትተው አልሄዱም?"
+        },
+        "hi": {
+          "L": "वह कैसे नहीं छोड़ा गया, प्रशंसा का नगर, \\q मेरे आनंद की बस्ती?",
+          "B": "वह प्रसिद्ध नगर क्यों नहीं छोड़ा गया, \\q मेरे आनंद की बस्ती?",
+          "R": "लोगों ने वह प्रसिद्ध नगर क्यों नहीं छोड़ा, \\q वह नगर जिससे मुझे इतना आनंद मिलता था?"
+        },
+        "ru": {
+          "L": "Как же не оставлен город хвалы, \\q город моей радости?",
+          "B": "Почему не был оставлен славный город, \\q город моей радости?",
+          "R": "Почему люди не ушли из этого знаменитого города, \\q города, который так радовал меня?"
         }
       },
       "decisions": [
@@ -5037,6 +6604,25 @@
           "reason": "The speaker continues the LORD's oracle, so \"my joy\" is \"niềm vui Ta\"; the English \"my\" carries no span here, since the speaker is not marked. A reviewer may judge it the prophet's voice.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490250082"
+          ],
+          "choice": "моей, no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The speaker who loved Damascus is not God (m2), so \"моей\" and \"меня\" take no span.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5115,6 +6701,16 @@
           "L": "ስለዚህ ጎበዞቿ በአደባባዮቿ ይወድቃሉ፤ \\q ተዋጊዎቹም ሁሉ በዚያ ቀን ጸጥ ይላሉ፣ \\q ይላል {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት።",
           "B": "ስለዚህ ጎበዞቿ በመንገዶቿ ይወድቃሉ፤ \\q ወታደሮቿም ሁሉ በዚያ ቀን ጸጥ ይደረጋሉ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "ስለዚህ የደማስቆ ጎበዞች በመንገዶች ላይ ይገደላሉ። \\q ወታደሮቿ ሁሉ በዚያ ቀን ይሞታሉ፣ \\q ይላል የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "इसलिए उसके जवान उसके चौकों में गिरेंगे, \\q और सब योद्धा उस दिन चुप करा दिए जाएँगे, \\q सेनाओं के {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "इसलिए उसके जवान उसकी सड़कों पर गिरेंगे, \\q और उसके सब सैनिक उस दिन चुप करा दिए जाएँगे, \\q सेनाओं के {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "इसलिए दमिश्क के जवान सड़कों पर मारे जाएँगे। \\q उस दिन उसके सब सैनिक मर जाएँगे, \\q सेनाओं के {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "Поэтому падут юноши его на его площадях, \\q и все воины погибнут в тот день, \\q — слово {{divine_name:ГОСПОДА|Яхве}} Саваофа.",
+          "B": "Поэтому его юноши падут на его улицах, \\q и все его воины умолкнут в тот день, \\q — говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф.",
+          "R": "Поэтому молодые мужчины Дамаска будут убиты на улицах. \\q Все его воины погибнут в тот день, \\q — говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств."
         }
       },
       "decisions": [
@@ -5191,6 +6787,28 @@
           "reason": "The meaning decision notes the repeat; the same Amharic lets it be heard.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490260091",
+            "o240490260092",
+            "o240490260101",
+            "o240490260102"
+          ],
+          "choice": "в тот день",
+          "alternatives": [],
+          "reason": "The prophets note's wording for \"in that day\". This line returns of Babylon in 50:30, with the same wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5259,6 +6877,16 @@
           "L": "በደማስቆም ቅጥር ላይ እሳት አነዳለሁ፤ \\q የቤንሃዳድንም ምሽጎች ትበላለች።",
           "B": "በደማስቆ ቅጥር ላይ እሳት እለኩሳለሁ፤ \\q የቤንሃዳድንም ምሽጎች ታቃጥላለች።",
           "R": "የደማስቆን ቅጥሮች በእሳት አቃጥላለሁ። \\q እሳቱም የንጉሥ ቤንሃዳድን ጠንካራ ቤተ መንግሥቶች ያቃጥላል።"
+        },
+        "hi": {
+          "L": "और मैं दमिश्क की शहरपनाह में आग लगाऊँगा, \\q और वह बेन-हदद के गढ़ों को भस्म कर देगी।",
+          "B": "मैं दमिश्क की शहरपनाह में आग लगा दूँगा, \\q और वह बेन-हदद के क़िलों को जला डालेगी।",
+          "R": "मैं दमिश्क की दीवारों में आग लगा दूँगा। \\q वह आग राजा बेन-हदद के मज़बूत महलों को जलाकर राख कर देगी।"
+        },
+        "ru": {
+          "L": "И зажгу {{deity_pronoun:я|Я}} огонь на стене Дамаска, \\q и он пожрёт твердыни Венадада.",
+          "B": "Я подожгу стену Дамаска, \\q и огонь сожжёт крепости Венадада.",
+          "R": "Я подожгу стены Дамаска. \\q Огонь сожжёт укреплённые дворцы царя Венадада."
         }
       },
       "decisions": [
@@ -5327,6 +6955,28 @@
           "choice": "Ben-adad",
           "alternatives": [],
           "reason": "The name of several kings of Damascus, as published 1 Kings 15:18 and 2 Kings 13:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490270071",
+            "o240490270081"
+          ],
+          "choice": "Венадад",
+          "alternatives": [
+            "Бен-Хадад"
+          ],
+          "reason": "The name of the kings of Damascus keeps the form of 1 Kings 20 in this translation; Readable adds \"царь\", as the English adds \"King\".",
           "uncertain": false,
           "footnote": false
         }
@@ -5409,6 +7059,16 @@
           "L": "ስለ ቄዳርና የባቢሎን ንጉሥ ናቡከደነፆር ስለ መታቸው ስለ አሶር መንግሥታት። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q ተነሡ፤ ወደ ቄዳር ውጡ፤ \\q የምሥራቅንም ልጆች አጥፉ!",
           "B": "የባቢሎን ንጉሥ ናቡከደነፆር ድል ስላደረጋቸው ስለ ቄዳርና ስለ አሶር መንግሥታት። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q ተነሡ፤ በቄዳር ላይ ዝመቱ፤ \\q የምሥራቅንም ሕዝብ አጥፉ!",
           "R": "የባቢሎን ንጉሥ ናቡከደነፆር ወግቶ ድል ስላደረጋቸው ስለ ቄዳርና ስለ አሶር መንግሥታት። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q ተነሡና ቄዳርን ውጉ! \\q የምሥራቅን የበረሃ ነገዶች አጥፉ!"
+        },
+        "hi": {
+          "L": "केदार के और हासोर के राज्यों के विषय में, जिन्हें बाबुल के राजा नबूकदरेस्सर ने मार लिया। \\q {{divine_name:प्रभु|याहवे}} यों कहते हैं: \\q उठो, केदार पर चढ़ाई करो, \\q और {{gender:पूर्व की सन्तान|पूर्व के पुत्रों}} को नाश करो!",
+          "B": "केदार और हासोर के राज्यों के विषय में, जिन्हें बाबुल के राजा नबूकदरेस्सर ने हराया। \\q {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q उठो, केदार पर चढ़ाई करो, \\q और पूर्व के लोगों को नाश करो!",
+          "R": "केदार और हासोर के राज्यों के बारे में, जिन पर बाबुल के राजा नबूकदरेस्सर ने हमला करके उन्हें हराया। \\q {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q उठो, केदार पर हमला करो! \\q पूर्व के रेगिस्तानी क़बीलों को नाश करो!"
+        },
+        "ru": {
+          "L": "О Кедаре и о царствах Асора, которые поразил Навуходорносор, царь Вавилона. \\q Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Встаньте, поднимитесь на Кедар \\q и опустошите {{gender:жителей|сынов}} Востока!",
+          "B": "О Кедаре и о царствах Асора, которые разбил Навуходорносор, царь Вавилона. \\q Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Поднимайтесь, выступайте против Кедара \\q и уничтожьте народ Востока!",
+          "R": "О Кедаре и о царствах Асора, на которые напал и которые разбил Навуходорносор, царь Вавилона. \\q Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Вставайте и нападайте на Кедар! \\q Уничтожьте кочевые племена востока!"
         }
       },
       "decisions": [
@@ -5574,6 +7234,89 @@
           "reason": "One Amharic form for the one king through Jeremiah, as settled for the book; the English keeps the Hebrew spelling.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490280071"
+          ],
+          "choice": "\"नबूकदरेस्सर\"",
+          "alternatives": [
+            "\"नबूकदनेस्सर\""
+          ],
+          "reason": "Jeremiah's spelling \"Nebuchadrezzar\" is kept apart from \"Nebuchadnezzar\", as the Hebrew has it, in the form of Jeremiah 24:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490280012",
+            "o240490280031"
+          ],
+          "choice": "Кедар; Асор",
+          "alternatives": [
+            "Хацор"
+          ],
+          "reason": "Kedar keeps the form of Genesis 25:13 and Isaiah 21:16 in this translation. Hazor is the same Hebrew name as the city of Joshua 11, and Russian keeps that traditional form, though here it names settled groups of the Arabian desert (m2).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490280071"
+          ],
+          "choice": "Навуходорносор",
+          "alternatives": [
+            "Навуходоносор"
+          ],
+          "reason": "The Hebrew spells the name with r here (Nebuchadrezzar), and Russian keeps that form apart, as Jeremiah 24:1 does in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-3",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240490280181",
+            "o240490280191",
+            "o240490280201"
+          ],
+          "choice": "{{gender:жителей|сынов}} Востока",
+          "alternatives": [],
+          "reason": "As Judges 6:3 in this translation: the gender span gives \"сыны Востока\" as the traditional form; Balanced says \"народ Востока\", Readable \"кочевые племена востока\" (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5656,6 +7399,16 @@
           "L": "ድንኳኖቻቸውንና መንጎቻቸውን ይወስዳሉ፤ \\q መጋረጃዎቻቸውንና ዕቃዎቻቸውን ሁሉ ግመሎቻቸውንም ለራሳቸው ይወስዳሉ፤ \\q «በዙሪያ ሁሉ ሽብር!» ብለውም ይጮኹባቸዋል።",
           "B": "ድንኳኖቻቸውና መንጎቻቸው ይወሰዳሉ፤ \\q የድንኳን መጋረጃዎቻቸው፣ ዕቃዎቻቸው ሁሉና ግመሎቻቸው ተዘርፈው ይወሰዳሉ። \\q ሰዎችም «በዙሪያ ሁሉ ሽብር!» ብለው ይጮኹባቸዋል።",
           "R": "ጠላቶቻቸው ድንኳኖቻቸውንና መንጎቻቸውን ይወስዳሉ። \\q የድንኳን መጋረጃዎቻቸውን፣ ዕቃዎቻቸውን ሁሉና ግመሎቻቸውን ዘርፈው ይወስዳሉ። \\q «በዙሪያ ሁሉ ሽብር!» እያሉ ይጮኹባቸዋል።"
+        },
+        "hi": {
+          "L": "वे उनके तंबू और उनकी भेड़-बकरियाँ ले लेंगे; \\q उनके परदे और उनका सब सामान और उनके ऊँट वे अपने लिए उठा ले जाएँगे; \\q और वे उनके विरुद्ध पुकारेंगे, \"चारों ओर आतंक!\"",
+          "B": "उनके तंबू और उनकी भेड़-बकरियाँ छीन ली जाएँगी; \\q उनके तंबुओं के परदे, उनका सारा सामान और उनके ऊँट ले जाए जाएँगे। \\q लोग उन पर चिल्लाएँगे, \"चारों ओर आतंक!\"",
+          "R": "उनके शत्रु उनके तंबू और उनकी भेड़-बकरियाँ ले लेंगे। \\q वे उनके तंबुओं के परदे, उनका सारा सामान और उनके ऊँट उठा ले जाएँगे। \\q वे उन पर चिल्लाएँगे, \"चारों ओर डर ही डर!\""
+        },
+        "ru": {
+          "L": "Шатры их и стада их заберут; \\q их завесы, и всё их имущество, и их верблюдов унесут себе; \\q и будут кричать им: «Ужас со всех сторон!»",
+          "B": "Их шатры и стада будут захвачены; \\q их завесы, всё их имущество и их верблюдов уведут. \\q Им будут кричать: «Ужас со всех сторон!»",
+          "R": "Враги заберут их шатры и стада. \\q Они унесут их завесы от шатров, всё имущество и верблюдов. \\q Они будут кричать им: «Ужас кругом!»"
         }
       },
       "decisions": [
@@ -5772,6 +7525,50 @@
           "reason": "Jeremiah's repeated cry (6:25; 20:3, 10; 46:5) should read the same each time it comes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490290121",
+            "o240490290131",
+            "o240490290132"
+          ],
+          "choice": "\"चारों ओर आतंक!\" (L, B); \"चारों ओर डर ही डर!\" (R)",
+          "alternatives": [
+            "\"चारों ओर भय!\""
+          ],
+          "reason": "Jeremiah's refrain (6:25; 20:10; 46:5) has one wording per level, to be kept wherever it returns.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490290121",
+            "o240490290131",
+            "o240490290132"
+          ],
+          "choice": "«Ужас со всех сторон!» (L, B); «Ужас кругом!» (R)",
+          "alternatives": [],
+          "reason": "Jeremiah's repeated cry (m2) takes one wording at each level; 6:25, 20:10 and 46:5 should match it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5852,6 +7649,16 @@
           "L": "የአሶር ነዋሪዎች ሆይ፣ ሽሹ፤ ርቃችሁ ተቅበዝበዙ፤ ለመኖር ወደ ጥልቅ ውረዱ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q የባቢሎን ንጉሥ ናቡከደነፆር በእናንተ ላይ ዕቅድ አቅዷልና፤ \\q በእናንተም ላይ አሳብ አስቧል።",
           "B": "እናንት በአሶር የምትኖሩ፣ ሩጡ! ራቁ! በጥልቅ ምድር ተሸሸጉ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q የባቢሎን ንጉሥ ናቡከደነፆር በእናንተ ላይ ዕቅድ አውጥቷልና፤ \\q በእናንተም ላይ ሤራ ጠንስሷል።",
           "R": "እናንት የአሶር ሰዎች፣ ሽሹ! ሩቅ ሂዱ! ማንም በማያያችሁ ጥልቅ ስፍራ ተደበቁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q የባቢሎን ንጉሥ ናቡከደነፆር ሊወጋችሁ አቅዷል። \\q በእናንተ ላይ የሚያደርገውን ወስኗል።"
+        },
+        "hi": {
+          "L": "भागो, दूर-दूर भटक जाओ, रहने के लिए गहरे में उतर जाओ, हे हासोर के निवासियो, {{divine_name:प्रभु|याहवे}} की यह वाणी है; \\q क्योंकि बाबुल के राजा नबूकदरेस्सर ने तुम्हारे विरुद्ध युक्ति की है, \\q और तुम्हारे विरुद्ध एक योजना बाँधी है।",
+          "B": "भागो! दूर चले जाओ! भूमि में गहरे जा छिपो, हे हासोर में रहनेवालो, {{divine_name:प्रभु|याहवे}} की यह वाणी है। \\q क्योंकि बाबुल के राजा नबूकदरेस्सर ने तुम्हारे विरुद्ध योजना बनाई है; \\q उसने तुम्हारे विरुद्ध षड्यंत्र रचा है।",
+          "R": "भाग जाओ! दूर चले जाओ! गहरे में जाकर नज़रों से छिप जाओ, हे हासोर के लोगो, {{divine_name:प्रभु|याहवे}} कहते हैं। \\q बाबुल के राजा नबूकदरेस्सर ने तुम पर हमला करने की योजना बनाई है। \\q उसने तय कर लिया है कि वह तुम्हारे साथ क्या करेगा।"
+        },
+        "ru": {
+          "L": "Бегите, удалитесь далеко, уйдите вглубь, чтобы жить [там], жители Асора, — слово {{divine_name:ГОСПОДА|Яхве}}; \\q ведь Навуходорносор, царь Вавилона, принял замысел против вас \\q и задумал против вас намерение.",
+          "B": "Бегите! Уходите подальше! Спрячьтесь глубоко в земле, жители Асора, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q Ведь Навуходорносор, царь Вавилона, принял решение против вас, \\q он составил против вас замысел.",
+          "R": "Убегайте! Уходите далеко! Спрячьтесь глубоко, чтобы вас не нашли, жители Асора, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q Навуходорносор, царь Вавилона, задумал напасть на вас. \\q Он решил, что с вами сделает."
         }
       },
       "decisions": [
@@ -5901,6 +7708,48 @@
             "o240490300041"
           ],
           "choice": "Hide deep in the ground / Hide deep down out of sight",
+          "alternatives": [],
+          "reason": "The same wording as verse 8.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490300041",
+            "o240490300051",
+            "o240490300052"
+          ],
+          "choice": "\"भूमि में गहरे जा छिपो\" (B); \"गहरे में जाकर नज़रों से छिप जाओ\" (R)",
+          "alternatives": [
+            "other wording"
+          ],
+          "reason": "The same wording as verse 8 at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490300041",
+            "o240490300051",
+            "o240490300052"
+          ],
+          "choice": "Спрячьтесь глубоко в земле (B); Спрячьтесь глубоко, чтобы вас не нашли (R)",
           "alternatives": [],
           "reason": "The same wording as verse 8.",
           "uncertain": false,
@@ -5981,6 +7830,16 @@
           "L": "ተነሡ፤ ተዘልሎ ወደሚኖርና ተማምኖ ወደሚቀመጥ ሕዝብ ውጡ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q በሮችም መወርወሪያም የሉትም፤ ብቻቸውን ይኖራሉ።",
           "B": "ተነሡ፤ ያለ ሥጋት ተዝናንቶ በሚኖር ሕዝብ ላይ ዝመቱ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q በሮችና መወርወሪያዎች የሌሉት፣ ሰዎቹም ለብቻቸው የሚኖሩበት ሕዝብ ነው።",
           "R": "ተነሡ! ደኅንነት በሚሰማውና ምንም በማይጨነቅ ሕዝብ ላይ ዝመቱ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q ሕዝቡ የከተማ በሮችና የሚቆለፉ መወርወሪያዎች የሉትም። ከሌሎች ሁሉ ርቀው ለብቻቸው ይኖራሉ።"
+        },
+        "hi": {
+          "L": "उठो, एक निश्चिंत जाति पर चढ़ाई करो, जो बेखटके रहती है, {{divine_name:प्रभु|याहवे}} की यह वाणी है; \\q न उसके फाटक हैं, न बेंड़ा; वे अकेले बसते हैं।",
+          "B": "उठो, उस जाति पर चढ़ाई करो जो चैन से और बेफ़िक्र रहती है, {{divine_name:प्रभु|याहवे}} की यह वाणी है, \\q ऐसी जाति जिसके न फाटक हैं न बेंड़े, जिसके लोग अलग-थलग रहते हैं।",
+          "R": "उठो और उस जाति पर हमला करो जो अपने को सुरक्षित समझती है और जिसे कोई चिंता नहीं, {{divine_name:प्रभु|याहवे}} कहते हैं। \\q उसके लोगों के पास न नगर के फाटक हैं, न उन्हें बंद करने के बेंड़े। वे सबसे दूर अकेले रहते हैं।"
+        },
+        "ru": {
+          "L": "Встаньте, поднимитесь на народ беспечный, живущий в безопасности, — слово {{divine_name:ГОСПОДА|Яхве}}; \\q нет у него ни ворот, ни засова; одиноко они живут.",
+          "B": "Вставайте и нападите на беспечный народ, живущий без забот, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — \\q на народ без ворот и засовов, который живёт сам по себе.",
+          "R": "Вставайте и нападайте на народ, который чувствует себя в безопасности и ни о чём не тревожится, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q У его жителей нет ни городских ворот, ни засовов, чтобы их запирать. Они живут далеко от всех."
         }
       },
       "decisions": [
@@ -6029,6 +7888,26 @@
           "choice": "city gates or bars to lock them",
           "alternatives": [],
           "reason": "Readable says what the bars were for.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490310041"
+          ],
+          "choice": "\"जाति\"",
+          "alternatives": [
+            "\"देश\""
+          ],
+          "reason": "Here goy is one desert people, not \"the nations\" in general, so Balanced and Readable keep \"जाति\" in its plain sense of a people.",
           "uncertain": false,
           "footnote": false
         }
@@ -6119,6 +7998,16 @@
           "L": "ግመሎቻቸውም ብዝበዛ፣ የከብቶቻቸውም ብዛት ምርኮ ይሆናሉ፤ \\q [የጠጉራቸው] ጠርዝ የተላጩትንም ወደ ነፋስ ሁሉ እበትናቸዋለሁ፤ \\q ከየአቅጣጫውም ሁሉ ጥፋታቸውን አመጣለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "ግመሎቻቸው ብዝበዛ፣ ብዙ ከብቶቻቸውም ምርኮ ይሆናሉ፤ \\q በራሳቸው ጎን ያለውን ጠጉር የሚላጩትን ወደ ነፋስ ሁሉ እበትናቸዋለሁ፤ \\q ከየአቅጣጫውም ጥፋትን አመጣባቸዋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "ግመሎቻቸውና ብዙ የከብት መንጎቻቸው ተዘርፈው ይወሰዳሉ። \\q የራሳቸውን ጎን ጠጉር አሳጥረው የሚቆርጡትን የበረሃ ነገዶች ወደ ሁሉም አቅጣጫ እበትናቸዋለሁ። \\q ከየአቅጣጫው ጥፋት አመጣባቸዋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "और उनके ऊँट लूट और उनके पशुओं की बहुतायत माल बन जाएगी; \\q और मैं उन्हें जिनके [बाल] कोनों पर कटे हैं हर हवा की ओर तितर-बितर कर दूँगा, \\q और उसकी हर ओर से मैं उन पर विपत्ति लाऊँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "उनके ऊँट लूट और उनके बड़े-बड़े झुंड माल बन जाएँगे; \\q जो अपनी कनपटियों के बाल कटवाते हैं, उन्हें मैं हर हवा की ओर तितर-बितर कर दूँगा, \\q और हर ओर से उन पर विपत्ति लाऊँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "उनके ऊँट और गाय-बैलों के बड़े झुंड लूट लिए जाएँगे। \\q रेगिस्तान के जो क़बीले अपने सिर के किनारों के बाल छोटे कटवाते हैं, उन्हें मैं हर दिशा में तितर-बितर कर दूँगा। \\q मैं हर तरफ़ से उन पर विपत्ति लाऊँगा, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "И станут их верблюды добычей, и множество их скота — трофеем; \\q и {{deity_pronoun:я|Я}} развею по всем ветрам остриженных [по] краям, \\q и со всех его сторон наведу на них бедствие, — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Их верблюды станут добычей, а их большие стада — трофеем. \\q Я развею по всем ветрам тех, кто подстригает волосы на висках, \\q и со всех сторон наведу на них бедствие, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Их верблюдов и большие стада скота заберут как добычу. \\q Я рассею во все стороны кочевые племена пустыни, которые коротко стригут волосы по бокам головы. \\q Я наведу на них беду со всех сторон, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -6232,6 +8121,46 @@
           "reason": "The phrase (m1) keeps the Portuguese of 9:25 and 25:23 at each level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490320101",
+            "o240490320111"
+          ],
+          "choice": "\"जिनके [बाल] कोनों पर कटे हैं\"",
+          "alternatives": [
+            "\"जो कोनों पर कटे हैं\""
+          ],
+          "reason": "Literal supplies \"hair\" in brackets, as the English supplies \"at the\", so the Hindi phrase can be read.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490320101",
+            "o240490320111"
+          ],
+          "choice": "остриженные [по] краям (L); кто подстригает волосы на висках (B); кочевые племена пустыни, которые коротко стригут волосы по бокам головы (R)",
+          "alternatives": [],
+          "reason": "The wording of 9:25 in this translation at each level (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6309,6 +8238,16 @@
           "L": "አሶርም የቀበሮዎች ጉድጓድ፣ ለዘላለምም ባድማ ትሆናለች፤ \\q በዚያ ማንም አይኖርም፤ \\q የሰው ልጅም በእርሷ እንግዳ ሆኖ አይቀመጥም።",
           "B": "አሶር የቀበሮዎች ዋሻ፣ ለዘላለምም ምድረ በዳ ትሆናለች። \\q በዚያ ማንም አይኖርም፤ \\q ማንም ሰው በእርሷ አይሰፍርም።",
           "R": "አሶር ቀበሮዎች ብቻ የሚኖሩባት ፍርስራሽ ትሆናለች፤ ለዘላለም ባዶ ሆና ትቀራለች። \\q በዚያ ማንም አይኖርም። \\q ማንም ለጥቂት ጊዜ እንኳ አይቀመጥባትም።"
+        },
+        "hi": {
+          "L": "और हासोर गीदड़ों की माँद, सदा के लिए उजाड़ बन जाएगा; \\q वहाँ कोई न रहेगा, \\q और कोई {{gender:मनुष्य की सन्तान|मनुष्य का पुत्र}} उसमें परदेशी होकर न टिकेगा।",
+          "B": "हासोर गीदड़ों का अड्डा, सदा के लिए उजाड़ बन जाएगा। \\q वहाँ कोई न रहेगा; \\q कोई मनुष्य उसमें न बसेगा।",
+          "R": "हासोर ऐसा खंडहर बन जाएगा जहाँ केवल गीदड़ रहेंगे। वह सदा के लिए सूना रहेगा। \\q वहाँ कोई नहीं रहेगा। \\q कोई थोड़े समय के लिए भी वहाँ नहीं ठहरेगा।"
+        },
+        "ru": {
+          "L": "И станет Асор логовом шакалов, пустошью навеки; \\q не будет жить там никто, \\q и не поселится в нём {{gender:человек|сын человеческий}}.",
+          "B": "Асор станет логовом шакалов, пустошью навеки. \\q Никто не будет там жить, \\q ни один человек не поселится в нём.",
+          "R": "Асор превратится в развалины, где живут одни шакалы. Он будет пуст навсегда. \\q Никто не будет там жить. \\q Никто не остановится там даже ненадолго."
         }
       },
       "decisions": [
@@ -6388,6 +8327,48 @@
           "reason": "ቀበሮ is the Amharic word for the jackal and fox; the haunt of jackals is Jeremiah's picture of a ruin (9:11; 10:22; 51:37).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490330032",
+            "o240490330041"
+          ],
+          "choice": "the last two lines as verse 18",
+          "alternatives": [
+            "other wording"
+          ],
+          "reason": "The Hebrew repeats verse 18, and each level repeats its wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490330032",
+            "o240490330041"
+          ],
+          "choice": "логово шакалов",
+          "alternatives": [],
+          "reason": "A ruin left to wild animals (m1); the last two lines keep the wording of verse 18. 10:22 should match \"логово шакалов\".",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6463,6 +8444,16 @@
           "L": "በይሁዳ ንጉሥ በሴዴቅያስ መንግሥት መጀመሪያ ስለ ኤላም ወደ ነቢዩ ወደ ኤርምያስ የመጣው {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል [ይህ ነው]፤ እንዲህ ሲል፦",
           "B": "በይሁዳ ንጉሥ በሴዴቅያስ የንግሥና ዘመን መጀመሪያ ላይ ስለ ኤላም ወደ ነቢዩ ኤርምያስ የመጣው {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል ይህ ነው፦",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ስለ ኤላም ለነቢዩ ለኤርምያስ የሰጠው መልእክት ይህ ነው። መልእክቱ የመጣው ሴዴቅያስ በይሁዳ ላይ መንገሥ በጀመረበት ጊዜ ነበር፦"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} का जो वचन यिर्मयाह भविष्यद्वक्ता के पास एलाम के विषय में यहूदा के राजा सिदकिय्याह के राज्य के आरंभ में पहुँचा:",
+          "B": "यहूदा के राजा सिदकिय्याह के राज्य के आरंभ में {{divine_name:प्रभु|याहवे}} का यह वचन एलाम के विषय में यिर्मयाह भविष्यद्वक्ता के पास पहुँचा:",
+          "R": "यह वह संदेश है जो {{divine_name:प्रभु|याहवे}} ने नबी यिर्मयाह को एलाम के बारे में दिया। यह तब आया जब सिदकिय्याह यहूदा का राजा बना ही था:"
+        },
+        "ru": {
+          "L": "То, что было словом {{divine_name:ГОСПОДА|Яхве}} к Иеремии пророку об Еламе, в начале царствования Седекии, царя Иудейского, говоря:",
+          "B": "Слово, с которым {{divine_name:ГОСПОДЬ|Яхве}} обратился к пророку Иеремии об Еламе в начале царствования Седекии, царя Иуды:",
+          "R": "Вот какое слово {{divine_name:ГОСПОДЬ|Яхве}} дал пророку Иеремии об Еламе. Это было вскоре после того, как Седекия стал царём Иуды:"
         }
       },
       "decisions": [
@@ -6552,6 +8543,87 @@
           "reason": "The heading keeps the Portuguese of 14:1 and 46:1 at each level. \"Elão\" is the usual Brazilian form of the name (Genesis 10:22; Isaiah 22:6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490340031"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}} का वचन ... के पास पहुँचा\" (L, B); \"{{divine_name:प्रभु|याहवे}} ने ... को यह संदेश दिया\" (R)",
+          "alternatives": [
+            "\"प्रभु का वचन आया\""
+          ],
+          "reason": "The fixed formula of the Prophets for \"the word of the LORD came to X\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490340072"
+          ],
+          "choice": "\"भविष्यद्वक्ता\" (L, B); \"नबी\" (R)",
+          "alternatives": [
+            "\"भविष्यद्वक्ता\" at every level"
+          ],
+          "reason": "As the New Testament and the history books.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490340091"
+          ],
+          "choice": "Елам",
+          "alternatives": [
+            "Элам"
+          ],
+          "reason": "Elam keeps the form of Genesis 10 and 14 and Isaiah 21:2 in this translation (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490340131",
+            "o240490340141"
+          ],
+          "choice": "царь Иудейский (L); царь Иуды (B, R)",
+          "alternatives": [],
+          "reason": "As Jeremiah 24:1 in this translation.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6622,6 +8694,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ \\q እነሆ፣ የኤላምን ቀስት፣ \\q የኃይላቸውን ዋና እሰብራለሁ።",
           "B": "የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q የኤላምን ቀስት፣ \\q የኃይላቸውን ዋና ምሰሶ እሰብራለሁ።",
           "R": "የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ \\q የኤላምን ቀስተኞች ቀስት እሰብራለሁ። \\q እነርሱ የኤላም ሠራዊት ዋና ኃይል ናቸው።"
+        },
+        "hi": {
+          "L": "सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: \\q देखो, मैं एलाम के धनुष को तोड़ रहा हूँ, \\q जो उनकी शक्ति का मुख्य [भाग] है।",
+          "B": "सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q मैं एलाम के धनुष को तोड़ने पर हूँ, \\q जो उनके बल का मुख्य आधार है।",
+          "R": "सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: \\q मैं एलाम के धनुर्धारियों के धनुष तोड़ दूँगा। \\q वे ही एलाम की सेना की मुख्य शक्ति हैं।"
+        },
+        "ru": {
+          "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: \\q Вот, {{deity_pronoun:я|Я}} ломаю лук Елама, \\q главную их силу.",
+          "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф: \\q Я сломаю лук Елама, \\q оплот его силы.",
+          "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств: \\q Я сломаю луки лучников Елама. \\q На них держится вся сила войска Елама."
         }
       },
       "decisions": [
@@ -6672,6 +8754,25 @@
           "choice": "Elam's archers ... Elam's army",
           "alternatives": [],
           "reason": "Readable says that the bow stands for the archers and the army (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490350081"
+          ],
+          "choice": "лучники, войско",
+          "alternatives": [
+            "лук"
+          ],
+          "reason": "Readable says that the bow stands for Elam's archers and army (m1), as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -6762,6 +8863,16 @@
           "L": "ከአራቱ የሰማያት ዳርቻዎች አራቱንም ነፋሳት በኤላም ላይ አመጣለሁ፤ \\q ወደ እነዚህም ነፋሳት ሁሉ \\q እበትናቸዋለሁ፤ \\q የኤላም ስደተኞች የማይደርሱበት \\q ሕዝብ አይገኝም።",
           "B": "ከአራቱ የሰማያት ዳርቻዎች አራቱን ነፋሳት በኤላም ላይ አመጣለሁ፤ \\q ሕዝቧን ወደ እነዚህ ነፋሳት ሁሉ \\q እበትናለሁ። \\q የኤላም ምርኮኞች የማይደርሱበት \\q ሕዝብ አይኖርም።",
           "R": "ከየአቅጣጫው ነፋሳትን በኤላም ላይ አመጣለሁ። \\q ሕዝቧን በየቦታው እበትናለሁ። \\q ስደተኞቿ በምድር ላይ ባለ ሕዝብ ሁሉ መካከል ይገኛሉ።"
+        },
+        "hi": {
+          "L": "और मैं एलाम पर आकाश के चारों छोरों से चारों हवाएँ लाऊँगा, \\q और उन्हें तितर-बितर कर दूँगा \\q इन सब हवाओं की ओर; \\q और ऐसी कोई जाति न होगी \\q जिसमें एलाम के निकाले हुए न पहुँचें।",
+          "B": "मैं आकाश के चारों छोरों से चारों हवाएँ एलाम के विरुद्ध लाऊँगा, \\q और उसके लोगों को \\q इन सब हवाओं की ओर तितर-बितर कर दूँगा। \\q ऐसा कोई देश न होगा \\q जहाँ एलाम के निर्वासित न पहुँचें।",
+          "R": "मैं हर दिशा से एलाम के विरुद्ध हवाएँ लाऊँगा। \\q मैं उसके लोगों को हर जगह बिखेर दूँगा। \\q पृथ्वी के हर देश में एलाम के निर्वासित मिलेंगे।"
+        },
+        "ru": {
+          "L": "И наведу {{deity_pronoun:я|Я}} на Елам четыре ветра от четырёх концов неба, \\q и развею их \\q по всем этим ветрам; \\q и не будет народа, \\q куда не пришли бы изгнанники Елама.",
+          "B": "Я наведу на Елам четыре ветра от четырёх концов неба \\q и развею его жителей \\q по всем этим ветрам. \\q Не останется народа, \\q к которому не дойдут изгнанники из Елама.",
+          "R": "Я пошлю на Елам ветры со всех сторон. \\q Я рассею его жителей повсюду. \\q Его изгнанников можно будет найти у всех народов земли."
         }
       },
       "decisions": [
@@ -6833,6 +8944,26 @@
           "choice": "Its exiles will be found in every nation on earth",
           "alternatives": [],
           "reason": "Readable turns the double negative (\"no nation where the exiles will not come\") into a plain statement with the same meaning.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490360093"
+          ],
+          "choice": "его жители",
+          "alternatives": [
+            "их"
+          ],
+          "reason": "Balanced and Readable say who \"them\" are, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -6929,6 +9060,16 @@
           "L": "ኤላምን በጠላቶቻቸው ፊት፣ ነፍሳቸውንም በሚሹት ፊት አስደነግጣለሁ፤ ክፉንም ነገር፣ የቁጣዬን መንደድ፣ በእነርሱ ላይ አመጣለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ \\q እስካጠፋቸውም ድረስ \\q ሰይፍን በኋላቸው እሰድዳለሁ።",
           "B": "ኤላምን በጠላቶቻቸው ፊት፣ ሊገድሏቸው በሚፈልጉትም ፊት በሽብር እሞላለሁ። ክፉ ነገርን፣ የቁጣዬን መንደድ አመጣባቸዋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q ፈጽሜ እስካጠፋቸው ድረስ \\q ሰይፍን በኋላቸው እሰድዳለሁ።",
           "R": "የኤላም ሰዎች ሊገድሏቸው የሚፈልጉትን ጠላቶቻቸውን እንዲፈሩ አደርጋለሁ። በጽኑ ቁጣዬ ጥፋትን አመጣባቸዋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። \\q እስካጠፋቸው ድረስ \\q ጦርነትን በኋላቸው እሰድዳለሁ።"
+        },
+        "hi": {
+          "L": "और मैं एलाम को उनके शत्रुओं के सामने और उनके प्राण के खोजियों के सामने घबरा दूँगा, और उन पर विपत्ति लाऊँगा, अपने भड़के हुए क्रोध को, {{divine_name:प्रभु|याहवे}} की यह वाणी है; \\q और मैं उनके पीछे तलवार भेजूँगा \\q जब तक कि मैं उनका अंत न कर दूँ।",
+          "B": "मैं एलाम को उसके शत्रुओं के सामने, उनके सामने जो उनकी जान के प्यासे हैं, आतंक से भर दूँगा। मैं उन पर विपत्ति लाऊँगा, अपना भड़का हुआ क्रोध, {{divine_name:प्रभु|याहवे}} की यह वाणी है। \\q मैं उनके पीछे तलवार भेजूँगा \\q जब तक उनका अंत न कर दूँ।",
+          "R": "मैं एलाम के लोगों को उनके शत्रुओं से, जो उन्हें मार डालना चाहते हैं, बहुत भयभीत कर दूँगा। अपने भड़के हुए क्रोध में मैं उन पर विपत्ति लाऊँगा, {{divine_name:प्रभु|याहवे}} कहते हैं। \\q मैं उनके पीछे युद्ध भेजूँगा \\q जब तक मैं उन्हें मिटा न दूँ।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:я|Я}} устрашу Елам перед их врагами и перед ищущими их жизни, и наведу на них бедствие, жар {{deity_pronoun:моего|Моего}} гнева, — слово {{divine_name:ГОСПОДА|Яхве}}; \\q и пошлю вслед за ними меч, \\q пока не истреблю их.",
+          "B": "Я наполню Елам ужасом перед их врагами, перед теми, кто хочет их смерти. Я наведу на них бедствие, {{deity_pronoun:мой|Мой}} яростный гнев, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q Я пошлю за ними меч, \\q пока не покончу с ними.",
+          "R": "Я сделаю так, что жители Елама будут в страхе перед врагами, которые хотят их убить. В {{deity_pronoun:моём|Моём}} яростном гневе {{deity_pronoun:я|Я}} наведу на них беду, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q Я пошлю за ними войну, \\q пока не уничтожу их."
         }
       },
       "decisions": [
@@ -6994,6 +9135,25 @@
           "choice": "war",
           "alternatives": [],
           "reason": "Readable says \"war\" for the sword, as in 25:29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490370202"
+          ],
+          "choice": "война",
+          "alternatives": [
+            "меч"
+          ],
+          "reason": "Readable says \"войну\" for the sword, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -7068,6 +9228,16 @@
           "L": "ዙፋኔንም በኤላም አኖራለሁ፤ \\q ንጉሥንና አለቆችን ከዚያ አጠፋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "ዙፋኔን በኤላም አቆማለሁ፤ \\q በዚያም ያሉትን ንጉሥና ሹማምንት አጠፋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "በኤላም ላይ ለመፍረድና ለመግዛት ዙፋኔን በዚያ አቆማለሁ። \\q ንጉሡንና መሪዎቹን አጠፋለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "और मैं एलाम में अपना सिंहासन रखूँगा, \\q और वहाँ से राजा और हाकिमों को नाश कर दूँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "मैं एलाम में अपना सिंहासन स्थापित करूँगा \\q और वहाँ के राजा और अधिकारियों को नाश कर दूँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "मैं एलाम का न्याय करने और उस पर शासन करने के लिए वहाँ अपना सिंहासन स्थापित करूँगा। \\q मैं उसके राजा और उसके अगुवों को नाश कर दूँगा, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "И поставлю {{deity_pronoun:я|Я}} {{deity_pronoun:мой|Мой}} престол в Еламе, \\q и истреблю оттуда царя и князей, — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Я поставлю {{deity_pronoun:мой|Мой}} престол в Еламе \\q и истреблю там царя и вельмож, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Я поставлю {{deity_pronoun:мой|Мой}} престол в Еламе, чтобы судить его и править им. \\q Я истреблю его царя и его начальников, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -7120,6 +9290,43 @@
           "choice": "princes / officials / leaders",
           "alternatives": [],
           "reason": "As in the Isaiah and Jeremiah tables for sar.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490380072"
+          ],
+          "choice": "князья (L); вельможи (B); начальники (R)",
+          "alternatives": [],
+          "reason": "As in verse 3, the three forms set for sarim.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o240490380012",
+            "o240490380021"
+          ],
+          "choice": "чтобы судить его и править им",
+          "alternatives": [],
+          "reason": "Readable says what setting up a throne means (m1), as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -7191,6 +9398,16 @@
           "L": "በኋለኛውም ዘመን እንዲህ ይሆናል፤ የኤላምን ምርኮ እመልሳለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "ነገር ግን በሚመጡት ዘመናት የኤላምን ዕጣ ፈንታ እመልሳለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "ነገር ግን በሚመጡት ዘመናት ለኤላም እንደ ገና መልካም አደርግላታለሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "और अंत के दिनों में ऐसा होगा [कि] मैं एलाम की दशा फेर दूँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "फिर भी आनेवाले दिनों में मैं एलाम की दशा फेर दूँगा, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "पर आनेवाले दिनों में मैं एलाम के दिन फिर से अच्छे कर दूँगा, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "И будет в последние дни: {{deity_pronoun:я|Я}} восстановлю благополучие Елама, — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Но в грядущие дни {{deity_pronoun:я|Я}} восстановлю благополучие Елама, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Но в будущем {{deity_pronoun:я|Я}} снова сделаю жизнь Елама хорошей, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
         }
       },
       "decisions": [
@@ -7261,6 +9478,49 @@
           "choice": "in days to come",
           "alternatives": [],
           "reason": "As in 30:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490390051",
+            "o240490390081"
+          ],
+          "choice": "\"की दशा फेर दूँगा\" (L, B); \"के दिन फिर से अच्छे कर दूँगा\" (R)",
+          "alternatives": [
+            "other wording"
+          ],
+          "reason": "As in verse 6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240490390051",
+            "o240490390061",
+            "o240490390081"
+          ],
+          "choice": "восстановлю благополучие (L, B); снова сделаю жизнь ... хорошей (R)",
+          "alternatives": [],
+          "reason": "As in verse 6, after Deuteronomy 30:3.",
           "uncertain": false,
           "footnote": false
         }
