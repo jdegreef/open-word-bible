@@ -87,6 +87,11 @@
           "L": "Слушайте это слово, которое {{divine_name:ГОСПОДЬ|Яхве}} сказал о вас, {{gender:дети Израиля|сыны Израиля}}, \\q обо всём роде, \\q который {{deity_pronoun:я|Я}} вывел из земли Египта, говоря:",
           "B": "Слушайте это слово, которое {{divine_name:ГОСПОДЬ|Яхве}} изрёк против вас, {{gender:израильтяне|сыны Израиля}}, \\q против всего рода, \\q который {{deity_pronoun:я|Я}} вывел из земли Египта:",
           "R": "Народ Израиля, послушайте эту весть, которую {{divine_name:ГОСПОДЬ|Яхве}} изрёк против вас, \\q против всей семьи, \\q которую {{deity_pronoun:я|Я}} вывел из земли Египта:"
+        },
+        "ja": {
+          "L": "イスラエルの子らよ、{{divine_name:主|ヤハウェ}}があなたがたに対して語られたこの言葉を聞け。 \\q すなわち、全氏族に対して、 \\q わたしがエジプトの地から導き上った[全氏族に対して]、こう[語られた]。",
+          "B": "イスラエルの人々よ、{{divine_name:主|ヤハウェ}}があなたがたに対して語られたこの言葉を聞きなさい。 \\q それは全氏族に対する言葉、 \\q わたしがエジプトの地から導き上った民全体に対する言葉である。",
+          "R": "イスラエルの人々よ、{{divine_name:主|ヤハウェ}}があなたたちに対して語られたこの言葉を聞きなさい。 \\q それは、民全体に向けられた言葉だ。 \\q わたしがエジプトの地から連れ出した民全体に向けられた言葉だ。"
         }
       },
       "decisions": [
@@ -374,6 +379,52 @@
           "reason": "The prophet's call runs straight into the LORD's own words (meaning decision); God's first-person pronouns carry the deity_pronoun setting in Amos, mid-sentence \"я\" included, as in Isaiah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030010011",
+            "o300030010061",
+            "o300030010071",
+            "o300030010151"
+          ],
+          "choice": "shim'u \"聞け\" (L), \"聞きなさい\" (B, R); the prophet's voice (\"主が語られた\", with the respect form) runs straight into God's \"わたしが…導き上った\" without a quotation mark, as the Hebrew does (m1).",
+          "alternatives": [
+            "add a quotation mark before \"わたしが\""
+          ],
+          "reason": "The ISA formula and command rules; the English has no quotation here either.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030010121",
+            "o300030010132"
+          ],
+          "choice": "mishpachah \"氏族\" (L, B), \"民全体\" (R), matching \"地のすべての氏族\" (Genesis 12:3) in the next verse.",
+          "alternatives": [
+            "\"家族\" (B, as the English B family)"
+          ],
+          "reason": "Amos echoes the promise to Abraham (3:2 m2), so the Genesis Japanese word is kept at L and B.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -459,6 +510,11 @@
           "L": "Только вас {{deity_pronoun:я|Я}} познал \\q из всех родов земли; \\q поэтому {{deity_pronoun:я|Я}} взыщу с вас \\q за все ваши беззакония.",
           "B": "Только вас одних {{deity_pronoun:я|Я}} знал \\q из всех племён земли; \\q вот почему {{deity_pronoun:я|Я}} накажу вас \\q за все ваши грехи.",
           "R": "Только вас {{deity_pronoun:я|Я}} избрал, чтобы вы были {{deity_pronoun:моими|Моими}}, \\q из всех народов на земле. \\q Вот почему {{deity_pronoun:я|Я}} накажу вас \\q за все ваши грехи."
+        },
+        "ja": {
+          "L": "地のすべての氏族の中から、 \\q わたしはあなたがただけを知った。 \\q それゆえ、わたしはあなたがたに \\q あなたがたのすべての咎を罰する。",
+          "B": "わたしは地のすべての氏族の中から、 \\q あなたがただけを知った。 \\q だからこそ、わたしはあなたがたを \\q そのすべての咎のゆえに罰する。",
+          "R": "わたしは、あなたたちだけを選んで、わたしのものとした。 \\q 地上のすべての家族の中から。 \\q だからこそ、わたしはあなたたちを罰する。 \\q あなたたちのすべての罪のために。"
         }
       },
       "decisions": [
@@ -675,6 +731,32 @@
           "reason": "Known means chosen and bound to (meaning decision); Literal keeps the verb, Readable says chose, as the English. Iniquity is \"беззаконие\" at Literal as the Pentateuch note.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o300030020011",
+            "o300030020022",
+            "o300030020031",
+            "o300030020042",
+            "o300030020051",
+            "o300030020062"
+          ],
+          "choice": "L and B put \"地のすべての氏族の中から\" first and \"あなたがただけを知った\" in the second line, the Hebrew order of the two lines reversed; R keeps the English order with an afterthought line. yada' \"知った\" (L, B), \"選んで、わたしのものとした\" (R); paqad 'al \"罰する\" (every level, as Hosea); 'avon \"咎\" (L, B), \"罪\" (R).",
+          "alternatives": [
+            "\"あなたがただけを、わたしは知った。地のすべての氏族の中から。\" (L)"
+          ],
+          "reason": "Japanese puts the source phrase before the verb; \"Genesis 12:3\" wording 地のすべての氏族 / 地上のすべての家族 is kept for the allusion.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -749,6 +831,11 @@
           "L": "Разве идут двое вместе, \\q если не условились о встрече?",
           "B": "Разве двое пойдут вместе, \\q если не договорились встретиться?",
           "R": "Разве двое отправятся в путь вместе, \\q если не договорились о встрече?"
+        },
+        "ja": {
+          "L": "二人が共に歩くだろうか。 \\q 示し合わせていないのに。",
+          "B": "二人の人が一緒に歩くだろうか。 \\q 会う約束をしていないのに。",
+          "R": "二人の人が一緒に旅をするだろうか。 \\q 会う約束をしていないのに。"
         }
       },
       "decisions": [
@@ -800,6 +887,30 @@
           "choice": "two people (B, R)",
           "alternatives": [],
           "reason": "The Hebrew says only \"two\"; Balanced and Readable add \"people\" for clear English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030030011",
+            "o300030030012",
+            "o300030030041",
+            "o300030030051"
+          ],
+          "choice": "The questions of 3:3-6 as \"…だろうか。…のに。\" (each expecting \"no\"), with the question shown by だろうか rather than ？ where the second line completes it.",
+          "alternatives": [
+            "\"…だろうか？\" on every line"
+          ],
+          "reason": "Japanese marks the rhetorical question with だろうか; a ？ in the middle of the two-line question would split it.",
           "uncertain": false,
           "footnote": false
         }
@@ -890,6 +1001,11 @@
           "L": "Разве рычит лев в лесу, \\q когда нет у него добычи? \\q Разве подаёт молодой лев голос из своего логова, \\q если ничего не поймал?",
           "B": "Разве лев рычит в лесу, \\q когда у него нет добычи? \\q Разве молодой лев рычит из логова, \\q если ничего не поймал?",
           "R": "Разве лев рычит в лесу, \\q если не нашёл себе добычи? \\q Разве молодой лев рычит в своём логове, \\q если ничего не поймал?"
+        },
+        "ja": {
+          "L": "獅子が森の中でほえるだろうか。 \\q 獲物がないのに。 \\q 若獅子が住みかから声を上げるだろうか。 \\q 何も捕らえていないのに。",
+          "B": "獅子が森の中でほえるだろうか。 \\q 獲物がないのに。 \\q 若獅子が住みかの中でうなるだろうか。 \\q 何も捕らえていないのに。",
+          "R": "ライオンが森の中でほえるだろうか。 \\q 食べる獲物を見つけていないのに。 \\q 若いライオンがほら穴の中でうなるだろうか。 \\q 何も捕まえていないのに。"
         }
       },
       "decisions": [
@@ -1000,6 +1116,29 @@
           "reason": "Literal keeps the phrase used of the LORD in 1:2 (\"अपनी आवाज़ सुनाते हैं\"), so the link with the roaring LORD can be seen (meaning decision m1); Balanced and Readable say what a lion does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030040012",
+            "o300030040021",
+            "o300030040072",
+            "o300030040091",
+            "o300030040081"
+          ],
+          "choice": "'aryeh \"獅子\" (L, B), \"ライオン\" (R); kefir \"若獅子\" (L, B), \"若いライオン\" (R), as ISA and Hosea.",
+          "alternatives": [],
+          "reason": "The prophetic animal words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1089,6 +1228,11 @@
           "L": "Разве падает птица в западню на земле, \\q когда нет для неё силка? \\q Разве поднимается западня с земли, \\q когда ничего не поймала?",
           "B": "Разве птица попадёт в западню на земле, \\q если для неё не поставлен силок? \\q Разве западня взлетит с земли, \\q если ничего не поймала?",
           "R": "Разве птица попадёт в ловушку на земле, \\q если никто не поставил для неё ловушки? \\q Разве ловушка захлопнется, \\q если в неё ничего не попало?"
+        },
+        "ja": {
+          "L": "鳥が地上のわなに落ちるだろうか。 \\q 落とし網が仕掛けられていないのに。 \\q わなが地から跳ね上がるだろうか。 \\q 何一つ捕らえていないのに。",
+          "B": "鳥が地上のわなに落ちるだろうか。 \\q 落とし網が仕掛けられていないのに。 \\q わなが地から跳ね上がるだろうか。 \\q 何も捕らえていないのに。",
+          "R": "鳥が地面のわなにかかるだろうか。 \\q だれもわなを仕掛けていないのに。 \\q わながばたんと閉じるだろうか。 \\q 何もかかっていないのに。"
         }
       },
       "decisions": [
@@ -1121,6 +1265,26 @@
           "choice": "a trap that springs up from the ground: a net that snaps shut when the bird touches it",
           "alternatives": [],
           "reason": "A fowler's trap lay on the ground and sprang up and closed when a bird touched the trigger. It does not spring unless something has set it off. Amos's hearers would know such traps well, and the picture is a hint that Israel is already caught.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030050041",
+            "o300030050062"
+          ],
+          "choice": "pach \"わな\", moqesh \"落とし網\" (L, B), as Isaiah 8:14.",
+          "alternatives": [],
+          "reason": "Two words for two Hebrew words.",
           "uncertain": false,
           "footnote": false
         }
@@ -1208,6 +1372,11 @@
           "L": "Разве трубят в трубу в городе, \\q и народ не трепещет? \\q Разве бывает бедствие в городе, \\q и {{divine_name:ГОСПОДЬ|Яхве}} не сделал [этого]?",
           "B": "Если в городе трубят в рог, \\q разве народ не трепещет? \\q Если в город приходит беда, \\q разве не {{divine_name:ГОСПОДЬ|Яхве}} сделал это?",
           "R": "Когда в городе трубят тревогу, \\q разве люди не боятся? \\q Когда в город приходит беда, \\q разве не {{divine_name:ГОСПОДЬ|Яхве}} послал её?"
+        },
+        "ja": {
+          "L": "町でラッパが吹き鳴らされて、 \\q 民がおののかないだろうか。 \\q 町に災いが起こって、 \\q {{divine_name:主|ヤハウェ}}がなさったのでないだろうか。",
+          "B": "町で角笛が吹き鳴らされたら、 \\q 民はおののかないだろうか。 \\q 町に災いが起これば、 \\q それは{{divine_name:主|ヤハウェ}}がなさったのではないだろうか。",
+          "R": "町で危険を知らせるラッパが鳴れば、 \\q 人々はおびえないだろうか。 \\q 町に災いが起これば、 \\q それを送られたのは{{divine_name:主|ヤハウェ}}ではないだろうか。"
         }
       },
       "decisions": [
@@ -1282,6 +1451,31 @@
             "o mal"
           ],
           "reason": "The word means disaster here, not moral evil (m2); Portuguese \"o mal\" would suggest both, so the levels say \"calamidade\" and \"desgraça\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030060021",
+            "o300030060031",
+            "o300030060042",
+            "o300030060101",
+            "o300030060122",
+            "o300030060131",
+            "o300030060141"
+          ],
+          "choice": "shofar \"ラッパ\" (L, R), \"角笛\" (B) as the English per level; ra'ah \"災い\"; the LORD's act with the light respect form \"なさった / 送られた\".",
+          "alternatives": [],
+          "reason": "The shofar convention of HOS-1 and the rule for God's acts in the third person.",
           "uncertain": false,
           "footnote": false
         }
@@ -1368,6 +1562,11 @@
           "L": "Ведь Владыка {{divine_name:ГОСПОДЬ|Яхве}} не делает ничего, \\q не открыв своей тайны \\q своим рабам, пророкам.",
           "B": "Владыка {{divine_name:ГОСПОДЬ|Яхве}} ничего не делает, \\q не открыв прежде своего замысла \\q своим рабам, пророкам.",
           "R": "Владыка {{divine_name:ГОСПОДЬ|Яхве}} ничего не делает, \\q не рассказав прежде о своих планах \\q своим слугам пророкам."
+        },
+        "ja": {
+          "L": "まことに、{{divine_name:主なる神|主ヤハウェ}}は何事もなさらない。 \\q ご自分の秘密を明かさないうちは。 \\q ご自分の奴隷である預言者たちに。",
+          "B": "{{divine_name:主なる神|主ヤハウェ}}は、何一つなさらない。 \\q ご自分の計画を、まず明かされるまでは。 \\q ご自分のしもべである預言者たちに。",
+          "R": "{{divine_name:主なる神|主ヤハウェ}}は、何かをなさる前に、 \\q 必ずご自分の計画を知らせてくださる。 \\q ご自分に仕える預言者たちに。"
         }
       },
       "decisions": [
@@ -1655,6 +1854,31 @@
           "reason": "Russian says God's \"his\" here with the reflexive possessive, which takes no deity_pronoun span, as the style guide says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030070101",
+            "o300030070102",
+            "o300030070121",
+            "o300030070122",
+            "o300030070132"
+          ],
+          "choice": "sod \"秘密\" (L), \"計画\" (B, R); 'avadav hannevi'im \"ご自分の奴隷である預言者たち\" (L), \"ご自分のしもべである預言者たち\" (B), \"ご自分に仕える預言者たち\" (R), as 2 Kings 24:2.",
+          "alternatives": [
+            "\"しもべ\" at L"
+          ],
+          "reason": "The OT convention for 'eved (L 奴隷); the prophet speaks of God in the third person with respect forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1734,6 +1958,11 @@
           "L": "Лев зарычал — кто не убоится? \\q Владыка {{divine_name:ГОСПОДЬ|Яхве}} сказал — \\q кто не будет пророчествовать?",
           "B": "Лев зарычал — кто не испугается? \\q Владыка {{divine_name:ГОСПОДЬ|Яхве}} сказал — \\q кто может не пророчествовать?",
           "R": "Лев зарычал. Кто не испугается? \\q Владыка {{divine_name:ГОСПОДЬ|Яхве}} сказал. \\q Кто может удержаться и не пророчествовать?"
+        },
+        "ja": {
+          "L": "獅子がほえた。だれが恐れないだろうか？ \\q {{divine_name:主なる神|主ヤハウェ}}が語られた。 \\q だれが預言しないだろうか？",
+          "B": "獅子がほえた。だれが恐れずにいられるだろうか？ \\q {{divine_name:主なる神|主ヤハウェ}}が語られた。 \\q だれが預言せずにいられるだろうか？",
+          "R": "ライオンがほえた。こわがらない人がいるだろうか？ \\q {{divine_name:主なる神|主ヤハウェ}}が語られた。 \\q 預言しないでいられる人がいるだろうか？"
         }
       },
       "decisions": [
@@ -1887,6 +2116,11 @@
           "L": "Возвестите в крепостях Азота \\q и в крепостях земли Египта \\q и скажите: «Соберитесь на горах Самарии \\q и посмотрите на великие смятения в ней \\q и на угнетения посреди неё.»",
           "B": "Объявите в крепостях Азота \\q и в крепостях земли Египта и скажите: \\q «Соберитесь на горах вокруг Самарии \\q и посмотрите на великое смятение в ней \\q и на угнетение посреди неё.»",
           "R": "Объявите это в крепостях Азота \\q и в крепостях Египта. Скажите им: \\q «Придите на холмы вокруг Самарии. \\q Посмотрите, какой беспорядок в этом городе \\q и как там угнетают людей.»"
+        },
+        "ja": {
+          "L": "アシュドドの城郭に告げ知らせよ。 \\q エジプトの地の城郭にも[告げ知らせよ]。 \\q そして言え。「サマリアの山々に集まれ。 \\q その中の大きな騒乱を見よ、 \\q その真ん中の虐げを。」",
+          "B": "アシュドドの城郭に告げ知らせなさい。 \\q エジプトの地の城郭にも。そして言いなさい。 \\q 「サマリアを囲む山々に集まり、 \\q その中の大きな混乱と、 \\q そこで行われている虐げを見なさい。」",
+          "R": "アシュドドの砦に知らせなさい。 \\q エジプトの砦にも知らせて、こう言いなさい。 \\q 「サマリアの周りの丘に来なさい。 \\q その町の大混乱を見なさい。 \\q その町の人々が、どれほど虐げられているかを見なさい。」"
         }
       },
       "decisions": [
@@ -2014,6 +2248,32 @@
           "reason": "Ashdod in the form of 1:8; Samaria as the history books.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030090011",
+            "o300030090021",
+            "o300030090031",
+            "o300030090092",
+            "o300030090101",
+            "o300030090142",
+            "o300030090151",
+            "o300030090182"
+          ],
+          "choice": "'armenot here \"城郭\" (L, B), \"砦\" (R); Samaria (feminine) \"その中 / その町\", never 彼女; commands \"〜せよ\" (L), \"〜しなさい\" (B, R).",
+          "alternatives": [],
+          "reason": "ISA conventions for commands and for a city in the third person.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2096,6 +2356,11 @@
           "L": "И не умеют они поступать прямо, — слово {{divine_name:ГОСПОДА|Яхве}}, — \\q те, кто копит насилие и грабёж в своих крепостях.",
           "B": "Они не умеют поступать честно, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — \\q эти люди, что копят насилие и разорение в своих крепостях.",
           "R": "Они даже не умеют поступать правильно, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. \\q Они наполняют свои крепости тем, что отняли силой и грабежом."
+        },
+        "ja": {
+          "L": "彼らは正しいことを行うことを知らない。――{{divine_name:主|ヤハウェ}}の言葉―― \\q 自分たちの城郭に暴虐と破壊を蓄える者たちは。",
+          "B": "彼らは正しいことを行うすべを知らない、と{{divine_name:主|ヤハウェ}}は告げる。 \\q 暴虐と略奪で得たものを、自分たちの城郭に蓄えている者たちは。",
+          "R": "彼らは、正しいことの行い方さえ知らない、と{{divine_name:主|ヤハウェ}}は言う。 \\q 彼らは、暴力と略奪で奪った物で、自分たちの砦をいっぱいにしている。"
         }
       },
       "decisions": [
@@ -2147,6 +2412,29 @@
           "choice": "things they took by violence and robbery",
           "alternatives": [],
           "reason": "Readable says what is stored (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030100072",
+            "o300030100081",
+            "o300030100092",
+            "o300030100102",
+            "o300030100103"
+          ],
+          "choice": "chamas \"暴虐\" (L, B), \"暴力\" (R), as Hosea 12:2; shod \"破壊\" (L), \"略奪\" (B, R).",
+          "alternatives": [],
+          "reason": "The OT notes' forms; B and R name what was hoarded, as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -2238,6 +2526,11 @@
           "L": "Поэтому так говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}: \\q Враг, и вокруг земли! \\q И он низвергнет с тебя твою силу, \\q и разграблены будут твои крепости.",
           "B": "Поэтому так говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}: \\q Враг окружит страну; \\q он разрушит твои твердыни, \\q и твои крепости будут разграблены.",
           "R": "Поэтому вот что говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}: \\q Враг окружит твою страну. \\q Он разрушит твои укрепления \\q и разграбит твои крепости."
+        },
+        "ja": {
+          "L": "それゆえ、{{divine_name:主なる神|主ヤハウェ}}はこう言われる。 \\q 敵だ、しかも、この地の周り中に！ \\q 彼はあなたの力をあなたから引き降ろし、 \\q あなたの城郭は略奪される。",
+          "B": "だから、{{divine_name:主なる神|主ヤハウェ}}はこう言われる。 \\q 敵がこの地を取り囲む。 \\q 敵はあなたの守りを打ち倒し、 \\q あなたの城郭は略奪される。",
+          "R": "だから、{{divine_name:主なる神|主ヤハウェ}}はこう言われる。 \\q 敵があなたの国を取り囲む。 \\q 敵はあなたの守りを打ち崩し、 \\q あなたの砦の物を奪い取る。"
         }
       },
       "decisions": [
@@ -2463,6 +2756,28 @@
           "reason": "The formula for \"thus says\" in its settled wording per level, with the Lord GOD and \"therefore\" before it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030110011",
+            "o300030110021",
+            "o300030110031",
+            "o300030110111"
+          ],
+          "choice": "laken koh 'amar 'adonai YHWH \"それゆえ、主なる神はこう言われる\" (L), \"だから、…\" (B, R); Samaria addressed in the singular \"あなた\"; 'oz \"力\" (L), \"守り\" (B, R).",
+          "alternatives": [],
+          "reason": "The ISA formula and city-address rules.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2562,6 +2877,11 @@
           "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Как вырывает пастух из пасти льва две голени или кончик уха, \\q так будут вырваны {{gender:дети Израиля|сыны Израиля}}, живущие в Самарии, \\q с углом ложа и с шёлком дивана.",
           "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Как пастух выхватывает из пасти льва лишь две голени или клочок уха, \\q так будут спасены {{gender:израильтяне|сыны Израиля}}, живущие в Самарии, \\q — останется лишь угол ложа или лоскут шёлка с дивана.",
           "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}: \\q Пастух может спасти из пасти льва только две ноги или кусочек уха. \\q Вот так будет спасён народ Израиля, живущий в Самарии. \\q Всё, что останется, — угол кровати или лоскут шёлка с дивана."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はこう言われる。 \\q 羊飼いが獅子の口から、二本の足か耳の切れ端を救い出すように、 \\q サマリアに住むイスラエルの子らは救い出される。 \\q 寝台の隅と長いすの絹[布]と共に。",
+          "B": "{{divine_name:主|ヤハウェ}}はこう言われる。 \\q 羊飼いが獅子の口から、二本の足か耳の切れ端だけを取り戻すように、 \\q サマリアに住むイスラエルの人々も救い出される。 \\q 寝台の隅か、長いすの絹の切れ端だけを残して。",
+          "R": "{{divine_name:主|ヤハウェ}}はこう言われる。 \\q 羊飼いは、ライオンの口から、羊の二本の足か耳の一部しか取り戻せないことがある。 \\q サマリアに住むイスラエルの人々も、そのようにしか救い出されない。 \\q 残るのは、寝台の隅か、長いすの絹の切れ端だけだ。"
         }
       },
       "decisions": [
@@ -2686,6 +3006,33 @@
           "reason": "The verb \"rescue\" is bitter here: what is rescued only proves the sheep is dead (meaning decision); Literal repeats one verb, as the Hebrew does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030120182",
+            "o300030120201",
+            "o300030120202",
+            "o300030120211",
+            "o300030120222",
+            "o300030120223",
+            "o300030120231"
+          ],
+          "choice": "mittah \"寝台\", 'eres \"長いす\"; demesheq \"絹\" (L with [布]), as the meaning decision; bene Yisra'el \"イスラエルの子ら\" (L), \"イスラエルの人々\" (B, R), no gender span.",
+          "alternatives": [
+            "\"ダマスコ[織り]\""
+          ],
+          "reason": "The English reads silk (m2, footnoted).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2766,6 +3113,11 @@
           "L": "Слушайте и засвидетельствуйте против дома Иакова, \\q — слово Владыки {{divine_name:ГОСПОДА|Яхве}}, Бога Саваофа.",
           "B": "Слушайте и будьте свидетелями против дома Иакова, \\q — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}, Бог Саваоф.",
           "R": "Слушайте и будьте свидетелями против потомков Иакова, \\q — говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}, Бог Воинств."
+        },
+        "ja": {
+          "L": "聞け。そしてヤコブの家に対して証しせよ。 \\q ――{{divine_name:主なる神|主ヤハウェ}}、万軍の神の言葉――",
+          "B": "聞きなさい。ヤコブの家に対して証言しなさい、 \\q と{{divine_name:主なる神|主ヤハウェ}}、万軍の神は告げる。",
+          "R": "聞きなさい。そして、ヤコブの子孫に対して証人となりなさい、 \\q と{{divine_name:主なる神|主ヤハウェ}}、天の軍勢を率いる神は言う。"
         }
       },
       "decisions": [
@@ -3035,6 +3387,28 @@
           "reason": "\"Of hosts\" follows the Prophets' formula for the LORD of hosts: Саваоф at Literal and Balanced, Воинств at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030130061",
+            "o300030130071",
+            "o300030130081",
+            "o300030130092"
+          ],
+          "choice": "ne'um 'adonai YHWH 'elohei hatseva'ot \"――主なる神、万軍の神の言葉――\" (L), \"と主なる神、万軍の神は告げる\" (B), \"と主なる神、天の軍勢を率いる神は言う\" (R); beit Ya'aqov \"ヤコブの家\" (L, B), \"ヤコブの子孫\" (R).",
+          "alternatives": [],
+          "reason": "Elohei hatseva'ot as Hosea 12:6; the ne'um forms of ISA.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3126,6 +3500,11 @@
           "L": "Ведь в день, когда {{deity_pronoun:я|Я}} взыщу с Израиля за его преступления, \\q {{deity_pronoun:я|Я}} взыщу и с жертвенников Вефиля, \\q и отсечены будут рога жертвенника \\q и упадут на землю.",
           "B": "В тот день, когда {{deity_pronoun:я|Я}} накажу Израиль за его преступления, \\q {{deity_pronoun:я|Я}} накажу и жертвенники Вефиля; \\q рога жертвенника будут отбиты \\q и упадут на землю.",
           "R": "В тот день, когда {{deity_pronoun:я|Я}} накажу Израиль за его грехи, \\q {{deity_pronoun:я|Я}} разрушу и жертвенники в Вефиле. \\q Рога по углам жертвенника будут отрублены \\q и упадут на землю."
+        },
+        "ja": {
+          "L": "まことに、わたしがイスラエルの背きをその上に罰する日に、 \\q わたしはベテルの祭壇を罰する。 \\q 祭壇の角は切り落とされ、 \\q 地に落ちる。",
+          "B": "わたしがイスラエルの背きを罰する日に、 \\q わたしはベテルの祭壇をも罰する。 \\q 祭壇の角は折り取られ、 \\q 地に落ちる。",
+          "R": "わたしが、イスラエルがわたしに逆らった罪を罰する日に、 \\q ベテルにある祭壇も打ち壊す。 \\q 祭壇の四隅に角のように突き出ている部分は切り落とされ、 \\q 地に落ちる。"
         }
       },
       "decisions": [
@@ -3306,6 +3685,30 @@
           "reason": "The verb of verse 2 (paqad, \"visit\") returns (meaning decision); Literal keeps one verb for both places, \"взыскать\", rather than the Slavonic \"посетить\". Bethel is Вефиль, as Genesis.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o300030140091",
+            "o300030140101",
+            "o300030140111",
+            "o300030140122",
+            "o300030140131",
+            "o300030140142"
+          ],
+          "choice": "Bethel \"ベテル\" (Hosea); qarnot hammizbeach \"祭壇の角\" (L, B), R \"祭壇の四隅に角のように突き出ている部分\", as 1 Kings 1:50; paqad \"罰する\" (L, B), \"打ち壊す\" (R, English R destroy).",
+          "alternatives": [],
+          "reason": "The OT notes' forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3393,6 +3796,11 @@
           "L": "И поражу зимний дом вместе с летним домом, \\q и погибнут дома из слоновой кости, и придёт конец большим домам, — слово {{divine_name:ГОСПОДА|Яхве}}.",
           "B": "Я разрушу зимний дом вместе с летним домом; \\q дома из слоновой кости погибнут, и большим домам придёт конец, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
           "R": "Я разрушу дома, где богатые живут зимой, и их дома для лета. \\q Дома, украшенные слоновой костью, будут разрушены, и больших домов не станет, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
+        },
+        "ja": {
+          "L": "わたしは冬の家を夏の家と共に打つ。 \\q 象牙の家々は滅び、大きな家々は終わりを迎える。――{{divine_name:主|ヤハウェ}}の言葉――",
+          "B": "わたしは冬の家も夏の家も打ち倒す。 \\q 象牙の家々は滅び、大邸宅は消えうせる、と{{divine_name:主|ヤハウェ}}は告げる。",
+          "R": "わたしは、金持ちが冬に住む家も、夏に住む家も打ち壊す。 \\q 象牙で飾った家々は荒れ果て、大きな屋敷はなくなる、と{{divine_name:主|ヤハウェ}}は言う。"
         }
       },
       "decisions": [
