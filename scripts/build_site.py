@@ -4874,13 +4874,20 @@ SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans
                 ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
 
+# Full-width ASCII and the ideographic space, as Japanese input types them.
+_WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
+
+
 def fold(text):
-    """Text as search compares it: lower case, without accents, Vietnamese
-    "đ" as "d". The rest is composed again, so a Korean syllable stays one
-    character (NFD splits it into its letters)."""
+    """Text as search compares it: lower case, without accents, full-width
+    letters and digits as ASCII, Vietnamese "đ" as "d". The rest is composed
+    again, so a Korean syllable stays one character (NFD splits it into its
+    letters), and the kana voicing marks are kept (ガ is not カ), as in the
+    backend's search.fold."""
     import unicodedata
     return unicodedata.normalize("NFC", "".join(
-        c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))).replace("\u0111", "d")
+        c for c in unicodedata.normalize("NFD", text.translate(_WIDE).lower())
+        if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("\u0111", "d")
 
 
 def book_aliases(code, names):
