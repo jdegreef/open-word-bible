@@ -33,7 +33,7 @@ Sách không nêu tên tác giả. Truyền thống Do Thái cho rằng Sa-mu-ê
 
 **Lời khấn nguyện của Giép-thê (11:31, 39).** Giép-thê khấn rằng "bất cứ người nào hay vật gì từ cửa nhà con đi ra đón con" sẽ được dâng làm của lễ thiêu, và người đó là con gái ông. Thể ngữ pháp Hê-bơ-rơ có thể chỉ người hoặc thú vật, và bản nháp để ngỏ điều đó. Người kể chuyện chỉ nói rằng "ông làm cho nàng điều ông đã khấn nguyện". Cách hiểu đơn giản là ông đã giết nàng làm của lễ, một việc luật pháp lên án; có người lại hiểu rằng ông đã dâng nàng cho CHÚA để sống không lập gia đình. Các quyết định trình bày cả hai cách hiểu, được đánh dấu là chưa chắc chắn và có ghi chú.
 
-**Bài ca của Đê-bô-ra (5).** Bài ca là thơ Hê-bơ-rơ cổ, và nhiều chữ trong đó hiếm gặp hoặc không xuất hiện ở đâu khác. Bản nháp đưa ra nghĩa có khả năng nhất ở mỗi chỗ, trình bày bài thơ theo từng dòng, đánh dấu các quyết định là chưa chắc chắn và ghi chú những cách hiểu khác. Xem [Thơ Hê-bơ-rơ và phép song song](/articles/hebrew-poetry-and-parallelism/).
+**Bài ca của Đê-bô-ra (5).** Bài ca là thơ Hê-bơ-rơ cổ, và nhiều chữ trong đó hiếm gặp hoặc không xuất hiện ở đâu khác. Bản nháp đưa ra nghĩa có khả năng nhất ở mỗi chỗ, trình bày bài thơ theo từng dòng, đánh dấu các quyết định là chưa chắc chắn và ghi chú những cách hiểu khác. Xem [Thơ Hê-bơ-rơ và phép song hành](/articles/hebrew-poetry-and-parallelism/).
 
 **Đê-bô-ra, vợ của Láp-bi-đốt (4:4).** Những chữ này có thể nêu tên chồng bà, hoặc có nghĩa là "người phụ nữ của những ngọn đuốc", tức một người phụ nữ nồng nhiệt. Bản nháp theo nghĩa thứ nhất, vì tiếng Hê-bơ-rơ thường giới thiệu một người phụ nữ như vậy, đánh dấu quyết định là chưa chắc chắn và ghi chú nghĩa kia.
 
