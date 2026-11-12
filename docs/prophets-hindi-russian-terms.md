@@ -121,6 +121,10 @@ Recorded as the blocks are harmonised.
   यह X के बारे में एक संदेश है (R).
 - **Zion and Jerusalem pictured as a woman** take feminine forms in both
   languages (Russian too, against the grammatical gender), as Lamentations.
+- **Hesed as Israel's loyalty to God** (Hosea 4:1, 6:4, 6:6, 10:12, 12:7),
+  not kindness between people: Hindi अटल प्रेम (L, B), सच्चा प्रेम (R);
+  Russian неизменная любовь (L), преданная любовь (B, R). Hosea 6:6 keeps
+  Matthew 9:13's frame with a footnoted decision.
 - **Isaiah 7:14**: युवती / девушка, see the Isaiah entry above.
 - **Daniel**: "peoples, nations and languages" in Russian follows the poetry
   note's rule (племена, народы и языки); "the Ancient of Days" दिनों के
