@@ -1353,6 +1353,13 @@ def chapter_page(book, chapter, lang="en"):
     units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
                                                      ("1", t(lang, "reader.original"))])
              if has_units else "")
+    # Capitals for God's pronouns only where this language marks them: scripts
+    # without capitals (Hindi, Japanese, Korean, Amharic) have no spans, and
+    # a switch that changes nothing would only confuse.
+    has_pronouns = any("{{deity_pronoun:" in text for r in records
+                       for text in r["renderings"].get(lang, {}).values())
+    pronouns = (control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])
+                if has_pronouns else "")
     # Red letters only where a passage has words of Jesus marked.
     red_letter = ("\n  " + control("words_of_jesus", "red_letter", [("0", t(lang, "reader.black")),
                                                                      ("1", t(lang, "reader.red"))])
@@ -1379,7 +1386,7 @@ def chapter_page(book, chapter, lang="en"):
   {presets}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
+  {pronouns}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}{red_letter}
   </div>

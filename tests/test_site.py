@@ -43,6 +43,16 @@ class SiteTest(unittest.TestCase):
         head = page.split("<body", 1)[0]
         self.assertNotIn("\\q", head)
 
+    def test_pronoun_control_only_where_the_language_marks_it(self):
+        # Hindi has no capitals, so its text has no deity_pronoun spans and
+        # the switch would change nothing; Russian and English mark them.
+        def has_control(*parts):
+            page = self.out.joinpath(*parts, "index.html").read_text(encoding="utf-8")
+            return 'data-setting="deity_pronoun"' in page
+        self.assertTrue(has_control("jhn", "3"))
+        self.assertTrue(has_control("ru", "jhn", "3"))
+        self.assertFalse(has_control("hi", "jhn", "3"))
+
     def test_account_pages_are_built_but_not_indexed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
