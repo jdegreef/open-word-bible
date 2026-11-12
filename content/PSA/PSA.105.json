@@ -65,6 +65,16 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ ስሙን ጥሩ፤ ሥራዎቹን በሕዝቦች መካከል አስታውቁ።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ ስሙንም ጥሩ፤ ያደረገውን ለሕዝቦች ሁሉ ተናገሩ።",
           "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! በስሙ ወደ እርሱ ጸልዩ። ያደረገውን በየስፍራው ላሉ ሰዎች ንገሩ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} का धन्यवाद करो; उनके नाम को पुकारो; देश-देश के लोगों में उनके कामों को प्रकट करो।",
+          "B": "{{divine_name:प्रभु|याहवे}} का धन्यवाद करो और उनके नाम को पुकारो; हर देश के लोगों को बताओ कि उन्होंने क्या किया है।",
+          "R": "{{divine_name:प्रभु|याहवे}} का धन्यवाद करो! उनका नाम लेकर उनसे प्रार्थना करो। हर जगह के लोगों को बताओ कि उन्होंने क्या किया है।"
+        },
+        "ru": {
+          "L": "Благодарите {{divine_name:ГОСПОДА|Яхве}}; призывайте имя {{deity_pronoun:его|Его}}; возвещайте среди народов дела {{deity_pronoun:его|Его}}.",
+          "B": "Благодарите {{divine_name:ГОСПОДА|Яхве}} и призывайте {{deity_pronoun:его|Его}} имя; расскажите всем народам о том, что {{deity_pronoun:он|Он}} совершил.",
+          "R": "Благодарите {{divine_name:ГОСПОДА|Яхве}}! Молитесь {{deity_pronoun:ему|Ему}}, называя {{deity_pronoun:его|Его}} по имени. Рассказывайте людям повсюду о том, что {{deity_pronoun:он|Он}} сделал."
         }
       },
       "decisions": [
@@ -391,6 +401,69 @@
           "reason": "The meaning decision names the parallel. Where the Hebrew differs (verses 6, 8, 12, 13) the Amharic follows the psalm and says so there. The Chronicles wording settles \"give thanks\" \"አመስግኑ\", \"call on his name\" \"ስሙን ጥሩ\" (Readable \"በስሙ ወደ እርሱ ጸልዩ\") and \"peoples\" \"ሕዝቦች\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191050010011"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}}\" for YHWH; no deity_pronoun spans",
+          "alternatives": [
+            "\"यहोवा\""
+          ],
+          "reason": "Hindi \"प्रभु\" stands for the name YHWH and also for the title Adonai; the divine_name setting, whose alternative is \"याहवे\", shows where the Hebrew has the name. Devanagari has no capital letters, so these psalms have no deity_pronoun spans; God spoken of takes the honorific plural (\"उनके\", \"उन्होंने\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050010011",
+            "o191050010031",
+            "o191050010071"
+          ],
+          "choice": "verses 1-15 in the wording of 1 Chronicles 16:8-22",
+          "alternatives": [],
+          "reason": "Verses 1-15 are the song of 1 Chronicles 16:8-22 (meaning m1). Where the Hebrew is the same, the Hindi copies the wording of 1 Chronicles 16 in this translation at each level, its lines joined as the English here has no line breaks; it differs only where the psalm's Hebrew differs (verses 6, 8, 12 and 13). The worshippers are told \"करो\", \"पुकारो\" (plural तुम), and the nations are \"देश\" at Balanced and Readable, as there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050010011"
+          ],
+          "choice": "verses 1-15 copy the Russian of 1 Chronicles 16:8-22 at each level, without its line breaks",
+          "alternatives": [
+            "a new draft of the psalm"
+          ],
+          "reason": "Verses 1-15 are 1 Chronicles 16:8-22 (m1), drafted first in Chronicles; where the Hebrew is the same, each level keeps that wording. The English of this psalm is set as prose, so the Chronicles line breaks are not kept. Where the Hebrew differs (verses 6, 8, 12, 13) the wording changes, with a decision.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -459,6 +532,16 @@
           "L": "ዘምሩለት፤ ዜማ አሰሙለት፤ ስለ ድንቅ ሥራዎቹ ሁሉ ተናገሩ።",
           "B": "ዘምሩለት፤ በዜማ ዕቃ እየተጫወታችሁ አወድሱት፤ ስላደረጋቸው ድንቅ ነገሮች ሁሉ ተነጋገሩ።",
           "R": "ዘምሩለት! በዜማ ዕቃ አመስግኑት! ስላደረጋቸው አስደናቂ ነገሮች ሁሉ ተናገሩ።"
+        },
+        "hi": {
+          "L": "उनके लिए गाओ, उनके लिए बाजा बजाओ; उनके सब आश्चर्यकर्मों की चर्चा करो।",
+          "B": "उनके लिए गाओ, बाजे बजाकर उनकी स्तुति गाओ; उनके सब अद्भुत कामों की चर्चा करो।",
+          "R": "उनके लिए गाओ! उनके लिए बाजे बजाओ! उनके किए हुए सब अद्भुत कामों के बारे में बात करो।"
+        },
+        "ru": {
+          "L": "Пойте {{deity_pronoun:ему|Ему}}, играйте {{deity_pronoun:ему|Ему}}; рассказывайте обо всех чудесах {{deity_pronoun:его|Его}}.",
+          "B": "Пойте {{deity_pronoun:ему|Ему}}, играйте и пойте {{deity_pronoun:ему|Ему}} хвалу; говорите обо всех чудесных делах, которые {{deity_pronoun:он|Он}} совершил.",
+          "R": "Пойте {{deity_pronoun:ему|Ему}}! Играйте музыку для {{deity_pronoun:него|Него}}! Рассказывайте обо всех удивительных делах, которые {{deity_pronoun:он|Он}} сделал."
         }
       },
       "decisions": [
@@ -573,6 +656,16 @@
           "L": "በቅዱስ ስሙ ተመኩ፤ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈልጉ ሰዎች ልብ ደስ ይበለው።",
           "B": "በቅዱስ ስሙ ተመኩ፤ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} የሚመለከቱ ሁሉ በልባቸው ደስ ይበላቸው።",
           "R": "በቅዱስ ስሙ ኩሩ። {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈልግ ሁሉ ደስ ይበለው።"
+        },
+        "hi": {
+          "L": "उनके पवित्र नाम पर गर्व करो; {{divine_name:प्रभु|याहवे}} को खोजनेवालों का मन आनंदित हो।",
+          "B": "उनके पवित्र नाम पर गर्व करो; {{divine_name:प्रभु|याहवे}} की ओर देखनेवाले सब लोग मन में आनंदित हों।",
+          "R": "उनके पवित्र नाम पर गर्व करो। जो कोई {{divine_name:प्रभु|याहवे}} को खोजता है, वह आनंदित हो।"
+        },
+        "ru": {
+          "L": "Хвалитесь святым именем {{deity_pronoun:его|Его}}; пусть радуется сердце ищущих {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Гордитесь {{deity_pronoun:его|Его}} святым именем; пусть радуются в сердце все, кто обращается к {{divine_name:ГОСПОДУ|Яхве}}.",
+          "R": "Гордитесь {{deity_pronoun:его|Его}} святым именем. Все, кто ищет {{divine_name:ГОСПОДА|Яхве}}, пусть радуются."
         }
       },
       "decisions": [
@@ -684,6 +777,16 @@
           "L": "{{divine_name:እግዚአብሔርንና|ያህዌንና}} ኃይሉን ፈልጉ፤ ፊቱን ዘወትር ፈልጉ።",
           "B": "ወደ {{divine_name:እግዚአብሔርና|ያህዌና}} ወደ ኃይሉ ተመለከቱ፤ ደጋግማችሁ ወደ ፊቱ ቅረቡ።",
           "R": "ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ተመለሱ፤ በኃይሉም ተደገፉ። እርሱን ማምለካችሁን ከቶ አታቋርጡ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} को और उनकी सामर्थ्य को खोजो; उनके मुख को निरंतर खोजते रहो।",
+          "B": "{{divine_name:प्रभु|याहवे}} की ओर और उनकी सामर्थ्य की ओर मुड़ो; बार-बार उनकी उपस्थिति में आओ।",
+          "R": "{{divine_name:प्रभु|याहवे}} की ओर मुड़ो और उनकी सामर्थ्य पर भरोसा रखो। उनकी आराधना करने आना कभी मत छोड़ो।"
+        },
+        "ru": {
+          "L": "Ищите {{divine_name:ГОСПОДА|Яхве}} и силы {{deity_pronoun:его|Его}}; ищите лица {{deity_pronoun:его|Его}} всегда.",
+          "B": "Обращайтесь к {{divine_name:ГОСПОДУ|Яхве}} и к {{deity_pronoun:его|Его}} силе; снова и снова предстаньте перед {{deity_pronoun:ним|Ним}}.",
+          "R": "Обращайтесь к {{divine_name:ГОСПОДУ|Яхве}} и полагайтесь на {{deity_pronoun:его|Его}} силу. Никогда не переставайте приходить, чтобы поклоняться {{deity_pronoun:ему|Ему}}."
         }
       },
       "decisions": [
@@ -821,6 +924,16 @@
           "L": "ያደረጋቸውን ድንቅ ሥራዎቹን አስቡ፤ ተአምራቱንና የአፉን ፍርዶች፣",
           "B": "ያደረጋቸውን ድንቅ ነገሮች አስታውሱ፤ ምልክቶቹንና የተናገራቸውን ፍርዶች፣",
           "R": "ያደረጋቸውን አስደናቂ ነገሮች አስታውሱ። ተአምራቱንና ያወጃቸውን ፍርዶች አስታውሱ።"
+        },
+        "hi": {
+          "L": "उनके आश्चर्यकर्मों को याद करो जो उन्होंने किए हैं, उनके चिह्नों को और उनके मुँह के निर्णयों को,",
+          "B": "उनके किए हुए आश्चर्यकर्मों को याद करो, उनके चिह्नों को, और उन निर्णयों को जो उन्होंने सुनाए,",
+          "R": "उनके किए हुए अद्भुत कामों को याद करो। उनके चमत्कारों को और उन न्याय के फ़ैसलों को याद करो जो उन्होंने सुनाए।"
+        },
+        "ru": {
+          "L": "Помните чудеса {{deity_pronoun:его|Его}}, которые {{deity_pronoun:он|Он}} сотворил, знамения {{deity_pronoun:его|Его}} и суды уст {{deity_pronoun:его|Его}},",
+          "B": "Вспоминайте чудеса, которые {{deity_pronoun:он|Он}} совершил, {{deity_pronoun:его|Его}} знамения и приговоры, которые {{deity_pronoun:он|Он}} произнёс,",
+          "R": "Помните, какие удивительные дела {{deity_pronoun:он|Он}} сделал. Помните {{deity_pronoun:его|Его}} чудеса и решения, которые {{deity_pronoun:он|Он}} объявил."
         }
       },
       "decisions": [
@@ -956,6 +1069,16 @@
           "L": "የባሪያው የአብርሃም ዘር ሆይ፣ የመረጣቸው የያዕቆብ ልጆች ሆይ።",
           "B": "እናንተ የአገልጋዩ የአብርሃም ዘሮች፣ እናንተ የመረጣቸው የያዕቆብ ልጆች።",
           "R": "ይህን አድርጉ፤ እናንተ ከአገልጋዩ ከአብርሃም የተወለዳችሁ፣ እናንተ የመረጣቸው የያዕቆብ ዘሮች።"
+        },
+        "hi": {
+          "L": "हे उनके दास अब्राहम के वंश, हे याकूब के पुत्रो, उनके चुने हुए लोगो।",
+          "B": "हे उनके दास अब्राहम के वंशजो, हे याकूब की सन्तान, जिन्हें उन्होंने चुन लिया।",
+          "R": "यह करो, तुम जो उनके दास अब्राहम के वंश से हो, तुम जो याकूब के वंशज हो, जिन्हें उन्होंने चुना है।"
+        },
+        "ru": {
+          "L": "вы, потомство Авраама, раба {{deity_pronoun:его|Его}}, вы, сыны Иакова, избранные {{deity_pronoun:его|Его}}.",
+          "B": "вы, потомки {{deity_pronoun:его|Его}} раба Авраама, вы, дети Иакова, те, кого {{deity_pronoun:он|Он}} избрал.",
+          "R": "Делайте это, вы, потомки Авраама, {{deity_pronoun:его|Его}} раба, вы, потомки Иакова, которых {{deity_pronoun:он|Он}} выбрал."
         }
       },
       "decisions": [
@@ -1154,6 +1277,45 @@
           "reason": "The psalm's Hebrew names Abraham; the rest of the line keeps the Chronicles wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050060021",
+            "o191050060031"
+          ],
+          "choice": "\"अब्राहम\" where 1 Chronicles 16:13 has \"इस्राएल\"",
+          "alternatives": [],
+          "reason": "The psalm reads \"offspring of Abraham his servant\" where 1 Chronicles 16:13 has \"Israel his servant\" (meaning m2); the Hindi keeps the Chronicles wording and changes only the name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050060021"
+          ],
+          "choice": "\"Авраама\" where 1 Chronicles 16:13 has \"Израиля\"",
+          "alternatives": [],
+          "reason": "The Hebrew here names Abraham as God's servant, where Chronicles has Israel (m2); otherwise the wording of 1 Chronicles 16:13 is kept at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1221,6 +1383,16 @@
           "L": "እርሱ አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} [ነው]፤ ፍርዶቹ በምድር ሁሉ ላይ [ናቸው]።",
           "B": "እርሱ፣ {{divine_name:እግዚአብሔር|ያህዌ}}፣ አምላካችን ነው፤ ፍርዱ ምድርን ሁሉ ይደርሳል።",
           "R": "እርሱ አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} ነው። በምድር ሁሉ ላይ የሚሆነውን የሚዳኘው እርሱ ነው።"
+        },
+        "hi": {
+          "L": "वे ही हमारे परमेश्वर {{divine_name:प्रभु|याहवे}} [हैं]; सारी पृथ्वी पर उनके निर्णय [हैं]।",
+          "B": "वे, {{divine_name:प्रभु|याहवे}}, हमारे परमेश्वर हैं; उनके निर्णय सारी पृथ्वी तक पहुँचते हैं।",
+          "R": "वे {{divine_name:प्रभु|याहवे}} हैं, हमारे परमेश्वर। पृथ्वी पर जो कुछ होता है, उसका न्याय वे ही करते हैं।"
+        },
+        "ru": {
+          "L": "Он — {{divine_name:ГОСПОДЬ|Яхве}}, Бог наш; по всей земле суды {{deity_pronoun:его|Его}}.",
+          "B": "Он, {{divine_name:ГОСПОДЬ|Яхве}}, — наш Бог; {{deity_pronoun:его|Его}} решения простираются на всю землю.",
+          "R": "Он — {{divine_name:ГОСПОДЬ|Яхве}}, наш Бог. Он судит всё, что происходит повсюду на земле."
         }
       },
       "decisions": [
@@ -1319,6 +1491,16 @@
           "L": "ቃል ኪዳኑን ለዘላለም ያስባል፤ ለሺህ ትውልድ ያዘዘውን ቃል፣",
           "B": "ቃል ኪዳኑን ለዘላለም በልቡ ይይዛል፤ ለሺህ ትውልድ የሰጠውን የተስፋ ቃል፣",
           "R": "ቃል ኪዳኑን ከቶ አይረሳም። ለሺህ ትውልድ እንዲቆይ የሰጠው የተስፋ ቃል ነው።"
+        },
+        "hi": {
+          "L": "वे अपनी वाचा को सदा याद रखते हैं, उस वचन को जिसकी आज्ञा उन्होंने हज़ार पीढ़ियों के लिए दी,",
+          "B": "वे अपनी वाचा को सदा मन में रखते हैं, उस प्रतिज्ञा को जो उन्होंने हज़ार पीढ़ियों के लिए ठहराई,",
+          "R": "वे अपनी वाचा को कभी नहीं भूलते, वह प्रतिज्ञा जो उन्होंने हज़ार पीढ़ियों तक बने रहने के लिए की।"
+        },
+        "ru": {
+          "L": "Он помнит вовек завет свой, слово, которое {{deity_pronoun:он|Он}} заповедал на тысячу поколений,",
+          "B": "Он всегда хранит в памяти свой завет, обещание, которое {{deity_pronoun:он|Он}} установил на тысячу поколений,",
+          "R": "Он никогда не забывает свой завет, обещание, которое {{deity_pronoun:он|Он}} дал на тысячу поколений."
         }
       },
       "decisions": [
@@ -1405,6 +1587,44 @@
           "reason": "Here God is the one who remembers (meaning decision); the rest of the verse keeps the Chronicles wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050080011"
+          ],
+          "choice": "\"वे अपनी वाचा को सदा याद रखते हैं\" where 1 Chronicles 16:15 has \"उनकी वाचा को सदा याद रखो\"",
+          "alternatives": [],
+          "reason": "The psalm says \"He remembers\" where 1 Chronicles 16:15 calls the people to \"Remember\" (meaning m2), so the Hindi turns the command into a statement about God, with the honorific \"वे ... रखते हैं\", and keeps the rest of the Chronicles wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050080011"
+          ],
+          "choice": "\"Он помнит\", \"хранит в памяти\", \"не забывает\" where 1 Chronicles 16:15 has the command \"Помните\"",
+          "alternatives": [],
+          "reason": "The psalm says \"he remembers\" where Chronicles says \"remember\" (m2), so the verb is turned from a command into a statement about God, with the reflexive \"свой\" for his covenant; the rest of the wording of 1 Chronicles 16:15 is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1471,6 +1691,16 @@
           "L": "ከአብርሃም ጋር ያደረገውን፣ ለይስሐቅም የማለውን መሐላ፣",
           "B": "ከአብርሃም ጋር የገባውን ቃል ኪዳን፣ ለይስሐቅም የማለውን መሐላ፣",
           "R": "ከአብርሃም ጋር ቃል ኪዳን አደረገ፤ ለይስሐቅም በመሐላ ተስፋ ሰጠው።"
+        },
+        "hi": {
+          "L": "जो उन्होंने अब्राहम के साथ बाँधी, और इसहाक से खाई हुई अपनी शपथ को,",
+          "B": "वह वाचा जो उन्होंने अब्राहम के साथ बाँधी, वह शपथ जो उन्होंने इसहाक से खाई,",
+          "R": "उन्होंने यह वाचा अब्राहम के साथ बाँधी, और शपथ खाकर इसहाक से इसकी प्रतिज्ञा की।"
+        },
+        "ru": {
+          "L": "который {{deity_pronoun:он|Он}} заключил с Авраамом, и клятву {{deity_pronoun:его|Его}} Исааку,",
+          "B": "завет, который {{deity_pronoun:он|Он}} заключил с Авраамом, клятву, которой {{deity_pronoun:он|Он}} поклялся Исааку,",
+          "R": "Он заключил его с Авраамом и с клятвой обещал его Исааку."
         }
       },
       "decisions": [
@@ -1608,6 +1838,16 @@
           "L": "ለያዕቆብም ሥርዓት አድርጎ አጸናው፤ ለእስራኤልም የዘላለም ቃል ኪዳን [አድርጎ]፣",
           "B": "ለያዕቆብ ሕግ አድርጎ አቆመው፤ ለእስራኤልም ለዘላለም የሚኖር ቃል ኪዳን አደረገው፤",
           "R": "ለያዕቆብ የጸና ሕግ አደረገው፤ ከእስራኤልም ጋር ለዘላለም የሚኖር ቃል ኪዳን አደረገ።"
+        },
+        "hi": {
+          "L": "और उन्होंने उसे याकूब के लिए विधि ठहराकर स्थिर किया, इस्राएल के लिए सदा की वाचा ठहराकर,",
+          "B": "और उन्होंने उसे याकूब के लिए विधि के रूप में स्थिर किया, इस्राएल के लिए ऐसी वाचा के रूप में जो सदा बनी रहती है,",
+          "R": "उन्होंने उसे याकूब के लिए पक्का नियम बना दिया, इस्राएल के साथ ऐसी वाचा जो सदा बनी रहेगी।"
+        },
+        "ru": {
+          "L": "и {{deity_pronoun:он|Он}} утвердил его для Иакова как установление, для Израиля как вечный завет,",
+          "B": "и {{deity_pronoun:он|Он}} установил его для Иакова как постановление, для Израиля как завет, который длится вечно,",
+          "R": "Он сделал его твёрдым законом для Иакова, вечным заветом с Израилем."
         }
       },
       "decisions": [
@@ -1727,6 +1967,16 @@
           "L": "እንዲህ ሲል፦ «የከነዓንን ምድር ለአንተ እሰጣለሁ፤ [እርሷም] የርስታችሁ የተለካ ድርሻ [ናት]።»",
           "B": "እንዲህ ሲል፦ «የከነዓንን ምድር ለአንተ እሰጣለሁ፤ ትወርሱት ዘንድ የተከለለላችሁ ድርሻ ይሆናል።»",
           "R": "እንዲህ አለ፦ «የከነዓን ምድር የአንተ ትሆናለች። የራሳችሁ ድርሻ አድርጌ እሰጣችኋለሁ።»"
+        },
+        "hi": {
+          "L": "यह कहते हुए, \"मैं तुम्हें कनान देश दूँगा, तुम्हारे निज भाग का नापा हुआ हिस्सा।\"",
+          "B": "यह कहकर, \"कनान देश मैं तुम्हें देता हूँ, तुम्हारे लिए नापकर ठहराया हुआ निज भाग।\"",
+          "R": "उन्होंने कहा, \"कनान देश तुम्हारा होगा। मैं इसे तुम्हें तुम्हारे अपने भाग के रूप में दे रहा हूँ।\""
+        },
+        "ru": {
+          "L": "говоря: «Тебе дам землю Ханаанскую, отмеренный удел вашего наследия.»",
+          "B": "говоря: «Тебе {{deity_pronoun:я|Я}} даю землю Ханаанскую, долю, отмеренную вам в наследство.»",
+          "R": "Он сказал: «Землю Ханаанскую {{deity_pronoun:я|Я}} отдам тебе. Она будет вашей собственной долей.»"
         }
       },
       "decisions": [
@@ -1906,6 +2156,16 @@
           "L": "በቁጥር ጥቂት ሰዎች በነበሩ ጊዜ፣ እጅግ ጥቂትና በእርሷም መጻተኞች [በነበሩ ጊዜ]፣",
           "B": "ጥቂት ሰዎች ብቻ በነበሩ ጊዜ፣ በዚያች ምድር የሚኖሩ ጥቂት መጻተኞች በነበሩ ጊዜ፣",
           "R": "በዚያን ጊዜ እነርሱ ጥቂቶች ብቻ ነበሩ። በከነዓን የሚኖሩ መጻተኞች ነበሩ።"
+        },
+        "hi": {
+          "L": "जब वे गिनती के मनुष्य थे, बहुत थोड़े, और उसमें परदेशी,",
+          "B": "जब वे मुट्ठी भर लोग ही थे, उस देश में रहनेवाले थोड़े से परदेशी,",
+          "R": "उस समय वे बहुत थोड़े थे। वे कनान में रहनेवाले परदेशी थे।"
+        },
+        "ru": {
+          "L": "когда они были людьми [малыми] числом, совсем немногими, и пришельцами в ней,",
+          "B": "когда они были лишь горсткой людей, немногими пришельцами в той земле,",
+          "R": "В то время их было совсем немного. Они жили в Ханаане как чужеземцы."
         }
       },
       "decisions": [
@@ -2033,6 +2293,45 @@
           "reason": "The psalm speaks of the fathers in the third person; Chronicles speaks to the people. Otherwise the wording is that of 1 Chronicles 16:19-20.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050120011",
+            "o191050120012"
+          ],
+          "choice": "\"वे\" where 1 Chronicles 16:19 has \"तुम\"",
+          "alternatives": [],
+          "reason": "The psalm says \"when they were\" where 1 Chronicles 16:19 says \"when you were\", so the Hindi has \"वे\" for the fathers and otherwise keeps the Chronicles wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050120011"
+          ],
+          "choice": "\"они\", \"их\" where 1 Chronicles 16:19 has \"вы\", \"вас\"",
+          "alternatives": [],
+          "reason": "The psalm's Hebrew says \"when they were\", Chronicles \"when you were\"; otherwise the wording of 1 Chronicles 16:19 is kept at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2101,6 +2400,16 @@
           "L": "ከሕዝብ ወደ ሕዝብ ተዘዋወሩ፤ ከመንግሥት ወደ ሌላ ወገን፣",
           "B": "ከአንዱ ሕዝብ ወደ ሌላው ይንከራተቱ ነበር፤ ከአንዱ መንግሥትም ወደ ሌላ ወገን፣",
           "R": "ከአንዱ አገር ወደ ሌላው ተንከራተቱ፤ ከአንዱ መንግሥት ወደ ሌላው።"
+        },
+        "hi": {
+          "L": "और वे एक जाति से दूसरी जाति में, एक राज्य से दूसरी प्रजा के पास फिरते रहे,",
+          "B": "वे एक देश से दूसरे देश में भटकते रहे, एक राज्य से दूसरी प्रजा के पास,",
+          "R": "वे एक देश से दूसरे देश में भटकते रहे, एक राज्य से दूसरे राज्य में।"
+        },
+        "ru": {
+          "L": "и ходили они от народа к народу, из царства к другому народу,",
+          "B": "скитаясь от одного народа к другому, из одного царства к другому народу,",
+          "R": "Они скитались из одной страны в другую, из одного царства в другое."
         }
       },
       "decisions": [
@@ -2129,6 +2438,23 @@
           "choice": "went about: walked here and there",
           "alternatives": [],
           "reason": "The verb (hithallekh) is to go to and fro, a life on the move without a land of one's own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050130061"
+          ],
+          "choice": "no \"और\" before \"एक राज्य से\"",
+          "alternatives": [],
+          "reason": "The psalm's Hebrew lacks the \"and\" that 1 Chronicles 16:20 has before \"from a kingdom\", so the Literal drops it; Balanced and Readable were already without it.",
           "uncertain": false,
           "footnote": false
         }
@@ -2199,6 +2525,16 @@
           "L": "ማንም ይበድላቸው ዘንድ አልፈቀደም፤ ስለ እነርሱም ነገሥታትን ገሠጸ፦",
           "B": "ማንም እንዲበድላቸው አልፈቀደም፤ ስለ እነርሱም ነገሥታትን ገሠጸ፦",
           "R": "እግዚአብሔር ግን ማንም እንዲያንገላታቸው አልፈቀደም። ነገሥታትን እንዲተዋቸው አስጠነቀቃቸው። እንዲህም አለ፦"
+        },
+        "hi": {
+          "L": "उन्होंने किसी मनुष्य को उन पर अंधेर करने न दिया, और उनके कारण राजाओं को डाँटा:",
+          "B": "उन्होंने किसी को उनके साथ अन्याय करने न दिया, और उनके कारण राजाओं को फटकारा:",
+          "R": "पर परमेश्वर ने किसी को उनके साथ बुरा व्यवहार नहीं करने दिया। उन्होंने राजाओं को चेतावनी दी कि वे उन्हें न छेड़ें। उन्होंने कहा,"
+        },
+        "ru": {
+          "L": "{{deity_pronoun:он|Он}} не позволил никому притеснять их и обличал из-за них царей:",
+          "B": "{{deity_pronoun:он|Он}} не дал никому обидеть их и строго взыскал с царей из-за них:",
+          "R": "Но Бог не позволил никому обижать их. Он предупредил царей, чтобы они их не трогали. Он сказал:"
         }
       },
       "decisions": [
@@ -2314,6 +2650,16 @@
           "L": "«የቀባኋቸውን አትንኩ፤ በነቢያቴም ላይ ክፉ አታድርጉ።»",
           "B": "«በቀባኋቸው ላይ እጃችሁን አታንሡ፤ ነቢያቴንም አትጉዱ።»",
           "R": "«ለራሴ የለየኋቸውን ሰዎች አትንኩ። ነቢያቴንም አትጉዱ።»"
+        },
+        "hi": {
+          "L": "\"मेरे अभिषिक्तों को मत छूना, और मेरे भविष्यद्वक्ताओं की कुछ हानि न करना।\"",
+          "B": "\"मेरे अभिषिक्त लोगों पर हाथ न डालो; मेरे भविष्यद्वक्ताओं को चोट न पहुँचाओ।\"",
+          "R": "\"जिन लोगों को मैंने अपने लिए अलग किया है, उन्हें हानि मत पहुँचाओ। मेरे नबियों को चोट मत पहुँचाओ।\""
+        },
+        "ru": {
+          "L": "«Не прикасайтесь к помазанникам {{deity_pronoun:моим|Моим}} и пророкам {{deity_pronoun:моим|Моим}} не делайте зла.»",
+          "B": "«Не поднимайте руки на {{deity_pronoun:моих|Моих}} помазанников; не причиняйте вреда {{deity_pronoun:моим|Моим}} пророкам.»",
+          "R": "«Не причиняйте зла людям, которых {{deity_pronoun:я|Я}} отделил для себя. Не обижайте {{deity_pronoun:моих|Моих}} пророков.»"
         }
       },
       "decisions": [
@@ -2487,6 +2833,16 @@
           "L": "በምድሪቱም ላይ ራብን ጠራ፤ የእንጀራንም በትር ሁሉ ሰበረ።",
           "B": "በምድሪቱ ላይ ራብን አስጠራ፤ የእንጀራንም ምንጭ ሁሉ አቋረጠ።",
           "R": "ከዚያም በምድሪቱ ላይ ራብ ላከ፤ ምግባቸውንም ሁሉ ወሰደባቸው።"
+        },
+        "hi": {
+          "L": "और उन्होंने देश पर अकाल बुला लिया; उन्होंने रोटी का हर सहारा तोड़ दिया।",
+          "B": "उन्होंने देश पर अकाल बुलाया और रोटी की हर आपूर्ति काट दी।",
+          "R": "फिर उन्होंने देश पर अकाल भेजा और उनका सारा भोजन छीन लिया।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} призвал голод на землю; всякую опору хлеба {{deity_pronoun:он|Он}} сломал.",
+          "B": "Он призвал голод на ту землю и лишил их всякого запаса хлеба.",
+          "R": "Потом {{deity_pronoun:он|Он}} послал на землю голод и отнял у них всю пищу."
         }
       },
       "decisions": [
@@ -2594,6 +2950,26 @@
           "reason": "Literal keeps the Hebrew picture of bread as the staff one leans on; Balanced and Readable give its sense, the food supply (meaning decision). \"빵\" rather than \"떡\", as the style guide sets for bread.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050160061",
+            "o191050160071"
+          ],
+          "choice": "\"रोटी का हर सहारा\"",
+          "alternatives": [
+            "\"रोटी की हर लाठी\""
+          ],
+          "reason": "The staff of bread is the food that supports life (meaning m2); Hindi \"सहारा\" keeps the picture of something to lean on and is still clear. Balanced and Readable say what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2660,6 +3036,16 @@
           "L": "በፊታቸው ሰውን ላከ፤ ዮሴፍ ለባርነት ተሸጠ።",
           "B": "ነገር ግን አስቀድሞ ከፊታቸው አንድ ሰው ልኮ ነበር፤ እርሱም ባሪያ ሆኖ የተሸጠው ዮሴፍ ነው።",
           "R": "ነገር ግን አስቀድሞ አንድ ሰው ከፊታቸው ወደ ግብፅ ልኮ ነበር። ያ ሰው ባሪያ ሆኖ የተሸጠው ዮሴፍ ነበር።"
+        },
+        "hi": {
+          "L": "उन्होंने उनके आगे एक पुरुष को भेजा; यूसुफ़ दास होने के लिए बेचा गया।",
+          "B": "पर वे उनसे पहले ही एक पुरुष को आगे भेज चुके थे: यूसुफ़ को, जो दास होने के लिए बेच दिया गया।",
+          "R": "पर वे उनसे पहले ही एक आदमी को मिस्र भेज चुके थे। वह आदमी यूसुफ़ था, जिसे दास बनाकर बेच दिया गया था।"
+        },
+        "ru": {
+          "L": "Он послал перед ними человека; в рабы был продан Иосиф.",
+          "B": "Но {{deity_pronoun:он|Он}} заранее послал впереди них человека — Иосифа, которого продали в рабство.",
+          "R": "Но {{deity_pronoun:он|Он}} заранее послал впереди них в Египет человека. Это был Иосиф, которого продали в рабство."
         }
       },
       "decisions": [
@@ -2812,6 +3198,46 @@
           "reason": "Names and events keep the forms of Genesis on main; slaves bought and sold are \"ባሪያ\" at every level, as the Pentateuch settles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050170042",
+            "o191050170061"
+          ],
+          "choice": "\"यूसुफ़\"; \"दास\"",
+          "alternatives": [],
+          "reason": "Joseph keeps his form in Genesis and the New Testament in this translation, and the word for slave is \"दास\" at every level, as the Pentateuch note has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050170011",
+            "o191050170061"
+          ],
+          "choice": "\"Иосиф\"; \"в рабы\", \"в рабство\"",
+          "alternatives": [],
+          "reason": "Psalms 105 and 106 retell Genesis to Judges, so names and terms keep their forms in those books in this translation (Иосиф, фараон, Моисей, Аарон, the plagues of Exodus 7-12). Joseph was sold as a slave (Genesis 37:28), so \"раб\" is the plain word here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2878,6 +3304,16 @@
           "L": "እግሮቹን በእግር ብረት አሠቃዩ፤ አንገቱም ወደ ብረት ገባ፣",
           "B": "የእግር ብረት እግሮቹን አቆሰለ፤ አንገቱም በብረት ተቆለፈ፣",
           "R": "እግሮቹ በሰንሰለት ቆሰሉ፤ በአንገቱም ላይ የብረት ቀለበት ተደረገ።"
+        },
+        "hi": {
+          "L": "उन्होंने उसके पाँवों को बेड़ियों से दुख दिया; उसकी गर्दन लोहे में [जकड़ी गई],",
+          "B": "बेड़ियों ने उसके पाँव छील डाले, और उसकी गर्दन लोहे में जकड़ दी गई,",
+          "R": "ज़ंजीरों से उसके पाँव घायल हो गए, और उसकी गर्दन में लोहे का पट्टा डाल दिया गया।"
+        },
+        "ru": {
+          "L": "Они мучили оковами его ноги; в железо вошла его шея,",
+          "B": "Кандалы натирали ему ноги, и его шея была закована в железо,",
+          "R": "Его ноги были изранены цепями, а на шею ему надели железный ошейник."
         }
       },
       "decisions": [
@@ -2922,6 +3358,26 @@
           "choice": "Joseph in prison",
           "alternatives": [],
           "reason": "Joseph was put in the prison where the king's prisoners were held (Genesis 39:20; 40:15). Genesis does not mention chains; the psalm shows his suffering there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191050180071",
+            "o191050180072"
+          ],
+          "choice": "\"[जकड़ी गई]\"",
+          "alternatives": [
+            "\"उसका प्राण लोहे में आया\""
+          ],
+          "reason": "The Hebrew says his neck (or life, meaning m2) \"came into iron\"; Hindi needs a verb, so Literal supplies \"जकड़ी गई\" in brackets.",
           "uncertain": false,
           "footnote": false
         }
@@ -2990,6 +3446,16 @@
           "L": "ቃሉ እስከ ደረሰበት ጊዜ ድረስ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ንግግር ፈተነው።",
           "B": "የገዛ ቃሉ እስከ ተፈጸመበት ቀን ድረስ፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል አነጠረው።",
           "R": "ይህም ዮሴፍ የተናገረው እስኪፈጸም ድረስ ቆየ። {{divine_name:እግዚአብሔር|ያህዌ}} የተናገረው ነገር እሳት ብረትን እንደሚፈትን ፈተነው።"
+        },
+        "hi": {
+          "L": "जब तक उसका वचन पूरा होने का समय न आया, {{divine_name:प्रभु|याहवे}} के वचन ने उसे परखा।",
+          "B": "उस दिन तक जब उसकी अपनी कही बात पूरी हुई; {{divine_name:प्रभु|याहवे}} के वचन ने उसे ताया।",
+          "R": "यह तब तक चलता रहा जब तक यूसुफ़ की कही बात सच नहीं हुई। {{divine_name:प्रभु|याहवे}} की कही बात ने उसे ऐसे परखा जैसे आग धातु को परखती है।"
+        },
+        "ru": {
+          "L": "до времени, когда сбылось его слово; слово {{divine_name:ГОСПОДА|Яхве}} испытывало его.",
+          "B": "до того дня, когда исполнились его собственные слова; слово {{divine_name:ГОСПОДА|Яхве}} переплавляло его.",
+          "R": "Так было до тех пор, пока не сбылось то, что сказал Иосиф. Слово {{divine_name:ГОСПОДА|Яхве}} испытывало его, как огонь испытывает металл."
         }
       },
       "decisions": [
@@ -3041,6 +3507,23 @@
           "alternatives": [],
           "reason": "Readable names whose words came true and spells out the picture of refining (m1, m2).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050190071"
+          ],
+          "choice": "\"ताया\" (B); \"परखा\" (L, R)",
+          "alternatives": [],
+          "reason": "The verb is used for metal refined in fire (meaning m2). Balanced uses \"ताना\", to refine metal by heat; Literal says \"परखा\", and Readable spells out the fire, as the English does.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -3109,6 +3592,16 @@
           "L": "ንጉሡ ልኮ ፈታው፤ የሕዝቦች ገዥ፣ ነፃም አወጣው።",
           "B": "ንጉሡ እንዲፈታ ትእዛዝ ላከ፤ የብዙ ሕዝቦች ገዥ ለቀቀው።",
           "R": "ከዚያም የግብፅ ንጉሥ ዮሴፍን አስጠርቶ አስፈታው። የብዙ ሕዝቦች ገዥ ለቀቀው።"
+        },
+        "hi": {
+          "L": "राजा ने भेजकर उसे छुड़वाया, जातियों के शासक ने उसे स्वतंत्र किया।",
+          "B": "राजा ने आदेश भेजकर उसे छुड़वाया; बहुत सी जातियों के शासक ने उसके बंधन खुलवा दिए।",
+          "R": "तब मिस्र के राजा ने यूसुफ़ को बुलवाया और उसे छुड़वा दिया। बहुत से देशों के शासक ने उसे जाने दिया।"
+        },
+        "ru": {
+          "L": "Послал царь и освободил его, властелин племён, и отпустил его.",
+          "B": "Царь послал приказ освободить его; правитель многих племён отпустил его на волю.",
+          "R": "Тогда царь Египта послал за Иосифом и велел освободить его. Правитель многих народов отпустил его."
         }
       },
       "decisions": [
@@ -3226,6 +3719,16 @@
           "L": "በቤቱ ላይ ጌታ፣ በንብረቱም ሁሉ ላይ ገዥ አደረገው፣",
           "B": "ቤተ መንግሥቱን በኃላፊነት አስያዘው፤ በሀብቱም ሁሉ ላይ ሥልጣን ሰጠው፣",
           "R": "ፈርዖን ዮሴፍን በቤተ መንግሥቱና ባለው ነገር ሁሉ ላይ ሾመው።"
+        },
+        "hi": {
+          "L": "उसने उसे अपने घर का स्वामी और अपनी सारी संपत्ति पर अधिकारी ठहराया,",
+          "B": "उसने उसे अपने महल का प्रबंधक बनाया और अपनी सारी धन-संपत्ति पर उसे अधिकार दिया,",
+          "R": "फ़िरौन ने यूसुफ़ को अपने महल का और अपनी हर चीज़ का प्रबंधक बना दिया।"
+        },
+        "ru": {
+          "L": "Он поставил его господином над своим домом и правителем над всем своим имением,",
+          "B": "Он поставил его управлять своим дворцом и дал ему власть над всем своим богатством,",
+          "R": "Фараон поставил Иосифа во главе своего дворца и всего, что у него было."
         }
       },
       "decisions": [
@@ -3291,6 +3794,25 @@
             "\"Người\""
           ],
           "reason": "The Hebrew says only \"he\"; Vietnamese needs a subject, and a pronoun here would blur Pharaoh with God, whom the psalm calls \"Ngài\". The meaning decision says the subject is Pharaoh. |",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191050210011"
+          ],
+          "choice": "plain \"उसने\" for Pharaoh",
+          "alternatives": [],
+          "reason": "The subject is Pharaoh (meaning m2), who is spoken of with plain forms, as in Genesis; God alone takes the honorific in this psalm.",
           "uncertain": false,
           "footnote": false
         }
@@ -3361,6 +3883,16 @@
           "L": "መኳንንቱን እንደ ፈቃዱ ያስር ዘንድ፣ ሽማግሌዎቹንም ጠቢባን ያደርግ ዘንድ።",
           "B": "ቢፈልግ ሹማምንቱን የማሰር፣ አማካሪዎቹንም ጠቢባን የማድረግ ሥልጣን ነበረው።",
           "R": "ዮሴፍ ከፈለገ የንጉሡን ሹማምንት እንኳ ሊያሳስር ይችል ነበር። የንጉሡን አማካሪዎች ጥበብን አስተማራቸው።"
+        },
+        "hi": {
+          "L": "कि वह अपनी इच्छा से उसके हाकिमों को बाँधे, और उसके पुरनियों को बुद्धि सिखाए।",
+          "B": "उसे अधिकार था कि चाहे तो उसके अधिकारियों को बंदी बना ले, और उसके सलाहकारों को बुद्धिमान बनाए।",
+          "R": "यूसुफ़ चाहता तो राजा के अधिकारियों को भी पकड़वा सकता था। उसने राजा के सलाहकारों को बुद्धिमानी सिखाई।"
+        },
+        "ru": {
+          "L": "чтобы связывать его князей по своей воле и умудрять его старейшин.",
+          "B": "с властью заковывать его сановников, если пожелает, и учить мудрости его советников.",
+          "R": "Иосиф мог даже арестовать царских сановников, если хотел. Он учил царских советников мудрости."
         }
       },
       "decisions": [
@@ -3423,6 +3955,24 @@
           "choice": "Joseph; the king's",
           "alternatives": [],
           "reason": "Readable names the people, since \"his\" refers to two men in these verses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050220042"
+          ],
+          "choice": "\"पुरनिए\" (L), \"सलाहकार\" (B, R)",
+          "alternatives": [],
+          "reason": "The elders here are Pharaoh's senior officials (meaning m3). Literal keeps \"पुरनिए\", the word for elders in this translation; Balanced and Readable say counselors, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -3492,6 +4042,16 @@
           "L": "እስራኤልም ወደ ግብፅ ገባ፤ ያዕቆብም በካም ምድር በእንግድነት ኖረ።",
           "B": "ስለዚህ እስራኤል ወደ ግብፅ ገባ፤ ያዕቆብም በካም ምድር እንደ እንግዳ ተቀመጠ።",
           "R": "ከዚያም ያዕቆብና ቤተሰቡ ወደ ግብፅ መጡ። በካም ምድር እንደ መጻተኞች ኖሩ።"
+        },
+        "hi": {
+          "L": "और इस्राएल मिस्र में आया; याकूब हाम के देश में परदेशी होकर रहा।",
+          "B": "इस प्रकार इस्राएल मिस्र में आया, और याकूब हाम के देश में परदेशी बनकर बस गया।",
+          "R": "फिर याकूब और उसका परिवार मिस्र आ गया। वे हाम के देश में परदेशी बनकर रहने लगे।"
+        },
+        "ru": {
+          "L": "И пришёл Израиль в Египет; Иаков жил пришельцем в земле Хама.",
+          "B": "Так Израиль пришёл в Египет, и Иаков поселился пришельцем в земле Хама.",
+          "R": "Тогда Иаков со всей семьёй пришёл в Египет. Они жили там как чужеземцы, в земле Хама."
         }
       },
       "decisions": [
@@ -3583,6 +4143,46 @@
           "reason": "Ham keeps the form of Genesis 10 on main (\"ካም\"), as in 78:51; Readable adds \"በግብፅ\" in verse 27 where its English names Egypt.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050230071"
+          ],
+          "choice": "\"हाम का देश\"",
+          "alternatives": [
+            "\"मिस्र\""
+          ],
+          "reason": "The land of Ham is Egypt (meaning m2); Hindi keeps the name \"हाम\" of Genesis 10 at every level, as Psalm 78:51 has \"हाम के तंबू\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050230071"
+          ],
+          "choice": "\"в земле Хама\"",
+          "alternatives": [],
+          "reason": "Egypt called by the name of Ham, its ancestor (m2; Genesis 10:6), with the name in the form of Genesis; the same in verse 27 and in 106:22. \"Пришелец\" (L, B) and \"чужеземец\" (R) for living as a sojourner, as the Pentateuch note has it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3652,6 +4252,16 @@
           "L": "ሕዝቡንም እጅግ አበዛ፤ ከባላጋራዎቻቸውም ይልቅ አበረታቸው።",
           "B": "በዚያም ሕዝቡን በቁጥር እጅግ አበዛ፤ ከጠላቶቻቸውም ይልቅ እስኪበረቱ ድረስ።",
           "R": "በዚያ ሕዝቡን ታላቅ ሕዝብ አደረገ፤ ከጠላቶቻቸውም ይልቅ ብርቱዎች አደረጋቸው።"
+        },
+        "hi": {
+          "L": "और उन्होंने अपनी प्रजा को बहुत फलवन्त किया, और उन्हें उनके बैरियों से अधिक बलवान बनाया।",
+          "B": "वहाँ उन्होंने अपनी प्रजा को गिनती में बहुत बढ़ाया, यहाँ तक कि वे अपने शत्रुओं के लिए बहुत बलवान हो गए।",
+          "R": "वहाँ उन्होंने अपनी प्रजा को बढ़ाकर एक बड़ी जाति बना दिया, जो अपने शत्रुओं से अधिक बलवान थी।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} сделал свой народ весьма плодовитым и сделал его сильнее его врагов.",
+          "B": "Там {{deity_pronoun:он|Он}} сделал свой народ очень многочисленным, так что он стал сильнее своих врагов.",
+          "R": "Там {{deity_pronoun:он|Он}} сделал свой народ большим народом, сильнее его врагов."
         }
       },
       "decisions": [
@@ -3754,6 +4364,16 @@
           "L": "ሕዝቡን ይጠሉ ዘንድ፣ በባሪያዎቹም ላይ በተንኮል ይሠሩ ዘንድ ልባቸውን መለሰ።",
           "B": "የግብፃውያንን ልብ ሕዝቡን እንዲጠሉና በአገልጋዮቹ ላይ እንዲያሴሩ መለሰ።",
           "R": "ግብፃውያን ሕዝቡን እንዲጠሉ ተዋቸው። እነርሱም በአገልጋዮቹ ላይ ተንኮል አሰቡ።"
+        },
+        "hi": {
+          "L": "उन्होंने उनके मन को फेर दिया कि वे उनकी प्रजा से बैर करें, कि उनके दासों के साथ छल करें।",
+          "B": "उन्होंने मिस्रियों के मन को फेर दिया कि वे उनकी प्रजा से घृणा करें और उनके दासों के विरुद्ध षड्यंत्र रचें।",
+          "R": "उन्होंने ऐसा होने दिया कि मिस्री उनकी प्रजा से नफ़रत करने लगे। वे उनके दासों के विरुद्ध चालें चलने लगे।"
+        },
+        "ru": {
+          "L": "Он обратил их сердце, чтобы они возненавидели {{deity_pronoun:его|Его}} народ и хитро поступали с {{deity_pronoun:его|Его}} рабами.",
+          "B": "Он обратил сердца египтян к ненависти против {{deity_pronoun:его|Его}} народа и к козням против {{deity_pronoun:его|Его}} рабов.",
+          "R": "Он допустил, чтобы египтяне возненавидели {{deity_pronoun:его|Его}} народ. Они строили коварные замыслы против {{deity_pronoun:его|Его}} рабов."
         }
       },
       "decisions": [
@@ -3888,6 +4508,16 @@
           "L": "ባሪያውን ሙሴን፣ የመረጠውንም አሮንን ላከ።",
           "B": "አገልጋዩን ሙሴን፣ ከእርሱም ጋር የመረጠውን አሮንን ላከ።",
           "R": "ከዚያም አገልጋዩን ሙሴንና የመረጠውን አሮንን ላከ።"
+        },
+        "hi": {
+          "L": "उन्होंने अपने दास मूसा को भेजा, [और] हारून को जिसे उन्होंने चुना था।",
+          "B": "उन्होंने अपने दास मूसा को भेजा, और उसके साथ हारून को, जिसे उन्होंने चुना था।",
+          "R": "फिर उन्होंने अपने दास मूसा को भेजा, और उसके साथ हारून को, जिसे उन्होंने चुन लिया था।"
+        },
+        "ru": {
+          "L": "Он послал Моисея, своего раба, Аарона, которого {{deity_pronoun:он|Он}} избрал.",
+          "B": "Он послал своего раба Моисея, а с ним Аарона, своего избранника.",
+          "R": "Потом {{deity_pronoun:он|Он}} послал своего раба Моисея вместе с Аароном, которого {{deity_pronoun:он|Он}} выбрал."
         }
       },
       "decisions": [
@@ -3917,6 +4547,27 @@
           "choice": "his servant: the title of Moses",
           "alternatives": [],
           "reason": "Moses is \"the servant of the LORD\" (Numbers 12:7; Deuteronomy 34:5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050260031"
+          ],
+          "choice": "\"अपने दास मूसा\"",
+          "alternatives": [
+            "\"सेवक\""
+          ],
+          "reason": "\"His servant\" is Moses' title (meaning m2), \"दास\" at every level, as the poetry note has it.",
           "uncertain": false,
           "footnote": false
         }
@@ -3987,6 +4638,16 @@
           "L": "በመካከላቸው የምልክቶቹን ቃላት፣ በካምም ምድር ድንቆችን አደረጉ።",
           "B": "በግብፃውያን መካከል የተናገራቸውን ምልክቶች፣ በካምም ምድር ሁሉ ድንቆችን አደረጉ።",
           "R": "እንዲያደርጉ ያዘዛቸውን ተአምራዊ ምልክቶች አደረጉ። በካም ምድር በግብፅ አስደናቂ ነገሮችን አደረጉ።"
+        },
+        "hi": {
+          "L": "उन्होंने उनके बीच उनके चिह्नों के वचन, और हाम के देश में चमत्कार दिखाए।",
+          "B": "उन्होंने मिस्रियों के बीच वे चिह्न दिखाए जिनकी बात परमेश्वर ने कही थी, और हाम के सारे देश में चमत्कार किए।",
+          "R": "उन्होंने वे चमत्कारी चिह्न किए जिन्हें करने को परमेश्वर ने उनसे कहा था। उन्होंने मिस्र में, हाम के देश में, अद्भुत काम किए।"
+        },
+        "ru": {
+          "L": "Они совершили среди них слова {{deity_pronoun:его|Его}} знамений и чудеса в земле Хама.",
+          "B": "Среди египтян они совершили знамения, о которых {{deity_pronoun:он|Он}} говорил, и чудеса по всей земле Хама.",
+          "R": "Они сотворили чудеса, которые {{deity_pronoun:он|Он}} велел им сотворить. Они совершили удивительные дела в Египте, земле Хама."
         }
       },
       "decisions": [
@@ -4060,6 +4721,26 @@
           "reason": "Vietnamese pronouns would otherwise run together in this verse; \"chúng\", used for enemies in these psalms, keeps the two groups apart. |",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191050270041"
+          ],
+          "choice": "\"परमेश्वर\" named in Balanced and Readable",
+          "alternatives": [
+            "\"उन्होंने ... जिनकी बात उन्होंने कही थी\""
+          ],
+          "reason": "Moses and Aaron are the subject here, and Hindi \"उन्होंने\" serves for them and for God alike, so Balanced and Readable name God where the English says \"he\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4127,6 +4808,16 @@
           "L": "ጨለማን ላከ፤ አጨለመም፤ እነርሱም በቃሉ ላይ አላመፁም።",
           "B": "ጨለማን ላከ፤ ምድሪቱም ጨለመች፤ እነርሱም ቃሉን አልተቃወሙም።",
           "R": "ጨለማ ላከ፤ ምድሪቱንም አጨለመ። ሙሴና አሮን እርሱ የተናገረውን አልተቃወሙም።"
+        },
+        "hi": {
+          "L": "उन्होंने अंधकार भेजा और अँधेरा कर दिया, और उन्होंने उनके वचन से बलवा न किया।",
+          "B": "उन्होंने अंधकार भेजा और देश में अँधेरा छा गया; और उन्होंने उनके वचन को नहीं ठुकराया।",
+          "R": "उन्होंने अंधकार भेजा और देश में अँधेरा कर दिया। मूसा और हारून ने उनकी कही बात के विरुद्ध कुछ नहीं किया।"
+        },
+        "ru": {
+          "L": "Он послал тьму и сделал темно, и они не воспротивились {{deity_pronoun:его|Его}} слову.",
+          "B": "Он послал тьму, и земля погрузилась во мрак; и они не пошли против {{deity_pronoun:его|Его}} слова.",
+          "R": "Он послал тьму, и в земле стало темно. Моисей и Аарон не пошли против того, что {{deity_pronoun:он|Он}} сказал."
         }
       },
       "decisions": [
@@ -4260,6 +4951,16 @@
           "L": "ውኆቻቸውን ወደ ደም ለወጠ፤ ዓሣቸውንም ገደለ።",
           "B": "ውኆቻቸውን ደም አደረገ፤ ዓሣዎቻቸውንም ሙት አደረጋቸው።",
           "R": "ወንዞቻቸውን ወደ ደም ለወጠ፤ ዓሣዎቹም ሞቱ።"
+        },
+        "hi": {
+          "L": "उन्होंने उनके जल को लहू बना दिया, और उनकी मछलियों को मार डाला।",
+          "B": "उन्होंने उनके जल को लहू में बदल दिया और उनकी मछलियाँ मर गईं।",
+          "R": "उन्होंने उनकी नदियों को लहू बना दिया, और मछलियाँ मर गईं।"
+        },
+        "ru": {
+          "L": "Он превратил их воды в кровь и умертвил их рыбу.",
+          "B": "Он сделал их воды кровью и погубил их рыбу.",
+          "R": "Он превратил их реки в кровь, и рыба умерла."
         }
       },
       "decisions": [
@@ -4341,6 +5042,16 @@
           "L": "ምድራቸው እንቁራሪቶችን አርመሰመሰች፤ በነገሥታታቸው እልፍኞች ውስጥ [እንኳ]።",
           "B": "እንቁራሪቶች በምድራቸው ላይ ተርመሰመሱ፤ እስከ ነገሥታታቸው እልፍኝ ድረስ ገቡ።",
           "R": "እንቁራሪቶች ምድራቸውን ሞሉ። እስከ ንጉሡ መኝታ ቤቶች ድረስ እንኳ ገቡ።"
+        },
+        "hi": {
+          "L": "उनका देश मेंढकों से भर गया, उनके राजाओं की कोठरियों में [भी]।",
+          "B": "मेंढक उनके सारे देश में भर गए, यहाँ तक कि उनके राजाओं के भीतरी कमरों में भी।",
+          "R": "उनका देश मेंढकों से भर गया। वे राजा के सोने के कमरों तक में घुस गए।"
+        },
+        "ru": {
+          "L": "Закишела их земля лягушками, в покоях их царей.",
+          "B": "Лягушки кишели по всей их земле, даже во внутренних покоях их царей.",
+          "R": "Лягушки заполнили их землю. Они пробрались даже в спальни царя."
         }
       },
       "decisions": [
@@ -4451,6 +5162,16 @@
           "L": "ተናገረ፤ የዝንብ መንጋ መጣ፤ በድንበራቸውም ሁሉ ቅማል [መጣ]።",
           "B": "በትእዛዙ የዝንብ መንጋ መጣ፤ ቅማልም የምድራቸውን ስፍራ ሁሉ ሸፈነ።",
           "R": "ትእዛዝ ሰጠ፤ የዝንብ መንጋም መጣ። ቅማል አገሩን ሁሉ ሞላ።"
+        },
+        "hi": {
+          "L": "उन्होंने कहा, और झुंड आ गए, उनके सारे क्षेत्र में कुटकियाँ।",
+          "B": "उनकी आज्ञा से मक्खियों के झुंड आ गए, और उनके देश के हर भाग में कुटकियाँ छा गईं।",
+          "R": "उन्होंने आदेश दिया, और मक्खियों के झुंड आ गए। सारा देश कुटकियों से भर गया।"
+        },
+        "ru": {
+          "L": "Он сказал — и пришёл рой, мошки во всей их области.",
+          "B": "По {{deity_pronoun:его|Его}} повелению налетели рои мух, и мошки покрыли всю их землю.",
+          "R": "Он дал приказ, и налетели рои мух. Мошки заполнили всю страну."
         }
       },
       "decisions": [
@@ -4561,6 +5282,45 @@
           "reason": "The words of the Exodus plagues on main and of 78:45, so the retold plagues read as the same events.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050310031",
+            "o191050310041"
+          ],
+          "choice": "\"झुंड\" (L), \"मक्खियों के झुंड\" (B, R); \"कुटकियाँ\"",
+          "alternatives": [],
+          "reason": "The swarms and gnats of the plagues keep the words of Exodus 8 and Psalm 78:45 in this translation; Literal, like the Hebrew, does not name the insect of the swarm (meaning m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050310031"
+          ],
+          "choice": "\"рой\" (L); \"рои мух\" (B, R); \"мошки\"",
+          "alternatives": [],
+          "reason": "The words of Exodus 8 in this translation: the swarm is \"рой\" at Literal and \"рои мух\" at Readable there, and the gnats are \"мошки\" (m2, m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4627,6 +5387,16 @@
           "L": "ዝናባቸውን በረዶ አደረገላቸው፤ በምድራቸውም የሚንበለበል እሳት [ሰጠ]።",
           "B": "በዝናብ ፋንታ በረዶ ሰጣቸው፤ እሳትም በምድራቸው ሁሉ ላይ ተብለጨለጨ።",
           "R": "በዝናብ ፋንታ በረዶ ላከ፤ መብረቅም በምድራቸው ሁሉ ላይ ብልጭ አለ።"
+        },
+        "hi": {
+          "L": "उन्होंने उन्हें वर्षा [के बदले] ओले दिए, उनके देश में धधकती आग।",
+          "B": "वर्षा के बदले उन्होंने उन्हें ओले दिए, और उनके देश में आग की लपटें कौंधती रहीं।",
+          "R": "वर्षा के बदले उन्होंने ओले भेजे, और उनके सारे देश में बिजली चमकने लगी।"
+        },
+        "ru": {
+          "L": "Он дал им град [вместо] дождя, пылающий огонь в их земле.",
+          "B": "Вместо дождя {{deity_pronoun:он|Он}} дал им град, и огонь сверкал по их земле.",
+          "R": "Вместо дождя {{deity_pronoun:он|Он}} послал град, и молнии сверкали по всей их земле."
         }
       },
       "decisions": [
@@ -4747,6 +5517,16 @@
           "L": "ወይናቸውንና በለሳቸውንም መታ፤ የአገራቸውንም ዛፎች ሰባበረ።",
           "B": "የወይን ተክሎቻቸውንና በለሶቻቸውን ደበደበ፤ በምድራቸውም ያለውን ዛፍ ሁሉ ሰነጣጠቀ።",
           "R": "የወይን ተክሎቻቸውንና በለሶቻቸውን አጠፋ፤ በአገራቸውም ሁሉ ያሉትን ዛፎች ሰባበረ።"
+        },
+        "hi": {
+          "L": "और उन्होंने उनकी दाखलताओं और उनके अंजीर के पेड़ों को मारा, और उनके क्षेत्र के पेड़ों को तोड़ डाला।",
+          "B": "उन्होंने उनकी अंगूर की बेलें और अंजीर के पेड़ गिरा दिए, और उनके देश का हर पेड़ चूर-चूर कर दिया।",
+          "R": "उन्होंने उनकी अंगूर की बेलें और अंजीर के पेड़ नष्ट कर दिए, और उनके सारे देश के पेड़ तोड़ डाले।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} поразил их виноградные лозы и их смоковницы и сокрушил деревья их области.",
+          "B": "Он побил их виноградные лозы и смоковницы и расщепил каждое дерево в их земле.",
+          "R": "Он уничтожил их виноградники и инжировые деревья и поломал деревья по всей их стране."
         }
       },
       "decisions": [
@@ -4762,6 +5542,27 @@
           "choice": "trees broken by the hail",
           "alternatives": [],
           "reason": "The hail struck every plant of the field and broke every tree (Exodus 9:25).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050330011",
+            "o191050330012",
+            "o191050330021"
+          ],
+          "choice": "\"смоковницы\" (L, B); \"инжировые деревья\" (R)",
+          "alternatives": [],
+          "reason": "The style guide's words for the fig tree, settled in Mark.",
           "uncertain": false,
           "footnote": false
         }
@@ -4830,6 +5631,16 @@
           "L": "ተናገረ፤ አንበጣና ቁጥር የሌለው ዘላይ አንበጣ መጣ፣",
           "B": "በቃሉ አንበጣዎች መጡ፤ ሊቆጠሩ የማይችሉ የዘላይ አንበጣ መንጋዎች፣",
           "R": "ትእዛዝ ሰጠ፤ ማንም ሊቆጥረው የማይችል አንበጣ መጣ።"
+        },
+        "hi": {
+          "L": "उन्होंने कहा, और टिड्डियाँ आईं, और अनगिनत टिड्डे,",
+          "B": "उनके वचन से टिड्डियाँ आ पहुँचीं, जवान टिड्डों के इतने दल कि गिने न जा सकें,",
+          "R": "उन्होंने आदेश दिया, और इतनी टिड्डियाँ आईं कि कोई उन्हें गिन न सके।"
+        },
+        "ru": {
+          "L": "Он сказал — и пришла саранча и молодая саранча без числа,",
+          "B": "По {{deity_pronoun:его|Его}} слову налетела саранча — тучи молодой саранчи, которой не счесть,",
+          "R": "Он отдал приказ, и пришла саранча, столько, что никто не мог её сосчитать."
         }
       },
       "decisions": [
@@ -4880,6 +5691,25 @@
             "locusts and young locusts"
           ],
           "reason": "Readable uses one word for both kinds of locust.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050340031",
+            "o191050340042"
+          ],
+          "choice": "\"टिड्डियाँ\"; \"टिड्डे\" for the young locusts",
+          "alternatives": [],
+          "reason": "Two words for locusts stand side by side (meaning m2); Hindi uses \"टिड्डियाँ\" and \"टिड्डे\", as Psalm 78:46 does in this translation, and Readable has one word, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4951,6 +5781,16 @@
           "L": "በምድራቸው ያለውን ቡቃያ ሁሉ በሉ፤ የመሬታቸውንም ፍሬ በሉ።",
           "B": "በምድራቸው ያለውን ለምለም ተክል ሁሉ ሙልጭ አድርገው በሉ፤ የእርሻቸውንም መከር ዋጡ።",
           "R": "በምድሪቱ ያለውን ተክል ሁሉ፣ በእርሻ ያለውንም ሰብል ሁሉ በሉ።"
+        },
+        "hi": {
+          "L": "और वे उनके देश की सारी हरियाली खा गईं, और उनकी भूमि का फल खा गईं।",
+          "B": "और उन्होंने उनके देश का हर हरा पौधा चट कर डाला और उनके खेतों की उपज निगल गईं।",
+          "R": "उन्होंने देश का हर पौधा और खेतों की सारी फ़सल खा डाली।"
+        },
+        "ru": {
+          "L": "и пожрали всю зелень в их земле, и пожрали плод их почвы.",
+          "B": "и они пожрали каждое зелёное растение в их земле и поглотили урожай их полей.",
+          "R": "Она съела все растения в стране и весь урожай на полях."
         }
       },
       "decisions": [
@@ -5051,6 +5891,16 @@
           "L": "በምድራቸው ያለውን በኩር ሁሉ፣ የብርታታቸውን ሁሉ በኩራት መታ።",
           "B": "በምድራቸው ያለውን የየቤተሰቡን በኩር፣ ከብርታታቸው የተወለዱትን የመጀመሪያ ወንድ ልጆች ገደለ።",
           "R": "ከዚያም በግብፅ ባለው ቤት ሁሉ የመጀመሪያውን ልጅ፣ የእያንዳንዱን አባት የመጀመሪያ ልጅ ቀሠፈ።"
+        },
+        "hi": {
+          "L": "और उन्होंने उनके देश में हर पहलौठे को मार डाला, उनके सारे पौरुष के पहले फल को।",
+          "B": "और उन्होंने उनके देश के हर परिवार के पहलौठे को मार डाला, उनके पौरुष से जन्मे पहले बेटों को।",
+          "R": "फिर उन्होंने मिस्र के हर घर के पहलौठे को मार डाला, हर पिता की पहली सन्तान को।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} поразил всякого первенца в их земле, начаток всей их силы.",
+          "B": "И {{deity_pronoun:он|Он}} убил первенцев каждой семьи в их земле, первых сыновей, рождённых в их силе.",
+          "R": "Потом {{deity_pronoun:он|Он}} поразил первенцев в каждом доме Египта, первого ребёнка каждого отца."
         }
       },
       "decisions": [
@@ -5124,6 +5974,25 @@
           "reason": "The meaning decision points to 78:51, which uses nearly the same words; the firstborn follow the Pentateuch terms list.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050360051",
+            "o191050360071"
+          ],
+          "choice": "\"पौरुष का पहला फल\"",
+          "alternatives": [],
+          "reason": "The first of all their strength is the firstborn son (meaning m2); Hindi keeps the wording of Psalm 78:51 in this translation.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5194,6 +6063,16 @@
           "L": "በብርና በወርቅ አወጣቸው፤ በነገዶቹም መካከል የሚሰናከል አልነበረም።",
           "B": "ሕዝቡን ብርና ወርቅ አስይዞ አወጣ፤ ከነገዶቹም ሁሉ አንድ ሰው እንኳ አልተሰናከለም።",
           "R": "ሕዝቡን ብርና ወርቅ አስይዞ ከግብፅ መራ። ከነገዶቹ አንድም ሰው ለመሄድ የደከመ አልነበረም።"
+        },
+        "hi": {
+          "L": "और वे उन्हें चाँदी और सोने के साथ निकाल लाए, और उनके गोत्रों में कोई ठोकर खानेवाला न था।",
+          "B": "वे अपनी प्रजा को चाँदी और सोना लिए हुए बाहर ले आए, और उनके सारे गोत्रों में एक भी व्यक्ति लड़खड़ाया नहीं।",
+          "R": "वे अपनी प्रजा को चाँदी और सोने के साथ मिस्र से बाहर ले आए। उनके गोत्रों में एक भी व्यक्ति इतना कमज़ोर न था कि चल न सके।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} вывел их с серебром и золотом, и не было в {{deity_pronoun:его|Его}} коленах спотыкающегося.",
+          "B": "Он вывел свой народ с серебром и золотом, и во всех {{deity_pronoun:его|Его}} коленах ни один не споткнулся.",
+          "R": "Он вывел свой народ из Египта с серебром и золотом. Во всех {{deity_pronoun:его|Его}} племенах не было никого, кто был бы слишком слаб, чтобы идти."
         }
       },
       "decisions": [
@@ -5259,6 +6138,25 @@
             "them"
           ],
           "reason": "Balanced and Readable name who was brought out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050370053"
+          ],
+          "choice": "\"колена\" (L, B); \"племена\" (R)",
+          "alternatives": [],
+          "reason": "The Pentateuch note's words for the tribes.",
           "uncertain": false,
           "footnote": false
         }
@@ -5329,6 +6227,16 @@
           "L": "በወጡ ጊዜ ግብፅ ደስ አላት፤ የእነርሱ ፍርሃት በላያቸው ወድቆ ነበርና።",
           "B": "ግብፅ ሲሄዱ በማየቷ ደስ አላት፤ ሕዝቧን የእነርሱ ፍርሃት ይዞት ነበርና።",
           "R": "እስራኤል በሄዱ ጊዜ ግብፃውያን ደስ አላቸው፤ ፈርተዋቸው ነበርና።"
+        },
+        "hi": {
+          "L": "जब वे निकले तो मिस्र आनंदित हुआ, क्योंकि उनका भय उन पर छा गया था।",
+          "B": "उनके जाने से मिस्र प्रसन्न हुआ, क्योंकि उसके लोगों पर उनका डर छा गया था।",
+          "R": "जब इस्राएली चले गए तो मिस्री ख़ुश हुए, क्योंकि वे उनसे डरने लगे थे।"
+        },
+        "ru": {
+          "L": "Обрадовался Египет, когда они вышли, потому что страх перед ними напал на них.",
+          "B": "Египет был рад их уходу, потому что страх перед ними охватил его народ.",
+          "R": "Египтяне радовались, когда израильтяне ушли, потому что стали их бояться."
         }
       },
       "decisions": [
@@ -5444,6 +6352,16 @@
           "L": "ደመናን ለመሸፈኛ ዘረጋ፤ እሳትንም በሌሊት ያበራ ዘንድ።",
           "B": "ደመናን እንደ መጋረጃ ከላያቸው ዘረጋ፤ ሌሊቱን የሚያበራ እሳትንም ሰጠ።",
           "R": "ቀን እንዲጋርዳቸው ደመናን ከላያቸው ዘረጋ። ሌሊት መንገዳቸውን የሚያበራላቸው እሳት ሰጣቸው።"
+        },
+        "hi": {
+          "L": "उन्होंने ओढ़ने के लिए बादल फैलाया, और रात को उजियाला देने के लिए आग।",
+          "B": "उन्होंने उनके ऊपर ओट के समान बादल फैलाया, और रात को उजाला करने के लिए आग दी।",
+          "R": "दिन में छाया देने के लिए उन्होंने उनके ऊपर बादल फैलाया। रात को रास्ता दिखाने के लिए उन्होंने उन्हें आग दी।"
+        },
+        "ru": {
+          "L": "Он распростёр облако для покрова и огонь, чтобы светить ночью.",
+          "B": "Он раскинул над ними облако, как завесу, и огонь, чтобы освещать ночь.",
+          "R": "Он раскинул над ними облако, чтобы оно давало им тень днём. Он дал им огонь, чтобы освещать им путь ночью."
         }
       },
       "decisions": [
@@ -5558,6 +6476,16 @@
           "L": "[ሕዝቡ] ለመኑ፤ ድርጭትንም አመጣ፤ በሰማይም እንጀራ አጠገባቸው።",
           "B": "በለመኑ ጊዜ ድርጭቶችን ላከ፤ ከሰማይም በሚወርድ እንጀራ አጠገባቸው።",
           "R": "ሕዝቡ ምግብ ለመኑ፤ እርሱም ድርጭቶችን ላከላቸው። እስኪጠግቡም ድረስ ከሰማይ በወረደ እንጀራ መገባቸው።"
+        },
+        "hi": {
+          "L": "[लोगों ने] माँगा, और वे बटेरें ले आए, और स्वर्ग की रोटी से उन्हें तृप्त किया।",
+          "B": "जब उन्होंने माँगा, तो उन्होंने बटेरें भेजीं और स्वर्ग से रोटी देकर उन्हें तृप्त किया।",
+          "R": "लोगों ने खाना माँगा, और उन्होंने उनके लिए बटेरें भेजीं। उन्होंने उन्हें स्वर्ग से रोटी खिलाई, और वे तृप्त हो गए।"
+        },
+        "ru": {
+          "L": "[Народ] попросил, и {{deity_pronoun:он|Он}} привёл перепелов, и хлебом небесным {{deity_pronoun:он|Он}} насытил их.",
+          "B": "Когда они попросили, {{deity_pronoun:он|Он}} послал перепелов и досыта накормил их хлебом с неба.",
+          "R": "Народ попросил еды, и {{deity_pronoun:он|Он}} послал им перепелов. Он кормил их хлебом с неба, пока они не насытились."
         }
       },
       "decisions": [
@@ -5646,6 +6574,47 @@
           "reason": "As in Exodus 16 on main (\"ድርጭቶች\", \"ከሰማይ እንጀራ\"), and with \"እንጀራ\" for bread as food, as the Amharic New Testament has it in John 6:31.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050400031",
+            "o191050400042"
+          ],
+          "choice": "\"बटेरें\"; \"स्वर्ग की रोटी\" (L), \"स्वर्ग से रोटी\" (B, R)",
+          "alternatives": [],
+          "reason": "The quail and the manna (meaning m2) keep the words of Exodus 16 and Psalm 78:24 in this translation; the bread of heaven is the manna.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050400031",
+            "o191050400042",
+            "o191050400051"
+          ],
+          "choice": "\"перепела\"; \"хлеб небесный\" (L), \"хлеб с неба\" (B, R)",
+          "alternatives": [],
+          "reason": "The quail and the bread from heaven of Exodus 16:4, 13 in this translation (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5712,6 +6681,16 @@
           "L": "ዓለትን ከፈተ፤ ውኆችም ፈለቁ፤ በደረቅ ስፍራዎች እንደ ወንዝ ፈሰሱ።",
           "B": "ዓለትን ከፈተ፤ ውኃም ጎረፈ፤ በደረቁ ምድር ውስጥ እንደ ወንዝ ፈሰሰ።",
           "R": "ዓለትን ሰንጥቆ ከፈተ፤ ውኃም ተንዶለዶለ። በምድረ በዳው ውስጥ እንደ ወንዝ ፈሰሰ።"
+        },
+        "hi": {
+          "L": "उन्होंने चट्टान को खोला, और जल फूट निकला; वह सूखे स्थानों में नदी [के समान] बहा।",
+          "B": "उन्होंने एक चट्टान को खोल दिया और पानी बह निकला, जो सूखी भूमि में नदी के समान बहने लगा।",
+          "R": "उन्होंने एक चट्टान को चीर दिया, और पानी फूट निकला। वह रेगिस्तान में नदी की तरह बहने लगा।"
+        },
+        "ru": {
+          "L": "Он раскрыл скалу, и хлынули воды; они потекли по сухим местам, [как] река.",
+          "B": "Он рассёк скалу, и вода заструилась, побежав, как река, по иссохшей земле.",
+          "R": "Он расколол скалу, и оттуда хлынула вода. Она текла по пустыне, как река."
         }
       },
       "decisions": [
@@ -5809,6 +6788,16 @@
           "L": "ቅዱስ ቃሉን ከባሪያው ከአብርሃም ጋር አስቧልና።",
           "B": "ለአገልጋዩ ለአብርሃም የተናገረውን ቅዱስ ቃል አስቧልና።",
           "R": "ይህን ሁሉ ያደረገው ለአገልጋዩ ለአብርሃም የሰጠውን ቅዱስ ተስፋ ስላሰበ ነው።"
+        },
+        "hi": {
+          "L": "क्योंकि उन्होंने अपने पवित्र वचन को स्मरण किया, [जो] अपने दास अब्राहम के साथ [था]।",
+          "B": "क्योंकि उन्होंने वह पवित्र वचन याद रखा जो उन्होंने अपने दास अब्राहम से कहा था।",
+          "R": "उन्होंने यह सब इसलिए किया क्योंकि उन्हें वह पवित्र प्रतिज्ञा याद थी जो उन्होंने अपने दास अब्राहम से की थी।"
+        },
+        "ru": {
+          "L": "Ведь {{deity_pronoun:он|Он}} вспомнил своё святое слово с Авраамом, своим рабом.",
+          "B": "Ведь {{deity_pronoun:он|Он}} вспомнил святое слово, которое сказал Аврааму, своему рабу.",
+          "R": "Он сделал всё это, потому что помнил святое обещание, которое дал своему рабу Аврааму."
         }
       },
       "decisions": [
@@ -5940,6 +6929,16 @@
           "L": "ሕዝቡን በደስታ፣ የመረጣቸውንም በእልልታ አወጣ።",
           "B": "ስለዚህ ሕዝቡን በደስታ፣ የመረጣቸውንም በታላቅ የደስታ ዝማሬ መራ።",
           "R": "የመረጠውን ሕዝቡን መራ፤ እነርሱም ደስ ብሏቸው እልል ይሉ ነበር።"
+        },
+        "hi": {
+          "L": "और वे अपनी प्रजा को आनंद के साथ, अपने चुने हुओं को जयजयकार के साथ निकाल लाए।",
+          "B": "इस प्रकार वे अपनी प्रजा को आनंद मनाते हुए बाहर ले आए, अपने चुने हुए लोगों को ऊँचे स्वर से गाते हुए।",
+          "R": "वे अपनी चुनी हुई प्रजा को बाहर ले आए, और लोग आनंदित होकर जयजयकार कर रहे थे।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} вывел свой народ с радостью, своих избранных — с ликованием.",
+          "B": "Так {{deity_pronoun:он|Он}} вывел свой народ ликующим, своих избранных — громко поющими от радости.",
+          "R": "Он вывел свой избранный народ, и люди радовались и кричали от радости."
         }
       },
       "decisions": [
@@ -6038,6 +7037,16 @@
           "L": "የሕዝቦችንም ምድር ሰጣቸው፤ የወገኖችንም ድካም ወረሱ፣",
           "B": "የሌሎችን ሕዝቦች ምድር ሰጣቸው፤ እነዚያ ወገኖች የደከሙበትንም ወረሱ፣",
           "R": "ሌሎች ሕዝቦች ይኖሩበት የነበረውን ምድር ሰጣቸው። ሌሎች ደክመው የሠሯቸውን እርሻዎችና ቤቶች ወረሱ።"
+        },
+        "hi": {
+          "L": "और उन्होंने उन्हें जातियों के देश दिए, और उन्होंने लोगों के परिश्रम [के फल] पर अधिकार कर लिया,",
+          "B": "उन्होंने उन्हें दूसरे राष्ट्रों के देश दे दिए, और जो कुछ उन लोगों ने मेहनत से कमाया था, वह उनके अधिकार में आ गया,",
+          "R": "उन्होंने उन्हें वह देश दिया जहाँ दूसरे लोग रहते थे। जो खेत और घर दूसरों ने बड़ी मेहनत से बनाए थे, वे उनके हो गए।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} дал им земли народов, и они завладели трудом племён,",
+          "B": "Он дал им земли других народов, и они овладели тем, ради чего трудились те племена,",
+          "R": "Он дал им землю, где жили другие народы. Они получили поля и дома, над которыми трудились другие."
         }
       },
       "decisions": [
@@ -6105,6 +7114,47 @@
           "choice": "nations (goyim) \"ሕዝቦች\" and peoples (ʿammim) \"ወገኖች\" in one line",
           "alternatives": [],
           "reason": "Where both words stand in one line, the terms list keeps them apart with \"ሕዝቦች\" and \"ወገኖች\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050440031"
+          ],
+          "choice": "\"राष्ट्रों\" (B); \"दूसरे लोग\" (R)",
+          "alternatives": [
+            "\"देशों\""
+          ],
+          "reason": "The nations are \"जातियाँ\" at Literal; Balanced and Readable avoid \"जाति\", which also means caste, as the poetry note says. Balanced says \"राष्ट्र\", since \"देश\" already stands for \"lands\" in the same line.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050440052",
+            "o191050440061"
+          ],
+          "choice": "\"народы\" for \"nations\", \"племена\" for \"peoples\"",
+          "alternatives": [
+            "народы for both"
+          ],
+          "reason": "The rule recorded at Psalm 96:3: \"nations\" are \"народы\" and \"peoples\" \"племена\" at Literal and Balanced; Readable has \"народы\" once, as its English.",
           "uncertain": false,
           "footnote": false
         }
@@ -6175,6 +7225,16 @@
           "L": "ሥርዓቶቹን ይጠብቁ ዘንድ፣ ሕጎቹንም ይፈጽሙ ዘንድ። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ።",
           "B": "ሥርዓቶቹን እንዲጠብቁ፣ ሕጎቹንም አጥብቀው እንዲይዙ ነው። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "R": "ይህን ያደረገው ሕጎቹን እንዲታዘዙና ትምህርቱን እንዲከተሉ ነው። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!"
+        },
+        "hi": {
+          "L": "ताकि वे उनकी विधियों का पालन करें और उनकी व्यवस्था को मानें। {{divine_name:प्रभु|याह}} की स्तुति करो।",
+          "B": "ताकि वे उनकी विधियों पर चलें और उनकी व्यवस्था को थामे रहें। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "R": "उन्होंने यह इसलिए किया कि वे उनके नियम मानें और उनकी शिक्षा पर चलें। {{divine_name:प्रभु|याह}} की स्तुति करो!"
+        },
+        "ru": {
+          "L": "чтобы они хранили {{deity_pronoun:его|Его}} установления и соблюдали {{deity_pronoun:его|Его}} законы. Хвалите {{divine_name:ГОСПОДА|Ях}}.",
+          "B": "чтобы они соблюдали {{deity_pronoun:его|Его}} постановления и держались {{deity_pronoun:его|Его}} законов. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "R": "Он сделал это, чтобы они слушались {{deity_pronoun:его|Его}} законов и следовали {{deity_pronoun:его|Его}} наставлениям. Хвалите {{divine_name:ГОСПОДА|Ях}}!"
         }
       },
       "decisions": [
@@ -6478,6 +7538,66 @@
           "choice": "\"Praise Yah\" as \"{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ\", as 104:35; statutes \"ሥርዓቶች\"",
           "alternatives": [],
           "reason": "The English translates hallelu-yah, so the Amharic uses the terms list's translated form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050450042",
+            "o191050450061",
+            "o191050450071"
+          ],
+          "choice": "\"व्यवस्था\" (L, B), \"शिक्षा\" (R); \"{{divine_name:प्रभु|याह}} की स्तुति करो\"",
+          "alternatives": [],
+          "reason": "God's torot take the poetry note's words, \"व्यवस्था\" at Literal and Balanced and \"शिक्षा\" at Readable (meaning m2). Hallelu-yah, \"Praise Yah\" (meaning m3), is in the note's form, with \"याह\" as the divine_name alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191050450061",
+            "o191050450071"
+          ],
+          "choice": "\"Хвалите {{divine_name:ГОСПОДА|Ях}}\"",
+          "alternatives": [],
+          "reason": "The poetry note's form for Hallelu-yah (m3), with the short name Yah as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191050450042"
+          ],
+          "choice": "\"законы\" (L, B); \"наставления\" (R) for torot",
+          "alternatives": [],
+          "reason": "The poetry note has \"Закон\" (L, B) and \"наставление\" (R) for God's torah; here the word is plural, God's instructions, so it is written with a small letter.",
           "uncertain": false,
           "footnote": false
         }

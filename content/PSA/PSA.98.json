@@ -71,6 +71,16 @@
           "L": "መዝሙር። \\q {{divine_name:ለእግዚአብሔር|ለያህዌ}} አዲስ መዝሙር ዘምሩ፤ ድንቅ ነገሮችን አድርጓልና፤ \\q ቀኝ እጁና ቅዱስ ክንዱ ድልን አስገኙለት።",
           "B": "መዝሙር። \\q ስላደረጋቸው ድንቅ ነገሮች {{divine_name:ለእግዚአብሔር|ለያህዌ}} አዲስ መዝሙር ዘምሩ! \\q በገዛ ቀኝ እጁና በቅዱስ ክንዱ ድል አድርጓል።",
           "R": "መዝሙር። \\q አስደናቂ ነገሮችን ስላደረገ {{divine_name:ለእግዚአብሔር|ለያህዌ}} አዲስ መዝሙር ዘምሩ! \\q በገዛ ኃይሉና በቅዱስ ብርታቱ ድል አድርጓል።"
+        },
+        "hi": {
+          "L": "भजन। \\q {{divine_name:प्रभु|याहवे}} के लिए नया गीत गाओ, क्योंकि उन्होंने आश्चर्यकर्म किए हैं; \\q उनके दाहिने हाथ और उनकी पवित्र भुजा ने उनके लिए विजय पाई है।",
+          "B": "भजन। \\q {{divine_name:प्रभु|याहवे}} के लिए एक नया गीत गाओ, उन आश्चर्यकर्मों के कारण जो उन्होंने किए हैं! \\q अपने ही दाहिने हाथ और अपनी पवित्र भुजा से उन्होंने विजय पाई है।",
+          "R": "गीत। \\q {{divine_name:प्रभु|याहवे}} के लिए एक नया गीत गाओ, क्योंकि उन्होंने अद्भुत काम किए हैं! \\q अपनी ही शक्ति और पवित्र सामर्थ्य से उन्होंने विजय पाई है।"
+        },
+        "ru": {
+          "L": "Псалом. \\q Пойте {{divine_name:ГОСПОДУ|Яхве}} новую песнь, ведь {{deity_pronoun:он|Он}} сотворил чудеса; \\q {{deity_pronoun:его|Его}} правая рука и {{deity_pronoun:его|Его}} святая рука доставили {{deity_pronoun:ему|Ему}} победу.",
+          "B": "Псалом. \\q Пойте {{divine_name:ГОСПОДУ|Яхве}} новую песнь за чудеса, которые {{deity_pronoun:он|Он}} совершил! \\q Своей правой рукой и святой рукой {{deity_pronoun:он|Он}} одержал победу.",
+          "R": "Песнь. \\q Пойте новую песню {{divine_name:ГОСПОДУ|Яхве}}, потому что {{deity_pronoun:он|Он}} совершил удивительные дела! \\q Своей силой и святым могуществом {{deity_pronoun:он|Он}} одержал победу."
         }
       },
       "decisions": [
@@ -215,6 +225,70 @@
           "reason": "The heading word follows the Psalms terms list. \"A new song\" keeps the words of the Amharic New Testament at Revelation 5:9 and 14:3 (\"አዲስ መዝሙር\"), so the song of the Lamb is heard as the same new song.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980010011",
+            "o190980010041",
+            "o190980010051"
+          ],
+          "choice": "\"भजन\" (L, B), \"गीत\" (R); \"... के लिए नया गीत गाओ\" as Psalm 96:1",
+          "alternatives": [],
+          "reason": "The one-word title is \"भजन\" at Literal and Balanced and \"गीत\" at Readable, as the poetry note's table has it (meaning m2). The psalm opens like Psalm 96 (meaning m4), so the call to sing a new song keeps the Hindi of 96:1 at each level; the wonders are \"आश्चर्यकर्म\" (L, B) as in 96:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980010011",
+            "o190980010021",
+            "o190980010051"
+          ],
+          "choice": "\"Псалом\" (L, B), \"Песнь\" (R); \"Пойте ГОСПОДУ новую песнь\" as Psalm 96:1",
+          "alternatives": [
+            "Песня"
+          ],
+          "reason": "The title follows the poetry note's table for mizmor; the call to sing a new song keeps the wording of Psalm 96:1 (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980010122"
+          ],
+          "choice": "\"святая рука\"",
+          "alternatives": [
+            "мышца",
+            "десница"
+          ],
+          "reason": "Zeroa' is the arm; Russian \"рука\" serves for hand and arm, as Psalm 44:4 has it, and the Slavonic \"мышца\" is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -283,6 +357,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ማዳኑን አስታወቀ፤ \\q በሕዝቦች ዓይን ፊት ጽድቁን ገለጠ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የማዳን ኃይሉን አሳወቀ፤ \\q ሕዝቦች እንዲያዩ ጽድቁን በግልጽ አሳየ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዴት እንደሚያድን ለሰው ሁሉ አሳየ። \\q ትክክል የሆነውን እንደሚያደርግ ሕዝቦች እንዲያዩ አደረገ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} ने अपना उद्धार प्रकट किया है; \\q जातियों की आँखों के सामने उन्होंने अपनी धार्मिकता प्रगट की है।",
+          "B": "{{divine_name:प्रभु|याहवे}} ने अपनी उद्धार करनेवाली शक्ति को प्रकट होने दिया है; \\q उन्होंने अपना न्याय खुलेआम दिखाया है ताकि देश-देश के लोग उसे देखें।",
+          "R": "{{divine_name:प्रभु|याहवे}} ने सबको दिखाया है कि वे कैसे उद्धार करते हैं। \\q उन्होंने देशों को यह देखने दिया है कि वे वही करते हैं जो सही है।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} дал знать своё спасение; \\q перед глазами народов {{deity_pronoun:он|Он}} открыл свою праведность.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} показал свою спасающую силу; \\q {{deity_pronoun:он|Он}} открыто явил свою справедливость на глазах у народов.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} показал всем, как {{deity_pronoun:он|Он}} спасает. \\q Он дал народам увидеть, что {{deity_pronoun:он|Он}} поступает справедливо."
         }
       },
       "decisions": [
@@ -389,6 +473,16 @@
           "L": "ለእስራኤል ቤት ጽኑ ፍቅሩንና ታማኝነቱን አሰበ፤ \\q የምድር ዳርቻዎች ሁሉ \\q የአምላካችንን ማዳን አዩ።",
           "B": "ለእስራኤል ሕዝብ ያለውን ጽኑ ፍቅሩንና ታማኝነቱን አስታወሰ፤ \\q የምድር ዳርቻዎች ሁሉ \\q አምላካችን እንዴት እንደሚያድን አዩ።",
           "R": "ለእስራኤል ሕዝብ ያለውን ጽኑ ፍቅሩን አልረሳም፤ የሰጣቸውንም ተስፋ ጠበቀ። \\q በምድር ዳርቻ የሚኖሩ ሰዎች ሁሉ \\q አምላካችን እኛን ሲያድን አዩ።"
+        },
+        "hi": {
+          "L": "उन्होंने इस्राएल के घराने के प्रति अपने अटल प्रेम और अपनी सच्चाई को स्मरण किया है; \\q पृथ्वी के सब छोरों ने \\q हमारे परमेश्वर का उद्धार देखा है।",
+          "B": "उन्होंने इस्राएल की प्रजा के प्रति अपने अटल प्रेम और विश्वासयोग्यता को ध्यान में रखा है; \\q पृथ्वी के सबसे दूर के स्थानों ने \\q देखा है कि हमारे परमेश्वर कैसे उद्धार करते हैं।",
+          "R": "वे इस्राएल के लोगों के प्रति अपने अटल प्रेम को नहीं भूले, और उन्होंने उनसे किए अपने वादे निभाए हैं। \\q पृथ्वी के सबसे दूर के स्थानों के लोगों ने \\q हमारे परमेश्वर को हमें बचाते देखा है।"
+        },
+        "ru": {
+          "L": "Он вспомнил свою неизменную любовь и свою верность к дому Израиля; \\q все концы земли увидели \\q спасение нашего Бога.",
+          "B": "Он не забыл свою неизменную любовь и верность к народу Израиля; \\q самые дальние края земли увидели, \\q как спасает наш Бог.",
+          "R": "Он не забыл о своей неизменной любви к народу Израиля, и {{deity_pronoun:он|Он}} сдержал данные им обещания. \\q Люди в самых дальних краях земли увидели, \\q как наш Бог спас нас."
         }
       },
       "decisions": [
@@ -497,6 +591,26 @@
           "reason": "Mary's song echoes this line in Luke 1:54, whose Portuguese says \"lembrando-se\" (L) and \"não se esqueceu\" (B), so the psalm uses the same verbs at those levels. The Hebrew has chesed, so \"amor leal\" stays where Luke's Greek has \"misericórdia\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980030021",
+            "o190980030032"
+          ],
+          "choice": "\"अटल प्रेम\" at every level; \"सच्चाई\" (L), \"विश्वासयोग्यता\" (B)",
+          "alternatives": [],
+          "reason": "God's hesed (meaning m1) is \"अटल प्रेम\" at every level, also where the English Readable says \"faithful love\"; his faithfulness is \"सच्चाई\" at Literal and \"विश्वासयोग्यता\" at Balanced, and Readable says what it did, as its English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -565,6 +679,16 @@
           "L": "ምድር ሁሉ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በደስታ ጩኹ፤ \\q ፈንድቁ፤ እልል በሉ፤ ዜማም አሰሙ።",
           "B": "ምድር ሁሉ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} የደስታ ጩኸት አሰሙ፤ \\q በደስታ መዝሙር ፈንድቁ፤ ዜማም አሰሙ!",
           "R": "በምድር ያላችሁ ሁሉ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}} በደስታ ጩኹ! \\q በደስታ ዘምሩ፤ በዜማ ዕቃም ተጫወቱ!"
+        },
+        "hi": {
+          "L": "हे सारी पृथ्वी, {{divine_name:प्रभु|याहवे}} का जयजयकार करो; \\q उमंग से भर जाओ और आनंद से गाओ और भजन गाओ।",
+          "B": "हे सारी पृथ्वी, {{divine_name:प्रभु|याहवे}} के लिए आनंद से जयजयकार करो; \\q आनंद के गीत गा उठो और संगीत बजाओ!",
+          "R": "पृथ्वी के सब लोगो, {{divine_name:प्रभु|याहवे}} का ख़ुशी से जयजयकार करो! \\q आनंद से गा उठो और संगीत बजाओ!"
+        },
+        "ru": {
+          "L": "Радостно кричите {{divine_name:ГОСПОДУ|Яхве}}, вся земля; \\q разразитесь ликованием, пойте и играйте.",
+          "B": "Поднимите радостный клич {{divine_name:ГОСПОДУ|Яхве}}, вся земля; \\q запойте радостную песнь и играйте!",
+          "R": "Все люди на земле, радостно кричите {{divine_name:ГОСПОДУ|Яхве}}! \\q Запойте радостную песню и играйте музыку!"
         }
       },
       "decisions": [
@@ -664,6 +788,16 @@
           "L": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በበገና ዘምሩ፤ \\q በበገናና በዝማሬ ድምፅ።",
           "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በበገና ዘምሩ፤ \\q በበገናና በመዝሙር ድምፅ!",
           "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} በበገና ተጫወቱ! \\q በገና እየደረደራችሁ መዝሙር ዘምሩለት!"
+        },
+        "hi": {
+          "L": "वीणा के साथ {{divine_name:प्रभु|याहवे}} का भजन गाओ, \\q वीणा और गीत के स्वर के साथ।",
+          "B": "वीणा पर {{divine_name:प्रभु|याहवे}} के लिए संगीत बजाओ, \\q वीणा और गीत की आवाज़ के साथ!",
+          "R": "वीणा पर {{divine_name:प्रभु|याहवे}} के लिए संगीत बजाओ! \\q वीणा बजाओ और उनके लिए गीत गाओ!"
+        },
+        "ru": {
+          "L": "Играйте {{divine_name:ГОСПОДУ|Яхве}} на лире, \\q на лире и со звуком песни.",
+          "B": "Играйте для {{divine_name:ГОСПОДА|Яхве}} на лире, \\q на лире, и пусть звучит песня!",
+          "R": "Играйте для {{divine_name:ГОСПОДА|Яхве}} на арфе! \\q Играйте на арфе и пойте {{deity_pronoun:ему|Ему}} песни!"
         }
       },
       "decisions": [
@@ -752,6 +886,25 @@
           "reason": "The English Readable says \"harp\" for a common word; \"수금\" is the word Korean readers know for this small stringed instrument (meaning decision m1) and is plain enough for Readable.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980050032"
+          ],
+          "choice": "\"वीणा\" at every level",
+          "alternatives": [],
+          "reason": "The kinnor (meaning m1) is \"वीणा\", as in 92:4 and 1 Chronicles 15-16 in this translation. The English Readable says \"harp\" as the more familiar word, but in Hindi \"वीणा\" is itself the familiar name of a stringed instrument, so Readable keeps it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -820,6 +973,16 @@
           "L": "በመለከቶችና በቀንድ መለከት ድምፅ \\q ንጉሥ በሆነው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት በደስታ ጩኹ።",
           "B": "መለከቶችና የቀንድ መለከት እየተነፉ \\q ንጉሥ በሆነው {{divine_name:በእግዚአብሔር|በያህዌ}} ፊት የደስታ ጩኸት አሰሙ።",
           "R": "መለከቶችንና የቀንድ መለከትን ንፉ! \\q ንጉሥ ለሆነው {{divine_name:ለእግዚአብሔር|ለያህዌ}} በደስታ እልል በሉ!"
+        },
+        "hi": {
+          "L": "तुरहियों और नरसिंगे के शब्द के साथ \\q राजा {{divine_name:प्रभु|याहवे}} के सामने जयजयकार करो।",
+          "B": "तुरहियाँ और नरसिंगा बजाते हुए \\q राजा {{divine_name:प्रभु|याहवे}} के सामने आनंद से जयजयकार करो।",
+          "R": "तुरहियाँ और नरसिंगा फूँको! \\q राजा {{divine_name:प्रभु|याहवे}} का आनंद से जयजयकार करो!"
+        },
+        "ru": {
+          "L": "С трубами и звуком бараньего рога \\q восклицайте перед Царём, {{divine_name:ГОСПОДОМ|Яхве}}.",
+          "B": "Под звуки труб и бараньего рога \\q поднимите радостный клич перед Царём, {{divine_name:ГОСПОДОМ|Яхве}}.",
+          "R": "Трубите в трубы и в бараний рог! \\q Радостно кричите {{divine_name:ГОСПОДУ|Яхве}}, Царю!"
         }
       },
       "decisions": [
@@ -917,6 +1080,27 @@
           "reason": "The silver trumpets keep the word of Numbers 10 on main. Where both instruments stand in one line the shofar is kept apart as \"የቀንድ መለከት\" at every level, as the Pentateuch has it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980060012",
+            "o190980060031",
+            "o190980060062"
+          ],
+          "choice": "\"तुरहियों\"; \"नरसिंगा\"; \"राजा {{divine_name:प्रभु|याहवे}}\"",
+          "alternatives": [],
+          "reason": "The metal trumpets and the ram's horn (meaning m1) are \"तुरही\" and \"नरसिंगा\", as in 1 Chronicles 15:28 in this translation. The LORD is hailed as King (meaning m2): Hindi puts the title first, \"राजा {{divine_name:प्रभु|याहवे}}\", as it does with a king's name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -985,6 +1169,16 @@
           "L": "ባሕርና ሞላዋ ይንጎድጓድ፤ \\q ዓለምና በእርሷ የሚኖሩ።",
           "B": "ባሕርና በውስጡ የሚኖር ሁሉ ይንጎድጓድ፤ \\q ዓለምና በእርሷ የሚኖሩ ሁሉ።",
           "R": "ባሕርና በውስጡ ያሉ ፍጥረታት ሁሉ ይጩኹ! \\q ዓለምና በእርሷ የሚኖሩ ሁሉ ይተባበሩ!"
+        },
+        "hi": {
+          "L": "समुद्र और जो कुछ उसमें भरा है, गरजे, \\q जगत और उसके निवासी।",
+          "B": "समुद्र और उसमें रहनेवाले सब गरजें, \\q जगत और उसमें रहनेवाले सब।",
+          "R": "समुद्र और उसके सब जीव-जंतु गरजें! \\q जगत और उसमें रहनेवाले सब लोग भी साथ दें!"
+        },
+        "ru": {
+          "L": "Пусть шумит море и то, что наполняет его, \\q вселенная и живущие в ней.",
+          "B": "Пусть гремит море со всем, что в нём живёт, \\q мир и все его жители.",
+          "R": "Пусть ревут море и все существа в нём! \\q Пусть мир и все, кто живёт в нём, присоединятся!"
         }
       },
       "decisions": [
@@ -1061,6 +1255,48 @@
           "reason": "The meaning decision notes that the line repeats 96:11, which is also 1 Chronicles 16:32; the Hebrew is the same, so the Amharic keeps the wording already drafted there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980070011",
+            "o190980070032"
+          ],
+          "choice": "the first line as Psalm 96:11",
+          "alternatives": [],
+          "reason": "The first line repeats Psalm 96:11 (meaning m1), so it keeps the Hindi of that verse (and of 1 Chronicles 16:32) at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980070011",
+            "o190980070022"
+          ],
+          "choice": "the first line as Psalm 96:11",
+          "alternatives": [
+            "a fresh wording"
+          ],
+          "reason": "The first line is the Hebrew of Psalm 96:11b and 1 Chronicles 16:32 (m1), so each level keeps that wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1124,6 +1360,16 @@
           "L": "ወንዞች እጅ ያጨብጭቡ፤ \\q ተራሮችም በአንድነት እልል ይበሉ",
           "B": "ወንዞች እጆቻቸውን ያጨብጭቡ፤ \\q ተራሮችም ሁሉ በአንድነት በደስታ ይዘምሩ፣",
           "R": "ወንዞች በደስታ ያጨብጭቡ፤ \\q ተራሮችም ሁሉ በአንድነት ይዘምሩ።"
+        },
+        "hi": {
+          "L": "नदियाँ ताली बजाएँ; \\q पहाड़ मिलकर जयजयकार करें",
+          "B": "नदियाँ अपने हाथों से ताली बजाएँ, \\q और सब पहाड़ एक साथ आनंद से गाएँ,",
+          "R": "नदियाँ आनंद से ताली बजाएँ, \\q और सब पहाड़ मिलकर गाएँ।"
+        },
+        "ru": {
+          "L": "Пусть реки хлопают [в] ладоши; \\q пусть все вместе горы поют от радости",
+          "B": "Пусть реки бьют в ладоши, \\q и горы все вместе поют от радости,",
+          "R": "Пусть реки хлопают от радости, \\q и пусть все горы поют вместе."
         }
       },
       "decisions": [
@@ -1229,6 +1475,16 @@
           "L": "{{divine_name:በእግዚአብሔር|በያህዌ}} ፊት፤ በምድር ላይ ሊፈርድ ይመጣልና። \\q ዓለምን በጽድቅ ይፈርዳል፤ \\q ሕዝቦችንም በቅንነት።",
           "B": "{{divine_name:በእግዚአብሔር|በያህዌ}} ፊት፤ በምድር ላይ ሊፈርድ በመምጣት ላይ ነውና። \\q ዓለምን በትክክል ያስተዳድራል፤ \\q ሕዝቦችንም በቅን ፍርድ።",
           "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} ይዘምሩ፤ ምክንያቱም በምድር ላይ ሊፈርድ ይመጣል። \\q ዓለምን በፍትሕ ይገዛል፤ \\q ሰዎችንም ሁሉ በቅንነት ይዳኛል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} के सामने, क्योंकि वे पृथ्वी का न्याय करने आते हैं। \\q वे धार्मिकता से जगत का न्याय करेंगे, \\q और सीधाई से देश-देश के लोगों का।",
+          "B": "{{divine_name:प्रभु|याहवे}} की उपस्थिति में, क्योंकि वे पृथ्वी का न्याय करने आ रहे हैं। \\q वे जगत पर धार्मिकता से शासन करेंगे \\q और देश-देश के लोगों पर निष्पक्षता से।",
+          "R": "वे {{divine_name:प्रभु|याहवे}} के लिए गाएँ, क्योंकि वे पृथ्वी का न्याय करने आ रहे हैं। \\q वे जगत पर न्याय से राज्य करेंगे \\q और सब लोगों के साथ निष्पक्षता से व्यवहार करेंगे।"
+        },
+        "ru": {
+          "L": "перед {{divine_name:ГОСПОДОМ|Яхве}}, потому что {{deity_pronoun:он|Он}} идёт судить землю. \\q Он будет судить вселенную по праведности \\q и племена — по правоте.",
+          "B": "перед {{divine_name:ГОСПОДОМ|Яхве}}, ведь {{deity_pronoun:он|Он}} уже в пути, чтобы судить землю. \\q Он установит справедливость в мире \\q и будет честно судить племена.",
+          "R": "Пусть они поют {{divine_name:ГОСПОДУ|Яхве}}, потому что {{deity_pronoun:он|Он}} идёт судить землю. \\q Он будет править миром справедливо \\q и поступать со всеми людьми честно."
         }
       },
       "decisions": [
@@ -1317,6 +1573,48 @@
           "choice": "\"for he comes to judge the earth\" as 1 Chronicles 16:33 on main (\"በምድር ላይ ሊፈርድ ይመጣልና\")",
           "alternatives": [],
           "reason": "The ending repeats 96:13 = 1 Chronicles 16:33, so the shared words keep the Chronicles wording; the last line, with \"uprightness\" (\"በቅንነት\"), is this psalm's own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980090041",
+            "o190980090112"
+          ],
+          "choice": "the wording of Psalm 96:13, with \"सीधाई\" (L) and \"निष्पक्षता\" (B, R) for uprightness",
+          "alternatives": [],
+          "reason": "The ending repeats Psalm 96:13 with \"uprightness\" in place of \"his faithfulness\" (meaning m1). Literal keeps the Hindi of 96:13 and changes only that word, using \"सीधाई\" as in 96:10; Balanced and Readable follow their own English (\"govern\", \"rule\") and say \"निष्पक्षता\", fairness, as in 96:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190980090052",
+            "o190980090062",
+            "o190980090071"
+          ],
+          "choice": "as Psalm 96:13",
+          "alternatives": [
+            "a fresh wording"
+          ],
+          "reason": "The verse repeats Psalm 96:13 (m1) with \"uprightness\" for \"his faithfulness\", so the shared words keep that wording.",
           "uncertain": false,
           "footnote": false
         }

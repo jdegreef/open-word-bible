@@ -60,6 +60,16 @@
           "L": "ለመዘምራን አለቃ፤ በይዱቱን። የዳዊት መዝሙር።",
           "B": "ለመዘምራን አለቃ። እንደ ይዱቱን ስልት። የዳዊት መዝሙር።",
           "R": "ለመዘምራን አለቃ። በይዱቱን የዜማ ስልት። ዳዊት የዘመረው መዝሙር።"
+        },
+        "hi": {
+          "L": "संगीत-निर्देशक के लिए: यदूतून पर। दाऊद का भजन।",
+          "B": "संगीत-निर्देशक के लिए। यदूतून के अनुसार। दाऊद का भजन।",
+          "R": "गायक-मंडली के अगुवे के लिए। यदूतून की शैली में। दाऊद का गीत।"
+        },
+        "ru": {
+          "L": "Руководителю хора: по Идифуну. Псалом Давида.",
+          "B": "Руководителю хора. По образцу Идифуна. Псалом Давида.",
+          "R": "Для руководителя музыкантов. В манере Идифуна. Песнь Давида."
         }
       },
       "decisions": [
@@ -256,6 +266,46 @@
           "reason": "The name of the temple singer keeps the form already used for him in Chronicles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620010031"
+          ],
+          "choice": "\"यदूतून पर\" (L), \"यदूतून के अनुसार\" (B), \"यदूतून की शैली में\" (R)",
+          "alternatives": [],
+          "reason": "Jeduthun keeps the form Chronicles has in this translation. The sense of \"on\" is uncertain (meaning m3): Literal keeps the bare preposition, Balanced and Readable choose the likeliest sense, as the English does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620010031"
+          ],
+          "choice": "\"Идифун\"",
+          "alternatives": [
+            "\"Иедутун\""
+          ],
+          "reason": "The traditional Russian form of the name, as in 1 Chronicles 16 and 25 in this translation.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -323,6 +373,16 @@
           "L": "ነፍሴ ወደ እግዚአብሔር ብቻ ጸጥ ብላለች፤ \\q መድኃኒቴ ከእርሱ ነው።",
           "B": "በእግዚአብሔር ፊት ብቻ ጸጥ እላለሁ፤ \\q መዳኔ ከእርሱ ይመጣል።",
           "R": "እንዲረዳኝ እግዚአብሔርን ብቻ በጸጥታ እጠብቃለሁ። \\q የሚያድነኝ እርሱ ነው።"
+        },
+        "hi": {
+          "L": "केवल परमेश्वर की ओर मेरा प्राण चुप [है]; \\q उन्हीं से मेरा उद्धार [है]।",
+          "B": "मैं केवल परमेश्वर के सामने शांत हूँ; \\q मेरा छुटकारा उन्हीं से आता है।",
+          "R": "मैं चुपचाप केवल परमेश्वर की बाट जोहता हूँ कि वे मेरी सहायता करें। \\q वे ही मुझे बचाते हैं।"
+        },
+        "ru": {
+          "L": "Лишь к Богу — безмолвие души моей; \\q от {{deity_pronoun:него|Него}} — спасение моё.",
+          "B": "Я безмолвно жду одного лишь Бога; \\q от {{deity_pronoun:него|Него}} приходит моё избавление.",
+          "R": "Я спокойно жду помощи только от Бога. \\q Он — тот, кто спасает меня."
         }
       },
       "decisions": [
@@ -461,6 +521,49 @@
           "reason": "The little word 'akh (m1) opens six lines of the psalm; Literal says \"Somente\" and Balanced \"Só\" each time (verses 2, 3, 5, 6, 7, 10), so the repetition can be heard as in the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190620020011",
+            "o190620020021"
+          ],
+          "choice": "no deity_pronoun span; honorific \"उन्हीं\", \"वे\" for God, \"तू\" to God (verse 13)",
+          "alternatives": [
+            "a capitalised pronoun, as the English \"Him\""
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi and the Hindi has no deity_pronoun spans (style guide, section 7). The psalm speaks of God with the honorific plural and turns to God with \"तू\" in verse 13. This holds for the whole psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620020011"
+          ],
+          "choice": "\"केवल\" for 'akh in verses 2, 3, 5, 6, 7 and 10",
+          "alternatives": [
+            "\"निश्चय\" (surely)"
+          ],
+          "reason": "The little word begins six lines and stresses God alone (meaning m1); Hindi keeps one word, \"केवल\", so the repetition shows, as the English keeps \"only\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -530,6 +633,16 @@
           "L": "ዓለቴና መድኃኒቴ፣ ምሽጌም እርሱ ብቻ ነው፤ \\q እጅግ አልናወጥም።",
           "B": "የሚያድነኝ ዓለቴ፣ ከፍ ያለ ምሽጌ እርሱ ብቻ ነው፤ \\q ክፉኛ አልናወጥም።",
           "R": "ጠንካራ ዓለቴ፣ የሚያድነኝ እርሱ ብቻ ነው። \\q ደኅና የምሆንበት ከፍ ያለና ጠንካራ ስፍራ ነው። \\q ክፉኛ አልናወጥም።"
+        },
+        "hi": {
+          "L": "केवल वे ही मेरी चट्टान और मेरा उद्धार, मेरा ऊँचा गढ़ [हैं]; \\q मैं बहुत न डगमगाऊँगा।",
+          "B": "केवल वे ही मेरी चट्टान हैं जो मुझे बचाते हैं, मेरा ऊँचा गढ़; \\q मैं बुरी तरह न डगमगाऊँगा।",
+          "R": "केवल वे ही मेरी दृढ़ चट्टान हैं, जो मुझे बचाते हैं। \\q वे एक ऊँचे, दृढ़ स्थान के समान हैं जहाँ मैं सुरक्षित हूँ। \\q मैं बुरी तरह नहीं डगमगाऊँगा।"
+        },
+        "ru": {
+          "L": "Лишь {{deity_pronoun:он|Он}} — скала моя и спасение моё, твердыня моя; \\q не поколеблюсь я сильно.",
+          "B": "Лишь {{deity_pronoun:он|Он}} — моя скала, мой спаситель, моя высокая твердыня; \\q я не буду сильно поколеблен.",
+          "R": "Только {{deity_pronoun:он|Он}} — моя крепкая скала, тот, кто спасает меня. \\q Он как высокое, надёжное место, где я в безопасности. \\q Ничто не сможет сильно поколебать меня."
         }
       },
       "decisions": [
@@ -597,6 +710,28 @@
             "wording varied line by line"
           ],
           "reason": "The psalm turns on these repeated lines; the Amharic changes only where the Hebrew does (\"be silent, my soul\", verse 6; \"not shaken\" without \"greatly\", verse 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620030031",
+            "o190620030051"
+          ],
+          "choice": "\"मेरी चट्टान\"; \"मेरा ऊँचा गढ़\"",
+          "alternatives": [
+            "\"मेरा गढ़\""
+          ],
+          "reason": "The poetry note's words for God as rock (tsur) and stronghold (misgav): \"चट्टान\" and \"ऊँचा गढ़\", a high place out of the enemy's reach (meaning m2). Verse 7 repeats them.",
           "uncertain": false,
           "footnote": false
         }
@@ -670,6 +805,16 @@
           "L": "በአንድ ሰው ላይ እስከ መቼ ትነሣላችሁ? ሁላችሁም ትደበድቡታላችሁን? \\q እንደ ዘመመ ቅጥር፣ \\q እንደሚወድቅ አጥር?",
           "B": "አንድን ሰው ለመጣል እስከ መቼ ሁላችሁ በእርሱ ላይ ትሮጣላችሁ? \\q ያዘመመ ቅጥር \\q ሊወድቅ የቀረበ አጥር ይመስል?",
           "R": "ሁላችሁም እስከ መቼ ታጠቁኛላችሁ? \\q ያዘመመ ግድግዳ፣ ሊወድቅ እንደ ደረሰ አጥር አድርጋችሁ ትቆጥሩኛላችሁ፤ \\q ልትጥሉኝም ትገፉኛላችሁ።"
+        },
+        "hi": {
+          "L": "तुम कब तक एक मनुष्य पर टूट पड़ोगे? क्या तुम सब [उसे] मार गिराओगे, \\q झुकी हुई दीवार के समान, \\q गिरते हुए बाड़े के समान?",
+          "B": "तुम सब कब तक एक ही मनुष्य पर धावा बोलकर उसे गिराना चाहोगे, \\q मानो वह झुकी हुई दीवार हो, \\q गिरने को तैयार बाड़ा?",
+          "R": "तुम सब कब तक मुझ पर हमला करते रहोगे? \\q तुम मुझसे ऐसा व्यवहार करते हो मानो मैं पहले से झुकी हुई दीवार हूँ, गिरने को तैयार बाड़ा, \\q और तुम मुझे धक्का देकर गिराना चाहते हो।"
+        },
+        "ru": {
+          "L": "Доколе будете нападать на человека? [Будете] бить [его], все вы, \\q как стену накренившуюся, \\q ограду шатающуюся?",
+          "B": "Доколе вы все будете бросаться на одного человека, чтобы его сокрушить, \\q словно он накренившаяся стена, \\q ограда, что вот-вот рухнет?",
+          "R": "Сколько ещё вы все будете нападать на меня? \\q Вы обращаетесь со мной, как со стеной, которая уже накренилась, как с забором, который вот-вот упадёт, \\q и толкаете, чтобы свалить меня."
         }
       },
       "decisions": [
@@ -781,6 +926,27 @@
           "reason": "The psalmist turns on his attackers; \"các ngươi\" keeps the distance used for enemies through this block of psalms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190620040021"
+          ],
+          "choice": "\"तुम\" to the attackers",
+          "alternatives": [
+            "\"आप\""
+          ],
+          "reason": "The psalmist speaks to his enemies, so Hindi uses \"तुम\", as the poetry note sets for people the psalmist addresses.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -857,6 +1023,16 @@
           "L": "ከከፍታው ሊገፉት ብቻ ይመካከራሉ፤ በሐሰት ደስ ይላቸዋል፤ \\q በአፉ ይባርካሉ፤ \\q በውስጣቸው ግን ይረግማሉ። ሴላ",
           "B": "ዕቅዳቸው ሁሉ ከክብሩ ስፍራ ሊያወርዱት ብቻ ነው፤ ሐሰትን ይወዳሉ። \\q ከንፈሮቻቸው ይመርቃሉ፤ \\q በውስጣቸው ግን ይረግማሉ። ሴላ",
           "R": "የሚፈልጉት ሁሉ ከከፍታዬ ሊጎትቱኝ ነው። መዋሸት ይወዳሉ። \\q ደግ ቃል ይናገራሉ፤ \\q በውስጣቸው ግን ይረግሙኛል። ሴላ"
+        },
+        "hi": {
+          "L": "केवल उसके ऊँचे पद से [उसे] गिरा देने की वे युक्ति करते हैं; वे झूठ से प्रसन्न होते हैं; \\q अपने मुँह से वे आशीर्वाद देते हैं, \\q पर भीतर ही भीतर शाप देते हैं। सेला",
+          "B": "उनकी एक ही युक्ति है कि उसे उसके ऊँचे स्थान से गिरा दें; उन्हें झूठ प्यारा है। \\q उनके होंठ आशीर्वाद के शब्द बोलते हैं, \\q पर भीतर वे शाप देते हैं। सेला",
+          "R": "वे बस यही चाहते हैं कि मुझे मेरे ऊँचे स्थान से नीचे गिरा दें। उन्हें झूठ बोलना अच्छा लगता है। \\q वे मीठी बातें कहते हैं, \\q पर मन ही मन मुझे शाप देते हैं। सेला"
+        },
+        "ru": {
+          "L": "Лишь [о том] замышляют, [чтобы] низвергнуть [его] с высоты его; любят ложь; \\q устами своими благословляют, \\q а внутри себя проклинают. Села",
+          "B": "Один у них замысел — сбросить его с высоты; они любят ложь. \\q Их губы произносят благословение, \\q а в душе они проклинают. Села",
+          "R": "Они только и хотят, чтобы сбросить меня с моей высоты. Они любят лгать. \\q На словах они говорят добрые слова, \\q а в душе проклинают меня. Села"
         }
       },
       "decisions": [
@@ -985,6 +1161,25 @@
           "reason": "Its meaning is unknown (see the meaning decision on Selah), so every level keeps the word rather than guess, and keeps it apart from the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620050072"
+          ],
+          "choice": "\"अपने मुँह से\"",
+          "alternatives": [
+            "\"उसके मुँह से\""
+          ],
+          "reason": "The Hebrew \"his mouth\" means each one's own mouth (meaning m3). Hindi \"उसके मुँह से\" would point to the man they attack, so Literal uses the reflexive \"अपने\", which refers back to each speaker.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1053,6 +1248,16 @@
           "L": "ነፍሴ ሆይ፣ ወደ እግዚአብሔር ብቻ ጸጥ በዪ፤ \\q ተስፋዬ ከእርሱ ነውና።",
           "B": "ነፍሴ ሆይ፣ በእግዚአብሔር ፊት ብቻ ጸጥ በዪ፤ \\q የተስፋዬ ምንጭ እርሱ ነውና።",
           "R": "እግዚአብሔርን ብቻ በጸጥታ መጠበቅ አለብኝ፤ \\q ተስፋ የሚሰጠኝ እርሱ ነውና።"
+        },
+        "hi": {
+          "L": "हे मेरे प्राण, केवल परमेश्वर की ओर चुप रहो, \\q क्योंकि उन्हीं से मेरी आशा [है]।",
+          "B": "हे मेरे मन, केवल परमेश्वर के सामने शांत रहो, \\q क्योंकि मेरी आशा उन्हीं से आती है।",
+          "R": "मुझे चुपचाप केवल परमेश्वर की बाट जोहनी है, \\q क्योंकि वे ही मुझे आशा देते हैं।"
+        },
+        "ru": {
+          "L": "Лишь к Богу безмолвствуй, душа моя, \\q потому что от {{deity_pronoun:него|Него}} — надежда моя.",
+          "B": "Затихни перед одним лишь Богом, душа моя, \\q потому что {{deity_pronoun:он|Он}} — источник моей надежды.",
+          "R": "Мне нужно спокойно ждать одного лишь Бога, \\q потому что именно {{deity_pronoun:он|Он}} даёт мне надежду."
         }
       },
       "decisions": [
@@ -1149,6 +1354,26 @@
           "reason": "The psalmist speaks to his own soul (m2); Portuguese poetry addresses the soul with \"tu\" (\"minha alma, aquieta-te\"), as the psalms do in prayer, rather than with the \"você\" used between people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620060041"
+          ],
+          "choice": "\"हे मेरे प्राण\" (L), \"हे मेरे मन\" (B); the soul addressed with तुम (चुप रहो, शांत रहो)",
+          "alternatives": [
+            "\"हे मेरे प्राण\" at both levels"
+          ],
+          "reason": "The poetry note has nefesh as \"प्राण\" at Literal, and at Balanced the word the sense needs: here the psalmist speaks to his inner self (meaning m2), which Hindi calls \"मन\". As in the refrain of Psalms 42-43, the psalmist's own soul is addressed with तुम, since तू is kept for speech to God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1217,6 +1442,16 @@
           "L": "ዓለቴና መድኃኒቴ፣ ምሽጌም እርሱ ብቻ ነው፤ \\q አልናወጥም።",
           "B": "የሚያድነኝ ዓለቴ፣ ከፍ ያለ ምሽጌ እርሱ ብቻ ነው፤ \\q አልናወጥም።",
           "R": "ጠንካራ ዓለቴ፣ የሚያድነኝ እርሱ ብቻ ነው። \\q ደኅና የምሆንበት ከፍ ያለና ጠንካራ ስፍራ ነው። \\q ምንም አያናውጠኝም።"
+        },
+        "hi": {
+          "L": "केवल वे ही मेरी चट्टान और मेरा उद्धार, मेरा ऊँचा गढ़ [हैं]; \\q मैं न डगमगाऊँगा।",
+          "B": "केवल वे ही मेरी चट्टान हैं जो मुझे बचाते हैं, मेरा ऊँचा गढ़; \\q मैं न डगमगाऊँगा।",
+          "R": "केवल वे ही मेरी दृढ़ चट्टान हैं, जो मुझे बचाते हैं। \\q वे एक ऊँचे, दृढ़ स्थान के समान हैं जहाँ मैं सुरक्षित हूँ। \\q कोई भी चीज़ मुझे डगमगा नहीं सकेगी।"
+        },
+        "ru": {
+          "L": "Лишь {{deity_pronoun:он|Он}} — скала моя и спасение моё, твердыня моя; \\q не поколеблюсь я.",
+          "B": "Лишь {{deity_pronoun:он|Он}} — моя скала, мой спаситель, моя высокая твердыня; \\q я не буду поколеблен.",
+          "R": "Только {{deity_pronoun:он|Он}} — моя крепкая скала, тот, кто спасает меня. \\q Он как высокое, надёжное место, где я в безопасности. \\q Ничто меня не поколеблет."
         }
       },
       "decisions": [
@@ -1322,6 +1557,16 @@
           "L": "መድኃኒቴና ክብሬ በእግዚአብሔር ላይ ነው፤ \\q የብርታቴ ዓለት፣ መጠጊያዬ በእግዚአብሔር ነው።",
           "B": "መዳኔና ክብሬ በእግዚአብሔር ላይ የተመሠረቱ ናቸው፤ \\q የብርታቴ ዓለትና መጠለያዬ በእግዚአብሔር ዘንድ ናቸው።",
           "R": "እግዚአብሔር ያድነኛል፤ ክብርም ይሰጠኛል። \\q እግዚአብሔር ጠንካራ ዓለቴ ነው። ደኅና የምሆንበት ስፍራ እርሱ ነው።"
+        },
+        "hi": {
+          "L": "परमेश्वर पर मेरा उद्धार और मेरी महिमा [टिकी है]; \\q मेरी सामर्थ्य की चट्टान, मेरा शरणस्थान परमेश्वर में [है]।",
+          "B": "मेरा छुटकारा और मेरा सम्मान परमेश्वर पर टिका है; \\q मेरी सामर्थ्य की चट्टान और मेरा शरणस्थान परमेश्वर में है।",
+          "R": "परमेश्वर मुझे बचाते हैं और मुझे सम्मान देते हैं। \\q परमेश्वर मेरी दृढ़ चट्टान हैं। वे ही वह स्थान हैं जहाँ मैं सुरक्षित हूँ।"
+        },
+        "ru": {
+          "L": "На Боге [покоится] спасение моё и слава моя; \\q скала силы моей, прибежище моё — в Боге.",
+          "B": "На Боге держатся моё спасение и моя честь; \\q моя крепкая скала и моё прибежище — в Боге.",
+          "R": "Бог спасает меня и даёт мне честь. \\q Бог — моя крепкая скала. Он — место, где я в безопасности."
         }
       },
       "decisions": [
@@ -1413,6 +1658,16 @@
           "L": "ሕዝብ ሆይ፣ በማንኛውም ጊዜ በእርሱ ታመኑ፤ \\q ልባችሁን በፊቱ አፍስሱ፤ \\q እግዚአብሔር ለእኛ መጠጊያ ነው። ሴላ",
           "B": "ሕዝብ ሆይ፣ በየጊዜው በእርሱ ተደገፉ፤ \\q ልባችሁን በፊቱ አፍስሱ። \\q እግዚአብሔር መጠለያችን ነው። ሴላ",
           "R": "ሰዎች ሁሉ፣ ሁልጊዜ በእግዚአብሔር ታመኑ! \\q በልባችሁ ያለውን ሁሉ ንገሩት። \\q የሚጠብቀን እግዚአብሔር ነው። ሴላ"
+        },
+        "hi": {
+          "L": "हे लोगो, हर समय उन पर भरोसा रखो; \\q उनके सामने अपना हृदय उँडेल दो; \\q परमेश्वर हमारे लिए शरणस्थान [हैं]। सेला",
+          "B": "हे लोगो, हर समय उन्हीं पर भरोसा रखो; \\q उनके सामने अपने मन की सारी बात उँडेल दो। \\q परमेश्वर हमारा शरणस्थान हैं। सेला",
+          "R": "हे सब लोगो, हर समय परमेश्वर पर भरोसा रखो! \\q जो कुछ तुम्हारे मन में है, वह सब उन्हें बता दो। \\q परमेश्वर ही हमें सुरक्षित रखते हैं। सेला"
+        },
+        "ru": {
+          "L": "Надейтесь на {{deity_pronoun:него|Него}} во всякое время, люди; \\q изливайте перед {{deity_pronoun:ним|Ним}} сердце ваше; \\q Бог — прибежище для нас. Села",
+          "B": "Люди, полагайтесь на {{deity_pronoun:него|Него}} во всякое время; \\q изливайте перед {{deity_pronoun:ним|Ним}} свои сердца. \\q Бог — наше прибежище. Села",
+          "R": "Все люди, всегда доверяйте Богу! \\q Рассказывайте {{deity_pronoun:ему|Ему}} всё, что у вас на сердце. \\q Бог — тот, кто нас хранит. Села"
         }
       },
       "decisions": [
@@ -1575,6 +1830,16 @@
           "L": "የአዳም ልጆች እስትንፋስ ብቻ ናቸው፤ የሰው ልጆችም ሐሰት ናቸው፤ \\q በሚዛን ላይ ወደ ላይ ይወጣሉ፤ \\q በአንድነት ከእስትንፋስ ይቀልላሉ።",
           "B": "ተራ ሰዎች እስትንፋስ ብቻ ናቸው፤ ታላላቆቹም ሐሰት ናቸው፤ \\q በሚዛን ላይ ቢቀመጡ ወደ ላይ ይነሣሉ፤ \\q ሁሉም በአንድ ላይ ከእስትንፋስ ያነሰ ይመዝናሉ።",
           "R": "ተራ ሰዎች እንደ እስትንፋስ ቀላል ናቸው። \\q ታላላቅ ሰዎችም ቢሆኑ የሚታመኑ አይደሉም። \\q ሁሉንም በሚዛን ላይ ብታስቀምጣቸው ከአየር ያነሰ ይመዝናሉ።"
+        },
+        "hi": {
+          "L": "केवल एक साँस [हैं] मनुष्य की सन्तान, एक झूठ [हैं] पुरुष की सन्तान; \\q तराज़ू में [वे] ऊपर उठ जाते हैं; \\q वे सब मिलकर साँस से भी हल्के [हैं]।",
+          "B": "साधारण लोग बस एक साँस हैं, और बड़े लोग एक धोखा; \\q तराज़ू पर रखो तो वे ऊपर उठ जाते हैं; \\q सब मिलकर भी वे एक साँस से कम तौलते हैं।",
+          "R": "साधारण लोग हवा के झोंके जैसे हल्के हैं। \\q बड़े लोगों पर भी भरोसा नहीं किया जा सकता। \\q उन सब को तराज़ू पर रखो, तो वे हवा से भी कम तौलेंगे।"
+        },
+        "ru": {
+          "L": "Лишь дуновение — сыны человеческие, ложь — сыны мужей; \\q на весах [они] поднимаются; \\q они вместе легче дуновения.",
+          "B": "Простые люди — лишь дуновение, а знатные — обман; \\q положи их на весы — они поднимутся; \\q все вместе они легче дуновения.",
+          "R": "Простые люди легки, как дыхание ветра. \\q И важным людям тоже нельзя доверять. \\q Положи их всех на весы — они весят меньше воздуха."
         }
       },
       "decisions": [
@@ -1685,6 +1950,26 @@
           "reason": "Amharic has one everyday word, \"ሰው\", for both Hebrew words; \"የአዳም ልጆች\", a common Amharic phrase for human beings, lets Literal keep the pair apart, which the meaning decision reads as low and high.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620100031",
+            "o190620100061"
+          ],
+          "choice": "\"मनुष्य की सन्तान\", \"पुरुष की सन्तान\"",
+          "alternatives": [
+            "\"मनुष्य की सन्तान\" twice"
+          ],
+          "reason": "The Hebrew has two different words for man (bene 'adam, bene 'ish), probably the lowly and the important (meaning m2). Literal keeps two words so the pair shows; Balanced and Readable say \"ordinary people\" and \"the great\", as the English does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1757,6 +2042,16 @@
           "L": "በቅሚያ አትታመኑ፤ በዝርፊያም ከንቱ አትሁኑ፤ \\q ሀብት ቢበዛ፣ \\q ልባችሁን [በእርሱ ላይ] አታኑሩ።",
           "B": "በግፍ በምታገኙት አትደገፉ፤ ዝርፊያም ከንቱ ተስፋ አይሙላባችሁ፤ \\q ሀብት ቢበዛ እንኳ \\q ልባችሁን አትስጡት።",
           "R": "በማታለልም ሆነ በመስረቅ በምታገኙት ገንዘብ አትታመኑ። ከንቱ ነው። \\q ሀብታም ብትሆኑም እንኳ \\q ሀብት ከሁሉ አብልጣችሁ የምትወዱት ነገር አይሁን።"
+        },
+        "hi": {
+          "L": "अंधेर पर भरोसा मत रखो, और लूट के भरोसे व्यर्थ मत बनो; \\q धन, यदि वह बढ़े, \\q तो [उस पर] मन मत लगाओ।",
+          "B": "ज़बरदस्ती से कमाई हुई चीज़ों पर भरोसा मत रखो, और लूट से झूठी आशाएँ मत बाँधो; \\q यदि धन बढ़ता जाए, \\q तो उसे अपना मन मत दो।",
+          "R": "धोखे या चोरी से कमाए हुए पैसे पर भरोसा मत रखो। वह किसी काम का नहीं। \\q चाहे तुम धनी भी हो जाओ, \\q तो भी धन को अपने लिए सबसे प्यारी चीज़ मत बनने दो।"
+        },
+        "ru": {
+          "L": "Не надейтесь на притеснение и на грабёж не уповайте впустую; \\q богатство, если умножится, \\q не прилагайте [к нему] сердца.",
+          "B": "Не полагайтесь на добытое силой и не тешьте себя пустыми надеждами на грабёж; \\q если богатство умножится, \\q не отдавайте ему сердца.",
+          "R": "Не надейтесь на деньги, добытые обманом или кражей. Они ничего не стоят. \\q Даже если вы разбогатеете, \\q не позволяйте богатству стать тем, что вы любите больше всего."
         }
       },
       "decisions": [
@@ -1854,6 +2149,16 @@
           "L": "እግዚአብሔር አንድ ጊዜ ተናገረ፤ \\q ይህንም ሁለት ጊዜ ሰማሁ፤ \\q ብርታት የእግዚአብሔር እንደ ሆነ፣",
           "B": "እግዚአብሔር አንድ ነገር ተናግሯል፤ \\q እኔም ሁለት ጊዜ ሰምቼዋለሁ፤ \\q ብርታት የእግዚአብሔር እንደ ሆነ፣",
           "R": "እግዚአብሔር ተናግሯል፤ እኔም ይህን ደጋግሜ ሰምቻለሁ፤ \\q እግዚአብሔር ብርቱ ነው።"
+        },
+        "hi": {
+          "L": "एक बार परमेश्वर ने कहा है; \\q दो बार मैंने यह सुना है: \\q कि सामर्थ्य परमेश्वर की [है],",
+          "B": "परमेश्वर ने एक बात कही है, \\q और मैंने उसे दो बार सुना है: \\q कि सामर्थ्य परमेश्वर की है,",
+          "R": "परमेश्वर ने कहा है, और मैंने यह बार-बार सुना है: \\q परमेश्वर सामर्थी हैं।"
+        },
+        "ru": {
+          "L": "Однажды сказал Бог, \\q дважды я слышал это: \\q что сила — у Бога,",
+          "B": "Бог сказал одно, \\q а я услышал это дважды: \\q что сила принадлежит Богу,",
+          "R": "Бог сказал, и я слышал это снова и снова: \\q Бог силён."
         }
       },
       "decisions": [
@@ -1972,6 +2277,16 @@
           "L": "ጌታዬ ሆይ፣ ጽኑ ፍቅርም የአንተ እንደ ሆነ፤ \\q አንተ ለእያንዳንዱ እንደ ሥራው ትከፍለዋለህና።",
           "B": "ጌታ ሆይ፣ ጽኑ ፍቅርም የአንተ እንደ ሆነ፤ \\q ለእያንዳንዱ ሰው እንደ ሥራው ትከፍለዋለህና።",
           "R": "ጌታ ሆይ፣ ፍቅርህ ጽኑ ነው። \\q ለእያንዳንዱ ሰው እንዳደረገው ትከፍለዋለህ።"
+        },
+        "hi": {
+          "L": "और हे मेरे प्रभु, अटल प्रेम तेरा [है]; \\q क्योंकि तू हर एक को उसके कामों के अनुसार बदला देता है।",
+          "B": "और हे प्रभु, अटल प्रेम तेरा है; \\q क्योंकि तू हर एक को उसके कामों के अनुसार फल देता है।",
+          "R": "हे प्रभु, तेरा प्रेम अटल है। \\q तू हर व्यक्ति को उसके कामों का बदला देता है।"
+        },
+        "ru": {
+          "L": "и у {{deity_pronoun:тебя|Тебя}}, Господь мой, — неизменная любовь; \\q потому что {{deity_pronoun:ты|Ты}} воздаёшь каждому по его делам.",
+          "B": "и {{deity_pronoun:тебе|Тебе}}, Господи, принадлежит неизменная любовь; \\q потому что {{deity_pronoun:ты|Ты}} воздаёшь каждому по его делам.",
+          "R": "И {{deity_pronoun:твоя|Твоя}} любовь неизменна, Господи. \\q Ты воздаёшь каждому человеку за то, что тот сделал."
         }
       },
       "decisions": [
@@ -2168,6 +2483,136 @@
             "a span as in the English Literal"
           ],
           "reason": "\"ለእያንዳንዱ\" and the suffix of \"ሥራው\" already cover men and women, as in Romans 2:6; Amharic has no second wording for the setting to switch to.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190620130041"
+          ],
+          "choice": "\"प्रभु\" for Adonai, with no divine_name span",
+          "alternatives": [
+            "\"स्वामी\""
+          ],
+          "reason": "Hindi \"प्रभु\" stands both for the divine name and for Adonai (\"Lord\"), as in the earlier books. The divine name is always in a divine_name span (setting: \"याहवे\"); Adonai, as here, is plain \"प्रभु\", so with the setting on a reader can tell the two apart. Literal keeps \"my Lord\" (\"हे मेरे प्रभु\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620130061",
+            "o190620130072",
+            "o190620130082"
+          ],
+          "choice": "\"तू हर एक को उसके कामों के अनुसार बदला देता है\" (L), \"... फल देता है\" (B), \"तू हर व्यक्ति को उसके कामों का बदला देता है\" (R)",
+          "alternatives": [
+            "\"उसके काम के अनुसार\" (singular)"
+          ],
+          "reason": "Romans 2:6 quotes this line (meaning m2), and the Hebrew says the same, so each level keeps the Hindi wording of Romans 2:6 at that level, turned to address God with \"तू\". The Hebrew's singular \"work\" is collective, so the plural \"कामों\" of Romans fits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190620130072",
+            "o190620130082"
+          ],
+          "choice": "\"हर एक\", \"उसके\", with no gender span",
+          "alternatives": [
+            "a span such as the English \"each person|a man\""
+          ],
+          "reason": "Hindi \"हर एक\" (each one) and \"उसके\" do not show gender, so the wording the English setting offers is already inclusive in Hindi and there is nothing for a span to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-4",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620130031"
+          ],
+          "choice": "\"अटल प्रेम\" (L, B), \"तेरा प्रेम अटल है\" (R)",
+          "alternatives": [
+            "\"करुणा\""
+          ],
+          "reason": "God's chesed is \"अटल प्रेम\" at every level (meaning m1, poetry note); Readable makes it the predicate, as the English \"your love is faithful\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620130061",
+            "o190620130072",
+            "o190620130082"
+          ],
+          "choice": "\"воздаёшь каждому по его делам\" (L, B); \"воздаёшь каждому человеку за то, что тот сделал\" (R)",
+          "alternatives": [
+            "\"отплачиваешь каждому по делу его\""
+          ],
+          "reason": "Romans 2:6 quotes this line; each level keeps the wording of Romans 2:6 in this translation, turned to address God as the psalm does. \"каждому\" is already inclusive, so Russian needs no gender span where the English Literal has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190620130021",
+            "o190620130022"
+          ],
+          "choice": "\"Господь мой\" (L); \"Господи\" (B, R)",
+          "alternatives": [
+            "\"Владыка\""
+          ],
+          "reason": "Adonai is Господь, never in capitals, so readers can tell it from the divine name ГОСПОДЬ; Literal keeps \"my\".",
           "uncertain": false,
           "footnote": false
         }
