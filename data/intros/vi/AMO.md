@@ -32,7 +32,7 @@ A-mốt nói tiên tri "dưới triều Ô-xia vua Giu-đa và dưới triều G
 
 **Những con bò cái Ba-san (4:1).** Lời này nói với những phụ nữ giàu có ở Sa-ma-ri, vì các động từ ở giống cái. Một quyết định nói như vậy, và được đánh dấu là chưa chắc chắn.
 
-**A-mốt bản Hy Lạp trong Công Vụ (9:11–12; 5:25–27).** Gia-cơ trích A-mốt 9:11–12 tại hội nghị ở Giê-ru-sa-lem (Công Vụ 15:16–17), và Ê-tiên trích A-mốt 5:25–27 (Công Vụ 7:42–43), cả hai đều theo bản dịch Hy Lạp, là bản khác với bản Hê-bơ-rơ. Bản nháp theo bản Hê-bơ-rơ, và các quyết định cùng phần ghi chú giải thích bản Hy Lạp. Xem [Tân Ước trích dẫn Cựu Ước như thế nào](/articles/how-the-new-testament-quotes-the-old/).
+**Bản Hy Lạp của A-mốt trong Công Vụ (9:11–12; 5:25–27).** Gia-cơ trích A-mốt 9:11–12 tại hội nghị ở Giê-ru-sa-lem (Công Vụ 15:16–17), và Ê-tiên trích A-mốt 5:25–27 (Công Vụ 7:42–43), cả hai đều theo bản dịch Hy Lạp, là bản khác với bản Hê-bơ-rơ. Bản nháp theo bản Hê-bơ-rơ, và các quyết định cùng phần ghi chú giải thích bản Hy Lạp. Xem [Tân Ước trích dẫn Cựu Ước như thế nào](/articles/how-the-new-testament-quotes-the-old/).
 
 **Thơ.** Phần lớn sách A-mốt được viết bằng thơ Hê-bơ-rơ, và bản nháp trình bày theo từng dòng. Xem [Thơ Hê-bơ-rơ và phép song hành](/articles/hebrew-poetry-and-parallelism/).
 
