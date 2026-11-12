@@ -991,8 +991,9 @@ class SiteTest(unittest.TestCase):
         if not any("es" in r["renderings"] for r in records) and "es" not in build_site.summaries()[("1TI", 5)]:
             page = (self.out / "es" / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
             self.assertIn('<p class="chapter-summary" lang="en">', page)
-        with_es = [{"renderings": {"en": {}, "es": {}}}]
-        self.assertEqual(build_site.chapter_summary("1TI", 5, with_es, "es"), "")
+        # A chapter whose text has a language its summary lacks shows none.
+        with_xx = [{"renderings": {"en": {}, "xx": {}}}]
+        self.assertEqual(build_site.chapter_summary("1TI", 5, with_xx, "xx"), "")
         self.assertEqual(build_site.chapter_summary("JHN", 999, records, "en"), "")
 
     def test_chapter_strip_shows_the_whole_book(self):
