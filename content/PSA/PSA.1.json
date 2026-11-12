@@ -74,6 +74,16 @@
           "L": "ምስጉን ነው በኃጥኣን ምክር የማይሄድ ሰው፣ \\q በኃጢአተኞችም መንገድ የማይቆም፣ \\q በፌዘኞችም መቀመጫ የማይቀመጥ!",
           "B": "የተባረከ ነው በክፉዎች ምክር የማይመራ ሰው፣ \\q ኃጢአተኞች በሚሄዱበት ጎዳና የማይቆም፣ \\q ፌዘኞችም በሚሰበሰቡበት የማይቀመጥ!",
           "R": "የክፉ ሰዎችን ምክር የማይከተል ሰው በእውነት ደስተኛ ነው፤ \\q ከኃጢአተኞች ጋር በመንገድ አይቆምም፤ \\q ከሚያፌዙ ሰዎችም ጋር አይቀመጥም።"
+        },
+        "hi": {
+          "L": "कितना धन्य [है] वह {{gender:व्यक्ति|आदमी}} जो दुष्टों की सम्मति में नहीं चलता, \\q और पापियों के मार्ग में खड़ा नहीं होता, \\q और ठट्ठा करनेवालों की बैठक में नहीं बैठता!",
+          "B": "कितना धन्य है वह {{gender:व्यक्ति|आदमी}} जो दुष्टों की सलाह पर नहीं चलता, \\q न उस मार्ग पर खड़ा होता है जिस पर पापी चलते हैं, \\q न वहाँ बैठता है जहाँ ठट्ठा करनेवाले जमा होते हैं!",
+          "R": "उस व्यक्ति का जीवन सचमुच अच्छा है जो दुष्ट लोगों की सलाह पर नहीं चलता, \\q पापियों के साथ उनके रास्ते पर खड़ा नहीं होता, \\q और मज़ाक़ उड़ानेवालों के साथ नहीं बैठता।"
+        },
+        "ru": {
+          "L": "Блажен {{gender:человек|муж}}, который не ходит по совету нечестивых, \\q и на пути грешников не стоит, \\q и на месте насмешников не сидит!",
+          "B": "Блажен тот, кто не следует советам нечестивых, \\q не стоит на пути, которым идут грешники, \\q не сидит там, где собираются насмешники!",
+          "R": "Счастлив человек, который не слушается советов злых людей, \\q не стоит на одной дороге с грешниками \\q и не садится рядом с теми, кто насмехается."
         }
       },
       "decisions": [
@@ -536,6 +546,157 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "\"{{divine_name:प्रभु|याहवे}}\" for the name YHWH; \"प्रभु\" also for the title Adonai",
+          "alternatives": [
+            "\"यहोवा\""
+          ],
+          "reason": "In Hindi \"प्रभु\" stands both for the divine name YHWH (\"the LORD\") and for the title Adonai (\"the Lord\", as in 2:4). Wherever the Hebrew has the name, the text carries the divine_name setting, whose alternative \"याहवे\" gives the name itself; with it on, a reader can tell the two apart, because only the name changes. God takes honorific plural agreement in both options, as in the earlier books of this translation. \"यहोवा\" is not used. This holds for the whole book of Psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010011"
+          ],
+          "choice": "\"कितना धन्य है\" (L, B); \"... का जीवन सचमुच अच्छा है\" (R)",
+          "alternatives": [
+            "\"सुखी\"",
+            "\"ख़ुश\""
+          ],
+          "reason": "The exclamation (ashrei) speaks of a life that truly goes well (meaning m1). Literal and Balanced say \"धन्य\", the word of the beatitudes and of Romans 4:7-8 (Psalm 32:1-2) in this translation; Readable says what the word means, as the English does, since \"ख़ुश\" sounds like a passing mood. This wording holds wherever the psalms have ashrei (2:12 and later).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010062",
+            "o190010010071",
+            "o190010010083",
+            "o190010010131"
+          ],
+          "choice": "\"दुष्टों की सम्मति\" (L), \"दुष्टों की सलाह\" (B, R); \"मार्ग\" (L, B), \"रास्ता\" (R); \"ठट्ठा करनेवाले\" (L, B), \"मज़ाक़ उड़ानेवाले\" (R)",
+          "alternatives": [
+            "\"युक्ति\"",
+            "\"राह\""
+          ],
+          "reason": "Counsel is advice and plans (meaning m4): Literal keeps the weightier \"सम्मति\", Balanced and Readable the everyday \"सलाह\". The way, a whole way of life (1:6), is \"मार्ग\" at Literal and Balanced and \"रास्ता\" or \"जीवन\" at Readable as the English level says it. Mockers are \"ठट्ठा करनेवाले\", the word the Proverbs note gives for those who scorn correction (meaning m5). These forms hold through the psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-4",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010022"
+          ],
+          "choice": "\"{{gender:व्यक्ति|आदमी}}\"",
+          "alternatives": [],
+          "reason": "As in the English, the masculine word describes anyone who lives this way (meaning m2), so the gender setting offers \"व्यक्ति\" by default and \"आदमी\", as James 1:12 in this translation. Readable says \"व्यक्ति\" with no span, as the English says \"the person\". The pronoun \"वह\" in verses 2-3 is the same for a man or a woman, so the Hindi needs no span where the English has one there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010011"
+          ],
+          "choice": "Блажен (L, B); Счастлив (R)",
+          "alternatives": [
+            "Как блажен",
+            "Как хорошо живётся тому, кто"
+          ],
+          "reason": "Settled for the Psalms: ashrei is \"Блажен\" at Literal and Balanced, \"Счастлив\" at Readable, the forms the Russian New Testament uses for the same word in the Beatitudes and in Romans 4:7-8 (Psalm 32:1-2). \"Блажен\" is itself an exclamation, so \"Как\" is not added; Readable \"Счастлив\" says that life goes well for this person (m1), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010022"
+          ],
+          "choice": "{{gender:человек|муж}} (L), as James 1:12; тот (B) and человек (R) with no span",
+          "alternatives": [
+            "Блажен муж"
+          ],
+          "reason": "The Hebrew \"man\" means anyone who lives this way (m2). Russian \"человек\" and \"тот, кто\" already include everyone, so Balanced and Readable need no setting and the later \"он\", \"его\" for this person need none either; Literal offers the traditional \"муж\" as the alternative, as James 1:12 does in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-3",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010062",
+            "o190010010071",
+            "o190010010083"
+          ],
+          "choice": "по совету нечестивых (L), советам нечестивых (B), советов злых людей (R); путь (L, B), дорога (R)",
+          "alternatives": [
+            "на совет нечестивых",
+            "в собрании развратителей"
+          ],
+          "reason": "The counsel is advice and plans (m4), not a council meeting, so Russian says \"по совету\", \"советам\". \"Нечестивые\" (L, B) and \"злые люди\" (R) are the Psalms' fixed words for the wicked. \"Путь\" is the Psalms' word for a way of life at Literal and Balanced (1:6); Readable says \"дорога\" here and \"жизнь\" in 1:6, as the English does. The seat of mockers is \"место насмешников\", where mockers gather.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -608,6 +769,16 @@
           "L": "ነገር ግን ደስታው {{divine_name:በእግዚአብሔር|በያህዌ}} ሕግ [ነው]፤ \\q ሕጉንም ቀንና ሌሊት ያነበንባል።",
           "B": "ይልቁንም ደስታው {{divine_name:በእግዚአብሔር|በያህዌ}} ሕግ ነው፤ \\q ቀንና ሌሊትም ሕጉን በለሆሳስ ያነበዋል።",
           "R": "ይልቁንም ያ ሰው {{divine_name:የእግዚአብሔርን|የያህዌን}} ትምህርት ይወዳል፤ ቀንና ሌሊትም እየደጋገመ ያስብበታል።"
+        },
+        "hi": {
+          "L": "पर {{divine_name:प्रभु|याहवे}} की व्यवस्था में उसकी प्रसन्नता [है], \\q और उनकी व्यवस्था को वह दिन और रात बुदबुदाता रहता है।",
+          "B": "बल्कि {{divine_name:प्रभु|याहवे}} की व्यवस्था उसे प्रिय है, \\q और वह दिन और रात धीमे स्वर में उसे दोहराता रहता है।",
+          "R": "बल्कि वह व्यक्ति {{divine_name:प्रभु|याहवे}} की शिक्षा से प्रेम करता है, और दिन-रात उसे दोहराता और उस पर सोचता रहता है।"
+        },
+        "ru": {
+          "L": "Но в Законе {{divine_name:ГОСПОДА|Яхве}} — его отрада, \\q и {{deity_pronoun:его|Его}} Закон он шепчет [про себя] днём и ночью.",
+          "B": "Напротив, Закон {{divine_name:ГОСПОДА|Яхве}} — его радость, \\q и он тихо повторяет его про себя днём и ночью.",
+          "R": "Нет, этот человек любит наставление {{divine_name:ГОСПОДА|Яхве}}, повторяет его и размышляет о нём днём и ночью."
         }
       },
       "decisions": [
@@ -981,6 +1152,114 @@
           "reason": "\"ሕግ\" is the word used for torah through the Psalms (Psalm 119). The verb pictures reading the words half aloud, so the Amharic says reciting under the breath rather than silent thinking, except at Readable, which follows the English \"repeats it, thinking about it\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063"
+          ],
+          "choice": "\"व्यवस्था\" (L, B); \"शिक्षा\" (R)",
+          "alternatives": [
+            "\"नियम\"",
+            "\"शिक्षा\" at every level"
+          ],
+          "reason": "The LORD's torah is his instruction (meaning m1). Literal and Balanced keep \"व्यवस्था\", the word for God's law in the New Testament and the Pentateuch of this translation; Readable says \"शिक्षा\" (teaching), as the poetry note settles, so that it is not heard as a code of rules alone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020071"
+          ],
+          "choice": "\"बुदबुदाता रहता है\" (L); \"धीमे स्वर में दोहराता रहता है\" (B); \"दोहराता और उस पर सोचता रहता है\" (R)",
+          "alternatives": [
+            "\"ध्यान करता है\"",
+            "\"मनन करता है\""
+          ],
+          "reason": "The verb is about words said under the breath (meaning m2), so the Hindi avoids \"ध्यान\", which suggests silent meditation. Readable keeps both the repeating and the thinking, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010020064"
+          ],
+          "choice": "no deity_pronoun span; honorific \"उनकी\" for God",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change and the Hindi has no deity_pronoun spans (style guide, section 7). Respect for God is carried by the honorific plural, as in the earlier books. This holds for this whole psalm and wherever the English has such a span in the following psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063"
+          ],
+          "choice": "Закон (L, B); наставление (R)",
+          "alternatives": [
+            "учение",
+            "закон"
+          ],
+          "reason": "Settled for the Psalms: God's torah is \"Закон\", capitalised as in the Russian New Testament, at Literal and Balanced, and \"наставление\" at Readable, which says that it is teaching and not rules alone (m1), as the English Readable's \"teaching\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020071"
+          ],
+          "choice": "шепчет [про себя] (L); тихо повторяет про себя (B); повторяет и размышляет (R)",
+          "alternatives": [
+            "размышляет"
+          ],
+          "reason": "The verb is about words said under the breath (m2); \"размышляет\" alone would make it silent thought. Readable keeps both the repeating and the thinking, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1063,6 +1342,16 @@
           "L": "እርሱም በውኃ ቦዮች አጠገብ ተዛውሮ እንደ ተተከለ ዛፍ ነው፤ \\q ፍሬውን በወቅቱ የሚሰጥ፣ \\q ቅጠሉም የማይጠወልግ፤ \\q የሚያደርገውም ሁሉ ይሳካለታል።",
           "B": "እርሱ በውኃ ቦዮች ዳር እንደ ተተከለ ዛፍ ነው፤ \\q ወቅቱ ሲደርስ ፍሬውን ያፈራል፤ \\q ቅጠሉም ከቶ አይደርቅም። \\q የሚያደርገው ሁሉ መልካም ይሆንለታል።",
           "R": "ያ ሰው በውኃ ጅረቶች አጠገብ እንደ ተተከለ ዛፍ ነው። \\q በትክክለኛው ጊዜ ፍሬ ይሰጣል፤ \\q ቅጠሉም አይደርቅም። \\q ያ ሰው የሚሠራው ሁሉ ይሳካለታል።"
+        },
+        "hi": {
+          "L": "और वह उस पेड़ के समान [है] जो जल की नालियों के किनारे रोपा गया है, \\q जो अपनी ऋतु में अपना फल देता है, \\q और उसका पत्ता नहीं मुरझाता; \\q और जो कुछ वह करता है, सफल होता है।",
+          "B": "वह उस पेड़ के समान है जो जल की नालियों के किनारे लगाया गया हो, \\q जो अपनी ऋतु आने पर फल देता है, \\q और जिसके पत्ते कभी नहीं सूखते। \\q जो कुछ वह करता है, उसमें सफल होता है।",
+          "R": "वह व्यक्ति उस पेड़ जैसा है जो पानी की धाराओं के किनारे लगाया गया हो। \\q वह सही समय पर फल देता है, \\q और उसके पत्ते नहीं सूखते। \\q उस व्यक्ति के सब काम सफल होते हैं।"
+        },
+        "ru": {
+          "L": "И он — как дерево, пересаженное к протокам вод, \\q что даёт свой плод в своё время, \\q и листва его не увядает; \\q и всё, что он делает, удаётся.",
+          "B": "Такой человек — как дерево, высаженное у водных каналов, \\q которое приносит плод, когда приходит его пора, \\q и листья которого никогда не засыхают. \\q Всё, что он делает, ему удаётся.",
+          "R": "Такой человек — как дерево, посаженное у ручьёв. \\q Оно даёт плоды в нужное время, \\q и его листья не сохнут. \\q Всё, что этот человек делает, получается хорошо."
         }
       },
       "decisions": [
@@ -1214,6 +1503,43 @@
           "reason": "The verb means transplanted, set out on purpose; the watercourses are dug channels that water an orchard (meaning decisions m1, m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010030031"
+          ],
+          "choice": "\"रोपा गया\" (L); \"लगाया गया\" (B, R)",
+          "alternatives": [],
+          "reason": "\"रोपना\" is said of a seedling set out in a chosen place, which keeps the sense of \"transplanted\" (meaning m1); Balanced and Readable use the everyday \"लगाना\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010030031"
+          ],
+          "choice": "пересаженное (L); высаженное (B)",
+          "alternatives": [
+            "посаженное"
+          ],
+          "reason": "The tree was planted on purpose where it would thrive (m1); Literal and Balanced keep that sense, Readable says simply \"посаженное\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1283,6 +1609,16 @@
           "L": "ክፉዎች እንዲህ አይደሉም፤ \\q ነገር ግን ነፋስ እንደሚያባርረው ገለባ [ናቸው]።",
           "B": "ክፉዎች ግን እንደዚህ አይደሉም፤ \\q ነፋስ እንደሚበትነው ገለባ ናቸው።",
           "R": "ክፉ ሰዎች ግን ፈጽሞ እንደዚህ አይደሉም። \\q ነፋስ ወስዶ እንደሚበትነው የደረቀ የእህል ገለባ ናቸው።"
+        },
+        "hi": {
+          "L": "दुष्ट ऐसे नहीं, \\q परन्तु [वे] उस भूसे के समान [हैं] जिसे हवा उड़ा ले जाती है।",
+          "B": "दुष्ट ऐसे बिलकुल नहीं हैं। \\q वे भूसे के समान हैं, जिसे हवा उड़ा ले जाती है।",
+          "R": "दुष्ट लोग ऐसे बिलकुल नहीं हैं। \\q वे अनाज के सूखे छिलकों जैसे हैं, जिन्हें हवा उड़ा ले जाती है।"
+        },
+        "ru": {
+          "L": "Не таковы нечестивые, \\q но [они] — как мякина, которую развевает ветер.",
+          "B": "Нечестивые совсем не такие. \\q Они — как мякина, которую разносит ветер.",
+          "R": "Злые люди совсем не такие. \\q Они как сухая шелуха от зерна, которую уносит ветер."
         }
       },
       "decisions": [
@@ -1461,6 +1797,25 @@
           "reason": "The terms list keeps \"ክፉዎች\" for the wicked and \"ኃጥኣን\" only where Literal pairs them with \"ኃጢአተኞች\" (sinners), so the two Hebrew words stay apart in those lines.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010040032"
+          ],
+          "choice": "\"दुष्ट\" (L, B); \"दुष्ट लोग\" (R)",
+          "alternatives": [],
+          "reason": "The wicked are \"दुष्ट\", as the poetry note settles, at every level; Readable adds \"लोग\" as the English says \"wicked people\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1530,6 +1885,16 @@
           "L": "ስለዚህ ኃጥኣን በፍርድ አይነሡም፤ \\q ኃጢአተኞችም በጻድቃን ጉባኤ [አይነሡም]።",
           "B": "ስለዚህ ፍርድ በሚመጣበት ጊዜ ክፉዎች ጸንተው አይቆሙም፤ \\q ኃጢአተኞችም በጻድቃን ጉባኤ ስፍራ አይኖራቸውም።",
           "R": "ስለዚህ እግዚአብሔር በሚፈርድበት ጊዜ ክፉ ሰዎች መቆም አይችሉም። \\q ኃጢአተኞችም ትክክል የሆነውን በሚያደርጉ ሰዎች መካከል ስፍራ አይኖራቸውም።"
+        },
+        "hi": {
+          "L": "इस कारण दुष्ट न्याय में नहीं उठेंगे, \\q और न पापी धर्मियों की मंडली में।",
+          "B": "इसी कारण दुष्ट न्याय के समय टिक नहीं पाएँगे, \\q और पापियों को धर्मियों की मंडली में कोई जगह नहीं मिलेगी।",
+          "R": "इसलिए जब परमेश्वर न्याय करेंगे, तब दुष्ट लोग टिक नहीं पाएँगे। \\q पापियों को उन लोगों के बीच कोई जगह नहीं मिलेगी जो सही काम करते हैं।"
+        },
+        "ru": {
+          "L": "Поэтому не поднимутся нечестивые на суде, \\q ни грешники — в общине праведных.",
+          "B": "Вот почему нечестивые не устоят, когда придёт суд, \\q и грешникам не будет места в общине праведных.",
+          "R": "Поэтому, когда Бог будет судить, злые люди не смогут устоять. \\q Грешникам не будет места среди тех, кто поступает правильно."
         }
       },
       "decisions": [
@@ -1657,6 +2022,47 @@
           "reason": "\"A comunidade\" is the Old Testament terms' word for Israel gathered as a community ('edah, m2); \"a assembleia\" is kept for qahal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010050082",
+            "o190010050091"
+          ],
+          "choice": "\"धर्मियों की मंडली\"",
+          "alternatives": [
+            "\"सभा\""
+          ],
+          "reason": "The word is ʿedah, the gathered community of God's people (meaning m2), which the Pentateuch note renders \"मंडली\"; the righteous are \"धर्मी\". Readable explains them, as the English does (meaning m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010050082"
+          ],
+          "choice": "община",
+          "alternatives": [
+            "собрание"
+          ],
+          "reason": "The word (edah) is the gathered community of God's people (m2), \"община\" as in the Pentateuch; \"собрание\" is kept for qahal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1723,6 +2129,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የጻድቃንን መንገድ የሚያውቅ ነውና፤ \\q የክፉዎች መንገድ ግን ይጠፋል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የጻድቃንን መንገድ ያውቃል፤ ይጠብቀውማል፤ \\q የክፉዎች መንገድ ግን ወደ ጥፋት ያመራል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ትክክል የሆነውን የሚያደርጉትን ሰዎች ሕይወት ይጠብቃል። \\q ክፉ ሰዎች የሚኖሩት ሕይወት ግን በጥፋት ያልቃል።"
+        },
+        "hi": {
+          "L": "क्योंकि {{divine_name:प्रभु|याहवे}} धर्मियों के मार्ग को जानते हैं, \\q और दुष्टों का मार्ग नष्ट हो जाएगा।",
+          "B": "क्योंकि {{divine_name:प्रभु|याहवे}} धर्मियों के मार्ग को जानते हैं और उसकी चिंता करते हैं, \\q पर दुष्टों का मार्ग विनाश में समाप्त होता है।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन लोगों के जीवन की रखवाली करते हैं जो सही काम करते हैं। \\q पर दुष्ट लोग जैसा जीवन जीते हैं, उसका अंत विनाश है।"
+        },
+        "ru": {
+          "L": "Ведь {{divine_name:ГОСПОДЬ|Яхве}} [есть] знающий путь праведных, \\q а путь нечестивых пропадёт.",
+          "B": "Ведь {{divine_name:ГОСПОДЬ|Яхве}} знает путь праведных и бережёт его, \\q а путь нечестивых ведёт к гибели.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} хранит жизнь тех, кто поступает правильно. \\q А жизнь злых людей закончится гибелью."
         }
       },
       "decisions": [
@@ -1853,6 +2269,27 @@
             "\"Bwana\" in ordinary letters"
           ],
           "reason": "As in the rest of the Old Testament: the capitals show that the Hebrew has the divine name here, and the reader may switch to the name itself. \"Bwana\" in ordinary letters is kept for the title Adonai, \"Lord\" (2:4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010060021",
+            "o190010060041"
+          ],
+          "choice": "знает ... и бережёт (B); хранит жизнь (R)",
+          "alternatives": [
+            "знает путь"
+          ],
+          "reason": "Knowing here is knowing with care (m1), and the way is a whole way of life (m2); Balanced keeps \"путь\" and adds the care, Readable says \"жизнь\", as the English does. Literal keeps the participle.",
           "uncertain": false,
           "footnote": false
         }
