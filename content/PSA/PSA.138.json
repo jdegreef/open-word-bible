@@ -65,6 +65,16 @@
           "L": "የዳዊት። በፍጹም ልቤ አመሰግንሃለሁ፤ በአማልክት ፊት እዘምርልሃለሁ።",
           "B": "የዳዊት። በሙሉ ልቤ አመሰግንሃለሁ፤ በአማልክት ፊት እዘምርልሃለሁ።",
           "R": "ዳዊት የዘመረው። በሙሉ ልቤ አመሰግንሃለሁ። በአማልክት ፊት የምስጋና መዝሙር እዘምርልሃለሁ።"
+        },
+        "hi": {
+          "L": "दाऊद का। मैं अपने पूरे हृदय से तेरा धन्यवाद करूँगा; देवताओं के सामने मैं तेरा भजन गाऊँगा।",
+          "B": "दाऊद का। अपने पूरे हृदय से मैं तेरा धन्यवाद करूँगा; देवताओं के सामने मैं तेरे लिए संगीत बजाऊँगा।",
+          "R": "दाऊद का लिखा हुआ। मैं पूरे मन से तेरा धन्यवाद करूँगा। मैं देवताओं के सामने तेरी स्तुति के गीत गाऊँगा।"
+        },
+        "ru": {
+          "L": "Давида. Я буду благодарить {{deity_pronoun:тебя|Тебя}} всем моим сердцем; перед богами буду воспевать {{deity_pronoun:тебя|Тебя}}.",
+          "B": "Давида. Всем сердцем я буду благодарить {{deity_pronoun:тебя|Тебя}}; перед богами я буду играть {{deity_pronoun:тебе|Тебе}}.",
+          "R": "Написал Давид. Я буду благодарить {{deity_pronoun:тебя|Тебя}} всем сердцем. Я буду петь {{deity_pronoun:тебе|Тебе}} хвалу перед богами."
         }
       },
       "decisions": [
@@ -257,6 +267,92 @@
           "reason": "The meaning decision reads the gods the nations worship (m3); \"አማልክት\" is the word for them on main, and the singer praises God in their face.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191380010021"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalm speaks to God with तू and of him with the honorific plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380010051",
+            "o191380010061"
+          ],
+          "choice": "देवताओं के सामने",
+          "alternatives": [
+            "स्वर्गदूतों के सामने"
+          ],
+          "reason": "The plural 'elohim is read as the gods of the nations (m3); देवता names them without confusing them with परमेश्वर.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380010011",
+            "o191380010012"
+          ],
+          "choice": "Давида (L, B); Написал Давид (R)",
+          "alternatives": [
+            "Псалом Давида"
+          ],
+          "reason": "The title \"Of David\" (m1) is \"Давида\" at Literal and Balanced and \"Написал Давид\" at Readable, as in the earlier psalms; a bare genitive does not read as a title for a new reader.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380010051",
+            "o191380010061"
+          ],
+          "choice": "перед богами",
+          "alternatives": [
+            "перед ангелами",
+            "перед правителями"
+          ],
+          "reason": "\"Боги\" in lower case keeps the Hebrew's challenge to the gods the nations worship (m3), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -339,6 +435,16 @@
           "L": "ወደ ቅዱስ መቅደስህ እሰግዳለሁ፤ ስለ ጽኑ ፍቅርህና ስለ ታማኝነትህ ስምህን አመሰግናለሁ፤ ቃልህን ከስምህ ሁሉ በላይ ታላቅ አድርገሃልና።",
           "B": "ወደ ቅዱስ መቅደስህ ዞሬ እሰግዳለሁ፤ ስለ ጽኑ ፍቅርህና ስለ ታማኝነትህ ስምህን አመሰግናለሁ፤ የገባኸውን ቃል ስምህ ከገለጠው ሁሉ በላይ ታላቅ አድርገሃልና።",
           "R": "ወደ ቅዱስ መቅደስህ ዞሬ እሰግዳለሁ። ስለ ጽኑ ፍቅርህ፣ ያልከውንም ሁልጊዜ ስለምትፈጽም ስምህን አመሰግናለሁ። የገባኸው ቃልና ያደረግኸው ሰዎች ስለ አንተ ከሚያውቁት ሁሉ እጅግ ይበልጣል።"
+        },
+        "hi": {
+          "L": "मैं तेरे पवित्र मंदिर की ओर दंडवत करूँगा, और तेरे अटल प्रेम और तेरी सच्चाई के लिए तेरे नाम का धन्यवाद करूँगा, क्योंकि तूने अपने कथन को अपने सारे नाम से ऊपर महान किया है।",
+          "B": "मैं तेरे पवित्र मंदिर की ओर मुँह करके दंडवत करूँगा, और तेरे अटल प्रेम और तेरी विश्वासयोग्यता के लिए तेरे नाम की स्तुति करूँगा; क्योंकि तूने अपनी प्रतिज्ञा को इतना महान किया है कि वह उस सब से बढ़कर है जो तेरे नाम ने प्रकट किया था।",
+          "R": "मैं तेरे पवित्र मंदिर की ओर झुककर दंडवत करूँगा। मैं तेरे नाम की स्तुति करूँगा, क्योंकि तेरा प्रेम अटल है और तू सदा वही करता है जो तू कहता है। तूने जो प्रतिज्ञा की और जो किया, वह उस सब से भी बड़ा है जो लोग तेरे बारे में जानते थे।"
+        },
+        "ru": {
+          "L": "Я поклонюсь к {{deity_pronoun:твоему|Твоему}} святому храму и буду благодарить {{deity_pronoun:твоё|Твоё}} имя за {{deity_pronoun:твою|Твою}} неизменную любовь и за {{deity_pronoun:твою|Твою}} верность, ведь {{deity_pronoun:ты|Ты}} возвеличил {{deity_pronoun:твоё|Твоё}} речение превыше всего {{deity_pronoun:твоего|Твоего}} имени.",
+          "B": "Я поклонюсь, обратившись к {{deity_pronoun:твоему|Твоему}} святому храму, и буду славить {{deity_pronoun:твоё|Твоё}} имя за {{deity_pronoun:твою|Твою}} неизменную любовь и {{deity_pronoun:твою|Твою}} верность; ведь {{deity_pronoun:ты|Ты}} возвеличил {{deity_pronoun:твоё|Твоё}} обещание превыше всего, что открывало о {{deity_pronoun:тебе|Тебе}} {{deity_pronoun:твоё|Твоё}} имя.",
+          "R": "Я поклонюсь, обратившись к {{deity_pronoun:твоему|Твоему}} святому храму. Я буду славить {{deity_pronoun:твоё|Твоё}} имя за {{deity_pronoun:твою|Твою}} неизменную любовь и за то, что {{deity_pronoun:ты|Ты}} всегда исполняешь то, что говоришь. То, что {{deity_pronoun:ты|Ты}} обещал и сделал, ещё больше всего, что люди знали о {{deity_pronoun:тебе|Тебе}}."
         }
       },
       "decisions": [
@@ -549,6 +655,90 @@
           "reason": "Paired with ḥesed, ʾemet here is God's being true to his word (meaning decision m3); the English says \"faithfulness\", and \"እውነት\" would read as \"truth\" against falsehood.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380020091",
+            "o191380020111"
+          ],
+          "choice": "अटल प्रेम; सच्चाई (L), विश्वासयोग्यता (B), सदा वही करता है जो तू कहता है (R)",
+          "alternatives": [
+            "करुणा"
+          ],
+          "reason": "God's hesed is अटल प्रेम at every level, and his 'emet is सच्चाई at Literal and विश्वासयोग्यता at Balanced, as the poetry note settles; Readable says what faithfulness is, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380020171"
+          ],
+          "choice": "कथन (L); प्रतिज्ञा (B, R)",
+          "alternatives": [
+            "वचन"
+          ],
+          "reason": "The word is 'imrah, what God has said (m5). Literal keeps \"कथन\", Psalm 119's word for it, so that it stays apart from \"वचन\" (davar); Balanced and Readable say what it is here, the promise now kept (m4, m5), as Psalm 119 does at those levels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380020091"
+          ],
+          "choice": "неизменная любовь",
+          "alternatives": [
+            "милость"
+          ],
+          "reason": "God's hesed (m2) is \"неизменная любовь\" at every level, as settled for the Psalms; the English Readable \"faithful love\" says the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380020171"
+          ],
+          "choice": "речение (L); обещание (B); то, что ты обещал и сделал (R)",
+          "alternatives": [
+            "слово"
+          ],
+          "reason": "The word is imrah, God's spoken word, here his promise (m5). It takes Psalm 119's fixed words: \"речение\" at Literal, \"обещание\" at Balanced, and Readable says what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -618,6 +808,16 @@
           "L": "በጠራሁህ ቀን መለስክልኝ፤ በነፍሴም ብርታትን ሰጥተህ አደፋፈርከኝ።",
           "B": "በጠራሁህ ቀን መለስክልኝ፤ በውስጤም ድፍረትንና ብርታትን ሞላህብኝ።",
           "R": "ወደ አንተ በጮኽሁ ጊዜ መለስክልኝ። በውስጤ ደፋርና ብርቱ አደረግኸኝ።"
+        },
+        "hi": {
+          "L": "जिस दिन मैंने पुकारा, तूने मुझे उत्तर दिया; तूने मेरे प्राण में [बल से] मुझे साहसी बनाया।",
+          "B": "जिस दिन मैंने पुकारा, तूने मुझे उत्तर दिया; तूने मेरे भीतर साहस और बल भर दिया।",
+          "R": "जब मैंने तुझे पुकारा, तब तूने मुझे उत्तर दिया। तूने मुझे भीतर से साहसी और बलवान बना दिया।"
+        },
+        "ru": {
+          "L": "В день, [когда] я воззвал, {{deity_pronoun:ты|Ты}} ответил мне; {{deity_pronoun:ты|Ты}} ободрил меня, [дав] силу в душе моей.",
+          "B": "В тот день, когда я воззвал, {{deity_pronoun:ты|Ты}} ответил мне; {{deity_pronoun:ты|Ты}} наполнил меня мужеством и силой внутри.",
+          "R": "Когда я позвал {{deity_pronoun:тебя|Тебя}}, {{deity_pronoun:ты|Ты}} ответил мне. Ты сделал меня смелым и сильным внутри."
         }
       },
       "decisions": [
@@ -739,6 +939,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የምድር ነገሥታት ሁሉ የአፍህን ቃል ሰምተዋልና ያመሰግኑሃል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የተናገርከውን ቃል ሰምተዋልና በምድር ያሉ ነገሥታት ሁሉ ያመሰግኑሃል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በዓለም ያሉ ነገሥታት ሁሉ የተናገርከውን ቃል ሲሰሙ ያመሰግኑሃል።"
+        },
+        "hi": {
+          "L": "पृथ्वी के सब राजा तेरा धन्यवाद करेंगे, हे {{divine_name:प्रभु|याहवे}}, क्योंकि उन्होंने तेरे मुँह के वचन सुने हैं।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, पृथ्वी का हर राजा तेरा धन्यवाद करेगा, क्योंकि उन्होंने तेरी कही हुई बातें सुनी हैं।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, जब संसार के सब राजा तेरी कही हुई बातें सुनेंगे, तब वे तेरा धन्यवाद करेंगे।"
+        },
+        "ru": {
+          "L": "Все цари земли будут благодарить {{deity_pronoun:тебя|Тебя}}, {{divine_name:ГОСПОДИ|Яхве}}, ведь они услышали слова {{deity_pronoun:твоих|Твоих}} уст.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, все цари на земле будут благодарить {{deity_pronoun:тебя|Тебя}}, потому что они услышали слова, которые {{deity_pronoun:ты|Ты}} сказал.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, все цари в мире будут благодарить {{deity_pronoun:тебя|Тебя}}, когда услышат слова, которые {{deity_pronoun:ты|Ты}} сказал."
         }
       },
       "decisions": [
@@ -839,6 +1049,16 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}}ም ክብር ታላቅ ነውና፣ ስለ {{divine_name:እግዚአብሔር|ያህዌ}} መንገዶች ይዘምራሉ።",
           "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ክብር እጅግ ታላቅ ስለ ሆነ፣ ስለ {{divine_name:እግዚአብሔር|ያህዌ}} መንገዶች ይዘምራሉ።",
           "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} ክብር እጅግ ታላቅ ስለ ሆነ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ስለሚሠራው ሥራ ይዘምራሉ።"
+        },
+        "hi": {
+          "L": "और वे {{divine_name:प्रभु|याहवे}} के मार्गों के विषय में गाएँगे, क्योंकि {{divine_name:प्रभु|याहवे}} की महिमा महान [है]।",
+          "B": "वे {{divine_name:प्रभु|याहवे}} के मार्गों का गीत गाएँगे, क्योंकि {{divine_name:प्रभु|याहवे}} की महिमा बहुत महान है।",
+          "R": "वे इस बारे में गाएँगे कि {{divine_name:प्रभु|याहवे}} कैसे काम करते हैं, क्योंकि {{divine_name:प्रभु|याहवे}} की महिमा बहुत महान है।"
+        },
+        "ru": {
+          "L": "И будут петь о путях {{divine_name:ГОСПОДА|Яхве}}, ведь велика слава {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Они будут петь о путях {{divine_name:ГОСПОДА|Яхве}}, потому что так велика слава {{divine_name:ГОСПОДА|Яхве}}.",
+          "R": "Они будут петь о том, как действует {{divine_name:ГОСПОДЬ|Яхве}}, потому что так велика слава {{divine_name:ГОСПОДА|Яхве}}."
         }
       },
       "decisions": [
@@ -961,6 +1181,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ከፍ ያለ ቢሆንም ትሑቱን ያያልና፤ ትዕቢተኛውንም ከሩቅ ያውቀዋል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከፍ ያለ ነው፤ ቢሆንም ዝቅ ያሉትን ይመለከታል፤ ትዕቢተኛውን ግን ከሩቅ ያውቀዋል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሁሉ በላይ ከፍ ያለ ነው፤ ቢሆንም ትሑታንን ይንከባከባል። ትዕቢተኞችን ግን ከእርሱ ያርቃቸዋል፤ ከሩቅ ሆኖም ሁሉን ነገር ስለ እነርሱ ያውቃል።"
+        },
+        "hi": {
+          "L": "क्योंकि {{divine_name:प्रभु|याहवे}} ऊँचे [हैं], फिर भी वे दीन को देखते हैं; और घमंडी को वे दूर से जानते हैं।",
+          "B": "{{divine_name:प्रभु|याहवे}} ऊँचे हैं, फिर भी वे नीचे पड़े लोगों पर दृष्टि करते हैं; घमंडी को वे दूर से ही पहचान लेते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} सबसे ऊँचे हैं, फिर भी वे नम्र लोगों की चिंता करते हैं। पर घमंडी लोगों को वे दूर रखते हैं और दूर से ही उनके बारे में सब कुछ जानते हैं।"
+        },
+        "ru": {
+          "L": "Ведь высок {{divine_name:ГОСПОДЬ|Яхве}}, но смиренного {{deity_pronoun:он|Он}} видит, а гордого {{deity_pronoun:он|Он}} знает издали.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} высок, но {{deity_pronoun:он|Он}} смотрит на униженных; а гордых {{deity_pronoun:он|Он}} знает издалека.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} выше всего, но {{deity_pronoun:он|Он}} заботится о смиренных людях. А гордых {{deity_pronoun:он|Он}} держит на расстоянии и всё о них знает издалека."
         }
       },
       "decisions": [
@@ -1032,6 +1262,26 @@
           "alternatives": [],
           "reason": "Readable says both things the words of m2 imply.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191380060021",
+            "o191380060051"
+          ],
+          "choice": "वे, देखते हैं (honorific plural for God)",
+          "alternatives": [],
+          "reason": "When the psalm turns from speaking to God to speaking of him, Hindi uses the honorific third person, as Kings, Chronicles and the earlier psalms in this translation do.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -1109,6 +1359,16 @@
           "L": "በመከራ መካከል ብሄድ፣ በሕይወት ታኖረኛለህ፤ በጠላቶቼ ቁጣ ላይ እጅህን ትዘረጋለህ፤ ቀኝህም ታድነኛለች።",
           "B": "በመከራ መካከል ባልፍ እንኳ በሕይወት ታኖረኛለህ። በጠላቶቼ ቁጣ ላይ እጅህን ትዘረጋለህ፤ ቀኝ እጅህም ታድነኛለች።",
           "R": "መከራ በዙሪያዬ ቢሆን እንኳ በሕይወት ታኖረኛለህ። የተቆጡ ጠላቶቼን ለማስቆም እጅህን ትዘረጋለህ። ብርቱዋ ቀኝ እጅህ ታድነኛለች።"
+        },
+        "hi": {
+          "L": "यदि मैं संकट के बीच में चलूँ, तो तू मुझे जीवित रखता है; मेरे शत्रुओं के क्रोध के विरुद्ध तू अपना हाथ बढ़ाता है, और तेरा दाहिना हाथ मुझे बचाता है।",
+          "B": "चाहे मैं संकट के बीच से होकर चलूँ, तू मुझे जीवित रखता है। मेरे शत्रुओं के क्रोध के विरुद्ध तू अपना हाथ बढ़ाता है, और तेरा दाहिना हाथ मुझे छुड़ाता है।",
+          "R": "चाहे मैं चारों ओर से संकट में घिरा हूँ, तू मुझे जीवित रखता है। तू मेरे क्रोधित शत्रुओं को रोकने के लिए अपना हाथ बढ़ाता है। तेरा सामर्थी दाहिना हाथ मुझे बचाता है।"
+        },
+        "ru": {
+          "L": "Если я пойду посреди беды, {{deity_pronoun:ты|Ты}} сохранишь мне жизнь; против гнева врагов моих {{deity_pronoun:ты|Ты}} протянешь {{deity_pronoun:твою|Твою}} руку, и {{deity_pronoun:твоя|Твоя}} правая рука спасёт меня.",
+          "B": "Даже когда я иду посреди беды, {{deity_pronoun:ты|Ты}} сохраняешь мне жизнь. Ты простираешь {{deity_pronoun:твою|Твою}} руку против ярости моих врагов, и {{deity_pronoun:твоя|Твоя}} правая рука избавляет меня.",
+          "R": "Даже когда вокруг меня беда, {{deity_pronoun:ты|Ты}} сохраняешь мне жизнь. Ты протягиваешь {{deity_pronoun:твою|Твою}} руку, чтобы остановить моих злых врагов. Твоя сильная правая рука спасает меня."
         }
       },
       "decisions": [
@@ -1156,6 +1416,27 @@
           "choice": "powerful",
           "alternatives": [],
           "reason": "Readable says what the right hand stands for (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380070121"
+          ],
+          "choice": "твою руку, твоя правая рука",
+          "alternatives": [
+            "свою руку"
+          ],
+          "reason": "Russian would usually say the reflexive \"свою руку\"; the psalm keeps the possessive \"твою\" addressed to God, which takes the deity_pronoun setting. A sentence-initial \"Ты\", \"Твоя\" is written plainly with its capital.",
           "uncertain": false,
           "footnote": false
         }
@@ -1229,6 +1510,16 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለእኔ ይፈጽምልኛል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጽኑ ፍቅርህ ለዘላለም [ነው]፤ የእጆችህን ሥራ አትተው።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለእኔ ያሰበውን ይፈጽማል። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጽኑ ፍቅርህ ለዘላለም ይኖራል፤ እጆችህ የሠሩትን አትተው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለእኔ ያቀደውን ሁሉ ያደርጋል። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጽኑ ፍቅርህ ለዘላለም ይኖራል። የሠራኸውን ትተህ አትሂድ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} मेरे लिए [उसे] पूरा करेंगे; हे {{divine_name:प्रभु|याहवे}}, तेरा अटल प्रेम सदा का [है]; अपने हाथों के कामों को मत छोड़।",
+          "B": "{{divine_name:प्रभु|याहवे}} मेरे लिए अपनी योजना पूरी करेंगे। हे {{divine_name:प्रभु|याहवे}}, तेरा अटल प्रेम सदा बना रहता है; जो तेरे हाथों ने बनाया है, उसे मत छोड़।",
+          "R": "{{divine_name:प्रभु|याहवे}} ने मेरे लिए जो कुछ ठाना है, वह सब पूरा करेंगे। हे {{divine_name:प्रभु|याहवे}}, तेरा अटल प्रेम सदा बना रहता है। जो तूने बनाया है, उससे मुँह न मोड़।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} совершит [это] за меня; {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:твоя|Твоя}} неизменная любовь вовек; не оставляй дел {{deity_pronoun:твоих|Твоих}} рук.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} исполнит свой замысел обо мне. {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:твоя|Твоя}} неизменная любовь вовек; не выпускай из рук того, что сотворили {{deity_pronoun:твои|Твои}} руки.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сделает всё, что {{deity_pronoun:он|Он}} задумал для меня. {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:твоя|Твоя}} неизменная любовь длится вечно. Не отворачивайся от того, что {{deity_pronoun:ты|Ты}} сотворил."
         }
       },
       "decisions": [
@@ -1340,6 +1631,27 @@
           "choice": "completará [a obra] por mim (L); cumprirá o seu plano para mim (B); vai fazer tudo o que ele planejou para mim (R)",
           "alternatives": [],
           "reason": "The same verb and the same supplied object as Psalm 57:3 (m1), in the words of that verse's Portuguese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191380080101"
+          ],
+          "choice": "मत छोड़ (L, B); मुँह न मोड़ (R)",
+          "alternatives": [
+            "हाथ से जाने न दे"
+          ],
+          "reason": "The picture is of a hand letting go of what it holds; Readable says \"do not turn away\", as the English Readable says \"walk away\".",
           "uncertain": false,
           "footnote": false
         }

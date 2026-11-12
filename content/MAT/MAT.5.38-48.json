@@ -78,6 +78,11 @@
           "L": "Ви чули, що сказано: “Око за око і зуб за зуб.”",
           "B": "Ви чули вислів: “Око за око, зуб за зуб.”",
           "R": "Ви чули, що Закон каже: “Покарання має відповідати шкоді: око за око і зуб за зуб.”"
+        },
+        "ja": {
+          "L": "あなたがたは、こう言われたと聞いている。『目には目を、歯には歯を。』",
+          "B": "あなたがたは、こう言い渡されたことを聞いている。『目には目を、歯には歯を。』",
+          "R": "あなたたちは、神の律法でこう教えられたことを聞いている。『罰は受けた害と同じでなければならない。目には目を、歯には歯を。』"
         }
       },
       "decisions": [
@@ -299,6 +304,11 @@
           "L": "А {{deity_pronoun:я|Я}} кажу вам не противитися злому; але хто вдарить тебе по правій щоці, підстав йому й другу,",
           "B": "А {{deity_pronoun:я|Я}} кажу вам: не давайте відсічі лихій людині. Якщо хтось ударить тебе по правій щоці, підстав йому й другу.",
           "R": "А {{deity_pronoun:я|Я}} кажу вам: не мстіться тому, хто чинить вам зло. Якщо хтось дасть тобі ляпаса по правій щоці, дозволь йому вдарити й по лівій."
+        },
+        "ja": {
+          "L": "しかしこのわたしは、あなたがたに言う。悪い者に立ち向かわないように。むしろ、あなたの右の頬を平手で打つ者がいれば、その人にもう一方の[頬]も向けなさい。",
+          "B": "しかし、わたしがあなたがたに言うのは、こうである。悪を行う者にやり返してはならない。だれかがあなたの右の頬を平手で打つなら、その人にもう一方の頬も差し出しなさい。",
+          "R": "でも、わたしはあなたたちにこう言う。あなたにひどいことをする人に、仕返しをしてはいけない。だれかがあなたの顔の右側をたたいたら、反対側もたたかせなさい。"
         }
       },
       "decisions": [
@@ -640,6 +650,44 @@
           "reason": "In Ukrainian the pronoun agrees with \"хто\" or \"хтось\", which already cover anyone, man or woman, so the English gender span on \"him\" is not needed here or in 5:40-41.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005039018"
+          ],
+          "choice": "\"その人\" with no gender span; the same in 5:40-42",
+          "alternatives": [],
+          "reason": "The English needs a them/him span for the one who strikes, sues or compels. Japanese \"その人\" or no pronoun covers anyone, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005039012"
+          ],
+          "choice": "\"平手で打つ\"",
+          "alternatives": [
+            "\"打つ\""
+          ],
+          "reason": "The verb is for a slap, a blow of insult rather than injury (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -727,6 +775,11 @@
           "L": "і тому, хто хоче судитися з тобою і взяти твою сорочку, віддай йому й плащ,",
           "B": "Якщо хтось хоче позиватися з тобою до суду й забрати твою сорочку, віддай йому і верхній одяг.",
           "R": "Якщо хтось подає на тебе до суду, щоб забрати твою сорочку, віддай йому й свій плащ."
+        },
+        "ja": {
+          "L": "また、あなたと裁判で争って、あなたの肌着を取ろうと望む者には、外衣も渡してやりなさい。",
+          "B": "だれかがあなたを裁判に訴えて肌着を取ろうとするなら、その人に外套も渡しなさい。",
+          "R": "だれかがあなたを裁判に訴えて、シャツを取ろうとするなら、その人にコートもあげなさい。"
         }
       },
       "decisions": [
@@ -897,6 +950,28 @@
           "reason": "Literal keeps the name of the inner garment; Balanced and Readable use the everyday word for what it was.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005040008",
+            "n40005040015"
+          ],
+          "choice": "\"肌着\" / \"外衣\" (L); \"肌着\" / \"外套\" (B); \"シャツ\" / \"コート\" (R)",
+          "alternatives": [
+            "\"下着\" / \"上着\""
+          ],
+          "reason": "The inner garment worn next to the skin and the outer one also used as a blanket (m1). Readable uses the nearest everyday clothes, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -979,6 +1054,11 @@
           "L": "і хто силоміць змусить тебе [йти] одну милю, іди з ним дві.",
           "B": "Якщо хтось змушує тебе нести вантаж одну милю, пройди з ним дві.",
           "R": "Якщо воїн змушує тебе нести щось одну милю, неси дві."
+        },
+        "ja": {
+          "L": "また、だれかがあなたに一ミリオン[行くように]強いるなら、その人と一緒に二[ミリオン]行きなさい。",
+          "B": "だれかがあなたに、{{units:約1.5キロメートル|一ミリオン}}荷物を運ぶよう無理に命じるなら、その人と一緒に{{units:約3キロメートル|二ミリオン}}行きなさい。",
+          "R": "兵士があなたに、荷物を{{units:約1.5キロメートル|一ミリオン}}運べと命じたら、{{units:約3キロメートル|二ミリオン}}運んであげなさい。"
         }
       },
       "decisions": [
@@ -1220,6 +1300,26 @@
           "reason": "The English keeps the mile without a setting, since the saying turns on one measured stage and then a second. A metric figure would blur the picture, so Ukrainian keeps \"миля\", which readers know as an old measure.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005041005"
+          ],
+          "choice": "{{units:約1.5キロメートル|一ミリオン}}, {{units:約3キロメートル|二ミリオン}}",
+          "alternatives": [
+            "\"一マイル\" with no span, as the English"
+          ],
+          "reason": "The English can say mile with no span because a US mile is close to a Roman one (m2). Japanese readers count in kilometers, so Balanced and Readable give the distance in metric by default with the Roman mile as the alternative; Literal keeps ミリオン.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1304,6 +1404,11 @@
           "L": "Тому, хто просить у тебе, дай, і від того, хто хоче позичити в тебе, не відвертайся.",
           "B": "Дай кожному, хто просить у тебе, і не відвертайся від того, хто хоче в тебе позичити.",
           "R": "Дай кожному, хто в тебе щось просить. І не відмовляй, коли хтось хоче в тебе позичити."
+        },
+        "ja": {
+          "L": "あなたに願う者には与えなさい。また、あなたから借りたいと望む者から顔をそむけてはならない。",
+          "B": "頼んでくる人にはだれにでも与えなさい。借りたいと言ってくる人を、追い返してはならない。",
+          "R": "何かを求めてくる人には、だれにでもあげなさい。あなたから借りたいと言う人に、貸すのを断ってはいけない。"
         }
       },
       "decisions": [
@@ -1417,6 +1522,11 @@
           "L": "Ви чули, що сказано: “Любитимеш свого ближнього і ненавидітимеш свого ворога.”",
           "B": "Ви чули вислів: “Люби свого ближнього і ненавидь свого ворога.”",
           "R": "Ви чули, як люди кажуть: “Люби свого ближнього і ненавидь свого ворога.”"
+        },
+        "ja": {
+          "L": "あなたがたは、こう言われたと聞いている。『あなたの隣人を愛し、あなたの敵を憎まなければならない。』",
+          "B": "あなたがたは、こう言い渡されたことを聞いている。『隣人を愛し、敵を憎みなさい。』",
+          "R": "あなたたちは、人々がこう言うのを聞いている。『隣人を愛しなさい。そして、敵を憎みなさい。』"
         }
       },
       "decisions": [
@@ -1547,6 +1657,23 @@
           "reason": "The Greek word, from Leviticus 19:18, means the other person one lives among, not only the one next door. \"ባልንጀራ\" carries that wider sense; \"ጎረቤት\" would narrow it to a neighbor's house.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005043003"
+          ],
+          "choice": "\"人々がこう言うのを聞いている\" (R), not the formula's \"神の律法でこう教えられた\"",
+          "alternatives": [],
+          "reason": "Hatred of enemies is not in the law (m1), so Readable does not say the law teaches it, as the English Readable also changes its wording here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1633,6 +1760,11 @@
           "L": "А {{deity_pronoun:я|Я}} кажу вам: любіть своїх ворогів і моліться за тих, хто вас переслідує,",
           "B": "А {{deity_pronoun:я|Я}} кажу вам: любіть своїх ворогів і моліться за тих, хто вас переслідує,",
           "R": "А {{deity_pronoun:я|Я}} кажу вам: любіть своїх ворогів. Моліться за людей, які вам шкодять."
+        },
+        "ja": {
+          "L": "しかしこのわたしは、あなたがたに言う。あなたがたの敵を愛し、あなたがたを迫害する者たちのために祈りなさい。",
+          "B": "しかし、わたしがあなたがたに言うのは、こうである。あなたがたの敵を愛しなさい。あなたがたを迫害する人々のために祈りなさい。",
+          "R": "でも、わたしはあなたたちにこう言う。あなたたちの敵を愛しなさい。あなたたちを苦しめる人たちのために祈りなさい。"
         }
       },
       "decisions": [
@@ -1772,6 +1904,11 @@
           "L": "щоб ви стали {{gender:дітьми|синами}} вашого Отця, що на небесах, бо {{deity_pronoun:він|Він}} велить своєму сонцю сходити над злими і добрими і посилає дощ на праведних і неправедних.",
           "B": "щоб ви були {{gender:дітьми|синами}} вашого Отця, що на небесах. Він дає своєму сонцю сходити і над злими, і над добрими, і посилає дощ і на тих, хто чинить правильно, і на тих, хто чинить неправильно.",
           "R": "Тоді ви покажете, що ви {{gender:діти|сини}} вашого Отця на небі. Він робить так, що сонце світить і на поганих, і на добрих людей. Він посилає дощ і тим, хто чинить добро, і тим, хто чинить зло."
+        },
+        "ja": {
+          "L": "それは、あなたがたが、天におられるあなたがたの父の子らとなるためである。なぜなら、[父は]ご自分の太陽を悪い者たちと善い者たちの上に昇らせ、正しい者たちと不正な者たちの上に雨を降らせられるからである。",
+          "B": "そうすれば、あなたがたは天におられるあなたがたの父の子どもとなる。父は、悪い人の上にも良い人の上にも、ご自分の太陽を同じように昇らせ、正しいことをする人にも間違ったことをする人にも雨を送ってくださる。",
+          "R": "そうすれば、あなたたちが天におられる父の子どもであることがわかる。父は、悪い人にも良い人にも、太陽の光を注いでくださる。正しいことをする人にも、悪いことをする人にも、雨を降らせてくださる。"
         }
       },
       "decisions": [
@@ -2071,6 +2208,25 @@
           "reason": "Russian says 'his own' with the reflexive 'свой', which takes no deity_pronoun span, where the English has one on 'his'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005045003"
+          ],
+          "choice": "\"子ら\" (L); \"子ども\" (B, R), with no gender span",
+          "alternatives": [],
+          "reason": "As in 5:9: Japanese 子 already includes daughters and sons.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2152,6 +2308,11 @@
           "L": "Бо коли ви любите тих, хто любить вас, яку нагороду маєте?",
           "B": "Якщо ви любите тих, хто любить вас, яка вам за це нагорода?",
           "R": "Якщо ви любите тільки тих, хто любить вас, то за що Богові вас нагороджувати?"
+        },
+        "ja": {
+          "L": "というのは、もしあなたがたが、あなたがたを愛する者たちを愛したとして、どんな報いを持つのか？",
+          "B": "自分を愛してくれる人を愛したところで、何の報いがあるだろうか？",
+          "R": "自分を愛してくれる人だけを愛しても、どうして神がそのことであなたたちにほうびをくださるだろうか？"
         }
       },
       "decisions": [
@@ -2318,6 +2479,11 @@
           "L": "Хіба й митарі не роблять того самого?",
           "B": "Адже й збирачі податків роблять те саме, чи не так?",
           "R": "Навіть збирачі податків так роблять!"
+        },
+        "ja": {
+          "L": "徴税人たちも同じことをしているではないか？",
+          "B": "それくらいのことなら、徴税人でもしているではないか？",
+          "R": "税金を集める人たちでさえ、同じことをしている。"
         }
       },
       "decisions": [
@@ -2607,6 +2773,11 @@
           "L": "І коли ви вітаєте лише своїх {{gender:братів і сестер|братів}}, що особливого робите?",
           "B": "І коли ви вітаєте тільки своїх {{gender:братів і сестер|братів}}, що ви робите надзвичайного?",
           "R": "Якщо ви привітні тільки до своєї родини й друзів, ви не робите нічого більшого, ніж інші."
+        },
+        "ja": {
+          "L": "また、もしあなたがたが自分の{{gender:きょうだいたち|兄弟たち}}だけにあいさつするとして、何か余分なことをしているのか？",
+          "B": "また、自分の{{gender:きょうだいたち|兄弟たち}}にだけあいさつしたところで、どれほど人にまさることをしているというのか？",
+          "R": "自分の家族や仲間にだけ親しくしても、ほかのだれもがすることと何も変わらない。"
         }
       },
       "decisions": [
@@ -2858,6 +3029,11 @@
           "L": "Хіба й язичники не роблять того самого?",
           "B": "Адже й язичники роблять те саме, чи не так?",
           "R": "Навіть люди, які не знають Бога, так роблять!"
+        },
+        "ja": {
+          "L": "異邦人たちも同じことをしているではないか？",
+          "B": "それくらいのことなら、異邦人でもしているではないか？",
+          "R": "神を知らない人たちでさえ、そうしている。"
         }
       },
       "decisions": [
@@ -3000,6 +3176,25 @@
           "reason": "The book's word for Gentiles; Readable follows the English Readable in naming what sets them apart here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005047014"
+          ],
+          "choice": "\"神を知らない人たち\" (R); \"異邦人\" (L, B)",
+          "alternatives": [
+            "\"ユダヤ人でない人々\""
+          ],
+          "reason": "The word here stands for outsiders whose ways are not God's (m1), not for their nation, so Readable says that, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3084,6 +3279,11 @@
           "L": "Отже, ви будете досконалими, як досконалий ваш Небесний Отець.",
           "B": "Тож будьте досконалі, як досконалий ваш Небесний Отець.",
           "R": "Отже, ви маєте бути досконалими, так само як досконалий ваш Отець на небі."
+        },
+        "ja": {
+          "L": "それゆえ、あなたがたは完全な者となる[べきである]。あなたがたの天の父が完全であるように。",
+          "B": "だから、あなたがたは完全でなければならない。天におられるあなたがたの父が完全であるのと同じように。",
+          "R": "だから、あなたたちは完全でなければならない。天におられるあなたたちの父が完全なのと同じだ。"
         }
       },
       "decisions": [
@@ -3260,6 +3460,25 @@
           ],
           "reason": "\"सिद्ध\" means complete and whole, the sense of the Greek, without suggesting someone who never makes a mistake.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40005048001"
+          ],
+          "choice": "\"完全な者となる[べきである]\"",
+          "alternatives": [
+            "\"完全な者となる\" alone"
+          ],
+          "reason": "The Greek future gives a command, as often in the law (m2). Literal keeps the future and shows the command in brackets; Balanced and Readable say it as a command.",
+          "uncertain": false,
           "footnote": false
         }
       ],
