@@ -178,7 +178,7 @@ class SentryScrubTests(SimpleTestCase):
 
         sentry.init("https://key@sentry.invalid/1", "test", transport=Transport)
         environ = {"PATH_INFO": "/healthz", "QUERY_STRING": "q=light", "HTTP_HOST": "testserver",
-                   "HTTP_COOKIE": "sessionid=abc", "HTTP_AUTHORIZATION": "Token secret"}
+                   "HTTP_COOKIE": "sessionid=cookievalue", "HTTP_AUTHORIZATION": "Token secret"}
         wsgiref.util.setup_testing_defaults(environ)
         try:
             with mock.patch("api.views.connection") as conn, self.assertLogs("django.request"):
@@ -190,5 +190,7 @@ class SentryScrubTests(SimpleTestCase):
         errors = [e for e in sent if "exception" in e]
         self.assertEqual(errors[0]["exception"]["values"][0]["value"], "database down")
         self.assertEqual(errors[0]["request"], {"url": "http://testserver/healthz", "method": "GET"})
-        for word in ("light", "abc", "secret"):
+        # Words with letters outside hex, so the release (a commit SHA) can never
+        # contain one by chance.
+        for word in ("light", "cookievalue", "secret"):
             self.assertNotIn(word, repr(sent))
