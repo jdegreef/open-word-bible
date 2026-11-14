@@ -12,6 +12,7 @@ the pull request.
 """
 import argparse
 import gzip
+import re
 import sys
 from pathlib import Path
 
@@ -77,12 +78,15 @@ def is_reader_data(rel):
     return rel.parts[0] == "chapter-data" or (len(rel.parts) == 1 and rel.name.startswith("reader-"))
 
 
+CHAPTER_DATA = re.compile(rb'<script src="/(chapter-data/[^"?]+\.js)\?v=[0-9a-f]+"></script>')
+
+
 def chapter_page_gz(site, path):
-    """A chapter page's gzipped size with its chapter's shared reader data,
-    which it loads (the language's is shared by every chapter)."""
-    book, chapter = path.relative_to(site).parts[-3:-1]
-    data = site / "chapter-data" / book / f"{chapter}.js"
-    return gzipped(path) + (gzipped(data) if data.is_file() else 0)
+    """A chapter page's gzipped size with the chapter's reader data it loads:
+    the shared records and the text of its own language (and any it falls
+    back on). The language's interface data is shared by every chapter."""
+    loaded = {rel.decode() for rel in CHAPTER_DATA.findall(path.read_bytes())}
+    return gzipped(path) + sum(gzipped(site / rel) for rel in loaded if (site / rel).is_file())
 
 
 def largest(paths, measure):

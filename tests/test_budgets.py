@@ -43,13 +43,20 @@ class BudgetsTest(unittest.TestCase):
         self.assertEqual(found["site_total"], (total, None))
 
     def test_a_chapter_page_counts_its_shared_data_and_reader_data_is_no_asset(self):
-        # Every language's page of a chapter loads the chapter's shared data;
-        # the reader data scripts are data, not code.
+        # A chapter page loads the chapter's shared data and its own
+        # language's text, and is measured with them, not with the other
+        # languages'; the reader data scripts are data, not code.
         self.write("chapter-data/jhn/1.js", os.urandom(5000))
+        self.write("chapter-data/jhn/1.es.js", os.urandom(4000))
+        self.write("chapter-data/jhn/1.fr.js", os.urandom(6000))
         self.write("reader-en.js", os.urandom(8000))
+        self.write("es/jhn/1/index.html", os.urandom(3000) + b'<script src="/chapter-data/jhn/1.js?v=0a1b"></script>'
+                   b'<script src="/chapter-data/jhn/1.es.js?v=2c3d"></script>')
         found = check_budgets.measure(self.site)
-        page, data = self.site / "es/jhn/1/index.html", self.site / "chapter-data/jhn/1.js"
-        self.assertEqual(found["chapter_page_gz"], (check_budgets.gzipped(page) + check_budgets.gzipped(data), page))
+        page = self.site / "es/jhn/1/index.html"
+        loaded = [self.site / "chapter-data/jhn/1.js", self.site / "chapter-data/jhn/1.es.js"]
+        self.assertEqual(found["chapter_page_gz"],
+                         (check_budgets.gzipped(page) + sum(map(check_budgets.gzipped, loaded)), page))
         self.assertEqual(found["js_css_asset_gz"][1], self.site / "style.css")
 
     def test_within_budget_passes(self):
