@@ -215,7 +215,14 @@ Settings change wording, never meaning, exactly as in English.
 - `christos`: Hindi has **no** christos spans. *मसीह* is both the familiar
   name in यीशु मसीह and the word Messiah itself, so the choice the English
   setting offers is already made. *ख्रीष्ट* is not used. The first record of
-  a passage file says so once where the English has a span.
+  a passage file says so once where the English has a span. **(checked,
+  settings parity audit: `docs/review-notes/settings-parity.md`)** So Hindi
+  is the one language with no christos spans while every other language has
+  one wherever the English does; each of the 166 passage files where the
+  English spans *Christos* has the Hindi decision that says why. A span
+  would need a second Hindi wording for the same title, and the only
+  candidate, *ख्रीष्ट*, is a church transliteration most readers do not use,
+  not a plainer or more traditional way of saying "Messiah".
 - `gender`: Hindi nouns for people are often already inclusive (लोग, मनुष्य,
   कोई, सब, बच्चे), and the generic masculine verb is ordinary Hindi. Use a
   span only where Hindi really has two ways of saying the same thing:
