@@ -16,6 +16,10 @@ twice changes nothing, so a device can sync whenever it likes.
     notes: {"JHN.3.16-21": {"n": "...", "text": "...", "lang": "en", "t": ["Prayer"], "at": ...}}
     words: {"<lemma>": {"s": true, "n": "...", "g": "love", "l": "grc", "at": ...}}
     myplans: {"my-k3x9q2": {"name": "Advent", "days": [["LUK.1", "LUK.2"], ...], "at": ...}}
+    memory: {"GAL.6.14-16": {"t": "...", "lang": "en", "lv": "B", "r": "Galatians 6:14–16",
+                             "w": "Inclusive · Christ", "q": "title=1", "a": [[1, "...", "cross"]],
+                             "st": "ai_draft", "p": "galatians", "add": ..., "due": ..., "iv": 3,
+                             "n": 2, "at": ...}}
 
 t on a mark or a passage note is the reader's collections it is in (web/
 site.js, the saved verses page). A passage note is a note on several
@@ -23,8 +27,11 @@ verses of one chapter (owb.notes); a word is a Greek, Hebrew or Aramaic
 dictionary form in the reader's word list (owb.words): saved (s) or with
 the reader's note (n); the history of lookups stays in the browser. A
 myplan is a reading plan the reader made (owb.myplans, web/plans.js), in
-the shape of data/plans.json. Each of them merges like a mark, the latest
-change winning whole, and a cleared one is kept as {at}.
+the shape of data/plans.json. memory is the verses the reader is learning by
+heart (owb.memory, web/memorize.js): a verse or a range of one chapter's
+verses, its words as the reader chose to learn them, and its review
+schedule. Each of them merges like a mark, the latest change winning whole,
+and a cleared one is kept as {at}.
 
 Plans merge like marks, each plan by its own time and the active plan by
 "at"; settings are taken whole, the later copy winning. The settings are the
@@ -72,6 +79,11 @@ MYPLAN_ID = re.compile(r"^my-[a-z0-9]{4,20}$")
 MAX_PLAN_NAME = 80
 MAX_DAY_CHAPTERS = 30
 CHAPTER = re.compile(r"^[1-4A-Z]{3}\.\d{1,3}$")
+MAX_MEMORY = 2000
+MEMORY_ID = re.compile(r"^[1-4A-Z]{3}\.\d{1,3}\.(\d{1,3})(?:-(\d{1,3}))?$")
+MEMORY_TEXT = {"r": 120, "w": 200, "q": 200, "p": 60, "st": 32}
+MAX_ANCHORS = 40
+MEMORY_TIMES = ("add", "due")
 
 
 class Invalid(Exception):
@@ -210,6 +222,59 @@ def _myplans(data):
     return out
 
 
+def _memory(data):
+    """A device's owb.memory: {verse or range: {...}}, one taken out {at}.
+    What the browser keeps is checked for shape and size; an unknown field
+    is dropped."""
+    if not isinstance(data, dict) or len(data) > MAX_MEMORY:
+        raise Invalid(f"Send up to {MAX_MEMORY} verses to memorize.")
+    out = {}
+    for vid, e in data.items():
+        match = MEMORY_ID.match(vid) if isinstance(vid, str) else None
+        if not match or not isinstance(e, dict) or (match[2] and int(match[2]) <= int(match[1])):
+            raise Invalid(f"Not a verse to memorize: {vid}")
+        at = _when(e.get("at"))
+        if not e.get("add"):
+            out[vid] = {"at": at}
+            continue
+        kept = {"at": at}
+        for name in MEMORY_TIMES:
+            if name in e:
+                kept[name] = _when(e[name]) if name == "add" else _time(e[name], vid)
+        text = e.get("t", "")
+        if not isinstance(text, str):
+            raise Invalid(f"A verse's words are text: {vid}")
+        if text:
+            kept["t"] = text[:MAX_TEXT * 4]
+        lang = e.get("lang") or ""
+        if lang in LANGS:
+            kept["lang"] = lang
+        if e.get("lv") in ("L", "B", "R"):
+            kept["lv"] = e["lv"]
+        for name, size in MEMORY_TEXT.items():
+            value = e.get(name)
+            if isinstance(value, str) and value:
+                kept[name] = value[:size]
+        for name in ("iv", "n"):
+            value = e.get(name)
+            if isinstance(value, int) and not isinstance(value, bool) and 0 <= value <= 100_000:
+                kept[name] = value
+        anchors = e.get("a")
+        if isinstance(anchors, list):
+            kept["a"] = [[a[0], a[1][:MAX_LEMMA], a[2][:MAX_GLOSS]] for a in anchors[:MAX_ANCHORS]
+                         if isinstance(a, list) and len(a) == 3 and isinstance(a[0], int) and not isinstance(a[0], bool)
+                         and isinstance(a[1], str) and isinstance(a[2], str)]
+        out[vid] = kept
+    return out
+
+
+def _time(value, where):
+    """A due date: milliseconds, which may be in the future."""
+    if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+        raise Invalid(f"A time is in milliseconds: {where}")
+    return value
+
+
 def _merge_myplans(have, theirs):
     plans = dict(have or {})
     for pid, p in theirs.items():
@@ -282,6 +347,7 @@ def state(user):
         "notes": {p.passage: passage_note_json(p) for p in PassageNote.objects.filter(user=user)},
         "words": {w.lemma: word_json(w) for w in SavedWord.objects.filter(user=user)},
         "myplans": reader.custom_plans if reader and reader.custom_plans else {},
+        "memory": reader.memory if reader and reader.memory else {},
     }
 
 
@@ -300,7 +366,7 @@ def merge(user, data):
     """Take in a device's copy; raises Invalid for one the browser would not
     send, without saving any of it."""
     if not isinstance(data, dict):
-        raise Invalid("Send {marks, place, plans, settings, notes, words, myplans}.")
+        raise Invalid("Send {marks, place, plans, settings, notes, words, myplans, memory}.")
     marks = data.get("marks") or {}
     if not isinstance(marks, dict) or len(marks) > MAX_MARKS:
         raise Invalid(f"Send up to {MAX_MARKS} marks.")
@@ -316,6 +382,9 @@ def merge(user, data):
     myplans = data.get("myplans")
     if myplans is not None:
         myplans = _myplans(myplans)
+    memory = data.get("memory")
+    if memory is not None:
+        memory = _memory(memory)
     place = data.get("place")
     if place is not None:
         if (not isinstance(place, dict) or not BOOK.match(str(place.get("book", "")))
@@ -344,12 +413,15 @@ def merge(user, data):
                 ReadingPlace.objects.update_or_create(user=user, defaults={
                     "book": place["book"], "chapter": place["chapter"], "verse": str(place["verse"]),
                     "updated_at": place_at})
-        if plans is not None or settings is not None or myplans:
+        if plans is not None or settings is not None or myplans or memory:
             reader, _ = ReaderState.objects.get_or_create(user=user)
             if plans is not None:
                 reader.plans = _merge_plans(reader.plans, plans)
             if myplans:
                 reader.custom_plans = _merge_myplans(reader.custom_plans, myplans)
+            if memory:
+                # Each verse like a plan of one's own: the later change wins.
+                reader.memory = _merge_myplans(reader.memory, memory)
             if settings is not None and settings[1] > reader.prefs_at:
                 reader.prefs, reader.prefs_at = settings
             reader.save()

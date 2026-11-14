@@ -630,7 +630,8 @@ window.OWBStudy = (function () {
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
 // highlights, notes and collections (owb.marks), passage notes (owb.notes),
 // the word list (owb.words), the reading place (owb.place), reading-plan
-// progress (owb.plans, web/plans.js), the reader's own plans (owb.myplans)
+// progress (owb.plans, web/plans.js), the reader's own plans (owb.myplans),
+// the verses they are memorizing (owb.memory, web/memorize.js)
 // and the reader's settings (owb.settings, web/reader.js) go to the account
 // and come back merged, the latest change to each verse, note, word and plan
 // winning, and the latest copy of the settings, so they follow the reader
@@ -668,7 +669,7 @@ window.OWBStudy = (function () {
     return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null),
                             plans: read("owb.plans", null), settings: settings(),
                             notes: read("owb.notes", {}), words: read("owb.words", {}),
-                            myplans: read("owb.myplans", {}) });
+                            myplans: read("owb.myplans", {}), memory: read("owb.memory", {}) });
   }
   function hash(text) {
     for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
@@ -691,6 +692,7 @@ window.OWBStudy = (function () {
     changed = takeEach("owb.notes", merged.notes) || changed;
     changed = takeEach("owb.words", merged.words) || changed;
     changed = takeEach("owb.myplans", merged.myplans) || changed;
+    changed = takeEach("owb.memory", merged.memory) || changed;
     var place = read("owb.place", null);
     if (merged.place && (!place || merged.place.at > (place.at || 0))) { write("owb.place", merged.place); changed = true; }
     if (merged.plans) {
@@ -747,7 +749,7 @@ window.OWBStudy = (function () {
   }
 
   function soon() { clearTimeout(timer); timer = setTimeout(sync, 1500); }
-  ["owb:marks", "owb:notes", "owb:words", "owb:myplans"].forEach(function (e) { document.addEventListener(e, soon); });
+  ["owb:marks", "owb:notes", "owb:words", "owb:myplans", "owb:memory"].forEach(function (e) { document.addEventListener(e, soon); });
   document.addEventListener("owb:plans-change", soon);
   document.addEventListener("owb:settings", soon);
   document.addEventListener("owb:account", function () { stopped = false; sync(); });

@@ -2706,3 +2706,117 @@ button.button { font-family: inherit; cursor: pointer; }
 /* On a chapter page, the way into the edition shows in the views for reading. */
 .chap-edition { display: none; text-decoration: none; }
 body.plain .chap-edition { display: inline-flex; }
+
+/* Memorizing (web/memorize.js): the panel's Memorize box, practice, the
+   phrases with their original words, the QR code for the phone, Recall
+   view's blanks, the memorize page and the home page's review card. "Known"
+   is the green of a green highlight; "learning" the gold of the accent. */
+.memo-box { margin: 4px 0 12px; padding: 12px 12px 14px; border-radius: var(--radius-sm); background: var(--surface-2);
+  font-family: var(--sans); display: grid; gap: 10px; }
+.memo-box[hidden] { display: none; }
+.memo-box h3 { margin: 0; }
+.memo-box > .hint, .memo-box .memo-body .hint { margin: 0; }
+.memo-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; justify-content: space-between; }
+.memo-head h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 22px; }
+.memo-pill { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft);
+  color: var(--accent); white-space: nowrap; }
+.memo-pill.memo-learning { background: var(--warn-bg); color: var(--warn); }
+.memo-pill.memo-known { background: rgba(76, 175, 80, .2); color: var(--text); }
+.memo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 13.5px; }
+.memo-label { color: var(--muted); font-weight: 600; }
+.memo-through { font: inherit; padding: 2px 6px; border: 1px solid var(--line-strong); border-radius: 8px;
+  background: var(--surface); color: var(--text); }
+.memo-level button, .memo-tabs button, .memo-modes button { font-size: 13px; padding: 3px 10px; }
+.memo-preview { margin: 0; padding: 10px 12px; border: 1px dashed var(--line-strong); border-radius: var(--radius-sm);
+  background: var(--surface); font-family: var(--read-font, var(--serif)); font-size: 17px; line-height: 1.6; }
+.memo-veiled { color: var(--muted); }
+.memo-draft { color: var(--warn); }
+.memo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; }
+.memo-actions .copy-link { margin-left: 0; text-decoration: none; }
+.memo-toggle.on { border-color: var(--accent); }
+.memo-remove { color: var(--muted); }
+.memo-remove.armed { color: var(--warn); border-color: var(--warn); }
+.memo-tabs { justify-self: start; flex-wrap: wrap; }
+.memo-body { min-width: 0; }
+.memo-practice { display: grid; gap: 8px; }
+.memo-modes { justify-self: start; flex-wrap: wrap; }
+.memo-text { margin: 0; font-family: var(--read-font, var(--serif)); font-size: 18px; line-height: 2; }
+.memo-w { font: inherit; color: var(--accent); background: var(--accent-soft); border: 0; border-radius: 5px;
+  padding: 0 4px; margin: 0 1px; cursor: pointer; line-height: 1.5; letter-spacing: .02em; }
+.memo-w:hover { background: var(--accent-soft-border); }
+.memo-w:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.memo-blank { display: inline-block; vertical-align: -0.15em; height: 1.2em; background: none; border-radius: 0;
+  border-bottom: 2px solid var(--line-strong); padding: 0; }
+.memo-blank:hover { background: var(--accent-soft); }
+.memo-shown { color: var(--accent); }
+.memo-cue { color: var(--muted); letter-spacing: .02em; }
+.memo-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.memo-tools .copy-link { margin-left: 0; }
+.memo-type { font: inherit; font-size: 15px; width: 12em; max-width: 100%; padding: 5px 10px;
+  border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--text); }
+.memo-type:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.memo-wrong { animation: memo-shake .25s; border-color: var(--wj); }
+@keyframes memo-shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { .memo-wrong { animation: none; } }
+.memo-done { margin: 0; flex-basis: 100%; font-weight: 600; color: var(--text); }
+.memo-phrases { margin: 6px 0 0; padding-left: 1.6em; display: grid; gap: 6px;
+  font-family: var(--read-font, var(--serif)); font-size: 16.5px; line-height: 1.45; }
+.memo-phrases li::marker { color: var(--gold); font-family: var(--sans); font-size: 12px; font-weight: 700; }
+.memo-phrase { margin-right: 8px; }
+.memo-anchor { display: inline-flex; align-items: baseline; gap: 6px; padding: 1px 8px; border-radius: 8px;
+  border: 1px solid var(--accent-soft-border); background: var(--accent-soft); white-space: nowrap; }
+.memo-anchor-w { font-family: var(--greek); font-size: 17px; color: var(--text); }
+.memo-anchor-w:lang(hbo), .memo-anchor-w:lang(arc) { font-family: var(--hebrew); }
+.memo-anchor-g { font-family: var(--sans); font-size: 12px; color: var(--muted); }
+.memo-phone { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.memo-qr { width: 148px; height: 148px; flex: none; border-radius: 8px; }
+.memo-qr-bg { fill: #fff; }
+.memo-qr-fg { fill: #16130f; }
+.memo-phone-side { flex: 1 1 200px; min-width: 0; display: grid; gap: 8px; }
+.memo-phone-side .hint { margin: 0; }
+.memo-link { width: 100%; font: 12.5px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 5px 8px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); }
+/* In the text: a verse being learned has a gold dot by its number, a known one green. */
+.verse.memo-new > sup:first-child::after, .verse.memo-learning > sup:first-child::after,
+.verse.memo-known > sup:first-child::after, .verse.memo-new > .line:first-child > sup:first-child::after,
+.verse.memo-learning > .line:first-child > sup:first-child::after, .verse.memo-known > .line:first-child > sup:first-child::after {
+  content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 2px; border-radius: 50%;
+  vertical-align: super; background: var(--gold); }
+.verse.memo-known > sup:first-child::after, .verse.memo-known > .line:first-child > sup:first-child::after { background: rgb(76 175 80); }
+.sel-bar > .sel-memo { font-weight: 600; }
+/* Recall view: the text stays, with blanks. */
+body.view-recall .text .memo-blank { min-height: 1em; }
+/* The memorize page. */
+.memorize { display: grid; gap: 32px; margin: 0 0 56px; }
+.memorize > .notice { margin: 0; }
+.memo-review, .memo-list, .memo-plans-wrap { display: grid; gap: 12px; }
+.memo-plans-wrap h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0; }
+.memo-plans-wrap > .hint, .memo-kept { margin: 0; }
+.memo-card, .memo-item, .memo-plan { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
+.memo-card { box-shadow: var(--shadow-card); max-width: 640px; }
+.memo-card .hint, .memo-item .hint { margin: 0; }
+.memo-ref { font-family: var(--display); font-weight: 600; font-size: 19px; color: var(--text); text-decoration: none; }
+.memo-ref:hover { color: var(--accent); text-decoration: underline; }
+.memo-items, .memo-plans { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.memo-item-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; }
+.memo-item-text { margin: 0; font-family: var(--read-font, var(--serif)); font-size: 16.5px; line-height: 1.55; }
+.memo-grade-got { background: rgb(56 142 60); border-color: rgb(56 142 60); color: #fff; }
+.memo-plan h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 19px; }
+.memo-weeks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); }
+.memo-week { border: 1px solid var(--line); border-radius: 9px; padding: 7px 9px; display: grid; gap: 2px; background: var(--surface-2); }
+.memo-week-n { font-size: 11.5px; font-weight: 700; letter-spacing: .04em; color: var(--muted); }
+.memo-week-ref { font-family: var(--display); font-weight: 600; font-size: 14.5px; }
+.memo-week.done { background: rgba(76, 175, 80, .16); border-color: transparent; }
+.memo-week.now { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+/* The home page's review card, under the plan card when there is one. */
+.memo-due { max-width: 560px; margin: 0 auto 24px; padding: 18px 22px 20px; text-align: left;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.memo-due[hidden] { display: none; }
+.memo-due h2 { font-size: 20px; }
+.memo-due-ref { margin: 8px 0 2px; font-weight: 600; }
+.memo-due-text { margin: 0; font-family: var(--serif); font-size: 17px; line-height: 1.55; color: var(--muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.memo-due .actions { margin-top: 14px; justify-content: flex-start; }
+@media print { .memo-box, .memo-due { display: none !important; } }
