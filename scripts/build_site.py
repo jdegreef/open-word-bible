@@ -2454,9 +2454,17 @@ def plan_length(plan, lang="en"):
     return t(lang, "plans.length", n=len(plan.days)) + (f" &middot; {t(lang, 'plans.daily')}" if daily else "")
 
 
+# A plan that reads more books than this names only its first and last.
+PLAN_BOOKS_LISTED = 4
+
+
 def plan_books(plan, lang="en"):
-    """The books a plan reads, in its order: "Galatians · Ephesians"."""
+    """The books a plan reads, in its order: "Galatians · Ephesians"; for
+    many books, the first and the last: "Genesis – Revelation"."""
     codes = list(dict.fromkeys(b for day in plan.days for b, _ in day))
+    if len(codes) > PLAN_BOOKS_LISTED:
+        codes = [codes[0], codes[-1]]
+        return " &ndash; ".join(BOOK_NAMES[b][lang] for b in codes)
     return " &middot; ".join(BOOK_NAMES[b][lang] for b in codes)
 
 
