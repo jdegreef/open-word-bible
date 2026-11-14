@@ -673,3 +673,12 @@ records it. Empty until the first book is drafted.
 | Matthew | Canaanite (woman) | *perempuan Kanaan* | 15:22 |
 | Matthew | Magadan | Magadan | 15:39 |
 | Matthew | three measures (seah) of flour | *tiga sukat* (L); *sekitar dua puluh kilogram* (B, R, units setting) | 13:33 |
+| Matthew | vultures | *burung nasar* (L, B); *burung pemakan bangkai* (R) | 24:28 |
+| Matthew | talents (parable) | *talenta* (L); *kantong uang perak* (B, R, units setting) | 25:15 |
+| Matthew | legions | *pasukan* (L, R); *legiun* (B) | 26:53 |
+| Matthew | the Power (God) | *Yang Mahakuasa* | 26:64 |
+| Matthew | Potter's Field; Field of Blood | Tanah Tukang Periuk; Tanah Darah | 27:7–8 |
+| Matthew | Golgotha; Place of a Skull | Golgota; Tempat Tengkorak | 27:33 |
+| Matthew | Eli, Eli, lema sabachthani | Eli, Eli, lema sabakhtani | 27:46 |
+| Matthew | governor (*hēgemōn*) | *wali negeri* (L); *gubernur* (B, R) | 27:2 |
+| Matthew | Jesus Barabbas | Yesus Barabas | 27:16 |
