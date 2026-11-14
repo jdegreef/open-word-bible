@@ -1,5 +1,5 @@
 {
- "description": "Key terms: Greek and Hebrew words whose English rendering is settled and stays the same at every level. owb.validate checks that each English level of a record containing one of these words uses an allowed English word, unless an English rendering decision or a word_sense meaning decision on that word explains the exception. Lemmas are copied from MACULA by Strong's number, never typed. \"language\" is hbo for a Hebrew term (Greek by default), since Greek and Hebrew Strong's numbers overlap. \"english\" is a list for every level, or a list per level (L, B, R). \"slug\" is the term's page on the site (/terms/<slug>/): set once and never changed, so links keep working when a sense is reworded.",
+ "description": "Key terms: Greek and Hebrew words whose English rendering is settled and stays the same at every level. owb.validate checks that each English level of a record containing one of these words uses an allowed English word, unless an English rendering decision or a word_sense meaning decision on that word explains the exception. Lemmas are copied from MACULA by Strong's number, never typed. \"language\" is hbo for a Hebrew term (Greek by default), since Greek and Hebrew Strong's numbers overlap. \"english\" is a list for every level, or a list per level (L, B, R). \"checked\": false marks a term whose English is settled by sense (soul, life or person), not by one word: its note gives the rule and owb.validate does not check it. \"pending\" lists Psalms sentences whose fix is waiting in docs/review-notes/pending-psalms-patches-b.jsonl (the Psalms were being set in lines when the term was added); owb.validate skips them, and an entry is removed once its patch is applied. \"slug\" is the term's page on the site (/terms/<slug>/): set once and never changed, so links keep working when a sense is reworded.",
  "terms": [
   {
    "strong": "5485",
@@ -182,6 +182,649 @@
     "LORD"
    ],
    "note": "Key term (style guide): \"the LORD\" at every level, written as a divine_name span with Yahweh as the alternative: {{divine_name:the LORD|Yahweh}}."
+  },
+  {
+   "language": "hbo",
+   "strong": "2617",
+   "slug": "hesed",
+   "lemma": "חֶסֶד",
+   "sense": "loyal love (hesed)",
+   "english": {
+    "L": [
+     "steadfast love",
+     "loyal love"
+    ],
+    "B": [
+     "faithful love",
+     "loyal love"
+    ],
+    "R": [
+     "faithful love"
+    ]
+   },
+   "note": "Settled by section (articles/hesed-steadfast-love.md). In the Law and the historical books (Genesis to Esther) Literal says \"steadfast love\" and Balanced \"faithful love\"; in Job, Psalms, Proverbs, Ecclesiastes, Song of Songs, Lamentations and the prophets Literal and Balanced say \"loyal love\". Readable says \"faithful love\" everywhere. Where a historical book sings or repeats a psalm (the refrain \"his loyal love is forever\" in 1 and 2 Chronicles and Ezra 3:11; 2 Samuel 22, which is Psalm 18) it keeps the Psalms' wording, and quotations of Exodus 34:6 follow their own book's section (Numbers 14:18 and Nehemiah 9:17 as Exodus; Joel 2:13 and Jonah 4:2 as the Psalms). A departure (Esther 2:9 \"favor\", Micah 6:8 \"loyalty\", Isaiah 40:6 \"loyalty\") needs a decision."
+  },
+  {
+   "language": "hbo",
+   "strong": "8451",
+   "slug": "torah",
+   "lemma": "תּוֹרָה",
+   "sense": "law, instruction (torah)",
+   "english": {
+    "L": [
+     "law",
+     "instruction",
+     "teaching"
+    ],
+    "B": [
+     "law",
+     "instruction",
+     "teaching"
+    ],
+    "R": [
+     "law",
+     "teaching",
+     "instruction",
+     "rule"
+    ]
+   },
+   "note": "\"law\" for the Law of Moses and the Book of the Law (the Law and the historical books) at Literal and Balanced; Readable says \"law\" or \"teaching\", and \"rules\" for the priestly regulations (\"this is the law of the burnt offering\", Leviticus 6-7, 11-15; Numbers 5-6). In the Psalms and the prophets Literal and Balanced say \"instruction\" and Readable \"teaching\". In Proverbs and Job, where it is a parent's or a teacher's instruction, \"teaching\" at every level."
+  },
+  {
+   "language": "hbo",
+   "strong": "7965",
+   "slug": "shalom",
+   "lemma": "שָׁלוֹם",
+   "sense": "peace, well-being (shalom)",
+   "english": {
+    "L": [
+     "peace",
+     "peaceful",
+     "peaceably",
+     "welfare",
+     "well"
+    ],
+    "B": [
+     "peace",
+     "peaceful",
+     "peacefully",
+     "peaceably",
+     "safe",
+     "safely",
+     "safety",
+     "well",
+     "welfare",
+     "greet",
+     "greeted",
+     "greeting",
+     "friend"
+    ],
+    "R": [
+     "peace",
+     "peaceful",
+     "peacefully",
+     "peaceably",
+     "safe",
+     "safely",
+     "safety",
+     "well",
+     "welfare",
+     "greet",
+     "greeted",
+     "greeting",
+     "friend"
+    ]
+   },
+   "note": "\"peace\" by default at every level. Where it means someone's welfare or safety, Balanced and Readable may say \"well\", \"safe\", \"safely\" or \"welfare\"; \"Is it peace?\" is \"Is all well?\", and to ask about someone's peace is to greet them or ask how they are. \"Man of my peace\" is an idiom for a friend, and Balanced and Readable may say \"friend\"; other idioms take a rendering decision."
+  },
+  {
+   "language": "hbo",
+   "strong": "5315",
+   "slug": "nephesh",
+   "lemma": "נֶפֶשׁ",
+   "sense": "soul, life, self (nephesh)",
+   "english": {
+    "L": [
+     "soul",
+     "life",
+     "person"
+    ],
+    "B": [
+     "soul",
+     "life",
+     "person"
+    ],
+    "R": [
+     "life",
+     "person"
+    ]
+   },
+   "checked": false,
+   "note": "Settled by sense, so owb.validate does not hold the English to one word; a meaning decision says which sense a passage has. \"soul\" for the inner self that longs, grieves and praises (\"my soul\", Psalms); \"life\" where a life is at stake, saved or taken; \"person\" or \"anyone\" for a person in the laws; \"throat\", \"appetite\" or \"desire\" where the body or a craving is meant; \"creature\" or \"being\" for living beings (Genesis 1-2; 2:7 \"a living being\"). Literal keeps \"soul\" for the self; Balanced and Readable may say \"I\", \"me\" or \"yourself\" where \"my soul\" or \"your soul\" stands for the person. Never \"spirit\", which is ruach."
+  },
+  {
+   "language": "hbo",
+   "strong": "7307",
+   "slug": "ruach",
+   "lemma": "רוּחַ",
+   "sense": "spirit, wind, breath (ruach)",
+   "english": {
+    "L": [
+     "spirit",
+     "wind",
+     "breath"
+    ],
+    "B": [
+     "spirit",
+     "wind",
+     "breath"
+    ],
+    "R": [
+     "spirit",
+     "wind",
+     "breath"
+    ]
+   },
+   "checked": false,
+   "note": "Settled by sense (articles/wind-breath-and-spirit.md), so owb.validate does not hold the English to one word. \"Spirit\" with a capital where God's Spirit is meant; \"spirit\" for a person's spirit or a spirit God sends; \"wind\" for moving air, and \"side\" or \"wind\" for a quarter of the compass; \"breath\" for the breath of life. Where it is a mood or temper (\"short of spirit\", \"his spirit revived\") Balanced and Readable may say what the mood is (\"quick-tempered\", \"felt alive again\"). Where the sense is open (Genesis 1:2) a meaning decision says so."
+  },
+  {
+   "language": "hbo",
+   "strong": "6918",
+   "slug": "qadosh-holy",
+   "lemma": "קָדוֹשׁ",
+   "sense": "holy (qadosh)",
+   "english": [
+    "holy"
+   ],
+   "note": "\"holy\" at every level; \"the Holy One of Israel\" in Isaiah, \"holy ones\" for heavenly beings. \"Set apart\" may explain it but does not replace it.",
+   "pending": [
+    "PSA.46.5.s1"
+   ]
+  },
+  {
+   "language": "hbo",
+   "strong": "6944",
+   "slug": "qodesh-holiness",
+   "lemma": "קֹדֶשׁ",
+   "sense": "holiness, holy things (qodesh)",
+   "english": {
+    "L": [
+     "holy",
+     "holiness",
+     "sanctuary",
+     "sacred",
+     "consecrated",
+     "dedicated"
+    ],
+    "B": [
+     "holy",
+     "holiness",
+     "sanctuary",
+     "sacred",
+     "consecrated",
+     "dedicated"
+    ],
+    "R": [
+     "holy",
+     "holiness",
+     "sanctuary",
+     "sacred",
+     "consecrated",
+     "dedicated",
+     "temple"
+    ]
+   },
+   "note": "\"holy\" in \"holy place\", \"Most Holy Place\", \"holy mountain\", \"holy things\"; \"holiness\" for the quality (\"the splendor of holiness\"); \"sanctuary\" where it names the sanctuary; \"dedicated\" or \"consecrated\" for gifts given to God. Readable may say \"temple\" for the sanctuary."
+  },
+  {
+   "language": "hbo",
+   "strong": "1285",
+   "slug": "berit-covenant",
+   "lemma": "בְּרִית",
+   "sense": "covenant (berit)",
+   "english": {
+    "L": [
+     "covenant",
+     "treaty",
+     "treaties"
+    ],
+    "B": [
+     "covenant",
+     "treaty",
+     "treaties"
+    ],
+    "R": [
+     "covenant",
+     "treaty",
+     "agreement",
+     "treaties"
+    ]
+   },
+   "note": "\"covenant\" at every level, Readable included, for every covenant God makes (Genesis 9 and 17 as Exodus and Deuteronomy). For an agreement between peoples or rulers Literal keeps \"covenant\" or says \"treaty\", Balanced and Readable say \"treaty\", Readable also \"agreement\". \"Men of your covenant\" (allies) takes a rendering decision."
+  },
+  {
+   "language": "hbo",
+   "strong": "3722",
+   "slug": "kipper-atone",
+   "lemma": "כִּפֶּר",
+   "sense": "make atonement (kipper)",
+   "english": {
+    "L": [
+     "atonement",
+     "atone",
+     "atoned"
+    ],
+    "B": [
+     "atonement",
+     "atone",
+     "atoned"
+    ],
+    "R": [
+     "atonement",
+     "atone",
+     "atoned",
+     "forgive",
+     "forgiven"
+    ]
+   },
+   "note": "\"make atonement\" (\"atone\") at every level in the rites of the Law and wherever a priest or God atones for sin; Readable may say that God \"forgives\" where he is the one who covers sin (Psalms, prophets). Other uses take a decision: covering with pitch (Genesis 6:14), appeasing (Genesis 32:21), buying off a disaster (Isaiah 47:11), making amends (Proverbs 16:6)."
+  },
+  {
+   "language": "hbo",
+   "strong": "3727",
+   "slug": "kapporet-mercy-seat",
+   "lemma": "כַּפֹּרֶת",
+   "sense": "mercy seat (kapporet)",
+   "english": {
+    "L": [
+     "mercy seat"
+    ],
+    "B": [
+     "mercy seat"
+    ],
+    "R": [
+     "mercy seat",
+     "lid",
+     "cover"
+    ]
+   },
+   "note": "\"mercy seat\" at Literal and Balanced, Leviticus 16 included; Readable says what it is, \"the lid\" or \"the cover\" of the ark, and where it is first described (Exodus 25:17) adds that it is the place where sins are covered."
+  },
+  {
+   "language": "hbo",
+   "strong": "6666",
+   "slug": "tsedaqah-righteousness",
+   "lemma": "צְדָקָה",
+   "sense": "righteousness (tsedaqah)",
+   "english": {
+    "L": [
+     "righteousness",
+     "righteous",
+     "righteously"
+    ],
+    "B": [
+     "righteousness",
+     "righteous",
+     "righteously",
+     "right",
+     "rightly",
+     "justice",
+     "just",
+     "honest",
+     "honestly"
+    ],
+    "R": [
+     "righteousness",
+     "righteous",
+     "righteously",
+     "right",
+     "rightly",
+     "justice",
+     "just",
+     "fair",
+     "fairly",
+     "honest",
+     "honestly"
+    ]
+   },
+   "note": "Literal says \"righteousness\" (\"righteous\", \"righteously\"). Balanced keeps \"righteousness\" for God's and people's right conduct and standing, and says \"right\", \"just\" or \"justice\" where it is fairness or doing what is right (in the pair \"justice and righteousness\" both words stay). Readable usually says \"what is right\", or \"fair\" and \"honest\". Not \"good\" or \"goodness\".",
+   "pending": [
+    "PSA.71.19.s1"
+   ]
+  },
+  {
+   "language": "hbo",
+   "strong": "6664",
+   "slug": "tsedeq-righteousness",
+   "lemma": "צֶדֶק",
+   "sense": "righteousness (tsedeq)",
+   "english": {
+    "L": [
+     "righteousness",
+     "righteous",
+     "righteously"
+    ],
+    "B": [
+     "righteousness",
+     "righteous",
+     "righteously",
+     "right",
+     "rightly",
+     "justice",
+     "just",
+     "fair",
+     "fairly",
+     "fairness",
+     "honest",
+     "honestly"
+    ],
+    "R": [
+     "righteousness",
+     "righteous",
+     "righteously",
+     "right",
+     "rightly",
+     "justice",
+     "just",
+     "fair",
+     "fairly",
+     "fairness",
+     "honest",
+     "honestly"
+    ]
+   },
+   "note": "As tsedaqah: Literal \"righteousness\"; Balanced \"righteousness\", or \"right\", \"just\", \"fair\", \"honest\" for fair judging and honest weights (\"just scales\", Leviticus 19:36); Readable \"what is right\", \"fair\" or \"honest\"."
+  },
+  {
+   "language": "hbo",
+   "strong": "4941",
+   "slug": "mishpat",
+   "lemma": "מִשְׁפָּט",
+   "sense": "justice, judgment (mishpat)",
+   "english": {
+    "L": [
+     "justice",
+     "judgment"
+    ],
+    "B": [
+     "justice",
+     "judgment",
+     "ruling"
+    ],
+    "R": [
+     "justice",
+     "right",
+     "fair",
+     "rule",
+     "law"
+    ]
+   },
+   "checked": false,
+   "note": "Settled by sense, so owb.validate does not hold the English to one word. \"justice\" for justice done (beside \"righteousness\" in the pair); \"judgment\" for a court's or God's judging; for the decrees of the covenant (\"statutes and judgments\") Literal says \"judgments\", Balanced \"rulings\" and Readable \"rules\" or \"laws\"; \"custom\", \"way\" or \"manner\" for a customary practice; \"case\" or \"right\" for someone's legal claim; Readable may say \"fair\" of fair judging."
+  },
+  {
+   "language": "hbo",
+   "strong": "3519",
+   "slug": "kavod-glory",
+   "lemma": "כָּבוֹד",
+   "sense": "glory, honor (kavod)",
+   "english": {
+    "L": [
+     "glory",
+     "glorious",
+     "honor",
+     "honored",
+     "wealth",
+     "riches",
+     "splendor",
+     "honoring"
+    ],
+    "B": [
+     "glory",
+     "glorious",
+     "honor",
+     "honored",
+     "honorable",
+     "wealth",
+     "riches",
+     "splendor",
+     "honoring"
+    ],
+    "R": [
+     "glory",
+     "glorious",
+     "honor",
+     "honored",
+     "honorable",
+     "wealth",
+     "riches",
+     "rich",
+     "splendor",
+     "splendid",
+     "honoring"
+    ]
+   },
+   "note": "\"glory\" for God's glory and its visible presence (\"the glory of the LORD\") at every level; \"honor\" for the honor of people; \"wealth\" or \"riches\" where it means riches (\"riches and honor\"). In poetry \"my glory\" for the self, beside \"my soul\", takes a decision.",
+   "pending": [
+    "PSA.66.2.s1"
+   ]
+  },
+  {
+   "language": "hbo",
+   "strong": "0530",
+   "slug": "emunah-faithfulness",
+   "lemma": "אֱמוּנָה",
+   "sense": "faithfulness (emunah)",
+   "english": {
+    "L": [
+     "faithfulness",
+     "faithful",
+     "faithfully",
+     "truth"
+    ],
+    "B": [
+     "faithfulness",
+     "faithful",
+     "faithfully",
+     "honest",
+     "honestly",
+     "trust",
+     "trusted",
+     "truth"
+    ],
+    "R": [
+     "faithfulness",
+     "faithful",
+     "faithfully",
+     "honest",
+     "honestly",
+     "trust",
+     "trusted",
+     "truth"
+    ]
+   },
+   "note": "\"faithfulness\" (\"faithful\", \"faithfully\") at every level for God's faithfulness and steady conduct (Habakkuk 2:4 keeps \"faithfulness\", not \"faith\", with a footnote on Romans 1:17); Balanced and Readable say \"honest(ly)\" or \"trusted\" of honest dealing (2 Kings 12:16; 22:7), and \"truth\" of truthful speech."
+  },
+  {
+   "language": "hbo",
+   "strong": "0571",
+   "slug": "emet-truth",
+   "lemma": "אֱמֶת",
+   "sense": "truth, faithfulness (emet)",
+   "english": {
+    "L": [
+     "truth",
+     "true",
+     "truly",
+     "truthful",
+     "faithfulness",
+     "faithful",
+     "faithfully"
+    ],
+    "B": [
+     "truth",
+     "true",
+     "truly",
+     "truthful",
+     "faithfulness",
+     "faithful",
+     "faithfully",
+     "honest",
+     "honestly",
+     "fairly",
+     "fair"
+    ],
+    "R": [
+     "truth",
+     "true",
+     "truly",
+     "truthful",
+     "faithfulness",
+     "faithful",
+     "faithfully",
+     "honest",
+     "honestly",
+     "fairly",
+     "fair"
+    ]
+   },
+   "note": "\"truth\" or \"true\" for the truth of words and of God; \"faithfulness\" or \"faithful\" for reliability, especially in the pair with hesed (\"loyal love and faithfulness\"; Exodus 34:6 Balanced \"faithful love and truth\"). Balanced and Readable may say \"honest(ly)\" or \"fair(ly)\" of honest dealing and fair judging."
+  },
+  {
+   "language": "hbo",
+   "strong": "3444",
+   "slug": "yeshuah-salvation",
+   "lemma": "יְשׁוּעָה",
+   "sense": "salvation (yeshuah)",
+   "english": {
+    "L": [
+     "salvation",
+     "deliverance"
+    ],
+    "B": [
+     "salvation",
+     "save",
+     "saves",
+     "saved",
+     "saving",
+     "rescue",
+     "deliverance"
+    ],
+    "R": [
+     "salvation",
+     "save",
+     "saves",
+     "saved",
+     "saving",
+     "rescue",
+     "rescues",
+     "rescued"
+    ]
+   },
+   "note": "Literal says \"salvation\" (\"deliverance\" where it is a battle won). Balanced keeps \"salvation\" in the prophets and may use the verb (\"save\", \"rescue\") in the Psalms where the noun names God's act of saving; Readable says \"save\" or \"rescue\". The Greek counterpart is salvation (G4991)."
+  },
+  {
+   "language": "hbo",
+   "strong": "7585",
+   "slug": "sheol",
+   "lemma": "שְׁאוֹל",
+   "sense": "Sheol, the realm of the dead",
+   "english": {
+    "L": [
+     "Sheol"
+    ],
+    "B": [
+     "Sheol",
+     "grave"
+    ],
+    "R": [
+     "place of the dead",
+     "grave"
+    ]
+   },
+   "note": "As articles/sheol-hades-and-gehenna.md: \"Sheol\" at Literal everywhere, and at Balanced everywhere but Jacob's sayings in Genesis (37:35; 42:38; 44:29, 31), where Balanced says \"the grave\". Readable says \"the place of the dead\" in the Psalms (and 2 Samuel 22, which is Psalm 18) and \"the grave\" elsewhere. Never \"hell\"."
+  },
+  {
+   "language": "hbo",
+   "strong": "1350",
+   "slug": "goel-redeem",
+   "lemma": "גָּאַל",
+   "sense": "redeem, redeemer (ga'al)",
+   "english": {
+    "L": [
+     "redeem",
+     "redeems",
+     "redeemed",
+     "redeemer",
+     "redemption",
+     "avenger"
+    ],
+    "B": [
+     "redeem",
+     "redeems",
+     "redeemed",
+     "redeemer",
+     "redemption",
+     "avenger",
+     "buy back",
+     "bought back",
+     "buy it back",
+     "bought it back",
+     "buy them back",
+     "bought them back",
+     "buy him back",
+     "buy himself back",
+     "free",
+     "freed"
+    ],
+    "R": [
+     "redeem",
+     "redeems",
+     "redeemed",
+     "redeemer",
+     "redemption",
+     "avenger",
+     "avenges",
+     "buy back",
+     "bought back",
+     "rescue",
+     "rescues",
+     "rescued",
+     "set free",
+     "buy it back",
+     "bought it back",
+     "buy them back",
+     "bought them back",
+     "buy him back",
+     "buy himself back",
+     "free",
+     "freed"
+    ]
+   },
+   "note": "\"redeem\" and \"redeemer\" at Literal and Balanced, \"avenger\" for the avenger of blood; for land, houses and people in the laws (Leviticus 25; 27) Balanced and Readable say \"buy back\". Readable says \"the relative who avenges the death\", \"relative\" for the family redeemer in Ruth, and \"rescue\" or \"set free\" where God redeems his people, keeping \"Redeemer\" where it is his title."
+  },
+  {
+   "language": "hbo",
+   "strong": "1892",
+   "slug": "hevel",
+   "lemma": "הֶבֶל",
+   "sense": "breath, vapor (hevel)",
+   "english": [
+    "breath",
+    "vapor",
+    "futility",
+    "futile",
+    "emptiness",
+    "empty",
+    "worthless",
+    "idols",
+    "nothing",
+    "in vain",
+    "useless",
+    "mist"
+   ],
+   "note": "In Ecclesiastes \"breath\" at every level (\"Breath of breaths\"), keeping the book's picture of what is brief and cannot be grasped; elsewhere \"breath\" or \"vapor\" for what passes, \"empty\", \"nothing\" or \"in vain\" for what is futile, and \"worthless idols\" or \"idols\" where it names false gods (Deuteronomy 32:21; Jeremiah)."
   }
  ]
 }

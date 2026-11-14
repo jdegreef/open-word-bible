@@ -318,6 +318,44 @@ class ValidateTest(unittest.TestCase):
             lemmas = {t.lemma for v in words.values() for t in v if t.strong == strong}
             self.assertIn(term["lemma"], lemmas, strong)
 
+    def _content_record(self, path, rid):
+        path = EXAMPLE.parents[1] / path
+        return next(r for r in json.loads(path.read_text(encoding="utf-8"))["records"] if r["id"] == rid)
+
+    def test_old_testament_key_term_keeps_its_english_by_level(self):
+        # Ruth 1:8, chesed: "faithful love" at Balanced in the historical books.
+        record = self._content_record("RUT/RUT.1.json", "RUT.1.8.s1")
+        hesed = {t.id for t in validate.macula_hebrew.tokens_for_refs(["RUT.1.8"]).values()
+                 if t.strong == "2617"}
+        record["decisions"] = [d for d in record["decisions"] if not hesed & set(d["tokens"])]
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("faithful love", "kindness")
+        self.assertTrue(any("renderings.en.B: key term 'loyal love (hesed)'" in e
+                            for e in validate.validate_record(record)))
+
+    def test_a_term_settled_by_sense_is_not_checked(self):
+        nephesh = validate.KEY_TERMS[("hbo", "5315")]
+        self.assertFalse(validate.is_checked(nephesh))
+        self.assertTrue(validate.is_checked(validate.KEY_TERMS[("hbo", "2617")]))
+        record = self._content_record("GEN/GEN.2.4-25.json", "GEN.2.7.s1")
+        for level in "LBR":
+            record["renderings"]["en"][level] = re.sub(r"\b(being|soul|life|creature)\b", "thing",
+                                                       record["renderings"]["en"][level])
+        self.assertFalse(any("nephesh" in e for e in validate.validate_record(record)))
+
+    def test_a_pending_psalms_fix_is_skipped_until_applied(self):
+        # The fix for Psalm 46:5 waits in the Psalms patch file.
+        term = validate.KEY_TERMS[("hbo", "6918")]
+        self.assertIn("PSA.46.5.s1", term["pending"])
+        patches = (EXAMPLE.parents[2] / "docs" / "review-notes" / "pending-psalms-patches-b.jsonl")
+        waiting = {json.loads(line)["id"] for line in patches.read_text(encoding="utf-8").splitlines() if line}
+        for t in validate.KEY_TERMS.values():
+            self.assertLessEqual(set(t.get("pending", ())), waiting)
+        record = self._content_record("PSA/PSA.46.json", "PSA.46.5.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["id"] = "PSA.46.5.s9"
+        self.assertTrue(any("key term 'holy (qadosh)'" in e for e in validate.validate_record(record)))
+
     def test_key_terms_are_matched_by_language(self):
         # Hebrew Strong's 4100 ("what", Genesis 2:19) is not Greek 4100 ("believe").
         path = EXAMPLE.parents[1] / "GEN" / "GEN.2.4-25.json"
