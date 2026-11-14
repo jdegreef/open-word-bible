@@ -1,21 +1,54 @@
 // Open Word Bible chapter reader. Data comes from the JSON block the build
 // embeds in the page, with what every language's page of the chapter
-// shares (window.OWB_CHAPTER: the sentence records, the source words, the
-// cross-references) and what every chapter page of the language shares
-// (window.OWB_LANG: the interface text, the book names), from the two
-// scripts the page loads first (scripts/build_site.py chapter_shared,
-// reader_shared). All text is inserted with textContent.
+// shares (window.OWB_CHAPTER: the sentence records with their meaning
+// decisions, the source words, the cross-references), each language's
+// text of the chapter (window.OWB_TEXTS: renderings, word links and
+// rendering decisions) and what every chapter page of the language shares
+// (window.OWB_LANG: the interface text, the book names), from the scripts
+// the page loads first (scripts/build_site.py chapter_shared,
+// chapter_language_data, reader_shared). All text is inserted with
+// textContent.
 (function () {
   "use strict";
   var DATA = JSON.parse(document.getElementById("owb-data").textContent);
   [window.OWB_LANG, window.OWB_CHAPTER].forEach(function (shared) {
     for (var k in shared) DATA[k] = shared[k];
   });
-  // The records carry every language's decisions; the reader shows the
-  // meaning decisions and this language's own.
-  DATA.records.forEach(function (r) {
-    r.decisions = r.decisions.filter(function (d) { return d.language === null || d.language === DATA.lang; });
-  });
+  // Each language's text joins the records as it arrives: the page's
+  // language and any it falls back on come with the page, the one Parallel
+  // sets beside it when chosen (loadText). Only the page language's rendering
+  // decisions are shown, after the meaning decisions, as they always were.
+  DATA.records.forEach(function (r) { r.renderings = {}; r.links = {}; });
+  var texts = {}, loadingText = {};
+  function addText(code) {
+    var text = window.OWB_TEXTS && window.OWB_TEXTS[code];
+    if (!text || texts[code]) return;
+    texts[code] = true;
+    DATA.records.forEach(function (r) {
+      if (text.renderings[r.id]) r.renderings[code] = text.renderings[r.id];
+      if (text.links[r.id]) r.links[code] = text.links[r.id];
+      if (code === DATA.lang && text.decisions[r.id]) r.decisions = r.decisions.concat(text.decisions[r.id]);
+    });
+  }
+  Object.keys(window.OWB_TEXTS || {}).forEach(addText);
+  // Starts loading a language's text, if it is not here; true while it loads.
+  function loadText(code) {
+    if (texts[code] || !DATA.texts[code]) return false;
+    if (!loadingText[code]) {
+      loadingText[code] = true;
+      var script = document.createElement("script");
+      script.src = DATA.texts[code];
+      // Offline, the other language may not load: Parallel then shows
+      // what it has.
+      script.onload = script.onerror = function () {
+        addText(code);
+        texts[code] = true;
+        drawText();
+      };
+      document.body.appendChild(script);
+    }
+    return true;
+  }
   var STORE = "owb.settings";
 
   // Interface text in the page's language (i18n/<lang>.json, reader.ui).
@@ -896,6 +929,7 @@
   // Parallel: each sentence in a row, the page's language beside another.
   function drawParallel(box) {
     var other = partner();
+    if (loadText(other)) return;
     var starts = new Set(DATA.paragraphs);
     box.appendChild(parallelRow(DATA.languages.indexOf(settings.lang) >= 0 ? settings.lang : "en", other, true));
     DATA.records.forEach(function (r) {

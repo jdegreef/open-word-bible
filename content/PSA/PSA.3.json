@@ -64,6 +64,26 @@
           "L": "የዳዊት መዝሙር፤ ከልጁ ከአቤሴሎም ፊት በሸሸ ጊዜ።",
           "B": "የዳዊት መዝሙር፤ ከልጁ ከአቤሴሎም በሸሸ ጊዜ።",
           "R": "ዳዊት የዘመረው መዝሙር፤ ከልጁ ከአቤሴሎም ሸሽቶ በነበረበት ጊዜ።"
+        },
+        "hi": {
+          "L": "दाऊद का भजन, जब वह अपने पुत्र अबशालोम के सामने से भागा।",
+          "B": "दाऊद का भजन, जब वह अपने पुत्र अबशालोम से बचकर भागा।",
+          "R": "दाऊद का गीत, उस समय का जब वह अपने बेटे अबशालोम से बचकर भागा था।"
+        },
+        "ru": {
+          "L": "Псалом Давида, когда он бежал от Авессалома, сына своего.",
+          "B": "Псалом Давида, когда он бежал от своего сына Авессалома.",
+          "R": "Песнь Давида — из того времени, когда он убегал от своего сына Авессалома."
+        },
+        "ja": {
+          "L": "ダビデの賛歌。彼がその子アブサロムの前から逃げたとき。",
+          "B": "ダビデの賛歌。ダビデが息子アブサロムから逃れたときのもの。",
+          "R": "ダビデの歌。ダビデが息子アブサロムから逃げていたときの歌。"
+        },
+        "uk": {
+          "L": "Псалом Давида, коли він утікав від Авесалома, свого сина.",
+          "B": "Псалом Давида, коли він тікав від свого сина Авесалома.",
+          "R": "Пісня Давида з того часу, коли він утікав від свого сина Авесалома."
         }
       },
       "decisions": [
@@ -336,6 +356,123 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030010011",
+            "o190030010022"
+          ],
+          "choice": "\"दाऊद का भजन\" (L, B); \"दाऊद का गीत\" (R)",
+          "alternatives": [
+            "\"स्तोत्र\""
+          ],
+          "reason": "The title is verse 1 (meaning m1). A mizmor is a song sung to music (meaning m2): \"भजन\" at Literal and Balanced, \"गीत\" at Readable, as the poetry note's table of titles settles for every psalm. \"का\" keeps the Hebrew's \"of David\" (meaning m3); \"अबशालोम\" as in 2 Samuel in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030010011"
+          ],
+          "choice": "Псалом (L, B); Песнь (R)",
+          "alternatives": [
+            "Песня"
+          ],
+          "reason": "The psalm titles follow the Psalms terms note: mizmor is \"псалом\" at Literal and Balanced and \"песнь\" at Readable, which says what a psalm is (m2), as the English does. The title is verse 1 (m1); Absalom is \"Авессалом\", as in 2 Samuel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190030010011",
+            "o190030010021",
+            "o190030010022",
+            "o190030010031",
+            "o190030010032",
+            "o190030010033",
+            "o190030010041",
+            "o190030010042",
+            "o190030010051",
+            "o190030010061",
+            "o190030010062"
+          ],
+          "choice": "The title is verse 1, translated at every level as prose (no \\q), as the English does; the Psalter's verse numbers are the Hebrew ones",
+          "alternatives": [],
+          "reason": "The English style guide (section 2) numbers Psalms as the Hebrew does, with the title as its own verse, and sets a title that is a whole verse as prose; Japanese follows the English record.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030010011",
+            "o190030010021",
+            "o190030010022"
+          ],
+          "choice": "mizmor \"賛歌\" (L, B), \"歌\" (R); shir \"歌\" (every level); ledavid \"ダビデの\" (R too); for the whole Psalter",
+          "alternatives": [
+            "詩",
+            "詩編"
+          ],
+          "reason": "mizmor is a song sung to music (m2), and 賛歌 keeps it apart from shir (歌); Readable says 歌, as the English Readable says song. 詩編 is kept for the book's name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030010011"
+          ],
+          "choice": "\"Псалом\" (L, B), \"Пісня\" (R) for mizmor in the titles, through the book",
+          "alternatives": [
+            "\"Пісня\" at every level"
+          ],
+          "reason": "\"Псалом\" is the Ukrainian word for this kind of sung poem and names the book; Readable says \"пісня\", as the English Readable says \"song\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -402,6 +539,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ባላጋራዎቼ እንዴት በዙ! \\q ብዙዎች በእኔ ላይ ይነሣሉ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ባላጋራዎቼ ምንኛ በዙ! \\q ብዙዎች በእኔ ላይ እየተነሡ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቼ እጅግ ብዙ ናቸው! \\q ብዙ ሰዎች በእኔ ላይ ተነሥተዋል።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मेरे शत्रु कितने बढ़ गए हैं! \\q बहुत-से [लोग] मेरे विरुद्ध उठ रहे हैं।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मेरे बैरी कितने बढ़ गए हैं! \\q बहुत-से लोग मेरे विरुद्ध उठ खड़े हुए हैं।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मेरे कितने सारे दुश्मन हैं! \\q कितने सारे लोग मेरे ख़िलाफ़ हो रहे हैं।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДИ|Яхве}}, как много стало моих противников! \\q Многие поднимаются против меня.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, сколько стало у меня врагов! \\q Многие поднимаются против меня.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, у меня так много врагов! \\q Так много людей восстало против меня."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、わたしの仇は、なんと多くなったことか！ \\q 多くの者が、わたしに向かって立ち上がる。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしの仇は、なんと増えたことか！ \\q 多くの者が、わたしに逆らって立ち上がる。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしには、こんなにたくさんの敵がいる！ \\q 大勢の人が、わたしに背いている。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДИ|Ягве}}, як багато стало моїх ворогів! \\q Багато [тих, що] повстають на мене.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, як помножилися мої вороги! \\q Багато хто повстає проти мене.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, як багато в мене ворогів! \\q Так багато людей обертаються проти мене."
         }
       },
       "decisions": [
@@ -583,6 +740,68 @@
           "reason": "The terms list keeps \"ባላጋራዎች\" for tsarim and \"ጠላቶች\" for ʾoyevim (verse 8), so the two Hebrew words stay apart; Readable uses the everyday word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190030020011"
+          ],
+          "choice": "\"हे {{divine_name:प्रभु|याहवे}}\" in address; \"तू\" to God",
+          "alternatives": [],
+          "reason": "The psalmist speaks to God by name with the vocative \"हे\", as the prayers of Samuel and Kings do in this translation, and with \"तू\" (verse 4 on), the intimate address of Hindi prayer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190030020011"
+          ],
+          "choice": "{{divine_name:ГОСПОДИ|Яхве}}",
+          "alternatives": [
+            "О ГОСПОДЬ"
+          ],
+          "reason": "When the psalmist speaks to God by name, Russian uses the vocative \"ГОСПОДИ\" inside the setting, with \"Яхве\" as the alternative, as the Pentateuch note settles; no \"О\" is added, as the English adds no \"O\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030020041",
+            "o190030020042"
+          ],
+          "choice": "tsar \"仇\" (L, B), \"敵\" (R); 'oyev \"敵\" (every level); DN in address \"DNよ\" at the head of the line; for the whole Psalter",
+          "alternatives": [
+            "敵 at every level"
+          ],
+          "reason": "As Lamentations: the two Hebrew words are kept apart at Literal and Balanced; Readable uses the everyday 敵 for both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -653,6 +872,26 @@
           "L": "ብዙዎች ስለ ነፍሴ እንዲህ ይላሉ፦ \\q «በእግዚአብሔር ዘንድ ለእርሱ መዳን የለውም።» ሴላ",
           "B": "ብዙዎች ስለ እኔ እንዲህ ይላሉ፦ \\q «እግዚአብሔር አያድነውም።» ሴላ",
           "R": "ብዙ ሰዎች እግዚአብሔር እንደማያድነኝ ይናገራሉ። ሴላ"
+        },
+        "hi": {
+          "L": "बहुत-से [लोग] मेरे प्राण के विषय में कह रहे हैं, \\q \"परमेश्वर में उसके लिए कोई उद्धार नहीं।\" सेला",
+          "B": "बहुत-से लोग मेरे बारे में कह रहे हैं, \\q \"परमेश्वर उसे बचानेवाले नहीं।\" सेला",
+          "R": "बहुत-से लोग कहते हैं कि परमेश्वर मुझे नहीं बचाएँगे। सेला"
+        },
+        "ru": {
+          "L": "Многие говорят о моей душе: \\q «Нет для него спасения у Бога.» Села",
+          "B": "Многие говорят обо мне: \\q «Бог не станет его спасать.» Села",
+          "R": "Многие говорят, что Бог меня не спасёт. Села"
+        },
+        "ja": {
+          "L": "多くの者が、わたしの魂について言っている。 \\q 「神のもとに、彼の救いはない。」セラ",
+          "B": "多くの者が、わたしのことをこう言っている。 \\q 「神が彼を助け出すことはない。」セラ",
+          "R": "大勢の人が、神はわたしを救ってくださらない、と言っている。セラ"
+        },
+        "uk": {
+          "L": "Багато [хто] каже про мою душу: \\q «Немає йому спасіння в Бозі.» Села",
+          "B": "Багато хто каже про мене: \\q «Бог його не врятує.» Села",
+          "R": "Багато людей кажуть, що Бог мене не врятує. Села"
         }
       },
       "decisions": [
@@ -964,6 +1203,167 @@
           "reason": "docs/amharic-style.md 7a: Elohim is \"እግዚአብሔር\" where the text plainly speaks of the one God; the divine name keeps its own span. Selah is a musical or liturgical mark whose meaning is lost (meaning decision m3), so it is kept as a word, as the English keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030081"
+          ],
+          "choice": "\"सेला\", kept at the end of the verse",
+          "alternatives": [],
+          "reason": "The meaning of Selah is no longer known (meaning m3); it is probably a musical direction. Every level keeps the word, as the English does, apart from the sentence at the end of its verse, in the form the poetry note gives.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030032"
+          ],
+          "choice": "\"मेरे प्राण के विषय में\" (L); \"मेरे बारे में\" (B, R)",
+          "alternatives": [],
+          "reason": "Nefesh is \"प्राण\" at Literal, as the poetry note settles; here it means the person himself (meaning m1), so Balanced and Readable say \"me\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030081"
+          ],
+          "choice": "\"Села\" kept at the end of the verse",
+          "alternatives": [
+            "пауза",
+            "interlude"
+          ],
+          "reason": "The meaning of the word is unknown (probably a musical direction), so every level keeps it as a word, \"Села\", at the end of its verse and apart from the sentence, as the English keeps \"Selah\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030032"
+          ],
+          "choice": "о моей душе (L); обо мне (B, R)",
+          "alternatives": [],
+          "reason": "\"Of my soul\" means \"about me\" (m1); Literal keeps \"душа\", the Psalms' Literal word for nefesh, and Balanced and Readable say \"me\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030081"
+          ],
+          "choice": "Selah \"セラ\" at every level, kept as it is at the end of the verse's last line, straight after the closing punctuation (no space, no brackets); for the whole Psalter",
+          "alternatives": [
+            "（セラ）",
+            "〔セラ〕",
+            "dropping it at Readable"
+          ],
+          "reason": "Its meaning is no longer known (m3), so it is transliterated, as every other language keeps it; Japanese has no space between words, so it follows the 。 or 」 directly.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030051",
+            "o190030030052"
+          ],
+          "choice": "yeshu'ah \"救い\" (L), \"助け出す\" / \"救う\" as a verb (B, R), as the English; nefesh \"魂\" (L), \"わたし\" (B, R)",
+          "alternatives": [],
+          "reason": "The English Balanced and Readable turn the noun into a verb and \"my soul\" into \"me\" (m1, m2); 救い stays the key word wherever the noun is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030081"
+          ],
+          "choice": "\"Села\" at the end of the verse wherever the English keeps \"Selah\", through the book",
+          "alternatives": [
+            "\"Сéла\"",
+            "leave it out"
+          ],
+          "reason": "The word's meaning is unknown (probably a musical direction), so it is transcribed, not translated, and stays at the end of the verse's last line.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030030051"
+          ],
+          "choice": "\"спасіння\" (L, B), \"врятувати\" / \"порятунок\" (R) for salvation, through the book",
+          "alternatives": [
+            "\"допомога\""
+          ],
+          "reason": "\"Спасіння\" is the living church word for God's rescue; Readable uses the everyday verb and noun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1033,6 +1433,26 @@
           "L": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በዙሪያዬ ጋሻ [ነህ]፤ \\q ክብሬና ራሴን ከፍ የምታደርግ [ነህ]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ግን በዙሪያዬ ሁሉ ጋሻ ነህ፤ \\q ክብሬ አንተ ነህ፤ ራሴንም እንደ ገና ቀና ታደርጋለህ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ግን በዙሪያዬ እንዳለ ጋሻ ትጠብቀኛለህ። \\q ክብርን ትሰጠኛለህ፤ ራሴንም እንደ ገና ቀና እንዳደርግ ትረዳኛለህ።"
+        },
+        "hi": {
+          "L": "पर तू, हे {{divine_name:प्रभु|याहवे}}, मेरे चारों ओर ढाल [है], \\q मेरी महिमा, और मेरे सिर को ऊँचा करनेवाला।",
+          "B": "पर तू, हे {{divine_name:प्रभु|याहवे}}, मेरे चारों ओर ढाल है। \\q तू मेरी महिमा है, और तू मेरा सिर फिर से ऊँचा करता है।",
+          "R": "पर तू, हे {{divine_name:प्रभु|याहवे}}, ढाल की तरह चारों ओर से मेरी रक्षा करता है। \\q तू मुझे आदर देता है, और तू मुझे फिर से सिर उठाकर चलने में मदद करता है।"
+        },
+        "ru": {
+          "L": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, — щит вокруг меня, \\q слава моя и поднимающий мою голову.",
+          "B": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, — щит со всех сторон от меня. \\q Ты — моя слава, и {{deity_pronoun:ты|Ты}} снова поднимаешь мою голову.",
+          "R": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, защищаешь меня со всех сторон, как щит. \\q Ты возвращаешь мне честь и помогаешь мне снова поднять голову."
+        },
+        "ja": {
+          "L": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたはわたしの周りの盾、 \\q わたしの栄光、わたしの頭を上げる方。",
+          "B": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたはわたしを四方から守る盾。 \\q あなたはわたしの栄光、わたしの頭を再び上げてくださる。",
+          "R": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたは盾のように、わたしの周りをすっかり守ってくださる。 \\q わたしに誉れを与え、もう一度顔を上げられるようにしてくださる。"
+        },
+        "uk": {
+          "L": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, — щит навколо мене, \\q моя слава і [той, хто] підносить мою голову.",
+          "B": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, — щит довкола мене. \\q Ти — моя слава, і {{deity_pronoun:ти|Ти}} знову підносиш мою голову.",
+          "R": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, захищаєш мене звідусіль, як щит. \\q Ти даєш мені честь, і {{deity_pronoun:ти|Ти}} допомагаєш мені знову підвести голову."
         }
       },
       "decisions": [
@@ -1167,6 +1587,27 @@
           "reason": "\"khiên\" is the everyday word for a shield; \"thuẫn\" is the older literary word many readers know from church but would not use themselves. The terms note keeps \"cái khiên\" for the whole book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030040031",
+            "o190030040051",
+            "o190030040052"
+          ],
+          "choice": "magen \"盾\" (every level); kavod \"栄光\" (L, B), \"誉れ\" (R as the English); God addressed \"あなた\" with light respect forms (上げてくださる)",
+          "alternatives": [],
+          "reason": "盾 is 2 Samuel 22's word; the psalmist speaks to God in the plain voice with あなた, as Job and Lamentations, and the respect forms of the third person carry over to the second.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1237,6 +1678,26 @@
           "L": "በድምፄ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ \\q እርሱም ከቅድስናው ተራራ ይመልስልኛል። ሴላ",
           "B": "ድምፄን ከፍ አድርጌ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጣራለሁ፤ \\q እርሱም ከተቀደሰው ተራራው ይመልስልኛል። ሴላ",
           "R": "ርዳታ ለማግኘት ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ \\q እርሱም ከተቀደሰው ተራራው ይመልስልኛል። ሴላ"
+        },
+        "hi": {
+          "L": "मैं अपनी आवाज़ से {{divine_name:प्रभु|याहवे}} को पुकारता हूँ, \\q और वे अपनी पवित्रता के पर्वत से मुझे उत्तर देते हैं। सेला",
+          "B": "मैं ऊँचे स्वर से {{divine_name:प्रभु|याहवे}} को पुकारता हूँ, \\q और वे अपने पवित्र पर्वत से मुझे उत्तर देते हैं। सेला",
+          "R": "मैं मदद के लिए {{divine_name:प्रभु|याहवे}} को पुकारता हूँ, \\q और वे अपने पवित्र पर्वत से मुझे जवाब देते हैं। सेला"
+        },
+        "ru": {
+          "L": "[Своим] голосом я взываю к {{divine_name:ГОСПОДУ|Яхве}}, \\q и {{deity_pronoun:он|Он}} отвечает мне с горы своей святости. Села",
+          "B": "Я возвышаю голос и взываю к {{divine_name:ГОСПОДУ|Яхве}}, \\q и {{deity_pronoun:он|Он}} отвечает мне со своей святой горы. Села",
+          "R": "Я громко зову {{divine_name:ГОСПОДА|Яхве}} на помощь, \\q и {{deity_pronoun:он|Он}} отвечает мне со своей святой горы. Села"
+        },
+        "ja": {
+          "L": "わたしは声をあげて、{{divine_name:主|ヤハウェ}}を呼び求める。 \\q すると、その方は、その聖なる山からわたしに答えられる。セラ",
+          "B": "わたしは声をあげて{{divine_name:主|ヤハウェ}}を呼ぶ。 \\q すると、その方は聖なる山からわたしに答えてくださる。セラ",
+          "R": "わたしは、助けを求めて、{{divine_name:主|ヤハウェ}}に叫ぶ。 \\q すると、その方は、聖なる山からわたしに答えてくださる。セラ"
+        },
+        "uk": {
+          "L": "[Своїм] голосом я кличу до {{divine_name:ГОСПОДА|Ягве}}, \\q і {{deity_pronoun:він|Він}} відповідає мені з гори своєї святості. Села",
+          "B": "Я підношу голос і кличу до {{divine_name:ГОСПОДА|Ягве}}, \\q і {{deity_pronoun:він|Він}} відповідає мені зі своєї святої гори. Села",
+          "R": "Я кличу {{divine_name:ГОСПОДА|Ягве}} на допомогу, \\q і {{deity_pronoun:він|Він}} відповідає мені зі своєї святої гори. Села"
         }
       },
       "decisions": [
@@ -1400,6 +1861,26 @@
           "L": "እኔስ ተኛሁ፤ አንቀላፋሁም፤ \\q ነቃሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ይደግፈኛልና።",
           "B": "ተኛሁ፤ እንቅልፍም ወሰደኝ፤ \\q እንደ ገናም ነቃሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ደግፎ ይዞኛልና።",
           "R": "ተኛሁ፤ አንቀላፋሁም። \\q ከዚያም እንደ ገና ነቃሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ይንከባከበኛልና።"
+        },
+        "hi": {
+          "L": "जहाँ तक मेरी बात है, मैं लेटा और सो गया; \\q मैं जाग उठा, \\q क्योंकि {{divine_name:प्रभु|याहवे}} मुझे सँभालते हैं।",
+          "B": "मैं लेटा और मुझे नींद आ गई, \\q और मैं फिर जाग उठा, \\q क्योंकि {{divine_name:प्रभु|याहवे}} मुझे थामे रहते हैं।",
+          "R": "मैं लेटा और सो गया। \\q फिर मैं जाग उठा, \\q क्योंकि {{divine_name:प्रभु|याहवे}} मेरी देखभाल करते हैं।"
+        },
+        "ru": {
+          "L": "Я же — я лёг и уснул; \\q проснулся, \\q ведь {{divine_name:ГОСПОДЬ|Яхве}} поддерживает меня.",
+          "B": "Я лёг и заснул, \\q и снова проснулся, \\q потому что {{divine_name:ГОСПОДЬ|Яхве}} держит меня.",
+          "R": "Я лёг и спал. \\q Потом я снова проснулся, \\q потому что {{divine_name:ГОСПОДЬ|Яхве}} заботится обо мне."
+        },
+        "ja": {
+          "L": "わたしは、身を横たえて眠り、 \\q 目を覚ました。 \\q {{divine_name:主|ヤハウェ}}がわたしを支えておられるからだ。",
+          "B": "わたしは横になって眠りにつき、 \\q また目を覚ました。 \\q {{divine_name:主|ヤハウェ}}がわたしを支えてくださるからだ。",
+          "R": "わたしは横になって眠った。 \\q そして、また目を覚ました。 \\q {{divine_name:主|ヤハウェ}}が、わたしを守ってくださるからだ。"
+        },
+        "uk": {
+          "L": "Я ліг і заснув; \\q я прокинувся, \\q бо {{divine_name:ГОСПОДЬ|Ягве}} підтримує мене.",
+          "B": "Я ліг і заснув, \\q і знову прокинувся, \\q бо {{divine_name:ГОСПОДЬ|Ягве}} тримає мене.",
+          "R": "Я ліг і спав. \\q Потім я знову прокинувся, \\q бо {{divine_name:ГОСПОДЬ|Ягве}} дбає про мене."
         }
       },
       "decisions": [
@@ -1520,6 +2001,26 @@
           "L": "ከአሥር ሺዎች ሕዝብ አልፈራም፤ \\q በዙሪያዬ ሁሉ በእኔ ላይ ከተሰለፉት።",
           "B": "በአሥር ሺዎች የሚቆጠሩትን አልፈራም፤ \\q በየአቅጣጫው በእኔ ላይ የተሰለፉትን።",
           "R": "አልፈራም፤ \\q ሺዎችና ሺዎች ሰዎች ሊያጠቁኝ ቢከብቡኝ እንኳ።"
+        },
+        "hi": {
+          "L": "मैं उन लाखों लोगों से नहीं डरूँगा \\q जिन्होंने चारों ओर से मेरे विरुद्ध मोर्चा बाँधा है।",
+          "B": "मुझे उन हज़ारों-हज़ार लोगों का कोई डर नहीं \\q जिन्होंने हर ओर से मेरे विरुद्ध मोर्चा बाँधा है।",
+          "R": "मैं नहीं डरूँगा, \\q चाहे हज़ारों-हज़ार लोग मुझ पर हमला करने के लिए मुझे घेर लें।"
+        },
+        "ru": {
+          "L": "Я не испугаюсь десятков тысяч народа, \\q которые вокруг выстроились против меня.",
+          "B": "Я не боюсь десятков тысяч, \\q что заняли позиции против меня со всех сторон.",
+          "R": "Я не буду бояться, \\q даже если тысячи и тысячи людей окружат меня, чтобы напасть."
+        },
+        "ja": {
+          "L": "わたしは幾万の民をも恐れない、 \\q 周りを囲んで、わたしに向かって陣を敷いた者たちを。",
+          "B": "わたしは、幾万の人々をも恐れない、 \\q 四方からわたしに向かって陣を構えた者たちを。",
+          "R": "わたしは恐れない。 \\q たとえ何千何万の人々が、わたしを攻めようと取り囲んでも。"
+        },
+        "uk": {
+          "L": "Не боятимуся десятків тисяч людей, \\q які довкола стали проти мене.",
+          "B": "Я не боюся десятків тисяч, \\q що з усіх боків стали проти мене.",
+          "R": "Я не боятимуся, \\q навіть якщо тисячі й тисячі людей оточать мене, щоб напасти."
         }
       },
       "decisions": [
@@ -1548,6 +2049,26 @@
           "choice": "have set themselves: taken up positions, as an army does",
           "alternatives": [],
           "reason": "The verb (shit) means to set or place; used of people against someone it means to take up positions to attack (Isaiah 22:7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030070032"
+          ],
+          "choice": "\"लाखों\" (L); \"हज़ारों-हज़ार\" (B, R)",
+          "alternatives": [
+            "\"दस हज़ार\""
+          ],
+          "reason": "The number means a crowd too large to count (meaning m1). Hindi says that with \"लाखों\" or \"हज़ारों-हज़ार\" rather than a literal \"ten thousands\", which reads as an exact count.",
           "uncertain": false,
           "footnote": false
         }
@@ -1624,6 +2145,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተነሥ! አምላኬ ሆይ፣ አድነኝ! \\q ጠላቶቼን ሁሉ ጉንጫቸውን መትተሃቸዋልና፤ \\q የክፉዎችን ጥርስ ሰብረሃል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተነሥ! አምላኬ ሆይ፣ ታደገኝ! \\q ጠላቶቼን ሁሉ መንጋጋቸውን መትተሃል፤ \\q የክፉዎችንም ጥርስ አርግፈሃል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተነሥ! አምላኬ ሆይ፣ አድነኝ! \\q ጠላቶቼን ሁሉ ፊታቸውን መታሃቸው። \\q መንከስ እንዳይችሉ የክፉ ሰዎችን ጥርስ ሰበርክ።"
+        },
+        "hi": {
+          "L": "उठ, हे {{divine_name:प्रभु|याहवे}}! हे मेरे परमेश्वर, मुझे बचा! \\q क्योंकि तूने मेरे सब शत्रुओं के गाल पर मारा है; \\q तूने दुष्टों के दाँत तोड़ दिए हैं।",
+          "B": "उठ खड़ा हो, हे {{divine_name:प्रभु|याहवे}}! हे मेरे परमेश्वर, मुझे छुड़ा! \\q क्योंकि तूने मेरे सब शत्रुओं के जबड़े पर प्रहार किया है \\q और दुष्टों के दाँत तोड़ डाले हैं।",
+          "R": "उठ, हे {{divine_name:प्रभु|याहवे}}! हे मेरे परमेश्वर, मुझे बचा ले! \\q तूने मेरे सब दुश्मनों के मुँह पर मारा है। \\q तूने दुष्ट लोगों के दाँत तोड़ दिए हैं, ताकि वे काट न सकें।"
+        },
+        "ru": {
+          "L": "Восстань, {{divine_name:ГОСПОДИ|Яхве}}! Спаси меня, Бог мой! \\q Ведь {{deity_pronoun:ты|Ты}} ударил всех моих врагов [по] щеке; \\q зубы нечестивых {{deity_pronoun:ты|Ты}} сломал.",
+          "B": "Поднимись, {{divine_name:ГОСПОДИ|Яхве}}! Избавь меня, мой Бог! \\q Ведь {{deity_pronoun:ты|Ты}} ударил всех моих врагов по челюсти \\q и выбил зубы нечестивым.",
+          "R": "Встань, {{divine_name:ГОСПОДИ|Яхве}}! Спаси меня, мой Бог! \\q Ты ударил всех моих врагов по лицу. \\q Ты сломал зубы злым людям, чтобы они не могли кусаться."
+        },
+        "ja": {
+          "L": "立ち上がってください、{{divine_name:主|ヤハウェ}}よ！わたしを救ってください、わたしの神よ！ \\q まことに、あなたはわたしのすべての敵の頬を打ち、 \\q 悪しき者たちの歯を砕かれた。",
+          "B": "立ち上がってください、{{divine_name:主|ヤハウェ}}よ！わたしの神よ、わたしを助け出してください！ \\q あなたは、わたしのすべての敵のあごを打ち、 \\q 悪しき者たちの歯を打ち砕かれた。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、立ち上がってください！わたしの神よ、わたしを救ってください！ \\q あなたは、わたしの敵をみな、顔を打ち、 \\q 悪い人たちの歯を折って、かみつけないようにしてくださった。"
+        },
+        "uk": {
+          "L": "Встань, {{divine_name:ГОСПОДИ|Ягве}}! Спаси мене, мій Боже! \\q Бо {{deity_pronoun:ти|Ти}} вдарив усіх моїх ворогів [по] щоці; \\q зуби нечестивих {{deity_pronoun:ти|Ти}} зламав.",
+          "B": "Повстань, {{divine_name:ГОСПОДИ|Ягве}}! Врятуй мене, мій Боже! \\q Бо {{deity_pronoun:ти|Ти}} вдарив усіх моїх ворогів по щелепі \\q і вибив зуби нечестивим.",
+          "R": "Встань, {{divine_name:ГОСПОДИ|Ягве}}! Врятуй мене, мій Боже! \\q Ти вдарив усіх моїх ворогів по обличчю. \\q Ти зламав зуби злим людям, щоб вони не могли кусатися."
         }
       },
       "decisions": [
@@ -1778,6 +2319,69 @@
           "reason": "For the whole book: the English varies \"Arise\" (L), \"Rise up\" (B), \"Get up\" (R) because \"arise\" is old-fashioned. Portuguese \"Levanta-te\" is the ordinary word at every level and is the cry of Numbers 10:35 in its Portuguese (m1), so all three levels keep it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030080011"
+          ],
+          "choice": "\"उठ\" (L, R); \"उठ खड़ा हो\" (B)",
+          "alternatives": [],
+          "reason": "The cry echoes the words spoken when the ark set out (Numbers 10:35, meaning m1). \"उठ\" is the natural Hindi imperative in prayer, so it can stay at Literal and Readable; Balanced strengthens it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190030080011"
+          ],
+          "choice": "Восстань (L), as Numbers 10:35; Поднимись (B); Встань (R)",
+          "alternatives": [],
+          "reason": "The cry echoes Moses' words when the ark set out (m1); Literal keeps the wording of Numbers 10:35 in this translation, Balanced and Readable use everyday verbs, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190030080011",
+            "o190030080012",
+            "o190030080031",
+            "o190030080032"
+          ],
+          "choice": "Imperatives to God \"〜てください\" at every level (立ち上がってください, 救ってください); \"わたしの神よ\" for Elohai; for the whole Psalter",
+          "alternatives": [
+            "立ち上がってほしい (Job, Lamentations)",
+            "立ち上がれ"
+          ],
+          "reason": "Numbers 10:35 renders this same cry (qumah YHWH) 「主よ、立ち上がってください」, and 1 Chronicles 16:35 (= Psalm 106:47) prays 救ってください; the request form keeps the prayer plain in style (no です・ます) without a bare imperative to God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1845,6 +2449,26 @@
           "L": "ማዳን {{divine_name:የእግዚአብሔር|የያህዌ}} ነው፤ \\q በረከትህ በሕዝብህ ላይ [ይሁን]። ሴላ",
           "B": "የሚያድን {{divine_name:እግዚአብሔር|ያህዌ}} ነው። \\q በረከትህ በሕዝብህ ላይ ይረፍ። ሴላ",
           "R": "የሚያድነው {{divine_name:እግዚአብሔር|ያህዌ}} ነው። \\q እባክህ ሕዝብህን ባርክ። ሴላ"
+        },
+        "hi": {
+          "L": "उद्धार {{divine_name:प्रभु|याहवे}} का [है]; \\q तेरी प्रजा पर तेरी आशीष [हो]। सेला",
+          "B": "{{divine_name:प्रभु|याहवे}} ही उद्धार करते हैं। \\q तेरी आशीष तेरी प्रजा पर बनी रहे। सेला",
+          "R": "{{divine_name:प्रभु|याहवे}} ही बचानेवाले हैं। \\q कृपया अपने लोगों को आशीष दे। सेला"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДУ|Яхве}} [принадлежит] спасение; \\q на {{deity_pronoun:твоём|Твоём}} народе — {{deity_pronoun:твоё|Твоё}} благословение. Села",
+          "B": "Спасает именно {{divine_name:ГОСПОДЬ|Яхве}}. \\q Пусть {{deity_pronoun:твоё|Твоё}} благословение пребудет на {{deity_pronoun:твоём|Твоём}} народе. Села",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} — тот, кто спасает. \\q Пожалуйста, благослови {{deity_pronoun:твой|Твой}} народ. Села"
+        },
+        "ja": {
+          "L": "救いは{{divine_name:主|ヤハウェ}}にある。 \\q あなたの民の上に、あなたの祝福が[あるように]。セラ",
+          "B": "救ってくださるのは、{{divine_name:主|ヤハウェ}}だ。 \\q あなたの祝福が、あなたの民の上にとどまるように。セラ",
+          "R": "救ってくださるのは、{{divine_name:主|ヤハウェ}}だ。 \\q どうか、あなたの民を祝福してください。セラ"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДУ|Ягве}} [належить] спасіння; \\q на {{deity_pronoun:твоєму|Твоєму}} народі — {{deity_pronoun:твоє|Твоє}} благословення. Села",
+          "B": "Це {{divine_name:ГОСПОДЬ|Ягве}} спасає. \\q Нехай {{deity_pronoun:твоє|Твоє}} благословення буде на {{deity_pronoun:твоєму|Твоєму}} народі. Села",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} — той, хто рятує. \\q Благослови, прошу, {{deity_pronoun:твій|Твій}} народ. Села"
         }
       },
       "decisions": [
