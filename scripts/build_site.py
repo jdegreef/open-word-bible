@@ -54,6 +54,12 @@ GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
 # The Django API (backend/), for accounts and search. OWB_API_URL points a
 # local build at a local API.
 API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
+# Take Root, the memorization app that carries our text: the address its
+# "Open in Take Root" links go to, with the verse as learned in the query
+# (ref, name, text, lang, level, wording, status, source, back; see
+# takeRootUrl in web/memorize.js). Empty, the site offers no Take Root links
+# and memorizing stays on the site (practice, review, the phone handoff).
+TAKE_ROOT_URL = os.environ.get("OWB_TAKE_ROOT_URL", "").strip()
 
 # The open-book mark: the favicon, and the logo in the header and footer
 # (where style.css colours it from the current colour mode).
@@ -358,6 +364,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta property="og:image:alt" content="{html.escape(card_alt)}">
 <meta name="twitter:card" content="summary_large_image">"""
     here = path if path is not None else unlisted
+    takeroot = f'\n<meta name="owb-takeroot" content="{html.escape(TAKE_ROOT_URL)}">' if TAKE_ROOT_URL else ""
     if unlisted is not None:
         meta += '\n<meta name="robots" content="noindex">'
     if here is not None:
@@ -369,7 +376,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}{head}
-<meta name="owb-api" content="{API_URL}">
+<meta name="owb-api" content="{API_URL}">{takeroot}
 <meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -442,6 +449,7 @@ def nav_menus(lang):
                               f'<div class="dd-books">{"".join(rows)}</div></div>')
     read = (f'{resume_link(lang, "dd-resume")}<div class="dd-testaments">{"".join(testaments)}</div>'
             f'<div class="dd-alls">{all_link(url(lang, "/plans/"), t(lang, "nav.plans"))}'
+            f'{all_link(url(lang, MEMORIZE_PATH), t(lang, "nav.memorize"))}'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}</div>')
 
     # The first few articles of each section, by their short menu titles;
@@ -1270,6 +1278,10 @@ def reader_shared(lang):
     chapter number. As a script, and its URL."""
     text, digest = shared_script("OWB_LANG", {
         "ui": catalog(lang)["reader.ui"],
+        # Memorizing (web/memorize.js): its text, and the page of the
+        # reader's verses.
+        "memory": catalog(lang)["memory.ui"],
+        "memorize_url": url(lang, MEMORIZE_PATH),
         "bookRefs": book_refs(lang),
         # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
         "books": {b: chapter_book(b, lang) for b, _ in books()}})
@@ -1392,7 +1404,8 @@ def chapter_page(book, chapter, lang="en"):
   </div>
   </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
-                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
+                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear")),
+                            ("4", t(lang, "reader.recall"))], " view-control")}
   {control("verse_numbers", "verse_numbers", [("1", t(lang, "reader.show")), ("0", t(lang, "reader.hide"))], " numbers-control")}
 </div>
 <p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
@@ -1422,6 +1435,7 @@ def chapter_page(book, chapter, lang="en"):
 <script src="{reader_shared(lang)[1]}"></script>
 <script src="{chapter_shared(book, chapter)[1]}"></script>
 <script src="{asset("markup.js")}"></script>
+<script src="{asset("memorize.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 {plans_script()}
 """
@@ -2500,6 +2514,7 @@ def home_plans(lang="en"):
 def plans_mine_link(lang):
     return (f'<p class="plans-mine-link actions"><a class="button ghost" href="{url(lang, MY_PLANS_PATH)}">'
             f'{icon(ICONS["calendar"], 16)}{t(lang, "plans.make")}</a> '
+            f'<a class="button ghost" href="{url(lang, MEMORIZE_PATH)}#memo-plans-h">{t(lang, "memory.plans_heading")}</a> '
             f'<a class="button ghost" href="{url(lang, "/groups/")}">{t(lang, "plans.together")}</a></p>')
 
 
@@ -3158,6 +3173,7 @@ def home_page(lang="en"):
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
 {plan_today(lang)}
+{home_memory(lang)}
 <p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost hero-how" href="#example-h">{t(lang, "home.how")}</a></p>
 {hero_search(lang)}
@@ -3195,6 +3211,7 @@ def home_page(lang="en"):
 </ul>
 </section>
 {plans_script()}
+<script src="{asset("memorize.js")}" defer></script>
 """
     feed = (f'\n<link rel="alternate" type="application/atom+xml" '
             f'title="{html.escape(SITE_NAME + " · " + t(lang, "home.votd"))}" href="{votd_feed_url(lang)}">')
@@ -4755,6 +4772,101 @@ def not_found_page():
 </section>""")
 
 
+# Memorizing (web/memorize.js): the reader's verses to learn, kept in this
+# browser as owb.memory and with their account; what is due for review;
+# and memory plans, a verse or passage a week (data/memory_plans.json).
+MEMORIZE_PATH = "/memorize/"
+MEMORY_PLAN_DATA = ROOT / "data" / "memory_plans.json"
+
+
+@functools.cache
+def load_memory_plans():
+    """Every memory plan in data/memory_plans.json, in its order, each
+    {id, name, verses}."""
+    return json.loads(MEMORY_PLAN_DATA.read_text(encoding="utf-8"))["plans"]
+
+
+def memory_plan_readable(plan, drafted):
+    """Whether every verse of plan is in a chapter drafted whole."""
+    return all((refs.parse(v.split("-")[0]).book, refs.parse(v.split("-")[0]).chapter) in drafted
+               for v in plan["verses"])
+
+
+def memory_plans(lang):
+    drafted = drafted_chapters(lang)
+    return [p for p in load_memory_plans() if memory_plan_readable(p, drafted)]
+
+
+def memory_ref(vid, lang):
+    """"Galatians 5:22–23" for GAL.5.22-23."""
+    first, _, last = vid.partition("-")
+    ref = refs.parse(first)
+    return f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}" + (f"\u2013{last}" if last else "")
+
+
+def memory_plan_card(plan, lang):
+    weeks = "".join(
+        f'<li class="memo-week" data-week="{html.escape(v)}"><span class="memo-week-n">{t(lang, "memory.week", n=i)}</span>'
+        f'<span class="memo-week-ref">{html.escape(memory_ref(v, lang))}</span></li>'
+        for i, v in enumerate(plan["verses"], 1))
+    return (f'<li class="memo-plan" data-memo-plan="{plan["id"]}" data-verses="{html.escape(json.dumps(plan["verses"]))}">'
+            f'<div class="memo-head"><h3>{html.escape(plan["name"][lang])}</h3>'
+            f'<span class="memo-plan-status hint" aria-live="polite"></span></div>'
+            f'<ol class="memo-weeks">{weeks}</ol>'
+            f'<p class="memo-actions"><button type="button" class="button memo-plan-start">{t(lang, "memory.ui")["plan_start"]}'
+            f'</button></p></li>')
+
+
+def memorize_page(lang="en"):
+    """The reader's verses to memorize (web/memorize.js draws them from
+    owb.memory), what is due for review, and the memory plans offered in
+    lang. A link with ?add=<verse> (the reader's QR code) adds that verse."""
+    order = [b for b, _ in books()]
+    plans = memory_plans(lang)
+    data = {"names": {b: chapter_book(b, lang) for b in order},
+            "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
+            "source": {b: source_language(b) for b in order},
+            "verses": f"/{VERSES_DIR}/",
+            "levels": {code: catalog(lang)["levels"][code] for code in "LBR"},
+            "plans": {p["id"]: p["name"][lang] for p in plans}}
+    plan_list = (f'<ul class="memo-plans">{"".join(memory_plan_card(p, lang) for p in plans)}</ul>' if plans else
+                 f'<p class="empty">{t(lang, "memory.plans_none")}</p>')
+    return page(lang, t(lang, "memory.title"), f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "memory.title")}</p>
+<h1>{t(lang, "memory.heading")}</h1>
+<p class="dek">{t(lang, "memory.dek")}</p>
+</header>
+<noscript><p class="notice">{t(lang, "memory.noscript")}</p></noscript>
+<section class="memorize" id="memorize" data-memorize="{html.escape(json.dumps(data, ensure_ascii=False))}">
+<p class="notice memo-note" role="status" hidden></p>
+<div class="memo-review" id="review"></div>
+<div class="memo-list"></div>
+<section class="memo-plans-wrap" aria-labelledby="memo-plans-h">
+<h2 id="memo-plans-h">{t(lang, "memory.plans_heading")}</h2>
+<p class="hint">{t(lang, "memory.plans_dek")}</p>
+{plan_list}
+</section>
+<p class="hint memo-kept">{t(lang, "memory.kept")}</p>
+</section>
+<script type="application/json" id="memory-ui">{_ui_json(lang, "memory.ui")}</script>
+<script src="{asset("markup.js")}" defer></script>
+<script src="{asset("memorize.js")}" defer></script>""", path=MEMORIZE_PATH, current="/read/",
+                description=t(lang, "memory.dek"))
+
+
+def home_memory(lang="en"):
+    """The home page's card for verses due for review today (web/memorize.js
+    shows it only when some are)."""
+    ui = {k: catalog(lang)["memory.ui"][k] for k in ("due_count",)}
+    return (f'<section class="memo-due" data-memo-due data-ui="{html.escape(json.dumps(ui, ensure_ascii=False))}" hidden '
+            f'aria-labelledby="memo-due-h"><div class="memo-head"><h2 id="memo-due-h">{t(lang, "memory.home_heading")}</h2>'
+            f'<span class="memo-pill memo-learning memo-due-count"></span></div>'
+            f'<p class="memo-due-ref"></p><p class="memo-due-text"></p>'
+            f'<p class="actions"><a class="button" href="{url(lang, MEMORIZE_PATH)}#review">{t(lang, "memory.home_review")}</a></p>'
+            '</section>')
+
+
 def saved_page(lang="en"):
     """The reader's bookmarks, highlights, notes, collections and word list,
     from this browser (web/site.js OWBStudy keeps them; web/saved.js lists
@@ -4834,10 +4946,10 @@ def service_worker():
     """web/sw.js with the files to keep from the start (the styles, the
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
-    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "plans.js")]
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "plans.js")]
     shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
-    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js",
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "account.js", "plans.js",
                                   "compare.js", "word.js", "saved.js", "groups.js", "edition.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
@@ -5073,7 +5185,7 @@ def sitemap(paths):
 
 
 def build(out):
-    for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, basemap_file):
         cached.cache_clear()
@@ -5126,6 +5238,7 @@ def build(out):
         add("/handoff/", handoff_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
+        add(MEMORIZE_PATH, memorize_page(lang))
         add(MY_PLANS_PATH, my_plans_page(lang), index=False)
         add("/groups/", groups_page(lang), index=False)
     # The admin is in English only (admin_page).
@@ -5165,13 +5278,13 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
-    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
+    for name in ("style.css", "markup.js", "memorize.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
                  "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
+    return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
                             "saved.js", "groups.js", "search.js", "site.js", "style.css"]
 
 
