@@ -109,6 +109,37 @@ others.
   "good news"), with more added as they are settled.
   If a passage needs a different word, record a meaning or rendering decision on
   those words saying why.
+- **Old Testament key terms** (also in `data/key_terms.json`, each with its
+  rule in `note`; measured over the whole Old Testament in
+  `docs/review-notes/ot-key-terms.md`):
+
+  | Hebrew | Literal | Balanced | Readable |
+  |---|---|---|---|
+  | *ḥesed* (H2617), Law and history | steadfast love | faithful love | faithful love |
+  | *ḥesed*, Job–Song, Lamentations, prophets | loyal love | loyal love | faithful love |
+  | *tôrâ* (H8451) | law (Law, history); instruction (Psalms, prophets); teaching (Proverbs, Job) | as Literal | law or teaching; "rules" for priestly regulations |
+  | *šālôm* (H7965) | peace (welfare, well) | peace; well, safe, greet where it is welfare or a greeting | as Balanced |
+  | *qādôš* (H6918) | holy | holy | holy |
+  | *qōdeš* (H6944) | holy, holiness, sanctuary | as Literal; dedicated (gifts) | as Balanced; may say temple |
+  | *bərît* (H1285) | covenant | covenant; treaty between peoples | covenant; treaty, agreement between peoples |
+  | *kipper* (H3722) | make atonement | make atonement | make atonement; God forgives |
+  | *kappōret* (H3727) | mercy seat | mercy seat | the lid (cover) of the ark |
+  | *ṣədāqâ*, *ṣedeq* (H6666, H6664) | righteousness | righteousness; right, just, justice | what is right; fair, honest |
+  | *kābôd* (H3519) | glory; honor (of people); wealth | as Literal | as Literal |
+  | *ʾĕmûnâ* (H530) | faithfulness | faithfulness; honestly | faithful; honest |
+  | *ʾĕmet* (H571) | truth, faithfulness | truth, faithfulness; honest, fair | as Balanced |
+  | *yəšûʿâ* (H3444) | salvation | salvation; save, rescue (Psalms) | save, rescue |
+  | *šəʾôl* (H7585) | Sheol | Sheol (the grave in Jacob's sayings, Genesis) | the place of the dead (Psalms); the grave |
+  | *gāʾal* (H1350) | redeem, redeemer; avenger | as Literal; buy back (Leviticus 25, 27) | buy back; relative; rescue, set free |
+  | *hebel* (H1892) | breath (Ecclesiastes); vapor, futility, worthless idols | as Literal | as Literal |
+
+  A historical book that sings or repeats a psalm (the refrain "his loyal
+  love is forever" in Chronicles and Ezra 3:11; 2 Samuel 22 = Psalm 18) keeps
+  the Psalms' wording. *nepeš* (H5315: soul, life, person, throat, desire),
+  *rûaḥ* (H7307: Spirit, spirit, wind, breath) and *mišpāṭ* (H4941: justice,
+  judgment, ruling, custom) are settled by sense, not one word: their rules are
+  in the data, marked `"checked": false`, and a meaning decision says which
+  sense a passage has. Balanced and Readable may say "I" for "my soul".
 - US spelling (honor, Savior, practice as a verb). A future `spelling` setting
   will give UK forms.
 - The divine name YHWH is a key term: write `{{divine_name:the LORD|Yahweh}}`

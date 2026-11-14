@@ -143,6 +143,14 @@ def key_term(token_id, strong):
     return KEY_TERMS.get((token_language(token_id), strong))
 
 
+def is_checked(term):
+    """Whether owb.validate holds the English to a key term's words. A term
+    whose English is settled by sense (nephesh, ruach, mishpat: soul, life
+    or person; spirit, wind or breath) says "checked": false; its rule is in
+    its note and a meaning decision says which sense a passage has."""
+    return term.get("checked", True) is not False
+
+
 def key_term_words(term, level):
     """The English words a key term may be rendered by at a level."""
     allowed = term["english"]
@@ -180,7 +188,8 @@ def check_key_terms(record, tokens, errors):
         return
     for tok in tokens:
         term = key_term(tok.id, tok.strong)
-        if term is None or tok.id in explained:
+        if (term is None or tok.id in explained or not is_checked(term)
+                or record.get("id") in term.get("pending", ())):
             continue
         for level, text in sorted(english.items()):
             allowed = key_term_words(term, level)
