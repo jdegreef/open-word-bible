@@ -38,8 +38,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (239): 한결같은 217, 사랑을 74, 사랑이 64, 영원하다 39
 - pt (239): leal 201, amor 200, dura para 43, para sempre 50
 - am (239): ጽኑ 194, ፍቅር 59, ለዘላለም ይኖራል። 36, ፍቅሩም 35
-- hi (31): अटल प्रेम 24, कृपा 11, अपना अटल 7, प्रेम और 5
-- ru (31): милость 12, неизменную любовь 10, неизменной 7, любви 4
+- hi (239): अटल प्रेम 200, उनका अटल 47, प्रेम सदा 45, बना रहता 45
+- ru (239): любовь 134, неизменная 82, неизменной 54, неизменную 48
+- uk (239): любов 169, незмінна 85, незмінну 69, триває 44
+- ja (239): つくし 182, くしみ 182, いつく 182, わらぬ 165
 
 ### law, instruction (torah) (תּוֹרָה, H8451), 214 records
 
@@ -62,8 +64,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (214): 가르침을 54, 율법을 27, 율법의 17, 기록된 20
 - pt (214): lei 103, instrução 46, ensino 41, livro da 19
 - am (214): ሕግ 77, መጽሐፍ 22, ትምህርት 12, በሙሴ 15
-- hi (63): व्यवस्था 39, निर्देश 18, पुस्तक 12, इस 16
-- ru (63): закона 22, слова этого 8, все слова 8, предписания о 7
+- hi (214): व्यवस्था 138, शिक्षा 46, पालन 28, पुस्तक 25
+- ru (214): закон 65, наставление 24, наставления 15, моисея 21
+- uk (214): закону 47, настанови 28, настанову 23, настанова 16
+- ja (214): 律法 94, 教え 102, の教 67, の律 62
 
 ### peace, well-being (shalom) (שָׁלוֹם, H7965), 209 records
 
@@ -86,8 +90,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (209): 평안히 22, 평화를 19, 평안을 19, 무사히 15
 - pt (209): paz 136, bem 23, são e 9, respondeu 19
 - am (209): ሰላም 48, ደኅና 14, ነውን 9, አለ። 13
-- hi (51): शान्ति 19, कुशल से 8, से जाओ। 4, पूछा। 5
-- ru (51): с миром 11, мира 4, здоров 3, благополучно 3
+- hi (209): शान्ति 113, कुशल 31, सुरक्षित 19, मेल 9
+- ru (209): мир 61, невредимым 10, ли 15, ответил 16
+- uk (209): мир 65, гаразд 10, безпеці 9, назустріч 10
+- ja (209): 平和 84, 無事 36, 和を 33, 平安 29
 
 ### soul, life, self (nephesh) (נֶפֶשׁ, H5315), 683 records
 
@@ -110,8 +116,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (683): 목숨을 155, 자신을 29
 - pt (683): vida 204, alma 60, a minha 87, pessoa 42
 - am (683): ሕይወቴን 35, ሕይወት 36
-- hi (229): प्राण 37, किसी 54, अपने आप 25, से काट 18
-- ru (229): жизнь 28, кто 46, себя 29, истреблён 14
+- hi (683): प्राण 146, जीवन 63, अपने आप 48, जान 48
+- ru (683): жизнь 143, себя 62, жизни 35, моя 41
+- uk (683): життя 184, моє 64, себе 49, своє 32
+- ja (683): の命 161, 命を 131, をねら 29, 心の 38
 
 ### spirit, wind, breath (ruach) (רוּחַ, H7307), 348 records
 
@@ -134,8 +142,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (348): 영이 80, 영을 41, 바람을 29, 바람이 19
 - pt (348): espírito 167, vento 89, fôlego 24, sopro 26
 - am (348): መንፈስ 102, ነፋስ 50, እስትንፋስ 25
-- hi (61): आत्मा 36, हवा 6, बुरी 7, तब प्रभु 10
-- ru (61): дух 32, сошёл 13, на него 12, злой 7
+- hi (348): आत्मा 151, हवा 70, साँस 30, आँधी 22
+- ru (348): дух 134, ветер 55, дыхание 24, ветром 21
+- uk (348): дух 123, вітер 54, подих 33, вітром 19
+- ja (348): の霊 108, 霊が 63, 霊を 36, 風を 30
 
 ### holy (qadosh) (קָדוֹשׁ, H6918), 106 records
 
@@ -158,8 +168,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (106): 거룩한 60, 거룩하신 29, 이스라엘의 34, 구별된 7
 - pt (106): santo 86, de israel 36, senhor o 28, num lugar 8
 - am (106): ቅዱስ 63, ቅዱሳን 11, በተቀደሰ 8, የእስራኤል 20
-- hi (34): पवित्र 34, स्थान में 8, परमेश्वर 17, क्योंकि 13
-- ru (34): свят 11, месте 8, потому что 10, я господь 6
+- hi (106): पवित्र 105, इस्राएल के 32, स्थान में 10, दिलानेवाले 6
+- ru (106): святой 32, израиля 37, святого 15, святым 11
+- uk (106): святий 49, святого 20, ізраїлів 13, ізраїлевого 12
+- ja (106): 聖なる 104, なる方 46, の聖な 49, ルの聖 31
 
 ### holiness, holy things (qodesh) (קֹדֶשׁ, H6944), 382 records
 
@@ -182,8 +194,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (382): 거룩한 257, 한다 63, 거룩하게 32, 지극히 27
 - pt (382): santo 136, santuário 64, santa 44, lugar 71
 - am (382): ቅዱስ 84, በመቅደሱ 31, የተቀደሱ 30, የተቀደሰ 32
-- hi (180): पवित्र 122, सम्मेलन 16, के मान 16, किलो 19
-- ru (180): святилища 31, святыня 19, святилище 20, по мере 14
+- hi (382): पवित्र 282, स्थान 59, प्रभु के 75, साधारण 21
+- ru (382): святой 52, святое 42, святилище 40, святилища 40
+- uk (382): святі 42, святе 39, святилища 35, святих 32
+- ja (382): 聖なる 288, の聖な 102, 聖所 100, なるも 74
 
 ### covenant (berit) (בְּרִית, H1285), 264 records
 
@@ -206,8 +220,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (264): 언약을 137, 맺은 28, 언약의 25, 언약궤를 24
 - pt (264): aliança 253, arca da 40, a arca 36, minha 56
 - am (264): ኪዳን 162, ቃል 198, ጋር 109, ኪዳኔን 28
-- hi (108): वाचा 101, साथ 47, का संदूक 20, बाँधी 15
-- ru (108): завет 59, заключил 15, ковчег 21, мой 22
+- hi (264): वाचा 247, बाँधी 46, साथ 103, संदूक 42
+- ru (264): завет 146, заключил 40, ковчег 36, договор 19
+- uk (264): завіт 131, уклав 41, ковчег 36, мій 42
+- ja (264): 契約 250, 約を 147, の契 138, 約の 70
 
 ### make atonement (kipper) (כִּפֶּר, H3722), 94 records
 
@@ -230,8 +246,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (94): 위하여 61, 속죄해야 20, 한다 40, 속죄하면 12
 - pt (94): expiação 83, fará 34, pelo 45, pecado 35
 - am (94): መሥዋዕት 30, ያስተሰርይለታል፤ 12, የኃጢአት 16, ይቅር 13
-- hi (71): प्रायश्चित 69, लिए 68, पापबलि 20, याजक 26
-- ru (71): умилостивление 66, за 68, совершит 30, грех 26
+- hi (94): प्रायश्चित 84, लिए 81, पापबलि 21, याजक 26
+- ru (94): умилостивление 77, за 80, совершит 30, грех 32
+- uk (94): очищення 79, за 78, звершить 24, звершити 24
+- ja (94): 贖いを 72, めに贖 59, に贖い 59, いをす 47
 
 ### mercy seat (kapporet) (כַּפֹּרֶת, H3727), 22 records
 
@@ -254,8 +272,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (22): 속죄소 10, 증거궤 5, 그룹 5, 휘장 4
 - pt (22): propiciatório 22, testemunho 9, querubins 8, arca 10
 - am (22): መክደኛው 13, የስርየት 13, ከስርየት 5, ኪሩቤል 5
-- hi (21): प्रायश्चित 21, ढकने 14, ढकना 7, साक्षी-पत्र 9
-- ru (21): умилостивления 21, место 11, свидетельства 6, места 6
+- hi (22): प्रायश्चित 22, ढकने 15, साक्षी-पत्र 9, ढकना 7
+- ru (22): умилостивления 22, место 11, свидетельства 6, места 7
+- uk (22): віко 12, віка 9, ковчега 8, свідчення 8
+- ja (22): いの座 22, 贖いの 22, の座の 11, の座を 9
 
 ### righteousness (tsedaqah) (צְדָקָה, H6666), 150 records
 
@@ -278,8 +298,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (150): 의를 36, 의는 18, 의로 16, 정의와 12
 - pt (150): justiça 94, retidão 46, justo 28, que é 17
 - am (150): ጽድቅ 19, ፍትሕንና 10, ትክክልና 8, ቅን 11
-- hi (12): धार्मिकता 5, धर्मी 3, आगे 4, प्रभु तुम्हारा 3
-- ru (12): праведность 4, праведен 3, перед 5, господь твой 3
+- hi (150): धार्मिकता 105, न्याय 40, धर्मी 21, और उचित 11
+- ru (150): праведность 62, праведности 33, справедливо 17, правосудие 13
+- uk (150): праведність 69, праведності 27, правосуддя 22, справедливе 13
+- ja (150): の義 42, 義を 42, 公正 40, 正し 51
 
 ### righteousness (tsedeq) (צֶדֶק, H6664), 112 records
 
@@ -302,8 +324,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (112): 의를 14, 의로운 14, 공정하게 9, 의가 9
 - pt (112): justiça 43, retidão 28, justo 20, justas 10
 - am (112): ጽድቅን 14, ትክክል 15, የጽድቅ 8, ትክክለኛ 7
-- hi (7): दे रहे 3, तुम्हें दे 3, परमेश्वर तुम्हें 3, न्याय 3
-- ru (7): даёт тебе 3, бог даёт 3, господь твой 3, твой бог 3
+- hi (112): धार्मिकता 47, न्याय 33, सही 19, निष्पक्षता 7
+- ru (112): праведность 26, праведности 18, справедливости 8, справедливость 8
+- uk (112): праведність 26, праведності 17, правосуддя 12, праведне 8
+- ja (112): 正し 49, 義を 26, しい 45, 正義 15
 
 ### justice, judgment (mishpat) (מִשְׁפָּט, H4941), 406 records
 
@@ -326,8 +350,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (406): 법도를 57, 규례와 42, 정의를 34, 규례를 24
 - pt (406): ordenanças 93, justiça 108, estatutos 63, justo 41
 - am (406): ፍትሕ 40, ፍርድ 31, ደንቦች 18, ደንቦቼን 17
-- hi (95): नियम 27, विधियों 19, न्याय 19, पालन 16
-- ru (95): правила 28, установления 24, предписано 8, числу как 7
+- hi (406): न्याय 162, नियमों 61, विधियों 49, पालन 39
+- ru (406): правила 66, установления 42, справедливо 36, правосудие 28
+- uk (406): правосуддя 71, правила 31, постанови 36, присуди 24
+- ja (406): 公正 106, 定め 105, 裁き 81, 掟を 56
 
 ### glory, honor (kavod) (כָּבוֹד, H3519), 189 records
 
@@ -350,8 +376,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (189): 영광이 54, 영광을 38, 주의 44, 영광과 13
 - pt (189): glória 123, honra 45, glorioso 9, riqueza 12
 - am (189): ክብር 66, የእግዚአብሔር 40, ክብሩ 8, ከፍ 12
-- hi (29): महिमा 24, प्रभु की 13, दिखाई 9, दी। 6
-- ru (29): слава 14, явилась 6, славу 6, господа 13
+- hi (189): महिमा 115, आदर 29, सम्मान 21, प्रभु की 39
+- ru (189): слава 60, славы 27, славу 30, честь 21
+- uk (189): слава 58, славу 40, слави 27, славою 12
+- ja (189): 栄光 129, の栄 96, 誉れ 40, 光が 36
 
 ### faithfulness (emunah) (אֱמוּנָה, H530), 49 records
 
@@ -374,7 +402,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (49): 주님의 17, 신실하심을 7, 한결같은 11, 신실하심은 4
 - pt (49): fidelidade 28, amor leal 11, com honestidade 4, tua 11
 - am (49): ጽኑ 12, በታማኝነት 7, ታማኝነትህ 5, እግዚአብሔር ሆይ፣ 7
-- ru (3): его 3
+- hi (49): विश्वासयोग्यता 23, अटल 12, सच्चाई 8, प्रेम 11
+- ru (49): верность 15, верности 8, честно 6, неизменной 6
+- uk (49): вірність 16, вірністю 6, вірності 5, любов 7
+- ja (49): 真実 29, の真 15, 実を 12, 実に 10
 
 ### truth, faithfulness (emet) (אֱמֶת, H571), 125 records
 
@@ -397,8 +428,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (125): 한결같은 31, 사랑과 20, 진실을 10, 신실하심을 10
 - pt (125): fidelidade 42, verdade 40, leal e 21, amor leal 28
 - am (125): ጽኑ 28, እውነት 19, ፍቅርና 11, ታማኝነት 9
-- hi (18): सच्चाई 10, प्रेम और 5, अटल प्रेम 5, सच हो 3
-- ru (18): милость 4, если 9, неизменной 3, итак 4
+- hi (125): सच्चाई 36, विश्वासयोग्यता 22, प्रेम और 19, अटल प्रेम 27
+- ru (125): верность 21, любовь 16, истину 9, истина 9
+- uk (125): вірність 19, любов і 16, вірно 11, правду 9
+- ja (125): まこと 52, 真実 34, とまこ 19, つくし 22
 
 ### salvation (yeshuah) (יְשׁוּעָה, H3444), 77 records
 
@@ -421,8 +454,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (77): 구원을 15, 구원하시는 14, 구원이 8, 나의 12
 - pt (77): salvação 28, livramento 7, salvar 9, minha 19
 - am (77): የማዳን 7, ደስ 11, መዳን 4, እግዚአብሔር ሆይ፣ 10
-- hi (6): उद्धार 5, परमेश्वर 3, मैं 3
-- ru (6): но 3
+- hi (77): उद्धार 50, मेरा 19, तेरी 11, हे 17
+- ru (77): спасение 20, спасения 12, моя 14, спасает 7
+- uk (77): спасіння 26, спасає 10, моя 14, порятунок 8
+- ja (77): 救い 52, の救 30, を救 15, 救って 11
 
 ### Sheol, the realm of the dead (שְׁאוֹל, H7585), 63 records
 
@@ -445,8 +480,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (63): 스올로 21, 스올의 8, 스올에서 6, 스올과 5
 - pt (63): mundo dos 63, dos mortos 63, ao mundo 18, do mundo 18
 - am (63): ዓለም 56, ሙታን 29, ጥልቅ 6, ገመዶች ተጠመጠሙብኝ፤ 3
-- hi (8): अधोलोक 8, में उतर 3, में पहुँचा 3, पके 3
-- ru (8): мёртвых 8, в мир 7, если 3, но 3
+- hi (63): अधोलोक 63, मृत्यु 16, उतर 12, पके 5
+- ru (63): мёртвых 63, мир 36, смерть 7, смерти 8
+- uk (63): мертвих 58, світу 28, у світ 12, світі 8
+- ja (63): 陰府 63, 府に 21, 府の 18, は陰 10
 
 ### redeem, redeemer (ga'al) (גָּאַל, H1350), 83 records
 
@@ -469,8 +506,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (83): 피의 11, 무를 8, 구속자 7, 얹어서 5
 - pt (83): redentor 16, vingador 12, resgatador 9, do sangue 11
 - am (83): ተበቃዩ 11, ቤዢ 10, ዘመድ 6, ሊቤዠው 5
-- hi (40): ख़ून का 10, का बदला 10, बदला लेनेवाले 8, तो 23
-- ru (40): выкупить 14, за кровь 10, выкупщик 6, если 17
+- hi (83): छुटकारा 19, दिलानेवाले 11, छुड़ा 16, ख़ून का 11
+- ru (83): искупитель 16, выкупить 14, за кровь 11, искупил 8
+- uk (83): викупитель 14, викупити 13, викупив 12, за кров 11
+- ja (83): 買い戻 25, 贖い主 18, い戻し 18, の贖い 17
 
 ### breath, vapor (hevel) (הֶבֶל, H1892), 64 records
 
@@ -493,6 +532,10 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 - ko (64): 한낱 15, 이것 또한 14, 헛된 14, 입김이다 11
 - pt (64): sopro 43, é um 21, também isso 14, isso é 14
 - am (64): እስትንፋስ 29, ነው። 25, ይህም 15, ነፋስን መከተል 7
+- hi (64): साँस 41, भी एक 14, यह भी 14, खोखली 8
+- ru (64): дуновение 40, лишь 36, и это 14, и погоня 7
+- uk (64): подих 34, лише 36, і це 11, за вітром 7
+- ja (64): 息にす 32, にすぎ 37, すぎな 27, ぎない 25
 
 ## What was changed (English)
 
@@ -600,5 +643,5 @@ Not harmonised in this pass. The lists above are a measure, not a judgement: eac
 - hesed: the English sectional split is English wording only; the other languages use one phrase across the canon, which is the better outcome for them and should stay so.
 - covenant: every language with Old Testament text uses one word for berit (pacto, alliance, agano, giao ước, 언약, aliança, ኪዳን, वाचा, завет) in over 90% of records; the remainder are treaties between peoples.
 - nephesh: Spanish, French and Portuguese use "vida" / "vie" far more than "alma" / "âme"; that matches the English Balanced practice (soul kept mostly in the Psalms).
-- Russian hesed mixes "милость" (mercy) and "неизменная любовь" (unfailing love) in the books drafted so far; the Russian reviewer should settle one, as the other languages have.
-- Hindi and Russian have only part of the Old Testament drafted, so their counts are small; Ukrainian and Japanese have none yet.
+- torah: Russian, Ukrainian and Japanese split "law" and "instruction" much as English does (law in the Law and history, instruction in the Psalms and prophets); Spanish, French, Swahili and Portuguese likewise.
+- Every language with Old Testament text now covers all of it; the counts above are of the whole Old Testament as merged from main.
