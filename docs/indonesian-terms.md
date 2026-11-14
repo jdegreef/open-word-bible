@@ -596,3 +596,20 @@ records it. Empty until the first book is drafted.
 
 | Book | Source (English) | Indonesian | First verse |
 |---|---|---|---|
+| Mark | euthys (immediately) | *segera* (L); *segera*, *langsung*, *begitu* (B, R) | 1:10 |
+| Mark | Idumea | Idumea | 3:8 |
+| Mark | the Cananaean | orang Zelot | 3:18 |
+| Mark | Talitha koum | Talita kum | 5:41 |
+| Mark | Joses | Yoses | 6:3 |
+| Mark | Corban | Korban | 7:11 |
+| Mark | Syrophoenician | Siro-Fenisia (L); Fenisia di Siria (B, R) | 7:26 |
+| Mark | Ephphatha | Efata | 7:34 |
+| Mark | Dalmanutha | Dalmanuta | 8:10 |
+| Mark | large baskets (*spyris*); baskets (*kophinos*) | *bakul*; *keranjang* | 8:8; 8:19 |
+| Mark | Timaeus; Bartimaeus | Timeus; Bartimeus | 10:46 |
+| Mark | Rabbouni | Rabuni | 10:51 |
+| Mark | two lepta, a quadrans | *dua peser, yaitu satu kodran* | 12:42 |
+| Mark | the abomination of desolation | *kekejian yang membinasakan* | 13:14 |
+| Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
+| Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
+| Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
