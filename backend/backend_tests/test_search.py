@@ -6,6 +6,7 @@ import time
 
 from django.conf import settings
 from django.core.cache import cache
+from django.db import connection
 from django.test import SimpleTestCase, TestCase
 
 from api import views
@@ -260,6 +261,19 @@ class SearchTest(TestCase):
         found = set().union(*(verse_ids(d) for d in self.every("ガリラヤ", "verse", lang="ja")))
         self.assertIn("JHN.2.1", found)
         self.assertEqual(self.get(q="カリラヤ", lang="ja")["totals"].get("verse", 0), 0)
+
+    def test_a_language_with_no_text_yet_searches_the_english(self):
+        # Indonesian was added before its first book: its site finds the
+        # English sentences it shows, and references by its book names and
+        # abbreviations. Its own entries use the Indonesian stemmer.
+        ref = self.get(q="Yohanes 3:16", lang="id")["reference"]
+        self.assertEqual((ref["label"], ref["url"]), ("Yohanes 3:16", "/id/jhn/3/#v16"))
+        self.assertEqual(self.get(q="Yoh 3:16", lang="id")["reference"]["url"], "/id/jhn/3/#v16")
+        self.assertGreater(self.get(q="light", lang="id")["totals"].get("verse", 0), 0)
+        self.assertEqual(search.config("id"), "owb_indonesian")
+        with connection.cursor() as cur:
+            cur.execute("SELECT to_tsvector('owb_indonesian', 'dikasihi') @@ to_tsquery('owb_indonesian', 'kasih')")
+            self.assertTrue(cur.fetchone()[0])
 
     def test_japanese_references_with_full_width_digits(self):
         ref = self.get(q="ヨハネによる福音書３：１６", lang="ja")["reference"]
