@@ -668,6 +668,32 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(jhn3["p"], sorted(jhn3["p"]))
         self.assertTrue(set(map(str, jhn3["p"])) <= set(jhn3["v"]))
 
+    def test_verse_files_mark_poetry_by_verse(self):
+        # The edition sets in lines only the verses whose sentence is lined
+        # in that language: the Magnificat inside Luke 1's narrative, every
+        # verse of Psalm 23, nothing in a prose chapter.
+        luk1 = json.loads((self.out / "verses" / "LUK" / "1.json").read_text(encoding="utf-8"))
+        self.assertIn(46, luk1["q"]["en"])
+        self.assertIn(55, luk1["q"]["en"])
+        self.assertNotIn(1, luk1["q"]["en"])
+        self.assertNotIn(45, luk1["q"]["en"])
+        self.assertEqual(luk1["q"]["en"], sorted(luk1["q"]["en"]))
+        psa23 = json.loads((self.out / "verses" / "PSA" / "23.json").read_text(encoding="utf-8"))
+        self.assertEqual(psa23["q"]["en"], sorted(map(int, psa23["v"])))
+        jhn3 = json.loads((self.out / "verses" / "JHN" / "3.json").read_text(encoding="utf-8"))
+        self.assertNotIn("q", jhn3)
+        edition = (ROOT / "web" / "edition.js").read_text(encoding="utf-8")
+        self.assertIn("entry.q", edition)
+
+    def test_new_testament_poetry_reaches_the_reader(self):
+        # A New Testament song keeps its line markers for the reader, and the
+        # one-line texts the build writes read them as spaces.
+        data = self.chapter_data("luk/1")
+        magnificat = next(r for r in data["records"] if "LUK.1.46" in r["refs"])
+        self.assertIn("\\q ", magnificat["renderings"]["en"]["L"])
+        page = (self.out / "luk" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("\\q", page.split("<body", 1)[0])
+
     def test_chapter_pages_offer_the_presets(self):
         # The built-in presets, in order, at the top of the wording settings,
         # with the box reader.js draws the reader's own presets in.

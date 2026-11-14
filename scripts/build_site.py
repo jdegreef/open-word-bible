@@ -1975,12 +1975,19 @@ def paragraph_verses():
 
 def verse_files():
     """{path: text} for every chapter of the Bible (see VERSES_DIR)."""
-    ours, seen = {}, set()
+    ours, seen, lined = {}, set(), {}
     for book, chapter in chapters():
         for r in chapter_records(book, chapter):
             if r["id"] in seen:
                 continue
             seen.add(r["id"])
+            # A record set in lines in a language sets every verse of it in
+            # lines there (web/reader.js poetic), so the edition can set a
+            # song inside a prose chapter as poetry and the rest as prose.
+            for lang, levels in r["renderings"].items():
+                if any(markup.is_poetry(text) for text in levels.values()):
+                    for vid in r["refs"]:
+                        lined.setdefault(vid, set()).add(lang)
             for vid, langs in record_verses(r).items():
                 into = ours.setdefault(vid, {})
                 for lang, levels in langs.items():
@@ -1997,6 +2004,17 @@ def verse_files():
     starts = paragraph_verses()
     for (book, chapter), entry in by_chapter.items():
         entry["p"] = sorted(refs.parse(vid).verse for vid in starts.get((book, chapter), ()))
+    # "q": the verses set as poetry, by language, for the edition.
+    for vid, langs in lined.items():
+        ref = refs.parse(vid)
+        if (ref.book, ref.chapter) not in by_chapter:
+            continue
+        q = by_chapter[ref.book, ref.chapter].setdefault("q", {})
+        for lang in langs:
+            q.setdefault(lang, []).append(ref.verse)
+    for entry in by_chapter.values():
+        for lang in entry.get("q", {}):
+            entry["q"][lang] = sorted(set(entry["q"][lang]))
     for code in COMPARISON_EDITIONS:
         for ref, text in comparison_ours(code).items():
             if str(ref) in ours:
