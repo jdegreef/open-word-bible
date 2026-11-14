@@ -77,6 +77,26 @@
           "L": "ንጉሡ ዖዝያ በሞተበት ዓመት ጌታን ከፍ ባለና በገዘፈ ዙፋን ላይ ተቀምጦ አየሁት፤ የልብሱም ዘርፎች መቅደሱን ሞልተውት ነበር።",
           "B": "ንጉሥ ዖዝያ በሞተበት ዓመት ጌታን ከፍ ባለና ገዝፎ በቆመ ዙፋን ላይ ተቀምጦ አየሁት፤ የልብሱም ዘርፍ ቤተ መቅደሱን ሞላው።",
           "R": "ንጉሥ ዖዝያ በሞተበት ዓመት ጌታን አየሁት። እርሱ ከፍ ባለና በረጅም ዙፋን ላይ ተቀምጦ ነበር። የልብሱ ዘርፍ ቤተ መቅደሱን በሙሉ ሞልቶት ነበር።"
+        },
+        "hi": {
+          "L": "राजा उज्जियाह की मृत्यु के वर्ष में मैंने प्रभु को एक ऊँचे और उन्नत सिंहासन पर बैठे देखा, और उनके [वस्त्र] के घेर मन्दिर को भर रहे थे।",
+          "B": "जिस वर्ष राजा उज्जियाह की मृत्यु हुई, मैंने प्रभु को एक ऊँचे और महान सिंहासन पर बैठे देखा, और उनके वस्त्र के घेर से मन्दिर भरा हुआ था।",
+          "R": "जिस वर्ष राजा उज्जियाह मरा, उस वर्ष मैंने प्रभु को देखा। वे एक सिंहासन पर बैठे थे जो बहुत ऊँचा और उठा हुआ था। उनके वस्त्र के छोरों से पूरा मन्दिर भर गया था।"
+        },
+        "ru": {
+          "L": "В год смерти царя Озии я увидел Господа, сидящего на высоком и вознесённом престоле, и полы {{deity_pronoun:его|Его}} [одеяния] наполняли храм.",
+          "B": "В год, когда умер царь Озия, я увидел Господа: {{deity_pronoun:он|Он}} сидел на престоле, высоком и вознесённом, и подол {{deity_pronoun:его|Его}} одеяния наполнял храм.",
+          "R": "В год, когда умер царь Озия, я увидел Господа. Он сидел на троне, высоком и вознесённом. Края {{deity_pronoun:его|Его}} одежды наполняли весь храм."
+        },
+        "ja": {
+          "L": "ウジヤ王が死んだ年に、わたしは、高く上げられた王座に座っておられる主を見た。その衣の裾は神殿に満ちていた。",
+          "B": "ウジヤ王が死んだ年に、わたしは、高くそびえる王座に主が座っておられるのを見た。その衣の裾は神殿を満たしていた。",
+          "R": "ウジヤ王が死んだ年に、わたしは主を見ました。主は、高く上げられた王座に座っておられました。主の衣の裾が、神殿いっぱいに広がっていました。"
+        },
+        "uk": {
+          "L": "У рік смерті царя Озії я бачив Господа, що сидів на престолі, високому й піднесеному, і поли {{deity_pronoun:його|Його}} [шати] наповнювали храм.",
+          "B": "У рік, коли помер цар Озія, я побачив Господа, що сидів на престолі, високому й величному, і край {{deity_pronoun:його|Його}} шати наповнював храм.",
+          "R": "У рік, коли помер цар Озія, я побачив Господа. Він сидів на престолі, високому й піднесеному. Краї {{deity_pronoun:його|Його}} шати наповнювали весь храм."
         }
       },
       "decisions": [
@@ -330,6 +350,136 @@
           "reason": "The vision names God first by his title, as the meaning decision notes. The temple words follow the Kings terms list, here for the temple as a whole. John 12:41 says Isaiah saw his glory; the Amharic of that verse is kept in 6:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230060010071"
+          ],
+          "choice": "प्रभु without a divine_name span",
+          "alternatives": [
+            "{{divine_name:प्रभु|याहवे}}"
+          ],
+          "reason": "Here the Hebrew has the title Adonai (\"Lord\"), not the name (meaning decision m2), so प्रभु stands alone; the divine_name setting leaves it unchanged, and the name returns in the seraphim's song (verse 3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060010111",
+            "o230060010122"
+          ],
+          "choice": "ऊँचे और उन्नत (L)",
+          "alternatives": [
+            "ऊँचे और उठे हुए"
+          ],
+          "reason": "The pair \"high and lifted up\" is used of the servant in 52:13 and of the Lord in 57:15 (and, with irony, of the mountain in 57:7); Literal renders it ऊँचा और उन्नत in each place so the echo can be heard. Balanced and Readable follow the English, which words the throne differently here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060010071",
+            "o230060010101"
+          ],
+          "choice": "\"Господь\" for Adonai; \"престол\" (L, B), \"трон\" (R)",
+          "alternatives": [
+            "ГОСПОДЬ"
+          ],
+          "reason": "The Hebrew here has the title Adonai, not the divine name, so it is \"Господь\" without capitals and without the divine_name setting (the meaning decision). God's throne is \"престол\", as in Revelation 4; Readable says the everyday \"трон\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060010111",
+            "o230060010121",
+            "o230060010122"
+          ],
+          "choice": "\"высоком и вознесённом\" for \"high and lifted up\" at every level",
+          "alternatives": [
+            "\"высоком и величественном\" (B)",
+            "\"высоком и поднятом вверх\" (R)"
+          ],
+          "reason": "The same Hebrew pair describes the servant in 52:13 and God, \"the high and lifted up One\", in 57:15 (and the mountain of 57:7 echoes it); Russian keeps one pair, \"высокий и вознесённый\", in all these places so the echo of the throne vision can be heard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230060010051",
+            "o230060010052"
+          ],
+          "choice": "Isaiah's first-person narrative (6:1-13; also 8:1-18, 20, 36-39) follows the narrative register: plain (L, B), です・ます (R), light respect forms for God (座っておられる); the prophet narrates himself as \"わたし\". 'adonai here is \"主\" with no span (m2).",
+          "alternatives": [
+            "plain style at Readable as in the oracles"
+          ],
+          "reason": "The chapter is told as a story in prose; OT_SUPPLEMENT gives the narrative register for prose, and the oracles within it (6:3, 6:9-13) keep their own plain voice inside the quotation marks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060010071"
+          ],
+          "choice": "\"Господь\" for Adonai here and in 6:8, 6:11, kept apart from \"{{divine_name:ГОСПОДЬ|Ягве}}\" in 6:3, 6:5",
+          "alternatives": [
+            "\"ГОСПОДЬ\""
+          ],
+          "reason": "The title and the name stand side by side in this chapter; the capitals and the setting show which is which, as in the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -414,6 +564,26 @@
           "L": "ሱራፌል በላዩ ቆመው ነበር፤ ለእያንዳንዱ ስድስት ክንፍ፣ ስድስት ክንፍ [ነበረው]፤ በሁለቱ ፊቱን ይሸፍን ነበር፤ በሁለቱም እግሮቹን ይሸፍን ነበር፤ በሁለቱም ይበር ነበር።",
           "B": "ሱራፌል እርሱን ለማገልገል በላዩ ቆመው ነበር፤ እያንዳንዳቸውም ስድስት ክንፍ ነበራቸው። በሁለቱ ክንፎች ፊቱን ይሸፍን፣ በሁለቱ እግሮቹን ይሸፍን፣ በሁለቱም ይበር ነበር።",
           "R": "ሱራፌል የሚባሉ እንደ እሳት የሚያበሩ ሰማያዊ ፍጥረታት በላዩ ቆመው ነበር። እያንዳንዳቸው ስድስት ክንፍ ነበራቸው። እያንዳንዱ በሁለት ክንፎች ፊቱን፣ በሁለት ክንፎች እግሮቹን ይሸፍን ነበር። በሌሎቹ ሁለት ክንፎች ደግሞ ይበር ነበር።"
+        },
+        "hi": {
+          "L": "साराप उनके ऊपर खड़े थे; हर एक के छह पंख, छह पंख थे: दो से वह अपना मुँह ढाँपता था, और दो से अपने पाँव ढाँपता था, और दो से उड़ता था।",
+          "B": "साराप उनके ऊपर सेवा में खड़े थे, और उनमें से हर एक के छह पंख थे। एक जोड़ी से वह अपना मुँह ढाँपे रहता था, एक जोड़ी से अपने पाँव ढाँपे रहता था, और एक जोड़ी से उड़ता था।",
+          "R": "आग जैसे चमकते स्वर्गीय प्राणी, जिन्हें साराप कहते हैं, उनके ऊपर खड़े थे। हर एक के छह पंख थे। वह दो पंखों से अपना मुँह और दो पंखों से अपने पाँव ढाँपता था। बाक़ी दो पंखों से वह उड़ता था।"
+        },
+        "ru": {
+          "L": "Серафимы стояли над {{deity_pronoun:ним|Ним}}; шесть крыльев, шесть крыльев у каждого: двумя он закрывал своё лицо, и двумя закрывал свои ноги, и двумя летал.",
+          "B": "Над {{deity_pronoun:ним|Ним}} стояли серафимы, и у каждого из них было шесть крыльев. Одной парой каждый закрывал лицо, одной парой закрывал ноги, а одной парой летал.",
+          "R": "Над {{deity_pronoun:ним|Ним}} стояли огненные небесные существа, которых называют серафимами. У каждого было шесть крыльев. Двумя крыльями он закрывал лицо, двумя — ноги. А двумя другими крыльями он летал."
+        },
+        "ja": {
+          "L": "セラフィムがその方の上に立っていた。それぞれに六つの翼、六つの翼があった。二つで顔を覆い、二つで足を覆い、二つで飛んでいた。",
+          "B": "セラフィムがその方の上に仕えて立ち、それぞれ六つの翼を持っていた。二つの翼で顔を覆い、二つで足を覆い、二つで飛んでいた。",
+          "R": "その方の上には、セラフィムと呼ばれる、燃えるような天の者たちが立っていました。それぞれ六つの翼を持っていました。二つの翼で顔を覆い、二つの翼で足を覆っていました。残りの二つで飛んでいました。"
+        },
+        "uk": {
+          "L": "Серафими стояли над {{deity_pronoun:ним|Ним}}; шість крил, шість крил у кожного: двома він закривав своє обличчя, і двома він закривав свої ноги, і двома він літав.",
+          "B": "Над {{deity_pronoun:ним|Ним}} стояли серафими, і кожен мав шість крил. Однією парою він закривав обличчя, однією парою закривав ноги, а однією парою літав.",
+          "R": "Над {{deity_pronoun:ним|Ним}} стояли вогняні небесні істоти, яких називають серафимами. Кожен мав шість крил. Двома крилами він закривав обличчя, а двома — ноги. Іншими двома крилами він літав."
         }
       },
       "decisions": [
@@ -654,6 +824,89 @@
           "reason": "\"ሱራፌል\" is the name of these beings in Ethiopian church tradition and teaching, so it is kept as a name rather than translated; Readable says that they are fiery heavenly beings, as the English Readable does. Amharic has no neuter, so each seraph is \"he\" where the English Balanced and Readable say \"it\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060020011"
+          ],
+          "choice": "साराप (plural सारापों)",
+          "alternatives": [
+            "सराफ़ीम"
+          ],
+          "reason": "The Hebrew name of these beings is kept as a name, साराप, the same in the singular and the plural (oblique सारापों); Readable says what they are, as the English does. Hindi has no neuter, so वह stands where the English Balanced and Readable say \"it\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060020011"
+          ],
+          "choice": "masculine \"он\" for each seraph",
+          "alternatives": [
+            "оно"
+          ],
+          "reason": "The English Balanced and Readable say \"it\"; Russian \"серафим\" is a masculine noun and its pronoun is \"он\" without implying anything about the being's form, so the Hebrew masculine stays at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060020011"
+          ],
+          "choice": "serafim: \"セラフィム\" at every level (one of them \"セラフ\", 6:6-7); Readable adds \"燃えるような天の者たち\" as the English Readable does.",
+          "alternatives": [
+            "\"熾天使\"",
+            "\"天使\""
+          ],
+          "reason": "The Hebrew name is kept, as ケルビム is kept for the cherubim; \"熾天使\" is a church-Latin rank word and not in common use, and the meaning decision explains the name (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060020011"
+          ],
+          "choice": "\"він\" for each seraph at every level",
+          "alternatives": [
+            "\"воно\" as the English Balanced \"it\""
+          ],
+          "reason": "Ukrainian \"серафим\" is masculine, so a pronoun for it is \"він\" whatever the being is; \"воно\" would sound like a thing. The English \"it\" only avoids making the seraph a man.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -729,6 +982,26 @@
           "L": "አንዱም ለአንዱ እየተጣራ እንዲህ አለ፦ \\q «ቅዱስ፣ ቅዱስ፣ ቅዱስ {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት [ነው]፤ \\q የምድር ሁሉ ሙላት ክብሩ [ነው]።»",
           "B": "እርስ በርሳቸውም እየተጣሩ እንዲህ ይሉ ነበር፦ \\q «ቅዱስ፣ ቅዱስ፣ ቅዱስ ነው የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}! \\q ምድርን የሚሞላ ሁሉ ክብሩ ነው።»",
           "R": "እርስ በርሳቸው እየተጣሩ እንዲህ ይሉ ነበር፦ \\q «ቅዱስ፣ ቅዱስ፣ ቅዱስ ነው የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}}! \\q ክብሩ የምድርን ሁሉ ዳር እስከ ዳር ሞልቷል!»"
+        },
+        "hi": {
+          "L": "और एक ने दूसरे को पुकारकर कहा, \\q \"पवित्र, पवित्र, पवित्र [हैं] सेनाओं के {{divine_name:प्रभु|याहवे}}; \\q सारी पृथ्वी की भरपूरी उनकी महिमा [है]।\"",
+          "B": "वे एक-दूसरे को पुकारकर कहते रहे, \\q \"पवित्र, पवित्र, पवित्र हैं सेनाओं के {{divine_name:प्रभु|याहवे}}! \\q जो कुछ पृथ्वी को भरता है, वह उनकी महिमा है।\"",
+          "R": "वे एक-दूसरे को पुकारकर कह रहे थे, \\q \"पवित्र, पवित्र, पवित्र हैं सेनाओं के {{divine_name:प्रभु|याहवे}}! \\q उनकी महिमा पृथ्वी के कोने-कोने में भरी है!\""
+        },
+        "ru": {
+          "L": "И взывал один к другому и говорил: \\q «Свят, свят, свят {{divine_name:ГОСПОДЬ|Яхве}} Саваоф; \\q полнота всей земли — {{deity_pronoun:его|Его}} слава.»",
+          "B": "И они взывали друг к другу: \\q «Свят, свят, свят {{divine_name:ГОСПОДЬ|Яхве}} Саваоф! \\q Всё, что наполняет землю, — {{deity_pronoun:его|Его}} слава.»",
+          "R": "Они взывали друг к другу: \\q «Свят, свят, свят {{divine_name:ГОСПОДЬ|Яхве}} Воинств! \\q Его слава наполняет всю землю!»"
+        },
+        "ja": {
+          "L": "そして、一人が一人に呼びかけて言った。 \\q 「聖なる、聖なる、聖なる、万軍の{{divine_name:主|ヤハウェ}}。 \\q 全地を満たすものは、その方の栄光。」",
+          "B": "彼らは互いに呼び交わしていた。 \\q 「聖なる、聖なる、聖なる、万軍の{{divine_name:主|ヤハウェ}}！ \\q 地に満ちるすべてのものは、その方の栄光。」",
+          "R": "彼らは、互いに呼びかけ合っていました。 \\q 「聖なる方、聖なる方、聖なる方、天の軍勢を率いる{{divine_name:主|ヤハウェ}}！ \\q その方の栄光が、全地に満ちている！」"
+        },
+        "uk": {
+          "L": "І кликав цей до цього, і казав: \\q «Святий, святий, святий {{divine_name:ГОСПОДЬ|Ягве}} Саваот; \\q повнота всієї землі — {{deity_pronoun:його|Його}} слава.»",
+          "B": "І вони гукали один до одного: \\q «Святий, святий, святий {{divine_name:ГОСПОДЬ|Ягве}} Небесних Військ! \\q Усе, що наповнює землю, — {{deity_pronoun:його|Його}} слава.»",
+          "R": "Вони вигукували один одному: \\q «Святий, святий, святий {{divine_name:ГОСПОДЬ|Ягве}} Вседержитель! \\q Його слава наповнює кожен куточок землі!»"
         }
       },
       "decisions": [
@@ -954,6 +1227,75 @@
           "reason": "Revelation 4:8 echoes this verse with \"ቅዱስ፣ ቅዱስ፣ ቅዱስ\" and Balanced and Readable take its order (\"ቅዱስ ... ነው\") from Revelation 4:8 Readable; the rest follows the Hebrew, whose title is the LORD of hosts, not Revelation's \"Lord God Almighty\". The thrice-holy is familiar from the liturgy and is the Hebrew's own repetition, so it is kept at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060030061",
+            "o230060030071",
+            "o230060030081"
+          ],
+          "choice": "पवित्र, पवित्र, पवित्र",
+          "alternatives": [
+            "अति पवित्र"
+          ],
+          "reason": "The threefold \"holy\" is kept as three words, as Revelation 4:8 has it in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060030061",
+            "o230060030071",
+            "o230060030081"
+          ],
+          "choice": "\"Свят, свят, свят\"",
+          "alternatives": [
+            "Святой, святой, святой"
+          ],
+          "reason": "The short form of the adjective is the predicate (\"holy is the LORD\") and is the wording Revelation 4:8 uses in this translation for the creatures' cry.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060030061",
+            "o230060030071",
+            "o230060030081"
+          ],
+          "choice": "The threefold qadosh: \"聖なる、聖なる、聖なる\" (L, B), \"聖なる方、聖なる方、聖なる方\" (R), the forms Revelation 4:8 uses for the same cry; the song itself is plain, as poetry.",
+          "alternatives": [
+            "\"聖なるかな\" (classical)"
+          ],
+          "reason": "The Japanese reader should hear Revelation 4:8 in Isaiah's vision; the classical \"かな\" is bungo and belongs to the older versions.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1025,6 +1367,26 @@
           "L": "ከሚጣራውም ድምፅ የተነሣ የመድረኮቹ መሠረቶች ተናወጡ፤ ቤቱም ጢስ ተሞላ።",
           "B": "ከሚጣራው ድምፅ የተነሣ የበሮቹ መሠረቶች ተንቀጠቀጡ፤ ቤተ መቅደሱም በጢስ ተሞላ።",
           "R": "ከሚጣራው ድምፅ የተነሣ የበሮቹ መሠረቶች ተናወጡ። ቤተ መቅደሱም በጢስ ተሞላ።"
+        },
+        "hi": {
+          "L": "और पुकारनेवाले के शब्द से डेवढ़ियों की नींवें हिल गईं, और भवन धुएँ से भर गया।",
+          "B": "पुकारनेवाले की आवाज़ से द्वारों की चूलें काँप उठीं, और मन्दिर धुएँ से भर गया।",
+          "R": "पुकारती हुई आवाज़ से दरवाज़ों के आधार हिल गए। मन्दिर धुएँ से भर गया।"
+        },
+        "ru": {
+          "L": "И поколебались основания порогов от голоса взывающего, и дом наполнился дымом.",
+          "B": "От голоса взывающего задрожали основания дверных проёмов, и храм наполнился дымом.",
+          "R": "От звука голоса, который взывал, задрожали основания дверей. Храм наполнился дымом."
+        },
+        "ja": {
+          "L": "呼ぶ者の声によって敷居の基は揺れ動き、家は煙で満たされた。",
+          "B": "呼ぶ者の声に、戸口の土台が震え、神殿は煙で満ちた。",
+          "R": "その呼び声で、戸口の土台が揺れ動きました。神殿は煙でいっぱいになりました。"
+        },
+        "uk": {
+          "L": "І захиталися основи порогів від голосу того, хто кликав, і дім наповнився димом.",
+          "B": "Від голосу того, хто кликав, здригнулися підвалини одвірків, і дим наповнив храм.",
+          "R": "Від голосу, що лунав, захиталися підвалини дверей. Храм наповнився димом."
         }
       },
       "decisions": [
@@ -1178,6 +1540,26 @@
           "L": "እኔም እንዲህ አልኩ፦ «ወዮልኝ፣ ጠፍቻለሁና! ከንፈሮቹ የረከሱ ሰው ነኝና፤ ከንፈሮቻቸውም በረከሱ ሕዝብ መካከል እኖራለሁና፤ ንጉሡን {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦትን ዓይኖቼ አይተዋልና!»",
           "B": "እኔም እንዲህ አልኩ፦ «ወዮልኝ! አለቀልኝ። ከንፈሮቼ የረከሱ ናቸው፤ የምኖርበትም ሕዝብ ከንፈሮቹ የረከሱ ናቸው፤ ንጉሡን፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} በገዛ ዓይኖቼ አይቻለሁ!»",
           "R": "እኔም እንዲህ ብዬ ጮኽኩ፦ «ወዮልኝ! ጠፍቻለሁ! ከንፈሮቹ የረከሱ ሰው ነኝ። የምኖረውም ከንፈሮቻቸው በረከሱ ሰዎች መካከል ነው። ንጉሡንም በገዛ ዓይኖቼ አይቻለሁ። የሠራዊት አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አይቻለሁ!»"
+        },
+        "hi": {
+          "L": "तब मैंने कहा, \"हाय मुझ पर, क्योंकि मैं नष्ट हो गया! क्योंकि मैं अशुद्ध होंठोंवाला पुरुष [हूँ], और अशुद्ध होंठोंवाली प्रजा के बीच में रहता [हूँ]; क्योंकि मेरी आँखों ने राजा, सेनाओं के {{divine_name:प्रभु|याहवे}} को देखा है!\"",
+          "B": "तब मैंने कहा, \"हाय मुझ पर! मैं मिट गया। मेरे होंठ अशुद्ध हैं, और जिन लोगों के बीच मैं रहता हूँ, उनके होंठ भी अशुद्ध हैं, और मैंने अपनी ही आँखों से राजा, सेनाओं के {{divine_name:प्रभु|याहवे}} को देखा है!\"",
+          "R": "मैं चिल्ला उठा, \"मेरे लिए कितना भयानक है! मेरा नाश निश्चित है! मैं ऐसा मनुष्य हूँ जिसके होंठ अशुद्ध हैं। मैं ऐसे लोगों के बीच रहता हूँ जिनके होंठ भी अशुद्ध हैं। और मैंने अपनी आँखों से राजा को देखा है। मैंने सेनाओं के {{divine_name:प्रभु|याहवे}} को देखा है!\""
+        },
+        "ru": {
+          "L": "И я сказал: «Горе мне, потому что я погиб! Потому что человек с нечистыми устами — я, и посреди народа с нечистыми устами я живу; потому что Царя, {{divine_name:ГОСПОДА|Яхве}} Саваофа, видели мои глаза!»",
+          "B": "Тогда я сказал: «Горе мне! Я пропал. Мои уста нечисты, и народ, среди которого я живу, тоже с нечистыми устами, и своими глазами я видел Царя, {{divine_name:ГОСПОДА|Яхве}} Саваофа!»",
+          "R": "Я закричал: «Беда мне! Я погиб! Я человек с нечистыми устами. Я живу среди людей, у которых тоже нечистые уста. И я своими глазами видел Царя. Я видел {{divine_name:ГОСПОДА|Яхве}} Воинств!»"
+        },
+        "ja": {
+          "L": "わたしは言った。「ああ、わたしは災いだ。わたしは滅ぼされる！わたしは唇の汚れた者で、唇の汚れた民の中に住んでいる。しかも、王である万軍の{{divine_name:主|ヤハウェ}}を、わたしの目が見たのだ！」",
+          "B": "そのとき、わたしは言った。「ああ、わたしは災いだ！もう終わりだ。わたしの唇は汚れ、わたしが住む民の唇も汚れている。それなのに、わたしはこの目で、王である万軍の{{divine_name:主|ヤハウェ}}を見てしまったのだ！」",
+          "R": "わたしは叫びました。「ああ、わたしはなんとひどい目にあうことか！もうだめだ！わたしは唇の汚れた者だ。唇の汚れた人々の中に住んでいる。それなのに、わたしはこの目で王を見てしまった。天の軍勢を率いる{{divine_name:主|ヤハウェ}}を見てしまったのだ！」"
+        },
+        "uk": {
+          "L": "І сказав я: «Горе мені, бо я загинув! Бо я — людина з нечистими устами, і серед народу з нечистими устами я живу; бо Царя, {{divine_name:ГОСПОДА|Ягве}} Саваота, бачили мої очі!»",
+          "B": "Тоді я сказав: «Горе мені! Мені кінець. Мої уста нечисті, і народ, серед якого я живу, має нечисті уста, а я своїми очима побачив Царя, {{divine_name:ГОСПОДА|Ягве}} Небесних Військ!»",
+          "R": "Я закричав: «Яке ж це лихо для мене! Я пропав! Я людина з нечистими устами. І я живу серед людей, чиї уста теж нечисті. А я своїми очима бачив Царя. Я бачив {{divine_name:ГОСПОДА|Ягве}} Вседержителя!»"
         }
       },
       "decisions": [
@@ -1421,6 +1803,50 @@
           "reason": "\"ወዮ\" keeps its book-wide wording, here of the prophet himself. Uncleanness is the ritual word of Leviticus (\"ርኩስ\", \"ማርከስ\"), unfit for God's presence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060050021",
+            "o230060050031",
+            "o230060050051"
+          ],
+          "choice": "'oy li \"woe to me\": \"ああ、わたしは災いだ\" (L, B), \"ああ、わたしはなんとひどい目にあうことか！\" (R), the 'oy form of 3:9; nidmeiti \"滅ぼされる\" (L), \"もう終わりだ\" (B), \"もうだめだ\" (R). The cry is plain: Isaiah speaks to himself, not to God.",
+          "alternatives": [
+            "\"ああ、もうだめです\""
+          ],
+          "reason": "The meaning decision gives \"cut off, destroyed\" (m1); the cry of dismay is not addressed to God, so no polite forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060050051"
+          ],
+          "choice": "'oy said of oneself: \"Горе мені\" (L, B), \"Яке ж це лихо для мене\" (R), for the whole book",
+          "alternatives": [
+            "\"Ой, лишенько\""
+          ],
+          "reason": "docs/isaiah-terms.md gives \"Woe [is] me\" and, at Readable, \"How terrible this is for me\"; \"горе мені\" is the plain Ukrainian cry, and Readable keeps the word \"лихо\" of the hoy oracles.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1498,6 +1924,26 @@
           "L": "ከሱራፌልም አንዱ ወደ እኔ በረረ፤ በእጁም ከመሠዊያው ላይ በጉጠት የወሰደው ፍም [ነበረ]።",
           "B": "ከዚያም ከሱራፌል አንዱ ወደ እኔ በረረ። በእጁም ከመሠዊያው ላይ በጉጠት ያነሣው የሚያንጸባርቅ ፍም ነበረ።",
           "R": "ከዚያም ከሱራፌል አንዱ ወደ እኔ በርሮ መጣ። በእጁ የጋለ ፍም ይዞ ነበር። ፍሙን ከመሠዊያው ላይ በጉጠት ነበር የወሰደው።"
+        },
+        "hi": {
+          "L": "तब सारापों में से एक मेरे पास उड़कर आया, और उसके हाथ में एक अंगारा [था], जिसे उसने चिमटे से वेदी पर से उठाया था।",
+          "B": "तब सारापों में से एक उड़कर मेरे पास आया। उसके हाथ में एक दहकता अंगारा था, जिसे उसने चिमटे से वेदी पर से उठाया था।",
+          "R": "तब सारापों में से एक उड़कर मेरे पास आया। उसके हाथ में एक लाल दहकता अंगारा था। उसने वह अंगारा चिमटे से वेदी पर से उठाया था।"
+        },
+        "ru": {
+          "L": "И подлетел ко мне один из серафимов, и в его руке — горящий уголь, [который] он взял щипцами с жертвенника.",
+          "B": "Тогда один из серафимов подлетел ко мне. В руке у него был раскалённый уголь, который он взял щипцами с жертвенника.",
+          "R": "Тогда один из серафимов подлетел ко мне. Он держал раскалённый уголь. Он взял этот уголь с жертвенника щипцами."
+        },
+        "ja": {
+          "L": "すると、セラフィムの一人がわたしのところに飛んで来た。その手には燃える炭があった。それは祭壇の上から火ばさみで取ったものであった。",
+          "B": "すると、セラフィムの一人がわたしのところに飛んで来た。その手には、祭壇から火ばさみで取った燃える炭があった。",
+          "R": "すると、セラフィムの一人が、わたしのところに飛んで来ました。その手には、真っ赤に焼けた炭を持っていました。火ばさみで祭壇から取ったものでした。"
+        },
+        "uk": {
+          "L": "І прилетів до мене один із серафимів, і в його руці — розжарена вуглина; щипцями він узяв [її] з жертовника.",
+          "B": "Тоді один із серафимів прилетів до мене. У руці він мав жарину, яку взяв щипцями з жертовника.",
+          "R": "Тоді один із серафимів підлетів до мене. Він тримав розпечену вуглину. Він узяв цю вуглину щипцями з жертовника."
         }
       },
       "decisions": [
@@ -1628,6 +2074,26 @@
           "L": "አፌንም አስነካኝና እንዲህ አለ፦ «እነሆ፣ ይህ ከንፈሮችህን ነክቷል፤ በደልህም ተወገደ፤ ኃጢአትህም ተሰረየ።»",
           "B": "በእርሱም አፌን ነካና እንዲህ አለ፦ «ተመልከት፤ ይህ ከንፈሮችህን ነክቷል። በደልህ ተወግዷል፤ ለኃጢአትህም ማስተስረያ ተደርጓል።»",
           "R": "በፍሙ አፌን ነካና እንዲህ አለ፦ «ተመልከት! ይህ ፍም ከንፈሮችህን ነክቷል። አሁን በደልህ ተወግዷል። ኃጢአትህም ተሰርዮልሃል።»"
+        },
+        "hi": {
+          "L": "और उसने उससे मेरे मुँह को छुआ और कहा, \"देखो, इसने तुम्हारे होंठों को छुआ है, और तुम्हारा अधर्म दूर होता है, और तुम्हारे पाप का प्रायश्चित हो गया है।\"",
+          "B": "उसने उससे मेरे मुँह को छुआ और कहा, \"देखो, इसने तुम्हारे होंठों को छू लिया है। तुम्हारा दोष दूर हो गया है, और तुम्हारे पाप का प्रायश्चित हो गया है।\"",
+          "R": "उसने उस अंगारे से मेरे मुँह को छुआ और कहा, \"देखो! इस अंगारे ने तुम्हारे होंठों को छुआ है। अब तुम्हारा दोष चला गया है। तुम्हारा पाप क्षमा हो गया है।\""
+        },
+        "ru": {
+          "L": "И коснулся [им] моих уст и сказал: «Вот, это коснулось твоих губ, и удаляется твоё беззаконие, и за твой грех совершено умилостивление.»",
+          "B": "Он коснулся им моих уст и сказал: «Смотри, это коснулось твоих губ. Твоя вина снята, и за твой грех совершено умилостивление.»",
+          "R": "Он коснулся углём моих губ и сказал: «Смотри! Этот уголь коснулся твоих губ. Теперь твоей вины больше нет. Твой грех прощён.»"
+        },
+        "ja": {
+          "L": "そして、それをわたしの口に触れさせて言った。「見なさい、これがあなたの唇に触れた。あなたの咎は去り、あなたの罪は贖われる。」",
+          "B": "セラフはその炭をわたしの口に触れさせて言った。「見なさい、これがあなたの唇に触れた。あなたの咎は取り除かれ、あなたの罪の贖いがなされた。」",
+          "R": "セラフは炭をわたしの口に当てて言いました。「見なさい！この炭があなたの唇に触れた。今、あなたの罪の責めは消えた。あなたの罪はゆるされた。」"
+        },
+        "uk": {
+          "L": "І він доторкнувся [нею] до моїх уст і сказав: «Ось, це торкнулося твоїх губ, і відходить твоє беззаконня, і твій гріх очищено.»",
+          "B": "Він доторкнувся нею до моїх уст і сказав: «Дивись, це торкнулося твоїх губ. Твою провину знято, і за твій гріх звершено очищення.»",
+          "R": "Він доторкнувся вуглиною до моїх уст і сказав: «Дивись! Ця вуглина торкнулася твоїх губ. Тепер твоєї провини немає. Твій гріх прощено.»"
         }
       },
       "decisions": [
@@ -1814,6 +2280,69 @@
           "reason": "The verb of atonement in Leviticus; the seraph addresses the prophet with \"አንተ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060070131"
+          ],
+          "choice": "तुम्हारे पाप का प्रायश्चित हो गया है",
+          "alternatives": [
+            "तुम्हारा पाप ढाँप दिया गया है"
+          ],
+          "reason": "kipper is प्रायश्चित at Literal and Balanced, as the Pentateuch note fixes it; Readable says \"forgiven\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060070131"
+          ],
+          "choice": "\"за твой грех совершено умилостивление\" (L, B); \"Твой грех прощён\" (R)",
+          "alternatives": [
+            "твой грех искуплен",
+            "твой грех заглажен"
+          ],
+          "reason": "Kipper keeps the Pentateuch's temple wording at Literal and Balanced, \"совершить умилостивление за\"; Readable, as the English, says what it means for Isaiah, that his sin is forgiven.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060070131"
+          ],
+          "choice": "kuppar \"is atoned for\": \"贖われる\" (L), \"贖いがなされた\" (B), \"ゆるされた\" (R, as the English Readable; 贖 is not Jōyō); the seraph speaks plainly with authority, \"あなた\".",
+          "alternatives": [
+            "\"赦された\" at Balanced"
+          ],
+          "reason": "The kipper family is \"贖い\" in Leviticus and the historical books (L, B); Readable uses the everyday word, as Exodus 29:33 and 2 Chronicles 30:18 did.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1892,6 +2421,26 @@
           "L": "የጌታንም ድምፅ እንዲህ ሲል ሰማሁ፦ «ማንን እልካለሁ? ማንስ ለእኛ ይሄዳል?» እኔም፦ «እነሆኝ፤ ላከኝ» አልኩ።",
           "B": "ከዚያም የጌታን ድምፅ እንዲህ ሲል ሰማሁ፦ «ማንን ልላክ? ማንስ በእኛ ስም ይሄዳል?» እኔም፦ «እኔ ዝግጁ ነኝ፤ ላከኝ» ብዬ መለስኩ።",
           "R": "ከዚያም የጌታን ድምፅ ሰማሁ። እርሱም፦ «ማንን መላክ እችላለሁ? ማንስ ለእኛ ይሄዳል?» ብሎ ጠየቀ። እኔም፦ «እኔ ዝግጁ ነኝ! ላከኝ!» ብዬ መለስኩ።"
+        },
+        "hi": {
+          "L": "तब मैंने प्रभु का शब्द यह कहते सुना, \"मैं किसको भेजूँ, और हमारे लिए कौन जाएगा?\" तब मैंने कहा, \"मैं यहाँ [हूँ]; मुझे भेज।\"",
+          "B": "तब मैंने प्रभु को यह पूछते सुना, \"मैं किसे भेजूँ? हमारी ओर से कौन जाएगा?\" मैंने उत्तर दिया, \"मैं तैयार हूँ। मुझे भेज।\"",
+          "R": "तब मैंने प्रभु की आवाज़ सुनी। उन्होंने पूछा, \"मैं किसे भेज सकता हूँ? हमारे लिए कौन जाएगा?\" मैंने उत्तर दिया, \"मैं तैयार हूँ! मुझे भेज!\""
+        },
+        "ru": {
+          "L": "И я услышал голос Господа, говорящего: «Кого {{deity_pronoun:я|Я}} пошлю, и кто пойдёт для {{deity_pronoun:нас|Нас}}?» И я сказал: «Вот я; пошли меня.»",
+          "B": "Тогда я услышал голос Господа, который спрашивал: «Кого {{deity_pronoun:мне|Мне}} послать? Кто пойдёт от {{deity_pronoun:нашего|Нашего}} имени?» Я ответил: «Я готов. Пошли меня.»",
+          "R": "Тогда я услышал голос Господа. Он спросил: «Кого {{deity_pronoun:я|Я}} могу послать? Кто пойдёт для {{deity_pronoun:нас|Нас}}?» Я ответил: «Я готов! Пошли меня!»"
+        },
+        "ja": {
+          "L": "そして、わたしは主の言われる声を聞いた。「わたしはだれを遣わそうか、だれがわたしたちのために行くだろうか？」わたしは言った。「ここにわたしがおります。わたしを遣わしてください。」",
+          "B": "そのとき、わたしは主がこう尋ねられる声を聞いた。「わたしはだれを遣わそうか？だれがわたしたちに代わって行くだろうか？」わたしは答えた。「ここにおります。わたしを遣わしてください。」",
+          "R": "そのとき、わたしは主の声を聞きました。主は尋ねられました。「だれを遣わそうか？だれがわたしたちのために行くだろうか？」わたしは答えました。「はい、ここにおります！わたしを遣わしてください！」"
+        },
+        "uk": {
+          "L": "І почув я голос Господа, який казав: «Кого {{deity_pronoun:я|Я}} пошлю, і хто піде для {{deity_pronoun:нас|Нас}}?» І сказав я: «Ось я; пошли мене.»",
+          "B": "Тоді я почув голос Господа, який питав: «Кого {{deity_pronoun:мені|Мені}} послати? Хто піде від {{deity_pronoun:нашого|Нашого}} імені?» Я відповів: «Я готовий. Пошли мене.»",
+          "R": "Тоді я почув голос Господа. Він запитав: «Кого {{deity_pronoun:я|Я}} можу послати? Хто піде для {{deity_pronoun:нас|Нас}}?» Я відповів: «Я готовий! Пошли мене!»"
         }
       },
       "decisions": [
@@ -2054,6 +2603,70 @@
           "reason": "The settled \"አቤት\" (B, R) answers a call by name; here the prophet volunteers before anyone calls him, so Balanced and Readable say \"I am ready\", as the English does. The prophet says \"አንተ\" to God; \"for us\" keeps God's plural with the heavenly court.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230060080141",
+            "o230060080142"
+          ],
+          "choice": "मुझे भेज (तू to God)",
+          "alternatives": [
+            "मुझे भेजिए"
+          ],
+          "reason": "Isaiah answers God with the तू form of Hindi prayer (भेज), and God says तुम to him (जाओ, verse 9), as everywhere in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230060080112"
+          ],
+          "choice": "deity_pronoun spans on God's \"нас\" / \"нашего\", none on Isaiah's \"я\" and \"меня\"",
+          "alternatives": [],
+          "reason": "\"Us\" is God speaking with his heavenly court (the meaning decision), so it takes the span as the English does; the prophet's own pronouns take none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230060080131",
+            "o230060080132",
+            "o230060080141"
+          ],
+          "choice": "Isaiah answers God politely (\"ここにおります\", \"遣わしてください\") as Moses does in Exodus 3:4 and people speak to God in the narrative books; God's \"us\" is \"わたしたち\" (m1).",
+          "alternatives": [
+            "plain \"わたしがいる。わたしを遣わせ\""
+          ],
+          "reason": "In prose the human speaker to God uses です・ます (style guide section 4, OT_SUPPLEMENT); \"ここにおります\" is the settled answer for hinneni.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2131,6 +2744,26 @@
           "L": "እርሱም እንዲህ አለ፦ «ሂድና ለዚህ ሕዝብ እንዲህ በል፦ \\q “መስማትን ስሙ፤ ነገር ግን አታስተውሉ፤ \\q ማየትንም እዩ፤ ነገር ግን አትገንዘቡ።”",
           "B": "እርሱም እንዲህ አለ፦ «ሂድና ለዚህ ሕዝብ እንዲህ በል፦ \\q “ደጋግማችሁ ስሙ፤ ነገር ግን አታስተውሉ፤ \\q ደጋግማችሁ ተመልከቱ፤ ነገር ግን አትገንዘቡ።”",
           "R": "እርሱም እንዲህ አለ፦ «ሂድና ለእነዚህ ሰዎች ይህን መልእክት ንገራቸው፦ \\q “መስማታችሁን ቀጥሉ፤ ነገር ግን አታስተውሉ። \\q መመልከታችሁን ቀጥሉ፤ ነገር ግን ምንም አትወቁ።”"
+        },
+        "hi": {
+          "L": "और उन्होंने कहा, \"जाओ, और इस प्रजा से कहो, \\q 'सुनते हुए सुनो, पर न समझो; \\q और देखते हुए देखो, पर न बूझो।'",
+          "B": "उन्होंने कहा, \"जाओ, और इन लोगों से कहो: \\q 'सुनते ही रहो, पर न समझो; \\q देखते ही रहो, पर न पहचानो।'",
+          "R": "उन्होंने कहा, \"जाओ और इन लोगों को यह संदेश दो: \\q 'सुनते और सुनते रहो, पर मत समझो। \\q देखते और देखते रहो, पर कुछ मत सीखो।'"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:он|Он}} сказал: «Иди и скажи этому народу: \\q “Слухом слушайте, но не понимайте; \\q и глядя глядите, но не познавайте.”",
+          "B": "Он сказал: «Иди и скажи этому народу: \\q “Слушайте и слушайте, но не понимайте; \\q смотрите и смотрите, но не познавайте.”",
+          "R": "Он сказал: «Иди и передай этим людям: \\q “Слушайте и слушайте, но ничего не понимайте. \\q Смотрите и смотрите, но ничего не узнавайте.”"
+        },
+        "ja": {
+          "L": "その方は言われた。「行って、この民に言いなさい。 \\q 『聞きに聞け。しかし悟るな。 \\q 見に見よ。しかし知るな。』",
+          "B": "その方は言われた。「行って、この民にこう言いなさい。 \\q 『聞きに聞きなさい。だが、悟ってはならない。 \\q 見に見なさい。だが、知ってはならない。』",
+          "R": "主は言われました。「行って、この民にこう伝えなさい。 \\q 『聞き続けなさい。でも、わかってはいけない。 \\q 見続けなさい。でも、何も学んではいけない。』"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:він|Він}} сказав: «Іди і скажи цьому народові: \\q “Слухайте й слухайте, але не розумійте; \\q і дивіться й дивіться, але не пізнавайте.”",
+          "B": "Він сказав: «Іди і скажи цьому народові: \\q “Слухайте й слухайте знову, та не розумійте; \\q дивіться й дивіться знову, та не пізнавайте.”",
+          "R": "Він сказав: «Іди і передай цим людям таку звістку: \\q “Слухайте й далі, але не розумійте. \\q Дивіться й далі, але нічого не пізнавайте.”"
         }
       },
       "decisions": [
@@ -2293,6 +2926,101 @@
           "reason": "Matthew 13:14-15 and Acts 28:26-27 quote the Greek translation, which turns the commands into futures (\"you will hear ... and never understand\"); Mark 4:12, Luke 8:10 and John 12:40 adapt the verse. The Hebrew gives commands that announce what will happen, as the meaning decision says, so the Amharic keeps the New Testament's vocabulary in imperative form and does not copy its tenses.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060090061",
+            "o230060090071",
+            "o230060090102",
+            "o230060090111"
+          ],
+          "choice": "सुनते हुए सुनो ... न बूझो (L); सुनते ही रहो ... न पहचानो (B); सुनते और सुनते रहो (R)",
+          "alternatives": [
+            "तुम सुनने से सुनोगे और कदापि न समझोगे"
+          ],
+          "reason": "Matthew 13:14 and Acts 28:26 quote these lines from the Greek Old Testament, which has \"you will hear ... and never understand\". The Hebrew has commands (\"hear ... but do not understand\"), so the Hindi keeps the commands and otherwise takes the New Testament's words at each level (सुनते ही रहो, न पहचानो, बूझो).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060090061",
+            "o230060090071",
+            "o230060090102",
+            "o230060090111"
+          ],
+          "choice": "the doubled verbs worded as Matthew 13:14 and Acts 28:26 (\"слухом ... глядя\" at L, \"слушайте и слушайте\" at B, R), but as commands",
+          "alternatives": [
+            "Слухом услышите и не поймёте"
+          ],
+          "reason": "The New Testament quotes these verses from the Greek Old Testament, which has futures (\"you will hear and not understand\"). The Hebrew has commands, so Isaiah keeps the imperatives, using the New Testament's words for the doubled verbs so that the reader recognises the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060090061",
+            "o230060090071",
+            "o230060090101",
+            "o230060090111"
+          ],
+          "choice": "The infinitive absolute shim'u shamoa' / re'u ra'o: \"聞きに聞け / 見に見よ\" (L), \"聞きに聞きなさい / 見に見なさい\" (B), \"聞き続けなさい / 見続けなさい\" (R), kept as commands (m2). God's word to the prophet in the narrative uses \"〜なさい\" (L, B) as in Kings; the message he gives the people uses the oracle forms (L \"〜せよ\").",
+          "alternatives": [
+            "\"聞いても聞いても、悟らない\" as Matthew 13:14"
+          ],
+          "reason": "The Hebrew is imperative; Matthew 13:14 quotes the Greek future, so the NT wording is not copied here (m3 gives the quotations). The doubled verb mirrors the Hebrew emphasis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060090061",
+            "o230060090102"
+          ],
+          "choice": "\"слухайте й слухайте ... дивіться й дивіться\", the doubled verbs of Matthew 13:14 and Acts 28:26 in this translation, here as commands",
+          "alternatives": [
+            "\"слухайте уважно\"",
+            "\"чути — почуєте\""
+          ],
+          "reason": "The Hebrew doubles each verb, and the New Testament quotes it with the same doubling; Ukrainian keeps the repeated verb so the quotation is recognisable, but in the imperative, as the Hebrew has it, where the Gospels have the Greek future.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2384,6 +3112,26 @@
           "L": "የዚህን ሕዝብ ልብ አወፍር፤ \\q ጆሮዎቹንም አክብድ፤ ዓይኖቹንም ቀብተህ ጨፍን፤ \\q በዓይኖቹ እንዳያይ፣ በጆሮዎቹም እንዳይሰማ፣ ልቡም እንዳያስተውል፣ ተመልሶም [ማንም] እንዳይፈውሰው።”»",
           "B": "የዚህን ሕዝብ ልብ አደንድን፤ \\q ጆሮአቸውን አክብድ፤ ዓይኖቻቸውንም ቀብተህ ጨፍን፤ \\q ይህም ዓይኖቻቸው እንዳያዩ፣ ጆሮአቸው እንዳይሰሙ፣ ልባቸውም እንዳያስተውል፣ ተመልሰውም እንዳይፈወሱ ነው።”»",
           "R": "የእነዚህን ሰዎች አእምሮ አደንዝዝ። \\q ጆሮአቸውን ደንቆሮ፣ ዓይኖቻቸውንም ዕውር አድርግ። \\q አለዚያ በዓይኖቻቸው ሊያዩ፣ በጆሮአቸውም ሊሰሙ ይችላሉ። አእምሮአቸውም ሊያስተውል ይችላል። ከዚያም ተመልሰው ይፈወሳሉ።”»"
+        },
+        "hi": {
+          "L": "इस प्रजा के हृदय को चर्बी से भर दो, \\q और उसके कानों को भारी कर दो, और उसकी आँखों को लीपकर बंद कर दो, \\q ताकि न हो कि वह अपनी आँखों से देखे, और अपने कानों से सुने, और उसका हृदय समझे, और वह लौट आए, और [कोई] उसे चंगा करे।'\"",
+          "B": "इन लोगों के हृदय को सुन्न कर दो, \\q उनके कानों को भारी कर दो, और उनकी आँखों को लीपकर बंद कर दो, \\q ताकि वे अपनी आँखों से न देखें, अपने कानों से न सुनें, और उनका हृदय न समझे, और वे लौटकर चंगे न हों।'\"",
+          "R": "इन लोगों के मन को सुन्न कर दो। \\q उनके कान बहरे और उनकी आँखें अंधी कर दो। \\q नहीं तो वे अपनी आँखों से देख लेते और अपने कानों से सुन लेते। उनके मन समझ जाते। तब वे लौट आते और चंगे हो जाते।'\""
+        },
+        "ru": {
+          "L": "Сделай тучным сердце этого народа, \\q и уши его отяготи, и глаза его замажь, \\q чтобы он не увидел глазами, и не услышал ушами, и сердце его не поняло, и не обратился бы он, и не был бы исцелён.”»",
+          "B": "Сделай сердце этого народа тучным, \\q отяготи его уши и замажь его глаза, \\q чтобы его глаза не увидели, уши не услышали и сердце не поняло, и чтобы он не обратился и не получил исцеления.”»",
+          "R": "Сделай сердца этих людей бесчувственными. \\q Сделай их уши глухими, а глаза слепыми. \\q Иначе их глаза увидели бы, а уши услышали бы. Их сердца поняли бы. Тогда они вернулись бы и были бы исцелены.”»"
+        },
+        "ja": {
+          "L": "この民の心を肥え太らせ、 \\q その耳を重くし、その目を塗りふさげ。 \\q 民がその目で見、その耳で聞き、その心で悟り、立ち帰って癒やされることのないように。』」",
+          "B": "この民の心を肥え太らせ、 \\q その耳を遠くし、その目を塗りふさぎなさい。 \\q 彼らが目で見ず、耳で聞かず、心で悟らず、立ち帰って癒やされることのないように。』」",
+          "R": "この民の心を鈍くしなさい。 \\q 耳を聞こえなくし、目を見えなくしなさい。 \\q そうしなければ、彼らは目で見、耳で聞くかもしれない。心でわかるかもしれない。そして、立ち帰って、いやされるだろう。』」"
+        },
+        "uk": {
+          "L": "Зроби ожирілим серце цього народу, \\q і його вуха зроби важкими, і його очі замаж, \\q щоб він не побачив своїми очима, і не почув своїми вухами, і його серце не зрозуміло, і він не навернувся, і [хтось] не зцілив його.”»",
+          "B": "Затовщ серце цього народу, \\q обтяж його вуха і замаж його очі, \\q щоб їхні очі не бачили, вуха не чули, а серце не розуміло, щоб вони не навернулися і не знайшли зцілення.”»",
+          "R": "Зроби розум цих людей тупим. \\q Зроби їхні вуха глухими, а очі сліпими. \\q Інакше вони могли б побачити очима і почути вухами. Їхній розум міг би зрозуміти. Тоді вони навернулися б і були б зцілені.”»"
         }
       },
       "decisions": [
@@ -2581,6 +3329,54 @@
           "reason": "Matthew 13:15, Acts 28:27 and John 12:40 follow the Greek, \"and I would heal them\"; the Hebrew has an impersonal verb, so the Amharic follows the Hebrew and otherwise keeps the New Testament's words (\"ልብ\", \"ጆሮ\", \"ዓይኖቻቸውን ... ጨፍን\", \"እንዳያስተውሉ\", \"ተመልሰው\"). The Hebrew's commands are kept where the Greek says the heart \"has grown dull\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060100011",
+            "o230060100021",
+            "o230060100061",
+            "o230060100081"
+          ],
+          "choice": "इस प्रजा के हृदय को चर्बी से भर दो (L); सुन्न कर दो (B, R)",
+          "alternatives": [
+            "इस प्रजा का हृदय चर्बी से भर गया है"
+          ],
+          "reason": "Matthew 13:15 and Acts 28:27 follow the Greek Old Testament (\"the heart of this people has grown fat ... and I will heal them\"). The Hebrew gives the prophet commands (\"make fat ... make heavy ... smear\") and ends \"and one heal it\", so the Hindi keeps that, using the New Testament's words where they agree (चर्बी से भर, भारी कान, सुन्न, लौट आए, चंगा).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060100011",
+            "o230060100091",
+            "o230060100162",
+            "o230060100172"
+          ],
+          "choice": "the Hebrew commands (\"Сделай тучным...\"), with the closing words matched to Matthew 13:15 and Acts 28:27 where they agree",
+          "alternatives": [
+            "Ведь ожирело сердце этого народа"
+          ],
+          "reason": "Matthew 13:15, Acts 28:27 and John 12:40 follow the Greek Old Testament, where the people's heart \"has grown dull\" and God says \"I will heal them\". The Hebrew commands the prophet to make the heart fat and leaves the healer unnamed, so those parts follow the Hebrew; the list of eyes, ears and heart and the Readable \"Иначе их глаза увидели бы...\" keep the New Testament's wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2664,6 +3460,26 @@
           "L": "እኔም፦ «ጌታ ሆይ፣ እስከ መቼ ነው?» አልኩ። \\q እርሱም እንዲህ አለ፦ «ከተሞች ነዋሪ አጥተው፣ ቤቶችም ሰው አጥተው እስኪፈርሱ ድረስ፣ \\q ምድሪቱም ፈጽማ ባድማ እስክትሆን ድረስ፣",
           "B": "እኔም፦ «ጌታ ሆይ፣ እስከ መቼ ድረስ?» ብዬ ጠየቅሁ። \\q እርሱም እንዲህ ብሎ መለሰ፦ «ከተሞች የሚኖርባቸው አጥተው እስኪፈርሱ፣ ቤቶችም ሰው እስኪያጡ ድረስ፣ \\q የእርሻ መሬቱም ጠፍቶ ባድማ ሆኖ እስኪቀር ድረስ፣",
           "R": "እኔም፦ «ጌታ ሆይ፣ ይህ እስከ መቼ ይቆያል?» ብዬ ጠየቅሁ። \\q እርሱም እንዲህ ብሎ መለሰ፦ «ከተሞቹ እስኪፈርሱና የሚኖርባቸው እስኪጠፋ ድረስ ይቆያል። \\q ቤቶቹ ባዶ እስኪሆኑ፣ እርሻዎቹም ጠፍተው ጭር እስኪሉ ድረስ ይቆያል።"
+        },
+        "hi": {
+          "L": "तब मैंने कहा, \"हे प्रभु, कब तक?\" \\q और उन्होंने कहा, \"जब तक नगर बिना निवासी के उजड़ न जाएँ, और घर बिना मनुष्य के, \\q और भूमि उजड़कर वीरान न हो जाए,",
+          "B": "तब मैंने पूछा, \"हे प्रभु, कब तक?\" \\q उन्होंने उत्तर दिया, \"जब तक नगर उजड़ न जाएँ और उनमें कोई रहनेवाला न रहे, और घरों में कोई मनुष्य न रहे, \\q और खेत उजाड़कर सूने न छोड़ दिए जाएँ,",
+          "R": "तब मैंने पूछा, \"हे प्रभु, यह कब तक चलेगा?\" \\q उन्होंने उत्तर दिया, \"यह तब तक चलेगा जब तक नगर नष्ट न हो जाएँ और उनमें कोई न रहे। \\q यह तब तक चलेगा जब तक घर ख़ाली न हो जाएँ और खेत बरबाद और सूने न हो जाएँ।"
+        },
+        "ru": {
+          "L": "И я сказал: «Доколе, Господи?» \\q И {{deity_pronoun:он|Он}} сказал: «Пока не опустеют города без жителя, и дома без человека, \\q и земля не будет опустошена в пустыню,",
+          "B": "Тогда я спросил: «До каких пор, Господи?» \\q Он ответил: «Пока не опустеют города, где некому будет жить, и дома, где не будет людей, \\q и пахотная земля не будет разорена и заброшена,",
+          "R": "Тогда я спросил: «Господи, сколько это будет продолжаться?» \\q Он ответил: «Пока города не будут разрушены и в них никто не будет жить. \\q Пока дома не опустеют, а поля не будут разорены и заброшены."
+        },
+        "ja": {
+          "L": "わたしは言った。「主よ、いつまでですか？」 \\q その方は言われた。「町々が荒れ果てて住む者がなく、家々に人がいなくなり、 \\q 土地が荒らされて荒れ地となり、",
+          "B": "そこで、わたしは尋ねた。「主よ、いつまでですか？」 \\q その方は答えられた。「町々が荒れ果てて住む者もなく、家々にはだれもいなくなり、 \\q 畑が荒らされて荒れ地となり、",
+          "R": "そこで、わたしは尋ねました。「主よ、いつまで続くのですか？」 \\q 主は答えられました。「町々が滅ぼされて、だれも住まなくなるまでだ。 \\q 家々が空になり、畑が荒らされて見捨てられるまでだ。"
+        },
+        "uk": {
+          "L": "І сказав я: «Доки, Господи?» \\q І {{deity_pronoun:він|Він}} сказав: «Доки не спустошаться міста без мешканця, і доми без людини, \\q і земля не спустошиться [на] пустку,",
+          "B": "Тоді я спитав: «Доки, Господи?» \\q Він відповів: «Доки міста не лежатимуть у руїнах і ніхто в них не житиме, доки доми не спорожніють, \\q а ниви не буде спустошено і закинуто,",
+          "R": "Тоді я запитав: «Господи, як довго це триватиме?» \\q Він відповів: «Це триватиме, доки міста не зруйнують і в них ніхто не житиме. \\q Це триватиме, доки доми не спорожніють, а поля не будуть зруйновані й покинуті."
         }
       },
       "decisions": [
@@ -2749,6 +3565,28 @@
           "reason": "The question of the lament psalms (Psalm 6:3; 90:13), keeping \"ጌታ ሆይ\" for Adonai in address.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230060110011",
+            "o230060110021"
+          ],
+          "choice": "\"Until ...\" runs over 6:11-12; at Literal and Balanced the clauses end with \"、\" and \"〜まで\" closes 6:12, so each verse keeps its own clauses; Readable makes short sentences ending \"〜までだ\" as the English Readable. Isaiah asks God politely (\"いつまでですか\").",
+          "alternatives": [
+            "\"まで\" after each clause at every level"
+          ],
+          "reason": "Japanese \"まで\" must follow the whole clause; putting it once at the end of 6:12 keeps the Hebrew's single \"until\" (m1 of 6:11).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2820,6 +3658,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}}ም የሰው ልጅን እስኪያርቅ፣ \\q በምድሪቱም መካከል የተተወው [ስፍራ] እስኪበዛ ድረስ፤",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቡን ወደ ሩቅ እስኪሰድድ፣ \\q አብዛኛውም ምድር ባዶና የተተወ ሆኖ እስኪቀር ድረስ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቡን ወደ ሩቅ አገር ይሰድዳቸዋል። \\q የምድሪቱም ብዙ ክፍል ባዶ ሆኖ ይቀራል።"
+        },
+        "hi": {
+          "L": "और जब तक {{divine_name:प्रभु|याहवे}} मनुष्यों को दूर न कर दें, \\q और देश के बीच में त्यागे हुए स्थान बहुत न हो जाएँ।",
+          "B": "और जब तक {{divine_name:प्रभु|याहवे}} लोगों को दूर न भेज दें, \\q और देश का बड़ा भाग ख़ाली और त्यागा हुआ न पड़ा रहे।",
+          "R": "{{divine_name:प्रभु|याहवे}} लोगों को दूर भेज देंगे, \\q और देश के बड़े-बड़े भाग ख़ाली छोड़ दिए जाएँगे।"
+        },
+        "ru": {
+          "L": "и {{divine_name:ГОСПОДЬ|Яхве}} удалит человека далеко, \\q и велико [будет] запустение посреди земли.",
+          "B": "и {{divine_name:ГОСПОДЬ|Яхве}} уведёт людей далеко, \\q и большая часть земли будет лежать пустой и заброшенной.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} уведёт людей далеко, \\q и большие части страны останутся пустыми."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}が人を遠くに移し、 \\q 地の真ん中に捨てられた所が多くなるまで[続く]。",
+          "B": "{{divine_name:主|ヤハウェ}}が人々を遠くへ送り、 \\q 国の中に見捨てられた所が多くなるまでだ。",
+          "R": "{{divine_name:主|ヤハウェ}}は人々を遠くへ送る。 \\q そして、この地の多くの所が空っぽになる。"
+        },
+        "uk": {
+          "L": "і {{divine_name:ГОСПОДЬ|Ягве}} не віддалить людину далеко, \\q і велике [буде] спустошення посеред землі.",
+          "B": "і доки {{divine_name:ГОСПОДЬ|Ягве}} не відішле людей далеко, \\q і більша частина краю не лежатиме порожньою та покинутою.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} відішле людей далеко, \\q і великі простори землі залишаться порожніми."
         }
       },
       "decisions": [
@@ -2959,6 +3817,26 @@
           "L": "ገና አንድ አሥረኛ በእርሷ ቢኖር፣ እርሱ ደግሞ ለመቃጠል ይሆናል፤ \\q ሲቆረጡ ጉቶ እንደሚቀርላቸው እንደ ኤላ ዛፍና እንደ ወርካ፤ \\q ጉቶዋም የተቀደሰ ዘር ነው።»",
           "B": "አንድ አሥረኛው ገና በእርሷ ቢቀር እንኳ፣ እርሱም ደግሞ እንደ ገና ለእሳት ይሆናል፤ \\q ተቆርጦ ጉቶው ብቻ እንደሚቀር እንደ ኤላ ዛፍ ወይም እንደ ወርካ ይሆናል። \\q ጉቶዋ ግን የተቀደሰ ዘር ነው።»",
           "R": "ከሕዝቡ አንድ አሥረኛው በምድሪቱ ላይ ቢቀር እንኳ እነርሱም ደግሞ ይቃጠላሉ። \\q ተቆርጦ ጉቶው ብቻ እንደሚቀር እንደ ኤላ ዛፍ ወይም እንደ ወርካ ዛፍ ይሆናሉ። \\q ያ ጉቶ ግን የተቀደሰ ዘር ነው።»"
+        },
+        "hi": {
+          "L": "और यदि उसमें अब भी दसवाँ भाग [रहे], तो वह भी फिर जलाया जाएगा, \\q उस बांज और बलूत के समान, जिनके काटे जाने पर [भी] उनमें ठूँठ [रहता है]; \\q पवित्र वंश उसका ठूँठ [है]।\"",
+          "B": "यदि उसमें दसवाँ भाग भी बचा रहे, तो वह भी फिर आग में जाएगा, \\q उस बांज या बलूत के समान जो काटा जाता है और केवल ठूँठ छोड़ जाता है। \\q पर उसका ठूँठ पवित्र वंश है।\"",
+          "R": "यदि देश में लोगों का दसवाँ भाग भी बचा रहे, तो वे भी फिर से जलाए जाएँगे। \\q वे बांज या बलूत के उस पेड़ के समान होंगे जो काट दिया जाता है और केवल उसका ठूँठ रह जाता है। \\q पर वह ठूँठ पवित्र वंश है।\""
+        },
+        "ru": {
+          "L": "И [если] ещё останется в ней десятая часть, и она снова будет для сожжения, \\q как теревинф и как дуб, у которых при рубке [остаётся] пень; \\q семя святое — её пень.»",
+          "B": "Если в ней ещё останется десятая часть, и та снова пойдёт в огонь, \\q как теревинф или дуб, от которых после рубки остаётся лишь пень. \\q Но её пень — святое семя.»",
+          "R": "Даже если в стране ещё останется десятая часть народа, их тоже снова сожгут. \\q Они будут как теревинф или дуб, которые срубили и от которых остался только пень. \\q Но этот пень — святое семя.»"
+        },
+        "ja": {
+          "L": "たとえ、なおその中に十分の一が[残っても]、それもまた焼かれる。 \\q テレビンの木や樫の木が、切り倒されても切り株が残るように。 \\q その切り株こそ、聖なる種である。」",
+          "B": "その中にまだ十分の一が残っても、それもまた再び火に投げ込まれる。 \\q テレビンの木や樫の木が切り倒されて、切り株だけが残るように。 \\q しかし、その切り株は聖なる種である。」",
+          "R": "たとえ人々の十分の一が、まだこの地に残っていても、彼らもまた焼かれる。 \\q 彼らは、切り倒されて切り株だけが残ったテレビンの木や樫の木のようになる。 \\q しかし、その切り株は聖なる種なのだ。」"
+        },
+        "uk": {
+          "L": "І [якщо] ще [буде] в ній десята частина, то й вона знову буде на спалення, \\q як теребинт і як дуб, у яких при зрубуванні [лишається] пень; \\q насіння святості — її пень.»",
+          "B": "А якщо в ній ще лишиться десята частина, то й вона знову піде у вогонь, \\q як теребинт чи дуб, що їх зрубано і від них лишився тільки пень. \\q Але її пень — святе насіння.»",
+          "R": "Навіть якщо в краю ще залишиться десята частина людей, їх теж знову буде спалено. \\q Вони будуть як теребинт чи дуб, що їх зрубали, і від них лишився тільки пень. \\q Але цей пень — святе насіння.»"
         }
       },
       "decisions": [
@@ -3137,6 +4015,51 @@
           "alternatives": [],
           "reason": "The terebinth keeps its Hebrew name as in the valley of Elah (1 Samuel 17:2, \"የኤላ ሸለቆ\"); the oak takes the word used for the great trees of 2:13. The stump that sprouts points to the remnant (\"ቅሬታ\") of the book, and to 11:1.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060130072",
+            "o230060130083"
+          ],
+          "choice": "बांज (terebinth); बलूत (oak)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The terebinth (elah) is बांज and the oak (allon) बलूत, as Judges, Samuel and Kings already keep them apart in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230060130131",
+            "o230060130141",
+            "o230060130151"
+          ],
+          "choice": "zera' qodesh \"a holy seed\": \"聖なる種\" at every level; matstsevet \"stump\" \"切り株\"; God speaks of himself as \"{{divine_name:主|ヤハウェ}}\" in 6:12 with plain verbs (移し, 送る).",
+          "alternatives": [
+            "\"聖なる子孫\""
+          ],
+          "reason": "\"種\" keeps the plant image of the stump and its double sense (offspring), as the remnant theme needs (m3); God naming himself takes no respect form.",
+          "uncertain": false,
           "footnote": false
         }
       ],

@@ -67,6 +67,26 @@
           "L": "ለመውጣት የሚሆን መዝሙር። \\q ዓይኖቼን ወደ ተራሮቹ አቀናለሁ፤ \\q እርዳታዬ ከየት ይመጣል?",
           "B": "የመውጣት መዝሙር። \\q ቀና ብዬ ተራሮቹን እመለከታለሁ። \\q እርዳታዬ ከየት ይመጣል?",
           "R": "የመውጣት መዝሙር፤ ወደ ኢየሩሳሌም ሲወጡ የሚዘመር። \\q ቀና ብዬ ኮረብቶቹን አያለሁ። \\q እርዳታ ከየት አገኛለሁ?"
+        },
+        "hi": {
+          "L": "चढ़ाई का गीत। \\q मैं अपनी आँखें पहाड़ों की ओर उठाता हूँ; \\q मेरी सहायता कहाँ से आएगी?",
+          "B": "चढ़ाई का गीत। \\q मैं पहाड़ों की ओर देखता हूँ। \\q मुझे सहायता कहाँ से मिलेगी?",
+          "R": "यरूशलेम की ओर जाने की यात्रा का गीत। \\q मैं पहाड़ियों की ओर देखता हूँ। \\q मुझे मदद कहाँ मिल सकती है?"
+        },
+        "ru": {
+          "L": "Песнь восхождения. \\q Поднимаю глаза мои к горам; \\q откуда придёт помощь моя?",
+          "B": "Песнь восхождения. \\q Я смотрю на горы. \\q Откуда придёт мне помощь?",
+          "R": "Песня для пути в Иерусалим. \\q Я смотрю на холмы. \\q Где мне найти помощь?"
+        },
+        "ja": {
+          "L": "上りの歌。 \\q わたしは山々へと、わたしの目を上げる。 \\q どこから、わたしの助けは来るのか？",
+          "B": "都に上る歌。 \\q わたしは山々を見上げる。 \\q わたしの助けは、どこから来るのだろうか？",
+          "R": "エルサレムへ上る旅の歌。 \\q わたしは丘を見上げる。 \\q どこに行けば、助けが見つかるだろう？"
+        },
+        "uk": {
+          "L": "Пісня для сходжень. \\q Я підношу мої очі до гір; \\q звідки прийде моя допомога?",
+          "B": "Пісня сходжень. \\q Я дивлюся вгору, на гори. \\q Звідки прийде мені допомога?",
+          "R": "Пісня для подорожі вгору до Єрусалима. \\q Я дивлюся на пагорби. \\q Де мені знайти допомогу?"
         }
       },
       "decisions": [
@@ -353,6 +373,93 @@
           "reason": "Psalm 121 is known by heart in an older Amharic wording; the psalm is drafted afresh from the Hebrew, with the plain modern \"እርዳታ\" for help and its own verbs, so no line repeats that version. No deity_pronoun spans in the Amharic of this psalm: Ethiopic has no capitals.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010011",
+            "o191210010021",
+            "o191210010022"
+          ],
+          "choice": "\"चढ़ाई का गीत\", as in the other Songs of Ascents",
+          "alternatives": [
+            "\"चढ़ाई के लिए गीत\""
+          ],
+          "reason": "The Hebrew here has \"for the ascents\" (meaning m3), which the English Literal keeps. Hindi keeps the one title used for Psalms 120-134, as the poetry note's table has it, since the sense is the same pilgrim song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010011",
+            "o191210010022"
+          ],
+          "choice": "Песнь восхождения (L, B); Песня для пути в Иерусалим (R)",
+          "alternatives": [
+            "Песнь степеней",
+            "Песнь восхождений"
+          ],
+          "reason": "As in 120:1: one form of the title per level through the Songs of Ascents. Here the Hebrew reads \"for the ascents\" (m3); Literal keeps the one title form rather than make a second one for a small difference of preposition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010021",
+            "o191210010022"
+          ],
+          "choice": "lamma'alot (\"for the ascents\") written with the same title as every other Song of Ascents: \"上りの歌\" (L), \"都に上る歌\" (B), \"エルサレムへ上る旅の歌\" (R)",
+          "alternatives": [
+            "\"上りのための歌\" (L)"
+          ],
+          "reason": "The fifteen titles are kept identical in Japanese (PSA-1 convention); the small difference in the Hebrew preposition (m3) does not change what the title says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010031",
+            "o191210010062",
+            "o191210010072"
+          ],
+          "choice": "Drafted afresh: \"わたしは山々へと、わたしの目を上げる\" (L), \"山々を見上げる\" (B), \"丘を見上げる\" (R); the question \"どこから…来るのか？\"",
+          "alternatives": [],
+          "reason": "A well-known psalm: worded from the Hebrew and the meaning decisions, not from a familiar Japanese version. hehharim is \"the mountains\" (L, B) and \"the hills\" on the road to Jerusalem (R, m5).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -419,6 +526,26 @@
           "L": "እርዳታዬ {{divine_name:ከእግዚአብሔር|ከያህዌ}} ዘንድ [ነው]፣ \\q ሰማይንና ምድርን ከሚሠራው።",
           "B": "እርዳታዬ የሚመጣው {{divine_name:ከእግዚአብሔር|ከያህዌ}} ነው፤ \\q ሰማይንና ምድርን ከሠራው።",
           "R": "የሚረዳኝ {{divine_name:እግዚአብሔር|ያህዌ}} ነው። \\q እርሱ ሰማይንና ምድርን ሠራ።"
+        },
+        "hi": {
+          "L": "मेरी सहायता {{divine_name:प्रभु|याहवे}} की ओर से [है], \\q जो आकाश और पृथ्वी के बनानेवाले [हैं]।",
+          "B": "मेरी सहायता {{divine_name:प्रभु|याहवे}} की ओर से है, \\q जिन्होंने आकाश और पृथ्वी को बनाया।",
+          "R": "{{divine_name:प्रभु|याहवे}} ही मेरी मदद करते हैं। \\q उन्होंने आकाश और धरती को बनाया।"
+        },
+        "ru": {
+          "L": "Помощь моя — от {{divine_name:ГОСПОДА|Яхве}}, \\q Творца неба и земли.",
+          "B": "Моя помощь — от {{divine_name:ГОСПОДА|Яхве}}, \\q который сотворил небо и землю.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} — тот, кто помогает мне. \\q Он сотворил небеса и землю."
+        },
+        "ja": {
+          "L": "わたしの助けは、{{divine_name:主|ヤハウェ}}のもとから[来る]。 \\q 天と地を造られた方から。",
+          "B": "わたしの助けは{{divine_name:主|ヤハウェ}}から来る。 \\q 天と地を造られた方から。",
+          "R": "{{divine_name:主|ヤハウェ}}こそ、わたしを助けてくださる方。 \\q その方は、天と地を造られた。"
+        },
+        "uk": {
+          "L": "Моя допомога — від {{divine_name:ГОСПОДА|Ягве}}, \\q творця неба й землі.",
+          "B": "Моя допомога — від {{divine_name:ГОСПОДА|Ягве}}, \\q того, хто створив небо й землю.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} — той, хто допомагає мені. \\q Він створив небо й землю."
         }
       },
       "decisions": [
@@ -497,6 +624,27 @@
           "reason": "The title of the creator (m2) comes back in 124:8 and 134:3; each level keeps one wording for it in all three. Literal keeps the plural of the Hebrew \"heavens\" and the participle as \"o que fez\"; the familiar \"criador do céu e da terra\" is avoided so that the line is not taken over from a known version. \"Ajuda\" renders the plain Hebrew word for help (also 124:8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210020041",
+            "o191210020051",
+            "o191210020062"
+          ],
+          "choice": "'oseh shamayim va'arets \"天と地を造られた方\" (L, B), \"その方は、天と地を造られた\" (R)",
+          "alternatives": [],
+          "reason": "As 115:15 and 124:8, 134:3 in this chunk; light respect form for God's act.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -564,6 +712,26 @@
           "L": "እግርህ እንዲንሸራተት አይፍቀድ፤ \\q ጠባቂህ አይንቀላፋ።",
           "B": "እግርህ እንዲሰናከል ከቶ አይተው፤ \\q የሚጠብቅህም ከቶ አያንጎላጅ።",
           "R": "ከመውደቅ ይጠብቅህ። \\q የሚጠብቅህ ነቅቶ ይኑር።"
+        },
+        "hi": {
+          "L": "वे तुम्हारे पाँव को फिसलने न दें; \\q तुम्हारे रखवाले न ऊँघें।",
+          "B": "वे तुम्हारे पाँव को कभी लड़खड़ाने न दें; \\q तुम्हारे रक्षक कभी न ऊँघें।",
+          "R": "वे तुम्हें गिरने से बचाए रखें। \\q तुम्हारी हिफ़ाज़त करनेवाले जागते रहें।"
+        },
+        "ru": {
+          "L": "Пусть {{deity_pronoun:он|Он}} не даст ноге твоей поскользнуться; \\q пусть не дремлет хранящий тебя.",
+          "B": "Пусть {{deity_pronoun:он|Он}} никогда не даст тебе оступиться; \\q пусть никогда не задремлет тот, кто охраняет тебя.",
+          "R": "Пусть {{deity_pronoun:он|Он}} не даст тебе упасть. \\q Пусть тот, кто защищает тебя, будет всегда начеку."
+        },
+        "ja": {
+          "L": "その方が、あなたの足をよろめかせることのないように。 \\q あなたを守る方が、まどろむことなどなさらないように。",
+          "B": "その方が、決してあなたの足をつまずかせないように。 \\q あなたを守る方が、決して居眠りなどなさらないように。",
+          "R": "その方が、あなたを倒れないように守ってくださるように。 \\q あなたを守る方が、いつも目を覚ましていてくださるように。"
+        },
+        "uk": {
+          "L": "Нехай {{deity_pronoun:він|Він}} не дасть твоїй нозі посковзнутися; \\q нехай не дрімає твій охоронець.",
+          "B": "Нехай {{deity_pronoun:він|Він}} ніколи не дасть твоїй нозі спіткнутися; \\q нехай ніколи не задрімає той, хто тебе стереже.",
+          "R": "Нехай {{deity_pronoun:він|Він}} береже тебе від падіння. \\q Нехай той, хто тебе захищає, не спить."
         }
       },
       "decisions": [
@@ -875,6 +1043,110 @@
           "reason": "The verbs are wishes (meaning decision m1), answered by the promise of verse 4; the Amharic jussive keeps the two apart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191210030021"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; God spoken of takes the honorific plural (\"वे ... न दें\", \"रखवाले\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030071",
+            "o191210030072"
+          ],
+          "choice": "\"रखवाला\", \"रखवाली करना\" (L); \"रक्षक\", \"रक्षा करना\" (B); \"हिफ़ाज़त करना\" (R)",
+          "alternatives": [
+            "\"बचाना\""
+          ],
+          "reason": "The verb shamar comes six times in verses 3-8, and the repetition carries the psalm. Each level keeps one Hindi word for it throughout, as the English does with keep, guard and protect. The psalm speaks to one person (meaning m3), with \"तुम\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030071"
+          ],
+          "choice": "хранить (L); охранять (B); защищать (R)",
+          "alternatives": [
+            "беречь",
+            "стеречь"
+          ],
+          "reason": "Shamar comes six times in verses 3-8 and carries the psalm; as the English does, each level keeps one Russian verb for it throughout (хранящий, хранитель, сохранит at Literal).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030011",
+            "o191210030051",
+            "o191210030071"
+          ],
+          "choice": "The 'al clauses as wishes, \"〜ないように\" at every level, with the negative for God as \"〜などなさらないように\"",
+          "alternatives": [],
+          "reason": "m1 reads the verse as a wish (uncertain, with a footnote); the negative is put as 〜なさらない, not まどろまれない, which can read \"cannot\" (Psalter rule).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030071",
+            "o191210030072"
+          ],
+          "choice": "shomer \"守る方\" at every level (English keep / guard / protect)",
+          "alternatives": [],
+          "reason": "Japanese 守る covers keep, guard and protect; one verb through the psalm keeps its repeated key word (shamar six times) audible, with R using 守ってくださる for God's acts.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -940,6 +1212,26 @@
           "L": "እነሆ፣ አያንቀላፋም፤ አይተኛምም፣ \\q የእስራኤል ጠባቂ።",
           "B": "በእርግጥም እስራኤልን የሚጠብቀው \\q ከቶ አያንጎላጅም፤ እንቅልፍም አይወስደውም።",
           "R": "የእስራኤል ጠባቂ እንቅልፍ አይጫጫነውም። \\q ፈጽሞ አይተኛም።"
+        },
+        "hi": {
+          "L": "देखो, वे न ऊँघेंगे और न सोएँगे, \\q इस्राएल के रखवाले।",
+          "B": "सचमुच, इस्राएल के रक्षक \\q न कभी ऊँघते हैं, न कभी सोते हैं।",
+          "R": "इस्राएल की हिफ़ाज़त करनेवाले कभी ऊँघते नहीं। \\q वे कभी नहीं सोते।"
+        },
+        "ru": {
+          "L": "Вот, {{deity_pronoun:он|Он}} не задремлет и {{deity_pronoun:он|Он}} не уснёт, \\q хранящий Израиль.",
+          "B": "Да, тот, кто охраняет Израиль, \\q никогда не дремлет и никогда не спит.",
+          "R": "Того, кто защищает Израиль, никогда не клонит в сон. \\q Он никогда не спит."
+        },
+        "ja": {
+          "L": "まことに、まどろむことも、眠ることもなさらない、 \\q イスラエルを守る方は。",
+          "B": "まことに、イスラエルを守る方は、 \\q まどろむことも、眠ることもなさらない。",
+          "R": "イスラエルを守ってくださる方は、決してうとうとなさらない。 \\q 決してお眠りにならない。"
+        },
+        "uk": {
+          "L": "Ось {{deity_pronoun:він|Він}} не задрімає і {{deity_pronoun:він|Він}} не засне, \\q охоронець Ізраїля.",
+          "B": "Справді, той, хто стереже Ізраїль, \\q ніколи не дрімає і ніколи не спить.",
+          "R": "Той, хто захищає Ізраїль, ніколи не хоче спати. \\q Він ніколи не спить."
         }
       },
       "decisions": [
@@ -989,6 +1281,43 @@
           "choice": "keep (L); guard (B); protect (R)",
           "alternatives": [],
           "reason": "As in 121:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210040061"
+          ],
+          "choice": "хранящий (L); охраняет (B); защищает (R)",
+          "alternatives": [],
+          "reason": "As in 121:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210040011"
+          ],
+          "choice": "hinneh \"まことに\" (L, B), dropped (R)",
+          "alternatives": [],
+          "reason": "Psalter rule: hinneh is never 見よ; here it marks the answer to the wish (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1058,6 +1387,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ጠባቂህ [ነው]፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} በቀኝ እጅህ በኩል ጥላህ [ነው]።",
           "B": "የሚጠብቅህ {{divine_name:እግዚአብሔር|ያህዌ}} ነው፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} በቀኝህ በኩል ጥላ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቅሃል። \\q ሙቀትን እንደሚከላከል ጥላ {{divine_name:እግዚአብሔር|ያህዌ}} ከአጠገብህ ይቆማል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} तुम्हारे रखवाले [हैं]; \\q {{divine_name:प्रभु|याहवे}} तुम्हारे दाहिने हाथ पर तुम्हारी छाया [हैं]।",
+          "B": "{{divine_name:प्रभु|याहवे}} ही तुम्हारे रक्षक हैं; \\q {{divine_name:प्रभु|याहवे}} तुम्हारी दाहिनी ओर छाया हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} तुम्हारी हिफ़ाज़त करते हैं। \\q {{divine_name:प्रभु|याहवे}} छाया की तरह तुम्हारे पास खड़े रहते हैं, जो धूप की तपन से बचाती है।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} — хранитель твой; \\q {{divine_name:ГОСПОДЬ|Яхве}} — тень твоя по правую руку твою.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} — тот, кто охраняет тебя; \\q {{divine_name:ГОСПОДЬ|Яхве}} — тень по правую руку от тебя.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} защищает тебя. \\q {{divine_name:ГОСПОДЬ|Яхве}} стоит рядом с тобой, как тень, которая спасает от жары."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}[は]あなたを守る方。 \\q {{divine_name:主|ヤハウェ}}[は]あなたの右の手のかたわらにある、あなたの陰。",
+          "B": "{{divine_name:主|ヤハウェ}}は、あなたを守る方。 \\q {{divine_name:主|ヤハウェ}}は、あなたの右にあって、あなたを覆う陰。",
+          "R": "{{divine_name:主|ヤハウェ}}は、あなたを守ってくださる。 \\q {{divine_name:主|ヤハウェ}}は、あなたのすぐそばに立ち、暑い日ざしをさえぎる陰のようになってくださる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} — твій охоронець; \\q {{divine_name:ГОСПОДЬ|Ягве}} — твоя тінь при твоїй правиці.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} — той, хто тебе стереже; \\q {{divine_name:ГОСПОДЬ|Ягве}} — тінь праворуч від тебе.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захищає тебе. \\q {{divine_name:ГОСПОДЬ|Ягве}} стоїть поруч із тобою, як тінь, що береже від спеки."
         }
       },
       "decisions": [
@@ -1129,6 +1478,45 @@
           "reason": "Readable explains both pictures (m1, m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210050021"
+          ],
+          "choice": "хранитель (L); охраняет (B); защищает (R)",
+          "alternatives": [],
+          "reason": "As in 121:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210050051",
+            "o191210050061",
+            "o191210050071"
+          ],
+          "choice": "'al-yad yeminekha \"あなたの右の手のかたわら\" (L), \"あなたの右\" (B), \"あなたのすぐそば\" (R)",
+          "alternatives": [],
+          "reason": "The idiom means close beside you (m1, m2); R adds what shade is for, as the English R does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1196,6 +1584,26 @@
           "L": "በቀን ፀሐይ አትመታህም፤ \\q ጨረቃም በሌሊት።",
           "B": "በቀን ፀሐይ አትጎዳህም፤ \\q በሌሊትም ጨረቃ ክፉ አታደርግብህም።",
           "R": "ፀሐይ በቀን አትጎዳህም። \\q ጨረቃ በሌሊት አትጎዳህም።"
+        },
+        "hi": {
+          "L": "दिन को सूर्य तुम्हें न मारेगा, \\q न रात को चंद्रमा।",
+          "B": "दिन में सूर्य तुम्हें न झुलसाएगा, \\q और रात को चंद्रमा तुम्हें कोई हानि न पहुँचाएगा।",
+          "R": "दिन में सूरज तुम्हें नुक़सान नहीं पहुँचाएगा। \\q रात को चाँद तुम्हें नुक़सान नहीं पहुँचाएगा।"
+        },
+        "ru": {
+          "L": "Днём солнце не поразит тебя, \\q ни луна ночью.",
+          "B": "Днём солнце не опалит тебя, \\q и ночью луна не причинит тебе вреда.",
+          "R": "Солнце не повредит тебе днём. \\q Луна не повредит тебе ночью."
+        },
+        "ja": {
+          "L": "昼に、太陽はあなたを打たない、 \\q 夜に、月も。",
+          "B": "昼は、太陽があなたを焼きつけることはなく、 \\q 夜は、月があなたを害することもない。",
+          "R": "昼の間、太陽があなたを傷つけることはない。 \\q 夜の間、月があなたを傷つけることもない。"
+        },
+        "uk": {
+          "L": "Удень сонце не вразить тебе, \\q ані місяць уночі.",
+          "B": "Удень сонце не пектиме тебе, \\q і вночі місяць не заподіє тобі шкоди.",
+          "R": "Сонце не зашкодить тобі вдень. \\q Місяць не зашкодить тобі вночі."
         }
       },
       "decisions": [
@@ -1294,6 +1702,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ከማንኛውም ክፉ ይጠብቅሃል፤ \\q ነፍስህን እርሱ ይጠብቃል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከጉዳት ሁሉ ይጠብቅሃል፤ \\q ሕይወትህንም እርሱ ይጠብቃል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከአደጋ ሁሉ ይጠብቅሃል። \\q ሕይወትህን ይጠብቃል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सारी बुराई से तुम्हारी रखवाली करेंगे; \\q वे तुम्हारे प्राण की रखवाली करेंगे।",
+          "B": "{{divine_name:प्रभु|याहवे}} हर हानि से तुम्हारी रक्षा करेंगे; \\q वे तुम्हारे जीवन की रक्षा करेंगे।",
+          "R": "{{divine_name:प्रभु|याहवे}} हर ख़तरे से तुम्हारी हिफ़ाज़त करेंगे। \\q वे तुम्हारी जान की हिफ़ाज़त करेंगे।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} сохранит тебя от всякого зла; \\q {{deity_pronoun:он|Он}} сохранит душу твою.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} будет охранять тебя от всякой беды; \\q {{deity_pronoun:он|Он}} будет охранять саму твою жизнь.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} защитит тебя от всякой опасности. \\q Он защитит твою жизнь."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、あらゆる悪からあなたを守り、 \\q あなたの魂をお守りになる。",
+          "B": "{{divine_name:主|ヤハウェ}}は、どんな災いからもあなたを守り、 \\q あなたの命を守ってくださる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、どんな危険からも、あなたを守ってくださる。 \\q あなたの命を守ってくださる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} берегтиме тебе від усякого зла; \\q {{deity_pronoun:він|Він}} берегтиме твою душу.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} стерегтиме тебе від кожної біди; \\q {{deity_pronoun:він|Він}} стерегтиме саме твоє життя.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захистить тебе від усякої небезпеки. \\q Він захистить твоє життя."
         }
       },
       "decisions": [
@@ -1376,6 +1804,65 @@
           "reason": "Balanced and Readable say the life that is kept from harm, as the English does; \"목숨\" is the word kept for this sense (style guide section 6), \"생명\" being kept for life in the fuller sense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210070071",
+            "o191210070072"
+          ],
+          "choice": "душу твою (L); твою жизнь (B, R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"me\", \"I\" or \"life\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210070021",
+            "o191210070051"
+          ],
+          "choice": "сохранит (L); будет охранять (B); защитит (R)",
+          "alternatives": [],
+          "reason": "As in 121:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210070041",
+            "o191210070071"
+          ],
+          "choice": "ra' \"悪\" (L), \"災い\" (B), \"危険\" (R); nefesh \"魂\" (L), \"命\" (B, R); yishmor \"お守りになる\" (L)",
+          "alternatives": [],
+          "reason": "ra' here is harm and disaster (m1); お守りになる avoids 守られる, which could read \"you are protected\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1445,6 +1932,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} መውጣትህንና መምጣትህን ይጠብቃል \\q ከአሁን ጀምሮ ለዘላለም።",
           "B": "ስትነሣም ስትመለስም {{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቅሃል፤ \\q ከአሁን ጀምሮ ለዘመናት ሁሉ።",
           "R": "ከቤትህ ስትወጣም ስትመለስም {{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቅሃል። \\q አሁንም ለዘላለምም።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} तुम्हारे जाने और तुम्हारे आने की रखवाली करेंगे \\q अब से और सदा तक।",
+          "B": "{{divine_name:प्रभु|याहवे}} तुम्हारे निकलते और लौटते समय तुम्हारी रक्षा करेंगे, \\q अब से लेकर सदा तक।",
+          "R": "जब तुम घर से निकलोगे और जब लौटोगे, {{divine_name:प्रभु|याहवे}} तुम्हारी हिफ़ाज़त करेंगे, \\q अभी भी और सदा तक।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} сохранит выход твой и вход твой \\q отныне и до века.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} будет охранять тебя, когда ты отправляешься в путь и когда возвращаешься, \\q отныне и во все времена.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} защитит тебя, когда ты уходишь из дома и когда возвращаешься, \\q сейчас и всегда."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、あなたの出て行くことと入って来ることをお守りになる、 \\q 今からとこしえまで。",
+          "B": "{{divine_name:主|ヤハウェ}}は、あなたが出かけるときも帰るときも、あなたを守ってくださる、 \\q 今から、いつまでも。",
+          "R": "{{divine_name:主|ヤハウェ}}は、あなたが家を出るときも、帰って来るときも、あなたを守ってくださる。 \\q 今も、そしていつまでも。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} берегтиме твій вихід і твій вхід \\q відтепер і аж навіки.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} стерегтиме тебе, коли ти вирушаєш і коли повертаєшся, \\q віднині й на всі часи.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захищатиме тебе, коли ти йдеш з дому і коли повертаєшся, \\q тепер і завжди."
         }
       },
       "decisions": [
@@ -1521,6 +2028,44 @@
             "coming in first"
           ],
           "reason": "Literal keeps the Hebrew order of the pair, which pictures leaving and returning, all that one does (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210080021"
+          ],
+          "choice": "сохранит (L); будет охранять (B); защитит (R)",
+          "alternatives": [],
+          "reason": "As in 121:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210080031",
+            "o191210080042"
+          ],
+          "choice": "tsetkha uvo'ekha \"あなたの出て行くことと入って来ること\" (L), \"出かけるときも帰るときも\" (B), \"家を出るときも、帰って来るときも\" (R)",
+          "alternatives": [],
+          "reason": "The pair means all one does (m1); B and R say it as everyday comings and goings, as the English does.",
           "uncertain": false,
           "footnote": false
         }

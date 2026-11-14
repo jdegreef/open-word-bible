@@ -64,6 +64,26 @@
           "L": "ወሬያችንን ማን አመነ? \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ክንድስ ለማን ተገለጠ?",
           "B": "የደረሰንን ወሬ ማን አመነ? \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ክንድስ ለማን ተገለጠ?",
           "R": "የሰማነውን ወሬ ማን አመነ? \\q {{divine_name:እግዚአብሔር|ያህዌ}} ኃይሉን ሲያሳይ ያየ ማን ነው?"
+        },
+        "hi": {
+          "L": "हमारे समाचार पर किसने विश्वास किया है? \\q और {{divine_name:प्रभु|याहवे}} की भुजा किस पर प्रकट हुई है?",
+          "B": "हमारे संदेश पर किसने विश्वास किया है? \\q और {{divine_name:प्रभु|याहवे}} की भुजा किस पर प्रकट हुई है?",
+          "R": "हम जो संदेश लाए, उस पर किसने विश्वास किया है? \\q {{divine_name:प्रभु|याहवे}} ने अपनी शक्ति किस पर दिखाई है?"
+        },
+        "ru": {
+          "L": "Кто поверил нашей вести? \\q И кому была открыта рука {{divine_name:ГОСПОДА|Яхве}}?",
+          "B": "Кто поверил нашей вести? \\q И кому явлена рука {{divine_name:ГОСПОДА|Яхве}}?",
+          "R": "Кто поверил вести, которую мы услышали? \\q Кому {{divine_name:ГОСПОДЬ|Яхве}} показал свою силу?"
+        },
+        "ja": {
+          "L": "だれが、わたしたちの知らせを信じたか？ \\q {{divine_name:主|ヤハウェ}}の腕は、だれに現されたか？",
+          "B": "わたしたちに届いた知らせを、だれが信じたか？ \\q {{divine_name:主|ヤハウェ}}の腕は、だれにあらわにされたか？",
+          "R": "わたしたちが聞いた知らせを、だれが信じただろうか？ \\q {{divine_name:主|ヤハウェ}}がその力を示されるのを、だれが見ただろうか？"
+        },
+        "uk": {
+          "L": "Хто повірив нашій звістці? \\q І рамʼя {{divine_name:ГОСПОДА|Ягве}} — над ким воно відкрилося?",
+          "B": "Хто повірив звістці, що дійшла до нас? \\q І кому відкрилося рамʼя {{divine_name:ГОСПОДА|Ягве}}?",
+          "R": "Хто повірив новині, яку ми почули? \\q Хто бачив, як {{divine_name:ГОСПОДЬ|Ягве}} показує свою силу?"
         }
       },
       "decisions": [
@@ -314,6 +334,163 @@
           "reason": "John 12:38 and Romans 10:16 quote this verse from the Greek, which opens with \"Lord\" (ጌታ ሆይ); the Hebrew has no address, so the Amharic leaves it out and otherwise keeps John's Literal wording; Balanced and Readable follow their English (\"the news that reached us\", \"the news we heard\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010011",
+            "o230530010021",
+            "o230530010031",
+            "o230530010032",
+            "o230530010033",
+            "o230530010041",
+            "o230530010042",
+            "o230530010051",
+            "o230530010061",
+            "o230530010071",
+            "o230530010081"
+          ],
+          "choice": "हमारे समाचार (संदेश) पर किसने विश्वास किया है? ... किस पर प्रकट हुई है?",
+          "alternatives": [],
+          "reason": "John 12:38 and Romans 10:16 quote this verse; their wording is kept at each level. They open with \"Lord\" (from the Greek), which the Hebrew does not have, so it is left out here. This song is drafted from the Hebrew and its gloss, not from an earlier Hindi version.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530010051"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the setting the English offers has nothing to change in Hindi; respect for God comes from the honorific plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010032",
+            "o230530010033",
+            "o230530010042",
+            "o230530010051"
+          ],
+          "choice": "the wording of John 12:38 and Romans 10:16 at each level, without their «Господи»",
+          "alternatives": [
+            "Господи, кто поверил нашей вести?"
+          ],
+          "reason": "John 12:38 and Romans 10:16 quote this verse, and Russian keeps their words at each level (кто поверил нашей вести; кому была открыта / явлена рука). They follow the Greek Old Testament, which adds the address \"Lord\"; the Hebrew has none, so it is left out here. At Readable the Hebrew \"our report\" may be the news we heard or the message we announced (m2); Russian follows the English, \"the news we heard\", where the New Testament's Readable has \"the news we brought\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o230530010042",
+            "o230530010051"
+          ],
+          "choice": "И кому была открыта рука ГОСПОДА?",
+          "alternatives": [
+            "И рука ГОСПОДА — кому была открыта?"
+          ],
+          "reason": "The Hebrew puts \"the arm of the LORD\" first; Literal uses the order of John 12:38, which reads naturally in Russian and says the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o230530010031",
+            "o230530010032",
+            "o230530010033"
+          ],
+          "choice": "53:1-10 are spoken by \"we\", the group who misjudged the servant (m1): plain verse at every level, \"わたしたち\", light respect forms for the LORD only, the servant \"彼\" (L, B), \"この者\" (R) with plain verbs. The whole song is composed fresh from the Hebrew and the meaning decisions, with its own syntax, kept clear of the wording of 口語訳, 新共同訳 and 新改訳.",
+          "alternatives": [],
+          "reason": "The most-quoted OT passage in the NT; the familiar Japanese versions shape readers' memory, so each line was built anew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010032",
+            "o230530010033",
+            "o230530010042",
+            "o230530010051"
+          ],
+          "choice": "shemu'atenu \"わたしたちの知らせ\" (L, open, as m2), \"わたしたちに届いた知らせ\" (B), \"わたしたちが聞いた知らせ\" (R); zeroa' YHWH \"主の腕\" (L, B), \"主がその力を示される\" (R). Checked against JHN 12:38 and ROM 10:16 ja (\"だれがわたしたちの知らせを信じたか\"), which quote this line from the Greek with \"Lord\" added; the Hebrew has no vocative, so none is added here.",
+          "alternatives": [],
+          "reason": "The Hebrew and the Greek agree in the question itself, so the NT Japanese wording of it is matched.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010031",
+            "o230530010032",
+            "o230530010033"
+          ],
+          "choice": "\"Хто повірив нашій звістці?\" and \"кому відкрилося\"",
+          "alternatives": [
+            "\"нашому сповіщенню\""
+          ],
+          "reason": "The words John 12:38 uses when it quotes this verse in the Ukrainian New Testament drafts; Isaiah keeps \"рамʼя\" for the arm, as everywhere in this book, where John has \"рука\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -400,6 +577,26 @@
           "L": "በፊቱም እንደ ለጋ ቀንበጥ፣ ከደረቅ መሬትም እንደ ወጣ ሥር አደገ፤ \\q መልክም ግርማም አልነበረውም፤ \\q እንድናየው፣ እንድንመኘውም ገጽታ [አልነበረውም]።",
           "B": "በፊቱ እንደ ትንሽ ቀንበጥ፣ ከደረቀ ምድር እንደሚበቅል ሥር አደገ። \\q ዓይናችንን የሚስብ የክብር ቁመናም ሆነ ግርማ አልነበረውም፤ \\q እንድንናፍቀውም የሚያደርግ ማራኪ መልክ አልነበረውም።",
           "R": "{{divine_name:በእግዚአብሔር|በያህዌ}} ፊት እንደ ትንሽ አረንጓዴ ቀንበጥ፣ ከደረቅ መሬት ገፍቶ እንደሚወጣ ሥር አደገ። \\q ትኩረታችንን የሚስብ ታላቅ ወይም ያማረ ነገር አልነበረውም። \\q መልኩም ወደ እርሱ እንድንቀርብ አላደረገንም።"
+        },
+        "hi": {
+          "L": "और वह उनके सामने कोमल अंकुर के समान, और सूखी भूमि में से निकली जड़ के समान बढ़ा; \\q न उसका कोई रूप [था] और न तेज, \\q कि हम उसकी ओर देखें, और न कोई सुंदरता, कि हम उसे चाहें।",
+          "B": "वह उनके सामने एक छोटे अंकुर की तरह, सूखी धरती में से फूटती जड़ की तरह बढ़ा। \\q उसमें न कोई प्रतापी रूप था, न कोई तेज कि हमारी आँखें उसकी ओर खिंचें, \\q न कोई सुंदर रूप-रंग कि हम उसके लिए तरसें।",
+          "R": "वह {{divine_name:प्रभु|याहवे}} की दृष्टि में एक छोटे हरे अंकुर की तरह, सूखी ज़मीन में से निकलती जड़ की तरह बढ़ा। \\q उसमें कुछ भी ऐसा भव्य या शानदार नहीं था कि हम उस पर ध्यान दें। \\q उसका रूप-रंग ऐसा नहीं था कि हम उसके पास रहना चाहें।"
+        },
+        "ru": {
+          "L": "И он поднялся, как росток, перед {{deity_pronoun:ним|Ним}}, и как корень из сухой земли; \\q не было у него ни облика, ни великолепия, \\q чтобы нам смотреть на него, ни внешности, чтобы нам желать его.",
+          "B": "Он вырос перед {{deity_pronoun:ним|Ним}}, как маленький росток, как корень, пробившийся из иссохшей земли. \\q Не было в нём ни величавого вида, ни великолепия, чтобы привлечь наш взгляд, \\q ни красоты, чтобы мы потянулись к нему.",
+          "R": "Он вырос на глазах у {{divine_name:ГОСПОДА|Яхве}}, как маленький зелёный росток, как корень, пробивающийся из сухой земли. \\q В нём не было ничего величественного или прекрасного, чтобы мы обратили на него внимание. \\q Его внешность не притягивала нас к нему."
+        },
+        "ja": {
+          "L": "彼はその方の前で、若芽のように、乾いた地から出る根のように育った。 \\q わたしたちが目を向けるような姿も輝きも、彼にはなく、 \\q わたしたちが慕うような見た目もなかった。",
+          "B": "彼はその方の前に、小さな若芽のように、干からびた地から生え出る根のように育った。 \\q 彼には、わたしたちの目を引く堂々とした姿も、輝きもなく、 \\q わたしたちが心引かれるような美しい顔立ちもなかった。",
+          "R": "この者は、{{divine_name:主|ヤハウェ}}の前で、小さな緑の若芽のように、乾いた地から伸びてくる根のように育った。 \\q この者には、わたしたちの目を引くような立派なところも、すばらしいところも、何もなかった。 \\q その見た目も、わたしたちが近づきたいと思うようなものではなかった。"
+        },
+        "uk": {
+          "L": "І він виріс, як паросток, перед {{deity_pronoun:ним|Ним}}, і як корінь із сухої землі; \\q не [було] в нього ні постаті, ні величі, \\q щоб ми дивилися на нього, і ні вигляду, щоб ми бажали його.",
+          "B": "Він виріс перед {{deity_pronoun:ним|Ним}}, як маленький паросток, як корінь, що пробивається з висохлої землі. \\q Не мав він ні величної постаті, ні пишноти, що привабила б наші очі, \\q ні гарної вроди, щоб ми прагнули його.",
+          "R": "Він виріс на очах у {{divine_name:ГОСПОДА|Ягве}}, як маленький зелений паросток, як корінь, що пробивається з сухої землі. \\q У ньому не було нічого величного чи пишного, щоб ми звернули на нього увагу. \\q Його вигляд не викликав у нас бажання бути біля нього."
         }
       },
       "decisions": [
@@ -493,6 +690,73 @@
           "reason": "The young growth that springs from a stump (m2) is \"rebento\" at Literal and Balanced, the plain Portuguese word for such a shoot; Readable says \"broto\". The servant is \"ele\" without the setting, as in the English; \"diante dele\" refers to the LORD (m1) and takes the deity_pronoun span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530020031",
+            "o230530020032",
+            "o230530020033"
+          ],
+          "choice": "उनके सामने (honorific: before the LORD)",
+          "alternatives": [
+            "उसके सामने"
+          ],
+          "reason": "The meaning decision reads \"before him\" as before the LORD of verse 1. Hindi's honorific उनके points to God and keeps him apart from the servant (उसका), without adding the name; Readable names the LORD, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530020031",
+            "o230530020032",
+            "o230530020033"
+          ],
+          "choice": "перед {{deity_pronoun:ним|Ним}}",
+          "alternatives": [
+            "перед ним"
+          ],
+          "reason": "\"Before him\" is before the LORD, whose arm is named in verse 1 (m1), so it takes the deity pronoun setting, as the English does; the servant's own pronouns take none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530020031",
+            "o230530020032",
+            "o230530020033",
+            "o230530020022",
+            "o230530020043"
+          ],
+          "choice": "lefanav \"その方の前で\" (L, B), \"主の前で\" (R, as its English): before the LORD (m1); yoneq \"若芽\" (every level), kept apart from tsemach \"若枝\" (4:2) and choter \"芽\" (11:1); shoresh \"根\".",
+          "alternatives": [],
+          "reason": "Isaiah's plant words each keep their own Japanese word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -570,6 +834,26 @@
           "L": "በሰዎች የተናቀና የተገለለ [ነበረ]፤ \\q የሥቃይ ሰው፣ በሽታንም የሚያውቅ፤ \\q ፊትም ከእርሱ እንደሚሸሸግ፣ \\q የተናቀ [ነበረ]፤ እኛም ዋጋ አልሰጠነውም።",
           "B": "ሰው ሁሉ ናቀው፤ ገሸሽም አደረገው፤ \\q የሥቃይ ሰው ነበረ፤ በሽታም ለእርሱ እንግዳ አልነበረም። \\q ሰዎች ፊታቸውን ከእርሱ ያዞሩ ነበር፤ \\q ተናቀ፤ እኛም እንደ ምንም ቆጠርነው።",
           "R": "ሰዎች ናቁት፤ ከእርሱም ጋር ምንም መገናኘት አልፈለጉም። \\q ሕይወቱ በሥቃይ የተሞላ ነበር፤ በሽታም ለእርሱ አዲስ ነገር አልነበረም። \\q ሰዎች ፊታቸውን ከእርሱ ያዞሩ ነበር። \\q ናቁት፤ እኛም ምንም ዋጋ እንደሌለው አሰብን።"
+        },
+        "hi": {
+          "L": "[वह] तुच्छ समझा गया और मनुष्यों द्वारा छोड़ दिया गया, \\q पीड़ाओं से भरा मनुष्य, जो रोग को जानता था; \\q और ऐसा, जिससे लोग अपना मुँह छिपाते हैं, \\q [वह] तुच्छ समझा गया, और हमने उसे कुछ न गिना।",
+          "B": "उसे सबने तुच्छ समझा और उससे किनारा कर लिया; \\q वह पीड़ाओं का मारा मनुष्य था, बीमारी उसके लिए अनजानी न थी। \\q लोग उससे अपने चेहरे छिपा लेते थे; \\q उसे तुच्छ समझा गया, और हमने उसे किसी गिनती में न रखा।",
+          "R": "लोग उसे नीची नज़र से देखते थे और उससे कोई वास्ता नहीं रखना चाहते थे। \\q उसका जीवन पीड़ा से भरा था, और बीमारी उसके लिए कोई नई बात न थी। \\q लोग उसे देखकर अपना मुँह दूसरी ओर कर लेते थे। \\q वे उसे नीची नज़र से देखते थे, और हमने सोचा कि उसका कोई मोल नहीं।"
+        },
+        "ru": {
+          "L": "[Он был] презираем и оставлен людьми, \\q человек болей, знающий немощь; \\q и как [тот], от кого прячут лица, \\q [он был] презираем, и мы не ценили его.",
+          "B": "Его презирали и сторонились все, \\q человека, полного болей, хорошо знакомого с болезнью. \\q Люди отворачивались от него; \\q его презирали, и мы считали его ничем.",
+          "R": "Люди смотрели на него свысока и не хотели иметь с ним ничего общего. \\q Его жизнь была полна боли, и болезнь была ему не в новинку. \\q Люди отворачивались от него. \\q Они презирали его, и мы думали, что он ничего не стоит."
+        },
+        "ja": {
+          "L": "人々にさげすまれ、見捨てられ、 \\q 痛みの人であり、病を身に知る者。 \\q 人々が彼から顔を隠すかのようで、 \\q 彼はさげすまれ、わたしたちは彼を価値ある者と見なかった。",
+          "B": "彼はさげすまれ、だれからも避けられた。 \\q 痛みを抱えた人で、病とは無縁でなかった。 \\q 人々は彼から顔を背けた。 \\q 彼はさげすまれ、わたしたちは彼を何とも思わなかった。",
+          "R": "人々はこの者を見下し、かかわろうとしなかった。 \\q その生涯は痛みに満ち、病気もいつものことだった。 \\q 人々は、この者から顔を背けた。 \\q 人々はこの者を見下し、わたしたちも、この者には何の値打ちもないと思った。"
+        },
+        "uk": {
+          "L": "[Він був] зневажений і покинутий {{gender:людьми|мужами}}, \\q муж болів, що знав хворобу; \\q і як [той, від кого] ховають обличчя, \\q [він був] зневажений, і ми не цінували його.",
+          "B": "Його зневажали і цуралися всі, \\q чоловік, сповнений болів, якому хвороба була не чужа. \\q Люди відверталися від нього; \\q його зневажали, і ми мали його за ніщо.",
+          "R": "Люди дивилися на нього зверхньо і не хотіли мати з ним нічого спільного. \\q Його життя було повне болю, і хвороба не була для нього чимось новим. \\q Люди відвертали від нього обличчя. \\q Вони дивилися на нього зверхньо, і ми думали, що він нічого не вартий."
         }
       },
       "decisions": [
@@ -730,6 +1014,128 @@
           "reason": "The English Literal offers \"people\" or \"men\"; Amharic \"ሰዎች\" covers both.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530030031"
+          ],
+          "choice": "मनुष्यों (no gender span)",
+          "alternatives": [],
+          "reason": "The English has a gender span on \"men\"; Hindi मनुष्य already means human beings, men and women alike, so there is nothing for the setting to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530030051",
+            "o230530030071"
+          ],
+          "choice": "पीड़ा; रोग",
+          "alternatives": [
+            "दुःख"
+          ],
+          "reason": "The two nouns are kept apart: पीड़ा for pain of body or mind, रोग (बीमारी) for sickness, the same word as in verse 4, so that verse 4 is heard answering this one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530030022",
+            "o230530030031"
+          ],
+          "choice": "людьми, without a gender span",
+          "alternatives": [
+            "{{gender:людьми|мужами}}"
+          ],
+          "reason": "The Hebrew word here is \"men\", meaning people in general (m2). The English Literal offers \"people / men\"; Russian люди already covers men and women, so it takes no gender span, as the Pentateuch note settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530030041",
+            "o230530030051",
+            "o230530030062",
+            "o230530030071"
+          ],
+          "choice": "человек болей, знающий немощь",
+          "alternatives": [
+            "муж скорбей"
+          ],
+          "reason": "Literal keeps the two nouns, pains and sickness (m1), and uses немощь for sickness, the word Matthew 8:17 has in this translation for the same Hebrew word in verse 4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530030022",
+            "o230530030031"
+          ],
+          "choice": "'ishim \"人々\" (L), \"だれからも\" (B) with no gender span, where the English L has {{gender:people|men}}: the Japanese is already inclusive.",
+          "alternatives": [],
+          "reason": "No alternative is needed in Japanese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530030041",
+            "o230530030051",
+            "o230530030062",
+            "o230530030071"
+          ],
+          "choice": "'ish mak'ovot \"痛みの人\" (L), \"痛みを抱えた人\" (B), \"その生涯は痛みに満ち\" (R); vidua' choli \"病を身に知る者\" (L), \"病とは無縁でなかった\" (B), \"病気もいつものことだった\" (R): one who knew suffering and illness from inside (m1); nivzeh \"さげすまれ\" (L, B; also 49:7).",
+          "alternatives": [],
+          "reason": "Composed against the familiar \"悲しみの人で、病を知っていた\" and \"多くの痛みを負い\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -806,6 +1212,26 @@
           "L": "ነገር ግን በሽታዎቻችንን እርሱ ራሱ ወሰደ፤ \\q ሕመሞቻችንንም ተሸከማቸው፤ \\q እኛም እኛ በመቅሠፍት እንደ ተመታ፣ በእግዚአብሔር እንደ ተቀጣ፣ እንደ ተዋረደም አሰብነው።",
           "B": "ነገር ግን የወሰደው በሽታዎቻችንን ነበር፤ \\q የተሸከመውም ሕመሞቻችንን ነበር፤ \\q እኛ ግን መቅሠፍት እንደ ወረደበት፣ \\q እግዚአብሔር እንደ መታውና እንዳዋረደው ሰው ቆጠርነው።",
           "R": "እርሱ ግን በእውነት በሽታዎቻችንን ይሸከም ነበር። \\q የሕመሞቻችንን ሸክም ይሸከም ነበር። \\q እኛ ግን እግዚአብሔር መቶት፣ ደብድቦ እንደ ጣለውና እንዳሠቃየው አሰብን።"
+        },
+        "hi": {
+          "L": "फिर भी हमारे रोग उसने स्वयं ले लिए, \\q और हमारी पीड़ाएँ उसने उठा लीं; \\q और हमने, हमने उसे विपत्ति का मारा, परमेश्वर का पीटा हुआ और सताया हुआ समझा।",
+          "B": "फिर भी वे हमारे ही रोग थे जो उसने ले लिए, \\q हमारी ही पीड़ाएँ थीं जो उसने उठा लीं, \\q जबकि हमने समझा कि उस पर विपत्ति पड़ी है, \\q कि परमेश्वर ने उसे मारकर नीचा कर दिया है।",
+          "R": "पर सच में उसने हमारे रोग उठा लिए थे। \\q उसने हमारी पीड़ाओं का बोझ उठा लिया था। \\q और हम सोचते थे कि परमेश्वर ने उसे मारा है, उसे गिरा दिया है और उसे दुःख दिया है।"
+        },
+        "ru": {
+          "L": "Но наши немощи он сам взял, \\q и наши боли — он понёс их; \\q а мы, мы считали его поражённым, избитым Богом и униженным.",
+          "B": "Но это наши немощи он взял, \\q наши боли он понёс на себе, \\q а мы считали его человеком, поражённым язвой, \\q сражённым Богом и униженным.",
+          "R": "Но на самом деле он забрал наши болезни. \\q Он понёс груз наших страданий. \\q А мы думали, что это Бог поразил его, избил и заставил страдать."
+        },
+        "ja": {
+          "L": "しかし実は、わたしたちの病を彼こそが担い、 \\q わたしたちの痛みを彼が背負った。 \\q それなのに、わたしたちは、彼が打たれ、神に打ちのめされ、苦しめられたのだと思った。",
+          "B": "しかし、彼が担ったのは、わたしたちの病であり、 \\q 彼が背負ったのは、わたしたちの痛みであった。 \\q それなのに、わたしたちは、彼が災いに打たれた者、 \\q 神に打ちたたかれ、低くされた者だと思っていた。",
+          "R": "しかし本当は、この者は、わたしたちの病気を負っていたのだ。 \\q わたしたちの痛みという重荷を、担っていたのだ。 \\q それなのに、わたしたちは、神がこの者を打ち、たたきのめし、苦しめておられるのだと思っていた。"
+        },
+        "uk": {
+          "L": "Але наші хвороби — він сам ніс, \\q і наші болі — він їх поніс; \\q а ми, ми вважали його враженим, побитим Богом і пригнобленим.",
+          "B": "Та це наші хвороби він ніс, \\q наші болі він узяв на себе, \\q а ми вважали його ураженим карою, \\q побитим Богом і приниженим.",
+          "R": "Але насправді він ніс наші хвороби. \\q Він ніс тягар наших болів. \\q А ми думали, що Бог вразив його, побив і змусив страждати."
         }
       },
       "decisions": [
@@ -967,6 +1393,123 @@
           "reason": "Matthew 8:17 translates the first two lines straight from the Hebrew (\"he took our weaknesses and carried our diseases\"). The Amharic keeps Matthew's verbs and their order and names what the Hebrew names: sicknesses (\"በሽታዎቻችንን\") and pains (\"ሕመሞቻችንን\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040021",
+            "o230530040022",
+            "o230530040031",
+            "o230530040041",
+            "o230530040051",
+            "o230530040052",
+            "o230530040053",
+            "o230530040061",
+            "o230530040062"
+          ],
+          "choice": "उसने स्वयं हमारे रोग ले लिए, हमारी पीड़ाएँ उठा लीं",
+          "alternatives": [],
+          "reason": "Matthew 8:17 quotes this line (\"ले लीं ... उठा लिए\"); its verbs are kept at each level. The nouns follow the Hebrew (sicknesses and pains, as in verse 3), and the servant keeps the plain forms of this song, where Matthew, speaking of Jesus, uses the honorific.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040021",
+            "o230530040041",
+            "o230530040052",
+            "o230530040062"
+          ],
+          "choice": "the wording of Matthew 8:17 at each level (он сам взял наши немощи ... понёс; он взял наши немощи ... понёс; он забрал наши болезни и понёс)",
+          "alternatives": [
+            "взял на себя наши немощи и понёс наши болезни"
+          ],
+          "reason": "Matthew 8:17 quotes this line from the Hebrew, so Russian keeps its verbs and its first noun at each level. The second noun stays \"pains\" (боли, страдания), as the Hebrew has it, where Matthew has \"diseases\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040021",
+            "o230530040041",
+            "o230530040052",
+            "o230530040062",
+            "o230530040011",
+            "o230530040031",
+            "o230530040072"
+          ],
+          "choice": "nasa' \"担う\" and saval \"背負う\", the carrying verbs of ISA-6 (46:1-7), kept apart (53:11 yisbol \"背負う\", 53:12 nasa' \"担った\"); cholayenu \"わたしたちの病\", makh'ovenu \"わたしたちの痛み\" from the Hebrew. Checked against MAT 8:17 ja (\"わたしたちの弱さを引き受け、わたしたちの病を背負った\"), which renders Matthew's Greek; Isaiah keeps the Hebrew pair.",
+          "alternatives": [],
+          "reason": "Matthew's Greek reads \"weaknesses ... diseases\"; the Hebrew reads \"sicknesses ... pains\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040091",
+            "o230530040101"
+          ],
+          "choice": "nagua' mukkeh 'elohim \"打たれ、神に打ちのめされ\" (L), \"災いに打たれ、神に打ちたたかれ\" (B): struck as by a plague (m2); Readable gives God respect forms (\"苦しめておられる\") as the subject of the speakers' thought.",
+          "alternatives": [],
+          "reason": "The plague sense is made plain at B.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040011",
+            "o230530040031",
+            "o230530040072"
+          ],
+          "choice": "\"наші хвороби він ніс, наші болі він узяв на себе\"",
+          "alternatives": [
+            "\"наші немочі\""
+          ],
+          "reason": "Close to Matthew 8:17 in the Ukrainian New Testament drafts (\"узяв ... поніс\"); Isaiah keeps \"хвороби\" and \"болі\" from the Hebrew, where Matthew has \"немочі\" and \"хвороби\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1046,6 +1589,26 @@
           "L": "እርሱ ግን ከመተላለፋችን የተነሣ ተወጋ፤ \\q ከበደላችን የተነሣ ተቀጠቀጠ፤ \\q የሰላማችን ቅጣት በእርሱ ላይ [ነበረ]፤ \\q በሰንበሩም እኛ ተፈወስን።",
           "B": "ነገር ግን የተወጋው ስለ ዓመፃችን ነው፤ \\q የተቀጠቀጠውም ስለ በደላችን ነው። \\q ሰላም ያስገኘልን ቅጣት በእርሱ ላይ ወደቀ፤ \\q በሰንበሩም ፈውስ አገኘን።",
           "R": "ነገር ግን የቆሰለው በእግዚአብሔር ላይ ስላመፅን ነው። \\q የተቀጠቀጠውም ስለ ኃጢአታችን ነው። \\q ሰላም ያስገኘልንን ቅጣት እርሱ ተቀበለ። \\q የደረሰበት ድብደባ ፈወሰን።"
+        },
+        "hi": {
+          "L": "पर हमारे अपराधों के कारण वह बेधा गया, \\q हमारे अधर्म के कारण वह चूर-चूर किया गया; \\q हमारी शान्ति की ताड़ना उस पर [थी], \\q और उसकी मार के घावों से हम चंगे हुए।",
+          "B": "पर वह हमारे विद्रोहों के कारण आर-पार बेधा गया, \\q हमारे दोष के कारण कुचला गया। \\q जिस ताड़ना से हमें शान्ति मिली, वह उस पर पड़ी, \\q और जो चोटें उसने सहीं, उनसे हम चंगे हुए हैं।",
+          "R": "पर वह इसलिए घायल हुआ कि हम परमेश्वर के विरुद्ध हो गए थे। \\q वह हमारे पापों के कारण कुचला गया। \\q उसने वह दंड सहा जिससे हमें शान्ति मिली। \\q हम इसलिए चंगे हुए हैं कि उसे पीटा गया और घायल किया गया।"
+        },
+        "ru": {
+          "L": "Но он [был] пронзён из-за наших преступлений, \\q сокрушён из-за наших беззаконий; \\q на нём [было] наказание [ради] нашего мира, \\q и его рубцом мы исцелены.",
+          "B": "Но это за наши бунты он был пронзён, \\q за нашу вину он был сокрушён. \\q На него пало наказание, которое принесло нам мир, \\q и его ранами от побоев мы исцелены.",
+          "R": "Но он был изранен за то, что мы восставали против Бога. \\q Он был сокрушён за наши грехи. \\q Он принял наказание, которое дало нам мир. \\q Мы исцелены, потому что его избили и изранили."
+        },
+        "ja": {
+          "L": "しかし彼は、わたしたちの背きによって刺し貫かれ、 \\q わたしたちの咎によって打ち砕かれた。 \\q わたしたちの平和の懲らしめは彼の上にあり、 \\q 彼の打ち傷によって、わたしたちに癒やしがもたらされた。",
+          "B": "だが彼は、わたしたちの背きのために、体を刺し通され、 \\q わたしたちの咎を負って、押しつぶされた。 \\q わたしたちに平和をもたらす懲らしめは、彼の身に下り、 \\q 彼が受けた打ち傷が、わたしたちを癒やした。",
+          "R": "わたしたちが神に逆らったために、この者は傷を負わされた。 \\q わたしたちの罪のために、この者は打ち砕かれた。 \\q この者は、わたしたちに平和を与える罰を受けた。 \\q この者が打たれたことによって、わたしたちはいやされた。"
+        },
+        "uk": {
+          "L": "А він [був] пробитий за наші переступи, \\q розчавлений за наші беззаконня; \\q кара нашого миру [була] на ньому, \\q і його ранами зцілено нас.",
+          "B": "Але це за наші бунти його пробили, \\q за нашу провину його розчавили. \\q На нього впала кара, що принесла нам мир, \\q і його рани принесли нам зцілення.",
+          "R": "Але його поранили за те, що ми повстали проти Бога. \\q Його розчавили за наші гріхи. \\q Він прийняв кару, яка дала нам мир. \\q Побої, яких він зазнав, зцілили нас."
         }
       },
       "decisions": [
@@ -1229,6 +1792,145 @@
           "reason": "1 Peter 2:24 quotes this line (\"by his welts you have been healed\"); the Amharic keeps its word \"ሰንበር\" (welt, the mark of a beating) and the verb, in the first person plural of the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050091",
+            "o230530050092",
+            "o230530050093",
+            "o230530050094",
+            "o230530050101",
+            "o230530050111",
+            "o230530050112"
+          ],
+          "choice": "उसकी मार के घावों से हम चंगे हुए (L); जो चोटें उसने सहीं, उनसे हम चंगे हुए हैं (B); हम इसलिए चंगे हुए हैं कि उसे पीटा गया और घायल किया गया (R)",
+          "alternatives": [],
+          "reason": "1 Peter 2:24 quotes the last line (\"you were healed\"); its wording is kept at each level with the Hebrew's \"we\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050031",
+            "o230530050032",
+            "o230530050033",
+            "o230530050051",
+            "o230530050052",
+            "o230530050053"
+          ],
+          "choice": "अपराध; अधर्म (L), दोष (B)",
+          "alternatives": [],
+          "reason": "Transgression is अपराध (rebellion) and iniquity अधर्म at Literal and दोष at Balanced and Readable, as the Pentateuch note settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050061",
+            "o230530050071",
+            "o230530050093",
+            "o230530050101"
+          ],
+          "choice": "the wording of 1 Peter 2:24 at each level (его рубцом ... исцелены; его ранами от побоев ... исцелены; исцелены, потому что его избили и изранили), with the Hebrew \"we\"",
+          "alternatives": [
+            "вы исцелены"
+          ],
+          "reason": "1 Peter 2:24 quotes the last line and the Hebrew says the same, so Russian keeps Peter's words at each level; Peter turns \"we\" into \"you\" for his readers, and the Hebrew \"we\" stays here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050031",
+            "o230530050051",
+            "o230530050021",
+            "o230530050041"
+          ],
+          "choice": "mippesha'enu / me'avonotenu \"わたしたちの背きによって / 咎によって\" (L, keeping the Hebrew min), \"背きのために / 咎を負って\" (B), \"逆らった / 罪\" (R), pesha' and 'avon as ISA-1; mecholal \"刺し貫かれ\" (L), \"刺し通され\" (B); medukka' \"打ち砕かれ\" (L), \"押しつぶされ\" (B) (m1).",
+          "alternatives": [],
+          "reason": "The settled sin words, in new syntax.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050061",
+            "o230530050071",
+            "o230530050093",
+            "o230530050101"
+          ],
+          "choice": "musar shelomenu \"わたしたちの平和の懲らしめ\" (L), \"わたしたちに平和をもたらす懲らしめ\" (B), \"平和を与える罰\" (R): punishment that brings us peace (m3), shalom \"平和\" (with God); chabburato \"彼の打ち傷\" (L, B), nirpa' lanu \"癒やしがもたらされた\" (L), \"わたしたちを癒やした\" (B), \"いやされた\" (R). Checked against 1PE 2:24 ja (\"その方の打ち傷によって、あなたがたは癒やされました\"), which applies the line to its readers; \"打ち傷\" is shared.",
+          "alternatives": [],
+          "reason": "Peter's wording addresses \"you\"; Isaiah's speakers say \"us\"; the key noun matches.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050021",
+            "o230530050041"
+          ],
+          "choice": "\"ранами\", \"рани\", \"побої\" for his welts",
+          "alternatives": [
+            "\"синцями\"",
+            "\"рубцями\""
+          ],
+          "reason": "First Peter 2:24 in the Ukrainian New Testament drafts quotes this line with \"ранами\"; Literal and Balanced keep that word, and Readable says plainly that he was beaten.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1305,6 +2007,26 @@
           "L": "ሁላችንም እንደ በጎች ባዘንን፤ \\q እያንዳንዳችን ወደ ገዛ መንገዳችን ዞርን፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}}ም የሁላችንንም በደል በእርሱ ላይ እንዲወድቅ አደረገ።",
           "B": "ሁላችንም እንደ በጎች ተሳስተን ሄድን፤ \\q እያንዳንዳችን በራሳችን መንገድ ዘወር አልን፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ግን የሁላችንንም በደል በእርሱ ላይ እንዲወድቅ አደረገ።",
           "R": "ሁላችንም እንደ ጠፉ በጎች ተቅበዘበዝን። \\q እያንዳንዳችን በየራሳችን መንገድ ሄድን። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ግን የሁላችንንም ኃጢአት በእርሱ ላይ እንዲወድቅ አደረገ።"
+        },
+        "hi": {
+          "L": "हम सब भेड़ों के समान भटक गए हैं; \\q हम हर एक अपनी-अपनी राह की ओर मुड़ गए हैं; \\q और {{divine_name:प्रभु|याहवे}} ने हम सब का अधर्म उस पर आ गिराया है।",
+          "B": "हम सब भटकी हुई भेड़ों की तरह इधर-उधर भटक गए हैं; \\q हम में से हर कोई अपनी ही राह पर मुड़ गया, \\q और {{divine_name:प्रभु|याहवे}} ने हम सब का दोष उस पर आ गिराया है।",
+          "R": "हम सब उन भेड़ों जैसे हैं जो भटक गई हैं। \\q हम में से हर कोई अपने ही रास्ते चला गया है। \\q और {{divine_name:प्रभु|याहवे}} ने हम सब के पाप उस पर डाल दिए हैं।"
+        },
+        "ru": {
+          "L": "Все мы, как овцы, блуждали; \\q каждый на свою дорогу мы свернули; \\q и {{divine_name:ГОСПОДЬ|Яхве}} сделал так, что пало на него беззаконие всех нас.",
+          "B": "Все мы блуждали, как заблудившиеся овцы; \\q каждый из нас свернул на свою тропу, \\q и {{divine_name:ГОСПОДЬ|Яхве}} сделал так, что вся наша вина пала на него.",
+          "R": "Все мы ушли и потерялись, как овцы. \\q Каждый из нас пошёл своей дорогой. \\q И {{divine_name:ГОСПОДЬ|Яхве}} сделал так, что грехи всех нас пали на него."
+        },
+        "ja": {
+          "L": "羊のように、わたしたちは皆、迷い出た。 \\q それぞれが、自分の道へと向かった。 \\q {{divine_name:主|ヤハウェ}}は、わたしたち皆の咎を彼の上に落とされた。",
+          "B": "わたしたちは一人残らず、羊のようにはぐれてしまい、 \\q めいめい勝手な道へとそれて行った。 \\q {{divine_name:主|ヤハウェ}}は、わたしたちすべての咎が彼を打つようにされた。",
+          "R": "わたしたちはみな、迷子の羊のようにさまよった。 \\q それぞれが、自分の好きな道へ行ってしまった。 \\q そして{{divine_name:主|ヤハウェ}}は、わたしたちみなの罪が、この者の上に落ちるようにされた。"
+        },
+        "uk": {
+          "L": "Усі ми, як вівці, заблукали; \\q кожен на свою дорогу ми звернули; \\q і {{divine_name:ГОСПОДЬ|Ягве}} поклав на нього беззаконня всіх нас.",
+          "B": "Кожен з нас заблукав, як вівці; \\q ми всі звернули кожен на свою стежку, \\q і {{divine_name:ГОСПОДЬ|Ягве}} зробив так, що вся наша провина впала на нього.",
+          "R": "Усі ми заблукали, як загублені вівці. \\q Кожен з нас пішов своєю дорогою. \\q І {{divine_name:ГОСПОДЬ|Ягве}} зробив так, що гріхи всіх нас упали на нього."
         }
       },
       "decisions": [
@@ -1392,6 +2114,110 @@
           "reason": "1 Peter 2:25 echoes this verse (\"you were straying like sheep\"); Readable shares its Balanced wording; Literal and Balanced keep the Hebrew verb \"strayed\" (\"ባዘንን\", \"ተሳስተን ሄድን\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060011",
+            "o230530060012",
+            "o230530060021",
+            "o230530060022",
+            "o230530060031"
+          ],
+          "choice": "भेड़ों के समान भटक गए (L); भटकी हुई भेड़ों की तरह इधर-उधर भटक गए (B); उन भेड़ों जैसे ... जो भटक गई (R)",
+          "alternatives": [],
+          "reason": "1 Peter 2:25 echoes this line; its wording is kept at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060081"
+          ],
+          "choice": "उस पर आ गिराया है",
+          "alternatives": [
+            "उस पर लाद दिया है"
+          ],
+          "reason": "The verb means to make something strike or land on someone; the same verb in verse 12 means to intercede. Hindi keeps the picture of the guilt falling on him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060022",
+            "o230530060031"
+          ],
+          "choice": "the wording of 1 Peter 2:25 at each level (как овцы, блуждали; блуждали, как заблудившиеся овцы; ушли и потерялись, как овцы)",
+          "alternatives": [
+            "заблудились, как овцы"
+          ],
+          "reason": "1 Peter 2:25 takes up this line (\"you were like sheep going astray\"), so Russian uses Peter's words at each level for the straying sheep.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060081"
+          ],
+          "choice": "сделал так, что пало на него",
+          "alternatives": [
+            "возложил на него"
+          ],
+          "reason": "The Hebrew verb means \"made it fall on him\", \"made it strike him\" (m1); Literal keeps the picture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060081",
+            "o230530060111"
+          ],
+          "choice": "hifgia' bo \"彼の上に落とされた\" (L), \"彼を打つようにされた\" (B), \"この者の上に落ちるようにされた\" (R): the LORD made our guilt strike him (m1); 'avon \"咎\" (L, B), \"罪\" (R), guilt with its punishment (m3). Checked against 1PE 2:25 (\"迷っている羊\"), which echoes the first line.",
+          "alternatives": [],
+          "reason": "The verb's sense of striking, not just \"laying on\", is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1476,6 +2302,26 @@
           "L": "ተጨቆነ፤ እርሱም ራሱን አዋረደ፤ አፉንም አልከፈተም፤ \\q ለመታረድ እንደሚወሰድ በግ፣ \\q በሸላቾቿም ፊት ድምፅ እንደማታሰማ እንስት በግ፣ \\q [እንዲሁ] አፉን አልከፈተም።",
           "B": "ግፍ ደረሰበት፤ እርሱም ዝቅ ብሎ ተቀበለው፤ ቢሆንም አፉን አልከፈተም። \\q ሊታረድ እንደሚወሰድ ጠቦት፣ \\q በሚሸልቷት ፊት ድምፅ እንደማታሰማ እንስት በግ፣ \\q አፉን አልከፈተም።",
           "R": "ሰዎች በጭካኔ ያዙት፤ እርሱም እንዲያሠቃዩት ፈቀደላቸው። \\q ነገር ግን አንድም ቃል አልተናገረም። \\q ሊታረድ እንደሚወሰድ ጠቦት ነበረ። \\q ሱፏን ሲሸልቱ ድምፅ እንደማታሰማ በግ ነበረ። \\q አንድም ቃል አልተናገረም።"
+        },
+        "hi": {
+          "L": "उस पर अंधेर किया गया, और वह दीन हुआ, फिर भी उसने अपना मुँह नहीं खोला; \\q जैसे मेमना वध के लिए ले जाया जाता है, \\q और जैसे भेड़ अपने ऊन काटनेवालों के आगे मौन [रहती है], \\q [वैसे ही] उसने अपना मुँह नहीं खोला।",
+          "B": "उस पर कड़ा अत्याचार हुआ, और वह उसके नीचे झुक गया, फिर भी उसने अपना मुँह न खोला। \\q जैसे मेमना वध होने के लिए ले जाया जाता है, \\q जैसे भेड़ ऊन काटे जाते समय कोई आवाज़ नहीं करती, \\q वैसे ही उसने अपना मुँह न खोला।",
+          "R": "लोगों ने उसके साथ क्रूरता की, और उसने उन्हें अपने को दुःख देने दिया। \\q पर वह कुछ नहीं बोला। \\q वह उस मेमने के समान था जिसे मारे जाने के लिए ले जाया जाता है। \\q वह उस भेड़ के समान था जो ऊन काटे जाते समय कोई आवाज़ नहीं करती। \\q वह कुछ नहीं बोला।"
+        },
+        "ru": {
+          "L": "Его угнетали, и он смирялся, но не открыл рта своего; \\q как ягнёнок, ведомый на заклание, \\q и как овца перед стригущими её безмолвна, \\q [так] он не открыл рта своего.",
+          "B": "Его притесняли, и он склонился под этим, но не открыл рта. \\q Как ягнёнка ведут на заклание, \\q как овца молчит перед теми, кто её стрижёт, \\q он не открыл рта.",
+          "R": "Люди жестоко обращались с ним, и он позволил им мучить себя. \\q Но он не сказал ни слова. \\q Он был как ягнёнок, которого ведут на убой. \\q Он был как овца, которая не издаёт ни звука, когда с неё стригут шерсть. \\q Он не сказал ни слова."
+        },
+        "ja": {
+          "L": "彼は虐げられたが、自ら苦しみを受け、口を開かなかった。 \\q 屠り場に引かれて行く小羊のように、 \\q 毛を刈る者の前で黙っている雌羊のように、 \\q 彼は口を開かなかった。",
+          "B": "彼はひどく追い詰められ、それに身をかがめて耐えたが、口を開かなかった。 \\q 殺されるために連れ出される小羊のように、 \\q 毛を刈る人々の前で声を立てない雌羊のように、 \\q 彼は口を開かなかった。",
+          "R": "人々はこの者にひどいことをしたが、この者は苦しめられるままになっていた。 \\q それでも、この者はひと言も言わなかった。 \\q 殺されるために連れて行かれる小羊のようだった。 \\q 毛を刈られる間、声を立てない羊のようだった。 \\q この者は、ひと言も言わなかった。"
+        },
+        "uk": {
+          "L": "Його гнобили, і він був пригноблений, але не відкрив своїх уст; \\q як ягня, що його ведуть на заколення, \\q і як вівця, що німа перед своїми стригалями, \\q [так] він не відкрив своїх уст.",
+          "B": "Його тяжко гнобили, і він схилявся під цим, але не розкрив своїх уст. \\q Як ягня, яке ведуть на заколення, \\q як вівця, що мовчить перед тими, хто її стриже, \\q він не розкрив своїх уст.",
+          "R": "Люди були жорстокі до нього, і він дозволив їм змусити себе страждати. \\q Але він не сказав ані слова. \\q Він був як ягня, яке ведуть, щоб убити. \\q Він був як вівця, що не видає жодного звуку, коли з неї стрижуть вовну. \\q Він не сказав ані слова."
         }
       },
       "decisions": [
@@ -1639,6 +2485,128 @@
           "reason": "Acts 8:32 quotes the Greek of this verse. The Amharic keeps Acts' phrases where the Hebrew agrees; but the Hebrew has the opening line (oppressed and afflicted), a ewe (\"እንስት በግ\", Acts \"ጠቦት\", lamb) before \"her shearers\", and \"he did not open his mouth\" twice.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070071",
+            "o230530070072",
+            "o230530070081",
+            "o230530070082",
+            "o230530070091",
+            "o230530070101",
+            "o230530070102",
+            "o230530070103",
+            "o230530070111",
+            "o230530070112",
+            "o230530070121",
+            "o230530070122",
+            "o230530070131",
+            "o230530070141",
+            "o230530070142",
+            "o230530070151",
+            "o230530070161",
+            "o230530070162"
+          ],
+          "choice": "मेमना ... वध के लिए; ऊन काटनेवालों के आगे मौन; अपना मुँह न खोला",
+          "alternatives": [],
+          "reason": "Acts 8:32 quotes these lines from the Greek, where the sheep and the lamb change places; the Hebrew's order (lamb to the slaughter, ewe before the shearers) is kept, with the words of Acts at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070072",
+            "o230530070082",
+            "o230530070103"
+          ],
+          "choice": "the wording of Acts 8:32 at each level (на заклание, перед стригущими безмолвна, не открыл рта своего; молчит, когда стригут; на убой, не издаёт ни звука, не сказал ни слова)",
+          "alternatives": [
+            "Как овца на заклание он был отведён"
+          ],
+          "reason": "Acts 8:32 quotes this verse from the Greek Old Testament, which here says the same as the Hebrew, so Russian keeps its words at each level. The Hebrew has the lamb led to slaughter and the ewe before her shearers, where the Greek has the two animals the other way round, so the nouns follow the Hebrew; the verbs are past, as the English has them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070072",
+            "o230530070082",
+            "o230530070103"
+          ],
+          "choice": "seh \"小羊\" to the slaughter and rachel \"雌羊\" before the shearers (L, B), as the Hebrew; checked against ACT 8:32 ja, which quotes the Greek with the animals the other way round (\"羊のように、屠り場に…小羊のように\"), and drafted from the Hebrew; \"屠り場\" is shared.",
+          "alternatives": [],
+          "reason": "The Hebrew and the Greek differ in which animal goes where; Isaiah follows the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070022",
+            "o230530070031"
+          ],
+          "choice": "vehu' na'aneh \"自ら苦しみを受け\" (L), \"身をかがめて耐えた\" (B), \"苦しめられるままになっていた\" (R): he let himself be humbled (m1).",
+          "alternatives": [],
+          "reason": "The reflexive sense of the meaning decision.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070022",
+            "o230530070031"
+          ],
+          "choice": "\"на заколення\", \"мовчить\", \"не розкрив своїх уст\"",
+          "alternatives": [
+            "\"на забій\"",
+            "\"не відкрив рота\""
+          ],
+          "reason": "The wording of Acts 8:32, where the Ethiopian official reads this passage, in the Ukrainian New Testament drafts; the Hebrew order, the lamb led to slaughter and the ewe before her shearers, is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1720,6 +2688,26 @@
           "L": "በጭቆናና በፍርድ ተወሰደ፤ \\q ትውልዱንስ ማን አስተዋለ? \\q ከሕያዋን ምድር ተቆርጧልና፤ \\q ስለ ሕዝቤ መተላለፍ ምቱ በእርሱ ላይ [ወደቀ]።",
           "B": "በጨካኝ ፍርድ ተወሰደ፤ \\q በዘመኑ ከነበሩት ሰዎች ስለ እርሱ ያሰበ ማን ነበር? \\q ከሕያዋን ምድር ተነጥቋልና፤ \\q ሕዝቤ ስላመፀ ምቱ በእርሱ ላይ ወደቀ።",
           "R": "ያለ አግባብ ተፈርዶበት ተወሰደ። \\q በዚያን ጊዜ ይኖሩ ከነበሩት ሰዎች በእርሱ ላይ የደረሰው ነገር ያሳሰበው ማንም አልነበረም። \\q ሕይወቱ ተቀጠፈ። \\q ሕዝቤ በሠራው በደል ምክንያት ተመትቶ ወደቀ።"
+        },
+        "hi": {
+          "L": "अंधेर और न्याय के द्वारा वह उठा लिया गया; \\q और उसकी पीढ़ी में से किसने [इस पर] विचार किया? \\q क्योंकि वह जीवितों की भूमि से काट डाला गया; \\q मेरी प्रजा के अपराध के कारण उस पर प्रहार [हुआ]।",
+          "B": "एक क्रूर न्याय के द्वारा वह ले जाया गया, \\q और उसके समय के लोगों में से किसने इसकी चिंता की? \\q क्योंकि वह जीवितों के देश से अलग कर दिया गया; \\q मेरी प्रजा के विद्रोह के कारण वह प्रहार उस पर पड़ा।",
+          "R": "उसका अन्याय से न्याय हुआ और उसे ले जाया गया। \\q उस समय जीवित लोगों में से किसी ने परवाह नहीं की कि उसके साथ क्या हुआ। \\q उसका जीवन समाप्त कर दिया गया। \\q मेरी प्रजा ने जो बुराई की थी, उसके कारण उसे मार गिराया गया।"
+        },
+        "ru": {
+          "L": "Угнетением и судом он был взят; \\q и о роде его кто подумал? \\q Ведь он был отторгнут от земли живых; \\q за преступление моего народа удар [пал] на него.",
+          "B": "Его забрали жестоким судом, \\q а из его современников кто задумался об этом? \\q Ведь он был вырван из земли живых; \\q за бунт моего народа удар пал на него.",
+          "R": "Его несправедливо осудили и увели. \\q Никому из живших тогда не было дела до того, что с ним случилось. \\q Его жизнь оборвалась. \\q Его поразили за зло, которое совершил мой народ."
+        },
+        "ja": {
+          "L": "虐げと裁きによって、彼は取り去られた。 \\q 彼の世代のことを、だれが思い巡らしたか？ \\q 彼は生ける者の地から断たれたからだ。 \\q わたしの民の背きのために、打撃が彼に[下った]。",
+          "B": "彼は不当な裁きによって連れ去られた。 \\q 彼と同じ時代の者たちのうち、だれがそれを気にかけたか？ \\q 彼は生きている者の地から引き離された。 \\q わたしの民が背いたので、その打撃が彼に下ったのだ。",
+          "R": "この者は不公平な裁きを受け、連れ去られた。 \\q そのころ生きていた人々は、だれも、この者がどうなろうと気にかけなかった。 \\q この者の命は断たれた。 \\q わたしの民の悪い行いのために、この者は打たれた。"
+        },
+        "uk": {
+          "L": "Через гноблення і суд його забрано; \\q а про його покоління — хто подумав? \\q Бо він був відтятий від землі живих; \\q за переступ мого народу удар [упав] на нього.",
+          "B": "Жорстоким судом його забрали, \\q а з людей його часу хто про це подумав? \\q Бо його вирвали з землі живих; \\q через те, що мій народ збунтувався, удар упав на нього.",
+          "R": "Його несправедливо засудили і забрали. \\q Нікому з тодішніх людей не було діла до того, що з ним сталося. \\q Його життя обірвали. \\q Його вразили через те зло, яке вчинив мій народ."
         }
       },
       "decisions": [
@@ -1869,6 +2857,143 @@
           "reason": "Acts 8:33 quotes the Greek, which reads differently (\"in his humiliation justice was taken from him ... for his life is taken from the earth\"). The Amharic follows the Hebrew and the meaning decisions: an unjust sentence, no one of his generation who cared, cut off from the land of the living, struck for the rebellion of \"my people\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530080011",
+            "o230530080012",
+            "o230530080021",
+            "o230530080022",
+            "o230530080023",
+            "o230530080031",
+            "o230530080041",
+            "o230530080042",
+            "o230530080051",
+            "o230530080052",
+            "o230530080061",
+            "o230530080071",
+            "o230530080081",
+            "o230530080091",
+            "o230530080101",
+            "o230530080102",
+            "o230530080111"
+          ],
+          "choice": "translation of the Hebrew, not of Acts 8:33",
+          "alternatives": [
+            "उसकी दीनता में उसका न्याय छीन लिया गया; उसकी पीढ़ी का वर्णन कौन करेगा? क्योंकि उसका जीवन पृथ्वी पर से उठा लिया जाता है"
+          ],
+          "reason": "Acts 8:33 quotes this verse from the Greek Old Testament (\"in his humiliation justice was denied him ... his life is taken from the earth\"), which reads the Hebrew differently. Here the Hebrew is translated, as the meaning decisions read it; Acts keeps its own wording.",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530080012",
+            "o230530080023",
+            "o230530080031",
+            "o230530080051",
+            "o230530080052",
+            "o230530080071"
+          ],
+          "choice": "the Hebrew: \"by oppression and judgment he was taken; his generation, who considered?\"",
+          "alternatives": [
+            "В унижении его суд его был отнят. Род его кто опишет?"
+          ],
+          "reason": "Acts 8:33 quotes this verse from the Greek Old Testament, which reads differently: \"in his humiliation justice was taken from him; who will describe his generation? For his life is taken from the earth.\" Russian translates the Hebrew (m1, m2) and keeps Acts' word род at Literal so the link can be seen; the reader of Acts finds the Greek form there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530080131",
+            "o230530080132",
+            "o230530080141",
+            "o230530080151",
+            "o230530080152"
+          ],
+          "choice": "моего народа without a span",
+          "alternatives": [
+            "{{deity_pronoun:моего|Моего}} народа"
+          ],
+          "reason": "The speaker of \"my people\" is not marked in the Hebrew; the English gives it no deity pronoun setting, and Russian follows it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530080051",
+            "o230530080052",
+            "o230530080071",
+            "o230530080012",
+            "o230530080023",
+            "o230530080031"
+          ],
+          "choice": "dor \"世代\" (L), \"同じ時代の者たち\" (B), \"そのころ生きていた人々\" (R): his contemporaries, none of whom cared (m2); me'otser umimmishpat \"虐げと裁きによって\" (L), \"不当な裁き\" (B, R) (m1). Checked against ACT 8:33 ja, which follows the Greek (\"卑しめられる中で、彼の裁きは取り去られた … 彼の子孫\"); Isaiah follows the Hebrew.",
+          "alternatives": [],
+          "reason": "The Greek of Acts reads the verse differently.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530080131",
+            "o230530080132",
+            "o230530080141",
+            "o230530080151",
+            "o230530080152"
+          ],
+          "choice": "\"мого народу\" with lowercase \"мого\"",
+          "alternatives": [
+            "\"{{deity_pronoun:мого|Мого}} народу\""
+          ],
+          "reason": "The English leaves \"my people\" here without a deity pronoun, since the voice in this part of the song is the prophet's; Ukrainian does the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1948,6 +3073,26 @@
           "L": "[አንዱ] መቃብሩን ከክፉዎች ጋር መደበ፤ \\q በሞቱም ከሀብታም ጋር [ሆነ]፤ \\q ምንም እንኳ ግፍ ባይሠራም፣ \\q በአፉም ተንኮል ባይኖርም።",
           "B": "የመቃብሩ ስፍራ ከክፉዎች መካከል ተደረገ፤ \\q ሲሞትም ከሀብታም ሰው ጋር ተኛ፤ \\q ይህም ግፍ ፈጽሞ ሳይሠራ፣ ተንኮልም ሳይናገር ነው።",
           "R": "በክፉ ሰዎች መካከል ተቀበረ። \\q በሞተ ጊዜ ከሀብታም ሰው ጋር ነበረ። \\q ነገር ግን ማንንም በኃይል ጎድቶ አያውቅም፤ ፈጽሞም ዋሽቶ አያውቅም።"
+        },
+        "hi": {
+          "L": "और [लोगों ने] दुष्टों के साथ उसकी क़ब्र रखी, \\q और अपनी मृत्यु में वह एक धनवान के साथ [रहा], \\q यद्यपि उसने कोई हिंसा न की थी, \\q और उसके मुँह में कोई छल न [था]।",
+          "B": "उसका दफ़न दुष्टों के बीच ठहराया गया, \\q और मृत्यु में वह एक धनी मनुष्य के साथ पड़ा, \\q यद्यपि उसने कभी हिंसा नहीं की थी, न कभी छल की बात कही थी।",
+          "R": "उसे दुष्ट लोगों के बीच दफ़नाया गया। \\q जब वह मरा, तब वह एक धनी मनुष्य के साथ था। \\q फिर भी उसने कभी किसी पर हिंसा नहीं की थी, और न कभी झूठ बोला था।"
+        },
+        "ru": {
+          "L": "И назначили ему могилу с нечестивыми \\q и с богатым — в его смерти, \\q хотя он не совершил насилия, \\q и не [было] обмана в его устах.",
+          "B": "Ему определили могилу среди нечестивых, \\q и в смерти он лёг рядом с богатым, \\q хотя он никогда не совершал насилия, и обмана в его устах не было.",
+          "R": "Его похоронили среди злых людей. \\q Когда он умер, он был с богатым. \\q Но он никогда не был жесток и никогда не лгал."
+        },
+        "ja": {
+          "L": "人々は彼の墓を悪しき者たちと共に定め、 \\q その死にあたっては富む者と共に[した]。 \\q 彼は暴虐を行わず、 \\q その口には欺きがなかったのに。",
+          "B": "彼の葬りの場は悪しき者たちの間に定められ、 \\q 死んで、彼は富む者と共に横たわった。 \\q 彼は一度も暴力を振るったことがなく、その口で偽りを語ったこともなかったのに。",
+          "R": "この者は悪い人たちの間に葬られた。 \\q 死んだとき、金持ちと一緒にされた。 \\q しかし、この者は一度も乱暴なことをせず、一度もうそをついたことがなかった。"
+        },
+        "uk": {
+          "L": "І призначили йому гріб із нечестивими, \\q і з багатим — у його смерті, \\q хоч він не вчинив насильства, \\q і [не було] підступу в його устах.",
+          "B": "Його поховання призначили серед нечестивих, \\q і в смерті він лежав з багатим, \\q хоча ніколи не чинив насильства і не було підступу в його устах.",
+          "R": "Його поховали серед нечестивих людей. \\q Коли він помер, він був з багатим. \\q А він ніколи не чинив насильства і ніколи не казав неправди."
         }
       },
       "decisions": [
@@ -2043,6 +3188,77 @@
           "reason": "1 Peter 2:22 quotes the Greek, which has \"sin\" where the Hebrew has \"violence\", and adds \"found\". The Amharic follows the Hebrew (\"ግፍ\") and keeps Peter's \"in his mouth ... deceit\" (\"በአፉ ... ተንኮል\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530090091",
+            "o230530090101",
+            "o230530090111",
+            "o230530090121",
+            "o230530090122",
+            "o230530090131",
+            "o230530090141",
+            "o230530090142",
+            "o230530090143"
+          ],
+          "choice": "हिंसा; उसके मुँह में कोई छल न था (R: न कभी झूठ बोला था)",
+          "alternatives": [
+            "पाप"
+          ],
+          "reason": "1 Peter 2:22 quotes this line from the Greek (\"he committed no sin, and no deceit was found in his mouth\"). The Hebrew has \"violence\", which is kept; the second half keeps Peter's छल (L, B) and झूठ (R).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530090101",
+            "o230530090131"
+          ],
+          "choice": "обмана в его устах не было; never violence",
+          "alternatives": [
+            "Он не сделал греха"
+          ],
+          "reason": "1 Peter 2:22 quotes the last line from the Greek Old Testament, which has \"he committed no sin\" where the Hebrew has \"he had done no violence\". Russian translates the Hebrew and keeps Peter's words for the second half (не ... обмана в его устах at Literal and Balanced; никогда не лгал at Readable).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530090101",
+            "o230530090131"
+          ],
+          "choice": "chamas \"暴虐\" (L), \"暴力\" (B), \"乱暴なこと\" (R) and mirmah \"欺き\" (L), \"偽り\" (B), \"うそ\" (R), from the Hebrew; checked against 1PE 2:22 ja (\"罪を犯したことがなく、その口には偽りも見いだされませんでした\"), whose Greek has \"sin\" for chamas.",
+          "alternatives": [],
+          "reason": "Peter quotes the Greek; Isaiah keeps \"violence\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2122,6 +3338,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን ሊቀጠቅጠው ወደደ፤ አሳመመው፤ \\q ነፍሱ የበደል መሥዋዕት ብታደርግ፣ \\q ዘርን ያያል፤ ቀኖችን ያረዝማል፤ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ደስታም በእጁ ይሳካል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን ሊቀጠቅጠውና ሊያሳምመው ወደደ። \\q ራሱን የበደል መሥዋዕት አድርጎ ካቀረበ፣ \\q ልጆችን ያያል፤ ረጅም ዘመንም ይኖራል፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ደስ የሚያሰኘውም በእጁ ይሳካል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ግን ሊቀጠቅጠውና ሊያሳምመው ፈለገ። \\q የበደልን ዕዳ ለመክፈል ሕይወቱን ካቀረበ፣ \\q ልጆቹን ያያል፤ ረጅም ዕድሜም ይኖራል። \\q {{divine_name:እግዚአብሔር|ያህዌ}} የሚፈልገውም በእርሱ በኩል ይሳካል።"
+        },
+        "hi": {
+          "L": "फिर भी {{divine_name:प्रभु|याहवे}} की प्रसन्नता उसे कुचलने में थी; उन्होंने [उसे] रोगी किया। \\q यदि उसका प्राण दोषबलि चढ़ाए, \\q तो वह सन्तान देखेगा, वह [अपने] दिन लंबे करेगा, \\q और {{divine_name:प्रभु|याहवे}} की प्रसन्नता उसके हाथ से सफल होगी।",
+          "B": "फिर भी {{divine_name:प्रभु|याहवे}} की इच्छा यही थी कि उसे कुचलें और रोगी करें। \\q यदि वह अपने आप को दोषबलि के रूप में चढ़ाए, \\q तो वह अपनी सन्तान देखेगा और लंबी आयु पाएगा, \\q और जो {{divine_name:प्रभु|याहवे}} की इच्छा है, वह उसके हाथों से फलेगी।",
+          "R": "पर {{divine_name:प्रभु|याहवे}} चाहते थे कि उसे कुचलें और रोगी करें। \\q यदि वह दोष का दाम चुकाने के लिए अपना जीवन दे दे, \\q तो वह अपनी सन्तान देखेगा। वह लंबी आयु पाएगा। \\q और उसके द्वारा वह काम सफल होगा जो {{divine_name:प्रभु|याहवे}} चाहते हैं।"
+        },
+        "ru": {
+          "L": "Но {{divine_name:ГОСПОДУ|Яхве}} было угодно сокрушить его; {{deity_pronoun:он|Он}} поразил [его] болезнью. \\q Если его душа принесёт жертву за вину, \\q он увидит потомство, продлит дни, \\q и воля {{divine_name:ГОСПОДА|Яхве}} в его руке будет успешна.",
+          "B": "Но {{divine_name:ГОСПОДУ|Яхве}} было угодно сокрушить его и предать болезни. \\q Если он отдаст себя в жертву за вину, \\q он увидит детей и будет жить долгие дни, \\q и через его руки то, что угодно {{divine_name:ГОСПОДУ|Яхве}}, будет процветать.",
+          "R": "Но {{divine_name:ГОСПОДЬ|Яхве}} хотел сокрушить его и сделать его больным. \\q Если он отдаст свою жизнь, чтобы заплатить за вину, \\q он увидит своих детей. Он будет жить долго. \\q И через него то, чего хочет {{divine_name:ГОСПОДЬ|Яхве}}, исполнится."
+        },
+        "ja": {
+          "L": "しかし、{{divine_name:主|ヤハウェ}}は彼を砕くことを望み、彼を病ませられた。 \\q 彼の魂が償いのささげ物をささげるなら、 \\q 彼は子孫を見、日々を長くし、 \\q {{divine_name:主|ヤハウェ}}の望むことは、彼の手によって栄える。",
+          "B": "それでも、彼を砕き、病ませることを、{{divine_name:主|ヤハウェ}}は良しとされた。 \\q 彼が自分自身を償いのささげ物とするなら、 \\q 彼は子孫を見、長く生きる。 \\q そして彼の手によって、{{divine_name:主|ヤハウェ}}の喜ばれることが成し遂げられる。",
+          "R": "しかし、この者を砕き、病気にすることを望まれたのは、{{divine_name:主|ヤハウェ}}だった。 \\q この者が、罪の償いとして自分の命をささげるなら、 \\q この者は自分の子どもたちを見る。長く生きる。 \\q そして、この者を通して、{{divine_name:主|ヤハウェ}}の望まれることが実現する。"
+        },
+        "uk": {
+          "L": "А {{divine_name:ГОСПОДЬ|Ягве}} уподобав розчавити його; {{deity_pronoun:він|Він}} уразив [його] хворобою. \\q Якщо його душа складе жертву за провину, \\q він побачить насіння, він продовжить дні, \\q і воля {{divine_name:ГОСПОДА|Ягве}} в його руці матиме успіх.",
+          "B": "Але {{divine_name:ГОСПОДУ|Ягве}} було до вподоби розчавити його і вразити хворобою. \\q Якщо він віддасть себе як жертву за провину, \\q він побачить дітей і житиме довгі дні, \\q і через його руки те, що до вподоби {{divine_name:ГОСПОДУ|Ягве}}, процвітатиме.",
+          "R": "Але {{divine_name:ГОСПОДЬ|Ягве}} хотів розчавити його і вразити хворобою. \\q Якщо він віддасть своє життя, щоб заплатити за провину, \\q він побачить своїх дітей. Він житиме довго. \\q І через нього те, чого хоче {{divine_name:ГОСПОДЬ|Ягве}}, матиме успіх."
         }
       },
       "decisions": [
@@ -2333,6 +3569,89 @@
           "reason": "The guilt offering of Leviticus 5-7, as on main, kept apart from the sin offering; Readable says what it did (\"to pay the debt of guilt\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530100021",
+            "o230530100131",
+            "o230530100132",
+            "o230530100141"
+          ],
+          "choice": "प्रसन्नता (L); इच्छा (B), in both halves of the verse",
+          "alternatives": [
+            "भाया"
+          ],
+          "reason": "The verb \"was pleased\" and the noun \"pleasure\" at the end are the same root; Hindi uses one word in both places at each level so the link the meaning decision describes is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530100071"
+          ],
+          "choice": "दोषबलि",
+          "alternatives": [],
+          "reason": "The guilt offering is दोषबलि, as the Pentateuch note settles; Readable says what it did.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530100071"
+          ],
+          "choice": "жертва за вину",
+          "alternatives": [
+            "жертва повинности"
+          ],
+          "reason": "The guilt offering (m3) is жертва за вину, the term Leviticus uses in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530100071",
+            "o230530100061",
+            "o230530100081",
+            "o230530100082"
+          ],
+          "choice": "'asham \"償いのささげ物\" (L, B), the LEV term (LEV 5:6), Readable \"罪の償いとして…ささげる\"; 'im tasim 'asham nafsho \"彼の魂が…ささげるなら\" (L), \"自分自身を…とするなら\" (B) (m2); chefets YHWH \"主の望むこと\" (L), \"主の喜ばれること\" (B, with a respect form), \"主の望まれること\" (R).",
+          "alternatives": [],
+          "reason": "The sacrificial term keeps the LEV word; the speakers give the LORD respect forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2410,6 +3729,26 @@
           "L": "ነፍሱ ከደከመችበት ድካም በኋላ ያያል፤ ይረካልም፤ \\q ጻድቁ፣ ባሪያዬ፣ በእውቀቱ ብዙዎቹን ያጸድቃል፤ \\q በደሎቻቸውንም እርሱ ራሱ ይሸከማል።",
           "B": "ነፍሱ ከደከመችበት ከባድ ድካም በኋላ ያያል፤ ይረካልም። \\q ጻድቁ አገልጋዬ በእውቀቱ ብዙዎችን ጻድቃን ያደርጋል፤ \\q በደላቸውንም በትከሻው ይሸከማል።",
           "R": "ከሥቃዩ ሁሉ በኋላ ያያል፤ ይረካልም። \\q አገልጋዬ ትክክል የሆነውን ያደርጋል፤ በእውቀቱም ብዙ ሰዎችን በእግዚአብሔር ፊት ትክክለኞች ያደርጋል። \\q የኃጢአታቸውንም ሸክም ይሸከማል።"
+        },
+        "hi": {
+          "L": "अपने प्राण की वेदना के बाद वह देखेगा, [और] संतुष्ट होगा; \\q अपने ज्ञान से धर्मी जन, मेरा दास, बहुतों को धर्मी ठहराएगा, \\q और उनके अधर्म को वह स्वयं ढोएगा।",
+          "B": "अपने प्राण के सारे कठिन श्रम के बाद वह देखेगा और भरपूर संतोष पाएगा। \\q मेरा दास, जो धर्मी है, अपने ज्ञान के द्वारा बहुतों को धर्मी ठहराएगा, \\q और उनका दोष अपने कंधों पर उठाएगा।",
+          "R": "अपने सारे दुःख के बाद वह देखेगा, और संतुष्ट होगा। \\q मेरा दास वही करता है जो सही है, और अपने ज्ञान के द्वारा वह बहुत से लोगों को परमेश्वर के साथ सही संबंध में ले आएगा। \\q वह उनके पापों का बोझ उठाएगा।"
+        },
+        "ru": {
+          "L": "После мучения своей души он увидит; он насытится; \\q своим познанием праведник, {{deity_pronoun:мой|Мой}} раб, оправдает многих, \\q и их беззакония он сам понесёт.",
+          "B": "После всего тяжкого труда своей души он увидит и будет насыщен. \\q Мой раб, праведник, своим познанием оправдает многих \\q и возьмёт на себя их вину.",
+          "R": "После всех своих страданий он увидит и будет удовлетворён. \\q Мой раб поступает праведно, и через своё познание он оправдает многих людей перед Богом. \\q Он понесёт груз их грехов."
+        },
+        "ja": {
+          "L": "彼は自分の魂の苦しみの後に見て、満ち足りる。 \\q その知識によって、正しい者、わたしのしもべは、多くの者を義とし、 \\q 彼自らが、彼らの咎を背負う。",
+          "B": "彼は魂の激しい労苦の後に、見て、満ち足りる。 \\q わたしのしもべ、正しい人は、その知識によって多くの者を義とし、 \\q 彼らの咎を背負う。",
+          "R": "多くの苦しみの後に、この者は見て、満足する。 \\q わたしのしもべは正しいことを行う。そして、その知識によって、多くの人を神の前に正しい者とする。 \\q この者は、彼らの罪という重荷を背負う。"
+        },
+        "uk": {
+          "L": "Після муки своєї душі він побачить; він насититься; \\q своїм знанням праведний, {{deity_pronoun:мій|Мій}} слуга, виправдає багатьох, \\q і їхні беззаконня він сам понесе.",
+          "B": "Після всієї тяжкої праці своєї душі він побачить і буде вдоволений. \\q Мій слуга, праведний, своїм знанням зробить багатьох праведними, \\q і він візьме на себе їхню провину.",
+          "R": "Після всіх своїх страждань він побачить, і він буде вдоволений. \\q Мій слуга чинить те, що правильне, і через своє знання він зробить, що багато людей будуть праведні перед Богом. \\q Він понесе тягар їхніх гріхів."
         }
       },
       "decisions": [
@@ -2538,6 +3877,95 @@
           "reason": "The verb is the courtroom word for declaring someone in the right (m3), as in 50:8. Portuguese uses the New Testament's words for it: \"justificar\" at Literal and \"declarar justo\" at Balanced (style guide section 6), which also keep the play between \"o justo\" and the verb; Readable says \"ser aceito por Deus\", as the style guide allows where the English Readable says \"right with God\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530110061",
+            "o230530110071",
+            "o230530110081",
+            "o230530110082",
+            "o230530110091",
+            "o230530110092"
+          ],
+          "choice": "धर्मी ठहराएगा",
+          "alternatives": [
+            "निर्दोष ठहराएगा"
+          ],
+          "reason": "The verb is the courtroom word for declaring someone in the right; धर्मी ठहराना is the word Romans uses for it in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530110061",
+            "o230530110071",
+            "o230530110092"
+          ],
+          "choice": "оправдает многих",
+          "alternatives": [
+            "сделает праведными многих"
+          ],
+          "reason": "To make the many righteous is to put them in the right with God (m3); Russian uses оправдать, the verb settled in Romans for this, and Readable adds перед Богом, as the English adds \"with God\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530110061",
+            "o230530110071",
+            "o230530110092",
+            "o230530110081",
+            "o230530110082"
+          ],
+          "choice": "yatsdiq tsaddiq 'avdi larabbim \"正しい者、わたしのしもべは、多くの者を義とし\" (L), \"わたしのしもべ、正しい人は…多くの者を義とし\" (B), \"多くの人を神の前に正しい者とする\" (R): the NT \"justify\" forms ISA-6 set for 45:25, 50:8, 53:11 (m3); God speaks again (m4), plainly; tsaddiq \"正しい者\" (L), \"正しい人\" (B) as ISA-1.",
+          "alternatives": [],
+          "reason": "The righteous servant puts the many right with God; the justify forms of Romans carry the sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530110031"
+          ],
+          "choice": "yir'eh \"見て\" with no object (L, B, R), the Hebrew text (m1), not \"光を見る\".",
+          "alternatives": [],
+          "reason": "The shared text decision.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2627,6 +4055,26 @@
           "L": "ስለዚህ በብዙዎች መካከል ድርሻን እሰጠዋለሁ፤ ከኃያላንም ጋር ምርኮን ይካፈላል፤ \\q ነፍሱን እስከ ሞት አፍስሷልና፤ \\q ከዓመፀኞችም ጋር ተቆጠረ፤ \\q እርሱ ራሱ የብዙዎችን ኃጢአት ተሸከመ፤ \\q ስለ ዓመፀኞችም ይማልዳል።",
           "B": "ስለዚህ በብዙዎች መካከል ድርሻ እሰጠዋለሁ፤ ከኃያላንም ጋር ምርኮውን ይከፋፈላል፤ \\q ሕይወቱን እስከ ሞት ድረስ አፍስሶ ሰጥቷልና፤ \\q ከዓመፀኞችም ጋር ተቆጥሯልና። \\q የብዙዎችን ኃጢአት የተሸከመ እርሱ ነው፤ \\q ስለ ዓመፀኞችም ይማልዳል።",
           "R": "ስለዚህ በብዙዎች መካከል ድርሻውን እሰጠዋለሁ። ከብርቱዎች ጋር የድሉን ሽልማት ይካፈላል። \\q ይህም እስኪሞት ድረስ ሕይወቱን ስላፈሰሰ ነው። \\q ሰዎች ከዓመፀኞች እንደ አንዱ ቆጠሩት። \\q እርሱ ግን የብዙ ሰዎችን ኃጢአት ተሸከመ፤ \\q ለዓመፀኞችም ወደ እግዚአብሔር ይማልዳል።"
+        },
+        "hi": {
+          "L": "इसलिए मैं उसे बहुतों के बीच भाग दूँगा, और वह बलवानों के साथ लूट बाँटेगा, \\q क्योंकि उसने मृत्यु तक अपना प्राण उँडेल दिया, \\q और वह अधर्मियों के साथ गिना गया; \\q और उसने स्वयं बहुतों का पाप उठाया, \\q और अधर्मियों के लिए वह बिनती करेगा।",
+          "B": "इसलिए मैं उसे बहुतों के बीच हिस्सा दूँगा, और वह शक्तिशालियों के साथ लूट का माल बाँटेगा, \\q क्योंकि उसने मृत्यु तक अपना जीवन ख़ाली कर दिया \\q और वह अधर्मियों में गिना गया। \\q उसी ने बहुतों का पाप उठाया, \\q और वह अधर्मियों के लिए बिनती करता है।",
+          "R": "इसलिए मैं उसे बहुतों के बीच उसका हिस्सा दूँगा। वह बलवानों के साथ जीत का इनाम बाँटेगा। \\q क्योंकि उसने मरने तक अपना जीवन उँडेल दिया। \\q उसके साथ अपराधी जैसा बर्ताव किया गया। \\q पर उसने बहुत से लोगों के पापों का बोझ उठाया, \\q और वह अपराधियों के लिए परमेश्वर से बिनती करता है।"
+        },
+        "ru": {
+          "L": "Поэтому {{deity_pronoun:я|Я}} дам ему долю среди многих, и с сильными он разделит добычу, \\q потому что он излил свою душу на смерть \\q и к беззаконным был причислен; \\q и он сам понёс грех многих \\q и за беззаконных будет ходатайствовать.",
+          "B": "Поэтому {{deity_pronoun:я|Я}} дам ему долю среди многих, и он разделит добычу с сильными, \\q потому что он отдал свою жизнь до самой смерти \\q и был причислен к беззаконникам. \\q Это он понёс грех многих \\q и ходатайствует за беззаконников.",
+          "R": "Поэтому {{deity_pronoun:я|Я}} дам ему его долю среди многих. Он разделит награду победы с сильными. \\q Это потому, что он отдал свою жизнь до самой смерти. \\q Его причислили к преступникам. \\q Но он понёс грехи многих людей \\q и просит Бога за преступников."
+        },
+        "ja": {
+          "L": "それゆえ、わたしは多くの者の中で彼に分け前を与え、彼は強い者たちと共に獲物を分ける。 \\q 彼が死に至るまで自分の魂を注ぎ出し、 \\q 背く者たちと共に数えられたからだ。 \\q 彼自身は多くの者の罪を担い、 \\q 背く者たちのために執り成す。",
+          "B": "それゆえ、わたしは彼に、多くの者と共に受ける分を与える。彼は力ある者たちと共に、戦利品を分け合う。 \\q 彼が死に至るまで、自分の命を注ぎ尽くし、 \\q 背く者たちの一人に数えられたからだ。 \\q 多くの者の罪を担ったのは、彼だった。 \\q そして彼は、背く者たちのために執り成している。",
+          "R": "それゆえ、わたしは、多くの人々の中で、この者に分け前を与える。この者は、力のある者たちと共に、勝利の報いを分け合う。 \\q この者が、死ぬまで自分の命を注ぎ出したからだ。 \\q 人々は、この者を、逆らう者の一人と見なした。 \\q しかし、この者は、多くの人々の罪を担った。 \\q そして、逆らう者たちのために、神に願っている。"
+        },
+        "uk": {
+          "L": "Тому {{deity_pronoun:я|Я}} дам йому частку серед багатьох, і з сильними він ділитиме здобич, \\q за те, що він вилив свою душу на смерть \\q і до переступників був зарахований; \\q і він сам ніс гріх багатьох \\q і за переступників заступатиметься.",
+          "B": "Тож {{deity_pronoun:я|Я}} дам йому частку серед багатьох, і він ділитиме здобич із сильними, \\q бо він вилив своє життя аж до смерті \\q і був зарахований до беззаконних. \\q Це він ніс гріх багатьох \\q і заступається за бунтівників.",
+          "R": "Тож {{deity_pronoun:я|Я}} дам йому його частку серед багатьох. Він ділитиме нагороду перемоги з сильними. \\q Це тому, що він віддав своє життя аж до смерті. \\q Люди зарахували його до бунтівників. \\q Але він ніс гріхи багатьох людей \\q і просить Бога за бунтівників."
         }
       },
       "decisions": [
@@ -2771,6 +4219,94 @@
           "choice": "Luke 22:37 kept: \"ከዓመፀኞች ጋር ተቆጠረ\"",
           "alternatives": [],
           "reason": "Jesus quotes this line in Luke 22:37 and the Hebrew agrees with the Greek, so the Amharic New Testament's words are kept (Readable says \"counted him as one of the rebels\", as its English; Luke Readable has \"as a criminal\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530120141",
+            "o230530120142",
+            "o230530120151",
+            "o230530120161"
+          ],
+          "choice": "वह अधर्मियों के साथ गिना गया (L); अधर्मियों में गिना गया (B); उसके साथ अपराधी जैसा बर्ताव किया गया (R)",
+          "alternatives": [],
+          "reason": "Luke 22:37 quotes this line; its wording is kept at each level, and the second \"transgressors\" of the verse takes the same word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530120151",
+            "o230530120161",
+            "o230530120201",
+            "o230530120221"
+          ],
+          "choice": "the wording of Luke 22:37 at each level (к беззаконным ... причислен; был причислен к беззаконникам; Его причислили к преступникам), and the same word for the transgressors in the last line",
+          "alternatives": [
+            "к мятежникам"
+          ],
+          "reason": "Jesus quotes \"he was counted with the transgressors\" in Luke 22:37, and the Hebrew says the same, so Russian keeps Luke's words at each level. The same Hebrew word ends the verse, so the intercession is for the same people (беззаконные, беззаконники, преступники).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530120151",
+            "o230530120161",
+            "o230530120201",
+            "o230530120221"
+          ],
+          "choice": "'et poshe'im nimnah \"背く者たちと共に数えられた\" (L), \"背く者たちの一人に数えられた\" (B), \"逆らう者の一人と見なした\" (R), poshe'im with pesha' as ISA-1; checked against LUK 22:37 ja (\"不法な者たちと共に数えられた\"), whose Greek has \"lawless\"; yafgia' \"執り成す\" (L, B), \"神に願っている\" (R); chet' rabbim nasa' \"多くの者の罪を担い\" (nasa' 担う, 53:4).",
+          "alternatives": [],
+          "reason": "Jesus quotes the Greek; Isaiah keeps the Hebrew word and the verb pair of 53:4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530120042",
+            "o230530120061"
+          ],
+          "choice": "\"був зарахований до беззаконних\"",
+          "alternatives": [
+            "\"до бунтівників\""
+          ],
+          "reason": "Luke 22:37 in the Ukrainian New Testament drafts quotes this line with \"зараховано до беззаконних\"; the last line keeps \"бунтівників\" for the Hebrew word that the English renders rebels.",
           "uncertain": false,
           "footnote": false
         }
