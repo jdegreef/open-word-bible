@@ -402,7 +402,7 @@ var OWBMemory = (function () {
     Object.keys(fields).forEach(function (k) {
       if (fields[k] === null || fields[k] === undefined) delete e[k]; else e[k] = fields[k];
     });
-    if (!e.add) { e.add = now; e.due = e.due || C.startOfDay(now); }
+    if (!e.add) { e.add = now; e.due = e.due || now; }   // due at once: practise it today
     e.at = now;
     list[id] = e;
     write(list);
@@ -928,7 +928,7 @@ var OWBMemory = (function () {
     var q = M.settingsQuery(s);
     ids.forEach(function (id, i) {
       if (M.get(id)) return;
-      M.put(id, { lv: s.level, q: q, p: pid, due: start + i * 7 * C.DAY, lang: LANG, r: name(id) });
+      M.put(id, { lv: s.level, q: q, p: pid, due: i ? start + i * 7 * C.DAY : Date.now(), lang: LANG, r: name(id) });
     });
     say(ui.plan_started);
     fillTexts();

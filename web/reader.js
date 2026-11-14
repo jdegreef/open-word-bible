@@ -2709,7 +2709,7 @@
 
   // Recall view: hide a share of each verse's words, longest first; a
   // blank shows its word when tapped.
-  var recallShare = 0.35;
+  var recallShare = 0.25;
   function hideWords(root) {
     root.querySelectorAll(".verse").forEach(function (span) {
       var walker = document.createTreeWalker(span, NodeFilter.SHOW_TEXT, {
