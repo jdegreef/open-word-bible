@@ -616,3 +616,8 @@ records it. Empty until the first book is drafted.
 | Ruth | Obed | Obed | 4:17 |
 | Ruth | Hezron; Ram; Amminadab | Hezron; Ram; Aminadab | 4:18–19 |
 | Ruth | Nahshon; Salmah, Salmon | Nahason; Salma (L), Salmon | 4:20 |
+| Jonah | Amittai | Amitai | 1:1 |
+| Jonah | Joppa (Hebrew *Yafo*) | Yope | 1:3 |
+| Jonah | captain (*rav hachovel*) | *kepala para pelaut* (L); *nakhoda* (B, R) | 1:6 |
+| Jonah | relent (*nicham*, of God) | *menyesal* (L); *mengubah keputusan-Nya* (B, R) | 3:9 |
+| Jonah | the plant (*qiqayon*) | *tanaman* (L); *tanaman yang rimbun daunnya* (B, R) | 4:6 |
