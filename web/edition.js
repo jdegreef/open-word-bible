@@ -52,13 +52,15 @@
     return { text: OWBMarkup.render(pick, settings).replace(VERSE, " "), lang: lang };
   }
 
-  // A chapter is set as poetry when its verses have line breaks in this
-  // language: each verse starts a line, and a paragraph start leaves a gap.
-  function poetic(verses) {
-    return verses.some(function (v) {
-      var levels = v[1][DATA.lang] || v[1].en || {};
-      return Object.keys(levels).some(function (l) { return LINES.test(levels[l]); });
-    });
+  // A verse is set as poetry when its sentence is set in lines in the
+  // language shown. The verse file lists those verses per language ("q",
+  // build_site.py verse_files), so a song inside a prose chapter (Luke 1,
+  // Exodus 15) is set in lines and the narrative around it stays prose.
+  // A file without the list (cached from an older build) falls back to the
+  // verse's own text.
+  function poeticVerse(entry, n, levels, lang) {
+    if (entry.q) return (entry.q[lang] || []).indexOf(n) >= 0;
+    return Object.keys(levels || {}).some(function (l) { return LINES.test(levels[l]); });
   }
 
   var cache = {};
@@ -69,21 +71,25 @@
       .sort(function (a, b) { return a[0] - b[0]; });
     var starts = {};
     (entry.p || []).forEach(function (n) { starts[n] = true; });
-    var poem = poetic(verses);
-    var body = el("div", "ed-body" + (poem ? " ed-poem" : ""));
-    var para = null, first = true;
+    var body = el("div", "ed-body");
+    var para = null, first = true, wasPoem = false;
     verses.forEach(function (v) {
       var t = verseText(v[1]);
       if (!t) return;
-      if (poem || !para || starts[v[0]]) {
-        // Poetry: each verse its own lines, a gap where a paragraph starts.
-        para = el("p", poem && starts[v[0]] && !first ? "ed-stanza" : null);
+      var poem = poeticVerse(entry, v[0], v[1][t.lang], t.lang);
+      if (poem || wasPoem || !para || starts[v[0]]) {
+        // Poetry: each verse its own lines, a gap where a paragraph starts
+        // and where poetry and prose meet.
+        para = el("p", poem ? "ed-pp" + (starts[v[0]] && !first ? " ed-stanza" : "")
+                            : (wasPoem ? "ed-after" : null));
         body.appendChild(para);
       } else {
         para.appendChild(document.createTextNode(" "));
       }
       if (first) {
-        // The chapter number as a printed Bible sets it, beside the first line.
+        // The chapter number as a printed Bible sets it, beside the first
+        // line; above it when the chapter opens in poetry.
+        if (poem) body.classList.add("ed-poem");
         var num = el("span", "ed-num", String(chapter));
         num.setAttribute("aria-hidden", "true");
         para.appendChild(num);
@@ -97,6 +103,7 @@
         else span.appendChild(document.createTextNode((i ? " " : "") + line));
       });
       para.appendChild(span);
+      wasPoem = poem;
     });
     var old = section.querySelector(".ed-body, .ed-loading");
     if (old) section.replaceChild(body, old); else section.appendChild(body);
