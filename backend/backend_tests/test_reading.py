@@ -43,7 +43,7 @@ class ReadingSyncTest(TestCase):
                         place={"book": "JHN", "chapter": 3, "verse": "16", "at": 100})
         expected = {"marks": {"JHN.3.16": {"b": True, "h": "yellow", "text": "For God", "lang": "en", "at": 100}},
                     "place": {"book": "JHN", "chapter": 3, "verse": "16", "at": 100},
-                    "plans": None, "settings": None, "notes": {}, "words": {}, "myplans": {}}
+                    "plans": None, "settings": None, "notes": {}, "words": {}, "myplans": {}, "memory": {}}
         self.assertEqual(out, expected)
         self.assertEqual(self.client.get("/api/reading").json(), expected)
 
@@ -118,7 +118,7 @@ class ReadingSyncTest(TestCase):
         _, other = signed_in("other@example.org")
         self.assertEqual(other.get("/api/reading").json(),
                          {"marks": {}, "place": None, "plans": None, "settings": None,
-                          "notes": {}, "words": {}, "myplans": {}})
+                          "notes": {}, "words": {}, "myplans": {}, "memory": {}})
 
 
 def plans(active=None, at=0, **each):
@@ -273,6 +273,34 @@ class StudySyncTest(TestCase):
         phone = device(self.user)
         self.assertEqual(self.sync(phone, myplans={"my-adv1": {"at": 50}})["myplans"]["my-adv1"]["at"], 100)
         self.assertEqual(self.sync(phone, myplans={"my-adv1": {"at": 200}})["myplans"], {"my-adv1": {"at": 200}})
+
+    def test_verses_to_memorize_sync_and_come_out(self):
+        verse = {"t": "But far be it from me to boast", "lang": "en", "lv": "B", "r": "Galatians 6:14",
+                 "w": "Inclusive", "q": "title=1", "a": [[0, "word", "boast"]], "st": "ai_draft",
+                 "add": 100, "due": 4_000_000_000_000, "iv": 3, "n": 1, "at": 100, "x": "dropped"}
+        out = self.sync(memory={"GAL.6.14": verse, "GAL.6.14-16": {"at": 90}})
+        kept = dict(verse)
+        del kept["x"]
+        self.assertEqual(out["memory"]["GAL.6.14"], kept)
+        self.assertEqual(out["memory"]["GAL.6.14-16"], {"at": 90})
+        # A later review on another device wins; an older copy does not.
+        phone = device(self.user)
+        older = self.sync(phone, memory={"GAL.6.14": {**verse, "n": 0, "at": 50}})
+        self.assertEqual(older["memory"]["GAL.6.14"]["n"], 1)
+        out = self.sync(phone, memory={"GAL.6.14": {**verse, "n": 2, "iv": 7, "at": 150}})
+        self.assertEqual((out["memory"]["GAL.6.14"]["n"], out["memory"]["GAL.6.14"]["iv"]), (2, 7))
+        # Taken out on one device, taken out on all.
+        self.assertEqual(self.sync(memory={"GAL.6.14": {"at": 200}})["memory"]["GAL.6.14"], {"at": 200})
+
+    def test_bad_verses_to_memorize_are_refused(self):
+        for memory in ({"Galatians 6:14": {"add": 1, "at": 1}},
+                       {"GAL.6.16-14": {"add": 1, "at": 1}},
+                       {"GAL.6.14": {"add": 1, "t": 5, "at": 1}},
+                       {"GAL.6.14": {"add": 1, "due": -1, "at": 1}},
+                       {"GAL.6.14": {"add": 1}}):
+            r = self.client.post("/api/reading", {"memory": memory}, format="json")
+            self.assertEqual(r.status_code, 400, memory)
+        self.assertFalse(ReaderState.objects.exists())
 
     def test_bad_own_plans_are_refused(self):
         for plans_ in ({"mark": {"name": "x", "days": [["MRK.1"]], "at": 1}},
