@@ -1164,6 +1164,16 @@ class SiteTest(unittest.TestCase):
         self.assertIn("ACT.13.4", paul["verses"])
         self.assertTrue((self.out / "journeys.js").is_file())
 
+    def test_speaker_labels_where_the_voice_changes(self):
+        # data/speakers/ (a pilot): Job 4 opens with the narrator, then Eliphaz.
+        for lang, name in (("en", "Eliphaz"), ("es", "Elifaz"), ("ja", "エリファズ")):
+            data = self.chapter_data(build_site.url(lang, "/job/4").lstrip("/"))
+            self.assertEqual(data["speakers"].get("JOB.4.2.s1"), name, lang)
+            self.assertNotIn("JOB.4.3.s1", data["speakers"])
+            self.assertTrue(data["ui"]["speaker_label"], lang)
+        self.assertEqual(self.chapter_data("jhn/1")["speakers"], {})
+        self.assertIn("speaker-label", (self.out / "reader.js").read_text(encoding="utf-8"))
+
     def test_glossary_is_well_formed(self):
         # Words to know: AI drafts, kind "concept", no word that is also a
         # name; their lemmas are checked against the source data above.

@@ -417,9 +417,9 @@
     }
   }
 
-  // The headings control only where the chapter has headings.
+  // The headings control only where the chapter has headings (or speaker labels, which it also hides).
   var headingsSeg = document.querySelector('[data-setting="headings"]');
-  if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
+  if (headingsSeg && !Object.keys(DATA.headings).length && !Object.keys(DATA.speakers || {}).length) headingsSeg.parentNode.hidden = true;
   // And the cross-references control only where the chapter has some.
   var crossrefsSeg = document.querySelector('[data-setting="crossrefs"]');
   if (crossrefsSeg && !Object.keys(DATA.crossrefs).length) crossrefsSeg.parentNode.hidden = true;
@@ -713,9 +713,18 @@
         if (hlang !== settings.lang) h.lang = hlang;
         box.appendChild(h);
       }
-      if (!para || heading || starts.has(r.id)) {
+      // Who speaks (data/speakers/, a pilot): where the voice changes, a new
+      // paragraph and the speaker's name. An editorial aid like the
+      // headings, so hidden with them.
+      var speaker = DATA.speakers && DATA.speakers[r.id];
+      if (!para || heading || starts.has(r.id) || speaker) {
         para = el("p", "para");
         box.appendChild(para);
+      }
+      if (speaker && settings.headings === 0) {
+        var who = el("span", "speaker-label", speaker);
+        who.setAttribute("aria-label", t("speaker_label").replace("{name}", speaker));
+        para.appendChild(who);
       }
       var ds = decisionsFor(r);
       var marks = ds.meaning.concat(ds.rendering).filter(function (d) { return d.footnote; })

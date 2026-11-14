@@ -30,7 +30,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import words_of_jesus  # noqa: E402
+from owb import speakers, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
@@ -1302,6 +1302,8 @@ def chapter_page(book, chapter, lang="en"):
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
+            # Who speaks, where the voice changes (data/speakers/, a pilot: Job, Jeremiah).
+            "speakers": speakers.labels(book, [r["id"] for r in records], lang),
             # Where previews of other verses come from (verse_files), and the
             # comparison edition for verses not translated yet: the page
             # language's, then the World English Bible.
