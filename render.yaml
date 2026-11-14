@@ -63,6 +63,65 @@ services:
       - path: /manifest.webmanifest
         name: Content-Type
         value: application/manifest+json
+      # Scripts, style sheets and reader data are always named with their
+      # content hash (/reader.js?v=..., scripts/build_site.py asset,
+      # chapter_shared, reader_shared), so a deploy that changes one names a
+      # new URL and browsers may keep each copy a year. Named one by one, not
+      # /*.js, which would take in /sw.js above; tests/test_headers.py keeps
+      # the list in step with build_site.WEB_FILES and checks that the built
+      # pages name them only with a version. Fonts are left out: style.css
+      # names them without one.
+      - path: /style.css
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /markup.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /reader.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /site.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /account.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /search.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /plans.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /compare.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /word.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /saved.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /groups.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /edition.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /map.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /admin.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /admin.css
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /reader-*.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /chapter-data/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
     # Renamed pages keep their old addresses working.
     routes:
       - type: redirect

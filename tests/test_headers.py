@@ -62,6 +62,16 @@ class HeadersTest(unittest.TestCase):
         self.assertNotIn("'unsafe-inline'", csp["style-src-elem"])
         self.assertIn("https://api.openwordbible.org", csp["connect-src"])
 
+    def test_versioned_files_are_kept_a_year(self):
+        # Each script and style sheet copied from web/, and each reader data
+        # script, is named with its content hash, so browsers may keep it;
+        # the offline worker is checked on every visit instead.
+        keep = "public, max-age=31536000, immutable"
+        for path in [f"/{name}" for name in build_site.WEB_FILES] + ["/reader-*.js", "/chapter-data/*"]:
+            self.assertEqual(static_site_headers(path).get("Cache-Control"), keep, path)
+        self.assertNotIn("sw.js", build_site.WEB_FILES)
+        self.assertEqual(static_site_headers("/sw.js")["Cache-Control"], "no-cache")
+
 
 class PagesFitPolicyTest(unittest.TestCase):
     """What the browser would block, found in the built pages."""
@@ -91,6 +101,19 @@ class PagesFitPolicyTest(unittest.TestCase):
             for m in external.finditer(text):
                 tag = text[m.start():text.index(">", m.start()) + 1]
                 self.assertRegex(tag, r'^<link\b[^>]*\brel="(?:canonical|alternate)"', f"{path}: {tag}")
+
+    def test_files_kept_a_year_are_named_with_their_version(self):
+        # render.yaml lets browsers keep these a year, so a page or script
+        # that named one without its ?v= would be served an old copy after a
+        # deploy. ("web/site.js" in a comment is not a URL.)
+        names = "|".join(re.escape(name) for name in build_site.WEB_FILES)
+        url = re.compile(r"(?<![\w.-])/(?:chapter-data/[\w/]+\.js|reader-[a-z]+\.js|(?:" + names + r"))"
+                         r"(?![\w.-])(\?v=[0-9a-f]+)?")
+        for path in self.out.rglob("*"):
+            if path.suffix not in (".html", ".js", ".json", ".xml", ".txt") or "chapter-data" in path.parts:
+                continue
+            for m in url.finditer(path.read_text(encoding="utf-8")):
+                self.assertTrue(m[1], f"{path.relative_to(self.out)}: {m[0]} without its version")
 
     def test_styles_load_nothing_from_elsewhere(self):
         for path in self.out.glob("*.css"):
