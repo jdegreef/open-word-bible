@@ -642,3 +642,15 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Romans | means of atonement (*hilastērion*) | *sarana pendamaian* (L, B); *korban yang menghapus dosa dan meredakan murka Allah* (R) | 3:25 |
+| Romans | Lord Sabaoth (*kyrios sabaōth*) | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B); *Tuhan yang memimpin bala tentara surga* (R) | 9:29 |
+| Romans | Epaenetus | Epenetus | 16:5 |
+| Romans | Andronicus; Junia | Andronikus; Yunias (alternative *Yunia*) | 16:7 |
+| Romans | Ampliatus; Urbanus; Stachys | Ampliatus; Urbanus; Stakhis | 16:8–9 |
+| Romans | Apelles; Aristobulus | Apeles; Aristobulus | 16:10 |
+| Romans | Herodion; Narcissus | Herodion; Narkisus | 16:11 |
+| Romans | Tryphaena; Tryphosa; Persis | Trifena; Trifosa; Persis | 16:12 |
+| Romans | Asyncritus; Phlegon; Hermes; Patrobas; Hermas | Asinkritus; Flegon; Hermes; Patrobas; Hermas | 16:14 |
+| Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
+| Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
+| Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
