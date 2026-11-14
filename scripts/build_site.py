@@ -137,6 +137,14 @@ def url(lang, path):
     return path if lang == "en" else f"/{lang}{path}"
 
 
+# The scripts and style sheets copied from web/ into the site, each always
+# named with asset(), so render.yaml lets browsers keep them a year
+# (tests/test_headers.py). web/sw.js is not one: it is built, and checked
+# on every visit.
+WEB_FILES = ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
+             "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css")
+
+
 @functools.lru_cache(maxsize=None)
 def asset(name):
     """The URL of a file from web/, with its content hash as a version.
@@ -5165,8 +5173,7 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
-    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
+    for name in WEB_FILES:
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
