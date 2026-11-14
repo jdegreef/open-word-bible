@@ -51,7 +51,9 @@ from texts.models import Edition, Word
 from translation import search
 from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence, SentenceChange
 
-TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
+# Romans 16:25-27 come from Nestle 1904 (owb/sources/macula_greek.py); import_texts
+# loads their verses and words into the sblgnt edition with the rest of the Greek.
+TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "Nestle1904@macula-greek": "sblgnt", "WLC@macula-hebrew": "wlc"}
 # Raise when save() or validate_records() changes what they do with a file,
 # so the next deploy imports every file again.
 IMPORT_VERSION = 1

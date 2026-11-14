@@ -28,6 +28,10 @@ MACULA Greek includes:
   (`ln`, `domain`), used with permission. Open Word Bible does not use or
   redistribute these fields.
 
+Romans 16:25-27, which the pinned SBLGNT does not print, are read from MACULA
+Greek's Nestle 1904 data (`Nestle1904/tsv`, same licence): the Nestle 1904
+Greek text is in the public domain, and MACULA's annotations of it are CC BY 4.0.
+
 The word extracts in `data/grc/` are derived from MACULA Greek and carry its
 CC BY 4.0 licence. They hold, per word: id, text, following punctuation,
 lemma, morphology, the Berean and Cherith glosses, and Strong's number.

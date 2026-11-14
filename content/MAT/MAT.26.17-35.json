@@ -78,9 +78,19 @@
           "R": "В первый день праздника Пресных Хлебов ученики подошли к Иисусу. Они спросили: «Где {{deity_pronoun:ты|Ты}} хочешь, чтобы мы приготовили для {{deity_pronoun:тебя|Тебя}} пасхальный ужин?»"
         },
         "hi": {
-          "L": "अखमीरी रोटी [के पर्व] के पहले [दिन] चेले यीशु के पास आकर कहने लगे, \"आप कहाँ चाहते हैं कि हम आपके लिए फ़सह खाने की तैयारी करें?\"",
-          "B": "अखमीरी रोटी के पर्व के पहले दिन चेले यीशु के पास आए और पूछा, \"आप कहाँ चाहते हैं कि हम आपके लिए फ़सह का भोजन तैयार करें?\"",
+          "L": "अख़मीरी रोटी [के पर्व] के पहले [दिन] चेले यीशु के पास आकर कहने लगे, \"आप कहाँ चाहते हैं कि हम आपके लिए फ़सह खाने की तैयारी करें?\"",
+          "B": "अख़मीरी रोटी के पर्व के पहले दिन चेले यीशु के पास आए और पूछा, \"आप कहाँ चाहते हैं कि हम आपके लिए फ़सह का भोजन तैयार करें?\"",
           "R": "बिना ख़मीर की रोटी के त्योहार के पहले दिन चेले यीशु के पास आए। उन्होंने पूछा, \"आप कहाँ चाहते हैं कि हम आपके लिए फ़सह का खाना तैयार करें?\""
+        },
+        "uk": {
+          "L": "А першого [дня] Опрісноків підійшли учні до Ісуса, кажучи: «Де хочеш, [щоб] ми приготували {{deity_pronoun:тобі|Тобі}} їсти пасху?»",
+          "B": "Першого дня свята Опрісноків учні підійшли до Ісуса і запитали: «Де {{deity_pronoun:ти|Ти}} хочеш, щоб ми приготували {{deity_pronoun:тобі|Тобі}} пасхальну вечерю?»",
+          "R": "Першого дня свята Прісного хліба учні прийшли до Ісуса. Вони запитали: «Де {{deity_pronoun:ти|Ти}} хочеш, щоб ми приготували {{deity_pronoun:тобі|Тобі}} пасхальну вечерю?»"
+        },
+        "ja": {
+          "L": "さて、除酵祭の第一日に、弟子たちがイエスのところに来て言った。「わたしたちがどこで、あなたが過越[の食事]を食べられるように準備することを望まれますか？」",
+          "B": "除酵祭の第一日に、弟子たちがイエスのところに来て言った。「過越の食事をなさるのに、わたしたちはどこに用意すればよいでしょうか？」",
+          "R": "除酵祭の第一日のことです。除酵祭は、パン種を入れないパンを食べる祭りです。弟子たちはイエスのところに来て、言いました。「過越の食事の用意をしたいのですが、どこで用意すればよいでしょうか？」"
         }
       },
       "decisions": [
@@ -476,6 +486,64 @@
           "reason": "\"Опресноки\" is the traditional name of the feast; Readable says what the name means, bread made without yeast.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026017005"
+          ],
+          "choice": "\"Опрісноки\" (L, B); \"свято Прісного хліба\" (R)",
+          "alternatives": [
+            "\"Перший день Опрісноків\" at every level"
+          ],
+          "reason": "\"Опрісноки\" is the current Ukrainian name for unleavened bread and the feast; Readable says what the word means, bread baked without yeast, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026017005",
+            "n40026017018"
+          ],
+          "choice": "\"除酵祭\" with no bracket (L); \"過越[の食事]\" (L), \"過越の食事\" (B, R)",
+          "alternatives": [],
+          "reason": "As in Mark 14:12: 除酵祭 is the Japanese name of the feast, so nothing needs supplying, and Japanese cannot eat a feast, so the meal is named (m2), in brackets at Literal. The disciples speak politely to Jesus (\"食べられる\", \"なさる\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40026017005"
+          ],
+          "choice": "\"除酵祭は、パン種を入れないパンを食べる祭りです\" (R)",
+          "alternatives": [],
+          "reason": "Readable explains the name of the feast, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -573,6 +641,16 @@
           "L": "उन्होंने कहा, \"नगर में अमुक व्यक्ति के पास जाओ और उससे कहो, 'गुरु कहते हैं: मेरा समय निकट है; मैं अपने चेलों के साथ तुम्हारे [घर] पर फ़सह मनाता हूँ।'\"",
           "B": "उन्होंने उनसे कहा, \"नगर में एक व्यक्ति के पास जाओ और उससे कहो, 'गुरु कहते हैं: मेरा ठहराया हुआ समय निकट है। मैं अपने चेलों के साथ तुम्हारे घर में फ़सह मनाऊँगा।'\"",
           "R": "यीशु ने जवाब दिया, \"नगर में एक आदमी के पास जाओ। उससे कहो, 'गुरु कहते हैं: परमेश्वर ने मेरे लिए जो समय ठहराया है, वह पास आ गया है। मैं अपने चेलों के साथ तुम्हारे घर में फ़सह का खाना खाऊँगा।'\""
+        },
+        "uk": {
+          "L": "А {{deity_pronoun:він|Він}} сказав: «Ідіть до міста до такого-то і скажіть йому: “Учитель каже: {{deity_pronoun:мій|Мій}} час близько; у тебе справляю пасху з {{deity_pronoun:моїми|Моїми}} учнями.”»",
+          "B": "Він відповів: «Ідіть до міста до одного чоловіка і скажіть йому: “Учитель каже: {{deity_pronoun:мій|Мій}} призначений час близько. У твоєму домі {{deity_pronoun:я|Я}} справлю Пасху зі своїми учнями.”»",
+          "R": "Ісус відповів: «Ідіть до міста до одного чоловіка. Скажіть йому: “Учитель каже: час, який Бог призначив {{deity_pronoun:мені|Мені}}, уже близько. Я їстиму пасхальну вечерю у твоєму домі зі своїми учнями.”»"
+        },
+        "ja": {
+          "L": "イエスは言われた。「町に入って、ある人のところへ行き、こう言いなさい。『先生がこう言っておられます。わたしの時は近い。あなたのところで、わたしの弟子たちと共に過越[祭]を守る、と。』」",
+          "B": "イエスは言われた。「町に入って、ある人のところに行き、こう伝えなさい。『先生がこう言っておられます。わたしの定められた時が近づいた。あなたの家で、弟子たちと一緒に過越の食事をする、と。』」",
+          "R": "イエスは答えられました。「町に入って、ある人のところへ行きなさい。そして、こう言いなさい。『先生がこう言っておられます。神がわたしのために定められた時が近づいた。わたしは、あなたの家で、弟子たちといっしょに過越の食事をする、と。』」"
         }
       },
       "decisions": [
@@ -860,6 +938,66 @@
           "reason": "The English capitalises \"My\" as the start of the quoted words; in Russian the words after \"говорит:\" continue the sentence in lowercase, so Jesus' pronoun takes the usual span. The man in the city is addressed as \"ты\" (\"у тебя\", \"в твоём доме\") with no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026018010"
+          ],
+          "choice": "\"до такого-то\"",
+          "alternatives": [
+            "\"до одного чоловіка\""
+          ],
+          "reason": "The Greek names no one on purpose; Ukrainian \"такий-то\" is the same placeholder. Balanced and Readable say \"до одного чоловіка\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40026018016",
+            "n40026018024"
+          ],
+          "choice": "the Teacher's words reported inside 『』 and closed with \"と\", with no third bracket",
+          "alternatives": [
+            "『先生が、「……」と言っておられます』 as in Mark 14:14"
+          ],
+          "reason": "The English has two quotations here, the disciples' message inside Jesus's words, and the Teacher's words are part of the message, not a third quotation. Japanese keeps the same two, so \"こう言いなさい\" comes before the message and the Teacher's words end with \"と\". The disciples speak politely to the owner of the house (\"言っておられます\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026018018"
+          ],
+          "choice": "\"わたしの時\" (L); \"わたしの定められた時\" (B); \"神がわたしのために定められた時\" (R); \"過越[祭]を守る\" (L), \"過越の食事をする\" (B, R)",
+          "alternatives": [],
+          "reason": "The word means a fixed time, the time appointed for Jesus's death (m2); Readable says who set it, as the English Readable does. The verb is \"do\" the Passover, so Literal keeps the feast and Balanced and Readable name the meal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -940,6 +1078,16 @@
           "L": "और चेलों ने वैसा ही किया जैसा यीशु ने उन्हें आज्ञा दी थी, और फ़सह तैयार किया।",
           "B": "तो चेलों ने यीशु के निर्देश के अनुसार किया और फ़सह का भोजन तैयार किया।",
           "R": "चेलों ने वैसा ही किया जैसा यीशु ने उनसे कहा था। उन्होंने फ़सह का खाना तैयार किया।"
+        },
+        "uk": {
+          "L": "І зробили учні, як звелів їм Ісус, і приготували пасху.",
+          "B": "Учні зробили так, як звелів їм Ісус, і приготували пасхальну вечерю.",
+          "R": "Учні зробили те, що сказав їм Ісус. Вони приготували пасхальну вечерю."
+        },
+        "ja": {
+          "L": "そして弟子たちは、イエスが彼らに指示されたとおりにして、過越[の食事]を準備した。",
+          "B": "弟子たちはイエスに言われたとおりにして、過越の食事を用意した。",
+          "R": "弟子たちは、イエスが言われたとおりにしました。そして、過越の食事の用意をしました。"
         }
       },
       "decisions": [
@@ -1049,6 +1197,16 @@
           "L": "और जब साँझ हुई, तो वे बारह चेलों के साथ [भोजन पर] टेक लगाए बैठे थे। \\v 21 और जब वे खा रहे थे, तो उन्होंने कहा, \"मैं तुमसे सच कहता हूँ कि तुममें से एक मुझे पकड़वाएगा।\"",
           "B": "साँझ होने पर यीशु बारह चेलों के साथ भोजन पर बैठे। \\v 21 भोजन के समय उन्होंने कहा, \"मैं तुमसे सच कहता हूँ, तुममें से एक मुझे पकड़वाने वाला है।\"",
           "R": "शाम को यीशु बारह चेलों के साथ खाने बैठे। \\v 21 जब वे खा रहे थे, तब यीशु ने कहा, \"मैं तुमसे सच कहता हूँ। तुममें से एक मुझे धोखा देकर मेरे दुश्मनों के हाथ में सौंप देगा।\""
+        },
+        "uk": {
+          "L": "А коли настав вечір, {{deity_pronoun:він|Він}} возлежав [при столі] з дванадцятьма учнями. \\v 21 І коли вони їли, {{deity_pronoun:він|Він}} сказав: «Істинно кажу вам, що один із вас видасть {{deity_pronoun:мене|Мене}}.»",
+          "B": "Коли настав вечір, Ісус сів до столу з дванадцятьма учнями. \\v 21 Під час вечері {{deity_pronoun:він|Він}} сказав: «Істинно кажу вам: один із вас видасть {{deity_pronoun:мене|Мене}}.»",
+          "R": "Увечері Ісус сидів при столі з дванадцятьма учнями. \\v 21 Коли вони їли, {{deity_pronoun:він|Він}} сказав: «Кажу вам правду. Один із вас зрадить {{deity_pronoun:мене|Мене}} і віддасть {{deity_pronoun:мене|Мене}} в руки ворогів.»"
+        },
+        "ja": {
+          "L": "夕方になると、[イエスは]十二人の弟子と共に[食事の席で]横になっておられた。\\v 21 そして、彼らが食べているとき、言われた。「アーメン、あなたがたに言う。あなたがたのうちの一人がわたしを引き渡す。」",
+          "B": "夕方になると、イエスは十二人の弟子と一緒に食事の席に着かれた。\\v 21 一同が食事をしているとき、イエスは言われた。「まことに、あなたがたに言っておく。あなたがたのうちの一人が、わたしを裏切ろうとしている。」",
+          "R": "夕方になって、イエスは十二人の弟子たちと一緒に食事の席に着かれました。\\v 21 みんなが食べているとき、イエスは言われました。「本当のことを言おう。あなたたちのうちの一人が、わたしを裏切って、敵に引き渡す。」"
         }
       },
       "decisions": [
@@ -1419,6 +1577,69 @@
           "reason": "Literal keeps the picture of reclining at a feast; Readable uses the ordinary Russian picture of a meal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026021012"
+          ],
+          "choice": "\"видасть\" (L, B); \"зрадить ... і віддасть в руки ворогів\" (R)",
+          "alternatives": [
+            "\"передасть\"",
+            "\"зрадить\" at every level"
+          ],
+          "reason": "Where the English says \"betray\", Ukrainian \"видати\" keeps both the handing over and the treachery; Readable spells out both, as the English Readable does. Elsewhere \"передати\" keeps the plain sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026021012"
+          ],
+          "choice": "\"引き渡す\" (L); \"裏切ろうとしている\" (B); \"裏切って、敵に引き渡す\" (R)",
+          "alternatives": [
+            "\"裏切る\" (L), as the English Literal says betray"
+          ],
+          "reason": "As in Mark 14:18: Literal keeps the one verb that runs through the Passion story (26:2, 15, 16, 23-25); Balanced says it is a betrayal (m2); Readable spells out what betrayal means here, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026020004",
+            "n40026021005"
+          ],
+          "choice": "\"[食事の席で]横になって\" (L); \"食事の席に着かれた\" (B, R); the amen formula of the Japanese Gospels, kept in 26:34",
+          "alternatives": [],
+          "reason": "Guests lay on couches at the Passover (m1); Literal keeps the posture, as in Mark 14:18, and Balanced and Readable say they took their places at the meal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1498,6 +1719,16 @@
           "L": "और वे बहुत उदास होकर एक-एक करके उनसे कहने लगे, \"कहीं मैं तो नहीं हूँ, हे प्रभु?\"",
           "B": "वे बहुत दुखी हुए, और एक के बाद एक उनसे पूछने लगे, \"हे प्रभु, वह मैं तो नहीं हूँ न?\"",
           "R": "चेले बहुत दुखी हो गए। एक-एक करके उन्होंने उनसे पूछा, \"हे प्रभु, आप मेरी बात तो नहीं कर रहे हैं न?\""
+        },
+        "uk": {
+          "L": "І, дуже засмучені, почали казати {{deity_pronoun:йому|Йому}} кожен: «Хіба це я, Господи?»",
+          "B": "Вони дуже засмутилися і один за одним почали питати {{deity_pronoun:його|Його}}: «Господи, це ж не я?»",
+          "R": "Учні дуже засмутилися. Один за одним вони питали {{deity_pronoun:його|Його}}: «Господи, {{deity_pronoun:ти|Ти}} ж не про мене кажеш?»"
+        },
+        "ja": {
+          "L": "そこで彼らは非常に悲しんで、一人一人イエスに言い始めた。「まさか、わたしではないでしょう、主よ？」",
+          "B": "弟子たちはひどく心を痛めて、一人また一人とイエスに言い始めた。「主よ、まさか、わたしのことではないでしょう？」",
+          "R": "弟子たちはとても悲しくなりました。そして、一人ずつイエスに尋ねました。「主よ、わたしのことではありませんよね？」"
         }
       },
       "decisions": [
@@ -1666,6 +1897,26 @@
           "reason": "Russian expresses a question that expects the answer no with \"неужели\" or \"ведь не\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026022009",
+            "n40026022012"
+          ],
+          "choice": "\"まさか……ではないでしょう？\" (L, B); \"……ではありませんよね？\" (R); \"主よ\" at every level",
+          "alternatives": [],
+          "reason": "The question expects the answer no (m1); Japanese marks that with まさか or よね, as in Mark 14:19, and the disciples speak politely. The eleven say \"主よ\", which 26:25 sets against Judas's \"ラビ\" (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1749,6 +2000,16 @@
           "L": "और उन्होंने उत्तर देकर कहा, \"जिसने मेरे साथ थाली में हाथ डुबोया है, वही मुझे पकड़वाएगा।",
           "B": "उन्होंने उत्तर दिया, \"जिसने मेरे साथ कटोरे में अपना हाथ डुबोया है, वही मुझे पकड़वाएगा।",
           "R": "यीशु ने जवाब दिया, \"तुममें से जिसने मेरे साथ एक ही कटोरे में से खाया है, वही मुझे पकड़वाएगा।"
+        },
+        "uk": {
+          "L": "А {{deity_pronoun:він|Він}}, відповідаючи, сказав: «Той, хто вмочив зі {{deity_pronoun:мною|Мною}} руку в миску, той {{deity_pronoun:мене|Мене}} видасть.",
+          "B": "Він відповів: «Той, хто разом зі {{deity_pronoun:мною|Мною}} вмочив руку в миску, — той і видасть {{deity_pronoun:мене|Мене}}.",
+          "R": "Ісус відповів: «Один із вас, хто їв зі {{deity_pronoun:мною|Мною}} з однієї миски, віддасть {{deity_pronoun:мене|Мене}} ворогам."
+        },
+        "ja": {
+          "L": "イエスは答えて言われた。「わたしと一緒に鉢に手を浸した者、その者がわたしを引き渡す。",
+          "B": "イエスはお答えになった。「わたしと一緒に鉢に手を浸した者、その者がわたしを裏切る。",
+          "R": "イエスは答えられました。「わたしと同じ鉢から食べた者の一人が、わたしを裏切る。"
         }
       },
       "decisions": [
@@ -1896,6 +2157,23 @@
           "reason": "The words name one who shares the meal, not a sign that singles out one man (meaning decision); Balanced and Readable say it was eating, so the picture is clear.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026023006"
+          ],
+          "choice": "\"同じ鉢から食べた者\" (R)",
+          "alternatives": [],
+          "reason": "Dipping in the bowl means sharing the meal (m1), so Readable says it plainly, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1994,6 +2272,16 @@
           "L": "मनुष्य का पुत्र तो जाता है, जैसा उसके विषय में लिखा है, पर उस मनुष्य पर हाय जिसके द्वारा मनुष्य का पुत्र पकड़वाया जाता है! उसके लिए भला होता यदि वह मनुष्य पैदा न होता।\"",
           "B": "मनुष्य का पुत्र तो अपने मार्ग पर जाता है, जैसा पवित्रशास्त्र में उसके विषय में लिखा है, पर हाय उस मनुष्य पर जिसके द्वारा मनुष्य का पुत्र पकड़वाया जाता है! उसके लिए अच्छा होता कि वह कभी पैदा ही न होता।\"",
           "R": "मनुष्य का पुत्र मरेगा, जैसा पवित्रशास्त्र में लिखा है। पर उस आदमी का कितना बुरा हाल होगा जो मनुष्य के पुत्र को पकड़वाता है! उस आदमी के लिए अच्छा होता कि वह कभी पैदा ही न होता।\""
+        },
+        "uk": {
+          "L": "Син Людський іде, як написано про {{deity_pronoun:нього|Нього}}, але горе тій людині, через яку Син Людський видається! Добре було б їй, якби не народилася та людина.»",
+          "B": "Син Людський іде своєю дорогою, як про {{deity_pronoun:нього|Нього}} написано в Писанні, але горе тому, хто видає Сина Людського! Краще було б тій людині зовсім не народитися.»",
+          "R": "Син Людський помре, як і сказано в Писанні. Але як страшно буде тому, хто віддасть Сина Людського ворогам! Краще було б тій людині зовсім не народитися.»"
+        },
+        "ja": {
+          "L": "人の子は、自分について書かれているとおりに去って行く。しかし、人の子を引き渡すその人は、災いだ！その人は、生まれなかったほうが、その人のためによかった。」",
+          "B": "人の子は、自分について書かれているとおりに去って行く。しかし、人の子を裏切るその者は、ああ、災いだ。その者は生まれて来なければよかったのだ。」",
+          "R": "人の子は、聖書に書いてあるとおりに死ぬ。しかし、人の子を裏切る人は、なんとひどい目にあうことか！その人は、生まれて来なかったほうがよかったのだ。」"
         }
       },
       "decisions": [
@@ -2194,6 +2482,26 @@
           "reason": "The settled title. Jesus speaks of himself, and a speaker does not give himself the honorific plural; the narrative keeps the honorific forms for Jesus.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026024006",
+            "n40026024011"
+          ],
+          "choice": "the wording of Mark 14:21 at each level: \"去って行く\" (L, B), \"死ぬ\" (R); \"災いだ\" (L), \"ああ、災いだ\" (B), \"なんとひどい目にあうことか\" (R)",
+          "alternatives": [],
+          "reason": "Matthew has Mark's saying almost word for word. \"Goes\" speaks of his death (m1), which Readable says plainly; the woe is a cry of grief and warning over one man (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2272,6 +2580,16 @@
           "L": "तब उनको पकड़वाने वाले यहूदा ने उत्तर दिया, \"कहीं मैं तो नहीं हूँ, हे रब्बी?\"",
           "B": "तब यहूदा ने, जो उन्हें पकड़वाने वाला था, कहा, \"हे रब्बी, वह मैं तो नहीं हूँ न?\"",
           "R": "तब यहूदा बोला। वही यीशु को पकड़वाने वाला था। उसने कहा, \"हे गुरु, आप मेरी बात तो नहीं कर रहे हैं न?\""
+        },
+        "uk": {
+          "L": "А Юда, який видавав {{deity_pronoun:його|Його}}, відповідаючи, сказав: «Хіба це я, Равві?»",
+          "B": "Тоді Юда, який видавав {{deity_pronoun:його|Його}}, сказав: «Равві, це ж не я?»",
+          "R": "Тоді заговорив Юда. Це він збирався віддати Ісуса ворогам. Він сказав: «Учителю, {{deity_pronoun:ти|Ти}} ж не про мене кажеш?»"
+        },
+        "ja": {
+          "L": "すると、イエスを引き渡そうとしていたユダが答えて言った。「まさか、わたしではないでしょう、ラビ？」",
+          "B": "そのとき、イエスを裏切ろうとしていたユダが言った。「ラビ、まさか、わたしのことではないでしょう？」",
+          "R": "そのとき、ユダが口を開きました。ユダは、イエスを裏切ろうとしていた人です。ユダは言いました。「先生、わたしのことではありませんよね？」"
         }
       },
       "decisions": [
@@ -2388,6 +2706,27 @@
           "reason": "Readable gives the meaning of the title, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026025011"
+          ],
+          "choice": "\"ラビ\" (L, B); \"先生\" (R)",
+          "alternatives": [
+            "\"ラビ\" (R)"
+          ],
+          "reason": "In Matthew only Judas calls Jesus Rabbi, while the others say Lord (m1). Readable gives the meaning of the title, as the English Readable does, and the contrast with \"主よ\" in 26:22 remains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2459,6 +2798,16 @@
           "L": "[यीशु] उससे कहते हैं, \"तुमने [ऐसा] कहा।\"",
           "B": "यीशु ने उससे कहा, \"तुमने ख़ुद ही कह दिया है।\"",
           "R": "यीशु ने उससे कहा, \"यह तुमने ख़ुद ही कह दिया।\""
+        },
+        "uk": {
+          "L": "Каже йому: «Ти сказав.»",
+          "B": "Ісус відповів йому: «Ти сам це сказав.»",
+          "R": "Ісус сказав йому: «Ти сам це сказав.»"
+        },
+        "ja": {
+          "L": "[イエスは]彼に言われる。「あなたが言った。」",
+          "B": "イエスは言われた。「それは、あなた自身が言ったことだ。」",
+          "R": "イエスは言われました。「あなたが自分でそう言ったのだ。」"
         }
       },
       "decisions": [
@@ -2621,6 +2970,41 @@
           "reason": "Literal keeps the Greek present tense of narration.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40026025012"
+          ],
+          "choice": "\"言われる\" (L); past (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Greek present tense of narration, with the light respect form for Jesus, as in 26:31 and 26:35.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40026025014"
+          ],
+          "choice": "\"あなた自身が\" (B); \"自分で\" (R)",
+          "alternatives": [],
+          "reason": "The answer agrees while putting the words back on Judas (m1); Balanced and Readable bring out the stressed \"you\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2710,6 +3094,16 @@
           "L": "और जब वे खा रहे थे, तो यीशु ने रोटी ली, और आशीष माँगकर [उसे] तोड़ा, और चेलों को देते हुए कहा, \"लो, खाओ; यह मेरी देह है।\"",
           "B": "भोजन के समय यीशु ने एक रोटी ली, आशीष माँगी, और उसे तोड़ा। उन्होंने वह चेलों को दी और कहा, \"लो, खाओ। यह मेरी देह है।\"",
           "R": "जब वे खा रहे थे, तब यीशु ने कुछ रोटी ली। उन्होंने उसके लिए परमेश्वर का धन्यवाद किया और उसके टुकड़े किए। उन्होंने वह अपने चेलों को दी और कहा, \"यह लो और खाओ। यह मेरी देह है।\""
+        },
+        "uk": {
+          "L": "А коли вони їли, Ісус, узявши хліб і поблагословивши, розламав, і, давши учням, сказав: «Візьміть, їжте: це є {{deity_pronoun:моє|Моє}} тіло.»",
+          "B": "Під час вечері Ісус узяв хлібину, промовив благословення і розламав її. Він дав її учням і сказав: «Візьміть і їжте. Це {{deity_pronoun:моє|Моє}} тіло.»",
+          "R": "Коли вони їли, Ісус узяв хлібину. Він подякував за неї Богові й розламав її на шматки. Він дав їх своїм учням і сказав: «Візьміть це і їжте. Це {{deity_pronoun:моє|Моє}} тіло.»"
+        },
+        "ja": {
+          "L": "彼らが食べているとき、イエスはパンを取り、[神を]ほめたたえてから裂き、弟子たちに与えて言われた。「取って食べなさい。これはわたしの体である。」",
+          "B": "一同が食事をしているとき、イエスはパンを手に取って祝福の祈りをささげ、それを裂いて弟子たちに配り、言われた。「受け取って食べなさい。これはわたしの体である。」",
+          "R": "みんなが食べているとき、イエスはパンを取って、神に感謝されました。それからパンを裂いて弟子たちに渡し、言われました。「これを取って食べなさい。これはわたしの体だ。」"
         }
       },
       "decisions": [
@@ -2938,6 +3332,47 @@
           "reason": "The style guide allows \"лепёшка\" for a loaf at Balanced and Readable, but at the Lord's Supper \"хлеб\" is the word the church uses for the bread Jesus called his body, and it does not mislead about the flat unleavened bread.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026026007"
+          ],
+          "choice": "\"хліб\" (L); \"хлібина\" (B, R)",
+          "alternatives": [
+            "\"хліб\" at every level"
+          ],
+          "reason": "The Greek is one loaf; Balanced and Readable say \"хлібина\" so the breaking of one loaf is clear, Literal keeps the plain word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026026009",
+            "n40026026019"
+          ],
+          "choice": "\"[神を]ほめたたえて\" (L); \"祝福の祈りをささげ\" (B); \"神に感謝されました\" (R); \"これはわたしの体である\" (L, B), \"これはわたしの体だ\" (R)",
+          "alternatives": [],
+          "reason": "The words Matthew shares with Mark 14:22 keep Mark's Japanese wording. The blessing praises God over the bread (m1), so Literal supplies God as its object. The words of institution say \"is\" plainly at every level (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3033,6 +3468,16 @@
           "L": "और उन्होंने कटोरा लेकर धन्यवाद दिया, और उन्हें यह कहते हुए दिया, \"तुम सब इसमें से पियो, \\v 28 क्योंकि यह वाचा का मेरा वह लहू है, जो बहुतों के लिए पापों की क्षमा के निमित्त बहाया जाता है।",
           "B": "फिर उन्होंने एक कटोरा लिया, धन्यवाद दिया, और यह कहते हुए उन्हें दिया, \"तुम सब इसमें से पियो। \\v 28 क्योंकि यह वाचा का मेरा लहू है, जो बहुतों के लिए बहाया जाता है, ताकि पापों की क्षमा हो।",
           "R": "फिर उन्होंने दाखरस का एक कटोरा लिया और उसके लिए परमेश्वर का धन्यवाद किया। उन्होंने वह उन्हें दिया और कहा, \"तुम सब इस कटोरे में से पियो। \\v 28 यह मेरा लहू है, जिससे वाचा बँधती है, यानी परमेश्वर का अपने लोगों के साथ ठहराया हुआ बंधन। यह बहुत लोगों के लिए बहाया जाता है, ताकि उनके पाप क्षमा किए जा सकें।"
+        },
+        "uk": {
+          "L": "І, узявши чашу та віддавши подяку, дав їм, кажучи: «Пийте з неї всі, \\v 28 бо це є {{deity_pronoun:моя|Моя}} кров завіту, яка за багатьох проливається на прощення гріхів.",
+          "B": "Потім {{deity_pronoun:він|Він}} узяв чашу, подякував і подав їм, кажучи: «Пийте з неї всі. \\v 28 Бо це {{deity_pronoun:моя|Моя}} кров завіту, що проливається за багатьох на прощення гріхів.",
+          "R": "Потім {{deity_pronoun:він|Він}} узяв чашу з вином і подякував за неї Богові. Він дав її їм і сказав: «Пийте з цієї чаші всі. \\v 28 Це {{deity_pronoun:моя|Моя}} кров, якою укладається завіт — Божа угода з {{deity_pronoun:його|Його}} народом. Вона проливається за багатьох людей, щоб їхні гріхи були прощені."
+        },
+        "ja": {
+          "L": "また、杯を取り、感謝して彼らに与え、言われた。「皆、この杯から飲みなさい。\\v 28 これは、罪の赦しのために、多くの人のために注ぎ出される、わたしの契約の血なのだから。",
+          "B": "続いて杯を手に取り、感謝の祈りをささげてから彼らに渡して、言われた。「皆、この杯から飲みなさい。\\v 28 これは、多くの人のために注がれて罪の赦しをもたらす、わたしの契約の血である。",
+          "R": "それからイエスは、ぶどう酒の入った杯を取って、神に感謝されました。そして、それを弟子たちに渡して言われました。「みんな、この杯から飲みなさい。\\v 28 これはわたしの血だ。この血によって、神との契約が結ばれる。契約とは、神がご自分の民と結ばれる約束だ。この血は多くの人のために流され、その人たちの罪がゆるされる。"
         }
       },
       "decisions": [
@@ -3403,6 +3848,49 @@
           "reason": "Russian refers back to God with the reflexive \"свой\", which takes no span, where the English has \"his\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026028008"
+          ],
+          "choice": "\"завіт\"",
+          "alternatives": [
+            "\"угода\"",
+            "\"заповіт\""
+          ],
+          "reason": "\"Завіт\" is the Ukrainian word for God's covenant with his people (Exodus 24:8); \"заповіт\" now means a will. Readable explains it as \"Божа угода\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026028008",
+            "n40026028012",
+            "n40026028014"
+          ],
+          "choice": "\"わたしの契約の血\" (L, B), \"わたしの血……神との契約\" (R); \"注ぎ出される\" (L), \"注がれる\" (B), \"流される\" (R); \"罪の赦し\" (L, B), \"罪がゆるされる\" (R)",
+          "alternatives": [],
+          "reason": "The cup words keep Mark 14:24's Japanese wording, with Matthew's \"for the forgiveness of sins\" added (m4) in the forgiveness terms shared by the Japanese Gospels. The verb recalls the blood poured at the altar and Isaiah 53:12 (m3); Readable uses the everyday word for blood shed and says what a covenant is, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3500,6 +3988,16 @@
           "L": "पर मैं तुमसे कहता हूँ, अब से मैं दाखलता का यह फल कभी नहीं पिऊँगा, उस दिन तक जब मैं अपने पिता के राज्य में तुम्हारे साथ उसे नया न पिऊँ।\"",
           "B": "पर मैं तुमसे यह कहता हूँ: अब से मैं दाखलता का यह फल फिर नहीं पिऊँगा, जब तक वह दिन न आए जब मैं अपने पिता के राज्य में तुम्हारे साथ उसे नया न पिऊँ।\"",
           "R": "मैं तुमसे कहता हूँ, मैं फिर दाखरस नहीं पिऊँगा, उस दिन तक जब मैं अपने पिता के राज्य में तुम्हारे साथ उसे नए ढंग से पिऊँगा।\""
+        },
+        "uk": {
+          "L": "Але кажу вам: не питиму віднині з цього плоду виноградної лози аж до того дня, коли питиму його новим з вами в Царстві {{deity_pronoun:мого|Мого}} Отця.»",
+          "B": "Кажу вам: відтепер {{deity_pronoun:я|Я}} не питиму цього плоду виноградної лози аж до того дня, коли питиму його новим разом з вами в Царстві {{deity_pronoun:мого|Мого}} Отця.»",
+          "R": "Кажу вам: {{deity_pronoun:я|Я}} більше не питиму вина аж до того дня, коли питиму його з вами по-новому в Царстві {{deity_pronoun:мого|Мого}} Отця.»"
+        },
+        "ja": {
+          "L": "しかし、あなたがたに言う。わたしの父の国で、あなたがたと共に新しく飲むその日まで、わたしは今から後、このぶどうの実りを決して飲まない。」",
+          "B": "あなたがたに言っておく。わたしの父の国であなたがたと共に新しく飲むその日まで、わたしは今後、このぶどうの実りを二度と口にしない。」",
+          "R": "言っておく。わたしの父の国で、あなたたちといっしょに新しいぶどう酒を飲むその日まで、わたしはもうぶどう酒を飲まない。」"
         }
       },
       "decisions": [
@@ -3659,6 +4157,26 @@
           "reason": "Korean puts the time limit before the verb it limits; the words follow the Korean Mark 14:25, with Matthew's \"with you\" and \"my Father's kingdom\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026029012",
+            "n40026029024"
+          ],
+          "choice": "\"ぶどうの実り\" (L, B); \"ぶどう酒\" (R); \"新しく\" (L, B), \"新しいぶどう酒\" (R)",
+          "alternatives": [],
+          "reason": "The phrase of the blessing over wine (m1) keeps Mark 14:25's wording; Readable says what it means. Matthew's \"with you\" and \"my Father's kingdom\" are kept at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3734,6 +4252,16 @@
           "L": "और भजन गाकर वे जैतून पहाड़ पर निकल गए।",
           "B": "फिर वे भजन गाकर जैतून पहाड़ की ओर निकल गए।",
           "R": "उन्होंने स्तुति का एक गीत गाया। फिर वे जैतून पहाड़ पर चले गए।"
+        },
+        "uk": {
+          "L": "І, проспівавши гімн, вийшли на Оливну гору.",
+          "B": "Потім вони проспівали гімн і вийшли на Оливну гору.",
+          "R": "Вони заспівали хвалебну пісню. Потім вийшли на Оливну гору."
+        },
+        "ja": {
+          "L": "そして賛美の歌を歌ってから、彼らはオリーブ山へ出て行った。",
+          "B": "一同は賛美の歌をうたってから、オリーブ山へ出かけた。",
+          "R": "それから、みんなで神をたたえる歌を歌って、オリーブ山へ出かけて行きました。"
         }
       },
       "decisions": [
@@ -3833,6 +4361,25 @@
           "reason": "The style guide's name for the ridge east of Jerusalem: it says what the name means, where the Synodal \"Елеонская\" keeps a Slavonic word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026030002"
+          ],
+          "choice": "the wording of Mark 14:26 at each level",
+          "alternatives": [],
+          "reason": "The Greek is the same as Mark's, so each level keeps its Japanese wording there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3925,6 +4472,16 @@
           "L": "तब यीशु उनसे कहते हैं, \"तुम सब आज ही रात मेरे कारण ठोकर खाओगे, क्योंकि लिखा है, 'मैं चरवाहे को मारूँगा, और झुंड की भेड़ें तितर-बितर हो जाएँगी।'",
           "B": "तब यीशु ने उनसे कहा, \"आज इसी रात तुम सब मेरे कारण ठोकर खाकर गिर जाओगे। क्योंकि लिखा है: 'मैं चरवाहे को मार गिराऊँगा, और झुंड की भेड़ें चारों ओर बिखर जाएँगी।'",
           "R": "तब यीशु ने उनसे कहा, \"आज रात तुम सब मुझे छोड़कर चले जाओगे। पवित्रशास्त्र में परमेश्वर कहते हैं, 'मैं चरवाहे को मार गिराऊँगा, और भेड़ें इधर-उधर भाग जाएँगी।'"
+        },
+        "uk": {
+          "L": "Тоді каже їм Ісус: «Усі ви спіткнетеся через {{deity_pronoun:мене|Мене}} цієї ночі, бо написано: “Вражу пастиря, і розпорошаться вівці отари.”",
+          "B": "Тоді Ісус сказав їм: «Цієї ж ночі всі ви відпадете від віри через {{deity_pronoun:мене|Мене}}. Бо написано: “Я вражу пастуха, і вівці отари розбіжаться.”",
+          "R": "Тоді Ісус сказав їм: «Цієї ночі всі ви відпадете від віри й покинете {{deity_pronoun:мене|Мене}}. У Писанні Бог каже: “Я вражу пастуха, і вівці розбіжаться хто куди.”"
+        },
+        "ja": {
+          "L": "そのとき、イエスは彼らに言われる。「あなたがたは皆、今夜、わたしのことでつまずくだろう。『わたしは羊飼いを打つ。すると、群れの羊は散らされる』と書いてあるからである。",
+          "B": "そのとき、イエスは言われた。「今夜、あなたがたは皆、わたしのことでつまずいて離れて行く。『わたしは羊飼いを打つ。そして群れの羊は散り散りになる』と書いてあるからだ。",
+          "R": "それからイエスは弟子たちに言われました。「今夜、あなたたちはみな、わたしから離れて行く。聖書の中で、神がこう言っておられる。『わたしは羊飼いを打ち倒す。すると羊はあちこちへ逃げて行く。』"
         }
       },
       "decisions": [
@@ -4269,6 +4826,84 @@
           "reason": "Literal keeps the Greek present tense of narration.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026031008"
+          ],
+          "choice": "\"спіткнетеся\" (L); \"відпадете від віри\" (B, R)",
+          "alternatives": [
+            "\"спокуситеся\""
+          ],
+          "reason": "The project's rendering of skandalizō; \"спокуситися\" now means to be tempted, not to stumble and desert. The same in 26:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026031019"
+          ],
+          "choice": "\"пастиря\" (L); \"пастуха\" (B, R)",
+          "alternatives": [
+            "\"пастуха\" at every level"
+          ],
+          "reason": "Literal keeps the word of the familiar prophecy (Zechariah 13:7); Balanced and Readable use the everyday word for a shepherd.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026031008"
+          ],
+          "choice": "\"つまずく\" (L); \"つまずいて離れて行く\" (B); \"わたしから離れて行く\" (R), kept in 26:33",
+          "alternatives": [],
+          "reason": "The verb pictures tripping so as to desert Jesus (m1). As in Mark 14:27, Literal keeps the picture, Balanced adds where it leads, and Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40026031002",
+            "n40026031017"
+          ],
+          "choice": "\"言われる\" (L), past (B, R); \"聖書の中で、神がこう言っておられる\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Greek present tense of narration. Readable names God as the speaker of Zechariah's words (m2), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4346,6 +4981,16 @@
           "L": "पर अपने जी उठाए जाने के बाद मैं तुमसे पहले गलील को जाऊँगा।\"",
           "B": "पर जी उठाए जाने के बाद मैं तुमसे पहले गलील पहुँचूँगा।\"",
           "R": "पर जब परमेश्वर मुझे मरे हुओं में से जिला उठाएँगे, तब मैं तुमसे पहले गलील जाऊँगा।\""
+        },
+        "uk": {
+          "L": "А після того, як {{deity_pronoun:я|Я}} буду воскрешений, випереджу вас у Галилею.»",
+          "B": "А після того, як {{deity_pronoun:я|Я}} воскресну, {{deity_pronoun:я|Я}} піду перед вами в Галилею.»",
+          "R": "Але коли Бог воскресить {{deity_pronoun:мене|Мене}} з мертвих, {{deity_pronoun:я|Я}} прийду в Галилею раніше за вас.»"
+        },
+        "ja": {
+          "L": "しかし、わたしは起こされた後、あなたがたより先にガリラヤへ行く。」",
+          "B": "しかし、わたしは復活させられた後、あなたがたの先に立ってガリラヤへ行く。」",
+          "R": "でも、神がわたしを死から生き返らせてくださった後、わたしはあなたたちより先にガリラヤへ行っている。」"
         }
       },
       "decisions": [
@@ -4417,6 +5062,28 @@
             "\"살아난\""
           ],
           "reason": "As in the Korean Mark 14:28: the passive says God raises him (meaning decision); Readable names God, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026032004",
+            "n40026032006"
+          ],
+          "choice": "\"起こされる\" (L); \"復活させられる\" (B); \"神が……生き返らせてくださる\" (R); \"先に立って\" (B)",
+          "alternatives": [
+            "\"よみがえらされる\" (B), \"よみがえらせてくださる\" (R), as in Mark 14:28"
+          ],
+          "reason": "The passive means raised by God (m1). Matthew uses it for Jesus' rising in 16:21, 17:9, 17:23, 20:19, 27:64 and 28:6-7, and each level keeps one form for it through the book: \"起こされる\" (L), \"復活させられる\" (B), and God named as the one who gives life at Readable. Going ahead is the shepherd going before the flock (m2), which Balanced brings out.",
           "uncertain": false,
           "footnote": false
         }
@@ -4500,6 +5167,16 @@
           "L": "पर पतरस ने उत्तर देकर उनसे कहा, \"यदि सब आपके कारण ठोकर खाएँ, तो भी मैं कभी ठोकर नहीं खाऊँगा।\"",
           "B": "पतरस ने उत्तर दिया, \"चाहे बाक़ी सब आपके कारण ठोकर खाकर गिर जाएँ, पर मैं कभी नहीं गिरूँगा।\"",
           "R": "पतरस ने उनसे कहा, \"बाक़ी सब भले ही आपको छोड़ दें। पर मैं ऐसा कभी नहीं करूँगा!\""
+        },
+        "uk": {
+          "L": "А Петро, відповідаючи, сказав {{deity_pronoun:йому|Йому}}: «Якщо всі спіткнуться через {{deity_pronoun:тебе|Тебе}}, я ніколи не спіткнуся.»",
+          "B": "Петро відповів: «Нехай навіть усі відпадуть від віри через {{deity_pronoun:тебе|Тебе}}, я ніколи не відпаду.»",
+          "R": "Петро сказав {{deity_pronoun:йому|Йому}}: «Нехай усі інші відвернуться від {{deity_pronoun:тебе|Тебе}}. Але я ніколи цього не зроблю!»"
+        },
+        "ja": {
+          "L": "ペトロは答えてイエスに言った。「たとえ皆があなたのことでつまずいても、わたしは決してつまずきません。」",
+          "B": "ペトロは答えた。「ほかの者がみな、あなたのことでつまずいて離れて行くとしても、わたしは決して離れません。」",
+          "R": "ペトロはイエスに言いました。「ほかの人たちがみんなあなたから離れて行っても、わたしは絶対に離れません！」"
         }
       },
       "decisions": [
@@ -4654,6 +5331,16 @@
           "L": "यीशु ने उससे कहा, \"मैं तुमसे सच कहता हूँ कि आज ही रात, मुर्ग़े के बाँग देने से पहले, तुम तीन बार मेरा इनकार करोगे।\"",
           "B": "यीशु ने उससे कहा, \"मैं तुमसे सच कहता हूँ, आज इसी रात मुर्ग़े के बाँग देने से पहले तुम तीन बार मेरा इनकार करोगे।\"",
           "R": "यीशु ने उससे कहा, \"मैं तुमसे सच कहता हूँ। आज रात मुर्ग़े के बाँग देने से पहले तुम तीन बार कहोगे कि तुम मुझे नहीं जानते।\""
+        },
+        "uk": {
+          "L": "Сказав йому Ісус: «Істинно кажу тобі, що цієї ночі, перш ніж півень заспіває, ти тричі відречешся від {{deity_pronoun:мене|Мене}}.»",
+          "B": "Ісус відповів йому: «Істинно кажу тобі: цієї ж ночі, ще до того, як заспіває півень, ти тричі відречешся від {{deity_pronoun:мене|Мене}}.»",
+          "R": "Ісус сказав йому: «Кажу тобі правду. Цієї ночі, ще до того, як заспіває півень, ти тричі скажеш, що не знаєш {{deity_pronoun:мене|Мене}}.»"
+        },
+        "ja": {
+          "L": "イエスは彼に言われた。「アーメン、あなたに言う。今夜、鶏が鳴く前に、あなたは三度わたしを否むだろう。」",
+          "B": "イエスはペトロに言われた。「まことに、あなたに言っておく。まさに今夜、鶏が鳴く前に、あなたは三度、わたしを知らないと言うだろう。」",
+          "R": "イエスはペトロに言われました。「本当のことを言おう。今夜、にわとりが鳴く前に、あなたは三回、わたしのことを知らないと言う。」"
         }
       },
       "decisions": [
@@ -4797,6 +5484,46 @@
           "reason": "The Greek \"you\" is singular here, spoken to Peter alone, and Amharic shows it in the verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026034017"
+          ],
+          "choice": "\"відректися від\" (L, B); \"сказати, що не знаєш\" (R)",
+          "alternatives": [
+            "\"зректися\""
+          ],
+          "reason": "\"Відректися\" is the living word for disowning someone; Readable says what Peter will do. The same in 26:35 and 26:69-75.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40026034006",
+            "n40026034017"
+          ],
+          "choice": "singular \"アーメン、あなたに言う\" (L), \"まことに、あなたに言っておく\" (B), \"本当のことを言おう\" (R); \"否む\" (L), \"知らないと言う\" (B, R), kept in 26:35",
+          "alternatives": [],
+          "reason": "The pronoun is singular, to Peter alone. To deny is to disown someone by saying one does not know him (m2), as in 10:33 and Mark 14:30.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4878,6 +5605,16 @@
           "L": "पतरस उनसे कहता है, \"यदि मुझे आपके साथ मरना भी पड़े, तो भी मैं आपका इनकार कभी नहीं करूँगा।\"",
           "B": "पर पतरस ने ज़ोर देकर कहा, \"मैं आपका इनकार कभी नहीं करूँगा, चाहे मुझे आपके साथ मरना ही क्यों न पड़े!\"",
           "R": "पतरस ने कहा, \"मैं कभी नहीं कहूँगा कि मैं आपको नहीं जानता! ज़रूरत पड़ी तो मैं आपके साथ मर भी जाऊँगा!\""
+        },
+        "uk": {
+          "L": "Каже {{deity_pronoun:йому|Йому}} Петро: «Навіть якщо мені треба буде померти з {{deity_pronoun:тобою|Тобою}}, ні за що не відречуся від {{deity_pronoun:тебе|Тебе}}.»",
+          "B": "Але Петро наполягав: «Я ніколи не відречуся від {{deity_pronoun:тебе|Тебе}}, навіть якщо доведеться померти разом з {{deity_pronoun:тобою|Тобою}}!»",
+          "R": "Петро сказав: «Я ніколи не скажу, що не знаю {{deity_pronoun:тебе|Тебе}}! Якщо треба, я навіть помру з {{deity_pronoun:тобою|Тобою}}!»"
+        },
+        "ja": {
+          "L": "ペトロはイエスに言う。「たとえあなたと一緒に死ななければならないとしても、決してあなたを否みません。」",
+          "B": "しかしペトロは言い張った。「たとえご一緒に死ななければならなくなっても、あなたを知らないなどとは決して言いません！」",
+          "R": "ペトロは言いました。「あなたのことを知らないなんて、絶対に言いません！そうしなければならないなら、あなたといっしょに死にます！」"
         }
       },
       "decisions": [
@@ -4966,6 +5703,23 @@
           "reason": "Matthew's present tense of narration at Literal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40026035005"
+          ],
+          "choice": "condition first, vow last (B); vow first (R)",
+          "alternatives": [],
+          "reason": "Japanese ends on its main verb, so Balanced keeps the vow at the end, where it carries its force, as in Mark 14:31; Readable puts it first, as the English does. Literal keeps the Greek present tense \"言う\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5039,6 +5793,16 @@
           "L": "वैसे ही सब चेलों ने भी [यही] कहा।",
           "B": "सब चेलों ने भी यही कहा।",
           "R": "बाक़ी सब चेलों ने भी यही बात कही।"
+        },
+        "uk": {
+          "L": "Так само сказали й усі учні.",
+          "B": "Те саме казали й усі інші учні.",
+          "R": "Усі інші учні сказали те саме."
+        },
+        "ja": {
+          "L": "同じように、弟子たちも皆[そう]言った。",
+          "B": "ほかの弟子たちも皆、同じことを言った。",
+          "R": "ほかの弟子たちもみな、同じことを言いました。"
         }
       },
       "decisions": [

@@ -43,6 +43,16 @@ class SiteTest(unittest.TestCase):
         head = page.split("<body", 1)[0]
         self.assertNotIn("\\q", head)
 
+    def test_pronoun_control_only_where_the_language_marks_it(self):
+        # Hindi has no capitals, so its text has no deity_pronoun spans and
+        # the switch would change nothing; Russian and English mark them.
+        def has_control(*parts):
+            page = self.out.joinpath(*parts, "index.html").read_text(encoding="utf-8")
+            return 'data-setting="deity_pronoun"' in page
+        self.assertTrue(has_control("jhn", "3"))
+        self.assertTrue(has_control("ru", "jhn", "3"))
+        self.assertFalse(has_control("hi", "jhn", "3"))
+
     def test_account_pages_are_built_but_not_indexed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
@@ -313,11 +323,11 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(sum(manifest["status"].values()),
                          sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
         self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
-        # Editions with gaps list them by book too (French may have none left).
+        # Editions with gaps list them by book too. Since 2026-11-12 every
+        # language has every verse, so there may be no gaps left anywhere.
         for _, _, m in built.values():
             self.assertEqual(sum(m["missing"]["by_book"].values()), m["missing"]["count"])
             self.assertEqual(m["missing"]["count"], len(m["missing"]["verses"]))
-        self.assertTrue(any(m["missing"]["count"] for _, _, m in built.values()))
         self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
         # The page lists every file, in every site language, and the footer links it.
         for lang in build_site.LANGUAGES:
@@ -390,16 +400,21 @@ class SiteTest(unittest.TestCase):
         site = build_site.SITE_URL
         self.assertEqual(trail("php/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
                                           ("Philippians", site + "/php/"), ("Philippians 2", site + "/php/2/")])
-        # A book without a page goes straight from Read to the chapter.
-        book, chaps = next((b, c) for b, c in build_site.books("en") if not build_site.load_intro(b))
-        code, first = book.lower(), chaps[0].chapter
-        title = build_site.chapter_name(chaps[0].records, book, first, "en")
-        self.assertEqual(trail(f"{code}/{first}"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
-                                                    (title, f"{site}/{code}/{first}/")])
-        page = (self.out / code / str(first) / "index.html").read_text(encoding="utf-8")
-        self.assertIn(f'class="chap-book" href="/read/#{code}"', page)
         self.assertEqual(trail("fr/php/2")[-1][1], site + "/fr/php/2/")
-        self.assertEqual(len(trail("fr/php/2")), 3)
+        # A book without a page in a language goes straight from Read to the
+        # chapter. Every English book has an introduction, so look for one
+        # in any language.
+        missing = [(lang, b, c) for lang in build_site.LANGUAGES for b, c in build_site.books(lang)
+                   if lang not in build_site.book_languages(b)]
+        if missing:
+            lang, book, chaps = missing[0]
+            code, first = book.lower(), chaps[0].chapter
+            path = f"{code}/{first}" if lang == "en" else f"{lang}/{code}/{first}"
+            title = build_site.chapter_name(chaps[0].records, book, first, lang)
+            self.assertEqual(len(trail(path)), 3)
+            self.assertEqual(trail(path)[-1], (title, f"{site}/{path}/"))
+            page = (self.out / path / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'class="chap-book" href="{build_site.url(lang, "/read/#" + code)}"', page)
 
     def test_llms_txt_describes_the_site(self):
         text = (self.out / "llms.txt").read_text(encoding="utf-8")
@@ -616,10 +631,10 @@ class SiteTest(unittest.TestCase):
             self.assertTrue(all(("l" in v) != translated for v in verses), lang)
             for vid, v in zip(build_site.votd_refs(lang), verses):
                 # The verse ends a sentence, so it reads on its own (Hindi ends one
-                # with the danda ।, Amharic
-                # ends one with ።; a closing quotation mark may follow: ” ’,
-                # Amharic », or French » after a no-break space).
-                self.assertRegex(v["t"], r"[.?!።।](?:[”’»]|\u00a0»)?$", vid)
+                # with the danda ।, Amharic with ።, Japanese with 。; a closing
+                # quotation mark may follow: ” ’, Amharic », French » after a
+                # no-break space, or Japanese 」 』).
+                self.assertRegex(v["t"], r"[.?!።।。？！](?:[”’»」』]|\u00a0»)?$", vid)
         home = (self.out / "index.html").read_text(encoding="utf-8")
         data = re.search(r'<script type="application/json" class="votd-data">(.*?)</script>', home, re.S)[1]
         self.assertEqual(json.loads(data), build_site.verses_of_the_day("en"))
@@ -986,8 +1001,9 @@ class SiteTest(unittest.TestCase):
         if not any("es" in r["renderings"] for r in records) and "es" not in build_site.summaries()[("1TI", 5)]:
             page = (self.out / "es" / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
             self.assertIn('<p class="chapter-summary" lang="en">', page)
-        with_es = [{"renderings": {"en": {}, "es": {}}}]
-        self.assertEqual(build_site.chapter_summary("1TI", 5, with_es, "es"), "")
+        # A chapter whose text has a language its summary lacks shows none.
+        with_xx = [{"renderings": {"en": {}, "xx": {}}}]
+        self.assertEqual(build_site.chapter_summary("1TI", 5, with_xx, "xx"), "")
         self.assertEqual(build_site.chapter_summary("JHN", 999, records, "en"), "")
 
     def test_chapter_strip_shows_the_whole_book(self):

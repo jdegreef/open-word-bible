@@ -17,16 +17,17 @@ from django.test import SimpleTestCase, TestCase
 from config import sentry
 from config.settings import database_options, statement_timeout_ms
 from owb.sources import LOCK
-from texts.management.commands.import_texts import Command as ImportTexts
+from texts.management.commands.import_texts import Command as ImportTexts, loader_version
 from texts.models import Edition, Verse
 
 ALL = ["sblgnt", "wlc", "bsb", "web", "asv", "kjv", "ylt", "rv1909"]
 
 
-def edition(code, source, commit=None, verses=True):
+def edition(code, source, commit=None, verses=True, version=None):
     e = Edition.objects.create(code=code, name=code, language="eng", kind="reference",
                                licence="Public domain", source=source,
-                               source_commit=commit or LOCK[source]["commit"])
+                               source_commit=commit or LOCK[source]["commit"],
+                               loader_version=version or loader_version(code))
     if verses:
         Verse.objects.create(edition=e, book="GEN", chapter=1, verse=1, text="In the beginning")
     return e
@@ -48,6 +49,14 @@ class MissingTextsTests(TestCase):
         edition("sblgnt", "sblgnt", commit="0" * 40)
         edition("wlc", "macula-hebrew", verses=False)
         self.assertEqual(ImportTexts.missing_codes(), ALL)
+
+    def test_editions_from_an_older_loader_are_missing(self):
+        # sblgnt loaded before Romans 16:25-27 were added: same commit, so only
+        # the loader version says it is out of date.
+        for code in ALL:
+            edition(code, ImportTexts.sources(code)[0])
+        Edition.objects.filter(code="sblgnt").update(loader_version=loader_version("sblgnt") - 1)
+        self.assertEqual(ImportTexts.missing_codes(), ["sblgnt"])
 
     def run_missing(self, results=None):
         out = io.StringIO()
@@ -169,7 +178,7 @@ class SentryScrubTests(SimpleTestCase):
 
         sentry.init("https://key@sentry.invalid/1", "test", transport=Transport)
         environ = {"PATH_INFO": "/healthz", "QUERY_STRING": "q=light", "HTTP_HOST": "testserver",
-                   "HTTP_COOKIE": "sessionid=abc", "HTTP_AUTHORIZATION": "Token secret"}
+                   "HTTP_COOKIE": "sessionid=cookievalue", "HTTP_AUTHORIZATION": "Token secret"}
         wsgiref.util.setup_testing_defaults(environ)
         try:
             with mock.patch("api.views.connection") as conn, self.assertLogs("django.request"):
@@ -181,5 +190,7 @@ class SentryScrubTests(SimpleTestCase):
         errors = [e for e in sent if "exception" in e]
         self.assertEqual(errors[0]["exception"]["values"][0]["value"], "database down")
         self.assertEqual(errors[0]["request"], {"url": "http://testserver/healthz", "method": "GET"})
-        for word in ("light", "abc", "secret"):
+        # Words with letters outside hex, so the release (a commit SHA) can never
+        # contain one by chance.
+        for word in ("light", "cookievalue", "secret"):
             self.assertNotIn(word, repr(sent))

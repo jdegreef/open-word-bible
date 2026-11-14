@@ -2,7 +2,7 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi and Russian.
+Portuguese, Amharic, Hindi, Russian, Ukrainian and Japanese.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -43,9 +43,12 @@ brief for drafting it and `data/key_terms.json` the settled key terms.
 `docs/corinthians-terms.md` proposes the recurring choices for 1 and 2
 Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/vietnamese-style.md`, `docs/korean-style.md`,
-`docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`
-and `docs/russian-style.md` are the briefs for French, Swahili, Vietnamese,
-Korean, (Brazilian) Portuguese, Amharic, Hindi and Russian.
+`docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
+`docs/russian-style.md`, `docs/ukrainian-style.md` and `docs/japanese-style.md` are
+the briefs for French, Swahili, Vietnamese, Korean, (Brazilian) Portuguese,
+Amharic, Hindi, Russian, Ukrainian and Japanese. `docs/hindi-terms.md` and
+`docs/russian-terms.md` are the Hindi and Russian glossaries, Genesis to
+Revelation.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go

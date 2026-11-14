@@ -75,6 +75,16 @@
           "L": "चेला अपने गुरु से बड़ा नहीं, और न दास अपने स्वामी से।",
           "B": "कोई चेला अपने गुरु से बढ़कर नहीं होता, और न कोई दास अपने मालिक से।",
           "R": "चेले अपने गुरु से ज़्यादा बड़े नहीं होते। दास अपने मालिक से ज़्यादा बड़े नहीं होते।"
+        },
+        "uk": {
+          "L": "Немає учня вищого за вчителя, ані раба вищого за свого пана.",
+          "B": "Жоден учень не вищий за вчителя, і жоден раб не вищий за свого пана.",
+          "R": "Учні не важливіші за свого вчителя. Раби не важливіші за свого пана."
+        },
+        "ja": {
+          "L": "弟子は先生にまさる者ではなく、奴隷も自分の主人にまさる者ではない。",
+          "B": "弟子が先生より上に立つことはなく、しもべが主人より上に立つこともない。",
+          "R": "弟子は先生より偉くはない。しもべも主人より偉くはない。"
         }
       },
       "decisions": [
@@ -469,6 +479,105 @@
           "reason": "The proverb is about rank, and a slave was owned by his master (meaning decision m2); the Russian style guide keeps \"раб\" at every level, so Russian differs from the English here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40010024011",
+            "n40010024012"
+          ],
+          "choice": "no gender spans in this passage where the English Literal has them (\"свого пана\", \"кожен, хто\", \"людина\")",
+          "alternatives": [],
+          "reason": "The Ukrainian reflexive \"свій\", the generic \"кожен, хто\" and \"людина\" already include men and women, so the setting has nothing to change in 10:24-42.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010024008",
+            "n40010024011"
+          ],
+          "choice": "\"раб\" and \"пан\" at every level, where the English Balanced and Readable say \"servant\" and \"master\"",
+          "alternatives": [
+            "\"слуга\" and \"господар\""
+          ],
+          "reason": "The Ukrainian key-term table keeps \"раб\" for doulos; \"пан\" is the master of a slave, kept apart from \"Господь\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010024008"
+          ],
+          "choice": "\"奴隷\" (L); \"しもべ\" (B, R)",
+          "alternatives": [
+            "\"僕\" in kanji"
+          ],
+          "reason": "As the English does, Literal keeps the word for one who is owned and Balanced and Readable say servant; the meaning decision (m2) keeps the sense of belonging wholly to a master.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40010024012"
+          ],
+          "choice": "\"自分の主人\" with no gender span; likewise \"人々\", \"その人\", \"人\" and \"自分\" through 10:24-42",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "The English needs gender spans for its pronouns (their/his, them/him, people/men). Japanese \"自分\", \"その人\" and \"人々\" are already inclusive, so no span is needed anywhere in this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-3",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010024003"
+          ],
+          "choice": "\"弟子\" and \"先生\" at Readable",
+          "alternatives": [
+            "\"生徒\" (student), as the English Readable says"
+          ],
+          "reason": "Readable keeps \"弟子\" as everywhere in the Gospels; it is an everyday word for someone who learns from a master, and the saying is about Jesus's own disciples.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -552,6 +661,16 @@
           "L": "चेले के लिए इतना काफ़ी है कि वह अपने गुरु जैसा हो जाए, और दास अपने स्वामी जैसा।",
           "B": "चेले के लिए इतना ही काफ़ी है कि वह अपने गुरु के समान बन जाए, और दास अपने मालिक के समान।",
           "R": "चेलों को इसी में संतुष्ट रहना चाहिए कि वे अपने गुरु जैसे बन जाएँ। दासों को इसी में संतुष्ट रहना चाहिए कि वे अपने मालिक जैसे बन जाएँ।"
+        },
+        "uk": {
+          "L": "Досить учневі, щоб став він, як його вчитель, і рабові — як його пан.",
+          "B": "Досить того, щоб учень став як його вчитель, а раб — як його пан.",
+          "R": "Учні мають бути задоволені, якщо з ними буде те саме, що з їхнім учителем. Раби мають бути задоволені, якщо з ними буде те саме, що з їхнім паном."
+        },
+        "ja": {
+          "L": "弟子は自分の先生のようになれば[それで]十分であり、奴隷は自分の主人のようになれば[十分である]。",
+          "B": "弟子は先生のようになれば、それで十分であり、しもべは主人のようになれば、それで十分である。",
+          "R": "弟子は、先生と同じようになれば、それで満足すべきだ。しもべも、主人と同じようになれば、それで満足すべきだ。"
         }
       },
       "decisions": [
@@ -706,6 +825,16 @@
           "L": "यदि उन्होंने घर के स्वामी को बालज़बूल कहा, तो उसके घरवालों को और कितना अधिक [कहेंगे]!",
           "B": "यदि उन्होंने घर के मुखिया को बालज़बूल कहा है, तो उसके घर के लोगों का वे और कितना अधिक अपमान करेंगे!",
           "R": "लोगों ने घर के मुखिया को बालज़बूल, यानी दुष्टात्माओं का सरदार, कहा है। तो वे उसके परिवार के बाक़ी लोगों का अपमान करने में और भी जल्दी करेंगे।"
+        },
+        "uk": {
+          "L": "Якщо господаря дому назвали Веельзевулом, то наскільки більше — його домашніх!",
+          "B": "Якщо господаря дому назвали Веельзевулом, то наскільки більше ображатимуть його домашніх!",
+          "R": "Люди назвали господаря дому Веельзевулом, володарем бісів. Тож тим більше вони ображатимуть решту його родини."
+        },
+        "ja": {
+          "L": "もし彼らが家の主人をベルゼブルと呼んだのなら、その家の者たちは、なおさら[そう呼ばれる]であろう。",
+          "B": "人々が家の主人をベルゼブルと呼んだのなら、その家の者たちは、なおさらひどくののしられるであろう。",
+          "R": "人々は家の主人のことを、悪霊のかしらベルゼブルと呼んだ。だから、その家のほかの家族は、もっとひどい悪口を言われるだろう。"
         }
       },
       "decisions": [
@@ -971,6 +1100,27 @@
           "reason": "The traditional Russian Bible form of the name, close to the Greek; \"Вельзевул\" is the form of later literature.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010025020"
+          ],
+          "choice": "\"Веельзевул\"",
+          "alternatives": [
+            "\"Вельзевул\""
+          ],
+          "reason": "The Ukrainian form follows the Greek Beelzeboul with both vowels of Baal; it is a name for Satan, as Readable explains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1054,6 +1204,16 @@
           "L": "इसलिए उनसे न डरो; क्योंकि ऐसा कुछ भी ढका हुआ नहीं जो प्रकट न किया जाएगा, और [कुछ भी] छिपा हुआ नहीं जिसका पता न चलेगा।",
           "B": "इसलिए उनसे डरो मत। जो कुछ अभी ढका है, वह सब खोल दिया जाएगा, और हर भेद सामने आ जाएगा।",
           "R": "इसलिए उन लोगों से मत डरो। जो कुछ अभी छिपा है, वह सब दिखाया जाएगा। हर भेद खुल जाएगा।"
+        },
+        "uk": {
+          "L": "Тож не бійтеся їх; бо немає нічого покритого, що не відкриється, і таємного, що не стане відомим.",
+          "B": "Тож не бійтеся їх. Усе, що тепер приховане, буде відкрите, і кожна таємниця вийде на світло.",
+          "R": "Тож не бійтеся тих людей. Усе, що тепер сховане, буде показане. Кожна таємниця стане відомою."
+        },
+        "ja": {
+          "L": "だから、彼らを恐れてはならない。覆われているもので現されないものはなく、隠されているもので知られないものはないからである。",
+          "B": "だから、彼らを恐れてはならない。今覆われているものはすべて現され、隠されているものはすべて知られるようになる。",
+          "R": "だから、あの人たちをこわがってはいけない。今かくされているものは、みな明らかにされる。秘密は、みな知られるようになる。"
         }
       },
       "decisions": [
@@ -1119,6 +1279,27 @@
           "choice": "plural_you spans on the verbs and pronouns addressed to the Twelve: tengan|tengáis",
           "alternatives": [],
           "reason": "Spanish has two plural forms of \"you\", Latin American \"ustedes\" and Peninsular \"vosotros\"; the setting chooses between them. English has no such choice, so these spans have no English counterpart. The same throughout the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010026003"
+          ],
+          "choice": "\"恐れてはならない\" (L, B); \"こわがってはいけない\" (R), the same at 10:26, 28 and 31",
+          "alternatives": [
+            "\"恐れるな\""
+          ],
+          "reason": "The command comes three times in these verses (m2), so Japanese keeps one form for it. \"恐れるな\" is curt and old-fashioned; \"恐れてはならない\" is a firm plain command, and Readable uses the everyday \"こわがる\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1208,6 +1389,16 @@
           "L": "जो मैं तुमसे अँधेरे में कहता हूँ, उसे उजाले में कहो; और जो तुम कान में सुनते हो, उसका छतों पर प्रचार करो।",
           "B": "जो बातें मैं तुमसे अँधेरे में कहता हूँ, उन्हें तुम खुले में कहना; और जो बातें तुम फुसफुसाहट में सुनते हो, उनका छतों पर से प्रचार करना।",
           "R": "मैं अभी तुम्हें अकेले में बातें बता रहा हूँ। उन्हें सबके सामने खुलकर बताना। जो तुम मुझसे धीरे से सुनते हो, उसे छतों पर से पुकारकर कहना।"
+        },
+        "uk": {
+          "L": "Що кажу вам у темряві, скажіть у світлі; і що на вухо чуєте, проповідуйте на дахах.",
+          "B": "Що {{deity_pronoun:я|Я}} кажу вам у темряві, кажіть при світлі; що чуєте пошепки, проголошуйте з дахів.",
+          "R": "Тепер {{deity_pronoun:я|Я}} кажу вам це наодинці. А ви розповідайте це відкрито всім. Що чуєте від {{deity_pronoun:мене|Мене}} пошепки, кричіть з дахів."
+        },
+        "ja": {
+          "L": "わたしが暗やみの中であなたがたに言うことを、光の中で言いなさい。そして耳もとで聞くことを、屋根の上で宣べ伝えなさい。",
+          "B": "わたしが暗い所であなたがたに話すことを、明るい所で語りなさい。耳もとでささやかれて聞くことを、屋根の上から宣べ伝えなさい。",
+          "R": "わたしは今、あなたたちだけにこっそり話している。それを、みんなにはっきり話しなさい。わたしから小さな声で聞いたことを、屋根の上から大声で知らせなさい。"
         }
       },
       "decisions": [
@@ -1494,6 +1685,16 @@
           "L": "और उनसे मत डरो जो शरीर को मार डालते हैं पर प्राण को मार नहीं सकते; बल्कि उन्हीं से डरो जो प्राण और शरीर दोनों को गेहन्ना में नष्ट कर सकते हैं।",
           "B": "जो शरीर को मार डालते हैं, उनमें प्राण को मारने की शक्ति नहीं, इसलिए उनसे मत डरो। बल्कि उनसे डरो जो प्राण और शरीर दोनों को नरक में नष्ट कर सकते हैं।",
           "R": "लोगों से मत डरो। वे तुम्हारे शरीर को मार सकते हैं, पर तुम्हारी आत्मा को नहीं मार सकते। तुम्हें परमेश्वर से डरना चाहिए। वे तुम्हारे शरीर और आत्मा दोनों को नरक में नष्ट कर सकते हैं।"
+        },
+        "uk": {
+          "L": "І не бійтеся тих, що вбивають тіло, а душі вбити не можуть; бійтеся ж радше {{deity_pronoun:того|Того}}, хто може і душу, і тіло знищити в геєні.",
+          "B": "Ті, хто вбиває тіло, не мають сили вбити душу, тож не бійтеся їх. Бійтеся радше {{deity_pronoun:того|Того}}, хто може знищити і душу, і тіло в геєні.",
+          "R": "Не бійтеся людей. Вони можуть убити ваше тіло, але не можуть убити вашу душу. Боятися треба Бога. Він може знищити в пеклі і тіло, і душу."
+        },
+        "ja": {
+          "L": "そして、体を殺しても魂を殺すことのできない者たちを恐れてはならない。むしろ、魂も体もゲヘナで滅ぼすことのできる方を恐れなさい。",
+          "B": "体は殺しても魂を殺すことのできない者たちを、恐れてはならない。むしろ、魂も体もゲヘナで滅ぼすことのできる方を恐れなさい。",
+          "R": "人をこわがってはいけない。人は、あなたたちの体を殺すことはできても、魂を殺すことはできない。あなたたちが恐れなければならないのは、神だ。神は、体も魂も地獄で滅ぼすことがおできになる。"
         }
       },
       "decisions": [
@@ -1901,6 +2102,46 @@
           "reason": "Key term: Literal and Balanced keep the place name of final judgment, which Russian readers know from the Bible; Readable says \"ад\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010028026"
+          ],
+          "choice": "\"геєна\" (L, B); \"пекло\" (R)",
+          "alternatives": [
+            "\"пекло\" at Balanced, as the English has \"hell\""
+          ],
+          "reason": "The settled Ukrainian term: Balanced keeps the name of the place of final judgment, which Ukrainian readers know; Readable uses the everyday word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010028026"
+          ],
+          "choice": "\"ゲヘナ\" (L, B); \"地獄\" (R)",
+          "alternatives": [
+            "\"地獄\" at Balanced, as the English Balanced says hell"
+          ],
+          "reason": "The Japanese style guide keeps the name \"ゲヘナ\" at Literal and Balanced and uses \"地獄\" at Readable, as in Mark; the meaning decision (m3) says what the name means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1973,6 +2214,16 @@
           "L": "क्या दो गौरैयाँ एक असारियोन में नहीं बिकतीं?",
           "B": "दो गौरैयाँ {{units:थोड़े-से पैसों|एक असारियोन}} में बिकती हैं, है न?",
           "R": "दो गौरैयाँ बस {{units:थोड़े-से पैसों|एक असारियोन}} में बिक जाती हैं।"
+        },
+        "uk": {
+          "L": "Хіба не продаються два горобці за асарій?",
+          "B": "Хіба не продають двох горобців за {{units:копійку|один асарій}}?",
+          "R": "Двох горобців продають лише за {{units:копійку|один асарій}}."
+        },
+        "ja": {
+          "L": "二羽のすずめが一アサリオンで売られているではないか？",
+          "B": "すずめ二羽は{{units:わずかなお金|一アサリオン}}で売られているではないか？",
+          "R": "すずめは、{{units:わずかなお金|一アサリオン}}で二羽も買える。"
         }
       },
       "decisions": [
@@ -2223,6 +2474,45 @@
           "reason": "The coin was worth about a sixteenth of a day's wage, too little to give as a wage. As the English uses \"a penny\", Russian gives the smallest coin, which also says \"almost nothing\"; the original coin is the alternative. Literal keeps the coin.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40010029004"
+          ],
+          "choice": "{{units:копійку|один асарій}}",
+          "alternatives": [],
+          "reason": "A coin has no metric form; the setting gives a Ukrainian small coin by default and the Roman coin as the alternative, as the style guide settles. Literal keeps the coin.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40010029004"
+          ],
+          "choice": "{{units:わずかなお金|一アサリオン}} (B, R); \"一アサリオン\" (L)",
+          "alternatives": [
+            "\"一文\", an old Japanese coin",
+            "a sum in yen"
+          ],
+          "reason": "The English uses a small modern coin by default. Japanese has no such coin that reads naturally here, so the default says what the point is, a tiny sum (m1), with the original coin as the alternative. Literal keeps the coin.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2303,6 +2593,16 @@
           "L": "और उनमें से एक भी तुम्हारे पिता के बिना भूमि पर नहीं गिरेगी।",
           "B": "फिर भी उनमें से एक भी तुम्हारे पिता के जाने बिना ज़मीन पर नहीं गिरती।",
           "R": "पर उनमें से एक भी तब तक ज़मीन पर गिरकर नहीं मरती जब तक तुम्हारे पिता इसकी अनुमति न दें।"
+        },
+        "uk": {
+          "L": "І жоден з них не впаде на землю без вашого Отця.",
+          "B": "Та жоден з них не впаде на землю без волі вашого Отця.",
+          "R": "Але жоден з них не впаде на землю й не загине, якщо ваш Отець цього не дозволить."
+        },
+        "ja": {
+          "L": "そして、そのうちの一羽も、あなたがたの父[の許し]なしに地に落ちることはない。",
+          "B": "しかし、その一羽さえ、あなたがたの父のお許しなしに地に落ちることはない。",
+          "R": "でも、その一羽でさえ、あなたたちの父がお許しにならなければ、地面に落ちて死ぬことはない。"
         }
       },
       "decisions": [
@@ -2429,6 +2729,26 @@
           "reason": "\"Apart from your Father\" means without his will and care (meaning decision); Korean \"아버지 없이는\" alone would say the Father is absent, so Literal brackets \"뜻\" and Balanced and Readable say it with the verb, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40010029015"
+          ],
+          "choice": "\"父[の許し]なしに\" (L); \"父のお許しなしに\" (B)",
+          "alternatives": [
+            "\"父なしに\""
+          ],
+          "reason": "\"父なしに\" would suggest a bird without a father. Japanese needs a noun, and the meaning decision (m1) says the Father's will is meant; Literal brackets the supplied word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2506,6 +2826,16 @@
           "L": "पर तुम्हारे सिर के बाल भी सब गिने हुए हैं।",
           "B": "और तुम्हारी बात करें तो, तुम्हारे सिर का एक-एक बाल भी गिना हुआ है।",
           "R": "परमेश्वर तो यह भी जानते हैं कि तुम्हारे सिर पर कितने बाल हैं।"
+        },
+        "uk": {
+          "L": "А у вас і волосся на голові все пораховане.",
+          "B": "А у вас навіть волосся на голові все пораховане.",
+          "R": "Бог навіть знає, скільки у вас волосин на голові."
+        },
+        "ja": {
+          "L": "また、あなたがたの頭の髪の毛さえも、すべて数えられている。",
+          "B": "あなたがたについては、頭の髪の毛までも一本残らず数えられている。",
+          "R": "神は、あなたたちの髪の毛が何本あるかまで知っておられる。"
         }
       },
       "decisions": [
@@ -2638,6 +2968,16 @@
           "L": "इसलिए मत डरो; तुम बहुत-सी गौरैयों से बढ़कर हो।",
           "B": "इसलिए डरो मत। तुम गौरैयों के पूरे झुंड से भी ज़्यादा मूल्यवान हो।",
           "R": "इसलिए मत डरो। परमेश्वर की नज़र में तुम बहुत-सी गौरैयों से कहीं ज़्यादा क़ीमती हो।"
+        },
+        "uk": {
+          "L": "Тож не бійтеся: ви вартіші за багатьох горобців.",
+          "B": "Тож не бійтеся. Ви вартіші за цілу зграю горобців.",
+          "R": "Тож не бійтеся. Для Бога ви набагато цінніші, ніж багато горобців."
+        },
+        "ja": {
+          "L": "だから、恐れてはならない。あなたがたは多くのすずめよりもまさっている。",
+          "B": "だから、恐れてはならない。あなたがたは、すずめの群れよりもはるかに価値がある。",
+          "R": "だから、こわがってはいけない。神にとって、あなたたちはたくさんのすずめより、ずっと大切なのだ。"
         }
       },
       "decisions": [
@@ -2765,6 +3105,16 @@
           "L": "इसलिए जो कोई मनुष्यों के सामने मुझे मान लेगा, उसे मैं भी अपने पिता के सामने, जो स्वर्ग में हैं, मान लूँगा;",
           "B": "इसलिए जो कोई दूसरों के सामने खुलकर मुझे स्वीकार करेगा, उसे मैं भी अपने पिता के सामने, जो स्वर्ग में हैं, स्वीकार करूँगा।",
           "R": "कुछ लोग खुलकर कहेंगे कि वे मेरे चेले हैं। मैं स्वर्ग में अपने पिता से कहूँगा कि वे मेरे हैं।"
+        },
+        "uk": {
+          "L": "Отже, кожного, хто визнає {{deity_pronoun:мене|Мене}} перед людьми, визнаю і {{deity_pronoun:я|Я}} перед {{deity_pronoun:моїм|Моїм}} Отцем, що на небесах;",
+          "B": "Отож кожного, хто відкрито визнає {{deity_pronoun:мене|Мене}} перед іншими, визнаю і {{deity_pronoun:я|Я}} перед {{deity_pronoun:моїм|Моїм}} Отцем Небесним.",
+          "R": "Деякі люди відкрито скажуть, що вони {{deity_pronoun:мої|Мої}} учні. Тоді {{deity_pronoun:я|Я}} скажу {{deity_pronoun:моєму|Моєму}} Отцеві на небі, що вони належать {{deity_pronoun:мені|Мені}}."
+        },
+        "ja": {
+          "L": "だから、人々の前でわたしを言い表す者はだれでも、わたしもまた、天におられるわたしの父の前で、その人を言い表すであろう。",
+          "B": "だから、人々の前でわたしを公に認める者はだれでも、わたしも天におられるわたしの父の前で、その人を認める。",
+          "R": "人々の前で、自分はわたしに従う者だとはっきり言う人がいる。わたしは、天におられるわたしの父に、その人はわたしのものだと言う。"
         }
       },
       "decisions": [
@@ -3046,6 +3396,26 @@
           "reason": "Literal keeps the Greek word, to declare openly; Balanced says it in everyday Russian, as \"исповедовать\" now often means making confession.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010032004"
+          ],
+          "choice": "\"言い表す\" (L); \"公に認める\" (B)",
+          "alternatives": [
+            "\"告白する\""
+          ],
+          "reason": "The verb means to declare openly that one stands with Jesus (m1). \"告白する\" suggests confessing a fault or a love; \"言い表す\" is the word for declaring one's faith, and Balanced says plainly that the declaration is public.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3131,6 +3501,16 @@
           "L": "पर जो कोई मनुष्यों के सामने मेरा इन्कार करेगा, उसका मैं भी अपने पिता के सामने, जो स्वर्ग में हैं, इन्कार करूँगा।",
           "B": "पर जो कोई लोगों के सामने मेरा इन्कार करेगा, उसका इन्कार मैं भी अपने पिता के सामने करूँगा, जो स्वर्ग में हैं।",
           "R": "पर कुछ लोग दूसरों के सामने कहेंगे कि वे मुझे नहीं जानते। मैं स्वर्ग में अपने पिता से कहूँगा कि मैं उन्हें नहीं जानता।"
+        },
+        "uk": {
+          "L": "а хто зречеться {{deity_pronoun:мене|Мене}} перед людьми, зречуся і {{deity_pronoun:я|Я}} його перед {{deity_pronoun:моїм|Моїм}} Отцем, що на небесах.",
+          "B": "А хто зречеться {{deity_pronoun:мене|Мене}} перед людьми, того і {{deity_pronoun:я|Я}} зречуся перед {{deity_pronoun:моїм|Моїм}} Отцем Небесним.",
+          "R": "Але деякі люди скажуть перед іншими, що не знають {{deity_pronoun:мене|Мене}}. Тоді {{deity_pronoun:я|Я}} скажу {{deity_pronoun:моєму|Моєму}} Отцеві на небі, що не знаю їх."
+        },
+        "ja": {
+          "L": "しかし、人々の前でわたしを否む者はだれでも、わたしもまた、天におられるわたしの父の前で、その人を否むであろう。",
+          "B": "しかし、人々の前でわたしを知らないと言う者は、わたしも天におられるわたしの父の前で、その人を知らないと言う。",
+          "R": "しかし、人々の前で、わたしなど知らないと言う人もいる。わたしは、天におられるわたしの父に、そんな人は知らないと言う。"
         }
       },
       "decisions": [
@@ -3317,6 +3697,26 @@
           "reason": "Russian can put \"от того\" first and keep the active verb, so Balanced has no need of the English passive.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010033004"
+          ],
+          "choice": "\"否む\" (L); \"知らないと言う\" (B, R)",
+          "alternatives": [
+            "\"否定する\""
+          ],
+          "reason": "To deny Jesus is to say one has nothing to do with him (m1), as Peter does in 26:70-74. Balanced and Readable say it with the everyday words for disowning someone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3399,6 +3799,16 @@
           "L": "यह मत समझो कि मैं पृथ्वी पर शान्ति लाने आया; मैं शान्ति लाने नहीं, पर तलवार लाने आया हूँ।",
           "B": "यह मत सोचो कि मेरा आना पृथ्वी पर शान्ति लाने के लिए है। मैं शान्ति नहीं, तलवार लाने आया हूँ।",
           "R": "यह मत सोचो कि मैं धरती पर सबके लिए शान्ति लाने आया हूँ। मैं शान्ति लाने नहीं आया। मैं ऐसी तलवार लाने आया हूँ जो लोगों को अलग-अलग कर देती है।"
+        },
+        "uk": {
+          "L": "Не думайте, що {{deity_pronoun:я|Я}} прийшов принести мир на землю; не мир прийшов {{deity_pronoun:я|Я}} принести, а меч.",
+          "B": "Не думайте, що {{deity_pronoun:я|Я}} прийшов принести мир на землю. Я прийшов принести не мир, а меч.",
+          "R": "Не думайте, що {{deity_pronoun:я|Я}} прийшов принести мир усім на землі. Я прийшов не мир принести. Я приніс меч, який розділяє людей."
+        },
+        "ja": {
+          "L": "わたしが地上に平和をもたらすために来たと思ってはならない。平和をもたらすためではなく、剣をもたらすために来たのである。",
+          "B": "わたしが来たのは地上に平和をもたらすためだ、と考えてはならない。わたしが来たのは、平和ではなく、剣をもたらすためである。",
+          "R": "わたしが、地上のすべての人に平和を与えるために来たと思ってはいけない。わたしは平和を与えるために来たのではない。人々を分ける剣を与えるために来たのだ。"
         }
       },
       "decisions": [
@@ -3653,6 +4063,16 @@
           "L": "क्योंकि मैं मनुष्य को उसके पिता से, और बेटी को उसकी माँ से, और बहू को उसकी सास से अलग करने आया हूँ; \\v 36 और मनुष्य के शत्रु उसके घर के ही लोग [होंगे]।",
           "B": "मेरे आने से बेटा पिता के विरुद्ध, बेटी माँ के विरुद्ध, और बहू सास के विरुद्ध हो जाएगी। \\v 36 मनुष्य के शत्रु उसके अपने घर के लोग होंगे।",
           "R": "मैं बेटों को उनके पिताओं के ख़िलाफ़ और बेटियों को उनकी माँओं के ख़िलाफ़ करने आया हूँ। मैं बहुओं को उनकी सासों के ख़िलाफ़ करने आया हूँ। \\v 36 इंसान के दुश्मन उसके अपने ही परिवार के लोग होंगे।"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:я|Я}} прийшов розлучити людину з її батьком, і дочку з її матірʼю, і невістку з її свекрухою; \\v 36 і вороги людини — її домашні.",
+          "B": "Я прийшов поставити сина проти батька, дочку проти матері, невістку проти свекрухи. \\v 36 Вороги людини — її власні домашні.",
+          "R": "Я прийшов, щоб сини пішли проти своїх батьків, а дочки — проти своїх матерів. Я прийшов, щоб невістки пішли проти своїх свекрух. \\v 36 Ворогами людини будуть люди з її власної родини."
+        },
+        "ja": {
+          "L": "わたしは、人をその父に、娘をその母に、嫁をそのしゅうとめに逆らわせるために来たからである。\\v 36 そして、人の敵はその家の者たちである。",
+          "B": "わたしが来たのは、息子を父に、娘を母に、嫁をしゅうとめに逆らわせるためである。\\v 36 自分の家の者たちが、自分の敵となる。",
+          "R": "わたしは、息子が父親に、娘が母親にさからうようにするために来た。嫁がしゅうとめにさからうようにするために来た。\\v 36 自分の家族が、自分の敵になるのだ。"
         }
       },
       "decisions": [
@@ -3966,6 +4386,16 @@
           "L": "जो पिता या माता को मुझसे अधिक प्रेम करता है, वह मेरे योग्य नहीं; और जो बेटे या बेटी को मुझसे अधिक प्रेम करता है, वह मेरे योग्य नहीं;",
           "B": "जो पिता या माता के प्रेम को मुझसे ऊपर रखता है, वह मेरे योग्य नहीं, और जो बेटे या बेटी के प्रेम को मुझसे ऊपर रखता है, वह मेरे योग्य नहीं।",
           "R": "जो लोग अपने पिता या माँ से मुझसे ज़्यादा प्रेम करते हैं, वे मेरे चेले होने के लायक़ नहीं हैं। जो लोग अपने बेटे या बेटी से मुझसे ज़्यादा प्रेम करते हैं, वे मेरे चेले होने के लायक़ नहीं हैं।"
+        },
+        "uk": {
+          "L": "Хто любить батька чи матір більше, ніж {{deity_pronoun:мене|Мене}}, не вартий {{deity_pronoun:мене|Мене}}; і хто любить сина чи дочку більше, ніж {{deity_pronoun:мене|Мене}}, не вартий {{deity_pronoun:мене|Мене}};",
+          "B": "Хто ставить любов до батька чи матері вище, ніж до {{deity_pronoun:мене|Мене}}, той не вартий {{deity_pronoun:мене|Мене}}; і хто ставить любов до сина чи дочки вище, ніж до {{deity_pronoun:мене|Мене}}, той не вартий {{deity_pronoun:мене|Мене}}.",
+          "R": "Хто любить свого батька чи матір більше, ніж {{deity_pronoun:мене|Мене}}, той не гідний бути {{deity_pronoun:моїм|Моїм}} учнем. Хто любить свого сина чи дочку більше, ніж {{deity_pronoun:мене|Мене}}, той не гідний бути {{deity_pronoun:моїм|Моїм}} учнем."
+        },
+        "ja": {
+          "L": "わたし以上に父や母を愛する者は、わたしにふさわしくない。また、わたし以上に息子や娘を愛する者は、わたしにふさわしくない。",
+          "B": "わたしよりも父や母を愛する者は、わたしにふさわしくない。わたしよりも息子や娘を愛する者も、わたしにふさわしくない。",
+          "R": "わたしよりも自分の父や母を愛する人は、わたしの弟子にふさわしくない。わたしよりも自分の息子や娘を愛する人も、わたしの弟子にふさわしくない。"
         }
       },
       "decisions": [
@@ -4092,6 +4522,27 @@
           "reason": "ብቁ is used for this Greek word through the chapter (10:11-13, 10:37-38). Readable says what it means, that such a person does not deserve to be Jesus's disciple, keeping ደቀ መዛሙርት where the English Readable says 'followers'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010037011"
+          ],
+          "choice": "\"わたしにふさわしくない\" (L, B); \"わたしの弟子にふさわしくない\" (R), the same in 10:37-38",
+          "alternatives": [
+            "\"わたしに値しない\""
+          ],
+          "reason": "The word is about who fits and belongs with Jesus, not about merit (m1). \"ふさわしい\" says fitting; Readable says what the fitting is for, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4174,6 +4625,16 @@
           "L": "और जो अपना क्रूस नहीं उठाता और मेरे पीछे नहीं चलता, वह मेरे योग्य नहीं।",
           "B": "जो अपना क्रूस उठाकर मेरे पीछे चलने से इन्कार करता है, वह मेरे योग्य नहीं।",
           "R": "जो लोग अपना क्रूस उठाकर मेरे पीछे नहीं आते, वे मेरे चेले होने के लायक़ नहीं हैं।"
+        },
+        "uk": {
+          "L": "і хто не бере свого хреста й не йде слідом за {{deity_pronoun:мною|Мною}}, не вартий {{deity_pronoun:мене|Мене}}.",
+          "B": "Хто не хоче взяти свій хрест і йти за {{deity_pronoun:мною|Мною}}, той не вартий {{deity_pronoun:мене|Мене}}.",
+          "R": "Хто не хоче нести свій хрест і йти за {{deity_pronoun:мною|Мною}}, той не гідний бути {{deity_pronoun:моїм|Моїм}} учнем."
+        },
+        "ja": {
+          "L": "また、自分の十字架を取ってわたしの後に従わない者は、わたしにふさわしくない。",
+          "B": "自分の十字架を担ってわたしの後について来ない者は、わたしにふさわしくない。",
+          "R": "自分の十字架を担いでわたしについて来ない人は、わたしの弟子にふさわしくない。"
         }
       },
       "decisions": [
@@ -4299,6 +4760,27 @@
           "reason": "Amharic speaks of anyone in general with the ordinary singular (ሰው, the verb and suffix of 'he'), which is heard as any person, man or woman, and ሰዎች already means people of both sexes; there is no second wording for the setting to switch to, so the Amharic has no gender span here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010038004"
+          ],
+          "choice": "\"十字架を取って\" (L); \"十字架を担って\" (B); \"十字架を担いで\" (R)",
+          "alternatives": [
+            "\"十字架を負って\""
+          ],
+          "reason": "Literal keeps the plain verb \"take\". Balanced and Readable picture the condemned man carrying the crossbeam (m1), with the verb Mark's Japanese uses for the same saying (Mark 8:34).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4383,6 +4865,16 @@
           "L": "जिसने अपना प्राण पाया है वह उसे खोएगा, और जिसने मेरे कारण अपना प्राण खोया है वह उसे पाएगा।",
           "B": "जो अपना जीवन बचाकर रखते हैं, वे उसे खो देंगे, और जो मेरे लिए अपना जीवन खो देते हैं, वे उसे पाएँगे।",
           "R": "जो लोग अपनी ज़िंदगी अपने लिए बचाकर रखना चाहते हैं, वे उसे खो देंगे। पर जो लोग मेरे लिए अपनी ज़िंदगी दे देते हैं, वे उसे पा लेंगे।"
+        },
+        "uk": {
+          "L": "Хто знайшов своє життя, втратить його, а хто втратив своє життя через {{deity_pronoun:мене|Мене}}, знайде його.",
+          "B": "Хто зберігає своє життя, той його втратить, а хто втрачає своє життя заради {{deity_pronoun:мене|Мене}}, той його знайде.",
+          "R": "Хто намагається зберегти своє життя для себе, той його втратить. А хто віддає своє життя заради {{deity_pronoun:мене|Мене}}, той його знайде."
+        },
+        "ja": {
+          "L": "自分の命を見いだした者はそれを失い、わたしのために自分の命を失った者はそれを見いだす。",
+          "B": "自分の命を守ろうとする者はそれを失い、わたしのために命を失う者は、かえってそれを見いだす。",
+          "R": "自分のために命を守ろうとする人は、その命を失う。しかし、わたしのために命を手放す人は、その命を見いだす。"
         }
       },
       "decisions": [
@@ -4550,6 +5042,26 @@
           "reason": "The word means one's life and self (meaning note); Synodal \"душа\" here would read as the soul alone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010039002"
+          ],
+          "choice": "\"見いだした\" (L); \"守ろうとする\" (B, R) for the first \"find\"; \"見いだす\" for the second at every level, as in 16:25",
+          "alternatives": [
+            "\"見いだす\" at every level"
+          ],
+          "reason": "The first \"find\" means to keep one's life safe by turning back from Jesus (m2). Balanced and Readable say so, and keep \"見いだす\" for the second, so the play on finding and losing remains. The saying returns in 16:25, where the same Japanese is used for the same words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4630,6 +5142,16 @@
           "L": "जो तुम्हें ग्रहण करता है वह मुझे ग्रहण करता है, और जो मुझे ग्रहण करता है वह मेरे भेजनेवाले को ग्रहण करता है।",
           "B": "तुम्हारा स्वागत करना मेरा स्वागत करना है, और मेरा स्वागत करना उनका स्वागत करना है जिन्होंने मुझे भेजा है।",
           "R": "जब लोग तुम्हारा स्वागत करते हैं, तो वे मेरा स्वागत करते हैं। और जब वे मेरा स्वागत करते हैं, तो वे परमेश्वर का स्वागत करते हैं, जिन्होंने मुझे भेजा है।"
+        },
+        "uk": {
+          "L": "Хто приймає вас, {{deity_pronoun:мене|Мене}} приймає, а хто {{deity_pronoun:мене|Мене}} приймає, приймає {{deity_pronoun:того|Того}}, хто послав {{deity_pronoun:мене|Мене}}.",
+          "B": "Хто приймає вас, той приймає {{deity_pronoun:мене|Мене}}, а хто приймає {{deity_pronoun:мене|Мене}}, той приймає {{deity_pronoun:того|Того}}, хто {{deity_pronoun:мене|Мене}} послав.",
+          "R": "Коли люди приймають вас, вони приймають {{deity_pronoun:мене|Мене}}. А коли приймають {{deity_pronoun:мене|Мене}}, вони приймають Бога, який {{deity_pronoun:мене|Мене}} послав."
+        },
+        "ja": {
+          "L": "あなたがたを受け入れる者はわたしを受け入れ、わたしを受け入れる者は、わたしを遣わされた方を受け入れるのである。",
+          "B": "あなたがたを迎え入れる者は、わたしを迎え入れるのであり、わたしを迎え入れる者は、わたしを遣わされた方を迎え入れるのである。",
+          "R": "だれかがあなたたちを迎え入れるなら、その人はわたしを迎え入れるのだ。そして、わたしを迎え入れる人は、わたしを遣わされた神を迎え入れるのだ。"
         }
       },
       "decisions": [
@@ -4776,6 +5298,27 @@
           "reason": "The one who sent Jesus is God the Father (meaning decision); Readable names him, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40010040012"
+          ],
+          "choice": "\"わたしを遣わされた方\", with a light respect form",
+          "alternatives": [
+            "\"わたしを遣わした方\""
+          ],
+          "reason": "Jesus speaks plainly, but he speaks of God the Father (m2) with the light respect form, as he does throughout John and Mark in Japanese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4862,6 +5405,16 @@
           "L": "जो भविष्यद्वक्ता को भविष्यद्वक्ता के नाम से ग्रहण करता है, वह भविष्यद्वक्ता का प्रतिफल पाएगा; और जो धर्मी को धर्मी के नाम से ग्रहण करता है, वह धर्मी का प्रतिफल पाएगा।",
           "B": "जो कोई किसी भविष्यद्वक्ता को इसलिए ग्रहण करता है कि वह भविष्यद्वक्ता है, उसे भविष्यद्वक्ता का प्रतिफल मिलेगा; और जो कोई किसी धर्मी व्यक्ति को इसलिए ग्रहण करता है कि वह धर्मी है, उसे धर्मी का प्रतिफल मिलेगा।",
           "R": "जो कोई किसी नबी का स्वागत इसलिए करता है कि वह परमेश्वर की ओर से बोलता है, उसे वही प्रतिफल मिलेगा जो नबी को मिलता है। और जो कोई किसी धर्मी व्यक्ति का स्वागत इसलिए करता है कि वह परमेश्वर के सामने सही जीवन जीता है, उसे वही प्रतिफल मिलेगा जो धर्मी को मिलता है।"
+        },
+        "uk": {
+          "L": "Хто приймає пророка в імʼя пророка, нагороду пророка отримає, і хто приймає праведного в імʼя праведного, нагороду праведного отримає.",
+          "B": "Хто приймає пророка, бо той пророк, отримає нагороду пророка; хто приймає праведника, бо той праведник, отримає нагороду праведника.",
+          "R": "Хто приймає пророка, бо той говорить від Бога, отримає таку саму нагороду, як пророк. І хто приймає праведну людину, бо вона живе правильно перед Богом, отримає таку саму нагороду, як праведник."
+        },
+        "ja": {
+          "L": "預言者を預言者の名のゆえに受け入れる者は預言者の報いを受け、正しい者を正しい者の名のゆえに受け入れる者は正しい者の報いを受ける。",
+          "B": "預言者を、預言者であるという理由で迎え入れる者は、預言者の受ける報いを受け、正しい人を、正しい人であるという理由で迎え入れる者は、正しい人の受ける報いを受ける。",
+          "R": "神の言葉を伝える預言者を、預言者だからという理由で迎え入れる人は、預言者が受けるのと同じ報いを受ける。また、神の前で正しく生きる人を、正しい人だからという理由で迎え入れる人は、正しい人が受けるのと同じ報いを受ける。"
         }
       },
       "decisions": [
@@ -5115,6 +5668,25 @@
           "reason": "Key term: one who speaks for God; Readable adds what the title means, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010041013"
+          ],
+          "choice": "\"正しい者\" (L); \"正しい人\" (B, R)",
+          "alternatives": [
+            "\"義人\""
+          ],
+          "reason": "\"義人\" is a church word many readers do not use. \"正しい者\" keeps the Greek's adjective used as a noun without the brackets the English Literal needs.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5205,6 +5777,16 @@
           "L": "और जो कोई इन छोटों में से एक को चेले के नाम से केवल एक कटोरा ठंडा [पानी] पिलाए, मैं तुमसे सच कहता हूँ, वह अपना प्रतिफल किसी रीति से न खोएगा।\"",
           "B": "और जो कोई इन छोटों में से किसी एक को इसलिए कि वह चेला है, एक कटोरा ठंडा पानी भी पिलाए—मैं तुमसे सच कहता हूँ, वह अपना प्रतिफल कभी नहीं खोएगा।\"",
           "R": "मेरे ये चेले छोटे और मामूली लगते होंगे। पर मान लो कि कोई इनमें से किसी को सिर्फ़ इसलिए एक कटोरा ठंडा पानी देता है कि वह मेरा चेला है। मैं तुमसे सच कहता हूँ, उसे प्रतिफल ज़रूर मिलेगा।\""
+        },
+        "uk": {
+          "L": "І хто напоїть одного з цих малих лише чашею холодної [води] в імʼя учня, істинно кажу вам, не втратить своєї нагороди.»",
+          "B": "І хто дасть одному з цих малих бодай чашу холодної води тому, що той учень, — істинно кажу вам, такий не втратить своєї нагороди.»",
+          "R": "Ці {{deity_pronoun:мої|Мої}} учні можуть здаватися малими й неважливими. Але якщо хтось дасть одному з них хоча б чашку холодної води, бо той — {{deity_pronoun:мій|Мій}} учень, кажу вам правду: така людина неодмінно отримає нагороду.»"
+        },
+        "ja": {
+          "L": "そして、この小さい者たちの一人に、弟子という名のゆえに、冷たい[水]一杯だけでも飲ませる者はだれでも、アーメン、あなたがたに言う、その人は決して自分の報いを失うことはない。」",
+          "B": "また、この小さい者たちの一人に、弟子だからという理由で、冷たい水を一杯でも飲ませる者は、まことに、あなたがたに言っておく、決してその報いを失うことはない。」",
+          "R": "わたしの弟子たちは、小さくてつまらない者に見えるかもしれない。しかし、だれかがその一人に、わたしの弟子だからといって、冷たい水を一杯でも飲ませてくれるとしよう。本当のことを言おう。その人は必ず報いを受ける。」"
         }
       },
       "decisions": [
@@ -5568,6 +6150,27 @@
             "\"Аминь говорю вам\""
           ],
           "reason": "Key term: the solemn opening has the same words throughout the book at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40010042015"
+          ],
+          "choice": "\"アーメン、あなたがたに言う\" (L); \"まことに、あなたがたに言っておく\" (B); \"本当のことを言おう\" (R)",
+          "alternatives": [
+            "\"はっきり言っておく\""
+          ],
+          "reason": "The solemn opening takes the same words through the Gospels in Japanese, as in Mark 9:41; Literal keeps the Hebrew word Jesus used.",
           "uncertain": false,
           "footnote": false
         }

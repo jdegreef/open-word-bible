@@ -74,6 +74,16 @@
           "L": "Если {{deity_pronoun:я|Я}} свидетельствую о себе самом, {{deity_pronoun:моё|Моё}} свидетельство не истинно.",
           "B": "Если {{deity_pronoun:я|Я}} свидетельствую в свою пользу, {{deity_pronoun:моё|Моё}} свидетельство не истинно.",
           "R": "Если {{deity_pronoun:я|Я}} один говорю о себе как свидетель, {{deity_pronoun:моё|Моё}} свидетельство не считается правдивым."
+        },
+        "uk": {
+          "L": "Якщо {{deity_pronoun:я|Я}} свідчу про себе самого, {{deity_pronoun:моє|Моє}} свідчення не правдиве.",
+          "B": "Якщо {{deity_pronoun:я|Я}} свідчу сам за себе, {{deity_pronoun:моє|Моє}} свідчення не правдиве.",
+          "R": "Якщо {{deity_pronoun:я|Я}} єдиний свідок, який говорить про себе, то {{deity_pronoun:моє|Моє}} свідчення не можна вважати правдивим."
+        },
+        "ja": {
+          "L": "もしわたしが自分自身について証ししているなら、わたしの証しは真実ではない。",
+          "B": "もしわたしが自分のために証しするなら、わたしの証しは真実とは認められない。",
+          "R": "もし、わたしについて証ししているのがわたし一人だけなら、その証しは本当のこととは認められない。"
         }
       },
       "alignments": [
@@ -564,6 +574,68 @@
           "reason": "Truth is a key term: \"истина\" at Literal and Balanced, \"правда\" at Readable (style guide, section 6). Readable adds \"не считается\" so that Jesus does not sound as if he were admitting to lying (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005031003",
+            "n43005031007",
+            "n43005031011"
+          ],
+          "choice": "\"свідчити\", \"свідчення\" at every level; \"правдивий\" for alēthēs",
+          "alternatives": [
+            "\"показання\"",
+            "\"істинний\""
+          ],
+          "reason": "The language of a trial runs through verses 31-39 (meaning decision m2), so the same verb and noun are kept throughout. Of testimony, \"правдивий\" says that it holds as evidence (meaning decision m1); \"істина\" is kept for the noun truth.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005031003",
+            "n43005031007"
+          ],
+          "choice": "\"証しする\" and \"証し\" at every level",
+          "alternatives": [],
+          "reason": "The same pair of words for the verb and the noun through 5:31-39, so that the reader can follow the chain of witnesses (meaning decision m2); \"証し\" is the book's word for testimony, and \"証言\" is kept for a witness in court (18:23).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005031011"
+          ],
+          "choice": "\"真実とは認められない\" (B); \"本当のこととは認められない\" (R)",
+          "alternatives": [],
+          "reason": "\"True\" here means valid as evidence (meaning decision m1): \"認められない\" says that a court would not accept it, so that Jesus does not sound as if he admitted to lying. Literal keeps \"真実ではない\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -648,6 +720,16 @@
           "L": "Другой есть свидетельствующий обо {{deity_pronoun:мне|Мне}}, и {{deity_pronoun:я|Я}} знаю, что истинно свидетельство, которое {{deity_pronoun:он|Он}} свидетельствует обо {{deity_pronoun:мне|Мне}}.",
           "B": "Обо {{deity_pronoun:мне|Мне}} свидетельствует другой, и {{deity_pronoun:я|Я}} знаю, что свидетельство, которое {{deity_pronoun:он|Он}} даёт обо {{deity_pronoun:мне|Мне}}, истинно.",
           "R": "Но есть другой, кто свидетельствует обо {{deity_pronoun:мне|Мне}}, — Отец. И {{deity_pronoun:я|Я}} знаю, что то, что {{deity_pronoun:он|Он}} говорит обо {{deity_pronoun:мне|Мне}}, — правда."
+        },
+        "uk": {
+          "L": "Інший є той, хто свідчить про {{deity_pronoun:мене|Мене}}, і {{deity_pronoun:я|Я}} знаю, що правдиве те свідчення, яке {{deity_pronoun:він|Він}} свідчить про {{deity_pronoun:мене|Мене}}.",
+          "B": "Про {{deity_pronoun:мене|Мене}} свідчить хтось інший, і {{deity_pronoun:я|Я}} знаю, що свідчення, яке {{deity_pronoun:він|Він}} дає про {{deity_pronoun:мене|Мене}}, правдиве.",
+          "R": "Але є ще хтось, хто свідчить про {{deity_pronoun:мене|Мене}}: це Отець. І {{deity_pronoun:я|Я}} знаю, що те, що {{deity_pronoun:він|Він}} каже про {{deity_pronoun:мене|Мене}}, — правда."
+        },
+        "ja": {
+          "L": "わたしについて証しする方はほかにいる。そして、その方がわたしについてする証しが真実であることを、わたしは知っている。",
+          "B": "わたしについて証ししておられる方は、ほかにおられる。そして、その方がわたしについてなさる証しは真実であると、わたしは知っている。",
+          "R": "しかし、わたしについて証ししておられる方が、ほかにおられる。それは父だ。父がわたしについてなさる証しは本当だと、わたしは知っている。"
         }
       },
       "alignments": [
@@ -921,6 +1003,25 @@
           "reason": "The other witness is the Father (meaning decision m1), and God spoken of takes honorific forms; Hindi grammar therefore hints at who is meant even where only Readable names him.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43005032001",
+            "n43005032004"
+          ],
+          "choice": "\"おられる\", \"なさる\" (B, R) for the other witness",
+          "alternatives": [],
+          "reason": "The other witness is the Father (meaning decision m1), so Balanced and Readable already speak of him with the light respect form Jesus uses for God; Literal keeps the neutral \"方\" and leaves him unnamed, as the Greek does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -996,6 +1097,16 @@
           "L": "Вы сами послали [людей] к Иоанну, и он засвидетельствовал истину.",
           "B": "Вы сами посылали людей к Иоанну, и он засвидетельствовал истину.",
           "R": "Вы посылали людей расспросить Иоанна, и он засвидетельствовал правду."
+        },
+        "uk": {
+          "L": "Ви самі послали [посланців] до Івана, і він засвідчив істину.",
+          "B": "Ви самі посилали посланців до Івана, і він засвідчив істину.",
+          "R": "Ви посилали людей розпитати Івана, і він засвідчив правду."
+        },
+        "ja": {
+          "L": "あなたがたは、ヨハネのもとに[人々を]遣わした。そして彼は、真理について証しした。",
+          "B": "あなたがた自身が、ヨハネのもとに使いを送った。そして彼は真理について証ししたのである。",
+          "R": "あなたたちは、ヨハネに質問するために使いを送った。そしてヨハネは、本当のことを証しした。"
         }
       },
       "alignments": [
@@ -1187,6 +1298,25 @@
           "reason": "Shows the emphatic pronoun: they themselves had sent to John (1:19-28).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005033008"
+          ],
+          "choice": "\"真理\" (L, B); \"本当のこと\" (R)",
+          "alternatives": [],
+          "reason": "The truth about who Jesus is (meaning decision m2). \"真理\" is the key term; Readable says \"本当のこと\" for what is true, as the brief allows.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1268,6 +1398,16 @@
           "L": "Но {{deity_pronoun:я|Я}} принимаю свидетельство не от человека; это же говорю, чтобы вы были спасены.",
           "B": "Впрочем, {{deity_pronoun:я|Я}} не принимаю свидетельства от человека; {{deity_pronoun:я|Я}} говорю это, чтобы вы были спасены.",
           "R": "Мне не нужно свидетельство от людей. Я говорю вам об Иоанне, чтобы вы могли спастись."
+        },
+        "uk": {
+          "L": "Але {{deity_pronoun:я|Я}} не від людини приймаю [своє] свідчення, а кажу це, щоб ви спаслися.",
+          "B": "Проте {{deity_pronoun:я|Я}} не приймаю свідчення від людини; кажу це, щоб ви були спасенні.",
+          "R": "Мені не потрібне свідчення від людей. Я розповідаю вам про Івана, щоб ви могли бути врятовані."
+        },
+        "ja": {
+          "L": "しかし、わたしは人から証しを受けるのではない。むしろ、あなたがたが救われるために、これらのことを言うのである。",
+          "B": "わたしは、人からの証しを受け入れるのではない。わたしがこれらのことを言うのは、あなたがたが救われるためである。",
+          "R": "わたしは、人の証しに頼ってはいない。わたしがヨハネのことを話すのは、あなたたちが救われるためだ。"
         }
       },
       "alignments": [
@@ -1680,6 +1820,65 @@
           "reason": "The English Literal supplies \"my\" for the Greek article; Russian has no article, and the word order already puts the weight on \"не от человека\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43005034005"
+          ],
+          "choice": "\"від людини\" (L, B), \"від людей\" (R), with no gender setting, here and in verse 41",
+          "alternatives": [
+            "\"{{gender:від людини|від чоловіка}}\""
+          ],
+          "reason": "The English offers \"man\" as the traditional alternative; the Ukrainian words \"людина\" and \"люди\" are both the traditional and the inclusive ones, so no setting is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43005034005"
+          ],
+          "choice": "\"人\" with no gender span",
+          "alternatives": [],
+          "reason": "The English has a gender span (a human being/man, people/men); Japanese \"人\" already means any human being, so no span is needed. The same holds for \"人々\" in 5:41.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005034008"
+          ],
+          "choice": "\"受ける\" (L); \"受け入れる\" (B); \"頼って\" (R)",
+          "alternatives": [],
+          "reason": "The verb \"receive, accept\" recurs through 5:41-44; Literal and Balanced keep \"受ける / 受け入れる\" there too, so the thread stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1765,6 +1964,16 @@
           "L": "Тот был светильником горящим и светящим, а вы захотели на время возрадоваться в его свете.",
           "B": "Иоанн был светильником, который горел и светил, и вы ненадолго охотно порадовались его свету.",
           "R": "Иоанн был как лампа, которая зажжена и светит. Какое-то короткое время вы с радостью наслаждались его светом."
+        },
+        "uk": {
+          "L": "Той був світильником, що горів і світив, а ви захотіли на якийсь час порадіти в його світлі.",
+          "B": "Іван був світильником, що горів і світив, і ви на якийсь час охоче тішилися його світлом.",
+          "R": "Іван був наче світильник, який запалили, і він світив. Недовго ви раділи його світлу."
+        },
+        "ja": {
+          "L": "あの人は燃えて輝くともし火であった。そしてあなたがたは、しばらくの間、その光の中で喜ぼうとした。",
+          "B": "ヨハネは、燃えて輝くともし火であった。あなたがたは、しばらくの間、その光の中で喜び楽しもうとした。",
+          "R": "ヨハネは、火がともって輝くランプのような人だった。あなたたちは、少しのあいだ、その光を喜んで楽しんだ。"
         }
       },
       "alignments": [
@@ -2154,6 +2363,46 @@
           "reason": "\"For an hour\" is an idiom for a short time (meaning decision m3), and \"на час\" would sound like a clock time.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005035014"
+          ],
+          "choice": "\"しばらくの間\" (L, B); \"少しのあいだ\" (R)",
+          "alternatives": [
+            "\"一時\""
+          ],
+          "reason": "\"For an hour\" means for a short time (meaning decision m3); \"一時間\" would be a clock time, and \"時\" is kept for Jesus's hour.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005035004"
+          ],
+          "choice": "\"ともし火\" (L, B); \"ランプのような人\" (R)",
+          "alternatives": [],
+          "reason": "A lamp, not the light itself (meaning decision m1); Readable makes the picture a comparison, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2263,6 +2512,16 @@
           "L": "Но {{deity_pronoun:я|Я}} имею свидетельство большее, чем Иоанново: ведь дела, которые дал {{deity_pronoun:мне|Мне}} Отец, чтобы {{deity_pronoun:я|Я}} их совершил, сами эти дела, которые {{deity_pronoun:я|Я}} делаю, свидетельствуют обо {{deity_pronoun:мне|Мне}}, что Отец {{deity_pronoun:меня|Меня}} послал. \\v 37 И пославший {{deity_pronoun:меня|Меня}} Отец, {{deity_pronoun:он|Он}} засвидетельствовал обо {{deity_pronoun:мне|Мне}}.",
           "B": "Но у {{deity_pronoun:меня|Меня}} есть свидетельство большее, чем Иоанново. Дела, которые Отец дал {{deity_pronoun:мне|Мне}} довести до конца, сами эти дела, которые {{deity_pronoun:я|Я}} делаю, свидетельствуют обо {{deity_pronoun:мне|Мне}}: они показывают, что Отец послал {{deity_pronoun:меня|Меня}}. \\v 37 И Отец, который {{deity_pronoun:меня|Меня}} послал, сам засвидетельствовал обо {{deity_pronoun:мне|Мне}}.",
           "R": "Но у {{deity_pronoun:меня|Меня}} есть свидетельство важнее, чем свидетельство Иоанна. Отец дал {{deity_pronoun:мне|Мне}} дела, чтобы {{deity_pronoun:я|Я}} их делал и довёл до конца. Эти дела, которые {{deity_pronoun:я|Я}} делаю, свидетельствуют обо {{deity_pronoun:мне|Мне}}. Они показывают, что Отец послал {{deity_pronoun:меня|Меня}}. \\v 37 И Отец, который {{deity_pronoun:меня|Меня}} послал, сам свидетельствовал обо {{deity_pronoun:мне|Мне}}."
+        },
+        "uk": {
+          "L": "Але {{deity_pronoun:я|Я}} маю свідчення, більше за Іванове; бо діла, які Отець дав {{deity_pronoun:мені|Мені}}, щоб {{deity_pronoun:я|Я}} їх завершив, самі діла, які {{deity_pronoun:я|Я}} роблю, свідчать про {{deity_pronoun:мене|Мене}}, що Отець послав {{deity_pronoun:мене|Мене}}. \\v 37 І Отець, який послав {{deity_pronoun:мене|Мене}}, {{deity_pronoun:він|Він}} засвідчив про {{deity_pronoun:мене|Мене}}.",
+          "B": "Але {{deity_pronoun:я|Я}} маю свідчення, більше за Іванове. Діла, які Отець дав {{deity_pronoun:мені|Мені}} довершити, ті самі діла, які {{deity_pronoun:я|Я}} роблю, свідчать про {{deity_pronoun:мене|Мене}}: вони показують, що Отець послав {{deity_pronoun:мене|Мене}}. \\v 37 І Отець, який послав {{deity_pronoun:мене|Мене}}, сам засвідчив про {{deity_pronoun:мене|Мене}}.",
+          "R": "Але {{deity_pronoun:я|Я}} маю свідчення, більше за Іванове. Отець дав {{deity_pronoun:мені|Мені}} діла, щоб {{deity_pronoun:я|Я}} їх виконав і завершив. Ці діла, які {{deity_pronoun:я|Я}} роблю, свідчать про {{deity_pronoun:мене|Мене}}. Вони показують, що Отець послав {{deity_pronoun:мене|Мене}}. \\v 37 І Отець, який послав {{deity_pronoun:мене|Мене}}, сам засвідчив про {{deity_pronoun:мене|Мене}}."
+        },
+        "ja": {
+          "L": "しかし、わたしにはヨハネの証しよりも大きな証しがある。父がわたしに成し遂げるようにと与えてくださった業、すなわち、わたしが行っているその業そのものが、父がわたしを遣わされたことを、わたしについて証ししているからである。\\v 37 また、わたしを遣わされた父、その方がわたしについて証ししてくださった。",
+          "B": "しかし、わたしにはヨハネの証しよりもまさる証しがある。父がわたしに成し遂げるようにと与えてくださった業、わたしが行っているその業そのものが、わたしについて証ししている。それは、父がわたしを遣わされたことを示しているのだ。\\v 37 また、わたしを遣わされた父ご自身が、わたしについて証ししてくださった。",
+          "R": "しかし、わたしにはヨハネの証しよりも大きな証しがある。父は、わたしにするべき業を与えて、それを最後までやり遂げさせてくださる。わたしが行っているこの業が、わたしについて証ししている。父がわたしを遣わされたことを示しているのだ。\\v 37 そして、わたしを遣わされた父ご自身が、わたしについて証ししてくださった。"
         }
       },
       "alignments": [
@@ -2814,6 +3073,44 @@
           "reason": "The English has a span on \"himself\"; Russian \"сам\" takes none (style guide, section 7b). It carries the emphasis of meaning decision m4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005036018"
+          ],
+          "choice": "\"成し遂げる\" (L, B); \"最後までやり遂げる\" (R)",
+          "alternatives": [],
+          "reason": "The same verb as in 4:34, carrying the Father's work through to its end (meaning decision m2); the same Japanese is used there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43005037007"
+          ],
+          "choice": "\"証ししてくださった\"",
+          "alternatives": [],
+          "reason": "Jesus speaks of what the Father does for him with \"くださる\", the light respect form for God's giving; the emphatic \"that one\" (meaning decision m4) becomes \"その方が\" (L) and \"ご自身が\" (B, R).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2908,6 +3205,16 @@
           "L": "Ни голоса {{deity_pronoun:его|Его}} вы никогда не слышали, ни облика {{deity_pronoun:его|Его}} не видели, \\v 38 и слова {{deity_pronoun:его|Его}} не имеете пребывающим в вас, потому что тому, кого {{deity_pronoun:он|Он}} послал, этому вы не верите.",
           "B": "Вы ни разу не слышали {{deity_pronoun:его|Его}} голоса и не видели {{deity_pronoun:его|Его}} облика. \\v 38 И {{deity_pronoun:его|Его}} слово не пребывает в вас, ведь вы не верите именно тому, кого {{deity_pronoun:он|Он}} послал.",
           "R": "Вы никогда не слышали {{deity_pronoun:его|Его}} голоса. Вы никогда не видели, как {{deity_pronoun:он|Он}} выглядит. \\v 38 И {{deity_pronoun:его|Его}} слово не остаётся в вас. Это видно из того, что вы не верите тому, кого {{deity_pronoun:он|Он}} послал."
+        },
+        "uk": {
+          "L": "Ані голосу {{deity_pronoun:його|Його}} ви ніколи не чули, ані вигляду {{deity_pronoun:його|Його}} не бачили, \\v 38 і слова {{deity_pronoun:його|Його}} не маєте, щоб перебувало у вас, бо тому, кого {{deity_pronoun:він|Він}} послав, ви не вірите.",
+          "B": "Ви жодного разу не чули {{deity_pronoun:його|Його}} голосу і не бачили {{deity_pronoun:його|Його}} вигляду. \\v 38 І {{deity_pronoun:його|Його}} слово не перебуває у вас, бо ви не вірите саме тому, кого {{deity_pronoun:він|Він}} послав.",
+          "R": "Ви ніколи не чули {{deity_pronoun:його|Його}} голосу. Ви ніколи не бачили, який {{deity_pronoun:він|Він}} на вигляд. \\v 38 І {{deity_pronoun:його|Його}} слово не залишається у вас. Це видно з того, що ви не вірите тому, кого {{deity_pronoun:він|Він}} послав."
+        },
+        "ja": {
+          "L": "あなたがたは、まだ一度もその方の声を聞いたこともなく、その姿を見たこともない。\\v 38 また、その方のことばが自分の内にとどまっていない。その方が遣わされた者、その者をあなたがたが信じないからである。",
+          "B": "あなたがたは、一度もその方の声を聞いたことがなく、その姿を見たこともない。\\v 38 また、その方のことばは、あなたがたの内にとどまっていない。その方が遣わされた者を、あなたがたが信じないからである。",
+          "R": "あなたたちは、その方の声を聞いたことが一度もない。その方の姿を見たこともない。\\v 38 そして、その方のことばは、あなたたちの心の中にとどまっていない。それははっきりしている。その方が遣わされた者を、あなたたちは信じないからだ。"
         }
       },
       "alignments": [
@@ -3398,6 +3705,47 @@
           "reason": "The book-wide choice for John's \"remain\" in this sense (meaning decision m2): \"пребывать\" at Literal and Balanced, the everyday \"оставаться\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005038009"
+          ],
+          "choice": "\"перебувати\" (L, B); \"залишатися\" (R) for menō, through John 5-8",
+          "alternatives": [
+            "\"пробувати\"",
+            "\"жити\""
+          ],
+          "reason": "As the book's terms set: John's theological \"remain\" is \"перебувати\" at Literal and Balanced, and the plainer \"залишатися\" at Readable. The older \"пробувати\" is now archaic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005038009"
+          ],
+          "choice": "\"とどまる\"",
+          "alternatives": [],
+          "reason": "The John terms keep \"とどまる\" for the theological sense of the verb (meaning decision m2), at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3483,6 +3831,16 @@
           "L": "Вы исследуете Писания, потому что думаете в них иметь вечную жизнь; и они-то свидетельствуют обо {{deity_pronoun:мне|Мне}}.",
           "B": "Вы усердно изучаете Писания, полагая, что в них можно найти вечную жизнь; а ведь именно они свидетельствуют обо {{deity_pronoun:мне|Мне}}.",
           "R": "Вы внимательно изучаете Писания, потому что думаете, что в них у вас есть вечная жизнь — жизнь того мира, который придёт. И сами Писания свидетельствуют обо {{deity_pronoun:мне|Мне}}."
+        },
+        "uk": {
+          "L": "Ви досліджуєте Писання, бо думаєте, що в них маєте вічне життя; а вони — ті, що свідчать про {{deity_pronoun:мене|Мене}}.",
+          "B": "Ви уважно вчитуєтеся в Писання, бо думаєте, що в них знайдете вічне життя; а саме вони свідчать про {{deity_pronoun:мене|Мене}}.",
+          "R": "Ви старанно вивчаєте Писання, бо думаєте, що в них маєте вічне життя — життя майбутнього віку. А самі Писання свідчать про {{deity_pronoun:мене|Мене}}."
+        },
+        "ja": {
+          "L": "あなたがたは聖書を調べている。その中に永遠の命があると思っているからである。そして、それらはわたしについて証ししているものである。",
+          "B": "あなたがたは聖書を熱心に調べている。そこに永遠の命があると考えているからだ。ところが、聖書はわたしについて証ししているのである。",
+          "R": "あなたたちは、聖書をよく調べている。聖書の中に永遠の命、つまり、来るべき世の神の命があると思っているからだ。そして聖書そのものが、わたしについて証ししている。"
         }
       },
       "alignments": [
@@ -3910,6 +4268,43 @@
           "reason": "Readable explains eternal life once in the passage, as the book's terms allow (meaning decision m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43005039009",
+            "n43005039010"
+          ],
+          "choice": "\"永遠の命、つまり、来るべき世の神の命\" (R)",
+          "alternatives": [],
+          "reason": "Readable explains eternal life once in the passage, as the John terms allow (meaning decision m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005039003"
+          ],
+          "choice": "\"聖書\"",
+          "alternatives": [],
+          "reason": "The Jewish Scriptures (meaning decision m3); \"聖書\" is the ordinary Japanese word, and the context shows which writings are meant.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3986,6 +4381,16 @@
           "L": "И вы не желаете прийти ко {{deity_pronoun:мне|Мне}}, чтобы жизнь иметь.",
           "B": "Но прийти ко {{deity_pronoun:мне|Мне}} и получить жизнь вы не хотите.",
           "R": "Но вы не хотите прийти ко {{deity_pronoun:мне|Мне}}, чтобы у вас была эта жизнь."
+        },
+        "uk": {
+          "L": "І не хочете прийти до {{deity_pronoun:мене|Мене}}, щоб мати життя.",
+          "B": "Але ви не хочете прийти до {{deity_pronoun:мене|Мене}}, щоб мати життя.",
+          "R": "Але ви не хочете прийти до {{deity_pronoun:мене|Мене}}, щоб мати це життя."
+        },
+        "ja": {
+          "L": "そして、あなたがたは命を得るためにわたしのもとに来ようとしない。",
+          "B": "それなのに、あなたがたは命を得るためにわたしのところへ来ようとしない。",
+          "R": "それなのに、あなたたちは、その命を得るためにわたしのところへ来ようとしない。"
         }
       },
       "alignments": [
@@ -4139,6 +4544,25 @@
           "reason": "As in English: states the contrast (meaning decision m1). \"Querer\" is the same verb as Jesus's question at the pool, \"¿Quieres quedar sano?\" (5:6; meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005040001",
+            "n43005040003"
+          ],
+          "choice": "\"それなのに\" and \"来ようとしない\" (B, R)",
+          "alternatives": [],
+          "reason": "States the contrast of \"and yet\" (meaning decision m1); \"〜ようとしない\" says that they will not, not that they cannot (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4224,6 +4648,16 @@
           "L": "Славы от людей {{deity_pronoun:я|Я}} не принимаю, \\v 42 но {{deity_pronoun:я|Я}} знаю вас: любви Божьей вы в себе не имеете.",
           "B": "Славу от людей {{deity_pronoun:я|Я}} не принимаю. \\v 42 Но {{deity_pronoun:я|Я}} знаю вас: в вас нет любви к Богу.",
           "R": "Я не принимаю славы от людей. \\v 42 Но {{deity_pronoun:я|Я}} знаю вас. В своём сердце вы не любите Бога."
+        },
+        "uk": {
+          "L": "Слави від людей {{deity_pronoun:я|Я}} не приймаю, \\v 42 але {{deity_pronoun:я|Я}} пізнав вас, що любові Божої не маєте в собі.",
+          "B": "Слава від людей — не те, що {{deity_pronoun:я|Я}} приймаю. \\v 42 Але {{deity_pronoun:я|Я}} знаю вас: у вас немає любові до Бога.",
+          "R": "Я не приймаю слави від людей. \\v 42 Але {{deity_pronoun:я|Я}} знаю вас. У своїх серцях ви не любите Бога."
+        },
+        "ja": {
+          "L": "わたしは人々から栄光を受けない。\\v 42 しかし、わたしはあなたがたを知っている。あなたがたが自分の内に神の愛を持っていないことを。",
+          "B": "人々からの栄光を、わたしは受けない。\\v 42 しかし、わたしはあなたがたを知っている。あなたがたの内には、神への愛がない。",
+          "R": "わたしは、人々からの栄光を受けようとはしない。\\v 42 しかし、わたしはあなたたちのことを知っている。あなたたちは、心の中で神を愛していない。"
         }
       },
       "alignments": [
@@ -4531,6 +4965,44 @@
           "reason": "Literal keeps the phrase as it stands; Balanced and Readable give the sense chosen in meaning decision m2, their love for God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005042006",
+            "n43005042008"
+          ],
+          "choice": "\"神の愛\" (L); \"神への愛\" (B); \"神を愛していない\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the phrase as it stands; Balanced and Readable give the sense chosen in meaning decision m2, their love for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005041001"
+          ],
+          "choice": "\"栄光\"",
+          "alternatives": [],
+          "reason": "The key term is kept even where it means honor and approval from people (meaning decision m1), so that the contrast with the glory from God in 5:44 stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4620,6 +5092,16 @@
           "L": "Я пришёл во имя {{deity_pronoun:моего|Моего}} Отца, а вы {{deity_pronoun:меня|Меня}} не принимаете; если же придёт другой во имя собственное, того вы примете.",
           "B": "Я пришёл во имя {{deity_pronoun:моего|Моего}} Отца, но вы не принимаете {{deity_pronoun:меня|Меня}}. А придёт кто-то другой от своего имени — его вы примете.",
           "R": "Я пришёл с властью, которую дал {{deity_pronoun:мне|Мне}} {{deity_pronoun:мой|Мой}} Отец, но вы не принимаете {{deity_pronoun:меня|Меня}}. А если кто-то другой придёт сам от себя, вы его примете."
+        },
+        "uk": {
+          "L": "Я прийшов в імʼя Отця {{deity_pronoun:мого|Мого}}, і ви не приймаєте {{deity_pronoun:мене|Мене}}; якщо інший прийде у своє власне імʼя, того ви приймете.",
+          "B": "Я прийшов в імʼя {{deity_pronoun:мого|Мого}} Отця, а ви не приймаєте {{deity_pronoun:мене|Мене}}. Прийде хтось інший у своє власне імʼя — його ви приймете.",
+          "R": "Я прийшов із владою {{deity_pronoun:мого|Мого}} Отця, але ви не приймаєте {{deity_pronoun:мене|Мене}}. Якщо хтось інший прийде лише з власною владою, ви його приймете."
+        },
+        "ja": {
+          "L": "わたしは、わたしの父の名によって来たが、あなたがたはわたしを受け入れない。もしほかの者が自分自身の名によって来れば、あなたがたはその者を受け入れるであろう。",
+          "B": "わたしは父の名によって来たのに、あなたがたはわたしを受け入れない。ところが、ほかの者が自分の名によって来れば、その者をあなたがたは受け入れるのだ。",
+          "R": "わたしは父から任されて来たのに、あなたたちはわたしを受け入れない。ところが、だれかが自分勝手にやって来ると、あなたたちはその人を受け入れる。"
         }
       },
       "alignments": [
@@ -4966,6 +5448,24 @@
           "reason": "Readable explains the idiom \"in the name of\": as his representative, with his authority (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005043005",
+            "n43005043018"
+          ],
+          "choice": "\"父から任されて\" and \"自分勝手に\" (R)",
+          "alternatives": [],
+          "reason": "Readable explains the idiom \"in the name of\", with someone's authority (meaning decision m1); Literal and Balanced keep \"名によって\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5051,6 +5551,16 @@
           "L": "Как можете вы уверовать, принимая славу друг от друга, тогда как славы от единственного Бога не ищете?",
           "B": "Как вы могли бы поверить? Вы принимаете славу друг от друга, а славы, что исходит от единственного Бога, не ищете.",
           "R": "Вы принимаете славу друг от друга, но не ищете славы, которая приходит от единственного Бога. Как же вы можете поверить?"
+        },
+        "uk": {
+          "L": "Як ви можете вірити, приймаючи славу один від одного, а слави, що від єдиного Бога, не шукаєте?",
+          "B": "Як ви могли б повірити? Ви приймаєте славу один від одного, а слави, яка походить від єдиного Бога, не шукаєте.",
+          "R": "Ви приймаєте славу один від одного, але не шукаєте слави, яка приходить від єдиного Бога. Як же ви можете вірити?"
+        },
+        "ja": {
+          "L": "互いに栄光を受け合い、唯一の神からの栄光を求めないあなたがたが、どうして信じることができるだろうか？",
+          "B": "どうして、あなたがたは信じることができるだろうか？互いに栄光を受け合いながら、唯一の神からの栄光は求めようとしないのだから。",
+          "R": "あなたたちは、お互いから栄光を受けているのに、ただ一人の神からの栄光を求めようとしない。それで、どうして信じることができるだろうか？"
         }
       },
       "alignments": [
@@ -5399,6 +5909,44 @@
           "reason": "The phrase echoes the confession that God is one (meaning decision m4). Amharic says 'the only God' most clearly with \"አምላክ\" as the predicate, as the style guide sets for that word, and \"እግዚአብሔር\" as the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43005044001",
+            "n43005044018"
+          ],
+          "choice": "the question word \"どうして\" at the end of one long clause (L)",
+          "alternatives": [],
+          "reason": "Japanese puts the participles describing \"you\" before the verb, so Literal gathers them into one clause before \"どうして信じることができるだろうか\"; Balanced asks first and gives the reason after, and Readable gives the reason first, as the English levels do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005044015",
+            "n43005044016"
+          ],
+          "choice": "\"唯一の神\" (L, B); \"ただ一人の神\" (R)",
+          "alternatives": [],
+          "reason": "The confession that God is one (meaning decision m4); Readable uses plainer words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5484,6 +6032,16 @@
           "L": "Не думайте, что {{deity_pronoun:я|Я}} буду обвинять вас перед Отцом; есть обвиняющий вас — Моисей, на которого вы возложили надежду.",
           "B": "Не воображайте, что это {{deity_pronoun:я|Я}} буду обвинять вас перед Отцом. У вас уже есть обвинитель — Моисей, на которого вы возложили свою надежду.",
           "R": "Не думайте, что это {{deity_pronoun:я|Я}} буду жаловаться на вас Отцу. Вас обвиняет Моисей — тот самый Моисей, на которого вы надеетесь."
+        },
+        "uk": {
+          "L": "Не думайте, що {{deity_pronoun:я|Я}} обвинувачуватиму вас перед Отцем; є той, хто вас обвинувачує, — Мойсей, на якого ви поклали надію.",
+          "B": "Не уявляйте, що це {{deity_pronoun:я|Я}} обвинувачуватиму вас перед Отцем. У вас уже є обвинувач — Мойсей, на якого ви поклали свою надію.",
+          "R": "Не думайте, що це {{deity_pronoun:я|Я}} буду обвинувачувати вас перед Отцем. Той, хто вас обвинувачує, — Мойсей, той самий Мойсей, на якого ви надієтеся."
+        },
+        "ja": {
+          "L": "わたしが父の前であなたがたを訴えるだろうと思ってはならない。あなたがたを訴えるのは、あなたがたが望みをかけてきたモーセである。",
+          "B": "わたしが父の前であなたがたを訴えるのだと思ってはならない。あなたがたには、すでに訴える者がいる。あなたがたが望みをかけているモーセである。",
+          "R": "わたしが父にあなたたちのことを訴えるのだ、と思ってはいけない。あなたたちを訴えるのはモーセだ。あなたたちが頼りにしている、そのモーセなのだ。"
         }
       },
       "alignments": [
@@ -5853,6 +6411,16 @@
           "L": "Ведь если бы вы верили Моисею, верили бы вы {{deity_pronoun:мне|Мне}}: ведь обо {{deity_pronoun:мне|Мне}} тот писал.",
           "B": "Если бы вы на самом деле верили Моисею, вы поверили бы и {{deity_pronoun:мне|Мне}}, потому что то, что он написал, — обо {{deity_pronoun:мне|Мне}}.",
           "R": "Если бы вы правда верили Моисею, вы бы верили и {{deity_pronoun:мне|Мне}}, потому что Моисей писал обо {{deity_pronoun:мне|Мне}}."
+        },
+        "uk": {
+          "L": "Бо якби ви вірили Мойсеєві, то вірили б {{deity_pronoun:мені|Мені}}, бо про {{deity_pronoun:мене|Мене}} він писав.",
+          "B": "Якби ви справді вірили Мойсеєві, то вірили б і {{deity_pronoun:мені|Мені}}, бо він писав про {{deity_pronoun:мене|Мене}}.",
+          "R": "Якби ви по-справжньому вірили Мойсеєві, ви б вірили і {{deity_pronoun:мені|Мені}}, бо Мойсей писав про {{deity_pronoun:мене|Мене}}."
+        },
+        "ja": {
+          "L": "もしあなたがたがモーセを信じていたなら、わたしを信じたはずである。彼はわたしについて書いたのだから。",
+          "B": "もしあなたがたが本当にモーセを信じていたなら、わたしを信じたはずだ。モーセが書いたのは、わたしについてなのだから。",
+          "R": "もしあなたたちが本当にモーセを信じていたなら、わたしのことも信じたはずだ。モーセは、わたしについて書いたのだから。"
         }
       },
       "alignments": [
@@ -6146,6 +6714,16 @@
           "L": "Если же писаниям того вы не верите, как {{deity_pronoun:моим|Моим}} словам поверите?»",
           "B": "Но если вы не верите тому, что написал Моисей, как же вы поверите словам, которые {{deity_pronoun:я|Я}} говорю?»",
           "R": "Но вы не верите тому, что написал Моисей. Как же вы поверите тому, что говорю {{deity_pronoun:я|Я}}?»"
+        },
+        "uk": {
+          "L": "А якщо його писанням ви не вірите, то як повірите {{deity_pronoun:моїм|Моїм}} словам?»",
+          "B": "А якщо ви не вірите написаному Мойсеєм, то як ви колись повірите словам, які {{deity_pronoun:я|Я}} говорю?»",
+          "R": "Але ви не вірите тому, що написав Мойсей. То як ви повірите тому, що кажу {{deity_pronoun:я|Я}}?»"
+        },
+        "ja": {
+          "L": "しかし、あの人の書いたものを信じないなら、どうしてわたしのことばを信じるだろうか？」",
+          "B": "しかし、モーセの書いたものを信じないなら、どうしてわたしの語ることばを信じるだろうか？」",
+          "R": "でも、あなたたちはモーセが書いたことを信じていない。それなら、どうしてわたしの言うことを信じるだろうか？」"
         }
       },
       "alignments": [
@@ -6369,6 +6947,23 @@
             "\"그의 글\" ... \"내 말\""
           ],
           "reason": "Korean marks the contrast of written against spoken words with \"글\" and \"말\" and names Moses, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005047011"
+          ],
+          "choice": "\"語ることば\" (B)",
+          "alternatives": [],
+          "reason": "Brings out the contrast between what Moses wrote and what Jesus speaks (meaning decision m1).",
           "uncertain": false,
           "footnote": false
         }

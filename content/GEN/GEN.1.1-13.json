@@ -64,6 +64,26 @@
           "L": "በመጀመሪያ እግዚአብሔር ሰማያትንና ምድርን ፈጠረ።",
           "B": "በመጀመሪያ እግዚአብሔር ሰማይንና ምድርን ፈጠረ።",
           "R": "ገና በመጀመሪያ እግዚአብሔር ሁሉን ነገር ፈጠረ፤ ሰማይንና ምድርን ፈጠረ።"
+        },
+        "hi": {
+          "L": "आरंभ में परमेश्वर ने आकाश और पृथ्वी को रचा।",
+          "B": "आरंभ में परमेश्वर ने आकाश और पृथ्वी को रचा।",
+          "R": "आरंभ में परमेश्वर ने सब कुछ रचा: आकाश और पृथ्वी।"
+        },
+        "ru": {
+          "L": "В начале Бог сотворил небеса и землю.",
+          "B": "В начале Бог сотворил небеса и землю.",
+          "R": "В самом начале Бог сотворил всё: небеса и землю."
+        },
+        "uk": {
+          "L": "На початку Бог створив небеса і землю.",
+          "B": "На початку Бог створив небо і землю.",
+          "R": "На самому початку Бог створив усе: небо і землю."
+        },
+        "ja": {
+          "L": "初めに、神は天と地を創造された。",
+          "B": "初めに、神は天と地を創造された。",
+          "R": "いちばん初めに、神はすべてのもの、つまり天と地をお造りになりました。"
         }
       },
       "decisions": [
@@ -495,6 +515,178 @@
           "reason": "The Ethiopic script has no capital letters, so the reader's setting for capitalised pronouns for God has nothing to change in Amharic. This holds for the whole book, from 1:5 on, where the English has its first span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010011",
+            "o010010010012"
+          ],
+          "choice": "\"आरंभ में\" (In the beginning)",
+          "alternatives": [
+            "\"आदि में\""
+          ],
+          "reason": "\"आरंभ\" is the everyday word for a beginning; \"आदि\" is the learned word of older Hindi Bibles. Hindi has no article, so Literal needs no bracket here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010021",
+            "o010010010031"
+          ],
+          "choice": "\"परमेश्वर ने ... रचा\" (God created)",
+          "alternatives": [
+            "\"सृष्टि की\"",
+            "\"बनाया\""
+          ],
+          "reason": "Hindi has no verb reserved for God alone (m2), so the translation uses \"रचना\" for this verb and keeps \"बनाना\" for the ordinary verb \"make\" (1:7, 1:16, 1:25). God takes the honorific third person (उन्होंने, plural agreement) in narrative, as in the New Testament.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010021"
+          ],
+          "choice": "\"сотворил\" for bara at every level, and \"создал\" (L, B) or \"сделал\" (R) for the ordinary verb \"make\"",
+          "alternatives": [
+            "\"создал\" for both"
+          ],
+          "reason": "The Hebrew keeps one verb for God's creating (meaning decision m2). Russian has \"сотворить\" for it, and this translation keeps that word for bara through Genesis so that a reader can see where the Hebrew uses it, as in 1:21, 1:27 and 2:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010051",
+            "o010010010052"
+          ],
+          "choice": "\"небеса\" (plural)",
+          "alternatives": [
+            "\"небо\""
+          ],
+          "reason": "The Hebrew word is plural in form, and \"небеса и земля\" together say \"everything\" (m4). \"Небеса\" keeps the plural; Balanced and Readable use \"небо\" where the visible sky is meant (1:8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010010031"
+          ],
+          "choice": "Elohim is \"Бог\" at every level; from 2:4 the divine name YHWH is \"ГОСПОДЬ\" with the divine_name setting showing \"Ягве\", inflected inside each option (ГОСПОДА, ГОСПОДУ, ГОСПОДОМ, ГОСПОДІ, vocative ГОСПОДИ), and Adonai is \"Господь\" in ordinary capitals",
+          "alternatives": [
+            "Єгова",
+            "Яхве as the alternative"
+          ],
+          "reason": "Book-wide choice for Genesis (docs/ukrainian-ot-terms.md). The default \"ГОСПОДЬ\" in capitals mirrors the English \"the LORD\" and keeps the name apart from Adonai, \"Господь\"; the setting shows \"Ягве\" instead, with г for the Hebrew h as Ukrainian transcribes it (Авраам, Агар). \"Єгова\" is not used. Other gods are \"бог\", \"боги\" in lower case.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "Names follow docs/ukrainian-ot-terms.md, and names found in the New Testament keep its Ukrainian form (Енос, Каїнан, Малелеїл, Яред, Ламех, Арфаксад, Сала, Евер, Фалек, Рагав, Серух, Нахор, Тара as Luke 3; Фарес, Зара, Тамара as Matthew 1; Харан, Сихем, Еммор, халдеї as Acts 7); Метушелах follows the terms note. Other names take the usual Ukrainian Bible form, or a transcription of the Hebrew with х for heth and г for he and gimel (Гаран the man, Харан the town; Хеврон, Беер-Шева, Бет-Ел, Мамре, Герар, Гошен)",
+          "alternatives": [
+            "Ohienko's forms throughout",
+            "Greek-based forms throughout"
+          ],
+          "reason": "One form per name through every book, so that Genesis and the Gospels name the same people alike. Where the note's table and the New Testament differ (Метушелах, Luke's Матусал) the table is followed; a reviewer may harmonise.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010010010021"
+          ],
+          "choice": "plain narration (L, B) and です・ます narration (R), with light respect forms for what God does: \"創造された\", \"言われた\", \"ご覧になった\" (L, B); \"お造りになりました\", \"言われました\" (R)",
+          "alternatives": [
+            "plain \"創造した\", \"言った\" as for any other subject"
+          ],
+          "reason": "Japanese narration must choose a level of respect. As in the Japanese Gospels, the narrator uses the light 〜れる/〜られる and お〜になる forms for God and for no one else. This holds for the whole of Genesis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010021"
+          ],
+          "choice": "\"創造された\" (L, B); \"お造りになりました\" (R)",
+          "alternatives": [
+            "\"造られた\" at every level"
+          ],
+          "reason": "The verb is used only of God (m2), so Literal and Balanced keep the distinct word 創造 for it, while the everyday 造る renders the chapter's ordinary verb \"made\". Readable uses the plainer 造る for both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -572,6 +764,26 @@
           "L": "ምድርም ቅርጽ የለሽና ባዶ ነበረች፤ ጨለማም በጥልቁ ፊት ላይ [ነበረ]፤ የእግዚአብሔርም መንፈስ በውኆቹ ፊት ላይ ያንዣብብ ነበር።",
           "B": "ምድር ቅርጽ የሌላትና ባዶ ነበረች። ጨለማ በጥልቁ ገጽ ላይ ነበር፤ የእግዚአብሔርም መንፈስ በውኆቹ ላይ ያንዣብብ ነበር።",
           "R": "ምድር ገና ቅርጽ አልነበራትም፤ ባዶም ነበረች። በጥልቁ ውኃ ላይ ጨለማ ነበር፤ የእግዚአብሔርም መንፈስ በውኃው ላይ ይንቀሳቀስ ነበር።"
+        },
+        "hi": {
+          "L": "और पृथ्वी आकारहीन और ख़ाली थी, और गहरे जल के मुख पर अंधकार [था], और परमेश्वर का आत्मा जल के मुख पर मँडरा रहा [था]।",
+          "B": "पृथ्वी बिना आकार की और ख़ाली थी। गहरे जल के ऊपर अंधकार छाया था, और परमेश्वर का आत्मा जल के ऊपर मँडरा रहा था।",
+          "R": "पृथ्वी का अभी कोई आकार नहीं था, और वह ख़ाली थी। गहरे पानी के ऊपर अँधेरा था, और परमेश्वर का आत्मा पानी के ऊपर मँडरा रहा था।"
+        },
+        "ru": {
+          "L": "И земля была бесформенностью и пустотой, и тьма [была] над лицом бездны, и Дух Божий [был] парящим над лицом вод.",
+          "B": "Земля была без формы и пуста. Над глубокими водами лежала тьма, а Дух Божий парил над водами.",
+          "R": "У земли ещё не было никакого вида, и она была пустой. Над глубокой водой было темно, и Дух Божий двигался над водой."
+        },
+        "uk": {
+          "L": "А земля була безформністю і порожнечею, і темрява [була] над поверхнею безодні, і Дух Божий витав над поверхнею вод.",
+          "B": "Земля була без форми й порожня. Над безоднею лежала темрява, а Дух Божий витав понад водами.",
+          "R": "Земля ще не мала жодного вигляду і була порожня. Над глибокою водою було темно, а Дух Божий рухався над водою."
+        },
+        "ja": {
+          "L": "そして地は形がなく、空虚であった。そして闇が深淵の面の上にあり、そして神の霊が水の面の上を舞っていた。",
+          "B": "地はまだ形がなく、空っぽであった。闇が深い淵の面を覆い、神の霊が水の上を舞うように動いていた。",
+          "R": "地には、まだ形がなく、何もありませんでした。深い水の上は真っ暗で、神の霊が水の上を動いていました。"
         }
       },
       "decisions": [
@@ -974,6 +1186,156 @@
           "reason": "\"ጥልቁ\" names the deep waters themselves (m3) without making them a particular ocean. \"ያንዣብብ\" is the verb for a bird hovering over a place, the picture of meaning decision m5; Readable uses the plainer \"ይንቀሳቀስ\", as the English Readable says \"moving\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020111"
+          ],
+          "choice": "\"मँडरा रहा था\" (was hovering)",
+          "alternatives": [
+            "\"चल रहा था\"",
+            "\"डोल रहा था\""
+          ],
+          "reason": "\"मँडराना\" is what a bird does over its nest or its young, the picture meaning decision m5 describes. \"आत्मा\" takes masculine agreement, as for the Spirit in the New Testament.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010010020061",
+            "o010010020121"
+          ],
+          "choice": "[था]",
+          "alternatives": [
+            "no bracket"
+          ],
+          "reason": "Hebrew needs no verb in \"darkness over the face of the deep\"; Hindi does, so Literal brackets it, as the English brackets \"was\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020081"
+          ],
+          "choice": "\"бездна\" (L); \"глубокие воды\" (B); \"глубокая вода\" (R)",
+          "alternatives": [
+            "\"бездна\" at every level"
+          ],
+          "reason": "\"Бездна\" keeps one word for the deep (m3), but for many readers it now means a bottomless pit. Balanced and Readable say what it is: the deep waters that covered the earth.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020111"
+          ],
+          "choice": "\"парящим\", \"парил\" (L, B); \"двигался\" (R)",
+          "alternatives": [
+            "\"носился\""
+          ],
+          "reason": "\"Парить\" is to hover above, as a bird does over its young (m5). \"Носиться\" suggests rushing about.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020111"
+          ],
+          "choice": "\"витав\" for hovering",
+          "alternatives": [
+            "ширяв",
+            "носився"
+          ],
+          "reason": "\"Витати\" is to hover or float above, which fits the picture of a bird over its young (meaning decision m5); \"ширяв\" is the word readers know from Ohienko, and this translation drafts the verse afresh.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020081"
+          ],
+          "choice": "\"безодня\" (L, B) and \"глибока вода\" (R) for the deep",
+          "alternatives": [
+            "вода",
+            "глибина"
+          ],
+          "reason": "Book-wide: \"безодня\" is the deep waters of the beginning and of the flood (7:11; 8:2); Readable says plainly what it is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020031",
+            "o010010020042",
+            "o010010020111"
+          ],
+          "choice": "\"形がなく、空虚であった\" (L), \"まだ形がなく、空っぽであった\" (B); \"舞っていた\" / \"舞うように動いていた\" for hovering",
+          "alternatives": [
+            "\"混沌として\"",
+            "\"覆っていた\""
+          ],
+          "reason": "The two words mean not yet ordered and not yet filled (m2), which a single word like 混沌 would blur. 舞う keeps the picture of a bird above its young (m5).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1039,6 +1401,26 @@
           "L": "እግዚአብሔርም አለ፦ «ብርሃን ይሁን»፤ ብርሃንም ሆነ።",
           "B": "እግዚአብሔር «ብርሃን ይሁን» አለ፤ ብርሃንም ተገኘ።",
           "R": "ከዚያም እግዚአብሔር «ብርሃን ይሁን!» አለ። ብርሃንም ማብራት ጀመረ።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने कहा, \"ज्योति हो,\" और ज्योति हुई।",
+          "B": "परमेश्वर ने कहा, \"ज्योति हो,\" और ज्योति उत्पन्न हो गई।",
+          "R": "फिर परमेश्वर ने कहा, \"रोशनी हो जाए!\" और रोशनी चमकने लगी।"
+        },
+        "ru": {
+          "L": "И Бог сказал: «Пусть будет свет», и был свет.",
+          "B": "Бог сказал: «Пусть будет свет», и появился свет.",
+          "R": "Потом Бог сказал: «Пусть будет свет!» И засиял свет."
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай буде світло», і було світло.",
+          "B": "Бог сказав: «Нехай буде світло», і світло зʼявилося.",
+          "R": "Тоді Бог сказав: «Нехай буде світло!» І світло засяяло."
+        },
+        "ja": {
+          "L": "そして神は言われた。「光があるように。」そして光があった。",
+          "B": "神が「光があるように」と言われると、光が現れた。",
+          "R": "それから神が、「光があるように！」と言われると、光が輝き始めました。"
         }
       },
       "decisions": [
@@ -1268,6 +1650,95 @@
           "reason": "Hebrew narrative says \"and God said\" before the words spoken. Amharic normally ends a sentence with its verb, so the usual order is the speech and then \"አለ\"; Amharic also allows the verb first, introduced with ፦, and Literal uses that to keep the Hebrew order. \"እንዲህ\" (thus) is not added, since the Hebrew has no such word. \"ይሁን ... ሆነ\" keeps the one verb of command and result at Literal (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030041",
+            "o010010030061"
+          ],
+          "choice": "\"ज्योति\" (L, B); \"रोशनी\" (R)",
+          "alternatives": [
+            "\"प्रकाश\"",
+            "\"उजाला\""
+          ],
+          "reason": "The same words for light as the New Testament (John 1; 2 Corinthians 4:6, which recalls this verse). Literal repeats the verb, \"हो ... हुई\", as the Hebrew does (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030031"
+          ],
+          "choice": "\"Пусть будет\" for God's commands of creation, through Genesis",
+          "alternatives": [
+            "\"Да будет\""
+          ],
+          "reason": "\"Да будет\" is the Church Slavonic form readers remember. \"Пусть будет\" is how Russian gives a command in the third person now, and it is used at every level; the same goes for the other commands of chapter 1 (\"пусть соберутся\", \"пусть земля произведёт\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010030012",
+            "o010010030021"
+          ],
+          "choice": "Literal keeps the Hebrew chain \"І сказав Бог... і було...\" with the verb first; Balanced puts the subject first and smooths the \"і\"; Readable starts new sentences",
+          "alternatives": [
+            "\"Бог сказав\" at every level"
+          ],
+          "reason": "Book-wide for the narrative (docs/ukrainian-ot-terms.md): the Hebrew chain of \"and he did\" verbs is \"і... і...\" at Literal, smoothed at Balanced and split into short sentences at Readable. Events take the perfective past (сказав, зробив), what kept happening the imperfective.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030031",
+            "o010010030052"
+          ],
+          "choice": "God's commands to creation as \"〜があるように\" / \"〜するように\" throughout the chapter; Literal answers with the same verb \"光があった\"",
+          "alternatives": [
+            "the classical-sounding imperative \"光あれ\"",
+            "\"〜よ、〜せよ\""
+          ],
+          "reason": "Hebrew uses the same verb for the command and its result (m1); Literal keeps ある in both. The 〜ように form is a natural modern way to say \"let there be\" without bungo forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1343,6 +1814,26 @@
           "L": "እግዚአብሔርም ብርሃኑን መልካም [መሆኑን] አየ፤ እግዚአብሔርም በብርሃኑና በጨለማው መካከል ለየ።",
           "B": "እግዚአብሔር ብርሃኑ መልካም መሆኑን አየ፤ ብርሃኑንም ከጨለማው ለየው።",
           "R": "እግዚአብሔር ብርሃኑ ጥሩ መሆኑን አየ። ብርሃኑን ከጨለማው ለየው።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने ज्योति को देखा, कि [वह] अच्छी [है], और परमेश्वर ने ज्योति और अंधकार के बीच विभाजन किया।",
+          "B": "परमेश्वर ने देखा कि ज्योति अच्छी है, और परमेश्वर ने ज्योति को अंधकार से अलग किया।",
+          "R": "परमेश्वर ने देखा कि रोशनी अच्छी है। उन्होंने रोशनी को अँधेरे से अलग कर दिया।"
+        },
+        "ru": {
+          "L": "И Бог увидел свет, что [он] хорош, и Бог провёл разделение между светом и тьмой.",
+          "B": "Бог увидел, что свет хорош, и Бог отделил свет от тьмы.",
+          "R": "Бог увидел, что свет хороший. Он отделил свет от тьмы."
+        },
+        "uk": {
+          "L": "І побачив Бог світло, що [воно] добре, і розділив Бог між світлом і темрявою.",
+          "B": "Бог побачив, що світло добре, і Бог відділив світло від темряви.",
+          "R": "Бог побачив, що світло добре. Він відділив світло від темряви."
+        },
+        "ja": {
+          "L": "そして神は光を見られた、それが良いと。そして神は光と闇の間を分けられた。",
+          "B": "神は光が良いものであるのをご覧になり、光と闇とを分けられた。",
+          "R": "神は、光が良いものであるのをご覧になりました。そして、光と闇とを分けられました。"
         }
       },
       "decisions": [
@@ -1444,6 +1935,48 @@
           "reason": "\"መልካም\" is good in the full sense of meaning decision m1: as it should be and pleasing. \"ጥሩ\" is the everyday word for good and is plain enough for Readable. \"ደግ\" is said of a kind person and does not fit things made.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010040072",
+            "o010010040081",
+            "o010010040091"
+          ],
+          "choice": "\"провёл разделение между\"",
+          "alternatives": [
+            "\"отделил свет от тьмы\""
+          ],
+          "reason": "The Hebrew says \"separated between\"; Russian cannot say \"разделил между\" without an object, so Literal says \"made a separation between\" to keep the word \"between\" (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010040031",
+            "o010010040051",
+            "o010010040061"
+          ],
+          "choice": "\"光を見られた、それが良いと\"",
+          "alternatives": [
+            "\"光が良いのを見られた\""
+          ],
+          "reason": "Literal keeps the Hebrew order, in which God sees the light and then the clause says what he saw in it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1520,6 +2053,26 @@
           "L": "እግዚአብሔርም ብርሃኑን ቀን ብሎ ጠራው፤ ጨለማውንም ሌሊት ብሎ ጠራው። ምሽትም ሆነ፣ ጠዋትም ሆነ፤ ቀን አንድ።",
           "B": "እግዚአብሔር ብርሃኑን ቀን ብሎ ሰየመው፤ ጨለማውንም ሌሊት ብሎ ሰየመው። ምሽት መጣ፣ ቀጥሎም ጠዋት መጣ፤ ይህ የመጀመሪያው ቀን ነበር።",
           "R": "እግዚአብሔር ለብርሃኑ ቀን የሚል ስም ሰጠው፤ ለጨለማውም ሌሊት የሚል ስም ሰጠው። ምሽቱ አለፈ፤ ጠዋትም መጣ። ያ የመጀመሪያው ቀን ነበር።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने ज्योति को दिन कहा, और अंधकार को उन्होंने रात कहा। और शाम हुई और सुबह हुई, दिन एक।",
+          "B": "परमेश्वर ने ज्योति का नाम दिन रखा, और अंधकार का नाम उन्होंने रात रखा। शाम हुई, फिर सुबह: पहला दिन।",
+          "R": "परमेश्वर ने रोशनी को दिन नाम दिया, और अँधेरे को उन्होंने रात नाम दिया। शाम ढली, और सुबह हुई। यह पहला दिन था।"
+        },
+        "ru": {
+          "L": "И Бог назвал свет Днём, а тьму {{deity_pronoun:он|Он}} назвал Ночью. И настал вечер, и настало утро: день один.",
+          "B": "Бог назвал свет Днём, а тьму {{deity_pronoun:он|Он}} назвал Ночью. Настал вечер, а потом утро: первый день.",
+          "R": "Бог дал свету имя День, а тьме {{deity_pronoun:он|Он}} дал имя Ночь. Прошёл вечер, и наступило утро. Это был первый день."
+        },
+        "uk": {
+          "L": "І назвав Бог світло Днем, а темряву {{deity_pronoun:він|Він}} назвав Ніччю. І був вечір, і був ранок — день один.",
+          "B": "Бог назвав світло Днем, а темряву {{deity_pronoun:він|Він}} назвав Ніччю. Настав вечір, а потім ранок — перший день.",
+          "R": "Бог дав світлу імʼя День, а темряві {{deity_pronoun:він|Він}} дав імʼя Ніч. Минув вечір, і настав ранок. Це був перший день."
+        },
+        "ja": {
+          "L": "そして神は光を昼と呼ばれ、闇を夜と呼ばれた。そして夕べがあり、そして朝があった。第一の日。",
+          "B": "神は光を昼と名づけ、闇を夜と名づけられた。夕べが来て、それから朝が来た。一日目である。",
+          "R": "神は光に昼という名前を、闇に夜という名前をつけられました。夕方が過ぎて、朝が来ました。これが一日目でした。"
         }
       },
       "decisions": [
@@ -1820,6 +2373,154 @@
           "reason": "The Hebrew counts the first day with a cardinal number (m2). Literal keeps the cardinal and the Hebrew order, \"ቀን አንድ\", because \"አንድ ቀን\" would read as \"one day, once\". The refrain is \"ምሽትም ሆነ፣ ጠዋትም ሆነ\" at Literal (keeping the Hebrew's two \"and it was\"), \"ምሽት መጣ፣ ቀጥሎም ጠዋት መጣ\" at Balanced and \"ምሽቱ አለፈ፤ ጠዋትም መጣ\" at Readable, the same on each of the six days.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010050061"
+          ],
+          "choice": "no deity_pronoun spans; honorific forms for God (\"परमेश्वर ने\", \"उन्होंने\")",
+          "alternatives": [
+            "deity_pronoun spans"
+          ],
+          "reason": "Devanagari has no capital letters, so the setting has nothing to change and the Hindi text has no deity_pronoun spans in Genesis. Respect for God comes from the honorific third person (उन्होंने, वे, plural agreement) at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"दिन एक\" (day one)",
+          "alternatives": [
+            "\"पहला दिन\""
+          ],
+          "reason": "Literal keeps the Hebrew's cardinal number and its order (m2); Hindi \"एक दिन\" would mean \"one day, once\". Balanced and Readable say \"पहला दिन\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010050061"
+          ],
+          "choice": "\"он\" by default, \"Он\" with the deity_pronoun setting: pronouns for God lowercase by default, capitalised with the setting, as in the Russian New Testament",
+          "alternatives": [
+            "always \"Он\""
+          ],
+          "reason": "Hebrew has no capital letters. This translation writes \"он\", \"его\", \"ему\", \"я\", \"ты\" for God in lowercase, and the reader setting capitalises them; the reflexive \"свой\", \"себя\" take no span. Where a Russian sentence has no pronoun (the verb alone says who acts), there is no span even where the English has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050081",
+            "o010010050082",
+            "o010010050091",
+            "o010010050101",
+            "o010010050102",
+            "o010010050111"
+          ],
+          "choice": "\"И настал вечер, и настало утро: день один\"",
+          "alternatives": [
+            "\"И был вечер, и было утро\""
+          ],
+          "reason": "Literal repeats the verb, as the Hebrew does (\"and there was ... and there was\"), with \"настать\", which says that evening and morning came.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"день один\" with the cardinal number",
+          "alternatives": [
+            "день перший"
+          ],
+          "reason": "Literal keeps the Hebrew cardinal (meaning decision m2); Balanced and Readable say \"перший день\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "God's pronouns mid-sentence carry the deity_pronoun span (він/Він, його, йому, ним, я, мене, ти, тебе), as in the New Testament; a pronoun at the start of a sentence is simply capitalised, and свій, себе take none",
+          "alternatives": [
+            "no span"
+          ],
+          "reason": "Book-wide (docs/ukrainian-style.md section 7). God is addressed with ти at every level, and the Hebrew singular and plural \"you\" come through as ти and ви.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"第一の日\" (L); \"一日目\" (B, R), and so \"第二の日\" / \"二日目\" for the following days",
+          "alternatives": [
+            "\"一つの日\"",
+            "\"一日\""
+          ],
+          "reason": "The Hebrew uses a cardinal, \"day one\" (m2), but \"一つの日\" is not natural Japanese and \"一日\" can be read as the first of a month; Literal therefore uses the plain ordinal 第一.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1893,6 +2594,26 @@
           "L": "እግዚአብሔርም አለ፦ «በውኆቹ መካከል ጠፈር ይሁን፤ ውኆችንም ከውኆች የሚለይ ይሁን።»",
           "B": "እግዚአብሔር «ውኃን ከውኃ ለመለየት በውኆቹ መካከል ጠፈር ይሁን» አለ።",
           "R": "ከዚያም እግዚአብሔር እንዲህ አለ፦ «በውኆቹ መካከል እንደ ጣራ ያለ ታላቅ ጠፈር ይሁን። ከታች ያለውን ውኃ ከላይ ካለው ውኃ ይለይ።»"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने कहा, \"जल के बीच में एक गुंबद हो, और वह जल और जल के बीच अलग करनेवाला हो।\"",
+          "B": "परमेश्वर ने कहा, \"जल के बीच में एक गुंबद हो, जो जल को जल से अलग करे।\"",
+          "R": "फिर परमेश्वर ने कहा, \"पानी के बीच में एक विशाल गुंबद बन जाए। वह नीचे के पानी को ऊपर के पानी से अलग रखे।\""
+        },
+        "ru": {
+          "L": "И Бог сказал: «Пусть будет свод посреди вод, и пусть он разделяет между водами и водами.»",
+          "B": "Бог сказал: «Пусть посреди вод будет свод, чтобы отделить воду от воды.»",
+          "R": "Потом Бог сказал: «Пусть посреди вод будет огромный купол. Пусть он держит воду внизу отдельно от воды наверху.»"
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай буде склепіння посеред вод, і нехай воно розділяє між водами і водами.»",
+          "B": "Бог сказав: «Нехай буде склепіння посеред вод, щоб відділяти воду від води.»",
+          "R": "Тоді Бог сказав: «Нехай посеред вод буде великий купол. Нехай він тримає воду внизу окремо від води вгорі.»"
+        },
+        "ja": {
+          "L": "そして神は言われた。「水の真ん中に天蓋があるように。そしてそれは水と水の間を分けるものとなるように。」",
+          "B": "神は言われた。「水の真ん中に天蓋があって、水と水とを分けるように。」",
+          "R": "それから神は言われました。「水の真ん中に大きな丸天井があるように。それが下の水と上の水とを分けるように。」"
         }
       },
       "decisions": [
@@ -2113,6 +2834,95 @@
           "reason": "\"ጠፈር\" is the expanse above the earth and is used through the Pentateuch. The Hebrew pictures something solid that holds back the waters above (m1); Readable shows that once with \"like a roof\", as the English Readable says \"great dome\", and then says \"ጠፈሩ\". \"ጉልላት\" is the dome of a church building and would bring that picture in; \"ሰማይ\" is the name God gives the vault in verse 8, not the word for it here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"गुंबद\" (L, B); \"विशाल गुंबद\" (R)",
+          "alternatives": [
+            "\"अंतर\"",
+            "\"अंतरिक्ष\"",
+            "\"आकाशमंडल\""
+          ],
+          "reason": "The Hebrew word is something beaten out, a solid-looking expanse that holds back the waters above (m1). \"गुंबद\" (vault, dome) keeps that picture; \"अंतर\" and \"अंतरिक्ष\" suggest empty space.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"свод\" (L, B); \"огромный купол\" (R)",
+          "alternatives": [
+            "\"твердь\"",
+            "\"пространство\""
+          ],
+          "reason": "\"Твердь\", the traditional word, is Church Slavonic and few readers know it. \"Пространство\" loses the sense of something solid (m1). \"Свод\", an arched ceiling, keeps it; Readable says \"купол\", a dome.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"склепіння\" (L, B), \"великий купол\" (R)",
+          "alternatives": [
+            "твердь",
+            "простір"
+          ],
+          "reason": "The vault is a solid-looking dome over the earth (meaning decision m1); \"склепіння\" says that in today's Ukrainian, where the church word \"твердь\" is no longer understood, and Readable pictures it as a dome, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"天蓋\" (L, B); \"大きな丸天井\" (R)",
+          "alternatives": [
+            "\"大空\"",
+            "\"天空\""
+          ],
+          "reason": "The word means a solid-looking expanse beaten out like metal that holds back the waters above (m1). 大空 suggests only open air; 天蓋 (a canopy over the world) keeps the picture of something spread out overhead, and Readable says it plainly as a great dome.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2198,6 +3008,26 @@
           "L": "እግዚአብሔርም ጠፈሩን ሠራ፤ ከጠፈሩ በታች [ባሉት] ውኆችና ከጠፈሩ በላይ [ባሉት] ውኆች መካከልም ለየ። እንደዚያም ሆነ።",
           "B": "እግዚአብሔር ጠፈሩን ሠራ፤ ከጠፈሩ በታች ያሉትን ውኆች ከጠፈሩ በላይ ካሉት ውኆች ለየ። እንደተባለውም ሆነ።",
           "R": "ስለዚህ እግዚአብሔር ጠፈሩን ሠራ። ከጠፈሩ በታች ያለውን ውኃ ከላዩ ካለው ውኃ ለየ። የሆነውም ይኸው ነው።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने गुंबद को बनाया, और उन्होंने उस जल के बीच जो गुंबद के नीचे [था] और उस जल के बीच जो गुंबद के ऊपर [था], विभाजन किया। और ऐसा ही हुआ।",
+          "B": "तब परमेश्वर ने गुंबद बनाया और उसके नीचे के जल को उसके ऊपर के जल से अलग किया। और ऐसा ही हो गया।",
+          "R": "तो परमेश्वर ने गुंबद बनाया। उन्होंने गुंबद के नीचे के पानी को उसके ऊपर के पानी से अलग कर दिया। और ठीक वैसा ही हुआ।"
+        },
+        "ru": {
+          "L": "И Бог создал свод, и {{deity_pronoun:он|Он}} провёл разделение между водами, которые [были] под сводом, и водами, которые [были] над сводом. И было так.",
+          "B": "И Бог создал свод и отделил воды под ним от вод над ним. Так и произошло.",
+          "R": "Так Бог сделал купол. Он отделил воду под куполом от воды над ним. Так всё и случилось."
+        },
+        "uk": {
+          "L": "І зробив Бог склепіння, і {{deity_pronoun:він|Він}} розділив між водами, що [були] під склепінням, і водами, що [були] над склепінням. І сталося так.",
+          "B": "Тож Бог зробив склепіння й відділив води під ним від вод над ним. І так сталося.",
+          "R": "Отже, Бог зробив купол. Він відділив воду під куполом від води над ним. І так усе й сталося."
+        },
+        "ja": {
+          "L": "そして神は天蓋を造り、天蓋の下にある水と天蓋の上にある水の間を分けられた。そしてそのようになった。",
+          "B": "こうして神は天蓋を造り、その下の水と上の水とを分けられた。そして、そのとおりになった。",
+          "R": "こうして神は丸天井を造られました。そして、丸天井の下の水と上の水とを分けられました。すると、言われたとおりになりました。"
         }
       },
       "decisions": [
@@ -2322,6 +3152,49 @@
           "reason": "The refrain says that what God commanded came about exactly (m2). Literal keeps the two Hebrew words as two Amharic ones; Balanced makes the link to the command plain; Readable says it in everyday words, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010070161",
+            "o010010070162",
+            "o010010070171"
+          ],
+          "choice": "\"Так и произошло\" (B); \"Так всё и случилось\" (R)",
+          "alternatives": [
+            "\"И стало так\""
+          ],
+          "reason": "Literal keeps \"И было так\", the Hebrew \"and it was so\". Balanced and Readable say in current Russian that what God commanded happened (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010070162",
+            "o010010070171"
+          ],
+          "choice": "\"そのとおりになった\" (B); \"言われたとおりになりました\" (R) for \"and it was so\" through the chapter",
+          "alternatives": [
+            "\"そのようになった\" at every level"
+          ],
+          "reason": "The phrase says that what God commanded happened exactly as he said (m2); Balanced and Readable make that explicit, while Literal keeps \"そのようになった\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2393,6 +3266,26 @@
           "L": "እግዚአብሔርም ጠፈሩን ሰማያት ብሎ ጠራው። ምሽትም ሆነ፣ ጠዋትም ሆነ፤ ሁለተኛ ቀን።",
           "B": "እግዚአብሔር ጠፈሩን ሰማይ ብሎ ሰየመው። ምሽት መጣ፣ ቀጥሎም ጠዋት መጣ፤ ይህ ሁለተኛው ቀን ነበር።",
           "R": "እግዚአብሔር ለጠፈሩ ሰማይ የሚል ስም ሰጠው። ምሽቱ አለፈ፤ ጠዋትም መጣ። ያ ሁለተኛው ቀን ነበር።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने गुंबद को आकाश कहा। और शाम हुई और सुबह हुई, दूसरा दिन।",
+          "B": "परमेश्वर ने गुंबद का नाम आकाश रखा। शाम हुई, फिर सुबह: दूसरा दिन।",
+          "R": "परमेश्वर ने गुंबद को आकाश नाम दिया। शाम ढली, और सुबह हुई। यह दूसरा दिन था।"
+        },
+        "ru": {
+          "L": "И Бог назвал свод Небесами. И настал вечер, и настало утро: день второй.",
+          "B": "Бог назвал свод Небом. Настал вечер, а потом утро: второй день.",
+          "R": "Бог дал куполу имя Небо. Прошёл вечер, и наступило утро. Это был второй день."
+        },
+        "uk": {
+          "L": "І назвав Бог склепіння Небесами. І був вечір, і був ранок — день другий.",
+          "B": "Бог назвав склепіння Небом. Настав вечір, а потім ранок — другий день.",
+          "R": "Бог дав куполу імʼя Небо. Минув вечір, і настав ранок. Це був другий день."
+        },
+        "ja": {
+          "L": "そして神は天蓋を天と呼ばれた。そして夕べがあり、そして朝があった。第二の日。",
+          "B": "神は天蓋を空と名づけられた。夕べが来て、それから朝が来た。二日目である。",
+          "R": "神は丸天井に空という名前をつけられました。夕方が過ぎて、朝が来ました。これが二日目でした。"
         }
       },
       "decisions": [
@@ -2511,6 +3404,27 @@
           "reason": "Portuguese \"céu\" is the everyday word for the sky as well as for the dwelling of God, so Balanced and Readable can say what the English says with \"Sky\" in the singular \"Céu\"; Literal keeps the plural \"Céus\", the word of verse 1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010080041"
+          ],
+          "choice": "\"आकाश\" at every level",
+          "alternatives": [
+            "\"स्वर्ग\""
+          ],
+          "reason": "Hindi \"आकाश\" is the visible sky as well as the heavens of 1:1, so the change the English Balanced and Readable make (\"Sky\") is not needed. \"स्वर्ग\" would suggest God's dwelling.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2588,6 +3502,26 @@
           "L": "እግዚአብሔርም አለ፦ «ከሰማያት በታች [ያሉት] ውኆች ወደ አንድ ስፍራ ይሰብሰቡ፤ የብሱም ይታይ።» እንደዚያም ሆነ።",
           "B": "ከዚያም እግዚአብሔር «ከሰማይ በታች ያሉት ውኆች ወደ አንድ ስፍራ ይከማቹ፤ የብሱም ይታይ» አለ። እንደተባለውም ሆነ።",
           "R": "ከዚያም እግዚአብሔር «ደረቅ መሬት እንዲታይ ከሰማይ በታች ያለው ውኃ ወደ አንድ ቦታ ይሰብሰብ» አለ። የሆነውም ይኸው ነው።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने कहा, \"आकाश के नीचे का जल एक ही स्थान पर एकत्र किया जाए, और सूखी [भूमि] प्रकट हो।\" और ऐसा ही हुआ।",
+          "B": "फिर परमेश्वर ने कहा, \"आकाश के नीचे का जल सिमटकर एक जगह आ जाए, और सूखी भूमि नज़र आए।\" और ऐसा ही हो गया।",
+          "R": "फिर परमेश्वर ने कहा, \"आकाश के नीचे का पानी एक जगह जमा हो जाए, ताकि सूखी ज़मीन दिखाई दे।\" और ठीक वैसा ही हुआ।"
+        },
+        "ru": {
+          "L": "И Бог сказал: «Пусть воды под небесами соберутся в одно место, и пусть покажется суша.» И было так.",
+          "B": "Потом Бог сказал: «Пусть воды под небом сойдутся в одно место, и пусть станет видна суша.» Так и произошло.",
+          "R": "Потом Бог сказал: «Пусть вода под небом соберётся в одном месте, чтобы появилась сухая земля.» Так всё и случилось."
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай зберуться води, що під небесами, в одне місце, і нехай зʼявиться суходіл.» І сталося так.",
+          "B": "Тоді Бог сказав: «Нехай води під небом зійдуться в одне місце, і нехай покажеться суходіл.» І так сталося.",
+          "R": "Тоді Бог сказав: «Нехай вода під небом збереться в одному місці, щоб зʼявилася суха земля.» І так усе й сталося."
+        },
+        "ja": {
+          "L": "そして神は言われた。「天の下の水は一つの場所に集められるように。そして乾いた[地]が現れるように。」そしてそのようになった。",
+          "B": "それから神は言われた。「空の下の水は一つの所に集まり、乾いた地が見えるようになるように。」そして、そのとおりになった。",
+          "R": "それから神は言われました。「空の下の水は一つの所に集まって、かわいた地が現れるように。」すると、言われたとおりになりました。"
         }
       },
       "decisions": [
@@ -2704,6 +3638,25 @@
           "reason": "Amharic has a single noun for dry land, \"የብስ\", so Literal needs no supplied word where the English brackets \"[land]\", and Balanced keeps the same word through Genesis. Readable uses the plainer phrase \"ደረቅ መሬት\" (dry ground), which young readers know.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010010090112"
+          ],
+          "choice": "\"суша\", with no brackets",
+          "alternatives": [
+            "\"сухая [земля]\""
+          ],
+          "reason": "The Hebrew says \"the dry\"; Russian has a noun of its own for dry land, so Literal needs no bracket.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2779,6 +3732,26 @@
           "L": "እግዚአብሔርም የብሱን ምድር ብሎ ጠራው፤ የውኆቹንም ስብስብ ባሕሮች ብሎ ጠራው። እግዚአብሔርም መልካም [መሆኑን] አየ።",
           "B": "እግዚአብሔር የብሱን ምድር ብሎ ሰየመው፤ የተሰበሰቡትንም ውኆች ባሕሮች ብሎ ሰየማቸው። እግዚአብሔርም መልካም መሆኑን አየ።",
           "R": "እግዚአብሔር ለደረቁ መሬት ምድር የሚል ስም ሰጠው፤ ለተሰበሰበውም ውኃ ባሕሮች የሚል ስም ሰጠው። እግዚአብሔር ጥሩ መሆኑን አየ።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने सूखी [भूमि] को पृथ्वी कहा, और जल के संग्रह को उन्होंने समुद्र कहा। और परमेश्वर ने देखा कि [वह] अच्छा [है]।",
+          "B": "परमेश्वर ने सूखी भूमि का नाम धरती रखा, और इकट्ठे हुए जल का नाम उन्होंने समुद्र रखा। और परमेश्वर ने देखा कि यह अच्छा है।",
+          "R": "परमेश्वर ने सूखी ज़मीन को धरती नाम दिया, और जो पानी एक साथ जमा हुआ था, उसे उन्होंने समुद्र नाम दिया। परमेश्वर ने देखा कि यह अच्छा है।"
+        },
+        "ru": {
+          "L": "И Бог назвал сушу Землёй, а скопление вод {{deity_pronoun:он|Он}} назвал Морями. И Бог увидел, что [это] хорошо.",
+          "B": "Бог назвал сушу Землёй, а собравшиеся воды {{deity_pronoun:он|Он}} назвал Морями. И Бог увидел, что это хорошо.",
+          "R": "Бог дал сухой земле имя Земля, а воде, которая собралась вместе, {{deity_pronoun:он|Он}} дал имя Моря. Бог увидел, что это хорошо."
+        },
+        "uk": {
+          "L": "І назвав Бог суходіл Землею, а зібрання вод {{deity_pronoun:він|Він}} назвав Морями. І побачив Бог, що [це] добре.",
+          "B": "Бог назвав суходіл Землею, а зібрані води {{deity_pronoun:він|Він}} назвав Морями. І побачив Бог, що це добре.",
+          "R": "Бог дав сухій землі імʼя Земля, а воді, що зібралася, {{deity_pronoun:він|Він}} дав імʼя Моря. Бог побачив, що це добре."
+        },
+        "ja": {
+          "L": "そして神は乾いた[地]を地と呼ばれ、水の集まりを海と呼ばれた。そして神は[それが]良いのを見られた。",
+          "B": "神は乾いた地を陸と名づけ、水の集まった所を海と名づけられた。神はそれを良いものとご覧になった。",
+          "R": "神は、かわいた地に陸という名前を、集まった水に海という名前をつけられました。神は、それが良いものであるのをご覧になりました。"
         }
       },
       "decisions": [
@@ -2809,6 +3782,46 @@
           "choice": "seas: all the gathered waters, not one particular sea",
           "alternatives": [],
           "reason": "The plural takes in every body of water: the \"one place\" of verse 9, seen as many seas.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010100041"
+          ],
+          "choice": "\"धरती\" (B, R)",
+          "alternatives": [
+            "\"पृथ्वी\""
+          ],
+          "reason": "Here the word means the land as against the seas (m1). Literal keeps \"पृथ्वी\", the word of 1:1; Balanced and Readable say \"धरती\", the everyday word for the ground and the land.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010100041"
+          ],
+          "choice": "\"陸\" (B, R) for the name given to the dry land; \"地\" (L)",
+          "alternatives": [
+            "\"地\" at every level"
+          ],
+          "reason": "Here the word means the land as against the seas (m1). Literal keeps 地, the same word as in verse 1; Balanced and Readable say 陸 so that the naming is clear.",
           "uncertain": false,
           "footnote": false
         }
@@ -2896,6 +3909,26 @@
           "L": "እግዚአብሔርም አለ፦ «ምድር ልምላሜን፣ ዘር የሚሰጥ ተክልን፣ [እንዲሁም] ዘሩ በውስጡ ያለበትን እንደ ወገኑ ፍሬ የሚያፈራ የፍሬ ዛፍን በምድር ላይ ታብቅል።» እንደዚያም ሆነ።",
           "B": "ከዚያም እግዚአብሔር «ምድር ለምለም ተክልን ታብቅል፤ ዘር የሚሰጡ ተክሎችንና በምድር ላይ ዘሩ በውስጡ ያለበትን ፍሬ የሚያፈሩ ዛፎችን፣ በየወገናቸው ታብቅል» አለ። እንደተባለውም ሆነ።",
           "R": "ከዚያም እግዚአብሔር «በምድር ላይ ተክሎች ይብቀሉ፤ ዘር የሚሰጡ ተክሎችና ዘር ያለበት ፍሬ የሚያፈሩ ዛፎች፣ ከየዓይነቱ ይብቀሉ» አለ። የሆነውም ይኸው ነው።"
+        },
+        "hi": {
+          "L": "और परमेश्वर ने कहा, \"पृथ्वी हरियाली उगाए: बीज देनेवाले पौधे, [और] फल के पेड़ जो अपनी क़िस्म के अनुसार फल देते हैं, जिनका बीज उन्हीं में [है], पृथ्वी पर।\" और ऐसा ही हुआ।",
+          "B": "फिर परमेश्वर ने कहा, \"पृथ्वी हरी-भरी वनस्पति उपजाए: ऐसे पौधे जो बीज लाते हैं, और पृथ्वी पर ऐसे पेड़ जो अपनी-अपनी क़िस्म के अनुसार फल देते हैं, जिनके भीतर उनका बीज होता है।\" और ऐसा ही हो गया।",
+          "R": "फिर परमेश्वर ने कहा, \"ज़मीन पर पौधे उग आएँ: ऐसे पौधे जिनमें बीज लगते हैं, और ऐसे पेड़ जिनके फलों में बीज होते हैं, हर एक अपनी-अपनी क़िस्म का।\" और ठीक वैसा ही हुआ।"
+        },
+        "ru": {
+          "L": "И Бог сказал: «Пусть земля произведёт зелень: растения, дающие семя, [и] плодовые деревья, приносящие плод по своему виду, в котором его семя, на земле.» И было так.",
+          "B": "Потом Бог сказал: «Пусть земля даст зелёную поросль: растения, которые приносят семена, и деревья на земле, которые дают плоды с семенами внутри, каждое по своему виду.» Так и произошло.",
+          "R": "Потом Бог сказал: «Пусть на земле вырастут травы, которые дают семена, и деревья с плодами, в которых есть семена, каждое своего вида.» Так всё и случилось."
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай земля вирощує зелень: рослини, що дають насіння, [і] плодові дерева, що приносять плід за своїм видом, з його насінням у ньому, на землі.» І сталося так.",
+          "B": "Тоді Бог сказав: «Нехай земля зростить зелень: рослини, що дають насіння, і дерева на землі, що приносять плід із насінням усередині, кожне за своїм видом.» І так сталося.",
+          "R": "Тоді Бог сказав: «Нехай на землі ростуть рослини: рослини, що мають насіння, і дерева з плодами, у яких є насіння, кожне свого виду.» І так усе й сталося."
+        },
+        "ja": {
+          "L": "そして神は言われた。「地は草木を芽生えさせるように。種を生じる草、[そして]種類に従って実を結ぶ果樹、その種がその中にあるものを、地の上に。」そしてそのようになった。",
+          "B": "それから神は言われた。「地は青草を生えさせるように。種を生じる草と、中に種のある実を結ぶ木を、それぞれ種類に従って地の上に。」そして、そのとおりになった。",
+          "R": "それから神は言われました。「地に草や木が生えるように。種のできる草と、中に種のある実をつける木が、それぞれの種類ごとに。」すると、言われたとおりになりました。"
         }
       },
       "decisions": [
@@ -3136,6 +4169,96 @@
           "reason": "\"ወገን\" is the established Amharic word for a kind or family of living things in this refrain, and it says what meaning decision m3 describes: each kind producing more of its own kind. Readable uses the everyday \"ዓይነት\" (sort, kind), since \"ወገን\" is now heard mostly of one's own people.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110131",
+            "o010010110132"
+          ],
+          "choice": "\"अपनी क़िस्म के अनुसार\" (according to its kind)",
+          "alternatives": [
+            "\"अपनी जाति के अनुसार\"",
+            "\"अपनी प्रजाति के अनुसार\""
+          ],
+          "reason": "\"जाति\" also means caste in Hindi today, and \"प्रजाति\" is the modern scientific word for a species. \"क़िस्म\" is the plain word for a kind; it is used for this phrase through Genesis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110131",
+            "o010010110132"
+          ],
+          "choice": "\"по своему виду\"",
+          "alternatives": [
+            "\"по роду своему\""
+          ],
+          "reason": "\"Вид\" is the current word for a kind of plant or animal (m3); \"род\" in that sense is old-fashioned. The same phrase is used through chapters 1 to 7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110131",
+            "o010010110132",
+            "o010010110133"
+          ],
+          "choice": "\"за своїм видом\" for \"according to its kind\"",
+          "alternatives": [
+            "за родом своїм"
+          ],
+          "reason": "Book-wide through chapters 1, 6 and 7: \"вид\" is the plain modern word for a kind of plant or animal, while \"рід\" also means a family line, which Genesis needs for the generations.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110051",
+            "o010010110061",
+            "o010010110091"
+          ],
+          "choice": "\"草木\" (L), \"青草\" (B) for the general word for green growth, then \"草\" and \"木\" / \"果樹\" for its two kinds",
+          "alternatives": [
+            "\"植物\""
+          ],
+          "reason": "The verse names green growth in general and then its two main kinds (m2); Japanese keeps a general word followed by the two kinds.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3221,6 +4344,26 @@
           "L": "ምድርም ልምላሜን፣ እንደ ወገኑ ዘር የሚሰጥ ተክልን፣ እንደ ወገኑም ዘሩ በውስጡ ያለበትን ፍሬ የሚያፈራ ዛፍን አበቀለች። እግዚአብሔርም መልካም [መሆኑን] አየ።",
           "B": "ምድርም ለምለም ተክልን አበቀለች፤ ዘር የሚሰጡ ተክሎችን፣ በየወገናቸው፣ ዘሩ በውስጡ ያለበትን ፍሬ የሚያፈሩ ዛፎችንም፣ በየወገናቸው አበቀለች። እግዚአብሔርም መልካም መሆኑን አየ።",
           "R": "ስለዚህ ምድር ዘር የሚሰጡ ተክሎችንና ዘር ያለበት ፍሬ የሚያፈሩ ዛፎችን፣ ከየዓይነቱ አበቀለች። እግዚአብሔር ጥሩ መሆኑን አየ።"
+        },
+        "hi": {
+          "L": "और पृथ्वी ने हरियाली उपजाई, अपनी क़िस्म के अनुसार बीज देनेवाले पौधे, और फल देनेवाले पेड़ जिनका बीज उन्हीं में [है], अपनी क़िस्म के अनुसार। और परमेश्वर ने देखा कि [वह] अच्छा [है]।",
+          "B": "पृथ्वी ने हरी-भरी वनस्पति उपजाई: अपनी-अपनी क़िस्म के अनुसार बीज लानेवाले पौधे, और अपनी-अपनी क़िस्म के अनुसार ऐसे पेड़ जो फल देते हैं और जिनके भीतर उनका बीज होता है। और परमेश्वर ने देखा कि यह अच्छा है।",
+          "R": "तो ज़मीन पर ऐसे पौधे उग आए जिनमें बीज लगते थे, और ऐसे पेड़ जिनके फलों में बीज थे, हर एक अपनी-अपनी क़िस्म का। परमेश्वर ने देखा कि यह अच्छा है।"
+        },
+        "ru": {
+          "L": "И земля произвела зелень, растения, дающие семя по своему виду, и деревья, приносящие плод, в котором его семя, по своему виду. И Бог увидел, что [это] хорошо.",
+          "B": "Земля дала зелёную поросль: растения, которые приносят семена, каждое по своему виду, и деревья, которые дают плоды с семенами внутри, каждое по своему виду. И Бог увидел, что это хорошо.",
+          "R": "И на земле выросли травы, которые давали семена, и деревья с плодами, в которых были семена, каждое своего вида. Бог увидел, что это хорошо."
+        },
+        "uk": {
+          "L": "І видала земля зелень, рослини, що дають насіння за своїм видом, і дерева, що приносять плід, у якому його насіння, за своїм видом. І побачив Бог, що [це] добре.",
+          "B": "Земля видала зелень: рослини, що дають насіння, кожна за своїм видом, і дерева, що приносять плід із насінням усередині, кожне за своїм видом. І побачив Бог, що це добре.",
+          "R": "І на землі виросли рослини, що мали насіння, і дерева з плодами, у яких було насіння, кожне свого виду. Бог побачив, що це добре."
+        },
+        "ja": {
+          "L": "そして地は草木を生み出した。種類に従って種を生じる草と、種類に従って、その種がその中にある実を結ぶ木を。そして神は[それが]良いのを見られた。",
+          "B": "地は青草を生み出した。それぞれ種類に従って種を生じる草と、それぞれ種類に従って、中に種のある実を結ぶ木である。神はそれを良いものとご覧になった。",
+          "R": "こうして地には、種のできる草と、中に種のある実をつける木が、それぞれの種類ごとに生えました。神は、それが良いものであるのをご覧になりました。"
         }
       },
       "decisions": [
@@ -3352,6 +4495,26 @@
           "L": "ምሽትም ሆነ፣ ጠዋትም ሆነ፤ ሦስተኛ ቀን።",
           "B": "ምሽት መጣ፣ ቀጥሎም ጠዋት መጣ፤ ይህ ሦስተኛው ቀን ነበር።",
           "R": "ምሽቱ አለፈ፤ ጠዋትም መጣ። ያ ሦስተኛው ቀን ነበር።"
+        },
+        "hi": {
+          "L": "और शाम हुई और सुबह हुई, तीसरा दिन।",
+          "B": "शाम हुई, फिर सुबह: तीसरा दिन।",
+          "R": "शाम ढली, और सुबह हुई। यह तीसरा दिन था।"
+        },
+        "ru": {
+          "L": "И настал вечер, и настало утро: день третий.",
+          "B": "Настал вечер, а потом утро: третий день.",
+          "R": "Прошёл вечер, и наступило утро. Это был третий день."
+        },
+        "uk": {
+          "L": "І був вечір, і був ранок — день третій.",
+          "B": "Настав вечір, а потім ранок — третій день.",
+          "R": "Минув вечір, і настав ранок. Це був третій день."
+        },
+        "ja": {
+          "L": "そして夕べがあり、そして朝があった。第三の日。",
+          "B": "夕べが来て、それから朝が来た。三日目である。",
+          "R": "夕方が過ぎて、朝が来ました。これが三日目でした。"
         }
       },
       "decisions": [],

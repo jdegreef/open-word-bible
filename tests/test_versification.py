@@ -4,7 +4,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from owb import refs, versification
-from owb.sources import macula_hebrew, open_bibles, sblgnt
+from owb.sources import macula_greek, macula_hebrew, open_bibles, sblgnt
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -153,11 +153,12 @@ class NewTestamentNumberingTest(unittest.TestCase):
     # Not renumbered: absent from the SBLGNT's text.
     OMITTED = {"MAT.17.21", "MAT.18.11", "MAT.23.14", "MRK.7.16", "MRK.9.44", "MRK.9.46",
                "MRK.11.26", "MRK.15.28", "LUK.17.36", "LUK.23.17", "JHN.5.4", "ACT.8.37",
-               "ACT.15.34", "ACT.24.7", "ACT.28.29", "ROM.16.25", "ROM.16.26", "ROM.16.27"}
+               "ACT.15.34", "ACT.24.7", "ACT.28.29"}
 
     def test_every_verse_lands_once(self):
         nt = refs.BOOK_CODES[refs.BOOK_CODES.index("MAT"):]
-        greek = [r for code in nt for r in sblgnt.load_book(code)]
+        # The SBLGNT, with Romans 16:25-27 from Nestle 1904 (macula_greek.SUPPLEMENT).
+        greek = [r for code in nt for r in sblgnt.load_book(code)] + sorted(macula_greek.SUPPLEMENT)
         kjv = {refs.Ref(*key) for key in open_bibles.load("kjv") if key[0] in nt}
         mapped = {e for r in greek for e in versification.to_english(r)}
         self.assertEqual(mapped - kjv, set())

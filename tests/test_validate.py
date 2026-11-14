@@ -38,6 +38,17 @@ class ValidateTest(unittest.TestCase):
         record["source"]["text"] += " "
         self.assertTrue(any("source.text" in e for e in validate.validate_record(record)))
 
+    def test_romans_16_25_27_name_the_nestle_1904_text(self):
+        path = EXAMPLE.parents[1] / "ROM" / "ROM.16.json"
+        record = next(r for r in json.loads(path.read_text(encoding="utf-8"))["records"]
+                      if r["id"] == "ROM.16.25.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["source"]["text_id"] = "SBLGNT@v1.2"
+        self.assertTrue(any("is not the text" in e for e in validate.validate_record(record)))
+        other = example_records()[0]
+        other["source"]["text_id"] = "Nestle1904@macula-greek"
+        self.assertTrue(any("is not the text" in e for e in validate.validate_record(other)))
+
     def test_unknown_setting_fails(self):
         record = example_records()[0]
         record["renderings"]["en"]["B"] = "In the {{colour:beginning|start}}"

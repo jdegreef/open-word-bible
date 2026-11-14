@@ -323,6 +323,18 @@ body {
 }
 /* Korean breaks lines between words, as it is written, not inside them. */
 :lang(ko) { word-break: keep-all; overflow-wrap: break-word; }
+/* Japanese is set in the reader's own Japanese fonts (Mincho for the
+   reading text, Gothic for the interface): a full Japanese webfont is
+   several megabytes. Latin letters and digits stay in Gentium and Hanken
+   Grotesk. Lines break by the strict Japanese rules (no small kana or
+   closing bracket at a line start), and Japanese has no italics. */
+:root:lang(ja) {
+  --display: "Fraunces", "Gentium Book Plus", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", "Noto Serif CJK JP", serif;
+  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", "Noto Serif CJK JP", serif;
+  --sans: "Hanken Grotesk", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Noto Sans JP", "Noto Sans CJK JP", system-ui, sans-serif;
+}
+:lang(ja) { line-break: strict; overflow-wrap: break-word; }
+:lang(ja) em, :lang(ja) i, :lang(ja) cite { font-style: normal; }
 a { color: var(--accent); text-underline-offset: 3px; }
 .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -1823,13 +1835,15 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
 /* The header's account menu: "Sign in" when signed out, the reader's
    initial and a small menu when signed in (web/site.js). */
 .account-menu { position: relative; }
+/* "Sign in" is a quiet outline, so it doesn't compete with a page's own
+   main button (the hero's "Start reading"). */
 .sign-in-btn {
   display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 14px 0 11px;
-  border-radius: 999px; background: var(--accent); color: var(--accent-contrast); border: 1px solid var(--accent);
+  border-radius: 999px; background: var(--surface); color: var(--text); border: 1px solid var(--line-strong);
   font-size: 14.5px; font-weight: 600; text-decoration: none; white-space: nowrap;
-  transition: filter var(--fast) ease;
+  transition: border-color var(--fast) ease, color var(--fast) ease;
 }
-.sign-in-btn:hover { filter: brightness(1.08); }
+.sign-in-btn:hover { border-color: var(--accent); color: var(--accent); }
 html.signed-in .sign-in-btn { visibility: hidden; }
 .avatar-btn { border-color: var(--accent-soft-border); }
 .account-initial {

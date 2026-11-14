@@ -36,7 +36,7 @@ _spec.loader.exec_module(ngram)
 
 # A reading language's code and the Edition.language of its reference Bibles.
 EDITION_LANGUAGE = {"en": "eng", "es": "spa", "fr": "fra", "sw": "swh", "vi": "vie", "ko": "kor", "pt": "por",
-                    "am": "amh", "hi": "hin", "ru": "rus"}
+                    "am": "amh", "hi": "hin", "ru": "rus", "uk": "ukr", "ja": "jpn"}
 LEVELS = ("L", "B", "R")
 TOP = 25
 

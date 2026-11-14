@@ -79,6 +79,11 @@ class MorphTest(unittest.TestCase):
                          " · 3-е лицо, единственное число")
         self.assertEqual(morph.describe("N-DSF", "ru"),
                          "Существительное · дательный, единственное число, женский род")
+        self.assertEqual(morph.describe("V-2AAI-3S", "uk"),
+                         "Дієслово · другий аорист, дійсний спосіб, активний стан · 3-тя особа, однина")
+        self.assertEqual(morph.describe("N-DSF", "uk"), "Іменник · давальний, однина, жіночий рід")
+        self.assertEqual(morph.describe("V-2AAI-3S", "ja"), "動詞 · 第二アオリスト、直説法、能動態 · 三人称単数")
+        self.assertEqual(morph.describe("N-DSF", "ja"), "名詞 · 与格、単数、女性")
 
     def test_every_hebrew_code_in_the_extracts_is_described(self):
         words = [w for path in (ROOT / "data" / "hbo").glob("*.json")
@@ -115,6 +120,11 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "ru"),
                          "Глагол · Qal · повествовательное прошедшее (ваййиктол)"
                          " · 3-е лицо мужской род единственное число")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "uk"),
+                         "Дієслово · Qal · розповідний минулий (ваййіктол)"
+                         " · 3-тя особа чоловічий рід однина")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "ja"),
+                         "動詞 · Qal · 物語の過去（ワイイクトル） · 三人称 男性 単数")
         # Aramaic stems share letters with Hebrew ones but not names.
         self.assertEqual(morph.describe_hebrew("Vai3ms", "en", "A"),
                          "Verb · Aphel · imperfect (yiqtol) · 3rd person masculine singular")
