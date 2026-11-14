@@ -285,6 +285,16 @@ Fixed, the same person or place spelled two ways with no reason in a brief:
   Numbers 16:1 ይስሐር to ይስዓር, as the other 30.
 - es: Capernaum, John and Mark Capernaúm to Cafarnaúm, the form
   docs/nt-spanish-swahili-terms.md sets and Matthew and Luke use (28 places).
+- uk (after the Ukrainian Old Testament was merged; docs/ukrainian-ot-terms.md
+  asks for "one form per name through every book"): Lebanon Ліван to Ливан
+  (Kings, Chronicles, Ezra, Jeremiah, Ezekiel; Psalms in the patch file), as
+  Deuteronomy, Joshua, Isaiah and the Song; Shiloh Шило to Шіло (1 Samuel,
+  2 Chronicles, Jeremiah), as Joshua, Judges and Psalm 78 decide; Migdol
+  Мігдол to Мигдол (Numbers, Ezekiel), as Exodus; Aram-naharaim Нахараїм to
+  Нагараїм (Judges 3:8), as Genesis and Deuteronomy, with г for h; Ishvi
+  Ішві to Їшві (1 Samuel 14:49), as Genesis and Numbers; Benjamin Веніамин to
+  Веніямин (Romans 11:1), the terms note's form; Bethlehem Віфлеєм to
+  Вифлеєм (Jeremiah 41:17), the style brief's form.
 
 Deliberate, left as they are:
 
@@ -300,7 +310,10 @@ Deliberate, left as they are:
   Egypt / Egyptians, Levites / a Levite, Swahili Wayahudi / Myahudi,
   Hamath / Lebo-hamath, Dibon / Dibon-gad.
 
-Not yet read: the remaining English, Spanish, French, Swahili, Vietnamese and
+Left for a reviewer: Hindi ज़कर्याह / जकर्याह (Zechariah, several people) and
+Ukrainian Натанаїл / Нетанеїл (Nethanel, several people), where the
+nukta or the Greek-shaped form may be chosen per person; Ukrainian Гад /
+Ґад (the tribe and the prophet Gad). Not yet read: the remaining English, Spanish, French, Swahili, Vietnamese and
 Portuguese variants below (for example Spanish Libna / Libná, Jaír / Jair,
 Seír / Seir; French Bashân / Basan, Yazer / Jazer; Vietnamese Mích-ba /
 Mích-pa, Cô-ra / Cô-rê). Most look like book-by-book drafting differences

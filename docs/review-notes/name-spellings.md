@@ -22,6 +22,16 @@ Fixed, the same person or place spelled two ways with no reason in a brief:
   Numbers 16:1 ይስሐር to ይስዓር, as the other 30.
 - es: Capernaum, John and Mark Capernaúm to Cafarnaúm, the form
   docs/nt-spanish-swahili-terms.md sets and Matthew and Luke use (28 places).
+- uk (after the Ukrainian Old Testament was merged; docs/ukrainian-ot-terms.md
+  asks for "one form per name through every book"): Lebanon Ліван to Ливан
+  (Kings, Chronicles, Ezra, Jeremiah, Ezekiel; Psalms in the patch file), as
+  Deuteronomy, Joshua, Isaiah and the Song; Shiloh Шило to Шіло (1 Samuel,
+  2 Chronicles, Jeremiah), as Joshua, Judges and Psalm 78 decide; Migdol
+  Мігдол to Мигдол (Numbers, Ezekiel), as Exodus; Aram-naharaim Нахараїм to
+  Нагараїм (Judges 3:8), as Genesis and Deuteronomy, with г for h; Ishvi
+  Ішві to Їшві (1 Samuel 14:49), as Genesis and Numbers; Benjamin Веніамин to
+  Веніямин (Romans 11:1), the terms note's form; Bethlehem Віфлеєм to
+  Вифлеєм (Jeremiah 41:17), the style brief's form.
 
 Deliberate, left as they are:
 
@@ -37,7 +47,10 @@ Deliberate, left as they are:
   Egypt / Egyptians, Levites / a Levite, Swahili Wayahudi / Myahudi,
   Hamath / Lebo-hamath, Dibon / Dibon-gad.
 
-Not yet read: the remaining English, Spanish, French, Swahili, Vietnamese and
+Left for a reviewer: Hindi ज़कर्याह / जकर्याह (Zechariah, several people) and
+Ukrainian Натанаїл / Нетанеїл (Nethanel, several people), where the
+nukta or the Greek-shaped form may be chosen per person; Ukrainian Гад /
+Ґад (the tribe and the prophet Gad). Not yet read: the remaining English, Spanish, French, Swahili, Vietnamese and
 Portuguese variants below (for example Spanish Libna / Libná, Jaír / Jair,
 Seír / Seir; French Bashân / Basan, Yazer / Jazer; Vietnamese Mích-ba /
 Mích-pa, Cô-ra / Cô-rê). Most look like book-by-book drafting differences
@@ -53,10 +66,10 @@ for that language's reviewer to settle against its brief.
 | ko | 827 | 3 | 2 |
 | pt | 823 | 25 | 8 |
 | am | 828 | 17 | 8 |
-| hi | 468 | 10 | 3 |
-| ru | 452 | 4 | 1 |
-| uk | 142 | 0 | 0 |
-| ja | 111 | 1 | 0 |
+| hi | 828 | 34 | 11 |
+| ru | 809 | 13 | 3 |
+| uk | 805 | 19 | 9 |
+| ja | 822 | 12 | 4 |
 
 ## en
 
@@ -355,27 +368,95 @@ for that language's reviewer to settle against its brief.
 | name | Strong's | usual | variant | records | where |
 |---|---|---|---|---|---|
 | Egypt (shared: Egypt) | H4714 | मिस्र | मिस्रियों | 12 | EXO.1.13.s1, EXO.10.6.s1, EXO.12.35.s1, EXO.14.13.s1 (+8) |
+| Zechariah, descendant of Parosh (shared: Zechariah, descendant of Parosh) | H2148 | ज़कर्याह | जकर्याह | 10 | 1CH.15.20.s1, 1CH.16.5.s1, 1CH.9.21.s1, 1CH.9.37.s1 (+6) |
+| GOD (shared: GOD) | H3069 | कहते | करते | 9 | 2SA.7.19.s1, AMO.3.7.s1, AMO.9.5.s1, EZK.28.24.s1 (+5) |
 | Adam | H121 | आदम | आदमी | 3 | GEN.2.20.s1, GEN.3.17.s1, GEN.3.21.s1 |
+| Isaiah son of Amoz | H3470a | यशायाह | येशायाह | 3 | 1CH.25.15.s1, 1CH.25.3.s1, 1CH.26.25.s1 |
 | Dibon (shared: Dibon) | H1769 | दीबोन | दीबोन-गाद | 2 | NUM.33.45.s1, NUM.33.46.s1 |
+| GOD (shared: GOD) | H3069 | कहते | रहते | 2 | JER.50.25.s1, JOS.7.7.s1 |
+| Jehonathan | H3083 | योनातान | यहोनातान | 2 | 2CH.17.8.s1, NEH.12.18.s1 |
+| Persia | H6540 | फ़ारसियों | फ़ारस | 2 | EZR.4.24.s1, EZR.6.14.s1 |
+| Shelomith son of Josiphiah | H8019 | शलोमीत | शलोमोत | 2 | 1CH.23.9.s1, 1CH.26.25.s1 |
+| the Ammonites | H5983 | अम्मोन | अम्मोनियों | 2 | 2SA.17.27.s1, JOS.12.2.s1 |
+| Amalek (shared: the Amalekites) | H6002 | अमालेक | अमालेकियों | 1 | 2SA.1.1.s1 |
+| Assyria | H804 | अश्शूर | अश्शूरियों | 1 | EZK.23.5.s1 |
+| Babel (shared: Babel) | H894 | बाबुल | बाबेल | 1 | GEN.11.9.s1 |
+| Berekiah, father of Meshullam | H1296 | बेरेक्याह | बिरिक्याह | 1 | ZEC.1.1.s1 |
 | Dishan | H1789 | दीशान | दीशोन | 1 | GEN.36.26.s1 |
+| Dishon son of Seir (shared: Dishon son of Seir) | H1787 | दीशोन | दीशान | 1 | 1CH.1.42.s1 |
+| Endor (shared: Endor) | H5874 | एनदोर | एन-दोर | 1 | JOS.17.11.s1 |
+| Endor (shared: Endor) | H5874 | एनदोर | दोर | 1 | JOS.17.11.s1 |
+| GOD (shared: GOD) | H3069 | कहते | कहने | 1 | 2SA.7.18.s1 |
+| GOD (shared: GOD) | H3069 | कहते | कहे | 1 | 2SA.7.20.s1 |
+| GOD (shared: GOD) | H3069 | कहते | सकते | 1 | PSA.68.21.s1 |
+| Hamath | H2574 | हमात | हमला | 1 | AMO.6.14.s1 |
+| Hezekiah (shared: Hezekiah) | H2396 | हिजकिय्याह | हिजकियाह | 1 | 1CH.3.23.s1 |
+| Hezekiah | H3169a | हिजकिय्याह | यहिजकिय्याह | 1 | 2CH.28.12.s1 |
+| Kadesh (shared: Kadesh) | H6946 | कादेश | देश | 1 | EZK.48.28.s1 |
 | Levites | H3881 | लेवियों | महलियों | 1 | NUM.26.58.s1 |
+| Mica | H4318 | मीका | मीकायाह | 1 | 2CH.18.14.s1 |
 | Paddan-aram (shared: Paddan-aram) | H6307 | पद्दनराम | पद्दन | 1 | GEN.48.7.s1 |
+| Sharon | H8289 | शारोन | लश्शारोन | 1 | JOS.12.18.s1 |
 | Shaveh-kiriathaim | H7156 | किर्यातैम | शावे-किर्यातैम | 1 | GEN.14.5.s1 |
 | Zechariah father of John (shared: Zechariah son of Barachiah) | G2197 | जकरयाह | ज़कर्याह | 1 | MAT.23.35.s1 |
-| the Ammonites | H5983 | अम्मोन | अम्मोनियों | 1 | JOS.12.2.s1 |
 | the Romans | G4514 | रोमी | रोम | 1 | ACT.28.17.s1 |
+| the valley of Hinnom | H1516a | बेन-हिन्नोम | हिन्नोम | 1 | NEH.11.30.s1 |
 
 ## ru
 
 | name | Strong's | usual | variant | records | where |
 |---|---|---|---|---|---|
-| Shammah | H8048 | Самму | Шамма | 2 | GEN.36.13.s1, GEN.36.17.s1 |
+| Hur (shared: Hur) | H2354 | Ора | Ор | 5 | 1CH.2.20.s1, 1CH.4.1.s1, EXO.17.10.s1, EXO.17.12.s1 (+1) |
+| Rechab, father of Malkijah | H7394 | Рехава | Рихав | 5 | 2SA.4.2.s1, 2SA.4.5.s1, 2SA.4.6.s1, 2SA.4.9.s1 (+1) |
+| Shammah | H8048 | Шамма | Самму | 2 | 1SA.16.9.s1, 1SA.17.13.s1 |
 | Ar | H6144 | Ар | Аре | 1 | DEU.2.29.s1 |
 | Er | H6147 | Ир | Ира | 1 | GEN.38.6.s1 |
+| Haran | H2039 | Аран | Харан | 1 | 1CH.23.9.s1 |
+| Jared | H3382 | Иаред | Иеред | 1 | 1CH.4.18.s1 |
+| Jehonathan | H3083 | Ионафан | Иегонафан | 1 | NEH.12.18.s1 |
+| Mehetabel (shared: Mehetabel, ancestor of Shemaiah) | H4105 | Мегетавеэль | Мехетавеила | 1 | NEH.6.10.s1 |
+| Ram | H7410 | Арам | Рама | 1 | JOB.32.2.s1 |
+| Shammua, father of Abda (shared: Shammua, father of Abda) | H8051 | Шаммуа | Саммуа | 1 | NUM.13.4.s1 |
 | Shaveh-kiriathaim | H7156 | Кириафаим | Шаве-Кириафаиме | 1 | GEN.14.5.s1 |
+| Uri (shared: Uri, gatekeeper) | H221 | Ура | Ур | 1 | EZR.10.24.s1 |
+
+## uk
+
+| name | Strong's | usual | variant | records | where |
+|---|---|---|---|---|---|
+| Shaul son of Simeon (shared: Saul; Shaul of Rehoboth; Shaul son of Simeon) | H7586 | Саул | Шаул | 7 | 1CH.1.49.s1, 1CH.4.24.s1, 1CH.6.9.s1, EXO.6.15.s1 (+3) |
+| Jehiel, father of Obadiah (shared: Jehiel, descendant of Elam; Jehiel, descendant of Harim; Jehiel, father of Obadiah; Jehiel, father of Shecaniah) | H3171 | Єхіїл | Єхиїл | 6 | 1CH.15.18.s1, 1CH.15.20.s1, EZR.10.2.s1, EZR.10.21.s1 (+2) |
+| Nethanel | H5417 | Натанаїл | Нетанеїл | 6 | 1CH.15.24.s1, 1CH.2.14.s1, 1CH.24.6.s1, 1CH.26.4.s1 (+2) |
+| Lebanon | H3844 | Ливану | Лівану | 5 | PSA.104.16.s1, PSA.29.5.s1, PSA.29.6.s1, PSA.72.16.s1 (+1) |
+| Hananiah, commander of the citadel (shared: Hananiah, commander of the citadel) | H2608 | Хананія | Ананія | 3 | DAN.1.19.s1, DAN.1.6.s1, DAN.1.7.s1 |
+| Baruch son of Zaccai (shared: Baruch, a priest; Baruch, father of Maaseiah) | H1263 | Варух | Барух | 2 | NEH.10.7.s1, NEH.11.5.s1 |
+| Gad | H1410 | Гада | Ґада | 2 | 2SA.24.11.s1, 2SA.24.19.s1 |
+| Jehonathan | H3083 | Йонатан | Єгонатан | 2 | 2CH.17.8.s1, NEH.12.18.s1 |
+| Rahab (shared: Rahab) | H7294 | Рахава | Рагавом | 2 | ISA.30.7.s1, ISA.51.9.s1 |
+| Ar | H6144 | Ар | Арі | 1 | DEU.2.29.s1 |
+| Endor (shared: Endor) | H5874 | Ен-Дорі | Ендорі | 1 | PSA.83.11.s1 |
+| Er | H6147 | Ер | Ера | 1 | GEN.38.6.s1 |
+| God Almighty | H410 | Бог | Бо | 1 | PSA.89.7.s1 |
+| Hezekiah | H3169a | Єзекія | Єхізкія | 1 | 2CH.28.12.s1 |
+| Jared | H3382 | Яред | Єред | 1 | 1CH.4.18.s1 |
+| Ram | H7410 | Єрахмеїл | Барахеїла | 1 | JOB.32.2.s1 |
+| Sharon | H8289 | Шарон | Лашарона | 1 | JOS.12.18.s1 |
+| Shaveh-kiriathaim | H7156 | Кіріятаїм | Шаве-Кіріятаїмі | 1 | GEN.14.5.s1 |
+| the valley of Hinnom | H1516a | Бен-Гіннома | Гіннома | 1 | NEH.11.30.s1 |
 
 ## ja
 
 | name | Strong's | usual | variant | records | where |
 |---|---|---|---|---|---|
+| Hezekiah (shared: Hezekiah; Hezekiah, of the family of Ater) | H2396 | ヒゼキヤ | ヒズキヤ | 3 | 1CH.3.23.s1, NEH.10.18.s1, NEH.7.21.s1 |
+| Judas Iscariot (shared: Judas Iscariot) | G2469 | ユダ・イスカリオテ | イスカリオテ | 3 | JHN.14.22.s1, JHN.6.71.s1, LUK.22.3.s1 |
+| Judas Iscariot (shared: Judas Iscariot) | G2469 | ユダ・イスカリオテ | シモン・イスカリオテ | 2 | JHN.13.2.s1, JHN.13.26.s1 |
+| Shelomith son of Josiphiah | H8019 | シェロミト | シェロモト | 2 | 1CH.23.9.s1, 1CH.26.25.s1 |
 | Claudius (shared: Claudius Lysias) | G2804 | クラウディウス | クラウディウス・リシア | 1 | ACT.23.26.s1 |
+| Dishan | H1789 | ディシャン | ディション | 1 | GEN.36.26.s1 |
+| Dishon son of Seir (shared: Dishon son of Seir) | H1787 | ディション | ディシャン | 1 | 1CH.1.42.s1 |
+| Jethro | H3500 | エテル | イエテル | 1 | JDG.8.20.s1 |
+| Mica | H4318 | ミカ | ミカヤ | 1 | 2CH.18.14.s1 |
+| Sharon | H8289 | シャロン | ラシャロン | 1 | JOS.12.18.s1 |
+| Shaveh-kiriathaim | H7156 | キルヤタイム | シャベ・キルヤタイム | 1 | GEN.14.5.s1 |
+| Shephatiah (family) (shared: Shephatiah (family)) | H8203 | シェファティヤ | シェファトヤ | 1 | JER.38.1.s1 |
