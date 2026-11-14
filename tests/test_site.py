@@ -1251,15 +1251,31 @@ class SiteTest(unittest.TestCase):
                     self.assertIn(f'<script src="{path}"></script>', self.built(page).read_text(encoding="utf-8"))
                     self.assertTrue(self.built(path).is_file(), path)
 
+    def test_a_page_loads_the_languages_it_shows(self):
+        # Its own, and for a sentence not yet in it the language shown
+        # instead: the first, in the site's order, that has it.
+        records = [{"renderings": {"en": {}, "es": {}}}, {"renderings": {"en": {}, "fr": {}}},
+                   {"renderings": {"fr": {}}}]
+        self.assertEqual(build_site.page_texts(records, "es"), ["en", "es", "fr"])
+        self.assertEqual(build_site.page_texts(records, "fr"), ["en", "fr"])
+        self.assertEqual(build_site.page_texts(records[:1], "es"), ["es"])
+
     def test_chapter_pages_share_what_is_the_same(self):
         # The records and source words are the same on every language's page
-        # of a chapter, and the interface text on every chapter page of a
-        # language: each is built once, not into every page.
+        # of a chapter, each language's text on every page that shows it,
+        # and the interface text on every chapter page of a language: each
+        # is built once, not into every page.
         en, es = self.chapter_data("jhn/1"), self.chapter_data("es/jhn/1")
         self.assertEqual(en["words"], es["words"])
         self.assertEqual([r["source"] for r in en["records"]], [r["source"] for r in es["records"]])
-        self.assertEqual([r["renderings"] for r in en["records"]], [r["renderings"] for r in es["records"]])
         page = (self.out / "es/jhn/1/index.html").read_text(encoding="utf-8")
+        # A page loads its own language's text, not every language's: John
+        # 1 is in Spanish throughout, so the Spanish page needs no other.
+        self.assertIn(es["texts"]["es"], page)
+        self.assertNotIn(es["texts"]["en"], page)
+        self.assertEqual({lang for r in es["records"] for lang in r["renderings"]}, {"es"})
+        self.assertEqual([r["renderings"]["es"] for r in es["records"]],
+                         [r["renderings"]["es"] for r in build_site.load_chapter("JHN", 1)[0]])
         own = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
         for key in ("records", "words", "ui", "bookRefs", "books", "crossrefs"):
             self.assertNotIn(key, own)
