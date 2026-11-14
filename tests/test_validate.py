@@ -343,18 +343,22 @@ class ValidateTest(unittest.TestCase):
                                                        record["renderings"]["en"][level])
         self.assertFalse(any("nephesh" in e for e in validate.validate_record(record)))
 
-    def test_a_pending_psalms_fix_is_skipped_until_applied(self):
-        # The fix for Psalm 46:5 waits in the Psalms patch file.
+    def test_a_pending_key_term_record_is_skipped(self):
+        # Psalm 46:5 once waited in a patch file, listed under the term's
+        # `pending`; the fix is applied, so the record is checked again.
         term = validate.KEY_TERMS[("hbo", "6918")]
-        self.assertIn("PSA.46.5.s1", term["pending"])
-        patches = (EXAMPLE.parents[2] / "docs" / "review-notes" / "pending-psalms-patches-b.jsonl")
-        waiting = {json.loads(line)["id"] for line in patches.read_text(encoding="utf-8").splitlines() if line}
-        for t in validate.KEY_TERMS.values():
-            self.assertLessEqual(set(t.get("pending", ())), waiting)
+        self.assertNotIn("PSA.46.5.s1", term.get("pending", ()))
         record = self._content_record("PSA/PSA.46.json", "PSA.46.5.s1")
         self.assertEqual(validate.validate_record(record), [])
-        record["id"] = "PSA.46.5.s9"
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("holy", "sacred")
         self.assertTrue(any("key term 'holy (qadosh)'" in e for e in validate.validate_record(record)))
+        term.setdefault("pending", []).append("PSA.46.5.s1")
+        try:
+            self.assertEqual(validate.validate_record(record), [])
+        finally:
+            term["pending"].remove("PSA.46.5.s1")
+            if not term["pending"]:
+                del term["pending"]
 
     def test_key_terms_are_matched_by_language(self):
         # Hebrew Strong's 4100 ("what", Genesis 2:19) is not Greek 4100 ("believe").
