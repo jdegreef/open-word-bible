@@ -253,7 +253,9 @@ book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its
 words to `owb/morph.py`, and run `python backend/manage.py makemigrations
 accounts` so it can have language reviewers. The site, the validator and the
 backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
-the book-wide wording choices.
+the book-wide wording choices. `docs/adding-a-language.md` lists every file a new
+language touches; Indonesian is prepared there (brief, glossary, book names) but
+not yet added.
 
 ### Book pages
 
