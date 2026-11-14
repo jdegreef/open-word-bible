@@ -16,6 +16,25 @@
   DATA.records.forEach(function (r) {
     r.decisions = r.decisions.filter(function (d) { return d.language === null || d.language === DATA.lang; });
   });
+  // Decisions are written in English. Where a note is translated into the
+  // page's language (DATA.notes, from data/notes/ while it is current with
+  // its English), its words replace the English everywhere the reader shows
+  // them; d.english marks a note still in English on another language's page.
+  var NOTES = DATA.notes || {};
+  DATA.records.forEach(function (r) {
+    var mine = NOTES[r.id] || {};
+    r.decisions.forEach(function (d) {
+      var tr = mine[d.id];
+      if (tr) {
+        d.choice = tr.choice;
+        d.alternatives = tr.alternatives;
+        d.reason = tr.reason;
+      }
+      d.english = !tr && DATA.lang !== "en";
+    });
+  });
+  // "Notes are in English for now", where some of these are.
+  function someEnglish(ds) { return ds.some(function (d) { return d.english; }); }
   var STORE = "owb.settings";
 
   // Interface text in the page's language (i18n/<lang>.json, reader.ui).
@@ -516,7 +535,9 @@
     var cat = t("category")[n.decision.category];
     if (cat) head.appendChild(el("span", "fn-pop-cat", cat));
     box.appendChild(head);
-    box.appendChild(linked("p", "fn-pop-text", noteText(n.decision)));
+    var text = linked("p", "fn-pop-text", noteText(n.decision));
+    if (n.decision.english) text.lang = "en";
+    box.appendChild(text);
     var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
     more.type = "button";
     more.addEventListener("click", function () {
@@ -525,7 +546,11 @@
     });
     box.appendChild(more);
     // A manuscript reading: how and why manuscripts differ, in an article.
-    if (n.decision.category === "text_variant" && DATA.variants) box.appendChild(articleLink(DATA.variants, "fn-pop-article"));
+    var article = noteArticle(n.record, n.decision);
+    if (n.decision.category === "text_variant" && DATA.variants &&
+        !(article && article.url === DATA.variants.url)) box.appendChild(articleLink(DATA.variants, "fn-pop-article"));
+    // The article the note's words are explained in (data/article_links.json).
+    if (article) box.appendChild(readArticle(article, "note-article"));
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     document.body.appendChild(box);
     popover = box;
@@ -571,11 +596,14 @@
     head.appendChild(el("span", "fn-pop-cat", t("why_title")));
     box.appendChild(head);
     var list = el("ul", "why-list");
-    (only || whyDecisions(r)).forEach(function (d) {
+    var shown = only || whyDecisions(r);
+    shown.forEach(function (d) {
       var item = el("li");
       var b = el("button", "why-item");
       b.type = "button";
-      b.appendChild(el("strong", null, render(d.choice)));
+      var strong = el("strong", null, render(d.choice));
+      if (d.english) strong.lang = "en";
+      b.appendChild(strong);
       if (d.alternatives.length) {
         b.appendChild(el("span", "why-not", t(d.uncertain ? "fn_or" : "why_not") + render(d.alternatives[0])));
       }
@@ -585,7 +613,7 @@
       list.appendChild(item);
     });
     box.appendChild(list);
-    if (t("notes_language")) box.appendChild(el("p", "fine", t("notes_language")));
+    if (t("notes_language") && someEnglish(shown)) box.appendChild(el("p", "fine", t("notes_language")));
     var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
     more.type = "button";
     more.addEventListener("click", function () { closeNote(false); select(r); });
@@ -626,7 +654,7 @@
     head.appendChild(el("span", "fn-pop-cat", t("card_kind").concept));
     box.appendChild(head);
     var note = el("p", "fn-pop-text", c.note);
-    if (settings.lang !== "en") note.lang = "en";
+    if ((c.lang || "en") !== settings.lang) note.lang = c.lang || "en";
     box.appendChild(note);
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     document.body.appendChild(box);
@@ -645,6 +673,23 @@
     var link = el("a", cls, a.title);
     link.href = a.url;
     if (a.lang !== settings.lang) link.lang = a.lang;
+    return link;
+  }
+
+  // The article a decision's note links to (DATA.noteArticles, by record
+  // and decision id), or undefined.
+  function noteArticle(r, d) {
+    return ((DATA.noteArticles || {})[r.id] || {})[d.id];
+  }
+
+  // "Read the article: <title> →".
+  function readArticle(a, cls) {
+    var link = el("a", cls, t("note_article") + " ");
+    link.href = a.url;
+    var title = el("span", null, a.title);
+    if (a.lang !== settings.lang) title.lang = a.lang;
+    link.appendChild(title);
+    link.appendChild(document.createTextNode(" →"));
     return link;
   }
 
@@ -1372,7 +1417,9 @@
         button.type = "button";
         button.appendChild(el("span", "note-mark", n.mark));
         button.appendChild(el("span", "note-ref", verseRange(n.record)));
-        button.appendChild(el("span", "note-text", noteText(n.decision)));
+        var text = el("span", "note-text", noteText(n.decision));
+        if (n.decision.english) text.lang = "en";
+        button.appendChild(text);
         button.addEventListener("click", function () { select(n.record, null, n.decision.id); });
         item.appendChild(button);
         list.appendChild(item);
@@ -1594,13 +1641,23 @@
     if (d.uncertain) cat.appendChild(el("span", "badge unc", t("uncertain")));
     if (d.footnote) cat.appendChild(el("span", "badge", t("footnote")));
     card.appendChild(cat);
-    card.appendChild(el("div", "choice", render(d.choice)));
+    var choice = el("div", "choice", render(d.choice));
+    if (d.english) choice.lang = "en";
+    card.appendChild(choice);
     if (d.alternatives.length) {
-      card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
+      var alts = el("div", "alts", t("also"));
+      var altText = el("span", null, d.alternatives.map(render).join("; "));
+      if (d.english) altText.lang = "en";
+      alts.appendChild(altText);
+      card.appendChild(alts);
     }
     var away = [];
-    card.appendChild(linked("p", "why", d.reason, away));
+    var why = linked("p", "why", d.reason, away);
+    if (d.english) why.lang = "en";
+    card.appendChild(why);
     if (away.length) card.appendChild(refCards(away));
+    var article = noteArticle(record, d);
+    if (article) card.appendChild(readArticle(article, "note-article"));
     var ask = askLink(d);
     ask.classList.add("card-ask");
     card.appendChild(ask);
@@ -1829,7 +1886,7 @@
 
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, t("meaning")));
-    if (t("notes_language")) panel.appendChild(el("p", "empty", t("notes_language")));
+    if (t("notes_language") && someEnglish(ds.meaning.concat(ds.rendering))) panel.appendChild(el("p", "empty", t("notes_language")));
     if (!ds.meaning.length) panel.appendChild(el("p", "empty", t("no_meaning")));
     ds.meaning.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
     panel.appendChild(el("h3", null, t("rendering").replace("{level}", t(settings.level))));
@@ -2833,7 +2890,7 @@
     if (withWhy && why.length) {
       var reasons = el("section", "handout-why");
       reasons.appendChild(el("h2", null, t("handout_why")));
-      if (t("notes_language")) reasons.appendChild(el("p", "fine", t("notes_language")));
+      if (t("notes_language") && why.some(function (w) { return someEnglish(w[1]); })) reasons.appendChild(el("p", "fine", t("notes_language")));
       why.forEach(function (w) {
         reasons.appendChild(el("h3", null, name + " " + DATA.chapter + ":" + w[0]));
         w[1].forEach(function (d) {

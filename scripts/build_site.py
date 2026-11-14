@@ -30,7 +30,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import words_of_jesus  # noqa: E402
+from owb import notes as owb_notes, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
@@ -1068,16 +1068,89 @@ def verse_range(r, chapter):
     return names[0] if names[0] == names[1] else f"{names[0]}\u2013{names[1]}"
 
 
-def note_html(d, lang):
+@functools.lru_cache(maxsize=None)
+def book_notes(book, lang):
+    """A book's decision notes translated into lang and still current
+    (data/notes/<lang>/<BOOK>.json, owb/notes.py), with curly quotes:
+    {record id: {decision id: {"choice", "alternatives", "reason"}}}. A
+    stale note, whose English changed after it was translated, is left
+    out, so the English shows until it is translated again."""
+    if lang == "en":
+        return {}
+    return {rid: {did: {"choice": smart_quotes(n["choice"]),
+                        "alternatives": [smart_quotes(a) for a in n["alternatives"]],
+                        "reason": smart_quotes(n["reason"])} for did, n in ds.items()}
+            for rid, ds in owb_notes.current_notes(lang, book).items()}
+
+
+def page_notes(records, lang):
+    """The translated notes (book_notes) of a page's records."""
+    out = {}
+    for r in records:
+        got = book_notes(r["id"].split(".")[0], lang).get(r["id"])
+        if got:
+            out[r["id"]] = got
+    return out
+
+
+@functools.lru_cache(maxsize=None)
+def article_links():
+    """data/article_links.json: (words, verses, slug) for each lemma entry,
+    words a frozenset of (Strong's number, lemma) that must all be among a
+    decision's words and verses a frozenset (or None for anywhere); and
+    {category: slug} for decisions linked by category."""
+    data = json.loads((ROOT / "data" / "article_links.json").read_text(encoding="utf-8"))
+    lemmas = [(frozenset((w["strong"], w["lemma"]) for w in e["words"]),
+               frozenset(e["verses"]) if e.get("verses") else None, e["article"]) for e in data["lemmas"]]
+    return lemmas, {c["category"]: c["article"] for c in data["categories"]}
+
+
+def decision_article(r, d, words_by_id):
+    """The slug of the article a decision's note links to, or None: the
+    first lemma entry (data/article_links.json) whose words are all among
+    the decision's words, in its verses if it names any; else the entry for
+    the decision's category."""
+    lemmas, categories = article_links()
+    mine = {(word_strong(w), w["lemma"]) for w in (words_by_id.get(t) for t in d["tokens"]) if w}
+    verses = set(r["refs"])
+    for need, where, slug in lemmas:
+        if need <= mine and (where is None or where & verses):
+            return slug
+    return categories.get(d["category"])
+
+
+def note_articles(records, words, lang):
+    """{record id: {decision id: {"url", "title", "lang"}}}: the article
+    each decision shown on a page in lang links to (decision_article), in
+    lang where it is translated."""
+    by_id = {w["id"]: w for ws in words.values() for w in ws}
+    out = {}
+    for r in records:
+        for d in r["decisions"]:
+            if d["language"] not in (None, lang):
+                continue
+            slug = decision_article(r, d, by_id)
+            link = article_link(slug, lang) if slug else None
+            if link:
+                out.setdefault(r["id"], {})[d["id"]] = link
+    return out
+
+
+def note_html(d, lang, translated=None):
     """A footnote's text as reader.js's noteText() writes it: the choice,
-    the alternatives, and whether it is uncertain. Meaning decisions are
-    written in English, so on another language's page their words say so
-    (the labels between them are in the page's language)."""
+    the alternatives, and whether it is uncertain. Decisions are written in
+    English. Given translated, the note in lang (page_notes), its words
+    replace the English; otherwise, on another language's page, the words
+    say they are English (the labels between them are in the page's
+    language)."""
     ui = catalog(lang)["reader.ui"]
+    if translated:
+        d = {**d, **translated}
 
     def words(text):
         text = html.escape(markup.render(text), quote=False)
-        return f'<span lang="en">{text}</span>' if d["layer"] == "meaning" and lang != "en" else text
+        return (f'<span lang="en">{text}</span>' if d["layer"] == "meaning" and lang != "en"
+                and not translated else text)
 
     out = words(d["choice"])
     alts = d.get("alternatives", [])
@@ -1089,7 +1162,7 @@ def note_html(d, lang):
     return out + "."
 
 
-def chapter_notes(records, chapter, lang="en"):
+def chapter_notes(records, chapter, lang="en", words=None):
     """The notes section under the chapter, with its footnotes listed as
     reader.js's drawNotes() first lists them. Written into the page so the
     footnotes are there without JavaScript (and for crawlers and AI search,
@@ -1100,9 +1173,22 @@ def chapter_notes(records, chapter, lang="en"):
     notes = [(r, d) for r in records for d in footnote_decisions(r, lang)]
     if not notes:
         return f'<section class="notes" id="notes" {label} hidden></section>'
+    translated = page_notes(records, lang)
+    linked = note_articles(records, words or {}, lang)
+
+    def more(r, d):
+        """"Read the article" after a note whose words have one."""
+        a = linked.get(r["id"], {}).get(d["id"])
+        if not a:
+            return ""
+        attr = f' lang="{a["lang"]}"' if a["lang"] != lang else ""
+        return (f' <a class="note-article" href="{esc(a["url"])}">'
+                f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
+                f'<span{attr}>{esc(a["title"], quote=False)}</span> →</a>')
     items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
                     f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
-                    f'<span class="note-text">{note_html(d, lang)}</span></span></li>'
+                    f'<span class="note-text">{note_html(d, lang, translated.get(r["id"], {}).get(d["id"]))}'
+                    f'</span>{more(r, d)}</span></li>'
                     for i, (r, d) in enumerate(notes))
     heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
     return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
@@ -1301,6 +1387,11 @@ def chapter_page(book, chapter, lang="en"):
             "variants": article_link(VARIANTS_ARTICLE, lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
+            # Decision notes translated into the page's language (data/notes/),
+            # which reader.js shows instead of the English.
+            "notes": page_notes(records, lang),
+            # The article a note's words link to (data/article_links.json).
+            "noteArticles": note_articles(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
             # Where previews of other verses come from (verse_files), and the
             # comparison edition for verses not translated yet: the page
@@ -1408,7 +1499,7 @@ def chapter_page(book, chapter, lang="en"):
     <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
     <div class="xr-margin" id="xr-margin"></div>
     <div class="text" id="text">{text}</div>
-    {chapter_notes(records, chapter, lang)}
+    {chapter_notes(records, chapter, lang, words)}
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
@@ -1750,6 +1841,31 @@ def term_card_rule(term, lang):
     return ui["card_term_levels"].format(words=parts)
 
 
+@functools.lru_cache(maxsize=None)
+def card_translation(lang, kind, key):
+    """A glossary, name or key-term card translated into lang and still
+    current (data/cards/<lang>/<kind>.json, owb/notes.py), or None: the
+    English shows instead."""
+    return None if lang == "en" else owb_notes.current_card(lang, kind, key)
+
+
+def term_translation(term, lang):
+    """A key term's sense and note in lang ({"sense", "note"}), or {}."""
+    tr = card_translation(lang, "key_terms", owb_notes.card_key("key_terms", term))
+    return {k: smart_quotes(v) for k, v in tr.items() if k != "source"} if tr else {}
+
+
+def sense_translation(strong, lemma, index, lang):
+    """One sense of a glossary or name card in lang ({"name", "note"}), or
+    {}. The glossary is read first, as name_cards lets it win."""
+    key = f"{strong}|{lemma}"
+    kind = "glossary" if key in owb_notes.english_cards("glossary") else "names"
+    tr = card_translation(lang, kind, key)
+    if not tr or index >= len(tr["senses"]):
+        return {}
+    return {k: smart_quotes(v) for k, v in tr["senses"][index].items()}
+
+
 def word_cards(records, words, lang="en"):
     """The key terms and the people, places and peoples among this page's
     words: {"list": [card, ...], "tokens": {token id: index into list}}.
@@ -1767,9 +1883,10 @@ def word_cards(records, words, lang="en"):
             term = validate.key_term(w["id"], w.get("strong") or "")
             if term:
                 key = ("term", term_key(term))
-                card = {"type": "term", "lemma": term["lemma"], "title": term["sense"],
-                        "english": term_english(term), "note": term.get("note", ""),
-                        "href": url(lang, term_path(term))}
+                tr = term_translation(term, lang)
+                card = {"type": "term", "lemma": term["lemma"], "title": tr.get("sense", term["sense"]),
+                        "english": term_english(term), "note": tr.get("note", term.get("note", "")),
+                        "lang": lang if tr else "en", "href": url(lang, term_path(term))}
                 if isinstance(term["english"], dict):
                     card["rule"] = term_card_rule(term, lang)
             senses = names.get((word_strong(w), w["lemma"]))
@@ -1778,8 +1895,10 @@ def word_cards(records, words, lang="en"):
                     or next((s for s in senses if "verses" not in s), None)
                 if sense:
                     key = ("name", w["lemma"], sense["name"])
-                    card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
-                            "kind": sense["kind"], "note": sense["note"]}
+                    tr = sense_translation(word_strong(w), w["lemma"], senses.index(sense), lang)
+                    card = {"type": "name", "lemma": w["lemma"], "title": tr.get("name", sense["name"]),
+                            "kind": sense["kind"], "note": tr.get("note", sense["note"]),
+                            "lang": lang if tr else "en"}
                     # A place OpenBible.info locates: where it is, for the panel's map.
                     where = places().get(f"{word_strong(w)}|{w['lemma']}|{sense['name']}")
                     if sense["kind"] == "place" and where:
@@ -3627,12 +3746,20 @@ def term_lemma(term, cls="term-lemma"):
     return f'<span class="{cls}" lang="{term_key(term)[0]}">{html.escape(term["lemma"])}</span>'
 
 
+def term_sense(term, lang):
+    """A key term's sense, in lang where it is translated (data/cards/), and
+    the language it is in."""
+    tr = term_translation(term, lang)
+    return (tr["sense"], lang) if tr else (term["sense"], "en")
+
+
 def term_row(term, lang="en"):
     """A key term in a list: its lemma, sense, settled English and uses."""
     english = ", ".join(term_english(term))
+    sense, sense_lang = term_sense(term, lang)
     return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
             f'{term_lemma(term)}'
-            f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
+            f'<span class="term-sense"{lang_attr(sense_lang, lang)}>{html.escape(sense)}</span>'
             f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
             f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
 
@@ -3796,13 +3923,15 @@ def term_page(term, lang="en"):
                    + (f'{sentences}{exceptions}' if term_split(term) else f'{exceptions}{sentences}'))
     else:
         listing = f'<p class="notice">{t(lang, "terms.none")}</p>'
-    head = term_head(term, lang, (html.escape(term["sense"]), lang_attr("en", lang)),
+    sense, sense_lang = term_sense(term, lang)
+    tr = term_translation(term, lang)
+    head = term_head(term, lang, (html.escape(sense), lang_attr(sense_lang, lang)),
                      f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a>')
     body = f"""{head}
 <section class="term-section" aria-labelledby="settled-h">
 <h2 id="settled-h">{t(lang, "terms.settled")}</h2>
 {term_english_html(term, lang)}
-<p class="term-note"{lang_attr("en", lang)}>{html.escape(term.get("note", ""))}</p>
+<p class="term-note"{lang_attr(sense_lang if "note" in tr else "en", lang)}>{html.escape(tr.get("note", term.get("note", "")))}</p>
 {note}
 </section>
 <section class="term-section" aria-labelledby="where-h">
@@ -3810,17 +3939,18 @@ def term_page(term, lang="en"):
 {listing}
 </section>
 """
-    return page(lang, f'{term["sense"]} · {t(lang, "terms.title")}', body, path=term_path(term),
+    return page(lang, f'{sense} · {t(lang, "terms.title")}', body, path=term_path(term),
                 current="/about/",
-                description=t(lang, "meta.term_description", sense=term["sense"], lemma=term["lemma"]))
+                description=t(lang, "meta.term_description", sense=sense, lemma=term["lemma"]))
 
 
 def term_book_page(term, book, lang="en"):
     """Every sentence in one book that uses a key term with many uses."""
     us = term_books(term)[book]
     name = book_name(book, lang)
+    sense, sense_lang = term_sense(term, lang)
     eyebrow = (f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a> &middot; '
-               f'<a href="{url(lang, term_path(term))}"{lang_attr("en", lang)}>{html.escape(term["sense"])}</a>')
+               f'<a href="{url(lang, term_path(term))}"{lang_attr(sense_lang, lang)}>{html.escape(sense)}</a>')
     note = f'<p class="fine">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
     body = f"""{term_head(term, lang, (name, ""), eyebrow)}
 <section class="term-section" aria-labelledby="uses-h">
@@ -3831,9 +3961,9 @@ def term_book_page(term, book, lang="en"):
 <ol class="term-uses">{"".join(term_use_html(term, u, lang) for u in us)}</ol>
 </section>
 """
-    return page(lang, f'{term["sense"]} · {name} · {t(lang, "terms.title")}', body,
+    return page(lang, f'{sense} · {name} · {t(lang, "terms.title")}', body,
                 path=term_path(term, book), current="/about/",
-                description=t(lang, "meta.term_book_description", sense=term["sense"],
+                description=t(lang, "meta.term_book_description", sense=sense,
                               lemma=term["lemma"], book=name))
 
 
@@ -5075,7 +5205,9 @@ def sitemap(paths):
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared, article_link, places, basemap_file):
+                   downloads, chapter_shared, reader_shared, article_link, places, basemap_file, book_notes,
+                   article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
+                   owb_notes.book_records, owb_notes.book_decisions, owb_notes.english_cards):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
