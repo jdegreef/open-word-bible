@@ -603,3 +603,4 @@ records it. Empty until the first book is drafted.
 | John | Solomon's Colonnade | Serambi Salomo | 10:23 |
 | John | Kidron Valley | Lembah Kidron; sungai Kidron (L) | 18:1 |
 | John | Stone Pavement; Gabbatha | Lantai Batu; Gabata | 19:13 |
+| John | Rabbouni | Rabuni | 20:16 |
