@@ -40,6 +40,11 @@ and every passage drafted under it is revised to match.
 
 ## Other notes
 
+- [verse-note-disagreements.md](verse-note-disagreements.md): places where a
+  verse's Balanced or Readable text says something its own footnote does not,
+  found while translating the footnotes into eleven languages. Most start in the
+  English and are best decided there first.
+
 - [jeremiah-lamentations.md](jeremiah-lamentations.md) and
   [jeremiah-lamentations-brief.md](jeremiah-lamentations-brief.md): drafting and
   review notes from the English of Jeremiah and Lamentations.

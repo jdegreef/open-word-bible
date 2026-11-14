@@ -173,16 +173,17 @@ span).
 
 Every likely gap in every language was read, and every English candidate.
 60 spans in 57 renderings (47 files) were added around the word that was
-already there (no wording changed), and 1 Psalms rendering is in
-`pending-psalms-patches.jsonl`. Spans per language:
+already there (no wording changed), and 1 Psalms rendering was held in
+`pending-psalms-patches.jsonl` until the Psalms poetry lines were merged
+(now applied; the patch file is gone). Spans per language:
 
 - **English (10):** 2 Chronicles 32:22 L; Exodus 34:7 L; Job 36:11 L
   ("serve [him]"); Isaiah 54:8 R, 54:10 R; Daniel 9:3 L; Micah 6:3 R;
   Mark 15:37 L ("breathed [his] last"); Romans 3:5 L ("is he?");
   Revelation 21:6 R.
-- **Spanish (11, and 1 in the patch file):** Isaiah 10:24 R, 26:20 R ("Pueblo mío"), 30:28 B and R
+- **Spanish (11, and 1 from the patch file, now applied):** Isaiah 10:24 R, 26:20 R ("Pueblo mío"), 30:28 B and R
   ("su aliento"), 54:8 R, 54:10 R; Jeremiah 3:12 R, 29:14 L; Ezekiel 15:7
-  R; Matthew 27:26 R; Acts 5:30 L; and Psalm 94:1 B (patch file).
+  R; Matthew 27:26 R; Acts 5:30 L; and Psalm 94:1 B (patch file, applied).
 - **French (5):** Isaiah 3:13 L, 41:4 R, 54:15 R; Luke 22:32 L and B
   ("Mais moi").
 - **Portuguese (7):** Jeremiah 29:14 L; Ezekiel 20:31 L (twice), 35:11 L;
@@ -199,7 +200,7 @@ After main was merged (its records reorder the languages, so the merge
 took main's text for 53 files and the same fixes were applied to it again),
 the newly complete Ukrainian and Russian corroborated more likely gaps.
 Read and fixed on the current text (17 more spans, 3 of them in the patch
-file):
+file, since applied):
 
 - **Spanish (8):** Daniel 9:3 L ("buscar[lo]"); Job 36:11 L; Ezekiel
   14:3 L, 18:23 L and R, 18:32 L, 33:11 L and R (God's reflexive *me*).
@@ -207,7 +208,7 @@ file):
   annonce").
 - **Portuguese (1):** Job 36:11 L.
 - **Ukrainian (1):** Daniel 9:3 L ("шукати [його]").
-- **Swahili (1, and 3 in the patch file):** Job 13:22 L (*nawe*, Job
+- **Swahili (1, and 3 from the patch file, now applied):** Job 13:22 L (*nawe*, Job
   speaking to God); Psalm 46:11 L and B (*mimi*), Psalm 87:1 L (*wake*).
 
 The likely gaps still listed on the current text (en 9, es 51, fr 12,
