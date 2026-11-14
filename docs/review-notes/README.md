@@ -25,6 +25,7 @@ Each language has two files:
 | Vietnamese | [vi-review-checklist.md](vi-review-checklist.md) | [vi-uncertain.md](vi-uncertain.md) |
 | Korean | [ko-review-checklist.md](ko-review-checklist.md) | [ko-uncertain.md](ko-uncertain.md) |
 | Amharic | [amharic-review-guide.md](../amharic-review-guide.md) | [am-review-priorities.md](am-review-priorities.md), section 1 |
+| Indonesian | [id-review-checklist.md](id-review-checklist.md) (an outline written before drafting) | `id-uncertain.md`, once books are drafted |
 
 Amharic has a guide (`docs/amharic-review-guide.md`: the levels, the settings,
 what to check, how review works in the admin and where to start) and a
