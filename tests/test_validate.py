@@ -341,6 +341,18 @@ class ValidateTest(unittest.TestCase):
         self.assertIn("renderings.en.R: plural_you is not a setting in this language",
                       validate.validate_record(record))
 
+    def test_indonesian_renderings_keep_the_record_id(self):
+        # Indonesian's code is "id", which is also the name of a record's
+        # and a decision's own field. (The English stands in for Indonesian
+        # text here.)
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["id"] = copy.deepcopy(record["renderings"]["en"])
+        decision = copy.deepcopy(next(d for d in record["decisions"] if d["layer"] == "rendering"))
+        decision.update({"id": "r-id-1", "language": "id"})
+        record["decisions"].append(decision)
+        self.assertEqual(validate.validate_record(record), [])
+        self.assertEqual(record["id"], "JHN.1.3.s1")
+
     def test_rendering_in_a_language_not_in_the_registry_fails(self):
         record = example_records()[0]
         record["renderings"]["de"] = copy.deepcopy(record["renderings"]["en"])
