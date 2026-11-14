@@ -1017,15 +1017,21 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(len(re.findall(r'class="chap none"', strip)), 21 - len(done))
 
     def test_aligned_records_carry_their_ranges(self):
-        records = self.chapter_data("jhn/2")["records"]
-        linked = [r for r in records if r["links"]]
-        self.assertTrue(linked)
-        for r in linked:
-            text = r["renderings"]["en"]["B"]
-            for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
-                self.assertEqual(al["tokens"], tokens)
-                # Curly quotes on the page keep every range in place.
-                self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
+        # Greek (John, Mark) and Hebrew (Genesis, where a word's prefixes are
+        # tokens of their own) alike.
+        for chapter in ("jhn/2", "mrk/1", "gen/1"):
+            data = self.chapter_data(chapter)
+            words = {w["id"] for ws in data["words"].values() for w in ws}
+            linked = [r for r in data["records"] if r["links"]]
+            self.assertTrue(linked, chapter)
+            for r in linked:
+                text = r["renderings"]["en"]["B"]
+                for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
+                    self.assertEqual(al["tokens"], tokens)
+                    # Curly quotes on the page keep every range in place.
+                    self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
+                    # The interlinear view finds every linked word on the page.
+                    self.assertLessEqual(set(tokens), words)
 
     def test_word_uses_index(self):
         text = (self.out / "word-uses.json").read_text(encoding="utf-8")

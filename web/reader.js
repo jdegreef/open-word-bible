@@ -483,9 +483,9 @@
     });
   }
 
-  var WORD_TEXT = {};
+  var WORD = {};
   Object.keys(DATA.words).forEach(function (vid) {
-    DATA.words[vid].forEach(function (w) { WORD_TEXT[w.id] = w.text; });
+    DATA.words[vid].forEach(function (w) { WORD[w.id] = w; });
   });
 
   // The language a record is shown in: the reading language if the record
@@ -815,7 +815,7 @@
             // The original words over the English they became.
             var ruby = el("ruby", "il" + (piece[2] ? " wj" : ""));
             ruby.appendChild(document.createTextNode(text));
-            var rt = el("rt", null, piece[1].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim());
+            var rt = el("rt", null, OWBMarkup.joinWords(piece[1].map(function (id) { return WORD[id]; }).filter(Boolean)));
             rt.lang = DATA.source;
             ruby.appendChild(rt);
             into.appendChild(ruby);

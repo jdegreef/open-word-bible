@@ -99,3 +99,17 @@ test("every setting used in content/ is one the reader knows", () => {
   assert.ok(used.size > 0, "no spans found in content/");
   assert.deepEqual([...used].filter((name) => !M.SETTINGS.includes(name)), []);
 });
+
+test("joinWords keeps a Hebrew word's morphemes together and spaces words apart", () => {
+  // Genesis 1:1 as MACULA Hebrew divides it: "the" + "earth" is one word in
+  // two rows; "God" is a word of its own. Greek words always get a space.
+  const hebrew = JSON.parse(read("data/hbo/GEN.1.json")).verses["GEN.1.1"];
+  const [god, the, earth] = [hebrew[3], hebrew[9], hebrew[10]];
+  assert.equal(the.after, "");
+  assert.equal(the.position, earth.position);
+  assert.equal(M.joinWords([the, earth]), the.text + earth.text);
+  assert.equal(M.joinWords([god, the, earth]), god.text + " " + the.text + earth.text);
+  const greek = JSON.parse(read("data/grc/MRK.1.json")).verses["MRK.1.1"];
+  assert.equal(M.joinWords([greek[3], greek[4]]), greek[3].text + " " + greek[4].text);
+  assert.equal(M.joinWords([]), "");
+});
