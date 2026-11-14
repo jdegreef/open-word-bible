@@ -112,12 +112,14 @@ class SiteTest(unittest.TestCase):
         # Swahili, Vietnamese, Korean, Portuguese and Amharic (and any
         # language drafted since) for the whole chapter. The page lists the
         # languages it has, in the site's order.
-        present = [lang for lang in build_site.LANGUAGES
-                   if any(lang in r["renderings"] for r in data["records"])]
+        records = build_site.load_chapter("JHN", 1)[0]
+        present = [lang for lang in build_site.LANGUAGES if any(lang in r["renderings"] for r in records)]
         self.assertEqual(data["languages"], present)
+        self.assertEqual(list(data["texts"]), present)
         self.assertEqual(present[:8], ["en", "es", "fr", "sw", "vi", "ko", "pt", "am"])
         for lang in ("fr", "sw", "vi", "ko", "pt", "am"):
-            self.assertTrue(all(lang in r["renderings"] for r in data["records"]), lang)
+            self.assertTrue(all(lang in r["renderings"] for r in records), lang)
+        # The English page has English for every sentence, which it loads.
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
     def test_each_verse_words_are_covered_once(self):
@@ -1245,10 +1247,14 @@ class SiteTest(unittest.TestCase):
                 for path in pages:
                     self.assertTrue(path.startswith(build_site.url(code, "/")), path)
                     self.assertTrue(self.built(path).is_file(), path)
-                # Each page's shared chapter data, which the page loads.
-                self.assertEqual(len(data), len(pages))
-                for page, path in zip(pages, data):
-                    self.assertIn(f'<script src="{path}"></script>', self.built(page).read_text(encoding="utf-8"))
+                # The chapter data each page loads: its records and its
+                # language's text.
+                loaded = set()
+                for page in pages:
+                    loaded |= set(re.findall(r'<script src="(/chapter-data/[^"]+)"></script>',
+                                             self.built(page).read_text(encoding="utf-8")))
+                self.assertEqual(set(data), loaded)
+                for path in data:
                     self.assertTrue(self.built(path).is_file(), path)
 
     def test_a_page_loads_the_languages_it_shows(self):
@@ -1271,8 +1277,8 @@ class SiteTest(unittest.TestCase):
         page = (self.out / "es/jhn/1/index.html").read_text(encoding="utf-8")
         # A page loads its own language's text, not every language's: John
         # 1 is in Spanish throughout, so the Spanish page needs no other.
-        self.assertIn(es["texts"]["es"], page)
-        self.assertNotIn(es["texts"]["en"], page)
+        self.assertIn(f'<script src="{es["texts"]["es"]}"></script>', page)
+        self.assertNotIn(f'<script src="{es["texts"]["en"]}"></script>', page)
         self.assertEqual({lang for r in es["records"] for lang in r["renderings"]}, {"es"})
         self.assertEqual([r["renderings"]["es"] for r in es["records"]],
                          [r["renderings"]["es"] for r in build_site.load_chapter("JHN", 1)[0]])

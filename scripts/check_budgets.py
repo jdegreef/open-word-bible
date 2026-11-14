@@ -78,14 +78,14 @@ def is_reader_data(rel):
     return rel.parts[0] == "chapter-data" or (len(rel.parts) == 1 and rel.name.startswith("reader-"))
 
 
-CHAPTER_DATA = re.compile(r'<script src="/(chapter-data/[^"?]+\.js)\?v=[0-9a-f]+"></script>')
+CHAPTER_DATA = re.compile(rb'<script src="/(chapter-data/[^"?]+\.js)\?v=[0-9a-f]+"></script>')
 
 
 def chapter_page_gz(site, path):
     """A chapter page's gzipped size with the chapter's reader data it loads:
     the shared records and the text of its own language (and any it falls
     back on). The language's interface data is shared by every chapter."""
-    loaded = CHAPTER_DATA.findall(path.read_text(encoding="utf-8"))
+    loaded = {rel.decode() for rel in CHAPTER_DATA.findall(path.read_bytes())}
     return gzipped(path) + sum(gzipped(site / rel) for rel in loaded if (site / rel).is_file())
 
 
