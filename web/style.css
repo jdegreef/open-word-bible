@@ -2694,9 +2694,12 @@ button.button { font-family: inherit; cursor: pointer; }
 .ed-chapter-h { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .ed-body p { margin: 0; text-indent: 1.4em; }
 .ed-body p:first-child { text-indent: 0; }
-.ed-poem p { text-indent: 0; }
+/* Poetry (p.ed-pp: a verse set in lines) may sit inside a prose chapter:
+   a gap where a stanza starts and where poetry and prose meet. */
+.ed-body p.ed-pp { text-indent: 0; }
 .ed-line { display: block; padding-left: 1.5em; text-indent: -1.5em; }
-.ed-poem .ed-stanza { margin-top: .9em; }
+.ed-body p.ed-stanza, .ed-body p:not(.ed-pp) + p.ed-pp, .ed-body p.ed-after { margin-top: .9em; }
+.ed-body p.ed-after { text-indent: 0; }
 .ed-num { float: left; font-family: var(--display); font-weight: 600; color: var(--accent);
   font-size: 2.9em; line-height: .9; margin: .06em .18em 0 0; }
 /* Poetry's hanging lines would run under a floated numeral: it takes its own line. */
