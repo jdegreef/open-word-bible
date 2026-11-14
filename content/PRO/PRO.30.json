@@ -68,6 +68,26 @@
           "L": "የያቄ ልጅ የአጉር ቃሎች፣ የትንቢት ቃል። ሰውዬው ለኢቲኤል፣ ለኢቲኤልና ለኡካል እንዲህ ይላል፦",
           "B": "የያቄ ልጅ የአጉር አባባሎች፤ የትንቢት ቃል ነው። ይህ ሰው ለኢቲኤል፣ ለኢቲኤልና ለኡካል እንዲህ ይላል፦",
           "R": "እነዚህ የያቄ ልጅ የአጉር ቃሎች ናቸው። ይህ መልእክቱ ነው። ለኢቲኤልና ለኡካል የተናገረው ይህ ነው፦"
+        },
+        "hi": {
+          "L": "याके के पुत्र आगूर के वचन, भारी वचन। वह पुरुष ईतीएल से, ईतीएल और उकाल से कहता है:",
+          "B": "याके के पुत्र आगूर की बातें, एक भारी वचन। यह पुरुष ईतीएल से, ईतीएल और उकाल से कहता है:",
+          "R": "ये याके के पुत्र आगूर के वचन हैं। यह उसका संदेश है। उसने इसे ईतीएल और उकाल से कहा:"
+        },
+        "ru": {
+          "L": "Слова Агура, сына Иакея, — пророческая речь. Изрекает этот человек Ифиилу, Ифиилу и Укалу:",
+          "B": "Изречения Агура, сына Иакея, — пророческое слово. Вот что говорит этот человек Ифиилу, Ифиилу и Укалу:",
+          "R": "Это слова Агура, сына Иакея. Вот его весть. Он сказал её Ифиилу и Укалу:"
+        },
+        "ja": {
+          "L": "ヤケの子アグルの言葉、託宣。その人はイティエルに、イティエルとウカルに告げる。",
+          "B": "ヤケの子アグルの言葉、託宣である。この人はイティエルに、イティエルとウカルに、こう告げる。",
+          "R": "これは、ヤケの息子アグルの言葉である。これは、アグルが告げる大切な知らせである。アグルは、イティエルとウカルに、こう語った。"
+        },
+        "uk": {
+          "L": "Слова Агура, сина Яке, пророче слово. Цей чоловік промовляє до Ітіїла, до Ітіїла й Укала:",
+          "B": "Вислови Агура, сина Яке, пророче слово. Цей чоловік промовляє до Ітіїла, до Ітіїла й Укала:",
+          "R": "Це слова Агура, сина Яке. Ось його послання. Він сказав його Ітіїлові та Укалові:"
         }
       },
       "decisions": [
@@ -338,6 +358,162 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalizes pronouns for God has nothing to change in Amharic; pronouns for God are written plainly (docs/amharic-style.md section 7).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010051",
+            "o200300010052"
+          ],
+          "choice": "\"आगूर\", \"याके\", \"ईतीएल\", \"उकाल\"; \"भारी वचन\" (the oracle)",
+          "alternatives": [],
+          "reason": "The names are transcribed from the Hebrew; Ithiel keeps the form of Nehemiah 11:7 in this translation. The oracle (massa) is a weighty message (meaning m1), \"भारी वचन\", as 2 Kings 9:25 renders the same word in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010061",
+            "o200300010072"
+          ],
+          "choice": "\"वह पुरुष ... कहता है\"",
+          "alternatives": [
+            "\"वाणी\""
+          ],
+          "reason": "\"The man declares\" is a solemn opening (meaning m2), here the word used for a prophet's utterance; Hindi says it with \"कहता है\" before the colon, so the words that follow stand as what he declares.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010021",
+            "o200300010041",
+            "o200300010081",
+            "o200300010101"
+          ],
+          "choice": "\"Агур, сын Иакея\"; \"Ифиил\", \"Укал\"",
+          "alternatives": [
+            "\"Агур, сын Яке\"; \"Итиэль\", \"Ухаль\""
+          ],
+          "reason": "The names occur only here; they take the traditional Russian forms, as the history note does for names (Иеффай, Иессей), so that a reader finds the familiar people. Ithiel is repeated as the Hebrew has it (m3).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010051",
+            "o200300010052"
+          ],
+          "choice": "\"пророческая речь\" (L), \"пророческое слово\" (B) for massa",
+          "alternatives": [
+            "\"Масса\" as a place name",
+            "\"бремя\""
+          ],
+          "reason": "massa is a weighty message, the word for a prophet's oracle (m1); Readable says \"весть\", as the English \"message\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010021",
+            "o200300010041",
+            "o200300010082",
+            "o200300010102"
+          ],
+          "choice": "Names: Agur \"アグル\", Jakeh \"ヤケ\", Ithiel \"イティエル\", Ucal \"ウカル\" (as the Hebrew vowels read, two names)",
+          "alternatives": [],
+          "reason": "Names not met before in the Japanese; transcribed from the Hebrew as other OT names are, following meaning m3 (two hearers).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010052"
+          ],
+          "choice": "hammassa' \"託宣\" (L, B), as massa' in 2 Kings 9:25; Readable \"大切な知らせ\" for the English Readable \"message\"; not the place name \"マサ\"",
+          "alternatives": [
+            "\"マサの人\" (Massa as a place, as some read it)"
+          ],
+          "reason": "The meaning decision reads massa' as \"the oracle\", a weighty message (m1), not as the tribe or land of Massa; Japanese follows it.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300010081",
+            "o200300010082",
+            "o200300010091",
+            "o200300010092",
+            "o200300010101",
+            "o200300010102"
+          ],
+          "choice": "\"Агур\", \"Яке\", \"Ітіїл\", \"Укал\"",
+          "alternatives": [
+            "\"Ітіел\""
+          ],
+          "reason": "Transliterated from the Hebrew forms as the Ukrainian OT drafts spell names; Ithiel and Ucal stay two names, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -406,6 +582,26 @@
           "L": "በእርግጥ እኔ ከማንም ይልቅ ደንቆሮ ነኝ፤ \\q የሰውም ማስተዋል የለኝም።",
           "B": "በእርግጥ ከሰዎች ሁሉ እጅግ ደንቆሮ ነኝ፤ \\q ተራ የሰው ማስተዋል እንኳ የለኝም።",
           "R": "ከማንም በላይ ምንም የማላውቅ ነኝ። \\q ሰው ሊኖረው የሚገባ ማስተዋል የለኝም።"
+        },
+        "hi": {
+          "L": "निश्चय मैं हर किसी से अधिक पशु-समान [हूँ], \\q और मुझ में मनुष्य की समझ नहीं।",
+          "B": "निश्चय मैं सब लोगों में सबसे अज्ञानी हूँ; \\q मुझ में साधारण मनुष्य की समझ भी नहीं।",
+          "R": "मैं किसी भी दूसरे व्यक्ति से ज़्यादा अज्ञानी हूँ। \\q मुझ में वह समझ नहीं जो लोगों में होनी चाहिए।"
+        },
+        "ru": {
+          "L": "Поистине, я тупее всякого человека, \\q и нет у меня разума человеческого.",
+          "B": "Я, конечно, самый невежественный из людей; \\q нет у меня обычного человеческого разума.",
+          "R": "Я невежественнее всех. \\q У меня нет того понимания, которое должно быть у человека."
+        },
+        "ja": {
+          "L": "まことに、わたしはだれよりも獣のように愚かで、 \\q わたしには人の悟りがない。",
+          "B": "わたしは、まことに、だれよりも愚かな者だ。 \\q 人並みの悟りもない。",
+          "R": "わたしは、ほかのだれよりも、ものを知らない。 \\q 人が持っているはずの、物事を見分ける力も、わたしにはない。"
+        },
+        "uk": {
+          "L": "Справді, я тупіший за будь-кого, \\q і не маю людського розуміння.",
+          "B": "Я напевно найневігласніший з усіх людей; \\q мені бракує звичайного людського розуміння.",
+          "R": "Я неосвіченіший за будь-кого. \\q У мене немає того розуміння, яке повинні мати люди."
         }
       },
       "decisions": [
@@ -420,6 +616,44 @@
           "choice": "stupid: dull as an animal",
           "alternatives": [],
           "reason": "The word (baar) is used of a person no wiser than a beast (12:1; Psalm 73:22). Agur confesses that human wisdom cannot reach God (verses 3–4); the confession is humble, perhaps with some irony.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300020021"
+          ],
+          "choice": "\"тупее\" for baar",
+          "alternatives": [
+            "\"глупее\""
+          ],
+          "reason": "baar is the dullness of a beast (m1), \"тупой\" as at 12:1; \"глупый\" is kept for kesil.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200300020021"
+          ],
+          "choice": "Agur's words (30:2-14) without 「 」, as the English, in the plain poetic style at every level; ba'ar \"獣のように愚か\" (L) as 12:1",
+          "alternatives": [],
+          "reason": "The English sets Agur's speech without quotation marks, so the Japanese has none; plain style holds for the poems of Proverbs (PRO-1 notes).",
           "uncertain": false,
           "footnote": false
         }
@@ -487,6 +721,26 @@
           "L": "ጥበብን አልተማርኩም፤ \\q የቅዱሱንም እውቀት አላውቅም።",
           "B": "ጥበብን አልተማርኩም፤ \\q የቅዱሱም እውቀት የለኝም።",
           "R": "ጥበብን አልተማርኩም። \\q ቅዱሱን አምላክ አላውቀውም።"
+        },
+        "hi": {
+          "L": "मैंने बुद्धि नहीं सीखी, \\q और न मैं पवित्र का ज्ञान जानता हूँ।",
+          "B": "मैंने बुद्धि नहीं सीखी, \\q और न मुझे पवित्र परमेश्वर का ज्ञान है।",
+          "R": "मैंने बुद्धि नहीं सीखी। \\q मैं पवित्र परमेश्वर को नहीं जानता।"
+        },
+        "ru": {
+          "L": "Я не научился мудрости \\q и не знаю знания Святого.",
+          "B": "Я не научился мудрости \\q и не имею знания о Святом.",
+          "R": "Я не научился мудрости. \\q Я не знаю Святого Бога."
+        },
+        "ja": {
+          "L": "わたしは知恵を学ばず、 \\q 聖なる方の知識を知らない。",
+          "B": "わたしは知恵を学んだこともなく、 \\q 聖なる方を知る知識もない。",
+          "R": "わたしは、知恵を学んだことがない。 \\q 聖なる神を知らない。"
+        },
+        "uk": {
+          "L": "Я не навчився мудрості \\q і не знаю знання Святого.",
+          "B": "Я не навчився мудрості \\q й не маю знання про Святого.",
+          "R": "Я не навчився мудрості. \\q Я не знаю святого Бога."
         }
       },
       "decisions": [
@@ -521,6 +775,23 @@
             "holy ones"
           ],
           "reason": "The plural (qedoshim) is a plural of majesty for God, as in 9:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300030051"
+          ],
+          "choice": "\"पवित्र\" (L); \"पवित्र परमेश्वर\" (B, R)",
+          "alternatives": [],
+          "reason": "The Holy One is God (meaning m2). Literal keeps the bare title, as \"इस्राएल का पवित्र\" in the poetry note; Balanced and Readable add \"परमेश्वर\" so that a Hindi reader does not take \"पवित्र\" as a plain adjective.",
           "uncertain": false,
           "footnote": false
         }
@@ -611,6 +882,26 @@
           "L": "ወደ ሰማይ የወጣ፣ የወረደስ ማን ነው? ነፋስን በእጆቹ መዳፍ የሰበሰበ ማን ነው? ውኆችን በልብስ የጠቀለለ ማን ነው? \\q የምድርን ዳርቻዎች ሁሉ ያጸና ማን ነው? \\q ስሙ ማን ነው? የልጁስ ስም ማን ነው? በእርግጥ ታውቃለህ!",
           "B": "ወደ ሰማይ ወጥቶ የተመለሰ ማን ነው? ነፋስን በእጁ መዳፍ የያዘ ማን ነው? ውኆችን በመጎናጸፊያ የጠቀለለ ማን ነው? \\q የምድርን ዳርቻዎች ሁሉ የወሰነ ማን ነው? \\q ስሙ ማን ነው? የልጁስ ስም? የምታውቅ ከሆነ ንገረኝ!",
           "R": "ወደ ሰማይ ወጥቶ የተመለሰ ሰው አለን? ነፋስን በእጁ ሊይዝ የሚችል ማን ነው? ውቅያኖሶችን በልብስ ሊጠቀልል የሚችል ማን ነው? \\q የዓለምን ዳርቻዎች የሠራ ማን ነው? \\q ስሙ ማን ነው? የልጁስ ስም ማን ነው? የምታውቅ ከሆነ ንገረኝ!"
+        },
+        "hi": {
+          "L": "कौन स्वर्ग पर चढ़ा और उतरा? किसने अपनी मुट्ठियों में हवा बटोरी? किसने जल को वस्त्र में बाँधा? \\q किसने पृथ्वी की सब सीमाएँ ठहराईं? \\q उनका नाम क्या [है], और उनके पुत्र का नाम क्या [है]? निश्चय तुम जानते हो!",
+          "B": "कौन स्वर्ग पर चढ़कर फिर नीचे उतरा है? किसने हवा को अपनी हथेलियों में थाम लिया है? किसने जल को चादर में लपेट लिया है? \\q किसने पृथ्वी की सारी सीमाएँ ठहराई हैं? \\q उनका नाम क्या है, और उनके पुत्र का नाम क्या है? अगर तुम जानते हो, तो मुझे बताओ!",
+          "R": "क्या कोई स्वर्ग पर चढ़कर वापस आया है? कौन हवा को अपने हाथों में थाम सकता है? कौन समुद्रों को कपड़े में लपेट सकता है? \\q पृथ्वी के छोर किसने बनाए? \\q उनका नाम क्या है? उनके पुत्र का नाम क्या है? अगर तुम जानते हो, तो मुझे बताओ!"
+        },
+        "ru": {
+          "L": "Кто поднялся на небеса и спустился? Кто собрал ветер в свои горсти? Кто увязал воды в одеяние? \\q Кто поставил все края земли? \\q Каково {{deity_pronoun:его|Его}} имя, и каково имя {{deity_pronoun:его|Его}} сына? Ведь ты знаешь!",
+          "B": "Кто поднимался на небо и снова спускался? Кто поймал ветер в свои ладони? Кто завернул воды в плащ? \\q Кто установил все пределы земли? \\q Как {{deity_pronoun:его|Его}} имя и как имя {{deity_pronoun:его|Его}} сына? Скажи, если знаешь!",
+          "R": "Поднимался ли кто-нибудь на небо и возвращался ли назад? Кто может удержать ветер в своих руках? Кто может завернуть океаны в плащ? \\q Кто создал края земли? \\q Как {{deity_pronoun:его|Его}} зовут? Как зовут {{deity_pronoun:его|Его}} сына? Скажи мне, если знаешь!"
+        },
+        "ja": {
+          "L": "だれが天に上り、また下ったか？だれが風をその手のくぼみに集めたか？だれが水を衣で包んだか？ \\q だれが地のすべての果てを定めたか？ \\q その名は何か、その子の名は何か？あなたは知っているではないか！",
+          "B": "だれが天に上り、また下って来たか？だれが風をたなごころに捕らえたか？だれが水を外套に包んだか？ \\q だれが地の果てをすべて定めたか？ \\q その名は何か、その子の名は何か？知っているなら、言ってみなさい！",
+          "R": "天に上って、また帰って来た人がいるだろうか？だれが風を手につかむことができるだろうか？だれが海を上着で包むことができるだろうか？ \\q だれが世界の果てを造ったのか？ \\q その名は何か？その子の名は何か？知っているなら、教えてくれ！"
+        },
+        "uk": {
+          "L": "Хто піднявся [на] небо й зійшов? Хто зібрав вітер у пригорщі своїх рук? Хто загорнув води в одежу? \\q Хто встановив усі кінці землі? \\q Яке {{deity_pronoun:його|Його}} імʼя, і яке імʼя {{deity_pronoun:його|Його}} сина? Ти ж напевно знаєш!",
+          "B": "Хто піднявся на небо й повернувся вниз? Хто впіймав вітер у долоні? Хто згорнув води в плащ? \\q Хто встановив усі межі землі? \\q Яке {{deity_pronoun:його|Його}} імʼя, і яке імʼя {{deity_pronoun:його|Його}} сина? Скажи мені, якщо знаєш!",
+          "R": "Чи піднімався хтось на небо й повертався? Хто може втримати вітер у руках? Хто може загорнути океани в плащ? \\q Хто створив краї світу? \\q Яке {{deity_pronoun:його|Його}} імʼя? Яке імʼя {{deity_pronoun:його|Його}} сина? Скажи мені, якщо знаєш!"
         }
       },
       "decisions": [
@@ -776,6 +1067,108 @@
           "reason": "John 3:13 echoes this verse but does not quote it, so the Amharic follows the Hebrew's questions and does not take the Gospel's sentence; only the plain phrase \"ወደ ሰማይ የወጣ\" is shared.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200300040011",
+            "o200300040021",
+            "o200300040141",
+            "o200300040191"
+          ],
+          "choice": "no deity_pronoun spans; honorific \"उनका\", \"उनके\"",
+          "alternatives": [
+            "a deity_pronoun span"
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change and the Hindi has no deity_pronoun spans (style guide, section 7). The one who has done these things can only be God (meaning m1), so his name and his son's take the honorific \"उनका\", \"उनके\", as God does in the third person throughout this translation, where the English capitalizes the pronoun in its alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300040011"
+          ],
+          "choice": "\"स्वर्ग पर चढ़ा और उतरा\"",
+          "alternatives": [],
+          "reason": "The first question is echoed in John 3:13 (\"no one has gone up into heaven except the one who came down\"). The Hindi uses the verbs of John 3:13 in this translation, \"स्वर्ग पर चढ़ा\" and \"उतरा\", because they are the natural Hindi words for the Hebrew; nothing else in the verse is shaped to the Gospel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200300040141"
+          ],
+          "choice": "\"свои горсти\", \"свои ладони\", \"своих руках\" without a deity_pronoun span",
+          "alternatives": [
+            "\"{{deity_pronoun:его|Его}} горсти\""
+          ],
+          "reason": "The English has a span on \"his hands\"; Russian uses the reflexive \"свой\", which takes no span (style guide section 7). \"Его имя\" and \"его сына\" take the span, as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300040011",
+            "o200300040021"
+          ],
+          "choice": "\"поднялся ... спустился\", \"увязал воды в одеяние\", \"поставил все края земли\"",
+          "alternatives": [
+            "the familiar Synodal wording"
+          ],
+          "reason": "Drafted from the Hebrew; Literal keeps every image but does not follow the familiar Synodal line word for word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300040191"
+          ],
+          "choice": "\"その名\" / \"その子の名\", with no pronoun for God",
+          "alternatives": [],
+          "reason": "The English capitalises the pronouns for God; Japanese has no deity_pronoun spans and leaves the pronoun out, as the questions leave the answer to the hearer (meaning m1, m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -843,6 +1236,26 @@
           "L": "የአምላክ ቃል ሁሉ የጠራ ነው፤ \\q በእርሱ ለሚጠለሉ እርሱ ጋሻ ነው።",
           "B": "አምላክ የሚናገረው ቃል ሁሉ የተፈተነና እውነት ነው፤ \\q በእርሱ ለሚጠለሉ ሁሉ ጋሻ ነው።",
           "R": "አምላክ የሚናገረው ሁሉ እውነትና ንጹሕ ነው። \\q ወደ እርሱ ለመጠለል የሚሄዱትን ሁሉ ይጠብቃል።"
+        },
+        "hi": {
+          "L": "परमेश्वर का हर वचन ताया हुआ [है]; \\q वे उनके लिए ढाल [हैं] जो उनकी शरण लेते हैं।",
+          "B": "परमेश्वर का हर वचन परखा हुआ और खरा है; \\q वे उन सबके लिए ढाल हैं जो उनकी शरण लेते हैं।",
+          "R": "परमेश्वर जो कुछ कहते हैं, वह सच्चा और शुद्ध है। \\q वे हर उस व्यक्ति की रक्षा करते हैं जो सुरक्षा के लिए उनके पास भागकर आता है।"
+        },
+        "ru": {
+          "L": "Всякое слово Бога очищено; \\q {{deity_pronoun:он|Он}} — щит для тех, кто находит убежище в {{deity_pronoun:нём|Нём}}.",
+          "B": "Всякое слово Бога испытано и верно; \\q {{deity_pronoun:он|Он}} — щит для всех, кто ищет в {{deity_pronoun:нём|Нём}} укрытия.",
+          "R": "Всё, что говорит Бог, истинно и чисто. \\q Он защищает всех, кто бежит к {{deity_pronoun:нему|Нему}} за защитой."
+        },
+        "ja": {
+          "L": "神の言葉はすべて精錬されている。 \\q 神は、ご自分に身を避ける者たちの盾である。",
+          "B": "神の語られる言葉はすべて確かである。 \\q 神は、ご自分に身を避けるすべての者の盾である。",
+          "R": "神が言われることは、すべて本当で、混じりけがない。 \\q 神は、守ってもらおうとして来る人を、みな守ってくださる。"
+        },
+        "uk": {
+          "L": "Кожне слово Бога — очищене; \\q {{deity_pronoun:він|Він}} — щит для тих, хто шукає притулку в {{deity_pronoun:ньому|Ньому}}.",
+          "B": "Кожне слово, яке промовляє Бог, перевірене й правдиве; \\q {{deity_pronoun:він|Він}} — щит для всіх, хто шукає притулку в {{deity_pronoun:ньому|Ньому}}.",
+          "R": "Усе, що каже Бог, правдиве й чисте. \\q Він захищає кожного, хто приходить до {{deity_pronoun:нього|Нього}} по захист."
         }
       },
       "decisions": [
@@ -892,6 +1305,46 @@
             "\"እግዚአብሔር\""
           ],
           "reason": "The terms list gives Eloah as አምላክ, so it stays apart from the divine name (30:9), which is እግዚአብሔር.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300050041"
+          ],
+          "choice": "the wording of 2 Samuel 22:31 and Psalm 18",
+          "alternatives": [],
+          "reason": "The verse says what 2 Samuel 22:31 and its parallel in Psalm 18 say of the LORD's word, with Eloah, \"God\", in place of the divine name (meaning m1). Where the Hebrew is the same, the Hindi keeps the wording those passages have in this translation at each level: \"ताया हुआ\" (refined, meaning m2), \"ढाल\", \"शरण लेते हैं\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300050041",
+            "o200300050051",
+            "o200300050082"
+          ],
+          "choice": "the wording of 2 Samuel 22:31 (Psalm 18:30) in this translation",
+          "alternatives": [],
+          "reason": "The second half of the verse says what 2 Samuel 22:31 says of the LORD's word and of God as a shield, so each level keeps its Russian: \"очищено\" (L), \"испытано и верно\" (B), and the three forms of taking refuge. Here the Hebrew names God as Eloah, \"Бог\".",
           "uncertain": false,
           "footnote": false
         }
@@ -962,6 +1415,26 @@
           "L": "በቃሎቹ ላይ አትጨምር፤ \\q እንዳይገሥጽህ፣ ሐሰተኛም እንዳትገኝ።",
           "B": "በቃሎቹ ላይ ምንም አትጨምር፤ \\q አለዚያ ያርምሃል፤ ውሸታም መሆንህንም ያጋልጣል።",
           "R": "አምላክ በሚናገረው ላይ የራስህን ሐሳብ አትጨምር። \\q ብትጨምር ያርምሃል፤ ውሸታም መሆንህንም ያሳያል።"
+        },
+        "hi": {
+          "L": "उनके वचनों में [कुछ] मत जोड़ो, \\q नहीं तो वे तुम्हें डाँटेंगे और तुम झूठे ठहरोगे।",
+          "B": "उनके वचनों में कुछ भी मत जोड़ो, \\q नहीं तो वे तुम्हें सुधारेंगे और तुम्हें झूठा साबित करेंगे।",
+          "R": "परमेश्वर जो कहते हैं, उसमें अपने विचार मत जोड़ो। \\q अगर तुम ऐसा करोगे, तो वे तुम्हें सुधारेंगे और दिखा देंगे कि तुम झूठ बोल रहे हो।"
+        },
+        "ru": {
+          "L": "Не прибавляй к {{deity_pronoun:его|Его}} словам, \\q чтобы {{deity_pronoun:он|Он}} не обличил тебя и ты не оказался лжецом.",
+          "B": "Ничего не прибавляй к {{deity_pronoun:его|Его}} словам, \\q иначе {{deity_pronoun:он|Он}} поправит тебя и покажет, что ты лжец.",
+          "R": "Не добавляй своих мыслей к тому, что говорит Бог. \\q Иначе {{deity_pronoun:он|Он}} поправит тебя и покажет, что ты лжёшь."
+        },
+        "ja": {
+          "L": "その言葉に付け加えるな。 \\q さもないと、神はあなたを責め、あなたは偽り者とされる。",
+          "B": "神の言葉に何も付け加えてはならない。 \\q さもないと、神はあなたを戒め、あなたがうそつきであることを明らかにされる。",
+          "R": "神が言われることに、自分の考えを付け加えてはいけない。 \\q もしそうすれば、神はあなたを正し、あなたがうそを言っていることを明らかにされる。"
+        },
+        "uk": {
+          "L": "Не додавай до {{deity_pronoun:його|Його}} слів, \\q щоб {{deity_pronoun:він|Він}} не докорив тобі, і ти не виявився брехуном.",
+          "B": "Нічого не додавай до {{deity_pronoun:його|Його}} слів, \\q бо {{deity_pronoun:він|Він}} тебе виправить і покаже, що ти брехун.",
+          "R": "Не додавай власних думок до того, що каже Бог. \\q Якщо додаси, {{deity_pronoun:він|Він}} тебе виправить і покаже, що ти брешеш."
         }
       },
       "decisions": [
@@ -999,6 +1472,47 @@
           "choice": "\"አትጨምር\", as Deuteronomy 4:2 on main",
           "alternatives": [],
           "reason": "The verse echoes Deuteronomy 4:2, whose Amharic says \"አትጨምሩ\"; the same verb is kept, in the singular of the Hebrew here. Revelation 22:18 echoes it loosely and is not copied.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300060011",
+            "o200300060021",
+            "o200300060041"
+          ],
+          "choice": "\"मत जोड़ो\"",
+          "alternatives": [],
+          "reason": "The warning recalls Deuteronomy 4:2 (meaning m1), which this translation renders \"उसमें न कुछ जोड़ना\"; the same verb \"जोड़ना\" is kept here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300060011",
+            "o200300060021"
+          ],
+          "choice": "\"не прибавляй\", the verb of Deuteronomy 4:2",
+          "alternatives": [
+            "\"не добавляй\""
+          ],
+          "reason": "The line echoes Deuteronomy 4:2 (m1), so Literal and Balanced use the verb of the Russian Deuteronomy; Readable says \"не добавляй\", as Deuteronomy's Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1070,6 +1584,26 @@
           "L": "ሁለት [ነገሮችን] ከአንተ እለምናለሁ፤ \\q ሳልሞት አትከልክለኝ፦",
           "B": "ሁለት ነገሮችን እለምንሃለሁ፤ \\q ከመሞቴ በፊት ስጠኝ፦",
           "R": "አምላክ ሆይ፣ ሁለት ነገሮችን እለምንሃለሁ። \\q በሕይወት ሳለሁ እባክህ ስጠኝ፦"
+        },
+        "hi": {
+          "L": "मैं तुझसे दो [बातें] माँगता हूँ; \\q मेरे मरने से पहले [उन्हें] मुझसे मत रोक:",
+          "B": "मैं तुझसे दो बातें माँगता हूँ; \\q मेरे मरने से पहले उन्हें मुझे दे:",
+          "R": "हे परमेश्वर, मैं तुझसे दो बातें माँगता हूँ। \\q जब तक मैं जीवित हूँ, कृपया उन्हें मुझे दे:"
+        },
+        "ru": {
+          "L": "Двух [вещей] я прошу у {{deity_pronoun:тебя|Тебя}}; \\q не откажи мне [в них], прежде чем я умру:",
+          "B": "Я прошу {{deity_pronoun:тебя|Тебя}} о двух вещах; \\q дай мне их, прежде чем я умру:",
+          "R": "Боже, я прошу {{deity_pronoun:тебя|Тебя}} о двух вещах. \\q Пожалуйста, дай мне их, пока я жив:"
+        },
+        "ja": {
+          "L": "二つのことを、わたしはあなたに求める。 \\q わたしが死ぬ前に、それを拒まないでほしい。",
+          "B": "わたしは二つのことをあなたに願う。 \\q わたしが死ぬ前に、それをかなえてほしい。",
+          "R": "神よ、わたしはあなたに二つのことを願う。 \\q わたしが生きているうちに、それをかなえてほしい。"
+        },
+        "uk": {
+          "L": "Двох [речей] я прошу від {{deity_pronoun:тебе|Тебе}}; \\q не відмов [їх] мені, перш ніж я помру:",
+          "B": "Двох речей я прошу в {{deity_pronoun:тебе|Тебе}}; \\q дай їх мені, перш ніж я помру:",
+          "R": "Боже, я прошу в {{deity_pronoun:тебе|Тебе}} двох речей. \\q Будь ласка, дай їх мені, поки я ще живий:"
         }
       },
       "decisions": [
@@ -1212,6 +1746,46 @@
           "reason": "The only prayer in Proverbs (m1): Agur speaks to God with \"tu\", as people pray in Brazilian Portuguese (style §4; PRO_NOTE), through verse 9; \"te\", \"ti\" take the deity_pronoun setting where the English \"you\" does. The imperatives take the clitic after the verb (\"concede-as\", \"dá-me\"), as prayers are written.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200300070033"
+          ],
+          "choice": "\"तू\" (तुझसे, दे) to God",
+          "alternatives": [
+            "\"आप\""
+          ],
+          "reason": "Agur turns to pray to God (meaning m1), so he says \"तू\", as everyone praying to God does in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200300070021"
+          ],
+          "choice": "Agur's prayer (30:7-9) to God as \"あなた\" in the plain style, with requests as \"〜てほしい\" (not です・ます, not a bare imperative)",
+          "alternatives": [],
+          "reason": "God addressed in poetry is あなた in the plain style (OT supplement); requests to God take \"〜てほしい\" as in Job's speeches.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1288,6 +1862,26 @@
           "L": "ከንቱነትንና የሐሰትን ቃል ከእኔ አርቅ፤ \\q ድህነትንም ባለጠግነትንም አትስጠኝ፤ \\q የድርሻዬን እንጀራ አብላኝ፤",
           "B": "ሐሰትንና ውሸትን ከእኔ አርቅ፤ \\q ድህነትንም ሆነ ሀብትን አትስጠኝ፤ \\q ይልቁንም በየቀኑ የሚያስፈልገኝን እንጀራ መግበኝ፤",
           "R": "ከውሸትና ከሐሰተኛ ነገር ጠብቀኝ። \\q ድሀም አታድርገኝ፤ ሀብታምም አታድርገኝ። \\q በየቀኑ የሚያስፈልገኝን ምግብ ብቻ ስጠኝ።"
+        },
+        "hi": {
+          "L": "व्यर्थता और झूठ की बात मुझसे दूर कर; \\q मुझे न कंगाली दे, न धन; \\q मुझे मेरे भाग की रोटी खिला,",
+          "B": "झूठ और छल को मुझसे दूर रख; \\q मुझे न ग़रीबी दे, न अमीरी, \\q पर हर दिन की ज़रूरत की रोटी मुझे खिला,",
+          "R": "मुझे झूठ बोलने से और झूठी बातों से बचाए रख। \\q मुझे न ग़रीब बना, न अमीर। \\q बस मुझे हर दिन ज़रूरत का भोजन दे।"
+        },
+        "ru": {
+          "L": "Пустоту и слово лжи удали от меня; \\q бедности и богатства не давай мне; \\q дай мне есть хлеб моей доли,",
+          "B": "Удали от меня ложь и обман; \\q не давай мне ни бедности, ни богатства, \\q но корми меня хлебом, который нужен мне на каждый день,",
+          "R": "Не дай мне лгать и иметь дело с ложью. \\q Не делай меня бедным и не делай меня богатым. \\q Просто дай мне еду, которая нужна мне на каждый день."
+        },
+        "ja": {
+          "L": "むなしさと偽りの言葉を、わたしから遠ざけてほしい。 \\q 貧しさも富も、わたしに与えないでほしい。 \\q わたしに定められた分のパンで、わたしを養ってほしい。",
+          "B": "偽りとうそを、わたしから遠ざけてほしい。 \\q 貧しさも富も与えず、 \\q 日ごとに必要なパンで、わたしを養ってほしい。",
+          "R": "わたしがうそをついたり、偽りのことをしたりしないようにしてほしい。 \\q わたしを貧しくもせず、金持ちにもしないでほしい。 \\q 毎日必要な食べ物だけを与えてほしい。"
+        },
+        "uk": {
+          "L": "Марноту й брехливе слово віддали від мене; \\q бідності й багатства не давай мені; \\q годуй мене хлібом моєї частки,",
+          "B": "Тримай неправду й брехню далеко від мене; \\q не давай мені ні бідності, ні багатства, \\q але годуй мене хлібом, потрібним мені щодня,",
+          "R": "Бережи мене від брехні й від того, що неправдиве. \\q Не роби мене бідним і не роби мене багатим. \\q Просто давай мені їжу, яка мені потрібна щодня."
         }
       },
       "decisions": [
@@ -1437,6 +2031,26 @@
           "L": "ጠግቤ [አንተን] እንዳልክድ፣ እንዲህም እንዳልል፦ \\q «{{divine_name:እግዚአብሔር|ያህዌ}} ማን ነው?» \\q ወይም ደኽዬ እንዳልሰርቅ፣ \\q የአምላኬንም ስም እንዳላቃልል።",
           "B": "ብዙ አግኝቼ እንዳልክድህና እንዲህ ብዬ እንዳልጠይቅ፦ \\q «{{divine_name:እግዚአብሔር|ያህዌ}} ማን ነው?» \\q ወይም አጥቼ እንዳልሰርቅ፣ \\q በዚህም የአምላኬን ስም እንዳላሰድብ።",
           "R": "ብዙ ቢኖረኝ ልረሳህና «{{divine_name:እግዚአብሔር|ያህዌ}} ማን ነው?» ልል እችላለሁ። \\q በጣም ድሀ ብሆን ደግሞ ልሰርቅና የአምላኬን ስም ላዋርድ እችላለሁ።"
+        },
+        "hi": {
+          "L": "कहीं ऐसा न हो कि मैं तृप्त होकर [तेरा] इनकार करूँ और कहूँ, \\q \"{{divine_name:प्रभु|याहवे}} कौन है?\" \\q या कहीं ऐसा न हो कि मैं कंगाल होकर चोरी करूँ, \\q और अपने परमेश्वर के नाम को अपवित्र करूँ।",
+          "B": "ताकि ऐसा न हो कि मेरे पास बहुत हो जाए और मैं तेरा इनकार करके पूछूँ, \\q \"{{divine_name:प्रभु|याहवे}} कौन है?\" \\q या मेरे पास बहुत कम हो और मैं चोरी करूँ, \\q और इस तरह अपने परमेश्वर के नाम का अपमान करूँ।",
+          "R": "अगर मेरे पास बहुत ज़्यादा होगा, तो हो सकता है मैं तुझे भूल जाऊँ और कहूँ, \"{{divine_name:प्रभु|याहवे}} कौन है?\" \\q अगर मैं बहुत ग़रीब हो जाऊँ, तो हो सकता है मैं चोरी करूँ और अपने परमेश्वर के नाम पर कलंक लगाऊँ।"
+        },
+        "ru": {
+          "L": "чтобы, насытившись, я не отрёкся [от {{deity_pronoun:тебя|Тебя}}] и не сказал: \\q «Кто такой {{divine_name:ГОСПОДЬ|Яхве}}?» \\q или, обеднев, не стал красть \\q и не опорочил имени моего Бога.",
+          "B": "чтобы, имея слишком много, не отречься от {{deity_pronoun:тебя|Тебя}}, сказав: \\q «Кто такой {{divine_name:ГОСПОДЬ|Яхве}}?» \\q или, имея слишком мало, не начать красть \\q и не навлечь позор на имя моего Бога.",
+          "R": "Если у меня будет слишком много, я могу забыть {{deity_pronoun:тебя|Тебя}} и сказать: «Кто такой {{divine_name:ГОСПОДЬ|Яхве}}?» \\q Если я буду слишком беден, я могу начать воровать и опозорить имя моего Бога."
+        },
+        "ja": {
+          "L": "わたしが満ち足りて[あなたを]否み、 \\q 「{{divine_name:主|ヤハウェ}}とはだれか？」と言うことのないように。 \\q また、わたしが貧しくなって盗み、 \\q わたしの神の名を汚すことのないように。",
+          "B": "わたしが満ち足りて、あなたを否み、 \\q 「{{divine_name:主|ヤハウェ}}とはだれだ？」と言わないように。 \\q また、乏しくなって盗み、 \\q わたしの神の名に恥を負わせないように。",
+          "R": "もし、ありあまるほど持っていたら、わたしはあなたを忘れて、「{{divine_name:主|ヤハウェ}}とはだれだ？」と言うかもしれない。 \\q もし、とても貧しかったら、わたしは盗みをして、わたしの神の名に恥をかかせるかもしれない。"
+        },
+        "uk": {
+          "L": "щоб я не наситився й не зрікся [{{deity_pronoun:тебе|Тебе}}], і не сказав: \\q «Хто [такий] {{divine_name:ГОСПОДЬ|Ягве}}?» \\q чи щоб я не збіднів і не вкрав, \\q і не зневажив імені мого Бога.",
+          "B": "щоб я, маючи забагато, не відрікся від {{deity_pronoun:тебе|Тебе}}, питаючи: \\q «Хто такий {{divine_name:ГОСПОДЬ|Ягве}}?» \\q чи, маючи замало, не вкрав \\q і так не зганьбив імені мого Бога.",
+          "R": "Якщо матиму забагато, можу забути {{deity_pronoun:тебе|Тебе}} й сказати: «Хто такий {{divine_name:ГОСПОДЬ|Ягве}}?» \\q Якщо буду надто бідним, можу вкрасти й зганьбити імʼя мого Бога."
         }
       },
       "decisions": [
@@ -1516,6 +2130,25 @@
           "reason": "Following the meaning decision (bringing the name into disrepute): ማቃለል is the word for profaning at Literal, as Leviticus on main; Readable says ማዋረድ.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o200300090032"
+          ],
+          "choice": "\"[от {{deity_pronoun:тебя|Тебя}}]\"",
+          "alternatives": [
+            "no object"
+          ],
+          "reason": "As the English, the object of \"deny\" is supplied: Agur is praying, so the one he would deny is God himself. The supplied pronoun takes the deity_pronoun span like any other.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1584,6 +2217,26 @@
           "L": "ባሪያን በጌታው ፊት አትወንጅል፤ \\q እንዳይረግምህ፣ በደለኛም እንዳትሆን።",
           "B": "አገልጋይን በጌታው ፊት አትክሰስ፤ \\q አለዚያ አገልጋዩ ይረግምሃል፤ አንተም በደለኛ ሆነህ ትገኛለህ።",
           "R": "ስለ አገልጋይ ለአለቃው ውሸት አትናገር። \\q አገልጋዩ እግዚአብሔር እንዲቀጣህ ሊለምን ይችላል፤ አንተም በደለኛ ትሆናለህ።"
+        },
+        "hi": {
+          "L": "किसी दास की उसके स्वामी से चुग़ली न करना, \\q कहीं ऐसा न हो कि वह तुम्हें शाप दे और तुम दोषी ठहरो।",
+          "B": "किसी दास के विरुद्ध उसके स्वामी से कुछ मत कहो, \\q नहीं तो वह दास तुम्हें शाप देगा, और तुम दोषी ठहरोगे।",
+          "R": "किसी दास के बारे में उसके मालिक से झूठ मत बोलो। \\q वह दास परमेश्वर से तुम्हें दंड देने को कह सकता है, और तुम दोषी ठहरोगे।"
+        },
+        "ru": {
+          "L": "Не клевещи на раба его господину, \\q чтобы он не проклял тебя и ты не оказался виновным.",
+          "B": "Не наговаривай на слугу его хозяину, \\q иначе слуга призовёт на тебя проклятие, и ты окажешься виновным.",
+          "R": "Не лги о слуге его хозяину. \\q Слуга может попросить Бога наказать тебя, и ты будешь виновен."
+        },
+        "ja": {
+          "L": "しもべのことを、その主人に中傷するな。 \\q さもないと、そのしもべはあなたを呪い、あなたは罪ある者とされる。",
+          "B": "しもべのことを、その主人に悪く言ってはならない。 \\q さもないと、しもべはあなたを呪い、あなたは罪に定められる。",
+          "R": "しもべについて、その主人にうそを言ってはいけない。 \\q そのしもべは、あなたを罰してほしいと神に願うかもしれない。そうなれば、あなたは罪のある者になる。"
+        },
+        "uk": {
+          "L": "Не обмовляй раба перед його паном, \\q щоб він не прокляв тебе і ти не став винним.",
+          "B": "Не говори проти слуги перед його господарем, \\q бо слуга накличе на тебе прокляття, і тебе визнають винним.",
+          "R": "Не бреши про слугу його господареві. \\q Слуга може попросити Бога покарати тебе, і ти будеш винний."
         }
       },
       "decisions": [
@@ -1615,6 +2268,25 @@
           "choice": "he will curse you: the slandered servant",
           "alternatives": [],
           "reason": "A servant has no other defense than to call on God against the slanderer, and the curse is deserved (contrast 26:2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300100031"
+          ],
+          "choice": "\"раб\" (L), \"слуга\" (B, R)",
+          "alternatives": [],
+          "reason": "As in 29:19 and 30:22: ʿeved is \"раб\" at Literal, and \"слуга\" at Balanced and Readable, where the English says \"servant\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1684,6 +2356,26 @@
           "L": "አባቱን የሚረግም ትውልድ [አለ]፤ \\q እናቱንም አይመርቅም።",
           "B": "አባቶቻቸውን የሚረግሙ ሰዎች አሉ፤ \\q ስለ እናቶቻቸውም አንድም መልካም ቃል አይናገሩም።",
           "R": "አንዳንድ ሰዎች አባቶቻቸውን ይረግማሉ። \\q ስለ እናቶቻቸውም መልካም ነገር አይናገሩም።"
+        },
+        "hi": {
+          "L": "[ऐसी] पीढ़ी [है जो] अपने पिता को शाप देती है \\q और अपनी माता को आशीर्वाद नहीं देती।",
+          "B": "ऐसे लोग हैं जो अपने पिता को शाप देते हैं \\q और अपनी माँ के बारे में कभी अच्छा नहीं बोलते।",
+          "R": "कुछ लोग अपने पिता को शाप देते हैं। \\q उनके पास अपनी माँ के बारे में कहने को कोई अच्छी बात नहीं होती।"
+        },
+        "ru": {
+          "L": "[Есть] род, [который] проклинает своего отца \\q и не благословляет свою мать.",
+          "B": "Есть люди, которые проклинают своих отцов \\q и никогда не скажут доброго слова о своих матерях.",
+          "R": "Некоторые люди проклинают своих отцов. \\q У них нет ни одного доброго слова о своих матерях."
+        },
+        "ja": {
+          "L": "自分の父を呪い、 \\q 自分の母を祝福しない世代がある。",
+          "B": "父を呪い、 \\q 母を決して良く言わない人々がいる。",
+          "R": "自分の父親を呪う人たちがいる。 \\q その人たちは、母親について、何も良いことを言わない。"
+        },
+        "uk": {
+          "L": "[Є] рід, [що] проклинає свого батька \\q і не благословляє своєї матері.",
+          "B": "Є люди, які проклинають своїх батьків \\q і ніколи не кажуть доброго слова про своїх матерів.",
+          "R": "Деякі люди проклинають своїх батьків. \\q Вони не мають що доброго сказати про своїх матерів."
         }
       },
       "decisions": [
@@ -1733,6 +2425,63 @@
             "\"ዘመን\""
           ],
           "reason": "Literal keeps the Hebrew's \"generation\" in all four sayings; the meaning decision reads it as a kind of people, which Balanced and Readable say plainly (\"ሰዎች አሉ\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300110011"
+          ],
+          "choice": "\"पीढ़ी\" (L); \"ऐसे लोग हैं\" (B, R)",
+          "alternatives": [
+            "\"वर्ग\""
+          ],
+          "reason": "A generation here is a kind of people (meaning m1). Literal keeps \"पीढ़ी\" in each of verses 11-14, so the four lines open alike as in the Hebrew; Balanced and Readable say \"there are people\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300110011"
+          ],
+          "choice": "\"род\" for dor in verses 11-14",
+          "alternatives": [
+            "\"поколение\""
+          ],
+          "reason": "dor here is a kind of people (m1), not an age group; \"род\" can mean that in Russian, where \"поколение\" would be read as people born at one time. Balanced and Readable say \"есть люди\", \"некоторые люди\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300110011"
+          ],
+          "choice": "dor (30:11-14) \"世代\" (L), \"人々\" (B), \"人たち\" (R)",
+          "alternatives": [],
+          "reason": "The word means a kind of people here (meaning m1); Literal keeps the word, Balanced and Readable say what it means, as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -1803,6 +2552,26 @@
           "L": "በራሱ ዓይን ንጹሕ የሆነ ትውልድ [አለ]፤ \\q ከእድፉ ግን አልታጠበም።",
           "B": "ንጹሐን እንደሆኑ የሚያስቡ ሰዎች አሉ፤ \\q ርኩሰታቸው ግን ከቶ አልታጠበም።",
           "R": "አንዳንድ ሰዎች ንጹሐን እንደሆኑ ያስባሉ። \\q ነገር ግን አሁንም በኃጢአት ቆሽሸዋል።"
+        },
+        "hi": {
+          "L": "[ऐसी] पीढ़ी [है जो] अपनी दृष्टि में शुद्ध [है], \\q फिर भी उसका मैल धोया नहीं गया।",
+          "B": "ऐसे लोग हैं जो अपने आप को शुद्ध समझते हैं, \\q फिर भी उनकी गंदगी कभी धोई नहीं गई।",
+          "R": "कुछ लोग सोचते हैं कि वे शुद्ध हैं। \\q पर वे अब भी पाप से गंदे हैं।"
+        },
+        "ru": {
+          "L": "[Есть] род, чистый в своих глазах, \\q но от нечистот своих не омытый.",
+          "B": "Есть люди, которые считают себя чистыми, \\q но их грязь так и не смыта.",
+          "R": "Некоторые люди думают, что они чисты. \\q Но они всё ещё грязны от греха."
+        },
+        "ja": {
+          "L": "自分の目には清いが、 \\q その汚れから洗われていない世代がある。",
+          "B": "自分は清いと思っていながら、 \\q その汚れを一度も洗い落とされたことのない人々がいる。",
+          "R": "自分は清いと思っている人たちがいる。 \\q しかし、その人たちは、まだ罪で汚れている。"
+        },
+        "uk": {
+          "L": "[Є] рід, чистий у своїх очах, \\q а від свого бруду він не обмитий.",
+          "B": "Є люди, які вважають себе чистими, \\q а їхній бруд ніколи не було змито.",
+          "R": "Деякі люди думають, що вони чисті. \\q Але вони й досі забруднені гріхом."
         }
       },
       "decisions": [
@@ -1885,6 +2654,26 @@
           "L": "ትውልድ [አለ]፤ ዓይኖቹ ምንኛ ከፍ ያሉ ናቸው! \\q ሽፋሽፍቶቹም ወደ ላይ የተነሡ ናቸው!",
           "B": "ዓይኖቻቸው በትዕቢት የተሞሉ፣ \\q አስተያየታቸውም በንቀት የተሞላ ሰዎች አሉ!",
           "R": "አንዳንድ ሰዎች ምንኛ ትዕቢተኞች ናቸው! \\q ሁሉንም ዝቅ አድርገው ያያሉ።"
+        },
+        "hi": {
+          "L": "[ऐसी] पीढ़ी [है], उसकी आँखें कितनी ऊँची [हैं], \\q और उसकी पलकें ऊपर उठी रहती हैं!",
+          "B": "ऐसे लोग हैं जिनकी आँखें कितनी घमंड भरी हैं, \\q जिनकी नज़रें तिरस्कार से भरी हैं!",
+          "R": "कुछ लोग कितने घमंडी होते हैं! \\q वे हर किसी को नीची नज़र से देखते हैं।"
+        },
+        "ru": {
+          "L": "[Есть] род — как высоки глаза его, \\q и веки его подняты!",
+          "B": "Есть люди, у которых такой надменный взгляд, \\q такие презрительные глаза!",
+          "R": "Некоторые люди такие гордые! \\q Они смотрят на всех свысока."
+        },
+        "ja": {
+          "L": "ある世代は、なんとその目は高く、 \\q そのまぶたは上がっていることか！",
+          "B": "なんと高慢な目つきをした人々がいることか、 \\q そのまなざしは侮りに満ちている！",
+          "R": "なんと高ぶっている人たちがいることか！ \\q その人たちは、みんなを見下している。"
+        },
+        "uk": {
+          "L": "[Є] рід — які пихаті його очі, \\q і його повіки підняті!",
+          "B": "Є люди, чиї очі такі пихаті, \\q а погляди сповнені зневаги!",
+          "R": "Деякі люди такі горді! \\q Вони дивляться зверхньо на всіх."
         }
       },
       "decisions": [
@@ -1976,6 +2765,26 @@
           "L": "ጥርሶቹ ሰይፎች፣ መንጋጋዎቹም ቢላዎች የሆኑ ትውልድ [አለ]፤ \\q ጐስቋሎችን ከምድር ላይ፣ \\q ምስኪኖችንም ከሰው ልጆች መካከል ይበላ ዘንድ።",
           "B": "ጥርሳቸው ሰይፍ፣ መንጋጋቸውም ቢላ የሆነ ሰዎች አሉ፤ \\q ድሆችን ከምድር ላይ፣ \\q ምስኪኖችንም ከሰው ዘር መካከል ይበሉ ዘንድ።",
           "R": "አንዳንድ ሰዎች ጥርሳቸው እንደ ሰይፍና እንደ ቢላ የተሳለ አውሬዎችን ይመስላሉ። \\q ድሆችን ያጠፋሉ፤ ያላቸውንም ሁሉ ይወስዳሉ።"
+        },
+        "hi": {
+          "L": "[ऐसी] पीढ़ी [है जिसके] दाँत तलवारें और [जिसकी] दाढ़ें छुरियाँ [हैं], \\q कि दीन लोगों को पृथ्वी पर से \\q और दरिद्रों को मनुष्यों के बीच से खा जाए।",
+          "B": "ऐसे लोग हैं जिनके दाँत तलवारें हैं और जिनकी दाढ़ों में छुरियाँ जड़ी हैं, \\q कि दीनों को धरती से मिटा दें \\q और दरिद्रों को मनुष्यों के बीच से खा जाएँ।",
+          "R": "कुछ लोग जंगली जानवरों की तरह हैं, जिनके दाँत तलवारों और छुरियों जैसे तेज़ हैं। \\q वे ग़रीबों को नष्ट करते हैं और उनका सब कुछ छीन लेते हैं।"
+        },
+        "ru": {
+          "L": "[Есть] род, [у которого] зубы — мечи и челюсти — ножи, \\q чтобы пожирать угнетённых с земли \\q и нищих среди людей.",
+          "B": "Есть люди, у которых зубы — мечи, а челюсти — ножи, \\q чтобы пожирать угнетённых на земле \\q и нищих из рода человеческого.",
+          "R": "Некоторые люди как дикие звери: их зубы остры, как мечи и ножи. \\q Они губят бедных людей и отнимают у них всё."
+        },
+        "ja": {
+          "L": "歯が剣、あごが小刀である世代がある、 \\q 地から苦しむ者たちを、 \\q 人の中から貧しい者たちを食い尽くすために。",
+          "B": "歯は剣、あごは小刀のような人々がいる。 \\q 苦しむ者を地から、 \\q 貧しい者を人の中から食い尽くすのだ。",
+          "R": "剣や小刀のように鋭い歯を持つ野獣のような人たちがいる。 \\q その人たちは、貧しい人たちを滅ぼし、持っている物をすべて奪う。"
+        },
+        "uk": {
+          "L": "[Є] рід, [чиї] зуби — мечі, а щелепи — ножі, \\q щоб пожирати пригноблених із землі \\q і вбогих — з-поміж людей.",
+          "B": "Є люди, чиї зуби — мечі, а щелепи — ножі, \\q щоб пожирати пригноблених на землі \\q і вбогих серед людського роду.",
+          "R": "Деякі люди — як дикі звірі з зубами, гострими, як мечі й ножі. \\q Вони нищать бідних людей і забирають усе, що ті мають."
         }
       },
       "decisions": [
@@ -2086,6 +2895,26 @@
           "L": "አልቅት ሁለት ሴቶች ልጆች አሏት፤ «ስጥ!» [እና] «ስጥ!» [የሚሉ]። ሦስት [ነገሮች] ፈጽሞ አይጠግቡም፤ \\q አራትም «በቃ!» ፈጽሞ አይሉም፦",
           "B": "አልቅት ሁለት ሴቶች ልጆች አሏት፤ ሁለቱም «ስጥ!» ይባላሉ። ፈጽሞ የማይሞሉ ሦስት ነገሮች አሉ፤ \\q «በቃ!» የማይሉ አራት ነገሮች አሉ፦",
           "R": "አልቅት ሁለት ሴቶች ልጆች አሏት፤ ሁለቱም «ስጠኝ!» ይባላሉ። \\q ሁልጊዜ ተጨማሪ የሚፈልጉ፣ «ይበቃኛል!» የማይሉ ሦስት፣ እንዲያውም አራት ነገሮች አሉ፦"
+        },
+        "hi": {
+          "L": "जोंक की दो बेटियाँ [हैं], \"दे!\" [और] \"दे!\" तीन [चीज़ें] कभी तृप्त नहीं होतीं; \\q चार कभी नहीं कहतीं, \"बस!\":",
+          "B": "जोंक की दो बेटियाँ हैं, दोनों का नाम \"दे!\" है। तीन चीज़ें कभी नहीं भरतीं; \\q चार कभी नहीं कहतीं, \"बस!\":",
+          "R": "जोंक की दो बेटियाँ हैं, और दोनों का नाम है \"मुझे दे!\" \\q तीन चीज़ें हैं, बल्कि चार, जो हमेशा और चाहती हैं और कभी नहीं कहतीं, \"अब बहुत हो गया!\":"
+        },
+        "ru": {
+          "L": "У пиявки две дочери: «Дай!» [и] «Дай!» Три [вещи] не насыщаются, \\q четыре не говорят: «Довольно!»:",
+          "B": "У пиявки две дочери, и обе зовутся «Дай!» Три вещи никогда не бывают сыты, \\q четыре никогда не скажут: «Довольно!»:",
+          "R": "У пиявки две дочери, и обеих зовут «Дай мне!» \\q Есть три вещи, даже четыре, которым всегда мало и которые никогда не говорят: «Хватит!»:"
+        },
+        "ja": {
+          "L": "ヒルには二人の娘がいる、「くれ！」「くれ！」と。満ち足りることのないものが三つ、 \\q 「もう十分だ！」と言わないものが四つある。",
+          "B": "ヒルには二人の娘がいて、どちらも「くれ！」という名だ。決して満たされないものが三つ、 \\q 「もう十分だ！」と言わないものが四つある。",
+          "R": "ヒルには二人の娘がいて、どちらも「ちょうだい！」という名前だ。 \\q いつも、もっとほしがって、「もう十分だ！」と決して言わないものが三つ、いや四つある。"
+        },
+        "uk": {
+          "L": "У пʼявки дві дочки: «Дай!» [і] «Дай!» Три [речі] ніколи не насичуються; \\q чотири ніколи не кажуть: «Досить!»:",
+          "B": "У пʼявки дві дочки, обидві звуться «Дай!» Три речі ніколи не наповнити; \\q чотири ніколи не кажуть: «Досить!»:",
+          "R": "У пʼявки дві дочки, і обидві звуться «Дай мені!» \\q Є три речі, навіть чотири, що завжди хочуть більшого й ніколи не кажуть: «Цього досить!»"
         }
       },
       "decisions": [
@@ -2158,6 +2987,66 @@
           "reason": "The ordinary Amharic word for the bloodsucking worm the meaning decision names.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200300150061",
+            "o200300150101"
+          ],
+          "choice": "\"तीन ... चार\"",
+          "alternatives": [],
+          "reason": "The numerical saying names three and then four (meaning m2): the last number is the one the list fills. Hindi keeps the pattern at each level, as the English does, here and in verses 18, 21 and 29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300150061",
+            "o200300150101"
+          ],
+          "choice": "\"три ... четыре\" kept as in the Hebrew",
+          "alternatives": [
+            "\"три и даже четыре\""
+          ],
+          "reason": "The numerical saying (m2) names three and then four as a way of building to the last item; Literal and Balanced keep the two lines, Readable joins them (\"три вещи, даже четыре\") as its English does, here and in verses 18, 21 and 29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300150012"
+          ],
+          "choice": "'aluqah \"ヒル\" in katakana at every level (as \"アリ\", 6:6); the numerical sayings \"三つ…四つ\" (L, B), \"三つ、いや四つ\" (R)",
+          "alternatives": [],
+          "reason": "蛭 is not a Jōyō kanji and ひる in kana reads as \"noon\"; Readable joins the \"three ... four\" into one phrase, as the English Readable \"three things, even four\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2228,6 +3117,26 @@
           "L": "ሲኦል፣ መካን ማኅፀን፣ \\q በውኃ የማትጠግብ ምድር፣ \\q «በቃ!» የማይል እሳትም።",
           "B": "የሙታን ዓለም፣ መካን ማኅፀን፣ \\q ውኃ ፈጽሞ የማይጠግብ ምድር፣ \\q «በቃ!» የማይል እሳትም።",
           "R": "የሙታን ዓለም፣ ልጆችን የምትናፍቅ ግን የሌሏት ሴት፣ \\q ሁልጊዜ ተጨማሪ ዝናብ የሚያስፈልገው ደረቅ መሬት፣ \\q ማቃጠሉን የማያቆም እሳትም።"
+        },
+        "hi": {
+          "L": "शिओल, और बाँझ कोख, \\q [वह] भूमि [जो] जल से कभी तृप्त नहीं होती, \\q और आग [जो] कभी नहीं कहती, \"बस!\"",
+          "B": "अधोलोक, बाँझ कोख, \\q वह भूमि जो पानी से कभी नहीं अघाती, \\q और आग जो कभी नहीं कहती, \"बस!\"",
+          "R": "मृत्यु का लोक, वह स्त्री जो बच्चों के लिए तरसती है पर उसके कोई नहीं, \\q सूखी भूमि जिसे हमेशा और बारिश चाहिए, \\q और आग जो जलती ही रहती है।"
+        },
+        "ru": {
+          "L": "Шеол, и бесплодное чрево, \\q земля, [что] не насыщается водой, \\q и огонь, [что] не говорит: «Довольно!»",
+          "B": "Мир мёртвых, бесплодное чрево, \\q земля, которой всегда мало воды, \\q и огонь, который никогда не говорит: «Довольно!»",
+          "R": "Могила, женщина, которая мечтает о детях, но не имеет их, \\q сухая земля, которой всегда нужно больше дождя, \\q и огонь, который всё горит и горит."
+        },
+        "ja": {
+          "L": "陰府、不妊の胎、 \\q 水に満ち足りることのない地、 \\q そして「もう十分だ！」と言わない火。",
+          "B": "陰府、子を産まない胎、 \\q 水で満たされることのない地、 \\q そして「もう十分だ！」と決して言わない火である。",
+          "R": "墓、子どもがほしいのに生まれない女の人、 \\q いつも、もっと雨を必要とする乾いた地、 \\q そして、燃え続ける火である。"
+        },
+        "uk": {
+          "L": "шеол, і неплідне лоно, \\q земля, [що] ніколи не насичується водою, \\q і вогонь, [що] ніколи не каже: «Досить!»",
+          "B": "світ мертвих, неплідне лоно, \\q земля, що ніколи не напʼється води досхочу, \\q і вогонь, що ніколи не каже: «Досить!»",
+          "R": "могила, жінка, яка прагне дітей, але не має їх, \\q суха земля, якій завжди треба більше дощу, \\q і вогонь, що все горить і горить."
         }
       },
       "decisions": [
@@ -2276,6 +3185,25 @@
           "choice": "Sheol \"ሲኦል\" (L), \"የሙታን ዓለም\" (B, R)",
           "alternatives": [],
           "reason": "As the terms list, and as 27:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300160011"
+          ],
+          "choice": "\"शिओल\" (L), \"अधोलोक\" (B), \"मृत्यु का लोक\" (R)",
+          "alternatives": [],
+          "reason": "Sheol, never full (meaning m1), in the poetry note's forms, as in 27:20.",
           "uncertain": false,
           "footnote": false
         }
@@ -2353,6 +3281,26 @@
           "L": "በአባት ላይ የሚያፌዘውን፣ ለእናትም መታዘዝን የሚንቀውን ዓይን፣ \\q የሸለቆ ቁራዎች ይነቅሉታል፤ \\q የአሞራ ጫጩቶችም ይበሉታል።",
           "B": "በአባቱ ላይ የሚሳለቅና እናቱን ለመታዘዝ የሚንቅ ዓይን \\q በሸለቆ ቁራዎች ይነቀላል፤ \\q በአሞራ ጫጩቶችም ይበላል።",
           "R": "በአባትህ ላይ ብታፌዝና እናትህን ለመታዘዝ እንቢ ብትል፣ \\q በውርደት ትሞታለህ፤ \\q አሞራዎችም ሬሳህን ይበሉታል።"
+        },
+        "hi": {
+          "L": "जो आँख पिता का ठट्ठा करती और माता की आज्ञा मानने को तुच्छ जानती है, \\q घाटी के कौवे उसे खोद-खोदकर निकालेंगे, \\q और गिद्ध के बच्चे उसे खाएँगे।",
+          "B": "जो आँख पिता पर हँसती है और माँ की आज्ञा मानने से घृणा करती है, \\q उसे घाटी के कौवे नोच निकालेंगे \\q और गिद्ध के बच्चे खा जाएँगे।",
+          "R": "अगर तुम अपने पिता का मज़ाक़ उड़ाओगे और अपनी माँ की बात मानने से इनकार करोगे, \\q तो तुम अपमान की मौत मरोगे, \\q और पक्षी तुम्हारी लाश को खा जाएँगे।"
+        },
+        "ru": {
+          "L": "Глаз, насмехающийся над отцом и презирающий послушание матери, — \\q выклюют его вороны долины, \\q и съедят его птенцы стервятника.",
+          "B": "Глаз, который насмехается над отцом и с презрением отказывается слушаться матери, \\q выклюют вороны долины \\q и съедят молодые стервятники.",
+          "R": "Если ты смеёшься над отцом и не хочешь слушаться матери, \\q ты умрёшь в позоре, \\q и птицы склюют твоё тело."
+        },
+        "ja": {
+          "L": "父を嘲り、母に従うことを侮る目、 \\q 谷のからすがそれをえぐり出し、 \\q はげわしの子らがそれを食らう。",
+          "B": "父をあざ笑い、母に従うことをさげすむ目は、 \\q 谷のからすにえぐり出され、 \\q はげわしの子に食われる。",
+          "R": "父親をばかにし、母親に従おうとしないなら、 \\q あなたは恥ずかしい死に方をし、 \\q 鳥があなたのからだを食べる。"
+        },
+        "uk": {
+          "L": "Око, [що] глузує з батька й зневажає послух матері, — \\q його виклюють ворони долини, \\q і зʼїдять молоді шуліки.",
+          "B": "Око, що насміхається з батька й нехтує слухатися матері, \\q виклюють ворони з долини \\q й зʼїдять молоді шуліки.",
+          "R": "Якщо глузуєш зі свого батька й не хочеш слухатися матері, \\q ти помреш у ганьбі, \\q і птахи зʼїдять твоє тіло."
         }
       },
       "decisions": [
@@ -2424,6 +3372,26 @@
           "reason": "The Hebrew has one word for eagle and vulture; the English says vulture here, where it eats the dead, and eagle in 30:19, and Amharic follows with አሞራ and ንስር.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300170121"
+          ],
+          "choice": "\"стервятник\" for nesher here",
+          "alternatives": [
+            "\"орёл\""
+          ],
+          "reason": "nesher covers both the eagle and the vulture; birds that eat the dead are vultures, as the English says. In verse 19, where it soars in the sky, it is \"орёл\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2491,6 +3459,26 @@
           "L": "ሦስት [ነገሮች] ከእኔ በላይ ድንቅ ናቸው፤ \\q አራትንም አላስተውልም፦",
           "B": "የሚያስደንቁኝ ሦስት ነገሮች አሉ፤ \\q ከማስተዋሌም በላይ የሆኑ አራት ነገሮች አሉ፦",
           "R": "ልረዳቸው የማልችላቸው በጣም የሚያስደንቁ ሦስት፣ እንዲያውም አራት ነገሮች አሉ፦"
+        },
+        "hi": {
+          "L": "तीन [बातें] मेरे लिए अति अद्भुत हैं, \\q और चार [को] मैं नहीं समझता:",
+          "B": "तीन बातें हैं जो मुझे चकित करती हैं, \\q चार जो मेरी समझ से परे हैं:",
+          "R": "तीन बातें हैं, बल्कि चार, जो इतनी अद्भुत हैं कि मैं उन्हें समझ नहीं पाता:"
+        },
+        "ru": {
+          "L": "Три [вещи] непостижимы для меня, \\q и четырёх я не понимаю:",
+          "B": "Есть три вещи, которые меня изумляют, \\q четыре, которых я не могу понять:",
+          "R": "Есть три вещи, даже четыре, которые так удивительны, что я не могу их понять:"
+        },
+        "ja": {
+          "L": "わたしにとって不思議すぎることが三つ、 \\q わたしの知らないことが四つある。",
+          "B": "わたしを驚かせることが三つ、 \\q わたしの理解を超えることが四つある。",
+          "R": "わたしにはあまりにも不思議で、わからないことが三つ、いや四つある。"
+        },
+        "uk": {
+          "L": "Три [речі] надто дивовижні для мене, \\q і чотирьох я не розумію:",
+          "B": "Є три речі, які мене дивують, \\q чотири, що понад моє розуміння:",
+          "R": "Є три речі, навіть чотири, надто дивовижні, щоб я їх зрозумів:"
         }
       },
       "decisions": [
@@ -2586,6 +3574,26 @@
           "L": "በሰማይ የንስር መንገድ፣ በዓለት ላይ የእባብ መንገድ፣ \\q በባሕር ልብ የመርከብ መንገድ፣ \\q ከኮረዳ ጋር የወንድ መንገድ።",
           "B": "በሰማይ የሚበር ንስር፣ በዓለት ላይ የሚሳብ እባብ፣ \\q በሰፊው ባሕር መንገዱን የሚያገኝ መርከብ፣ \\q ወንድና ኮረዳ የሚቀራረቡበት መንገድ።",
           "R": "ንስር በሰማይ እንዴት እንደሚበር፣ እባብ በዓለት ላይ እንዴት እንደሚሄድ፣ \\q መርከብ በውቅያኖስ ላይ መንገዱን እንዴት እንደሚያገኝ፣ \\q ወንድና ወጣት ሴት እንዴት እንደሚዋደዱ።"
+        },
+        "hi": {
+          "L": "आकाश में उकाब का मार्ग, चट्टान पर साँप का मार्ग, \\q समुद्र के बीच जहाज़ का मार्ग, \\q और युवती के साथ पुरुष का मार्ग।",
+          "B": "आकाश में अपना रास्ता बनाता उकाब, चट्टान पर सरकता साँप, \\q खुले समुद्र में अपना रास्ता खोजता जहाज़, \\q और वह ढंग जिससे पुरुष और युवती एक-दूसरे के हो जाते हैं।",
+          "R": "उकाब आकाश में कैसे उड़ता है, साँप चट्टान पर कैसे चलता है, \\q जहाज़ समुद्र में अपना रास्ता कैसे खोजता है, \\q और एक पुरुष और एक युवती को एक-दूसरे से प्रेम कैसे हो जाता है।"
+        },
+        "ru": {
+          "L": "Путь орла в небе, путь змеи на скале, \\q путь корабля в сердце моря \\q и путь мужчины с девушкой.",
+          "B": "Как орёл прокладывает путь в небе, как змея скользит по скале, \\q как корабль находит дорогу в открытом море \\q и как мужчина и девушка находят друг друга.",
+          "R": "Как орёл летит в небе, как змея ползёт по скале, \\q как корабль находит путь в океане \\q и как мужчина и девушка влюбляются друг в друга."
+        },
+        "ja": {
+          "L": "天における鷲の道、岩の上の蛇の道、 \\q 海の真ん中の船の道、 \\q そして、おとめと共にいる男の道。",
+          "B": "大空を行く鷲の道、岩の上をはう蛇の道、 \\q 大海原を進む船の道、 \\q そして、男と若い女とが結ばれる道である。",
+          "R": "ワシが空を飛ぶ様子、蛇が岩の上を進む様子、 \\q 船が海の上で進む道を見つける様子、 \\q そして、男と若い女が恋に落ちる様子である。"
+        },
+        "uk": {
+          "L": "дороги орла в небі, дороги змії на скелі, \\q дороги корабля серед моря \\q і дороги чоловіка з дівчиною.",
+          "B": "як орел прокладає собі шлях у небі, як змія повзе по скелі, \\q як корабель знаходить дорогу у відкритому морі \\q і як чоловік і дівчина сходяться разом.",
+          "R": "як орел літає в небі, як змія пересувається по скелі, \\q як корабель знаходить шлях в океані \\q і як чоловік і дівчина закохуються."
         }
       },
       "decisions": [
@@ -2709,6 +3717,26 @@
           "L": "የአመንዝራ ሴት መንገድ እንዲህ ነው፤ \\q ትበላለች፤ አፏንም ታብሳለች፤ \\q «ክፋት አላደረግኩም» ትላለች።",
           "B": "አመንዝራ ሴት የምታደርገው እንዲህ ነው፤ \\q ትበላለች፤ አፏን ታብሳለች፤ \\q «ምንም ስሕተት አልሠራሁም» ትላለች።",
           "R": "ባሏን የምትከዳ ሴት ምንም እንዳልተፈጸመ ታደርጋለች። \\q ምግብ በልታ አፏን እንደምታብስ ነው። \\q ከዚያም «ምንም ስሕተት አላደረግኩም» ትላለች።"
+        },
+        "hi": {
+          "L": "व्यभिचारिणी स्त्री का मार्ग ऐसा ही [है]: \\q वह खाती है और अपना मुँह पोंछ लेती है, \\q और कहती है, \"मैंने कोई दुष्टता नहीं की।\"",
+          "B": "व्यभिचारिणी ऐसा ही करती है: \\q वह खाती है, अपना मुँह पोंछती है, \\q और कहती है, \"मैंने कुछ ग़लत नहीं किया।\"",
+          "R": "जो स्त्री अपने पति को धोखा देती है, वह ऐसे व्यवहार करती है मानो कुछ हुआ ही न हो। \\q यह ऐसा है जैसे वह खाना खाकर अपना मुँह पोंछ ले। \\q फिर वह कहती है, \"मैंने कुछ ग़लत नहीं किया।\""
+        },
+        "ru": {
+          "L": "Таков путь жены прелюбодейной: \\q она ест и обтирает свой рот \\q и говорит: «Я не сделала зла.»",
+          "B": "Вот как поступает прелюбодейка: \\q поест, вытрет рот \\q и скажет: «Я ничего плохого не сделала.»",
+          "R": "Женщина, которая изменяет мужу, ведёт себя так, будто ничего не случилось. \\q Это как поесть и вытереть рот. \\q А потом она говорит: «Я ничего плохого не сделала.»"
+        },
+        "ja": {
+          "L": "姦淫する女の道もこのようである。 \\q 食べて、その口をぬぐい、 \\q 「わたしは悪いことをしていない」と言う。",
+          "B": "姦淫する女のふるまいはこうだ。 \\q 食べて口をぬぐい、 \\q 「何も悪いことはしていない」と言う。",
+          "R": "夫を裏切る女は、何事もなかったかのようにふるまう。 \\q それは、食事をして口をぬぐうようなものだ。 \\q そして、「わたしは何も悪いことをしていない」と言う。"
+        },
+        "uk": {
+          "L": "Така дорога перелюбної жінки: \\q вона їсть, і витирає свої уста, \\q і каже: «Я не вчинила зла».",
+          "B": "Так поводиться перелюбниця: \\q вона їсть, витирає рот \\q і каже: «Я нічого поганого не зробила».",
+          "R": "Жінка, яка зраджує свого чоловіка, поводиться так, ніби нічого не сталося. \\q Це як поїсти й витерти рот. \\q А тоді вона каже: «Я нічого поганого не зробила»."
         }
       },
       "decisions": [
@@ -2793,6 +3821,26 @@
           "L": "ከሦስት [ነገሮች] በታች ምድር ትንቀጠቀጣለች፤ \\q ከአራትም በታች ልትሸከም አትችልም፦",
           "B": "ምድር በሦስት ነገሮች ትናወጣለች፤ \\q ልትታገሣቸው የማትችላቸው አራት ነገሮች አሉ፦",
           "R": "ዓለም ልትታገሣቸው የማትችላቸው ሦስት፣ እንዲያውም አራት ነገሮች አሉ፦"
+        },
+        "hi": {
+          "L": "तीन [बातों] के नीचे पृथ्वी काँपती है, \\q और चार के नीचे वह ठहर नहीं सकती:",
+          "B": "तीन बातों के नीचे धरती हिल जाती है; \\q चार हैं जिन्हें वह सह नहीं सकती:",
+          "R": "तीन बातें हैं, बल्कि चार, जिन्हें दुनिया सह नहीं सकती:"
+        },
+        "ru": {
+          "L": "Под тремя [вещами] трясётся земля, \\q и под четырьмя она не может устоять:",
+          "B": "Земля содрогается от трёх вещей; \\q четырёх она не может вынести:",
+          "R": "Есть три вещи, даже четыре, которые мир не может вынести:"
+        },
+        "ja": {
+          "L": "三つのことによって地は震え、 \\q 四つのことに耐えられない。",
+          "B": "地は三つのことによって揺れ動き、 \\q 四つのことに耐えられない。",
+          "R": "世の中が耐えられないことが三つ、いや四つある。"
+        },
+        "uk": {
+          "L": "Під трьома [речами] здригається земля, \\q і під чотирма вона не може встояти:",
+          "B": "Земля трясеться від трьох речей; \\q є чотири, яких вона не може знести:",
+          "R": "Є три речі, навіть чотири, яких світ не може витерпіти:"
         }
       },
       "decisions": [
@@ -2876,6 +3924,26 @@
           "L": "ከነገሠ ባሪያ በታች፣ \\q ምግብ ከጠገበ ባለጌም በታች፣",
           "B": "ንጉሥ የሆነ አገልጋይ፣ \\q ከሚበቃው በላይ የሚበላ ባለጌ፣",
           "R": "ንጉሥ የሆነ አገልጋይ፣ \\q ብዙ የሚበላ ያለው ባለጌ፣"
+        },
+        "hi": {
+          "L": "दास के नीचे जब वह राजा बन जाए, \\q और मूढ़ [के नीचे] जब उसका पेट भोजन से भर जाए,",
+          "B": "वह दास जो राजा बन जाए, \\q वह मूर्ख जिसके पास खाने को ज़रूरत से ज़्यादा हो,",
+          "R": "वह दास जो राजा बन जाता है, \\q वह मूर्ख जिसके पास खाने को बहुत है,"
+        },
+        "ru": {
+          "L": "под рабом, когда он воцаряется, \\q и безумцем, когда он насыщается хлебом,",
+          "B": "слуга, который становится царём, \\q безумец, у которого еды больше, чем нужно,",
+          "R": "слуга, который становится царём, \\q глупец, у которого много еды,"
+        },
+        "ja": {
+          "L": "奴隷が王となるとき、 \\q 愚か者がパンに満ち足りるとき、",
+          "B": "しもべが王となること、 \\q 愚か者が食べ物に飽き足りること、",
+          "R": "しもべが王になること、 \\q 愚かな人が食べ物をたくさん持つこと、"
+        },
+        "uk": {
+          "L": "під рабом, коли він стає царем, \\q і безумним, коли він наїдається хліба,",
+          "B": "слуга, який став царем, \\q безумний, у якого їжі більш ніж досить,",
+          "R": "слуга, який стає царем, \\q нерозумний, який має вдосталь їжі,"
         }
       },
       "decisions": [
@@ -2999,6 +4067,48 @@
           "reason": "The terms list keeps naval, the godless boor of the meaning decision, as ባለጌ, apart from kesil (ሞኝ) and ʾewil (ሰነፍ).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300220052"
+          ],
+          "choice": "\"दास\" at every level; \"मूढ़\" (L), \"मूर्ख\" (B, R) (nabal)",
+          "alternatives": [
+            "\"सेवक\" (B, R)",
+            "\"मूर्ख\" (L)"
+          ],
+          "reason": "The Hebrew eved is \"दास\" at every level, as the poetry note settles, where the English Balanced and Readable say \"servant\". The fool here is the nabal, a godless, boorish person (meaning m1); Literal marks it with \"मूढ़\", as in 17:7 and 17:21, and Balanced and Readable keep \"मूर्ख\", the book's one word for the fool.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300220052"
+          ],
+          "choice": "\"безумец\" for nabal (L, B), \"глупец\" (R)",
+          "alternatives": [
+            "\"глупец\" at every level"
+          ],
+          "reason": "nabal is a godless, boorish person (m1), not the kesil; \"безумец\" keeps the two apart, as 17:7 and 17:21 do in this translation, and Readable says \"глупец\", as 17:7 does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3066,6 +4176,26 @@
           "L": "ባል ካገባች የተጠላች [ሴት] በታች፣ \\q እመቤቷን ከተካች ገረድም በታች።",
           "B": "በመጨረሻ ባል የምታገኝ ያልተወደደች ሴት፣ \\q የእመቤቷን ስፍራ የምትወስድ ገረድ።",
           "R": "ማንም የማይወዳት ሆና ያገባች ሴት፣ \\q የምትሠራላትን ሴት ስፍራ የምትወስድ ሠራተኛ።"
+        },
+        "hi": {
+          "L": "घृणित [स्त्री के नीचे] जब उसका ब्याह हो जाए, \\q और दासी [के नीचे] जब वह अपनी स्वामिनी की जगह ले ले।",
+          "B": "वह अनचाही स्त्री जिसे आख़िरकार पति मिल जाए, \\q और वह दासी जो अपनी स्वामिनी की जगह ले ले।",
+          "R": "वह स्त्री जिससे कोई प्रेम नहीं करता, जब उसका ब्याह हो जाता है, \\q और वह दासी जो उस स्त्री की जगह ले लेती है जिसके यहाँ वह काम करती थी।"
+        },
+        "ru": {
+          "L": "под ненавистной, когда она выходит замуж, \\q и служанкой, когда она занимает место своей госпожи.",
+          "B": "нелюбимая женщина, которая наконец выходит замуж, \\q и служанка, которая занимает место своей госпожи.",
+          "R": "женщина, которую никто не любит, но которая выходит замуж, \\q и служанка, которая занимает место женщины, у которой работала."
+        },
+        "ja": {
+          "L": "憎まれた女が夫を得るとき、 \\q はしためが女主人に取って代わるときである。",
+          "B": "愛されない女がついに夫を得ること、 \\q 女の召し使いが女主人の座を奪うことである。",
+          "R": "だれにも愛されない女が結婚すること、 \\q そして、召し使いの女が、自分の仕えていた女主人に取って代わることである。"
+        },
+        "uk": {
+          "L": "під ненависною [жінкою], коли вона виходить заміж, \\q і служницею, коли вона витісняє свою пані.",
+          "B": "нелюба жінка, яка нарешті знайшла чоловіка, \\q і служниця, яка зайняла місце своєї пані.",
+          "R": "жінка, яку ніхто не любить, а вона виходить заміж, \\q і служниця, яка займає місце жінки, на яку працювала."
         }
       },
       "decisions": [
@@ -3149,6 +4279,26 @@
           "L": "በምድር ላይ ታናናሽ የሆኑ አራት [ነገሮች] አሉ፤ \\q እነርሱ ግን እጅግ ጠቢባን ናቸው፦",
           "B": "በምድር ላይ አራት ትናንሽ ፍጥረታት አሉ፤ \\q ከጠቢባን ይልቅ ጠቢባን ናቸው፦",
           "R": "በምድር ላይ በጣም ጠቢባን የሆኑ አራት ትናንሽ እንስሳት አሉ፦"
+        },
+        "hi": {
+          "L": "पृथ्वी पर चार [चीज़ें] छोटी हैं, \\q पर वे अत्यंत बुद्धिमान हैं:",
+          "B": "धरती पर चार छोटे प्राणी हैं \\q जो बुद्धिमानों से भी ज़्यादा बुद्धिमान हैं:",
+          "R": "धरती पर चार छोटे जानवर हैं जो बहुत बुद्धिमान हैं:"
+        },
+        "ru": {
+          "L": "Четыре [существа] малы на земле, \\q но они весьма мудры:",
+          "B": "На земле есть четыре маленьких существа, \\q которые мудрее мудрецов:",
+          "R": "На земле есть четыре маленьких животных, которые очень мудры:"
+        },
+        "ja": {
+          "L": "地の上に小さなものが四つある。 \\q しかし、それらはきわめて知恵がある。",
+          "B": "地上には小さな生き物が四つある。 \\q しかし、それらは知恵ある者にもまさって知恵がある。",
+          "R": "この地上には、とても知恵のある小さな生き物が四つある。"
+        },
+        "uk": {
+          "L": "Чотири [речі] малі на землі, \\q але вони надзвичайно мудрі:",
+          "B": "На землі є четверо малих створінь, \\q які мудріші за мудрих:",
+          "R": "Є четверо малих тварин на землі, які дуже мудрі:"
         }
       },
       "decisions": [
@@ -3236,6 +4386,26 @@
           "L": "ጉንዳኖች ብርቱ ያልሆኑ ሕዝብ ናቸው፤ \\q ነገር ግን ምግባቸውን በበጋ ያዘጋጃሉ፤",
           "B": "ጉንዳኖች ኃይል የሌላቸው ሕዝብ ናቸው፤ \\q ሆኖም ምግባቸውን በበጋ ያከማቻሉ፤",
           "R": "ጉንዳኖች ብርቱዎች አይደሉም። \\q ነገር ግን በኋላ የሚበሉትን ምግብ በበጋ ይሰበስባሉ።"
+        },
+        "hi": {
+          "L": "चींटियाँ बलहीन लोग [हैं], \\q फिर भी वे ग्रीष्म में अपना भोजन तैयार करती हैं;",
+          "B": "चींटियाँ एक कमज़ोर जाति हैं, \\q फिर भी वे गर्मियों में अपना भोजन जमा कर लेती हैं;",
+          "R": "चींटियाँ ताक़तवर नहीं होतीं, \\q पर वे गर्मियों में बाद के लिए भोजन इकट्ठा कर लेती हैं।"
+        },
+        "ru": {
+          "L": "муравьи — народ не сильный, \\q но летом заготавливают свою пищу;",
+          "B": "муравьи — народ слабый, \\q но летом они запасают себе пищу;",
+          "R": "Муравьи не сильные, \\q но летом они собирают еду, чтобы есть её потом."
+        },
+        "ja": {
+          "L": "アリは力のない民、 \\q しかし、夏のうちに食物を備える。",
+          "B": "アリは力のない民であるが、 \\q 夏のうちに食べ物を蓄える。",
+          "R": "アリは強くない。 \\q しかし、夏のうちに食べ物を集めて、後で食べる。"
+        },
+        "uk": {
+          "L": "мурахи — народ не сильний, \\q а влітку готують свою їжу;",
+          "B": "мурахи — народ безсилий, \\q а влітку запасають свою їжу;",
+          "R": "Мурахи не сильні, \\q але влітку збирають їжу, щоб їсти пізніше."
         }
       },
       "decisions": [
@@ -3320,6 +4490,26 @@
           "L": "ሽኮኮዎች ኃያላን ያልሆኑ ሕዝብ ናቸው፤ \\q ነገር ግን ቤታቸውን በዓለት ውስጥ ይሠራሉ፤",
           "B": "ሽኮኮዎች ደካማ ሕዝብ ናቸው፤ \\q ሆኖም በቋጥኞች መካከል መኖሪያቸውን ያደርጋሉ፤",
           "R": "ሽኮኮዎች ደካሞች ናቸው። \\q ነገር ግን በዓለቶች መካከል ተጠብቀው ይኖራሉ።"
+        },
+        "hi": {
+          "L": "चट्टानी बिज्जू शक्तिहीन लोग [हैं], \\q फिर भी वे चट्टान में अपना घर बनाते हैं;",
+          "B": "चट्टानी बिज्जू एक निर्बल जाति हैं, \\q फिर भी वे चट्टानों के बीच अपना घर बसाते हैं;",
+          "R": "चट्टानी बिज्जू कमज़ोर होते हैं, \\q पर वे चट्टानों के बीच सुरक्षित रहते हैं।"
+        },
+        "ru": {
+          "L": "даманы — народ не могучий, \\q но в скале устраивают своё жилище;",
+          "B": "даманы — народ хилый, \\q но они селятся среди утёсов;",
+          "R": "Даманы слабы, \\q но живут в безопасности среди скал."
+        },
+        "ja": {
+          "L": "イワダヌキは強くない民、 \\q しかし、岩の中に自分の家を造る。",
+          "B": "イワダヌキは弱い民であるが、 \\q 岩山に住まいを構える。",
+          "R": "イワダヌキは弱い。 \\q しかし、岩の間で安全に暮らしている。"
+        },
+        "uk": {
+          "L": "борсуки — народ не могутній, \\q а в скелі влаштовують свій дім;",
+          "B": "скельні борсуки — народ немічний, \\q а живуть серед скель;",
+          "R": "Скельні борсуки слабкі, \\q але живуть у безпеці серед скель."
         }
       },
       "decisions": [
@@ -3443,6 +4633,66 @@
           "reason": "As Leviticus 11:5 and Deuteronomy 14:7 on main.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300260011"
+          ],
+          "choice": "\"चट्टानी बिज्जू\"",
+          "alternatives": [],
+          "reason": "The rock hyrax (meaning m1) is \"चट्टानी बिज्जू\", as in Leviticus 11:5 and Psalm 104:18 of this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300260011"
+          ],
+          "choice": "\"даманы\"",
+          "alternatives": [
+            "\"горные мыши\"",
+            "\"барсуки\""
+          ],
+          "reason": "The animal is the rock hyrax (m1), \"даман\", as in Leviticus 11:5 and Psalm 104:18 in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300260011"
+          ],
+          "choice": "shefannim \"イワダヌキ\" (the rock hyrax), katakana at every level; locust \"いなご\"; lizard \"やもり\" (L, B), \"トカゲ\" (R, the English Readable \"lizard\")",
+          "alternatives": [],
+          "reason": "Animal names in katakana as \"アリ\" (6:6); the gecko of meaning m1 at 30:28 is \"やもり\", Readable takes the wider word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3509,6 +4759,26 @@
           "L": "አንበጣ ንጉሥ የለውም፤ \\q ቢሆንም ሁሉም በየክፍሉ ሆኖ ይወጣል፤",
           "B": "አንበጦች ንጉሥ የላቸውም፤ \\q ሆኖም ሁሉም በሥርዓት ተሰልፈው ይወጣሉ፤",
           "R": "አንበጦች ንጉሥ የላቸውም። \\q ነገር ግን እንደ ሠራዊት አብረው ወደ ፊት ይጓዛሉ።"
+        },
+        "hi": {
+          "L": "टिड्डियों का कोई राजा नहीं [होता], \\q फिर भी वे सब की सब दल बाँधकर निकलती हैं;",
+          "B": "टिड्डियों का कोई राजा नहीं, \\q फिर भी वे सब पंक्तियाँ बाँधकर कूच करती हैं;",
+          "R": "टिड्डियों का कोई राजा नहीं होता, \\q पर वे सेना की तरह एक साथ आगे बढ़ती हैं।"
+        },
+        "ru": {
+          "L": "нет царя у саранчи, \\q но выходит она рядами вся;",
+          "B": "у саранчи нет царя, \\q но вся она выступает стройными рядами;",
+          "R": "У саранчи нет царя, \\q но она движется вперёд вся вместе, как войско."
+        },
+        "ja": {
+          "L": "いなごには王がない。 \\q しかし、そのすべてが隊を組んで出て行く。",
+          "B": "いなごには王がいないが、 \\q みな整然と隊を組んで進む。",
+          "R": "いなごには王がいない。 \\q しかし、軍隊のように、そろって進んで行く。"
+        },
+        "uk": {
+          "L": "немає царя в сарани, \\q а вона виходить загонами, уся;",
+          "B": "сарана не має царя, \\q а вся виступає впорядкованими лавами;",
+          "R": "Сарана не має царя, \\q але вона йде вперед разом, як військо."
         }
       },
       "decisions": [
@@ -3591,6 +4861,26 @@
           "L": "እንሽላሊትን በእጆችህ ልትይዘው ትችላለህ፤ \\q ነገር ግን በንጉሥ ቤተ መንግሥቶች ውስጥ ይገኛል።",
           "B": "እንሽላሊት በእጅ ሊያዝ ይችላል፤ \\q ሆኖም በነገሥታት ቤተ መንግሥቶች ውስጥ ይኖራል።",
           "R": "እንሽላሊትን በእጅህ ልትይዘው ትችላለህ። \\q እርሱ ግን በንጉሥ ቤተ መንግሥት ውስጥ ይኖራል።"
+        },
+        "hi": {
+          "L": "छिपकली [तुम] हाथों से पकड़ सकते हो, \\q फिर भी वह राजा के महलों में [रहती है]।",
+          "B": "छिपकली हाथ से पकड़ी जा सकती है, \\q फिर भी वह राजाओं के महलों में रहती है।",
+          "R": "तुम छिपकली को अपने हाथों से पकड़ सकते हो, \\q पर वह राजा के महल में रहती है।"
+        },
+        "ru": {
+          "L": "Ящерицу [можно] поймать руками, \\q но она — в чертогах царя.",
+          "B": "ящерицу можно поймать рукой, \\q но она живёт в царских дворцах.",
+          "R": "Ящерицу можно поймать руками, \\q но она живёт в царском дворце."
+        },
+        "ja": {
+          "L": "やもりは手でつかまえられる。 \\q しかし、それは王の宮殿にいる。",
+          "B": "やもりは手でつかまえられるが、 \\q 王の宮殿に住んでいる。",
+          "R": "トカゲは手でつかまえることができる。 \\q しかし、王の宮殿に住んでいる。"
+        },
+        "uk": {
+          "L": "ящірку ти можеш схопити руками, \\q а вона — в палатах царя.",
+          "B": "ящірку можна впіймати рукою, \\q а вона живе в царських палацах.",
+          "R": "Ящірку можна впіймати руками, \\q але вона живе в царському палаці."
         }
       },
       "decisions": [
@@ -3735,6 +5025,26 @@
           "L": "አካሄዳቸው ያማረ ሦስት [ነገሮች] አሉ፤ \\q አረማመዳቸውም ያማረ አራት [አሉ]፦",
           "B": "በክብር የሚራመዱ ሦስት ነገሮች አሉ፤ \\q አካሄዳቸው ግርማ ያለው አራት ነገሮች አሉ፦",
           "R": "በኩራት የሚራመዱ ሦስት፣ እንዲያውም አራት ነገሮች አሉ፦"
+        },
+        "hi": {
+          "L": "तीन [चीज़ें] सुंदर चाल चलती हैं, \\q और चार सुंदरता से चलती हैं:",
+          "B": "तीन चीज़ें हैं जो शान से चलती हैं, \\q चार जिनकी चाल शाही है:",
+          "R": "तीन चीज़ें हैं, बल्कि चार, जो अकड़कर चलती हैं:"
+        },
+        "ru": {
+          "L": "Три [вещи] величавы в шаге, \\q и четыре величавы в походке:",
+          "B": "Есть три существа, что выступают с достоинством, \\q четыре, у которых величавая поступь:",
+          "R": "Есть три существа, даже четыре, которые ходят гордо:"
+        },
+        "ja": {
+          "L": "足取りの立派なものが三つ、 \\q 歩みの立派なものが四つある。",
+          "B": "堂々と進むものが三つ、 \\q 威厳をもって歩むものが四つある。",
+          "R": "堂々と歩くものが三つ、いや四つある。"
+        },
+        "uk": {
+          "L": "Три [речі] величаві ходою, \\q і чотири величаві в поступі:",
+          "B": "Є три речі, що рухаються гідно, \\q чотири, що мають величаву ходу:",
+          "R": "Є три речі, навіть чотири, що ходять гордо:"
         }
       },
       "decisions": [
@@ -3819,6 +5129,26 @@
           "L": "ከአራዊት መካከል ኃያል የሆነ አንበሳ፣ \\q ከምንም ፊት ወደ ኋላ የማይመለስ፤",
           "B": "ከእንስሳት ሁሉ የበረታው አንበሳ፣ \\q ከምንም የማያፈገፍግ፤",
           "R": "ከእንስሳት ሁሉ እጅግ ብርቱ የሆነው አንበሳ፣ \\q ምንም የማይፈራ፤"
+        },
+        "hi": {
+          "L": "सिंह, जो पशुओं में पराक्रमी है, \\q और किसी के सामने से पीछे नहीं हटता;",
+          "B": "सिंह, जो जानवरों में सबसे बलवान है, \\q और किसी से पीछे नहीं हटता;",
+          "R": "सिंह, जो सब जानवरों में सबसे ताक़तवर है, \\q और किसी चीज़ से नहीं डरता;"
+        },
+        "ru": {
+          "L": "лев, сильный среди зверей, \\q который ни перед чем не отступает;",
+          "B": "лев, сильнейший среди животных, \\q который ни перед кем не отступает;",
+          "R": "лев, самый сильный из всех зверей, \\q который ничего не боится;"
+        },
+        "ja": {
+          "L": "獣の中で力ある獅子、 \\q 何ものの前からも退かないもの。",
+          "B": "獣の中で最も強い獅子、 \\q 何ものからも退かないもの。",
+          "R": "すべての動物の中でいちばん強いライオン、 \\q 何もこわがらないもの。"
+        },
+        "uk": {
+          "L": "лев, могутній серед звірів, \\q що не відступає ні перед чим;",
+          "B": "лев, найсильніший серед звірів, \\q що ні перед чим не відступає;",
+          "R": "лев, найсильніший з усіх звірів, \\q що нічого не боїться;"
         }
       },
       "decisions": [
@@ -3901,6 +5231,26 @@
           "L": "የሚንጎማለል አውራ ዶሮ ወይም አውራ ፍየል፣ \\q ሠራዊቱም በዙሪያው ያለ ንጉሥ።",
           "B": "የሚንጎማለል አውራ ዶሮ፣ አውራ ፍየል፣ \\q በሠራዊቱ ፊት የሚሄድ ንጉሥም።",
           "R": "የሚኮራ አውራ ዶሮ፣ አውራ ፍየል፣ \\q ሠራዊቱን የሚመራ ንጉሥም።"
+        },
+        "hi": {
+          "L": "अकड़कर चलनेवाला मुर्ग़ा या बकरा, \\q और अपनी सेना के साथ राजा।",
+          "B": "अकड़कर चलता मुर्ग़ा, बकरा, \\q और अपनी सेना के आगे चलता राजा।",
+          "R": "घमंडी मुर्ग़ा, बकरा, \\q और अपनी सेना की अगुवाई करता राजा।"
+        },
+        "ru": {
+          "L": "гордо выступающий петух или козёл, \\q и царь [с] войском своим вокруг него.",
+          "B": "важно шагающий петух, козёл \\q и царь во главе своего войска.",
+          "R": "гордый петух, козёл \\q и царь, который ведёт своё войско."
+        },
+        "ja": {
+          "L": "気取って歩く雄鶏、または雄やぎ、 \\q そして、軍勢を率いる王。",
+          "B": "胸を張って歩く雄鶏、雄やぎ、 \\q そして、軍勢の先頭に立つ王である。",
+          "R": "いばって歩くおんどり、雄のやぎ、 \\q そして、軍隊を率いる王である。"
+        },
+        "uk": {
+          "L": "гордий півень чи козел, \\q і цар [зі] своїм військом довкола нього.",
+          "B": "гордовитий півень, козел \\q і цар на чолі свого війська.",
+          "R": "гордий півень, козел \\q і цар, що веде своє військо."
         }
       },
       "decisions": [
@@ -3939,6 +5289,49 @@
           "reason": "The word (alqum) is unknown elsewhere. It is usually understood as \"his army with him\"; it may instead be read \"no one rising against him.\"",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300310011",
+            "o200300310021"
+          ],
+          "choice": "\"मुर्ग़ा\"",
+          "alternatives": [],
+          "reason": "The Hebrew \"girded of loins\" is a creature whose meaning is uncertain, probably a strutting rooster (meaning m1); Hindi follows that reading, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300310011",
+            "o200300310021"
+          ],
+          "choice": "\"петух\"",
+          "alternatives": [
+            "\"скакун\"",
+            "\"борзая собака\""
+          ],
+          "reason": "The Hebrew \"girded of loins\" names an animal no longer known for certain; the meaning decision takes it as probably a strutting rooster (m1), and the Russian follows, with the doubt marked.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4006,6 +5399,26 @@
           "L": "ራስህን ከፍ በማድረግ ሞኝነት አድርገህ ከሆነ፣ \\q ወይም [ክፉን] አስበህ ከሆነ፣ \\q እጅህን በአፍህ ላይ [አድርግ]!",
           "B": "ራስህን ከፍ በማድረግ ሞኝ ሆነህ ከሆነ፣ \\q ወይም ተንኮል አሲረህ ከሆነ፣ \\q እጅህን በአፍህ ላይ ጫን!",
           "R": "ሞኝ ሆነህ ብትኮራ፣ \\q ወይም ክፉ ነገር ለማድረግ ብታስብ፣ ተው፤ ዝምም በል!"
+        },
+        "hi": {
+          "L": "यदि तुमने अपने आप को बड़ा बनाकर मूर्खता की है, \\q या यदि तुमने [बुराई की] युक्ति की है, \\q [तो अपना] हाथ [अपने] मुँह पर [रखो]!",
+          "B": "यदि तुमने आगे बढ़कर अपनी बड़ाई करते हुए मूर्खता की है, \\q या यदि तुम षड्यंत्र रचते रहे हो, \\q तो अपने मुँह पर हाथ रख लो!",
+          "R": "अगर तुमने मूर्खता करके घमंड दिखाया है, \\q या कुछ ग़लत करने की योजना बनाई है, तो रुक जाओ और चुप रहो!"
+        },
+        "ru": {
+          "L": "Если ты сглупил, превознося себя, \\q или если замыслил [зло], \\q [положи] руку на уста!",
+          "B": "Если ты поступил глупо, выставляя себя вперёд, \\q или если строил козни, \\q закрой рот рукой!",
+          "R": "Если ты поступил глупо и возгордился \\q или задумал сделать что-то дурное, остановись и молчи!"
+        },
+        "ja": {
+          "L": "もしあなたが自分を高くして愚かなことをしたなら、 \\q あるいは[悪を]たくらんだなら、 \\q 手を口に[当てよ]！",
+          "B": "もし、自分を高く見せて愚かなふるまいをしたなら、 \\q あるいは悪だくみをしたなら、 \\q 手で口をふさぎなさい！",
+          "R": "もし、あなたが高ぶって愚かなことをしたなら、 \\q あるいは、悪いことをしようと計画したなら、すぐにやめて、黙っていなさい！"
+        },
+        "uk": {
+          "L": "Якщо ти був безумний, підносячи себе, \\q чи якщо ти задумав [зло], \\q [поклади] руку на уста!",
+          "B": "Якщо ти повівся безумно, висуваючи себе вперед, \\q чи якщо ти щось замишляв, \\q поклади руку на уста!",
+          "R": "Якщо ти повівся нерозумно й гордо \\q чи задумав учинити погане, зупинися й мовчи!"
         }
       },
       "decisions": [
@@ -4109,6 +5522,26 @@
           "L": "የወተት መጭመቅ እርጎን ያወጣልና፤ \\q የአፍንጫም መጭመቅ ደምን ያወጣል፤ \\q የቁጣም መጭመቅ ጠብን ያወጣል።",
           "B": "ወተትን መናጥ ቅቤን እንደሚያወጣ፣ \\q አፍንጫን መጭመቅም ደምን እንደሚያወጣ፣ \\q ቁጣን መቀስቀስም ጠብን ያወጣል።",
           "R": "ወተትን ስትንጥ ቅቤ ታገኛለህ። \\q የሰውን አፍንጫ ስትጨምቅ ይደማል። \\q ሰውን ስታስቆጣ ጠብ ታገኛለህ።"
+        },
+        "hi": {
+          "L": "क्योंकि दूध मथने से मक्खन निकलता है, \\q और नाक मरोड़ने से ख़ून निकलता है, \\q और क्रोध भड़काने से झगड़ा निकलता है।",
+          "B": "क्योंकि जैसे दूध मथने से मक्खन बनता है, \\q और नाक दबाने से ख़ून निकलता है, \\q वैसे ही क्रोध भड़काने से झगड़ा पैदा होता है।",
+          "R": "जब तुम दूध मथते हो, तो मक्खन मिलता है। \\q जब तुम किसी की नाक दबाते हो, तो ख़ून निकलता है। \\q जब तुम किसी को ग़ुस्सा दिलाते हो, तो लड़ाई होती है।"
+        },
+        "ru": {
+          "L": "Ибо выжимание молока даёт творог, \\q и выжимание носа даёт кровь, \\q и выжимание гнева даёт ссору.",
+          "B": "Как от сбивания молока получается масло \\q и от сдавливания носа идёт кровь, \\q так от раздувания гнева получается ссора.",
+          "R": "Если сбиваешь молоко, получаешь масло. \\q Если сдавишь кому-то нос, пойдёт кровь. \\q Если разозлишь кого-то, получишь драку."
+        },
+        "ja": {
+          "L": "乳を押せば凝乳が出て、 \\q 鼻を押せば血が出て、 \\q 怒りを押せば争いが出るからである。",
+          "B": "乳をかき回せばバターができ、 \\q 鼻を押しつければ血が出るように、 \\q 怒りをかき立てれば争いが生じる。",
+          "R": "乳をかき混ぜると、バターができる。 \\q 人の鼻をぎゅっとつまむと、血が出る。 \\q 人を怒らせると、けんかになる。"
+        },
+        "uk": {
+          "L": "Бо збивання молока видавлює масло, \\q і стискання носа видавлює кров, \\q і розпалювання гніву видавлює сварку.",
+          "B": "Бо як збивання молока дає масло, \\q а стискання носа — кров, \\q так розпалювання гніву дає сварку.",
+          "R": "Коли збиваєш молоко, отримуєш масло. \\q Коли стискаєш комусь носа, у нього йде кров. \\q Коли когось гніваєш, виходить бійка."
         }
       },
       "decisions": [
@@ -4238,6 +5671,66 @@
           "choice": "One verb, \"መጭመቅ\", three times at Literal",
           "alternatives": [],
           "reason": "Amharic cannot keep the play on ʾaf (nose, anger) that the meaning decision describes; Literal keeps at least the Hebrew's single verb in all three lines, which Balanced and Readable vary for sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300330071",
+            "o200300330111"
+          ],
+          "choice": "\"मथने\", \"मरोड़ने\", \"भड़काने\"",
+          "alternatives": [
+            "\"दबाने\" throughout"
+          ],
+          "reason": "The Hebrew uses one verb, \"pressing\", three times, and plays on \"nose\" and \"anger\", which are the same word (meaning m1). Hindi cannot keep the pun; Literal keeps three verbs of pressure, each ending in \"निकलता है\", so the repeated pattern remains.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300330051",
+            "o200300330071",
+            "o200300330111"
+          ],
+          "choice": "one verb, \"выжимание\", three times",
+          "alternatives": [
+            "\"сбивание\" for the milk"
+          ],
+          "reason": "The Hebrew uses one word for pressing three times, and the word for nose also means anger (m1). Russian cannot keep the pun on nose and anger, so Literal keeps at least the repeated verb; Balanced and Readable use the verb that fits each picture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200300330071"
+          ],
+          "choice": "\"押せば\" repeated three times (L) for the one Hebrew verb; the pun of af (nose) and appayim (anger) cannot be kept",
+          "alternatives": [],
+          "reason": "Literal keeps the threefold \"pressing\" of the Hebrew; Japanese has no word that means both nose and anger (meaning m1).",
           "uncertain": false,
           "footnote": false
         }

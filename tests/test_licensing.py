@@ -91,7 +91,8 @@ class LicensingTest(unittest.TestCase):
         checked = 0
         for path, text in self.pages.items():
             self.assertIsNone(field.search(text), path)
-            if "/chapter-data/" not in str(path):
+            # A language's text (chapter-data/<book>/<n>.<lang>.js) has no words.
+            if "/chapter-data/" not in str(path) or text.startswith("window.OWB_TEXTS="):
                 continue
             data = json.loads(text[text.index("=") + 1:].rstrip().rstrip(";"))
             for words in data["words"].values():

@@ -66,6 +66,26 @@
           "L": "የመውጣት መዝሙር። በሰማያት የምትቀመጥ ሆይ፣ ዓይኖቼን ወደ አንተ አነሣለሁ።",
           "B": "የመውጣት መዝሙር። በሰማይ የምትነግሥ ሆይ፣ ዓይኖቼን ወደ አንተ አቀናለሁ።",
           "R": "የመውጣት መዝሙር፤ ወደ ኢየሩሳሌም ሲወጡ የሚዘመር። ቀና ብዬ ወደ አንተ እመለከታለሁ። አንተ በሰማይ በዙፋንህ ላይ ተቀምጠሃል።"
+        },
+        "hi": {
+          "L": "चढ़ाई का गीत। तेरी ओर मैं अपनी आँखें उठाता हूँ, [हे] स्वर्ग में विराजमान।",
+          "B": "चढ़ाई का गीत। हे स्वर्ग में राज्य करनेवाले, मैं अपनी आँखें तेरी ओर उठाता हूँ।",
+          "R": "यरूशलेम की ओर जाने की यात्रा का गीत। मैं तेरी ओर देखता हूँ। तू स्वर्ग में अपने सिंहासन पर बैठा है।"
+        },
+        "ru": {
+          "L": "Песнь восхождения. К {{deity_pronoun:тебе|Тебе}} поднимаю я глаза мои, [к тому, кто] восседает на небесах.",
+          "B": "Песнь восхождения. Я поднимаю глаза к {{deity_pronoun:тебе|Тебе}}, царствующему на небесах.",
+          "R": "Песня для пути в Иерусалим. Я смотрю вверх, на {{deity_pronoun:тебя|Тебя}}. Ты сидишь на своём престоле на небесах."
+        },
+        "ja": {
+          "L": "上りの歌。あなたに、わたしは目を上げる、天に座しておられる方よ。",
+          "B": "都に上る歌。天で治めておられる方よ、わたしはあなたを見上げる。",
+          "R": "エルサレムへ上る旅の歌。わたしは、あなたを見上げる。あなたは天の王座に座っておられる。"
+        },
+        "uk": {
+          "L": "Пісня сходжень. До {{deity_pronoun:тебе|Тебе}} я підношу мої очі, [до того, хто] сидить на небесах.",
+          "B": "Пісня сходжень. Я підношу очі до {{deity_pronoun:тебе|Тебе}}, хто царює на небесах.",
+          "R": "Пісня для подорожі вгору до Єрусалима. Я дивлюся вгору, на {{deity_pronoun:тебе|Тебе}}. Ти сидиш на своєму престолі на небі."
         }
       },
       "decisions": [
@@ -254,6 +274,91 @@
           "reason": "The verb pictures God sitting enthroned (meaning decision m3); Balanced and Readable say so, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191230010031",
+            "o191230010032"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalmist speaks to God with the devotional \"तू\", and God spoken of takes the honorific plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230010071",
+            "o191230010072"
+          ],
+          "choice": "\"विराजमान\" (L); \"राज्य करनेवाले\" (B); \"अपने सिंहासन पर बैठा है\" (R)",
+          "alternatives": [
+            "\"बैठनेवाले\""
+          ],
+          "reason": "God's sitting is sitting enthroned (meaning m3). Literal \"विराजमान\" is the Hindi word for a dignified sitting and keeps the picture; Balanced and Readable say what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230010011",
+            "o191230010022"
+          ],
+          "choice": "Песнь восхождения (L, B); Песня для пути в Иерусалим (R)",
+          "alternatives": [
+            "Песнь степеней",
+            "Песнь восхождений"
+          ],
+          "reason": "As in 120:1: one form of the title per level through the Songs of Ascents.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230010072",
+            "o191230010082"
+          ],
+          "choice": "hayyoshevi bashshamayim \"天に座しておられる方\" (L), \"天で治めておられる方\" (B), \"天の王座に座っておられる\" (R)",
+          "alternatives": [],
+          "reason": "Sitting means sitting enthroned (m3); B and R make the rule explicit as the English does. God addressed あなた, plain, with respect forms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -337,6 +442,26 @@
           "L": "እነሆ፣ የባሪያዎች ዓይኖች ወደ ጌቶቻቸው እጅ፣ የባሪያይቱም ዓይኖች ወደ እመቤቷ እጅ እንደ [ሆኑ]፣ እንዲሁ ዓይኖቻችን እስኪራራልን ድረስ ወደ አምላካችን ወደ {{divine_name:እግዚአብሔር|ያህዌ}} [ናቸው]።",
           "B": "አገልጋዮች የጌታቸውን እጅ ይመለከታሉ፤ አገልጋይቱም የምታገለግላትን እመቤት እጅ ትመለከታለች። እንዲሁ እኛም እስኪራራልን ድረስ ዓይኖቻችንን በአምላካችን {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ እናደርጋለን።",
           "R": "አገልጋዮች ጌታቸው የሚፈልገውን ወይም የሚሰጣቸውን ለማየት እጁን ይመለከታሉ። አገልጋይቱም የምትሠራላትን እመቤት እጅ ትመለከታለች። እንዲሁ እኛም ወደ አምላካችን ወደ {{divine_name:እግዚአብሔር|ያህዌ}} መመልከታችንን አናቋርጥም። ቸርነቱን እስኪያሳየን ድረስ እንጠብቃለን።"
+        },
+        "hi": {
+          "L": "देखो, जैसे दासों की आँखें अपने स्वामियों के हाथ की ओर [लगी रहती हैं], जैसे दासी की आँखें अपनी स्वामिनी के हाथ की ओर [लगी रहती हैं], वैसे ही हमारी आँखें {{divine_name:प्रभु|याहवे}} हमारे परमेश्वर की ओर [लगी हैं], जब तक वे हम पर अनुग्रह न करें।",
+          "B": "दास अपने स्वामी के हाथ की ओर ताकते रहते हैं, और दासी अपनी स्वामिनी के हाथ की ओर ताकती रहती है। उसी तरह हम {{divine_name:प्रभु|याहवे}} अपने परमेश्वर की ओर आँखें लगाए रहते हैं, और प्रतीक्षा करते हैं कि वे हम पर अनुग्रह करें।",
+          "R": "दास अपने मालिक के हाथ की ओर देखते रहते हैं कि वह क्या चाहता है या क्या देगा। दासी उस स्त्री के हाथ की ओर देखती रहती है जिसकी वह सेवा करती है। उसी तरह हम {{divine_name:प्रभु|याहवे}} अपने परमेश्वर की ओर देखते रहते हैं। हम राह देखते हैं कि वे हम पर कृपा करें।"
+        },
+        "ru": {
+          "L": "Вот, как глаза рабов — на руку господ их, как глаза рабыни — на руку госпожи её, так глаза наши — на {{divine_name:ГОСПОДА|Яхве}}, Бога нашего, пока {{deity_pronoun:он|Он}} не помилует нас.",
+          "B": "Рабы следят за рукой своего господина, и рабыня следит за рукой своей госпожи. Так и мы не сводим глаз с {{divine_name:ГОСПОДА|Яхве}}, нашего Бога, ожидая, когда {{deity_pronoun:он|Он}} помилует нас.",
+          "R": "Рабы не сводят глаз с руки своего господина, чтобы понять, чего он хочет или что он даст. Рабыня смотрит на руку своей госпожи. Так и мы всё время смотрим на {{divine_name:ГОСПОДА|Яхве}}, нашего Бога. Мы ждём, когда {{deity_pronoun:он|Он}} будет добр к нам."
+        },
+        "ja": {
+          "L": "ああ、奴隷たちの目が主人たちの手に[向けられ]、女奴隷の目が女主人の手に[向けられる]ように、そのように、わたしたちの目は{{divine_name:主|ヤハウェ}}、わたしたちの神に[向けられる]、その方がわたしたちをあわれんでくださるまで。",
+          "B": "しもべたちは主人の手を見つめ、はしためは女主人の手を見つめる。そのように、わたしたちは、わたしたちの神、{{divine_name:主|ヤハウェ}}から目を離さず、その方が恵みを示してくださるのを待つ。",
+          "R": "しもべたちは、主人が何を望み、何をくれるかを知ろうとして、主人の手をじっと見ている。女のしもべも、自分が仕える女主人の手を見ている。同じように、わたしたちも、わたしたちの神、{{divine_name:主|ヤハウェ}}を見上げ続ける。その方が、わたしたちにやさしくしてくださるのを待っている。"
+        },
+        "uk": {
+          "L": "Ось, як очі рабів — до руки їхніх панів, як очі рабині — до руки її пані, так наші очі — до {{divine_name:ГОСПОДА|Ягве}}, нашого Бога, доки {{deity_pronoun:він|Він}} не змилується над нами.",
+          "B": "Раби стежать за рукою свого пана, а рабиня стежить за рукою жінки, якій служить. Так само й ми не зводимо очей з {{divine_name:ГОСПОДА|Ягве}}, нашого Бога, і чекаємо, щоб {{deity_pronoun:він|Він}} змилувався над нами.",
+          "R": "Слуги весь час дивляться на руку свого пана, щоб побачити, чого він хоче або що він дасть. Служниця дивиться на руку жінки, на яку працює. Так само й ми дивимося на {{divine_name:ГОСПОДА|Ягве}}, нашого Бога. Ми чекаємо, щоб {{deity_pronoun:він|Він}} був добрим до нас."
         }
       },
       "decisions": [
@@ -600,6 +725,129 @@
           "reason": "The picture is of servants waiting on a signal (meaning decision m1); Balanced and Readable say \"servants\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230020031",
+            "o191230020081"
+          ],
+          "choice": "\"दास\", \"दासी\" at every level",
+          "alternatives": [
+            "\"सेवक\", \"सेविका\""
+          ],
+          "reason": "The English Balanced and Readable say \"servants\"; the Pentateuch note keeps \"दास\" for ʿeved at every level, and the picture is of slaves watching a master's hand (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230020182",
+            "o191230020183"
+          ],
+          "choice": "\"अनुग्रह करना\" (L, B); \"कृपा करना\" (R)",
+          "alternatives": [
+            "\"दया करना\""
+          ],
+          "reason": "The verb is to be gracious, to show favour (meaning m2), in this verse and twice in verse 3. Readable uses the everyday \"कृपा\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230020031",
+            "o191230020081"
+          ],
+          "choice": "рабы; рабыня (every level)",
+          "alternatives": [
+            "слуги; служанка"
+          ],
+          "reason": "The English says \"servants\" at Balanced and Readable; the Pentateuch note keeps раб for 'eved at every level, as the New Testament does, and the picture (m1) is of slaves watching a master's hand, so Russian keeps рабы and рабыня.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230020031",
+            "o191230020081"
+          ],
+          "choice": "'avadim / shifchah \"奴隷たち\" / \"女奴隷\" (L), \"しもべたち\" / \"はしため\" (B), \"しもべたち\" / \"女のしもべ\" (R)",
+          "alternatives": [],
+          "reason": "As the English (slave at L, servant at B and R); PSA-1 notes 123:2 among the places where the English L says slave.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230020011",
+            "o191230020182"
+          ],
+          "choice": "hinneh \"ああ\" (L), dropped (B, R); yechonnenu \"あわれんでくださる\" (L), \"恵みを示してくださる\" (B), \"やさしくしてくださる\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rules: hinneh never 見よ; chanan あわれむ (L), 恵みを示す (B); R follows the English R \"be kind to us\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230020031"
+          ],
+          "choice": "\"слуги\", \"служниця\" (R) for the slaves of the picture",
+          "alternatives": [
+            "\"раби\""
+          ],
+          "reason": "The Readable English speaks of servants watching for their master's wishes; Literal and Balanced keep \"раби\" for ʿeved.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -666,6 +914,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልን፤ ራራልን፤ ንቀትን እጅግ ጠግበናልና።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልን፤ ራራልን፤ ከምንችለው በላይ ንቀት ተጋተናልና።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ቸርነትህን አሳየን! ቸርነትህን አሳየን! ሰዎች ልንሸከመው ከምንችለው በላይ ናቁን።"
+        },
+        "hi": {
+          "L": "हम पर अनुग्रह कर, हे {{divine_name:प्रभु|याहवे}}, हम पर अनुग्रह कर, क्योंकि हम तिरस्कार से बहुत भर गए हैं।",
+          "B": "हम पर अनुग्रह कर, हे {{divine_name:प्रभु|याहवे}}, हम पर अनुग्रह कर, क्योंकि हमने सहने से अधिक तिरस्कार झेला है।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, हम पर कृपा कर! हम पर कृपा कर! लोगों ने हमें इतना नीचा दिखाया है कि अब सहा नहीं जाता।"
+        },
+        "ru": {
+          "L": "Помилуй нас, {{divine_name:ГОСПОДИ|Яхве}}, помилуй нас, ведь мы сильно пресыщены презрением.",
+          "B": "Помилуй нас, {{divine_name:ГОСПОДИ|Яхве}}, помилуй нас, ведь мы проглотили больше презрения, чем можем вынести.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, будь добр к нам! Будь добр к нам! Люди презирали нас больше, чем мы можем вынести."
+        },
+        "ja": {
+          "L": "あわれんでください、{{divine_name:主|ヤハウェ}}よ、わたしたちをあわれんでください。わたしたちは、さげすみに十分すぎるほど満たされたからだ。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしたちに恵みを示してください。恵みを示してください。わたしたちは、耐えきれないほどのさげすみを受けてきた。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしたちにやさしくしてください！やさしくしてください！わたしたちは、もう耐えられないほど、人々に見下されてきた。"
+        },
+        "uk": {
+          "L": "Змилуйся над нами, {{divine_name:ГОСПОДИ|Ягве}}, змилуйся над нами, бо ми дуже наситилися зневагою.",
+          "B": "Змилуйся над нами, {{divine_name:ГОСПОДИ|Ягве}}, змилуйся над нами, бо ми проковтнули більше зневаги, ніж можемо витримати.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, будь добрим до нас! Будь добрим до нас! Люди дивилися на нас зверхньо більше, ніж ми можемо витерпіти."
         }
       },
       "decisions": [
@@ -735,6 +1003,26 @@
             "우리"
           ],
           "reason": "\"저희\" is the humble form of \"우리\" that Korean uses when a group speaks to a superior; it goes with \"저\" and 합쇼체.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230030011",
+            "o191230030071"
+          ],
+          "choice": "chonnenu repeated \"あわれんでください\" (L), \"恵みを示してください\" (B), \"やさしくしてください！\" (R); buz \"さげすみ\" (L, B), \"見下されて\" (R)",
+          "alternatives": [],
+          "reason": "Requests to God 〜てください at every level (Psalter rule); the doubled plea is kept at every level.",
           "uncertain": false,
           "footnote": false
         }
@@ -808,6 +1096,26 @@
           "L": "ነፍሳችን የተደላደሉትን ሰዎች መሣለቂያ፣ የትዕቢተኞችን ንቀት ለራሷ እጅግ ጠግባለች።",
           "B": "በተመቻቸው ሰዎች ፌዝና በትዕቢተኞች ንቀት ከልክ በላይ ጠግበናል።",
           "R": "ኑሮ በተመቻቸላቸው ሰዎች መሣለቅ ደክመናል፤ ትዕቢተኞችም ሲንቁን ሰልችቶናል።"
+        },
+        "hi": {
+          "L": "हमारा प्राण अपने लिए बहुत भर गया है, चैन से रहनेवालों के ठट्ठों से, घमंडियों के तिरस्कार से।",
+          "B": "निश्चिंत लोगों के उपहास से और घमंडियों के तिरस्कार से हम हद से ज़्यादा भर चुके हैं।",
+          "R": "हम इससे थक गए हैं कि आराम की ज़िंदगी जीनेवाले लोग हमारा मज़ाक़ उड़ाते हैं, और घमंडी लोग हमें नीचा दिखाते हैं।"
+        },
+        "ru": {
+          "L": "Сильно пресытилась душа наша насмешками беспечных, презрением гордых.",
+          "B": "Мы сыты по горло насмешками самодовольных и презрением надменных.",
+          "R": "Мы устали от того, что над нами смеются люди, которым легко живётся, и что гордецы смотрят на нас свысока."
+        },
+        "ja": {
+          "L": "わたしたちの魂は、十分すぎるほど満たされた、安楽な者たちの嘲りに、高ぶる者たちのさげすみに。",
+          "B": "わたしたちは、安楽に暮らす者たちの嘲りと、おごり高ぶる者たちのさげすみを、いやというほど味わってきた。",
+          "R": "わたしたちは、楽な暮らしをしている人たちにからかわれ、高慢な人たちに見下されることに、もう疲れ果てた。"
+        },
+        "uk": {
+          "L": "Наша душа дуже наситилася глузуванням безтурботних, зневагою гордих.",
+          "B": "Ми досхочу і понад міру наїлися глузування ситих і зневаги зарозумілих.",
+          "R": "Ми втомилися від того, що з нас глузують люди, яким легко живеться, і що на нас зверхньо дивляться горді."
         }
       },
       "decisions": [
@@ -861,6 +1169,45 @@
             "my soul"
           ],
           "reason": "As in Psalms 1-12, nefesh is \"soul\" at Literal; Balanced and Readable say \"me\" or \"my life\", since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230040041",
+            "o191230040042"
+          ],
+          "choice": "душа наша (L); мы (B, R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"we\" or \"us\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191230040062",
+            "o191230040082"
+          ],
+          "choice": "sha'anannim \"安楽な者たち\" (L), \"安楽に暮らす者たち\" (B), \"楽な暮らしをしている人たち\" (R); ge'eyonim \"高ぶる者たち\" (L), \"おごり高ぶる者たち\" (B), \"高慢な人たち\" (R)",
+          "alternatives": [],
+          "reason": "Those at ease are the complacent (m1); rabbat sav'ah repeats verse 3 (m2), kept as 十分すぎるほど満たされた at L in both verses.",
           "uncertain": false,
           "footnote": false
         }

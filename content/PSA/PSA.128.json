@@ -65,6 +65,26 @@
           "L": "የመውጣት መዝሙር። {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈራ፣ በመንገዶቹም የሚሄድ ሁሉ ምስጉን ነው!",
           "B": "የመውጣት መዝሙር። {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈራ፣ እርሱም በሚመራው መንገድ የሚኖር ሁሉ የተባረከ ነው!",
           "R": "የመውጣት መዝሙር፤ ወደ ኢየሩሳሌም ሲወጡ የሚዘመር። {{divine_name:እግዚአብሔርን|ያህዌን}} የሚያከብርና እርሱ በሚፈልገው መንገድ የሚኖር ሁሉ ደስተኛ ነው።"
+        },
+        "hi": {
+          "L": "चढ़ाई का गीत। कितना धन्य [है] हर एक जो {{divine_name:प्रभु|याहवे}} का भय मानता है, जो उनके मार्गों पर चलता है!",
+          "B": "चढ़ाई का गीत। कितना धन्य है हर वह व्यक्ति जो {{divine_name:प्रभु|याहवे}} का भय मानता है और उनके बताए मार्ग पर चलता है!",
+          "R": "यरूशलेम की ओर जाने की यात्रा का गीत। हर उस व्यक्ति का जीवन सचमुच अच्छा है जो {{divine_name:प्रभु|याहवे}} का आदर और भय मानता है और वैसे जीता है जैसा वे चाहते हैं।"
+        },
+        "ru": {
+          "L": "Песнь восхождения. Блажен всякий, боящийся {{divine_name:ГОСПОДА|Яхве}}, ходящий путями {{deity_pronoun:его|Его}}!",
+          "B": "Песнь восхождения. Блажен всякий, кто боится {{divine_name:ГОСПОДА|Яхве}} и живёт так, как {{deity_pronoun:он|Он}} указывает!",
+          "R": "Песня для пути в Иерусалим. Счастлив каждый, кто почитает {{divine_name:ГОСПОДА|Яхве}} и живёт так, как {{deity_pronoun:он|Он}} хочет."
+        },
+        "ja": {
+          "L": "上りの歌。幸いなことよ、{{divine_name:主|ヤハウェ}}を恐れ、その方の道を歩む者はみな。",
+          "B": "都に上る歌。{{divine_name:主|ヤハウェ}}を畏れ、その方が示される道を歩む人はみな、なんと幸いなことか。",
+          "R": "エルサレムへ上る旅の歌。{{divine_name:主|ヤハウェ}}をおそれ敬い、その方が望まれるとおりに生きる人はみな、本当に幸せだ。"
+        },
+        "uk": {
+          "L": "Пісня сходжень. Блаженний кожен, хто боїться {{divine_name:ГОСПОДА|Ягве}}, хто ходить {{deity_pronoun:його|Його}} дорогами!",
+          "B": "Пісня сходжень. Блаженний кожен, хто боїться {{divine_name:ГОСПОДА|Ягве}} і живе так, як {{deity_pronoun:він|Він}} велить!",
+          "R": "Пісня для подорожі вгору до Єрусалима. Справді добре живеться кожному, хто шанує {{divine_name:ГОСПОДА|Ягве}} і живе так, як {{deity_pronoun:він|Він}} хоче."
         }
       },
       "decisions": [
@@ -306,6 +326,109 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280010031",
+            "o191280010051"
+          ],
+          "choice": "\"कितना धन्य\" (L, B), \"... का जीवन सचमुच अच्छा है\" (R); \"का भय मानना\" (L, B), \"का आदर और भय मानना\" (R)",
+          "alternatives": [],
+          "reason": "The blessing keeps the wording of Psalm 1:1 in this translation (meaning m3), and the fear of the LORD the poetry note's forms (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191280010082",
+            "o191280010083"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; God spoken of takes the honorific plural (\"उनके मार्गों\", \"वे चाहते हैं\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280010011",
+            "o191280010022"
+          ],
+          "choice": "Песнь восхождения (L, B); Песня для пути в Иерусалим (R)",
+          "alternatives": [
+            "Песнь степеней",
+            "Песнь восхождений"
+          ],
+          "reason": "As in 120:1: one form of the title per level through the Songs of Ascents.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280010031",
+            "o191280010051"
+          ],
+          "choice": "Блажен, боящийся (L, B); Счастлив, почитает (R)",
+          "alternatives": [],
+          "reason": "As in Psalm 1:1 and 33:18: \"how blessed\" is Блажен at Literal and Balanced and Счастлив at Readable, and the fear of the LORD is почитать at Readable (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280010031",
+            "o191280010051"
+          ],
+          "choice": "'ashrei \"幸いなことよ\" (L), \"なんと幸いなことか\" (B), \"本当に幸せだ\" (R); yere' YHWH \"DNを恐れ\" (L), \"畏れ\" (B), \"おそれ敬い\" (R)",
+          "alternatives": [],
+          "reason": "Psalter key-word table ('ashre, fear of God).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -374,6 +497,26 @@
           "L": "የእጆችህን ድካም በእርግጥ ትበላለህ፤ ምስጉን ትሆናለህ፤ መልካምም ይሆንልሃል!",
           "B": "እጆችህ የደከሙበትን ፍሬ ትደሰትበታለህ፤ እንዴት የተባረክህ ትሆናለህ! ኑሮህም እንዴት መልካም ይሆናል!",
           "R": "የሠራህበትን ትበላለህ። ደስተኛ ትሆናለህ፤ ሁሉም ነገር መልካም ይሆንልሃል።"
+        },
+        "hi": {
+          "L": "तुम्हारे हाथों का परिश्रम — निश्चय तुम [उसे] खाओगे; तुम कितने धन्य [होगे], और तुम्हारा भला [होगा]!",
+          "B": "तुम अपने ही हाथों की मेहनत की कमाई का आनंद लोगे; तुम कितने धन्य होगे, और तुम्हारा जीवन कितना अच्छा होगा!",
+          "R": "तुमने जिसके लिए मेहनत की है, वही तुम खाओगे। तुम्हारा जीवन सचमुच अच्छा होगा, और सब कुछ ठीक रहेगा।"
+        },
+        "ru": {
+          "L": "Трудом рук твоих — да, ты будешь питаться [им]; блажен ты, и хорошо тебе [будет]!",
+          "B": "Ты будешь есть то, что заработали твои руки; как ты будешь блажен, и как хороша будет твоя жизнь!",
+          "R": "Ты будешь есть то, ради чего трудился. Ты будешь счастлив, и у тебя всё будет хорошо."
+        },
+        "ja": {
+          "L": "あなたの手の労苦[の実]を、まことに、あなたは食べる。幸いなことよ、あなたは。あなたにとって良いことが[ある]。",
+          "B": "あなたは、自分の手で働いて得たものを楽しむ。あなたはなんと幸いなことか。あなたの人生は、なんと良いものになることか。",
+          "R": "あなたは、自分が働いて得たものを食べる。あなたは本当に幸せになり、すべてがうまくいく。"
+        },
+        "uk": {
+          "L": "Праця твоїх рук — справді, ти [її] їстимеш; блаженний ти [будеш], і добре [буде] тобі!",
+          "B": "Ти втішатимешся їжею, на яку попрацювали твої власні руки; який ти будеш блаженний і яке добре буде твоє життя!",
+          "R": "Ти їстимеш те, на що заробив. Тобі справді добре житиметься, і все буде гаразд."
         }
       },
       "decisions": [
@@ -487,6 +630,49 @@
           "reason": "The psalm turns to speak to the one who fears the LORD (m3), one person to another, so Portuguese says \"você\", as in 121:3-8 and Psalm 91. The blessing \"Que o SENHOR abençoe você desde Sião\" (verse 5) has the same words as 134:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191280020021",
+            "o191280020022"
+          ],
+          "choice": "\"तुम\" to the one who fears the LORD",
+          "alternatives": [
+            "\"तू\""
+          ],
+          "reason": "The psalm turns to the one who fears the LORD (meaning m3); as everywhere in this translation, a person is spoken to with \"तुम\", and \"तू\" is kept for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280020011",
+            "o191280020041",
+            "o191280020051"
+          ],
+          "choice": "yegia' kappekha … to'khel \"あなたの手の労苦[の実]を…食べる\" (L), \"自分の手で働いて得たものを楽しむ\" (B), \"自分が働いて得たものを食べる\" (R)",
+          "alternatives": [],
+          "reason": "Enjoying what one works for (m1); the one addressed is the person who fears the LORD (m3), あなた singular.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -562,6 +748,26 @@
           "L": "ሚስትህ በቤትህ ውስጠኛ ክፍሎች እንደሚያፈራ የወይን ተክል [ትሆናለች]፤ ልጆችህ በማዕድህ ዙሪያ እንደ ወይራ ቡቃያዎች [ይሆናሉ]።",
           "B": "በቤትህ ውስጥ ሚስትህ ፍሬ እንደ ተጫነ የወይን ተክል ትሆናለች፤ በማዕድህ ዙሪያም ልጆችህ እንደ ወይራ ችግኞች ይሆናሉ።",
           "R": "ሚስትህ ብዙ ልጆችን ትወልዳለች፤ በቤትህ ውስጥ ፍሬ እንደ ሞላበት የወይን ተክል ትሆናለች። ልጆችህ በማዕድህ ዙሪያ ይሰበሰባሉ፤ እንደ ወጣት የወይራ ዛፎች ጤናማና ብርቱ ይሆናሉ።"
+        },
+        "hi": {
+          "L": "तुम्हारी पत्नी तुम्हारे घर के भीतरी भागों में फलवन्त दाखलता के समान [होगी]; तुम्हारे बच्चे तुम्हारी मेज़ के चारों ओर जैतून के पौधों के समान।",
+          "B": "तुम्हारे घर के बीच तुम्हारी पत्नी अंगूरों से लदी दाखलता के समान होगी, और तुम्हारी मेज़ के चारों ओर तुम्हारे बच्चे जैतून के नए पौधों के समान होंगे।",
+          "R": "तुम्हारी पत्नी के बहुत बच्चे होंगे, वह तुम्हारे घर में फलों से लदी अंगूर की बेल की तरह होगी। तुम्हारे बच्चे जैतून के नए पेड़ों की तरह स्वस्थ और मज़बूत होकर तुम्हारी मेज़ के चारों ओर बैठेंगे।"
+        },
+        "ru": {
+          "L": "Жена твоя [будет] как плодовитая лоза во внутренних покоях дома твоего; дети твои — как побеги маслин вокруг стола твоего.",
+          "B": "В глубине твоего дома твоя жена будет как лоза, полная винограда, а вокруг твоего стола твои дети будут как молодые побеги маслины.",
+          "R": "Твоя жена родит много детей — она будет как виноградная лоза, полная плодов, в твоём доме. Твои дети соберутся вокруг твоего стола, здоровые и сильные, как молодые маслины."
+        },
+        "ja": {
+          "L": "あなたの妻は、あなたの家の奥にある、実り豊かなぶどうの木のよう。あなたの子らは、あなたの食卓の周りにある、オリーブの若木のよう。",
+          "B": "あなたの家の奥で、あなたの妻は実をたわわにつけたぶどうの木のようになり、あなたの食卓の周りで、子どもたちはオリーブの若木のようになる。",
+          "R": "あなたの妻は、家の中で、実をたくさんつけたぶどうの木のように、多くの子どもを産む。子どもたちは、若いオリーブの木のように元気で、あなたの食卓の周りに集まる。"
+        },
+        "uk": {
+          "L": "Твоя дружина [буде] як плідна виноградна лоза в глибині твого дому; твої діти — як пагони оливок довкола твого столу.",
+          "B": "У серці твого дому твоя дружина буде як лоза, обвішана гронами, а довкола твого столу твої діти будуть як молоді оливкові паростки.",
+          "R": "Твоя дружина матиме багато дітей, як виноградна лоза, повна плодів, у твоєму домі. Твої діти збиратимуться довкола твого столу, здорові й сильні, як молоді оливкові деревця."
         }
       },
       "decisions": [
@@ -612,6 +818,27 @@
           ],
           "reason": "Readable says what each picture means (m1).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280030022",
+            "o191280030042",
+            "o191280030072"
+          ],
+          "choice": "gefen poriyyah \"実り豊かなぶどうの木\" (L), \"実をたわわにつけたぶどうの木\" (B); yarketei veitekha \"あなたの家の奥\" (L, B); shetilei zeitim \"オリーブの若木\" (L, B), \"若いオリーブの木\" (R)",
+          "alternatives": [],
+          "reason": "Vine and olive are pictures of a rich life (m1); the inner parts of the house are the heart of the home (m2).",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -677,6 +904,26 @@
           "L": "እነሆ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈራ ሰው እንዲህ ይባረካልና።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈራ ሰው እንዲህ ይባረካል!",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚያከብረውን ሰው ሁሉ የሚባርከው እንዲህ ነው።"
+        },
+        "hi": {
+          "L": "देखो, क्योंकि वह {{gender:व्यक्ति|आदमी}} इसी प्रकार आशीष पाएगा जो {{divine_name:प्रभु|याहवे}} का भय मानता है।",
+          "B": "देखो, जो {{gender:व्यक्ति|आदमी}} {{divine_name:प्रभु|याहवे}} का भय मानता है, उसे कैसी आशीष मिलेगी!",
+          "R": "{{divine_name:प्रभु|याहवे}} हर उस {{gender:व्यक्ति|आदमी}} को इसी तरह आशीष देते हैं जो उनका आदर और भय मानता है।"
+        },
+        "ru": {
+          "L": "Вот, так будет благословлён {{gender:человек|муж}}, боящийся {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Смотри, как будет благословлён {{gender:человек|муж}}, который боится {{divine_name:ГОСПОДА|Яхве}}!",
+          "R": "Так {{divine_name:ГОСПОДЬ|Яхве}} благословляет {{gender:человека|мужа}}, который почитает {{deity_pronoun:его|Его}}."
+        },
+        "ja": {
+          "L": "ああ、まことに、そのように祝福される、{{divine_name:主|ヤハウェ}}を恐れる人は。",
+          "B": "見なさい、{{divine_name:主|ヤハウェ}}を畏れる人は、このように祝福される！",
+          "R": "{{divine_name:主|ヤハウェ}}は、ご自分をおそれ敬う人を、このように祝福してくださる。"
+        },
+        "uk": {
+          "L": "Ось, бо так буде благословенний {{gender:той, хто|муж, який}} боїться {{divine_name:ГОСПОДА|Ягве}}.",
+          "B": "Дивись, як буде благословенний {{gender:той, хто|муж, який}} боїться {{divine_name:ГОСПОДА|Ягве}}!",
+          "R": "Ось як {{divine_name:ГОСПОДЬ|Ягве}} благословляє {{gender:кожного, хто|чоловіка, який}} шанує {{deity_pronoun:його|Його}}."
         }
       },
       "decisions": [
@@ -818,6 +1065,64 @@
           "reason": "\"ሰው\" covers men and women alike (terms list), so the setting has nothing to change in Amharic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191280040051"
+          ],
+          "choice": "\"{{gender:व्यक्ति|आदमी}}\"",
+          "alternatives": [],
+          "reason": "As in 127:5: the word (gever) is \"a man\", the husband of verse 3; the default makes the blessing general and the gender setting gives \"आदमी\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191280040041"
+          ],
+          "choice": "{{gender:человек|муж}}",
+          "alternatives": [],
+          "reason": "As in 127:5: gever is \"a man\", here the husband and father of verse 3; the default makes the blessing general (человек) and the gender setting gives муж.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280040011",
+            "o191280040051"
+          ],
+          "choice": "hinneh \"ああ\" (L), \"見なさい\" (B, to the hearers), dropped (R); gever \"人\", with no gender span",
+          "alternatives": [],
+          "reason": "Psalter rule for hinneh; Japanese 人 needs no setting (English {{gender:the one|the man}}, {{gender:anyone|a man}}).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -889,6 +1194,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ከጽዮን ይባርክህ፤ በሕይወትህም ዘመን ሁሉ የኢየሩሳሌምን መልካም ነገር እይ፤",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከጽዮን በረከትን ይላክልህ፤ በሕይወት እስካለህም ድረስ የኢየሩሳሌምን በጎ ዕድል ተመልከት፤",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከጽዮን ይባርክህ። በሕይወትህ ዘመን ሁሉ ኢየሩሳሌም ስትበለጽግ እይ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सिय्योन से तुम्हें आशीष दें, और तुम अपने जीवन भर यरूशलेम की भलाई देखो,",
+          "B": "{{divine_name:प्रभु|याहवे}} सिय्योन से तुम्हें आशीष भेजें, और तुम जीवन भर यरूशलेम को फलते-फूलते देखो,",
+          "R": "{{divine_name:प्रभु|याहवे}} सिय्योन से तुम्हें आशीष दें। तुम अपने जीवन के हर दिन यरूशलेम को फलता-फूलता देखो।"
+        },
+        "ru": {
+          "L": "Да благословит тебя {{divine_name:ГОСПОДЬ|Яхве}} с Сиона, и увидишь ты благо Иерусалима во все дни жизни твоей,",
+          "B": "Пусть {{divine_name:ГОСПОДЬ|Яхве}} пошлёт тебе благословение с Сиона, и пусть ты всю жизнь видишь процветание Иерусалима,",
+          "R": "Пусть {{divine_name:ГОСПОДЬ|Яхве}} благословит тебя с Сиона. Пусть ты каждый день своей жизни видишь, как процветает Иерусалим."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}がシオンからあなたを祝福してくださるように。あなたの生涯のすべての日々、エルサレムの幸いを見るように。",
+          "B": "{{divine_name:主|ヤハウェ}}がシオンからあなたに祝福を送ってくださるように。あなたが生きている限り、エルサレムが栄えるのを見ることができるように。",
+          "R": "{{divine_name:主|ヤハウェ}}が、シオンからあなたを祝福してくださるように。あなたが生きている間、毎日、エルサレムが栄えるのを見ることができるように。"
+        },
+        "uk": {
+          "L": "Нехай {{divine_name:ГОСПОДЬ|Ягве}} благословить тебе з Сіону, і [нехай ти] бачиш добро Єрусалима всі дні твого життя,",
+          "B": "Нехай {{divine_name:ГОСПОДЬ|Ягве}} пошле тобі благословення з Сіону, і нехай ти бачиш щастя Єрусалима, доки житимеш,",
+          "R": "Нехай {{divine_name:ГОСПОДЬ|Ягве}} благословить тебе з Сіону. Нехай ти бачиш, як Єрусалимові добре, кожного дня твого життя."
         }
       },
       "decisions": [
@@ -931,6 +1256,43 @@
           "choice": "the good of Jerusalem: its prosperity",
           "alternatives": [],
           "reason": "The good (tuv) of the city is its peace and well-being (122:9).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191280050042",
+            "o191280050081"
+          ],
+          "choice": "L closes the verse with 。 and begins 128:6 with \"また\", where the English sentence runs on with a comma",
+          "alternatives": [],
+          "reason": "Japanese puts \"all the days of your life\" before the verb; each verse keeps its own content after its marker.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280050052"
+          ],
+          "choice": "tuv Yerushalayim \"エルサレムの幸い\" (L), \"エルサレムが栄える\" (B, R)",
+          "alternatives": [],
+          "reason": "The good of Jerusalem is its prosperity (m3).",
           "uncertain": false,
           "footnote": false
         }
@@ -999,6 +1361,26 @@
           "L": "የልጆችህንም ልጆች እይ። በእስራኤል ላይ ሰላም [ይሁን]።",
           "B": "የልጅ ልጆችህንም ለማየት ዕድሜ ይስጥህ። ለእስራኤል ሰላም ይሁን!",
           "R": "የልጅ ልጆችህን ለማየት ረጅም ዕድሜ ይስጥህ። ለእስራኤል ሰላም ይሁን!"
+        },
+        "hi": {
+          "L": "और अपने बच्चों के बच्चे देखो। इस्राएल पर शान्ति [हो]।",
+          "B": "और इतना जीओ कि अपने पोते-पोतियों को देखो। इस्राएल को शान्ति मिले!",
+          "R": "तुम इतना लंबा जीओ कि अपने पोते-पोतियों को देखो। इस्राएल को शान्ति मिले!"
+        },
+        "ru": {
+          "L": "и увидишь детей детей твоих. Мир [да будет] над Израилем.",
+          "B": "и пусть ты доживёшь до того дня, когда увидишь своих внуков. Пусть у Израиля будет мир!",
+          "R": "Пусть ты проживёшь долго и увидишь своих внуков. Пусть у Израиля будет мир!"
+        },
+        "ja": {
+          "L": "また、あなたの子らの子らを見るように。イスラエルの上に平和[があるように]。",
+          "B": "そして、長生きして孫たちを見ることができるように。イスラエルに平和があるように！",
+          "R": "長生きして、孫たちの顔を見ることができるように。イスラエルに平和があるように！"
+        },
+        "uk": {
+          "L": "і [нехай ти] бачиш дітей твоїх дітей. Мир [нехай буде] над Ізраїлем.",
+          "B": "і нехай ти доживеш, щоб побачити онуків. Нехай Ізраїль має мир!",
+          "R": "Нехай ти доживеш до того, щоб побачити онуків. Нехай Ізраїль має мир!"
         }
       },
       "decisions": [
@@ -1029,6 +1411,46 @@
           "choice": "peace on Israel: a closing blessing",
           "alternatives": [],
           "reason": "As in 125:5, the blessing on one household widens to the whole people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280060041",
+            "o191280060061"
+          ],
+          "choice": "\"इस्राएल पर शान्ति [हो]\" (L); \"इस्राएल को शान्ति मिले!\" (B, R)",
+          "alternatives": [],
+          "reason": "The closing blessing (meaning m2) keeps the wording of 125:5 at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191280060041",
+            "o191280060061"
+          ],
+          "choice": "shalom 'al-Yisra'el as 125:5: \"イスラエルの上に平和[があるように]\" (L), \"イスラエルに平和があるように！\" (B, R)",
+          "alternatives": [],
+          "reason": "The closing blessing is the same in 125:5 and 128:6.",
           "uncertain": false,
           "footnote": false
         }

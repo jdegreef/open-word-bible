@@ -64,6 +64,26 @@
           "L": "{{divine_name:ከእግዚአብሔር|ከያህዌ}} ወደ ኤርምያስ የመጣው ቃል ይህ ነው፤ እንዲህም አለ፦",
           "B": "ይህ መልእክት {{divine_name:ከእግዚአብሔር|ከያህዌ}} ወደ ኤርምያስ መጣ፦",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለኤርምያስ የሰጠው መልእክት ይህ ነው፦"
+        },
+        "hi": {
+          "L": "वह वचन जो {{divine_name:प्रभु|याहवे}} की ओर से यिर्मयाह के पास पहुँचा:",
+          "B": "{{divine_name:प्रभु|याहवे}} की ओर से यिर्मयाह के पास यह वचन पहुँचा:",
+          "R": "यह वह संदेश है जो {{divine_name:प्रभु|याहवे}} ने यिर्मयाह को दिया:"
+        },
+        "ru": {
+          "L": "Слово, которое было к Иеремии от {{divine_name:ГОСПОДА|Яхве}}, говоря:",
+          "B": "Вот слово, с которым {{divine_name:ГОСПОДЬ|Яхве}} обратился к Иеремии:",
+          "R": "Вот слово, которое {{divine_name:ГОСПОДЬ|Яхве}} дал Иеремии:"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}からエレミヤに臨んだ言葉。",
+          "B": "{{divine_name:主|ヤハウェ}}からエレミヤに臨んだ言葉は、次のとおりである。",
+          "R": "{{divine_name:主|ヤハウェ}}は、エレミヤに次のように語られました。"
+        },
+        "uk": {
+          "L": "Слово, що було до Єремії від {{divine_name:ГОСПОДА|Ягве}}, кажучи:",
+          "B": "Це послання прийшло до Єремії від {{divine_name:ГОСПОДА|Ягве}}:",
+          "R": "Ось послання, яке {{divine_name:ГОСПОДЬ|Ягве}} дав Єремії:"
         }
       },
       "decisions": [
@@ -285,6 +305,111 @@
           "reason": "This heading opens several sections of Jeremiah (11:1; 18:1; 21:1; 30:1 ...) and keeps one wording, built like \"the word of the LORD came to me\" in 1:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"Слово, що було до Єремії від ГОСПОДА, кажучи:\" (L), \"Це послання прийшло до Єремії від ГОСПОДА:\" (B), \"Ось послання, яке ГОСПОДЬ дав Єремії:\" (R), wherever the heading returns",
+          "alternatives": [],
+          "reason": "One wording per level for the book's recurring heading, following the Jeremiah terms note.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070010012",
+            "o240070010031"
+          ],
+          "choice": "वह वचन जो {{divine_name:प्रभु|याहवे}} की ओर से X के पास पहुँचा (L); {{divine_name:प्रभु|याहवे}} की ओर से यह संदेश X के पास पहुँचा (B); यह वह संदेश है जो {{divine_name:प्रभु|याहवे}} ने X को दिया (R)",
+          "alternatives": [],
+          "reason": "The heading \"the word that came to Jeremiah from the LORD\" returns through the book (11:1; 18:1; 21:1 and others). Each level keeps one wording for it, built on the formula of 1:4 (पहुँचा at L and B, संदेश दिया at R).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070010071"
+          ],
+          "choice": "No deity_pronoun spans in Hindi",
+          "alternatives": [],
+          "reason": "The English marks God's pronouns with the deity_pronoun setting. Devanagari has no capital letters, so the Hindi has no such spans; respect for God is carried by the honorific third person (वे, उनका). This holds for every record of this file.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070010012",
+            "o240070010031",
+            "o240070010071"
+          ],
+          "choice": "Слово, которое было к Иеремии от ГОСПОДА, говоря: (L); Вот слово, с которым ГОСПОДЬ обратился к Иеремии: (B); Вот слово, которое ГОСПОДЬ дал Иеремии: (R)",
+          "alternatives": [
+            "Слово, бывшее к Иеремии от ГОСПОДА"
+          ],
+          "reason": "The heading \"the word that came to Jeremiah from the LORD\" returns through the book (11:1; 18:1; 21:1 and others). Each level builds it on the Prophets note's formula for \"the word of the LORD came\", so the two read alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070010011",
+            "o240070010012",
+            "o240070010021",
+            "o240070010031",
+            "o240070010041",
+            "o240070010051",
+            "o240070010061",
+            "o240070010062"
+          ],
+          "choice": "The heading formula of the prose sermons, as the JER conventions give it: \"{D}からエレミヤに臨んだ言葉。\" (L), \"…臨んだ言葉は、次のとおりである。\" (B), \"{D}は、エレミヤに次のように語られました。\" (R). The same at 11:1 and the later headings (18:1, 21:1, 30:1 ...).",
+          "alternatives": [],
+          "reason": "One form for the formula through the book; the narrator speaks at Readable in です・ます with the light respect form for the LORD.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -372,6 +497,26 @@
           "L": "«{{divine_name:በእግዚአብሔር|በያህዌ}} ቤት በር ላይ ቁም፤ በዚያም ይህን ቃል ጩኽ፤ እንዲህም በል፦ “{{divine_name:ለእግዚአብሔር|ለያህዌ}} ለመስገድ በእነዚህ በሮች የምትገቡ እናንተ ይሁዳ ሁሉ፣ {{divine_name:የእግዚአብሔርን|የያህዌን}} ቃል ስሙ።",
           "B": "«{{divine_name:በእግዚአብሔር|በያህዌ}} ቤተ መቅደስ በር ላይ ቁምና በዚያ ይህን ቃል አውጅ። እንዲህም በል፦ “{{divine_name:ለእግዚአብሔር|ለያህዌ}} ለመስገድ በእነዚህ በሮች የምትገቡ ሁሉ፣ እናንተ ይሁዳ ሁሉ፣ {{divine_name:የእግዚአብሔርን|የያህዌን}} ቃል ስሙ።",
           "R": "«{{divine_name:በእግዚአብሔር|በያህዌ}} ቤተ መቅደስ በር ላይ ቁምና ይህን መልእክት በዚያ አስታውቅ። እንዲህ በል፦ “{{divine_name:እግዚአብሔርን|ያህዌን}} ለማምለክ በእነዚህ በሮች የምትገቡ እናንተ የይሁዳ ሰዎች ሁሉ፣ {{divine_name:የእግዚአብሔርን|የያህዌን}} መልእክት አድምጡ።"
+        },
+        "hi": {
+          "L": "\"{{divine_name:प्रभु|याहवे}} के भवन के फाटक में खड़े होकर वहाँ यह वचन सुनाओ, और कहो, 'हे सब यहूदा, तुम जो {{divine_name:प्रभु|याहवे}} को दंडवत करने के लिए इन फाटकों से प्रवेश करते हो, {{divine_name:प्रभु|याहवे}} का वचन सुनो।",
+          "B": "\"{{divine_name:प्रभु|याहवे}} के भवन के फाटक पर खड़े होकर वहाँ यह वचन सुनाओ। कहो: 'हे सब यहूदा, तुम सब जो {{divine_name:प्रभु|याहवे}} की आराधना करने के लिए इन फाटकों से भीतर आते हो, {{divine_name:प्रभु|याहवे}} का वचन सुनो।",
+          "R": "\"{{divine_name:प्रभु|याहवे}} के मन्दिर के फाटक पर खड़े होकर वहाँ यह संदेश सुनाओ। कहो: 'हे यहूदा के सब लोगो, तुम जो {{divine_name:प्रभु|याहवे}} की आराधना करने के लिए इन फाटकों से आते हो, {{divine_name:प्रभु|याहवे}} का संदेश सुनो।"
+        },
+        "ru": {
+          "L": "«Встань в воротах дома {{divine_name:ГОСПОДА|Яхве}} и провозгласи там это слово, и скажи: “Слушайте слово {{divine_name:ГОСПОДА|Яхве}}, весь Иуда, входящие в эти ворота, чтобы поклониться {{divine_name:ГОСПОДУ|Яхве}}.",
+          "B": "«Встань у ворот дома {{divine_name:ГОСПОДА|Яхве}} и возвести там это слово. Скажи: “Слушайте слово {{divine_name:ГОСПОДА|Яхве}}, весь Иуда, все, кто входит в эти ворота, чтобы поклониться {{divine_name:ГОСПОДУ|Яхве}}.",
+          "R": "«Встань у ворот храма {{divine_name:ГОСПОДА|Яхве}} и объяви там это слово. Скажи: “Слушайте слово {{divine_name:ГОСПОДА|Яхве}}, все жители Иуды, которые проходят через эти ворота, чтобы поклониться {{divine_name:ГОСПОДУ|Яхве}}."
+        },
+        "ja": {
+          "L": "「{{divine_name:主|ヤハウェ}}の家の門に立ち、そこでこの言葉を呼ばわって、言いなさい。『{{divine_name:主|ヤハウェ}}の言葉を聞け、すべてのユダよ、{{divine_name:主|ヤハウェ}}にひれ伏すためにこれらの門を入る者たちよ。",
+          "B": "「{{divine_name:主|ヤハウェ}}の家の門に立って、そこでこの言葉を告げなさい。こう言うのだ。『{{divine_name:主|ヤハウェ}}を礼拝するためにこれらの門を入って来るユダの人々よ、皆、{{divine_name:主|ヤハウェ}}の言葉を聞きなさい。",
+          "R": "「{{divine_name:主|ヤハウェ}}の神殿の門に立って、そこでこのお告げを伝えなさい。こう言いなさい。『{{divine_name:主|ヤハウェ}}を礼拝するためにこの門を通って来るユダの人たちよ、みな、{{divine_name:主|ヤハウェ}}のお告げを聞きなさい。"
+        },
+        "uk": {
+          "L": "«Стань у брамі дому {{divine_name:ГОСПОДА|Ягве}}, і проголоси там це слово, і скажи: “Слухайте слово {{divine_name:ГОСПОДА|Ягве}}, уся Юдеє, ви, що входите в ці брами, щоб поклонятися {{divine_name:ГОСПОДУ|Ягве}}.",
+          "B": "«Стань біля брами дому {{divine_name:ГОСПОДА|Ягве}} і оголоси там це слово. Скажи: “Слухайте слово {{divine_name:ГОСПОДА|Ягве}}, уся Юдеє, усі, хто входить цими брамами, щоб поклонитися {{divine_name:ГОСПОДУ|Ягве}}.",
+          "R": "«Стань біля брами храму {{divine_name:ГОСПОДА|Ягве}} і оголоси там це послання. Скажи: “Слухайте послання {{divine_name:ГОСПОДА|Ягве}}, усі ви, люди Юдеї, що входите цими брамами, щоб поклонитися {{divine_name:ГОСПОДУ|Ягве}}."
         }
       },
       "decisions": [
@@ -565,6 +710,92 @@
           "reason": "The house of the LORD keeps the wording settled for Kings. The temple sermon is a message inside God's words to Jeremiah, so it is marked with the second level “ ” from here to 7:15, and the people's sayings inside it (7:4, 10) with the third level ‘ ’, where the English, alternating its marks, uses double quotes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070020022",
+            "o240070020031"
+          ],
+          "choice": "{{divine_name:प्रभु|याहवे}} का भवन (L, B); {{divine_name:प्रभु|याहवे}} का मन्दिर (R)",
+          "alternatives": [],
+          "reason": "\"The house of the LORD\" is प्रभु का भवन, as the history note sets it; मन्दिर is kept for hekhal (\"the temple of the LORD\", verse 4). Readable says मन्दिर for both, as the English Readable says \"temple\". Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070020031",
+            "o240070020041"
+          ],
+          "choice": "дом ГОСПОДА (L, B); храм ГОСПОДА (R)",
+          "alternatives": [
+            "Храм ГОСПОДЕНЬ"
+          ],
+          "reason": "The house of the LORD in the history note's wording; Readable says храм, as the English Readable says \"temple\". Храм also renders hekhal in verse 4 at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240070020011",
+            "o240070020102",
+            "o240070020111"
+          ],
+          "choice": "The temple sermon (7:2-15) is God's message inside God's words to Jeremiah: God's commands to Jeremiah take the narrative forms \"〜なさい\" (every level here), and the message itself the oracle forms, plain at every level, Readable too (\"聞け\" L, \"聞きなさい\" B, R), with the people as \"あなたがた\" (L, B), \"あなたたち\" (R). God's words to Jeremiah open 「 (to 8:3), the message 『 (to 7:15), as the English \" and '.",
+          "alternatives": [],
+          "reason": "JER conventions: a prose sermon is God's speech framed by narrative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070020111",
+            "o240070020121",
+            "o240070020131",
+            "o240070020191",
+            "o240070020192"
+          ],
+          "choice": "shim'u devar YHWH \"{D}の言葉を聞け\" (L), \"…を聞きなさい\" (B), \"{D}のお告げを聞きなさい\" (R); hishtachavah \"ひれ伏す\" (L), \"礼拝する\" (B, R, the English \"worship\").",
+          "alternatives": [],
+          "reason": "JER conventions.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -642,6 +873,26 @@
           "L": "የእስራኤል አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ መንገዳችሁንና ሥራችሁን አሳምሩ፤ በዚህም ስፍራ አኖራችኋለሁ።",
           "B": "የእስራኤል አምላክ፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ መንገዳችሁንና ሥራችሁን አስተካክሉ፤ እኔም በዚህ ስፍራ እንድትኖሩ አደርጋለሁ።",
           "R": "የእስራኤል አምላክ፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ አኗኗራችሁንና የምታደርጉትን ነገር ለውጡ። ከዚያም በዚህ ስፍራ መኖራችሁን እንድትቀጥሉ አደርጋለሁ።"
+        },
+        "hi": {
+          "L": "इस्राएल के परमेश्वर, सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: अपनी चाल और अपने काम सुधारो, और मैं तुम्हें इस स्थान में बसने दूँगा।",
+          "B": "इस्राएल के परमेश्वर, सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: अपने चालचलन और अपने कामों को सुधारो, और मैं तुम्हें इस स्थान में रहने दूँगा।",
+          "R": "इस्राएल के परमेश्वर, सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: अपने जीने का ढंग और अपने काम बदलो। तब मैं तुम्हें इस स्थान में रहते रहने दूँगा।"
+        },
+        "ru": {
+          "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф, Бог Израиля: Исправьте ваши пути и ваши дела, и {{deity_pronoun:я|Я}} дам вам жить на этом месте.",
+          "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф, Бог Израиля: Измените к лучшему ваши пути и ваши дела, и {{deity_pronoun:я|Я}} позволю вам жить на этом месте.",
+          "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств, Бог Израиля: Измените то, как вы живёте и что вы делаете. Тогда {{deity_pronoun:я|Я}} позволю вам и дальше жить на этом месте."
+        },
+        "ja": {
+          "L": "万軍の{{divine_name:主|ヤハウェ}}、イスラエルの神はこう言われる。あなたがたの道とあなたがたの行いを良くせよ。そうすれば、わたしはあなたがたをこの場所に住まわせる。",
+          "B": "万軍の{{divine_name:主|ヤハウェ}}、イスラエルの神はこう言われる。あなたがたの生き方と行いを改めなさい。そうすれば、わたしはあなたがたをこの場所に住まわせる。",
+          "R": "天の軍勢を率いる{{divine_name:主|ヤハウェ}}、イスラエルの神はこう言われる。あなたたちの生き方と、していることを改めなさい。そうすれば、わたしはあなたたちを、これからもこの場所に住まわせる。"
+        },
+        "uk": {
+          "L": "Так говорить {{divine_name:ГОСПОДЬ|Ягве}} Саваот, Бог Ізраїля: Виправте ваші дороги і ваші вчинки, і {{deity_pronoun:я|Я}} дам вам жити на цьому місці.",
+          "B": "Так говорить {{divine_name:ГОСПОДЬ|Ягве}} Небесних Військ, Бог Ізраїля: Змініть на краще свої дороги і свої дії, і {{deity_pronoun:я|Я}} дам вам жити на цьому місці.",
+          "R": "Ось що каже {{divine_name:ГОСПОДЬ|Ягве}} Вседержитель, Бог Ізраїля: Змініть те, як ви живете, і те, що ви робите. Тоді {{deity_pronoun:я|Я}} дам вам і далі жити на цьому місці."
         }
       },
       "decisions": [
@@ -752,6 +1003,27 @@
           "reason": "The full title is set before the verb, as Amharic puts the subject; the parts keep the terms lists' forms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070030071",
+            "o240070030081",
+            "o240070030092"
+          ],
+          "choice": "heitivu darkheikhem uma'aleleikhem \"あなたがたの道とあなたがたの行いを良くせよ\" (L), \"生き方と行いを改めなさい\" (B), \"生き方と、していることを改めなさい\" (R); the same words in 7:5, 18:11, 26:13, 35:15.",
+          "alternatives": [],
+          "reason": "Literal keeps \"make good\" and \"ways\"; Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -826,6 +1098,26 @@
           "L": "‘{{divine_name:የእግዚአብሔር|የያህዌ}} መቅደስ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} መቅደስ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} መቅደስ እነዚህ ናቸው’ በሚለው በሐሰት ቃል አትታመኑ።",
           "B": "ሰዎች ‘ይህ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤተ መቅደስ ነው፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤተ መቅደስ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤተ መቅደስ!’ ሲሉ በሚያታልል ቃል አትታመኑ።",
           "R": "ሰዎች ደጋግመው በሚሉት ውሸት አትታመኑ፦ ‘ይህ ስፍራ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤተ መቅደስ ነው፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤተ መቅደስ፣ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤተ መቅደስ!’"
+        },
+        "hi": {
+          "L": "झूठ के वचनों पर भरोसा मत रखो, जो कहते हैं, \"{{divine_name:प्रभु|याहवे}} का मन्दिर, {{divine_name:प्रभु|याहवे}} का मन्दिर, {{divine_name:प्रभु|याहवे}} का मन्दिर ये [हैं]।\"",
+          "B": "जब लोग कहते हैं, \"यह {{divine_name:प्रभु|याहवे}} का मन्दिर है, {{divine_name:प्रभु|याहवे}} का मन्दिर, {{divine_name:प्रभु|याहवे}} का मन्दिर!\" तो इन धोखे के वचनों पर भरोसा मत रखो।",
+          "R": "उस झूठ पर भरोसा मत करो जिसे लोग बार-बार दोहराते हैं: \"यह जगह {{divine_name:प्रभु|याहवे}} का मन्दिर है, {{divine_name:प्रभु|याहवे}} का मन्दिर, {{divine_name:प्रभु|याहवे}} का मन्दिर!\""
+        },
+        "ru": {
+          "L": "Не надейтесь на слова лжи, говоря: ‘Храм {{divine_name:ГОСПОДА|Яхве}}, храм {{divine_name:ГОСПОДА|Яхве}}, храм {{divine_name:ГОСПОДА|Яхве}} — это.’",
+          "B": "Не надейтесь на обманчивые слова, когда люди говорят: ‘Это храм {{divine_name:ГОСПОДА|Яхве}}, храм {{divine_name:ГОСПОДА|Яхве}}, храм {{divine_name:ГОСПОДА|Яхве}}!’",
+          "R": "Не верьте лжи, которую люди всё время повторяют: ‘Это место — храм {{divine_name:ГОСПОДА|Яхве}}, храм {{divine_name:ГОСПОДА|Яхве}}, храм {{divine_name:ГОСПОДА|Яхве}}!’"
+        },
+        "ja": {
+          "L": "「{{divine_name:主|ヤハウェ}}の神殿、{{divine_name:主|ヤハウェ}}の神殿、{{divine_name:主|ヤハウェ}}の神殿だ、これらは」という偽りの言葉に頼るな。",
+          "B": "「これは{{divine_name:主|ヤハウェ}}の神殿だ、{{divine_name:主|ヤハウェ}}の神殿だ、{{divine_name:主|ヤハウェ}}の神殿だ」と言う人々の、偽りの言葉に頼ってはならない。",
+          "R": "人々が繰り返し言っている「ここは{{divine_name:主|ヤハウェ}}の神殿だ、{{divine_name:主|ヤハウェ}}の神殿だ、{{divine_name:主|ヤハウェ}}の神殿だ！」といううそを、信じてはいけない。"
+        },
+        "uk": {
+          "L": "Не покладайтеся на слова неправди, кажучи: «Храм {{divine_name:ГОСПОДА|Ягве}}, храм {{divine_name:ГОСПОДА|Ягве}}, храм {{divine_name:ГОСПОДА|Ягве}} — це».",
+          "B": "Не покладайтеся на оманливі слова, коли люди кажуть: «Це храм {{divine_name:ГОСПОДА|Ягве}}, храм {{divine_name:ГОСПОДА|Ягве}}, храм {{divine_name:ГОСПОДА|Ягве}}!»",
+          "R": "Не вірте брехні, яку люди повторюють знову й знову: «Це місце — храм {{divine_name:ГОСПОДА|Ягве}}, храм {{divine_name:ГОСПОДА|Ягве}}, храм {{divine_name:ГОСПОДА|Ягве}}!»"
         }
       },
       "decisions": [
@@ -912,6 +1204,73 @@
           "reason": "Sheqer as the terms note sets it for Spanish (7:4, 8). The slogan is quoted inside the message, so it takes ‘ ’.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070040081",
+            "o240070040091"
+          ],
+          "choice": "{{divine_name:प्रभु|याहवे}} का मन्दिर, three times",
+          "alternatives": [],
+          "reason": "The slogan keeps the same three words three times at every level, as the Hebrew does (m1); hekhal is मन्दिर, as the history note sets it. Literal keeps \"these [are]\" (ये [हैं]) at the end, pointing to the temple buildings (m2); Balanced and Readable put the pointing word first, as the English does. Balanced puts the slogan before the command, since Hindi ends the sentence with its verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070040081",
+            "o240070040101",
+            "o240070040121"
+          ],
+          "choice": "храм ГОСПОДА, three times at every level",
+          "alternatives": [
+            "храм Господень",
+            "дом ГОСПОДА"
+          ],
+          "reason": "Hekhal is храм; the threefold cry is kept whole at every level, as the English keeps it, so the reader hears the people's empty repetition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070040081",
+            "o240070040091",
+            "o240070040101",
+            "o240070040121",
+            "o240070040141"
+          ],
+          "choice": "heikhal YHWH \"{D}の神殿\" at every level, three times as a chanted slogan; Literal keeps hemmah at the end (\"…だ、これらは\").",
+          "alternatives": [],
+          "reason": "The repetition is the point (m1); \"神殿\" for heikhal as in 2 Kings.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -990,6 +1349,26 @@
           "L": "መንገዳችሁንና ሥራችሁን በእርግጥ ብታሳምሩ፣ በሰውና በባልንጀራው መካከል በእርግጥ ፍርድን ብታደርጉ፣",
           "B": "መንገዳችሁንና ሥራችሁን በእውነት ብታስተካክሉ፣ እርስ በርሳችሁም በእውነት በፍትሕ ብትሠሩ፣",
           "R": "አኗኗራችሁንና የምታደርጉትን ነገር በእውነት መለወጥ አለባችሁ። እርስ በርሳችሁም ፍትሐዊ መሆን አለባችሁ።"
+        },
+        "hi": {
+          "L": "क्योंकि यदि तुम सचमुच अपनी चाल और अपने काम सुधारो, यदि तुम सचमुच हर एक और उसके पड़ोसी के बीच न्याय करो,",
+          "B": "यदि तुम सचमुच अपने चालचलन और अपने कामों को सुधारो, यदि तुम सचमुच एक-दूसरे के साथ न्याय का व्यवहार करो,",
+          "R": "तुम्हें सचमुच अपने जीने का ढंग और अपने काम बदलने होंगे। तुम्हें एक-दूसरे के साथ न्याय करना होगा।"
+        },
+        "ru": {
+          "L": "Ведь если вы действительно исправите ваши пути и ваши дела, если действительно будете творить правосудие между человеком и его ближним,",
+          "B": "Если вы на самом деле измените к лучшему ваши пути и ваши дела, если действительно будете поступать друг с другом справедливо,",
+          "R": "Вы должны по-настоящему изменить то, как вы живёте и что вы делаете. Вы должны быть справедливы друг к другу."
+        },
+        "ja": {
+          "L": "もしあなたがたが、自分の道と行いを本当に良くし、人とその隣人との間で本当に公正を行い、",
+          "B": "もしあなたがたが、生き方と行いを本当に改め、互いの間で本当に公正を行い、",
+          "R": "あなたたちは、生き方と、していることを、本当に改めなければならない。互いに公平にふるまわなければならない。"
+        },
+        "uk": {
+          "L": "Бо якщо ви справді виправите ваші дороги і ваші вчинки, якщо справді чинитимете правосуддя між кожним і його ближнім,",
+          "B": "Якщо ви справді зміните на краще свої дороги і свої дії, якщо справді будете справедливі одне до одного,",
+          "R": "Ви мусите справді змінити те, як живете, і те, що робите. Ви мусите бути чесні одне з одним."
         }
       },
       "decisions": [
@@ -1062,6 +1441,47 @@
             "| Verses 5-7 are one conditional sentence. Korean keeps each verse's conditions after its own marker, leaving the clause open (행한다면, ... 않는다면,) until verse 7 gives the result; Readable, as the English, turns the conditions into commands."
           ],
           "reason": "|",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o240070050021",
+            "o240070050031",
+            "o240070050041",
+            "o240070050101",
+            "o240070050111"
+          ],
+          "choice": "The long condition of 7:5-6 is kept open with \"もし…、\" (7:5) and \"…なら、\" (7:6), and its result comes in 7:7, so each verse keeps its own content in its own record.",
+          "alternatives": [],
+          "reason": "Japanese puts the condition first, as the Hebrew does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070050121",
+            "o240070050141",
+            "o240070050161"
+          ],
+          "choice": "mishpat \"公正\" (L, B), \"公平にふるまう\" (R, the English R \"be fair\").",
+          "alternatives": [],
+          "reason": "JER / ISA conventions let Readable say 公平 for fairness between people.",
           "uncertain": false,
           "footnote": false
         }
@@ -1146,6 +1566,26 @@
           "L": "መጻተኛውን፣ ድሀ አደጉንና መበለቲቱን ባታስጨንቁ፣ በዚህም ስፍራ ንጹሕ ደምን ባታፈስሱ፣ ለጉዳታችሁም ሌሎችን አማልክት ባትከተሉ፣",
           "B": "መጻተኛውን፣ አባት የሌለውን ልጅና መበለቲቱን ባትጨቁኑ፣ በዚህ ስፍራ ንጹሕ ደም ባታፈስሱ፣ ለራሳችሁ ጥፋትም ሌሎችን አማልክት ባትከተሉ፣",
           "R": "እንግዶችን፣ አባታቸው የሞተባቸውን ልጆች ወይም መበለቶችን አትበድሉ። በዚህ ስፍራ ንጹሐን ሰዎችን አትግደሉ። ሌሎችን አማልክት አትከተሉ፤ ይህ ጉዳት ብቻ ያመጣባችኋልና።"
+        },
+        "hi": {
+          "L": "[यदि] तुम परदेशी, अनाथ और विधवा पर अंधेर न करो, और इस स्थान में निर्दोष का लहू न बहाओ, और अपनी हानि के लिए दूसरे देवताओं के पीछे न चलो,",
+          "B": "यदि तुम परदेशी, अनाथ बच्चे और विधवा पर अत्याचार न करो, और इस स्थान में निर्दोष का लहू न बहाओ, और अपने ही विनाश के लिए दूसरे देवताओं के पीछे न चलो,",
+          "R": "परदेशियों पर, उन बच्चों पर जिनके पिता मर चुके हैं, और विधवाओं पर अत्याचार मत करो। इस स्थान में निर्दोष लोगों को मत मारो। दूसरे देवताओं के पीछे मत चलो, क्योंकि उससे तुम्हारी ही हानि होगी।"
+        },
+        "ru": {
+          "L": "[если] пришельца, сироту и вдову не будете притеснять, и невинной крови не будете проливать на этом месте, и вслед других богов не будете ходить себе на беду,",
+          "B": "если не будете притеснять пришельца, сироту и вдову, не будете проливать невинной крови на этом месте и не пойдёте за другими богами себе на погибель,",
+          "R": "Не обижайте чужеземцев, детей, у которых умер отец, и вдов. Не убивайте невинных людей на этом месте. Не ходите за другими богами, потому что это принесёт вам только вред."
+        },
+        "ja": {
+          "L": "寄留者、みなしご、やもめを虐げず、この場所で罪のない者の血を流さず、ほかの神々の後に歩んで自らに災いを招くことをしないなら、",
+          "B": "寄留者やみなしごややもめを虐げず、この場所で罪のない者の血を流さず、ほかの神々に従って自ら破滅を招くことをしないなら、",
+          "R": "よそから来た人や、父親のいない子どもや、やもめを、ひどい目にあわせてはいけない。この場所で、罪のない人を殺してはいけない。ほかの神々に従ってはいけない。そんなことをすれば、自分に害を招くだけだ。"
+        },
+        "uk": {
+          "L": "[якщо] не будете гнобити приходька, сироту і вдову, і не проливатимете невинної крові на цьому місці, і не ходитимете за іншими богами на свою шкоду,",
+          "B": "якщо не будете гнобити приходька, сироту і вдову, не проливатимете невинної крові на цьому місці й не ходитимете за іншими богами собі на погибель,",
+          "R": "Не кривдьте чужинців, дітей, у яких помер батько, і вдів. Не вбивайте невинних людей на цьому місці. Не ходіть за іншими богами, бо це принесе вам тільки лихо."
         }
       },
       "decisions": [
@@ -1340,6 +1780,73 @@
           "reason": "For the whole book: the ger (m1) is \"o imigrante\", the word Deuteronomy 24:17 uses in Portuguese at every level, kept apart from \"estrangeiro\" for other words, as the English keeps \"foreigner\" apart (r-en-1). The fatherless are \"o órfão\" at Literal and Balanced, as in Isaiah 1:17, and Readable explains the word, as there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070060011",
+            "o240070060021"
+          ],
+          "choice": "परदेशी; अनाथ (L), अनाथ बच्चा (B), जिन बच्चों के पिता मर चुके हैं (R)",
+          "alternatives": [],
+          "reason": "The ger is परदेशी, as the Pentateuch note sets it; the fatherless are worded at each level as Isaiah 1:17 has them in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070060011",
+            "o240070060021"
+          ],
+          "choice": "пришелец (L, B), чужеземец (R); сирота (L, B), ребёнок, у которого умер отец (R)",
+          "alternatives": [
+            "чужестранец",
+            "иноземец"
+          ],
+          "reason": "The ger in the Pentateuch note's wording; Readable says who the fatherless are, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070060011",
+            "o240070060021",
+            "o240070060031",
+            "o240070060032"
+          ],
+          "choice": "ger \"寄留者\" (L, B), \"よそから来た人\" (R); yatom \"みなしご\" (L, B), \"父親のいない子ども\" (R); 'almanah \"やもめ\", as the ISA conventions (the English B \"outsider\" is not followed at B).",
+          "alternatives": [
+            "外国人"
+          ],
+          "reason": "The book-wide forms for the three protected groups (also 22:3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1418,6 +1925,26 @@
           "L": "በዚህ ስፍራ፣ ከጥንት ጀምሮ እስከ ዘላለም ለአባቶቻችሁ በሰጠኋት ምድር አኖራችኋለሁ።",
           "B": "በዚህ ስፍራ፣ ከብዙ ዘመን በፊት ለዘላለም ለአባቶቻችሁ በሰጠኋት ምድር መኖራችሁን እንድትቀጥሉ አደርጋለሁ።",
           "R": "እነዚህን ብታደርጉ በዚህ ስፍራ እንድትኖሩ አደርጋለሁ። ይህች ለዘላለም የእነርሱ እንድትሆን ከብዙ ዘመን በፊት ለቀድሞ አባቶቻችሁ የሰጠኋት ምድር ናት።"
+        },
+        "hi": {
+          "L": "तो मैं तुम्हें इस स्थान में, उस देश में जो मैंने प्राचीन काल से तुम्हारे पुरखाओं को सदा के लिए दिया था, बसने दूँगा।",
+          "B": "तो मैं तुम्हें इस स्थान में, उस देश में जो मैंने बहुत पहले तुम्हारे पूर्वजों को सदा के लिए दिया था, रहते रहने दूँगा।",
+          "R": "यदि तुम ये बातें करोगे, तो मैं तुम्हें इस स्थान में रहने दूँगा। यह वही देश है जो मैंने बहुत पहले तुम्हारे पूर्वजों को सदा के लिए उनका अपना होने को दिया था।"
+        },
+        "ru": {
+          "L": "тогда {{deity_pronoun:я|Я}} дам вам жить на этом месте, в земле, которую {{deity_pronoun:я|Я}} дал вашим отцам от века и до века.",
+          "B": "тогда {{deity_pronoun:я|Я}} позволю вам и дальше жить здесь, на этом месте, в земле, которую {{deity_pronoun:я|Я}} издавна дал вашим предкам навсегда.",
+          "R": "Если вы будете это делать, {{deity_pronoun:я|Я}} позволю вам жить на этом месте. Это земля, которую {{deity_pronoun:я|Я}} давно дал вашим предкам, чтобы она была их навсегда."
+        },
+        "ja": {
+          "L": "そのとき、わたしはあなたがたをこの場所に、すなわち、わたしがいにしえからとこしえまで、あなたがたの先祖たちに与えたこの地に住まわせる。",
+          "B": "そうすれば、わたしはあなたがたをこの場所に住み続けさせる。わたしが遠い昔にあなたがたの先祖に与え、永遠に彼らのものとした、この地に。",
+          "R": "これらのことを行うなら、わたしはあなたたちを、この場所に住まわせる。ここは、わたしが昔、あなたたちの先祖に与えた土地で、いつまでも彼らのものとして与えた土地だ。"
+        },
+        "uk": {
+          "L": "то {{deity_pronoun:я|Я}} дам вам жити на цьому місці, у землі, яку {{deity_pronoun:я|Я}} дав вашим батькам від віку і навіки.",
+          "B": "тоді {{deity_pronoun:я|Я}} дам вам і далі жити тут, на цьому місці, у землі, яку {{deity_pronoun:я|Я}} віддавна дав вашим предкам на всі часи.",
+          "R": "Якщо ви так чинитимете, {{deity_pronoun:я|Я}} дам вам жити на цьому місці. Це земля, яку {{deity_pronoun:я|Я}} давно дав вашим предкам, щоб вона була їхня навіки."
         }
       },
       "decisions": [
@@ -1527,6 +2054,47 @@
           "reason": "As the English moves from \"fathers\" to \"ancestors\"; Vietnamese \"tổ tiên\" already includes both men and women, so no gender span is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070070082"
+          ],
+          "choice": "पूर्वज at every level",
+          "alternatives": [],
+          "reason": "Hindi पूर्वज (forebears) already includes the earlier generations of women and men, and serves the English \"fathers\" (L) and \"ancestors\" (B, R); there is no gender span here in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o240070070101",
+            "o240070070121"
+          ],
+          "choice": "lemin-'olam ve'ad-'olam is joined to the gift of the land (m1): \"わたしがいにしえからとこしえまで…与えた\" (L), \"遠い昔に…与え、永遠に彼らのものとした\" (B), \"昔…与えた…いつまでも彼らのものとして\" (R).",
+          "alternatives": [
+            "とこしえに住まわせる"
+          ],
+          "reason": "The meaning decision reads the phrase with \"gave\", not with \"dwell\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1596,6 +2164,26 @@
           "L": "እነሆ፣ በማይጠቅም በሐሰት ቃል ትታመናላችሁ።",
           "B": "እናንተ ግን ምንም በማይረባ በሚያታልል ቃል ትታመናላችሁ።",
           "R": "ነገር ግን ራሳችሁን ተመልከቱ! ሊረዳችሁ በማይችል ውሸት ትታመናላችሁ።"
+        },
+        "hi": {
+          "L": "देखो, तुम झूठ के वचनों पर भरोसा रखते हो, जिनसे कुछ लाभ नहीं।",
+          "B": "पर देखो, तुम धोखे के वचनों पर भरोसा रखते हो, जो किसी काम के नहीं।",
+          "R": "पर अपने आप को देखो! तुम ऐसे झूठ पर भरोसा करते हो जो तुम्हारी कोई सहायता नहीं कर सकता।"
+        },
+        "ru": {
+          "L": "Вот, вы надеетесь на слова лжи, которые не приносят пользы.",
+          "B": "Но вот, вы надеетесь на обманчивые слова, которые ничего не стоят.",
+          "R": "Но посмотрите на себя! Вы верите лжи, которая не может вам помочь."
+        },
+        "ja": {
+          "L": "見なさい、あなたがたは、役に立たない偽りの言葉に頼っている。",
+          "B": "ところが見なさい、あなたがたは、何の益にもならない偽りの言葉に頼っている。",
+          "R": "それなのに、あなたたちを見てみなさい！あなたたちは、何の助けにもならないうそを信じている。"
+        },
+        "uk": {
+          "L": "Ось ви покладаєтеся на слова неправди, що не дають користі.",
+          "B": "Але ось ви покладаєтеся на оманливі слова, які нічого не варті.",
+          "R": "Але подивіться на себе! Ви вірите брехні, яка не може вам допомогти."
         }
       },
       "decisions": [
@@ -1709,6 +2297,26 @@
           "L": "ትሰርቃላችሁ፣ ትገድላላችሁ፣ ታመነዝራላችሁ፣ በሐሰትም ትምላላችሁ፣ ለበኣልም ታጥናላችሁ፣ የማታውቋቸውንም ሌሎችን አማልክት ትከተላላችሁ፤",
           "B": "ትሰርቃላችሁ፤ ትገድላላችሁ፤ ታመነዝራላችሁ፤ በሐሰት ትምላላችሁ፤ ለበኣል ዕጣን ታጥናላችሁ፤ ከቶ የማታውቋቸውንም ሌሎችን አማልክት ትከተላላችሁ፤",
           "R": "ትሰርቃላችሁ፤ ትገድላላችሁ፤ ታመነዝራላችሁም። በሐሰት ትምላላችሁ። በኣል ለተባለው አምላክ ዕጣን ታጥናላችሁ፤ ከዚህ በፊት የማታውቋቸውን ሌሎችን አማልክትም ትከተላላችሁ።"
+        },
+        "hi": {
+          "L": "क्या [तुम] चोरी, हत्या और व्यभिचार करोगे, और झूठी शपथ खाओगे, और बाल के लिए धूप जलाओगे, और दूसरे देवताओं के पीछे चलोगे जिन्हें तुमने नहीं जाना,",
+          "B": "क्या तुम चोरी करोगे, हत्या करोगे, व्यभिचार करोगे, झूठी शपथ खाओगे, बाल के लिए धूप जलाओगे, और उन दूसरे देवताओं के पीछे चलोगे जिन्हें तुमने कभी नहीं जाना,",
+          "R": "तुम चोरी करते हो, हत्या करते हो और व्यभिचार करते हो। तुम झूठी शपथ खाते हो। तुम बाल देवता के लिए धूप जलाते हो और उन दूसरे देवताओं के पीछे चलते हो जिन्हें तुम पहले कभी नहीं जानते थे।"
+        },
+        "ru": {
+          "L": "Будете [вы] красть, убивать и прелюбодействовать, и клясться ложно, и воскурять Ваалу, и ходить вслед других богов, которых вы не знали,",
+          "B": "Неужели вы будете красть, убивать, прелюбодействовать, клясться ложно, воскурять Ваалу и ходить за другими богами, которых вы никогда не знали,",
+          "R": "Вы крадёте, убиваете и изменяете своим жёнам и мужьям. Вы даёте ложные клятвы. Вы сжигаете благовония богу Ваалу и ходите за другими богами, которых раньше не знали."
+        },
+        "ja": {
+          "L": "盗み、殺し、姦淫し、偽って誓い、バアルに香をたき、あなたがたが知らなかったほかの神々の後に歩みながら、",
+          "B": "あなたがたは盗み、殺し、姦淫し、偽りの誓いを立て、バアルに香をたき、知りもしなかったほかの神々に従っておきながら、",
+          "R": "あなたたちは盗み、人を殺し、姦淫を犯している。うその誓いを立て、バアルという神に香をたき、今まで知らなかったほかの神々に従っている。"
+        },
+        "uk": {
+          "L": "Чи [ви] крастимете, вбиватимете і чинитимете перелюб, і присягатимете неправдиво, і кадитимете Ваалові, і ходитимете за іншими богами, яких ви не знали,",
+          "B": "Невже ви крадете, вбиваєте, чините перелюб, присягаєте неправдиво, кадите Ваалові й ходите за іншими богами, яких ніколи не знали,",
+          "R": "Ви крадете, вбиваєте і чините перелюб. Ви присягаєте неправдиво. Ви палите ладан богові Ваалу і ходите за іншими богами, яких раніше ніколи не знали."
         }
       },
       "decisions": [
@@ -1816,6 +2424,30 @@
           "reason": "The list recalls the Ten Commandments, so the verbs are those of Exodus 20 on main (steal, murder, commit adultery, swear falsely).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o240070090011",
+            "o240070090012",
+            "o240070090021",
+            "o240070090032",
+            "o240070090042",
+            "o240070090062",
+            "o240070090082"
+          ],
+          "choice": "The indignant question of 7:9-10 runs across the verse boundary as one sentence (\"…ながら、\" / \"…ておきながら、\" then 7:10 \"…というのか？\" / \"…のか？\"); Readable makes 7:9 statements and asks the question in 7:10, as the English R.",
+          "alternatives": [],
+          "reason": "Each verse keeps its own words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1901,6 +2533,26 @@
           "L": "ከዚያም መጥታችሁ ስሜ በተጠራበት በዚህ ቤት በፊቴ ትቆማላችሁ፤ ‘ድነናል!’ ትላላችሁ፤ ይህንም ሁሉ አስጸያፊ ነገር ለማድረግ ነውን?",
           "B": "ከዚያም መጥታችሁ ስሜ በሚጠራበት በዚህ ቤት በፊቴ ትቆማላችሁ፤ ‘ደኅና ነን!’ ትላላችሁ፤ ይህም እነዚህን አስጸያፊ ነገሮች ሁሉ ማድረጋችሁን እንድትቀጥሉ ነውን?",
           "R": "ከዚያም መጥታችሁ ስሜ በሚጠራበት በዚህ ቤተ መቅደስ በፊቴ ትቆማላችሁ፤ ‘ደኅና ነን!’ ትላላችሁ። እነዚህን አስጸያፊ ነገሮች ሁሉ ማድረጋችሁን እንድትቀጥሉ ደኅና የሆናችሁ ይመስላችኋልን?"
+        },
+        "hi": {
+          "L": "और [फिर] आकर इस भवन में, जो मेरे नाम से कहलाता है, मेरे सामने खड़े होकर कहोगे, \"हम छुड़ाए गए!\" ताकि ये सब घृणित काम करते रहो?",
+          "B": "और फिर इस भवन में, जिस पर मेरा नाम है, मेरे सामने आकर खड़े होगे और कहोगे, \"हम सुरक्षित हैं!\", बस इसलिए कि ये सब घिनौने काम करते रहो?",
+          "R": "फिर तुम इस मन्दिर में, जिस पर मेरा नाम है, आकर मेरे सामने खड़े होते हो, और कहते हो, \"हम सुरक्षित हैं!\" क्या तुम सोचते हो कि तुम सुरक्षित हो, ताकि ये सब घिनौने काम करते रहो?"
+        },
+        "ru": {
+          "L": "и [потом] приходить и стоять передо {{deity_pronoun:мной|Мной}} в этом доме, над которым наречено {{deity_pronoun:моё|Моё}} имя, и говорить: ‘Мы спасены!’ — чтобы делать все эти мерзости?",
+          "B": "а потом приходить и стоять передо {{deity_pronoun:мной|Мной}} в этом доме, который носит {{deity_pronoun:моё|Моё}} имя, и говорить: ‘Мы в безопасности!’ — только для того, чтобы и дальше делать все эти мерзости?",
+          "R": "Потом вы приходите и стоите передо {{deity_pronoun:мной|Мной}} в этом храме, который носит {{deity_pronoun:моё|Моё}} имя, и говорите: ‘Мы в безопасности!’ Неужели вы думаете, что вы в безопасности и можете и дальше делать все эти отвратительные дела?"
+        },
+        "ja": {
+          "L": "そして、わたしの名で呼ばれているこの家に来て、わたしの前に立ち、「わたしたちは救い出された」と言い、それでこれらすべての忌み嫌うべきことを行うというのか？",
+          "B": "それから、わたしの名がつけられたこの家に来て、わたしの前に立ち、「わたしたちは安全だ」と言う。そして、これらの忌まわしいことを、すべて行い続けるのか？",
+          "R": "それから、わたしの名がつけられたこの神殿に来て、わたしの前に立ち、「わたしたちは安全だ！」と言う。安全だと思って、わたしが憎むこういうことを、すべてやり続けるつもりなのか？"
+        },
+        "uk": {
+          "L": "і [потім] приходите й стаєте переді {{deity_pronoun:мною|Мною}} в цьому домі, що названий {{deity_pronoun:моїм|Моїм}} іменем, і кажете: «Ми врятовані!» — щоб чинити всі ці гидоти?",
+          "B": "а потім приходите й стаєте переді {{deity_pronoun:мною|Мною}} в цьому домі, що носить {{deity_pronoun:моє|Моє}} імʼя, і кажете: «Ми в безпеці!» — щоб і далі чинити всі ці гидоти?",
+          "R": "Потім ви приходите й стаєте переді {{deity_pronoun:мною|Мною}} в цьому храмі, що носить {{deity_pronoun:моє|Моє}} імʼя, і кажете: «Ми в безпеці!» Невже ви думаєте, що ви в безпеці, щоб і далі чинити всі ці огидні речі?"
         }
       },
       "decisions": [
@@ -2048,6 +2700,58 @@
           "reason": "For the whole book (verses 11, 14, 30; 25:29; 32:34; 34:15): the phrase that marks the temple as God's own (m1) is \"chamada pelo meu nome\" at Literal and \"que leva o meu nome\" at Balanced and Readable, as the English Balanced says \"that bears my name\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070100071",
+            "o240070100081",
+            "o240070100091",
+            "o240070100041",
+            "o240070100042",
+            "o240070100051",
+            "o240070100052",
+            "o240070100061",
+            "o240070100082",
+            "o240070100092"
+          ],
+          "choice": "habbayit hazzeh 'asher niqra' shemi 'alav \"わたしの名で呼ばれているこの家\" (L), \"わたしの名がつけられたこの家\" (B), \"…この神殿\" (R); the same forms in 7:11, 7:14, 7:30 and later (25:29, 32:34, 34:15).",
+          "alternatives": [
+            "わたしの名が置かれた家"
+          ],
+          "reason": "Literal keeps \"called by my name\"; Balanced and Readable \"bears my name\" as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070100111",
+            "o240070100121",
+            "o240070100131",
+            "o240070100162"
+          ],
+          "choice": "nitsalnu \"わたしたちは救い出された\" (L, hatsil as 1:8), \"わたしたちは安全だ\" (B, R, the English \"We are safe\"); to'evot \"忌み嫌うべきこと\" (L), \"忌まわしいこと\" (B), \"わたしが憎むこと\" (R), as the JER conventions.",
+          "alternatives": [],
+          "reason": "Balanced and Readable say what the people mean by the cry.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2128,6 +2832,26 @@
           "L": "ስሜ የተጠራበት ይህ ቤት በዓይናችሁ የወንበዴዎች ዋሻ ሆኗልን? እኔም ደግሞ፣ እነሆ፣ አይቻለሁ፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "B": "ስሜ የሚጠራበት ይህ ቤት በዓይናችሁ የወንበዴዎች መደበቂያ ሆኗልን? እኔ ራሴ አይቻለሁ፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።",
           "R": "ስሜ የሚጠራበት ይህ ቤተ መቅደስ ወንበዴዎች የሚደበቁበት ስፍራ ይመስላችኋልን? የምታደርጉትን አይቻለሁ፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}።"
+        },
+        "hi": {
+          "L": "क्या यह भवन, जो मेरे नाम से कहलाता है, तुम्हारी दृष्टि में डाकुओं की खोह बन गया है? मैंने भी, देखो, [यह] देखा है, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "B": "क्या यह भवन, जिस पर मेरा नाम है, तुम्हारी दृष्टि में डाकुओं का अड्डा बन गया है? मैंने स्वयं यह देखा है, {{divine_name:प्रभु|याहवे}} की यह वाणी है।",
+          "R": "क्या तुम सोचते हो कि यह मन्दिर, जिस पर मेरा नाम है, ऐसी जगह है जहाँ डाकू छिपते हैं? मैंने देखा है कि तुम क्या कर रहे हो, {{divine_name:प्रभु|याहवे}} कहते हैं।"
+        },
+        "ru": {
+          "L": "Не стал ли этот дом, над которым наречено {{deity_pronoun:моё|Моё}} имя, пещерой разбойников в ваших глазах? И {{deity_pronoun:я|Я}}, вот, {{deity_pronoun:я|Я}} видел [это], — слово {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Неужели этот дом, который носит {{deity_pronoun:моё|Моё}} имя, стал в ваших глазах логовом разбойников? Я сам видел это, — говорит {{divine_name:ГОСПОДЬ|Яхве}}.",
+          "R": "Неужели вы думаете, что этот храм, который носит {{deity_pronoun:моё|Моё}} имя, — место, где прячутся разбойники? Я видел, что вы делаете, — говорит {{divine_name:ГОСПОДЬ|Яхве}}."
+        },
+        "ja": {
+          "L": "わたしの名で呼ばれているこの家は、あなたがたの目には強盗たちの洞穴になったのか？わたしもまた、見なさい、[それを]見た。――{{divine_name:主|ヤハウェ}}の言葉――",
+          "B": "わたしの名がつけられたこの家が、あなたがたの目には盗賊の隠れ家になってしまったのか？わたし自身も、それを見ている、と{{divine_name:主|ヤハウェ}}は告げる。",
+          "R": "わたしの名がつけられたこの神殿を、あなたたちは、強盗が隠れる場所だとでも思っているのか？わたしは、あなたたちがしていることを見てきた、と{{divine_name:主|ヤハウェ}}は言う。"
+        },
+        "uk": {
+          "L": "Чи цей дім, що названий {{deity_pronoun:моїм|Моїм}} іменем, став вертепом розбійників у ваших очах? І {{deity_pronoun:я|Я}} теж, ось, бачив [це], говорить {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "B": "Невже цей дім, що носить {{deity_pronoun:моє|Моє}} імʼя, став у ваших очах кублом розбійників? Я сам це бачив, говорить {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "R": "Невже ви думаєте, що цей храм, який носить {{deity_pronoun:моє|Моє}} імʼя, — місце, де ховаються розбійники? Я бачив, що ви робите, каже {{divine_name:ГОСПОДЬ|Ягве}}."
         }
       },
       "decisions": [
@@ -2343,6 +3067,89 @@
           "reason": "Jesus quotes these words in the temple (Matthew 21:13; Mark 11:17; Luke 19:46). The Hebrew agrees with the Greek, so the Amharic keeps the Amharic New Testament's wording at each level. \"This house which is called by my name\" is \"ስሜ የተጠራበት ይህ ቤት\" (Literal), \"ስሜ የሚጠራበት\" (Balanced, Readable), through 7:10-30.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"вертеп розбійників\" (L), \"кубло розбійників\" (B)",
+          "alternatives": [
+            "печера розбійників"
+          ],
+          "reason": "The Literal keeps the phrase readers know from Matthew 21:13; the Balanced says it plainly as a robbers' hideout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070110012",
+            "o240070110021"
+          ],
+          "choice": "डाकुओं की खोह (L); डाकुओं का अड्डा (B); ऐसी जगह जहाँ डाकू छिपते हैं (R)",
+          "alternatives": [],
+          "reason": "Jesus quotes this line in the temple (Matthew 21:13; Mark 11:17; Luke 19:46). Each level keeps the wording Matthew 21:13 and Mark 11:17 have at that level in this translation, so that a reader sees the quotation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070110012",
+            "o240070110021"
+          ],
+          "choice": "пещера разбойников (L); логово разбойников (B); место, где прячутся разбойники (R)",
+          "alternatives": [
+            "вертеп разбойников"
+          ],
+          "reason": "Jesus quotes these words in Matthew 21:13, Mark 11:17 and Luke 19:46; each level uses the wording those verses have in this translation, so the reader sees the quotation, and not the Synodal \"вертеп\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070110021",
+            "o240070110031",
+            "o240070110012"
+          ],
+          "choice": "me'arat paritsim \"強盗たちの洞穴\" (L), \"盗賊の隠れ家\" (B), \"強盗が隠れる場所\" (R): drafted from the Hebrew (a cave where violent men hide between raids, m1), and the same words as Jesus' quotation in Matthew 21:13, Mark 11:17 and Luke 19:46 at each level, so a reader hears the echo.",
+          "alternatives": [
+            "強盗の巣"
+          ],
+          "reason": "The Hebrew and the NT Japanese agree, so the NT wording is kept level by level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2429,6 +3236,26 @@
           "L": "እስኪ አሁን በመጀመሪያ ስሜን ወዳኖርኩበት በሴሎ ወደ ነበረው ስፍራዬ ሂዱ፤ ስለ ሕዝቤ ስለ እስራኤል ክፋት ምን እንዳደረግኩበትም እዩ።",
           "B": "አሁን በመጀመሪያ ስሜ እንዲኖርበት ወዳደረግኩት በሴሎ ወዳለው ስፍራዬ ሂዱ፤ ስለ ሕዝቤ ስለ እስራኤል ክፋት ምን እንዳደረግኩበትም ተመልከቱ።",
           "R": "ሰዎች እኔን እንዲያመልኩበት በመጀመሪያ ወደ መረጥኩት ስፍራ ወደ ሴሎ ሂዱ። ሕዝቤ እስራኤል ስለ ሠሩት ክፉ ነገር ምን እንዳደረግኩበት እዩ።"
+        },
+        "hi": {
+          "L": "क्योंकि अब मेरे उस स्थान को जाओ जो शीलो में [था], जहाँ मैंने पहले अपना नाम बसाया था, और देखो कि अपनी प्रजा इस्राएल की बुराई के कारण मैंने उसके साथ क्या किया।",
+          "B": "अब शीलो में मेरे उस स्थान को जाओ, जहाँ मैंने पहले अपना नाम बसाया था, और देखो कि अपनी प्रजा इस्राएल की दुष्टता के कारण मैंने उसके साथ क्या किया।",
+          "R": "शीलो को जाओ, जहाँ मैंने पहले-पहल एक स्थान चुना था कि लोग वहाँ मेरी आराधना करें। देखो कि मेरी प्रजा इस्राएल के बुरे कामों के कारण मैंने उसके साथ क्या किया।"
+        },
+        "ru": {
+          "L": "Ведь пойдите же на {{deity_pronoun:моё|Моё}} место, которое [было] в Силоме, где {{deity_pronoun:я|Я}} поселил {{deity_pronoun:моё|Моё}} имя прежде, и посмотрите, что {{deity_pronoun:я|Я}} сделал с ним за зло {{deity_pronoun:моего|Моего}} народа Израиля.",
+          "B": "Пойдите же на {{deity_pronoun:моё|Моё}} место в Силоме, где {{deity_pronoun:я|Я}} прежде поселил {{deity_pronoun:моё|Моё}} имя, и посмотрите, что {{deity_pronoun:я|Я}} сделал с ним за нечестие {{deity_pronoun:моего|Моего}} народа Израиля.",
+          "R": "Пойдите в Силом, где {{deity_pronoun:я|Я}} впервые выбрал место, чтобы люди поклонялись {{deity_pronoun:мне|Мне}} там. Посмотрите, что {{deity_pronoun:я|Я}} сделал с ним из-за злых дел {{deity_pronoun:моего|Моего}} народа Израиля."
+        },
+        "ja": {
+          "L": "さあ、シロにあったわたしの場所、わたしが初めにわたしの名を住まわせた所へ行き、わたしの民イスラエルの悪のゆえに、わたしがそこに何をしたかを見よ。",
+          "B": "シロにあったわたしの場所へ行ってみなさい。わたしが初めにわたしの名を住まわせた所だ。わたしの民イスラエルの悪のために、わたしがそこにしたことを見なさい。",
+          "R": "シロへ行ってみなさい。わたしは初め、人々がわたしを礼拝する場所として、そこを選んだ。わたしの民イスラエルがした悪いことのために、わたしがそこに何をしたかを見なさい。"
+        },
+        "uk": {
+          "L": "Бо підіть-но до {{deity_pronoun:мого|Мого}} місця, що [було] в Шило, де {{deity_pronoun:я|Я}} спершу оселив {{deity_pronoun:моє|Моє}} імʼя, і подивіться, що {{deity_pronoun:я|Я}} зробив з ним через зло {{deity_pronoun:мого|Мого}} народу Ізраїля.",
+          "B": "Підіть-но до {{deity_pronoun:мого|Мого}} місця в Шило, де {{deity_pronoun:я|Я}} вперше оселив {{deity_pronoun:моє|Моє}} імʼя, і подивіться, що {{deity_pronoun:я|Я}} зробив з ним через нечестя {{deity_pronoun:мого|Мого}} народу Ізраїля.",
+          "R": "Підіть до Шило, де {{deity_pronoun:я|Я}} вперше вибрав місце, щоб люди поклонялися {{deity_pronoun:мені|Мені}}. Подивіться, що {{deity_pronoun:я|Я}} зробив з ним через зло, яке чинив {{deity_pronoun:мій|Мій}} народ Ізраїль."
         }
       },
       "decisions": [
@@ -2553,6 +3380,47 @@
           "reason": "Shiloh keeps the form of the Joshua-Samuel terms list.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070120072",
+            "o240070120011",
+            "o240070120071"
+          ],
+          "choice": "Shiloh \"シロ\" (JOS, 1SA); ki at the head is not rendered at L as \"なぜなら\" (it marks the appeal, \"さあ\").",
+          "alternatives": [],
+          "reason": "Name as 1 Samuel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"Шило\" for Shiloh, undeclined",
+          "alternatives": [
+            "Сило",
+            "Шіло"
+          ],
+          "reason": "A transcription of the Hebrew name; a reviewer may prefer a traditional form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2640,6 +3508,26 @@
           "L": "አሁንም ይህን ሥራ ሁሉ ስላደረጋችሁ፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ ማልጄም እየተናገርኩ ብናገራችሁ ስላልሰማችሁ፣ ብጠራችሁም ስላልመለሳችሁ፣",
           "B": "አሁንም፣ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፣ ይህን ሁሉ ስላደረጋችሁ፣ ደጋግሜም ብናገራችሁ ስላልሰማችሁ፣ ብጠራችሁም ስላልመለሳችሁ፣",
           "R": "ይህን ሁሉ አድርጋችኋል፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። ደጋግሜ ተናገርኳችሁ፤ እናንተ ግን አልሰማችሁም። ጠራኋችሁ፤ እናንተ ግን አልመለሳችሁም።"
+        },
+        "hi": {
+          "L": "और अब, क्योंकि तुमने ये सब काम किए हैं, {{divine_name:प्रभु|याहवे}} की यह वाणी है, और मैंने तड़के उठ उठकर तुमसे बात की, पर तुमने न सुना, और मैंने तुम्हें बुलाया, पर तुमने उत्तर न दिया,",
+          "B": "और अब, {{divine_name:प्रभु|याहवे}} की यह वाणी है, क्योंकि तुमने ये सब काम किए हैं, और मैंने बार-बार तुमसे बात की पर तुमने सुनना न चाहा, और मैंने तुम्हें बुलाया पर तुमने उत्तर न दिया,",
+          "R": "तुमने ये सब काम किए हैं, {{divine_name:प्रभु|याहवे}} कहते हैं। मैंने बार-बार तुमसे बात की, पर तुमने नहीं सुना। मैंने तुम्हें पुकारा, पर तुमने उत्तर नहीं दिया।"
+        },
+        "ru": {
+          "L": "И теперь, за то, что вы делали все эти дела, — слово {{divine_name:ГОСПОДА|Яхве}}, — и {{deity_pronoun:я|Я}} говорил вам, вставая рано и говоря, а вы не слушали, и {{deity_pronoun:я|Я}} звал вас, а вы не отвечали,",
+          "B": "И теперь, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — за то, что вы делали всё это, и {{deity_pronoun:я|Я}} говорил вам снова и снова, а вы не хотели слушать, и {{deity_pronoun:я|Я}} звал вас, а вы не отвечали,",
+          "R": "Вы сделали всё это, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. Я говорил вам снова и снова, но вы не хотели слушать. Я звал вас, но вы не отвечали."
+        },
+        "ja": {
+          "L": "そして今、あなたがたがこれらすべての行いをしたので――{{divine_name:主|ヤハウェ}}の言葉――、また、わたしがあなたがたに朝早くから語り続けたのに、あなたがたは聞かず、わたしがあなたがたを呼んだのに、あなたがたは答えなかったので、",
+          "B": "そして今、あなたがたはこれらのことをすべて行った、と{{divine_name:主|ヤハウェ}}は告げる。わたしが繰り返し語りかけても、あなたがたは聞こうとせず、わたしが呼んでも答えなかった。",
+          "R": "あなたたちは、こういうことをすべてしてきた、と{{divine_name:主|ヤハウェ}}は言う。わたしは何度も何度もあなたたちに語りかけたが、あなたたちは聞こうとしなかった。わたしはあなたたちを呼んだが、あなたたちは答えなかった。"
+        },
+        "uk": {
+          "L": "І тепер, через те, що ви чинили всі ці вчинки, говорить {{divine_name:ГОСПОДЬ|Ягве}}, і {{deity_pronoun:я|Я}} говорив вам, рано встаючи і говорячи, а ви не слухали, і {{deity_pronoun:я|Я}} кликав вас, а ви не відповідали,",
+          "B": "І тепер, говорить {{divine_name:ГОСПОДЬ|Ягве}}, через те, що ви робили все це, і {{deity_pronoun:я|Я}} говорив вам знову й знову, а ви не хотіли слухати, і {{deity_pronoun:я|Я}} кликав вас, а ви не відповідали,",
+          "R": "Ви робили все це, каже {{divine_name:ГОСПОДЬ|Ягве}}. Я говорив вам раз у раз, але ви не хотіли слухати. Я кликав вас, але ви не відповідали."
         }
       },
       "decisions": [
@@ -2841,6 +3729,107 @@
           "reason": "Jeremiah's idiom \"rising early and speaking / sending\" (7:25; 11:7; 25:3-4; 26:5; 35:14-15) keeps the Hebrew picture at Literal and says \"again and again\" at Balanced and Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"рано встаючи і говорячи\" (L), \"знову й знову\" (B), \"раз у раз\" (R) for \"rising early and speaking/sending\", through the book",
+          "alternatives": [],
+          "reason": "Follows the terms note: the Literal keeps the Hebrew idiom, the others give its sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070130121"
+          ],
+          "choice": "तड़के उठ उठकर (L); बार-बार (B, R)",
+          "alternatives": [],
+          "reason": "\"Rising early and speaking / sending\" means doing it again and again without giving up (m1). Literal keeps the picture, in the wording of 2 Chronicles 36:15; Balanced and Readable give the sense. One wording per level wherever the phrase returns in Jeremiah (7:25; 11:7; 25:3-4 and others).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070130121",
+            "o240070130132"
+          ],
+          "choice": "вставая рано и говоря (L); снова и снова (B, R)",
+          "alternatives": [
+            "неустанно",
+            "с раннего утра",
+            "раз за разом (R)"
+          ],
+          "reason": "The idiom \"rising early and speaking / sending\" returns many times in Jeremiah (7:25; 11:7; 25:3-4; 26:5; 29:19; 35:14-15; 44:4), and each level keeps this wording there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070130121",
+            "o240070130131",
+            "o240070130132"
+          ],
+          "choice": "hashkem vedabber \"朝早くから語り続けた\" (L), \"繰り返し語りかけた\" (B), \"何度も何度も語りかけた\" (R); with shalach (7:25, 25:4, 26:5, 29:19, 35:15, 44:4) \"朝早くから遣わし続けた\" / \"繰り返し遣わした\" / \"何度も遣わした\"; also 7:25, 11:7.",
+          "alternatives": [],
+          "reason": "Literal keeps the idiom; Balanced and Readable say what it means (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o240070130021",
+            "o240070130151",
+            "o240070130191"
+          ],
+          "choice": "Balanced and Readable close the reasons as statements here, and 7:14 opens with \"だから\"; Literal keeps the \"because …\" clause running into 7:14.",
+          "alternatives": [],
+          "reason": "Shorter sentences at B and R.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2929,6 +3918,26 @@
           "L": "ስሜ በተጠራበትና በምትታመኑበት ቤት፣ ለእናንተና ለአባቶቻችሁም በሰጠሁት ስፍራ በሴሎ እንዳደረግኩ አደርጋለሁ።",
           "B": "ስለዚህ ስሜ በሚጠራበት በዚህ ቤት፣ በምትታመኑበት ቤት፣ ለእናንተና ለአባቶቻችሁ በሰጠሁት ስፍራ በሴሎ ያደረግኩትን አደርጋለሁ።",
           "R": "ስለዚህ በሴሎ ያደረግኩትን በዚህ ቤተ መቅደስ አደርጋለሁ። ስሜ የሚጠራበት ነው፤ እናንተም ትታመኑበታላችሁ። ለእናንተና ለቀድሞ አባቶቻችሁ በሰጠሁት ስፍራም እንዲሁ አደርጋለሁ።"
+        },
+        "hi": {
+          "L": "तो जो भवन मेरे नाम से कहलाता है, जिस पर तुम भरोसा रखते हो, और जो स्थान मैंने तुम्हें और तुम्हारे पुरखाओं को दिया, उसके साथ मैं वैसा ही करूँगा जैसा मैंने शीलो के साथ किया।",
+          "B": "इसलिए जो भवन मेरे नाम का है, जिस पर तुम भरोसा रखते हो, और जो स्थान मैंने तुम्हें और तुम्हारे पूर्वजों को दिया, उसके साथ मैं वही करूँगा जो मैंने शीलो के साथ किया।",
+          "R": "इसलिए मैं इस मन्दिर के साथ वही करूँगा जो मैंने शीलो के साथ किया। इस पर मेरा नाम है, और तुम इस पर भरोसा करते हो। जो स्थान मैंने तुम्हें और तुम्हारे पूर्वजों को दिया, उसके साथ भी मैं ऐसा ही करूँगा।"
+        },
+        "ru": {
+          "L": "то {{deity_pronoun:я|Я}} сделаю с домом, над которым наречено {{deity_pronoun:моё|Моё}} имя, на который вы надеетесь, и с местом, которое {{deity_pronoun:я|Я}} дал вам и вашим отцам, так, как {{deity_pronoun:я|Я}} сделал с Силомом.",
+          "B": "то {{deity_pronoun:я|Я}} сделаю с этим домом, который носит {{deity_pronoun:моё|Моё}} имя, с домом, на который вы надеетесь, и с местом, которое {{deity_pronoun:я|Я}} дал вам и вашим предкам, то же, что сделал с Силомом.",
+          "R": "Поэтому {{deity_pronoun:я|Я}} сделаю с этим храмом то же, что сделал с Силомом. Он носит {{deity_pronoun:моё|Моё}} имя, и вы надеетесь на него. Я сделаю то же самое и с местом, которое {{deity_pronoun:я|Я}} дал вам и вашим предкам."
+        },
+        "ja": {
+          "L": "そのとき、わたしは、わたしの名で呼ばれ、あなたがたが頼りにしているこの家に、また、わたしがあなたがたとあなたがたの先祖たちに与えたこの場所に、シロにしたように行う。",
+          "B": "だから、わたしの名がつけられ、あなたがたが頼みとしているこの家に、また、わたしがあなたがたと先祖に与えたこの場所に、わたしはシロにしたのと同じことをする。",
+          "R": "だから、わたしはこの神殿に、シロにしたのと同じことをする。この神殿にはわたしの名がつけられていて、あなたたちはそれを頼りにしている。わたしがあなたたちと先祖に与えたこの場所にも、同じことをする。"
+        },
+        "uk": {
+          "L": "то {{deity_pronoun:я|Я}} зроблю з домом, що названий {{deity_pronoun:моїм|Моїм}} іменем, на який ви покладаєтеся, і з місцем, яке {{deity_pronoun:я|Я}} дав вам і вашим батькам, так, як {{deity_pronoun:я|Я}} зробив із Шило.",
+          "B": "то {{deity_pronoun:я|Я}} зроблю з цим домом, що носить {{deity_pronoun:моє|Моє}} імʼя, з домом, на який ви покладаєтеся, і з місцем, яке {{deity_pronoun:я|Я}} дав вам і вашим предкам, те саме, що зробив із Шило.",
+          "R": "Тож {{deity_pronoun:я|Я}} зроблю з цим храмом те саме, що зробив із Шило. Він носить {{deity_pronoun:моє|Моє}} імʼя, і ви покладаєтеся на нього. Те саме {{deity_pronoun:я|Я}} зроблю з місцем, яке дав вам і вашим предкам."
         }
       },
       "decisions": [
@@ -3055,6 +4064,26 @@
           "L": "ወንድሞቻችሁን ሁሉ፣ የኤፍሬምን ዘር ሁሉ እንደ ጣልኳቸው፣ እናንተንም ከፊቴ እጥላችኋለሁ።”",
           "B": "ወንድሞቻችሁን ሁሉ፣ የኤፍሬምን ዘሮች ሁሉ እንዳባረርኳቸው፣ እናንተንም ከፊቴ አባርራችኋለሁ።”",
           "R": "ዘመዶቻችሁን የኤፍሬምን ሕዝብ እንዳባረርኳቸው፣ እናንተንም ከፊቴ አባርራችኋለሁ።”"
+        },
+        "hi": {
+          "L": "और मैं तुम्हें अपने सामने से निकाल फेंकूँगा, जैसे मैंने तुम्हारे सब भाइयों को, एप्रैम के सारे वंश को, निकाल फेंका।'",
+          "B": "मैं तुम्हें अपनी उपस्थिति से निकाल दूँगा, जैसे मैंने तुम्हारे सब भाई-बंधुओं को, एप्रैम के सब वंशजों को, निकाल दिया।'",
+          "R": "मैं तुम्हें अपने पास से दूर भेज दूँगा, जैसे मैंने तुम्हारे रिश्तेदारों, एप्रैम के लोगों को, दूर भेज दिया।'"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:я|Я}} отброшу вас от {{deity_pronoun:моего|Моего}} лица, как {{deity_pronoun:я|Я}} отбросил всех ваших братьев, всё потомство Ефрема.”",
+          "B": "Я прогоню вас от {{deity_pronoun:моего|Моего}} лица, как прогнал всех ваших родичей, всех потомков Ефрема.”",
+          "R": "Я прогоню вас от себя, как прогнал ваших родственников, народ Ефрема.”"
+        },
+        "ja": {
+          "L": "そして、わたしは、あなたがたの兄弟たちすべて、エフライムのすべての子孫を投げ捨てたように、あなたがたをわたしの顔の前から投げ捨てる。』",
+          "B": "わたしは、あなたがたの同胞すべて、エフライムの子孫をみな追い出したように、あなたがたをわたしの前から追い出す。』",
+          "R": "わたしは、あなたたちの親類であるエフライムの人々を、わたしの前から追い払ったように、あなたたちもわたしの前から追い払う。』"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:я|Я}} відкину вас від {{deity_pronoun:мого|Мого}} обличчя, так як {{deity_pronoun:я|Я}} відкинув усіх ваших братів, усе потомство Єфрема”.",
+          "B": "Я викину вас з-перед {{deity_pronoun:мого|Мого}} обличчя, так само як викинув усіх ваших родичів, усіх нащадків Єфрема”.",
+          "R": "Я прожену вас від себе, так само як прогнав ваших родичів, народ Єфрема”."
         }
       },
       "decisions": [
@@ -3138,6 +4167,28 @@
             "\"vos parents\""
           ],
           "reason": "French \"frères\" readily means fellow members of a people, so Balanced keeps it; Readable says what is meant.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070150091",
+            "o240070150121",
+            "o240070150131",
+            "o240070150092"
+          ],
+          "choice": "'acheikhem \"兄弟たち\" (L), \"同胞\" (B), \"親類\" (R, the English \"relatives\"); zera' 'Efrayim \"エフライムの子孫\" (L, B), \"エフライムの人々\" (R). The message closes with 』 here; God's words to Jeremiah stay open (「) to 8:3.",
+          "alternatives": [],
+          "reason": "The northern tribes are the people's kin; no gender span (the English has none).",
           "uncertain": false,
           "footnote": false
         }
@@ -3225,6 +4276,26 @@
           "L": "አንተም ስለዚህ ሕዝብ አትጸልይ፤ ስለ እነርሱም ጩኸትንና ጸሎትን አታንሣ፤ አትማልደኝም፤ እኔ አልሰማህምና።",
           "B": "አንተ ግን ስለዚህ ሕዝብ አትጸልይ። ስለ እነርሱ ጩኸትን ወይም ጸሎትን አታቅርብ፤ አትለምነኝም፤ አልሰማህምና።",
           "R": "ኤርምያስ ሆይ፣ ስለ እነዚህ ሰዎች አትጸልይ። ስለ እነርሱ ወደ እኔ አትጩኽ፤ አትጸልይም። እንድረዳቸው አትለምነኝ፤ አልሰማህምና።"
+        },
+        "hi": {
+          "L": "और तुम, इन लोगों के लिए प्रार्थना मत करो, और उनके लिए न दोहाई न प्रार्थना उठाओ, और मुझसे विनती मत करो, क्योंकि मैं तुम्हारी नहीं सुन रहा हूँ।",
+          "B": "पर तुम इन लोगों के लिए प्रार्थना मत करना। उनके लिए न दोहाई देना, न प्रार्थना करना, और न मुझसे विनती करना, क्योंकि मैं तुम्हारी नहीं सुनूँगा।",
+          "R": "हे यिर्मयाह, इन लोगों के लिए प्रार्थना मत करो। उनके लिए मुझे न पुकारो, न प्रार्थना करो। मुझसे उनकी सहायता की विनती मत करो, क्योंकि मैं तुम्हारी नहीं सुनूँगा।"
+        },
+        "ru": {
+          "L": "А ты не молись за этот народ и не возноси за них ни вопля, ни молитвы, и не упрашивай {{deity_pronoun:меня|Меня}}, потому что {{deity_pronoun:я|Я}} не слушаю тебя.",
+          "B": "А ты не молись за этот народ. Не возноси за них ни вопля, ни молитвы и не упрашивай {{deity_pronoun:меня|Меня}}, потому что {{deity_pronoun:я|Я}} не стану слушать тебя.",
+          "R": "Иеремия, не молись за этот народ. Не взывай ко {{deity_pronoun:мне|Мне}} и не молись за них. Не упрашивай {{deity_pronoun:меня|Меня}} помочь им, потому что {{deity_pronoun:я|Я}} не стану тебя слушать."
+        },
+        "ja": {
+          "L": "あなたは、この民のために祈ってはならない。彼らのために叫びや祈りをささげてはならない。わたしにとりなしを迫ってはならない。わたしはあなたの[願いを]聞かないからだ。",
+          "B": "あなたは、この民のために祈ってはならない。彼らのために叫びの声や祈りをささげてはならない。わたしに懇願してはならない。わたしはあなたの願いを聞かないからだ。",
+          "R": "エレミヤよ、この人々のために祈ってはいけない。彼らのために、わたしに叫んだり、祈ったりしてはいけない。彼らを助けてほしいと、わたしに頼んではいけない。わたしはあなたの願いを聞かないからだ。"
+        },
+        "uk": {
+          "L": "А ти не молися за цей народ і не піднось за них ні благання, ні молитви, і не заступайся переді {{deity_pronoun:мною|Мною}}, бо {{deity_pronoun:я|Я}} не слухаю тебе.",
+          "B": "А ти не молися за цей народ. Не піднось за них ні благання, ні молитви, і не проси {{deity_pronoun:мене|Мене}}, бо {{deity_pronoun:я|Я}} не вислухаю тебе.",
+          "R": "Єреміє, не молися за цей народ. Не взивай до {{deity_pronoun:мене|Мене}} і не молися за них. Не благай {{deity_pronoun:мене|Мене}} допомогти їм, бо {{deity_pronoun:я|Я}} не слухатиму тебе."
         }
       },
       "decisions": [
@@ -3274,6 +4345,27 @@
           "choice": "Jeremiah",
           "alternatives": [],
           "reason": "Readable names the one addressed, since God now turns from the people to the prophet.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240070160012",
+            "o240070160031",
+            "o240070160131"
+          ],
+          "choice": "God's prohibitions to Jeremiah in the prose frame: \"〜してはならない\" (L, B), \"〜してはいけない\" (R), as 1:7-8; the same at 11:14 and 14:11.",
+          "alternatives": [],
+          "reason": "JER conventions for God's commands to the prophet in narrative.",
           "uncertain": false,
           "footnote": false
         }
@@ -3347,6 +4439,26 @@
           "L": "በይሁዳ ከተሞችና በኢየሩሳሌም መንገዶች የሚያደርጉትን አታይምን?",
           "B": "በይሁዳ ከተሞችና በኢየሩሳሌም መንገዶች የሚያደርጉትን አታይምን?",
           "R": "በይሁዳ ከተሞችና በኢየሩሳሌም መንገዶች የሚያደርጉትን አታይምን?"
+        },
+        "hi": {
+          "L": "क्या तुम नहीं देखते कि वे यहूदा के नगरों में और यरूशलेम की गलियों में क्या कर रहे हैं?",
+          "B": "क्या तुम नहीं देखते कि वे यहूदा के नगरों में और यरूशलेम की गलियों में क्या कर रहे हैं?",
+          "R": "क्या तुम नहीं देखते कि वे यहूदा के नगरों में और यरूशलेम की गलियों में क्या कर रहे हैं?"
+        },
+        "ru": {
+          "L": "Не видишь ли ты, что они делают в городах Иуды и на улицах Иерусалима?",
+          "B": "Разве ты не видишь, что они делают в городах Иуды и на улицах Иерусалима?",
+          "R": "Разве ты не видишь, что они делают в городах Иуды и на улицах Иерусалима?"
+        },
+        "ja": {
+          "L": "あなたは、彼らがユダの町々とエルサレムの通りで何をしているか、見ていないのか？",
+          "B": "ユダの町々やエルサレムの通りで、彼らが何をしているか、あなたには見えないのか？",
+          "R": "ユダの町々やエルサレムの通りで、人々が何をしているか、あなたには見えないのか？"
+        },
+        "uk": {
+          "L": "Хіба ти не бачиш, що вони роблять у містах Юдеї і на вулицях Єрусалима?",
+          "B": "Хіба ти не бачиш, що вони роблять у містах Юдеї і на вулицях Єрусалима?",
+          "R": "Хіба ти не бачиш, що вони роблять у містах Юдеї та на вулицях Єрусалима?"
         }
       },
       "decisions": [
@@ -3472,6 +4584,26 @@
           "L": "ልጆቹ እንጨት ይለቅማሉ፤ አባቶቹም እሳት ያነድዳሉ፤ ሴቶቹም ለሰማይ ንግሥት እንጎቻ ለማድረግ ሊጥ ያቦካሉ፤ እኔንም ያስቆጡኝ ዘንድ ለሌሎች አማልክት የመጠጥ ቁርባን ያፈስሳሉ።",
           "B": "ልጆቹ እንጨት ይሰበስባሉ፤ አባቶቹ እሳት ያነድዳሉ፤ ሴቶቹም ለሰማይ ንግሥት እንጎቻ ለመጋገር ሊጥ ያቦካሉ። ለሌሎች አማልክትም የመጠጥ ቁርባን ያፈስሳሉ፤ በዚህም ያስቆጡኛል።",
           "R": "ልጆቹ እንጨት ይሰበስባሉ። አባቶቹ እሳት ያቀጣጥላሉ። ሴቶቹ ሊጥ አቡክተው የሰማይ ንግሥት ለሚሏት ሴት አምላክ እንጎቻ ይጋግራሉ። ለሌሎች አማልክት የወይን ጠጅ መባ ያፈስሳሉ። በዚህ መንገድ ያስቆጡኛል።"
+        },
+        "hi": {
+          "L": "{{gender:बच्चे|बेटे}} लकड़ी बीनते हैं, और पिता आग सुलगाते हैं, और स्त्रियाँ आटा गूँधती हैं कि स्वर्ग की रानी के लिए टिकियाँ बनाएँ; और [वे] दूसरे देवताओं के लिए अर्घ उँडेलते हैं, ताकि मुझे रिस दिलाएँ।",
+          "B": "{{gender:बच्चे|बेटे}} लकड़ी बीनते हैं, पिता आग जलाते हैं, और स्त्रियाँ आटा गूँधकर स्वर्ग की रानी के लिए टिकियाँ बनाती हैं। वे दूसरे देवताओं के लिए अर्घ उँडेलते हैं, और इस तरह मुझे क्रोध दिलाते हैं।",
+          "R": "{{gender:बच्चे|बेटे}} लकड़ी इकट्ठी करते हैं। पिता आग जलाते हैं। स्त्रियाँ आटा गूँधकर उस देवी के लिए टिकियाँ पकाती हैं जिसे वे स्वर्ग की रानी कहते हैं। वे दूसरे देवताओं को भेंट के रूप में दाखमधु उँडेलते हैं। इस तरह वे मुझे क्रोध दिलाते हैं।"
+        },
+        "ru": {
+          "L": "{{gender:Дети|Сыновья}} собирают дрова, и отцы разводят огонь, и женщины месят тесто, чтобы делать лепёшки царице небесной; и [они] возливают возлияния другим богам, чтобы раздражать {{deity_pronoun:меня|Меня}}.",
+          "B": "{{gender:Дети|Сыновья}} собирают дрова, отцы разжигают огонь, а женщины месят тесто, чтобы печь лепёшки для царицы небесной. Они возливают возлияния другим богам и так гневят {{deity_pronoun:меня|Меня}}.",
+          "R": "{{gender:Дети|Сыновья}} собирают дрова. Отцы разжигают огонь. Женщины месят тесто и пекут лепёшки для богини, которую они называют царицей неба. Они выливают вино в жертву другим богам. Так они гневят {{deity_pronoun:меня|Меня}}."
+        },
+        "ja": {
+          "L": "子らは薪を集め、父たちは火をたき、女たちは粉をこねて、天の女王のために供え菓子を作る。そして、ほかの神々に注ぎの供え物を注いで、わたしを怒らせている。",
+          "B": "子どもたちは薪を集め、父親たちは火をおこし、女たちは粉をこねて、天の女王のための菓子を作る。彼らはほかの神々に注ぎの供え物を注ぎ、わたしを怒らせている。",
+          "R": "子どもたちは薪を集める。父親たちは火をおこす。女たちは粉をこねて、天の女王と呼ばれる女神のために菓子を焼く。彼らは、ほかの神々にぶどう酒を注いでささげる。こうして、彼らはわたしを怒らせている。"
+        },
+        "uk": {
+          "L": "{{gender:Діти|Сини}} збирають дрова, і батьки розпалюють вогонь, і жінки місять тісто, щоб робити коржі для цариці неба; і вони виливають жертви ливні іншим богам, щоб гнівити {{deity_pronoun:мене|Мене}}.",
+          "B": "{{gender:Діти|Сини}} збирають дрова, батьки розпалюють вогонь, а жінки місять тісто, щоб пекти коржі для цариці неба. Вони виливають жертви ливні іншим богам і так гнівлять {{deity_pronoun:мене|Мене}}.",
+          "R": "{{gender:Діти|Сини}} збирають дрова. Батьки розпалюють вогонь. Жінки замішують тісто й печуть коржі для богині, яку називають царицею неба. Вони виливають вино в жертву іншим богам. Так вони гнівлять {{deity_pronoun:мене|Мене}}."
         }
       },
       "decisions": [
@@ -3699,6 +4831,130 @@
           "reason": "Amharic \"ልጆች\" already includes sons and daughters (also \"ሰው\" in 7:20 and \"የይሁዳ ልጆች\" in 7:30), so the English spans need none. The queen of heaven returns in chapter 44 with this wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"цариця неба\" for the queen of heaven, here and in chapter 44",
+          "alternatives": [
+            "цариця небесна"
+          ],
+          "reason": "Plain wording that names a goddess without the church sound of \"небесна\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070180132",
+            "o240070180142",
+            "o240070180161"
+          ],
+          "choice": "स्वर्ग की रानी; अर्घ (L, B), दाखमधु की भेंट (R); {{gender:बच्चे|बेटे}}",
+          "alternatives": [],
+          "reason": "The goddess's title is स्वर्ग की रानी at every level; Readable says she is a goddess, as the English does. A drink offering is अर्घ, the poured offering; Readable says what was poured. banim has the gender span the English has, with बच्चे as the default.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070180132",
+            "o240070180142"
+          ],
+          "choice": "царица небесная (L, B); богиня, которую они называют царицей неба (R)",
+          "alternatives": [
+            "владычица неба"
+          ],
+          "reason": "The queen of heaven, a goddess worshipped in Judah, returns in chapter 44; Literal and Balanced keep this name there, and Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070180012"
+          ],
+          "choice": "{{gender:Дети|Сыновья}}",
+          "alternatives": [
+            "дети without a setting"
+          ],
+          "reason": "The gender setting as the English has it: дети by default, сыновья for the traditional reading.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070180011",
+            "o240070180012"
+          ],
+          "choice": "habbanim \"子ら\" (L), \"子どもたち\" (B, R), with no gender span: the Japanese is already inclusive, where the English needs {{gender:children|sons}}. The same for bene Yehudah \"ユダの子ら\" (L), \"ユダの人々\" (B, R) in 7:30.",
+          "alternatives": [],
+          "reason": "Style guide 7: no span where Japanese is already inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070180132",
+            "o240070180142",
+            "o240070180121"
+          ],
+          "choice": "malkat hashshamayim \"天の女王\" (every level; R \"天の女王と呼ばれる女神\", the English R); kavvanim \"供え菓子\" (L), \"菓子\" (B, R); nesakhim \"注ぎの供え物\" (L, B, as GEN / EXO), \"ぶどう酒を注いでささげる\" (R, the English R); also 44:17-25.",
+          "alternatives": [],
+          "reason": "Book-wide forms for the cult of the queen of heaven.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3771,6 +5027,26 @@
           "L": "እኔን ያስቆጣሉን? ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። የገዛ ፊታቸውን ለማሳፈር ራሳቸውን አይደለምን?",
           "B": "በእርግጥ የሚያስቆጡት እኔን ነውን? ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። ለራሳቸው ውርደት የሚጎዱት ራሳቸውን አይደለምን?",
           "R": "ነገር ግን የሚጎዱት እኔን ነውን? ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። አይደለም፤ የሚጎዱት ራሳቸውን ብቻ ነው፤ በራሳቸውም ላይ ኀፍረት ያመጣሉ።"
+        },
+        "hi": {
+          "L": "क्या वे मुझे रिस दिलाते हैं? {{divine_name:प्रभु|याहवे}} की यह वाणी है। क्या वे अपने ही मुँह की लज्जा के लिए अपने आप को नहीं?",
+          "B": "क्या वे सचमुच मुझे रिस दिलाते हैं? {{divine_name:प्रभु|याहवे}} की यह वाणी है। क्या वे अपनी ही हानि नहीं करते, अपने ही अपमान के लिए?",
+          "R": "पर क्या वे मुझे हानि पहुँचा रहे हैं? {{divine_name:प्रभु|याहवे}} कहते हैं। नहीं, वे केवल अपने आप को हानि पहुँचा रहे हैं और अपने ऊपर लज्जा ला रहे हैं।"
+        },
+        "ru": {
+          "L": "Меня ли они раздражают? — слово {{divine_name:ГОСПОДА|Яхве}}. Не себя ли, к стыду своих лиц?",
+          "B": "Неужели это {{deity_pronoun:меня|Меня}} они гневят? — говорит {{divine_name:ГОСПОДЬ|Яхве}}. Не себе ли они вредят, к своему же позору?",
+          "R": "Разве {{deity_pronoun:мне|Мне}} они вредят? — говорит {{divine_name:ГОСПОДЬ|Яхве}}. Нет, они вредят только себе и навлекают позор на себя."
+        },
+        "ja": {
+          "L": "彼らが怒らせているのは、わたしなのか？――{{divine_name:主|ヤハウェ}}の言葉――彼ら自身ではないのか？自分たちの顔に恥を招いて。",
+          "B": "彼らが怒らせているのは、本当にわたしなのか？と{{divine_name:主|ヤハウェ}}は告げる。自分自身を傷つけ、自分の恥をさらしているのではないか？",
+          "R": "だが、彼らが傷つけているのは、わたしなのか？と{{divine_name:主|ヤハウェ}}は言う。いや、彼らは自分自身を傷つけ、自分に恥をもたらしているだけだ。"
+        },
+        "uk": {
+          "L": "Хіба {{deity_pronoun:мене|Мене}} вони гнівлять? говорить {{divine_name:ГОСПОДЬ|Ягве}}. Хіба не самих себе, на сором своїх облич?",
+          "B": "Невже це {{deity_pronoun:мене|Мене}} вони гнівлять? говорить {{divine_name:ГОСПОДЬ|Ягве}}. Хіба не собі вони шкодять, на власну ганьбу?",
+          "R": "Але хіба {{deity_pronoun:мені|Мені}} вони шкодять? каже {{divine_name:ГОСПОДЬ|Ягве}}. Ні, вони шкодять тільки собі й накликають сором на себе."
         }
       },
       "decisions": [
@@ -3922,6 +5198,26 @@
           "L": "ስለዚህ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ እነሆ፣ ቁጣዬና መዓቴ በዚህ ስፍራ ላይ፣ በሰውና በእንስሳ ላይ፣ በሜዳ ዛፍና በምድር ፍሬ ላይ ይፈስሳል፤ ይነድዳልም፤ አይጠፋምም።",
           "B": "ስለዚህ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ቁጣዬ፣ መዓቴ በዚህ ስፍራ፣ በሰዎችና በእንስሳት ላይ፣ በሜዳ ዛፎችና በምድር ሰብል ላይ ሊፈስስ ነው። ይነድዳል፤ አይጠፋምም።",
           "R": "ስለዚህ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ ታላቅ ቁጣዬን በዚህ ስፍራ ላይ ላፈስስ ነው። በሰዎችና በእንስሳት ላይ፣ በሜዳ ባሉ ዛፎችና በምድር ባለው ሰብል ላይ ይወርዳል። የሚነድድና ሊጠፋ የማይችል እሳት ይሆናል።"
+        },
+        "hi": {
+          "L": "इसलिए प्रभु {{divine_name:परमेश्वर|याहवे}} यों कहते हैं: देखो, मेरा क्रोध और मेरा रोष इस स्थान पर, मनुष्य पर और पशु पर, और मैदान के पेड़ों पर और भूमि की उपज पर उँडेला जाने पर है; और वह जलता रहेगा और न बुझेगा।",
+          "B": "इसलिए प्रभु {{divine_name:परमेश्वर|याहवे}} यह कहते हैं: देखो, मेरा क्रोध, मेरा रोष, इस स्थान पर उँडेला जाने पर है, मनुष्यों और पशुओं पर, मैदान के पेड़ों पर और भूमि की फ़सल पर। वह जलेगा और बुझाया न जाएगा।",
+          "R": "इसलिए प्रभु {{divine_name:परमेश्वर|याहवे}} यह कहते हैं: मैं अपना बड़ा क्रोध इस स्थान पर उँडेलने वाला हूँ। वह मनुष्यों और पशुओं पर, खेतों के पेड़ों पर और भूमि की फ़सलों पर पड़ेगा। वह ऐसी आग के समान होगा जो जलती रहती है और बुझाई नहीं जा सकती।"
+        },
+        "ru": {
+          "L": "Поэтому так говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}: Вот, {{deity_pronoun:мой|Мой}} гнев и {{deity_pronoun:моя|Моя}} ярость изольются на это место, на человека и на скот, и на деревья поля, и на плоды земли; и будет гореть и не угаснет.",
+          "B": "Поэтому так говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}: Вот, {{deity_pronoun:мой|Мой}} гнев, {{deity_pronoun:моя|Моя}} ярость вот-вот изольётся на это место, на людей и на животных, на деревья в поле и на плоды земли. Он будет гореть и не угаснет.",
+          "R": "Поэтому вот что говорит Владыка {{divine_name:ГОСПОДЬ|Яхве}}: Я скоро изолью {{deity_pronoun:мой|Мой}} великий гнев на это место. Он обрушится на людей и на животных, на деревья в полях и на урожай на земле. Он будет как огонь, который горит и который невозможно потушить."
+        },
+        "ja": {
+          "L": "それゆえ、{{divine_name:主なる神|主ヤハウェ}}はこう言われる。見なさい、わたしの怒りとわたしの憤りは、この場所に、人と獣に、野の木と地の実りに注がれようとしている。それは燃えて、消えることがない。",
+          "B": "それゆえ、{{divine_name:主なる神|主ヤハウェ}}はこう言われる。見なさい、わたしの怒り、わたしの憤りが、この場所に注がれようとしている。人にも家畜にも、野の木にも地の作物にも。それは燃え上がり、消されることはない。",
+          "R": "だから、{{divine_name:主なる神|主ヤハウェ}}はこう言われる。わたしは、この場所に、激しい怒りを注ごうとしている。それは、人にも動物にも、畑の木にも地の作物にも降りかかる。それは、燃え続けて消すことのできない火のようになる。"
+        },
+        "uk": {
+          "L": "Тому так говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}: Ось {{deity_pronoun:мій|Мій}} гнів і {{deity_pronoun:моя|Моя}} лють виливаються на це місце, на {{gender:людину|чоловіка}} і на худобу, і на дерева польові, і на плід землі; і він палатиме і не згасне.",
+          "B": "Тож так говорить Владика {{divine_name:ГОСПОДЬ|Ягве}}: Ось {{deity_pronoun:мій|Мій}} гнів, {{deity_pronoun:моя|Моя}} лють от-от виллється на це місце, на людей і на тварин, на польові дерева і на врожай землі. Він палатиме і не згасне.",
+          "R": "Тож ось що каже Владика {{divine_name:ГОСПОДЬ|Ягве}}: Я от-от виллю {{deity_pronoun:мій|Мій}} великий гнів на це місце. Він упаде на людей і на тварин, на дерева в полях і на врожай у землі. Він буде як вогонь, що палає, і його неможливо погасити."
         }
       },
       "decisions": [
@@ -4012,6 +5308,65 @@
           "reason": "Adonai YHWH, as in 1:6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070200142"
+          ],
+          "choice": "मनुष्य, no gender span",
+          "alternatives": [],
+          "reason": "The English Literal offers \"humans / man\" through the gender setting. Hindi मनुष्य already means a human being, man or woman, so the Hindi has no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070200142"
+          ],
+          "choice": "человек, no gender span",
+          "alternatives": [
+            "a gender span на человека / на мужчину"
+          ],
+          "reason": "The English Literal has a gender span on \"man\" for humankind; Russian человек already means any human being, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070200141",
+            "o240070200142",
+            "o240070200041",
+            "o240070200042",
+            "o240070200051"
+          ],
+          "choice": "ha'adam \"人\" at every level, with no gender span (the English L has {{gender:humans|man}}); 'adonai YHWH \"{DG}\" with one span, as the English \"the Lord {{divine_name:GOD|Yahweh}}\".",
+          "alternatives": [],
+          "reason": "Japanese 人 is already inclusive.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4084,6 +5439,26 @@
           "L": "የእስራኤል አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ጸባኦት እንዲህ ይላል፦ የሚቃጠል መሥዋዕታችሁን በመሥዋዕቶቻችሁ ላይ ጨምሩ፤ ሥጋንም ብሉ።",
           "B": "የእስራኤል አምላክ፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ እንግዲህ የሚቃጠል መሥዋዕታችሁን በመሥዋዕቶቻችሁ ላይ ጨምሩና ሥጋውን ራሳችሁ ብሉት!",
           "R": "የእስራኤል አምላክ፣ የሠራዊት አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ ይላል፦ በሉ፣ የሚቃጠል መሥዋዕታችሁን በሌሎች መሥዋዕቶቻችሁ ላይ ጨምሩና ሥጋውን ሁሉ ራሳችሁ ብሉት!"
+        },
+        "hi": {
+          "L": "इस्राएल के परमेश्वर, सेनाओं के {{divine_name:प्रभु|याहवे}} यों कहते हैं: अपने होमबलियों को अपने बलिदानों में मिला लो, और मांस खाओ।",
+          "B": "इस्राएल के परमेश्वर, सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: जाओ, अपने होमबलियों को अपने बलिदानों में मिला लो और मांस ख़ुद ही खा लो!",
+          "R": "इस्राएल के परमेश्वर, सेनाओं के {{divine_name:प्रभु|याहवे}} यह कहते हैं: चलो, अपने होमबलियों को अपने बाक़ी बलिदानों में मिला लो और सारा मांस ख़ुद ही खा लो!"
+        },
+        "ru": {
+          "L": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф, Бог Израиля: Ваши всесожжения прибавьте к вашим жертвам и ешьте мясо.",
+          "B": "Так говорит {{divine_name:ГОСПОДЬ|Яхве}} Саваоф, Бог Израиля: Что ж, прибавляйте ваши всесожжения к вашим жертвам и ешьте мясо сами!",
+          "R": "Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}} Воинств, Бог Израиля: Давайте, прибавляйте ваши всесожжения к другим вашим жертвам и ешьте всё мясо сами!"
+        },
+        "ja": {
+          "L": "万軍の{{divine_name:主|ヤハウェ}}、イスラエルの神はこう言われる。あなたがたの焼き尽くすささげ物を、あなたがたのいけにえに加えよ。そして肉を食べよ。",
+          "B": "万軍の{{divine_name:主|ヤハウェ}}、イスラエルの神はこう言われる。さあ、焼き尽くすささげ物をいけにえに加えて、その肉を自分たちで食べるがよい。",
+          "R": "天の軍勢を率いる{{divine_name:主|ヤハウェ}}、イスラエルの神はこう言われる。さあ、焼いてささげるいけにえを、ほかのいけにえに加えるがいい。そして、その肉を全部自分たちで食べてしまえ。"
+        },
+        "uk": {
+          "L": "Так говорить {{divine_name:ГОСПОДЬ|Ягве}} Саваот, Бог Ізраїля: Додайте ваші всепалення до ваших жертв і їжте мʼясо.",
+          "B": "Так говорить {{divine_name:ГОСПОДЬ|Ягве}} Небесних Військ, Бог Ізраїля: Що ж, додавайте свої всепалення до своїх жертв і самі їжте мʼясо!",
+          "R": "Ось що каже {{divine_name:ГОСПОДЬ|Ягве}} Вседержитель, Бог Ізраїля: Давайте, додавайте свої всепалення до інших жертв і зʼїдайте все мʼясо самі!"
         }
       },
       "decisions": [
@@ -4134,6 +5509,26 @@
           "choice": "Go ahead; yourselves",
           "alternatives": [],
           "reason": "Balanced and Readable add words that make the irony plain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240070210081",
+            "o240070210112",
+            "o240070210121"
+          ],
+          "choice": "The bitter command (m2) is \"〜がよい\" / \"〜がいい\" and \"食べてしまえ\", the Japanese of an ironic permission, at Balanced and Readable; Literal keeps the plain imperatives. 'olot \"焼き尽くすささげ物\" (L, B), \"焼いてささげるいけにえ\" (R); zevachim \"いけにえ\", as LEV.",
+          "alternatives": [],
+          "reason": "The English B, R \"Go ahead ... yourselves!\" carries the irony.",
           "uncertain": false,
           "footnote": false
         }
@@ -4217,6 +5612,26 @@
           "L": "አባቶቻችሁን ከግብፅ ምድር ባወጣኋቸው ቀን ስለሚቃጠል መሥዋዕትና ስለ መሥዋዕት ነገር አልተናገርኳቸውም፤ አላዘዝኳቸውምም።",
           "B": "አባቶቻችሁን ከግብፅ ምድር ባወጣኋቸው ጊዜ ስለሚቃጠል መሥዋዕትና ስለ መሥዋዕቶች አልተናገርኳቸውም፤ ትእዛዝም አልሰጠኋቸውም።",
           "R": "የቀድሞ አባቶቻችሁን ከግብፅ ባወጣኋቸው ጊዜ ስለሚቃጠል መሥዋዕትና ስለ መሥዋዕቶች ትእዛዝ አልሰጠኋቸውም።"
+        },
+        "hi": {
+          "L": "क्योंकि जिस दिन मैं तुम्हारे पुरखाओं को मिस्र देश से निकाल लाया, उस दिन मैंने उनसे होमबलि और बलिदान के विषय में न बात की, न उन्हें आज्ञा दी।",
+          "B": "क्योंकि जब मैं तुम्हारे पूर्वजों को मिस्र देश से निकाल लाया, तब मैंने उनसे होमबलियों और बलिदानों के विषय में न बात की, न उन्हें आज्ञाएँ दीं।",
+          "R": "जब मैं तुम्हारे पूर्वजों को मिस्र से निकाल लाया, तब मैंने उन्हें होमबलियों और बलिदानों के बारे में आज्ञाएँ नहीं दीं।"
+        },
+        "ru": {
+          "L": "Ведь {{deity_pronoun:я|Я}} не говорил с вашими отцами и не повелевал им в день, когда {{deity_pronoun:я|Я}} вывел их из земли Египта, о делах всесожжения и жертвы.",
+          "B": "Ведь когда {{deity_pronoun:я|Я}} выводил ваших предков из земли Египта, {{deity_pronoun:я|Я}} не говорил с ними и не давал им повелений о всесожжениях и жертвах.",
+          "R": "Когда {{deity_pronoun:я|Я}} выводил ваших предков из Египта, {{deity_pronoun:я|Я}} не давал им повелений о всесожжениях и жертвах."
+        },
+        "ja": {
+          "L": "わたしは、あなたがたの先祖たちをエジプトの地から導き出した日に、焼き尽くすささげ物といけにえのことについて、彼らに語らず、命じもしなかったからだ。",
+          "B": "わたしがあなたがたの先祖をエジプトの地から導き出したとき、焼き尽くすささげ物やいけにえについて、彼らに語ったのでも、命じたのでもない。",
+          "R": "わたしがあなたたちの先祖をエジプトから連れ出したとき、わたしは、焼いてささげるいけにえや、ほかのいけにえについて、命令を与えたのではない。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:я|Я}} не говорив з вашими батьками і не наказував їм того дня, коли вивів їх із землі єгипетської, про справи всепалення і жертви.",
+          "B": "Бо коли {{deity_pronoun:я|Я}} вивів ваших предків із єгипетської землі, {{deity_pronoun:я|Я}} не говорив з ними і не давав їм наказів про всепалення і жертви.",
+          "R": "Коли {{deity_pronoun:я|Я}} вивів ваших предків з Єгипту, {{deity_pronoun:я|Я}} не давав їм наказів про всепалення і жертви."
         }
       },
       "decisions": [
@@ -4379,6 +5794,26 @@
           "L": "ነገር ግን ይህን ቃል እንዲህ ብዬ አዘዝኳቸው፦ “ድምፄን ስሙ፤ እኔም አምላክ እሆናችኋለሁ፤ እናንተም ሕዝብ ትሆኑኛላችሁ፤ መልካምም እንዲሆንላችሁ ባዘዝኋችሁ መንገድ ሁሉ ሂዱ።”",
           "B": "ይልቁንም ያዘዝኳቸው ይህን ነው፦ “ድምፄን ታዘዙ፤ ከዚያም አምላካችሁ እሆናለሁ፤ እናንተም ሕዝቤ ትሆናላችሁ። መልካም እንዲሆንላችሁ ባዘዝኋችሁ መንገድ ሁሉ ሂዱ።”",
           "R": "ያዘዝኳቸው ይህን ነው፦ “ታዘዙኝ። ከዚያም አምላካችሁ እሆናለሁ፤ እናንተም ሕዝቤ ትሆናላችሁ። እንድትኖሩ በነገርኳችሁ መንገድ ኑሩ፤ ነገሮችም መልካም ይሆኑላችኋል።”"
+        },
+        "hi": {
+          "L": "पर यह बात मैंने उन्हें आज्ञा दी थी, कि 'मेरी आवाज़ सुनो, और मैं तुम्हारा परमेश्वर रहूँगा, और तुम मेरी प्रजा रहोगे; और उस सारे मार्ग पर चलो जिसकी मैं तुम्हें आज्ञा दूँ, ताकि तुम्हारा भला हो।'",
+          "B": "इसके बदले मैंने उन्हें यह आज्ञा दी थी: 'मेरी बात मानो; तब मैं तुम्हारा परमेश्वर रहूँगा, और तुम मेरी प्रजा रहोगे। हर उस मार्ग पर चलो जिसकी मैं तुम्हें आज्ञा दूँ, ताकि तुम्हारा भला हो।'",
+          "R": "मैंने उन्हें यह आज्ञा दी थी: 'मेरी बात मानो। तब मैं तुम्हारा परमेश्वर रहूँगा, और तुम मेरे लोग रहोगे। वैसे जियो जैसे मैं तुमसे जीने को कहूँ, तो तुम्हारा भला होगा।'"
+        },
+        "ru": {
+          "L": "Но это слово {{deity_pronoun:я|Я}} повелел им, говоря: “Слушайте {{deity_pronoun:мой|Мой}} голос, и {{deity_pronoun:я|Я}} буду вашим Богом, а вы будете {{deity_pronoun:моим|Моим}} народом; и ходите всем путём, который {{deity_pronoun:я|Я}} повелеваю вам, чтобы вам было хорошо.”",
+          "B": "Вот что {{deity_pronoun:я|Я}} повелел им: “Слушайтесь {{deity_pronoun:моего|Моего}} голоса; тогда {{deity_pronoun:я|Я}} буду вашим Богом, а вы будете {{deity_pronoun:моим|Моим}} народом. Ходите всеми путями, которые {{deity_pronoun:я|Я}} заповедую вам, чтобы вам было хорошо.”",
+          "R": "Вот что {{deity_pronoun:я|Я}} им повелел: “Слушайтесь {{deity_pronoun:меня|Меня}}. Тогда {{deity_pronoun:я|Я}} буду вашим Богом, а вы будете {{deity_pronoun:моим|Моим}} народом. Живите так, как {{deity_pronoun:я|Я}} говорю вам жить, и у вас всё будет хорошо.”"
+        },
+        "ja": {
+          "L": "ただ、この言葉を彼らに命じて言った。『わたしの声に聞き従え。そうすれば、わたしはあなたがたの神となり、あなたがたはわたしの民となる。わたしがあなたがたに命じるすべての道を歩め。あなたがたが幸せになるためである。』",
+          "B": "わたしが命じたのは、むしろこのことだった。『わたしの声に聞き従いなさい。そうすれば、わたしはあなたがたの神となり、あなたがたはわたしの民となる。わたしが命じる道を、どこまでも歩みなさい。そうすれば、あなたがたは幸せになる。』",
+          "R": "わたしが命じたのは、このことだ。『わたしに従いなさい。そうすれば、わたしはあなたたちの神となり、あなたたちはわたしの民となる。わたしが教えるとおりに生きなさい。そうすれば、あなたたちはうまくいく。』"
+        },
+        "uk": {
+          "L": "Але це слово {{deity_pronoun:я|Я}} наказав їм, кажучи: “Слухайте {{deity_pronoun:мого|Мого}} голосу, і {{deity_pronoun:я|Я}} буду вашим Богом, а ви будете {{deity_pronoun:моїм|Моїм}} народом; і ходіть усією дорогою, яку {{deity_pronoun:я|Я}} наказую вам, щоб вам було добре”.",
+          "B": "Натомість ось що {{deity_pronoun:я|Я}} наказав їм: “Слухайтеся {{deity_pronoun:мого|Мого}} голосу; тоді {{deity_pronoun:я|Я}} буду вашим Богом, а ви будете {{deity_pronoun:моїм|Моїм}} народом. Ходіть кожною дорогою, яку {{deity_pronoun:я|Я}} вам наказую, щоб вам було добре”.",
+          "R": "Ось що {{deity_pronoun:я|Я}} справді наказав їм: “Слухайтеся {{deity_pronoun:мене|Мене}}. Тоді {{deity_pronoun:я|Я}} буду вашим Богом, а ви будете {{deity_pronoun:моїм|Моїм}} народом. Живіть так, як {{deity_pronoun:я|Я}} вам кажу, і вам буде добре”."
         }
       },
       "decisions": [
@@ -4556,6 +5991,50 @@
           "reason": "The covenant promise returns in 11:4; 24:7; 30:22; 31:1, 33; 32:38. It keeps the shape it has in the Amharic Hebrews 8:10, which quotes 31:33: the Literal form there (\"አምላክ እሆናቸዋለሁ ... ሕዝብ ይሆኑኛል\") and the Readable one (\"አምላካቸው እሆናለሁ ... ሕዝቤ ይሆናሉ\"), here in the second person.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070230132",
+            "o240070230172"
+          ],
+          "choice": "मैं तुम्हारा परमेश्वर रहूँगा, और तुम मेरी प्रजा (R: मेरे लोग) रहोगे",
+          "alternatives": [],
+          "reason": "The covenant promise keeps the wording Leviticus 26:12 has at each level in this translation; it returns through Jeremiah (11:4; 24:7; 30:22; 31:33).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070230091",
+            "o240070230102",
+            "o240070230112",
+            "o240070230132",
+            "o240070230151",
+            "o240070230172"
+          ],
+          "choice": "shim'u veqoli \"わたしの声に聞き従え\" (L), \"…聞き従いなさい\" (B), \"わたしに従いなさい\" (R); the covenant formula \"わたしはあなたがたの神となり、あなたがたはわたしの民となる\" (L, B; R あなたたち), the same at 11:4, 24:7, 30:22, 31:33.",
+          "alternatives": [],
+          "reason": "One form for the covenant formula through the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4640,6 +6119,26 @@
           "L": "እነርሱ ግን አልሰሙም፤ ጆሮአቸውንም አላዘነበሉም፤ በ[ራሳቸው] ምክር ሄዱ፤ የክፉ ልባቸውን እልከኝነት ተከተሉ፤ ወደ ኋላም እንጂ ወደ ፊት አልሄዱም።",
           "B": "እነርሱ ግን አልሰሙም፤ ልብም አላሉም። በራሳቸው ዕቅድ ሄዱ፤ የክፉ ልባቸውን እልከኝነት ተከተሉ። ወደ ፊት ሳይሆን ወደ ኋላ ሄዱ።",
           "R": "እነርሱ ግን አልሰሙም፤ ልብም አላሉም። የፈለጉትን አደረጉ፤ በእልከኝነት ክፉ ልባቸውን ተከተሉ። ወደ ፊት ከመሄድ ይልቅ ወደ ኋላ ሄዱ።"
+        },
+        "hi": {
+          "L": "पर उन्होंने न सुना और न कान लगाया, और वे [अपनी ही] युक्तियों पर, अपने बुरे मन के हठ पर चले, और वे आगे नहीं, पीछे की ओर गए।",
+          "B": "पर उन्होंने न सुना, न ध्यान दिया। वे अपने बुरे मन के हठ में अपनी ही योजनाओं पर चले। वे आगे बढ़ने के बदले पीछे हट गए।",
+          "R": "पर उन्होंने न सुना, न ध्यान दिया। उन्होंने वही किया जो वे चाहते थे और हठ करके अपने बुरे मन के पीछे चले। आगे बढ़ने के बदले वे पीछे चले गए।"
+        },
+        "ru": {
+          "L": "Но они не слушали и не приклонили своего уха, и ходили по [своим] замыслам, вслед упрямства своего злого сердца, и пошли назад, а не вперёд.",
+          "B": "Но они не слушали и не обращали внимания. Они следовали своим замыслам, упрямству своих злых сердец. Они пошли назад, а не вперёд.",
+          "R": "Но они не хотели слушать и не обращали внимания. Они делали, что хотели, и упрямо шли за своим злым сердцем. Вместо того чтобы идти вперёд, они пошли назад."
+        },
+        "ja": {
+          "L": "しかし、彼らは聞かず、耳を傾けず、自分たちのはかりごとのままに、その悪い心のかたくなさのままに歩み、後ろ向きになって、前に向かわなかった。",
+          "B": "しかし、彼らは聞き従わず、耳を傾けなかった。自分たちの計画に従い、悪いかたくなな心のままに歩んだ。彼らは前に進まず、後ろへ退いた。",
+          "R": "しかし、彼らは聞こうとせず、注意を払わなかった。自分のしたいことをし、自分の悪い心にかたくなに従った。前に進むどころか、後ろへ戻って行った。"
+        },
+        "uk": {
+          "L": "Але вони не слухали і не прихиляли свого вуха, і ходили за [своїми] задумами, у впертості свого злого серця, і пішли назад, а не вперед.",
+          "B": "Але вони не слухали й не зважали. Вони йшли за своїми задумами, у впертості своїх злих сердець. Вони пішли назад, а не вперед.",
+          "R": "Але вони не хотіли слухати й не зважали. Вони робили, що хотіли, і вперто йшли за своїми злими серцями. Замість іти вперед, вони пішли назад."
         }
       },
       "decisions": [
@@ -4707,6 +6206,47 @@
           "choice": "the stubbornness of their evil heart (L); the stubbornness of their evil hearts (B); stubbornly followed their own evil hearts (R)",
           "alternatives": [],
           "reason": "The wording set for this phrase throughout Jeremiah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070240092",
+            "o240070240112"
+          ],
+          "choice": "अपने बुरे मन का हठ (L, B); हठ करके अपने बुरे मन के पीछे चलना (R)",
+          "alternatives": [],
+          "reason": "One wording per level for \"the stubbornness of their evil heart\" wherever it returns in Jeremiah, as at 3:17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070240082",
+            "o240070240092",
+            "o240070240112"
+          ],
+          "choice": "sherirut libbam hara' \"その悪い心のかたくなさ\" (L), \"悪いかたくなな心\" (B), \"悪い心にかたくなに従った\" (R), the JER key word (3:17).",
+          "alternatives": [],
+          "reason": "JER conventions.",
           "uncertain": false,
           "footnote": false
         }
@@ -4796,6 +6336,26 @@
           "L": "አባቶቻችሁ ከግብፅ ምድር ከወጡበት ቀን ጀምሮ እስከ ዛሬ ድረስ ባሪያዎቼን ነቢያትን ሁሉ በየቀኑ ማልጄ እየላክኩ ወደ እናንተ ላክኩ።",
           "B": "አባቶቻችሁ ከግብፅ ምድር ከወጡበት ቀን ጀምሮ እስከ ዛሬ ድረስ አገልጋዮቼን ነቢያትን ሁሉ ቀን በቀን ደጋግሜ ወደ እናንተ ልኬአለሁ።",
           "R": "የቀድሞ አባቶቻችሁ ከግብፅ ከወጡበት ቀን ጀምሮ እስከ አሁን ድረስ አገልጋዮቼን ነቢያትን ወደ እናንተ ላክኩ። ቀን በቀን ደጋግሜ ላክኋቸው።"
+        },
+        "hi": {
+          "L": "जिस दिन तुम्हारे पुरखा मिस्र देश से निकले, उस दिन से आज के दिन तक मैंने अपने सब दास भविष्यद्वक्ताओं को तुम्हारे पास भेजा, प्रतिदिन तड़के उठ उठकर [उन्हें] भेजता रहा।",
+          "B": "जिस दिन तुम्हारे पूर्वजों ने मिस्र देश छोड़ा, उस दिन से आज तक मैंने अपने सब दास भविष्यद्वक्ताओं को तुम्हारे पास भेजा, दिन-प्रतिदिन, बार-बार।",
+          "R": "जिस दिन तुम्हारे पूर्वजों ने मिस्र छोड़ा, उस दिन से अब तक मैंने अपने दास नबियों को तुम्हारे पास भेजा है। मैंने उन्हें दिन-प्रतिदिन, बार-बार भेजा।"
+        },
+        "ru": {
+          "L": "От дня, когда ваши отцы вышли из земли Египта, до этого дня {{deity_pronoun:я|Я}} посылал к вам всех {{deity_pronoun:моих|Моих}} рабов, пророков, день за днём, вставая рано и посылая [их].",
+          "B": "С того дня, как ваши предки вышли из земли Египта, и до сегодняшнего дня {{deity_pronoun:я|Я}} посылал к вам всех {{deity_pronoun:моих|Моих}} рабов, пророков, день за днём, снова и снова.",
+          "R": "С того дня, как ваши предки вышли из Египта, и до сих пор {{deity_pronoun:я|Я}} посылал к вам {{deity_pronoun:моих|Моих}} рабов, пророков. Я посылал их день за днём, снова и снова."
+        },
+        "ja": {
+          "L": "あなたがたの先祖たちがエジプトの地から出て来た日から今日に至るまで、わたしは、わたしのしもべである預言者たちをみな、あなたがたのもとに日々、朝早くから遣わし続けた。",
+          "B": "あなたがたの先祖がエジプトの地を出た日から今日まで、わたしは、わたしのしもべである預言者たちをみな、あなたがたのもとに遣わした。来る日も来る日も、繰り返し遣わした。",
+          "R": "あなたたちの先祖がエジプトを出た日から今まで、わたしは、わたしのしもべである預言者たちを、あなたたちのもとに遣わしてきた。毎日毎日、何度も何度も遣わした。"
+        },
+        "uk": {
+          "L": "Від дня, коли ваші батьки вийшли з землі єгипетської, аж до цього дня {{deity_pronoun:я|Я}} посилав до вас усіх {{deity_pronoun:моїх|Моїх}} рабів-пророків, день у день, рано встаючи і посилаючи [їх].",
+          "B": "Від дня, коли ваші предки вийшли з єгипетської землі, аж до сьогодні {{deity_pronoun:я|Я}} посилав до вас усіх {{deity_pronoun:моїх|Моїх}} рабів-пророків, день у день, знову й знову.",
+          "R": "Від дня, коли ваші предки вийшли з Єгипту, і досі {{deity_pronoun:я|Я}} посилав до вас {{deity_pronoun:моїх|Моїх}} рабів-пророків. Я посилав їх день у день, раз у раз."
         }
       },
       "decisions": [
@@ -4949,6 +6509,91 @@
           "reason": "For the whole book: where the word names those who serve God (m2), it is \"servo\" at every level, Literal included, as the English keeps \"servant\" (r-en-1) and as Isaiah does; \"escravo\" stays for slavery itself (34:8-22).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"мої раби-пророки\" for \"my servants the prophets\", through the book",
+          "alternatives": [
+            "мої слуги пророки"
+          ],
+          "reason": "The terms note keeps раб for 'eved at every level; the hyphen keeps the apposition tight.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070250151"
+          ],
+          "choice": "मेरे दास भविष्यद्वक्ता (L, B); मेरे दास नबी (R)",
+          "alternatives": [],
+          "reason": "'eved is दास at every level, as the Pentateuch note sets it for those who serve God, and as the English keeps \"servants\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070250151",
+            "o240070250152",
+            "o240070250162"
+          ],
+          "choice": "мои рабы, пророки",
+          "alternatives": [
+            "мои слуги пророки"
+          ],
+          "reason": "Ebed in the Pentateuch note's wording, раб at every level, as the New Testament has it in this translation for those who serve God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070250151",
+            "o240070250162",
+            "o240070250152",
+            "o240070250161"
+          ],
+          "choice": "'avadai hannevi'im \"わたしのしもべである預言者たち\" at every level, Literal too, as the JER guide and ISA-6 (\"my servant\" is わたしのしもべ at every level); the same at 25:4, 26:5, 29:19, 35:15, 44:4.",
+          "alternatives": [
+            "わたしの奴隷である預言者たち"
+          ],
+          "reason": "The English L says \"servants\"; the title is honor, not slavery.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5026,6 +6671,26 @@
           "L": "እነርሱ ግን አልሰሙኝም፤ ጆሮአቸውንም አላዘነበሉም፤ አንገታቸውን አደነደኑ፤ ከአባቶቻቸውም ይልቅ ክፉ አደረጉ።",
           "B": "እነርሱ ግን አልሰሙኝም፤ ልብም አላሉም። አንገተ ደንዳና ሆኑ፤ ከአባቶቻቸውም የባሰ ክፉ ሠሩ።",
           "R": "እነርሱ ግን አልሰሙኝም፤ ልብም አላሉም። እልከኞች ሆኑ፤ ለመታዘዝም እምቢ አሉ። ከቀድሞ አባቶቻቸውም የባሰ ክፉ ነገር አደረጉ።"
+        },
+        "hi": {
+          "L": "पर उन्होंने मेरी न सुनी और न कान लगाया; उन्होंने अपनी गर्दन कड़ी की; उन्होंने अपने पुरखाओं से भी अधिक बुराई की।",
+          "B": "फिर भी उन्होंने मेरी न सुनी, न ध्यान दिया। उन्होंने अपनी गर्दन अकड़ा ली और अपने पूर्वजों से भी बढ़कर बुराई की।",
+          "R": "पर उन्होंने मेरी नहीं सुनी, न ध्यान दिया। वे हठीले बने रहे और आज्ञा मानने से इनकार करते रहे। उन्होंने अपने पूर्वजों से भी ज़्यादा बुरे काम किए।"
+        },
+        "ru": {
+          "L": "Но они не слушали {{deity_pronoun:меня|Меня}} и не приклонили своего уха; они сделали жёсткой свою шею; они поступали хуже своих отцов.",
+          "B": "Но они не слушали {{deity_pronoun:меня|Меня}} и не обращали внимания. Они стали жестоковыйными и поступали хуже своих предков.",
+          "R": "Но они не слушали {{deity_pronoun:меня|Меня}} и не обращали внимания. Они упрямились и не хотели слушаться. Они делали ещё больше зла, чем их предки."
+        },
+        "ja": {
+          "L": "しかし、彼らはわたしに聞かず、耳を傾けず、首をこわくし、先祖たちよりも悪を行った。",
+          "B": "それでも彼らはわたしに聞き従わず、耳を傾けなかった。首をこわくして、先祖よりも悪いことを行った。",
+          "R": "しかし、彼らはわたしの言うことを聞かず、注意も払わなかった。彼らは頑固で、従おうとしなかった。先祖よりも、もっと悪いことをした。"
+        },
+        "uk": {
+          "L": "Але вони не слухали {{deity_pronoun:мене|Мене}} і не прихиляли свого вуха; вони затвердили свою шию; вони чинили гірше, ніж їхні батьки.",
+          "B": "Та вони не слухали {{deity_pronoun:мене|Мене}} і не зважали. Вони затвердили свої шиї і чинили гірше за своїх предків.",
+          "R": "Але вони не слухали {{deity_pronoun:мене|Мене}} і не зважали. Вони були вперті й не хотіли коритися. Вони чинили ще більше зла, ніж їхні предки."
         }
       },
       "decisions": [
@@ -5096,6 +6761,26 @@
             "endureceram o pescoço"
           ],
           "reason": "As Deuteronomy 10:16 and Exodus 32:9 set it in Portuguese: Literal keeps the picture of the neck stiffened against the yoke (m1) with \"cerviz\"; Balanced and Readable say \"teimosos\". 17:23 and 19:15 should follow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070260082",
+            "o240070260101"
+          ],
+          "choice": "hiqshu 'et-'orpam \"首をこわくする\" (L, B), \"頑固で、従おうとしなかった\" (R, the English R).",
+          "alternatives": [],
+          "reason": "Literal and Balanced keep the image (DEU, 2KI 17:14).",
           "uncertain": false,
           "footnote": false
         }
@@ -5178,6 +6863,26 @@
           "L": "አንተም ይህን ቃል ሁሉ ትነግራቸዋለህ፤ እነርሱ ግን አይሰሙህም፤ ትጠራቸዋለህ፤ እነርሱ ግን አይመልሱልህም።",
           "B": "ይህን ቃል ሁሉ ስትነግራቸው አይሰሙህም፤ ስትጠራቸውም አይመልሱልህም።",
           "R": "ኤርምያስ ሆይ፣ ይህን ሁሉ ትነግራቸዋለህ፤ እነርሱ ግን አይሰሙህም። ትጠራቸዋለህ፤ እነርሱ ግን አይመልሱም።"
+        },
+        "hi": {
+          "L": "और तुम उनसे ये सब बातें कहोगे, पर वे तुम्हारी न सुनेंगे; और तुम उन्हें पुकारोगे, पर वे तुम्हें उत्तर न देंगे।",
+          "B": "जब तुम उनसे ये सब बातें कहोगे, तब वे तुम्हारी न सुनेंगे; जब तुम उन्हें पुकारोगे, तब वे तुम्हें कोई उत्तर न देंगे।",
+          "R": "हे यिर्मयाह, तुम उन्हें ये सब बातें बताओगे, पर वे तुम्हारी नहीं सुनेंगे। तुम उन्हें पुकारोगे, पर वे उत्तर नहीं देंगे।"
+        },
+        "ru": {
+          "L": "И ты скажешь им все эти слова, но они не послушают тебя; и позовёшь их, но они не ответят тебе.",
+          "B": "Когда ты будешь говорить им все эти слова, они не станут тебя слушать; когда ты будешь звать их, они не ответят тебе.",
+          "R": "Иеремия, ты скажешь им всё это, но они не станут тебя слушать. Ты будешь звать их, но они не ответят."
+        },
+        "ja": {
+          "L": "そして、あなたは彼らにこれらすべての言葉を語るが、彼らはあなたに聞かない。あなたは彼らに呼びかけるが、彼らはあなたに答えない。",
+          "B": "あなたがこれらの言葉をすべて彼らに語っても、彼らはあなたに聞き従わない。あなたが呼びかけても、彼らは答えない。",
+          "R": "エレミヤよ、あなたはこれらのことをすべて人々に話すが、彼らはあなたの言うことを聞かない。あなたが呼びかけても、彼らは答えない。"
+        },
+        "uk": {
+          "L": "І ти говоритимеш їм усі ці слова, але вони не слухатимуть тебе; і ти кликатимеш їх, але вони не відповідатимуть тобі.",
+          "B": "Коли ти говоритимеш їм усі ці слова, вони не слухатимуть тебе; коли кликатимеш їх, вони тобі не відповідатимуть.",
+          "R": "Єреміє, ти скажеш їм усе це, але вони не слухатимуть тебе. Ти кликатимеш їх, але вони не відповідатимуть."
         }
       },
       "decisions": [
@@ -5296,6 +7001,26 @@
           "L": "እንዲህም ትላቸዋለህ፦ “የአምላኩን {{divine_name:የእግዚአብሔርን|የያህዌን}} ድምፅ ያልሰማ፣ ተግሣጽንም ያልተቀበለ ሕዝብ ይህ ነው። ታማኝነት ጠፍቷል፤ ከአፋቸውም ተቆርጧል።”",
           "B": "ከዚያም እንዲህ በላቸው፦ “አምላኩን {{divine_name:እግዚአብሔርን|ያህዌን}} ያልታዘዘና ተግሣጽን ያልተቀበለ ሕዝብ ይህ ነው። ታማኝነት ሞቷል፤ ከከንፈራቸውም ጠፍቷል።”",
           "R": "ስለዚህ እንዲህ በላቸው፦ “ይህ ሕዝብ አምላኩን {{divine_name:እግዚአብሔርን|ያህዌን}} አልታዘዘም። ሲገሠጽም ሊማር አልፈለገም። ታማኝነት ጠፍቷል። ከአፋቸው ተሰውሯል።”"
+        },
+        "hi": {
+          "L": "और तुम उनसे कहोगे, 'यह वह जाति [है] जिसने {{divine_name:प्रभु|याहवे}} अपने परमेश्वर की आवाज़ न सुनी और ताड़ना ग्रहण न की। सच्चाई मिट गई है; वह उनके मुँह से कट गई है।'",
+          "B": "तब उनसे कहना, 'यह वह देश है जिसने {{divine_name:प्रभु|याहवे}} अपने परमेश्वर की बात नहीं मानी और सुधार स्वीकार नहीं किया। सच्चाई मर चुकी है; वह उनके होंठों से मिट गई है।'",
+          "R": "इसलिए उनसे कहना, 'इस देश ने {{divine_name:प्रभु|याहवे}} अपने परमेश्वर की बात नहीं मानी। सुधारे जाने पर भी इसने सबक़ नहीं सीखा। सच्चाई चली गई है। वह उनके मुँह से ग़ायब हो गई है।'"
+        },
+        "ru": {
+          "L": "И скажешь им: “Это народ, который не слушал голоса {{divine_name:ГОСПОДА|Яхве}}, своего Бога, и не принял наставления. Погибла верность, исчезла из их уст.”",
+          "B": "Тогда скажи им: “Это народ, который не слушается {{divine_name:ГОСПОДА|Яхве}}, своего Бога, и не хочет принять вразумления. Верность умерла; её нет на их устах.”",
+          "R": "Поэтому скажи им: “Этот народ не слушается {{divine_name:ГОСПОДА|Яхве}}, своего Бога. Он не хотел учиться, когда его исправляли. Верности больше нет. Она исчезла из их уст.”"
+        },
+        "ja": {
+          "L": "そして、あなたは彼らに言いなさい。『これは、自分の神{{divine_name:主|ヤハウェ}}の声に聞き従わず、懲らしめを受け入れなかった国民だ。真実は滅び、彼らの口から断たれた。』",
+          "B": "それで、彼らにこう言いなさい。『これは、自分の神{{divine_name:主|ヤハウェ}}に聞き従わず、懲らしめを受け入れようとしなかった国民だ。真実は死に絶え、彼らの口から消えうせた。』",
+          "R": "だから、彼らにこう言いなさい。『この国の民は、自分たちの神{{divine_name:主|ヤハウェ}}に従わなかった。正されても、学ぼうとしなかった。誠実さはなくなり、彼らの口から消えてしまった。』"
+        },
+        "uk": {
+          "L": "І ти скажеш їм: “Це — народ, що не слухав голосу {{divine_name:ГОСПОДА|Ягве}}, свого Бога, і не прийняв напоумлення. Загинула вірність; вона відтята від їхніх уст”.",
+          "B": "Тоді скажи їм: “Це народ, що не слухався {{divine_name:ГОСПОДА|Ягве}}, свого Бога, і не хотів прийняти напоумлення. Вірність померла; її немає на їхніх устах”.",
+          "R": "Тож скажи їм: “Цей народ не слухався {{divine_name:ГОСПОДА|Ягве}}, свого Бога. Він нічого не навчився, коли його виправляли. Вірності немає. Вона зникла з їхніх уст”."
         }
       },
       "decisions": [
@@ -5358,6 +7083,26 @@
           "choice": "This nation has not obeyed ...",
           "alternatives": [],
           "reason": "Readable makes the verdict a plain statement.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070280152",
+            "o240070280131"
+          ],
+          "choice": "ha'emunah \"真実\" (L, B, as 5:1), \"誠実さ\" (R); musar \"懲らしめ\" (L, B), \"正されても、学ぼうとしなかった\" (R, the English R).",
+          "alternatives": [],
+          "reason": "JER conventions.",
           "uncertain": false,
           "footnote": false
         }
@@ -5436,6 +7181,26 @@
           "L": "የተቀደሰ ጠጉርሽን ቆርጠሽ ጣዪ፤ በገላጣዎቹም ኮረብቶች ላይ ሙሾ አውጪ፤ {{divine_name:እግዚአብሔር|ያህዌ}} የቁጣውን ትውልድ ጥሏልና፤ ትቶታልምና።",
           "B": "የተቀደሰ ጠጉርሽን ቆርጠሽ ጣዪው፤ በገላጣዎቹ ኮረብቶች ላይ ሙሾ አውጪ፤ {{divine_name:እግዚአብሔር|ያህዌ}} ቁጣው ያረፈበትን ትውልድ ጥሏል፤ ትቶታልምና።",
           "R": "ኢየሩሳሌም ሆይ፣ የእግዚአብሔር መሆንሽን የሚያሳየውን ጠጉርሽን ቆርጠሽ ጣዪው። ወደ ገላጣዎቹ ኮረብቶች ወጥተሽ የሐዘን ቅኔ አልቅሺ። {{divine_name:እግዚአብሔር|ያህዌ}} ይህን ትውልድ ጥሎታል፤ ትቶታልም፤ ተቆጥቶባቸዋልና።"
+        },
+        "hi": {
+          "L": "अपने अर्पित बाल काटकर फेंक दो, और नंगी चोटियों पर विलाप का गीत उठाओ, क्योंकि {{divine_name:प्रभु|याहवे}} ने अपने रोष की पीढ़ी को ठुकरा दिया और त्याग दिया है।",
+          "B": "अपने अर्पित बाल काटकर फेंक दो; नंगी पहाड़ियों पर विलाप का गीत गाओ, क्योंकि {{divine_name:प्रभु|याहवे}} ने उस पीढ़ी को, जिस पर उनका रोष है, ठुकरा दिया और छोड़ दिया है।",
+          "R": "हे यरूशलेम, अपने वे बाल काट डालो जो दिखाते हैं कि तुम परमेश्वर की हो, और उन्हें फेंक दो। नंगी पहाड़ियों पर जाकर शोक का गीत गाओ। {{divine_name:प्रभु|याहवे}} ने इस पीढ़ी को ठुकरा दिया और छोड़ दिया है, क्योंकि वे उनसे क्रोधित हैं।"
+        },
+        "ru": {
+          "L": "Остриги свои посвящённые [волосы] и брось, и подними плач на голых высотах, потому что {{divine_name:ГОСПОДЬ|Яхве}} отверг и оставил поколение своего гнева.",
+          "B": "Остриги свои посвящённые волосы и выбрось их; подними плач на голых холмах, потому что {{divine_name:ГОСПОДЬ|Яхве}} отверг и оставил поколение, на котором {{deity_pronoun:его|Его}} гнев.",
+          "R": "Иерусалим, остриги волосы, которые показывают, что ты принадлежишь Богу, и выбрось их. Поднимись на голые вершины холмов и пой плачевную песнь. {{divine_name:ГОСПОДЬ|Яхве}} отверг и оставил это поколение, потому что {{deity_pronoun:он|Он}} гневается на них."
+        },
+        "ja": {
+          "L": "あなたの聖別の髪を切って、投げ捨てよ。はげ山の上で哀歌を歌え。{{divine_name:主|ヤハウェ}}が、自分の怒りの世代を退け、見捨てたからだ。",
+          "B": "聖別された髪を切り、投げ捨てなさい。木のない丘の上で哀歌を歌いなさい。{{divine_name:主|ヤハウェ}}が、怒りを受けたこの世代を退け、見捨てたからだ。",
+          "R": "エルサレムよ、神のものである印の髪を切って、投げ捨てなさい。はげた丘に登って、嘆きの歌を歌いなさい。{{divine_name:主|ヤハウェ}}は、この世代の人々に怒って、彼らを退け、見捨てたのだ。"
+        },
+        "uk": {
+          "L": "Остриж своє посвячене волосся і викинь [його], і підніми голосіння на голих висотах, бо {{divine_name:ГОСПОДЬ|Ягве}} відкинув і покинув покоління свого гніву.",
+          "B": "Остриж своє посвячене волосся й викинь його; підніми голосіння на голих пагорбах, бо {{divine_name:ГОСПОДЬ|Ягве}} відкинув і покинув покоління, на якому лежить {{deity_pronoun:його|Його}} гнів.",
+          "R": "Єрусалиме, остриж волосся, що позначає тебе як Божу, і викинь його. Піди на голі вершини пагорбів і заспівай пісню жалоби. {{divine_name:ГОСПОДЬ|Ягве}} відкинув і покинув це покоління, бо {{deity_pronoun:він|Він}} гнівається на них."
         }
       },
       "decisions": [
@@ -5559,6 +7324,48 @@
           "reason": "The commands are feminine singular, addressed to Jerusalem (meaning decision m1); Vietnamese uses God's address to one person, as for Zion elsewhere.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o240070290011"
+          ],
+          "choice": "feminine address to Jerusalem (तुम परमेश्वर की हो)",
+          "alternatives": [],
+          "reason": "The commands are addressed to a woman, Jerusalem in mourning (m1); where Hindi shows gender, the forms are feminine, as in chapters 2-4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070290011",
+            "o240070290032",
+            "o240070290042",
+            "o240070290021",
+            "o240070290022"
+          ],
+          "choice": "The feminine imperatives (m1) are addressed to Jerusalem as \"あなた\" (L, R names her, as the English R); nizrekh \"あなたの聖別の髪\" (L), \"聖別された髪\" (B), \"神のものである印の髪\" (R); qinah \"哀歌\" (L, B), \"嘆きの歌\" (R); shefayim as the JER table. The LORD in the third person inside God's own speech takes no respect form (\"退け、見捨てた\").",
+          "alternatives": [],
+          "reason": "JER conventions: a city is あなた, never 彼女; no respect form for God in his own words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5641,6 +7448,26 @@
           "L": "የይሁዳ ልጆች በዓይኔ ክፉ የሆነውን አድርገዋልና፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። ስሜ በተጠራበት ቤት ሊያረክሱት አስጸያፊ ነገሮቻቸውን አኖሩበት።",
           "B": "የይሁዳ ልጆች በፊቴ ክፉ የሆነውን አድርገዋል፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። ስሜ በሚጠራበት ቤት አስጸያፊ ጣዖቶቻቸውን አኑረው አርክሰውታል።",
           "R": "የይሁዳ ሰዎች እኔ ክፉ ነው የምለውን አድርገዋል፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}። ስሜ በሚጠራበት ቤተ መቅደስ አስጸያፊ ጣዖቶቻቸውን አስቀምጠዋል፤ በዚህም አርክሰውታል።"
+        },
+        "hi": {
+          "L": "क्योंकि {{gender:यहूदा की सन्तान|यहूदा के पुत्रों}} ने वह किया है जो मेरी दृष्टि में बुरा है, {{divine_name:प्रभु|याहवे}} की यह वाणी है। उन्होंने अपनी घृणित वस्तुएँ उस भवन में रखी हैं जो मेरे नाम से कहलाता है, कि उसे अशुद्ध करें।",
+          "B": "यहूदा के लोगों ने वह किया है जो मेरी दृष्टि में बुरा है, {{divine_name:प्रभु|याहवे}} की यह वाणी है। उन्होंने अपनी घिनौनी मूरतें उस भवन में रखी हैं जिस पर मेरा नाम है, और इस तरह उसे अशुद्ध कर दिया है।",
+          "R": "यहूदा के लोगों ने वह किया है जिसे मैं बुरा कहता हूँ, {{divine_name:प्रभु|याहवे}} कहते हैं। उन्होंने अपनी घिनौनी मूरतें उस मन्दिर में रख दी हैं जिस पर मेरा नाम है, और इस तरह उसे अशुद्ध कर दिया है।"
+        },
+        "ru": {
+          "L": "Ведь {{gender:дети Иуды|сыны Иуды}} сделали злое в {{deity_pronoun:моих|Моих}} глазах, — слово {{divine_name:ГОСПОДА|Яхве}}. Они поставили свои мерзости в доме, над которым наречено {{deity_pronoun:моё|Моё}} имя, чтобы осквернить его.",
+          "B": "Жители Иуды сделали то, что зло в {{deity_pronoun:моих|Моих}} глазах, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. Они поставили своих мерзких идолов в доме, который носит {{deity_pronoun:моё|Моё}} имя, и тем осквернили его.",
+          "R": "Жители Иуды делают то, что {{deity_pronoun:я|Я}} называю злом, — говорит {{divine_name:ГОСПОДЬ|Яхве}}. Они поставили своих отвратительных идолов в храме, который носит {{deity_pronoun:моё|Моё}} имя, и так сделали его нечистым."
+        },
+        "ja": {
+          "L": "ユダの子らは、わたしの目に悪であることを行ったからだ。――{{divine_name:主|ヤハウェ}}の言葉――彼らは、わたしの名で呼ばれている家に、自分たちの忌むべきものを置いて、それを汚した。",
+          "B": "ユダの人々は、わたしの目に悪とされることを行った、と{{divine_name:主|ヤハウェ}}は告げる。彼らは、わたしの名がつけられた家に忌まわしい偶像を置き、それを汚した。",
+          "R": "ユダの人々は、わたしが悪いと言うことをしてきた、と{{divine_name:主|ヤハウェ}}は言う。彼らは、わたしの名がつけられた神殿に汚らわしい偶像を置いて、神殿を汚した。"
+        },
+        "uk": {
+          "L": "Бо {{gender:діти|сини}} Юди чинили зло в {{deity_pronoun:моїх|Моїх}} очах, говорить {{divine_name:ГОСПОДЬ|Ягве}}. Вони поставили свої гидоти в домі, що названий {{deity_pronoun:моїм|Моїм}} іменем, щоб осквернити його.",
+          "B": "{{gender:Люди|Сини}} Юдеї чинили зло в {{deity_pronoun:моїх|Моїх}} очах, говорить {{divine_name:ГОСПОДЬ|Ягве}}. Вони поставили свої гидкі ідоли в домі, що носить {{deity_pronoun:моє|Моє}} імʼя, і так осквернили його.",
+          "R": "{{gender:Люди|Сини}} Юдеї чинили те, що {{deity_pronoun:я|Я}} називаю злом, каже {{divine_name:ГОСПОДЬ|Ягве}}. Вони поставили свої огидні ідоли в храмі, що носить {{deity_pronoun:моє|Моє}} імʼя, і так зробили його нечистим."
         }
       },
       "decisions": [
@@ -5725,6 +7552,68 @@
             "{{gender:o povo|os filhos}} de Judá"
           ],
           "reason": "As at 3:14: \"filhos\" already takes in daughters and \"o povo\" names everyone, so Portuguese has no second wording for the setting to offer; a span would also have to change the verb (\"fez\", \"fizeram\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070300031",
+            "o240070300041"
+          ],
+          "choice": "{{gender:यहूदा की सन्तान|यहूदा के पुत्रों}} (L); यहूदा के लोग, no span (B, R)",
+          "alternatives": [],
+          "reason": "As \"the sons of Israel\" in the Pentateuch note: Literal has the gender span, and Balanced and Readable say लोग, which already includes men and women, so no span is needed there where the English has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o240070300031",
+            "o240070300041"
+          ],
+          "choice": "жители Иуды, no gender span (B, R)",
+          "alternatives": [
+            "a gender span жители Иуды / сыны Иуды"
+          ],
+          "reason": "Russian жители already includes men and women, so Balanced and Readable need no span where the English has one; Literal keeps the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070300101",
+            "o240070300052",
+            "o240070300062"
+          ],
+          "choice": "\"did evil in my eyes\" in God's mouth follows the Kings formula: \"わたしの目に悪であることを行った\" (L), \"わたしの目に悪とされることを行った\" (B), \"わたしが悪いと言うことをした\" (R); shiqqutsim \"忌むべきもの\" (L), \"忌まわしい偶像\" (B), \"汚らわしい偶像\" (R).",
+          "alternatives": [],
+          "reason": "Regnal formula of 1-2 Kings turned to the first person.",
           "uncertain": false,
           "footnote": false
         }
@@ -5814,6 +7703,26 @@
           "L": "ወንዶች ልጆቻቸውንና ሴቶች ልጆቻቸውን በእሳት ያቃጥሉ ዘንድ በሄኖም ልጅ ሸለቆ ያለውን የቶፌትን የኮረብታ መስገጃዎች ሠሩ፤ ይህንም እኔ አላዘዝኩም፤ ወደ ልቤም አልወጣም።",
           "B": "ወንዶችና ሴቶች ልጆቻቸውን በእሳት ለማቃጠል በሄኖም ልጅ ሸለቆ የቶፌትን የኮረብታ መስገጃዎች ሠርተዋል፤ ይህን ከቶ አላዘዝኩም፤ ወደ ሐሳቤም ከቶ አልገባም።",
           "R": "በሄኖም ልጅ ሸለቆ በሚገኘው በቶፌት የማምለኪያ ስፍራዎችን ሠርተዋል። በዚያም ወንዶችና ሴቶች ልጆቻቸውን ለመሥዋዕት በእሳት ያቃጥላሉ። እንዲህ እንዲያደርጉ ከቶ አላዘዝኳቸውም። እንዲህ ያለ ነገር አስቤ እንኳ አላውቅም።"
+        },
+        "hi": {
+          "L": "और उन्होंने बेन-हिन्नोम की घाटी में जो तोपेत [है], उसके ऊँचे स्थान बनाए हैं, कि अपने बेटों और अपनी बेटियों को आग में जलाएँ, जिसकी आज्ञा मैंने नहीं दी, और जो मेरे मन में कभी नहीं आया।",
+          "B": "बेन-हिन्नोम की घाटी में उन्होंने तोपेत के ऊँचे स्थान बनाए हैं, ताकि अपने बेटे-बेटियों को आग में जलाएँ, ऐसा काम जिसकी मैंने कभी आज्ञा नहीं दी और जो कभी मेरे मन में भी नहीं आया।",
+          "R": "उन्होंने बेन-हिन्नोम की घाटी में तोपेत नाम की जगह पर पूजा-स्थान बनाए हैं। वहाँ वे अपने बेटे-बेटियों को बलि के रूप में आग में जलाते हैं। मैंने उन्हें ऐसा करने की आज्ञा कभी नहीं दी। ऐसी बात मैंने कभी सोची भी नहीं।"
+        },
+        "ru": {
+          "L": "И построили высоты Тофета, который в долине сына Еннома, чтобы сжигать своих сыновей и своих дочерей в огне, чего {{deity_pronoun:я|Я}} не повелевал и что не приходило {{deity_pronoun:мне|Мне}} на сердце.",
+          "B": "В долине сына Еннома они построили жертвенные высоты Тофета, чтобы сжигать своих сыновей и дочерей в огне, чего {{deity_pronoun:я|Я}} никогда не повелевал и что никогда не приходило {{deity_pronoun:мне|Мне}} на ум.",
+          "R": "Они построили святилища в Тофете, в долине сына Еннома. Там они сжигают своих сыновей и дочерей в огне в жертву. Я никогда не повелевал им этого. Мне даже в голову не приходило такое."
+        },
+        "ja": {
+          "L": "また、彼らはベン・ヒノムの谷にあるトフェトの高き所を築いた。自分たちの息子たち、娘たちを火で焼くためである。それは、わたしが命じたことでもなく、わたしの心に上ったことでもない。",
+          "B": "彼らはベン・ヒノムの谷にトフェトの高き所を築いて、息子や娘たちを火で焼いた。そのようなことを、わたしは命じたこともなく、思いもしなかった。",
+          "R": "彼らは、ベン・ヒノムの谷のトフェトに礼拝所を造った。そこで、自分たちの息子や娘を火で焼いて、いけにえとしてささげている。わたしは、そんなことを命じたことはない。そんなことを考えたことさえない。"
+        },
+        "uk": {
+          "L": "І вони збудували пагірки Тофета, що [в] долині Бен-Гіннома, щоб палити своїх синів і своїх дочок у вогні, чого {{deity_pronoun:я|Я}} не наказував і [що] не спадало на {{deity_pronoun:моє|Моє}} серце.",
+          "B": "У долині Бен-Гіннома вони збудували узвишшя Тофета, щоб палити своїх синів і дочок у вогні, чого {{deity_pronoun:я|Я}} ніколи не наказував і що {{deity_pronoun:мені|Мені}} ніколи не спадало на думку.",
+          "R": "Вони збудували узвишшя в Тофеті, у долині Бен-Гіннома. Там вони палять своїх синів і дочок у вогні як жертви. Я ніколи не наказував їм цього робити. Я навіть ніколи не думав про таке."
         }
       },
       "decisions": [
@@ -6065,6 +7974,129 @@
           "reason": "Topheth and the Valley of Ben-hinnom keep the forms of 2 Kings 23:10 and 2 Chronicles 28:3 on main.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"пагірки\" (L), \"узвишшя\" (B, R) for the high places; \"Тофет\", \"долина Бен-Гіннома\", through the book",
+          "alternatives": [
+            "долина сина Гіннома"
+          ],
+          "reason": "The terms note's wording for the high places, recorded once here; the valley's name is transcribed as one name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070310021",
+            "o240070310032",
+            "o240070310071"
+          ],
+          "choice": "तोपेत; बेन-हिन्नोम की घाटी; ऊँचे स्थान (L, B), पूजा-स्थान (R)",
+          "alternatives": [],
+          "reason": "Topheth and the Valley of Ben-hinnom keep the forms of 2 Kings 23:10, where Josiah defiles the same place, and Joshua 15:8. The high places are ऊँचे स्थान, as the history note sets it; Readable says पूजा-स्थान, since these were built in a valley, as the English Readable says \"shrines\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070310032",
+            "o240070310071"
+          ],
+          "choice": "Тофет; долина сына Еннома",
+          "alternatives": [
+            "Тофеф",
+            "долина Бен-Хинном"
+          ],
+          "reason": "The place names as 2 Kings 23:10 and 2 Chronicles 28:3 have them in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070310021"
+          ],
+          "choice": "жертвенные высоты (B); святилища (R)",
+          "alternatives": [
+            "святилища на холмах"
+          ],
+          "reason": "Bamot is высоты at Literal and святилища на холмах at Balanced elsewhere; these stood in a valley, so Balanced says \"жертвенные высоты\" and Readable \"святилища\", as the English Readable avoids \"hilltop\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070310021"
+          ],
+          "choice": "bamot hattofet \"トフェトの高き所\" (L, B, as the JER table); R \"トフェトに礼拝所を造った\" (the English R \"shrines\"), not the usual \"丘の上の礼拝所\", because these stood in a valley (m3).",
+          "alternatives": [
+            "トフェトにある丘の上の礼拝所"
+          ],
+          "reason": "The Readable gloss of bamot would contradict the valley.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070310032",
+            "o240070310052",
+            "o240070310071"
+          ],
+          "choice": "Topheth \"トフェト\", gei ven-Hinnom \"ベン・ヒノムの谷\" (every level), as 2 Kings 23:10 and the JER table.",
+          "alternatives": [],
+          "reason": "Names as 2 Kings.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6151,6 +8183,26 @@
           "L": "ስለዚህ እነሆ፣ ቀኖች ይመጣሉ፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ ከእንግዲህ ቶፌት ወይም የሄኖም ልጅ ሸለቆ አይባልም፤ የዕርድ ሸለቆ እንጂ፤ ስፍራም ስለሌለ በቶፌት ይቀብራሉ።",
           "B": "ስለዚህ ቀኖች ይመጣሉ፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ ያን ጊዜ ከእንግዲህ ቶፌት ወይም የሄኖም ልጅ ሸለቆ አይባልም፤ የዕርድ ሸለቆ ይባላል እንጂ። ሌላ ቦታ ስለማይገኝ ሙታንን በቶፌት ይቀብራሉ።",
           "R": "ስለዚህ ጊዜ ይመጣል፤ ይላል {{divine_name:እግዚአብሔር|ያህዌ}}፤ ያን ጊዜ ሰዎች ይህን ስፍራ ከእንግዲህ ቶፌት ወይም የሄኖም ልጅ ሸለቆ ብለው አይጠሩትም። የዕርድ ሸለቆ ብለው ይጠሩታል። ሌላ ቦታ ስለማይቀር ሙታንን በቶፌት ይቀብራሉ።"
+        },
+        "hi": {
+          "L": "इसलिए देखो, ऐसे दिन आ रहे हैं, {{divine_name:प्रभु|याहवे}} की यह वाणी है, जब वह फिर तोपेत या बेन-हिन्नोम की घाटी न कहलाएगी, पर वध की घाटी; और वे तोपेत में गाड़ेंगे, क्योंकि [और] जगह न रहेगी।",
+          "B": "इसलिए देखो, ऐसे दिन आ रहे हैं, {{divine_name:प्रभु|याहवे}} की यह वाणी है, जब वह फिर तोपेत या बेन-हिन्नोम की घाटी नहीं कहलाएगी, पर वध की घाटी। वे मरे हुओं को तोपेत में गाड़ेंगे, क्योंकि और कहीं जगह न रहेगी।",
+          "R": "इसलिए वह समय आ रहा है, {{divine_name:प्रभु|याहवे}} कहते हैं, जब लोग इस जगह को फिर तोपेत या बेन-हिन्नोम की घाटी नहीं कहेंगे। वे इसे मार-काट की घाटी कहेंगे। वे मरे हुओं को तोपेत में गाड़ेंगे, क्योंकि और कहीं जगह नहीं बचेगी।"
+        },
+        "ru": {
+          "L": "Поэтому вот, приходят дни, — слово {{divine_name:ГОСПОДА|Яхве}}, — когда не будут больше называть [его] Тофетом и долиной сына Еннома, но долиной Резни; и будут хоронить в Тофете, потому что нет места.",
+          "B": "Поэтому вот, приходят дни, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — когда это место больше не будут называть Тофетом или долиной сына Еннома, но долиной Резни. Мёртвых будут хоронить в Тофете, потому что больше негде будет хоронить.",
+          "R": "Поэтому приходит время, — говорит {{divine_name:ГОСПОДЬ|Яхве}}, — когда люди больше не будут называть это место Тофетом или долиной сына Еннома. Его будут называть долиной Резни. Мёртвых будут хоронить в Тофете, потому что больше нигде не останется места."
+        },
+        "ja": {
+          "L": "それゆえ、見なさい、日々が来る――{{divine_name:主|ヤハウェ}}の言葉――。そのとき、そこはもはやトフェトとも、ベン・ヒノムの谷とも呼ばれず、殺戮の谷と[呼ばれる]。人々は、場所がないので、トフェトに葬る。",
+          "B": "それゆえ、見なさい、その日が来る、と{{divine_name:主|ヤハウェ}}は告げる。そのとき、そこはもうトフェトとも、ベン・ヒノムの谷とも呼ばれず、殺戮の谷と呼ばれる。ほかに場所がなくなるので、人々はトフェトに死者を葬る。",
+          "R": "だから、その時が来る、と{{divine_name:主|ヤハウェ}}は言う。そのとき、人々はもうこの場所をトフェトとも、ベン・ヒノムの谷とも呼ばない。人々が殺される谷と呼ぶ。ほかに場所が残っていないので、人々は死んだ者たちをトフェトに葬る。"
+        },
+        "uk": {
+          "L": "Тому ось настають дні, говорить {{divine_name:ГОСПОДЬ|Ягве}}, коли не будуть більше називати [це місце] Тофетом і долиною Бен-Гіннома, а долиною Різанини; і ховатимуть у Тофеті, бо не буде місця.",
+          "B": "Тож ось настають дні, говорить {{divine_name:ГОСПОДЬ|Ягве}}, коли це місце більше не називатимуть Тофетом чи долиною Бен-Гіннома, а долиною Різанини. Мертвих ховатимуть у Тофеті, бо більше ніде не буде місця.",
+          "R": "Тож настає час, каже {{divine_name:ГОСПОДЬ|Ягве}}, коли люди більше не називатимуть це місце Тофетом чи долиною Бен-Гіннома. Вони називатимуть його долиною Різанини. Мертвих ховатимуть у Тофеті, бо більше ніде не залишиться місця."
         }
       },
       "decisions": [
@@ -6325,6 +8377,69 @@
           "reason": "The formula \"days are coming\" keeps one wording through Jeremiah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070320161",
+            "o240070320172"
+          ],
+          "choice": "वध की घाटी (L, B); मार-काट की घाटी (R)",
+          "alternatives": [],
+          "reason": "The new name is a place of slaughter, where those who killed their children are themselves killed (m1). वध is the word for killing as slaughter; Readable uses the everyday मार-काट.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070320161",
+            "o240070320172"
+          ],
+          "choice": "долина Резни",
+          "alternatives": [
+            "долина убиения"
+          ],
+          "reason": "A plain modern word for the new name, which returns in 19:6, rather than the Synodal form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070320031",
+            "o240070320041",
+            "o240070320021"
+          ],
+          "choice": "hinneh yamim ba'im \"見なさい、日々が来る\" (L, as 2 Kings 20:17), \"見なさい、その日が来る\" (B), \"その時が来る\" (R); the same through the book (9:25, 16:14, 19:6, 23:5, 23:7, 30:3, 31:27, 31:31, 31:38, 33:14, 48:12, 49:2, 51:47, 51:52). gei haharegah \"殺戮の谷\" (L, B), \"人々が殺される谷\" (R), as the JER table.",
+          "alternatives": [],
+          "reason": "One form for the formula through Jeremiah.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6403,6 +8518,26 @@
           "L": "የዚህም ሕዝብ ሬሳ ለሰማይ ወፎችና ለምድር አራዊት መብል ይሆናል፤ የሚያስፈራራቸውም አይኖርም።",
           "B": "የዚህ ሕዝብ ሬሳዎች ለሰማይ ወፎችና ለዱር አራዊት ምግብ ይሆናሉ፤ የሚያባርራቸውም አይኖርም።",
           "R": "ወፎችና የዱር አራዊት የእነዚህን ሰዎች ሬሳ ይበላሉ፤ የሚያባርራቸውም ማንም አይቀርም።"
+        },
+        "hi": {
+          "L": "और इन लोगों की लाशें आकाश के पक्षियों और पृथ्वी के पशुओं का भोजन होंगी, और [उन्हें] भगानेवाला कोई न [होगा]।",
+          "B": "इन लोगों की लाशें आकाश के पक्षियों और जंगली पशुओं का भोजन बनेंगी, और कोई उन्हें भगानेवाला न होगा।",
+          "R": "इन लोगों की लाशों को पक्षी और जंगली पशु खाएँगे, और उन्हें भगाने के लिए कोई न बचेगा।"
+        },
+        "ru": {
+          "L": "И будут трупы этого народа пищей для птиц небесных и для зверей земли, и не будет отпугивающего [их].",
+          "B": "Тела этого народа станут пищей для птиц небесных и для диких зверей, и никто не отгонит их.",
+          "R": "Птицы и дикие звери будут есть тела этих людей, и не останется никого, кто бы прогнал их."
+        },
+        "ja": {
+          "L": "この民の死体は、天の鳥と地の獣の餌となり、[それらを]追い払う者もいない。",
+          "B": "この民の死体は空の鳥と野の獣の餌食となり、それを追い払う者もいない。",
+          "R": "鳥や野の獣がこの民の死体を食べ、それを追い払う人も残っていない。"
+        },
+        "uk": {
+          "L": "І трупи цього народу будуть їжею для птахів небесних і для звірів земних, і ніхто не відганятиме [їх].",
+          "B": "Мертві тіла цього народу стануть їжею для небесних птахів і для диких звірів, і ніхто їх не віджене.",
+          "R": "Птахи й дикі звірі їстимуть мертві тіла цих людей, і не залишиться нікого, хто б їх відігнав."
         }
       },
       "decisions": [
@@ -6476,6 +8611,25 @@
           "choice": "the words of Deuteronomy 28:26 at each level",
           "alternatives": [],
           "reason": "The verse repeats the covenant curse of Deuteronomy 28:26 (m1), and each level takes that verse's Portuguese, so that the reader hears the curse coming true; 16:4, 19:7 and 34:20 should follow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070330021"
+          ],
+          "choice": "the wording of Deuteronomy 28:26",
+          "alternatives": [],
+          "reason": "The verse repeats the covenant curse of Deuteronomy 28:26 (m1); each level keeps the wording that verse has in this translation, changing only \"your\" to \"this people's\".",
           "uncertain": false,
           "footnote": false
         }
@@ -6560,6 +8714,26 @@
           "L": "ከይሁዳ ከተሞችና ከኢየሩሳሌም መንገዶች የደስታን ድምፅና የሐሴትን ድምፅ፣ የሙሽራውን ድምፅና የሙሽሪቱን ድምፅ አስቀራለሁ፤ ምድሪቱ ባድማ ትሆናለችና።",
           "B": "በይሁዳ ከተሞችና በኢየሩሳሌም መንገዶች የደስታንና የሐሴትን ድምፅ፣ የሙሽራንና የሙሽሪትን ድምፅ ጸጥ አደርጋለሁ፤ ምድሪቱ ባድማ ትሆናለችና።",
           "R": "በይሁዳ ከተሞችና በኢየሩሳሌም መንገዶች የደስታንና የሐሴትን ድምፅ አስቀራለሁ። በሠርግ ላይ የሙሽራና የሙሽሪት የደስታ ድምፅ ማንም አይሰማም። ምድሪቱ ሁሉ ባዶ ፍርስራሽ ትሆናለች።"
+        },
+        "hi": {
+          "L": "और मैं यहूदा के नगरों में से और यरूशलेम की गलियों में से हर्ष का शब्द और आनंद का शब्द, दूल्हे का शब्द और दुल्हन का शब्द बंद कर दूँगा, क्योंकि देश उजाड़ हो जाएगा।",
+          "B": "मैं यहूदा के नगरों और यरूशलेम की गलियों में हर्ष और आनंद के स्वर, दूल्हे और दुल्हन के स्वर चुप करा दूँगा, क्योंकि देश खंडहर हो जाएगा।",
+          "R": "मैं यहूदा के नगरों और यरूशलेम की गलियों में ख़ुशी और आनंद की आवाज़ें बंद कर दूँगा। विवाह में दूल्हे और दुल्हन की ख़ुशी भरी आवाज़ें फिर किसी को सुनाई न देंगी। सारा देश एक सूना खंडहर बन जाएगा।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:я|Я}} прекращу в городах Иуды и на улицах Иерусалима звук радости и звук веселья, голос жениха и голос невесты, потому что в развалины превратится земля.",
+          "B": "В городах Иуды и на улицах Иерусалима {{deity_pronoun:я|Я}} заставлю умолкнуть звуки радости и веселья, голоса жениха и невесты, потому что земля будет лежать в развалинах.",
+          "R": "В городах Иуды и на улицах Иерусалима {{deity_pronoun:я|Я}} положу конец звукам радости и счастья. Никто больше не услышит радостных голосов жениха и невесты на их свадьбе. Вся земля станет пустыми развалинами."
+        },
+        "ja": {
+          "L": "わたしは、ユダの町々とエルサレムの通りから、喜びの声と楽しみの声、花婿の声と花嫁の声を絶えさせる。この地は廃墟となるからだ。",
+          "B": "わたしは、ユダの町々とエルサレムの通りから、喜びの声と楽しみの声、花婿の声と花嫁の声を絶やす。この地は荒れ果てて廃墟となるからだ。",
+          "R": "わたしは、ユダの町々とエルサレムの通りから、喜びと楽しみの声を消し去る。結婚式で花嫁と花婿が喜ぶ声も、もう聞こえなくなる。国中が、だれも住まない廃墟になるからだ。"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:я|Я}} припиню в містах Юдеї і на вулицях Єрусалима голос радості й голос веселощів, голос нареченого і голос нареченої, бо земля стане руїною.",
+          "B": "У містах Юдеї і на вулицях Єрусалима {{deity_pronoun:я|Я}} змушу замовкнути звуки радості й веселощів, голоси нареченого й нареченої, бо земля лежатиме в руїнах.",
+          "R": "У містах Юдеї та на вулицях Єрусалима {{deity_pronoun:я|Я}} покладу край звукам радості й щастя. Ніхто не почує радісних голосів нареченої й нареченого на їхньому весіллі. Уся земля стане порожньою руїною."
         }
       },
       "decisions": [
@@ -6651,6 +8825,28 @@
           "choice": "\"የሙሽራው ድምፅና የሙሽሪቱ ድምፅ\" (Literal); \"የሙሽራና የሙሽሪት ድምፅ\" (Balanced, Readable)",
           "alternatives": [],
           "reason": "The line returns in 16:9, 25:10 and 33:11, and Revelation 18:23 echoes it; Balanced keeps the Amharic Revelation 18:23 wording (\"የሙሽራና የሙሽሪት ድምፅ\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o240070340071",
+            "o240070340091",
+            "o240070340111",
+            "o240070340131"
+          ],
+          "choice": "qol sason veqol simchah qol chatan veqol kallah \"喜びの声と楽しみの声、花婿の声と花嫁の声\" (L, B), R as the English R; the same phrase in 16:9, 25:10, 33:11. The sentence ends without 」: God's words run on into 8:1-3 (m2).",
+          "alternatives": [],
+          "reason": "One form for the refrain.",
           "uncertain": false,
           "footnote": false
         }
