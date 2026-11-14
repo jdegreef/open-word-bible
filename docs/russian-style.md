@@ -224,6 +224,12 @@ Settings change wording, never meaning, exactly as in English.
 
 ## 7a. The Old Testament and poetry (proposed, to settle before the Old Testament)
 
+`docs/russian-terms.md` is the Russian glossary for the Old Testament (and
+the words it shares with the New): the names of God, address, key terms,
+formulas, names, parallels and quotations. It settles this section: lines
+follow the English record, so a level is set in lines only where the
+English level is.
+
 - **The divine name** (YHWH) is `{{divine_name:ГОСПОДЬ|Яхве}}` at every
   level, in capitals like the English "the LORD", inflected inside each
   option (`{{divine_name:ГОСПОДА|Яхве}}`, `{{divine_name:ГОСПОДУ|Яхве}}`).

@@ -137,6 +137,14 @@ def url(lang, path):
     return path if lang == "en" else f"/{lang}{path}"
 
 
+# The scripts and style sheets copied from web/ into the site, each always
+# named with asset(), so render.yaml lets browsers keep them a year
+# (tests/test_headers.py). web/sw.js is not one: it is built, and checked
+# on every visit.
+WEB_FILES = ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
+             "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css")
+
+
 @functools.lru_cache(maxsize=None)
 def asset(name):
     """The URL of a file from web/, with its content hash as a version.
@@ -1244,23 +1252,57 @@ def shared_script(name, data):
     return text, hashlib.sha256(text.encode()).hexdigest()[:10]
 
 
-def chapter_data_path(book, chapter):
-    return f"/{CHAPTER_DATA_DIR}{chapter_url(book, chapter).rstrip('/')}.js"
+def chapter_data_path(book, chapter, code=None):
+    """chapter-data/jhn/1.js, or with a language chapter-data/jhn/1.es.js."""
+    return f"/{CHAPTER_DATA_DIR}{chapter_url(book, chapter).rstrip('/')}{'.' + code if code else ''}.js"
 
 
 @functools.cache
 def chapter_shared(book, chapter):
-    """A chapter's reader data in no language: its sentence records, with
-    every language's renderings and decisions (reader.js keeps the meaning
-    decisions and the page language's own), the source words of each verse
-    and the cross-references. As a script, and its URL."""
+    """A chapter's reader data in no language: its sentence records without
+    their renderings and word links, and with only their meaning decisions
+    (each language's come in chapter_language_data), the source words of
+    each verse and the cross-references. As a script, and its URL."""
     records, words = load_chapter(book, chapter)
     source = source_language(book)
     text, digest = shared_script("OWB_CHAPTER", {
-        "records": records,
+        "records": [{**{k: v for k, v in r.items() if k not in ("renderings", "links")},
+                     "decisions": [d for d in r["decisions"] if d["language"] is None]} for r in records],
         "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
         "crossrefs": chapter_crossrefs(records)})
     return text, f"{chapter_data_path(book, chapter)}?v={digest}"
+
+
+def chapter_languages(records):
+    """Every language any of the sentences has, in the site's order: English
+    may run ahead of the others."""
+    return [code for code in LANGUAGES if any(code in r["renderings"] for r in records)]
+
+
+@functools.cache
+def chapter_language_data(book, chapter, code):
+    """A chapter in one language: each sentence's renderings, word links
+    and rendering decisions in it, by sentence. As a script that adds them
+    to window.OWB_TEXTS, which reader.js joins to the records, and its URL.
+    A page loads its own language's (page_texts); Parallel the other's."""
+    records, _ = load_chapter(book, chapter)
+    data = {"renderings": {r["id"]: r["renderings"][code] for r in records if code in r["renderings"]},
+            "links": {r["id"]: r["links"][code] for r in records if code in r.get("links", {})},
+            "decisions": {r["id"]: mine for r in records
+                          if (mine := [d for d in r["decisions"] if d["language"] == code])}}
+    text = (f'window.OWB_TEXTS=window.OWB_TEXTS||{{}};window.OWB_TEXTS["{code}"]='
+            + json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + ";\n")
+    return text, f"{chapter_data_path(book, chapter, code)}?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
+def page_texts(records, lang):
+    """The languages a chapter page in lang loads with it
+    (chapter_language_data): lang, and for each sentence not yet in lang the
+    first language that has it, which reader.js shows instead (textLang)."""
+    languages = chapter_languages(records)
+    shown = {lang if lang in r["renderings"] else next(c for c in languages if c in r["renderings"])
+             for r in records}
+    return [code for code in languages if code in shown]
 
 
 @functools.cache
@@ -1280,6 +1322,9 @@ def chapter_data_files():
     """{path: text} of every chapter's and every language's shared reader
     data (chapter_shared, reader_shared)."""
     files = {chapter_data_path(b, c).lstrip("/"): chapter_shared(b, c)[0] for b, c in chapters()}
+    for b, c in chapters():
+        for code in chapter_languages(load_chapter(b, c)[0]):
+            files[chapter_data_path(b, c, code).lstrip("/")] = chapter_language_data(b, c, code)[0]
     files.update({f"reader-{lang}.js": reader_shared(lang)[0] for lang in LANGUAGES})
     return files
 
@@ -1289,12 +1334,14 @@ def chapter_page(book, chapter, lang="en"):
     title = chapter_name(records, book, chapter, lang)
     # Every language any sentence has: English may run ahead of the others,
     # and the reader shows a sentence not yet translated in English.
-    languages = [code for code in LANGUAGES
-                 if any(code in r["renderings"] for r in records)]
+    languages = chapter_languages(records)
     source = source_language(book)
-    # What is the same on other pages comes in chapter_shared and reader_shared.
+    # What is the same on other pages comes in chapter_shared,
+    # chapter_language_data and reader_shared.
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
             "source": source,
+            # Each language's text, for Parallel to load the one it sets beside.
+            "texts": {code: chapter_language_data(book, chapter, code)[1] for code in languages},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             # The article on how manuscripts differ, from a manuscript-reading footnote.
@@ -1323,6 +1370,8 @@ def chapter_page(book, chapter, lang="en"):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     # Without JavaScript (and for crawlers) the page still has its text.
     text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang)
+    own_texts = "".join(f'<script src="{chapter_language_data(book, chapter, code)[1]}"></script>\n'
+                        for code in page_texts(records, lang))
     partial = any(lang not in r["renderings"] for r in records)
 
     def seg(name, options):
@@ -1353,6 +1402,13 @@ def chapter_page(book, chapter, lang="en"):
     units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
                                                      ("1", t(lang, "reader.original"))])
              if has_units else "")
+    # Capitals for God's pronouns only where this language marks them: scripts
+    # without capitals (Hindi, Japanese, Korean, Amharic) have no spans, and
+    # a switch that changes nothing would only confuse.
+    has_pronouns = any("{{deity_pronoun:" in text for r in records
+                       for text in r["renderings"].get(lang, {}).values())
+    pronouns = (control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])
+                if has_pronouns else "")
     # Red letters only where a passage has words of Jesus marked.
     red_letter = ("\n  " + control("words_of_jesus", "red_letter", [("0", t(lang, "reader.black")),
                                                                      ("1", t(lang, "reader.red"))])
@@ -1379,7 +1435,7 @@ def chapter_page(book, chapter, lang="en"):
   {presets}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
+  {pronouns}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}{red_letter}
   </div>
@@ -1414,7 +1470,7 @@ def chapter_page(book, chapter, lang="en"):
 {breadcrumb_ld(lang, book_crumbs(book, lang) + [(title, chapter_url(book, chapter))])}
 <script src="{reader_shared(lang)[1]}"></script>
 <script src="{chapter_shared(book, chapter)[1]}"></script>
-<script src="{asset("markup.js")}"></script>
+{own_texts}<script src="{asset("markup.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 {plans_script()}
 """
@@ -2287,9 +2343,12 @@ def save_button(book, chaps, lang):
     """A book's "Save for offline" button on the Read page: web/site.js
     stores the pages it names in the owb-books cache, which web/sw.js reads
     when there is no connection, and the chapters' shared reader data
-    (chapter_shared). Hidden where the browser cannot."""
+    (chapter_shared, and chapter_language_data for the languages each page
+    loads). Hidden where the browser cannot."""
     pages = json.dumps([url(lang, chapter_url(p.book, p.chapter)) for p in chaps])
-    data = json.dumps([chapter_shared(p.book, p.chapter)[1] for p in chaps])
+    data = json.dumps([u for p in chaps for u in [chapter_shared(p.book, p.chapter)[1]]
+                       + [chapter_language_data(p.book, p.chapter, code)[1]
+                          for code in page_texts(load_chapter(p.book, p.chapter)[0], lang)]])
     labels = "".join(f' data-{k}="{html.escape(t(lang, "offline." + k))}"'
                      for k in ("save", "saving", "saved", "failed"))
     return (f'<button type="button" class="save-book" hidden data-book="{book}" '
@@ -4892,13 +4951,20 @@ SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans
                 ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
 
+# Full-width ASCII and the ideographic space, as Japanese input types them.
+_WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
+
+
 def fold(text):
-    """Text as search compares it: lower case, without accents, Vietnamese
-    "đ" as "d". The rest is composed again, so a Korean syllable stays one
-    character (NFD splits it into its letters)."""
+    """Text as search compares it: lower case, without accents, full-width
+    letters and digits as ASCII, Vietnamese "đ" as "d". The rest is composed
+    again, so a Korean syllable stays one character (NFD splits it into its
+    letters), and the kana voicing marks are kept (ガ is not カ), as in the
+    backend's search.fold."""
     import unicodedata
     return unicodedata.normalize("NFC", "".join(
-        c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))).replace("\u0111", "d")
+        c for c in unicodedata.normalize("NFD", text.translate(_WIDE).lower())
+        if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("\u0111", "d")
 
 
 def book_aliases(code, names):
@@ -5169,8 +5235,7 @@ def build(out):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
-    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
+    for name in WEB_FILES:
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")

@@ -66,6 +66,26 @@
           "L": "ስም ከመልካም ዘይት ይሻላል፤ \\q የሞትም ቀን ከመወለድ ቀን [ይሻላል]።",
           "B": "መልካም ስም ከጥሩ ሽቱ ይበልጣል፤ \\q የሞት ቀንም ከልደት ቀን ይበልጣል።",
           "R": "መልካም ስም ከውድ ሽቱ ይበልጣል። \\q ሰው የሚሞትበትም ቀን ከተወለደበት ቀን ይሻላል።"
+        },
+        "hi": {
+          "L": "अच्छे तेल से नाम अच्छा [है], \\q और जन्म के दिन से मृत्यु का दिन।",
+          "B": "अच्छा नाम उत्तम इत्र से अधिक मूल्यवान है, \\q और मृत्यु का दिन जन्म के दिन से।",
+          "R": "अच्छा नाम क़ीमती इत्र से अधिक मूल्यवान है। \\q और जिस दिन कोई मरता है, वह उस दिन से अच्छा है जिस दिन वह पैदा हुआ था।"
+        },
+        "ru": {
+          "L": "Лучше имя, чем добрый елей, \\q и день смерти, чем день рождения его.",
+          "B": "Доброе имя дороже прекрасных благовоний, \\q и день смерти дороже дня рождения.",
+          "R": "Хорошая репутация стоит больше дорогих духов. \\q А день, когда человек умирает, лучше дня, когда он родился."
+        },
+        "ja": {
+          "L": "名は良い油にまさり、 \\q 死の日は誕生の日にまさる。",
+          "B": "良い名は高価な香油にまさり、 \\q 死ぬ日は生まれる日にまさる。",
+          "R": "良い評判は、高い香水よりも値打ちがある。 \\q また、人が死ぬ日は、その人が生まれた日よりも良い。"
+        },
+        "uk": {
+          "L": "Краще імʼя, ніж добра олія, \\q і день смерті, ніж день народження.",
+          "B": "Добре імʼя цінніше за дорогі пахощі, \\q а день смерті — за день народження.",
+          "R": "Добра слава цінніша за дорогі пахощі. \\q І день, коли людина помирає, кращий за день, коли вона народилася."
         }
       },
       "decisions": [
@@ -261,6 +281,109 @@
           "reason": "Amharic \"ሰው\", \"ሰዎች\" and the generic masculine verb already include men and women, so there is only one wording and no span. This holds through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070010032",
+            "o210070010041"
+          ],
+          "choice": "\"उत्तम इत्र\" (B); \"क़ीमती इत्र\" (R)",
+          "alternatives": [
+            "\"तेल\""
+          ],
+          "reason": "The oil meant is the scented oil of feasts (m4), which Hindi readers know as \"इत्र\". Literal keeps \"तेल\" beside \"नाम\", the two words that sound alike in Hebrew (m1); the sound play cannot be kept in Hindi.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070010081",
+            "o210070010082"
+          ],
+          "choice": "\"जन्म के दिन\", with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "Hindi says \"the day of birth\" without a pronoun, so the English span on \"one's / his\" has nothing to change (see 1:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070010032"
+          ],
+          "choice": "прекрасных благовоний (B); дорогих духов (R)",
+          "alternatives": [
+            "доброго елея"
+          ],
+          "reason": "The oil meant is the scented oil of feasts (m4), which Russian readers know as perfume; Literal keeps елей. The Hebrew play on name and oil (m1) cannot be kept in Russian.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070010082"
+          ],
+          "choice": "человек ... его, no gender span",
+          "alternatives": [
+            "его или её"
+          ],
+          "reason": "Russian человек stands for anyone and its pronoun follows the noun's grammar, so where the English Literal has gender spans in this chapter for a single person Russian has one wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210070010011",
+            "o210070010021",
+            "o210070010032"
+          ],
+          "choice": "The sayings of chapter 7 as two-line sayings, each colon on its own \\q line as in the English, \"XはYにまさる\" (L, B), \"XはYよりも良い\" (R), as in Proverbs 10 onward",
+          "alternatives": [
+            "〜より良い at Literal"
+          ],
+          "reason": "The sayings are set out like those of Proverbs, so they keep the Proverbs layout and wording. The sound-play of shem \"name\" and shemen \"oil\" (m1) cannot be kept in Japanese and is left to the meaning note.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -343,6 +466,26 @@
           "L": "ወደ ግብዣ ቤት ከመሄድ ወደ ልቅሶ ቤት መሄድ ይሻላል፤ \\q ያ የሰው ሁሉ መጨረሻ ነውና፤ \\q ሕያውም በልቡ ያኖረዋል።",
           "B": "ወደ ልቅሶ ቤት መሄድ \\q ወደ ግብዣ ቤት ከመሄድ ይሻላል፤ \\q ሞት የሰው ሁሉ መጨረሻ ነውና፤ \\q ሕያዋንም ይህን በልባቸው ያስቡበታል።",
           "R": "ሰዎች ለሞተ ሰው ወደሚያለቅሱበት ስፍራ መሄድ \\q ሰዎች ግብዣ ወደሚያደርጉበት ስፍራ ከመሄድ ይሻላል። \\q ሁሉም ሰው በመጨረሻ ይሞታል፤ \\q በሕይወት ያሉትም ይህን ያስባሉ።"
+        },
+        "hi": {
+          "L": "शोक के घर जाना भोज के घर जाने से अच्छा [है], \\q क्योंकि वह हर मनुष्य का अंत [है], \\q और जीवित [उसे] मन में रखेगा।",
+          "B": "शोक के घर जाना \\q भोज के घर जाने से अच्छा है, \\q क्योंकि मृत्यु सब का अंत है, \\q और जीवित लोग इस बात को मन में रखेंगे।",
+          "R": "जहाँ लोग किसी की मृत्यु का शोक मना रहे हों, वहाँ जाना \\q उस जगह जाने से अच्छा है जहाँ लोग दावत उड़ा रहे हों। \\q अंत में सब मरते हैं, \\q और जो अभी जीवित हैं, वे इस बारे में सोचेंगे।"
+        },
+        "ru": {
+          "L": "Лучше идти в дом скорби, чем идти в дом пира, \\q потому что это — конец всякого человека, \\q и живой положит [это] себе на сердце.",
+          "B": "Лучше пойти в дом, где оплакивают умершего, \\q чем пойти в дом, где пируют, \\q потому что смерть — конец каждого, \\q и живые примут это к сердцу.",
+          "R": "Лучше пойти туда, где оплакивают умершего, \\q чем туда, где веселятся на празднике. \\q Каждый в конце концов умирает, \\q и те, кто ещё жив, задумаются об этом."
+        },
+        "ja": {
+          "L": "喪の家に行くことは、宴会の家に行くことにまさる、 \\q それがすべての人の終わりだからである、 \\q そして生きている者はそれを心に留める。",
+          "B": "喪の家に行くことは、 \\q 宴会の家に行くことにまさる。 \\q 死はすべての人の終わりであり、 \\q 生きている者はそれを心に留めるからだ。",
+          "R": "人の死を悲しんでいる家に行くほうが、 \\q にぎやかな宴会をしている家に行くよりも良い。 \\q だれでも最後には死ぬのだから、 \\q 生きている人はそのことを考えるようになる。"
+        },
+        "uk": {
+          "L": "Краще йти до дому жалоби, ніж іти до дому бенкету, \\q бо це — кінець кожної людини, \\q і живий покладе [це] собі на серце.",
+          "B": "Краще йти до дому жалоби, \\q ніж іти до дому бенкету, \\q бо смерть — кінець кожного, \\q і живі візьмуть це до серця.",
+          "R": "Краще піти туди, де оплакують померлого, \\q ніж туди, де гуляють на бенкеті. \\q Зрештою, кожен помирає, \\q і ті, хто ще живий, задумаються над цим."
         }
       },
       "decisions": [
@@ -483,6 +626,71 @@
           "reason": "Amharic puts \"better\" (ይሻላል) after both terms of a comparison, so the line break falls after the first term and the verb closes the second line. Literal, with the comparison in one line, puts \"than\" first (ከ-) as Amharic must.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070020101",
+            "o210070020102",
+            "o210070020111",
+            "o210070020121",
+            "o210070020131",
+            "o210070020141",
+            "o210070020142"
+          ],
+          "choice": "\"मृत्यु\"",
+          "alternatives": [
+            "\"वह\""
+          ],
+          "reason": "As the English, Balanced names what \"that\" refers to, death (m2); Literal keeps the pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070020121"
+          ],
+          "choice": "смерть",
+          "alternatives": [
+            "это"
+          ],
+          "reason": "Balanced names what \"that\" refers to (m2); Literal keeps the pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070020051",
+            "o210070020091"
+          ],
+          "choice": "где оплакивают умершего ... где пируют (B); где веселятся на празднике (R)",
+          "alternatives": [
+            "дом скорби ... дом пира"
+          ],
+          "reason": "Balanced and Readable say what the two houses are: a home where a death is mourned and a house where a drinking feast is held (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -550,6 +758,26 @@
           "L": "ሐዘን ከሳቅ ይሻላል፤ \\q በፊት ሐዘን ልብ መልካም ይሆናልና።",
           "B": "ሐዘን ከሳቅ ይሻላል፤ \\q ያዘነ ፊት ለልብ ሊጠቅም ይችላልና።",
           "R": "ሐዘን ከሳቅ ይሻላል፤ \\q ያዘነ ፊት ልብን ሊያሻሽል ይችላልና።"
+        },
+        "hi": {
+          "L": "हँसी से शोक अच्छा [है], \\q क्योंकि चेहरे की उदासी से मन अच्छा होता है।",
+          "B": "हँसी से दुख अच्छा है, \\q क्योंकि उदास चेहरा मन के लिए भला हो सकता है।",
+          "R": "हँसी से दुख अच्छा है, \\q क्योंकि उदास चेहरे से मन का भला हो सकता है।"
+        },
+        "ru": {
+          "L": "Лучше огорчение, чем смех, \\q ведь при печали лица сердце становится добрым.",
+          "B": "Огорчение лучше смеха, \\q потому что печальное лицо может быть на пользу сердцу.",
+          "R": "Печаль лучше смеха, \\q потому что грустное лицо может принести сердцу добро."
+        },
+        "ja": {
+          "L": "悩みは笑いにまさる、 \\q 顔の悲しみによって心は良くされるからである。",
+          "B": "悩みは笑いにまさる。 \\q 悲しい顔は、心のためになることがあるからだ。",
+          "R": "悲しみは笑いよりも良い。 \\q 悲しい顔をすることが、心のためになることもあるからだ。"
+        },
+        "uk": {
+          "L": "Краща журба, ніж сміх, \\q бо при смутку обличчя серцю добре.",
+          "B": "Журба краща за сміх, \\q бо смутне обличчя може бути на добро серцю.",
+          "R": "Смуток кращий за сміх, \\q бо сумне обличчя може піти серцю на користь."
         }
       },
       "decisions": [
@@ -624,6 +852,68 @@
           "reason": "Balanced and Readable keep the general word \"good\", which can carry both senses in m2, and add \"can\" because the saying states what sorrow is able to do, not what it always does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070030071",
+            "o210070030081"
+          ],
+          "choice": "\"भला हो सकता है\"",
+          "alternatives": [
+            "\"मन सुधरता है\""
+          ],
+          "reason": "As the English, Balanced and Readable keep the general word \"भला\", which can carry both senses of the heart being made good (m2), and add \"can\" (\"सकता है\"), since the saying states what sorrow is able to do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070030071"
+          ],
+          "choice": "может быть на пользу сердцу (B); может принести сердцу добро (R)",
+          "alternatives": [
+            "сердце становится добрым"
+          ],
+          "reason": "Balanced and Readable keep a general word for good, which carries both the better and the wiser heart (m2), and add может, since this is not always so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070030021"
+          ],
+          "choice": "ka'as here \"悩み\" (L, B), \"悲しみ\" (R), and in 7:9 \"怒り\", not the book's usual \"いらだち\"",
+          "alternatives": [
+            "いらだち"
+          ],
+          "reason": "m1 here is grief, sorrow; in 7:9 the word is anger that flares up. Japanese has no one word that holds vexation, grief and anger together, so each place takes the sense its meaning note gives, as the English does (vexation 1:18, grief 7:3, anger 7:9).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -692,6 +982,26 @@
           "L": "የጠቢባን ልብ በልቅሶ ቤት [ነው]፤ \\q የሞኞች ልብ ግን በደስታ ቤት [ነው]።",
           "B": "የጠቢባን ልብ በልቅሶ ቤት ነው፤ \\q የሞኞች ልብ ግን በተድላ ቤት ነው።",
           "R": "ጠቢባን ሰዎች ስለሚያለቅሱበት ቤት ያስባሉ። \\q ሞኞች ግን ሰዎች ስለሚዝናኑበት ቤት ብቻ ያስባሉ።"
+        },
+        "hi": {
+          "L": "बुद्धिमानों का मन शोक के घर में [होता है], \\q पर मूर्खों का मन आनंद के घर में [होता है]।",
+          "B": "बुद्धिमानों का मन शोक के घर में लगा रहता है, \\q पर मूर्खों का मन मौज-मस्ती के घर में।",
+          "R": "बुद्धिमान लोग उस घर के बारे में सोचते हैं जहाँ लोग शोक मनाते हैं। \\q मूर्ख लोग केवल उस घर के बारे में सोचते हैं जहाँ लोग मौज करते हैं।"
+        },
+        "ru": {
+          "L": "Сердце мудрых — в доме скорби, \\q а сердце глупцов — в доме радости.",
+          "B": "Сердца мудрых — в доме скорби, \\q а сердца глупцов — в доме удовольствий.",
+          "R": "Мудрые люди думают о доме, где скорбят. \\q Глупые люди думают только о доме, где веселятся."
+        },
+        "ja": {
+          "L": "知恵ある者たちの心は喪の家にあり、 \\q しかし愚か者たちの心は喜びの家にある。",
+          "B": "知恵ある者の心は喪の家にあり、 \\q 愚か者の心は楽しみの家にある。",
+          "R": "知恵のある人は、人が死を悲しんでいる家のことを考える。 \\q 愚かな人は、人が楽しんでいる家のことばかり考える。"
+        },
+        "uk": {
+          "L": "Серце мудрих — у домі жалоби, \\q а серце безумних — у домі веселощів.",
+          "B": "Серця мудрих — у домі жалоби, \\q а серця безумних — у домі розваг.",
+          "R": "Мудрі люди думають про дім, де оплакують померлих. \\q Нерозумні думають тільки про дім, де розважаються."
         }
       },
       "decisions": [
@@ -767,6 +1077,47 @@
           "reason": "Readable says what \"the heart is in\" means (m1). \"Only\" draws out the contrast between the two halves of the line.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070040011",
+            "o210070040051",
+            "o210070040052"
+          ],
+          "choice": "\"के बारे में सोचते हैं ... केवल ... के बारे में सोचते हैं\"",
+          "alternatives": [
+            "\"का मन ... में होता है\""
+          ],
+          "reason": "As the English Readable, Readable says what \"the heart is in\" means (m1); \"केवल\" draws out the contrast. Kesil is \"मूर्ख\" (L, B) and \"मूर्ख लोग\" (R), as through the book (see 2:14).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070040011",
+            "o210070040052"
+          ],
+          "choice": "думают о ... думают только о",
+          "alternatives": [
+            "сердце ... в доме"
+          ],
+          "reason": "Readable says what \"the heart is in\" means (m1); только draws out the contrast. Fools are глупцы (L, B) and глупые люди (R), the book's wording for kesil.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -834,6 +1185,26 @@
           "L": "የጠቢብን ዘለፋ መስማት \\q ሰው የሞኞችን ዘፈን ከሚሰማ ይሻላል።",
           "B": "የጠቢብን ሰው ዘለፋ መስማት \\q የሞኞችን ዘፈን ከመስማት ይሻላል።",
           "R": "ጠቢብ ሰው እንዲያርምህ መፍቀድ \\q ሞኞች ሲዘፍኑ ከመስማት ይሻላል።"
+        },
+        "hi": {
+          "L": "बुद्धिमान की डाँट सुनना \\q इससे अच्छा [है] कि मनुष्य मूर्खों का गीत सुने।",
+          "B": "बुद्धिमान व्यक्ति की डाँट सुनना \\q मूर्खों का गीत सुनने से अच्छा है।",
+          "R": "किसी बुद्धिमान व्यक्ति को अपने को सुधारने देना \\q मूर्ख लोगों का गाना सुनने से अच्छा है।"
+        },
+        "ru": {
+          "L": "Лучше слушать упрёк мудрого, \\q чем человеку слушать песню глупцов.",
+          "B": "Лучше выслушать упрёк мудрого человека, \\q чем слушать песню глупцов.",
+          "R": "Лучше позволить мудрому человеку поправить тебя, \\q чем слушать, как поют глупые люди."
+        },
+        "ja": {
+          "L": "知恵ある者のとがめを聞くことは、 \\q 人が愚か者たちの歌を聞くことにまさる。",
+          "B": "知恵ある者の警告に耳を傾けることは、 \\q 愚か者たちの歌を聞くことにまさる。",
+          "R": "知恵のある人に注意してもらうほうが、 \\q 愚かな人たちの歌を聞くよりも良い。"
+        },
+        "uk": {
+          "L": "Краще слухати докір мудрого, \\q ніж людині слухати пісню безумних.",
+          "B": "Краще слухати докір мудрої людини, \\q ніж слухати пісню безумних.",
+          "R": "Краще дозволити мудрій людині тебе виправити, \\q ніж слухати, як співають нерозумні."
         }
       },
       "decisions": [
@@ -905,6 +1276,45 @@
             "than for a man to listen"
           ],
           "reason": "The Hebrew names a man as the one who listens to the song; it means anyone. Balanced and Readable leave the word out, since \"it is better to listen\" already speaks of anyone. Literal keeps it with the gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070050081"
+          ],
+          "choice": "\"मनुष्य\", with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "The Hebrew names a man as the listener, meaning anyone; Hindi \"मनुष्य\" already means anyone (see 1:3). Balanced and Readable leave the word out, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210070050052"
+          ],
+          "choice": "(no word for \"a man\")",
+          "alternatives": [
+            "человеку"
+          ],
+          "reason": "The Hebrew names a man as the one who listens; it means anyone, so Balanced and Readable leave the word out, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -980,6 +1390,26 @@
           "L": "ከድስት በታች እንዳለ የእሾህ ቋቋታ፣ \\q የሞኝ ሳቅ እንዲሁ [ነው]፤ \\q ይህም እስትንፋስ [ነው]።",
           "B": "ከድስት በታች እንደሚንጣጣ እሾህ \\q የሞኝ ሳቅ ነው። \\q ይህም እስትንፋስ ነው።",
           "R": "ሞኝ ሲስቅ ከማብሰያ ድስት በታች እንደሚንጣጣ እሾህ ነው፦ \\q ብዙ ድምፅ ያሰማል፤ ቶሎም ይጠፋል። \\q ይህም እስትንፋስ ብቻ ነው።"
+        },
+        "hi": {
+          "L": "क्योंकि जैसे हाँडी के नीचे काँटों का चटकना, \\q वैसी ही मूर्ख की हँसी [है]; \\q और यह भी साँस [है]।",
+          "B": "क्योंकि जैसे हाँडी के नीचे चटकते काँटे, \\q वैसी ही मूर्ख की हँसी है। \\q यह भी एक साँस है।",
+          "R": "जब कोई मूर्ख व्यक्ति हँसता है, तो वह खाना पकाने की हाँडी के नीचे चटकते काँटों जैसा होता है: \\q बहुत शोर, जो पल भर में ख़त्म हो जाता है। \\q यह भी बस एक साँस है।"
+        },
+        "ru": {
+          "L": "Ведь как треск колючек под котлом, \\q так смех глупца; \\q и это — дуновение.",
+          "B": "Ведь словно колючки, трещащие под котлом, — \\q таков смех глупца. \\q И это — лишь дуновение.",
+          "R": "Когда глупый человек смеётся, это как треск колючек под котлом: \\q много шума, который быстро стихает. \\q И это — лишь лёгкое дыхание."
+        },
+        "ja": {
+          "L": "鍋の下のいばらのはじける音のように、 \\q 愚か者の笑いはそのようである。 \\q これもまた息である。",
+          "B": "鍋の下でいばらがはじけるように、 \\q 愚か者の笑いもそうだ。 \\q これもまた息にすぎない。",
+          "R": "愚かな人が笑うのは、料理をする鍋の下でいばらがはじけるようなものだ。 \\q 大きな音を立てても、すぐに消えてしまう。 \\q これもまた、ほんの息のようなものだ。"
+        },
+        "uk": {
+          "L": "Бо як тріск терну під казаном, \\q так сміх безумного; \\q і це — подих.",
+          "B": "Бо як тріщить терен під казаном, \\q так сміється безумний. \\q І це лише подих.",
+          "R": "Коли нерозумна людина сміється, це як терен, що тріщить під казаном: \\q багато шуму, який швидко минає. \\q І це лише подих."
         }
       },
       "decisions": [
@@ -1113,6 +1543,69 @@
           "reason": "The book-wide wording for *kesil*: \"fool\" at Literal and Balanced, \"foolish person\" (\"foolish people\") at Readable, which keeps the word from sounding like a playground insult.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070060021",
+            "o210070060022",
+            "o210070060031",
+            "o210070060032",
+            "o210070060041",
+            "o210070060051",
+            "o210070060052"
+          ],
+          "choice": "\"बहुत शोर, जो पल भर में ख़त्म हो जाता है\"",
+          "alternatives": [
+            "no explanation"
+          ],
+          "reason": "As the English Readable, Readable spells out the point of the picture: dry thorns blaze up noisily and burn out at once (m2). Having said it, Readable keeps \"बस एक साँस\" for hevel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070060071"
+          ],
+          "choice": "много шума, который быстро стихает",
+          "alternatives": [],
+          "reason": "Readable spells out the point of the image: dry brush blazes up noisily and burns out at once (m2). The Hebrew play on thorns and pot (m1) cannot be kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070060111"
+          ],
+          "choice": "дуновение (L); лишь дуновение (B); лишь лёгкое дыхание (R)",
+          "alternatives": [
+            "суета"
+          ],
+          "reason": "The book's wording for hevel, short-lived and empty here (m3; see 1:2); Readable says лишь, as the English says \"only\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1180,6 +1673,26 @@
           "L": "በእርግጥ ግፍ ጠቢብን ያሳብዳል፤ \\q ስጦታም ልብን ያጠፋል።",
           "B": "ግፍ ጠቢብን ሰው ሊያሳብደው ይችላል፤ \\q ጉቦም ልብን ያበላሻል።",
           "R": "ግፍ ጠቢብን ሰው እንኳ እንደ ሞኝ ሊያደርገው ይችላል። \\q ጉቦም የሰውን አእምሮ ሊያበላሽ ይችላል።"
+        },
+        "hi": {
+          "L": "निश्चय अत्याचार बुद्धिमान को बावला कर देता है, \\q और भेंट मन को नष्ट कर देती है।",
+          "B": "अत्याचार बुद्धिमान व्यक्ति को भी बावला कर सकता है, \\q और घूस मन को बिगाड़ देती है।",
+          "R": "अत्याचार एक बुद्धिमान व्यक्ति को भी मूर्ख जैसा बना सकता है। \\q और घूस किसी व्यक्ति की समझ को बिगाड़ सकती है।"
+        },
+        "ru": {
+          "L": "Поистине, притеснение делает мудрого безумным, \\q и дар губит сердце.",
+          "B": "Притеснение может свести мудрого с ума, \\q а взятка развращает сердце.",
+          "R": "Притеснение может заставить даже мудрого человека поступать как глупец. \\q А взятка может испортить человеку разум."
+        },
+        "ja": {
+          "L": "まことに、虐げは知恵ある者を狂わせ、 \\q 贈り物は心を滅ぼす。",
+          "B": "虐げは知恵ある者をも狂わせ、 \\q 賄賂は心をゆがめる。",
+          "R": "虐げは、知恵のある人さえ愚か者のようにしてしまう。 \\q わいろは人の心をだめにする。"
+        },
+        "uk": {
+          "L": "Справді, утиск робить мудрого божевільним, \\q і дарунок губить серце.",
+          "B": "Утиск може довести мудрого до божевілля, \\q а хабар розбещує серце.",
+          "R": "Утиск може змусити навіть мудру людину поводитися, як нерозумна. \\q А хабар може зіпсувати людині розум."
         }
       },
       "decisions": [
@@ -1284,6 +1797,48 @@
           "reason": "Readable says \"mind\" because here the heart is a person's power to judge rightly (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070070052",
+            "o210070070071",
+            "o210070070081"
+          ],
+          "choice": "\"घूस\"",
+          "alternatives": [
+            "\"भेंट\""
+          ],
+          "reason": "The word means a gift, but a gift that destroys the heart is a bribe (m3); Balanced and Readable say \"घूस\", as the English says \"bribe\". Literal keeps \"भेंट\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070070081"
+          ],
+          "choice": "взятка",
+          "alternatives": [
+            "дар"
+          ],
+          "reason": "The word means a gift, but a gift that destroys the heart is a bribe (m3); Literal keeps дар.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1353,6 +1908,26 @@
           "L": "የነገር መጨረሻ ከመጀመሪያው ይሻላል፤ \\q መንፈሱ የረዘመ መንፈሱ ከፍ ካለ ይሻላል።",
           "B": "የነገር መጨረሻ ከመጀመሪያው ይሻላል፤ \\q ትዕግሥትም ከትዕቢት ይሻላል።",
           "R": "የአንድ ነገር መጨረሻ ከመጀመሪያው ይሻላል። \\q ታጋሽ መሆን ትዕቢተኛ ከመሆን ይሻላል።"
+        },
+        "hi": {
+          "L": "किसी बात का अंत उसके आरंभ से अच्छा [है]; \\q आत्मा में लंबा [व्यक्ति] आत्मा में ऊँचे [व्यक्ति] से अच्छा [है]।",
+          "B": "किसी बात का अंत उसके आरंभ से अच्छा है, \\q और धीरज घमंड से अच्छा है।",
+          "R": "किसी काम का अंत उसके आरंभ से अच्छा है। \\q धीरज रखना घमंड करने से अच्छा है।"
+        },
+        "ru": {
+          "L": "Лучше конец дела, чем его начало; \\q лучше долгий духом, чем высокий духом.",
+          "B": "Конец дела лучше его начала, \\q и терпение лучше гордости.",
+          "R": "Конец чего-либо лучше начала. \\q Быть терпеливым лучше, чем гордым."
+        },
+        "ja": {
+          "L": "事の終わりはその始まりにまさり、 \\q 霊の長い者は霊の高い者にまさる。",
+          "B": "事の終わりは始まりにまさり、 \\q 忍耐は高慢にまさる。",
+          "R": "物事は、始まりより終わりのほうが良い。 \\q 辛抱強いほうが、高ぶるよりも良い。"
+        },
+        "uk": {
+          "L": "Кращий кінець справи, ніж її початок; \\q кращий довгий духом, ніж високий духом.",
+          "B": "Кінець справи кращий за її початок, \\q і терпеливість краща за гордість.",
+          "R": "Кінець справи кращий за її початок. \\q Бути терпеливим краще, ніж бути гордим."
         }
       },
       "decisions": [
@@ -1410,6 +1985,49 @@
             "the long of spirit ... the high of spirit"
           ],
           "reason": "Balanced and Readable say what the two idioms mean (m2). Literal keeps the Hebrew pictures.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070080061",
+            "o210070080071",
+            "o210070080082",
+            "o210070080091"
+          ],
+          "choice": "\"धीरज ... घमंड\"",
+          "alternatives": [
+            "\"आत्मा में लंबा ... आत्मा में ऊँचा\""
+          ],
+          "reason": "As the English, Balanced and Readable say what the two idioms mean (m2); Literal keeps the Hebrew pictures.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070080061"
+          ],
+          "choice": "терпение ... гордости (B); терпеливым ... гордым (R)",
+          "alternatives": [
+            "долгий духом ... высокий духом"
+          ],
+          "reason": "Balanced and Readable say what the two idioms mean (m2); Literal keeps the Hebrew pictures.",
           "uncertain": false,
           "footnote": false
         }
@@ -1482,6 +2100,26 @@
           "L": "ለመቆጣት በመንፈስህ አትቸኩል፤ \\q ቁጣ በሞኞች ብብት ያድራልና።",
           "B": "መንፈስህ ለቁጣ አይፍጠን፤ \\q ቁጣ በሞኞች ልብ መኖሪያውን ያደርጋልና።",
           "R": "ቶሎ አትቆጣ። \\q ቁጣ በሞኞች ልብ ውስጥ ይኖራል።"
+        },
+        "hi": {
+          "L": "क्रोधित होने के लिए अपनी आत्मा में उतावली न करो, \\q क्योंकि क्रोध मूर्खों की छाती में बसता है।",
+          "B": "अपनी आत्मा को जल्दी क्रोधित न होने दो, \\q क्योंकि क्रोध मूर्खों के मन में अपना घर बनाता है।",
+          "R": "जल्दी ग़ुस्सा न करो। \\q ग़ुस्सा मूर्ख लोगों के मन में रहता है।"
+        },
+        "ru": {
+          "L": "Не спеши в духе своём гневаться, \\q потому что гнев обитает в груди глупцов.",
+          "B": "Не позволяй своему духу быстро гневаться, \\q потому что гнев живёт в сердце глупцов.",
+          "R": "Не спеши сердиться. \\q Гнев живёт в сердцах глупых людей."
+        },
+        "ja": {
+          "L": "あなたの霊において、怒ることに急ぐな。 \\q 怒りは愚か者たちの胸に宿るからである。",
+          "B": "心がはやって怒ってはならない。 \\q 怒りは愚か者の心に住みつくからだ。",
+          "R": "すぐに怒ってはいけない。 \\q 怒りは、愚かな人たちの心に住んでいる。"
+        },
+        "uk": {
+          "L": "Не поспішай у твоєму дусі гніватися, \\q бо гнів спочиває в лоні безумних.",
+          "B": "Не дозволяй своєму духові швидко гніватися, \\q бо гнів оселяється в серці безумних.",
+          "R": "Не поспішай сердитися. \\q Гнів живе в серцях нерозумних людей."
         }
       },
       "decisions": [
@@ -1558,6 +2196,48 @@
             "fools"
           ],
           "reason": "The book-wide wording for *kesil*: \"fool\" at Literal and Balanced, \"foolish person\" (\"foolish people\") at Readable, which keeps the word from sounding like a playground insult.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070090071",
+            "o210070090072",
+            "o210070090091"
+          ],
+          "choice": "\"मन\"",
+          "alternatives": [
+            "\"छाती\""
+          ],
+          "reason": "As the English, Balanced and Readable say \"heart\" (\"मन\") for the bosom, the inner person; Literal keeps \"छाती\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070090072"
+          ],
+          "choice": "в сердце (B); в сердцах (R)",
+          "alternatives": [
+            "в груди"
+          ],
+          "reason": "Balanced and Readable say сердце, the inner person; Literal keeps the Hebrew \"bosom\" (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1637,6 +2317,26 @@
           "L": "«የቀድሞው ዘመን ከዚህ ዘመን የተሻለ የሆነው እንዴት ነው?» አትበል፤ \\q ይህን የምትጠይቀው ከጥበብ አይደለምና።",
           "B": "«ያለፈው ዘመን ከዚህ ዘመን የተሻለ የነበረው ለምንድን ነው?» አትበል። \\q ይህን ጥያቄ የሚያስነሣ ጥበብ አይደለም።",
           "R": "«በድሮ ጊዜ ነገሮች የተሻሉ የነበሩት ለምንድን ነው?» ብለህ አትጠይቅ። \\q እንዲህ ብሎ መጠየቅ ጥበብ አይደለም።"
+        },
+        "hi": {
+          "L": "यह न कहो, \"यह कैसे [हुआ] कि पहले के दिन इनसे अच्छे थे?\" \\q क्योंकि तुम बुद्धि से इस विषय में नहीं पूछते।",
+          "B": "यह न कहो, \"यह कैसे है कि पहले के दिन इनसे अच्छे थे?\" \\q यह प्रश्न बुद्धि से नहीं उपजता।",
+          "R": "यह न पूछो, \"पुराने दिनों में सब कुछ अच्छा क्यों था?\" \\q ऐसा पूछना बुद्धिमानी नहीं है।"
+        },
+        "ru": {
+          "L": "Не говори: «Как [так], что прежние дни были лучше этих?» \\q ведь не из мудрости ты задаёшь этот вопрос.",
+          "B": "Не говори: «Почему прежние дни были лучше нынешних?» \\q Не мудрость подсказывает такой вопрос.",
+          "R": "Не спрашивай: «Почему в старые времена было лучше?» \\q Задавать такой вопрос неразумно."
+        },
+        "ja": {
+          "L": "「昔の日々がこれらの日々よりも良かったのは、どうしてか？」と言うな。 \\q あなたがこのことを尋ねるのは、知恵から出たことではないからである。",
+          "B": "「昔のほうが今より良かったのは、なぜだろうか？」と言ってはならない。 \\q そのように尋ねるのは、知恵から出たことではない。",
+          "R": "「どうして昔は良かったのだろう？」と聞いてはいけない。 \\q そんなことを聞くのは、知恵のあることではない。"
+        },
+        "uk": {
+          "L": "Не кажи: «Як [це], що колишні дні були кращі за ці?» \\q бо не з мудрості ти питаєш про це.",
+          "B": "Не кажи: «Чому колишні дні були кращі за теперішні?» \\q Не мудрість підказує таке питання.",
+          "R": "Не питай: «Чому в давнину було краще?» \\q Нерозумно питати таке."
         }
       },
       "decisions": [
@@ -1715,6 +2415,25 @@
           "reason": "Korean sets a quotation before the verb that introduces it; the words of both halves are kept.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o210070100021"
+          ],
+          "choice": "«...» for the question",
+          "alternatives": [],
+          "reason": "Qoheleth's own voice takes no quotation marks; words he quotes inside it take «», as in the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1782,6 +2501,26 @@
           "L": "ጥበብ ከርስት ጋር መልካም [ነው]፤ \\q ፀሐይንም ለሚያዩ ትርፍ [ነው]።",
           "B": "ጥበብ ከርስት ጋር መልካም ነው፤ \\q ፀሐይንም ለሚያዩ ትርፍ ነው።",
           "R": "ጥበብ ከርስት ጋር ቢኖር መልካም ነው። \\q በሕይወት ላለ ሰው ሁሉ ይጠቅማል።"
+        },
+        "hi": {
+          "L": "विरासत के साथ बुद्धि अच्छी [है], \\q और सूर्य को देखनेवालों के लिए लाभ।",
+          "B": "विरासत के साथ बुद्धि भी हो तो अच्छा है, \\q और यह सूर्य को देखनेवालों के लिए लाभ है।",
+          "R": "विरासत के साथ बुद्धि का होना अच्छा है। \\q यह हर जीवित व्यक्ति के लिए सहायक है।"
+        },
+        "ru": {
+          "L": "Добра мудрость при наследстве, \\q и [она] — преимущество для видящих солнце.",
+          "B": "Мудрость хороша вместе с наследством, \\q и она — преимущество для тех, кто видит солнце.",
+          "R": "Хорошо иметь мудрость вместе с наследством. \\q Она помогает каждому, кто живёт."
+        },
+        "ja": {
+          "L": "知恵は遺産と共に良く、 \\q 太陽を見る者たちにとって益である。",
+          "B": "知恵は、受け継いだ財産と共にあるとき良いものであり、 \\q 太陽を見る者たちにとって益となる。",
+          "R": "知恵は、受け継いだ財産といっしょに持っていると良いものだ。 \\q 生きているすべての人の助けになる。"
+        },
+        "uk": {
+          "L": "Добра мудрість зі спадщиною, \\q і перевага тим, хто бачить сонце.",
+          "B": "Мудрість добра разом зі спадщиною, \\q і вона на користь тим, хто бачить сонце.",
+          "R": "Добре мати мудрість разом зі спадщиною. \\q Вона допомагає кожному, хто живий."
         }
       },
       "decisions": [
@@ -1852,6 +2591,70 @@
             "those who see the sun"
           ],
           "reason": "Readable says what the idiom means (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070110061",
+            "o210070110062",
+            "o210070110071",
+            "o210070110072"
+          ],
+          "choice": "\"हर जीवित व्यक्ति\"",
+          "alternatives": [
+            "\"सूर्य को देखनेवाले\""
+          ],
+          "reason": "As the English Readable, Readable says what the idiom means: the living (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070110062",
+            "o210070110072"
+          ],
+          "choice": "каждому, кто живёт",
+          "alternatives": [
+            "видящих солнце"
+          ],
+          "reason": "Readable says what the idiom means: the living (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070110041"
+          ],
+          "choice": "nachalah \"遺産\" (L), \"受け継いだ財産\" (B, R), not \"嗣業\"",
+          "alternatives": [
+            "嗣業",
+            "相続財産"
+          ],
+          "reason": "Here nachalah is family wealth handed down, not the land allotted to a tribe for which the earlier books keep 嗣業.",
           "uncertain": false,
           "footnote": false
         }
@@ -1928,6 +2731,26 @@
           "L": "በጥበብ ጥላ [መሆን] በብር ጥላ [እንደ መሆን ነው]፤ \\q የእውቀት ትርፍ ግን [ይህ ነው]፤ \\q ጥበብ ለባለቤቶቹ ሕይወትን ይሰጣል።",
           "B": "ገንዘብ እንደሚከልል ጥበብም ይከልላልና፤ \\q የእውቀት ትርፍ ግን ይህ ነው፦ \\q ጥበብ ያለውን ሰው በሕይወት ያኖራል።",
           "R": "ገንዘብ እንደሚጠብቅህ ጥበብም ይጠብቅሃል። \\q ነገር ግን እውቀት የሚያደርገው መልካም ነገር ይህ ነው፦ \\q ጥበብ ያላቸውን ሰዎች በሕይወት ያኖራል።"
+        },
+        "hi": {
+          "L": "क्योंकि बुद्धि की छाया में [होना] चाँदी की छाया में [होना है], \\q पर ज्ञान का लाभ [यह है कि] \\q बुद्धि अपने रखनेवालों को जीवन देती है।",
+          "B": "क्योंकि बुद्धि वैसे ही आड़ देती है जैसे पैसा आड़ देता है, \\q पर ज्ञान का लाभ यह है: \\q बुद्धि अपने रखनेवालों को जीवित रखती है।",
+          "R": "बुद्धि तुम्हारी रक्षा करती है, जैसे पैसा तुम्हारी रक्षा करता है। \\q पर ज्ञान से यह भला होता है: \\q बुद्धि उन लोगों को जीवित रखती है जिनके पास वह होती है।"
+        },
+        "ru": {
+          "L": "Ведь [быть] в тени мудрости — [то же, что] в тени серебра, \\q но выгода знания [в том], \\q [что] мудрость даёт жизнь владеющим ею.",
+          "B": "Ведь мудрость укрывает, как укрывают деньги, \\q но выгода знания вот в чём: \\q мудрость сохраняет жизнь тем, у кого она есть.",
+          "R": "Мудрость защищает тебя, как защищают деньги. \\q Но вот какой толк от знания: \\q мудрость сохраняет жизнь тем, у кого она есть."
+        },
+        "ja": {
+          "L": "知恵の陰にいることは銀の陰に[いることである]、 \\q しかし知識の益は[これである]。 \\q 知恵はそれを持つ者に命を与える。",
+          "B": "知恵は、金銭が人を守るように、人を守る。 \\q しかし、知識の益はこれである。 \\q 知恵はそれを持つ者を生かす。",
+          "R": "知恵は、お金と同じように、あなたを守ってくれる。 \\q しかし、知識の良いところはここにある。 \\q 知恵は、それを持っている人を生かしてくれる。"
+        },
+        "uk": {
+          "L": "Бо [бути] в тіні мудрості — [те саме, що] в тіні срібла, \\q а здобуток знання [той], \\q що мудрість дає життя тим, хто її має.",
+          "B": "Бо мудрість захищає, як захищають гроші, \\q але ось здобуток знання: \\q мудрість зберігає життя тим, хто її має.",
+          "R": "Мудрість захищає тебе, як захищають гроші. \\q Але ось яку користь дає знання: \\q мудрість зберігає життя тим, хто її має."
         }
       },
       "decisions": [
@@ -2026,6 +2849,46 @@
           "reason": "The book-wide wording for *yitron* (see 1:3): \"gain\" at Literal and Balanced, \"what good it does\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070120052"
+          ],
+          "choice": "\"पैसा\"",
+          "alternatives": [
+            "\"चाँदी\""
+          ],
+          "reason": "Silver was money (see 5:9); Literal keeps \"चाँदी\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070120052"
+          ],
+          "choice": "деньги",
+          "alternatives": [
+            "серебро"
+          ],
+          "reason": "Silver was money (5:9); Literal keeps серебро. Yitron is выгода (L, B) and толк (R), as through the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2097,6 +2960,26 @@
           "L": "የእግዚአብሔርን ሥራ እይ፤ \\q እርሱ ያጣመመውን ሊያቃና የሚችል ማን ነውና?",
           "B": "እግዚአብሔር ያደረገውን ተመልከት፤ \\q እርሱ ያጣመመውን ማን ሊያቃና ይችላል?",
           "R": "እግዚአብሔር ያደረገውን አስብ። \\q እርሱ ያጣመመውን ማንም ሊያቃና አይችልም።"
+        },
+        "hi": {
+          "L": "परमेश्वर के काम को देखो, \\q क्योंकि जिसे उन्होंने टेढ़ा किया है, उसे कौन सीधा कर सकता है?",
+          "B": "सोचो कि परमेश्वर ने क्या किया है: \\q जिसे उन्होंने टेढ़ा किया है, उसे कौन सीधा कर सकता है?",
+          "R": "सोचो कि परमेश्वर ने क्या किया है। \\q जिसे उन्होंने मोड़ दिया है, उसे कोई सीधा नहीं कर सकता।"
+        },
+        "ru": {
+          "L": "Смотри на дело Бога, \\q ведь кто может выпрямить то, что {{deity_pronoun:он|Он}} искривил?",
+          "B": "Посмотри, что сделал Бог: \\q кто выпрямит то, что {{deity_pronoun:он|Он}} сделал кривым?",
+          "R": "Подумай о том, что сделал Бог. \\q Никто не может выпрямить то, что {{deity_pronoun:он|Он}} согнул."
+        },
+        "ja": {
+          "L": "神の業を見よ。 \\q その方が曲げられたものを、だれがまっすぐにすることができようか？",
+          "B": "神のなさったことを考えてみなさい。 \\q 神が曲げられたものを、だれがまっすぐにできるだろうか？",
+          "R": "神がなさったことを考えてみなさい。 \\q 神が曲げられたものを、まっすぐにできる人はいない。"
+        },
+        "uk": {
+          "L": "Подивися на діло Боже, \\q бо хто може випрямити те, що {{deity_pronoun:він|Він}} викривив?",
+          "B": "Поміркуй над тим, що зробив Бог: \\q хто може випрямити те, що {{deity_pronoun:він|Він}} викривив?",
+          "R": "Подумай про те, що зробив Бог. \\q Ніхто не може випрямити того, що {{deity_pronoun:він|Він}} зігнув."
         }
       },
       "decisions": [
@@ -2166,6 +3049,72 @@
             "who can straighten ...?"
           ],
           "reason": "Readable states the answer to the question (m3) as a plain sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070130031",
+            "o210070130041",
+            "o210070130042",
+            "o210070130111",
+            "o210070130112"
+          ],
+          "choice": "no deity_pronoun spans; \"उन्होंने\" for God",
+          "alternatives": [
+            "a deity_pronoun span"
+          ],
+          "reason": "Devanagari has no capitals for the deity pronoun setting to change; God is spoken of with the honorific \"उन्होंने\" at every level (see 2:26).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210070130061"
+          ],
+          "choice": "Никто не может выпрямить",
+          "alternatives": [
+            "кто может выпрямить?"
+          ],
+          "reason": "Readable states the answer to the question as a plain sentence (m3). The pronouns for God take the deity pronoun setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070130011",
+            "o210070130111"
+          ],
+          "choice": "The English deity_pronoun span as \"その方\" (L), \"神\" (B, R), no span; re'eh \"look\" \"見よ\" (L), \"考えてみなさい\" (B, R)",
+          "alternatives": [
+            "彼"
+          ],
+          "reason": "Japanese writes no capital pronoun (style §7); here re'eh is a real command to look, not hinneh, so Literal may say 見よ.",
           "uncertain": false,
           "footnote": false
         }
@@ -2255,6 +3204,26 @@
           "L": "በመልካም ቀን በመልካም ሁን፤ \\q በክፉም ቀን ተመልከት፤ \\q እግዚአብሔር ይህን ከዚያ ጋር አድርጓል፤ \\q ሰው ከእርሱ በኋላ [የሚሆነውን] ምንም እንዳያገኝ።",
           "B": "ጊዜው መልካም ሲሆን በመልካሙ ተደሰት፤ \\q ጊዜው ክፉ ሲሆን ግን ይህን አስብ፦ \\q እግዚአብሔር ያንንም ይህንንም አድርጓል፤ \\q ይህም ማንም ስለሚመጣው ምንም እንዳያውቅ ነው።",
           "R": "ሕይወት መልካም ሲሆን ተደሰትበት። \\q ሕይወት ሲከብድ ይህን አስብ፦ \\q እግዚአብሔር ሁለቱንም ዓይነት ቀኖች ሠርቷል። \\q ይህን ያደረገው ማንም ወደፊት የሚሆነውን እንዳያውቅ ነው።"
+        },
+        "hi": {
+          "L": "भलाई के दिन, भलाई में रहो, \\q और बुराई के दिन, देखो: \\q परमेश्वर ने एक को दूसरे के साथ-साथ बनाया है, \\q ताकि मनुष्य [उस] बात को न जान सके [जो] उसके बाद [होगी]।",
+          "B": "जब समय अच्छा हो, तो अच्छाई का आनंद लो, \\q और जब समय बुरा हो, तो यह सोचो: \\q परमेश्वर ने एक को भी बनाया है और दूसरे को भी, \\q ताकि कोई यह न जान सके कि आगे क्या होनेवाला है।",
+          "R": "जब जीवन अच्छा हो, तो उसका आनंद लो। \\q जब जीवन कठिन हो, तो इस बात पर सोचो: \\q परमेश्वर ने दोनों तरह के दिन बनाए हैं। \\q उन्होंने ऐसा इसलिए किया कि कोई यह न जान सके कि भविष्य में क्या होगा।"
+        },
+        "ru": {
+          "L": "В день добра будь в добре, \\q а в день зла смотри: \\q и то и другое сделал Бог, \\q чтобы не мог человек найти ничего [из того, что будет] после него.",
+          "B": "Когда времена хорошие, наслаждайся хорошим, \\q а когда времена плохие, подумай вот о чём: \\q Бог сделал и те, и другие, \\q чтобы никто не мог ничего узнать о том, что ждёт впереди.",
+          "R": "Когда жизнь хороша, радуйся ей. \\q Когда жизнь тяжела, подумай вот о чём: \\q Бог сделал и те, и другие дни. \\q Он сделал это, чтобы никто не мог знать, что случится в будущем."
+        },
+        "ja": {
+          "L": "良い日には、良いことのうちにあれ。 \\q 悪い日には、見よ。 \\q 神はこれをあれと並べて造られた、 \\q 人がその後に[来る]ことを何一つ見いださないためである。",
+          "B": "順境の日には幸せを楽しみ、 \\q 逆境の日にはこう考えなさい。 \\q 神は、その両方を造られた。 \\q それは、人がこれから先のことを何一つ見いだせないようにするためである。",
+          "R": "人生が順調なときは、それを楽しみなさい。 \\q 人生がつらいときは、このことを考えなさい。 \\q 神は、どちらの日も造られた。 \\q それは、これから先に何が起こるかを、だれにもわからないようにするためである。"
+        },
+        "uk": {
+          "L": "У день добра будь у доброму, \\q а в день зла дивися: \\q Бог зробив одне поряд з іншим, \\q щоб людина не могла знайти нічого [з того, що буде] після неї.",
+          "B": "Коли час добрий, тішся добрим, \\q а коли лихий, поміркуй: \\q Бог зробив і те, і те, \\q щоб ніхто не міг дізнатися нічого про те, що буде.",
+          "R": "Коли в житті добре, тішся. \\q Коли в житті тяжко, подумай ось про що: \\q Бог зробив і ті, і ті дні. \\q Він зробив це, щоб ніхто не міг знати, що станеться в майбутньому."
         }
       },
       "decisions": [
@@ -2378,6 +3347,68 @@
           "reason": "Readable starts a new sentence for the purpose clause and supplies its subject, God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070140021",
+            "o210070140061"
+          ],
+          "choice": "\"भलाई ... बुराई\" (L); \"समय अच्छा ... बुरा\" (B); \"जीवन अच्छा ... कठिन\" (R)",
+          "alternatives": [
+            "\"सुख के दिन ... दुख के दिन\""
+          ],
+          "reason": "As the English, Literal keeps the Hebrew pair \"good\" and \"evil\" so that the repeated \"भलाई\" shows; Balanced and Readable speak of good and bad times (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070140021",
+            "o210070140061"
+          ],
+          "choice": "\"मनुष्य\", \"उसके\", with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "As at 1:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070140021",
+            "o210070140061"
+          ],
+          "choice": "В день добра ... в день зла (L); Когда времена хорошие ... плохие (B); Когда жизнь хороша ... тяжела (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew pair good and evil so that the repeated word shows; Balanced and Readable say good and bad times (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2456,6 +3487,26 @@
           "L": "በእስትንፋሴ ዘመን ሁሉን አየሁ፤ በጽድቁ የሚጠፋ ጻድቅ አለ፤ በክፋቱም [ዕድሜውን] የሚያረዝም ክፉ አለ።",
           "B": "እስትንፋስ ብቻ በሆነው በአጭሩ ሕይወቴ ሁሉን አይቻለሁ፤ ጻድቅ ቢሆኑም የሚጠፉ ጻድቃን አሉ፤ ክፉ ቢሆኑም ረጅም ዘመን የሚኖሩ ክፉዎችም አሉ።",
           "R": "ሕይወቴ እንደ እስትንፋስ ያልፋል፤ በዚህ ሕይወቴም ብዙ ዓይነት ነገሮችን አይቻለሁ። ትክክል የሆነውን እያደረጉ የሚሞቱ መልካም ሰዎችን አይቻለሁ። ክፉ እያደረጉ ረጅም ዘመን የሚኖሩ ክፉ ሰዎችንም አይቻለሁ።"
+        },
+        "hi": {
+          "L": "मैंने अपनी साँस के दिनों में सब कुछ देखा है: कोई धर्मी [व्यक्ति] है जो अपनी धार्मिकता में नष्ट हो जाता है, और कोई दुष्ट [व्यक्ति] है जो अपनी बुराई में [आयु] लंबी करता है।",
+          "B": "अपने छोटे-से जीवन में, जो बस एक साँस है, मैंने सब कुछ देखा है: ऐसे धर्मी लोग हैं जो अपनी धार्मिकता के होते हुए भी नष्ट हो जाते हैं, और ऐसे दुष्ट लोग हैं जो अपनी बुराई के होते हुए भी लंबी आयु पाते हैं।",
+          "R": "मेरा जीवन साँस की तरह बीत रहा है, और उसमें मैंने हर तरह की बातें देखी हैं। मैंने देखा है कि अच्छे लोग सही काम करते हुए भी मर जाते हैं। और मैंने देखा है कि दुष्ट लोग बुरे काम करते हुए भी लंबे समय तक जीते हैं।"
+        },
+        "ru": {
+          "L": "Всё я видел во дни моего дуновения: бывает праведный, который гибнет в праведности своей, и бывает нечестивый, который долго живёт во зле своём.",
+          "B": "За свою короткую жизнь, которая — лишь дуновение, я видел всё: бывают праведные, которые гибнут, несмотря на свою праведность, и бывают нечестивые, которые живут долго, несмотря на своё зло.",
+          "R": "Моя жизнь проходит, как лёгкое дыхание, и за неё я повидал всякое. Я видел, как добрые люди умирают, хотя поступают правильно. И я видел, как злые люди живут долго, хотя делают зло."
+        },
+        "ja": {
+          "L": "わたしは、わたしの息の日々に、すべてを見た。その義のうちに滅びる正しい者がおり、その悪のうちに[命を]長らえる悪しき者がいる。",
+          "B": "息にすぎないわたしの短い生涯の間に、わたしはすべてを見た。正しいのに滅びる正しい人がおり、悪を行うのに長く生きる悪しき者がいる。",
+          "R": "わたしの人生は息のように過ぎていく。その中で、わたしはいろいろなことを見てきた。正しいことをしているのに死んでしまう正しい人を見た。また、悪いことをしているのに長生きする悪い人も見た。"
+        },
+        "uk": {
+          "L": "Усе я бачив за дні мого подиху: є праведник, що гине у своїй праведності, і є нечестивий, що довго [живе] у своєму злі.",
+          "B": "За своє коротке життя, яке лише подих, я бачив усе: є праведники, що гинуть попри свою праведність, і є нечестиві, що довго живуть попри своє зло.",
+          "R": "Моє життя минає, як подих, і я бачив у ньому всяке. Я бачив, як добрі люди помирають, хоч і чинять правильно. І я бачив, як нечестиві довго живуть, хоч і чинять зло."
         }
       },
       "decisions": [
@@ -2573,6 +3624,92 @@
           "reason": "Readable says \"good people\" and \"do what is right\" for \"righteous\", a word many young readers do not use.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070150041",
+            "o210070150042",
+            "o210070150051",
+            "o210070150052"
+          ],
+          "choice": "\"अपनी साँस के दिनों में\" (L); \"अपने छोटे-से जीवन में, जो बस एक साँस है\" (B); \"मेरा जीवन साँस की तरह बीत रहा है\" (R)",
+          "alternatives": [
+            "\"अपने व्यर्थ जीवन में\""
+          ],
+          "reason": "The book's wording for hevel keeps the picture (see 1:2), and Balanced and Readable say its sense here, a brief life (m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070150071",
+            "o210070150111"
+          ],
+          "choice": "\"अच्छे लोग ... सही काम\"",
+          "alternatives": [
+            "\"धर्मी\""
+          ],
+          "reason": "As the English Readable, Readable says \"अच्छे लोग\" and \"सही काम\" for \"righteous\", a word young readers seldom use.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070150051"
+          ],
+          "choice": "во дни моего дуновения (L); за свою короткую жизнь, которая — лишь дуновение (B); Моя жизнь проходит, как лёгкое дыхание (R)",
+          "alternatives": [
+            "во суетные дни мои"
+          ],
+          "reason": "The book's wording for hevel keeps the picture (see 1:2); Balanced and Readable say the sense, my brief life (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070150071",
+            "o210070150092",
+            "o210070150111"
+          ],
+          "choice": "добрые люди ... злые люди",
+          "alternatives": [
+            "праведные ... нечестивые"
+          ],
+          "reason": "Readable says добрые люди for the righteous, and злые люди for the wicked, as in the Readable Psalms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2641,6 +3778,26 @@
           "L": "እጅግ ጻድቅ አትሁን፤ ራስህንም ከመጠን በላይ ጠቢብ አታድርግ፤ ራስህን ለምን ታጠፋለህ?",
           "B": "ከልክ በላይ ጻድቅ አትሁን፤ ራስህንም ከልክ በላይ ጠቢብ አታድርግ። ራስህን ለምን ታጠፋለህ?",
           "R": "ጥሩ ለመሆን ከልክ በላይ አትጣር፤ ከልክ በላይ ጠቢብ ለመሆንም አትሞክር። ራስህን ለምን ታበላሻለህ?"
+        },
+        "hi": {
+          "L": "बहुत [अधिक] धर्मी न बनो, और अपने आप को हद से अधिक बुद्धिमान न बनाओ; तुम अपने आप को क्यों नष्ट करो?",
+          "B": "बहुत अधिक धर्मी न बनो, और अपने आप को बहुत अधिक बुद्धिमान न बनाओ। अपने आप को क्यों नष्ट करो?",
+          "R": "अच्छा बनने की हद से अधिक कोशिश न करो, और बहुत अधिक बुद्धिमान बनने की कोशिश भी न करो। अपने आप को क्यों बर्बाद करो?"
+        },
+        "ru": {
+          "L": "Не будь праведен [слишком] много и не делай себя мудрым чрезмерно; зачем тебе губить себя?",
+          "B": "Не будь слишком праведным и не делай себя слишком мудрым. Зачем губить себя?",
+          "R": "Не старайся слишком быть хорошим и не пытайся быть слишком мудрым. Зачем себя губить?"
+        },
+        "ja": {
+          "L": "あまりに正しい者となるな。過度に知恵ある者となるな。なぜ、あなたは自分を滅ぼそうとするのか？",
+          "B": "正しすぎてはならない。知恵がありすぎてもならない。なぜ自分を滅ぼすのか？",
+          "R": "善い人になろうと頑張りすぎてはいけない。知恵のある人になろうとしすぎてもいけない。どうして自分をだめにするのか？"
+        },
+        "uk": {
+          "L": "Не будь праведним [надто] багато і не роби себе надмірно мудрим; навіщо тобі губити себе?",
+          "B": "Не будь надто праведним і не роби себе надто мудрим. Навіщо себе губити?",
+          "R": "Не силкуйся бути надто добрим і не силкуйся бути надто мудрим. Навіщо себе губити?"
         }
       },
       "decisions": [
@@ -2701,6 +3858,25 @@
             "be too righteous"
           ],
           "reason": "Readable keeps the warning as a matter of overdoing it, which suits both readings in m1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070160031"
+          ],
+          "choice": "Не старайся слишком быть хорошим",
+          "alternatives": [
+            "Не будь слишком праведным"
+          ],
+          "reason": "Readable keeps the warning as a matter of overdoing it, which suits both readings of the line (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2774,6 +3950,26 @@
           "L": "እጅግ ክፉ አትሁን፤ ሰነፍም አትሁን፤ ጊዜህ ሳይደርስ ለምን ትሞታለህ?",
           "B": "ከልክ በላይ ክፉ አትሁን፤ ሰነፍም አትሁን። ጊዜህ ሳይደርስ ለምን ትሞታለህ?",
           "R": "እጅግ ክፉ አትሁን፤ ሞኝ ሰውም አትሁን። ጊዜህ ሳይደርስ ለምን ትሞታለህ?"
+        },
+        "hi": {
+          "L": "बहुत [अधिक] दुष्ट न बनो, और मूर्ख न बनो; तुम [उस समय] क्यों मरो [जब] तुम्हारा समय नहीं?",
+          "B": "बहुत अधिक दुष्ट न बनो, और मूर्ख न बनो। अपने समय से पहले क्यों मरो?",
+          "R": "बहुत दुष्ट न बनो, और मूर्ख व्यक्ति न बनो। अपने समय से पहले क्यों मरो?"
+        },
+        "ru": {
+          "L": "Не будь нечестив [слишком] много и не будь глупцом; зачем тебе умереть, [когда] не твоё время?",
+          "B": "Не будь слишком нечестивым и не будь глупцом. Зачем умирать раньше срока?",
+          "R": "Не будь очень злым и не будь глупым человеком. Зачем умирать раньше времени?"
+        },
+        "ja": {
+          "L": "あまりに悪しき者となるな。愚か者となるな。なぜ、あなたの時でないのに死ぬのか？",
+          "B": "悪すぎてはならない。愚か者になってもならない。なぜ、時が来る前に死ぬのか？",
+          "R": "ひどく悪い人になってはいけない。愚かな人になってもいけない。どうして、まだその時でないのに死ぬのか？"
+        },
+        "uk": {
+          "L": "Не будь нечестивим [надто] багато і не будь безумним; навіщо тобі вмирати не в свій час?",
+          "B": "Не будь надто нечестивим і не будь безумним. Навіщо вмирати передчасно?",
+          "R": "Не будь дуже нечестивим і не будь нерозумною людиною. Навіщо вмирати раніше свого часу?"
         }
       },
       "decisions": [
@@ -2842,6 +4038,25 @@
             "a fool"
           ],
           "reason": "Readable uses the same wording as for *kesil*, since the two words mean much the same here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070170061"
+          ],
+          "choice": "глупым человеком",
+          "alternatives": [
+            "глупцом"
+          ],
+          "reason": "Readable uses the same wording as for kesil, since the two words mean much the same here (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -2922,6 +4137,26 @@
           "L": "ይህንን ብትይዝ መልካም [ነው]፤ ደግሞም ከዚያኛው እጅህን አትመልስ፤ እግዚአብሔርን የሚፈራ ከሁሉም ጋር ይወጣልና።",
           "B": "አንዱን አጥብቀህ ብትይዝ፣ ሌላውንም ባትለቅ መልካም ነው፤ እግዚአብሔርን የሚፈራ ከሁለቱም በሰላም ያልፋልና።",
           "R": "ከእነዚህ ማስጠንቀቂያዎች አንዱን አጥብቀህ መያዝና ሌላውንም አለመልቀቅ መልካም ነው። እግዚአብሔርን በፍርሃት የሚያከብሩ ሰዎች ከዚህ ሁሉ በሰላም ያልፋሉ።"
+        },
+        "hi": {
+          "L": "अच्छा [है] कि तुम इसे पकड़े रहो, और उससे भी अपना हाथ न हटाओ; क्योंकि परमेश्वर का भय माननेवाला उन सब से पार निकलेगा।",
+          "B": "अच्छा है कि तुम एक को पकड़े रहो और दूसरे को भी न छोड़ो, क्योंकि जो परमेश्वर का भय मानता है, वह दोनों से पार निकलेगा।",
+          "R": "अच्छा है कि तुम इनमें से एक चेतावनी को पकड़े रहो और दूसरी को भी न छोड़ो। जो लोग परमेश्वर का आदर और भय मानते हैं, वे इस सब से पार निकल आएँगे।"
+        },
+        "ru": {
+          "L": "[Есть] благо в том, чтобы ты ухватился за это, и от того тоже не отпускай руки своей; ведь боящийся Бога выйдет со всеми ними.",
+          "B": "Хорошо держаться за одно и не выпускать из рук другое, потому что тот, кто боится Бога, пройдёт через то и другое.",
+          "R": "Хорошо держаться за одно из этих предостережений и не отпускать другое. Люди, которые благоговеют перед Богом, пройдут через всё это."
+        },
+        "ja": {
+          "L": "あなたがこれをつかみ、またあれからも手を放さないのは良い。神を恐れる者は、それらすべてと共に出て来るからである。",
+          "B": "一方をしっかりとつかみ、もう一方からも手を放さないのが良い。神を畏れる者は、その両方を全うするからである。",
+          "R": "一方の戒めをしっかりと守り、もう一方の戒めも手放さないのが良い。神をおそれ敬う人は、こうしたすべてのことを無事に乗り越えていく。"
+        },
+        "uk": {
+          "L": "Добре, щоб ти тримався цього, і також від того не відпускав своєї руки; бо [той, хто] боїться Бога, вийде з усім цим.",
+          "B": "Добре триматися одного й не відпускати іншого, бо хто боїться Бога, той вийде з обох.",
+          "R": "Добре триматися однієї з цих пересторог і не відпускати іншої. Люди, які шанують Бога з благоговінням, пройдуть крізь усе це."
         }
       },
       "decisions": [
@@ -3019,6 +4254,45 @@
           "reason": "\"All of them\" refers to two things, so Balanced says \"both\". Readable says \"all of this\" to keep the phrase open, as m2 is uncertain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070180121",
+            "o210070180131"
+          ],
+          "choice": "\"परमेश्वर का आदर और भय मानते हैं\"",
+          "alternatives": [
+            "\"परमेश्वर का भय मानते हैं\""
+          ],
+          "reason": "The book's Readable wording for the fear of God (see 3:14).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070180121"
+          ],
+          "choice": "благоговеют перед Богом",
+          "alternatives": [
+            "боятся Бога"
+          ],
+          "reason": "The book's Readable wording for \"fear God\" (see 3:14); Literal and Balanced keep бояться (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3088,6 +4362,26 @@
           "L": "ጥበብ በከተማ ውስጥ ካሉ ከአሥር ገዢዎች ይልቅ ጠቢቡን ያበረታዋል።",
           "B": "ጥበብ ጠቢብን ሰው በከተማ ካሉ ከአሥር ገዢዎች የበለጠ ብርቱ ያደርገዋል።",
           "R": "ጥበብ ጠቢብን ሰው ከአንድ ከተማ አሥር ገዢዎች የበለጠ ብርቱ ያደርገዋል።"
+        },
+        "hi": {
+          "L": "बुद्धि बुद्धिमान को उन दस शासकों से अधिक बलवान बनाती है जो नगर में हैं।",
+          "B": "बुद्धि बुद्धिमान व्यक्ति को नगर के दस शासकों से अधिक बलवान बनाती है।",
+          "R": "बुद्धि एक बुद्धिमान व्यक्ति को किसी नगर के दस शासकों से अधिक शक्तिशाली बनाती है।"
+        },
+        "ru": {
+          "L": "Мудрость укрепляет мудрого больше, чем десять правителей, что есть в городе.",
+          "B": "Мудрость даёт мудрому человеку больше силы, чем десять правителей в городе.",
+          "R": "Мудрость делает мудрого человека сильнее, чем десять правителей одного города."
+        },
+        "ja": {
+          "L": "知恵は、町にいる十人の支配者よりも、知恵ある者を強くする。",
+          "B": "知恵は知恵ある者を、町の十人の支配者よりも強くする。",
+          "R": "知恵は、知恵のある人を、町を治める十人の支配者よりも強くする。"
+        },
+        "uk": {
+          "L": "Мудрість робить мудрого сильним більше, ніж десять правителів, що є в місті.",
+          "B": "Мудрість робить мудру людину сильнішою за десятьох правителів міста.",
+          "R": "Мудрість робить мудру людину сильнішою за десятьох правителів міста."
         }
       },
       "decisions": [
@@ -3192,6 +4486,26 @@
           "L": "መልካምን የሚያደርግ ኃጢአትንም የማይሠራ ጻድቅ ሰው በምድር ላይ የለምና።",
           "B": "ሁልጊዜ መልካም የሚያደርግ፣ ፈጽሞም ኃጢአት የማይሠራ ያን ያህል ጻድቅ የሆነ ሰው በምድር ላይ የለም።",
           "R": "ሁልጊዜ ትክክል የሆነውን የሚያደርግና ፈጽሞ ኃጢአት የማይሠራ ሰው በምድር ላይ የለም።"
+        },
+        "hi": {
+          "L": "क्योंकि पृथ्वी पर कोई ऐसा धर्मी मनुष्य नहीं जो भलाई ही करे और पाप न करे।",
+          "B": "सचमुच, पृथ्वी पर कोई इतना धर्मी नहीं कि सदा भलाई ही करे और कभी पाप न करे।",
+          "R": "पृथ्वी पर कोई भी ऐसा नहीं जो सदा सही काम ही करे और कभी पाप न करे।"
+        },
+        "ru": {
+          "L": "Ведь на земле нет праведника, который творил бы добро и не согрешал.",
+          "B": "Поистине, нет на земле никого настолько праведного, чтобы всегда делать добро и никогда не грешить.",
+          "R": "Нет на земле никого, кто всегда поступает правильно и никогда не грешит."
+        },
+        "ja": {
+          "L": "善を行い、罪を犯さない正しい人は、地上にいないからである。",
+          "B": "まことに、いつも善を行い、決して罪を犯さないほど正しい人は、地上に一人もいない。",
+          "R": "いつも正しいことをして、一度も罪を犯さない人は、この地上に一人もいない。"
+        },
+        "uk": {
+          "L": "Бо немає праведної людини на землі, яка чинить добро й не грішить.",
+          "B": "Справді, немає на землі такого праведника, який завжди чинив би добро й ніколи не грішив.",
+          "R": "Немає на землі нікого, хто завжди чинив би правильно й ніколи не грішив."
         }
       },
       "decisions": [
@@ -3271,6 +4585,44 @@
           "reason": "Romans 3:10 (\"ጻድቅ የለም፤ አንድ እንኳ የለም\") quotes Psalm 14:1-3 and is often heard beside this verse, but does not quote it. The Hebrew here is followed; its \"ጻድቅ ... የለም\" agrees with the Amharic of Romans where the thought is the same.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070200021"
+          ],
+          "choice": "\"मनुष्य\", with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "The word means a human being, man or woman, which Hindi \"मनुष्य\" already says (see 1:3); Balanced and Readable say \"कोई\", as the English says \"no one\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070200041"
+          ],
+          "choice": "праведника",
+          "alternatives": [
+            "праведного человека"
+          ],
+          "reason": "The Hebrew word means a human being, man or woman; Russian праведник names anyone righteous, so no gender span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3347,6 +4699,26 @@
           "L": "ደግሞም ለሚነገሩት ቃላት ሁሉ ልብህን አትስጥ፤ ባሪያህ ሲረግምህ እንዳትሰማ።",
           "B": "ደግሞም ሰዎች የሚናገሩትን ሁሉ በልብህ አትያዝ፤ አለዚያ አገልጋይህ ሲረግምህ ትሰማ ይሆናል።",
           "R": "ሰዎች የሚናገሩትን ሁሉ አትከታተል። ይህን ብታደርግ የገዛ አገልጋይህ ሲረግምህ ልትሰማ ትችላለህ።"
+        },
+        "hi": {
+          "L": "और जो बातें वे कहते हैं, उन सब पर अपना मन न लगाओ, ऐसा न हो कि तुम अपने दास को तुम्हें शाप देते सुनो।",
+          "B": "लोग जो कुछ कहते हैं, उस सब को मन में न लो, नहीं तो तुम अपने सेवक को भी तुम्हें कोसते सुनोगे।",
+          "R": "लोग जो कुछ कहते हैं, उस सब पर ध्यान न दो। यदि दोगे, तो तुम अपने ही सेवक को तुम्हें कोसते सुन सकते हो।"
+        },
+        "ru": {
+          "L": "Также ко всем словам, которые говорят, не прилагай сердца своего, чтобы не услышать тебе, как раб твой проклинает тебя.",
+          "B": "И не принимай к сердцу всего, что говорят люди, а то услышишь, как твой слуга тебя проклинает.",
+          "R": "Не обращай внимания на всё, что говорят люди. Если будешь обращать, можешь услышать, как твой собственный слуга проклинает тебя."
+        },
+        "ja": {
+          "L": "また、人々が語るすべての言葉に、あなたの心を与えるな。あなたの奴隷があなたを呪うのを聞かないためである。",
+          "B": "また、人々が言うことをいちいち気にしてはならない。あなたのしもべがあなたを呪うのを聞くことになるかもしれない。",
+          "R": "人の言うことを全部気にしてはいけない。そうしないと、自分のしもべがあなたをのろうのを聞くことになるかもしれない。"
+        },
+        "uk": {
+          "L": "Також до всіх слів, що говорять, не прикладай твого серця, щоб не почути, як твій раб проклинає тебе.",
+          "B": "Також не бери до серця всього, що кажуть люди, бо можеш почути, як твій раб проклинає тебе.",
+          "R": "Не зважай на все, що кажуть люди. Якщо зважатимеш, то можеш почути, як твій власний раб проклинає тебе."
         }
       },
       "decisions": [
@@ -3480,6 +4852,70 @@
           "reason": "ʿeved here is a member of the household (the meaning decision); Balanced and Readable say \"አገልጋይ\" as the English says \"servant\", since only his place in the house is the point. Literal keeps \"ባሪያ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070210131",
+            "o210070210132"
+          ],
+          "choice": "\"दास\" (L); \"सेवक\" (B, R)",
+          "alternatives": [
+            "\"नौकर\""
+          ],
+          "reason": "Following the English levels' wording for 'eved here: \"slave\" at Literal, \"servant\" at Balanced and Readable, with the meaning decision (m2) keeping the position the word describes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070210131"
+          ],
+          "choice": "раб (L); слуга (B, R)",
+          "alternatives": [
+            "раб"
+          ],
+          "reason": "Here 'eved is a household servant (m2); as the English, Literal keeps раб and Balanced and Readable say слуга.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070210131"
+          ],
+          "choice": "'eved \"奴隷\" (L), \"しもべ\" (B, R), as the English slave (L) / servant (B, R)",
+          "alternatives": [
+            "召し使い"
+          ],
+          "reason": "The style guide's rule for doulos holds for 'eved here, where the point is not slavery itself; qalal \"curse\" 呪う (L, B), のろう (R), as Job.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3549,6 +4985,26 @@
           "L": "አንተ ደግሞ ብዙ ጊዜ ሌሎችን እንደ ረገምክ ልብህ ያውቃልና።",
           "B": "አንተ ራስህ ብዙ ጊዜ ሌሎችን እንደ ረገምክ በልብህ ታውቃለህና።",
           "R": "አንተ ራስህ ብዙ ጊዜ ሌሎች ሰዎችን እንደ ረገምክ ታውቃለህ።"
+        },
+        "hi": {
+          "L": "क्योंकि तुम्हारा मन जानता है कि बहुत बार तुमने भी दूसरों को शाप दिया है।",
+          "B": "क्योंकि तुम अपने मन में जानते हो कि तुमने स्वयं भी बहुत बार दूसरों को कोसा है।",
+          "R": "तुम जानते हो कि बहुत बार तुमने ख़ुद भी दूसरे लोगों को कोसा है।"
+        },
+        "ru": {
+          "L": "Ведь сердце твоё знает, что много раз и ты проклинал других.",
+          "B": "Ведь ты в глубине сердца знаешь, что и сам часто проклинал других.",
+          "R": "Ты знаешь, что и сам много раз проклинал других людей."
+        },
+        "ja": {
+          "L": "あなたの心は、あなたもまた何度も他人を呪ったことを知っているからである。",
+          "B": "あなた自身も何度も他人を呪ったことを、あなたは心の中で知っているはずだ。",
+          "R": "あなた自身も、何度もほかの人をのろったことがあるのを、知っているはずだ。"
+        },
+        "uk": {
+          "L": "Бо твоє серце знає, що багато разів і ти проклинав інших.",
+          "B": "Бо ти знаєш у своєму серці, що й сам часто проклинав інших.",
+          "R": "Ти ж знаєш, що багато разів і сам проклинав інших людей."
         }
       },
       "decisions": [
@@ -3652,6 +5108,26 @@
           "L": "ይህን ሁሉ በጥበብ ፈተንኩ፤ «ጠቢብ እሆናለሁ» አልኩ፤ እርሱ ግን ከእኔ ሩቅ [ነበረ]።",
           "B": "ይህን ሁሉ በጥበብ ፈትኜዋለሁ። «ጠቢብ እሆናለሁ» አልኩ፤ ጥበብ ግን ከእኔ ሩቅ ነበረ።",
           "R": "ይህን ሁሉ ለመፈተን ጥበብን ተጠቀምኩ። «ጠቢብ እሆናለሁ» አልኩ። ነገር ግን ጥበብ ከአቅሜ እጅግ የራቀ ነበረ።"
+        },
+        "hi": {
+          "L": "यह सब मैंने बुद्धि से परखा; मैंने कहा, \"मैं बुद्धिमान बनूँगा,\" पर वह मुझसे दूर [थी]।",
+          "B": "यह सब मैंने बुद्धि से परखा है। मैंने कहा, \"मैं बुद्धिमान बनूँगा,\" पर बुद्धि मुझसे दूर थी।",
+          "R": "मैंने बुद्धि से इस सब को परखा। मैंने कहा, \"मैं बुद्धिमान बनूँगा।\" पर बुद्धि मेरी पहुँच से बहुत दूर थी।"
+        },
+        "ru": {
+          "L": "Всё это я испытал мудростью; я сказал: «Стану мудрым», но она [была] далека от меня.",
+          "B": "Всё это я испытал мудростью. Я сказал: «Я буду мудр», но мудрость была далека от меня.",
+          "R": "Я с помощью мудрости проверил всё это. Я сказал: «Я стану мудрым.» Но мудрость была мне недоступна."
+        },
+        "ja": {
+          "L": "これらすべてを、わたしは知恵によって試した。わたしは言った。「わたしは知恵ある者となろう。」しかし、それはわたしから遠かった。",
+          "B": "わたしはこれらすべてを知恵によって試してみた。「知恵ある者になろう」とわたしは言ったが、知恵はわたしから遠く離れていた。",
+          "R": "わたしは知恵を使って、これらすべてのことを試した。わたしは言った。「知恵のある者になろう。」しかし、知恵はわたしの手の届かない、遠い所にあった。"
+        },
+        "uk": {
+          "L": "Усе це я випробував мудрістю; я сказав: «Я стану мудрим», але вона [була] далеко від мене.",
+          "B": "Усе це я випробував мудрістю. Я сказав: «Я буду мудрим», але мудрість була далеко від мене.",
+          "R": "Я використав мудрість, щоб випробувати все це. Я сказав: «Я стану мудрим.» Але мудрість була для мене недосяжна."
         }
       },
       "decisions": [
@@ -3726,6 +5202,26 @@
           "reason": "Balanced and Readable name what \"it\" refers to (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070230081"
+          ],
+          "choice": "мудрость",
+          "alternatives": [
+            "она"
+          ],
+          "reason": "Balanced and Readable name what \"it\" refers to (m2). What Qoheleth said to himself takes «», as in 1:16 and 2:1.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3793,6 +5289,26 @@
           "L": "የነበረው ሩቅ [ነው]፤ ጥልቅም፣ ጥልቅ [ነው]፤ ማን ሊያገኘው ይችላል?",
           "B": "ያለው ሁሉ ሩቅና እጅግ ጥልቅ ነው። ማን ሊደርስበት ይችላል?",
           "R": "በዚህ ዓለም የሚሆነው ከእኛ እጅግ የራቀ ነው፤ እጅግም ጥልቅ ነው። ማን ሊረዳው ይችላል?"
+        },
+        "hi": {
+          "L": "जो हुआ है, वह दूर [है], और गहरा, गहरा; उसे कौन खोज सकता है?",
+          "B": "जो कुछ है, वह दूर है और बहुत गहरा है। उसे कौन खोज सकता है?",
+          "R": "इस संसार में जो कुछ होता है, वह हमसे बहुत दूर है, और बहुत गहरा है। उसे कौन समझ सकता है?"
+        },
+        "ru": {
+          "L": "Далёко всё бывшее, и глубоко, глубоко; кто это отыщет?",
+          "B": "То, что существует, далеко и очень глубоко. Кто может это постичь?",
+          "R": "То, что происходит в этом мире, далеко от нас и очень глубоко. Кто может это понять?"
+        },
+        "ja": {
+          "L": "すでにあるものは遠く、深く、深い。だれがそれを見いだせようか？",
+          "B": "存在するものは遠く、あまりにも深い。だれがそれを見極められよう？",
+          "R": "この世で起こることは、わたしたちから遠く離れていて、とても深い。だれにそれが理解できるだろうか？"
+        },
+        "uk": {
+          "L": "Далеке те, що було, і глибоке, глибоке; хто може віднайти його?",
+          "B": "Те, що існує, далеке й дуже глибоке. Хто може його збагнути?",
+          "R": "Те, що відбувається в цьому світі, далеке від нас і дуже глибоке. Хто може його зрозуміти?"
         }
       },
       "decisions": [
@@ -3863,6 +5379,25 @@
             "what has been"
           ],
           "reason": "Readable says what the phrase refers to (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070240031"
+          ],
+          "choice": "То, что происходит в этом мире",
+          "alternatives": [
+            "то, что было"
+          ],
+          "reason": "Readable says what the phrase refers to: the way things are (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -3946,6 +5481,26 @@
           "L": "እኔና ልቤ ዞርን፤ ለማወቅና ለመመርመር፣ ጥበብንና ስሌትን ለመፈለግ፣ ክፋትም ስንፍና፣ ሞኝነትም እብደት እንደ ሆነ ለማወቅ።",
           "B": "ለመረዳት፣ ለመመርመርና ጥበብንና የነገሮችን ምክንያት ለመፈለግ፣ ክፋትም ስንፍና፣ ሞኝነትም እብደት እንደ ሆነ ለመረዳት አእምሮዬን አዞርኩ።",
           "R": "ለመማር፣ ለማጥናትና ጥበብንና ከነገሮች በስተጀርባ ያለውን ምክንያት ለመፈለግ ወሰንኩ። ክፉ ማድረግ ሞኝነት፣ ሞኝነትም አንድ ዓይነት እብደት እንደ ሆነ ልረዳ ፈለግኩ።"
+        },
+        "hi": {
+          "L": "मैं फिरा, मैं और मेरा मन, कि जानूँ और जाँचूँ और बुद्धि और हिसाब को खोजूँ, और दुष्टता को मूर्खता [के रूप में], और मूर्खता को बावलेपन [के रूप में] जानूँ।",
+          "B": "मैंने अपना मन लगाया कि समझूँ, जाँचूँ, और बुद्धि और बातों के कारण को खोज निकालूँ, और यह समझूँ कि दुष्टता मूर्खता है और मूर्खता बावलापन है।",
+          "R": "मैंने अपना मन लगाया कि सीखूँ, अध्ययन करूँ, और बुद्धि को और बातों के पीछे छिपे कारण को खोजूँ। मैं यह समझना चाहता था कि बुरे काम करना मूर्खता है, और मूर्खता एक तरह का पागलपन है।"
+        },
+        "ru": {
+          "L": "Обратился я, я и сердце моё, к тому, чтобы знать, и исследовать, и искать мудрость и итог, и познать нечестие [как] глупость, и безрассудство [как] безумие.",
+          "B": "Я обратил свой ум на то, чтобы понять, исследовать и отыскать мудрость и смысл вещей, и понять, что нечестие — это глупость, а безрассудство — безумие.",
+          "R": "Я решил учиться, исследовать и искать мудрость и смысл всего, что происходит. Я хотел понять, что делать зло — глупо, а глупость — это своего рода безумие."
+        },
+        "ja": {
+          "L": "わたしは向き直った。わたしとわたしの心は、知恵と道理を知り、探り、求めようとした。また、悪が愚かさであり、愚かさが狂気であることを知ろうとした。",
+          "B": "わたしは心を傾けて、知恵と物事の道理を知り、探り、尋ね求めようとした。また、悪は愚かさであり、愚かさは狂気であることを知ろうとした。",
+          "R": "わたしは、知恵と、物事の裏にある理由を学び、調べ、探し求めようと心に決めた。悪いことをするのは愚かであり、愚かさは一種の狂気だということを理解したかった。"
+        },
+        "uk": {
+          "L": "Обернувся я, я і моє серце, щоб пізнати, і дослідити, і шукати мудрості й розрахунку, і пізнати нечестя [як] безумство, і глупоту [як] божевілля.",
+          "B": "Я звернув свій розум на те, щоб пізнати, дослідити й знайти мудрість і причину речей, і зрозуміти, що нечестя — безумство, а глупота — божевілля.",
+          "R": "Я вирішив учитися, досліджувати й шукати мудрості та причини всього. Я хотів зрозуміти, що чинити зло — нерозумно, а дурість — це щось на кшталт божевілля."
         }
       },
       "decisions": [
@@ -4109,6 +5664,69 @@
           "reason": "The verse names two kinds of folly; siklut keeps \"ሞኝነት\" as in 1:17 and 2:3, so kesel takes \"ስንፍና\". Readable says \"ሞኝነት\" for both.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070250082"
+          ],
+          "choice": "\"बातों के कारण\" (B); \"बातों के पीछे छिपे कारण\" (R)",
+          "alternatives": [
+            "\"हिसाब\""
+          ],
+          "reason": "As the English, Balanced and Readable say what Qoheleth wanted to work out, the reckoning that explains things (m2); Literal keeps \"हिसाब\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070250082"
+          ],
+          "choice": "смысл вещей (B); смысл всего, что происходит (R)",
+          "alternatives": [
+            "итог"
+          ],
+          "reason": "The accounting is the sum of things, the reckoning that explains them (m2); Balanced and Readable say what Qoheleth wanted to work out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070250082"
+          ],
+          "choice": "cheshbon \"道理\" (L), \"物事の道理\" (B), \"物事の裏にある理由\" (R); in 7:27 the same word as \"道理\" (L), \"全体の道理\" (B), \"全体がどうなっているか\" (R)",
+          "alternatives": [
+            "計算",
+            "総計",
+            "答え"
+          ],
+          "reason": "m2: the sum of things, the reckoning that explains them. 計算 / 総計 would sound like money; 道理 is the reckoning that makes sense of things, and it lets 7:27 read \"adding one to one to find\" it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4198,6 +5816,26 @@
           "L": "ከሞትም የሚመረውን አገኛለሁ፤ ወጥመዶች የሆነችውን ሴት፣ ልቧም መረቦች፣ እጆቿም ሰንሰለቶች [የሆኑትን]፤ በእግዚአብሔር ፊት መልካም የሆነ ከእርሷ ያመልጣል፤ ኃጢአተኛ ግን በእርሷ ይያዛል።",
           "B": "ከሞት የሚመር ነገር አገኛለሁ፤ እርሷም ወጥመድ የሆነች፣ ልቧ መረብ፣ እጆቿም ሰንሰለት የሆኑ ሴት ናት። እግዚአብሔርን ደስ የሚያሰኝ ከእርሷ ያመልጣል፤ ኃጢአተኛ ግን በእርሷ ይጠመዳል።",
           "R": "ከሞት የሚመር ነገር አገኘሁ፤ እንደ አዳኝ ወጥመድ የሆነች ሴት ናት። ልቧ እንደ መረብ፣ እጆቿም እንደ ሰንሰለት ናቸው። እግዚአብሔርን ደስ የሚያሰኙ ሰዎች ከእርሷ ያመልጣሉ፤ ኃጢአተኞች ግን በእርሷ ይያዛሉ።"
+        },
+        "hi": {
+          "L": "और मैं मृत्यु से अधिक कड़वी उस स्त्री को पाता हूँ जो फंदे [है], और उसका मन जाल [है], उसके हाथ बेड़ियाँ [हैं]; जो परमेश्वर के सामने अच्छा [है], वह उससे बच निकलेगा, पर जो पाप करता है, वह उससे पकड़ा जाएगा।",
+          "B": "मैं मृत्यु से भी कड़वी एक बात पाता हूँ: वह स्त्री जो फंदा है, जिसका मन जाल है और जिसके हाथ बेड़ियाँ हैं। जो परमेश्वर को प्रसन्न करता है, वह उससे बच निकलेगा, पर पापी उसके हाथ पकड़ा जाएगा।",
+          "R": "मैंने मृत्यु से भी कड़वी एक बात पाई: ऐसी स्त्री जो शिकारी के फंदे जैसी है। उसका मन जाल जैसा है, और उसके हाथ बेड़ियों जैसे हैं। जो लोग परमेश्वर को प्रसन्न करते हैं, वे उससे बच निकलेंगे, पर पापी उसकी पकड़ में आ जाएँगे।"
+        },
+        "ru": {
+          "L": "И нахожу я более горькое, чем смерть: женщину, которая — силки, и сердце её — сети, руки её — оковы; кто хорош перед Богом, ускользнёт от неё, а согрешающий будет ею схвачен.",
+          "B": "Я нахожу нечто горше смерти: женщину, которая — ловушка, чьё сердце — сеть, а руки — оковы. Кто угоден Богу, ускользнёт от неё, а грешника она поймает.",
+          "R": "Я нашёл кое-что горше смерти: женщину, которая подобна ловушке охотника. Её сердце — как сеть, а руки — как цепи. Люди, угодные Богу, убегут от неё, а грешники попадутся ей."
+        },
+        "ja": {
+          "L": "そしてわたしは、死よりも苦いものを見いだす。それは罠である女。その心は網、その手は鎖である。神の前に良い者はその女から逃れるが、罪を犯す者はその女に捕らえられる。",
+          "B": "わたしは死よりも苦いものを見いだす。それは罠のような女であり、その心は網、その手は鎖である。神の前に良しとされる人はその女から逃れるが、罪人はその女に捕らえられる。",
+          "R": "わたしは死よりも苦いものを見つけた。それは、狩人のわなのような女である。その心は網のようで、その手は鎖のようだ。神に喜ばれる人はその女から逃げることができるが、罪を犯す人はその女に捕まってしまう。"
+        },
+        "uk": {
+          "L": "І я знаходжу гіркішою за смерть жінку, яка — сильця, і її серце — сіті, її руки — кайдани; [той, хто] добрий перед Богом, утече від неї, а грішник буде впійманий нею.",
+          "B": "Я знаходжу дещо гіркіше за смерть: жінку, яка — пастка, чиє серце — сіть, а руки — кайдани. Хто до вподоби Богові, той утече від неї, а грішника вона впіймає.",
+          "R": "Я знайшов дещо гіркіше за смерть: жінку, яка як пастка мисливця. Її серце як сіть, а руки як кайдани. Люди, які до вподоби Богові, утечуть від неї, а грішників вона впіймає."
         }
       },
       "decisions": [
@@ -4334,6 +5972,46 @@
           "reason": "As in Proverbs 7, Korean repeats the noun for the woman instead of the written pronoun \"그녀\", which reads as a calque in Bible Korean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070260091",
+            "o210070260102",
+            "o210070260121"
+          ],
+          "choice": "\"शिकारी के फंदे जैसी ... जाल जैसा ... बेड़ियों जैसे\"",
+          "alternatives": [
+            "\"फंदा ... जाल ... बेड़ियाँ\""
+          ],
+          "reason": "As the English Readable, Readable adds \"जैसा\" so that the metaphors read as pictures, and \"शिकारी के\" to say what kind of trap is meant (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210070260091"
+          ],
+          "choice": "подобна ловушке охотника ... как сеть ... как цепи",
+          "alternatives": [
+            "ловушка ... сеть ... оковы"
+          ],
+          "reason": "Readable adds как so that the metaphors read as pictures, and охотника to say what kind of trap is meant (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4402,6 +6080,26 @@
           "L": "እነሆ፣ ይህን አገኘሁ፣ ይላል ቆሔሌት፤ ድምሩን ለማግኘት አንዱን ከአንዱ ጋር [በመደመር]፣",
           "B": "ተመልከት፤ ያገኘሁት ይህ ነው፣ ይላል መምህሩ፤ ድምሩን ለማግኘት አንዱን ነገር ከሌላው ጋር እየደመርኩ፣",
           "R": "ተመልከት፤ ያገኘሁት ይህ ነው፣ ይላል መምህሩ። ሁሉም በአንድ ላይ ሲደመር ምን እንደሚሆን ለማወቅ አንዱን ነገር ከሌላው ጋር አገናኘሁ።"
+        },
+        "hi": {
+          "L": "देखो, यह मैंने पाया है, कोहेलेत कहता है, एक से एक [जोड़कर] हिसाब पाने के लिए,",
+          "B": "देखो, मैंने यह पाया है, उपदेशक कहता है, एक बात को दूसरी से जोड़-जोड़कर हिसाब निकालते हुए,",
+          "R": "देखो, मैंने यह पाया, उपदेशक कहता है। मैंने एक बात को दूसरी के साथ रखकर यह जानना चाहा कि सब मिलाकर क्या निकलता है।"
+        },
+        "ru": {
+          "L": "Смотри, вот что я нашёл, — говорит Когелет, — [прибавляя] одно к одному, чтобы найти итог,",
+          "B": "Смотри, вот что я нашёл, — говорит Учитель, — прибавляя одно к другому, чтобы найти итог,",
+          "R": "Смотри, вот что я нашёл, — говорит Учитель. — Я сопоставлял одно с другим, чтобы понять, что получается в итоге."
+        },
+        "ja": {
+          "L": "見よ、わたしはこれを見いだした、とコヘレトは言う。一つ一つを合わせて道理を見いだそうとして、",
+          "B": "見なさい、これがわたしの見いだしたことだ、と教師は言う。一つのことに別のことを加えて、全体の道理を見いだそうとした。",
+          "R": "見なさい。これがわたしの見つけたことだ、と教師は言う。わたしは、一つのことを別のことと合わせて、全体がどうなっているかを見つけようとした。"
+        },
+        "uk": {
+          "L": "Дивись, ось що я знайшов, каже Когелет, [додаючи] одне до одного, щоб знайти підсумок,",
+          "B": "Дивись, ось що я знайшов, каже Учитель, додаючи одне до одного, щоб знайти підсумок,",
+          "R": "Дивись, ось що я знайшов, каже Учитель. Я додавав одне до одного, щоб зʼясувати, до чого все зводиться."
         }
       },
       "decisions": [
@@ -4530,6 +6228,68 @@
           "reason": "The frame's voice breaks into Qoheleth's words (the meaning decision); Amharic keeps it as a short inserted clause, with no quotation marks, in the same form as 1:2 and 12:8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070270051",
+            "o210070270041"
+          ],
+          "choice": "\"कोहेलेत\" (L); \"उपदेशक\" (B, R); no quotation marks",
+          "alternatives": [
+            "\"सभोपदेशक\""
+          ],
+          "reason": "The book's wording for Qoheleth (see 1:1). \"Says Qoheleth\" interrupts his own words, as the frame of the book does in 1:2 and 12:8 (m1); as in the English, no quotation marks are used. Readable ends the sentence here; Literal and Balanced end with a comma, since the sentence goes on into verse 28.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070270051"
+          ],
+          "choice": "Когелет (L); Учитель (B, R), set off with dashes",
+          "alternatives": [],
+          "reason": "The book's wording for qohelet (see 1:1). The frame's \"says Qoheleth\" breaks into his own words (m1) and, as in 1:2, takes dashes and no quotation marks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210070270011",
+            "o210070270041"
+          ],
+          "choice": "Literal runs on into 7:28 with a comma, as the English L; Balanced closes the verse and picks up in 7:28 with \"それは…ものである\", since Japanese cannot hang the relative clause of 7:28 on a noun before it",
+          "alternatives": [
+            "one sentence across both verses at Balanced"
+          ],
+          "reason": "m4: the sentence goes on into verse 28. Literal keeps the run-on; Balanced keeps each verse's content after its own number.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4607,6 +6367,26 @@
           "L": "ነፍሴ አሁንም የፈለገችው፣ ያላገኘሁትም፤ ከሺህ መካከል አንድ ወንድ አገኘሁ፤ ከእነዚህ ሁሉ መካከል ግን ሴትን አላገኘሁም።",
           "B": "ይህንም አሁንም እየፈለግኩት ነው፤ ግን አላገኘሁትም። ከሺህ መካከል አንድ ወንድ አገኘሁ፤ ከእነዚህ ሁሉ መካከል ግን አንዲት ሴት አላገኘሁም።",
           "R": "አሁንም እየፈለግኩት ነበር፤ ግን አላገኘሁትም። ከሺህ ሰዎች መካከል አንድ ወንድ አገኘሁ፤ ከእነዚያ ሁሉ መካከል ግን አንዲት ሴት እንኳ አላገኘሁም።"
+        },
+        "hi": {
+          "L": "जिसे मेरा प्राण अब तक खोजता रहा, पर मैंने नहीं पाया: हज़ार में से एक पुरुष मैंने पाया, पर इन सब में एक स्त्री मैंने नहीं पाई।",
+          "B": "जिसे मैं खोजता ही रहा पर नहीं पाया। हज़ार में से एक पुरुष मैंने पाया, पर इन सब में एक भी स्त्री मैंने नहीं पाई।",
+          "R": "मैं उसे खोजता रहा, पर वह मुझे नहीं मिला। मुझे हज़ार में से एक पुरुष मिला, पर उन सब में मुझे एक भी स्त्री नहीं मिली।"
+        },
+        "ru": {
+          "L": "что душа моя всё ещё ищет, а я не нашёл: мужчину — одного из тысячи — я нашёл, а женщину среди всех них не нашёл.",
+          "B": "который я всё искал и не нашёл. Одного мужчину из тысячи я нашёл, но женщины среди всех этих не нашёл.",
+          "R": "Я долго искал, но так и не нашёл. Я нашёл одного мужчину из тысячи, но среди всех них не нашёл ни одной женщины."
+        },
+        "ja": {
+          "L": "わたしの魂がなお求め続けて、しかし見いださなかったもの――千人の中に一人の男をわたしは見いだしたが、これらすべての中に一人の女も見いださなかった。",
+          "B": "それは、わたしがなおも探し続けながら、見いだせなかったものである。千人の中に一人の男は見いだしたが、これらすべての中に一人の女も見いださなかった。",
+          "R": "わたしは探し続けたが、見つからなかった。千人の中に一人の男を見つけたが、そのすべての中に、一人の女も見つけられなかった。"
+        },
+        "uk": {
+          "L": "якого ще шукала моя душа, але я не знайшов: одного чоловіка з тисячі я знайшов, а жінки серед усіх цих я не знайшов.",
+          "B": "якого я й далі шукаю, але не знайшов. Одного чоловіка з тисячі я знайшов, а жінки серед усіх цих я не знайшов.",
+          "R": "Я й далі шукав, але не знайшов. Я знайшов одного чоловіка з тисячі, але серед усіх них не знайшов жодної жінки."
         }
       },
       "decisions": [
@@ -4696,6 +6476,50 @@
           "reason": "Balanced keeps the Hebrew order, which sets the two findings side by side for contrast. Readable uses the usual order.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070280071",
+            "o210070280112"
+          ],
+          "choice": "\"पुरुष\"",
+          "alternatives": [
+            "\"मनुष्य\""
+          ],
+          "reason": "Here the word for a human being is set against the word for a woman, so it means a man (m2), and every level says \"पुरुष\". What Qoheleth found is not explained, as the English does not explain it (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070280071",
+            "o210070280112"
+          ],
+          "choice": "мужчину",
+          "alternatives": [
+            "человека"
+          ],
+          "reason": "Here the word for a human being is set against the word for a woman, so it means a man (m2); every level says мужчина.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4771,6 +6595,26 @@
           "L": "ብቻ እይ፤ ይህን አገኘሁ፤ እግዚአብሔር ሰውን ቅን አድርጎ ሠራው፤ እነርሱ ግን ብዙ ዘዴዎችን ፈለጉ።",
           "B": "ያገኘሁት ይህን ብቻ ነው፦ እግዚአብሔር የሰውን ልጅ ቅን አድርጎ ሠራ፤ እነርሱ ግን ብዙ ዘዴዎችን ፍለጋ ሄዱ።",
           "R": "ነገር ግን የተማርኩት አንድ ነገር አለ፦ እግዚአብሔር ሰዎችን ቅኖች አድርጎ ሠራቸው፤ እነርሱ ግን ለመሳሳት ብዙ ብልጣ ብልጥ መንገዶችን ፈጠሩ።"
+        },
+        "hi": {
+          "L": "केवल देखो, यह मैंने पाया है: कि परमेश्वर ने मनुष्य को सीधा बनाया, पर उन्होंने बहुत-सी युक्तियाँ खोज निकाली हैं।",
+          "B": "मैंने केवल यह पाया है: परमेश्वर ने मनुष्य को सीधा बनाया, पर वे बहुत-सी युक्तियों की खोज में निकल पड़े हैं।",
+          "R": "पर मैंने एक बात सीखी है: परमेश्वर ने लोगों को सीधा और सच्चा बनाया, पर उन्होंने ग़लत राह पर चलने के बहुत-से चालाक तरीक़े ढूँढ़ निकाले हैं।"
+        },
+        "ru": {
+          "L": "Только, смотри, вот что я нашёл: Бог сотворил человека прямым, а они ищут многих ухищрений.",
+          "B": "Только одно я нашёл: Бог сотворил людей прямыми, а они стали придумывать множество ухищрений.",
+          "R": "Но вот что я понял: Бог сотворил людей честными, а они придумали много хитрых способов сбиться с пути."
+        },
+        "ja": {
+          "L": "ただ、見よ、わたしはこれを見いだした。神は人をまっすぐに造られたが、彼らは多くのたくらみを探し求めた。",
+          "B": "ただこれだけを、わたしは見いだした。神は人間をまっすぐな者に造られたが、人間は多くのたくらみを探し求めた。",
+          "R": "しかし、わたしにわかったことが一つある。神は人を正しく造られたのに、人は、間違った方向へ行くための、さまざまなずる賢い方法を考え出した。"
+        },
+        "uk": {
+          "L": "Тільки дивись, ось що я знайшов: що Бог створив людину прямою, а вони шукають багатьох задумів.",
+          "B": "Тільки це я знайшов: Бог створив людей прямими, а вони шукають багатьох хитрощів.",
+          "R": "Але ось одне, що я зрозумів: Бог створив людей чесними, але вони вигадали багато хитрих способів збитися з дороги."
         }
       },
       "decisions": [
@@ -4877,6 +6721,128 @@
             "the adjective outside the span"
           ],
           "reason": "The adjective agrees with the noun, so it goes inside the span with it: \"a humanidade reta\" or \"o homem reto\". \"Eles\" then refers to all people, as m2 says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070290092",
+            "o210070290112"
+          ],
+          "choice": "\"मनुष्य\", with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "The word means all people, men and women (m2); Hindi \"मनुष्य\" already says so, so the English span has nothing to change (see 1:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070290131",
+            "o210070290101"
+          ],
+          "choice": "\"सीधा और सच्चा\"; \"ग़लत राह पर चलने के बहुत-से चालाक तरीक़े\"",
+          "alternatives": [
+            "\"युक्तियाँ\""
+          ],
+          "reason": "As the English Readable, Readable says what kind of schemes are meant, set against \"upright\" (m3, m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070290092"
+          ],
+          "choice": "человека (L); людей (B), no gender span",
+          "alternatives": [
+            "людей",
+            "человечество"
+          ],
+          "reason": "Humankind ... they means all people, men and women (m2); Russian человек and люди already say so, so the English gender span has no Russian counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210070290131"
+          ],
+          "choice": "много хитрых способов сбиться с пути",
+          "alternatives": [
+            "многих ухищрений"
+          ],
+          "reason": "Readable says what kind of schemes are meant, set against \"upright\" (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070290092"
+          ],
+          "choice": "\"人\" (L), \"人間\" (B) with no gender span",
+          "alternatives": [
+            "人間 / 人 as a span"
+          ],
+          "reason": "m2: all people, men and women; 人 and 人間 already say so, so the English humankind|man, human beings|mankind has nothing to change in Japanese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210070290092",
+            "o210070290112"
+          ],
+          "choice": "\"людину\" (L), \"людей\" (B) with no gender span where the English has one",
+          "alternatives": [
+            "\"{{gender:людей|людство}}\""
+          ],
+          "reason": "The word means humankind, men and women alike, as the meaning decision says; \"людина\" and \"люди\" are inclusive in Ukrainian, so there is no second wording for a setting to switch to. In 7:28 the word set against \"woman\" means a man, and Ukrainian says \"чоловік\".",
           "uncertain": false,
           "footnote": false
         }

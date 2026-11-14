@@ -62,6 +62,26 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! {{divine_name:የእግዚአብሔር|የያህዌ}} ባሪያዎች ሆይ፣ አመስግኑ፤ {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም አመስግኑ!",
           "B": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! {{divine_name:እግዚአብሔርን|ያህዌን}} የምታገለግሉ ሆይ፣ አመስግኑ፤ {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም አመስግኑ!",
           "R": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! እናንተ {{divine_name:የእግዚአብሔር|የያህዌ}} አገልጋዮች፣ አመስግኑት! {{divine_name:እግዚአብሔርን|ያህዌን}} ስለ ማንነቱ አመስግኑት!"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याह}} की स्तुति करो! हे {{divine_name:प्रभु|याहवे}} के दासो, स्तुति करो, {{divine_name:प्रभु|याहवे}} के नाम की स्तुति करो!",
+          "B": "{{divine_name:प्रभु|याह}} की स्तुति करो! हे {{divine_name:प्रभु|याहवे}} के दासो, स्तुति करो; {{divine_name:प्रभु|याहवे}} के नाम की स्तुति करो!",
+          "R": "{{divine_name:प्रभु|याह}} की स्तुति करो! हे {{divine_name:प्रभु|याहवे}} के दासो, उनकी स्तुति करो! {{divine_name:प्रभु|याहवे}} जैसे हैं, उसके लिए उनकी स्तुति करो!"
+        },
+        "ru": {
+          "L": "Хвалите {{divine_name:ГОСПОДА|Ях}}! Хвалите, рабы {{divine_name:ГОСПОДА|Яхве}}, хвалите имя {{divine_name:ГОСПОДА|Яхве}}!",
+          "B": "Хвалите {{divine_name:ГОСПОДА|Ях}}! Служители {{divine_name:ГОСПОДА|Яхве}}, воздавайте хвалу; воздавайте хвалу имени {{divine_name:ГОСПОДА|Яхве}}!",
+          "R": "Хвалите {{divine_name:ГОСПОДА|Ях}}! Рабы {{divine_name:ГОСПОДА|Яхве}}, хвалите {{deity_pronoun:его|Его}}! Хвалите {{divine_name:ГОСПОДА|Яхве}} за то, каков {{deity_pronoun:он|Он}}!"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハ}}を賛美せよ！{{divine_name:主|ヤハウェ}}のしもべたちよ、賛美せよ。{{divine_name:主|ヤハウェ}}の名を賛美せよ！",
+          "B": "{{divine_name:主|ヤハ}}を賛美せよ！{{divine_name:主|ヤハウェ}}のしもべたちよ、賛美せよ。{{divine_name:主|ヤハウェ}}の名を賛美せよ！",
+          "R": "{{divine_name:主|ヤハ}}を賛美しよう！{{divine_name:主|ヤハウェ}}のしもべたちよ、その方を賛美しよう！{{divine_name:主|ヤハウェ}}がどのような方であるかを覚えて、その名を賛美しよう！"
+        },
+        "uk": {
+          "L": "Хваліть {{divine_name:ГОСПОДА|Яг}}! Хваліть, раби {{divine_name:ГОСПОДА|Ягве}}, хваліть імʼя {{divine_name:ГОСПОДА|Ягве}}!",
+          "B": "Хваліть {{divine_name:ГОСПОДА|Яг}}! Ви, що служите {{divine_name:ГОСПОДУ|Ягве}}, віддавайте хвалу; віддавайте хвалу імені {{divine_name:ГОСПОДА|Ягве}}!",
+          "R": "Хваліть {{divine_name:ГОСПОДА|Яг}}! Ви, раби {{divine_name:ГОСПОДА|Ягве}}, хваліть {{deity_pronoun:його|Його}}! Хваліть {{divine_name:ГОСПОДА|Ягве}} за те, який {{deity_pronoun:він|Він}} є!"
         }
       },
       "decisions": [
@@ -268,6 +288,148 @@
           "reason": "The English translates the word, so the Amharic does too, as the terms list asks where the English translates it (\"ሃሌ ሉያ\" is kept where the word itself is kept, as in Revelation 19). The alternative is the short form Yah, as in Exodus 15:2 and Psalm 68:5.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191130010011",
+            "o191130010021"
+          ],
+          "choice": "{{divine_name:प्रभु|याह}} की स्तुति करो",
+          "alternatives": [
+            "हल्लेलूयाह"
+          ],
+          "reason": "Psalms 113-118 are the Hallel. Hallelu-yah is translated in the poetry note's form, with the short name Yah in the divine_name span (प्रभु by default, याह as the alternative).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191130010051"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; God is spoken of with the honorific third person (वे, उनका).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130010041"
+          ],
+          "choice": "DN के दासो",
+          "alternatives": [
+            "हे DN की सेवा करनेवालो"
+          ],
+          "reason": "The poetry note keeps दास for 'eved at every level; Balanced does not change it to \"you who serve\" as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130010031"
+          ],
+          "choice": "рабы (L, R); служители (B)",
+          "alternatives": [
+            "слуги"
+          ],
+          "reason": "The poetry note keeps \"раб\" for 'eved; Balanced follows the English \"you who serve\" with \"служители\", the people who worship him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130010011",
+            "o191130010041"
+          ],
+          "choice": "Hallelu-yah \"{{divine_name:主|ヤハ}}を賛美せよ\" (L, B), \"…賛美しよう\" (R); 'avdei YHWH \"DNのしもべたち\" at every level",
+          "alternatives": [],
+          "reason": "The Hallel (113-118, m2, uncertain) opens with the Psalter's form for Hallelu-yah; the servants of the LORD are all who worship him (m3), and the Psalter keeps しもべ for this title at every level, also where the English B says 'you who serve'. R calls God's own people with 〜しよう (PSA-1). The name of the LORD is the LORD himself as he has made himself known (m4), so R 'for who he is' as the English R.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191130010021"
+          ],
+          "choice": "\"Хваліть ГОСПОДА\" with \"Яг\" as the alternative, left uninflected, for hallelu-yah through Psalms 113-150",
+          "alternatives": [
+            "\"Алілуя\"",
+            "\"Хваліть Яга\""
+          ],
+          "reason": "The English spells out the cry as \"Praise the LORD\" with Yah as the alternative, so Ukrainian does too; the short name stays undeclined, since an inflected \"Яга\" would call up the folk-tale witch.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130010041"
+          ],
+          "choice": "\"раби\" (L), \"ви, що служите\" (B) for the servants of the LORD",
+          "alternatives": [
+            "\"слуги\""
+          ],
+          "reason": "Literal keeps one word for ʿeved, as the shared terms note does; Balanced says what they do, as its English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -334,6 +496,26 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} ስም ከአሁን ጀምሮ እስከ ዘላለም ይባረክ።",
           "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ስም ከአሁን ጀምሮ ለዘላለም ይባረክ።",
           "R": "ሰዎች {{divine_name:እግዚአብሔርን|ያህዌን}} ከአሁን ጀምሮ ለዘላለም ያመስግኑት!"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} का नाम अब से लेकर सदा तक धन्य हो।",
+          "B": "{{divine_name:प्रभु|याहवे}} का नाम अब से सदा सर्वदा धन्य कहा जाए।",
+          "R": "लोग अब और सदा {{divine_name:प्रभु|याहवे}} की स्तुति करें!"
+        },
+        "ru": {
+          "L": "Да будет имя {{divine_name:ГОСПОДА|Яхве}} благословенно отныне и до века.",
+          "B": "Пусть имя {{divine_name:ГОСПОДА|Яхве}} будет благословенно отныне и во все времена.",
+          "R": "Пусть люди хвалят {{divine_name:ГОСПОДА|Яхве}} сейчас и всегда!"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の名は、今からとこしえまで、ほめたたえられよ。",
+          "B": "{{divine_name:主|ヤハウェ}}の名が、今からいつまでも、ほめたたえられるように。",
+          "R": "今も、いつまでも、{{divine_name:主|ヤハウェ}}をほめたたえよう！"
+        },
+        "uk": {
+          "L": "Нехай буде благословенне імʼя {{divine_name:ГОСПОДА|Ягве}} відтепер і аж навіки.",
+          "B": "Нехай імʼя {{divine_name:ГОСПОДА|Ягве}} буде благословенне віднині й на всі часи.",
+          "R": "Нехай люди хвалять {{divine_name:ГОСПОДА|Ягве}} тепер і завжди!"
         }
       },
       "decisions": [
@@ -367,6 +549,25 @@
             "bless"
           ],
           "reason": "Readable says \"praise\", the sense of blessing God (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130020041"
+          ],
+          "choice": "mevorakh \"ほめたたえられよ\" (L), \"ほめたたえられるように\" (B), \"ほめたたえよう\" (R)",
+          "alternatives": [],
+          "reason": "Blessed is praised, spoken of with thanks (m1); the Psalter's forms for barukh YHWH (PSA-1).",
           "uncertain": false,
           "footnote": false
         }
@@ -435,6 +636,26 @@
           "L": "ከፀሐይ መውጫ ጀምሮ እስከ መግቢያው ድረስ {{divine_name:የእግዚአብሔር|የያህዌ}} ስም የሚመሰገን [ነው]።",
           "B": "ፀሐይ ከምትወጣበት እስከምትጠልቅበት ድረስ {{divine_name:የእግዚአብሔር|የያህዌ}} ስም ምስጋና ይገባዋል።",
           "R": "በምድር ሁሉ፣ ከምሥራቅ እስከ ምዕራብ፣ ሰዎች {{divine_name:የእግዚአብሔርን|የያህዌን}} ስም ሊያመሰግኑ ይገባል።"
+        },
+        "hi": {
+          "L": "सूर्य के उदय से उसके अस्त होने तक {{divine_name:प्रभु|याहवे}} का नाम स्तुति के योग्य [है]।",
+          "B": "जहाँ से सूरज निकलता है वहाँ से जहाँ वह डूबता है वहाँ तक, {{divine_name:प्रभु|याहवे}} का नाम स्तुति के योग्य है।",
+          "R": "पृथ्वी पर हर जगह, पूरब से पश्चिम तक, लोग {{divine_name:प्रभु|याहवे}} के नाम की स्तुति करें।"
+        },
+        "ru": {
+          "L": "От восхода солнца до его заката — восхваляемо имя {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "От места, где восходит солнце, до места, где оно заходит, имя {{divine_name:ГОСПОДА|Яхве}} достойно хвалы.",
+          "R": "Везде на земле, от востока до запада, люди должны хвалить имя {{divine_name:ГОСПОДА|Яхве}}."
+        },
+        "ja": {
+          "L": "日の昇る所から、その沈む所まで、{{divine_name:主|ヤハウェ}}の名は賛美されるべきもの。",
+          "B": "日の出る所から日の沈む所まで、{{divine_name:主|ヤハウェ}}の名は賛美されるにふさわしい。",
+          "R": "東から西まで、世界中どこでも、人々は{{divine_name:主|ヤハウェ}}の名を賛美すべきだ。"
+        },
+        "uk": {
+          "L": "Від сходу сонця до його заходу [належить] хвалити імʼя {{divine_name:ГОСПОДА|Ягве}}.",
+          "B": "Звідти, де сонце сходить, і аж туди, де воно заходить, імʼя {{divine_name:ГОСПОДА|Ягве}} гідне хвали.",
+          "R": "Усюди на землі, від сходу до заходу, люди мають хвалити імʼя {{divine_name:ГОСПОДА|Ягве}}."
         }
       },
       "decisions": [
@@ -474,6 +695,26 @@
           ],
           "reason": "Readable gives the likelier sense (m1).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130030012",
+            "o191130030051"
+          ],
+          "choice": "mimmizrach-shemesh 'ad-mevo'o \"日の昇る所から、その沈む所まで\" (L, B), \"東から西まで、世界中どこでも\" (R); mehullal \"賛美されるべき\"",
+          "alternatives": [],
+          "reason": "From the rising of the sun to its setting is the whole earth (m1, uncertain); L and B keep the picture, R says it as the English R.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -542,6 +783,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሕዝቦች ሁሉ በላይ ከፍ ያለ [ነው]፤ ክብሩ ከሰማያት በላይ [ነው]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሕዝቦች ሁሉ በላይ ከፍ ከፍ ብሏል፤ ክብሩም ከሰማይ በላይ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ከሕዝቦች ሁሉ እጅግ በላይ ነው። ክብሩ ከላይ ካለው ሰማይ ይበልጣል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सब जातियों के ऊपर ऊँचे [हैं]; उनकी महिमा आकाश के ऊपर [है]।",
+          "B": "{{divine_name:प्रभु|याहवे}} सब देशों के ऊपर महान हैं; उनकी महिमा आकाश से भी ऊँची है।",
+          "R": "{{divine_name:प्रभु|याहवे}} सब देशों से बहुत ऊपर हैं। उनकी महिमा ऊपर के आकाश से भी बड़ी है।"
+        },
+        "ru": {
+          "L": "Высок над всеми народами {{divine_name:ГОСПОДЬ|Яхве}}; выше небес {{deity_pronoun:его|Его}} слава.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} превознесён над всеми народами; {{deity_pronoun:его|Его}} слава выше небес.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} намного выше всех народов. Его слава больше, чем небо над нами."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はすべての諸国の民の上に高くおられ、その栄光は天の上に[ある]。",
+          "B": "{{divine_name:主|ヤハウェ}}は、すべての国々の上に高くあがめられ、その栄光は天よりも高くそびえる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、すべての国々よりも、はるかに高い方だ。その栄光は、空よりも大きい。"
+        },
+        "uk": {
+          "L": "Високо над усіма народами — {{divine_name:ГОСПОДЬ|Ягве}}; над небесами — {{deity_pronoun:його|Його}} слава.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} піднесений над кожним народом; {{deity_pronoun:його|Його}} слава підноситься понад небеса.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} — набагато вищий за всі народи. Його слава більша за небо над нами."
         }
       },
       "decisions": [
@@ -556,6 +817,26 @@
           "choice": "high: exalted, ruling over",
           "alternatives": [],
           "reason": "The word (ram) is high, lifted up. The LORD is above the nations as their ruler, and his glory is above even the heavens, the highest thing people can see (8:2; 57:6).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130040011",
+            "o191130040041"
+          ],
+          "choice": "ram \"高くおられ\" (L), \"高くあがめられ\" (B), \"はるかに高い方\" (R); goyim \"諸国の民\" (L), \"国々\" (B, R)",
+          "alternatives": [],
+          "reason": "High is exalted, ruling over (m1); B follows the English B 'lifted high'. The heavens 天 (L, B), 空 (R) as the English R.",
           "uncertain": false,
           "footnote": false
         }
@@ -624,6 +905,26 @@
           "L": "እንደ አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} ያለ ማን ነው? [መቀመጫውን] በከፍታ ያደረገ፣",
           "B": "{{divine_name:ከእግዚአብሔር|ከያህዌ}} ከአምላካችን ጋር ማን ሊወዳደር ይችላል? በከፍታ ላይ የተቀመጠው፣",
           "R": "እንደ አምላካችን {{divine_name:እግዚአብሔር|ያህዌ}} ያለ ማንም የለም። እርሱ ከፍ ብሎ በዙፋኑ ላይ ይቀመጣል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} हमारे परमेश्वर के समान कौन [है], जो ऊँचे पर विराजमान हैं,",
+          "B": "{{divine_name:प्रभु|याहवे}} हमारे परमेश्वर की बराबरी कौन कर सकता है, जो ऊँचे पर अपने आसन पर विराजमान हैं,",
+          "R": "{{divine_name:प्रभु|याहवे}} हमारे परमेश्वर के समान कोई नहीं है। वे ऊँचे पर अपने सिंहासन पर बैठे हैं।"
+        },
+        "ru": {
+          "L": "Кто как {{divine_name:ГОСПОДЬ|Яхве}}, наш Бог, который высоко восседает,",
+          "B": "Кто сравнится с {{divine_name:ГОСПОДОМ|Яхве}}, нашим Богом, который воссел на высоте,",
+          "R": "Нет никого, как {{divine_name:ГОСПОДЬ|Яхве}}, наш Бог. Он сидит на своём престоле высоко в небе."
+        },
+        "ja": {
+          "L": "わたしたちの神{{divine_name:主|ヤハウェ}}のような方が、だれかいるだろうか？その方は、高い所に座を定め、",
+          "B": "だれが、わたしたちの神{{divine_name:主|ヤハウェ}}に比べられるだろうか？その方は、高い所に座しておられ、",
+          "R": "わたしたちの神{{divine_name:主|ヤハウェ}}のような方は、ほかにだれもいない。その方は、高い所にある王座に座っておられる。"
+        },
+        "uk": {
+          "L": "Хто як {{divine_name:ГОСПОДЬ|Ягве}}, наш Бог, що ставить [свій] престол на висоті,",
+          "B": "Хто може зрівнятися з {{divine_name:ГОСПОДОМ|Ягве}}, нашим Богом, що сів на своєму престолі на висоті,",
+          "R": "Немає нікого, як {{divine_name:ГОСПОДЬ|Ягве}}, наш Бог. Він сидить на своєму престолі високо вгорі."
         }
       },
       "decisions": [
@@ -708,6 +1009,45 @@
           "reason": "The terms list puts the name second in \"the LORD our God\". Balanced asks \"who can compare with\" and puts the prefix ከ- on the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191130050031"
+          ],
+          "choice": "no pronoun (no span)",
+          "alternatives": [
+            "его (with a span)"
+          ],
+          "reason": "The English Literal and Balanced have a span on \"his seat\"; Russian \"восседает\", \"воссел\" carries the seat in the verb, and Readable uses the reflexive \"своём\", so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191130050011",
+            "o191130050042"
+          ],
+          "choice": "The question \"Who is like…\" is closed in 113:5 with ？, and the descriptions of 113:5-6 continue as statements about God",
+          "alternatives": [],
+          "reason": "Who is like the LORD means no one (m1); the sentence runs on (m3) with 'who sits … who stoops', which Japanese cannot hang on a question whose verb comes last; so the question is asked first and the two descriptions follow (L, B) or stand as sentences (R). makes high to sit is enthroned on high (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -774,6 +1114,26 @@
           "L": "በሰማያትና በምድር ላይ ለማየት ዝቅ የሚል?",
           "B": "በሰማይና በምድር ያለውን ለማየት ዝቅ የሚለው?",
           "R": "ቢሆንም በሰማይና በምድር ላይ የሚሆነውን ለማየት ዝቅ ብሎ ይመለከታል።"
+        },
+        "hi": {
+          "L": "जो आकाश और पृथ्वी पर दृष्टि करने के लिए नीचे झुकते हैं?",
+          "B": "जो आकाश और पृथ्वी में जो कुछ है उसे देखने के लिए नीचे झुकते हैं?",
+          "R": "फिर भी वे नीचे झुककर देखते हैं कि आकाश में और पृथ्वी पर क्या हो रहा है।"
+        },
+        "ru": {
+          "L": "который низко склоняется, чтобы смотреть на небеса и на землю?",
+          "B": "который склоняется, чтобы увидеть, что на небесах и на земле?",
+          "R": "Но {{deity_pronoun:он|Он}} всё же склоняется, чтобы видеть, что происходит на небе и на земле."
+        },
+        "ja": {
+          "L": "身を低くして、天と地をご覧になる。",
+          "B": "身をかがめて、天と地にあるものをご覧になる。",
+          "R": "それでも、その方は身をかがめて、空と地上で起こっていることを見てくださる。"
+        },
+        "uk": {
+          "L": "що низько нахиляється, щоб дивитися на небеса й на землю?",
+          "B": "що схиляється низько, щоб бачити, що на небесах і на землі?",
+          "R": "Але {{deity_pronoun:він|Він}} усе ж нахиляється, щоб бачити, що діється на небі й на землі."
         }
       },
       "decisions": [
@@ -826,6 +1186,26 @@
           ],
           "reason": "A Korean relative clause comes before its noun, so a question running over two verses, as the Hebrew's does, needs its question word restated at its end; Literal brackets it, Balanced makes it a short sentence.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130060012",
+            "o191130060022"
+          ],
+          "choice": "hammashpili lir'ot \"身を低くして…ご覧になる\" (L), \"身をかがめて…ご覧になる\" (B, R)",
+          "alternatives": [],
+          "reason": "Makes low is stoops down (m1); the heavens and the earth are all that is below him (m2, uncertain). The English L and B end with the question mark of the run-on question, which Japanese closed in 113:5.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -892,6 +1272,26 @@
           "L": "ድሀውን ከትቢያ ያነሣል፤ ችግረኛውንም ከአመድ ክምር ከፍ ያደርጋል፤",
           "B": "ድሀውን ከትቢያ ያነሣል፤ ችግረኛውንም ከአመድ ክምር ከፍ ያደርጋል፤",
           "R": "ድሀ ሰዎችን ከአፈር ያነሣል። ችግረኞችን ከቆሻሻ ክምር ያወጣል።"
+        },
+        "hi": {
+          "L": "वे कंगाल को धूल में से उठाते हैं; राख के ढेर पर से वे दरिद्र को ऊपर उठाते हैं,",
+          "B": "वे कंगाल को धूल में से उठाते हैं और दरिद्र को राख के ढेर पर से ऊपर उठाते हैं,",
+          "R": "वे ग़रीब लोगों को धूल में से उठाते हैं। वे ज़रूरतमंद लोगों को कूड़े के ढेर पर से उठाते हैं।"
+        },
+        "ru": {
+          "L": "Он поднимает из праха бедного; из мусорной кучи {{deity_pronoun:он|Он}} возносит нищего,",
+          "B": "Он поднимает бедного из праха и возносит нуждающегося из мусорной кучи,",
+          "R": "Он поднимает бедных людей из грязи. Он поднимает нуждающихся со свалки."
+        },
+        "ja": {
+          "L": "その方は、貧しい者をちりから起こし、乏しい者を灰の山から引き上げ、",
+          "B": "その方は、貧しい者をちりの中から起こし、乏しい者を灰の山から引き上げて、",
+          "R": "その方は、貧しい人を土の中から助け起こし、困っている人をごみの山から引き上げてくださる。"
+        },
+        "uk": {
+          "L": "Він підіймає з пороху бідного; зі смітника {{deity_pronoun:він|Він}} підносить убогого,",
+          "B": "Він підіймає бідного з пороху і підносить нужденного зі смітника,",
+          "R": "Він піднімає бідних людей із бруду. Він витягає нужденних зі смітника."
         }
       },
       "decisions": [
@@ -984,6 +1384,73 @@
           "reason": "The Hebrew of 113:7-8a is nearly word for word 1 Samuel 2:8, so the Amharic on main is kept at each level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130070011",
+            "o191130070021",
+            "o191130070022",
+            "o191130070031",
+            "o191130070041",
+            "o191130070042",
+            "o191130070051",
+            "o191130070061"
+          ],
+          "choice": "wording of 1 Samuel 2:8",
+          "alternatives": [],
+          "reason": "These lines come from Hannah's song (m1), and Hindi keeps the wording of 1 Samuel 2:8 at each level, without its line breaks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130070041"
+          ],
+          "choice": "мусорная куча",
+          "alternatives": [
+            "гноище",
+            "пепел"
+          ],
+          "reason": "The ash heap was the town's rubbish dump (meaning decision); \"мусорная куча\" says so in today's Russian, where the Synodal \"брение\" and \"гноище\" are no longer understood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130070031",
+            "o191130070042"
+          ],
+          "choice": "Hannah's words (1SA 2:8): dal \"貧しい者\" (L, B), \"貧しい人\" (R); 'ashpot \"灰の山\" (L, B), \"ごみの山\" (R); 'evyon \"乏しい者\" (L, B), \"困っている人\" (R)",
+          "alternatives": [],
+          "reason": "113:7-8 take up Hannah's song (m1), so the Japanese of 1 Samuel 2:8 is followed at each level, with dal as 貧しい者 there (the Psalter's 弱い者 elsewhere). The ash heap is the town's rubbish dump (m2). L and B keep the run-on sentence (m3) into 113:8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1049,6 +1516,26 @@
           "L": "ከመኳንንት ጋር፣ ከሕዝቡ መኳንንት ጋር ሊያስቀምጣቸው።",
           "B": "ከመኳንንት ጋር፣ ከሕዝቡ መሪዎች ጋር ያስቀምጣቸዋል።",
           "R": "ከታላላቅ ሰዎች ጋር፣ ከሕዝቡ መሪዎች ጋር ያስቀምጣቸዋል።"
+        },
+        "hi": {
+          "L": "ताकि [उन्हें] प्रधानों के साथ, अपनी प्रजा के प्रधानों के साथ बिठाएँ।",
+          "B": "ताकि उन्हें प्रधानों के साथ, अपनी प्रजा के अगुवों के पास बिठाएँ।",
+          "R": "वे उन्हें राजकुमारों के साथ, अपनी प्रजा के अगुवों के साथ बिठाते हैं।"
+        },
+        "ru": {
+          "L": "чтобы посадить [его] со знатными, со знатными {{deity_pronoun:его|Его}} народа.",
+          "B": "чтобы посадить их со знатными, рядом с вождями своего народа.",
+          "R": "Он сажает их рядом с князьями, с вождями своего народа."
+        },
+        "ja": {
+          "L": "高貴な者たちと共に、その民の高貴な者たちと共に、座らせる。",
+          "B": "高貴な者たちと共に、ご自分の民の指導者たちと並んで、座らせてくださる。",
+          "R": "その方は、その人たちを王子たちと共に、ご自分の民の指導者たちと共に、座らせてくださる。"
+        },
+        "uk": {
+          "L": "щоб посадити [їх] із вельможами, з вельможами {{deity_pronoun:його|Його}} народу.",
+          "B": "щоб посадити їх поряд із вельможами, біля провідників {{deity_pronoun:його|Його}} народу.",
+          "R": "Він дає їм сидіти з князями, з провідниками {{deity_pronoun:його|Його}} народу."
         }
       },
       "decisions": [
@@ -1066,6 +1553,26 @@
             "princes"
           ],
           "reason": "The word (nadiv) is a noble or prince. Those who sat on the ash heap are given a seat among the highest in the land.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130080031",
+            "o191130080051"
+          ],
+          "choice": "nedivim \"高貴な者たち\" (L, B), \"王子たち\" (R) as 1SA 2:8; nedivei 'ammo \"その民の高貴な者たち\" (L), \"ご自分の民の指導者たち\" (B, R)",
+          "alternatives": [],
+          "reason": "Nobles are people of rank (m1). The causative 座らせる stays plain at L (PSA-1), B and R 座らせてくださる.",
           "uncertain": false,
           "footnote": false
         }
@@ -1135,6 +1642,26 @@
           "L": "መካኒቱን በቤት ውስጥ ደስተኛ የልጆች እናት አድርጎ ያኖራታል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "B": "ልጅ ያልነበራትን ሴት የራሷን ቤተሰብ ይሰጣታል፤ ደስተኛ የልጆች እናትም ያደርጋታል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "R": "ልጅ መውለድ ላልቻለች ሴት ቤትና ቤተሰብ ይሰጣታል፤ ደስተኛ እናትም ያደርጋታል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!"
+        },
+        "hi": {
+          "L": "वे घर की बाँझ स्त्री को बच्चों की आनंदित माता [बनाकर] बसाते हैं। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "B": "वे निःसन्तान स्त्री को उसका अपना घर देते हैं, और वह बच्चों की आनंदित माता बनती है। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "R": "जो स्त्री बच्चे नहीं जन सकती थी, वे उसे घर और परिवार देते हैं और उसे एक ख़ुश माँ बनाते हैं। {{divine_name:प्रभु|याह}} की स्तुति करो!"
+        },
+        "ru": {
+          "L": "Он поселяет бесплодную в доме [как] радостную мать детей. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "B": "Он даёт бездетной женщине свой дом и делает её счастливой матерью детей. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "R": "Он даёт дом и семью женщине, у которой не могло быть детей, и делает её счастливой матерью. Хвалите {{divine_name:ГОСПОДА|Ях}}!"
+        },
+        "ja": {
+          "L": "その方は、家の不妊の女を、子らの喜ぶ母として住まわせる。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "B": "その方は、子のない女に家庭を与え、子どもたちを持つ喜びの母としてくださる。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "R": "その方は、子どもを産めなかった女の人に家庭と家族を与え、幸せな母にしてくださる。{{divine_name:主|ヤハ}}を賛美しよう！"
+        },
+        "uk": {
+          "L": "Він оселяє бездітну [жінку] дому [як] радісну матір дітей. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "B": "Він дає бездітній жінці власну родину, і вона — радісна мати дітей. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "R": "Він дає дім і родину жінці, яка не могла мати дітей, і робить її щасливою матірʼю. Хваліть {{divine_name:ГОСПОДА|Яг}}!"
         }
       },
       "decisions": [
@@ -1203,6 +1730,26 @@
             "settles in the house"
           ],
           "reason": "Readable says what the picture means (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191130090021",
+            "o191130090061"
+          ],
+          "choice": "'akeret habbayit \"家の不妊の女\" (L), \"子のない女\" (B), \"子どもを産めなかった女の人\" (R); 'em-habbanim semechah \"子らの喜ぶ母\" (L), \"子どもたちを持つ喜びの母\" (B), \"幸せな母\" (R)",
+          "alternatives": [],
+          "reason": "The barren woman's shame is turned to joy (m1); settling her in the house gives a secure place in a family (m2), as Hannah's story (1SA 2:5 不妊の女). The psalm closes with Hallelu-yah (m3).",
           "uncertain": false,
           "footnote": false
         }
