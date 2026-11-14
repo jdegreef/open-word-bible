@@ -132,12 +132,15 @@ class RepositoryTest(unittest.TestCase):
 
     def test_the_pilot_translates_john_1_to_3(self):
         # Every footnoted meaning decision of John 1-3 has a current note in
-        # every language other than English.
+        # every language other than English that has notes at all (a newly
+        # added language shows the English until its notes are translated).
         wanted = [(r["id"], d["id"]) for r in notes.book_records("JHN")
                   if int(r["refs"][0].split(".")[1]) <= 3
                   for d in r["decisions"] if d["layer"] == "meaning" and d["footnote"]]
         self.assertTrue(wanted)
         for lang in languages.CODES[1:]:
+            if not notes.notes_path(lang, "JHN").exists():
+                continue
             current = notes.current_notes(lang, "JHN")
             missing = [x for x in wanted if x[1] not in current.get(x[0], {})]
             self.assertEqual(missing, [], lang)

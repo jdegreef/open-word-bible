@@ -241,7 +241,13 @@ Settings change wording, never meaning, exactly as in English.
   `{{gender:人々|男たち}}` where *andres* means people in general. Not for
   specific men, and not where Japanese is already inclusive (人, 人々, 者, 皆,
   だれ, 子どもたち). An address keeps its form inside the span:
-  `{{gender:きょうだいたち|兄弟たち}}、`. A rendering decision
+  `{{gender:きょうだいたち|兄弟たち}}、`. **(checked, settings parity audit:
+  `docs/review-notes/settings-parity.md`)** So the Japanese spans gender in
+  about 1 in 9 of the records where the English does: the English spans
+  most often "Israelites / sons of Israel", "children / sons" and "their /
+  his", and Japanese says イスラエルの人々 or イスラエルの子ら (子 is "child",
+  not "son") and 子どもたち, and leaves the pronoun
+  out, with nothing for the setting to change. A rendering decision
   (setting_alternative) records a difference from the English the first time
   it occurs in a passage.
 - `units`: metric by default, the original unit as the alternative:

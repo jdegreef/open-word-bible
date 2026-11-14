@@ -41,8 +41,9 @@ BUDGETS = {
     # 2026-10-13 after the verse panel tools, poetry lines and account sync;
     # 33.1 KB on 2026-10-17 with personal verse notes; 39 KB on 2026-10-30
     # with the study tools, own plans and reading groups; 41.5 KB on
-    # 2026-11-03 with setting presets].
-    "js_css_asset_gz": 44 * KB,
+    # 2026-11-03 with setting presets; 47.7 KB on 2026-11-14 with memorizing
+    # in the reader, links from notes to articles and speaker labels].
+    "js_css_asset_gz": 52 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
     # with Vietnamese and Korean as site languages, each about 250 MB, since
@@ -54,9 +55,11 @@ BUDGETS = {
     # reader_shared); 2,263 MB on 2026-10-23 with Portuguese and Amharic as
     # site languages, each about 210 MB; 1,541 MB on 2026-11-01 once the
     # sentence records came from chapter-data/ rather than every
-    # language's page (each language then about 130 MB)].
+    # language's page (each language then about 130 MB); 2,996 MB on
+    # 2026-11-14 with Indonesian as the thirteenth site language and
+    # footnotes in every reader language].
     # Grows with each book translated and each language added.
-    "site_total": 2800 * MB,
+    "site_total": 3500 * MB,
 }
 
 

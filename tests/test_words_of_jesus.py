@@ -134,5 +134,47 @@ class DataTest(unittest.TestCase):
                          ['JHN.3.3.s1 en.B: marked "quoted" but has no quotation'])
 
 
+class ParityTest(unittest.TestCase):
+    """Every language marks the same words (scripts/check_words_of_jesus.py)."""
+
+    @classmethod
+    def setUpClass(cls):
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import check_words_of_jesus
+        cls.check = check_words_of_jesus
+
+    def test_languages_mark_the_same_words(self):
+        pending = self.check.pending()
+        new = [m for m in self.check.mismatches() if (m[1], m[3], m[2]) not in pending]
+        self.assertEqual(new, [], "fix the quotation marks or list the fix in "
+                                  "docs/review-notes/pending-quote-fixes.jsonl")
+
+    def test_pending_fixes_are_current_and_would_fix(self):
+        # A pending fix names today's text; once it is made, its entry goes.
+        lines = self.check.PENDING.read_text(encoding="utf-8").splitlines()
+        marked = words_of_jesus.marked()
+        for line in filter(None, lines):
+            e = json.loads(line)
+            for key in ("record", "language", "level", "old", "new", "reason"):
+                self.assertTrue(e.get(key), (line[:60], key))
+            records = self.check.records(e["record"].split(".")[0])
+            self.assertEqual(records[e["record"]]["renderings"][e["language"]][e["level"]], e["old"],
+                             f"{e['record']} {e['language']}.{e['level']} has changed: remove or update its entry")
+            value = marked[e["record"]]
+            self.assertLess(sum(b - a for a, b in words_of_jesus.ranges(e["new"], value)),
+                            sum(b - a for a, b in words_of_jesus.ranges(e["old"], value)), e["record"])
+
+    def test_a_language_with_a_stray_quotation_is_found(self):
+        en = 'Then he told him, "Go and wash in the pool of Siloam" (the name means Sent).'
+        odd = "Then he told him, \"Go and wash in the pool of Siloam.\" (Siloam means 'Sent'.)"
+        record = {"id": "JHN.9.6.s1", "renderings": {"en": {"B": en}, "es": {"B": en}, "fr": {"B": en},
+                                                      "ko": {"B": odd}}}
+        ranges = {lang: words_of_jesus.ranges(r["B"], "quoted") for lang, r in record["renderings"].items()}
+        self.assertEqual(len(ranges["ko"]), 2)
+        self.assertEqual(len(ranges["en"]), 1)
+        self.assertEqual(len(words_of_jesus.ranges(odd, [0])), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

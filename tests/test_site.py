@@ -263,9 +263,8 @@ class SiteTest(unittest.TestCase):
         # A note spans chapters as the reader's verse ranges do.
         self.assertIn('<span class="note-ref">7:53–8:1</span>', self.notes_section("jhn/8"))
         # Meaning notes are written in English; another language's page says
-        # so where a note is not translated (data/notes/fr/JHN.json covers
-        # John 1-3 only).
-        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("fr/jhn/4"))
+        # so where a note is not translated (Indonesian has no notes yet).
+        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("id/jhn/4"))
         self.assertNotIn('lang="en"', self.notes_section("jhn/3"))
 
     def test_footnote_text_follows_the_reader(self):
@@ -688,6 +687,32 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(jhn3["p"], sorted(jhn3["p"]))
         self.assertTrue(set(map(str, jhn3["p"])) <= set(jhn3["v"]))
 
+    def test_verse_files_mark_poetry_by_verse(self):
+        # The edition sets in lines only the verses whose sentence is lined
+        # in that language: the Magnificat inside Luke 1's narrative, every
+        # verse of Psalm 23, nothing in a prose chapter.
+        luk1 = json.loads((self.out / "verses" / "LUK" / "1.json").read_text(encoding="utf-8"))
+        self.assertIn(46, luk1["q"]["en"])
+        self.assertIn(55, luk1["q"]["en"])
+        self.assertNotIn(1, luk1["q"]["en"])
+        self.assertNotIn(45, luk1["q"]["en"])
+        self.assertEqual(luk1["q"]["en"], sorted(luk1["q"]["en"]))
+        psa23 = json.loads((self.out / "verses" / "PSA" / "23.json").read_text(encoding="utf-8"))
+        self.assertEqual(psa23["q"]["en"], sorted(map(int, psa23["v"])))
+        jhn3 = json.loads((self.out / "verses" / "JHN" / "3.json").read_text(encoding="utf-8"))
+        self.assertNotIn("q", jhn3)
+        edition = (ROOT / "web" / "edition.js").read_text(encoding="utf-8")
+        self.assertIn("entry.q", edition)
+
+    def test_new_testament_poetry_reaches_the_reader(self):
+        # A New Testament song keeps its line markers for the reader, and the
+        # one-line texts the build writes read them as spaces.
+        data = self.chapter_data("luk/1")
+        magnificat = next(r for r in data["records"] if "LUK.1.46" in r["refs"])
+        self.assertIn("\\q ", magnificat["renderings"]["en"]["L"])
+        page = (self.out / "luk" / "1" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("\\q", page.split("<body", 1)[0])
+
     def test_chapter_pages_offer_the_presets(self):
         # The built-in presets, in order, at the top of the wording settings,
         # with the box reader.js draws the reader's own presets in.
@@ -1020,15 +1045,21 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(len(re.findall(r'class="chap none"', strip)), 21 - len(done))
 
     def test_aligned_records_carry_their_ranges(self):
-        records = self.chapter_data("jhn/2")["records"]
-        linked = [r for r in records if r["links"]]
-        self.assertTrue(linked)
-        for r in linked:
-            text = r["renderings"]["en"]["B"]
-            for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
-                self.assertEqual(al["tokens"], tokens)
-                # Curly quotes on the page keep every range in place.
-                self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
+        # Greek (John, Mark) and Hebrew (Genesis, where a word's prefixes are
+        # tokens of their own) alike.
+        for chapter in ("jhn/2", "mrk/1", "gen/1"):
+            data = self.chapter_data(chapter)
+            words = {w["id"] for ws in data["words"].values() for w in ws}
+            linked = [r for r in data["records"] if r["links"]]
+            self.assertTrue(linked, chapter)
+            for r in linked:
+                text = r["renderings"]["en"]["B"]
+                for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
+                    self.assertEqual(al["tokens"], tokens)
+                    # Curly quotes on the page keep every range in place.
+                    self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])
+                    # The interlinear view finds every linked word on the page.
+                    self.assertLessEqual(set(tokens), words)
 
     def test_word_uses_index(self):
         text = (self.out / "word-uses.json").read_text(encoding="utf-8")
@@ -1119,6 +1150,81 @@ class SiteTest(unittest.TestCase):
             self.assertTrue((self.out / url.split("?")[0].lstrip("/")).is_file(), url)
         base = json.loads((self.out / "basemap.json").read_text(encoding="utf-8"))
         self.assertTrue(base["land"] and base["lakes"] and base["rivers"])
+
+    def test_more_places_are_located_where_openbible_names_them(self):
+        # "more": proper nouns with no card in data/names.json yet, located
+        # only in the verses OpenBible.info names them in; each place carries
+        # OpenBible's confidence.
+        data = json.loads((build_site.ROOT / "data" / "places.json").read_text(encoding="utf-8"))
+        names = json.loads((build_site.ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+        named = {(n["strong"], n["lemma"]) for n in names}
+        self.assertGreater(len(data["more"]), 300)
+        for key, p in list(data["places"].items()) + list(data["more"].items()):
+            self.assertTrue(0 <= p["confidence"] <= 1000, key)
+            self.assertEqual(p["sure"], p["confidence"] >= 800, key)
+        for key, p in data["more"].items():
+            strong, lemma, name = key.split("|")
+            self.assertNotIn((strong, lemma), named)
+            self.assertTrue(p["verses"] and name, key)
+        # Gilgal (Joshua 4:19) has no name card but is on the map.
+        cards = self.chapter_data("jos/4")["cards"]["list"]
+        gilgal = next(c for c in cards if c["title"] == "Gilgal")
+        self.assertEqual(gilgal["kind"], "place")
+        self.assertTrue(gilgal["at"] and gilgal["note"])
+
+    def test_journeys(self):
+        # data/journeys.json: ordered stops at located places, each reached
+        # in a verse that names it; a name and description in every language.
+        data = json.loads((build_site.ROOT / "data" / "journeys.json").read_text(encoding="utf-8"))
+        places = json.loads((build_site.ROOT / "data" / "places.json").read_text(encoding="utf-8"))
+        located = set(places["places"]) | set(places["more"])
+        self.assertEqual(data["status"], "ai_draft")
+        ids = [j["id"] for j in data["journeys"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for want in ("abraham", "jacob", "exodus", "conquest", "david", "exile", "paul-1", "paul-2", "paul-3",
+                     "paul-rome", "philip"):
+            self.assertIn(want, ids)
+        for j in data["journeys"]:
+            for field in ("name", "description"):
+                self.assertEqual(set(j[field]), set(build_site.LANGUAGES), (j["id"], field))
+                for text in j[field].values():
+                    self.assertTrue(text.strip())
+                    self.assertNotIn("{{", text)
+            self.assertGreaterEqual(len(j["stops"]), 3, j["id"])
+            for s in j["stops"]:
+                self.assertIn(s["place"], located, (j["id"], s))
+                strong, lemma, _ = s["place"].split("|")
+                ref = build_site.refs.parse(s["ref"])
+                folder = "hbo" if ref.book in build_site.refs.OT_CODES else "grc"
+                verses = json.loads((build_site.ROOT / "data" / folder / f"{ref.book}.{ref.chapter}.json")
+                                    .read_text(encoding="utf-8"))["verses"]
+                self.assertIn((strong, lemma), {(build_site.word_strong(w), w["lemma"]) for w in verses[s["ref"]]},
+                              (j["id"], s))
+        # Each language has the page, with every journey's stops placed.
+        for lang in build_site.LANGUAGES:
+            rel = build_site.url(lang, "/journeys/").lstrip("/")
+            page = (self.out / rel / "index.html").read_text(encoding="utf-8")
+            built = json.loads(re.search(r'id="jr-data">(.*?)</script>', page, re.S)[1])
+            self.assertEqual([j["id"] for j in built["journeys"]], ids)
+            for key in ("choose", "stops", "map_label", "map_credit", "map_sure", "map_unsure"):
+                self.assertTrue(built["ui"].get(key), (lang, key))
+            for j in built["journeys"]:
+                self.assertTrue(all(len(s["at"]) == 2 and s["href"] and s["ref"] for s in j["stops"]))
+        # The reader's map links a journey from a chapter it stops in.
+        trips = self.chapter_data("act/13")["journeys"]
+        paul = next(j for j in trips if j["href"].endswith("#paul-1"))
+        self.assertIn("ACT.13.4", paul["verses"])
+        self.assertTrue((self.out / "journeys.js").is_file())
+
+    def test_speaker_labels_where_the_voice_changes(self):
+        # data/speakers/ (a pilot): Job 4 opens with the narrator, then Eliphaz.
+        for lang, name in (("en", "Eliphaz"), ("es", "Elifaz"), ("ja", "エリファズ")):
+            data = self.chapter_data(build_site.url(lang, "/job/4").lstrip("/"))
+            self.assertEqual(data["speakers"].get("JOB.4.2.s1"), name, lang)
+            self.assertNotIn("JOB.4.3.s1", data["speakers"])
+            self.assertTrue(data["ui"]["speaker_label"], lang)
+        self.assertEqual(self.chapter_data("jhn/1")["speakers"], {})
+        self.assertIn("speaker-label", (self.out / "reader.js").read_text(encoding="utf-8"))
 
     def test_glossary_is_well_formed(self):
         # Words to know: AI drafts, kind "concept", no word that is also a
