@@ -13,6 +13,9 @@ settled English word at every level, and poetic line markers (\\q) sit only
 between a verse's words in renderings (markup.line_errors).
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
+
+A translation of notes or cards (data/notes/<lang>/<BOOK>.json,
+data/cards/<lang>/<kind>.json) given here is checked by owb.notes instead.
 """
 import json
 import re
@@ -440,7 +443,9 @@ def validate_file(path):
 
 
 def main(paths):
-    errors = [e for p in paths for e in validate_file(p)]
+    from owb import notes  # translations of notes and cards (data/notes/, data/cards/)
+    errors = [e for p in paths for e in (notes.check_file(p) if notes.is_translation_file(p)
+                                         else validate_file(p))]
     for e in errors:
         print(e)
     print(f"{len(paths)} file(s), {len(errors)} error(s)")

@@ -128,6 +128,17 @@ state the sense only (no reader settings), and are shown in the language the
 chapter's text is shown in: the page's language, or English, marked as such,
 where the chapter has no sentence in the page's language yet.
 
+## Notes and cards in every language
+
+Decisions are written in English, and so are the glossary, name and
+key-term cards. Their translations sit in `data/notes/<lang>/<BOOK>.json`
+and `data/cards/<lang>/<kind>.json`, each entry stamped with a digest of
+the English it translates, so one whose English has changed is shown in
+English again until it is brought up to date. `scripts/notes.py` exports
+what is missing, imports translations and reports coverage;
+`docs/notes-translation.md` is the workflow. A note whose words have an
+article (`data/article_links.json`) links to it.
+
 ## Cross-references
 
 Beside the text, on screens wide enough, each verse's margin lists other
