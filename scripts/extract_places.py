@@ -7,7 +7,20 @@ A place is matched to OpenBible's by the verses both say name it (moved to
 English numbering, which OpenBible uses) and by a name OpenBible records
 for it appearing in ours ("Antioch" in "Antioch in Syria"). A site is known
 when OpenBible's best identification scores at least SURE out of 1000;
-otherwise the map draws it as uncertain. Only points are used: the
+otherwise the map draws it as uncertain. Each place also carries that score
+as its "confidence". Where no OpenBible place in a name's verses has one of
+its names, a name inside OpenBible's ("Achor" in "Valley of Achor") or, as a
+last resort, the one OpenBible place called exactly that, is used.
+
+Words of the text that data/names.json has no card for yet are located too,
+in "more": a proper noun (MACULA Hebrew's Np, a Greek lemma with a capital)
+whose MACULA gloss is one of an OpenBible place's names, keyed
+"strong|lemma|gloss", in the verses where OpenBible names that place (so a
+man who shares a town's name is not put on the map). Where OpenBible names
+two places so, the one it names in at least MORE_SHARE of those verses is
+used, or none. A gloss MACULA splits word by word ("Ezion", "Geber") is
+also tried whole. The reader gives such a word a place card
+with its point until a named card is written. Only points are used: the
 repository's geometry files include OpenStreetMap data under another
 licence.
 
@@ -25,6 +38,7 @@ import glob
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,6 +61,11 @@ BOX = (-10.0, 12.0, 72.0, 46.0)
 TOLERANCE = {"land": 0.01, "lakes": 0.004, "rivers": 0.01}
 # OpenBible's place types drawn as a label over an area, not as a dot.
 AREAS = {"region", "river", "body of water", "valley", "wadi", "island"}
+# Where OpenBible names more than one place so, the share of those verses
+# the one it names most must have to be used.
+MORE_SHARE = 0.5
+# Words in our glosses that are not part of a place's name.
+NOT_NAME = {"the", "of", "to", "in", "from", "at", "and", "toward", "into", "on", "by"}
 # Natural Earth draws rivers down to small streams; keep the larger.
 RIVER_RANK = 7
 
@@ -77,6 +96,43 @@ def owb_places():
     return out
 
 
+def proper_nouns():
+    """{(strong, lemma): {"verses": {vid}, "gloss": {name: count}}} for the
+    proper nouns of the text that data/names.json has no entry for: a
+    Hebrew word MACULA marks Np, a Greek lemma that starts with a capital.
+    A gloss's name is its capitalised words ("to.the.Gilgal" is Gilgal)."""
+    names = json.loads((ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+    known = {(n["strong"], n["lemma"]) for n in names}
+    out = {}
+    for lang, prefix in (("grc", "G"), ("hbo", "H")):
+        for path in sorted(glob.glob(str(ROOT / "data" / lang / "*.json"))):
+            for vid, words in json.loads(Path(path).read_text(encoding="utf-8"))["verses"].items():
+                for w in words:
+                    proper = w["morph"].startswith("Np") if prefix == "H" else w["lemma"][:1].isupper()
+                    key = (prefix + (w.get("strong") or "").lstrip("0"), w["lemma"])
+                    # Not a word MACULA joins to another's number ("1886a|0725"),
+                    # nor a one-letter prefix ("the") carrying a name's tag.
+                    letters = [c for c in w["lemma"] if not unicodedata.combining(c)]
+                    if not proper or key in known or "|" in key[0] or len(letters) < 2:
+                        continue
+                    name = " ".join(x for x in re.split(r"[.\s]+", re.sub(r"[\[\]()]", "", w.get("gloss") or ""))
+                                    if x[:1].isupper() and x.lower() not in NOT_NAME)
+                    # A people ("Gazites", "Timnite") is not a place.
+                    if not name or name.endswith(("ite", "ites")):
+                        continue
+                    entry = out.setdefault(key, {"verses": set(), "gloss": {}, "parts": {}})
+                    entry["verses"].add(vid)
+                    entry["gloss"][name] = entry["gloss"].get(name, 0) + 1
+                    entry["parts"].setdefault(vid, []).append(name)
+    # A name MACULA glosses word by word ("Ezion", "Geber") is also tried whole.
+    for entry in out.values():
+        for parts in entry.pop("parts").values():
+            whole = " ".join(dict.fromkeys(parts))
+            if len(parts) > 1 and whole not in entry["gloss"]:
+                entry["gloss"][whole] = 0
+    return out
+
+
 def english(vid):
     """Our verse id as English-numbered "BOOK C:V" (OpenBible's usx form)."""
     return {f"{r.book} {r.chapter}:{r.verse}" for r in versification.to_english(refs.parse(vid))}
@@ -98,10 +154,12 @@ def words(text):
     return re.findall(r"[a-z]+", text.lower())
 
 
-def named(ours, theirs):
+def named(ours, theirs, inside=False):
     """How well one of OpenBible's names for a place matches ours: 2 if it
     opens our name ("Bethany" in "Bethany beyond the Jordan"), 1 if it is
-    elsewhere in it ("Jordan"), 0 if none is. "the" is not a name."""
+    elsewhere in it ("Jordan"), 0 if none is. "the" is not a name. With
+    inside, our name within one of theirs ("Achor" in "Valley of Achor")
+    also counts 1."""
     mine = [w for w in words(ours) if w != "the"]
     best = 0
     for name in theirs:
@@ -110,36 +168,105 @@ def named(ours, theirs):
             return 2
         if w and any(mine[i:i + len(w)] == w for i in range(len(mine))):
             best = 1
+        if inside and mine and any(w[i:i + len(mine)] == mine for i in range(len(w))):
+            best = 1
     return best
 
 
-def match(places, ob):
-    """{key: {"at", "sure", "type"}} for our places OpenBible locates."""
-    by_verse = {}
+def exactly(ours, place):
+    """Whether one of OpenBible's names for a place is our name, word for word."""
+    mine = [w for w in words(ours) if w != "the"]
+    return any([x for x in words(n) if x != "the"] == mine for n in place.get("translation_name_counts", {}))
+
+
+def located(place):
+    """{"at", "sure", "area", "confidence"} for an OpenBible place, or None."""
+    point = best_point(place)
+    if not point:
+        return None
+    lon, lat, score = point
+    types = set(place.get("types", []))
+    return {"at": [round(lon, 3), round(lat, 3)], "sure": score >= SURE,
+            "area": bool(types & AREAS) and "settlement" not in types, "confidence": score}
+
+
+def by_verse(ob):
+    """OpenBible's places by the verses that name them ("JOS 4:19")."""
+    out = {}
     for p in ob:
         for v in p.get("verses", []):
-            by_verse.setdefault(v.get("usx"), []).append(p)
+            out.setdefault(v.get("usx"), []).append(p)
+    return out
+
+
+def match(places, ob):
+    """{key: {"at", "sure", "area", "confidence"}} for our places OpenBible
+    locates."""
+    verses_of = by_verse(ob)
     out = {}
     for key, verses in sorted(places.items()):
-        counts = {}
-        for vid in verses:
-            for usx in english(vid):
-                for p in by_verse.get(usx, []):
-                    how = named(key[2], p.get("translation_name_counts", {}))
-                    if how:
-                        n, _ = counts.get(p["id"], (0, how))
-                        counts[p["id"]] = (n + 1, how)
-        if not counts:
+        best = None
+        for inside in (False, True):
+            counts = {}
+            for vid in verses:
+                for usx in english(vid):
+                    for p in verses_of.get(usx, []):
+                        how = named(key[2], p.get("translation_name_counts", {}), inside)
+                        if how:
+                            n, _ = counts.get(p["id"], (0, how))
+                            counts[p["id"]] = (n + 1, how)
+            if counts:
+                best = max(counts, key=lambda i: (counts[i][1], counts[i][0], i))
+                break
+        if best:
+            place = next(p for p in ob if p["id"] == best)
+        else:
+            # Not in its verses (OpenBible reads them otherwise): the one
+            # place OpenBible calls exactly this, if only one is.
+            same = [p for p in ob if exactly(key[2], p)]
+            if len(same) != 1:
+                continue
+            place = same[0]
+        where = located(place)
+        if where:
+            out["|".join(key)] = where
+    return out
+
+
+def verse_order(vid):
+    """A verse id's place in the Bible, for sorting."""
+    r = refs.parse(vid)
+    return (refs.BOOK_CODES.index(r.book), r.chapter, r.verse)
+
+
+def match_more(nouns, ob):
+    """{"strong|lemma|name": {"at", "sure", "area", "confidence", "verses"}}
+    for the proper nouns data/names.json has no card for that OpenBible
+    names, by their gloss, in the verses where it does."""
+    verses_of = by_verse(ob)
+    out = {}
+    for (strong, lemma), entry in sorted(nouns.items()):
+        # The commonest gloss OpenBible has a place for in the word's verses.
+        for name in sorted(entry["gloss"], key=lambda g: (-entry["gloss"][g], g)):
+            found = {}
+            for vid in entry["verses"]:
+                for usx in english(vid):
+                    for p in verses_of.get(usx, []):
+                        if exactly(name, p):
+                            found.setdefault(p["id"], set()).add(vid)
+            if found:
+                break
+        if not found:
             continue
-        best = max(counts, key=lambda i: (counts[i][1], counts[i][0], i))
-        place = next(p for p in ob if p["id"] == best)
-        point = best_point(place)
-        if not point:
+        # Where OpenBible names two places so (the town and the wilderness
+        # of Ziph), the one it names most, if that is most of them.
+        best = max(found, key=lambda i: (len(found[i]), i))
+        if len(found[best]) < MORE_SHARE * len(set().union(*found.values())):
             continue
-        lon, lat, score = point
-        types = set(place.get("types", []))
-        out["|".join(key)] = {"at": [round(lon, 3), round(lat, 3)], "sure": score >= SURE,
-                              "area": bool(types & AREAS) and "settlement" not in types}
+        where = located(next(p for p in ob if p["id"] == best))
+        if where:
+            where["verses"] = sorted(found[best], key=verse_order)
+            out[f"{strong}|{lemma}|{name}"] = where
     return out
 
 
@@ -260,10 +387,14 @@ def build():
     places = {
         "description": "Where the places in data/names.json are, for the reader's maps: keyed "
                        "\"strong|lemma|name\", each a point [longitude, latitude], whether its site "
-                       "is known, and whether it is an area (a region, river, sea or island: drawn as a "
-                       "label, not a dot). Written by scripts/extract_places.py.",
+                       "is known, OpenBible's confidence in it (0 to 1000), and whether it is an area "
+                       "(a region, river, sea or island: drawn as a label, not a dot). \"more\" locates "
+                       "the same way the proper nouns data/names.json has no card for yet, keyed "
+                       "\"strong|lemma|MACULA's gloss\", in the verses listed. Written by "
+                       "scripts/extract_places.py.",
         "source": "OpenBible.info Bible Geocoding Data (CC BY 4.0), " + source(GEOCODING, "data/ancient.jsonl"),
-        "places": match(owb_places(), ob)}
+        "places": match(owb_places(), ob),
+        "more": match_more(proper_nouns(), ob)}
     shapes = basemap()
     base = {"description": "Land, lakes and rivers for the reader's maps, cut to the lands of the Bible "
                            "(box: west, south, east, north) and simplified; each shape is a flat list "

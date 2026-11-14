@@ -450,9 +450,9 @@
     }
   }
 
-  // The headings control only where the chapter has headings.
+  // The headings control only where the chapter has headings (or speaker labels, which it also hides).
   var headingsSeg = document.querySelector('[data-setting="headings"]');
-  if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
+  if (headingsSeg && !Object.keys(DATA.headings).length && !Object.keys(DATA.speakers || {}).length) headingsSeg.parentNode.hidden = true;
   // And the cross-references control only where the chapter has some.
   var crossrefsSeg = document.querySelector('[data-setting="crossrefs"]');
   if (crossrefsSeg && !Object.keys(DATA.crossrefs).length) crossrefsSeg.parentNode.hidden = true;
@@ -746,9 +746,18 @@
         if (hlang !== settings.lang) h.lang = hlang;
         box.appendChild(h);
       }
-      if (!para || heading || starts.has(r.id)) {
+      // Who speaks (data/speakers/, a pilot): where the voice changes, a new
+      // paragraph and the speaker's name. An editorial aid like the
+      // headings, so hidden with them.
+      var speaker = DATA.speakers && DATA.speakers[r.id];
+      if (!para || heading || starts.has(r.id) || speaker) {
         para = el("p", "para");
         box.appendChild(para);
+      }
+      if (speaker && settings.headings === 0) {
+        var who = el("span", "speaker-label", speaker);
+        who.setAttribute("aria-label", t("speaker_label").replace("{name}", speaker));
+        para.appendChild(who);
       }
       var ds = decisionsFor(r);
       var marks = ds.meaning.concat(ds.rendering).filter(function (d) { return d.footnote; })
@@ -1574,6 +1583,18 @@
     panel.appendChild(fig);
     var go = function () {
       OWBMap.draw(fig, placed, DATA.cards.list.filter(function (c) { return c.at; }), { base: DATA.map.base, t: t });
+      // A journey with a stop in this sentence (data/journeys.json): follow it on the journeys page.
+      var trips = (DATA.journeys || []).filter(function (j) {
+        return j.verses.some(function (v) { return current.refs.indexOf(v) >= 0; });
+      });
+      if (!trips.length) return;
+      var p = el("p", "pmap-journeys");
+      trips.forEach(function (j) {
+        var a = el("a", null, t("map_journey").replace("{name}", j.name));
+        a.href = j.href;
+        p.appendChild(a);
+      });
+      fig.appendChild(p);
     };
     if (window.OWBMap) return go();
     var js = document.createElement("script");
