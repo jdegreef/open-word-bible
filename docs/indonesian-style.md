@@ -18,10 +18,9 @@ choices that decide the most verses, for the founder and a native reviewer
 to confirm or change once; a change is made here and then carried through
 every book drafted under the old rule.
 
-Indonesian is not yet a reading language: until `id` is in
-`data/languages.json` (with the other files `docs/adding-a-language.md`
-lists), the validator rejects an `id` rendering. That setup comes before the
-first book. Every Indonesian record is `ai_draft`.
+Indonesian is a reading language (`id` in `data/languages.json`, with the
+other files `docs/adding-a-language.md` lists), so the validator accepts an
+`id` rendering. Every Indonesian record is `ai_draft`.
 
 ## 1. Sources and independence
 
@@ -61,8 +60,7 @@ first book. Every Indonesian record is `ai_draft`.
 ## 2. The record
 
 - Add `"id": {"L": ..., "B": ..., "R": ...}` to each record's `renderings`,
-  after the other languages. Every level is required. **(checked once `id`
-  is a reading language)**
+  after the other languages. Every level is required. **(checked)**
 - Keep the `\v N ` verse markers exactly where the English has them, and the
   `\q ` line breaks of poetry (section 10), in every Indonesian level.
   Indonesian word order (subject, verb, object; the modifier after the noun)
@@ -659,7 +657,7 @@ and the levels use them differently.
   not used by kings, and *kamu* (R) or *engkau* (L, B) to subjects.
 - **Section headings and summaries.** Where a book's `data/headings/<BOOK>.json`
   or `data/summaries/<BOOK>.json` has the languages beside English, add `"id"`
-  beside them once Indonesian is a reading language, written from Open Word
+  beside them as each book is drafted, written from Open Word
   Bible's own Indonesian wording. They are AI drafts until reviewed, and
   never the headings of TB or BIS.
 

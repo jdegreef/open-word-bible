@@ -14,10 +14,12 @@ check its grammar words, and the validator accepts renderings in it. So
 steps 1–6 go into **one pull request**, before any text is drafted; the
 style brief may go first, on its own.
 
-Indonesian (`id`) is prepared but not yet added: `docs/indonesian-style.md`,
-`docs/indonesian-terms.md`, `docs/review-notes/id-review-checklist.md` and
-its book names in `data/books.json` (step 2) are in place. Steps 1 and 3–10
-remain.
+Indonesian (`id`), added in November 2026 before any of its text was
+drafted ("Add Indonesian as a reading language"), is the most recent example
+of every step. A reading language with no drafted book yet is listed in the
+footer's language switch and has every page; its chapters show the English in
+grey with a notice, its Read page lists no books yet, and it offers no reading
+plan.
 
 ## 0. Before the code: the brief
 
