@@ -9,14 +9,19 @@ says otherwise. `docs/indonesian-terms.md` is the glossary of recurring terms
 and names, Genesis to Revelation. Where this file and the founder's
 Translation Charter disagree, the Charter wins; fix this file.
 
-**Status: proposed, awaiting a native Indonesian reviewer.** Indonesian is
-not yet a reading language: it is not in `data/languages.json`, and no
-record has an `id` rendering. `docs/adding-a-language.md` lists what has to
-change before the first Indonesian rendering can be validated. Every
-Indonesian record will be `ai_draft`. The level names, the forms of address,
-the name forms and the key terms below are first proposals; a reviewer is
-expected to change some of them. The choices the founder is asked to confirm
-before drafting starts are collected in section 13.
+**Status: drafting brief, awaiting a native Indonesian reviewer.** The
+whole Bible is to be drafted in Indonesian from this file. Every choice
+below is **the rule drafters follow**, book by book, without re-deciding it;
+a drafter who thinks a rule is wrong for a passage follows it anyway and
+says so in a rendering decision marked uncertain. Section 13 lists the
+choices that decide the most verses, for the founder and a native reviewer
+to confirm or change once; a change is made here and then carried through
+every book drafted under the old rule.
+
+Indonesian is not yet a reading language: until `id` is in
+`data/languages.json` (with the other files `docs/adding-a-language.md`
+lists), the validator rejects an `id` rendering. That setup comes before the
+first book. Every Indonesian record is `ai_draft`.
 
 ## 1. Sources and independence
 
@@ -268,7 +273,7 @@ scene does not change relationship from verse to verse.
 - **The writer of a letter** (Paul, Peter, James, John) says *aku* at
   Literal and Balanced, the voice of a father or brother in the faith, and
   *saya* at Readable, the voice of a letter to a congregation one has not
-  met. To be confirmed (section 13).
+  met. Section 13 asks the founder to confirm it.
 
 ### "You" singular
 
@@ -410,7 +415,7 @@ for every book.
 | glory (*doxa*); glorious | **kemuliaan**; *mulia* | Key term. |
 | glorify (*doxazō*) | **memuliakan**; *dimuliakan* | Key term; the same root as *kemuliaan*, as the Greek has. |
 | truth (*alētheia*) | **kebenaran** | Key term. *benar* for "true" as an adjective of statements, *sejati* for "true" as "real" (*terang yang sejati*). See righteousness. |
-| righteousness (*dikaiosynē*) | **kebenaran** (L, B); R may say *hidup benar di hadapan Allah*, *dibenarkan oleh Allah*, with a decision | Key term. Indonesian has one noun for both truth and righteousness; Indonesian Bibles have always used *kebenaran* for both. The alternative is *keadilan* where the sense is God's just judging (Acts 17:31) — a meaning decision says which sense is meant. To be confirmed (section 13). |
+| righteousness (*dikaiosynē*) | **kebenaran** (L, B); R may say *hidup benar di hadapan Allah*, *dibenarkan oleh Allah*, with a decision | Key term. Indonesian has one noun for both truth and righteousness; Indonesian Bibles have always used *kebenaran* for both. The alternative is *keadilan* where the sense is God's just judging (Acts 17:31) — a meaning decision says which sense is meant; then write *keadilan* there. Drafted as *kebenaran* everywhere else (section 13, item 7). |
 | justify (*dikaioō*) | *membenarkan* (L, B); *menyatakan benar* (R) | Same root as *kebenaran*, which keeps Paul's argument visible. |
 | faith (*pistis*) | **iman** | Key term. *kesetiaan* where a meaning decision says "faithfulness". |
 | believe (*pisteuō*) | **percaya**; *percaya kepada* (*eis*) | Key term; the verb at every level, never *beriman* (which reads as "be religious"). |
@@ -419,10 +424,10 @@ for every book.
 | gospel (*euangelion*) | **Injil** (L, B); **kabar baik** (R) | Key term, levels as the English. *Injil* is capitalised. *kabar baik* is also used at B where the English says "good news" (Mark 1:1 context). |
 | world (*kosmos*) | **dunia** | Key term. *bumi* for the earth. |
 | eternal (*aiōnios*); eternal life | **kekal**; *hidup yang kekal* (L), *hidup kekal* (B, R) | Key term. |
-| sign (*sēmeion*) | **tanda** | Key term. Never *mukjizat* alone, which means "miracle"; Readable may say *tanda ajaib* with a decision. |
+| sign (*sēmeion*) | **tanda** | Key term. Never *mukjizat* alone, which means "miracle". Readable writes *tanda* too, adding *dari Allah* where the English Readable explains the sign. |
 | mystery (*mystērion*) | **rahasia** | Key term. *misteri* is a loanword with a detective-story sense. |
 | YHWH | `{{divine_name:TUHAN\|Yahweh}}` | Key term (Hebrew). Section 4. |
-| steadfast love (*hesed*) | **kasih setia** | The established term: love and loyalty in one word. Readable may say *kasih yang setia* with a decision. |
+| steadfast love (*hesed*) | **kasih setia** | The established term: love and loyalty in one word. Every level, Readable included. |
 | faithfulness (*emunah*); truth (*emet*) | *kesetiaan*; *kesetiaan* or *kebenaran* by a meaning decision | *emet* paired with *hesed* is *kasih setia dan kesetiaan*. |
 | covenant (*berit*; *diathēkē*) | **perjanjian** | Every level, both testaments. *wasiat* only where the Greek means a will (Hebrews 9:16–17). |
 | holy; sanctify; the saints | *kudus*; *menguduskan*; *orang-orang kudus* (L, B), *umat Allah* (R) | |
@@ -438,7 +443,7 @@ for every book.
 | prophet | *nabi*; *para nabi* | |
 | priest; high priest; Levites | *imam*; *imam besar*; *orang Lewi* | *imam* is the church word for priest (and the Islamic word for a prayer leader); context makes it clear. |
 | sacrifice; offering | **korban**; *persembahan* | Not *kurban*, the Idul Adha spelling. |
-| burnt offering; sin offering; guilt offering; peace offering; grain offering | *korban bakaran*; *korban penghapus dosa*; *korban penebus salah*; *korban persekutuan*; *korban sajian* | *korban persekutuan* for *shelamim* is uncertain; the alternative is *korban keselamatan*. |
+| burnt offering; sin offering; guilt offering; peace offering; grain offering | *korban bakaran*; *korban penghapus dosa*; *korban penebus salah*; *korban persekutuan*; *korban sajian* | *korban persekutuan* for *shelamim* at every level (the meal shared with God); the first record of each book that uses it notes *korban keselamatan* as the familiar alternative, uncertain. |
 | altar | *mezbah* | |
 | tabernacle; tent of meeting; ark of the covenant | *Kemah Suci*; *Kemah Pertemuan*; *tabut perjanjian* | |
 | temple (*hieron*; *naos*; *bayit*, *hekhal*) | *Bait Allah* (L, B), *rumah Allah* (R); *bait {{divine_name:TUHAN\|Yahweh}}* | "the house of the LORD" keeps *bait*; *hieron* as the courts: *halaman Bait Allah* (B, R). |
@@ -658,11 +663,72 @@ and the levels use them differently.
   Bible's own Indonesian wording. They are AI drafts until reviewed, and
   never the headings of TB or BIS.
 
-## 13. For the founder to confirm before drafting
+## 12a. Recurring formulas
 
-Each of these decides the wording of thousands of verses. They are proposals
-until confirmed; record the outcome under a "Settled" heading here, as the
-Vietnamese and Korean briefs do.
+One form each, at every book; the first record of a passage that uses one
+notes it once.
+
+| Source (English) | Literal | Balanced | Readable |
+|---|---|---|---|
+| Thus says the LORD (*koh amar YHWH*) | *Beginilah firman {{divine_name:TUHAN\|Yahweh}}* | as L | *Inilah firman {{divine_name:TUHAN\|Yahweh}}* |
+| declares the LORD (*ne'um YHWH*) | *firman {{divine_name:TUHAN\|Yahweh}}* | *demikianlah firman {{divine_name:TUHAN\|Yahweh}}* | *itulah firman {{divine_name:TUHAN\|Yahweh}}* |
+| The word of the LORD came to ... | *Firman {{divine_name:TUHAN\|Yahweh}} datang kepada ...* | as L | *{{divine_name:TUHAN\|Yahweh}} berfirman kepada ...* |
+| I am the LORD | *Akulah {{divine_name:TUHAN\|Yahweh}}* | as L | *Aku ini {{divine_name:TUHAN\|Yahweh}}* |
+| behold (*hinneh*, *idou*) | *lihatlah* | *lihat*, or left out where it only marks attention | left out, or *ketahuilah* |
+| and it came to pass (*wayehi*) | *dan terjadilah* | left out, or a time clause (*Pada waktu itu*) | as B |
+| son of man (Ezekiel's address) | *anak manusia* (lowercase) | as L | *hai manusia* |
+| answered and said | *menjawab dan berkata* | *menjawab* | as B |
+| lifted up his eyes and saw | *mengangkat matanya dan melihat* | *melihat ke atas dan tampaklah* | *melihat* |
+| fell on his face | *sujud dengan mukanya ke tanah* | *sujud* | *bersujud ke tanah* |
+| all the days of his life | *seumur hidupnya* | as L | as L |
+| to this day | *sampai hari ini* | as L | *sampai sekarang* |
+| Fear not | *Jangan takut* | as L | as L |
+| Woe to you | *Celakalah kalian* | as L | *Celaka sekali kalian* |
+| grace and peace to you | *Kasih karunia dan damai sejahtera bagi kalian* | as L | *Semoga kalian menerima kasih karunia dan damai* |
+
+## 12b. Drafting book by book
+
+Each book is drafted the same way, so the books agree with each other
+without a later harmonising pass.
+
+1. **Check the book is free** (`check-book-before-translating` skill) and
+   that the English is drafted: Indonesian is drafted from records that
+   already have their meaning decisions.
+2. **Read this file, the book's section of `docs/indonesian-terms.md`, and
+   the book's English terms notes.** The glossary's form is the form; a
+   drafter does not choose another spelling of a name or another word for a
+   key term in one book.
+3. **Draft each record at L, then B, then R**, from the Greek or Hebrew,
+   the gloss and the meaning decisions. Keep the English record's verse
+   markers, line breaks and quotations (section 2).
+4. **Compare each familiar verse with TB and BIS** and rewrite any clause
+   that matches (section 1). Do not open them for unfamiliar verses: the
+   check is for memory's pull, not a source.
+5. **Write the decisions** (section 2): the first use in the book of a
+   glossary choice, a name not in the glossary, every setting span that
+   differs from the English, every *kita*/*kami* choice that is not obvious.
+6. **Add new names** (the minor names of genealogies and lists) to the
+   book's section of `docs/indonesian-terms.md` in the same pull request,
+   by the rules of section 6.
+7. **Before the pull request, search the book's Indonesian** for what this
+   file excludes. At every level: *maka* opening a clause, *hatta*,
+   *syahdan*, *bahwasanya*, *tatkala*, *beroleh*, *kamu sekalian*,
+   *bersabda* (for Jesus), *Anda*, *Ia* (for God), *mujizat*, *nafas*,
+   *kurban*, *kafir*, *halal*, *haram*, *Isa*, *Ibrahim*, *Sulaiman*,
+   *salat*, *sembahyang*, *pahala*, *kiamat*, *akhirat*, *nggak*, *banget*,
+   *aja*, *udah*. A pronoun for God in lowercase outside a span, and
+   *TUHAN* outside a `divine_name` span, are errors too.
+8. **Headings and summaries** for the book in Indonesian, from our own text
+   (section 12).
+9. One pull request per book; `scripts/check.sh` must pass.
+
+## 13. Defaults for the founder to confirm
+
+Each of these decides the wording of thousands of verses. Drafting follows
+them as written; the founder confirms or changes each once, and the outcome
+is recorded under a "Settled" heading at the top of this file, as the
+Vietnamese and Korean briefs do. Changing one later means revising every
+book drafted under it, so the earlier they are confirmed the cheaper.
 
 1. **YHWH**: `{{divine_name:TUHAN|Yahweh}}` by default, *Tuhan ALLAH* for
    *Adonai YHWH*, *TUHAN semesta alam* for *YHWH tsevaot*; alternative
@@ -670,16 +736,16 @@ Vietnamese and Korean briefs do.
 2. **God is *Allah*** at every level, with no setting, and the Malaysian
    question left to a future Malay edition.
 3. **Pronouns for God** capitalised by default (`deity_pronoun`), including
-   *Aku* and *-Ku*; *Dia*, never *Ia*, for God; and whether the lowercase
-   option should drop the hyphen (*firmannya*), which needs a validator
-   change to accept a span whose options differ in a leading hyphen.
+   *Aku* and *-Ku*; *Dia*, never *Ia*, for God. The lowercase option keeps
+   the hyphen (*firman-nya*), as drafted; dropping it (*firmannya*) needs a
+   validator change first.
 4. **Plural "you" is *kalian*** at every level; no `plural_you` setting.
 5. **Address**: *engkau* (L, B) / *kamu* (R) to one person from God and
    Jesus; *Engkau* to God and Jesus from everyone; *Ibu* for "Woman" at B and
    R; no *Anda* in the text.
 6. **Letter writers** say *aku* (L, B) and *saya* (R).
 7. **Truth and righteousness** both *kebenaran*, as Indonesian Bibles have
-   it, or a distinct word for one of them.
+   it (the default drafted), rather than a distinct word for one of them.
 8. **Brothers**: *saudara-saudara* with no gender span.
 9. **Christ**: `{{christos:Kristus|Mesias}}`, `Yesus {{christos:Kristus|Sang Mesias}}`.
 10. **Speech verbs**: *berfirman* for God, *berkata* for Jesus.
