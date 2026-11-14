@@ -43,6 +43,16 @@ class SiteTest(unittest.TestCase):
         head = page.split("<body", 1)[0]
         self.assertNotIn("\\q", head)
 
+    def test_pronoun_control_only_where_the_language_marks_it(self):
+        # Hindi has no capitals, so its text has no deity_pronoun spans and
+        # the switch would change nothing; Russian and English mark them.
+        def has_control(*parts):
+            page = self.out.joinpath(*parts, "index.html").read_text(encoding="utf-8")
+            return 'data-setting="deity_pronoun"' in page
+        self.assertTrue(has_control("jhn", "3"))
+        self.assertTrue(has_control("ru", "jhn", "3"))
+        self.assertFalse(has_control("hi", "jhn", "3"))
+
     def test_account_pages_are_built_but_not_indexed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
@@ -102,12 +112,14 @@ class SiteTest(unittest.TestCase):
         # Swahili, Vietnamese, Korean, Portuguese and Amharic (and any
         # language drafted since) for the whole chapter. The page lists the
         # languages it has, in the site's order.
-        present = [lang for lang in build_site.LANGUAGES
-                   if any(lang in r["renderings"] for r in data["records"])]
+        records = build_site.load_chapter("JHN", 1)[0]
+        present = [lang for lang in build_site.LANGUAGES if any(lang in r["renderings"] for r in records)]
         self.assertEqual(data["languages"], present)
+        self.assertEqual(list(data["texts"]), present)
         self.assertEqual(present[:8], ["en", "es", "fr", "sw", "vi", "ko", "pt", "am"])
         for lang in ("fr", "sw", "vi", "ko", "pt", "am"):
-            self.assertTrue(all(lang in r["renderings"] for r in data["records"]), lang)
+            self.assertTrue(all(lang in r["renderings"] for r in records), lang)
+        # The English page has English for every sentence, which it loads.
         self.assertTrue(all("en" in r["renderings"] for r in data["records"]))
 
     def test_each_verse_words_are_covered_once(self):
@@ -313,11 +325,11 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(sum(manifest["status"].values()),
                          sum(1 for r in records if "R" in r["renderings"].get("fr", {})))
         self.assertEqual(manifest["missing"]["count"], len(manifest["missing"]["verses"]))
-        # Editions with gaps list them by book too (French may have none left).
+        # Editions with gaps list them by book too. Since 2026-11-12 every
+        # language has every verse, so there may be no gaps left anywhere.
         for _, _, m in built.values():
             self.assertEqual(sum(m["missing"]["by_book"].values()), m["missing"]["count"])
             self.assertEqual(m["missing"]["count"], len(m["missing"]["verses"]))
-        self.assertTrue(any(m["missing"]["count"] for _, _, m in built.values()))
         self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
         # The page lists every file, in every site language, and the footer links it.
         for lang in build_site.LANGUAGES:
@@ -390,16 +402,21 @@ class SiteTest(unittest.TestCase):
         site = build_site.SITE_URL
         self.assertEqual(trail("php/2"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
                                           ("Philippians", site + "/php/"), ("Philippians 2", site + "/php/2/")])
-        # A book without a page goes straight from Read to the chapter.
-        book, chaps = next((b, c) for b, c in build_site.books("en") if not build_site.load_intro(b))
-        code, first = book.lower(), chaps[0].chapter
-        title = build_site.chapter_name(chaps[0].records, book, first, "en")
-        self.assertEqual(trail(f"{code}/{first}"), [("Open Word Bible", site + "/"), ("Read", site + "/read/"),
-                                                    (title, f"{site}/{code}/{first}/")])
-        page = (self.out / code / str(first) / "index.html").read_text(encoding="utf-8")
-        self.assertIn(f'class="chap-book" href="/read/#{code}"', page)
         self.assertEqual(trail("fr/php/2")[-1][1], site + "/fr/php/2/")
-        self.assertEqual(len(trail("fr/php/2")), 3)
+        # A book without a page in a language goes straight from Read to the
+        # chapter. Every English book has an introduction, so look for one
+        # in any language.
+        missing = [(lang, b, c) for lang in build_site.LANGUAGES for b, c in build_site.books(lang)
+                   if lang not in build_site.book_languages(b)]
+        if missing:
+            lang, book, chaps = missing[0]
+            code, first = book.lower(), chaps[0].chapter
+            path = f"{code}/{first}" if lang == "en" else f"{lang}/{code}/{first}"
+            title = build_site.chapter_name(chaps[0].records, book, first, lang)
+            self.assertEqual(len(trail(path)), 3)
+            self.assertEqual(trail(path)[-1], (title, f"{site}/{path}/"))
+            page = (self.out / path / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'class="chap-book" href="{build_site.url(lang, "/read/#" + code)}"', page)
 
     def test_llms_txt_describes_the_site(self):
         text = (self.out / "llms.txt").read_text(encoding="utf-8")
@@ -986,8 +1003,9 @@ class SiteTest(unittest.TestCase):
         if not any("es" in r["renderings"] for r in records) and "es" not in build_site.summaries()[("1TI", 5)]:
             page = (self.out / "es" / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
             self.assertIn('<p class="chapter-summary" lang="en">', page)
-        with_es = [{"renderings": {"en": {}, "es": {}}}]
-        self.assertEqual(build_site.chapter_summary("1TI", 5, with_es, "es"), "")
+        # A chapter whose text has a language its summary lacks shows none.
+        with_xx = [{"renderings": {"en": {}, "xx": {}}}]
+        self.assertEqual(build_site.chapter_summary("1TI", 5, with_xx, "xx"), "")
         self.assertEqual(build_site.chapter_summary("JHN", 999, records, "en"), "")
 
     def test_chapter_strip_shows_the_whole_book(self):
@@ -1304,21 +1322,41 @@ class SiteTest(unittest.TestCase):
                 for path in pages:
                     self.assertTrue(path.startswith(build_site.url(code, "/")), path)
                     self.assertTrue(self.built(path).is_file(), path)
-                # Each page's shared chapter data, which the page loads.
-                self.assertEqual(len(data), len(pages))
-                for page, path in zip(pages, data):
-                    self.assertIn(f'<script src="{path}"></script>', self.built(page).read_text(encoding="utf-8"))
+                # The chapter data each page loads: its records and its
+                # language's text.
+                loaded = set()
+                for page in pages:
+                    loaded |= set(re.findall(r'<script src="(/chapter-data/[^"]+)"></script>',
+                                             self.built(page).read_text(encoding="utf-8")))
+                self.assertEqual(set(data), loaded)
+                for path in data:
                     self.assertTrue(self.built(path).is_file(), path)
+
+    def test_a_page_loads_the_languages_it_shows(self):
+        # Its own, and for a sentence not yet in it the language shown
+        # instead: the first, in the site's order, that has it.
+        records = [{"renderings": {"en": {}, "es": {}}}, {"renderings": {"en": {}, "fr": {}}},
+                   {"renderings": {"fr": {}}}]
+        self.assertEqual(build_site.page_texts(records, "es"), ["en", "es", "fr"])
+        self.assertEqual(build_site.page_texts(records, "fr"), ["en", "fr"])
+        self.assertEqual(build_site.page_texts(records[:1], "es"), ["es"])
 
     def test_chapter_pages_share_what_is_the_same(self):
         # The records and source words are the same on every language's page
-        # of a chapter, and the interface text on every chapter page of a
-        # language: each is built once, not into every page.
+        # of a chapter, each language's text on every page that shows it,
+        # and the interface text on every chapter page of a language: each
+        # is built once, not into every page.
         en, es = self.chapter_data("jhn/1"), self.chapter_data("es/jhn/1")
         self.assertEqual(en["words"], es["words"])
         self.assertEqual([r["source"] for r in en["records"]], [r["source"] for r in es["records"]])
-        self.assertEqual([r["renderings"] for r in en["records"]], [r["renderings"] for r in es["records"]])
         page = (self.out / "es/jhn/1/index.html").read_text(encoding="utf-8")
+        # A page loads its own language's text, not every language's: John
+        # 1 is in Spanish throughout, so the Spanish page needs no other.
+        self.assertIn(f'<script src="{es["texts"]["es"]}"></script>', page)
+        self.assertNotIn(f'<script src="{es["texts"]["en"]}"></script>', page)
+        self.assertEqual({lang for r in es["records"] for lang in r["renderings"]}, {"es"})
+        self.assertEqual([r["renderings"]["es"] for r in es["records"]],
+                         [r["renderings"]["es"] for r in build_site.load_chapter("JHN", 1)[0]])
         own = json.loads(re.search(r'id="owb-data">(.*?)</script>', page, re.S)[1])
         for key in ("records", "words", "ui", "bookRefs", "books", "crossrefs"):
             self.assertNotIn(key, own)

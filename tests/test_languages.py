@@ -204,8 +204,9 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(f">{balanced}</button>", page)
 
     def test_a_chapter_page_carries_only_its_own_rendering_decisions(self):
-        # Every language's renderings (the reader sets two side by side), but
-        # only the meaning decisions and the page language's own wording ones.
+        # Its own language's renderings, with the others named for Parallel
+        # to load, and only the meaning decisions and the page language's
+        # own wording ones.
         # The languages Matthew 1 is drafted in (a language added since may
         # not have it yet).
         first = json.loads((ROOT / "content" / "MAT" / "MAT.1.json").read_text(encoding="utf-8"))["records"][0]
@@ -217,7 +218,8 @@ class LanguagesTest(unittest.TestCase):
             decisions = [d for r in data["records"] for d in r["decisions"]]
             self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
             self.assertTrue(any(d["language"] == lang for d in decisions), lang)
-            self.assertTrue(all({"en", "vi", "ko", "pt", "am"} <= set(r["renderings"]) for r in data["records"]), lang)
+            self.assertTrue(all(set(r["renderings"]) == {lang} for r in data["records"]), lang)
+            self.assertLessEqual(set(drafted), set(data["texts"]), lang)
 
     def test_home_page_shows_nothing_in_english_where_it_need_not(self):
         # The verse of the day and the worked examples are taken from what

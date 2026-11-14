@@ -65,6 +65,26 @@
           "L": "የአሳፍ መዝሙር። \\q እግዚአብሔር በእግዚአብሔር ጉባኤ ውስጥ ቆሟል፤ \\q በአማልክት መካከል ይፈርዳል።",
           "B": "የአሳፍ መዝሙር። \\q እግዚአብሔር በመለኮታዊው ጉባኤ ውስጥ ስፍራውን ይዞ ቆሟል፤ \\q በአማልክት መካከል ፍርድ ይሰጣል።",
           "R": "አሳፍ የዘመረው መዝሙር። \\q እግዚአብሔር በሰማይ ባለው በታላቁ ሸንጎው ውስጥ ተነሥቶ ቆሟል። \\q በዚያ አማልክት ተብለው በሚጠሩት ላይ ይፈርዳል።"
+        },
+        "hi": {
+          "L": "आसाप का भजन। \\q परमेश्वर परमेश्वर की सभा में खड़े हैं; \\q देवताओं के बीच वे न्याय करते हैं।",
+          "B": "आसाप का भजन। \\q परमेश्वर ईश्वरीय सभा में अपना स्थान लेते हैं; \\q वे देवताओं के बीच न्याय करते हैं।",
+          "R": "आसाप का गीत। \\q परमेश्वर स्वर्ग में अपनी बड़ी सभा में खड़े होते हैं। \\q वे उनका न्याय करते हैं जो वहाँ देवता कहलाते हैं।"
+        },
+        "ru": {
+          "L": "Псалом Асафа. \\q Бог стоит в собрании Божьем; \\q среди богов {{deity_pronoun:он|Он}} судит.",
+          "B": "Псалом Асафа. \\q Бог занимает своё место в небесном собрании; \\q {{deity_pronoun:он|Он}} выносит суд среди богов.",
+          "R": "Песнь Асафа. \\q Бог встаёт в своём великом небесном совете. \\q Он судит тех, кто там называется богами."
+        },
+        "ja": {
+          "L": "アサフの賛歌。 \\q 神は、神の集いの中に立ち、 \\q 神々の真ん中でお裁きになる。",
+          "B": "アサフの賛歌。 \\q 神は、天の会議の中にお立ちになり、 \\q 神々の間で裁きを行われる。",
+          "R": "アサフの歌。 \\q 神は、天にあるご自分の大いなる会議の中で、立ち上がられる。 \\q 神々と呼ばれる者たちを、お裁きになる。"
+        },
+        "uk": {
+          "L": "Псалом Асафа. \\q Бог стоїть у зібранні Бога; \\q посеред богів {{deity_pronoun:він|Він}} судить.",
+          "B": "Псалом Асафа. \\q Бог стає в божественному зібранні; \\q {{deity_pronoun:він|Він}} чинить суд серед богів.",
+          "R": "Пісня Асафа. \\q Бог устає у своїй великій небесній раді. \\q Він судить тих, кого там називають богами."
         }
       },
       "decisions": [
@@ -277,6 +297,90 @@
           "reason": "Meaning decision m4 reads the gods as members of God's heavenly council, so Amharic keeps \"አማልክት\", as John 10:34 in the Amharic New Testament does at verse 6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190820010041"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. God spoken of takes the honorific plural (खड़े हैं, वे न्याय करते हैं), which already marks him apart from the \"gods\" around him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820010081"
+          ],
+          "choice": "देवता (the gods)",
+          "alternatives": [
+            "ईश्वर",
+            "न्यायी"
+          ],
+          "reason": "The gods are the members of God's heavenly council (m4). देवता is the ordinary word for \"a god\" and is the word of John 10:34 in this translation, which quotes verse 6; ईश्वर is not used for anyone but God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820010081"
+          ],
+          "choice": "\"богов\" with a small letter, kept at every level",
+          "alternatives": [
+            "судей",
+            "ангелов"
+          ],
+          "reason": "The meaning decisions read \"the gods\" as the members of God's heavenly council; John 10:34 quotes verse 6 with the word \"боги\" in this translation, so every level keeps the word, and Readable says where they stand.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820010052",
+            "o190820010061",
+            "o190820010081"
+          ],
+          "choice": "'adat-'el \"神の集い\" (L), \"天の会議\" (B), \"天にあるご自分の大いなる会議\" (R); 'elohim \"神々\" (L, B), \"神々と呼ばれる者たち\" (R); \"お裁きになる\" / \"裁きを行われる\", not 裁かれる",
+          "alternatives": [],
+          "reason": "The assembly is the divine council (m3, uncertain) and the gods its members, who were to rule the nations justly (m4, uncertain, footnoted in the English); 裁かれる would read as a passive (PSA-6).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -343,6 +447,26 @@
           "L": "«እስከ መቼ በዓመፅ ትፈርዳላችሁ? \\q የኃጥኣንንስ ፊት [እስከ መቼ] ታነሣላችሁ? ሴላ",
           "B": "«እስከ መቼ በግፍ ትፈርዳላችሁ? \\q እስከ መቼስ ለክፉዎች ታደላላችሁ? ሴላ",
           "R": "«እስከ መቼ ያለ ፍትሕ ትፈርዳላችሁ? \\q እስከ መቼስ ክፉ ሰዎችን ትደግፋላችሁ? ሴላ"
+        },
+        "hi": {
+          "L": "\"तुम कब तक अन्याय से न्याय करोगे \\q और दुष्टों का मुँह देखा करोगे? सेला",
+          "B": "\"तुम कब तक अन्याय से न्याय करते रहोगे \\q और दुष्टों का पक्ष लेते रहोगे? सेला",
+          "R": "\"तुम कब तक अन्याय से फ़ैसले करते रहोगे? \\q कब तक दुष्ट लोगों का पक्ष लेते रहोगे? सेला"
+        },
+        "ru": {
+          "L": "«Доколе вы будете судить несправедливо \\q и поднимать лицо нечестивых? Села",
+          "B": "«Сколько ещё вы будете судить несправедливо \\q и становиться на сторону нечестивых? Села",
+          "R": "«Сколько ещё вы будете судить нечестно? \\q Сколько ещё вы будете угождать злым людям? Села"
+        },
+        "ja": {
+          "L": "「いつまで、あなたがたは不正に裁き、 \\q 悪しき者たちの顔を上げるのか？セラ",
+          "B": "「いつまで、あなたがたは不公平な裁きをし、 \\q 悪しき者たちの肩を持つのか？セラ",
+          "R": "「いつまで、あなたたちは不公平な裁きを続けるのか？ \\q いつまで、悪い人たちをひいきするのか？セラ"
+        },
+        "uk": {
+          "L": "«Доки ви судитимете несправедливо \\q і підноситимете обличчя нечестивих? Села",
+          "B": "«Доки ви судитимете нечесно \\q й ставатимете на бік нечестивих? Села",
+          "R": "«Доки ви судитимете несправедливо? \\q Доки ви будете на боці злих людей? Села"
         }
       },
       "decisions": [
@@ -480,6 +604,46 @@
           "reason": "God speaks to the members of the council as a group (plural verbs), so he says \"vocês\", as God speaks to a group in the Old Testament terms; \"vós\" is not used.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190820020011"
+          ],
+          "choice": "तुम from God to the gods",
+          "alternatives": [],
+          "reason": "God speaks to the gods of his council (verses 2-7). As always when God speaks, he says तुम.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820020011",
+            "o190820020052",
+            "o190820020071"
+          ],
+          "choice": "God's speech 「 82:2 … 」 82:7 to the gods, plural あなたがた (L, B), あなたたち (R); nas'u-panim \"顔を上げる\" (L), \"肩を持つ\" (B), \"ひいきする\" (R)",
+          "alternatives": [],
+          "reason": "God speaks to the council to verse 7 (m1); lifting up the face is showing favor (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -545,6 +709,26 @@
           "L": "ለድሀውና ለድሀ አደጉ ፍረዱ፤ \\q ለጐስቋላውና ለችግረኛው ጽድቅን አድርጉ።",
           "B": "ለደካማውና ለድሀ አደጉ በትክክል ፍረዱ፤ \\q ለተጨቆነውና ለችግረኛው ፍትሕ አድርጉ።",
           "R": "ለድሆችና አባት ለሌላቸው ልጆች ቁሙላቸው። \\q ለሚሠቃዩትና ለተቸገሩት ትክክለኛውን አድርጉ።"
+        },
+        "hi": {
+          "L": "ग़रीब और अनाथ का न्याय करो; \\q दीन और कंगाल को निर्दोष ठहराओ।",
+          "B": "कमज़ोर और अनाथ का सच्चा न्याय करो; \\q दीन और कंगाल को सही ठहराओ।",
+          "R": "ग़रीबों और उन बच्चों का पक्ष लो जिनके पिता नहीं हैं। \\q जो दुख में हैं और ज़रूरतमंद हैं, उनके लिए वह करो जो सही है।"
+        },
+        "ru": {
+          "L": "Судите бедного и сироту; \\q угнетённого и нищего оправдывайте.",
+          "B": "Судите справедливо слабого и сироту; \\q признавайте правыми угнетённого и нищего.",
+          "R": "Заступайтесь за бедных и за детей, у которых нет отца. \\q Поступайте справедливо с теми, кто страдает и нуждается."
+        },
+        "ja": {
+          "L": "弱い者とみなしごのために裁きなさい。 \\q 苦しむ者と困窮する者を、正しいとしなさい。",
+          "B": "弱い者と父のいない子のために、正しく裁きなさい。 \\q 苦しむ者と困窮する者を、正しいと認めなさい。",
+          "R": "貧しい人たちや、父のいない子どもたちの味方になりなさい。 \\q 苦しんでいる人たち、困っている人たちのために、正しいことをしなさい。"
+        },
+        "uk": {
+          "L": "Судіть [за] бідного й сироту; \\q виправдовуйте пригнобленого й злиденного.",
+          "B": "Судіть справедливо слабких і сиріт; \\q визнавайте правоту пригноблених і злиденних.",
+          "R": "Заступайтеся за бідних і за дітей, у яких немає батька. \\q Робіть те, що правильно, для людей, які страждають і бідують."
         }
       },
       "decisions": [
@@ -590,6 +774,30 @@
           "choice": "the poor and the fatherless",
           "alternatives": [],
           "reason": "Those with no one to defend them were the special care of judges and kings, and of God himself (68:6; Deuteronomy 10:18).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820030011",
+            "o190820030061",
+            "o190820030021",
+            "o190820030032",
+            "o190820030041",
+            "o190820030052"
+          ],
+          "choice": "dal \"弱い者\" (L, B), \"貧しい人たち\" (R); yatom \"みなしご\" (L), \"父のいない子\" (B, R); 'ani \"苦しむ者\"; rash \"困窮する者\" (L, B), \"困っている人たち\" (R); hatsdiqu \"正しいとしなさい\" (L), \"正しいと認めなさい\" (B)",
+          "alternatives": [],
+          "reason": "Judge for is defend the cause of (m1); vindicate is declare in the right (m2). The Psalter's words for the poor (PSA-1); God's commands 〜なさい.",
           "uncertain": false,
           "footnote": false
         }
@@ -657,6 +865,26 @@
           "L": "ድሀውንና ምስኪኑን አድኑ፤ \\q ከኃጥኣን እጅ አውጡ።",
           "B": "ደካማውንና ድሀውን ወደ ደኅንነት አውጡ፤ \\q ከክፉዎች እጅ ንጠቋቸው።",
           "R": "ድሆችንና የተቸገሩትን አድኑ። \\q ከክፉ ሰዎች ኃይል አውጧቸው።"
+        },
+        "hi": {
+          "L": "ग़रीब और दरिद्र को छुड़ाओ; \\q दुष्टों के हाथ से [उन्हें] बचाओ।",
+          "B": "कमज़ोर और दरिद्र को सुरक्षित स्थान पर पहुँचाओ; \\q उन्हें दुष्टों की पकड़ से छीन लो।",
+          "R": "ग़रीब और ज़रूरतमंद लोगों को बचाओ। \\q उन्हें बुरे लोगों के वश से निकालो।"
+        },
+        "ru": {
+          "L": "Спасайте бедного и нищего; \\q избавляйте [их] из руки нечестивых.",
+          "B": "Выводите слабого и бедного в безопасное место; \\q вырывайте их из рук нечестивых.",
+          "R": "Спасайте бедных и нуждающихся. \\q Вырывайте их из власти злых людей."
+        },
+        "ja": {
+          "L": "弱い者と乏しい者を助け出しなさい。 \\q 悪しき者たちの手から、救い出しなさい。",
+          "B": "弱い者と貧しい者を、安全な所へ逃がしなさい。 \\q 悪しき者たちの手から、彼らを奪い返しなさい。",
+          "R": "貧しい人たち、困っている人たちを救いなさい。 \\q 悪い人たちの力から、彼らを引き出しなさい。"
+        },
+        "uk": {
+          "L": "Рятуйте бідного й убогого; \\q визволяйте [їх] з руки нечестивих.",
+          "B": "Виведіть слабких і бідних у безпеку; \\q вирвіть їх із лап нечестивих.",
+          "R": "Рятуйте бідних і нужденних. \\q Визволяйте їх із влади злих людей."
         }
       },
       "decisions": [
@@ -671,6 +899,25 @@
           "choice": "the hand: the power",
           "alternatives": [],
           "reason": "The hand stands for power and control (31:16).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820040042"
+          ],
+          "choice": "'evyon \"乏しい者\" (L), \"貧しい者\" (B), \"困っている人たち\" (R); miyyad \"手から\" (L, B), \"力から\" (R)",
+          "alternatives": [],
+          "reason": "The hand is the power (m1), which R says plainly.",
           "uncertain": false,
           "footnote": false
         }
@@ -742,6 +989,26 @@
           "L": "አያውቁም፤ አያስተውሉምም፤ \\q በጨለማ ይመላለሳሉ፤ \\q የምድር መሠረቶች ሁሉ ይናወጣሉ።",
           "B": "እውቀት የላቸውም፤ ማስተዋልም የላቸውም፤ \\q በጨለማ ውስጥ ይንከራተታሉ፤ \\q የምድር መሠረቶችም ሁሉ ይንገዳገዳሉ።",
           "R": "ምንም አያውቁም። ምንም አያስተውሉም። \\q በጨለማ ውስጥ ይመላለሳሉ፤ \\q ዓለም የቆመችበትም ሁሉ ይናወጣል።"
+        },
+        "hi": {
+          "L": "वे न तो जानते हैं और न समझते हैं; \\q वे अंधकार में चलते-फिरते हैं; \\q पृथ्वी की सारी नींवें डगमगा जाती हैं।",
+          "B": "उन्हें न ज्ञान है न समझ; \\q वे अंधेरे में भटकते फिरते हैं, \\q और पृथ्वी की सब नींवें हिल रही हैं।",
+          "R": "वे कुछ नहीं जानते। वे कुछ नहीं समझते। \\q वे अंधेरे में घूमते हैं, \\q और जिस पर संसार टिका है वह सब हिल रहा है।"
+        },
+        "ru": {
+          "L": "Не знают и не понимают; \\q во тьме ходят; \\q колеблются все основания земли.",
+          "B": "У них нет ни знания, ни понимания; \\q они бродят во тьме, \\q и все основания земли шатаются.",
+          "R": "Они ничего не знают. Они ничего не понимают. \\q Они ходят в темноте, \\q и всё, на чём стоит мир, колеблется."
+        },
+        "ja": {
+          "L": "彼らは知らず、悟らない。 \\q 闇の中を歩き回る。 \\q 地のすべての基は揺らぐ。",
+          "B": "彼らには知識もなく、悟りもない。 \\q 闇の中をさまよい歩き、 \\q 地の基はことごとく揺らいでいる。",
+          "R": "彼らは何も知らない。何もわかっていない。 \\q 暗やみの中を歩き回っている。 \\q そして、世界を支えているものすべてが揺れている。"
+        },
+        "uk": {
+          "L": "Вони не знають і не розуміють; \\q у темряві вони ходять; \\q хитаються всі основи землі.",
+          "B": "Вони не мають ні знання, ні розуміння; \\q вони блукають у темряві, \\q і всі основи землі хитаються.",
+          "R": "Вони нічого не знають. Вони нічого не розуміють. \\q Вони ходять у темряві, \\q і все, на чому стоїть світ, хитається."
         }
       },
       "decisions": [
@@ -776,6 +1043,28 @@
           "alternatives": [],
           "reason": "Justice holds the world together (75:4; 11:3). When those who should rule justly do not, the whole order of creation totters.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820050021",
+            "o190820050071",
+            "o190820050091",
+            "o190820050101"
+          ],
+          "choice": "\"彼ら\" left as the Hebrew has it; mosedei 'erets \"地の基\" (L, B), \"世界を支えているもの\" (R)",
+          "alternatives": [],
+          "reason": "They are the gods who judge unjustly (m1, uncertain); the shaken foundations are the world's order failing (m2).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -843,6 +1132,26 @@
           "L": "እኔ፦ “አማልክት ናችሁ፤ \\q ሁላችሁም የልዑል ልጆች [ናችሁ]” አልኩ።",
           "B": "እኔ ራሴ፦ “አማልክት ናችሁ፤ \\q እያንዳንዳችሁም የልዑል ልጆች ናችሁ” አልኩ።",
           "R": "እኔ፦ “አማልክት ናችሁ። \\q እያንዳንዳችሁም ከሁሉ በላይ የሆነው አምላክ ልጆች ናችሁ” አልኩ።"
+        },
+        "hi": {
+          "L": "मैंने कहा, 'तुम देवता [हो], \\q और तुम सब परमप्रधान के पुत्र [हो]।'",
+          "B": "मैंने ही कहा था, 'तुम देवता हो; \\q तुममें से हर एक परमप्रधान का पुत्र है।'",
+          "R": "मैंने कहा, 'तुम देवता हो। \\q तुममें से हर एक उस परमेश्वर का पुत्र है जो सबसे ऊपर हैं।'"
+        },
+        "ru": {
+          "L": "Я сказал: “Вы — боги, \\q и сыны Всевышнего — все вы.”",
+          "B": "Я сказал: “Вы — боги; \\q каждый из вас — сын Всевышнего.”",
+          "R": "Я сказал: “Вы — боги. \\q Каждый из вас — сын Бога, который выше всех.”"
+        },
+        "ja": {
+          "L": "わたしは言った。『あなたがたは神々である。 \\q あなたがたはみな、いと高き方の子らである。』",
+          "B": "わたしは、確かに言った。『あなたがたは神々である。 \\q あなたがたはみな、いと高き方の子である。』",
+          "R": "わたしは言った。『あなたたちは神々だ。 \\q あなたたちはみな、すべてのものの上に立つ神の子だ。』"
+        },
+        "uk": {
+          "L": "Я сказав: “Ви — боги, \\q і сини Всевишнього всі ви.”",
+          "B": "Я сам сказав: “Ви — боги; \\q кожен із вас — син Всевишнього.”",
+          "R": "Я сказав: “Ви — боги. \\q Кожен із вас — син Бога, який вищий за все.”"
         }
       },
       "decisions": [
@@ -975,6 +1284,74 @@
           "reason": "The Greek of John 10:34 agrees with the Hebrew here, so the psalm keeps the New Testament's words and their order, with \"አልኩ\" after the quotation.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820060011",
+            "o190820060021",
+            "o190820060031",
+            "o190820060041"
+          ],
+          "choice": "मैंने कहा, 'तुम देवता हो'",
+          "alternatives": [
+            "ईश्वर"
+          ],
+          "reason": "Jesus quotes these words in John 10:34, and the Hindi of John has मैंने कहा, \"तुम देवता हो\" at every level. The Hebrew says the same, so the psalm keeps that wording; Literal brackets हो, which the Hebrew leaves unspoken.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820060031"
+          ],
+          "choice": "\"Я сказал: “Вы — боги”\", as John 10:34",
+          "alternatives": [
+            "Я сказал: вы боги"
+          ],
+          "reason": "Jesus quotes this line in John 10:34, and the Hebrew says the same as the Greek there, so every level keeps the Russian of that quotation in this translation, \"Я сказал: ‘Вы — боги’\", with the inner quotation marks this verse needs inside God's speech. \"Всевышний\" is the poetry note's form for 'Elyon.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820060011",
+            "o190820060021",
+            "o190820060031",
+            "o190820060041",
+            "o190820060061"
+          ],
+          "choice": "'elohim 'attem \"あなたがたは神々である\" (L, B), \"あなたたちは神々だ\" (R), as JHN 10:34; 'Elyon \"いと高き方\" (L, B), R \"すべてのものの上に立つ神\" without a respect form, as 50:14 in God's own mouth",
+          "alternatives": [],
+          "reason": "Jesus quotes this line in John 10:34 (m2), and the Hebrew agrees with that Greek, so the Japanese follows the John Japanese at each level; the Most High is God above all (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1043,6 +1420,26 @@
           "L": "ነገር ግን እንደ ሰው ትሞታላችሁ፤ \\q ከአለቆችም እንደ አንዱ ትወድቃላችሁ።»",
           "B": "ይሁን እንጂ ሰዎች እንደሚሞቱ ትሞታላችሁ፤ \\q ከአለቆችም እንደ አንዱ ትወድቃላችሁ።»",
           "R": "ነገር ግን ሰዎች በሚሞቱበት መንገድ ትሞታላችሁ። \\q እንደ ማንኛውም ገዥ ትወድቃላችሁ።»"
+        },
+        "hi": {
+          "L": "तौभी तुम मनुष्यों के समान मरोगे, \\q और हाकिमों में से किसी एक के समान गिरोगे।\"",
+          "B": "फिर भी तुम वैसे ही मरोगे जैसे मनुष्य मरते हैं, \\q और किसी भी हाकिम के समान गिर पड़ोगे।\"",
+          "R": "पर तुम वैसे ही मरोगे जैसे लोग मरते हैं। \\q तुम किसी भी शासक की तरह गिर जाओगे।\""
+        },
+        "ru": {
+          "L": "Однако вы умрёте, как люди, \\q и падёте, как любой из князей.»",
+          "B": "И всё же вы умрёте, как умирают люди, \\q и падёте, как любой из правителей.»",
+          "R": "Но вы умрёте так, как умирают люди. \\q Вы падёте, как падает любой правитель.»"
+        },
+        "ja": {
+          "L": "しかし、あなたがたは人のように死に、 \\q 君主たちの一人のように倒れる。」",
+          "B": "しかし、あなたがたは、人が死ぬように死に、 \\q どの君主とも同じように倒れる。」",
+          "R": "しかし、あなたたちは、人間と同じように死ぬ。 \\q どんな支配者とも同じように倒れる。」"
+        },
+        "uk": {
+          "L": "Проте ви помрете, як людина, \\q і впадете, як один із князів.»",
+          "B": "Але ви помрете, як помирають люди, \\q і впадете, як будь-хто з князів.»",
+          "R": "Але ви помрете так, як помирають люди. \\q Ви впадете, як будь-який правитель.»"
         }
       },
       "decisions": [
@@ -1090,6 +1487,26 @@
           "alternatives": [],
           "reason": "The word ('akhen) turns against what was just said: though they are gods, they will die. God's speech ends here.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820070022",
+            "o190820070052"
+          ],
+          "choice": "ke'adam \"人のように\" (L), \"人が死ぬように\" (B), \"人間と同じように\" (R); hassarim \"君主たち\" (L, B), \"支配者\" (R)",
+          "alternatives": [],
+          "reason": "Like humankind is as mortals do (m1, uncertain); the princes are rulers who fall (m2, uncertain).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1162,6 +1579,26 @@
           "L": "እግዚአብሔር ሆይ፣ ተነሥ፤ በምድር ላይ ፍረድ፤ \\q አንተ ሕዝቦችን ሁሉ ትወርሳለህና።",
           "B": "እግዚአብሔር ሆይ፣ ተነሥ፤ በምድር ላይ ፍረድ፤ \\q ሕዝቦች ሁሉ የአንተ ናቸውና።",
           "R": "እግዚአብሔር ሆይ፣ ተነሥ! በዓለም ሁሉ ላይ ፍረድ፤ \\q ሕዝቦች ሁሉ የአንተ ናቸውና።"
+        },
+        "hi": {
+          "L": "हे परमेश्वर, उठ, पृथ्वी का न्याय कर, \\q क्योंकि तू ही सब जातियों को अपनी निज संपत्ति बनाएगा।",
+          "B": "हे परमेश्वर, उठ, पृथ्वी का न्याय कर, \\q क्योंकि हर राष्ट्र तेरा ही है।",
+          "R": "हे परमेश्वर, उठ! सारे संसार का न्याय कर, \\q क्योंकि सब देश तेरे हैं।"
+        },
+        "ru": {
+          "L": "Встань, Боже, суди землю, \\q потому что {{deity_pronoun:ты|Ты}} получишь во владение все народы.",
+          "B": "Восстань, Боже, суди землю, \\q ведь все народы принадлежат {{deity_pronoun:тебе|Тебе}}.",
+          "R": "Встань, Боже! Суди весь мир, \\q потому что все народы — {{deity_pronoun:твои|Твои}}."
+        },
+        "ja": {
+          "L": "立ち上がってください、神よ、地を裁いてください。 \\q あなたこそ、諸国の民をことごとく受け継ぐ方だからだ。",
+          "B": "神よ、立ち上がって、地を裁いてください。 \\q 諸国の民はみな、あなたのものだからだ。",
+          "R": "神よ、立ち上がってください！世界中を裁いてください。 \\q すべての国々は、あなたのものだからだ。"
+        },
+        "uk": {
+          "L": "Встань, Боже, суди землю, \\q бо {{deity_pronoun:ти|Ти}} заволодієш усіма народами.",
+          "B": "Повстань, Боже, суди землю, \\q бо кожен народ належить {{deity_pronoun:тобі|Тобі}}.",
+          "R": "Устань, Боже! Суди весь світ, \\q бо всі народи — {{deity_pronoun:твої|Твої}}."
         }
       },
       "decisions": [
@@ -1209,6 +1646,25 @@
           "alternatives": [],
           "reason": "The psalm ends by asking God himself to bring the justice the gods would not give (96:13).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820080071"
+          ],
+          "choice": "tinchal \"受け継ぐ方\" (L), \"あなたのもの\" (B, R)",
+          "alternatives": [],
+          "reason": "Inherit is take as your own possession (m2, uncertain); the request qumah as the Psalter's 立ち上がってください.",
+          "uncertain": true,
           "footnote": false
         }
       ],

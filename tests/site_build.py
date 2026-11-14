@@ -32,22 +32,45 @@ def built_site():
 SHARED = re.compile(r'<script src="(/(?:chapter-data/[^"?]+|reader-[a-z]+)\.js\?v=[0-9a-f]+)"></script>')
 
 
+TEXT = re.compile(r'window\.OWB_TEXTS\["([a-z]+)"\]=')
+
+
 def page_data(page):
     """A chapter page's reader data as reader.js sees it: the page's own
     (owb-data) with the shared data of its chapter and language added
-    (build_site.chapter_shared, reader_shared), which the page loads."""
+    (build_site.chapter_shared, reader_shared), and the text of each
+    language the page loads (chapter_language_data) joined to the records."""
     data = json.loads(re.search(r'<script type="application/json" id="owb-data">(.*?)</script>', page, re.S)[1])
     loaded = {src.split("?")[0]: src for src in SHARED.findall(page)}
-    for text, src in (build_site.chapter_shared(data["book"], data["chapter"]),
-                      build_site.reader_shared(data["lang"])):
+
+    def shared(text, src):
         path = src.split("?")[0]
         assert path in loaded, (src, loaded)
         # A page of the built site loads that build's copy, which may differ
         # from one made now (a test may have changed what is translated).
         if loaded[path] != src:
             text = (built_site() / path.lstrip("/")).read_text(encoding="utf-8")
-        data.update(json.loads(text[text.index("=") + 1:].rstrip().rstrip(";")))
-    # As reader.js does: the meaning decisions and the page language's own.
+        # A language's text sets window.OWB_TEXTS["es"]; the rest one name.
+        m = TEXT.search(text)
+        start = m.end() if m else text.index("=") + 1
+        return (m[1] if m else None), json.loads(text[start:].rstrip().rstrip(";"))
+
+    for text, src in (build_site.chapter_shared(data["book"], data["chapter"]),
+                      build_site.reader_shared(data["lang"])):
+        data.update(shared(text, src)[1])
     for r in data["records"]:
-        r["decisions"] = [d for d in r["decisions"] if d["language"] in (None, data["lang"])]
+        r["renderings"], r["links"] = {}, {}
+    # As reader.js does: each loaded language's renderings and word links,
+    # and the page language's rendering decisions after the meaning ones.
+    for code, src in data["texts"].items():
+        if src.split("?")[0] not in loaded:
+            continue
+        code, text = shared(build_site.chapter_language_data(data["book"], data["chapter"], code)[0], src)
+        for r in data["records"]:
+            if r["id"] in text["renderings"]:
+                r["renderings"][code] = text["renderings"][r["id"]]
+            if r["id"] in text["links"]:
+                r["links"][code] = text["links"][r["id"]]
+            if code == data["lang"]:
+                r["decisions"] = r["decisions"] + text["decisions"].get(r["id"], [])
     return data

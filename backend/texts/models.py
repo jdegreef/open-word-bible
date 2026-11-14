@@ -23,6 +23,8 @@ class Edition(models.Model):
     attribution = models.TextField(blank=True)
     imported_at = models.DateTimeField(auto_now=True)
     verse_count = models.PositiveIntegerField(default=0, help_text="Verses loaded, kept by import_texts")
+    loader_version = models.PositiveIntegerField(
+        default=1, help_text="import_texts.LOADER_VERSION when it was loaded; a newer one reloads it")
 
     class Meta:
         ordering = ["kind", "language", "code"]
