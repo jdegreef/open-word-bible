@@ -185,6 +185,7 @@ def located(place):
     if not point:
         return None
     lon, lat, score = point
+    score = min(score, 1000)   # OpenBible's time_total can pass 1000 (Goshen: 1020)
     types = set(place.get("types", []))
     return {"at": [round(lon, 3), round(lat, 3)], "sure": score >= SURE,
             "area": bool(types & AREAS) and "settlement" not in types, "confidence": score}

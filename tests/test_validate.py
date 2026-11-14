@@ -386,7 +386,9 @@ class ValidateTest(unittest.TestCase):
         record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
         record["renderings"]["id"] = copy.deepcopy(record["renderings"]["en"])
         decision = copy.deepcopy(next(d for d in record["decisions"] if d["layer"] == "rendering"))
-        decision.update({"id": "r-id-1", "language": "id"})
+        taken = {d["id"] for d in record["decisions"]}
+        free = next(f"r-id-{n}" for n in range(1, 1000) if f"r-id-{n}" not in taken)
+        decision.update({"id": free, "language": "id"})
         record["decisions"].append(decision)
         self.assertEqual(validate.validate_record(record), [])
         self.assertEqual(record["id"], "JHN.1.3.s1")

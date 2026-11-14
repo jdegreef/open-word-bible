@@ -68,6 +68,7 @@ DOCUMENTED = {
     ("am", "gender"): "docs/amharic-style.md: Amharic nouns for people are often already inclusive",
     ("ja", "gender"): "docs/japanese-style.md: Japanese words for people are already inclusive",
     ("hi", "gender"): "docs/hindi-style.md section 7: Hindi nouns for people are often already inclusive",
+    ("id", "gender"): "docs/indonesian-style.md section 8: Indonesian words for people are already inclusive",
 }
 
 
