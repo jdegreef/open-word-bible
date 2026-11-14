@@ -64,6 +64,26 @@
           "L": "ለሁሉም ነገር የተወሰነ ጊዜ [አለው]፤ \\q ከሰማያትም በታች ላለ ጉዳይ ሁሉ ጊዜ [አለው]፦",
           "B": "ለሁሉም ነገር የተወሰነ ጊዜ አለ፤ \\q ከሰማይ በታች ለሚደረግ ጉዳይ ሁሉ ጊዜ አለ፦",
           "R": "ሁሉም ነገር የራሱ ጊዜ አለው። \\q በዚህ ዓለም ለሚደረግ ተግባር ሁሉ ጊዜ አለ፦"
+        },
+        "hi": {
+          "L": "हर चीज़ के लिए एक ठहराया हुआ समय [है], \\q और आकाश के नीचे हर काम के लिए एक समय:",
+          "B": "हर चीज़ के लिए एक तय समय है, \\q आकाश के नीचे हर काम के लिए एक समय:",
+          "R": "हर चीज़ का अपना समय होता है। \\q आकाश के नीचे हर काम के लिए एक समय है:"
+        },
+        "ru": {
+          "L": "Для всего [есть] назначенный срок, \\q и время для всякого дела под небесами:",
+          "B": "Всему есть установленный срок, \\q время для всякого дела под небесами:",
+          "R": "Всё происходит в своё время. \\q Есть время для каждого дела под небом:"
+        },
+        "ja": {
+          "L": "すべてのものに定まった時があり、 \\q 天の下のあらゆる事柄に時がある。",
+          "B": "何にでも定められた時がある。 \\q 天の下のどんな営みにも、それにふさわしい時がある。",
+          "R": "どんなことにも、それぞれの時がある。 \\q この世でするすべてのことに、時がある。"
+        },
+        "uk": {
+          "L": "Для всього [є] призначена пора, \\q і час для кожної справи під небесами:",
+          "B": "Усьому є визначена пора, \\q час для кожної справи під небесами:",
+          "R": "Усе має свій час. \\q Є час для кожної справи в цьому світі:"
         }
       },
       "decisions": [
@@ -356,6 +376,117 @@
           "reason": "zeman is a set time and ʿet the right moment; \"የተወሰነ ጊዜ\" and \"ጊዜ\" keep the two apart, and \"ጊዜ\" alone then carries the whole poem. The familiar wording of the opening line is avoided.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030010011",
+            "o210030010012",
+            "o210030010021",
+            "o210030010031",
+            "o210030010032"
+          ],
+          "choice": "the pairs of verses 2-8: \"... के लिए एक समय और ... के लिए एक समय\" (Literal); \"एक समय ... का, एक समय ... का\" (Balanced); \"एक समय है ... का और एक समय है ... का\" (Readable)",
+          "alternatives": [
+            "\"... का समय, और ... का भी समय\""
+          ],
+          "reason": "The poem of times (m1) is drafted from the Hebrew and its gloss, with one pattern per level, so that it does not follow the wording of older Hindi Bibles. Literal renders each Hebrew \"to\" with a verb as \"... के लिए\" and keeps the Hebrew \"and\" between the halves of a pair; Balanced sets the halves side by side without \"and\", as the English Balanced does; Readable says each half as a short plain statement with \"है\". The list hangs on this verse, which ends with a colon at every level, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030010021"
+          ],
+          "choice": "\"ठहराया हुआ समय\" (L); \"तय समय\" (B)",
+          "alternatives": [
+            "\"अवसर\""
+          ],
+          "reason": "The first word is a fixed or set time (m2); Literal and Balanced say so. \"Under the heavens\" is \"आकाश के नीचे\" at every level (see 1:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030010021",
+            "o210030010032"
+          ],
+          "choice": "a colon at the end of the verse, each pair of times in lines",
+          "alternatives": [],
+          "reason": "The list of times that follows hangs on this line, so each level closes it with a colon and sets the pairs of verses 2-8 in lines, as the English does (m1). The poem is drafted from the Hebrew, not from the familiar Synodal list: Literal pairs imperfective infinitives with и, Balanced sets perfective infinitives side by side without и, Readable uses everyday words and nouns where they read simply.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030010021",
+            "o210030010032"
+          ],
+          "choice": "The poem of times (3:2-8): \"Xするのに時があり、Yするのに時がある、\" (L), \"Xする時もあれば、Yする時もある。\" (B), \"Xする時があり、Yする時がある。\" (R), one pair to a \\q line as in the English",
+          "alternatives": [
+            "生まれる時、死ぬ時 (bare noun list)",
+            "Xに時があり"
+          ],
+          "reason": "Literal keeps the Hebrew \"a time to (do)\" with のに; Balanced pairs each line with もあれば…もある, a natural way to set two opposites side by side; Readable keeps the plainest form. The well-known Japanese versions of this poem are avoided, as the brief asks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030010021",
+            "o210030010032"
+          ],
+          "choice": "\"пора\" for the appointed time and \"час\" for each time in the poem (3:1-8), with \"час\" + infinitive at Balanced and \"час для\" + noun at Literal and Readable",
+          "alternatives": [
+            "\"час\" for both words",
+            "\"година\""
+          ],
+          "reason": "Two Hebrew words stand in the first verse; \"пора\" and \"час\" keep them apart. Literal follows the Hebrew infinitives with verbal nouns where the English uses \"-ing\"; Balanced uses the short infinitive line, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -428,6 +559,26 @@
           "L": "የመውለድ ጊዜ፣ የመሞትም ጊዜ፤ \\q የመትከል ጊዜ፣ የተተከለውንም የመንቀል ጊዜ፤",
           "B": "የመውለድ ጊዜ፣ የመሞት ጊዜ፤ \\q የመትከል ጊዜ፣ የተተከለውን የመንቀል ጊዜ፤",
           "R": "የልደት ጊዜና የሞት ጊዜ፤ \\q የመትከል ጊዜና ተክልን የመንቀል ጊዜ፤"
+        },
+        "hi": {
+          "L": "जन्म देने के लिए एक समय और मरने के लिए एक समय, \\q रोपने के लिए एक समय और रोपे हुए को उखाड़ने के लिए एक समय;",
+          "B": "एक समय जन्म देने का, एक समय मरने का, \\q एक समय पौधे लगाने का, एक समय लगाए हुए को जड़ से उखाड़ने का,",
+          "R": "एक समय है जन्म का और एक समय है मौत का, \\q एक समय है पौधे लगाने का और एक समय है पौधे उखाड़ने का,"
+        },
+        "ru": {
+          "L": "время рожать и время умирать, \\q время сажать и время выкорчёвывать посаженное;",
+          "B": "время родить, время умереть, \\q время посадить, время вырвать посаженное,",
+          "R": "время для рождения и время для смерти, \\q время сажать растения и время их выдёргивать,"
+        },
+        "ja": {
+          "L": "産むのに時があり、死ぬのに時がある、 \\q 植えるのに時があり、植えたものを抜くのに時がある、",
+          "B": "産む時もあれば、死ぬ時もある。 \\q 植える時もあれば、植えたものを抜く時もある。",
+          "R": "生まれる時があり、死ぬ時がある。 \\q 植える時があり、植えた物を引き抜く時がある。"
+        },
+        "uk": {
+          "L": "час для народження і час для вмирання, \\q час для насаджування і час для виривання насадженого;",
+          "B": "час народжувати і час помирати, \\q час садити і час виривати посаджене,",
+          "R": "час для народження і час для смерті, \\q час для садіння і час для виривання рослин,"
         }
       },
       "decisions": [
@@ -599,6 +750,67 @@
           "reason": "The Hebrew verb is active, to bear a child, as the English Literal and Balanced have it; Readable says \"የልደት ጊዜ\" (a time for birth), as the English Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030020021",
+            "o210030020022"
+          ],
+          "choice": "\"जन्म\", \"मौत\"",
+          "alternatives": [
+            "\"जन्म देने\", \"मरने\""
+          ],
+          "reason": "As the English Readable, Readable uses nouns for the first pair, which reads simply; it says the same (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030020011",
+            "o210030020032",
+            "o210030020051",
+            "o210030020072"
+          ],
+          "choice": "время родить, время умереть",
+          "alternatives": [
+            "время рожать и время умирать"
+          ],
+          "reason": "Through verses 2-8 Balanced sets the two halves of each pair side by side without и, as the English Balanced does, and uses perfective infinitives, each time a single act.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030020022"
+          ],
+          "choice": "рожать",
+          "alternatives": [
+            "рождаться"
+          ],
+          "reason": "The Hebrew verb is active, to bear a child (m1); Literal keeps it, where a familiar rendering says \"to be born\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -670,6 +882,26 @@
           "L": "የመግደል ጊዜ፣ የመፈወስም ጊዜ፤ \\q የማፍረስ ጊዜ፣ የመሥራትም ጊዜ፤",
           "B": "የመግደል ጊዜ፣ የመፈወስ ጊዜ፤ \\q የማፍረስ ጊዜ፣ የመገንባት ጊዜ፤",
           "R": "የመግደል ጊዜና ከሕመም የማዳን ጊዜ፤ \\q የማፍረስ ጊዜና የመገንባት ጊዜ፤"
+        },
+        "hi": {
+          "L": "घात करने के लिए एक समय और चंगा करने के लिए एक समय, \\q ढाने के लिए एक समय और बनाने के लिए एक समय;",
+          "B": "एक समय मार डालने का, एक समय चंगा करने का, \\q एक समय गिराने का, एक समय खड़ा करने का,",
+          "R": "एक समय है मारने का और एक समय है ठीक करने का, \\q एक समय है गिराने का और एक समय है बनाने का,"
+        },
+        "ru": {
+          "L": "время убивать и время исцелять, \\q время ломать и время строить;",
+          "B": "время убить, время вылечить, \\q время снести, время отстроить,",
+          "R": "время убивать и время лечить, \\q время сносить дома и время строить их,"
+        },
+        "ja": {
+          "L": "殺すのに時があり、癒やすのに時がある、 \\q 打ち壊すのに時があり、建てるのに時がある、",
+          "B": "殺す時もあれば、癒やす時もある。 \\q 壊す時もあれば、建てる時もある。",
+          "R": "殺す時があり、病気を治す時がある。 \\q 建物を壊す時があり、建てる時がある。"
+        },
+        "uk": {
+          "L": "час для вбивання і час для лікування, \\q час для руйнування і час для будування;",
+          "B": "час убивати і час лікувати, \\q час руйнувати і час будувати,",
+          "R": "час для вбивства і час для зцілення, \\q час для руйнування і час для будівництва,"
         }
       },
       "decisions": [
@@ -700,6 +932,23 @@
           "choice": "kill: put to death, in war or by sentence",
           "alternatives": [],
           "reason": "The verb (harag) is a general word for killing. The poem names it as one of the times of human life, without saying when it is right.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030030062"
+          ],
+          "choice": "дома",
+          "alternatives": [],
+          "reason": "Readable names what is pulled down and built, walls and houses (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -771,6 +1020,26 @@
           "L": "የማልቀስ ጊዜ፣ የመሳቅም ጊዜ፤ \\q ሙሾ የማውረድ ጊዜ፣ የመጨፈርም ጊዜ፤",
           "B": "የማልቀስ ጊዜ፣ የመሳቅ ጊዜ፤ \\q የሙሾ ጊዜ፣ የጭፈራ ጊዜ፤",
           "R": "የማልቀስ ጊዜና የመሳቅ ጊዜ፤ \\q የሐዘን ጊዜና የጭፈራ ጊዜ፤"
+        },
+        "hi": {
+          "L": "रोने के लिए एक समय और हँसने के लिए एक समय, \\q विलाप करने के लिए एक समय और नाचने के लिए एक समय;",
+          "B": "एक समय आँसू बहाने का, एक समय हँसने का, \\q एक समय छाती पीटकर शोक करने का, एक समय नाचने का,",
+          "R": "एक समय है रोने का और एक समय है हँसने का, \\q एक समय है शोक मनाने का और एक समय है नाचने का,"
+        },
+        "ru": {
+          "L": "время плакать и время смеяться, \\q время причитать и время танцевать;",
+          "B": "время заплакать, время засмеяться, \\q время оплакать умерших, время пуститься в пляс,",
+          "R": "время плакать и время смеяться, \\q время горевать и время танцевать,"
+        },
+        "ja": {
+          "L": "泣くのに時があり、笑うのに時がある、 \\q 嘆くのに時があり、踊るのに時がある、",
+          "B": "泣く時もあれば、笑う時もある。 \\q 嘆き悲しむ時もあれば、踊る時もある。",
+          "R": "泣く時があり、笑う時がある。 \\q 悲しむ時があり、踊る時がある。"
+        },
+        "uk": {
+          "L": "час для плачу і час для сміху, \\q час для голосіння і час для танцю;",
+          "B": "час плакати і час сміятися, \\q час голосити і час танцювати,",
+          "R": "час для сліз і час для сміху, \\q час для жалоби і час для танців,"
         }
       },
       "decisions": [
@@ -821,6 +1090,45 @@
             "\"የማዘን ጊዜ\""
           ],
           "reason": "The Hebrew verb is mourning aloud for the dead (the meaning decision); Amharic \"ሙሾ\" is exactly the lament sung over the dead. Readable says \"የሐዘን ጊዜ\" (grieving).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030040061"
+          ],
+          "choice": "\"छाती पीटकर शोक करने\"",
+          "alternatives": [
+            "\"विलाप करने\""
+          ],
+          "reason": "The word is loud mourning for the dead (m1); Balanced uses the Hindi picture of beating the breast in grief.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030040061"
+          ],
+          "choice": "причитать (L); оплакать умерших (B)",
+          "alternatives": [
+            "горевать"
+          ],
+          "reason": "The Hebrew word is mourning aloud for the dead (m1); Literal uses the word for the wailing itself, Balanced says whom it is for.",
           "uncertain": false,
           "footnote": false
         }
@@ -897,6 +1205,26 @@
           "L": "ድንጋዮችን የመጣል ጊዜ፣ ድንጋዮችንም የመሰብሰብ ጊዜ፤ \\q የማቀፍ ጊዜ፣ ከማቀፍም የመራቅ ጊዜ፤",
           "B": "ድንጋዮችን የመበተን ጊዜ፣ ድንጋዮችን የመሰብሰብ ጊዜ፤ \\q የማቀፍ ጊዜ፣ ከማቀፍ የመቆጠብ ጊዜ፤",
           "R": "ድንጋዮችን የመጣል ጊዜና መልሶ የመሰብሰብ ጊዜ፤ \\q የመተቃቀፍ ጊዜና ያለመተቃቀፍ ጊዜ፤"
+        },
+        "hi": {
+          "L": "पत्थर फेंकने के लिए एक समय और पत्थर बटोरने के लिए एक समय, \\q गले लगाने के लिए एक समय और गले लगाने से दूर रहने के लिए एक समय;",
+          "B": "एक समय पत्थर बिखेरने का, एक समय पत्थर बटोरने का, \\q एक समय गले लगाने का, एक समय गले लगाने से रुकने का,",
+          "R": "एक समय है पत्थर फेंक देने का और एक समय है उन्हें इकट्ठा करने का, \\q एक समय है किसी को गले से लगाने का और एक समय है गले न लगाने का,"
+        },
+        "ru": {
+          "L": "время бросать камни и время собирать камни, \\q время обнимать и время держаться подальше от объятий;",
+          "B": "время разбросать камни, время собрать камни, \\q время обнять, время удержаться от объятий,",
+          "R": "время выбрасывать камни и время собирать их, \\q время обниматься и время не обниматься,"
+        },
+        "ja": {
+          "L": "石を投げ捨てるのに時があり、石を集めるのに時がある、 \\q 抱くのに時があり、抱くことから遠ざかるのに時がある、",
+          "B": "石を散らす時もあれば、石を集める時もある。 \\q 抱き合う時もあれば、抱くのを控える時もある。",
+          "R": "石を投げ捨てる時があり、石を集める時がある。 \\q 抱きしめる時があり、抱きしめない時がある。"
+        },
+        "uk": {
+          "L": "час для розкидання каміння і час для збирання каміння, \\q час для обіймання і час для ухиляння від обіймів;",
+          "B": "час розкидати каміння і час збирати каміння, \\q час обіймати і час утримуватися від обіймів,",
+          "R": "час для розкидання каміння і час для його збирання, \\q час для обіймів і час без обіймів,"
         }
       },
       "decisions": [
@@ -961,6 +1289,71 @@
           "choice": "hugging ... not hugging",
           "alternatives": [
             "embracing ... refraining from embracing"
+          ],
+          "reason": "Readable uses everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030050021",
+            "o210030050022",
+            "o210030050031",
+            "o210030050051",
+            "o210030050061"
+          ],
+          "choice": "the stones are thrown and gathered, with no explanation added",
+          "alternatives": [
+            "\"खेत से पत्थर हटाना\""
+          ],
+          "reason": "What the throwing and gathering of stones means is uncertain (m1), so the Hindi, like the English, says only what the Hebrew says at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030050022",
+            "o210030050031",
+            "o210030050061"
+          ],
+          "choice": "бросать камни ... собирать камни",
+          "alternatives": [],
+          "reason": "What throwing away and gathering stones meant is uncertain (m1): clearing a field, building, or a figure for something else. Every level keeps the plain words and adds no explanation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030050082"
+          ],
+          "choice": "обниматься ... не обниматься",
+          "alternatives": [
+            "держаться подальше от объятий"
           ],
           "reason": "Readable uses everyday words.",
           "uncertain": false,
@@ -1036,6 +1429,26 @@
           "L": "የመፈለግ ጊዜ፣ የማጣትም ጊዜ፤ \\q የመጠበቅ ጊዜ፣ የመጣልም ጊዜ፤",
           "B": "የመፈለግ ጊዜ፣ እንደ ጠፋ የመተው ጊዜ፤ \\q የመጠበቅ ጊዜ፣ የመጣል ጊዜ፤",
           "R": "ነገሮችን የመፈለግ ጊዜና እንደ ጠፉ ቆጥሮ የመተው ጊዜ፤ \\q የማስቀመጥ ጊዜና የመጣል ጊዜ፤"
+        },
+        "hi": {
+          "L": "ढूँढ़ने के लिए एक समय और खोने के लिए एक समय, \\q रखने के लिए एक समय और फेंकने के लिए एक समय;",
+          "B": "एक समय खोजने का, एक समय खोया हुआ मान लेने का, \\q एक समय सँभालकर रखने का, एक समय फेंक देने का,",
+          "R": "एक समय है चीज़ें ढूँढ़ने का और एक समय है उन्हें खोया हुआ मानकर छोड़ देने का, \\q एक समय है सँभालकर रखने का और एक समय है फेंक देने का,"
+        },
+        "ru": {
+          "L": "время искать и время терять, \\q время хранить и время выбрасывать;",
+          "B": "время поискать, время смириться с потерей, \\q время сберечь, время выбросить,",
+          "R": "время искать вещи и время смириться, что они потеряны, \\q время хранить и время выбрасывать,"
+        },
+        "ja": {
+          "L": "捜すのに時があり、失うのに時がある、 \\q 保つのに時があり、投げ捨てるのに時がある、",
+          "B": "捜す時もあれば、あきらめる時もある。 \\q 取っておく時もあれば、捨てる時もある。",
+          "R": "物を探す時があり、なくなったとあきらめる時がある。 \\q 取っておく時があり、捨てる時がある。"
+        },
+        "uk": {
+          "L": "час для шукання і час для втрачання, \\q час для зберігання і час для викидання;",
+          "B": "час шукати і час змиритися з утратою, \\q час зберігати і час викидати,",
+          "R": "час для пошуків і час, щоб змиритися з утратою, \\q час для зберігання і час для викидання,"
         }
       },
       "decisions": [
@@ -1052,6 +1465,26 @@
             "destroy"
           ],
           "reason": "The verb ('abad) in this form can mean to destroy, but beside \"seek\" it means to give something up for lost, to stop looking for it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030060042"
+          ],
+          "choice": "смириться с потерей (B); смириться, что они потеряны (R)",
+          "alternatives": [
+            "терять"
+          ],
+          "reason": "The verb here is to give something up as lost (m1); Balanced and Readable say so.",
           "uncertain": false,
           "footnote": false
         }
@@ -1125,6 +1558,26 @@
           "L": "የመቅደድ ጊዜ፣ የመስፋትም ጊዜ፤ \\q ዝም የማለት ጊዜ፣ የመናገርም ጊዜ፤",
           "B": "የመቅደድ ጊዜ፣ የመጣፍ ጊዜ፤ \\q ዝም የማለት ጊዜ፣ የመናገር ጊዜ፤",
           "R": "ልብስን የመቅደድ ጊዜና መልሶ የመስፋት ጊዜ፤ \\q ዝም የማለት ጊዜና የመናገር ጊዜ፤"
+        },
+        "hi": {
+          "L": "फाड़ने के लिए एक समय और सीने के लिए एक समय, \\q चुप रहने के लिए एक समय और बोलने के लिए एक समय;",
+          "B": "एक समय फाड़ने का, एक समय टाँके लगाकर जोड़ने का, \\q एक समय मौन रहने का, एक समय बोलने का,",
+          "R": "एक समय है कपड़ा फाड़ने का और एक समय है उसे सिलने का, \\q एक समय है चुप रहने का और एक समय है बोलने का,"
+        },
+        "ru": {
+          "L": "время рвать и время шить, \\q время молчать и время говорить;",
+          "B": "время разорвать, время зашить, \\q время промолчать, время заговорить,",
+          "R": "время рвать одежду и время зашивать её, \\q время помалкивать и время говорить,"
+        },
+        "ja": {
+          "L": "裂くのに時があり、縫うのに時がある、 \\q 黙るのに時があり、語るのに時がある、",
+          "B": "裂く時もあれば、縫い合わせる時もある。 \\q 黙っている時もあれば、語る時もある。",
+          "R": "布を裂く時があり、それを縫う時がある。 \\q 黙っている時があり、話す時がある。"
+        },
+        "uk": {
+          "L": "час для роздирання і час для зшивання, \\q час для мовчання і час для говоріння;",
+          "B": "час роздирати і час зшивати, \\q час мовчати і час говорити,",
+          "R": "час, щоб роздирати одяг, і час, щоб його зшивати, \\q час, щоб мовчати, і час, щоб говорити,"
         }
       },
       "decisions": [
@@ -1159,6 +1612,23 @@
           "choice": "silent and speak: as in Proverbs",
           "alternatives": [],
           "reason": "Silence fits grief (Job 2:13) and is often wise (Proverbs 17:28); there is also a word in its time (Proverbs 15:23).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030070022"
+          ],
+          "choice": "одежду",
+          "alternatives": [],
+          "reason": "Readable names the cloth, since the tearing is perhaps of clothes in grief (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1230,6 +1700,26 @@
           "L": "የመውደድ ጊዜ፣ የመጥላትም ጊዜ፤ \\q የጦርነት ጊዜ፣ የሰላምም ጊዜ።",
           "B": "የመውደድ ጊዜ፣ የመጥላት ጊዜ፤ \\q የጦርነት ጊዜ፣ የሰላም ጊዜ።",
           "R": "የመውደድ ጊዜና የመጥላት ጊዜ፤ \\q የጦርነት ጊዜና የሰላም ጊዜ።"
+        },
+        "hi": {
+          "L": "प्रेम करने के लिए एक समय और बैर करने के लिए एक समय, \\q युद्ध का एक समय और शान्ति का एक समय।",
+          "B": "एक समय प्रेम करने का, एक समय घृणा करने का, \\q एक समय युद्ध के लिए, एक समय शान्ति के लिए।",
+          "R": "एक समय है प्यार करने का और एक समय है नफ़रत करने का, \\q एक समय है युद्ध का और एक समय है शान्ति का।"
+        },
+        "ru": {
+          "L": "время любить и время ненавидеть, \\q время войны и время мира.",
+          "B": "время полюбить, время возненавидеть, \\q время для войны, время для мира.",
+          "R": "время для любви и время для ненависти, \\q время для войны и время для мира."
+        },
+        "ja": {
+          "L": "愛するのに時があり、憎むのに時がある、 \\q 戦いの時があり、平和の時がある。",
+          "B": "愛する時もあれば、憎む時もある。 \\q 戦いの時もあれば、平和の時もある。",
+          "R": "愛する時があり、憎む時がある。 \\q 戦争の時があり、平和の時がある。"
+        },
+        "uk": {
+          "L": "час для любові і час для ненависті, \\q час війни і час миру.",
+          "B": "час любити і час ненавидіти, \\q час війни і час миру.",
+          "R": "час для любові і час для ненависті, \\q час для війни і час для миру."
         }
       },
       "decisions": [
@@ -1245,6 +1735,47 @@
           "choice": "war and peace: the list ends with two nouns",
           "alternatives": [],
           "reason": "The first thirteen pairs use verbs; the last uses two nouns, \"war\" and \"peace\", which close the poem and sum up the life of nations. Love and hate, war and peace, are set in reverse order, so that the poem ends on peace.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030080061",
+            "o210030080081"
+          ],
+          "choice": "\"युद्ध का एक समय\" (L); \"एक समय युद्ध के लिए\" (B)",
+          "alternatives": [
+            "\"लड़ने के लिए एक समय\""
+          ],
+          "reason": "The list ends with two nouns instead of verbs (m1); Literal and Balanced change their pattern here to show it, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o210030080061",
+            "o210030080081"
+          ],
+          "choice": "время войны ... время мира (L); время для войны, время для мира (B, R)",
+          "alternatives": [],
+          "reason": "The list ends with two nouns instead of verbs (m1); every level follows.",
           "uncertain": false,
           "footnote": false
         }
@@ -1312,6 +1843,26 @@
           "L": "ሠራተኛው ከሚደክምበት ነገር ምን ትርፍ [አለው]?",
           "B": "ሠራተኞች ከድካማቸው ሁሉ ምን ያተርፋሉ?",
           "R": "ታዲያ የሚሠሩ ሰዎች ከድካማቸው ሁሉ ምን ጥቅም ያገኛሉ?"
+        },
+        "hi": {
+          "L": "काम करनेवाले को उससे क्या लाभ [है] जिसमें वह परिश्रम करता है?",
+          "B": "काम करनेवालों को अपनी सारी कड़ी मेहनत से क्या लाभ मिलता है?",
+          "R": "तो काम करनेवाले लोगों की सारी मेहनत से उनका क्या भला होता है?"
+        },
+        "ru": {
+          "L": "Какая выгода работающему от того, над чем он трудится?",
+          "B": "Какую выгоду получают работники от всего своего тяжкого труда?",
+          "R": "Так какой толк людям, которые работают, от всей их тяжёлой работы?"
+        },
+        "ja": {
+          "L": "働く者は、その労するところから、何の益があるのか？",
+          "B": "働く者は、そのすべての労苦から、何の益を得るのか？",
+          "R": "それなら、働く人にとって、その苦労は何の役に立つのだろうか？"
+        },
+        "uk": {
+          "L": "Який здобуток працівникові з того, чим він трудиться?",
+          "B": "Що здобувають працівники з усієї своєї тяжкої праці?",
+          "R": "То яка ж користь людям, які працюють, з усієї їхньої тяжкої праці?"
         }
       },
       "decisions": [
@@ -1430,6 +1981,64 @@
           "reason": "Amharic \"ሰው\", \"ሰዎች\" and the generic masculine verb already include men and women, so there is only one wording and no span. This holds through the chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030090061"
+          ],
+          "choice": "no gender span on \"वह\"",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "Hindi \"वह\" and the generic verb are ordinary for anyone, so the English span has nothing to change (see 1:3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030090021",
+            "o210030090061"
+          ],
+          "choice": "выгода (L, B), толк (R); труд, тяжкий труд, тяжёлая работа",
+          "alternatives": [],
+          "reason": "The book's settled wording for yitron and 'amal (see 1:3); the question of 1:3 again (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030090032"
+          ],
+          "choice": "работающий ... он, no gender span",
+          "alternatives": [
+            "работающий или работающая"
+          ],
+          "reason": "Russian работающий and человек stand for anyone, and their pronouns follow the noun's grammar, so where the English Literal has gender spans for a single person Russian has one wording. This holds for the whole chapter; children of humankind keeps its span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1502,6 +2111,26 @@
           "L": "እግዚአብሔር የሰው ልጆች ይጠመዱበት ዘንድ የሰጣቸውን ሥራ አየሁ።",
           "B": "እግዚአብሔር የሰው ልጆችን ሊያስጠምድበት የሰጣቸውን ሥራ አይቻለሁ።",
           "R": "እግዚአብሔር ሰዎችን እንዲጠመዱበት የሰጣቸውን ሥራ አይቻለሁ።"
+        },
+        "hi": {
+          "L": "मैंने वह काम देखा है जो परमेश्वर ने {{gender:मनुष्य की सन्तान|मनुष्य के पुत्रों}} को दिया है कि वे उसमें लगे रहें।",
+          "B": "मैंने वह काम देखा है जो परमेश्वर ने मनुष्यों को दिया है कि वे उसमें उलझे रहें।",
+          "R": "मैंने वह काम देखा है जो परमेश्वर ने लोगों को दिया है ताकि वे उसमें लगे रहें।"
+        },
+        "ru": {
+          "L": "Я видел занятие, которое Бог дал {{gender:детям человеческим|сынам человеческим}}, чтобы они были им заняты.",
+          "B": "Я видел занятие, которое Бог дал людям, чтобы они были заняты.",
+          "R": "Я видел работу, которую Бог дал людям, чтобы занять их."
+        },
+        "ja": {
+          "L": "わたしは、神が人の子らに与えて、それに携わらせる務めを見た。",
+          "B": "わたしは、神が人間に与えて忙しく携わらせる務めを見た。",
+          "R": "わたしは、神が人々に与えて、忙しく働かせている仕事を見た。"
+        },
+        "uk": {
+          "L": "Я бачив заняття, яке Бог дав {{gender:дітям людським|синам людським}}, щоб вони ним займалися.",
+          "B": "Я бачив заняття, яке Бог дав людям, щоб вони були зайняті.",
+          "R": "Я бачив працю, яку Бог дав людям, щоб вони були зайняті."
         }
       },
       "decisions": [
@@ -1544,6 +2173,25 @@
           ],
           "choice": "{{gender:children of humankind|sons of men}}",
           "alternatives": [],
+          "reason": "The phrase means human beings, men and women; the gender setting gives the inclusive form by default (see 1:13).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030100072"
+          ],
+          "choice": "{{gender:детям человеческим|сынам человеческим}}",
+          "alternatives": [
+            "людям"
+          ],
           "reason": "The phrase means human beings, men and women; the gender setting gives the inclusive form by default (see 1:13).",
           "uncertain": false,
           "footnote": false
@@ -1639,6 +2287,26 @@
           "L": "ሁሉን በጊዜው ውብ አድርጎ ሠራው፤ ደግሞም ዘላለምን በልባቸው አኖረ፤ ሆኖም ሰው እግዚአብሔር ከመጀመሪያ እስከ መጨረሻ የሠራውን ሥራ ሊደርስበት አይችልም።",
           "B": "እግዚአብሔር ሁሉን በየጊዜው ተስማሚ አድርጎ ሠራው። ደግሞም የዘላለምን ስሜት በልባቸው አኖረ፤ ነገር ግን ሰዎች እግዚአብሔር ከመጀመሪያ እስከ መጨረሻ የሠራውን ሥራ አሁንም ሊደርሱበት አይችሉም።",
           "R": "እግዚአብሔር እያንዳንዱን ነገር ለራሱ ጊዜ ትክክል አድርጎ ሠራው። ዘላለማዊ የሆነውን የመናፈቅ ስሜትም በሰዎች ውስጥ አኖረ። ነገር ግን እግዚአብሔር ከመጀመሪያ እስከ መጨረሻ ያደረገውን ሁሉ አሁንም ሊረዱ አይችሉም።"
+        },
+        "hi": {
+          "L": "उन्होंने सब कुछ उसके समय में सुंदर बनाया है; उन्होंने उनके मन में अनन्तकाल भी रखा है, फिर भी ऐसे कि मनुष्य उस काम को, जो परमेश्वर ने आदि से अंत तक किया है, खोज नहीं सकता।",
+          "B": "परमेश्वर ने हर चीज़ को उसके अपने समय में उचित बनाया है। उन्होंने उनके मन में अनन्तकाल का बोध भी रखा है, फिर भी लोग उस काम को नहीं खोज पाते जो परमेश्वर ने आरंभ से अंत तक किया है।",
+          "R": "परमेश्वर ने हर चीज़ को उसके अपने समय के लिए ठीक बनाया है। उन्होंने लोगों के मन में उसकी लालसा भी रखी है जो सदा रहता है। फिर भी वे वह सब नहीं समझ पाते जो परमेश्वर ने आरंभ से अंत तक किया है।"
+        },
+        "ru": {
+          "L": "Всё {{deity_pronoun:он|Он}} сотворил прекрасным в его время; и вечность {{deity_pronoun:он|Он}} поместил в их сердце, однако так, что не найдёт человек дела, которое сделал Бог, от начала и до конца.",
+          "B": "Бог сделал всё уместным в своё время. Он также вложил в их сердца чувство вечности, но люди всё равно не могут постичь дела, которое Бог совершил от начала до конца.",
+          "R": "Бог сделал каждую вещь подходящей для своего времени. Он также вложил в людей тоску по вечному. Но они всё равно не могут понять всего, что сделал Бог, от начала до конца."
+        },
+        "ja": {
+          "L": "その方はすべてを、その時において美しく造られた。また、その方は永遠を彼らの心に置かれた。それでも人は、神が初めから終わりまで行われる業を、見いだすことができない。",
+          "B": "神はすべてを、それぞれの時にふさわしく造られた。また、人の心に永遠を思う思いを置かれた。それでも人は、神が初めから終わりまで行われる業を、見極めることができない。",
+          "R": "神は、すべてのものを、それぞれの時にぴったり合うように造られた。また、人の心に、いつまでも続くものを求める思いを与えられた。それでも人は、神がなさったことのすべてを、初めから終わりまで理解することはできない。"
+        },
+        "uk": {
+          "L": "Усе {{deity_pronoun:він|Він}} зробив гарним у свій час; також вічність {{deity_pronoun:він|Він}} вклав у їхнє серце, але так, що людина не може збагнути діла, яке Бог зробив від початку й до кінця.",
+          "B": "Бог зробив усе доречним у свій час. Він також вклав у їхні серця відчуття вічності, проте люди все одно не можуть збагнути діла, яке Бог зробив від початку до кінця.",
+          "R": "Бог зробив кожну річ доречною для свого часу. Він також вклав у людей тугу за тим, що триває вічно. Але вони все одно не можуть зрозуміти всього, що зробив Бог, від початку до кінця."
         }
       },
       "decisions": [
@@ -1910,6 +2578,157 @@
           "reason": "As the English, for the whole book: the sense is debated (m2), and each level keeps the reading taken. Elsewhere 'olam is \"para sempre\" (1:4; 3:14).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030110082"
+          ],
+          "choice": "'olam: \"अनन्तकाल\" (L); \"अनन्तकाल का बोध\" (B); \"उसकी लालसा ... जो सदा रहता है\" (R)",
+          "alternatives": [
+            "\"संसार\"",
+            "\"अनन्तता\""
+          ],
+          "reason": "Following the English levels' settled wording for 'olam here (m2): Literal keeps the word, Balanced says it is a sense of eternity, Readable a longing for what lasts forever.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030110041"
+          ],
+          "choice": "\"उचित\" (B); \"ठीक\" (R)",
+          "alternatives": [
+            "\"सुंदर\""
+          ],
+          "reason": "As the English, Balanced and Readable give the sense of the word here, fitting, right for its time (m1); Literal keeps \"सुंदर\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030110151",
+            "o210030110152"
+          ],
+          "choice": "no gender span on \"मनुष्य\"; no deity_pronoun span",
+          "alternatives": [
+            "a span"
+          ],
+          "reason": "\"मनुष्य\" already means human beings in general (see 1:3), and Devanagari has no capitals for the deity pronoun setting to change; God is spoken of with the honorific \"उन्होंने\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030110082"
+          ],
+          "choice": "вечность (L); чувство вечности (B); тоска по вечному (R)",
+          "alternatives": [
+            "мир",
+            "век"
+          ],
+          "reason": "The book's settled wording for 'olam here: a sense of time beyond the present, of the whole that people cannot see (m2). Literal keeps the noun, Balanced says it is a sense put in the heart, Readable a longing for what lasts forever. The reading is debated, so the decision is marked uncertain.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030110041"
+          ],
+          "choice": "уместным (B); подходящей (R)",
+          "alternatives": [
+            "прекрасным"
+          ],
+          "reason": "Balanced and Readable give the sense of the word here, fitting, right for its time (m1); Literal keeps прекрасным.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030110082"
+          ],
+          "choice": "ha'olam \"永遠\" (L), \"永遠を思う思い\" (B), \"いつまでも続くものを求める思い\" (R)",
+          "alternatives": [
+            "永遠の思い",
+            "時の流れ",
+            "世"
+          ],
+          "reason": "m2 (uncertain): a sense of time beyond the present, of the whole that people cannot see. Literal keeps the bare noun; Balanced and Readable say what is put in the heart, as the English B and R do. The noun is read by some as \"the world\" or \"darkness\"; that is left to the meaning footnote.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030110082"
+          ],
+          "choice": "\"вічність\" (L), \"відчуття вічності\" (B), \"туга за тим, що триває вічно\" (R)",
+          "alternatives": [
+            "\"світ\" (the world)",
+            "\"віки\""
+          ],
+          "reason": "The terms note's row for 'olam here; the reading is uncertain, as its meaning decision says. Literal has no gender span: \"людина\" is already inclusive.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1984,6 +2803,26 @@
           "L": "ደስ ከመሰኘትና በሕይወቱ መልካም ከማድረግ በቀር ለእነርሱ መልካም ነገር እንደሌለ አውቃለሁ።",
           "B": "በሕይወት እስካሉ ድረስ ደስ ከመሰኘትና መልካም ከማድረግ የሚሻል ነገር እንደሌላቸው አውቃለሁ።",
           "R": "ሰዎች ሊያደርጉት የሚችሉት ከሁሉ የተሻለ ነገር በሕይወት ሳሉ ደስ መሰኘትና መልካም ማድረግ እንደ ሆነ አውቃለሁ።"
+        },
+        "hi": {
+          "L": "मैं जानता हूँ कि उनके लिए इसके सिवा कुछ अच्छा नहीं कि वे आनंद करें और अपने जीवन में भलाई करें।",
+          "B": "मैं जानता हूँ कि उनके लिए इससे अच्छा कुछ नहीं कि वे जीवन भर आनंदित रहें और भलाई करें।",
+          "R": "मैं जानता हूँ कि लोग जो सबसे अच्छा कर सकते हैं, वह यह है कि जब तक जीवित हैं, ख़ुश रहें और भलाई करें।"
+        },
+        "ru": {
+          "L": "Я знаю, что нет у них ничего хорошего, кроме того, чтобы радоваться и творить добро в жизни его.",
+          "B": "Я знаю, что нет для них ничего лучше, чем радоваться и делать добро, пока они живут.",
+          "R": "Я знаю, что лучшее, что люди могут делать, — это радоваться и делать добро, пока они живы."
+        },
+        "ja": {
+          "L": "わたしは知っている。彼らにとって、喜ぶこと、またその生涯のうちに良いことを行うこと以外に、良いことはない。",
+          "B": "わたしは知っている。人にとって、生きている間、喜び、良いことを行うことにまさる良いことはない。",
+          "R": "わたしは知っている。人にできるいちばん良いことは、生きている間、楽しく過ごし、良いことをすることだ。"
+        },
+        "uk": {
+          "L": "Я знаю, що немає нічого доброго для них, хіба тільки радіти й робити добро в житті своєму.",
+          "B": "Я знаю, що немає для них нічого кращого, ніж радіти й робити добро, поки живуть.",
+          "R": "Я знаю, що найкраще, що можуть робити люди, — це бути щасливими й робити добро, поки вони живі."
         }
       },
       "decisions": [
@@ -2056,6 +2895,25 @@
           "choice": "{{gender:their|his}}",
           "alternatives": [],
           "reason": "The pronoun means each person; the gender setting gives inclusive wording by default.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030120112"
+          ],
+          "choice": "в жизни его",
+          "alternatives": [
+            "в жизни своей"
+          ],
+          "reason": "The Hebrew has the singular \"his life\" after \"them\" (m3), each one's own life; Literal keeps the shift.",
           "uncertain": false,
           "footnote": false
         }
@@ -2134,6 +2992,26 @@
           "L": "ደግሞም የሚበላና የሚጠጣ፣ በድካሙም ሁሉ መልካምን የሚያይ ሰው ሁሉ፣ ያ የእግዚአብሔር ስጦታ [ነው]።",
           "B": "ደግሞም ማንም ሰው ሲበላና ሲጠጣ፣ በድካሙም ሁሉ ሲደሰት፣ ይህ የእግዚአብሔር ስጦታ ነው።",
           "R": "ሰዎች ሲበሉና ሲጠጡ፣ በድካማቸውም ሲደሰቱ፣ ይህ ከእግዚአብሔር የተገኘ ስጦታ ነው።"
+        },
+        "hi": {
+          "L": "और यह भी कि हर मनुष्य जो खाता और पीता है और अपने सारे परिश्रम में सुख देखता है, यह परमेश्वर का दान [है]।",
+          "B": "और यह भी कि जब कोई खाता-पीता है और अपनी सारी कड़ी मेहनत में आनंद पाता है, तो यह परमेश्वर का दान है।",
+          "R": "जब लोग खाते-पीते हैं और अपनी मेहनत का आनंद लेते हैं, तो यह परमेश्वर का दिया हुआ उपहार है।"
+        },
+        "ru": {
+          "L": "И также каждый человек, что ест, и пьёт, и видит хорошее во всём своём труде, — дар Бога это.",
+          "B": "И когда кто-то ест, пьёт и находит радость во всём своём тяжком труде, это подарок от Бога.",
+          "R": "Когда люди едят, пьют и радуются своей тяжёлой работе, это подарок от Бога."
+        },
+        "ja": {
+          "L": "また、食べ、飲み、そのすべての労苦のうちに良いものを見る人はみな――それは神の賜物である。",
+          "B": "また、だれでも食べて飲み、そのすべての労苦の中に喜びを見いだすなら、それは神の賜物である。",
+          "R": "人が食べて飲み、自分の苦労を楽しむなら、それは神からの贈り物である。"
+        },
+        "uk": {
+          "L": "І також кожна людина, яка їсть, і пʼє, і бачить добро в усьому своєму труді, — це дар Божий.",
+          "B": "І коли хтось їсть, і пʼє, і радіє всій своїй тяжкій праці, — це Божий дар.",
+          "R": "Коли люди їдять, пʼють і радіють своїй тяжкій праці, це дар від Бога."
         }
       },
       "decisions": [
@@ -2185,6 +3063,26 @@
           "choice": "inclusive wording by default; the traditional \"he\" or \"man\" as the alternative",
           "alternatives": [],
           "reason": "The Hebrew uses a masculine singular for a person who stands for anyone, so the gender setting gives inclusive wording by default and the traditional form as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030130071"
+          ],
+          "choice": "находит радость (B); радуются (R)",
+          "alternatives": [
+            "видит хорошее"
+          ],
+          "reason": "\"Sees good\" means enjoys (m2); Balanced and Readable say so, and Literal keeps the Hebrew picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -2276,6 +3174,26 @@
           "L": "እግዚአብሔር የሚያደርገው ሁሉ ለዘላለም እንደሚኖር አውቃለሁ፤ በእርሱ ላይ የሚጨመር የለም፤ ከእርሱም የሚቀነስ የለም፤ እግዚአብሔርም በፊቱ ይፈሩ ዘንድ [ይህን] አደረገ።",
           "B": "እግዚአብሔር የሚያደርገው ሁሉ ለዘላለም እንደሚጸና አውቃለሁ፤ በእርሱ ላይ ምንም ሊጨመር ከእርሱም ምንም ሊቀነስ አይችልም። እግዚአብሔር ይህን ያደረገው ሰዎች እንዲፈሩት ነው።",
           "R": "እግዚአብሔር የሚያደርገው ሁሉ ለዘላለም እንደሚኖር አውቃለሁ። ማንም በእርሱ ላይ ምንም ሊጨምር ወይም ከእርሱ ምንም ሊቀንስ አይችልም። እግዚአብሔር ይህን የሚያደርገው ሰዎች በፍርሃት እንዲያከብሩት ነው።"
+        },
+        "hi": {
+          "L": "मैं जानता हूँ कि जो कुछ परमेश्वर करते हैं, वह सदा रहेगा; उसमें न कुछ जोड़ना है और न उसमें से कुछ घटाना; और परमेश्वर ने [यह] इसलिए किया है कि वे उनके सामने भय मानें।",
+          "B": "मैं जानता हूँ कि परमेश्वर जो कुछ करते हैं, वह सदा बना रहता है; न उसमें कुछ जोड़ा जा सकता है और न उसमें से कुछ घटाया जा सकता है। परमेश्वर ने यह इसलिए किया है कि लोग उनका भय मानें।",
+          "R": "मैं जानता हूँ कि परमेश्वर जो कुछ करते हैं, वह सदा बना रहेगा। कोई उसमें न कुछ जोड़ सकता है और न उसमें से कुछ निकाल सकता है। परमेश्वर ऐसा इसलिए करते हैं कि लोग उनका आदर और भय मानें।"
+        },
+        "ru": {
+          "L": "Я знаю, что всё, что делает Бог, будет навеки: к нему нельзя ничего добавить, и от него нельзя ничего отнять; и Бог сделал [это], чтобы испытывали страх перед {{deity_pronoun:ним|Ним}}.",
+          "B": "Я знаю: всё, что делает Бог, остаётся навсегда; ничего нельзя ни добавить к этому, ни отнять от этого. Бог сделал так, чтобы люди боялись {{deity_pronoun:его|Его}}.",
+          "R": "Я знаю, что всё, что делает Бог, будет существовать вечно. Никто не может ничего к этому добавить или что-то от этого отнять. Бог делает это, чтобы люди благоговели перед {{deity_pronoun:ним|Ним}}."
+        },
+        "ja": {
+          "L": "わたしは知っている。神が行われることはすべて、とこしえに続く。それに加えるものはなく、それから取り去るものもない。神がそうされたのは、人々がその方の前に恐れるためである。",
+          "B": "わたしは知っている。神がなさることは、すべていつまでも続く。それに何も加えることはできず、何も取り去ることもできない。神がこうなさったのは、人々が神を畏れるためである。",
+          "R": "わたしは知っている。神がなさることはみな、いつまでも続く。だれもそれに何かを加えたり、取り去ったりすることはできない。神がこのようになさるのは、人々が神をおそれ敬うためである。"
+        },
+        "uk": {
+          "L": "Я знаю, що все, що робить Бог, буде навіки; до нього нічого додати, і від нього нічого відняти; і Бог зробив [це], щоб боялися перед {{deity_pronoun:ним|Ним}}.",
+          "B": "Я знаю, що все, що робить Бог, триває вічно: до цього не можна нічого додати і від цього не можна нічого відняти. Бог зробив так, щоб люди боялися {{deity_pronoun:його|Його}}.",
+          "R": "Я знаю, що все, що робить Бог, триватиме вічно. Ніхто не може нічого до цього додати чи від цього відняти. Бог робить так, щоб люди шанували {{deity_pronoun:його|Його}} з благоговінням."
         }
       },
       "decisions": [
@@ -2530,6 +3448,120 @@
           "reason": "For the whole book (5:6; 7:18; 8:12-13; 12:13), as Proverbs has it in Portuguese: \"temer\" is the reverent awe of m1, not fright (\"ter medo\"); Readable says what it is, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030140181",
+            "o210030140182",
+            "o210030140191",
+            "o210030140192",
+            "o210030140193",
+            "o210030140194"
+          ],
+          "choice": "\"भय मानें\" (L, B); \"आदर और भय मानें\" (R)",
+          "alternatives": [
+            "\"डरें\""
+          ],
+          "reason": "The fear of God is reverent awe (m1). As the poetry note settles for the fear of the LORD, Literal and Balanced say \"भय\", and Readable \"आदर और भय\", as the English Readable says \"honor with awe\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030140182"
+          ],
+          "choice": "страх перед ним (L); бояться его (B); благоговеть перед ним (R)",
+          "alternatives": [
+            "благоговеть пред лицом его"
+          ],
+          "reason": "The settled wording for the fear of God (m1): fear at Literal and Balanced, and at Readable благоговеть, as благоговение перед ГОСПОДОМ in the Russian Psalms. The pronouns for God take the deity pronoun setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030140062",
+            "o210030140163"
+          ],
+          "choice": "люди",
+          "alternatives": [],
+          "reason": "Balanced and Readable name who is to fear God, which the Hebrew leaves understood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030140182"
+          ],
+          "choice": "\"fear God\": \"恐れる\" (L), \"畏れる\" (B), \"おそれ敬う\" (R), as Deuteronomy, Job and Proverbs, through this book (5:7, 7:18, 8:12-13, 12:13); deity_pronoun \"him\" as \"その方\" (L), \"神\" (B, R)",
+          "alternatives": [
+            "こわがる",
+            "敬う"
+          ],
+          "reason": "m1: reverent awe of God, not terror; Balanced writes the reverent kanji 畏 and Readable spells out awe and honor, as the English R \"honor him with awe\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030140181",
+            "o210030140182",
+            "o210030140191",
+            "o210030140192",
+            "o210030140193",
+            "o210030140194"
+          ],
+          "choice": "\"боятися перед Ним\" (L), \"боятися Його\" (B), \"шанувати Його з благоговінням\" (R) for the fear of God, through the book (5:6; 12:13)",
+          "alternatives": [
+            "\"шанувати\" at every level"
+          ],
+          "reason": "The book's terms note keeps \"fear God\" at Literal and Balanced and says \"honor God with awe\" at Readable, as Proverbs 1:7 does; Ukrainian follows the same split.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2604,6 +3636,26 @@
           "L": "ያለው አስቀድሞ ነበረ፤ የሚሆነውም አስቀድሞ ሆኗል፤ እግዚአብሔርም የተባረረውን ይፈልጋል።",
           "B": "ያለው ሁሉ አስቀድሞ ነበረ፤ የሚሆነውም ሁሉ አስቀድሞ ሆኗል፤ እግዚአብሔርም ያለፈውን ይፈልገዋል።",
           "R": "አሁን የሚሆነው ሁሉ ከዚህ በፊት ሆኗል፤ ወደፊት የሚሆነውም ሁሉ ከዚህ በፊት ሆኗል። ያለፈውንም እግዚአብሔር መልሶ ያመጣዋል።"
+        },
+        "hi": {
+          "L": "जो कुछ है, वह पहले हो चुका है, और जो होनेवाला है, वह पहले हो चुका है; और परमेश्वर उसे ढूँढ़ते हैं जो भगा दिया गया है।",
+          "B": "जो कुछ है, वह पहले हो चुका है, और जो होगा, वह भी पहले हो चुका है; और परमेश्वर बीती हुई बात को फिर ढूँढ़ निकालते हैं।",
+          "R": "जो कुछ अब हो रहा है, वह पहले भी हो चुका है, और जो कुछ होगा, वह भी पहले हो चुका है। परमेश्वर बीती हुई बातों को फिर से ले आते हैं।"
+        },
+        "ru": {
+          "L": "То, что есть, — уже было, и то, что будет, — уже было; и Бог ищет то, что прогнано.",
+          "B": "Всё, что есть, уже было, и всё, что будет, уже было; и Бог отыскивает то, что ушло.",
+          "R": "Всё, что происходит сейчас, уже происходило раньше, и всё, что произойдёт, уже происходило. Бог возвращает то, что прошло."
+        },
+        "ja": {
+          "L": "今あるものは、すでにあった。これからあるものも、すでにあった。そして神は、追い払われたものを捜し求められる。",
+          "B": "今あることは、すでにあったこと。これから起こることも、すでにあったこと。神は、過ぎ去ったものを捜し求められる。",
+          "R": "今起こっていることは、前にも起こった。これから起こることも、前に起こったことである。神は、過ぎ去ったことを、もう一度呼び戻される。"
+        },
+        "uk": {
+          "L": "Що є, те вже було, і що має бути, те вже було; і Бог шукає прогнаного.",
+          "B": "Що є, те вже було, і що буде, те вже було; і Бог шукає те, що минуло.",
+          "R": "Що відбувається тепер, те вже бувало раніше, і що станеться, те вже бувало. Бог повертає те, що минуло."
         }
       },
       "decisions": [
@@ -2650,6 +3702,26 @@
           "choice": "what is has already been: as in 1:9",
           "alternatives": [],
           "reason": "The first half echoes 1:9-10: nothing is new.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030150121"
+          ],
+          "choice": "отыскивает то, что ушло (B); возвращает то, что прошло (R)",
+          "alternatives": [
+            "ищет то, что прогнано"
+          ],
+          "reason": "God calls back what has passed, so that it comes again (m1); Balanced and Readable say so, and Literal keeps the Hebrew \"pursued, driven away\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2730,6 +3802,26 @@
           "L": "ደግሞም ከፀሐይ በታች አየሁ፤ የፍርድ ስፍራ፣ በዚያ ክፋት [ነበረ]፤ የጽድቅም ስፍራ፣ በዚያ ክፋት [ነበረ]።",
           "B": "ከፀሐይ በታች ሌላም ነገር አየሁ፤ በፍትሕ ስፍራ ክፋት ነበረ፤ በጽድቅም ስፍራ ክፋት ነበረ።",
           "R": "በዚህ ምድር ላይ ይህንም አየሁ፤ ፍትሕ መኖር በሚገባው ስፍራ ክፋት ነበረ። ሰዎች ትክክለኛውን ማድረግ በሚገባቸው ስፍራ ክፋት ነበረ።"
+        },
+        "hi": {
+          "L": "और फिर मैंने सूर्य के नीचे देखा: न्याय का स्थान, वहाँ दुष्टता [थी]; और धार्मिकता का स्थान, वहाँ दुष्टता [थी]।",
+          "B": "मैंने सूर्य के नीचे और भी कुछ देखा: न्याय के स्थान में दुष्टता थी, और धार्मिकता के स्थान में भी दुष्टता थी।",
+          "R": "मैंने सूर्य के नीचे यह भी देखा: जहाँ न्याय होना चाहिए था, वहाँ बुराई थी। जहाँ लोगों को सही काम करना चाहिए था, वहाँ बुराई थी।"
+        },
+        "ru": {
+          "L": "И ещё я видел под солнцем: место правосудия — там [было] нечестие, и место праведности — там [было] нечестие.",
+          "B": "И ещё я видел под солнцем: на месте правосудия было нечестие, и на месте праведности было нечестие.",
+          "R": "Ещё я видел под солнцем вот что: там, где должна была быть справедливость, было зло. Там, где люди должны были поступать правильно, было зло."
+        },
+        "ja": {
+          "L": "さらにわたしは太陽の下で見た。公正の場所、そこに悪があり、義の場所、そこに悪があった。",
+          "B": "わたしはまた、太陽の下でこんなことを見た。公正が行われるはずの所に悪があり、義が行われるはずの所にも悪があった。",
+          "R": "わたしはこの地上で、こんなことも見た。正しい裁きが行われるはずの所に、悪があった。人々が正しいことをするはずの所に、悪があった。"
+        },
+        "uk": {
+          "L": "І ще я бачив під сонцем: місце правосуддя — там [було] беззаконня; і місце праведності — там [було] беззаконня.",
+          "B": "І ще я побачив під сонцем: на місці правосуддя було беззаконня, і на місці праведності було беззаконня.",
+          "R": "Я побачив тут, на землі, і таке: де мала бути справедливість, там було зло. Де люди мали чинити правильно, там було зло."
         }
       },
       "decisions": [
@@ -2817,6 +3909,26 @@
           "reason": "As Proverbs has the pair in Portuguese, mishpat is \"o direito\", fair judgment in court (m1), and tsedeq \"a justiça\", so that the two do not fall into one word; resha' is \"a impiedade\", the quality of \"o ímpio\" (3:17).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030160062",
+            "o210030160102"
+          ],
+          "choice": "там, где должна была быть справедливость ... должны были поступать правильно",
+          "alternatives": [
+            "место правосудия"
+          ],
+          "reason": "Readable says what the places were for, the courts (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2900,6 +4012,26 @@
           "L": "እኔ በልቤ እንዲህ አልኩ፦ «እግዚአብሔር ጻድቁንና ክፉውን ይፈርዳል፤ ለጉዳይ ሁሉ፣ ለሥራም ሁሉ በዚያ ጊዜ [አለ]ና።»",
           "B": "ለራሴ እንዲህ አልኩ፦ «ለጉዳይ ሁሉ ጊዜ አለውና፤ በዚያም ለሥራ ሁሉ ጊዜ አለውና፤ እግዚአብሔር ጻድቁንም ክፉውንም ይፈርዳል።»",
           "R": "ለራሴ እንዲህ አልኩ፦ «እግዚአብሔር ትክክል የሚያደርጉትንም ስሕተት የሚያደርጉትንም ይፈርዳል። ለጉዳይ ሁሉ ጊዜ አለ፤ ለሥራም ሁሉ እግዚአብሔር የሚፈርድበት ጊዜ አለ።»"
+        },
+        "hi": {
+          "L": "मैंने अपने मन में कहा, \"धर्मी और दुष्ट का परमेश्वर न्याय करेंगे, क्योंकि हर बात के लिए और हर काम के लिए वहाँ एक समय [है]।\"",
+          "B": "मैंने अपने आप से कहा, \"परमेश्वर धर्मी और दुष्ट, दोनों का न्याय करेंगे, क्योंकि हर बात का अपना समय है, और वहाँ हर काम का भी अपना समय है।\"",
+          "R": "मैंने अपने आप से कहा, \"परमेश्वर सही काम करनेवालों और ग़लत काम करनेवालों, दोनों का न्याय करेंगे। हर बात का एक समय है, और हर काम के लिए एक समय है जब परमेश्वर उसका न्याय करेंगे।\""
+        },
+        "ru": {
+          "L": "Я сказал в сердце своём: «Праведного и нечестивого будет судить Бог, потому что [есть] время для всякого дела и для всякого поступка — там.»",
+          "B": "Я сказал себе: «Бог будет судить и праведного, и нечестивого, потому что у всякого дела есть своё время, и у всякого поступка там — своё время.»",
+          "R": "Я сказал себе: «Бог будет судить и тех, кто поступает правильно, и тех, кто поступает плохо. Для каждого дела есть время, и для каждого поступка есть время, когда Бог будет его судить.»"
+        },
+        "ja": {
+          "L": "わたしはわたしの心の中で言った。「正しい者と悪しき者を神は裁かれる。すべての事柄に時があり、すべての業に、そこで[時がある]からである。」",
+          "B": "わたしは心の中で言った。「神は正しい人も悪しき者も裁かれる。すべての事柄には時があり、すべての業には、そこにその時があるからだ。」",
+          "R": "わたしは心の中で言った。「神は、正しい人も悪い人も裁かれる。どんな事柄にも時があり、どんな行いにも、神がそれを裁かれる時があるのだ。」"
+        },
+        "uk": {
+          "L": "Я сказав у моєму серці: «Праведного й нечестивого Бог судитиме, бо [є] час для кожної справи і для кожного діла там.»",
+          "B": "Я сказав собі: «Бог судитиме і праведного, і нечестивого, бо кожна справа має свій час, і кожне діло — там свій час.»",
+          "R": "Я сказав собі: «Бог судитиме і тих, хто чинить правильно, і тих, хто чинить зле. Є час для кожної справи, і для кожного діла є час, коли Бог його судитиме.»"
         }
       },
       "decisions": [
@@ -2985,6 +4117,67 @@
           "reason": "Readable spells out the reading taken (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030170171"
+          ],
+          "choice": "\"जब परमेश्वर उसका न्याय करेंगे\"",
+          "alternatives": [
+            "\"वहाँ\""
+          ],
+          "reason": "As the English Readable, Readable spells out the reading taken for \"there\" (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030170081"
+          ],
+          "choice": "время, когда Бог будет его судить",
+          "alternatives": [
+            "там"
+          ],
+          "reason": "Readable spells out the reading taken: \"there\" is with God, at the time of his judgment (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030170052",
+            "o210030170072"
+          ],
+          "choice": "tsaddiq \"正しい者\" (L), \"正しい人\" (B, R); rasha' \"悪しき者\" (L, B), \"悪い人\" (R), as Proverbs, through the book",
+          "alternatives": [
+            "義人",
+            "悪人"
+          ],
+          "reason": "The wisdom books keep one pair of words for the righteous and the wicked; Readable stays with 正しい人 / 悪い人 even where the English R says \"those who do right / wrong\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3066,6 +4259,26 @@
           "L": "እኔ ስለ ሰው ልጆች በልቤ እንዲህ አልኩ፦ «እግዚአብሔር ይፈትናቸው ዘንድ፣ እነርሱም ራሳቸው እንስሳት መሆናቸውን ያሳያቸው ዘንድ [ነው]።»",
           "B": "ስለ ሰው ልጆች ለራሴ እንዲህ አልኩ፦ «እግዚአብሔር የሚፈትናቸው እንስሳት ብቻ መሆናቸውን ሊያሳያቸው ነው።»",
           "R": "ደግሞም ለራሴ እንዲህ አልኩ፦ «እግዚአብሔር ሰዎችን የሚፈትናቸው እንስሳት ብቻ መሆናቸውን ሊያሳያቸው ነው።»"
+        },
+        "hi": {
+          "L": "मैंने {{gender:मनुष्य की सन्तान|मनुष्य के पुत्रों}} के विषय में अपने मन में कहा, \"[यह] इसलिए [है] कि परमेश्वर उन्हें परखें, और दिखाएँ कि वे स्वयं पशु [हैं]।\"",
+          "B": "मैंने मनुष्यों के विषय में अपने आप से कहा, \"परमेश्वर उन्हें परख रहे हैं, ताकि उन्हें दिखाएँ कि वे केवल पशु हैं।\"",
+          "R": "मैंने अपने आप से यह भी कहा, \"परमेश्वर लोगों को परख रहे हैं ताकि उन्हें दिखाएँ कि वे बस पशु ही हैं।\""
+        },
+        "ru": {
+          "L": "Я сказал в сердце своём о {{gender:детях человеческих|сынах человеческих}}: «[Это] для того, чтобы Бог испытал их и чтобы показать, что они — животные, они сами по себе.»",
+          "B": "Я сказал себе о людях: «Бог испытывает их, чтобы показать им, что они всего лишь животные.»",
+          "R": "Ещё я сказал себе: «Бог испытывает людей, чтобы показать им, что они всего лишь животные.»"
+        },
+        "ja": {
+          "L": "わたしは人の子らについて、わたしの心の中で言った。「神が彼らを試し、彼らが獣であること、彼ら自身[がそうであること]を示すためである。」",
+          "B": "わたしは人間について心の中で言った。「神は彼らを試しておられる。彼らがただの獣にすぎないことを、彼らに示すためである。」",
+          "R": "わたしはまた、心の中で言った。「神は人々を試しておられる。人がただの動物にすぎないことを、人々に示すためだ。」"
+        },
+        "uk": {
+          "L": "Я сказав у моєму серці про {{gender:дітей людських|синів людських}}: «[Це] для того, щоб Бог випробував їх і показав, що вони — тварини, вони самі.»",
+          "B": "Я сказав собі про людей: «Бог випробовує їх, щоб показати їм, що вони лише тварини.»",
+          "R": "Я також сказав собі: «Бог випробовує людей, щоб показати їм, що вони лише тварини.»"
         }
       },
       "decisions": [
@@ -3164,6 +4377,43 @@
           "reason": "Balanced and Readable add \"only\" for the stress of \"they themselves\" (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030180061"
+          ],
+          "choice": "{{gender:детях человеческих|сынах человеческих}}",
+          "alternatives": [
+            "людях"
+          ],
+          "reason": "The phrase means human beings, men and women; the gender setting gives the inclusive form by default (see 1:13).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030180121"
+          ],
+          "choice": "всего лишь",
+          "alternatives": [],
+          "reason": "Balanced and Readable add всего лишь for the stress of \"they themselves\" (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3258,6 +4508,26 @@
           "L": "የሰው ልጆች ዕጣ ፈንታና የእንስሳ ዕጣ ፈንታ፣ አንድ ዕጣ ፈንታ ለእነርሱ [ነው]ና፤ ይህ እንደሚሞት እንዲሁ ያ ይሞታል፤ ለሁሉም አንድ መንፈስ [አለ]፤ ሰውም ከእንስሳ ብልጫ የለውም፤ ሁሉም እስትንፋስ [ነው]ና።",
           "B": "በሰው ልጆች ላይ የሚደርሰውና በእንስሳት ላይ የሚደርሰው አንድ ነውና፤ አንድ ዕጣ ፈንታ ሁለቱንም ያገኛቸዋል። አንዱ እንደሚሞት ሌላውም እንዲሁ ይሞታል። ሁሉም አንድ መንፈስ አላቸው፤ ሰው ከእንስሳ ምንም ብልጫ የለውም፤ ሁሉም እስትንፋስ ነውና።",
           "R": "በሰዎች ላይ የሚደርሰው በእንስሳትም ላይ ይደርሳል። በሁለቱም ላይ ያው ነገር ይደርሳል፤ ሁለቱም ይሞታሉ። ሁሉም ሕይወትን የሚሰጣቸው ያው መንፈስ አላቸው። ሰዎች ከእንስሳት የተሻሉ አይደሉም። ሁሉም ነገር እንደማይዘልቅ እስትንፋስ ነው።"
+        },
+        "hi": {
+          "L": "क्योंकि {{gender:मनुष्य की सन्तान|मनुष्य के पुत्रों}} की दशा और पशु की दशा, उनकी एक ही दशा [है]: जैसे यह मरता है, वैसे वह मरता है, और सब में एक ही आत्मा [है]; और मनुष्य को पशु पर कोई बढ़त नहीं, क्योंकि सब कुछ साँस [है]।",
+          "B": "क्योंकि जो मनुष्यों के साथ होता है और जो पशुओं के साथ होता है, वह एक ही है: दोनों पर एक ही दशा आती है। जैसे एक मरता है, वैसे ही दूसरा भी। उन सब में एक ही आत्मा है, और मनुष्यों को पशुओं पर कोई बढ़त नहीं, क्योंकि सब कुछ एक साँस है।",
+          "R": "जो लोगों के साथ होता है, वही पशुओं के साथ भी होता है। दोनों के साथ एक ही बात होती है: दोनों मर जाते हैं। उन सब में वही आत्मा है जो उन्हें जीवन देती है। लोग पशुओं से अच्छी दशा में नहीं हैं। सब कुछ साँस जैसा है, जो टिकती नहीं।"
+        },
+        "ru": {
+          "L": "Ведь судьба {{gender:детей человеческих|сынов человеческих}} и судьба животного — одна судьба у них: как умирает один, так умирает и другой, и один дух во всех; и преимущества у человека перед животным нет, ведь всё — дуновение.",
+          "B": "Ведь то, что случается с людьми, и то, что случается с животными, — одно и то же: их ждёт одна судьба. Как умирает одно, так умирает и другое. У всех них один и тот же дух, и у людей нет преимущества перед животными, ведь всё — лишь дуновение.",
+          "R": "То, что случается с людьми, случается и с животными. С теми и с другими случается одно и то же: они умирают. У всех них один и тот же дух, который даёт им жизнь. Люди ничем не лучше животных. Всё — как лёгкое дыхание, которое быстро проходит."
+        },
+        "ja": {
+          "L": "なぜなら、人の子らの運命と獣の運命、一つの運命が彼らにある。これが死ぬように、あれも死ぬ。すべてのものに一つの霊がある。人が獣にまさるところは何もない。すべては息だからである。",
+          "B": "人間に起こることと獣に起こることは同じで、同じ一つの運命が両者に臨む。一方が死ぬように、他方も死ぬ。どちらにも同じ霊があり、人間が獣にまさるところは何もない。すべては息にすぎないからだ。",
+          "R": "人に起こることは、動物にも起こる。どちらにも同じことが起こる。どちらも死ぬのだ。どちらにも、命を与える同じ霊がある。人が動物よりまさっていることは何もない。すべては、すぐに消えてしまう息のようなものだ。"
+        },
+        "uk": {
+          "L": "Бо доля {{gender:дітей людських|синів людських}} і доля тварини — одна в них доля: як помирає ця, так помирає та, і один дух у всіх; і переваги людини над твариною немає, бо все — подих.",
+          "B": "Бо те, що спіткає людей, і те, що спіткає тварин, — однакове: одна доля в обох. Як помирає одне, так і друге. У всіх них той самий дух, і людина не має переваги над твариною, бо все — лише подих.",
+          "R": "Що стається з людьми, те стається й із тваринами. З обома стається те саме: вони обоє помирають. У всіх них той самий дух, що дає їм життя. Люди нічим не кращі за тварин. Усе — як подих, що не триває."
         }
       },
       "decisions": [
@@ -3530,6 +4800,150 @@
           "reason": "The Hebrew ruaḥ here is the breath of life that God gives (the meaning decision). Amharic says \"መንፈስ\", keeping \"እስትንፋስ\" for hevel alone, so that the book's key word is never confused with it; the same holds in 3:21; 11:5; 12:7 (in 8:8, where the English says \"wind\", it is \"ነፋስ\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190152"
+          ],
+          "choice": "ruach: \"आत्मा\"",
+          "alternatives": [
+            "\"साँस\"",
+            "\"प्राण\""
+          ],
+          "reason": "Ruach is the breath of life that God gives (m2). As the English says \"spirit\" here so that it is not confused with hevel, the Hindi says \"आत्मा\", keeping \"साँस\" for hevel at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190251"
+          ],
+          "choice": "\"साँस जैसा है, जो टिकती नहीं\"",
+          "alternatives": [
+            "\"साँस जैसा है\""
+          ],
+          "reason": "As the English Readable, Readable keeps the picture and gives the sense here: brief, soon gone (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190152"
+          ],
+          "choice": "дух",
+          "alternatives": [
+            "дыхание"
+          ],
+          "reason": "Ruach as the breath of life God gives (m2) is дух at every level, so that it is never confused with hevel, which is дуновение and, at Readable, лёгкое дыхание.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030190031"
+          ],
+          "choice": "{{gender:детей человеческих|сынов человеческих}}",
+          "alternatives": [
+            "людей"
+          ],
+          "reason": "The phrase means human beings, men and women; the gender setting gives the inclusive form by default (see 1:13).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-3",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190251"
+          ],
+          "choice": "как лёгкое дыхание, которое быстро проходит",
+          "alternatives": [
+            "как лёгкое дыхание"
+          ],
+          "reason": "Readable keeps the picture and gives the sense here, brief and soon gone (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190152"
+          ],
+          "choice": "ruach (the breath of life) \"霊\" (L, B), \"命を与える霊\" (R), as the English \"spirit\", also 3:21, 8:8, 12:7",
+          "alternatives": [
+            "息",
+            "命の息"
+          ],
+          "reason": "息 is kept for hevel through the book, so the life-breath God gives is 霊, which the English also chose; Readable says what it does (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030190152"
+          ],
+          "choice": "\"дух\" for ruach as life-breath at every level, through the book (3:21; 12:7)",
+          "alternatives": [
+            "\"подих\"",
+            "\"дихання\""
+          ],
+          "reason": "The terms note keeps ruach as \"spirit\" here so that it is never confused with hevel, which this translation renders \"подих\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3606,6 +5020,26 @@
           "L": "ሁሉም ወደ አንድ ስፍራ ይሄዳል፤ ሁሉም ከአፈር ነበረ፤ ሁሉም ወደ አፈር ይመለሳል።",
           "B": "ሁሉም ወደ አንድ ስፍራ ይሄዳል፤ ሁሉም ከአፈር መጥቷል፤ ሁሉም ወደ አፈር ይመለሳል።",
           "R": "ሰዎችም እንስሳትም ሁሉ መጨረሻቸው አንድ ስፍራ ነው። ሁሉም ከአፈር መጡ፤ ሁሉም ወደ አፈር ይመለሳሉ።"
+        },
+        "hi": {
+          "L": "सब एक ही स्थान को जाते हैं; सब धूल से हुए, और सब धूल में लौट जाते हैं।",
+          "B": "सब एक ही स्थान को जाते हैं: सब धूल से बने, और सब धूल में ही लौट जाते हैं।",
+          "R": "लोग और पशु, सब एक ही जगह पहुँचते हैं। वे सब धूल से आए, और सब धूल में ही लौट जाएँगे।"
+        },
+        "ru": {
+          "L": "Всё отправляется в одно и то же место: всё вышло из праха, и всё к праху возвращается.",
+          "B": "Всё приходит в одно место: всё взято из праха, и всё уходит обратно в прах.",
+          "R": "И люди, и животные — все оказываются в одном и том же месте. Все они вышли из праха и все снова станут прахом."
+        },
+        "ja": {
+          "L": "すべては一つの場所へ行く。すべてはちりから出て、すべてはちりに帰る。",
+          "B": "すべては同じ所へ行く。すべてはちりから出て、すべてはちりに帰る。",
+          "R": "人も動物も、みな最後には同じ所に行く。みなちりから出て、みなちりに帰っていく。"
+        },
+        "uk": {
+          "L": "Усі йдуть до одного місця; усі постали з пороху, і всі вертаються в порох.",
+          "B": "Усе йде до одного місця: усе постало з пороху, і все вертається в порох.",
+          "R": "І люди, і тварини опиняються в одному місці. Усі вони постали з пороху і всі повернуться в порох."
         }
       },
       "decisions": [
@@ -3667,6 +5101,49 @@
           "choice": "People and animals",
           "alternatives": [
             "all"
+          ],
+          "reason": "Readable names who \"all\" are, from verse 19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030200092",
+            "o210030200132"
+          ],
+          "choice": "прах",
+          "alternatives": [
+            "пыль"
+          ],
+          "reason": "From the dust and to the dust recalls Genesis (m1); прах is the word of the Russian Genesis 3:19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210030200012",
+            "o210030200062",
+            "o210030200103"
+          ],
+          "choice": "И люди, и животные",
+          "alternatives": [
+            "всё"
           ],
           "reason": "Readable names who \"all\" are, from verse 19.",
           "uncertain": false,
@@ -3751,6 +5228,26 @@
           "L": "የሰው ልጆች መንፈስ ወደ ላይ ከፍ ብሎ ይወጣ እንደ ሆነ፣ የእንስሳም መንፈስ ወደ ታች ወደ ምድር ዝቅ ብሎ ይወርድ እንደ ሆነ ማን ያውቃል?",
           "B": "የሰው መንፈስ ወደ ላይ ይወጣ እንደ ሆነ፣ የእንስሳም መንፈስ ወደ ምድር ይወርድ እንደ ሆነ ማን ያውቃል?",
           "R": "የሰው መንፈስ ወደ ላይ እንደሚሄድ፣ የእንስሳም መንፈስ ወደ መሬት እንደሚወርድ ማን እርግጠኛ ሊሆን ይችላል?"
+        },
+        "hi": {
+          "L": "कौन जानता है [कि] {{gender:मनुष्य की सन्तान|मनुष्य के पुत्रों}} की आत्मा ऊपर की ओर चढ़ती है, और [कि] पशु की आत्मा नीचे की ओर पृथ्वी में उतरती है?",
+          "B": "कौन जानता है कि मनुष्य की आत्मा ऊपर उठती है और पशु की आत्मा नीचे पृथ्वी में जाती है?",
+          "R": "कौन पक्का कह सकता है कि मनुष्य की आत्मा ऊपर जाती है, और पशु की आत्मा नीचे ज़मीन में चली जाती है?"
+        },
+        "ru": {
+          "L": "Кто знает, поднимается ли ввысь дух {{gender:детей человеческих|сынов человеческих}} и опускается ли вниз, к земле, дух животного?",
+          "B": "Кто знает, поднимается ли дух человека вверх, а дух животного уходит вниз, в землю?",
+          "R": "Кто может быть уверен, что дух человека поднимается вверх, а дух животного уходит вниз, в землю?"
+        },
+        "ja": {
+          "L": "人の子らの霊は上へと昇り、獣の霊は下へ、地へと下るのかを、だれが知っているか？",
+          "B": "人間の霊は上に昇り、獣の霊は地の下に降りて行くのかどうか、だれが知っているだろうか？",
+          "R": "人の霊は上に昇り、動物の霊は地の中に下りて行くと、だれがはっきり言えるだろうか？"
+        },
+        "uk": {
+          "L": "Хто знає, [чи] дух {{gender:дітей людських|синів людських}} підіймається вгору, а дух тварини, [чи] сходить донизу, в землю?",
+          "B": "Хто знає, чи людський дух підіймається вгору, а дух тварини сходить донизу, в землю?",
+          "R": "Хто може бути певен, що дух людини підіймається вгору, а дух тварини сходить у землю?"
         }
       },
       "decisions": [
@@ -3804,6 +5301,25 @@
           ],
           "choice": "{{gender:children of humankind|sons of men}}",
           "alternatives": [],
+          "reason": "The phrase means human beings, men and women; the gender setting gives the inclusive form by default (see 1:13).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210030210041"
+          ],
+          "choice": "{{gender:детей человеческих|сынов человеческих}}",
+          "alternatives": [
+            "людей"
+          ],
           "reason": "The phrase means human beings, men and women; the gender setting gives the inclusive form by default (see 1:13).",
           "uncertain": false,
           "footnote": false
@@ -3893,6 +5409,26 @@
           "L": "ስለዚህ ሰው በሥራው ደስ ከሚሰኝ የሚሻል ነገር እንደሌለ አየሁ፤ ያ ድርሻው ነውና፤ ከእርሱ በኋላ የሚሆነውን ያይ ዘንድ ማን ያመጣዋልና?",
           "B": "ስለዚህ ለሰዎች በሥራቸው ከመደሰት የሚሻል ነገር እንደሌለ አየሁ፤ ያ ድርሻቸው ነውና። ከእነርሱ በኋላ የሚሆነውን እንዲያዩ ማን ሊያደርጋቸው ይችላል?",
           "R": "ስለዚህ ሰዎች ሊያደርጉት የሚችሉት ከሁሉ የተሻለ ነገር በሥራቸው መደሰት እንደ ሆነ አየሁ። ሕይወት የሰጣቸው ድርሻ ያ ነው። ለመሆኑ ከሞቱ በኋላ የሚሆነውን ማን ሊያሳያቸው ይችላል?"
+        },
+        "hi": {
+          "L": "तब मैंने देखा कि इससे अच्छा कुछ नहीं कि मनुष्य अपने कामों में आनंद करे, क्योंकि वही उसका भाग [है]; क्योंकि कौन उसे यह देखने को लाएगा कि उसके बाद क्या होगा?",
+          "B": "तब मैंने देखा कि लोगों के लिए इससे अच्छा कुछ नहीं कि वे अपने काम में आनंद करें, क्योंकि यही उनका हिस्सा है। क्योंकि कौन उन्हें यह दिखा सकता है कि उनके बाद क्या होगा?",
+          "R": "तब मैंने देखा कि लोग जो सबसे अच्छा कर सकते हैं, वह यह है कि अपने काम का आनंद लें। जीवन उन्हें यही देता है। आख़िर, कौन उन्हें दिखा सकता है कि उनके चले जाने के बाद क्या होगा?"
+        },
+        "ru": {
+          "L": "И увидел я: нет лучшего, чем то, чтобы человек радовался своим трудам, потому что в этом его удел; ведь кто даст ему увидеть то, что настанет после него?",
+          "B": "Так я понял, что для людей нет ничего лучше, чем радоваться своей работе, потому что в этом их доля. Ведь кто покажет им, что будет после них?",
+          "R": "Так я понял, что лучшее, что люди могут делать, — это радоваться своей работе. Это то, что даёт им жизнь. В конце концов, кто может показать им, что произойдёт, когда их не станет?"
+        },
+        "ja": {
+          "L": "そこでわたしは見た。人がその業を喜ぶことにまさる良いことはない。それがその人の分け前だからである。その人の後に何が起こるかを、だれがその人に見させることができようか？",
+          "B": "そこでわたしは見た。人にとって、自分の仕事を喜ぶことにまさる良いことはない。それがその人の受ける分だからである。その人の後に何が起こるかを、だれがその人に見せることができるだろうか？",
+          "R": "だから、わたしにはわかった。人にできるいちばん良いことは、自分の仕事を楽しむことだ。それが、人生が人に与えてくれるものなのだ。結局、その人が死んだ後に何が起こるかを、だれがその人に見せることができるだろうか？"
+        },
+        "uk": {
+          "L": "І я побачив, що немає нічого кращого, ніж щоб людина раділа своїм ділам, бо це — її частка; бо хто приведе її побачити, що буде після неї?",
+          "B": "Тож я побачив, що немає для людей нічого кращого, ніж радіти своїй праці, бо це їхня частка. Бо хто може дати їм побачити, що буде після них?",
+          "R": "Тож я побачив, що найкраще, що можуть робити люди, — це радіти своїй праці. Це те, що дає їм життя. Зрештою, хто може показати їм, що станеться, коли їх не стане?"
         }
       },
       "decisions": [
@@ -3999,6 +5535,27 @@
             "a span on each pronoun"
           ],
           "reason": "Portuguese puts the setting on the noun; the pronouns \"o\" and \"dele\" agree with \"ser humano\" or \"homem\", both masculine nouns, so they read correctly under either option.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210030220111"
+          ],
+          "choice": "удел (L); доля (B); то, что даёт им жизнь (R)",
+          "alternatives": [
+            "награда"
+          ],
+          "reason": "The book's settled wording for cheleq, the share given to enjoy now (m1; see 2:10).",
           "uncertain": false,
           "footnote": false
         }

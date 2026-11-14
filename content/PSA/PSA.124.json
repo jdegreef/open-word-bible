@@ -67,6 +67,26 @@
           "L": "የመውጣት መዝሙር። የዳዊት። ከእኛ ጋር የነበረው {{divine_name:እግዚአብሔር|ያህዌ}} ባይሆን ኖሮ፣ እስራኤል አሁን እንዲህ ይበል፦",
           "B": "የመውጣት መዝሙር። የዳዊት። እስራኤል አሁን እንዲህ ይበል፦ {{divine_name:እግዚአብሔር|ያህዌ}} ከእኛ ጋር ባይቆም ኖሮ፣",
           "R": "የመውጣት መዝሙር፤ ወደ ኢየሩሳሌም ሲወጡ የሚዘመር። ዳዊት የዘመረው። እስራኤል እንዲህ ይበል፦ {{divine_name:እግዚአብሔር|ያህዌ}} ከጎናችን ባይሆን ኖሮ ምን ይደርስብን ነበር?"
+        },
+        "hi": {
+          "L": "चढ़ाई का गीत। दाऊद का। यदि {{divine_name:प्रभु|याहवे}} [न होते] जो हमारी ओर थे — इस्राएल अब कहे —",
+          "B": "चढ़ाई का गीत। दाऊद का। इस्राएल अब यह कहे: यदि {{divine_name:प्रभु|याहवे}} हमारे साथ न खड़े होते,",
+          "R": "यरूशलेम की ओर जाने की यात्रा का गीत। दाऊद का लिखा हुआ। इस्राएल यह कहे: अगर {{divine_name:प्रभु|याहवे}} हमारी तरफ़ न होते, तो क्या होता?"
+        },
+        "ru": {
+          "L": "Песнь восхождения. Давида. Если бы не {{divine_name:ГОСПОДЬ|Яхве}}, который был за нас, — пусть скажет ныне Израиль, —",
+          "B": "Песнь восхождения. Давида. Пусть Израиль скажет теперь: если бы {{divine_name:ГОСПОДЬ|Яхве}} не стоял за нас,",
+          "R": "Песня для пути в Иерусалим. Написал Давид. Пусть Израиль скажет: что, если бы {{divine_name:ГОСПОДЬ|Яхве}} не был на нашей стороне?"
+        },
+        "ja": {
+          "L": "上りの歌。ダビデによる。もし、わたしたちの味方であった方が{{divine_name:主|ヤハウェ}}でなかったなら――イスラエルは、さあ、言え――",
+          "B": "都に上る歌。ダビデによる。さあ、イスラエルは言え。もし{{divine_name:主|ヤハウェ}}がわたしたちと共にいてくださらなかったなら、",
+          "R": "エルサレムへ上る旅の歌。ダビデによる。イスラエルの人々は、さあ、言おう。もし{{divine_name:主|ヤハウェ}}がわたしたちの味方でいてくださらなかったら、どうなっていただろう？"
+        },
+        "uk": {
+          "L": "Пісня сходжень. Давидів. Якби не {{divine_name:ГОСПОДЬ|Ягве}}, що був за нас, — нехай же скаже Ізраїль, —",
+          "B": "Пісня сходжень. Давидів. Нехай Ізраїль скаже це тепер: якби {{divine_name:ГОСПОДЬ|Ягве}} не стояв за нас,",
+          "R": "Пісня для подорожі вгору до Єрусалима. Її склав Давид. Нехай Ізраїль скаже: Що було б, якби {{divine_name:ГОСПОДЬ|Ягве}} не був на нашому боці?"
         }
       },
       "decisions": [
@@ -257,6 +277,88 @@
           "reason": "The psalm looks back on what would have happened (meaning decision m4); Amharic marks a past unreal condition with \"-ባይሆን ኖሮ\" and its result with \"… ነበር\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191240010041",
+            "o191240010051"
+          ],
+          "choice": "\"यदि {{divine_name:प्रभु|याहवे}} [न होते]\": the sentence left open",
+          "alternatives": [],
+          "reason": "The Hebrew begins a condition, breaks off for the call to Israel, and takes it up again in verse 2 (meaning m4, m5). Literal keeps the broken sentence and its order; Balanced puts the call first, as the English does; Readable makes it a question.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240010011",
+            "o191240010022"
+          ],
+          "choice": "Песнь восхождения (L, B); Песня для пути в Иерусалим (R)",
+          "alternatives": [
+            "Песнь степеней",
+            "Песнь восхождений"
+          ],
+          "reason": "As in 120:1: one form of the title per level through the Songs of Ascents.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240010081",
+            "o191240010091",
+            "o191240010101"
+          ],
+          "choice": "yo'mar-na' Yisra'el \"イスラエルは、さあ、言え\" (L), \"さあ、イスラエルは言え\" (B), \"イスラエルの人々は、さあ、言おう\" (R)",
+          "alternatives": [],
+          "reason": "The same forms as 118:2 (\"let Israel say it now\"); the people are called to join in (m5). B puts it first, as the English B does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240010041",
+            "o191240010071"
+          ],
+          "choice": "lulei … shehayah lanu \"もし、わたしたちの味方であった方がDNでなかったなら\" (L), \"もしDNがわたしたちと共にいてくださらなかったなら\" (B), \"…味方でいてくださらなかったら、どうなっていただろう？\" (R)",
+          "alternatives": [],
+          "reason": "The broken-off condition (m4): L and B leave it open with ―― / 、 as the Hebrew does; R asks what would have happened, as the English R.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -325,6 +427,26 @@
           "L": "በእኛ ላይ ሰዎች በተነሡ ጊዜ፣ ከእኛ ጋር የነበረው {{divine_name:እግዚአብሔር|ያህዌ}} ባይሆን ኖሮ፣",
           "B": "ሰዎች በእኛ ላይ በተነሡ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ከእኛ ጋር ባይቆም ኖሮ፣",
           "R": "ሰዎች ባጠቁን ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ከጎናችን ባይሆን ኖሮ ምን ይደርስብን ነበር?"
+        },
+        "hi": {
+          "L": "यदि {{divine_name:प्रभु|याहवे}} [न होते] जो हमारी ओर थे, जब {{gender:लोग|मनुष्य}} हमारे विरुद्ध उठे,",
+          "B": "यदि {{divine_name:प्रभु|याहवे}} हमारे साथ न खड़े होते जब {{gender:लोग|मनुष्य}} हमारे विरुद्ध उठे,",
+          "R": "अगर {{divine_name:प्रभु|याहवे}} उस समय हमारी तरफ़ न होते जब {{gender:लोगों|मनुष्यों}} ने हम पर हमला किया, तो क्या होता?"
+        },
+        "ru": {
+          "L": "если бы не {{divine_name:ГОСПОДЬ|Яхве}}, который был за нас, когда люди восстали на нас,",
+          "B": "если бы {{divine_name:ГОСПОДЬ|Яхве}} не стоял за нас, когда люди восстали против нас,",
+          "R": "Что, если бы {{divine_name:ГОСПОДЬ|Яхве}} не был на нашей стороне, когда люди напали на нас?"
+        },
+        "ja": {
+          "L": "もし、わたしたちの味方であった方が{{divine_name:主|ヤハウェ}}でなかったなら、人々がわたしたちに逆らって立ち上がったとき、",
+          "B": "もし{{divine_name:主|ヤハウェ}}がわたしたちと共にいてくださらなかったなら、人々がわたしたちに襲いかかってきたとき、",
+          "R": "もし{{divine_name:主|ヤハウェ}}がわたしたちの味方でいてくださらなかったら、人々が攻めて来たとき、どうなっていただろう？"
+        },
+        "uk": {
+          "L": "якби не {{divine_name:ГОСПОДЬ|Ягве}}, що був за нас, коли {{gender:люди|мужі}} повстали проти нас,",
+          "B": "якби {{divine_name:ГОСПОДЬ|Ягве}} не стояв за нас, коли {{gender:люди|мужі}} повстали проти нас,",
+          "R": "Що було б, якби {{divine_name:ГОСПОДЬ|Ягве}} не був на нашому боці, коли {{gender:люди|мужі}} напали на нас?"
         }
       },
       "decisions": [
@@ -524,6 +646,65 @@
           "reason": "\"ሰዎች\" already means people of either sex, so Amharic has no second wording to offer; the English span has nothing to change here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191240020071"
+          ],
+          "choice": "\"{{gender:लोग|मनुष्य}}\"",
+          "alternatives": [],
+          "reason": "The word (adam) means human beings in general (meaning m1). As the English does, the default says \"लोग\" and the gender setting gives the traditional \"मनुष्य\", which in Hindi is itself close to inclusive.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191240020071"
+          ],
+          "choice": "люди, with no gender span",
+          "alternatives": [
+            "{{gender:люди|мужи}}"
+          ],
+          "reason": "The English has a gender span (people / men) for 'adam, human beings in general (m1). Russian люди already covers men and women, and the traditional rendering says the same, so there is no second wording to offer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191240020071"
+          ],
+          "choice": "'adam \"人々\" at every level, with no gender span (English {{gender:people|men}})",
+          "alternatives": [],
+          "reason": "Japanese 人々 is already inclusive (style guide §7); 'adam stresses mere humans (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -591,6 +772,26 @@
           "L": "ያን ጊዜ ቁጣቸው በእኛ ላይ በነደደ ጊዜ በሕይወት ሳለን በዋጡን ነበር፤",
           "B": "ያን ጊዜ በእኛ ላይ በነደደው ቁጣቸው በሕይወት ሳለን በዋጡን ነበር፤",
           "R": "ያን ጊዜ በሕይወት ሳለን በበሉን ነበር፤ ቁጣቸው በእኛ ላይ ነድዶ ነበርና።"
+        },
+        "hi": {
+          "L": "तब वे हमें जीवित निगल जाते, जब उनका क्रोध हम पर भड़का,",
+          "B": "तब वे अपने भड़के हुए क्रोध में हमें जीवित ही निगल जाते,",
+          "R": "तब वे हमें ज़िंदा ही खा जाते, क्योंकि उनका ग़ुस्सा हम पर भड़क उठा था।"
+        },
+        "ru": {
+          "L": "тогда живыми они поглотили бы нас, когда пылал гнев их на нас,",
+          "B": "тогда они проглотили бы нас живыми в пылу своего гнева на нас,",
+          "R": "Тогда они съели бы нас живьём, потому что их гнев пылал против нас."
+        },
+        "ja": {
+          "L": "そのとき、彼らはわたしたちを生きたまま、のみ込んでいただろう、彼らの怒りがわたしたちに向かって燃え上がったとき。",
+          "B": "そのとき、彼らは、わたしたちに向かって燃える怒りのうちに、わたしたちを生きたまま、のみ込んでいただろう。",
+          "R": "そうなっていたら、彼らはわたしたちを生きたまま食べてしまっただろう。彼らの怒りが、わたしたちに向かって燃えていたからだ。"
+        },
+        "uk": {
+          "L": "тоді вони живцем проковтнули б нас, коли запалав їхній гнів проти нас,",
+          "B": "тоді вони пожерли б нас живцем у запалі свого гніву проти нас,",
+          "R": "Тоді вони зʼїли б нас живцем, бо їхній гнів палав проти нас."
         }
       },
       "decisions": [
@@ -635,6 +836,26 @@
           "choice": "their anger burned: they were furious",
           "alternatives": [],
           "reason": "Anger is often said to burn or flare up (2:12; 106:40).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240030011",
+            "o191240030031"
+          ],
+          "choice": "'azai \"そのとき\" (L, B), \"そうなっていたら\" (R), with the past conditional 〜ていただろう in 124:3-5",
+          "alternatives": [],
+          "reason": "What would have happened (m2); the same frame in all three \"then\" verses.",
           "uncertain": false,
           "footnote": false
         }
@@ -705,6 +926,26 @@
           "L": "ያን ጊዜ ውኆቹ ባጥለቀለቁን ነበር፤ ፈሳሹም በነፍሳችን ላይ ባለፈ ነበር፤",
           "B": "ያን ጊዜ ጎርፉ ጠራርጎ በወሰደን ነበር፤ ፈሳሹም በላያችን ላይ በተመመ ነበር፤",
           "R": "ያን ጊዜ ጎርፉ ጠራርጎ በወሰደን ነበር። የሚጎርፈውም ውኃ በሸፈነን ነበር።"
+        },
+        "hi": {
+          "L": "तब जल हमें बहा ले जाता, एक धारा हमारे प्राण पर से होकर निकल जाती,",
+          "B": "तब बाढ़ का पानी हमें बहा ले जाता, उफनती धारा हम पर से होकर बह जाती,",
+          "R": "तब बाढ़ हमें बहा ले जाती। तेज़ बहता पानी हमें ढक लेता।"
+        },
+        "ru": {
+          "L": "тогда воды затопили бы нас, поток прошёл бы над душой нашей,",
+          "B": "тогда наводнение унесло бы нас, поток пронёсся бы над нами,",
+          "R": "Тогда потоп смыл бы нас. Бурная вода накрыла бы нас."
+        },
+        "ja": {
+          "L": "そのとき、水はわたしたちを押し流し、激流がわたしたちの魂の上を越えて行っただろう。",
+          "B": "そのとき、大水はわたしたちを押し流し、激流がわたしたちの上を襲っただろう。",
+          "R": "そうなっていたら、洪水がわたしたちを押し流しただろう。激しい流れが、わたしたちを覆っただろう。"
+        },
+        "uk": {
+          "L": "тоді води залили б нас, потік пройшов би над нашою душею,",
+          "B": "тоді повінь понесла б нас, потік промчав би над нами,",
+          "R": "Тоді повінь змила б нас. Бурхлива вода накрила б нас."
         }
       },
       "decisions": [
@@ -756,6 +997,45 @@
             "my soul"
           ],
           "reason": "As in Psalms 1-12, nefesh is \"soul\" at Literal; Balanced and Readable say \"me\" or \"my life\", since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240040071",
+            "o191240040072"
+          ],
+          "choice": "над душой нашей (L); над нами (B); нас (R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"we\" or \"us\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240040041",
+            "o191240040071"
+          ],
+          "choice": "nachlah \"激流\" (L, B), \"激しい流れ\" (R); nafshenu \"わたしたちの魂\" (L), dropped (B, R)",
+          "alternatives": [],
+          "reason": "A flash flood in a dry valley (m1); nefesh as the Psalter rule (m2 uncertain).",
           "uncertain": false,
           "footnote": false
         }
@@ -824,6 +1104,26 @@
           "L": "ያን ጊዜ የሚያስገመግሙት ውኆች በነፍሳችን ላይ ባለፉ ነበር።",
           "B": "ያን ጊዜ የሚናወጡት ውኆች በላያችን ላይ በተዘጉ ነበር።",
           "R": "እነዚያ የሚያስገመግሙ ውኆች ባሰጠሙን ነበር።"
+        },
+        "hi": {
+          "L": "तब हमारे प्राण पर से उफनते जल निकल जाते।",
+          "B": "तब उफनता जल हमारे ऊपर छा जाता।",
+          "R": "वह उग्र पानी हमें डुबो देता।"
+        },
+        "ru": {
+          "L": "тогда прошли бы над душой нашей воды бушующие.",
+          "B": "тогда бушующие воды сомкнулись бы над нами.",
+          "R": "Эти дикие воды утопили бы нас."
+        },
+        "ja": {
+          "L": "そのとき、わたしたちの魂の上を越えて行っただろう、荒れ狂う水が。",
+          "B": "そのとき、荒れ狂う水が、わたしたちの上に覆いかぶさっただろう。",
+          "R": "あの荒れ狂う水に、わたしたちはおぼれていただろう。"
+        },
+        "uk": {
+          "L": "тоді над нашою душею пройшли б води, шалені.",
+          "B": "тоді шалені води зімкнулися б над нами.",
+          "R": "Ці дикі води потопили б нас."
         }
       },
       "decisions": [
@@ -880,6 +1180,44 @@
             "passed over our soul"
           ],
           "reason": "Readable says what the waters going over the throat means (124:4 m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240050041",
+            "o191240050042"
+          ],
+          "choice": "над душой нашей (L); над нами (B); нас (R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"we\" or \"us\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240050062"
+          ],
+          "choice": "hazzedonim \"荒れ狂う\" (every level)",
+          "alternatives": [],
+          "reason": "The word is \"proud, insolent\" (m1), said of the water; 荒れ狂う keeps both the wildness and the arrogance.",
           "uncertain": false,
           "footnote": false
         }
@@ -949,6 +1287,26 @@
           "L": "ለጥርሳቸው ንጥቂያ አድርጎ ያልሰጠን {{divine_name:እግዚአብሔር|ያህዌ}} ይባረክ።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ይባረክ! በጥርሳቸው እንዲቦጫጭቁን አሳልፎ አልሰጠንም።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ይመስገን! ጠላቶቻችን እንደ አውሬ እንዲበጣጥሱን አልፈቀደም።"
+        },
+        "hi": {
+          "L": "धन्य [हों] {{divine_name:प्रभु|याहवे}}, जिन्होंने हमें उनके दाँतों का शिकार [होने] नहीं दिया।",
+          "B": "{{divine_name:प्रभु|याहवे}} धन्य हों! उन्होंने हमें उनके दाँतों से फाड़े जाने के लिए नहीं सौंपा।",
+          "R": "{{divine_name:प्रभु|याहवे}} की स्तुति करो! उन्होंने हमारे शत्रुओं को जंगली पशुओं की तरह हमें चीर-फाड़ करने नहीं दिया।"
+        },
+        "ru": {
+          "L": "Благословен {{divine_name:ГОСПОДЬ|Яхве}}, который не отдал нас [в] добычу зубам их.",
+          "B": "Благословен {{divine_name:ГОСПОДЬ|Яхве}}! Он не отдал нас на растерзание их зубам.",
+          "R": "Слава {{divine_name:ГОСПОДУ|Яхве}}! Он не дал нашим врагам растерзать нас, как дикие звери."
+        },
+        "ja": {
+          "L": "ほめたたえられよ、{{divine_name:主|ヤハウェ}}、わたしたちを彼らの歯のえじきとしてお与えにならなかった方は。",
+          "B": "{{divine_name:主|ヤハウェ}}がほめたたえられるように。その方は、わたしたちが彼らの歯に引き裂かれるままにはなさらなかった。",
+          "R": "{{divine_name:主|ヤハウェ}}をほめたたえよう！その方は、敵が野の獣のようにわたしたちをかみ裂くのを、お許しにならなかった。"
+        },
+        "uk": {
+          "L": "Благословенний {{divine_name:ГОСПОДЬ|Ягве}}, що не віддав нас [як] здобич їхнім зубам.",
+          "B": "Благословенний {{divine_name:ГОСПОДЬ|Ягве}}! Він не віддав нас на розтерзання їхнім зубам.",
+          "R": "Хваліть {{divine_name:ГОСПОДА|Ягве}}! Він не дав нашим ворогам розірвати нас на шматки, як дикі звірі."
         }
       },
       "decisions": [
@@ -1084,6 +1442,67 @@
           "reason": "The terms list's pattern for blessing God; Readable says \"praise\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240060011"
+          ],
+          "choice": "\"धन्य [हों]\" (L), \"धन्य हों\" (B); \"की स्तुति करो\" (R)",
+          "alternatives": [
+            "\"धन्य है\""
+          ],
+          "reason": "Blessing the LORD is praising him (meaning m1). Literal and Balanced keep \"धन्य\", as the poetry note has it, with the honorific plural for God; Readable says \"praise\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240060011"
+          ],
+          "choice": "Слава ГОСПОДУ!",
+          "alternatives": [
+            "Хвалите ГОСПОДА!"
+          ],
+          "reason": "Readable says \"Praise the LORD\" for blessing God (m1). Russian Readable uses the exclamation Слава ГОСПОДУ here, keeping Хвалите for the call to people to praise and for Hallelujah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240060011",
+            "o191240060032",
+            "o191240060041"
+          ],
+          "choice": "barukh YHWH \"ほめたたえられよ\" (L), \"ほめたたえられるように\" (B), \"ほめたたえよう\" (R); the negative for God \"お与えにならなかった\" (L), \"…ままにはなさらなかった\" (B), \"お許しにならなかった\" (R)",
+          "alternatives": [],
+          "reason": "Psalter forms for barukh and for God's negatives (never 〜られなかった).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1155,6 +1574,26 @@
           "L": "ነፍሳችን ከአዳኞች ወጥመድ እንደ ወፍ አመለጠች፤ ወጥመዱ ተሰበረ፤ እኛም አመለጥን።",
           "B": "ከወፍ አጥማጆች ወጥመድ እንደ ወፍ አምልጠናል፤ ወጥመዱ ተሰበረ፤ እኛም ነጻ ወጣን!",
           "R": "ከአዳኝ ወጥመድ እንደሚያመልጥ ወፍ አመለጥን። ወጥመዱ ተሰበረ፤ እኛም አመለጥን!"
+        },
+        "hi": {
+          "L": "हमारा प्राण चिड़िया की तरह बहेलियों के फंदे से बच निकला है; फंदा टूट गया, और हम बच निकले हैं।",
+          "B": "हम चिड़िया की तरह बहेलियों के जाल से छूट निकले हैं; जाल टूट गया, और हम आज़ाद हैं!",
+          "R": "हम उस चिड़िया की तरह बच निकले जो शिकारी के जाल से छूट जाती है। जाल टूट गया, और हम बच निकले!"
+        },
+        "ru": {
+          "L": "Душа наша избавилась, как птица, из силка птицеловов; силок разорван, и мы избавились.",
+          "B": "Мы вырвались на свободу, как птица из ловушки птицеловов; ловушка сломана, и мы свободны!",
+          "R": "Мы спаслись, как птица, которая вырывается из ловушки охотника. Ловушка сломалась, и мы спаслись!"
+        },
+        "ja": {
+          "L": "わたしたちの魂は、鳥のように、鳥を捕る者たちのわなから逃れた。わなは破られ、わたしたちは逃れた。",
+          "B": "わたしたちは、鳥のように、鳥を捕る者たちのわなから抜け出した。わなは破られ、わたしたちは自由になった！",
+          "R": "わたしたちは、鳥を捕る人のわなから逃げる鳥のように、逃げ出した。わなが壊れて、わたしたちは助かった！"
+        },
+        "uk": {
+          "L": "Наша душа, як птах, утекла з сітки птахоловів; сітка порвалася, і ми втекли.",
+          "B": "Ми вирвалися, як птах із пастки птахоловів; пастка зламалася, і ми вільні!",
+          "R": "Ми втекли, як пташка, що вирвалася з пастки мисливця. Пастка зламалася, і ми втекли!"
         }
       },
       "decisions": [
@@ -1205,6 +1644,43 @@
             "my soul"
           ],
           "reason": "As in Psalms 1-12, nefesh is \"soul\" at Literal; Balanced and Readable say \"me\" or \"my life\", since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240070011",
+            "o191240070012"
+          ],
+          "choice": "душа наша (L); мы (B, R)",
+          "alternatives": [],
+          "reason": "As in the earlier psalms, nefesh is душа at Literal; Balanced and Readable say \"we\" or \"us\" as the English level does, since the word means the whole living person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240070071"
+          ],
+          "choice": "nishbar \"破られ\" (L, B), \"壊れて\" (R)",
+          "alternatives": [],
+          "reason": "The trap was broken by someone else (m2), so L and B keep the passive.",
           "uncertain": false,
           "footnote": false
         }
@@ -1273,6 +1749,26 @@
           "L": "ረድኤታችን ሰማይንና ምድርን በሠራው {{divine_name:በእግዚአብሔር|በያህዌ}} ስም [ነው]።",
           "B": "ረድኤታችንን የምናገኘው ሰማያትንና ምድርን በሠራው {{divine_name:በእግዚአብሔር|በያህዌ}} ስም ነው።",
           "R": "የሚረዳን ሰማይንና ምድርን የሠራው {{divine_name:እግዚአብሔር|ያህዌ}} ነው።"
+        },
+        "hi": {
+          "L": "हमारी सहायता {{divine_name:प्रभु|याहवे}} के नाम में [है], जो आकाश और पृथ्वी के बनानेवाले [हैं]।",
+          "B": "हमारी सहायता {{divine_name:प्रभु|याहवे}} के नाम में मिलती है, जिन्होंने आकाश और पृथ्वी को बनाया।",
+          "R": "{{divine_name:प्रभु|याहवे}}, जिन्होंने आकाश और धरती को बनाया, वही हमारी मदद करते हैं।"
+        },
+        "ru": {
+          "L": "Помощь наша — в имени {{divine_name:ГОСПОДА|Яхве}}, Творца неба и земли.",
+          "B": "Наша помощь — в имени {{divine_name:ГОСПОДА|Яхве}}, который сотворил небо и землю.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}}, который сотворил небо и землю, — тот, кто помогает нам."
+        },
+        "ja": {
+          "L": "わたしたちの助けは、天と地を造られた方、{{divine_name:主|ヤハウェ}}の名にある。",
+          "B": "わたしたちの助けは、天と地を造られた方、{{divine_name:主|ヤハウェ}}の名のうちにある。",
+          "R": "天と地を造られた{{divine_name:主|ヤハウェ}}こそ、わたしたちを助けてくださる方だ。"
+        },
+        "uk": {
+          "L": "Наша допомога — в імені {{divine_name:ГОСПОДА|Ягве}}, творця неба й землі.",
+          "B": "Ми знаходимо допомогу в імені {{divine_name:ГОСПОДА|Ягве}}, того, хто створив небо й землю.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}}, який створив небо й землю, — той, хто допомагає нам."
         }
       },
       "decisions": [
@@ -1323,6 +1819,46 @@
             "in the name of the LORD"
           ],
           "reason": "Readable gives the sense of \"the name\" (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191240080041",
+            "o191240080051",
+            "o191240080062"
+          ],
+          "choice": "the wording of 121:2",
+          "alternatives": [],
+          "reason": "\"Maker of heaven and earth\" keeps the Hindi of 121:2 at each level, as the Hebrew is the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191240080022",
+            "o191240080041"
+          ],
+          "choice": "\"天と地を造られた方、DNの名\" with the title before the name",
+          "alternatives": [],
+          "reason": "Japanese puts the description before the noun; the wording of 'oseh shamayim va'arets is the same as 121:2 and 134:3.",
           "uncertain": false,
           "footnote": false
         }

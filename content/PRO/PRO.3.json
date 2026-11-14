@@ -65,6 +65,26 @@
           "L": "ልጄ ሆይ፣ ትምህርቴን አትርሳ፤ \\q ልብህም ትእዛዛቴን ይጠብቅ፣",
           "B": "ልጄ ሆይ፣ ትምህርቴ ከአእምሮህ እንዲጠፋ አትፍቀድ፤ \\q ትእዛዛቴን በልብህ አጥብቀህ ያዝ፤",
           "R": "ልጄ፣ የማስተምርህን አትርሳ። \\q ትእዛዛቴን አስታውስ፤ ጠብቃቸውም።"
+        },
+        "hi": {
+          "L": "हे मेरे पुत्र, मेरी शिक्षा को मत भूलना, \\q और मेरी आज्ञाओं को तुम्हारा मन थामे रहे,",
+          "B": "हे मेरे पुत्र, मेरी शिक्षा को अपनी याद से फिसलने न देना; \\q मेरी आज्ञाओं को अपने मन में कसकर थामे रखना,",
+          "R": "बेटा, जो मैं तुम्हें सिखाता हूँ, उसे मत भूलना। \\q मेरी आज्ञाओं को याद रखना और उन्हें मानना।"
+        },
+        "ru": {
+          "L": "Сын мой, моё наставление не забывай, \\q и мои заповеди пусть стережёт твоё сердце,",
+          "B": "Сын мой, не дай моему наставлению выпасть из памяти; \\q храни мои заповеди в глубине сердца,",
+          "R": "Сын мой, не забывай того, чему я тебя учу. \\q Помни мои заповеди и исполняй их."
+        },
+        "ja": {
+          "L": "わたしの子よ、わたしの教えを忘れるな。 \\q わたしの戒めを、あなたの心に守らせよ。",
+          "B": "わが子よ、わたしの教えを忘れてはならない。 \\q わたしの戒めを、心にしっかりと留めておきなさい。",
+          "R": "わが子よ、わたしが教えることを忘れてはいけない。 \\q わたしの言いつけを覚えていて、それに従いなさい。"
+        },
+        "uk": {
+          "L": "Сину мій, мого повчання не забувай, \\q і мої заповіді нехай береже твоє серце,",
+          "B": "Сину мій, не дай моєму повчанню вилетіти з памʼяті; \\q тримай мої заповіді близько в серці,",
+          "R": "Сину мій, не забувай того, чого я тебе вчу. \\q Памʼятай мої заповіді й виконуй їх."
         }
       },
       "decisions": [
@@ -138,6 +158,44 @@
           "reason": "The English marks pronouns for God with the deity_pronoun setting so that a reader can capitalise them. The Ethiopic script has no capital letters, so the setting has nothing to change and the Amharic text has no such spans.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "no deity_pronoun span; honorific \"वे\", \"उनके\" for God",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change and the Hindi has no deity_pronoun spans (style guide, section 7). Respect for God is carried by the honorific plural, as in the earlier books of this translation. This holds wherever the English has such a span in this chapter (3:6 and later).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030010021"
+          ],
+          "choice": "наставление",
+          "alternatives": [
+            "учение",
+            "закон"
+          ],
+          "reason": "A father's torah is \"наставление\", as the poetry note settles; \"закон\" would suggest the Law of Moses.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -206,6 +264,26 @@
           "L": "የዕድሜ ርዝመትን፣ የሕይወት ዓመታትንና \\q ሰላምን ይጨምሩልሃልና።",
           "B": "ዕድሜህን ያረዝማሉ፤ በሕይወትህ ላይ ዓመታትን ይጨምራሉ፤ \\q ሰላምንም ያመጡልሃልና።",
           "R": "ይህን ብታደርግ ረጅም ዘመን ትኖራለህ፤ \\q ሕይወትህም የተሟላና ሰላማዊ ይሆናል።"
+        },
+        "hi": {
+          "L": "क्योंकि दिनों की लंबाई और जीवन के वर्ष \\q और शान्ति वे तुम्हें बढ़ाकर देंगी।",
+          "B": "क्योंकि वे तुम्हारी आयु लंबी करेंगी, तुम्हारे जीवन में वर्ष जोड़ेंगी \\q और तुम्हें शान्ति देंगी।",
+          "R": "अगर तुम ऐसा करोगे, तो तुम लंबे समय तक जियोगे, \\q और तुम्हारा जीवन भरपूर और शान्ति से भरा होगा।"
+        },
+        "ru": {
+          "L": "ведь долготу дней, и годы жизни, \\q и мир они прибавят тебе.",
+          "B": "ведь они продлят твои дни, прибавят годы к твоей жизни \\q и принесут тебе мир.",
+          "R": "Если будешь так поступать, то проживёшь долгую жизнь, \\q и твоя жизнь будет полной и мирной."
+        },
+        "ja": {
+          "L": "それらは、長い日々と命の年々を、 \\q そして平安を、あなたに加えるからである。",
+          "B": "それらは、あなたの日々を長くし、命の年を増し加え、 \\q あなたに平安をもたらすからだ。",
+          "R": "そうすれば、あなたは長生きをし、 \\q 満ち足りた、平和な人生を送る。"
+        },
+        "uk": {
+          "L": "бо довжину днів, і роки життя, \\q і мир вони додадуть тобі.",
+          "B": "бо вони продовжать твої дні, додадуть років твоєму життю \\q і принесуть тобі мир.",
+          "R": "Якщо так робитимеш, ти житимеш довго, \\q і твоє життя буде повне й мирне."
         }
       },
       "decisions": [
@@ -243,6 +321,26 @@
             "\"hòa bình\""
           ],
           "reason": "The word is wholeness and well-being in a life (see the meaning decision); \"bình an\" is the word for that, where \"hòa bình\" is peace between nations.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030020071"
+          ],
+          "choice": "\"वे ... देंगी\" (feminine)",
+          "alternatives": [
+            "\"वे ... देंगे\""
+          ],
+          "reason": "The subject is the father's teaching and commands (शिक्षा, आज्ञाएँ, feminine in Hindi), so the verb is feminine.",
           "uncertain": false,
           "footnote": false
         }
@@ -319,6 +417,26 @@
           "L": "ጽኑ ፍቅርና ታማኝነት አይለዩህ፤ \\q በአንገትህ ላይ እሰራቸው፤ \\q በልብህ ጽላት ላይ ጻፋቸው፤",
           "B": "ጽኑ ፍቅርና ታማኝነት ከቶ አይለዩህ፤ \\q እንደ ሐብል አድርጋቸው፤ \\q በጽላት ላይ እንደሚቀረጽም በልብህ ቅረጻቸው፤",
           "R": "ሁልጊዜ ታማኝና ደግ ሁን፤ የገባኸውንም ቃል ጠብቅ። \\q በአንገትህ ላይ እንዳሰርካቸው አድርገህ ያዛቸው። \\q በልብህ ላይ እንደ ተጻፉ አድርገህ አስታውሳቸው።"
+        },
+        "hi": {
+          "L": "अटल प्रेम और सच्चाई तुम्हें न छोड़ें; \\q उन्हें अपने गले में बाँध लो; \\q उन्हें अपने मन की पटिया पर लिख लो,",
+          "B": "कृपा और सच्चाई तुमसे कभी अलग न हों: \\q उन्हें हार की तरह पहने रहो, \\q और उन्हें अपने मन पर ऐसे खोद लो जैसे पटिया पर,",
+          "R": "हमेशा वफ़ादार और दयालु रहो, और अपने वादे निभाओ। \\q इन बातों को ऐसे थामे रहो मानो तुमने इन्हें गले में पहना हो। \\q इन्हें ऐसे याद रखो मानो ये तुम्हारे मन पर लिखी हों।"
+        },
+        "ru": {
+          "L": "Неизменная любовь и верность — пусть не оставляют тебя; \\q повяжи их на шею; \\q напиши их на скрижали своего сердца,",
+          "B": "Никогда не позволяй милости и верности покинуть тебя: \\q носи их, как ожерелье, \\q и начертай их на сердце, как на скрижали,",
+          "R": "Всегда будь верным и добрым и держи своё слово. \\q Держись за это, словно носишь это на шее. \\q Помни это, словно это написано у тебя на сердце."
+        },
+        "ja": {
+          "L": "誠実とまことが、あなたを離れないようにせよ。 \\q それらをあなたの首に結びつけ、 \\q あなたの心の板に書き記せ。",
+          "B": "誠実とまことを、決して手放してはならない。 \\q それを首飾りのように身につけ、 \\q 板に刻むように、あなたの心に刻みつけなさい。",
+          "R": "いつも誠実で親切であり、約束を守りなさい。 \\q それを首飾りのように、いつも身につけていなさい。 \\q 心に書きつけたように、覚えていなさい。"
+        },
+        "uk": {
+          "L": "Незмінна любов і вірність нехай не покидають тебе; \\q привʼяжи їх до своєї шиї; \\q напиши їх на скрижалі твого серця,",
+          "B": "Ніколи не дай незмінній любові й вірності покинути тебе: \\q носи їх, як намисто, \\q і вирізьби їх на серці, як на скрижалі,",
+          "R": "Завжди будь відданим і добрим і дотримуй своїх обіцянок. \\q Тримайся цього, ніби носиш його на шиї. \\q Памʼятай це, ніби воно написане на твоєму серці."
         }
       },
       "decisions": [
@@ -568,6 +686,94 @@
           "reason": "The father's words echo the commands of Deuteronomy 6:6-8, so the Literal keeps the same verb and \"ልብ\" as the Amharic there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030030011",
+            "o200030030022"
+          ],
+          "choice": "\"अटल प्रेम\" (L), \"कृपा\" (B); \"सच्चाई\" (L, B); R as the English",
+          "alternatives": [
+            "\"अटल प्रेम\" at Balanced"
+          ],
+          "reason": "Here hesed and emet are the son's own loyalty and reliability (meaning m1), not God's. The Pentateuch note gives hesed between people as \"अटल प्रेम\" at Literal and \"कृपा\" (kindness) at Balanced and Readable; faithfulness is \"सच्चाई\". Readable says what the words ask of the son: be loyal and kind and keep your word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030030011"
+          ],
+          "choice": "неизменная любовь (L); милость (B); верным и добрым (R)",
+          "alternatives": [
+            "милость и истина"
+          ],
+          "reason": "Hesed here is the son's own loyalty (meaning decision). Between people the Pentateuch and history notes give \"неизменная любовь\" at Literal and \"милость\" at Balanced; Readable turns it into plain adjectives, as the English Readable does. ʾEmet is \"верность\", not the Synodal \"истина\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030030011",
+            "o200030030022"
+          ],
+          "choice": "chesed ve'emet of the son \"誠実とまこと\" (L, B); Readable spells out loyalty, kindness and keeping one's word",
+          "alternatives": [
+            "いつくしみとまこと",
+            "愛と真実"
+          ],
+          "reason": "いつくしみ is kept for God's chesed, as in the earlier books; here it is the son's own loyalty (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030030011",
+            "o200030030022"
+          ],
+          "choice": "\"незмінна любов\" (L, B) for hesed, with \"бути відданим і добрим\" at Readable, through the book",
+          "alternatives": [
+            "\"милосердя\"",
+            "\"ласка\""
+          ],
+          "reason": "The terms note's row for hesed; here, as in most of Proverbs, it is a person's own loyalty, so Readable says what it looks like in a life.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -636,6 +842,26 @@
           "L": "ሞገስንና መልካም ስምንም ታገኛለህ፣ \\q በእግዚአብሔርና በሰው ዓይን።",
           "B": "ስለዚህ ሞገስን ታገኛለህ፤ በመልካምም ትታወቃለህ፤ \\q በእግዚአብሔርም በሰዎችም ዘንድ።",
           "R": "ያን ጊዜ እግዚአብሔርና ሰዎች በአንተ ደስ ይላቸዋል፤ መልካምም ያስቡልሃል።"
+        },
+        "hi": {
+          "L": "और परमेश्वर और मनुष्यों की दृष्टि में \\q अनुग्रह और अच्छा नाम पाओ।",
+          "B": "इस तरह तुम परमेश्वर की \\q और लोगों की नज़र में कृपा और अच्छा नाम पाओगे।",
+          "R": "तब परमेश्वर और लोग तुमसे प्रसन्न होंगे और तुम्हारे बारे में अच्छा सोचेंगे।"
+        },
+        "ru": {
+          "L": "и найдёшь благосклонность и доброе мнение \\q в глазах Бога и людей.",
+          "B": "Так ты обретёшь благосклонность и добрую славу \\q и у Бога, и у людей.",
+          "R": "Тогда Бог и люди будут довольны тобой и будут думать о тебе хорошо."
+        },
+        "ja": {
+          "L": "そして、好意と良い評価を見いだせ、 \\q 神と人の目に。",
+          "B": "そうすれば、あなたは好意を得て、良く思われる、 \\q 神からも、人からも。",
+          "R": "そうすれば、神も人も、あなたを喜び、あなたのことを良く思う。"
+        },
+        "uk": {
+          "L": "і знайдеш прихильність і добру славу \\q в очах Бога й людей.",
+          "B": "Так ти знайдеш прихильність і добру славу \\q і в Бога, і в людей.",
+          "R": "Тоді Бог і люди будуть тобою задоволені й добре про тебе думатимуть."
         }
       },
       "decisions": [
@@ -690,6 +916,24 @@
           "choice": "favour (ḥen) \"ሞገስ\"; good regard \"መልካም ስም\" (L), \"በመልካም መታወቅ\" (B)",
           "alternatives": [],
           "reason": "Romans 12:17 and 2 Corinthians 8:21 echo the Greek translation of this verse, which reads \"take thought for what is good before the Lord and people\"; the Hebrew speaks of finding favour, so the Amharic follows the Hebrew and keeps \"ሞገስ\", the word Luke uses for favour with God and people in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200030040012",
+            "o200030040052"
+          ],
+          "choice": "the two lines in Hindi order",
+          "alternatives": [],
+          "reason": "Hindi puts the phrase \"in the eyes of God and humankind\" before the verb, so the two lines of the Hebrew change places at Literal and Balanced; nothing is added or lost. Favor (hen) toward a person is \"अनुग्रह\" at Literal and \"कृपा\" at Balanced.",
           "uncertain": false,
           "footnote": false
         }
@@ -762,6 +1006,26 @@
           "L": "በሙሉ ልብህ {{divine_name:በእግዚአብሔር|በያህዌ}} ተማመን፤ \\q በገዛ ማስተዋልህም ላይ አትደገፍ።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} በሙሉ ልብህ እመነው፤ \\q በራስህ ማስተዋል አትመካ።",
           "R": "{{divine_name:በእግዚአብሔር|በያህዌ}} ሙሉ በሙሉ ተማመን። \\q አውቀዋለሁ ብለህ በምታስበው ነገር ላይ አትደገፍ።"
+        },
+        "hi": {
+          "L": "अपने पूरे मन से {{divine_name:प्रभु|याहवे}} पर भरोसा रखो, \\q और अपनी [ही] समझ पर टेक मत लगाओ।",
+          "B": "{{divine_name:प्रभु|याहवे}} पर पूरे दिल से भरोसा करो, \\q और अपनी ही समझ पर निर्भर मत रहो।",
+          "R": "{{divine_name:प्रभु|याहवे}} पर पूरी तरह भरोसा करो। \\q जो तुम्हें लगता है कि तुम जानते हो, उस पर निर्भर मत रहो।"
+        },
+        "ru": {
+          "L": "Доверяй {{divine_name:ГОСПОДУ|Яхве}} всем своим сердцем, \\q а на собственный разум не опирайся.",
+          "B": "Доверяй {{divine_name:ГОСПОДУ|Яхве}} всем сердцем \\q и не рассчитывай на собственный разум.",
+          "R": "Доверяй {{divine_name:ГОСПОДУ|Яхве}} полностью. \\q Не рассчитывай на то, что, как тебе кажется, ты знаешь."
+        },
+        "ja": {
+          "L": "あなたの心のすべてをもって{{divine_name:主|ヤハウェ}}に信頼せよ。 \\q そして、あなた自身の悟りに寄りかかるな。",
+          "B": "心のすべてをかけて{{divine_name:主|ヤハウェ}}に信頼しなさい。 \\q 自分の悟りに寄りかかってはならない。",
+          "R": "{{divine_name:主|ヤハウェ}}を、すっかり信頼しなさい。 \\q 自分がわかっていると思うことに頼ってはいけない。"
+        },
+        "uk": {
+          "L": "Довіряй {{divine_name:ГОСПОДУ|Ягве}} всім твоїм серцем, \\q і на твоє [власне] розуміння не спирайся.",
+          "B": "Довіряй {{divine_name:ГОСПОДУ|Ягве}} цілим серцем \\q і не покладайся на власну тямущість.",
+          "R": "Цілком довіряй {{divine_name:ГОСПОДУ|Ягве}}. \\q Не залежи від того, що, як тобі здається, ти знаєш."
         }
       },
       "decisions": [
@@ -870,6 +1134,50 @@
           "reason": "The phrase is the one Deuteronomy 6:5 uses for loving the LORD, and the Hebrew is the same; the wording also keeps the verse from that of a well-known Amharic Bible.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030050091"
+          ],
+          "choice": "\"टेक मत लगाओ\" (L); \"निर्भर मत रहो\" (B, R)",
+          "alternatives": [
+            "\"सहारा न लेना\""
+          ],
+          "reason": "To lean is to put your weight on something (meaning m3); Literal keeps that picture with \"टेक लगाना\", Balanced and Readable say \"depend on\". This verse is one of the best-known in Hindi; it is drafted afresh from the Hebrew, and the father's \"तुम\" is kept, so it does not follow a published Hindi version's wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030050011",
+            "o200030050091"
+          ],
+          "choice": "доверяй; не опирайся (L)",
+          "alternatives": [
+            "надейся",
+            "не полагайся"
+          ],
+          "reason": "Drafted from the Hebrew, not from the familiar Synodal wording. Batah is to rely on with confidence, \"доверять\"; the verb of the second line pictures putting your weight on something, which Literal keeps with \"опираться\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -938,6 +1246,26 @@
           "L": "በመንገዶችህ ሁሉ እርሱን እወቀው፤ \\q እርሱም ጎዳናዎችህን ቀጥ ያደርጋል።",
           "B": "በምታደርገው ነገር ሁሉ እርሱን አስታውስ፤ \\q እርሱም ቀና መንገድ ከፊትህ ይጠርግልሃል።",
           "R": "በምታደርገው ነገር ሁሉ {{divine_name:እግዚአብሔርን|ያህዌን}} አስብ፤ \\q እርሱም በትክክለኛው መንገድ ይመራሃል።"
+        },
+        "hi": {
+          "L": "अपने सब मार्गों में उन्हें जानो, \\q और वे तुम्हारी राहों को सीधा करेंगे।",
+          "B": "जो कुछ भी तुम करो, उसमें उन्हें ध्यान में रखो, \\q और वे तुम्हारे आगे का रास्ता सीधा और साफ़ कर देंगे।",
+          "R": "हर काम में {{divine_name:प्रभु|याहवे}} को याद रखो, \\q और वे तुम्हें सही रास्ते पर ले चलेंगे।"
+        },
+        "ru": {
+          "L": "На всех своих путях знай {{deity_pronoun:его|Его}}, \\q и {{deity_pronoun:он|Он}} сделает прямыми твои тропы.",
+          "B": "Помни о {{deity_pronoun:нём|Нём}} во всём, что делаешь, \\q и {{deity_pronoun:он|Он}} проложит перед тобой прямую дорогу.",
+          "R": "Помни о {{divine_name:ГОСПОДЕ|Яхве}} во всём, что ты делаешь, \\q и {{deity_pronoun:он|Он}} поведёт тебя верной дорогой."
+        },
+        "ja": {
+          "L": "あなたのすべての道において、その方を知れ。 \\q そうすれば、その方はあなたの道筋をまっすぐにされる。",
+          "B": "何をするときにも、その方を心に留めなさい。 \\q そうすれば、その方はあなたの前にまっすぐな道を開いてくださる。",
+          "R": "何をするときにも、{{divine_name:主|ヤハウェ}}のことを思い出しなさい。 \\q そうすれば、その方はあなたを正しい道に導いてくださる。"
+        },
+        "uk": {
+          "L": "На всіх твоїх дорогах пізнавай {{deity_pronoun:його|Його}}, \\q і {{deity_pronoun:він|Він}} випрямить твої стежки.",
+          "B": "Памʼятай про {{deity_pronoun:нього|Нього}} в усьому, що робиш, \\q і {{deity_pronoun:він|Він}} розчистить перед тобою пряму дорогу.",
+          "R": "Памʼятай про {{divine_name:ГОСПОДА|Ягве}} в усьому, що робиш, \\q і {{deity_pronoun:він|Він}} вестиме тебе правильною дорогою."
         }
       },
       "decisions": [
@@ -1034,6 +1362,49 @@
           "reason": "Literal keeps the plain verb \"know\", which in Hebrew is recognising God and living with him (m1); \"reconhecer\" is the familiar wording of other versions and makes it a matter of acknowledging only. Balanced says \"Lembre-se dele\", as the English \"keep him in mind\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030060031",
+            "o200030060051"
+          ],
+          "choice": "\"उन्हें जानो\" (L); \"ध्यान में रखो\" (B); \"याद रखो\" (R)",
+          "alternatives": [
+            "\"स्मरण करो\""
+          ],
+          "reason": "To know him is to recognize and honour him in all you do (meaning m1). Literal keeps the Hebrew verb \"know\"; Balanced and Readable say \"keep him in mind\" and \"remember\", as the English does. \"सीधा करना\" keeps the picture of a road made level and clear (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030060031",
+            "o200030060032"
+          ],
+          "choice": "знай его",
+          "alternatives": [
+            "познавай его",
+            "признавай его"
+          ],
+          "reason": "Literal keeps the plain verb \"know\" of the Hebrew, as the English Literal does; the meaning decision (recognize and honour him in what you do) is said at Balanced and Readable with \"помни о нём\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1104,6 +1475,26 @@
           "L": "በራስህ ዓይን ጠቢብ አትሁን፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ፍራ፤ ከክፋትም ራቅ።",
           "B": "ራስህን እንደ ጠቢብ አትቁጠር፤ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ፍራ፤ ከክፉም ተጠበቅ።",
           "R": "ካለህ የበለጠ ጠቢብ እንደ ሆንክ አታስብ። \\q {{divine_name:እግዚአብሔርን|ያህዌን}} አክብረህ ፍራ፤ ከክፉም ራቅ።"
+        },
+        "hi": {
+          "L": "अपनी [ही] दृष्टि में बुद्धिमान न बनो; \\q {{divine_name:प्रभु|याहवे}} का भय मानो और बुराई से हट जाओ।",
+          "B": "अपने आप को बुद्धिमान मत समझो; \\q {{divine_name:प्रभु|याहवे}} का भय मानो और बुराई से दूर रहो।",
+          "R": "यह मत सोचो कि तुम जितने हो, उससे ज़्यादा बुद्धिमान हो। \\q {{divine_name:प्रभु|याहवे}} का आदर और भय मानो, और बुराई से दूर रहो।"
+        },
+        "ru": {
+          "L": "Не будь мудрым в своих [собственных] глазах; \\q бойся {{divine_name:ГОСПОДА|Яхве}} и уклоняйся от зла.",
+          "B": "Не считай себя мудрым; \\q бойся {{divine_name:ГОСПОДА|Яхве}} и держись подальше от зла.",
+          "R": "Не думай, что ты мудрее, чем есть на самом деле. \\q Благоговей перед {{divine_name:ГОСПОДОМ|Яхве}} и держись подальше от зла."
+        },
+        "ja": {
+          "L": "あなた自身の目に知恵ある者となるな。 \\q {{divine_name:主|ヤハウェ}}を恐れ、悪から離れよ。",
+          "B": "自分を知恵ある者と思ってはならない。 \\q {{divine_name:主|ヤハウェ}}を畏れ、悪から遠ざかりなさい。",
+          "R": "自分は知恵があると思い込んではいけない。 \\q {{divine_name:主|ヤハウェ}}をおそれ敬い、悪から遠ざかりなさい。"
+        },
+        "uk": {
+          "L": "Не будь мудрим у твоїх [власних] очах; \\q бійся {{divine_name:ГОСПОДА|Ягве}} і відступи від зла.",
+          "B": "Не вважай себе мудрим; \\q бійся {{divine_name:ГОСПОДА|Ягве}} і тримайся подалі від зла.",
+          "R": "Не думай, що ти мудріший, ніж є насправді. \\q Шануй {{divine_name:ГОСПОДА|Ягве}} з благоговінням і тримайся подалі від зла."
         }
       },
       "decisions": [
@@ -1222,6 +1613,26 @@
           "L": "ለእምብርትህ ፈውስ፣ \\q ለአጥንቶችህም ማደሻ ይሆናል።",
           "B": "ለሰውነትህ መድኃኒት፣ \\q ለአጥንቶችህም አዲስ ብርታት ይሆናል።",
           "R": "ያን ጊዜ ሰውነትህ ጤናማና ብርቱ ይሆናል።"
+        },
+        "hi": {
+          "L": "यह तुम्हारी नाभि के लिए चंगाई \\q और तुम्हारी हड्डियों के लिए ताज़गी होगा।",
+          "B": "यह तुम्हारे शरीर के लिए दवा \\q और तुम्हारी हड्डियों के लिए नई ताक़त होगा।",
+          "R": "तब तुम्हारा शरीर स्वस्थ और मज़बूत रहेगा।"
+        },
+        "ru": {
+          "L": "Исцелением это будет для твоего пупа \\q и влагой для твоих костей.",
+          "B": "Это будет лекарством для твоего тела \\q и новой силой для твоих костей.",
+          "R": "Тогда твоё тело будет здоровым и крепким."
+        },
+        "ja": {
+          "L": "それは、あなたのへそに癒やしとなり、 \\q あなたの骨に潤いとなる。",
+          "B": "それは、あなたの体の薬となり、 \\q 骨に新しい力を与える。",
+          "R": "そうすれば、あなたの体は健康で、強くなる。"
+        },
+        "uk": {
+          "L": "Зціленням це буде для твого пупа \\q і освіженням для твоїх кісток.",
+          "B": "Це буде ліками для твого тіла \\q і свіжою силою для твоїх кісток.",
+          "R": "Тоді твоє тіло буде здорове й сильне."
         }
       },
       "decisions": [
@@ -1252,6 +1663,44 @@
           "choice": "refreshment: moisture, life",
           "alternatives": [],
           "reason": "The word (shiqquy) means a drink. Healthy bones are pictured as moist and full of life, sick ones as dry (17:22; Job 21:24).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030080032"
+          ],
+          "choice": "\"नाभि\" (L)",
+          "alternatives": [
+            "\"शरीर\""
+          ],
+          "reason": "The navel stands for the body (meaning m1); Literal keeps the Hebrew word, Balanced and Readable say \"body\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030080032"
+          ],
+          "choice": "пупа",
+          "alternatives": [
+            "тела"
+          ],
+          "reason": "Literal keeps the Hebrew's picture of the navel, as the English Literal does; Balanced and Readable say \"тело\" (meaning decision).",
           "uncertain": false,
           "footnote": false
         }
@@ -1323,6 +1772,26 @@
           "L": "ከሀብትህ {{divine_name:እግዚአብሔርን|ያህዌን}} አክብር፤ \\q ከምርትህም ሁሉ በኩራት፣",
           "B": "ባለህ ንብረት {{divine_name:እግዚአብሔርን|ያህዌን}} አክብር፤ \\q ምድርህ ከምታፈራው ሁሉ የመጀመሪያውንና ምርጡን በመስጠት፤",
           "R": "ካለህ ነገር ሁሉ የመጀመሪያውንና ምርጡን ክፍል በመስጠት {{divine_name:እግዚአብሔርን|ያህዌን}} አክብር።"
+        },
+        "hi": {
+          "L": "अपने धन से {{divine_name:प्रभु|याहवे}} का आदर करो, \\q और अपनी सारी उपज के पहले [भाग] से,",
+          "B": "जो कुछ तुम्हारे पास है, उससे {{divine_name:प्रभु|याहवे}} का आदर करो, \\q और तुम्हारी भूमि की हर उपज के पहले और सबसे अच्छे भाग से;",
+          "R": "जो कुछ तुम्हारे पास है, उसका पहला और सबसे अच्छा भाग {{divine_name:प्रभु|याहवे}} को देकर उनका आदर करो।"
+        },
+        "ru": {
+          "L": "Почитай {{divine_name:ГОСПОДА|Яхве}} твоим достоянием \\q и первым из всего твоего урожая,",
+          "B": "Почитай {{divine_name:ГОСПОДА|Яхве}} тем, что у тебя есть, \\q первым и лучшим из всего, что приносит твоя земля;",
+          "R": "Почитай {{divine_name:ГОСПОДА|Яхве}}: отдавай {{deity_pronoun:ему|Ему}} первую и лучшую часть всего, что у тебя есть."
+        },
+        "ja": {
+          "L": "あなたの財産で{{divine_name:主|ヤハウェ}}をあがめよ、 \\q あなたのすべての収穫の初物で。",
+          "B": "持っている物で、{{divine_name:主|ヤハウェ}}をあがめなさい、 \\q 土地から取れるすべての物の、初めの最も良いもので。",
+          "R": "あなたの持っている物すべての、最初の、最も良い分を{{divine_name:主|ヤハウェ}}にささげて、その方をあがめなさい。"
+        },
+        "uk": {
+          "L": "Шануй {{divine_name:ГОСПОДА|Ягве}} твоїм багатством \\q і першим з усього твого врожаю,",
+          "B": "Шануй {{divine_name:ГОСПОДА|Ягве}} тим, що маєш, \\q першим і найкращим з усього, що родить твоя земля;",
+          "R": "Шануй {{divine_name:ГОСПОДА|Ягве}}, віддаючи {{deity_pronoun:йому|Йому}} першу й найкращу частину всього, що маєш."
         }
       },
       "decisions": [
@@ -1425,6 +1894,26 @@
           "L": "ጎተራዎችህም በጥጋብ ይሞላሉ፤ \\q መጭመቂያዎችህም በአዲስ የወይን ጠጅ ሞልተው ይፈስሳሉ።",
           "B": "ያን ጊዜ ጎተራዎችህ ከበቂ በላይ ይሞላሉ፤ \\q አዲሱም የወይን ጠጅ ከመጭመቂያዎችህ ሞልቶ ይፈስሳል።",
           "R": "ያን ጊዜ ጎተራዎችህ በእህል ይሞላሉ፤ \\q መጭመቂያዎችህ ሊይዙት ከሚችሉት በላይ የወይን ጠጅ ይኖርሃል።"
+        },
+        "hi": {
+          "L": "तब तुम्हारे खत्ते भरपूरी से भर जाएँगे, \\q और तुम्हारे कुंड नए दाखमधु से उमड़ पड़ेंगे।",
+          "B": "तब तुम्हारे खत्ते भरने के लिए ज़रूरत से ज़्यादा उपज होगी, \\q और नया दाखमधु तुम्हारे कुंडों से उमड़ पड़ेगा।",
+          "R": "तब तुम्हारे खत्ते अनाज से भरे रहेंगे, \\q और तुम्हारे पास इतना दाखमधु होगा कि तुम्हारे कुंडों में न समाए।"
+        },
+        "ru": {
+          "L": "и наполнятся твои амбары изобилием, \\q и от молодого вина будут лопаться твои чаны.",
+          "B": "и тогда твои амбары наполнятся до краёв, \\q а молодое вино будет переливаться через край твоих чанов.",
+          "R": "Тогда твои амбары будут полны зерна, \\q и вина у тебя будет больше, чем вмещают твои чаны."
+        },
+        "ja": {
+          "L": "そうすれば、あなたの倉は豊かさで満たされ、 \\q あなたの酒ぶねは新しいぶどう酒ではち切れる。",
+          "B": "そうすれば、倉はあり余るほど満ち、 \\q 酒ぶねからは新しいぶどう酒があふれ出る。",
+          "R": "そうすれば、倉は穀物でいっぱいになり、 \\q 酒ぶねに入りきらないほどのぶどう酒ができる。"
+        },
+        "uk": {
+          "L": "і твої клуні наповняться [достатком], \\q і [молодим] вином твої чани переповняться.",
+          "B": "тоді твої клуні будуть повні понад міру, \\q а молоде вино переливатиметься з твоїх чанів.",
+          "R": "Тоді твої клуні будуть повні зерна, \\q і в тебе буде більше вина, ніж уміщують твої чани."
         }
       },
       "decisions": [
@@ -1455,6 +1944,28 @@
           "choice": "new wine ... vats: the year's grape juice in the pressing vats",
           "alternatives": [],
           "reason": "The vat (yeqeb) is the trough below a winepress, where the juice runs (Joel 2:24).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030100042",
+            "o200030100051"
+          ],
+          "choice": "\"नया दाखमधु\"; \"कुंड\" (vats)",
+          "alternatives": [
+            "\"नया दाखरस\""
+          ],
+          "reason": "New wine is the year's fresh grape juice in the pressing vats (meaning m2), \"नया दाखमधु\" as in Genesis 27 and Deuteronomy 7 of this translation; \"कुंड\" is the vat into which the juice runs.",
           "uncertain": false,
           "footnote": false
         }
@@ -1526,6 +2037,26 @@
           "L": "{{divine_name:የእግዚአብሔርን|የያህዌን}} ተግሣጽ፣ ልጄ ሆይ፣ አትናቅ፤ \\q ዘለፋውንም አትጸየፍ፤",
           "B": "ልጄ ሆይ፣ {{divine_name:የእግዚአብሔርን|የያህዌን}} ተግሣጽ ወደ ጎን አትግፋ፤ \\q በዘለፋውም አትሰላች፤",
           "R": "ልጄ ሆይ፣ {{divine_name:እግዚአብሔር|ያህዌ}} በሚያርምህ ጊዜ እምቢ አትበል። \\q ስሕተትህን በሚያሳይህም ጊዜ አትበሳጭ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} के अनुशासन को, हे मेरे पुत्र, तुच्छ न जानो, \\q और उनकी डाँट से न उकताओ,",
+          "B": "हे मेरे पुत्र, {{divine_name:प्रभु|याहवे}} के अनुशासन को हल्का न समझो, \\q और उनके सुधार से न ऊबो,",
+          "R": "बेटा, जब {{divine_name:प्रभु|याहवे}} तुम्हें सुधारें, तो उसे ठुकराओ मत। \\q जब वे तुम्हें डाँटें, तो चिढ़ो मत।"
+        },
+        "ru": {
+          "L": "Наставлением {{divine_name:ГОСПОДА|Яхве}}, сын мой, не пренебрегай \\q и не гнушайся {{deity_pronoun:его|Его}} обличением,",
+          "B": "Сын мой, не относись пренебрежительно к наставлению {{divine_name:ГОСПОДА|Яхве}} \\q и не тяготись {{deity_pronoun:его|Его}} обличением,",
+          "R": "Сын мой, когда {{divine_name:ГОСПОДЬ|Яхве}} вразумляет тебя, не отвергай этого. \\q Когда {{deity_pronoun:он|Он}} исправляет тебя, не раздражайся."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の訓戒を、わたしの子よ、退けるな。 \\q その方の叱責をいとうな。",
+          "B": "わが子よ、{{divine_name:主|ヤハウェ}}の訓戒を軽んじてはならない。 \\q その方の叱責にうんざりしてはならない。",
+          "R": "わが子よ、{{divine_name:主|ヤハウェ}}があなたをしつけられるとき、それを拒んではいけない。 \\q その方があなたをしかられるとき、いやがってはいけない。"
+        },
+        "uk": {
+          "L": "Настанови {{divine_name:ГОСПОДНЬОЇ|від Ягве}}, сину мій, не відкидай \\q і не гидуй {{deity_pronoun:його|Його}} докором,",
+          "B": "Сину мій, не відкидай настанови {{divine_name:ГОСПОДА|Ягве}} \\q і не втомлюйся від {{deity_pronoun:його|Його}} виправлення,",
+          "R": "Сину мій, коли {{divine_name:ГОСПОДЬ|Ягве}} тебе карає, не відкидай цього. \\q Коли {{deity_pronoun:він|Він}} тебе виправляє, не дратуйся."
         }
       },
       "decisions": [
@@ -1641,6 +2172,53 @@
           "reason": "Hebrews 12:5-6 quotes these verses from the Greek translation, which reads \"do not think lightly of the Lord's discipline, nor faint when you are reproved\". The Hebrew says \"do not reject\" and \"do not loathe\", and names the LORD with the divine name where the Greek has \"Lord\", so the Amharic follows the Hebrew there and keeps the wording of Hebrews 12:5 in this translation elsewhere.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030110011",
+            "o200030110051",
+            "o200030110071"
+          ],
+          "choice": "\"अनुशासन को ... तुच्छ न जानो\" (L), \"हल्का न समझो\" (B), as Hebrews 12:5; \"न उकताओ\", \"न ऊबो\" for the Hebrew \"loathe\"",
+          "alternatives": [
+            "\"हियाव न छोड़ो\" (Hebrews 12:5)"
+          ],
+          "reason": "Hebrews 12:5-6 quotes these verses (meaning m3). Where the Hebrew says the same as the Greek, the Hindi keeps the wording of Hebrews 12:5 in this translation at Literal and Balanced (\"हे मेरे पुत्र\", \"अनुशासन\", \"तुच्छ न जानो\", \"हल्का न समझो\"). In the second line Hebrews follows the Greek Old Testament, \"do not lose heart when you are reproved\"; the Hebrew says \"do not loathe his rebuke\" (m2), and that is what the Hindi translates. Readable keeps the Hebrew \"reject\" (\"ठुकराओ मत\"), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030110011",
+            "o200030110051",
+            "o200030110071"
+          ],
+          "choice": "не пренебрегай наставлением; не гнушайся (L)",
+          "alternatives": [
+            "не изнемогай",
+            "не падай духом"
+          ],
+          "reason": "Hebrews 12:5 quotes this verse from the Greek, which reads \"do not faint\" where the Hebrew says \"do not loathe\". The Hebrew is translated: the first line uses the same words as Hebrews 12:5 in this translation where they say the same (сын мой, не пренебрегай, наставление at Balanced, исправляет at Readable), and the second line keeps the Hebrew's \"loathe, resent\" (гнушаться, тяготиться, раздражаться).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1710,6 +2288,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወደውን ይገሥጻልና፤ \\q አባት ደስ የሚሰኝበትን ልጅ [እንደሚገሥጽ]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወደውን ይገሥጻልና፤ \\q አባት ደስታው የሆነውን ልጅ እንደሚገሥጽ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወዳቸውን ሰዎች ያርማቸዋል፤ \\q ልክ አባት ደስ የሚሰኝበትን ልጅ እንደሚያርም።"
+        },
+        "hi": {
+          "L": "क्योंकि {{divine_name:प्रभु|याहवे}} जिससे प्रेम करते हैं, उसे डाँटते हैं, \\q जैसे पिता उस पुत्र को जिससे वह प्रसन्न है।",
+          "B": "क्योंकि {{divine_name:प्रभु|याहवे}} जिससे प्रेम करते हैं, उसे सुधारते हैं, \\q जैसे पिता उस पुत्र को सुधारता है जो उसका आनंद है।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन्हें सुधारते हैं जिनसे वे प्रेम करते हैं, \\q ठीक वैसे ही जैसे पिता उस बेटे को सुधारता है जिससे वह ख़ुश है।"
+        },
+        "ru": {
+          "L": "ведь кого любит {{divine_name:ГОСПОДЬ|Яхве}}, {{deity_pronoun:он|Он}} обличает, \\q как и отец — сына, в котором находит отраду.",
+          "B": "ведь кого {{divine_name:ГОСПОДЬ|Яхве}} любит, того {{deity_pronoun:он|Он}} и обличает, \\q как отец — сына, который ему в радость.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} исправляет тех, кого {{deity_pronoun:он|Он}} любит, \\q так же как отец исправляет сына, которым доволен."
+        },
+        "ja": {
+          "L": "まことに、{{divine_name:主|ヤハウェ}}は愛する者を叱責される、 \\q 父が、喜びとする子を[叱責する]ように。",
+          "B": "{{divine_name:主|ヤハウェ}}は、愛する者を正される。 \\q 父が、喜びとする子を正すように。",
+          "R": "{{divine_name:主|ヤハウェ}}は、愛する人をしかってくださる。 \\q 父が、大切に思う子をしかるのと同じように。"
+        },
+        "uk": {
+          "L": "бо кого {{divine_name:ГОСПОДЬ|Ягве}} любить, того {{deity_pronoun:він|Він}} картає, \\q як батько сина, [якого] він уподобав.",
+          "B": "бо {{divine_name:ГОСПОДЬ|Ягве}} виправляє того, кого {{deity_pronoun:він|Він}} любить, \\q як батько виправляє сина, що є його радістю.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} виправляє тих, кого {{deity_pronoun:він|Він}} любить, \\q так само як батько виправляє сина, яким він задоволений."
         }
       },
       "decisions": [
@@ -1789,6 +2387,53 @@
           "reason": "Hebrews 12:6 reads, with the Greek translation, \"and he scourges every son whom he receives\". The Hebrew text has \"and like a father the son he delights in\" (see the meaning decision), so the second line follows the Hebrew, and the verb \"ይገሥጻል\" is understood again from the first line.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030120061",
+            "o200030120072",
+            "o200030120073"
+          ],
+          "choice": "\"जैसे पिता उस पुत्र को जिससे वह प्रसन्न है\", translating the Hebrew; not Hebrews 12:6's \"scourges every son he receives\"",
+          "alternatives": [
+            "\"जिस किसी पुत्र को वे ग्रहण करते हैं, उसे कोड़े लगाते हैं\" (Hebrews 12:6)"
+          ],
+          "reason": "Hebrews 12:6 follows the Greek Old Testament, which read the second line as \"and he scourges every son he receives\". The Hebrew text reads \"and like a father the son in whom he delights\" (meaning m1), and the Hindi translates the Hebrew. The first line keeps the shape of Hebrews 12:6 in this translation (\"जिससे प्रेम करते हैं, उसे ...\"), with the Hebrew verb \"reproves\" (\"डाँटते हैं\") at Literal; Readable matches Hebrews' \"प्रभु उन्हें सुधारते हैं जिनसे वे प्रेम करते हैं\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030120061",
+            "o200030120071",
+            "o200030120073",
+            "o200030120101"
+          ],
+          "choice": "как отец — сына, в котором находит отраду",
+          "alternatives": [
+            "и бьёт всякого сына, которого принимает"
+          ],
+          "reason": "Hebrews 12:6 follows the Greek, \"and he scourges every son whom he receives\"; the Hebrew text reads \"and like a father the son in whom he delights\" (meaning decision). The Hebrew is translated. The first line keeps the wording of Hebrews 12:6 in this translation (\"кого любит Господь\", \"исправляет\" at Readable), with \"обличает\" for the Hebrew's \"reproves\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1854,6 +2499,26 @@
           "L": "ጥበብን ያገኘ ሰው ምስጉን ነው፤ \\q ማስተዋልንም የሚያገኝ ሰው [ምስጉን ነው]፤",
           "B": "ጥበብን ያገኘ ሰው እንዴት የተባረከ ነው! \\q ማስተዋልን የተቀዳጀ ሰውም እንዲሁ፤",
           "R": "ጥበብን የሚያገኙ ሰዎች በእውነት ደስተኞች ናቸው። \\q ማስተዋልን የሚያገኙም እንዲሁ ናቸው።"
+        },
+        "hi": {
+          "L": "कितना धन्य [है वह] मनुष्य [जिसने] बुद्धि पाई है, \\q और [वह] मनुष्य [जो] समझ प्राप्त करता है,",
+          "B": "कितना धन्य है वह व्यक्ति जिसने बुद्धि पाई है, \\q वह जिसने समझ हासिल की है,",
+          "R": "जो लोग बुद्धि पाते हैं, उनका जीवन सचमुच अच्छा है। \\q जो समझ हासिल करते हैं, उनका भी।"
+        },
+        "ru": {
+          "L": "Блажен человек, нашедший мудрость, \\q и человек, обретающий разум,",
+          "B": "Блажен тот, кто нашёл мудрость, \\q кто приобрёл разум,",
+          "R": "По-настоящему счастливы люди, которые находят мудрость, \\q и те, кто обретает понимание."
+        },
+        "ja": {
+          "L": "幸いなことよ、知恵を見いだした人、 \\q 英知を得る人は。",
+          "B": "なんと幸いなことか、知恵を見いだした人、 \\q 英知を手に入れた人は。",
+          "R": "知恵を見つける人は、本当に幸せだ。 \\q 理解する力を得る人も、そうだ。"
+        },
+        "uk": {
+          "L": "Блаженна людина, [що] знайшла мудрість, \\q і людина, [що] здобуває розуміння,",
+          "B": "Блаженна людина, що знайшла мудрість, \\q та, що здобула розуміння,",
+          "R": "Люди, які знаходять мудрість, справді щасливі. \\q Так само й ті, хто здобуває розуміння."
         }
       },
       "decisions": [
@@ -2017,6 +2682,90 @@
           "reason": "The terms list for the poetic books gives one wording for ʾashrei at each level, following the English level: Literal keeps the old word for a person to be congratulated, Balanced the familiar \"blessed\", Readable says what it means, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030130011"
+          ],
+          "choice": "\"कितना धन्य है\" (L, B); \"... का जीवन सचमुच अच्छा है\" (R)",
+          "alternatives": [
+            "\"सुखी\""
+          ],
+          "reason": "The exclamation (ashrei) speaks of a life that truly goes well (meaning m1). The Hindi uses the forms the Psalms of this translation settled for it (Psalm 1:1): \"कितना धन्य\" at Literal and Balanced, and a plain description at Readable, since \"ख़ुश\" sounds like a passing mood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030130011"
+          ],
+          "choice": "Блажен (L, B); счастливы (R)",
+          "alternatives": [
+            "Счастлив"
+          ],
+          "reason": "The Psalms forms for ashrei, kept in Proverbs.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030130011"
+          ],
+          "choice": "ashre \"幸い\" (L, B), \"本当に幸せだ\" (R), for the whole book",
+          "alternatives": [
+            "祝福された"
+          ],
+          "reason": "As makarios in the New Testament (幸い, L, B): the word says how well off a person is, not that God has blessed him (祝福する is kept for barakh, 3:33).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030130011"
+          ],
+          "choice": "\"блаженний\" (L, B), \"справді щасливий\" (R) for 'ashre, through the book",
+          "alternatives": [
+            "\"щасливий\" at every level"
+          ],
+          "reason": "As the Beatitudes in this translation have \"Блаженні\" (L, B) and \"Щасливі\" (R), the Hebrew word for one who is well off before God takes the same split.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2086,6 +2835,26 @@
           "L": "ትርፏ ከብር ትርፍ ይበልጣልና፤ \\q ገቢዋም ከወርቅ [ይበልጣል]።",
           "B": "የምታስገኝልህ ከብር ይልቅ ዋጋ አለውና፤ \\q ገቢዋም ከወርቅ ይሻላል።",
           "R": "ጥበብ ከብርና ከወርቅ የበለጠ ዋጋ አላት።"
+        },
+        "hi": {
+          "L": "क्योंकि उसका लाभ चाँदी के लाभ से अच्छा [है], \\q और उसकी कमाई सोने से [अच्छी]।",
+          "B": "क्योंकि उससे जो लाभ मिलता है, वह चाँदी से बढ़कर है, \\q और उसकी कमाई सोने से अच्छी है।",
+          "R": "बुद्धि चाँदी और सोने से भी ज़्यादा क़ीमती है।"
+        },
+        "ru": {
+          "L": "ведь её прибыль лучше прибыли от серебра, \\q и её доход — [лучше] золота.",
+          "B": "ведь то, что она приносит, ценнее серебра, \\q и доход от неё лучше золота.",
+          "R": "Мудрость стоит больше, чем серебро и золото."
+        },
+        "ja": {
+          "L": "まことに、その利益は銀の利益にまさり、 \\q その収益は金にまさる。",
+          "B": "知恵がもたらすものは銀よりも価値があり、 \\q その実りは金にまさるからだ。",
+          "R": "知恵は、銀や金よりも値打ちがある。"
+        },
+        "uk": {
+          "L": "бо краща її нажива, ніж нажива срібла, \\q і її прибуток — [кращий] за золото.",
+          "B": "бо те, що вона приносить, цінніше за срібло, \\q а її прибуток кращий за золото.",
+          "R": "Мудрість цінніша за срібло й золото."
         }
       },
       "decisions": [
@@ -2187,6 +2956,26 @@
           "L": "እርሷ ከዕንቁዎች ትከብራለች፤ \\q የምትመኘውም ሁሉ ከእርሷ ጋር አይተካከልም።",
           "B": "ዋጋዋ ከቀይ ዕንቁ ይበልጣል፤ \\q የምትመኘው ምንም ነገር አይደርስባትም።",
           "R": "እርሷ ከውድ ጌጣጌጦች ትበልጣለች። \\q ልትመኘው የምትችለው ምንም ነገር እንደ እርሷ መልካም አይደለም።"
+        },
+        "hi": {
+          "L": "वह मूँगों से अधिक क़ीमती [है], \\q और तुम्हारी सारी मनभावनी वस्तुएँ उसकी बराबरी नहीं करतीं।",
+          "B": "वह लाल मूँगों से भी बढ़कर है; \\q जिस किसी चीज़ की तुम लालसा करो, वह उसके पास तक नहीं पहुँचती।",
+          "R": "वह महँगे रत्नों से भी ज़्यादा क़ीमती है। \\q तुम जो कुछ भी चाह सकते हो, उसमें से कुछ भी उसके बराबर अच्छा नहीं।"
+        },
+        "ru": {
+          "L": "Она драгоценнее кораллов, \\q и все твои желанные [вещи] не сравнятся с ней.",
+          "B": "Она ценнее красных кораллов; \\q ничто, о чём ты мечтаешь, и близко к ней не стоит.",
+          "R": "Она дороже драгоценных камней. \\q Ничто из того, что ты мог бы захотеть, не так хорошо, как она."
+        },
+        "ja": {
+          "L": "知恵は、さんごよりも尊く、 \\q あなたの喜びとするすべてのものも、これに及ばない。",
+          "B": "知恵は赤いさんごよりも価値があり、 \\q あなたが望むどんなものも、これには及ばない。",
+          "R": "知恵は、高価な宝石よりも値打ちがある。 \\q あなたがほしいと思うどんなものも、知恵ほど良くはない。"
+        },
+        "uk": {
+          "L": "Вона дорожча за корали, \\q і всі твої скарби не зрівняються з нею.",
+          "B": "Вона цінніша за червоні корали; \\q ніщо з того, чого ти прагнеш, не зрівняється з нею.",
+          "R": "Вона цінніша за дорогоцінне каміння. \\q Ніщо з того, чого ти міг би бажати, не зрівняється з нею."
         }
       },
       "decisions": [
@@ -2310,6 +3099,26 @@
           "L": "የዕድሜ ርዝመት በቀኟ [ነው]፤ \\q በግራዋም ባለጠግነትና ክብር [ናቸው]።",
           "B": "ረጅም ዕድሜን በቀኝ እጇ ይዛለች፤ \\q ሀብትንና ክብርንም በግራዋ።",
           "R": "ጥበብ በአንድ እጇ ረጅም ዕድሜን ትሰጣለች፤ \\q በሌላዋም እጇ ሀብትንና ክብርን ትሰጣለች።"
+        },
+        "hi": {
+          "L": "दिनों की लंबाई उसके दाहिने [हाथ] में [है]; \\q उसके बाएँ [हाथ] में धन और सम्मान [हैं]।",
+          "B": "वह अपने दाहिने हाथ में लंबी आयु \\q और बाएँ हाथ में धन और सम्मान लिए रहती है।",
+          "R": "बुद्धि एक हाथ से लंबी आयु देती है, \\q और दूसरे हाथ से धन और सम्मान।"
+        },
+        "ru": {
+          "L": "Долгота дней — в её правой [руке]; \\q в её левой — богатство и честь.",
+          "B": "В правой руке она держит долгую жизнь, \\q а в левой — богатство и честь.",
+          "R": "Мудрость одной рукой даёт долгую жизнь, \\q а другой — богатство и почёт."
+        },
+        "ja": {
+          "L": "その右[の手]には日々の長さがあり、 \\q その左[の手]には富と誉れがある。",
+          "B": "知恵は、右の手に長寿を、 \\q 左の手に富と誉れを持っている。",
+          "R": "知恵は、片方の手で長い命を与え、 \\q もう片方の手で富と誉れを与える。"
+        },
+        "uk": {
+          "L": "Довжина днів — у її правиці; \\q у її лівиці — багатство й слава.",
+          "B": "У правій руці вона тримає довге життя, \\q а в лівій — багатство й славу.",
+          "R": "Однією рукою мудрість дає довге життя, \\q а другою — багатство й пошану."
         }
       },
       "decisions": [
@@ -2393,6 +3202,26 @@
           "L": "መንገዶቿ የደስታ መንገዶች [ናቸው]፤ \\q ጎዳናዎቿም ሁሉ ሰላም [ናቸው]።",
           "B": "መንገዶቿ ደስ የሚያሰኙ ናቸው፤ \\q የምትሄድበትም ጎዳና ሁሉ ወደ ሰላም ያደርሳል።",
           "R": "በጥበብ መኖር ደስ ያሰኛል፤ \\q ወደ ሰላምም ያደርሳል።"
+        },
+        "hi": {
+          "L": "उसके मार्ग मनभावनेपन के मार्ग [हैं], \\q और उसकी सब राहें शान्ति [हैं]।",
+          "B": "उसके मार्ग सुहावने हैं, \\q और उसकी हर राह शान्ति तक ले जाती है।",
+          "R": "बुद्धिमानी से जीना सुखद है, \\q और वह शान्ति की ओर ले जाता है।"
+        },
+        "ru": {
+          "L": "Её пути — пути отрады, \\q и все её тропы — мир.",
+          "B": "Её пути полны отрады, \\q и каждая её тропа ведёт к миру.",
+          "R": "Жить мудро приятно, \\q и это ведёт к миру."
+        },
+        "ja": {
+          "L": "その道は楽しい道、 \\q その道筋はみな平安である。",
+          "B": "知恵の道は喜ばしく、 \\q その道筋はすべて平安に通じる。",
+          "R": "知恵をもって生きることは楽しく、 \\q 平安へと通じている。"
+        },
+        "uk": {
+          "L": "Її дороги — дороги приємності, \\q і всі її стежки — мир.",
+          "B": "Її дороги чудові, \\q і кожна її стежка веде до миру.",
+          "R": "Жити мудро приємно, \\q і це веде до миру."
         }
       },
       "decisions": [
@@ -2478,6 +3307,26 @@
           "L": "ለሚይዟት የሕይወት ዛፍ ናት፤ \\q አጥብቀው የሚይዟትም ምስጉኖች ይባላሉ።",
           "B": "ለሚጨብጧት የሕይወት ዛፍ ናት፤ \\q አጥብቆ የሚይዛትም የተባረከ ይባላል።",
           "R": "ጥበብ ለሚይዟት ሰዎች ሕይወትን እንደሚሰጥ ዛፍ ናት። \\q አጥብቀው የሚይዟት ሰዎች በእውነት ደስተኞች ናቸው።"
+        },
+        "hi": {
+          "L": "जो उसे पकड़ लेते हैं, उनके लिए वह जीवन का वृक्ष [है], \\q और जो उसे थामे रहते हैं, वे धन्य कहलाते [हैं]।",
+          "B": "जो उसे थाम लेते हैं, उनके लिए वह जीवन का वृक्ष है; \\q जो कोई उसे मज़बूती से पकड़े रहता है, वह धन्य कहलाता है।",
+          "R": "बुद्धि एक ऐसे पेड़ के समान है जो उसे थामनेवालों को जीवन देता है। \\q जो उसे कसकर पकड़े रहते हैं, उनका जीवन सचमुच अच्छा है।"
+        },
+        "ru": {
+          "L": "Дерево жизни она для тех, кто берётся за неё, \\q и те, кто крепко её держит, названы блаженными.",
+          "B": "Для тех, кто берётся за неё, она — дерево жизни; \\q кто крепко её держит, того называют блаженным.",
+          "R": "Мудрость — словно дерево, дающее жизнь тем, кто за неё держится. \\q Те, кто держится за неё крепко, по-настоящему счастливы."
+        },
+        "ja": {
+          "L": "知恵は、これをつかむ者たちにとって命の木であり、 \\q これを固く保つ者は幸いと呼ばれる。",
+          "B": "知恵は、それをつかむ人々にとって命の木。 \\q 知恵をしっかり握る者は、幸いな者と呼ばれる。",
+          "R": "知恵は、しっかりつかむ人に命を与える木のようだ。 \\q 知恵を固く握って離さない人は、本当に幸せだ。"
+        },
+        "uk": {
+          "L": "Дерево життя вона для тих, хто хапається за неї, \\q і [кожен], хто міцно тримає її, — блаженний.",
+          "B": "Для тих, хто хапається за неї, вона — дерево життя; \\q хто міцно її тримає, той блаженний.",
+          "R": "Мудрість як дерево, що дає життя тим, хто тримається за неї. \\q Хто міцно тримається за неї, той справді щасливий."
         }
       },
       "decisions": [
@@ -2552,6 +3401,70 @@
           "reason": "The allusion to the garden of Eden is kept by using the same words as Genesis 2-3; Readable says what the tree gives, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030180011",
+            "o200030180021"
+          ],
+          "choice": "\"जीवन का वृक्ष\"",
+          "alternatives": [
+            "\"जीवन का पेड़\""
+          ],
+          "reason": "The tree of life recalls the garden of Eden (meaning m1), so Literal and Balanced use the wording of Genesis 2:9 and Revelation 22:2 in this translation; Readable says \"पेड़\" in a comparison, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030180011",
+            "o200030180021"
+          ],
+          "choice": "дерево жизни",
+          "alternatives": [
+            "древо жизни"
+          ],
+          "reason": "The same words as the tree of life in Genesis 2-3 and Revelation in this translation, so the allusion is heard (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030180011",
+            "o200030180021"
+          ],
+          "choice": "'ets chayyim \"命の木\" (L, B), \"命を与える木\" (R), as Genesis 2:9",
+          "alternatives": [
+            "いのちの木"
+          ],
+          "reason": "m1: the tree of the garden of Eden; the same words as Genesis keep the allusion.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2618,6 +3531,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በጥበብ ምድርን መሠረተ፤ \\q በማስተዋልም ሰማያትን አጸና፤",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ምድርን በመሠረቷ ላይ ያኖራት በጥበብ ነው፤ \\q ሰማዩንም በስፍራው ያጸናው በማስተዋል ነው፤",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ምድርን ለመሥራት ጥበብን ተጠቀመ። \\q ሰማዩን በስፍራው ለማኖር ማስተዋልን ተጠቀመ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} ने बुद्धि से पृथ्वी की नींव डाली; \\q समझ से उन्होंने आकाश को स्थिर किया;",
+          "B": "{{divine_name:प्रभु|याहवे}} ने बुद्धि से ही पृथ्वी को उसकी नींव पर रखा, \\q और समझ से ही उन्होंने आकाश को उसकी जगह पर टिकाया;",
+          "R": "{{divine_name:प्रभु|याहवे}} ने पृथ्वी को बनाने में बुद्धि से काम लिया। \\q उन्होंने आकाश को उसकी जगह पर रखने में समझ से काम लिया।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} мудростью основал землю, \\q {{deity_pronoun:он|Он}} установил небеса разумом;",
+          "B": "Это мудростью {{divine_name:ГОСПОДЬ|Яхве}} заложил основание земли, \\q и разумом {{deity_pronoun:он|Он}} поставил небеса на место;",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} создал землю с помощью мудрости. \\q Он своим пониманием поставил небо на место."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は知恵によって地の基を据え、 \\q 英知によって天を確立された。",
+          "B": "{{divine_name:主|ヤハウェ}}は知恵をもって大地の基を据え、 \\q 英知をもって天を固く定められた。",
+          "R": "{{divine_name:主|ヤハウェ}}は、知恵を用いて地を造られた。 \\q 理解する力を用いて、空をその場所に置かれた。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} мудрістю заснував землю; \\q {{deity_pronoun:він|Він}} утвердив небеса розумінням;",
+          "B": "Саме мудрістю {{divine_name:ГОСПОДЬ|Ягве}} поставив землю на її основи, \\q і розумінням {{deity_pronoun:він|Він}} утвердив небеса;",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} мудрістю створив землю. \\q Розумінням {{deity_pronoun:він|Він}} поставив на місце небо."
         }
       },
       "decisions": [
@@ -2701,6 +3634,26 @@
           "L": "በእውቀቱ ቀላያት ተሰነጠቁ፤ \\q ደመናትም ጠልን ያንጠባጥባሉ።",
           "B": "በእውቀቱ ጥልቅ ውኆች ፈልቀው ወጡ፤ \\q ደመናትም ጠልን አወረዱ።",
           "R": "ምንጮች ከመሬት ፈንድተው እንዲወጡ እንዴት እንደሚያደርግ ያውቅ ነበር፤ \\q ደመናትም ጠልን እንዲሰጡ እንዴት እንደሚያደርግ ያውቅ ነበር።"
+        },
+        "hi": {
+          "L": "उनके ज्ञान से गहरे सागर फट गए, \\q और बादल ओस टपकाते हैं।",
+          "B": "उनके ज्ञान से गहरे जल फूट निकले, \\q और बादल ओस बरसाते हैं।",
+          "R": "वे जानते थे कि सोतों को धरती से कैसे फोड़ निकालें, \\q और बादलों से ओस कैसे गिराएँ।"
+        },
+        "ru": {
+          "L": "Его знанием раскололись бездны, \\q и облака сочат росу.",
+          "B": "Его знанием прорвались глубинные воды, \\q и облака проливают росу.",
+          "R": "Он знал, как заставить источники пробиться из земли \\q и как сделать, чтобы облака давали росу."
+        },
+        "ja": {
+          "L": "その方の知識によって深淵は裂け、 \\q 雲は露を滴らせる。",
+          "B": "その方の知識によって深い水は裂けてわき出し、 \\q 雲は露を降らせる。",
+          "R": "その方は、地から泉をわき出させる方法を知っておられ、 \\q 雲から露を降らせる方法も知っておられる。"
+        },
+        "uk": {
+          "L": "{{deity_pronoun:його|Його}} знанням розкрилися безодні, \\q і хмари скрапують росою.",
+          "B": "{{deity_pronoun:його|Його}} знанням вирвалися глибинні води, \\q і хмари сіють росу.",
+          "R": "Він знав, як змусити джерела пробитися з-під землі \\q і як змусити хмари давати росу."
         }
       },
       "decisions": [
@@ -2803,6 +3756,26 @@
           "L": "ልጄ ሆይ፣ ከዓይኖችህ አይራቁ፤ \\q ፍሬያማ ጥበብንና ጥንቃቄን ጠብቅ፣",
           "B": "ልጄ ሆይ፣ እነዚህ ከዓይንህ እንዲሰወሩ አትፍቀድ፤ \\q ፍሬያማ ጥበብንና አስቀድሞ ማሰብን አጥብቀህ ያዝ፤",
           "R": "ልጄ፣ ጤናማ አስተሳሰብንና ጥንቃቄን ሁልጊዜ በፊትህ አኑር። \\q አጥብቀህ ያዛቸው።"
+        },
+        "hi": {
+          "L": "हे मेरे पुत्र, वे तुम्हारी आँखों से ओझल न हों; \\q खरी बुद्धि और विवेक को सँभाले रखो,",
+          "B": "हे मेरे पुत्र, इन्हें अपनी आँखों से ओझल न होने दो; \\q व्यावहारिक बुद्धि और दूरदर्शिता को थामे रहो,",
+          "R": "बेटा, समझदारी और सोच-समझकर योजना बनाने की योग्यता को हमेशा अपनी आँखों के सामने रखो। \\q उन्हें थामे रहो।"
+        },
+        "ru": {
+          "L": "Сын мой, пусть они не ускользают из твоих глаз; \\q храни здравую мудрость и рассудительность,",
+          "B": "Сын мой, не упускай их из виду; \\q держись здравой мудрости и предусмотрительности,",
+          "R": "Сын мой, всегда держи перед глазами здравый смысл и умение всё мудро продумывать. \\q Держись за них."
+        },
+        "ja": {
+          "L": "わたしの子よ、それらがあなたの目から離れないようにせよ。 \\q 確かな知恵と思慮を守れ。",
+          "B": "わが子よ、これらを見失ってはならない。 \\q 確かな知恵と思慮をしっかり保ちなさい。",
+          "R": "わが子よ、役に立つ知恵とよく考える力を、いつも目の前に置いておきなさい。 \\q それをしっかり持っていなさい。"
+        },
+        "uk": {
+          "L": "Сину мій, нехай не зникають вони з твоїх очей; \\q бережи справжню мудрість і обачність,",
+          "B": "Сину мій, не випускай їх з поля зору; \\q тримайся справжньої мудрості й передбачливості,",
+          "R": "Сину мій, тримай розсудливість і мудре планування перед собою. \\q Тримайся їх."
         }
       },
       "decisions": [
@@ -2834,6 +3807,25 @@
           "choice": "sound wisdom and discretion",
           "alternatives": [],
           "reason": "Sound wisdom (tushiyyah) is wisdom that works (2:7); discretion (mezimmah) is foresight (1:4; 2:11).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030210061",
+            "o200030210072"
+          ],
+          "choice": "\"खरी बुद्धि\", \"व्यावहारिक बुद्धि\" (tushiyyah); \"विवेक\", \"दूरदर्शिता\" (discretion), as in 2:7 and 2:11",
+          "alternatives": [],
+          "reason": "The two words keep the wording they had in chapter 2, at each level.",
           "uncertain": false,
           "footnote": false
         }
@@ -2904,6 +3896,26 @@
           "L": "ለነፍስህም ሕይወት፣ \\q ለአንገትህም ሞገስ ይሆናሉ።",
           "B": "ሕይወትም ይሆኑልሃል፤ \\q በአንገትህም ዙሪያ ያማረ ጌጥ።",
           "R": "ሕይወትን ይሰጡሃል፤ \\q እንደ ውብ ሐብልም ያስውቡሃል።"
+        },
+        "hi": {
+          "L": "और वे तुम्हारे प्राण के लिए जीवन \\q और तुम्हारे गले के लिए शोभा होंगी।",
+          "B": "और वे तुम्हारे लिए जीवन होंगी \\q और तुम्हारे गले का सुंदर गहना।",
+          "R": "वे तुम्हें जीवन देंगी, \\q और तुम्हें आकर्षक बनाएँगी, जैसे सुंदर हार।"
+        },
+        "ru": {
+          "L": "и они будут жизнью для твоей души \\q и красой для твоей шеи.",
+          "B": "и они будут для тебя жизнью \\q и прекрасным украшением на шее.",
+          "R": "Они дадут тебе жизнь \\q и сделают тебя привлекательным, как красивое ожерелье."
+        },
+        "ja": {
+          "L": "そうすれば、それらはあなたの魂にとって命となり、 \\q あなたの首にとって優美[な飾り]となる。",
+          "B": "それらはあなたにとって命となり、 \\q 首を飾る美しい飾りとなる。",
+          "R": "それはあなたに命を与え、 \\q 美しい首飾りのように、あなたを魅力ある人にする。"
+        },
+        "uk": {
+          "L": "і вони будуть життям для твоєї душі \\q і благодаттю для твоєї шиї.",
+          "B": "і вони будуть тобі життям \\q і гарною прикрасою на шиї.",
+          "R": "Вони дадуть тобі життя \\q і зроблять тебе привабливим, як гарне намисто."
         }
       },
       "decisions": [
@@ -3003,6 +4015,26 @@
           "L": "ያን ጊዜ መንገድህን ተማምነህ ትሄዳለህ፤ \\q እግርህም አይደናቀፍም።",
           "B": "ያን ጊዜ መንገድህ ለመሄድ አስተማማኝ ይሆናል፤ \\q እግርህም በምንም አይደናቀፍም።",
           "R": "ያን ጊዜ በሄድክበት ሁሉ በደኅና ትሄዳለህ፤ \\q አትሰናከልም፤ አትወድቅምም።"
+        },
+        "hi": {
+          "L": "तब तुम निडर होकर अपने मार्ग पर चलोगे, \\q और तुम्हारा पाँव [किसी चीज़ से] ठोकर न खाएगा।",
+          "B": "तब तुम्हारा रास्ता चलने के लिए सुरक्षित होगा, \\q और तुम्हारा पाँव किसी चीज़ से नहीं टकराएगा।",
+          "R": "तब तुम जहाँ भी जाओगे, सुरक्षित रहोगे, \\q और तुम ठोकर खाकर नहीं गिरोगे।"
+        },
+        "ru": {
+          "L": "Тогда ты будешь ходить своим путём в безопасности, \\q и твоя нога не ударится [ни обо что].",
+          "B": "Тогда твоя дорога будет безопасной, \\q и твоя нога ни обо что не ударится.",
+          "R": "Тогда ты будешь в безопасности, куда бы ни пошёл, \\q и не споткнёшься и не упадёшь."
+        },
+        "ja": {
+          "L": "そのとき、あなたは安らかにあなたの道を歩み、 \\q あなたの足は[何にも]つまずかない。",
+          "B": "そのとき、あなたは安心して道を歩み、 \\q 足が何かにぶつかることもない。",
+          "R": "そうすれば、どこへ行っても安全で、 \\q つまずいて倒れることもない。"
+        },
+        "uk": {
+          "L": "Тоді ходитимеш твоєю дорогою в безпеці, \\q і твоя нога не спіткнеться.",
+          "B": "Тоді твоя дорога буде безпечна, \\q і твоя нога ні об що не спіткнеться.",
+          "R": "Тоді ти будеш у безпеці, хоч куди підеш, \\q і не спіткнешся й не впадеш."
         }
       },
       "decisions": [
@@ -3087,6 +4119,26 @@
           "L": "ብትተኛ አትፈራም፤ \\q ትተኛለህ፤ እንቅልፍህም ጣፋጭ ይሆናል።",
           "B": "ወደ መኝታህ ስትሄድ የምትፈራው ነገር አይኖርም፤ \\q ትተኛለህ፤ በሰላምም ታንቀላፋለህ።",
           "R": "ስትተኛ አትፈራም። \\q በደንብ ትተኛለህ።"
+        },
+        "hi": {
+          "L": "यदि तुम लेटोगे, तो तुम नहीं डरोगे; \\q तुम लेटोगे, और तुम्हारी नींद मीठी होगी।",
+          "B": "जब तुम सोने जाओगे, तो तुम्हें किसी बात का डर न होगा; \\q तुम लेटोगे और गहरी नींद सोओगे।",
+          "R": "जब तुम सोने जाओगे, तो तुम्हें डर नहीं लगेगा। \\q तुम्हें अच्छी नींद आएगी।"
+        },
+        "ru": {
+          "L": "Если ляжешь, не будешь бояться; \\q ляжешь, и сладким будет твой сон.",
+          "B": "Когда пойдёшь спать, тебе нечего будет бояться; \\q ты ляжешь и будешь спать спокойно.",
+          "R": "Когда ложишься спать, ты не будешь бояться. \\q Ты будешь хорошо спать."
+        },
+        "ja": {
+          "L": "あなたが横たわるとき、恐れることはない。 \\q あなたは横たわり、あなたの眠りは快い。",
+          "B": "床に就くとき、何も恐れることはない。 \\q 横になれば、ぐっすりと眠れる。",
+          "R": "寝るときにも、こわくない。 \\q よく眠ることができる。"
+        },
+        "uk": {
+          "L": "Якщо ляжеш, не будеш боятися; \\q ляжеш, і солодкий буде твій сон.",
+          "B": "Коли лягатимеш, тобі не буде чого боятися; \\q ти ляжеш і спатимеш міцно.",
+          "R": "Коли лягатимеш спати, ти не боятимешся. \\q Ти добре спатимеш."
         }
       },
       "decisions": [
@@ -3171,6 +4223,26 @@
           "L": "ድንገተኛ ድንጋጤን አትፍራ፤ \\q የክፉዎችንም ማዕበል በመጣ ጊዜ [አትፍራ]፤",
           "B": "ድንገተኛ ሽብርን፣ \\q ወይም በክፉዎች ላይ የሚወርደውን ማዕበል በመጣ ጊዜ መፍራት አያስፈልግህም፤",
           "R": "ድንገተኛ መከራን አትፍራ፤ \\q በክፉ ሰዎች ላይ የሚመጣውንም ችግር አትፍራ።"
+        },
+        "hi": {
+          "L": "अचानक आनेवाले भय से मत डरो, \\q न दुष्टों के विनाश से जब वह आए,",
+          "B": "तुम्हें अचानक आनेवाले आतंक से डरने की ज़रूरत नहीं, \\q न उस आँधी से जो दुष्टों पर टूटती है जब वह आती है,",
+          "R": "अचानक आनेवाली मुसीबत से मत डरो, \\q न उस संकट से जो बुरे लोगों पर आता है।"
+        },
+        "ru": {
+          "L": "Не бойся внезапного ужаса \\q и бури нечестивых, когда она придёт,",
+          "B": "Тебе не нужно бояться внезапного ужаса \\q или бури, которая обрушится на нечестивых,",
+          "R": "Не бойся внезапной беды \\q или несчастья, которое приходит на злых людей."
+        },
+        "ja": {
+          "L": "突然の恐怖を恐れるな、 \\q 悪しき者たちの嵐が来るときも。",
+          "B": "突然の恐怖を恐れることはない。 \\q 悪しき者たちに襲いかかる嵐が来ても、恐れることはない。",
+          "R": "突然の災いを恐れてはいけない。 \\q 悪い人たちに来る災いも、恐れてはいけない。"
+        },
+        "uk": {
+          "L": "Не бійся раптового жаху \\q ані бурі нечестивих, коли вона прийде,",
+          "B": "Тобі не треба боятися раптового жаху \\q чи бурі, що впаде на нечестивих, коли вона прийде,",
+          "R": "Не бійся раптового лиха \\q чи біди, що приходить на злих людей."
         }
       },
       "decisions": [
@@ -3273,6 +4345,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} መታመኛህ ይሆናልና፤ \\q እግርህንም ከመያዝ ይጠብቃል።",
           "B": "የምትመካበት {{divine_name:እግዚአብሔር|ያህዌ}} ይሆናልና፤ \\q እግርህንም ከወጥመድ ይጠብቃል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በደኅና ይጠብቅሃል። \\q በወጥመድ እንድትያዝ አይፈቅድም።"
+        },
+        "hi": {
+          "L": "क्योंकि {{divine_name:प्रभु|याहवे}} तुम्हारा भरोसा होंगे, \\q और वे तुम्हारे पाँव को फँसने से बचाएँगे।",
+          "B": "क्योंकि {{divine_name:प्रभु|याहवे}} ही वे होंगे जिन पर तुम निर्भर रहोगे, \\q और वे तुम्हारे पाँव को फंदे से बचाए रखेंगे।",
+          "R": "{{divine_name:प्रभु|याहवे}} तुम्हें सुरक्षित रखेंगे। \\q वे तुम्हें किसी फंदे में फँसने नहीं देंगे।"
+        },
+        "ru": {
+          "L": "ведь {{divine_name:ГОСПОДЬ|Яхве}} будет твоей уверенностью, \\q и {{deity_pronoun:он|Он}} убережёт твою ногу от поимки.",
+          "B": "ведь {{divine_name:ГОСПОДЬ|Яхве}} будет твоей опорой, \\q и {{deity_pronoun:он|Он}} убережёт твою ногу от силка.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} сохранит тебя в безопасности. \\q Он не даст тебе попасть в ловушку."
+        },
+        "ja": {
+          "L": "まことに、{{divine_name:主|ヤハウェ}}があなたの頼みとなり、 \\q あなたの足を捕らわれることから守られる。",
+          "B": "{{divine_name:主|ヤハウェ}}こそ、あなたが頼る方となり、 \\q あなたの足がわなにかからないように守ってくださるからだ。",
+          "R": "{{divine_name:主|ヤハウェ}}が、あなたを安全に守ってくださる。 \\q わなにかからないようにしてくださる。"
+        },
+        "uk": {
+          "L": "бо {{divine_name:ГОСПОДЬ|Ягве}} буде твоєю надією, \\q і {{deity_pronoun:він|Він}} убереже твою ногу від пастки.",
+          "B": "бо {{divine_name:ГОСПОДЬ|Ягве}} буде тим, на кого ти покладаєшся, \\q і {{deity_pronoun:він|Він}} убереже твою ногу від сильця.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} берегтиме тебе. \\q Він не дасть тобі потрапити в пастку."
         }
       },
       "decisions": [
@@ -3376,6 +4468,26 @@
           "L": "መልካሙን ከባለቤቶቹ አትከልክል፣ \\q ለማድረግ በእጅህ ኃይል ሲኖር።",
           "B": "ለሚገባቸው መልካም ማድረግ በእጅህ ሲሆን፣ \\q አትከልክላቸው።",
           "R": "አንድን ሰው መርዳት ስትችል እርዳው። \\q ሰዎች ሊያገኙት የሚገባቸውን ነገር አትከልክላቸው።"
+        },
+        "hi": {
+          "L": "भलाई को उसके हक़दारों से मत रोको, \\q जब उसे करना तुम्हारे हाथ की शक्ति में हो।",
+          "B": "जब तुम्हारे बस में हो कि जिनका हक़ बनता है उनके साथ भलाई करो, \\q तो उसे मत रोको।",
+          "R": "जब तुम किसी की मदद कर सकते हो, तो करो। \\q लोगों को वह देने से इनकार मत करो जो उन्हें मिलना चाहिए।"
+        },
+        "ru": {
+          "L": "Не отказывай в добре тем, кому оно принадлежит, \\q когда в силах твоей руки сделать [это].",
+          "B": "Когда в твоих силах сделать добро тем, кому оно причитается, \\q не удерживай его.",
+          "R": "Когда ты можешь помочь кому-то, помоги. \\q Не отказывай людям в том, что им положено."
+        },
+        "ja": {
+          "L": "善を受けるべき者たちから、それを拒むな、 \\q あなたの手にそれを行う力があるときには。",
+          "B": "当然受けるべき人に善を行う力があなたにあるときは、 \\q それを出し惜しみしてはならない。",
+          "R": "人を助けることができるときには、助けなさい。 \\q 人が当然受けるべきものを、拒んではいけない。"
+        },
+        "uk": {
+          "L": "Не відмовляй у доброму тим, кому воно належить, \\q коли в силі твоєї руки зробити [це].",
+          "B": "Коли маєш змогу зробити добро тим, кому воно належить, \\q не стримуй його.",
+          "R": "Коли можеш комусь допомогти, допоможи. \\q Не відмовляй людям у тому, що їм належить."
         }
       },
       "decisions": [
@@ -3482,6 +4594,26 @@
           "L": "ባልንጀራህን፦ \\q «ሂድና ተመለስ፤ ነገም እሰጣለሁ» አትበለው፣ \\q ከአንተ ዘንድ እያለ።",
           "B": "ባልንጀራህን፦ \\q «ሂድና ተመልሰህ ና፤ ነገ እሰጥሃለሁ» አትበለው፣ \\q አሁን በእጅህ እያለ።",
           "R": "ባልንጀራህ ያለህን ነገር ቢፈልግ፣ \\q «ነገ ተመልሰህ ና፤ ያን ጊዜ እሰጥሃለሁ» አትበለው።"
+        },
+        "hi": {
+          "L": "अपने पड़ोसी से मत कहो, \\q \"जाओ और फिर आना, और कल मैं दूँगा,\" \\q जबकि वह तुम्हारे पास हो।",
+          "B": "अपने पड़ोसी से यह न कहो, \\q \"अभी जाओ और फिर आना; मैं तुम्हें कल दे दूँगा,\" \\q जबकि वह अभी तुम्हारे पास है।",
+          "R": "अगर तुम्हारे पड़ोसी को किसी ऐसी चीज़ की ज़रूरत है जो तुम्हारे पास है, \\q तो यह मत कहो, \"कल आना, तब मैं तुम्हें दे दूँगा।\""
+        },
+        "ru": {
+          "L": "Не говори своему ближнему: \\q «Ступай и вернись, а завтра я дам [это]», \\q когда у тебя [это] есть.",
+          "B": "Не говори своему ближнему: \\q «Уходи и приходи потом; я дам тебе это завтра», \\q когда это есть у тебя уже сейчас.",
+          "R": "Если твоему ближнему нужно что-то, что у тебя есть, \\q не говори: «Приходи завтра, тогда я тебе это дам.»"
+        },
+        "ja": {
+          "L": "あなたの隣人に、 \\q 「行って、また来い。あす与えよう」と言うな、 \\q それがあなたの手もとにあるときに。",
+          "B": "隣人に向かって、 \\q 「いったん帰って、また来てくれ。あす渡すから」と言ってはならない、 \\q 今それを手もとに持っているのに。",
+          "R": "隣人が、あなたの持っている物を必要としているなら、 \\q 「あしたまた来てくれ。そのときに渡すから」と言ってはいけない。"
+        },
+        "uk": {
+          "L": "Не кажи твоєму ближньому: \\q «Іди й повернися, і завтра я дам [це]», \\q коли воно є в тебе.",
+          "B": "Не кажи своєму ближньому: \\q «Іди й приходь пізніше; я дам тобі це завтра», \\q коли воно в тебе є вже тепер.",
+          "R": "Якщо твоєму сусідові потрібне те, що в тебе є, \\q не кажи: «Приходь завтра, тоді я тобі дам.»"
         }
       },
       "decisions": [
@@ -3591,6 +4723,27 @@
           "reason": "Amharic puts the verb of saying after what is said, so the first line holds only \"to your neighbour\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o200030280042"
+          ],
+          "choice": "the neighbour is addressed with \"तुम\"",
+          "alternatives": [
+            "\"आप\""
+          ],
+          "reason": "Neighbours speak to each other as equals, with \"तुम\". \"Neighbor\" is anyone you live among (meaning m2), \"पड़ोसी\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3661,6 +4814,26 @@
           "L": "በባልንጀራህ ላይ ክፉ አትዶልት፣ \\q እርሱ ተማምኖ በአጠገብህ ሲኖር።",
           "B": "በባልንጀራህ ላይ ክፉ አታሢር፤ \\q እርሱ በአጠገብህ የሚኖርና የሚተማመንብህ ነው።",
           "R": "ባልንጀራህን ለመጉዳት አታቅድ፤ \\q እርሱ በአጠገብህ ይኖራል፤ ይተማመንብሃልም።"
+        },
+        "hi": {
+          "L": "अपने पड़ोसी के विरुद्ध बुराई की युक्ति मत करो, \\q जबकि वह तुम्हारे पास निश्चिंत होकर रहता है।",
+          "B": "अपने पड़ोसी के विरुद्ध बुराई की साज़िश मत रचो, \\q जो तुम्हारे पास रहता है और तुम पर भरोसा करता है।",
+          "R": "अपने पड़ोसी को नुक़सान पहुँचाने की योजना मत बनाओ, \\q जो तुम्हारे पास रहता है और तुम पर भरोसा करता है।"
+        },
+        "ru": {
+          "L": "Не замышляй зла против своего ближнего, \\q когда он живёт рядом с тобой без опасения.",
+          "B": "Не строй козней против своего ближнего, \\q который живёт рядом и доверяет тебе.",
+          "R": "Не задумывай навредить своему соседу, \\q который живёт рядом и доверяет тебе."
+        },
+        "ja": {
+          "L": "あなたの隣人に対して悪をたくらむな、 \\q その人があなたのそばで安心して住んでいるときに。",
+          "B": "隣人に対して悪をたくらんではならない。 \\q その人は、あなたを信頼して、そばに住んでいるのだ。",
+          "R": "隣人を傷つけようと計画してはいけない。 \\q その人は、あなたを信頼して、隣に住んでいるのだ。"
+        },
+        "uk": {
+          "L": "Не задумуй зла проти твого ближнього, \\q коли він живе в безпеці поряд з тобою.",
+          "B": "Не замишляй лиха проти свого ближнього, \\q який живе поряд з тобою і довіряє тобі.",
+          "R": "Не задумуй зла своєму сусідові, \\q який живе поряд з тобою і довіряє тобі."
         }
       },
       "decisions": [
@@ -3748,6 +4921,63 @@
           "reason": "The English Literal offers \"they\" or \"he\", \"a person\" or \"a man\", through the gender setting. Amharic uses \"ሰው\" and the masculine verb for anyone, man or woman, so there is nothing for the setting to change; the same holds for the spans in verses 30-31.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200030290062"
+          ],
+          "choice": "no gender span: \"वह\"",
+          "alternatives": [
+            "\"{{gender:वे|वह}}\""
+          ],
+          "reason": "Where the English Literal offers \"they are\" or \"he is\", the Hindi \"वह\" with \"रहता है\" is the ordinary way to speak of anyone, man or woman, so there is no span. The same holds for the English spans in 3:30-31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200030290062"
+          ],
+          "choice": "он, with no gender setting",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "The English Literal puts \"they are / he is\" under the gender setting. In Russian \"он\" refers back to \"ближний\", which already means any neighbour, man or woman, so no setting is needed; the same holds in 3:30.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200030290071"
+          ],
+          "choice": "\"その人\" with no gender span where the English Literal has {{gender:they are|he is}} (also 3:30, 3:31)",
+          "alternatives": [
+            "{{gender:その人|彼}}"
+          ],
+          "reason": "Japanese その人 / 人 already covers anyone, so the setting is not needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3815,6 +5045,26 @@
           "L": "ከማንም ጋር ያለ ምክንያት አትጣላ፣ \\q ክፉ ካላደረገብህ።",
           "B": "ያለ ምክንያት ጠብ አትጫር \\q ምንም ክፉ ካላደረገብህ ሰው ጋር።",
           "R": "ያለ ምክንያት ከሰው ጋር አትከራከር፤ \\q ያ ሰው ምንም ያልጎዳህ ከሆነ።"
+        },
+        "hi": {
+          "L": "किसी मनुष्य से अकारण मत झगड़ो, \\q यदि उसने तुम्हारी कोई हानि नहीं की।",
+          "B": "बिना कारण किसी से झगड़ा मत मोल लो, \\q जिसने तुम्हारा कुछ बुरा नहीं किया।",
+          "R": "किसी से बिना कारण बहस मत करो, \\q जब उसने तुम्हें कोई चोट नहीं पहुँचाई।"
+        },
+        "ru": {
+          "L": "Не спорь с человеком без причины, \\q если он не сделал тебе зла.",
+          "B": "Не затевай ссоры без причины \\q с тем, кто не сделал тебе ничего плохого.",
+          "R": "Не спорь ни с кем просто так, \\q если этот человек тебя не обидел."
+        },
+        "ja": {
+          "L": "理由もなく人と争うな、 \\q その人があなたに悪を行っていないなら。",
+          "B": "わけもなく、けんかを仕掛けてはならない、 \\q あなたに何の悪もしていない人に。",
+          "R": "理由もなく、人と言い争ってはいけない。 \\q その人は、あなたに何も悪いことをしていないのだから。"
+        },
+        "uk": {
+          "L": "Не сперечайся з людиною без причини, \\q якщо вона не заподіяла тобі зла.",
+          "B": "Не починай сварки без причини \\q з тим, хто не зробив тобі нічого лихого.",
+          "R": "Не сварися з кимось без причини, \\q коли ця людина тебе не скривдила."
         }
       },
       "decisions": [
@@ -3845,6 +5095,25 @@
           "choice": "contend: quarrel, or bring a case at law",
           "alternatives": [],
           "reason": "The verb (rib) covers both a quarrel and a lawsuit (25:8–9). Either way the son must not start one without cause.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200030300091"
+          ],
+          "choice": "он, with no gender setting",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "\"Он\" refers back to \"человек\", which in Russian already means any person; the English needs a setting for \"they / he\", Russian does not.",
           "uncertain": false,
           "footnote": false
         }
@@ -3916,6 +5185,26 @@
           "L": "በግፈኛ ሰው አትቅና፤ \\q ከመንገዶቹም ማንኛውንም አትምረጥ፤",
           "B": "በዓመፀኞች አትቅና፤ \\q ከመንገዳቸውም አንዱንም አትከተል፤",
           "R": "የሚፈልጉትን ለማግኘት ሌሎችን በሚጎዱ ሰዎች አትቅና። \\q እንደ እነርሱም አትኑር።"
+        },
+        "hi": {
+          "L": "उपद्रवी {{gender:व्यक्ति|आदमी}} से डाह मत करो, \\q और उसके किसी मार्ग को मत चुनो,",
+          "B": "हिंसक लोगों से ईर्ष्या मत करो, \\q और उनका कोई भी तरीक़ा मत अपनाओ,",
+          "R": "उन लोगों से जलन मत रखो जो अपनी इच्छा पूरी करने के लिए दूसरों को चोट पहुँचाते हैं। \\q उनकी तरह मत जियो।"
+        },
+        "ru": {
+          "L": "Не завидуй {{gender:человеку|мужу}}, [творящему] насилие, \\q и не выбирай ни одного из его путей,",
+          "B": "Не завидуй жестоким \\q и не перенимай ничего из их путей,",
+          "R": "Не завидуй людям, которые причиняют боль другим, чтобы получить своё. \\q Не живи так, как они."
+        },
+        "ja": {
+          "L": "暴虐の人をうらやむな。 \\q その道のどれをも選ぶな。",
+          "B": "暴力をふるう者をねたんではならない。 \\q その生き方の何一つ、まねてはならない。",
+          "R": "ほしいものを手に入れるために人を傷つける者を、うらやんではいけない。 \\q そのような生き方をしてはいけない。"
+        },
+        "uk": {
+          "L": "Не заздри людині насильства \\q і не вибирай жодної з її доріг,",
+          "B": "Не заздри насильникам \\q і не переймай жодного з їхніх шляхів,",
+          "R": "Не заздри людям, які кривдять інших, щоб здобути своє. \\q Не живи так, як вони."
         }
       },
       "decisions": [
@@ -3963,6 +5252,23 @@
             "gender spans as in the English"
           ],
           "reason": "\"kẻ\" covers men and women alike, and \"hắn\" is the pronoun for one wicked person of either sex, so there is no second form for the setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200030310032"
+          ],
+          "choice": "\"{{gender:व्यक्ति|आदमी}}\"; \"उसके\" with no span",
+          "alternatives": [],
+          "reason": "As in the English, the Hebrew \"man of violence\" means anyone violent, so the gender setting offers \"व्यक्ति\" by default and \"आदमी\". The pronoun \"उसके\" is the same for a man or a woman, so it needs no span.",
           "uncertain": false,
           "footnote": false
         }
@@ -4031,6 +5337,26 @@
           "L": "ጠማማ ሰው {{divine_name:ለእግዚአብሔር|ለያህዌ}} አስጸያፊ ነውና፤ \\q ምስጢሩ ግን ከቅኖች ጋር [ነው]።",
           "B": "ጠማሞች {{divine_name:ለእግዚአብሔር|ለያህዌ}} አስጸያፊዎች ናቸውና፤ \\q ቅኖች ግን የቅርብ ወዳጆቹ ናቸው።",
           "R": "ሰዎች ሐቀኞች ሳይሆኑ ሲቀሩ {{divine_name:እግዚአብሔር|ያህዌ}} ይጠላል። \\q ትክክል የሆነውን ለሚያደርጉ ሰዎች ግን የቅርብ ወዳጅ ነው።"
+        },
+        "hi": {
+          "L": "क्योंकि कुटिल [मनुष्य] {{divine_name:प्रभु|याहवे}} के लिए घृणित [है], \\q पर सीधे लोगों के साथ उनकी घनिष्ठ संगति [है]।",
+          "B": "क्योंकि कुटिल लोग {{divine_name:प्रभु|याहवे}} को घृणित लगते हैं, \\q पर सीधे लोग उनके घनिष्ठ मित्र हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} बेईमानी से घृणा करते हैं। \\q पर जो लोग सही करते हैं, उनके वे घनिष्ठ मित्र हैं।"
+        },
+        "ru": {
+          "L": "ведь мерзость для {{divine_name:ГОСПОДА|Яхве}} — лукавый, \\q а у прямодушных — {{deity_pronoun:его|Его}} сокровенный совет.",
+          "B": "ведь лукавые отвратительны {{divine_name:ГОСПОДУ|Яхве}}, \\q а прямодушные — {{deity_pronoun:его|Его}} близкие друзья.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} ненавидит, когда люди нечестны. \\q Но {{deity_pronoun:он|Он}} — близкий друг тех, кто поступает правильно."
+        },
+        "ja": {
+          "L": "まことに、曲がった者は{{divine_name:主|ヤハウェ}}の忌み嫌われるもの、 \\q しかし、まっすぐな者たちには、その方の親しい交わりがある。",
+          "B": "曲がった者は{{divine_name:主|ヤハウェ}}に忌み嫌われるが、 \\q まっすぐな人々は、その方の親しい友とされる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、不正直な人を嫌われる。 \\q しかし、正しく生きる人には、親しい友となってくださる。"
+        },
+        "uk": {
+          "L": "бо підступний — гидота для {{divine_name:ГОСПОДА|Ягве}}, \\q а з чесними — {{deity_pronoun:його|Його}} довірча порада.",
+          "B": "бо підступні огидні {{divine_name:ГОСПОДУ|Ягве}}, \\q а чесні — {{deity_pronoun:його|Його}} близькі друзі.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} ненавидить, коли люди нечесні. \\q Але {{deity_pronoun:він|Він}} близький друг людям, які чинять правильно."
         }
       },
       "decisions": [
@@ -4101,6 +5427,48 @@
           "reason": "\"አስጸያፊ\" is the word used for toʿevah in the Law in this translation. \"ምስጢር\" is what is shared only with close friends, the picture of the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030320021"
+          ],
+          "choice": "\"घृणित\" (abomination)",
+          "alternatives": [
+            "\"अशुद्ध\""
+          ],
+          "reason": "An abomination is something the LORD detests (meaning m1); \"घृणित\" says that. The word is a moral one here, not about ritual uncleanness.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030320021"
+          ],
+          "choice": "to'evat YHWH \"DNの忌み嫌われるもの\" (L), \"DNに忌み嫌われる\" (B), \"DNは…を嫌われる\" (R), for the whole book",
+          "alternatives": [
+            "忌むべきもの",
+            "憎まれるもの"
+          ],
+          "reason": "m1: something detestable to God; the phrase recurs often in chapters 6-17.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4167,6 +5535,26 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} እርግማን በክፉ ሰው ቤት ላይ [ነው]፤ \\q የጻድቃንን መኖሪያ ግን ይባርካል።",
           "B": "የክፉ ሰው ቤት {{divine_name:በእግዚአብሔር|በያህዌ}} እርግማን ሥር ነው፤ \\q ጻድቃን የሚኖሩበት ቤት ግን በረከቱን ይቀበላል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በክፉ ሰዎች ቤት ላይ እርግማን ያወርዳል፤ \\q የመልካም ሰዎችን ቤት ግን ይባርካል።"
+        },
+        "hi": {
+          "L": "दुष्ट के घर पर {{divine_name:प्रभु|याहवे}} का शाप [है], \\q पर धर्मियों के निवास को वे आशीष देते हैं।",
+          "B": "दुष्ट का घर {{divine_name:प्रभु|याहवे}} के शाप के नीचे है, \\q पर जिस घर में धर्मी रहते हैं, उसे उनकी आशीष मिलती है।",
+          "R": "{{divine_name:प्रभु|याहवे}} बुरे लोगों के घरों को शाप देते हैं, \\q पर वे भले लोगों के घरों को आशीष देते हैं।"
+        },
+        "ru": {
+          "L": "На доме нечестивого — проклятие {{divine_name:ГОСПОДА|Яхве}}, \\q а обитель праведных благословляет {{deity_pronoun:он|Он}}.",
+          "B": "Дом нечестивого лежит под проклятием {{divine_name:ГОСПОДА|Яхве}}, \\q а дом, где живут праведные, получает {{deity_pronoun:его|Его}} благословение.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} проклинает дома злых людей, \\q а дома добрых людей {{deity_pronoun:он|Он}} благословляет."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の呪いは悪しき者の家にあり、 \\q 正しい者たちの住まいを、その方は祝福される。",
+          "B": "悪しき者の家は{{divine_name:主|ヤハウェ}}の呪いのもとにあり、 \\q 正しい人々の住まいは、その方の祝福を受ける。",
+          "R": "{{divine_name:主|ヤハウェ}}は、悪い人の家をのろわれる。 \\q しかし、正しい人の家を祝福してくださる。"
+        },
+        "uk": {
+          "L": "Прокляття {{divine_name:ГОСПОДНЄ|від Ягве}} — на домі нечестивого, \\q а оселю праведних {{deity_pronoun:він|Він}} благословляє.",
+          "B": "Дім нечестивого лежить під прокляттям {{divine_name:ГОСПОДА|Ягве}}, \\q а дім, де живуть праведні, дістає {{deity_pronoun:його|Його}} благословення.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} проклинає доми злих людей, \\q а доми добрих людей {{deity_pronoun:він|Він}} благословляє."
         }
       },
       "decisions": [
@@ -4183,6 +5571,29 @@
             "a sheepfold"
           ],
           "reason": "The word (naweh) can mean a pasture or shepherd's camp (Jeremiah 33:12), and so a modest home, set against the wicked man's house.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200030330011",
+            "o200030330021",
+            "o200030330031",
+            "o200030330032",
+            "o200030330041"
+          ],
+          "choice": "На доме нечестивого — проклятие ГОСПОДА; а обитель праведных благословляет он",
+          "alternatives": [
+            "Проклятие ГОСПОДА — на доме нечестивого"
+          ],
+          "reason": "Literal puts the place first in the first line and the subject last in the second, which Russian allows without changing the sense, and which keeps the verse from repeating the Synodal wording.",
           "uncertain": false,
           "footnote": false
         }
@@ -4252,6 +5663,26 @@
           "L": "ፌዘኞችን እርሱ ቢያፌዝባቸውም፣ \\q ለትሑታን ግን ጸጋን ይሰጣል።",
           "B": "በፌዘኞች ላይ በፌዝ ይመልሳል፤ \\q ለትሑታን ግን ጸጋን ይሰጣል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በሌሎች ላይ በሚስቁ ሰዎች ይስቃል፤ \\q ትሑት ለሆኑ ሰዎች ግን ጸጋን ይሰጣል።"
+        },
+        "hi": {
+          "L": "ठट्ठा करनेवालों से वे ठट्ठा करते हैं, \\q पर नम्र लोगों को अनुग्रह देते हैं।",
+          "B": "ठट्ठा करनेवालों को वे ठट्ठे से ही उत्तर देते हैं, \\q पर नम्र लोगों को अनुग्रह देते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन पर हँसते हैं जो दूसरों की हँसी उड़ाते हैं, \\q पर नम्र लोगों को वे अनुग्रह देते हैं।"
+        },
+        "ru": {
+          "L": "Хотя над насмешниками {{deity_pronoun:он|Он}} насмехается, \\q смиренным же даёт благодать.",
+          "B": "Насмешникам {{deity_pronoun:он|Он}} отвечает насмешкой, \\q а смиренным {{deity_pronoun:он|Он}} даёт благодать.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} смеётся над теми, кто смеётся над другими, \\q а смиренным людям {{deity_pronoun:он|Он}} даёт благодать."
+        },
+        "ja": {
+          "L": "嘲る者たちを、その方は嘲られるが、 \\q へりくだる者たちには恵みを与えられる。",
+          "B": "嘲る者を、その方は嘲りをもって迎えられるが、 \\q へりくだる者には恵みを与えられる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、人をばかにする者をばかにされる。 \\q しかし、へりくだる人には恵みを与えてくださる。"
+        },
+        "uk": {
+          "L": "Хоч насмішників {{deity_pronoun:він|Він}} висміює, \\q а смиренним {{deity_pronoun:він|Він}} дає благодать.",
+          "B": "Насмішникам {{deity_pronoun:він|Він}} відповідає насмішкою, \\q а смиренним {{deity_pronoun:він|Він}} дає благодать.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сміється з тих, хто сміється з інших, \\q але {{deity_pronoun:він|Він}} добрий до смиренних людей."
         }
       },
       "decisions": [
@@ -4386,6 +5817,119 @@
           "reason": "James and 1 Peter quote the verse from the Greek translation: \"God opposes the proud, but gives grace to the humble\". The second line agrees with the Hebrew, so its Amharic is kept, also at Readable, where the English Readable says \"is kind to\". The Hebrew first line says that he mocks the mockers, not that he opposes the proud, so it follows the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030340022",
+            "o200030340041",
+            "o200030340063",
+            "o200030340081"
+          ],
+          "choice": "\"ठट्ठा करनेवालों से वे ठट्ठा करते हैं\", translating the Hebrew; the second line as James 4:6 and 1 Peter 5:5 (\"नम्र लोगों को अनुग्रह देते हैं\")",
+          "alternatives": [
+            "\"परमेश्वर घमंडियों के विरुद्ध खड़े होते हैं\" (James 4:6; 1 Peter 5:5)"
+          ],
+          "reason": "James 4:6 and 1 Peter 5:5 quote this verse (meaning m2) in the form of the Greek Old Testament, \"God opposes the proud\". The Hebrew says \"he mocks the mockers\", and the Hindi translates the Hebrew, with the mockers' word of 1:22 (\"ठट्ठा करनेवाले\"). Where the Hebrew and the Greek agree, in the second line, the Hindi keeps the wording of James and 1 Peter in this translation at every level: \"नम्र लोगों को अनुग्रह देते हैं\". The subject is the LORD of verse 33 (m3), named at Readable as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200030340011"
+          ],
+          "choice": "\"though ... yet\" left implicit",
+          "alternatives": [
+            "\"यद्यपि ... तौभी\""
+          ],
+          "reason": "The Hebrew \"though\" sets the two lines against each other; Hindi \"पर\" does this without the heavy \"यद्यपि ... तौभी\", and keeps the second line identical to the New Testament quotation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030340011",
+            "o200030340022",
+            "o200030340041"
+          ],
+          "choice": "над насмешниками он насмехается",
+          "alternatives": [
+            "Бог противостоит надменным",
+            "Бог выступает против гордых"
+          ],
+          "reason": "James 4:6 and 1 Peter 5:5 quote this verse from the Greek, \"God opposes the proud\". The Hebrew says that he mocks the mockers, and that is translated; \"насмешник\" is the book's word for the lets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030340063",
+            "o200030340071",
+            "o200030340081"
+          ],
+          "choice": "смиренным же даёт благодать (L); а смиренным он даёт благодать (B); а смиренным людям он даёт благодать (R)",
+          "alternatives": [
+            "он милостив к смиренным"
+          ],
+          "reason": "The second line says the same in the Hebrew as in the Greek, so it keeps the wording of James 4:6 and 1 Peter 5:5 in this translation at each level, including \"благодать\" at Readable where the English Readable says \"is kind\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200030340071",
+            "o200030340081"
+          ],
+          "choice": "\"へりくだる者…恵みを与え\", the words of James 4:6 and 1 Peter 5:5 in the Japanese New Testament",
+          "alternatives": [
+            "謙遜な者",
+            "好意を示す"
+          ],
+          "reason": "m2: the verse is quoted there; the same words let the reader hear it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4450,6 +5994,26 @@
           "L": "ጠቢባን ክብርን ይወርሳሉ፤ \\q ሞኞች ግን ውርደትን ይሸከማሉ።",
           "B": "ጠቢባን የሚወርሱት ክብርን ነው፤ \\q ሞኞች ግን ለውርደት ይጋለጣሉ።",
           "R": "ጠቢባን ሰዎች ይከበራሉ፤ \\q ሞኞች ግን ይዋረዳሉ።"
+        },
+        "hi": {
+          "L": "बुद्धिमान सम्मान के अधिकारी होंगे, \\q पर मूर्ख अपमान ही उठाते [हैं]।",
+          "B": "सम्मान बुद्धिमानों की विरासत है, \\q पर मूर्खों को सबके सामने अपमानित किया जाता है।",
+          "R": "बुद्धिमान लोगों का आदर होगा, \\q पर मूर्खों को शर्मिंदा होना पड़ेगा।"
+        },
+        "ru": {
+          "L": "Честь унаследуют мудрые, \\q а глупцы поднимают [на себя] бесчестие.",
+          "B": "Честь — вот наследство мудрых, \\q а глупцов выставляют на позор.",
+          "R": "Мудрых людей будут уважать, \\q а глупцов опозорят."
+        },
+        "ja": {
+          "L": "知恵ある者たちは誉れを受け継ぎ、 \\q 愚か者たちは恥を高く掲げる。",
+          "B": "知恵ある者は誉れを受け継ぎ、 \\q 愚か者は恥にさらされる。",
+          "R": "知恵のある人は尊ばれ、 \\q 愚かな人は恥をかかされる。"
+        },
+        "uk": {
+          "L": "Мудрі успадкують славу, \\q а безумні здобувають ганьбу.",
+          "B": "Слава — це спадщина мудрих, \\q а безумних виставляють на ганьбу.",
+          "R": "Мудрих людей шануватимуть, \\q а нерозумних осоромлять."
         }
       },
       "decisions": [
