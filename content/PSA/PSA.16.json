@@ -63,6 +63,26 @@
           "L": "የዳዊት ሚክታም። እግዚአብሔር ሆይ፣ በአንተ ተጠልያለሁና ጠብቀኝ።",
           "B": "የዳዊት ሚክታም። እግዚአብሔር ሆይ፣ አንተን መጠጊያዬ አድርጌአለሁና ጠብቀኝ።",
           "R": "ዳዊት የዘመረው መዝሙር። እግዚአብሔር ሆይ፣ ተንከባከበኝ። ለደኅንነት ወደ አንተ እመጣለሁ።"
+        },
+        "hi": {
+          "L": "दाऊद का मिक्ताम। हे परमेश्वर, मेरी रक्षा कर, क्योंकि मैंने तुझमें शरण ली है।",
+          "B": "दाऊद का मिक्ताम। हे परमेश्वर, मेरी रक्षा कर, क्योंकि मैंने तुझे अपना शरणस्थान बनाया है।",
+          "R": "दाऊद का गीत। हे परमेश्वर, मेरी देखभाल कर। मैं सुरक्षा के लिए तेरे पास आता हूँ।"
+        },
+        "ru": {
+          "L": "Михтам Давида. Храни меня, Боже, потому что в {{deity_pronoun:тебе|Тебе}} я укрылся.",
+          "B": "Михтам Давида. Охраняй меня, Боже, ведь {{deity_pronoun:тебя|Тебя}} я сделал своим прибежищем.",
+          "R": "Песнь Давида. Береги меня, Боже. Я прихожу к {{deity_pronoun:тебе|Тебе}}, чтобы быть в безопасности."
+        },
+        "ja": {
+          "L": "ダビデのミクタム。神よ、わたしを守ってください。わたしは、あなたに身を避けたのだから。",
+          "B": "ダビデのミクタム。神よ、わたしを守ってください。わたしは、あなたを避け所としたのだから。",
+          "R": "ダビデの歌。神よ、わたしを見守ってください。わたしは、安全を求めて、あなたのもとに逃げ込む。"
+        },
+        "uk": {
+          "L": "Міктам Давида. Бережи мене, Боже, бо я шукаю притулку в {{deity_pronoun:тобі|Тобі}}.",
+          "B": "Міктам Давида. Охороняй мене, Боже, бо я зробив {{deity_pronoun:тебе|Тебе}} своїм притулком.",
+          "R": "Пісня Давида. Пильнуй мене, Боже. Я приходжу до {{deity_pronoun:тебе|Тебе}} по захист."
         }
       },
       "decisions": [
@@ -298,6 +318,103 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160010011"
+          ],
+          "choice": "\"मिक्ताम\" (L, B); \"गीत\" (R)",
+          "alternatives": [],
+          "reason": "The meaning of miktam is unknown (m2). Literal and Balanced keep the word, in the form the poetry terms note gives; Readable says only that it is a song, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190160010071",
+            "o190160010072"
+          ],
+          "choice": "\"तुझमें\", \"तुझे\", \"तेरे\" to God; no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalmist speaks to God with \"तू\" and of God with honorific forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160010011"
+          ],
+          "choice": "\"Михтам\" (L, B); \"Песнь\" (R)",
+          "alternatives": [],
+          "reason": "The meaning of miktam is lost (m2); as the poetry note settles, Literal and Balanced keep it as a name, \"михтам\", and Readable says only that it is a song, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160010011",
+            "o190160010041"
+          ],
+          "choice": "miktam \"ミクタム\" (L, B), \"歌\" (R), as the Psalter's titles; El \"神よ\"; the request \"守ってください\"",
+          "alternatives": [],
+          "reason": "The kind of psalm is unknown (m2), so Literal and Balanced transliterate it as the English does; requests to God are 〜てください in the Psalter.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160010011"
+          ],
+          "choice": "\"Міктам\" transcribed, as the English keeps \"miktam\"",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "The kind of song the word names is unknown; Readable calls it a song, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -366,6 +483,26 @@
           "L": "[ነፍሴ ሆይ]፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}}፦ «አንተ ጌታዬ [ነህ]፤ መልካምነቴ ከአንተ በላይ አይደለም» አልሽ።",
           "B": "ነፍሴ ሆይ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}}፦ «አንተ ጌታዬ ነህ፤ መልካም ነገሬ የሚገኘው በአንተ ብቻ ነው» ብለሻል።",
           "R": "ነፍሴ ሆይ፣ {{divine_name:ለእግዚአብሔር|ለያህዌ}}፦ «አንተ ጌታዬ ነህ። ያለኝ መልካም ነገር ሁሉ አንተ ነህ» አልሽ።"
+        },
+        "hi": {
+          "L": "[हे मेरे प्राण,] तुमने {{divine_name:प्रभु|याहवे}} से कहा है, \"तू मेरा प्रभु [है]; मेरी भलाई तुझसे बाहर नहीं।\"",
+          "B": "हे मेरे प्राण, तुमने {{divine_name:प्रभु|याहवे}} से कहा है, \"तू मेरा प्रभु है; मेरी भलाई केवल तुझमें है।\"",
+          "R": "हे मेरे मन, तुमने {{divine_name:प्रभु|याहवे}} से कहा, \"तू मेरा प्रभु है। मेरे पास जो कुछ भला है, वह तू ही है।\""
+        },
+        "ru": {
+          "L": "[Душа моя,] ты сказала {{divine_name:ГОСПОДУ|Яхве}}: «Ты — мой Господь; моё благо — не помимо {{deity_pronoun:тебя|Тебя}}.»",
+          "B": "Душа моя, ты сказала {{divine_name:ГОСПОДУ|Яхве}}: «Ты — мой Господь; моё благо — только в {{deity_pronoun:тебе|Тебе}}.»",
+          "R": "Душа моя, ты сказала {{divine_name:ГОСПОДУ|Яхве}}: «Ты — мой Господь. Всё доброе, что у меня есть, — это {{deity_pronoun:ты|Ты}}.»"
+        },
+        "ja": {
+          "L": "[わたしの魂よ、]あなたは{{divine_name:主|ヤハウェ}}に言った。「あなたはわたしの主。わたしの幸いは、あなたを離れてはない。」",
+          "B": "わたしの魂よ、あなたは{{divine_name:主|ヤハウェ}}に言った。「あなたこそ、わたしの主。わたしの幸いは、ただあなたのうちにある。」",
+          "R": "わたしの魂よ、あなたは{{divine_name:主|ヤハウェ}}に言った。「あなたはわたしの主。わたしにとって良いものは、すべてあなただ。」"
+        },
+        "uk": {
+          "L": "[Душе моя,] ти сказала {{divine_name:ГОСПОДУ|Ягве}}: «Ти — мій Господь; моє добро — не поза {{deity_pronoun:тобою|Тобою}}.»",
+          "B": "Душе моя, ти сказала {{divine_name:ГОСПОДУ|Ягве}}: «Ти — мій Господь; моє добро — тільки в {{deity_pronoun:тобі|Тобі}}.»",
+          "R": "Душе моя, ти сказала {{divine_name:ГОСПОДУ|Ягве}}: «Ти — мій Господь. Усе добро, яке я маю, — це {{deity_pronoun:ти|Ти}}.»"
         }
       },
       "decisions": [
@@ -501,6 +638,87 @@
           "reason": "The psalmist speaks to his own soul (m1). The book keeps \"tu\" for God and \"você\" between people, so the soul is \"você\"; \"tu\" here would blur who is God in the verse.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190160020011"
+          ],
+          "choice": "\"तुमने\" to the soul; \"तू\" to God",
+          "alternatives": [
+            "\"तूने\" to the soul"
+          ],
+          "reason": "The psalmist speaks to his own soul (m1) and, inside the quotation, to God. Hindi keeps \"तू\" for God and addresses the soul with \"तुम\", as Judges 5:21 does, so that the two are not confused.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190160020031"
+          ],
+          "choice": "\"मेरा प्रभु\" (Adonai), with no divine_name span",
+          "alternatives": [],
+          "reason": "Here YHWH and Adonai stand side by side. YHWH has the divine_name span; \"my Lord\" is Adonai, a title, so it stays \"प्रभु\" whichever form of the name the reader chooses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160020011"
+          ],
+          "choice": "\"ты сказала\", feminine",
+          "alternatives": [
+            "\"ты сказал\""
+          ],
+          "reason": "The Hebrew \"you have said\" is feminine and is spoken to the psalmist's own soul (m1); Russian \"душа\" is feminine too, so the verb can keep the Hebrew's gender.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160020031",
+            "o190160020032"
+          ],
+          "choice": "Adonai \"主\" (no span) inside the quotation, beside DN for YHWH",
+          "alternatives": [],
+          "reason": "\"My Lord\" is a title of a master (m2); 主 without the setting keeps it apart from the divine name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -571,6 +789,26 @@
           "L": "በምድሪቱ ያሉ ቅዱሳንስ እነርሱ ክቡራን ናቸው፤ ደስታዬ ሁሉ በእነርሱ [ነው]።",
           "B": "በምድሪቱ የሚኖሩ ቅዱሳን በእውነት ታላላቆች ናቸው፤ እነርሱ ደስታዬ ሁሉ ናቸው።",
           "R": "በዚህች ምድር የሚኖሩ የእግዚአብሔር ሰዎች የማደንቃቸው ናቸው። እጅግ ደስ ያሰኙኛል።"
+        },
+        "hi": {
+          "L": "देश में जो पवित्र जन [हैं], वे ही महान [हैं]; मेरा सारा आनंद उन्हीं में [है]।",
+          "B": "देश में रहनेवाले पवित्र लोग ही सच्चे महान हैं; वे ही मेरा पूरा आनंद हैं।",
+          "R": "इस देश में रहनेवाले परमेश्वर के लोग ही वे हैं जिनका मैं आदर करता हूँ। वे मुझे बहुत ख़ुशी देते हैं।"
+        },
+        "ru": {
+          "L": "Что до святых, которые на земле, — они [и есть] величественные; вся моя радость — в них.",
+          "B": "Святые люди, живущие в этой земле, — вот кто по-настоящему велик; в них вся моя радость.",
+          "R": "Божьим народом, который живёт в этой земле, я восхищаюсь. Эти люди очень радуют меня."
+        },
+        "ja": {
+          "L": "地にいる聖なる者たち、彼らこそ尊い者たちであり、わたしの喜びはすべて彼らにある。",
+          "B": "この地に住む聖なる人々こそ、真に尊い人々。わたしの喜びはすべて、彼らにある。",
+          "R": "この地に住む神の民こそ、わたしが尊敬する人たちだ。その人たちは、わたしをとても幸せにしてくれる。"
+        },
+        "uk": {
+          "L": "Що ж до святих, які [є] на землі, — вони величні; уся моя втіха — в них.",
+          "B": "Святі люди, що живуть у цьому краї, — справді великі; вони — уся моя втіха.",
+          "R": "Божі люди, що живуть у цьому краї, — ті, ким я захоплююся. Вони дуже мене тішать."
         }
       },
       "decisions": [
@@ -624,6 +862,24 @@
           ],
           "reason": "Readable says who the holy ones are on the reading followed (m1).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160030012"
+          ],
+          "choice": "\"पवित्र जन\" (L), \"पवित्र लोग\" (B)",
+          "alternatives": [],
+          "reason": "God's faithful people (m1), in the words Acts uses for the holy ones in this translation.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -702,6 +958,26 @@
           "L": "ሌላን [አምላክ] ለራሳቸው የወሰዱ ኀዘናቸው ይበዛል፤ የደም የመጠጥ ቁርባናቸውን አላፈስም፤ ስሞቻቸውንም በከንፈሮቼ አላነሣም።",
           "B": "ሌላ አምላክን የሚከተሉ በኀዘን ላይ ኀዘን ይደርስባቸዋል። የደም መባቸውን አላፈስም፤ የአማልክቶቻቸውንም ስም እንኳ አልጠራም።",
           "R": "ሌሎች አማልክትን የሚከተሉ ሰዎች ችግራቸው እየበዛ ይሄዳል። በደም መባቸው አልተባበርም። የአማልክቶቻቸውን ስም እንኳ አልጠራም።"
+        },
+        "hi": {
+          "L": "जिन्होंने दूसरे [देवता] को अपना लिया है, उनके दुख बढ़ते जाएँगे; मैं उनके लहू के अर्घ नहीं उंडेलूँगा, और न उनके नाम अपने होंठों पर लाऊँगा।",
+          "B": "जो दूसरे देवता के पीछे जाते हैं, उन पर दुख पर दुख आएँगे। मैं उनके लहू के अर्घ नहीं उंडेलूँगा, और उनके देवताओं के नाम तक अपने होंठों पर नहीं लाऊँगा।",
+          "R": "जो लोग दूसरे देवताओं के पीछे भागते हैं, उनकी परेशानियाँ बढ़ती ही जाएँगी। मैं उनके लहू के चढ़ावों में भाग नहीं लूँगा। मैं उनके देवताओं के नाम तक नहीं लूँगा।"
+        },
+        "ru": {
+          "L": "Умножатся скорби [тех, кто] приобрёл другого [бога]; не буду возливать их возлияний из крови и не возьму их имён на мои уста.",
+          "B": "У тех, кто добивается другого бога, будет скорбь за скорбью. Я не стану возливать их кровавых возлияний и даже не произнесу имён их богов.",
+          "R": "У людей, которые гонятся за другими богами, будет всё больше бед. Я не стану участвовать в их кровавых жертвоприношениях. Я даже не буду называть имён их богов."
+        },
+        "ja": {
+          "L": "ほかの[神]を手に入れた者たちの悲しみは増し加わる。わたしは、彼らの血の注ぎの供え物を注がず、彼らの名をわたしの唇にのせない。",
+          "B": "ほかの神を追い求める者たちには、悲しみに悲しみが重なる。わたしは、彼らの血の供え物を注がず、彼らの神々の名を口にすることもしない。",
+          "R": "ほかの神々を追いかける人たちには、困ったことがどんどん増える。わたしは、彼らの血のささげ物に加わらない。彼らの神々の名前を言うことさえしない。"
+        },
+        "uk": {
+          "L": "Помножаться печалі тих, [хто] здобув собі іншого [бога]; я не виливатиму їхніх жертовних виливань із крові і не візьму їхніх імен на свої губи.",
+          "B": "Ті, хто запобігає перед іншим богом, матимуть горе за горем. Я не виливатиму їхніх кривавих жертв і навіть не вимовлятиму імен їхніх богів.",
+          "R": "Люди, які женуться за іншими богами, матимуть дедалі більше біди. Я не братиму участі в їхніх кривавих жертвах. Я навіть не вимовлятиму імен їхніх богів."
         }
       },
       "decisions": [
@@ -774,6 +1050,44 @@
           "reason": "\"Their names\" are the names of the other gods (m1), as Exodus 23:13 shows; Balanced and Readable say so.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160040071",
+            "o190160040072"
+          ],
+          "choice": "\"अर्घ\" (L, B); \"चढ़ावे\" (R)",
+          "alternatives": [],
+          "reason": "\"अर्घ\" is the drink offering of Numbers 28-29 in this translation; Readable uses the everyday word for an offering.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160040071",
+            "o190160040072"
+          ],
+          "choice": "nesekh \"注ぎの供え物\" (L), \"供え物\" (B), as the Pentateuch's drink offering",
+          "alternatives": [],
+          "reason": "The offering is poured out to other gods (m2); Balanced keeps the verb 注ぐ and drops the doubled \"pour\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -842,6 +1156,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የድርሻዬ ዕድል ፈንታና ጽዋዬ [ነው]፤ ዕጣዬን የምትይዝ አንተ [ነህ]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የተሰጠኝ ድርሻና የምጠጣው ጽዋ ነው፤ ዕጣዬን አጽንተህ የምትጠብቅ አንተ ነህ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንደ ርስት መሬት ወይም እንደሚጠጣ ጽዋ ያለኝ ሁሉና የሚያስፈልገኝ ሁሉ ነው። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የእኔ የሆነውን ሁሉ ትጠብቃለህ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} मेरे भाग का अंश और मेरा कटोरा [हैं]; तू मेरी चिट्ठी को थामे [हुए है]।",
+          "B": "{{divine_name:प्रभु|याहवे}} ही वह भाग हैं जो मुझे मिला है, और वह कटोरा जिससे मैं पीता हूँ; तू ही मेरे भाग को सुरक्षित रखता है।",
+          "R": "{{divine_name:प्रभु|याहवे}} ही मेरा सब कुछ हैं, और मुझे जो चाहिए, वह सब वही हैं, जैसे ज़मीन का एक हिस्सा या पीने का कटोरा। हे {{divine_name:प्रभु|याहवे}}, जो कुछ मेरा है, उसे तू सुरक्षित रखता है।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} — доля моего удела и моя чаша; {{deity_pronoun:ты|Ты}} держишь мой жребий.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} — доля, данная мне, и чаша, которую я пью; это {{deity_pronoun:ты|Ты}} надёжно хранишь мой жребий.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} — всё, что у меня есть, и всё, что мне нужно, как надел земли или чаша, из которой пьют. {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} бережёшь всё, что принадлежит мне."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、わたしの割り当ての分け前、またわたしの杯。あなたは、わたしのくじを保っておられる。",
+          "B": "{{divine_name:主|ヤハウェ}}こそ、わたしに与えられた分け前、わたしの飲む杯。わたしの受ける分を確かに守っておられるのは、あなただ。",
+          "R": "{{divine_name:主|ヤハウェ}}は、わたしの持っているすべて、わたしに必要なすべてだ。分けてもらった土地や、飲み物の入った杯のように。{{divine_name:主|ヤハウェ}}よ、わたしのものをすべて、あなたは守ってくださる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} — частка мого наділу і моя чаша; {{deity_pronoun:ти|Ти}} тримаєш мій жереб.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} — моя частка, яку мені дано, і чаша, з якої я пʼю; це {{deity_pronoun:ти|Ти}} надійно тримаєш мій жереб.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} — усе, що я маю, і все, що мені потрібно, як наділ землі чи чаша, з якої пʼють. {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} бережеш усе, що належить мені."
         }
       },
       "decisions": [
@@ -907,6 +1241,46 @@
           ],
           "reason": "Readable explains the pictures of the share of land and the cup (m1, m2).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160050071"
+          ],
+          "choice": "\"मेरी चिट्ठी\" (L); \"मेरा भाग\" (B)",
+          "alternatives": [],
+          "reason": "The lot is the one cast to share out the land, \"चिट्ठी\" as in Joshua (m3); Balanced says what it decided, the psalmist's share.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160050021",
+            "o190160050031",
+            "o190160050032",
+            "o190160050071",
+            "o190160050072"
+          ],
+          "choice": "cheleq \"分け前\" (every level, as Lamentations); goral \"くじ\" (L), \"受ける分\" (B)",
+          "alternatives": [],
+          "reason": "The share of land given by lot, like the Levites' share that was the LORD himself (m1, m3).",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -976,6 +1350,26 @@
           "L": "ገመዶቹ ባማሩ [ስፍራዎች] ወደቁልኝ፤ በእርግጥም ርስቱ ለእኔ ያማረ ነው።",
           "B": "የመለኪያ ገመዶች ያማረ ስፍራ ለክተውልኛል፤ በእውነት የምወርሰው ምድር ደስ ያሰኘኛል።",
           "R": "እግዚአብሔር የሰጠኝ እንደ ውብ መሬት ድንቅ ነው። የተቀበልኩትን እወደዋለሁ።"
+        },
+        "hi": {
+          "L": "मेरे लिए [नापने की] डोरियाँ मनभावने [स्थानों] में पड़ी हैं; हाँ, निज भाग मुझे सुंदर लगता है।",
+          "B": "नापने की डोरियों ने मेरे लिए एक सुहावनी जगह ठहराई है; सचमुच, जो भूमि मुझे निज भाग में मिली है, वह मुझे बहुत भाती है।",
+          "R": "परमेश्वर ने मुझे जो दिया है, वह अद्भुत है, ज़मीन के एक सुंदर टुकड़े के समान। जो कुछ मुझे मिला है, वह मुझे बहुत प्यारा है।"
+        },
+        "ru": {
+          "L": "Верёвки упали мне на приятных [местах]; поистине, наследие прекрасно для меня.",
+          "B": "Мерные верёвки отмерили мне прекрасное место; поистине, земля, которую я наследую, радует меня.",
+          "R": "То, что Бог дал мне, чудесно, как прекрасный участок земли. Я рад тому, что получил."
+        },
+        "ja": {
+          "L": "測り綱は、わたしのために麗しい所に落ちた。まことに、[その]嗣業はわたしにとって美しい。",
+          "B": "測り綱は、わたしのために麗しい地を割り当てた。まことに、わたしの受け継ぐ地は、わたしを喜ばせる。",
+          "R": "神がわたしにくださったものは、美しい土地のようにすばらしい。わたしは、受け取ったものが大好きだ。"
+        },
+        "uk": {
+          "L": "Мірильні шнури впали мені в приємних [місцях]; так, спадщина гарна для мене.",
+          "B": "Мірильні шнури відміряли мені чудове місце; справді, земля, яку я успадкував, тішить мене.",
+          "R": "Те, що дав мені Бог, чудове, як гарна ділянка землі. Я люблю те, що отримав."
         }
       },
       "decisions": [
@@ -1025,6 +1419,26 @@
           ],
           "reason": "Readable explains the picture and names the giver (m1).",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160060061"
+          ],
+          "choice": "\"निज भाग\"",
+          "alternatives": [
+            "\"विरासत\""
+          ],
+          "reason": "The word for a family's share of the land, as Joshua has it in this translation (m2).",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -1095,6 +1509,26 @@
           "L": "የመከረኝን {{divine_name:እግዚአብሔርን|ያህዌን}} እባርካለሁ፤ በሌሊትም ደግሞ ኩላሊቶቼ ያስተምሩኛል።",
           "B": "መካሪዬ የሆነውን {{divine_name:እግዚአብሔርን|ያህዌን}} እባርካለሁ፤ በሌሊትም እንኳ ውስጣዊ ማንነቴ ያስተምረኛል።",
           "R": "ምን ማድረግ እንዳለብኝ ስለሚያሳየኝ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ። በሌሊትም እንኳ በውስጤ ትክክል የሆነውን እማራለሁ።"
+        },
+        "hi": {
+          "L": "मैं {{divine_name:प्रभु|याहवे}} को धन्य कहूँगा, जिन्होंने मुझे सम्मति दी है; रातों को भी मेरे गुर्दे मुझे सिखाते हैं।",
+          "B": "मैं {{divine_name:प्रभु|याहवे}} को धन्य कहता हूँ, जो मेरे सलाहकार हैं; रात को भी मेरा अंतर्मन मुझे सिखाता रहता है।",
+          "R": "मैं {{divine_name:प्रभु|याहवे}} की स्तुति करता हूँ, क्योंकि वे मुझे दिखाते हैं कि मुझे क्या करना है। रात को भी, अपने भीतर गहराई में, मैं सीखता हूँ कि क्या सही है।"
+        },
+        "ru": {
+          "L": "Благословлю {{divine_name:ГОСПОДА|Яхве}}, который дал мне совет; и [по] ночам наставляют меня мои почки.",
+          "B": "Благословляю {{divine_name:ГОСПОДА|Яхве}}, моего советчика; даже ночью глубина моей души продолжает наставлять меня.",
+          "R": "Я хвалю {{divine_name:ГОСПОДА|Яхве}}, потому что {{deity_pronoun:он|Он}} показывает мне, что делать. Даже ночью в глубине души я узнаю, что правильно."
+        },
+        "ja": {
+          "L": "わたしは{{divine_name:主|ヤハウェ}}をほめたたえる、わたしに助言を与えられた方を。夜ごとにも、わたしの腎臓がわたしを諭す。",
+          "B": "わたしは、わたしに助言をくださる{{divine_name:主|ヤハウェ}}をほめたたえる。夜になっても、わたしの心の奥底が、わたしを教え続ける。",
+          "R": "わたしは{{divine_name:主|ヤハウェ}}をほめたたえる。その方は、わたしがどうすればよいかを教えてくださる。夜でも、心の奥深くで、わたしは正しいことを学ぶ。"
+        },
+        "uk": {
+          "L": "Я благословлятиму {{divine_name:ГОСПОДА|Ягве}}, що дав мені пораду; навіть [уночі] мої нирки повчають мене.",
+          "B": "Я благословляю {{divine_name:ГОСПОДА|Ягве}}, мого порадника; навіть уночі моє найглибше єство навчає мене.",
+          "R": "Я хвалю {{divine_name:ГОСПОДА|Ягве}}, бо {{deity_pronoun:він|Він}} показує мені, що робити. Навіть уночі, глибоко всередині, я пізнаю, що правильно."
         }
       },
       "decisions": [
@@ -1206,6 +1640,105 @@
           "reason": "Terms note: bless (God) is 송축하다, kept apart from praise (찬양하다) and thanks (감사하다) so the three Hebrew verbs stay distinct. A person cannot give God a blessing, so \"복을 빌다\" would be wrong. This holds through Psalms 16-25.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160070091",
+            "o190160070092"
+          ],
+          "choice": "\"मेरे गुर्दे\" (L); \"मेरा अंतर्मन\" (B)",
+          "alternatives": [
+            "\"मेरा मन\" at every level"
+          ],
+          "reason": "The Hebrew names the kidneys as the seat of the inmost self (m1). Literal keeps the word, as the English Literal does; Balanced says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160070011"
+          ],
+          "choice": "\"धन्य कहूँगा\" (L), \"धन्य कहता हूँ\" (B); \"स्तुति करता हूँ\" (R)",
+          "alternatives": [],
+          "reason": "As the poetry terms note settles, blessing God is \"धन्य कहना\"; Readable says \"praise\", as the English Readable does (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160070091"
+          ],
+          "choice": "\"мои почки\" (L); \"глубина моей души\" (B)",
+          "alternatives": [
+            "\"внутренность моя\""
+          ],
+          "reason": "The kidneys stand for a person's inmost self (m1). Literal keeps the Hebrew body word, as the English Literal does; Balanced says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160070011",
+            "o190160070091",
+            "o190160070092"
+          ],
+          "choice": "barekh with God as object \"ほめたたえる\" at every level (the English Readable has \"praise\"); kilyot \"腎臓\" (L, as Psalm 7:10), \"心の奥底\" (B), \"心の奥深く\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter keeps barekh apart from hallel (賛美する); the kidneys stand for the inmost self (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160070011"
+          ],
+          "choice": "\"благословляти\" (L, B) for blessing God, through the book; Readable \"хвалити\" where the English Readable says praise",
+          "alternatives": [
+            "\"прославляти\""
+          ],
+          "reason": "To bless God is to speak well of him with thanks; the shared terms note keeps \"благословляти\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1275,6 +1808,26 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} ዘወትር በፊቴ አኖርኩት፤ በቀኜ [ነው]ና አልናወጥም።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} ሁልጊዜ በፊቴ አድርጌዋለሁ፤ እርሱ በቀኜ ስላለ አልናወጥም።",
           "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} ሁልጊዜ አስባለሁ። ሊረዳኝ እርሱ አጠገቤ ነው፤ ስለዚህ ምንም አያናውጠኝም።"
+        },
+        "hi": {
+          "L": "मैंने {{divine_name:प्रभु|याहवे}} को सदा अपने सामने रखा है; क्योंकि [वे] मेरे दाहिने [हाथ] [हैं], मैं डिग न जाऊँगा।",
+          "B": "मैंने {{divine_name:प्रभु|याहवे}} को सदा अपनी आँखों के सामने रखा है; वे मेरे दाहिने हाथ हैं, इसलिए मैं डिगूँगा नहीं।",
+          "R": "मैं हमेशा {{divine_name:प्रभु|याहवे}} को ध्यान में रखता हूँ। वे ठीक मेरे पास हैं और मेरी सहायता करते हैं, इसलिए कोई चीज़ मुझे हिला नहीं सकती।"
+        },
+        "ru": {
+          "L": "Я поставил {{divine_name:ГОСПОДА|Яхве}} перед собой всегда; потому что [{{deity_pronoun:он|Он}}] по правую руку от меня, я не поколеблюсь.",
+          "B": "Я всегда держу {{divine_name:ГОСПОДА|Яхве}} перед собой: {{deity_pronoun:он|Он}} по правую руку от меня, и я не поколеблюсь.",
+          "R": "Я всегда помню о {{divine_name:ГОСПОДЕ|Яхве}}. Он стоит возле меня, чтобы помочь мне, и ничто меня не поколеблет."
+        },
+        "ja": {
+          "L": "わたしは、いつも{{divine_name:主|ヤハウェ}}をわたしの前に置いた。[その方が]わたしの右におられるので、わたしは揺るがない。",
+          "B": "わたしは、いつも{{divine_name:主|ヤハウェ}}を目の前に置いている。その方がわたしの右におられるので、わたしは決してよろめかない。",
+          "R": "わたしは、いつも{{divine_name:主|ヤハウェ}}のことを心にとめている。その方がすぐそばにいて助けてくださるので、何もわたしを揺るがすことはできない。"
+        },
+        "uk": {
+          "L": "Я поставив {{divine_name:ГОСПОДА|Ягве}} перед собою завжди; бо [{{deity_pronoun:він|Він}}] праворуч від мене, я не похитнуся.",
+          "B": "Я завжди ставлю {{divine_name:ГОСПОДА|Ягве}} перед собою; оскільки {{deity_pronoun:він|Він}} праворуч від мене, я ніколи не спіткнуся.",
+          "R": "Я завжди памʼятаю про {{divine_name:ГОСПОДА|Ягве}}. Він поруч зі мною, щоб допомагати, тож ніщо не може мене похитнути."
         }
       },
       "decisions": [
@@ -1364,6 +1917,68 @@
           "reason": "Peter quotes the Greek translation. Where it reads the Hebrew differently, the psalm says what the Hebrew says, and each difference is noted on its verse (16:9, 10, 11).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160080011",
+            "o190160080081"
+          ],
+          "choice": "the wording of Acts 2:25 at each level, with \"रखा है\" (L) for \"I have set\"",
+          "alternatives": [
+            "\"मैंने प्रभु को सदा अपने सामने देखा\", as Acts 2:25 L"
+          ],
+          "reason": "Peter quotes verses 8-11 in Acts 2:25-28 (m3), and this translation matches his wording where the Hebrew says the same. The Hebrew says \"I have set\" where the Greek says \"I saw\", so Literal says \"रखा है\"; Balanced already reads so in Acts.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160080011",
+            "o190160080081"
+          ],
+          "choice": "the wording of Acts 2:25 where the Hebrew says the same",
+          "alternatives": [],
+          "reason": "Peter quotes verses 8-11 in Acts 2:25-28 (m3). The Psalm keeps the Russian of Acts at each level (\"перед собой всегда\", \"по правую руку от меня\", \"не поколеблюсь\", \"ничто меня не поколеблет\"); where Acts follows the Greek \"I saw the Lord\", the Psalm translates the Hebrew \"I have set the LORD\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160080011",
+            "o190160080081"
+          ],
+          "choice": "16:8-11 keep the Japanese of Acts 2:25-28 where the Hebrew reads as Peter's Greek (\"わたしの右におられる\", \"揺るがない\", \"陰府に捨て置く\", \"命の道\"), and translate the Hebrew where it differs: \"わたしの栄光\" (not \"舌\"), \"安らかに住まう\" (not \"希望のうちに\"), \"あなたの誠実な者\" (not \"聖なる者\"), \"穴\" (not \"朽ち果てること\")",
+          "alternatives": [],
+          "reason": "A reader comparing the psalm with Acts 2 should find the same words where the texts agree, and the Hebrew where the Greek translation differs (m3, m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1436,6 +2051,26 @@
           "L": "ስለዚህ ልቤ ተደሰተ፤ ክብሬም ሐሤት አደረገ፤ ደግሞም ሥጋዬ ተማምኖ ይኖራል።",
           "B": "ስለዚህ ልቤ በደስታ ተሞላ፤ መንፈሴም ሐሤት አደረገ፤ ሰውነቴም እንኳ በደኅንነት ያርፋል።",
           "R": "ስለዚህ ልቤ ደስተኛ ነው፤ በደስታም ተሞልቻለሁ። ሰውነቴም በደኅንነት እንደሚኖር አውቃለሁ።"
+        },
+        "hi": {
+          "L": "इस कारण मेरा मन आनंदित है, और मेरी महिमा मगन है; मेरा शरीर भी निश्चिंत बसा रहेगा।",
+          "B": "इसलिए मेरा मन आनंद से भर गया है, और मेरी आत्मा उत्सव मनाती है; मेरा शरीर भी सुरक्षित रहेगा।",
+          "R": "इसलिए मैं ख़ुश हूँ और आनंद से भरा हूँ। मैं जानता हूँ कि मेरा शरीर सुरक्षित रहेगा।"
+        },
+        "ru": {
+          "L": "Поэтому радуется моё сердце и ликует моя слава; и моя плоть будет обитать в безопасности.",
+          "B": "Поэтому моё сердце полно радости и мой дух ликует; и моё тело тоже будет жить в безопасности.",
+          "R": "Поэтому моё сердце радуется, и я полон радости. Я знаю, что даже моё тело будет в безопасности."
+        },
+        "ja": {
+          "L": "それゆえ、わたしの心は喜び、わたしの栄光は喜び躍る。わたしの肉もまた、安らかに住まう。",
+          "B": "だから、わたしの心は喜び、わたしの魂は喜び躍る。わたしの体も、安らかに住む。",
+          "R": "だから、わたしはうれしくて、喜びでいっぱいだ。わたしの体も守られて安全だと、わたしは知っている。"
+        },
+        "uk": {
+          "L": "Тому радіє моє серце і веселиться моя слава; і моє тіло житиме в безпеці.",
+          "B": "Ось чому моє серце радіє, а мій дух святкує; і моє тіло житиме в безпеці.",
+          "R": "Тож я щасливий і сповнений радості. Я знаю, що моє тіло буде в безпеці."
         }
       },
       "decisions": [
@@ -1537,6 +2172,50 @@
           "reason": "The Greek has \"my tongue\" and \"in hope\" where the Hebrew has \"my glory\" (the inmost self) and \"in security\" (meaning decisions m1, m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160090051",
+            "o190160090092"
+          ],
+          "choice": "\"मेरी महिमा\" (L), \"मेरी आत्मा\" (B); \"निश्चिंत\", \"सुरक्षित\"",
+          "alternatives": [
+            "\"मेरी जीभ\" and \"आशा में\", as Acts 2:26"
+          ],
+          "reason": "Acts 2:26 follows the Greek Old Testament, \"my tongue rejoiced\" and \"my flesh will dwell in hope\". The Hebrew has \"my glory\", the inmost self (m1), and \"in security\" (m2), so the psalm says those; the rest of the line keeps the shape of Acts 2:26.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160090051",
+            "o190160090081"
+          ],
+          "choice": "\"моя слава\" (L), \"мой дух\" (B); \"в безопасности\"",
+          "alternatives": [
+            "\"мой язык\", \"в надежде\" (as Acts 2:26)"
+          ],
+          "reason": "The line keeps the words of Acts 2:26 in this translation where the Hebrew says the same (\"моё сердце\", \"моя плоть будет обитать\", \"моё тело\"). Acts follows the Greek, which reads \"my tongue\" and \"in hope\"; the Hebrew has \"my glory\", the inner self (m1), and \"in security\" (m2), and the Psalm translates the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1608,6 +2287,26 @@
           "L": "ነፍሴን ወደ ሲኦል አሳልፈህ አትተዋትምና፤ ታማኝህንም ጉድጓዱን እንዲያይ አትፈቅድም።",
           "B": "እኔን በሙታን ዓለም አትተወኝምና፤ ታማኝህም ጉድጓዱን እንዲያይ አትፈቅድም።",
           "R": "በሙታን ዓለም አትተወኝም። ለአንተ ታማኝ የሆነውን ወደ መቃብር እንዲወርድ አትፈቅድም።"
+        },
+        "hi": {
+          "L": "क्योंकि तू मेरे प्राण को शिओल में नहीं छोड़ेगा, और न अपने भक्त को गड्ढा देखने देगा।",
+          "B": "क्योंकि तू मुझे अधोलोक में नहीं छोड़ेगा, और न अपने विश्वासयोग्य जन को क़ब्र देखने देगा।",
+          "R": "तू मुझे मृत्यु के लोक में नहीं छोड़ेगा। जो तेरे प्रति विश्वासयोग्य है, उसे तू क़ब्र में नहीं जाने देगा।"
+        },
+        "ru": {
+          "L": "Потому что {{deity_pronoun:ты|Ты}} не оставишь мою душу в шеоле, не дашь {{deity_pronoun:твоему|Твоему}} верному увидеть яму.",
+          "B": "Потому что {{deity_pronoun:ты|Ты}} не оставишь меня в мире мёртвых и не позволишь {{deity_pronoun:твоему|Твоему}} верному увидеть могилу.",
+          "R": "Ты не оставишь меня в мире мёртвых. Ты не дашь тому, кто верен {{deity_pronoun:тебе|Тебе}}, сойти в могилу."
+        },
+        "ja": {
+          "L": "あなたは、わたしの魂を陰府に捨て置くことはなさらず、あなたの誠実な者に穴を見させることはなさらないからである。",
+          "B": "あなたは、わたしを陰府に見捨てることはなさらず、あなたに誠実な人が滅びの穴を見ることもお許しにならない。",
+          "R": "あなたは、わたしを死者の世界に置き去りにはなさらない。あなたに忠実な人を、墓に下らせることはなさらない。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:ти|Ти}} не залишиш моєї душі в шеолі; {{deity_pronoun:ти|Ти}} не даси {{deity_pronoun:твоєму|Твоєму}} вірному побачити яму.",
+          "B": "Бо {{deity_pronoun:ти|Ти}} не віддаси мене світові мертвих і не допустиш, щоб {{deity_pronoun:твій|Твій}} відданий побачив могилу.",
+          "R": "Ти не залишиш мене у світі мертвих. Ти не дозволиш тому, хто вірний {{deity_pronoun:тобі|Тобі}}, зійти в могилу."
         }
       },
       "decisions": [
@@ -1759,6 +2458,95 @@
           "reason": "The Hebrew ḥasid is the one loyal to God and shaḥat is the pit, the grave (meaning decisions m2, m3); the Greek translation, which Acts follows in applying the verse to the resurrection, has \"Holy One\" and \"decay\". Sheol is \"ሲኦል\" (L), \"የሙታን ዓለም\" (B, R), as Acts.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160100052",
+            "o190160100081",
+            "o190160100101"
+          ],
+          "choice": "\"शिओल\" (L), \"अधोलोक\" (B), \"मृत्यु के लोक\" (R); \"भक्त\" (L), \"विश्वासयोग्य जन\" (B, R) for hasid, as at 4:4; \"गड्ढा\" (L), \"क़ब्र\" (B, R)",
+          "alternatives": [
+            "\"पवित्र जन\" and \"सड़न\", as Acts 2:27 and 13:35"
+          ],
+          "reason": "Acts 2:27 quotes this verse and applies it to Jesus' resurrection (m4); its frame is kept at each level. Sheol takes the poetry terms note's forms, which at Balanced and Readable are Acts' own. Acts follows the Greek, \"your Holy One\" and \"decay\"; the Hebrew has hasid, the one faithful to God (m3), and the pit, the grave (m2), so the psalm says those.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160100081",
+            "o190160100101"
+          ],
+          "choice": "\"верному\" and \"яму\" (L), \"могилу\" (B, R)",
+          "alternatives": [
+            "\"Святому\" and \"тление\" (as Acts 2:27; 13:35)"
+          ],
+          "reason": "The verse keeps the shape and words of Acts 2:27 in this translation (\"не оставишь мою душу\", \"не дашь ... увидеть\", \"в мире мёртвых\"). Acts follows the Greek, \"your Holy One\" and \"decay\"; the Hebrew has hasid, the one faithful to God (m3), and shachat, the pit or grave (m2), so the Psalm has \"верный\" and \"яма\" / \"могила\", with Sheol as the poetry note sets it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160100051",
+            "o190160100052",
+            "o190160100081",
+            "o190160100082",
+            "o190160100101"
+          ],
+          "choice": "Sheol \"陰府\" (L, B), \"死者の世界\" (R); chasid \"誠実な者\" (L), \"あなたに誠実な人\" (B), \"あなたに忠実な人\" (R); shachat \"穴\" (L), \"滅びの穴\" (B), \"墓\" (R); negatives for God as \"〜ことはなさらない\" / \"お許しにならない\"",
+          "alternatives": [],
+          "reason": "The Psalter's forms; a 〜られない negative would read \"cannot\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160100101"
+          ],
+          "choice": "\"яма\" (L), \"могила\" (B, R) for the pit, through the book",
+          "alternatives": [
+            "\"тління\""
+          ],
+          "reason": "The pit is the grave and the world of the dead; Literal keeps the picture.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1830,6 +2618,26 @@
           "L": "የሕይወትን መንገድ ታሳውቀኛለህ፤ በፊትህ የደስታ ሙላት፣ በቀኝህም ለዘላለም ተድላ [አለ]።",
           "B": "ወደ ሕይወት የሚያደርሰውን መንገድ ታስተምረኛለህ፤ በፊትህ ሙሉ ደስታ፣ በቀኝህም የማያልቅ ተድላ አለ።",
           "R": "ወደ እውነተኛ ሕይወት የሚወስደውን መንገድ ታሳየኛለህ። ከአንተ ጋር መሆኔ በደስታ ይሞላኛል። በአንተ አጠገብ ለዘላለም የሚኖሩ መልካም ነገሮች አሉ።"
+        },
+        "hi": {
+          "L": "तू मुझे जीवन का मार्ग बताएगा; तेरे सम्मुख आनंद की भरपूरी [है], तेरे दाहिने हाथ में सदा सुख [हैं]।",
+          "B": "तू मुझे जीवन की ओर ले जानेवाला मार्ग सिखाता है; तेरी उपस्थिति में भरपूर आनंद है, और तेरे दाहिने हाथ में ऐसे सुख हैं जो कभी समाप्त नहीं होते।",
+          "R": "तू मुझे जीवन का मार्ग दिखाता है। तेरे पास रहना मुझे आनंद से भर देता है। तेरे पास ऐसी अच्छी चीज़ें हैं जो सदा बनी रहती हैं।"
+        },
+        "ru": {
+          "L": "Ты дашь мне познать путь жизни; изобилие радостей — перед {{deity_pronoun:твоим|Твоим}} лицом, услады — у {{deity_pronoun:твоей|Твоей}} правой руки навеки.",
+          "B": "Ты показываешь мне дорогу, ведущую к жизни; рядом с {{deity_pronoun:тобой|Тобой}} — радость в полноте, а по правую руку от {{deity_pronoun:тебя|Тебя}} — бесконечные услады.",
+          "R": "Ты показываешь мне путь к настоящей жизни. Рядом с {{deity_pronoun:тобой|Тобой}} я полон радости. Возле {{deity_pronoun:тебя|Тебя}} — добро, которое длится вечно."
+        },
+        "ja": {
+          "L": "あなたは、わたしに命の道を知らせてくださる。あなたの顔と共に満ちあふれる喜びがあり、あなたの右には、とこしえに楽しみがある。",
+          "B": "あなたは、命に至る道をわたしに教えてくださる。あなたの前には満ちあふれる喜びがあり、あなたの右には尽きることのない楽しみがある。",
+          "R": "あなたは、本当に生きる道をわたしに見せてくださる。あなたの近くにいると、わたしは喜びでいっぱいになる。あなたのそばには、いつまでも続く良いものがある。"
+        },
+        "uk": {
+          "L": "Ти даси мені пізнати стежку життя; повнота радощів — перед {{deity_pronoun:твоїм|Твоїм}} обличчям, приємне — у {{deity_pronoun:твоїй|Твоїй}} правиці навіки.",
+          "B": "Ти показуєш мені дорогу, що веде до життя; у {{deity_pronoun:твоїй|Твоїй}} присутності — повнота радості, а праворуч від {{deity_pronoun:тебе|Тебе}} — утіхи, що ніколи не минають.",
+          "R": "Ти показуєш мені, як справді жити. Бути біля {{deity_pronoun:тебе|Тебе}} — це радість. Поруч із {{deity_pronoun:тобою|Тобою}} — добро, яке триває вічно."
         }
       },
       "decisions": [
@@ -1928,6 +2736,46 @@
             "\"የሕይወትን መንገዶች\" (ways), as Acts 2:28"
           ],
           "reason": "The Hebrew has the singular; the Greek has the plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160110012",
+            "o190160110031"
+          ],
+          "choice": "\"जीवन का मार्ग\" (L, R), \"जीवन की ओर ले जानेवाला मार्ग\" (B)",
+          "alternatives": [],
+          "reason": "Acts 2:28 quotes the first half of the verse (m4); its words are kept, with the singular \"path\" of the Hebrew and its future \"you will make known\" at Literal. The second half, which Acts does not quote, follows the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190160110011",
+            "o190160110031"
+          ],
+          "choice": "\"Ты дашь мне познать путь жизни\" (L); \"дорогу, ведущую к жизни\" (B); \"путь к ... жизни\" (R)",
+          "alternatives": [],
+          "reason": "Acts 2:28 quotes this line (m4); the Psalm keeps the Russian of Acts at each level for the path of life and the joy of God's presence (\"рядом с тобой\"), with the Hebrew's singular \"path\" and its last line, which Acts does not quote.",
           "uncertain": false,
           "footnote": false
         }

@@ -58,6 +58,26 @@
           "L": "ለመዘምራን አለቃ፤ የዳዊት መዝሙር።",
           "B": "ለመዘምራን አለቃ። የዳዊት መዝሙር።",
           "R": "ለመዘምራን አለቃ። ዳዊት የዘመረው መዝሙር።"
+        },
+        "hi": {
+          "L": "संगीत-निर्देशक के लिए। दाऊद का भजन।",
+          "B": "संगीत-निर्देशक के लिए। दाऊद का भजन।",
+          "R": "गायक-मंडली के अगुवे के लिए। दाऊद का गीत।"
+        },
+        "ru": {
+          "L": "Руководителю хора. Псалом Давида.",
+          "B": "Руководителю хора. Псалом Давида.",
+          "R": "Для руководителя музыкантов. Песнь Давида."
+        },
+        "ja": {
+          "L": "指揮する者のために。ダビデの賛歌。",
+          "B": "音楽を導く者のために。ダビデの賛歌。",
+          "R": "音楽を導く人のために。ダビデの歌。"
+        },
+        "uk": {
+          "L": "Для диригента. Псалом Давида.",
+          "B": "Для диригента хору. Псалом Давида.",
+          "R": "Для того, хто керує співом. Пісня Давида."
         }
       },
       "decisions": [
@@ -125,6 +145,51 @@
             "spans like the English ones"
           ],
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130010012",
+            "o190130010021"
+          ],
+          "choice": "\"संगीत-निर्देशक के लिए\" (L, B), \"गायक-मंडली के अगुवे के लिए\" (R); \"भजन\" (L, B), \"गीत\" (R)",
+          "alternatives": [
+            "\"प्रधान बजानेवाले के लिए\""
+          ],
+          "reason": "The psalm titles follow the poetry terms note for the whole of Psalms: lamnatseach is the one who leads the music, and mizmor is a psalm, a song sung to music (m2, m3). Readable says it in everyday words, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130010012",
+            "o190130010021"
+          ],
+          "choice": "\"Руководителю хора\" (L, B), \"Для руководителя музыкантов\" (R); \"псалом\" (L, B), \"песнь\" (R)",
+          "alternatives": [
+            "\"Начальнику хора\"",
+            "\"Дирижёру\""
+          ],
+          "reason": "The title words as the poetry note settles them for every psalm: lamnatseach names the one who leads the music (m2), and Readable says it in plain words; mizmor is a song sung to music (m3), \"псалом\" at Literal and Balanced, \"песнь\" at Readable, as the English Readable says \"song\".",
           "uncertain": false,
           "footnote": false
         }
@@ -198,6 +263,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ለዘላለም ትረሳኛለህ? ፊትህንስ ከእኔ እስከ መቼ ትሰውራለህ?",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ነው? ፈጽመህ ትረሳኛለህን? ፊትህንስ ከእኔ እስከ መቼ ታዞራለህ?",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ትረሳኛለህ? ለዘላለም ነውን? ዘወር ብለህ ሳትመለከተኝ እስከ መቼ ትቆያለህ?"
+        },
+        "hi": {
+          "L": "कब तक, हे {{divine_name:प्रभु|याहवे}}, तू मुझे सदा भूला रहेगा? कब तक तू अपना मुख मुझसे छिपाए रहेगा?",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, कब तक? क्या तू मुझे सदा के लिए भूलता ही रहेगा? कब तक तू अपना मुँह मुझसे फेरे रहेगा?",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, तू कब तक मुझे भूला रहेगा? क्या सदा के लिए? कब तक तू मुझसे मुँह फेरे रहेगा और मेरी ओर नहीं देखेगा?"
+        },
+        "ru": {
+          "L": "До каких пор, {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} будешь забывать меня навеки? До каких пор {{deity_pronoun:ты|Ты}} будешь скрывать от меня своё лицо?",
+          "B": "Сколько ещё, {{divine_name:ГОСПОДИ|Яхве}}? Неужели {{deity_pronoun:ты|Ты}} забудешь меня навсегда? Сколько ещё {{deity_pronoun:ты|Ты}} будешь отворачивать от меня своё лицо?",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, сколько ещё {{deity_pronoun:ты|Ты}} будешь забывать обо мне? Неужели навсегда? Сколько ещё {{deity_pronoun:ты|Ты}} будешь отворачиваться и не смотреть на меня?"
+        },
+        "ja": {
+          "L": "いつまで、{{divine_name:主|ヤハウェ}}よ、あなたはわたしをとこしえに忘れておられるのか？いつまで、あなたの顔をわたしから隠されるのか？",
+          "B": "いつまでなのか、{{divine_name:主|ヤハウェ}}よ。あなたは、ずっとわたしを忘れたままでおられるのか？いつまで、あなたの顔をわたしから背けておられるのか？",
+          "R": "{{divine_name:主|ヤハウェ}}よ、いつまで、わたしを忘れたままでおられるのか？ずっとこのままなのか？いつまで、顔を背けて、わたしを見てくださらないのか？"
+        },
+        "uk": {
+          "L": "Доки, {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} забуватимеш мене — навіки? Доки {{deity_pronoun:ти|Ти}} ховатимеш {{deity_pronoun:твоє|Твоє}} обличчя від мене?",
+          "B": "Доки, {{divine_name:ГОСПОДИ|Ягве}}? Невже {{deity_pronoun:ти|Ти}} забудеш мене назавжди? Доки {{deity_pronoun:ти|Ти}} відвертатимеш від мене {{deity_pronoun:твоє|Твоє}} обличчя?",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, доки {{deity_pronoun:ти|Ти}} забуватимеш мене? Невже навіки? Доки {{deity_pronoun:ти|Ти}} відвертатимешся й не дивитимешся на мене?"
         }
       },
       "decisions": [
@@ -289,6 +374,151 @@
           "reason": "The repeated cry is the shape of the psalm (meaning decision m1), so each level keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190130020031"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}}\" for YHWH; plain \"प्रभु\" for Adonai",
+          "alternatives": [
+            "\"यहोवा\""
+          ],
+          "reason": "Hindi प्रभु stands both for the divine name YHWH (the English \"the LORD\") and for Adonai, \"Lord\". The divine_name setting tells them apart: where the reader chooses the name, YHWH appears as \"याहवे\" and Adonai stays \"प्रभु\". The Old Version's \"यहोवा\" is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190130020042"
+          ],
+          "choice": "\"तू\" to God; no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. The psalmist speaks to God with \"तू\", the address of Hindi prayer, and speaks of God with honorific forms (\"वे\", \"उन्होंने\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130020101",
+            "o190130020102"
+          ],
+          "choice": "\"अपना मुख छिपाए रहेगा\" (L); \"मुँह फेरे रहेगा\" (B, R)",
+          "alternatives": [
+            "\"मुख छिपाना\" at every level"
+          ],
+          "reason": "Literal keeps the Hebrew picture of hiding the face; Balanced and Readable use the Hindi idiom for turning away from someone, which says what the picture means (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130020011",
+            "o190130020021"
+          ],
+          "choice": "\"До каких пор\" (L); \"Сколько ещё\" (B, R)",
+          "alternatives": [
+            "\"Доколе\""
+          ],
+          "reason": "The cry \"until when?\" (m1) in modern Russian; the Slavonic \"доколе\" is avoided, as the style guide asks. Literal keeps the shape of the question, Balanced and Readable say \"how long\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190130020102"
+          ],
+          "choice": "\"своё лицо\", no deity_pronoun span",
+          "alternatives": [
+            "\"{{deity_pronoun:твоё|Твоё}} лицо\""
+          ],
+          "reason": "The English has a span on \"your face\"; Russian uses the reflexive \"своё\" for the subject's own face, and reflexives take no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130020011",
+            "o190130020021",
+            "o190130020041",
+            "o190130020051"
+          ],
+          "choice": "'ad-anah \"いつまで\" repeated at the head of each complaint (13:2-3); Literal keeps \"とこしえに\" inside the first question",
+          "alternatives": [],
+          "reason": "m1: Until when means How long; m2 joins two complaints, so Literal keeps both and Balanced and Readable split them, as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130020081",
+            "o190130020101",
+            "o190130020102"
+          ],
+          "choice": "\"あなたの顔を…隠される\" (L), \"顔を…背けて\" (B, R)",
+          "alternatives": [],
+          "reason": "m3: hiding the face is withdrawing favour and help; the Psalter writes あなたの顔 (4:7, 9:20) with no new honorific spelling.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -365,6 +595,26 @@
           "L": "በነፍሴ ምክርን፣ በልቤም ቀን ቀን ኀዘንን እስከ መቼ አኖራለሁ? ጠላቴስ በእኔ ላይ እስከ መቼ ከፍ ከፍ ይላል?",
           "B": "እስከ መቼ በአእምሮዬ ዕቅድ ሳወጣና ሳወርድ፣ ቀኑን ሙሉ በልቤ ኀዘን ይዤ እኖራለሁ? ጠላቴስ በድል እስከ መቼ በላዬ ይቆማል?",
           "R": "እስከ መቼ እጨነቃለሁ? መውጫ መንገድስ እስከ መቼ እፈልጋለሁ? በየቀኑ ማዘኔ እስከ መቼ ነው? ጠላቴስ እስከ መቼ ያሸንፈኛል?"
+        },
+        "hi": {
+          "L": "कब तक मैं अपने प्राण में युक्तियाँ ठहराता रहूँ, दिन भर अपने हृदय में शोक [रखूँ]? कब तक मेरा शत्रु मुझ पर ऊँचा उठा रहेगा?",
+          "B": "कब तक मुझे अपने मन में उपाय सोचते रहना पड़ेगा, और दिन भर हृदय में दुख सहना पड़ेगा? कब तक मेरा शत्रु जीतकर मुझ पर हावी रहेगा?",
+          "R": "कब तक मुझे चिंता करते और बचने का रास्ता ढूँढ़ते रहना पड़ेगा? कब तक मैं हर दिन उदास रहूँगा? कब तक मेरा शत्रु मुझसे जीतता रहेगा?"
+        },
+        "ru": {
+          "L": "До каких пор мне держать замыслы в душе моей, скорбь в сердце моём днём? До каких пор будет возвышаться мой враг надо мной?",
+          "B": "Сколько ещё мне перебирать в уме замыслы, нося скорбь в сердце весь день? Сколько ещё мой враг будет торжествовать надо мной?",
+          "R": "Сколько ещё мне тревожиться и искать выход? Сколько ещё мне грустить каждый день? Сколько ещё мой враг будет побеждать меня?"
+        },
+        "ja": {
+          "L": "いつまで、わたしは魂のうちに計らいを置き、昼も心に悲しみを抱くのか？いつまで、わたしの敵はわたしの上に高ぶるのか？",
+          "B": "いつまで、わたしは心の中であれこれと思い巡らし、一日中、心に悲しみを抱いていなければならないのか？いつまで、敵はわたしの上に勝ち誇って立つのか？",
+          "R": "いつまで、わたしは心配し続け、逃げ道を探し続けなければならないのか？いつまで、毎日悲しい思いをするのか？いつまで、敵に負け続けるのか？"
+        },
+        "uk": {
+          "L": "Доки я складатиму задуми у своїй душі, горе в моєму серці щодня? Доки мій ворог підноситиметься наді мною?",
+          "B": "Доки мені перебирати задуми в думках, із горем у серці цілий день? Доки мій ворог тріумфуватиме наді мною?",
+          "R": "Доки мені тривожитися й шукати виходу? Доки мені сумувати щодня? Доки мій ворог перемагатиме мене?"
         }
       },
       "decisions": [
@@ -413,6 +663,47 @@
           "choice": "be exalted over me: stand over me as the winner",
           "alternatives": [],
           "reason": "The verb means to be raised up: the enemy rises in triumph while the psalmist is brought low.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130030052"
+          ],
+          "choice": "\"प्राण\" (L); \"मन\" (B)",
+          "alternatives": [
+            "\"आत्मा\""
+          ],
+          "reason": "As the poetry terms note settles, nefesh is \"प्राण\" at Literal and is said as the English level says it at Balanced and Readable; here it is the place where the psalmist turns his plans over, his mind.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130030031",
+            "o190130030041",
+            "o190130030052"
+          ],
+          "choice": "\"魂のうちに計らいを置き\" (L), \"心の中であれこれと思い巡らし\" (B), \"心配し続け、逃げ道を探し続け\" (R)",
+          "alternatives": [],
+          "reason": "m1: making plans inside with no way out; Literal keeps the Hebrew picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -487,6 +778,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ተመልከት፤ መልስልኝ፤ የሞትን [እንቅልፍ] እንዳላንቀላፋ ዓይኖቼን አብራ፣",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ዘወር ብለህ ተመልከት፤ መልስልኝም! ብርሃንን ወደ ዓይኖቼ መልስ፤ ያለዚያ በሞት አንቀላፋለሁ፤",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ተመልከተኝ፤ መልስልኝም! እንደ ገና አበርታኝ፤ ያለዚያ እሞታለሁ።"
+        },
+        "hi": {
+          "L": "देख, मुझे उत्तर दे, हे {{divine_name:प्रभु|याहवे}} मेरे परमेश्वर; मेरी आँखों को ज्योति दे, ऐसा न हो कि मैं मृत्यु की [नींद] सो जाऊँ,",
+          "B": "हे {{divine_name:प्रभु|याहवे}} मेरे परमेश्वर, मेरी ओर देख और मुझे उत्तर दे! मेरी आँखों में फिर से ज्योति ला, नहीं तो मैं मृत्यु की नींद सो जाऊँगा,",
+          "R": "हे {{divine_name:प्रभु|याहवे}} मेरे परमेश्वर, मेरी ओर देख और मुझे जवाब दे! मुझे फिर से बल दे, नहीं तो मैं मर जाऊँगा।"
+        },
+        "ru": {
+          "L": "Взгляни, ответь мне, {{divine_name:ГОСПОДИ|Яхве}}, Боже мой; дай свет моим глазам, чтобы мне не уснуть [сном] смерти,",
+          "B": "Обернись, взгляни, {{divine_name:ГОСПОДИ|Яхве}}, Боже мой, и ответь мне! Верни свет моим глазам, иначе я усну смертным сном,",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, Боже мой, посмотри на меня и ответь мне! Дай мне снова силы, иначе я умру."
+        },
+        "ja": {
+          "L": "顧みて、わたしに答えてください、{{divine_name:主|ヤハウェ}}よ、わたしの神よ。わたしの目に光を与えてください。わたしが死の[眠りに]眠ることのないように。",
+          "B": "振り向いて、ご覧ください、{{divine_name:主|ヤハウェ}}よ、わたしの神よ。わたしに答えてください！わたしの目に、光を取り戻させてください。そうでなければ、わたしは死の眠りに落ちてしまう。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしの神よ、わたしを見て、答えてください！もう一度、わたしを強くしてください。そうでなければ、わたしは死んでしまう。"
+        },
+        "uk": {
+          "L": "Поглянь, відповідай мені, {{divine_name:ГОСПОДИ|Ягве}}, мій Боже; дай світло моїм очам, щоб я не заснув [сном] смерті,",
+          "B": "Зглянься, {{divine_name:ГОСПОДИ|Ягве}}, мій Боже, і відповідай мені! Поверни світло моїм очам, інакше я засну смертним сном,",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, мій Боже, поглянь на мене й відповідай мені! Зміцни мене знову, бо інакше я помру."
         }
       },
       "decisions": [
@@ -575,6 +886,47 @@
           "reason": "Vietnamese has its own gentle idiom for death as sleep, which says what the Hebrew says without sounding foreign; Literal keeps the Hebrew words and Readable says \"die\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190130040092"
+          ],
+          "choice": "Verse 4 ends with a full stop; verse 5 carries its own …ないように (L) or そして / そうなれば (B, R)",
+          "alternatives": [],
+          "reason": "m3: the English sentence runs on into verse 5; Japanese finishes each verse so the \"lest\" clauses can follow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130040081",
+            "o190130040092",
+            "o190130040051",
+            "o190130040061"
+          ],
+          "choice": "\"死の[眠りに]眠る\" (L), \"死の眠りに落ちる\" (B), \"死んでしまう\" (R); \"目に光を\" (L, B), \"強くしてください\" (R)",
+          "alternatives": [],
+          "reason": "m2: sleeping the death is dying; r-en-1 gives the sense of the light in the eyes at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -643,6 +995,26 @@
           "L": "ጠላቴ፦ «አሸነፍኩት» እንዳይል፣ ባላጋራዎቼም ስለ ተናወጥኩ ሐሤት እንዳያደርጉ።",
           "B": "ጠላቴም «አሸነፍኩት» ይላል፤ የሚቃወሙኝም በመሰናከሌ ይፈነጥዛሉ።",
           "R": "ከዚያም ጠላቴ «አሸነፍኩ!» ይላል። የሚቃወሙኝ ሰዎች ስወድቅ በማየታቸው ደስ ይላቸዋል።"
+        },
+        "hi": {
+          "L": "ऐसा न हो कि मेरा शत्रु कहे, \"मैं उस पर प्रबल हुआ,\" [और] मेरे विरोधी मगन हों कि मैं डगमगा गया।",
+          "B": "और मेरा शत्रु कहेगा, \"मैंने उसे हरा दिया,\" और मेरे विरोधी मेरे लड़खड़ाने पर आनंद मनाएँगे।",
+          "R": "तब मेरा शत्रु कहेगा, \"मैं जीत गया!\" मेरे विरोधी मुझे गिरते देखकर ख़ुश होंगे।"
+        },
+        "ru": {
+          "L": "чтобы не сказал мой враг: «Я одолел его», [чтобы] не радовались мои противники, что я пошатнулся.",
+          "B": "и мой враг скажет: «Я победил его», а мои противники будут ликовать, когда я споткнусь.",
+          "R": "Тогда мой враг скажет: «Я победил!» Те, кто против меня, будут рады увидеть, как я падаю."
+        },
+        "ja": {
+          "L": "わたしの敵が「わたしは彼に勝った」と言うことのないように。わたしが揺るがされるとき、わたしの仇たちが喜ぶことのないように。",
+          "B": "そして敵は「あいつに勝った」と言い、わたしに逆らう者たちは、わたしがつまずくのを見て喜び祝うだろう。",
+          "R": "そうなれば、敵は「勝った！」と言うだろう。わたしに逆らう人たちは、わたしが倒れるのを見て喜ぶだろう。"
+        },
+        "uk": {
+          "L": "щоб мій ворог не сказав: «Я подолав його», [щоб] мої супротивники не раділи, що я похитнувся.",
+          "B": "і мій ворог скаже: «Я його переміг», а ті, хто проти мене, святкуватимуть, коли я спіткнуся.",
+          "R": "Тоді мій ворог скаже: «Я переміг!» Люди, які проти мене, радітимуть, побачивши, що я впав."
         }
       },
       "decisions": [
@@ -711,6 +1083,25 @@
             "one sentence across verses 4 and 5"
           ],
           "reason": "The Hebrew sentence runs from verse 4 into verse 5. Korean closes verse 4 and gives verse 5 its own request so that each verse keeps its own words after its number.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130050011"
+          ],
+          "choice": "\"…ことのないように\" (L) for lest; \"そして…だろう\" (B), \"そうなれば…だろう\" (R) as the English",
+          "alternatives": [],
+          "reason": "m2: the clause gives the fear behind the prayer; Balanced and Readable state it as what would follow.",
           "uncertain": false,
           "footnote": false
         }
@@ -789,6 +1180,26 @@
           "L": "እኔ ግን በጽኑ ፍቅርህ ታመንኩ፤ ልቤ በማዳንህ ሐሤት ያደርጋል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ በእኔ ላይ በሙላት አድርጓልና።",
           "B": "እኔ ግን በጽኑ ፍቅርህ እታመናለሁ፤ ስለምታድን ልቤ ደስ ይለዋል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ እጅግ ቸር ሆኖልኛልና።",
           "R": "እኔ ግን በጽኑ ፍቅርህ እታመናለሁ። ስታድነኝ እጅግ ደስ ይለኛል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ እጅግ መልካም አድርጎልኛልና።"
+        },
+        "hi": {
+          "L": "पर मैंने तो तेरे अटल प्रेम पर भरोसा रखा है; मेरा हृदय तेरे उद्धार से मगन होगा। मैं {{divine_name:प्रभु|याहवे}} के लिए गाऊँगा, क्योंकि उन्होंने मेरे साथ भरपूर भलाई की है।",
+          "B": "पर मैं तेरे अटल प्रेम पर भरोसा रखता हूँ; मेरा हृदय आनंदित होगा, क्योंकि तू उद्धार करता है। मैं {{divine_name:प्रभु|याहवे}} का गीत गाऊँगा, क्योंकि उन्होंने मुझ पर बड़ी उदारता दिखाई है।",
+          "R": "पर मैं तेरे अटल प्रेम पर भरोसा रखता हूँ। जब तू मुझे बचाएगा, तब मैं आनंद से भर जाऊँगा। मैं {{divine_name:प्रभु|याहवे}} के लिए गीत गाऊँगा, क्योंकि वे मुझ पर बहुत दयालु रहे हैं।"
+        },
+        "ru": {
+          "L": "А я — на {{deity_pronoun:твою|Твою}} неизменную любовь я положился; возрадуется моё сердце {{deity_pronoun:твоему|Твоему}} спасению. Буду петь {{divine_name:ГОСПОДУ|Яхве}}, потому что {{deity_pronoun:он|Он}} щедро поступил со мной.",
+          "B": "А я верю {{deity_pronoun:твоей|Твоей}} неизменной любви; моё сердце будет радоваться, потому что {{deity_pronoun:ты|Ты}} спасаешь. Я буду петь {{divine_name:ГОСПОДУ|Яхве}}, потому что {{deity_pronoun:он|Он}} был так щедр ко мне.",
+          "R": "А я надеюсь на {{deity_pronoun:твою|Твою}} неизменную любовь. Я буду полон радости, когда {{deity_pronoun:ты|Ты}} спасёшь меня. Я буду петь {{divine_name:ГОСПОДУ|Яхве}}, потому что {{deity_pronoun:он|Он}} так добр ко мне."
+        },
+        "ja": {
+          "L": "しかし、わたしは、あなたの誠実に信頼した。わたしの心は、あなたの救いを喜ぶ。わたしは{{divine_name:主|ヤハウェ}}に歌おう。その方が、わたしに豊かに報いてくださったのだから。",
+          "B": "しかし、わたしはあなたの変わらぬいつくしみに信頼する。あなたが救ってくださるので、わたしの心は喜ぶ。わたしは{{divine_name:主|ヤハウェ}}に歌おう。その方は、わたしにこれほど良くしてくださったのだから。",
+          "R": "でも、わたしはあなたの変わらぬいつくしみに信頼する。あなたが救ってくださるとき、わたしは喜びでいっぱいになる。わたしは{{divine_name:主|ヤハウェ}}に歌おう。その方は、わたしにとても優しくしてくださったのだから。"
+        },
+        "uk": {
+          "L": "А я на {{deity_pronoun:твою|Твою}} незмінну любов поклався; моє серце радітиме {{deity_pronoun:твоїм|Твоїм}} спасінням. Я співатиму {{divine_name:ГОСПОДУ|Ягве}}, бо {{deity_pronoun:він|Він}} щедро вчинив зі мною.",
+          "B": "А я покладаюся на {{deity_pronoun:твою|Твою}} незмінну любов; моє серце радітиме, бо {{deity_pronoun:ти|Ти}} спасаєш. Я співатиму {{divine_name:ГОСПОДУ|Ягве}}, бо {{deity_pronoun:він|Він}} був такий щедрий до мене.",
+          "R": "Але я довіряю {{deity_pronoun:твоїй|Твоїй}} вірній любові. Я сповнюся радості, коли {{deity_pronoun:ти|Ти}} спасеш мене. Я співатиму {{divine_name:ГОСПОДУ|Ягве}}, бо {{deity_pronoun:він|Він}} був такий добрий до мене."
         }
       },
       "decisions": [
@@ -899,6 +1310,108 @@
             "bondade"
           ],
           "reason": "The book's word for chesed, as in Exodus 34:6: \"amor leal\" names love that keeps faith with a promise (m1); Readable says \"amor fiel\", as the English Readable says \"faithful love\", the wording settled for the whole book (Psalm 5:8). \"Misericórdia\", the traditional word, says pity rather than loyalty.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022",
+            "o190130060023"
+          ],
+          "choice": "\"अटल प्रेम\" at every level",
+          "alternatives": [
+            "\"करुणा\"",
+            "\"दया\""
+          ],
+          "reason": "God's hesed is \"अटल प्रेम\" at every level through the Psalms, as the poetry terms note settles: love that keeps faith (m1). Readable keeps it too, so that the word can be recognised wherever it recurs.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190130060101"
+          ],
+          "choice": "\"उन्होंने\" (L, B), \"वे\" (R) after \"तू\"",
+          "alternatives": [],
+          "reason": "The Hebrew turns from speaking to God (\"your loyal love\") to speaking about him (\"he has dealt\"); Hindi keeps the turn, with \"तू\" to God and the honorific third person for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022"
+          ],
+          "choice": "\"неизменная любовь\" at every level",
+          "alternatives": [
+            "\"верная любовь\" (R)",
+            "\"милость\""
+          ],
+          "reason": "God's hesed (m1) is \"неизменная любовь\" at every level in the Psalms, as the poetry note settles, where the English Readable says \"faithful love\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022"
+          ],
+          "choice": "hesed \"誠実\" (L), \"変わらぬいつくしみ\" (B, R)",
+          "alternatives": [],
+          "reason": "The Psalter's hesed forms (5:8, 6:5); m1 calls it love that keeps faith.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_sense",
+          "tokens": [
+            "o190130060101"
+          ],
+          "choice": "gamal \"豊かに報いてくださった\" (L), \"これほど良くしてくださった\" (B), \"とても優しくしてくださった\" (R)",
+          "alternatives": [],
+          "reason": "m3: he has treated me generously; 報いる here is a good return, not punishment.",
           "uncertain": false,
           "footnote": false
         }

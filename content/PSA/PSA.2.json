@@ -61,6 +61,26 @@
           "L": "አሕዛብ ለምን ተቆጡ? \\q ሕዝቦችስ ለምን ከንቱ ነገር አሰቡ?",
           "B": "አሕዛብ ለምን ታወኩ? \\q ሕዝቦችስ ለምን በከንቱ አሴሩ?",
           "R": "ሕዝቦች ለምን እንዲህ ታውከው ተቆጡ? \\q ሰዎችስ ለምን የማይረባ ዕቅድ አወጡ?"
+        },
+        "hi": {
+          "L": "जातियाँ क्यों भड़की हुई हैं, \\q और लोग क्यों व्यर्थ बातें बुदबुदा रहे हैं?",
+          "B": "देश क्यों खलबली मचाते हैं, \\q और लोग क्यों व्यर्थ षड्यंत्र रचते हैं?",
+          "R": "देश इतने बेचैन और ग़ुस्से में क्यों हैं? \\q लोग क्यों ऐसी योजनाएँ बनाते हैं जो व्यर्थ हो जाएँगी?"
+        },
+        "ru": {
+          "L": "Зачем бунтуют народы, \\q и племена замышляют пустое?",
+          "B": "Почему бушуют народы, \\q и племена строят напрасные замыслы?",
+          "R": "Почему народы так разгневаны? \\q Почему племена строят бесполезные планы?"
+        },
+        "ja": {
+          "L": "なぜ、諸国の民は騒ぎ立ち、 \\q 民らはむなしいことをつぶやくのか？",
+          "B": "なぜ、諸国の民は騒ぎ立ち、 \\q 民らはむなしい企てをささやき合うのか？",
+          "R": "なぜ、国々の人々は、あんなに騒いで怒っているのか？ \\q なぜ、人々は、何にもならない計画を立てるのか？"
+        },
+        "uk": {
+          "L": "Чому вирують народи, \\q і племена шепочуть марноту?",
+          "B": "Чому бушують народи, \\q і племена бурмочуть порожні задуми?",
+          "R": "Чому народи такі неспокійні й сердиті? \\q Чому люди складають плани, з яких нічого не вийде?"
         }
       },
       "decisions": [
@@ -284,6 +304,98 @@
           "reason": "The church quotes this verse in prayer (Acts 4:25-26) and the Greek there agrees with the Hebrew, so the psalm keeps the New Testament wording. Amharic past forms also carry the sense \"have raged, are raging\". Readable says \"ሕዝቦች\" (not the Acts Readable \"ሌሎች ሕዝቦች\", which speaks of the Gentiles).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020010021",
+            "o190020010031",
+            "o190020010042",
+            "o190020010051"
+          ],
+          "choice": "\"जातियाँ क्यों भड़की हुई हैं\" (L); \"देश क्यों खलबली मचाते हैं, और लोग क्यों व्यर्थ षड्यंत्र रचते हैं?\" (B); \"देश ... ग़ुस्से में क्यों हैं\" (R)",
+          "alternatives": [],
+          "reason": "Acts 4:25 quotes this verse, and the Hindi keeps the wording of Acts in this translation at each level: Balanced word for word, Literal and Readable with the present tense the Hebrew has here, where Acts follows the Greek's past. Literal keeps \"बुदबुदा\" for the verb of 1:2 (murmuring, meaning m2). The nations are \"जातियाँ\" at Literal and \"देश\" at Balanced and Readable, never a word that sounds like caste.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020010021",
+            "o190020010042",
+            "o190020010051",
+            "o190020010061"
+          ],
+          "choice": "the wording of Acts 4:25 at each level, in the present tense",
+          "alternatives": [
+            "Зачем взбунтовались народы"
+          ],
+          "reason": "The believers' prayer in Acts 4:25 quotes this verse (m3); Russian keeps its words at each level (бунтуют, замышляют пустое; бушуют, напрасные замыслы; разгневаны, бесполезные планы). The psalm describes the uproar as it happens, as the English does, so the verbs are present where Acts, telling of the past, has them past.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020010031",
+            "o190020010041",
+            "o190020010042"
+          ],
+          "choice": "goyim \"諸国の民\" (L, B), \"国々の人々\" / \"国々\" (R); le'ummim \"民ら\" (L, B), \"人々\" (R); 'ammim \"もろもろの民\" (L, B); for the whole Psalter",
+          "alternatives": [
+            "異邦人 (the NT's word for Gentiles)",
+            "国民"
+          ],
+          "reason": "諸国の民 is the NT table's form for \"the nations\", and the prayer of Acts 4:25 quotes this verse with 諸国の民 and 民ら; Readable uses the everyday 国々. The Hebrew present (\"are in an uproar\") is kept, where Acts 4:25 narrates the past.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020010031"
+          ],
+          "choice": "\"народи\" for the nations, with \"племена\" for the peoples in the parallel line at L and B, through the book",
+          "alternatives": [
+            "\"язичники\"",
+            "\"нації\""
+          ],
+          "reason": "In the Psalms the nations are the peoples of the world around Israel; \"язичники\" stresses their religion, and \"нації\" is a modern political word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -354,6 +466,26 @@
           "L": "የምድር ነገሥታት ተነሡ፤ \\q አለቆችም በአንድነት ተማከሩ፤ \\q {{divine_name:በእግዚአብሔርና|በያህዌና}} በቀባው ላይ።",
           "B": "የምድር ነገሥታት ተሰለፉ፤ \\q ገዦችም በአንድነት አሴሩ \\q {{divine_name:በእግዚአብሔርና|በያህዌና}} እርሱ በቀባው ንጉሥ ላይ።",
           "R": "የምድር ነገሥታት {{divine_name:እግዚአብሔርን|ያህዌን}} ለመቃወም ተዘጋጁ። \\q ገዦቻቸውም በእርሱና እርሱ በቀባው ንጉሥ ላይ ለማሴር በአንድነት ተሰበሰቡ።"
+        },
+        "hi": {
+          "L": "पृथ्वी के राजा आ खड़े होते हैं, \\q और हाकिम एक साथ मिलकर सम्मति करते हैं \\q {{divine_name:प्रभु|याहवे}} के और उनके अभिषिक्त के विरोध में।",
+          "B": "पृथ्वी के राजा मोर्चा बाँधते हैं, \\q और शासक मिलकर षड्यंत्र रचते हैं \\q {{divine_name:प्रभु|याहवे}} के और उनके अभिषिक्त राजा के विरुद्ध।",
+          "R": "धरती के राजा {{divine_name:प्रभु|याहवे}} से लड़ने को तैयार होते हैं। \\q शासक मिलकर उनके विरुद्ध, और उस राजा के विरुद्ध जिसका उन्होंने अभिषेक किया है, षड्यंत्र रचते हैं।"
+        },
+        "ru": {
+          "L": "Предстают цари земли, \\q и начальники собираются вместе \\q против {{divine_name:ГОСПОДА|Яхве}} и против {{deity_pronoun:его|Его}} помазанника.",
+          "B": "Цари земли выступают, \\q и правители сговариваются \\q против {{divine_name:ГОСПОДА|Яхве}} и против {{deity_pronoun:его|Его}} помазанного царя.",
+          "R": "Цари земли готовятся к войне против {{divine_name:ГОСПОДА|Яхве}}. \\q Их правители собираются вместе, чтобы бороться против {{deity_pronoun:него|Него}} и против царя, которого {{deity_pronoun:он|Он}} помазал."
+        },
+        "ja": {
+          "L": "地の王たちは立ち構え、 \\q 支配者たちは共に座して謀る、 \\q {{divine_name:主|ヤハウェ}}に逆らい、その油注がれた者に逆らって。",
+          "B": "地の王たちは身構え、 \\q 支配者たちは手を組んで謀る、 \\q {{divine_name:主|ヤハウェ}}に、そしてその方が油を注がれた王に逆らって。",
+          "R": "地上の王たちは、{{divine_name:主|ヤハウェ}}に逆らおうと身構える。 \\q 支配者たちは集まって、その方と、その方が油を注いで立てた王に逆らう計画を立てる。"
+        },
+        "uk": {
+          "L": "Стають царі землі, \\q і правителі радяться разом \\q проти {{divine_name:ГОСПОДА|Ягве}} і проти {{deity_pronoun:його|Його}} помазанця.",
+          "B": "Займають позиції царі землі, \\q і правителі змовляються разом \\q проти {{divine_name:ГОСПОДА|Ягве}} і проти {{deity_pronoun:його|Його}} помазаного царя.",
+          "R": "Царі землі готуються виступити проти {{divine_name:ГОСПОДА|Ягве}}. \\q Їхні правителі збираються, щоб змовитися проти {{deity_pronoun:нього|Нього}} і проти царя, якого {{deity_pronoun:він|Він}} помазав."
         }
       },
       "decisions": [
@@ -618,6 +750,96 @@
           "reason": "The Hebrew has the divine name and \"his anointed\" (mashiaḥ), so the psalm says what the Hebrew says; Acts 4:26 follows the Greek \"the Lord and his Christ\" and reads it of Jesus. \"sit in council\" is \"ተማከሩ\" (took counsel), as the Hebrew, where Acts has \"ተሰበሰቡ\" (gathered).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020020011",
+            "o190020020021",
+            "o190020020042",
+            "o190020020101"
+          ],
+          "choice": "\"पृथ्वी के राजा आ खड़े होते हैं\" (L), \"मोर्चा बाँधते हैं\" (B), \"लड़ने को तैयार होते हैं\" (R); \"अभिषिक्त\"",
+          "alternatives": [
+            "\"मसीह\", as Acts 4:26"
+          ],
+          "reason": "The kings' lines keep the wording of Acts 4:26 in this translation at each level, in the present tense of the Hebrew. Where the Hebrew differs from the Greek that Acts quotes, the Hindi differs: the rulers \"sit in council together\" (meaning m2) rather than gather, and the LORD's anointed is \"अभिषिक्त\", the king of the psalm (meaning m3), where Acts says \"मसीह\" for the Greek christos.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020020011",
+            "o190020020042",
+            "o190020020102"
+          ],
+          "choice": "помазанник (L), помазанный царь (B), царь, которого он помазал (R), where Acts 4:26 has {{christos:Христа|Мессии}}",
+          "alternatives": [
+            "{{christos:Христа|Мессии}}"
+          ],
+          "reason": "Acts 4:26 quotes the verse and its kings and rulers keep the wording of Acts (Предстают цари земли, начальники собираются вместе at Literal; выступают, правители at Balanced; готовятся к войне at Readable). Acts reads the anointed one through the Greek christos; the psalm speaks of the king the LORD has anointed (m3), so Russian says \"помазанник\", the word settled for the Psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020020101",
+            "o190020020102"
+          ],
+          "choice": "mashiach of the king: \"(その / ご自分の / わたしの / あなたの)油注がれた者\" (L), \"油を注がれた王\" or \"油注がれた者\" as the English Balanced (B), \"油を注いで立てた王\" (R), with no christos span; for the whole Psalter",
+          "alternatives": [
+            "{{christos:キリスト|メシア}}",
+            "メシア"
+          ],
+          "reason": "These are the forms of 1-2 Samuel for the LORD's anointed king (2SA 22:51 = Psalm 18:51: ご自分の油注がれた者 / ご自分が油を注いで立てた王). The English has no christos span here, so neither does the Japanese; Acts 4:26 has {{christos}} because Luke's Greek reads Christos.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020020101"
+          ],
+          "choice": "\"помазанець\" (L), \"помазаний цар\" (B) for the anointed, through the book",
+          "alternatives": [
+            "\"Месія\""
+          ],
+          "reason": "The word names the king God has anointed; \"Месія\" would settle at the level of wording what the English leaves to the reader.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -685,6 +907,26 @@
           "L": "«ማሰሪያቸውን እንበጥስ፤ \\q ገመዳቸውንም ከእኛ እንጣል።»",
           "B": "«ሰንሰለታቸውን እንበጣጥስ» ይላሉ፤ \\q «ገመዳቸውንም ከላያችን አውልቀን እንወርውር።»",
           "R": "እንዲህ ይላሉ፦ «ከቁጥጥራቸው ነጻ እንውጣ። \\q ያሰሩብንን ገመድ ከላያችን እንጣል።»"
+        },
+        "hi": {
+          "L": "\"आओ, हम उनके बंधन तोड़ डालें, \\q और उनकी रस्सियों को अपने ऊपर से उतार फेंकें।\"",
+          "B": "\"आओ, हम उनकी ज़ंजीरें तोड़ डालें,\" वे कहते हैं, \\q \"और उनकी रस्सियाँ अपने ऊपर से उतार फेंकें।\"",
+          "R": "वे कहते हैं, \"आओ, हम उनके वश से छूट जाएँ। \\q जो रस्सियाँ उन्होंने हम पर बाँधी हैं, उन्हें उतार फेंकें।\""
+        },
+        "ru": {
+          "L": "«Разорвём {{deity_pronoun:их|Их}} узы \\q и сбросим с себя {{deity_pronoun:их|Их}} верёвки.»",
+          "B": "«Порвём {{deity_pronoun:их|Их}} цепи», — говорят они, — \\q «сбросим с себя {{deity_pronoun:их|Их}} верёвки.»",
+          "R": "Они говорят: «Освободимся от {{deity_pronoun:их|Их}} власти. \\q Сбросим верёвки, которыми {{deity_pronoun:они|Они}} нас связали.»"
+        },
+        "ja": {
+          "L": "「さあ、あの者たちのかせを断ち切り、 \\q あの者たちの綱を、わたしたちから投げ捨てよう。」",
+          "B": "「あの者たちの鎖を断ち切ろう」と彼らは言う。 \\q 「その綱を、わたしたちから振り捨てよう。」",
+          "R": "彼らは言う。「あの者たちの支配から、自由になろう。 \\q わたしたちを縛っている綱を、投げ捨ててしまおう。」"
+        },
+        "uk": {
+          "L": "«Розірвімо {{deity_pronoun:їхні|Їхні}} пута \\q і скиньмо з себе {{deity_pronoun:їхні|Їхні}} мотузки.»",
+          "B": "«Порвімо {{deity_pronoun:їхні|Їхні}} кайдани», — кажуть вони, — \\q «відкиньмо від себе {{deity_pronoun:їхні|Їхні}} канати.»",
+          "R": "Вони кажуть: «Звільнімося з-під {{deity_pronoun:їхньої|Їхньої}} влади. \\q Скиньмо мотузки, якими {{deity_pronoun:вони|Вони}} нас звʼязали.»"
         }
       },
       "decisions": [
@@ -841,6 +1083,75 @@
           "reason": "The pronouns mean the LORD and his anointed king together (m2), so they take the deity pronoun span, as the English \"their\", \"they\" do; the king's pronouns follow the setting in this psalm (2:7, r-en-2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190020030032",
+            "o190020030062"
+          ],
+          "choice": "honorific \"उनके\", \"उनकी\", \"उन्होंने\" for the LORD and his anointed",
+          "alternatives": [
+            "\"इनके\""
+          ],
+          "reason": "The rebels mean the LORD and his king together, so the pronouns are plural in any case; Hindi keeps the plain plural, which also serves as the honorific.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190020030032",
+            "o190020030062"
+          ],
+          "choice": "{{deity_pronoun:их|Их}}",
+          "alternatives": [
+            "их"
+          ],
+          "reason": "\"Their\" is the LORD and his anointed king, so the plural pronoun takes the deity pronoun setting, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020030031",
+            "o190020030032",
+            "o190020030061",
+            "o190020030062"
+          ],
+          "choice": "\"their\" (the LORD and his king) in the rebels' mouth: \"あの者たちの\"",
+          "alternatives": [
+            "彼らの",
+            "その方々の"
+          ],
+          "reason": "Japanese never uses 彼 / 彼ら for God, and the rebels would not use respect forms; あの者たち keeps their contempt while naming no one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -907,6 +1218,26 @@
           "L": "በሰማያት የተቀመጠው ይስቃል፤ \\q ጌታ ያላግጥባቸዋል።",
           "B": "በሰማያት በዙፋኑ የተቀመጠው ይስቃል፤ \\q ጌታ በንቀት ያፌዝባቸዋል።",
           "R": "በሰማይ በዙፋኑ ላይ ሆኖ የሚገዛው እግዚአብሔር ግን ይስቃል። \\q ጌታ ያሾፍባቸዋል።"
+        },
+        "hi": {
+          "L": "जो स्वर्ग में बैठे हैं, वे हँसते हैं; \\q प्रभु उनका उपहास करते हैं।",
+          "B": "जो स्वर्ग में सिंहासन पर विराजमान हैं, वे हँसते हैं; \\q प्रभु उनकी हँसी उड़ाते हैं।",
+          "R": "पर परमेश्वर, जो स्वर्ग में अपने सिंहासन से राज्य करते हैं, हँसते हैं। \\q प्रभु उनका मज़ाक़ उड़ाते हैं।"
+        },
+        "ru": {
+          "L": "Сидящий на небесах смеётся; \\q Господь насмехается над ними.",
+          "B": "Восседающий на престоле в небесах смеётся; \\q Господь высмеивает их.",
+          "R": "Но Бог, который правит со своего престола на небе, смеётся. \\q Господь потешается над ними."
+        },
+        "ja": {
+          "L": "天に座しておられる方は笑い、 \\q 主は彼らをあざけられる。",
+          "B": "天で王座に着いておられる方は笑い、 \\q 主は彼らをあざ笑われる。",
+          "R": "しかし、天の王座から治めておられる神は、お笑いになる。 \\q 主は、彼らをあざ笑われる。"
+        },
+        "uk": {
+          "L": "Той, хто сидить на небесах, сміється; \\q Господь насміхається з них.",
+          "B": "Той, хто сидить на престолі в небесах, сміється; \\q Господь глузує з них.",
+          "R": "Але Бог, що править на небі зі свого престолу, сміється. \\q Господь кепкує з них."
         }
       },
       "decisions": [
@@ -1056,6 +1387,65 @@
           "reason": "The Hebrew uses the title here, not the name (meaning decision m2); \"ጌታ\" is the Amharic for the title through the Old Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020040041"
+          ],
+          "choice": "\"प्रभु\", with no divine_name span",
+          "alternatives": [],
+          "reason": "Here the Hebrew has the title Adonai, not the name (meaning m2), so \"प्रभु\" stands without the divine_name setting; with the setting on, this word does not change (see 1:1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020040041"
+          ],
+          "choice": "Господь",
+          "alternatives": [
+            "{{divine_name:ГОСПОДЬ|Яхве}}"
+          ],
+          "reason": "The title Adonai, not the name (m2), is \"Господь\" in ordinary letters, kept apart from the capitals and the divine name setting of YHWH.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020040041"
+          ],
+          "choice": "Adonai \"主\" with no divine_name span, beside DN for YHWH",
+          "alternatives": [],
+          "reason": "The style guide (7b) keeps 主 for both, with the span only on the name; the reader's setting therefore changes only the YHWH places.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1126,6 +1516,26 @@
           "L": "በዚያን ጊዜ በቁጣው ይናገራቸዋል፤ \\q በሚነድደውም ቁጣው ያስደነግጣቸዋል።",
           "B": "ከዚያም በቁጣ ይናገራቸዋል፤ \\q በሚንበለበለው መዓቱም በፍርሃት ይሞላቸዋል።",
           "R": "ከዚያም በቁጣ ይናገራቸዋል። \\q ታላቅ ቁጣውም ያስፈራቸዋል።"
+        },
+        "hi": {
+          "L": "तब वे अपने क्रोध में उनसे बात करते हैं, \\q और अपने भड़के हुए कोप में उन्हें घबरा देते हैं।",
+          "B": "तब वे क्रोध में उनसे बोलते हैं \\q और अपने धधकते रोष से उन्हें आतंक से भर देते हैं।",
+          "R": "तब वे क्रोध में उनसे बात करते हैं। \\q उनका भयंकर क्रोध उन्हें डरा देता है।"
+        },
+        "ru": {
+          "L": "Тогда {{deity_pronoun:он|Он}} говорит им в гневе своём, \\q и в ярости своей {{deity_pronoun:он|Он}} приводит их в ужас.",
+          "B": "Тогда {{deity_pronoun:он|Он}} говорит с ними в гневе \\q и в пылающей ярости наполняет их ужасом.",
+          "R": "Тогда {{deity_pronoun:он|Он}} говорит с ними в гневе. \\q Его сильный гнев пугает их."
+        },
+        "ja": {
+          "L": "そのとき、その方は怒りをもって彼らに語られ、 \\q その燃える怒りによって、彼らを震え上がらせる。",
+          "B": "そのとき、その方は怒って彼らに語られ、 \\q 激しく燃える憤りによって、彼らを恐怖で満たされる。",
+          "R": "そのとき、その方は怒って、彼らに語られる。 \\q その激しい怒りに、彼らはおびえる。"
+        },
+        "uk": {
+          "L": "Тоді {{deity_pronoun:він|Він}} говорить до них у своєму гніві, \\q і в палкій своїй люті {{deity_pronoun:він|Він}} жахає їх.",
+          "B": "Тоді {{deity_pronoun:він|Він}} говорить до них у гніві \\q і сповнює їх жахом у своїй палючій люті.",
+          "R": "Тоді {{deity_pronoun:він|Він}} говорить до них у гніві. \\q Його лютий гнів наводить на них страх."
         }
       },
       "decisions": [
@@ -1155,6 +1565,46 @@
           "choice": "Then he speaks: his words follow in verse 6",
           "alternatives": [],
           "reason": "Verse 6 gives the LORD's words. His answer to the kings is not a counterattack but a statement of what he has already done.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190020050043",
+            "o190020050054"
+          ],
+          "choice": "своём, своей with no span",
+          "alternatives": [
+            "{{deity_pronoun:его|Его}}"
+          ],
+          "reason": "Where the English has \"his\" for God, Russian uses the reflexive \"свой\", which takes no deity pronoun setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190020050061",
+            "o190020050062"
+          ],
+          "choice": "The causative \"震え上がらせる\" is left without a respect form",
+          "alternatives": [
+            "震え上がらせられる"
+          ],
+          "reason": "A respect form on a causative (震え上がらせられる) reads as a passive; Job settled the same (JOB-consistency).",
           "uncertain": false,
           "footnote": false
         }
@@ -1224,6 +1674,26 @@
           "L": "«እኔ ግን፣ እኔ ንጉሤን ሾሜአለሁ \\q በጽዮን፣ በቅድስናዬ ተራራ ላይ።»",
           "B": "«ንጉሤን ያነገሥኩ እኔ ራሴ ነኝ፤ \\q በጽዮን፣ በተቀደሰው ተራራዬ ላይ።»",
           "R": "እግዚአብሔር እንዲህ ይላል፦ «የራሴን ንጉሥ በሥልጣን ላይ አስቀምጫለሁ፤ \\q በተቀደሰው ተራራዬ በጽዮን ላይ።»"
+        },
+        "hi": {
+          "L": "\"पर मैंने, मैंने ही अपने राजा को स्थापित किया है \\q सिय्योन पर, अपनी पवित्रता के पर्वत पर।\"",
+          "B": "\"मैं ही हूँ जिसने अपने राजा को बैठाया है \\q सिय्योन पर, अपने पवित्र पर्वत पर।\"",
+          "R": "परमेश्वर कहते हैं, \"मैंने अपने ही राजा को अधिकार दिया है \\q सिय्योन पर, अपने पवित्र पर्वत पर।\""
+        },
+        "ru": {
+          "L": "«А {{deity_pronoun:я|Я}}, {{deity_pronoun:я|Я}} поставил царя {{deity_pronoun:моего|Моего}} \\q на Сионе, горе святости {{deity_pronoun:моей|Моей}}.»",
+          "B": "«Это {{deity_pronoun:я|Я}} поставил {{deity_pronoun:моего|Моего}} царя \\q на Сионе, {{deity_pronoun:моей|Моей}} святой горе.»",
+          "R": "Бог говорит: «Я сам поставил {{deity_pronoun:моего|Моего}} царя править \\q на Сионе, {{deity_pronoun:моей|Моей}} святой горе.»"
+        },
+        "ja": {
+          "L": "「しかし、このわたしが、わたしの王を据えたのだ、 \\q シオンに、わたしの聖なる山に。」",
+          "B": "「わたしこそが、わたしの王を立てたのだ、 \\q わたしの聖なる山、シオンに。」",
+          "R": "神は言われる。「わたしが、わたし自身の王を立てて、 \\q わたしの聖なる山シオンで治めさせた。」"
+        },
+        "uk": {
+          "L": "«А {{deity_pronoun:я|Я}}, {{deity_pronoun:я|Я}} поставив {{deity_pronoun:мого|Мого}} царя \\q на Сіоні, горі {{deity_pronoun:моєї|Моєї}} святості.»",
+          "B": "«Це {{deity_pronoun:я|Я}} поставив {{deity_pronoun:мого|Мого}} царя \\q на Сіоні, {{deity_pronoun:моїй|Моїй}} святій горі.»",
+          "R": "Бог каже: «Я дав владу {{deity_pronoun:моєму|Моєму}} власному цареві \\q на Сіоні, {{deity_pronoun:моїй|Моїй}} святій горі.»"
         }
       },
       "decisions": [
@@ -1379,6 +1849,29 @@
           "reason": "For the whole book: the usual Brazilian form of the name, as the Gospels have it (the hill of Jerusalem, m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020060051",
+            "o190020060071",
+            "o190020060072"
+          ],
+          "choice": "Tsiyyon \"シオン\" at every level; har qodshi \"わたしの聖なる山\" (L too)",
+          "alternatives": [
+            "聖所の山"
+          ],
+          "reason": "シオン is the form of the NT (HEB 12:22) and Lamentations. \"Mountain of my holiness\" is a Hebrew way of saying \"my holy mountain\", and a literal 聖さの山 is not Japanese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1451,6 +1944,26 @@
           "L": "ስለ አዋጁ እናገራለሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ አለኝ፦ «አንተ ልጄ ነህ፤ \\q እኔ ዛሬ ወለድኩህ።",
           "B": "አዋጁን አውጃለሁ። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ አለኝ፦ «አንተ ልጄ ነህ፤ \\q በዚህች ዕለት ወልጄሃለሁ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የወሰነውን እነግራለሁ። \\q እንዲህ አለኝ፦ «አንተ ልጄ ነህ። \\q ዛሬ አባትህ ሆንኩ።"
+        },
+        "hi": {
+          "L": "मैं उस आज्ञा का वर्णन करूँगा: \\q {{divine_name:प्रभु|याहवे}} ने मुझसे कहा, \"तू मेरा पुत्र है; \\q आज मैंने तुझे जन्म दिया है।",
+          "B": "मैं उस आज्ञा की घोषणा करूँगा। \\q {{divine_name:प्रभु|याहवे}} ने मुझसे कहा, \"तू मेरा पुत्र है। \\q आज के दिन मैं तेरा पिता बन गया हूँ।",
+          "R": "{{divine_name:प्रभु|याहवे}} ने जो ठहराया है, वह मैं बताऊँगा। \\q उन्होंने मुझसे कहा, \"तू मेरा पुत्र है। \\q आज से मैं तेरा पिता हूँ।"
+        },
+        "ru": {
+          "L": "Я расскажу об указе: \\q {{divine_name:ГОСПОДЬ|Яхве}} сказал {{deity_pronoun:мне|Мне}}: «Ты — сын {{deity_pronoun:мой|Мой}}, \\q {{deity_pronoun:я|Я}} сегодня родил {{deity_pronoun:тебя|Тебя}}.",
+          "B": "Я возвещу указ. \\q {{divine_name:ГОСПОДЬ|Яхве}} сказал {{deity_pronoun:мне|Мне}}: «Ты — {{deity_pronoun:мой|Мой}} сын; \\q сегодня {{deity_pronoun:я|Я}} родил {{deity_pronoun:тебя|Тебя}}.",
+          "R": "Я расскажу, что решил {{divine_name:ГОСПОДЬ|Яхве}}. \\q Он сказал {{deity_pronoun:мне|Мне}}: «Ты — {{deity_pronoun:мой|Мой}} сын. \\q Сегодня {{deity_pronoun:я|Я}} стал {{deity_pronoun:твоим|Твоим}} отцом."
+        },
+        "ja": {
+          "L": "わたしは定めについて語ろう。 \\q {{divine_name:主|ヤハウェ}}はわたしに言われた。「あなたはわたしの子。 \\q わたしは今日、あなたを生んだ。",
+          "B": "わたしは定めを告げ知らせよう。 \\q {{divine_name:主|ヤハウェ}}はわたしに言われた。「あなたはわたしの子。 \\q 今日、わたしはあなたを生んだ。",
+          "R": "わたしは、{{divine_name:主|ヤハウェ}}が決められたことを伝えよう。 \\q その方はわたしに言われた。「あなたはわたしの子。 \\q 今日、わたしはあなたの父となった。"
+        },
+        "uk": {
+          "L": "Я звіщу про постанову: \\q {{divine_name:ГОСПОДЬ|Ягве}} сказав {{deity_pronoun:мені|Мені}}: «Ти — {{deity_pronoun:мій|Мій}} син; \\q {{deity_pronoun:я|Я}} сьогодні породив {{deity_pronoun:тебе|Тебе}}.",
+          "B": "Я оголошу постанову. \\q {{divine_name:ГОСПОДЬ|Ягве}} сказав {{deity_pronoun:мені|Мені}}: «Ти — {{deity_pronoun:мій|Мій}} син. \\q Сьогодні {{deity_pronoun:я|Я}} став {{deity_pronoun:твоїм|Твоїм}} батьком.",
+          "R": "Я розповім, що вирішив {{divine_name:ГОСПОДЬ|Ягве}}. \\q Він сказав {{deity_pronoun:мені|Мені}}: «Ти — {{deity_pronoun:мій|Мій}} син. \\q Відсьогодні {{deity_pronoun:я|Я}} — {{deity_pronoun:твій|Твій}} батько."
         }
       },
       "decisions": [
@@ -1660,6 +2173,120 @@
           "reason": "The Hebrew and the Greek agree, so each level keeps the New Testament wording already in place; the decree is \"አዋጅ\", the word used for a royal decree.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190020070071",
+            "o190020070081",
+            "o190020070112"
+          ],
+          "choice": "\"तू मेरा पुत्र है\"; \"तुझे\", \"तेरा\" from the LORD to the king, here and in verses 8-9",
+          "alternatives": [
+            "\"तुम मेरे पुत्र हो\""
+          ],
+          "reason": "God speaking to a person usually says \"तुम\" in this translation, but these words are quoted in Hebrews 1:5 and Acts 13:33, which have \"तू मेरा पुत्र है\" in Hindi, and the poetry note keeps the New Testament's form. The LORD's speech goes on to the end of verse 9 in the same form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020070091",
+            "o190020070102",
+            "o190020070111"
+          ],
+          "choice": "\"आज मैंने तुझे जन्म दिया है\" (L); \"आज के दिन मैं तेरा पिता बन गया हूँ\" (B); \"आज से मैं तेरा पिता हूँ\" (R)",
+          "alternatives": [
+            "\"आज मैंने तुझे जन्म दिया है\" at every level"
+          ],
+          "reason": "Literal keeps the wording of Hebrews 1:5 and Acts 13:33 (Literal) in this translation. Balanced and Readable say what \"begotten\" means (meaning m3), as the English does, in the words of the Readable level of Hebrews 1:5 and Acts 13:33 (\"आज मैं तेरा पिता बन गया हूँ\"); Readable says \"from today\" as the English \"starting today\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020070071",
+            "o190020070072",
+            "o190020070081",
+            "o190020070112"
+          ],
+          "choice": "the words of Acts 13:33 and Hebrews 1:5 at each level, with \"сын\" and \"отцом\" in lower case",
+          "alternatives": [
+            "Ты — Сын Мой",
+            "Сегодня я стал твоим отцом (B)"
+          ],
+          "reason": "Acts 13:33 and Hebrews 1:5 quote these words (m3), and Russian keeps their wording at each level (Ты — сын мой, я сегодня родил тебя; Ты — мой сын; сегодня я родил тебя; Сегодня я стал твоим отцом). Balanced keeps \"родил\" with them rather than follow the English Balanced, since the Russian verb is plain speech. In the psalm the son is the king on Zion, so \"сын\" and \"отцом\" are lower case as in the English, and the pronouns for the king, like those for the LORD, follow the deity pronoun setting (the English decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020070031"
+          ],
+          "choice": "указ",
+          "alternatives": [
+            "определение",
+            "постановление"
+          ],
+          "reason": "The decree is what the LORD has declared about the king (m2); \"указ\" is the plain modern word for a king's decree.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020070071",
+            "o190020070111"
+          ],
+          "choice": "\"あなたはわたしの子。わたしは今日、あなたを生んだ\" (L), \"…今日、わたしはあなたを生んだ\" (B), \"…今日、わたしはあなたの父となった\" (R): the words of Acts 13:33, Hebrews 1:5 and 5:5 at each level",
+          "alternatives": [
+            "今日、わたしはあなたの父となった (B)"
+          ],
+          "reason": "The Greek of those quotations reads as the Hebrew does, so the Psalm keeps the NT's Japanese word for word and the reader hears the same sentence in both places. Balanced keeps 生んだ, as the NT Balanced does, where the English Balanced explains it (\"become your father\"); Readable gives the explanation, as the NT Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1730,6 +2357,26 @@
           "L": "ለምነኝ፤ ሕዝቦችንም ርስትህ አድርጌ እሰጥሃለሁ፤ \\q የምድርንም ዳርቻዎች ይዞታህ [አድርጌ እሰጥሃለሁ]።",
           "B": "ለምነኝ፤ ሕዝቦችን ትወርሳቸው ዘንድ እሰጥሃለሁ፤ \\q የምድርን ዳርቻዎችም የራስህ ይዞታ አደርግልሃለሁ።",
           "R": "ብቻ ለምነኝ፤ ሕዝቦችን እሰጥሃለሁ። \\q እስከ ዳርቻዋ ድረስ ምድር ሁሉ የአንተ ትሆናለች።"
+        },
+        "hi": {
+          "L": "मुझसे माँग, और मैं जातियों को तेरी मीरास [के रूप में], \\q और पृथ्वी के छोरों को तेरी निज भूमि [के रूप में] दूँगा।",
+          "B": "मुझसे माँग, और मैं देशों को तेरी मीरास बना दूँगा, \\q और पृथ्वी के दूर-दूर के स्थान तेरे अपने अधिकार में कर दूँगा।",
+          "R": "बस माँग, और मैं देश तुझे दे दूँगा। \\q सारी धरती, उसके दूर के छोरों तक, तेरी हो जाएगी।"
+        },
+        "ru": {
+          "L": "Попроси у {{deity_pronoun:меня|Меня}}, и {{deity_pronoun:я|Я}} отдам народы [в] {{deity_pronoun:твоё|Твоё}} наследство, \\q и [во] {{deity_pronoun:твоё|Твоё}} владение — концы земли.",
+          "B": "Попроси {{deity_pronoun:меня|Меня}}, и {{deity_pronoun:я|Я}} дам {{deity_pronoun:тебе|Тебе}} народы в наследство \\q и самые дальние края земли — во владение.",
+          "R": "Только попроси, и {{deity_pronoun:я|Я}} дам {{deity_pronoun:тебе|Тебе}} народы. \\q Вся земля, до самых дальних краёв, будет {{deity_pronoun:твоей|Твоей}}."
+        },
+        "ja": {
+          "L": "わたしに求めなさい。そうすれば、わたしは諸国の民を、あなたの嗣業として与え、 \\q 地の果てまでを、あなたの所有として[与える]。",
+          "B": "わたしに求めなさい。そうすれば、諸国の民をあなたに受け継がせ、 \\q 地の果てまでを、あなたのものとして持たせよう。",
+          "R": "ただ求めなさい。わたしは、あなたに国々を与えよう。 \\q 地の果ての果てまで、世界中があなたのものになる。"
+        },
+        "uk": {
+          "L": "Попроси в {{deity_pronoun:мене|Мене}}, і {{deity_pronoun:я|Я}} дам народи [як] {{deity_pronoun:твою|Твою}} спадщину, \\q і [як] {{deity_pronoun:твоє|Твоє}} володіння — кінці землі.",
+          "B": "Попроси {{deity_pronoun:мене|Мене}}, і {{deity_pronoun:я|Я}} дам {{deity_pronoun:тобі|Тобі}} народи в спадок, \\q а найдальші краї землі — у {{deity_pronoun:твоє|Твоє}} володіння.",
+          "R": "Тільки попроси, і {{deity_pronoun:я|Я}} дам {{deity_pronoun:тобі|Тобі}} народи. \\q Уся земля, аж до найдальших країв, належатиме {{deity_pronoun:тобі|Тобі}}."
         }
       },
       "decisions": [
@@ -1759,6 +2406,27 @@
           "choice": "Ask: an invitation that is sure to be granted",
           "alternatives": [],
           "reason": "The LORD's words to his king continue from verse 7. The command to ask carries the promise: what the king asks, the LORD will give.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020080051",
+            "o190020080062"
+          ],
+          "choice": "\"मीरास\" (inheritance); \"निज भूमि\" (L), \"अपने अधिकार में\" (B)",
+          "alternatives": [
+            "\"विरासत\""
+          ],
+          "reason": "Both nouns speak of land held as one's own (meaning m1). \"मीरास\" is the word for a family's inherited land; Readable says simply that the earth will be the king's.",
           "uncertain": false,
           "footnote": false
         }
@@ -1828,6 +2496,26 @@
           "L": "በብረት በትር ትሰብራቸዋለህ፤ \\q እንደ ሸክላ ሠሪ ዕቃ ታደቅቃቸዋለህ።»",
           "B": "በብረት በትረ መንግሥት ትቀጠቅጣቸዋለህ፤ \\q እንደ ሸክላ ድስትም አድቅቀህ ትሰባብራቸዋለህ።»",
           "R": "በብረት በትር ትሰብራቸዋለህ። \\q እንደ ሸክላ ዕቃ አድቅቀህ ትሰባብራቸዋለህ።»"
+        },
+        "hi": {
+          "L": "तू लोहे के राजदंड से उन्हें तोड़ेगा; \\q कुम्हार के बर्तन की तरह तू उन्हें चकनाचूर कर देगा।\"",
+          "B": "तू लोहे के राजदंड से उन्हें कुचल डालेगा \\q और मिट्टी के बर्तन की तरह उन्हें चकनाचूर कर देगा।\"",
+          "R": "तू लोहे के राजदंड से उन्हें तोड़ डालेगा। \\q तू उन्हें मिट्टी के बर्तनों की तरह चकनाचूर कर देगा।\""
+        },
+        "ru": {
+          "L": "Ты сокрушишь их жезлом железным; \\q как сосуд горшечника, {{deity_pronoun:ты|Ты}} раздробишь их.»",
+          "B": "Ты сокрушишь их железным скипетром \\q и разобьёшь их на куски, как глиняный сосуд.»",
+          "R": "Ты сломишь их железным жезлом. \\q Ты разобьёшь их на куски, как глиняные горшки.»"
+        },
+        "ja": {
+          "L": "あなたは鉄の杖で彼らを打ち砕き、 \\q 陶工の器のように、彼らを粉々にする。」",
+          "B": "あなたは鉄の杖で彼らを打ち砕き、 \\q 土の器のように、粉々に砕く。」",
+          "R": "あなたは鉄のつえで彼らを打ち砕く。 \\q 土の器を割るように、彼らを粉々にする。」"
+        },
+        "uk": {
+          "L": "Ти розібʼєш їх залізним жезлом; \\q як посуд гончаря, {{deity_pronoun:ти|Ти}} розтрощиш їх.»",
+          "B": "Ти зітреш їх залізним скіпетром \\q і розібʼєш на друзки, як глиняний горщик.»",
+          "R": "Ти розібʼєш їх залізним жезлом. \\q Ти розтрощиш їх на друзки, як глиняні горщики.»"
         }
       },
       "decisions": [
@@ -1928,6 +2616,73 @@
           "reason": "The Hebrew vowels read \"break\"; the Greek translation, which Revelation quotes, read the same letters as \"shepherd\" (meaning decision m1). The psalm follows the Hebrew, so its wording differs from Revelation here; the iron rod is \"የብረት በትር\" as there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020090011",
+            "o190020090022",
+            "o190020090061"
+          ],
+          "choice": "\"लोहे के राजदंड से\"; \"तोड़ेगा\", \"कुचल डालेगा\"; \"चकनाचूर\"",
+          "alternatives": [
+            "\"चरवाही करेगा\", as Revelation 2:27"
+          ],
+          "reason": "Revelation 2:27 quotes this verse; the Hindi keeps its words \"लोहे के राजदंड\" and \"मिट्टी के बर्तन ... चकनाचूर\" at every level. Where Revelation follows the Greek translation's \"shepherd\", the Hindi follows the Hebrew vowels, \"break\" (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020090012",
+            "o190020090022",
+            "o190020090042"
+          ],
+          "choice": "сокрушишь, сломишь (break), with the words of Revelation 2:27 for the rod and the pots",
+          "alternatives": [
+            "будешь пасти (Revelation 2:27)"
+          ],
+          "reason": "Revelation 2:27 follows the Greek translation, \"shepherd\"; the Hebrew vowels read \"break\" (m1), and Russian translates the Hebrew. The rest keeps Revelation's words where the Hebrew says the same: жезлом железным (L), железным жезлом (R), разобьёшь на куски, глиняные сосуды, горшки. Balanced says \"скипетром\", as the English Balanced says what the rod is (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020090011"
+          ],
+          "choice": "\"打ち砕く\" (break), with the Hebrew vowels (m1), not \"牧する\" as in Revelation 2:27, 12:5 and 19:15",
+          "alternatives": [
+            "牧する"
+          ],
+          "reason": "Revelation quotes the Greek translation, which reads the same letters as \"shepherd\"; the Psalm follows the Hebrew, so the Japanese keeps the two apart rather than forcing one wording. 土の器 matches Revelation 2:27 where the sense agrees.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1992,6 +2747,26 @@
           "L": "አሁንም ነገሥታት ሆይ፣ በጥበብ አድርጉ፤ \\q የምድር ፈራጆች ሆይ፣ ተግሣጽን ተቀበሉ።",
           "B": "እንግዲህ እናንተ ነገሥታት፣ አስተዋዮች ሁኑ! \\q እናንተ ምድርን የምትገዙ፣ ምክርን ተቀበሉ።",
           "R": "ስለዚህ እናንተ ነገሥታት፣ አሁን ብልሆች ሁኑ! \\q እናንተ የምድር ገዦች፣ ከዚህ ተማሩ።"
+        },
+        "hi": {
+          "L": "इसलिए अब, हे राजाओ, बुद्धि से काम लो; \\q हे पृथ्वी के न्यायियो, शिक्षा ग्रहण करो।",
+          "B": "इसलिए, हे राजाओ, समझदारी दिखाओ! \\q हे पृथ्वी पर शासन करनेवालो, सुधार स्वीकार करो।",
+          "R": "इसलिए अब, हे राजाओ, बुद्धिमान बनो! \\q हे धरती के शासको, सबक़ सीख लो।"
+        },
+        "ru": {
+          "L": "А теперь, цари, будьте мудры; \\q примите наставление, судьи земли.",
+          "B": "Итак, цари, будьте благоразумны! \\q Примите вразумление, правители земли.",
+          "R": "Итак, цари, станьте мудрыми! \\q Правители земли, усвойте урок."
+        },
+        "ja": {
+          "L": "そして今、王たちよ、賢くあれ。 \\q 地の裁き人たちよ、戒めを受けよ。",
+          "B": "だから今、王たちよ、賢くふるまいなさい。 \\q 地を治める者たちよ、戒めを受け入れなさい。",
+          "R": "だから、王たちよ、今こそ賢くなりなさい。 \\q 世界を治める者たちよ、よく学びなさい。"
+        },
+        "uk": {
+          "L": "А тепер, царі, будьте мудрі; \\q прийміть науку, судді землі.",
+          "B": "Тож тепер, царі, будьте розсудливі! \\q Прийміть пересторогу, ви, що правите землею.",
+          "R": "Тож тепер, царі, будьте мудрі! \\q Правителі землі, засвойте цей урок."
         }
       },
       "decisions": [
@@ -2066,6 +2841,50 @@
           "reason": "The kings are addressed as a group. Spanish has two plural forms of \"you\": \"ustedes\", used in Latin America and the default here, and \"vosotros\", used in Spain, which the reader can choose.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190020100021",
+            "o190020100051"
+          ],
+          "choice": "\"तुम\" imperatives (\"लो\", \"करो\") to the kings",
+          "alternatives": [
+            "\"आप\""
+          ],
+          "reason": "The psalmist speaks to the kings of the nations as a body, warning them, not as a subject before his own king, so he uses the plain plural imperative, as the poetry note has him speak to people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190020100031",
+            "o190020100041"
+          ],
+          "choice": "The psalmist's commands to people: 〜せよ / 〜あれ (L), 〜しなさい (B, R); prohibitions 〜するな (L), 〜してはならない (B), 〜してはいけない (R); for the whole Psalter",
+          "alternatives": [
+            "〜なさい at every level"
+          ],
+          "reason": "As Proverbs, Lamentations and Ecclesiastes give commands in poetry; calls to praise follow 1 Chronicles 16 (〜せよ at L, B; R 〜しよう for God's own people).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2132,6 +2951,26 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} በፍርሃት አገልግሉ፤ \\q በመንቀጥቀጥም ሐሤት አድርጉ።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} በአክብሮት አገልግሉ፤ \\q ደስታችሁም ከመንቀጥቀጥ ጋር ይሁን።",
           "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} አገልግሉ፤ ጥልቅ አክብሮትም አሳዩት። \\q ደስ ይበላችሁ፤ ነገር ግን በፊቱ ተንቀጥቀጡ።"
+        },
+        "hi": {
+          "L": "भय के साथ {{divine_name:प्रभु|याहवे}} की सेवा करो, \\q और काँपते हुए आनंद मनाओ।",
+          "B": "श्रद्धा और भय के साथ {{divine_name:प्रभु|याहवे}} की सेवा करो, \\q और तुम्हारे आनंद में थरथराहट भी हो।",
+          "R": "{{divine_name:प्रभु|याहवे}} की सेवा करो और उनका गहरा आदर करो। \\q आनंद करो, पर उनके सामने काँपते रहो।"
+        },
+        "ru": {
+          "L": "Служите {{divine_name:ГОСПОДУ|Яхве}} в страхе, \\q и ликуйте в трепете.",
+          "B": "Служите {{divine_name:ГОСПОДУ|Яхве}} с благоговением, \\q и пусть к вашей радости примешивается трепет.",
+          "R": "Служите {{divine_name:ГОСПОДУ|Яхве}} и глубоко почитайте {{deity_pronoun:его|Его}}. \\q Радуйтесь, но трепещите перед {{deity_pronoun:ним|Ним}}."
+        },
+        "ja": {
+          "L": "恐れをもって{{divine_name:主|ヤハウェ}}に仕え、 \\q おののきつつ喜べ。",
+          "B": "畏れをもって{{divine_name:主|ヤハウェ}}に仕え、 \\q おののきつつ喜びなさい。",
+          "R": "{{divine_name:主|ヤハウェ}}に仕え、その方を心からおそれ敬いなさい。 \\q 喜びなさい。けれども、その方の前では震えおののきなさい。"
+        },
+        "uk": {
+          "L": "Служіть {{divine_name:ГОСПОДУ|Ягве}} у страху \\q і радійте з тремтінням.",
+          "B": "Служіть {{divine_name:ГОСПОДУ|Ягве}} з благоговінням, \\q і нехай ваша радість буде з тремтінням.",
+          "R": "Служіть {{divine_name:ГОСПОДУ|Ягве}} і виявляйте {{deity_pronoun:йому|Йому}} глибоку пошану. \\q Радійте, але тремтіть перед {{deity_pronoun:ним|Ним}}."
         }
       },
       "decisions": [
@@ -2226,6 +3065,26 @@
           "reason": "For the whole book: the fear owed to God (yir'ah) is \"temor\" at Literal and \"reverência\" at Balanced, where the English says \"awe\"; \"medo\" is fright, which is not the sense.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020110041",
+            "o190020110042"
+          ],
+          "choice": "yir'ah of God \"恐れ\" (L), \"畏れ\" (B), \"おそれ敬う\" (R), as Deuteronomy, Job and Proverbs",
+          "alternatives": [],
+          "reason": "The three verbs for fearing God are settled for the OT; Readable turns the noun into the verb as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2301,6 +3160,26 @@
           "L": "ልጁን ሳሙ፤ እንዳይቆጣ፣ በመንገድም እንዳትጠፉ፤ \\q ቁጣው ፈጥኖ ይነድዳልና። \\q በእርሱ የሚጠለሉ ሁሉ ምስጉኖች ናቸው!",
           "B": "ልጁን ሳሙ፤ አለዚያ ይቆጣል፤ በመንገዳችሁም ትጠፋላችሁ፤ \\q ቁጣው በቅጽበት ሊነድድ ይችላልና። \\q እርሱን መጠጊያ የሚያደርጉ ሁሉ የተባረኩ ናቸው!",
           "R": "ለልጁ ስገዱ፤ አክብሩትም፤ ያለዚያ ይቆጣል፤ በመንገዳችሁም ትጠፋላችሁ። \\q ቁጣው በቅጽበት ይነድዳል። \\q ለደኅንነት ወደ እርሱ የሚሮጡ ሁሉ በእውነት ደስተኞች ናቸው።"
+        },
+        "hi": {
+          "L": "पुत्र को चूमो, कहीं ऐसा न हो कि वे क्रोधित हों और तुम मार्ग में नष्ट हो जाओ, \\q क्योंकि उनका क्रोध पल भर में भड़क उठता है। \\q कितने धन्य [हैं] वे सब जो उनमें शरण लेते हैं!",
+          "B": "पुत्र को चूमो, नहीं तो वे क्रोधित होंगे और तुम अपने मार्ग में ही नष्ट हो जाओगे, \\q क्योंकि उनका क्रोध पल भर में भड़क सकता है। \\q कितने धन्य हैं वे सब जो उन्हें अपना शरणस्थान बनाते हैं!",
+          "R": "पुत्र के आगे झुककर उनका सम्मान करो, नहीं तो वे क्रोधित होंगे और तुम रास्ते में ही नाश हो जाओगे। \\q उनका क्रोध पल भर में भड़क सकता है। \\q उन सब का जीवन सचमुच अच्छा है जो सुरक्षा के लिए उनके पास भागकर आते हैं।"
+        },
+        "ru": {
+          "L": "Целуйте сына, чтобы {{deity_pronoun:он|Он}} не разгневался и вы не погибли [в] пути, \\q потому что быстро вспыхивает {{deity_pronoun:его|Его}} гнев. \\q Блаженны все, укрывающиеся в {{deity_pronoun:нём|Нём}}!",
+          "B": "Целуйте сына, иначе {{deity_pronoun:он|Он}} разгневается и вы погибнете на своём пути, \\q потому что {{deity_pronoun:его|Его}} гнев может вспыхнуть в одно мгновение. \\q Блаженны все, кто делает {{deity_pronoun:его|Его}} своим прибежищем!",
+          "R": "Склонитесь перед сыном и почтите {{deity_pronoun:его|Его}}, иначе {{deity_pronoun:он|Он}} разгневается и вы погибнете в пути. \\q Его гнев может вспыхнуть в одно мгновение. \\q Счастливы все, кто бежит к {{deity_pronoun:нему|Нему}} за защитой."
+        },
+        "ja": {
+          "L": "子に口づけせよ。さもないと、その方がお怒りになり、あなたがたは道で滅びる。 \\q その怒りは、たちまち燃え上がるからである。 \\q 幸いなことよ、その方に身を避けるすべての者は！",
+          "B": "子に口づけしなさい。さもないと、その方はお怒りになり、あなたがたは道の途中で滅びる。 \\q その方の怒りは、たちまち燃え上がるからだ。 \\q なんと幸いなことか、その方を避け所とする人はみな！",
+          "R": "子の前にひれ伏して、敬いなさい。そうしないと、その方はお怒りになり、あなたたちは途中で滅ぼされてしまう。 \\q その方の怒りは、あっという間に燃え上がる。 \\q その方のもとに逃げ込んで守られる人は、みな本当に幸せだ。"
+        },
+        "uk": {
+          "L": "Цілуйте сина, щоб {{deity_pronoun:він|Він}} не розгнівався і ви не загинули [в] дорозі, \\q бо швидко спалахує {{deity_pronoun:його|Його}} гнів. \\q Блаженні всі, хто шукає притулку в {{deity_pronoun:ньому|Ньому}}!",
+          "B": "Поцілуйте сина, а то {{deity_pronoun:він|Він}} розгнівається, і ви загинете на своїй дорозі, \\q бо {{deity_pronoun:його|Його}} гнів може спалахнути вмить. \\q Блаженні всі, хто робить {{deity_pronoun:його|Його}} своїм притулком!",
+          "R": "Вклоніться синові й шануйте {{deity_pronoun:його|Його}}, бо інакше {{deity_pronoun:він|Він}} розгнівається, і ви загинете в дорозі. \\q Його гнів може спалахнути вмить. \\q Справді добре живеться всім, хто біжить до {{deity_pronoun:нього|Нього}} по захист."
         }
       },
       "decisions": [
@@ -2569,6 +3448,156 @@
             "\"በእርሱ የሚታመኑ\" (who trust in him)"
           ],
           "reason": "The verb is taking shelter; \"መጠጊያ\" (refuge) is the terms-list word, and Readable follows the English \"run to him for safety\", as 2 Samuel 22:31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190020120021",
+            "o190020120041",
+            "o190020120142"
+          ],
+          "choice": "honorific \"वे\", \"उनका\", \"उनमें\" for the one who may be angry",
+          "alternatives": [
+            "\"वह\", \"उसका\""
+          ],
+          "reason": "The pronouns may refer to the son, the king, or to the LORD (meaning m3). The Hindi honorific plural suits both, so it does not decide between them, as the English capitals do not.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020120111"
+          ],
+          "choice": "\"कितने धन्य हैं\" (L, B); \"... का जीवन सचमुच अच्छा है\" (R)",
+          "alternatives": [],
+          "reason": "The same word as 1:1, rendered as there at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020120111"
+          ],
+          "choice": "Блаженны (L, B); Счастливы (R)",
+          "alternatives": [
+            "Как блаженны"
+          ],
+          "reason": "As at 1:1, the word that opens the psalter and closes this psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020120021"
+          ],
+          "choice": "сына in lower case",
+          "alternatives": [
+            "Сына"
+          ],
+          "reason": "As in verse 7, the son is the king the LORD has installed; the deity pronoun setting, as in the English, lets readers capitalise the pronouns.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020120041",
+            "o190020120102",
+            "o190020120142"
+          ],
+          "choice": "\"その方\" and \"お怒りになる\" for \"he\", which may be the son or the LORD (m3)",
+          "alternatives": [
+            "彼が怒り",
+            "神が怒り"
+          ],
+          "reason": "その方 and a light respect form fit both readings, so the Japanese keeps the ambiguity the meaning decision records; 彼 would pick the son and could not be used of God.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020120131"
+          ],
+          "choice": "chasah b- \"身を避ける\" (L), \"避け所とする\" (B), \"逃げ込む\" (R); machseh \"避け所\"; for the whole Psalter",
+          "alternatives": [
+            "信頼する"
+          ],
+          "reason": "As 2 Samuel 22:3, 22:31 (= Psalm 18); the picture is running to God for shelter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190020120131"
+          ],
+          "choice": "\"шукати притулку\" (L), \"робити своїм притулком\" (B) for taking refuge in God, through the book",
+          "alternatives": [
+            "\"уповати\""
+          ],
+          "reason": "The verb pictures running to a shelter; \"уповати\" (trust, hope) loses the picture the English keeps.",
           "uncertain": false,
           "footnote": false
         }

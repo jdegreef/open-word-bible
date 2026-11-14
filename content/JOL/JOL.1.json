@@ -61,6 +61,26 @@
           "L": "ወደ ፋቱኤል ልጅ ወደ ኢዩኤል የመጣ {{divine_name:የእግዚአብሔር|የያህዌ}} ቃል።",
           "B": "{{divine_name:የእግዚአብሔር|የያህዌ}} ቃል ወደ ፋቱኤል ልጅ ወደ ኢዩኤል መጣ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለፋቱኤል ልጅ ለኢዩኤል የሰጠው መልእክት ይህ ነው።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} का वचन जो पतूएल के पुत्र योएल के पास पहुँचा।",
+          "B": "{{divine_name:प्रभु|याहवे}} का वचन पतूएल के पुत्र योएल के पास पहुँचा।",
+          "R": "यह वह संदेश है जो {{divine_name:प्रभु|याहवे}} ने पतूएल के बेटे योएल को दिया।"
+        },
+        "ru": {
+          "L": "Слово {{divine_name:ГОСПОДА|Яхве}}, которое было к Иоилю, сыну Пефуила.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} обратился к Иоилю, сыну Пефуила.",
+          "R": "Вот слово, которое {{divine_name:ГОСПОДЬ|Яхве}} дал Иоилю, сыну Пефуила."
+        },
+        "ja": {
+          "L": "ペトエルの子ヨエルに臨んだ{{divine_name:主|ヤハウェ}}の言葉。",
+          "B": "{{divine_name:主|ヤハウェ}}の言葉がペトエルの子ヨエルに臨んだ。",
+          "R": "これは、{{divine_name:主|ヤハウェ}}がペトエルの息子ヨエルに与えられた言葉です。"
+        },
+        "uk": {
+          "L": "Слово {{divine_name:ГОСПОДА|Ягве}}, яке було до Йоїла, сина Петуїла.",
+          "B": "Слово {{divine_name:ГОСПОДА|Ягве}} було до Йоїла, сина Петуїла.",
+          "R": "Це звістка, яку {{divine_name:ГОСПОДЬ|Ягве}} дав Йоїлові, синові Петуїла."
         }
       },
       "decisions": [
@@ -325,6 +345,203 @@
           "reason": "The heading uses the formula set for the prophets (the word of the LORD came to X), so the books of the Twelve open as Jeremiah does. Readable says \"መልእክት\" (message), as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o290010010021"
+          ],
+          "choice": "the divine name is {{divine_name:ГОСПОДЬ|Ягве}}, inflected inside each option; God's own pronouns take the deity_pronoun span",
+          "alternatives": [
+            "Господь",
+            "Єгова"
+          ],
+          "reason": "As docs/ukrainian-ot-terms.md sets for every book: the capitals mirror the English \"the LORD\" and keep the name apart from Adonai; the setting shows the name itself as \"Ягве\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010010041",
+            "o290010010061"
+          ],
+          "choice": "Йоїл, син Петуїла; formulas \"говорить {{divine_name:ГОСПОДЬ|Ягве}}\" (L, B) / \"каже\" (R), \"того дня\", \"день {{divine_name:ГОСПОДА|Ягве}}\"",
+          "alternatives": [
+            "Йоіл"
+          ],
+          "reason": "The forms of docs/ukrainian-ot-terms.md, kept the same through the book; \"Йоїл\" is the form the Ukrainian Acts 2:16 uses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010010061",
+            "o290010010081"
+          ],
+          "choice": "योएल, पतूएल",
+          "alternatives": [
+            "योएल, पतुएल"
+          ],
+          "reason": "The prophet keeps the form Acts 2:16 uses for him in this translation (योएल भविष्यद्वक्ता), the same form as the other Joels of Chronicles; his father's name is spelled from the Hebrew Pethuel. Book-wide choice for Joel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010010011",
+            "o290010010041"
+          ],
+          "choice": "का वचन ... के पास पहुँचा (L, B); ने ... यह संदेश दिया (R)",
+          "alternatives": [
+            "का वचन ... पर प्रगट हुआ"
+          ],
+          "reason": "The prophets note's formula for the word of the LORD coming to a prophet, as the headings of Jeremiah; Readable makes the heading a sentence with संदेश, as the English Readable says \"message\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o290010010021"
+          ],
+          "choice": "प्रभु for both YHWH and Adonai; the divine_name setting tells them apart",
+          "alternatives": [
+            "यहोवा"
+          ],
+          "reason": "Hindi प्रभु translates both the divine name YHWH and the title Adonai (\"Lord\"). Wherever the Hebrew has the name, प्रभु stands inside a divine_name span whose alternative is याहवे, so a reader who switches the setting sees which is which; where प्रभु stands alone it is Adonai. यहोवा (the Old Version's form) is not used. God takes honorific plural agreement (वे, कहते हैं) in both options.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010010061",
+            "o290010010081"
+          ],
+          "choice": "Иоиль, сын Пефуила",
+          "alternatives": [
+            "Иоиль, сын Вафуила"
+          ],
+          "reason": "Joel keeps the form of Acts 2:16 in this translation (Иоиль). Pethuel is transcribed from the Hebrew; the traditional \"Вафуил\" comes from the Greek Old Testament's Bathouel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010010011",
+            "o290010010021",
+            "o290010010041"
+          ],
+          "choice": "Слово ГОСПОДА, которое было к (L); ГОСПОДЬ обратился к (B), as Hosea 1:1; слово, которое ГОСПОДЬ дал (R)",
+          "alternatives": [
+            "И было слово ГОСПОДА к"
+          ],
+          "reason": "The Prophets' formula \"the word of the LORD came to X\" in its fixed wording per level, shaped here as the book's heading (a noun phrase at Literal).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010010061",
+            "o290010010081"
+          ],
+          "choice": "Joel \"ヨエル\" (as the Levites named Joel in 1 Chronicles and Acts 2:16); Pethuel \"ペトエル\"; \"son of\" \"の子\" (L, B), \"の息子\" (R), as Hosea 1:1 and Amos 1:1.",
+          "alternatives": [
+            "\"ペツエル\""
+          ],
+          "reason": "Name forms follow the Hebrew sounds and the 1CH, HOS and AMO notes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o290010010011",
+            "o290010010021",
+            "o290010010041"
+          ],
+          "choice": "The superscription is prose: plain (L, B), です・ます (R), with the light respect form \"与えられた\" for the LORD (R), as Hosea 1:1; the oracles that follow are plain at every level.",
+          "alternatives": [],
+          "reason": "The prophetic register convention (ISA-ISA-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -404,6 +621,26 @@
           "L": "ሽማግሌዎች ሆይ፣ ይህን ስሙ፤ \\q በምድሪቱ የምትኖሩ ሁሉ፣ አድምጡ! \\q በዘመናችሁ ይህ [የመሰለ ነገር] ሆኖ ያውቃልን? \\q ወይስ በአባቶቻችሁ ዘመን?",
           "B": "እናንተ ሽማግሌዎች፣ ይህን ስሙ! \\q በምድሪቱ የምትኖሩ ሁሉ፣ አድምጡ! \\q በእናንተ ዘመን እንዲህ ያለ ነገር ሆኖ ያውቃል? \\q ወይስ በአባቶቻችሁ ዘመን?",
           "R": "እናንተ ሽማግሌዎች፣ ይህን ስሙ! \\q በምድሪቱ የምትኖሩ ሁሉ፣ ስሙ! \\q በሕይወት ዘመናችሁ እንዲህ ያለ ነገር ሆኖ ያውቃል? \\q ወይስ በቅድመ አያቶቻችሁ ዘመን?"
+        },
+        "hi": {
+          "L": "हे पुरनियो, यह सुनो, \\q और हे देश के सब निवासियो, कान लगाओ! \\q क्या [ऐसा कुछ] तुम्हारे दिनों में हुआ है, \\q या तुम्हारे पितरों के दिनों में?",
+          "B": "हे बुज़ुर्ग अगुवो, यह सुनो! \\q देश के सब रहनेवालो, ध्यान दो! \\q क्या ऐसा कुछ तुम्हारे दिनों में कभी हुआ है, \\q या तुम्हारे पूर्वजों के दिनों में?",
+          "R": "हे बुज़ुर्गो, यह सुनो! \\q देश के सब लोगो, सुनो! \\q क्या तुम्हारे जीवन में कभी ऐसा कुछ हुआ है, \\q या तुम्हारे पूर्वजों के जीवन में?"
+        },
+        "ru": {
+          "L": "Слушайте это, старейшины, \\q и внимайте, все жители земли! \\q Бывало ли [подобное] это в ваши дни \\q или во дни ваших отцов?",
+          "B": "Слушайте это, старейшины! \\q Внимайте, все живущие в стране! \\q Бывало ли подобное в ваши дни \\q или во дни ваших предков?",
+          "R": "Послушайте это, старейшины! \\q Послушайте, все, кто живёт в этой стране! \\q Случалось ли что-нибудь подобное при вашей жизни \\q или при жизни ваших предков?"
+        },
+        "ja": {
+          "L": "長老たちよ、これを聞け。 \\q 地に住むすべての者よ、耳を傾けよ。 \\q このようなことが、あなたがたの日々にあったか。 \\q あるいは、あなたがたの父祖たちの日々にあったか？",
+          "B": "長老たちよ、これを聞きなさい。 \\q この地に住む者は皆、耳を傾けなさい。 \\q このようなことが、あなたがたの時代に起こっただろうか。 \\q あなたがたの先祖の時代にでも、あっただろうか？",
+          "R": "長老たちよ、これを聞きなさい。 \\q この地に住む人は皆、よく聞きなさい。 \\q このようなことが、あなたたちが生きている間に起こったことがあるだろうか。 \\q あなたたちの先祖が生きていたころにも、あっただろうか？"
+        },
+        "uk": {
+          "L": "Послухайте це, старійшини, \\q і нахиліть вухо, усі мешканці землі! \\q Чи бувало [щось подібне] за ваших днів \\q або за днів ваших батьків?",
+          "B": "Послухайте це, старійшини! \\q Слухайте, усі, хто живе в краю! \\q Чи бувало щось подібне за ваших днів \\q або за днів ваших предків?",
+          "R": "Послухайте це, старійшини! \\q Слухайте, усі, хто живе в краю! \\q Чи бувало щось подібне за вашого життя \\q або за життя ваших предків?"
         }
       },
       "decisions": [
@@ -607,6 +844,68 @@
           "reason": "In Amharic \"አባቶች\" already reads as \"forefathers, ancestors\", so Balanced keeps it; Readable says \"ቅድመ አያቶቻችሁ\", the everyday word, as the English Readable says \"ancestors\". No gender span is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010020031"
+          ],
+          "choice": "पुरनिए (L); बुज़ुर्ग अगुवे (B); बुज़ुर्ग (R)",
+          "alternatives": [
+            "बूढ़े"
+          ],
+          "reason": "The elders were the old people of the community and also its leaders (meaning decision m1); the words the earlier books use for them. The prophet addresses the people with तुम throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010020131",
+            "o290010020132"
+          ],
+          "choice": "предков (B, R); отцов (L)",
+          "alternatives": [
+            "отцов"
+          ],
+          "reason": "As the English, Balanced and Readable say ancestors, since the fathers are earlier generations.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o290010020011",
+            "o290010020042"
+          ],
+          "choice": "Commands in the oracles \"〜せよ\" (L), \"〜しなさい\" (B, R); the people addressed \"あなたがた\" (L, B), \"あなたたち\" (R); plain style at every level.",
+          "alternatives": [],
+          "reason": "The prophetic conventions (ISA-ISA-1), held through Joel.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -682,6 +981,26 @@
           "L": "ስለ እርሱ ለልጆቻችሁ ንገሩ፤ \\q ልጆቻችሁም ለልጆቻቸው [ይንገሩ]፤ \\q ልጆቻቸውም ለሌላ ትውልድ [ይንገሩ]።",
           "B": "ስለዚህ ነገር ለልጆቻችሁ ንገሩ፤ \\q ልጆቻችሁም ለልጆቻቸው ይንገሩ፤ \\q ልጆቻቸውም ለሚቀጥለው ትውልድ ይንገሩ።",
           "R": "ስለዚህ ነገር ለልጆቻችሁ ንገሩ። \\q እነርሱም ለልጆቻቸው ይንገሩ። \\q እነዚያም ልጆች ከእነርሱ በኋላ ለሚመጡት ሰዎች ይንገሩ።"
+        },
+        "hi": {
+          "L": "इसके विषय में अपने बच्चों से वर्णन करो, \\q और तुम्हारे बच्चे अपने बच्चों से [कहें], \\q और उनके बच्चे दूसरी पीढ़ी से [कहें]।",
+          "B": "अपने बच्चों को इसके बारे में बताओ, \\q और तुम्हारे बच्चे अपने बच्चों को बताएँ, \\q और उनके बच्चे अपने बाद की पीढ़ी को।",
+          "R": "अपने बच्चों को इसके बारे में बताओ। \\q वे अपने बच्चों को बताएँ, \\q और वे बच्चे अपने बाद आनेवाले लोगों को बताएँ।"
+        },
+        "ru": {
+          "L": "Об этом вашим детям расскажите, \\q и ваши дети [пусть расскажут] своим детям, \\q а их дети — другому поколению.",
+          "B": "Расскажите об этом своим детям, \\q и пусть ваши дети расскажут своим детям, \\q а их дети — следующему поколению.",
+          "R": "Расскажите об этом своим детям. \\q Пусть они расскажут своим детям, \\q а те — людям, которые будут жить после них."
+        },
+        "ja": {
+          "L": "これについて、あなたがたの子らに語れ。 \\q あなたがたの子らは彼らの子らに、 \\q 彼らの子らは次の世代に[語れ]。",
+          "B": "このことを、あなたがたの子どもたちに語りなさい。 \\q 子どもたちはその子どもたちに語り、 \\q その子どもたちは、さらに次の世代に語るようにしなさい。",
+          "R": "このことを、あなたたちの子どもに話しなさい。 \\q 子どもたちには、その子どもに話させなさい。 \\q その子どもたちには、あとに続く人々に話させなさい。"
+        },
+        "uk": {
+          "L": "Розкажіть про це вашим дітям, \\q і [нехай] ваші діти [розкажуть] своїм дітям, \\q а їхні діти — іншому поколінню.",
+          "B": "Розкажіть про це вашим дітям, \\q і нехай ваші діти розкажуть своїм дітям, \\q а їхні діти — поколінню, що прийде після них.",
+          "R": "Розкажіть про це своїм дітям. \\q Нехай вони розкажуть своїм дітям, \\q а ті діти нехай розкажуть людям, що прийдуть після них."
         }
       },
       "decisions": [
@@ -860,6 +1179,26 @@
           "L": "ቆራጩ አንበጣ የተወውን አንበጣው በላው፤ \\q አንበጣው የተወውን ዘላዩ አንበጣ በላው፤ \\q ዘላዩ አንበጣ የተወውንም ኩብኩባው በላው።",
           "B": "ቆራጩ አንበጣ የተወውን አንበጣው በልቶታል። \\q አንበጣው የተወውን ዘላዩ አንበጣ በልቶታል፤ \\q ዘላዩ አንበጣ የተወውንም ኩብኩባው በልቶታል።",
           "R": "የአንበጣ መንጋ አንዱ ከሌላው ቀጥሎ መጣ። \\q አንዱ መንጋ የተወውን ቀጣዩ መንጋ በላው፤ \\q ያም መንጋ የተወውን ሌላው ደግሞ በላው።"
+        },
+        "hi": {
+          "L": "जो कुतरनेवाली टिड्डी से बचा, उसे झुंडवाली टिड्डी ने खा लिया है; \\q और जो झुंडवाली टिड्डी से बचा, उसे फुदकनेवाली टिड्डी ने खा लिया है; \\q और जो फुदकनेवाली टिड्डी से बचा, उसे नोचनेवाली टिड्डी ने खा लिया है।",
+          "B": "जो कुतरनेवाली टिड्डी ने छोड़ा, उसे झुंडवाली टिड्डी खा गई है। \\q जो झुंडवाली टिड्डी ने छोड़ा, उसे फुदकनेवाली टिड्डी खा गई है, \\q और जो फुदकनेवाली टिड्डी ने छोड़ा, उसे नोचनेवाली टिड्डी खा गई है।",
+          "R": "टिड्डियों के दल पर दल आए हैं। \\q जो एक दल ने छोड़ा, उसे अगला दल खा गया, \\q और जो उस दल ने छोड़ा, उसे एक और दल खा गया।"
+        },
+        "ru": {
+          "L": "Оставшееся от грызущей саранчи съела налетающая саранча; \\q и оставшееся от налетающей саранчи съела прыгающая саранча; \\q и оставшееся от прыгающей саранчи съела пожирающая саранча.",
+          "B": "Что оставила грызущая саранча, съела налетающая саранча. \\q Что оставила налетающая саранча, съела прыгающая саранча, \\q а что оставила прыгающая саранча, съела пожирающая саранча.",
+          "R": "Налетала одна стая саранчи за другой. \\q Что оставила одна стая, съела следующая, \\q а что оставила та, съела ещё одна."
+        },
+        "ja": {
+          "L": "かみつくいなごが残したものを、群がるいなごが食べ、 \\q 群がるいなごが残したものを、跳ねるいなごが食べ、 \\q 跳ねるいなごが残したものを、食い荒らすいなごが食べた。",
+          "B": "かみつくいなごが残したものを、群がるいなごが食べた。 \\q 群がるいなごが残したものを、跳ねるいなごが食べ、 \\q 跳ねるいなごが残したものを、食い荒らすいなごが食べた。",
+          "R": "いなごの群れが、次から次へとやって来た。 \\q 一つの群れが残したものを、次の群れが食べ、 \\q その群れが残したものを、また別の群れが食べた。"
+        },
+        "uk": {
+          "L": "Що залишив різун, те зʼїла сарана, \\q і що залишила сарана, те зʼїв стрибунець, \\q і що залишив стрибунець, те зʼїв обдирач.",
+          "B": "Що залишив різун, те зʼїла сарана. \\q Що залишила сарана, те зʼїв стрибунець, \\q а що залишив стрибунець, те зʼїв обдирач.",
+          "R": "Приходив один рій сарани за іншим. \\q Що залишив один рій, те зʼїв наступний, \\q а що залишив той, те зʼїв ще інший."
         }
       },
       "decisions": [
@@ -1126,6 +1465,107 @@
           "reason": "As the English Readable, which does not name the four kinds.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010040022",
+            "o290010040042",
+            "o290010040082",
+            "o290010040122"
+          ],
+          "choice": "\"різун\", \"сарана\", \"стрибунець\", \"обдирач\" for the four locust names (L, B); \"сарана\" for the swarming locust as in Nahum 3:15",
+          "alternatives": [
+            "гусінь, сарана, черва, хрущ"
+          ],
+          "reason": "The four Hebrew names describe what the insects do (cut, swarm, hop, strip), as the English names do; Ukrainian names them by the same actions. Readable speaks only of swarm after swarm, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010040021",
+            "o290010040041",
+            "o290010040081",
+            "o290010040121"
+          ],
+          "choice": "कुतरनेवाली टिड्डी, झुंडवाली टिड्डी, फुदकनेवाली टिड्डी, नोचनेवाली टिड्डी (L, B); टिड्डियों के दल पर दल (R)",
+          "alternatives": [
+            "गाज़ाम, अर्बे, येलेक, हासील (the Hebrew names)",
+            "टिड्डी, टिड्डा"
+          ],
+          "reason": "Hindi has only टिड्डी and टिड्डा, so Literal and Balanced give each of the four names a describing word taken from the English names, keeping them apart so the chain can be followed and recognized when it returns in 2:25. Readable, like the English, speaks of swarm after swarm (meaning decision m1). Book-wide choice for Joel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010040021",
+            "o290010040022",
+            "o290010040041",
+            "o290010040042",
+            "o290010040081",
+            "o290010040082",
+            "o290010040121",
+            "o290010040122"
+          ],
+          "choice": "грызущая, налетающая, прыгающая, пожирающая саранча (L, B); одна стая саранчи за другой (R)",
+          "alternatives": [
+            "гусеница, саранча, черви, тля",
+            "саранча, кузнечики, черви, тля"
+          ],
+          "reason": "The four Hebrew names (gazam, arbeh, yeleq, chasil) are kept apart by an adjective each, all with \"саранча\", because the meaning decision leaves open whether they are kinds or stages of locust; worms and aphids would decide it. Readable, like the English, says one swarm after another. Joel 2:25 uses the same names.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010040022",
+            "o290010040042",
+            "o290010040082",
+            "o290010040122"
+          ],
+          "choice": "The four locust words are kept apart by one fixed form each, used again in 2:25: gazam \"かみつくいなご\" (as Amos 4:9), 'arbeh \"群がるいなご\", yeleq \"跳ねるいなご\", chasil \"食い荒らすいなご\"; R follows the English R \"one swarm after another\" (\"いなごの群れが、次から次へと\").",
+          "alternatives": [
+            "'arbeh plain \"いなご\" (Exodus 10)",
+            "chasil \"ばった\" (Psalm 78:46)"
+          ],
+          "reason": "Each word is a kind of いなご with a describing verb, as the English L and B have; plain \"いなご\" or \"ばった\" would not show which of the four is meant, and the series must read as four distinct waves.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1199,6 +1639,26 @@
           "L": "እናንተ ሰካራሞች፣ ንቁ፤ አልቅሱም፤ \\q የወይን ጠጅ የምትጠጡ ሁሉ፣ ዋይ በሉ፤ \\q ስለ ጣፋጩ የወይን ጠጅ፣ ከአፋችሁ ተቆርጧልና።",
           "B": "እናንተ ሰካራሞች፣ ንቁ፤ አልቅሱም! \\q የወይን ጠጅ የምትጠጡ ሁሉ፣ ዋይ በሉ፤ \\q ጣፋጩ የወይን ጠጅ ከከንፈራችሁ ተቆርጧልና።",
           "R": "እናንተ ሰካራሞች፣ ንቁና አልቅሱ! \\q የወይን ጠጅ የምትጠጡ ሁሉ፣ በሐዘን ጩኹ፤ \\q የምትጠጡት ጣፋጭ የወይን ጠጅ ከእንግዲህ የለምና።"
+        },
+        "hi": {
+          "L": "हे मतवालो, जागो और रोओ; \\q और हे दाखमधु के सब पीनेवालो, हाय-हाय करो, \\q मीठे दाखमधु के कारण, क्योंकि वह तुम्हारे मुँह से छीन लिया गया है।",
+          "B": "हे मतवालो, जागो और रोओ! \\q हे दाखमधु पीनेवालो, विलाप करो, \\q क्योंकि मीठा दाखमधु तुम्हारे होंठों से छिन गया है।",
+          "R": "हे शराबियो, जागो और रोओ! \\q हे दाखमधु पीनेवालो, दुख से चिल्लाओ, \\q क्योंकि अब तुम्हारे पीने के लिए मीठा दाखमधु नहीं रहा।"
+        },
+        "ru": {
+          "L": "Проснитесь, пьяницы, и плачьте; \\q и рыдайте, все пьющие вино, \\q о молодом вине, потому что оно отнято от ваших уст.",
+          "B": "Проснитесь, пьяницы, и плачьте! \\q Рыдайте, все, кто пьёт вино, \\q потому что молодое вино отнято от ваших губ.",
+          "R": "Проснитесь, пьяницы, и плачьте! \\q Все, кто пьёт вино, кричите от горя, \\q потому что больше нет для вас молодого вина."
+        },
+        "ja": {
+          "L": "酔いどれたちよ、目を覚まして泣け。 \\q ぶどう酒を飲むすべての者よ、泣きわめけ。 \\q 甘いぶどう酒のために。それがあなたがたの口から断たれたからだ。",
+          "B": "酒に酔う者たちよ、目を覚まして泣きなさい。 \\q ぶどう酒を飲む者は皆、泣き叫びなさい。 \\q 甘いぶどう酒が、あなたがたの唇から断たれたからだ。",
+          "R": "酒に酔っている人たちよ、目を覚まして泣きなさい。 \\q ぶどう酒を飲む人は皆、悲しんで大声で泣きなさい。 \\q 甘いぶどう酒は、もうあなたたちの口に入らないのだ。"
+        },
+        "uk": {
+          "L": "Прокиньтеся, пʼяниці, і плачте; \\q і ридайте, усі, хто пʼє вино, \\q за молодим вином, бо воно відняте від ваших уст.",
+          "B": "Прокиньтеся, пʼяниці, і плачте! \\q Ридайте, усі, хто пʼє вино, \\q бо молоде вино відняте від ваших уст.",
+          "R": "Прокиньтеся, пʼяниці, і плачте! \\q Усі, хто пʼє вино, голосіть з горя, \\q бо вам більше нема молодого вина."
         }
       },
       "decisions": [
@@ -1329,6 +1789,69 @@
           "reason": "Isaiah 49:26 has \"ጣፋጭ የወይን ጠጅ\" for the same word at Literal. \"አዲስ የወይን ጠጅ\" is kept for tirosh (new wine) in 1:10, so the two words stay apart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010050041"
+          ],
+          "choice": "हाय-हाय करो (L); विलाप करो (B); दुख से चिल्लाओ (R)",
+          "alternatives": [
+            "रोओ"
+          ],
+          "reason": "The call to wail keeps the wording Isaiah uses in this translation (Isaiah 13:6), one form per level through Joel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010050091"
+          ],
+          "choice": "молодое вино",
+          "alternatives": [
+            "сладкое вино",
+            "сок"
+          ],
+          "reason": "The sweet wine is the fresh juice of newly pressed grapes (meaning decision); \"молодое вино\" says it is new, not a dessert wine.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010050042",
+            "o290010050091"
+          ],
+          "choice": "heililu \"泣きわめけ\" (L), \"泣き叫びなさい\" (B), \"悲しんで大声で泣きなさい\" (R), as Isaiah 13:6; 'asis \"甘いぶどう酒\" every level (Amos 9:13), used again in 4:18.",
+          "alternatives": [],
+          "reason": "Keeps the forms settled in Isaiah and Amos.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1405,6 +1928,26 @@
           "L": "ሕዝብ በምድሬ ላይ ወጥቷልና፤ \\q [እርሱም] ብርቱና ቁጥር የሌለው ነው፤ \\q ጥርሶቹ የአንበሳ ጥርሶች [ናቸው]፤ \\q የእንስት አንበሳም ክራንቻ አለው።",
           "B": "ሕዝብ ምድሬን ወሯልና፤ \\q ብርቱና ሊቆጠር የማይችል ብዙ ነው። \\q ጥርሶቹ የአንበሳ ጥርሶች ናቸው፤ \\q የእንስት አንበሳ ክራንቻ አለው።",
           "R": "የአንበጣ ሕዝብ ምድሬን ወሯል። \\q ብርቱ ነው፤ ቁጥሩም ሊቆጠር የማይችል ብዙ ነው። \\q ጥርሶቹ እንደ አንበሳ ጥርስ ናቸው፤ \\q እንደ እንስት አንበሳ ያለ ክራንቻ አለው።"
+        },
+        "hi": {
+          "L": "क्योंकि एक जाति मेरे देश पर चढ़ आई है, \\q सामर्थी और अनगिनत; \\q उसके दाँत सिंह के दाँत [हैं], \\q और उसकी डाढ़ें सिंहनी की हैं।",
+          "B": "क्योंकि एक राष्ट्र ने मेरे देश पर चढ़ाई की है, \\q शक्तिशाली और इतना बड़ा कि गिना न जा सके। \\q उसके दाँत सिंह के दाँत हैं; \\q उसकी डाढ़ें सिंहनी की-सी हैं।",
+          "R": "टिड्डियों के एक राष्ट्र ने मेरे देश पर चढ़ाई की है। \\q वह शक्तिशाली है, और उसकी गिनती नहीं हो सकती। \\q उसके दाँत सिंह के दाँतों जैसे हैं। \\q उसकी डाढ़ें सिंहनी जैसी हैं।"
+        },
+        "ru": {
+          "L": "Ведь народ поднялся на {{deity_pronoun:мою|Мою}} землю, \\q сильный и без числа; \\q зубы его — зубы льва, \\q и клыки львицы у него.",
+          "B": "Ведь на {{deity_pronoun:мою|Мою}} землю вторгся народ, \\q могучий и бесчисленный. \\q Его зубы — зубы льва, \\q у него клыки львицы.",
+          "R": "На {{deity_pronoun:мою|Мою}} землю напал народ — саранча. \\q Он сильный, и его не сосчитать. \\q Его зубы как зубы льва. \\q У него клыки, как у львицы."
+        },
+        "ja": {
+          "L": "一つの国がわたしの地に攻め上って来たからだ。 \\q それは強く、数えきれない。 \\q その歯は獅子の歯、 \\q それには雌獅子のきばがある。",
+          "B": "一つの国が、わたしの地に攻め込んで来たのだ。 \\q 力強く、数えきれないほど多い。 \\q その歯は獅子の歯、 \\q そのきばは雌獅子のきばだ。",
+          "R": "いなごの大群が、一つの国のように、わたしの地に攻め込んで来た。 \\q それは強く、数えきれないほど多い。 \\q その歯はライオンの歯のようだ。 \\q そのきばは雌ライオンのきばのようだ。"
+        },
+        "uk": {
+          "L": "Бо народ піднявся на {{deity_pronoun:мою|Мою}} землю, \\q могутній і без числа; \\q його зуби [—] зуби лева, \\q і в нього ікла левиці.",
+          "B": "Бо народ вдерся в {{deity_pronoun:мою|Мою}} землю, \\q сильний і незліченний. \\q Його зуби — левові зуби; \\q у нього ікла левиці.",
+          "R": "Народ сарани вдерся в {{deity_pronoun:мою|Мою}} землю. \\q Він сильний, і його не злічити. \\q Його зуби, як левові зуби. \\q У нього ікла, як у левиці."
         }
       },
       "decisions": [
@@ -1560,6 +2103,126 @@
           "reason": "The swarm is pictured as one invading people; the plural \"nations\" of 2:17, 19 and chapter 4 is \"ሕዝቦች\". Readable makes the picture plain with \"የአንበጣ ሕዝብ\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o290010060051"
+          ],
+          "choice": "No deity_pronoun spans in Hindi",
+          "alternatives": [
+            "मेरे in a span"
+          ],
+          "reason": "The English marks God's pronouns (\"my land\") with the deity_pronoun setting. Devanagari has no capital letters, so the Hindi has no such spans; respect for God is carried by the honorific third person (वे, उनका). This holds for every file of Joel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010060021"
+          ],
+          "choice": "जाति (L); राष्ट्र (B, R)",
+          "alternatives": [
+            "देश"
+          ],
+          "reason": "The locust swarm is pictured as an invading people (meaning decision m1). Literal says जाति, as for goy elsewhere; Balanced and Readable say राष्ट्र, since जाति also means caste and देश would clash with \"my land\" in the same line.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o290010060051",
+            "o290010060052"
+          ],
+          "choice": "{{deity_pronoun:мою|Мою}} землю",
+          "alternatives": [
+            "мою землю"
+          ],
+          "reason": "God speaks of the land as his own; his first-person pronouns carry the deity_pronoun setting through the book, as in Isaiah (not on a reflexive or a sentence-initial Я).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o290010060021"
+          ],
+          "choice": "народ — саранча",
+          "alternatives": [
+            "народ"
+          ],
+          "reason": "As the English Readable, the locusts are named, since the nation is the swarm (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010060111",
+            "o290010060131"
+          ],
+          "choice": "'aryeh \"獅子\" (L, B), \"ライオン\" (R); lavi' \"雌獅子\" (L, B), \"雌ライオン\" (R); fangs \"きば\" in kana (牙 is not Jōyō).",
+          "alternatives": [],
+          "reason": "As the ISA and HOS notes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o290010060021"
+          ],
+          "choice": "R \"いなごの大群が、一つの国のように\", as the English R \"A nation of locusts\".",
+          "alternatives": [],
+          "reason": "Makes plain that the invading nation is the swarm (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1635,6 +2298,26 @@
           "L": "ወይኔን ባድማ፣ \\q በለሴንም የተሰባበረ ጉቶ አደረገ፤ \\q ቅርፊቱን ፈጽሞ ገፈፈው፤ ጣለውም፤ \\q ቅርንጫፎቹም ነጡ።",
           "B": "ወይኖቼን አጠፋ፤ \\q በለሶቼንም ቆራርጦ ጉቶ አደረጋቸው። \\q ቅርፊታቸውን ገፍፎ ጣለው፤ \\q ቅርንጫፎቻቸውም ነጥተው ቀሩ።",
           "R": "የወይን ተክሎቼን አበላሸ፤ \\q በለሶቼንም ቆራረጣቸው። \\q ቅርፊታቸውን ገፍፎ ጣለው። \\q አሁን ቅርንጫፎቻቸው ነጥተው ተራቁተዋል።"
+        },
+        "hi": {
+          "L": "उसने मेरी दाखलता को उजाड़ \\q और मेरे अंजीर के पेड़ को ठूँठ बना दिया है; \\q उसने उसकी छाल पूरी तरह छील डाली और फेंक दी है; \\q उसकी डालियाँ सफ़ेद हो गई हैं।",
+          "B": "उसने मेरी दाखलताओं को उजाड़ दिया है \\q और मेरे अंजीर के पेड़ों को टूटे हुए ठूँठ बना दिया है। \\q उसने उनकी छाल छीलकर फेंक दी है, \\q और उनकी डालियाँ सफ़ेद रह गई हैं।",
+          "R": "उसने मेरी अंगूर की बेलें बरबाद कर दी हैं \\q और मेरे अंजीर के पेड़ों को टुकड़े-टुकड़े कर दिया है। \\q उसने उनकी छाल उतारकर फेंक दी है। \\q अब उनकी डालियाँ सफ़ेद और नंगी हैं।"
+        },
+        "ru": {
+          "L": "Он превратил {{deity_pronoun:мою|Мою}} лозу в пустошь \\q и {{deity_pronoun:мою|Мою}} смоковницу — в обломки; \\q ободрал с неё [кору] догола и бросил, \\q побелели её ветви.",
+          "B": "Он опустошил {{deity_pronoun:мои|Мои}} виноградники \\q и превратил {{deity_pronoun:мои|Мои}} смоковницы в обломанные пни. \\q Он ободрал с них кору и бросил её, \\q и их ветви остались белыми.",
+          "R": "Он погубил {{deity_pronoun:мои|Мои}} виноградные лозы \\q и изломал {{deity_pronoun:мои|Мои}} смоковницы. \\q Он ободрал с них кору и выбросил её. \\q Теперь их ветви белые и голые."
+        },
+        "ja": {
+          "L": "それはわたしのぶどうの木を荒れ果てさせ、 \\q わたしのいちじくの木を折れた切り株にした。 \\q その皮をすっかりはぎ取って投げ捨て、 \\q その枝々は白くなった。",
+          "B": "それはわたしのぶどうの木々を荒らし、 \\q わたしのいちじくの木々を折れた切り株に変えた。 \\q その皮をはぎ取って投げ捨てたので、 \\q 枝々は白くさらされている。",
+          "R": "それは、わたしのぶどうの木を台なしにし、 \\q わたしのいちじくの木をずたずたにした。 \\q 木の皮をはぎ取って、投げ捨てた。 \\q 今では、枝は白く、むき出しになっている。"
+        },
+        "uk": {
+          "L": "Він обернув {{deity_pronoun:мою|Мою}} лозу на пустку \\q і {{deity_pronoun:мою|Мою}} смоковницю на трісок; \\q обдер з неї кору й кинув; \\q побіліли її гілки.",
+          "B": "Він спустошив {{deity_pronoun:мої|Мої}} лози \\q і обернув {{deity_pronoun:мої|Мої}} смоковниці на зламані пні. \\q Він обдер з них кору й кинув її, \\q і їхні гілки залишилися білими.",
+          "R": "Він знищив {{deity_pronoun:мої|Мої}} виноградні лози \\q і пошматував {{deity_pronoun:мої|Мої}} інжирні дерева. \\q Він обдер з них кору й викинув її. \\q Тепер їхні гілки білі й голі."
         }
       },
       "decisions": [
@@ -1727,6 +2410,28 @@
           "reason": "\"Ela\" in verses 6-7 is the nation, a feminine noun in Portuguese, so the swarm is \"ela\" where the English says \"it\". The possessive \"minha(s)\" agrees with the vine and fig trees and takes the deity_pronoun span, as the English \"my\" (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010070041",
+            "o290010070042",
+            "o290010070043"
+          ],
+          "choice": "смоковница",
+          "alternatives": [
+            "инжировое дерево"
+          ],
+          "reason": "Fig tree as the New Testament has it (смоковница at L and B); Readable keeps it here too, since the tree is named beside the vine as a pair.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1793,6 +2498,26 @@
           "L": "ማቅ እንደ ታጠቀች ድንግል አልቅሺ፤ \\q ስለ ወጣትነቷ ባል [እንደምታለቅስ]።",
           "B": "ማቅ ለብሳ \\q ልታገባው ለታጨችው ሰው እንደምታዝን ወጣት ሴት አልቅሺ።",
           "R": "ማቅ እንደ ለበሰች ወጣት ሴት አልቅሺ። \\q ልታገባው የነበረው ሰው ሞቶባት ታለቅሳለች።"
+        },
+        "hi": {
+          "L": "टाट बाँधे हुए कुँवारी के समान विलाप करो, \\q जो अपनी जवानी के पति के लिए [रोती है]।",
+          "B": "टाट ओढ़े उस युवती के समान शोक करो, \\q जो उस पुरुष के लिए रोती है जिससे उसकी सगाई हुई थी।",
+          "R": "टाट पहने हुए उस युवती की तरह रोओ, \\q जिसका होनेवाला पति मर गया है।"
+        },
+        "ru": {
+          "L": "Плачь, как девица, препоясанная вретищем, \\q о муже своей юности.",
+          "B": "Скорби, как молодая женщина, одетая в мешковину, \\q оплакивающая того, с кем была обручена.",
+          "R": "Плачь, как девушка в одежде из мешковины, \\q потому что умер её жених."
+        },
+        "ja": {
+          "L": "粗布を腰にまとったおとめのように、嘆け、 \\q その若い日の夫のために。",
+          "B": "粗布をまとった若い女のように、嘆き悲しみなさい。 \\q 結婚を約束した人を失って、嘆く女のように。",
+          "R": "粗い布の服を着た若い女のように、泣きなさい。 \\q 結婚するはずだった人が死んでしまったのだ。"
+        },
+        "uk": {
+          "L": "Голоси, як діва, підперезана мішковиною, \\q за чоловіком своєї юності.",
+          "B": "Плач, як молода жінка, вбрана в мішковину, \\q що оплакує чоловіка, з яким була заручена.",
+          "R": "Плач, як молода жінка в мішковині, \\q бо помер чоловік, за якого вона мала вийти заміж."
         }
       },
       "decisions": [
@@ -2030,6 +2755,90 @@
           "reason": "The Hebrew command is feminine singular: the land or the people is addressed as one mourning young woman (the meaning decision). Amharic marks this in the verb, as the Hebrew does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010080021",
+            "o290010080061"
+          ],
+          "choice": "कुँवारी ... अपनी जवानी का पति (L); युवती ... जिससे उसकी सगाई हुई थी (B); होनेवाला पति (R)",
+          "alternatives": [
+            "कुँवारी at every level"
+          ],
+          "reason": "The picture is of a young woman whose bridegroom died before the marriage was complete (meaning decision m2). Literal keeps the Hebrew words; Balanced and Readable say what the picture means, as the English does. The command is to one woman, the land; Hindi says विलाप करो, the form used for the people throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010080041"
+          ],
+          "choice": "вретище (L); мешковина (B, R)",
+          "alternatives": [
+            "власяница"
+          ],
+          "reason": "Sackcloth, the rough cloth of mourning: the older word at Literal, plain \"мешковина\" at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010080061",
+            "o290010080071",
+            "o290010080072"
+          ],
+          "choice": "того, с кем была обручена (B); умер её жених (R)",
+          "alternatives": [
+            "мужа своей юности"
+          ],
+          "reason": "The meaning decision: a bride whose bridegroom died before the marriage was complete.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010080022",
+            "o290010080041"
+          ],
+          "choice": "betulah \"おとめ\" (L), \"若い女\" (B, R), as the English; saq \"粗布\" (L, B), \"粗い布の服\" (R) (ISA key words).",
+          "alternatives": [],
+          "reason": "The bride whose bridegroom has died before the marriage (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2099,6 +2908,26 @@
           "L": "የእህል ቁርባንና የመጠጥ ቁርባን {{divine_name:ከእግዚአብሔር|ከያህዌ}} ቤት ተቆርጧል፤ \\q ካህናቱ ያዝናሉ፤ \\q {{divine_name:የእግዚአብሔር|የያህዌ}} አገልጋዮች።",
           "B": "የእህል ቁርባንና የመጠጥ ቁርባን {{divine_name:ከእግዚአብሔር|ከያህዌ}} ቤተ መቅደስ ቀርቷል። \\q ካህናቱ፣ \\q {{divine_name:እግዚአብሔርን|ያህዌን}} የሚያገለግሉት፣ ያዝናሉ።",
           "R": "{{divine_name:በእግዚአብሔር|በያህዌ}} ቤተ መቅደስ የሚቀርብ እህልም ሆነ የወይን ጠጅ የለም። \\q {{divine_name:እግዚአብሔርን|ያህዌን}} የሚያገለግሉ ካህናት ያዝናሉ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} के भवन से अन्नबलि और अर्घ कट गए हैं; \\q याजक शोक करते हैं, \\q {{divine_name:प्रभु|याहवे}} के सेवक।",
+          "B": "{{divine_name:प्रभु|याहवे}} के भवन में अन्नबलि और अर्घ बंद हो गए हैं। \\q याजक शोक मना रहे हैं, \\q वे जो {{divine_name:प्रभु|याहवे}} की सेवा करते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} के मन्दिर में चढ़ाने के लिए अब न अनाज रहा, न दाखमधु। \\q {{divine_name:प्रभु|याहवे}} की सेवा करनेवाले याजक शोक मना रहे हैं।"
+        },
+        "ru": {
+          "L": "Отнято хлебное приношение и возлияние от дома {{divine_name:ГОСПОДА|Яхве}}; \\q скорбят священники, \\q служители {{divine_name:ГОСПОДА|Яхве}}.",
+          "B": "Прекратились хлебные приношения и возлияния в доме {{divine_name:ГОСПОДА|Яхве}}. \\q Скорбят священники, \\q служащие {{divine_name:ГОСПОДУ|Яхве}}.",
+          "R": "Нечего больше приносить в храм {{divine_name:ГОСПОДА|Яхве}} — ни зерна, ни вина. \\q Священники, которые служат {{divine_name:ГОСПОДУ|Яхве}}, плачут."
+        },
+        "ja": {
+          "L": "穀物のささげ物と注ぎの供え物は、{{divine_name:主|ヤハウェ}}の家から断たれた。 \\q 祭司たちは嘆く、 \\q {{divine_name:主|ヤハウェ}}に仕える者たちは。",
+          "B": "穀物のささげ物も注ぎの供え物も、{{divine_name:主|ヤハウェ}}の家で絶えてしまった。 \\q 祭司たちは悲しんでいる。 \\q {{divine_name:主|ヤハウェ}}に仕える者たちが。",
+          "R": "{{divine_name:主|ヤハウェ}}の神殿でささげる穀物もぶどう酒も、もうない。 \\q {{divine_name:主|ヤハウェ}}に仕える祭司たちは、悲しんでいる。"
+        },
+        "uk": {
+          "L": "Відняті хлібна жертва й жертва ливна від дому {{divine_name:ГОСПОДА|Ягве}}; \\q сумують священники, \\q служителі {{divine_name:ГОСПОДА|Ягве}}.",
+          "B": "Хлібні жертви й жертви ливні припинилися в домі {{divine_name:ГОСПОДА|Ягве}}. \\q Сумують священники, \\q ті, хто служить {{divine_name:ГОСПОДУ|Ягве}}.",
+          "R": "У храмі {{divine_name:ГОСПОДА|Ягве}} більше нема ні зерна, ні вина для жертви. \\q Священники, які служать {{divine_name:ГОСПОДУ|Ягве}}, сумують."
         }
       },
       "decisions": [
@@ -2270,6 +3099,72 @@
           "reason": "The offering words are those of Numbers 15 and 28 on main; \"the house of the LORD\" follows the Kings list (ቤት at Literal, ቤተ መቅደስ at Balanced and Readable).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010090021",
+            "o290010090031",
+            "o290010090041"
+          ],
+          "choice": "अन्नबलि और अर्घ; {{divine_name:प्रभु|याहवे}} का भवन (L, B), मन्दिर (R)",
+          "alternatives": [
+            "भेंट और पेय-भेंट"
+          ],
+          "reason": "The grain offering and drink offering keep the words Isaiah uses (Isaiah 57:6); \"the house of the LORD\" is भवन at Literal and Balanced and मन्दिर at Readable, as Isaiah 2:2. Readable names what the offerings were made of, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010090021",
+            "o290010090031",
+            "o290010090032"
+          ],
+          "choice": "хлебное приношение и возлияние",
+          "alternatives": [
+            "хлебная жертва и жертва возлияния"
+          ],
+          "reason": "The Pentateuch's terms for the grain offering and the drink offering.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010090021",
+            "o290010090032",
+            "o290010090042"
+          ],
+          "choice": "minchah \"穀物のささげ物\", nesekh \"注ぎの供え物\" (the Pentateuch forms); beit YHWH \"主の家\" (L, B), \"主の神殿\" (R), as 1 Kings.",
+          "alternatives": [],
+          "reason": "Keeps the settled offering and temple words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2338,6 +3233,26 @@
           "L": "ሜዳው ጠፍቷል፤ መሬቱ ያዝናል፤ \\q እህሉ ጠፍቷልና፤ \\q አዲሱ የወይን ጠጅ ደርቋል፤ ዘይቱም አልቋል።",
           "B": "እርሻዎቹ ባድማ ሆነዋል፤ መሬቱ በሐዘን ላይ ነው፤ \\q እህሉ ጠፍቷልና፤ \\q አዲሱ የወይን ጠጅ ደርቋል፤ የወይራ ዘይቱም አልቋል።",
           "R": "እርሻዎቹ ጠፍተዋል፤ መሬቱም ራሱ ያዝናል። \\q እህሉ ጠፍቷል። \\q አዲስ የወይን ጠጅም ሆነ የወይራ ዘይት የለም።"
+        },
+        "hi": {
+          "L": "खेत उजड़ गया है; भूमि शोक करती है, \\q क्योंकि अनाज नष्ट हो गया है, \\q नया दाखमधु सूख गया है, ताज़ा तेल घट गया है।",
+          "B": "खेत उजड़ गए हैं; भूमि शोक में है, \\q क्योंकि अनाज नष्ट हो गया है, \\q नया दाखमधु सूख गया है, और जैतून का तेल ख़त्म हो गया है।",
+          "R": "खेत बरबाद हो गए हैं, और भूमि भी शोक कर रही है। \\q अनाज नष्ट हो गया है। \\q न नया दाखमधु रहा, न जैतून का तेल।"
+        },
+        "ru": {
+          "L": "Опустошено поле, скорбит земля, \\q потому что опустошено зерно, \\q высохло молодое вино, иссякло масло.",
+          "B": "Поля опустошены, земля в трауре, \\q потому что погибло зерно, \\q высохло молодое вино и иссякло оливковое масло.",
+          "R": "Поля разорены, и сама земля скорбит. \\q Зерно погибло. \\q Нет ни молодого вина, ни оливкового масла."
+        },
+        "ja": {
+          "L": "野は荒らされ、土地は嘆く。 \\q 穀物が荒らされ、 \\q 新しいぶどう酒は涸れ、新しい油は尽きたからだ。",
+          "B": "畑は荒らされ、大地は喪に服している。 \\q 穀物は損なわれ、 \\q 新しいぶどう酒は干上がり、オリーブ油も尽きたからだ。",
+          "R": "畑は荒れ果て、大地さえも悲しんでいる。 \\q 穀物はだめになった。 \\q ぶどう酒もオリーブ油も、もうない。"
+        },
+        "uk": {
+          "L": "Спустошене поле; сумує земля, \\q бо спустошене збіжжя, \\q висохло молоде вино, зникла свіжа олія.",
+          "B": "Поля спустошені; земля в жалобі, \\q бо збіжжя знищене, \\q молоде вино висохло, а оливкова олія зникла.",
+          "R": "Поля знищені, і сама земля сумує. \\q Збіжжя загинуло. \\q Нема ні молодого вина, ні оливкової олії."
         }
       },
       "decisions": [
@@ -2475,6 +3390,69 @@
           "reason": "The three goods of the land as Deuteronomy 11:14 on main has them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010100091",
+            "o290010100111"
+          ],
+          "choice": "नया दाखमधु; ताज़ा तेल (L), जैतून का तेल (B, R)",
+          "alternatives": [
+            "नई शराब"
+          ],
+          "reason": "The three products of the land (meaning decision m2) in the words Proverbs 3:10 uses for new wine; the oil is fresh oil at Literal and olive oil at Balanced and Readable, as the English. Same through Joel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010100011",
+            "o290010100061"
+          ],
+          "choice": "опустошено ... опустошено",
+          "alternatives": [
+            "разорено ... погибло"
+          ],
+          "reason": "Literal repeats one verb for field and grain, as the Hebrew does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010100071",
+            "o290010100091",
+            "o290010100111"
+          ],
+          "choice": "dagan \"穀物\", tirosh \"新しいぶどう酒\" (L, B), \"ぶどう酒\" (R), yitshar \"新しい油\" (L), \"オリーブ油\" (B, R), as Hosea 2:10.",
+          "alternatives": [],
+          "reason": "The three products of the land keep the Hosea forms through Joel (2:19, 2:24).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2545,6 +3523,26 @@
           "L": "ገበሬዎች ሆይ፣ እፈሩ፤ የወይን አትክልተኞች ሆይ፣ ዋይ በሉ፤ \\q ስለ ስንዴውና ስለ ገብሱ፤ \\q የሜዳው መከር ጠፍቷልና።",
           "B": "እናንተ ገበሬዎች፣ ደንግጡ! የወይን ተክል የምትንከባከቡ፣ ዋይ በሉ፤ \\q ስለ ስንዴውና ስለ ገብሱ፤ \\q የእርሻው መከር ጠፍቷልና።",
           "R": "ገበሬዎች ሆይ፣ እዘኑ፤ ደንግጡም! ወይን የምታለሙ ሆይ፣ በሐዘን ጩኹ! \\q ስለ ስንዴውና ስለ ገብሱ አልቅሱ፤ \\q በእርሻዎቹ ያለው መከር ጠፍቷልና።"
+        },
+        "hi": {
+          "L": "हे किसानो, लज्जित हो; हे दाख की बारी के मालियो, हाय-हाय करो, \\q गेहूँ और जौ के कारण, \\q क्योंकि खेत की फ़सल नष्ट हो गई है।",
+          "B": "हे किसानो, निराश हो जाओ! हे दाख की बारियों की देखभाल करनेवालो, विलाप करो, \\q गेहूँ और जौ के लिए, \\q क्योंकि खेत की फ़सल नष्ट हो गई है।",
+          "R": "हे किसानो, दुखी और निराश हो जाओ! हे अंगूर उगानेवालो, दुख से चिल्लाओ! \\q गेहूँ और जौ के लिए रोओ, \\q क्योंकि खेतों की फ़सल बरबाद हो गई है।"
+        },
+        "ru": {
+          "L": "Стыдитесь, земледельцы, рыдайте, виноградари, \\q о пшенице и о ячмене, \\q потому что погиб урожай поля.",
+          "B": "Придите в смятение, земледельцы! Рыдайте, виноградари, \\q о пшенице и ячмене, \\q потому что пропал урожай на полях.",
+          "R": "Земледельцы, горюйте и стыдитесь! Виноградари, кричите от горя! \\q Плачьте о пшенице и ячмене, \\q потому что урожай на полях погиб."
+        },
+        "ja": {
+          "L": "農夫たちよ、恥じよ。ぶどう園の働き手たちよ、泣きわめけ。 \\q 小麦と大麦のために。 \\q 畑の刈り入れが失われたからだ。",
+          "B": "農夫たちよ、落胆しなさい。ぶどう畑を手入れする者たちよ、泣き叫びなさい。 \\q 小麦と大麦のために。 \\q 畑の収穫が失われたからだ。",
+          "R": "農夫たちよ、悲しんで、がっかりしなさい。ぶどうを育てる人たちよ、悲しんで大声で泣きなさい。 \\q 小麦と大麦のために泣きなさい。 \\q 畑の収穫がだめになってしまったのだ。"
+        },
+        "uk": {
+          "L": "Засоромтеся, хлібороби; ридайте, виноградарі, \\q за пшеницею і за ячменем, \\q бо загинув урожай поля.",
+          "B": "Збентежтеся, хлібороби! Ридайте, ви, що доглядаєте лози, \\q за пшеницею та ячменем, \\q бо врожай поля пропав.",
+          "R": "Хлібороби, сумуйте й журіться! Ви, що вирощуєте виноград, голосіть з горя! \\q Плачте за пшеницею та ячменем, \\q бо врожай на полях загинув."
         }
       },
       "decisions": [
@@ -2612,6 +3610,67 @@
           "choice": "Envergonhem-se (L); Fiquem consternados (B); fiquem tristes e desanimados (R)",
           "alternatives": [],
           "reason": "Literal keeps the verb of shame; Balanced and Readable say the sense here, hope come to nothing (m1). The sound play with \"dried up\" (verses 10, 12, 17) cannot be kept in Portuguese and is left to the meaning note.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010110011"
+          ],
+          "choice": "लज्जित हो (L); निराश हो जाओ (B); दुखी और निराश हो जाओ (R)",
+          "alternatives": [
+            "शर्मिंदा हो"
+          ],
+          "reason": "\"Be ashamed\" here means to be dismayed when hope comes to nothing (meaning decision m1); Balanced and Readable say that sense, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010110011"
+          ],
+          "choice": "Придите в смятение (B); горюйте и стыдитесь (R)",
+          "alternatives": [
+            "Стыдитесь"
+          ],
+          "reason": "Be ashamed here means dismay when hope comes to nothing (meaning decision); Literal keeps the verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010110011"
+          ],
+          "choice": "hovishu \"恥じよ\" (L), \"落胆しなさい\" (B), \"悲しんで、がっかりしなさい\" (R), as the English per level.",
+          "alternatives": [
+            "\"恥じ入りなさい\" (B)"
+          ],
+          "reason": "The sense is the dismay of hope come to nothing (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2694,6 +3753,26 @@
           "L": "ወይኑ ደርቋል፤ \\q በለሱም ጠውልጓል፤ \\q ሮማኑ፣ ዘንባባውም ደግሞ፣ የፖም ዛፉም፣ የሜዳው ዛፎች ሁሉ ደርቀዋል፤ \\q በእርግጥ ደስታ ከሰው ልጆች ደርቋል።",
           "B": "ወይኑ ደርቋል፤ \\q በለሱም ጠውልጓል፤ \\q ሮማኑ፣ ዘንባባውና የፖም ዛፉ፣ የሜዳ ዛፎች ሁሉ ደርቀዋል። \\q በእርግጥም ደስታ ከሕዝቡ መካከል ጠፍቷል።",
           "R": "የወይን ተክሎቹ ደርቀዋል፤ \\q በለሶቹም እየሞቱ ናቸው። \\q ሮማኑ፣ ዘንባባው፣ የፖም ዛፉና በእርሻ ያሉ ዛፎች ሁሉ ደርቀዋል። \\q ሕዝቡም ደስታውን ሁሉ አጥቷል።"
+        },
+        "hi": {
+          "L": "दाखलता सूख गई है, \\q और अंजीर का पेड़ मुरझा गया है; \\q अनार, खजूर भी, और सेब का पेड़, मैदान के सब पेड़ सूख गए हैं; \\q सचमुच, मनुष्य की सन्तान में से आनंद सूख गया है।",
+          "B": "दाखलता मुरझा गई है, \\q अंजीर का पेड़ कुम्हला गया है; \\q अनार, खजूर और सेब के पेड़, मैदान के सब पेड़ सूख गए हैं। \\q सचमुच लोगों में से आनंद मिट गया है।",
+          "R": "अंगूर की बेलें सूख गई हैं, \\q और अंजीर के पेड़ मर रहे हैं। \\q अनार, खजूर, सेब और खेतों के सब पेड़ सूख गए हैं। \\q और लोगों का सारा आनंद जाता रहा है।"
+        },
+        "ru": {
+          "L": "Лоза засохла, \\q и смоковница вянет; \\q гранатовое дерево, и пальма, и яблоня, все деревья поля засохли; \\q поистине, иссякла радость у сынов человеческих.",
+          "B": "Виноградная лоза засохла, \\q смоковница поникла; \\q гранатовое дерево, пальма и яблоня — все деревья в поле засохли. \\q Поистине, радость иссякла у людей.",
+          "R": "Виноградные лозы засохли, \\q и смоковницы погибают. \\q Гранатовые деревья, пальмы, яблони и все деревья в полях засохли. \\q И люди потеряли всякую радость."
+        },
+        "ja": {
+          "L": "ぶどうの木は枯れ、 \\q いちじくの木はしおれる。 \\q ざくろも、なつめやしも、りんごの木も、野のすべての木々は枯れた。 \\q まことに、喜びは人の子らから枯れ去った。",
+          "B": "ぶどうの木は枯れ、 \\q いちじくの木はしおれている。 \\q ざくろも、なつめやしも、りんごの木も、野のすべての木々が枯れてしまった。 \\q まことに、喜びは人々から消えうせた。",
+          "R": "ぶどうの木は枯れ、 \\q いちじくの木も死にかけている。 \\q ざくろの木も、なつめやしの木も、りんごの木も、畑のすべての木が枯れてしまった。 \\q そして人々は、喜びをすっかり失ってしまった。"
+        },
+        "uk": {
+          "L": "Лоза висохла, \\q і смоковниця вʼяне; \\q гранат, і пальма також, і яблуня, усі дерева поля висохли; \\q так, висохла радість у синів людських.",
+          "B": "Лоза зівʼяла, \\q смоковниця никне; \\q гранат, пальма і яблуня, усі дерева поля всохли. \\q Справді, радість зівʼяла в людей.",
+          "R": "Виноградні лози сухі, \\q а інжирні дерева гинуть. \\q Гранатові дерева, пальми, яблуні й усі дерева в полях всохли. \\q І люди втратили всю свою радість."
         }
       },
       "decisions": [
@@ -2799,6 +3878,44 @@
           "reason": "The Hebrew uses one verb for the vine that dries up and the joy that dries up; Literal keeps one Amharic verb for both, so the picture stays.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010120171",
+            "o290010120181"
+          ],
+          "choice": "у сынов человеческих",
+          "alternatives": [
+            "у людей"
+          ],
+          "reason": "Literal keeps \"sons of man\"; the English has no gender span here, and the phrase means all people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010120141",
+            "o290010120151"
+          ],
+          "choice": "L \"喜びは……枯れ去った\" keeps the one verb for vine and joy (m1); B \"消えうせた\", R \"失ってしまった\".",
+          "alternatives": [],
+          "reason": "The wordplay is kept at L only, as the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2880,6 +3997,26 @@
           "L": "እናንተ ካህናት፣ [ማቅ] ታጠቁ፤ አልቅሱም፤ \\q የመሠዊያ አገልጋዮች፣ ዋይ በሉ፤ \\q የአምላኬ አገልጋዮች፣ ኑ፣ በማቅ እደሩ! \\q የእህል ቁርባንና የመጠጥ ቁርባን ከአምላካችሁ ቤት ተከልክሏልና።",
           "B": "እናንተ ካህናት፣ ማቅ ታጥቃችሁ አልቅሱ! \\q በመሠዊያው የምታገለግሉ፣ ዋይ በሉ! \\q አምላኬን የምታገለግሉ፣ ኑ፣ ማቅ ለብሳችሁ እደሩ! \\q የእህል ቁርባንና የመጠጥ ቁርባን ከአምላካችሁ ቤተ መቅደስ ቀርቷልና።",
           "R": "ካህናት ሆይ፣ ማቅ ለብሳችሁ አልቅሱ! \\q በመሠዊያው የምታገለግሉ ሆይ፣ በሐዘን ጩኹ! \\q አምላኬን የምታገለግሉ ሆይ፣ ኑ፤ ሌሊቱን ሙሉ ማቅ ለብሳችሁ እደሩ። \\q በአምላካችሁ ቤተ መቅደስ የሚቀርብ እህልም ሆነ የወይን ጠጅ የለም።"
+        },
+        "hi": {
+          "L": "हे याजको, [टाट] बाँध लो और छाती पीटो; \\q हे वेदी के सेवको, हाय-हाय करो; \\q हे मेरे परमेश्वर के सेवको, आओ, टाट ओढ़े हुए रात बिताओ! \\q क्योंकि तुम्हारे परमेश्वर के भवन से अन्नबलि और अर्घ रोक लिए गए हैं।",
+          "B": "हे याजको, टाट पहनकर शोक करो! \\q हे वेदी पर सेवा करनेवालो, विलाप करो! \\q हे मेरे परमेश्वर की सेवा करनेवालो, आओ, टाट ओढ़कर रात बिताओ! \\q क्योंकि तुम्हारे परमेश्वर के भवन में अन्नबलि और अर्घ रुक गए हैं।",
+          "R": "हे याजको, टाट पहनो और शोक करो! \\q हे वेदी पर सेवा करनेवालो, दुख से चिल्लाओ! \\q हे मेरे परमेश्वर की सेवा करनेवालो, आओ और टाट पहने हुए रात बिताओ। \\q तुम्हारे परमेश्वर के मन्दिर में चढ़ाने के लिए न अनाज रहा, न दाखमधु।"
+        },
+        "ru": {
+          "L": "Препояшьтесь [вретищем] и плачьте, священники; \\q рыдайте, служители жертвенника; \\q придите, ночуйте во вретище, служители моего Бога! \\q Ведь лишён дом вашего Бога хлебного приношения и возлияния.",
+          "B": "Наденьте мешковину и скорбите, священники! \\q Рыдайте, служители жертвенника! \\q Придите, проведите ночь в мешковине, служители моего Бога! \\q Ведь дом вашего Бога лишён хлебных приношений и возлияний.",
+          "R": "Священники, наденьте мешковину и плачьте! \\q Вы, кто служит у жертвенника, кричите от горя! \\q Вы, кто служит моему Богу, придите и проведите ночь в мешковине. \\q В храме вашего Бога нечего больше приносить — ни зерна, ни вина."
+        },
+        "ja": {
+          "L": "祭司たちよ、[粗布を]腰に帯びて嘆け。 \\q 祭壇に仕える者たちよ、泣きわめけ。 \\q わたしの神に仕える者たちよ、来て、粗布をまとって夜を過ごせ。 \\q 穀物のささげ物と注ぎの供え物が、あなたがたの神の家から差し止められたからだ。",
+          "B": "祭司たちよ、粗布をまとって嘆きなさい。 \\q 祭壇に仕える者たちよ、泣き叫びなさい。 \\q わたしの神に仕える者たちよ、来て、粗布をまとったまま夜を明かしなさい。 \\q 穀物のささげ物と注ぎの供え物が、あなたがたの神の家から絶たれているからだ。",
+          "R": "祭司たちよ、粗い布の服を着て、悲しみなさい。 \\q 祭壇で仕える人たちよ、悲しんで大声で泣きなさい。 \\q わたしの神に仕える人たちよ、来なさい。粗い布の服を着たまま、夜を過ごしなさい。 \\q あなたたちの神の神殿には、ささげる穀物もぶどう酒もないのだ。"
+        },
+        "uk": {
+          "L": "Підпережіться [мішковиною] і голосіть, священники; \\q ридайте, служителі жертовника; \\q прийдіть, ночуйте в мішковині, служителі мого Бога! \\q Бо відняті від дому вашого Бога хлібна жертва й жертва ливна.",
+          "B": "Вдягніть мішковину й голосіть, священники! \\q Ридайте, ви, що служите біля жертовника! \\q Прийдіть, ночуйте в мішковині, ви, що служите моєму Богові! \\q Бо хлібні й ливні жертви відняті від дому вашого Бога.",
+          "R": "Священники, вдягніть мішковину й голосіть! \\q Ви, що служите біля жертовника, голосіть з горя! \\q Ви, що служите моєму Богові, прийдіть і проведіть ніч у мішковині. \\q У храмі вашого Бога нема ні зерна, ні вина для жертви."
         }
       },
       "decisions": [
@@ -3070,6 +4207,26 @@
           "L": "ጾምን ቀድሱ፤ የተከበረ ጉባኤን ጥሩ፤ \\q ሽማግሌዎችንና በምድሪቱ የሚኖሩትን ሁሉ \\q ወደ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ ቤት ሰብስቡ፤ \\q ወደ {{divine_name:እግዚአብሔር|ያህዌ}}ም ጩኹ።",
           "B": "የተቀደሰ ጾም አውጁ፤ የተከበረ ጉባኤ ጥሩ። \\q ሽማግሌዎችንና በምድሪቱ የሚኖሩትን ሁሉ \\q {{divine_name:በእግዚአብሔር|በያህዌ}} አምላካችሁ ቤተ መቅደስ ሰብስቡ፤ \\q እርዳታ ለማግኘትም ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጩኹ።",
           "R": "የተቀደሰ ጾም አውጁ፤ ይህም ምግብ የማትበሉበት ጊዜ ነው። ሁሉም ሰው ወደ ልዩ ስብሰባ እንዲመጣ ጥሩ። \\q ሽማግሌዎችንና የምድሪቱን ሕዝብ ሁሉ \\q ወደ {{divine_name:እግዚአብሔር|ያህዌ}} አምላካችሁ ቤተ መቅደስ አምጡ፤ \\q እርዳታ ለማግኘትም ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ጩኹ።"
+        },
+        "hi": {
+          "L": "उपवास को पवित्र ठहराओ; पवित्र सभा बुलाओ; \\q पुरनियों को, देश के सब निवासियों को, \\q अपने परमेश्वर {{divine_name:प्रभु|याहवे}} के भवन [में] इकट्ठा करो, \\q और {{divine_name:प्रभु|याहवे}} की दुहाई दो।",
+          "B": "पवित्र उपवास का प्रचार करो; पवित्र सभा बुलाओ। \\q बुज़ुर्ग अगुवों और देश के सब रहनेवालों को \\q अपने परमेश्वर {{divine_name:प्रभु|याहवे}} के भवन में इकट्ठा करो, \\q और सहायता के लिए {{divine_name:प्रभु|याहवे}} की दुहाई दो।",
+          "R": "पवित्र उपवास की घोषणा करो, ऐसा समय जब लोग भोजन नहीं करते। सब लोगों को एक विशेष सभा के लिए बुलाओ। \\q बुज़ुर्गों और देश के सब लोगों को \\q अपने परमेश्वर {{divine_name:प्रभु|याहवे}} के मन्दिर में ले आओ, \\q और मदद के लिए {{divine_name:प्रभु|याहवे}} को पुकारो।"
+        },
+        "ru": {
+          "L": "Освятите пост, созовите торжественное собрание, \\q соберите старейшин, всех жителей земли, \\q [в] дом {{divine_name:ГОСПОДА|Яхве}}, вашего Бога, \\q и к {{divine_name:ГОСПОДУ|Яхве}} взывайте.",
+          "B": "Объявите святой пост, созовите торжественное собрание. \\q Соберите старейшин и всех живущих в стране \\q в доме {{divine_name:ГОСПОДА|Яхве}}, вашего Бога, \\q и взывайте к {{divine_name:ГОСПОДУ|Яхве}} о помощи.",
+          "R": "Объявите святой пост — время, когда никто не ест. Созовите всех на особое собрание. \\q Приведите старейшин и всех жителей страны \\q в храм {{divine_name:ГОСПОДА|Яхве}}, вашего Бога, \\q и громко просите {{divine_name:ГОСПОДА|Яхве}} о помощи."
+        },
+        "ja": {
+          "L": "断食を聖別せよ。聖なる集会を召集せよ。 \\q 長老たちを、地に住むすべての者を、 \\q あなたがたの神、{{divine_name:主|ヤハウェ}}の家に集めよ。 \\q そして{{divine_name:主|ヤハウェ}}に向かって叫べ。",
+          "B": "聖なる断食を布告し、聖なる集会を召集しなさい。 \\q 長老たちと、この地に住むすべての者を、 \\q あなたがたの神、{{divine_name:主|ヤハウェ}}の家に集め、 \\q {{divine_name:主|ヤハウェ}}に助けを叫び求めなさい。",
+          "R": "聖なる断食を知らせなさい。食事をとらずに祈る時だ。みんなを特別な集まりに呼びなさい。 \\q 長老たちと、この地に住むすべての人を、 \\q あなたたちの神、{{divine_name:主|ヤハウェ}}の神殿に集めなさい。 \\q そして、{{divine_name:主|ヤハウェ}}に助けを求めて叫びなさい。"
+        },
+        "uk": {
+          "L": "Освятіть піст; скличте урочисте зібрання; \\q зберіть старійшин, усіх мешканців землі, \\q [до] дому {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, \\q і до {{divine_name:ГОСПОДА|Ягве}} кличте.",
+          "B": "Оголосіть святий піст; скличте урочисте зібрання. \\q Зберіть старійшин і всіх мешканців краю \\q у домі {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, \\q і кличте до {{divine_name:ГОСПОДА|Ягве}} про допомогу.",
+          "R": "Оголосіть святий піст, час, коли нічого не їдять. Скличте всіх на особливе зібрання. \\q Приведіть старійшин і всіх людей краю \\q до храму {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, \\q і благайте {{divine_name:ГОСПОДА|Ягве}} про допомогу."
         }
       },
       "decisions": [
@@ -3253,6 +4410,69 @@
           "reason": "Literal keeps the Hebrew verb \"consecrate\"; Balanced and Readable say what it means, to proclaim a holy fast. ʿAtsarah is \"የተከበረ ጉባኤ\", as in Isaiah 1:13 and 2 Chronicles 7:9.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010140021",
+            "o290010140041"
+          ],
+          "choice": "उपवास; पवित्र सभा",
+          "alternatives": [
+            "महासभा"
+          ],
+          "reason": "The fast and the solemn assembly (atsarah) keep the words of Isaiah 1:13 and 58; Readable explains both, as the English Readable does. The same wording returns in 2:15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010140011",
+            "o290010140041"
+          ],
+          "choice": "Освятите пост, созовите торжественное собрание (L); Объявите святой пост (B)",
+          "alternatives": [
+            "Назначьте пост"
+          ],
+          "reason": "Consecrate a fast is a holy day of prayer for the whole people (meaning decision); Literal keeps the verb, Balanced says what it does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010140021",
+            "o290010140041"
+          ],
+          "choice": "tsom \"断食\" (R adds \"食事をとらずに祈る時\"); 'atsarah \"聖なる集会\" (L, B; ISA 1:13), R \"特別な集まり\" as the English R.",
+          "alternatives": [],
+          "reason": "Keeps the ISA key word and gives the R gloss of fasting as Jonah 3:5.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3323,6 +4543,26 @@
           "L": "ወዮ ለቀኑ! \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን ቀርቧልና፤ \\q ሁሉን ከሚችል እንደሚመጣ ጥፋት ይመጣል።",
           "B": "ወዮ ለዚያ ቀን! \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን ደርሷልና፤ \\q ሁሉን ከሚችል እንደሚመጣ ጥፋት ይመጣል።",
           "R": "ያ ቀን እንዴት አስከፊ ይሆናል! \\q {{divine_name:የእግዚአብሔር|የያህዌ}} ቀን ቀርቧል! \\q ሁሉን የሚችል አምላክ እንደሚልከው ጥፋት ይመጣል።"
+        },
+        "hi": {
+          "L": "हाय, वह दिन! \\q क्योंकि {{divine_name:प्रभु|याहवे}} का दिन निकट [है], \\q और वह सर्वशक्तिमान की ओर से विनाश के समान आएगा।",
+          "B": "हाय, वह दिन! \\q क्योंकि {{divine_name:प्रभु|याहवे}} का दिन निकट आ पहुँचा है, \\q और वह सर्वशक्तिमान की ओर से आए विनाश के समान आएगा।",
+          "R": "वह दिन कितना भयानक होगा! \\q {{divine_name:प्रभु|याहवे}} का दिन निकट है! \\q वह सर्वशक्तिमान परमेश्वर के भेजे हुए विनाश के समान आएगा।"
+        },
+        "ru": {
+          "L": "Увы, [что за] день! \\q Ведь близок день {{divine_name:ГОСПОДА|Яхве}}, \\q и как опустошение от Всемогущего он придёт.",
+          "B": "Увы, что за день! \\q Ведь день {{divine_name:ГОСПОДА|Яхве}} совсем близко, \\q и он придёт как разорение от Всемогущего.",
+          "R": "Как страшен будет тот день! \\q День {{divine_name:ГОСПОДА|Яхве}} близок! \\q Он придёт как разорение, посланное Всемогущим Богом."
+        },
+        "ja": {
+          "L": "ああ、その日よ！ \\q {{divine_name:主|ヤハウェ}}の日が近いのだから。 \\q 全能者からの破滅のように、それは来る。",
+          "B": "ああ、その日よ！ \\q {{divine_name:主|ヤハウェ}}の日が近づいているからだ。 \\q それは、全能者から来る破滅のように来る。",
+          "R": "その日は、なんと恐ろしい日になることか！ \\q {{divine_name:主|ヤハウェ}}の日が近いのだ！ \\q それは、全能の神が送られる破滅のように来る。"
+        },
+        "uk": {
+          "L": "Ой, той день! \\q Бо близько день {{divine_name:ГОСПОДА|Ягве}}, \\q і як спустошення від Всемогутнього він прийде.",
+          "B": "Ой, лихо того дня! \\q Бо день {{divine_name:ГОСПОДА|Ягве}} уже близько, \\q і він прийде, як руїна від Всемогутнього.",
+          "R": "Який страшний буде той день! \\q День {{divine_name:ГОСПОДА|Ягве}} близько! \\q Він прийде, як руїна, яку посилає Всемогутній Бог."
         }
       },
       "decisions": [
@@ -3620,6 +4860,99 @@
           "reason": "The Hebrew line is the same as Isaiah 13:6, so its Amharic is kept, Shaddai as \"ሁሉን የሚችል\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010150051",
+            "o290010150061",
+            "o290010150082"
+          ],
+          "choice": "\"день {{divine_name:ГОСПОДА|Ягве}}\" at every level, and \"Всемогутній\" for Shaddai",
+          "alternatives": [
+            "Господній день"
+          ],
+          "reason": "docs/ukrainian-ot-terms.md fixes \"день {{divine_name:ГОСПОДА|Ягве}}\" for the phrase through all the prophets; the meaning note for the Twelve places its first full note here. The play between shod (ruin) and Shaddai is not imitated.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010150051",
+            "o290010150061",
+            "o290010150081"
+          ],
+          "choice": "{{divine_name:प्रभु|याहवे}} का दिन; the wording of Isaiah 13:6 at each level",
+          "alternatives": [],
+          "reason": "\"The day of the LORD\" takes the prophets note's form at every level, as throughout Joel. Where Joel repeats Isaiah 13:6 (meaning decision m2), each level copies the Hindi of that verse: \"... का दिन निकट [है]\" and \"सर्वशक्तिमान की ओर से विनाश के समान आएगा\" (L), \"निकट आ पहुँचा है\" (B), \"सर्वशक्तिमान परमेश्वर के भेजे हुए विनाश\" (R).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010150051",
+            "o290010150061",
+            "o290010150071",
+            "o290010150072",
+            "o290010150073",
+            "o290010150081",
+            "o290010150082"
+          ],
+          "choice": "день ГОСПОДА; the wording of Isaiah 13:6",
+          "alternatives": [
+            "день Господень"
+          ],
+          "reason": "\"The day of the LORD\" is \"день {{divine_name:ГОСПОДА|Яхве}}\" at every level through the Prophets, with no adjective inside the setting; the second and third lines copy Isaiah 13:6, which has the same Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010150051",
+            "o290010150061",
+            "o290010150073",
+            "o290010150082"
+          ],
+          "choice": "yom YHWH \"主の日\" ({{divine_name:主|ヤハウェ}}の日) at every level, Joel's key term (1:15, 2:1, 2:11, 3:4, 4:14); the second and third lines repeat the Japanese of Isaiah 13:6 at each level (Shaddai \"全能者\" L, B, \"全能の神\" R).",
+          "alternatives": [],
+          "reason": "The English gives Isaiah 13:6's wording at each level, and the ISA notes set yom YHWH and Shaddai.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3691,6 +5024,26 @@
           "L": "ምግብ በዓይናችን ፊት አልተቆረጠምን? \\q ደስታና ሐሤትም ከአምላካችን ቤት?",
           "B": "ምግቡ በዓይናችን ፊት አልተቆረጠምን? \\q ደስታና ሐሤትስ ከአምላካችን ቤተ መቅደስ አልጠፉምን?",
           "R": "ምግባችን ሲጠፋ በዓይናችን አየን። \\q በአምላካችን ቤተ መቅደስ ደስታም ሆነ በዓል የለም።"
+        },
+        "hi": {
+          "L": "क्या हमारी आँखों के सामने भोजन नहीं कट गया, \\q [और] हमारे परमेश्वर के भवन से आनंद और मगन होना?",
+          "B": "क्या हमारी आँखों के सामने ही भोजन नहीं छिन गया, \\q और हमारे परमेश्वर के भवन से आनंद और उल्लास?",
+          "R": "हमने अपनी आँखों से अपना भोजन मिटते देखा है। \\q हमारे परमेश्वर के मन्दिर में न आनंद रहा, न उत्सव।"
+        },
+        "ru": {
+          "L": "Разве не на наших глазах отнята пища, \\q от дома нашего Бога — радость и веселье?",
+          "B": "Разве не на наших глазах исчезла пища, \\q а из дома нашего Бога — радость и веселье?",
+          "R": "У нас на глазах исчезла наша пища. \\q В храме нашего Бога нет больше ни радости, ни праздника."
+        },
+        "ja": {
+          "L": "わたしたちの目の前で、食べ物は断たれたではないか。 \\q わたしたちの神の家から、喜びと楽しみが[断たれた]ではないか？",
+          "B": "わたしたちの目の前で食べ物が断たれ、 \\q わたしたちの神の家から喜びと楽しみが絶えたではないか？",
+          "R": "わたしたちは、自分たちの食べ物がなくなっていくのを見てきた。 \\q わたしたちの神の神殿には、もう喜びも祝いもない。"
+        },
+        "uk": {
+          "L": "Хіба не забрано перед нашими очима їжі, \\q від дому нашого Бога — радості й веселощів?",
+          "B": "Хіба не забрано їжі на наших очах, \\q а з дому нашого Бога — радості й веселощів?",
+          "R": "Ми бачили, як зникла наша їжа. \\q У храмі нашого Бога нема ні радості, ні свята."
         }
       },
       "decisions": [
@@ -3827,6 +5180,26 @@
           "L": "ዘሮቹ ከአፈሩ ጓሎች በታች ተኮራመቱ፤ \\q ማከማቻዎቹ ባድማ ሆኑ፤ \\q ጎተራዎቹ ፈረሱ፤ \\q እህሉ ደርቋልና።",
           "B": "ዘሮቹ ከአፈሩ በታች ተኮራምተው ቀርተዋል፤ \\q ማከማቻዎቹ ባዶ ሆነዋል፤ \\q ጎተራዎቹ ፈራርሰዋል፤ \\q እህሉ ደርቋልና።",
           "R": "ዘሮቹ በመሬት ውስጥ ደርቀዋል። \\q መጋዘኖቹ ባዶ ናቸው። \\q ጎተራዎቹ እየፈረሱ ነው፤ \\q እህል የለምና።"
+        },
+        "hi": {
+          "L": "बीज अपने ढेलों के नीचे सिकुड़ गए हैं; \\q भंडार उजाड़ पड़े हैं; \\q खत्ते ढा दिए गए हैं, \\q क्योंकि अनाज सूख गया है।",
+          "B": "बीज ढेलों के नीचे सूखकर सिकुड़ गए हैं; \\q भंडार ख़ाली पड़े हैं; \\q खत्ते गिर रहे हैं, \\q क्योंकि अनाज मुरझा गया है।",
+          "R": "बीज ज़मीन में ही सूख गए हैं। \\q भंडार ख़ाली हैं। \\q कोठार गिर रहे हैं, \\q क्योंकि अनाज है ही नहीं।"
+        },
+        "ru": {
+          "L": "Истлели зёрна под своими глыбами; \\q опустели хранилища, \\q разрушены житницы, \\q потому что засохло зерно.",
+          "B": "Зёрна сморщились под комьями земли; \\q хранилища стоят пустые, \\q житницы разваливаются, \\q потому что зерно засохло.",
+          "R": "Семена высохли в земле. \\q Хранилища пусты. \\q Амбары разваливаются, \\q потому что зерна нет."
+        },
+        "ja": {
+          "L": "種は土くれの下でしなび、 \\q 倉は荒れ果て、 \\q 穀物蔵は壊された。 \\q 穀物が枯れたからだ。",
+          "B": "種は土くれの下でしなびて横たわり、 \\q 倉は空になり、 \\q 穀物蔵は崩れ落ちている。 \\q 穀物が枯れてしまったからだ。",
+          "R": "種は土の中で干からびてしまった。 \\q 倉は空っぽだ。 \\q 納屋は崩れかけている。 \\q 穀物がないのだ。"
+        },
+        "uk": {
+          "L": "Зсохло насіння під своїми грудками; \\q спустошені комори; \\q зруйновані засіки, \\q бо всохло збіжжя.",
+          "B": "Насіння лежить зсохле під грудками; \\q комори стоять порожні; \\q засіки валяться, \\q бо збіжжя всохло.",
+          "R": "Насіння висохло в землі. \\q Комори порожні. \\q Клуні валяться, \\q бо нема зерна."
         }
       },
       "decisions": [
@@ -3882,6 +5255,71 @@
           "alternatives": [],
           "reason": "Readable says \"barns\" for granaries.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010170011",
+            "o290010170021",
+            "o290010170041"
+          ],
+          "choice": "बीज ... ढेलों के नीचे सिकुड़ गए हैं",
+          "alternatives": [
+            "अनाज के दाने ... फावड़ों के नीचे सड़ गए"
+          ],
+          "reason": "The line has three rare words and is uncertain (meaning decision m1); Hindi follows the reading the English takes.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010170011",
+            "o290010170021",
+            "o290010170041",
+            "o290010170042"
+          ],
+          "choice": "Истлели зёрна под своими глыбами (L); Зёрна сморщились под комьями земли (B)",
+          "alternatives": [],
+          "reason": "Three rare words make the line uncertain (meaning decision); the drafting follows the reading of the gloss.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010170011",
+            "o290010170021",
+            "o290010170041"
+          ],
+          "choice": "\"種は土くれの下でしなび\" for the three rare words (m1), as the English L and B.",
+          "alternatives": [
+            "\"種は鋤の下で朽ち\""
+          ],
+          "reason": "The line is uncertain; the reading in the English is followed.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -3956,6 +5394,26 @@
           "L": "እንስሳት እንዴት ያቃስታሉ! የከብት መንጎች ተቅበዘበዙ፤ \\q መሰማሪያ የላቸውምና፤ \\q የበጎች መንጎችም እንኳ መከራ ይቀበላሉ።",
           "B": "እንስሳቱ እንዴት ያቃስታሉ! የከብት መንጎች ግራ ተጋብተው ይንከራተታሉ፤ \\q መሰማሪያ የላቸውምና፤ \\q የበግ መንጎችም ደግሞ ይሠቃያሉ።",
           "R": "እንስሳቱ ሲያቃስቱ ስሙ! ከብቶቹ ግራ ተጋብተው ይንከራተታሉ፤ \\q የሚበሉት ሣር የላቸውምና። \\q በጎቹም እንኳ ይሠቃያሉ።"
+        },
+        "hi": {
+          "L": "पशु कैसे कराहते हैं! गाय-बैलों के झुंड घबराए हुए भटकते हैं, \\q क्योंकि उनके लिए कोई चरागाह नहीं; \\q भेड़-बकरियों के झुंड भी कष्ट भोगते हैं।",
+          "B": "पशु कैसे कराह रहे हैं! गाय-बैलों के झुंड घबराकर इधर-उधर भटक रहे हैं, \\q क्योंकि उनके लिए चरागाह नहीं है; \\q भेड़ों के झुंड भी कष्ट भोग रहे हैं।",
+          "R": "सुनो, पशु कैसे कराह रहे हैं! गाय-बैल घबराए हुए इधर-उधर भटक रहे हैं, \\q क्योंकि उनके खाने के लिए घास नहीं है। \\q भेड़ें भी दुख भोग रही हैं।"
+        },
+        "ru": {
+          "L": "Как стонет скот! Блуждают в смятении стада волов, \\q потому что нет для них пастбища; \\q и стада овец терпят наказание.",
+          "B": "Как стонут животные! Стада коров бродят в растерянности, \\q потому что у них нет пастбища; \\q страдают и отары овец.",
+          "R": "Послушайте, как стонут животные! Коровы бродят, не зная, куда идти, \\q потому что им нечего есть. \\q Даже овцы страдают."
+        },
+        "ja": {
+          "L": "なんと家畜はうめくことか！牛の群れはさまよう。 \\q 彼らには牧草地がないからだ。 \\q 羊の群れさえも苦しむ。",
+          "B": "家畜はなんとうめいていることか！牛の群れはうろたえてさまよっている。 \\q 牧草地がないからだ。 \\q 羊の群れも苦しんでいる。",
+          "R": "家畜がうめいているのを聞きなさい！牛は、どうしていいかわからずに歩き回っている。 \\q 食べる草がないのだ。 \\q 羊さえも苦しんでいる。"
+        },
+        "uk": {
+          "L": "Як стогне худоба! Блукають розгублено стада волів, \\q бо нема для них пасовиська; \\q навіть отари овець терплять кару.",
+          "B": "Як стогне худоба! Стада волів блукають розгублено, \\q бо не мають пасовиська; \\q отари овець теж страждають.",
+          "R": "Послухайте, як стогне худоба! Корови розгублено блукають, \\q бо не мають трави. \\q Навіть вівці страждають."
         }
       },
       "decisions": [
@@ -4008,6 +5466,25 @@
           "choice": "Listen to (R); no grass to eat (R)",
           "alternatives": [],
           "reason": "Readable puts the exclamation \"How ...!\" as a call to listen, and says what pasture is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010180141"
+          ],
+          "choice": "терпят наказание",
+          "alternatives": [
+            "страдают"
+          ],
+          "reason": "The verb means bearing the punishment of the land (meaning decision); Literal says so, Balanced and Readable say suffer, as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -4083,6 +5560,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ እጣራለሁ፤ \\q እሳት የምድረ በዳውን መሰማሪያዎች በልቷልና፤ \\q ነበልባልም የሜዳውን ዛፎች ሁሉ አቃጥሏል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ እጮኻለሁ፤ \\q እሳት በምድረ በዳ ያሉትን መሰማሪያዎች በልቷልና፤ \\q ነበልባልም የሜዳውን ዛፎች ሁሉ አቃጥሏል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እርዳታ ለማግኘት ወደ አንተ እጮኻለሁ። \\q እሳት የግጦሹን መሬት አቃጥሏል፤ \\q ነበልባልም በእርሻዎቹ ያሉትን ዛፎች ሁሉ አቃጥሏል።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मैं तुझे पुकारता हूँ, \\q क्योंकि आग ने निर्जन प्रदेश की चरागाहों को भस्म कर दिया है, \\q और लौ ने मैदान के सब पेड़ जला दिए हैं।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मैं तेरी दुहाई देता हूँ, \\q क्योंकि आग ने निर्जन प्रदेश की चरागाहों को चट कर लिया है, \\q और लपटों ने मैदान के सब पेड़ जला दिए हैं।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मैं मदद के लिए तुझे पुकार रहा हूँ। \\q आग ने घास के मैदान जला दिए हैं, \\q और लपटों ने खेतों के सब पेड़ जला दिए हैं।"
+        },
+        "ru": {
+          "L": "К {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}, взываю, \\q потому что огонь пожрал пастбища пустыни, \\q и пламя спалило все деревья поля.",
+          "B": "К {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}, я взываю, \\q потому что огонь пожрал пастбища в пустыне \\q и пламя сожгло все деревья в поле.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, я зову {{deity_pronoun:тебя|Тебя}} на помощь! \\q Огонь сжёг все пастбища, \\q и пламя сожгло все деревья в полях."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、あなたに向かって、わたしは呼ぶ。 \\q 火が荒野の牧草地を焼き尽くし、 \\q 炎が野のすべての木々を燃やしたからだ。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたに叫び求める。 \\q 火が荒野の牧草地を焼き尽くし、 \\q 炎が野のすべての木々を焼き払ったからだ。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたに助けを求めて叫んでいる。 \\q 火が草原を焼き尽くし、 \\q 炎が畑のすべての木を焼いてしまったのだ。"
+        },
+        "uk": {
+          "L": "До {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Ягве}}, я кличу, \\q бо вогонь пожер пасовиська пустелі, \\q і полумʼя спалило всі дерева поля.",
+          "B": "До {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Ягве}}, я взиваю, \\q бо вогонь пожер пасовиська в пустелі, \\q і полумʼя спалило всі дерева поля.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, я кличу {{deity_pronoun:тебе|Тебе}} на допомогу. \\q Вогонь спалив пасовиська, \\q і полумʼя спалило всі дерева в полях."
         }
       },
       "decisions": [
@@ -4266,6 +5763,51 @@
           "reason": "The vocative as the Psalms and Hosea 9:14. \"Kwako\" opens the sentence at Literal and is capitalised anyway, so it takes no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o290010190011",
+            "o290010190021"
+          ],
+          "choice": "तू, तुझे, तेरी in the prophet's prayer",
+          "alternatives": [
+            "आप"
+          ],
+          "reason": "Prayer to God takes the intimate तू of Hindi devotion, as in the Psalms and the style guide (section 4); God spoken of takes the honorific third person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o290010190011",
+            "o290010190012",
+            "o290010190031"
+          ],
+          "choice": "The prophet's prayer in verse: \"あなた\", plain style at every level (no です・ます), as the OT poetry rule and ISA notes.",
+          "alternatives": [
+            "\"あなたに呼び求めます\""
+          ],
+          "reason": "Prayers inside a verse oracle stay in the plain poetic voice.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4339,6 +5881,26 @@
           "L": "የሜዳ እንስሳትም እንኳ አንተን ይናፍቃሉ፤ \\q የውኃ መፋሰሻዎች ደርቀዋልና፤ \\q እሳትም የምድረ በዳውን መሰማሪያዎች በልቷል።",
           "B": "የዱር አራዊትም እንኳ አንተን ይናፍቃሉ፤ \\q የውኃ ጅረቶች ደርቀዋልና፤ \\q እሳትም በምድረ በዳ ያሉትን መሰማሪያዎች በልቷል።",
           "R": "የዱር አራዊትም እንኳ ወደ አንተ ይጮኻሉ፤ \\q ጅረቶቹ ደርቀዋልና፤ \\q እሳትም የግጦሹን መሬት አቃጥሏል።"
+        },
+        "hi": {
+          "L": "मैदान के पशु भी तेरे लिए हाँफते हैं, \\q क्योंकि पानी की धाराएँ सूख गई हैं, \\q और आग ने निर्जन प्रदेश की चरागाहों को भस्म कर दिया है।",
+          "B": "जंगली पशु भी तेरे लिए तरसते हैं, \\q क्योंकि पानी के नाले सूख गए हैं, \\q और आग ने निर्जन प्रदेश की चरागाहों को चट कर लिया है।",
+          "R": "जंगली पशु भी तेरी दुहाई दे रहे हैं, \\q क्योंकि नाले सूख गए हैं, \\q और आग ने घास के मैदान जला दिए हैं।"
+        },
+        "ru": {
+          "L": "Даже животные поля тяжело дышат к {{deity_pronoun:тебе|Тебе}}, \\q потому что высохли потоки вод, \\q и огонь пожрал пастбища пустыни.",
+          "B": "Даже дикие звери тоскуют по {{deity_pronoun:тебе|Тебе}}, \\q потому что высохли потоки воды \\q и огонь пожрал пастбища в пустыне.",
+          "R": "Даже дикие звери взывают к {{deity_pronoun:тебе|Тебе}}, \\q потому что высохли ручьи \\q и огонь сжёг пастбища."
+        },
+        "ja": {
+          "L": "野の獣さえも、あなたを慕いあえぐ。 \\q 水の流れが涸れ、 \\q 火が荒野の牧草地を焼き尽くしたからだ。",
+          "B": "野の獣たちも、あなたを慕い求めている。 \\q 水の流れが干上がり、 \\q 火が荒野の牧草地を焼き尽くしたからだ。",
+          "R": "野の動物たちさえも、あなたに向かって叫んでいる。 \\q 川が干上がり、 \\q 火が草原を焼き尽くしたからだ。"
+        },
+        "uk": {
+          "L": "Навіть звірі поля прагнуть {{deity_pronoun:тебе|Тебе}}, \\q бо висохли потоки води, \\q і вогонь пожер пасовиська пустелі.",
+          "B": "Навіть дикі звірі прагнуть {{deity_pronoun:тебе|Тебе}}, \\q бо висохли потоки води, \\q і вогонь пожер пасовиська в пустелі.",
+          "R": "Навіть дикі звірі кличуть до {{deity_pronoun:тебе|Тебе}}, \\q бо потоки висохли, \\q і вогонь спалив пасовиська."
         }
       },
       "decisions": [
@@ -4523,6 +6085,26 @@
           "choice": "the last line in the same words as the second line of verse 19",
           "alternatives": [],
           "reason": "The Hebrew repeats the line word for word, so each level repeats its own wording of 1:19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290010200041"
+          ],
+          "choice": "тяжело дышат к (L); тоскуют по (B)",
+          "alternatives": [
+            "жаждут"
+          ],
+          "reason": "The verb pictures a thirsty animal panting (meaning decision); Literal keeps the picture, Balanced its sense of longing.",
           "uncertain": false,
           "footnote": false
         }

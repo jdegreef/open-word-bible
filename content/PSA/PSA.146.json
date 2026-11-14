@@ -60,6 +60,26 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! ነፍሴ ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኚ!",
           "B": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! ነፍሴ ሆይ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኚ!",
           "R": "{{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ! በሙሉ ሁለንተናዬ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याह}} की स्तुति करो! हे मेरे प्राण, {{divine_name:प्रभु|याहवे}} की स्तुति करो!",
+          "B": "{{divine_name:प्रभु|याह}} की स्तुति करो! हे मेरे प्राण, {{divine_name:प्रभु|याहवे}} की स्तुति करो!",
+          "R": "{{divine_name:प्रभु|याह}} की स्तुति करो! मैं अपने पूरे मन से {{divine_name:प्रभु|याहवे}} की स्तुति करता हूँ।"
+        },
+        "ru": {
+          "L": "Хвалите {{divine_name:ГОСПОДА|Ях}}! Хвали {{divine_name:ГОСПОДА|Яхве}}, душа моя!",
+          "B": "Хвалите {{divine_name:ГОСПОДА|Ях}}! Душа моя, хвали {{divine_name:ГОСПОДА|Яхве}}!",
+          "R": "Хвалите {{divine_name:ГОСПОДА|Ях}}! Всем своим существом я хвалю {{divine_name:ГОСПОДА|Яхве}}."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハ}}を賛美せよ！わたしの魂よ、{{divine_name:主|ヤハウェ}}を賛美せよ！",
+          "B": "{{divine_name:主|ヤハ}}を賛美せよ！わたしの魂よ、{{divine_name:主|ヤハウェ}}を賛美せよ！",
+          "R": "{{divine_name:主|ヤハ}}を賛美しよう！わたしは心から{{divine_name:主|ヤハウェ}}を賛美しよう。"
+        },
+        "uk": {
+          "L": "Хваліть {{divine_name:ГОСПОДА|Яг}}! Хвали {{divine_name:ГОСПОДА|Ягве}}, душе моя!",
+          "B": "Хваліть {{divine_name:ГОСПОДА|Яг}}! Душе моя, хвали {{divine_name:ГОСПОДА|Ягве}}!",
+          "R": "Хваліть {{divine_name:ГОСПОДА|Яг}}! Усім своїм єством я хвалю {{divine_name:ГОСПОДА|Ягве}}."
         }
       },
       "decisions": [
@@ -271,6 +291,130 @@
           "reason": "The psalmist speaks to his own soul (meaning decision m3); \"ነፍስ\" takes the feminine in Amharic, so the command is \"አመስግኚ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460010011",
+            "o191460010021"
+          ],
+          "choice": "{{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "alternatives": [
+            "हल्लेलूयाह"
+          ],
+          "reason": "Hallelu Yah is a command to a group, and the poetry note settles its form: the short name Yah is a divine_name span with प्रभु as the default and याह as the alternative. The same words open and close Psalms 146-150 at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191460010041"
+          ],
+          "choice": "हे मेरे प्राण ... स्तुति करो (तुम)",
+          "alternatives": [
+            "स्तुति कर (तू)"
+          ],
+          "reason": "The psalmist speaks to his own soul with तुम, as in Psalms 42-43 in this translation; तू is kept for address to God. Readable says what calling on one's own soul means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460010011",
+            "o191460010021"
+          ],
+          "choice": "Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "alternatives": [
+            "Аллилуйя!"
+          ],
+          "reason": "Hallelu-yah (m1) is translated as a call to praise, as the English does, with the one wording at every level that opens and closes Psalms 146-150 (m2); the short name Yah takes the divine_name setting with \"Ях\" as the alternative, as the Psalms terms note settles. \"Аллилуйя\" is kept for Revelation 19, where the English keeps the word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460010031",
+            "o191460010041"
+          ],
+          "choice": "Всем своим существом я хвалю",
+          "alternatives": [
+            "Душа моя, хвали"
+          ],
+          "reason": "As in 103:1 in this translation, Readable says what it means to call on one's own soul (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460010011",
+            "o191460010021"
+          ],
+          "choice": "hallelu-yah, one fixed form through Psalms 146-150: \"{{divine_name:主|ヤハ}}を賛美せよ！\" (L, B), \"{{divine_name:主|ヤハ}}を賛美しよう！\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rule (PSA-1, PSA-11): Yah is {{divine_name:主|ヤハ}}, the call 〜せよ (L, B), R 〜しよう since God's people are called; the closing Hallel takes the exclamation form used in 111-113 and 135, the same at the head and foot of every psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460010031",
+            "o191460010041"
+          ],
+          "choice": "halleli nafshi \"わたしの魂よ、…賛美せよ\" (L, B), \"わたしは心から…賛美しよう\" (R)",
+          "alternatives": [],
+          "reason": "Shaped as barkhi nafshi in 103:1 and 104:1 (PSA-11), with the verb hallel 賛美する; R makes it the singer's resolve as the English R does (r-en-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -340,6 +484,26 @@
           "L": "በሕይወቴ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ፤ ገና ሳለሁ ለአምላኬ እዘምራለሁ።",
           "B": "በሕይወቴ ዘመን ሁሉ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ፤ በሕይወት እስካለሁ ድረስ ለአምላኬ እዘምራለሁ።",
           "R": "ዕድሜዬን ሙሉ {{divine_name:እግዚአብሔርን|ያህዌን}} አመሰግናለሁ። በሕይወት እስካለሁ ድረስ ለአምላኬ እዘምራለሁ።"
+        },
+        "hi": {
+          "L": "मैं जीवन भर {{divine_name:प्रभु|याहवे}} की स्तुति करूँगा; जब तक मैं [बना] रहूँ, अपने परमेश्वर का भजन गाऊँगा।",
+          "B": "मैं जीवन भर {{divine_name:प्रभु|याहवे}} की स्तुति करूँगा; जब तक मैं हूँ, अपने परमेश्वर के लिए संगीत बजाऊँगा।",
+          "R": "मैं अपने पूरे जीवन {{divine_name:प्रभु|याहवे}} की स्तुति करूँगा। जब तक मैं जीवित हूँ, अपने परमेश्वर के लिए गाता रहूँगा।"
+        },
+        "ru": {
+          "L": "Я буду хвалить {{divine_name:ГОСПОДА|Яхве}} в моей жизни; я буду играть моему Богу, пока я [есть].",
+          "B": "Всю жизнь я буду хвалить {{divine_name:ГОСПОДА|Яхве}}; пока я жив, я буду играть моему Богу.",
+          "R": "Я буду хвалить {{divine_name:ГОСПОДА|Яхве}} всю свою жизнь. Я буду петь моему Богу, пока я жив."
+        },
+        "ja": {
+          "L": "わたしの生涯の間、わたしは{{divine_name:主|ヤハウェ}}を賛美しよう。わたしがなおある限り、わたしの神にほめ歌を歌おう。",
+          "B": "生きている限り、わたしは{{divine_name:主|ヤハウェ}}を賛美し、この命のある間、わたしの神にほめ歌を歌おう。",
+          "R": "わたしは一生、{{divine_name:主|ヤハウェ}}を賛美しよう。生きている限り、わたしの神のために歌おう。"
+        },
+        "uk": {
+          "L": "Я хвалитиму {{divine_name:ГОСПОДА|Ягве}} в моєму житті; я співатиму хвалу моєму Богові, доки я [ще] є.",
+          "B": "Усе моє життя я хвалитиму {{divine_name:ГОСПОДА|Ягве}}; доки я існую, я гратиму моєму Богові.",
+          "R": "Я хвалитиму {{divine_name:ГОСПОДА|Ягве}} все своє життя. Я співатиму моєму Богові, доки я живий."
         }
       },
       "decisions": [
@@ -405,6 +569,46 @@
           "choice": "enquanto eu [ainda] existir (L); enquanto eu ainda estiver aqui, farei música para o meu Deus (B); enquanto eu viver (R)",
           "alternatives": [],
           "reason": "The vow of 104:33 (m1), in that verse's Portuguese where the words are the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460020011",
+            "o191460020041"
+          ],
+          "choice": "в моей жизни ... пока я [есть] (L); пока я жив (B)",
+          "alternatives": [],
+          "reason": "The line repeats 104:33 (m1) with \"praise\" for \"sing\", so it keeps that verse's wording in this translation and changes only the verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460020011",
+            "o191460020031",
+            "o191460020061"
+          ],
+          "choice": "As 104:33, with 'ahalelah \"賛美しよう\" for 104:33's 'ashirah \"歌おう\"",
+          "alternatives": [],
+          "reason": "The verse repeats 104:33 (m1) except for the first verb; the 104:33 Japanese is kept per level.",
           "uncertain": false,
           "footnote": false
         }
@@ -476,6 +680,26 @@
           "L": "በመኳንንት፣ ማዳን በሌለው በሰው ልጅ አትታመኑ።",
           "B": "በገዥዎች፣ ማዳን በማይችሉ ሟች ሰዎች አትመኩ።",
           "R": "በኃያላን መሪዎች ወይም በሌላ በማንኛውም ሰው አትታመኑ። ማንም ሰው በእውነት ማንንም ሊያድን አይችልም።"
+        },
+        "hi": {
+          "L": "प्रधानों पर भरोसा न रखो, {{gender:किसी मनुष्य|मनुष्य के पुत्र}} पर, जिसमें उद्धार [नहीं है]।",
+          "B": "शासकों पर, नश्वर मनुष्यों पर भरोसा न रखो, जिनमें छुड़ाने की शक्ति नहीं।",
+          "R": "शक्तिशाली अगुवों पर या किसी भी दूसरे मनुष्य पर भरोसा न रखो। कोई भी मनुष्य सचमुच किसी को बचा नहीं सकता।"
+        },
+        "ru": {
+          "L": "Не надейтесь на знатных, на {{gender:человека|сына человеческого}}, в котором нет спасения.",
+          "B": "Не полагайтесь на правителей, на простых смертных, которые не в силах спасти.",
+          "R": "Не доверяйте могущественным вождям и вообще никому из людей. Ни один человек не может по-настоящему никого спасти."
+        },
+        "ja": {
+          "L": "あなたがたは、高貴な者たちに信頼するな、救いをもたない人の子に。",
+          "B": "支配者たちに信頼してはならない。救う力のない、ただの人間に。",
+          "R": "力のある指導者も、ほかのどんな人間も、信頼してはいけない。だれも、本当に人を救うことはできない。"
+        },
+        "uk": {
+          "L": "Не покладайтеся на вельмож, на {{gender:людину|сина людського}}, у якій немає порятунку.",
+          "B": "Не покладайтеся на правителів, на звичайних смертних, які не мають сили врятувати.",
+          "R": "Не довіряйте могутнім провідникам чи будь-якій іншій людині. Жодна людина не може насправді когось урятувати."
         }
       },
       "decisions": [
@@ -652,6 +876,85 @@
           "reason": "As docs/amharic-style.md 7b: the English offers \"a human being / a son of man\" and \"their / his\"; the Amharic words are already inclusive, so the setting has nothing to change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460030042",
+            "o191460030051"
+          ],
+          "choice": "{{gender:किसी मनुष्य|मनुष्य के पुत्र}}",
+          "alternatives": [],
+          "reason": "The gender setting mirrors the English span: \"a human being\" by default, \"son of man\" as the alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460030042",
+            "o191460030051"
+          ],
+          "choice": "{{gender:человека|сына человеческого}}",
+          "alternatives": [],
+          "reason": "\"A son of humankind\" is a mere human (m2); Literal shows the inclusive \"человека\" by default with the traditional \"сына человеческого\" as the alternative, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191460030011",
+            "o191460030021"
+          ],
+          "choice": "'al-tivtechu \"信頼するな\" (L), \"信頼してはならない\" (B), \"信頼してはいけない\" (R)",
+          "alternatives": [
+            "\"頼ってはならない\""
+          ],
+          "reason": "Psalter rule for the psalmist's prohibitions to people (PSA-1); batach 信頼する at every level. ben-'adam \"人の子\" (L), \"ただの人間\" (B) with no gender span (English L has one).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460030061",
+            "o191460030071",
+            "o191460030081"
+          ],
+          "choice": "she'ein lo teshu'ah \"救いをもたない\" (L), \"救う力のない\" (B), \"だれも…救うことはできない\" (R)",
+          "alternatives": [],
+          "reason": "Read as one who cannot save (m3, uncertain).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -723,6 +1026,26 @@
           "L": "እስትንፋሱ ይወጣል፤ ወደ መሬቱ ይመለሳል፤ በዚያም ቀን ዕቅዶቹ ይጠፋሉ።",
           "B": "እስትንፋሳቸው ይለያቸዋል፤ ወደ መጡበትም አፈር ይመለሳሉ፤ በዚያው ቀን ያቀዱት ሁሉ ይጠፋል።",
           "R": "የመጨረሻ እስትንፋሳቸውን ሲተነፍሱ ሥጋቸው ወደ አፈር ይመለሳል። በዚያ ቀን ዕቅዳቸው ሁሉ ያከትማል።"
+        },
+        "hi": {
+          "L": "उसकी साँस निकल जाती है, वह अपनी मिट्टी में लौट जाता है; उसी दिन उसकी योजनाएँ नष्ट हो जाती हैं।",
+          "B": "उनकी साँस निकल जाती है और वे उसी मिट्टी में लौट जाते हैं जिससे वे आए थे; उसी दिन उनकी सारी योजनाएँ मिट जाती हैं।",
+          "R": "जब वे अंतिम साँस लेते हैं, तब उनके शरीर फिर धूल में मिल जाते हैं। उसी दिन उनकी सारी योजनाएँ समाप्त हो जाती हैं।"
+        },
+        "ru": {
+          "L": "Выходит дыхание его, он возвращается в свою землю; в тот день гибнут его замыслы.",
+          "B": "Дыхание покидает их, и они возвращаются в землю, из которой вышли; в тот же день пропадает всё, что они задумали.",
+          "R": "Когда они делают последний вздох, их тела возвращаются в прах. В тот день все их планы приходят к концу."
+        },
+        "ja": {
+          "L": "その息が出て行くと、その人は自分の土に帰る。その日に、その人の計画は滅びる。",
+          "B": "息が出て行くと、人は自分が造られた土に帰り、その日に、その計画はすべて消えうせる。",
+          "R": "人が最後の息をすると、その体はちりに帰る。その日に、その人の計画はみな終わってしまう。"
+        },
+        "uk": {
+          "L": "{{gender:Їхній|Його}} подих виходить, {{gender:вони повертаються|він повертається}} до своєї землі; того дня {{gender:їхні|його}} задуми гинуть.",
+          "B": "Подих покидає їх, і вони повертаються в землю, з якої вийшли; того ж дня зникає все, що вони задумали.",
+          "R": "Коли вони видихають востаннє, їхні тіла повертаються в порох. Того дня всім їхнім планам приходить кінець."
         }
       },
       "decisions": [
@@ -831,6 +1154,62 @@
           "reason": "The English Literal offers \"their|his\" for the mortal of verse 3; in Portuguese \"seu\" and \"ele\" refer back to \"ser humano\" or \"filho de homem\" alike and already mean anyone, so there is no second wording to offer.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460040021",
+            "o191460040031"
+          ],
+          "choice": "no gender spans; उसकी, वह",
+          "alternatives": [],
+          "reason": "The English has gender spans on the pronouns and verb (their/his, they return/he returns); the Hindi forms उसकी, वह and लौट जाता है speak of one person without marking a man rather than a woman any more than the noun मनुष्य does, and a plural would read as several people, so Literal keeps the singular without spans. Balanced and Readable use the plural, as the English does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460040011",
+            "o191460040042"
+          ],
+          "choice": "его, он (L), no span",
+          "alternatives": [],
+          "reason": "The English Literal has gender spans on the pronouns; in Russian they refer back to \"человек\", which includes everyone, so \"его\" and \"он\" need no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460040021",
+            "o191460040031"
+          ],
+          "choice": "\"その人\" (L), \"人\" (B, R), no gender spans",
+          "alternatives": [],
+          "reason": "The English L has his/their spans; Japanese その人 / 人 is already inclusive (style §7a). Also 146:5.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -901,6 +1280,26 @@
           "L": "ምስጉን ነው የያዕቆብ አምላክ ረዳቱ የሆነለት፣ ተስፋውንም በአምላኩ {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ያደረገ [ሰው]!",
           "B": "የያዕቆብ አምላክ የሚረዳቸው፣ ተስፋቸውንም በአምላካቸው {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ያደረጉ እንዴት የተባረኩ ናቸው!",
           "R": "የያዕቆብ አምላክ ረዳታቸው የሆነላቸው ሰዎች በእውነት ደስተኞች ናቸው። ተስፋቸውን በአምላካቸው {{divine_name:በእግዚአብሔር|በያህዌ}} ላይ ያደርጋሉ።"
+        },
+        "hi": {
+          "L": "कितना धन्य [है वह] जिसकी सहायता याकूब के परमेश्वर [हैं], जिसकी आशा {{divine_name:प्रभु|याहवे}} पर, अपने परमेश्वर पर [लगी है]!",
+          "B": "कितने धन्य हैं वे जिनकी सहायता के लिए याकूब के परमेश्वर हैं, जिनकी आशा {{divine_name:प्रभु|याहवे}} अपने परमेश्वर पर टिकी है!",
+          "R": "उन लोगों का जीवन सचमुच अच्छा है जिनके सहायक याकूब के परमेश्वर हैं। वे {{divine_name:प्रभु|याहवे}} अपने परमेश्वर पर आशा रखते हैं।"
+        },
+        "ru": {
+          "L": "Блажен [тот], чья помощь — Бог Иакова, чья надежда — на {{divine_name:ГОСПОДА|Яхве}}, его Бога!",
+          "B": "Блаженны те, кому помогает Бог Иакова, чья надежда — на {{divine_name:ГОСПОДА|Яхве}}, их Бога!",
+          "R": "Счастливы люди, чей помощник — Бог Иакова. Они надеются на {{divine_name:ГОСПОДА|Яхве}}, своего Бога."
+        },
+        "ja": {
+          "L": "幸いなことよ、ヤコブの神を自分の助けとし、その望みを自分の神{{divine_name:主|ヤハウェ}}に置く者は。",
+          "B": "なんと幸いなことか、ヤコブの神を助けとし、自分の神{{divine_name:主|ヤハウェ}}に望みを置く人たちは！",
+          "R": "ヤコブの神に助けていただく人たちは、本当に幸せだ。彼らは、自分たちの神{{divine_name:主|ヤハウェ}}に望みを置いている。"
+        },
+        "uk": {
+          "L": "Блаженний [той], чия допомога — Бог Якова, чия надія — на {{divine_name:ГОСПОДА|Ягве}}, свого Бога!",
+          "B": "Блаженні ті, кому допомагає Бог Якова, чия надія спочиває на {{divine_name:ГОСПОДІ|Ягве}}, їхньому Богові!",
+          "R": "Справді добре живеться людям, чий помічник — Бог Якова. Вони покладають надію на {{divine_name:ГОСПОДА|Ягве}}, свого Бога."
         }
       },
       "decisions": [
@@ -1029,6 +1428,78 @@
           "reason": "El and Elohim with a possessor or a genitive are \"አምላክ\", the Amharic for \"the God of someone\"; \"እግዚአብሔር\" is kept for God named without one (150:1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460050082"
+          ],
+          "choice": "अपने परमेश्वर (no gender span)",
+          "alternatives": [],
+          "reason": "The English span is on the pronoun (their/his God); the Hindi reflexive अपने does not mark gender, so there is nothing for the setting to change. Ashre is धन्य at Literal and Balanced and a life that truly goes well at Readable, as at 1:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460050011"
+          ],
+          "choice": "Блажен (L); Блаженны (B); Счастливы (R)",
+          "alternatives": [],
+          "reason": "Ashrei is \"блажен\" at Literal and Balanced and \"счастливы\" at Readable, as settled for the Psalms, in the number each level uses: Literal keeps the Hebrew's one person, which in Russian (\"тот\", \"его\") includes everyone without a setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460050011"
+          ],
+          "choice": "'ashrei \"幸いなことよ\" (L), \"なんと幸いなことか\" (B), \"本当に幸せだ\" (R)",
+          "alternatives": [],
+          "reason": "Psalter forms (PSA-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "No gender span on \"свого Бога\"",
+          "alternatives": [
+            "a span with \"їхнього\" and \"його\""
+          ],
+          "reason": "The Ukrainian reflexive \"свого\" serves for one person or many, so the English choice between \"their\" and \"his\" does not arise.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1104,6 +1575,26 @@
           "L": "ሰማይንና ምድርን፣ ባሕርንና በእነርሱ ውስጥ ያለውን ሁሉ የሠራ፣ ለዘላለም እውነትን የሚጠብቅ፣",
           "B": "ሰማይንና ምድርን፣ ባሕርንና በውስጣቸው ያለውን ሁሉ የሠራ፣ ለዘላለም ታማኝ ሆኖ የሚኖር፣",
           "R": "እርሱ ሰማይን፣ ምድርን፣ ባሕርንና በውስጣቸው ያለውን ሁሉ ሠራ። ለዘላለም ታማኝ ነው።"
+        },
+        "hi": {
+          "L": "जिन्होंने आकाश और पृथ्वी, समुद्र और जो कुछ उनमें [है], बनाया, जो सदा सच्चाई बनाए रखते हैं,",
+          "B": "जिन्होंने आकाश, पृथ्वी और समुद्र को उनकी सारी वस्तुओं समेत बनाया, जो सदा विश्वासयोग्य बने रहते हैं,",
+          "R": "उन्होंने आकाश, पृथ्वी और समुद्र को, और जो कुछ उनमें भरा है, सब को बनाया। वे सदा विश्वासयोग्य बने रहते हैं।"
+        },
+        "ru": {
+          "L": "сотворившего небо и землю, море и всё, что в них, хранящего верность вовек,",
+          "B": "который сотворил небо и землю, и море со всем, что в них, который остаётся верным вовек,",
+          "R": "Он сотворил небо, землю, море и всё, что в них. Он верен всегда."
+        },
+        "ja": {
+          "L": "[その方は]天と地と海と、その中にあるすべてのものを造られた方、とこしえにまことを守っておられる方。",
+          "B": "その方は、天と地と海と、そこにあるすべてのものを造られ、いつまでもまことを守り続けておられる。",
+          "R": "その方は、空と地と海と、その中にあるすべてのものを造られた。その方は、いつまでも真実な方だ。"
+        },
+        "uk": {
+          "L": "що створив небо й землю, море і все, що в них, що зберігає вірність навіки,",
+          "B": "що створив небо, землю і море з усім, що в них, що залишається вірним навіки,",
+          "R": "Він створив небо, землю й море і все, що їх наповнює. Він залишається вірним навіки."
         }
       },
       "decisions": [
@@ -1241,6 +1732,90 @@
           "reason": "The words echo Exodus 20:11 (meaning decision m1), whose Hebrew verb is the same (ʿasah, \"made\"), so its Amharic is kept; Acts 4:24 and 14:15 take up the phrase in Greek and read \"የፈጠረ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460060011",
+            "o191460060111"
+          ],
+          "choice": "honorific relative clauses (जिन्होंने, जो ... रखते हैं); सच्चाई (L), विश्वासयोग्य (B, R)",
+          "alternatives": [],
+          "reason": "Verses 6-9 describe the LORD in the third person, so Hindi uses the honorific plural. God's 'emet is सच्चाई at Literal and विश्वासयोग्यता at Balanced and Readable, as the poetry note settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460060011",
+            "o191460060021",
+            "o191460060032"
+          ],
+          "choice": "сотворил небо и землю, море и всё, что в них",
+          "alternatives": [],
+          "reason": "The words are those of Exodus 20:11 and of the prayer in Acts 4:24 (m1), so they follow Acts 4:24 in this translation; Literal puts them in the genitive to agree with \"Бога\" in verse 5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460060011",
+            "o191460060021",
+            "o191460060031",
+            "o191460060051",
+            "o191460060071"
+          ],
+          "choice": "\"天と地と海と、その中にあるすべてのものを造られた\" close to ACT 4:24 L",
+          "alternatives": [],
+          "reason": "The line is taken up in Acts 4:24 and 14:15 (m1); the Japanese of Acts 4:24 is followed where the Hebrew agrees.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191460060101",
+            "o191460060111"
+          ],
+          "choice": "Each verse of 146:6-7 ends with 。, restarting with その方 or a new clause; hashomer 'emet \"まことを守っておられる\" (L, B), \"真実な方\" (R)",
+          "alternatives": [],
+          "reason": "The English runs the participles on from verse 5 (m3); in Japanese each verse is made its own sentence. 'emet まこと (PSA-1, m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1309,6 +1884,26 @@
           "L": "ለተገፉት ፍርድን የሚያደርግ፣ ለተራቡት እንጀራን የሚሰጥ። {{divine_name:እግዚአብሔር|ያህዌ}} እስረኞችን ይፈታል፤",
           "B": "ለተገፉት ፍትሕን የሚያመጣ፣ ለተራቡትም እንጀራ የሚሰጥ። {{divine_name:እግዚአብሔር|ያህዌ}} እስረኞችን ነጻ ይለቃል፤",
           "R": "ግፍ ለደረሰባቸው ሰዎች ትክክለኛውን ፍትሕ ያደርግላቸዋል። ለተራቡ ሰዎች ምግብ ይሰጣል። {{divine_name:እግዚአብሔር|ያህዌ}} እስረኞችን ነጻ ያወጣል።"
+        },
+        "hi": {
+          "L": "जो पिसे हुओं का न्याय करते हैं, जो भूखों को रोटी देते हैं। {{divine_name:प्रभु|याहवे}} बंदियों को छुड़ाते हैं;",
+          "B": "जो सताए हुओं को न्याय दिलाते हैं और भूखों को रोटी देते हैं। {{divine_name:प्रभु|याहवे}} बंदियों को मुक्त करते हैं;",
+          "R": "जिनके साथ अन्याय होता है, उनके लिए वे सब ठीक करते हैं। वे भूखे लोगों को भोजन देते हैं। {{divine_name:प्रभु|याहवे}} बंदियों को छुड़ाते हैं।"
+        },
+        "ru": {
+          "L": "совершающего суд для угнетённых, дающего хлеб голодным. {{divine_name:ГОСПОДЬ|Яхве}} освобождает узников;",
+          "B": "который восстанавливает справедливость для угнетённых и даёт хлеб голодным. {{divine_name:ГОСПОДЬ|Яхве}} освобождает узников;",
+          "R": "Он заступается за тех, с кем поступают несправедливо. Он даёт еду голодным. {{divine_name:ГОСПОДЬ|Яхве}} освобождает узников."
+        },
+        "ja": {
+          "L": "虐げられた者たちのために公正を行い、飢えた者たちにパンを与える方。{{divine_name:主|ヤハウェ}}は捕らわれた者たちを解き放ってくださる。",
+          "B": "虐げられた人たちのために公正を行い、飢えた人たちにパンを与えてくださる。{{divine_name:主|ヤハウェ}}は、捕らわれた人たちを解き放ってくださる。",
+          "R": "その方は、不当な扱いを受けている人たちのために、正しく裁いてくださる。おなかをすかせた人たちに、食べ物を与えてくださる。{{divine_name:主|ヤハウェ}}は、捕らわれている人たちを自由にしてくださる。"
+        },
+        "uk": {
+          "L": "що чинить правосуддя пригнобленим, що дає хліб голодним. {{divine_name:ГОСПОДЬ|Ягве}} звільняє вʼязнів;",
+          "B": "що дає правосуддя пригнобленим і хліб голодним. {{divine_name:ГОСПОДЬ|Ягве}} визволяє вʼязнів;",
+          "R": "Він виправляє кривду людям, з якими поводяться несправедливо. Він дає їжу голодним людям. {{divine_name:ГОСПОДЬ|Ягве}} звільняє вʼязнів."
         }
       },
       "decisions": [
@@ -1351,6 +1946,26 @@
           "choice": "sets free: unties, releases",
           "alternatives": [],
           "reason": "The verb (hittir) is to loosen bonds, used of prisoners set free (105:20).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460070021",
+            "o191460070081"
+          ],
+          "choice": "'oseh mishpat \"公正を行い\" (L, B), \"正しく裁いてくださる\" (R); mattir \"解き放ってくださる\" (L, B), \"自由にしてくださる\" (R)",
+          "alternatives": [],
+          "reason": "mishpat as justice (PSA-1); \"解き放ってくださる\" avoids the passive-looking \"解き放たれる\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1419,6 +2034,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የዕውሮችን [ዓይን] ይከፍታል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የጎበጡትን ያቀናል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ጻድቃንን ይወዳል፤",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ዕውሮች እንዲያዩ ያደርጋል፤ {{divine_name:እግዚአብሔር|ያህዌ}} የጎበጡትን ቀና ያደርጋል፤ {{divine_name:እግዚአብሔር|ያህዌ}} ጻድቃንን ይወዳል፤",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ዕውሮች እንዲያዩ ይረዳል። {{divine_name:እግዚአብሔር|ያህዌ}} በችግር የተጫኑትን ቀና ያደርጋል። {{divine_name:እግዚአብሔር|ያህዌ}} ትክክል የሆነውን የሚያደርጉ ሰዎችን ይወዳል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} अंधों [की आँखें] खोलते हैं; {{divine_name:प्रभु|याहवे}} झुके हुओं को उठाते हैं; {{divine_name:प्रभु|याहवे}} धर्मियों से प्रेम करते हैं;",
+          "B": "{{divine_name:प्रभु|याहवे}} अंधों को दृष्टि देते हैं; {{divine_name:प्रभु|याहवे}} झुके हुओं को सीधा खड़ा करते हैं; {{divine_name:प्रभु|याहवे}} धर्मी लोगों से प्रेम करते हैं;",
+          "R": "{{divine_name:प्रभु|याहवे}} अंधे लोगों को देखने में सहायता करते हैं। {{divine_name:प्रभु|याहवे}} बोझ से दबे लोगों को ऊपर उठाते हैं। {{divine_name:प्रभु|याहवे}} उन लोगों से प्रेम करते हैं जो सही काम करते हैं।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} открывает [глаза] слепым; {{divine_name:ГОСПОДЬ|Яхве}} поднимает согбенных; {{divine_name:ГОСПОДЬ|Яхве}} любит праведных;",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} возвращает зрение слепым; {{divine_name:ГОСПОДЬ|Яхве}} поднимает согнувшихся; {{divine_name:ГОСПОДЬ|Яхве}} любит праведных;",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} помогает слепым видеть. {{divine_name:ГОСПОДЬ|Яхве}} поднимает тех, кого придавила беда. {{divine_name:ГОСПОДЬ|Яхве}} любит тех, кто поступает правильно."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は目の見えない者たち[の目]を開き、{{divine_name:主|ヤハウェ}}はかがんでいる者たちを起こし、{{divine_name:主|ヤハウェ}}は正しい者たちを愛しておられる。",
+          "B": "{{divine_name:主|ヤハウェ}}は目の見えない人たちを見えるようにし、{{divine_name:主|ヤハウェ}}は身をかがめている人たちを起こし、{{divine_name:主|ヤハウェ}}は正しい人たちを愛しておられる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、目の見えない人たちが見えるようにしてくださる。{{divine_name:主|ヤハウェ}}は、重荷に押しつぶされている人たちを起こしてくださる。{{divine_name:主|ヤハウェ}}は、正しいことをする人たちを愛しておられる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} відкриває [очі] сліпим; {{divine_name:ГОСПОДЬ|Ягве}} підіймає згорблених; {{divine_name:ГОСПОДЬ|Ягве}} любить праведних;",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} дає сліпим бачити; {{divine_name:ГОСПОДЬ|Ягве}} випрямляє зігнутих; {{divine_name:ГОСПОДЬ|Ягве}} любить людей, які праведні;",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} допомагає сліпим бачити. {{divine_name:ГОСПОДЬ|Ягве}} підіймає тих, кого пригнітила біда. {{divine_name:ГОСПОДЬ|Ягве}} любить людей, які чинять правильно."
         }
       },
       "decisions": [
@@ -1486,6 +2121,27 @@
           "choice": "\"የጎበጡትን ያቀናል\" (L), \"ቀና ያደርጋል\" (B, R)",
           "alternatives": [],
           "reason": "Worded as 145:14, where the same words stand (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191460080011",
+            "o191460080041",
+            "o191460080071"
+          ],
+          "choice": "The three lines each begin with {{divine_name:主|ヤハウェ}} as the Hebrew does; L and B join them in one sentence with the respect form on the last verb (\"愛しておられる\")",
+          "alternatives": [],
+          "reason": "The repeated name opens five lines (146:7-9, m2 of 146:7); \"愛しておられる\" avoids the passive-looking \"愛される\" (PSA-10).",
           "uncertain": false,
           "footnote": false
         }
@@ -1557,6 +2213,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} መጻተኞችን ይጠብቃል፤ አባት የሌለውንና መበለቲቱን ይደግፋል፤ የክፉዎችን መንገድ ግን ያጣምማል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በአገሩ የሚኖሩትን መጻተኞች ይጠብቃል፤ አባት የሌላቸውንና መበለቶችን ይደግፋል፤ የክፉዎችን መንገድ ግን ይገለብጣል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ስደተኞችን ይጠብቃል። አባት የሌላቸውን ልጆችና ባል የሌላቸውን ሴቶች ይንከባከባል። የክፉ ሰዎችን ዕቅድ ግን ያፈርሳል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} परदेशियों की रक्षा करते हैं; अनाथ और विधवा को वे सँभालते हैं, पर दुष्टों के मार्ग को वे टेढ़ा कर देते हैं।",
+          "B": "{{divine_name:प्रभु|याहवे}} देश में रहनेवाले परदेशियों की रक्षा करते हैं; वे अनाथ और विधवा को सहारा देते हैं, पर दुष्टों के मार्ग को उलट देते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} परदेशियों की रक्षा करते हैं। वे अनाथों और विधवाओं की देखभाल करते हैं। पर वे दुष्ट लोगों की योजनाओं को बिगाड़ देते हैं।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} охраняет пришельцев; сироту и вдову {{deity_pronoun:он|Он}} поддерживает, а путь нечестивых {{deity_pronoun:он|Он}} искривляет.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} защищает чужеземцев, живущих в стране; {{deity_pronoun:он|Он}} поддерживает сироту и вдову, но путь нечестивых {{deity_pronoun:он|Он}} опрокидывает.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} защищает чужеземцев. Он заботится о сиротах и вдовах. Но планы злых людей {{deity_pronoun:он|Он}} разрушает."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は寄留者たちを守り、みなしごとやもめを支えてくださる。しかし、悪しき者たちの道は、曲げてしまわれる。",
+          "B": "{{divine_name:主|ヤハウェ}}はよそ者を守り、父のいない子とやもめを支えてくださるが、悪しき者たちの道はくつがえされる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、外国から来た人たちを守ってくださる。父のいない子どもや、夫を亡くした女の人の世話をしてくださる。しかし、悪い人たちの計画は、だめにしてしまわれる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} оберігає приходьків; сироту і вдову {{deity_pronoun:він|Він}} підтримує, а дорогу нечестивих {{deity_pronoun:він|Він}} викривлює.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} захищає приходьків, що живуть у краю; {{deity_pronoun:він|Він}} підтримує сироту і вдову, але дорогу нечестивих {{deity_pronoun:він|Він}} перевертає.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захищає чужинців. Він дбає про сиріт і вдів. Але {{deity_pronoun:він|Він}} руйнує плани злих людей."
         }
       },
       "decisions": [
@@ -1665,6 +2341,84 @@
           "reason": "As the Pentateuch terms list for ger and Deuteronomy 10:18 on main, where the law names the same three (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191460090071"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalm speaks of God with the honorific plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460090041"
+          ],
+          "choice": "परदेशी",
+          "alternatives": [],
+          "reason": "The ger, the foreigner living in the land, is परदेशी, as the Pentateuch note settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460090041"
+          ],
+          "choice": "пришельцы (L); чужеземцы (B, R)",
+          "alternatives": [],
+          "reason": "The ger, the foreigner living in the land (m1), takes the forms of the Pentateuch note: \"пришелец\" at Literal and \"чужеземец\" at Readable; Balanced says \"чужеземцы, живущие в стране\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460090041",
+            "o191460090051",
+            "o191460090061"
+          ],
+          "choice": "gerim \"寄留者たち\" (L), \"よそ者\" (B), \"外国から来た人たち\" (R); yatom \"みなしご\" (L), \"父のいない子\" (B, R); 'almanah \"やもめ\" (L, B), \"夫を亡くした女の人\" (R)",
+          "alternatives": [],
+          "reason": "Psalter words (PSA-1, PSA-4): the people with no one to protect them (m1). \"支えてくださる\" / \"曲げてしまわれる\" avoid the passive-looking 支えられる / 曲げられる.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1735,6 +2489,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ይነግሣል፤ ጽዮን ሆይ፣ አምላክሽ ለትውልድና ለትውልድ [ይነግሣል]። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ይነግሣል፤ ጽዮን ሆይ፣ አምላክሽ ከትውልድ እስከ ትውልድ ይገዛል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ንጉሥ ይሆናል! የጽዮን ሕዝብ ሆይ፣ አምላካችሁ ለዘመናት ሁሉ ይገዛል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सदा राज्य करेंगे, हे सिय्योन, तुम्हारे परमेश्वर, पीढ़ी से पीढ़ी तक। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "B": "{{divine_name:प्रभु|याहवे}} सदा राजा होकर राज्य करेंगे; हे सिय्योन, तुम्हारे परमेश्वर पीढ़ी से पीढ़ी तक राज्य करेंगे। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "R": "{{divine_name:प्रभु|याहवे}} सदा राजा रहेंगे! हे सिय्योन के लोगो, तुम्हारे परमेश्वर युग-युग तक राज्य करेंगे। {{divine_name:प्रभु|याह}} की स्तुति करो!"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} будет царствовать вовек, твой Бог, Сион, в род и род. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} будет царствовать вовек; Сион, твой Бог будет царствовать из поколения в поколение. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} будет Царём вечно! Жители Сиона, ваш Бог будет править во все времена. Хвалите {{divine_name:ГОСПОДА|Ях}}!"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はとこしえに王として治められる。シオンよ、おまえの神は代々に[治められる]。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "B": "{{divine_name:主|ヤハウェ}}は、とこしえに王として治められる。シオンよ、おまえの神は、代々にわたって治められる。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "R": "{{divine_name:主|ヤハウェ}}は、いつまでも王だ！シオンの人々よ、おまえたちの神は、いつの時代も治めておられる。{{divine_name:主|ヤハ}}を賛美しよう！"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} царюватиме навіки, твій Бог, Сіоне, з роду в рід. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} пануватиме як Цар навіки; Сіоне, твій Бог царюватиме від покоління до покоління. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} буде Царем навіки! Народе Сіону, твій Бог пануватиме на всі прийдешні часи. Хваліть {{divine_name:ГОСПОДА|Яг}}!"
         }
       },
       "decisions": [
@@ -1824,6 +2598,83 @@
           "choice": "\"እግዚአብሔር ለዘላለም ይነግሣል\" as Exodus 15:18",
           "alternatives": [],
           "reason": "The line takes up the end of the song at the sea (meaning decision m1); the Amharic of Exodus 15:18 on main is kept, without \"እስከ ዘላለም\", which this verse's Hebrew lacks. Zion is addressed with the feminine \"አምላክሽ\"; Readable addresses its people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191460100051"
+          ],
+          "choice": "हे सिय्योन, तुम्हारे",
+          "alternatives": [],
+          "reason": "Zion is addressed with तुम, as Jerusalem in 137:5; तू is kept for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460100051"
+          ],
+          "choice": "Жители Сиона, ваш Бог",
+          "alternatives": [
+            "Сион, твой Бог"
+          ],
+          "reason": "Readable says that the city's people are addressed (m2), as the English does, and so speaks to them with \"вы\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460100041",
+            "o191460100051"
+          ],
+          "choice": "'elohayikh Tsiyyon \"シオンよ、おまえの神\" (L, B), \"シオンの人々よ、おまえたちの神\" (R)",
+          "alternatives": [],
+          "reason": "Zion addressed おまえ, with あなた kept for God (PSA-9, PSA-14); yimlokh in the words of 93:1 (\"王として治められる\"), echoing Exodus 15:18 (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191460100081",
+            "o191460100091"
+          ],
+          "choice": "hallelu-yah, one fixed form through Psalms 146-150: \"{{divine_name:主|ヤハ}}を賛美せよ！\" (L, B), \"{{divine_name:主|ヤハ}}を賛美しよう！\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rule (PSA-1, PSA-11): Yah is {{divine_name:主|ヤハ}}, the call 〜せよ (L, B), R 〜しよう since God's people are called; the closing Hallel takes the exclamation form used in 111-113 and 135, the same at the head and foot of every psalm.",
           "uncertain": false,
           "footnote": false
         }

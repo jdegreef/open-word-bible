@@ -68,6 +68,26 @@
           "L": "የዳዊት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በድንኳንህ እንግዳ ሆኖ ማን ይቀመጣል? በቅድስናህም ተራራ ላይ ማን ይኖራል?",
           "B": "የዳዊት መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በድንኳንህ እንግድነት የሚቀበለው ማን ነው? በተቀደሰው ተራራህ ላይ መኖሪያ የሚያደርግ ማን ነው?",
           "R": "ዳዊት የዘመረው መዝሙር። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በድንኳንህ ከአንተ ጋር እንዲቀመጥ የሚፈቀድለት ማን ነው? በተቀደሰው ኮረብታህ ላይ መኖር የሚችል ማን ነው?"
+        },
+        "hi": {
+          "L": "दाऊद का भजन। हे {{divine_name:प्रभु|याहवे}}, तेरे तंबू में कौन परदेशी होकर रह सकता है? तेरी पवित्रता के पर्वत पर कौन बस सकता है?",
+          "B": "दाऊद का भजन। हे {{divine_name:प्रभु|याहवे}}, तेरे तंबू में कौन अतिथि बनकर ठहर सकता है? तेरे पवित्र पर्वत पर कौन अपना घर बना सकता है?",
+          "R": "दाऊद का गीत। हे {{divine_name:प्रभु|याहवे}}, तेरे तंबू में तेरे साथ रहने के लिए किसका स्वागत होता है? तेरी पवित्र पहाड़ी पर कौन रह सकता है?"
+        },
+        "ru": {
+          "L": "Псалом Давида. {{divine_name:ГОСПОДИ|Яхве}}, кто может жить пришельцем в {{deity_pronoun:твоём|Твоём}} шатре? Кто может поселиться на горе {{deity_pronoun:твоей|Твоей}} святости?",
+          "B": "Псалом Давида. {{divine_name:ГОСПОДИ|Яхве}}, кто может гостить в {{deity_pronoun:твоём|Твоём}} шатре? Кто может обрести дом на {{deity_pronoun:твоей|Твоей}} святой горе?",
+          "R": "Песнь Давида. {{divine_name:ГОСПОДИ|Яхве}}, кто может быть гостем у {{deity_pronoun:тебя|Тебя}} в {{deity_pronoun:твоём|Твоём}} шатре? Кто может жить на {{deity_pronoun:твоём|Твоём}} святом холме?"
+        },
+        "ja": {
+          "L": "ダビデの賛歌。{{divine_name:主|ヤハウェ}}よ、だれが、あなたの天幕に寄留することができるのか？だれが、あなたの聖なる山に住むことができるのか？",
+          "B": "ダビデの賛歌。{{divine_name:主|ヤハウェ}}よ、だれが、客としてあなたの天幕にとどまることができるのか？だれが、あなたの聖なる山に住まいを得ることができるのか？",
+          "R": "ダビデの歌。{{divine_name:主|ヤハウェ}}よ、だれが、あなたのテントに迎えられて、あなたと共にいることができるのか？だれが、あなたの聖なる丘に住むことができるのか？"
+        },
+        "uk": {
+          "L": "Псалом Давида. {{divine_name:ГОСПОДИ|Ягве}}, хто може гостювати в {{deity_pronoun:твоєму|Твоєму}} наметі? Хто може жити на горі {{deity_pronoun:твоєї|Твоєї}} святості?",
+          "B": "Псалом Давида. {{divine_name:ГОСПОДИ|Ягве}}, хто може бути гостем у {{deity_pronoun:твоєму|Твоєму}} наметі? Хто може оселитися на {{deity_pronoun:твоїй|Твоїй}} святій горі?",
+          "R": "Пісня Давида. {{divine_name:ГОСПОДИ|Ягве}}, кого {{deity_pronoun:ти|Ти}} приймаєш у {{deity_pronoun:твоєму|Твоєму}} наметі? Хто може жити на {{deity_pronoun:твоєму|Твоєму}} святому пагорбі?"
         }
       },
       "decisions": [
@@ -196,6 +216,109 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190150010062",
+            "o190150010063"
+          ],
+          "choice": "\"तेरे\" to God; no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalmist speaks to God with \"तू\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190150010051"
+          ],
+          "choice": "\"परदेशी होकर रह\" (L); \"अतिथि बनकर ठहर\" (B)",
+          "alternatives": [],
+          "reason": "The verb is the one used of a sojourner, a ger, who lives under another's protection (m2); Literal uses the Pentateuch's \"परदेशी\", and Balanced says that the worshipper stays as God's guest.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190150010051"
+          ],
+          "choice": "\"жить пришельцем\" (L); \"гостить\" (B)",
+          "alternatives": [
+            "\"пребывать\""
+          ],
+          "reason": "The verb gur is to live as a guest in a place not one's own (m2); Literal ties it to \"пришелец\", the word for the ger in this translation, Balanced says \"stay as a guest\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190150010011",
+            "o190150010031"
+          ],
+          "choice": "Psalms 15-22 keep the Psalter's conventions (notes PSA-1): plain style at every level, God addressed as \"あなた\" with light respect forms, mizmor ledavid \"ダビデの賛歌\" (L, B), \"ダビデの歌\" (R); a title that shares its verse opens the verse",
+          "alternatives": [],
+          "reason": "One voice for the whole Psalter; the title here is part of verse 1 (m1), so it opens the record and the question follows at once.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190150010051",
+            "o190150010061",
+            "o190150010062",
+            "o190150010063"
+          ],
+          "choice": "gur \"寄留する\" (L), \"客としてとどまる\" (B), \"迎えられて…共にいる\" (R); ohel \"天幕\" (L, B), \"テント\" (R)",
+          "alternatives": [
+            "宿る",
+            "幕屋"
+          ],
+          "reason": "The verb is the stay of a guest or resident alien (m2); 天幕 is the tent word of the Japanese OT at L and B, テント at R, as Job.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -264,6 +387,26 @@
           "L": "ያለ ነቀፋ የሚመላለስ፣ ጽድቅንም የሚያደርግ፣ በልቡም እውነትን የሚናገር፣",
           "B": "ያለ ነቀፋ የሚኖር፣ ትክክል የሆነውን የሚያደርግ፣ ከልቡም እውነትን የሚናገር፣",
           "R": "መልካም ሕይወት የሚኖርና ትክክል የሆነውን የሚያደርግ ሰው ነው። ያ ሰው እውነትን ይናገራል፤ የሚናገረውንም ከልቡ ያምንበታል።"
+        },
+        "hi": {
+          "L": "[वह] जो खराई से चलता है और धार्मिकता के काम करता है और अपने हृदय में सत्य बोलता है,",
+          "B": "वह जो निर्दोष चाल चलता है, जो सही है वही करता है, और मन से सच बोलता है,",
+          "R": "वह व्यक्ति जो अच्छा जीवन जीता है और सही काम करता है। वह सच बोलता है और जो कहता है, वही उसके मन में होता है।"
+        },
+        "ru": {
+          "L": "[Тот, кто] ходит непорочно, и творит праведность, и говорит истину в сердце своём,",
+          "B": "Тот, кто живёт без упрёка, поступает праведно и говорит правду, идущую от сердца,",
+          "R": "Это человек, который живёт честно и поступает правильно. Такой человек говорит правду и думает то, что говорит."
+        },
+        "ja": {
+          "L": "[それは]無垢に歩み、義を行い、その心でまことを語る[者]、",
+          "B": "非の打ちどころなく歩み、正しいことを行い、心からまことを語る人、",
+          "R": "それは、良い生き方をして、正しいことをする人だ。その人は本当のことを言い、心からそう思っている。"
+        },
+        "uk": {
+          "L": "[Той, хто] ходить бездоганно, і чинить праведність, і говорить істину у своєму серці,",
+          "B": "Той, хто живе бездоганно, чинить те, що правильно, і говорить правду від щирого серця,",
+          "R": "Це людина, яка живе добрим життям і чинить те, що правильно. Вона говорить правду й думає те, що каже."
         }
       },
       "decisions": [
@@ -432,6 +575,81 @@
           "reason": "The generic masculine forms of the Amharic verb (\"የሚመላለስ\", \"ልቡ\") already speak of anyone, man or woman, so the setting has nothing to change.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190150020072",
+            "o190150020073"
+          ],
+          "choice": "\"अपने\", with no gender span",
+          "alternatives": [],
+          "reason": "The English has a gender span on \"their/his\". The Hindi \"अपने\" already says it of anyone, man or woman, so there is nothing for the setting to change. The same holds through the psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190150020073"
+          ],
+          "choice": "\"своём\", no gender span (here and in verses 3 and 5)",
+          "alternatives": [],
+          "reason": "The English Literal puts \"their\" under the gender setting with \"his\" as the alternative; the Russian reflexive \"свой\" has no gender, so the line already speaks of anyone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190150020021",
+            "o190150020041",
+            "o190150020061"
+          ],
+          "choice": "tamim \"無垢に\" (L), \"非の打ちどころなく\" (B); tsedeq of conduct \"義\" (L), \"正しいこと\" (B, R); 'emet \"まこと\" (L, B), \"本当のこと\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter's key words; \"正しさを行う\" would be unnatural, so Balanced says 正しいことを行う.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190150020071",
+            "o190150020072",
+            "o190150020073"
+          ],
+          "choice": "\"その心\" with no gender span, where the English Literal has a their / his span; likewise through Psalm 15",
+          "alternatives": [],
+          "reason": "Japanese needs no pronoun of either gender here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -507,6 +725,26 @@
           "L": "በምላሱ የማይዞር፣ በባልንጀራው ላይ ክፉ የማያደርግ፣ በቅርብ ባለውም ላይ ስድብን የማያነሣ፣",
           "B": "ሐሜትን እያዛመተ የማይዞር፣ በባልንጀራው ላይ ጉዳት የማያደርስ፣ በቅርቡ ያሉትንም የማይሰድብ፣",
           "R": "ያ ሰው ስለ ሌሎች አይዋሽም፤ ባልንጀራውን አይጎዳም፤ በአጠገቡ ስላሉ ሰዎችም ክፉ ቃል አይናገርም።"
+        },
+        "hi": {
+          "L": "[जो] अपनी जीभ से [निन्दा करता] नहीं फिरता, अपने पड़ोसी की बुराई नहीं करता, और अपने निकट के [व्यक्ति] पर नामधराई नहीं उठाता,",
+          "B": "जो इधर-उधर निन्दा नहीं फैलाता, पड़ोसी की हानि नहीं करता, और अपने आस-पास के लोगों का अपमान नहीं करता,",
+          "R": "वह दूसरों के बारे में झूठी बातें नहीं फैलाता, पड़ोसी को चोट नहीं पहुँचाता, और आस-पास के लोगों के बारे में बुरी बातें नहीं कहता।"
+        },
+        "ru": {
+          "L": "[кто] не ходит [с клеветой] на языке своём, не делает зла ближнему своему и не возводит поношения на близкого своего,",
+          "B": "кто не разносит клевету, не причиняет вреда ближнему и не осыпает оскорблениями тех, кто рядом,",
+          "R": "Такой человек не лжёт о других, не обижает ближнего и не говорит злых слов о людях, которые живут рядом."
+        },
+        "ja": {
+          "L": "その舌で[中傷して]歩き回らず、その隣人に悪を行わず、その近しい者に対してそしりを持ち出さない[者]、",
+          "B": "歩き回って人を中傷せず、隣人に害を加えず、身近な人に侮辱を浴びせない人、",
+          "R": "その人は、ほかの人についてうそを言いふらさず、隣の人を傷つけず、身近な人たちにひどいことを言わない。"
+        },
+        "uk": {
+          "L": "[хто] не ходить зі своїм язиком, не чинить зла своєму ближньому і не зводить ганьби на свого близького,",
+          "B": "хто не розносить наклепів, не кривдить ближнього й не засипає образами тих, хто поруч,",
+          "R": "Така людина не говорить неправди про інших, не кривдить ближнього й не каже жорстоких слів про тих, хто поруч."
         }
       },
       "decisions": [
@@ -634,6 +872,26 @@
           "L": "በዓይኖቹ የተጣለው የተናቀ የሆነ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩትን ግን የሚያከብር፣ ለመጉዳት ምሎ የማይለውጥ፣",
           "B": "የተጣለውን በንቀት የሚመለከት፣ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚፈሩትን ሁሉ ግን የሚያከብር፣ ቢጎዳውም እንኳ የማለውን የሚጠብቅ፣ ከቃሉም ፈጽሞ የማይመለስ፣",
           "R": "ያ ሰው እግዚአብሔር የተዋቸውን ይንቃል፤ {{divine_name:እግዚአብሔርን|ያህዌን}} የሚያከብሩትን ሰዎች ግን ያከብራል። ቃል ሲገባም ብዙ ዋጋ ቢያስከፍለውም እንኳ ቃሉን ይጠብቃል።"
+        },
+        "hi": {
+          "L": "जिसकी दृष्टि में ठुकराया हुआ तुच्छ [है], पर जो {{divine_name:प्रभु|याहवे}} का भय माननेवालों का आदर करता है; जो हानि [उठाने] की शपथ खाता है और नहीं बदलता।",
+          "B": "जो ठुकराए हुए को तुच्छ जानता है, पर {{divine_name:प्रभु|याहवे}} का भय माननेवाले सब लोगों का आदर करता है, और अपनी हानि सहकर भी अपनी शपथ पर टिका रहता है, कभी उससे नहीं मुकरता।",
+          "R": "ऐसा व्यक्ति उन लोगों को तुच्छ समझता है जिन्हें परमेश्वर ने ठुकरा दिया है, पर {{divine_name:प्रभु|याहवे}} का आदर करनेवालों का सम्मान करता है। जब वह कोई वचन देता है, तो उसे निभाता है, चाहे उसे कितना भी नुक़सान हो।"
+        },
+        "ru": {
+          "L": "в чьих глазах презрен отверженный, но кто чтит боящихся {{divine_name:ГОСПОДА|Яхве}}; кто клянётся во вред [себе] и не изменяет.",
+          "B": "кто с презрением смотрит на отверженного, но оказывает честь всем, кто боится {{divine_name:ГОСПОДА|Яхве}}, кто держит клятву, даже если она дорого ему стоит, и не отступает от неё,",
+          "R": "Такой человек презирает тех, кого отверг Бог, но уважает людей, которые чтут {{divine_name:ГОСПОДА|Яхве}}. Если он дал обещание, то держит его, даже когда это стоит ему очень дорого."
+        },
+        "ja": {
+          "L": "その目には退けられた者が卑しめられ、{{divine_name:主|ヤハウェ}}を恐れる者たちを敬い、害となることを誓っても、それを変えない[者]、",
+          "B": "退けられた者を見下げるが、{{divine_name:主|ヤハウェ}}を畏れる人々を重んじ、自分が損をしても誓ったことを守り、決して取り消さない人、",
+          "R": "そういう人は、神に退けられた人を軽く見るが、{{divine_name:主|ヤハウェ}}をおそれ敬う人たちを大切にする。約束をしたら、たとえ大きな損になっても、それを守る。"
+        },
+        "uk": {
+          "L": "в чиїх очах відкинутий — зневажений, але хто шанує тих, що бояться {{divine_name:ГОСПОДА|Ягве}}; хто присягає на свою шкоду й не змінює.",
+          "B": "хто дивиться з презирством на відкинутого, але виявляє пошану всім, хто боїться {{divine_name:ГОСПОДА|Ягве}}, і хто дотримує присяги, навіть собі на шкоду, ніколи не відступаючи від неї.",
+          "R": "Така людина зневажає тих, кого відкинув Бог, але поважає людей, які шанують {{divine_name:ГОСПОДА|Ягве}}. Коли вона дає обіцянку, то дотримує її, навіть якщо це дорого їй коштує."
         }
       },
       "decisions": [
@@ -732,6 +990,67 @@
           "reason": "Terms note (the fear of the LORD): awe that honors God, not terror; Readable says it in plain words. This holds through Psalms 15-25.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o190150040091",
+            "o190150040092"
+          ],
+          "choice": "\"हानि [उठाने] की शपथ\"",
+          "alternatives": [
+            "\"हानि करने की शपथ\""
+          ],
+          "reason": "The oath is one that turns out to hurt the one who swore it (m2); Literal supplies \"उठाने\" in brackets so that the line does not read as an oath to harm someone else.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190150040081",
+            "o190150040091",
+            "o190150040092"
+          ],
+          "choice": "Literal and Balanced end 15:2-4 with \"[者]、\" / \"人、\" so the list of answers runs as one description to 15:5",
+          "alternatives": [],
+          "reason": "Japanese puts the noun after its relative clauses; each verse keeps its own clauses and the noun is repeated at the end of each, as the English repeats \"who\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190150040051"
+          ],
+          "choice": "\"ті, що бояться ГОСПОДА\" (L, B), \"ті, хто шанує ГОСПОДА\" (R) for those who fear the LORD, through the book, with the noun as the shared terms note gives it",
+          "alternatives": [
+            "\"богобоязливі\""
+          ],
+          "reason": "The fear the Psalms mean is reverent awe; Literal and Balanced keep the verb fear, and Readable says honour, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -807,6 +1126,26 @@
           "L": "ገንዘቡን በአራጣ የማይሰጥ፣ በንጹሑም ላይ ጉቦ የማይቀበል። ይህን የሚያደርግ ለዘላለም አይናወጥም።",
           "B": "ከወለድ ትርፍ ለማግኘት ገንዘብ የማያበድር፣ ንጹሑንም ለመጉዳት ጉቦ የማይቀበል ነው። እንዲህ የሚኖር ሁሉ ለዘላለም ጸንቶ ይቆማል።",
           "R": "ያ ሰው ገንዘብ ሲያበድር ወለድ አይጠይቅም፤ ምንም ያላጠፉትን ሰዎች ለመጉዳት ገንዘብ አይቀበልም። እንዲህ የሚኖር ሰው ሁልጊዜ ተጠብቆ በሰላም ይኖራል።"
+        },
+        "hi": {
+          "L": "जो अपना धन ब्याज पर नहीं देता, और निर्दोष के विरुद्ध घूस नहीं लेता। जो ये [काम] करता है, वह सदा तक नहीं डिगेगा।",
+          "B": "जो मुनाफ़ा कमाने के लिए ब्याज पर उधार नहीं देता, और निर्दोष को हानि पहुँचाने के लिए घूस नहीं लेता। जो ऐसा जीवन जीता है, वह सदा अटल रहेगा।",
+          "R": "वह उधार देते समय ब्याज नहीं लेता, और निर्दोष लोगों को हानि पहुँचाने के लिए पैसे नहीं लेता। जो इस तरह जीता है, वह हमेशा सुरक्षित और स्थिर रहेगा।"
+        },
+        "ru": {
+          "L": "кто денег своих не даёт в рост и взятки против невинного не берёт. Делающий это не будет поколеблен никогда.",
+          "B": "кто не даёт денег взаймы, чтобы нажиться на процентах, и не возьмёт взятки, чтобы погубить невинного. Кто так живёт, будет стоять твёрдо вовеки.",
+          "R": "Такой человек не берёт процентов, когда даёт деньги в долг, и не берёт денег за то, чтобы навредить невиновным. Кто так живёт, всегда будет в безопасности."
+        },
+        "ja": {
+          "L": "その金を利息を取って貸さず、罪のない者に対して賄賂を受け取らない[者]。これらのことを行う者は、とこしえに揺るがない。",
+          "B": "利息で利益を得ようとして金を貸さず、罪のない人を陥れるために賄賂を受け取らない人。このように生きる人は、とこしえに堅く立つ。",
+          "R": "その人は、お金を貸しても利息を取らず、何も悪いことをしていない人を傷つけるために、お金を受け取ったりしない。このように生きる人は、いつまでも安全で、揺るがない。"
+        },
+        "uk": {
+          "L": "хто не дає своїх грошей під відсотки і не бере хабара проти невинного. [Той, хто] робить це, не похитнеться повіки.",
+          "B": "хто не позичає гроші, щоб наживатися на відсотках, і не візьме хабара, щоб зашкодити невинному. Хто так живе, той стоятиме твердо повіки.",
+          "R": "Така людина не бере відсотків, коли позичає гроші, і не бере грошей, щоб кривдити тих, хто нічого поганого не зробив. Хто так живе, той завжди буде в безпеці."
         }
       },
       "decisions": [
@@ -869,6 +1208,27 @@
           "choice": "their, with \"his\" as the alternative",
           "alternatives": [],
           "reason": "As in verse 2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190150050131"
+          ],
+          "choice": "mot (niphal) \"揺るがない\" (L, R), \"堅く立つ\" (B), for the Psalter (16:8, 21:8)",
+          "alternatives": [
+            "動かされない"
+          ],
+          "reason": "The image is of something that stands firm and is not toppled (m3).",
           "uncertain": false,
           "footnote": false
         }

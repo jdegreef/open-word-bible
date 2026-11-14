@@ -70,6 +70,26 @@
           "L": "የዳዊት ምስጋና። አምላኬ ንጉሥ ሆይ፣ ከፍ ከፍ አደርግሃለሁ፤ ስምህንም ለዘላለም እስከ ዘላለም እባርካለሁ።",
           "B": "የምስጋና መዝሙር። የዳዊት። አምላኬ ንጉሥ ሆይ፣ በምስጋና ከፍ ከፍ አደርግሃለሁ፤ ስምህንም ለዘላለም እስከ ዘላለም እባርካለሁ።",
           "R": "የምስጋና መዝሙር። ዳዊት የዘመረው። አምላኬ ሆይ፣ አንተ ንጉሥ ነህ! ምን ያህል ታላቅ እንደ ሆንክ እናገራለሁ። ስምህን ለዘላለም እስከ ዘላለም ሁልጊዜ አመሰግናለሁ።"
+        },
+        "hi": {
+          "L": "दाऊद की स्तुति। हे मेरे परमेश्वर, हे राजा, मैं तुझे सराहूँगा, और सदा-सर्वदा तेरे नाम को धन्य कहूँगा।",
+          "B": "स्तुति का गीत। दाऊद का। हे मेरे परमेश्वर, हे राजा, मैं स्तुति में तुझे ऊँचा उठाऊँगा और सदा-सर्वदा तेरे नाम को धन्य कहूँगा।",
+          "R": "स्तुति का गीत। दाऊद का लिखा हुआ। हे मेरे परमेश्वर, तू ही राजा है! मैं बताऊँगा कि तू कितना महान है। मैं सदा-सर्वदा तेरे नाम की स्तुति करता रहूँगा।"
+        },
+        "ru": {
+          "L": "Хвала Давида. Я буду превозносить {{deity_pronoun:тебя|Тебя}}, Боже мой, Царь, и благословлять {{deity_pronoun:твоё|Твоё}} имя во веки веков.",
+          "B": "Хвалебная песнь. Давида. Боже мой, Царь, я буду возвеличивать {{deity_pronoun:тебя|Тебя}} в хвале и благословлять {{deity_pronoun:твоё|Твоё}} имя во веки веков.",
+          "R": "Хвалебная песня. Написал Давид. Боже мой, {{deity_pronoun:ты|Ты}} — Царь! Я буду рассказывать, как {{deity_pronoun:ты|Ты}} велик. Я всегда буду хвалить {{deity_pronoun:твоё|Твоё}} имя, во веки веков."
+        },
+        "ja": {
+          "L": "ダビデの賛美。わたしの神、王よ、わたしはあなたをあがめ、とこしえに、いつまでも、あなたの名をほめたたえる。",
+          "B": "賛美。ダビデによる。わたしの神、王よ、わたしはあなたを高くあがめ、とこしえに、いつまでも、あなたの名をほめたたえる。",
+          "R": "賛美の歌。ダビデによる。わたしの神よ、あなたこそ王だ！わたしは、あなたがどれほど偉大な方かを語ろう。これからもずっと、いつまでも、あなたの名をほめたたえよう。"
+        },
+        "uk": {
+          "L": "Хвала Давида. Я звеличуватиму {{deity_pronoun:тебе|Тебе}}, мій Боже, Царю, і благословлятиму {{deity_pronoun:твоє|Твоє}} імʼя навіки-віків.",
+          "B": "Пісня хвали. Давидова. Мій Боже, Царю, я підноситиму {{deity_pronoun:тебе|Тебе}} у хвалі й благословлятиму {{deity_pronoun:твоє|Твоє}} імʼя на віки вічні.",
+          "R": "Пісня хвали. Її склав Давид. Мій Боже, {{deity_pronoun:ти|Ти}} — Цар! Я розповідатиму, який {{deity_pronoun:ти|Ти}} великий. Я завжди хвалитиму {{deity_pronoun:твоє|Твоє}} імʼя, на віки вічні."
         }
       },
       "decisions": [
@@ -334,6 +354,144 @@
           "reason": "The verses begin with the Hebrew letters in order (meaning decision m3); Amharic cannot keep that pattern without changing what the lines say, so the meaning is translated and the acrostic is left to the note.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191450010041"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; the psalm speaks to God with तू and of him with the honorific plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191450010031"
+          ],
+          "choice": "the alphabet pattern is not reproduced",
+          "alternatives": [],
+          "reason": "The Hebrew verses begin with the letters of the alphabet in order (m3). As in Psalms 9-10 and 25 in this translation, and as the English does at every level, the Hindi follows the sense of each verse rather than the Hebrew letters; the meaning decision explains the form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011",
+            "o191450010062"
+          ],
+          "choice": "स्तुति (L), स्तुति का गीत (B, R); धन्य कहना",
+          "alternatives": [],
+          "reason": "Tehillah is स्तुति; Balanced and Readable say it is a song, as the English does. Blessing God is धन्य कहना, as the poetry note settles; Readable says स्तुति करना where the English says \"praise\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010031"
+          ],
+          "choice": "no alphabetic acrostic",
+          "alternatives": [
+            "lines beginning with the letters of the Russian alphabet"
+          ],
+          "reason": "The Hebrew verses begin with the letters of the alphabet in order (m3). As the English does at every level, the Russian translates each line for its sense and does not try to reproduce the pattern, which would bend the wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011"
+          ],
+          "choice": "Хвала (L); Хвалебная песнь (B); Хвалебная песня (R)",
+          "alternatives": [],
+          "reason": "Tehillah is a song of praise (m2): Literal keeps the noun \"Хвала\", Balanced and Readable say it is a song, with the Psalms' \"песнь\" (B) and \"песня\" (R) for shir.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011",
+            "o191450010021"
+          ],
+          "choice": "tehillah ledavid \"ダビデの賛美\" (L), \"賛美。ダビデによる。\" (B), \"賛美の歌。ダビデによる。\" (R)",
+          "alternatives": [],
+          "reason": "Psalter title rule for tehillah (PSA-1: 賛美 L, B; 賛美の歌 R), split as each English level splits the title (r-en-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010031",
+            "o191450010061"
+          ],
+          "choice": "Acrostic not imitated; 'aromimkha \"あがめ\" (L), \"高くあがめ\" (B); va'avarakhah \"ほめたたえる\" at every level",
+          "alternatives": [],
+          "reason": "Psalter conventions: the alphabet of 145 is not imitated (m3, as PSA-3); barekh with God as object is ほめたたえる (m4); le'olam va'ed \"とこしえに、いつまでも\" (L, B) through the psalm.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -404,6 +562,26 @@
           "L": "በየቀኑ ሁሉ እባርክሃለሁ፤ ስምህንም ለዘላለም እስከ ዘላለም አመሰግናለሁ።",
           "B": "ዕለት ዕለት እባርክሃለሁ፤ ስምህንም ለዘላለም እስከ ዘላለም አወድሳለሁ።",
           "R": "በየዕለቱ አመሰግንሃለሁ። ስምህን ለዘላለም እስከ ዘላለም ማመስገኔን እቀጥላለሁ።"
+        },
+        "hi": {
+          "L": "हर दिन मैं तुझे धन्य कहूँगा, और सदा-सर्वदा तेरे नाम की स्तुति करूँगा।",
+          "B": "दिन-प्रतिदिन मैं तुझे धन्य कहूँगा और सदा-सर्वदा तेरे नाम की स्तुति करूँगा।",
+          "R": "मैं हर एक दिन तेरी स्तुति करूँगा। मैं सदा-सर्वदा तेरे नाम की स्तुति करता रहूँगा।"
+        },
+        "ru": {
+          "L": "Каждый день я буду благословлять {{deity_pronoun:тебя|Тебя}} и хвалить {{deity_pronoun:твоё|Твоё}} имя во веки веков.",
+          "B": "День за днём я буду благословлять {{deity_pronoun:тебя|Тебя}} и восхвалять {{deity_pronoun:твоё|Твоё}} имя во веки веков.",
+          "R": "Я буду хвалить {{deity_pronoun:тебя|Тебя}} каждый день. Я не перестану хвалить {{deity_pronoun:твоё|Твоё}} имя во веки веков."
+        },
+        "ja": {
+          "L": "日ごとに、わたしはあなたをほめたたえ、とこしえに、いつまでも、あなたの名を賛美する。",
+          "B": "来る日も来る日も、わたしはあなたをほめたたえ、とこしえに、いつまでも、あなたの名を賛美する。",
+          "R": "わたしは毎日、あなたをほめたたえる。いつまでも、あなたの名を賛美し続ける。"
+        },
+        "uk": {
+          "L": "Кожного дня я благословлятиму {{deity_pronoun:тебе|Тебе}} і хвалитиму {{deity_pronoun:твоє|Твоє}} імʼя навіки-віків.",
+          "B": "День у день я благословлятиму {{deity_pronoun:тебе|Тебе}} і віддаватиму хвалу {{deity_pronoun:твоєму|Твоєму}} імені на віки вічні.",
+          "R": "Я хвалитиму {{deity_pronoun:тебе|Тебе}} кожнісінький день. Я не перестану хвалити {{deity_pronoun:твоє|Твоє}} імʼя на віки вічні."
         }
       },
       "decisions": [
@@ -437,6 +615,23 @@
             "bless"
           ],
           "reason": "Readable uses \"praise\" for both verbs, since blessing God means praising him (145:1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450020021"
+          ],
+          "choice": "'avarakhekka \"ほめたたえる\" at R too, where the English R says praise",
+          "alternatives": [],
+          "reason": "The Psalter keeps barekh (ほめたたえる) and hallel (賛美する) apart at every level (PSA-1).",
           "uncertain": false,
           "footnote": false
         }
@@ -507,6 +702,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ታላቅ [ነው]፤ እጅግም ሊመሰገን የሚገባው [ነው]፤ ለታላቅነቱም ፍለጋ የለውም።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ታላቅ ነው፤ ምስጋና ሁሉ ይገባዋል፤ የታላቅነቱን ጥልቀት መርምሮ የሚደርስበት የለም።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ታላቅ ነው! ምስጋናችን ሁሉ ይገባዋል። ታላቅነቱ ምን ያህል እንደ ሆነ ማንም ፈጽሞ ሊደርስበት አይችልም።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} महान और अति स्तुति के योग्य [हैं], और उनकी महानता की कोई थाह [नहीं]।",
+          "B": "{{divine_name:प्रभु|याहवे}} महान हैं, सबसे ऊँची स्तुति के योग्य, और उनकी महानता की गहराई की थाह कोई नहीं ले सकता।",
+          "R": "{{divine_name:प्रभु|याहवे}} महान हैं! वे हमारी सारी स्तुति के योग्य हैं। कोई कभी नहीं जान सकता कि वे कितने महान हैं।"
+        },
+        "ru": {
+          "L": "Велик {{divine_name:ГОСПОДЬ|Яхве}} и весьма достоин хвалы, и величию {{deity_pronoun:его|Его}} нет исследования.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} велик, достоин самой высокой хвалы, и глубину {{deity_pronoun:его|Его}} величия невозможно исследовать.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} велик! Он достоин всей нашей хвалы. Никто никогда не сможет понять до конца, как {{deity_pronoun:он|Он}} велик."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は大いなる方、大いに賛美されるべき方。その偉大さは究めることができない。",
+          "B": "{{divine_name:主|ヤハウェ}}は偉大な方、大いに賛美されるにふさわしい方。その偉大さの深みを、探り尽くすことはできない。",
+          "R": "{{divine_name:主|ヤハウェ}}は偉大な方だ！わたしたちのすべての賛美を受けるにふさわしい。その方がどれほど偉大か、だれにも知り尽くすことはできない。"
+        },
+        "uk": {
+          "L": "Великий {{divine_name:ГОСПОДЬ|Ягве}} і гідний найвищої хвали, і {{deity_pronoun:його|Його}} величі немає дослідження.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} великий, гідний найвищої хвали, і глибини {{deity_pronoun:його|Його}} величі не дослідити.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} великий! Він гідний усієї нашої хвали. Ніхто ніколи не знайде меж того, який {{deity_pronoun:він|Він}} великий."
         }
       },
       "decisions": [
@@ -603,6 +818,27 @@
           "reason": "The same line stands in 48:2 (meaning decision m1); its Amharic on main is kept at each level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450030031",
+            "o191450030061",
+            "o191450030071"
+          ],
+          "choice": "umehullal me'od \"大いに賛美されるべき方\" (L), \"…にふさわしい方\" (B, R); 'ein cheqer \"究めることができない\" (L), \"探り尽くすことはできない\" (B), \"知り尽くすことはできない\" (R)",
+          "alternatives": [],
+          "reason": "Deserving to be praised highly (m1); 'no searching' is that it can never be fully explored (m2). The passive 賛美される here is a true passive (God is praised), not a respect form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -670,6 +906,26 @@
           "L": "ትውልድ ለትውልድ ሥራዎችህን ያወድሳል፤ ብርቱ ሥራዎችህንም ይናገራሉ።",
           "B": "እያንዳንዱ ትውልድ ሥራዎችህን ለሚቀጥለው ትውልድ ያወድሳል፤ ብርቱ ሥራዎችህንም ያውጃል።",
           "R": "ወላጆች ያደረግሃቸውን ነገሮች ለልጆቻቸው ይነግራሉ። ስለ ኃያል ሥራዎችህ ይናገራሉ።"
+        },
+        "hi": {
+          "L": "पीढ़ी से पीढ़ी तेरे कामों की सराहना करेगी, और वे तेरे पराक्रम के कामों का बखान करेंगे।",
+          "B": "हर पीढ़ी अपने बाद की पीढ़ी के सामने तेरे कामों की स्तुति करेगी और तेरे पराक्रम के कामों का प्रचार करेगी।",
+          "R": "माता-पिता अपने बच्चों को उन कामों के बारे में बताएँगे जो तूने किए हैं। वे तेरे सामर्थ्य के कामों के बारे में बताएँगे।"
+        },
+        "ru": {
+          "L": "Род роду будет восхвалять {{deity_pronoun:твои|Твои}} дела, и о {{deity_pronoun:твоих|Твоих}} могучих деяниях будут возвещать.",
+          "B": "Каждое поколение будет восхвалять {{deity_pronoun:твои|Твои}} дела перед следующим и возвещать о {{deity_pronoun:твоих|Твоих}} могучих деяниях.",
+          "R": "Родители будут рассказывать детям о том, что {{deity_pronoun:ты|Ты}} сделал. Они будут рассказывать о {{deity_pronoun:твоих|Твоих}} великих делах."
+        },
+        "ja": {
+          "L": "代から代へと、[人々は]あなたのみわざをたたえ、あなたの力あるわざを告げる。",
+          "B": "世代から世代へと、人々はあなたのみわざをたたえ、あなたの力あるわざを語り伝える。",
+          "R": "親は子どもたちに、あなたがなさったことを話して、たたえる。あなたの力あるわざを語り伝える。"
+        },
+        "uk": {
+          "L": "Рід родові вихвалятиме {{deity_pronoun:твої|Твої}} діла, і {{deity_pronoun:твої|Твої}} могутні вчинки вони звіщатимуть.",
+          "B": "Кожне покоління вихвалятиме {{deity_pronoun:твої|Твої}} діла перед наступним і звіщатиме {{deity_pronoun:твої|Твої}} могутні вчинки.",
+          "R": "Батьки розповідатимуть своїм дітям про те, що {{deity_pronoun:ти|Ти}} зробив. Вони розповідатимуть про {{deity_pronoun:твої|Твої}} могутні діла."
         }
       },
       "decisions": [
@@ -722,6 +978,26 @@
           ],
           "reason": "Readable makes the passing on from one generation to the next concrete: older people telling younger ones.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450040031",
+            "o191450040051"
+          ],
+          "choice": "yeshabbach \"たたえ\"; gevurotekha \"力あるわざ\"",
+          "alternatives": [],
+          "reason": "shibbach is たたえる, kept apart from hallel and barekh (PSA-7); R follows the English R's parents and children (r-en-1).",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -789,6 +1065,26 @@
           "L": "የግርማህን ክብር ውበት፣ የድንቅ ሥራዎችህንም ነገር አሰላስላለሁ።",
           "B": "ግርማህን፣ ክብሩንና ውበቱን፣ የድንቅ ሥራዎችህንም ታሪክ አሰላስላለሁ።",
           "R": "ምን ያህል ክቡርና ግርማዊ እንደ ሆንክ አስባለሁ። ያደረግሃቸውን አስደናቂ ነገሮች አስባለሁ።"
+        },
+        "hi": {
+          "L": "तेरे प्रताप की महिमा का वैभव, और तेरे आश्चर्यकर्मों की बातें, मैं उन पर ध्यान करूँगा।",
+          "B": "मैं तेरे प्रताप पर, उसकी महिमा और वैभव पर, और तेरे आश्चर्यकर्मों के वृत्तांत पर मनन करूँगा।",
+          "R": "मैं इस बारे में सोचूँगा कि तू कितना महिमामय और प्रतापी है। मैं उन अद्भुत कामों के बारे में सोचूँगा जो तूने किए हैं।"
+        },
+        "ru": {
+          "L": "О великолепии славы {{deity_pronoun:твоего|Твоего}} величия и о делах {{deity_pronoun:твоих|Твоих}} чудес я буду размышлять.",
+          "B": "Я буду размышлять о {{deity_pronoun:твоём|Твоём}} величии, его славе и великолепии, и о рассказах о {{deity_pronoun:твоих|Твоих}} чудесах.",
+          "R": "Я буду думать о том, как {{deity_pronoun:ты|Ты}} славен и велик. Я буду думать об удивительных делах, которые {{deity_pronoun:ты|Ты}} совершил."
+        },
+        "ja": {
+          "L": "あなたの威光の栄光の輝きと、あなたの奇しいみわざの事柄を、わたしは思いめぐらす。",
+          "B": "あなたの威光の栄光と輝きを、また、あなたの不思議なみわざの物語を、わたしは思いめぐらす。",
+          "R": "わたしは、あなたがどれほど栄光に満ち、威厳のある方かを、よく考える。あなたがなさった驚くべきことを、よく考える。"
+        },
+        "uk": {
+          "L": "Пишноту слави {{deity_pronoun:твоєї|Твоєї}} величності і справи {{deity_pronoun:твоїх|Твоїх}} див я розважатиму.",
+          "B": "Я роздумуватиму про {{deity_pronoun:твою|Твою}} величність, її славу й пишноту, і про розповідь про {{deity_pronoun:твої|Твої}} дива.",
+          "R": "Я думатиму про те, який {{deity_pronoun:ти|Ти}} славний і величний. Я думатиму про дивовижні речі, які {{deity_pronoun:ти|Ти}} зробив."
         }
       },
       "decisions": [
@@ -855,6 +1151,26 @@
             "they will speak (the ancient Greek translation)"
           ],
           "reason": "The Hebrew text has \"I will meditate\". The ancient Greek translation has \"they will speak\" in the first half and \"they will tell\" in the second, as in verses 6 and 11. The renderings follow the Hebrew text.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450050051",
+            "o191450050061"
+          ],
+          "choice": "divrei nifle'otekha \"奇しいみわざの事柄\" (L), \"不思議なみわざの物語\" (B), \"驚くべきこと\" (R); 'asichah \"思いめぐらす\" (L, B), \"よく考える\" (R)",
+          "alternatives": [],
+          "reason": "nifle'ot as 26:7 and siach as Psalm 119 (PSA-3, PSA-13); the 'matters' are the works and the words that tell them (m2, uncertain); the Hebrew text 'I will meditate' is kept (m4, uncertain).",
           "uncertain": true,
           "footnote": false
         }
@@ -924,6 +1240,26 @@
           "L": "የአስፈሪ ሥራዎችህንም ብርታት ይናገራሉ፤ ታላቅነትህንም እኔ እተርከዋለሁ።",
           "B": "ሰዎች ስለ አስፈሪ ሥራዎችህ ኃይል ይናገራሉ፤ እኔም ስለ ታላቅነትህ እናገራለሁ።",
           "R": "ሰዎች ስላደረግሃቸው ኃይለኛና አስፈሪ ነገሮች ያወራሉ፤ እኔም ምን ያህል ታላቅ እንደ ሆንክ እናገራለሁ።"
+        },
+        "hi": {
+          "L": "और लोग तेरे भयानक [कामों] के सामर्थ्य की चर्चा करेंगे, और तेरी महानता, मैं उसका वर्णन करूँगा।",
+          "B": "लोग तेरे भय जगानेवाले कामों के सामर्थ्य की चर्चा करेंगे, और मैं तेरी महानता का वर्णन करूँगा।",
+          "R": "लोग उन सामर्थी और डरा देनेवाले कामों के बारे में बात करेंगे जो तूने किए हैं, और मैं बताऊँगा कि तू कितना महान है।"
+        },
+        "ru": {
+          "L": "И о силе {{deity_pronoun:твоих|Твоих}} грозных [дел] будут говорить, и {{deity_pronoun:твоё|Твоё}} величие — я буду пересказывать его.",
+          "B": "Люди будут говорить о силе {{deity_pronoun:твоих|Твоих}} грозных дел, а я буду рассказывать о {{deity_pronoun:твоём|Твоём}} величии.",
+          "R": "Люди будут говорить о могучих и страшных делах, которые {{deity_pronoun:ты|Ты}} совершил, а я буду рассказывать, как {{deity_pronoun:ты|Ты}} велик."
+        },
+        "ja": {
+          "L": "そして[人々は]、あなたの恐るべきわざの力を語り、わたしは、あなたの偉大さを語り告げる。",
+          "B": "人々は、あなたの畏るべきみわざの力を語り、わたしは、あなたの偉大さを語り伝える。",
+          "R": "人々は、あなたがなさった力強く、おそれるべきことについて話し、わたしは、あなたがどれほど偉大な方かを話す。"
+        },
+        "uk": {
+          "L": "І про силу {{deity_pronoun:твоїх|Твоїх}} страшних [діл] вони говоритимуть, і {{deity_pronoun:твою|Твою}} велич — я розповідатиму про неї.",
+          "B": "Люди говоритимуть про силу {{deity_pronoun:твоїх|Твоїх}} грізних діл, а я розповідатиму про {{deity_pronoun:твою|Твою}} велич.",
+          "R": "Люди говоритимуть про могутні й грізні речі, які {{deity_pronoun:ти|Ти}} зробив, а я розповідатиму, який {{deity_pronoun:ти|Ти}} великий."
         }
       },
       "decisions": [
@@ -993,6 +1329,45 @@
           "reason": "Balanced and Readable name who \"they\" are (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191450060031"
+          ],
+          "choice": "लोग",
+          "alternatives": [
+            "वे"
+          ],
+          "reason": "Hindi needs a subject for \"they will tell\"; लोग is the plain way to say people in general (m3), as Balanced and Readable say it too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450060021",
+            "o191450060051"
+          ],
+          "choice": "nor'otekha \"恐るべきわざ\" (L), \"畏るべきみわざ\" (B), \"おそれるべきこと\" (R); gedullatekha singular \"偉大さ\"",
+          "alternatives": [],
+          "reason": "nora' as 76:8 (PSA-8); 'your greatness' follows the form to be read (m1, uncertain).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1059,6 +1434,26 @@
           "L": "የቸርነትህን ብዛት መታሰቢያ ያፈልቃሉ፤ በጽድቅህም እልል ይላሉ።",
           "B": "የታላቅ ቸርነትህ ትዝታ ከአፋቸው ይፈልቃል፤ ስለ ጽድቅህም በደስታ ይዘምራሉ።",
           "R": "ሰዎች ምን ያህል ቸር እንደ ሆንክ ያስታውሳሉ፤ ስለዚያም ማውራት ማቆም አይችሉም። ሁልጊዜ ትክክል የሆነውን እንደምታደርግ በደስታ ይዘምራሉ።"
+        },
+        "hi": {
+          "L": "वे तेरी बड़ी भलाई का स्मरण उमड़ाएँगे, और तेरी धार्मिकता [का] जयजयकार करेंगे।",
+          "B": "तेरी बड़ी भलाई की याद से वे उमड़ पड़ेंगे और तेरी धार्मिकता पर आनंद से गा उठेंगे।",
+          "R": "लोग याद करेंगे कि तू कितना भला है, और वे उसके बारे में बोलना बंद नहीं कर पाएँगे। वे आनंद से गाएँगे कि तू सदा वही करता है जो सही है।"
+        },
+        "ru": {
+          "L": "Память о {{deity_pronoun:твоей|Твоей}} великой благости будут изливать, и о {{deity_pronoun:твоей|Твоей}} праведности будут ликовать.",
+          "B": "Они будут переполнены воспоминаниями о {{deity_pronoun:твоей|Твоей}} великой доброте и с радостью воспевать {{deity_pronoun:твою|Твою}} праведность.",
+          "R": "Люди будут вспоминать, как {{deity_pronoun:ты|Ты}} добр, и не смогут перестать говорить об этом. Они будут радостно петь о том, что {{deity_pronoun:ты|Ты}} всегда поступаешь справедливо."
+        },
+        "ja": {
+          "L": "[人々は]あなたの豊かな恵み深さの記憶をあふれ出させ、あなたの義を喜び歌う。",
+          "B": "人々は、あなたの大いなる恵み深さを思い起こして、あふれるように語り、あなたの義を喜び歌う。",
+          "R": "人々は、あなたがどんなに良い方かを思い出して、そのことを話さずにはいられない。あなたがいつも正しいことをなさることを、喜んで歌う。"
+        },
+        "uk": {
+          "L": "Памʼять про {{deity_pronoun:твою|Твою}} велику доброту вони виливатимуть, і [про] {{deity_pronoun:твою|Твою}} праведність радісно співатимуть.",
+          "B": "Вони переповнюватимуться спогадом про {{deity_pronoun:твою|Твою}} велику доброту і радісно співатимуть про {{deity_pronoun:твою|Твою}} праведність.",
+          "R": "Люди памʼятатимуть, який {{deity_pronoun:ти|Ти}} дуже добрий, і не зможуть перестати про це говорити. Вони радісно співатимуть про те, що {{deity_pronoun:ти|Ти}} завжди чиниш правильно."
         }
       },
       "decisions": [
@@ -1148,6 +1543,47 @@
           "reason": "Readable says what righteousness means here (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450070041"
+          ],
+          "choice": "उमड़ाना (L); उमड़ पड़ना (B)",
+          "alternatives": [
+            "बहाना"
+          ],
+          "reason": "The verb pictures a spring gushing water (m2); Hindi उमड़ना keeps the picture of words overflowing. Readable says what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450070031",
+            "o191450070041",
+            "o191450070051"
+          ],
+          "choice": "rav-tuvekha \"豊かな恵み深さ\" (L), \"大いなる恵み深さ\" (B); yabbi'u \"あふれ出させ\" (L), \"あふれるように語り\" (B), \"話さずにはいられない\" (R); tsidqatekha \"義\" (L, B)",
+          "alternatives": [],
+          "reason": "tuv of God 恵み深さ (PSA-3); the verb is speech bubbling over (m2); R follows the English R (r-en-1, r-en-2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1214,6 +1650,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ቸርና ርኅሩኅ [ነው]፤ ለቁጣ የዘገየ፣ ጽኑ ፍቅሩም ታላቅ [የሆነ]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ጸጋ የሞላውና ርኅሩኅ ነው፤ ቶሎ የማይቆጣ፣ በጽኑ ፍቅርም ታላቅ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ቸርና የሚራራ ነው። ቶሎ አይቆጣም፤ ጽኑ ፍቅሩም ታላቅ ነው።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} अनुग्रहकारी और दयालु [हैं], कोप करने में धीरजवंत और अटल प्रेम में महान।",
+          "B": "{{divine_name:प्रभु|याहवे}} अनुग्रह और कोमल करुणा से भरे हैं, क्रोध करने में धीमे और अटल प्रेम में महान।",
+          "R": "{{divine_name:प्रभु|याहवे}} कृपालु और दयालु हैं। वे जल्दी क्रोधित नहीं होते, और उनका अटल प्रेम महान है।"
+        },
+        "ru": {
+          "L": "Милостив и сострадателен {{divine_name:ГОСПОДЬ|Яхве}}, долгий на гнев и великий в неизменной любви.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} полон милости и сострадания, медленный на гнев, богатый неизменной любовью.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} добр и полон нежного сострадания. Он не спешит гневаться. Его неизменная любовь велика."
+        },
+        "ja": {
+          "L": "恵み深く、あわれみ深い、{{divine_name:主|ヤハウェ}}は。怒るのに遅く、大いなる誠実をもっておられる。",
+          "B": "{{divine_name:主|ヤハウェ}}は恵みとあわれみに満ちた方、怒るのに遅く、変わらぬいつくしみに富んでおられる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、やさしく、思いやりのある方だ。なかなかお怒りにならない。その方の変わらぬいつくしみは大きい。"
+        },
+        "uk": {
+          "L": "Милостивий і милосердний {{divine_name:ГОСПОДЬ|Ягве}}, повільний до гніву й великий у незмінній любові.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сповнений милості й милосердя, повільний до гніву й великий у незмінній любові.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} добрий і ніжний. Він не гнівається швидко, і {{deity_pronoun:його|Його}} вірна любов велика."
         }
       },
       "decisions": [
@@ -1396,6 +1852,73 @@
           "reason": "The line repeats the LORD's words to Moses (meaning decision m1), and the Amharic keeps the Exodus 34:6 wording (and 86:15). Two things follow this psalm's Hebrew: \"gracious\" comes first, and the love is \"great\" (gedol), not \"abundant\" (rav), so \"ታላቅ\" stands where Exodus has \"የበዛ\" / \"የበለጸገ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450080011",
+            "o191450080022",
+            "o191450080041",
+            "o191450080071"
+          ],
+          "choice": "the words of Exodus 34:6",
+          "alternatives": [],
+          "reason": "The line takes up the LORD's description of himself in Exodus 34:6 (m1), so Hindi uses that verse's words at each level in this translation (अनुग्रहकारी, दयालु, कोप करने में धीरजवंत, अटल प्रेम), in the Hebrew order of this psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450080011",
+            "o191450080022",
+            "o191450080041"
+          ],
+          "choice": "милостив и сострадателен; долгий на гнев (L), медленный на гнев (B); неизменная любовь",
+          "alternatives": [],
+          "reason": "The confession of Exodus 34:6 (m1) keeps its wording in this translation (Exodus 34:6, Psalm 103:8) at each level; the Hebrew here puts \"gracious\" first, so \"милостив\" comes first too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450080011",
+            "o191450080021",
+            "o191450080041",
+            "o191450080051",
+            "o191450080061",
+            "o191450080071"
+          ],
+          "choice": "channun verachum … 'erekh 'appayim ugdol-chased in the words of 103:8 / 111:4: \"恵み深く、あわれみ深い\" / \"怒るのに遅く\" (L), \"恵みとあわれみに満ちた方\" / \"変わらぬいつくしみに富んで\" (B), \"やさしく、思いやりのある\" / \"なかなかお怒りにならない\" (R)",
+          "alternatives": [],
+          "reason": "The Exodus 34:6 formula (m1) is worded as in 86:15 and 103:8, in this verse's order channun first as 111:4; gedol-chesed 'great in loyal love' \"大いなる誠実\" (L) where 103:8 has rav-chesed 富んで.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1464,6 +1987,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሁሉ መልካም [ነው]፤ ርኅራኄውም በሥራዎቹ ሁሉ ላይ [ነው]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሁሉም መልካም ነው፤ ርኅራኄው የፈጠረውን ሁሉ ይሸፍናል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሁሉም መልካም ነው። ለፈጠረው ሁሉ ርኅሩኅ ፍቅሩን ያሳያል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सब के लिए भले [हैं], और उनकी करुणा उनके सब कामों पर [है]।",
+          "B": "{{divine_name:प्रभु|याहवे}} सब के प्रति भले हैं; उनकी करुणा उनकी बनाई हर वस्तु पर छाई रहती है।",
+          "R": "{{divine_name:प्रभु|याहवे}} सब के प्रति भले हैं। उन्होंने जो कुछ बनाया है, उस सब पर वे कोमल प्रेम दिखाते हैं।"
+        },
+        "ru": {
+          "L": "Благ {{divine_name:ГОСПОДЬ|Яхве}} ко всем, и {{deity_pronoun:его|Его}} милосердие — на всех {{deity_pronoun:его|Его}} делах.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} добр ко всем; {{deity_pronoun:его|Его}} сострадание объемлет всё, что {{deity_pronoun:он|Он}} сотворил.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} добр ко всем. Он с нежной любовью заботится обо всём, что {{deity_pronoun:он|Он}} сотворил."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はすべてのものに良い方。そのあわれみは、そのすべてのみわざの上にある。",
+          "B": "{{divine_name:主|ヤハウェ}}はすべての人に良くしてくださる。その深いあわれみは、ご自分がお造りになったすべてのものに及ぶ。",
+          "R": "{{divine_name:主|ヤハウェ}}は、すべての人に良くしてくださる。ご自分がお造りになったすべてのものに、やさしい愛を示してくださる。"
+        },
+        "uk": {
+          "L": "Добрий {{divine_name:ГОСПОДЬ|Ягве}} до всіх, і {{deity_pronoun:його|Його}} милосердя — над усіма {{deity_pronoun:його|Його}} ділами.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} добрий до кожного; {{deity_pronoun:його|Його}} милосердя огортає все, що {{deity_pronoun:він|Він}} створив.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} добрий до всіх. Він виявляє ніжну любов до всього, що {{deity_pronoun:він|Він}} створив."
         }
       },
       "decisions": [
@@ -1494,6 +2037,25 @@
           "choice": "over all his works: reaching all he has made",
           "alternatives": [],
           "reason": "His compassion rests on every creature, not only on Israel; verses 15-16 show it in the food he gives to all that lives.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450090041"
+          ],
+          "choice": "rachamaw \"あわれみ\" (L), \"深いあわれみ\" (B), \"やさしい愛\" (R)",
+          "alternatives": [],
+          "reason": "Psalter word for rachamim (PSA-3); his tender love shown again and again (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1564,6 +2126,26 @@
           "L": "ሥራዎችህ ሁሉ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ያመሰግኑሃል፤ ታማኞችህም ይባርኩሃል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ሥራዎችህ ሁሉ ያመሰግኑሃል፤ ታማኝ ሕዝብህም ይባርኩሃል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የፈጠርኸው ሁሉ ያመሰግንሃል። ታማኝ ሕዝብህ ያወድሱሃል።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, तेरे सब काम तेरा धन्यवाद करेंगे, और तेरे भक्त तुझे धन्य कहेंगे।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, तेरे सब काम तेरा धन्यवाद करेंगे, और तेरे विश्वासयोग्य लोग तुझे धन्य कहेंगे।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, जो कुछ तूने बनाया है, वह सब तेरा धन्यवाद करेगा। तेरे विश्वासयोग्य लोग तेरी स्तुति करेंगे।"
+        },
+        "ru": {
+          "L": "Все {{deity_pronoun:твои|Твои}} дела будут благодарить {{deity_pronoun:тебя|Тебя}}, {{divine_name:ГОСПОДИ|Яхве}}, и {{deity_pronoun:твои|Твои}} верные будут благословлять {{deity_pronoun:тебя|Тебя}}.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, все {{deity_pronoun:твои|Твои}} творения будут благодарить {{deity_pronoun:тебя|Тебя}}, и {{deity_pronoun:твои|Твои}} верные будут благословлять {{deity_pronoun:тебя|Тебя}}.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, всё, что {{deity_pronoun:ты|Ты}} сотворил, будет благодарить {{deity_pronoun:тебя|Тебя}}. Твои верные люди будут хвалить {{deity_pronoun:тебя|Тебя}}."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、あなたのすべてのみわざは、あなたに感謝し、あなたの誠実な者たちは、あなたをほめたたえる。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、あなたのすべてのみわざは、あなたに感謝し、あなたに誠実な人たちは、あなたをほめたたえる。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、あなたがお造りになったものはみな、あなたに感謝する。あなたに忠実な人たちは、あなたをほめたたえる。"
+        },
+        "uk": {
+          "L": "Усі {{deity_pronoun:твої|Твої}} діла дякуватимуть {{deity_pronoun:тобі|Тобі}}, {{divine_name:ГОСПОДИ|Ягве}}, і {{deity_pronoun:твої|Твої}} вірні благословлятимуть {{deity_pronoun:тебе|Тебе}}.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, усі {{deity_pronoun:твої|Твої}} діла дякуватимуть {{deity_pronoun:тобі|Тобі}}, і {{deity_pronoun:твої|Твої}} вірні люди благословлятимуть {{deity_pronoun:тебе|Тебе}}.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, усе, що {{deity_pronoun:ти|Ти}} створив, дякуватиме {{deity_pronoun:тобі|Тобі}}. Твої віддані люди хвалитимуть {{deity_pronoun:тебе|Тебе}}."
         }
       },
       "decisions": [
@@ -1614,6 +2196,44 @@
           "choice": "\"ታማኞችህ\" (L), \"ታማኝ ሕዝብህ\" (B, R) for chasidim",
           "alternatives": [],
           "reason": "As 30:5 and 50:5 on main; the same root is \"ታማኝ\" when it is said of God in verse 17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450100052"
+          ],
+          "choice": "भक्त (L); विश्वासयोग्य लोग (B, R)",
+          "alternatives": [],
+          "reason": "The chasidim are people of loyal love who hold fast to the LORD (m2); Literal uses the one word भक्त, Balanced and Readable say \"faithful people\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450100051"
+          ],
+          "choice": "chasidekha \"あなたの誠実な者たち\" (L), \"あなたに誠実な人たち\" (B), \"あなたに忠実な人たち\" (R)",
+          "alternatives": [],
+          "reason": "As 16:10 (PSA-2): chasid with 'your'. yevarakhukha ほめたたえる at R too (barekh).",
           "uncertain": false,
           "footnote": false
         }
@@ -1681,6 +2301,26 @@
           "L": "የመንግሥትህን ክብር ይናገራሉ፤ ስለ ብርታትህም ያወራሉ፣",
           "B": "ስለ መንግሥትህ ክብር ይናገራሉ፤ ስለ ኃይልህም ያወራሉ፣",
           "R": "መንግሥትህ ምን ያህል የከበረች እንደ ሆነች ይናገራሉ። ስለ ኃይልህም ያወራሉ።"
+        },
+        "hi": {
+          "L": "वे तेरे राज्य की महिमा का वर्णन करेंगे, और तेरे पराक्रम [की] चर्चा करेंगे,",
+          "B": "वे तेरे महिमामय राज्य की चर्चा करेंगे और तेरे सामर्थ्य का बखान करेंगे,",
+          "R": "वे बताएँगे कि तेरा राज्य कितना महिमामय है। वे तेरे सामर्थ्य के बारे में बताएँगे।"
+        },
+        "ru": {
+          "L": "О славе {{deity_pronoun:твоего|Твоего}} царства будут рассказывать и о {{deity_pronoun:твоей|Твоей}} мощи будут говорить,",
+          "B": "Они будут говорить о славе {{deity_pronoun:твоего|Твоего}} царствования и рассказывать о {{deity_pronoun:твоей|Твоей}} силе,",
+          "R": "Они будут говорить о том, как славно {{deity_pronoun:твоё|Твоё}} царство. Они будут рассказывать о {{deity_pronoun:твоей|Твоей}} силе."
+        },
+        "ja": {
+          "L": "彼らは、あなたの王国の栄光を語り、あなたの力を告げる、",
+          "B": "彼らは、あなたの王としての支配の栄光を語り、あなたの力を告げる。",
+          "R": "彼らは、あなたの王国がどれほど栄光に満ちているかを話す。あなたの力について話す。"
+        },
+        "uk": {
+          "L": "Про славу {{deity_pronoun:твого|Твого}} царства вони розповідатимуть, і [про] {{deity_pronoun:твою|Твою}} могутність говоритимуть,",
+          "B": "Вони говоритимуть про {{deity_pronoun:твоє|Твоє}} славне царювання і розповідатимуть про {{deity_pronoun:твою|Твою}} силу,",
+          "R": "Вони говоритимуть про те, яке славне {{deity_pronoun:твоє|Твоє}} царство. Вони розповідатимуть про {{deity_pronoun:твою|Твою}} силу."
         }
       },
       "decisions": [
@@ -1746,6 +2386,26 @@
             "\"nước\""
           ],
           "reason": "The kingdom is God's rule as King (see the meaning decision). \"vương quốc\" says kingdom plainly; Balanced says \"vương quyền\" (royal rule), as the English Balanced says \"reign\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191450110041",
+            "o191450110051"
+          ],
+          "choice": "L ends with 、 and 145:12's purpose clause follows (\"…知らせるために。\"); B and R close the verse and restart 145:12 (\"それは…ためである\" B, \"彼らは…願っている\" R)",
+          "alternatives": [],
+          "reason": "The Hebrew runs on into verse 12 (m2); L keeps the run with the purpose clause placed after, as Japanese poetry allows. malkhut \"王国\" (L, R), \"王としての支配\" (B, the English B's reign; m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1818,6 +2478,26 @@
           "L": "ለሰው ልጆች ብርቱ ሥራዎቹን፣ የመንግሥቱንም የግርማ ክብር ያስታውቁ ዘንድ።",
           "B": "ብርቱ ሥራዎቹንና የመንግሥቱን የከበረ ግርማ ለሰዎች ሁሉ ያስታውቁ ዘንድ።",
           "R": "እግዚአብሔር ያደረጋቸውን ኃያል ነገሮችና መንግሥቱ ምን ያህል የከበረችና ድንቅ እንደ ሆነች ሰዎች ሁሉ እንዲያውቁ ይፈልጋሉ።"
+        },
+        "hi": {
+          "L": "कि मनुष्य की सन्तान पर उनके पराक्रम के काम और उनके राज्य के वैभव की महिमा प्रकट करें।",
+          "B": "ताकि सब लोग उनके पराक्रम के कामों को और उनके राज्य के महिमामय वैभव को जान लें।",
+          "R": "वे चाहते हैं कि सब लोग उन सामर्थी कामों के बारे में जानें जो परमेश्वर ने किए हैं, और जानें कि उनका राज्य कितना महिमामय और अद्भुत है।"
+        },
+        "ru": {
+          "L": "чтобы возвестить сынам человеческим {{deity_pronoun:его|Его}} могучие деяния и славу великолепия {{deity_pronoun:его|Его}} царства.",
+          "B": "чтобы {{deity_pronoun:его|Его}} могучие дела стали известны всем людям, и славное великолепие {{deity_pronoun:его|Его}} царствования.",
+          "R": "Они хотят, чтобы все люди узнали о великих делах, которые совершил Бог, и о том, как славно и прекрасно {{deity_pronoun:его|Его}} царство."
+        },
+        "ja": {
+          "L": "人の子らに、その方の力あるわざと、その王国の輝きの栄光とを知らせるために。",
+          "B": "それは、その方の力あるわざと、その支配の栄光に満ちた輝きとを、すべての人に知らせるためである。",
+          "R": "彼らは、神がなさった力強いことと、神の王国がどれほど栄光に満ちてすばらしいかを、すべての人に知ってほしいと願っている。"
+        },
+        "uk": {
+          "L": "щоб дати пізнати синам людським {{deity_pronoun:його|Його}} могутні вчинки і славу пишноти {{deity_pronoun:його|Його}} царства.",
+          "B": "щоб усі люди пізнали {{deity_pronoun:його|Його}} могутні діла і славну пишноту {{deity_pronoun:його|Його}} царювання.",
+          "R": "Вони хочуть, щоб усі люди знали про могутні речі, які зробив Бог, і про те, яке славне й чудове {{deity_pronoun:його|Його}} царство."
         }
       },
       "decisions": [
@@ -1890,6 +2570,47 @@
           "reason": "Malkhut is God's rule as King, as the meaning decision says; \"règne\" says the rule, \"royaume\" is the plainer word for young readers, as the English Readable says \"kingdom\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191450120042",
+            "o191450120072"
+          ],
+          "choice": "उनके (honorific third person)",
+          "alternatives": [],
+          "reason": "The psalm turns from \"your kingdom\" to \"his kingdom\" (m1); Hindi follows with the honorific third person for God. \"Sons of humankind\" means people, men and women, so Literal says मनुष्य की सन्तान, the default form of the Psalms' gender span, without a span, as the English has none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450120021",
+            "o191450120031",
+            "o191450120041"
+          ],
+          "choice": "livnei ha'adam \"人の子ら\" (L), \"すべての人\" (B, R); gevurotaw \"その方の力あるわざ\" (L, B), \"神がなさった\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rule for bene adam (PSA-1); the Hebrew changes to 'his' (m1), so L and B use その方, R names God as the English R does (r-en-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1960,6 +2681,26 @@
           "L": "መንግሥትህ የዘመናት ሁሉ መንግሥት [ናት]፤ ግዛትህም በትውልድና በትውልድ ሁሉ [ነው]።",
           "B": "መንግሥትህ ለዘመናት ሁሉ የምትኖር መንግሥት ናት፤ ግዛትህም ከትውልድ እስከ ትውልድ ይኖራል።",
           "R": "መንግሥትህ ፍጻሜ የላትም። ወደፊት በሚመጣው ዘመን ሁሉ ሰዎችን ትገዛለህ።"
+        },
+        "hi": {
+          "L": "तेरा राज्य सब युगों का राज्य [है], और तेरी प्रभुता पीढ़ी से पीढ़ी तक [बनी रहती है]।",
+          "B": "तेरा राज्य सब युगों तक रहनेवाला राज्य है, और तेरा शासन हर पीढ़ी में बना रहता है।",
+          "R": "तेरा राज्य कभी समाप्त नहीं होगा। आनेवाले हर युग में तू लोगों पर राज्य करेगा।"
+        },
+        "ru": {
+          "L": "Твоё царство — царство всех веков, и {{deity_pronoun:твоя|Твоя}} власть — во всяком роде и роде.",
+          "B": "Твоё царство — царство на все века, и {{deity_pronoun:твоя|Твоя}} власть длится во всех поколениях.",
+          "R": "Твоё царство никогда не кончится. Ты будешь править людьми во все времена, какие только наступят."
+        },
+        "ja": {
+          "L": "あなたの王国は、とこしえにわたる王国、あなたの支配は、代々に及ぶ。",
+          "B": "あなたの王国は、永遠に続く王国。あなたの支配は、すべての世代に続く。",
+          "R": "あなたの王国は、決して終わらない。あなたの支配は、これから来るどの時代にも続く。"
+        },
+        "uk": {
+          "L": "Твоє царство — царство всіх віків, і {{deity_pronoun:твоє|Твоє}} панування — в кожному роді й роді.",
+          "B": "Твоє царство — царство на всі віки, і {{deity_pronoun:твоє|Твоє}} панування триває через кожне покоління.",
+          "R": "Твоєму царству ніколи не буде кінця. Ти пануватимеш над людьми в кожну епоху, яка тільки настане."
         }
       },
       "decisions": [
@@ -2025,6 +2766,26 @@
           ],
           "reason": "The Amharic follows the Hebrew text, which has no nun line after this verse (meaning decision m1).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450130031",
+            "o191450130041"
+          ],
+          "choice": "malkhut kol-'olamim \"とこしえにわたる王国\" (L), \"永遠に続く王国\" (B), \"決して終わらない\" (R); no line added for the missing nun",
+          "alternatives": [],
+          "reason": "The Hebrew text has no nun line here (m1, uncertain, footnote); the Japanese follows it and adds nothing.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2095,6 +2856,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወድቁትን ሁሉ ይደግፋል፤ የጎበጡትንም ሁሉ ያቀናል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚሰናከሉትን ሁሉ ደግፎ ይይዛል፤ የጎበጡትንም ሁሉ ቀና ያደርጋል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወድቁትን ሁሉ ይረዳል። በችግር የተጫኑትን ሁሉ ቀና ያደርጋል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सब गिरनेवालों को सँभालते, और सब झुके हुओं को उठाते [हैं]।",
+          "B": "{{divine_name:प्रभु|याहवे}} हर ठोकर खानेवाले को सँभालते हैं और सब झुके हुओं को सीधा खड़ा करते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} हर गिरनेवाले की सहायता करते हैं। मुसीबतों के बोझ से दबे हर व्यक्ति को वे ऊपर उठाते हैं।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} поддерживает всех падающих и поднимает всех согбенных.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} поддерживает каждого, кто спотыкается, и поднимает всех, кто согнулся.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} помогает каждому, кто падает. Он поднимает каждого, кого придавила беда."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、倒れる者をみな支え、かがんでいる者をみな起こしてくださる。",
+          "B": "{{divine_name:主|ヤハウェ}}は、つまずく者をみな支え、身をかがめている者をみな起き上がらせてくださる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、倒れる人をみな助けてくださる。苦しみに押しつぶされている人を、みな起こしてくださる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} підтримує всіх, хто падає, і підіймає всіх згорблених.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} підпирає кожного, хто спотикається, і випрямляє всіх, хто зігнутий.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} допомагає кожному, хто падає. Він підіймає кожного, кого пригнітила біда."
         }
       },
       "decisions": [
@@ -2165,6 +2946,25 @@
           "choice": "\"የጎበጡትን ... ያቀናል\" (L), \"ቀና ያደርጋል\" (B, R)",
           "alternatives": [],
           "reason": "The same words return in 146:8 (meaning decision m2), which is worded alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191450140051"
+          ],
+          "choice": "\"起こしてくださる\" rather than \"起こされる\"",
+          "alternatives": [],
+          "reason": "The respect form 起こされる would read as a passive (Psalter rule, PSA-11).",
           "uncertain": false,
           "footnote": false
         }
@@ -2240,6 +3040,26 @@
           "L": "የሁሉ ዓይኖች ወደ አንተ በተስፋ ይመለከታሉ፤ አንተም ምግባቸውን በጊዜው ትሰጣቸዋለህ።",
           "B": "የሁሉም ዓይኖች በተስፋ ወደ አንተ ይመለከታሉ፤ አንተም በሚያስፈልጋቸው ጊዜ ምግባቸውን ትሰጣቸዋለህ።",
           "R": "ሕያው ፍጡር ሁሉ ወደ አንተ ይመለከታል፤ ይጠብቃልም። አንተም ምግባቸውን በትክክለኛው ጊዜ ትሰጣቸዋለህ።"
+        },
+        "hi": {
+          "L": "सब की आँखें आशा से तेरी ओर लगी रहती हैं, और तू उन्हें समय पर उनका भोजन देता है।",
+          "B": "सब की आँखें आशा के साथ तेरी ओर लगी हैं, और जब ज़रूरत होती है, तू उन्हें उनका भोजन देता है।",
+          "R": "हर जीवित प्राणी तेरी ओर देखता है और बाट जोहता है। तू उन्हें ठीक समय पर उनका भोजन देता है।"
+        },
+        "ru": {
+          "L": "Глаза всех с надеждой смотрят на {{deity_pronoun:тебя|Тебя}}, и {{deity_pronoun:ты|Ты}} даёшь им их пищу в своё время.",
+          "B": "Все глаза с надеждой обращены к {{deity_pronoun:тебе|Тебе}}, и {{deity_pronoun:ты|Ты}} даёшь им пищу, когда она нужна.",
+          "R": "Всё живое смотрит на {{deity_pronoun:тебя|Тебя}} и ждёт. Ты даёшь им пищу в самое нужное время."
+        },
+        "ja": {
+          "L": "すべての者の目は、あなたを待ち望み、あなたは、時にかなって彼らに食べ物を与えてくださる。",
+          "B": "すべての目は、あなたを待ち望んでいる。あなたは、時に応じて彼らに食べ物を与えてくださる。",
+          "R": "生き物はみな、あなたを見上げて待っている。あなたは、必要な時に、食べ物をくださる。"
+        },
+        "uk": {
+          "L": "Очі всіх з надією дивляться на {{deity_pronoun:тебе|Тебе}}, і {{deity_pronoun:ти|Ти}} даєш їм їхню їжу вчасно.",
+          "B": "Усі очі з надією звернені до {{deity_pronoun:тебе|Тебе}}, і {{deity_pronoun:ти|Ти}} даєш їм їжу, коли вона потрібна.",
+          "R": "Усе живе дивиться на {{deity_pronoun:тебе|Тебе}} і чекає. Ти даєш їм їжу саме тоді, коли треба."
         }
       },
       "decisions": [
@@ -2325,6 +3145,49 @@
           "reason": "Almost the words of 104:27 (m1), so Literal and Balanced keep that verse's Portuguese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450150011",
+            "o191450150061",
+            "o191450150091"
+          ],
+          "choice": "пищу в своё время (L); пищу, когда она нужна (B)",
+          "alternatives": [],
+          "reason": "The verse is close to 104:27 (m1), so the shared words keep that verse's wording in this translation; the rest follows this psalm's Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450150031",
+            "o191450150051",
+            "o191450150081",
+            "o191450150091",
+            "o191450150101"
+          ],
+          "choice": "yesabberu \"待ち望み\" (L, B), noten … 'okhlam be'itto \"時にかなって…食べ物を与えてくださる\" (L), \"時に応じて…\" (B), \"食べ物をくださる\" (R), as 104:27",
+          "alternatives": [],
+          "reason": "104:27-28 is repeated (m1); its Japanese is kept where the Hebrew is the same. Here the Hebrew differs: 'the eyes of all' and a separate clause 'and you give', so the sentence is rebuilt around the 104:27 words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2392,6 +3255,26 @@
           "L": "እጅህን ትከፍታለህ፤ ሕያው ሁሉንም [በሚሻው] ታጠግባለህ።",
           "B": "እጅህን ትከፍታለህ፤ ሕያው ፍጡርንም ሁሉ የሚመኘውን ትሰጠዋለህ።",
           "R": "እጅህን ዘርግተህ ትከፍታለህ፤ ሕያው ፍጡር ሁሉ የሚፈልገውን ሁሉ ትሰጠዋለህ።"
+        },
+        "hi": {
+          "L": "[तू] अपना हाथ खोलता है और हर जीवित [प्राणी को उसकी] इच्छा से तृप्त करता है।",
+          "B": "तू अपना हाथ खोलता है और हर जीवित प्राणी को वह देता है जिसकी वह लालसा करता है।",
+          "R": "तू अपना हाथ पूरा खोलता है और हर जीवित प्राणी को वह सब देता है जो वह चाहता है।"
+        },
+        "ru": {
+          "L": "[Ты] открываешь {{deity_pronoun:твою|Твою}} руку и насыщаешь всё живущее [по его] желанию.",
+          "B": "Ты открываешь {{deity_pronoun:твою|Твою}} руку и даёшь каждому живому существу то, чего оно жаждет.",
+          "R": "Ты широко открываешь {{deity_pronoun:твою|Твою}} руку и даёшь каждому живому существу всё, чего оно хочет."
+        },
+        "ja": {
+          "L": "[あなたは]手を開かれ、すべての生き物を、その望みで満ち足らせてくださる。",
+          "B": "あなたは手を開かれ、すべての生き物に、それが望むものを与えて、満ち足らせてくださる。",
+          "R": "あなたが手を大きく開かれると、生き物はみな、欲しいものを十分に与えられる。"
+        },
+        "uk": {
+          "L": "[Ти] відкриваєш {{deity_pronoun:твою|Твою}} руку і насичуєш усе живе [за його] бажанням.",
+          "B": "Ти відкриваєш {{deity_pronoun:твою|Твою}} руку і даєш кожному живому створінню те, чого воно прагне.",
+          "R": "Ти широко відкриваєш {{deity_pronoun:твою|Твою}} руку і даєш кожному живому створінню все, чого воно хоче."
         }
       },
       "decisions": [
@@ -2424,6 +3307,27 @@
           "alternatives": [],
           "reason": "An open hand gives generously (Deuteronomy 15:8, 11).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450160011",
+            "o191450160031",
+            "o191450160041"
+          ],
+          "choice": "pote'ach 'et-yadekha \"手を開かれ\" (L, B), \"手を大きく開かれると\" (R), as 104:28; umasbia' … ratson \"望みで満ち足らせて\" (L), \"望むものを与えて、満ち足らせて\" (B)",
+          "alternatives": [],
+          "reason": "The hand is worded as 104:28 (\"あなたが手を開かれると\"); the rest differs in the Hebrew (God satisfies every living thing with favour or desire, m1, uncertain), so it is drafted for this verse.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2494,6 +3398,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በመንገዱ ሁሉ ጻድቅ [ነው]፤ በሥራውም ሁሉ ታማኝ [ነው]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በመንገዱ ሁሉ ጻድቅ ነው፤ በሥራውም ሁሉ ታማኝ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} በሚያደርገው ሁሉ ትክክል የሆነውን ያደርጋል። በሥራው ሁሉ አፍቃሪና ታማኝ ነው።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} अपने सब मार्गों में धर्मी, और अपने सब कामों में करुणामय [हैं]।",
+          "B": "{{divine_name:प्रभु|याहवे}} अपने सब मार्गों में धर्मी हैं; वे अपने सब कामों में करुणामय हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} जो कुछ करते हैं, उसमें सही ही करते हैं। वे अपने सब कामों में प्रेमी और विश्वासयोग्य हैं।"
+        },
+        "ru": {
+          "L": "Праведен {{divine_name:ГОСПОДЬ|Яхве}} во всех своих путях и верен во всех своих делах.",
+          "B": "Во всех своих путях {{divine_name:ГОСПОДЬ|Яхве}} праведен; во всех своих делах {{deity_pronoun:он|Он}} верен.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} поступает справедливо во всём, что {{deity_pronoun:он|Он}} делает. Он любящий и верный во всех своих делах."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、そのすべての道において正しく、そのすべてのわざにおいて誠実な方。",
+          "B": "{{divine_name:主|ヤハウェ}}は、そのすべての道において正しく、そのなさることすべてにおいて誠実な方。",
+          "R": "{{divine_name:主|ヤハウェ}}は、なさることすべてにおいて正しい。そのすべてのわざにおいて、愛に満ち、忠実な方だ。"
+        },
+        "uk": {
+          "L": "Праведний {{divine_name:ГОСПОДЬ|Ягве}} в усіх своїх дорогах і вірний в усіх своїх ділах.",
+          "B": "В усіх своїх дорогах {{divine_name:ГОСПОДЬ|Ягве}} праведний; в усіх своїх ділах {{deity_pronoun:він|Він}} вірний.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} чинить правильно в усьому, що {{deity_pronoun:він|Він}} робить. Він люблячий і вірний в усіх своїх справах."
         }
       },
       "decisions": [
@@ -2567,6 +3491,67 @@
           "reason": "The Hebrew word here is the one for a person of loyal love, loyal and kind (see the meaning decision). \"thành tín\" alone would lose the kindness; \"nhân từ\" keeps it, and Readable says both, as the English Readable says \"loving and loyal\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450170052"
+          ],
+          "choice": "करुणामय (L, B); प्रेमी और विश्वासयोग्य (R)",
+          "alternatives": [
+            "विश्वासयोग्य"
+          ],
+          "reason": "Chasid used of God is loyal and kind (m1); करुणामय brings out the love in it and keeps विश्वासयोग्य for 'emunah. Readable names both sides, as the English does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450170052"
+          ],
+          "choice": "верен (L, B); любящий и верный (R)",
+          "alternatives": [
+            "милостив"
+          ],
+          "reason": "The word is hasid, the adjective of hesed: loyal and kind (m1). Literal and Balanced say \"верен\"; Readable names both sides, as the English does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450170011",
+            "o191450170051"
+          ],
+          "choice": "tsaddiq (of God) \"正しく\"; chasid (of God) \"誠実な方\" (L, B), \"愛に満ち、忠実な方\" (R)",
+          "alternatives": [],
+          "reason": "chasid is used of God here (m1: loyal and kind); the Psalter's chasid words (誠実 / 忠実) are kept, R adding love as the English R does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2637,6 +3622,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ለሚጠሩት ሁሉ፣ በእውነት ለሚጠሩት ሁሉ ቅርብ [ነው]።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ወደ እርሱ ለሚጣሩ ሁሉ፣ በቅንነት ለሚጠሩት ሁሉ ቅርብ ነው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ወደ እርሱ ለሚጸልዩ ሁሉ ቅርብ ነው። ከልባቸው ለሚጸልዩት ሁሉ ቅርብ ነው።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} उन सब के निकट [हैं] जो उन्हें पुकारते हैं, उन सब के जो सच्चाई से उन्हें पुकारते हैं।",
+          "B": "{{divine_name:प्रभु|याहवे}} उन सब के पास हैं जो उन्हें पुकारते हैं, उन सब के जो सच्चे मन से उन्हें पुकारते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन सब के पास हैं जो उनसे प्रार्थना करते हैं। वे उन सब के निकट हैं जो सच्चे मन से उनसे प्रार्थना करते हैं।"
+        },
+        "ru": {
+          "L": "Близок {{divine_name:ГОСПОДЬ|Яхве}} ко всем, кто призывает {{deity_pronoun:его|Его}}, ко всем, кто призывает {{deity_pronoun:его|Его}} в истине.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} рядом с каждым, кто взывает к {{deity_pronoun:нему|Нему}}, со всеми, кто взывает к {{deity_pronoun:нему|Нему}} искренне.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} рядом с каждым, кто молится {{deity_pronoun:ему|Ему}}. Он близко ко всем, кто молится {{deity_pronoun:ему|Ему}} от всего сердца."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、ご自分を呼ぶすべての者の近くにおられる、まことをもってご自分を呼ぶすべての者の。",
+          "B": "{{divine_name:主|ヤハウェ}}は、ご自分を呼び求めるすべての人の近くに、まことをもって呼び求めるすべての人の近くにおられる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、ご自分に祈るすべての人の近くにおられる。心から祈るすべての人のそばにおられる。"
+        },
+        "uk": {
+          "L": "Близький {{divine_name:ГОСПОДЬ|Ягве}} до всіх, хто кличе {{deity_pronoun:його|Його}}, до всіх, хто кличе {{deity_pronoun:його|Його}} в істині.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} близький до кожного, хто кличе до {{deity_pronoun:нього|Нього}}, до всіх, хто кличе до {{deity_pronoun:нього|Нього}} щиро.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} близький до кожного, хто молиться {{deity_pronoun:йому|Йому}}. Він поруч з усіма, хто молиться {{deity_pronoun:йому|Йому}} від щирого серця."
         }
       },
       "decisions": [
@@ -2688,6 +3693,25 @@
             "calls on him"
           ],
           "reason": "Readable uses the everyday word for calling on God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450180081"
+          ],
+          "choice": "ve'emet \"まことをもって\" (L, B), \"心から\" (R)",
+          "alternatives": [],
+          "reason": "'emet まこと (PSA-1); here sincerely, faithfully (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2759,6 +3783,26 @@
           "L": "የሚፈሩትን ፈቃድ ያደርጋል፤ ጩኸታቸውንም ይሰማል፤ ያድናቸዋልም።",
           "B": "የሚፈሩትን ምኞት ይፈጽማል፤ የርዳታ ጩኸታቸውን ሰምቶ ያድናቸዋል።",
           "R": "እርሱን የሚያከብሩ ሰዎች የሚፈልጉትን ይሰጣቸዋል። ለርዳታ ሲጮኹ ይሰማቸዋል፤ ያድናቸዋልም።"
+        },
+        "hi": {
+          "L": "जो उनका भय मानते हैं, उनकी इच्छा वे पूरी करते हैं, और उनकी दुहाई वे सुनते हैं, और उन्हें बचाते हैं।",
+          "B": "जो उनका भय मानते हैं, उनकी इच्छा वे पूरी करते हैं; वे सहायता के लिए उनकी पुकार सुनते हैं और उन्हें छुड़ाते हैं।",
+          "R": "जो लोग उनका आदर करते हैं, उन्हें वे वह देते हैं जो वे चाहते हैं। जब वे सहायता के लिए पुकारते हैं, तब वे सुनते हैं और उन्हें बचाते हैं।"
+        },
+        "ru": {
+          "L": "Желание боящихся {{deity_pronoun:его|Его}} {{deity_pronoun:он|Он}} исполняет, и вопль их {{deity_pronoun:он|Он}} слышит и спасает их.",
+          "B": "Он исполняет желание тех, кто боится {{deity_pronoun:его|Его}}; {{deity_pronoun:он|Он}} слышит их крик о помощи и спасает их.",
+          "R": "Он даёт людям, которые чтят {{deity_pronoun:его|Его}}, то, чего они хотят. Когда они кричат о помощи, {{deity_pronoun:он|Он}} слышит и спасает их."
+        },
+        "ja": {
+          "L": "その方は、ご自分を恐れる者たちの願いをかなえ、彼らの叫びを聞いて、彼らを救ってくださる。",
+          "B": "その方は、ご自分を畏れる人たちの願いをかなえ、助けを求める彼らの叫びを聞いて、救ってくださる。",
+          "R": "その方は、ご自分をおそれ敬う人たちに、彼らが望むものを与えてくださる。彼らが助けを求めて叫ぶと、聞いて、救ってくださる。"
+        },
+        "uk": {
+          "L": "Бажання тих, хто боїться {{deity_pronoun:його|Його}}, {{deity_pronoun:він|Він}} виконує, і їхній зойк {{deity_pronoun:він|Він}} чує, і {{deity_pronoun:він|Він}} спасає їх.",
+          "B": "Він виконує бажання тих, хто боїться {{deity_pronoun:його|Його}}; {{deity_pronoun:він|Він}} чує їхній зойк про допомогу і визволяє їх.",
+          "R": "Він дає людям, які шанують {{deity_pronoun:його|Його}}, те, чого вони хочуть. Коли вони кличуть про допомогу, {{deity_pronoun:він|Він}} чує і рятує їх."
         }
       },
       "decisions": [
@@ -2806,6 +3850,25 @@
             "those who fear him"
           ],
           "reason": "Readable says what this kind of fear is (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450190021"
+          ],
+          "choice": "yere'aw \"恐れる者たち\" (L), \"畏れる人たち\" (B), \"おそれ敬う人たち\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rule for the fear of God (PSA-1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2877,6 +3940,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወዱትን ሁሉ ይጠብቃል፤ ክፉዎችን ሁሉ ግን ያጠፋል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወዱትን ሁሉ ይጠብቃል፤ ክፉዎችን ሁሉ ግን ይደመስሳል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የሚወዱትን ሁሉ ይጠብቃል። ክፉ ሰዎችን ሁሉ ግን ያጠፋል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} अपने सब प्रेम करनेवालों की रक्षा करते [हैं], पर सब दुष्टों को वे नष्ट करेंगे।",
+          "B": "{{divine_name:प्रभु|याहवे}} उन सब की रखवाली करते हैं जो उनसे प्रेम करते हैं, पर वे सब दुष्टों को मिटा डालेंगे।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन सब की रक्षा करते हैं जो उनसे प्रेम करते हैं। पर वे सब दुष्ट लोगों को नष्ट कर देंगे।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} хранит всех любящих {{deity_pronoun:его|Его}}, а всех нечестивых {{deity_pronoun:он|Он}} истребит.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} оберегает каждого, кто любит {{deity_pronoun:его|Его}}, но всех нечестивых {{deity_pronoun:он|Он}} уничтожит.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} защищает каждого, кто любит {{deity_pronoun:его|Его}}. А всех злых людей {{deity_pronoun:он|Он}} уничтожит."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、ご自分を愛するすべての者を守り、すべての悪しき者を滅ぼされる。",
+          "B": "{{divine_name:主|ヤハウェ}}は、ご自分を愛するすべての人を守ってくださるが、悪しき者たちをことごとく滅ぼされる。",
+          "R": "{{divine_name:主|ヤハウェ}}は、ご自分を愛する人たちをみな守ってくださる。しかし、悪い人たちをみな、滅ぼしてしまわれる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} оберігає всіх, хто любить {{deity_pronoun:його|Його}}, а всіх нечестивих {{deity_pronoun:він|Він}} знищить.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} стереже кожного, хто любить {{deity_pronoun:його|Його}}, але всіх нечестивих {{deity_pronoun:він|Він}} знищить.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захищає кожного, хто любить {{deity_pronoun:його|Його}}. Але {{deity_pronoun:він|Він}} знищить усіх злих людей."
         }
       },
       "decisions": [
@@ -2905,6 +3988,25 @@
           "choice": "and: but",
           "alternatives": [],
           "reason": "The \"and\" joins two opposite outcomes, as in 1:6, so it is \"but\" here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191450200091"
+          ],
+          "choice": "yashmid \"滅ぼされる\" / \"滅ぼしてしまわれる\" with an explicit を object",
+          "alternatives": [],
+          "reason": "With the object marked by を, the respect form reads as active, as PSA-14 kept 殺された (135:10).",
           "uncertain": false,
           "footnote": false
         }
@@ -2980,6 +4082,26 @@
           "L": "አፌ {{divine_name:የእግዚአብሔር|የያህዌ}} ምስጋና ይናገራል፤ ሥጋ ሁሉም ቅዱስ ስሙን ለዘላለም እስከ ዘላለም ይባርክ።",
           "B": "በገዛ አፌ {{divine_name:ለእግዚአብሔር|ለያህዌ}} ምስጋና እናገራለሁ፤ ፍጥረት ሁሉ ቅዱስ ስሙን ለዘመናት ሁሉ ይባርክ።",
           "R": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} የምስጋና ቃል እናገራለሁ። ሕያው ፍጡር ሁሉ ቅዱስ ስሙን ለዘላለም እስከ ዘላለም ያመስግን!"
+        },
+        "hi": {
+          "L": "मेरा मुँह {{divine_name:प्रभु|याहवे}} की स्तुति कहेगा, और सब प्राणी सदा-सर्वदा उनके पवित्र नाम को धन्य कहें।",
+          "B": "मैं अपने ही मुँह से {{divine_name:प्रभु|याहवे}} की स्तुति करूँगा; सब प्राणी युग-युग तक उनके पवित्र नाम को धन्य कहें।",
+          "R": "मैं {{divine_name:प्रभु|याहवे}} की स्तुति के वचन बोलूँगा। हर जीवित प्राणी सदा-सर्वदा उनके पवित्र नाम की स्तुति करे!"
+        },
+        "ru": {
+          "L": "Хвалу {{divine_name:ГОСПОДА|Яхве}} будут произносить мои уста, и пусть всякая плоть благословляет {{deity_pronoun:его|Его}} святое имя во веки веков.",
+          "B": "Своими устами я буду возносить хвалу {{divine_name:ГОСПОДУ|Яхве}}; пусть все творения благословляют {{deity_pronoun:его|Его}} святое имя во все грядущие времена.",
+          "R": "Я буду говорить слова хвалы {{divine_name:ГОСПОДУ|Яхве}}. Пусть всё живое хвалит {{deity_pronoun:его|Его}} святое имя во веки веков!"
+        },
+        "ja": {
+          "L": "わたしの口は{{divine_name:主|ヤハウェ}}の賛美を語り、すべての肉なる者は、とこしえに、いつまでも、その聖なる名をほめたたえるように。",
+          "B": "わたしは、この口で{{divine_name:主|ヤハウェ}}への賛美を語る。すべての生き物が、とこしえに、いつまでも、その聖なる名をほめたたえるように。",
+          "R": "わたしは、{{divine_name:主|ヤハウェ}}を賛美する言葉を語ろう。すべての生き物が、いつまでも、その聖なる名をほめたたえるように！"
+        },
+        "uk": {
+          "L": "Хвалу {{divine_name:ГОСПОДА|Ягве}} говоритимуть мої уста, і нехай усяке тіло благословляє {{deity_pronoun:його|Його}} святе імʼя навіки-віків.",
+          "B": "Своїми власними устами я говоритиму хвалу {{divine_name:ГОСПОДУ|Ягве}}; нехай усі створіння благословляють {{deity_pronoun:його|Його}} святе імʼя на всі прийдешні часи.",
+          "R": "Я говоритиму слова хвали {{divine_name:ГОСПОДУ|Ягве}}. Нехай усе живе хвалить {{deity_pronoun:його|Його}} святе імʼя на віки вічні!"
         }
       },
       "decisions": [
@@ -3050,6 +4172,48 @@
           "choice": "\"ሥጋ ሁሉ\" (all flesh) at Literal; \"ፍጥረት ሁሉ\" (B), \"ሕያው ፍጡር ሁሉ\" (R)",
           "alternatives": [],
           "reason": "Literal keeps the Hebrew idiom, as Romans 3:20 on main; Balanced and Readable say what it means (meaning decision m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450210061",
+            "o191450210071"
+          ],
+          "choice": "सब प्राणी (L, B); हर जीवित प्राणी (R)",
+          "alternatives": [
+            "सब शरीरधारी"
+          ],
+          "reason": "\"All flesh\" means every living creature (m1); Literal uses सब प्राणी rather than शरीरधारी, which here would sound like people only.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450210061",
+            "o191450210071"
+          ],
+          "choice": "kol-basar \"すべての肉なる者\" (L), \"すべての生き物\" (B, R); vivarekh \"ほめたたえるように\" every level",
+          "alternatives": [],
+          "reason": "basar 肉なる者 (L) as 56:5; every living creature (m1).",
           "uncertain": false,
           "footnote": false
         }
