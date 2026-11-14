@@ -3,9 +3,10 @@
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
 V-2AAI-3S. describe() turns one into words a reader can follow, in each
 reading language (English, Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese): "Noun · dative singular feminine", "Verb · second aorist
-active indicative · 3rd person singular". An unknown code raises ValueError, so a new code in the
-data fails the tests rather than showing a reader nothing.
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian):
+"Noun · dative singular feminine", "Verb · second aorist active indicative ·
+3rd person singular". An unknown code raises ValueError, so a new code in
+the data fails the tests rather than showing a reader nothing.
 """
 import re
 
@@ -382,6 +383,35 @@ WORDS = {
                    "ATT": "アッティカ形", "K": "融合形（二語が一語になったもの）",
                    "P": "不変化詞の付いた形", "ABB": "略形"},
     },
+    "id": {
+        "pos": {"N": "Kata benda", "V": "Kata kerja", "A": "Kata sifat", "T": "Kata sandang",
+                "P": "Kata ganti orang", "R": "Kata ganti penghubung", "D": "Kata ganti penunjuk",
+                "K": "Kata ganti korelatif", "X": "Kata ganti tak tentu", "I": "Kata ganti tanya",
+                "F": "Kata ganti refleksif", "C": "Kata ganti timbal balik", "S": "Kata ganti milik",
+                "Q": "Kata ganti korelatif atau tanya",
+                "ADV": "Kata keterangan", "CONJ": "Kata sambung", "PREP": "Kata depan", "PRT": "Partikel",
+                "COND": "Kata sambung pengandaian", "INJ": "Kata seru",
+                "HEB": "Kata Ibrani", "ARAM": "Kata Aram"},
+        "indeclinable": {"PRI": "nama diri, tidak berubah bentuk", "LI": "huruf, tidak berubah bentuk",
+                         "OI": "tidak berubah bentuk", "NUI": "bilangan, tidak berubah bentuk"},
+        "case": {"N": "nominatif", "G": "genitif", "D": "datif", "A": "akusatif", "V": "vokatif"},
+        "number": {"S": "tunggal", "P": "jamak"},
+        "gender": {"M": "maskulin", "F": "feminin", "N": "neutrum"},
+        "tense": {"P": "presens", "I": "imperfek", "F": "futur", "A": "aoris",
+                  "R": "perfek", "L": "pluskuamperfek"},
+        "second": "{} kedua",
+        "verb": "{tense}, {mood}{voice}", "voiced": ", {}",
+        "voice": {"A": "aktif", "M": "medial", "P": "pasif", "E": "medial atau pasif",
+                  "D": "medial (deponen)", "O": "pasif (deponen)",
+                  "N": "medial atau pasif (deponen)", "Q": "aktif impersonal", "X": ""},
+        "mood": {"I": "indikatif", "S": "subjungtif", "O": "optatif", "M": "imperatif",
+                 "N": "infinitif", "P": "partisip", "R": "partisip (sebagai perintah)"},
+        "person": {"1": "orang pertama", "2": "orang kedua", "3": "orang ketiga"},
+        "join": ", ",
+        "suffix": {"N": "penyangkalan", "I": "tanya", "S": "superlatif", "C": "komparatif",
+                   "ATT": "bentuk Attika", "K": "krasis (dua kata dilebur menjadi satu)",
+                   "P": "dengan partikel yang melekat", "ABB": "bentuk singkatan"},
+    },
 }
 
 _VERB = re.compile(r"(2?)([PIFARL])([AMPEDONQX])([ISOMNPR])(?:-(.+))?")
@@ -722,6 +752,28 @@ HEBREW_WORDS = {
         "gender": {"m": "男性", "f": "女性", "b": "男性または女性", "c": "通性"},
         "number": {"s": "単数", "p": "複数", "d": "双数"},
         "state": {"a": "独立形", "c": "連語形（〜の）", "d": "限定形"},
+    },
+    "id": {
+        "pos": {"A": "Kata sifat", "C": "Kata sambung", "D": "Kata keterangan", "N": "Kata benda",
+                "P": "Kata ganti", "R": "Kata depan", "S": "Akhiran", "T": "Partikel", "V": "Kata kerja"},
+        "noun": {"c": "umum", "g": "nama bangsa atau tempat", "p": "nama diri", "x": ""},
+        "adjective": {"a": "", "c": "bilangan pokok", "g": "nama bangsa", "o": "bilangan tingkat"},
+        "pronoun": {"d": "penunjuk", "f": "tak tentu", "i": "tanya", "p": "persona", "r": "penghubung"},
+        "particle": {"a": "penegasan", "d": "kata sandang tentu", "e": "ajakan",
+                     "i": "tanya", "j": "kata seru", "m": "penunjuk",
+                     "n": "penyangkalan", "o": "penanda objek langsung", "r": "penghubung"},
+        "suffix": {"d": "akhiran arah (ke)", "h": "he tambahan", "n": "nun tambahan", "p": "kata ganti"},
+        "with_article": "dengan kata sandang",
+        "stem": None,  # the stems are names, the same in every language
+        "conjugation": {"p": "perfek (qatal)", "q": "perfek dengan \u201cdan\u201d (weqatal)",
+                        "i": "imperfek (yiqtol)", "w": "narasi lampau (wayyiqtol)",
+                        "h": "kohortatif", "j": "yusif", "v": "imperatif",
+                        "r": "partisip", "s": "partisip pasif",
+                        "a": "infinitif absolut", "c": "infinitif konstruk"},
+        "person": {"1": "orang pertama", "2": "orang kedua", "3": "orang ketiga"},
+        "gender": {"m": "maskulin", "f": "feminin", "b": "maskulin atau feminin", "c": "umum"},
+        "number": {"s": "tunggal", "p": "jamak", "d": "dual"},
+        "state": {"a": "absolut", "c": "konstruk", "d": "tertentu"},
     },
 }
 

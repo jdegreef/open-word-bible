@@ -290,6 +290,10 @@ class ReaderState(models.Model):
     # The reader's own plans (web/plans.js owb.myplans): {id: {name, days, at}},
     # a deleted one kept as {at}.
     custom_plans = models.JSONField(default=dict)
+    # The verses the reader is memorizing (web/memorize.js owb.memory):
+    # {verse or range: {t, lang, lv, ..., add, due, iv, n, at}}, one taken
+    # out kept as {at}.
+    memory = models.JSONField(default=dict)
     prefs = models.JSONField(default=dict)
     prefs_at = models.BigIntegerField(default=0)
 
