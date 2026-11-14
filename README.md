@@ -75,13 +75,30 @@ differently, as John 1:3 does with its last two words, says so in a
 `build_skeleton.py` starts new passages with one record per sentence.
 
 Alignments link source tokens to the words of one rendering, so the reader
-can light up a Greek word and the English it became. A rendering's
+can light up a Greek or Hebrew word and the English it became. A rendering's
 alignments are listed in the order their `target_span`s appear, and each
 span is found after the one before (so a repeated "the" is unambiguous);
 a span may not hold a verse marker or cut through a setting span
 (`markup.alignment_ranges`). A token may appear in more than one alignment
-("not yet ... come"), and words with no counterpart are left out. John 2,
-English Balanced, is aligned as a pilot.
+("not yet ... come"), and words with no counterpart are left out: a
+sentence-opening "and" the English drops, a recitative "that" before a
+quotation. The article goes in the alignment of the word it belongs to
+("the kingdom" ← article + noun; "Jesus's" ← article + name), and a setting
+span is always inside a span whole ("to {{deity_pronoun:him|Him}}"). John,
+Mark and Genesis 1–11 are aligned in English Balanced.
+
+In the Hebrew, where MACULA gives each prefix and suffix a token of its
+own, the same rules apply morpheme by morpheme. The article prefix joins
+its noun's alignment ("the earth" ← article + "earth"). A conjunction
+prefix is aligned to the word that renders it ("and", "then", "so", "but",
+"when") and left out when the English has none, as it usually has none
+for the "and" that opens a narrative verb. A preposition prefix is aligned
+to its English preposition ("in", "to"), and a pronoun suffix to its
+pronoun ("his" in "his wife"). The object marker ʾet is never aligned, nor
+is the empty row of an article a preposition swallows (records leave it
+out). A number is one span with "years" ("130 years" ← all its number
+words and "year"), and a construct chain's "of" goes with the word that
+follows it ("of the field").
 
 Poetry is set in lines. A rendering marks each break inside a verse with
 `\q ` (`"my shepherd; \q I will not lack"`); a verse start is always a line
