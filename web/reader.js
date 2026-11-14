@@ -1540,6 +1540,18 @@
     panel.appendChild(fig);
     var go = function () {
       OWBMap.draw(fig, placed, DATA.cards.list.filter(function (c) { return c.at; }), { base: DATA.map.base, t: t });
+      // A journey with a stop in this sentence (data/journeys.json): follow it on the journeys page.
+      var trips = (DATA.journeys || []).filter(function (j) {
+        return j.verses.some(function (v) { return current.refs.indexOf(v) >= 0; });
+      });
+      if (!trips.length) return;
+      var p = el("p", "pmap-journeys");
+      trips.forEach(function (j) {
+        var a = el("a", null, t("map_journey").replace("{name}", j.name));
+        a.href = j.href;
+        p.appendChild(a);
+      });
+      fig.appendChild(p);
     };
     if (window.OWBMap) return go();
     var js = document.createElement("script");

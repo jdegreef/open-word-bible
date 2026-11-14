@@ -1099,6 +1099,71 @@ class SiteTest(unittest.TestCase):
         base = json.loads((self.out / "basemap.json").read_text(encoding="utf-8"))
         self.assertTrue(base["land"] and base["lakes"] and base["rivers"])
 
+    def test_more_places_are_located_where_openbible_names_them(self):
+        # "more": proper nouns with no card in data/names.json yet, located
+        # only in the verses OpenBible.info names them in; each place carries
+        # OpenBible's confidence.
+        data = json.loads((build_site.ROOT / "data" / "places.json").read_text(encoding="utf-8"))
+        names = json.loads((build_site.ROOT / "data" / "names.json").read_text(encoding="utf-8"))["names"]
+        named = {(n["strong"], n["lemma"]) for n in names}
+        self.assertGreater(len(data["more"]), 300)
+        for key, p in list(data["places"].items()) + list(data["more"].items()):
+            self.assertTrue(0 <= p["confidence"] <= 1000, key)
+            self.assertEqual(p["sure"], p["confidence"] >= 800, key)
+        for key, p in data["more"].items():
+            strong, lemma, name = key.split("|")
+            self.assertNotIn((strong, lemma), named)
+            self.assertTrue(p["verses"] and name, key)
+        # Gilgal (Joshua 4:19) has no name card but is on the map.
+        cards = self.chapter_data("jos/4")["cards"]["list"]
+        gilgal = next(c for c in cards if c["title"] == "Gilgal")
+        self.assertEqual(gilgal["kind"], "place")
+        self.assertTrue(gilgal["at"] and gilgal["note"])
+
+    def test_journeys(self):
+        # data/journeys.json: ordered stops at located places, each reached
+        # in a verse that names it; a name and description in every language.
+        data = json.loads((build_site.ROOT / "data" / "journeys.json").read_text(encoding="utf-8"))
+        places = json.loads((build_site.ROOT / "data" / "places.json").read_text(encoding="utf-8"))
+        located = set(places["places"]) | set(places["more"])
+        self.assertEqual(data["status"], "ai_draft")
+        ids = [j["id"] for j in data["journeys"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for want in ("abraham", "jacob", "exodus", "conquest", "david", "exile", "paul-1", "paul-2", "paul-3",
+                     "paul-rome", "philip"):
+            self.assertIn(want, ids)
+        for j in data["journeys"]:
+            for field in ("name", "description"):
+                self.assertEqual(set(j[field]), set(build_site.LANGUAGES), (j["id"], field))
+                for text in j[field].values():
+                    self.assertTrue(text.strip())
+                    self.assertNotIn("{{", text)
+            self.assertGreaterEqual(len(j["stops"]), 3, j["id"])
+            for s in j["stops"]:
+                self.assertIn(s["place"], located, (j["id"], s))
+                strong, lemma, _ = s["place"].split("|")
+                ref = build_site.refs.parse(s["ref"])
+                folder = "hbo" if ref.book in build_site.refs.OT_CODES else "grc"
+                verses = json.loads((build_site.ROOT / "data" / folder / f"{ref.book}.{ref.chapter}.json")
+                                    .read_text(encoding="utf-8"))["verses"]
+                self.assertIn((strong, lemma), {(build_site.word_strong(w), w["lemma"]) for w in verses[s["ref"]]},
+                              (j["id"], s))
+        # Each language has the page, with every journey's stops placed.
+        for lang in build_site.LANGUAGES:
+            rel = build_site.url(lang, "/journeys/").lstrip("/")
+            page = (self.out / rel / "index.html").read_text(encoding="utf-8")
+            built = json.loads(re.search(r'id="jr-data">(.*?)</script>', page, re.S)[1])
+            self.assertEqual([j["id"] for j in built["journeys"]], ids)
+            for key in ("choose", "stops", "map_label", "map_credit", "map_sure", "map_unsure"):
+                self.assertTrue(built["ui"].get(key), (lang, key))
+            for j in built["journeys"]:
+                self.assertTrue(all(len(s["at"]) == 2 and s["href"] and s["ref"] for s in j["stops"]))
+        # The reader's map links a journey from a chapter it stops in.
+        trips = self.chapter_data("act/13")["journeys"]
+        paul = next(j for j in trips if j["href"].endswith("#paul-1"))
+        self.assertIn("ACT.13.4", paul["verses"])
+        self.assertTrue((self.out / "journeys.js").is_file())
+
     def test_glossary_is_well_formed(self):
         # Words to know: AI drafts, kind "concept", no word that is also a
         # name; their lemmas are checked against the source data above.

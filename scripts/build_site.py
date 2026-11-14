@@ -1315,6 +1315,8 @@ def chapter_page(book, chapter, lang="en"):
     data["uses"] = word_uses()[1]
     # The panel's map of the places in a sentence (web/map.js, loaded when first needed).
     data["map"] = {"script": asset("map.js"), "base": basemap_file()[1]}
+    # The journeys with a stop in this chapter: the panel's map links them.
+    data["journeys"] = chapter_journeys(book, chapter, lang)
     data["saved"] = url(lang, "/saved/")
     # The reader shows a word's grammar in the page's language only.
     data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
@@ -1709,6 +1711,99 @@ def places():
 
 
 @functools.lru_cache(maxsize=None)
+def places_more():
+    """data/places.json's "more": places OpenBible.info locates among the
+    words data/names.json has no card for yet, by (Strong's number, lemma):
+    (MACULA's name for it, where it is, the verses it is found in)."""
+    path = ROOT / "data" / "places.json"
+    more = json.loads(path.read_text(encoding="utf-8")).get("more", {}) if path.exists() else {}
+    out = {}
+    for key, p in more.items():
+        strong, lemma, name = key.split("|")
+        out[(strong, lemma)] = (name, {k: p[k] for k in ("at", "sure", "area")}, frozenset(p["verses"]))
+    return out
+
+
+@functools.lru_cache(maxsize=None)
+def journeys():
+    """data/journeys.json's journeys: ordered stops (a place in
+    data/places.json and the verse that takes the traveller there), with a
+    name and description per language."""
+    path = ROOT / "data" / "journeys.json"
+    return json.loads(path.read_text(encoding="utf-8"))["journeys"] if path.exists() else []
+
+
+def journeys_url(lang, jid=None):
+    return url(lang, "/journeys/") + (f"#{jid}" if jid else "")
+
+
+def journey_data(j, lang):
+    """One journey as the journeys page draws it: its stops' names, points,
+    whether each site is known, and links to the verses, in lang."""
+    stops = []
+    for s in j["stops"]:
+        ref = refs.parse(s["ref"])
+        name = s["place"].split("|")[2]
+        where = places().get(s["place"]) or places_more()[tuple(s["place"].split("|")[:2])][1]
+        stops.append({"title": name, "at": where["at"], "sure": where["sure"], "area": where["area"],
+                      "ref": verse_name(ref.book, ref.chapter, ref.verse, lang),
+                      "href": f"{url(lang, chapter_url(ref.book, ref.chapter))}#v{ref.verse}"})
+    return {"id": j["id"], "testament": j["testament"], "name": j["name"].get(lang, j["name"]["en"]),
+            "description": j["description"].get(lang, j["description"]["en"]),
+            "uncertain": bool(j.get("uncertain")), "stops": stops}
+
+
+def chapter_journeys(book, chapter, lang):
+    """The journeys with a stop in this chapter, for the reader's map:
+    [{"name", "href", "verses": [verse ids of its stops here]}]."""
+    out = []
+    for j in journeys():
+        here = [s["ref"] for s in j["stops"] if s["ref"].startswith(f"{book}.{chapter}.")]
+        if here:
+            out.append({"name": j["name"].get(lang, j["name"]["en"]), "href": journeys_url(lang, j["id"]),
+                        "verses": sorted(set(here), key=here.index)})
+    return out
+
+
+def journeys_page(lang="en"):
+    """/journeys/: every journey, one at a time on a map (web/map.js
+    drawJourney) with its numbered stops and links to their verses."""
+    reader = catalog(lang)["reader.ui"]
+    data = {"ui": {**catalog(lang)["journeys.ui"], **{k: reader[k] for k in ("map_sure", "map_unsure", "map_credit")}},
+            "map": {"base": basemap_file()[1]},
+            "journeys": [journey_data(j, lang) for j in journeys()]}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    ui = data["ui"]
+    groups = []
+    for testament in ("ot", "nt"):
+        items = "".join(f'<li><a href="#{j["id"]}" data-journey="{j["id"]}">{html.escape(j["name"])}</a></li>'
+                        for j in data["journeys"] if j["testament"] == testament)
+        if items:
+            groups.append(f'<h2>{html.escape(ui[testament])}</h2>\n<ul class="jr-list">{items}</ul>')
+    lists = "\n".join(groups)
+    body = f"""
+<header class="page-head journeys-head">
+<p class="eyebrow">{t(lang, "journeys.title")}</p>
+<h1>{t(lang, "journeys.heading")}</h1>
+<p class="dek">{t(lang, "journeys.dek")}</p>
+</header>
+<div class="jr">
+<nav class="jr-nav" aria-label="{html.escape(ui["choose"])}">
+{lists}
+</nav>
+<section class="jr-show" id="jr-show" aria-live="polite">
+<noscript><p class="notice">{t(lang, "journeys.noscript")}</p></noscript>
+</section>
+</div>
+<script type="application/json" id="jr-data">{blob}</script>
+<script src="{asset("map.js")}"></script>
+<script src="{asset("journeys.js")}" defer></script>
+"""
+    return page(lang, t(lang, "journeys.title"), body, path="/journeys/", current="/read/",
+                description=t(lang, "journeys.dek"))
+
+
+@functools.lru_cache(maxsize=None)
 def basemap_file():
     """data/basemap.json for the reader's maps (web/map.js), and its URL
     with a content hash. The reader fetches it the first time it draws a
@@ -1776,7 +1871,13 @@ def word_cards(records, words, lang="en"):
                     # A place OpenBible.info locates: where it is, for the panel's map.
                     where = places().get(f"{word_strong(w)}|{w['lemma']}|{sense['name']}")
                     if sense["kind"] == "place" and where:
-                        card.update(where)
+                        card.update({k: where[k] for k in ("at", "sure", "area")})
+            more = places_more().get((word_strong(w), w["lemma"]))
+            if not card and more and vid in more[2]:
+                # A place OpenBible.info locates that has no card of its own yet.
+                key = ("more", w["lemma"], more[0])
+                card = {"type": "name", "lemma": w["lemma"], "title": more[0], "kind": "place",
+                        "note": catalog(lang)["reader.ui"]["card_place_located"], **more[1]}
             if card:
                 if key not in index:
                     index[key] = len(cards)
@@ -5061,7 +5162,7 @@ def sitemap(paths):
 def build(out):
     for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared, article_link, places, basemap_file):
+                   downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -5082,6 +5183,7 @@ def build(out):
         add("/search/", search_page(lang))
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))
+        add("/journeys/", journeys_page(lang))
         for audience in AUDIENCES:
             add(audience_url(audience), audience_page(audience, lang))
         plans = available_plans(lang)
@@ -5152,7 +5254,7 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
+                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "journeys.js", "admin.js", "admin.css"):
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
