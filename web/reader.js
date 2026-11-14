@@ -1480,7 +1480,10 @@
     if (REF) return REF;
     var names = Object.keys(DATA.bookRefs.names).sort(function (a, b) { return b.length - a.length; })
       .map(function (n) { return n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); });
-    REF = new RegExp("\\b(" + names.join("|") + ") (\\d+):(\\d+)(?:[-\u2013](\\d+))?", "g");
+    var tail = "(" + names.join("|") + ") (\\d+):(\\d+)(?:[-\u2013](\\d+))?";
+    // \b is ASCII-only; Han and kana run on without spaces.
+    try { REF = new RegExp("(?<!(?![\\p{sc=Han}\\p{sc=Hiragana}\\p{sc=Katakana}])[\\p{L}\\p{M}\\p{N}])" + tail, "gu"); }
+    catch (e) { REF = new RegExp("\\b" + tail, "g"); }
     return REF;
   }
 
