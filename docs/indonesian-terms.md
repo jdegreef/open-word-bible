@@ -596,3 +596,7 @@ records it. Empty until the first book is drafted.
 
 | Book | Source (English) | Indonesian | First verse |
 |---|---|---|---|
+| Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
+| Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
+| Philippians | Clement | Klemens | 4:3 |
+| Philippians | Caesar's household | *istana Kaisar* (L); *istana kaisar* (B, R) | 4:22 |
