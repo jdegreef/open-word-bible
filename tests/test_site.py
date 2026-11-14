@@ -256,13 +256,16 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(re.findall(r'<span class="note-mark">([a-z]+)</span>', notes), marks, path)
             records = build_site.load_chapter(book, chapter)[0]
             r, d = next((r, d) for r in records for d in build_site.footnote_decisions(r, lang))
-            self.assertIn(f'<span class="note-text">{build_site.note_html(d, lang)}</span>', notes)
-            self.assertIn(html.escape(build_site.markup.render(d["choice"]), quote=False), notes)
+            translated = build_site.page_notes(records, lang).get(r["id"], {}).get(d["id"])
+            self.assertIn(f'<span class="note-text">{build_site.note_html(d, lang, translated)}</span>', notes)
+            self.assertIn(html.escape(build_site.markup.render((translated or d)["choice"]), quote=False), notes)
             self.assertNotIn("{{", notes)
         # A note spans chapters as the reader's verse ranges do.
         self.assertIn('<span class="note-ref">7:53–8:1</span>', self.notes_section("jhn/8"))
-        # Meaning notes are written in English; another language's page says so.
-        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("fr/jhn/3"))
+        # Meaning notes are written in English; another language's page says
+        # so where a note is not translated (data/notes/fr/JHN.json covers
+        # John 1-3 only).
+        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("fr/jhn/4"))
         self.assertNotIn('lang="en"', self.notes_section("jhn/3"))
 
     def test_footnote_text_follows_the_reader(self):
