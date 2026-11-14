@@ -2,7 +2,7 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian and Japanese.
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese and Indonesian.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -44,11 +44,12 @@ brief for drafting it and `data/key_terms.json` the settled key terms.
 Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/vietnamese-style.md`, `docs/korean-style.md`,
 `docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
-`docs/russian-style.md`, `docs/ukrainian-style.md` and `docs/japanese-style.md` are
-the briefs for French, Swahili, Vietnamese, Korean, (Brazilian) Portuguese,
-Amharic, Hindi, Russian, Ukrainian and Japanese. `docs/hindi-terms.md` and
-`docs/russian-terms.md` are the Hindi and Russian glossaries, Genesis to
-Revelation.
+`docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md` and
+`docs/indonesian-style.md` are the briefs for French, Swahili, Vietnamese,
+Korean, (Brazilian) Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese
+and Indonesian. `docs/hindi-terms.md`, `docs/russian-terms.md` and
+`docs/indonesian-terms.md` are the Hindi, Russian and Indonesian glossaries,
+Genesis to Revelation.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
@@ -253,7 +254,8 @@ book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its
 words to `owb/morph.py`, and run `python backend/manage.py makemigrations
 accounts` so it can have language reviewers. The site, the validator and the
 backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
-the book-wide wording choices.
+the book-wide wording choices. `docs/adding-a-language.md` lists every file a new
+language touches.
 
 ### Book pages
 
