@@ -649,3 +649,9 @@ records it. Empty until the first book is drafted.
 | Matthew | Achim; Eliud; Matthan | Akhim; Eliud; Matan | 1:14–15 |
 | Matthew | fathered (genealogy) | *memperanakkan* (L); *adalah ayah* (B, R) | 1:2 |
 | Matthew | Immanuel | Imanuel | 1:23 |
+| Matthew | magi | *orang-orang majus* (L, B); *ahli bintang* (R) | 2:1 |
+| Matthew | frankincense; myrrh | *kemenyan*; *mur* | 2:11 |
+| Matthew | Archelaus | Arkhelaus | 2:22 |
+| Matthew | Rachel; Ramah | Rahel; Rama | 2:18 |
+| Matthew | Zebulun; Naphtali | Zebulon; Naftali | 4:13 |
+| Matthew | Decapolis | Dekapolis (L, B); *daerah Sepuluh Kota* (R) | 4:25 |
