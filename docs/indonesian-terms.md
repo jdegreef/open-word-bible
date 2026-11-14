@@ -596,3 +596,15 @@ records it. Empty until the first book is drafted.
 
 | Book | Source (English) | Indonesian | First verse |
 |---|---|---|---|
+| Ruth | Elimelech; Mahlon; Chilion | Elimelekh; Mahlon; Kilyon | 1:2 |
+| Ruth | Ephrathites; Ephrathah | orang Efrata; Efrata | 1:2; 4:11 |
+| Ruth | Orpah | Orpa | 1:4 |
+| Ruth | Mara | Mara | 1:20 |
+| Ruth | barley; wheat | *jelai*; *gandum* | 1:22; 2:23 |
+| Ruth | glean | *memungut* | 2:2 |
+| Ruth | redeemer (*go'el*, a kinsman) | *penebus* (L); *kerabat penebus* (B, R) | 2:20 |
+| Ruth | Mr. So-and-so (*peloni almoni*) | *Saudara Anu* | 4:1 |
+| Ruth | Perez | Peres | 4:12 |
+| Ruth | Obed | Obed | 4:17 |
+| Ruth | Hezron; Ram; Amminadab | Hezron; Ram; Aminadab | 4:18–19 |
+| Ruth | Nahshon; Salmah, Salmon | Nahason; Salma (L), Salmon | 4:20 |
