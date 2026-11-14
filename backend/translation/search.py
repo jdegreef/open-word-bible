@@ -11,8 +11,9 @@ Matching follows the language of each document's own text, not the
 site's: notes are written in English, and a sentence not yet translated is
 shown, and found, in English. Each language has a text search
 configuration that removes accents and then stems (migrations 0003 and
-0009): owb_english, owb_spanish, owb_french, owb_portuguese, and
-owb_simple for languages Postgres has no stemmer for. Every entry is also
+0009, 0010, 0012): owb_english, owb_spanish, owb_french, owb_portuguese,
+owb_russian, owb_indonesian, and owb_simple for languages Postgres has no
+stemmer for. Every entry is also
 indexed word for word (owb_simple, the lowest weight), so words a stemmer
 drops ("I am") or shortens ("runn" while typing "running") still match. A
 query word matches an entry in its stemmed forms, in the entry's own
@@ -48,7 +49,7 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
 CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese",
-           "ru": "owb_russian", "ja": "owb_cjk"}
+           "ru": "owb_russian", "ja": "owb_cjk", "id": "owb_indonesian"}
 SIMPLE = "owb_simple"
 # Entries in languages written without spaces between words: indexed and
 # queried by character bigrams (ngrams).
