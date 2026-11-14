@@ -30,10 +30,10 @@ listed in `pending-quote-fixes.jsonl`.
 | John 1:42 (`JHN.1.42.s2`) | French, Readable | The narrator's note `(Céphas et Pierre veulent ... « pierre » ou « rocher ».)` quotes two words, which turned red | data: marked `[0]`, his one saying |
 | John 9:6–7 (`JHN.9.6.s1`) | Korean, all levels | The note on Siloam's meaning, in single quotes, turned red | data: marked `[0]` |
 | Mark 2:9 (`MRK.2.9.s1`) | Vietnamese and Korean, Balanced; every language, Literal and Readable | The sentence continues the speech Mark 2:8 opens, but was marked "quoted", so only the two sayings quoted inside it were red where the rendering does not reopen the quotation | data: marked `"all"`; the whole question is red in every language and level |
-| Luke 5:10, Mark 8:29 and 19 more | French, Balanced | The incise naming Jesus (`dit-il`, `leur demanda-t-il`, `dit Jésus à Simon`) sits inside the guillemets, as French typography allows, so the narrator's words are red | pending: `pending-quote-fixes.jsonl` closes the guillemets before the incise and reopens them after |
+| Luke 5:10, Mark 8:29 and 21 more | French, Balanced (21) and Readable (2) | The incise naming Jesus (`dit-il`, `leur demanda-t-il`, `dit Jésus à Simon`, `a dit Jésus`) sits inside the guillemets, as French typography allows, so the narrator's words are red | pending: `pending-quote-fixes.jsonl` closes the guillemets before the incise and reopens them after |
 
-The French entries are the same pattern in 21 renderings; the check's
-thresholds flag the two where the incise is long (Luke 5:10, Mark 8:29), and
+The French entries are the same pattern in 23 renderings; the check's
+thresholds flag the three where the incise is long (Luke 5:10 at two levels, Mark 8:29), and
 the list in `pending-quote-fixes.jsonl` was made by finding every incise that
 names Jesus inside his red letters. Both French styles are correct; the one
 that keeps the incise outside the guillemets is the one that lets the reader
