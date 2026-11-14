@@ -59,6 +59,26 @@
           "L": "ለመዘምራን አለቃ፤ የዳዊት መዝሙር። ቅኔ።",
           "B": "ለመዘምራን አለቃ። የዳዊት መዝሙር። ቅኔ።",
           "R": "ለመዘምራን አለቃ። ዳዊት የዘመረው የሚዘመር መዝሙር።"
+        },
+        "hi": {
+          "L": "संगीत-निर्देशक के लिए: दाऊद का भजन। गीत।",
+          "B": "संगीत-निर्देशक के लिए। दाऊद का भजन। गीत।",
+          "R": "गायक-मंडली के अगुवे के लिए। दाऊद का गीत, गाने के लिए।"
+        },
+        "ru": {
+          "L": "Руководителю хора. Псалом Давида. Песнь.",
+          "B": "Руководителю хора. Псалом Давида. Песнь.",
+          "R": "Для руководителя музыкантов. Песнь Давида, чтобы петь."
+        },
+        "ja": {
+          "L": "指揮する者のために。ダビデの賛歌。歌。",
+          "B": "音楽を導く者のために。ダビデの賛歌。歌。",
+          "R": "音楽を導く人のために。ダビデの歌。歌うための歌。"
+        },
+        "uk": {
+          "L": "Для диригента. Псалом Давида. Пісня.",
+          "B": "Для диригента хору. Псалом Давида. Пісня.",
+          "R": "Для того, хто керує співом. Пісня Давида, щоб співати."
         }
       },
       "decisions": [
@@ -184,6 +204,66 @@
           "reason": "Where the heading names both, \"የዳዊት መዝሙር። መዝሙር።\" would only repeat itself; \"ቅኔ\" keeps the two Hebrew words apart, as the English \"psalm\" and \"song\" do.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650010021",
+            "o190650010041"
+          ],
+          "choice": "\"भजन\" (mizmor), \"गीत\" (shir) at Literal and Balanced; Readable \"गीत, गाने के लिए\"",
+          "alternatives": [],
+          "reason": "The two Hebrew words for a song (meaning m3) take the poetry note's two Hindi words. Readable says \"गीत\" for mizmor, so it keeps the second word as \"for singing\", as the English does, without naming two kinds of song. Psalms 66-68 follow the same pattern.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650010041"
+          ],
+          "choice": "\"Песнь\" for shir at Literal and Balanced",
+          "alternatives": [
+            "\"Песня\""
+          ],
+          "reason": "The note keeps \"песнь\" for shir at Literal and Balanced and \"песня\" at Readable; here Readable joins the two words, as the English does, so neither word is named twice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650010021",
+            "o190650010041"
+          ],
+          "choice": "mizmor … shir \"賛歌。歌。\" (L, B), \"歌。歌うための歌。\" (R)",
+          "alternatives": [],
+          "reason": "The two title words as the Psalter conventions (mizmor 賛歌, shir 歌), kept apart as the English keeps them (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -253,6 +333,26 @@
           "L": "እግዚአብሔር ሆይ፣ በጽዮን ለአንተ ጸጥታ ምስጋና ነው፤ \\q ስእለትም ለአንተ ይፈጸማል።",
           "B": "እግዚአብሔር ሆይ፣ በጽዮን ለአንተ ዝምታ ምስጋና ነው፤ \\q ለአንተም ስእለት ይፈጸማል።",
           "R": "እግዚአብሔር ሆይ፣ በጽዮን በጸጥታ እየጠበቅንም እንኳ እናመሰግንሃለን። \\q ለአንተ የገባነውን ቃል እንጠብቃለን።"
+        },
+        "hi": {
+          "L": "तेरे लिए चुप्पी ही स्तुति [है], हे परमेश्वर, सिय्योन में, \\q और तेरे लिए मन्नत पूरी की जाएगी।",
+          "B": "हे परमेश्वर, सिय्योन में तेरे लिए मौन ही स्तुति है, \\q और तेरे लिए मन्नतें पूरी की जाएँगी।",
+          "R": "हे परमेश्वर, सिय्योन में हम तेरी स्तुति करते हैं, चुपचाप बाट जोहते हुए भी। \\q तुझसे की हुई अपनी प्रतिज्ञाएँ हम पूरी करेंगे।"
+        },
+        "ru": {
+          "L": "Тебе безмолвие — хвала, Боже, на Сионе, \\q и {{deity_pronoun:тебе|Тебе}} будет исполнен обет.",
+          "B": "Для {{deity_pronoun:тебя|Тебя}}, Боже, на Сионе и безмолвие — хвала, \\q и {{deity_pronoun:тебе|Тебе}} будут исполнены обеты.",
+          "R": "Боже, на Сионе мы хвалим {{deity_pronoun:тебя|Тебя}}, даже когда молча ждём. \\q Мы исполним обещания, которые дали {{deity_pronoun:тебе|Тебе}}."
+        },
+        "ja": {
+          "L": "あなたには、沈黙が賛美[である]、神よ、シオンにおいて。 \\q あなたに、誓願は果たされる。",
+          "B": "神よ、シオンにおいて、あなたの前の沈黙は賛美である。 \\q あなたに、誓願は果たされる。",
+          "R": "神よ、わたしたちはシオンで、あなたを賛美する。静かに待つときも、賛美する。 \\q あなたに約束したことを、わたしたちは果たそう。"
+        },
+        "uk": {
+          "L": "Тобі тиша — хвала, Боже, на Сіоні, \\q і {{deity_pronoun:тобі|Тобі}} буде виконано обітницю.",
+          "B": "Для {{deity_pronoun:тебе|Тебе}}, Боже, на Сіоні тиша — це хвала, \\q і {{deity_pronoun:тобі|Тобі}} виконуватимуть обітниці.",
+          "R": "Боже, на Сіоні ми хвалимо {{deity_pronoun:тебе|Тебе}}, навіть у тихому чеканні. \\q Ми виконаємо обіцянки, які дали {{deity_pronoun:тобі|Тобі}}."
         }
       },
       "decisions": [
@@ -328,6 +428,70 @@
           "reason": "Style guide section 7a; Korean speaks of \"we\" before God with the humble \"저희\". Verses 7-8 speak of God in the third person (his strength) inside the same speech level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190650020011",
+            "o190650020041"
+          ],
+          "choice": "no deity_pronoun span; \"तू\" to God, honorific \"वे\" in verses 7-8",
+          "alternatives": [
+            "a capitalised pronoun, as the English \"You\", \"His\""
+          ],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi and the Hindi has no deity_pronoun spans (style guide, section 7). Where the hymn turns to speak of God (verses 7-8, meaning m1 there) Hindi uses the honorific plural. This holds for the whole psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650020021"
+          ],
+          "choice": "\"चुप्पी ही स्तुति\" (L), \"मौन ही स्तुति\" (B)",
+          "alternatives": [
+            "\"स्तुति करना उचित है\" (praise is fitting), as the Greek reads"
+          ],
+          "reason": "The Hebrew says silence (meaning m1), as in 62:2; Literal and Balanced keep it, as the English does, and Readable says quiet waiting.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650020021",
+            "o190650020031"
+          ],
+          "choice": "dumiyyah tehillah \"沈黙が賛美[である]\" (L), \"沈黙は賛美である\" (B), \"静かに待つときも、賛美する\" (R)",
+          "alternatives": [
+            "賛美はふさわしい"
+          ],
+          "reason": "The Hebrew vowels read \"silence\"; the Greek reads \"praise is fitting\" (m1, uncertain, footnoted). The English reading, quiet trust as worship, is followed. neder 誓願 (L, B), 約束 (R) as the Pentateuch notes; the vow is kept with an offering (m2).",
+          "uncertain": true,
+          "footnote": true
         }
       ],
       "status": "ai_draft"
@@ -392,6 +556,26 @@
           "L": "ጸሎትን የምትሰማ ሆይ፣ \\q ሥጋ ሁሉ ወደ አንተ ይመጣል።",
           "B": "ጸሎትን ትሰማለህ፤ \\q ሰው ሁሉ ወደ ፊትህ ይመጣል።",
           "R": "ጸሎትን ትሰማለህ፤ \\q ስለዚህ ሁሉም ወደ አንተ ይመጣል።"
+        },
+        "hi": {
+          "L": "हे प्रार्थना के सुननेवाले, \\q सब प्राणी तेरे पास आएँगे।",
+          "B": "तू प्रार्थना सुनता है; \\q सब लोग तेरे सामने आएँगे।",
+          "R": "तू प्रार्थना सुनता है, \\q इसलिए सब लोग तेरे पास आएँगे।"
+        },
+        "ru": {
+          "L": "[Ты,] слышащий молитву, \\q к {{deity_pronoun:тебе|Тебе}} придёт всякая плоть.",
+          "B": "Ты слышишь молитву; \\q все люди придут к {{deity_pronoun:тебе|Тебе}}.",
+          "R": "Ты слушаешь молитвы, \\q и поэтому все придут к {{deity_pronoun:тебе|Тебе}}."
+        },
+        "ja": {
+          "L": "祈りを聞かれる方よ、 \\q あなたのもとに、すべての肉なる者は来る。",
+          "B": "あなたは祈りを聞いてくださる。 \\q すべての人が、あなたの前に来る。",
+          "R": "あなたは祈りを聞いてくださる。 \\q だから、みんながあなたのところに来る。"
+        },
+        "uk": {
+          "L": "[Ти, що] чуєш молитву, \\q до {{deity_pronoun:тебе|Тебе}} прийде всяке тіло.",
+          "B": "Ти чуєш молитву; \\q усі люди прийдуть до {{deity_pronoun:тебе|Тебе}}.",
+          "R": "Ти слухаєш молитву, \\q тож усі прийдуть до {{deity_pronoun:тебе|Тебе}}."
         }
       },
       "decisions": [
@@ -427,6 +611,26 @@
             "all flesh"
           ],
           "reason": "Balanced and Readable say what the phrase means (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650030041",
+            "o190650030051"
+          ],
+          "choice": "kol-basar \"すべての肉なる者\" (L), \"すべての人\" (B), \"みんな\" (R)",
+          "alternatives": [],
+          "reason": "\"All flesh\" means all people (m1); Literal keeps the Hebrew phrase.",
           "uncertain": false,
           "footnote": false
         }
@@ -496,6 +700,26 @@
           "L": "የበደል ነገሮች በረቱብኝ፤ \\q መተላለፋችንን አንተ ታስተሰርየዋለህ።",
           "B": "በደሎች አሸንፈውኛል፤ \\q አንተ ግን ዓመፃችንን ትሸፍናለህ።",
           "R": "ኃጢአቴ ከአቅሜ በላይ ሆኖብኛል፤ \\q አንተ ግን በደላችንን ይቅር ትላለህ።"
+        },
+        "hi": {
+          "L": "अधर्म के काम मुझ पर प्रबल हो गए हैं; \\q हमारे अपराध — तू उनका प्रायश्चित करता है।",
+          "B": "बुराइयाँ मुझ पर हावी हो जाती हैं, \\q पर तू हमारे विद्रोह के कामों को ढाँप देता है।",
+          "R": "मेरे पाप मेरे लिए बहुत भारी हैं, \\q पर तू हमारे अपराध क्षमा कर देता है।"
+        },
+        "ru": {
+          "L": "Дела беззаконий одолели меня; \\q преступления наши — {{deity_pronoun:ты|Ты}} покрываешь их.",
+          "B": "Грехи одолевают меня, \\q но {{deity_pronoun:ты|Ты}} покрываешь наши преступления.",
+          "R": "Мои грехи слишком тяжелы для меня, \\q но {{deity_pronoun:ты|Ты}} прощаешь нам наши проступки."
+        },
+        "ja": {
+          "L": "咎の数々が、わたしにはあまりに強い。 \\q わたしたちの背き――あなたはそれを贖われる。",
+          "B": "咎がわたしを圧倒する。 \\q しかし、あなたは、わたしたちの背きの罪を覆ってくださる。",
+          "R": "わたしの罪は、わたしには重すぎる。 \\q しかし、あなたは、わたしたちの悪いことをゆるしてくださる。"
+        },
+        "uk": {
+          "L": "Справи беззаконь сильніші за мене; \\q наші переступи — {{deity_pronoun:ти|Ти}} покриваєш їх.",
+          "B": "Провини переважують мене, \\q але {{deity_pronoun:ти|Ти}} покриваєш наші бунти.",
+          "R": "Мої гріхи надто тяжкі для мене, \\q але {{deity_pronoun:ти|Ти}} прощаєш наші провини."
         }
       },
       "decisions": [
@@ -566,6 +790,66 @@
             "\"unasamehe\" at every level"
           ],
           "reason": "The verb is the one used for making atonement, and its picture is covering over; in a short poetic line Swahili keeps the picture, and Readable says plainly what it means, \"unatusamehe\" (you forgive us), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650040071"
+          ],
+          "choice": "\"प्रायश्चित करता है\" (L), \"ढाँप देता है\" (B), \"क्षमा कर देता है\" (R)",
+          "alternatives": [],
+          "reason": "The verb is kipper (meaning m1). Literal keeps the Pentateuch's word for it; Balanced says \"cover\", the verb's picture, as the English does; Readable says what it means when God does it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650040071"
+          ],
+          "choice": "\"покрываешь\"",
+          "alternatives": [
+            "\"совершаешь умилостивление\"",
+            "\"очищаешь\""
+          ],
+          "reason": "The verb is kipper with God as its subject: God himself covers the sins over. \"совершить умилостивление\" is kept for the priest's act in the Law; here Literal and Balanced say \"cover\", the word's root picture, as the English Balanced does, and Readable says \"прощаешь\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650040071",
+            "o190650040072"
+          ],
+          "choice": "tekhapperem \"贖われる\" (L), \"覆ってくださる\" (B), \"ゆるしてくださる\" (R)",
+          "alternatives": [],
+          "reason": "kipper is to cover or wipe away (m1): 贖う at Literal as kipper in the Pentateuch notes, the picture of covering at Balanced, forgiving at Readable, as the English levels. The shift from \"me\" to \"our\" is kept (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -640,6 +924,26 @@
           "L": "አንተ የመረጥኸውና ያቀረብኸው ምስጉን ነው፤ በአደባባዮችህ ይኖራል። \\q በቤትህ በጎነት እንጥገብ፤ \\q በመቅደስህ ቅዱስ [ስፍራ]።",
           "B": "በአደባባዮችህ እንዲኖሩ የምትመርጣቸውና ወደ አንተ የምታቀርባቸው የተባረኩ ናቸው! \\q በቤትህ በጎነት እንርካ፤ \\q በቅዱሱ መቅደስህ።",
           "R": "በመቅደስህ አደባባዮች እንዲኖሩ የምትመርጣቸውና ወደ አንተ የምታቀርባቸው ሰዎች በእውነት ደስተኞች ናቸው። \\q በቅዱስ ቤትህ ያሉ መልካም ነገሮች በደስታ ይሙሉን።"
+        },
+        "hi": {
+          "L": "धन्य [है वह] जिसे तू चुनता और निकट लाता है; वह तेरे आँगनों में वास करेगा। \\q हम तेरे भवन की भलाई से, \\q तेरे मन्दिर के पवित्र [स्थान] से तृप्त हों।",
+          "B": "कितने धन्य हैं वे जिन्हें तू चुनकर अपने निकट लाता है, कि वे तेरे आँगनों में रहें! \\q हम तेरे भवन की उत्तम वस्तुओं से, \\q तेरे पवित्र मन्दिर से तृप्त हों।",
+          "R": "जीवन सचमुच उन लोगों के लिए अच्छा है जिन्हें तू चुनकर अपने पास लाता है, कि वे तेरे मन्दिर के आँगनों में रहें। \\q तेरे पवित्र भवन की अच्छी वस्तुएँ हमें आनंद से भर दें।"
+        },
+        "ru": {
+          "L": "Блажен [тот, кого] {{deity_pronoun:ты|Ты}} избираешь и приближаешь; он будет обитать во дворах {{deity_pronoun:твоих|Твоих}}. \\q Да насытимся мы благами дома {{deity_pronoun:твоего|Твоего}}, \\q святого [места] храма {{deity_pronoun:твоего|Твоего}}.",
+          "B": "Блаженны те, кого {{deity_pronoun:ты|Ты}} избираешь и приближаешь к себе, чтобы они жили в {{deity_pronoun:твоих|Твоих}} дворах! \\q Пусть мы насытимся благами {{deity_pronoun:твоего|Твоего}} дома, \\q {{deity_pronoun:твоего|Твоего}} святого храма.",
+          "R": "Как хорошо живётся тем, кого {{deity_pronoun:ты|Ты}} избираешь и приближаешь к себе, чтобы они жили во дворах {{deity_pronoun:твоего|Твоего}} храма! \\q Пусть благословения {{deity_pronoun:твоего|Твоего}} святого дома наполнят нас радостью."
+        },
+        "ja": {
+          "L": "幸いなことよ、あなたが選び、近づけられる者は。その人は、あなたの庭に住む。 \\q わたしたちが、あなたの家の良いもので満ち足りるように、 \\q あなたの神殿の聖なる[所の良いもので]。",
+          "B": "なんと幸いなことか、あなたが選び、近くに招いて、あなたの庭に住まわせる人々は！ \\q わたしたちが、あなたの家の恵みに満ち足りるように、 \\q あなたの聖なる神殿の恵みに。",
+          "R": "あなたが選んで、近くに呼び寄せ、神殿の庭に住まわせてくださる人々は、本当に幸せだ。 \\q あなたの聖なる家にある良いものが、わたしたちを喜びで満たしてくれるように。"
+        },
+        "uk": {
+          "L": "{{gender:Блаженна та людина, яку|Блаженний той чоловік, якого}} {{deity_pronoun:ти|Ти}} вибираєш і наближаєш; {{gender:вона житиме|він житиме}} у {{deity_pronoun:твоїх|Твоїх}} дворах. \\q Нехай ми наситимося добром {{deity_pronoun:твого|Твого}} дому, \\q святим [місцем] {{deity_pronoun:твого|Твого}} храму.",
+          "B": "Блаженні ті, кого {{deity_pronoun:ти|Ти}} вибираєш і наближаєш, щоб жили у {{deity_pronoun:твоїх|Твоїх}} дворах! \\q Нехай ми бенкетуємо добром {{deity_pronoun:твого|Твого}} дому, \\q {{deity_pronoun:твого|Твого}} святого храму.",
+          "R": "Справді добре живеться людям, яких {{deity_pronoun:ти|Ти}} вибираєш і наближаєш до себе, щоб вони жили у дворах {{deity_pronoun:твого|Твого}} храму. \\q Нехай добро {{deity_pronoun:твого|Твого}} святого дому сповнить нас радістю."
         }
       },
       "decisions": [
@@ -869,6 +1173,105 @@
           "reason": "The Amharic generic masculine speaks of anyone whom God chooses; Amharic has no second wording for the setting to switch to.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190650050041"
+          ],
+          "choice": "\"वह\", with no gender span",
+          "alternatives": [
+            "a span such as the English \"they|he\""
+          ],
+          "reason": "Hindi \"वह\" does not show gender, so the wording the English setting offers is already inclusive in Hindi and there is nothing for a span to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650050011"
+          ],
+          "choice": "\"धन्य\"",
+          "alternatives": [
+            "\"सुखी\""
+          ],
+          "reason": "'ashre (meaning m1) is \"धन्य\" as in the beatitudes of Matthew 5 in this translation; Readable says what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190650050041"
+          ],
+          "choice": "\"он\" with no gender span",
+          "alternatives": [
+            "a gender span \"они\" / \"он\""
+          ],
+          "reason": "The English Literal has a gender span here (\"they\" / \"he\"); Russian Literal keeps the Hebrew singular \"он\", which stands for anyone God chooses, and Balanced and Readable make it plural, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650050011"
+          ],
+          "choice": "'ashre \"幸いなことよ\" (L), \"なんと幸いなことか\" (B), \"本当に幸せだ\" (R), as the Psalter conventions",
+          "alternatives": [],
+          "reason": "How happy and favored (m1); the one chosen (singular at L, \"その人\", with no gender span) and the plural of B and R follow the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650050071",
+            "o190650050072",
+            "o190650050081",
+            "o190650050082"
+          ],
+          "choice": "tuv betekha \"あなたの家の良いもの\" (L), \"あなたの家の恵み\" (B), \"あなたの聖なる家にある良いもの\" (R)",
+          "alternatives": [],
+          "reason": "The goodness of God's house is the blessing found there (m3), not tuv YHWH (\"恵み深さ\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -941,6 +1344,26 @@
           "L": "በጽድቅ [በ]አስፈሪ ነገሮች ትመልስልናለህ፤ የመድኃኒታችን አምላክ ሆይ፣ \\q የምድር ዳርቻዎች ሁሉ \\q የሩቁም ባሕር መታመኛ [የሆንህ]፣",
           "B": "የማዳናችን አምላክ ሆይ፣ ፍርሃትን በሚያሳድሩ ሥራዎች በጽድቅ ትመልስልናለህ፤ \\q የምድር ዳርቻዎች ሁሉ \\q በሩቅ ባሕሮችም ያሉ የሚታመኑብህ፣",
           "R": "እግዚአብሔር ሆይ፣ ታድነናለህ። ትክክልና ፍትሐዊ የሆኑ አስደናቂ ነገሮችን በማድረግ ትመልስልናለህ። \\q በምድር ላይ በየቦታው ያሉ ሰዎች ይታመኑብሃል፤ \\q ከባሕር ማዶ ርቀው የሚኖሩትም እንኳ።"
+        },
+        "hi": {
+          "L": "भययोग्य कामों के द्वारा तू धार्मिकता से हमें उत्तर देता है, हे हमारे उद्धार के परमेश्वर, \\q पृथ्वी के सब छोरों का \\q और दूर के समुद्र का भरोसा,",
+          "B": "विस्मय उपजानेवाले कामों से तू धार्मिकता के साथ हमें उत्तर देता है, हे हमारे छुड़ानेवाले परमेश्वर, \\q जिन पर पृथ्वी के सब छोर भरोसा रखते हैं \\q और दूर समुद्रों पर रहनेवाले भी,",
+          "R": "हे परमेश्वर, तू हमें बचाता है। तू ऐसे अद्भुत काम करके हमें उत्तर देता है जो सही और न्यायपूर्ण हैं। \\q पृथ्वी पर हर जगह के लोग तुझ पर भरोसा रखते हैं, \\q वे भी जो समुद्र के उस पार दूर रहते हैं।"
+        },
+        "ru": {
+          "L": "Страшными [делами] в праведности {{deity_pronoun:ты|Ты}} отвечаешь нам, Боже спасения нашего, \\q упование всех концов земли \\q и далёкого моря,",
+          "B": "Делами, внушающими трепет, {{deity_pronoun:ты|Ты}} в праведности отвечаешь нам, Боже, наш спаситель, \\q {{deity_pronoun:тебе|Тебе}} доверяют все концы земли \\q и те, кто на дальних морях,",
+          "R": "Боже, {{deity_pronoun:ты|Ты}} спасаешь нас. Ты отвечаешь нам, совершая удивительные дела, правильные и справедливые. \\q Люди по всей земле доверяют {{deity_pronoun:тебе|Тебе}}, \\q даже те, кто живёт далеко за морем."
+        },
+        "ja": {
+          "L": "畏るべきわざによって、義のうちに、あなたはわたしたちに答えられる、わたしたちの救いの神よ。 \\q [あなたは]地のすべての果ての、 \\q また遠い海の信頼[の的]。",
+          "B": "わたしたちの救いの神よ、あなたは畏るべきわざによって、義をもってわたしたちに答えられる。 \\q 地の果てに住むすべての人々も、 \\q 遠い海にいる人々も、あなたに信頼する。",
+          "R": "神よ、あなたはわたしたちを救ってくださる。正しく公平な、驚くべきわざによって、わたしたちに答えてくださる。 \\q 地上のどこに住む人々も、あなたに信頼する。 \\q 海のはるか向こうに住む人々も、そうだ。"
+        },
+        "uk": {
+          "L": "Грізними [ділами] у праведності {{deity_pronoun:ти|Ти}} відповідаєш нам, Боже нашого спасіння, \\q надіє всіх кінців землі \\q і далекого моря,",
+          "B": "Ділами, що викликають благоговіння, {{deity_pronoun:ти|Ти}} відповідаєш нам у праведності, Боже нашого порятунку, \\q на якого покладаються всі кінці землі \\q і ті, хто на далеких морях,",
+          "R": "Боже, {{deity_pronoun:ти|Ти}} спасаєш нас. Ти відповідаєш нам, чинячи дивовижні діла, правильні й справедливі. \\q Люди всюди на землі довіряють {{deity_pronoun:тобі|Тобі}}, \\q навіть ті, хто живе далеко за морем."
         }
       },
       "decisions": [
@@ -985,6 +1408,44 @@
           "choice": "a sentence that runs on",
           "alternatives": [],
           "reason": "The sentence continues into verse 7, so this verse ends with a comma at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190650060111"
+          ],
+          "choice": "The English sentence runs on from 65:6 through 65:8 (\"…far-off sea, who establishes…, who stills…\"); Japanese ends 65:6 with 。 and makes 65:7 and 65:8 their own sentences with God in the third person (\"その方は\" L, B; \"神は\" R)",
+          "alternatives": [],
+          "reason": "The Hebrew participles of 65:7-8 turn to speaking of God (65:7 m1); separate sentences keep each verse's content in its verse (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650060011"
+          ],
+          "choice": "nora'ot \"畏るべきわざ\" (L, B), \"驚くべきわざ\" (R)",
+          "alternatives": [],
+          "reason": "Deeds that make people fear and wonder (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1052,6 +1513,26 @@
           "L": "ተራሮችን በኃይሉ የሚያጸና፣ \\q ብርታትን የታጠቀ፣",
           "B": "ተራሮችን በኃይሉ በስፍራቸው ያጸና፣ \\q ብርታትን እንደ ቀበቶ የታጠቀ፣",
           "R": "እግዚአብሔር በኃይሉ ተራሮችን አጽንቶ አቆመ። \\q ብርታትን ለብሷል።"
+        },
+        "hi": {
+          "L": "जो अपनी सामर्थ्य से पहाड़ों को स्थिर करते हैं, \\q पराक्रम का कमरबंद बाँधे हुए,",
+          "B": "जिन्होंने अपनी शक्ति से पहाड़ों को उनके स्थान पर दृढ़ किया, \\q जो पराक्रम को कमरबंद के समान पहने हुए हैं,",
+          "R": "परमेश्वर ने अपनी सामर्थ्य से पहाड़ों को उनके स्थान पर दृढ़ किया। \\q वे बल से सुसज्जित हैं।"
+        },
+        "ru": {
+          "L": "утверждающий горы силой своей, \\q препоясанный могуществом,",
+          "B": "который утвердил горы своей мощью, \\q опоясанный силой, как поясом,",
+          "R": "Своей силой Бог прочно поставил горы на место. \\q Он одет в силу."
+        },
+        "ja": {
+          "L": "その方は、ご自分の力によって山々を堅く据え、 \\q 力を帯びておられる。",
+          "B": "その方は、力によって山々を据え、 \\q 力を帯のように身に着けておられる。",
+          "R": "神は、その力で、山々をしっかりと据えられた。 \\q 神は、力を身にまとっておられる。"
+        },
+        "uk": {
+          "L": "що утверджує гори своєю силою, \\q підперезаний могутністю,",
+          "B": "що поставив гори на місце своєю силою, \\q носячи могутність, як пояс,",
+          "R": "Своєю силою Бог міцно поставив гори на їхнє місце. \\q Він зодягнений у силу."
         }
       },
       "decisions": [
@@ -1112,6 +1593,27 @@
           "choice": "God",
           "alternatives": [],
           "reason": "Readable starts a new sentence and names God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650070041",
+            "o190650070051",
+            "o190650070052"
+          ],
+          "choice": "ne'zar bigvurah \"力を帯びておられる\" (L), \"力を帯のように身に着けておられる\" (B), \"力を身にまとっておられる\" (R)",
+          "alternatives": [],
+          "reason": "Might worn like a belt (m2); light respect forms for God's acts in the third person.",
           "uncertain": false,
           "footnote": false
         }
@@ -1180,6 +1682,26 @@
           "L": "የባሕሮችን ጩኸት፣ የሞገዳቸውን ጩኸት፣ \\q የሕዝቦችንም ሁከት ጸጥ የሚያሰኝ።",
           "B": "የባሕሮችን ነጎድጓድና የሞገዳቸውን ግጭት፣ \\q የሕዝቦችንም ሁከት ጸጥ የሚያደርግ።",
           "R": "የሚያገሡትን ባሕሮችና የሚጋጩትን ሞገዶች ጸጥ ያደርጋል። \\q ጫጫታ የሚያበዙትንና የተቆጡትን ሕዝቦችም ጸጥ ያደርጋል።"
+        },
+        "hi": {
+          "L": "जो समुद्रों का गर्जन, उनकी लहरों का गर्जन, \\q और लोगों का कोलाहल शांत करते हैं।",
+          "B": "जो समुद्रों की गड़गड़ाहट और उनकी लहरों के थपेड़ों को, \\q और देशों के हुल्लड़ को शांत करते हैं।",
+          "R": "वे गरजते समुद्रों और उनकी उछलती लहरों को शांत करते हैं। \\q वे शोर मचाते, क्रोधित देशों को भी शांत करते हैं।"
+        },
+        "ru": {
+          "L": "усмиряющий шум морей, шум волн их \\q и смятение племён.",
+          "B": "который укрощает грохот морей и плеск их волн \\q и смятение народов.",
+          "R": "Он успокаивает ревущие моря и их бушующие волны. \\q Он успокаивает и шумные, разгневанные народы."
+        },
+        "ja": {
+          "L": "海のとどろき、その波のとどろき、 \\q また民らの騒ぎを、[その方は]静められる。",
+          "B": "その方は、海の鳴りとどろく音と、波の砕ける音を静め、 \\q 民らの騒ぎを静められる。",
+          "R": "神は、とどろく海と、砕ける波を静められる。 \\q 騒いで怒っている国々の人々も、静められる。"
+        },
+        "uk": {
+          "L": "що вгамовує ревіння морів, ревіння їхніх хвиль \\q і гамір племен.",
+          "B": "що вгамовує гуркіт морів і гуркіт їхніх хвиль, \\q і бурю народів.",
+          "R": "Він заспокоює ревучі моря та їхні хвилі, що розбиваються. \\q Він також заспокоює галасливі, розлючені народи."
         }
       },
       "decisions": [
@@ -1195,6 +1717,26 @@
           "choice": "seas and peoples: chaos tamed",
           "alternatives": [],
           "reason": "The raging sea stands for all that threatens God's order, and the raging nations are like it (46:3-7; 89:10).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650080071",
+            "o190650080031"
+          ],
+          "choice": "le'ummim \"民ら\" (L, B), \"国々の人々\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter's word for le'ummim (PSA-1); seas and peoples are the chaos that God tames (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1266,6 +1808,26 @@
           "L": "የ[ምድር] ዳርቻ ነዋሪዎችም ከምልክቶችህ የተነሣ ይፈራሉ፤ \\q የጠዋትንና የማታን መውጫዎች እልል እንዲሉ ታደርጋለህ።",
           "B": "በዓለም ዳርቻ የሚኖሩ በድንቅ ሥራዎችህ ይደነቃሉ፤ \\q ፀሐይ የምትወጣበትንና የምትጠልቅበትን ምድር በደስታ እንዲዘምሩ ታደርጋለህ።",
           "R": "ርቀው የሚኖሩ ሰዎች በምታደርጋቸው ድንቅ ነገሮች ይደነቃሉ። \\q ፀሐይ ከምትወጣበት እስከምትጠልቅበት ድረስ ሰዎች በደስታ እልል እንዲሉ ታደርጋለህ።"
+        },
+        "hi": {
+          "L": "और [पृथ्वी के] छोरों के रहनेवाले तेरे चिह्नों के कारण डरते हैं; \\q भोर और साँझ के निकलने के स्थानों से तू जयजयकार करवाता है।",
+          "B": "संसार के दूर किनारों के रहनेवाले तेरे आश्चर्यकर्मों से विस्मित होते हैं; \\q तू सूर्योदय और सूर्यास्त के देशों से आनंद के गीत गवाता है।",
+          "R": "दूर रहनेवाले लोग तेरे अद्भुत कामों पर चकित होते हैं। \\q जहाँ सूरज उगता है वहाँ से जहाँ वह डूबता है वहाँ तक, तू लोगों से आनंद का जयजयकार करवाता है।"
+        },
+        "ru": {
+          "L": "И боятся обитающие на краях [земли] знамений {{deity_pronoun:твоих|Твоих}}; \\q исходы утра и вечера {{deity_pronoun:ты|Ты}} заставляешь ликовать.",
+          "B": "Живущие на дальних краях мира трепещут перед {{deity_pronoun:твоими|Твоими}} чудесами; \\q земли восхода и заката {{deity_pronoun:ты|Ты}} заставляешь петь от радости.",
+          "R": "Люди, которые живут далеко, изумляются чудесам, которые {{deity_pronoun:ты|Ты}} творишь. \\q От края, где восходит солнце, до края, где оно заходит, {{deity_pronoun:ты|Ты}} наполняешь людей радостью."
+        },
+        "ja": {
+          "L": "地の果てに住む者たちは、あなたのしるしのゆえに恐れる。 \\q 朝と夕べの出て行く所を、あなたは喜び歌わせる。",
+          "B": "地の果てに住む者たちは、あなたの不思議なわざを畏れる。 \\q あなたは、日の昇る所も日の沈む所も、喜び歌わせる。",
+          "R": "遠い所に住む人々も、あなたがなさる不思議なことに驚く。 \\q 日の昇る所から日の沈む所まで、あなたは人々を喜んで叫ばせてくださる。"
+        },
+        "uk": {
+          "L": "І мешканці кінців [землі] бояться через {{deity_pronoun:твої|Твої}} знаки; \\q виходи ранку й вечора {{deity_pronoun:ти|Ти}} змушуєш радісно співати.",
+          "B": "Ті, хто живе на далеких краях світу, стоять у благоговінні перед {{deity_pronoun:твоїми|Твоїми}} чудесами; \\q {{deity_pronoun:ти|Ти}} змушуєш краї сходу й заходу сонця радісно співати.",
+          "R": "Люди, які живуть далеко, дивуються чудовим ділам, що {{deity_pronoun:ти|Ти}} чиниш. \\q Від того місця, де сонце сходить, до того, де заходить, {{deity_pronoun:ти|Ти}} змушуєш людей радісно вигукувати."
         }
       },
       "decisions": [
@@ -1299,6 +1861,28 @@
           "alternatives": [],
           "reason": "The signs are the deeds that show God's power, in nature and in history.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650090051",
+            "o190650090061",
+            "o190650090071",
+            "o190650090072"
+          ],
+          "choice": "motsa'e-voqer va'erev \"朝と夕べの出て行く所\" (L), \"日の昇る所も日の沈む所も\" (B), \"日の昇る所から日の沈む所まで\" (R)",
+          "alternatives": [],
+          "reason": "The phrase is read as east and west, the whole world (m1, uncertain); Literal keeps the Hebrew picture.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1377,6 +1961,26 @@
           "L": "ምድርን ጎበኘህ፤ አጠጣሃትም፤ እጅግም አበለጸግሃት፤ \\q የእግዚአብሔር ወንዝ ውኃ የሞላበት ነው፤ \\q እህላቸውን ታዘጋጃለህ፤ \\q እንዲሁ ታዘጋጃታለህና።",
           "B": "ምድርን ትጎበኛለህ፤ በዝናብም ታረካታለህ፤ እጅግ ለም ታደርጋታለህ። \\q የእግዚአብሔር መስኖ ውኃ ሞልቶ ተትረፍርፏል፤ \\q ለሰዎች እህልን ታቀርባለህ፤ \\q ምድሪቱን እንዲህ አድርገህ አዘጋጅተሃታልና።",
           "R": "ምድርን ትንከባከባለህ፤ ዝናብንም ትልክላታለህ። አፈሯንም ለም ታደርጋለህ። \\q በሰማይ ያሉ የእግዚአብሔር ወንዞች ውኃ ሞልቶባቸዋል። \\q ምድሪቱን እንዲህ አድርገህ ስለ ሠራሃት ለሰዎች የሚበሉትን እህል ትሰጣለህ።"
+        },
+        "hi": {
+          "L": "तूने पृथ्वी की सुधि ली और उसे उमड़ा दिया; तू उसे बहुत धनी करता है; \\q परमेश्वर की नदी जल से भरी [है]; \\q तू उनका अन्न देता है, \\q क्योंकि तू उसे इसी प्रकार तैयार करता है।",
+          "B": "तू पृथ्वी की सुधि लेने आता है और उसे वर्षा से भिगो देता है; तू उसे बहुत उपजाऊ बनाता है। \\q परमेश्वर की नहर जल से लबालब है; \\q तू लोगों को अन्न देता है, \\q क्योंकि तूने भूमि को इसी तरह तैयार किया है।",
+          "R": "तू पृथ्वी की देखभाल करता है और उस पर वर्षा भेजता है। तू मिट्टी को उपजाऊ बनाता है। \\q आकाश में परमेश्वर की नदियाँ जल से भरी हैं। \\q तू लोगों को खाने के लिए अन्न देता है, क्योंकि तूने भूमि को ऐसा ही बनाया है।"
+        },
+        "ru": {
+          "L": "Ты посетил землю и напоил её; {{deity_pronoun:ты|Ты}} обильно обогащаешь её; \\q поток Божий полон воды; \\q {{deity_pronoun:ты|Ты}} приготовляешь им хлеб, \\q потому что так {{deity_pronoun:ты|Ты}} устроил её.",
+          "B": "Ты приходишь к земле и напаиваешь её дождём; {{deity_pronoun:ты|Ты}} делаешь её богатой и плодородной. \\q Божий поток полон воды; \\q {{deity_pronoun:ты|Ты}} даёшь людям зерно, \\q потому что так {{deity_pronoun:ты|Ты}} приготовил землю.",
+          "R": "Ты заботишься о земле и посылаешь на неё дождь. Ты делаешь почву плодородной. \\q Божьи реки в небе полны воды. \\q Ты даёшь людям зерно для еды, потому что так {{deity_pronoun:ты|Ты}} устроил землю."
+        },
+        "ja": {
+          "L": "あなたは地を顧みて、これに水をあふれさせ、大いにこれを富ませる。 \\q 神の流れは水に満ちている。 \\q あなたは彼らの穀物を備えられる。 \\q まことに、そのように、あなたは地を備えられる。",
+          "B": "あなたは地を訪れて、雨でこれを潤し、豊かに実らせる。 \\q 神の水路は、水であふれている。 \\q あなたは人々に穀物を与えられる。 \\q あなたが、そのように地を整えられたからだ。",
+          "R": "あなたは地を顧みて、雨を降らせ、土を豊かにしてくださる。 \\q 空にある神の川は、水でいっぱいだ。 \\q あなたは人々に食べる穀物を与えてくださる。あなたが、そのように土地を造られたからだ。"
+        },
+        "uk": {
+          "L": "Ти відвідав землю й напоїв її досхочу; {{deity_pronoun:ти|Ти}} щедро збагачуєш її; \\q Божий потік повний води; \\q {{deity_pronoun:ти|Ти}} даєш їм зерно, \\q бо так {{deity_pronoun:ти|Ти}} приготував її.",
+          "B": "Ти навідуєшся до землі й насичуєш її дощем; {{deity_pronoun:ти|Ти}} робиш її щедро родючою. \\q Божий потік по вінця повний води; \\q {{deity_pronoun:ти|Ти}} забезпечуєш людей зерном, \\q бо так {{deity_pronoun:ти|Ти}} приготував землю.",
+          "R": "Ти дбаєш про землю й посилаєш на неї дощ. Ти робиш ґрунт родючим. \\q Божі ріки в небі повні води. \\q Ти даєш людям зерно на поживу, бо так {{deity_pronoun:ти|Ти}} влаштував землю."
         }
       },
       "decisions": [
@@ -1466,6 +2070,45 @@
           "reason": "The grain of the harvest is named with the everyday Vietnamese word for the crop, rather than the technical \"ngũ cốc\" (cereals).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650100011"
+          ],
+          "choice": "paqadta \"顧みて\" (L, R), \"訪れて\" (B)",
+          "alternatives": [],
+          "reason": "God came to care for the land (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650100061",
+            "o190650100071"
+          ],
+          "choice": "peleg 'Elohim \"神の流れ\" (L), \"神の水路\" (B), \"空にある神の川\" (R)",
+          "alternatives": [],
+          "reason": "The source of the rain (m2, uncertain); peleg 流れ (L), 水路 (B) as palgei mayim in 1:3; Readable explains, as the English R.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1536,6 +2179,26 @@
           "L": "ትልሞቿን አብዝተህ ታጠጣለህ፤ የአፈር ቁልሎቿንም ታስተካክላለህ፤ \\q በካፊያ ታለሰልሳታለህ፤ \\q ቡቃያዋንም ትባርካለህ።",
           "B": "ትልሞቿን በውኃ እየሞላህ ቁልሎቿንም እየደለደልህ፣ \\q አፈሯን በዝናብ ካፊያ ታለሰልሳለህ፤ \\q ከእርሷም የሚበቅለውን ሁሉ ትባርካለህ።",
           "R": "በታረሱ እርሻዎች ላይ ዝናብ ታዘንባለህ፤ ጎርባጣውንም አፈር ታስተካክላለህ። \\q መሬቱን በዝናብ ታለሰልሳለህ፤ እህሉም ሲያድግ ትባርከዋለህ።"
+        },
+        "hi": {
+          "L": "उसके कूँड़ों को भरपूर सींचते हुए, उसकी मेड़ों को बैठाते हुए, \\q तू वर्षा की बौछारों से उसे नरम करता है; \\q तू उसकी उपज पर आशीष देता है।",
+          "B": "तू उसके कूँड़ों में पानी भरता और उसकी मेड़ों को बैठा देता है, \\q बौछारों से मिट्टी को नरम करता है \\q और उसमें से उगनेवाली हर चीज़ पर आशीष देता है।",
+          "R": "तू जुते हुए खेतों पर वर्षा बरसाता है और मिट्टी के ढेलों को समतल कर देता है। \\q तू वर्षा से भूमि को नरम करता है, और बढ़ते हुए पौधों पर आशीष देता है।"
+        },
+        "ru": {
+          "L": "Борозды её обильно напояя, уравнивая глыбы её, \\q ливнями {{deity_pronoun:ты|Ты}} размягчаешь её; \\q {{deity_pronoun:ты|Ты}} благословляешь её ростки.",
+          "B": "Наполняя водой её борозды и разглаживая её гряды, \\q {{deity_pronoun:ты|Ты}} размягчаешь почву дождями \\q и благословляешь всё, что из неё вырастает.",
+          "R": "Ты поливаешь дождём вспаханные поля и разглаживаешь комья земли. \\q Ты делаешь землю мягкой от дождя и благословляешь растения, когда они растут."
+        },
+        "ja": {
+          "L": "その畝に豊かに水を注ぎ、その盛り土をならし、 \\q 夕立ちでこれを柔らかくし、 \\q その芽生えを、あなたは祝福される。",
+          "B": "あなたは、畝に水を注ぎ、盛り上がった土をならし、 \\q 雨で土を柔らかくし、 \\q 地から芽生えるものを祝福される。",
+          "R": "あなたは、耕した畑に雨を注ぎ、土のかたまりをならしてくださる。 \\q 雨で土を柔らかくし、育っていく作物を祝福してくださる。"
+        },
+        "uk": {
+          "L": "Рясно напуваючи її борозни, вирівнюючи її скиби, \\q зливами {{deity_pronoun:ти|Ти}} розмʼякшуєш її; \\q {{deity_pronoun:ти|Ти}} благословляєш її паростки.",
+          "B": "Наливаючи воду в її борозни й притискаючи її скиби, \\q {{deity_pronoun:ти|Ти}} розмʼякшуєш ґрунт дощовими зливами \\q і благословляєш усе, що з нього проростає.",
+          "R": "Ти ллєш дощ на зорані поля й розгладжуєш грудки землі. \\q Ти розмʼякшуєш ґрунт дощем і благословляєш рослини, коли вони ростуть."
         }
       },
       "decisions": [
@@ -1551,6 +2214,28 @@
           "choice": "furrows and ridges: the plowed field",
           "alternatives": [],
           "reason": "The autumn rains softened the ground after plowing; the clods between the furrows are settled and broken down.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650110011",
+            "o190650110012",
+            "o190650110041",
+            "o190650110042"
+          ],
+          "choice": "telameha / gedudeha \"畝\" / \"盛り土\" (L), \"畝\" / \"盛り上がった土\" (B), \"耕した畑\" / \"土のかたまり\" (R)",
+          "alternatives": [],
+          "reason": "The furrows and ridges of the plowed field (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1620,6 +2305,26 @@
           "L": "የበጎነትህን ዓመት ዘውድ ደፋህለት፤ \\q ፈለግህም ቅባትን ያንጠባጥባል።",
           "B": "የበጎነትህን ዓመት ዘውድ ትደፋለታለህ፤ \\q የሰረገላህም ፈለግ በበረከት ይንጠባጠባል።",
           "R": "ዓመቱን በሙሉ እንደ ዘውድ በመልካም ነገሮች ታስጌጣለህ። \\q በምትሄድበት ሁሉ የተትረፈረፈ ምግብ ትተዋለህ።"
+        },
+        "hi": {
+          "L": "तूने अपनी भलाई के वर्ष को मुकुट पहनाया है, \\q और तेरी लीकों से चिकनाई टपकती है।",
+          "B": "तू अपनी भलाई के वर्ष के सिर पर मुकुट रखता है, \\q और तेरे रथ के पहियों की लीकों से भरपूरी टपकती है।",
+          "R": "तू पूरे वर्ष भर अच्छी वस्तुएँ देता है, मानो मुकुट पहनाता हो। \\q तू जहाँ कहीं जाता है, वहाँ भरपूर भोजन छोड़ जाता है।"
+        },
+        "ru": {
+          "L": "Ты увенчал год благости {{deity_pronoun:твоей|Твоей}}, \\q и колеи {{deity_pronoun:твои|Твои}} источают тук.",
+          "B": "Ты венчаешь год {{deity_pronoun:твоей|Твоей}} благости, \\q и следы {{deity_pronoun:твоей|Твоей}} колесницы источают изобилие.",
+          "R": "Ты даёшь целый год, полный добра, словно венец. \\q Куда бы {{deity_pronoun:ты|Ты}} ни пошёл, {{deity_pronoun:ты|Ты}} оставляешь после себя обильную пищу."
+        },
+        "ja": {
+          "L": "あなたは、あなたの恵みの年に冠をかぶらせ、 \\q あなたの通られた跡には、肥えたものがしたたる。",
+          "B": "あなたは、恵みに満ちた一年に冠をかぶらせる。 \\q あなたの車の通った跡には、豊かさがしたたる。",
+          "R": "あなたは、一年中、冠のように良いものを与えてくださる。 \\q あなたが行かれる所には、どこにも豊かな食べ物が残される。"
+        },
+        "uk": {
+          "L": "Ти увінчав рік {{deity_pronoun:твоєю|Твоєю}} добротою, \\q і {{deity_pronoun:твої|Твої}} колії скрапують ситістю.",
+          "B": "Ти вінчаєш рік {{deity_pronoun:твоєю|Твоєю}} добротою, \\q і колії {{deity_pronoun:твоєї|Твоєї}} колісниці скрапують достатком.",
+          "R": "Ти даєш цілий рік добра, мов вінець. \\q Усюди, де {{deity_pronoun:ти|Ти}} проходиш, {{deity_pronoun:ти|Ти}} залишаєш по собі щедру їжу."
         }
       },
       "decisions": [
@@ -1683,6 +2388,28 @@
           "choice": "chariot",
           "alternatives": [],
           "reason": "Balanced names what makes the tracks (m2).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650120041",
+            "o190650120042",
+            "o190650120043",
+            "o190650120061"
+          ],
+          "choice": "ma'galekha \"あなたの通られた跡\" (L), \"あなたの車の通った跡\" (B), \"あなたが行かれる所\" (R); deshen \"肥えたもの\" (L, as 63:6), \"豊かさ\" (B), \"豊かな食べ物\" (R)",
+          "alternatives": [],
+          "reason": "The tracks are read as those of God's chariot (m2, uncertain), supplied at Balanced as the English B; fatness is richness and plenty (m3).",
           "uncertain": true,
           "footnote": false
         }
@@ -1749,6 +2476,26 @@
           "L": "የምድረ በዳ መሰማሪያዎች ያንጠባጥባሉ፤ \\q ኮረብቶችም ደስታን ይታጠቃሉ።",
           "B": "የሜዳው መሰማሪያዎች እንኳ በበረከት ይንጠባጠባሉ፤ \\q ኮረብቶችም ደስታን እንደ ቀበቶ ይታጠቃሉ።",
           "R": "በደረቁ አገር ያለው ሣር እንኳ በዝናብ ረጥቧል። \\q ኮረብቶቹ ደስታን የለበሱ ይመስላሉ።"
+        },
+        "hi": {
+          "L": "निर्जन प्रदेश की चराइयाँ टपकती हैं, \\q और पहाड़ियाँ आनंद का कमरबंद बाँधती हैं।",
+          "B": "खुले मैदानों की चराइयाँ भी भरपूरी से टपकती हैं, \\q और पहाड़ियाँ आनंद को कमरबंद की तरह पहन लेती हैं।",
+          "R": "सूखे प्रदेश की घास भी वर्षा से भीग जाती है। \\q पहाड़ियाँ मानो आनंद का वस्त्र पहने हुए हैं।"
+        },
+        "ru": {
+          "L": "Сочатся пастбища пустыни, \\q и радостью холмы препоясываются.",
+          "B": "Даже пастбища в степи источают изобилие, \\q и холмы надевают радость, как пояс.",
+          "R": "Даже трава в сухих краях мокрая от дождя. \\q Холмы словно оделись в радость."
+        },
+        "ja": {
+          "L": "荒れ野の牧場はしたたり、 \\q 丘は喜びを帯びる。",
+          "B": "野の牧場さえ、豊かさにしたたり、 \\q 丘は喜びを帯のように身に着ける。",
+          "R": "乾いた土地の草までも、雨にぬれている。 \\q 丘は、喜びの服を着ているようだ。"
+        },
+        "uk": {
+          "L": "Скрапують пасовиська пустелі, \\q і пагорби підперізуються радістю.",
+          "B": "Навіть пасовиська відкритого степу скрапують достатком, \\q і пагорби вдягають радість, як пояс.",
+          "R": "Навіть трава в сухому краю мокра від дощу. \\q Пагорби немов убрані в радість."
         }
       },
       "decisions": [
@@ -1778,6 +2525,25 @@
           "choice": "the hills gird themselves with joy",
           "alternatives": [],
           "reason": "The hills, green with growth, are pictured as wearing joy like a belt (compare verse 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650130031"
+          ],
+          "choice": "midbar \"荒れ野\" (L), \"野\" (B), \"乾いた土地\" (R)",
+          "alternatives": [],
+          "reason": "Here midbar is open grazing land (m1), so Balanced says 野 as the English \"open country\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1848,6 +2614,26 @@
           "L": "መሰማሪያዎች መንጎችን ለበሱ፤ \\q ሸለቆዎችም እህልን ተጎናጸፉ፤ \\q እልል ይላሉ፤ ደግሞም ይዘምራሉ።",
           "B": "መንጎች መሰማሪያዎቹን እንደ ልብስ ይሸፍናሉ፤ \\q እህልም ሸለቆዎቹን ይጠቀልላል፤ \\q በድል እልል ይላሉ፤ አዎን፣ ይዘምራሉ!",
           "R": "በጎች እርሻዎቹን እንደ ካባ ሞልተዋቸዋል። \\q ሸለቆዎቹ በእህል ተሸፍነዋል። \\q ሁሉም ነገር በደስታ እልል ይላል፤ ይዘምራልም!"
+        },
+        "hi": {
+          "L": "चराइयाँ भेड़-बकरियों के झुंडों का वस्त्र पहने हैं, \\q और तराइयाँ अन्न ओढ़ लेती हैं; \\q वे जयजयकार करती हैं; हाँ, वे गाती हैं।",
+          "B": "झुंड चराइयों को वस्त्र की तरह ढक लेते हैं, \\q और अन्न तराइयों को लपेट लेता है; \\q वे विजय का नारा लगाती हैं, हाँ, वे गाती हैं!",
+          "R": "भेड़ें खेतों को चादर की तरह ढक लेती हैं। \\q तराइयाँ अन्न से ढकी हैं। \\q हर चीज़ आनंद से जयजयकार करती और गाती है!"
+        },
+        "ru": {
+          "L": "Облекаются пастбища стадами, \\q и долины покрываются зерном; \\q они ликуют, да, они поют.",
+          "B": "Стада одевают пастбища, как одежда, \\q и зерно укрывает долины; \\q они ликуют, да, они поют!",
+          "R": "Овцы покрывают поля, словно шубой. \\q Долины покрыты хлебом. \\q Всё вокруг кричит и поёт от радости!"
+        },
+        "ja": {
+          "L": "牧場は羊の群れを着、 \\q 谷は穀物をまとう。 \\q それらは喜び叫び、まことに歌う。",
+          "B": "羊の群れが衣のように牧場を覆い、 \\q 穀物が谷を包む。 \\q それらは勝ちどきを上げ、歌う！",
+          "R": "羊たちが、上着のように野原を覆っている。 \\q 谷は穀物で覆われている。 \\q すべてのものが、喜んで叫び、歌っている！"
+        },
+        "uk": {
+          "L": "Пасовиська зодягаються отарами, \\q і долини огортаються збіжжям; \\q вони радісно вигукують; так, вони співають.",
+          "B": "Отари вкривають пасовиська, як одяг, \\q і збіжжя огортає долини; \\q вони переможно вигукують, так, вони співають!",
+          "R": "Вівці вкривають поля, як кожух. \\q Долини вкриті збіжжям. \\q Усе радісно вигукує й співає!"
         }
       },
       "decisions": [
@@ -1879,6 +2665,26 @@
           "choice": "they shout, they sing: all creation praises",
           "alternatives": [],
           "reason": "The fields themselves seem to sing for joy at the harvest (96:12; 98:8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650140071",
+            "o190650140091"
+          ],
+          "choice": "yitro'a'u 'af-yashiru \"喜び叫び、まことに歌う\" (L), \"勝ちどきを上げ、歌う！\" (B), \"すべてのものが、喜んで叫び、歌っている！\" (R)",
+          "alternatives": [],
+          "reason": "Fields and valleys stand for all creation praising (m2); Readable names \"everything\" as the English R.",
           "uncertain": false,
           "footnote": false
         }

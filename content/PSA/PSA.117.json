@@ -63,6 +63,26 @@
           "L": "አሕዛብ ሁላችሁ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ፤ ሕዝቦች ሁሉ፣ አወድሱት!",
           "B": "እናንተ አሕዛብ ሁሉ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! እናንተ ሕዝቦች ሁሉ፣ ምስጋናውን ዘምሩ!",
           "R": "እናንተ ሕዝቦች ሁሉ፣ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! በየስፍራው ያላችሁ ሰዎች ሁሉ፣ አክብሩት!"
+        },
+        "hi": {
+          "L": "हे सब जातियो, {{divine_name:प्रभु|याहवे}} की स्तुति करो; हे सब लोगो, उनका गुणगान करो!",
+          "B": "हे सब देशो, {{divine_name:प्रभु|याहवे}} की स्तुति करो! हे सब लोगो, उनका गुणगान करो!",
+          "R": "हे सब देशों के लोगो, {{divine_name:प्रभु|याहवे}} की स्तुति करो! हर जगह के लोगो, उनका आदर करो!"
+        },
+        "ru": {
+          "L": "Хвалите {{divine_name:ГОСПОДА|Яхве}}, все язычники; восхваляйте {{deity_pronoun:его|Его}}, все народы!",
+          "B": "Все язычники, хвалите {{divine_name:ГОСПОДА|Яхве}}! Все народы, воспевайте {{deity_pronoun:его|Его}}!",
+          "R": "Все народы, хвалите {{divine_name:ГОСПОДА|Яхве}}! Пусть каждый народ прославляет {{deity_pronoun:его|Его}}!"
+        },
+        "ja": {
+          "L": "諸国の民よ、みな、{{divine_name:主|ヤハウェ}}を賛美せよ。民らよ、みな、その方をたたえよ！",
+          "B": "諸国の民よ、こぞって{{divine_name:主|ヤハウェ}}を賛美せよ！すべての民よ、その方をたたえよ！",
+          "R": "すべての国々よ、{{divine_name:主|ヤハウェ}}を賛美せよ！世界中の人々よ、その方をたたえよ！"
+        },
+        "uk": {
+          "L": "Хваліть {{divine_name:ГОСПОДА|Ягве}}, усі народи; прославляйте {{deity_pronoun:його|Його}}, усі племена!",
+          "B": "Хваліть {{divine_name:ГОСПОДА|Ягве}}, кожен народе! Співайте {{deity_pronoun:йому|Йому}} хвалу, усі племена!",
+          "R": "Усі народи, хваліть {{divine_name:ГОСПОДА|Ягве}}! Люди всюди, віддавайте {{deity_pronoun:йому|Йому}} шану!"
         }
       },
       "decisions": [
@@ -221,6 +241,119 @@
           "reason": "Paul quotes the verse in Romans 15:11, so its Amharic opening is kept, \"አሕዛብ\" included (the terms list allows it where the New Testament quotes the verse). The Hebrew has the name YHWH, so it takes the divine_name span; its second line is a command (\"extol him, all the peoples\"), where the Greek has \"let all the peoples praise him\", so the Amharic follows the Hebrew there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170010011",
+            "o191170010021",
+            "o191170010031",
+            "o191170010041",
+            "o191170010051",
+            "o191170010061",
+            "o191170010062",
+            "o191170010071",
+            "o191170010081",
+            "o191170010082"
+          ],
+          "choice": "wording of Romans 15:11, with the psalm's nations and imperative",
+          "alternatives": [
+            "हे सब अन्यजातियो, प्रभु की स्तुति करो, और सब लोग उनकी स्तुति करें"
+          ],
+          "reason": "Romans 15:11 quotes this verse. Hindi keeps its shape (\"हे सब ..., प्रभु की स्तुति करो\"; गुणगान at Balanced; देशों के लोगो at Readable), with the divine name for YHWH. Two things follow the Hebrew instead: goyim are जातियाँ (L) and देश (B, R), as the poetry note has them, where Paul's Greek is \"Gentiles\" (अन्यजाति); and the second line is a command (\"extol him\"), where Romans has \"let all the peoples praise him\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191170010062"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170010011",
+            "o191170010082"
+          ],
+          "choice": "the words of Romans 15:11",
+          "alternatives": [
+            "все народы; все племена"
+          ],
+          "reason": "Paul quotes this line and the Hebrew says the same, so each level keeps the Russian of Romans 15:11 (\"язычники\" for the nations at Literal and Balanced), with the Hebrew's imperative \"восхваляйте\" in the second line at Literal and Balanced. This is the one place in Psalms 107-150 where \"the peoples\" is not \"племена\": the line keeps Romans' \"все народы\", as the New Testament quotation wins over the Psalms' rule.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170010051",
+            "o191170010061",
+            "o191170010082"
+          ],
+          "choice": "goyim \"諸国の民\" (L, B), \"国々\" (R); 'ummim \"民ら\" (L), \"すべての民\" (B), \"世界中の人々\" (R); shabbechuhu \"たたえよ\"",
+          "alternatives": [
+            "\"すべての異邦人よ\" (ROM 15:11 Japanese)"
+          ],
+          "reason": "Romans 15:11 quotes this verse (m2), but its 異邦人 is the NT word; the Psalter keeps 諸国の民, and shibbach たたえる apart from hallel 賛美する (PSA-7)",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o191170010011"
+          ],
+          "choice": "R \"賛美せよ\" / \"たたえよ\", not 〜しよう",
+          "alternatives": [
+            "\"賛美しよう\""
+          ],
+          "reason": "Calls to the nations keep 〜せよ at R too (PSA-1)",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -291,6 +424,26 @@
           "L": "ጽኑ ፍቅሩ በእኛ ላይ ብርቱ ነውና፤ {{divine_name:የእግዚአብሔር|የያህዌ}} ታማኝነትም ለዘላለም [ነው]። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "B": "ለእኛ ያለው ጽኑ ፍቅሩ እጅግ ታላቅ ነውና፤ {{divine_name:እግዚአብሔር|ያህዌ}} ለዘላለም ታማኝ ሆኖ ይኖራል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!",
           "R": "ለእኛ ያለው ጽኑ ፍቅሩ እጅግ ታላቅ ነው፤ {{divine_name:እግዚአብሔር|ያህዌ}} ሁልጊዜ ታማኝ ይሆናል። {{divine_name:እግዚአብሔርን|ያህን}} አመስግኑ!"
+        },
+        "hi": {
+          "L": "क्योंकि हम पर उनका अटल प्रेम प्रबल [है], और {{divine_name:प्रभु|याहवे}} की सच्चाई सदा की [है]। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "B": "क्योंकि हमारे प्रति उनका अटल प्रेम अपार है, और {{divine_name:प्रभु|याहवे}} सदा विश्वासयोग्य बने रहते हैं। {{divine_name:प्रभु|याह}} की स्तुति करो!",
+          "R": "हमारे लिए उनका अटल प्रेम बहुत महान है, और {{divine_name:प्रभु|याहवे}} सदा विश्वासयोग्य रहेंगे। {{divine_name:प्रभु|याह}} की स्तुति करो!"
+        },
+        "ru": {
+          "L": "Ведь велика над нами {{deity_pronoun:его|Его}} неизменная любовь, и верность {{divine_name:ГОСПОДА|Яхве}} — вовек. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "B": "Ведь {{deity_pronoun:его|Его}} неизменная любовь к нам превыше всего, и {{divine_name:ГОСПОДЬ|Яхве}} верен вовеки. Хвалите {{divine_name:ГОСПОДА|Ях}}!",
+          "R": "Его неизменная любовь к нам очень велика, и {{divine_name:ГОСПОДЬ|Яхве}} всегда будет верен. Хвалите {{divine_name:ГОСПОДА|Ях}}!"
+        },
+        "ja": {
+          "L": "まことに、わたしたちに対するその方の誠実は力強く、{{divine_name:主|ヤハウェ}}のまことはとこしえに[続く]。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "B": "その方の変わらぬいつくしみは、わたしたちの上に大きく、{{divine_name:主|ヤハウェ}}のまことはとこしえに変わらない。{{divine_name:主|ヤハ}}を賛美せよ！",
+          "R": "わたしたちへのその方の変わらぬいつくしみは、とても大きい。{{divine_name:主|ヤハウェ}}はいつまでも真実な方だ。{{divine_name:主|ヤハ}}を賛美しよう！"
+        },
+        "uk": {
+          "L": "Бо могутня над нами {{deity_pronoun:його|Його}} незмінна любов, і вірність {{divine_name:ГОСПОДА|Ягве}} — навіки. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "B": "Бо {{deity_pronoun:його|Його}} незмінна любов до нас переважає все, і {{divine_name:ГОСПОДЬ|Ягве}} залишається вірним навіки. Хваліть {{divine_name:ГОСПОДА|Яг}}!",
+          "R": "Його вірна любов до нас дуже велика, і {{divine_name:ГОСПОДЬ|Ягве}} завжди буде вірним. Хваліть {{divine_name:ГОСПОДА|Яг}}!"
         }
       },
       "decisions": [
@@ -375,6 +528,28 @@
             "loyal love"
           ],
           "reason": "As in the earlier psalms, Readable says \"faithful love\" for chesed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170020041",
+            "o191170020052"
+          ],
+          "choice": "chesed \"誠実\" (L), \"変わらぬいつくしみ\" (B, R); 'emet \"まこと\" (L, B), \"真実な方\" (R)",
+          "alternatives": [
+            "\"愛\""
+          ],
+          "reason": "Psalter key words (PSA-1)",
           "uncertain": false,
           "footnote": false
         }

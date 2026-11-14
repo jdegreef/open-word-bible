@@ -63,6 +63,26 @@
           "L": "የቆሬ ልጆች፤ መዝሙር፤ ቅኔ። \\q መሠረቱ በቅድስና ተራሮች ላይ [ነው]።",
           "B": "የቆሬ ልጆች። መዝሙር። ቅኔ። \\q የመሠረታት ከተማ በተቀደሱት ተራሮች ላይ ጸንታ ቆማለች።",
           "R": "የቆሬ ልጆች በዜማ የሚዘመር መዝሙር። \\q እግዚአብሔር ከተማውን በተቀደሱት ኮረብቶች ላይ ሠራ።"
+        },
+        "hi": {
+          "L": "कोरह के पुत्रों का: भजन; गीत। \\q उनकी नींव पवित्रता के पहाड़ों पर [है]।",
+          "B": "कोरह के पुत्रों का। भजन। गीत। \\q उनका बसाया हुआ नगर पवित्र पहाड़ों पर स्थित है।",
+          "R": "कोरह के परिवार का। संगीत के साथ गाने का गीत। \\q परमेश्वर ने अपना नगर पवित्र पहाड़ियों पर बनाया।"
+        },
+        "ru": {
+          "L": "Сыновей Корея: псалом; песнь. \\q Основание {{deity_pronoun:его|Его}} — на горах святости.",
+          "B": "Сыновей Корея. Псалом. Песнь. \\q Город, который {{deity_pronoun:он|Он}} основал, стоит на святых горах.",
+          "R": "Из семьи Корея. Песня с музыкой. \\q Бог построил свой город на святых холмах."
+        },
+        "ja": {
+          "L": "コラの子らによる。賛歌。歌。 \\q その方の基は、聖なる山々にある。",
+          "B": "コラの子孫による。賛歌。歌。 \\q その方がお建てになった都は、聖なる山々の上に立つ。",
+          "R": "コラの一族による。音楽に合わせた歌。 \\q 神は、ご自分の都を、聖なる山々の上にお建てになった。"
+        },
+        "uk": {
+          "L": "Синів Корея: псалом; пісня. \\q Його основа — на горах святості.",
+          "B": "Синів Корея. Псалом. Пісня. \\q Місто, яке {{deity_pronoun:він|Він}} заснував, стоїть на святих горах.",
+          "R": "Від родини Корея. Пісня з музикою. \\q Бог збудував своє місто на святих пагорбах."
         }
       },
       "decisions": [
@@ -330,6 +350,48 @@
           "reason": "The terms list gives shir as \"ቅኔ\" at Literal; where the heading has both words, Balanced keeps the two apart as Psalms 65-67 do, so as not to say \"መዝሙር\" twice. \"የቆሬ ልጆች\" is the Korah heading of Psalms 42-49.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190870010051",
+            "o190870010052"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi; God spoken of takes the honorific plural (उनकी नींव), which also makes clear whose foundation is meant.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870010031",
+            "o190870010041",
+            "o190870010051",
+            "o190870010052"
+          ],
+          "choice": "mizmor shir \"賛歌。歌。\" (L, B), \"音楽に合わせた歌\" (R, as the English R); yesudato \"その方の基\" (L), \"その方がお建てになった都\" (B, R)",
+          "alternatives": [],
+          "reason": "Two words for a song (m3) in the Psalter's title forms; his foundation is the city God founded (m4), named at B and R as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -395,6 +457,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የጽዮንን በሮች \\q ከያዕቆብ ማደሪያዎች ሁሉ ይልቅ ይወዳል።",
           "B": "{{divine_name:ለእግዚአብሔር|ለያህዌ}} የጽዮን በሮች \\q የያዕቆብ ዘሮች ከሚኖሩባቸው ስፍራዎች ሁሉ ይልቅ ውድ ናቸው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የጽዮንን ከተማ \\q በእስራኤል ካሉት ከተሞች ሁሉ ይልቅ ይወዳል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} सिय्योन के फाटकों से प्रेम करते हैं, \\q याकूब के सब निवासों से बढ़कर।",
+          "B": "{{divine_name:प्रभु|याहवे}} को सिय्योन के फाटक \\q उन सब स्थानों से अधिक प्रिय हैं जहाँ याकूब के लोग रहते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} सिय्योन नगर से प्रेम करते हैं, \\q इस्राएल के किसी भी दूसरे नगर से अधिक।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} любит ворота Сиона \\q больше всех жилищ Иакова.",
+          "B": "Ворота Сиона дороже {{divine_name:ГОСПОДУ|Яхве}}, \\q чем все места, где живёт народ Иакова.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} любит город Сион \\q больше любого другого города в Израиле."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、シオンの門を愛しておられる、 \\q ヤコブのすべての住まいにまさって。",
+          "B": "シオンの門は、{{divine_name:主|ヤハウェ}}にとって、 \\q ヤコブの民が住むどの所よりも慕わしい。",
+          "R": "{{divine_name:主|ヤハウェ}}は、シオンの都を愛しておられる。 \\q イスラエルのほかのどの町よりも。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} любить брами Сіону \\q понад усі оселі Якова.",
+          "B": "Брами Сіону дорожчі {{divine_name:ГОСПОДУ|Ягве}} \\q за всі місця, де живе народ Якова.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} любить місто Сіон \\q більше, ніж будь-яке інше місто в Ізраїлі."
         }
       },
       "decisions": [
@@ -446,6 +528,26 @@
             "the gates of Zion; the dwellings of Jacob"
           ],
           "reason": "Readable says what the pictures mean (m1): Jacob is Israel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870020031",
+            "o190870020041"
+          ],
+          "choice": "'ohev \"愛しておられる\" (not 愛される, which reads as a passive); sha'arei Tsiyyon \"シオンの門\" (L, B), \"シオンの都\" (R)",
+          "alternatives": [],
+          "reason": "The gates of Zion are the city itself (m1), named so at R as the English R does.",
           "uncertain": false,
           "footnote": false
         }
@@ -513,6 +615,26 @@
           "L": "የከበረ [ነገር] ስለ አንቺ ይነገራል፤ \\q የእግዚአብሔር ከተማ ሆይ። ሴላ",
           "B": "የእግዚአብሔር ከተማ ሆይ፣ \\q ስለ አንቺ ድንቅ ነገር ይነገራል። ሴላ",
           "R": "የእግዚአብሔር ከተማ ሆይ፣ \\q ሰዎች ስለ አንቺ አስደናቂ ነገሮችን ይናገራሉ። ሴላ"
+        },
+        "hi": {
+          "L": "तुम्हारे विषय में महिमा की [बातें] कही जाती हैं, \\q हे परमेश्वर के नगर। सेला",
+          "B": "हे परमेश्वर के नगर, \\q तुम्हारे विषय में शानदार बातें कही जाती हैं। सेला",
+          "R": "हे परमेश्वर के नगर, \\q तुम्हारे बारे में अद्भुत बातें कही जाती हैं। सेला"
+        },
+        "ru": {
+          "L": "Славное говорится о тебе, \\q город Божий. Села",
+          "B": "Город Божий, \\q прекрасное говорят о тебе. Села",
+          "R": "Город Божий, \\q чудесное говорят о тебе. Села"
+        },
+        "ja": {
+          "L": "栄光あることが、おまえについて語られている、 \\q 神の都よ。セラ",
+          "B": "神の都よ、 \\q おまえについて、すばらしいことが語られている。セラ",
+          "R": "神の都よ、 \\q おまえについて、すばらしいことが言われている。セラ"
+        },
+        "uk": {
+          "L": "Славне говориться про тебе, \\q місто Боже. Села",
+          "B": "Місто Боже, \\q чудові речі кажуть про тебе. Села",
+          "R": "Місто Боже, \\q про тебе кажуть дивовижні речі. Села"
         }
       },
       "decisions": [
@@ -616,6 +738,48 @@
           "reason": "The psalmist addresses the city in a poetic apostrophe. Literal and Balanced use \"tu\", the form Portuguese poetry uses to address a city (and the singular \"tu\" God uses for Israel); Readable says \"você\", the everyday form, as for any address not made to God.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190870030021",
+            "o190870030032"
+          ],
+          "choice": "तुम to the city",
+          "alternatives": [
+            "तू"
+          ],
+          "reason": "The psalm speaks to Zion as to a person. In this translation तू is kept for prayer to God, so the city is addressed with तुम, as people are.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870030021",
+            "o190870030032"
+          ],
+          "choice": "Zion addressed \"おまえ\" (every level), as the soul in 42:6 and the city in poetry; あなた kept for God",
+          "alternatives": [],
+          "reason": "The city is spoken to as a person; the glorious things are the words that follow (m1, uncertain).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -689,6 +853,26 @@
           "L": "«ከሚያውቁኝ መካከል ራሃብንና ባቢሎንን እጠቅሳለሁ፤ \\q እነሆ፣ ፍልስጥኤምና ጢሮስ ከኩሽ ጋር፤ \\q “ይህ በዚያ ተወለደ።”»",
           "B": "«ከሚያውቁኝ መካከል ራሃብንና ባቢሎንን እዘረዝራለሁ፤ \\q ፍልስጥኤምን፣ ጢሮስንና ኩሽንም ተመልከቱ፤ \\q “ይህ በዚያ ተወለደ።”»",
           "R": "እግዚአብሔር እንዲህ ይላል፦ «ግብፅንና ባቢሎንን እኔን ከሚያውቁ ሕዝቦች ጋር እቆጥራቸዋለሁ። \\q ፍልስጥኤምን፣ ጢሮስንና ኩሽንም እንዲሁ። \\q ስለ እያንዳንዳቸውም “ይህ ሰው በጽዮን ተወለደ” ይባላል።»"
+        },
+        "hi": {
+          "L": "\"मैं रहब और बाबुल का नाम उनमें लूँगा जो मुझे जानते हैं; \\q देखो, पलिश्त और सूर, कूश के साथ: \\q 'यह वहाँ उत्पन्न हुआ।'\"",
+          "B": "\"जो मुझे जानते हैं, उनमें मैं रहब और बाबुल का नाम गिनाऊँगा; \\q पलिश्त और सूर को देखो, और कूश को भी: \\q 'यह वहाँ जन्मा था।'\"",
+          "R": "परमेश्वर कहते हैं, \"मैं मिस्र और बाबुल को उन लोगों में गिनूँगा जो मुझे जानते हैं। \\q पलिश्त, सूर और कूश को भी। \\q हर एक के बारे में कहा जाएगा, 'यह व्यक्ति सिय्योन में जन्मा था।'\""
+        },
+        "ru": {
+          "L": "«Я упомяну Рахав и Вавилон среди знающих {{deity_pronoun:меня|Меня}}; \\q вот, Филистия и Тир с Кушем: \\q “Этот родился там.”»",
+          "B": "«Среди знающих {{deity_pronoun:меня|Меня}} {{deity_pronoun:я|Я}} назову Рахав и Вавилон; \\q вот Филистия и Тир, и Куш тоже: \\q “Этот родился там.”»",
+          "R": "Бог говорит: «Я причислю Египет и Вавилон к людям, которые знают {{deity_pronoun:меня|Меня}}. \\q И Филистию, и Тир, и Куш тоже. \\q О каждом из них будут говорить: “Этот человек родился на Сионе.”»"
+        },
+        "ja": {
+          "L": "「わたしは、わたしを知る者たちのうちに、ラハブとバビロンを挙げる。 \\q なんと、ペリシテとティルスも、クシュと共に。 \\q 『この者はそこで生まれた。』」",
+          "B": "「わたしを知る者たちのうちに、わたしはラハブとバビロンの名を挙げる。 \\q 見なさい、ペリシテとティルス、それにクシュも。 \\q 『この者はそこで生まれた。』」",
+          "R": "神は言われる。「わたしは、エジプトとバビロンを、わたしを知る人々のうちに数える。 \\q ペリシテ、ティルス、クシュもだ。 \\q その一人一人について、『この人はシオンで生まれた』と言われるようになる。」"
+        },
+        "uk": {
+          "L": "«Я згадаю Рахав і Вавилон серед тих, хто знає {{deity_pronoun:мене|Мене}}; \\q ось Филистія і Тир, з Кушем: \\q “Цей народився там.”»",
+          "B": "«Серед тих, хто знає {{deity_pronoun:мене|Мене}}, я назву Рахав і Вавилон; \\q ось Филистія і Тир, а також Куш: \\q “Цей народився там.”»",
+          "R": "Бог каже: «Я зарахую Єгипет і Вавилон до людей, які знають {{deity_pronoun:мене|Мене}}. \\q І Филистію, Тир і Куш теж. \\q Про кожного скажуть: “Ця людина народилася на Сіоні.”»"
         }
       },
       "decisions": [
@@ -938,6 +1122,91 @@
           "reason": "This Rahab is a poetic name for Egypt (the meaning decision), spelled differently in Hebrew from Rahab of Jericho (\"ረዓብ\"); the terms list keeps \"ራሃብ\" for it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870040021"
+          ],
+          "choice": "रहब",
+          "alternatives": [
+            "राहाब",
+            "मिस्र"
+          ],
+          "reason": "Rahab here is a poetic name for Egypt (m2), a different word from the name of Rahab of Jericho (राहाब). Literal and Balanced keep it as रहब so the two stay apart; Readable names Egypt, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870040021"
+          ],
+          "choice": "\"Рахав\" (L, B); \"Египет\" (R)",
+          "alternatives": [
+            "Раав"
+          ],
+          "reason": "Rahab here is the sea monster of the old poems, a name for Egypt (the meaning decision), a different Hebrew word from the name of Rahab in Joshua 2. \"Рахав\" keeps it apart from \"Раав\", the woman of Jericho; Readable names Egypt, as the English does. The same in 89:11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870040011",
+            "o190870040043",
+            "o190870040021",
+            "o190870040061",
+            "o190870040072",
+            "o190870040091"
+          ],
+          "choice": "Rahav \"ラハブ\" (L, B), \"エジプト\" (R); Kush \"クシュ\"; hinneh \"なんと\" (L), \"見なさい\" (B), dropped (R); God's speech plain, わたし",
+          "alternatives": [],
+          "reason": "The speaker is read as God (m1, uncertain), named at R as the English R does; Rahab is a poetic name for Egypt (m2), not the Rahab of Jericho; Philistia, Tyre and Cush are Israel's neighbors and the far south (m3).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870040021"
+          ],
+          "choice": "\"Рахав\" for Rahab, the poetic name for Egypt; Readable says \"Єгипет\", as the English does",
+          "alternatives": [
+            "\"Єгипет\" at every level"
+          ],
+          "reason": "Literal and Balanced keep the name the Hebrew uses, as the English does; Readable says which nation is meant.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1010,6 +1279,26 @@
           "L": "ስለ ጽዮንም፦ «ይህም ያም ሰው በእርሷ ተወለደ» ይባላል፤ \\q ልዑሉም እርሱ ያጸናታል።",
           "B": "ስለ ጽዮንም ሰዎች፦ «ሁሉም በእርሷ ተወለዱ» ይላሉ፤ \\q የሚያጸናትም ልዑሉ ራሱ ነው።",
           "R": "ሰዎች ስለ ጽዮን፦ «እነዚህ ሰዎች ሁሉ የተወለዱት በዚያ ነው» ይላሉ። \\q ከሁሉ በላይ የሆነው አምላክ ከተማዪቱን ጸንታ እንድትኖር ያደርጋታል።"
+        },
+        "hi": {
+          "L": "और सिय्योन के विषय में कहा जाएगा, \"{{gender:यह और वह|यह पुरुष और वह पुरुष}} उसमें उत्पन्न हुआ\"; \\q और वे, परमप्रधान, उसे स्थिर करेंगे।",
+          "B": "और सिय्योन के विषय में लोग कहेंगे, \"इनमें से हर एक उसी में जन्मा था,\" \\q और परमप्रधान ही उसे सुरक्षित करेंगे।",
+          "R": "लोग सिय्योन के बारे में कहेंगे, \"ये सब लोग वहीं जन्मे थे।\" \\q वह परमेश्वर जो सबके ऊपर हैं, इस नगर को मज़बूत बनाए रखेंगे।"
+        },
+        "ru": {
+          "L": "А о Сионе будут говорить: «{{gender:Тот и другой|Тот муж и другой муж}} родился в нём»; \\q и {{deity_pronoun:он|Он}}, Всевышний, утвердит его.",
+          "B": "А о Сионе люди скажут: «Каждый из них родился в нём», \\q и сам Всевышний укрепит его.",
+          "R": "Люди будут говорить о Сионе: «Все эти люди родились там.» \\q Бог, который выше всех, сохранит этот город сильным."
+        },
+        "ja": {
+          "L": "シオンについては、こう言われる。「この者も、あの者も、そこで生まれた。」 \\q いと高き方ご自身が、シオンを堅くお立てになる。",
+          "B": "シオンについて、人々は言う。「彼らはみな、そこで生まれた。」 \\q いと高き方ご自身が、シオンを揺るぎないものとされる。",
+          "R": "人々は、シオンについて言う。「この人たちはみな、そこで生まれた。」 \\q すべてのものの上におられる神が、この都を強く保ってくださる。"
+        },
+        "uk": {
+          "L": "А про Сіон скажуть: «{{gender:Цей і той|Цей чоловік і той чоловік}} народився в ньому»; \\q і {{deity_pronoun:він|Він}}, Всевишній, утвердить його.",
+          "B": "А про Сіон люди казатимуть: «Кожен із них народився в ньому», \\q і саме Всевишній дасть йому твердо стояти.",
+          "R": "Люди казатимуть про Сіон: «Усі ці люди народилися там.» \\q Бог, який вищий за все, берегтиме це місто міцним."
         }
       },
       "decisions": [
@@ -1162,6 +1451,86 @@
           "reason": "\"ሰው\" already covers men and women, so the English span between \"this one and that one\" and \"this man and that man\" has no second Amharic wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190870050031",
+            "o190870050042"
+          ],
+          "choice": "{{gender:यह और वह|यह पुरुष और वह पुरुष}}",
+          "alternatives": [
+            "यह मनुष्य और वह मनुष्य"
+          ],
+          "reason": "\"A man and a man\" means everyone, one after another (m1). Hindi यह और वह already includes everyone, so it is the default, and the setting offers यह पुरुष और वह पुरुष, the Hebrew's masculine word, as the English span does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870050013"
+          ],
+          "choice": "\"в нём\" for Zion (L, B)",
+          "alternatives": [
+            "в ней"
+          ],
+          "reason": "The English Balanced keeps \"her\" because the Hebrew pictures Zion as a mother; Russian \"Сион\" is masculine, and making it feminine would read as an error, so Balanced and Literal say \"в нём\". The picture of the city as the mother of the nations stays in \"родился\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870050031",
+            "o190870050042",
+            "o190870050081",
+            "o190870050091"
+          ],
+          "choice": "'ish we'ish \"この者も、あの者も\" (L), \"彼らはみな\" (B), \"この人たちはみな\" (R); yekhoneneha \"堅くお立てになる\" (L), \"揺るぎないものとされる\" (B), \"強く保ってくださる\" (R)",
+          "alternatives": [],
+          "reason": "A man and a man is one after another, everyone (m1); establish is make firm and secure (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190870050031",
+            "o190870050042"
+          ],
+          "choice": "\"この者も、あの者も\" with no gender span where the English L has {{gender:This one and that one|This man and that man}}",
+          "alternatives": [],
+          "reason": "Japanese 者 is already inclusive (style guide 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1228,6 +1597,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቦችን በመዝገብ ሲጽፍ፦ \\q «ይህ በዚያ ተወለደ» ብሎ ይቆጥራል። ሴላ",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሕዝቦችን በመዝገቡ ሲዘረዝር፣ \\q «ይህ በዚያ ተወለደ» ብሎ ይጽፋል። ሴላ",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} የሕዝቦችን ስም ይጽፋል፤ \\q ስለ እያንዳንዱም «ይህ ሰው በጽዮን ተወለደ» ይላል። ሴላ"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} गिनेंगे, जब [वे] देश-देश के लोगों का नाम लिखेंगे, \\q \"यह वहाँ उत्पन्न हुआ।\" सेला",
+          "B": "जब {{divine_name:प्रभु|याहवे}} अपनी पुस्तक में देश-देश के लोगों के नाम लिखेंगे, \\q तब वे लिखेंगे, \"यह वहाँ जन्मा था।\" सेला",
+          "R": "{{divine_name:प्रभु|याहवे}} जातियों के नाम लिखेंगे \\q और हर एक के बारे में कहेंगे, \"यह व्यक्ति सिय्योन में जन्मा था।\" सेला"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} сочтёт, когда [{{deity_pronoun:он|Он}}] будет записывать племена: \\q «Этот родился там.» Села",
+          "B": "Когда {{divine_name:ГОСПОДЬ|Яхве}} будет вносить племена в свой список, \\q {{deity_pronoun:он|Он}} напишет: «Этот родился там.» Села",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} запишет имена народов \\q и скажет о каждом: «Этот человек родился на Сионе.» Села"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、もろもろの民を書き記すとき、数え上げて[言われる]。 \\q 「この者はそこで生まれた。」セラ",
+          "B": "{{divine_name:主|ヤハウェ}}は、もろもろの民をご自分の記録に書き入れるとき、 \\q こうお書きになる。「この者はそこで生まれた。」セラ",
+          "R": "{{divine_name:主|ヤハウェ}}は、国々の名を書き記して、 \\q その一つ一つについて言われる。「この人はシオンで生まれた。」セラ"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} перелічить, коли [{{deity_pronoun:він|Він}}] записуватиме народи: \\q «Цей народився там.» Села",
+          "B": "Коли {{divine_name:ГОСПОДЬ|Ягве}} вписуватиме народи до свого переліку, \\q {{deity_pronoun:він|Він}} напише: «Цей народився там.» Села",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} запише імена народів \\q і скаже про кожного: «Ця людина народилася на Сіоні.» Села"
         }
       },
       "decisions": [
@@ -1304,6 +1693,26 @@
           "reason": "Its meaning is unknown (see the meaning decision on Selah), so every level keeps the word rather than guess, and keeps it apart from the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870060021",
+            "o190870060032"
+          ],
+          "choice": "biktov 'ammim \"もろもろの民を書き記す\" (L), \"ご自分の記録に書き入れる\" (B), \"国々の名を書き記して\" (R); \"お書きになる\", not 書かれる",
+          "alternatives": [],
+          "reason": "The register of the peoples is God's book of citizens (m1); 'ammim もろもろの民 (L, B), 国々 (R) as PSA-1.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1370,6 +1779,26 @@
           "L": "የሚዘምሩና የሚያሸበሽቡም [እንዲህ ይላሉ]፦ \\q «ምንጮቼ ሁሉ በአንቺ ውስጥ [ናቸው]።»",
           "B": "የሚዘምሩና የሚያሸበሽቡ እንዲህ ይላሉ፦ \\q «ምንጮቼ ሁሉ ከአንቺ ይፈልቃሉ።»",
           "R": "ሰዎች እየዘመሩና እያሸበሸቡ ጽዮንን እንዲህ ይሏታል፦ \\q «በሕይወቴ ያለው መልካም ነገር ሁሉ የሚመጣው ከአንቺ ነው።»"
+        },
+        "hi": {
+          "L": "और गानेवाले और नाचनेवाले भी [कहेंगे], \\q \"मेरे सब सोते तुममें [हैं]।\"",
+          "B": "गानेवाले और नाचनेवाले कहेंगे, \\q \"मेरे सब सोते तुम्हीं में से फूटते हैं।\"",
+          "R": "लोग गाते और नाचते हुए सिय्योन से कहेंगे, \\q \"मेरे जीवन की सारी अच्छी चीज़ें तुमसे ही आती हैं।\""
+        },
+        "ru": {
+          "L": "И поющие, и пляшущие [скажут]: \\q «Все мои источники в тебе.»",
+          "B": "Поющие и танцующие скажут: \\q «Все мои источники в тебе.»",
+          "R": "Люди будут петь, танцевать и говорить Сиону: \\q «Всё хорошее в моей жизни приходит от тебя.»"
+        },
+        "ja": {
+          "L": "そして、歌う者たちも、踊る者たちも、[言う]。 \\q 「わたしの泉はみな、おまえのうちにある。」",
+          "B": "歌う人々も、踊る人々も言う。 \\q 「わたしの泉はみな、おまえのうちに湧き出る。」",
+          "R": "人々は歌い、踊り、シオンに向かって言う。 \\q 「わたしの人生の良いものはみな、おまえから来る。」"
+        },
+        "uk": {
+          "L": "І співаки, і танцюристи [скажуть]: \\q «Усі мої джерела — в тобі.»",
+          "B": "Ті, хто співає, і ті, хто танцює, казатимуть: \\q «Усі мої джерела бʼють у тобі.»",
+          "R": "Люди співатимуть, танцюватимуть і казатимуть Сіонові: \\q «Усе добре в моєму житті походить від тебе.»"
         }
       },
       "decisions": [
@@ -1441,6 +1870,28 @@
           ],
           "reason": "Readable says what the picture means (m2) and names Zion as the one addressed.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190870070012",
+            "o190870070022",
+            "o190870070041",
+            "o190870070042"
+          ],
+          "choice": "kol-ma'yanai \"わたしの泉はみな\" (L, B), \"わたしの人生の良いものはみな\" (R); Zion addressed \"おまえ\" as 87:3",
+          "alternatives": [],
+          "reason": "Singers and dancers are those who celebrate Zion (m1, uncertain); my springs are the sources of life and blessing (m2, uncertain), said plainly at R.",
+          "uncertain": true,
           "footnote": false
         }
       ],

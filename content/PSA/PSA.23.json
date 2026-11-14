@@ -61,6 +61,26 @@
           "L": "የዳዊት መዝሙር። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እረኛዬ [ነው]፤ \\q ምንም አይጎድልብኝም።",
           "B": "የዳዊት መዝሙር። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እረኛዬ ነው፤ \\q ከቶ አልቸገርም።",
           "R": "ዳዊት የዘመረው መዝሙር። \\q {{divine_name:እግዚአብሔር|ያህዌ}} እንደ እረኛ ይንከባከበኛል። \\q የሚያስፈልገኝ ሁሉ አለኝ።"
+        },
+        "hi": {
+          "L": "दाऊद का भजन। \\q {{divine_name:प्रभु|याहवे}} मेरे चरवाहे [हैं]; \\q मुझे [किसी चीज़ की] कमी न होगी।",
+          "B": "दाऊद का भजन। \\q {{divine_name:प्रभु|याहवे}} मेरे चरवाहे हैं; \\q मुझे कभी किसी चीज़ की कमी नहीं होगी।",
+          "R": "दाऊद का गीत। \\q {{divine_name:प्रभु|याहवे}} चरवाहे की तरह मेरी देखभाल करते हैं। \\q जो कुछ मुझे चाहिए, वह सब मेरे पास है।"
+        },
+        "ru": {
+          "L": "Псалом Давида. \\q {{divine_name:ГОСПОДЬ|Яхве}} — пастух мой; \\q не будет у меня недостатка [ни в чём].",
+          "B": "Псалом Давида. \\q {{divine_name:ГОСПОДЬ|Яхве}} — мой пастух; \\q у меня никогда не будет нужды.",
+          "R": "Песнь Давида. \\q {{divine_name:ГОСПОДЬ|Яхве}} заботится обо мне, как пастух. \\q У меня есть всё, что мне нужно."
+        },
+        "ja": {
+          "L": "ダビデの賛歌。 \\q {{divine_name:主|ヤハウェ}}[は]わたしの羊飼い。 \\q わたしは[何も]不足しない。",
+          "B": "ダビデの賛歌。 \\q {{divine_name:主|ヤハウェ}}はわたしの羊飼い。 \\q わたしが乏しくなることは決してない。",
+          "R": "ダビデの歌。 \\q {{divine_name:主|ヤハウェ}}は、羊飼いのように、わたしの世話をしてくださる。 \\q わたしには、必要なものがみなそろっている。"
+        },
+        "uk": {
+          "L": "Псалом Давида. \\q {{divine_name:ГОСПОДЬ|Ягве}} — мій пастух; \\q я не матиму нестачі [ні в чому].",
+          "B": "Псалом Давида. \\q {{divine_name:ГОСПОДЬ|Ягве}} — мій пастух; \\q я ніколи не буду в нужді.",
+          "R": "Пісня Давида. \\q {{divine_name:ГОСПОДЬ|Ягве}} дбає про мене, як пастух. \\q У мене є все, що мені потрібно."
         }
       },
       "decisions": [
@@ -361,6 +381,158 @@
           "reason": "As docs/amharic-style.md 7a for psalm titles.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190230010031"
+          ],
+          "choice": "प्रभु for YHWH, with the divine_name setting",
+          "alternatives": [
+            "यहोवा"
+          ],
+          "reason": "Hindi प्रभु stands both for the divine name YHWH (\"the LORD\") and for Adonai (\"Lord\"). In the Psalms the divine_name setting tells them apart: where प्रभु can be switched to याहवे, the Hebrew has the name; where it cannot, it has Adonai. यहोवा, the Old Version's form, is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010041",
+            "o190230010042",
+            "o190230010051",
+            "o190230010061"
+          ],
+          "choice": "मेरे चरवाहे हैं; मुझे ... कमी न होगी",
+          "alternatives": [
+            "मेरा चरवाहा है"
+          ],
+          "reason": "God spoken of takes the honorific plural in this translation (वे, हैं), so the first line reads मेरे चरवाहे हैं. This psalm is drafted from the Hebrew and its gloss, not from the familiar Hindi wording, which uses other words throughout (\"घटी\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010011"
+          ],
+          "choice": "\"Псалом\" (L, B); \"Песнь\" (R)",
+          "alternatives": [
+            "\"Псалом\" at every level"
+          ],
+          "reason": "The psalm titles follow the poetry terms note: mizmor is \"псалом\" at Literal and Balanced and \"песнь\" at Readable, as the English says \"a song\" there. Recorded once for Psalms 23-33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010041"
+          ],
+          "choice": "\"пастух\"",
+          "alternatives": [
+            "\"пастырь\""
+          ],
+          "reason": "\"Пастух\" is the living word for a man who keeps sheep, as in John 10 in this translation; the Church Slavonic \"пастырь\" of the familiar version now sounds like a title for clergy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010041",
+            "o190230010042",
+            "o190230010051",
+            "o190230010061"
+          ],
+          "choice": "Psalm 23 drafted afresh from the Hebrew gloss at every level, without the familiar Japanese wording of this psalm: \"[何も]不足しない\" (L), \"乏しくなることは決してない\" (B), \"必要なものがみなそろっている\" (R) for lo' 'echsar",
+          "alternatives": [
+            "the familiar church wording"
+          ],
+          "reason": "This psalm is among the best known in Japanese, and its familiar wording belongs to copyrighted Bibles (style guide section 1). Each line is translated from the Hebrew and the meaning decisions; only short common phrases (\"わたしの羊飼い\", \"死の陰\" as an alternative) are shared vocabulary.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190230010011",
+            "o190230010021",
+            "o190230010022"
+          ],
+          "choice": "The title shares verse 1 and is its first line, as the English; mizmor ledavid \"ダビデの賛歌\" (L, B), \"ダビデの歌\" (R), as the Psalter's titles",
+          "alternatives": [],
+          "reason": "English style section 10: a title that shares its verse with the poem is the verse's first line.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230010042"
+          ],
+          "choice": "\"пастух\" for the shepherd, at every level",
+          "alternatives": [
+            "\"Пастир\""
+          ],
+          "reason": "\"Пастух\" is the living word for one who keeps sheep, as in John 10 in this translation; the church word \"пастир\" now names a minister.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -428,6 +600,26 @@
           "L": "በለጋ ሣር መሰማሪያዎች ያስተኛኛል፤ \\q የዕረፍት ውኃዎች ወዳሉበት ይመራኛል።",
           "B": "አረንጓዴ ለጋ ሣር ባለበት መስክ ያሳርፈኛል፤ \\q ወደማርፍበት ውኃ በእርጋታ ይመራኛል።",
           "R": "ለስላሳ አረንጓዴ ሣር ባለበት መስክ እንዳርፍ ያደርገኛል። \\q ጠጥቼ ወደማርፍበት ጸጥ ያለ ውኃ ይወስደኛል።"
+        },
+        "hi": {
+          "L": "ताज़ी घास की चरागाहों में वे मुझे लिटाते हैं; \\q विश्राम के जल के पास वे मुझे ले जाते हैं।",
+          "B": "वे मुझे हरी-भरी ताज़ी घास के मैदानों में आराम से बिठाते हैं; \\q वे मुझे धीरे-धीरे ऐसे पानी के पास ले जाते हैं जहाँ मैं विश्राम कर सकूँ।",
+          "R": "वे मुझे मुलायम हरी घास के खेतों में आराम करने देते हैं। \\q वे मुझे शांत पानी के पास ले जाते हैं, जहाँ मैं पानी पीकर आराम कर सकूँ।"
+        },
+        "ru": {
+          "L": "На пастбищах свежей травы {{deity_pronoun:он|Он}} укладывает меня; \\q к водам отдыха {{deity_pronoun:он|Он}} ведёт меня.",
+          "B": "Он даёт мне прилечь на лугах, где растёт свежая зелёная трава; \\q {{deity_pronoun:он|Он}} бережно ведёт меня к воде, у которой я могу отдохнуть.",
+          "R": "Он даёт мне отдохнуть среди мягкой зелёной травы. \\q Он приводит меня к спокойной воде, где я могу напиться и отдохнуть."
+        },
+        "ja": {
+          "L": "若草の牧場に、その方はわたしを伏させ、 \\q 安らぎの水のほとりへ、わたしを導かれる。",
+          "B": "その方は、みずみずしい青草の野に、わたしを休ませ、 \\q 安らかに憩える水辺へと、優しく導いてくださる。",
+          "R": "その方は、柔らかい緑の草の野原で、わたしを休ませてくださる。 \\q 静かな水辺へ連れて行ってくださるので、わたしは水を飲んで休むことができる。"
+        },
+        "uk": {
+          "L": "На пасовищах свіжої трави {{deity_pronoun:він|Він}} дає мені лягти; \\q біля вод спочинку {{deity_pronoun:він|Він}} веде мене.",
+          "B": "Він кладе мене відпочити на лугах зі свіжою зеленою травою; \\q {{deity_pronoun:він|Він}} лагідно веде мене до води, де я можу спочити.",
+          "R": "Він дає мені відпочити на полях із мʼякою зеленою травою. \\q Він веде мене до спокійної води, де я можу напитися й відпочити."
         }
       },
       "decisions": [
@@ -523,6 +715,87 @@
           "reason": "The Hebrew pictures the fresh growth after rain; \"ለጋ\" is the plain word for it. The leading is the shepherd's gentle guiding to water (meaning decision m1), which Balanced makes explicit with \"በእርጋታ\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190230020031"
+          ],
+          "choice": "no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the setting the English offers has nothing to change in Hindi. Respect for God comes from the honorific plural (वे, उन्होंने) when the psalmist speaks about him and from the devotional तू when he speaks to him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230020032"
+          ],
+          "choice": "लिटाते हैं",
+          "alternatives": [
+            "बिठाते हैं"
+          ],
+          "reason": "The verb is the one used of a flock lying down to rest; Literal says \"make lie down\". Balanced says \"settle me down\" (आराम से बिठाते).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230020051",
+            "o190230020061"
+          ],
+          "choice": "\"к водам отдыха\"",
+          "alternatives": [
+            "\"к тихим водам\""
+          ],
+          "reason": "Literal keeps the Hebrew's noun, \"rest\", rather than turn it into an adjective for the water (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230020061",
+            "o190230020071",
+            "o190230020072"
+          ],
+          "choice": "mei menuchot \"安らぎの水\" (L), \"安らかに憩える水辺\" (B), \"静かな水辺\" (R); nahal \"導かれる\" (L), \"優しく導いてくださる\" (B), \"連れて行ってくださる\" (R)",
+          "alternatives": [
+            "憩いの水"
+          ],
+          "reason": "The waters are where the flock can rest (m2), and the verb is guiding with care (m1); Balanced and Readable use 〜てくださる for God's good act toward the singer, as the Psalter's convention.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -591,6 +864,26 @@
           "L": "ነፍሴን ይመልሳታል፤ \\q በጽድቅ ፈለጎች ይመራኛል \\q ስለ ስሙ ሲል።",
           "B": "ሕይወቴን ይመልስልኛል፤ \\q ትክክል በሆነው ጎዳና ይመራኛል፤ \\q ለስሙ ታማኝ ሆኖ።",
           "R": "እንደ ገና ብርቱ ያደርገኛል። \\q የምሄድበትን ትክክለኛ መንገድ ያሳየኛል። \\q ይህን የሚያደርገው ስለ ማንነቱ ነው።"
+        },
+        "hi": {
+          "L": "वे मेरे प्राण को लौटा लाते हैं; \\q धार्मिकता की लीकों पर वे मेरा मार्गदर्शन करते हैं \\q अपने नाम की ख़ातिर।",
+          "B": "वे मेरे जीवन को फिर से लौटा लाते हैं \\q और मुझे उन लीकों पर ले चलते हैं जो सही हैं, \\q अपने नाम के अनुरूप।",
+          "R": "वे मुझे फिर से बलवान बनाते हैं। \\q वे मुझे दिखाते हैं कि सही रास्ते पर कैसे चलूँ। \\q वे ऐसा इसलिए करते हैं क्योंकि उनका स्वभाव ही ऐसा है।"
+        },
+        "ru": {
+          "L": "Душу мою {{deity_pronoun:он|Он}} возвращает; \\q {{deity_pronoun:он|Он}} водит меня по колеям праведности \\q ради имени своего.",
+          "B": "Он возвращает мне жизнь \\q и ведёт меня по дорогам того, что правильно, \\q верный своему имени.",
+          "R": "Он снова даёт мне силы. \\q Он показывает мне правильный путь. \\q Он делает это, потому что {{deity_pronoun:он|Он}} именно такой."
+        },
+        "ja": {
+          "L": "わたしの魂を、その方は連れ戻し、 \\q 義の道筋にわたしを導かれる、 \\q ご自分の名のゆえに。",
+          "B": "その方は、わたしに命を取り戻させ、 \\q 正しいことの道筋を歩ませてくださる。 \\q ご自分の名のとおりに。",
+          "R": "その方は、わたしをもう一度元気にしてくださる。 \\q 正しく歩む道を、わたしに示してくださる。 \\q その方が、そういう方だからだ。"
+        },
+        "uk": {
+          "L": "Мою душу {{deity_pronoun:він|Він}} повертає; \\q {{deity_pronoun:він|Він}} провадить мене колією праведності \\q заради свого імені.",
+          "B": "Він повертає мені життя \\q і веде мене колією того, що праведне, \\q вірний своєму імені.",
+          "R": "Він знову робить мене сильним. \\q Він показує мені правильну дорогу. \\q Він робить це, бо такий {{deity_pronoun:він|Він}} є."
         }
       },
       "decisions": [
@@ -743,6 +1036,111 @@
           "reason": "The Hebrew word is the cart-track or worn path (meaning decision m2); Literal keeps the picture, Balanced and Readable say \"the right way\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230030042"
+          ],
+          "choice": "लीकों",
+          "alternatives": [
+            "मार्गों",
+            "रास्तों"
+          ],
+          "reason": "Tracks are the worn wheel-ruts or paths a flock follows; लीक is the Hindi word for such a worn track, so the shepherd picture stays.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230030061",
+            "o190230030071",
+            "o190230030072"
+          ],
+          "choice": "क्योंकि उनका स्वभाव ही ऐसा है",
+          "alternatives": [
+            "अपने नाम के कारण"
+          ],
+          "reason": "\"For the sake of his name\" means because of who he is (m3); Readable says so, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190230030071"
+          ],
+          "choice": "\"своего\", \"своему\" without a deity_pronoun span",
+          "alternatives": [
+            "\"{{deity_pronoun:его|Его}} имени\""
+          ],
+          "reason": "Russian says \"his own name\" with the reflexive \"свой\", which takes no deity_pronoun span under the style guide, so the English span on \"his\" has no Russian counterpart here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230030011",
+            "o190230030012",
+            "o190230030021"
+          ],
+          "choice": "nafshi yeshovev \"わたしの魂を…連れ戻し\" (L), \"わたしに命を取り戻させ\" (B), \"もう一度元気にしてくださる\" (R)",
+          "alternatives": [
+            "生き返らせ"
+          ],
+          "reason": "The meaning decision (m1, uncertain) reads it as giving new life, while the verb can also mean bringing back a straying sheep; Literal keeps the verb's picture (連れ戻す), Balanced and Readable say the sense, as the English does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230030061",
+            "o190230030071",
+            "o190230030072"
+          ],
+          "choice": "lema'an shemo \"ご自分の名のゆえに\" (L), \"ご自分の名のとおりに\" (B), \"その方が、そういう方だからだ\" (R)",
+          "alternatives": [],
+          "reason": "For the sake of his name means because of who he is (m3); Balanced says that he acts as his name says he is, Readable as the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -821,6 +1219,26 @@
           "L": "ድቅድቅ ጨለማ ባለበት ሸለቆ ውስጥ ብሄድ እንኳ ጉዳትን አልፈራም፤ \\q አንተ ከእኔ ጋር [ነህ]ና፤ \\q ዱላህና ምርኩዝህ፣ እነርሱ ያጽናኑኛል።",
           "B": "መንገዴ ድቅድቅ ጨለማ በዋጠው ሸለቆ ውስጥ ቢያልፍ እንኳ ምንም ጉዳት አያስፈራኝም፤ \\q አንተ በዚያ ከእኔ ጋር ስለ ሆንክ፤ \\q ዱላህና ምርኩዝህ ልብ ይሰጡኛል።",
           "R": "በጣም ጨለማና አደገኛ በሆነ ሸለቆ ውስጥ ባልፍ እንኳ አልፈራም፤ \\q አንተ አጠገቤ ስላለህ። \\q በዱላህ ትጠብቀኛለህ፤ በምርኩዝህ ትመራኛለህ፤ ይህም ያጽናናኛል።"
+        },
+        "hi": {
+          "L": "चाहे मैं गहरे अंधकार की घाटी में चलूँ, मैं अनिष्ट से नहीं डरूँगा, \\q क्योंकि तू मेरे साथ [है]; \\q तेरी छड़ी और तेरी लाठी, वे मुझे ढाढ़स बँधाती हैं।",
+          "B": "चाहे मेरा रास्ता सबसे गहरे अंधकार की घाटी से होकर जाए, मैं किसी भी अनिष्ट से नहीं डरूँगा, \\q क्योंकि तू वहाँ मेरे साथ है; \\q तेरी छड़ी और तेरी लाठी मुझे हिम्मत देती हैं।",
+          "R": "चाहे मैं ऐसी घाटी से गुज़रूँ जो बहुत अँधेरी और ख़तरनाक है, मैं नहीं डरूँगा, \\q क्योंकि तू ठीक मेरे पास है। \\q तू अपने डंडे से मेरी रक्षा करता है और अपनी लाठी से मुझे राह दिखाता है, और इससे मुझे तसल्ली मिलती है।"
+        },
+        "ru": {
+          "L": "Даже когда я иду долиной глубокой тьмы, не буду я бояться беды, \\q ведь {{deity_pronoun:ты|Ты}} со мной; \\q жезл {{deity_pronoun:твой|Твой}} и опора {{deity_pronoun:твоя|Твоя}} — они утешают меня.",
+          "B": "Даже если мой путь пройдёт через долину самой густой тьмы, я не испугаюсь никакой беды, \\q потому что {{deity_pronoun:ты|Ты}} там, со мной; \\q жезл и посох в {{deity_pronoun:твоей|Твоей}} руке придают мне смелости.",
+          "R": "Даже когда я иду через долину, где очень темно и опасно, я не боюсь, \\q потому что {{deity_pronoun:ты|Ты}} рядом со мной. \\q Ты охраняешь меня своей дубинкой и ведёшь своим посохом, и это меня успокаивает."
+        },
+        "ja": {
+          "L": "わたしが深い闇の谷を歩くときでさえ、わたしは害を恐れない。 \\q あなたがわたしとともに[おられる]からだ。 \\q あなたの棒とあなたの杖、それらがわたしを慰める。",
+          "B": "たとえ、わたしの道が、深い闇に閉ざされた谷を下って行くとしても、わたしはどんな災いも恐れない。 \\q あなたが、そこでわたしとともにいてくださるからだ。 \\q あなたの棒と杖が、わたしを勇気づける。",
+          "R": "とても暗くて危ない谷を通るときも、わたしはこわくない。 \\q あなたが、すぐそばにいてくださるからだ。 \\q あなたは、こん棒でわたしを守り、杖でわたしを導いてくださる。だから、わたしは安心していられる。"
+        },
+        "uk": {
+          "L": "Навіть коли я йду долиною глибокої темряви, я не боятимуся лиха, \\q бо {{deity_pronoun:ти|Ти}} — зі мною; \\q {{deity_pronoun:твій|Твій}} кий і {{deity_pronoun:твій|Твій}} посох — вони втішають мене.",
+          "B": "Навіть якщо моя стежка спускається в долину найглибшої темряви, я не боюся жодного лиха, \\q бо {{deity_pronoun:ти|Ти}} там зі мною; \\q {{deity_pronoun:твій|Твій}} кий і {{deity_pronoun:твій|Твій}} посох додають мені відваги.",
+          "R": "Навіть коли я йду дуже темною й небезпечною долиною, я не боюся, \\q бо {{deity_pronoun:ти|Ти}} поруч зі мною. \\q Ти захищаєш мене {{deity_pronoun:твоїм|Твоїм}} києм і ведеш мене {{deity_pronoun:твоїм|Твоїм}} посохом, і це мене втішає."
         }
       },
       "decisions": [
@@ -1063,6 +1481,175 @@
           "reason": "As meaning decision m1, the Hebrew word means deep darkness; m3 names the rod as the shepherd's weapon against wild animals, which \"ዱላ\" is, beside the walking stick he leans on and guides with.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190230040101"
+          ],
+          "choice": "तू to God",
+          "alternatives": [
+            "आप"
+          ],
+          "reason": "The psalm turns from speaking about God (वे) to speaking to him (m2). Hindi prayer says the devotional तू, as everywhere in this translation, so the turn stays visible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040121",
+            "o190230040122"
+          ],
+          "choice": "डंडे",
+          "alternatives": [
+            "छड़ी"
+          ],
+          "reason": "Readable names the rod as the shepherd's club for fighting off animals (डंडा) and the staff as his walking stick (लाठी), as the English says what each is for (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040132"
+          ],
+          "choice": "\"опора\"",
+          "alternatives": [
+            "\"посох\""
+          ],
+          "reason": "The second word is the thing a shepherd leans on (from the verb \"to lean\"); Literal says \"опора\" for it, and Balanced and Readable say what it is, \"посох\" (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190230040121",
+            "o190230040132"
+          ],
+          "choice": "\"жезл и посох в твоей руке\"",
+          "alternatives": [
+            "\"твой жезл и твой посох\""
+          ],
+          "reason": "Balanced puts \"your\" once, on the hand that holds both; the sense is the same and the line stays clear of the familiar wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-3",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190230040121",
+            "o190230040132"
+          ],
+          "choice": "\"своей\", \"своим\" without a deity_pronoun span",
+          "alternatives": [
+            "\"{{deity_pronoun:твоей|Твоей}} дубинкой\""
+          ],
+          "reason": "After \"Ты\" Russian uses the reflexive \"свой\", which takes no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040051"
+          ],
+          "choice": "tsalmavet \"深い闇\" (L), \"深い闇に閉ざされた\" (B), \"とても暗くて危ない\" (R), not \"死の陰\"",
+          "alternatives": [
+            "死の陰の谷"
+          ],
+          "reason": "The meaning decision (m1, footnoted) reads one word, deep darkness, as the English does; the two-word reading, shadow of death, is the footnote's alternative and the familiar church phrase.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040121",
+            "o190230040122",
+            "o190230040131",
+            "o190230040132",
+            "o190230040133"
+          ],
+          "choice": "shevet \"棒\" (L, B), \"こん棒\" (R); mish'enet \"杖\" (every level)",
+          "alternatives": [
+            "むち"
+          ],
+          "reason": "The rod is the shepherd's club against wild animals and the staff his walking stick (m3); 棒 keeps the weapon apart from the stick, where むち would suggest punishment. Readable explains both as the English Readable does. The turn to address God (m2) takes あなた, plain, with いてくださる.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230040121",
+            "o190230040132"
+          ],
+          "choice": "\"кий\" for the shepherd's club and \"посох\" for his staff",
+          "alternatives": [
+            "\"жезл\"",
+            "\"палиця\""
+          ],
+          "reason": "The two words name the club that drives off beasts and the long staff that guides the sheep; \"жезл\" now suggests a ruler's sceptre.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1136,6 +1723,26 @@
           "L": "በባላጋራዎቼ ፊት በፊቴ ገበታ ታዘጋጃለህ፤ \\q ራሴን በዘይት አደስክ፤ \\q ጽዋዬ ሞልቶ [ይፈስሳል]።",
           "B": "ባላጋራዎቼ እያዩ በፊቴ ማዕድ ታዘጋጅልኛለህ፤ \\q ራሴን በዘይት ታድሳለህ፤ \\q ጽዋዬም ጢም ብሎ ሞልቷል።",
           "R": "ጠላቶቼ እያዩ ግብዣ ታዘጋጅልኛለህ። \\q ልታከብረኝ ራሴ ላይ ዘይት ታፈሳለህ። \\q ጽዋዬን ሞልተህ ታትረፈርፈዋለህ።"
+        },
+        "hi": {
+          "L": "तू मेरे बैरियों के सामने मेरे आगे मेज़ सजाता है; \\q तूने मेरे सिर को तेल से तरोताज़ा किया है; \\q मेरा प्याला छलक [रहा है]।",
+          "B": "मेरे शत्रुओं के देखते-देखते तू मेरे सामने भोजन परोसता है; \\q तू मेरे सिर पर तेल लगाकर मुझे ताज़गी देता है, \\q और मेरा प्याला लबालब भरा है।",
+          "R": "तू मेरे लिए दावत सजाता है, और मेरे शत्रुओं को बस देखते रहना पड़ता है। \\q मेरा सम्मान करने के लिए तू मेरे सिर पर तेल डालता है। \\q तू मेरा प्याला इतना भरता है कि वह छलक जाता है।"
+        },
+        "ru": {
+          "L": "Ты накрываешь передо мной стол на виду у моих противников; \\q {{deity_pronoun:ты|Ты}} освежил маслом мою голову; \\q чаша моя переливается через край.",
+          "B": "Ты готовишь мне угощение, а мои враги смотрят на это; \\q {{deity_pronoun:ты|Ты}} освежаешь мою голову маслом, \\q и чаша моя полна до краёв.",
+          "R": "Ты устраиваешь для меня пир, и моим врагам приходится на это смотреть. \\q Ты льёшь масло мне на голову, чтобы оказать мне честь. \\q Ты наполняешь мою чашу так, что она переливается через край."
+        },
+        "ja": {
+          "L": "あなたは、わたしの仇の目の前で、わたしの前に食卓を整え、 \\q わたしの頭を油で潤された。 \\q わたしの杯は満ちあふれている。",
+          "B": "あなたは、敵が見ている前で、わたしのために食事を用意し、 \\q わたしの頭に油を注いで、元気づけてくださる。 \\q わたしの杯は、縁までいっぱいだ。",
+          "R": "あなたは、わたしのためにごちそうを並べてくださり、敵はそれを見ているしかない。 \\q わたしを大切にもてなして、頭に油を注いでくださる。 \\q こぼれるほど、わたしの杯を満たしてくださる。"
+        },
+        "uk": {
+          "L": "Ти накриваєш переді мною стіл навпроти моїх супротивників; \\q {{deity_pronoun:ти|Ти}} освіжив мою голову олією; \\q моя чаша переповнена.",
+          "B": "Ти ставиш переді мною частування, а мої вороги дивляться; \\q {{deity_pronoun:ти|Ти}} освіжаєш мою голову олією, \\q і моя чаша повна по вінця.",
+          "R": "Ти готуєш для мене бенкет, і мої вороги мусять на це дивитися. \\q Ти виливаєш олію на мою голову, щоб ушанувати мене. \\q Ти наповнюєш мою чашу, аж поки вона переливається."
         }
       },
       "decisions": [
@@ -1247,6 +1854,48 @@
           "reason": "As the terms list for tsarim; the verb is not the word for anointing a king or priest but for refreshing a guest with oil (meaning decision m2), so the familiar \"anointed\" is not used.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230050061",
+            "o190230050071"
+          ],
+          "choice": "\"освежил маслом\"",
+          "alternatives": [
+            "\"помазал елеем\""
+          ],
+          "reason": "The verb means to make fat or rich, to refresh; \"освежить маслом\" keeps the host's welcome (m2), where \"помазать елеем\" would suggest anointing to an office.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230050061",
+            "o190230050071",
+            "o190230050072"
+          ],
+          "choice": "dishshanta vashemen \"油で潤された\" (L), \"油を注いで、元気づけてくださる\" (B), \"大切にもてなして、頭に油を注いでくださる\" (R)",
+          "alternatives": [],
+          "reason": "Oil on the head is a host's refreshing welcome and honor (m2); the Readable \"to honor me\" (r-en-1) becomes 大切にもてなして. tsorerai \"仇\" (L), \"敵\" (B, R), as the Psalter's tsar.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1322,6 +1971,26 @@
           "L": "በእርግጥ መልካምነትና ጽኑ ፍቅር በሕይወቴ ዘመን ሁሉ ያሳድዱኛል፤ \\q ለዘመናት ርዝመትም [ልኖር] ወደ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤት እመለሳለሁ።",
           "B": "መልካምነትና ጽኑ ፍቅር በምኖርበት ቀን ሁሉ በእርግጥ ተከትለው ይደርሱብኛል፤ \\q እኔም በሚመጡት ዘመኖቼ ሁሉ ወደ {{divine_name:የእግዚአብሔር|የያህዌ}} ቤት እመለሳለሁ።",
           "R": "በሕይወቴ ዘመን ሁሉ መልካምነትና ጽኑ ፍቅር ከኋላዬ እየሮጡ እንደሚከተሉኝ እርግጠኛ ነኝ። \\q በሕይወት እስካለሁም ድረስ {{divine_name:በእግዚአብሔር|በያህዌ}} ቤት ለመኖር እመለሳለሁ።"
+        },
+        "hi": {
+          "L": "सचमुच भलाई और अटल प्रेम मेरे जीवन के सब दिन मेरा पीछा करेंगे, \\q और मैं {{divine_name:प्रभु|याहवे}} के भवन में [रहने को] लौटूँगा, दिनों की लंबाई तक।",
+          "B": "भलाई और अटल प्रेम मेरे जीने के हर दिन सचमुच मेरे पीछे-पीछे दौड़ते रहेंगे, \\q और मैं {{divine_name:प्रभु|याहवे}} के भवन में घर लौट आऊँगा, आनेवाले अपने सब दिनों के लिए।",
+          "R": "मुझे पूरा भरोसा है कि भलाई और अटल प्रेम मेरी ज़िंदगी के हर दिन मेरे पीछे दौड़ते आएँगे। \\q और जब तक मैं जीवित हूँ, मैं {{divine_name:प्रभु|याहवे}} के भवन में लौटकर रहूँगा।"
+        },
+        "ru": {
+          "L": "Поистине, добро и неизменная любовь будут гнаться за мной все дни моей жизни, \\q и я вернусь [жить] в дом {{divine_name:ГОСПОДА|Яхве}} на долготу дней.",
+          "B": "Добро и неизменная любовь непременно будут следовать за мной по пятам каждый день, пока я живу, \\q и я вернусь домой, в дом {{divine_name:ГОСПОДА|Яхве}}, на все дни, что впереди.",
+          "R": "Я уверен, что добро и неизменная любовь будут бежать за мной следом каждый день моей жизни. \\q И я вернусь, чтобы жить в доме {{divine_name:ГОСПОДА|Яхве}}, пока я жив."
+        },
+        "ja": {
+          "L": "まことに、良いことと誠実が、わたしの命のすべての日々、わたしを追いかける。 \\q そしてわたしは、{{divine_name:主|ヤハウェ}}の家に戻って[住む]、日々の長さのかぎり。",
+          "B": "良いことと変わらぬいつくしみが、わたしが生きる日々、必ずわたしを追いかけて来る。 \\q わたしは{{divine_name:主|ヤハウェ}}の家に帰って来て、これから先のすべての日々を過ごす。",
+          "R": "わたしは確かに知っている。生きているかぎり毎日、良いことと変わらぬいつくしみが、わたしを追いかけて来る。 \\q そしてわたしは、命のあるかぎり、{{divine_name:主|ヤハウェ}}の家に戻って住む。"
+        },
+        "uk": {
+          "L": "Справді, добро й незмінна любов переслідуватимуть мене всі дні мого життя, \\q і я повертатимуся [жити] в домі {{divine_name:ГОСПОДА|Ягве}} на довгі дні.",
+          "B": "Добро й незмінна любов неодмінно женуться за мною кожен день, що я живу, \\q і я повернуся додому, у дім {{divine_name:ГОСПОДА|Ягве}}, на всі мої майбутні дні.",
+          "R": "Я певен, що добро й вірна любов бігтимуть за мною кожен день мого життя. \\q І я повернуся жити в домі {{divine_name:ГОСПОДА|Ягве}}, доки житиму."
         }
       },
       "decisions": [
@@ -1579,6 +2248,97 @@
           ],
           "reason": "As meaning decision m3, the Hebrew as written reads \"I will return\"; the house of the LORD follows the Kings and Chronicles term, and Readable adds \"to live\", as the English Readable.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060032"
+          ],
+          "choice": "अटल प्रेम (every level)",
+          "alternatives": [
+            "करुणा",
+            "कृपा"
+          ],
+          "reason": "God's hesed is अटल प्रेम at every level in the Psalms. The English Readable says \"faithful love\"; Hindi अटल प्रेम already says love that does not give way.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060092",
+            "o190230060101"
+          ],
+          "choice": "प्रभु का भवन",
+          "alternatives": [
+            "धाम"
+          ],
+          "reason": "\"The house of the LORD\" is भवन, as in Kings and Chronicles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060032"
+          ],
+          "choice": "\"неизменная любовь\"",
+          "alternatives": [
+            "\"милость\"",
+            "\"верная любовь\""
+          ],
+          "reason": "God's hesed is \"неизменная любовь\" at every level in the poetry books (poetry terms note), Readable included, where the English says \"faithful love\"; \"милость\" would say only kindness, not loyalty.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190230060041",
+            "o190230060042",
+            "o190230060081",
+            "o190230060082"
+          ],
+          "choice": "yirdefuni \"追いかける\" / \"追いかけて来る\" at every level; veshavti \"戻って[住む]\" (L), \"帰って来て\" (B), \"戻って住む\" (R)",
+          "alternatives": [
+            "ついて来る",
+            "住む (the Greek reading)"
+          ],
+          "reason": "The Hebrew says goodness and chesed pursue him (m1), a stronger picture than following; for the verb the Hebrew text reads \"I will return\" (m3, footnoted), so Literal and Balanced say return, and Readable joins return and live, as the English. The psalm speaks of God in the third person again (DNの家).",
+          "uncertain": true,
           "footnote": false
         }
       ],

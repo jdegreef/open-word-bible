@@ -60,6 +60,26 @@
           "L": "ነቢዩ ዕንባቆም ያየው የትንቢት ቃል።",
           "B": "ነቢዩ ዕንባቆም ያየው የትንቢት ቃል።",
           "R": "ነቢዩ ዕንባቆም በራእይ የተቀበለው የትንቢት ቃል ይህ ነው።"
+        },
+        "hi": {
+          "L": "वह भारी वचन जिसे हबक्कूक भविष्यद्वक्ता ने देखा।",
+          "B": "वह संदेश जिसे हबक्कूक भविष्यद्वक्ता ने देखा।",
+          "R": "यह वह संदेश है जो हबक्कूक नबी ने एक दर्शन में पाया।"
+        },
+        "ru": {
+          "L": "Пророчество, которое видел Аввакум пророк.",
+          "B": "Пророчество, которое видел пророк Аввакум.",
+          "R": "Вот весть, которую пророк Аввакум получил в видении."
+        },
+        "ja": {
+          "L": "預言者ハバククが見た託宣。",
+          "B": "預言者ハバククが見た託宣。",
+          "R": "これは、預言者ハバククが幻のうちに受けた神のお告げです。"
+        },
+        "uk": {
+          "L": "Пророцтво, яке бачив Авакум, пророк.",
+          "B": "Пророцтво, яке бачив пророк Авакум.",
+          "R": "Це пророцтво, яке пророк Авакум отримав у видінні."
         }
       },
       "decisions": [
@@ -363,6 +383,135 @@
           "reason": "The terms list for the prophets settles *massa* as \"የትንቢት ቃል\" (as Isaiah 13:1 and Proverbs 30:1), and Readable keeps it, as Isaiah's Readable does, since it already says plainly that this is a message from God. The name keeps its established Amharic form \"ዕንባቆም\" (the terms list for Obadiah to Malachi). \"saw\" is \"ያየው\" at Literal and Balanced; Readable says \"በራእይ የተቀበለው\" (received in a vision), as the English Readable and m3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010010011"
+          ],
+          "choice": "\"пророцтво\" for massa' at every level; the prophet is Авакум",
+          "alternatives": [
+            "звістка"
+          ],
+          "reason": "docs/ukrainian-ot-terms.md fixes \"пророцтво\" for the oracle headings of the prophets and \"Авакум\" for the name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010010011",
+            "o350010010021",
+            "o350010010031"
+          ],
+          "choice": "भारी वचन (L); संदेश (B, R); हबक्कूक",
+          "alternatives": [],
+          "reason": "Massa takes the wording set for the Prophets: भारी वचन at Literal, संदेश at Balanced and Readable, as in Nahum 1:1. The prophet's name is spelled from the Hebrew, हबक्कूक; prophet is भविष्यद्वक्ता at Literal and Balanced and नबी at Readable. Book-wide choice for Habakkuk.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350010010031"
+          ],
+          "choice": "प्रभु for both YHWH and Adonai; the divine_name setting tells them apart",
+          "alternatives": [
+            "यहोवा"
+          ],
+          "reason": "Hindi प्रभु translates both the divine name YHWH and the title Adonai (\"Lord\"). Wherever the Hebrew has the name, प्रभु stands inside a divine_name span whose alternative is याहवे; where प्रभु stands alone it is Adonai, and \"the Lord GOD\" is प्रभु {{divine_name:परमेश्वर|याहवे}}.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010010012",
+            "o350010010041"
+          ],
+          "choice": "Пророчество (L, B); весть (R); Аввакум",
+          "alternatives": [
+            "Бремя; Хавакук"
+          ],
+          "reason": "Massa takes the forms set for the Prophets; the prophet's name takes its traditional Russian form, \"Аввакум\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010010012",
+            "o350010010031",
+            "o350010010041"
+          ],
+          "choice": "massa' \"託宣\" (L, B), \"神のお告げ\" (R), as Isaiah 13:1 and the prophetic convention; chazah \"見た\" (L, B), \"幻のうちに受けた\" (R); Habakkuk \"ハバクク\".",
+          "alternatives": [
+            "\"重荷\"",
+            "\"宣告\"",
+            "\"ハバック\""
+          ],
+          "reason": "The prophetic convention (ISA-ISA-1, ISA 13:1) fixes massa' for every prophetic heading; \"ハバクク\" is the usual Japanese transcription of the Hebrew name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o350010010011",
+            "o350010010051",
+            "o350010010052"
+          ],
+          "choice": "The superscription is prose: plain (L, B), です・ます (R); the prophet's complaints and God's answers that follow are verse, plain at every level.",
+          "alternatives": [],
+          "reason": "The prophetic register convention (Isaiah 1:1, Amos 1:1, Obadiah 1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -434,6 +583,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለእርዳታ የምጮኸው እስከ መቼ ነው? አንተ ግን አትሰማም፤ \\q «ግፍ!» እያልኩ ወደ አንተ እጣራለሁ፤ አንተ ግን አታድንም።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ሳትሰማኝ እስከ መቼ ለእርዳታ እጮኻለሁ? \\q «ግፍ!» እያልኩ ወደ አንተ እጣራለሁ፤ አንተ ግን አታድንም።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለእርዳታ ወደ አንተ የምጣራው እስከ መቼ ነው? መቼ ነው የምትሰማኝ? \\q ግፍ በየቦታው መሙላቱን ወደ አንተ እጮኻለሁ፤ አንተ ግን አታድነንም።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, कब तक मैं सहायता के लिए दुहाई देता रहूँगा, और तू नहीं सुनता? \\q मैं तुझसे चिल्लाकर कहता हूँ, \"उपद्रव!\" और तू नहीं बचाता।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, कब तक मैं सहायता के लिए पुकारता रहूँ और तू न सुने? \\q मैं तुझसे चिल्लाकर कहता हूँ, \"उपद्रव!\" पर तू नहीं बचाता।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मैं कब तक सहायता के लिए तुझे पुकारता रहूँ, और तू मेरी न सुने? \\q मैं तेरी दुहाई देता हूँ कि हर जगह हिंसा है, पर तू हमें नहीं छुड़ाता।"
+        },
+        "ru": {
+          "L": "Доколе, {{divine_name:ГОСПОДИ|Яхве}}, я взываю о помощи, а {{deity_pronoun:ты|Ты}} не слышишь? \\q Кричу {{deity_pronoun:тебе|Тебе}}: «Насилие!» — а {{deity_pronoun:ты|Ты}} не спасаешь.",
+          "B": "Сколько ещё, {{divine_name:ГОСПОДИ|Яхве}}, мне взывать о помощи, а {{deity_pronoun:ты|Ты}} не слушаешь? \\q Я кричу {{deity_pronoun:тебе|Тебе}}: «Насилие!» — но {{deity_pronoun:ты|Ты}} не спасаешь.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, сколько мне ещё звать {{deity_pronoun:тебя|Тебя}} на помощь, пока {{deity_pronoun:ты|Ты}} не услышишь? \\q Я кричу {{deity_pronoun:тебе|Тебе}}, что повсюду насилие, но {{deity_pronoun:ты|Ты}} не спасаешь нас."
+        },
+        "ja": {
+          "L": "いつまで、{{divine_name:主|ヤハウェ}}よ、わたしが助けを求めて叫んでも、あなたは聞いてくださらないのか？ \\q わたしはあなたに「暴虐だ！」と叫ぶ。しかし、あなたは救ってくださらない。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、いつまで、わたしは助けを求めて叫ばなければならないのか？あなたは聞いてくださらない。 \\q わたしはあなたに「暴虐だ！」と叫ぶのに、あなたは救ってくださらない。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、いつまで、あなたに助けを求めて叫び続けなければならないのか？いつになったら聞いてくださるのか？ \\q 暴力がどこにでもあると、わたしはあなたに叫んでいる。それなのに、あなたはわたしたちを救ってくださらない。"
+        },
+        "uk": {
+          "L": "Доки, {{divine_name:ГОСПОДИ|Ягве}}, я кликатиму про допомогу, а {{deity_pronoun:ти|Ти}} не чуєш? \\q Я кричу до {{deity_pronoun:тебе|Тебе}}: «Насильство!» — а {{deity_pronoun:ти|Ти}} не спасаєш.",
+          "B": "Доки, {{divine_name:ГОСПОДИ|Ягве}}, мені кликати про допомогу, а {{deity_pronoun:ти|Ти}} не слухаєш? \\q Я кричу до {{deity_pronoun:тебе|Тебе}}: «Насильство!» — але {{deity_pronoun:ти|Ти}} не спасаєш.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, доки мені кликати {{deity_pronoun:тебе|Тебе}} на допомогу, поки {{deity_pronoun:ти|Ти}} почуєш? \\q Я кричу до {{deity_pronoun:тебе|Тебе}}, що всюди насильство, але {{deity_pronoun:ти|Ти}} не рятуєш нас."
         }
       },
       "decisions": [
@@ -684,6 +853,90 @@
           "reason": "Amharic marks a vocative with \"ሆይ\", as in the Psalms (Psalm 3:2; 89:47). *ḥamas* is wrong done by force, the cry of the oppressed (m2): \"ግፍ\" says that, and is kept for *ḥamas* through the book (1:3, 9; 2:8, 17). Readable has no quotation marks, as the English Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350010020031"
+          ],
+          "choice": "the divine name is {{divine_name:ГОСПОДЬ|Ягве}}, inflected inside each option (vocative ГОСПОДИ); the prophet says ти to God, with the deity_pronoun span",
+          "alternatives": [
+            "Господи",
+            "Єгово"
+          ],
+          "reason": "As docs/ukrainian-ot-terms.md sets for every book: the capitals mirror the English \"the LORD\" and keep the name apart from Adonai; the setting shows the name itself as \"Ягве\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350010020052"
+          ],
+          "choice": "No deity_pronoun spans in Hindi; तू to God",
+          "alternatives": [],
+          "reason": "Where the English marks God's pronouns with the deity_pronoun setting, the Hindi has no span: Devanagari has no capital letters. Habakkuk speaks to God with तू, as every prayer in this translation does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o350010020031",
+            "o350010020061",
+            "o350010020111"
+          ],
+          "choice": "The prophet's complaint to God (1:2-4, 1:12-2:1) is verse: plain style at every level, God addressed as \"あなた\" with light respect forms; the negatives are \"聞いてくださらない\" / \"救ってくださらない\".",
+          "alternatives": [
+            "です・ます (\"聞いてくださらないのですか\")",
+            "\"聞かれない\""
+          ],
+          "reason": "The poetry rule (OT supplement, ISA-ISA-1): the prophet speaks to God plainly in verse. A negative \"〜られない\" would read \"cannot\", so the 〜てくださらない form carries the respect (PSA convention).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010020091"
+          ],
+          "choice": "chamas \"暴虐\" (L, B), \"暴力\" (R), the cry quoted as \"「暴虐だ！」\" where the English quotes it.",
+          "alternatives": [],
+          "reason": "The Japanese key-word table for the prophets (Hosea 12:2, Obadiah 10, Joel 4:19).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -762,6 +1015,26 @@
           "L": "በደልን እንዳይ ለምን ታደርገኛለህ? መከራንስ [ለምን] ትመለከታለህ? \\q ጥፋትና ግፍ በፊቴ [አሉ]፤ \\q ጠብ አለ፤ ክርክርም ይነሣል።",
           "B": "ክፋትን እንዳይ ለምን ታደርገኛለህ? መከራንስ ለምን ዝም ብለህ ትታገሣለህ? \\q ጥፋትና ግፍ በፊቴ አሉ፤ \\q ጠብና ክርክር ይነሣሉ።",
           "R": "ሰዎች ክፉ ሲያደርጉ እንዳይ ለምን ታደርገኛለህ? ችግር ሲፈጥሩስ ለምን ዝም ብለህ ትመለከታለህ? \\q ወደ የትም ብመለከት ጥፋትና ግፍ አለ። \\q ሰዎች ይጨቃጨቃሉ፤ ይጣላሉም።"
+        },
+        "hi": {
+          "L": "तू मुझे अधर्म क्यों दिखाता है, और [क्यों] तू उत्पात को देखता रहता है? \\q विनाश और उपद्रव मेरे सामने [हैं]; \\q झगड़ा होता है, और विवाद उठ खड़ा होता है।",
+          "B": "तू मुझे बुराई क्यों दिखाता है? तू उत्पात को क्यों सहता रहता है? \\q विनाश और उपद्रव मेरी आँखों के सामने हैं; \\q झगड़े और फ़साद उठते रहते हैं।",
+          "R": "तू मुझे लोगों को बुराई करते हुए क्यों दिखाता है? जब वे दूसरों को सताते हैं, तब तू क्यों बस देखता रहता है? \\q जहाँ भी मैं देखता हूँ, वहाँ विनाश और हिंसा है। \\q लोग झगड़ते और लड़ते हैं।"
+        },
+        "ru": {
+          "L": "Зачем {{deity_pronoun:ты|Ты}} даёшь мне видеть беззаконие и [зачем] смотришь на злодейство? \\q Разорение и насилие [—] передо мной; \\q и бывает распря, и поднимается вражда.",
+          "B": "Зачем {{deity_pronoun:ты|Ты}} заставляешь меня видеть беззаконие? Зачем {{deity_pronoun:ты|Ты}} терпишь злодейство? \\q Разорение и насилие у меня перед глазами; \\q вспыхивают ссоры и раздоры.",
+          "R": "Зачем {{deity_pronoun:ты|Ты}} заставляешь меня смотреть, как люди творят зло? Почему {{deity_pronoun:ты|Ты}} просто смотришь, как они причиняют беды? \\q Куда ни посмотрю, всюду разрушение и насилие. \\q Люди спорят и дерутся."
+        },
+        "ja": {
+          "L": "なぜ、あなたはわたしに不義を見させ、害悪を眺めておられるのか？ \\q 破壊と暴虐がわたしの前に[あり]、 \\q 争いがあり、いさかいが起こる。",
+          "B": "なぜ、あなたはわたしに悪を見させるのか？なぜ、苦しみを黙って見ておられるのか？ \\q 破壊と暴虐が目の前にあり、 \\q 争いといさかいが起こっている。",
+          "R": "なぜ、人々が悪いことをするのを、わたしに見させるのか？なぜ、彼らが人を苦しめるのを、ただ見ておられるのか？ \\q どこを見ても、破壊と暴力がある。 \\q 人々は言い争い、けんかをしている。"
+        },
+        "uk": {
+          "L": "Нащо {{deity_pronoun:ти|Ти}} даєш мені бачити беззаконня, і [нащо] {{deity_pronoun:ти|Ти}} дивишся на кривду? \\q Руїна і насильство [—] переді мною; \\q є сварка, і зростає суперечка.",
+          "B": "Нащо {{deity_pronoun:ти|Ти}} даєш мені бачити неправду? Нащо {{deity_pronoun:ти|Ти}} терпиш кривду? \\q Руїна й насильство переді мною; \\q спалахують сварки й чвари.",
+          "R": "Чому {{deity_pronoun:ти|Ти}} змушуєш мене дивитися, як люди чинять зло? Чому {{deity_pronoun:ти|Ти}} лише дивишся, як вони завдають біди? \\q Куди не гляну, всюди руйнування й насильство. \\q Люди сваряться і бʼються."
         }
       },
       "decisions": [
@@ -848,6 +1121,30 @@
           "reason": "Spanish B says what the looking implies, God seeming to put up with the wrong; R says he only watches.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010030031",
+            "o350010030042",
+            "o350010030051"
+          ],
+          "choice": "'awen \"不義\" (L), \"悪\" (B, R); 'amal \"害悪\" (L), \"苦しみ\" (B), \"人を苦しめる\" (R); tabbit \"眺めておられる\" (L), \"黙って見ておられる\" (B), \"ただ見ておられる\" (R).",
+          "alternatives": [
+            "\"労苦\" (L)",
+            "\"見させられる\""
+          ],
+          "reason": "'amal is both the wrong done and the misery it causes; L keeps one word \"害悪\" for it here and in 1:13. The causative \"見させる\" stays plain, the respect form goes on God's own looking.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -926,6 +1223,26 @@
           "L": "ስለዚህ ሕጉ ይደነዝዛል፤ \\q ፍርድም ከቶ አይወጣም፤ \\q ክፉ ሰው ጻድቁን ይከብባልና፤ \\q ስለዚህ ፍርድ ተጣሞ ይወጣል።",
           "B": "ስለዚህ ሕጉ ኃይሉን ያጣል፤ \\q ፍትሕም ከቶ አያሸንፍም። \\q ክፉዎች ጻድቃንን ይከብባሉ፤ \\q ስለዚህ ፍትሕ ተጣሞ ይወጣል።",
           "R": "የእግዚአብሔር ትምህርት ኃይል ያጣው ለዚህ ነው፤ \\q ፍትሕም ከቶ አያሸንፍም። \\q ክፉ ሰዎች ትክክል የሚያደርጉትን ይከብባሉ፤ \\q ስለዚህ ፍትሕ ይጣመማል።"
+        },
+        "hi": {
+          "L": "इसलिए शिक्षा ढीली पड़ जाती है, \\q और न्याय कभी नहीं निकलता; \\q क्योंकि दुष्ट धर्मी को घेर लेता है; \\q इसलिए न्याय टेढ़ा होकर निकलता है।",
+          "B": "इसलिए शिक्षा का बल जाता रहता है, \\q और न्याय कभी जीत नहीं पाता। \\q दुष्ट धर्मी को घेर लेते हैं, \\q इसलिए न्याय टेढ़ा होकर निकलता है।",
+          "R": "इसी कारण परमेश्वर की शिक्षा में कोई बल नहीं रह गया, \\q और न्याय कभी नहीं जीतता। \\q दुष्ट लोग धर्मियों को घेर लेते हैं, \\q इसलिए न्याय तोड़-मरोड़ दिया जाता है।"
+        },
+        "ru": {
+          "L": "Поэтому немеет наставление, \\q и никогда не выходит справедливость; \\q потому что нечестивый окружает праведного; \\q поэтому выходит справедливость искажённой.",
+          "B": "Поэтому наставление теряет силу, \\q и справедливость никогда не побеждает. \\q Нечестивые окружают праведного, \\q и потому справедливость выходит искажённой.",
+          "R": "Поэтому наставление Бога бессильно, \\q и справедливость никогда не побеждает. \\q Злые люди окружают тех, кто поступает правильно, \\q и поэтому справедливость искажается."
+        },
+        "ja": {
+          "L": "それゆえ、教えは麻痺し、 \\q 公正はいつまでも出て行かない。 \\q 悪しき者が正しい者を取り囲むからだ。 \\q それゆえ、公正は曲げられて出て行く。",
+          "B": "それで、教えは力を失い、 \\q 公正が打ち立てられることは決してない。 \\q 悪しき者が正しい人を取り囲み、 \\q そのため、公正は曲げられて出て来る。",
+          "R": "だから、神の教えには力がなく、 \\q 公正が勝つことは決してない。 \\q 悪い人たちが、正しいことをする人を取り囲んでいる。 \\q だから、公正がゆがめられてしまう。"
+        },
+        "uk": {
+          "L": "Тому заціпеніла настанова, \\q і правосуддя ніколи не виходить; \\q бо безбожний обступає праведного; \\q тому правосуддя виходить викривлене.",
+          "B": "Тому настанова втрачає силу, \\q і правосуддя ніколи не перемагає. \\q Безбожні обступають праведного, \\q тож правосуддя виходить викривлене.",
+          "R": "Ось чому Боже навчання не має сили, \\q і справедливість ніколи не перемагає. \\q Злі люди оточують тих, хто чинить правильно, \\q тож справедливість перекручено."
         }
       },
       "decisions": [
@@ -1152,6 +1469,73 @@
           "reason": "\"ሕግ\" is the established Amharic word for *torah*, and it covers God's teaching as well as rules, which is the sense here (m1); \"ትምህርት\" alone would read as schooling. Readable says \"God's teaching\", as the English Readable. *mishpat* as justice follows the terms list: \"ፍርድ\" at Literal, \"ፍትሕ\" at Balanced and Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010040041"
+          ],
+          "choice": "शिक्षा at every level",
+          "alternatives": [
+            "व्यवस्था"
+          ],
+          "reason": "Torah in the Prophets is शिक्षा at every level, as settled for these books; Readable adds परमेश्वर की, as the English Readable says \"God's teaching\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010040011"
+          ],
+          "choice": "наставление",
+          "alternatives": [
+            "закон"
+          ],
+          "reason": "Torah in the Prophets is \"наставление\" at every level, as set in the note for the Prophets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010040041",
+            "o350010040081",
+            "o350010040101",
+            "o350010040131"
+          ],
+          "choice": "torah \"教え\" (L, B), \"神の教え\" (R), not \"律法\"; mishpat \"公正\"; rasha' \"悪しき者\" (L, B), \"悪い人たち\" (R); tsaddiq \"正しい者\" (L), \"正しい人\" (B), \"正しいことをする人\" (R).",
+          "alternatives": [
+            "\"律法\"",
+            "\"正義\" for mishpat"
+          ],
+          "reason": "The prophetic key-word table (ISA-ISA-1): torah in the prophets is \"教え\", mishpat \"公正\"; R names God's teaching as the English R does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1227,6 +1611,26 @@
           "L": "በሕዝቦች መካከል እዩ፤ አስተውሉም፤ \\q ተደነቁ፤ እጅግም ተደነቁ! \\q በዘመናችሁ ሥራን እሠራለሁና፤ \\q ቢነገራችሁ የማታምኑትን [ሥራ]።",
           "B": "ሕዝቦችን እዩ፤ ተመልከቱም፤ \\q እጅግም ተደነቁ! \\q በዘመናችሁ አንድ ሥራ እሠራለሁና፤ \\q ቢነገራችሁ እንኳ ከቶ የማታምኑት ሥራ ነው።",
           "R": "በሕዝቦች መካከል የሚሆነውን ተመልከቱ! \\q ተደነቁ፤ ተገረሙም! \\q በዘመናችሁ አንድ ነገር አደርጋለሁ፤ \\q ማንም ቢነግራችሁ እንኳ አታምኑም።"
+        },
+        "hi": {
+          "L": "जातियों के बीच देखो, और निहारो, \\q और चकित हो, अचंभित हो! \\q क्योंकि मैं तुम्हारे दिनों में एक काम [करता हूँ], \\q [ऐसा काम कि] यदि उसका वर्णन किया जाए तो तुम विश्वास न करोगे।",
+          "B": "राष्ट्रों की ओर देखो और ध्यान दो, \\q और बहुत ही चकित हो! \\q क्योंकि मैं तुम्हारे दिनों में एक ऐसा काम कर रहा हूँ \\q जिस पर तुम विश्वास न करोगे, चाहे तुम्हें बताया भी जाए।",
+          "R": "देखो कि राष्ट्रों में क्या हो रहा है! \\q चकित और हैरान हो जाओ! \\q मैं तुम्हारे जीवन-काल में कुछ ऐसा करने जा रहा हूँ \\q जिस पर तुम विश्वास नहीं करोगे, चाहे कोई तुम्हें उसके बारे में बताए भी।"
+        },
+        "ru": {
+          "L": "Посмотрите среди народов, и всмотритесь, \\q и удивитесь, изумитесь! \\q Потому что дело {{deity_pronoun:я|Я}} делаю во дни ваши, \\q [которому] вы не поверили бы, если бы рассказали.",
+          "B": "Посмотрите на народы и всмотритесь, \\q и изумитесь до крайности! \\q Ведь {{deity_pronoun:я|Я}} совершаю в ваши дни такое дело, \\q в которое вы не поверили бы, даже если бы вам рассказали.",
+          "R": "Посмотрите, что происходит среди народов! \\q Удивитесь и изумитесь! \\q В ваше время {{deity_pronoun:я|Я}} сделаю то, \\q во что вы не поверили бы, даже если бы кто-нибудь вам об этом рассказал."
+        },
+        "ja": {
+          "L": "国々の中を見よ。よく見よ。 \\q 驚け、驚き果てよ。 \\q [わたしは]あなたがたの日々に一つの業を行うからだ。 \\q それは、告げられても、あなたがたが信じないであろう[業だ]。",
+          "B": "国々を見なさい。よく見なさい。 \\q そして、大いに驚きなさい。 \\q わたしは、あなたがたの時代に、あることを行うからだ。 \\q それは、たとえ告げられても、あなたがたが信じないようなことだ。",
+          "R": "国々の間で起こっていることを見なさい！ \\q 驚き、あきれなさい！ \\q わたしは、あなたたちが生きているうちに、あることをしようとしている。 \\q それは、だれかがあなたたちに話しても、信じられないようなことだ。"
+        },
+        "uk": {
+          "L": "Погляньте між народами, і дивіться, \\q і дивуйтеся, і зачудуйтеся! \\q Бо діло [{{deity_pronoun:я|Я}}] чиню за ваших днів, \\q [якому] ви не повірили б, якби розповіли.",
+          "B": "Подивіться на народи й придивіться, \\q і вкрай здивуйтеся! \\q Бо за ваших днів {{deity_pronoun:я|Я}} чиню таке, \\q чому ви не повірили б, навіть якби вам розповіли.",
+          "R": "Подивіться, що діється серед народів! \\q Дивуйтеся й зачудуйтеся! \\q Я ось-ось зроблю за вашого життя таке, \\q чому ви не повірили б, навіть якби хтось вам розповів."
         }
       },
       "decisions": [
@@ -1488,6 +1892,100 @@
           "reason": "Paul quotes this verse in its Greek form (m3), which reads \"you scoffers\" and adds \"and perish\"; the Hebrew has \"among the nations\" and no \"perish\", so those words follow the Hebrew, while the rest keeps the Amharic of Acts 13:41 at each level. The Hebrew \"if it is told\" is passive: \"ቢነገራችሁ\" (L, B). The doubled verb of astonishment (m2) is \"ተደነቁ፤ እጅግም ተደነቁ\" at Literal, so that the repetition shows. *goyim* is \"ሕዝቦች\" through the book, as in Ezekiel and the Psalms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010050011",
+            "o350010050021",
+            "o350010050081",
+            "o350010050131"
+          ],
+          "choice": "translated from the Hebrew; Acts 13:41's wording for the shared words",
+          "alternatives": [
+            "हे निंदा करनेवालो, देखो"
+          ],
+          "reason": "Paul quotes this verse in Acts 13:41 from the Greek Old Testament, which reads \"Look, you scoffers ... and perish\" where the Hebrew has \"Look among the nations ... be astounded\". Every level translates the Hebrew, and keeps Acts' Hindi for the words the two share: चकित हो, मैं तुम्हारे दिनों में एक काम ... कर रहा हूँ, जिस पर तुम विश्वास न करोगे, चाहे ... बताए भी (R तुम्हारे जीवन-काल में).",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010050022",
+            "o350010050071",
+            "o350010050111"
+          ],
+          "choice": "translated from the Hebrew (\"Посмотрите среди народов\"), with the Russian of Acts 13:41 for the shared words (\"дело делаю я во дни ваши\"; \"совершаю в ваши дни\"; \"В ваше время я ... во что вы не поверите, даже если кто-нибудь вам об этом расскажет\")",
+          "alternatives": [
+            "Acts 13:41: \"Смотрите, презирающие, ... и исчезните\""
+          ],
+          "reason": "Paul quotes this verse in Acts 13:41 from the Greek, which reads \"you scoffers\" for \"among the nations\" and adds \"and perish\". Habakkuk is translated from the Hebrew; the words the two share keep the wording of Acts at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o350010050011",
+            "o350010050032",
+            "o350010050041",
+            "o350010050051"
+          ],
+          "choice": "God's answer begins without a quotation mark (as the English); the hearers are addressed in the plural \"あなたがた\" (L, B), \"あなたたち\" (R); commands \"〜せよ\" (L), \"〜しなさい\" (B, R); the doubled verb \"驚け、驚き果てよ\" (L), \"大いに驚きなさい\" (B).",
+          "alternatives": [
+            "\"驚け、驚け\" (L)"
+          ],
+          "reason": "The prophetic conventions for God speaking to the people (ISA-ISA-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010050022",
+            "o350010050071",
+            "o350010050081"
+          ],
+          "choice": "From the Hebrew \"among the nations\" (\"国々の中を\"), not Acts 13:41's Greek \"scoffers\" (\"あざける者たち\"); po'al \"業\" (L) as in the Acts 13:41 Japanese, \"あること\" (B, R).",
+          "alternatives": [
+            "\"あざける者たちよ、見よ\" (Acts 13:41)"
+          ],
+          "reason": "Acts 13:41 quotes the Greek form of this verse; the meaning decisions follow the Hebrew, and only the shared word \"業\" is kept.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1570,6 +2068,26 @@
           "L": "እነሆ፣ ከለዳውያንን አስነሣለሁና፤ \\q መራራውንና ችኩሉን ያንን ሕዝብ፣ \\q በምድር ስፋት ሁሉ የሚዘምተውን፣ \\q የእርሱ ያልሆኑትን መኖሪያዎች ይወርስ ዘንድ።",
           "B": "ከለዳውያንን አስነሣለሁና፤ \\q እነርሱ ጨካኝና ችኩል ሕዝብ ናቸው፤ \\q በሰፊው ምድር ላይ ይዘምታሉ፤ \\q የራሳቸው ያልሆነውንም መኖሪያ ይነጥቃሉ።",
           "R": "ባቢሎናውያንን ወደ ሥልጣን አመጣለሁ። \\q እነርሱ ጨካኞችና ለማጥቃት ፈጣኖች ናቸው። \\q በምድር ሁሉ ላይ ይዘምታሉ፤ \\q የሌሎች ሰዎች የሆኑትንም ቤቶች ይወስዳሉ።"
+        },
+        "hi": {
+          "L": "क्योंकि देखो, मैं कसदियों को उभार रहा हूँ, \\q उस कड़वी और उतावली जाति को, \\q जो पृथ्वी की चौड़ाई में कूच करती है \\q उन निवासों पर अधिकार करने के लिए जो उसके नहीं [हैं]।",
+          "B": "क्योंकि मैं कसदियों को खड़ा कर रहा हूँ, \\q उस क्रूर और उतावले राष्ट्र को, \\q जो सारी पृथ्वी पर छा जाता है \\q ताकि वे घर छीन ले जो उसके अपने नहीं हैं।",
+          "R": "मैं बाबुल के लोगों को शक्ति दे रहा हूँ। \\q वे निर्दय हैं और हमला करने में देर नहीं करते। \\q वे सारी पृथ्वी पर कूच करते हैं \\q ताकि दूसरों के घरों पर क़ब्ज़ा कर लें।"
+        },
+        "ru": {
+          "L": "Потому что вот, {{deity_pronoun:я|Я}} поднимаю халдеев, \\q народ жестокий и стремительный, \\q который идёт по широтам земли, \\q чтобы завладеть жилищами, [которые] не его.",
+          "B": "Ведь {{deity_pronoun:я|Я}} поднимаю халдеев, \\q этот свирепый и неудержимый народ, \\q который проходит по всей широкой земле, \\q чтобы захватить чужие жилища.",
+          "R": "Я привожу к власти халдеев, народ Вавилона. \\q Они жестоки и быстро нападают. \\q Они проходят по всей земле, \\q чтобы захватить дома, которые принадлежат другим людям."
+        },
+        "ja": {
+          "L": "まことに、見なさい、わたしはカルデア人を起こす。 \\q 荒々しく性急なあの国を。 \\q それは地の広い所を行き巡り、 \\q 自分のものではない住まいを奪い取る。",
+          "B": "わたしはカルデア人を起こす。 \\q 残忍で向こう見ずなあの国だ。 \\q 彼らは広い大地を駆け巡り、 \\q 自分たちのものではない家々を奪い取る。",
+          "R": "わたしは、バビロン人を強い国にする。 \\q 彼らは残酷で、すぐに攻めて来る。 \\q 彼らは世界中を進んで行き、 \\q ほかの人々の家を自分のものにする。"
+        },
+        "uk": {
+          "L": "Бо ось {{deity_pronoun:я|Я}} підіймаю халдеїв, \\q той народ гіркий і стрімкий, \\q що йде широкими просторами землі, \\q щоб заволодіти оселями, [які] не його.",
+          "B": "Бо {{deity_pronoun:я|Я}} підіймаю халдеїв, \\q той лютий і нестримний народ, \\q що проходить усією широкою землею, \\q щоб захопити домівки, які йому не належать.",
+          "R": "Я даю владу вавилонянам. \\q Вони жорстокі й швидкі до нападу. \\q Вони проходять усю землю, \\q щоб забрати собі домівки, які належать іншим людям."
         }
       },
       "decisions": [
@@ -1785,6 +2303,90 @@
           "reason": "As in Jeremiah (21:4, 9): Literal and Balanced keep the Hebrew name, and Readable names the Babylonians, as the English Readable and m1. Habakkuk speaks of the nation in the singular (\"it\"); Literal keeps \"እርሱ\" and the singular verb in 1:7–11, while Balanced and Readable say \"they\", as the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010060052"
+          ],
+          "choice": "\"халдеї\" (L, B); \"вавилоняни\" (R)",
+          "alternatives": [],
+          "reason": "Literal and Balanced keep the Hebrew name of the people; Readable names them as a modern reader knows them, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010060051",
+            "o350010060052"
+          ],
+          "choice": "कसदी (L, B); बाबुल के लोग (R)",
+          "alternatives": [],
+          "reason": "The Chaldeans are कसदी at Literal and Balanced, as in Kings, Isaiah and Jeremiah; Readable says बाबुल के लोग, as the English Readable says \"Babylonians\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010060052"
+          ],
+          "choice": "халдеи (all levels); народ Вавилона (R)",
+          "alternatives": [
+            "вавилоняне"
+          ],
+          "reason": "The Chaldeans keep the form \"халдеи\" used at every level in Isaiah; Readable adds who they are, where the English Readable says \"the Babylonians\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010060052",
+            "o350010060021",
+            "o350010060072",
+            "o350010060083"
+          ],
+          "choice": "Kasdim \"カルデア人\" (L, B), \"バビロン人\" (R, as the English R); hinneh \"見なさい\" (L), dropped at B and R (the English B, R drop it); mar venimhar \"荒々しく性急な\" (L), \"残忍で向こう見ずな\" (B).",
+          "alternatives": [
+            "\"苦く性急な\" (L, too literal)"
+          ],
+          "reason": "The Jeremiah convention for the Chaldeans (JER-JER-1); hinneh in God's word is \"見なさい\", never \"見よ\" (ISA-ISA-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1854,6 +2456,26 @@
           "L": "እርሱ የሚያስፈራና የሚያስደነግጥ [ነው]፤ \\q ፍርዱና ክብሩ ከራሱ ይወጣሉ።",
           "B": "እነርሱ የሚያስፈሩና የሚያስደነግጡ ናቸው፤ \\q የራሳቸውን ሕግ ያወጣሉ፤ ለራሳቸውም ክብር ይሰጣሉ።",
           "R": "ሰዎች በጣም ይፈሯቸዋል። \\q የራሳቸውን ሕግ ያወጣሉ፤ ለማንም አይገዙም።"
+        },
+        "hi": {
+          "L": "वह भयानक और डरावनी [है]; \\q उसका न्याय और उसकी प्रतिष्ठा उसी से निकलती है।",
+          "B": "लोग उनसे डरते और काँपते हैं; \\q वे अपना नियम आप बनाते हैं और अपना आदर आप माँगते हैं।",
+          "R": "लोग उनसे बहुत डरते हैं। \\q वे अपने नियम आप बनाते हैं और किसी के आगे जवाबदेह नहीं हैं।"
+        },
+        "ru": {
+          "L": "Страшен и грозен он; \\q от него самого исходят его правда и его величие.",
+          "B": "Их боятся и страшатся; \\q они сами устанавливают себе закон и сами присваивают себе честь.",
+          "R": "Люди боятся их. \\q Они сами придумывают себе законы и ни перед кем не отвечают."
+        },
+        "ja": {
+          "L": "それは恐ろしく、恐るべきもの。 \\q その裁きとその威厳は、それ自身から出る。",
+          "B": "彼らは恐ろしく、人々を震え上がらせる。 \\q 自分で掟を定め、自分の誉れを主張する。",
+          "R": "人々は彼らをとても恐れている。 \\q 彼らは自分で決まりを作り、だれにも従わない。"
+        },
+        "uk": {
+          "L": "Страшний і грізний він; \\q від нього самого виходить його право і його гідність.",
+          "B": "Їх бояться і жахаються; \\q вони самі собі встановлюють закон і самі собі присвоюють честь.",
+          "R": "Люди жахаються їх. \\q Вони самі встановлюють свої правила й нікому не підкоряються."
         }
       },
       "decisions": [
@@ -1970,6 +2592,27 @@
           "reason": "Literal keeps the singular of the Hebrew, and Portuguese \"nação\" makes it \"ela\", which reads naturally; Balanced and Readable say \"eles\", the Chaldeans, as the English says \"they\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010070051",
+            "o350010070052",
+            "o350010070062"
+          ],
+          "choice": "mishpato \"その裁き\" (L), the nation's own standard of right, rather than the key word \"公正\"; se'eto \"その威厳\".",
+          "alternatives": [
+            "\"その公正\""
+          ],
+          "reason": "Here mishpat is the law the nation sets for itself (m1), not the justice God requires, so L uses the 'verdict, ruling' sense of the key-word table.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2054,6 +2697,26 @@
           "L": "ፈረሶቹ ከነብሮች ይልቅ ፈጣኖች፣ ከማታ ተኩላዎችም ይልቅ ጨካኞች [ናቸው]፤ \\q ፈረሰኞቹም በኩራት ይጋልባሉ፤ \\q ፈረሰኞቹም ከሩቅ ይመጣሉ፤ \\q ለመብላት እንደሚቸኩል ንስር ይበርራሉ።",
           "B": "ፈረሶቻቸው ከነብሮች ይልቅ ፈጣኖች፣ \\q በማታ ከሚያድኑ ተኩላዎችም ይልቅ ጨካኞች ናቸው። \\q ፈረሰኞቻቸው ወደ ፊት ይገሠግሣሉ፤ \\q ጋላቢዎቻቸው ከሩቅ ይመጣሉ፤ \\q ለመንጠቅ እንደሚቸኩል ንስር ይወረወራሉ።",
           "R": "ፈረሶቻቸው ከነብሮች ይፈጥናሉ፤ \\q ፀሐይ ስትጠልቅ ከሚያድኑ ከተራቡ ተኩላዎችም ይልቅ ጨካኞች ናቸው። \\q ፈረሰኛ ወታደሮቻቸው ወደ ፊት ይገሠግሣሉ። \\q ከሩቅ ይመጣሉ። \\q ምግባቸውን ለመያዝ እንደሚቸኩሉ ንስሮች ይወረወራሉ።"
+        },
+        "hi": {
+          "L": "उसके घोड़े चीतों से भी तेज़ [हैं], और साँझ के भेड़ियों से भी अधिक क्रूर; \\q और उसके घुड़सवार अकड़कर दौड़ते हैं; \\q और उसके घुड़सवार दूर से आते हैं; \\q वे उकाब के समान उड़ते हैं जो खाने को झपटता है।",
+          "B": "उनके घोड़े चीतों से भी तेज़ हैं, \\q साँझ के भेड़ियों से भी अधिक ख़ूँख़ार। \\q उनके घुड़सवार आगे धावा बोलते हैं; \\q उनके सवार दूर से आते हैं; \\q वे उकाब की तरह झपटते हैं जो खाने को लपकता है।",
+          "R": "उनके घोड़े चीतों से भी तेज़ हैं \\q और शाम के भूखे भेड़ियों से भी ख़ूँख़ार। \\q उनके घुड़सवार सैनिक आगे धावा बोलते हैं। \\q वे दूर से आते हैं। \\q वे उकाबों की तरह अपना भोजन पकड़ने को झपटते हैं।"
+        },
+        "ru": {
+          "L": "Быстрее барсов его кони и свирепее волков вечерних; \\q и скачут гордо его всадники; \\q и всадники его приходят издалека; \\q летят они, как орёл, спешащий пожрать.",
+          "B": "Их кони быстрее барсов, \\q свирепее волков в сумерках. \\q Их всадники мчатся вперёд; \\q их конники приходят издалека; \\q они налетают, как орёл, что спешит на добычу.",
+          "R": "Их кони быстрее леопардов \\q и свирепее голодных волков на закате. \\q Их всадники несутся вперёд. \\q Они приходят издалека. \\q Они налетают, как орлы, которые спешат схватить пищу."
+        },
+        "ja": {
+          "L": "その馬は豹よりも速く、夕暮れの狼よりも猛々しい。 \\q その騎兵は誇らしげに駆け、 \\q その騎兵は遠くから来る。 \\q 彼らは、食らおうと急ぐ鷲のように飛ぶ。",
+          "B": "彼らの馬は豹よりも速く、 \\q 夕暮れの狼よりも猛々しい。 \\q 彼らの騎兵は突き進み、 \\q 騎兵は遠くからやって来る。 \\q 獲物を食らおうと急ぐ鷲のように、彼らは襲いかかる。",
+          "R": "彼らの馬はヒョウよりも速く、 \\q 日暮れに獲物を探す、飢えたおおかみよりも荒々しい。 \\q 馬に乗った兵士たちが突き進んで来る。 \\q 彼らは遠くからやって来る。 \\q えさを取ろうと急いで舞い降りるわしのように、襲いかかって来る。"
+        },
+        "uk": {
+          "L": "Швидші від леопардів його коні, і лютіші від вечірніх вовків; \\q і гарцюють його вершники; \\q і його вершники прибувають здалека; \\q летять, як орел, що поспішає жерти.",
+          "B": "Їхні коні швидші від леопардів, \\q лютіші від вовків у сутінках. \\q Їхні вершники мчать уперед; \\q їхні вершники прибувають здалека; \\q вони налітають, як орел, що поспішає жерти.",
+          "R": "Їхні коні швидші від леопардів \\q і лютіші від голодних вовків надвечір. \\q Їхні кінні вояки мчать уперед. \\q Вони прибувають здалека. \\q Вони налітають, як орли, що поспішають схопити здобич."
         }
       },
       "decisions": [
@@ -2157,6 +2820,29 @@
           "reason": "Zephaniah 3:3 has the same Hebrew phrase, and the two books keep one wording at Literal and Balanced. Readable says plainly \"hungry wolves that hunt at sunset\", as the English Readable (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010080022",
+            "o350010080052",
+            "o350010080132"
+          ],
+          "choice": "nemerim \"豹\" (L, B), \"ヒョウ\" (R); ze'evei 'erev \"夕暮れの狼\" (L, B), \"日暮れに獲物を探す、飢えたおおかみ\" (R); nesher \"鷲\" (L, B), \"わし\" (R).",
+          "alternatives": [
+            "\"はげわし\" for nesher (Micah 1:16)"
+          ],
+          "reason": "Animal names as Hosea 13:7, Isaiah 11:6 and Obadiah 4; R writes non-Jōyō names in kana.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2229,6 +2915,26 @@
           "L": "ሁሉም ለግፍ ይመጣል፤ \\q የፊታቸውም ብዛት ወደ ፊት [ያቀና ነው]፤ \\q ምርኮኞችንም እንደ አሸዋ ይሰበስባል።",
           "B": "ሁሉም ግፍ ለማድረግ ቆርጠው ይመጣሉ፤ \\q ፊታቸው ወደ ፊት የተቀና ነው፤ \\q ምርኮኞችንም እንደ አሸዋ ይሰበስባሉ።",
           "R": "ሁሉም ግፍ ለመፈጸም ይመጣሉ። \\q ሠራዊታቸው ወደ ፊት መግፋቱን ይቀጥላል፤ \\q ማንም ሊቆጥረው ከሚችለው በላይ ብዙ ሰዎችን ማርከው ይወስዳሉ።"
+        },
+        "hi": {
+          "L": "वह सब का सब उपद्रव के लिए आता है; \\q उनके मुँहों का समूह आगे की ओर [लगा है]; \\q और वह बंदियों को रेत के समान बटोरता है।",
+          "B": "वे सब उपद्रव करने की ठानकर आते हैं; \\q उनके मुँह सीधे आगे की ओर लगे हैं, \\q और वे बंदियों को रेत की तरह बटोरते हैं।",
+          "R": "वे सब हिंसा करने आते हैं। \\q उनकी सेना आगे बढ़ती ही जाती है, \\q और वे इतने लोगों को बंदी बना लेते हैं कि कोई गिन नहीं सकता।"
+        },
+        "ru": {
+          "L": "Весь он идёт для насилия; \\q устремление лиц их — вперёд; \\q и собирает он пленных, как песок.",
+          "B": "Все они приходят ради насилия; \\q их лица устремлены вперёд, \\q и они собирают пленных, как песок.",
+          "R": "Все они приходят, чтобы творить насилие. \\q Их войско всё время рвётся вперёд, \\q и они берут столько пленных, что никто не может их сосчитать."
+        },
+        "ja": {
+          "L": "それは皆、暴虐のために来る。 \\q その顔の群れは前に[向けられ]、 \\q 砂のように捕らわれ人を集める。",
+          "B": "彼らは皆、暴虐を行おうとしてやって来る。 \\q その顔はまっすぐ前に向けられ、 \\q 砂のように多くの捕虜を集める。",
+          "R": "彼らは皆、暴力をふるうためにやって来る。 \\q 彼らの軍隊は、どんどん前へ進み、 \\q 数えきれないほどの人々を捕虜にする。"
+        },
+        "uk": {
+          "L": "Увесь він іде на насильство; \\q сукупність їхніх облич [звернена] вперед; \\q і збирає він полонених, як пісок.",
+          "B": "Усі вони йдуть, налаштовані на насильство; \\q їхні обличчя звернені прямо вперед, \\q і вони збирають полонених, як пісок.",
+          "R": "Усі вони приходять чинити насильство. \\q Їхнє військо невпинно сунеться вперед, \\q і вони беруть стільки полонених, що й не злічити."
         }
       },
       "decisions": [
@@ -2292,6 +2998,28 @@
           "alternatives": [],
           "reason": "Balanced and Readable follow the reading in m1 and say \"they\" for \"it\". Readable explains \"like sand\".",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010090041",
+            "o350010090051",
+            "o350010090061"
+          ],
+          "choice": "megammat peneihem qadimah \"その顔の群れは前に[向けられ]\" (L), \"その顔はまっすぐ前に向けられ\" (B), following the English reading of a very uncertain line.",
+          "alternatives": [
+            "\"東風のように\""
+          ],
+          "reason": "The meaning decision m1 marks the line uncertain with a footnote; Japanese follows the reading chosen there and does not add the 'east wind' alternative.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2371,6 +3099,26 @@
           "L": "እርሱም በነገሥታት ላይ ያፌዛል፤ \\q ገዦችም ለእርሱ መሣቂያ [ናቸው]፤ \\q በምሽግ ሁሉ ላይ ይሥቃል፤ \\q አፈርንም ቆልሎ ይይዘዋል።",
           "B": "በነገሥታት ላይ ያፌዛሉ፤ \\q በገዦችም ይሣለቃሉ፤ \\q በምሽግ ሁሉ ላይ ይሥቃሉ፤ \\q አፈር ቆልለው ይይዙታልና።",
           "R": "በነገሥታት ላይ ያፌዛሉ፤ \\q በገዦችም ይሥቃሉ። \\q በምሽግ ሁሉ ላይ ይሥቃሉ፤ \\q ከአፈር መወጣጫ ሠርተው ይይዙታልና።"
+        },
+        "hi": {
+          "L": "और वह राजाओं का ठट्ठा करता है, \\q और हाकिम उसके लिए हँसी [हैं]; \\q वह हर गढ़ पर हँसता है, \\q और मिट्टी का ढेर लगाकर उसे ले लेता है।",
+          "B": "वे राजाओं की हँसी उड़ाते हैं \\q और शासकों का मज़ाक़ बनाते हैं; \\q वे हर गढ़ पर हँसते हैं, \\q क्योंकि वे मिट्टी का ढेर लगाकर उसे ले लेते हैं।",
+          "R": "वे राजाओं का मज़ाक़ उड़ाते हैं \\q और शासकों पर हँसते हैं। \\q वे हर क़िले पर हँसते हैं, \\q क्योंकि वे मिट्टी के ढलान बनाकर उसे जीत लेते हैं।"
+        },
+        "ru": {
+          "L": "И над царями он насмехается, \\q и правители — потеха для него; \\q над всякой крепостью он смеётся, \\q и насыпает землю, и берёт её.",
+          "B": "Они насмехаются над царями \\q и потешаются над правителями; \\q они смеются над каждой крепостью: \\q насыпают вал и берут её.",
+          "R": "Они смеются над царями \\q и потешаются над правителями. \\q Они смеются над каждой крепостью, \\q потому что насыпают земляные валы и захватывают её."
+        },
+        "ja": {
+          "L": "それは王たちをあざけり、 \\q 支配者たちはそれにとって笑いぐさだ。 \\q それはすべての要塞を笑い、 \\q 土を積み上げて、それを攻め取る。",
+          "B": "彼らは王たちをあざけり、 \\q 支配者たちを笑いものにする。 \\q どんな要塞もあざ笑う。 \\q 土を積み上げて、それを攻め取るからだ。",
+          "R": "彼らは王たちをばかにし、 \\q 支配者たちを笑う。 \\q どんな砦も笑い飛ばす。 \\q 土を盛り上げて坂を作り、砦を攻め落とすからだ。"
+        },
+        "uk": {
+          "L": "І він глузує з царів, \\q і володарі [—] посміховисько для нього; \\q він сміється з кожної твердині, \\q і насипає землю, і бере її.",
+          "B": "Вони глузують з царів \\q і насміхаються з володарів; \\q вони сміються з кожної фортеці, \\q бо насипають землю і беруть її.",
+          "R": "Вони глузують з царів \\q і сміються з правителів. \\q Вони сміються з кожної фортеці, \\q бо насипають земляні вали й захоплюють її."
         }
       },
       "decisions": [
@@ -2481,6 +3229,26 @@
           "L": "በዚያን ጊዜ [እንደ] ነፋስ ጠርጎ ያልፋል፤ ይሻገራልም፤ በደለኛም ይሆናል፤ \\q ይህ፣ ኃይሉ አምላኩ የሆነው።",
           "B": "ከዚያም እንደ ነፋስ ጠራርገው ያልፋሉ፤ ይሄዳሉም፤ እነርሱ በደለኞች ናቸው፤ \\q የገዛ ኃይላቸው አምላካቸው ነው።",
           "R": "ከዚያም እንደ ነፋስ እየተጣደፉ ያልፋሉ፤ መሄዳቸውንም ይቀጥላሉ። \\q የገዛ ኃይላቸውን ስለሚያመልኩ በደለኞች ናቸው።"
+        },
+        "hi": {
+          "L": "तब वह आँधी के समान बहता चला जाता है और पार निकल जाता है, और दोषी ठहरता है, \\q यह जिसका बल ही उसका देवता [है]।",
+          "B": "तब वे आँधी की तरह झपटकर आगे निकल जाते हैं, ऐसे दोषी लोग \\q जिनका अपना बल ही उनका देवता है।",
+          "R": "तब वे हवा की तरह झपटकर आगे बढ़ते जाते हैं। \\q वे दोषी हैं, क्योंकि वे अपने ही बल की पूजा करते हैं।"
+        },
+        "ru": {
+          "L": "Тогда проносится [как] ветер и проходит, и становится виновным \\q тот, у кого сила его — его бог.",
+          "B": "Потом они проносятся, как ветер, и идут дальше, виновные люди, \\q чей бог — их собственная сила.",
+          "R": "Потом они мчатся дальше, как ветер. \\q Они виновны, потому что поклоняются своей собственной силе."
+        },
+        "ja": {
+          "L": "そのとき、[それは]風[のように]吹き過ぎ、通り過ぎて、罪ある者となる。 \\q 自分の力を自分の神とするこの者は。",
+          "B": "そして彼らは風のように吹き過ぎ、進んで行く。罪ある者たちだ。 \\q 自分の力を神とする者たちだ。",
+          "R": "そして彼らは、風のように駆け抜け、進み続ける。 \\q 彼らは罪ある者たちだ。自分の力を神として拝んでいるからだ。"
+        },
+        "uk": {
+          "L": "Тоді проноситься [, як] вітер, і минає, і стає винним, \\q той, чия сила [—] його бог.",
+          "B": "Тоді вони проносяться, як вітер, і йдуть далі, винні люди, \\q чия власна сила — їхній бог.",
+          "R": "Потім вони мчать далі, як вітер. \\q Вони винні, бо поклоняються власній силі."
         }
       },
       "decisions": [
@@ -2564,6 +3332,27 @@
           "reason": "Balanced and Readable say \"they\" for the singular \"it\" or \"he\". Readable makes plain that treating one's strength as god means worshiping it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010110052",
+            "o350010110071",
+            "o350010110082"
+          ],
+          "choice": "ve'ashem \"罪ある者となる\" (L), \"罪ある者たち\" (B, R); zu kocho le'lohó \"自分の力を自分の神とする\" (L), \"自分の力を神とする\" (B), \"自分の力を神として拝んでいる\" (R).",
+          "alternatives": [],
+          "reason": "The text of 'becomes guilty' is uncertain (m2, footnoted); Japanese follows the reading chosen in the meaning decisions.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2644,6 +3433,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ፣ ቅዱሴ ሆይ፣ ከቀድሞ ዘመን ጀምሮ [ያለህ] አንተ አይደለህምን? አንሞትም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለፍርድ መድበኸዋል፤ \\q ዓለት ሆይ፣ ለመውቀስ አጽንተኸዋል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አምላኬ፣ ቅዱሴ፣ አንተ ከዘላለም ያለህ አይደለህምን? አንሞትም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፍርድን እንዲፈጽሙ መደብሃቸው፤ \\q ዓለት ሆይ፣ እንዲያርሙ አቆምሃቸው።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ከመጀመሪያው ጀምሮ ነበርህ። አንተ አምላኬ፣ ቅዱስ አምላኬ ነህ። አንሞትም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ፍርድህን እንዲፈጽሙ ባቢሎናውያንን መርጠሃቸዋል። \\q አንተ ዓለታችን ነህ፤ እኛን እንዲያርሙ ልከሃቸዋል።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मेरे परमेश्वर, मेरे पवित्र, क्या तू अनादिकाल से नहीं है? हम नहीं मरेंगे। \\q हे {{divine_name:प्रभु|याहवे}}, तूने उसे न्याय के लिए ठहराया है; \\q और हे चट्टान, तूने उसे ताड़ना देने के लिए स्थिर किया है।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मेरे परमेश्वर, मेरे पवित्र, क्या तू सदा से नहीं है? हम नहीं मरेंगे। \\q हे {{divine_name:प्रभु|याहवे}}, तूने उन्हें न्याय करने के लिए ठहराया है; \\q हे चट्टान, तूने उन्हें सुधारने के लिए खड़ा किया है।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, तू आदि से है। तू मेरा परमेश्वर, मेरा पवित्र परमेश्वर है। हम नहीं मरेंगे। \\q हे {{divine_name:प्रभु|याहवे}}, तूने बाबुल के लोगों को अपना न्याय पूरा करने के लिए चुना है। \\q तू हमारी चट्टान है, और तूने उन्हें हमें सुधारने के लिए भेजा है।"
+        },
+        "ru": {
+          "L": "Разве не {{deity_pronoun:ты|Ты}} от древности, {{divine_name:ГОСПОДИ|Яхве}}, Боже мой, Святой мой? Мы не умрём. \\q {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} назначил его для суда; \\q и, скала, {{deity_pronoun:ты|Ты}} утвердил его для обличения.",
+          "B": "Разве {{deity_pronoun:ты|Ты}} не от вечности, {{divine_name:ГОСПОДИ|Яхве}}, мой Бог, мой Святой? Мы не умрём. \\q {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} поставил их, чтобы совершить суд; \\q скала, {{deity_pronoun:ты|Ты}} утвердил их, чтобы наказать.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} существуешь от самого начала. Ты мой Бог, мой святой Бог. Мы не умрём. \\q {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} избрал халдеев, чтобы совершить {{deity_pronoun:твой|Твой}} суд. \\q Ты наша скала, и {{deity_pronoun:ты|Ты}} послал их, чтобы исправить нас."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}、わたしの神、わたしの聖なる方よ、あなたは昔からおられる方ではないか？わたしたちは死なない。 \\q {{divine_name:主|ヤハウェ}}よ、あなたはそれを裁きのために置かれた。 \\q 岩よ、あなたはそれを懲らしめのために据えられた。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしの神、わたしの聖なる方よ、あなたは永遠の昔からおられるではないか？わたしたちは死ぬことはない。 \\q {{divine_name:主|ヤハウェ}}よ、あなたは彼らを、裁きを行わせるために定められた。 \\q 岩なる方よ、あなたは彼らを、懲らしめのために立てられた。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、あなたは初めからおられる方だ。あなたはわたしの神、わたしの聖なる神だ。わたしたちは死なない。 \\q {{divine_name:主|ヤハウェ}}よ、あなたは、ご自分の裁きを行わせるために、バビロン人を選ばれた。 \\q あなたはわたしたちの岩だ。あなたは、わたしたちを正すために、彼らを送られた。"
+        },
+        "uk": {
+          "L": "Хіба не від давнини {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, мій Боже, мій Святий? Ми не помремо. \\q {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} призначив його для суду; \\q і, Скеле, {{deity_pronoun:ти|Ти}} поставив його, щоб карати.",
+          "B": "Хіба {{deity_pronoun:ти|Ти}} не від віку, {{divine_name:ГОСПОДИ|Ягве}}, мій Боже, мій Святий? Ми не помремо. \\q {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} призначив їх чинити суд; \\q Скеле, {{deity_pronoun:ти|Ти}} поставив їх, щоб покарати.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} існуєш від самого початку. Ти мій Бог, мій святий Бог. Ми не помремо. \\q {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} вибрав вавилонян, щоб виконати {{deity_pronoun:твій|Твій}} суд. \\q Ти наша Скеля, і {{deity_pronoun:ти|Ти}} послав їх, щоб виправити нас."
         }
       },
       "decisions": [
@@ -2842,6 +3651,91 @@
           "reason": "Habakkuk uses Elohim only with a possessor (1:11, 12; 3:18) and Eloah once (3:3): as the terms lists settle, these are \"አምላክ\", while YHWH is \"እግዚአብሔር\" with \"ያህዌ\" as the setting's alternative. Readable says \"ቅዱስ አምላኬ\" (my holy God), as the English Readable. The addressee of a prayer is \"አንተ\" at every level, as the style guide requires.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010120131"
+          ],
+          "choice": "चट्टान as a title of God",
+          "alternatives": [],
+          "reason": "\"Rock\" (tsur) is a title of God, चट्टान as in the Psalms (मेरी चट्टान), addressed here with हे.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010120122"
+          ],
+          "choice": "скала, lowercase",
+          "alternatives": [
+            "Скала"
+          ],
+          "reason": "\"Rock\" as a name for God is \"скала\", lowercase, as in the Psalms and 2 Samuel 22, here in address.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010120061",
+            "o350010120062",
+            "o350010120122",
+            "o350010120132"
+          ],
+          "choice": "qedoshi \"わたしの聖なる方\" (L, B), \"わたしの聖なる神\" (R); tsur as a title of God \"岩よ\" (L), \"岩なる方よ\" (B), \"わたしたちの岩\" (R); lehokhiach \"懲らしめ\" (L, B), \"正す\" (R).",
+          "alternatives": [
+            "\"聖なる者\""
+          ],
+          "reason": "qedosh as in \"イスラエルの聖なる方\" (ISA-ISA-1); tsur \"岩\" as the Psalter refuge words (PSA-PSA-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o350010120011",
+            "o350010120021",
+            "o350010120081"
+          ],
+          "choice": "The second complaint (1:12-2:1) keeps the plain verse voice with \"あなた\" and light respect forms (\"おられる\", \"置かれた\", \"定められた\").",
+          "alternatives": [],
+          "reason": "Same register as the first complaint (1:2-4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2921,6 +3815,26 @@
           "L": "[አንተ] ክፉን ለማየት ዓይንህ እጅግ ንጹሕ [ነው]፤ \\q በደልንም መመልከት አይቻልህም፤ \\q ከዳተኞችን ለምን ትመለከታለህ? \\q ክፉ ሰው ከራሱ የበለጠ ጻድቅ የሆነውን ሲውጥ [ለምን] ዝም ትላለህ?",
           "B": "ዓይኖችህ ክፉን ለማየት እጅግ ንጹሓን ናቸው፤ \\q በደልንም ልትመለከት አትችልም። \\q ታዲያ ከዳተኞችን ለምን ትመለከታለህ? \\q ክፉዎችስ ከእነርሱ የሚሻሉ ጻድቃንን ሲውጡ ለምን ዝም ትላለህ?",
           "R": "ዓይኖችህ ንጹሓን ስለ ሆኑ ክፉ ነገርን ማየት አትችልም። \\q በደልን ልትታገሥ አትችልም። \\q ታዲያ እነዚህን ከዳተኞች ለምን ትታገሣለህ? \\q ክፉ ሰዎች ከእነርሱ የተሻሉትን ሲያጠፉ ለምን ዝም ትላለህ?"
+        },
+        "hi": {
+          "L": "[तू इतना] शुद्ध आँखोंवाला [है] कि बुराई को देख नहीं सकता, \\q और उत्पात को निहार नहीं सकता। \\q तू विश्वासघातियों को क्यों देखता रहता है, \\q [क्यों] चुप रहता है जब दुष्ट अपने से अधिक धर्मी को निगल जाता है?",
+          "B": "तेरी आँखें इतनी शुद्ध हैं कि वे बुराई को देख नहीं सकतीं, \\q और तू उत्पात को देख नहीं सकता। \\q तो फिर तू विश्वासघातियों को क्यों देखता रहता है, \\q और चुप क्यों रहता है जब दुष्ट उन्हें निगल जाते हैं जो उनसे अधिक धर्मी हैं?",
+          "R": "तेरी आँखें इतनी पवित्र हैं कि तू बुराई को देख भी नहीं सकता। \\q तू ग़लत कामों को सह नहीं सकता। \\q तो फिर तू इन विश्वासघाती लोगों को क्यों सहता है? \\q जब दुष्ट लोग उन्हें नष्ट करते हैं जो उनसे अच्छे हैं, तब तू चुप क्यों रहता है?"
+        },
+        "ru": {
+          "L": "[Ты слишком] чист очами, чтобы видеть зло, \\q и смотреть на злодейство {{deity_pronoun:ты|Ты}} не можешь. \\q Зачем {{deity_pronoun:ты|Ты}} смотришь на вероломных, \\q [зачем] молчишь, когда нечестивый поглощает праведнее себя?",
+          "B": "Твои глаза слишком чисты, чтобы смотреть на зло, \\q и {{deity_pronoun:ты|Ты}} не можешь смотреть на злодейство. \\q Зачем же {{deity_pronoun:ты|Ты}} смотришь на вероломных \\q и молчишь, когда нечестивые поглощают тех, кто праведнее их?",
+          "R": "Твои глаза так чисты, что {{deity_pronoun:ты|Ты}} не можешь смотреть на зло. \\q Ты не можешь терпеть злодейство. \\q Почему же {{deity_pronoun:ты|Ты}} терпишь этих вероломных людей? \\q Почему {{deity_pronoun:ты|Ты}} молчишь, когда злые люди губят тех, кто лучше их?"
+        },
+        "ja": {
+          "L": "[あなたは]目が清く、悪を見ることはない。 \\q 害悪を眺めることは、おできにならない。 \\q なぜ、裏切る者たちを眺めておられるのか？ \\q 悪しき者が自分より正しい者を飲み込むとき、[なぜ]黙っておられるのか？",
+          "B": "あなたの目はあまりに清く、悪を見ることはなさらない。 \\q 悪事を眺めることもおできにならない。 \\q それなのに、なぜ裏切る者たちを眺めておられるのか？ \\q 悪しき者が、自分より正しい者を飲み込むのに、なぜ黙っておられるのか？",
+          "R": "あなたの目はとても清いので、悪に目を向けることなどおできにならない。 \\q あなたは悪いことを我慢なさらない。 \\q それなのに、なぜ、この裏切り者たちを放っておかれるのか？ \\q 悪い人たちが、自分たちよりも正しい人々を滅ぼしているのに、なぜ黙っておられるのか？"
+        },
+        "uk": {
+          "L": "[Ти надто] чистий очима, щоб бачити зло, \\q і дивитися на кривду {{deity_pronoun:ти|Ти}} не можеш. \\q Нащо {{deity_pronoun:ти|Ти}} дивишся на тих, хто чинить зраду, \\q [нащо] {{deity_pronoun:ти|Ти}} мовчиш, коли безбожний поглинає праведнішого від себе?",
+          "B": "Твої очі надто чисті, щоб дивитися на зло, \\q і {{deity_pronoun:ти|Ти}} не можеш дивитися на кривду. \\q Чому ж {{deity_pronoun:ти|Ти}} дивишся на зрадників \\q і мовчиш, коли безбожні поглинають праведніших від себе?",
+          "R": "Твої очі такі чисті, що {{deity_pronoun:ти|Ти}} не можеш дивитися на зло. \\q Ти не можеш терпіти кривди. \\q То чому {{deity_pronoun:ти|Ти}} терпиш цих зрадників? \\q Чому {{deity_pronoun:ти|Ти}} мовчиш, коли злі люди нищать тих, хто кращий за них?"
         }
       },
       "decisions": [
@@ -2998,6 +3912,30 @@
           "reason": "Balanced and Readable use plurals for the Hebrew singulars, which stand for whole groups, so that no gender span is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010130091",
+            "o350010130121",
+            "o350010130131"
+          ],
+          "choice": "lo' tukhal \"おできにならない\" (respect negative); bogdim \"裏切る者たち\" (L, B), \"裏切り者たち\" (R); tacharish \"黙っておられる\".",
+          "alternatives": [
+            "\"できない\"",
+            "\"不誠実な者たち\""
+          ],
+          "reason": "Negatives for God take お〜にならない / 〜なさらない, never 〜られない (PSA, JOB conventions); bagad 裏切る as Jeremiah 3:20 L.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3068,6 +4006,26 @@
           "L": "ሰውንም እንደ ባሕር ዓሣዎች አደረግኸው፤ \\q በላያቸው ገዥ እንደሌላቸው እንደሚሳቡ ፍጥረታት።",
           "B": "ሰዎችን በባሕር እንዳሉ ዓሣዎች አደረግሃቸው፤ \\q ገዥ እንደሌላቸው እንደሚሳቡ ፍጥረታት።",
           "R": "ሰዎችን በባሕር ውስጥ እንዳሉ ዓሣዎች አደረግሃቸው፤ \\q የሚጠብቃቸው መሪ እንደሌላቸው ትናንሽ የባሕር ፍጥረታት።"
+        },
+        "hi": {
+          "L": "और तूने मनुष्यों को समुद्र की मछलियों के समान, \\q रेंगनेवाले जंतुओं के समान बनाया है, जिन पर कोई शासक नहीं।",
+          "B": "तूने लोगों को समुद्र की मछलियों की तरह बना दिया है, \\q रेंगनेवाले जंतुओं की तरह, जिन पर कोई शासक नहीं।",
+          "R": "तूने लोगों को समुद्र की मछलियों जैसा बना दिया है, \\q उन छोटे समुद्री जीवों जैसा जिनकी रक्षा के लिए कोई अगुवा नहीं।"
+        },
+        "ru": {
+          "L": "И {{deity_pronoun:ты|Ты}} делаешь людей, как рыбу морскую, \\q как пресмыкающихся, [у которых] нет над ними правителя.",
+          "B": "Ты делаешь людей похожими на рыб в море, \\q на ползающих тварей, над которыми нет правителя.",
+          "R": "Ты сделал людей похожими на рыб в море, \\q на маленьких морских тварей, у которых нет вождя, чтобы защитить их."
+        },
+        "ja": {
+          "L": "あなたは人を海の魚のように、 \\q 治める者のいない這うもののようにされた。",
+          "B": "あなたは人々を、海の魚のように、 \\q 支配者のいない這う生き物のようにされた。",
+          "R": "あなたは人々を、海の魚のように、 \\q 守ってくれる指導者のいない小さな海の生き物のようにしてしまわれた。"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:ти|Ти}} зробив людей, як риби морські, \\q як плазуни, [що не мають] над собою володаря.",
+          "B": "Ти зробив людей, як риби в морі, \\q як створіння, що плазують, і немає над ними володаря.",
+          "R": "Ти зробив людей, як риби в морі, \\q як дрібні морські створіння, що не мають провідника, який би їх захистив."
         }
       },
       "decisions": [
@@ -3202,6 +4160,26 @@
           "L": "ሁሉንም በመንጠቆ ያወጣል፤ \\q በመረቡ ይጎትታል፤ \\q በትልቁም መረቡ ይሰበስባል፤ \\q ስለዚህ ደስ ይለዋል፤ ሐሤትም ያደርጋል።",
           "B": "ጠላት ሁሉንም በመንጠቆ ያወጣቸዋል፤ \\q በመረቡ ይጎትታቸዋል፤ \\q በዓሣ ማጥመጃ መረቡም ይሰበስባቸዋል፤ \\q ስለዚህ ደስ ይለዋል፤ ይፈነጥዛልም።",
           "R": "ባቢሎናውያን ሰዎችን በመንጠቆ ይይዛሉ። \\q በመረብ ይጎትቷቸዋል፤ \\q በዓሣ ማጥመጃ መረብም ይሰበስቧቸዋል። \\q ከዚያም ይፈነጥዛሉ፤ ደስም ይላቸዋል።"
+        },
+        "hi": {
+          "L": "वह उन सब को काँटे से निकाल लेता है; \\q वह उन्हें अपने जाल में घसीट ले जाता है \\q और अपने महाजाल में बटोर लेता है; \\q इसलिए वह आनंदित और मगन होता है।",
+          "B": "शत्रु उन सब को काँटे से खींच निकालता है; \\q वह उन्हें अपने जाल में घसीट ले जाता है \\q और अपने मछली के जाल में बटोर लेता है; \\q इसलिए वह आनंद और उत्सव मनाता है।",
+          "R": "बाबुल के लोग मनुष्यों को काँटों से पकड़ते हैं। \\q वे उन्हें जालों में घसीट ले जाते हैं \\q और मछली के जालों में बटोर लेते हैं। \\q फिर वे जश्न मनाते और ख़ुश होते हैं।"
+        },
+        "ru": {
+          "L": "Всех их он вытаскивает удой, \\q утаскивает их своей сетью \\q и собирает их своим неводом; \\q поэтому он радуется и веселится.",
+          "B": "Враг вытаскивает всех их удочкой, \\q утаскивает их своей сетью \\q и собирает их своим неводом; \\q и потому он радуется и ликует.",
+          "R": "Халдеи ловят людей на крючок. \\q Они утаскивают их сетями \\q и собирают их рыболовными неводами. \\q Потом они празднуют и радуются."
+        },
+        "ja": {
+          "L": "彼はそれをことごとく釣り針で釣り上げ、 \\q 自分の網でそれを引きずり、 \\q 自分の引き網でそれを集める。 \\q それゆえ、彼は喜び楽しむ。",
+          "B": "敵は人々をみな釣り針で釣り上げ、 \\q 網で引きずって行き、 \\q 漁の網に集める。 \\q それで、彼は喜び祝う。",
+          "R": "バビロン人は、釣り針で人々を釣り上げる。 \\q 網で人々を引きずって行き、 \\q 漁の網に集める。 \\q そして、喜んでお祝いをする。"
+        },
+        "uk": {
+          "L": "Усіх їх він витягає гачком; \\q тягне їх своєю сіттю \\q і збирає їх у свій невід; \\q тому він радіє і веселиться.",
+          "B": "Ворог витягає їх усіх гачком; \\q тягне їх своєю сіттю \\q і збирає їх у свій невід; \\q тож він радіє і святкує.",
+          "R": "Вавилоняни ловлять людей гачками. \\q Вони тягнуть їх сітями \\q і збирають у неводи. \\q Тоді вони святкують і радіють."
         }
       },
       "decisions": [
@@ -3418,6 +4396,30 @@
           "reason": "Amharic has one common word for a net; the second Hebrew word is told apart by size at Literal and by its use at Balanced and Readable, as the English \"dragnet\" and \"fishing net\". \"አሽክላ\" is a trap for animals, not a net for fish.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010150022",
+            "o350010150052",
+            "o350010150072",
+            "o350010150073"
+          ],
+          "choice": "chakkah \"釣り針\"; cherem \"網\"; mikhmeret \"引き網\" (L), \"漁の網\" (B, R); the conqueror \"彼\" (L), \"敵\" (B), \"バビロン人\" (R) as the English supplies.",
+          "alternatives": [
+            "\"投網\""
+          ],
+          "reason": "Two net words are kept apart at L and B, in 1:15-17 alike.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3496,6 +4498,26 @@
           "L": "ስለዚህ ለመረቡ ይሠዋል፤ \\q ለትልቁም መረቡ መሥዋዕት ያጤሳል፤ \\q በእነርሱ ድርሻው የሰባ [ነው]ና፤ \\q ምግቡም የወፈረ።",
           "B": "ስለዚህ ለመረቡ መሥዋዕት ያቀርባል፤ \\q ለዓሣ ማጥመጃ መረቡም ዕጣን ያጥናል፤ \\q በእነርሱ በብዙ ድሎት ይኖራልና፤ \\q የሰባውንም ምግብ ይበላል።",
           "R": "ስለዚህ ለመረቦቻቸው መሥዋዕት ያቀርባሉ፤ \\q ዕጣንም ያጥኑላቸዋል፤ \\q መረቦቻቸው የተንደላቀቀ ኑሮ፣ \\q ምርጥ ምግብም ይሰጧቸዋልና።"
+        },
+        "hi": {
+          "L": "इसलिए वह अपने जाल के लिए बलि चढ़ाता है \\q और अपने महाजाल के लिए धूप जलाता है, \\q क्योंकि उन्हीं के द्वारा उसका भाग चिकना \\q और उसका भोजन पुष्ट [है]।",
+          "B": "इसलिए वह अपने जाल को बलि चढ़ाता है \\q और अपने मछली के जाल के आगे धूप जलाता है, \\q क्योंकि उन्हीं के द्वारा वह भरपूरी में रहता है \\q और सबसे बढ़िया भोजन खाता है।",
+          "R": "इसलिए वे अपने जालों को बलि चढ़ाते हैं \\q और उनके आगे धूप जलाते हैं, \\q क्योंकि उनके जाल उन्हें ऐशो-आराम का जीवन \\q और खाने को सबसे बढ़िया भोजन देते हैं।"
+        },
+        "ru": {
+          "L": "Поэтому он приносит жертвы своей сети \\q и кадит своему неводу, \\q потому что ими тучна доля его \\q и жирна пища его.",
+          "B": "Поэтому он приносит жертвы своей сети \\q и воскуряет благовония своему неводу, \\q ведь благодаря им он живёт в изобилии \\q и ест самую жирную пищу.",
+          "R": "Поэтому они приносят жертвы своим сетям \\q и воскуряют им благовония, \\q потому что сети дают им роскошную жизнь \\q и самую лучшую еду."
+        },
+        "ja": {
+          "L": "それゆえ、彼は自分の網にいけにえをささげ、 \\q 自分の引き網に香をたく。 \\q それによって彼の分け前は豊かになり、 \\q その食べ物は肥えたものとなるからだ。",
+          "B": "それで彼は、自分の網にいけにえをささげ、 \\q 漁の網に香をたく。 \\q それによって、彼は豊かに暮らし、 \\q 最上の食べ物を食べるからだ。",
+          "R": "だから彼らは、自分たちの網にいけにえをささげ、 \\q 網に香をたく。 \\q 網のおかげで、ぜいたくな暮らしができ、 \\q 最高の食べ物を食べられるからだ。"
+        },
+        "uk": {
+          "L": "Тому він приносить жертви своїй сіті \\q і кадить своєму неводу, \\q бо через них ситна його частка \\q і його їжа жирна.",
+          "B": "Тож він приносить жертви своїй сіті \\q і кадить своєму неводу, \\q бо через них він живе в достатку \\q і їсть найкращу їжу.",
+          "R": "Тож вони приносять жертви своїм сітям \\q і кадять їм, \\q бо сіті дають їм розкішне життя \\q і найкращу їжу."
         }
       },
       "decisions": [
@@ -3557,6 +4579,27 @@
           "choice": "he lives in plenty (B); a life of luxury (R)",
           "alternatives": [],
           "reason": "\"His portion is rich and his food fat\" means that he lives well; Balanced and Readable say so. Readable keeps the plural \"they\" of verse 15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350010160052"
+          ],
+          "choice": "qitter \"香をたく\" at every level, as Jeremiah 1:16 L, B.",
+          "alternatives": [
+            "\"ささげ物を焼く\" (L)"
+          ],
+          "reason": "The Jeremiah key word for qitter; the English L 'burns offerings' and B 'burns incense' are one act of making the offering rise in smoke (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -3629,6 +4672,26 @@
           "L": "ስለዚህ መረቡን ባዶ ያደርጋልን? \\q ሳይራራስ ሕዝቦችን ዘወትር ይገድላልን?",
           "B": "መረቡን ባዶ ማድረጉን ይቀጥላልን? \\q ሕዝቦችን ያለ ርኅራኄ እየገደለ ከቶ አያቆምምን?",
           "R": "ተጨማሪ ለመያዝ መረቦቻቸውን ባዶ ማድረጋቸውን ይቀጥላሉ? \\q ያለ ርኅራኄ ሕዝቦችን መግደላቸውን ከቶ አያቆሙም?"
+        },
+        "hi": {
+          "L": "क्या वह इसी कारण अपना जाल ख़ाली करता रहेगा, \\q और जातियों को बिना तरस खाए लगातार घात करता रहेगा?",
+          "B": "क्या वह इसी तरह अपना जाल ख़ाली करता रहेगा, \\q और बिना दया के, बिना रुके, राष्ट्रों को मारता रहेगा?",
+          "R": "क्या वे और पकड़ने के लिए अपने जाल ख़ाली करते ही रहेंगे? \\q क्या वे बिना दया के राष्ट्रों को मारना कभी नहीं छोड़ेंगे?"
+        },
+        "ru": {
+          "L": "Неужели он поэтому будет опустошать свою сеть \\q и постоянно убивать народы, не щадя?",
+          "B": "Неужели он будет всё опустошать свою сеть, \\q без пощады убивая народы, не останавливаясь?",
+          "R": "Неужели они будут всё опустошать свои сети, чтобы ловить ещё? \\q Неужели они никогда не перестанут безжалостно убивать народы?"
+        },
+        "ja": {
+          "L": "それゆえ、彼は自分の網を空にし、 \\q 絶えず国々を容赦なく殺してよいのか？",
+          "B": "彼はいつまでも網を空けては、 \\q 容赦なく国々を殺し続け、決してやめないのか？",
+          "R": "彼らは、もっと捕らえるために、網を空にし続けるのか？ \\q 情け容赦なく国々を殺すことを、決してやめないのか？"
+        },
+        "uk": {
+          "L": "Чи тому він випорожнюватиме свою сіть \\q і безперестанку вбиватиме народи, не жаліючи?",
+          "B": "Чи він і далі випорожнюватиме свою сіть, \\q без милосердя вбиваючи народи й ніколи не спиняючись?",
+          "R": "Чи вони й далі випорожнюватимуть свої сіті, щоб ловити ще більше? \\q Чи вони ніколи не перестануть безжально вбивати народи?"
         }
       },
       "decisions": [
