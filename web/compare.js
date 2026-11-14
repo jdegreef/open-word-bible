@@ -4,8 +4,9 @@
 //
 // The verse comes from the address (?v=JHN.3.16, or ?ref=John 3:16 from the
 // form). Our text and its decisions are read from the verse's chapter
-// data, the script its chapter page loads (found in the page, so with the
-// page's version), which the reader caches for offline use anyway; the other
+// data, the scripts its chapter page loads (found in the page, so with the
+// page's versions: the chapter's records and the page language's text),
+// which the reader caches for offline use anyway; the other
 // Bibles from /editions/<BOOK>/<chapter>.json. Reader settings (inclusive
 // language, Christ or Messiah, ...) are the reader's own, from owb.settings.
 (function () {
@@ -60,21 +61,34 @@
     }
     return cache[url];
   }
-  // The reader's data for a chapter (window.OWB_CHAPTER), from the script
-  // its page loads.
+  // The reader's data for a chapter, from the scripts its page loads: the
+  // records (window.OWB_CHAPTER), then each language's renderings and
+  // rendering decisions (window.OWB_TEXTS[lang]), joined as reader.js joins them.
   function chapterData(code, chapter) {
     var url = chapterPage(code, chapter);
     function text(r) {
       if (!r.ok) throw new Error(r.status);
       return r.text();
     }
+    // A script's JSON, from where its assignment ends.
+    function json(script, from) { return JSON.parse(script.slice(from).replace(/;\s*$/, "")); }
     if (!cache[url]) {
       cache[url] = fetch(url).then(text).then(function (page) {
-        var m = /<script src="(\/chapter-data\/[^"]+)"><\/script>/.exec(page);
-        if (!m) throw new Error("no data");
-        return fetch(m[1]).then(text);
-      }).then(function (script) {
-        return JSON.parse(script.slice(script.indexOf("=") + 1).replace(/;\s*$/, "").replace(/<\\\//g, "</"));
+        var re = /<script src="(\/chapter-data\/[^"]+)"><\/script>/g, m, srcs = [];
+        while ((m = re.exec(page))) srcs.push(m[1]);
+        if (!srcs.length) throw new Error("no data");
+        return Promise.all(srcs.map(function (src) { return fetch(src).then(text); }));
+      }).then(function (scripts) {
+        var data = json(scripts[0], scripts[0].indexOf("=") + 1);
+        data.records.forEach(function (r) { r.renderings = {}; });
+        scripts.slice(1).forEach(function (script) {
+          var m = /window\.OWB_TEXTS\["([a-z]+)"\]=/.exec(script), lang = m[1], t = json(script, m.index + m[0].length);
+          data.records.forEach(function (r) {
+            if (t.renderings[r.id]) r.renderings[lang] = t.renderings[r.id];
+            if (t.decisions[r.id]) r.decisions = r.decisions.concat(t.decisions[r.id]);
+          });
+        });
+        return data;
       });
       cache[url].catch(function () { delete cache[url]; });
     }
