@@ -642,3 +642,9 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Galatians | James the brother of the Lord | Yakobus, saudara Tuhan | 1:19 |
+| Galatians | Syria; Cilicia | Siria; Kilikia | 1:21 |
+| Galatians | pillars (of the church) | *sokoguru* (L, B); *tiang-tiang utama* (R) | 2:9 |
+| Galatians | the guardian (*paidagōgos*) | *pengasuh* | 3:24 |
+| Galatians | the elements of the world | *roh-roh dasar dunia* (L); *kuasa-kuasa dasar dunia* (B); *kuasa-kuasa dan aturan-aturan* (R) | 4:3 |
+| Galatians | flesh (Paul's moral sense) | *daging* (L); *tabiat lama* (B); *diri yang berdosa* (R) | 5:13 |
