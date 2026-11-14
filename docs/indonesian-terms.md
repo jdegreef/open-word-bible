@@ -655,3 +655,10 @@ records it. Empty until the first book is drafted.
 | Matthew | Rachel; Ramah | Rahel; Rama | 2:18 |
 | Matthew | Zebulun; Naphtali | Zebulon; Naftali | 4:13 |
 | Matthew | Decapolis | Dekapolis (L, B); *daerah Sepuluh Kota* (R) | 4:25 |
+| Matthew | Cananaean | *orang Kanani* (L); *orang Zelot* (B) | 10:4 |
+| Matthew | assarion | *asarion*; {{units:sedikit uang receh\|satu asarion}} (B, R) | 10:29 |
+| Matthew | quadrans (5:26) | *kodran*; {{units:sen yang terakhir\|kodran yang terakhir}} (B, R) | 5:26 |
+| Matthew | Raca | *Raka* (L) | 5:22 |
+| Matthew | Mammon | *Mamon* (L); *uang* (B, R) | 6:24 |
+| Matthew | Chorazin; Tyre; Sidon | Khorazim; Tirus; Sidon | 11:21 |
+| Matthew | centurion | *perwira* | 8:5 |
