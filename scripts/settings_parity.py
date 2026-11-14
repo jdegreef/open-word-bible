@@ -66,6 +66,7 @@ DOCUMENTED = {
     ("vi", "gender"): "docs/vietnamese-style.md: Vietnamese nouns for people are already inclusive",
     ("ko", "gender"): "docs/korean-style.md: Korean nouns for people are already inclusive",
     ("am", "gender"): "docs/amharic-style.md: Amharic nouns for people are often already inclusive",
+    ("ja", "gender"): "docs/japanese-style.md: Japanese words for people are already inclusive",
     ("hi", "gender"): "docs/hindi-style.md section 7: Hindi nouns for people are often already inclusive",
 }
 
