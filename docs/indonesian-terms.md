@@ -642,3 +642,9 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 2 Corinthians | Silvanus | Silvanus | 1:19 |
+| 2 Corinthians | boast (*kauchaomai*) | *bermegah* (L; B from 10:1); *bangga* (B in 1–9, R) | 1:12 |
+| 2 Corinthians | Beliar | Belial | 6:15 |
+| 2 Corinthians | the super-apostles | *rasul-rasul yang luar biasa itu* (L); *rasul-rasul yang hebat itu* (B); *rasul-rasul yang disebut hebat itu* (R) | 11:5 |
+| 2 Corinthians | Aretas; the ethnarch | Aretas; *wali negeri* (L), *penguasa* (B), *gubernur* (R) | 11:32 |
+| 2 Corinthians | paradise | Firdaus | 12:4 |
