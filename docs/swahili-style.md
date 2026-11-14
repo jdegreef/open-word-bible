@@ -157,7 +157,31 @@ Settings change wording, never meaning, exactly as in English.
   alternative would be *wanaume*, which means males and would change the
   meaning. So the Swahili text normally has no gender spans, and the setting
   has nothing to change. Use one only where Swahili really has two ways of
-  saying the same thing.
+  saying the same thing. **(checked, settings parity audit:
+  `docs/review-notes/settings-parity.md`)** Of the records where the English
+  has a gender span, the Swahili has one in fewer than 1 in 300, by design.
+  Where the English has a span, the Swahili says the inclusive word plainly,
+  with a setting_alternative or word_choice decision saying why:
+  - "Israelites / sons of Israel": *Waisraeli* or *wana wa Israeli*; *wana*
+    is "children", so neither is narrower than the other.
+  - "children / sons": *watoto*, *wana* (both inclusive).
+  - "brothers and sisters / brothers": *ndugu* (inclusive).
+  - "people / men", "person / man": *watu*, *mtu*, *wanadamu*.
+  - "their / his", "they / he": the verb prefix and possessive have no gender.
+  - "ancestors / fathers": *mababu* (Balanced, Readable), the ordinary word
+    for the forebears of a people (Acts 3:13, 7:11, 13:17; Hebrews 1:1;
+    Numbers 20:15); Literal keeps *baba*. Swahili has *wahenga* beside it,
+    and a few passages give both as a span,
+    `{{gender:wahenga|mababu}}` (John 6:49, 6:58; Acts 24:14, 26:6), where
+    the rest say *mababu* plainly. Both are defensible; a reviewer should
+    settle one practice.
+  - "parents / fathers": *wazazi* (Balanced, Readable), simply the word for
+    parents (2 Kings 14:6; Jeremiah 31:29; Ezekiel 18:2); Literal keeps
+    *baba*. Joshua 4:21 keeps `{{gender:wazazi wao|baba zao}}` at every
+    level, because the question is put to the fathers who crossed the river.
+  The other spans (1 Corinthians 16:13 *kuweni jasiri / tendeni kiume*;
+  Psalm 22:5 *wazee wetu / baba zetu*) are single cases with their own
+  decision.
 - `units`: metric by default, the original unit as the alternative, as in
   French: `{{units:lita 80 hadi 120|vipimo viwili au vitatu}}`. Literal keeps
   the original unit. This differs from the English (US gallons) and needs a

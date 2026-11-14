@@ -55,6 +55,9 @@ fi
 step "Validate content"
 python3 -m owb.validate content/*/*.json
 
+step "Words of Jesus marked alike in every language"
+python3 scripts/check_words_of_jesus.py
+
 step "Word extracts are up to date"
 python3 scripts/extract_tokens.py --check
 python3 scripts/extract_comparison.py --check
