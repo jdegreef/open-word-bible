@@ -3272,6 +3272,7 @@ def about_page(lang="en"):
 <h2>{t(lang, "about.licences")}</h2>
 <p>{t(lang, "about.licences_text")}</p>
 <p>{t(lang, "about.source")} <a href="{GITHUB_URL}">github.com/jdegreef/open-word-bible</a>.</p>
+<p>{t(lang, "about.variants", href=url(lang, "/variants/"))}</p>
 {credits}
 </div>
 {dataset_ld() if lang == "en" else ""}
@@ -3734,6 +3735,58 @@ def terms_page(lang="en"):
 """
     return page(lang, t(lang, "terms.title"), body, path="/terms/", current="/about/",
                 description=t(lang, "meta.terms_description"))
+
+
+def footnoted_variants():
+    """Every text_variant decision with a footnote, as [(book, [(record,
+    decision), ...]), ...] in canonical order, each sentence once
+    (docs/text-variants.md says which variants get a footnote)."""
+    by_book, seen = {}, set()
+    for p in passages():
+        for r in p.records:
+            if r["id"] in seen:
+                continue
+            seen.add(r["id"])
+            for d in r.get("decisions") or []:
+                if d.get("category") == "text_variant" and d.get("footnote"):
+                    by_book.setdefault(p.book, []).append((r, d))
+    return list(by_book.items())
+
+
+def variants_page(lang="en"):
+    """The footnoted text variants, book by book: each verse's reference
+    (linked to the reader), the reading followed and the others."""
+    ui = catalog(lang)
+    groups, jump = [], []
+    for book, found in footnoted_variants():
+        name = html.escape(book_name(book, lang))
+        items = []
+        for r, d in found:
+            ref = refs.parse(r["refs"][0])
+            label = html.escape(verse_name(book, ref.chapter, ref.verse, lang))
+            href = verse_link(book, ref.chapter, ref.verse, lang)
+            where = f'<a href="{href}">{label}</a>' if href else label
+            items.append(f'<li class="variant"><span class="variant-ref">{where}</span> '
+                         f'<span class="variant-note">{note_html(d, lang)}</span></li>')
+        count = t(lang, "variants.count_one") if len(found) == 1 else t(lang, "variants.count", n=len(found))
+        code = book.lower()
+        jump.append(f'<li><a href="#{code}">{name}</a></li>')
+        groups.append(f'<section class="variant-book" id="{code}" aria-labelledby="{code}-h">'
+                      f'<h2 id="{code}-h">{name} <span class="fine">{html.escape(count)}</span></h2>'
+                      f'<ul class="variant-list">{"".join(items)}</ul></section>')
+    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if lang != "en" else ""
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "variants.title")}</p>
+<h1>{t(lang, "variants.heading")}</h1>
+<p class="dek">{t(lang, "variants.dek")}</p>
+</header>
+<nav class="a-jump" aria-label="{t(lang, "variants.title")}"><ul>{"".join(jump)}</ul></nav>
+{note}
+{"".join(groups)}
+"""
+    return page(lang, t(lang, "variants.title"), body, path="/variants/", current="/about/",
+                description=t(lang, "meta.variants_description"))
 
 
 # A term with more uses than this has each book's list folded away.
@@ -5153,6 +5206,7 @@ def build(out):
         plans = available_plans(lang)
         add("/plans/", plans_page(lang, plans), index=bool(plans))
         add("/terms/", terms_page(lang))
+        add("/variants/", variants_page(lang))
         for term in validate.KEY_TERMS.values():
             add(term_path(term), term_page(term, lang))
             if term_split(term):
