@@ -642,3 +642,10 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 1 Corinthians | Sosthenes | Sostenes | 1:1 |
+| 1 Corinthians | Chloe | Kloe | 1:11 |
+| 1 Corinthians | Crispus; Stephanas | Krispus; Stefanas | 1:14; 1:16 |
+| 1 Corinthians | the cup of blessing | *cawan pengucapan syukur* | 10:16 |
+| 1 Corinthians | head covering (11:4-15) | *tudung*; *bertudung*, *menudungi* | 11:5 |
+| 1 Corinthians | Fortunatus; Achaicus | Fortunatus; Akhaikus | 16:17 |
+| 1 Corinthians | Marana tha | *Marana tha* (L); *Tuhan kami, datanglah* (B, R) | 16:22 |
