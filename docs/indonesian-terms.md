@@ -642,3 +642,7 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Ephesians | rulers, authorities, powers, dominions | *pemerintah*, *penguasa*, *kuasa*, *kekuasaan* | 1:21 |
+| Ephesians | the old self; the new self | *manusia lama*; *manusia baru* (L, B); *diri yang lama*, *diri yang baru* (R) | 4:22 |
+| Ephesians | evangelists | *pemberita Injil* | 4:11 |
+| Ephesians | the full armor of God; helmet; breastplate | *seluruh perlengkapan senjata Allah*; *ketopong*; *baju zirah* | 6:11 |
