@@ -662,3 +662,14 @@ records it. Empty until the first book is drafted.
 | Matthew | Mammon | *Mamon* (L); *uang* (B, R) | 6:24 |
 | Matthew | Chorazin; Tyre; Sidon | Khorazim; Tirus; Sidon | 11:21 |
 | Matthew | centurion | *perwira* | 8:5 |
+| Matthew | Herodians | *orang-orang Herodian* (L, B); *pendukung Raja Herodes* (R) | 22:16 |
+| Matthew | phylacteries | *kotak-kotak ayat* (L, B) | 23:5 |
+| Matthew | mint, dill and cumin | *selasih, adas manis dan jintan* | 23:23 |
+| Matthew | Abel; Zechariah son of Barachiah | Habel; Zakharia anak Berekhya | 23:35 |
+| Matthew | two-drachma tax; stater | *pajak dua drakhma*; *stater* (L) | 17:24; 17:27 |
+| Matthew | Simon son of Jonah (Bariona) | *Simon bin Yunus* (L); *Simon anak Yunus* (B, R) | 16:17 |
+| Matthew | tetrarch | *raja wilayah* (L, B); *penguasa daerah* (R) | 14:1 |
+| Matthew | fourth watch of the night | *jaga malam yang keempat* (L); *menjelang subuh* (B) | 14:25 |
+| Matthew | Canaanite (woman) | *perempuan Kanaan* | 15:22 |
+| Matthew | Magadan | Magadan | 15:39 |
+| Matthew | three measures (seah) of flour | *tiga sukat* (L); *sekitar dua puluh kilogram* (B, R, units setting) | 13:33 |
