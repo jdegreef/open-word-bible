@@ -621,3 +621,7 @@ records it. Empty until the first book is drafted.
 | Jonah | captain (*rav hachovel*) | *kepala para pelaut* (L); *nakhoda* (B, R) | 1:6 |
 | Jonah | relent (*nicham*, of God) | *menyesal* (L); *mengubah keputusan-Nya* (B, R) | 3:9 |
 | Jonah | the plant (*qiqayon*) | *tanaman* (L); *tanaman yang rimbun daunnya* (B, R) | 4:6 |
+| Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
+| Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
+| Philippians | Clement | Klemens | 4:3 |
+| Philippians | Caesar's household | *istana Kaisar* (L); *istana kaisar* (B, R) | 4:22 |
