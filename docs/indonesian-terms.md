@@ -642,3 +642,10 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Matthew | Jechoniah | Yekhonya | 1:11 |
+| Matthew | Joram (king) | Yoram | 1:8 |
+| Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
+| Matthew | Shealtiel; Abiud; Eliakim; Azor | Sealtiel; Abiud; Elyakim; Azor | 1:12–13 |
+| Matthew | Achim; Eliud; Matthan | Akhim; Eliud; Matan | 1:14–15 |
+| Matthew | fathered (genealogy) | *memperanakkan* (L); *adalah ayah* (B, R) | 1:2 |
+| Matthew | Immanuel | Imanuel | 1:23 |
