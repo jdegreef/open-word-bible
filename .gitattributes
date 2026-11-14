@@ -1,0 +1,6 @@
+# Translation JSON merges structurally, so pull requests that add different
+# languages to one file don't conflict (scripts/merge_json.py). The driver is
+# registered by .claude/hooks/session-start.sh; where it isn't, git ignores
+# this and merges lines as usual.
+content/**/*.json merge=owbjson
+data/**/*.json merge=owbjson

@@ -59,6 +59,26 @@
           "L": "የመዝሙሮች መዝሙር፣ የሰሎሞን የሆነ።",
           "B": "የሰሎሞን የሆነው የመዝሙሮች መዝሙር፣ ከመዝሙሮች ሁሉ የሚበልጠው።",
           "R": "ከመዝሙሮች ሁሉ እጅግ ያማረው መዝሙር። የሰሎሞን ነው።"
+        },
+        "hi": {
+          "L": "गीतों का गीत, जो सुलैमान का [है]।",
+          "B": "गीतों का गीत, सब गीतों में श्रेष्ठ, जो सुलैमान का है।",
+          "R": "सब गीतों में सबसे सुंदर गीत। यह सुलैमान का है।"
+        },
+        "ru": {
+          "L": "Песнь песней, которая [есть] Соломонова.",
+          "B": "Песнь песней, лучшая из песен, — Соломонова.",
+          "R": "Самая прекрасная из песен. Это песня Соломона."
+        },
+        "ja": {
+          "L": "歌の中の歌、ソロモンのもの。",
+          "B": "歌の中の歌、最もすぐれた歌。ソロモンの歌。",
+          "R": "いちばん美しい歌。ソロモンの歌。"
+        },
+        "uk": {
+          "L": "Пісня пісень, яка Соломонова.",
+          "B": "Пісня пісень, найкраща з пісень, яка належить Соломонові.",
+          "R": "Найпрекрасніша з усіх пісень. Вона належить Соломонові."
         }
       },
       "decisions": [
@@ -456,6 +476,170 @@
           "reason": "The traditional Ge'ez name of the book stays its title, but the first line is translated so that the Amharic reader hears what it says: the song above all songs. \"ዘፈን\" would sound like a popular tune.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010010011",
+            "o220010010022"
+          ],
+          "choice": "गीतों का गीत (L, B); सब गीतों में सबसे सुंदर गीत (R)",
+          "alternatives": [
+            "श्रेष्ठगीत"
+          ],
+          "reason": "Literal and Balanced keep the Hebrew superlative as the book's name, गीतों का गीत, and Balanced adds what it means (सब गीतों में श्रेष्ठ); Readable says only what it means, as the English levels do (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010010011",
+            "o220010010021",
+            "o220010010022"
+          ],
+          "choice": "\"Песнь песней\" (Literal, Balanced); \"Самая прекрасная из песен\" (Readable)",
+          "alternatives": [
+            "\"Песня песен\""
+          ],
+          "reason": "\"Песнь песней\" is the book's name in Russian, kept at Literal and Balanced with \"песнь\", the poetry note's word for shir at those levels; Balanced adds what the superlative means, as the English does. Readable says only what it means, with \"песня\", the Readable word for shir.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010010031",
+            "o220010010041",
+            "o220010010042"
+          ],
+          "choice": "\"Соломонова\" (Literal, Balanced); \"песня Соломона\" (Readable)",
+          "alternatives": [
+            "\"написанная Соломоном\"",
+            "\"о Соломоне\""
+          ],
+          "reason": "The possessive keeps the Hebrew open: written by, given to, or about Solomon (m2), as the English \"Solomon's\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o220010010011",
+            "o220010010021",
+            "o220010010022"
+          ],
+          "choice": "Plain style (da/de aru) at every level of the Song, Readable too, by the OT poetry rule; the title shir hashshirim as \"歌の中の歌\" (L, B), \"いちばん美しい歌\" (R)",
+          "alternatives": [
+            "\"雅歌\" (the traditional book name, kept for the book title only)",
+            "です・ます at Readable"
+          ],
+          "reason": "The Song is poetry throughout, so no level narrates in です・ます. \"歌の中の歌\" keeps the Hebrew superlative idiom visible; B adds \"最もすぐれた歌\" as the English B does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010010031",
+            "o220010010041",
+            "o220010010042"
+          ],
+          "choice": "\"ソロモンのもの\" (L), \"ソロモンの歌\" (B, R)",
+          "alternatives": [
+            "\"ソロモンによる歌\"",
+            "\"ソロモンに献げる歌\""
+          ],
+          "reason": "Japanese の leaves open whether the song is by, for or about Solomon, as the meaning decision asks; ソロモン as in the NT and 1 Kings.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010010011",
+            "o220010010021",
+            "o220010010022"
+          ],
+          "choice": "\"Пісня пісень\" as the book's name (L, B); \"найкраща з пісень\" (B) and \"найпрекрасніша з усіх пісень\" (R) spell out the superlative",
+          "alternatives": [
+            "\"Пісня над піснями\"",
+            "\"Найкраща пісня\" at every level"
+          ],
+          "reason": "\"Пісня пісень\" is the name the book has in Ukrainian and keeps the Hebrew construction; Balanced and Readable say what the construction means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010010031",
+            "o220010010041",
+            "o220010010042"
+          ],
+          "choice": "\"Соломонова\" (L), \"належить Соломонові\" (B, R)",
+          "alternatives": [
+            "\"Соломона\"",
+            "\"написана Соломоном\""
+          ],
+          "reason": "The Hebrew \"to Solomon\" may name him as author, dedicatee or subject. A possessive, like the English \"Solomon's\", keeps that open; \"написана\" would decide for authorship.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -525,6 +709,26 @@
           "L": "በአፉ መሳሞች ይሳመኝ፤ \\q የፍቅር ጨዋታህ ከወይን ጠጅ ይሻላልና።",
           "B": "ምነው በአፉ መሳም ቢስመኝ! \\q ፍቅርህ ከወይን ጠጅ ይሻላል።",
           "R": "ምነው በሳመኝ! \\q ፍቅርህ ከወይን ጠጅ ይልቅ ይጣፍጣል።"
+        },
+        "hi": {
+          "L": "वह अपने मुँह के चुंबनों से मुझे चूमे, \\q क्योंकि तुम्हारी प्रेम-क्रीड़ा दाखमधु से उत्तम [है]।",
+          "B": "काश, वह अपने मुँह के चुंबनों से मुझे चूमे! \\q तुम्हारा प्रेम दाखमधु से उत्तम है।",
+          "R": "ओह, मैं कितना चाहती हूँ कि वह मुझे चूमे! \\q तुम्हारा प्यार दाखमधु से भी मीठा है।"
+        },
+        "ru": {
+          "L": "Пусть он целует меня поцелуями своих уст, \\q ведь лучше вина твои ласки.",
+          "B": "Пусть он поцелует меня поцелуями своих губ! \\q Твоя любовь лучше вина.",
+          "R": "О, как я хочу, чтобы он поцеловал меня! \\q Твоя любовь прекраснее вина."
+        },
+        "ja": {
+          "L": "あの人がその口の口づけで、わたしに口づけしてくれるように。 \\q あなたの愛撫はぶどう酒よりも良いのだから。",
+          "B": "あの人がその口で、わたしに口づけしてくれたら！ \\q あなたの愛はぶどう酒よりも快い。",
+          "R": "ああ、あの人に口づけしてほしい！ \\q あなたの愛は、ぶどう酒よりも心地よい。"
+        },
+        "uk": {
+          "L": "Нехай він цілує мене поцілунками своїх уст, \\q бо кращі твої пестощі за вино.",
+          "B": "Нехай поцілує мене поцілунками своїх уст! \\q Твоє кохання краще за вино.",
+          "R": "Ох, як я хочу, щоб він мене поцілував! \\q Твоє кохання миліше за вино."
         }
       },
       "decisions": [
@@ -836,6 +1040,173 @@
           "reason": "Literal shows, as the English \"lovemaking\" does, that the word is about the caresses of love, not only the feeling; the other levels say \"ፍቅርህ\", which in a love song carries the physical sense. The same wording returns in 1:4; 4:10; 7:13.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o220010020062"
+          ],
+          "choice": "the lovers say तुम to each other; the women of Jerusalem are addressed with तुम",
+          "alternatives": [],
+          "reason": "The Song is love poetry between equals: in Hindi lovers speak to each other with the intimate तुम, not the formal आप, and the plural तुम serves the women of Jerusalem (the chorus) and the woman when they speak to her. तू is kept for God in this translation, and God is not addressed in the Song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010020061"
+          ],
+          "choice": "प्रेम-क्रीड़ा (L); प्रेम (B), प्यार (R)",
+          "alternatives": [
+            "प्रेम"
+          ],
+          "reason": "The Hebrew plural means the caresses of love (m3). Literal says प्रेम-क्रीड़ा, the literary word for the play of love, as the English Literal says \"lovemaking\"; Balanced and Readable say प्रेम and प्यार, which in a love song carry the same sense. The same wording returns in 1:4, 4:10 and 7:13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010020011",
+            "o220010020012"
+          ],
+          "choice": "काश ... चूमे (B); मैं कितना चाहती हूँ (R)",
+          "alternatives": [],
+          "reason": "The verb form is a wish (\"let him kiss me\"); Balanced marks it with काश and Readable says it as her longing. The woman speaks, so Hindi verbs of the first person are feminine (चाहती हूँ) wherever she speaks in the Song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010020061"
+          ],
+          "choice": "\"ласки\" (Literal); \"любовь\" (Balanced, Readable)",
+          "alternatives": [
+            "\"любовь\" at every level"
+          ],
+          "reason": "The word means the acts and caresses of love (m3). Literal says \"ласки\" to show that it is about touch; Balanced and Readable say \"любовь\", which in a love song carries the physical sense, as the English \"love\" does. The same split is kept wherever the word returns (1:4; 4:10; 7:13).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o220010020011",
+            "o220010020012"
+          ],
+          "choice": "the lovers say \"ты\" to each other",
+          "alternatives": [
+            "\"вы\""
+          ],
+          "reason": "The lovers speak to each other with \"ты\" throughout the Song, as the poetry note settles; \"вы\" is kept for a Hebrew plural (the women of Jerusalem, the friends).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o220010020011",
+            "o220010020012"
+          ],
+          "choice": "The woman's voice: わたし; the man in the third person \"あの人\", in the second person \"あなた\"; endings plain and light (〜てくれたら, 〜てほしい), with no strongly feminine particles (わ, のよ)",
+          "alternatives": [
+            "\"彼\" for him",
+            "heavier feminine endings"
+          ],
+          "reason": "あの人 is how a Japanese speaker refers to a loved man without the stiffness of 彼; the speakers are shown by word choice, kept natural rather than stereotyped.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010020061",
+            "o220010020062"
+          ],
+          "choice": "dodim \"lovemaking\": \"愛撫\" (L), \"愛\" (B, R)",
+          "alternatives": [
+            "\"愛の交わり\" (L)"
+          ],
+          "reason": "L keeps the physical sense of the plural (acts and caresses of love) without coarseness; B and R say \"love\" as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010020061"
+          ],
+          "choice": "\"пестощі\" (L), \"кохання\" (B, R) for the plural of love (dodim), through the whole Song",
+          "alternatives": [
+            "\"любов\" at every level",
+            "\"ласки\""
+          ],
+          "reason": "The plural means the acts and caresses of love, which \"пестощі\" names at Literal. Balanced and Readable say \"кохання\", Ukrainian's word for love between lovers, keeping \"любов\" for the wider word (8:6-7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -907,6 +1278,26 @@
           "L": "ለመዓዛ ዘይቶችህ መልካሞች [ናቸው]፤ \\q ስምህ የፈሰሰ ዘይት [ነው]፤ \\q ስለዚህ ቆነጃጅት ይወዱሃል።",
           "B": "የሽቱዎችህ መዓዛ ደስ ያሰኛል፤ \\q ስምህ የፈሰሰ ሽቱ ነው፤ \\q ስለዚህ ቆነጃጅት ይወዱሃል።",
           "R": "ሽቱህ እጅግ ደስ የሚል መዓዛ አለው። \\q ስምህ እንደ ፈሰሰ ጣፋጭ ሽቱ ነው። \\q ስለዚህ ወጣት ሴቶች ይወዱሃል።"
+        },
+        "hi": {
+          "L": "सुगंध के लिए तुम्हारे तेल मनभावने [हैं]; \\q तुम्हारा नाम उँडेला हुआ तेल [है]; \\q इसलिए युवतियाँ तुमसे प्रेम करती हैं।",
+          "B": "तुम्हारे इत्रों की सुगंध मनभावनी है; \\q तुम्हारा नाम उँडेला हुआ इत्र है; \\q इसी कारण युवतियाँ तुमसे प्रेम करती हैं।",
+          "R": "तुम्हारे इत्र की ख़ुशबू बहुत अच्छी है। \\q तुम्हारा नाम उँडेले गए मीठे इत्र के समान है। \\q इसी कारण युवतियाँ तुमसे प्रेम करती हैं।"
+        },
+        "ru": {
+          "L": "Благоуханием хороши твои масла; \\q имя твоё — масло излитое; \\q поэтому девушки любят тебя.",
+          "B": "Аромат твоих благовоний прекрасен; \\q имя твоё — разлитое благовоние; \\q потому девушки и любят тебя.",
+          "R": "Твоё благовонное масло чудесно пахнет. \\q Твоё имя — как разлитое душистое масло. \\q Вот почему девушки любят тебя."
+        },
+        "ja": {
+          "L": "香りにおいて、あなたの香油は快い。 \\q あなたの名は注がれた香油。 \\q それゆえ、おとめたちはあなたを愛する。",
+          "B": "あなたの香油の香りは快く、 \\q あなたの名は注ぎ出された香油。 \\q だから、おとめたちはあなたを愛する。",
+          "R": "あなたの香油は、とてもよい香りがする。 \\q あなたの名は、注ぎ出された甘い香油のよう。 \\q だから、若い娘たちはあなたを愛するのだ。"
+        },
+        "uk": {
+          "L": "Запахом приємні твої олії; \\q твоє імʼя — вилита олія; \\q тому дівчата кохають тебе.",
+          "B": "Приємно пахнуть твої пахощі; \\q твоє імʼя — вилиті пахощі; \\q ось чому дівчата тебе кохають.",
+          "R": "Твої пахощі чудово пахнуть. \\q Твоє імʼя — наче солодкі пахощі, що розливаються. \\q Ось чому дівчата тебе кохають."
         }
       },
       "decisions": [
@@ -1053,6 +1444,93 @@
           "reason": "\"ቆነጃጅት\" names young women of age to marry (meaning decision); Readable uses the everyday phrase. The same wording in 6:8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010030021"
+          ],
+          "choice": "इत्र (B, R); तेल (L)",
+          "alternatives": [
+            "सुगंधित तेल"
+          ],
+          "reason": "The oils are scented oils for skin and hair (m1); Balanced and Readable call them इत्र, perfume, as the English does, and Literal keeps तेल.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010030021",
+            "o220010030041"
+          ],
+          "choice": "\"благовония\", \"благовонное масло\"",
+          "alternatives": [
+            "\"духи\""
+          ],
+          "reason": "The oils are scented olive oil rubbed on the skin and hair (m1); \"духи\" would suggest a modern perfume, so Balanced says \"благовония\" and Readable \"благовонное масло\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010030021",
+            "o220010030022",
+            "o220010030041"
+          ],
+          "choice": "shemen \"oil, perfume\" \"香油\" at every level; 'alamot \"おとめたち\" (L, B), \"若い娘たち\" (R)",
+          "alternatives": [
+            "\"香水\" (R)"
+          ],
+          "reason": "Scented olive oil is a 香油, the word the Gospels use for the anointing oil; 香水 would suggest a modern bottled perfume.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010030012",
+            "o220010030021",
+            "o220010030041"
+          ],
+          "choice": "\"пахощі\" for the scented oils (B, R); \"олії\" at Literal",
+          "alternatives": [
+            "\"парфуми\"",
+            "\"мастила\""
+          ],
+          "reason": "The oils were scented olive oil for skin and hair. \"Пахощі\" names a fragrance without the modern bottle of \"парфуми\"; Literal keeps the oil itself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1134,6 +1612,26 @@
           "L": "ከኋላህ ሳበኝ፤ እንሩጥ! \\q ንጉሡ ወደ እልፍኞቹ አስገባኝ፤ ሐሤት እናድርግ፤ በአንተም ደስ ይበለን፤ \\q የፍቅር ጨዋታህን ከወይን ጠጅ ይልቅ እናወድስ። \\q በትክክል ይወዱሃል።",
           "B": "ይዘኸኝ ሂድ፤ እንሩጥ! \\q ንጉሡ ወደ እልፍኞቹ አስገብቶኛል። በአንተ ሐሤት እናደርጋለን፤ ደስም ይለናል፤ \\q ፍቅርህንም ከወይን ጠጅ ይልቅ እናወድሳለን። \\q ቢወዱህ ተገቢ ነው!",
           "R": "ይዘኸኝ ሂድ! እንፍጠን! \\q ንጉሡ ወደ ክፍሎቹ አስገብቶኛል። በአንተ ደስ ይለናል፤ እንፈነድቃለንም። \\q ፍቅርህን ከወይን ጠጅ ይልቅ እናደንቃለን። \\q ቢወዱህ አይገርምም!"
+        },
+        "hi": {
+          "L": "मुझे अपने पीछे खींच ले चलो; आओ, हम दौड़ें! \\q राजा मुझे अपने भीतरी कमरों में ले आया है; आओ, हम तुममें मगन हों और आनंद करें; \\q आओ, हम दाखमधु से बढ़कर तुम्हारी प्रेम-क्रीड़ा का गुणगान करें। \\q वे ठीक ही तुमसे प्रेम करती हैं।",
+          "B": "मुझे अपने साथ ले चलो; आओ, हम दौड़ें! \\q राजा मुझे अपने कमरों में ले आया है। हम तुममें मगन होंगी और आनंद मनाएँगी; \\q हम दाखमधु से बढ़कर तुम्हारे प्रेम का उत्सव मनाएँगी। \\q वे तुमसे प्रेम करती हैं, यह कितना उचित है!",
+          "R": "मुझे अपने साथ ले चलो! आओ, जल्दी चलें! \\q राजा मुझे अपने कमरों में ले आया है। हम तुम्हारे कारण मगन और आनंदित होंगी। \\q हम दाखमधु से बढ़कर तुम्हारे प्यार की प्रशंसा करेंगी। \\q कोई अचरज नहीं कि वे तुमसे प्रेम करती हैं!"
+        },
+        "ru": {
+          "L": "Влеки меня за собой; побежим! \\q Царь ввёл меня в свои покои; будем ликовать и радоваться тобой; \\q будем славить твои ласки больше вина. \\q По праву любят тебя.",
+          "B": "Возьми меня с собой; побежим! \\q Царь привёл меня в свои покои. Мы будем радоваться и веселиться о тебе; \\q мы будем прославлять твою любовь больше вина. \\q Как правы те, кто любит тебя!",
+          "R": "Возьми меня с собой! Поспешим! \\q Царь привёл меня в свои комнаты. Мы будем радоваться и веселиться из-за тебя. \\q Мы будем хвалить твою любовь больше, чем вино. \\q Неудивительно, что тебя любят!"
+        },
+        "ja": {
+          "L": "わたしを引いて、あなたの後に[連れて行って]。走ろう！ \\q 王はわたしを自分の奥の部屋に連れて来た。わたしたちはあなたのことで喜び楽しもう。 \\q ぶどう酒よりもあなたの愛撫をたたえよう。 \\q まことに、[皆が]あなたを愛するのはもっともだ。",
+          "B": "わたしを連れて行って。さあ、走ろう！ \\q 王はわたしを奥の部屋に連れて来た。わたしたちはあなたのことで喜び、楽しもう。 \\q ぶどう酒にまさるあなたの愛をたたえよう。 \\q 皆があなたを愛するのは、もっともなこと！",
+          "R": "わたしを連れて行って！急ごう！ \\q 王はわたしを自分の部屋に連れて行ってくれた。わたしたちは、あなたのことで喜び、楽しむ。 \\q ぶどう酒よりも、あなたの愛をほめたたえよう。 \\q 皆があなたを愛するのも当然だ！"
+        },
+        "uk": {
+          "L": "Тягни мене за собою; побіжімо! \\q Цар увів мене до своїх покоїв; будемо радіти й веселитися тобою; \\q будемо хвалити твої пестощі більше, ніж вино. \\q Слушно тебе кохають.",
+          "B": "Візьми мене з собою; побіжімо! \\q Цар привів мене до своїх покоїв. Ми радітимемо й тішитимемося тобою; \\q ми славитимемо твоє кохання більше, ніж вино. \\q Як слушно тебе кохають!",
+          "R": "Візьми мене з собою! Поспішімо! \\q Цар привів мене до своїх кімнат. Ми будемо радіти й веселитися через тебе. \\q Ми хвалитимемо твоє кохання більше, ніж вино. \\q Не дивно, що тебе кохають!"
         }
       },
       "decisions": [
@@ -1287,6 +1785,95 @@
           "reason": "Vietnamese must choose who \"we\" and \"you\" are (m1). The draft follows the reading in which the woman speaks for herself and the others to her beloved, so the \"you\" stays \"anh\" through the verse; if the young women speak to her, the words would be \"chúng tôi\" and \"chị\". \"Let us run\" is the two lovers, \"chúng ta\" (\"mình\" at Readable).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010040071",
+            "o220010040082",
+            "o220010040101"
+          ],
+          "choice": "हम ... होंगी, मनाएँगी, करेंगी (feminine)",
+          "alternatives": [],
+          "reason": "Hindi verbs show gender. \"We\" here is the woman with the young women, or the young women themselves (m1): either way the speakers are women, so Balanced and Readable, which give the resolve \"we will\", use feminine forms. Literal's \"let us\" (हों, करें) has no gender.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010040071",
+            "o220010040082",
+            "o220010040101"
+          ],
+          "choice": "\"мы будем радоваться ... прославлять\"",
+          "alternatives": [
+            "\"будем радоваться\""
+          ],
+          "reason": "Balanced and Readable give the forms that mean \"let us\" as resolve (\"мы будем\"), as the English does; Literal keeps \"будем ...\", the bare exhortation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010040111",
+            "o220010040141",
+            "o220010040142"
+          ],
+          "choice": "\"ласки\" (Literal); \"любовь\" (Balanced, Readable)",
+          "alternatives": [
+            "\"любовь\""
+          ],
+          "reason": "As 1:2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010040051",
+            "o220010040052",
+            "o220010040131"
+          ],
+          "choice": "\"王\" at every level for what she calls him; \"わたしたち\" for \"we\" with no named group; \"[皆が]\" (L), \"皆が\" (B, R) for the unnamed \"they\"",
+          "alternatives": [
+            "\"王さま\" (R)",
+            "\"おとめたちが\" (naming who loves him)"
+          ],
+          "reason": "わたしたち leaves open whether the young women or the woman with others speak, as the meaning decision notes; 王 is kept plain because it is a lover's title, not court address.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1356,6 +1943,26 @@
           "L": "እኔ ጥቁር [ነኝ]፤ ውብም [ነኝ]፣ \\q የኢየሩሳሌም ሴቶች ልጆች ሆይ፣ \\q እንደ ቄዳር ድንኳኖች፣ \\q እንደ ሰሎሞን መጋረጃዎች።",
           "B": "ጠይም ነኝ፤ ውብም ነኝ፣ \\q የኢየሩሳሌም ሴቶች ሆይ፣ \\q እንደ ቄዳር ድንኳኖች፣ \\q እንደ ሰሎሞን መጋረጃዎች።",
           "R": "የኢየሩሳሌም ሴቶች ሆይ፣ መልኬ ጠይም ነው፤ ውብም ነኝ። \\q እንደ ቄዳር ድንኳኖች ነኝ፤ \\q እንደ ሰሎሞንም መጋረጃዎች።"
+        },
+        "hi": {
+          "L": "मैं काली [हूँ] और सुंदर, \\q हे यरूशलेम की बेटियो, \\q केदार के तंबुओं के समान, \\q सुलैमान के परदों के समान।",
+          "B": "मैं साँवली हूँ और सुंदर हूँ, \\q हे यरूशलेम की स्त्रियो, \\q केदार के तंबुओं के समान, \\q सुलैमान के परदों के समान।",
+          "R": "यरूशलेम की स्त्रियो, मेरा रंग साँवला है, और मैं सुंदर हूँ। \\q मैं केदार के तंबुओं के समान हूँ, \\q सुलैमान के परदों के समान।"
+        },
+        "ru": {
+          "L": "Черна я и миловидна, \\q дочери Иерусалима, \\q как шатры Кедара, \\q как завесы Соломона.",
+          "B": "Я смугла и красива, \\q женщины Иерусалима, \\q как шатры Кедара, \\q как занавесы Соломона.",
+          "R": "Женщины Иерусалима, у меня тёмная кожа, и я красива. \\q Я как шатры Кедара, \\q как занавесы Соломона."
+        },
+        "ja": {
+          "L": "わたしは黒く、そして愛らしい、 \\q エルサレムの娘たちよ、 \\q ケダルの天幕のように、 \\q ソロモンの幕のように。",
+          "B": "わたしは色が黒くて、美しい、 \\q エルサレムの女たちよ、 \\q ケダルの天幕のように、 \\q ソロモンの幕のように。",
+          "R": "エルサレムの女たちよ、わたしの肌は黒い。そして、わたしは美しい。 \\q わたしはケダルの天幕のよう、 \\q ソロモンの幕のよう。"
+        },
+        "uk": {
+          "L": "Чорна я і гарна, \\q дочки Єрусалима, \\q як намети Кедару, \\q як завіси Соломона.",
+          "B": "Я смаглява і гарна, \\q єрусалимські жінки, \\q як намети Кедару, \\q як Соломонові завіси.",
+          "R": "Єрусалимські жінки, моя шкіра темна, і я гарна. \\q Я як намети Кедару, \\q як завіси Соломона."
         }
       },
       "decisions": [
@@ -1589,6 +2196,180 @@
           "reason": "\"ጠይም\" is the ordinary Amharic word for a dark, sun-browned complexion and carries no slight; Literal keeps the colour word of the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050041",
+            "o220010050051"
+          ],
+          "choice": "हे यरूशलेम की बेटियो (L); हे यरूशलेम की स्त्रियो (B); यरूशलेम की स्त्रियो (R)",
+          "alternatives": [
+            "यरूशलेम की पुत्रियो"
+          ],
+          "reason": "Literal keeps \"daughters\"; Balanced and Readable say स्त्रियो, the women of the city (m3), as the English levels do. The forms are those of Luke 23:28 at each level, and they are kept for every call to the women of Jerusalem and of Zion in the Song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050011"
+          ],
+          "choice": "साँवली, मेरा रंग साँवला है (B, R); काली (L)",
+          "alternatives": [
+            "काली"
+          ],
+          "reason": "Balanced and Readable say साँवली, the ordinary Hindi word for skin darkened by the sun (1:6), as the English says \"dark\"; Literal keeps काली, \"black\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050041",
+            "o220010050051"
+          ],
+          "choice": "\"дочери Иерусалима\" (Literal); \"женщины Иерусалима\" (Balanced, Readable)",
+          "alternatives": [
+            "\"дщери Иерусалимские\"",
+            "\"иерусалимские девушки\""
+          ],
+          "reason": "Literal keeps \"daughters\"; Balanced and Readable say \"женщины\", the sense of the phrase (m3), as the English does. The church-Slavonic \"дщери\" is not used. They are addressed with \"вы\", a Hebrew plural. The same wording holds wherever the chorus is named.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050011"
+          ],
+          "choice": "\"смугла\"; \"у меня тёмная кожа\"",
+          "alternatives": [
+            "\"черна\""
+          ],
+          "reason": "Literal keeps \"черна\"; Balanced and Readable say what is meant, skin darkened by the sun (1:6).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050041",
+            "o220010050051"
+          ],
+          "choice": "benot Yerushalayim \"エルサレムの娘たちよ\" (L), \"エルサレムの女たちよ\" (B, R), the same through the book; Kedar \"ケダル\" (as GEN 25:13)",
+          "alternatives": [
+            "\"エルサレムのおとめたち\""
+          ],
+          "reason": "L keeps the Hebrew \"daughters\"; B and R say \"women\" as the English does, since the phrase means the women of the city.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050031",
+            "o220010050032"
+          ],
+          "choice": "ve- \"and\": \"そして\" / \"〜くて\", not \"けれども\"",
+          "alternatives": [
+            "\"黒いけれども美しい\""
+          ],
+          "reason": "The meaning decision reads \"and\", with \"but\" in a footnote; Japanese keeps the plain joining.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050041",
+            "o220010050051"
+          ],
+          "choice": "\"дочки Єрусалима\" (L), \"єрусалимські жінки\" (B, R), through the whole Song; \"дочки Сіону\" (3:11) likewise",
+          "alternatives": [
+            "\"дочки єрусалимські\"",
+            "\"єрусалимські дівчата\""
+          ],
+          "reason": "\"Daughters\" here means the women of the city, as the meaning decision says. Literal keeps the Hebrew phrase; Balanced and Readable say who they are. The plural address needs no separate vocative form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010050011",
+            "o220010050021",
+            "o220010050032"
+          ],
+          "choice": "\"смаглява\" (B), \"чорна\" (L), \"моя шкіра темна\" (R)",
+          "alternatives": [
+            "\"чорнява\"",
+            "\"темна\""
+          ],
+          "reason": "\"Смаглява\" is the Ukrainian word for skin darkened by the sun, which 1:6 says is the cause; \"чорнява\" would mean dark hair.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1676,6 +2457,26 @@
           "L": "ስለ ጠቆርኩ ትኩር ብላችሁ አትዩኝ፤ \\q ፀሐይ አይታኛለችና። \\q የእናቴ ወንዶች ልጆች ተቆጡኝ፤ የወይን ቦታዎች ጠባቂ አደረጉኝ፤ \\q የእኔ የሆነውን የወይን ቦታዬን ግን አልጠበቅኩም።",
           "B": "እጅግ ስለ ጠቆርኩ ትኩር ብላችሁ አትዩኝ፤ \\q ፀሐይ ቁልቁል ተመልክታኛለችና። \\q የእናቴ ልጆች ተቆጥተውኝ የወይን ቦታዎችን እንድጠብቅ አደረጉኝ፤ \\q የራሴን የወይን ቦታ ግን አልጠበቅኩም።",
           "R": "መልኬ ስለ ጠቆረ ትኩር ብላችሁ አትዩኝ። \\q ፀሐይ አጥቁራኛለች። \\q ወንድሞቼ ተቆጡኝ፤ የወይን ቦታዎችን እንድጠብቅ አደረጉኝ። \\q የራሴን የወይን ቦታ ግን አልጠበቅኩም።"
+        },
+        "hi": {
+          "L": "मुझे मत घूरो कि मैं साँवली [हूँ], \\q कि सूरज ने मुझ पर दृष्टि डाली है। \\q मेरी माँ के पुत्र मुझसे क्रोधित हुए; उन्होंने मुझे दाख की बारियों की रखवाली करनेवाली बनाया; \\q अपनी दाख की बारी, जो मेरी अपनी है, उसकी मैंने रखवाली नहीं की।",
+          "B": "मुझे इसलिए मत घूरो कि मैं इतनी साँवली हूँ, \\q कि सूरज ने मुझ पर नज़र डाली है। \\q मेरी माँ के बेटे मुझसे नाराज़ हुए और उन्होंने मुझे दाख की बारियों की देखभाल में लगा दिया; \\q अपनी दाख की बारी की देखभाल मैंने नहीं की।",
+          "R": "मुझे इसलिए मत घूरो कि मेरा रंग साँवला है। \\q धूप ने मुझे झुलसा दिया है। \\q मेरे भाई मुझसे नाराज़ थे। उन्होंने मुझे अंगूर के बाग़ों की देखभाल में लगा दिया। \\q पर अपने अंगूर के बाग़ की देखभाल मैंने नहीं की।"
+        },
+        "ru": {
+          "L": "Не разглядывайте меня, что я потемнела, \\q что солнце взглянуло на меня. \\q Сыновья моей матери разгневались на меня; поставили меня стеречь виноградники; \\q мой виноградник, мой собственный, я не устерегла.",
+          "B": "Не разглядывайте меня из-за того, что я так смугла, \\q что солнце посмотрело на меня сверху. \\q Сыновья моей матери рассердились на меня и заставили меня смотреть за виноградниками; \\q а за своим виноградником я не уследила.",
+          "R": "Не смотрите так на меня из-за того, что у меня тёмная кожа. \\q Меня опалило солнце. \\q Мои братья рассердились на меня. Они заставили меня ухаживать за виноградниками. \\q Но за своим виноградником я не ухаживала."
+        },
+        "ja": {
+          "L": "わたしをじろじろ見ないで、わたしが黒ずんでいるからといって、 \\q 太陽がわたしを見つめたからといって。 \\q わたしの母の息子たちがわたしに怒り、わたしをぶどう畑の番人にした。 \\q わたしのぶどう畑、自分のものは、わたしは守らなかった。",
+          "B": "わたしがこんなに黒いからといって、じろじろ見ないで。 \\q 太陽に照りつけられたのだから。 \\q 母の息子たちはわたしに腹を立て、わたしにぶどう畑の世話をさせた。 \\q わたし自身のぶどう畑は、世話をしなかった。",
+          "R": "肌が黒いからといって、わたしをじろじろ見ないで。 \\q 日に焼けたのだ。 \\q 兄弟たちがわたしに腹を立てた。わたしにぶどう畑の世話をさせた。 \\q でも、自分のぶどう畑の世話はしなかった。"
+        },
+        "uk": {
+          "L": "Не дивіться на мене, що я почорніла, \\q бо сонце поглянуло на мене. \\q Сини моєї матері гнівалися на мене; поставили мене сторожем виноградників; \\q мого виноградника, мого власного, я не встерегла.",
+          "B": "Не розглядайте мене, що я така смаглява, \\q бо сонце дивилося на мене згори. \\q Сини моєї матері гнівалися на мене і змусили мене доглядати виноградники; \\q а свого власного виноградника я не доглянула.",
+          "R": "Не розглядайте мене через те, що моя шкіра темна. \\q Це сонце мене засмалило. \\q Мої брати гнівалися на мене. Вони змусили мене доглядати виноградники. \\q А свого власного виноградника я не доглянула."
         }
       },
       "decisions": [
@@ -1832,6 +2633,70 @@
           "reason": "Readable calls her mother's sons her brothers, as the English Readable does (m3); a woman's brothers are \"오빠\" in Korean (or \"남동생\" if younger); the older word suits brothers who had a say over her.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010060142",
+            "o220010060151"
+          ],
+          "choice": "दाख की बारी (L, B); अंगूर का बाग़ (R)",
+          "alternatives": [],
+          "reason": "Vineyard is दाख की बारी at Literal and Balanced and अंगूर का बाग़ at Readable, as in Matthew and the rest of this translation; the same forms are used throughout the Song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010060062",
+            "o220010060071"
+          ],
+          "choice": "\"Меня опалило солнце\"; \"Мои братья\"",
+          "alternatives": [
+            "\"солнце посмотрело на меня\"",
+            "\"сыновья моей матери\""
+          ],
+          "reason": "Readable says what the sun's gaze did and calls her mother's sons her brothers (m1, m3), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010060071",
+            "o220010060081",
+            "o220010060082"
+          ],
+          "choice": "bene immi \"わたしの母の息子たち\" (L), \"母の息子たち\" (B), \"兄弟たち\" (R)",
+          "alternatives": [
+            "\"兄たち\" (R)"
+          ],
+          "reason": "Japanese 兄 or 弟 would decide their age, which the Hebrew does not; 兄弟たち says \"my brothers\" as the English R does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1913,6 +2778,26 @@
           "L": "ነፍሴ የምትወድህ ሆይ፣ ንገረኝ፤ \\q [መንጋህን] የት ታሰማራለህ? \\q በቀትር [መንጋህን] የት ታሳርፋለህ? \\q በባልንጀሮችህ መንጎች አጠገብ \\q ለምን እንደ ተከናነበች ሴት እሆናለሁ?",
           "B": "ነፍሴ የምትወድህ ሆይ፣ ንገረኝ፤ \\q መንጋህን የት ታሰማራለህ? \\q በቀትርስ የት ታሳርፈዋለህ? \\q በባልንጀሮችህ መንጎች አጠገብ \\q ለምን እንደ ተከናነበች ሴት ልሁን?",
           "R": "በሙሉ ልቤ የምወድህ ሆይ፣ ንገረኝ፤ \\q በጎችህንና ፍየሎችህን ለግጦሽ የት ትወስዳለህ? \\q በቀትር የት ታሳርፋቸዋለህ? \\q በባልንጀሮችህ መንጎች መካከል አንተን እየፈለግኩ \\q ለምን መሸፈኛ እንደ ለበሰች ሴት ልሁን?"
+        },
+        "hi": {
+          "L": "मुझे बताओ, हे तुम जिससे मेरा प्राण प्रेम करता है, \\q तुम [अपना झुंड] कहाँ चराते हो? \\q दोपहर को [उसे] कहाँ बैठाते हो? \\q मैं तुम्हारे साथियों के झुंडों के पास \\q घूँघट ओढ़नेवाली के समान क्यों रहूँ?",
+          "B": "मुझे बताओ, तुम जिससे मेरा प्राण प्रेम करता है, \\q तुम अपना झुंड कहाँ चराते हो? \\q दोपहर को उसे कहाँ विश्राम कराते हो? \\q मैं तुम्हारे साथियों के झुंडों के पास \\q घूँघट ओढ़े हुई स्त्री के समान क्यों रहूँ?",
+          "R": "मुझे बताओ, तुम जिससे मैं पूरे मन से प्रेम करती हूँ, \\q तुम अपनी भेड़-बकरियों को चराने कहाँ ले जाते हो? \\q दोपहर को उन्हें कहाँ आराम कराते हो? \\q मैं घूँघट ओढ़े हुई स्त्री के समान \\q तुम्हारे साथियों के झुंडों के बीच तुम्हें क्यों ढूँढ़ती फिरूँ?"
+        },
+        "ru": {
+          "L": "Скажи мне, ты, кого любит душа моя, \\q где ты пасёшь [стадо]? \\q Где [его] укладываешь в полдень? \\q Зачем же мне быть как та, что закрыта покрывалом, \\q возле стад твоих товарищей?",
+          "B": "Скажи мне, ты, кого любит моя душа, \\q где ты пасёшь своё стадо? \\q Где даёшь ему отдых в полдень? \\q Зачем мне быть как женщина под покрывалом \\q возле стад твоих товарищей?",
+          "R": "Скажи мне, ты, кого я люблю всем сердцем, \\q куда ты ведёшь пастись своих овец и коз? \\q Где ты даёшь им отдохнуть в полдень? \\q Зачем мне быть как женщина под покрывалом, \\q которая ищет тебя среди стад твоих друзей?"
+        },
+        "ja": {
+          "L": "わたしに告げて、わたしの魂が愛する人よ、 \\q あなたはどこで[群れを]飼うのか？ \\q 昼にはどこで[群れを]伏させるのか？ \\q どうしてわたしが、顔を覆う女のようでいなければならないのか、 \\q あなたの仲間たちの群れのそばで？",
+          "B": "教えて、わたしが心から愛する人よ。 \\q あなたはどこで群れを飼っているの？ \\q 昼には、どこで群れを休ませるの？ \\q どうしてわたしが、ベールをかぶった女のようでいなければならないの、 \\q あなたの仲間たちの群れのそばで？",
+          "R": "心から愛する人よ、教えて。 \\q あなたはどこへ羊ややぎを連れて行って、草を食べさせるの？ \\q 昼には、どこで休ませるの？ \\q どうしてわたしが、ベールをかぶった女のようになって、 \\q あなたの友だちの群れの間を、あなたを捜して回らなければならないの？"
+        },
+        "uk": {
+          "L": "Скажи мені, ти, кого кохає моя душа, \\q де ти пасеш [отару]? \\q Де даєш [їй] лежати опівдні? \\q Бо навіщо мені бути як та, що закривається покривалом, \\q біля отар твоїх товаришів?",
+          "B": "Скажи мені, ти, кого кохає моя душа, \\q де ти пасеш свою отару? \\q Де даєш їй відпочити опівдні? \\q Навіщо мені бути як жінка під покривалом \\q біля отар твоїх товаришів?",
+          "R": "Скажи мені, ти, кого я кохаю всім серцем, \\q куди ти ведеш своїх овець і кіз пастися? \\q Де ти даєш їм відпочити опівдні? \\q Навіщо мені бути як жінка під покривалом, \\q що шукає тебе між отарами твоїх друзів?"
         }
       },
       "decisions": [
@@ -2083,6 +2968,120 @@
           "reason": "Amharic puts the verb last, so the place phrase of the last English line moves before \"why should I be...\"; both lines stay in verse 7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010070032",
+            "o220010070041",
+            "o220010070042"
+          ],
+          "choice": "जिससे मेरा प्राण प्रेम करता है (L, B); जिससे मैं पूरे मन से प्रेम करती हूँ (R)",
+          "alternatives": [
+            "मेरा प्राणप्रिय"
+          ],
+          "reason": "Literal and Balanced keep \"my soul loves\" with प्राण, the word for nefesh in this translation; Readable says what it means (m2). The phrase keeps this wording at each level in 3:1-4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010070032",
+            "o220010070041"
+          ],
+          "choice": "\"ты, кого любит душа моя\" (Literal); \"кого любит моя душа\" (Balanced); \"кого я люблю всем сердцем\" (Readable)",
+          "alternatives": [
+            "\"которого любит душа моя\""
+          ],
+          "reason": "One wording per level for this phrase through the Song (3:1-4). Literal and Balanced keep \"душа\", the Psalms' word for nefesh at Literal; Readable says what it means (m2), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o220010070141"
+          ],
+          "choice": "\"которая ищет тебя\"",
+          "alternatives": [
+            "\"возле стад твоих друзей\""
+          ],
+          "reason": "Readable says why she would be among the flocks; the Hebrew implies it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010070021",
+            "o220010070022",
+            "o220010070031",
+            "o220010070032",
+            "o220010070041",
+            "o220010070042"
+          ],
+          "choice": "she'ahavah nafshi \"わたしの魂が愛する人\" (L), \"わたしが心から愛する人\" (B), \"心から愛する人\" (R), the same in 3:1-4",
+          "alternatives": [
+            "\"わが魂の愛する者\""
+          ],
+          "reason": "L keeps \"soul\"; B and R say the meaning (with all that I am) in natural Japanese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o220010070121",
+            "o220010070122",
+            "o220010070131",
+            "o220010070141",
+            "o220010070151",
+            "o220010070152"
+          ],
+          "choice": "The last line \"あなたの仲間たちの群れのそばで？\" follows the question it belongs to",
+          "alternatives": [],
+          "reason": "Inverting the place phrase keeps each colon on its own line, as the English lines do; the question mark goes where the Japanese question ends.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2165,6 +3164,26 @@
           "L": "ለራስሽ ባታውቂ፣ \\q በሴቶች መካከል እጅግ ውብ የሆንሽ ሆይ፣ \\q የመንጋውን ፈለግ ተከትለሽ ውጪ፤ \\q የፍየል ግልገሎችሽንም በእረኞቹ ድንኳኖች አጠገብ አሰማሪ።",
           "B": "ባታውቂ፣ \\q ከሴቶች ሁሉ ይልቅ ውብ የሆንሽ ሆይ፣ \\q ወጥተሽ የመንጋውን ዱካ ተከተዪ፤ \\q የፍየል ግልገሎችሽንም በእረኞቹ ድንኳኖች አጠገብ አሰማሪ።",
           "R": "ከሴቶች ሁሉ ይልቅ ውብ የሆንሽ ሆይ፣ ባታውቂ፣ \\q የመንጋውን ዱካ ተከተዪ። \\q የፍየል ግልገሎችሽን በእረኞቹ ድንኳኖች አጠገብ አሰማሪ።"
+        },
+        "hi": {
+          "L": "यदि तुम अपने आप नहीं जानतीं, \\q हे स्त्रियों में सबसे सुंदर, \\q तो झुंड के पदचिह्नों पर निकल जाओ, \\q और चरवाहों के तंबुओं के पास अपनी बकरी के बच्चों को चराओ।",
+          "B": "यदि तुम नहीं जानतीं, \\q हे स्त्रियों में सबसे सुंदर, \\q तो बाहर निकलो और झुंड के पदचिह्नों के पीछे चलो, \\q और चरवाहों के तंबुओं के पास अपनी बकरी के बच्चों को चराओ।",
+          "R": "हे सबसे सुंदर स्त्री, यदि तुम नहीं जानतीं, \\q तो झुंड के पैरों के निशानों के पीछे-पीछे जाओ। \\q चरवाहों के तंबुओं के पास अपनी बकरी के बच्चों को चराओ।"
+        },
+        "ru": {
+          "L": "Если ты не знаешь сама, \\q прекраснейшая среди женщин, \\q выйди по следам стада \\q и паси своих козлят возле шатров пастухов.",
+          "B": "Если ты не знаешь, \\q прекраснейшая из женщин, \\q выйди и иди по следам стада \\q и паси своих козлят возле пастушьих шатров.",
+          "R": "Самая красивая из женщин, если ты не знаешь, \\q иди по следам стада. \\q Паси своих козлят возле шатров пастухов."
+        },
+        "ja": {
+          "L": "もしあなたが自分で知らないのなら、 \\q 女たちの中で最も美しい人よ、 \\q 群れの足跡をたどって出て行き、 \\q 羊飼いたちの天幕のそばで、あなたの子やぎを飼いなさい。",
+          "B": "もし知らないのなら、 \\q 女の中で最も美しい人よ、 \\q 出て行って群れの足跡をたどり、 \\q 羊飼いたちの天幕のそばで、あなたの子やぎに草を食べさせなさい。",
+          "R": "女の中でいちばん美しい人よ、知らないのなら、 \\q 群れの足跡をたどって行きなさい。 \\q 羊飼いたちの天幕の近くで、あなたの子やぎに草を食べさせなさい。"
+        },
+        "uk": {
+          "L": "Якщо ти сама не знаєш, \\q найгарніша серед жінок, \\q вийди собі слідами отари \\q і паси своїх козенят біля наметів пастухів.",
+          "B": "Якщо ти не знаєш, \\q найгарніша з жінок, \\q іди слідами отари \\q і паси своїх козенят біля пастуших наметів.",
+          "R": "Найгарніша з жінок, якщо ти не знаєш, \\q іди слідами отари. \\q Паси своїх козенят біля наметів пастухів."
         }
       },
       "decisions": [
@@ -2319,6 +3338,73 @@
           "reason": "One wording for the phrase each time it returns (5:9; 6:1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010080052",
+            "o220010080062"
+          ],
+          "choice": "हे स्त्रियों में सबसे सुंदर (L, B); हे सबसे सुंदर स्त्री (R)",
+          "alternatives": [],
+          "reason": "One wording per level for the title the women of Jerusalem give her, kept in 5:9 and 6:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010080052",
+            "o220010080061",
+            "o220010080062"
+          ],
+          "choice": "\"прекраснейшая среди женщин\" (Literal); \"прекраснейшая из женщин\" (Balanced); \"самая красивая из женщин\" (Readable)",
+          "alternatives": [
+            "\"красивейшая из женщин\""
+          ],
+          "reason": "One wording per level for this address, kept in 5:9 and 6:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010080051",
+            "o220010080052",
+            "o220010080061",
+            "o220010080062"
+          ],
+          "choice": "hayyafah bannashim \"女たちの中で最も美しい人よ\" (L), \"女の中で最も美しい人よ\" (B), \"女の中でいちばん美しい人よ\" (R), the same in 5:9, 6:1; the answer in neutral 〜なさい",
+          "alternatives": [
+            "a man's or a woman's voice marked in the endings"
+          ],
+          "reason": "The speaker may be the man or the women of Jerusalem; neutral imperatives leave that open.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2386,6 +3472,26 @@
           "L": "በፈርዖን ሰረገሎች መካከል ካለች ባዝራ ጋር \\q አመሳስዬሻለሁ፣ ወዳጄ።",
           "B": "ወዳጄ፣ አንቺን \\q በፈርዖን ሰረገሎች መካከል ካለች ባዝራ ጋር አመሳስልሻለሁ።",
           "R": "ወዳጄ፣ አንቺ ባዝራን ትመስያለሽ፤ \\q በፈርዖን የሰረገላ ፈረሶች መካከል ያለችን ባዝራ።"
+        },
+        "hi": {
+          "L": "फ़िरौन के रथों के बीच एक घोड़ी से \\q मैं तुम्हारी उपमा देता हूँ, मेरी संगिनी।",
+          "B": "मेरी प्रिया, मैं तुम्हारी तुलना \\q फ़िरौन के रथों के बीच की घोड़ी से करता हूँ।",
+          "R": "मेरी प्रिया, तुम एक घोड़ी के समान हो, \\q फ़िरौन के रथों के घोड़ों के बीच।"
+        },
+        "ru": {
+          "L": "С кобылицей в колесницах фараона \\q сравниваю я тебя, подруга моя.",
+          "B": "Я сравниваю тебя, милая моя, \\q с кобылицей в колесницах фараона.",
+          "R": "Милая моя, ты как кобылица \\q среди коней в колесницах фараона."
+        },
+        "ja": {
+          "L": "ファラオの戦車の中の雌馬に、 \\q わたしはあなたをたとえる、わたしの友よ。",
+          "B": "いとしい人よ、わたしはあなたをたとえよう、 \\q ファラオの戦車の間にいる雌馬に。",
+          "R": "いとしい人よ、あなたはまるで雌馬、 \\q ファラオの戦車を引く馬たちの中の雌馬のようだ。"
+        },
+        "uk": {
+          "L": "До кобилиці серед колісниць фараона \\q я прирівнюю тебе, подруго моя.",
+          "B": "Я порівнюю тебе, кохана моя, \\q з кобилицею серед фараонових колісниць.",
+          "R": "Кохана моя, ти як кобилиця \\q серед фараонових коней, запряжених у колісниці."
         }
       },
       "decisions": [
@@ -2612,6 +3718,97 @@
           "reason": "The man's word for her (meaning decision) is given one Amharic word through the Song, as the terms list sets it; \"ወዳጄ\" is both \"my friend\" and \"my love\", as the Hebrew is. \"ባዝራ\" is the ordinary word for a mare.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010090051",
+            "o220010090052"
+          ],
+          "choice": "मेरी संगिनी (L); मेरी प्रिया (B, R)",
+          "alternatives": [
+            "मेरी सखी",
+            "मेरी प्रियतमा"
+          ],
+          "reason": "The man's word for her has the sense of a companion (m2). Literal says मेरी संगिनी, as the English Literal says \"my companion\"; Balanced and Readable say मेरी प्रिया, \"my darling\". The same wording is used every time he calls her so in the Song. The man speaks, so his first-person verbs are masculine (देता हूँ).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010090051"
+          ],
+          "choice": "\"подруга моя\" (Literal); \"милая моя\" (Balanced, Readable)",
+          "alternatives": [
+            "\"возлюбленная моя\"",
+            "\"любимая моя\""
+          ],
+          "reason": "The man's word for her (m2) has one wording per level through the Song: Literal \"подруга моя\", which keeps the sense of friendship in the word, as the English \"my companion\"; Balanced and Readable \"милая моя\", as the English \"my darling\". \"Возлюбленный\" is kept for her word for him, so that the two names stay apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010090051",
+            "o220010090052"
+          ],
+          "choice": "ra'yati, the man's word for her: \"わたしの友よ\" (L), \"いとしい人よ\" (B, R), kept through the book",
+          "alternatives": [
+            "\"わが愛する者よ\"",
+            "\"恋人よ\""
+          ],
+          "reason": "L keeps \"companion\"; B and R use one warm term kept apart from her word for him (\"愛する人\"), so the reader can tell who is speaking. The man speaks plain, わたし … あなた, never おまえ.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010090051",
+            "o220010090052"
+          ],
+          "choice": "\"подруго моя\" (L), \"кохана моя\" (B, R) for the man's word for her, through the whole Song",
+          "alternatives": [
+            "\"моя мила\"",
+            "\"подруго моя\" at every level"
+          ],
+          "reason": "The word means a companion or friend, which Literal keeps in the vocative \"подруго\". Balanced and Readable use the lover's word, as the English \"my darling\"; it is set apart from his \"коханий\" (\"my beloved\") by gender.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2678,6 +3875,26 @@
           "L": "ጉንጮችሽ በጌጦች ውብ [ናቸው]፤ \\q አንገትሽ በዶቃ ሕብረቁምፊዎች።",
           "B": "ጉንጮችሽ በጌጦቹ መካከል ውብ ናቸው፤ \\q አንገትሽም በዶቃ ሕብረቁምፊዎቹ።",
           "R": "ፊትሽ በዙሪያው ባሉት ጌጦች አምሯል፤ \\q አንገትሽም በዶቃ ሕብረቁምፊዎች።"
+        },
+        "hi": {
+          "L": "गहनों के साथ तुम्हारे गाल मनोहर [हैं], \\q मनकों की लड़ियों के साथ तुम्हारी गर्दन।",
+          "B": "गहनों के बीच तुम्हारे गाल मनोहर हैं, \\q और मनकों की लड़ियों से सजी तुम्हारी गर्दन भी।",
+          "R": "पास लटकते गहनों से तुम्हारा चेहरा सुंदर लगता है, \\q और मनकों की लड़ियों से तुम्हारी गर्दन भी।"
+        },
+        "ru": {
+          "L": "Прекрасны твои щёки в подвесках, \\q твоя шея в нитях бус.",
+          "B": "Прекрасны твои щёки между украшениями, \\q твоя шея в нитях бус.",
+          "R": "Твоё лицо прекрасно в украшениях, \\q и твоя шея в нитях бус."
+        },
+        "ja": {
+          "L": "あなたの頬は飾りで愛らしい、 \\q あなたの首は玉の連なりで。",
+          "B": "あなたの頬は飾りの間で愛らしく、 \\q 首は連なる玉飾りで美しい。",
+          "R": "あなたの顔は、そばに揺れる飾りで美しい。 \\q 首も、連なった玉の首飾りで美しい。"
+        },
+        "uk": {
+          "L": "Гарні твої щоки в прикрасах, \\q твоя шия в разках намиста.",
+          "B": "Гарні твої щоки між прикрасами, \\q твоя шия з разками намиста.",
+          "R": "Твоє обличчя прекрасне, і прикраси обабіч нього, \\q і твоя шия з разками намиста."
         }
       },
       "decisions": [
@@ -2761,6 +3978,26 @@
           "L": "የወርቅ ጌጦችን እንሠራልሻለን \\q ከብር ፈርጦች ጋር።",
           "B": "የወርቅ ጌጦችን እንሠራልሻለን፤ \\q በብር ፈርጦች የተጌጡ።",
           "R": "የወርቅ ጌጥ እንሠራልሻለን፤ \\q በብር ያጌጠ።"
+        },
+        "hi": {
+          "L": "हम तुम्हारे लिए सोने के गहने बनाएँगे, \\q चाँदी की बुंदकियों के साथ।",
+          "B": "हम तुम्हारे लिए सोने के गहने बनाएँगे, \\q जिनमें चाँदी के दाने जड़े होंगे।",
+          "R": "हम तुम्हारे लिए सोने के गहने बनाएँगे, \\q जो चाँदी से सजे होंगे।"
+        },
+        "ru": {
+          "L": "Золотые подвески сделаем мы тебе \\q с серебряными зёрнами.",
+          "B": "Мы сделаем тебе золотые украшения \\q с серебряными вкраплениями.",
+          "R": "Мы сделаем тебе золотые украшения, \\q отделанные серебром."
+        },
+        "ja": {
+          "L": "金の飾りを、わたしたちはあなたのために作ろう、 \\q 銀の粒をちりばめて。",
+          "B": "わたしたちはあなたに金の飾りを作ろう、 \\q 銀の粒をちりばめて。",
+          "R": "あなたに、金の飾りを作ってあげよう。 \\q 銀をちりばめた飾りを。"
+        },
+        "uk": {
+          "L": "Прикраси із золота зробимо тобі \\q зі срібними зернятками.",
+          "B": "Ми зробимо тобі золоті прикраси, \\q оздоблені срібними зернятками.",
+          "R": "Ми зробимо тобі золоті прикраси, \\q оздоблені сріблом."
         }
       },
       "decisions": [
@@ -2815,6 +4052,27 @@
           ],
           "reason": "The speakers are not certain (m1): the man with others, or the women of Jerusalem. \"Chúng anh\" would decide for the man and \"chúng chị\" for the women; \"chúng tôi\" leaves it open, as the Hebrew does.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010110031"
+          ],
+          "choice": "बनाएँगे (the plural without a gender of its own)",
+          "alternatives": [
+            "बनाएँगी"
+          ],
+          "reason": "Who says \"we\" is uncertain: the man with others, or the women of Jerusalem (m1). Hindi has to give the verb a gender; the plural बनाएँगे is the form used for a group without deciding who is in it.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2885,6 +4143,26 @@
           "L": "ንጉሡ በማረፊያ አልጋው ሳለ፣ \\q ናርዶሴ መዓዛውን ሰጠ።",
           "B": "ንጉሡ በማረፊያ አልጋው ላይ ሳለ፣ \\q ናርዶሴ መዓዛውን አወጣ።",
           "R": "ንጉሡ በማረፊያ አልጋው ላይ ተጋድሞ ሳለ፣ \\q የናርዶስ ሽቱዬ ጣፋጭ መዓዛውን በአካባቢው ሞላው።"
+        },
+        "hi": {
+          "L": "जब तक राजा अपने आसन पर [था], \\q मेरी जटामांसी ने अपनी सुगंध दी।",
+          "B": "जब राजा अपने पलंग पर था, \\q मेरी जटामांसी ने अपनी सुगंध फैलाई।",
+          "R": "जब राजा अपने पलंग पर लेटा था, \\q मेरे जटामांसी के इत्र की मीठी ख़ुशबू चारों ओर फैल गई।"
+        },
+        "ru": {
+          "L": "Пока царь [был] на своём ложе, \\q мой нард издавал свой аромат.",
+          "B": "Пока царь возлежал на своём ложе, \\q мой нард источал свой аромат.",
+          "R": "Пока царь отдыхал на своём ложе, \\q мой душистый нард наполнял воздух сладким запахом."
+        },
+        "ja": {
+          "L": "王が自分の寝椅子にいる間、 \\q わたしのナルドはその香りを放った。",
+          "B": "王が長椅子でくつろいでいる間、 \\q わたしのナルドは香りを放った。",
+          "R": "王が長椅子に横になっている間、 \\q わたしのナルドの香油が、甘い香りをあたりに満たした。"
+        },
+        "uk": {
+          "L": "Поки цар [був] біля свого ложа, \\q мій нард видавав свій запах.",
+          "B": "Поки цар був на своєму ложі, \\q мій нард розливав свої пахощі.",
+          "R": "Поки цар лежав на своєму ложі, \\q мої пахощі з нарду наповнювали повітря солодким запахом."
         }
       },
       "decisions": [
@@ -3010,6 +4288,66 @@
           "reason": "The Amharic New Testament's word for the same perfume; it returns in 4:13-14.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010120041"
+          ],
+          "choice": "जटामांसी",
+          "alternatives": [],
+          "reason": "Nard is जटामांसी, as in Mark 14:3 and John 12:3 in this translation; Readable adds that it is a perfume (इत्र), as the English does (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010120041"
+          ],
+          "choice": "\"нард\"",
+          "alternatives": [
+            "\"нардовое масло\""
+          ],
+          "reason": "\"Нард\", the costly perfume (m3), as Mark 14:3 and John 12:3 in this translation; Readable adds \"душистый\" so that the reader knows it is a perfume.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010120041",
+            "o220010120042"
+          ],
+          "choice": "nerd \"ナルド\" (L, B), \"ナルドの香油\" (R)",
+          "alternatives": [],
+          "reason": "As the Gospels' \"ナルドの香油\" (MRK 14:3, JHN 12:3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3078,6 +4416,26 @@
           "L": "ውዴ ለእኔ የከርቤ ከረጢት [ነው]፤ \\q በጡቶቼ መካከል ያድራል።",
           "B": "ውዴ ለእኔ የከርቤ ከረጢት ነው፤ \\q ሌሊቱን ሙሉ በጡቶቼ መካከል ያርፋል።",
           "R": "ውዴ ለእኔ እንደ ትንሽ የከርቤ ከረጢት ነው፤ \\q ሌሊቱን ሙሉ በጡቶቼ መካከል ይተኛል።"
+        },
+        "hi": {
+          "L": "मेरा प्रियतम मेरे लिए गंधरस की थैली [है]; \\q वह मेरे स्तनों के बीच [रात भर] रहता है।",
+          "B": "मेरा प्रियतम मेरे लिए गंधरस की थैली है, \\q जो रात भर मेरे स्तनों के बीच रहती है।",
+          "R": "मेरा प्रिय मेरे लिए गंधरस की छोटी-सी थैली के समान है, \\q जो रात भर मेरे स्तनों के बीच रहती है।"
+        },
+        "ru": {
+          "L": "Мешочек мирры — мой возлюбленный для меня; \\q между моими грудями он покоится [всю ночь].",
+          "B": "Мой возлюбленный для меня — мешочек мирры, \\q что всю ночь лежит между моими грудями.",
+          "R": "Мой любимый для меня — как маленький мешочек с миррой, \\q который всю ночь лежит между моими грудями."
+        },
+        "ja": {
+          "L": "わたしの愛する人は、わたしにとって没薬の袋。 \\q わたしの乳房の間で[夜を過ごして]休む。",
+          "B": "わたしの愛する人は、わたしにとって没薬の袋、 \\q 夜通しわたしの胸の間に休む。",
+          "R": "わたしの愛する人は、わたしにとって没薬の小さな袋のよう。 \\q 一晩中、わたしの胸の間にある。"
+        },
+        "uk": {
+          "L": "Вузлик мирри — мій коханий мені; \\q між моїми грудьми він ночує.",
+          "B": "Мій коханий для мене — мішечок мирри, \\q що всю ніч лежить між моїми грудьми.",
+          "R": "Мій любий для мене — як мішечок мирри, \\q що лежить між моїми грудьми всю ніч."
         }
       },
       "decisions": [
@@ -3317,6 +4675,177 @@
           "reason": "The woman's word for the man is one Amharic word through the Song, as the terms list sets it. At Literal \"ያድራል\" (spends the night) already holds the English bracketed \"all night\", so no bracket is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130031",
+            "o220010130032"
+          ],
+          "choice": "मेरा प्रियतम (L, B); मेरा प्रिय (R)",
+          "alternatives": [
+            "मेरा प्रेमी"
+          ],
+          "reason": "The woman's word for the man (m1) has one wording per level throughout the Song: मेरा प्रियतम at Literal and Balanced, मेरा प्रिय at Readable, where the English says \"my love\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130022"
+          ],
+          "choice": "गंधरस",
+          "alternatives": [],
+          "reason": "Myrrh is गंधरस, as in Exodus 30:23 and Psalm 45:8; frankincense (3:6) is लोबान. The same forms are used for all the spices of the Song.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130031"
+          ],
+          "choice": "\"мой возлюбленный\" (Literal, Balanced); \"мой любимый\" (Readable)",
+          "alternatives": [
+            "\"милый мой\"",
+            "\"друг мой\""
+          ],
+          "reason": "Her word for him (m1) has one wording per level through the Song: \"возлюбленный\" at Literal and Balanced, \"любимый\" at Readable, as the English \"my beloved\" and \"my love\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130022"
+          ],
+          "choice": "\"мирра\"",
+          "alternatives": [
+            "\"смирна\""
+          ],
+          "reason": "\"Мирра\", the form of Exodus 30:23 and Psalm 45:9 in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-3",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o220010130071"
+          ],
+          "choice": "\"[всю ночь]\" (Literal); \"всю ночь\" (Balanced, Readable)",
+          "alternatives": [
+            "\"покоится\""
+          ],
+          "reason": "The verb itself means to spend the night (Genesis 19:2); Russian needs the words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130031",
+            "o220010130032"
+          ],
+          "choice": "dodi, her word for him: \"わたしの愛する人\" at every level (address \"愛する人よ\"), kept through the book",
+          "alternatives": [
+            "\"恋しい人\"",
+            "\"わたしの恋人\" (R)"
+          ],
+          "reason": "One term at every level, kept apart from his word for her (\"いとしい人\" / \"わたしの友\"), shows the speaker; the English R \"my love\" means the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130061",
+            "o220010130062"
+          ],
+          "choice": "shadai \"乳房\" (L), \"胸\" (B, R); mor \"没薬\" (as PRO 7:17, EXO 30:23)",
+          "alternatives": [],
+          "reason": "L names the body plainly; B and R use the everyday word, sensual but not coarse.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010130031",
+            "o220010130032"
+          ],
+          "choice": "\"мій коханий\" (L, B), \"мій любий\" (R) for the woman's word for the man (dodi), through the whole Song; vocative \"коханий мій\", \"любий мій\"",
+          "alternatives": [
+            "\"мій милий\"",
+            "\"мій улюблений\""
+          ],
+          "reason": "\"Коханий\" is the lover's word, as the English \"my beloved\"; Readable's \"любий\" is the everyday endearment, as the English \"my love\". At Literal \"ночує\" carries the English bracketed \"all night\" in the verb itself.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3385,6 +4914,26 @@
           "L": "ውዴ ለእኔ የእንሶስላ አበባ ዘለላ [ነው] \\q በዓይንጋዲ የወይን ቦታዎች።",
           "B": "ውዴ ለእኔ የእንሶስላ አበባ ዘለላ ነው፤ \\q በዓይንጋዲ የወይን ቦታዎች ውስጥ ያለ።",
           "R": "ውዴ ለእኔ እንደ እንሶስላ አበቦች እቅፍ ነው፤ \\q በዓይንጋዲ የወይን ቦታዎች ውስጥ እንዳለ።"
+        },
+        "hi": {
+          "L": "मेरा प्रियतम मेरे लिए हिना के फूलों का गुच्छा [है] \\q एनगदी की दाख की बारियों में।",
+          "B": "मेरा प्रियतम मेरे लिए हिना के फूलों का गुच्छा है \\q एनगदी की दाख की बारियों में।",
+          "R": "मेरा प्रिय मेरे लिए हिना के फूलों के गुच्छे के समान है, \\q एनगदी के अंगूर के बाग़ों में।"
+        },
+        "ru": {
+          "L": "Гроздь цветов хны — мой возлюбленный для меня \\q в виноградниках Ен-Гадди.",
+          "B": "Мой возлюбленный для меня — гроздь цветов хны \\q в виноградниках Ен-Гадди.",
+          "R": "Мой любимый для меня — как кисть цветов хны \\q в виноградниках Ен-Гадди."
+        },
+        "ja": {
+          "L": "わたしの愛する人は、わたしにとってヘンナの花房、 \\q エン・ゲディのぶどう畑の中の。",
+          "B": "わたしの愛する人は、わたしにとってヘンナの花房、 \\q エン・ゲディのぶどう畑に咲く。",
+          "R": "わたしの愛する人は、わたしにとって、ひと房のヘンナの花のよう。 \\q エン・ゲディのぶどう畑に咲く花のよう。"
+        },
+        "uk": {
+          "L": "Гроно хни — мій коханий мені \\q у виноградниках Ен-Геді.",
+          "B": "Мій коханий для мене — гроно квітів хни \\q у виноградниках Ен-Геді.",
+          "R": "Мій любий для мене — як китиця квітів хни \\q у виноградниках Ен-Геді."
         }
       },
       "decisions": [
@@ -3503,6 +5052,91 @@
           "reason": "\"እንሶስላ\" is the Amharic name of the henna shrub, known in Ethiopia for its dye; its sweet-smelling flowers are meant here. It returns in 4:13.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010140022"
+          ],
+          "choice": "हिना",
+          "alternatives": [
+            "मेहँदी"
+          ],
+          "reason": "The plant is henna (m1). Hindi calls it हिना or मेहँदी; हिना is used here because Nehemiah 8:15 in this translation uses मेंहदी for the myrtle, and the two shrubs must not be confused. Also in 4:13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010140071"
+          ],
+          "choice": "एनगदी",
+          "alternatives": [],
+          "reason": "The oasis by the Dead Sea (m2) keeps the form of 1 Samuel 24:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010140022"
+          ],
+          "choice": "\"цветы хны\"",
+          "alternatives": [
+            "\"кипер\""
+          ],
+          "reason": "The shrub is henna (m1), whose sweet-smelling flowers grow in clusters; \"кипер\", the older Russian Bible word, is unknown to readers. En-gedi is \"Ен-Гадди\", as 1 Samuel 24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010140021",
+            "o220010140022",
+            "o220010140061",
+            "o220010140071"
+          ],
+          "choice": "kofer \"ヘンナ\" (henna); En-gedi \"エン・ゲディ\" (as 1SA 24:1)",
+          "alternatives": [
+            "\"コフェル\""
+          ],
+          "reason": "ヘンナ is the plant's usual Japanese name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3571,6 +5205,26 @@
           "L": "እነሆ፣ ውብ [ነሽ]፣ ወዳጄ! \\q እነሆ፣ ውብ [ነሽ]! ዓይኖችሽ ርግቦች [ናቸው]።",
           "B": "ወዳጄ፣ እንዴት ውብ ነሽ! \\q እንዴት ውብ ነሽ! ዓይኖችሽ ርግቦች ናቸው።",
           "R": "ወዳጄ፣ በጣም ውብ ነሽ! \\q እጅግ ውብ ነሽ! ዓይኖችሽ እንደ ርግቦች ናቸው።"
+        },
+        "hi": {
+          "L": "अहा, तुम सुंदर [हो], मेरी संगिनी! \\q अहा, तुम सुंदर [हो]! तुम्हारी आँखें कबूतर [हैं]।",
+          "B": "तुम कितनी सुंदर हो, मेरी प्रिया! \\q तुम कितनी सुंदर हो! तुम्हारी आँखें कबूतर हैं।",
+          "R": "मेरी प्रिया, तुम बहुत सुंदर हो! \\q बहुत सुंदर! तुम्हारी आँखें कबूतरों के समान हैं।"
+        },
+        "ru": {
+          "L": "О, ты прекрасна, подруга моя! \\q О, ты прекрасна! Твои глаза — голубки.",
+          "B": "Как ты прекрасна, милая моя! \\q Как ты прекрасна! Твои глаза — голубки.",
+          "R": "Милая моя, ты такая красивая! \\q Такая красивая! Твои глаза как голубки."
+        },
+        "ja": {
+          "L": "ああ、あなたは美しい、わたしの友よ。 \\q ああ、あなたは美しい。あなたの目は鳩。",
+          "B": "なんと美しいのだろう、いとしい人よ！ \\q なんと美しい！あなたの目は鳩。",
+          "R": "いとしい人よ、あなたは本当に美しい！ \\q 本当に美しい！あなたの目はハトのようだ。"
+        },
+        "uk": {
+          "L": "Ох, ти гарна, подруго моя! \\q Ох, ти гарна! Твої очі — голубки.",
+          "B": "Яка ж ти гарна, кохана моя! \\q Яка ж ти гарна! Твої очі — голубки.",
+          "R": "Кохана моя, ти така гарна! \\q Така гарна! Твої очі — як голубки."
         }
       },
       "decisions": [
@@ -3665,6 +5319,92 @@
           "reason": "As docs/amharic-style.md 7b; the same words open 4:1, and 1:16 answers them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010150011",
+            "o220010150041"
+          ],
+          "choice": "अहा (L); कितनी सुंदर (B); बहुत सुंदर (R)",
+          "alternatives": [
+            "देखो"
+          ],
+          "reason": "Each line opens with a word that points (\"look!\"); Hindi gives its force as an exclamation, as the English does. The praise is worded the same in 4:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010150011",
+            "o220010150041"
+          ],
+          "choice": "\"О, ты прекрасна\" (Literal); \"Как ты прекрасна\" (Balanced); \"ты такая красивая\" (Readable)",
+          "alternatives": [
+            "\"Вот, ты прекрасна\""
+          ],
+          "reason": "The Hebrew opens each line with a word that points (\"look!\"); Russian gives its force as an exclamation, as the English does. The same wording returns in 1:16, 4:1 and 6:4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010150071"
+          ],
+          "choice": "\"голубки\"",
+          "alternatives": [
+            "\"голуби\""
+          ],
+          "reason": "\"Голубка\" is the feminine form used for \"my dove\" (2:14; 5:2), and suits soft, gentle eyes (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010150011",
+            "o220010150012",
+            "o220010150071"
+          ],
+          "choice": "hinnakh \"ああ\" (L), \"なんと\" (B), \"本当に\" (R); yonim \"鳩\" (L, B), \"ハト\" (R) (as GEN 8:8)",
+          "alternatives": [],
+          "reason": "hinneh here is admiration, not \"look\"; Japanese exclaims.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3733,6 +5473,26 @@
           "L": "እነሆ፣ መልከ መልካም [ነህ]፣ ውዴ፤ ደግሞም ደስ የምታሰኝ! \\q ደግሞም መኝታችን ለምለም [ነው]።",
           "B": "ውዴ፣ እንዴት መልከ መልካም ነህ! እንዴትስ ደስ ታሰኛለህ! \\q መኝታችን ለምለምና ቅጠላማ ነው።",
           "R": "ውዴ፣ በጣም መልከ መልካም ነህ፤ በጣም ደስ ትላለህ! \\q አረንጓዴው ሣር አልጋችን ይሆናል።"
+        },
+        "hi": {
+          "L": "अहा, तुम सुंदर [हो], मेरे प्रियतम, हाँ, मनभावने! \\q हाँ, हमारा बिछौना हरा [है]।",
+          "B": "तुम कितने सुंदर हो, मेरे प्रियतम, कितने मनभावने! \\q हमारा बिछौना हरा-भरा है।",
+          "R": "मेरे प्रिय, तुम बहुत सुंदर हो, बहुत प्यारे! \\q हरी घास हमारा बिछौना होगी।"
+        },
+        "ru": {
+          "L": "О, ты прекрасен, возлюбленный мой, да, приятен! \\q Да, наше ложе зеленеет.",
+          "B": "Как ты прекрасен, возлюбленный мой, как ты мил! \\q Наше ложе — зелёная листва.",
+          "R": "Любимый мой, ты такой красивый, такой приятный! \\q Зелёная трава будет нашей постелью."
+        },
+        "ja": {
+          "L": "ああ、あなたはりりしい、わたしの愛する人よ、まことに快い。 \\q まことに、わたしたちの寝床は青々としている。",
+          "B": "なんとりりしいのだろう、わたしの愛する人よ、なんと好ましいのだろう！ \\q わたしたちの寝床は青葉に覆われている。",
+          "R": "愛する人よ、あなたは本当にりりしくて、すてき！ \\q 緑の草が、わたしたちの寝床になる。"
+        },
+        "uk": {
+          "L": "Ох, ти гарний, коханий мій, так, милий! \\q Так, наше ложе зелене.",
+          "B": "Який ти гарний, коханий мій, який милий! \\q Наше ложе зелене й густолисте.",
+          "R": "Любий мій, ти такий гарний, такий милий! \\q Зелена трава буде нашим ліжком."
         }
       },
       "decisions": [
@@ -3807,6 +5567,26 @@
           "reason": "\"Kibichi\" said of a bed would mean unripe or wet in Swahili; Balanced says what the green is, fresh leaves and grass (m2), and Literal keeps the bare word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010160071",
+            "o220010160081"
+          ],
+          "choice": "\"Зелёная трава будет нашей постелью\"",
+          "alternatives": [
+            "\"наше ложе зелено\""
+          ],
+          "reason": "Readable says what the green couch is: the lovers lie outdoors (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3871,6 +5651,26 @@
           "L": "የቤቶቻችን ወራጆች ዝግባዎች [ናቸው]፤ \\q ማገሮቻችን ጥዶች [ናቸው]።",
           "B": "የቤታችን ወራጆች ዝግባዎች ናቸው፤ \\q ማገሮቻችንም ጥዶች ናቸው።",
           "R": "የዝግባ ዛፎች የቤታችን ወራጆች ናቸው። \\q የጥድ ዛፎች ጣሪያችን ናቸው።"
+        },
+        "hi": {
+          "L": "हमारे घरों की कड़ियाँ देवदार [हैं]; \\q हमारी धरनें सनोवर [हैं]।",
+          "B": "हमारे घर की कड़ियाँ देवदार की हैं; \\q हमारी धरनें सनोवर की हैं।",
+          "R": "देवदार के पेड़ हमारे घर की कड़ियाँ हैं। \\q सनोवर के पेड़ उसकी छत हैं।"
+        },
+        "ru": {
+          "L": "Балки наших домов — кедры; \\q наши стропила — кипарисы.",
+          "B": "Балки нашего дома — кедры; \\q наши стропила — кипарисы.",
+          "R": "Кедры — балки нашего дома. \\q Кипарисы — его крыша."
+        },
+        "ja": {
+          "L": "わたしたちの家々の梁は杉、 \\q わたしたちの垂木は糸杉。",
+          "B": "わたしたちの家の梁は杉、 \\q 垂木は糸杉。",
+          "R": "杉の木が、わたしたちの家の梁。 \\q 糸杉が、その屋根。"
+        },
+        "uk": {
+          "L": "Сволоки наших домів — кедри; \\q наші крокви — кипариси.",
+          "B": "Сволоки нашого дому — кедри; \\q наші крокви — кипариси.",
+          "R": "Кедри — це сволоки нашого дому. \\q Кипариси — його дах."
         }
       },
       "decisions": [
@@ -3967,6 +5767,70 @@
           "choice": "cedar \"ዝግባ\", cypress \"ጥድ\", as 1 Kings 5",
           "alternatives": [],
           "reason": "The tree names used for Solomon's timber on main.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010170031",
+            "o220010170061"
+          ],
+          "choice": "देवदार; सनोवर",
+          "alternatives": [
+            "सरो"
+          ],
+          "reason": "Cedar is देवदार and the tree the English calls cypress is सनोवर, as in Psalm 104:16-17 in this translation. The second tree is not certainly identified (cypress, fir or juniper).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010170061"
+          ],
+          "choice": "\"кипарисы\"",
+          "alternatives": [
+            "\"можжевельник\"",
+            "\"сосны\""
+          ],
+          "reason": "The tree is not certainly known (a cypress or a juniper); \"кипарис\" follows the related word in 1 Kings 5 in this translation.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o220010170031",
+            "o220010170061"
+          ],
+          "choice": "arazim \"杉\", berotim \"糸杉\" (as 1KI 5)",
+          "alternatives": [],
+          "reason": "The same tree names as 1 Kings and 2 Kings.",
           "uncertain": false,
           "footnote": false
         }

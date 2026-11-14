@@ -82,6 +82,11 @@
           "L": "Коли {{deity_pronoun:він|Він}} закінчив усі свої слова в слух народу, {{deity_pronoun:він|Він}} увійшов до Капернаума.",
           "B": "Коли Ісус закінчив говорити все це людям, які слухали, {{deity_pronoun:він|Він}} пішов до Капернаума.",
           "R": "Ісус закінчив навчати людей. Потім {{deity_pronoun:він|Він}} пішов до міста Капернаума."
+        },
+        "ja": {
+          "L": "[イエスは]民が聞いているところで、ご自分の言葉をすべて語り終えられると、カファルナウムに入られた。",
+          "B": "イエスは、聞いている人々にこれらのことをすべて話し終えられると、カファルナウムに入られた。",
+          "R": "イエスは人々に教えるのを終えられました。それから、カファルナウムの町に行かれました。"
         }
       },
       "decisions": [
@@ -317,6 +322,29 @@
           "reason": "Devanagari has no capital letters, so the setting has nothing to change; respect for Jesus is shown by the honorific third person and by \"आप\" at every level, as the style guide sets out. This holds for the whole chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42007001002",
+            "n42007001012"
+          ],
+          "choice": "light respect forms for Jesus in narration (\"語り終えられる\", \"入られた\"; R \"行かれました\"); narration plain at L and B, です・ます at R",
+          "alternatives": [
+            "no respect forms",
+            "heavier forms such as \"お入りになった\" throughout"
+          ],
+          "reason": "As in John, Acts and Mark, the narrator uses light respect forms for what Jesus and God do, and for no one else. Literal and Balanced narrate in the plain style, Readable in です・ます. This holds through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -401,6 +429,11 @@
           "L": "Раб же одного сотника, який був йому дорогий, хворів і мав померти.",
           "B": "У одного сотника був раб, дуже дорогий для нього, і цей раб тяжко захворів і був при смерті.",
           "R": "Там жив римський офіцер, сотник. У нього був слуга, якого він дуже цінував. Цей слуга захворів і мав ось-ось померти."
+        },
+        "ja": {
+          "L": "さて、ある百人隊長の奴隷が病気で、死にかけていた。この奴隷は、彼にとって大切な者であった。",
+          "B": "ある百人隊長に、とても大切にしているしもべがいたが、そのしもべが病気で死にかけていた。",
+          "R": "その町に、百人隊長と呼ばれる軍の隊長が住んでいました。彼には、とても大切にしているしもべがいました。そのしもべが病気になって、死にそうになっていました。"
         }
       },
       "decisions": [
@@ -877,6 +910,28 @@
           "reason": "The style guide keeps \"раб\" for doulos; Readable says \"слуга\", since the story is about a valued member of the household and the plain reader would hear \"раб\" as harsher than the centurion's care for him. Pais in 7:7 is \"слуга\" at every level.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007002004"
+          ],
+          "choice": "\"奴隷\" (L); \"しもべ\" (B, R)",
+          "alternatives": [
+            "\"召し使い\"",
+            "\"奴隷\" at every level"
+          ],
+          "reason": "The style guide's rule for this word: Literal keeps that the man was owned (m2), Balanced and Readable say \"しもべ\", as the English has slave and servant. The same split holds in 7:3, 7:8 and 7:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -968,6 +1023,11 @@
           "L": "Почувши ж про Ісуса, він послав до {{deity_pronoun:нього|Нього}} юдейських старійшин, просячи {{deity_pronoun:його|Його}}, щоб {{deity_pronoun:він|Він}}, прийшовши, урятував його раба.",
           "B": "Він почув про Ісуса й послав до {{deity_pronoun:нього|Нього}} юдейських старійшин, щоб попросити {{deity_pronoun:його|Його}} прийти й урятувати життя його рабові.",
           "R": "Сотник почув про Ісуса. Тому він послав до {{deity_pronoun:нього|Нього}} кількох юдейських провідників. Він хотів, щоб вони попросили Ісуса прийти й вилікувати його слугу."
+        },
+        "ja": {
+          "L": "そして[百人隊長は]イエスのことを聞くと、ユダヤ人の長老たちをイエスのもとに遣わし、来て自分の奴隷を救ってくださるようにと願った。",
+          "B": "百人隊長はイエスのことを聞いて、ユダヤ人の長老たちを何人かイエスのもとに送り、来てしもべの命を救ってくださるようにと頼んだ。",
+          "R": "百人隊長はイエスのうわさを聞きました。それで、ユダヤ人の指導者たちを何人かイエスのところに送りました。イエスに来ていただいて、しもべの病気を治してもらいたいと思ったのです。"
         }
       },
       "decisions": [
@@ -1265,6 +1325,11 @@
           "L": "А вони, прийшовши до Ісуса, щиро благали {{deity_pronoun:його|Його}}, кажучи: «Він гідний, щоб {{deity_pronoun:ти|Ти}} зробив йому це, \\v 5 бо він любить наш народ, і синагогу він сам збудував нам.»",
           "B": "Вони прийшли до Ісуса й наполегливо благали {{deity_pronoun:його|Його}}. «Він заслуговує, щоб {{deity_pronoun:ти|Ти}} зробив це для нього», — казали вони. \\v 5 «Він любить наш народ і сам збудував нам синагогу.»",
           "R": "Вони прийшли до Ісуса й благали {{deity_pronoun:його|Його}} допомогти. Вони казали: «Цей чоловік заслуговує на {{deity_pronoun:твою|Твою}} допомогу. \\v 5 Він любить наш народ і навіть заплатив за будівництво нашої синагоги.»"
+        },
+        "ja": {
+          "L": "彼らはイエスのもとに来ると、熱心にイエスに願って言った。「あの人は、あなたがこれをしてあげるのにふさわしい人です。\\v 5 わたしたちの民を愛していて、あの人自身がわたしたちのために会堂を建ててくれたのですから。」",
+          "B": "彼らはイエスのところに来て、しきりに願った。「あの人は、そうしていただくのにふさわしい人です」と彼らは言った。\\v 5 「わたしたちの民を愛していて、わたしたちのために会堂を建ててくれたのも、あの人なのです。」",
+          "R": "指導者たちはイエスのところに来て、助けてくださいと一生けんめいお願いしました。彼らは言いました。「あの人は、あなたに助けていただくのにふさわしい人です。\\v 5 わたしたちユダヤ人を愛していて、自分のお金でわたしたちの会堂まで建ててくれました。」"
         }
       },
       "decisions": [
@@ -1522,6 +1587,27 @@
           "reason": "Literal keeps \"nation\" as \"जाति\", the word for a people; Balanced and Readable say \"लोग\", since \"जाति\" also means caste.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42007004010"
+          ],
+          "choice": "the elders, the centurion's friends and the centurion speak to Jesus politely (です・ます)",
+          "alternatives": [
+            "plain style"
+          ],
+          "reason": "Petitioners who come to Jesus with a request speak politely, as the style guide asks; the elders speak of the centurion as \"あの人\", a man they respect but who is not present.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1600,6 +1686,11 @@
           "L": "Ісус же йшов з ними.",
           "B": "І Ісус пішов з ними.",
           "R": "Тож Ісус пішов з ними."
+        },
+        "ja": {
+          "L": "そしてイエスは、彼らと一緒に進んで行かれた。",
+          "B": "そこでイエスは、彼らと一緒に出かけられた。",
+          "R": "それでイエスは、その人たちと一緒に行かれました。"
         }
       },
       "decisions": [
@@ -1718,6 +1809,11 @@
           "L": "А коли {{deity_pronoun:він|Він}} був уже недалеко від дому, сотник послав друзів, кажучи {{deity_pronoun:йому|Йому}}: «Господи, не турбуйся, бо я не гідний, щоб {{deity_pronoun:ти|Ти}} ввійшов під мою стріху;",
           "B": "Коли {{deity_pronoun:він|Він}} був уже недалеко від дому, сотник послав друзів сказати {{deity_pronoun:йому|Йому}}: «Господи, не завдавай собі клопоту. Я не гідний, щоб {{deity_pronoun:ти|Ти}} ввійшов під мій дах.",
           "R": "Ісус уже підходив до дому, коли сотник послав до {{deity_pronoun:нього|Нього}} друзів. Вони сказали {{deity_pronoun:йому|Йому}}: «Господи, не турбуйся. Я не достойний того, щоб {{deity_pronoun:ти|Ти}} заходив до мого дому."
+        },
+        "ja": {
+          "L": "そして、[イエスが]もはやその家から遠くないところまで来られたとき、百人隊長は友人たちを遣わして、[イエスに]言った。「主よ、お手を煩わせるには及びません。わたしは、あなたにわたしの屋根の下に入っていただけるほどの者ではないからです。",
+          "B": "イエスがその家からもう遠くないところまで来られたとき、百人隊長は友人たちを送って、イエスにこう伝えさせた。「主よ、わざわざお越しくださるには及びません。わたしは、あなたをわたしの屋根の下にお迎えできるような者ではありません。",
+          "R": "イエスがその家の近くまで来られたとき、百人隊長は何人かの友だちをイエスのところに送りました。友だちは、百人隊長の言葉をイエスに伝えました。「主よ、わざわざ来てくださらなくてもけっこうです。わたしは、あなたに家に来ていただけるような者ではありません。"
         }
       },
       "decisions": [
@@ -1982,6 +2078,46 @@
           "reason": "In Luke's telling the title says more than \"sir\" (the meaning decision), so it is \"प्रभु\" at every level, as at Matthew 8:8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007006022"
+          ],
+          "choice": "\"主よ\" at every level for the centurion's address",
+          "alternatives": [
+            "\"主よ\" (L), \"先生\" (B, R), as for other strangers in the Gospels"
+          ],
+          "reason": "The Gospels' rule gives strangers \"先生\" at Balanced and Readable, but the meaning decision (m1) says that here the title says more than a polite address: the centurion trusts Jesus's word to command the sickness. So every level keeps \"主よ\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007006032"
+          ],
+          "choice": "\"家に来ていただける\" (R); \"屋根の下\" (L, B)",
+          "alternatives": [
+            "\"屋根の下\" at every level"
+          ],
+          "reason": "Literal and Balanced keep the picture of the roof, which reads clearly in Japanese; Readable says what it means (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2069,6 +2205,11 @@
           "L": "тому й себе я не вважав гідним прийти до {{deity_pronoun:тебе|Тебе}}; але скажи словом, і нехай одужає мій слуга.",
           "B": "Тому я й не вважав себе гідним сам прийти до {{deity_pronoun:тебе|Тебе}}. Тільки скажи слово, і нехай мій слуга одужає.",
           "R": "Тому я й не прийшов до {{deity_pronoun:тебе|Тебе}} сам. Тільки накажи, і мій слуга одужає."
+        },
+        "ja": {
+          "L": "ですから、わたしは自分自身を、あなたのところに行くのにふさわしい者とも思いませんでした。ただ、言葉で言ってください。そして、わたしのしもべが癒やされるようにしてください。",
+          "B": "ですから、自分からあなたのもとに伺うのも、ふさわしくないと思ったのです。ただ、ひと言お命じになって、わたしのしもべを癒やしてください。",
+          "R": "ですから、わたしは自分であなたのところへ行きませんでした。ただ、命令してください。そうすれば、わたしのしもべは治ります。"
         }
       },
       "decisions": [
@@ -2392,6 +2533,28 @@
           "reason": "A different Greek word from the one in 7:2, a household word for a servant or boy; \"सेवक\", as at Matthew 8:8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007007014"
+          ],
+          "choice": "\"しもべ\" at every level for this word",
+          "alternatives": [
+            "\"子\"",
+            "\"僕\" in kanji"
+          ],
+          "reason": "This is the household word for the same slave (m1), not a son, so Literal does not say \"奴隷\" here and keeps the difference from 7:2; \"子\" would suggest a child. \"しもべ\" is written in kana so that it is not read as the pronoun \"僕\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2495,6 +2658,11 @@
           "L": "Бо і я людина, поставлена під владою, маю під собою воїнів, і кажу цьому: “Іди”, — і він іде, а іншому: “Приходь”, — і він приходить, а моєму рабові: “Зроби це”, — і він робить.»",
           "B": "Бо я й сам служу під владою інших, і в мене під началом є воїни. Кажу одному: “Іди!” — і він іде; іншому: “Ходи сюди!” — і він приходить; а своєму рабові: “Зроби це!” — і він робить.»",
           "R": "Я знаю, що таке наказ. Наді мною є начальники, і в мене є воїни, які мене слухаються. Кажу одному воїнові: “Іди!” — і він іде. Кажу іншому: “Ходи сюди!” — і він приходить. Кажу своєму слузі: “Зроби це!” — і він робить.»"
+        },
+        "ja": {
+          "L": "なぜなら、わたしも権威の下に置かれている人間であり、自分の下に兵士たちを持っていて、この者に『行け』と言えば行き、別の者に『来い』と言えば来、わたしの奴隷に『これをしろ』と言えば[それを]するからです。」",
+          "B": "わたし自身も上に立つ人々の権威の下で仕えており、わたしの下にも兵士たちがいます。一人に『行け』と言えば行き、別の者に『ここに来い』と言えば来ます。しもべに『これをしろ』と言えば、そのとおりにします。」",
+          "R": "わたしは、命令するとはどういうことか、よく知っています。わたしの上にも隊長たちがいますし、わたしの命令に従う兵士たちもいます。一人の兵士に『行け』と言えば、その兵士は行きます。別の兵士に『ここに来い』と言えば、来ます。しもべに『これをしろ』と言えば、そのとおりにします。」"
         }
       },
       "decisions": [
@@ -2625,6 +2793,29 @@
           "reason": "An officer's orders to his men and his slave, as at Matthew 8:9.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42007008016",
+            "n42007008021",
+            "n42007008028"
+          ],
+          "choice": "the centurion's orders to his men in the plain imperative (\"行け\", \"来い\", \"これをしろ\")",
+          "alternatives": [
+            "\"行きなさい\""
+          ],
+          "reason": "An officer's commands to soldiers and slaves are curt, which makes the contrast with his polite words to Jesus plain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2720,6 +2911,11 @@
           "L": "Почувши ж це, Ісус здивувався з нього і, обернувшись до натовпу, що йшов за {{deity_pronoun:ним|Ним}}, сказав: «Кажу вам, навіть в Ізраїлі я не знайшов такої великої віри.»",
           "B": "Почувши це, Ісус здивувався з цього чоловіка. Він обернувся до натовпу, що йшов за {{deity_pronoun:ним|Ним}}, і сказав: «Кажу вам: навіть в Ізраїлі я не знайшов такої великої віри.»",
           "R": "Ісус здивувався, коли почув це. Він обернувся до натовпу, що йшов за {{deity_pronoun:ним|Ним}}, і сказав: «Кажу вам, навіть серед Божого народу в Ізраїлі я не бачив такої сильної віри, як у цього чоловіка!»"
+        },
+        "ja": {
+          "L": "イエスはこれらのことを聞いて、彼に驚かれた。そして振り向いて、ご自分について来ていた群衆に言われた。「あなたがたに言う。イスラエルの中でさえ、これほどの信仰を見いだしたことはない。」",
+          "B": "イエスはこれを聞いて、その人に驚かれた。そして、ついて来ていた群衆の方を振り向いて言われた。「あなたがたに言っておく。イスラエルの中でさえ、これほどの信仰に出会ったことはない。」",
+          "R": "イエスはこれを聞いて、驚かれました。そして、ついて来ていた群衆の方を振り向いて言われました。「言っておく。神の民イスラエルの中でも、この人ほど強い信仰を持った人に会ったことはない。」"
         }
       },
       "decisions": [
@@ -2939,6 +3135,28 @@
           "reason": "The Greek here has no \"amen\"; \"मैं तुमसे सच कहता हूँ\" is kept for that saying (Matthew 8:10 has it, Luke does not).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007009015",
+            "n42007009016"
+          ],
+          "choice": "\"あなたがたに言う\" (L); \"あなたがたに言っておく\" (B); \"あなたたちに言っておく\" (R)",
+          "alternatives": [
+            "\"言います\""
+          ],
+          "reason": "\"I tell you\" without amen follows the Gospels' amen formula without its first word; Jesus speaks plainly with authority at every level. The same wording holds through this chapter (7:26, 7:28, 7:47).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3022,6 +3240,11 @@
           "L": "І ті, яких було послано, повернувшись до дому, знайшли раба здоровим.",
           "B": "Коли посланці повернулися до дому, вони застали раба здоровим.",
           "R": "Люди, яких посилали, повернулися до дому сотника. Вони побачили, що слуга вже здоровий."
+        },
+        "ja": {
+          "L": "そして、遣わされた者たちが家に戻ってみると、その奴隷は健康になっていた。",
+          "B": "使いの者たちが家に帰ってみると、しもべは元気になっていた。",
+          "R": "送られた人たちは、百人隊長の家に戻りました。すると、しもべはすっかり元気になっていました。"
         }
       },
       "decisions": [
@@ -3187,6 +3410,11 @@
           "L": "І сталося незабаром, [що] {{deity_pronoun:він|Він}} пішов до міста, яке називалося Наїн, і з {{deity_pronoun:ним|Ним}} ішли {{deity_pronoun:його|Його}} учні й великий натовп.",
           "B": "Незабаром після цього Ісус пішов до міста, яке називалося Наїн. З {{deity_pronoun:ним|Ним}} ішли {{deity_pronoun:його|Його}} учні та великий натовп.",
           "R": "Незабаром після цього Ісус пішов до міста, яке називалося Наїн. З {{deity_pronoun:ним|Ним}} ішли {{deity_pronoun:його|Його}} учні, і за ними йшло ще багато людей."
+        },
+        "ja": {
+          "L": "そして、その後まもなく、[次のことが]起こった。[イエスは]ナインと呼ばれる町に行かれ、弟子たちと大勢の群衆が、[イエスと]一緒に進んで行った。",
+          "B": "その後まもなく、イエスはナインという町に行かれた。弟子たちも、大勢の群衆も一緒に行った。",
+          "R": "そのあとすぐ、イエスはナインという町に行かれました。弟子たちも一緒に行き、大勢の人々もついて行きました。"
         }
       },
       "decisions": [
@@ -3328,6 +3556,25 @@
           "reason": "The town's established Hindi Bible form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007011002"
+          ],
+          "choice": "\"[次のことが]起こった\" (L); not rendered (B, R)",
+          "alternatives": [
+            "\"こういうことが起こった\""
+          ],
+          "reason": "Luke's storytelling formula \"and it happened\" is kept in Literal as a short sentence of its own, as Mark's is in Japanese; Balanced and Readable start the story directly, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3428,6 +3675,11 @@
           "L": "Коли ж {{deity_pronoun:він|Він}} наблизився до міської брами, ось виносили померлого, єдиного сина своєї матері, а вона була вдова; і чималий натовп з міста був з нею.",
           "B": "Коли {{deity_pronoun:він|Він}} наближався до міської брами, звідти виносили померлого. Він був єдиним сином у своєї матері, а вона була вдова. З нею йшло багато людей з міста.",
           "R": "Коли Ісус підходив до міської брами, люди виносили з міста померлого, щоб поховати. Він був єдиним сином у матері, а її чоловік уже помер. З нею йшло багато людей з міста."
+        },
+        "ja": {
+          "L": "[イエスが]町の門に近づかれると、なんと、死んだ人が担ぎ出されるところであった。その母の一人息子で、彼女はやもめであった。そして、町の相当な数の群衆が彼女と一緒にいた。",
+          "B": "イエスが町の門に近づかれると、ちょうど死んだ人が担ぎ出されるところだった。その人は母親の一人息子で、母親はやもめであった。町の大勢の人々が彼女に付き添っていた。",
+          "R": "イエスが町の門に近づかれると、人々が死んだ人を葬るために運び出していました。死んだのは、ある母親の一人息子でした。その母親は、夫もすでに亡くしていました。町の大勢の人々が、その母親と一緒にいました。"
         }
       },
       "decisions": [
@@ -3750,6 +4002,48 @@
           "reason": "Literal keeps \"idou\", which draws attention to what follows; Balanced and Readable leave it out, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007012009"
+          ],
+          "choice": "\"なんと\" (L); \"ちょうど\" (B); not rendered (R)",
+          "alternatives": [
+            "\"見よ\""
+          ],
+          "reason": "In narration Luke's \"look\" draws attention to what follows; as in Acts, Literal says \"なんと\" rather than the old \"見よ\", and Balanced and Readable carry it in the flow of the sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007012020"
+          ],
+          "choice": "\"やもめ\" (L, B); \"夫もすでに亡くしていました\" (R)",
+          "alternatives": [
+            "\"未亡人\""
+          ],
+          "reason": "\"やもめ\" is the plain word for a widow; Readable says what it means for her (m3), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3835,6 +4129,11 @@
           "L": "І, побачивши її, Господь змилосердився над нею й сказав їй: «Не плач.»",
           "B": "Коли Господь побачив її, {{deity_pronoun:його|Його}} серце сповнилося жалем до неї, і {{deity_pronoun:він|Він}} сказав їй: «Не плач.»",
           "R": "Коли Господь Ісус побачив її, {{deity_pronoun:йому|Йому}} стало дуже шкода її. Він сказав їй: «Не плач.»"
+        },
+        "ja": {
+          "L": "主は彼女を見ると、彼女を深くあわれまれ、彼女に言われた。「泣くのをやめなさい。」",
+          "B": "主は彼女を見て、深くあわれみの心を動かされ、言われた。「もう泣かなくてよい。」",
+          "R": "主イエスはその母親を見て、とてもかわいそうに思われました。そして言われました。「もう泣かなくていい。」"
         }
       },
       "decisions": [
@@ -4072,6 +4371,48 @@
           "reason": "Luke the narrator calls Jesus by the title used for God; Hindi keeps \"प्रभु\" at every level, and Readable adds the name as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007013005"
+          ],
+          "choice": "\"主\" (L, B); \"主イエス\" (R)",
+          "alternatives": [
+            "\"イエス\""
+          ],
+          "reason": "The narrator calls Jesus by the title used for God (m1), so every level keeps \"主\"; Readable adds the name, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007013006"
+          ],
+          "choice": "\"深くあわれまれ\" (L); \"深くあわれみの心を動かされ\" (B); \"とてもかわいそうに思われました\" (R)",
+          "alternatives": [
+            "\"同情された\""
+          ],
+          "reason": "The verb is a deep pity that moves to action (m2). Literal and Balanced keep \"あわれみ\", the kana spelling used through the New Testament; Readable uses everyday words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4159,6 +4500,11 @@
           "L": "І, підійшовши, {{deity_pronoun:він|Він}} доторкнувся до мар, а ті, що несли, зупинилися, і {{deity_pronoun:він|Він}} сказав: «Юначе, тобі кажу: устань.»",
           "B": "Тоді {{deity_pronoun:він|Він}} підійшов і доторкнувся до мар, і ті, що несли їх, зупинилися. Він сказав: «Юначе, кажу тобі: встань!»",
           "R": "Тоді Ісус підійшов і доторкнувся до нош, на яких несли тіло. Чоловіки, що несли їх, зупинилися. Ісус сказав: «Юначе, кажу тобі: вставай!»"
+        },
+        "ja": {
+          "L": "そして近寄って担架に触れられると、担いでいた者たちは立ち止まった。そして[イエスは]言われた。「若者よ、あなたに言う。起きなさい。」",
+          "B": "そしてイエスは近寄って担架に手を触れられた。担いでいた人たちは立ち止まった。イエスは言われた。「若者よ、あなたに言う。起き上がりなさい。」",
+          "R": "それからイエスは近づいて、遺体を載せた担架にさわられました。担いでいた人たちは立ち止まりました。イエスは言われました。「若者よ、あなたに言う。起きなさい。」"
         }
       },
       "decisions": [
@@ -4465,6 +4811,28 @@
           "reason": "The soros here was an open frame for carrying the dead; \"мари\" is the Ukrainian word for it, and \"труна\" (a closed coffin) would make the young man's sitting up hard to picture. Readable says what it was in everyday words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007014005"
+          ],
+          "choice": "\"担架\" (L, B); \"遺体を載せた担架\" (R)",
+          "alternatives": [
+            "\"棺\"",
+            "\"棺台\""
+          ],
+          "reason": "The body lay on an open frame, not in a closed coffin (m1), so the translation avoids \"棺\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4550,6 +4918,11 @@
           "L": "І мертвий підвівся й сів, і почав говорити, і {{deity_pronoun:він|Він}} віддав його матері.",
           "B": "Мертвий підвівся, сів і почав говорити, й Ісус віддав його матері.",
           "R": "Мертвий підвівся, сів і почав говорити! Й Ісус повернув його матері."
+        },
+        "ja": {
+          "L": "すると死人は起き上がって座り、ものを言い始めた。そして[イエスは]彼をその母に渡された。",
+          "B": "すると死んでいた人が起き上がって座り、話し始めた。イエスは彼を母親に返された。",
+          "R": "すると、死んでいた人が起き上がって、話し始めたのです。イエスはその人を母親に返されました。"
         }
       },
       "decisions": [
@@ -4608,6 +4981,27 @@
             "he gave him"
           ],
           "reason": "Balanced and Readable name Jesus, since several men have been mentioned, and say \"back\" because she had lost him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007015009"
+          ],
+          "choice": "\"渡された\" (L); \"返された\" (B, R)",
+          "alternatives": [
+            "\"与えられた\""
+          ],
+          "reason": "The words echo Elijah giving the widow's son to his mother (m1). Literal keeps the plain verb of giving over; Balanced and Readable say \"返す\", because she had lost him.",
           "uncertain": false,
           "footnote": false
         }
@@ -4705,6 +5099,11 @@
           "L": "Страх же охопив усіх, і вони прославляли Бога, кажучи: «Великий пророк зʼявився серед нас», — і: «Бог відвідав {{deity_pronoun:свій|Свій}} народ!»",
           "B": "Благоговійний страх охопив усіх, і вони прославляли Бога. «Великий пророк зʼявився серед нас!» — казали вони, і ще: «Бог прийшов на допомогу своєму народові!»",
           "R": "Усіх, хто там був, охопили страх і подив, і вони прославляли Бога. Вони казали: «До нас прийшов великий пророк!» Ще вони казали: «Бог прийшов допомогти своєму народові!»"
+        },
+        "ja": {
+          "L": "すると恐れが皆をとらえ、彼らは「大いなる預言者が、わたしたちの間に起こされた」、また「神はご自分の民を顧みてくださった」と言って、神をあがめていた。",
+          "B": "人々はみな畏れに打たれ、神をあがめた。「偉大な預言者がわたしたちの間に現れた」と彼らは言い、また「神がご自分の民を助けに来てくださった」と言った。",
+          "R": "そこにいた人たちはみな、おそれと驚きでいっぱいになり、神をあがめました。人々は「偉大な預言者がわたしたちのところに現れた」と言いました。また「神がご自分の民を助けに来てくださった」とも言いました。"
         }
       },
       "decisions": [
@@ -5042,6 +5441,48 @@
           "reason": "\"Visited\" means came to help; Balanced and Readable say so, with honorific forms for God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007016003"
+          ],
+          "choice": "\"恐れ\" (L); \"畏れに打たれ\" (B); \"おそれと驚き\" (R)",
+          "alternatives": [
+            "\"恐怖\""
+          ],
+          "reason": "The fear is awe before God's power (m1), not terror: Balanced writes it with the kanji for reverent fear, and Readable adds wonder, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007016018"
+          ],
+          "choice": "\"顧みてくださった\" (L); \"助けに来てくださった\" (B, R)",
+          "alternatives": [
+            "\"訪れた\""
+          ],
+          "reason": "God's visiting is his coming to act for his people (m4). Literal keeps the biblical \"顧みる\"; Balanced and Readable give the sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5129,6 +5570,11 @@
           "L": "І вийшла ця звістка про {{deity_pronoun:нього|Нього}} по всій Юдеї й по всій околиці.",
           "B": "Ця звістка про {{deity_pronoun:нього|Нього}} розійшлася по всій Юдеї та по всіх навколишніх краях.",
           "R": "Новина про те, що зробив Ісус, розійшлася по всій країні юдеїв і по всіх місцях довкола."
+        },
+        "ja": {
+          "L": "そして、イエスについてのこの話は、ユダヤ全土と周りの地方全体に出て行った。",
+          "B": "イエスについてのこの知らせは、ユダヤ全土とその周りの地方一帯に広まった。",
+          "R": "イエスがなさったことのうわさは、ユダヤ人の住む地方のいたるところと、そのまわりの地方全体に広まりました。"
         }
       },
       "decisions": [
@@ -5320,6 +5766,11 @@
           "L": "І розповіли Іванові його учні про все це.",
           "B": "Іванові учні розповіли йому про все це.",
           "R": "Учні Івана розповіли йому про все, що робив Ісус."
+        },
+        "ja": {
+          "L": "そして、ヨハネの弟子たちは、これらすべてのことについて彼に知らせた。",
+          "B": "ヨハネの弟子たちは、これらのことをすべてヨハネに知らせた。",
+          "R": "ヨハネの弟子たちは、イエスがしておられることを、すべてヨハネに知らせました。"
         }
       },
       "decisions": [
@@ -5550,6 +6001,25 @@
           "reason": "The style guide keeps \"चेले\" for disciples at every level, John's disciples included, where the English Readable says \"followers\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007018005"
+          ],
+          "choice": "\"弟子たち\" (R), as at Literal and Balanced",
+          "alternatives": [
+            "\"ヨハネに従う人たち\""
+          ],
+          "reason": "The English Readable says \"followers\" so as not to confuse them with Jesus's disciples; Japanese keeps \"弟子たち\", the Gospels' word at every level, and \"ヨハネの\" makes clear whose they are.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5644,6 +6114,11 @@
           "L": "І, покликавши двох зі своїх учнів, Іван \\v 19 послав [їх] до Господа, кажучи: «Чи {{deity_pronoun:ти|Ти}} Той, хто приходить, чи нам чекати іншого?»",
           "B": "Тож Іван покликав двох зі своїх учнів \\v 19 і послав їх до Господа запитати: «Чи {{deity_pronoun:ти|Ти}} Той, хто має прийти, чи нам чекати когось іншого?»",
           "R": "Тож Іван покликав двох своїх учнів. \\v 19 Він послав їх до Господа Ісуса запитати: «Чи {{deity_pronoun:ти|Ти}} Той, кого Бог обіцяв послати? Чи нам і далі чекати когось іншого?»"
+        },
+        "ja": {
+          "L": "そしてヨハネは、自分の弟子たちのうちのある二人を呼び寄せて、\\v 19 主のもとに遣わし、言わせた。「あなたは来るべき方ですか？それとも、ほかの方を待つべきでしょうか？」",
+          "B": "そこでヨハネは、弟子の中から二人を呼んで、\\v 19 主のもとに送り、こう尋ねさせた。「来るべき方は、あなたでしょうか？それとも、ほかの方を待たなければなりませんか？」",
+          "R": "そこでヨハネは、弟子たちのうち二人を呼びました。\\v 19 そして、その二人を主イエスのところに送って、こう尋ねさせました。「あなたは、神が送ると約束された方ですか？それとも、ほかの方を待たなければなりませんか？」"
         }
       },
       "decisions": [
@@ -5915,6 +6390,27 @@
           "reason": "Ho erchomenos is a title for the one God promised to send; the capital marks it as a title, which the Ukrainian demonstrative otherwise would not show. It is not under the deity_pronoun setting, since it is a title, not a pronoun.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007019009"
+          ],
+          "choice": "John's question in the words of Matthew 11:3 in Japanese: \"来るべき方\" (L, B); \"神が送ると約束された方\" (R)",
+          "alternatives": [
+            "\"来られる方\""
+          ],
+          "reason": "The Greek question is the same as in Matthew 11:3, so each level keeps Matthew's Japanese. John asks politely, as one who looks to Jesus for an answer; \"来るべき\" carries the promise behind the title (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6009,6 +6505,11 @@
           "L": "Прийшовши ж до {{deity_pronoun:нього|Нього}}, чоловіки сказали: «Іван Хреститель послав нас до {{deity_pronoun:тебе|Тебе}}, кажучи: “Чи {{deity_pronoun:ти|Ти}} Той, хто приходить, чи нам чекати іншого?”»",
           "B": "Коли ці чоловіки прийшли до {{deity_pronoun:нього|Нього}}, вони сказали: «Іван Хреститель послав нас до {{deity_pronoun:тебе|Тебе}} запитати: “Чи {{deity_pronoun:ти|Ти}} Той, хто має прийти, чи нам чекати когось іншого?”»",
           "R": "Чоловіки прийшли до Ісуса й сказали: «Іван Хреститель послав нас до {{deity_pronoun:тебе|Тебе}}. Він хоче знати: “Чи {{deity_pronoun:ти|Ти}} Той, кого Бог обіцяв послати? Чи нам і далі чекати когось іншого?”»"
+        },
+        "ja": {
+          "L": "その男たちは[イエスの]もとに来て言った。「洗礼者ヨハネが、わたしたちをあなたのもとに遣わして、言っています。『あなたは来るべき方ですか？それとも、ほかの方を待つべきでしょうか？』」",
+          "B": "男たちはイエスのもとに来て言った。「洗礼者ヨハネがわたしたちをあなたのところに送って、こう尋ねさせました。『来るべき方は、あなたでしょうか？それとも、ほかの方を待たなければなりませんか？』」",
+          "R": "その人たちはイエスのところに来て言いました。「洗礼者ヨハネが、わたしたちをあなたのところに送りました。ヨハネはこう聞いています。『あなたは、神が送ると約束された方ですか？それとも、ほかの方を待たなければなりませんか？』」"
         }
       },
       "decisions": [
@@ -6163,6 +6664,26 @@
           "reason": "Amharic puts the words quoted before the verb of saying, so in Literal and Balanced John's question comes inside the sentence rather than at its end; the quotation itself is the same.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007020016",
+            "n42007020022"
+          ],
+          "choice": "the question repeated word for word from 7:19 at each level",
+          "alternatives": [],
+          "reason": "Luke repeats John's question in full (m2), so Japanese repeats each level's wording of 7:19 exactly, now as a quotation inside the messengers' words.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6253,6 +6774,11 @@
           "L": "У ту годину {{deity_pronoun:він|Він}} зцілив багатьох від хвороб, і недуг, і злих духів, і багатьом сліпим дарував бачити.",
           "B": "Саме тоді {{deity_pronoun:він|Він}} зцілив багатьох від хвороб, болісних недуг і злих духів, а багатьом сліпим дарував зір.",
           "R": "Саме в той час Ісус зцілював багатьох людей. Одні мали хвороби чи страшні болі, інші — злих духів. Ісус також зробив так, що багато сліпих почали бачити."
+        },
+        "ja": {
+          "L": "その時、[イエスは]多くの人々を病と苦しみと悪い霊から癒やし、また、多くの目の見えない人々に見えることを恵み与えられた。",
+          "B": "ちょうどその時、イエスは病気やひどい苦痛や悪い霊に苦しむ多くの人々を癒やし、多くの目の見えない人々を見えるようにしてくださった。",
+          "R": "ちょうどその時、イエスはたくさんの人をいやしておられました。病気の人もいれば、ひどい痛みに苦しむ人も、悪い霊に取りつかれた人もいました。イエスはまた、目の見えない多くの人を見えるようにされました。"
         }
       },
       "decisions": [
@@ -6414,6 +6940,48 @@
           "reason": "Luke's word here is \"evil\", not \"unclean\", so Literal and Balanced say \"악한 영\" as well as Readable. The verb means to give as a free gift (meaning decision), which Literal keeps.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007021012",
+            "n42007021013"
+          ],
+          "choice": "\"悪い霊\" for evil spirits",
+          "alternatives": [
+            "\"悪霊\""
+          ],
+          "reason": "\"悪霊\" is kept for the Greek word for a demon (7:33); this phrase is \"evil spirits\", so Japanese says it in two words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007021017"
+          ],
+          "choice": "\"恵み与えられた\" (L); \"見えるようにしてくださった\" (B)",
+          "alternatives": [
+            "\"見えるようにされた\" at every level"
+          ],
+          "reason": "The verb means to give freely as a favor (m2); Literal keeps the word of gift, Balanced says it with \"てくださった\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6509,6 +7077,11 @@
           "L": "І, відповідаючи, {{deity_pronoun:він|Він}} сказав їм: «Ідіть, сповістіть Іванові, що ви бачили й чули: сліпі прозрівають, криві ходять, прокажені очищуються, і глухі чують, мертві воскресають, убогим звіщається Добра звістка;",
           "B": "Тож {{deity_pronoun:він|Він}} відповів їм: «Ідіть і розкажіть Іванові, що ви бачили й чули. Сліпі знову бачать, криві ходять, хворі на проказу очищуються, глухі чують, мертві воскресають, а вбогим звіщається Добра звістка.",
           "R": "Ісус відповів учням Івана: «Ідіть і розкажіть Іванові, що ви бачили й чули. Сліпі бачать. Ті, хто не міг ходити, ходять. Люди зі шкірними хворобами одужують і стають чистими. Глухі чують. Мертві оживають. А бідним людям розповідають Добру звістку."
+        },
+        "ja": {
+          "L": "そして[イエスは]答えて彼らに言われた。「行って、あなたがたが見たことと聞いたことをヨハネに知らせなさい。目の見えない者たちは見えるようになり、足の不自由な者たちは歩き、重い皮膚病の者たちは清められ、耳の聞こえない者たちは聞き、死者たちは起こされ、貧しい者たちは福音を告げ知らされている。",
+          "B": "そこでイエスはお答えになった。「帰って、あなたがたが見たこと、聞いたことをヨハネに伝えなさい。目の見えない人は見えるようになり、足の不自由な人は歩き、重い皮膚病の人は清められ、耳の聞こえない人は聞こえるようになり、死者は生き返り、貧しい人々は福音を聞いている。",
+          "R": "イエスはヨハネの弟子たちに答えられました。「帰って、あなたたちが見たり聞いたりしたことを、ヨハネに話しなさい。目の見えない人が、また見えるようになっている。歩けなかった人が歩いている。重い皮膚の病気の人がいやされて、清くなっている。耳の聞こえない人が聞こえるようになっている。死んだ人が生き返っている。そして、貧しい人たちが良い知らせを聞いている。"
         }
       },
       "decisions": [
@@ -6904,6 +7477,29 @@
           "reason": "The verb euangelizontai is rendered with its noun, \"Добра звістка\"; \"благовіствується\" is Church Slavonic, and \"Євангеліє\" here would sound like the name of a book.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007022012",
+            "n42007022016",
+            "n42007022023"
+          ],
+          "choice": "the list in the words of Matthew 11:5 in Japanese; \"重い皮膚病\" (L, B), \"重い皮膚の病気\" (R) as in Mark 1:40",
+          "alternatives": [
+            "\"らい病\""
+          ],
+          "reason": "Jesus's answer is the same list as in Matthew 11:5, so each level keeps Matthew's Japanese. The word for leprosy covered several skin diseases (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6985,6 +7581,11 @@
           "L": "І блаженний той, хто не спіткнеться через {{deity_pronoun:мене|Мене}}.»",
           "B": "І блаженний кожен, хто не відпаде від віри через {{deity_pronoun:мене|Мене}}.»",
           "R": "Який щасливий кожен, хто не відпаде від віри через те, що я роблю!»"
+        },
+        "ja": {
+          "L": "そして、わたしにつまずかない者は幸いだ。」",
+          "B": "わたしにつまずかない人は幸いである。」",
+          "R": "わたしのすることを見てもつまずかず、わたしから離れて行かない人は、なんと幸せだろう。」"
         }
       },
       "decisions": [
@@ -7229,6 +7830,28 @@
           "reason": "The Gospel convention for skandalizō: \"спокуситися\" now means to be tempted, which is not the sense; the word is about being tripped up so as to turn away.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007023002",
+            "n42007023007"
+          ],
+          "choice": "\"幸いだ\" (L); \"幸いである\" (B); \"なんと幸せだろう\" (R); \"つまずく\" at every level",
+          "alternatives": [
+            "\"いやな思いをする\" (R)"
+          ],
+          "reason": "The Gospels' words for blessed; Readable makes it an exclamation, as the English does. The verb means being led to fall away, not only feeling hurt (m1), so Readable keeps \"つまずく\" and adds turning away.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7319,6 +7942,11 @@
           "L": "Коли ж Іванові вісники відійшли, {{deity_pronoun:він|Він}} почав говорити натовпам про Івана: «Що ви ходили в пустелю оглядати?",
           "B": "Коли Іванові посланці відійшли, Ісус почав говорити до натовпів про Івана. «Що ви ходили дивитися в пустелю?",
           "R": "Коли посланці Івана пішли, Ісус почав говорити до людей про Івана. Він сказав: «Коли ви ходили в пустелю подивитися на Івана, що ви сподівалися побачити?"
+        },
+        "ja": {
+          "L": "さて、ヨハネの使者たちが去ると、[イエスは]ヨハネについて群衆に話し始められた。「あなたがたは何を眺めに荒れ野へ出て行ったのか？",
+          "B": "ヨハネの使いの者たちが帰って行くと、イエスは群衆にヨハネのことを話し始められた。「あなたがたは何を見に荒れ野へ出て行ったのか？",
+          "R": "ヨハネの使いの人たちが帰って行くと、イエスは群衆にヨハネのことを話し始められました。イエスは言われました。「あなたたちは荒れ野へヨハネを見に出かけて行ったとき、何を見ようと思っていたのか？"
         }
       },
       "decisions": [
@@ -7606,6 +8234,25 @@
           "reason": "As settled in Matthew: wilderness is dry, empty country, not forest.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007024004"
+          ],
+          "choice": "\"使者たち\" (L), the word used of John in 7:27",
+          "alternatives": [
+            "\"天使たち\""
+          ],
+          "reason": "The word can mean angel, but here it is John's two disciples (m1); Literal uses \"使者\" here and in 7:27 so that the link Jesus makes stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7682,6 +8329,11 @@
           "L": "Очерет, хитаний вітром?",
           "B": "Очерет, що гнеться на вітрі?",
           "R": "Високу очеретину, яку вітер хитає туди й сюди?"
+        },
+        "ja": {
+          "L": "風に揺らされる葦か？",
+          "B": "風に揺れ動く葦か？",
+          "R": "風が吹くたびにあちこちに揺れる、背の高いあしか？"
         }
       },
       "decisions": [
@@ -7798,6 +8450,11 @@
           "L": "Але що ви ходили побачити?",
           "B": "Як ні, то що ви ходили побачити?",
           "R": "Що ще ви сподівалися побачити?"
+        },
+        "ja": {
+          "L": "では、何を見に出て行ったのか？",
+          "B": "そうでなければ、何を見に出て行ったのか？",
+          "R": "では、ほかに何を見ようと思ったのか？"
         }
       },
       "decisions": [
@@ -7893,6 +8550,11 @@
           "L": "Людину, зодягнену в мʼякий одяг?",
           "B": "Людину, вбрану в мʼякий, вишуканий одяг?",
           "R": "Чоловіка в мʼякому, дорогому одязі?"
+        },
+        "ja": {
+          "L": "柔らかい衣をまとった人か？",
+          "B": "柔らかで上等な着物を着た人か？",
+          "R": "高くてぜいたくな服を着た人か？"
         }
       },
       "decisions": [
@@ -7996,6 +8658,11 @@
           "L": "Ось ті, що в пишному одязі та в розкошах живуть, — у царських палатах.",
           "B": "Ті, хто носить пишний одяг і живе в розкошах, перебувають у царських палацах.",
           "R": "Люди, які носять гарний одяг і живуть у розкошах, живуть у палацах царів."
+        },
+        "ja": {
+          "L": "見なさい、豪華な衣を着て、ぜいたくに暮らしている者たちは、王宮にいる。",
+          "B": "きらびやかな着物を着て、ぜいたくに暮らしている人々なら、王の宮殿にいる。",
+          "R": "立派な服を着て、ぜいたくな暮らしをしている人たちは、王の宮殿にいる。"
         }
       },
       "decisions": [
@@ -8113,6 +8780,11 @@
           "L": "Але що ви ходили побачити?",
           "B": "То що ж ви ходили побачити?",
           "R": "То що ж ви ходили побачити?"
+        },
+        "ja": {
+          "L": "しかし、何を見に出て行ったのか？",
+          "B": "では、何を見に出て行ったのか？",
+          "R": "では、何を見に行ったのか？"
         }
       },
       "decisions": [
@@ -8207,6 +8879,11 @@
           "L": "Пророка?",
           "B": "Пророка?",
           "R": "Ви ходили побачити пророка?"
+        },
+        "ja": {
+          "L": "預言者か？",
+          "B": "預言者か？",
+          "R": "預言者を見に行ったのか？"
         }
       },
       "decisions": [
@@ -8341,6 +9018,11 @@
           "L": "Так, кажу вам, і більше, ніж пророка.",
           "B": "Так, кажу вам, і набагато більше, ніж пророка.",
           "R": "Так, він пророк. Але кажу вам: він навіть більший за пророка."
+        },
+        "ja": {
+          "L": "そうだ、あなたがたに言う、しかも預言者以上の者である。",
+          "B": "そのとおりだ。あなたがたに言っておく。彼は預言者よりはるかにまさった者である。",
+          "R": "そうだ、ヨハネは預言者だ。しかし、言っておく。ヨハネは預言者よりもっと大きな人だ。"
         }
       },
       "decisions": [
@@ -8471,6 +9153,11 @@
           "L": "Це той, про кого написано: “Ось {{deity_pronoun:я|Я}} посилаю {{deity_pronoun:мого|Мого}} вісника перед {{deity_pronoun:твоїм|Твоїм}} обличчям, який приготує {{deity_pronoun:твою|Твою}} дорогу перед {{deity_pronoun:тобою|Тобою}}.”",
           "B": "Це той, про кого говорить Писання: “Я посилаю {{deity_pronoun:мого|Мого}} вісника, щоб він ішов перед {{deity_pronoun:тобою|Тобою}}; він приготує {{deity_pronoun:твою|Твою}} дорогу попереду {{deity_pronoun:тебе|Тебе}}.”",
           "R": "Іван — той, про кого говорить Писання. Там Бог каже Тому, хто має прийти: “Я посилаю {{deity_pronoun:мого|Мого}} вісника попереду {{deity_pronoun:тебе|Тебе}}. Він приготує для {{deity_pronoun:тебе|Тебе}} дорогу.”"
+        },
+        "ja": {
+          "L": "この人こそ、[こう]書かれている者である。『見なさい、わたしはわたしの使者をあなたの顔の前に遣わす。彼はあなたの前にあなたの道を整えるであろう。』",
+          "B": "この人のことを、聖書はこう言っている。『見なさい、わたしはあなたに先立って、わたしの使者を遣わす。彼はあなたの前に道を備える。』",
+          "R": "ヨハネこそ、聖書に書かれている人だ。そこで神は、来られる方にこう言われた。『見なさい。わたしは、わたしの使いをあなたより先に送る。その使いが、あなたのために道の準備をする。』"
         }
       },
       "decisions": [
@@ -8897,6 +9584,28 @@
           "reason": "Ukrainian would usually say \"свого\" here, but the reflexive takes no capital; \"мого\" keeps God's pronoun under the setting, as the English capitalises \"My\", and \"я\" goes with it so the capitals agree.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007027006",
+            "n42007027009"
+          ],
+          "choice": "the quotation in the words of Matthew 11:10 in Japanese: \"見なさい\", \"使者\" (L, B), \"使い\" (R)",
+          "alternatives": [
+            "leaving out \"見なさい\" at Balanced, as the English Balanced does"
+          ],
+          "reason": "The quotation is the same as in Matthew 11:10 and Mark 1:2 (m1), so each level keeps their Japanese. \"使者\" is the word of 7:24 (m4). Readable says to whom God speaks, as the English Readable does (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8989,6 +9698,11 @@
           "L": "Кажу вам: серед народжених жінками ніхто не більший за Івана; а найменший у Царстві Божому більший за нього.»",
           "B": "Кажу вам: з усіх, хто народився від жінки, немає нікого більшого за Івана. Та найменший у Царстві Божому більший за нього.»",
           "R": "Кажу вам: з усіх людей, які будь-коли народилися, ніхто не більший за Івана. Але навіть найменш важлива людина в Царстві Божому більша за нього.»"
+        },
+        "ja": {
+          "L": "あなたがたに言う、女から生まれた者たちの中で、ヨハネより大いなる者はだれもいない。しかし、神の国で最も小さい者も、彼より大いなる者である。」",
+          "B": "あなたがたに言っておく。女から生まれた者のうち、ヨハネより偉大な者はいない。しかし、神の国でいちばん小さな者でも、彼より偉大である。」",
+          "R": "言っておく。今まで生まれた人の中で、ヨハネより偉い人はいない。しかし、神の国でいちばん小さな人でも、ヨハネより偉いのだ。」"
         }
       },
       "decisions": [
@@ -9227,6 +9941,26 @@
           "reason": "The key term, in its modern spelling, at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007028003",
+            "n42007028012"
+          ],
+          "choice": "worded as Matthew 11:11 in Japanese: \"大いなる\" (L), \"偉大な\" (B), \"偉い\" (R); \"最も小さい者\" (L), \"いちばん小さな者\" (B, R)",
+          "alternatives": [],
+          "reason": "The saying is the same as in Matthew 11:11, without its amen and with \"kingdom of God\" for \"kingdom of heaven\"; each level keeps Matthew's Japanese for it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9314,6 +10048,11 @@
           "L": "І весь народ, що слухав, і митарі виправдали Бога, охрестившись хрещенням Івана;",
           "B": "Усі люди, які це чули, навіть збирачі податків, визнали, що Бог правий, бо вони прийняли хрещення від Івана.",
           "R": "Усі люди, які чули слова Ісуса, погодилися, що Божий шлях правильний. Збирачі податків теж погодилися. Це вони дозволили Іванові охрестити їх."
+        },
+        "ja": {
+          "L": "そして、聞いた民はみな、また徴税人たちも、ヨハネの洗礼を受けていて、神を正しいと認めた。",
+          "B": "これを聞いた民はみな、徴税人たちまでも、神が正しいと認めた。彼らはヨハネから洗礼を受けていたからである。",
+          "R": "イエスのこの言葉を聞いた人々はみな、神のなさり方は正しいと認めました。税金を集める人たちも、そう認めました。この人たちは、ヨハネから洗礼を受けていたのです。"
         }
       },
       "decisions": [
@@ -9792,6 +10531,28 @@
           "reason": "Edikaiōsan here means they declared God to be in the right; Literal keeps the verb the letters render \"виправдати\", the other levels say what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007029009"
+          ],
+          "choice": "\"神を正しいと認めた\" (L); \"神が正しいと認めた\" (B); \"神のなさり方は正しいと認めました\" (R)",
+          "alternatives": [
+            "\"神を義とした\" (L)",
+            "\"神をたたえた\""
+          ],
+          "reason": "The verb declares someone in the right (m2); \"神を義とする\" reads oddly in Japanese, so every level says \"正しいと認める\". 7:35 uses the same verb, and Literal there says \"正しいと認められた\", so the link stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9881,6 +10642,11 @@
           "L": "А фарисеї й законники відкинули Божий задум щодо себе, не охрестившись від нього.",
           "B": "Але фарисеї та знавці Закону відкинули те, що Бог задумав для них, бо не дали Іванові охрестити себе.",
           "R": "Але фарисеї та знавці Божого Закону відвернулися від того, що Бог хотів для них зробити. Вони не дали Іванові охрестити їх."
+        },
+        "ja": {
+          "L": "しかし、ファリサイ派の人々と律法の専門家たちは、自分たちに対する神の計画を退け、彼から洗礼を受けなかった。",
+          "B": "しかし、ファリサイ派の人々と律法の専門家たちは、神が彼らのために定めておられたことを拒んだ。ヨハネから洗礼を受けなかったからである。",
+          "R": "しかし、ファリサイ派の人々と、神の律法にくわしい人たちは、神が彼らのためにしようとしておられたことに背を向けました。ヨハネから洗礼を受けようとしなかったのです。"
         }
       },
       "decisions": [
@@ -10224,6 +10990,28 @@
           "reason": "The Gospel convention for nomikos, kept apart from the scribes (\"книжники\", \"учителі Закону\"), though the two groups were much alike.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007030006"
+          ],
+          "choice": "\"律法の専門家たち\" (L, B); \"神の律法にくわしい人たち\" (R)",
+          "alternatives": [
+            "\"律法学者\"",
+            "\"法律家\""
+          ],
+          "reason": "Luke's word for experts in the law of Moses (m1) is kept apart from the scribes (\"律法学者\"), which is a different word; \"法律家\" would suggest courts. Use this through Luke.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10308,6 +11096,11 @@
           "L": "«До кого ж уподібню людей цього покоління, і до кого вони подібні?",
           "B": "Ісус говорив далі: «З чим же порівняти людей цього покоління? На кого вони схожі?",
           "R": "Ісус продовжував: «Як мені описати людей, які живуть тепер? На кого вони схожі?"
+        },
+        "ja": {
+          "L": "「では、この時代の人々を何にたとえようか？また、彼らは何に似ているか？",
+          "B": "イエスはさらに言われた。「では、この時代の人々を何にたとえようか？彼らは何に似ているだろうか？",
+          "R": "イエスは続けて言われました。「今の時代の人たちのことを、どう言ったらよいだろう？あの人たちは何に似ているだろう？"
         }
       },
       "decisions": [
@@ -10597,6 +11390,27 @@
           "reason": "Anthrōpous means human beings, and Ukrainian \"люди\" is already inclusive, so the English gender setting has nothing to change here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007031005"
+          ],
+          "choice": "\"人々\" / \"人たち\" with no gender span",
+          "alternatives": [
+            "{{gender:人々|男たち}}"
+          ],
+          "reason": "The English has a gender span on this word, which means people in general (m3). Japanese \"人々\" already includes men and women, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10690,6 +11504,11 @@
           "L": "Вони подібні до дітей, що сидять на ринковій площі й гукають одні до одних, кажучи: “Ми грали вам на сопілці, а ви не танцювали; ми голосили, а ви не плакали.”",
           "B": "Вони схожі на малих дітей, які сидять на міській площі й гукають одні одним: “Ми грали вам на сопілці весільну, а ви не танцювали. Ми співали похоронну пісню, а ви не плакали.”",
           "R": "Вони схожі на дітей, що сидять на міській площі. Вони гукають одні одним: “Ми грали вам веселу музику на сопілці, а ви не хотіли танцювати! Ми співали сумних пісень, а ви не хотіли плакати!”"
+        },
+        "ja": {
+          "L": "彼らは、広場に座って互いに呼びかけ合っている子どもたちに似ている。[子どもたちは]言う。『わたしたちはあなたがたに笛を吹いたのに、あなたがたは踊らなかった。嘆きの歌を歌ったのに、あなたがたは泣かなかった。』",
+          "B": "彼らは、町の広場に座って互いに呼びかけ合っている小さな子どもたちのようである。『婚礼の曲を笛で吹いてあげたのに、踊ってくれなかった。弔いの歌を歌ってあげたのに、泣いてくれなかった。』",
+          "R": "あの人たちは、町の広場に座っている子どもたちのようだ。子どもたちは互いに大声で言う。『楽しい曲を笛で吹いてあげたのに、踊ってくれなかった。悲しい歌を歌ってあげたのに、泣いてくれなかった。』"
         }
       },
       "decisions": [
@@ -10871,6 +11690,25 @@
           "reason": "\"Сопілка\" is the living Ukrainian name for a simple pipe children and village musicians play; \"флейта\" suggests a concert instrument.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007032013",
+            "n42007032018"
+          ],
+          "choice": "\"吹いてあげたのに……踊ってくれなかった\" (B, R), as in Matthew 11:17",
+          "alternatives": [],
+          "reason": "The children's complaint is shaped as in Matthew's Japanese, with \"泣いてくれなかった\" for Luke's \"weep\" where Matthew has beating the breast.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10958,6 +11796,11 @@
           "L": "Бо прийшов Іван Хреститель, не їдячи хліба й не пʼючи вина, і ви кажете: “Він має біса.”",
           "B": "Бо прийшов Іван Хреститель, що не їв хліба й не пив вина, а ви кажете: “У ньому біс.”",
           "R": "Прийшов Іван Хреститель, і він не їв хліба й не пив вина. А ви казали: “У ньому сидить біс!”"
+        },
+        "ja": {
+          "L": "洗礼者ヨハネが来て、パンを食べもせず、ぶどう酒を飲みもしないでいると、あなたがたは『彼は悪霊を持っている』と言うからである。",
+          "B": "洗礼者ヨハネが来て、パンも食べず、ぶどう酒も飲まずにいると、あなたがたは『あの男には悪霊が取りついている』と言う。",
+          "R": "洗礼者ヨハネが来て、パンも食べず、ぶどう酒も飲まなかった。するとあなたたちは、『あの男は悪霊に取りつかれている』と言った。"
         }
       },
       "decisions": [
@@ -11208,6 +12051,11 @@
           "L": "Прийшов Син Людський, їдячи й пʼючи, і ви кажете: “Ось людина ненажера й пʼяниця, друг митарів і грішників!”",
           "B": "Прийшов Син Людський, що їсть і пʼє, а ви кажете: “Ось чоловік! Ненажера й пияк, друг збирачів податків і грішників!”",
           "R": "Прийшов Син Людський, і {{deity_pronoun:він|Він}} їв і пив. А ви казали: “Подивіться на {{deity_pronoun:нього|Нього}}! Він забагато їсть і забагато пʼє вина. Він друг збирачів податків і грішників!”"
+        },
+        "ja": {
+          "L": "人の子が来て、食べたり飲んだりしていると、あなたがたは『見ろ、大食いで大酒飲みの人間だ。徴税人や罪人の仲間だ』と言う。",
+          "B": "人の子が来て、食べたり飲んだりしていると、あなたがたは言う。『見ろ、あの男は大食いの大酒飲みで、徴税人や罪人の仲間だ。』",
+          "R": "人の子が来て、人々と一緒に食べたり飲んだりした。するとあなたたちは言った。『あの男を見ろ。食べすぎるし、ぶどう酒を飲みすぎる。税金を集める人や罪人の仲間だ。』"
         }
       },
       "decisions": [
@@ -11544,6 +12392,29 @@
           "reason": "As settled in Matthew: when Jesus speaks of himself by this title it takes plain forms, and his critics speak of him plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007034011",
+            "n42007034016"
+          ],
+          "choice": "\"見ろ\" in the critics' mouths; \"仲間\" for friend, as in Matthew 11:19",
+          "alternatives": [
+            "\"見よ\"",
+            "\"友\""
+          ],
+          "reason": "The word points at Jesus with scorn, so the critics say the curt \"見ろ\"; the charge is worded as in Matthew's Japanese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -11625,6 +12496,11 @@
           "L": "І виправдана мудрість усіма її дітьми.»",
           "B": "Та мудрість доводить свою правоту всіма своїми дітьми.»",
           "R": "Але правоту Божої мудрості показують усі люди, які її приймають.»"
+        },
+        "ja": {
+          "L": "そして知恵は、そのすべての子どもたちによって正しいと認められた。」",
+          "B": "しかし、知恵が正しいことは、知恵の子であるすべての人によって示される。」",
+          "R": "でも、神の知恵が正しいことは、それを受け入れるすべての人によって示されるのだ。」"
         }
       },
       "decisions": [
@@ -11880,6 +12756,26 @@
           "reason": "\"Her children\" are those who accept wisdom and live by it; \"सन्तान\" carries that sense better than \"बच्चे\", and is the inclusive word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007035002",
+            "n42007035008"
+          ],
+          "choice": "\"正しいと認められた\" (L); \"正しいことは……示される\" (B, R); \"子どもたち\" (L), \"知恵の子であるすべての人\" (B), \"それを受け入れるすべての人\" (R)",
+          "alternatives": [],
+          "reason": "The verb is the one of 7:29 (m3); Literal keeps \"正しいと認める\", and Balanced and Readable use the present, as in Matthew 11:19. Readable explains \"her children\" (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -11970,6 +12866,11 @@
           "L": "Просив же {{deity_pronoun:його|Його}} один із фарисеїв, щоб {{deity_pronoun:він|Він}} поїв з ним; і, увійшовши до дому фарисея, {{deity_pronoun:він|Він}} приліг [при столі].",
           "B": "Один із фарисеїв запросив Ісуса поїсти з ним. Тож {{deity_pronoun:він|Він}} увійшов до дому фарисея й зайняв місце при столі.",
           "R": "Один фарисей запросив Ісуса прийти до нього й поїсти. Тож Ісус пішов до дому фарисея й приліг на ложе біля столу, як було звичаєм на гостинах."
+        },
+        "ja": {
+          "L": "さて、ファリサイ派のある人が、自分と一緒に食事をしてくださるようにとイエスに願っていた。そこで[イエスは]そのファリサイ派の人の家に入って、[食卓に]横になられた。",
+          "B": "ファリサイ派のある人が、一緒に食事をしてほしいとイエスを招いた。そこでイエスはそのファリサイ派の人の家に入り、食卓に着かれた。",
+          "R": "あるファリサイ派の人が、家に来て一緒に食事をしてくださいとイエスを招きました。それでイエスは、その人の家に行き、食卓のそばの長いすに横になられました。そのころ、ごちそうの席ではそうするのがならわしでした。"
         }
       },
       "decisions": [
@@ -12255,6 +13156,27 @@
           "reason": "Guests at a dinner lay on couches leaning on one elbow, which explains how the woman could stand at his feet in 7:38; Literal and Readable keep the posture in modern words, Balanced says simply that he took his place.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007036018"
+          ],
+          "choice": "\"[食卓に]横になられた\" (L); \"食卓に着かれた\" (B); \"食卓のそばの長いすに横になられました\" (R)",
+          "alternatives": [
+            "\"席に着かれた\" at every level"
+          ],
+          "reason": "Guests lay on couches at a formal meal (m1), which the next verses need. Literal keeps the posture, Balanced says the familiar \"食卓に着く\", and Readable explains the custom, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -12380,6 +13302,11 @@
           "L": "І ось жінка, яка була в місті грішницею, дізнавшись, що {{deity_pronoun:він|Він}} лежить [при столі] в домі фарисея, принесла алебастрову посудину пахощів \\v 38 і, ставши позаду біля {{deity_pronoun:його|Його}} ніг, плачучи, почала обливати {{deity_pronoun:його|Його}} ноги сльозами, і витирала [їх] волоссям своєї голови, і цілувала {{deity_pronoun:його|Його}} ноги, і намащувала [їх] пахощами.",
           "B": "А була в тому місті жінка, грішниця. Дізнавшись, що Ісус сидить при столі в домі фарисея, вона прийшла з алебастровою посудиною пахощів. \\v 38 Вона стала позаду, біля {{deity_pronoun:його|Його}} ніг, плачучи, і почала обливати {{deity_pronoun:його|Його}} ноги сльозами. Вона витирала їх волоссям своєї голови, раз у раз цілувала {{deity_pronoun:його|Його}} ноги й намащувала їх пахощами.",
           "R": "У тому місті жила жінка, яку всі знали як грішницю. Вона почула, що Ісус їсть у домі фарисея. Тож вона прийшла й принесла гарний камʼяний глечик, повний дорогих пахощів. \\v 38 Вона стала позаду Ісуса біля {{deity_pronoun:його|Його}} ніг і плакала. Її сльози падали на {{deity_pronoun:його|Його}} ноги й змочували їх. Потім вона витерла {{deity_pronoun:його|Його}} ноги своїм волоссям. Вона все цілувала їх і поливала пахощами."
+        },
+        "ja": {
+          "L": "すると、なんと、その町で罪人であった一人の女が、[イエスが]そのファリサイ派の人の家で[食卓に]横になっておられることを知って、香油の入った雪花石膏の壺を持って来て、\\v 38 後ろからイエスの足もとに立ち、泣きながら、涙でその足をぬらし始め、自分の頭の髪の毛でぬぐい、その足に口づけし続け、香油を塗っていた。",
+          "B": "その町に、罪人として知られた一人の女がいた。彼女は、イエスがそのファリサイ派の人の家で食卓に着いておられると知って、香油の入った雪花石膏の壺を持って来た。\\v 38 そして後ろからイエスの足もとに立ち、泣きながら、涙でイエスの足をぬらし始めた。彼女は自分の髪の毛でそれをぬぐい、何度もその足に口づけしては、香油を塗った。",
+          "R": "その町に、罪人として知られている女の人がいました。この人は、イエスがそのファリサイ派の人の家で食事をしておられると聞きました。そこで、高価な香油がいっぱい入った、美しい石のつぼを持って来ました。\\v 38 女の人は、イエスの後ろの、足もとのところに立って、泣いていました。涙がイエスの足に落ちて、足がぬれました。すると女の人は、自分の髪の毛でイエスの足をふきました。そして何度もその足に口づけをして、香油を注ぎました。"
         }
       },
       "decisions": [
@@ -12806,6 +13733,50 @@
           "reason": "Myron is costly perfumed oil; \"пахощі\" says that in modern words, where \"миро\" now names the oil of the church sacrament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007037020",
+            "n42007037021"
+          ],
+          "choice": "\"香油の入った雪花石膏の壺\" (L, B); \"高価な香油がいっぱい入った、美しい石のつぼ\" (R)",
+          "alternatives": [
+            "\"アラバスターの壺\"",
+            "\"石膏の壺\""
+          ],
+          "reason": "Alabaster is a smooth, pale stone (m2); \"雪花石膏\" names it exactly, where \"石膏\" alone is plaster. Readable describes the jar instead of naming the stone, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007037009"
+          ],
+          "choice": "\"罪人であった\" (L); \"罪人として知られた\" (B, R)",
+          "alternatives": [
+            "\"罪深い女\""
+          ],
+          "reason": "The Gospels' word \"罪人\" is kept; Balanced and Readable say that the town knew her as one (m1), without naming her sin, which Luke does not tell.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -12906,6 +13877,11 @@
           "L": "Побачивши ж [це], фарисей, який запросив {{deity_pronoun:його|Його}}, сказав сам у собі, кажучи: «Цей, якби {{deity_pronoun:він|Він}} був пророком, знав би, хто й яка [це] жінка, що доторкається до {{deity_pronoun:нього|Нього}}, що вона грішниця.»",
           "B": "Фарисей, який запросив {{deity_pronoun:його|Його}}, побачив це й подумав собі: «Якби цей чоловік був пророком, {{deity_pronoun:він|Він}} знав би, хто ця жінка, що доторкається до {{deity_pronoun:нього|Нього}}, і яка вона: грішниця.»",
           "R": "Фарисей, який запросив Ісуса, бачив, що відбувається. Він подумав: «Цей чоловік не може бути пророком. Пророк знав би, хто ця жінка, яка до {{deity_pronoun:нього|Нього}} доторкається. Він знав би, яка вона. Вона ж грішниця!»"
+        },
+        "ja": {
+          "L": "イエスを招いたファリサイ派の人はこれを見て、心の中で言った。「この人は、もし預言者であったなら、自分に触れている女がだれで、どのような女であるか、[つまり]罪人であることを知っていたはずだ。」",
+          "B": "イエスを招いたファリサイ派の人はこれを見て、心の中で言った。「この人がもし預言者なら、自分に触れているこの女がだれで、どんな女なのか、わかったはずだ。罪人なのだから。」",
+          "R": "イエスを招いたファリサイ派の人は、それを見て心の中で思いました。「この男が預言者であるはずがない。預言者なら、自分にさわっているこの女がだれなのか、わかるはずだ。どんな女なのかも、わかるはずだ。この女は罪人なのだ。」"
         }
       },
       "decisions": [
@@ -13098,6 +14074,27 @@
           "reason": "As settled in Matthew: opponents speak of Jesus plainly, while the narrator uses honorific forms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42007039012"
+          ],
+          "choice": "the Pharisee's unspoken thought in the plain style; \"この人\" (L, B), \"この男\" (R)",
+          "alternatives": [
+            "polite style"
+          ],
+          "reason": "He speaks only within himself (m4), so there is no one to be polite to, and the thought is dismissive. Readable states the conclusion first, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -13182,6 +14179,11 @@
           "L": "І Ісус, відповідаючи, сказав йому: «Симоне, маю тобі щось сказати.»",
           "B": "Ісус відповів йому: «Симоне, я хочу тобі дещо сказати.»",
           "R": "Ісус відповів на думки фарисея. Він сказав: «Симоне, я маю тобі щось сказати.»"
+        },
+        "ja": {
+          "L": "するとイエスは答えて彼に言われた。「シモン、あなたに言いたいことがある。」",
+          "B": "イエスはシモンに答えて言われた。「シモン、あなたに話したいことがある。」",
+          "R": "イエスは、そのファリサイ派の人が心の中で思ったことに答えて言われました。「シモン、あなたに話したいことがある。」"
         }
       },
       "decisions": [
@@ -13356,6 +14358,11 @@
           "L": "А він каже: «Учителю, скажи.»",
           "B": "«Скажи, Учителю», — відповів він.",
           "R": "Симон сказав: «Скажи мені, Учителю.»"
+        },
+        "ja": {
+          "L": "すると彼は言う。「先生、おっしゃってください。」",
+          "B": "「先生、どうぞおっしゃってください」とシモンは答えた。",
+          "R": "シモンは言いました。「先生、話してください。」"
         }
       },
       "decisions": [
@@ -13610,6 +14617,26 @@
           "reason": "Literal keeps the historic present.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007040015",
+            "n42007040017"
+          ],
+          "choice": "\"言う\" (L); \"答えた\", \"言いました\" (B, R); Simon speaks politely and says \"先生\"",
+          "alternatives": [],
+          "reason": "Literal keeps Luke's storytelling present (m2); Balanced and Readable narrate in the past. The host gives his guest the respectful title of a teacher (m1) and polite speech.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -13696,6 +14723,11 @@
           "L": "«Двоє боржників було в одного позикодавця; один був винен 500 динаріїв, а другий пʼятдесят.",
           "B": "Ісус сказав: «Один позикодавець мав двох боржників. Один був винен йому 500 динаріїв, а другий пʼятдесят.",
           "R": "Ісус сказав: «Двоє чоловіків позичили гроші в одного чоловіка. Один з них був винен йому 500 срібних монет. Другий був винен пʼятдесят."
+        },
+        "ja": {
+          "L": "「ある金貸しに二人の債務者がいた。一人は五百デナリオン、もう一人は五十[デナリオン]を借りていた。",
+          "B": "イエスは言われた。「ある金貸しから、二人の人がお金を借りていた。一人は{{units:五百日分の賃金|五百デナリオン}}、もう一人は{{units:五十日分の賃金|五十デナリオン}}を借りていた。",
+          "R": "イエスは言われました。「二人の人が、お金を貸す人から借金をしていた。一人は{{units:五百日分の賃金|五百デナリオン}}を借りていた。もう一人は{{units:五十日分の賃金|五十デナリオン}}を借りていた。"
         }
       },
       "decisions": [
@@ -13987,6 +15019,29 @@
           "reason": "The English has no units span here, so neither does the Hindi: Literal and Balanced name the coin, Readable describes it, as the English does. A denarius was a day's pay.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42007041009",
+            "n42007041010",
+            "n42007041014"
+          ],
+          "choice": "{{units:五百日分の賃金|五百デナリオン}} and {{units:五十日分の賃金|五十デナリオン}} (B, R); \"五百デナリオン\" (L)",
+          "alternatives": [
+            "\"五百デナリオン\" with no setting",
+            "\"銀貨五百枚\", as the English Readable"
+          ],
+          "reason": "As the Japanese style guide asks for coins, Balanced and Readable give the debts in days' wages by default, since a denarius was a day's pay (m1), with the coin as the alternative; Literal keeps the coin. This differs from the English, which names the coin without a setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -14065,6 +15120,11 @@
           "L": "Коли ж вони не мали [чим] віддати, він дарував [борг] обом.",
           "B": "Жоден з них не мав чим віддати, тож він великодушно простив борг обом.",
           "R": "Жоден з них не мав грошей, щоб віддати борг. Тож він по-доброму простив обом те, що вони були винні."
+        },
+        "ja": {
+          "L": "彼らには返すものがなかったので、[金貸しは]二人とも[借金を]免じてやった。",
+          "B": "二人とも返すことができなかったので、金貸しは二人の借金を快く帳消しにしてやった。",
+          "R": "二人とも、返すお金がなかった。そこで金貸しは、親切にも、二人の借金をなしにしてやった。"
         }
       },
       "decisions": [
@@ -14185,6 +15245,27 @@
           "reason": "The verb is to cancel a debt as a free gift (meaning decision); Korean uses \"탕감하다\" for cancelling a debt, keeping \"용서하다\" for the sins of 7:47-49.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007042006"
+          ],
+          "choice": "\"免じてやった\" (L); \"快く帳消しにしてやった\" (B); \"親切にも……なしにしてやった\" (R)",
+          "alternatives": [
+            "\"赦してやった\""
+          ],
+          "reason": "The verb means to give freely, as a favor (m1), here canceling a debt; \"赦す\" is kept for the forgiving of sins in 7:47-49, a different verb. The same words return in 7:43.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -14263,6 +15344,11 @@
           "L": "Хто ж із них більше любитиме його?»",
           "B": "То котрий із двох любитиме його більше?»",
           "R": "Котрий із цих двох більше любитиме того, хто позичив їм гроші?»"
+        },
+        "ja": {
+          "L": "では、彼らのうちどちらが、彼をより多く愛するだろうか？」",
+          "B": "では、二人のうちどちらが、その人をより多く愛するだろうか？」",
+          "R": "この二人のうち、どちらが金貸しをもっと愛するだろうか？」"
         }
       },
       "decisions": [
@@ -14381,6 +15467,11 @@
           "L": "Симон, відповідаючи, сказав: «Гадаю, [той], кому він подарував більше.»",
           "B": "Симон відповів: «Думаю, той, кому він простив більший борг.»",
           "R": "Симон відповів: «Думаю, той, хто був винен більше й кому простили більше.»"
+        },
+        "ja": {
+          "L": "シモンは答えて言った。「[金貸しが]より多くを免じてやった者だと思います。」",
+          "B": "シモンは答えた。「多いほうの借金を帳消しにしてもらった人だと思います。」",
+          "R": "シモンは答えました。「たくさん借りていて、たくさんなしにしてもらった人だと思います。」"
         }
       },
       "decisions": [
@@ -14518,6 +15609,11 @@
           "L": "А {{deity_pronoun:він|Він}} сказав йому: «Ти правильно розсудив.»",
           "B": "Ісус сказав йому: «Ти розсудив правильно.»",
           "R": "Ісус сказав: «Ти правий.»"
+        },
+        "ja": {
+          "L": "そこで[イエスは]彼に言われた。「あなたは正しく判断した。」",
+          "B": "イエスは彼に言われた。「あなたの判断は正しい。」",
+          "R": "イエスは言われました。「そのとおりだ。」"
         }
       },
       "decisions": [
@@ -14640,6 +15736,11 @@
           "L": "І, обернувшись до жінки, {{deity_pronoun:він|Він}} сказав Симонові: «Бачиш цю жінку?",
           "B": "Тоді {{deity_pronoun:він|Він}} обернувся до жінки й сказав Симонові: «Бачиш цю жінку?",
           "R": "Тоді Ісус обернувся до жінки. Але {{deity_pronoun:він|Він}} говорив до Симона: «Бачиш цю жінку?"
+        },
+        "ja": {
+          "L": "そして女の方を振り向いて、シモンに言われた。「この女を見ているか？",
+          "B": "そしてイエスは女の方を振り向いて、シモンに言われた。「この女の人を見ているか？",
+          "R": "それからイエスは、女の人の方を向かれました。けれども、話しかけられた相手はシモンでした。「この女の人を見ているか？"
         }
       },
       "decisions": [
@@ -14706,6 +15807,27 @@
             "a quotation in each sentence"
           ],
           "reason": "Jesus's words to Simon run on through 7:47.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42007044008"
+          ],
+          "choice": "Jesus speaks to Simon in the plain style, with \"あなた\"; \"この女\" (L), \"この女の人\" (B, R)",
+          "alternatives": [
+            "\"この婦人\""
+          ],
+          "reason": "Jesus speaks plainly with authority, as everywhere in the Gospels. Balanced and Readable say \"女の人\", which does not carry the coldness \"この女\" can have, since Jesus asks Simon to see her differently (m2). In 7:44-46 she is \"この女\" (L) and \"この人\" (B, R).",
           "uncertain": false,
           "footnote": false
         }
@@ -14804,6 +15926,11 @@
           "L": "Я ввійшов у твій дім — ти не дав {{deity_pronoun:мені|Мені}} води на ноги; а вона сльозами обливала {{deity_pronoun:мої|Мої}} ноги й волоссям своїм витерла [їх].",
           "B": "Коли {{deity_pronoun:я|Я}} ввійшов у твій дім, ти не дав {{deity_pronoun:мені|Мені}} води, щоб помити ноги. А вона обливала {{deity_pronoun:мої|Мої}} ноги сльозами й витерла їх своїм волоссям.",
           "R": "Я прийшов у твій дім, а ти навіть не дав {{deity_pronoun:мені|Мені}} води, щоб помити ноги. А ця жінка помила {{deity_pronoun:мої|Мої}} ноги своїми сльозами й витерла їх своїм волоссям."
+        },
+        "ja": {
+          "L": "わたしはあなたの家に入ったが、あなたはわたしに足のための水をくれなかった。しかしこの女は、涙でわたしの足をぬらし、自分の髪の毛でぬぐった。",
+          "B": "わたしがあなたの家に来たとき、あなたは足を洗う水もくれなかった。しかしこの人は、涙でわたしの足をぬらし、髪の毛でふいてくれた。",
+          "R": "わたしがあなたの家に来たとき、あなたは足を洗う水さえくれなかった。でもこの人は、涙でわたしの足を洗い、髪の毛でふいてくれた。"
         }
       },
       "decisions": [
@@ -15036,6 +16163,11 @@
           "L": "Ти не дав {{deity_pronoun:мені|Мені}} поцілунку; а вона, відколи {{deity_pronoun:я|Я}} ввійшов, не перестає цілувати {{deity_pronoun:мої|Мої}} ноги.",
           "B": "Ти не привітав {{deity_pronoun:мене|Мене}} поцілунком. А вона, відколи {{deity_pronoun:я|Я}} ввійшов, не перестає цілувати {{deity_pronoun:мої|Мої}} ноги.",
           "R": "Ти не привітав {{deity_pronoun:мене|Мене}} поцілунком. А вона, відтоді як {{deity_pronoun:я|Я}} прийшов, увесь час цілує {{deity_pronoun:мої|Мої}} ноги."
+        },
+        "ja": {
+          "L": "あなたはわたしに口づけをしなかった。しかしこの女は、わたしが入って来た時から、わたしの足に口づけし続けてやまない。",
+          "B": "あなたは口づけでわたしを迎えなかった。しかしこの人は、わたしが入って来てからずっと、わたしの足に口づけし続けている。",
+          "R": "あなたは、あいさつの口づけもしなかった。でもこの人は、わたしが来た時から、ずっとわたしの足に口づけをし続けている。"
         }
       },
       "decisions": [
@@ -15178,6 +16310,11 @@
           "L": "Ти олією не помазав {{deity_pronoun:моєї|Моєї}} голови; а вона пахощами помазала {{deity_pronoun:мої|Мої}} ноги.",
           "B": "Ти не помазав {{deity_pronoun:моєї|Моєї}} голови оливковою олією, а вона помазала {{deity_pronoun:мої|Мої}} ноги дорогими пахощами.",
           "R": "Ти не полив {{deity_pronoun:мені|Мені}} голову навіть оливковою олією. А вона натерла {{deity_pronoun:мої|Мої}} ноги дорогими пахощами."
+        },
+        "ja": {
+          "L": "あなたはわたしの頭に油を塗らなかった。しかしこの女は、わたしの足に香油を塗った。",
+          "B": "あなたはわたしの頭にオリーブ油を塗ってくれなかったが、この人はわたしの足に高価な香油を塗ってくれた。",
+          "R": "あなたはわたしの頭に、オリーブ油を少しも塗ってくれなかった。でもこの人は、わたしの足に高い香油を塗ってくれた。"
         }
       },
       "decisions": [
@@ -15282,6 +16419,26 @@
           "reason": "Common olive oil is set against costly perfume (meaning decision); Balanced and Readable name the oil, as the English does. \"감람유\" is the older church word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007046001",
+            "n42007046009"
+          ],
+          "choice": "\"油\" (L), \"オリーブ油\" (B, R); \"香油\" at every level",
+          "alternatives": [],
+          "reason": "Common olive oil is set against costly perfume (m2); \"香油\" is the word of 7:37-38, so the woman's gift stays the same word through the scene.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -15373,6 +16530,11 @@
           "L": "Тому, кажу тобі, прощені її гріхи, численні, бо вона полюбила багато; а кому мало прощається, той мало любить.»",
           "B": "Тож кажу тобі: її гріхи, хоч які численні, прощені; ось чому вона виявила стільки любові. А кому мало прощено, той мало любить.»",
           "R": "Тому кажу тобі: її численні гріхи прощені, і саме тому вона виявила стільки любові. А людина, якій простили зовсім мало, і любить мало.»"
+        },
+        "ja": {
+          "L": "それゆえ、あなたに言う。この女の多くの罪は赦されている。彼女が多く愛したからである。しかし、少ししか赦されない者は、少ししか愛さない。」",
+          "B": "だから、あなたに言っておく。この人の多くの罪は、赦されているのだ。それで、この人はこれほど深い愛を示したのである。少ししか赦されない者は、少ししか愛さない。」",
+          "R": "だから、言っておく。この人のたくさんの罪は、ゆるされている。だから、この人はこんなにたくさんの愛を示したのだ。でも、少しだけゆるされた人は、少しだけしか愛さない。」"
         }
       },
       "decisions": [
@@ -15561,6 +16723,28 @@
           "reason": "The meaning decision reads her love as the sign of forgiveness, not its price; a plain causal \"бо\" at Balanced and Readable would suggest the opposite, so they say it the way the English does. Literal keeps \"бо\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007047005",
+            "n42007047011"
+          ],
+          "choice": "\"赦されている\" (L, B), \"ゆるされている\" (R); \"からである\" (L); \"それで……示したのである\" (B, R)",
+          "alternatives": [
+            "\"多く愛したので\" at every level"
+          ],
+          "reason": "Her love shows that she has been forgiven; it is not the price of it (m1). Literal keeps the open \"からである\", as the English Literal keeps \"for\"; Balanced and Readable make love the result, as the English does. The perfect is \"赦されている\", a forgiveness that stands (m2); Readable writes \"ゆるす\" in kana, as the style guide has it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -15640,6 +16824,11 @@
           "L": "І {{deity_pronoun:він|Він}} сказав їй: «Прощені твої гріхи.»",
           "B": "Потім {{deity_pronoun:він|Він}} сказав їй: «Твої гріхи прощені.»",
           "R": "Тоді Ісус сказав жінці: «Бог простив твої гріхи.»"
+        },
+        "ja": {
+          "L": "そして彼女に言われた。「あなたの罪は赦されている。」",
+          "B": "そしてイエスは女に言われた。「あなたの罪は赦されている。」",
+          "R": "それからイエスは、その女の人に言われました。「神はあなたの罪をゆるしてくださった。」"
         }
       },
       "decisions": [
@@ -15784,6 +16973,11 @@
           "L": "І ті, що лежали [при столі] з {{deity_pronoun:ним|Ним}}, почали казати між собою: «Хто це такий, що навіть гріхи прощає?»",
           "B": "Ті, хто сидів з {{deity_pronoun:ним|Ним}} при столі, почали казати одне одному: «Хто він такий, що навіть гріхи прощає?»",
           "R": "Інші гості почали питати одне одного: «Хто цей чоловік? Він навіть гріхи прощає!»"
+        },
+        "ja": {
+          "L": "すると、[イエスと]一緒に[食卓に]横になっていた者たちが、自分たちの間で言い始めた。「罪さえも赦すこの人は、いったい何者なのか？」",
+          "B": "一緒に食卓に着いていた人たちは、互いに言い始めた。「罪まで赦すとは、この人はいったい何者なのか？」",
+          "R": "ほかの客たちは、互いに言い始めました。「この人はいったいだれなのだ？罪までゆるしている。」"
         }
       },
       "decisions": [
@@ -15952,6 +17146,11 @@
           "L": "А {{deity_pronoun:він|Він}} сказав жінці: «Твоя віра спасла тебе; іди в мир.»",
           "B": "Але Ісус сказав жінці: «Твоя віра спасла тебе. Іди з миром.»",
           "R": "Ісус сказав жінці: «Твоя віра спасла тебе. Тепер іди додому, і нехай буде з тобою мир.»"
+        },
+        "ja": {
+          "L": "しかし[イエスは]女に言われた。「あなたの信仰があなたを救った。平安のうちに行きなさい。」",
+          "B": "しかしイエスは女に言われた。「あなたの信仰があなたを救ったのだ。平安のうちに行きなさい。」",
+          "R": "イエスは女の人に言われました。「あなたの信仰があなたを救った。さあ、平安を受けて家に帰りなさい。」"
         }
       },
       "decisions": [
@@ -16158,6 +17357,29 @@
             "\"कुशल\""
           ],
           "reason": "The key term for peace, kept at every level, with its full meaning of peace with God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42007050011",
+            "n42007050013"
+          ],
+          "choice": "\"平安のうちに行きなさい\" (L, B); \"平安を受けて家に帰りなさい\" (R)",
+          "alternatives": [
+            "\"平和のうちに\"",
+            "\"安心して行きなさい\""
+          ],
+          "reason": "The farewell carries peace with God and wholeness (m3); \"平安\" is the style guide's word for peace as a greeting and inner peace, and it keeps the key word, which \"安心して\" would lose.",
           "uncertain": false,
           "footnote": false
         }

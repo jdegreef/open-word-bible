@@ -241,6 +241,32 @@ class SearchTest(TestCase):
         # the example until Song of Songs was drafted.)
         self.assertIsNone(self.get(q="love 3", lang="en")["reference"])
 
+    # ---- Japanese ---------------------------------------------------------
+
+    def test_japanese_words_are_found_inside_a_clause(self):
+        # Japanese has no spaces: in John 3:16 "ひとり子" and "永遠の命" sit in
+        # the middle of a run of kana and kanji, and a single kanji is a word.
+        for q in ("ひとり子", "永遠の命", "愛"):
+            with self.subTest(q=q):
+                found = set().union(*(verse_ids(d) for d in self.every(q, "verse", lang="ja")))
+                self.assertIn("JHN.3.16", found)
+        # The pairs must follow one another: these are all in the verse, but
+        # not in this order.
+        found = set().union(*(verse_ids(d) for d in self.every("命永遠", "verse", lang="ja")))
+        self.assertNotIn("JHN.3.16", found)
+
+    def test_japanese_voicing_marks_are_kept(self):
+        # ガ is not カ: "ガリラヤ" (John 2:1) must not be searched as "カリラヤ".
+        found = set().union(*(verse_ids(d) for d in self.every("ガリラヤ", "verse", lang="ja")))
+        self.assertIn("JHN.2.1", found)
+        self.assertEqual(self.get(q="カリラヤ", lang="ja")["totals"].get("verse", 0), 0)
+
+    def test_japanese_references_with_full_width_digits(self):
+        ref = self.get(q="ヨハネによる福音書３：１６", lang="ja")["reference"]
+        self.assertEqual((ref["label"], ref["url"]), ("ヨハネによる福音書 3:16", "/ja/jhn/3/#v16"))
+        ref = self.get(q="ガラテヤの信徒への手紙 1:1", lang="ja")["reference"]
+        self.assertEqual(ref["label"], "ガラテヤの信徒への手紙 1:1")
+
     # ---- The request ------------------------------------------------------
 
     def test_bad_parameters(self):
@@ -260,6 +286,28 @@ class SearchNotReadyTest(TestCase):
     def test_before_the_first_import(self):
         response = self.client.get("/api/search/", {"q": "light"})
         self.assertEqual(response.status_code, 503)
+
+
+class JapaneseTextTest(SimpleTestCase):
+    def test_runs_of_kanji_and_kana_become_pairs(self):
+        self.assertEqual(search.ngrams("神の愛を。").split(), ["神の", "の愛", "愛を", "を", "。"])
+        # One character stands alone; other text is left as it is; the
+        # middle dot between the parts of a name ends a run.
+        self.assertEqual(search.ngrams("人").split(), ["人"])
+        self.assertEqual(search.ngrams("2人 abc").split(), ["2", "人", "abc"])
+        self.assertEqual(search.ngrams("シモン・ペトロ").split(), ["シモ", "モン", "ン", "・", "ペト", "トロ", "ロ"])
+
+    def test_terms_split_at_runs(self):
+        self.assertEqual(search.cjk_terms("ペトロ2"), ["ペトロ", "2"])
+        self.assertEqual(search.bigrams("永遠の命"), ["永遠", "遠の", "の命"])
+
+    def test_fold_keeps_voicing_marks_and_narrows_wide_letters(self):
+        self.assertEqual(search.fold("ガリラヤ"), "ガリラヤ")
+        self.assertEqual(search.fold("ポ"), "ポ")
+        self.assertEqual(search.fold("３：１６ Ａｂ\u3000x"), "3:16 ab x")
+        self.assertEqual(search.fold("Señor"), "senor")
+        # The site's book aliases are folded the same way.
+        self.assertEqual(build_site.fold("ガラテヤ３"), search.fold("ガラテヤ３"))
 
 
 class PlanTest(SimpleTestCase):

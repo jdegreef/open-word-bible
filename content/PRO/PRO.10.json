@@ -65,6 +65,26 @@
           "L": "የሰሎሞን ምሳሌዎች። \\q ጠቢብ ልጅ አባቱን ደስ ያሰኛል፤ \\q ሞኝ ልጅ ግን የእናቱ ሐዘን [ነው]።",
           "B": "የሰሎሞን ምሳሌዎች። \\q ጠቢብ ልጅ ለአባቱ ደስታ ነው፤ \\q ሞኝ ልጅ ግን ለእናቱ ሐዘን ነው።",
           "R": "እነዚህ የሰሎሞን ምሳሌዎች ናቸው። \\q ጠቢብ ልጅ አባቱን ደስ ያሰኛል። \\q ሞኝ ልጅ እናቱን ያሳዝናል።"
+        },
+        "hi": {
+          "L": "सुलैमान के नीतिवचन। \\q बुद्धिमान पुत्र पिता को आनंदित करता है, \\q पर मूर्ख पुत्र अपनी माता का दुख [है]।",
+          "B": "सुलैमान के नीतिवचन। \\q बुद्धिमान पुत्र अपने पिता का आनंद है, \\q पर मूर्ख पुत्र अपनी माँ के लिए दुख है।",
+          "R": "ये सुलैमान की बुद्धि की बातें हैं। \\q बुद्धिमान बेटा अपने पिता को ख़ुश करता है। \\q मूर्ख बेटा अपनी माँ को दुखी करता है।"
+        },
+        "ru": {
+          "L": "Притчи Соломона. \\q Мудрый сын радует отца, \\q а глупый сын — горе своей матери.",
+          "B": "Притчи Соломона. \\q Мудрый сын — радость для отца, \\q а глупый сын — печаль для матери.",
+          "R": "Вот мудрые изречения Соломона. \\q Мудрый сын радует своего отца. \\q Глупый сын огорчает свою мать."
+        },
+        "ja": {
+          "L": "ソロモンの箴言。 \\q 知恵ある子は父を喜ばせる。 \\q しかし、愚かな子は母の悲しみである。",
+          "B": "ソロモンの箴言。 \\q 知恵ある子は父を喜ばせ、 \\q 愚かな子は母の悲しみ。",
+          "R": "ここからは、ソロモンが語った知恵の言葉である。 \\q 知恵のある子は、父を喜ばせる。 \\q 愚かな子は、母を悲しませる。"
+        },
+        "uk": {
+          "L": "Приповісті Соломона. \\q Мудрий син тішить батька, \\q а безумний син — горе своєї матері.",
+          "B": "Приповісті Соломона. \\q Мудрий син — радість для свого батька, \\q а безумний син — смуток для своєї матері.",
+          "R": "Це мудрі вислови Соломона. \\q Мудрий син робить свого батька щасливим. \\q Нерозумний син засмучує свою матір."
         }
       },
       "decisions": [
@@ -285,6 +305,133 @@
           "reason": "The book's own name for these sayings (1:1); Readable keeps it so the heading reads the same as the book title, and adds only \"እነዚህ … ናቸው\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100010011",
+            "o200100010021"
+          ],
+          "choice": "\"सुलैमान के नीतिवचन\" (L, B); \"सुलैमान की बुद्धि की बातें\" (R)",
+          "alternatives": [
+            "सुलैमान की कहावतें"
+          ],
+          "reason": "A new title opens the collection (meaning m1); the Hindi uses the words of the book's title in 1:1 in this translation: \"नीतिवचन\" at Literal and Balanced, \"बुद्धि की बातें\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200100010031",
+            "o200100010091"
+          ],
+          "choice": "two-line sayings, one per verse",
+          "alternatives": [],
+          "reason": "From here most verses set two lines side by side (meaning m3). Each saying keeps its two lines at every level, as the English does, and a line that repeats an earlier one (verses 6 and 11, 8 and 10) repeats its Hindi too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100010011",
+            "o200100010021"
+          ],
+          "choice": "\"Притчи Соломона\"",
+          "alternatives": [
+            "\"Пословицы Соломона\""
+          ],
+          "reason": "mishle is the word of the book's Russian title, \"Притчи\"; Readable says \"мудрые изречения\", as the English says \"wise sayings\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200100010071"
+          ],
+          "choice": "\"а\" for the contrast in two-line sayings",
+          "alternatives": [
+            "\"но\""
+          ],
+          "reason": "From here most verses set a line against its opposite (m3); Russian marks the turn with \"а\", lighter than \"но\", which is kept for a stronger contrast.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o200100010031",
+            "o200100010041"
+          ],
+          "choice": "The two-line sayings (10:1 onward) keep each colon on its own line, with the second line set against the first: \"しかし\" where the English Literal has \"but\", the contrast carried by parallel \"AはX、BはY\" at Balanced, short paired sentences at Readable",
+          "alternatives": [
+            "joining both lines into one sentence"
+          ],
+          "reason": "The parallelism is the form of the saying (m3); each line stays whole and in its place.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100010011"
+          ],
+          "choice": "mishle shelomoh \"ソロモンの箴言\" (L, B), \"ソロモンが語った知恵の言葉\" (R), as in 1:1",
+          "alternatives": [
+            "ソロモンの格言"
+          ],
+          "reason": "The new title repeats the book's title (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -351,6 +498,26 @@
           "L": "የክፋት ሀብት አይጠቅምም፤ \\q ጽድቅ ግን ከሞት ያድናል።",
           "B": "በክፋት የተገኘ ሀብት በመጨረሻ ምንም አይጠቅምም፤ \\q ጽድቅ ግን ከሞት ይታደጋል።",
           "R": "በክፉ ሥራ ያገኘኸው ገንዘብ አይጠቅምህም። \\q ትክክል የሆነውን ማድረግ ግን ሕይወትህን ሊያድን ይችላል።"
+        },
+        "hi": {
+          "L": "दुष्टता के ख़ज़ाने लाभ नहीं देते, \\q पर धार्मिकता मृत्यु से छुड़ाती है।",
+          "B": "दुष्टता से कमाया धन अंत में किसी काम का नहीं, \\q पर धार्मिकता मृत्यु से बचाती है।",
+          "R": "ग़लत काम करके कमाया पैसा तुम्हारी मदद नहीं करेगा। \\q पर सही काम करना तुम्हारी जान बचा सकता है।"
+        },
+        "ru": {
+          "L": "Сокровища нечестия не приносят пользы, \\q а праведность избавляет от смерти.",
+          "B": "Богатство, добытое нечестием, в конце концов не приносит пользы, \\q а праведность спасает от смерти.",
+          "R": "Деньги, полученные нечестным путём, не помогут тебе. \\q Но если поступаешь правильно, это может спасти тебе жизнь."
+        },
+        "ja": {
+          "L": "悪の宝は益にならない。 \\q しかし、義は死から救い出す。",
+          "B": "不正に得た富は、結局何の役にも立たない。 \\q しかし、義は死から救い出す。",
+          "R": "悪いことをして手に入れたお金は、あなたを助けない。 \\q しかし、正しいことをすれば、命が救われる。"
+        },
+        "uk": {
+          "L": "Скарби нечестя не приносять користі, \\q а праведність рятує від смерті.",
+          "B": "Багатство, здобуте нечесно, зрештою не допоможе, \\q а праведність визволяє від смерті.",
+          "R": "Гроші, які ти отримав, роблячи зло, тобі не допоможуть. \\q А чинити правильно може врятувати тобі життя."
         }
       },
       "decisions": [
@@ -434,6 +601,26 @@
           "L": "{{divine_name:እግዚአብሔር|ያህዌ}} የጻድቁን ነፍስ አያስራብም፤ \\q የክፉዎችን ምኞት ግን ይገፋል።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ጻድቁን በራብ አይተወውም፤ \\q ክፉዎች የሚመኙትን ግን ይገፋል።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} መልካም ሰዎችን ይንከባከባቸዋል፤ ስለዚህ አይራቡም። \\q ክፉ ሰዎች የሚፈልጉትን ግን አይሰጣቸውም።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} धर्मी के प्राण को भूखा नहीं रहने देंगे, \\q पर दुष्टों की लालसा को वे दूर धकेल देते हैं।",
+          "B": "{{divine_name:प्रभु|याहवे}} धर्मी को भूखा नहीं मरने देंगे, \\q पर दुष्ट जिस चीज़ की लालसा करते हैं, उसे वे दूर धकेल देते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} उन लोगों की देखभाल करते हैं जो सही काम करते हैं, ताकि वे भूखे न रहें। \\q पर दुष्ट लोग जो चाहते हैं, वह उन्हें नहीं देते।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} не даст голодать душе праведного, \\q а вожделение нечестивых {{deity_pronoun:он|Он}} отталкивает.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} не оставит праведного голодать, \\q а желаемое нечестивыми {{deity_pronoun:он|Он}} отвергает.",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} заботится о праведных людях, и они не голодают. \\q А злым людям {{deity_pronoun:он|Он}} не даёт того, чего они хотят."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は正しい者の魂を飢えさせることはなさらない。 \\q しかし、悪しき者たちの欲望を、その方は押しのけられる。",
+          "B": "{{divine_name:主|ヤハウェ}}は正しい人を飢えさせることはなさらない。 \\q しかし、悪しき者が求めるものを、その方は押しのけられる。",
+          "R": "{{divine_name:主|ヤハウェ}}は正しい人の世話をして、飢えることがないようにしてくださる。 \\q しかし、悪い人がほしがるものは、お与えにならない。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} не дасть голодувати душі праведного, \\q а жадобу нечестивих {{deity_pronoun:він|Він}} відштовхує.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} не залишить праведного голодувати, \\q а те, чого прагнуть нечестиві, {{deity_pronoun:він|Він}} відкидає.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} дбає про людей, які чинять правильно, тож вони не голодують. \\q А злим людям {{deity_pronoun:він|Він}} не дає того, чого вони хочуть."
         }
       },
       "decisions": [
@@ -507,6 +694,126 @@
           "reason": "Amharic \"ነፍስ\" can be hungry or satisfied, as the Hebrew word; Balanced and Readable say it plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200100030081"
+          ],
+          "choice": "no deity_pronoun spans; honorific \"वे\" for God",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change and the Hindi has no deity_pronoun spans (style guide, section 7). Respect for God is carried by the honorific plural, the same in both settings.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100030051",
+            "o200100030071"
+          ],
+          "choice": "\"धर्मी\"; \"दुष्ट\" (L, B), \"दुष्ट लोग\" (R)",
+          "alternatives": [
+            "अच्छे लोग"
+          ],
+          "reason": "The righteous and the wicked in the poetry note's words. Where the English Readable says \"good people\" or \"people who do what is right\", Hindi Readable says \"भले लोग\" or \"सही काम करनेवाले\", plain words for the same people; the wicked stay \"दुष्ट लोग\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100030041"
+          ],
+          "choice": "\"प्राण\"",
+          "alternatives": [
+            "भूख"
+          ],
+          "reason": "The appetite is the nefesh (meaning m1), which Literal renders \"प्राण\", as the poetry note settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100030051",
+            "o200100030071"
+          ],
+          "choice": "\"праведный\" at every level (\"праведные люди\" at R); \"нечестивые\" (L, B), \"злые люди\" (R)",
+          "alternatives": [
+            "\"хорошие люди\" (R)"
+          ],
+          "reason": "The terms settled for the poetry books, used through the sayings of chapters 10-12. Readable keeps \"праведные\" where the English says \"good people\", since the word is plain in Russian.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100030041"
+          ],
+          "choice": "\"душе\" for nephesh",
+          "alternatives": [
+            "\"аппетиту\""
+          ],
+          "reason": "Literal keeps \"душа\" for nephesh as the poetry note says; here it is the hungry self (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100030051"
+          ],
+          "choice": "tsaddiq \"正しい人\" and rasha' \"悪い人\" at Readable through the sayings, where the English Readable often says \"good people\" / \"evil people\"",
+          "alternatives": [
+            "良い人"
+          ],
+          "reason": "Keeps the book's one Readable form for the righteous (2:20), so the pair stays recognizable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -572,6 +879,26 @@
           "L": "በቸልተኛ መዳፍ የሚሠራ ድሀ ይሆናል፤ \\q የትጉዎች እጅ ግን ታበለጽጋለች።",
           "B": "ቸልተኛ እጅ ወደ ድህነት ትመራለች፤ \\q ትጉ እጆች ግን ሀብትን ያመጣሉ።",
           "R": "ሥራ የማይወዱ ሰዎች ይደኸያሉ። \\q ተግተው የሚሠሩ ግን ሀብታሞች ይሆናሉ።"
+        },
+        "hi": {
+          "L": "ढीली हथेली से काम करनेवाला ग़रीब होता है, \\q पर परिश्रमियों का हाथ धनी बनाता है।",
+          "B": "ढीला हाथ ग़रीबी लाता है, \\q पर मेहनती हाथ धन लाते हैं।",
+          "R": "जो लोग आलसी हैं, वे ग़रीब हो जाएँगे। \\q जो लोग मेहनत करते हैं, वे धनी हो जाएँगे।"
+        },
+        "ru": {
+          "L": "Беден работающий ленивой ладонью, \\q а рука усердных обогащает.",
+          "B": "Ленивая рука ведёт к бедности, \\q а трудолюбивые руки приносят богатство.",
+          "R": "Ленивые люди будут бедными. \\q Те, кто много трудится, станут богатыми."
+        },
+        "ja": {
+          "L": "怠惰な手のひらで働く者は貧しくなる。 \\q しかし、勤勉な者たちの手は富ませる。",
+          "B": "怠ける手は貧しさを招き、 \\q 勤勉な手は富をもたらす。",
+          "R": "怠ける人は貧しくなる。 \\q 一生懸命に働く人は豊かになる。"
+        },
+        "uk": {
+          "L": "Бідний [той, хто] працює недбалою долонею, \\q а рука старанних збагачує.",
+          "B": "Лінива рука веде до бідності, \\q а працьовиті руки приносять багатство.",
+          "R": "Ледачі люди будуть бідні. \\q Люди, які тяжко працюють, стануть багатими."
         }
       },
       "decisions": [
@@ -680,6 +1007,26 @@
           "L": "በበጋ የሚሰበስብ አስተዋይ ልጅ [ነው]፤ \\q በመከር ጊዜ የሚተኛ የሚያሳፍር ልጅ [ነው]።",
           "B": "በበጋ እህሉን የሚሰበስብ ልጅ አስተዋይ ነው፤ \\q በመከር ጊዜ የሚተኛ ልጅ ግን ውርደትን ያመጣል።",
           "R": "በመከር ጊዜ ተግቶ የሚሠራ ልጅ ጠቢብ ነው። \\q ሥራ ሲኖር የሚተኛ ልጅ ግን ቤተሰቡን ያሳፍራል።"
+        },
+        "hi": {
+          "L": "जो ग्रीष्म में बटोरता है, वह बुद्धि से काम करनेवाला पुत्र [है]; \\q जो कटनी के समय सोता है, वह लज्जा लानेवाला पुत्र [है]।",
+          "B": "जो पुत्र गर्मियों में फ़सल इकट्ठी करता है, वह बुद्धिमान है; \\q जो पुत्र कटनी के समय सोता रहता है, वह अपमान लाता है।",
+          "R": "जो बेटा कटनी के समय मेहनत करता है, वह बुद्धिमान है। \\q जो बेटा काम के समय सोता है, वह अपने परिवार को लज्जित करता है।"
+        },
+        "ru": {
+          "L": "Собирающий летом — сын разумный; \\q спящий в жатву — сын позорящий.",
+          "B": "Сын, который собирает урожай летом, мудр; \\q сын, который спит во время жатвы, навлекает позор.",
+          "R": "Сын, который усердно работает во время жатвы, мудр. \\q Сын, который спит, когда есть работа, позорит свою семью."
+        },
+        "ja": {
+          "L": "夏に集める者は賢くふるまう子、 \\q 刈り入れの時に眠る者は恥をもたらす子。",
+          "B": "夏に作物を集める子は賢い。 \\q 刈り入れの時に眠りこける子は恥をもたらす。",
+          "R": "収穫の時に一生懸命働く息子は、知恵がある。 \\q 仕事があるときに眠っている息子は、家族に恥をかかせる。"
+        },
+        "uk": {
+          "L": "Хто збирає влітку — син, що чинить мудро; \\q хто спить у жнива — син, що приносить сором.",
+          "B": "Син, який збирає врожай улітку, мудрий; \\q син, який проспав жнива, приносить ганьбу.",
+          "R": "Син, який тяжко працює під час жнив, мудрий. \\q Син, який спить, коли є робота, приносить сором своїй родині."
         }
       },
       "decisions": [
@@ -777,6 +1124,26 @@
           "L": "በረከቶች በጻድቅ ራስ ላይ [ናቸው]፤ \\q የክፉዎች አፍ ግን ግፍን ይሸሽጋል።",
           "B": "ጻድቃን በረከትን እንደ ዘውድ ይደፋሉ፤ \\q ከክፉዎች ቃል በስተጀርባ ግን ግፍ ተሸሽጓል።",
           "R": "በመልካም ሰዎች ላይ መልካም ነገር ይደርሳል። \\q ክፉ ሰዎች ግን የጭካኔ ዕቅዳቸውን በቃላቸው ይሸፍናሉ።"
+        },
+        "hi": {
+          "L": "धर्मी के सिर पर आशीषें [रहती हैं], \\q पर दुष्टों का मुँह हिंसा को छिपाता है।",
+          "B": "धर्मी लोग आशीषों को मुकुट की तरह पहनते हैं, \\q पर दुष्टों की बातों के पीछे हिंसा छिपी रहती है।",
+          "R": "जो लोग सही करते हैं, उनके साथ अच्छी बातें होती हैं। \\q पर दुष्ट लोग अपनी क्रूर योजनाओं को अपनी बातों के पीछे छिपाते हैं।"
+        },
+        "ru": {
+          "L": "Благословения — на голове праведного, \\q а уста нечестивых скрывают насилие.",
+          "B": "Благословения венчают голову праведного, \\q а за словами нечестивых таится насилие.",
+          "R": "Праведным людям достаётся много хорошего. \\q А злые люди прячут жестокие замыслы за своими словами."
+        },
+        "ja": {
+          "L": "祝福は正しい者の頭の上にある。 \\q しかし、悪しき者たちの口は暴虐を覆い隠す。",
+          "B": "正しい人は、祝福を冠のように頭にいただく。 \\q しかし、悪しき者の言葉の陰には暴虐が潜む。",
+          "R": "正しい人には、良いことが起こる。 \\q しかし、悪い人は、言葉の陰にむごいたくらみを隠している。"
+        },
+        "uk": {
+          "L": "Благословення — на голові праведного, \\q а уста нечестивих приховують насильство.",
+          "B": "Праведні носять благословення, як вінець, \\q а за словами нечестивих криється насильство.",
+          "R": "Добре стається з людьми, які чинять правильно. \\q А злі люди ховають свої жорстокі задуми за словами."
         }
       },
       "decisions": [
@@ -925,6 +1292,26 @@
           "L": "የጻድቅ መታሰቢያ ለበረከት [ነው]፤ \\q የክፉዎች ስም ግን ይበሰብሳል።",
           "B": "ጻድቅ በበረከት ይታሰባል፤ \\q የክፉዎች ስም ግን ይበሰብሳል።",
           "R": "ሰዎች መልካም ሰዎችን በምስጋና ያስታውሷቸዋል። \\q የክፉ ሰዎች ስም ግን ቶሎ ይረሳል።"
+        },
+        "hi": {
+          "L": "धर्मी का स्मरण आशीष के लिए [होता है], \\q पर दुष्टों का नाम सड़ जाएगा।",
+          "B": "धर्मी को आशीष के साथ याद किया जाता है, \\q पर दुष्टों का नाम सड़ जाता है।",
+          "R": "लोग भले लोगों को धन्यवाद के साथ याद करते हैं। \\q पर दुष्ट लोगों के नाम जल्दी भुला दिए जाते हैं।"
+        },
+        "ru": {
+          "L": "Память праведного — во благословение, \\q а имя нечестивых сгниёт.",
+          "B": "Праведного вспоминают с благословением, \\q а имя нечестивых истлевает.",
+          "R": "Праведных людей вспоминают с благодарностью. \\q А имена злых людей скоро забываются."
+        },
+        "ja": {
+          "L": "正しい者の記憶は祝福となる。 \\q しかし、悪しき者たちの名は朽ちる。",
+          "B": "正しい人は祝福のうちに覚えられ、 \\q 悪しき者の名は朽ち果てる。",
+          "R": "人々は、正しい人のことを感謝して覚えている。 \\q しかし、悪い人の名前は、すぐに忘れられる。"
+        },
+        "uk": {
+          "L": "Памʼять праведного — на благословення, \\q а імʼя нечестивих згниє.",
+          "B": "Праведних згадують із благословенням, \\q а імʼя нечестивих зотліє.",
+          "R": "Люди згадують добрих людей із вдячністю. \\q А імена злих людей швидко забувають."
         }
       },
       "decisions": [
@@ -1024,6 +1411,26 @@
           "L": "ልበ ጠቢብ ትእዛዛትን ይቀበላል፤ \\q በከንፈሩ የሚለፈልፍ ሰነፍ ግን ይወድቃል።",
           "B": "በልቡ ጠቢብ የሆነ ምክርን ይቀበላል፤ \\q ዝም የማይል ሰነፍ ግን ይጠፋል።",
           "R": "ጠቢባን የተነገራቸውን ያደርጋሉ። \\q ወሬ የማያቆሙ ሰነፎች ግን ይጠፋሉ።"
+        },
+        "hi": {
+          "L": "हृदय का बुद्धिमान आज्ञाओं को ग्रहण करेगा, \\q पर बकवादी मूर्ख गिरा दिया जाएगा।",
+          "B": "बुद्धिमान मन का व्यक्ति आज्ञाएँ मान लेता है, \\q पर बकबक करनेवाला मूर्ख नाश हो जाता है।",
+          "R": "बुद्धिमान लोग वही करते हैं जो उनसे कहा जाता है। \\q पर जो मूर्ख बोलना बंद नहीं करते, वे नाश हो जाएँगे।"
+        },
+        "ru": {
+          "L": "Мудрый сердцем примет заповеди, \\q а болтливый глупец будет повержен.",
+          "B": "Мудрый сердцем принимает указания, \\q а глупец, который всё говорит, придёт к погибели.",
+          "R": "Мудрые люди делают то, что им говорят. \\q А глупцы, которые не умолкают, будут уничтожены."
+        },
+        "ja": {
+          "L": "心の知恵ある者は戒めを受け入れる。 \\q しかし、唇の愚かな者は打ち倒される。",
+          "B": "心に知恵のある者は戒めを受け入れる。 \\q しかし、口数の多い愚か者は滅びる。",
+          "R": "知恵のある人は、言われたことを行う。 \\q しかし、おしゃべりをやめない愚かな人は、滅びる。"
+        },
+        "uk": {
+          "L": "Мудрий серцем прийме заповіді, \\q а безумний базіка буде повалений.",
+          "B": "Мудрий серцем приймає настанови, \\q а безумний, який не замовкає, загине.",
+          "R": "Мудрі люди роблять те, що їм кажуть. \\q А нерозумних людей, які не можуть замовкнути, буде знищено."
         }
       },
       "decisions": [
@@ -1075,6 +1482,50 @@
             "one word for both"
           ],
           "reason": "Proverbs has two common words for the fool; the terms list keeps them apart so the reader can follow each. The second line is the same as 10:10b.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100080052",
+            "o200100080061"
+          ],
+          "choice": "\"बकवादी मूर्ख\" (L); \"बकबक करनेवाला मूर्ख\" (B)",
+          "alternatives": [
+            "होंठों का मूर्ख"
+          ],
+          "reason": "A fool of lips is a fool who talks too much (meaning m1); \"होंठों का मूर्ख\" would mean nothing in Hindi.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100080051",
+            "o200100080052",
+            "o200100080061"
+          ],
+          "choice": "'evil sefatayim \"唇の愚かな者\" (L), \"口数の多い愚か者\" (B), \"おしゃべりをやめない愚かな人\" (R) (also 10:10)",
+          "alternatives": [
+            "おしゃべりな愚か者"
+          ],
+          "reason": "Literal keeps the Hebrew 'fool of lips'; Balanced and Readable say what it means (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1144,6 +1595,26 @@
           "L": "በፍጹምነት የሚሄድ ተማምኖ ይሄዳል፤ \\q መንገዱን የሚያጣምም ግን ይታወቃል።",
           "B": "በቅንነት የሚኖር ያለ ፍርሃት ይመላለሳል፤ \\q ጠማማ መንገድን የሚይዝ ግን ይጋለጣል።",
           "R": "ሐቀኛ ሰዎች ያለ ፍርሃት ይኖራሉ። \\q ሐቀኛ ያልሆኑ ግን ይያዛሉ።"
+        },
+        "hi": {
+          "L": "जो खराई से चलता है, वह निडर चलता है, \\q पर जो अपने मार्ग टेढ़े करता है, वह पकड़ा जाएगा।",
+          "B": "जो ईमानदारी से जीता है, वह बिना डर के चलता है, \\q पर जो टेढ़े रास्ते अपनाता है, उसका भेद खुल जाएगा।",
+          "R": "जो लोग ईमानदार हैं, वे बिना डर के जीते हैं। \\q पर जो लोग बेईमान हैं, वे पकड़े जाएँगे।"
+        },
+        "ru": {
+          "L": "Ходящий в непорочности ходит уверенно, \\q а искривляющий свои пути будет разоблачён.",
+          "B": "Кто живёт честно, ходит без страха, \\q а кто идёт кривыми путями, будет разоблачён.",
+          "R": "Честные люди живут без страха. \\q А нечестных людей поймают."
+        },
+        "ja": {
+          "L": "無垢のうちに歩む者は安らかに歩む。 \\q しかし、自分の道を曲げる者は知られる。",
+          "B": "誠実に生きる者は、恐れなく歩む。 \\q しかし、曲がった道を行く者は、あばかれる。",
+          "R": "正直な人は、恐れずに生きる。 \\q しかし、不正直な人は、捕まる。"
+        },
+        "uk": {
+          "L": "Хто ходить у непорочності, ходить безпечно, \\q а хто викривлює свої дороги, буде викритий.",
+          "B": "Хто живе чесно, ходить без страху, \\q а хто йде кривими дорогами, буде викритий.",
+          "R": "Чесні люди живуть без страху. \\q А нечесних людей буде впіймано."
         }
       },
       "decisions": [
@@ -1198,6 +1669,86 @@
             "\"ቅንነት\" at every level"
           ],
           "reason": "Literal keeps the root's sense of wholeness and holds \"ቅን\" for the upright (yashar).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200100090062"
+          ],
+          "choice": "\"अपने\" with no gender span",
+          "alternatives": [
+            "a gender span"
+          ],
+          "reason": "The English offers \"their\" or \"his\" here and in several sayings of this chapter; the Hindi reflexive \"अपने\" and the pronouns \"वह\", \"उसे\" are the same for a man or a woman, and the generic masculine verb is ordinary Hindi (style guide, section 7), so the Hindi has no gender spans in this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100090022"
+          ],
+          "choice": "\"खराई\"",
+          "alternatives": [
+            "सच्चाई"
+          ],
+          "reason": "Integrity (tom) is \"खराई\", as in the Psalms in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o200100090061"
+          ],
+          "choice": "no gender setting in these sayings",
+          "alternatives": [
+            "\"{{gender:свои|его}} пути\""
+          ],
+          "reason": "Where the English needs \"their\" or \"his\" (here and in 10:15, 18, 19, 24, 26), Russian uses the reflexive \"свой\" or the generic \"он\" of \"праведный\", \"богатый\", which already serve for anyone, so no setting is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100090021",
+            "o200100090022"
+          ],
+          "choice": "tom \"無垢\" (L), \"誠実\" (B), \"正直\" (R), as tummah in Job; \"その者\" with no gender span where the English Literal has {{gender:their|his}} (also 10:15, 18-19, 24, 26)",
+          "alternatives": [
+            "完全",
+            "まっすぐ"
+          ],
+          "reason": "Integrity of life; the book's forms for tam / tamim. Japanese needs no gender setting for 者.",
           "uncertain": false,
           "footnote": false
         }
@@ -1265,6 +1816,26 @@
           "L": "በዓይኑ የሚጠቅስ ሕመምን ያመጣል፤ \\q በከንፈሩ የሚለፈልፍ ሰነፍም ይወድቃል።",
           "B": "በዓይኑ የሚጠቅስ ችግርን ይፈጥራል፤ \\q ዝም የማይል ሰነፍም ይጠፋል።",
           "R": "ሌሎችን ለማታለል በዓይናቸው የሚጠቅሱ ችግር ይፈጥራሉ። \\q ወሬ የማያቆሙ ሰነፎችም ይጠፋሉ።"
+        },
+        "hi": {
+          "L": "जो आँख मारता है, वह दुख देता है, \\q और बकवादी मूर्ख गिरा दिया जाएगा।",
+          "B": "जो आँख मारकर इशारा करता है, वह मुसीबत खड़ी करता है, \\q और बकबक करनेवाला मूर्ख नाश हो जाता है।",
+          "R": "जो लोग दूसरों को धोखा देने के लिए आँख मारते हैं, वे मुसीबत खड़ी करते हैं। \\q जो मूर्ख बोलना बंद नहीं करते, वे नाश हो जाएँगे।"
+        },
+        "ru": {
+          "L": "Подмигивающий глазом причиняет боль, \\q и болтливый глупец будет повержен.",
+          "B": "Кто подмигивает глазом, причиняет беду, \\q и глупец, который всё говорит, придёт к погибели.",
+          "R": "Люди, которые подмигивают другим, чтобы обмануть, причиняют беду. \\q Глупцы, которые не умолкают, будут уничтожены."
+        },
+        "ja": {
+          "L": "目くばせする者は苦しみをもたらし、 \\q 唇の愚かな者は打ち倒される。",
+          "B": "目くばせする者はもめごとを起こし、 \\q 口数の多い愚か者は滅びる。",
+          "R": "人をだまそうと目くばせする人は、もめごとを起こす。 \\q おしゃべりをやめない愚かな人は、滅びる。"
+        },
+        "uk": {
+          "L": "Хто підморгує оком, завдає болю, \\q а безумний базіка буде повалений.",
+          "B": "Хто підморгує оком, накликає біду, \\q а безумний, який не замовкає, загине.",
+          "R": "Люди, які підморгують іншим, щоб когось ошукати, спричиняють біду. \\q Нерозумних людей, які не можуть замовкнути, буде знищено."
         }
       },
       "decisions": [
@@ -1300,6 +1871,47 @@
           "reason": "The second line repeats verse 8b. The ancient Greek translation has a different line that gives a contrast with the first.",
           "uncertain": false,
           "footnote": true
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100100052",
+            "o200100100071"
+          ],
+          "choice": "second line as verse 8",
+          "alternatives": [],
+          "reason": "The second line is the Hebrew of verse 8's second line (meaning m2), so it repeats verse 8's Hindi at each level. Winking is the troublemaker's signal of 6:13 (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100100052"
+          ],
+          "choice": "second line copied from 10:8",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The Hebrew repeats verse 8b word for word, so the Russian repeats it at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1366,6 +1978,26 @@
           "L": "የጻድቅ አፍ የሕይወት ምንጭ [ነው]፤ \\q የክፉዎች አፍ ግን ግፍን ይሸሽጋል።",
           "B": "የጻድቅ ንግግር የሕይወት ምንጭ ነው፤ \\q ከክፉዎች ቃል በስተጀርባ ግን ግፍ ተሸሽጓል።",
           "R": "መልካም ሰዎች ለሌሎች ሕይወት የሚሰጥ ቃል ይናገራሉ። \\q ክፉ ሰዎች ግን የጭካኔ ዕቅዳቸውን በቃላቸው ይሸፍናሉ።"
+        },
+        "hi": {
+          "L": "धर्मी का मुँह जीवन का सोता [है], \\q पर दुष्टों का मुँह हिंसा को छिपाता है।",
+          "B": "धर्मी जो कहते हैं, वह जीवन का झरना है, \\q पर दुष्टों की बातों के पीछे हिंसा छिपी रहती है।",
+          "R": "भले लोग ऐसी बातें कहते हैं जो दूसरों को जीवन देती हैं। \\q पर दुष्ट लोग अपनी क्रूर योजनाओं को अपनी बातों के पीछे छिपाते हैं।"
+        },
+        "ru": {
+          "L": "Источник жизни — уста праведного, \\q а уста нечестивых скрывают насилие.",
+          "B": "Слова праведного — родник жизни, \\q а за словами нечестивых таится насилие.",
+          "R": "Праведные люди говорят то, что даёт жизнь другим. \\q А злые люди прячут жестокие замыслы за своими словами."
+        },
+        "ja": {
+          "L": "正しい者の口は命の泉。 \\q しかし、悪しき者たちの口は暴虐を覆い隠す。",
+          "B": "正しい人の語る言葉は命の泉。 \\q しかし、悪しき者の言葉の陰には暴虐が潜む。",
+          "R": "正しい人の言葉は、ほかの人に命を与える。 \\q しかし、悪い人は、言葉の陰にむごいたくらみを隠している。"
+        },
+        "uk": {
+          "L": "Джерело життя — уста праведного, \\q а уста нечестивих приховують насильство.",
+          "B": "Слова праведного — джерело життя, \\q а за словами нечестивих криється насильство.",
+          "R": "Добрі люди кажуть те, що дає життя іншим. \\q А злі люди ховають свої жорстокі задуми за словами."
         }
       },
       "decisions": [
@@ -1381,6 +2013,26 @@
           "choice": "a fountain of life: a source that gives life",
           "alternatives": [],
           "reason": "The picture recurs for wise teaching (13:14) and the fear of the LORD (14:27). Water was life in a dry land.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100110052",
+            "o200100110081"
+          ],
+          "choice": "second line as verse 6",
+          "alternatives": [],
+          "reason": "The second line is the same Hebrew as verse 6's, so it repeats verse 6's Hindi at each level.",
           "uncertain": false,
           "footnote": false
         }
@@ -1449,6 +2101,26 @@
           "L": "ጥላቻ ጠብን ያነሣሣል፤ \\q ፍቅር ግን በደልን ሁሉ ይሸፍናል።",
           "B": "ጥላቻ ጠብን ይጭራል፤ \\q ፍቅር ግን በደልን ሁሉ ይሸፍናል።",
           "R": "ጥላቻ ሰዎችን ያጣላል። \\q ፍቅር ግን ይቅር ብሎ በደልን ሁሉ ይሸፍናል።"
+        },
+        "hi": {
+          "L": "बैर झगड़े उत्पन्न करता है, \\q पर प्रेम सब अपराधों को ढाँप देता है।",
+          "B": "बैर लड़ाइयाँ छेड़ता है, \\q पर प्रेम हर अपराध पर पर्दा डाल देता है।",
+          "R": "घृणा लोगों को लड़वाती है। \\q पर प्रेम सब ग़लतियों को क्षमा कर देता है।"
+        },
+        "ru": {
+          "L": "Ненависть возбуждает ссоры, \\q а любовь покрывает все преступления.",
+          "B": "Ненависть разжигает раздоры, \\q а любовь покрывает всякий проступок.",
+          "R": "Ненависть заставляет людей ссориться. \\q А любовь прощает все обиды."
+        },
+        "ja": {
+          "L": "憎しみは争いを引き起こす。 \\q しかし、すべての背きを愛は覆う。",
+          "B": "憎しみは争いを起こす。 \\q しかし、愛はあらゆる背きを覆う。",
+          "R": "憎しみは、人を争わせる。 \\q しかし、愛は、すべての悪いことをゆるす。"
+        },
+        "uk": {
+          "L": "Ненависть розпалює сварки, \\q а любов покриває всі провини.",
+          "B": "Ненависть починає чвари, \\q а любов накриває завісою кожну провину.",
+          "R": "Ненависть змушує людей сваритися. \\q А любов прощає все погане."
         }
       },
       "decisions": [
@@ -1510,6 +2182,69 @@
             "\"ፍቅር … ይቅር ይላል\" (love forgives) at Readable, as the English Readable"
           ],
           "reason": "1 Peter 4:8 and James 5:20 echo this line. The Greek has \"a multitude of sins\" (\"የኃጢአትን ብዛት\", \"ብዙ ኃጢአትን\" there); the Hebrew has \"all transgressions\", so the Amharic follows the Hebrew with \"በደልን ሁሉ\" and keeps the New Testament's verb so the echo is heard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100120061",
+            "o200100120071",
+            "o200100120081"
+          ],
+          "choice": "\"प्रेम सब अपराधों को ढाँप देता है\" (L); \"पर्दा डाल देता है\" (B)",
+          "alternatives": [
+            "प्रेम बहुत-से पापों को ढाँप देता है"
+          ],
+          "reason": "1 Peter 4:8 quotes this line in a form close to the Greek (\"love covers a multitude of sins\"), which this translation renders \"प्रेम बहुत-से पापों को ढाँप देता है\". The Hebrew says \"all transgressions\", so the Hindi translates the Hebrew (\"सब अपराध\", \"अपराध\" as for trespass elsewhere) but keeps 1 Peter's verb \"ढाँप देना\" at Literal, so the reader hears the quotation. To cover is to forgive and not stir up (meaning m1), which Readable says plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100120071",
+            "o200100120081"
+          ],
+          "choice": "\"любовь покрывает\", the verb of 1 Peter 4:8 in this translation",
+          "alternatives": [
+            "\"прикрывает\"",
+            "\"закрывает\""
+          ],
+          "reason": "1 Peter 4:8 echoes this line (\"любовь покрывает множество грехов\"); Literal and Balanced keep its verb. The Hebrew says \"all transgressions\", not the \"multitude of sins\" of 1 Peter, so the object follows the Hebrew; Readable says what covering means, \"прощает\", as the English does (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100120061"
+          ],
+          "choice": "\"преступления\" for pesha",
+          "alternatives": [
+            "\"грехи\""
+          ],
+          "reason": "pesha is \"преступление\" in this translation's Old Testament; \"грехи\" is the word of 1 Peter 4:8, which renders another text.",
           "uncertain": false,
           "footnote": false
         }
@@ -1580,6 +2315,26 @@
           "L": "በሚያስተውል ሰው ከንፈር ጥበብ ትገኛለች፤ \\q በትር ግን ልብ ለጎደለው ጀርባ [ነው]።",
           "B": "ጥበብ በአስተዋይ ሰው ከንፈር ትገኛለች፤ \\q በትር ግን ማስተዋል ለጎደለው ሰው ጀርባ ነው።",
           "R": "አስተዋይ ሰዎች ጥበብ ያለበትን ይናገራሉ። \\q አእምሮ የሌላቸው ግን ይቀጣሉ።"
+        },
+        "hi": {
+          "L": "समझदार के होंठों पर बुद्धि पाई जाती है, \\q पर जिसमें समझ की कमी है, उसकी पीठ के लिए छड़ी [है]।",
+          "B": "समझ रखनेवाले के होंठों पर बुद्धि मिलती है, \\q पर नासमझ की पीठ के लिए छड़ी है।",
+          "R": "जो लोग समझदार हैं, वे बुद्धि की बातें कहते हैं। \\q पर जिनमें समझ नहीं, उन्हें दंड मिलेगा।"
+        },
+        "ru": {
+          "L": "На устах разумного находится мудрость, \\q а розга — для спины лишённого сердца.",
+          "B": "Мудрость находится на устах разумного человека, \\q а розга — для спины безрассудного.",
+          "R": "Люди, у которых есть понимание, говорят мудрые слова. \\q А люди без здравого смысла будут наказаны."
+        },
+        "ja": {
+          "L": "悟る者の唇には知恵が見いだされる。 \\q しかし、心の欠けた者の背には鞭がある。",
+          "B": "悟りのある者の唇には知恵があり、 \\q 分別のない者の背には鞭が待っている。",
+          "R": "物事がよくわかる人は、知恵のあることを言う。 \\q しかし、分別のない人は、罰を受ける。"
+        },
+        "uk": {
+          "L": "На губах [того, хто] розуміє, знаходиться мудрість, \\q а різка — для спини [того, хто] позбавлений серця.",
+          "B": "Мудрість знаходять на губах розумної людини, \\q а різка — для спини того, кому бракує розуму.",
+          "R": "Люди, які розуміють, кажуть мудре. \\q А люди без розсудливості будуть покарані."
         }
       },
       "decisions": [
@@ -1662,6 +2417,26 @@
           "L": "ጠቢባን እውቀትን ያከማቻሉ፤ \\q የሰነፍ አፍ ግን የቀረበ ጥፋት [ነው]።",
           "B": "ጠቢባን እውቀትን ሰውረው ይይዛሉ፤ \\q የሰነፍ አፍ ግን ጥፋትን ይጋብዛል።",
           "R": "ጠቢባን እውቀትን ያከማቻሉ። \\q ሰነፎች ግን በአፋቸው ራሳቸውን ችግር ውስጥ ይጥላሉ።"
+        },
+        "hi": {
+          "L": "बुद्धिमान ज्ञान को संचित रखते हैं, \\q पर मूर्ख का मुँह निकट [आता] विनाश [है]।",
+          "B": "बुद्धिमान ज्ञान को सँभालकर रखते हैं, \\q पर मूर्ख का मुँह विनाश को बुलाता है।",
+          "R": "बुद्धिमान लोग ज्ञान को जमा करते हैं। \\q पर मूर्ख लोग अपनी बातों से मुसीबत में पड़ जाते हैं।"
+        },
+        "ru": {
+          "L": "Мудрые сберегают знание, \\q а уста глупца — близкая погибель.",
+          "B": "Мудрые хранят знание про запас, \\q а уста глупца навлекают погибель.",
+          "R": "Мудрые люди копят знания. \\q А глупцы своими разговорами навлекают на себя беду."
+        },
+        "ja": {
+          "L": "知恵ある者たちは知識を蓄える。 \\q しかし、愚か者の口は近づく破滅である。",
+          "B": "知恵ある者は知識を蓄える。 \\q しかし、愚か者の口は破滅を招く。",
+          "R": "知恵のある人は、知識をたくわえる。 \\q しかし、愚かな人は、口のせいで困ったことになる。"
+        },
+        "uk": {
+          "L": "Мудрі зберігають знання, \\q а уста безумного — загибель близька.",
+          "B": "Мудрі тримають знання про запас, \\q а уста безумного накликають загибель.",
+          "R": "Мудрі люди збирають знання. \\q А нерозумні люди своїми словами накликають на себе біду."
         }
       },
       "decisions": [
@@ -1744,6 +2519,26 @@
           "L": "የባለጸጋ ሀብት የጸናች ከተማው [ናት]፤ \\q የድሆች ጥፋት ድህነታቸው [ነው]።",
           "B": "የሀብታም ሰው ሀብት የተመሸገች ከተማ ናት፤ \\q ድሆችን የሚያጠፋቸው ድህነታቸው ነው።",
           "R": "ሀብታሞች በገንዘባቸው ምክንያት ደኅንነት ይሰማቸዋል። \\q ድሆች ግን ምንም ስለሌላቸው ይጠፋሉ።"
+        },
+        "hi": {
+          "L": "धनी का धन उसका गढ़वाला नगर [है]; \\q ग़रीबों का विनाश उनकी ग़रीबी [है]।",
+          "B": "धनी व्यक्ति का धन उसके लिए गढ़वाला नगर है; \\q ग़रीबी ही ग़रीबों को बर्बाद करती है।",
+          "R": "धनी लोग अपने पैसे के कारण अपने आप को सुरक्षित समझते हैं। \\q ग़रीब लोग इसलिए बर्बाद होते हैं क्योंकि उनके पास कुछ नहीं होता।"
+        },
+        "ru": {
+          "L": "Богатство богатого — его крепкий город; \\q погибель бедных — их бедность.",
+          "B": "Богатство богатого — укреплённый город; \\q бедных губит их бедность.",
+          "R": "Богатые чувствуют себя в безопасности благодаря своим деньгам. \\q Бедные разоряются, потому что у них ничего нет."
+        },
+        "ja": {
+          "L": "富む者の財産はその者の堅固な町、 \\q 貧しい者たちの破滅はその貧しさ。",
+          "B": "金持ちの財産は堅固な町。 \\q 貧しい者を滅ぼすのは、その貧しさだ。",
+          "R": "金持ちは、お金があるので安心している。 \\q 貧しい人は、何も持っていないので滅びる。"
+        },
+        "uk": {
+          "L": "Багатство багатого — його міцне місто; \\q загибель бідних — їхня бідність.",
+          "B": "Багатство багатої людини — укріплене місто; \\q бідних губить їхня бідність.",
+          "R": "Багаті люди почуваються в безпеці через свої гроші. \\q Бідні люди гинуть, бо не мають нічого."
         }
       },
       "decisions": [
@@ -1780,6 +2575,26 @@
             "\"kẻ nghèo\""
           ],
           "reason": "One word for the poor through the book. \"người\" is respectful; \"kẻ\" would put them with the wicked.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100150031",
+            "o200100150041"
+          ],
+          "choice": "\"गढ़वाला नगर\" (L, B); \"अपने आप को सुरक्षित समझते हैं\" (R)",
+          "alternatives": [],
+          "reason": "The saying states how things are, not a promise (meaning m1): Readable says the rich feel safe, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1847,6 +2662,26 @@
           "L": "የጻድቅ ደመወዝ ወደ ሕይወት [ይመራል]፤ \\q የክፉ ገቢ ወደ ኃጢአት [ይመራል]።",
           "B": "ጻድቅ የሚያገኘው ወደ ሕይወት ይመራል፤ \\q ክፉ የሚያተርፈው ግን ወደ ኃጢአት ይመራል።",
           "R": "መልካም ሰዎች ያገኙትን በመልካም ለመኖር ይጠቀሙበታል። \\q ክፉ ሰዎች ያገኙትን ግን ተጨማሪ ክፉ ለማድረግ ይጠቀሙበታል።"
+        },
+        "hi": {
+          "L": "धर्मी की कमाई जीवन [की ओर ले जाती है]; \\q दुष्ट की आय पाप की ओर।",
+          "B": "धर्मी जो कमाते हैं वह जीवन की ओर ले जाता है; \\q दुष्ट जो पाते हैं वह पाप की ओर।",
+          "R": "भले लोग अपनी कमाई से अच्छा जीवन जीते हैं। \\q दुष्ट लोग जो पाते हैं, उससे और ग़लत काम करते हैं।"
+        },
+        "ru": {
+          "L": "Заработок праведного — к жизни, \\q доход нечестивого — ко греху.",
+          "B": "То, что зарабатывает праведный, ведёт к жизни; \\q то, что получает нечестивый, ведёт ко греху.",
+          "R": "Праведные люди используют заработанное, чтобы хорошо жить. \\q Злые люди используют то, что получают, чтобы делать ещё больше зла."
+        },
+        "ja": {
+          "L": "正しい者の報酬は命に[至り]、 \\q 悪しき者の収入は罪に[至る]。",
+          "B": "正しい人の稼ぎは命に至り、 \\q 悪しき者の利得は罪に至る。",
+          "R": "正しい人は、かせいだもので良い暮らしをする。 \\q 悪い人は、手に入れたもので、さらに悪いことをする。"
+        },
+        "uk": {
+          "L": "Заробіток праведного — на життя; \\q прибуток нечестивого — на гріх.",
+          "B": "Те, що заробляє праведний, веде до життя; \\q те, що здобуває нечестивий, веде до гріха.",
+          "R": "Добрі люди використовують те, що заробляють, щоб жити добре. \\q Злі люди використовують те, що отримують, щоб чинити ще більше зла."
         }
       },
       "decisions": [
@@ -1932,6 +2767,26 @@
           "L": "ተግሣጽን የሚጠብቅ በሕይወት መንገድ ላይ [ነው]፤ \\q ዘለፋን የሚተው ግን ያስታል።",
           "B": "ተግሣጽን አጥብቆ የሚይዝ በሕይወት መንገድ ላይ ነው፤ \\q ዘለፋን የሚንቅ ግን ሌሎችን ያሳስታል።",
           "R": "ተግሣጽን የሚቀበሉ በሕይወት መንገድ ላይ ናቸው። \\q ዘለፋን የማይቀበሉ ግን ሌሎችን ወደ ተሳሳተ መንገድ ይመራሉ።"
+        },
+        "hi": {
+          "L": "जो अनुशासन को मानता है, [वह] जीवन के पथ [पर है], \\q पर जो डाँट को छोड़ देता है, वह भटका देता है।",
+          "B": "जो अनुशासन को थामे रहता है, वह जीवन की राह पर है, \\q पर जो सुधार को ठुकराता है, वह दूसरों को भटका देता है।",
+          "R": "जो लोग सुधार को स्वीकार करते हैं, वे जीवन की राह पर हैं। \\q जो उसे ठुकराते हैं, वे दूसरों को ग़लत राह पर ले जाते हैं।"
+        },
+        "ru": {
+          "L": "Хранящий наставление — на пути к жизни, \\q а оставляющий обличение вводит в заблуждение.",
+          "B": "Кто держится наставления, тот на дороге к жизни, \\q а кто отвергает обличение, сбивает других с пути.",
+          "R": "Люди, которые принимают вразумление, — на дороге к жизни. \\q Те, кто отказывается от него, ведут других не туда."
+        },
+        "ja": {
+          "L": "訓戒を守る者は命への道[にある]。 \\q しかし、叱責を捨てる者は迷わせる。",
+          "B": "訓戒をしっかり守る者は、命への道を歩み、 \\q 叱責を拒む者は、人を迷わせる。",
+          "R": "しつけを受け入れる人は、命への道を歩いている。 \\q それを拒む人は、ほかの人を間違った道に導く。"
+        },
+        "uk": {
+          "L": "Хто береже настанову — [на] стежці до життя, \\q а хто покидає докір, вводить в оману.",
+          "B": "Хто тримається настанови, той на дорозі до життя, \\q а хто відкидає виправлення, збиває інших з дороги.",
+          "R": "Люди, які приймають виправлення, на дорозі до життя. \\q Люди, які його відкидають, ведуть інших хибним шляхом."
         }
       },
       "decisions": [
@@ -1948,6 +2803,25 @@
             "goes astray"
           ],
           "reason": "The verb (matah, causative) usually means to lead others astray; some read it as \"goes astray\". Both are true of the one who will not be corrected.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100170071"
+          ],
+          "choice": "\"भटका देता है\"",
+          "alternatives": [
+            "भटक जाता है"
+          ],
+          "reason": "The verb may mean he leads others astray or goes astray himself (meaning m1); the Hindi follows the English.",
           "uncertain": true,
           "footnote": false
         }
@@ -2016,6 +2890,26 @@
           "L": "ጥላቻን የሚሸሽግ ሐሰተኛ ከንፈር [አለው]፤ \\q ሐሜትን የሚያወራም እርሱ ሞኝ [ነው]።",
           "B": "ጥላቻን መሸሸግ ሐሰተኛ ከንፈር ያደርጋል፤ \\q ሐሜትን ማዛመትም ሞኝ ያደርጋል።",
           "R": "ጥላቻን ብትደብቅ ትዋሻለህ። \\q ስለ ሌሎች ክፉ ብታወራ ሞኝ ነህ።"
+        },
+        "hi": {
+          "L": "जो बैर को छिपाता है, [उसके] होंठ झूठे [हैं], \\q और जो निंदा फैलाता है, वह मूर्ख [है]।",
+          "B": "बैर छिपाने से होंठ झूठे बनते हैं, \\q और निंदा फैलाने से मनुष्य मूर्ख बनता है।",
+          "R": "यदि तुम घृणा छिपाते हो, तो तुम झूठ बोल रहे हो। \\q यदि तुम दूसरों के बारे में बुरी बातें कहते हो, तो तुम मूर्ख हो।"
+        },
+        "ru": {
+          "L": "Скрывающий ненависть — [у него] лживые уста, \\q и распространяющий клевету — тот глупец.",
+          "B": "Кто скрывает ненависть, тот лжёт устами, \\q а кто распускает клевету, тот глупец.",
+          "R": "Если ты скрываешь ненависть, ты лжёшь. \\q Если ты говоришь о других плохое, ты глупец."
+        },
+        "ja": {
+          "L": "憎しみを隠す者は偽りの唇[を持ち]、 \\q 中傷を言いふらす者、その者は愚か者である。",
+          "B": "憎しみを隠せば、偽りの唇となり、 \\q 中傷を言いふらせば、愚か者となる。",
+          "R": "憎しみを隠すなら、あなたはうそをついている。 \\q ほかの人の悪口を言うなら、あなたは愚かな人だ。"
+        },
+        "uk": {
+          "L": "Хто приховує ненависть, [має] брехливі губи, \\q а хто поширює наклеп — той безумний.",
+          "B": "Хто ховає ненависть, той говорить брехливими губами, \\q а хто поширює наклеп, той безумний.",
+          "R": "Якщо ти ховаєш ненависть, ти брешеш. \\q Якщо ти говориш про інших погане, ти нерозумний."
         }
       },
       "decisions": [
@@ -2101,6 +2995,26 @@
           "L": "በብዙ ቃል በደል አይታጣም፤ \\q ከንፈሩን የሚገታ ግን አስተዋይ [ነው]።",
           "B": "ቃል በበዛበት ስሕተት አይጠፋም፤ \\q ንግግሩን የሚገታ ግን ጠቢብ ነው።",
           "R": "ብዙ ብታወራ ቶሎ ስሕተት ትናገራለህ። \\q ከመናገርህ በፊት ቆም ብለህ ማሰብ ጥበብ ነው።"
+        },
+        "hi": {
+          "L": "बहुत बातों में अपराध नहीं रुकता, \\q पर जो अपने होंठों को रोकता है, वह समझदार [है]।",
+          "B": "जहाँ बहुत बातें होती हैं, वहाँ ग़लती दूर नहीं रहती, \\q पर जो अपनी ज़बान पर लगाम रखता है, वह बुद्धिमान है।",
+          "R": "यदि तुम बहुत ज़्यादा बोलते हो, तो जल्दी ही कुछ ग़लत कह दोगे। \\q बोलने से पहले रुककर सोचना बुद्धिमानी है।"
+        },
+        "ru": {
+          "L": "При множестве слов не прекращается преступление, \\q а сдерживающий свои уста благоразумен.",
+          "B": "Где много слов, там не обойтись без проступка, \\q а кто сдерживает свои слова, тот мудр.",
+          "R": "Если ты много говоришь, то скоро скажешь что-нибудь не то. \\q Мудро остановиться и подумать, прежде чем говорить."
+        },
+        "ja": {
+          "L": "言葉が多いところには背きが絶えない。 \\q しかし、自分の唇を抑える者は賢明である。",
+          "B": "言葉が多ければ、背きは避けられない。 \\q しかし、言葉を控える者は賢明だ。",
+          "R": "しゃべりすぎると、すぐに何か悪いことを言ってしまう。 \\q 話す前に立ち止まって考えるのが、知恵のあることだ。"
+        },
+        "uk": {
+          "L": "У багатослівʼї не бракує провини, \\q а хто стримує свої губи, розважливий.",
+          "B": "Де багато слів, там гріх неподалік, \\q а хто стримує свої слова, той мудрий.",
+          "R": "Якщо говориш забагато, скоро скажеш щось погане. \\q Мудро зупинитися й подумати, перш ніж говорити."
         }
       },
       "decisions": [
@@ -2184,6 +3098,26 @@
           "L": "የጻድቅ ምላስ የተመረጠ ብር [ነው]፤ \\q የክፉዎች ልብ እንደ ጥቂት [ነገር ነው]።",
           "B": "የጻድቅ ምላስ ንጹሕ ብር ነው፤ \\q የክፉዎች ልብ ግን ዋጋው እጅግ ጥቂት ነው።",
           "R": "መልካም ሰዎች የሚናገሩት እንደ ብር ውድ ነው። \\q ክፉ ሰዎች የሚያስቡት ግን ምንም ዋጋ የለውም ማለት ይቻላል።"
+        },
+        "hi": {
+          "L": "धर्मी की जीभ उत्तम चाँदी [है]; \\q दुष्टों का हृदय थोड़े [मूल्य का है]।",
+          "B": "धर्मी की जीभ शुद्ध चाँदी है; \\q दुष्टों के मन का मूल्य बहुत थोड़ा है।",
+          "R": "भले लोग जो कहते हैं, वह चाँदी की तरह क़ीमती है। \\q दुष्ट लोग जो सोचते हैं, उसका कोई मूल्य नहीं।"
+        },
+        "ru": {
+          "L": "Отборное серебро — язык праведного; \\q сердце нечестивых — [стоит] мало.",
+          "B": "Язык праведного — чистое серебро; \\q сердце нечестивых почти ничего не стоит.",
+          "R": "Слова праведных людей ценны, как серебро. \\q А мысли злых людей почти ничего не стоят."
+        },
+        "ja": {
+          "L": "正しい者の舌はえり抜きの銀、 \\q 悪しき者たちの心はわずかな[値打ち]。",
+          "B": "正しい人の舌は純銀。 \\q 悪しき者の心には、ほとんど値打ちがない。",
+          "R": "正しい人の言葉は、銀のように価値がある。 \\q 悪い人の考えには、ほとんど値打ちがない。"
+        },
+        "uk": {
+          "L": "Добірне срібло — язик праведного; \\q серце нечестивих — [варте] мало.",
+          "B": "Язик праведного — чисте срібло; \\q серце нечестивих нічого не варте.",
+          "R": "Те, що кажуть добрі люди, цінне, як срібло. \\q Те, що думають злі люди, майже нічого не варте."
         }
       },
       "decisions": [
@@ -2268,6 +3202,26 @@
           "L": "የጻድቅ ከንፈሮች ብዙዎችን ይመግባሉ፤ \\q ሰነፎች ግን ልብ በማጣት ይሞታሉ።",
           "B": "የጻድቅ ቃል ብዙዎችን ይመግባል፤ \\q ሰነፎች ግን ማስተዋል በማጣታቸው ይሞታሉ።",
           "R": "የመልካም ሰዎች ቃል ብዙዎችን ይረዳል። \\q ሰነፎች ግን አእምሮ ስለሌላቸው ይሞታሉ።"
+        },
+        "hi": {
+          "L": "धर्मी के होंठ बहुतों का पोषण करते हैं, \\q पर मूर्ख समझ की कमी से मर जाते हैं।",
+          "B": "धर्मी की बातें बहुतों को पोषण देती हैं, \\q पर मूर्ख नासमझी के कारण मर जाते हैं।",
+          "R": "भले लोगों की बातें बहुत से दूसरों की मदद करती हैं। \\q पर मूर्ख इसलिए मरते हैं क्योंकि उनमें समझ नहीं होती।"
+        },
+        "ru": {
+          "L": "Уста праведного пасут многих, \\q а глупцы умирают от недостатка сердца.",
+          "B": "Слова праведного питают многих, \\q а глупцы умирают от безрассудства.",
+          "R": "Слова праведных людей помогают многим. \\q А глупцы умирают, потому что у них нет здравого смысла."
+        },
+        "ja": {
+          "L": "正しい者の唇は多くの者を養う。 \\q しかし、愚か者たちは心が欠けているために死ぬ。",
+          "B": "正しい人の言葉は多くの人を養い、 \\q 愚か者は分別がないために死ぬ。",
+          "R": "正しい人の言葉は、多くの人を助ける。 \\q しかし、愚かな人は、分別がないために死ぬ。"
+        },
+        "uk": {
+          "L": "Губи праведного пасуть багатьох, \\q а безумні помирають через брак серця.",
+          "B": "Слова праведного годують багатьох, \\q а безумні помирають через брак розуму.",
+          "R": "Слова добрих людей допомагають багатьом іншим. \\q А нерозумні помирають, бо не мають розсудливості."
         }
       },
       "decisions": [
@@ -2282,6 +3236,45 @@
           "choice": "feed: shepherd, nourish",
           "alternatives": [],
           "reason": "The verb (raah) is used of shepherds feeding a flock (Psalm 23:1). The righteous feed others; fools cannot even keep themselves alive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o200100210062",
+            "o200100210071"
+          ],
+          "choice": "\"समझ की कमी से\"",
+          "alternatives": [
+            "हृदय की कमी से"
+          ],
+          "reason": "Lack of heart is lack of sense, as in 7:7 and 9:4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100210031"
+          ],
+          "choice": "\"пасут\"",
+          "alternatives": [
+            "\"питают\""
+          ],
+          "reason": "Literal keeps the shepherd's verb (raah, m1); Balanced says \"питают\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2351,6 +3344,26 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} በረከት፣ እርሱ ያበለጽጋል፤ \\q ድካምም በእርሱ ላይ ምንም አይጨምርም።",
           "B": "የሚያበለጽገው {{divine_name:የእግዚአብሔር|የያህዌ}} በረከት ነው፤ \\q ድካምም በእርሱ ላይ ምንም አይጨምርም።",
           "R": "ሰዎችን ሀብታም የሚያደርገው {{divine_name:የእግዚአብሔር|የያህዌ}} በረከት ነው። \\q ብቻውን የሚሠራ ሥራ ያንን በረከት አይሰጥም።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} की आशीष, वही धनी बनाती है, \\q और परिश्रम उसमें कुछ नहीं जोड़ता।",
+          "B": "{{divine_name:प्रभु|याहवे}} की आशीष ही धनी बनाती है, \\q और कड़ी मेहनत उसमें कुछ नहीं जोड़ती।",
+          "R": "{{divine_name:प्रभु|याहवे}} की आशीष ही लोगों को धनी बनाती है। \\q केवल कड़ी मेहनत से वैसी आशीष नहीं मिलती।"
+        },
+        "ru": {
+          "L": "Благословение {{divine_name:ГОСПОДА|Яхве}} — оно обогащает, \\q и труд ничего к нему не прибавляет.",
+          "B": "Именно благословение {{divine_name:ГОСПОДА|Яхве}} обогащает, \\q и тяжёлый труд ничего к нему не прибавляет.",
+          "R": "Людей делает богатыми благословение {{divine_name:ГОСПОДА|Яхве}}. \\q Один тяжёлый труд не даёт такого благословения."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の祝福、それが富ませる。 \\q 労苦はそれに何も加えない。",
+          "B": "人を富ませるのは、{{divine_name:主|ヤハウェ}}の祝福である。 \\q 苦労しても、それに何も加えることはできない。",
+          "R": "人を豊かにするのは、{{divine_name:主|ヤハウェ}}の祝福だ。 \\q 一生懸命働くだけでは、同じ祝福は得られない。"
+        },
+        "uk": {
+          "L": "Благословення {{divine_name:ГОСПОДНЄ|від Ягве}} — воно збагачує, \\q і праця нічого до нього не додає.",
+          "B": "Саме благословення {{divine_name:ГОСПОДНЄ|від Ягве}} збагачує, \\q і тяжка праця нічого до нього не додає.",
+          "R": "Саме благословення {{divine_name:ГОСПОДА|Ягве}} робить людей багатими. \\q Сама лише тяжка праця не дає такого благословення."
         }
       },
       "decisions": [
@@ -2370,6 +3383,27 @@
           "reason": "The words may mean that toil adds nothing to what the LORD gives, or that the LORD adds no sorrow with his blessing. Both make the LORD the source of real wealth (Psalm 127:1–2). The book still praises hard work (verse 4).",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100220061",
+            "o200100220071"
+          ],
+          "choice": "\"परिश्रम उसमें कुछ नहीं जोड़ता\"",
+          "alternatives": [
+            "वे उसके साथ दुख नहीं मिलाते"
+          ],
+          "reason": "The line can also be read \"and he adds no sorrow with it\"; the Hindi follows the English reading (meaning m1).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2438,6 +3472,26 @@
           "L": "ክፋትን ማድረግ ለሞኝ እንደ ጨዋታ [ነው]፤ \\q ጥበብም ለአስተዋይ ሰው [እንዲሁ ነው]።",
           "B": "ክፉ መሥራት ለሞኝ ጨዋታ ነው፤ \\q አስተዋይ ሰው ግን በጥበብ ደስ ይለዋል።",
           "R": "ሰዎች በጨዋታ እንደሚደሰቱ ሞኞች ክፉ በማድረግ ይደሰታሉ። \\q አስተዋይ ሰዎች ግን ጠቢብ በመሆን ይደሰታሉ።"
+        },
+        "hi": {
+          "L": "मूर्ख के लिए दुष्टता करना खेल के समान [है], \\q और समझदार मनुष्य के लिए बुद्धि [भी वैसी ही है]।",
+          "B": "मूर्ख के लिए बुराई करना एक खेल है, \\q पर समझदार मनुष्य बुद्धि में आनंद पाता है।",
+          "R": "मूर्ख लोग ग़लत काम करने में वैसे ही मज़ा लेते हैं जैसे लोग किसी खेल में। \\q पर समझदार लोग बुद्धिमान होने में आनंद पाते हैं।"
+        },
+        "ru": {
+          "L": "Как забава для глупца — делать мерзость, \\q и [так же] мудрость для разумного человека.",
+          "B": "Для глупца делать зло — игра, \\q а разумный человек наслаждается мудростью.",
+          "R": "Глупцам нравится делать зло, как людям нравится игра. \\q А люди, у которых есть понимание, радуются мудрости."
+        },
+        "ja": {
+          "L": "悪を行うことは、愚か者には戯れのよう。 \\q 知恵は、悟りのある人に[とって、そのようである]。",
+          "B": "愚か者にとって、悪を行うことは遊びだ。 \\q しかし、悟りのある人は知恵を喜ぶ。",
+          "R": "愚かな人は、遊ぶように悪いことを楽しむ。 \\q しかし、物事がよくわかる人は、知恵のあることを楽しむ。"
+        },
+        "uk": {
+          "L": "Чинити нечестя — як забава для безумного, \\q і [так само] мудрість — для людини розуміння.",
+          "B": "Чинити зло — гра для безумного, \\q а розумна людина тішиться мудрістю.",
+          "R": "Нерозумні люди люблять чинити зло, як люди люблять гру. \\q А люди, які розуміють, люблять бути мудрими."
         }
       },
       "decisions": [
@@ -2534,6 +3588,26 @@
           "L": "ክፉ የሚፈራው፣ እርሱ ይደርስበታል፤ \\q የጻድቃን ምኞት ግን ይሰጣቸዋል።",
           "B": "ክፉዎች የሚፈሩት ይደርስባቸዋል፤ \\q ጻድቃን የሚመኙት ግን ይሰጣቸዋል።",
           "R": "ክፉ ሰዎች የሚፈሩት ነገር ይደርስባቸዋል። \\q መልካም ሰዎች ግን ተስፋ ያደረጉትን ያገኛሉ።"
+        },
+        "hi": {
+          "L": "दुष्ट जिससे डरता है, वही उस पर आ पड़ेगा, \\q पर धर्मियों की इच्छा पूरी की जाएगी।",
+          "B": "दुष्ट जिस बात से डरते हैं, वही उनके साथ होगी, \\q पर धर्मी जिसकी लालसा करते हैं, वह उन्हें दिया जाएगा।",
+          "R": "दुष्ट लोग जिस बात से डरते हैं, वही उनके साथ होगी। \\q पर भले लोग जिसकी आशा करते हैं, वह उन्हें मिलेगा।"
+        },
+        "ru": {
+          "L": "Чего боится нечестивый, то его и постигнет, \\q а желание праведных будет исполнено.",
+          "B": "Чего страшатся нечестивые, то с ними и случится, \\q а то, чего желают праведные, будет им дано.",
+          "R": "То, чего боятся злые люди, с ними и произойдёт. \\q А праведные люди получат то, на что надеются."
+        },
+        "ja": {
+          "L": "悪しき者が恐れるもの、それがその者に来る。 \\q しかし、正しい者たちの望みはかなえられる。",
+          "B": "悪しき者が恐れていることは、その身に起こる。 \\q しかし、正しい人が切に願うことは、与えられる。",
+          "R": "悪い人がこわがっていることは、本当に起こる。 \\q しかし、正しい人は、望んでいるものを手に入れる。"
+        },
+        "uk": {
+          "L": "Чого боїться нечестивий, те прийде до нього, \\q а бажання праведних буде дане.",
+          "B": "Чого бояться нечестиві, те з ними й станеться, \\q а чого прагнуть праведні, те їм буде дано.",
+          "R": "Те, чого бояться злі люди, з ними станеться. \\q А добрі люди отримають те, на що сподіваються."
         }
       },
       "decisions": [
@@ -2617,6 +3691,26 @@
           "L": "ዐውሎ ነፋስ ሲያልፍ ክፉ የለም፤ \\q ጻድቅ ግን የዘላለም መሠረት [ነው]።",
           "B": "ዐውሎ ነፋሱ አልፎ ሲሄድ ክፉዎች ይጠፋሉ፤ \\q ጻድቃን ግን ለዘላለም የሚኖር መሠረት አላቸው።",
           "R": "ዐውሎ ነፋስ ሲመጣ ክፉ ሰዎች ተጠርገው ይወሰዳሉ። \\q መልካም ሰዎች ግን ጠንካራ መሠረት እንዳለው ሕንፃ ናቸው።"
+        },
+        "hi": {
+          "L": "जब आँधी गुज़र जाती है, तो दुष्ट [रहता ही] नहीं, \\q पर धर्मी सदा की नींव [है]।",
+          "B": "जब बवंडर गुज़र जाता है, तो दुष्टों का नाम-निशान नहीं रहता, \\q पर धर्मियों की नींव सदा बनी रहती है।",
+          "R": "जब तूफ़ान आता है, तो दुष्ट लोग बह जाते हैं। \\q पर भले लोग उस इमारत के समान हैं जिसकी नींव मज़बूत है।"
+        },
+        "ru": {
+          "L": "Когда пройдёт буря — и нет нечестивого, \\q а праведный — вечное основание.",
+          "B": "Когда пронесётся вихрь, нечестивых не станет, \\q а у праведных основание, которое стоит вечно.",
+          "R": "Когда приходит буря, злых людей сметает. \\q А праведные люди — как дом на прочном основании."
+        },
+        "ja": {
+          "L": "嵐が過ぎ去るとき、悪しき者はもういない。 \\q しかし、正しい者は永遠の土台である。",
+          "B": "つむじ風が通り過ぎると、悪しき者は消えうせる。 \\q しかし、正しい人には、永遠に続く土台がある。",
+          "R": "嵐が来ると、悪い人は吹き飛ばされる。 \\q しかし、正しい人は、しっかりした土台の上に建つ家のようだ。"
+        },
+        "uk": {
+          "L": "Коли минає буря, нечестивого [вже] немає, \\q а праведний — вічна основа.",
+          "B": "Коли пронесеться вихор, нечестивих не стане, \\q а праведні мають основу, яка стоїть повік.",
+          "R": "Коли налітає буря, злих людей змітає. \\q А добрі люди — як будинок на міцній основі."
         }
       },
       "decisions": [
@@ -2706,6 +3800,26 @@
           "L": "ሆምጣጤ ለጥርስ፣ ጢስም ለዓይን እንደ ሆነ፣ \\q ታካችም ለላኩት እንዲሁ [ነው]።",
           "B": "ሆምጣጤ ጥርስን፣ ጢስም ዓይንን እንደሚያሠቃይ፣ \\q ታካች መልእክተኛም ለላኩት እንዲሁ ነው።",
           "R": "ታካች ሰው ለሥራ ለላከው አለቃ የሚያበሳጭ ነው፤ \\q ልክ ሆምጣጤ ጥርስን፣ ጢስም ዓይንን እንደሚያበሳጭ።"
+        },
+        "hi": {
+          "L": "जैसे दाँतों के लिए सिरका और आँखों के लिए धुआँ, \\q वैसा ही आलसी अपने भेजनेवालों के लिए [होता है]।",
+          "B": "जैसे दाँतों पर सिरका या आँखों में धुआँ, \\q वैसा ही होता है आलसी संदेशवाहक अपने भेजनेवालों के लिए।",
+          "R": "आलसी व्यक्ति किसी काम पर भेजनेवाले मालिक को उतना ही परेशान करता है \\q जितना दाँतों पर खट्टा सिरका या आँखों में धुआँ।"
+        },
+        "ru": {
+          "L": "Как уксус для зубов и как дым для глаз, \\q так ленивец для пославших его.",
+          "B": "Что уксус для зубов или дым для глаз, \\q то ленивец для тех, кто его послал.",
+          "R": "Ленивый человек так же досаждает хозяину, который посылает его по делу, \\q как кислый уксус — зубам или дым — глазам."
+        },
+        "ja": {
+          "L": "歯に酢のように、目に煙のように、 \\q 怠け者は、その者を遣わす者たちにとって、そのようである。",
+          "B": "歯にしみる酢や、目にしみる煙のように、 \\q 怠け者の使いは、遣わす者を悩ませる。",
+          "R": "怠け者は、仕事を言いつけた主人をいらいらさせる。 \\q 歯にしみる酢や、目にしみる煙のように。"
+        },
+        "uk": {
+          "L": "Як оцет для зубів і як дим для очей, \\q так ледар для тих, хто його посилає.",
+          "B": "Як оцет на зубах чи дим в очах, \\q так лінивий посланець для тих, хто його посилає.",
+          "R": "Ледачий працівник так само дратує господаря, який посилає його на роботу, \\q як кислий оцет на зубах чи дим в очах."
         }
       },
       "decisions": [
@@ -2761,6 +3875,47 @@
             "o vadio"
           ],
           "reason": "As 6:6 sets 'atsel for the whole book: \"o preguiçoso\" at every level, the everyday word. Balanced says \"o mensageiro preguiçoso\", as the English Balanced supplies \"messenger\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100260062"
+          ],
+          "choice": "\"आलसी\"; \"आलसी संदेशवाहक\" (B)",
+          "alternatives": [
+            "सुस्त"
+          ],
+          "reason": "The sluggard in the poetry note's word; Balanced says he is a messenger, as the English does, since he is sent on an errand.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100260062"
+          ],
+          "choice": "\"ленивец\" for atsel",
+          "alternatives": [
+            "\"лентяй\""
+          ],
+          "reason": "The Proverbs term at Literal and Balanced; the messenger is implied by \"those who send him\", so Balanced does not add \"посланник\". Readable says \"ленивый человек\", its form through the book.",
           "uncertain": false,
           "footnote": false
         }
@@ -2828,6 +3983,26 @@
           "L": "{{divine_name:እግዚአብሔርን|ያህዌን}} መፍራት ዘመንን ይጨምራል፤ \\q የክፉዎች ዓመታት ግን ያጥራሉ።",
           "B": "{{divine_name:እግዚአብሔርን|ያህዌን}} መፍራት ዕድሜን ያረዝማል፤ \\q የክፉዎች ዓመታት ግን ቀድመው ይቆረጣሉ።",
           "R": "{{divine_name:እግዚአብሔርን|ያህዌን}} ማክበርና መፍራት ዕድሜህን ያረዝማል። \\q ክፉ ሰዎች ግን በወጣትነታቸው ይሞታሉ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} का भय दिनों को बढ़ाता है, \\q पर दुष्टों के वर्ष घटाए जाएँगे।",
+          "B": "{{divine_name:प्रभु|याहवे}} का भय आयु को लंबा करता है, \\q पर दुष्टों के वर्ष जल्दी कट जाते हैं।",
+          "R": "{{divine_name:प्रभु|याहवे}} का आदर और भय मानने से तुम लंबा जीवन जीते हो। \\q पर दुष्ट लोग जवानी में ही मर जाते हैं।"
+        },
+        "ru": {
+          "L": "Страх перед {{divine_name:ГОСПОДОМ|Яхве}} прибавляет дни, \\q а годы нечестивых сократятся.",
+          "B": "Страх перед {{divine_name:ГОСПОДОМ|Яхве}} продлевает жизнь, \\q а годы нечестивых обрываются рано.",
+          "R": "Благоговение перед {{divine_name:ГОСПОДОМ|Яхве}} помогает жить дольше. \\q А злые люди умирают молодыми."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}を恐れることは日々を加える。 \\q しかし、悪しき者たちの年は短くされる。",
+          "B": "{{divine_name:主|ヤハウェ}}を畏れることは命を長くする。 \\q しかし、悪しき者の年は早く断たれる。",
+          "R": "{{divine_name:主|ヤハウェ}}をおそれ敬うなら、長生きをする。 \\q しかし、悪い人は若くして死ぬ。"
+        },
+        "uk": {
+          "L": "Страх {{divine_name:ГОСПОДНІЙ|перед Ягве}} додає днів, \\q а роки нечестивих будуть короткі.",
+          "B": "Страх перед {{divine_name:ГОСПОДОМ|Ягве}} продовжує життя, \\q а роки нечестивих обриваються зарано.",
+          "R": "Якщо шануєш {{divine_name:ГОСПОДА|Ягве}} з благоговінням, житимеш довше. \\q А злі люди помирають молодими."
         }
       },
       "decisions": [
@@ -2844,6 +4019,26 @@
           "choice": "adds days: a general truth",
           "alternatives": [],
           "reason": "Like 3:2 and 9:11, this is how life under God tends to go, not a promise for every case; Ecclesiastes 7:15 knows the exceptions.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100270011",
+            "o200100270021"
+          ],
+          "choice": "\"प्रभु का भय\" (L, B); \"प्रभु का आदर और भय मानना\" (R)",
+          "alternatives": [],
+          "reason": "The fear of the LORD in the poetry note's forms, as in 1:7 and 9:10.",
           "uncertain": false,
           "footnote": false
         }
@@ -2910,6 +4105,26 @@
           "L": "የጻድቃን ተስፋ ደስታ [ነው]፤ \\q ክፉዎች የሚጠብቁት ግን ይጠፋል።",
           "B": "ጻድቃን ተስፋ የሚያደርጉት በደስታ ይፈጸማል፤ \\q የክፉዎች ተስፋ ግን ከንቱ ይሆናል።",
           "R": "መልካም ሰዎች ተስፋ አላቸው፤ ተስፋቸውም ደስታን ያመጣላቸዋል። \\q የክፉ ሰዎች ተስፋ ግን ከንቱ ይሆናል።"
+        },
+        "hi": {
+          "L": "धर्मियों की आशा आनंद [है], \\q पर दुष्टों की प्रतीक्षा नाश हो जाएगी।",
+          "B": "धर्मी जिसकी आशा रखते हैं, उसका अंत आनंद में होता है, \\q पर दुष्टों की आशाएँ मिट्टी में मिल जाती हैं।",
+          "R": "भले लोगों के पास आशा है, और वह उन्हें आनंद देती है। \\q पर दुष्ट लोगों की आशाएँ व्यर्थ हो जाएँगी।"
+        },
+        "ru": {
+          "L": "Надежда праведных — радость, \\q а ожидание нечестивых погибнет.",
+          "B": "Надежда праведных заканчивается радостью, \\q а надежды нечестивых обращаются в ничто.",
+          "R": "У праведных людей есть надежда, и она приносит им радость. \\q А надежды злых людей ни к чему не приведут."
+        },
+        "ja": {
+          "L": "正しい者たちの望みは喜び。 \\q しかし、悪しき者たちの期待は滅びる。",
+          "B": "正しい人の望みは喜びに終わり、 \\q 悪しき者の期待はむなしく消える。",
+          "R": "正しい人は希望を持ち、それが喜びをもたらす。 \\q しかし、悪い人の望みは、何にもならない。"
+        },
+        "uk": {
+          "L": "Надія праведних — радість, \\q а сподівання нечестивих загине.",
+          "B": "Те, на що сподіваються праведні, закінчується радістю, \\q а надії нечестивих обертаються на ніщо.",
+          "R": "Добрі люди мають надію, і вона приносить їм радість. \\q А надії злих людей обернуться на ніщо."
         }
       },
       "decisions": [
@@ -2994,6 +4209,26 @@
           "L": "{{divine_name:የእግዚአብሔር|የያህዌ}} መንገድ ለቅኖች ምሽግ [ነው]፤ \\q ክፋትን ለሚሠሩ ግን ጥፋት [ነው]።",
           "B": "ቅን ለሆኑ ሰዎች {{divine_name:የእግዚአብሔር|የያህዌ}} መንገድ መጠጊያ ነው፤ \\q ክፉ አድራጊዎችን ግን ያጠፋቸዋል።",
           "R": "{{divine_name:የእግዚአብሔር|የያህዌ}} መንገድ ሐቀኞችን ይጠብቃቸዋል፤ \\q ክፉ የሚያደርጉትን ግን ያጠፋቸዋል።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} का मार्ग खरे लोगों के लिए गढ़ [है], \\q पर कुकर्मियों के लिए विनाश।",
+          "B": "खराई से जीनेवालों के लिए {{divine_name:प्रभु|याहवे}} का मार्ग शरणस्थान है, \\q पर कुकर्मियों के लिए वह विनाश है।",
+          "R": "{{divine_name:प्रभु|याहवे}} का मार्ग ईमानदार लोगों को सुरक्षित रखता है, \\q पर बुराई करनेवालों को वह नाश कर देता है।"
+        },
+        "ru": {
+          "L": "Путь {{divine_name:ГОСПОДА|Яхве}} — крепость для непорочного, \\q а погибель — для делающих беззаконие.",
+          "B": "Для непорочных путь {{divine_name:ГОСПОДА|Яхве}} — прибежище, \\q а для злодеев — погибель.",
+          "R": "Путь {{divine_name:ГОСПОДА|Яхве}} хранит честных людей, \\q а тех, кто делает зло, губит."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の道は無垢な者にとって砦、 \\q しかし、悪を行う者たちにとっては破滅。",
+          "B": "誠実な者にとって、{{divine_name:主|ヤハウェ}}の道は逃れ場。 \\q しかし、悪を行う者にとっては破滅。",
+          "R": "{{divine_name:主|ヤハウェ}}の道は、正直な人を守る。 \\q しかし、悪を行う人を滅ぼす。"
+        },
+        "uk": {
+          "L": "Дорога {{divine_name:ГОСПОДНЯ|Ягве}} — твердиня для непорочного, \\q а загибель — для тих, хто чинить нечестя.",
+          "B": "Для чесних дорога {{divine_name:ГОСПОДНЯ|Ягве}} — притулок, \\q а для злочинців — загибель.",
+          "R": "Дорога {{divine_name:ГОСПОДА|Ягве}} оберігає чесних людей, \\q а людей, які чинять зло, вона нищить."
         }
       },
       "decisions": [
@@ -3031,6 +4266,44 @@
             "\"thành lũy\""
           ],
           "reason": "The key terms of the Psalms for God's protection are kept here: \"đồn lũy\" for a fortress, \"nơi ẩn náu\" for a refuge.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100290011",
+            "o200100290062"
+          ],
+          "choice": "\"गढ़\" (L), \"शरणस्थान\" (B); \"कुकर्मी\"",
+          "alternatives": [],
+          "reason": "The stronghold (ma'oz) and evildoers in the forms of the Psalms and the poetry note.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o200100290022"
+          ],
+          "choice": "\"непорочного\" for tom",
+          "alternatives": [
+            "\"прямодушного\""
+          ],
+          "reason": "The Hebrew word is integrity (tom), not the upright (yashar), so Literal keeps the two apart; \"прямодушные\" stays for yashar.",
           "uncertain": false,
           "footnote": false
         }
@@ -3100,6 +4373,26 @@
           "L": "ጻድቅ ለዘላለም አይናወጥም፤ \\q ክፉዎች ግን በምድሪቱ አይኖሩም።",
           "B": "ጻድቃን ከቶ አይናወጡም፤ \\q ክፉዎች ግን በምድሪቱ አይቀሩም።",
           "R": "መልካም ሰዎች ሁልጊዜ በሰላም ይኖራሉ። \\q ክፉ ሰዎች ግን በምድሪቱ አይቆዩም።"
+        },
+        "hi": {
+          "L": "धर्मी कभी न डगमगाएगा, \\q पर दुष्ट देश में बसे न रहेंगे।",
+          "B": "धर्मी कभी नहीं डिगेंगे, \\q पर दुष्ट देश में नहीं रहने पाएँगे।",
+          "R": "भले लोग हमेशा सुरक्षित रहेंगे। \\q पर दुष्ट लोग देश में नहीं रह पाएँगे।"
+        },
+        "ru": {
+          "L": "Праведный вовек не поколеблется, \\q а нечестивые не будут жить [на] земле.",
+          "B": "Праведный никогда не пошатнётся, \\q а нечестивые не останутся на земле.",
+          "R": "Праведные люди всегда будут в безопасности. \\q А злые люди не останутся в этой земле."
+        },
+        "ja": {
+          "L": "正しい者はとこしえに揺るがされない。 \\q しかし、悪しき者たちは地に住むことがない。",
+          "B": "正しい人は決して揺るがない。 \\q しかし、悪しき者はその地にとどまることがない。",
+          "R": "正しい人は、いつまでも安全だ。 \\q しかし、悪い人は、その地に住み続けることができない。"
+        },
+        "uk": {
+          "L": "Праведний повік не похитнеться, \\q а нечестиві не житимуть [на] землі.",
+          "B": "Праведні ніколи не похитнуться, \\q а нечестиві не залишаться на землі.",
+          "R": "Добрі люди завжди будуть у безпеці. \\q А злі люди не залишаться на землі."
         }
       },
       "decisions": [
@@ -3181,6 +4474,26 @@
           "L": "የጻድቅ አፍ የጥበብን ፍሬ ያፈራል፤ \\q ጠማማ ምላስ ግን ትቆረጣለች።",
           "B": "ከጻድቅ አፍ ጥበብ እንደ ፍሬ ትበቅላለች፤ \\q ጠማማ ምላስ ግን ትቆረጣለች።",
           "R": "መልካም ሰዎች ጥበብ ያለበትን ይናገራሉ። \\q እውነትን የሚያጣምሙ ግን ዝም ይደረጋሉ።"
+        },
+        "hi": {
+          "L": "धर्मी का मुँह बुद्धि [का फल] फलता है, \\q पर कुटिल जीभ काट डाली जाएगी।",
+          "B": "धर्मी के मुँह से बुद्धि फल की तरह उगती है, \\q पर टेढ़ी जीभ काट दी जाएगी।",
+          "R": "भले लोग बुद्धि की बातें कहते हैं। \\q पर जो लोग सच को तोड़-मरोड़ते हैं, उनका मुँह बंद कर दिया जाएगा।"
+        },
+        "ru": {
+          "L": "Уста праведного приносят плод мудрости, \\q а извращённый язык будет отсечён.",
+          "B": "Из уст праведного, как плод, произрастает мудрость, \\q а лукавый язык будет отрезан.",
+          "R": "Праведные люди говорят мудрые слова. \\q А тех, кто искажает правду, заставят замолчать."
+        },
+        "ja": {
+          "L": "正しい者の口は知恵を実らせる。 \\q しかし、偽りの舌は断ち切られる。",
+          "B": "正しい人の口からは、知恵が実のように生じる。 \\q しかし、ねじれた舌は切り取られる。",
+          "R": "正しい人は、知恵のあることを言う。 \\q しかし、本当のことをねじ曲げる人は、黙らされる。"
+        },
+        "uk": {
+          "L": "Уста праведного приносять плід мудрості, \\q а язик підступний буде відтятий.",
+          "B": "Із уст праведного мудрість виростає, як плід, \\q а викривлений язик буде відтято.",
+          "R": "Добрі люди кажуть мудре. \\q А людей, які перекручують правду, змусять замовкнути."
         }
       },
       "decisions": [
@@ -3264,6 +4577,26 @@
           "L": "የጻድቅ ከንፈሮች ደስ የሚያሰኘውን ያውቃሉ፤ \\q የክፉዎች አፍ ግን ጠማማነትን [ብቻ ያውቃል]።",
           "B": "ጻድቃን ደስ የሚያሰኘውን መናገር ያውቃሉ፤ \\q ክፉዎች ግን ጠማማውን ብቻ ይናገራሉ።",
           "R": "መልካም ሰዎች ትክክለኛውን ነገር መናገር ያውቃሉ። \\q ክፉ ሰዎች ግን ሁልጊዜ ሐሰት ይናገራሉ።"
+        },
+        "hi": {
+          "L": "धर्मी के होंठ जानते हैं कि क्या मनभावना है, \\q पर दुष्टों का मुँह [केवल] कुटिलता [जानता है]।",
+          "B": "धर्मी जानते हैं कि क्या कहना भला लगता है, \\q पर दुष्ट केवल टेढ़ी बातें बोलते हैं।",
+          "R": "भले लोग जानते हैं कि सही बात क्या कहनी है। \\q पर दुष्ट लोग हमेशा झूठी बातें कहते हैं।"
+        },
+        "ru": {
+          "L": "Уста праведного знают угодное, \\q а уста нечестивых — [только] извращённое.",
+          "B": "Праведные умеют говорить то, что приятно, \\q а нечестивые говорят только лукавое.",
+          "R": "Праведные люди знают, что правильно сказать. \\q А злые люди всегда говорят неправду."
+        },
+        "ja": {
+          "L": "正しい者の唇は喜ばれることを知る。 \\q しかし、悪しき者たちの口は偽りを[知るのみ]。",
+          "B": "正しい人は、喜ばれることを語るすべを知っている。 \\q しかし、悪しき者が語るのは、ねじれたことばかりだ。",
+          "R": "正しい人は、言うべき正しいことを知っている。 \\q しかし、悪い人は、いつもうそばかり言う。"
+        },
+        "uk": {
+          "L": "Губи праведного знають приємне, \\q а уста нечестивих — [лише] підступність.",
+          "B": "Праведні вміють сказати те, що до вподоби, \\q а нечестиві говорять лише викривлене.",
+          "R": "Добрі люди знають, що слід сказати. \\q А злі люди завжди кажуть неправду."
         }
       },
       "decisions": [

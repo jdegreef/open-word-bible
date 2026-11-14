@@ -61,6 +61,26 @@
           "L": "በአንተ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተጠግቻለሁ፤ \\q ለዘላለም አልፈር።",
           "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተን መጠጊያዬ አድርጌአለሁ፤ \\q ከቶ አታዋርደኝ።",
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ለደኅንነቴ ወደ አንተ እሮጣለሁ። \\q ከቶ አታሳፍረኝ።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मैंने तेरी शरण ली है; \\q मुझे कभी लज्जित न होने दे।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मैंने तुझे अपना शरणस्थान बनाया है; \\q मुझे कभी अपमानित न होने दे।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मैं सुरक्षा के लिए तेरे पास दौड़ा आता हूँ। \\q मुझे कभी शर्मिंदा न होने दे।"
+        },
+        "ru": {
+          "L": "В {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}, я нашёл прибежище; \\q да не буду я посрамлён вовек.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} — моё прибежище; \\q никогда не дай мне быть опозоренным.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, я прибежал к {{deity_pronoun:тебе|Тебе}}, чтобы укрыться. \\q Никогда не дай мне остаться в стыде."
+        },
+        "ja": {
+          "L": "あなたに、{{divine_name:主|ヤハウェ}}よ、わたしは身を避けた。 \\q わたしがとこしえに恥を見ることのないようにしてください。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたを避け所とした。 \\q 決して、わたしに恥をかかせないでください。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたのもとに逃げ込んだ。 \\q わたしが決して恥ずかしい思いをしないようにしてください。"
+        },
+        "uk": {
+          "L": "У {{deity_pronoun:тобі|Тобі}}, {{divine_name:ГОСПОДИ|Ягве}}, я шукаю притулку; \\q нехай я не буду осоромлений навіки.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, я зробив {{deity_pronoun:тебе|Тебе}} своїм притулком; \\q ніколи не дай мені зазнати ганьби.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, я біжу до {{deity_pronoun:тебе|Тебе}} по захист. \\q Ніколи не дай мені осоромитися."
         }
       },
       "decisions": [
@@ -257,6 +277,84 @@
           "reason": "Psalm 71 opens with the words of Psalm 31:2-4 (meaning decision m2). Where Psalm 71 differs, the Amharic follows it: \"rescue me and deliver me\" (verse 2) where 31:2 has one verb; \"a rock of dwelling, to come to continually; you have commanded to save me\" (verse 3) where 31:3 has \"a rock of refuge, a house of fortresses\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710010011",
+            "o190710010031"
+          ],
+          "choice": "verses 1-3 keep the Hindi of Psalm 31:2-4 where the Hebrew is the same",
+          "alternatives": [],
+          "reason": "Verses 1-3 are close to Psalm 31:2-4 (meaning m2), so each level copies that psalm's Hindi wording in this translation and differs where the Hebrew differs (verse 2 adds \"deliver me\" and \"save me\"; verse 3 has \"a rock of dwelling\" and \"you have commanded\"). The lines follow the English level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190710010021"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}}\"; no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The divine name takes the span used in every Hindi book of this translation; \"प्रभु\" alone, or with the name written \"परमेश्वर\" in the span (verses 5, 16), is Adonai, so the setting tells them apart. Devanagari has no capitals, so the Hindi has no deity_pronoun spans; the psalmist speaks to God with \"तू\". This holds for the whole psalm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710010011"
+          ],
+          "choice": "the wording of Psalm 31:2-4 at each level",
+          "alternatives": [],
+          "reason": "Psalm 71:1-3 repeats Psalm 31:2-4 with small changes, so each level copies the Russian of Psalm 31 where the Hebrew is the same. This verse is the first half of Psalm 31:2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710010011",
+            "o190710010031"
+          ],
+          "choice": "71:1-3 copy the Japanese of 31:2-4 where the Hebrew is the same: chasiti \"身を避けた\" (L), \"避け所とした\" (B), \"逃げ込んだ\" (R); 'al-'evoshah as 25:2 and 31:2",
+          "alternatives": [],
+          "reason": "Psalm 71:1-3 repeats 31:2-4 with small changes (m2); the shared words keep the same Japanese so that a reader hears the same prayer. R keeps the past tense of 31:2 for the same Hebrew perfect.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -330,6 +428,26 @@
           "L": "በጽድቅህ ታደገኝ፤ አስመልጠኝም፤ \\q ጆሮህን ወደ እኔ አዘንብል፤ አድነኝም።",
           "B": "ጻድቅ ነህና ታደገኝ፤ ነጻም አውጣኝ፤ \\q ጎንበስ ብለህ ስማኝ፤ አድነኝም።",
           "R": "አንተ ሁልጊዜ ትክክል የሆነውን ታደርጋለህ፤ ስለዚህ ታደገኝ፤ ነጻም አውጣኝ። \\q ስማኝ፤ አድነኝም።"
+        },
+        "hi": {
+          "L": "अपनी धार्मिकता में मुझे छुड़ा और मुझे बचा ले; \\q अपना कान मेरी ओर लगा और मेरा उद्धार कर।",
+          "B": "तू धर्मी है, इसलिए मुझे छुड़ा और स्वतंत्र कर; \\q झुककर मेरी सुन, और मुझे बचा।",
+          "R": "तू हमेशा वही करता है जो सही है, इसलिए मुझे बचा और स्वतंत्र कर। \\q मेरी सुन और मुझे बचा ले।"
+        },
+        "ru": {
+          "L": "По {{deity_pronoun:твоей|Твоей}} праведности избавь меня и освободи меня; \\q приклони ко мне {{deity_pronoun:твоё|Твоё}} ухо и спаси меня.",
+          "B": "Ты праведен — освободи меня и избавь; \\q склонись и выслушай меня, и спаси меня.",
+          "R": "Ты всегда поступаешь правильно, поэтому спаси меня и освободи. \\q Выслушай меня и спаси."
+        },
+        "ja": {
+          "L": "あなたの義によって、わたしを救い出し、助け出してください。 \\q わたしにあなたの耳を傾け、わたしを救ってください。",
+          "B": "あなたの義によって、わたしを救い出し、自由にしてください。 \\q 身をかがめて、わたしに耳を傾け、わたしを救ってください。",
+          "R": "あなたは、いつも正しいことをなさる方だ。だから、わたしを救い出し、自由にしてください。 \\q わたしの言うことを聞いて、わたしを救ってください。"
+        },
+        "uk": {
+          "L": "У {{deity_pronoun:твоїй|Твоїй}} праведності визволи мене й урятуй мене; \\q прихили до мене {{deity_pronoun:твоє|Твоє}} вухо й спаси мене.",
+          "B": "Бо {{deity_pronoun:ти|Ти}} справедливий, урятуй мене й звільни мене; \\q нахилися, щоб вислухати мене, і спаси мене.",
+          "R": "Ти завжди чиниш правильно, тож урятуй мене й звільни мене. \\q Послухай мене й спаси мене."
         }
       },
       "decisions": [
@@ -380,6 +498,46 @@
             "In your righteousness"
           ],
           "reason": "\"In\" here gives the ground of the plea, so Balanced and Readable say \"because\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710020011"
+          ],
+          "choice": "Psalm 31:2-3 with \"и освободи\" and \"и спаси меня\"",
+          "alternatives": [],
+          "reason": "The wording of Psalm 31:2-3 at each level; this verse adds a second verb (\"deliver me\") and has \"save me\" where Psalm 31:3 has \"quickly rescue me\", so those words differ.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710020012",
+            "o190710020041",
+            "o190710020061"
+          ],
+          "choice": "\"あなたの義によって\" (L, B), \"いつも正しいことをなさる方だ。だから\" (R), and \"(身をかがめて、)わたしに(あなたの)耳を傾け\" as 31:2-3; tatsileni \"救い出し\", utefalleteni \"助け出し\" (L), \"自由にし\" (B, R); vehoshi'eni \"救ってください\"",
+          "alternatives": [],
+          "reason": "Where 31:3 has \"quickly rescue me\", 71:2 has two verbs of rescue and \"save me\"; the Psalter keeps natsal 救い出す and palat 助け出す apart at L.",
           "uncertain": false,
           "footnote": false
         }
@@ -459,6 +617,26 @@
           "L": "ዘወትር የምመጣበት የመኖሪያ ዓለት ሁንልኝ፤ \\q ታድነኝ ዘንድ አዘዝህ፤ \\q ዓለቴና ምሽጌ አንተ [ነህ]ና።",
           "B": "የምኖርበት ዓለት፣ ሁልጊዜ የምመጣበት ስፍራ ሁንልኝ። \\q ታድነኝ ዘንድ ትእዛዝ ሰጥተሃል፤ \\q ዓለቴና ምሽጌ አንተ ራስህ ነህና።",
           "R": "ሁልጊዜ ሄጄ በደኅና የምኖርበት የዓለት ቤት ሁንልኝ። \\q ታድነኝ ዘንድ ትእዛዝ ሰጥተሃል። \\q ዓለቴና ብርቱ ምሽጌ አንተ ነህ።"
+        },
+        "hi": {
+          "L": "मेरे लिए निवास की चट्टान बन, जहाँ मैं निरंतर आऊँ; \\q तूने मुझे बचाने की आज्ञा दी है, \\q क्योंकि मेरी चट्टान और मेरा गढ़ तू [है]।",
+          "B": "मेरे लिए ऐसी चट्टान बन जिसमें मैं रह सकूँ, ऐसी जगह जहाँ मैं सदा आ सकूँ। \\q तूने मुझे बचाने का आदेश दिया है, \\q क्योंकि तू ही मेरी चट्टान और मेरा गढ़ है।",
+          "R": "चट्टान के बने घर के समान बन जहाँ मैं सुरक्षित रहने के लिए सदा जा सकूँ। \\q तूने मुझे बचाने की आज्ञा दे दी है। \\q तू मेरी चट्टान और मेरा मज़बूत क़िला है।"
+        },
+        "ru": {
+          "L": "Будь мне скалой-обителью, куда приходить [мне] всегда; \\q {{deity_pronoun:ты|Ты}} повелел спасти меня, \\q ведь скала моя и твердыня моя — {{deity_pronoun:ты|Ты}}.",
+          "B": "Будь скалой, в которой я могу жить, местом, куда я всегда могу прийти. \\q Ты отдал повеление спасти меня, \\q ведь {{deity_pronoun:ты|Ты}} сам — моя скала и моя крепость.",
+          "R": "Будь для меня как дом из камня, куда я всегда могу прийти и быть в безопасности. \\q Ты дал приказ спасти меня. \\q Ты — моя скала и моё надёжное убежище."
+        },
+        "ja": {
+          "L": "わたしにとって住まいの岩となってください、絶えず[そこに]来るために。 \\q あなたはわたしを救うよう命じられた。 \\q まことに、わたしの岩山、わたしの要害[は]あなた。",
+          "B": "わたしが住むことのできる岩、いつでも行ける所となってください。 \\q あなたは、わたしを救うよう命じてくださった。 \\q あなたこそ、わたしの岩山、わたしの要害。",
+          "R": "わたしがいつでも行って安全にいられる、岩の家のようになってください。 \\q あなたは、わたしを救うようにと命令を出してくださった。 \\q あなたは、わたしの岩、わたしの強いとりでだ。"
+        },
+        "uk": {
+          "L": "Будь мені скелею оселі, щоб приходити [до неї] завжди; \\q {{deity_pronoun:ти|Ти}} наказав спасти мене, \\q бо моя скеля і моя фортеця — {{deity_pronoun:ти|Ти}}.",
+          "B": "Будь скелею, у якій я можу жити, місцем, куди я завжди можу прийти. \\q Ти дав наказ спасти мене, \\q бо {{deity_pronoun:ти|Ти}} {{deity_pronoun:сам|Сам}} — моя скеля і моя твердиня.",
+          "R": "Будь мені, як дім зі скелі, куди я завжди можу піти, щоб бути в безпеці. \\q Ти дав наказ спасти мене. \\q Ти — моя скеля і моя міцна фортеця."
         }
       },
       "decisions": [
@@ -554,6 +732,90 @@
           "reason": "The terms note settles \"피난처, 반석, 요새, 방패\" for these names of God's protection. \"반석\" is kept for the image wherever it names God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710030041",
+            "o190710030101",
+            "o190710030112"
+          ],
+          "choice": "\"निवास की चट्टान\" (L); \"मेरी चट्टान और मेरा गढ़\" (L, B) as Psalm 31:4",
+          "alternatives": [
+            "\"शरण की चट्टान\", as Psalm 31:3",
+            "\"मेरी ऊँची चट्टान\" for sela'"
+          ],
+          "reason": "The Hebrew here reads \"a rock of dwelling\" where Psalm 31:3 has \"a rock of refuge\" (meaning m1), so the Hindi differs there. The last line is the same as Psalm 31:4, so it keeps that psalm's Hindi, which says \"चट्टान\" for sela'. Elsewhere in Psalms 42-72 sela' is \"ऊँची चट्टान\" (42:10), as the poetry note sets; here the parallel with Psalm 31:4 is kept instead. Readable follows the English Readable, which differs from 31:4 there.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710030101",
+            "o190710030112"
+          ],
+          "choice": "the last line as Psalm 31:4; \"скала\" for sela at every level",
+          "alternatives": [
+            "\"мой утёс и моя твердыня\" (B)"
+          ],
+          "reason": "The last line is the Hebrew of Psalm 31:4, so each level copies its Russian there (\"скала моя и твердыня моя\" (L), \"моя скала и моя крепость\" (B), \"моя скала и моё надёжное убежище\" (R)), with \"скала\" for sela as Psalm 31:4 has it. The first lines differ from Psalm 31:3 in the Hebrew (\"a rock of dwelling\", \"you have commanded\", m1-m2) and are translated here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190710030011"
+          ],
+          "choice": "\"ты сам\", no span on \"сам\"",
+          "alternatives": [],
+          "reason": "The English spans \"yourself\"; the style guide gives no span to \"сам\", as to the reflexive \"свой\" (as Psalm 31:4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710030041",
+            "o190710030051",
+            "o190710030071"
+          ],
+          "choice": "tsur ma'on \"住まいの岩\" (L), \"住むことのできる岩\" (B), \"岩の家\" (R); tsivvita \"命じられた\" (L), \"命じてくださった\" (B, R); the last line as 31:4 (\"まことに、わたしの岩山、わたしの要害[は]あなた\" L; \"あなたこそ\" B)",
+          "alternatives": [
+            "砦の岩 (as 31:3, reading ma'oz)"
+          ],
+          "reason": "71:3 reads ma'on (\"dwelling\") where 31:3 reads ma'oz (\"refuge\", m1, uncertain), and \"to come continually; you have commanded\" (m2, uncertain) where 31:3 has \"a house of fortresses\". The hard line is rendered as the English reads it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -623,6 +885,26 @@
           "L": "አምላኬ ሆይ፣ ከክፉ ሰው እጅ አስመልጠኝ፤ \\q ከዓመፀኛና ከጨካኝ መዳፍ።",
           "B": "አምላኬ ሆይ፣ ከክፉዎች እጅ ጎትተህ አውጣኝ፤ \\q ከዓመፀኞችና ከጨካኞች ጭብጥ።",
           "R": "አምላኬ ሆይ፣ ከክፉ ሰዎች ኃይል አድነኝ። \\q ከጨካኞችና ፍትሕ ከሌላቸው ሰዎች መያዣ ነጻ አውጣኝ።"
+        },
+        "hi": {
+          "L": "हे मेरे परमेश्वर, मुझे दुष्ट के हाथ से छुड़ा, \\q कुटिल और क्रूर [मनुष्य] की मुट्ठी से।",
+          "B": "हे मेरे परमेश्वर, मुझे दुष्टों के पंजे से खींच निकाल, \\q अन्यायियों और क्रूर लोगों की पकड़ से।",
+          "R": "हे मेरे परमेश्वर, मुझे बुरे लोगों की शक्ति से बचा। \\q मुझे उन लोगों की पकड़ से छुड़ा जो क्रूर और अन्यायी हैं।"
+        },
+        "ru": {
+          "L": "Боже мой, избавь меня из руки нечестивого, \\q из ладони беззаконного и жестокого.",
+          "B": "Боже мой, вырви меня из рук нечестивых, \\q из хватки несправедливых и жестоких.",
+          "R": "Боже мой, спаси меня от власти злых людей. \\q Освободи меня из рук тех, кто жесток и несправедлив."
+        },
+        "ja": {
+          "L": "わたしの神よ、悪しき者の手から、わたしを助け出してください。 \\q 不正を行い、残忍な者の手のひらから。",
+          "B": "わたしの神よ、悪しき者の手から、わたしを引き出してください。 \\q 不正な者、残忍な者の手から。",
+          "R": "わたしの神よ、悪い人たちの力から、わたしを救ってください。 \\q 残酷で不公平な人たちの手から、わたしを解き放ってください。"
+        },
+        "uk": {
+          "L": "Мій Боже, визволи мене з руки нечестивого, \\q з долоні [того, хто] чинить неправду і жорстокий.",
+          "B": "Мій Боже, вирви мене з пазурів нечестивих, \\q з лещат несправедливих і жорстоких.",
+          "R": "Мій Боже, спаси мене від влади злих людей. \\q Звільни мене з рук людей, які жорстокі й несправедливі."
         }
       },
       "decisions": [
@@ -738,6 +1020,25 @@
           "reason": "The terms note settles these words for the wicked across Psalms and Proverbs. \"나의 하나님\" (rather than \"저의 하나님\") is the set form of address in Korean prayer and stands at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710040032",
+            "o190710040052"
+          ],
+          "choice": "yad / kaf \"手\" (B), \"力\" / \"手\" (R); L keeps \"手\" and \"手のひら\"",
+          "alternatives": [],
+          "reason": "Hand and palm stand for power and grip (m1); R says it with everyday words, as the English R.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -807,6 +1108,26 @@
           "L": "አንተ ተስፋዬ [ነህ]ና፤ \\q ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከወጣትነቴ ጀምሮ መታመኛዬ [ነህ]።",
           "B": "አንተ ተስፋዬ ነህና፤ \\q ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ከወጣትነቴ ጀምሮ በአንተ ታምኛለሁ።",
           "R": "ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ተስፋ የማደርግብህ አንተ ነህ። \\q ከልጅነቴ ጀምሮ በአንተ ታምኛለሁ።"
+        },
+        "hi": {
+          "L": "क्योंकि तू मेरी आशा [है], \\q हे प्रभु {{divine_name:परमेश्वर|याहवे}}, जवानी से मेरा भरोसा।",
+          "B": "क्योंकि तू मेरी आशा है, \\q हे प्रभु {{divine_name:परमेश्वर|याहवे}}; मैं जवानी से तुझ पर भरोसा रखता आया हूँ।",
+          "R": "हे प्रभु {{divine_name:परमेश्वर|याहवे}}, तू ही वह है जिस पर मैं आशा रखता हूँ। \\q मैं जवानी से ही तुझ पर भरोसा करता आया हूँ।"
+        },
+        "ru": {
+          "L": "Потому что {{deity_pronoun:ты|Ты}} — надежда моя, \\q Владыка {{divine_name:ГОСПОДИ|Яхве}}, упование моё от юности моей.",
+          "B": "Потому что {{deity_pronoun:ты|Ты}} — моя надежда, \\q Владыка {{divine_name:ГОСПОДИ|Яхве}}; я доверяю {{deity_pronoun:тебе|Тебе}} с юных лет.",
+          "R": "Владыка {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} — тот, на кого я надеюсь. \\q Я доверяю {{deity_pronoun:тебе|Тебе}} с тех пор, как был молодым."
+        },
+        "ja": {
+          "L": "まことに、あなたはわたしの望み、 \\q {{divine_name:主なる神|主ヤハウェ}}よ、わたしの若い時からの拠り所。",
+          "B": "まことに、あなたはわたしの望み。 \\q {{divine_name:主なる神|主ヤハウェ}}よ、若い時から、わたしはあなたに信頼してきた。",
+          "R": "{{divine_name:主なる神|主ヤハウェ}}よ、あなたこそ、わたしが望みをかける方。 \\q わたしは若いころから、ずっとあなたを信頼してきた。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:ти|Ти}} — моя надія, \\q Владико {{divine_name:ГОСПОДИ|Ягве}}, моя опора від моєї юності.",
+          "B": "Бо {{deity_pronoun:ти|Ти}} — моя надія, \\q Владико {{divine_name:ГОСПОДИ|Ягве}}; я довіряю {{deity_pronoun:тобі|Тобі}} змолоду.",
+          "R": "Владико {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} — той, на кого я надіюся. \\q Я довіряю {{deity_pronoun:тобі|Тобі}} відтоді, як був молодим."
         }
       },
       "decisions": [
@@ -859,6 +1180,70 @@
             "my Lord"
           ],
           "reason": "In address the title is \"Lord\" at every level here, before the name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190710050041",
+            "o190710050051"
+          ],
+          "choice": "\"प्रभु {{divine_name:परमेश्वर|याहवे}}\"",
+          "alternatives": [
+            "\"प्रभु {{divine_name:प्रभु|याहवे}}\""
+          ],
+          "reason": "Adonai followed by the name (meaning m1): as the English writes \"Lord GOD\", Hindi writes \"प्रभु {{divine_name:परमेश्वर|याहवे}}\", as in 2 Samuel 7 in this translation, so \"प्रभु\" is not said twice. Verse 16 has the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710050041",
+            "o190710050051"
+          ],
+          "choice": "\"Владыка ГОСПОДИ\"",
+          "alternatives": [
+            "\"Господи ГОСПОДИ\""
+          ],
+          "reason": "Adonai with the divine name takes the note's form \"Владыка ГОСПОДЬ\" (here in the vocative), so the two words are not read as \"Господь Господь\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710050041",
+            "o190710050051"
+          ],
+          "choice": "'Adonai YHWH \"{{divine_name:主なる神|主ヤハウェ}}\" as one span, as the English \"Lord GOD\"; mivtachi \"拠り所\" (L), \"信頼してきた\" (B, R)",
+          "alternatives": [],
+          "reason": "The Lord and the divine name together take the Old Testament's one-span form (GEN-consistency, PSA-1). \"My trust\" is the one relied on (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -935,6 +1320,26 @@
           "L": "ከማኅፀን ጀምሮ በአንተ ተደገፍሁ፤ \\q ከእናቴ ሆድ ያወጣኸኝ አንተ [ነህ]፤ \\q ምስጋናዬ ዘወትር በአንተ [ነው]።",
           "B": "ከተወለድኩ ጀምሮ በአንተ ተደግፌአለሁ፤ \\q ከእናቴ ሆድ ያወጣኸኝ አንተ ነህ። \\q ያለማቋረጥ አመሰግንሃለሁ።",
           "R": "ከተወለድኩበት ቀን ጀምሮ በአንተ ተማምኛለሁ። \\q ከእናቴ ሆድ እንድወጣ ረዳኸኝ። \\q ሁልጊዜ አመሰግንሃለሁ።"
+        },
+        "hi": {
+          "L": "गर्भ से ही मैं तुझ पर टिका रहा हूँ; \\q मेरी माँ के पेट से मुझे निकालनेवाला तू ही [है]; \\q मेरी स्तुति निरंतर तेरे विषय में [है]।",
+          "B": "जन्म से ही मैंने तेरा सहारा लिया है; \\q तू ही था जिसने मुझे मेरी माँ की कोख से निकाला। \\q मैं बिना रुके तेरी स्तुति करूँगा।",
+          "R": "जिस दिन मैं पैदा हुआ, उसी दिन से मैं तुझ पर निर्भर रहा हूँ। \\q तूने मुझे मेरी माँ की कोख से बाहर आने में सहायता की। \\q मैं सदा तेरी स्तुति करूँगा।"
+        },
+        "ru": {
+          "L": "На {{deity_pronoun:тебя|Тебя}} я опирался от утробы; \\q из чрева матери моей {{deity_pronoun:ты|Ты}} [тот, кто] извлёк меня; \\q о {{deity_pronoun:тебе|Тебе}} хвала моя всегда.",
+          "B": "Я опирался на {{deity_pronoun:тебя|Тебя}} от рождения; \\q это {{deity_pronoun:ты|Ты}} вывел меня из чрева моей матери. \\q Я буду непрестанно хвалить {{deity_pronoun:тебя|Тебя}}.",
+          "R": "Я полагался на {{deity_pronoun:тебя|Тебя}} с того дня, как родился. \\q Ты помог мне выйти из тела моей матери. \\q Я всегда буду хвалить {{deity_pronoun:тебя|Тебя}}."
+        },
+        "ja": {
+          "L": "あなたに、わたしは胎から寄りかかってきた。 \\q わたしの母の腹から[わたしを]取り出したのはあなた。 \\q あなたに[向けて]、わたしの賛美は絶えずある。",
+          "B": "わたしは生まれた時から、あなたに寄りかかってきた。 \\q 母の胎からわたしを取り出してくださったのは、あなただ。 \\q わたしは絶えず、あなたを賛美する。",
+          "R": "わたしは生まれた日から、ずっとあなたに頼ってきた。 \\q あなたは、わたしが母のおなかから出て来るのを助けてくださった。 \\q わたしはいつも、あなたを賛美する。"
+        },
+        "uk": {
+          "L": "На {{deity_pronoun:тебе|Тебе}} я спирався від утроби; \\q з лона моєї матері {{deity_pronoun:ти|Ти}} [той, хто] вивів мене; \\q {{deity_pronoun:тобі|Тобі}} — моя хвала завжди.",
+          "B": "Я спирався на {{deity_pronoun:тебе|Тебе}} від народження; \\q це {{deity_pronoun:ти|Ти}} вивів мене з тіла моєї матері. \\q Я хвалитиму {{deity_pronoun:тебе|Тебе}} невпинно.",
+          "R": "Я залежу від {{deity_pronoun:тебе|Тебе}} від дня свого народження. \\q Ти допоміг мені вийти з тіла моєї матері. \\q Я завжди хвалитиму {{deity_pronoun:тебе|Тебе}}."
         }
       },
       "decisions": [
@@ -989,6 +1394,27 @@
           ],
           "reason": "\"In you is my praise\" means God is the one he always praises; Balanced and Readable say so.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710060071",
+            "o190710060032",
+            "o190710060051"
+          ],
+          "choice": "gozi \"取り出した\" (L), \"取り出してくださった\" (B), \"出て来るのを助けてくださった\" (R), as 22:10",
+          "alternatives": [],
+          "reason": "The rare word is read as bringing out at birth (m1, uncertain), as in 22:10-11 (m2), whose Japanese it follows.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1057,6 +1483,26 @@
           "L": "ለብዙዎች እንደ ድንቅ ምልክት ሆንኩ፤ \\q አንተ ግን ብርቱ መጠጊያዬ [ነህ]።",
           "B": "ለብዙዎች የሚያስደንቅ ምልክት ሆኛለሁ፤ \\q አንተ ግን ብርቱ መጠለያዬ ነህ።",
           "R": "ብዙ ሰዎች በደረሰብኝ ነገር ተገርመው ያዩኛል። \\q አንተ ግን ብርቱ የደኅንነት ስፍራዬ ነህ።"
+        },
+        "hi": {
+          "L": "मैं बहुतों के लिए एक अचंभे के चिह्न के समान रहा हूँ, \\q पर तू मेरा दृढ़ शरणस्थान [है]।",
+          "B": "बहुतों के लिए मैं एक ऐसा चिह्न बन गया हूँ जिस पर वे अचंभा करते हैं, \\q पर तू मेरा दृढ़ शरणस्थान है।",
+          "R": "बहुत से लोग मेरे साथ हुई बातों को देखकर घूरते हैं। \\q पर तू मेरा सुरक्षित, दृढ़ स्थान है।"
+        },
+        "ru": {
+          "L": "Как знамением я стал для многих, \\q но {{deity_pronoun:ты|Ты}} — крепкое прибежище моё.",
+          "B": "Для многих я стал знаком, которому они дивятся, \\q но {{deity_pronoun:ты|Ты}} — моё надёжное укрытие.",
+          "R": "Многие люди смотрят с изумлением на то, что случилось со мной. \\q Но {{deity_pronoun:ты|Ты}} — моё надёжное убежище."
+        },
+        "ja": {
+          "L": "多くの者にとって、わたしは不思議なしるしのようになった。 \\q しかし、あなたはわたしの力強い避け所。",
+          "B": "多くの人にとって、わたしは人々が驚くしるしとなった。 \\q しかし、あなたはわたしの力強い避け所だ。",
+          "R": "多くの人が、わたしの身に起きたことをじっと見ている。 \\q しかし、あなたは、わたしが逃げ込める強い場所だ。"
+        },
+        "uk": {
+          "L": "Наче знамення, я став для багатьох, \\q але {{deity_pronoun:ти|Ти}} — мій міцний притулок.",
+          "B": "Для багатьох я став знаком, що викликає подив, \\q але {{deity_pronoun:ти|Ти}} — моє міцне сховище.",
+          "R": "Багато людей дивляться на те, що сталося зі мною. \\q Але {{deity_pronoun:ти|Ти}} — моє міцне безпечне місце."
         }
       },
       "decisions": [
@@ -1095,6 +1541,25 @@
           ],
           "reason": "The joining word sets God's protection against what people think of him.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710070012"
+          ],
+          "choice": "mofet \"不思議なしるし\" (L), \"人々が驚くしるし\" (B); R a clause; machaseh \"避け所\" (L, B), \"逃げ込める…場所\" (R)",
+          "alternatives": [],
+          "reason": "A portent is a sign that makes people stop and look (m1, uncertain): as a warning or as a wonder; Japanese keeps it open, as the English does.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1163,6 +1628,26 @@
           "L": "አፌ በምስጋናህ ተሞላ፤ \\q ቀኑን ሁሉ በግርማህ [ተሞላ]።",
           "B": "አፌ ስለ አንተ በምስጋና የተሞላ ነው፤ \\q ቀኑን ሙሉ ስለ ክብርህ እናገራለሁ።",
           "R": "ሁልጊዜ አመሰግንሃለሁ። \\q ቀኑን ሙሉ ምን ያህል ድንቅ እንደ ሆንክ አወራለሁ።"
+        },
+        "hi": {
+          "L": "मेरा मुँह तेरी स्तुति से, \\q दिन भर तेरी शोभा से भरा रहता है।",
+          "B": "मेरा मुँह तेरी स्तुति से भरा है; \\q दिन भर मैं तेरी महिमा का बखान करता हूँ।",
+          "R": "मैं सदा तेरी स्तुति करता रहता हूँ। \\q दिन भर मैं बताता हूँ कि तू कितना अद्भुत है।"
+        },
+        "ru": {
+          "L": "Наполнены уста мои хвалою {{deity_pronoun:твоей|Твоей}}, \\q весь день — великолепием {{deity_pronoun:твоим|Твоим}}.",
+          "B": "Мои уста полны хвалы {{deity_pronoun:тебе|Тебе}}; \\q весь день я говорю о {{deity_pronoun:твоей|Твоей}} славе.",
+          "R": "Я всё время хвалю {{deity_pronoun:тебя|Тебя}}. \\q Весь день я рассказываю, как {{deity_pronoun:ты|Ты}} прекрасен."
+        },
+        "ja": {
+          "L": "わたしの口はあなたの賛美で満たされる、 \\q 一日中、あなたの輝きで。",
+          "B": "わたしの口は、あなたへの賛美で満ちている。 \\q 一日中、わたしはあなたの栄光を語る。",
+          "R": "わたしは、いつもあなたを賛美している。 \\q 一日中、あなたがどんなにすばらしい方かを話している。"
+        },
+        "uk": {
+          "L": "Мої уста сповнені {{deity_pronoun:твоєї|Твоєї}} хвали, \\q цілий день — {{deity_pronoun:твоєї|Твоєї}} пишноти.",
+          "B": "Мої уста повні хвали {{deity_pronoun:тобі|Тобі}}; \\q цілий день я говорю про {{deity_pronoun:твою|Твою}} славу.",
+          "R": "Я завжди хвалю {{deity_pronoun:тебе|Тебе}}. \\q Цілий день я говорю про те, який {{deity_pronoun:ти|Ти}} чудовий."
         }
       },
       "decisions": [
@@ -1196,6 +1681,25 @@
           "choice": "I speak of",
           "alternatives": [],
           "reason": "The second half has no verb; \"speak of\" is supplied from \"my mouth\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710080061"
+          ],
+          "choice": "tif'artekha \"あなたの輝き\" (L), \"あなたの栄光\" (B), \"どんなにすばらしい方か\" (R)",
+          "alternatives": [],
+          "reason": "Splendor is God's beauty and glory (m1); B follows the English \"glory\" and supplies the verb 語る as the English B does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1268,6 +1772,26 @@
           "L": "በእርጅና ዘመን አትጣለኝ፤ \\q ጉልበቴ ሲያልቅ አትተወኝ።",
           "B": "አሁን በሸመገልሁ ጊዜ ወደ ጎን አትጣለኝ፤ \\q ጉልበቴ ሲደክም አትተወኝ።",
           "R": "አሁን አርጅቻለሁና ገፍተህ አትጣለኝ። \\q ስደክም ብቻዬን አትተወኝ።"
+        },
+        "hi": {
+          "L": "बुढ़ापे के समय मुझे दूर न फेंक; \\q जब मेरा बल घट जाए, तब मुझे न त्याग।",
+          "B": "अब जब मैं बूढ़ा हो गया हूँ, मुझे एक ओर न फेंक; \\q जब मेरी शक्ति जवाब दे, तब मुझे न छोड़।",
+          "R": "अब मैं बूढ़ा हो गया हूँ, मुझे दूर न कर। \\q जब मैं कमज़ोर हो जाऊँ, तब मुझे अकेला न छोड़।"
+        },
+        "ru": {
+          "L": "Не отвергни меня во время старости; \\q когда изнемогает сила моя, не оставь меня.",
+          "B": "Не отбрасывай меня теперь, когда я стар; \\q не покидай меня, когда силы мои иссякают.",
+          "R": "Не отталкивай меня теперь, когда я состарился. \\q Не оставляй меня одного, когда я слабею."
+        },
+        "ja": {
+          "L": "老いの時に、わたしを投げ捨てないでください。 \\q わたしの力が尽きるとき、わたしを見捨てないでください。",
+          "B": "年老いた今、わたしを投げ出さないでください。 \\q 力が衰えていくとき、わたしを見捨てないでください。",
+          "R": "年を取った今、わたしを追い払わないでください。 \\q わたしが弱くなったとき、わたしをひとりにしないでください。"
+        },
+        "uk": {
+          "L": "Не відкинь мене в час старості; \\q коли моя сила слабне, не покинь мене.",
+          "B": "Не відштовхни мене тепер, коли я старий; \\q не покинь мене, коли моя сила вичерпується.",
+          "R": "Не відштовхуй мене тепер, коли я старий. \\q Не залишай мене самого, коли я слабну."
         }
       },
       "decisions": [
@@ -1367,6 +1891,26 @@
           "L": "ጠላቶቼ ስለ እኔ ተናግረዋልና፤ \\q ነፍሴንም የሚጠባበቁ በአንድነት ተማከሩ፤",
           "B": "ጠላቶቼ ስለ እኔ ይነጋገራሉና፤ \\q ሕይወቴን ለማጥፋት የሚያደቡ በአንድነት ያሤራሉ፤",
           "R": "ጠላቶቼ ስለ እኔ ያወራሉ። \\q ሊገድሉኝ የሚፈልጉ ሰዎች በአንድነት ያቅዳሉ።"
+        },
+        "hi": {
+          "L": "क्योंकि मेरे शत्रु मेरे विषय में बातें करते हैं, \\q और मेरे प्राण की घात में रहनेवाले मिलकर सम्मति करते हैं,",
+          "B": "क्योंकि मेरे शत्रु मेरे बारे में बातें कर रहे हैं; \\q जो मेरी जान लेने की ताक में हैं, वे मिलकर षड्यंत्र रच रहे हैं,",
+          "R": "मेरे शत्रु मेरे बारे में बातें करते हैं। \\q जो लोग मुझे मार डालना चाहते हैं, वे मिलकर योजनाएँ बनाते हैं।"
+        },
+        "ru": {
+          "L": "Потому что враги мои говорят обо мне, \\q и подстерегающие душу мою совещаются вместе,",
+          "B": "Ведь мои враги говорят обо мне; \\q те, кто подстерегает, чтобы отнять мою жизнь, сговариваются между собой,",
+          "R": "Мои враги говорят обо мне. \\q Люди, которые хотят убить меня, вместе строят планы."
+        },
+        "ja": {
+          "L": "まことに、わたしの敵たちはわたしのことを語り、 \\q わたしの命をうかがう者たちは、共に相談して、",
+          "B": "わたしの敵が、わたしのことを話し、 \\q わたしの命をねらう者たちが、一緒に企んで、",
+          "R": "わたしの敵は、わたしのことを話している。 \\q わたしを殺したい人たちが、一緒に計画を立てている。"
+        },
+        "uk": {
+          "L": "Бо мої вороги говорили про мене, \\q і ті, хто чатує [на] моє життя, змовилися разом,",
+          "B": "Бо мої вороги говорять про мене; \\q ті, хто чекає, щоб забрати моє життя, разом змовляються",
+          "R": "Мої вороги говорять про мене. \\q Люди, які хочуть мене вбити, разом складають плани."
         }
       },
       "decisions": [
@@ -1396,6 +1940,24 @@
           "choice": "a sentence that runs on",
           "alternatives": [],
           "reason": "Their words follow in verse 11, so this verse ends with a comma at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190710100081"
+          ],
+          "choice": "71:10 ends with 、 and the sentence goes on in 71:11 (\"言う。\" L, \"言う。\" B)",
+          "alternatives": [],
+          "reason": "The Hebrew sentence runs on (m2), as the English L and B; R makes two short sentences, as the English R.",
           "uncertain": false,
           "footnote": false
         }
@@ -1467,6 +2029,26 @@
           "L": "እንዲህ እያሉ፦ «እግዚአብሔር ትቶታል፤ \\q አሳዱት፤ ያዙትም፤ \\q የሚያድነው የለምና።»",
           "B": "እንዲህም ይላሉ፦ «እግዚአብሔር ጥሎታል። \\q ተከትላችሁ ያዙት፤ \\q የሚያድነው ማንም የለምና።»",
           "R": "እንዲህ ይላሉ፦ «እግዚአብሔር ትቶታል። \\q አሳዳችሁ ያዙት! \\q ማንም አያድነውም።»"
+        },
+        "hi": {
+          "L": "और कहते हैं, \"परमेश्वर ने उसे त्याग दिया है; \\q उसका पीछा करो और उसे पकड़ लो, \\q क्योंकि [उसे] छुड़ानेवाला कोई नहीं।\"",
+          "B": "और वे कहते हैं, \"परमेश्वर ने उसे छोड़ दिया है। \\q उसके पीछे जाओ और उसे दबोच लो, \\q क्योंकि कोई उसे नहीं बचाएगा।\"",
+          "R": "वे कहते हैं, \"परमेश्वर ने उसे छोड़ दिया है। \\q उसका पीछा करो और उसे पकड़ लो! \\q कोई उसे नहीं बचाएगा।\""
+        },
+        "ru": {
+          "L": "говоря: «Бог оставил его; \\q преследуйте и схватите его, \\q потому что нет избавляющего.»",
+          "B": "и говорят: «Бог покинул его. \\q Гонитесь за ним и хватайте его, \\q потому что никто его не спасёт.»",
+          "R": "Они говорят: «Бог бросил его. \\q Гонитесь за ним и ловите его! \\q Никто его не спасёт.»"
+        },
+        "ja": {
+          "L": "言う。「神は彼を見捨てた。 \\q 追え、彼を捕らえよ。 \\q 救い出す者はいないのだから。」",
+          "B": "こう言う。「神はあいつを見捨てた。 \\q 追いかけて、捕まえろ。 \\q だれもあいつを救わないのだから。」",
+          "R": "彼らは言う。「神はあいつを見放した。 \\q 追いかけて、捕まえろ！ \\q だれもあいつを助けないぞ。」"
+        },
+        "uk": {
+          "L": "кажучи: «Бог покинув його; \\q женіться й схопіть його, \\q бо немає кому визволити [його].»",
+          "B": "і кажуть: «Бог покинув його. \\q Женіться за ним і хапайте його, \\q бо ніхто його не врятує.»",
+          "R": "Вони кажуть: «Бог покинув його. \\q Доганяйте його й ловіть! \\q Ніхто його не врятує.»"
         }
       },
       "decisions": [
@@ -1519,6 +2101,25 @@
           ],
           "reason": "They speak of God with contempt for the one they hunt; Korean marks their scorn by leaving out the honorific forms the narrative uses for God.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190710110041",
+            "o190710110052"
+          ],
+          "choice": "The enemies speak roughly: \"あいつ\", \"捕まえろ\" (B, R); L plain \"彼\", \"追え、…捕らえよ\"",
+          "alternatives": [],
+          "reason": "The enemies urge each other on (m2); their speech is rough, as the Psalter's quoted enemies are. Their word for God is the plain 神 with a plain verb (見捨てた), as in 10:11.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -1589,6 +2190,26 @@
           "L": "እግዚአብሔር ሆይ፣ ከእኔ አትራቅ፤ \\q አምላኬ ሆይ፣ ለእርዳታዬ ፍጠን!",
           "B": "እግዚአብሔር ሆይ፣ ከእኔ ርቀህ አትቁም፤ \\q አምላኬ ሆይ፣ ፍጠንና እርዳኝ!",
           "R": "እግዚአብሔር ሆይ፣ ርቀህ አትቁም። \\q አምላኬ ሆይ፣ ፍጠንና እርዳኝ!"
+        },
+        "hi": {
+          "L": "हे परमेश्वर, मुझसे दूर न रह; \\q हे मेरे परमेश्वर, मेरी सहायता के लिए फुर्ती कर!",
+          "B": "हे परमेश्वर, मुझसे दूर न रह; \\q हे मेरे परमेश्वर, जल्दी कर और मेरी सहायता कर!",
+          "R": "हे परमेश्वर, दूर न रह। \\q हे मेरे परमेश्वर, जल्दी आ और मेरी सहायता कर!"
+        },
+        "ru": {
+          "L": "Боже, не удаляйся от меня; \\q Боже мой, поспеши на помощь мне!",
+          "B": "Боже, не стой вдали от меня; \\q Боже мой, скорее приди мне на помощь!",
+          "R": "Боже, не будь далеко. \\q Мой Боже, поспеши мне на помощь!"
+        },
+        "ja": {
+          "L": "神よ、わたしから遠く離れないでください。 \\q わたしの神よ、急いでわたしを助けてください！",
+          "B": "神よ、わたしから遠く離れていないでください。 \\q わたしの神よ、急いで、わたしを助けてください！",
+          "R": "神よ、遠くにいないでください。 \\q わたしの神よ、早く来て、わたしを助けてください！"
+        },
+        "uk": {
+          "L": "Боже, не будь далеко від мене; \\q мій Боже, поспіши мені на допомогу!",
+          "B": "Боже, не тримайся далеко від мене; \\q мій Боже, прийди швидко й допоможи мені!",
+          "R": "Боже, не будь далеко. \\q Мій Боже, поспіши й допоможи мені!"
         }
       },
       "decisions": [
@@ -1639,6 +2260,45 @@
             "corre a socorrer-me"
           ],
           "reason": "The cry of 38:23, 40:14 and 70:2 (m1), in the words their Portuguese gives it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710120081"
+          ],
+          "choice": "\"मेरी सहायता के लिए फुर्ती कर\" (L), \"जल्दी कर और मेरी सहायता कर\" (B), \"जल्दी आ और मेरी सहायता कर\" (R)",
+          "alternatives": [],
+          "reason": "\"Hurry to my help\" is the cry of Psalm 40:14 and 70:2 (meaning m1), so each level keeps their Hindi wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710120031",
+            "o190710120081"
+          ],
+          "choice": "\"遠く離れないでください\" as 22:12 and 38:22; \"急いで(、)わたしを助けてください！\" (L, B), \"早く来て、わたしを助けてください！\" (R) as 70:2",
+          "alternatives": [],
+          "reason": "The same cries as 22:12, 20, 38:22-23 and 70:2 (m1) keep the same Japanese.",
           "uncertain": false,
           "footnote": false
         }
@@ -1710,6 +2370,26 @@
           "L": "ነፍሴን የሚከሱ ያፍሩ፤ ይጥፉም፤ \\q ስድብንና ውርደትን ይከናነቡ፤ \\q ጉዳቴን የሚሹ።",
           "B": "ከሳሾቼ ያፍሩ፤ ተዋርደውም ይጥፉ፤ \\q ሊጎዱኝ የሚፈልጉ ስድብንና ውርደትን ይከናነቡ።",
           "R": "አንዳንድ ሰዎች ይከሱኛል። ያፍሩ፤ ይጥፉም። \\q አንዳንድ ሰዎች ሊጎዱኝ ይፈልጋሉ። \\q ኀፍረትንና ውርደትን አከናንባቸው።"
+        },
+        "hi": {
+          "L": "मेरे प्राण पर दोष लगानेवाले लज्जित हों [और] मिट जाएँ; \\q वे निंदा और अपमान से ढक जाएँ, \\q जो मेरी हानि चाहते हैं।",
+          "B": "मुझ पर दोष लगानेवाले लज्जित हों और मिट जाएँ; \\q जो मेरा बुरा चाहते हैं, वे तिरस्कार और अनादर से ढक जाएँ।",
+          "R": "कुछ लोग मुझ पर दोष लगाते हैं। वे लज्जित हों और नष्ट हो जाएँ। \\q कुछ लोग मुझे हानि पहुँचाना चाहते हैं। \\q उन्हें लज्जा और अपमान से ढाँप दे।"
+        },
+        "ru": {
+          "L": "Да постыдятся [и] исчезнут враждующие против души моей; \\q да облекутся поношением и позором \\q ищущие мне зла.",
+          "B": "Пусть мои обвинители будут постыжены и обращены в ничто; \\q пусть те, кто хочет мне вреда, будут окутаны презрением и бесчестьем.",
+          "R": "Некоторые люди обвиняют меня. Пусть им будет стыдно, пусть они погибнут. \\q Некоторые люди хотят причинить мне зло. \\q Покрой их стыдом и позором."
+        },
+        "ja": {
+          "L": "恥を見、滅び去るように、わたしの魂を訴える者たちは。 \\q そしりと辱めに包まれるように、 \\q わたしの災いを求める者たちは。",
+          "B": "わたしを訴える者たちが、恥を受け、消え去るように。 \\q わたしを傷つけようとする者たちが、そしりと不名誉に包まれるように。",
+          "R": "わたしを訴える人たちがいる。彼らが恥をかき、滅びるようにしてください。 \\q わたしに害を加えたいと思う人たちがいる。 \\q 彼らを恥と不名誉でおおってください。"
+        },
+        "uk": {
+          "L": "Нехай будуть осоромлені [й] загинуть обвинувачі моєї душі; \\q нехай огорнуться ганьбою й соромом \\q ті, хто шукає мені лиха.",
+          "B": "Нехай мої обвинувачі будуть осоромлені й зведені нанівець; \\q нехай ті, хто хоче мене скривдити, будуть огорнуті зневагою й безчестям.",
+          "R": "Деякі люди звинувачують мене. Нехай вони будуть осоромлені й знищені. \\q Деякі люди хочуть мене скривдити. \\q Покрий їх соромом і ганьбою."
         }
       },
       "decisions": [
@@ -1759,6 +2439,49 @@
             "my soul"
           ],
           "reason": "\"My soul\" (nefesh) here means \"me\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710130031"
+          ],
+          "choice": "\"दोष लगानेवाले\" (accusers)",
+          "alternatives": [
+            "\"विरोधी\" (opponents)",
+            "\"शैतान\""
+          ],
+          "reason": "The verb (satan) is to oppose or accuse in court (meaning m1); Hindi says \"दोष लगानेवाले\", as the English \"accusers\", and keeps \"शैतान\" for the name. The wish echoes 70:3, so \"जो मेरी हानि चाहते हैं\" (L) and \"जो मेरा बुरा चाहते हैं\" (B) keep that verse's words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710130031",
+            "o190710130011",
+            "o190710130051"
+          ],
+          "choice": "sotnei nafshi \"わたしの魂を訴える者たち\" (L), \"わたしを訴える者たち\" (B, R); the curse forms of 35:4 and 70:3 (〜ように L, B; 〜ようにしてください R)",
+          "alternatives": [],
+          "reason": "The accusers bring charges (m1); the prayer against enemies (m2) keeps the Psalter's curse forms. \"Soul\" is 魂 at L and \"me\" at B, R, as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -1828,6 +2551,26 @@
           "L": "እኔ ግን ዘወትር ተስፋ አደርጋለሁ፤ \\q በምስጋናህም ሁሉ ላይ እጨምራለሁ።",
           "B": "እኔ ግን ተስፋ ማድረጌን አላቋርጥም፤ \\q ደግሜ ደጋግሜም ምስጋናህን አበዛለሁ።",
           "R": "እኔ ግን ሁልጊዜ በአንተ ተስፋ አደርጋለሁ። \\q ከበፊቱ ይበልጥ አመሰግንሃለሁ።"
+        },
+        "hi": {
+          "L": "पर मैं निरंतर आशा रखूँगा, \\q और तेरी सारी स्तुति में और भी बढ़ाऊँगा।",
+          "B": "जहाँ तक मेरी बात है, मैं आशा रखना कभी न छोड़ूँगा; \\q मैं बार-बार तेरी स्तुति में और भी जोड़ता जाऊँगा।",
+          "R": "पर मैं सदा तुझ पर आशा रखूँगा। \\q मैं पहले से भी अधिक तेरी स्तुति करता रहूँगा।"
+        },
+        "ru": {
+          "L": "А я непрестанно буду уповать \\q и умножать всякую хвалу {{deity_pronoun:тебе|Тебе}}.",
+          "B": "А я никогда не перестану надеяться; \\q я снова и снова буду прибавлять к {{deity_pronoun:твоей|Твоей}} хвале.",
+          "R": "А я всегда буду надеяться на {{deity_pronoun:тебя|Тебя}}. \\q Я буду хвалить {{deity_pronoun:тебя|Тебя}} больше прежнего."
+        },
+        "ja": {
+          "L": "しかし、わたしは絶えず待ち望み、 \\q あなたへのすべての賛美に、さらに加えよう。",
+          "B": "わたしは、決して望みを捨てない。 \\q くり返し、あなたへの賛美を増し加えよう。",
+          "R": "しかし、わたしはいつも、あなたに望みを置く。 \\q これまで以上に、あなたを賛美し続けよう。"
+        },
+        "uk": {
+          "L": "А я завжди чекатиму \\q і додаватиму до всієї {{deity_pronoun:твоєї|Твоєї}} хвали.",
+          "B": "А я ніколи не перестану надіятися; \\q я знову й знову додаватиму до {{deity_pronoun:твоєї|Твоєї}} хвали.",
+          "R": "Але я завжди надіятимуся на {{deity_pronoun:тебе|Тебе}}. \\q Я хвалитиму {{deity_pronoun:тебе|Тебе}} ще більше, ніж раніше."
         }
       },
       "decisions": [
@@ -1859,6 +2602,27 @@
           "choice": "add to all your praise: praise you more and more",
           "alternatives": [],
           "reason": "Every new act of rescue adds a new reason to the praise already given.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710140031",
+            "o190710140042",
+            "o190710140071"
+          ],
+          "choice": "'ayachel \"待ち望み\" (L), \"望みを捨てない\" (B), \"望みを置く\" (R); \"add to all your praise\" kept at L, made \"増し加え\" / \"これまで以上に\" at B, R",
+          "alternatives": [],
+          "reason": "Waiting in hope (m1); adding to the praise is praising more and more (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1932,6 +2696,26 @@
           "L": "አፌ ጽድቅህን፣ \\q ቀኑን ሁሉ ማዳንህን ይናገራል፤ \\q ቁጥራቸውን አላውቅምና።",
           "B": "አፌ ስለ ጽድቅህ፣ \\q ቀኑን ሙሉም ስለ ማዳን እርዳታህ ይናገራል፤ \\q ምንም እንኳ ልቆጥራቸው ከምችለው በላይ ቢሆኑም።",
           "R": "ትክክል የሆነውን እንዴት እንደምታደርግና እንዴት እንደምታድን ቀኑን ሙሉ እናገራለሁ። \\q ተቆጥሮ የማያልቅ ነው!"
+        },
+        "hi": {
+          "L": "मेरा मुँह तेरी धार्मिकता का, \\q दिन भर तेरे उद्धार का वर्णन करेगा, \\q क्योंकि मैं [उनकी] गिनती नहीं जानता।",
+          "B": "मेरा मुँह तेरी धार्मिकता का \\q और दिन भर तेरी उद्धार करनेवाली सहायता का वर्णन करेगा, \\q यद्यपि वे मेरी गिनती से बाहर हैं।",
+          "R": "दिन भर मैं बताऊँगा कि तू कैसे सही काम करता है और कैसे बचाता है। \\q वे इतने हैं कि गिने नहीं जा सकते!"
+        },
+        "ru": {
+          "L": "Уста мои будут возвещать праведность {{deity_pronoun:твою|Твою}}, \\q весь день — спасение {{deity_pronoun:твоё|Твоё}}, \\q потому что не знаю [им] числа.",
+          "B": "Мои уста будут рассказывать о {{deity_pronoun:твоей|Твоей}} праведности \\q и о {{deity_pronoun:твоей|Твоей}} спасающей помощи весь день, \\q хотя их больше, чем я могу счесть.",
+          "R": "Весь день я буду рассказывать, как {{deity_pronoun:ты|Ты}} поступаешь правильно и как {{deity_pronoun:ты|Ты}} спасаешь. \\q Этого так много, что не сосчитать!"
+        },
+        "ja": {
+          "L": "わたしの口はあなたの義を語り告げる、 \\q 一日中、あなたの救いを。 \\q わたしはその数を知らないからだ。",
+          "B": "わたしの口は、あなたの義を語り、 \\q 一日中、あなたの救いを語る。 \\q それは、数えきれないほどだが。",
+          "R": "一日中、わたしは、あなたが正しいことをなさり、人を救ってくださることを話そう。 \\q 多すぎて、数えきれない！"
+        },
+        "uk": {
+          "L": "Мої уста розповідатимуть про {{deity_pronoun:твою|Твою}} праведність, \\q цілий день — про {{deity_pronoun:твоє|Твоє}} спасіння, \\q бо я не знаю [їхнього] числа.",
+          "B": "Мої уста розповідатимуть про {{deity_pronoun:твою|Твою}} праведність \\q і про {{deity_pronoun:твою|Твою}} спасенну допомогу цілий день, \\q хоч їх більше, ніж я можу полічити.",
+          "R": "Цілий день я розповідатиму, як {{deity_pronoun:ти|Ти}} чиниш правильно і як {{deity_pronoun:ти|Ти}} спасаєш. \\q Цього надто багато, щоб полічити!"
         }
       },
       "decisions": [
@@ -1971,6 +2755,26 @@
           ],
           "reason": "The joining word (ki) gives the reason his telling never ends; Balanced and Readable make the link plain.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710150091",
+            "o190710150101"
+          ],
+          "choice": "lo' yada'ti seforot \"その数を知らない\" (L), \"数えきれない\" (B, R)",
+          "alternatives": [],
+          "reason": "\"I do not know numbers\" is read as \"they cannot be counted\" (m1, uncertain), as the English.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2041,6 +2845,26 @@
           "L": "የጌታን {{divine_name:የእግዚአብሔርን|የያህዌን}} ብርቱ ሥራዎች ይዤ እመጣለሁ፤ \\q ጽድቅህን፣ የአንተን ብቻ አስታውሳለሁ።",
           "B": "መጥቼ የጌታን {{divine_name:የእግዚአብሔርን|የያህዌን}} ብርቱ ሥራዎች እናገራለሁ፤ \\q የሌላ የማንንም ሳይሆን የአንተን ጽድቅ ብቻ አዘክራለሁ።",
           "R": "መጥቼ ጌታ {{divine_name:እግዚአብሔር|ያህዌ}} ስላደረጋቸው ታላላቅ ነገሮች እናገራለሁ። \\q አንተ ብቻ፣ ሌላ ማንም ሳይሆን፣ ምን ያህል መልካምና ፍትሐዊ እንደ ሆንክ ለሁሉም አሳስባለሁ።"
+        },
+        "hi": {
+          "L": "मैं प्रभु {{divine_name:परमेश्वर|याहवे}} के पराक्रम के कामों के साथ आऊँगा; \\q मैं तेरी धार्मिकता की, केवल तेरी ही, चर्चा करूँगा।",
+          "B": "मैं आकर प्रभु {{divine_name:परमेश्वर|याहवे}} के पराक्रम के कामों का बखान करूँगा; \\q मैं तेरी धार्मिकता को स्मरण कराऊँगा, केवल तेरी, किसी और की नहीं।",
+          "R": "मैं आकर बताऊँगा कि प्रभु {{divine_name:परमेश्वर|याहवे}} ने कैसे महान काम किए हैं। \\q मैं सब को याद दिलाऊँगा कि केवल तू ही कितना भला और न्यायी है, और कोई नहीं।"
+        },
+        "ru": {
+          "L": "Приду с могучими делами Владыки {{divine_name:ГОСПОДА|Яхве}}; \\q буду напоминать о праведности {{deity_pronoun:твоей|Твоей}}, лишь {{deity_pronoun:твоей|Твоей}}.",
+          "B": "Я приду и расскажу о могучих делах Владыки {{divine_name:ГОСПОДА|Яхве}}; \\q я буду напоминать о {{deity_pronoun:твоей|Твоей}} праведности, только о {{deity_pronoun:твоей|Твоей}}.",
+          "R": "Я приду и расскажу о великих делах, которые совершил Владыка {{divine_name:ГОСПОДЬ|Яхве}}. \\q Я буду напоминать всем, как {{deity_pronoun:ты|Ты}} добр и справедлив — {{deity_pronoun:ты|Ты}}, и никто другой."
+        },
+        "ja": {
+          "L": "わたしは、{{divine_name:主なる神|主ヤハウェ}}の力あるみわざと共に行こう。 \\q あなたの義を、ただあなたのものだけを、わたしは告げ知らせよう。",
+          "B": "わたしは行って、{{divine_name:主なる神|主ヤハウェ}}の力あるみわざを語ろう。 \\q あなたの義を、ほかのだれのものでもない、あなたの義を、わたしは思い起こさせよう。",
+          "R": "わたしは行って、{{divine_name:主なる神|主ヤハウェ}}がなさった偉大なことを話そう。 \\q ほかのだれでもない、あなたがどんなに良く、正しい方かを、みなに思い出させよう。"
+        },
+        "uk": {
+          "L": "Я прийду з могутніми ділами Владики {{divine_name:ГОСПОДА|Ягве}}; \\q я згадуватиму {{deity_pronoun:твою|Твою}} праведність, лише {{deity_pronoun:твою|Твою}}.",
+          "B": "Я прийду й розповім про могутні діла Владики {{divine_name:ГОСПОДА|Ягве}}; \\q я пригадуватиму {{deity_pronoun:твою|Твою}} праведність, {{deity_pronoun:твою|Твою}} і нічию іншу.",
+          "R": "Я прийду й розповім про великі діла, які вчинив Владика {{divine_name:ГОСПОДЬ|Ягве}}. \\q Я нагадуватиму всім, який {{deity_pronoun:ти|Ти}} добрий і справедливий, і ніхто інший."
         }
       },
       "decisions": [
@@ -2107,6 +2931,27 @@
           "alternatives": [],
           "reason": "As the terms list settles for \"the LORD your God\", a prefix or suffix goes on both words of the title, and the whole inflected name goes in each option of the span.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710160011",
+            "o190710160022",
+            "o190710160051"
+          ],
+          "choice": "'avo' bigvurot \"力あるみわざと共に行こう\" (L), \"行って…みわざを語ろう\" (B), \"行って…偉大なことを話そう\" (R); 'azkir \"告げ知らせよう\" (L), \"思い起こさせよう\" (B), \"思い出させよう\" (R)",
+          "alternatives": [],
+          "reason": "\"Come with the mighty deeds\" is read as coming to tell of them (m1, uncertain); hizkir is proclaiming, calling to mind (m3).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -2177,6 +3022,26 @@
           "L": "እግዚአብሔር ሆይ፣ ከወጣትነቴ ጀምሮ አስተማርኸኝ፤ \\q እስከ አሁንም ድንቅ ሥራዎችህን እናገራለሁ።",
           "B": "እግዚአብሔር ሆይ፣ ከወጣትነቴ ጀምሮ ስታስተምረኝ ኖረሃል፤ \\q እኔም እስከ ዛሬ ድንቅ ሥራዎችህን እያወራሁ ነው።",
           "R": "እግዚአብሔር ሆይ፣ ከልጅነቴ ጀምሮ አስተማርኸኝ። \\q አሁንም ስለምታደርጋቸው አስደናቂ ነገሮች ለሰዎች እናገራለሁ።"
+        },
+        "hi": {
+          "L": "हे परमेश्वर, तूने मुझे मेरी जवानी से सिखाया है, \\q और अब तक मैं तेरे आश्चर्यकर्मों का वर्णन करता हूँ।",
+          "B": "हे परमेश्वर, तू मुझे जवानी से सिखाता आया है, \\q और मैं आज भी तेरे आश्चर्यकर्मों के बारे में बता रहा हूँ।",
+          "R": "हे परमेश्वर, जब से मैं जवान था, तब से तूने मुझे सिखाया है। \\q और मैं अब भी लोगों को तेरे अद्भुत कामों के बारे में बताता हूँ।"
+        },
+        "ru": {
+          "L": "Боже, {{deity_pronoun:ты|Ты}} учил меня от юности моей, \\q и доныне я возвещаю чудеса {{deity_pronoun:твои|Твои}}.",
+          "B": "Боже, {{deity_pronoun:ты|Ты}} учишь меня с юных лет, \\q и я до сих пор рассказываю о {{deity_pronoun:твоих|Твоих}} чудесах.",
+          "R": "Боже, {{deity_pronoun:ты|Ты}} учил меня с тех пор, как я был молодым. \\q И я до сих пор рассказываю людям об удивительных делах, которые {{deity_pronoun:ты|Ты}} совершаешь."
+        },
+        "ja": {
+          "L": "神よ、あなたはわたしの若い時から、わたしを教えてこられた。 \\q 今に至るまで、わたしはあなたの奇しいみわざを告げ知らせている。",
+          "B": "神よ、あなたは若い時から、わたしを教えてくださった。 \\q わたしは今もなお、あなたの不思議なみわざを語り伝えている。",
+          "R": "神よ、あなたは、わたしが若いころから教えてくださった。 \\q わたしは今も、あなたがなさる驚くべきことを人々に話している。"
+        },
+        "uk": {
+          "L": "Боже, {{deity_pronoun:ти|Ти}} навчав мене від моєї юності, \\q і досі я звіщаю {{deity_pronoun:твої|Твої}} чудеса.",
+          "B": "Боже, {{deity_pronoun:ти|Ти}} навчаєш мене змолоду, \\q і я й досі розповідаю про {{deity_pronoun:твої|Твої}} чудеса.",
+          "R": "Боже, {{deity_pronoun:ти|Ти}} навчав мене відтоді, як я був молодим. \\q І я досі розповідаю людям про дивовижні діла, які {{deity_pronoun:ти|Ти}} чиниш."
         }
       },
       "decisions": [
@@ -2191,6 +3056,25 @@
           "choice": "your wonders: God's amazing acts",
           "alternatives": [],
           "reason": "The word (nifla'ot) is used of God's great acts of rescue, such as the exodus (9:2; 40:6).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710170071"
+          ],
+          "choice": "nifle'otekha \"奇しいみわざ\" (L), \"不思議なみわざ\" (B), \"驚くべきこと\" (R)",
+          "alternatives": [],
+          "reason": "The Psalter's word for God's wonders (PSA-3, 26:7).",
           "uncertain": false,
           "footnote": false
         }
@@ -2271,6 +3155,26 @@
           "L": "እግዚአብሔር ሆይ፣ እስከ እርጅናና እስከ ሽበትም ድረስ አትተወኝ፤ \\q ክንድህን [ለሚቀጥለው] ትውልድ እስክናገር ድረስ፤ \\q ኃይልህንም ለሚመጡት ሁሉ።",
           "B": "አሁን ባረጀሁና በሸበትሁ ጊዜ፣ እግዚአብሔር ሆይ፣ አትተወኝ፤ \\q ክንድህ ያደረገውን ከእኔ በኋላ ላለው ትውልድ እስክነግር ድረስ፣ \\q ኃይልህንም ገና ለሚወለዱት ሁሉ እስካሳውቅ ድረስ።",
           "R": "አሁን አርጅቻለሁ፤ ጠጉሬም ሸብቷል። እግዚአብሔር ሆይ፣ አትተወኝ። \\q አስቀድሜ ምን ያህል ብርቱ እንደ ሆንክ ለወጣቶች ልንገር። \\q ከእኔ በኋላ ለሚመጡት ሁሉ ስለ ኃይልህ ልንገራቸው።"
+        },
+        "hi": {
+          "L": "और बुढ़ापे और पके बालों तक भी, हे परमेश्वर, मुझे न छोड़, \\q जब तक मैं [अगली] पीढ़ी को तेरी भुजा का वर्णन न कर दूँ, \\q आनेवाले सब लोगों को तेरा पराक्रम।",
+          "B": "अब जब मैं बूढ़ा हो गया हूँ और मेरे बाल पक गए हैं, हे परमेश्वर, मुझे न त्याग, \\q जब तक मैं अपने बाद की पीढ़ी को न बता दूँ कि तेरी भुजा ने क्या किया है, \\q और जो अभी जन्मे भी नहीं, उन सब पर तेरी सामर्थ्य प्रकट न कर दूँ।",
+          "R": "अब मैं बूढ़ा हो गया हूँ और मेरे बाल सफ़ेद हो गए हैं। हे परमेश्वर, मुझे न छोड़। \\q पहले मुझे जवान लोगों को बताने दे कि तू कितना सामर्थी है। \\q मेरे बाद आनेवाले सब लोगों को मुझे तेरी शक्ति के बारे में बताने दे।"
+        },
+        "ru": {
+          "L": "И до старости и седины, Боже, не оставь меня, \\q пока не возвещу мышцу {{deity_pronoun:твою|Твою}} [следующему] поколению, \\q силу {{deity_pronoun:твою|Твою}} — всем грядущим.",
+          "B": "Теперь, когда я стар и сед, Боже, не покидай меня, \\q пока я не расскажу поколению после меня, что совершила {{deity_pronoun:твоя|Твоя}} рука, \\q и не открою {{deity_pronoun:твою|Твою}} мощь всем, кто ещё родится.",
+          "R": "Теперь я стар, и волосы мои седы. Боже, не оставляй меня. \\q Позволь мне сначала рассказать молодым, как {{deity_pronoun:ты|Ты}} силён. \\q Позволь мне рассказать всем, кто будет жить после меня, о {{deity_pronoun:твоей|Твоей}} силе."
+        },
+        "ja": {
+          "L": "また、老いて白髪になるまでも、神よ、わたしを見捨てないでください、 \\q わたしがあなたの腕を[次の]世代に告げ知らせるまで、 \\q 来るべきすべての者に、あなたの力を。",
+          "B": "年老いて白髪になった今も、神よ、わたしを見捨てないでください。 \\q わたしが、あとに続く世代に、あなたの腕のなさったことを語り、 \\q これから生まれるすべての人に、あなたの力を知らせるまでは。",
+          "R": "わたしは年を取り、髪も白くなった。神よ、わたしを見捨てないでください。 \\q まず、若い人たちに、あなたがどんなに強い方かを話させてください。 \\q わたしのあとに来るすべての人に、あなたの力について話させてください。"
+        },
+        "uk": {
+          "L": "І аж до старості й сивини, Боже, не покинь мене, \\q доки я не звіщу {{deity_pronoun:твого|Твого}} рамена [наступному] поколінню, \\q {{deity_pronoun:твоєї|Твоєї}} могутності — усім, хто прийде.",
+          "B": "Тепер, коли я старий і сивий, Боже, не покинь мене, \\q доки я не розповім поколінню після мене, що зробило {{deity_pronoun:твоє|Твоє}} рамено, \\q і не звіщу {{deity_pronoun:твою|Твою}} силу всім, хто ще має народитися.",
+          "R": "Тепер я старий, і моє волосся сиве. Боже, не залишай мене. \\q Дай мені спершу розповісти молодим, який {{deity_pronoun:ти|Ти}} сильний. \\q Дай мені розповісти кожному, хто прийде після мене, про {{deity_pronoun:твою|Твою}} силу."
         }
       },
       "decisions": [
@@ -2321,6 +3225,25 @@
             "a generation"
           ],
           "reason": "The sense of \"a generation\" (m2) is made plain at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710180101"
+          ],
+          "choice": "zero'akha \"あなたの腕\" (L, B; B \"腕のなさったこと\"), \"どんなに強い方か\" (R)",
+          "alternatives": [],
+          "reason": "The arm is God's strength in action (m1); B and R say what the arm does, as the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -2393,6 +3316,26 @@
           "L": "እግዚአብሔር ሆይ፣ ጽድቅህም እስከ ከፍታ [ይደርሳል]፤ \\q ታላላቅ ነገሮችን ያደረግህ [አንተ]፤ \\q እግዚአብሔር ሆይ፣ እንደ አንተ ማን ነው?",
           "B": "እግዚአብሔር ሆይ፣ ጽድቅህ እስከ ሰማያት ከፍ ይላል፤ \\q ታላላቅ ነገሮችን አድርገሃል። \\q እግዚአብሔር ሆይ፣ እንደ አንተ ያለ ማን አለ?",
           "R": "እግዚአብሔር ሆይ፣ ቸርነትህ ከሰማይ በላይ ከፍ ያለ ነው። \\q ታላላቅ ነገሮችን አድርገሃል። \\q እግዚአብሔር ሆይ፣ እንደ አንተ ያለ ማንም የለም!"
+        },
+        "hi": {
+          "L": "और हे परमेश्वर, तेरी धार्मिकता ऊँचाइयों तक [पहुँचती है], \\q तू जिसने बड़े-बड़े काम किए हैं; \\q हे परमेश्वर, तेरे समान कौन [है]?",
+          "B": "हे परमेश्वर, तेरी धार्मिकता आकाश जितनी ऊँची है; \\q तूने महान काम किए हैं। \\q हे परमेश्वर, तेरे समान कौन है?",
+          "R": "हे परमेश्वर, तेरी भलाई आकाश से भी ऊँची है। \\q तूने बड़े-बड़े काम किए हैं। \\q हे परमेश्वर, तेरे समान कोई नहीं!"
+        },
+        "ru": {
+          "L": "И праведность {{deity_pronoun:твоя|Твоя}}, Боже, — до высот, \\q [{{deity_pronoun:ты|Ты}},] сотворивший великое; \\q Боже, кто подобен {{deity_pronoun:тебе|Тебе}}?",
+          "B": "Боже, {{deity_pronoun:твоя|Твоя}} праведность поднимается до небес; \\q {{deity_pronoun:ты|Ты}} совершил великие дела. \\q Боже, кто подобен {{deity_pronoun:тебе|Тебе}}?",
+          "R": "Боже, {{deity_pronoun:твоя|Твоя}} доброта выше неба. \\q Ты совершил великие дела. \\q Боже, никто не сравнится с {{deity_pronoun:тобой|Тобой}}!"
+        },
+        "ja": {
+          "L": "また、あなたの義は、神よ、高い天に[届く]。 \\q 大いなることをなさったあなた。 \\q 神よ、だれがあなたのようであろうか？",
+          "B": "神よ、あなたの義は、天の高みにまで届く。 \\q あなたは大いなることをなさった。 \\q 神よ、だれがあなたに並ぶだろうか？",
+          "R": "神よ、あなたの正しさは、空よりも高い。 \\q あなたは偉大なことをなさった。 \\q 神よ、あなたのような方は、だれもいない！"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:твоя|Твоя}} праведність, Боже, [сягає] до висот, \\q {{deity_pronoun:ти|Ти}}, що вчинив великі діла; \\q Боже, хто подібний до {{deity_pronoun:тебе|Тебе}}?",
+          "B": "Боже, {{deity_pronoun:твоя|Твоя}} праведність здіймається аж до небес; \\q {{deity_pronoun:ти|Ти}} вчинив могутні діла. \\q Боже, хто є подібний до {{deity_pronoun:тебе|Тебе}}?",
+          "R": "Боже, {{deity_pronoun:твоя|Твоя}} доброта вища за небо. \\q Ти вчинив великі діла. \\q Боже, ніхто не подібний до {{deity_pronoun:тебе|Тебе}}!"
         }
       },
       "decisions": [
@@ -2442,6 +3385,24 @@
             "who is like you?"
           ],
           "reason": "Readable gives the answer the question expects (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710190091",
+            "o190710190102"
+          ],
+          "choice": "mi khamokha as a statement \"あなたのような方は、だれもいない！\" (R), a question at L, B",
+          "alternatives": [],
+          "reason": "The question means that God has no equal (m2); R says it as the English R does.",
           "uncertain": false,
           "footnote": false
         }
@@ -2519,6 +3480,26 @@
           "L": "ብዙና ክፉ መከራዎችን ያሳየኸኝ [አንተ] \\q እንደ ገና ሕያው ታደርገኛለህ፤ \\q ከምድር ጥልቅም እንደ ገና ታወጣኛለህ።",
           "B": "ብዙ መከራንና ክፉ ጊዜን አሳይተኸኛል፤ \\q ነገር ግን እንደ ገና ሕያው ታደርገኛለህ፤ \\q ከምድርም ጥልቅ ስፍራዎች ዳግመኛ ታወጣኛለህ።",
           "R": "በብዙ አስቸጋሪና አሳማሚ ጊዜያት እንዳልፍ ፈቅደሃል። \\q አንተ ግን እንደ ገና ሕያው ታደርገኛለህ። \\q ከምድር በታች ካለ ጥልቅ ስፍራ ያህል እንደ ገና ታወጣኛለህ።"
+        },
+        "hi": {
+          "L": "तू, जिसने मुझे बहुत से और बुरे संकट दिखाए हैं, \\q मुझे फिर से जीवन देगा, \\q और पृथ्वी की गहराइयों से तू मुझे फिर ऊपर ले आएगा।",
+          "B": "तूने मुझे बहुत से संकट और कठिन समय दिखाए हैं, \\q पर तू मुझे फिर से जीवित करेगा, \\q और पृथ्वी के गहरे स्थानों से मुझे एक बार फिर ऊपर उठाएगा।",
+          "R": "तूने मुझे बहुत से कठिन और दुख भरे समयों से गुज़रने दिया है। \\q पर तू मुझे फिर से जीवन देगा। \\q तू मुझे फिर ऊपर उठाएगा, मानो पृथ्वी के बहुत नीचे से।"
+        },
+        "ru": {
+          "L": "Ты, давший мне увидеть беды многие и злые, \\q снова оживишь меня \\q и из бездн земли снова выведешь меня.",
+          "B": "Ты дал мне увидеть много бед и тяжёлых времён, \\q но {{deity_pronoun:ты|Ты}} вернёшь меня к жизни \\q и снова поднимешь меня из глубин земли.",
+          "R": "Ты позволил мне пройти через много тяжёлых и горьких времён. \\q Но {{deity_pronoun:ты|Ты}} снова дашь мне жизнь. \\q Ты снова поднимешь меня, будто из глубины под землёй."
+        },
+        "ja": {
+          "L": "多くの苦難と災いをわたしにお見せになったあなたは、 \\q 再びわたしを生かし、 \\q 地の深みから、再びわたしを引き上げてくださる。",
+          "B": "あなたは、多くの苦しみと災いをわたしに経験させた。 \\q しかし、あなたは再びわたしを生かし、 \\q 地の深い所から、もう一度引き上げてくださる。",
+          "R": "あなたは、わたしに、つらく苦しい時をたくさん通らせた。 \\q しかし、あなたは、わたしをもう一度生かしてくださる。 \\q 地の深い底からのように、わたしをもう一度引き上げてくださる。"
+        },
+        "uk": {
+          "L": "Ти, що дав мені побачити біди численні й лихі, \\q знову оживиш мене \\q і з глибин землі {{deity_pronoun:ти|Ти}} знову виведеш мене.",
+          "B": "Ти дав мені побачити багато бід і тяжких часів, \\q але {{deity_pronoun:ти|Ти}} повернеш мене до життя \\q і знову піднімеш мене з глибоких місць землі.",
+          "R": "Ти дав мені пережити багато тяжких і болісних часів. \\q Але {{deity_pronoun:ти|Ти}} знову дасиш мені жити. \\q Ти знову піднімеш мене, ніби з-під глибин землі."
         }
       },
       "decisions": [
@@ -2586,6 +3567,31 @@
           "reason": "Readable makes plain that the depths are a picture (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710200032",
+            "o190710200092",
+            "o190710200132",
+            "o190710200071",
+            "o190710200121",
+            "o190710200103",
+            "o190710200112"
+          ],
+          "choice": "\"me\" (L \"わたしに\", \"わたしを\") as read (m1); tashuv \"再び\" / \"もう一度\" (m2); \"お見せになった\" (L), plain causatives \"経験させた\" / \"通らせた\" (B, R)",
+          "alternatives": [],
+          "reason": "The words as read say \"me\" where the written text says \"us\" (m1, uncertain); \"you will turn\" means doing it again (m2); the depths of the earth are the realm of death (m3), R \"のように\" as the English \"as if\". A causative stays plain for God (PSA-1).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2650,6 +3656,26 @@
           "L": "ታላቅነቴን አብዛ፤ \\q ተመልሰህም አጽናናኝ።",
           "B": "ከቀድሞው ይበልጥ ታላቅ አድርገኝ፤ \\q ዳግመኛም ተመልሰህ አጽናናኝ።",
           "R": "ከበፊቱ የበለጠ ክብር ስጠኝ። \\q እንደ ገና አጽናናኝ።"
+        },
+        "hi": {
+          "L": "तू मेरी महानता बढ़ाए, \\q और फिरकर मुझे शान्ति दे।",
+          "B": "मुझे पहले से भी बड़ा बना, \\q और फिर से मेरी ओर मुड़कर मुझे शान्ति दे।",
+          "R": "मुझे पहले से भी अधिक सम्मान दे। \\q मुझे फिर से शान्ति दे।"
+        },
+        "ru": {
+          "L": "Умножь величие моё \\q и обратись, утешь меня.",
+          "B": "Сделай меня ещё больше, чем прежде, \\q и снова обратись ко мне с утешением.",
+          "R": "Дай мне ещё больше чести, чем было у меня прежде. \\q Снова утешь меня."
+        },
+        "ja": {
+          "L": "わたしの大いさを増し加えてください。 \\q 振り向いて、わたしを慰めてください。",
+          "B": "わたしを以前よりも大いなる者としてください。 \\q もう一度、わたしの方を向いて、慰めてください。",
+          "R": "前よりももっと、わたしに誉れを与えてください。 \\q もう一度、わたしを慰めてください。"
+        },
+        "uk": {
+          "L": "Нехай {{deity_pronoun:ти|Ти}} примножиш мою велич \\q і обернешся [й] утішиш мене.",
+          "B": "Зроби мене більшим, ніж раніше, \\q і знову обернися, щоб утішити мене.",
+          "R": "Дай мені ще більше честі, ніж я мав раніше. \\q Утіш мене знову."
         }
       },
       "decisions": [
@@ -2681,6 +3707,27 @@
           "choice": "you will turn and comfort me: comfort me again",
           "alternatives": [],
           "reason": "As in verse 20, \"turn\" means to do it again, or to turn toward him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710210021",
+            "o190710210032",
+            "o190710210041"
+          ],
+          "choice": "The wish made a request \"〜てください\" at every level; gedullati \"わたしの大いさ\" (L), \"大いなる者\" (B), \"誉れ\" (R)",
+          "alternatives": [],
+          "reason": "\"May you increase\" is a wish spoken to God, which the Psalter puts as a request (PSA-1); \"my greatness\" is honor and standing (m1); \"turn and comfort\" is comforting again (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -2758,6 +3805,26 @@
           "L": "እኔም ደግሞ በመሰንቆ መሣሪያ አመሰግንሃለሁ፤ አምላኬ ሆይ፣ ታማኝነትህን [አመሰግናለሁ]፤ \\q በበገና እዘምርልሃለሁ፤ \\q የእስራኤል ቅዱስ ሆይ።",
           "B": "እኔም በተራዬ በመሰንቆ ዜማ አመሰግንሃለሁ፤ አምላኬ ሆይ፣ ታማኝነትህን አወድሳለሁ። \\q በበገና እዘምርልሃለሁ፤ \\q የእስራኤል ቅዱስ ሆይ።",
           "R": "አምላኬ ሆይ፣ የተስፋ ቃልህን ስለምትጠብቅ መሰንቆ እየመታሁ አመሰግንሃለሁ። \\q የእስራኤል ቅዱስ አምላክ ሆይ፣ በገና እየደረደርሁ እዘምርልሃለሁ።"
+        },
+        "hi": {
+          "L": "मैं भी सारंगी के बाजे से तेरी, तेरी सच्चाई की, स्तुति करूँगा, हे मेरे परमेश्वर; \\q मैं वीणा बजाकर तेरी स्तुति करूँगा, \\q हे इस्राएल के पवित्र।",
+          "B": "मैं भी सारंगी के संगीत के साथ तेरा धन्यवाद करूँगा; हे मेरे परमेश्वर, मैं तेरी विश्वासयोग्यता की स्तुति करूँगा। \\q वीणा पर मैं तेरे लिए बजाऊँगा, \\q हे इस्राएल के पवित्र।",
+          "R": "हे मेरे परमेश्वर, मैं सारंगी बजाकर तेरा धन्यवाद करूँगा, क्योंकि तू अपनी प्रतिज्ञाएँ पूरी करता है। \\q हे इस्राएल के पवित्र परमेश्वर, मैं वीणा बजाकर तेरे लिए गाऊँगा।"
+        },
+        "ru": {
+          "L": "И я буду славить {{deity_pronoun:тебя|Тебя}} на инструменте арфы, верность {{deity_pronoun:твою|Твою}}, Боже мой; \\q буду воспевать {{deity_pronoun:тебя|Тебя}} на лире, \\q Святой Израиля.",
+          "B": "И я, в свою очередь, буду благодарить {{deity_pronoun:тебя|Тебя}} под звуки арфы; Боже мой, я буду хвалить {{deity_pronoun:твою|Твою}} верность. \\q Я буду играть для {{deity_pronoun:тебя|Тебя}} на лире, \\q Святой Израиля.",
+          "R": "Боже мой, я буду играть на арфе и благодарить {{deity_pronoun:тебя|Тебя}} за то, что {{deity_pronoun:ты|Ты}} исполняешь свои обещания. \\q Святой Бог Израиля, я буду играть на лире и петь {{deity_pronoun:тебе|Тебе}}."
+        },
+        "ja": {
+          "L": "わたしもまた、琴という楽器で、あなたに感謝しよう、あなたのまことを、わたしの神よ。 \\q 竪琴で、あなたにほめ歌を歌おう、 \\q イスラエルの聖なる方よ。",
+          "B": "わたしもまた、琴に合わせて、あなたに感謝をささげる。わたしの神よ、あなたのまことをたたえよう。 \\q 竪琴で、あなたにほめ歌を歌おう、 \\q イスラエルの聖なる方よ。",
+          "R": "わたしの神よ、わたしは琴をひいて、あなたに感謝しよう。あなたは約束を守ってくださるから。 \\q イスラエルの聖なる神よ、わたしはたて琴をひいて、あなたに歌おう。"
+        },
+        "uk": {
+          "L": "І я славитиму {{deity_pronoun:тебе|Тебе}} на арфі, {{deity_pronoun:твою|Твою}} вірність, мій Боже; \\q я гратиму {{deity_pronoun:тобі|Тобі}} на лірі, \\q Святий Ізраїлів.",
+          "B": "А я дякуватиму {{deity_pronoun:тобі|Тобі}} під звуки арфи; мій Боже, я хвалитиму {{deity_pronoun:твою|Твою}} вірність. \\q На лірі я гратиму для {{deity_pronoun:тебе|Тебе}}, \\q Святий Ізраїлів.",
+          "R": "Мій Боже, я гратиму на арфі й дякуватиму {{deity_pronoun:тобі|Тобі}}, бо {{deity_pronoun:ти|Ти}} дотримуєш {{deity_pronoun:твоїх|Твоїх}} обіцянок. \\q Святий Боже Ізраїлю, я гратиму на лірі й співатиму {{deity_pronoun:тобі|Тобі}}."
         }
       },
       "decisions": [
@@ -2893,6 +3960,89 @@
           "reason": "The two stringed instruments keep the Amharic names they have in 2 Samuel 6:5 and Psalm 33:2 on main.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710220051",
+            "o190710220102",
+            "o190710220111",
+            "o190710220121"
+          ],
+          "choice": "\"सारंगी\" (harp), \"वीणा\" (lyre); \"इस्राएल के पवित्र\" (L, B), \"इस्राएल के पवित्र परमेश्वर\" (R)",
+          "alternatives": [],
+          "reason": "The two instruments (meaning m1) keep the Hindi words of 1 Chronicles 15:16 and Psalm 33:2 in this translation: nevel \"सारंगी\", kinnor \"वीणा\". The Holy One of Israel (meaning m2) is \"इस्राएल का पवित्र\" in the poetry note; Readable adds \"God\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710220062"
+          ],
+          "choice": "\"सच्चाई\" (L), \"विश्वासयोग्यता\" (B)",
+          "alternatives": [],
+          "reason": "God's faithfulness ('emet) is \"सच्चाई\" at Literal and \"विश्वासयोग्यता\" at Balanced, as the poetry note sets; Readable says what it means for the speaker, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710220111",
+            "o190710220121"
+          ],
+          "choice": "\"Святой Израиля\"",
+          "alternatives": [
+            "\"Святый Израилев\""
+          ],
+          "reason": "The note's form for \"the Holy One of Israel\", in modern Russian; Readable says \"Святой Бог Израиля\", as the English Readable names God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710220051",
+            "o190710220102",
+            "o190710220111",
+            "o190710220121"
+          ],
+          "choice": "nevel \"琴\", kinnor \"竪琴\" (L, B), \"たて琴\" (R), as 33:2; qedosh Yisra'el \"イスラエルの聖なる方\" (L, B), \"イスラエルの聖なる神\" (R); 'amitt'kha \"あなたのまこと\" (L, B), \"約束を守ってくださる\" (R)",
+          "alternatives": [],
+          "reason": "The two stringed instruments (m1) keep the Psalter's words; the Holy One of Israel (m2) takes the form used in the Japanese drafts of Isaiah and 2 Kings.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2962,6 +4112,26 @@
           "L": "ስዘምርልህ ከንፈሮቼ እልል ይላሉ፤ \\q የዋጀሃትም ነፍሴ [እልል ትላለች]።",
           "B": "ምስጋናህን ስዘምር ከንፈሮቼ በደስታ ይጮኻሉ፤ \\q ነጻ ያወጣኸው ሁለንተናዬም እንዲሁ።",
           "R": "ስዘምርልህ በደስታ እልል እላለሁ። \\q አድነኸኛልና በሙሉ ልቤ እዘምራለሁ።"
+        },
+        "hi": {
+          "L": "जब मैं बाजा बजाकर तेरी स्तुति करूँगा, तब मेरे होंठ जयजयकार करेंगे, \\q और मेरा प्राण भी, जिसे तूने मोल देकर छुड़ाया है।",
+          "B": "जब मैं तेरी स्तुति गाऊँगा, तब मेरे होंठ आनंद से गूँज उठेंगे, \\q और मेरा पूरा अस्तित्व भी, जिसे तूने स्वतंत्र किया है।",
+          "R": "जब मैं तेरे लिए गाऊँगा, तब आनंद से जयजयकार करूँगा। \\q मैं पूरे मन से गाऊँगा, क्योंकि तूने मुझे छुड़ाया है।"
+        },
+        "ru": {
+          "L": "Будут ликовать уста мои, когда я воспеваю {{deity_pronoun:тебя|Тебя}}, \\q и душа моя, которую {{deity_pronoun:ты|Ты}} искупил.",
+          "B": "Мои уста будут радостно звенеть, когда я пою {{deity_pronoun:тебе|Тебе}} хвалу, \\q и всё моё существо, которое {{deity_pronoun:ты|Ты}} освободил.",
+          "R": "Я буду радостно кричать, когда пою {{deity_pronoun:тебе|Тебе}}. \\q Всем сердцем я буду петь, потому что {{deity_pronoun:ты|Ты}} спас меня."
+        },
+        "ja": {
+          "L": "わたしの唇は喜び歌う、わたしがあなたにほめ歌を歌うとき、 \\q また、あなたが贖ってくださったわたしの魂も。",
+          "B": "あなたにほめ歌を歌うとき、わたしの唇は喜びの声を上げる。 \\q あなたが救い出してくださったわたし自身も、喜び歌う。",
+          "R": "あなたに歌うとき、わたしは喜びの声を上げる。 \\q あなたが助け出してくださったから、わたしは心から歌う。"
+        },
+        "uk": {
+          "L": "Мої губи радісно співатимуть, коли я гратиму {{deity_pronoun:тобі|Тобі}}, \\q і моя душа, яку {{deity_pronoun:ти|Ти}} викупив.",
+          "B": "Мої губи дзвенітимуть радістю, коли я співатиму {{deity_pronoun:тобі|Тобі}} хвалу, \\q і так само все моє єство, яке {{deity_pronoun:ти|Ти}} звільнив.",
+          "R": "Я радісно вигукуватиму, коли співатиму {{deity_pronoun:тобі|Тобі}}. \\q Усім серцем я співатиму, бо {{deity_pronoun:ти|Ти}} врятував мене."
         }
       },
       "decisions": [
@@ -2998,6 +4168,25 @@
             "my soul"
           ],
           "reason": "\"My soul\" (nefesh) is the whole person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710230081"
+          ],
+          "choice": "padita \"贖ってくださった\" (L), \"救い出してくださった\" (B), \"助け出してくださった\" (R); nafshi \"わたしの魂\" (L), \"わたし自身\" (B), \"心から\" (R)",
+          "alternatives": [],
+          "reason": "Redeemed is set free at a cost (m1); the Psalter's padah is 贖う at L and 救い出す at B, R (PSA-1).",
           "uncertain": false,
           "footnote": false
         }
@@ -3073,6 +4262,26 @@
           "L": "አንደበቴም ደግሞ ቀኑን ሁሉ ጽድቅህን ያወራል፤ \\q ጉዳቴን የሚሹ አፍረዋልና፤ ተዋርደዋልምና።",
           "B": "አንደበቴ ቀኑን ሙሉ ስለ ጽድቅህ ይናገራል፤ \\q ጉዳቴን የፈለጉ ሰዎች አፍረዋልና፤ ተዋርደዋልምና።",
           "R": "ትክክል የሆነውን እንዴት እንደምታደርግ ቀኑን ሙሉ አወራለሁ። \\q ሊጎዱኝ የፈለጉ ሰዎች አፍረዋል፤ ተዋርደዋልም።"
+        },
+        "hi": {
+          "L": "मेरी जीभ भी दिन भर तेरी धार्मिकता की चर्चा करती रहेगी, \\q क्योंकि वे लज्जित हुए हैं, क्योंकि वे व्याकुल हुए हैं, जो मेरी हानि चाहते थे।",
+          "B": "दिन भर मेरी जीभ तेरी धार्मिकता का बखान करेगी, \\q क्योंकि जो मेरा बुरा चाहते थे, वे लज्जित और नीचे किए गए हैं।",
+          "R": "दिन भर मैं बताता रहूँगा कि तू कैसे सही काम करता है। \\q जो लोग मुझे हानि पहुँचाना चाहते थे, वे लज्जित और अपमानित हो गए हैं।"
+        },
+        "ru": {
+          "L": "И язык мой весь день будет говорить [о] праведности {{deity_pronoun:твоей|Твоей}}, \\q потому что постыжены, потому что посрамлены ищущие мне зла.",
+          "B": "Весь день мой язык будет говорить о {{deity_pronoun:твоей|Твоей}} праведности, \\q потому что те, кто искал мне вреда, постыжены и унижены.",
+          "R": "Весь день я буду рассказывать, как {{deity_pronoun:ты|Ты}} поступаешь правильно. \\q Люди, которые хотели причинить мне зло, опозорены и посрамлены."
+        },
+        "ja": {
+          "L": "わたしの舌もまた、一日中、あなたの義を口ずさむ。 \\q まことに、恥を見、まことに、うろたえたのだ、わたしの災いを求める者たちは。",
+          "B": "わたしの舌は一日中、あなたの義を語り続ける。 \\q わたしを傷つけようとした者たちは、恥を受け、うろたえたからだ。",
+          "R": "一日中、わたしは、あなたが正しいことをなさることを話そう。 \\q わたしを傷つけたいと思っていた人たちは、恥をかき、面目を失ったのだから。"
+        },
+        "uk": {
+          "L": "І мій язик цілий день говоритиме [про] {{deity_pronoun:твою|Твою}} праведність, \\q бо осоромлені, бо збентежені ті, хто шукає мені лиха.",
+          "B": "Цілий день мій язик говоритиме про {{deity_pronoun:твою|Твою}} праведність, \\q бо люди, які шукали мені шкоди, осоромлені й принижені.",
+          "R": "Цілий день я говоритиму про те, як {{deity_pronoun:ти|Ти}} чиниш правильно. \\q Люди, які хотіли мене скривдити, осоромлені й зганьблені."
         }
       },
       "decisions": [
@@ -3107,6 +4316,27 @@
           ],
           "reason": "The verb (hagah) is used of quiet, repeated speaking or musing (1:2; 35:28).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190710240081",
+            "o190710240101",
+            "o190710240051"
+          ],
+          "choice": "boshu / chaferu as done: past \"恥を見…うろたえた\" (L, B), \"恥をかき、面目を失った\" (R); tehgeh \"口ずさむ\" (L), \"語り続ける\" (B), \"話そう\" (R)",
+          "alternatives": [],
+          "reason": "The enemies' shame is spoken of as already done (m1, uncertain); hagah is speaking over and over (m2), 口ずさむ at L as 1:2.",
+          "uncertain": true,
           "footnote": false
         }
       ],
