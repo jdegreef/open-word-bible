@@ -762,7 +762,10 @@ Indonesian is written with spaces, so site search indexes it word by word.
 Postgres ships an Indonesian Snowball stemmer, which strips the particles
 (*-lah*, *-kah*, *-pun*), the possessives (*-ku*, *-mu*, *-nya*) and the
 common prefixes and suffixes (*meN-*, *ber-*, *di-*, *ter-*, *-kan*, *-i*,
-*-an*), so *mengasihi* finds *kasih* and *keselamatan* finds *selamat*
-(`docs/adding-a-language.md`). This does not affect drafting, but a term
+*-an*), so *dikasihi* finds *kasih* and *diselamatkan* finds *keselamatan*
+(search uses `owb_indonesian`, translation migration 0012). It does not undo
+a nasal prefix that swallowed the root's first letter: *mengasihi* is
+indexed as *asih*, so it does not find *kasih* (the word-for-word index
+still matches it as typed). This does not affect drafting, but a term
 spelled two ways (*mukjizat* / *mujizat*) is two words to search: keep the
 KBBI spelling throughout.

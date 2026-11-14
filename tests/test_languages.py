@@ -1,6 +1,7 @@
 """The site in each interface language: English at the root, the others
 under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/), the footer's language
 switch, and the message catalogs in i18n/."""
+import html
 import json
 import re
 import string
@@ -221,6 +222,31 @@ class LanguagesTest(unittest.TestCase):
             self.assertTrue(all(set(r["renderings"]) == {lang} for r in data["records"]), lang)
             self.assertLessEqual(set(drafted), set(data["texts"]), lang)
 
+    def test_a_language_with_no_text_yet_has_every_page(self):
+        # A language is added before its first book is drafted (Japanese,
+        # Ukrainian, Indonesian): its pages show the English, in grey with
+        # a notice, its Read page lists no books and it offers no plan.
+        undrafted = [lang for lang in OTHERS if not build_site.passages_in(lang)]
+        if not undrafted:
+            self.skipTest("every language has text")
+        for lang in undrafted:
+            cat = build_site.catalog(lang)
+            read = self.read(f"{lang}/read/index.html")
+            self.assertIn(cat["read.heading"], read)
+            self.assertNotIn('class="book-tile"', read)
+            chapter = self.read(f"{lang}/jhn/1/index.html")
+            self.assertIn(f'<html lang="{lang}">', chapter)
+            self.assertIn(html.escape(cat["reader.ui"]["partial"]), chapter)
+            text = re.search(r'<div class="text" id="text">.*?</div>', chapter, re.S)[0]
+            self.assertIn('lang="en"', text)
+            data = page_data(chapter)
+            self.assertEqual(data["lang"], lang)
+            self.assertTrue(data["records"])
+            self.assertNotIn(lang, data["texts"])
+            plans = self.read(f"{lang}/plans/index.html")
+            self.assertIn(cat["plans.none_link"], plans)
+            self.assertFalse(build_site.available_plans(lang))
+
     def test_home_page_shows_nothing_in_english_where_it_need_not(self):
         # The verse of the day and the worked examples are taken from what
         # is translated into the page's language, and the examples' gloss
@@ -309,6 +335,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual(build_site._date("2026-10-10", "vi"), "10 tháng 10, 2026")
         self.assertEqual(build_site._date("2026-10-10", "ko"), "2026년 10월 10일")
         self.assertEqual(build_site._date("2026-10-10", "pt"), "10 de outubro de 2026")
+        self.assertEqual(build_site._date("2026-10-10", "id"), "10 Oktober 2026")
 
     def test_french_typography_has_no_breaking_space_before_its_marks(self):
         # French sets « » : ; ! ? off with no-break spaces, so a line never
