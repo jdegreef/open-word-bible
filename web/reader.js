@@ -14,6 +14,27 @@
   [window.OWB_LANG, window.OWB_CHAPTER].forEach(function (shared) {
     for (var k in shared) DATA[k] = shared[k];
   });
+  // Decisions are written in English. Where a note is translated into the
+  // page's language (DATA.notes, from data/notes/ while it is current with
+  // its English), its words replace the English everywhere the reader shows
+  // them; d.english marks a note still in English on another language's page.
+  var NOTES = DATA.notes || {};
+  function noteLanguage(r, ds) {
+    var mine = NOTES[r.id] || {};
+    ds.forEach(function (d) {
+      var tr = mine[d.id];
+      if (tr) {
+        d.choice = tr.choice;
+        d.alternatives = tr.alternatives;
+        d.reason = tr.reason;
+      }
+      d.english = !tr && DATA.lang !== "en";
+    });
+    return ds;
+  }
+  DATA.records.forEach(function (r) { noteLanguage(r, r.decisions); });
+  // "Notes are in English for now", where some of these are.
+  function someEnglish(ds) { return ds.some(function (d) { return d.english; }); }
   // Each language's text joins the records as it arrives: the page's
   // language and any it falls back on come with the page, the one Parallel
   // sets beside it when chosen (loadText). Only the page language's rendering
@@ -27,7 +48,7 @@
     DATA.records.forEach(function (r) {
       if (text.renderings[r.id]) r.renderings[code] = text.renderings[r.id];
       if (text.links[r.id]) r.links[code] = text.links[r.id];
-      if (code === DATA.lang && text.decisions[r.id]) r.decisions = r.decisions.concat(text.decisions[r.id]);
+      if (code === DATA.lang && text.decisions[r.id]) r.decisions = r.decisions.concat(noteLanguage(r, text.decisions[r.id]));
     });
   }
   Object.keys(window.OWB_TEXTS || {}).forEach(addText);
@@ -55,6 +76,10 @@
   // Decision notes are written in English for now; readers of other
   // languages are told so in the panel.
   var UI = DATA.ui;
+  // Memorizing (web/memorize.js, loaded before this where the page offers
+  // it): its interface text, i18n/<lang>.json memory.ui.
+  var MEM = window.OWBMemory || null;
+  var MUI = DATA.memory || {};
 
   // Old Testament pages read from the Hebrew: a string with an _hbo
   // variant uses it there ("Tap a Hebrew word...").
@@ -442,17 +467,20 @@
     document.body.classList.toggle("red-letter", settings.red_letter === 1);
     document.body.classList.toggle("view-parallel", parallel());
     document.body.classList.toggle("view-interlinear", interlinear());
+    document.body.classList.toggle("view-recall", recall());
     // Offer Parallel only with another language, Interlinear only with links.
     var views = document.querySelector('[data-setting="view"]');
     if (views) {
       views.querySelector('[data-value="2"]').hidden = !partners().length;
       views.querySelector('[data-value="3"]').hidden = !anyLinks();
+      var recallBtn = views.querySelector('[data-value="4"]');
+      if (recallBtn) recallBtn.hidden = !MEM;
     }
   }
 
-  // The headings control only where the chapter has headings.
+  // The headings control only where the chapter has headings (or speaker labels, which it also hides).
   var headingsSeg = document.querySelector('[data-setting="headings"]');
-  if (headingsSeg && !Object.keys(DATA.headings).length) headingsSeg.parentNode.hidden = true;
+  if (headingsSeg && !Object.keys(DATA.headings).length && !Object.keys(DATA.speakers || {}).length) headingsSeg.parentNode.hidden = true;
   // And the cross-references control only where the chapter has some.
   var crossrefsSeg = document.querySelector('[data-setting="crossrefs"]');
   if (crossrefsSeg && !Object.keys(DATA.crossrefs).length) crossrefsSeg.parentNode.hidden = true;
@@ -466,6 +494,9 @@
   function plain() { return settings.view !== 0; }
   function parallel() { return settings.view === 2 && partners().length > 0; }
   function interlinear() { return settings.view === 3; }
+  // Recall: the text with words hidden, for learning a passage by heart in
+  // its place (web/memorize.js picks which).
+  function recall() { return settings.view === 4 && !!MEM; }
 
   // Languages to set beside the page's: those any sentence here has.
   function partners() {
@@ -483,9 +514,9 @@
     });
   }
 
-  var WORD_TEXT = {};
+  var WORD = {};
   Object.keys(DATA.words).forEach(function (vid) {
-    DATA.words[vid].forEach(function (w) { WORD_TEXT[w.id] = w.text; });
+    DATA.words[vid].forEach(function (w) { WORD[w.id] = w; });
   });
 
   // The language a record is shown in: the reading language if the record
@@ -549,7 +580,9 @@
     var cat = t("category")[n.decision.category];
     if (cat) head.appendChild(el("span", "fn-pop-cat", cat));
     box.appendChild(head);
-    box.appendChild(linked("p", "fn-pop-text", noteText(n.decision)));
+    var text = linked("p", "fn-pop-text", noteText(n.decision));
+    if (n.decision.english) text.lang = "en";
+    box.appendChild(text);
     var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
     more.type = "button";
     more.addEventListener("click", function () {
@@ -558,7 +591,11 @@
     });
     box.appendChild(more);
     // A manuscript reading: how and why manuscripts differ, in an article.
-    if (n.decision.category === "text_variant" && DATA.variants) box.appendChild(articleLink(DATA.variants, "fn-pop-article"));
+    var article = noteArticle(n.record, n.decision);
+    if (n.decision.category === "text_variant" && DATA.variants &&
+        !(article && article.url === DATA.variants.url)) box.appendChild(articleLink(DATA.variants, "fn-pop-article"));
+    // The article the note's words are explained in (data/article_links.json).
+    if (article) box.appendChild(readArticle(article, "note-article"));
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     document.body.appendChild(box);
     popover = box;
@@ -604,11 +641,14 @@
     head.appendChild(el("span", "fn-pop-cat", t("why_title")));
     box.appendChild(head);
     var list = el("ul", "why-list");
-    (only || whyDecisions(r)).forEach(function (d) {
+    var shown = only || whyDecisions(r);
+    shown.forEach(function (d) {
       var item = el("li");
       var b = el("button", "why-item");
       b.type = "button";
-      b.appendChild(el("strong", null, render(d.choice)));
+      var strong = el("strong", null, render(d.choice));
+      if (d.english) strong.lang = "en";
+      b.appendChild(strong);
       if (d.alternatives.length) {
         b.appendChild(el("span", "why-not", t(d.uncertain ? "fn_or" : "why_not") + render(d.alternatives[0])));
       }
@@ -618,7 +658,7 @@
       list.appendChild(item);
     });
     box.appendChild(list);
-    if (t("notes_language")) box.appendChild(el("p", "fine", t("notes_language")));
+    if (t("notes_language") && someEnglish(shown)) box.appendChild(el("p", "fine", t("notes_language")));
     var more = el("button", "fn-pop-more", t("fn_reasoning") + " \u2192");
     more.type = "button";
     more.addEventListener("click", function () { closeNote(false); select(r); });
@@ -659,7 +699,7 @@
     head.appendChild(el("span", "fn-pop-cat", t("card_kind").concept));
     box.appendChild(head);
     var note = el("p", "fn-pop-text", c.note);
-    if (settings.lang !== "en") note.lang = "en";
+    if ((c.lang || "en") !== settings.lang) note.lang = c.lang || "en";
     box.appendChild(note);
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     document.body.appendChild(box);
@@ -678,6 +718,23 @@
     var link = el("a", cls, a.title);
     link.href = a.url;
     if (a.lang !== settings.lang) link.lang = a.lang;
+    return link;
+  }
+
+  // The article a decision's note links to (DATA.noteArticles, by record
+  // and decision id), or undefined.
+  function noteArticle(r, d) {
+    return ((DATA.noteArticles || {})[r.id] || {})[d.id];
+  }
+
+  // "Read the article: <title> →".
+  function readArticle(a, cls) {
+    var link = el("a", cls, t("note_article") + " ");
+    link.href = a.url;
+    var title = el("span", null, a.title);
+    if (a.lang !== settings.lang) title.lang = a.lang;
+    link.appendChild(title);
+    link.appendChild(document.createTextNode(" →"));
     return link;
   }
 
@@ -746,9 +803,18 @@
         if (hlang !== settings.lang) h.lang = hlang;
         box.appendChild(h);
       }
-      if (!para || heading || starts.has(r.id)) {
+      // Who speaks (data/speakers/, a pilot): where the voice changes, a new
+      // paragraph and the speaker's name. An editorial aid like the
+      // headings, so hidden with them.
+      var speaker = DATA.speakers && DATA.speakers[r.id];
+      if (!para || heading || starts.has(r.id) || speaker) {
         para = el("p", "para");
         box.appendChild(para);
+      }
+      if (speaker && settings.headings === 0) {
+        var who = el("span", "speaker-label", speaker);
+        who.setAttribute("aria-label", t("speaker_label").replace("{name}", speaker));
+        para.appendChild(who);
       }
       var ds = decisionsFor(r);
       var marks = ds.meaning.concat(ds.rendering).filter(function (d) { return d.footnote; })
@@ -815,7 +881,7 @@
             // The original words over the English they became.
             var ruby = el("ruby", "il" + (piece[2] ? " wj" : ""));
             ruby.appendChild(document.createTextNode(text));
-            var rt = el("rt", null, piece[1].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim());
+            var rt = el("rt", null, OWBMarkup.joinWords(piece[1].map(function (id) { return WORD[id]; }).filter(Boolean)));
             rt.lang = DATA.source;
             ruby.appendChild(rt);
             into.appendChild(ruby);
@@ -907,6 +973,8 @@
     drawUnsureToggle(unsureCount);
     drawNotes(notes);
     drawMargin();
+    markMemo();
+    if (recall()) hideWords(page);
     if (listen.on) mark(false);
   }
 
@@ -988,8 +1056,31 @@
       box.parentNode.insertBefore(tools, box);
     }
     tools.textContent = "";
-    tools.hidden = !(parallel() || interlinear());
-    if (parallel()) {
+    tools.hidden = !(parallel() || interlinear() || recall());
+    if (recall()) {
+      tools.appendChild(el("span", "vt-label", MUI.recall_hint));
+      [["hide_fewer", -0.3], ["hide_more", 0.3]].forEach(function (x) {
+        var b = el("button", "text-tool", MUI[x[0]]);
+        b.type = "button";
+        b.disabled = x[1] < 0 ? recallShare <= 0.05 : recallShare >= 0.95;
+        b.addEventListener("click", function () {
+          recallShare = Math.max(0.05, Math.min(1, recallShare + x[1]));
+          drawText();
+        });
+        tools.appendChild(b);
+      });
+      var all = el("button", "text-tool", MUI.show_all);
+      all.type = "button";
+      all.addEventListener("click", function () {
+        document.querySelectorAll("#text .memo-blank").forEach(function (b) { b.click(); });
+      });
+      tools.appendChild(all);
+      if (DATA.memorize_url) {
+        var mine = el("a", "text-tool", MUI.my_verses);
+        mine.href = DATA.memorize_url;
+        tools.appendChild(mine);
+      }
+    } else if (parallel()) {
       tools.appendChild(el("span", "vt-label", t("parallel_with")));
       partners().forEach(function (l) {
         var b = el("button", "text-tool", t("lang_names")[l] || l);
@@ -1406,7 +1497,9 @@
         button.type = "button";
         button.appendChild(el("span", "note-mark", n.mark));
         button.appendChild(el("span", "note-ref", verseRange(n.record)));
-        button.appendChild(el("span", "note-text", noteText(n.decision)));
+        var text = el("span", "note-text", noteText(n.decision));
+        if (n.decision.english) text.lang = "en";
+        button.appendChild(text);
         button.addEventListener("click", function () { select(n.record, null, n.decision.id); });
         item.appendChild(button);
         list.appendChild(item);
@@ -1480,7 +1573,10 @@
     if (REF) return REF;
     var names = Object.keys(DATA.bookRefs.names).sort(function (a, b) { return b.length - a.length; })
       .map(function (n) { return n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); });
-    REF = new RegExp("\\b(" + names.join("|") + ") (\\d+):(\\d+)(?:[-\u2013](\\d+))?", "g");
+    var tail = "(" + names.join("|") + ") (\\d+):(\\d+)(?:[-\u2013](\\d+))?";
+    // \b is ASCII-only; Han and kana run on without spaces.
+    try { REF = new RegExp("(?<!(?![\\p{sc=Han}\\p{sc=Hiragana}\\p{sc=Katakana}])[\\p{L}\\p{M}\\p{N}])" + tail, "gu"); }
+    catch (e) { REF = new RegExp("\\b" + tail, "g"); }
     return REF;
   }
 
@@ -1574,6 +1670,18 @@
     panel.appendChild(fig);
     var go = function () {
       OWBMap.draw(fig, placed, DATA.cards.list.filter(function (c) { return c.at; }), { base: DATA.map.base, t: t });
+      // A journey with a stop in this sentence (data/journeys.json): follow it on the journeys page.
+      var trips = (DATA.journeys || []).filter(function (j) {
+        return j.verses.some(function (v) { return current.refs.indexOf(v) >= 0; });
+      });
+      if (!trips.length) return;
+      var p = el("p", "pmap-journeys");
+      trips.forEach(function (j) {
+        var a = el("a", null, t("map_journey").replace("{name}", j.name));
+        a.href = j.href;
+        p.appendChild(a);
+      });
+      fig.appendChild(p);
     };
     if (window.OWBMap) return go();
     var js = document.createElement("script");
@@ -1628,13 +1736,23 @@
     if (d.uncertain) cat.appendChild(el("span", "badge unc", t("uncertain")));
     if (d.footnote) cat.appendChild(el("span", "badge", t("footnote")));
     card.appendChild(cat);
-    card.appendChild(el("div", "choice", render(d.choice)));
+    var choice = el("div", "choice", render(d.choice));
+    if (d.english) choice.lang = "en";
+    card.appendChild(choice);
     if (d.alternatives.length) {
-      card.appendChild(el("div", "alts", t("also") + d.alternatives.map(render).join("; ")));
+      var alts = el("div", "alts", t("also"));
+      var altText = el("span", null, d.alternatives.map(render).join("; "));
+      if (d.english) altText.lang = "en";
+      alts.appendChild(altText);
+      card.appendChild(alts);
     }
     var away = [];
-    card.appendChild(linked("p", "why", d.reason, away));
+    var why = linked("p", "why", d.reason, away);
+    if (d.english) why.lang = "en";
+    card.appendChild(why);
     if (away.length) card.appendChild(refCards(away));
+    var article = noteArticle(record, d);
+    if (article) card.appendChild(readArticle(article, "note-article"));
     var ask = askLink(d);
     ask.classList.add("card-ask");
     card.appendChild(ask);
@@ -1738,9 +1856,11 @@
     actions.appendChild(bookmarkButton(currentVerse));
     actions.appendChild(linkButton(currentVerse));
     actions.appendChild(citeButton());
+    if (MEM) actions.appendChild(memoButton());
     actions.appendChild(moreButton());
     panel.appendChild(actions);
     panel.appendChild(citeBox(currentVerse));
+    if (MEM) panel.appendChild(memoBox());
     panel.appendChild(moreBox(currentVerse));
     var mine = myNoteBox(currentVerse);
     if (mine) panel.appendChild(mine);
@@ -1863,7 +1983,7 @@
 
     var ds = decisionsFor(current);
     panel.appendChild(el("h3", null, t("meaning")));
-    if (t("notes_language")) panel.appendChild(el("p", "empty", t("notes_language")));
+    if (t("notes_language") && someEnglish(ds.meaning.concat(ds.rendering))) panel.appendChild(el("p", "empty", t("notes_language")));
     if (!ds.meaning.length) panel.appendChild(el("p", "empty", t("no_meaning")));
     ds.meaning.forEach(function (d) { panel.appendChild(drawCard(d, current)); });
     panel.appendChild(el("h3", null, t("rendering").replace("{level}", t(settings.level))));
@@ -2462,6 +2582,285 @@
     return box;
   }
 
+  // ---- Memorize ----
+  // The panel's Memorize box (web/memorize.js): the verse, or a range of
+  // this chapter's verses, at a level the reader picks, with the wording
+  // settings resolved, so what they learn does not change under them. In
+  // it: practice (first letters, blanks, typing), the verse in phrases with
+  // the original word each rests on, and a QR code for the phone. Adding it
+  // keeps it in the reader's verses (owb.memory) to review; Take Root opens
+  // it there, where the site names the app.
+  var memoOpen = false, memoRange = null, memoLevel = null, memoTab = "practise";
+  function memoVerses() {
+    var v = currentVerse || verseOf(current.refs[0]);
+    if (!/^\d+$/.test(v)) return [v, v];
+    if (memoRange && memoRange[0] === v) return memoRange;
+    return [v, v];
+  }
+  function memoId(range) {
+    if (range[0] === range[1]) return verseId(range[0]);
+    return DATA.book + "." + DATA.chapter + "." + range[0] + "-" + range[1];
+  }
+  function memoName(range) {
+    return verseName(range[0]) + (range[0] === range[1] ? "" : "–" + range[1]);
+  }
+  // The verses' words at a level, built from the text's pieces so the
+  // English (or other language) each original word became is known:
+  // {text, lang, spans: [[start, end, ids, words]], status}.
+  function memoText(range, level) {
+    var text = "", spans = [], lang = null, status = null;
+    function add(s, ids) {
+      s = s.replace(/\s+/g, " ");
+      if (!text || / $/.test(text)) s = s.replace(/^ /, "");
+      var a = text.length;
+      text += s;
+      if (ids && s.trim()) spans.push([a, text.length, ids, s.trim()]);
+    }
+    var inRange = function (v) {
+      if (range[0] === range[1]) return v === range[0];
+      return /^\d+$/.test(v) && +v >= +range[0] && +v <= +range[1];
+    };
+    DATA.records.forEach(function (r) {
+      if (!r.refs.some(function (vid) { return inRange(verseOf(vid)); })) return;
+      var l = textLang(r);
+      lang = lang || l;
+      if (r.status === "ai_draft" || !status) status = r.status;
+      if (!r.renderings[l] || !r.renderings[l][level]) return;
+      versePieces(r, l, level).forEach(function (part) {
+        if (!inRange(part[0])) return;
+        add(" ");
+        part[1].forEach(function (piece) {
+          if (piece[0] === null) add(" ");
+          else add(render(piece[0]), piece[1]);
+        });
+      });
+    });
+    return { text: text.trim(), lang: lang || settings.lang, spans: spans, status: status || "ai_draft" };
+  }
+  // Each phrase's anchor: the longest aligned word in it, and the original
+  // words it came from, as [phrase, original, its words here].
+  function memoAnchors(m) {
+    var out = [], at = 0;
+    MEM.core.phrases(m.text, m.lang).forEach(function (phrase, i) {
+      var start = m.text.indexOf(phrase, at);
+      if (start < 0) return;
+      var end = start + phrase.length;
+      at = end;
+      var best = null;
+      m.spans.forEach(function (sp) {
+        if (sp[0] < start || sp[1] > end) return;
+        var len = sp[3].replace(/[^\p{L}]/gu, "").length;
+        if (len >= 3 && (!best || len > best[0])) best = [len, sp];
+      });
+      if (!best) return;
+      var source = best[1][2].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim();
+      if (source) out.push([i, source, best[1][3].replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "")]);
+    });
+    return out;
+  }
+  function memoWording() {
+    var ws = document.getElementById("wording-summary");
+    return ws ? ws.textContent : "";
+  }
+  function memoButton() {
+    var range = memoVerses(), have = MEM.get(memoId(range));
+    var b = el("button", "copy-link memo-toggle" + (have ? " on" : ""), have ? MUI.memorizing : MUI.memorize);
+    b.type = "button";
+    b.setAttribute("aria-expanded", memoOpen ? "true" : "false");
+    b.setAttribute("aria-controls", "memo-box");
+    b.addEventListener("click", function () {
+      memoOpen = !memoOpen;
+      b.setAttribute("aria-expanded", memoOpen ? "true" : "false");
+      var box = document.getElementById("memo-box");
+      if (box) box.hidden = !memoOpen;
+    });
+    return b;
+  }
+  function memoBox() {
+    var box = el("div", "memo-box");
+    box.id = "memo-box";
+    box.hidden = !memoOpen;
+    fillMemo(box);
+    return box;
+  }
+  function fillMemo(box) {
+    box.textContent = "";
+    var range = memoVerses(), id = memoId(range), ref = memoName(range);
+    var level = memoLevel || settings.level;
+    var m = memoText(range, level), have = MEM.get(id);
+    var head = el("div", "memo-head");
+    head.appendChild(el("h3", null, MEM.fill(MUI.box_title, { ref: ref })));
+    if (have) head.appendChild(el("span", "memo-pill memo-" + MEM.core.status(have), MEM.statusLine(have, MUI)));
+    box.appendChild(head);
+
+    // Which verses: from this one through a later one in the chapter.
+    var row = el("div", "memo-row");
+    if (/^\d+$/.test(range[0])) {
+      var label = el("label", "memo-label", MUI.through);
+      var pick = el("select", "memo-through");
+      pick.id = "memo-through";
+      label.htmlFor = pick.id;
+      var later = verses().map(function (x) { return x.verse; }).filter(function (v, i, all) {
+        return /^\d+$/.test(v) && all.indexOf(v) === i && +v >= +range[0] && +v <= +range[0] + 15;
+      });
+      later.forEach(function (v) {
+        var o = el("option", null, v);
+        o.value = v;
+        if (v === range[1]) o.selected = true;
+        pick.appendChild(o);
+      });
+      pick.addEventListener("change", function () {
+        memoRange = [range[0], pick.value];
+        fillMemo(box);
+        var again = document.getElementById("memo-through");
+        if (again) again.focus();
+      });
+      row.appendChild(label);
+      row.appendChild(pick);
+    }
+    // The level to learn; the wording settings come from the reader's.
+    var seg = el("div", "seg memo-level");
+    seg.setAttribute("role", "group");
+    seg.setAttribute("aria-label", MUI.level);
+    ["L", "B", "R"].forEach(function (code) {
+      var b = el("button", null, t(code));
+      b.type = "button";
+      b.setAttribute("aria-pressed", code === level ? "true" : "false");
+      b.addEventListener("click", function () { memoLevel = code; fillMemo(box); });
+      seg.appendChild(b);
+    });
+    row.appendChild(el("span", "memo-label", MUI.level));
+    row.appendChild(seg);
+    box.appendChild(row);
+
+    var preview = el("p", "memo-preview", m.text);
+    if (m.lang !== settings.lang) preview.lang = m.lang;
+    box.appendChild(preview);
+    var count = MEM.core.words(m.text, m.lang).filter(function (p) { return p.w; }).length;
+    var facts = [MEM.fill(MUI.words_count, { n: count })];
+    var wording = memoWording();
+    if (wording) facts.push(wording);
+    box.appendChild(el("p", "hint", facts.join(" · ")));
+    if (m.status === "ai_draft") box.appendChild(el("p", "hint memo-draft", MUI.draft_note));
+
+    var entry = { t: m.text, lang: m.lang, lv: level, w: wording, r: ref, q: MEM.settingsQuery(settings),
+                  a: memoAnchors(m), st: m.status };
+    var actions = el("div", "memo-actions");
+    if (!have) {
+      actions.appendChild(MEM.button("copy-link memo-add", MUI.add, function () { MEM.put(id, entry); drawPanelKeep(); }));
+    } else {
+      if (have.t !== m.text) {
+        actions.appendChild(MEM.button("copy-link", MUI.update, function () { MEM.put(id, entry); drawPanelKeep(); }));
+      }
+      actions.appendChild(MEM.button("copy-link memo-remove", MUI.remove, function () { MEM.remove(id); drawPanelKeep(); }));
+    }
+    var root = MEM.takeRootUrl(id, have && have.t === m.text ? have : entry, ref, pageLink(range[0]));
+    if (root) {
+      var a = el("a", "copy-link memo-takeroot", MUI.take_root + " ↗");
+      a.href = root;
+      a.target = "_blank";
+      a.rel = "noopener";
+      actions.appendChild(a);
+    }
+    if (DATA.memorize_url) {
+      var mine = el("a", "copy-link", MUI.my_verses);
+      mine.href = DATA.memorize_url;
+      actions.appendChild(mine);
+    }
+    box.appendChild(actions);
+
+    var tabs = el("div", "seg memo-tabs");
+    tabs.setAttribute("role", "group");
+    tabs.setAttribute("aria-label", MEM.fill(MUI.box_title, { ref: ref }));
+    var body = el("div", "memo-body");
+    function show(tab) {
+      memoTab = tab;
+      tabs.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", b.dataset.tab === tab ? "true" : "false");
+      });
+      body.textContent = "";
+      if (tab === "practise") body.appendChild(MEM.practice(m.text, { ui: MUI, lang: m.lang }));
+      else if (tab === "phrases") body.appendChild(MEM.phraseList(m.text, entry.a, { ui: MUI, lang: m.lang, source: DATA.source }));
+      else body.appendChild(MEM.phone(MEM.addUrl(DATA.memorize_url, id, entry), { ui: MUI }));
+    }
+    [["practise", MUI.tab_practise], ["phrases", MUI.tab_phrases], ["phone", MUI.tab_phone]].forEach(function (x) {
+      if (x[0] === "phone" && !DATA.memorize_url) return;
+      var b = el("button", null, x[1]);
+      b.type = "button";
+      b.dataset.tab = x[0];
+      b.addEventListener("click", function () { show(x[0]); });
+      tabs.appendChild(b);
+    });
+    box.appendChild(tabs);
+    box.appendChild(body);
+    show(memoTab);
+  }
+  // Redraw the panel where it was, after the reader's verses change.
+  function drawPanelKeep() {
+    var top = panelEl.scrollTop;
+    drawPanel();
+    panelEl.scrollTop = top;
+    markMemo();
+  }
+  // Verses in the reader's list get a mark by their number: a leaf once
+  // known, a dot while learning.
+  function markMemo() {
+    if (!MEM) return;
+    var list = MEM.all();
+    document.querySelectorAll("#text .verse").forEach(function (span) {
+      var v = span.dataset.v, e = null;
+      Object.keys(list).some(function (id) {
+        var p = MEM.core.parse(id), mine = list[id];
+        if (!p || !mine.add || p.book !== DATA.book) return false;
+        var c = /:/.test(v) ? +v.split(":")[0] : DATA.chapter, n = +(/:/.test(v) ? v.split(":")[1] : v);
+        if (p.chapter === c && n >= p.from && n <= p.to) { e = mine; return true; }
+        return false;
+      });
+      span.classList.remove("memo-new", "memo-learning", "memo-known");
+      if (e) span.classList.add("memo-" + MEM.core.status(e));
+    });
+  }
+  if (MEM) {
+    document.addEventListener("owb:memory", markMemo);
+  }
+
+  // Recall view: hide a share of each verse's words, longest first; a
+  // blank shows its word when tapped.
+  var recallShare = 0.25;
+  function hideWords(root) {
+    root.querySelectorAll(".verse").forEach(function (span) {
+      var walker = document.createTreeWalker(span, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (n) {
+          return n.parentNode.closest("sup, button, .fn, rt") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      var lang = span.lang || settings.lang, all = [], owner = [];
+      nodes.forEach(function (n, k) {
+        MEM.core.words(n.nodeValue, lang).forEach(function (p) { all.push(p); owner.push(k); });
+      });
+      var hide = MEM.core.hidden(all, recallShare);
+      nodes.forEach(function (n, k) {
+        var frag = document.createDocumentFragment();
+        all.forEach(function (p, i) {
+          if (owner[i] !== k) return;
+          if (!p.w || !hide.has(i)) { frag.appendChild(document.createTextNode(p.s)); return; }
+          var b = el("button", "memo-w memo-blank", " ");
+          b.type = "button";
+          b.style.minWidth = Math.min(8, Array.from(p.s).length) * 0.55 + "em";
+          b.setAttribute("aria-label", MUI.show_word);
+          b.addEventListener("click", function (e) {
+            e.stopPropagation();
+            b.replaceWith(el("span", "memo-shown", p.s));
+          });
+          frag.appendChild(b);
+        });
+        n.parentNode.replaceChild(frag, n);
+      });
+    });
+  }
+
   function citation(ref, status, link) {
     var cites = t("review_cite");
     return t("cite_format").replace("{ref}", ref).replace("{level}", t(settings.level))
@@ -2867,7 +3266,7 @@
     if (withWhy && why.length) {
       var reasons = el("section", "handout-why");
       reasons.appendChild(el("h2", null, t("handout_why")));
-      if (t("notes_language")) reasons.appendChild(el("p", "fine", t("notes_language")));
+      if (t("notes_language") && why.some(function (w) { return someEnglish(w[1]); })) reasons.appendChild(el("p", "fine", t("notes_language")));
       why.forEach(function (w) {
         reasons.appendChild(el("h3", null, name + " " + DATA.chapter + ":" + w[0]));
         w[1].forEach(function (d) {
@@ -3358,7 +3757,22 @@
     var field = document.getElementById(first.v === last.v ? "my-note-text" : "passage-note-text");
     if (field) field.focus();
   });
-  [copyBtn, hueBox, whyBtn, suggestBtn, myNoteBtn].forEach(function (b) { selBar.appendChild(b); });
+  // Memorize the selected verses (web/memorize.js): the panel's Memorize
+  // box, for the range.
+  var memoBtn = barButton("sel-memo", MUI.memorize || "", function () {
+    var range = selectedRange();
+    var vs = range ? selectedVerses(range).filter(function (x) { return /^\d+$/.test(x.v) && x.record; }) : [];
+    if (!vs.length) return;
+    var first = vs[0], last = vs[vs.length - 1];
+    window.getSelection().removeAllRanges();
+    hideBar();
+    memoOpen = true;
+    memoRange = [first.v, last.v];
+    select(first.record, first.v);
+    var box = document.getElementById("memo-box");
+    if (box) box.scrollIntoView({ block: "nearest", behavior: scrollMotion() });
+  });
+  [copyBtn, hueBox, whyBtn, suggestBtn, myNoteBtn, memoBtn].forEach(function (b) { selBar.appendChild(b); });
 
   var placing = null;
   document.addEventListener("selectionchange", function () {
@@ -3368,6 +3782,7 @@
       if (!range || !quote(range)) { hideBar(); return; }
       copyBtn.hidden = !navigator.clipboard;
       whyBtn.hidden = suggestBtn.hidden = myNoteBtn.hidden = plain();
+      memoBtn.hidden = plain() || !MEM;
       var r = range.getBoundingClientRect();
       selBar.hidden = false;
       var below = window.matchMedia("(pointer: coarse)").matches || r.top < 120;

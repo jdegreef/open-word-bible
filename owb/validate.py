@@ -13,6 +13,9 @@ settled English word at every level, and poetic line markers (\\q) sit only
 between a verse's words in renderings (markup.line_errors).
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
+
+A translation of notes or cards (data/notes/<lang>/<BOOK>.json,
+data/cards/<lang>/<kind>.json) given here is checked by owb.notes instead.
 """
 import json
 import re
@@ -143,6 +146,14 @@ def key_term(token_id, strong):
     return KEY_TERMS.get((token_language(token_id), strong))
 
 
+def is_checked(term):
+    """Whether owb.validate holds the English to a key term's words. A term
+    whose English is settled by sense (nephesh, ruach, mishpat: soul, life
+    or person; spirit, wind or breath) says "checked": false; its rule is in
+    its note and a meaning decision says which sense a passage has."""
+    return term.get("checked", True) is not False
+
+
 def key_term_words(term, level):
     """The English words a key term may be rendered by at a level."""
     allowed = term["english"]
@@ -180,7 +191,8 @@ def check_key_terms(record, tokens, errors):
         return
     for tok in tokens:
         term = key_term(tok.id, tok.strong)
-        if term is None or tok.id in explained:
+        if (term is None or tok.id in explained or not is_checked(term)
+                or record.get("id") in term.get("pending", ())):
             continue
         for level, text in sorted(english.items()):
             allowed = key_term_words(term, level)
@@ -440,7 +452,9 @@ def validate_file(path):
 
 
 def main(paths):
-    errors = [e for p in paths for e in validate_file(p)]
+    from owb import notes  # translations of notes and cards (data/notes/, data/cards/)
+    errors = [e for p in paths for e in (notes.check_file(p) if notes.is_translation_file(p)
+                                         else validate_file(p))]
     for e in errors:
         print(e)
     print(f"{len(paths)} file(s), {len(errors)} error(s)")
