@@ -598,3 +598,4 @@ records it. Empty until the first book is drafted.
 |---|---|---|---|
 | John | Aenon | Ainon | 3:23 |
 | John | Salim | Salim | 3:23 |
+| John | Mount of Olives | Bukit Zaitun | 8:1 |
