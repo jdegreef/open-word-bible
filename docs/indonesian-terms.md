@@ -780,3 +780,15 @@ records it. Empty until the first book is drafted.
 | Luke | officers of the temple guard (*stratēgoi*) | *kepala-kepala pengawal (Bait Allah)* (L, B); *perwira pengawal rumah Allah* (R) | 22:4 |
 | Luke | the Skull (place) | Tengkorak | 23:33 |
 | Luke | paradise | Firdaus | 23:43 |
+| Romans | means of atonement (*hilastērion*) | *sarana pendamaian* (L, B); *korban yang menghapus dosa dan meredakan murka Allah* (R) | 3:25 |
+| Romans | Lord Sabaoth (*kyrios sabaōth*) | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B); *Tuhan yang memimpin bala tentara surga* (R) | 9:29 |
+| Romans | Epaenetus | Epenetus | 16:5 |
+| Romans | Andronicus; Junia | Andronikus; Yunias (alternative *Yunia*) | 16:7 |
+| Romans | Ampliatus; Urbanus; Stachys | Ampliatus; Urbanus; Stakhis | 16:8–9 |
+| Romans | Apelles; Aristobulus | Apeles; Aristobulus | 16:10 |
+| Romans | Herodion; Narcissus | Herodion; Narkisus | 16:11 |
+| Romans | Tryphaena; Tryphosa; Persis | Trifena; Trifosa; Persis | 16:12 |
+| Romans | Asyncritus; Phlegon; Hermes; Patrobas; Hermas | Asinkritus; Flegon; Hermes; Patrobas; Hermas | 16:14 |
+| Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
+| Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
+| Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
