@@ -684,3 +684,11 @@ records it. Empty until the first book is drafted.
 | Exodus | wilderness of Shur | padang gurun Syur | 15:22 |
 | Exodus | Marah; Elim | Mara; Elim | 15:23; 15:27 |
 | Exodus | grumble (*lun*) | *bersungut-sungut* (L, B); *mengomel* (R) | 15:24 |
+| Exodus | wilderness of Sin | padang gurun Sin | 16:1 |
+| Exodus | omer | *gomer* (L); `{{units:sekitar dua liter\|satu gomer}}` (B, R) | 16:16 |
+| Exodus | jar (*tsintsenet*) | *buli-buli* | 16:33 |
+| Exodus | Rephidim | Rafidim | 17:1 |
+| Exodus | Massah; Meribah | Masa; Meriba | 17:7 |
+| Exodus | Hur | Hur | 17:10 |
+| Exodus | The LORD Is My Banner | *{{divine_name:TUHAN\|Yahweh}} Panji-panjiku* | 17:15 |
+| Exodus | Eliezer (son of Moses) | Eliezer | 18:4 |
