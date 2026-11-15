@@ -655,3 +655,10 @@ records it. Empty until the first book is drafted.
 | Joshua | ark of the testimony | *tabut kesaksian* (L, B); *tabut tempat loh-loh batu perjanjian* (R) | 4:16 |
 | Joshua | circumcise; Hill of the Foreskins | *menyunat*; Bukit Kulit Khatan | 5:2–3 |
 | Joshua | commander of the army of the LORD | *panglima balatentara {{divine_name:TUHAN\|Yahweh}}* (L, B); *panglima pasukan {{divine_name:TUHAN\|Yahweh}}* (R) | 5:14 |
+| Joshua | ram's horn, trumpet (*shofar*) | *sangkakala tanduk domba jantan*, *sangkakala* (L, B); *terompet dari tanduk domba jantan*, *terompet* (R) | 6:4 |
+| Joshua | bronze (*nechoshet*) | *tembaga* | 6:19 |
+| Joshua | Carmi; Zabdi; Zerah | Karmi; Zabdi; Zerah | 7:1 |
+| Joshua | Beth-aven | Bet-Awen | 7:2 |
+| Joshua | Shebarim | Syebarim | 7:5 |
+| Joshua | Shinar | Sinear (L); Babel (B, R) | 7:21 |
+| Joshua | Valley of Achor | Lembah Akhor | 7:24 |
