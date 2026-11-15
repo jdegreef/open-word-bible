@@ -740,3 +740,9 @@ records it. Empty until the first book is drafted.
 | Numbers | Kehelathah; Mount Shepher; Haradah; Makheloth; Tahath; Terah; Mithkah; Hashmonah | Kehelata; gunung Syafer; Harada; Makhelot; Tahat; Terah; Mitka; Hasmona | 33:22-29 |
 | Numbers | Moseroth; Bene-jaakan; Hor-haggidgad; Jotbathah; Abronah; Ezion-geber | Moserot; Bene-Yaakan; Hor-Gidgad; Yotbata; Abrona; Ezion-Geber | 33:30-35 |
 | Numbers | Zalmonah; Punon; Iyim; Dibon-gad; Almon-diblathaim; Beth-jeshimoth; Abel-shittim | Salmona; Punon; Iyim; Dibon-Gad; Almon-Diblataim; Bet-Yesimot; Abel-Sitim | 33:41-49 |
+| Numbers | Salt Sea; Great Sea; Sea of Chinnereth | *Laut Asin* (L, B), *Laut Mati* (R); *Laut Besar* (L), *Laut Tengah* (B, R); *Laut Kineret* (*Danau Galilea*, R) | 34:3-11 |
+| Numbers | Akrabbim; Hazar-addar; Azmon; brook of Egypt | Akrabim (*Pendakian Kalajengking*, R); Hazar-Adar; Azmon; *Sungai Mesir* | 34:4-5 |
+| Numbers | Zedad; Ziphron; Hazar-enan; Shepham; Riblah; Ain | Zedad; Zifron; Hazar-Enan; Syefam; Ribla; Ain | 34:8-11 |
+| Numbers | Shemuel; Elidad; Chislon; Bukki; Jogli; Hanniel; Ephod | Semuel; Elidad; Kislon; Buki; Yogli; Haniel; Efod | 34:20-23 |
+| Numbers | Kemuel; Shiphtan; Parnach; Paltiel; Azzan; Ahihud; Shelomi; Pedahel | Kemuel; Syiftan; Parnakh; Paltiel; Azan; Ahihud; Selomi; Pedahel | 34:24-28 |
+| Numbers | cities of refuge; avenger of blood (*go'el haddam*) | *kota perlindungan* (L, B), *kota tempat berlindung* (R); *penuntut balas darah* (L, B), *kerabat yang menuntut balas* (R) | 35:6 |
