@@ -642,3 +642,6 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 2 Peter | Tartarus | Tartarus | 2:4 |
+| 2 Peter | Bosor (Balaam's father) | Bosor | 2:15 |
+| 2 Peter | the Master (*despotēs*, of Christ) | *Penguasa* | 2:1 |
