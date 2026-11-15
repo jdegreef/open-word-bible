@@ -642,3 +642,5 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Titus | Artemas; Nicopolis | Artemas; Nikopolis | 3:12 |
+| Titus | Zenas the lawyer | Zenas, ahli hukum itu | 3:13 |
