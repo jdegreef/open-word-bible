@@ -792,3 +792,35 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| 2 Chronicles | Huram (king of Tyre, Hiram in Kings); Huram-abi | Huram; Huram-Abi | 2:2; 2:12 |
+| 2 Chronicles | Kue | Kewe | 1:16 |
+| 2 Chronicles | algum wood | *kayu algum* (uncertain) | 2:7 |
+| 2 Chronicles | the main hall (*hekhal*); the inner room (*devir*) | *ruang besar* (L), *Ruang Kudus* (B), *ruang utama* (R); *ruang belakang* (L), *ruang dalam* (B, R), as 1 Kings 6 | 3:5; 3:16 |
+| 2 Chronicles | Moriah; Ornan the Jebusite; Parvaim | gunung Moria; Ornan, orang Yebus; Parwaim | 3:1, 6 |
+| 2 Chronicles | Zeredah | Zereda | 4:17 |
+| 2 Chronicles | the refrain "for he is good, his loyal love lasts forever" | *sebab Dia baik; kasih setia-Nya kekal selama-lamanya* (B, R) | 5:13 |
+| 2 Chronicles | Jeduthun | Yedutun | 5:12 |
+| 2 Chronicles | platform (*kiyyor*, 6:13) | *mimbar* (L, B); *panggung* (R) | 6:13 |
+| 2 Chronicles | solemn assembly | *pertemuan raya* (L, B); *pertemuan ibadah khusus* (R) | 7:9 |
+| 2 Chronicles | Hamath-zobah; Tadmor; Baalath; Eloth | Hamat-Zoba; Tadmor; Baalat; Elot | 8:3–17 |
+| 2 Chronicles | act unfaithfully (*ma'al*) | *berubah setia* (L, B) | 12:2 |
+| 2 Chronicles | Shishak; Sukkiim; Naamah | Sisak; orang Suki; Naama | 12:2–3, 13 |
+| 2 Chronicles | the runners (royal guard) | *pasukan pelari* (L); *pasukan pengawal* (B, R) | 12:10 |
+| 2 Chronicles | Shemaiah; Iddo | Semaya; Ido | 11:2; 9:29 |
+| 2 Chronicles | Micaiah (the prophet; Abijah's mother) | Mikhaya (kept apart from Mikha, Micah) | 13:2; 18:7 |
+| 2 Chronicles | Zemaraim; Jeshanah; Ephron | gunung Zemaraim; Yesana; Efron | 13:4, 19 |
+| 2 Chronicles | covenant of salt | *perjanjian garam* | 13:5 |
+| 2 Chronicles | Etam; Tekoa; Beth-zur; Mareshah; Adoraim | Etam; Tekoa; Bet-Zur; Maresa; Adoraim | 11:6–9 |
+| 2 Chronicles | Mahalath; Jerimoth; Abihail; Shemariah; Zaham; Attai; Ziza | Mahalat; Yerimot; Abihail; Semarya; Zaham; Atai; Ziza | 11:18–20 |
+| 2 Chronicles | Zerah the Cushite; Zephathah; Gerar | Zerah, orang Kush (L, B), orang Etiopia (R); Zefata; Gerar | 14:8–12 |
+| 2 Chronicles | Azariah son of Oded | Azarya anak Oded | 15:1 |
+| 2 Chronicles | Baasha; Ben-hadad; Ijon; Abel-maim; Hanani | Baesa; Ben-Hadad; Iyon; Abel-Maim; Hanani | 16:1–7 |
+| 2 Chronicles | the house of the stocks | *rumah pasungan* (L); *penjara* with *pasung* (B, R) | 16:10 |
+| 2 Chronicles | Jehoshaphat's teachers (17:7–8) | Ben-Hail, Obaja, Zakharia, Netaneel, Mikhaya; Semaya, Netanya, Zebaja, Asael, Semiramot, Yonatan, Adonia, Tobia, Tob-Adonia; Elisama, Yoram | 17:7–8 |
+| 2 Chronicles | Adnah; Jehohanan; Amasiah son of Zichri; Eliada; Jehozabad | Adna; Yohanan; Amasia anak Zikhri; Eliada; Yozabad | 17:14–18 |
+| 2 Chronicles | made himself son-in-law (marriage alliance) | *menjadi besan* (L) | 18:1 |
+| 2 Chronicles | Imlah; Zedekiah son of Chenaanah; Amon (governor) | Yimla; Zedekia anak Kenaana; Amon | 18:7–25 |
+| 2 Chronicles | Jehu son of Hanani; Amariah; Zebadiah son of Ishmael | Yehu anak Hanani; Amarya; Zebaja anak Ismael | 19:2, 11 |
+| 2 Chronicles | Meunites; Hazazon-tamar; En-gedi | orang Meunim; Hazezon-Tamar; En-Gedi | 20:1–2 |
+| 2 Chronicles | Jahaziel; Jeiel; Mattaniah; Ziz; Jeruel; Beracah | Yahaziel; Yeiel; Matanya; Ziz; Yeruel; Berakha | 20:14–26 |
+| 2 Chronicles | Azubah; Shilhi; Eliezer son of Dodavahu | Azuba; Silhi; Eliezer anak Dodawahu | 20:31, 37 |
