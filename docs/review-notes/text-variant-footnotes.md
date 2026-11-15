@@ -4,7 +4,7 @@ Item 20 of the consistency audits. `docs/text-variants.md` is the policy and `py
 
 - Footnote added: 89 decisions (a verse added or left out, a well-known English Bible or the New Testament following the other reading, or a reading that changes the sense, such as an ancient translation reading another Hebrew word).
 - Footnote removed: 333 decisions whose reason says the sense is the same, or that concern spelling or a written and read form only. The decision stays in the reasoning panel.
-- Psalms: 26 changes written to `pending-psalms-patches-b.jsonl` (Psalm 105:27 among them, to match 105:22).
+- Psalms: 26 changes held in `pending-psalms-patches-b.jsonl` (Psalm 105:27 among them, to match 105:22) while the Psalms poetry lines were in review; now applied, and the patch file is gone.
 - Not judged by the check, left as written: New Testament manuscript differences whose reason does not say what they change, and hard texts with no other reading.
 
 ## By book
