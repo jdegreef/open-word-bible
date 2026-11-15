@@ -679,3 +679,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Bezer; Ramoth (in Gilead); Golan; Manassites | Bezer; Ramot; Golan; orang Manasye | 4:43 |
 | Deuteronomy | Mount Siyon (Hermon) | gunung Siyon | 4:48 |
 | Deuteronomy | Massah | Masa | 6:16 |
+| Deuteronomy | treasured possession (*segullah*) | *umat kesayangan* (L); *harta kesayangan* (B, R) | 7:6 |
+| Deuteronomy | the hornet | *tabuhan* | 7:20 |
