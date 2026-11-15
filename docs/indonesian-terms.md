@@ -792,3 +792,18 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Amos | For three transgressions ... and for four | *Karena tiga pelanggaran ..., bahkan empat* (L); *tiga kejahatan* (B); *telah berbuat dosa berulang-ulang* (R) | 1:3 |
+| Amos | Valley of Aven; Beth-eden | Lembah Awen; Bet-Eden | 1:5 |
+| Amos | Lord GOD (*Adonai YHWH*); Lord GOD of hosts | *Tuhan ALLAH*; *Tuhan ALLAH semesta alam* | 1:8; 9:5 |
+| Amos | Teman; Bozrah; Rabbah; Kerioth | Teman; Bozra; Raba; Keriot | 1:12–2:2 |
+| Amos | Nazirites | *orang nazir* | 2:11 |
+| Amos | wormwood | *apsintus* (L, B) | 5:7 |
+| Amos | Pleiades; Orion | *bintang Kartika*; *bintang Belantik* | 5:8 |
+| Amos | Sikkuth; Kiyyun | Sikut; Kiyun (uncertain) | 5:26 |
+| Amos | Calneh; Lo-debar; Karnaim | Kalne; Lodebar; Karnaim | 6:2; 6:13 |
+| Amos | Wadi of the Arabah | Sungai Araba | 6:14 |
+| Amos | plumb line | *tali sipat* | 7:7 |
+| Amos | Amaziah the priest of Bethel | Amazia, imam di Betel | 7:10 |
+| Amos | sycamore figs | *pohon ara hutan* | 7:14 |
+| Amos | Caphtor | Kaftor (L, B); Kreta (R) | 9:7 |
+| Amos | the fallen booth of David | *pondok Daud yang telah roboh* | 9:11 |
