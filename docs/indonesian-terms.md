@@ -672,3 +672,11 @@ records it. Empty until the first book is drafted.
 | Joshua | Chephirah; Beeroth; Kiriath-jearim | Kefira; Beerot; Kiryat-Yearim | 9:17 |
 | Joshua | congregation (*edah*); its leaders (*nesi'im*) | *umat*; *para pemimpin umat* | 9:15 |
 | Joshua | woodcutters and water carriers | *tukang belah kayu dan tukang timba air* | 9:21 |
+| Joshua | Adoni-Zedek | Adoni-Zedek | 10:1 |
+| Joshua | Hoham; Piram; Japhia; Debir (king) | Hoham; Piram; Yafia; Debir | 10:3 |
+| Joshua | Jarmuth; Lachish; Eglon; Debir (town) | Yarmut; Lakhis; Eglon; Debir | 10:3, 38 |
+| Joshua | Beth-horon; Azekah; Makkedah | Bet-Horon; Azeka; Makeda | 10:10 |
+| Joshua | valley of Aijalon | lembah Ayalon | 10:12 |
+| Joshua | Book of Jashar | Kitab Yasar | 10:13 |
+| Joshua | Libnah; Horam; Gezer | Libna; Horam; Gezer | 10:29, 33 |
+| Joshua | Kadesh-barnea; Goshen (in Canaan) | Kadesy-Barnea; tanah Gosyen | 10:41 |
