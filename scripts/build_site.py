@@ -319,7 +319,7 @@ def og_card_article(article):
 
 
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES, unlisted=None, head=""):
+         translated=LANGUAGES, unlisted=None, head="", og_type="website", noindex=False):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated (the languages it exists in),
@@ -328,7 +328,9 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
     site's. card_alt says what the card shows. An unlisted page (the account
     page) has no path: it is not indexed and has no preview, but unlisted
     names its path, so the language switch still leads to it. head is more
-    for the <head> (the articles page's feed link)."""
+    for the <head> (the articles page's feed link). og_type is the link
+    preview's kind ("article" for chapters and articles). A noindex page
+    (search) keeps its links but asks search engines not to list it."""
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or t(lang, "meta.description")
     meta = ""
@@ -347,7 +349,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
         meta = f"""
 <link rel="canonical" href="{canonical}">{alternates}
 <meta property="og:site_name" content="{SITE_NAME}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
 <meta property="og:url" content="{own}">
 <meta property="og:locale" content="{lang}">
 <meta property="og:title" content="{html.escape(full_title)}">
@@ -358,7 +360,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <meta property="og:image:alt" content="{html.escape(card_alt)}">
 <meta name="twitter:card" content="summary_large_image">"""
     here = path if path is not None else unlisted
-    if unlisted is not None:
+    if unlisted is not None or noindex:
         meta += '\n<meta name="robots" content="noindex">'
     if here is not None:
         meta += "\n" + langs_meta(translated)
@@ -1128,6 +1130,7 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
     disputed_ids = set(disputed_info["records"]) if disputed_info else set()
     ui = catalog(lang)["reader.ui"]
     out, para, shown, in_disputed, notes = [], None, None, False, 0
+    anchored = set()
 
     def close():
         if para is not None:
@@ -1173,12 +1176,16 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
         cls = "verse" if tl == lang else "verse fallback"
         for i, (v, text) in enumerate(verses):
             sup = f"<sup>{esc(v)}</sup>" if v != shown else ""
+            # The verse's first span carries its anchor (#v16), so a link
+            # can point at one verse; web/reader.js opens it.
+            anchor = f' id="v{esc(v)}"' if v not in anchored else ""
+            anchored.add(v)
             shown = v
             fn = ""
             if marks and i == len(verses) - 1:
                 fn = ('<sup class="fn" aria-hidden="true">'
                       + "".join(f'<span class="fn-mark">{m}</span>' for m in marks) + "</sup>")
-            para.append(f'<span class="{cls}"{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
+            para.append(f'<span class="{cls}"{anchor}{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
                         f'{sup}{esc(markup.render(text), quote=False)}{fn}</span> ')
     close()
     if in_disputed:
@@ -1422,7 +1429,16 @@ def chapter_page(book, chapter, lang="en"):
                 card=og_card_chapter(book, chapter),
                 card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
                            verse=opening_verse(records, chapter, lang)),
-                description=t(lang, "meta.chapter_description" + suffix, title=title))
+                description=chapter_description(book, chapter, title, suffix, lang), og_type="article")
+
+
+def chapter_description(book, chapter, title, suffix, lang):
+    """A chapter page's meta description: what the page is, then the
+    chapter's summary when it has one in lang, so a search result says
+    what happens in the chapter."""
+    own = t(lang, "meta.chapter_description" + suffix, title=title)
+    summary = summaries().get((book, chapter), {}).get(lang)
+    return f"{own} {summary}" if summary else own
 
 
 def chapter_crossrefs(records):
@@ -3191,7 +3207,22 @@ def home_page(lang="en"):
 """
     feed = (f'\n<link rel="alternate" type="application/atom+xml" '
             f'title="{html.escape(SITE_NAME + " · " + t(lang, "home.votd"))}" href="{votd_feed_url(lang)}">')
-    return page(lang, SITE_NAME, body, path="/", current="/", head=feed)
+    return page(lang, SITE_NAME, body + website_ld(lang), path="/", current="/", head=feed)
+
+
+def website_ld(lang):
+    """schema.org data for the site, on its home page: its name, language,
+    publisher and search, so search engines can name it and offer a
+    search box for it."""
+    return ld_script({
+        "@context": "https://schema.org", "@type": "WebSite",
+        "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "inLanguage": lang,
+        "description": t(lang, "meta.description"), "license": CC0_URL,
+        "publisher": {**ORGANIZATION, "sameAs": [GITHUB_URL]},
+        "potentialAction": {"@type": "SearchAction",
+                            "target": {"@type": "EntryPoint",
+                                       "urlTemplate": SITE_URL + url(lang, "/search/") + "?q={search_term_string}"},
+                            "query-input": "required name=search_term_string"}})
 
 
 def about_page(lang="en"):
@@ -3432,7 +3463,7 @@ At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are revi
 
 ## Reading the site
 
-- A chapter is at {SITE_URL}/<book>/<chapter>/, with the book's three-letter code in lower case: {SITE_URL}/jhn/3/ is John 3. Other languages have a prefix ({other}).
+- A chapter is at {SITE_URL}/<book>/<chapter>/, with the book's three-letter code in lower case: {SITE_URL}/jhn/3/ is John 3, and {SITE_URL}/jhn/3/#v16 is its verse 16. Other languages have a prefix ({other}).
 - A chapter page has the Balanced text and its footnotes as HTML. The full reasoning record of each sentence (the original words, a literal gloss, three levels of translation and every decision with its alternatives and reason) is in the page's data and opens beside the verse in the reader.
 - Old Testament verses are numbered as in the Hebrew text, so a psalm's title is verse 1.
 
@@ -4384,7 +4415,7 @@ def article_page(article, articles, lang="en"):
 <p><a href="{url(lang, "/articles/")}">{t(lang, "article.all")}</a></p></section>
 {article_ld(article, lang)}
 """
-    return page(lang, article["title"], body, path=article_url(article), current="/articles/",
+    return page(lang, article["title"], body, path=article_url(article), current="/articles/", og_type="article",
                 card=og_card_article(article),
                 card_alt=t(lang, "meta.article_card_alt", section=section,
                            title=article["title"], summary=article["summary"]),
@@ -4730,9 +4761,28 @@ def admin_page():
     return page(lang, "Admin", body, unlisted="/admin/", translated=(lang,), head=head)
 
 
+def address_books():
+    """Every way an address may name a book, folded as search folds it and
+    without spaces, hyphens or dots, to the book's code in the site's
+    addresses: its codes, and its name and abbreviation in each language
+    (book_aliases). The first book to claim an alias keeps it. The 404 page
+    uses it (web/site.js) to send /john/3/16/, /john-3-16 and /jhn/3/16/ to
+    /jhn/3/#v16."""
+    out = {}
+    for code, names in BOOK_NAMES.items():
+        given = [names.get(lang) for lang in LANGUAGES] + [BOOK_ABBREVIATIONS.get(code, {}).get(lang) for lang in LANGUAGES]
+        for alias in book_aliases(code, [n for n in given if n]):
+            out.setdefault(re.sub(r"[.\-_]+", "", alias), code.lower())
+    return out
+
+
 def not_found_page():
-    """One 404 page serves every address, so it speaks each language."""
+    """One 404 page serves every address, so it speaks each language. Its
+    data names the books and languages, so web/site.js can send an address
+    that names a verse, or a book by name, to its chapter page."""
     lang = "en"
+    data = json.dumps({"books": address_books(), "langs": [c for c in LANGUAGES if c != "en"]},
+                      ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     others = "".join(
         f'<p class="hero-sub" lang="{code}">{t(code, "404.heading")} '
         f'<a href="{url(code, "/")}">{t(code, "404.home")}</a></p>'
@@ -4745,7 +4795,8 @@ def not_found_page():
 <p class="actions"><a class="button" href="/read/">{icon(ICONS["book"])}{t(lang, "404.passages")}</a>
 <a class="button ghost" href="/">{t(lang, "404.home")}</a></p>
 {others}
-</section>""")
+</section>
+<script type="application/json" id="owb-lost">{data}</script>""")
 
 
 def saved_page(lang="en"):
@@ -5047,8 +5098,27 @@ def search_page(lang="en"):
 </section>
 </div>
 """
+    # Search results are not worth listing in a search engine; the page
+    # keeps its links, so crawlers still follow them.
     return page(lang, t(lang, "search.title"), body, path="/search/", current="/search/",
-                description=t(lang, "meta.search_description"))
+                description=t(lang, "meta.search_description"), noindex=True)
+
+
+# Search engines and AI tools named in robots.txt, so it says plainly that a
+# CC0 translation is there to be read, quoted and indexed by each of them.
+CRAWLERS = ("Googlebot", "Bingbot", "Applebot", "DuckDuckBot", "Google-Extended", "Applebot-Extended",
+            "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User",
+            "PerplexityBot", "Perplexity-User", "CCBot", "Meta-ExternalAgent", "Amazonbot", "MistralAI-User")
+
+
+def robots_txt():
+    """/robots.txt: every crawler may read every page; the pages that are
+    not worth listing say so with a robots meta tag. AI crawlers are named
+    too, as welcome."""
+    named = "".join(f"User-agent: {bot}\n" for bot in CRAWLERS)
+    return (f"# {SITE_NAME} is in the public domain (CC0 1.0): read, quote, index and reuse it.\n"
+            f"# A guide for AI tools: {SITE_URL}/llms.txt\n\n"
+            f"{named}Allow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
 
 
 def sitemap(paths):
@@ -5079,7 +5149,7 @@ def build(out):
         add("/download/", download_page(lang))
         add("/about/privacy/", legal_page(lang, "privacy", "/about/privacy/"))
         add("/about/terms-of-use/", legal_page(lang, "terms_of_use", "/about/terms-of-use/"))
-        add("/search/", search_page(lang))
+        add("/search/", search_page(lang), index=False)
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))
         for audience in AUDIENCES:
@@ -5128,7 +5198,7 @@ def build(out):
     files.update(feeds)
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
-    files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
+    files["robots.txt"] = robots_txt()
     files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
     files["manifest.webmanifest"] = manifest()

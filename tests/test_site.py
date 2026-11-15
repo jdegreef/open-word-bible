@@ -469,6 +469,47 @@ class SiteTest(unittest.TestCase):
         self.assertIn(f"Sitemap: {build_site.SITE_URL}/sitemap.xml", robots)
         self.assertTrue((self.out / "favicon.svg").is_file())
 
+    def test_search_engines_and_ai_tools_may_read_everything(self):
+        robots = (self.out / "robots.txt").read_text(encoding="utf-8")
+        self.assertNotIn("Disallow", robots)
+        for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
+            self.assertIn(f"User-agent: {bot}\n", robots)
+        self.assertIn("User-agent: *\nAllow: /\n", robots)
+
+    def test_search_pages_are_not_listed(self):
+        page = (self.out / "search" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="robots" content="noindex">', page)
+        self.assertNotIn("/search/</loc>", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+
+    def test_link_previews_and_linked_data_for_search_engines(self):
+        chapter = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta property="og:type" content="article">', chapter)
+        # The description says what happens in the chapter: its summary.
+        summary = build_site.summaries()[("JHN", 3)]["en"]
+        self.assertIn(html.escape(summary), re.search(r'<meta name="description" content="([^"]*)"', chapter)[1])
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta property="og:type" content="website">', home)
+        site = json.loads(re.search(r'<script type="application/ld\+json">(\{"@context":"https://schema.org",'
+                                    r'"@type":"WebSite".*?)</script>', home)[1])
+        self.assertEqual(site["potentialAction"]["target"]["urlTemplate"],
+                         f"{build_site.SITE_URL}/search/?q={{search_term_string}}")
+
+    def test_each_verse_has_an_anchor(self):
+        chapter = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        text = chapter[chapter.index('id="text"'):]
+        ids = re.findall(r'<span class="verse[^"]*" id="(v[^"]+)"', text)
+        self.assertIn("v16", ids)
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_404_page_knows_the_books_for_verse_addresses(self):
+        lost = (self.out / "404.html").read_text(encoding="utf-8")
+        data = json.loads(re.search(r'<script type="application/json" id="owb-lost">(.*?)</script>', lost)[1])
+        self.assertEqual(data["books"]["john"], "jhn")
+        self.assertEqual(data["books"]["1john"], "1jn")
+        self.assertEqual(data["books"]["juan"], "jhn")
+        self.assertIn("es", data["langs"])
+        self.assertNotIn("en", data["langs"])
+
     def test_home_page_example_comes_from_the_content(self):
         home = (self.out / "index.html").read_text(encoding="utf-8")
         example = home[home.index('class="example"'):home.index('class="points-wrap"')]

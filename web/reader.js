@@ -679,6 +679,7 @@
     if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); drawMargin(); return; }
     drawViewTools();
     var shown = null;   // last verse number printed
+    var anchored = new Set();   // verses whose first span has its #v anchor
     var marked = marks();
     var notes = [];
     var unsureCount = 0;
@@ -754,6 +755,8 @@
         }
         span.dataset.v = part[0];
         span.dataset.record = r.id;
+        // As on the built page: a verse's first span is its #v anchor.
+        if (!anchored.has(part[0])) { anchored.add(part[0]); span.id = "v" + part[0]; }
         var m = marked[verseId(part[0])];
         if (m && m.h) span.classList.add("hl-" + m.h);
         if (m && m.b) span.classList.add("bookmarked");
