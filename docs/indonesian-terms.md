@@ -724,3 +724,19 @@ records it. Empty until the first book is drafted.
 | Numbers | Shuthelah; Becher; Tahan; Eran; Bela; Ashbel; Ahiram; Shephupham (Shuphamites); Hupham; Ard; Naaman | Sutelah; Bekher; Tahan; Eran; Bela; Asybel; Ahiram; Sefufam (*kaum Sufam*); Hufam; Ard; Naaman | 26:35-40 |
 | Numbers | Shuham; Imnah (Imnites); Ishvi; Beriah; Heber; Malchiel; Serah; Jahzeel; Guni; Jezer; Shillem; Jochebed | Suham; Yimna (*kaum Yimni*); Yiswi; Beria; Heber; Malkiel; Serah; Yahzeel; Guni; Yezer; Silem; Yokhebed | 26:42-59 |
 | Numbers | lot (*goral*) | *undian* | 26:55 |
+| Numbers | Abarim; Urim | Abarim; Urim | 27:12; 27:21 |
+| Numbers | continual burnt offering (*olat tamid*) | *korban bakaran tetap* (L, B); *korban bakaran harian* (R) | 28:3 |
+| Numbers | holy convocation; solemn assembly (*'atseret*) | *pertemuan kudus*; *pertemuan raya* (L, B) | 28:18; 29:35 |
+| Numbers | day of loud blast (*yom teru'ah*) | *hari peniupan sangkakala* | 29:1 |
+| Numbers | bond (*'issar*) in vows | *ikatan* (L); *janji* (B, R) | 30:3 |
+| Numbers | Evi; Rekem; Hur; Reba | Ewi; Rekem; Hur; Reba | 31:8 |
+| Numbers | commanders of thousands; of hundreds | *kepala pasukan seribu*; *kepala pasukan seratus* | 31:14 |
+| Numbers | Ataroth; Nimrah; Elealeh; Sebam; Nebo; Beon | Atarot; Nimra; Elale; Sebam; Nebo; Beon | 32:3 |
+| Numbers | Kadesh-barnea; Kenizzite | Kadesy-Barnea; *orang Kenas* | 32:8; 32:12 |
+| Numbers | Aroer; Atroth-shophan; Jogbehah; Beth-nimrah; Beth-haran | Aroer; Atrot-Sofan; Yogbeha; Bet-Nimra; Bet-Haran | 32:34-36 |
+| Numbers | Kiriathaim; Baal-meon; Sibmah; Jair; Havvoth-jair; Nobah; Kenath | Kiryataim; Baal-Meon; Sibma; Yair; Hawot-Yair; Nobah; Kenat | 32:37-42 |
+| Numbers | Rameses; Succoth; Etham; Pi-hahiroth; Baal-zephon; Migdol; Marah; Elim | Raamses; Sukot; Etam; Pi-Hahirot; Baal-Zefon; Migdol; Mara; Elim | 33:3-9 |
+| Numbers | Sin; Dophkah; Alush; Rephidim; Rithmah; Rimmon-perez; Libnah; Rissah | Sin; Dofka; Alus; Rafidim; Ritma; Rimon-Peres; Libna; Risa | 33:11-21 |
+| Numbers | Kehelathah; Mount Shepher; Haradah; Makheloth; Tahath; Terah; Mithkah; Hashmonah | Kehelata; gunung Syafer; Harada; Makhelot; Tahat; Terah; Mitka; Hasmona | 33:22-29 |
+| Numbers | Moseroth; Bene-jaakan; Hor-haggidgad; Jotbathah; Abronah; Ezion-geber | Moserot; Bene-Yaakan; Hor-Gidgad; Yotbata; Abrona; Ezion-Geber | 33:30-35 |
+| Numbers | Zalmonah; Punon; Iyim; Dibon-gad; Almon-diblathaim; Beth-jeshimoth; Abel-shittim | Salmona; Punon; Iyim; Dibon-Gad; Almon-Diblataim; Bet-Yesimot; Abel-Sitim | 33:41-49 |
