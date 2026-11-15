@@ -662,3 +662,7 @@ records it. Empty until the first book is drafted.
 | Joshua | Shebarim | Syebarim | 7:5 |
 | Joshua | Shinar | Sinear (L); Babel (B, R) | 7:21 |
 | Joshua | Valley of Achor | Lembah Akhor | 7:24 |
+| Joshua | ambush | *penghadangan*, *para penghadang* (L, B); described at R | 8:2 |
+| Joshua | javelin (*kidon*) | *lembing* (L, B); *tombak* (R) | 8:18 |
+| Joshua | Mount Ebal; Mount Gerizim | gunung Ebal; gunung Gerizim | 8:30, 33 |
+| Joshua | assembly (*qahal*) | *jemaah* (L, B); *perkumpulan* (R) | 8:35 |
