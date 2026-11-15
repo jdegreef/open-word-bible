@@ -650,3 +650,15 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Anakim | orang Enak; keturunan Enak | 1:28 |
 | Deuteronomy | Jephunneh | Yefune | 1:36 |
 | Deuteronomy | Hormah | Horma | 1:44 |
+| Deuteronomy | Elath; Ezion-geber | Elat; Ezion-Geber | 2:8 |
+| Deuteronomy | Emim; Rephaim | orang Emim; orang Refaim | 2:10–11 |
+| Deuteronomy | Horites | orang Hori | 2:12 |
+| Deuteronomy | Zered (wadi) | sungai Zered (L); Lembah Zered (B, R) | 2:13 |
+| Deuteronomy | sons of Ammon, Ammonites | bani Amon (L); orang Amon (B, R) | 2:19 |
+| Deuteronomy | Zamzummim | orang Zamzumim | 2:20 |
+| Deuteronomy | Avvites; Caphtorim; Caphtor | orang Awi; orang Kaftor; Kaftor | 2:23 |
+| Deuteronomy | Arnon | sungai Arnon (L, R); Lembah Arnon (B) | 2:24 |
+| Deuteronomy | Kedemoth | Kedemot | 2:26 |
+| Deuteronomy | Jahaz | Yahas | 2:32 |
+| Deuteronomy | devote to destruction (*herem*) | *mengkhususkan untuk dimusnahkan* (L, B); *memusnahkan sebagai milik TUHAN* (R) | 2:34 |
+| Deuteronomy | Aroer; Jabbok | Aroer; sungai Yabok | 2:36–37 |
