@@ -642,3 +642,7 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 1 Timothy | Hymenaeus | Himeneus | 1:20 |
+| 1 Timothy | sound teaching | *ajaran yang sehat* | 1:10 |
+| 1 Timothy | godliness (*eusebeia*) | *kesalehan* | 2:2 |
+| 1 Timothy | man of God | *manusia Allah* (L); *abdi Allah* (B) | 6:11 |
