@@ -642,3 +642,12 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Hebrews | pioneer (*archēgos*) | *Perintis* | 2:10 |
+| Hebrews | rest (God's, Psalm 95) | *tempat perhentian* | 3:11 |
+| Hebrews | anchor | *sauh* | 6:19 |
+| Hebrews | Salem | Salem | 7:1 |
+| Hebrews | Holy of Holies, Most Holy Place | *Tempat Mahakudus* | 9:3 |
+| Hebrews | mercy seat | *tutup pendamaian* | 9:5 |
+| Hebrews | Day of Atonement | *Hari Pendamaian* | 9:7 |
+| Hebrews | will, testament (9:16–17) | *wasiat* | 9:16 |
+| Hebrews | Italy | Italia | 13:24 |
