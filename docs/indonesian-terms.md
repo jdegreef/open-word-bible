@@ -642,3 +642,43 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Matthew | Jechoniah | Yekhonya | 1:11 |
+| Matthew | Joram (king) | Yoram | 1:8 |
+| Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
+| Matthew | Shealtiel; Abiud; Eliakim; Azor | Sealtiel; Abiud; Elyakim; Azor | 1:12–13 |
+| Matthew | Achim; Eliud; Matthan | Akhim; Eliud; Matan | 1:14–15 |
+| Matthew | fathered (genealogy) | *memperanakkan* (L); *adalah ayah* (B, R) | 1:2 |
+| Matthew | Immanuel | Imanuel | 1:23 |
+| Matthew | magi | *orang-orang majus* (L, B); *ahli bintang* (R) | 2:1 |
+| Matthew | frankincense; myrrh | *kemenyan*; *mur* | 2:11 |
+| Matthew | Archelaus | Arkhelaus | 2:22 |
+| Matthew | Rachel; Ramah | Rahel; Rama | 2:18 |
+| Matthew | Zebulun; Naphtali | Zebulon; Naftali | 4:13 |
+| Matthew | Decapolis | Dekapolis (L, B); *daerah Sepuluh Kota* (R) | 4:25 |
+| Matthew | Cananaean | *orang Kanani* (L); *orang Zelot* (B) | 10:4 |
+| Matthew | assarion | *asarion*; {{units:sedikit uang receh\|satu asarion}} (B, R) | 10:29 |
+| Matthew | quadrans (5:26) | *kodran*; {{units:sen yang terakhir\|kodran yang terakhir}} (B, R) | 5:26 |
+| Matthew | Raca | *Raka* (L) | 5:22 |
+| Matthew | Mammon | *Mamon* (L); *uang* (B, R) | 6:24 |
+| Matthew | Chorazin; Tyre; Sidon | Khorazim; Tirus; Sidon | 11:21 |
+| Matthew | centurion | *perwira* | 8:5 |
+| Matthew | Herodians | *orang-orang Herodian* (L, B); *pendukung Raja Herodes* (R) | 22:16 |
+| Matthew | phylacteries | *kotak-kotak ayat* (L, B) | 23:5 |
+| Matthew | mint, dill and cumin | *selasih, adas manis dan jintan* | 23:23 |
+| Matthew | Abel; Zechariah son of Barachiah | Habel; Zakharia anak Berekhya | 23:35 |
+| Matthew | two-drachma tax; stater | *pajak dua drakhma*; *stater* (L) | 17:24; 17:27 |
+| Matthew | Simon son of Jonah (Bariona) | *Simon bin Yunus* (L); *Simon anak Yunus* (B, R) | 16:17 |
+| Matthew | tetrarch | *raja wilayah* (L, B); *penguasa daerah* (R) | 14:1 |
+| Matthew | fourth watch of the night | *jaga malam yang keempat* (L); *menjelang subuh* (B) | 14:25 |
+| Matthew | Canaanite (woman) | *perempuan Kanaan* | 15:22 |
+| Matthew | Magadan | Magadan | 15:39 |
+| Matthew | three measures (seah) of flour | *tiga sukat* (L); *sekitar dua puluh kilogram* (B, R, units setting) | 13:33 |
+| Matthew | vultures | *burung nasar* (L, B); *burung pemakan bangkai* (R) | 24:28 |
+| Matthew | talents (parable) | *talenta* (L); *kantong uang perak* (B, R, units setting) | 25:15 |
+| Matthew | legions | *pasukan* (L, R); *legiun* (B) | 26:53 |
+| Matthew | the Power (God) | *Yang Mahakuasa* | 26:64 |
+| Matthew | Potter's Field; Field of Blood | Tanah Tukang Periuk; Tanah Darah | 27:7–8 |
+| Matthew | Golgotha; Place of a Skull | Golgota; Tempat Tengkorak | 27:33 |
+| Matthew | Eli, Eli, lema sabachthani | Eli, Eli, lema sabakhtani | 27:46 |
+| Matthew | governor (*hēgemōn*) | *wali negeri* (L); *gubernur* (B, R) | 27:2 |
+| Matthew | Jesus Barabbas | Yesus Barabas | 27:16 |
