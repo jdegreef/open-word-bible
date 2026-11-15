@@ -705,3 +705,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | tassels | *jumbai-jumbai* | 22:12 |
 | Deuteronomy | Balaam son of Beor; Pethor; Aram-naharaim | Bileam anak Beor; Petor; Aram-Naharaim (L, B), Mesopotamia (R) | 23:5 |
 | Deuteronomy | shrine prostitute (*qedeshah*, *qadesh*) | *pelacur bakti* (L, B) | 23:18 |
+| Deuteronomy | certificate of divorce | *surat cerai* | 24:1 |
+| Deuteronomy | pledge | *gadai*, *barang gadaian* | 24:6 |
