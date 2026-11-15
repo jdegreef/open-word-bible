@@ -665,3 +665,11 @@ records it. Empty until the first book is drafted.
 | Leviticus | afflict yourselves | *merendahkan diri* (L); *merendahkan diri dengan berpuasa* (B); *berpuasa dan merendahkan diri* (R) | 16:29 |
 | Leviticus | goat-demons | *setan-setan kambing* (L); *roh-roh jahat berwujud kambing* (B, R) | 17:7 |
 | Leviticus | uncover nakedness | *menyingkapkan ketelanjangan* (L); *bersetubuh* (B, R) | 18:6 |
+| Leviticus | Shelomith; Dibri | Selomit; Dibri | 24:11 |
+| Leviticus | settler (*toshav*), beside sojourner (*ger*) | *penduduk sementara* (L, B), beside *pendatang*; described at R | 25:6 |
+| Leviticus | ram's horn (*shofar*) | *sangkakala tanduk domba jantan* (L, B); *terompet tanduk domba jantan* (R) | 25:9 |
+| Leviticus | the LORD's slaves (Israel) | *hamba-hamba-Ku*; *budak* for human slavery | 25:42 |
+| Leviticus | incense altars (*chammanim*) | *mezbah-mezbah dupa* | 26:30 |
+| Leviticus | valuation (*erek*) | *penilaian* (L); *nilai* (B); *harga yang sudah ditetapkan* (R) | 27:2 |
+| Leviticus | homer; gerah | *homer* (L); `{{units:sekitar dua ratus liter\|satu homer}}` (B, R); *gera* | 27:16; 27:25 |
+| Leviticus | devoted thing (*cherem*) | *barang yang dikhususkan* (L); *dikhususkan sepenuhnya* (B, R); of a person *dikhususkan untuk dibinasakan* | 27:28 |
