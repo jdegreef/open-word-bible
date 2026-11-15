@@ -743,3 +743,9 @@ records it. Empty until the first book is drafted.
 | Joshua | breach of faith (*ma'al*) | *ketidaksetiaan*; *berlaku tidak setia* | 7:1; 22:16 |
 | Joshua | El, Elohim, YHWH (22:22) | *Yang Perkasa, Allah, {{divine_name:TUHAN\|Yahweh}}* | 22:22 |
 | Joshua | the altar named Witness | Saksi | 22:34 |
+| Joshua | the River (Euphrates) | *Sungai* (L, B); *sungai Efrat* (R) | 24:2 |
+| Joshua | Terah; Nahor; Zippor | Terah; Nahor; Zipor | 24:2, 9 |
+| Joshua | hornet | *tabuhan* | 24:12 |
+| Joshua | jealous God | *Allah yang cemburu* | 24:19 |
+| Joshua | oak at Shechem | *pohon tarbantin* | 24:26 |
+| Joshua | Hamor; qesitah; Mount Gaash | Hemor; *kesita* (L), *keping perak* (B, R); gunung Gaas | 24:30–32 |
