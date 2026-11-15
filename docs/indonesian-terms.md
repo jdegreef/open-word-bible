@@ -734,3 +734,9 @@ records it. Empty until the first book is drafted.
 | Joshua | the Naphtali names (19:33–38) | Helef, Zaananim, Adami-Nekeb, Lakum, Aznot-Tabor, Hukok, Zidim, Zer, Hamat, Rakat, Adama, En-Hazor, Yiron, Migdal-El, Horem, Bet-Anat | 19:33–38 |
 | Joshua | the Dan names (19:41–47) | Ir-Syemesy, Syaalabin, Yitla, Elon, Elteke, Gibeton, Baalat, Yehud, Bene-Berak, Gat-Rimon, Me-Yarkon, Rakon, Lesyem | 19:41–47 |
 | Joshua | Timnath-serah | Timnat-Serah | 19:50 |
+| Joshua | cities of refuge | *kota-kota perlindungan* (L, B); *kota-kota tempat berlindung* (R) | 20:2 |
+| Joshua | avenger of blood | *penuntut balas darah* (L, B); *kerabat yang ingin membalas kematian itu* (R) | 20:3 |
+| Joshua | Bezer; Ramoth; Golan | Bezer; Ramot; Golan | 20:8 |
+| Joshua | Kohathites; Gershon; Merari | orang Kehat; Gerson; Merari | 21:4–7 |
+| Joshua | Anathoth; Almon; Kibzaim; Beeshterah | Anatot; Almon; Kibzaim; Beestera | 21:18–27 |
+| Joshua | Abdon; Hammoth-dor; Kartan; Kartah; Dimnah | Abdon; Hamot-Dor; Kartan; Karta; Dimna | 21:30–35 |
