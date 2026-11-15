@@ -792,3 +792,10 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Joel | Pethuel | Petuel | 1:1 |
+| Joel | cutting, swarming, hopping, stripping locust | *belalang pemotong*, *belalang pindahan*, *belalang pelompat*, *belalang pelahap* (L, B); *kawanan belalang* (R) (uncertain) | 1:4 |
+| Joel | the day of the LORD | *hari TUHAN* | 1:15 |
+| Joel | the Almighty (*Shaddai*) | *Yang Mahakuasa* | 1:15 |
+| Joel | valley of Jehoshaphat; valley of decision | lembah Yosafat; *lembah keputusan* | 4:2; 4:14 |
+| Joel | Sabeans | orang Syeba | 4:8 |
+| Joel | valley of Shittim | lembah Sitim | 4:18 |
