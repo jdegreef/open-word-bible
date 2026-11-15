@@ -741,3 +741,153 @@ records it. Empty until the first book is drafted.
 | Exodus | the Ten Words | *kesepuluh firman* (L); *Sepuluh Firman* (B); *Sepuluh Perintah* (R) | 34:28 |
 | Exodus | veil (of Moses) | *selubung* (L, B); *kain* (R) | 34:33 |
 | Exodus | beka; talent (metric) | `{{units:sekitar enam gram\|satu beka}}`; `{{units:sekitar 34 kilogram\|satu talenta}}` | 38:26; 25:39 |
+| Matthew | Jechoniah | Yekhonya | 1:11 |
+| Matthew | Joram (king) | Yoram | 1:8 |
+| Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
+| Matthew | Shealtiel; Abiud; Eliakim; Azor | Sealtiel; Abiud; Elyakim; Azor | 1:12–13 |
+| Matthew | Achim; Eliud; Matthan | Akhim; Eliud; Matan | 1:14–15 |
+| Matthew | fathered (genealogy) | *memperanakkan* (L); *adalah ayah* (B, R) | 1:2 |
+| Matthew | Immanuel | Imanuel | 1:23 |
+| Matthew | magi | *orang-orang majus* (L, B); *ahli bintang* (R) | 2:1 |
+| Matthew | frankincense; myrrh | *kemenyan*; *mur* | 2:11 |
+| Matthew | Archelaus | Arkhelaus | 2:22 |
+| Matthew | Rachel; Ramah | Rahel; Rama | 2:18 |
+| Matthew | Zebulun; Naphtali | Zebulon; Naftali | 4:13 |
+| Matthew | Decapolis | Dekapolis (L, B); *daerah Sepuluh Kota* (R) | 4:25 |
+| Matthew | Cananaean | *orang Kanani* (L); *orang Zelot* (B) | 10:4 |
+| Matthew | assarion | *asarion*; {{units:sedikit uang receh\|satu asarion}} (B, R) | 10:29 |
+| Matthew | quadrans (5:26) | *kodran*; {{units:sen yang terakhir\|kodran yang terakhir}} (B, R) | 5:26 |
+| Matthew | Raca | *Raka* (L) | 5:22 |
+| Matthew | Mammon | *Mamon* (L); *uang* (B, R) | 6:24 |
+| Matthew | Chorazin; Tyre; Sidon | Khorazim; Tirus; Sidon | 11:21 |
+| Matthew | centurion | *perwira* | 8:5 |
+| Matthew | Herodians | *orang-orang Herodian* (L, B); *pendukung Raja Herodes* (R) | 22:16 |
+| Matthew | phylacteries | *kotak-kotak ayat* (L, B) | 23:5 |
+| Matthew | mint, dill and cumin | *selasih, adas manis dan jintan* | 23:23 |
+| Matthew | Abel; Zechariah son of Barachiah | Habel; Zakharia anak Berekhya | 23:35 |
+| Matthew | two-drachma tax; stater | *pajak dua drakhma*; *stater* (L) | 17:24; 17:27 |
+| Matthew | Simon son of Jonah (Bariona) | *Simon bin Yunus* (L); *Simon anak Yunus* (B, R) | 16:17 |
+| Matthew | tetrarch | *raja wilayah* (L, B); *penguasa daerah* (R) | 14:1 |
+| Matthew | fourth watch of the night | *jaga malam yang keempat* (L); *menjelang subuh* (B) | 14:25 |
+| Matthew | Canaanite (woman) | *perempuan Kanaan* | 15:22 |
+| Matthew | Magadan | Magadan | 15:39 |
+| Matthew | three measures (seah) of flour | *tiga sukat* (L); *sekitar dua puluh kilogram* (B, R, units setting) | 13:33 |
+| Matthew | vultures | *burung nasar* (L, B); *burung pemakan bangkai* (R) | 24:28 |
+| Matthew | talents (parable) | *talenta* (L); *kantong uang perak* (B, R, units setting) | 25:15 |
+| Matthew | legions | *pasukan* (L, R); *legiun* (B) | 26:53 |
+| Matthew | the Power (God) | *Yang Mahakuasa* | 26:64 |
+| Matthew | Potter's Field; Field of Blood | Tanah Tukang Periuk; Tanah Darah | 27:7–8 |
+| Matthew | Golgotha; Place of a Skull | Golgota; Tempat Tengkorak | 27:33 |
+| Matthew | Eli, Eli, lema sabachthani | Eli, Eli, lema sabakhtani | 27:46 |
+| Matthew | governor (*hēgemōn*) | *wali negeri* (L); *gubernur* (B, R) | 27:2 |
+| Matthew | Jesus Barabbas | Yesus Barabas | 27:16 |
+| Acts | Theophilus | Teofilus | 1:1 |
+| Acts | Hakeldama; Field of Blood | Hakeldama; Tanah Darah | 1:19 |
+| Acts | Barsabbas; Justus | Barsabas; Yustus | 1:23 |
+| Acts | Parthians; Medes; Elamites | orang Partia; orang Media; orang Elam | 2:9 |
+| Acts | Phrygia; Pamphylia; Libya | Frigia; Pamfilia; Libia | 2:10 |
+| Acts | proselytes | *penganut agama Yahudi* (L, R); *orang yang masuk agama Yahudi* (B) | 2:11 |
+| Acts | Theudas | Teudas | 5:36 |
+| Acts | Prochorus; Nicanor; Timon; Parmenas; Nicolaus | Prokhorus; Nikanor; Timon; Parmenas; Nikolaus | 6:5 |
+| Acts | Synagogue of the Freedmen; Cilicia | sinagoge Orang-orang Merdeka; Kilikia | 6:9 |
+| Acts | Hamor | Hemor | 7:16 |
+| Acts | Rephan | dewa Refan | 7:43 |
+| Acts | Candace | Kandake | 8:27 |
+| Acts | Azotus | Asdod | 8:40 |
+| Acts | the Way | Jalan itu | 9:2 |
+| Acts | Straight Street | Jalan Lurus | 9:11 |
+| Acts | Aeneas; Sharon | Eneas; Saron | 9:33 |
+| Acts | the Italian Cohort | Pasukan Italia | 10:1 |
+| Acts | Phoenicia | Fenisia | 11:19 |
+| Acts | Christians | Kristen; orang Kristen | 11:26 |
+| Acts | Claudius | Klaudius | 11:28 |
+| Acts | Rhoda | Rode | 12:13 |
+| Acts | Blastus | Blastus | 12:20 |
+| Acts | Simeon called Niger; Lucius; Manaen | Simeon yang disebut Niger; Lukius; Manaen | 13:1 |
+| Acts | tetrarch | *raja wilayah* | 13:1 |
+| Acts | Seleucia; Salamis; Paphos; Perga; Pisidia | Seleukia; Salamis; Pafos; Perga; Pisidia | 13:4-14 |
+| Acts | Bar-Jesus | Baryesus | 13:6 |
+| Acts | proconsul | *prokonsul* (L); *gubernur* (B, R) | 13:7 |
+| Acts | Lycaonia; Lycaonian | Likaonia; bahasa Likaonia | 14:6 |
+| Acts | Zeus; Hermes | dewa Zeus; dewa Hermes | 14:12 |
+| Acts | Attalia | Atalia | 14:25 |
+| Acts | Mysia; Bithynia; Samothrace; Neapolis | Misia; Bitinia; Samotrake; Neapolis | 16:7-11 |
+| Acts | spirit of Python | *roh Piton* (L); *roh tenung* (B) | 16:16 |
+| Acts | magistrates; lictors | *pembesar-pembesar kota*; *pembawa-pembawa tongkat* (L), *pengawal-pengawal* (B, R) | 16:20, 35 |
+| Acts | Amphipolis; Apollonia | Amfipolis; Apolonia | 17:1 |
+| Acts | Jason | Yason | 17:5 |
+| Acts | Epicureans; Stoics | kaum Epikuros; kaum Stoa | 17:18 |
+| Acts | Dionysius the Areopagite; Damaris | Dionisius anggota Areopagus; Damaris | 17:34 |
+| Acts | Titius Justus; Crispus; Sosthenes | Titius Yustus; Krispus; Sostenes | 18:7-17 |
+| Acts | Gallio | Galio | 18:12 |
+| Acts | Tyrannus; Sceva | Tiranus; Skewa | 19:9, 14 |
+| Acts | Demetrius; Artemis | Demetrius; dewi Artemis | 19:24 |
+| Acts | Asiarchs; theater; town clerk | *pembesar Asia* (L), *pembesar provinsi Asia* (B); *gedung kesenian* (L, B), *gedung pertunjukan* (R); *panitera kota* | 19:29-35 |
+| Acts | Sopater son of Pyrrhus; Secundus | Sopater anak Pirus; Sekundus | 20:4 |
+| Acts | Eutychus | Eutikhus | 20:9 |
+| Acts | Assos; Mitylene; Chios; Samos | Asos; Mitilene; Khios; Samos | 20:13-15 |
+| Acts | Cos; Rhodes; Patara; Ptolemais | Kos; Rodos; Patara; Ptolemais | 21:1-7 |
+| Acts | Mnason | Mnason | 21:16 |
+| Acts | tribune; barracks | *kepala pasukan* (L, B), *komandan* (R); *markas* | 21:31-34 |
+| Acts | Sicarii | *orang Sikari* (L); *kaum Pembunuh* (B, R) | 21:38 |
+| Acts | Claudius Lysias | Klaudius Lisias | 23:26 |
+| Acts | most excellent (*kratistos*) | *yang mulia* | 23:26 |
+| Acts | Antipatris | Antipatris | 23:31 |
+| Acts | Tertullus; Drusilla; Porcius Festus | Tertulus; Drusila; Porsius Festus | 24:1-27 |
+| Acts | sect of the Nazarenes | *golongan orang Nazaret* | 24:5 |
+| Acts | His Majesty (*Sebastos*) | *Yang Mulia Kaisar* (L); *kaisar* (B, R) | 25:21 |
+| Acts | Julius; Augustan cohort | Yulius; *pasukan Kaisar* | 27:1 |
+| Acts | Adramyttium; Myra; Lycia; Cnidus; Salmone | Adramitium; Mira; Likia; Knidus; Salmone | 27:2-7 |
+| Acts | Fair Havens; Lasea; Phoenix | Pelabuhan Indah; Lasea; Feniks | 27:8-12 |
+| Acts | the Fast | *hari Puasa* (L, B); *Hari Pendamaian* (R) | 27:9 |
+| Acts | Euraquilo; Cauda; Syrtis; Adria | Eurakuilo; Kauda; Sirtis; Laut Adria | 27:14-27 |
+| Acts | fathom | *depa* | 27:28 |
+| Acts | Justice (*Dikē*) | Dewi Keadilan | 28:4 |
+| Acts | Publius | Publius | 28:7 |
+| Acts | Twin Brothers (Dioscuri) | Dewa Kembar | 28:11 |
+| Acts | Syracuse; Rhegium; Puteoli | Sirakusa; Regium; Puteoli | 28:12-13 |
+| Acts | Forum of Appius; Three Taverns | Forum Apius; Tiga Kedai | 28:15 |
+| Luke | Theophilus | Teofilus | 1:3 |
+| Luke | Gabriel | Gabriel | 1:19 |
+| Luke | incense | *ukupan* | 1:9 |
+| Luke | Phanuel | Fanuel | 2:36 |
+| Luke | Syria | Siria | 2:2 |
+| Luke | manger | *palungan* (L, B); *tempat makan ternak* (R) | 2:7 |
+| Luke | guest room (*kataluma*) | *ruang tamu* | 2:7 |
+| Luke | Master (*despotēs*, of God) | *Penguasa* (L, B); *Tuhan* (R) | 2:29 |
+| Luke | tetrarch | *raja wilayah* (L, B) | 3:1 |
+| Luke | Ituraea; Trachonitis | Iturea; Trakhonitis | 3:1 |
+| Luke | Lysanias; Abilene | Lisanias; Abilene | 3:1 |
+| Luke | Heli; Matthat; Melchi; Jannai | Eli; Matat; Malkhi; Yanai | 3:23–24 |
+| Luke | Mattathias; Esli; Naggai; Maath | Matatias; Hesli; Nagai; Maat | 3:25–26 |
+| Luke | Semein; Josech; Joda; Joanan; Rhesa | Simei; Yosekh; Yoda; Yohanan; Resa | 3:26–27 |
+| Luke | Shealtiel; Neri; Addi; Cosam; Elmadam; Er | Sealtiel; Neri; Adi; Kosam; Elmadam; Er | 3:27–28 |
+| Luke | Eliezer; Jorim; Jonam; Eliakim | Eliezer; Yorim; Yonam; Elyakim | 3:29–30 |
+| Luke | Melea; Menna; Mattatha | Melea; Mina; Matata | 3:31 |
+| Luke | Sala; Admin; Arni | Sala; Admin; Arni | 3:32–33 |
+| Luke | Nahor; Serug; Reu; Peleg; Eber; Shelah | Nahor; Serug; Rehu; Peleg; Eber; Selah | 3:34–35 |
+| Luke | Cainan; Arphaxad; Jared; Mahalalel; Enosh | Kenan; Arpakhsad; Yared; Mahalaleel; Enos | 3:36–38 |
+| Luke | Zarephath | Sarfat | 4:26 |
+| Luke | Nain | Nain | 7:11 |
+| Luke | experts in the law (*nomikoi*) | *ahli hukum Taurat* (L, B); *ahli hukum Allah* (R) | 7:30 |
+| Luke | Joanna; Chuza; Susanna | Yohana; Khuza; Susana | 8:3 |
+| Luke | Legion | Legion | 8:30 |
+| Luke | mint; rue | *pudina*; *inggu* | 11:42 |
+| Luke | assarion (coin) | *assarion* | 12:6 |
+| Luke | cor (measure) | *kor* | 16:7 |
+| Luke | mammon | *Mamon* (L); *kekayaan*, *uang* (B, R) | 16:9 |
+| Luke | officers of the temple guard (*stratēgoi*) | *kepala-kepala pengawal (Bait Allah)* (L, B); *perwira pengawal rumah Allah* (R) | 22:4 |
+| Luke | the Skull (place) | Tengkorak | 23:33 |
+| Luke | paradise | Firdaus | 23:43 |
+| Romans | means of atonement (*hilastērion*) | *sarana pendamaian* (L, B); *korban yang menghapus dosa dan meredakan murka Allah* (R) | 3:25 |
+| Romans | Lord Sabaoth (*kyrios sabaōth*) | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B); *Tuhan yang memimpin bala tentara surga* (R) | 9:29 |
+| Romans | Epaenetus | Epenetus | 16:5 |
+| Romans | Andronicus; Junia | Andronikus; Yunias (alternative *Yunia*) | 16:7 |
+| Romans | Ampliatus; Urbanus; Stachys | Ampliatus; Urbanus; Stakhis | 16:8–9 |
+| Romans | Apelles; Aristobulus | Apeles; Aristobulus | 16:10 |
+| Romans | Herodion; Narcissus | Herodion; Narkisus | 16:11 |
+| Romans | Tryphaena; Tryphosa; Persis | Trifena; Trifosa; Persis | 16:12 |
+| Romans | Asyncritus; Phlegon; Hermes; Patrobas; Hermas | Asinkritus; Flegon; Hermes; Patrobas; Hermas | 16:14 |
+| Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
+| Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
+| Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
