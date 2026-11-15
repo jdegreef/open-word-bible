@@ -642,3 +642,11 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Deuteronomy | Suph; Tophel; Laban; Hazeroth; Di-zahab | Suf; Tofel; Laban; Hazerot; Di-Zahab | 1:1 |
+| Deuteronomy | Kadesh-barnea; Seir | Kadesy-Barnea; Seir | 1:2 |
+| Deuteronomy | Sihon; Heshbon; Og; Ashtaroth; Edrei | Sihon; Hesybon; Og; Asytarot; Edrei | 1:4 |
+| Deuteronomy | take possession (*yarash*) | *menduduki* (L, B); *memiliki*, *menjadikan milik* (R) | 1:8 |
+| Deuteronomy | Valley of Eshcol | Lembah Eskol | 1:24 |
+| Deuteronomy | Anakim | orang Enak; keturunan Enak | 1:28 |
+| Deuteronomy | Jephunneh | Yefune | 1:36 |
+| Deuteronomy | Hormah | Horma | 1:44 |
