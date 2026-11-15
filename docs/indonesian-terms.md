@@ -621,6 +621,15 @@ records it. Empty until the first book is drafted.
 | Jonah | captain (*rav hachovel*) | *kepala para pelaut* (L); *nakhoda* (B, R) | 1:6 |
 | Jonah | relent (*nicham*, of God) | *menyesal* (L); *mengubah keputusan-Nya* (B, R) | 3:9 |
 | Jonah | the plant (*qiqayon*) | *tanaman* (L); *tanaman yang rimbun daunnya* (B, R) | 4:6 |
+| Psalms | sheminith; gittith | *syeminit*; *gitit* (L, B) | 6:1; 8:1 |
+| Psalms | Muth-labben; Higgaion | *Mut-laben*; *Higayon* | 9:1; 9:17 |
+| Psalms | Ayyeleth-hashshahar | *Ayelet-hasysyahar* (L, B); "Rusa Betina di Waktu Fajar" (R) | 22:1 |
+| Psalms | Sirion | Siryon | 29:6 |
+| Psalms | Abimelech | Abimelekh | 34:1 |
+| Psalms | Jeduthun | Yedutun | 39:1 |
+| Psalms | Hermon; Mizar | Hermon; Mizar | 42:7 |
+| Psalms | shoshannim; alamoth | *syosanim*; *alamot* (L, B) | 45:1; 46:1 |
+| Psalms | Zaphon | Zafon | 48:3 |
 | Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
 | Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
 | Philippians | Clement | Klemens | 4:3 |
