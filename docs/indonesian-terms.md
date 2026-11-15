@@ -826,7 +826,7 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Hareph; Beth-gader; Haroeh; Manahathites | Haref; Bet-Gader; Haroe; orang Manahat | 2:51–52 |
 | 1 Chronicles | Ithrites; Puthites; Shumathites; Mishraites | orang Yitri; orang Puti; orang Syumat; orang Misrai | 2:53 |
 | 1 Chronicles | Netophathites; Atroth-beth-joab; Zorites | orang Netofa; Atrot-Bet-Yoab; orang Zori | 2:54 |
-| 1 Chronicles | Jabez; Tirathites; Shimeathites; Sucathites | Yabez; orang Tirat; orang Syimeat; orang Sukat | 2:55 |
+| 1 Chronicles | Jabez; Tirathites; Shimeathites; Sucathites | Yabes; orang Tirat; orang Syimeat; orang Sukat | 2:55 |
 | 1 Chronicles | Nogah | Noga | 3:7 |
 | 1 Chronicles | Malchiram; Pedaiah; Shenazzar; Hoshama; Nedabiah | Malkhiram; Pedaya; Syenasar; Hosyama; Nedabya | 3:18 |
 | 1 Chronicles | Meshullam; Shelomith | Mesyulam; Syelomit | 3:19 |
@@ -922,3 +922,16 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Mattithiah | Matitya | 9:31 |
 | 1 Chronicles | showbread (bread of the arrangement) | *roti susunan* (L); *roti sajian* (B) | 9:32 |
 | 1 Chronicles | Shimeam; Tahrea; Jarah | Syimeam; Tahrea; Yaera | 9:38–42 |
+| 1 Chronicles | the Thirty; the Three | *ketiga puluh orang itu*, *ketiga orang itu* (L, B); *Ketiga Puluh*, *Ketiga Pahlawan* (R) | 11:11–12 |
+| 1 Chronicles | Jashobeam; Hachmoni; Dodo; Ahohite | Yasyobeam; Hakhmoni; Dodo; orang Ahohi | 11:11–12 |
+| 1 Chronicles | Pas-dammim; Kabzeel | Pas-Damim; Kabzeel | 11:13, 22 |
+| 1 Chronicles | Shammoth; Harorite; Pelonite; Ikkesh; Tekoite | Syamot; orang Harori; orang Peloni; Ikes; orang Tekoa | 11:27–28 |
+| 1 Chronicles | Sibbecai; Hushathite; Ilai; Maharai; Heled | Sibkhai; orang Husyat; Ilai; Maharai; Heled | 11:29–30 |
+| 1 Chronicles | Ithai; Ribai; Pirathonite; Hurai; Gaash; Arbathite | Itai; Ribai; orang Piraton; Hurai; Gaas; orang Arbat | 11:31–32 |
+| 1 Chronicles | Baharumite; Eliahba; Shaalbonite; Hashem; Gizonite; Shagee; Hararite | orang Baharum; Elyahba; orang Syaalbon; Hasyem; orang Gizon; Syage; orang Harari | 11:33–34 |
+| 1 Chronicles | Ahiam; Sacar; Eliphal; Ur; Mecherathite | Ahiam; Sakhar; Elifal; Ur; orang Mekherat | 11:35–36 |
+| 1 Chronicles | Hezro; Naarai; Ezbai; Mibhar; Hagri | Hesro; Naarai; Ezbai; Mibhar; Hagri | 11:37–38 |
+| 1 Chronicles | Zelek; Naharai; Beerothite; Gareb | Zelek; Naharai; orang Beerot; Gareb | 11:39–40 |
+| 1 Chronicles | Adina; Shiza; Joshaphat; Mithnite | Adina; Syiza; Yosyafat; orang Mitni | 11:42–43 |
+| 1 Chronicles | Uzzia; Ashterathite; Shama; Aroerite; Tizite | Uzia; orang Asytarot; Syama; orang Aroer; orang Tisi | 11:44–45 |
+| 1 Chronicles | Mahavite; Jeribai; Joshaviah; Elnaam; Ithmah; Jaasiel; Mezobaite | orang Mahawi; Yeribai; Yosyawya; Elnaam; Yitma; Yaasiel; orang Mezoba | 11:46–47 |
