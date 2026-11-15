@@ -714,3 +714,9 @@ records it. Empty until the first book is drafted.
 | Exodus | cups, buds, blossoms (lampstand) | *kelopak*, *tombol*, *kembang* | 25:31 |
 | Exodus | almond | *badam* | 25:33 |
 | Exodus | cubit in metric (B, R) | `{{units:sekitar 45 sentimeter\|satu hasta}}`, rounded | 25:10 |
+| Exodus | curtains of the dwelling (*yeriot*) | *kain tenda* | 26:1 |
+| Exodus | loops; clasps | *tali sangkutan*; *kait* | 26:4; 26:6 |
+| Exodus | frames (*qerashim*) | *papan* (uncertain) | 26:15 |
+| Exodus | tenons; bases; bars | *purus* (L, B), *pasak* (R); *alas*; *kayu lintang* | 26:17–26 |
+| Exodus | screen (*masakh*) | *tirai penutup* | 26:36 |
+| Exodus | embroiderer | *tukang sulam* (L); *penyulam* (B, R) | 26:36 |
