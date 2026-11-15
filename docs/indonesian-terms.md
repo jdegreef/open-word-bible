@@ -683,3 +683,6 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | the hornet | *tabuhan* | 7:20 |
 | Deuteronomy | stiff-necked | *tegar tengkuk* (L, B); *keras kepala* (R) | 9:6 |
 | Deuteronomy | Taberah; Kibroth-hattaavah | Tabera; Kibrot-Taawa | 9:22 |
+| Deuteronomy | Beeroth Bene-jaakan; Moserah | Beerot-Bene-Yaakan (L, B), sumur-sumur Bene-Yaakan (R); Mosera | 10:6 |
+| Deuteronomy | Gudgodah; Jotbathah | Gudgoda; Yotbata | 10:7 |
+| Deuteronomy | acacia wood | *kayu akasia* | 10:3 |
