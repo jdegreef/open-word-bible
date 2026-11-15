@@ -681,3 +681,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Massah | Masa | 6:16 |
 | Deuteronomy | treasured possession (*segullah*) | *umat kesayangan* (L); *harta kesayangan* (B, R) | 7:6 |
 | Deuteronomy | the hornet | *tabuhan* | 7:20 |
+| Deuteronomy | stiff-necked | *tegar tengkuk* (L, B); *keras kepala* (R) | 9:6 |
+| Deuteronomy | Taberah; Kibroth-hattaavah | Tabera; Kibrot-Taawa | 9:22 |
