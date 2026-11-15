@@ -653,3 +653,12 @@ records it. Empty until the first book is drafted.
 | Numbers | Pagiel; Ochran | Pagiel; Okhran | 1:13 |
 | Numbers | Eliasaph; Deuel (Reuel in 2:14) | Elyasaf; Deuel (Rehuel) | 1:14 |
 | Numbers | Ahira; Enan | Ahira; Enan | 1:15 |
+| Numbers | Ithamar | Itamar | 3:2 |
+| Numbers | Gershon; Kohath; Merari | Gerson; Kehat; Merari | 3:17 |
+| Numbers | Libni; Shimei; Amram; Izhar; Uzziel | Libni; Simei; Amram; Yizhar; Uziel | 3:18-19 |
+| Numbers | Mahli; Mushi | Mahli; Musi | 3:20 |
+| Numbers | Lael; Elizaphan; Zuriel; Abihail | Lael; Elizafan; Zuriel; Abihail | 3:24-35 |
+| Numbers | at the mouth of the LORD | *menurut titah {{divine_name:TUHAN\|Yahweh}}* (L); *sesuai dengan firman ...* (B) | 3:16 |
+| Numbers | keep the charge (*shamar mishmeret*) | *memelihara tugas jagaan* (L); *menjalankan tugas*, *menjaga* (B, R) | 3:7 |
+| Numbers | gerah | *gera* | 3:47 |
+| Numbers | shekel (units setting) | about 11.4 g: `{{units:sekitar 57 gram\|lima syikal}}` (B, R) | 3:47 |
