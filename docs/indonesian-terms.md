@@ -680,3 +680,18 @@ records it. Empty until the first book is drafted.
 | Joshua | Book of Jashar | Kitab Yasar | 10:13 |
 | Joshua | Libnah; Horam; Gezer | Libna; Horam; Gezer | 10:29, 33 |
 | Joshua | Kadesh-barnea; Goshen (in Canaan) | Kadesy-Barnea; tanah Gosyen | 10:41 |
+| Joshua | Jabin; Jobab; Madon; Shimron; Achshaph | Yabin; Yobab; Madon; Syimron; Akhsaf | 11:1 |
+| Joshua | Chinneroth | Kinerot (L, B); Danau Galilea (R) | 11:2 |
+| Joshua | Mizpah, Mizpeh (in the north) | Mizpa | 11:3, 8 |
+| Joshua | Great Sidon; Misrephoth-maim | Sidon-Besar; Misrefot-Maim | 11:8 |
+| Joshua | hamstring | *memutuskan urat kaki* (L); *memotong urat kaki* (B, R) | 11:6 |
+| Joshua | Mount Halak; Seir; Baal-gad | gunung Halak; Seir; Baal-Gad | 11:17 |
+| Joshua | Anakim; Anab | orang Enak; Anab | 11:21 |
+| Joshua | the wadi Arnon; Jabbok; Aroer | lembah sungai Arnon; sungai Yabok; Aroer | 12:1–2 |
+| Joshua | Beth-jeshimoth; Pisgah | Bet-Yesimot; Pisga | 12:3 |
+| Joshua | Rephaim; Edrei; Salecah | orang Refaim; Edrei; Salkha | 12:4–5 |
+| Joshua | Geshurites; Maacathites | orang Gesur; orang Maakha | 12:5 |
+| Joshua | Geder; Hormah; Arad; Adullam | Geder; Horma; Arad; Adulam | 12:13–15 |
+| Joshua | Tappuah; Hepher; Aphek; Lasharon | Tapuah; Hefer; Afek; Lasyaron | 12:17–18 |
+| Joshua | Shimron-meron; Taanach; Megiddo | Syimron-Meron; Taanakh; Megido | 12:20–21 |
+| Joshua | Kedesh; Jokneam; Naphath-dor; Goiim; Tirzah | Kedesy; Yokneam; Nafat-Dor; Goyim; Tirza | 12:22–24 |
