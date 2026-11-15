@@ -642,3 +642,8 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Joshua | attendant (*meshartet*, Joshua to Moses) | *abdi* (L); *pembantu* (B, R) | 1:1 |
+| Joshua | the Great Sea | *Laut Besar* (L, B); *Laut Tengah* (R) | 1:4 |
+| Joshua | officials (*shoterim*) | *para pejabat* | 1:10 |
+| Joshua | rest (*menuchah*, *heniach*) | *ketenteraman* (L, B); *tempat yang tenteram*, *hidup tenteram* (R) | 1:13 |
+| Joshua | inheritance (*nachalah*) | *milik pusaka* | 1:6 |
