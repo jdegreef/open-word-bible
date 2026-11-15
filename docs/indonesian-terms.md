@@ -720,3 +720,6 @@ records it. Empty until the first book is drafted.
 | Exodus | tenons; bases; bars | *purus* (L, B), *pasak* (R); *alas*; *kayu lintang* | 26:17–26 |
 | Exodus | screen (*masakh*) | *tirai penutup* | 26:36 |
 | Exodus | embroiderer | *tukang sulam* (L); *penyulam* (B, R) | 26:36 |
+| Exodus | horns of the altar | *tanduk-tanduk* | 27:2 |
+| Exodus | grating; ledge | *kisi-kisi*; *birai* | 27:4–5 |
+| Exodus | hangings (of the court); bands | *layar*; *simpai* | 27:9–10 |
