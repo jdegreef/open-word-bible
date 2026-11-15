@@ -662,3 +662,13 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Jahaz | Yahas | 2:32 |
 | Deuteronomy | devote to destruction (*herem*) | *mengkhususkan untuk dimusnahkan* (L, B); *memusnahkan sebagai milik TUHAN* (R) | 2:34 |
 | Deuteronomy | Aroer; Jabbok | Aroer; sungai Yabok | 2:36–37 |
+| Deuteronomy | Argob | Argob | 3:4 |
+| Deuteronomy | Mount Hermon; Sidonians; Sirion; Senir | gunung Hermon; orang Sidon; Siryon; Senir | 3:8–9 |
+| Deuteronomy | Salecah | Salkha | 3:10 |
+| Deuteronomy | Rabbah (of the Ammonites) | Raba | 3:11 |
+| Deuteronomy | Reubenites; Gadites | orang Ruben, orang Gad (L, B); suku Ruben, suku Gad (R) | 3:12 |
+| Deuteronomy | Jair; Geshurites; Maacathites; Havvoth-jair | Yair; orang Gesur; orang Maakha; Hawot-Yair | 3:14 |
+| Deuteronomy | Machir | Makhir | 3:15 |
+| Deuteronomy | Chinnereth; Pisgah | Kineret; Pisga | 3:17 |
+| Deuteronomy | rest (God gives, *heniach*) | *keamanan* | 3:20 |
+| Deuteronomy | Beth-peor | Bet-Peor | 3:29 |
