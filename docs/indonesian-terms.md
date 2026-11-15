@@ -648,7 +648,7 @@ records it. Empty until the first book is drafted.
 | Joshua | rest (*menuchah*, *heniach*) | *ketenteraman* (L, B); *tempat yang tenteram*, *hidup tenteram* (R) | 1:13 |
 | Joshua | inheritance (*nachalah*) | *milik pusaka* | 1:6 |
 | Joshua | Shittim | Sitim | 2:1 |
-| Joshua | the ban: devote to destruction (*charam*); devoted thing (*cherem*) | *mengkhususkan untuk dimusnahkan* (L), *mengkhususkan bagi {{divine_name:TUHAN\|Yahweh}} untuk dimusnahkan* (B), *memusnahkan sama sekali sebagai sesuatu yang diserahkan kepada {{divine_name:TUHAN\|Yahweh}}* (R); *barang yang dikhususkan* (L), *yang dikhususkan bagi {{divine_name:TUHAN\|Yahweh}} untuk dimusnahkan* (B), *yang diserahkan kepada {{divine_name:TUHAN\|Yahweh}} untuk dimusnahkan* (R) | 2:10; 6:17 |
+| Joshua | the ban: devote to destruction (*charam*); devoted thing (*cherem*) | *mengkhususkan untuk dimusnahkan* (L, B), *memusnahkan (sama sekali) sebagai milik {{divine_name:TUHAN\|Yahweh}}* (R), as Deuteronomy; *barang yang dikhususkan* (L, B), *yang diserahkan kepada {{divine_name:TUHAN\|Yahweh}} untuk dimusnahkan* (R) | 2:10; 6:17 |
 | Joshua | scarlet cord | *tali kirmizi* (L, B); *tali merah* (R) | 2:18 |
 | Joshua | Zarethan | Saretan | 3:16 |
 | Joshua | Hivites; Perizzites; Girgashites | orang Hewi; orang Feris; orang Girgasi | 3:10 |
