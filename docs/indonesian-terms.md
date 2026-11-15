@@ -642,3 +642,5 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 1 John | advocate (*paraklētos*, of Jesus) | *pembela* | 2:1 |
+| 1 John | antichrist | *antikristus* (no christos span) | 2:18 |
