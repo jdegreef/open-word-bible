@@ -621,6 +621,84 @@ records it. Empty until the first book is drafted.
 | Jonah | captain (*rav hachovel*) | *kepala para pelaut* (L); *nakhoda* (B, R) | 1:6 |
 | Jonah | relent (*nicham*, of God) | *menyesal* (L); *mengubah keputusan-Nya* (B, R) | 3:9 |
 | Jonah | the plant (*qiqayon*) | *tanaman* (L); *tanaman yang rimbun daunnya* (B, R) | 4:6 |
+| 1 Kings | Abishag the Shunammite | Abisag, perempuan Sunem (L), perempuan dari Sunem (B, R) | 1:3 |
+| 1 Kings | Haggith; Zeruiah; Jehoiada; Rei | Hagit; Zeruya; Yoyada; Rei | 1:5–8 |
+| 1 Kings | the stone of Zoheleth; En-rogel | batu Zohelet; En-Rogel | 1:9 |
+| 1 Kings | "my lord the king" | *tuanku raja*, *tuanku* (L, B); *Baginda* (R), as 1 Samuel | 1:2 |
+| 1 Kings | May King X live! | *Hidup Raja X!*, as 1 Samuel 10:24 | 1:25 |
+| 1 Kings | Gihon; mule | Gihon; *bagal betina* (L, B), *bagal* (R) | 1:33 |
+| 1 Kings | Jether; Barzillai; Anathoth; Maacah | Yeter; Barzilai; Anatot; Maakha | 2:5–39 |
+| 1 Kings | "Thus says the king" | *Beginilah titah raja*; *bertitah* (kept apart from *firman*) | 2:30 |
+| 1 Kings | high places | *bukit-bukit pemujaan* (L, B); *tempat-tempat ibadah di atas bukit* (R), for idols *tempat pemujaan berhala di atas bukit* (R); alternative *bukit pengorbanan* | 3:2 |
+| 1 Kings | prostitute | *perempuan sundal* (L); *pelacur* (B, R) | 3:16 |
+| 1 Kings | officials (*sarim*); district governors | *para pembesar*; *kepala daerah* (L, B), *gubernur daerah* (R) | 4:2, 5 |
+| 1 Kings | Elihoreph; Shisha; Ahilud; Zabud; Ahishar; Adoniram; Abda | Elihoref; Syisya; Ahilud; Zabud; Ahisyar; Adoniram; Abda | 4:3–6 |
+| 1 Kings | recorder; forced labor | *pencatat sejarah*; *kerja paksa* | 4:3, 6 |
+| 1 Kings | Ben-hur; Ben-deker; Makaz; Elon-beth-hanan; Ben-hesed; Arubboth | Ben-Hur; Ben-Deker; Makas; Elon-Bet-Hanan; Ben-Hesed; Arubot | 4:8–10 |
+| 1 Kings | Ben-abinadab; Taphath; Baana; Jokmeam; Ben-geber; Ramoth-gilead | Ben-Abinadab; Tafat; Baana; Yokmeam; Ben-Geber; Ramot-Gilead | 4:11–13 |
+| 1 Kings | Ahinadab; Iddo; Basemath; Bealoth; Paruah; Ela; Geber; Uri | Ahinadab; Ido; Basmat; Bealot; Paruah; Ela; Geber; Uri | 4:14–19 |
+| 1 Kings | cor | *kor* (L); `{{units:sekitar 220 liter\|satu kor}}` (B, R) | 5:2 |
+| 1 Kings | Tiphsah; Ethan the Ezrahite; Calcol; Darda; Mahol | Tifsah; Etan orang Ezrahi; Kalkol; Darda; Mahol | 5:4, 11 |
+| 1 Kings | proverb | *amsal* (L, B); *kata-kata bijak* (R) | 5:12 |
+| 1 Kings | cypress (*berosh*) | *kayu sanobar* (L, B); *kayu cemara* (R) | 5:22 |
+| 1 Kings | the months Ziv; Bul | bulan Ziw; bulan Bul | 6:1, 38 |
+| 1 Kings | temple porch (*ulam*); hall (*hekhal*); inner room (*devir*) | *serambi*; *ruang besar* (L), *Ruang Kudus* (B), *ruang utama* (R); *ruang belakang* (L), *ruang dalam* (B, R) | 6:3–5 |
+| 1 Kings | side chambers; olive wood | *bilik-bilik samping*; *kayu minyak* (L), *kayu zaitun* (B, R) | 6:5, 23 |
+| 1 Kings | House of the Forest of Lebanon; Hall of Pillars; Hall of the Throne / of Judgment | Gedung Hutan Libanon; Balai Bertiang; Balai Takhta, Balai Pengadilan | 7:2–7 |
+| 1 Kings | bronze (*nechoshet*); capitals; pomegranates; lily work | *tembaga* (alternative *perunggu*); *kepala tiang*; *buah delima*; *bunga bakung* | 7:14–19 |
+| 1 Kings | Jachin; Boaz (pillars); Succoth | Yakhin; Boas; Sukot | 7:21, 46 |
+| 1 Kings | the Sea (cast basin); stands; basins | *laut tuangan* (L), *Laut* (B, R); *kereta penopang*; *bejana* | 7:23–38 |
+| 1 Kings | bath; handbreadth | *bat* (L), `{{units:sekitar 22 liter\|satu bat}}` (B, R); *setapak tangan* (L), `{{units:sekitar 7,5 cm\|setapak tangan}}` (B, R) | 7:26 |
+| 1 Kings | Cabul; Millo; Lower Beth-horon; Baalath; Tamar | Kabul; Milo; Bet-Horon Hilir; Baalat; Tamar | 9:13–18 |
+| 1 Kings | talent | *talenta* (L); `{{units:sekitar 34 kg\|satu talenta}}` (B, R) | 9:14 |
+| 1 Kings | Ezion-geber; Eloth; Ophir | Ezion-Geber; Elot; Ofir | 9:26–28 |
+| 1 Kings | riddles; almug wood | *teka-teki* (L, B), *pertanyaan yang sulit* (R); *kayu almug* (alternative *kayu cendana*) | 10:1, 11 |
+| 1 Kings | governors (*pachot*); mina | *bupati*; *mina* (L), `{{units:sekitar 0,57 kg\|satu mina}}` (B, R) | 10:15, 17 |
+| 1 Kings | ships of Tarshish; Kue; sycamore fig | *kapal-kapal Tarsis* (L, B), *kapal dagang yang besar* (R); Kue; *pohon ara hutan* | 10:22–28 |
+| 1 Kings | Ashtoreth; Milcom; Chemosh; Molech | Asytoret (*dewi*); Milkom; Kamos; Molokh (*dewa*) | 11:5–7 |
+| 1 Kings | detestable thing (*shiqquts*, a foreign god) | *dewa kejijikan* (L, B); *dewa ... yang menjijikkan* (R) | 11:5 |
+| 1 Kings | adversary (*satan*, human) | *lawan* (L, B); *musuh* (R) | 11:14 |
+| 1 Kings | Hadad; Tahpenes; Genubath; Rezon; Eliada; Hadadezer | Hadad; Tahpenes; Genubat; Rezon; Elyada; Hadadezer | 11:14–23 |
+| 1 Kings | queen (*gevirah*) | *Ratu* (L); *Permaisuri* (B, R) | 11:19 |
+| 1 Kings | Nebat; Zeredah; Zeruah; Ahijah the Shilonite; Shishak | Nebat; Zereda; Zerua; Ahia, orang Silo; Syisyak (uncertain; alternative *Sisak*) | 11:26–40 |
+| 1 Kings | the book of the acts of Solomon | *Kitab Riwayat Salomo* | 11:41 |
+| 1 Kings | yoke; scorpions | *kuk*; *kalajengking* | 12:4, 11 |
+| 1 Kings | Adoram; Shemaiah; Penuel | Adoram; Syemaya; Pnuel | 12:18–25 |
+| 1 Kings | man of God | *abdi Allah* | 12:22 |
+| 1 Kings | golden calves; house of high places | *anak lembu emas*; *kuil-kuil di bukit-bukit pemujaan* | 12:28, 31 |
+| 1 Kings | by the word of the LORD | *atas firman {{divine_name:TUHAN\|Yahweh}}* (L, B); *atas perintah {{divine_name:TUHAN\|Yahweh}}* (R) | 13:1 |
+| 1 Kings | terebinth | *pohon tarbantin* (L, B), as 1 Samuel; *pohon besar* (R) | 13:14 |
+| 1 Kings | rebelled against the mouth of the LORD | *memberontak terhadap titah {{divine_name:TUHAN\|Yahweh}}* (L); *melawan titah* (B); *menolak menaati* (R) | 13:21 |
+| 1 Kings | filled his hand (ordained) | *mengisi tangannya* (L); *mentahbiskan* (B, R) | 13:33 |
+| 1 Kings | Abijah (son of Jeroboam); Tirzah; Nadab; Naamah; Abijam | Abia; Tirza; Nadab; Naama; Abiam | 14:1–31 |
+| 1 Kings | one who urinates against a wall; bond and free | *orang yang kencing ke dinding* (L), *setiap laki-laki* (B, R); *yang terkurung maupun yang bebas* (L), *budak maupun orang merdeka* (B, R) | 14:10 |
+| 1 Kings | the book of the chronicles of the kings of Israel / Judah | *Kitab Sejarah Raja-raja Israel* / *Yehuda* | 14:19, 29 |
+| 1 Kings | male cult prostitutes; abominations; the runners (guard) | *pelacur bakti laki-laki* (L, B); *kekejian*; *pasukan pelari* (L), *pasukan pengawal* (B, R) | 14:24, 27 |
+| 1 Kings | Maacah; Abishalom | Maakha; Abisyalom (uncertain, kept apart from *Absalom*) | 15:2 |
+| 1 Kings | queen mother; horrid thing (*mifletset*) | *ibu suri*; *patung yang mengerikan* (L), *patung yang keji* (B), *patung berhala yang menjijikkan* (R) | 15:13 |
+| 1 Kings | Baasha; Ben-hadad; Tabrimmon; Hezion | Baasya (uncertain; alternative *Baesa*); Ben-Hadad; Tabrimon; Hezion | 15:16–18 |
+| 1 Kings | Ijon; Abel-beth-maacah; Chinneroth; Geba; Mizpah; Gibbethon | Iyon; Abel-Bet-Maakha; Kinerot; Geba; Mizpa; Gibeton | 15:20–27 |
+| 1 Kings | Hanani; Elah; Zimri; Arza; Tibni; Ginath; Shemer; Ethbaal | Hanani; Ela; Zimri; Arza; Tibni; Ginat; Syemer; Etbaal | 16:1–31 |
+| 1 Kings | redeemers (near kin); citadel; worthless idols | *kaum penebus* (L), *kaum kerabat yang wajib membela* (B, R); *puri*; *berhala-berhala yang sia-sia* (L, B), *yang tidak berguna* (R) | 16:11–18 |
+| 1 Kings | house of Baal; Hiel; Abiram; Segub | *kuil Baal*; Hiel; Abiram; Segub | 16:32, 34 |
+| 1 Kings | Elijah the Tishbite; settlers | Elia, orang Tisybe; *pendatang* | 17:1 |
+| 1 Kings | wadi Cherith; Zarephath; ravens | sungai Kerit (L, B), Kali Kerit (R); Sarfat; *burung gagak* | 17:3–9 |
+| 1 Kings | Obadiah (steward); troubler of Israel | Obaja; *pengacau Israel* (L, B) | 18:3, 17 |
+| 1 Kings | Mount Carmel; wadi Kishon; seah | gunung Karmel; sungai Kisyon (L, B), Kali Kisyon (R); *sukat* (L), `{{units:sekitar 7,3 liter\|satu sukat}}` (B, R) | 18:19–40 |
+| 1 Kings | prophesied (ecstatic raving) | *kerasukan* | 18:29 |
+| 1 Kings | broom tree; sound of thin silence | *pohon arar* (L, B), *semak arar* (R); *bunyi keheningan yang tipis* (L) | 19:4, 12 |
+| 1 Kings | God of hosts; very zealous | *Allah semesta alam*; *sangat giat bekerja* (uncertain; alternative *cemburu untuk*) | 19:10 |
+| 1 Kings | Hazael; Nimshi; Shaphat | Hazael; Nimsyi; Syafat | 19:15–16 |
+| 1 Kings | "Thus says Ben-hadad" (a foreign king) | *Beginilah kata Ben-Hadad* | 20:3 |
+| 1 Kings | the young men of the princes of the provinces; Aphek | *orang-orang muda para pemimpin daerah*; Afek | 20:14, 26 |
+| 1 Kings | the return of the year | *pergantian tahun* (L, B); *musim semi tahun depan* (R) | 20:22 |
+| 1 Kings | the sons of the prophets; the man of my devoting | *rombongan nabi*; *orang yang telah Kukhususkan untuk dibinasakan* | 20:35, 42 |
+| 1 Kings | Naboth the Jezreelite; nobles; take possession | Nabot, orang Yizreel; *pemuka*; *mengambil menjadi milik* | 21:1–15 |
+| 1 Kings | sold yourself (to do evil) | *menjual dirimu* (L, B); *menyerahkan dirimu* (R) | 21:20 |
+| 1 Kings | Micaiah son of Imlah; Zedekiah son of Chenaanah | Mikha (uncertain; alternative *Mikaya*) anak Yimla; Zedekia anak Kenaana | 22:8, 11 |
+| 1 Kings | the host of heaven; lying spirit | *tentara surga*; *roh dusta* | 22:19, 22 |
+| 1 Kings | bread of affliction; deputy (in Edom) | *roti kesesakan* (L); *wakil* (L), *wakil raja* (B) | 22:27, 48 |
+| 1 Kings | Ahaziah; Azubah; Shilhi; Jehoram | Ahazia; Azuba; Silhi (uncertain; alternative *Syilhi*); Yoram | 22:40–51 |
 | Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
 | Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
 | Philippians | Clement | Klemens | 4:3 |
