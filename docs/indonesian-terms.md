@@ -935,3 +935,10 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Adina; Shiza; Joshaphat; Mithnite | Adina; Syiza; Yosyafat; orang Mitni | 11:42–43 |
 | 1 Chronicles | Uzzia; Ashterathite; Shama; Aroerite; Tizite | Uzia; orang Asytarot; Syama; orang Aroer; orang Tisi | 11:44–45 |
 | 1 Chronicles | Mahavite; Jeribai; Joshaviah; Elnaam; Ithmah; Jaasiel; Mezobaite | orang Mahawi; Yeribai; Yosyawya; Elnaam; Yitma; Yaasiel; orang Mezoba | 11:46–47 |
+| 1 Chronicles | Shemaah; Gibeathite; Jeziel; Beracah | Syemaa; orang Gibeah; Yeziel; Berakha | 12:3 |
+| 1 Chronicles | Ishmaiah; Jahaziel; Jozabad; Gederathite | Yisymaya; Yahaziel; Yozabad; orang Gedera | 12:4–5 |
+| 1 Chronicles | Eluzai; Bealiah; Shemariah; Haruphite | Eluzai; Bealya; Syemarya; orang Harufi | 12:6 |
+| 1 Chronicles | Azarel; Joezer; Joelah | Azareel; Yoezer; Yoela | 12:7–8 |
+| 1 Chronicles | Mishmannah; Elzabad; Machbannai | Misymana; Elzabad; Makhbanai | 12:11–14 |
+| 1 Chronicles | Adnah | Adna | 12:21 |
+| 1 Chronicles | rulers of the Philistines (*seren*) | *raja-raja kota* (L, B); *para penguasa* (R) | 12:20 |
