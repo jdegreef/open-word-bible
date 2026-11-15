@@ -702,3 +702,4 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | divination; fortune-telling; omens; sorcery; spells; medium; spiritist | *tenung*; *meramal*; *menafsirkan pertanda*; *sihir*; *mantra*; *pemanggil arwah*; *dukun* | 18:10–11 |
 | Deuteronomy | cities of refuge; avenger of blood (*go'el haddam*) | *kota perlindungan*; *penuntut balas darah* (L, B), *kerabat yang membalas kematian* (R) | 19:1–6 |
 | Deuteronomy | boundary marker | *batu batas tanah* | 19:14 |
+| Deuteronomy | tassels | *jumbai-jumbai* | 22:12 |
