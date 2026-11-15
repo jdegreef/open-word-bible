@@ -664,3 +664,8 @@ records it. Empty until the first book is drafted.
 | Exodus | Elisheba; Ithamar | Elisyeba; Itamar | 6:23 |
 | Exodus | Assir; Elkanah; Abiasaph | Asir; Elkana; Abiasaf | 6:24 |
 | Exodus | Putiel | Putiel | 6:25 |
+| Exodus | serpent (*tannin*, 7:9) | *ular naga* (the snake of 4:3: *ular*) | 7:9 |
+| Exodus | magicians; sorcerers | *ahli sihir*; *tukang sihir* | 7:11 |
+| Exodus | Pharaoh's heart: strong; heavy; hard | *keras*; *berat* (L), *degil* (B); *mengeraskan*; *keras kepala* (R) | 7:13–14 |
+| Exodus | gnats (*kinnim*) | *agas* | 8:12 |
+| Exodus | the swarm (*arov*) | *kawanan lalat* | 8:17 |
