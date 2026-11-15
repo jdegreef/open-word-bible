@@ -692,3 +692,7 @@ records it. Empty until the first book is drafted.
 | Exodus | Hur | Hur | 17:10 |
 | Exodus | The LORD Is My Banner | *{{divine_name:TUHAN\|Yahweh}} Panji-panjiku* | 17:15 |
 | Exodus | Eliezer (son of Moses) | Eliezer | 18:4 |
+| Exodus | eagle (*nesher*) | *rajawali* | 19:4 |
+| Exodus | special possession (*segullah*) | *milik-Ku sendiri* (L); *harta-Ku yang istimewa* (B, R) | 19:5 |
+| Exodus | kingdom of priests; holy nation | *kerajaan imam*; *bangsa yang kudus* | 19:6 |
+| Exodus | kiln | *tanur* | 19:18 |
