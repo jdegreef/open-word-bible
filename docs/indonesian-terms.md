@@ -694,3 +694,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | worthless men (*bene beliyyaʿal*) | *orang-orang dursila* (L, B); *orang jahat* (R) | 13:14 |
 | Deuteronomy | the clean and unclean animals and birds | by the English identification: *rusa kecil*, *kambing gunung*, *marmot batu*, *nasar*, *elang*, *alap-alap*, *burung hantu*, *pecuk*, *bangau*, *kuntul*, *burung hudhud* | 14:5–18 |
 | Deuteronomy | strong drink (*shekar*) | *minuman keras* | 14:26 |
+| Deuteronomy | release (*shemittah*) | *penghapusan utang* | 15:1 |
+| Deuteronomy | awl | *penusuk* | 15:17 |
