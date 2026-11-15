@@ -709,3 +709,7 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | pledge | *gadai*, *barang gadaian* | 24:6 |
 | Deuteronomy | levirate duty (*yibbem*) | *kewajiban ipar* | 25:5 |
 | Deuteronomy | Admah; Zeboiim | Adma; Zeboim | 29:22 |
+| Deuteronomy | Jeshurun | Yesyurun (L, B); Israel (R) | 32:15 |
+| Deuteronomy | Mount Nebo; the Abarim range | gunung Nebo; pegunungan Abarim | 32:49 |
+| Deuteronomy | Mount Hor; waters of Meribah; wilderness of Zin | gunung Hor; mata air Meriba; padang gurun Zin | 32:50–51 |
+| Deuteronomy | Hoshea (Joshua) | Hosea (L) | 32:44 |
