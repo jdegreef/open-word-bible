@@ -708,3 +708,4 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | certificate of divorce | *surat cerai* | 24:1 |
 | Deuteronomy | pledge | *gadai*, *barang gadaian* | 24:6 |
 | Deuteronomy | levirate duty (*yibbem*) | *kewajiban ipar* | 25:5 |
+| Deuteronomy | Admah; Zeboiim | Adma; Zeboim | 29:22 |
