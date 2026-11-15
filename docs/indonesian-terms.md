@@ -681,3 +681,28 @@ records it. Empty until the first book is drafted.
 | Numbers | officers (*shoterim*) | *pengatur* (L, B) | 11:16 |
 | Numbers | Eldad; Medad | Eldad; Medad | 11:26 |
 | Numbers | Kibroth-hattaavah; Hazeroth | Kibrot-Taawa; Hazerot | 11:34-35 |
+| Numbers | Cushite | *perempuan Kush* | 12:1 |
+| Numbers | Shammua; Zaccur; Shaphat; Hori; Jephunneh; Igal | Syamua; Zakur; Safat; Hori; Yefune; Igal | 13:4-7 |
+| Numbers | Hoshea; Palti; Raphu; Gaddiel; Sodi; Gaddi; Susi | Hosea; Palti; Rafu; Gadiel; Sodi; Gadi; Susi | 13:8-11 |
+| Numbers | Ammiel; Gemalli; Sethur; Michael; Nahbi; Vophsi; Geuel; Machi | Amiel; Gemali; Setur; Mikhael; Nahbi; Wofsi; Geuel; Makhi | 13:12-15 |
+| Numbers | Zin; Rehob; Lebo-hamath | Zin; Rehob; Lebo-Hamat | 13:21 |
+| Numbers | Ahiman; Sheshai; Talmai; Anak (Anakim); Zoan | Ahiman; Sesai; Talmai; Enak (*keturunan Enak*); Zoan | 13:22 |
+| Numbers | Eshcol; Nephilim | Eskol; *orang Nefilim* | 13:23; 13:33 |
+| Numbers | Hormah | Horma | 14:45 |
+| Numbers | offering by fire (*'isheh*); aroma of soothing | *persembahan yang dibakar*; *bau yang menenangkan* (L), *bau harum yang menyenangkan* (B) | 15:3 |
+| Numbers | hin (units setting) | about 4 litres: `{{units:sekitar satu liter\|seperempat hin}}` (B, R) | 15:4 |
+| Numbers | err, unintentional sin | *khilaf* (L, B); *tanpa sengaja* (R) | 15:22 |
+| Numbers | tassels (*tsitsit*) | *jumbai* | 15:38 |
+| Numbers | Dathan; Abiram; On; Peleth | Datan; Abiram; On; Pelet | 16:1 |
+| Numbers | censer (*machtah*) | *perbaraan* | 16:6 |
+| Numbers | inheritance (*nachalah*) | *milik pusaka* | 16:14 |
+| Numbers | almonds | *buah badam* | 17:23 |
+| Numbers | devoted thing (*cherem*); devote to destruction | *yang dikhususkan [bagi Allah]*; *menumpas* | 18:14; 21:2 |
+| Numbers | covenant of salt | *perjanjian garam* | 18:19 |
+| Numbers | water of impurity (*mei niddah*) | *air pentahiran* (L, B); *air yang menghapus kenajisan* (R) | 19:9 |
+| Numbers | Meribah; Mount Hor; King's Highway | Meriba; gunung Hor; Jalan Raja | 20:13; 20:22; 20:17 |
+| Numbers | Arad; Atharim; Oboth; Iye-abarim; Zered | Arad; Atarim; Obot; Iye-Abarim; Zered | 21:1-12 |
+| Numbers | Waheb; Suphah; Ar; Beer; Mattanah; Nahaliel; Bamoth | Waheb; Sufa; Ar; Beer; Matana; Nahaliel; Bamot | 21:14-19 |
+| Numbers | Pisgah; Jeshimon; Sihon; Jahaz; Jabbok; Heshbon | Pisga; Yesimon; Sihon; Yahas; Yabok; Hesybon | 21:20-25 |
+| Numbers | Chemosh; Dibon; Nophah; Medeba; Jazer; Og; Edrei | Kamos; Dibon; Nofah; Medeba; Yaezer; Og; Edrei | 21:29-33 |
+| Numbers | fiery snakes; bronze snake | *ular-ular api* (L), *ular-ular berbisa* (B, R); *ular tembaga* | 21:6; 21:9 |
