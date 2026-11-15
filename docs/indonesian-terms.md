@@ -698,3 +698,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | awl | *penusuk* | 15:17 |
 | Deuteronomy | month of Abib | bulan Abib | 16:1 |
 | Deuteronomy | solemn assembly (*ʿatseret*) | *perkumpulan raya* (L, B) | 16:8 |
+| Deuteronomy | food offerings by fire | *korban api-apian* (L, B) | 18:1 |
+| Deuteronomy | divination; fortune-telling; omens; sorcery; spells; medium; spiritist | *tenung*; *meramal*; *menafsirkan pertanda*; *sihir*; *mantra*; *pemanggil arwah*; *dukun* | 18:10–11 |
