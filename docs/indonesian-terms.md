@@ -748,3 +748,35 @@ records it. Empty until the first book is drafted.
 | Acts | Twin Brothers (Dioscuri) | Dewa Kembar | 28:11 |
 | Acts | Syracuse; Rhegium; Puteoli | Sirakusa; Regium; Puteoli | 28:12-13 |
 | Acts | Forum of Appius; Three Taverns | Forum Apius; Tiga Kedai | 28:15 |
+| Luke | Theophilus | Teofilus | 1:3 |
+| Luke | Gabriel | Gabriel | 1:19 |
+| Luke | incense | *ukupan* | 1:9 |
+| Luke | Phanuel | Fanuel | 2:36 |
+| Luke | Syria | Siria | 2:2 |
+| Luke | manger | *palungan* (L, B); *tempat makan ternak* (R) | 2:7 |
+| Luke | guest room (*kataluma*) | *ruang tamu* | 2:7 |
+| Luke | Master (*despotēs*, of God) | *Penguasa* (L, B); *Tuhan* (R) | 2:29 |
+| Luke | tetrarch | *raja wilayah* (L, B) | 3:1 |
+| Luke | Ituraea; Trachonitis | Iturea; Trakhonitis | 3:1 |
+| Luke | Lysanias; Abilene | Lisanias; Abilene | 3:1 |
+| Luke | Heli; Matthat; Melchi; Jannai | Eli; Matat; Malkhi; Yanai | 3:23–24 |
+| Luke | Mattathias; Esli; Naggai; Maath | Matatias; Hesli; Nagai; Maat | 3:25–26 |
+| Luke | Semein; Josech; Joda; Joanan; Rhesa | Simei; Yosekh; Yoda; Yohanan; Resa | 3:26–27 |
+| Luke | Shealtiel; Neri; Addi; Cosam; Elmadam; Er | Sealtiel; Neri; Adi; Kosam; Elmadam; Er | 3:27–28 |
+| Luke | Eliezer; Jorim; Jonam; Eliakim | Eliezer; Yorim; Yonam; Elyakim | 3:29–30 |
+| Luke | Melea; Menna; Mattatha | Melea; Mina; Matata | 3:31 |
+| Luke | Sala; Admin; Arni | Sala; Admin; Arni | 3:32–33 |
+| Luke | Nahor; Serug; Reu; Peleg; Eber; Shelah | Nahor; Serug; Rehu; Peleg; Eber; Selah | 3:34–35 |
+| Luke | Cainan; Arphaxad; Jared; Mahalalel; Enosh | Kenan; Arpakhsad; Yared; Mahalaleel; Enos | 3:36–38 |
+| Luke | Zarephath | Sarfat | 4:26 |
+| Luke | Nain | Nain | 7:11 |
+| Luke | experts in the law (*nomikoi*) | *ahli hukum Taurat* (L, B); *ahli hukum Allah* (R) | 7:30 |
+| Luke | Joanna; Chuza; Susanna | Yohana; Khuza; Susana | 8:3 |
+| Luke | Legion | Legion | 8:30 |
+| Luke | mint; rue | *pudina*; *inggu* | 11:42 |
+| Luke | assarion (coin) | *assarion* | 12:6 |
+| Luke | cor (measure) | *kor* | 16:7 |
+| Luke | mammon | *Mamon* (L); *kekayaan*, *uang* (B, R) | 16:9 |
+| Luke | officers of the temple guard (*stratēgoi*) | *kepala-kepala pengawal (Bait Allah)* (L, B); *perwira pengawal rumah Allah* (R) | 22:4 |
+| Luke | the Skull (place) | Tengkorak | 23:33 |
+| Luke | paradise | Firdaus | 23:43 |
