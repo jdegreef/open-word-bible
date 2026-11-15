@@ -666,3 +666,9 @@ records it. Empty until the first book is drafted.
 | Joshua | javelin (*kidon*) | *lembing* (L, B); *tombak* (R) | 8:18 |
 | Joshua | Mount Ebal; Mount Gerizim | gunung Ebal; gunung Gerizim | 8:30, 33 |
 | Joshua | assembly (*qahal*) | *jemaah* (L, B); *perkumpulan* (R) | 8:35 |
+| Joshua | Shephelah | Dataran Rendah (L, B); *perbukitan rendah di sebelah barat* (R) | 9:1 |
+| Joshua | wineskin | *kirbat* | 9:4 |
+| Joshua | Heshbon; Ashtaroth | Hesybon; Asytarot | 9:10 |
+| Joshua | Chephirah; Beeroth; Kiriath-jearim | Kefira; Beerot; Kiryat-Yearim | 9:17 |
+| Joshua | congregation (*edah*); its leaders (*nesi'im*) | *umat*; *para pemimpin umat* | 9:15 |
+| Joshua | woodcutters and water carriers | *tukang belah kayu dan tukang timba air* | 9:21 |
