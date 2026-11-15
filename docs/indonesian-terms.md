@@ -792,3 +792,30 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Ezekiel | the river / canal Kebar | *sungai Kebar* (L); *Terusan Kebar* (B, R) | 1:1 |
+| Ezekiel | Buzi | Busi | 1:3 |
+| Ezekiel | living creatures (*chayyot*) | *makhluk hidup* | 1:5 |
+| Ezekiel | amber, gleaming metal (*chashmal*) | *ambar* (L); *logam yang berkilauan* (B), *logam yang bersinar* (R); uncertain | 1:4 |
+| Ezekiel | a house of rebellion (*bet meri*) | *kaum pemberontak* (L, B); *orang-orang yang tidak mau taat* (R) | 2:5 |
+| Ezekiel | the house of Israel | *kaum Israel* (L); *bangsa Israel* (B); *orang Israel* (R) | 3:1 |
+| Ezekiel | Tel-abib | Tel-Abib | 3:15 |
+| Ezekiel | watchman | *penjaga* | 3:17 |
+| Ezekiel | abominations (*to'evah*) | *kekejian* (L); *perbuatan yang keji* (B); *hal-hal yang menjijikkan* (R) | 5:9 |
+| Ezekiel | detestable things (*shiqqutsim*) | *barang kejijikan* (L); *berhala yang menjijikkan* (B, R) | 5:11 |
+| Ezekiel | as I live, declares the Lord GOD | *demi Aku yang hidup, firman Tuhan ALLAH* (L; B *demikianlah firman*, R *itulah firman*) | 5:11 |
+| Ezekiel | filthy idols (*gillulim*) | *berhala-berhala najis* (L); *berhala-berhala* (B, R); uncertain | 6:4 |
+| Ezekiel | set your face toward | *arahkanlah mukamu ke* (L); *hadapkanlah mukamu ke* (B); *menghadaplah ke* (R) | 6:2 |
+| Ezekiel | you will know that I am the LORD | *kalian akan mengetahui bahwa Akulah TUHAN* (L, B); *kalian akan tahu bahwa Aku ini TUHAN* (R) | 6:7 |
+| Ezekiel | Diblah | Dibla (uncertain; alternative *Ribla*) | 6:14 |
+| Ezekiel | image of jealousy | *patung cemburuan* (L, B); *patung berhala yang membuat Allah cemburu* (R) | 8:3 |
+| Ezekiel | Jaazaniah son of Shaphan; censer | Yaazanya anak Safan; *pedupaan* | 8:11 |
+| Ezekiel | Tammuz | Tamus (*dewa Tamus*, R) | 8:14 |
+| Ezekiel | the temple of the LORD (*hekhal*) | *ruang besar TUHAN* (L), *Bait Suci TUHAN* (B), *gedung rumah TUHAN* (R); uncertain | 8:16 |
+| Ezekiel | whirling wheels (*galgal*) | *roda-roda yang berpusing* (L, B); *roda-roda yang berputar* (R) | 10:2 |
+| Ezekiel | Jaazaniah son of Azzur; Pelatiah son of Benaiah | Yaazanya anak Azur; Pelatya anak Benaya (uncertain; alternative *Pelaca*) | 11:1 |
+| Ezekiel | prostitute oneself (*zanah*); prostitution | *bersundal*, *persundalan* (L); *melacurkan diri* (B); *tidak setia* (R) | 16:15 |
+| Ezekiel | restore the fortunes | *memulihkan keadaan* | 16:53 |
+| Ezekiel | Bamah | Bama | 20:29 |
+| Ezekiel | Rabbah of the Ammonites; teraphim | Raba bani Amon (L), Raba, kota orang Amon (B, R); *terafim* (L, B), *berhala-berhala keluarga* (R) | 21:25–26 |
+| Ezekiel | Oholah; Oholibah | Ohola; Oholiba | 23:4 |
+| Ezekiel | Pekod; Shoa; Koa | Pekod; Syoa; Koa | 23:23 |
