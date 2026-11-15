@@ -642,3 +642,6 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| James | the dispersion (*diaspora*) | *perantauan* | 1:1 |
+| James | favoritism (*prosōpolēmpsia*) | *memandang muka* (L, B) | 2:1 |
+| James | Lord of Sabaoth | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B, R) | 5:4 |
