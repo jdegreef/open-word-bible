@@ -642,3 +642,5 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 2 Thessalonians | the rebellion; the man of lawlessness | *murtad* (L), *pemberontakan besar* (B, R); *manusia durhaka* (L, B) | 2:3 |
+| 2 Thessalonians | the one who restrains | *yang menahan* | 2:6 |
