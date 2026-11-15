@@ -691,3 +691,4 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | the oaks of Moreh | pohon-pohon tarbantin More | 11:30 |
 | Deuteronomy | contribution, gift set apart (*terumah*) | *persembahan khusus* | 12:6 |
 | Deuteronomy | gazelle; deer | *kijang*; *rusa* | 12:15 |
+| Deuteronomy | worthless men (*bene beliyyaʿal*) | *orang-orang dursila* (L, B); *orang jahat* (R) | 13:14 |
