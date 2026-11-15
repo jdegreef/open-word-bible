@@ -706,3 +706,21 @@ records it. Empty until the first book is drafted.
 | Numbers | Pisgah; Jeshimon; Sihon; Jahaz; Jabbok; Heshbon | Pisga; Yesimon; Sihon; Yahas; Yabok; Hesybon | 21:20-25 |
 | Numbers | Chemosh; Dibon; Nophah; Medeba; Jazer; Og; Edrei | Kamos; Dibon; Nofah; Medeba; Yaezer; Og; Edrei | 21:29-33 |
 | Numbers | fiery snakes; bronze snake | *ular-ular api* (L), *ular-ular berbisa* (B, R); *ular tembaga* | 21:6; 21:9 |
+| Numbers | Zippor; Beor; Pethor | Zipor; Beor; Petor | 22:2-5 |
+| Numbers | the angel of the LORD | *Malaikat {{divine_name:TUHAN\|Yahweh}}* (no deity_pronoun span) | 22:22 |
+| Numbers | Kiriath-huzoth; Bamoth-baal | Kiryat-Huzot; Bamot-Baal | 22:39-41 |
+| Numbers | oracle (*mashal*) of Balaam | *sanjak* (L, B); *pesan* (R) | 23:7 |
+| Numbers | Zophim; Peor | Zofim; Peor | 23:14; 23:28 |
+| Numbers | utterance (*ne'um*) of Balaam | *tutur kata* (L, B) | 24:3 |
+| Numbers | Agag; Sheth; Seir; Kenites; Kain; Kittim; Eber | Agag; Set; Seir; *orang Keni*; Kain; Kitim; Eber | 24:7-24 |
+| Numbers | Shittim; Baal of Peor | Sitim; Baal-Peor | 25:1-3 |
+| Numbers | Zimri; Salu; Cozbi; Zur | Zimri; Salu; Kozbi; Zur | 25:14-15 |
+| Numbers | covenant of peace | *perjanjian damai-{{deity_pronoun:ku\|Ku}}* | 25:12 |
+| Numbers | Pallu; Carmi; Nemuel; Jamin; Jachin; Zerah; Shaul | Palu; Karmi; Nemuel; Yamin; Yakhin; Zerah; Saul | 26:5-13 |
+| Numbers | Zephon; Haggi; Shuni; Ozni; Eri; Arod; Areli | Zefon; Hagi; Suni; Ozni; Eri; Arod; Areli | 26:15-17 |
+| Numbers | Er; Onan; Shelah; Hamul; Tola; Puvah (Punites); Jashub; Shimron | Er; Onan; Syela; Hamul; Tola; Pua (*kaum Puni*); Yasub; Simron | 26:19-24 |
+| Numbers | Sered; Elon; Jahleel; Machir; Iezer; Helek; Asriel; Shechem; Shemida; Hepher | Sered; Elon; Yahleel; Makhir; Iezer; Helek; Asriel; Sikhem; Semida; Hefer | 26:26-32 |
+| Numbers | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelafehad; Mahla; Noa; Hogla; Milka; Tirza | 26:33 |
+| Numbers | Shuthelah; Becher; Tahan; Eran; Bela; Ashbel; Ahiram; Shephupham (Shuphamites); Hupham; Ard; Naaman | Sutelah; Bekher; Tahan; Eran; Bela; Asybel; Ahiram; Sefufam (*kaum Sufam*); Hufam; Ard; Naaman | 26:35-40 |
+| Numbers | Shuham; Imnah (Imnites); Ishvi; Beriah; Heber; Malchiel; Serah; Jahzeel; Guni; Jezer; Shillem; Jochebed | Suham; Yimna (*kaum Yimni*); Yiswi; Beria; Heber; Malkiel; Serah; Yahzeel; Guni; Yezer; Silem; Yokhebed | 26:42-59 |
+| Numbers | lot (*goral*) | *undian* | 26:55 |
