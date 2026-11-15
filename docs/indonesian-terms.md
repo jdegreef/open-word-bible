@@ -662,3 +662,22 @@ records it. Empty until the first book is drafted.
 | Numbers | keep the charge (*shamar mishmeret*) | *memelihara tugas jagaan* (L); *menjalankan tugas*, *menjaga* (B, R) | 3:7 |
 | Numbers | gerah | *gera* | 3:47 |
 | Numbers | shekel (units setting) | about 11.4 g: `{{units:sekitar 57 gram\|lima syikal}}` (B, R) | 3:47 |
+| Numbers | the service (*tsava*) of the Levites | *dinas* (L, B); *kelompok pekerja* (R) | 4:3 |
+| Numbers | fine leather (*tachash*) | *kulit halus* | 4:6 |
+| Numbers | table of the Presence | *meja sajian* (L); *meja roti sajian* (B, R) | 4:7 |
+| Numbers | scarlet | *kain kirmizi* (L, B); *kain merah terang* (R) | 4:8 |
+| Numbers | carrying frame | *usungan* | 4:10 |
+| Numbers | scale disease (*tsara'at*) | *penyakit kulit* | 5:2 |
+| Numbers | contribution (*terumah*) | *persembahan khusus* | 5:9 |
+| Numbers | wave (*henif*) | *mengunjukkan* (L, B) | 5:25 |
+| Numbers | ephah (units setting) | about 22 litres: `{{units:sekitar dua liter\|sepersepuluh efa}}` (B, R) | 5:15 |
+| Numbers | turtledoves; young pigeons | *burung tekukur*; *anak burung merpati* | 6:10 |
+| Numbers | dedication of the altar | *pentahbisan mezbah* | 7:10 |
+| Numbers | trumpet (*chatsotsrah*); alarm (*teru'ah*) | *nafiri*; *tanda semboyan* (L, B) | 10:2; 10:5 |
+| Numbers | Hobab; Reuel | Hobab; Rehuel | 10:29 |
+| Numbers | Taberah | Tabera | 11:3 |
+| Numbers | the rabble (*hasafsuf*) | *orang-orang bajingan* (L); *orang-orang campuran* (B); *orang-orang asing* (R) | 11:4 |
+| Numbers | coriander; bdellium | *ketumbar*; *damar bedolah* | 11:7 |
+| Numbers | officers (*shoterim*) | *pengatur* (L, B) | 11:16 |
+| Numbers | Eldad; Medad | Eldad; Medad | 11:26 |
+| Numbers | Kibroth-hattaavah; Hazeroth | Kibrot-Taawa; Hazerot | 11:34-35 |
