@@ -678,3 +678,4 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | with all your heart and with all your soul | *dengan seluruh hatimu dan dengan seluruh jiwamu* (L, B); *dengan sepenuh hati dan dengan seluruh diri* (R) | 4:29 |
 | Deuteronomy | Bezer; Ramoth (in Gilead); Golan; Manassites | Bezer; Ramot; Golan; orang Manasye | 4:43 |
 | Deuteronomy | Mount Siyon (Hermon) | gunung Siyon | 4:48 |
+| Deuteronomy | Massah | Masa | 6:16 |
