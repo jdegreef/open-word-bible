@@ -718,3 +718,11 @@ records it. Empty until the first book is drafted.
 | Joshua | the Shephelah towns (15:33–47) | Esytaol, Zora, Asyna, Zanoah, En-Ganim, Tapuah, Enam, Yarmut, Adulam, Sokho, Azeka, Syaaraim, Aditaim, Gedera, Gederotaim, Zenan, Hadasya, Migdal-Gad, Dilean, Mizpa, Yokteel, Lakhis, Boskat, Eglon, Kabon, Lahmas, Kitlis, Gederot, Bet-Dagon, Naama, Makeda, Libna, Eter, Asyan, Yifta, Nezib, Kehila, Akhzib, Maresya | 15:33–44 |
 | Joshua | the hill-country and wilderness towns (15:48–62) | Syamir, Yatir, Dana, Kiryat-Sana, Esytemoa, Anim, Holon, Gilo, Arab, Ruma, Esyan, Yanum, Bet-Tapuah, Afeka, Humta, Zior, Maon, Karmel, Yuta, Yizreel, Yokdeam, Kain, Gibea, Halhul, Bet-Zur, Gedor, Maarat, Bet-Anot, Eltekon, Kiryat-Baal, Raba, Midin, Sekhakha, Nibsyan, Kota Garam, En-Gedi | 15:48–62 |
 | Joshua | its daughters (dependent towns) | *anak-anak kotanya* (L); *kota-kota* (B, R) | 15:45 |
+| Joshua | Luz; Archites; Ataroth; Japhletites | Lus; orang Arki; Atarot; orang Yafleti | 16:2–3 |
+| Joshua | Lower / Upper Beth-horon; Ataroth-addar | Bet-Horon Hilir / Hulu; Atarot-Adar | 16:3, 5 |
+| Joshua | Michmethath; Taanath-shiloh; Janoah; Naarah; Wadi Kanah | Mikhmetat; Taanat-Silo; Yanoah; Naara; sungai Kana (L), Wadi Kana (B, R) | 16:6–8 |
+| Joshua | forced labor (*mas*) | *pekerja rodi* (L, B); *kerja paksa* (R) | 16:10 |
+| Joshua | Abiezer; Helek; Asriel; Hepher; Shemida | Abiezer; Helek; Asriel; Hefer; Syemida | 17:2 |
+| Joshua | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelofehad; Mahla; Noa; Hogla; Milka; Tirza | 17:3 |
+| Joshua | En-tappuah; Beth-shean; Ibleam; En-dor; Valley of Jezreel | En-Tapuah; Bet-Syean; Yibleam; En-Dor; Lembah Yizreel | 17:7–16 |
+| Joshua | iron chariots | *kereta besi* | 17:16 |
