@@ -792,3 +792,6 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Nahum | Elkoshite, Elkosh | orang Elkosy (L); dari Elkosy (B, R) | 1:1 |
+| Nahum | No-amon; Thebes | No-Amon (L, B); Tebe (R) | 3:8 |
+| Nahum | Put; Libyans | Put; orang Libia (L, B), Libia (R) | 3:9 |
