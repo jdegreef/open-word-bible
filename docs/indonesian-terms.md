@@ -642,3 +642,14 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Numbers | tabernacle of the testimony | *Kemah Suci kesaksian* (L); *Kemah Suci tempat loh-loh kesaksian* (B) | 1:50 |
+| Numbers | Elizur; Shedeur | Elizur; Syedeur | 1:5 |
+| Numbers | Shelumiel; Zurishaddai | Selumiel; Zurisyadai | 1:6 |
+| Numbers | Nethanel; Zuar | Netaneel; Zuar | 1:8 |
+| Numbers | Eliab; Helon | Eliab; Helon | 1:9 |
+| Numbers | Elishama; Ammihud; Gamaliel; Pedahzur | Elisama; Amihud; Gamaliel; Pedazur | 1:10 |
+| Numbers | Abidan; Gideoni | Abidan; Gideoni | 1:11 |
+| Numbers | Ahiezer; Ammishaddai | Ahiezer; Amisyadai | 1:12 |
+| Numbers | Pagiel; Ochran | Pagiel; Okhran | 1:13 |
+| Numbers | Eliasaph; Deuel (Reuel in 2:14) | Elyasaf; Deuel (Rehuel) | 1:14 |
+| Numbers | Ahira; Enan | Ahira; Enan | 1:15 |
