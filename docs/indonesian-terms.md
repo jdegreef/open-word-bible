@@ -792,3 +792,40 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Jeremiah | Anathoth; Hilkiah | Anatot; Hilkia | 1:1 |
+| Jeremiah | almond (tree) | *pohon badam* | 1:11 |
+| Jeremiah | Kittim; Kedar | Kitim (L, B), *pulau Siprus* (R); Kedar | 2:10 |
+| Jeremiah | Memphis (Noph); Tahpanhes | Memfis; Tahpanhes | 2:16 |
+| Jeremiah | Shihor | Sikhor (L, B); *sungai Nil* (R) | 2:18 |
+| Jeremiah | faithless Israel; treacherous Judah | *Israel si murtad* (L, B), *Israel yang tidak setia* (R); *Yehuda yang tidak setia* (L, B), *yang berkhianat* (R) | 3:6–8 |
+| Jeremiah | the daughter of my people (*bat-'ammi*) | *putri bangsaku* / *putri umat-Ku* (L); *bangsaku yang kukasihi* / *umat-Ku yang Kukasihi* (B); *bangsaku* / *umat-Ku* (R) | 4:11; 8:19 |
+| Jeremiah | Daughter Zion (*bat-tsiyyon*) | *putri Sion* (L); *Putri Sion* (B); *penduduk Sion* (R) | 4:31 |
+| Jeremiah | the stubbornness of their (evil) heart | *kedegilan hati mereka (yang jahat)* (L, B); *dengan keras kepala mengikuti hati mereka (yang jahat)* (R) | 3:17 |
+| Jeremiah | Tekoa; Beth-haccherem | Tekoa; Bet-Hakerem | 6:1 |
+| Jeremiah | terror on every side; Magor-missabib | *kengerian di sekeliling* (L), *kengerian di mana-mana* (B, R); Magor-Misabib (L, B), *Kengerian di Mana-Mana* (R) | 6:25; 20:3 |
+| Jeremiah | rising early and speaking/sending | *bangun pagi-pagi dan berbicara* (L); *berulang-ulang* (B); *terus-menerus* (R) | 7:13 |
+| Jeremiah | the queen of heaven | *ratu langit* (uncertain; *ratu surga* the familiar alternative) | 7:18 |
+| Jeremiah | Valley of Slaughter | *Lembah Pembantaian* | 7:32 |
+| Jeremiah | sword, famine and pestilence | *pedang, kelaparan dan penyakit sampar* (L, B); *perang, kelaparan dan penyakit* (R) | 14:12 |
+| Jeremiah | a horror, a hissing (*shereqah*), a curse | *kengerian, tempat orang bersuit, kutuk* (L); *kengerian, bahan ejekan, kutuk* (B); *sesuatu yang mengerikan, sesuatu yang diejek orang, kutuk* (R) | 18:16; 25:18 |
+| Jeremiah | jackal | *anjing hutan* | 9:10 |
+| Jeremiah | wormwood | *apsintus* (L, B); *tumbuhan pahit* (R) | 9:14 |
+| Jeremiah | Uphaz | Ufas | 10:9 |
+| Jeremiah | loincloth; Perath | *cawat*; Perat (L, B), *sungai Efrat* (R) | 13:1–4 |
+| Jeremiah | the Hope of Israel | *Pengharapan Israel* (L, B) | 14:8 |
+| Jeremiah | divination | *tenung* (L, B) | 14:14 |
+| Jeremiah | the People's Gate | *pintu gerbang Bani Rakyat* (L); *Pintu Gerbang Rakyat* (B, R) | 17:19 |
+| Jeremiah | potter; flask | *tukang periuk*; *buli-buli* | 18:2; 19:1 |
+| Jeremiah | Potsherd Gate | *Gerbang Beling* | 19:2 |
+| Jeremiah | Pashhur son of Immer; stocks; Upper Benjamin Gate | Pasyhur anak Imer; *pasungan*; *Pintu Gerbang Benyamin Atas* | 20:1–2 |
+| Jeremiah | Pashhur son of Malchiah; Zephaniah son of Maaseiah | Pasyhur anak Malkia; Zefanya anak Maaseya | 21:1 |
+| Jeremiah | Nebuchadrezzar | Nebukadnezar (one form, as the glossary; uncertain) | 21:2 |
+| Jeremiah | his life as plunder | *nyawanya akan menjadi jarahan baginya* (L); *hanya nyawanya saja yang dapat ia selamatkan* (B); *luput dengan nyawa mereka, dan hanya itulah yang mereka dapat* (R) | 21:9 |
+| Jeremiah | Shallum (Jehoahaz); Coniah, Jeconiah (Jehoiachin) | Salum; Konya; Yekhonya | 22:11; 22:24; 24:1 |
+| Jeremiah | Abarim | Abarim | 22:20 |
+| Jeremiah | the righteous Branch; The LORD is our righteousness | *Tunas yang benar*; *TUHAN kebenaran kita* (L, B), *TUHAN Kebenaran Kita* (R) | 23:5–6 |
+| Jeremiah | burden (*massa'*, 23:33–40) | *beban* (every level) | 23:33 |
+| Jeremiah | Uz; Buz; Zimri; Sheshach | Us; Bus; Zimri; Sesakh | 25:20–26 |
+| Jeremiah | the cup (of wrath) | *piala* | 25:15 |
+| Jeremiah | Micah the Morashtite | Mikha, orang Moresyet | 26:18 |
+| Jeremiah | Uriah son of Shemaiah; Kiriath-jearim | Uria anak Semaya; Kiryat-Yearim | 26:20 |
