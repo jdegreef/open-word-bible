@@ -711,3 +711,73 @@ records it. Empty until the first book is drafted.
 | Genesis | Hadad; Tema; Jetur; Naphish; Kedemah | Hadad; Tema; Yetur; Nafis; Kedema | 25:15 |
 | Genesis | Paddan-aram | Padan-Aram | 25:20 |
 | Genesis | gathered to his people | *dikumpulkan kepada kaum leluhurnya* (L, B); *bergabung dengan nenek moyangnya* (R) | 25:8 |
+| Genesis | Esek; Sitnah; Rehoboth; Shibah | Esek; Sitna; Rehobot; Syiba | 26:20–33 |
+| Genesis | Ahuzzath | Ahuzat | 26:26 |
+| Genesis | Judith; Beeri; Basemath; Elon | Yudit; Beeri; Basmat; Elon | 26:34 |
+| Genesis | Mahalath; Nebaioth | Mahalat; Nebayot | 28:9 |
+| Genesis | Luz | Lus | 28:19 |
+| Genesis | pillar (*matsevah*) | *tugu* | 28:18 |
+| Genesis | Zilpah; Bilhah | Zilpa; Bilha | 29:24, 29 |
+| Genesis | mandrakes | *buah dudaim* | 30:14 |
+| Genesis | poplar; almond; plane tree | *pohon hawar*; *badam*; *pohon berangan* | 30:37 |
+| Genesis | household gods (*teraphim*) | *terafim* (L); *patung-patung dewa keluarga* (B, R) | 31:19 |
+| Genesis | the Fear of Isaac | *Kegentaran Ishak* (L); *Yang Ditakuti oleh Ishak* (B); *Allah yang disembah Ishak dengan rasa takut* (R) | 31:42 |
+| Genesis | Jegar-sahadutha; Galeed; Mizpah | Yegar-Sahaduta; Galed; Mizpa | 31:47–49 |
+| Genesis | Mahanaim | Mahanaim | 32:3 |
+| Genesis | Jabbok | Yabok | 32:23 |
+| Genesis | Peniel; Penuel | Peniel; Penuel | 32:31–32 |
+| Genesis | Succoth | Sukot | 33:17 |
+| Genesis | Hamor | Hemor | 33:19 |
+| Genesis | qesitah | *kesita* (L); `{{units:seratus keping perak\|seratus kesita}}` (B, R) | 33:19 |
+| Genesis | El-Elohe-Israel | El-Elohe-Israel | 33:20 |
+| Genesis | El-Bethel | El-Betel | 35:7 |
+| Genesis | Deborah (Rebekah's nurse); Allon-bacuth | Debora; Alon-Bakut | 35:8 |
+| Genesis | Ephrath | Efrata | 35:16 |
+| Genesis | Ben-oni | Ben-Oni | 35:18 |
+| Genesis | Migdal-eder | Migdal-Eder | 35:21 |
+| Genesis | Adah; Oholibamah; Anah; Zibeon | Ada; Oholibama; Ana; Zibeon | 36:2 |
+| Genesis | Eliphaz; Reuel | Elifas; Rehuel | 36:4 |
+| Genesis | Jeush; Jalam | Yeush; Yalam | 36:5 |
+| Genesis | Teman; Omar; Zepho; Gatam; Kenaz | Teman; Omar; Zefo; Gatam; Kenas | 36:11 |
+| Genesis | Timna; Amalek | Timna; Amalek | 36:12 |
+| Genesis | Nahath; Zerah; Shammah; Mizzah | Nahat; Zerah; Syama; Miza | 36:13 |
+| Genesis | chief (*alluf*) | *kepala kaum* (L, B); *pemimpin kaum* (R) | 36:15 |
+| Genesis | Horites; Lotan; Shobal; Dishon; Ezer; Dishan | orang Hori; Lotan; Syobal; Disyon; Ezer; Disyan | 36:20–21 |
+| Genesis | Hori; Hemam; Alvan; Manahath; Ebal; Shepho; Onam; Aiah | Hori; Hemam; Alwan; Manahat; Ebal; Syefo; Onam; Aya | 36:22–24 |
+| Genesis | Hemdan; Eshban; Ithran; Cheran; Bilhan; Zaavan; Akan; Aran | Hemdan; Esyban; Yitran; Keran; Bilhan; Zaawan; Akan; Aran | 36:26–28 |
+| Genesis | Bela; Beor; Dinhabah; Jobab; Bozrah | Bela; Beor; Dinhaba; Yobab; Bozra | 36:32–33 |
+| Genesis | Husham; Temanites; Hadad; Bedad; Avith | Husam; orang Teman; Hadad; Bedad; Awit | 36:34–35 |
+| Genesis | Samlah; Masrekah; Shaul; Rehoboth on the River | Samla; Masreka; Saul; Rehobot di tepi Sungai | 36:36–37 |
+| Genesis | Baal-hanan; Achbor; Hadar; Pau; Mehetabel; Matred; Mezahab | Baal-Hanan; Akhbor; Hadar; Pau; Mehetabel; Matred; Me-Zahab | 36:38–39 |
+| Genesis | Alvah; Jetheth; Elah; Pinon; Mibzar; Magdiel; Iram | Alwa; Yetet; Ela; Pinon; Mibzar; Magdiel; Iram | 36:40–43 |
+| Genesis | Joseph's robe (*ketonet passim*) | *jubah yang sampai ke pergelangan* (L); *jubah berlengan panjang* (B); *jubah istimewa berlengan panjang* (R) | 37:3 |
+| Genesis | Dothan | Dotan | 37:17 |
+| Genesis | Ishmaelites; Medanites | orang Ismael; orang Medan | 37:25, 36 |
+| Genesis | sackcloth | *kain kabung* (L, B) | 37:34 |
+| Genesis | Adullam; Hirah; Shua | Adulam; Hira; Syua | 38:1–2 |
+| Genesis | Er; Onan; Shelah (son of Judah); Kezib | Er; Onan; Syela; Kezib | 38:3–5 |
+| Genesis | Timnah; Enaim | Timna; Enaim | 38:12–14 |
+| Genesis | shrine woman (*qedeshah*) | *perempuan kuil* (L); *pelacur kuil* (B, R) | 38:21 |
+| Genesis | cupbearer; baker | *juru minuman*; *juru roti* | 40:1 |
+| Genesis | interpretation (of a dream); interpret | *arti*; *mengartikan* | 40:5 |
+| Genesis | magicians (*chartummim*) | *ahli sihir* | 41:8 |
+| Genesis | Abrek | *Abrekh* (L); *Berlututlah!* (B, R) | 41:43 |
+| Genesis | Zaphenath-paneah; Asenath; Potiphera; On | Zafnat-Paaneah; Asnat; Potifera; On | 41:45 |
+| Genesis | interpreter | *juru bahasa* (L, B); *penerjemah* (R) | 42:23 |
+| Genesis | steward (the one over his house) | *orang yang mengurus rumahnya* (L); *kepala rumah tangga* (B); *hamba yang mengurus rumahnya* (R) | 43:16 |
+| Genesis | pistachio nuts; almonds | *kacang pistasio*; *buah badam* | 43:11 |
+| Genesis | Joseph's cup | *piala* | 44:2 |
+| Genesis | Hanoch; Pallu; Carmi | Henokh; Palu; Karmi | 46:9 |
+| Genesis | Jemuel; Jamin; Ohad; Jachin; Shaul | Yemuel; Yamin; Ohad; Yakhin; Saul | 46:10 |
+| Genesis | Gershon; Kohath; Merari | Gerson; Kehat; Merari | 46:11 |
+| Genesis | Hamul; Tola; Puvah; Iob; Shimron | Hamul; Tola; Puwa; Yob; Syimron | 46:12–13 |
+| Genesis | Sered; Jahleel | Sered; Yahleel | 46:14 |
+| Genesis | Ziphion; Haggi; Shuni; Ezbon; Eri; Arodi; Areli | Zifion; Hagi; Syuni; Ezbon; Eri; Arodi; Areli | 46:16 |
+| Genesis | Imnah; Ishvah; Ishvi; Beriah; Serah; Heber; Malkiel | Yimna; Yiswa; Yiswi; Beria; Serah; Heber; Malkiel | 46:17 |
+| Genesis | Becher; Ashbel; Gera; Naaman; Ehi; Rosh; Muppim; Huppim; Ard | Bekher; Asbel; Gera; Naaman; Ehi; Ros; Mupim; Hupim; Ard | 46:21 |
+| Genesis | Hushim; Jahzeel; Guni; Jezer; Shillem | Husyim; Yahzeel; Guni; Yezer; Syilem | 46:23–24 |
+| Genesis | Rameses | Raamses | 47:11 |
+| Genesis | the Mighty One of Jacob; the Shepherd, the Stone of Israel | *Yang Mahakuat dari Yakub*; *Gembala*, *Batu Israel* | 49:24 |
+| Genesis | Atad; Abel-mizraim | Atad; Abel-Mizraim | 50:10–11 |
+| Genesis | embalm | *merempah-rempahi* (L); *membalsam* (B, R) | 50:2 |
+| Genesis | Machir | Makhir | 50:23 |
