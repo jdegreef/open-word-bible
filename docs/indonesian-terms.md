@@ -817,7 +817,7 @@ records it. Empty until the first book is drafted.
 | Judges | Machir; Meroz | Makhir; Meros | 5:14, 23 |
 | Judges | the sons of the east | *orang-orang timur* (L), *orang-orang dari timur* (B), *bangsa-bangsa lain dari timur* (R) | 6:3 |
 | Judges | Ophrah; Joash the Abiezrite | Ofra; Yoas, orang Abiezer | 6:11 |
-| Judges | the LORD is Peace | *TUHAN Adalah Damai Sejahtera* (L, B), *TUHAN Adalah Damai* (R) | 6:24 |
+| Judges | the LORD is Peace | *{{divine_name:TUHAN\|Yahweh}} Adalah Damai Sejahtera* (L, B), *... Adalah Damai* (R) | 6:24 |
 | Judges | Jerubbaal | Yerubaal | 6:32 |
 | Judges | fleece | *guntingan bulu domba* (L, B); *bulu domba* (R) | 6:37 |
 | Judges | En-harod; hill of Moreh; Purah | En-Harod; bukit More; Pura | 7:1, 10 |
