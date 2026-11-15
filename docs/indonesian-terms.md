@@ -866,3 +866,31 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Pul; Halah; Habor; Hara; Gozan | Pul; Halah; Habor; Hara; Gozan | 5:26 |
 | 1 Chronicles | Abishua; Uzzi; Zerahiah; Meraioth; Amariah | Abisyua; Uzi; Zerahya; Meraiot; Amarya | 5:30–33 |
 | 1 Chronicles | Hilkiah; Seraiah; Jehozadak | Hilkia; Seraya; Yehozadak | 5:39–40 |
+| 1 Chronicles | Zimmah; Joah; Iddo; Jeatherai | Zima; Yoah; Ido; Yeaterai | 6:5–6 |
+| 1 Chronicles | Ebiasaph; Tahath; Uriel; Amasai; Ahimoth; Zophai | Ebyasaf; Tahat; Uriel; Amasai; Ahimot; Zofai | 6:8–11 |
+| 1 Chronicles | Vashni | Wasni | 6:13 |
+| 1 Chronicles | Uzzah; Haggiah | Uza; Hagia | 6:14–15 |
+| 1 Chronicles | Toah; Mahath | Toah; Mahat | 6:19–20 |
+| 1 Chronicles | Baaseiah; Malchijah; Ethni; Adaiah | Baaseya; Malkhia; Etni; Adaya | 6:25–26 |
+| 1 Chronicles | Kishi; Abdi; Malluch; Hashabiah; Amzi; Bani; Shemer | Kisyi; Abdi; Malukh; Hasyabya; Amsi; Bani; Syemer | 6:29–31 |
+| 1 Chronicles | Hilez; Alemeth; Jokmeam; Bileam (town); Anem | Hiles; Alemet; Yokmeam; Bileam; Anem | 6:43–58 |
+| 1 Chronicles | Mashal; Hukok; Hammon; Rimmono | Masyal; Hukok; Hamon; Rimono | 6:59–62 |
+| 1 Chronicles | Jeriel; Jahmai; Ibsam | Yeriel; Yahmai; Ibsam | 7:2 |
+| 1 Chronicles | Izrahiah; Isshiah | Yizrahya; Yisyia | 7:3 |
+| 1 Chronicles | Jediael; Jerimoth; Iri | Yediael; Yerimot; Iri | 7:6–7 |
+| 1 Chronicles | Zemirah; Jeremoth | Zemira; Yeremot | 7:8 |
+| 1 Chronicles | Chenaanah; Zethan; Ahishahar | Kenaana; Zetan; Ahisyahar | 7:10 |
+| 1 Chronicles | Shuppim; Ir; Aher | Syupim; Ir; Aher | 7:12 |
+| 1 Chronicles | Jahziel | Yahziel | 7:13 |
+| 1 Chronicles | Peresh; Sheresh; Ulam | Peresy; Syeres; Ulam | 7:16 |
+| 1 Chronicles | Hammolecheth; Ishhod | Hamolekhet; Ishod | 7:18 |
+| 1 Chronicles | Ahian; Likhi; Aniam | Ahyan; Likhi; Aniam | 7:19 |
+| 1 Chronicles | Eleadah; Elead | Eleada; Elead | 7:20–21 |
+| 1 Chronicles | Sheerah; Uzzen-sheerah | Syeera; Uzen-Syeera | 7:24 |
+| 1 Chronicles | Rephah; Resheph; Telah; Ladan | Refah; Resyef; Telah; Ladan | 7:25–26 |
+| 1 Chronicles | Naaran; Ayyah | Naaran; Aya | 7:28 |
+| 1 Chronicles | Birzaith; Japhlet; Shomer; Hotham | Birzait; Yaflet; Syomer; Hotam | 7:31–32 |
+| 1 Chronicles | Pasach; Bimhal; Ashvath | Pasakh; Bimhal; Aswat | 7:33 |
+| 1 Chronicles | Rohgah; Hubbah; Helem; Zophah; Imna; Shelesh; Amal | Rohga; Huba; Helem; Zofah; Yimna; Syeles; Amal | 7:34–35 |
+| 1 Chronicles | Harnepher; Beri; Imrah; Hod; Shilshah; Beera | Harnefer; Beri; Yimra; Hod; Syilsya; Beera | 7:36–37 |
+| 1 Chronicles | Pispa; Ara; Ulla; Arah; Rizia | Pispa; Ara; Ula; Arah; Risya | 7:38–39 |
