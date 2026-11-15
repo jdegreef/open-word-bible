@@ -792,3 +792,21 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Hosea | Beeri; Diblaim | Beeri; Diblaim | 1:1; 1:3 |
+| Hosea | prostitution, prostitute oneself (Israel's unfaithfulness) | *sundal*, *bersundal* (L); *berzina*, *persundalan* (B); *tidak setia*, *berbuat serong* (R) | 1:2 |
+| Hosea | Lo-ruhamah; Lo-ammi; Ammi; Ruhamah | Lo-Ruhama, Lo-Ami, Ami, Ruhama (L); *Tidak Disayangi*, *Bukan-Umat-Ku*, *Umat-Ku*, *Disayangi* (B, R) | 1:6; 1:9; 2:3 |
+| Hosea | the Baals | *para Baal* | 2:15 |
+| Hosea | valley of Achor | lembah Akhor | 2:17 |
+| Hosea | lethech (half a homer) | letekh | 3:2 |
+| Hosea | sacred pillar; ephod; teraphim | *tugu berhala*; *efod*; *terafim* (L), *patung-patung dewa rumah tangga* (B, R) | 3:4 |
+| Hosea | Beth-aven; Aven | Bet-Awen; Awen | 4:15; 10:8 |
+| Hosea | shrine prostitutes | *pelacur kuil* (L, B) | 4:14 |
+| Hosea | oak, poplar, terebinth | *pohon ek, pohon hawar, pohon tarbantin* (uncertain) | 4:13 |
+| Hosea | Mizpah; Tabor | Mizpa; Tabor | 5:1 |
+| Hosea | ram's horn; trumpet | *sangkakala tanduk*; *nafiri* | 5:8 |
+| Hosea | Memphis | Memfis | 9:6 |
+| Hosea | Baal of Peor | Baal-Peor | 9:10 |
+| Hosea | idol-priests (*kemarim*) | *imam-imam berhala* | 10:5 |
+| Hosea | Shalman; Beth-arbel | Salman; Bet-Arbel | 10:14 |
+| Hosea | Admah; Zeboiim | Adma; Zeboim | 11:8 |
+| Hosea | God of hosts | *Allah semesta alam* | 12:6 |
