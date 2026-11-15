@@ -800,7 +800,7 @@ records it. Empty until the first book is drafted.
 | 2 Chronicles | Zeredah | Zereda | 4:17 |
 | 2 Chronicles | the refrain "for he is good, his loyal love lasts forever" | *sebab Dia baik; kasih setia-Nya kekal selama-lamanya* (B, R) | 5:13 |
 | 2 Chronicles | Jeduthun | Yedutun | 5:12 |
-| 2 Chronicles | platform (*kiyyor*, 6:13) | *mimbar* (L, B); *panggung* (R) | 6:13 |
+| 2 Chronicles | bronze platform | *mimbar* (L, B); *panggung* (R) | 6:13 |
 | 2 Chronicles | solemn assembly | *pertemuan raya* (L, B); *pertemuan ibadah khusus* (R) | 7:9 |
 | 2 Chronicles | Hamath-zobah; Tadmor; Baalath; Eloth | Hamat-Zoba; Tadmor; Baalat; Elot | 8:3–17 |
 | 2 Chronicles | act unfaithfully (*ma'al*) | *berubah setia* (L, B) | 12:2 |
@@ -824,3 +824,25 @@ records it. Empty until the first book is drafted.
 | 2 Chronicles | Meunites; Hazazon-tamar; En-gedi | orang Meunim; Hazezon-Tamar; En-Gedi | 20:1–2 |
 | 2 Chronicles | Jahaziel; Jeiel; Mattaniah; Ziz; Jeruel; Beracah | Yahaziel; Yeiel; Matanya; Ziz; Yeruel; Berakha | 20:14–26 |
 | 2 Chronicles | Azubah; Shilhi; Eliezer son of Dodavahu | Azuba; Silhi; Eliezer anak Dodawahu | 20:31, 37 |
+| 2 Chronicles | Jehoram's brothers: Jehiel; Michael; Shephatiah | Yehiel; Mikhael; Sefatya | 21:2 |
+| 2 Chronicles | Jehoahaz (Ahaziah); Jehoshabeath; Nimshi | Yoahas; Yosabeat; Nimsi | 21:17; 22:11; 22:7 |
+| 2 Chronicles | Jehoiada's commanders (23:1) | Azarya anak Yeroham, Ismael anak Yohanan, Azarya anak Obed, Maaseya anak Adaya, Elisafat anak Zikhri | 23:1 |
+| 2 Chronicles | Foundation Gate; Horse Gate; Upper Gate | Pintu Gerbang Dasar; Pintu Gerbang Kuda; Pintu Gerbang Atas | 23:5–20 |
+| 2 Chronicles | the testimony (given to the king) | *kesaksian* | 23:11 |
+| 2 Chronicles | Mattan; Zibiah; tent of the testimony | Matan; Zibya; Kemah Kesaksian | 23:17; 24:1, 6 |
+| 2 Chronicles | Zabad; Shimeath; Shimrith | Zabad; Simeat; Simrit | 24:26 |
+| 2 Chronicles | Jehoaddan; Valley of Salt; Obed-edom; Ephraim Gate; Corner Gate | Yoadan; Lembah Asin; Obed-Edom; Pintu Gerbang Efraim; Pintu Gerbang Sudut | 25:1–24 |
+| 2 Chronicles | Jecoliah; Jabneh; Gur-baal; Valley Gate; the Angle | Yekholya; Yabne; Gur-Baal; Pintu Gerbang Lembah; Sudut Tembok | 26:3–9 |
+| 2 Chronicles | Amoz (Isaiah's father) | Amos (uncertain) | 26:22 |
+| 2 Chronicles | the house of separation (Uzziah's) | *rumah pengasingan* (L); *rumah tersendiri* (B, R) | 26:21 |
+| 2 Chronicles | Jerushah; Ophel | Yerusa; Ofel | 27:1, 3 |
+| 2 Chronicles | Pekah son of Remaliah; Azrikam; Berechiah; Meshillemoth; Jehizkiah; Hadlai | Pekah anak Remalya; Azrikam; Berekhya; Mesilemot; Yehizkia; Hadlai | 28:6–12 |
+| 2 Chronicles | Gederoth; Timnah; Gimzo; Valley of Ben-hinnom | Gederot; Timna; Gimzo; Lembah Ben-Hinom | 28:18; 28:3 |
+| 2 Chronicles | Hezekiah's Levites (29:12–14) | Mahat, Amasai, Yoel, Kisy, Abdi, Yehaleleel, Yoah, Zima, Eden, Simri, Yeiel, Yehiel, Simei, Uziel | 29:12–14 |
+| 2 Chronicles | Conaniah; Azaziah; Nahath; Eliel; Ismachiah; Kore son of Imnah; Miniamin; Shecaniah; Hashabiah | Konanya; Azazya; Nahat; Eliel; Yismakhya; Kore anak Yimna; Miniamin; Sekhanya; Hasabya | 31:12–15; 35:9 |
+| 2 Chronicles | Millo; Fish Gate; Hozai | Milo; Pintu Gerbang Ikan; Hozai | 32:5; 33:14, 19 |
+| 2 Chronicles | Thus says (a human king) | *Beginilah kata ...* (L, B); *Inilah yang dikatakan ...* (R) | 32:10 |
+| 2 Chronicles | Shaphan; Azaliah; Hilkiah; Jahath; Meshullam; Ahikam; Abdon; Asaiah | Safan; Azalya; Hilkia; Yahat; Mesulam; Ahikam; Abdon; Asaya | 34:8–20 |
+| 2 Chronicles | Huldah the prophetess; Tokhath; Hasrah; the Second Quarter | Nabiah Hulda; Tokhat; Hasra; Kota Baru (B) | 34:22 |
+| 2 Chronicles | Neco; Carchemish; the Laments | Nekho; Karkemis; *kumpulan Ratapan* | 35:20, 25 |
+| 2 Chronicles | Eliakim; the God of heaven (Cyrus' decree) | Elyakim; *Allah semesta langit* | 36:4, 23 |
