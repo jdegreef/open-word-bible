@@ -24,7 +24,8 @@ Fixed, the same person or place spelled two ways with no reason in a brief:
   docs/nt-spanish-swahili-terms.md sets and Matthew and Luke use (28 places).
 - uk (after the Ukrainian Old Testament was merged; docs/ukrainian-ot-terms.md
   asks for "one form per name through every book"): Lebanon Ліван to Ливан
-  (Kings, Chronicles, Ezra, Jeremiah, Ezekiel; Psalms in the patch file), as
+  (Kings, Chronicles, Ezra, Jeremiah, Ezekiel; Psalms from the patch file, applied after the Psalms poetry lines
+  were merged), as
   Deuteronomy, Joshua, Isaiah and the Song; Shiloh Шило to Шіло (1 Samuel,
   2 Chronicles, Jeremiah), as Joshua, Judges and Psalm 78 decide; Migdol
   Мігдол to Мигдол (Numbers, Ezekiel), as Exodus; Aram-naharaim Нахараїм to
