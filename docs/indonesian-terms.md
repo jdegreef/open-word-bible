@@ -740,3 +740,6 @@ records it. Empty until the first book is drafted.
 | Joshua | Kohathites; Gershon; Merari | orang Kehat; Gerson; Merari | 21:4–7 |
 | Joshua | Anathoth; Almon; Kibzaim; Beeshterah | Anatot; Almon; Kibzaim; Beestera | 21:18–27 |
 | Joshua | Abdon; Hammoth-dor; Kartan; Kartah; Dimnah | Abdon; Hamot-Dor; Kartan; Karta; Dimna | 21:30–35 |
+| Joshua | breach of faith (*ma'al*) | *ketidaksetiaan*; *berlaku tidak setia* | 7:1; 22:16 |
+| Joshua | El, Elohim, YHWH (22:22) | *Yang Perkasa, Allah, {{divine_name:TUHAN\|Yahweh}}* | 22:22 |
+| Joshua | the altar named Witness | Saksi | 22:34 |
