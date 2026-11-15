@@ -707,3 +707,4 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | shrine prostitute (*qedeshah*, *qadesh*) | *pelacur bakti* (L, B) | 23:18 |
 | Deuteronomy | certificate of divorce | *surat cerai* | 24:1 |
 | Deuteronomy | pledge | *gadai*, *barang gadaian* | 24:6 |
+| Deuteronomy | levirate duty (*yibbem*) | *kewajiban ipar* | 25:5 |
