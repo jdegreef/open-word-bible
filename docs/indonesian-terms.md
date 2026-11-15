@@ -658,6 +658,37 @@ records it. Empty until the first book is drafted.
 | 1 Samuel | As the LORD lives (oath) | *Demi {{divine_name:TUHAN\|Yahweh}} yang hidup* | 14:39 |
 | 1 Samuel | Aijalon; Zobah | Ayalon; Zoba | 14:31, 47 |
 | 1 Samuel | Ishvi; Malki-shua; Merab; Ahinoam; Ahimaaz; Ner | Yiswi; Malkisua; Merab; Ahinoam; Ahimaas; Ner | 14:49–50 |
+| 1 Samuel | devote to destruction (*herem*) | *menumpas* (L, B); *membinasakan sama sekali, sebagai persembahan yang diserahkan kepada {{divine_name:TUHAN\|Yahweh}}* (R) | 15:3 |
+| 1 Samuel | Telaim; Kenites; Havilah; Shur; Agag | Telaim; orang Keni; Hawila; Syur; Agag | 15:4–8 |
+| 1 Samuel | wadi | *wadi* (L); *dasar sungai* (B, R) | 15:5 |
+| 1 Samuel | divination; household gods (*teraphim*) | *tenung*; *terafim* (L, B), *patung berhala keluarga* (R) | 15:23; 19:13 |
+| 1 Samuel | the Glory of Israel (title of God) | *Kemuliaan Israel* | 15:29 |
+| 1 Samuel | Eliab; Shammah | Eliab; Syama | 16:6, 9 |
+| 1 Samuel | an evil spirit from the LORD | *roh jahat dari {{divine_name:TUHAN\|Yahweh}}* | 16:14 |
+| 1 Samuel | Saul's servants to Saul; David to Saul and Achish | *tuanku* (L, B), *Baginda* (R); David *hambamu ini* (L), *saya* (B, R) | 16:15; 17:32; 27:5 |
+| 1 Samuel | Socoh; Azekah; Ephes-dammim; Valley of Elah; Shaaraim | Sokho; Azeka; Efes-Damim; Lembah Ela; Syaaraim | 17:1–2, 52 |
+| 1 Samuel | champion (man of the space between) | *jagoan* | 17:4 |
+| 1 Samuel | cubit and span; shekel; seah | `{{units:hampir tiga meter\|enam hasta sejengkal}}`; `{{units:sekitar 57 kilogram\|5.000 syikal}}`; `{{units:sekitar 36 liter\|lima sea}}` (B, R) | 17:4–5; 25:18 |
+| 1 Samuel | helmet; scale armor; greaves; javelin | *ketopong*; *baju zirah bersisik*; *pelindung kaki*; *lembing* | 17:5–6 |
+| 1 Samuel | sling | *umban* | 17:40 |
+| 1 Samuel | Adriel the Meholathite | Adriel, orang Mehola | 18:19 |
+| 1 Samuel | bride-price; foreskins | *mas kawin*; *kulit khatan* | 18:25 |
+| 1 Samuel | Naioth; Secu | Nayot; Sekhu | 19:18, 22 |
+| 1 Samuel | new moon (festival); the stone Ezel | *bulan baru* (L), *perayaan bulan baru* (B, R); batu Ezel | 20:5, 19 |
+| 1 Samuel | Nob; Ahimelech; Doeg the Edomite; Achish | Nob; Ahimelekh; Doeg, orang Edom; Akhis | 21:2, 8, 11 |
+| 1 Samuel | cave of Adullam; forest of Hereth; tamarisk | gua Adulam; hutan Heret; *pohon tamariska* | 22:1, 5–6 |
+| 1 Samuel | Keilah; Ziph, Ziphites; Horesh; Hachilah; Jeshimon; Maon; Arabah | Kehila; Zif, orang-orang Zif; Horesy; Hakhila; Yesimon; Maon; Araba | 23:1, 14–24 |
+| 1 Samuel | Sela-hammahlekoth | Sela-Hamahlekot | 23:28 |
+| 1 Samuel | En-gedi; Rocks of the Wild Goats | En-Gedi; Bukit-bukit Batu Kambing Hutan | 24:1, 3 |
+| 1 Samuel | Nabal; Calebite; Palti; Laish; Gallim | Nabal; keturunan Kaleb; Palti; Lais; Galim | 25:3, 44 |
+| 1 Samuel | one who urinates against a wall (a male) | *seorang pun yang kencing di dinding* (L); *seorang laki-laki pun* (B, R) | 25:22 |
+| 1 Samuel | Abishai; Zeruiah; Joab; Ahimelech the Hittite | Abisai; Zeruya; Yoab; Ahimelekh, orang Het | 26:6 |
+| 1 Samuel | Maoch; Ziklag; Geshurites; Gizrites; Negev; Jerahmeelites | Maokh; Ziklag; orang Gesur; orang Gizri; Tanah Negeb; orang Yerahmeel | 27:2–10 |
+| 1 Samuel | mediums and spiritists | *para pemanggil arwah dan para pemanggil roh* | 28:3 |
+| 1 Samuel | Shunem; Gilboa; Endor | Sunem; gunung Gilboa; En-Dor | 28:4, 7 |
+| 1 Samuel | Aphek; Wadi Besor | Afek; Wadi Besor (L), lembah Besor (B, R) | 29:1; 30:9 |
+| 1 Samuel | Ramoth of the Negev; Jattir; Aroer; Siphmoth; Eshtemoa; Racal; Hormah; Bor-ashan; Athach | Ramot di Tanah Negeb; Yatir; Aroer; Sifmot; Estemoa; Rakhal; Horma; Bor-Asan; Atakh | 30:27–30 |
+| 1 Samuel | Beth-shan | Bet-Sean | 31:10 |
 | Jonah | Amittai | Amitai | 1:1 |
 | Jonah | Joppa (Hebrew *Yafo*) | Yope | 1:3 |
 | Jonah | captain (*rav hachovel*) | *kepala para pelaut* (L); *nakhoda* (B, R) | 1:6 |
