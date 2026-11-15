@@ -692,3 +692,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | contribution, gift set apart (*terumah*) | *persembahan khusus* | 12:6 |
 | Deuteronomy | gazelle; deer | *kijang*; *rusa* | 12:15 |
 | Deuteronomy | worthless men (*bene beliyyaʿal*) | *orang-orang dursila* (L, B); *orang jahat* (R) | 13:14 |
+| Deuteronomy | the clean and unclean animals and birds | by the English identification: *rusa kecil*, *kambing gunung*, *marmot batu*, *nasar*, *elang*, *alap-alap*, *burung hantu*, *pecuk*, *bangau*, *kuntul*, *burung hudhud* | 14:5–18 |
+| Deuteronomy | strong drink (*shekar*) | *minuman keras* | 14:26 |
