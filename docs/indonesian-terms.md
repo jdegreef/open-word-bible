@@ -642,3 +642,6 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 1 Thessalonians | the tempter | *si penggoda* (L, B); *Iblis* (R) | 3:5 |
+| 1 Thessalonians | archangel | *penghulu malaikat* (L, B); *pemimpin para malaikat* (R) | 4:16 |
+| 1 Thessalonians | the coming (*parousia*) | *kedatangan* | 2:19 |
