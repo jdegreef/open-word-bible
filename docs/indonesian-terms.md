@@ -700,3 +700,5 @@ records it. Empty until the first book is drafted.
 | Exodus | interest (*neshekh*) | *bunga* (not *riba*) | 22:24 |
 | Exodus | Feast of Harvest; Feast of Ingathering | *Hari Raya Panen*; *Hari Raya Pengumpulan Hasil* | 23:16 |
 | Exodus | hornet (*tsir*a) | *tawon* (uncertain) | 23:28 |
+| Exodus | sapphire | *batu nilam* | 24:10 |
+| Exodus | Joshua as servant (*mesharet*) | *abdi* (L, B); *pembantu* (R) | 24:13 |
