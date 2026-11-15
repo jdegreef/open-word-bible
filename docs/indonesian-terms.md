@@ -642,3 +642,6 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Colossians | barbarian; Scythian | *orang barbar*; *orang Skit* | 3:11 |
+| Colossians | Jesus called Justus | Yesus yang disebut Yustus | 4:11 |
+| Colossians | Nympha | Nimfa | 4:15 |
