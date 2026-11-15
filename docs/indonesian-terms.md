@@ -713,3 +713,4 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Mount Nebo; the Abarim range | gunung Nebo; pegunungan Abarim | 32:49 |
 | Deuteronomy | Mount Hor; waters of Meribah; wilderness of Zin | gunung Hor; mata air Meriba; padang gurun Zin | 32:50–51 |
 | Deuteronomy | Hoshea (Joshua) | Hosea (L) | 32:44 |
+| Deuteronomy | Zoar; the city of palm trees | Zoar; kota pohon kurma | 34:3 |
