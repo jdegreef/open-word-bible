@@ -642,3 +642,12 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Revelation | the one who overcomes | *siapa yang menang* | 2:7 |
+| Revelation | paradise | *Taman Firdaus* | 2:7 |
+| Revelation | synagogue of Satan | *jemaah Iblis* | 2:9 |
+| Revelation | Root of David | *Tunas Daud* | 5:5 |
+| Revelation | choenix | *khoinix* (L); {{units:liter\|khoinix}} (B, R) | 6:6 |
+| Revelation | Wormwood | Apsintus | 8:11 |
+| Revelation | abyss | *jurang maut* (L, B); *lubang yang tidak berdasar* (R) | 9:1 |
+| Revelation | tent of witness | *Kemah Kesaksian* | 15:5 |
+| Revelation | the twelve foundation stones | yaspis, nilam, mirah, zamrud, unam, akik merah, krisolit, beril, topas, krisopras, lazuardi, kecubung | 21:19–20 |
