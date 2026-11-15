@@ -642,3 +642,10 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 2 Timothy | Phygelus; Hermogenes | Figelus; Hermogenes | 1:15 |
+| 2 Timothy | Philetus | Filetus | 2:17 |
+| 2 Timothy | Jannes; Jambres | Yanes; Yambres | 3:8 |
+| 2 Timothy | breathed out by God | *diilhamkan Allah* (L); *dihembuskan oleh Allah* (B) | 3:16 |
+| 2 Timothy | Crescens; Dalmatia | Kreskes; Dalmatia | 4:10 |
+| 2 Timothy | Carpus | Karpus | 4:13 |
+| 2 Timothy | Eubulus; Pudens; Linus; Claudia | Eubulus; Pudens; Linus; Klaudia | 4:21 |
