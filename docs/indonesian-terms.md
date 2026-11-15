@@ -792,3 +792,44 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Isaiah | Amoz | Amos (not the prophet Amos) | 1:1 |
+| Isaiah | the Mighty One of Israel | Yang Mahakuat dari Israel | 1:24 |
+| Isaiah | Remaliah | Remalya | 7:1 |
+| Isaiah | Shear-jashub | Syear-Yasyub | 7:3 |
+| Isaiah | Upper Pool; Fuller's Field | Kolam Atas; Ladang Tukang Penatu | 7:3 |
+| Isaiah | Tabeel | Tabeel | 7:6 |
+| Isaiah | Maher-shalal-hash-baz | Maher-Syalal-Hasy-Bas | 8:1 |
+| Isaiah | Jeberekiah; prophetess | Yeberekhya; *nabiah* | 8:2–3 |
+| Isaiah | Shiloah | Siloah | 8:6 |
+| Isaiah | spirits of the dead (*'ob*); shades (*rephaim*) | *arwah*; *roh-roh orang mati* (L), *orang-orang mati* (B, R) | 8:19; 14:9 |
+| Isaiah | Calno; Carchemish | Kalno; Karkemis | 10:9 |
+| Isaiah | Aiath; Migron; Michmash | Ayat; Migron; Mikhmas | 10:28 |
+| Isaiah | Geba; Gibeah of Saul | Geba; Gibea-Saul | 10:29 |
+| Isaiah | Gallim; Laishah; Anathoth | Galim; Laisa; Anatot | 10:30 |
+| Isaiah | Madmenah; Gebim; Nob | Madmena; Gebim; Nob | 10:31–32 |
+| Isaiah | Pathros; Shinar | Patros; Sinear (L, B), Babilonia (R) | 11:11 |
+| Isaiah | oracle (*massa*, title) | *Nubuat* (L, B); *pesan* (R) | 13:1 |
+| Isaiah | Ophir | Ofir | 13:12 |
+| Isaiah | Zaphon | Zafon (L, B); *jauh di utara* (R) | 14:13 |
+| Isaiah | Ar; Kir (of Moab) | Ar; Kir | 15:1 |
+| Isaiah | Luhith; Eglath-shelishiyah | Luhit; Eglat-Syelisyia | 15:5 |
+| Isaiah | Nimrim; Wadi of the Poplars | Nimrim; Sungai Gandarusa (L, B), Lembah Pohon Gandarusa (R) | 15:6–7 |
+| Isaiah | Eglaim; Beer-elim; Dimon | Eglaim; Beer-Elim; Dimon | 15:8–9 |
+| Isaiah | Kir-heres | Kir-Heres | 16:11 |
+| Isaiah | Zoan; Noph | Zoan; Nof (L), Memfis (B, R) | 19:11, 13 |
+| Isaiah | City of Destruction | Kota Kebinasaan | 19:18 |
+| Isaiah | Sargon; commander-in-chief (*tartan*) | Sargon; Tartan (L), *panglima tertinggi* (B) | 20:1 |
+| Isaiah | wilderness of the sea | *padang gurun di tepi laut* | 21:1 |
+| Isaiah | Dumah; Dedan; Tema; Kedar | Duma; Dedan; Tema; Kedar | 21:11–16 |
+| Isaiah | valley of vision | Lembah Penglihatan | 22:1 |
+| Isaiah | House of the Forest | Gedung Hutan | 22:8 |
+| Isaiah | Shihor; Kittim | Sihor; Kitim (L, B), Siprus (R) | 23:1–3 |
+| Isaiah | Upright One (God) | Yang Mahalurus | 26:7 |
+| Isaiah | Leviathan; sea monster (*tannin*) | Lewiatan; *naga* | 27:1 |
+| Isaiah | Wadi of Egypt | Sungai Mesir | 27:12 |
+| Isaiah | tsav latsav, qav laqav | *tsav latsav, qav laqav* (kept as sounds) | 28:10 |
+| Isaiah | spelt | *sekoi* | 28:25 |
+| Isaiah | Ariel | Ariel | 29:1 |
+| Isaiah | Hanes; Rahab (Egypt) | Hanes; Rahab | 30:4, 7 |
+| Isaiah | Topheth | Tofet | 30:33 |
+| Isaiah | Ophel | Ofel | 32:14 |
