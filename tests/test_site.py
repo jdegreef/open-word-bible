@@ -262,10 +262,54 @@ class SiteTest(unittest.TestCase):
             self.assertNotIn("{{", notes)
         # A note spans chapters as the reader's verse ranges do.
         self.assertIn('<span class="note-ref">7:53–8:1</span>', self.notes_section("jhn/8"))
-        # Meaning notes are written in English; another language's page says
-        # so where a note is not translated (Indonesian has no notes yet).
-        self.assertIn('<span class="note-text"><span lang="en">', self.notes_section("id/jhn/4"))
+        # English notes are English: nothing on an English page says so.
         self.assertNotIn('lang="en"', self.notes_section("jhn/3"))
+
+    def test_untranslated_note_falls_back_to_english(self):
+        # Meaning notes are written in English; another language's page shows
+        # the English where a note is not translated, and says it is English.
+        # Built from John 3 with French notes patched to cover only one of
+        # its notes, so it doesn't depend on which languages lack notes.
+        records = build_site.load_chapter("JHN", 3)[0]
+        meaning = [(r, d) for r in records for d in build_site.footnote_decisions(r, "fr")
+                   if d["layer"] == "meaning"]
+        self.assertGreaterEqual(len(meaning), 2)
+        (r1, d1), (r2, d2) = meaning[:2]
+        fake = {r1["id"]: {d1["id"]: {"choice": "TRADUIT", "alternatives": [], "reason": "raison"}}}
+        with mock.patch.object(build_site, "book_notes", return_value=fake):
+            section = build_site.chapter_notes(records, 3, "fr")
+        notes = [(r["id"], d["id"]) for r in records for d in build_site.footnote_decisions(r, "fr")]
+        listed = re.findall(r"<li>.*?</li>", section, re.S)
+        self.assertEqual(len(listed), len(notes))
+        items = dict(zip(notes, listed))
+        english = html.escape(build_site.markup.render(d2["choice"]), quote=False)
+        self.assertIn(f'<span class="note-text"><span lang="en">{english}</span>',
+                      items[r2["id"], d2["id"]])
+        # The translated one is in French, and not marked English.
+        self.assertIn('<span class="note-text">TRADUIT', items[r1["id"], d1["id"]])
+        self.assertNotIn('lang="en"', items[r1["id"], d1["id"]].split('class="note-article"')[0])
+
+    def test_built_page_marks_an_untranslated_note_english(self):
+        # The same on a real page of the built site, if one has a meaning
+        # note not yet translated into its language.
+        for lang in build_site.LANGUAGES:
+            if lang == "en":
+                continue
+            for book, chapters in build_site.books(lang):
+                for p in chapters:
+                    records = build_site.load_chapter(book, p.chapter)[0]
+                    translated = build_site.page_notes(records, lang)
+                    for r in records:
+                        for d in build_site.footnote_decisions(r, lang):
+                            if d["layer"] != "meaning" or translated.get(r["id"], {}).get(d["id"]):
+                                continue
+                            path = build_site.url(lang, p.url).strip("/")
+                            english = html.escape(build_site.markup.render(d["choice"]), quote=False)
+                            self.assertIn(f'<span class="note-text"><span lang="en">{english}</span>',
+                                          self.notes_section(path), path)
+                            return
+        self.skipTest("every meaning note is translated on every page; "
+                      "test_untranslated_note_falls_back_to_english covers the fallback")
 
     def test_footnote_text_follows_the_reader(self):
         # build_site.note_html() writes what reader.js's noteText() writes.
