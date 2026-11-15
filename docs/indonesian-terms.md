@@ -723,3 +723,21 @@ records it. Empty until the first book is drafted.
 | Exodus | horns of the altar | *tanduk-tanduk* | 27:2 |
 | Exodus | grating; ledge | *kisi-kisi*; *birai* | 27:4–5 |
 | Exodus | hangings (of the court); bands | *layar*; *simpai* | 27:9–10 |
+| Exodus | robe; tunic; turban; sash; caps; undergarments | *jubah*; *kemeja*; *serban*; *ikat pinggang*; *ikat kepala*; *celana* | 28:4; 28:40–42 |
+| Exodus | shoulder pieces; woven band (of the ephod) | *tutup bahu* (L, B), *tali bahu* (R); *sabuk tenunan* | 28:7–8 |
+| Exodus | breastpiece of judgment | *tutup dada keputusan* (L, B) | 28:15 |
+| Exodus | span | *jengkal*; `{{units:sekitar 22 sentimeter\|satu jengkal}}` (B, R) | 28:16 |
+| Exodus | the twelve stones | *sardis, topas, beril; pirus, nilam, zamrud; yakut, akik, kecubung; krisolit, oniks, yaspis* (uncertain) | 28:17–20 |
+| Exodus | bells; pomegranates | *giring-giring*; *buah delima* | 28:33 |
+| Exodus | gold plate (*tsits*) | *lempeng emas* | 28:36 |
+| Exodus | fill the hand (ordain) | *mengisi tangan* (L); *menahbiskan* (B, R) | 28:41 |
+| Exodus | between the evenings | *di antara kedua senja* (L); *menjelang malam* (B); *ketika matahari terbenam* (R) | 29:39 |
+| Exodus | ransom (*kopher*); census | *tebusan*; *cacah jiwa* (B) | 30:12 |
+| Exodus | myrrh; cinnamon; fragrant cane; cassia | *mur tetesan*; *kayu manis*; *tebu harum*; *kayu teja* | 30:23–24 |
+| Exodus | stacte; onycha; galbanum | *getah damar*; *kulit lokan*; *getah rasamala* (uncertain) | 30:34 |
+| Exodus | Bezalel; Uri; Oholiab; Ahisamach | Bezalel; Uri; Oholiab; Ahisamakh | 31:2; 31:6 |
+| Exodus | stiff-necked | *tegar tengkuk* (L, B); *keras kepala* (R) | 32:9 |
+| Exodus | Jealous (as a name) | *Cemburuan* (uncertain) | 34:14 |
+| Exodus | the Ten Words | *kesepuluh firman* (L); *Sepuluh Firman* (B); *Sepuluh Perintah* (R) | 34:28 |
+| Exodus | veil (of Moses) | *selubung* (L, B); *kain* (R) | 34:33 |
+| Exodus | beka; talent (metric) | `{{units:sekitar enam gram\|satu beka}}`; `{{units:sekitar 34 kilogram\|satu talenta}}` | 38:26; 25:39 |
