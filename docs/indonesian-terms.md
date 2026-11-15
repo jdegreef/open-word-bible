@@ -672,3 +672,9 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Chinnereth; Pisgah | Kineret; Pisga | 3:17 |
 | Deuteronomy | rest (God gives, *heniach*) | *keamanan* | 3:20 |
 | Deuteronomy | Beth-peor | Bet-Peor | 3:29 |
+| Deuteronomy | statutes; rulings (*huqqim*; *mishpatim*); testimonies (*'edot*) | *ketetapan*; *peraturan*; *ketentuan* (L, B); *hukum dan peraturan* (R) | 4:1; 4:45 |
+| Deuteronomy | Baal-peor | Baal-Peor | 4:3 |
+| Deuteronomy | the Ten Words | *sepuluh firman* (L); *Sepuluh Firman* (B); *Sepuluh Perintah* (R) | 4:13 |
+| Deuteronomy | with all your heart and with all your soul | *dengan seluruh hatimu dan dengan seluruh jiwamu* (L, B); *dengan sepenuh hati dan dengan seluruh diri* (R) | 4:29 |
+| Deuteronomy | Bezer; Ramoth (in Gilead); Golan; Manassites | Bezer; Ramot; Golan; orang Manasye | 4:43 |
+| Deuteronomy | Mount Siyon (Hermon) | gunung Siyon | 4:48 |
