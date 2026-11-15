@@ -792,3 +792,6 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Haggai | Jehozadak | Yehozadak (Ezra 3:2 has *Yozadak* for the shorter Hebrew form) | 1:1 |
+| Haggai | governor (*pechah*) | *bupati*, as Ezra and Nehemiah | 1:1 |
+| Haggai | signet ring | *cincin meterai* | 2:23 |
