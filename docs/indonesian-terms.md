@@ -680,3 +680,7 @@ records it. Empty until the first book is drafted.
 | Exodus | Etham | Etam | 13:20 |
 | Exodus | pillar of cloud; pillar of fire | *tiang awan*; *tiang api* | 13:21 |
 | Exodus | Pi-hahiroth; Migdol; Baal-zephon | Pi-Hahirot; Migdol; Baal-Zefon | 14:2 |
+| Exodus | prophetess | *nabiah* | 15:20 |
+| Exodus | wilderness of Shur | padang gurun Syur | 15:22 |
+| Exodus | Marah; Elim | Mara; Elim | 15:23; 15:27 |
+| Exodus | grumble (*lun*) | *bersungut-sungut* (L, B); *mengomel* (R) | 15:24 |
