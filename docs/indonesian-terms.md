@@ -669,3 +669,6 @@ records it. Empty until the first book is drafted.
 | Exodus | Pharaoh's heart: strong; heavy; hard | *keras*; *berat* (L), *degil* (B); *mengeraskan*; *keras kepala* (R) | 7:13–14 |
 | Exodus | gnats (*kinnim*) | *agas* | 8:12 |
 | Exodus | the swarm (*arov*) | *kawanan lalat* | 8:17 |
+| Exodus | boils; blisters | *bisul*; *lepuh* | 9:9 |
+| Exodus | flax | *rami* | 9:31 |
+| Exodus | spelt | *gandum spelt* (uncertain) | 9:32 |
