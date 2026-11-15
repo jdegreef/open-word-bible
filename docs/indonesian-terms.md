@@ -646,3 +646,8 @@ records it. Empty until the first book is drafted.
 | Exodus | officers of forced labor (taskmasters) | *mandor kerja paksa* | 1:11 |
 | Exodus | Shiphrah; Puah | Sifra; Pua | 1:15 |
 | Exodus | midwife | *bidan* | 1:15 |
+| Exodus | Reuel | Rehuel | 2:18 |
+| Exodus | Gershom | Gersom | 2:22 |
+| Exodus | Jether (short form of Jethro) | Yeter (L); Yitro (B, R) | 4:18 |
+| Exodus | bridegroom of blood | *pengantin darah* (L, B); *suami karena darah* (R) | 4:25 |
+| Exodus | I AM WHO I AM; I AM | *AKU ADALAH AKU*; *AKU* (no deity_pronoun span) | 3:14 |
