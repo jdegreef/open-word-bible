@@ -696,3 +696,7 @@ records it. Empty until the first book is drafted.
 | Exodus | special possession (*segullah*) | *milik-Ku sendiri* (L); *harta-Ku yang istimewa* (B, R) | 19:5 |
 | Exodus | kingdom of priests; holy nation | *kerajaan imam*; *bangsa yang kudus* | 19:6 |
 | Exodus | kiln | *tanur* | 19:18 |
+| Exodus | bride-price (*mohar*) | *mas kawin* | 22:15 |
+| Exodus | interest (*neshekh*) | *bunga* (not *riba*) | 22:24 |
+| Exodus | Feast of Harvest; Feast of Ingathering | *Hari Raya Panen*; *Hari Raya Pengumpulan Hasil* | 23:16 |
+| Exodus | hornet (*tsir*a) | *tawon* (uncertain) | 23:28 |
