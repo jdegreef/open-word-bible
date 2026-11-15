@@ -83,6 +83,11 @@
           "L": "あなたがたは、こう言われたと聞いている。『目には目を、歯には歯を。』",
           "B": "あなたがたは、こう言い渡されたことを聞いている。『目には目を、歯には歯を。』",
           "R": "あなたたちは、神の律法でこう教えられたことを聞いている。『罰は受けた害と同じでなければならない。目には目を、歯には歯を。』"
+        },
+        "id": {
+          "L": "Kalian telah mendengar bahwa telah dikatakan, 'Mata ganti mata dan gigi ganti gigi.'",
+          "B": "Kalian telah mendengar perkataan, 'Mata ganti mata, gigi ganti gigi.'",
+          "R": "Kalian sudah mendengar perkataan, 'Mata ganti mata, gigi ganti gigi.'"
         }
       },
       "decisions": [
@@ -309,6 +314,11 @@
           "L": "しかしこのわたしは、あなたがたに言う。悪い者に立ち向かわないように。むしろ、あなたの右の頬を平手で打つ者がいれば、その人にもう一方の[頬]も向けなさい。",
           "B": "しかし、わたしがあなたがたに言うのは、こうである。悪を行う者にやり返してはならない。だれかがあなたの右の頬を平手で打つなら、その人にもう一方の頬も差し出しなさい。",
           "R": "でも、わたしはあなたたちにこう言う。あなたにひどいことをする人に、仕返しをしてはいけない。だれかがあなたの顔の右側をたたいたら、反対側もたたかせなさい。"
+        },
+        "id": {
+          "L": "Tetapi {{deity_pronoun:aku|Aku}} berkata kepada kalian, janganlah melawan orang yang jahat; tetapi siapa pun yang menampar pipi kananmu, berikanlah juga kepadanya pipi yang lain.",
+          "B": "Tetapi {{deity_pronoun:aku|Aku}} berkata kepada kalian, janganlah melawan orang yang berbuat jahat kepadamu. Siapa pun yang menampar pipi kananmu, berikanlah juga pipimu yang lain kepadanya.",
+          "R": "Tetapi {{deity_pronoun:aku|Aku}} berkata kepada kalian: jangan membalas orang yang berbuat jahat kepadamu. Kalau ada orang yang menampar pipi kananmu, biarkan dia menampar pipi kirimu juga."
         }
       },
       "decisions": [
@@ -780,6 +790,11 @@
           "L": "また、あなたと裁判で争って、あなたの肌着を取ろうと望む者には、外衣も渡してやりなさい。",
           "B": "だれかがあなたを裁判に訴えて肌着を取ろうとするなら、その人に外套も渡しなさい。",
           "R": "だれかがあなたを裁判に訴えて、シャツを取ろうとするなら、その人にコートもあげなさい。"
+        },
+        "id": {
+          "L": "Dan kepada orang yang hendak mengadukan engkau dan mengambil bajumu, serahkanlah juga jubahmu kepadanya.",
+          "B": "Kalau seseorang hendak membawamu ke pengadilan untuk mengambil bajumu, berikanlah juga jubahmu kepadanya.",
+          "R": "Kalau ada orang yang mau menuntut kamu di pengadilan untuk mengambil bajumu, berikan juga jubahmu kepadanya."
         }
       },
       "decisions": [
@@ -1059,6 +1074,11 @@
           "L": "また、だれかがあなたに一ミリオン[行くように]強いるなら、その人と一緒に二[ミリオン]行きなさい。",
           "B": "だれかがあなたに、{{units:約1.5キロメートル|一ミリオン}}荷物を運ぶよう無理に命じるなら、その人と一緒に{{units:約3キロメートル|二ミリオン}}行きなさい。",
           "R": "兵士があなたに、荷物を{{units:約1.5キロメートル|一ミリオン}}運べと命じたら、{{units:約3キロメートル|二ミリオン}}運んであげなさい。"
+        },
+        "id": {
+          "L": "Dan siapa pun yang memaksa engkau berjalan satu mil, berjalanlah bersama dia dua [mil].",
+          "B": "Kalau seseorang memaksamu memikul beban sejauh {{units:satu setengah kilometer|satu mil}}, berjalanlah bersama dia sejauh {{units:tiga kilometer|dua mil}}.",
+          "R": "Kalau seorang tentara memaksa kamu membawa barangnya sejauh {{units:satu setengah kilometer|satu mil}}, bawalah barang itu sejauh {{units:tiga kilometer|dua mil}}."
         }
       },
       "decisions": [
@@ -1320,6 +1340,33 @@
           "reason": "The English can say mile with no span because a US mile is close to a Roman one (m2). Japanese readers count in kilometers, so Balanced and Readable give the distance in metric by default with the Roman mile as the alternative; Literal keeps ミリオン.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005041001",
+            "n40005041002",
+            "n40005041003",
+            "n40005041004",
+            "n40005041005",
+            "n40005041006",
+            "n40005041007",
+            "n40005041008",
+            "n40005041009",
+            "n40005041010"
+          ],
+          "choice": "{{units:satu setengah kilometer|satu mil}} (B, R); \"mil\" (L)",
+          "alternatives": [],
+          "reason": "As the style guide sets for units (section 8): metric by default, the original unit as the alternative; the Roman mile was about one and a half kilometres. Literal keeps \"mil\" with no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1409,6 +1456,11 @@
           "L": "あなたに願う者には与えなさい。また、あなたから借りたいと望む者から顔をそむけてはならない。",
           "B": "頼んでくる人にはだれにでも与えなさい。借りたいと言ってくる人を、追い返してはならない。",
           "R": "何かを求めてくる人には、だれにでもあげなさい。あなたから借りたいと言う人に、貸すのを断ってはいけない。"
+        },
+        "id": {
+          "L": "Berilah kepada orang yang meminta kepadamu, dan janganlah menolak orang yang mau meminjam dari padamu.",
+          "B": "Berilah kepada setiap orang yang meminta kepadamu, dan jangan berpaling dari orang yang ingin meminjam darimu.",
+          "R": "Berilah kepada orang yang meminta sesuatu darimu. Jangan menolak orang yang mau meminjam sesuatu darimu."
         }
       },
       "decisions": [
@@ -1527,6 +1579,11 @@
           "L": "あなたがたは、こう言われたと聞いている。『あなたの隣人を愛し、あなたの敵を憎まなければならない。』",
           "B": "あなたがたは、こう言い渡されたことを聞いている。『隣人を愛し、敵を憎みなさい。』",
           "R": "あなたたちは、人々がこう言うのを聞いている。『隣人を愛しなさい。そして、敵を憎みなさい。』"
+        },
+        "id": {
+          "L": "Kalian telah mendengar bahwa telah dikatakan, 'Kasihilah sesamamu dan bencilah musuhmu.'",
+          "B": "Kalian telah mendengar perkataan, 'Kasihilah sesamamu manusia dan bencilah musuhmu.'",
+          "R": "Kalian sudah mendengar perkataan, 'Kasihilah sesamamu dan bencilah musuhmu.'"
         }
       },
       "decisions": [
@@ -1765,6 +1822,11 @@
           "L": "しかしこのわたしは、あなたがたに言う。あなたがたの敵を愛し、あなたがたを迫害する者たちのために祈りなさい。",
           "B": "しかし、わたしがあなたがたに言うのは、こうである。あなたがたの敵を愛しなさい。あなたがたを迫害する人々のために祈りなさい。",
           "R": "でも、わたしはあなたたちにこう言う。あなたたちの敵を愛しなさい。あなたたちを苦しめる人たちのために祈りなさい。"
+        },
+        "id": {
+          "L": "Tetapi {{deity_pronoun:aku|Aku}} berkata kepada kalian, kasihilah musuh-musuh kalian dan berdoalah bagi mereka yang menganiaya kalian,",
+          "B": "Tetapi {{deity_pronoun:aku|Aku}} berkata kepada kalian: kasihilah musuh-musuh kalian, dan berdoalah bagi orang-orang yang menganiaya kalian,",
+          "R": "Tetapi {{deity_pronoun:aku|Aku}} berkata kepada kalian: kasihilah musuh-musuh kalian. Berdoalah bagi orang-orang yang menyakiti kalian,"
         }
       },
       "decisions": [
@@ -1909,6 +1971,11 @@
           "L": "それは、あなたがたが、天におられるあなたがたの父の子らとなるためである。なぜなら、[父は]ご自分の太陽を悪い者たちと善い者たちの上に昇らせ、正しい者たちと不正な者たちの上に雨を降らせられるからである。",
           "B": "そうすれば、あなたがたは天におられるあなたがたの父の子どもとなる。父は、悪い人の上にも良い人の上にも、ご自分の太陽を同じように昇らせ、正しいことをする人にも間違ったことをする人にも雨を送ってくださる。",
           "R": "そうすれば、あなたたちが天におられる父の子どもであることがわかる。父は、悪い人にも良い人にも、太陽の光を注いでくださる。正しいことをする人にも、悪いことをする人にも、雨を降らせてくださる。"
+        },
+        "id": {
+          "L": "supaya kalian menjadi anak-anak Bapa kalian yang di surga, karena {{deity_pronoun:dia|Dia}} menerbitkan matahari-{{deity_pronoun:nya|Nya}} atas orang yang jahat dan orang yang baik, dan menurunkan hujan atas orang yang benar dan orang yang tidak benar.",
+          "B": "supaya kalian menjadi anak-anak Bapa kalian di surga. Dia menerbitkan matahari-{{deity_pronoun:nya|Nya}} bagi orang jahat dan orang baik, dan {{deity_pronoun:dia|Dia}} menurunkan hujan bagi orang yang benar dan orang yang tidak benar.",
+          "R": "supaya kalian menjadi anak-anak Bapa kalian di surga. Dia membuat matahari-{{deity_pronoun:nya|Nya}} terbit untuk orang jahat dan orang baik. Dia juga menurunkan hujan untuk orang yang berbuat benar dan orang yang berbuat salah."
         }
       },
       "decisions": [
@@ -2313,6 +2380,11 @@
           "L": "というのは、もしあなたがたが、あなたがたを愛する者たちを愛したとして、どんな報いを持つのか？",
           "B": "自分を愛してくれる人を愛したところで、何の報いがあるだろうか？",
           "R": "自分を愛してくれる人だけを愛しても、どうして神がそのことであなたたちにほうびをくださるだろうか？"
+        },
+        "id": {
+          "L": "Sebab jika kalian mengasihi orang yang mengasihi kalian, upah apakah yang kalian peroleh?",
+          "B": "Jika kalian mengasihi orang yang mengasihi kalian, upah apa yang kalian dapat?",
+          "R": "Kalau kalian hanya mengasihi orang yang mengasihi kalian, apa upah kalian dari Allah?"
         }
       },
       "decisions": [
@@ -2484,6 +2556,11 @@
           "L": "徴税人たちも同じことをしているではないか？",
           "B": "それくらいのことなら、徴税人でもしているではないか？",
           "R": "税金を集める人たちでさえ、同じことをしている。"
+        },
+        "id": {
+          "L": "Bukankah pemungut cukai juga berbuat demikian?",
+          "B": "Bukankah pemungut cukai pun berbuat demikian?",
+          "R": "Penagih pajak juga berbuat begitu, bukan?"
         }
       },
       "decisions": [
@@ -2691,6 +2768,31 @@
           "reason": "\"Митар\" is the traditional word but no longer says what these men did; Balanced and Readable name their work.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005046010",
+            "n40005046011",
+            "n40005046012",
+            "n40005046013",
+            "n40005046014",
+            "n40005046015",
+            "n40005046016"
+          ],
+          "choice": "\"pemungut cukai\" (L, B); \"penagih pajak\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's levels for tax collectors, for the whole of Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2778,6 +2880,11 @@
           "L": "また、もしあなたがたが自分の{{gender:きょうだいたち|兄弟たち}}だけにあいさつするとして、何か余分なことをしているのか？",
           "B": "また、自分の{{gender:きょうだいたち|兄弟たち}}にだけあいさつしたところで、どれほど人にまさることをしているというのか？",
           "R": "自分の家族や仲間にだけ親しくしても、ほかのだれもがすることと何も変わらない。"
+        },
+        "id": {
+          "L": "Dan jika kalian hanya memberi salam kepada saudara-saudara kalian saja, apakah yang lebih dari kalian lakukan?",
+          "B": "Dan jika kalian hanya memberi salam kepada saudara-saudara kalian, apa yang kalian lakukan lebih dari orang lain?",
+          "R": "Kalau kalian hanya memberi salam kepada saudara-saudara kalian, apa istimewanya perbuatan kalian?"
         }
       },
       "decisions": [
@@ -3034,6 +3141,11 @@
           "L": "異邦人たちも同じことをしているではないか？",
           "B": "それくらいのことなら、異邦人でもしているではないか？",
           "R": "神を知らない人たちでさえ、そうしている。"
+        },
+        "id": {
+          "L": "Bukankah bangsa-bangsa juga berbuat demikian?",
+          "B": "Bukankah orang bukan Yahudi pun berbuat demikian?",
+          "R": "Orang yang tidak mengenal Allah juga berbuat begitu, bukan?"
         }
       },
       "decisions": [
@@ -3284,6 +3396,11 @@
           "L": "それゆえ、あなたがたは完全な者となる[べきである]。あなたがたの天の父が完全であるように。",
           "B": "だから、あなたがたは完全でなければならない。天におられるあなたがたの父が完全であるのと同じように。",
           "R": "だから、あなたたちは完全でなければならない。天におられるあなたたちの父が完全なのと同じだ。"
+        },
+        "id": {
+          "L": "Karena itu haruslah kalian sempurna, sama seperti Bapa kalian yang di surga sempurna.",
+          "B": "Karena itu, kalian harus sempurna, sama seperti Bapa kalian yang di surga sempurna.",
+          "R": "Jadi kalian harus sempurna, sama seperti Bapa kalian di surga sempurna."
         }
       },
       "decisions": [
