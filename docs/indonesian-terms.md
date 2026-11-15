@@ -696,3 +696,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | strong drink (*shekar*) | *minuman keras* | 14:26 |
 | Deuteronomy | release (*shemittah*) | *penghapusan utang* | 15:1 |
 | Deuteronomy | awl | *penusuk* | 15:17 |
+| Deuteronomy | month of Abib | bulan Abib | 16:1 |
+| Deuteronomy | solemn assembly (*ʿatseret*) | *perkumpulan raya* (L, B) | 16:8 |
