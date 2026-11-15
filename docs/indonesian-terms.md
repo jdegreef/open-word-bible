@@ -792,3 +792,5 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Habakkuk | shigionoth | Syigionot (L, B); *untuk dinyanyikan sebagai lagu* (R) | 3:1 |
+| Habakkuk | Teman; Cushan | Teman; Kusyan | 3:3, 7 |
