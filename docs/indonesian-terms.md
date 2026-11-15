@@ -950,3 +950,7 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | alamoth; sheminith | *alamot*; *syeminit* (L, B) | 15:20–21 |
 | 1 Chronicles | Chenaniah; Shebaniah; Jehiah | Kenanya; Syebanya; Yehia | 15:22–24 |
 | 1 Chronicles | ram's horn (*shofar*); trumpet (*hatsotsrah*) | *sangkakala*; *nafiri* | 15:28 |
+| 1 Chronicles | Tibhath; Cun; Tou; Hadoram (son of Tou) | Tibhat; Kun; Tou; Hadoram | 18:8–10 |
+| 1 Chronicles | Abimelech (son of Abiathar); Shavsha | Abimelekh; Syawsya | 18:16 |
+| 1 Chronicles | Aram-naharaim; Aram-maacah; Medeba | Aram-Naharaim; Aram-Maakha; Medeba | 19:6–7 |
+| 1 Chronicles | Shophach | Syofakh | 19:16 |
