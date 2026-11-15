@@ -652,3 +652,6 @@ records it. Empty until the first book is drafted.
 | Joshua | scarlet cord | *tali kirmizi* (L, B); *tali merah* (R) | 2:18 |
 | Joshua | Zarethan | Saretan | 3:16 |
 | Joshua | Hivites; Perizzites; Girgashites | orang Hewi; orang Feris; orang Girgasi | 3:10 |
+| Joshua | ark of the testimony | *tabut kesaksian* (L, B); *tabut tempat loh-loh batu perjanjian* (R) | 4:16 |
+| Joshua | circumcise; Hill of the Foreskins | *menyunat*; Bukit Kulit Khatan | 5:2–3 |
+| Joshua | commander of the army of the LORD | *panglima balatentara {{divine_name:TUHAN\|Yahweh}}* (L, B); *panglima pasukan {{divine_name:TUHAN\|Yahweh}}* (R) | 5:14 |
