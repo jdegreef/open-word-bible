@@ -642,3 +642,7 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| Exodus | Pithom; Rameses | Pitom; Raamses | 1:11 |
+| Exodus | officers of forced labor (taskmasters) | *mandor kerja paksa* | 1:11 |
+| Exodus | Shiphrah; Puah | Sifra; Pua | 1:15 |
+| Exodus | midwife | *bidan* | 1:15 |
