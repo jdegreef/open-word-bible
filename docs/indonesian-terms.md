@@ -702,3 +702,15 @@ records it. Empty until the first book is drafted.
 | Exodus | hornet (*tsir*a) | *tawon* (uncertain) | 23:28 |
 | Exodus | sapphire | *batu nilam* | 24:10 |
 | Exodus | Joshua as servant (*mesharet*) | *abdi* (L, B); *pembantu* (R) | 24:13 |
+| Exodus | contribution (*terumah*) | *persembahan khusus* | 25:2 |
+| Exodus | bronze | *tembaga* | 25:3 |
+| Exodus | blue, purple, scarlet yarn | *kain ungu kebiruan, kain ungu, kain kirmizi* (L); *benang biru, ungu, dan merah tua* (B, R) | 25:4 |
+| Exodus | fine linen | *lenan halus* | 25:4 |
+| Exodus | *tahash* skins | *kulit tahas* (L); *kulit halus* (B, R) (uncertain) | 25:5 |
+| Exodus | acacia wood | *kayu akasia* | 25:5 |
+| Exodus | onyx | *batu oniks* | 25:7 |
+| Exodus | overlay; molding | *menyalut* (L, B), *melapisi* (R); *bingkai* (L, B), *lis* (R) | 25:11 |
+| Exodus | carrying poles | *kayu pengusung* (L, B); *tongkat pengusung* (R) | 25:13 |
+| Exodus | cups, buds, blossoms (lampstand) | *kelopak*, *tombol*, *kembang* | 25:31 |
+| Exodus | almond | *badam* | 25:33 |
+| Exodus | cubit in metric (B, R) | `{{units:sekitar 45 sentimeter\|satu hasta}}`, rounded | 25:10 |
