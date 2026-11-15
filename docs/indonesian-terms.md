@@ -954,3 +954,6 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Abimelech (son of Abiathar); Shavsha | Abimelekh; Syawsya | 18:16 |
 | 1 Chronicles | Aram-naharaim; Aram-maacah; Medeba | Aram-Naharaim; Aram-Maakha; Medeba | 19:6–7 |
 | 1 Chronicles | Shophach | Syofakh | 19:16 |
+| 1 Chronicles | Sippai; Lahmi; Rapha (giants) | Sipai; Lahmi; Rafa | 20:4–8 |
+| 1 Chronicles | Satan (no article) | Satan | 21:1 |
+| 1 Chronicles | Ornan | Ornan | 21:15 |
