@@ -651,3 +651,16 @@ records it. Empty until the first book is drafted.
 | Exodus | Jether (short form of Jethro) | Yeter (L); Yitro (B, R) | 4:18 |
 | Exodus | bridegroom of blood | *pengantin darah* (L, B); *suami karena darah* (R) | 4:25 |
 | Exodus | I AM WHO I AM; I AM | *AKU ADALAH AKU*; *AKU* (no deity_pronoun span) | 3:14 |
+| Exodus | taskmasters (*nogesim*); foremen (*shoterim*) | *mandor*; *pengawas* | 3:7; 5:6 |
+| Exodus | Hanoch (son of Reuben); Pallu; Carmi | Henokh; Palu; Karmi | 6:14 |
+| Exodus | Jemuel; Jamin; Ohad; Jakin; Zohar; Shaul | Yemuel; Yamin; Ohad; Yakhin; Zohar; Saul | 6:15 |
+| Exodus | Gershon; Kohath; Merari | Gerson; Kehat; Merari | 6:16 |
+| Exodus | Libni; Shimei | Libni; Simei | 6:17 |
+| Exodus | Amram; Izhar; Uzziel | Amram; Yizhar; Uziel | 6:18 |
+| Exodus | Mahli; Mushi | Mahli; Musi | 6:19 |
+| Exodus | Jochebed | Yokhebed | 6:20 |
+| Exodus | Nepheg; Zichri | Nefeg; Zikhri | 6:21 |
+| Exodus | Mishael; Elzaphan; Sithri | Misael; Elsafan; Sitri | 6:22 |
+| Exodus | Elisheba; Ithamar | Elisyeba; Itamar | 6:23 |
+| Exodus | Assir; Elkanah; Abiasaph | Asir; Elkana; Abiasaf | 6:24 |
+| Exodus | Putiel | Putiel | 6:25 |
