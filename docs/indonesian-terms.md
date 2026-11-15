@@ -686,3 +686,6 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Beeroth Bene-jaakan; Moserah | Beerot-Bene-Yaakan (L, B), sumur-sumur Bene-Yaakan (R); Mosera | 10:6 |
 | Deuteronomy | Gudgodah; Jotbathah | Gudgoda; Yotbata | 10:7 |
 | Deuteronomy | acacia wood | *kayu akasia* | 10:3 |
+| Deuteronomy | Dathan; Abiram; Eliab | Datan; Abiram; Eliab | 11:6 |
+| Deuteronomy | Mount Gerizim; Mount Ebal | gunung Gerizim; gunung Ebal | 11:29 |
+| Deuteronomy | the oaks of Moreh | pohon-pohon tarbantin More | 11:30 |
