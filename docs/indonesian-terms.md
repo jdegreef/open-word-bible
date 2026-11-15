@@ -942,3 +942,11 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Mishmannah; Elzabad; Machbannai | Misymana; Elzabad; Makhbanai | 12:11–14 |
 | 1 Chronicles | Adnah | Adna | 12:21 |
 | 1 Chronicles | rulers of the Philistines (*seren*) | *raja-raja kota* (L, B); *para penguasa* (R) | 12:20 |
+| 1 Chronicles | Shihor; Lebo-hamath; Baalah; Chidon | Syihor; Lebo-Hamat; Baala; Kidon | 13:5–9 |
+| 1 Chronicles | assembly (*qahal*) | *jemaah* | 13:2 |
+| 1 Chronicles | Elishua; Elpelet; Beeliada | Elisua; Elpelet; Beelyada | 14:5–7 |
+| 1 Chronicles | Kushaiah; Ben; Jaaziel; Shemiramoth; Jehiel; Unni | Kusyaya; Ben; Yaaziel; Syemiramot; Yehiel; Uni | 15:17–18 |
+| 1 Chronicles | Maaseiah; Eliphelehu; Mikneiah; Aziel; Azaziah | Maaseya; Elifelehu; Mikneya; Aziel; Azazia | 15:18–21 |
+| 1 Chronicles | alamoth; sheminith | *alamot*; *syeminit* (L, B) | 15:20–21 |
+| 1 Chronicles | Chenaniah; Shebaniah; Jehiah | Kenanya; Syebanya; Yehia | 15:22–24 |
+| 1 Chronicles | ram's horn (*shofar*); trumpet (*hatsotsrah*) | *sangkakala*; *nafiri* | 15:28 |
