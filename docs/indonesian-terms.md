@@ -726,3 +726,11 @@ records it. Empty until the first book is drafted.
 | Joshua | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelofehad; Mahla; Noa; Hogla; Milka; Tirza | 17:3 |
 | Joshua | En-tappuah; Beth-shean; Ibleam; En-dor; Valley of Jezreel | En-Tapuah; Bet-Syean; Yibleam; En-Dor; Lembah Yizreel | 17:7–16 |
 | Joshua | iron chariots | *kereta besi* | 17:16 |
+| Joshua | Gelilot; the Benjamin towns (18:21–28) | Gelilot; Emek-Kezis, Zemaraim, Awim, Para, Ofra, Kefar-Amona, Ofni, Geba, Moza, Rekem, Yirpeel, Tarala, Zela, Haelef, Yebus, Kiryat | 18:17–28 |
+| Joshua | the Simeon towns (19:2–8) | Syeba, Bala, Betul, Bet-Markabot, Hazar-Susa, Bet-Lebaot, Syaruhen, Baalat-Beer, Rama di Tanah Negeb | 19:2–8 |
+| Joshua | the Zebulun names (19:10–15) | Sarid, Marala, Dabesyet, Kislot-Tabor, Daberat, Yafia, Gat-Hefer, Et-Kazin, Nea, Hanaton, lembah Yifta-El, Katat, Nahalal, Idala | 19:10–15 |
+| Joshua | the Issachar names (19:18–22) | Kesulot, Syunem, Hafaraim, Syion, Anaharat, Rabit, Kisyon, Ebes, Remet, En-Hada, Bet-Pazes, Tabor, Syahazuma | 19:18–22 |
+| Joshua | the Asher names (19:25–30) | Helkat, Hali, Beten, Alamelekh, Amad, Misyal, Syihor-Libnat, Bet-Emek, Neiel, Kabul, Ebron, Rehob, Hamon, Kana, Hosa, Uma | 19:25–30 |
+| Joshua | the Naphtali names (19:33–38) | Helef, Zaananim, Adami-Nekeb, Lakum, Aznot-Tabor, Hukok, Zidim, Zer, Hamat, Rakat, Adama, En-Hazor, Yiron, Migdal-El, Horem, Bet-Anat | 19:33–38 |
+| Joshua | the Dan names (19:41–47) | Ir-Syemesy, Syaalabin, Yitla, Elon, Elteke, Gibeton, Baalat, Yehud, Bene-Berak, Gat-Rimon, Me-Yarkon, Rakon, Lesyem | 19:41–47 |
+| Joshua | Timnath-serah | Timnat-Serah | 19:50 |
