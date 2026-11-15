@@ -792,3 +792,9 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Lamentations | How ...! (*ekhah*) | *Betapa ...!* | 1:1 |
+| Lamentations | forced labor | *pekerja rodi*; *bekerja rodi* | 1:1 |
+| Lamentations | daughter Zion; daughter Edom | *putri Sion* (L), *Putri Sion* (B), *penduduk Sion* (R); likewise Edom | 1:6; 4:21 |
+| Lamentations | wormwood | *ipuh* | 3:15 |
+| Lamentations | jackals | *serigala* | 4:3 |
+| Lamentations | Uz | Us | 4:21 |
