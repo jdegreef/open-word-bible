@@ -650,7 +650,7 @@ records it. Empty until the first book is drafted.
 | Joshua | Shittim | Sitim | 2:1 |
 | Joshua | the ban: devote to destruction (*charam*); devoted thing (*cherem*) | *mengkhususkan untuk dimusnahkan* (L, B), *memusnahkan (sama sekali) sebagai milik {{divine_name:TUHAN\|Yahweh}}* (R), as Deuteronomy; *barang yang dikhususkan* (L, B), *yang diserahkan kepada {{divine_name:TUHAN\|Yahweh}} untuk dimusnahkan* (R) | 2:10; 6:17 |
 | Joshua | scarlet cord | *tali kirmizi* (L, B); *tali merah* (R) | 2:18 |
-| Joshua | Zarethan | Saretan | 3:16 |
+| Joshua | Zarethan | Zaretan | 3:16 |
 | Joshua | Hivites; Perizzites; Girgashites | orang Hewi; orang Feris; orang Girgasi | 3:10 |
 | Joshua | ark of the testimony | *tabut kesaksian* (L, B); *tabut tempat loh-loh batu perjanjian* (R) | 4:16 |
 | Joshua | circumcise; Hill of the Foreskins | *menyunat*; Bukit Kulit Khatan | 5:2–3 |
@@ -695,3 +695,13 @@ records it. Empty until the first book is drafted.
 | Joshua | Tappuah; Hepher; Aphek; Lasharon | Tapuah; Hefer; Afek; Lasyaron | 12:17–18 |
 | Joshua | Shimron-meron; Taanach; Megiddo | Syimron-Meron; Taanakh; Megido | 12:20–21 |
 | Joshua | Kedesh; Jokneam; Naphath-dor; Goiim; Tirzah | Kedesy; Yokneam; Nafat-Dor; Goyim; Tirza | 12:22–24 |
+| Joshua | Philistines; their rulers (*seranim*) | orang Filistin; *raja kota* | 13:2–3 |
+| Joshua | Shihor; Avvim; Mearah; Gebalites; Lebo-hamath | Syihor; orang Awi; Meara; orang Gebal; Lebo-Hamat | 13:3–5 |
+| Joshua | plateau (*mishor*); Medeba; Dibon | *dataran tinggi*; Medeba; Dibon | 13:9 |
+| Joshua | Bamoth-baal; Beth-baal-meon; Jahaz; Kedemoth; Mephaath | Bamot-Baal; Bet-Baal-Meon; Yahas; Kedemot; Mefaat | 13:17–18 |
+| Joshua | Kiriathaim; Sibmah; Zereth-shahar; Beth-peor | Kiryataim; Sibma; Zeret-Syahar; Bet-Peor | 13:19–20 |
+| Joshua | Evi; Rekem; Zur; Hur; Reba; Beor | Ewi; Rekem; Zur; Hur; Reba; Beor | 13:21–22 |
+| Joshua | diviner | *juru tenung* | 13:22 |
+| Joshua | Jazer; Rabbah; Ramath-mizpeh; Betonim; Mahanaim | Yaezer; Raba; Ramat-Mizpe; Betonim; Mahanaim | 13:25–26 |
+| Joshua | Beth-haram; Beth-nimrah; Succoth; Zaphon; Sea of Chinnereth | Bet-Haram; Bet-Nimra; Sukot; Zafon; danau Kineret | 13:27 |
+| Joshua | offerings by fire (*isheh*) | *korban api-apian* (L); *korban makanan* (B, R) | 13:14 |
