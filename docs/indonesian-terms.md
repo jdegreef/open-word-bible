@@ -672,3 +672,7 @@ records it. Empty until the first book is drafted.
 | Exodus | boils; blisters | *bisul*; *lepuh* | 9:9 |
 | Exodus | flax | *rami* | 9:31 |
 | Exodus | spelt | *gandum spelt* (uncertain) | 9:32 |
+| Exodus | holy convocation | *pertemuan kudus* | 12:16 |
+| Exodus | hyssop | *hisop* | 12:22 |
+| Exodus | the destroyer | *pemusnah* | 12:23 |
+| Exodus | Succoth | Sukot | 12:37 |
