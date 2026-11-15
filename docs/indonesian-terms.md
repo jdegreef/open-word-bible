@@ -642,3 +642,4 @@ records it. Empty until the first book is drafted.
 | Mark | the sanctuary (*naos*) | *Bait Suci* (L, B); *rumah Allah* (R) | 15:38 |
 | Mark | Alexander; Rufus | Aleksander; Rufus | 15:21 |
 | Mark | Eloi, Eloi, lema sabachthani | Eloi, Eloi, lama sabakhtani | 15:34 |
+| 2 John | the chosen lady | *Ibu yang terpilih* (L), *Ibu yang dipilih Allah* (B, R) | 1:1 |
