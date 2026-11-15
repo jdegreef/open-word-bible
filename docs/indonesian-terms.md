@@ -957,3 +957,25 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Sippai; Lahmi; Rapha (giants) | Sipai; Lahmi; Rafa | 20:4–8 |
 | 1 Chronicles | Satan (no article) | Satan | 21:1 |
 | 1 Chronicles | Ornan | Ornan | 21:15 |
+| 1 Chronicles | Sidonians; Tyrians | orang Sidon; orang Tirus | 22:4 |
+| 1 Chronicles | the house of the LORD (the temple, from ch. 22) | *bait {{divine_name:TUHAN\|Yahweh}}* (L, B); *rumah {{divine_name:TUHAN\|Yahweh}}* (R) | 22:1 |
+| 1 Chronicles | Zetham; Shelomoth; Haziel; Zina; Zizah | Zetam; Syelomot; Haziel; Zina; Ziza | 23:8–11 |
+| 1 Chronicles | Shebuel; Rehabiah; Jeriah; Jekameam | Syebuel; Rehabya; Yeria; Yekameam | 23:16–19 |
+| 1 Chronicles | divisions (of priests, Levites, army) | *rombongan* (L, B); *kelompok* (R) | 23:6 |
+| 1 Chronicles | officials (*shoterim*) | *pengatur* | 23:4 |
+| 1 Chronicles | Seorim; Mijamin; Hakkoz; Jeshua; Huppah; Jeshebeab; Bilgah | Seorim; Miyamin; Hakos; Yesua; Hupa; Yesyebeab; Bilga | 24:8–14 |
+| 1 Chronicles | Hezir; Ha-Pizzez; Pethahiah; Jehezkel; Gamul; Maaziah | Hezir; Hapises; Petahya; Yehezkiel; Gamul; Maazya | 24:15–18 |
+| 1 Chronicles | Shubael; Jehdeiah; Jaaziah; Shoham; Ibri | Syubael; Yehdeya; Yaazia; Syoham; Ibri | 24:20–27 |
+| 1 Chronicles | Asarelah; Bukkiah; Eliathah; Giddalti; Romamti-Ezer | Asarela; Bukia; Eliyata; Gidalti; Romamti-Ezer | 25:2–4 |
+| 1 Chronicles | Joshbekashah; Mallothi; Hothir; Mahazioth; Izri; Jesarelah | Yosbekasya; Maloti; Hotir; Mahaziot; Yisri; Yesarela | 25:4–14 |
+| 1 Chronicles | Jathniel; Jehohanan; Eliehoenai; Jehozabad; Sachar; Peullethai | Yatniel; Yehohanan; Elyehoenai; Yehozabad; Sakhar; Peuletai | 26:2–5 |
+| 1 Chronicles | Othni; Rephael; Semachiah; Tebaliah; Shelemiah | Otni; Refael; Semakhya; Tebalya; Syelemya | 26:7–14 |
+| 1 Chronicles | Shallecheth (gate); Parbar; Jehieli | Syalekhet; Parbar; Yehieli | 26:16–21 |
+| 1 Chronicles | Zabdiel; Dodai; Ammizabad; Shamhuth; Izrahite | Zabdiel; Dodai; Amizabad; Syamhut; orang Yizrah | 27:2–8 |
+| 1 Chronicles | Heldai; Ezri; Shiphmite; Gederite; Shitrai | Heldai; Ezri; orang Syifmi; orang Gederi; Syitrai | 27:15–29 |
+| 1 Chronicles | Adlai; Obil; Meronothite; Jaziz | Adlai; Obil; orang Meronot; Yaziz | 27:29–31 |
+| 1 Chronicles | sycamore-fig | *pohon ara hutan* (L, B); *pohon ara* (R) | 27:28 |
+| 1 Chronicles | the king's friend (court title) | *sahabat raja* | 27:33 |
+| 1 Chronicles | onyx; antimony; alabaster | *batu oniks*; *batu celak*; *batu pualam* | 29:2 |
+| 1 Chronicles | darics | *darik* | 29:7 |
+| 1 Chronicles | testimonies (*edot*) | *peringatan* | 29:19 |
