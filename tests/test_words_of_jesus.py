@@ -152,6 +152,8 @@ class ParityTest(unittest.TestCase):
 
     def test_pending_fixes_are_current_and_would_fix(self):
         # A pending fix names today's text; once it is made, its entry goes.
+        if not self.check.PENDING.exists():
+            return  # every listed fix has been made
         lines = self.check.PENDING.read_text(encoding="utf-8").splitlines()
         marked = words_of_jesus.marked()
         for line in filter(None, lines):

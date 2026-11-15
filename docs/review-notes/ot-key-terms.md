@@ -2,7 +2,7 @@
 
 Item 18 of the consistency audits. Twenty Hebrew words were added to `data/key_terms.json` (language `hbo`, lemmas copied from `data/hbo/` by Strong's number). This note records how the drafted English rendered each one before the rule was settled, the rule chosen, what was harmonised, and how the other languages spread. Counts are of sentence records that contain the word; a record can show more than one candidate (a record with "loyal love and faithfulness" counts for both), and `<none>` means none of the measured candidates appears (often a pronoun or an idiom). Sections: Law (Genesis-Deuteronomy), history (Joshua-Esther), Psalms, wisdom (Job, Proverbs, Ecclesiastes, Song of Songs), prophets (Isaiah-Malachi, with Lamentations and Daniel).
 
-Seventeen terms are checked by `owb.validate` (each English level must use one of the term's words, or a decision on the word must explain why not). *Nephesh*, *ruach* and *mishpat* are settled by sense rather than by one word, so they are listed with their rules and `"checked": false`. Three Psalms sentences whose fixes wait in `pending-psalms-patches-b.jsonl` are listed under `pending` in the data and skipped until the patch is applied.
+Seventeen terms are checked by `owb.validate` (each English level must use one of the term's words, or a decision on the word must explain why not). *Nephesh*, *ruach* and *mishpat* are settled by sense rather than by one word, so they are listed with their rules and `"checked": false`. Three Psalms sentences whose fixes waited in `pending-psalms-patches-b.jsonl` were listed under `pending` in the data and skipped; the patch is now applied and the `pending` lists removed.
 
 ## The hesed question
 
@@ -539,7 +539,7 @@ Other languages (Balanced; distinctive words of the records, with record counts)
 
 ## What was changed (English)
 
-Sentences outside the Psalms were edited directly; Psalms changes are in `pending-psalms-patches-b.jsonl`.
+Sentences outside the Psalms were edited directly; Psalms changes were held in `pending-psalms-patches-b.jsonl` and have since been applied.
 
 - JOB.6.14.s1 L: "steadfast love" -> "loyal love" (hesed key-term rule (data/key_terms.json): wisdom books follow the Psalms: loyal love at Literal and Balanced)
 - JOB.6.14.s1 B: "faithful love" -> "loyal love" (hesed key-term rule (data/key_terms.json): wisdom books follow the Psalms: loyal love at Literal and Balanced)
