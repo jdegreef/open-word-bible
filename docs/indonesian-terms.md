@@ -894,3 +894,31 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Rohgah; Hubbah; Helem; Zophah; Imna; Shelesh; Amal | Rohga; Huba; Helem; Zofah; Yimna; Syeles; Amal | 7:34–35 |
 | 1 Chronicles | Harnepher; Beri; Imrah; Hod; Shilshah; Beera | Harnefer; Beri; Yimra; Hod; Syilsya; Beera | 7:36–37 |
 | 1 Chronicles | Pispa; Ara; Ulla; Arah; Rizia | Pispa; Ara; Ula; Arah; Risya | 7:38–39 |
+| 1 Chronicles | Aharah; Nohah; Rapha | Ahrah; Noha; Rafa | 8:1–2 |
+| 1 Chronicles | Addar; Abihud; Ahoah; Shephuphan; Huram | Adar; Abihud; Ahoah; Syefufan; Huram | 8:3–5 |
+| 1 Chronicles | Shaharaim; Baara; Hodesh; Zibia; Malcam | Syaharaim; Baara; Hodes; Zibya; Malkam | 8:8–9 |
+| 1 Chronicles | Jeuz; Sachia; Mirmah; Abitub; Elpaal | Yeus; Sakhya; Mirma; Abitub; Elpaal | 8:10–11 |
+| 1 Chronicles | Misham; Shemed; Ono; Lod | Misyam; Syemed; Ono; Lod | 8:12 |
+| 1 Chronicles | Shashak; Zebadiah; Ishpah; Joha | Syasyak; Zebadya; Yispa; Yoha | 8:14–16 |
+| 1 Chronicles | Hizki; Ishmerai; Izliah; Jakim | Hizki; Yismerai; Yizlia; Yakim | 8:17–19 |
+| 1 Chronicles | Elienai; Zillethai; Beraiah; Shimrath | Elienai; Ziletai; Beraya; Syimrat | 8:20–21 |
+| 1 Chronicles | Ishpan; Hanan; Anthothijah; Iphdeiah | Yispan; Hanan; Antotia; Yifdeya | 8:22–25 |
+| 1 Chronicles | Shamsherai; Shehariah; Jaareshiah | Syamsyerai; Syeharya; Yaaresya | 8:26–27 |
+| 1 Chronicles | Zecher; Mikloth; Shimeah | Zekher; Miklot; Syimea | 8:31–32 |
+| 1 Chronicles | Esh-baal; Merib-baal | Esbaal; Merib-Baal | 8:33–34 |
+| 1 Chronicles | Pithon; Melech; Tarea; Jehoaddah; Azmaveth | Piton; Melekh; Tarea; Yehoada; Azmawet | 8:35–36 |
+| 1 Chronicles | Binea; Raphah; Azel; Bocheru; Sheariah; Eshek | Binea; Rafa; Asel; Bokheru; Syearya; Esyek | 8:37–39 |
+| 1 Chronicles | temple servants (Netinim) | *para pelayan Bait Allah* (L, B); *para pelayan rumah Allah* (R) | 9:2 |
+| 1 Chronicles | Uthai; Imri | Utai; Imri | 9:4 |
+| 1 Chronicles | Shilonites; Jeuel | orang Syiloni; Yeuel | 9:5–6 |
+| 1 Chronicles | Sallu; Hassenuah; Ibneiah; Michri; Ibnijah | Salu; Hasenua; Yibneya; Mikhri; Yibnia | 9:7–8 |
+| 1 Chronicles | Jehoiarib; Jachin | Yehoyarib; Yakhin | 9:10 |
+| 1 Chronicles | Pashhur; Maasai; Jahzerah; Meshillemith; Immer | Pashur; Maasai; Yahzera; Mesyilemit; Imer | 9:12 |
+| 1 Chronicles | Hasshub; Bakbakkar; Heresh; Galal; Mattaniah | Hasyub; Bakbakar; Heres; Galal; Matanya | 9:14–15 |
+| 1 Chronicles | Jeduthun | Yedutun | 9:16 |
+| 1 Chronicles | gatekeepers | *penjaga pintu gerbang* | 9:17 |
+| 1 Chronicles | Talmon; Ahiman; King's Gate | Talmon; Ahiman; Pintu Gerbang Raja | 9:17–18 |
+| 1 Chronicles | Kore; Meshelemiah | Kore; Mesyelemya | 9:19–21 |
+| 1 Chronicles | Mattithiah | Matitya | 9:31 |
+| 1 Chronicles | showbread (bread of the arrangement) | *roti susunan* (L); *roti sajian* (B) | 9:32 |
+| 1 Chronicles | Shimeam; Tahrea; Jarah | Syimeam; Tahrea; Yaera | 9:38–42 |
