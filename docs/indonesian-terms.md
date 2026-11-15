@@ -637,6 +637,7 @@ records it. Empty until the first book is drafted.
 | Psalms | shushan eduth | *syusyan edut* (L, B); "Bunga Bakung Perjanjian" (R) | 60:1 |
 | Psalms | Aram-naharaim; Aram-zobah | Aram-Naharaim; Aram-Zoba | 60:2 |
 | Psalms | Valley of Salt; Succoth | Lembah Asin; Sukot | 60:2; 60:8 |
+| Psalms | Zalmon | Zalmon; gunung Zalmon (R) | 68:15 |
 | Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
 | Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
 | Philippians | Clement | Klemens | 4:3 |
