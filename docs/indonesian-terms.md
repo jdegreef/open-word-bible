@@ -792,3 +792,56 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Judges | Adoni-Bezek; Bezek | Adoni-Bezek; Bezek | 1:4–5 |
+| Judges | Sheshai; Ahiman; Talmai | Syesai; Ahiman; Talmai | 1:10 |
+| Judges | Kenite(s); city of palm trees | orang Keni; kota pohon kurma | 1:16 |
+| Judges | Zephath | Zefat | 1:17 |
+| Judges | Kitron; Nahalol | Kitron; Nahalol | 1:30 |
+| Judges | Acco; Ahlab; Achzib; Helbah; Aphik; Beth-anath | Ako; Ahlab; Akhzib; Helba; Afik; Bet-Anat | 1:31–33 |
+| Judges | Mount Heres; Shaalbim | gunung Heres; Syaalbim | 1:35 |
+| Judges | Bochim | Bokhim | 2:1 |
+| Judges | Timnath-heres | Timnat-Heres | 2:9 |
+| Judges | the Baals; Baal | *para Baal* (L, B), *dewa-dewa Baal* (R); Baal | 2:11 |
+| Judges | the Ashtaroth | *para Asytoret* (L, B), *dewi-dewi yang disebut Asytoret* (R) | 2:13 |
+| Judges | the Asherahs; Asherah pole | *para Asyera* (L, B), *dewi-dewi yang disebut Asyera* (R); *tiang Asyera* | 3:7; 6:25 |
+| Judges | judge (shofet); judged Israel | *hakim*; *memerintah Israel* (L, B), *memimpin Israel* (R) | 2:16; 3:10 |
+| Judges | deliverer (moshia) | *penyelamat* | 3:9 |
+| Judges | Cushan-rishathaim; Aram-naharaim | Kusyan-Risyataim; Aram-Naharaim | 3:8 |
+| Judges | Ehud; Gera; Eglon (king) | Ehud; Gera; Eglon | 3:12–15 |
+| Judges | tribute | *upeti* | 3:15 |
+| Judges | Seirah; Shamgar; Anath | Seira; Samgar; Anat | 3:26–31 |
+| Judges | Harosheth-hagoyim; Sisera | Haroset-Hagoyim; Sisera | 4:2 |
+| Judges | prophetess; Lappidoth | *nabiah* (L, B), *nabi* (R); Lapidot | 4:4 |
+| Judges | Kedesh-naphtali; wadi Kishon | Kedesy-Naftali; sungai Kison | 4:6–7 |
+| Judges | Heber; Kain; Hobab; Jael | Heber; Kain; Hobab; Yael | 4:11, 17 |
+| Judges | Machir; Meroz | Makhir; Meros | 5:14, 23 |
+| Judges | the sons of the east | *orang-orang timur* (L), *orang-orang dari timur* (B), *bangsa-bangsa lain dari timur* (R) | 6:3 |
+| Judges | Ophrah; Joash the Abiezrite | Ofra; Yoas, orang Abiezer | 6:11 |
+| Judges | the LORD is Peace | *TUHAN Adalah Damai Sejahtera* (L, B), *TUHAN Adalah Damai* (R) | 6:24 |
+| Judges | Jerubbaal | Yerubaal | 6:32 |
+| Judges | fleece | *guntingan bulu domba* (L, B); *bulu domba* (R) | 6:37 |
+| Judges | En-harod; hill of Moreh; Purah | En-Harod; bukit More; Pura | 7:1, 10 |
+| Judges | Beth-shittah; Zererah; Abel-meholah; Tabbath; Beth-barah | Bet-Syita; Zerera; Abel-Mehola; Tabat; Bet-Bara | 7:22–24 |
+| Judges | Oreb; Zeeb | Oreb; Zeeb | 7:25 |
+| Judges | Zebah; Zalmunna; Penuel; Karkor; Nobah; Jogbehah; Jether | Zebah; Salmuna; Penuel; Karkor; Nobah; Yogbeha; Yeter | 8:5–20 |
+| Judges | princes (sarim) of a town | *para pemuka* (L, B); *para pemimpin* (R) | 8:6 |
+| Judges | Abimelech; Baal-berith; El-berith | Abimelekh; Baal-Berit; El-Berit | 8:31–33; 9:46 |
+| Judges | lords (baalei) of Shechem, of Gibeah | *warga kota* (L, B); *pemimpin* (R) | 9:2; 20:5 |
+| Judges | house of a god; Beth-millo; Jotham | *kuil*; Bet-Milo; Yotam | 9:4–6 |
+| Judges | bramble | *semak duri* | 9:14 |
+| Judges | Gaal son of Ebed; Zebul; Arumah; Thebez; Mount Zalmon | Gaal anak Ebed; Zebul; Aruma; Tebes; gunung Zalmon | 9:26–50 |
+| Judges | Tola; Puah; Dodo; Jair; Havvoth-jair; Kamon; Maon | Tola; Pua; Dodo; Yair; Hawot-Yair; Kamon; Maon | 10:1–12 |
+| Judges | Tob; Chemosh; Minnith; Abel-keramim | Tob; Kemos; Minit; Abel-Keramim | 11:3–33 |
+| Judges | vow | *bernazar*, *nazar* (L, B); *membuat janji* (R) | 11:30 |
+| Judges | Shibboleth; Sibboleth | Syibolet; Sibolet | 12:6 |
+| Judges | Ibzan; Elon; Abdon son of Hillel; Pirathon | Ibzan; Elon; Abdon anak Hilel; Piraton | 12:8–15 |
+| Judges | Manoah; Nazirite; Mahaneh-dan | Manoah; *nazir*; Mahane-Dan | 13:2–25 |
+| Judges | strong drink | *minuman keras* | 13:4 |
+| Judges | Etam; Lehi; Ramath-lehi; En-hakkore | Etam; Lehi; Ramat-Lehi; En-Hakore | 15:8–19 |
+| Judges | Valley of Sorek; Dagon | lembah Sorek; Dagon | 16:4, 23 |
+| Judges | household gods (teraphim); fill the hand (ordain) | *terafim* (L, B), *patung berhala kecil* (R); *mentahbiskan* | 17:5 |
+| Judges | Laish; Beth-rehob; Gershom | Lais; Bet-Rehob; Gersom | 18:7–30 |
+| Judges | Jebus; sons of worthlessness | Yebus; *orang-orang dursila* (L, B), *orang-orang jahat* (R) | 19:10, 22 |
+| Judges | outrage (nevalah) | *perbuatan noda* (L), *perbuatan keji* (B), *perbuatan yang memalukan* (R) | 19:23 |
+| Judges | Baal-tamar; Menuhah; rock of Rimmon; Gidom | Baal-Tamar; Menuha; gunung batu Rimon; Gidom | 20:33–45 |
+| Judges | Jabesh-gilead; Lebonah | Yabesy-Gilead; Lebona | 21:8, 19 |
