@@ -71,14 +71,16 @@ class SearchTest(unittest.TestCase):
         self.assertNotIn("/search-en.json", json.dumps(build_site.offline_files("en")))
         self.assertIn('url.pathname.indexOf("/api/") === 0', sw)
 
-    def test_search_page_in_each_language_and_in_the_sitemap(self):
+    def test_search_page_in_each_language_and_not_listed(self):
         sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         for lang in build_site.LANGUAGES:
             path = build_site.url(lang, "/search/")
             page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
             self.assertIn('id="search-q"', page)
             self.assertIn(f'action="{path}"', page)
-            self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
+            # Search results are not worth listing in a search engine.
+            self.assertIn('<meta name="robots" content="noindex">', page)
+            self.assertNotIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
 
     def test_every_sentence_is_in_every_index_once(self):
         for lang in build_site.LANGUAGES:

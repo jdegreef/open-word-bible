@@ -161,7 +161,7 @@ class SiteTest(unittest.TestCase):
                 if not missing:
                     continue
                 page, text = self.chapter_text(build_site.url(lang, p.url).strip("/"))
-                self.assertIn('class="verse fallback" lang="en" data-v=', text)
+                self.assertRegex(text, r'class="verse fallback"(?: id="v[^"]+")? lang="en" data-v=')
                 self.assertIn(f'data-record="{missing[0]["id"]}"', text)
                 self.assertNotIn('id="partial" hidden', page)
                 return
