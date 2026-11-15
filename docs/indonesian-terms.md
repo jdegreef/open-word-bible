@@ -643,6 +643,8 @@ records it. Empty until the first book is drafted.
 | Psalms | Zoan; Ham | Zoan; Ham | 78:12; 78:51 |
 | Psalms | shoshannim eduth | *syosanim edut* (L, B); "Bunga-bunga Bakung Perjanjian" (R) | 80:1 |
 | Psalms | Meribah | Meriba | 81:8 |
+| Psalms | Gebal; Jabin; Endor | Gebal; Yabin; En-Dor | 83:8; 83:10; 83:11 |
+| Psalms | valley of Baca | Lembah Baka | 84:7 |
 | Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
 | Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
 | Philippians | Clement | Klemens | 4:3 |
