@@ -705,3 +705,16 @@ records it. Empty until the first book is drafted.
 | Joshua | Jazer; Rabbah; Ramath-mizpeh; Betonim; Mahanaim | Yaezer; Raba; Ramat-Mizpe; Betonim; Mahanaim | 13:25–26 |
 | Joshua | Beth-haram; Beth-nimrah; Succoth; Zaphon; Sea of Chinnereth | Bet-Haram; Bet-Nimra; Sukot; Zafon; danau Kineret | 13:27 |
 | Joshua | offerings by fire (*isheh*) | *korban api-apian* (L); *korban makanan* (B, R) | 13:14 |
+| Joshua | Jephunneh; Kenizzite; Kiriath-arba; Arba | Yefune; orang Kenas; Kiryat-Arba; Arba | 14:6, 15 |
+| Joshua | the man of God | *abdi Allah* | 14:6 |
+| Joshua | pasturelands (*migrash*) | *padang rumput* | 14:4 |
+| Joshua | wilderness of Zin; Ascent of Akrabbim | padang gurun Zin; Pendakian Akrabim (L, B), Tanjakan Kalajengking (R) | 15:1, 3 |
+| Joshua | Hezron; Addar; Karka; Azmon; Wadi of Egypt | Hezron; Adar; Karka; Azmon; sungai Mesir (L), Wadi Mesir (B, R) | 15:3–4 |
+| Joshua | Beth-hoglah; Beth-arabah; Stone of Bohan; Adummim; En-shemesh; En-rogel | Bet-Hogla; Bet-Araba; Batu Bohan; Adumim; En-Syemesy; En-Rogel | 15:6–7 |
+| Joshua | Valley of Ben-hinnom; Valley of Rephaim; Nephtoah; Mount Ephron; Baalah | Lembah Ben-Hinom; Lembah Refaim; Neftoah; gunung Efron; Baala | 15:8–9 |
+| Joshua | Mount Jearim; Chesalon; Beth-shemesh; Timnah; Shikkeron; Jabneel | gunung Yearim; Kesalon; Bet-Syemesy; Timna; Syikeron; Yabneel | 15:10–11 |
+| Joshua | Sheshai; Ahiman; Talmai; Kiriath-sepher; Achsah; Othniel; Kenaz | Syesai; Ahiman; Talmai; Kiryat-Sefer; Akhsa; Otniel; Kenas | 15:14–17 |
+| Joshua | the Negev towns (15:21–32) | Kabzeel, Eder, Yagur, Kina, Dimona, Adada, Kedesy, Hazor, Yitnan, Zif, Telem, Bealot, Hazor-Hadata, Keriot-Hezron, Amam, Syema, Molada, Hazar-Gada, Hesymon, Bet-Pelet, Hazar-Syual, Bersyeba, Bizyotya, Baala, Iyim, Ezem, Eltolad, Kesil, Horma, Ziklag, Madmana, Sansana, Lebaot, Syilhim, Ain, Rimon | 15:21–32 |
+| Joshua | the Shephelah towns (15:33–47) | Esytaol, Zora, Asyna, Zanoah, En-Ganim, Tapuah, Enam, Yarmut, Adulam, Sokho, Azeka, Syaaraim, Aditaim, Gedera, Gederotaim, Zenan, Hadasya, Migdal-Gad, Dilean, Mizpa, Yokteel, Lakhis, Boskat, Eglon, Kabon, Lahmas, Kitlis, Gederot, Bet-Dagon, Naama, Makeda, Libna, Eter, Asyan, Yifta, Nezib, Kehila, Akhzib, Maresya | 15:33–44 |
+| Joshua | the hill-country and wilderness towns (15:48–62) | Syamir, Yatir, Dana, Kiryat-Sana, Esytemoa, Anim, Holon, Gilo, Arab, Ruma, Esyan, Yanum, Bet-Tapuah, Afeka, Humta, Zior, Maon, Karmel, Yuta, Yizreel, Yokdeam, Kain, Gibea, Halhul, Bet-Zur, Gedor, Maarat, Bet-Anot, Eltekon, Kiryat-Baal, Raba, Midin, Sekhakha, Nibsyan, Kota Garam, En-Gedi | 15:48–62 |
+| Joshua | its daughters (dependent towns) | *anak-anak kotanya* (L); *kota-kota* (B, R) | 15:45 |
