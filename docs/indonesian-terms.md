@@ -792,3 +792,6 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Zephaniah | Cushi; Amariah | Kusyi; Amarya | 1:1 |
+| Zephaniah | Fish Gate; Second Quarter; the Mortar | Gerbang Ikan; Bagian Kedua; Lesung | 1:10–11 |
+| Zephaniah | Cherethites | orang Kreti | 2:5 |
