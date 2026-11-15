@@ -689,3 +689,5 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Dathan; Abiram; Eliab | Datan; Abiram; Eliab | 11:6 |
 | Deuteronomy | Mount Gerizim; Mount Ebal | gunung Gerizim; gunung Ebal | 11:29 |
 | Deuteronomy | the oaks of Moreh | pohon-pohon tarbantin More | 11:30 |
+| Deuteronomy | contribution, gift set apart (*terumah*) | *persembahan khusus* | 12:6 |
+| Deuteronomy | gazelle; deer | *kijang*; *rusa* | 12:15 |
