@@ -641,6 +641,8 @@ records it. Empty until the first book is drafted.
 | Psalms | Seba (beside Sheba) | Seba | 72:10 |
 | Psalms | Leviathan | Lewiatan | 74:14 |
 | Psalms | Zoan; Ham | Zoan; Ham | 78:12; 78:51 |
+| Psalms | shoshannim eduth | *syosanim edut* (L, B); "Bunga-bunga Bakung Perjanjian" (R) | 80:1 |
+| Psalms | Meribah | Meriba | 81:8 |
 | Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
 | Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
 | Philippians | Clement | Klemens | 4:3 |
