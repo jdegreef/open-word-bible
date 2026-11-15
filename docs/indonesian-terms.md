@@ -792,3 +792,15 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Proverbs | the simple (*peti*) | *orang polos* (L); *orang naif* (B); *orang yang mudah tertipu* (R) | 1:4 |
+| Proverbs | scoffer, mocker (*lets*) | *pencemooh* (L, B); *orang yang suka mengejek* (R) | 1:22 |
+| Proverbs | sluggard (*ʿatsel*) | *pemalas* (L, B); *orang malas* (R) | 6:6 |
+| Proverbs | the strange / foreign woman | *perempuan lain*, *perempuan asing* (L); *perempuan yang bukan hakmu* (B); *istri orang lain* (R) | 2:16 |
+| Proverbs | Wisdom; Folly (personified) | *Hikmat*; *Perempuan Kebodohan* (L, B), *Kebodohan* (R) | 1:20; 9:13 |
+| Proverbs | wife of strength (*eshet chayil*) | *istri yang cakap* | 12:4; 31:10 |
+| Proverbs | the Righteous One (God) | *Yang Benar* (L); *Yang Mahaadil* (B, R) | 21:12 |
+| Proverbs | torah as God's instruction (chs. 28–29) | *hukum* (L); *ajaran Allah* (B, R) | 28:4 |
+| Proverbs | Abaddon | Abadon (L); *Kebinasaan* (B) | 15:11 |
+| Proverbs | Jakeh; Ithiel; Ucal | Yake; Itiel; Ukal | 30:1 |
+| Proverbs | rock badger (hyrax) | *hiraks* | 30:26 |
+| Proverbs | wormwood | *apsintus* | 5:4 |
