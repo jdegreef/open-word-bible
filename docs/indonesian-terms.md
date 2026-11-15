@@ -647,6 +647,7 @@ records it. Empty until the first book is drafted.
 | Psalms | valley of Baca | Lembah Baka | 84:7 |
 | Psalms | mahalath leannoth; Heman the Ezrahite; Abaddon | *mahalat leanot* (L, B); Heman, orang Ezrahi; Abadon | 88:1; 88:12 |
 | Psalms | Ethan the Ezrahite; Tabor | Etan, orang Ezrahi; Tabor | 89:1; 89:13 |
+| Psalms | Massah | Masa | 95:8 |
 | Philippians | the praetorium (imperial guard) | *pasukan pengawal istana* (L); *pasukan pengawal kaisar* (B), *prajurit pengawal kaisar* (R) | 1:13 |
 | Philippians | mutilation (*katatomē*) | *penyayatan* (L); *para penyayat tubuh* (B) | 3:2 |
 | Philippians | Clement | Klemens | 4:3 |
