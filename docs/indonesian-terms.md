@@ -676,3 +676,7 @@ records it. Empty until the first book is drafted.
 | Exodus | hyssop | *hisop* | 12:22 |
 | Exodus | the destroyer | *pemusnah* | 12:23 |
 | Exodus | Succoth | Sukot | 12:37 |
+| Exodus | month of Abib | *bulan Abib* | 13:4 |
+| Exodus | Etham | Etam | 13:20 |
+| Exodus | pillar of cloud; pillar of fire | *tiang awan*; *tiang api* | 13:21 |
+| Exodus | Pi-hahiroth; Migdol; Baal-zephon | Pi-Hahirot; Migdol; Baal-Zefon | 14:2 |
