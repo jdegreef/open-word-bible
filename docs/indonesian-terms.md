@@ -792,3 +792,60 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| 2 Kings | Ahaziah; Baal-zebub | Ahazia; Baal-Zebub | 1:2 |
+| 2 Kings | Elijah the Tishbite | Elia, orang Tisbe | 1:3 |
+| 2 Kings | Jehoram, Joram (both kings) | Yoram | 1:17 |
+| 2 Kings | the whirlwind | *angin badai* | 2:1 |
+| 2 Kings | Mesha; Kir-hareseth | Mesa; Kir-Hareset | 3:4; 3:25 |
+| 2 Kings | Shaphat | Safat | 3:11 |
+| 2 Kings | Gehazi; Baal-shalishah | Gehazi; Baal-Syalisya | 4:12; 4:42 |
+| 2 Kings | scale disease (*tsaraat*) | *penyakit kulit bersisik* (L); *penyakit kulit yang berat* (B, R) | 5:1 |
+| 2 Kings | Abana; Pharpar; Rimmon | Abana; Parpar; Rimon | 5:12; 5:18 |
+| 2 Kings | Dothan; Ben-hadad | Dotan; Ben-Hadad | 6:13; 6:24 |
+| 2 Kings | Hazael | Hazael | 8:8 |
+| 2 Kings | Zair; Libnah | Zair; Libna | 8:21–22 |
+| 2 Kings | Nimshi; Baasha | Nimsi; Baesa | 9:2; 9:9 |
+| 2 Kings | Naboth; Bidkar; Beth-haggan; Ibleam | Nabot; Bidkar; Bet-Hagan; Yibleam | 9:21–27 |
+| 2 Kings | Zimri | Zimri | 9:31 |
+| 2 Kings | Beth-eked of the Shepherds | Bet-Eked Para Gembala | 10:12 |
+| 2 Kings | Jehonadab son of Rechab | Yonadab anak Rekhab | 10:15 |
+| 2 Kings | Jehoahaz | Yoahas | 10:35 |
+| 2 Kings | Jehosheba; Carites; Mattan | Yoseba; orang Kari; Matan | 11:2–18 |
+| 2 Kings | Zibiah; Beth-millo; Silla | Zibya; Bet-Milo; Sila | 12:2; 12:21 |
+| 2 Kings | Jozabad son of Shimeath; Jehozabad son of Shomer | Yozabad anak Simeat; Yehozabad anak Somer | 12:22 |
+| 2 Kings | Jehoaddin; Joktheel; Sela; Valley of Salt | Yoadin; Yokteel; Sela; Lembah Asin | 14:2; 14:7 |
+| 2 Kings | Elath; Lebo-hamath; Gath-hepher | Elat; Lebo-Hamat; Gat-Hefer | 14:22–25 |
+| 2 Kings | Jecoliah; Shallum son of Jabesh; Tirzah | Yekholya; Salum anak Yabesh; Tirza | 15:2–14 |
+| 2 Kings | Menahem son of Gadi; Pul; Pekahiah | Menahem anak Gadi; Pul; Pekahya | 15:14–22 |
+| 2 Kings | Pekah son of Remaliah; Argob; Arieh | Pekah anak Remalya; Argob; Arye | 15:25 |
+| 2 Kings | Ijon; Abel-beth-maacah; Janoah; Kedesh | Iyon; Abel-Bet-Maakha; Yanoah; Kedes | 15:29 |
+| 2 Kings | Hoshea son of Elah; Jerusha; Rezin | Hosea anak Ela; Yerusa; Rezin | 15:30–37 |
+| 2 Kings | Kir; Uriah the priest | Kir; Imam Uria | 16:9–10 |
+| 2 Kings | Shalmaneser; So king of Egypt | Salmaneser; So | 17:3–4 |
+| 2 Kings | Halah; Habor; Gozan | Halah; Habor; Gozan | 17:6 |
+| 2 Kings | Cuthah; Avva; Sepharvaim | Kuta; Awa; Sefarwaim | 17:24 |
+| 2 Kings | Succoth-benoth; Nergal; Ashima; Nibhaz; Tartak | Sukot-Benot; Nergal; Asima; Nibhas; Tartak | 17:30–31 |
+| 2 Kings | Adrammelech; Anammelech | Adramelekh; Anamelekh | 17:31 |
+| 2 Kings | Abi; Nehushtan | Abi; Nehustan | 18:2; 18:4 |
+| 2 Kings | Tartan; Rab-saris; Rabshakeh | Tartan, Rab-Saris, Rabsake (L); *panglima tertinggi*, *kepala pegawai istana*, *pembesar utama* (B) | 18:17 |
+| 2 Kings | Eliakim son of Hilkiah; Shebna; Joah son of Asaph | Elyakim anak Hilkia; Sebna; Yoah anak Asaf | 18:18 |
+| 2 Kings | recorder | *bentara* (L); *pencatat sejarah* (B, R) | 18:18 |
+| 2 Kings | Arpad; Hena; Ivvah | Arpad; Hena; Iwa | 18:34 |
+| 2 Kings | Tirhakah | Tirhaka | 19:9 |
+| 2 Kings | Rezeph; Telassar | Rezef; Telasar | 19:12 |
+| 2 Kings | Nisroch; Sharezer; Esarhaddon | Nisrokh; Sarezer; Esarhadon | 19:37 |
+| 2 Kings | Berodach-baladan | Berodakh-Baladan | 20:12 |
+| 2 Kings | Hephzibah; Uzza; Meshullemeth; Haruz; Jotbah | Hefzibah; Uza; Mesulemet; Haruz; Yotba | 21:1–19 |
+| 2 Kings | Jedidah; Adaiah; Bozkath | Yedida; Adaya; Bozkat | 22:1 |
+| 2 Kings | Shaphan son of Azaliah son of Meshullam | Safan anak Azalya anak Mesulam | 22:3 |
+| 2 Kings | Ahikam; Achbor son of Micaiah; Asaiah | Ahikam; Akhbor anak Mikhaya; Asaya | 22:12 |
+| 2 Kings | Huldah the prophetess; Tikvah; Harhas; the Second Quarter | Nabiah Hulda; Tikwa; Harhas; Bagian Kedua | 22:14 |
+| 2 Kings | Topheth; Valley of Ben-hinnom; Nathan-melech | Tofet; Lembah Ben-Hinom; Natan-Melekh | 23:10–11 |
+| 2 Kings | Ashtoreth; Chemosh; Milcom; Mount of Destruction | Asytoret; Kamos; Milkom; Bukit Kebinasaan | 23:13 |
+| 2 Kings | Pharaoh Neco; Riblah; Hamutal | Firaun Nekho; Ribla; Hamutal | 23:29–33 |
+| 2 Kings | Zebudah daughter of Pedaiah; Rumah | Zebudah anak perempuan Pedaya; Ruma | 23:36 |
+| 2 Kings | Nehushta; Elnathan; Mattaniah; Wadi of Egypt | Nehusta; Elnatan; Matanya; Sungai Mesir | 24:7–17 |
+| 2 Kings | Nebuzaradan | Nebuzaradan | 25:8 |
+| 2 Kings | Seraiah; Ishmael son of Nethaniah; Johanan son of Kareah | Seraya; Ismael anak Netanya; Yohanan anak Kareah | 25:18–23 |
+| 2 Kings | Tanhumeth; Netophathite; Jaazaniah; Elishama | Tanhumet; orang Netofa; Yaazanya; Elisama | 25:23–25 |
+| 2 Kings | Evil-merodach | Ewil-Merodakh | 25:27 |
