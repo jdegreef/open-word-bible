@@ -792,3 +792,64 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| 2 Samuel | Ziklag; Gilboa | Ziklag; gunung Gilboa | 1:1, 6 |
+| 2 Samuel | the Song of the Bow | *Nyanyian Busur* | 1:18 |
+| 2 Samuel | how the mighty have fallen (refrain) | *Betapa para pahlawan telah gugur!* (L, B); *Sungguh, para pahlawan yang gagah berani telah gugur!* (R) | 1:19 |
+| 2 Samuel | Nabal | Nabal | 2:2 |
+| 2 Samuel | Ashurites | orang Asyuri (uncertain) | 2:9 |
+| 2 Samuel | servants (fighting men) of David, Abner | *hamba-hamba* (L); *anak buah* (B); *prajurit* (R) | 2:12 |
+| 2 Samuel | Zeruiah; Abishai; Asahel | Zeruya; Abisai; Asael | 2:13, 18 |
+| 2 Samuel | Helkath-hazzurim | Helkat-Hazurim | 2:16 |
+| 2 Samuel | Ammah; Giah; Arabah; Bitron | Ama; Giah; Araba; Bitron | 2:24, 29 |
+| 2 Samuel | As God lives (oath) | *Demi Allah yang hidup* | 2:27 |
+| 2 Samuel | Chileab; Maacah; Talmai; Geshur | Kileab; Maakha; Talmai; Gesur | 3:3 |
+| 2 Samuel | Haggith; Shephatiah; Abital; Ithream; Eglah | Hagit; Sefatya; Abital; Yitream; Egla | 3:4–5 |
+| 2 Samuel | Rizpah; Aiah | Rizpa; Aya | 3:7 |
+| 2 Samuel | Paltiel; Laish; Bahurim; well of Sirah | Paltiel; Lais; Bahurim; sumur Sira | 3:15–16, 26 |
+| 2 Samuel | May God do so to me and more also (oath) | as 1 Samuel 3:17 | 3:9 |
+| 2 Samuel | my lord the king (to David) | *tuanku raja*, *Tuanku* (L, B); *Baginda Raja*, *Baginda* (R) | 3:21 |
+| 2 Samuel | Baanah; Rechab; Rimmon; Beerothite; Gittaim | Baana; Rekhab; Rimon; orang Beerot; Gitaim | 4:2–3 |
+| 2 Samuel | Millo; City of David | Milo; Kota Daud | 5:9 |
+| 2 Samuel | Shammua; Shobab; Ibhar; Elishua; Nepheg; Japhia; Elishama; Eliada; Eliphelet | Syamua; Sobab; Yibhar; Elisua; Nefeg; Yafia; Elisama; Elyada; Elifelet | 5:14–16 |
+| 2 Samuel | Baal-perazim | Baal-Perazim | 5:20 |
+| 2 Samuel | balsam trees | *pohon-pohon balsam* (uncertain) | 5:23 |
+| 2 Samuel | Baale-judah; Uzzah; Ahio; Nacon; Perez-uzzah | Baale-Yehuda; Uza; Ahyo; Nakhon; Peres-Uza | 6:2–8 |
+| 2 Samuel | Obed-Edom the Gittite | Obed-Edom, orang Gat | 6:10 |
+| 2 Samuel | rattles; cypress wood | *kerincingan*; *kayu sanobar* | 6:5 |
+| 2 Samuel | Metheg-ammah; Hadadezer; Rehob; Betah; Berothai; Toi; Hamath | Meteg-Ama; Hadadezer; Rehob; Betah; Berotai; Toi; Hamat | 8:1–9 |
+| 2 Samuel | Valley of Salt | Lembah Asin | 8:13 |
+| 2 Samuel | recorder; secretary | *juru catat*; *juru tulis* | 8:16–17 |
+| 2 Samuel | Ahilud; Ahimelech; Seraiah; Jehoiada | Ahilud; Ahimelekh; Seraya; Yoyada | 8:16–18 |
+| 2 Samuel | Ziba; Machir; Ammiel; Lo-debar; Mica | Ziba; Makhir; Amiel; Lo-Debar; Mikha | 9:2–12 |
+| 2 Samuel | your servant (self-reference to the king) | *hambamu (ini)* (L); *saya*, with *Tuanku* (B) and *Baginda* (R) | 9:2 |
+| 2 Samuel | Hanun; Helam; Shobach | Hanun; Helam; Sobakh | 10:1, 16 |
+| 2 Samuel | Eliam | Eliam | 11:3 |
+| 2 Samuel | Jerubbesheth | Yerubeset | 11:21 |
+| 2 Samuel | Jedidiah | Yedija | 12:25 |
+| 2 Samuel | talent (weight) | {{units:sekitar 34 kilogram\|satu talenta}} (B, R); *satu talenta* (L) | 12:30 |
+| 2 Samuel | Jonadab; Shimeah; Baal-hazor; Ammihud; Aminon | Yonadab; Simea; Baal-Hazor; Amihud; Aminon (L) | 13:3–37 |
+| 2 Samuel | brother, sister between royal siblings | *saudara* (L); *kakak*, *adik* by age (B, R) | 13:5 |
+| 2 Samuel | Tekoa; woman of Tekoa | Tekoa; perempuan Tekoa | 14:2, 4 |
+| 2 Samuel | shekel (weight) | {{units:sekitar 2,3 kilogram\|200 syikal}} (B, R) | 14:26 |
+| 2 Samuel | Giloh, Gilonite; Ittai | Gilo, orang Gilo; Itai | 15:12, 19 |
+| 2 Samuel | Amasa; Ithra; Shobi; Barzillai; Rogelim | Amasa; Yitra; Sobi; Barzilai; Rogelim | 17:25–27 |
+| 2 Samuel | the King's Valley; Absalom's Monument | Lembah Raja; Tugu Absalom | 18:18 |
+| 2 Samuel | the Cushite | orang Kush | 18:21 |
+| 2 Samuel | Chimham | Kimham | 19:38 |
+| 2 Samuel | Sheba son of Bichri | Seba anak Bikri | 20:1 |
+| 2 Samuel | Abel Beth-maacah; Berites | Abel-Bet-Maakha; orang Beri | 20:14 |
+| 2 Samuel | Adoram; Sheva; Ira the Jairite | Adoram; Sewa; Ira, orang Yair | 20:24–26 |
+| 2 Samuel | Armoni; Adriel; Meholathite | Armoni; Adriel; orang Mehola | 21:8 |
+| 2 Samuel | impale (*yaqa*) | *memancangkan* (L); *menggantung pada tiang* (B); described at R | 21:6 |
+| 2 Samuel | Ishbi-benob; the Rapha | Yisbi-Benob; Rafa | 21:16 |
+| 2 Samuel | Gob; Sibbecai the Hushathite; Saph | Gob; Sibkhai, orang Husa; Saf | 21:18 |
+| 2 Samuel | Elhanan son of Jaare-oregim | Elhanan anak Yaare-Oregim | 21:19 |
+| 2 Samuel | oracle (*neum*, of David) | *tutur kata* (L, B); *pesan* (R) | 23:1 |
+| 2 Samuel | the Rock of Israel | *Gunung Batu Israel* (L, B); *Pelindung Israel yang kokoh* (R) | 23:3 |
+| 2 Samuel | the Three; the Thirty | *Tiga Pahlawan*; *Tiga Puluh* | 23:9–24 |
+| 2 Samuel | Josheb-basshebeth the Tahchemonite; Adino the Eznite; Dodo; Ahohite | Yosyeb-Basyebet, orang Tahkemoni; Adino, orang Ezni; Dodo; orang Ahohi | 23:8–9 |
+| 2 Samuel | Shammah son of Agee the Hararite; Kabzeel | Syama anak Age, orang Harari; Kabzeel | 23:11, 20 |
+| 2 Samuel | the Thirty (23:24–39) | Elika, orang Harod; Heles, orang Palti; Ira anak Ikesy; Mebunai; Zalmon; Maharai, orang Netofa; Heleb; Itai anak Ribai; Hidai dari lembah-lembah Gaas; Abi-Albon, orang Araba; Azmawet, orang Barhum; Elyahba, orang Saalbon; Yasen; Ahiam anak Sarar; Ahasbai; Hezrai; Paarai, orang Arbi; Yigal; Bani; Zelek; Naharai; Ira, Gareb, orang Yitri | 23:25–38 |
+| 2 Samuel | Tahtim-hodshi; Dan-jaan | Tahtim-Hodsi; Dan-Yaan | 24:6 |
+| 2 Samuel | pestilence | *penyakit sampar* | 24:13 |
+| 2 Samuel | Araunah the Jebusite | Arauna, orang Yebus | 24:16 |
