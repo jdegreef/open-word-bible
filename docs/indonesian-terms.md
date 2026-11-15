@@ -792,3 +792,16 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Song of Songs | the Song of Songs (1:1) | *Nyanyian dari segala nyanyian* (L); *Kidung Agung, nyanyian yang teragung* (B); *Nyanyian yang terindah* (R) | 1:1 |
+| Song of Songs | my beloved (*dodi*); my companion (*ra'yati*) | *kekasihku* (L, B), *cintaku* (R); *temanku* (L), *jantung hatiku* (B, R) | 1:9; 1:13 |
+| Song of Songs | lovemaking (*dodim*) | *cumbuan* (L); *cinta* (B, R) | 1:2 |
+| Song of Songs | daughters of Jerusalem | *putri-putri Yerusalem* (L); *perempuan-perempuan Yerusalem* (B, R) | 1:5 |
+| Song of Songs | my sister, bride | *saudaraku, pengantin* (L); *adikku, pengantinku* (B); *pengantinku, yang kusayangi seperti adikku* (R) | 4:9 |
+| Song of Songs | Kedar; En-gedi; Sharon; Bether | Kedar; En-Gedi; Saron; Beter | 1:5; 1:14; 2:1; 2:17 |
+| Song of Songs | Amana; Senir; Tirzah; Ammi-nadib | Amana; Senir; Tirza; Ami-Nadib | 4:8; 6:4; 6:12 |
+| Song of Songs | Shulammite; Mahanaim; Bath-rabbim; Baal-hamon | Sulamit; Mahanaim; Bat-Rabim; Baal-Hamon | 7:1; 7:5; 8:11 |
+| Song of Songs | nard; henna; crocus; lily | *narwastu*; *bunga pacar*; *bunga krokus*; *bunga bakung* | 1:12; 1:14; 2:1 |
+| Song of Songs | saffron; calamus; cinnamon; aloes | *kuma-kuma*; *jeringau*; *kayu manis*; *gaharu* | 4:14 |
+| Song of Songs | gazelle; young stag; turtledove; foxes | *kijang*; *anak rusa jantan*; *burung tekukur*; *rubah* | 2:7; 2:9; 2:12; 2:15 |
+| Song of Songs | litter; carriage (*appiryon*) | *tandu*; *usungan* (L, B), *tandu* (R) | 3:7; 3:9 |
+| Song of Songs | nut trees; mandrakes | *pohon kenari*; *buah mandragora* | 6:11; 7:14 |
