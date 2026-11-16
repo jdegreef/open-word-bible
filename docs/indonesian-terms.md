@@ -2034,3 +2034,19 @@ records it. Empty until the first book is drafted.
 | Ezra | Malluch; Adaiah; Jashub; Sheal; Ramoth; Adna; Kelal; Bezalel; Isshiah; Shemariah | Malukh; Adaya; Yasyub; Syeal; Ramot; Adna; Kelal; Bezalel; Yisyia; Syemarya | 10:29–32 |
 | Ezra | Mattenai; Mattattah; Jeremai; Maadai; Uel; Bedeiah; Keluhi; Vaniah; Jaasai | Matnai; Matata; Yeremai; Maadai; Uel; Bedeya; Keluhi; Wanya; Yaasai | 10:33–37 |
 | Ezra | Shelemiah; Machnadebai; Shashai; Sharai; Azarel; Mattithiah; Zebina; Jaddai | Syelemya; Makhnadbai; Syasyai; Syarai; Azareel; Matitya; Zebina; Yadai | 10:39–43 |
+| Job | Uz | Us | 1:1 |
+| Job | blameless and upright | *tidak bercela dan jujur* (every level) | 1:1 |
+| Job | the Sabeans (Sheba); the Chaldeans | orang Syeba; orang Kasdim | 1:15; 1:17 |
+| Job | integrity (*tummah*) | *ketulusan* (L, B); *ketulusan hati* (R) | 2:3 |
+| Job | the Temanite; the Shuhite; the Naamathite | orang Teman; orang Syuah; orang Naama | 2:11 |
+| Job | Leviathan | Lewiatan | 3:8 |
+| Job | Shaddai (Readable) | *Allah Yang Mahakuasa* (R); *Yang Mahakuasa* (L, B) | 5:17 |
+| Job | wadi | *sungai musiman* (L); *sungai di padang gurun* (B, R) | 6:15 |
+| Job | Tema | Tema | 6:19 |
+| Job | the Bear; Orion; the Pleiades | bintang Biduk; bintang Belantik; bintang Kartika | 9:9; 38:31–32 |
+| Job | arbiter | *wasit* (L); *penengah* (B) | 9:33 |
+| Job | Barachel; the Buzite; Ram | Barakheel; orang Bus; Ram | 32:2 |
+| Job | Mazzaroth | Mazarot (L, B); *gugus-gugus bintang* (R) | 38:32 |
+| Job | Behemoth | Behemot | 40:15 |
+| Job | qesitah | kesita; `{{units:sekeping uang\|satu kesita}}` (B, R) | 42:11 |
+| Job | Jemimah; Keziah; Keren-happuch | Yemima; Kezia; Keren-Hapukh | 42:14 |
