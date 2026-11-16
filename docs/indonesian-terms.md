@@ -2091,3 +2091,22 @@ records it. Empty until the first book is drafted.
 | Nehemiah | book of the chronicles | *kitab riwayat zaman* (L); *Kitab Sejarah* (B); *catatan resmi* (R) | 12:23 |
 | Nehemiah | Beth-gilgal; Hoshaiah; Micaiah; Milalai; Gilalai; Maai; Gate of the Guard; Eliakim; Izrahiah | Bet-Gilgal; Hosyaya; Mikhaya; Milalai; Gilalai; Maai; Gerbang Penjagaan; Eliakim; Yizrahya | 12:29–42 |
 | Nehemiah | thanksgiving choirs | *paduan suara syukur* | 12:31 |
+| Esther | Susa the citadel | *Susan, benteng itu* (L); *benteng Susan* (B); *benteng kerajaan di Susan* (R) | 1:2 |
+| Esther | eunuch (*saris*) | *sida-sida* (L); *pegawai istana* (B, R), as the glossary | 1:10 |
+| Esther | Mehuman; Biztha; Harbona; Bigtha; Abagtha; Zethar; Carcas | Mehuman; Bizta; Harbona; Bigta; Abagta; Zetar; Karkas | 1:10 |
+| Esther | Carshena; Shethar; Admatha; Tarshish; Meres; Marsena; Memucan | Karsyena; Syetar; Admata; Tarsis; Meres; Marsena; Memukan | 1:14 |
+| Esther | the laws of Persia and Media, which cannot be revoked | *undang-undang Persia dan Media, yang tidak dapat dibatalkan* | 1:19 |
+| Esther | house of the women | *rumah para perempuan* (L); *harem* (B); *tempat tinggal para perempuan* (R) | 2:3 |
+| Esther | Hegai; Jair; Kish; Hadassah; Abihail; Tebeth; Shaashgaz; Bigthan; Teresh | Hegai; Yair; Kish; Hadasa; Abihail; Tebet; Syaasygas; Bigtan; Teresy | 2:3–21 |
+| Esther | Jeconiah | Yekhonya (L, B); Yoyakhin (R) | 2:6 |
+| Esther | gallows (*'ets*) | *pohon* (L); *tiang gantungan* (B); *tiang* (R) | 2:23 |
+| Esther | *hesed* between people | *kemurahan* (not *kasih setia*) | 2:9 |
+| Esther | Hammedatha; the Agagite | Hamedata; orang Agag | 3:1 |
+| Esther | Pur, that is, the lot; Purim | *pur, yaitu undi*; *Purim* | 3:7 |
+| Esther | signet ring; couriers | *cincin meterai*; *pesuruh cepat* | 3:10–13 |
+| Esther | Hathach | Hatakh | 4:5 |
+| Esther | from another place (4:14) | *dari tempat lain*, God not named | 4:14 |
+| Esther | Zeresh; Bigthana | Zeresy; Bigtana | 5:10; 6:2 |
+| Esther | gold scepter | *tongkat emas* | 4:11 |
+| Esther | Sivan | Siwan | 8:9 |
+| Esther | Parshandatha; Dalphon; Aspatha; Poratha; Adalia; Aridatha; Parmashta; Arisai; Aridai; Vaizatha | Parsyandata; Dalfon; Aspata; Porata; Adalya; Aridata; Parmasta; Arisai; Aridai; Waizata | 9:7–9 |
