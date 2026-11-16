@@ -1201,6 +1201,9 @@ records it. Empty until the first book is drafted.
 | Leviticus | valuation (*erek*) | *penilaian* (L); *nilai* (B); *harga yang sudah ditetapkan* (R) | 27:2 |
 | Leviticus | homer; gerah | *homer* (L); `{{units:sekitar dua ratus liter\|satu homer}}` (B, R); *gera* | 27:16; 27:25 |
 | Leviticus | devoted thing (*cherem*) | *barang yang dikhususkan* (L); *dikhususkan sepenuhnya* (B, R); of a person *dikhususkan untuk dibinasakan* | 27:28 |
+| 1 Thessalonians | the tempter | *si penggoda* (L, B); *Iblis* (R) | 3:5 |
+| 1 Thessalonians | archangel | *penghulu malaikat* (L, B); *pemimpin para malaikat* (R) | 4:16 |
+| 1 Thessalonians | the coming (*parousia*) | *kedatangan* | 2:19 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
