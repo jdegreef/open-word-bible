@@ -2182,3 +2182,6 @@ records it. Empty until the first book is drafted.
 | Daniel | king of the south; king of the north | *raja dari selatan*; *raja dari utara* | 11:5–6 |
 | Daniel | Kittim | Kitim (L, B); *negeri-negeri di barat* (R) | 11:30 |
 | Daniel | Libyans; Cushites | orang Libia; orang Kush (L, B), orang Etiopia (R) | 11:43 |
+| Nahum | Elkoshite, Elkosh | orang Elkosy (L); dari Elkosy (B, R) | 1:1 |
+| Nahum | No-amon; Thebes | No-Amon (L, B); Tebe (R) | 3:8 |
+| Nahum | Put; Libyans | Put; orang Libia (L, B), Libia (R) | 3:9 |
