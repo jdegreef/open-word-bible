@@ -1279,6 +1279,8 @@ records it. Empty until the first book is drafted.
 | James | the dispersion (*diaspora*) | *perantauan* | 1:1 |
 | James | favoritism (*prosōpolēmpsia*) | *memandang muka* (L, B) | 2:1 |
 | James | Lord of Sabaoth | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B, R) | 5:4 |
+| 2 Thessalonians | the rebellion; the man of lawlessness | *murtad* (L), *pemberontakan besar* (B, R); *manusia durhaka* (L, B) | 2:3 |
+| 2 Thessalonians | the one who restrains | *yang menahan* | 2:6 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
