@@ -816,6 +816,15 @@ records it. Empty until the first book is drafted.
 | Ephesians | the old self; the new self | *manusia lama*; *manusia baru* (L, B); *diri yang lama*, *diri yang baru* (R) | 4:22 |
 | Ephesians | evangelists | *pemberita Injil* | 4:11 |
 | Ephesians | the full armor of God; helmet; breastplate | *seluruh perlengkapan senjata Allah*; *ketopong*; *baju zirah* | 6:11 |
+| Hebrews | pioneer (*archēgos*) | *Perintis* | 2:10 |
+| Hebrews | rest (God's, Psalm 95) | *tempat perhentian* | 3:11 |
+| Hebrews | anchor | *sauh* | 6:19 |
+| Hebrews | Salem | Salem | 7:1 |
+| Hebrews | Holy of Holies, Most Holy Place | *Tempat Mahakudus* | 9:3 |
+| Hebrews | mercy seat | *tutup pendamaian* | 9:5 |
+| Hebrews | Day of Atonement | *Hari Pendamaian* | 9:7 |
+| Hebrews | will, testament (9:16–17) | *wasiat* | 9:16 |
+| Hebrews | Italy | Italia | 13:24 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
