@@ -1408,6 +1408,7 @@ records it. Empty until the first book is drafted.
 | 1 John | antichrist | *antikristus* (no christos span) | 2:18 |
 | Titus | Artemas; Nicopolis | Artemas; Nikopolis | 3:12 |
 | Titus | Zenas the lawyer | Zenas, ahli hukum itu | 3:13 |
+| 2 John | the chosen lady | *Ibu yang terpilih* (L), *Ibu yang dipilih Allah* (B, R) | 1:1 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
