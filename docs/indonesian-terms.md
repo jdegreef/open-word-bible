@@ -964,6 +964,105 @@ records it. Empty until the first book is drafted.
 | Genesis | Atad; Abel-mizraim | Atad; Abel-Mizraim | 50:10–11 |
 | Genesis | embalm | *merempah-rempahi* (L); *membalsam* (B, R) | 50:2 |
 | Genesis | Machir | Makhir | 50:23 |
+| Exodus | Pithom; Rameses | Pitom; Raamses | 1:11 |
+| Exodus | officers of forced labor (taskmasters) | *mandor kerja paksa* | 1:11 |
+| Exodus | Shiphrah; Puah | Sifra; Pua | 1:15 |
+| Exodus | midwife | *bidan* | 1:15 |
+| Exodus | Reuel | Rehuel | 2:18 |
+| Exodus | Gershom | Gersom | 2:22 |
+| Exodus | Jether (short form of Jethro) | Yeter (L); Yitro (B, R) | 4:18 |
+| Exodus | bridegroom of blood | *pengantin darah* (L, B); *suami karena darah* (R) | 4:25 |
+| Exodus | I AM WHO I AM; I AM | *AKU ADALAH AKU*; *AKU* (no deity_pronoun span) | 3:14 |
+| Exodus | taskmasters (*nogesim*); foremen (*shoterim*) | *mandor*; *pengawas* | 3:7; 5:6 |
+| Exodus | Hanoch (son of Reuben); Pallu; Carmi | Henokh; Palu; Karmi | 6:14 |
+| Exodus | Jemuel; Jamin; Ohad; Jakin; Zohar; Shaul | Yemuel; Yamin; Ohad; Yakhin; Zohar; Saul | 6:15 |
+| Exodus | Gershon; Kohath; Merari | Gerson; Kehat; Merari | 6:16 |
+| Exodus | Libni; Shimei | Libni; Simei | 6:17 |
+| Exodus | Amram; Izhar; Uzziel | Amram; Yizhar; Uziel | 6:18 |
+| Exodus | Mahli; Mushi | Mahli; Musi | 6:19 |
+| Exodus | Jochebed | Yokhebed | 6:20 |
+| Exodus | Nepheg; Zichri | Nefeg; Zikhri | 6:21 |
+| Exodus | Mishael; Elzaphan; Sithri | Misael; Elsafan; Sitri | 6:22 |
+| Exodus | Elisheba; Ithamar | Elisyeba; Itamar | 6:23 |
+| Exodus | Assir; Elkanah; Abiasaph | Asir; Elkana; Abiasaf | 6:24 |
+| Exodus | Putiel | Putiel | 6:25 |
+| Exodus | serpent (*tannin*, 7:9) | *ular naga* (the snake of 4:3: *ular*) | 7:9 |
+| Exodus | magicians; sorcerers | *ahli sihir*; *tukang sihir* | 7:11 |
+| Exodus | Pharaoh's heart: strong; heavy; hard | *keras*; *berat* (L), *degil* (B); *mengeraskan*; *keras kepala* (R) | 7:13–14 |
+| Exodus | gnats (*kinnim*) | *agas* | 8:12 |
+| Exodus | the swarm (*arov*) | *kawanan lalat* | 8:17 |
+| Exodus | boils; blisters | *bisul*; *lepuh* | 9:9 |
+| Exodus | flax | *rami* | 9:31 |
+| Exodus | spelt | *gandum spelt* (uncertain) | 9:32 |
+| Exodus | holy convocation | *pertemuan kudus* | 12:16 |
+| Exodus | hyssop | *hisop* | 12:22 |
+| Exodus | the destroyer | *pemusnah* | 12:23 |
+| Exodus | Succoth | Sukot | 12:37 |
+| Exodus | month of Abib | *bulan Abib* | 13:4 |
+| Exodus | Etham | Etam | 13:20 |
+| Exodus | pillar of cloud; pillar of fire | *tiang awan*; *tiang api* | 13:21 |
+| Exodus | Pi-hahiroth; Migdol; Baal-zephon | Pi-Hahirot; Migdol; Baal-Zefon | 14:2 |
+| Exodus | prophetess | *nabiah* | 15:20 |
+| Exodus | wilderness of Shur | padang gurun Syur | 15:22 |
+| Exodus | Marah; Elim | Mara; Elim | 15:23; 15:27 |
+| Exodus | grumble (*lun*) | *bersungut-sungut* (L, B); *mengomel* (R) | 15:24 |
+| Exodus | wilderness of Sin | padang gurun Sin | 16:1 |
+| Exodus | omer | *gomer* (L); `{{units:sekitar dua liter\|satu gomer}}` (B, R) | 16:16 |
+| Exodus | jar (*tsintsenet*) | *buli-buli* | 16:33 |
+| Exodus | Rephidim | Rafidim | 17:1 |
+| Exodus | Massah; Meribah | Masa; Meriba | 17:7 |
+| Exodus | Hur | Hur | 17:10 |
+| Exodus | The LORD Is My Banner | *{{divine_name:TUHAN\|Yahweh}} Panji-panjiku* | 17:15 |
+| Exodus | Eliezer (son of Moses) | Eliezer | 18:4 |
+| Exodus | eagle (*nesher*) | *rajawali* | 19:4 |
+| Exodus | special possession (*segullah*) | *milik-Ku sendiri* (L); *harta-Ku yang istimewa* (B, R) | 19:5 |
+| Exodus | kingdom of priests; holy nation | *kerajaan imam*; *bangsa yang kudus* | 19:6 |
+| Exodus | kiln | *tanur* | 19:18 |
+| Exodus | bride-price (*mohar*) | *mas kawin* | 22:15 |
+| Exodus | interest (*neshekh*) | *bunga* (not *riba*) | 22:24 |
+| Exodus | Feast of Harvest; Feast of Ingathering | *Hari Raya Panen*; *Hari Raya Pengumpulan Hasil* | 23:16 |
+| Exodus | hornet (*tsir*a) | *tawon* (uncertain) | 23:28 |
+| Exodus | sapphire | *batu nilam* | 24:10 |
+| Exodus | Joshua as servant (*mesharet*) | *abdi* (L, B); *pembantu* (R) | 24:13 |
+| Exodus | contribution (*terumah*) | *persembahan khusus* | 25:2 |
+| Exodus | bronze | *tembaga* | 25:3 |
+| Exodus | blue, purple, scarlet yarn | *kain ungu kebiruan, kain ungu, kain kirmizi* (L); *benang biru, ungu, dan merah tua* (B, R) | 25:4 |
+| Exodus | fine linen | *lenan halus* | 25:4 |
+| Exodus | *tahash* skins | *kulit tahas* (L); *kulit halus* (B, R) (uncertain) | 25:5 |
+| Exodus | acacia wood | *kayu akasia* | 25:5 |
+| Exodus | onyx | *batu oniks* | 25:7 |
+| Exodus | overlay; molding | *menyalut* (L, B), *melapisi* (R); *bingkai* (L, B), *lis* (R) | 25:11 |
+| Exodus | carrying poles | *kayu pengusung* (L, B); *tongkat pengusung* (R) | 25:13 |
+| Exodus | cups, buds, blossoms (lampstand) | *kelopak*, *tombol*, *kembang* | 25:31 |
+| Exodus | almond | *badam* | 25:33 |
+| Exodus | cubit in metric (B, R) | `{{units:sekitar 45 sentimeter\|satu hasta}}`, rounded | 25:10 |
+| Exodus | curtains of the dwelling (*yeriot*) | *kain tenda* | 26:1 |
+| Exodus | loops; clasps | *tali sangkutan*; *kait* | 26:4; 26:6 |
+| Exodus | frames (*qerashim*) | *papan* (uncertain) | 26:15 |
+| Exodus | tenons; bases; bars | *purus* (L, B), *pasak* (R); *alas*; *kayu lintang* | 26:17–26 |
+| Exodus | screen (*masakh*) | *tirai penutup* | 26:36 |
+| Exodus | embroiderer | *tukang sulam* (L); *penyulam* (B, R) | 26:36 |
+| Exodus | horns of the altar | *tanduk-tanduk* | 27:2 |
+| Exodus | grating; ledge | *kisi-kisi*; *birai* | 27:4–5 |
+| Exodus | hangings (of the court); bands | *layar*; *simpai* | 27:9–10 |
+| Exodus | robe; tunic; turban; sash; caps; undergarments | *jubah*; *kemeja*; *serban*; *ikat pinggang*; *ikat kepala*; *celana* | 28:4; 28:40–42 |
+| Exodus | shoulder pieces; woven band (of the ephod) | *tutup bahu* (L, B), *tali bahu* (R); *sabuk tenunan* | 28:7–8 |
+| Exodus | breastpiece of judgment | *tutup dada keputusan* (L, B) | 28:15 |
+| Exodus | span | *jengkal*; `{{units:sekitar 22 sentimeter\|satu jengkal}}` (B, R) | 28:16 |
+| Exodus | the twelve stones | *sardis, topas, beril; pirus, nilam, zamrud; yakut, akik, kecubung; krisolit, oniks, yaspis* (uncertain) | 28:17–20 |
+| Exodus | bells; pomegranates | *giring-giring*; *buah delima* | 28:33 |
+| Exodus | gold plate (*tsits*) | *lempeng emas* | 28:36 |
+| Exodus | fill the hand (ordain) | *mengisi tangan* (L); *menahbiskan* (B, R) | 28:41 |
+| Exodus | between the evenings | *di antara kedua senja* (L); *menjelang malam* (B); *ketika matahari terbenam* (R) | 29:39 |
+| Exodus | ransom (*kopher*); census | *tebusan*; *cacah jiwa* (B) | 30:12 |
+| Exodus | myrrh; cinnamon; fragrant cane; cassia | *mur tetesan*; *kayu manis*; *tebu harum*; *kayu teja* | 30:23–24 |
+| Exodus | stacte; onycha; galbanum | *getah damar*; *kulit lokan*; *getah rasamala* (uncertain) | 30:34 |
+| Exodus | Bezalel; Uri; Oholiab; Ahisamach | Bezalel; Uri; Oholiab; Ahisamakh | 31:2; 31:6 |
+| Exodus | stiff-necked | *tegar tengkuk* (L, B); *keras kepala* (R) | 32:9 |
+| Exodus | Jealous (as a name) | *Cemburuan* (uncertain) | 34:14 |
+| Exodus | the Ten Words | *kesepuluh firman* (L); *Sepuluh Firman* (B); *Sepuluh Perintah* (R) | 34:28 |
+| Exodus | veil (of Moses) | *selubung* (L, B); *kain* (R) | 34:33 |
+| Exodus | beka; talent (metric) | `{{units:sekitar enam gram\|satu beka}}`; `{{units:sekitar 34 kilogram\|satu talenta}}` | 38:26; 25:39 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
