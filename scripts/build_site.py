@@ -5558,10 +5558,24 @@ def build(out):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
-    pages, indexed, feeds = {}, [], {}
+    # Each file is written as soon as it is made, not gathered first: the
+    # whole site (over 3 GB) held in memory took the build past 8 GB, more
+    # than Render's build machine has, and deploys failed (2026-11-15).
+    written = []
+
+    def write(rel, text):
+        path = out / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        written.append(rel)
+
+    def page_file(page_url):
+        return (page_url.strip("/") + "/index.html").lstrip("/")
+
+    indexed = []
     for lang in LANGUAGES:
         def add(path, text, index=True):
-            pages[url(lang, path)] = text
+            write(page_file(url(lang, path)), text)
             if index:
                 indexed.append(url(lang, path))
 
@@ -5597,8 +5611,8 @@ def build(out):
         articles = load_articles(lang)
         add("/articles/", articles_page(articles, lang), index=bool(articles))
         if articles:
-            feeds[feed_url(lang).lstrip("/")] = articles_feed(articles, lang)
-        feeds[votd_feed_url(lang).lstrip("/")] = votd_feed(lang)
+            write(feed_url(lang).lstrip("/"), articles_feed(articles, lang))
+        write(votd_feed_url(lang).lstrip("/"), votd_feed(lang))
         for article in articles:
             add(article_url(article), article_page(article, articles, lang))
         add("/account/", account_page(lang), index=False)
@@ -5611,17 +5625,16 @@ def build(out):
         add(MY_PLANS_PATH, my_plans_page(lang), index=False)
         add("/groups/", groups_page(lang), index=False)
     # The admin is in English only (admin_page).
-    pages["/admin/"] = admin_page()
+    write(page_file("/admin/"), admin_page())
     # A plan's page is in the languages that offer it.
     offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
     for plan in load_plans():
         langs = tuple(code for code in LANGUAGES if plan.id in offered[code])
         for code in langs:
             path = plan_url(plan)
-            pages[url(code, path)] = plan_page(plan, code, langs)
+            write(page_file(url(code, path)), plan_page(plan, code, langs))
             indexed.append(url(code, path))
-    files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
-    files.update(feeds)
+    files = {}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
@@ -5631,17 +5644,14 @@ def build(out):
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     files["basemap.json"] = basemap_file()[0]
-    files.update(verse_files())
-    files.update(editions_files())
-    files.update(word_files())
-    files.update(chapter_data_files())
-    for lang in LANGUAGES:
-        files[f"search-ui-{lang}.json"] = search_ui(lang)
-        files[f"plans-{lang}.json"] = plans_json(lang)
     for rel, text in files.items():
-        path = out / rel
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding="utf-8")
+        write(rel, text)
+    for made in (verse_files, editions_files, word_files, chapter_data_files):
+        for rel, text in made().items():
+            write(rel, text)
+    for lang in LANGUAGES:
+        write(f"search-ui-{lang}.json", search_ui(lang))
+        write(f"plans-{lang}.json", plans_json(lang))
     blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
     for rel, data in blobs.items():
         path = out / rel
@@ -5652,7 +5662,7 @@ def build(out):
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
+    return sorted(set(written)) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
                             "saved.js", "groups.js", "search.js", "site.js", "style.css"]
 
 
