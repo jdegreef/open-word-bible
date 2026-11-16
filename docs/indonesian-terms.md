@@ -1401,6 +1401,9 @@ records it. Empty until the first book is drafted.
 | 2 Timothy | Crescens; Dalmatia | Kreskes; Dalmatia | 4:10 |
 | 2 Timothy | Carpus | Karpus | 4:13 |
 | 2 Timothy | Eubulus; Pudens; Linus; Claudia | Eubulus; Pudens; Linus; Klaudia | 4:21 |
+| 2 Peter | Tartarus | Tartarus | 2:4 |
+| 2 Peter | Bosor (Balaam's father) | Bosor | 2:15 |
+| 2 Peter | the Master (*despotēs*, of Christ) | *Penguasa* | 2:1 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
