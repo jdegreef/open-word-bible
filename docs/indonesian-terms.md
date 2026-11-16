@@ -1394,6 +1394,13 @@ records it. Empty until the first book is drafted.
 | 1 Timothy | man of God | *manusia Allah* (L); *abdi Allah* (B) | 6:11 |
 | 1 Peter | royal priesthood | *imamat yang rajani* (L); *imam-imam Raja* (B) | 2:9 |
 | 1 Peter | Silvanus | Silwanus | 5:12 |
+| 2 Timothy | Phygelus; Hermogenes | Figelus; Hermogenes | 1:15 |
+| 2 Timothy | Philetus | Filetus | 2:17 |
+| 2 Timothy | Jannes; Jambres | Yanes; Yambres | 3:8 |
+| 2 Timothy | breathed out by God | *diilhamkan Allah* (L); *dihembuskan oleh Allah* (B) | 3:16 |
+| 2 Timothy | Crescens; Dalmatia | Kreskes; Dalmatia | 4:10 |
+| 2 Timothy | Carpus | Karpus | 4:13 |
+| 2 Timothy | Eubulus; Pudens; Linus; Claudia | Eubulus; Pudens; Linus; Klaudia | 4:21 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
