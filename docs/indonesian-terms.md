@@ -1276,6 +1276,9 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Mount Hor; waters of Meribah; wilderness of Zin | gunung Hor; mata air Meriba; padang gurun Zin | 32:50–51 |
 | Deuteronomy | Hoshea (Joshua) | Hosea (L) | 32:44 |
 | Deuteronomy | Zoar; the city of palm trees | Zoar; kota pohon kurma | 34:3 |
+| James | the dispersion (*diaspora*) | *perantauan* | 1:1 |
+| James | favoritism (*prosōpolēmpsia*) | *memandang muka* (L, B) | 2:1 |
+| James | Lord of Sabaoth | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B, R) | 5:4 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
