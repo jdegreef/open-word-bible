@@ -694,6 +694,41 @@ records it. Empty until the first book is drafted.
 | Jonah | captain (*rav hachovel*) | *kepala para pelaut* (L); *nakhoda* (B, R) | 1:6 |
 | Jonah | relent (*nicham*, of God) | *menyesal* (L); *mengubah keputusan-Nya* (B, R) | 3:9 |
 | Jonah | the plant (*qiqayon*) | *tanaman* (L); *tanaman yang rimbun daunnya* (B, R) | 4:6 |
+| Psalms | sheminith; gittith | *syeminit*; *gitit* (L, B) | 6:1; 8:1 |
+| Psalms | Muth-labben; Higgaion | *Mut-laben*; *Higayon* | 9:1; 9:17 |
+| Psalms | Ayyeleth-hashshahar | *Ayelet-hasysyahar* (L, B); "Rusa Betina di Waktu Fajar" (R) | 22:1 |
+| Psalms | Sirion | Siryon | 29:6 |
+| Psalms | Abimelech | Abimelekh | 34:1 |
+| Psalms | Jeduthun | Yedutun | 39:1 |
+| Psalms | Hermon; Mizar | Hermon; Mizar | 42:7 |
+| Psalms | shoshannim; alamoth | *syosanim*; *alamot* (L, B) | 45:1; 46:1 |
+| Psalms | Zaphon | Zafon | 48:3 |
+| Psalms | Ziphites | orang-orang Zif | 54:2 |
+| Psalms | mahalath | *mahalat* (L, B); the tune "Mahalat" (R) | 53:1 |
+| Psalms | yonath elem rechokim | *yonat elem rekhokim* (L, B); "Merpati Bisu di Tempat yang Jauh" (R) | 56:1 |
+| Psalms | al tashcheth ("Do not destroy") | "Jangan Binasakan" | 57:1 |
+| Psalms | shushan eduth | *syusyan edut* (L, B); "Bunga Bakung Perjanjian" (R) | 60:1 |
+| Psalms | Aram-naharaim; Aram-zobah | Aram-Naharaim; Aram-Zoba | 60:2 |
+| Psalms | Valley of Salt; Succoth | Lembah Asin; Sukot | 60:2; 60:8 |
+| Psalms | Zalmon | Zalmon; gunung Zalmon (R) | 68:15 |
+| Psalms | Seba (beside Sheba) | Seba | 72:10 |
+| Psalms | Leviathan | Lewiatan | 74:14 |
+| Psalms | Zoan; Ham | Zoan; Ham | 78:12; 78:51 |
+| Psalms | shoshannim eduth | *syosanim edut* (L, B); "Bunga-bunga Bakung Perjanjian" (R) | 80:1 |
+| Psalms | Meribah | Meriba | 81:8 |
+| Psalms | Gebal; Jabin; Endor | Gebal; Yabin; En-Dor | 83:8; 83:10; 83:11 |
+| Psalms | valley of Baca | Lembah Baka | 84:7 |
+| Psalms | mahalath leannoth; Heman the Ezrahite; Abaddon | *mahalat leanot* (L, B); Heman, orang Ezrahi; Abadon | 88:1; 88:12 |
+| Psalms | Ethan the Ezrahite; Tabor | Etan, orang Ezrahi; Tabor | 89:1; 89:13 |
+| Psalms | Massah | Masa | 95:8 |
+| Psalms | torah; testimonies; precepts; statutes (Psalm 119) | *hukum* (L), *pengajaran* (B), *ajaran* (R); *peringatan-peringatan* (L), *ketentuan-ketentuan* (B), *apa yang telah Kaunyatakan* (R); *titah-titah* (L, B), *petunjuk-petunjuk* (R); *ketetapan-ketetapan* (L, B), *hukum-hukum* (R) | 119:1–176 |
+| Psalms | commands; judgments; word; saying (Psalm 119) | *perintah-perintah*; *keputusan-keputusan*; *firman*; *perkataan* (L), *firman* or *janji* (B, R) | 119:1–176 |
+| Psalms | A Song of Ascents | *Nyanyian untuk perjalanan naik* (L); *Nyanyian ziarah* (B); *Nyanyian untuk perjalanan naik ke Yerusalem* (R) | 120:1–134:1 |
+| Psalms | broom tree (coals); Meshech; Kedar | *arar*; Mesekh; Kedar | 120:4–5 |
+| Psalms | Ephrathah; fields of Jaar; the Mighty One of Jacob | Efrata; padang-padang Yaar; *Yang Mahakuat dari Yakub* | 132:2–6 |
+| Psalms | his loyal love lasts forever (refrain) | *sebab kasih setia-Nya [untuk] selama-lamanya* (L); *sebab kasih setia-Nya kekal selama-lamanya* (B); *Kasih setia-Nya kekal selama-lamanya* (R) | 136:1–26 |
+| Psalms | poplars (by the rivers of Babylon) | *pohon-pohon gandarusa* (L, B, uncertain); *pohon-pohon di tepi sungai* (R) | 137:2 |
+| Psalms | Praise Yah (Hallelujah) | *Pujilah TUHAN* with the divine-name span for *Yah* | 146:1–150:6 |
 | 1 Kings | Abishag the Shunammite | Abisag, perempuan Sunem (L), perempuan dari Sunem (B, R) | 1:3 |
 | 1 Kings | Haggith; Zeruiah; Jehoiada; Rei | Hagit; Zeruya; Yoyada; Rei | 1:5–8 |
 | 1 Kings | the stone of Zoheleth; En-rogel | batu Zohelet; En-Rogel | 1:9 |
