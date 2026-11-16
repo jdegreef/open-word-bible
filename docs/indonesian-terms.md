@@ -1063,6 +1063,9 @@ records it. Empty until the first book is drafted.
 | Exodus | the Ten Words | *kesepuluh firman* (L); *Sepuluh Firman* (B); *Sepuluh Perintah* (R) | 34:28 |
 | Exodus | veil (of Moses) | *selubung* (L, B); *kain* (R) | 34:33 |
 | Exodus | beka; talent (metric) | `{{units:sekitar enam gram\|satu beka}}`; `{{units:sekitar 34 kilogram\|satu talenta}}` | 38:26; 25:39 |
+| Colossians | barbarian; Scythian | *orang barbar*; *orang Skit* | 3:11 |
+| Colossians | Jesus called Justus | Yesus yang disebut Yustus | 4:11 |
+| Colossians | Nympha | Nimfa | 4:15 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
