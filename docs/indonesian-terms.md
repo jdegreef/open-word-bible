@@ -1982,3 +1982,55 @@ records it. Empty until the first book is drafted.
 | 2 Chronicles | Huldah the prophetess; Tokhath; Hasrah; the Second Quarter | Nabiah Hulda; Tokhat; Hasra; Kota Baru (B) | 34:22 |
 | 2 Chronicles | Neco; Carchemish; the Laments | Nekho; Karkemis; *kumpulan Ratapan* | 35:20, 25 |
 | 2 Chronicles | Eliakim; the God of heaven (Cyrus' decree) | Elyakim; *Allah semesta langit* | 36:4, 23 |
+| Ezra | God of heaven | *Allah langit* (L); *Allah semesta langit* (B); *Allah yang di surga* (R) | 1:2 |
+| Ezra | house of God (*beit ha'elohim*, *beit 'elaha'*) | *rumah Allah* (every level); "house of the LORD" keeps *bait {{divine_name:TUHAN\|Yahweh}}* (L, B) | 1:4 |
+| Ezra | Mithredath; Sheshbazzar | Mitredat; Syesybazar | 1:8 |
+| Ezra | the exiles (*haggolah*) | *orang-orang buangan* (L, B); *orang-orang yang dahulu dibuang* (R) | 1:11 |
+| Ezra | Jeshua (high priest, Levites) | Yesua (the high priest is *Yosua* in Haggai and Zechariah) | 2:2 |
+| Ezra | Seraiah; Reelaiah; Bilshan; Mispar; Bigvai; Rehum; Baanah | Seraya; Reelaya; Bilsyan; Mispar; Bigwai; Rehum; Baana | 2:2 |
+| Ezra | sons of X (lists) | *bani X* (L); *keturunan X*, a town *orang X* (B, R) | 2:3 |
+| Ezra | Parosh; Shephatiah; Arah; Pahath-moab; Zattu; Zaccai; Bani; Bebai; Azgad; Adonikam; Adin; Ater; Bezai; Jorah; Hashum; Gibbar | Parosy; Syefatya; Arah; Pahat-Moab; Zatu; Zakai; Bani; Bebai; Azgad; Adonikam; Adin; Ater; Bezai; Yora; Hasyum; Gibar | 2:3–20 |
+| Ezra | Netophah; Anathoth; Azmaveth; Kiriath-arim; Chephirah; Beeroth; Geba; Michmash; Magbish; Lod; Hadid; Ono; Senaah | Netofa; Anatot; Azmawet; Kiryat-Arim; Kefira; Beerot; Geba; Mikhmas; Magbisy; Lod; Hadid; Ono; Senaa | 2:22–35 |
+| Ezra | Jedaiah; Immer; Pashhur; Harim; Kadmiel; Hodaviah | Yedaya; Imer; Pasyhur; Harim; Kadmiel; Hodawya | 2:36–40 |
+| Ezra | gatekeepers; singers | *para penjaga gerbang*; *para penyanyi* | 2:41–42 |
+| Ezra | Shallum; Talmon; Akkub; Hatita; Shobai | Syalum; Talmon; Akub; Hatita; Syobai | 2:42 |
+| Ezra | Nethinim, temple servants | *para Netinim* (L); *para pelayan Bait Allah* (B); *para pelayan rumah Allah* (R) | 2:43 |
+| Ezra | Ziha; Hasupha; Tabbaoth; Keros; Siaha; Padon; Lebanah; Hagabah; Hagab; Shalmai; Hanan; Giddel; Gahar; Reaiah; Rezin; Nekoda; Gazzam; Uzza; Paseah; Besai; Asnah; Meunim; Nephusim; Bakbuk; Hakupha; Harhur; Bazluth; Mehida; Harsha; Barkos; Sisera; Temah; Neziah; Hatipha | Ziha; Hasufa; Tabaot; Keros; Siaha; Padon; Lebana; Hagaba; Hagab; Syalmai; Hanan; Gidel; Gahar; Reaya; Rezin; Nekoda; Gazam; Uza; Paseah; Besai; Asna; Meunim; Nefusim; Bakbuk; Hakufa; Harhur; Bazlut; Mehida; Harsya; Barkos; Sisera; Temah; Nezia; Hatifa | 2:43–54 |
+| Ezra | Solomon's servants | *budak-budak Salomo* (L); *hamba-hamba Salomo* (B, R) | 2:55 |
+| Ezra | Sotai; Hassophereth; Peruda; Jaala; Darkon; Hattil; Pochereth-hazzebaim; Ami | Sotai; Hasoferet; Peruda; Yaala; Darkon; Hatil; Pokheret-Hazebaim; Ami | 2:55–57 |
+| Ezra | Tel-melah; Tel-harsha; Cherub; Addan; Delaiah; Hobaiah; Hakkoz; Barzillai | Tel-Melah; Tel-Harsya; Kerub; Adan; Delaya; Hobaya; Hakos; Barzilai | 2:59–61 |
+| Ezra | Tirshatha; governor (*pechah*) | *Tirsyata* (L), *bupati* (B, R); *bupati* (as 1 Kings 10:15) | 2:63 |
+| Ezra | daric; mina | *darik* (every level); `{{units:sekitar tiga ton\|5.000 mina}}` (B, R) | 2:69 |
+| Ezra | Jozadak; Shealtiel | Yozadak; Sealtiel | 3:2 |
+| Ezra | the peoples of the lands | *bangsa-bangsa negeri-negeri itu* (L); *bangsa-bangsa di negeri-negeri sekitar* (B); *orang-orang yang tinggal di negeri itu* (R) | 3:3 |
+| Ezra | Joppa (Old Testament) | Yafo | 3:7 |
+| Ezra | cymbals (temple music) | *ceracap* (uncertain; *simbal* the glossary alternative) | 3:10 |
+| Ezra | Henadad | Henadad | 3:9 |
+| Ezra | Esarhaddon | Esarhadon | 4:2 |
+| Ezra | Bishlam; Tabeel; Shimshai | Bisylam; Tabeel; Syimsyai | 4:7–8 |
+| Ezra | Dinaites; Apharsathchites; Tarpelites; Apharsites; Erech; Dehavites | orang Dina; orang Afarsatkhi; orang Tarpel; orang Afarsi; Erekh; orang Dehawa | 4:9 |
+| Ezra | Osnappar | Osnapar | 4:10 |
+| Ezra | Beyond the River | *Seberang Sungai* (L); *provinsi Seberang Sungai* (B); *provinsi sebelah barat sungai Efrat* (R) | 4:10 |
+| Ezra | "your servants" to the king | *hamba-hamba Tuanku* (L); *para abdi Tuanku* (B); *kami, rakyat Baginda* (R) | 4:11 |
+| Ezra | Iddo | Ido | 5:1 |
+| Ezra | Tattenai; Shethar-bozenai | Tatnai; Syetar-Boznai | 5:3 |
+| Ezra | Ecbatana | Ekbatana | 6:2 |
+| Ezra | impale | *menyula*, *disulakan* (L, B); described (R) | 6:11 |
+| Ezra | Hilkiah; Amariah; Meraioth; Zerahiah; Uzzi; Bukki; Abishua | Hilkia; Amarya; Merayot; Zerahya; Uzi; Buki; Abisyua | 7:1–5 |
+| Ezra | scribe (Ezra's title) | *ahli kitab* (L, B); *guru hukum Taurat* (R) | 7:6 |
+| Ezra | talent; kor; bath | `{{units:sekitar 3,4 ton perak\|100 talenta perak}}`; `{{units:sekitar 21.000 liter gandum\|100 kor gandum}}`; `{{units:sekitar 2.200 liter anggur\|100 bat anggur}}` (B, R) | 7:22 |
+| Ezra | Ezra's memoir "I" | *aku* (L, B); *saya* (R) | 7:27 |
+| Ezra | Gershom; Hattush; Shecaniah; Eliehoenai; Jahaziel; Ebed | Gersom; Hatusy; Syekhanya; Elyehoenai; Yahaziel; Ebed | 8:2–6 |
+| Ezra | Jeshaiah; Zebadiah; Jehiel; Josiphiah; Hakkatan; Eliphelet; Jeiel; Shemaiah; Uthai; Zaccur | Yesaya; Zebadya; Yehiel; Yosifya; Hakatan; Elifelet; Yeiel; Syemaya; Utai; Zakur | 8:7–14 |
+| Ezra | Ahava | Ahawa; *terusan* (B, R) for its canal | 8:15 |
+| Ezra | Elnathan; Jarib; Meshullam; Joiarib; Casiphia | Elnatan; Yarib; Mesyulam; Yoyarib; Kasifya | 8:16–17 |
+| Ezra | Mahli; Sherebiah; Hashabiah | Mahli; Syerebya; Hasyabya | 8:18–19 |
+| Ezra | Meremoth; Jozabad; Noadiah; Binnui | Meremot; Yozabad; Noadya; Binui | 8:33 |
+| Ezra | satraps | *para wakil raja* (every level) | 8:36 |
+| Ezra | Jehohanan; Eliashib; Asahel; Jahzeiah; Tikvah; Shabbethai | Yehohanan; Elyasib; Asael; Yahzeya; Tikwa; Syabetai | 10:6–15 |
+| Ezra | Maaseiah; Gedaliah; Hanani; Elioenai; Nethanel; Eleasah | Maaseya; Gedalya; Hanani; Elyoenai; Netaneel; Eleasa | 10:18–22 |
+| Ezra | Kelaiah; Kelita; Pethahiah; Telem; Uri | Kelaya; Kelita; Petahya; Telem; Uri | 10:23–24 |
+| Ezra | Ramiah; Izziah; Malkijah; Mijamin; Mattaniah; Abdi; Jeremoth; Aziza; Zabbai; Athlai | Ramya; Yizia; Malkia; Miyamin; Matanya; Abdi; Yeremot; Aziza; Zabai; Atlai | 10:25–28 |
+| Ezra | Malluch; Adaiah; Jashub; Sheal; Ramoth; Adna; Kelal; Bezalel; Isshiah; Shemariah | Malukh; Adaya; Yasyub; Syeal; Ramot; Adna; Kelal; Bezalel; Yisyia; Syemarya | 10:29–32 |
+| Ezra | Mattenai; Mattattah; Jeremai; Maadai; Uel; Bedeiah; Keluhi; Vaniah; Jaasai | Matnai; Matata; Yeremai; Maadai; Uel; Bedeya; Keluhi; Wanya; Yaasai | 10:33–37 |
+| Ezra | Shelemiah; Machnadebai; Shashai; Sharai; Azarel; Mattithiah; Zebina; Jaddai | Syelemya; Makhnadbai; Syasyai; Syarai; Azareel; Matitya; Zebina; Yadai | 10:39–43 |
