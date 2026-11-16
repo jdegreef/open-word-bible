@@ -2122,3 +2122,11 @@ records it. Empty until the first book is drafted.
 | Proverbs | Jakeh; Ithiel; Ucal | Yake; Itiel; Ukal | 30:1 |
 | Proverbs | rock badger (hyrax) | *hiraks* | 30:26 |
 | Proverbs | wormwood | *apsintus* | 5:4 |
+| Ecclesiastes | Qoheleth (the Teacher) | Kohelet (L); *sang Pengajar* (B, R) | 1:1 |
+| Ecclesiastes | breath (*hevel*) | *napas*; *Napas dari segala napas* (L), *Hanya napas, napas belaka* (B), *Tidak ada yang bertahan!* (R) | 1:2 |
+| Ecclesiastes | a chasing of wind | *pengejaran angin* (L); *usaha mengejar angin* (B); *seperti mencoba menangkap angin* (R) | 1:14 |
+| Ecclesiastes | under the sun | *di bawah matahari* (L, B); *di dunia ini* (R) | 1:3 |
+| Ecclesiastes | gain (*yitron*); toil (*'amal*); portion (*chelek*) | *keuntungan*; *jerih payah* (L), *kerja keras* (B, R); *bagian* (L, B), *yang diberikan hidup* (R) | 1:3; 2:10 |
+| Ecclesiastes | eternity (3:11) | *kekekalan* (L); *kesadaran akan kekekalan* (B); *kerinduan akan apa yang kekal* (R) | 3:11 |
+| Ecclesiastes | goads | *kusa* | 12:11 |
+| Ecclesiastes | almond tree; caper-berry | *pohon badam*; *buah kaper* | 12:5 |
