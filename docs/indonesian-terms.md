@@ -2149,3 +2149,36 @@ records it. Empty until the first book is drafted.
 | Lamentations | wormwood | *ipuh* | 3:15 |
 | Lamentations | jackals | *serigala* | 4:3 |
 | Lamentations | Uz | Us | 4:21 |
+| Daniel | Ashpenaz; chief of the eunuchs | Aspenas; *kepala sida-sida* (L), *kepala pegawai istana* (B, R) | 1:3 |
+| Daniel | Shinar | *tanah Sinear* (L, B); *negeri Babel* (R) | 1:2 |
+| Daniel | Belteshazzar (Daniel's name) | Beltsazar (kept apart from Belsyazar, the king) | 1:7 |
+| Daniel | magicians; enchanters; sorcerers; diviners | *ahli sihir*; *ahli jampi*; *tukang tenung*; *ahli nujum* | 1:20; 2:2; 2:27 |
+| Daniel | Chaldeans (the class of wise men) | *orang Kasdim* (L, B); *ahli perbintangan* (R) | 2:2 |
+| Daniel | Arioch | Ariokh | 2:14 |
+| Daniel | O king, live forever | *Ya raja, hiduplah untuk selamanya* (L); *Ya Tuanku Raja, kiranya Tuanku hidup untuk selamanya* (B); *Baginda Raja, panjang umur Baginda* (R) | 2:4 |
+| Daniel | Dura | Dura | 3:1 |
+| Daniel | satraps; prefects; governors; counselors; treasurers; judges; magistrates | *wakil raja*; *penguasa*; *bupati*; *penasihat*; *bendahara*; *hakim*; *pejabat hukum* | 3:2 |
+| Daniel | peoples, nations and languages | *bangsa-bangsa, suku-suku bangsa dan bahasa-bahasa* (L); *... dan orang-orang dari segala bahasa* (B) | 3:4 |
+| Daniel | the blazing furnace | *perapian yang menyala-nyala* (L, B); *perapian yang sangat panas* (R) | 3:6 |
+| Daniel | the Most High (God) | *Yang Mahatinggi*; *Allah Yang Mahatinggi* | 3:26 |
+| Daniel | watcher | *penjaga* (L, B); *utusan surgawi* (R) | 4:10 |
+| Daniel | seven times (periods) | *tujuh masa* | 4:13 |
+| Daniel | MENE, MENE, TEKEL, PARSIN; PERES | MENE, MENE, TEKEL, PARSIN; PERES | 5:25, 28 |
+| Daniel | Darius the Mede | Darius, orang Media | 6:1 |
+| Daniel | the overseers (over the satraps) | *pengawas* (L); *pejabat tinggi* (B); *pemimpin* (R) | 6:3 |
+| Daniel | the lions' den | *gua singa* (L, B); *lubang singa* (R) | 6:8 |
+| Daniel | Ancient of Days | *Yang Lanjut Usianya* (L, B); *Yang Lanjut Usia* (R) (uncertain) | 7:9 |
+| Daniel | one like a son of man | *seorang seperti anak manusia* (lowercase) | 7:13 |
+| Daniel | the holy ones of the Most High | *orang-orang kudus milik Yang Mahatinggi* (L, B); *umat Allah yang kudus* (R) | 7:18 |
+| Daniel | a time, times and half a time | *satu masa, dua masa dan setengah masa* (L, B); *tiga setengah masa* (R) | 7:25 |
+| Daniel | Susa the citadel; Ulai canal | *benteng Susan*; *terusan Ulai* | 8:2 |
+| Daniel | the Prince of the host; the Prince of princes | *Pemimpin bala tentara*; *Pemimpin segala pemimpin* | 8:11; 8:25 |
+| Daniel | the regular offering | *korban sehari-hari* (L, B); *korban harian* (R) | 8:11 |
+| Daniel | Gabriel | Gabriel | 8:16 |
+| Daniel | seventy sevens | *tujuh puluh kelompok tujuh* (uncertain) | 9:24 |
+| Daniel | an anointed one | *seorang yang diurapi* (no christos span) | 9:25 |
+| Daniel | Uphaz | Ufas | 10:5 |
+| Daniel | the princes of Persia and Greece; Michael | *pemimpin* (L, B), *malaikat penguasa* (R); Mikhael | 10:13 |
+| Daniel | king of the south; king of the north | *raja dari selatan*; *raja dari utara* | 11:5–6 |
+| Daniel | Kittim | Kitim (L, B); *negeri-negeri di barat* (R) | 11:30 |
+| Daniel | Libyans; Cushites | orang Libia; orang Kush (L, B), orang Etiopia (R) | 11:43 |
