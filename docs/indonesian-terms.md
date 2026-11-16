@@ -2211,3 +2211,10 @@ records it. Empty until the first book is drafted.
 | Haggai | Jehozadak | Yehozadak (Ezra 3:2 has *Yozadak* for the shorter Hebrew form) | 1:1 |
 | Haggai | governor (*pechah*) | *bupati*, as Ezra and Nehemiah | 1:1 |
 | Haggai | signet ring | *cincin meterai* | 2:23 |
+| Joel | Pethuel | Petuel | 1:1 |
+| Joel | cutting, swarming, hopping, stripping locust | *belalang pemotong*, *belalang pindahan*, *belalang pelompat*, *belalang pelahap* (L, B); *kawanan belalang* (R) (uncertain) | 1:4 |
+| Joel | the day of the LORD | *hari TUHAN* | 1:15 |
+| Joel | the Almighty (*Shaddai*) | *Yang Mahakuasa* | 1:15 |
+| Joel | valley of Jehoshaphat; valley of decision | lembah Yosafat; *lembah keputusan* | 4:2; 4:14 |
+| Joel | Sabeans | orang Syeba | 4:8 |
+| Joel | valley of Shittim | lembah Sitim | 4:18 |
