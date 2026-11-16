@@ -812,6 +812,10 @@ records it. Empty until the first book is drafted.
 | Galatians | the guardian (*paidagōgos*) | *pengasuh* | 3:24 |
 | Galatians | the elements of the world | *roh-roh dasar dunia* (L); *kuasa-kuasa dasar dunia* (B); *kuasa-kuasa dan aturan-aturan* (R) | 4:3 |
 | Galatians | flesh (Paul's moral sense) | *daging* (L); *tabiat lama* (B); *diri yang berdosa* (R) | 5:13 |
+| Ephesians | rulers, authorities, powers, dominions | *pemerintah*, *penguasa*, *kuasa*, *kekuasaan* | 1:21 |
+| Ephesians | the old self; the new self | *manusia lama*; *manusia baru* (L, B); *diri yang lama*, *diri yang baru* (R) | 4:22 |
+| Ephesians | evangelists | *pemberita Injil* | 4:11 |
+| Ephesians | the full armor of God; helmet; breastplate | *seluruh perlengkapan senjata Allah*; *ketopong*; *baju zirah* | 6:11 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
