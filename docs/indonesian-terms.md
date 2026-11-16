@@ -688,6 +688,15 @@ records it. Empty until the first book is drafted.
 | Matthew | Eli, Eli, lema sabachthani | Eli, Eli, lema sabakhtani | 27:46 |
 | Matthew | governor (*hēgemōn*) | *wali negeri* (L); *gubernur* (B, R) | 27:2 |
 | Matthew | Jesus Barabbas | Yesus Barabas | 27:16 |
+| Revelation | the one who overcomes | *siapa yang menang* | 2:7 |
+| Revelation | paradise | *Taman Firdaus* | 2:7 |
+| Revelation | synagogue of Satan | *jemaah Iblis* | 2:9 |
+| Revelation | Root of David | *Tunas Daud* | 5:5 |
+| Revelation | choenix | *khoinix* (L); {{units:liter\|khoinix}} (B, R) | 6:6 |
+| Revelation | Wormwood | Apsintus | 8:11 |
+| Revelation | abyss | *jurang maut* (L, B); *lubang yang tidak berdasar* (R) | 9:1 |
+| Revelation | tent of witness | *Kemah Kesaksian* | 15:5 |
+| Revelation | the twelve foundation stones | yaspis, nilam, mirah, zamrud, unam, akik merah, krisolit, beril, topas, krisopras, lazuardi, kecubung | 21:19–20 |
 | Acts | Theophilus | Teofilus | 1:1 |
 | Acts | Hakeldama; Field of Blood | Hakeldama; Tanah Darah | 1:19 |
 | Acts | Barsabbas; Justus | Barsabas; Yustus | 1:23 |
