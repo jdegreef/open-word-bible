@@ -1392,6 +1392,8 @@ records it. Empty until the first book is drafted.
 | 1 Timothy | sound teaching | *ajaran yang sehat* | 1:10 |
 | 1 Timothy | godliness (*eusebeia*) | *kesalehan* | 2:2 |
 | 1 Timothy | man of God | *manusia Allah* (L); *abdi Allah* (B) | 6:11 |
+| 1 Peter | royal priesthood | *imamat yang rajani* (L); *imam-imam Raja* (B) | 2:9 |
+| 1 Peter | Silvanus | Silwanus | 5:12 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
