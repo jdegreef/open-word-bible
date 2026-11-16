@@ -2110,3 +2110,15 @@ records it. Empty until the first book is drafted.
 | Esther | gold scepter | *tongkat emas* | 4:11 |
 | Esther | Sivan | Siwan | 8:9 |
 | Esther | Parshandatha; Dalphon; Aspatha; Poratha; Adalia; Aridatha; Parmashta; Arisai; Aridai; Vaizatha | Parsyandata; Dalfon; Aspata; Porata; Adalya; Aridata; Parmasta; Arisai; Aridai; Waizata | 9:7–9 |
+| Proverbs | the simple (*peti*) | *orang polos* (L); *orang naif* (B); *orang yang mudah tertipu* (R) | 1:4 |
+| Proverbs | scoffer, mocker (*lets*) | *pencemooh* (L, B); *orang yang suka mengejek* (R) | 1:22 |
+| Proverbs | sluggard (*ʿatsel*) | *pemalas* (L, B); *orang malas* (R) | 6:6 |
+| Proverbs | the strange / foreign woman | *perempuan lain*, *perempuan asing* (L); *perempuan yang bukan hakmu* (B); *istri orang lain* (R) | 2:16 |
+| Proverbs | Wisdom; Folly (personified) | *Hikmat*; *Perempuan Kebodohan* (L, B), *Kebodohan* (R) | 1:20; 9:13 |
+| Proverbs | wife of strength (*eshet chayil*) | *istri yang cakap* | 12:4; 31:10 |
+| Proverbs | the Righteous One (God) | *Yang Benar* (L); *Yang Mahaadil* (B, R) | 21:12 |
+| Proverbs | torah as God's instruction (chs. 28–29) | *hukum* (L); *ajaran Allah* (B, R) | 28:4 |
+| Proverbs | Abaddon | Abadon (L); *Kebinasaan* (B) | 15:11 |
+| Proverbs | Jakeh; Ithiel; Ucal | Yake; Itiel; Ukal | 30:1 |
+| Proverbs | rock badger (hyrax) | *hiraks* | 30:26 |
+| Proverbs | wormwood | *apsintus* | 5:4 |
