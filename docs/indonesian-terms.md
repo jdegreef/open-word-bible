@@ -1409,6 +1409,8 @@ records it. Empty until the first book is drafted.
 | Titus | Artemas; Nicopolis | Artemas; Nikopolis | 3:12 |
 | Titus | Zenas the lawyer | Zenas, ahli hukum itu | 3:13 |
 | 2 John | the chosen lady | *Ibu yang terpilih* (L), *Ibu yang dipilih Allah* (B, R) | 1:1 |
+| Jude | Michael the archangel | Mikhael, *penghulu malaikat* (L, B) | 1:9 |
+| Jude | love feasts | *perjamuan kasih* | 1:12 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
