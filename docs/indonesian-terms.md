@@ -799,6 +799,13 @@ records it. Empty until the first book is drafted.
 | 2 Corinthians | the super-apostles | *rasul-rasul yang luar biasa itu* (L); *rasul-rasul yang hebat itu* (B); *rasul-rasul yang disebut hebat itu* (R) | 11:5 |
 | 2 Corinthians | Aretas; the ethnarch | Aretas; *wali negeri* (L), *penguasa* (B), *gubernur* (R) | 11:32 |
 | 2 Corinthians | paradise | Firdaus | 12:4 |
+| 1 Corinthians | Sosthenes | Sostenes | 1:1 |
+| 1 Corinthians | Chloe | Kloe | 1:11 |
+| 1 Corinthians | Crispus; Stephanas | Krispus; Stefanas | 1:14; 1:16 |
+| 1 Corinthians | the cup of blessing | *cawan pengucapan syukur* | 10:16 |
+| 1 Corinthians | head covering (11:4-15) | *tudung*; *bertudung*, *menudungi* | 11:5 |
+| 1 Corinthians | Fortunatus; Achaicus | Fortunatus; Akhaikus | 16:17 |
+| 1 Corinthians | Marana tha | *Marana tha* (L); *Tuhan kami, datanglah* (B, R) | 16:22 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
