@@ -2143,3 +2143,9 @@ records it. Empty until the first book is drafted.
 | Song of Songs | gazelle; young stag; turtledove; foxes | *kijang*; *anak rusa jantan*; *burung tekukur*; *rubah* | 2:7; 2:9; 2:12; 2:15 |
 | Song of Songs | litter; carriage (*appiryon*) | *tandu*; *usungan* (L, B), *tandu* (R) | 3:7; 3:9 |
 | Song of Songs | nut trees; mandrakes | *pohon kenari*; *buah mandragora* | 6:11; 7:14 |
+| Lamentations | How ...! (*ekhah*) | *Betapa ...!* | 1:1 |
+| Lamentations | forced labor | *pekerja rodi*; *bekerja rodi* | 1:1 |
+| Lamentations | daughter Zion; daughter Edom | *putri Sion* (L), *Putri Sion* (B), *penduduk Sion* (R); likewise Edom | 1:6; 4:21 |
+| Lamentations | wormwood | *ipuh* | 3:15 |
+| Lamentations | jackals | *serigala* | 4:3 |
+| Lamentations | Uz | Us | 4:21 |
