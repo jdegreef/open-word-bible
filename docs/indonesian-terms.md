@@ -1406,6 +1406,8 @@ records it. Empty until the first book is drafted.
 | 2 Peter | the Master (*despotēs*, of Christ) | *Penguasa* | 2:1 |
 | 1 John | advocate (*paraklētos*, of Jesus) | *pembela* | 2:1 |
 | 1 John | antichrist | *antikristus* (no christos span) | 2:18 |
+| Titus | Artemas; Nicopolis | Artemas; Nikopolis | 3:12 |
+| Titus | Zenas the lawyer | Zenas, ahli hukum itu | 3:13 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
