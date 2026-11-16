@@ -1170,6 +1170,37 @@ records it. Empty until the first book is drafted.
 | Numbers | Shemuel; Elidad; Chislon; Bukki; Jogli; Hanniel; Ephod | Semuel; Elidad; Kislon; Buki; Yogli; Haniel; Efod | 34:20-23 |
 | Numbers | Kemuel; Shiphtan; Parnach; Paltiel; Azzan; Ahihud; Shelomi; Pedahel | Kemuel; Syiftan; Parnakh; Paltiel; Azan; Ahihud; Selomi; Pedahel | 34:24-28 |
 | Numbers | cities of refuge; avenger of blood (*go'el haddam*) | *kota perlindungan* (L, B), *kota tempat berlindung* (R); *penuntut balas darah* (L, B), *kerabat yang menuntut balas* (R) | 35:6 |
+| Leviticus | fire offering (*isheh*) | *persembahan api* (L); *persembahan yang dibakar* (B), *persembahan yang dibakar di atas api* (R) | 1:9 |
+| Leviticus | soothing aroma | *aroma yang menenangkan* (L); *aroma yang berkenan kepada* (B); *bau yang disukai* (R) | 1:9 |
+| Leviticus | memorial portion | *bagian peringatan* (L, B); *bagian yang menjadi tanda peringatan* (R) | 2:2 |
+| Leviticus | the appendage of the liver | *umbai hati* (L, B); *bagian terbaik dari hati* (R) | 3:4 |
+| Leviticus | contribution (*terumah*) | *persembahan khusus* (L, B); *pemberian yang dikhususkan* (R) | 7:14 |
+| Leviticus | thanksgiving sacrifice (*todah*) | *korban syukur*; *korban sembelihan syukur* (L) | 7:12 |
+| Leviticus | cut off from his people | *dilenyapkan dari antara bangsanya* (L); *dilenyapkan dari tengah bangsanya* (B); *disingkirkan dari tengah umat* (R) | 7:20 |
+| Leviticus | ordination (offerings) | *pentahbisan*; *korban pentahbisan* | 7:37 |
+| Leviticus | tunic; sash; turban; caps | *kemeja*; *ikat pinggang*; *serban*; *ikat kepala* | 8:7 |
+| Leviticus | Mishael; Elzaphan; Uzziel | Misael; Elsafan; Uziel | 10:4 |
+| Leviticus | Ithamar | Itamar | 10:6 |
+| Leviticus | detestable (*sheqets*) | *menjijikkan* (kept apart from *kekejian*) | 11:10 |
+| Leviticus | rock badger (hyrax); hare | *marmot batu*; *terwelu* (L, B), *kelinci hutan* (R) | 11:5 |
+| Leviticus | scale disease (*tsaraat*) | *penyakit kulit bersisik* (L); *penyakit kulit yang berat* (B, R); never *kusta* | 13:2 |
+| Leviticus | the mark (*nega'*) of the disease | *tanda* (L); *luka* (B, R); in cloth and houses *bercak* (B, R) | 13:2 |
+| Leviticus | mold in cloth, leather and houses | *tanda penyakit bersisik* (L); *jamur* (B, R) | 13:47 |
+| Leviticus | warp; weft | *benang lungsin*; *benang pakan* | 13:48 |
+| Leviticus | scarlet yarn; hyssop | *benang kirmizi* (L *kain kirmizi*), *benang merah* (R); *hisop* | 14:4 |
+| Leviticus | log (liquid measure) | *log* (L); `{{units:sekitar sepertiga liter\|satu log}}` (B, R) | 14:10 |
+| Leviticus | Azazel | Azazel (as a name, every level) | 16:8 |
+| Leviticus | afflict yourselves | *merendahkan diri* (L); *merendahkan diri dengan berpuasa* (B); *berpuasa dan merendahkan diri* (R) | 16:29 |
+| Leviticus | goat-demons | *setan-setan kambing* (L); *roh-roh jahat berwujud kambing* (B, R) | 17:7 |
+| Leviticus | uncover nakedness | *menyingkapkan ketelanjangan* (L); *bersetubuh* (B, R) | 18:6 |
+| Leviticus | Shelomith; Dibri | Selomit; Dibri | 24:11 |
+| Leviticus | settler (*toshav*), beside sojourner (*ger*) | *penduduk sementara* (L, B), beside *pendatang*; described at R | 25:6 |
+| Leviticus | ram's horn (*shofar*) | *sangkakala tanduk domba jantan* (L, B); *terompet tanduk domba jantan* (R) | 25:9 |
+| Leviticus | the LORD's slaves (Israel) | *hamba-hamba-Ku*; *budak* for human slavery | 25:42 |
+| Leviticus | incense altars (*chammanim*) | *mezbah-mezbah dupa* | 26:30 |
+| Leviticus | valuation (*erek*) | *penilaian* (L); *nilai* (B); *harga yang sudah ditetapkan* (R) | 27:2 |
+| Leviticus | homer; gerah | *homer* (L); `{{units:sekitar dua ratus liter\|satu homer}}` (B, R); *gera* | 27:16; 27:25 |
+| Leviticus | devoted thing (*cherem*) | *barang yang dikhususkan* (L); *dikhususkan sepenuhnya* (B, R); of a person *dikhususkan untuk dibinasakan* | 27:28 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
