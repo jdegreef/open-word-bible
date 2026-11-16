@@ -2050,3 +2050,44 @@ records it. Empty until the first book is drafted.
 | Job | Behemoth | Behemot | 40:15 |
 | Job | qesitah | kesita; `{{units:sekeping uang\|satu kesita}}` (B, R) | 42:11 |
 | Job | Jemimah; Keziah; Keren-happuch | Yemima; Kezia; Keren-Hapukh | 42:14 |
+| Nehemiah | Hacaliah; Kislev | Hakhalya; Kislew | 1:1 |
+| Nehemiah | cupbearer | *juru minuman* | 1:11 |
+| Nehemiah | Asaph (keeper of the king's forest) | Asaf | 2:8 |
+| Nehemiah | Horonite; Geshem the Arab | orang Horon; Gesyem, orang Arab | 2:10, 19 |
+| Nehemiah | Valley Gate; Dragon Spring; Dung Gate; Fountain Gate; King's Pool | Gerbang Lembah; Mata Air Naga; Gerbang Sampah; Gerbang Mata Air; Kolam Raja | 2:13–14 |
+| Nehemiah | nobles; officials (*horim*, *seganim*) | *para bangsawan* (L, B), *para pemimpin* (R); *para pejabat* | 2:16 |
+| Nehemiah | Sheep Gate; Tower of the Hundred; Tower of Hananel; Fish Gate; Jeshanah Gate; Broad Wall; Tower of the Ovens | Gerbang Domba; Menara Seratus; Menara Hananeel; Gerbang Ikan; Gerbang Yesyana; Tembok Lebar; Menara Perapian | 3:1–11 |
+| Nehemiah | Imri; Hassenaah; Berekiah; Meshezabel; Joiada; Besodeiah | Imri; Hasenaa; Berekhya; Mesyezabeel; Yoyada; Besodya | 3:2–6 |
+| Nehemiah | Melatiah; Jadon; Meronothite; Mizpah; Uzziel; Harhaiah; Rephaiah | Melatya; Yadon; orang Meronot; Mizpa; Uziel; Harhaya; Refaya | 3:7–9 |
+| Nehemiah | Harumaph; Hashabneiah; Hasshub; Hallohesh; Hanun; Zanoah; Rechab; Beth-haccherem | Harumaf; Hasyabneya; Hasyub; Halohesy; Hanun; Zanoah; Rekhab; Bet-Hakerem | 3:10–14 |
+| Nehemiah | Shallun; Col-hozeh; Pool of Shelah; Azbuk; Keilah; Bavvai; Ezer; Baruch | Syalun; Kol-Hoze; Kolam Syelah; Azbuk; Kehila; Bawai; Ezer; Barukh | 3:15–20 |
+| Nehemiah | Ananiah; Palal; Uzai; Pedaiah; Ophel; Water Gate; Horse Gate; East Gate; Zalaph; Muster (Inspection) Gate | Ananya; Palal; Uzai; Pedaya; Ofel; Gerbang Air; Gerbang Kuda; Gerbang Timur; Zalaf; Gerbang Pemeriksaan | 3:23–31 |
+| Nehemiah | district (*pelekh*) | *wilayah*; its official *kepala* (L, B), *pemimpin* (R) | 3:9 |
+| Nehemiah | ram's horn (*shofar*) | *sangkakala* (L, B); *terompet tanduk domba* (R) | 4:12 |
+| Nehemiah | Kephirim; plain of Ono; Gashmu | Kefirim; dataran Ono (L, B), Lembah Ono (R); Gasymu (L), Gesyem (B, R) | 6:2–6 |
+| Nehemiah | Mehetabel; Noadiah the prophetess; Elul | Mehetabeel; Noadya, *nabiah* (L, B), *nabi perempuan* (R); Elul | 6:10–15 |
+| Nehemiah | Raamiah; Nahamani; Mispereth; Nehum | Raamya; Nahamani; Misperet; Nehum | 7:7 |
+| Nehemiah | Hariph; Beth-azmaveth; Kiriath-jearim; Hodevah; Sia; Nephishesim; Bazlith; Sophereth; Perida; Amon (a family); Addon | Harif; Bet-Azmawet; Kiryat-Yearim; Hodewa; Sia; Nefisyesim; Bazlit; Soferet; Perida; Amon; Adon | 7:24–61 |
+| Nehemiah | the list of Ezra 2 | the Ezra 2 forms and level pattern (*bani X* L; *keturunan X* / *orang X* B, R) | 7:6 |
+| Nehemiah | tower of wood (platform) | *menara kayu* (L); *mimbar kayu* (B, R) | 8:4 |
+| Nehemiah | Shema; Anaiah; Hashbaddanah; Jamin; Hodiah; Pelaiah | Syema; Anaya; Hasybadana; Yamin; Hodia; Pelaya | 8:4–7 |
+| Nehemiah | *meforash* | *dengan jelas* | 8:8 |
+| Nehemiah | booths; Gate of Ephraim; wild olive; myrtle | *pondok-pondok daun*; Gerbang Efraim; *zaitun liar*; *murad* | 8:14–16 |
+| Nehemiah | Jeshua son of Nun | *Yesua anak Nun* (L); *Yosua anak Nun* (B, R) | 8:17 |
+| Nehemiah | Shebaniah; Bunni; Kenani | Syebanya; Buni; Kenani | 9:4 |
+| Nehemiah | Girgashite; Sihon; Heshbon; Og | orang Girgasi; Sihon; Hesybon; Og | 9:8, 22 |
+| Nehemiah | gracious and compassionate, slow to anger, abounding in steadfast love | *pengasih dan penyayang, panjang sabar dan berlimpah kasih setia* | 9:17 |
+| Nehemiah | Ginnethon; Maaziah; Bilgai; Azaniah; Mica; Rehob; Beninu | Gineton; Maazya; Bilgai; Azanya; Mikha; Rehob; Beninu | 10:7–14 |
+| Nehemiah | Azzur; Nebai; Magpiash; Hezir; Jaddua; Pelatiah; Hashabnah; Pilha; Shobek; Ahiah; Anan | Azur; Nebai; Magpias; Hezir; Yadua; Pelatya; Hasyabna; Pilha; Syobek; Ahia; Anan | 10:18–27 |
+| Nehemiah | bread of the row | *roti susunan* (L); *roti sajian* (B); *roti kudus* (R) | 10:34 |
+| Nehemiah | Athaiah; Mahalalel; Perez; Hazaiah; Shilonite; Sallu; Joed; Kolaiah; Ithiel; Gabbai; Sallai | Ataya; Mahalaleel; Peres; Hazaya; orang Syilo; Salu; Yoed; Kolaya; Itiel; Gabai; Salai | 11:4–8 |
+| Nehemiah | Zikri; Hassenuah; Jakin; Jeroham; Pelaliah; Amzi; Amashsai; Ahzai; Meshillemoth; Zabdiel; Haggedolim | Zikhri; Hasenua; Yakhin; Yeroham; Pelalya; Amzi; Amasysai; Ahzai; Mesyilemot; Zabdiel; Hagedolim | 11:9–14 |
+| Nehemiah | Azrikam; Zabdi; Bakbukiah; Abda; Shammua; Galal; Jeduthun; Gishpa; Zerah | Azrikam; Zabdi; Bakbukya; Abda; Syamua; Galal; Yedutun; Gisypa; Zerah | 11:15–24 |
+| Nehemiah | its daughters (towns) | *anak-anak kotanya* (L); *kota-kota sekitarnya* (B, R) | 11:25 |
+| Nehemiah | Kiriath-arba; Dibon; Jekabzeel; Moladah; Beth-pelet; Hazar-shual; Ziklag; Meconah; En-rimmon; Zorah; Jarmuth; Adullam; Lachish; Azekah | Kiryat-Arba; Dibon; Yekabzeel; Molada; Bet-Pelet; Hazar-Syual; Ziklag; Mekona; En-Rimon; Zora; Yarmut; Adulam; Lakhis; Azeka | 11:25–30 |
+| Nehemiah | Aija; Nob; Ananiah; Hazor; Gittaim; Zeboim; Neballat; Ge-harashim | Aya; Nob; Ananya; Hazor; Gitaim; Zeboim; Nebalat; Ge-Harasyim (R: Lembah Tukang) | 11:31–35 |
+| Nehemiah | Ginnethoi; Moadiah; Bilgah; Amok; Unni; Joiakim; Jaddua | Ginetoi; Moadya; Bilga; Amok; Uni; Yoyakim; Yadua | 12:4–11 |
+| Nehemiah | Meraiah; Mellichu; Helkai; Miniamin; Piltai; Jehonathan; Kallai; Eber; Johanan | Meraya; Melikhu; Helkai; Minyamin; Piltai; Yehonatan; Kalai; Eber; Yohanan | 12:12–22 |
+| Nehemiah | book of the chronicles | *kitab riwayat zaman* (L); *Kitab Sejarah* (B); *catatan resmi* (R) | 12:23 |
+| Nehemiah | Beth-gilgal; Hoshaiah; Micaiah; Milalai; Gilalai; Maai; Gate of the Guard; Eliakim; Izrahiah | Bet-Gilgal; Hosyaya; Mikhaya; Milalai; Gilalai; Maai; Gerbang Penjagaan; Eliakim; Yizrahya | 12:29–42 |
+| Nehemiah | thanksgiving choirs | *paduan suara syukur* | 12:31 |
