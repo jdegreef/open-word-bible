@@ -2205,3 +2205,6 @@ records it. Empty until the first book is drafted.
 | Hosea | God of hosts | *Allah semesta alam* | 12:6 |
 | Habakkuk | shigionoth | Syigionot (L, B); *untuk dinyanyikan sebagai lagu* (R) | 3:1 |
 | Habakkuk | Teman; Cushan | Teman; Kusyan | 3:3, 7 |
+| Zephaniah | Cushi; Amariah | Kusyi; Amarya | 1:1 |
+| Zephaniah | Fish Gate; Second Quarter; the Mortar | Gerbang Ikan; Bagian Kedua; Lesung | 1:10–11 |
+| Zephaniah | Cherethites | orang Kreti | 2:5 |
