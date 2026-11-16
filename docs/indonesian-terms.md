@@ -2208,3 +2208,6 @@ records it. Empty until the first book is drafted.
 | Zephaniah | Cushi; Amariah | Kusyi; Amarya | 1:1 |
 | Zephaniah | Fish Gate; Second Quarter; the Mortar | Gerbang Ikan; Bagian Kedua; Lesung | 1:10–11 |
 | Zephaniah | Cherethites | orang Kreti | 2:5 |
+| Haggai | Jehozadak | Yehozadak (Ezra 3:2 has *Yozadak* for the shorter Hebrew form) | 1:1 |
+| Haggai | governor (*pechah*) | *bupati*, as Ezra and Nehemiah | 1:1 |
+| Haggai | signet ring | *cincin meterai* | 2:23 |
