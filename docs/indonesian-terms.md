@@ -1204,6 +1204,78 @@ records it. Empty until the first book is drafted.
 | 1 Thessalonians | the tempter | *si penggoda* (L, B); *Iblis* (R) | 3:5 |
 | 1 Thessalonians | archangel | *penghulu malaikat* (L, B); *pemimpin para malaikat* (R) | 4:16 |
 | 1 Thessalonians | the coming (*parousia*) | *kedatangan* | 2:19 |
+| Deuteronomy | Suph; Tophel; Laban; Hazeroth; Di-zahab | Suf; Tofel; Laban; Hazerot; Di-Zahab | 1:1 |
+| Deuteronomy | Kadesh-barnea; Seir | Kadesy-Barnea; Seir | 1:2 |
+| Deuteronomy | Sihon; Heshbon; Og; Ashtaroth; Edrei | Sihon; Hesybon; Og; Asytarot; Edrei | 1:4 |
+| Deuteronomy | take possession (*yarash*) | *menduduki* (L, B); *memiliki*, *menjadikan milik* (R) | 1:8 |
+| Deuteronomy | Valley of Eshcol | Lembah Eskol | 1:24 |
+| Deuteronomy | Anakim | orang Enak; keturunan Enak | 1:28 |
+| Deuteronomy | Jephunneh | Yefune | 1:36 |
+| Deuteronomy | Hormah | Horma | 1:44 |
+| Deuteronomy | Elath; Ezion-geber | Elat; Ezion-Geber | 2:8 |
+| Deuteronomy | Emim; Rephaim | orang Emim; orang Refaim | 2:10–11 |
+| Deuteronomy | Horites | orang Hori | 2:12 |
+| Deuteronomy | Zered (wadi) | sungai Zered (L); Lembah Zered (B, R) | 2:13 |
+| Deuteronomy | sons of Ammon, Ammonites | bani Amon (L); orang Amon (B, R) | 2:19 |
+| Deuteronomy | Zamzummim | orang Zamzumim | 2:20 |
+| Deuteronomy | Avvites; Caphtorim; Caphtor | orang Awi; orang Kaftor; Kaftor | 2:23 |
+| Deuteronomy | Arnon | sungai Arnon (L, R); Lembah Arnon (B) | 2:24 |
+| Deuteronomy | Kedemoth | Kedemot | 2:26 |
+| Deuteronomy | Jahaz | Yahas | 2:32 |
+| Deuteronomy | devote to destruction (*herem*) | *mengkhususkan untuk dimusnahkan* (L, B); *memusnahkan sebagai milik TUHAN* (R) | 2:34 |
+| Deuteronomy | Aroer; Jabbok | Aroer; sungai Yabok | 2:36–37 |
+| Deuteronomy | Argob | Argob | 3:4 |
+| Deuteronomy | Mount Hermon; Sidonians; Sirion; Senir | gunung Hermon; orang Sidon; Siryon; Senir | 3:8–9 |
+| Deuteronomy | Salecah | Salkha | 3:10 |
+| Deuteronomy | Rabbah (of the Ammonites) | Raba | 3:11 |
+| Deuteronomy | Reubenites; Gadites | orang Ruben, orang Gad (L, B); suku Ruben, suku Gad (R) | 3:12 |
+| Deuteronomy | Jair; Geshurites; Maacathites; Havvoth-jair | Yair; orang Gesur; orang Maakha; Hawot-Yair | 3:14 |
+| Deuteronomy | Machir | Makhir | 3:15 |
+| Deuteronomy | Chinnereth; Pisgah | Kineret; Pisga | 3:17 |
+| Deuteronomy | rest (God gives, *heniach*) | *keamanan* | 3:20 |
+| Deuteronomy | Beth-peor | Bet-Peor | 3:29 |
+| Deuteronomy | statutes; rulings (*huqqim*; *mishpatim*); testimonies (*'edot*) | *ketetapan*; *peraturan*; *ketentuan* (L, B); *hukum dan peraturan* (R) | 4:1; 4:45 |
+| Deuteronomy | Baal-peor | Baal-Peor | 4:3 |
+| Deuteronomy | the Ten Words | *sepuluh firman* (L); *Sepuluh Firman* (B); *Sepuluh Perintah* (R) | 4:13 |
+| Deuteronomy | with all your heart and with all your soul | *dengan seluruh hatimu dan dengan seluruh jiwamu* (L, B); *dengan sepenuh hati dan dengan seluruh diri* (R) | 4:29 |
+| Deuteronomy | Bezer; Ramoth (in Gilead); Golan; Manassites | Bezer; Ramot; Golan; orang Manasye | 4:43 |
+| Deuteronomy | Mount Siyon (Hermon) | gunung Siyon | 4:48 |
+| Deuteronomy | Massah | Masa | 6:16 |
+| Deuteronomy | treasured possession (*segullah*) | *umat kesayangan* (L); *harta kesayangan* (B, R) | 7:6 |
+| Deuteronomy | the hornet | *tabuhan* | 7:20 |
+| Deuteronomy | stiff-necked | *tegar tengkuk* (L, B); *keras kepala* (R) | 9:6 |
+| Deuteronomy | Taberah; Kibroth-hattaavah | Tabera; Kibrot-Taawa | 9:22 |
+| Deuteronomy | Beeroth Bene-jaakan; Moserah | Beerot-Bene-Yaakan (L, B), sumur-sumur Bene-Yaakan (R); Mosera | 10:6 |
+| Deuteronomy | Gudgodah; Jotbathah | Gudgoda; Yotbata | 10:7 |
+| Deuteronomy | acacia wood | *kayu akasia* | 10:3 |
+| Deuteronomy | Dathan; Abiram; Eliab | Datan; Abiram; Eliab | 11:6 |
+| Deuteronomy | Mount Gerizim; Mount Ebal | gunung Gerizim; gunung Ebal | 11:29 |
+| Deuteronomy | the oaks of Moreh | pohon-pohon tarbantin More | 11:30 |
+| Deuteronomy | contribution, gift set apart (*terumah*) | *persembahan khusus* | 12:6 |
+| Deuteronomy | gazelle; deer | *kijang*; *rusa* | 12:15 |
+| Deuteronomy | worthless men (*bene beliyyaʿal*) | *orang-orang dursila* (L, B); *orang jahat* (R) | 13:14 |
+| Deuteronomy | the clean and unclean animals and birds | by the English identification: *rusa kecil*, *kambing gunung*, *marmot batu*, *nasar*, *elang*, *alap-alap*, *burung hantu*, *pecuk*, *bangau*, *kuntul*, *burung hudhud* | 14:5–18 |
+| Deuteronomy | strong drink (*shekar*) | *minuman keras* | 14:26 |
+| Deuteronomy | release (*shemittah*) | *penghapusan utang* | 15:1 |
+| Deuteronomy | awl | *penusuk* | 15:17 |
+| Deuteronomy | month of Abib | bulan Abib | 16:1 |
+| Deuteronomy | solemn assembly (*ʿatseret*) | *perkumpulan raya* (L, B) | 16:8 |
+| Deuteronomy | food offerings by fire | *korban api-apian* (L, B) | 18:1 |
+| Deuteronomy | divination; fortune-telling; omens; sorcery; spells; medium; spiritist | *tenung*; *meramal*; *menafsirkan pertanda*; *sihir*; *mantra*; *pemanggil arwah*; *dukun* | 18:10–11 |
+| Deuteronomy | cities of refuge; avenger of blood (*go'el haddam*) | *kota perlindungan*; *penuntut balas darah* (L, B), *kerabat yang membalas kematian* (R) | 19:1–6 |
+| Deuteronomy | boundary marker | *batu batas tanah* | 19:14 |
+| Deuteronomy | tassels | *jumbai-jumbai* | 22:12 |
+| Deuteronomy | Balaam son of Beor; Pethor; Aram-naharaim | Bileam anak Beor; Petor; Aram-Naharaim (L, B), Mesopotamia (R) | 23:5 |
+| Deuteronomy | shrine prostitute (*qedeshah*, *qadesh*) | *pelacur bakti* (L, B) | 23:18 |
+| Deuteronomy | certificate of divorce | *surat cerai* | 24:1 |
+| Deuteronomy | pledge | *gadai*, *barang gadaian* | 24:6 |
+| Deuteronomy | levirate duty (*yibbem*) | *kewajiban ipar* | 25:5 |
+| Deuteronomy | Admah; Zeboiim | Adma; Zeboim | 29:22 |
+| Deuteronomy | Jeshurun | Yesyurun (L, B); Israel (R) | 32:15 |
+| Deuteronomy | Mount Nebo; the Abarim range | gunung Nebo; pegunungan Abarim | 32:49 |
+| Deuteronomy | Mount Hor; waters of Meribah; wilderness of Zin | gunung Hor; mata air Meriba; padang gurun Zin | 32:50–51 |
+| Deuteronomy | Hoshea (Joshua) | Hosea (L) | 32:44 |
+| Deuteronomy | Zoar; the city of palm trees | Zoar; kota pohon kurma | 34:3 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
