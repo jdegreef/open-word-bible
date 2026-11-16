@@ -2203,3 +2203,5 @@ records it. Empty until the first book is drafted.
 | Hosea | Shalman; Beth-arbel | Salman; Bet-Arbel | 10:14 |
 | Hosea | Admah; Zeboiim | Adma; Zeboim | 11:8 |
 | Hosea | God of hosts | *Allah semesta alam* | 12:6 |
+| Habakkuk | shigionoth | Syigionot (L, B); *untuk dinyanyikan sebagai lagu* (R) | 3:1 |
+| Habakkuk | Teman; Cushan | Teman; Kusyan | 3:3, 7 |
