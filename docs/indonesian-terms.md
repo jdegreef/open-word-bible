@@ -1741,3 +1741,190 @@ records it. Empty until the first book is drafted.
 | 2 Kings | Seraiah; Ishmael son of Nethaniah; Johanan son of Kareah | Seraya; Ismael anak Netanya; Yohanan anak Kareah | 25:18–23 |
 | 2 Kings | Tanhumeth; Netophathite; Jaazaniah; Elishama | Tanhumet; orang Netofa; Yaazanya; Elisama | 25:23–25 |
 | 2 Kings | Evil-merodach | Ewil-Merodakh | 25:27 |
+| 1 Chronicles | Diphath | Difat | 1:6 |
+| 1 Chronicles | Rodanim | Rodanim; *orang Rodanim* (B) | 1:7 |
+| 1 Chronicles | Ludim; Anamim; Lehabim; Naphtuhim | orang Lud; orang Anam; orang Lehab; orang Naftuh | 1:11 |
+| 1 Chronicles | Pathrusim; Casluhim; Caphtorim | orang Patrus; orang Kasluh; orang Kaftor | 1:12 |
+| 1 Chronicles | Sabta; Magog; Tubal | Sabta; Magog; Tubal | 1:5, 9 |
+| 1 Chronicles | Zephi | Zefi | 1:36 |
+| 1 Chronicles | Homam | Homam | 1:39 |
+| 1 Chronicles | Alian; Shephi | Alyan; Syefi | 1:40 |
+| 1 Chronicles | Hamran | Hamran | 1:41 |
+| 1 Chronicles | Jaakan | Yaakan | 1:42 |
+| 1 Chronicles | Baal-hanan | Baal-Hanan | 1:49 |
+| 1 Chronicles | Pai; Mezahab | Pai; Me-Zahab | 1:50 |
+| 1 Chronicles | Alvah | Alwa | 1:51 |
+| 1 Chronicles | Bath-shua | Bat-Syua | 2:3 |
+| 1 Chronicles | Ethan; Heman; Calcol; Dara | Etan; Heman; Kalkol; Dara | 2:6 |
+| 1 Chronicles | Achar | Akhar | 2:7 |
+| 1 Chronicles | Jerahmeel; Chelubai | Yerahmeel; Kelubai | 2:9 |
+| 1 Chronicles | Shimea; Nethanel; Raddai; Ozem | Syimea; Netaneel; Radai; Osem | 2:13–15 |
+| 1 Chronicles | Azubah; Jerioth; Jesher; Shobab; Ardon | Azuba; Yeriot; Yesyer; Sobab; Ardon | 2:18 |
+| 1 Chronicles | Ephrath | Efrat | 2:19 |
+| 1 Chronicles | Segub | Segub | 2:21 |
+| 1 Chronicles | Caleb-ephrathah; Abijah (Hezron's wife); Ashhur; Tekoa | Kaleb-Efrata; Abia; Ashur; Tekoa | 2:24 |
+| 1 Chronicles | father (founder) of a town | *bapa* (L, B); *pendiri* (R) | 2:24 |
+| 1 Chronicles | Bunah; Oren; Atarah; Maaz; Eker; Jada | Buna; Oren; Atara; Maas; Eker; Yada | 2:25–28 |
+| 1 Chronicles | Shammai; Abishur; Ahban; Molid | Syamai; Abisyur; Ahban; Molid | 2:28–29 |
+| 1 Chronicles | Seled; Appaim; Ishi; Sheshan; Ahlai | Seled; Apaim; Yisi; Syesyan; Ahlai | 2:30–31 |
+| 1 Chronicles | Zaza; Jarha; Attai; Zabad; Ephlal | Zaza; Yarha; Atai; Zabad; Eflal | 2:33–37 |
+| 1 Chronicles | Helez; Eleasah; Sismai; Shallum; Jekamiah | Heles; Eleasa; Sismai; Syalum; Yekamya | 2:39–41 |
+| 1 Chronicles | Shema; Raham; Jorkeam; Beth-zur | Syema; Raham; Yorkeam; Bet-Zur | 2:43–45 |
+| 1 Chronicles | Moza; Gazez; Jahdai; Regem; Geshan; Shaaph | Mosa; Gazez; Yahdai; Regem; Gesyan; Syaaf | 2:46–47 |
+| 1 Chronicles | Sheber; Tirhanah; Sheva; Machbenah; Gibea | Syeber; Tirhana; Syewa; Makhbena; Gibea | 2:48–49 |
+| 1 Chronicles | Hareph; Beth-gader; Haroeh; Manahathites | Haref; Bet-Gader; Haroe; orang Manahat | 2:51–52 |
+| 1 Chronicles | Ithrites; Puthites; Shumathites; Mishraites | orang Yitri; orang Puti; orang Syumat; orang Misrai | 2:53 |
+| 1 Chronicles | Netophathites; Atroth-beth-joab; Zorites | orang Netofa; Atrot-Bet-Yoab; orang Zori | 2:54 |
+| 1 Chronicles | Jabez; Tirathites; Shimeathites; Sucathites | Yabes; orang Tirat; orang Syimeat; orang Sukat | 2:55 |
+| 1 Chronicles | Nogah | Noga | 3:7 |
+| 1 Chronicles | Malchiram; Pedaiah; Shenazzar; Hoshama; Nedabiah | Malkhiram; Pedaya; Syenasar; Hosyama; Nedabya | 3:18 |
+| 1 Chronicles | Meshullam; Shelomith | Mesyulam; Syelomit | 3:19 |
+| 1 Chronicles | Hashubah; Ohel; Hasadiah; Jushab-Hesed | Hasyuba; Ohel; Hasadya; Yusyab-Hesed | 3:20 |
+| 1 Chronicles | Pelatiah; Jeshaiah; Rephaiah; Arnan; Shecaniah | Pelatya; Yesyaya; Refaya; Arnan; Syekhanya | 3:21 |
+| 1 Chronicles | Shemaiah; Hattush; Bariah; Neariah | Syemaya; Hatus; Bariah; Nearya | 3:22 |
+| 1 Chronicles | Elioenai; Azrikam | Elyoenai; Azrikam | 3:23 |
+| 1 Chronicles | Hodaviah; Eliashib; Pelaiah; Akkub; Johanan; Delaiah; Anani | Hodawya; Elyasyib; Pelaya; Akub; Yohanan; Delaya; Anani | 3:24 |
+| 1 Chronicles | Reaiah; Jahath; Ahumai; Lahad | Reaya; Yahat; Ahumai; Lahad | 4:2 |
+| 1 Chronicles | Ishma; Idbash; Hazzelelponi | Isma; Idbas; Hazelelponi | 4:3 |
+| 1 Chronicles | Hushah; Helah; Ahuzzam; Temeni; Haahashtari | Husa; Hela; Ahuzam; Temeni; Haahastari | 4:4–6 |
+| 1 Chronicles | Zereth; Zohar; Ethnan; Koz; Anub; Zobebah; Aharhel; Harum | Zeret; Zohar; Etnan; Kos; Anub; Zobeba; Aharhel; Harum | 4:7–8 |
+| 1 Chronicles | Chelub; Shuhah; Mehir; Eshton | Kelub; Syuha; Mehir; Eston | 4:11 |
+| 1 Chronicles | Beth-rapha; Paseah; Tehinnah; Ir-nahash; Recah | Bet-Rafa; Paseah; Tehina; Ir-Nahas; Rekha | 4:12 |
+| 1 Chronicles | Hathath; Meonothai; Ge-harashim | Hatat; Meonotai; Ge-Harasyim (*Lembah Tukang*) | 4:13–14 |
+| 1 Chronicles | Iru; Naam; Jehallelel; Ziphah; Tiria; Asarel | Iru; Naam; Yehaleleel; Zifa; Tirya; Asarel | 4:15–16 |
+| 1 Chronicles | Ezrah; Mered; Jalon; Ishbah | Ezra; Mered; Yalon; Isbah | 4:17 |
+| 1 Chronicles | Jered; Jekuthiel; Bithiah | Yered; Yekutiel; Bitya | 4:18 |
+| 1 Chronicles | Hodiah; Naham; Garmite | Hodia; Naham; orang Garmi | 4:19 |
+| 1 Chronicles | Shimon; Rinnah; Ben-hanan; Tilon; Zoheth; Ben-zoheth | Syimon; Rina; Ben-Hanan; Tilon; Zohet; Ben-Zohet | 4:20 |
+| 1 Chronicles | Lecah; Laadah; Beth-ashbea | Lekha; Laada; Bet-Asbea | 4:21 |
+| 1 Chronicles | Jokim; Cozeba; Saraph; Jashubi-lehem | Yokim; Kozeba; Saraf; Yasyubi-Lehem | 4:22 |
+| 1 Chronicles | Netaim | Netaim | 4:23 |
+| 1 Chronicles | Jarib; Hammuel | Yarib; Hamuel | 4:24–26 |
+| 1 Chronicles | Tolad; Hazar-susim; Beth-biri; Tochen | Tolad; Hazar-Susim; Bet-Biri; Tokhen | 4:29–32 |
+| 1 Chronicles | Meshobab; Jamlech; Joshah; Joshibiah; Asiel | Mesyobab; Yamlekh; Yosya; Yosyibya; Asiel | 4:34–35 |
+| 1 Chronicles | Jaakobah; Jeshohaiah; Asaiah; Adiel; Jesimiel | Yaakoba; Yesyohaya; Asaya; Adiel; Yesimiel | 4:36 |
+| 1 Chronicles | Ziza; Shiphi; Allon; Jedaiah; Shimri | Ziza; Syifi; Alon; Yedaya; Syimri | 4:37 |
+| 1 Chronicles | Meunites | orang Meunim | 4:41 |
+| 1 Chronicles | Beerah; Tilgath-pilneser | Beera; Tilgat-Pilneser (L) | 5:6 |
+| 1 Chronicles | Jeiel; Azaz; Baal-meon | Yeiel; Azaz; Baal-Meon | 5:7–8 |
+| 1 Chronicles | Hagrites | orang Hagri | 5:10 |
+| 1 Chronicles | Shapham; Janai; Jorai; Jacan; Zia | Syafam; Yanai; Yorai; Yakan; Zia | 5:12–13 |
+| 1 Chronicles | Huri; Jaroah; Jeshishai; Jahdo; Ahi; Abdiel | Huri; Yaroah; Yesyisyai; Yahdo; Ahi; Abdiel | 5:14–15 |
+| 1 Chronicles | Nodab; Baal-hermon; Senir | Nodab; Baal-Hermon; Senir | 5:19, 23 |
+| 1 Chronicles | Eliel; Azriel; Jahdiel | Eliel; Azriel; Yahdiel | 5:24 |
+| 1 Chronicles | Pul; Halah; Habor; Hara; Gozan | Pul; Halah; Habor; Hara; Gozan | 5:26 |
+| 1 Chronicles | Abishua; Uzzi; Zerahiah; Meraioth; Amariah | Abisyua; Uzi; Zerahya; Meraiot; Amarya | 5:30–33 |
+| 1 Chronicles | Hilkiah; Seraiah; Jehozadak | Hilkia; Seraya; Yehozadak | 5:39–40 |
+| 1 Chronicles | Zimmah; Joah; Iddo; Jeatherai | Zima; Yoah; Ido; Yeaterai | 6:5–6 |
+| 1 Chronicles | Ebiasaph; Tahath; Uriel; Amasai; Ahimoth; Zophai | Ebyasaf; Tahat; Uriel; Amasai; Ahimot; Zofai | 6:8–11 |
+| 1 Chronicles | Vashni | Wasni | 6:13 |
+| 1 Chronicles | Uzzah; Haggiah | Uza; Hagia | 6:14–15 |
+| 1 Chronicles | Toah; Mahath | Toah; Mahat | 6:19–20 |
+| 1 Chronicles | Baaseiah; Malchijah; Ethni; Adaiah | Baaseya; Malkhia; Etni; Adaya | 6:25–26 |
+| 1 Chronicles | Kishi; Abdi; Malluch; Hashabiah; Amzi; Bani; Shemer | Kisyi; Abdi; Malukh; Hasyabya; Amsi; Bani; Syemer | 6:29–31 |
+| 1 Chronicles | Hilez; Alemeth; Jokmeam; Bileam (town); Anem | Hiles; Alemet; Yokmeam; Bileam; Anem | 6:43–58 |
+| 1 Chronicles | Mashal; Hukok; Hammon; Rimmono | Masyal; Hukok; Hamon; Rimono | 6:59–62 |
+| 1 Chronicles | Jeriel; Jahmai; Ibsam | Yeriel; Yahmai; Ibsam | 7:2 |
+| 1 Chronicles | Izrahiah; Isshiah | Yizrahya; Yisyia | 7:3 |
+| 1 Chronicles | Jediael; Jerimoth; Iri | Yediael; Yerimot; Iri | 7:6–7 |
+| 1 Chronicles | Zemirah; Jeremoth | Zemira; Yeremot | 7:8 |
+| 1 Chronicles | Chenaanah; Zethan; Ahishahar | Kenaana; Zetan; Ahisyahar | 7:10 |
+| 1 Chronicles | Shuppim; Ir; Aher | Syupim; Ir; Aher | 7:12 |
+| 1 Chronicles | Jahziel | Yahziel | 7:13 |
+| 1 Chronicles | Peresh; Sheresh; Ulam | Peresy; Syeres; Ulam | 7:16 |
+| 1 Chronicles | Hammolecheth; Ishhod | Hamolekhet; Ishod | 7:18 |
+| 1 Chronicles | Ahian; Likhi; Aniam | Ahyan; Likhi; Aniam | 7:19 |
+| 1 Chronicles | Eleadah; Elead | Eleada; Elead | 7:20–21 |
+| 1 Chronicles | Sheerah; Uzzen-sheerah | Syeera; Uzen-Syeera | 7:24 |
+| 1 Chronicles | Rephah; Resheph; Telah; Ladan | Refah; Resyef; Telah; Ladan | 7:25–26 |
+| 1 Chronicles | Naaran; Ayyah | Naaran; Aya | 7:28 |
+| 1 Chronicles | Birzaith; Japhlet; Shomer; Hotham | Birzait; Yaflet; Syomer; Hotam | 7:31–32 |
+| 1 Chronicles | Pasach; Bimhal; Ashvath | Pasakh; Bimhal; Aswat | 7:33 |
+| 1 Chronicles | Rohgah; Hubbah; Helem; Zophah; Imna; Shelesh; Amal | Rohga; Huba; Helem; Zofah; Yimna; Syeles; Amal | 7:34–35 |
+| 1 Chronicles | Harnepher; Beri; Imrah; Hod; Shilshah; Beera | Harnefer; Beri; Yimra; Hod; Syilsya; Beera | 7:36–37 |
+| 1 Chronicles | Pispa; Ara; Ulla; Arah; Rizia | Pispa; Ara; Ula; Arah; Risya | 7:38–39 |
+| 1 Chronicles | Aharah; Nohah; Rapha | Ahrah; Noha; Rafa | 8:1–2 |
+| 1 Chronicles | Addar; Abihud; Ahoah; Shephuphan; Huram | Adar; Abihud; Ahoah; Syefufan; Huram | 8:3–5 |
+| 1 Chronicles | Shaharaim; Baara; Hodesh; Zibia; Malcam | Syaharaim; Baara; Hodes; Zibya; Malkam | 8:8–9 |
+| 1 Chronicles | Jeuz; Sachia; Mirmah; Abitub; Elpaal | Yeus; Sakhya; Mirma; Abitub; Elpaal | 8:10–11 |
+| 1 Chronicles | Misham; Shemed; Ono; Lod | Misyam; Syemed; Ono; Lod | 8:12 |
+| 1 Chronicles | Shashak; Zebadiah; Ishpah; Joha | Syasyak; Zebadya; Yispa; Yoha | 8:14–16 |
+| 1 Chronicles | Hizki; Ishmerai; Izliah; Jakim | Hizki; Yismerai; Yizlia; Yakim | 8:17–19 |
+| 1 Chronicles | Elienai; Zillethai; Beraiah; Shimrath | Elienai; Ziletai; Beraya; Syimrat | 8:20–21 |
+| 1 Chronicles | Ishpan; Hanan; Anthothijah; Iphdeiah | Yispan; Hanan; Antotia; Yifdeya | 8:22–25 |
+| 1 Chronicles | Shamsherai; Shehariah; Jaareshiah | Syamsyerai; Syeharya; Yaaresya | 8:26–27 |
+| 1 Chronicles | Zecher; Mikloth; Shimeah | Zekher; Miklot; Syimea | 8:31–32 |
+| 1 Chronicles | Esh-baal; Merib-baal | Esbaal; Merib-Baal | 8:33–34 |
+| 1 Chronicles | Pithon; Melech; Tarea; Jehoaddah; Azmaveth | Piton; Melekh; Tarea; Yehoada; Azmawet | 8:35–36 |
+| 1 Chronicles | Binea; Raphah; Azel; Bocheru; Sheariah; Eshek | Binea; Rafa; Asel; Bokheru; Syearya; Esyek | 8:37–39 |
+| 1 Chronicles | temple servants (Netinim) | *para pelayan Bait Allah* (L, B); *para pelayan rumah Allah* (R) | 9:2 |
+| 1 Chronicles | Uthai; Imri | Utai; Imri | 9:4 |
+| 1 Chronicles | Shilonites; Jeuel | orang Syiloni; Yeuel | 9:5–6 |
+| 1 Chronicles | Sallu; Hassenuah; Ibneiah; Michri; Ibnijah | Salu; Hasenua; Yibneya; Mikhri; Yibnia | 9:7–8 |
+| 1 Chronicles | Jehoiarib; Jachin | Yehoyarib; Yakhin | 9:10 |
+| 1 Chronicles | Pashhur; Maasai; Jahzerah; Meshillemith; Immer | Pashur; Maasai; Yahzera; Mesyilemit; Imer | 9:12 |
+| 1 Chronicles | Hasshub; Bakbakkar; Heresh; Galal; Mattaniah | Hasyub; Bakbakar; Heres; Galal; Matanya | 9:14–15 |
+| 1 Chronicles | Jeduthun | Yedutun | 9:16 |
+| 1 Chronicles | gatekeepers | *penjaga pintu gerbang* | 9:17 |
+| 1 Chronicles | Talmon; Ahiman; King's Gate | Talmon; Ahiman; Pintu Gerbang Raja | 9:17–18 |
+| 1 Chronicles | Kore; Meshelemiah | Kore; Mesyelemya | 9:19–21 |
+| 1 Chronicles | Mattithiah | Matitya | 9:31 |
+| 1 Chronicles | showbread (bread of the arrangement) | *roti susunan* (L); *roti sajian* (B) | 9:32 |
+| 1 Chronicles | Shimeam; Tahrea; Jarah | Syimeam; Tahrea; Yaera | 9:38–42 |
+| 1 Chronicles | the Thirty; the Three | *ketiga puluh orang itu*, *ketiga orang itu* (L, B); *Ketiga Puluh*, *Ketiga Pahlawan* (R) | 11:11–12 |
+| 1 Chronicles | Jashobeam; Hachmoni; Dodo; Ahohite | Yasyobeam; Hakhmoni; Dodo; orang Ahohi | 11:11–12 |
+| 1 Chronicles | Pas-dammim; Kabzeel | Pas-Damim; Kabzeel | 11:13, 22 |
+| 1 Chronicles | Shammoth; Harorite; Pelonite; Ikkesh; Tekoite | Syamot; orang Harori; orang Peloni; Ikes; orang Tekoa | 11:27–28 |
+| 1 Chronicles | Sibbecai; Hushathite; Ilai; Maharai; Heled | Sibkhai; orang Husyat; Ilai; Maharai; Heled | 11:29–30 |
+| 1 Chronicles | Ithai; Ribai; Pirathonite; Hurai; Gaash; Arbathite | Itai; Ribai; orang Piraton; Hurai; Gaas; orang Arbat | 11:31–32 |
+| 1 Chronicles | Baharumite; Eliahba; Shaalbonite; Hashem; Gizonite; Shagee; Hararite | orang Baharum; Elyahba; orang Syaalbon; Hasyem; orang Gizon; Syage; orang Harari | 11:33–34 |
+| 1 Chronicles | Ahiam; Sacar; Eliphal; Ur; Mecherathite | Ahiam; Sakhar; Elifal; Ur; orang Mekherat | 11:35–36 |
+| 1 Chronicles | Hezro; Naarai; Ezbai; Mibhar; Hagri | Hesro; Naarai; Ezbai; Mibhar; Hagri | 11:37–38 |
+| 1 Chronicles | Zelek; Naharai; Beerothite; Gareb | Zelek; Naharai; orang Beerot; Gareb | 11:39–40 |
+| 1 Chronicles | Adina; Shiza; Joshaphat; Mithnite | Adina; Syiza; Yosyafat; orang Mitni | 11:42–43 |
+| 1 Chronicles | Uzzia; Ashterathite; Shama; Aroerite; Tizite | Uzia; orang Asytarot; Syama; orang Aroer; orang Tisi | 11:44–45 |
+| 1 Chronicles | Mahavite; Jeribai; Joshaviah; Elnaam; Ithmah; Jaasiel; Mezobaite | orang Mahawi; Yeribai; Yosyawya; Elnaam; Yitma; Yaasiel; orang Mezoba | 11:46–47 |
+| 1 Chronicles | Shemaah; Gibeathite; Jeziel; Beracah | Syemaa; orang Gibeah; Yeziel; Berakha | 12:3 |
+| 1 Chronicles | Ishmaiah; Jahaziel; Jozabad; Gederathite | Yisymaya; Yahaziel; Yozabad; orang Gedera | 12:4–5 |
+| 1 Chronicles | Eluzai; Bealiah; Shemariah; Haruphite | Eluzai; Bealya; Syemarya; orang Harufi | 12:6 |
+| 1 Chronicles | Azarel; Joezer; Joelah | Azareel; Yoezer; Yoela | 12:7–8 |
+| 1 Chronicles | Mishmannah; Elzabad; Machbannai | Misymana; Elzabad; Makhbanai | 12:11–14 |
+| 1 Chronicles | Adnah | Adna | 12:21 |
+| 1 Chronicles | rulers of the Philistines (*seren*) | *raja-raja kota* (L, B); *para penguasa* (R) | 12:20 |
+| 1 Chronicles | Shihor; Lebo-hamath; Baalah; Chidon | Syihor; Lebo-Hamat; Baala; Kidon | 13:5–9 |
+| 1 Chronicles | assembly (*qahal*) | *jemaah* | 13:2 |
+| 1 Chronicles | Elishua; Elpelet; Beeliada | Elisua; Elpelet; Beelyada | 14:5–7 |
+| 1 Chronicles | Kushaiah; Ben; Jaaziel; Shemiramoth; Jehiel; Unni | Kusyaya; Ben; Yaaziel; Syemiramot; Yehiel; Uni | 15:17–18 |
+| 1 Chronicles | Maaseiah; Eliphelehu; Mikneiah; Aziel; Azaziah | Maaseya; Elifelehu; Mikneya; Aziel; Azazia | 15:18–21 |
+| 1 Chronicles | alamoth; sheminith | *alamot*; *syeminit* (L, B) | 15:20–21 |
+| 1 Chronicles | Chenaniah; Shebaniah; Jehiah | Kenanya; Syebanya; Yehia | 15:22–24 |
+| 1 Chronicles | ram's horn (*shofar*); trumpet (*hatsotsrah*) | *sangkakala*; *nafiri* | 15:28 |
+| 1 Chronicles | Tibhath; Cun; Tou; Hadoram (son of Tou) | Tibhat; Kun; Tou; Hadoram | 18:8–10 |
+| 1 Chronicles | Abimelech (son of Abiathar); Shavsha | Abimelekh; Syawsya | 18:16 |
+| 1 Chronicles | Aram-naharaim; Aram-maacah; Medeba | Aram-Naharaim; Aram-Maakha; Medeba | 19:6–7 |
+| 1 Chronicles | Shophach | Syofakh | 19:16 |
+| 1 Chronicles | Sippai; Lahmi; Rapha (giants) | Sipai; Lahmi; Rafa | 20:4–8 |
+| 1 Chronicles | Satan (no article) | Satan | 21:1 |
+| 1 Chronicles | Ornan | Ornan | 21:15 |
+| 1 Chronicles | Sidonians; Tyrians | orang Sidon; orang Tirus | 22:4 |
+| 1 Chronicles | the house of the LORD (the temple, from ch. 22) | *bait {{divine_name:TUHAN\|Yahweh}}* (L, B); *rumah {{divine_name:TUHAN\|Yahweh}}* (R) | 22:1 |
+| 1 Chronicles | Zetham; Shelomoth; Haziel; Zina; Zizah | Zetam; Syelomot; Haziel; Zina; Ziza | 23:8–11 |
+| 1 Chronicles | Shebuel; Rehabiah; Jeriah; Jekameam | Syebuel; Rehabya; Yeria; Yekameam | 23:16–19 |
+| 1 Chronicles | divisions (of priests, Levites, army) | *rombongan* (L, B); *kelompok* (R) | 23:6 |
+| 1 Chronicles | officials (*shoterim*) | *pengatur* | 23:4 |
+| 1 Chronicles | Seorim; Mijamin; Hakkoz; Jeshua; Huppah; Jeshebeab; Bilgah | Seorim; Miyamin; Hakos; Yesua; Hupa; Yesyebeab; Bilga | 24:8–14 |
+| 1 Chronicles | Hezir; Ha-Pizzez; Pethahiah; Jehezkel; Gamul; Maaziah | Hezir; Hapises; Petahya; Yehezkiel; Gamul; Maazya | 24:15–18 |
+| 1 Chronicles | Shubael; Jehdeiah; Jaaziah; Shoham; Ibri | Syubael; Yehdeya; Yaazia; Syoham; Ibri | 24:20–27 |
+| 1 Chronicles | Asarelah; Bukkiah; Eliathah; Giddalti; Romamti-Ezer | Asarela; Bukia; Eliyata; Gidalti; Romamti-Ezer | 25:2–4 |
+| 1 Chronicles | Joshbekashah; Mallothi; Hothir; Mahazioth; Izri; Jesarelah | Yosbekasya; Maloti; Hotir; Mahaziot; Yisri; Yesarela | 25:4–14 |
+| 1 Chronicles | Jathniel; Jehohanan; Eliehoenai; Jehozabad; Sachar; Peullethai | Yatniel; Yehohanan; Elyehoenai; Yehozabad; Sakhar; Peuletai | 26:2–5 |
+| 1 Chronicles | Othni; Rephael; Semachiah; Tebaliah; Shelemiah | Otni; Refael; Semakhya; Tebalya; Syelemya | 26:7–14 |
+| 1 Chronicles | Shallecheth (gate); Parbar; Jehieli | Syalekhet; Parbar; Yehieli | 26:16–21 |
+| 1 Chronicles | Zabdiel; Dodai; Ammizabad; Shamhuth; Izrahite | Zabdiel; Dodai; Amizabad; Syamhut; orang Yizrah | 27:2–8 |
+| 1 Chronicles | Heldai; Ezri; Shiphmite; Gederite; Shitrai | Heldai; Ezri; orang Syifmi; orang Gederi; Syitrai | 27:15–29 |
+| 1 Chronicles | Adlai; Obil; Meronothite; Jaziz | Adlai; Obil; orang Meronot; Yaziz | 27:29–31 |
+| 1 Chronicles | sycamore-fig | *pohon ara hutan* (L, B); *pohon ara* (R) | 27:28 |
+| 1 Chronicles | the king's friend (court title) | *sahabat raja* | 27:33 |
+| 1 Chronicles | onyx; antimony; alabaster | *batu oniks*; *batu celak*; *batu pualam* | 29:2 |
+| 1 Chronicles | darics | *darik* | 29:7 |
+| 1 Chronicles | testimonies (*edot*) | *peringatan* | 29:19 |
