@@ -1066,6 +1066,110 @@ records it. Empty until the first book is drafted.
 | Colossians | barbarian; Scythian | *orang barbar*; *orang Skit* | 3:11 |
 | Colossians | Jesus called Justus | Yesus yang disebut Yustus | 4:11 |
 | Colossians | Nympha | Nimfa | 4:15 |
+| Numbers | tabernacle of the testimony | *Kemah Suci kesaksian* (L); *Kemah Suci tempat loh-loh kesaksian* (B) | 1:50 |
+| Numbers | Elizur; Shedeur | Elizur; Syedeur | 1:5 |
+| Numbers | Shelumiel; Zurishaddai | Selumiel; Zurisyadai | 1:6 |
+| Numbers | Nethanel; Zuar | Netaneel; Zuar | 1:8 |
+| Numbers | Eliab; Helon | Eliab; Helon | 1:9 |
+| Numbers | Elishama; Ammihud; Gamaliel; Pedahzur | Elisama; Amihud; Gamaliel; Pedazur | 1:10 |
+| Numbers | Abidan; Gideoni | Abidan; Gideoni | 1:11 |
+| Numbers | Ahiezer; Ammishaddai | Ahiezer; Amisyadai | 1:12 |
+| Numbers | Pagiel; Ochran | Pagiel; Okhran | 1:13 |
+| Numbers | Eliasaph; Deuel (Reuel in 2:14) | Elyasaf; Deuel (Rehuel) | 1:14 |
+| Numbers | Ahira; Enan | Ahira; Enan | 1:15 |
+| Numbers | Ithamar | Itamar | 3:2 |
+| Numbers | Gershon; Kohath; Merari | Gerson; Kehat; Merari | 3:17 |
+| Numbers | Libni; Shimei; Amram; Izhar; Uzziel | Libni; Simei; Amram; Yizhar; Uziel | 3:18-19 |
+| Numbers | Mahli; Mushi | Mahli; Musi | 3:20 |
+| Numbers | Lael; Elizaphan; Zuriel; Abihail | Lael; Elizafan; Zuriel; Abihail | 3:24-35 |
+| Numbers | at the mouth of the LORD | *menurut titah {{divine_name:TUHAN\|Yahweh}}* (L); *sesuai dengan firman ...* (B) | 3:16 |
+| Numbers | keep the charge (*shamar mishmeret*) | *memelihara tugas jagaan* (L); *menjalankan tugas*, *menjaga* (B, R) | 3:7 |
+| Numbers | gerah | *gera* | 3:47 |
+| Numbers | shekel (units setting) | about 11.4 g: `{{units:sekitar 57 gram\|lima syikal}}` (B, R) | 3:47 |
+| Numbers | the service (*tsava*) of the Levites | *dinas* (L, B); *kelompok pekerja* (R) | 4:3 |
+| Numbers | fine leather (*tachash*) | *kulit halus* | 4:6 |
+| Numbers | table of the Presence | *meja sajian* (L); *meja roti sajian* (B, R) | 4:7 |
+| Numbers | scarlet | *kain kirmizi* (L, B); *kain merah terang* (R) | 4:8 |
+| Numbers | carrying frame | *usungan* | 4:10 |
+| Numbers | scale disease (*tsara'at*) | *penyakit kulit* | 5:2 |
+| Numbers | contribution (*terumah*) | *persembahan khusus* | 5:9 |
+| Numbers | wave (*henif*) | *mengunjukkan* (L, B) | 5:25 |
+| Numbers | ephah (units setting) | about 22 litres: `{{units:sekitar dua liter\|sepersepuluh efa}}` (B, R) | 5:15 |
+| Numbers | turtledoves; young pigeons | *burung tekukur*; *anak burung merpati* | 6:10 |
+| Numbers | dedication of the altar | *pentahbisan mezbah* | 7:10 |
+| Numbers | trumpet (*chatsotsrah*); alarm (*teru'ah*) | *nafiri*; *tanda semboyan* (L, B) | 10:2; 10:5 |
+| Numbers | Hobab; Reuel | Hobab; Rehuel | 10:29 |
+| Numbers | Taberah | Tabera | 11:3 |
+| Numbers | the rabble (*hasafsuf*) | *orang-orang bajingan* (L); *orang-orang campuran* (B); *orang-orang asing* (R) | 11:4 |
+| Numbers | coriander; bdellium | *ketumbar*; *damar bedolah* | 11:7 |
+| Numbers | officers (*shoterim*) | *pengatur* (L, B) | 11:16 |
+| Numbers | Eldad; Medad | Eldad; Medad | 11:26 |
+| Numbers | Kibroth-hattaavah; Hazeroth | Kibrot-Taawa; Hazerot | 11:34-35 |
+| Numbers | Cushite | *perempuan Kush* | 12:1 |
+| Numbers | Shammua; Zaccur; Shaphat; Hori; Jephunneh; Igal | Syamua; Zakur; Safat; Hori; Yefune; Igal | 13:4-7 |
+| Numbers | Hoshea; Palti; Raphu; Gaddiel; Sodi; Gaddi; Susi | Hosea; Palti; Rafu; Gadiel; Sodi; Gadi; Susi | 13:8-11 |
+| Numbers | Ammiel; Gemalli; Sethur; Michael; Nahbi; Vophsi; Geuel; Machi | Amiel; Gemali; Setur; Mikhael; Nahbi; Wofsi; Geuel; Makhi | 13:12-15 |
+| Numbers | Zin; Rehob; Lebo-hamath | Zin; Rehob; Lebo-Hamat | 13:21 |
+| Numbers | Ahiman; Sheshai; Talmai; Anak (Anakim); Zoan | Ahiman; Sesai; Talmai; Enak (*keturunan Enak*); Zoan | 13:22 |
+| Numbers | Eshcol; Nephilim | Eskol; *orang Nefilim* | 13:23; 13:33 |
+| Numbers | Hormah | Horma | 14:45 |
+| Numbers | offering by fire (*'isheh*); aroma of soothing | *persembahan yang dibakar*; *bau yang menenangkan* (L), *bau harum yang menyenangkan* (B) | 15:3 |
+| Numbers | hin (units setting) | about 4 litres: `{{units:sekitar satu liter\|seperempat hin}}` (B, R) | 15:4 |
+| Numbers | err, unintentional sin | *khilaf* (L, B); *tanpa sengaja* (R) | 15:22 |
+| Numbers | tassels (*tsitsit*) | *jumbai* | 15:38 |
+| Numbers | Dathan; Abiram; On; Peleth | Datan; Abiram; On; Pelet | 16:1 |
+| Numbers | censer (*machtah*) | *perbaraan* | 16:6 |
+| Numbers | inheritance (*nachalah*) | *milik pusaka* | 16:14 |
+| Numbers | almonds | *buah badam* | 17:23 |
+| Numbers | devoted thing (*cherem*); devote to destruction | *yang dikhususkan [bagi Allah]*; *menumpas* | 18:14; 21:2 |
+| Numbers | covenant of salt | *perjanjian garam* | 18:19 |
+| Numbers | water of impurity (*mei niddah*) | *air pentahiran* (L, B); *air yang menghapus kenajisan* (R) | 19:9 |
+| Numbers | Meribah; Mount Hor; King's Highway | Meriba; gunung Hor; Jalan Raja | 20:13; 20:22; 20:17 |
+| Numbers | Arad; Atharim; Oboth; Iye-abarim; Zered | Arad; Atarim; Obot; Iye-Abarim; Zered | 21:1-12 |
+| Numbers | Waheb; Suphah; Ar; Beer; Mattanah; Nahaliel; Bamoth | Waheb; Sufa; Ar; Beer; Matana; Nahaliel; Bamot | 21:14-19 |
+| Numbers | Pisgah; Jeshimon; Sihon; Jahaz; Jabbok; Heshbon | Pisga; Yesimon; Sihon; Yahas; Yabok; Hesybon | 21:20-25 |
+| Numbers | Chemosh; Dibon; Nophah; Medeba; Jazer; Og; Edrei | Kamos; Dibon; Nofah; Medeba; Yaezer; Og; Edrei | 21:29-33 |
+| Numbers | fiery snakes; bronze snake | *ular-ular api* (L), *ular-ular berbisa* (B, R); *ular tembaga* | 21:6; 21:9 |
+| Numbers | Zippor; Beor; Pethor | Zipor; Beor; Petor | 22:2-5 |
+| Numbers | the angel of the LORD | *Malaikat {{divine_name:TUHAN\|Yahweh}}* (no deity_pronoun span) | 22:22 |
+| Numbers | Kiriath-huzoth; Bamoth-baal | Kiryat-Huzot; Bamot-Baal | 22:39-41 |
+| Numbers | oracle (*mashal*) of Balaam | *sanjak* (L, B); *pesan* (R) | 23:7 |
+| Numbers | Zophim; Peor | Zofim; Peor | 23:14; 23:28 |
+| Numbers | utterance (*ne'um*) of Balaam | *tutur kata* (L, B) | 24:3 |
+| Numbers | Agag; Sheth; Seir; Kenites; Kain; Kittim; Eber | Agag; Set; Seir; *orang Keni*; Kain; Kitim; Eber | 24:7-24 |
+| Numbers | Shittim; Baal of Peor | Sitim; Baal-Peor | 25:1-3 |
+| Numbers | Zimri; Salu; Cozbi; Zur | Zimri; Salu; Kozbi; Zur | 25:14-15 |
+| Numbers | covenant of peace | *perjanjian damai-{{deity_pronoun:ku\|Ku}}* | 25:12 |
+| Numbers | Pallu; Carmi; Nemuel; Jamin; Jachin; Zerah; Shaul | Palu; Karmi; Nemuel; Yamin; Yakhin; Zerah; Saul | 26:5-13 |
+| Numbers | Zephon; Haggi; Shuni; Ozni; Eri; Arod; Areli | Zefon; Hagi; Suni; Ozni; Eri; Arod; Areli | 26:15-17 |
+| Numbers | Er; Onan; Shelah; Hamul; Tola; Puvah (Punites); Jashub; Shimron | Er; Onan; Syela; Hamul; Tola; Pua (*kaum Puni*); Yasub; Simron | 26:19-24 |
+| Numbers | Sered; Elon; Jahleel; Machir; Iezer; Helek; Asriel; Shechem; Shemida; Hepher | Sered; Elon; Yahleel; Makhir; Iezer; Helek; Asriel; Sikhem; Semida; Hefer | 26:26-32 |
+| Numbers | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelafehad; Mahla; Noa; Hogla; Milka; Tirza | 26:33 |
+| Numbers | Shuthelah; Becher; Tahan; Eran; Bela; Ashbel; Ahiram; Shephupham (Shuphamites); Hupham; Ard; Naaman | Sutelah; Bekher; Tahan; Eran; Bela; Asybel; Ahiram; Sefufam (*kaum Sufam*); Hufam; Ard; Naaman | 26:35-40 |
+| Numbers | Shuham; Imnah (Imnites); Ishvi; Beriah; Heber; Malchiel; Serah; Jahzeel; Guni; Jezer; Shillem; Jochebed | Suham; Yimna (*kaum Yimni*); Yiswi; Beria; Heber; Malkiel; Serah; Yahzeel; Guni; Yezer; Silem; Yokhebed | 26:42-59 |
+| Numbers | lot (*goral*) | *undian* | 26:55 |
+| Numbers | Abarim; Urim | Abarim; Urim | 27:12; 27:21 |
+| Numbers | continual burnt offering (*olat tamid*) | *korban bakaran tetap* (L, B); *korban bakaran harian* (R) | 28:3 |
+| Numbers | holy convocation; solemn assembly (*'atseret*) | *pertemuan kudus*; *pertemuan raya* (L, B) | 28:18; 29:35 |
+| Numbers | day of loud blast (*yom teru'ah*) | *hari peniupan sangkakala* | 29:1 |
+| Numbers | bond (*'issar*) in vows | *ikatan* (L); *janji* (B, R) | 30:3 |
+| Numbers | Evi; Rekem; Hur; Reba | Ewi; Rekem; Hur; Reba | 31:8 |
+| Numbers | commanders of thousands; of hundreds | *kepala pasukan seribu*; *kepala pasukan seratus* | 31:14 |
+| Numbers | Ataroth; Nimrah; Elealeh; Sebam; Nebo; Beon | Atarot; Nimra; Elale; Sebam; Nebo; Beon | 32:3 |
+| Numbers | Kadesh-barnea; Kenizzite | Kadesy-Barnea; *orang Kenas* | 32:8; 32:12 |
+| Numbers | Aroer; Atroth-shophan; Jogbehah; Beth-nimrah; Beth-haran | Aroer; Atrot-Sofan; Yogbeha; Bet-Nimra; Bet-Haran | 32:34-36 |
+| Numbers | Kiriathaim; Baal-meon; Sibmah; Jair; Havvoth-jair; Nobah; Kenath | Kiryataim; Baal-Meon; Sibma; Yair; Hawot-Yair; Nobah; Kenat | 32:37-42 |
+| Numbers | Rameses; Succoth; Etham; Pi-hahiroth; Baal-zephon; Migdol; Marah; Elim | Raamses; Sukot; Etam; Pi-Hahirot; Baal-Zefon; Migdol; Mara; Elim | 33:3-9 |
+| Numbers | Sin; Dophkah; Alush; Rephidim; Rithmah; Rimmon-perez; Libnah; Rissah | Sin; Dofka; Alus; Rafidim; Ritma; Rimon-Peres; Libna; Risa | 33:11-21 |
+| Numbers | Kehelathah; Mount Shepher; Haradah; Makheloth; Tahath; Terah; Mithkah; Hashmonah | Kehelata; gunung Syafer; Harada; Makhelot; Tahat; Terah; Mitka; Hasmona | 33:22-29 |
+| Numbers | Moseroth; Bene-jaakan; Hor-haggidgad; Jotbathah; Abronah; Ezion-geber | Moserot; Bene-Yaakan; Hor-Gidgad; Yotbata; Abrona; Ezion-Geber | 33:30-35 |
+| Numbers | Zalmonah; Punon; Iyim; Dibon-gad; Almon-diblathaim; Beth-jeshimoth; Abel-shittim | Salmona; Punon; Iyim; Dibon-Gad; Almon-Diblataim; Bet-Yesimot; Abel-Sitim | 33:41-49 |
+| Numbers | Salt Sea; Great Sea; Sea of Chinnereth | *Laut Asin* (L, B), *Laut Mati* (R); *Laut Besar* (L), *Laut Tengah* (B, R); *Laut Kineret* (*Danau Galilea*, R) | 34:3-11 |
+| Numbers | Akrabbim; Hazar-addar; Azmon; brook of Egypt | Akrabim (*Pendakian Kalajengking*, R); Hazar-Adar; Azmon; *Sungai Mesir* | 34:4-5 |
+| Numbers | Zedad; Ziphron; Hazar-enan; Shepham; Riblah; Ain | Zedad; Zifron; Hazar-Enan; Syefam; Ribla; Ain | 34:8-11 |
+| Numbers | Shemuel; Elidad; Chislon; Bukki; Jogli; Hanniel; Ephod | Semuel; Elidad; Kislon; Buki; Yogli; Haniel; Efod | 34:20-23 |
+| Numbers | Kemuel; Shiphtan; Parnach; Paltiel; Azzan; Ahihud; Shelomi; Pedahel | Kemuel; Syiftan; Parnakh; Paltiel; Azan; Ahihud; Selomi; Pedahel | 34:24-28 |
+| Numbers | cities of refuge; avenger of blood (*go'el haddam*) | *kota perlindungan* (L, B), *kota tempat berlindung* (R); *penuntut balas darah* (L, B), *kerabat yang menuntut balas* (R) | 35:6 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
