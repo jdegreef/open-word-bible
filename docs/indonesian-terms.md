@@ -1388,6 +1388,10 @@ records it. Empty until the first book is drafted.
 | Joshua | jealous God | *Allah yang cemburu* | 24:19 |
 | Joshua | oak at Shechem | *pohon tarbantin* | 24:26 |
 | Joshua | Hamor; qesitah; Mount Gaash | Hemor; *kesita* (L), *keping perak* (B, R); gunung Gaas | 24:30–32 |
+| 1 Timothy | Hymenaeus | Himeneus | 1:20 |
+| 1 Timothy | sound teaching | *ajaran yang sehat* | 1:10 |
+| 1 Timothy | godliness (*eusebeia*) | *kesalehan* | 2:2 |
+| 1 Timothy | man of God | *manusia Allah* (L); *abdi Allah* (B) | 6:11 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
