@@ -1281,6 +1281,113 @@ records it. Empty until the first book is drafted.
 | James | Lord of Sabaoth | *Tuhan Sabaot* (L); *Tuhan semesta alam* (B, R) | 5:4 |
 | 2 Thessalonians | the rebellion; the man of lawlessness | *murtad* (L), *pemberontakan besar* (B, R); *manusia durhaka* (L, B) | 2:3 |
 | 2 Thessalonians | the one who restrains | *yang menahan* | 2:6 |
+| Joshua | attendant (*meshartet*, Joshua to Moses) | *abdi* (L); *pembantu* (B, R) | 1:1 |
+| Joshua | the Great Sea | *Laut Besar* (L, B); *Laut Tengah* (R) | 1:4 |
+| Joshua | officials (*shoterim*) | *para pejabat* | 1:10 |
+| Joshua | rest (*menuchah*, *heniach*) | *ketenteraman* (L, B); *tempat yang tenteram*, *hidup tenteram* (R) | 1:13 |
+| Joshua | inheritance (*nachalah*) | *milik pusaka* | 1:6 |
+| Joshua | Shittim | Sitim | 2:1 |
+| Joshua | the ban: devote to destruction (*charam*); devoted thing (*cherem*) | *mengkhususkan untuk dimusnahkan* (L, B), *memusnahkan (sama sekali) sebagai milik {{divine_name:TUHAN\|Yahweh}}* (R), as Deuteronomy; *barang yang dikhususkan* (L, B), *yang diserahkan kepada {{divine_name:TUHAN\|Yahweh}} untuk dimusnahkan* (R) | 2:10; 6:17 |
+| Joshua | scarlet cord | *tali kirmizi* (L, B); *tali merah* (R) | 2:18 |
+| Joshua | Zarethan | Zaretan | 3:16 |
+| Joshua | Hivites; Perizzites; Girgashites | orang Hewi; orang Feris; orang Girgasi | 3:10 |
+| Joshua | ark of the testimony | *tabut kesaksian* (L, B); *tabut tempat loh-loh batu perjanjian* (R) | 4:16 |
+| Joshua | circumcise; Hill of the Foreskins | *menyunat*; Bukit Kulit Khatan | 5:2–3 |
+| Joshua | commander of the army of the LORD | *panglima balatentara {{divine_name:TUHAN\|Yahweh}}* (L, B); *panglima pasukan {{divine_name:TUHAN\|Yahweh}}* (R) | 5:14 |
+| Joshua | ram's horn, trumpet (*shofar*) | *sangkakala tanduk domba jantan*, *sangkakala* (L, B); *terompet dari tanduk domba jantan*, *terompet* (R) | 6:4 |
+| Joshua | bronze (*nechoshet*) | *tembaga* | 6:19 |
+| Joshua | Carmi; Zabdi; Zerah | Karmi; Zabdi; Zerah | 7:1 |
+| Joshua | Beth-aven | Bet-Awen | 7:2 |
+| Joshua | Shebarim | Syebarim | 7:5 |
+| Joshua | Shinar | Sinear (L); Babel (B, R) | 7:21 |
+| Joshua | Valley of Achor | Lembah Akhor | 7:24 |
+| Joshua | ambush | *penghadangan*, *para penghadang* (L, B); described at R | 8:2 |
+| Joshua | javelin (*kidon*) | *lembing* (L, B); *tombak* (R) | 8:18 |
+| Joshua | Mount Ebal; Mount Gerizim | gunung Ebal; gunung Gerizim | 8:30, 33 |
+| Joshua | assembly (*qahal*) | *jemaah* (L, B); *perkumpulan* (R) | 8:35 |
+| Joshua | Shephelah | Dataran Rendah (L, B); *perbukitan rendah di sebelah barat* (R) | 9:1 |
+| Joshua | wineskin | *kirbat* | 9:4 |
+| Joshua | Heshbon; Ashtaroth | Hesybon; Asytarot | 9:10 |
+| Joshua | Chephirah; Beeroth; Kiriath-jearim | Kefira; Beerot; Kiryat-Yearim | 9:17 |
+| Joshua | congregation (*edah*); its leaders (*nesi'im*) | *umat*; *para pemimpin umat* | 9:15 |
+| Joshua | woodcutters and water carriers | *tukang belah kayu dan tukang timba air* | 9:21 |
+| Joshua | Adoni-Zedek | Adoni-Zedek | 10:1 |
+| Joshua | Hoham; Piram; Japhia; Debir (king) | Hoham; Piram; Yafia; Debir | 10:3 |
+| Joshua | Jarmuth; Lachish; Eglon; Debir (town) | Yarmut; Lakhis; Eglon; Debir | 10:3, 38 |
+| Joshua | Beth-horon; Azekah; Makkedah | Bet-Horon; Azeka; Makeda | 10:10 |
+| Joshua | valley of Aijalon | lembah Ayalon | 10:12 |
+| Joshua | Book of Jashar | Kitab Yasar | 10:13 |
+| Joshua | Libnah; Horam; Gezer | Libna; Horam; Gezer | 10:29, 33 |
+| Joshua | Kadesh-barnea; Goshen (in Canaan) | Kadesy-Barnea; tanah Gosyen | 10:41 |
+| Joshua | Jabin; Jobab; Madon; Shimron; Achshaph | Yabin; Yobab; Madon; Syimron; Akhsaf | 11:1 |
+| Joshua | Chinneroth | Kinerot (L, B); Danau Galilea (R) | 11:2 |
+| Joshua | Mizpah, Mizpeh (in the north) | Mizpa | 11:3, 8 |
+| Joshua | Great Sidon; Misrephoth-maim | Sidon-Besar; Misrefot-Maim | 11:8 |
+| Joshua | hamstring | *memutuskan urat kaki* (L); *memotong urat kaki* (B, R) | 11:6 |
+| Joshua | Mount Halak; Seir; Baal-gad | gunung Halak; Seir; Baal-Gad | 11:17 |
+| Joshua | Anakim; Anab | orang Enak; Anab | 11:21 |
+| Joshua | the wadi Arnon; Jabbok; Aroer | lembah sungai Arnon; sungai Yabok; Aroer | 12:1–2 |
+| Joshua | Beth-jeshimoth; Pisgah | Bet-Yesimot; Pisga | 12:3 |
+| Joshua | Rephaim; Edrei; Salecah | orang Refaim; Edrei; Salkha | 12:4–5 |
+| Joshua | Geshurites; Maacathites | orang Gesur; orang Maakha | 12:5 |
+| Joshua | Geder; Hormah; Arad; Adullam | Geder; Horma; Arad; Adulam | 12:13–15 |
+| Joshua | Tappuah; Hepher; Aphek; Lasharon | Tapuah; Hefer; Afek; Lasyaron | 12:17–18 |
+| Joshua | Shimron-meron; Taanach; Megiddo | Syimron-Meron; Taanakh; Megido | 12:20–21 |
+| Joshua | Kedesh; Jokneam; Naphath-dor; Goiim; Tirzah | Kedesy; Yokneam; Nafat-Dor; Goyim; Tirza | 12:22–24 |
+| Joshua | Philistines; their rulers (*seranim*) | orang Filistin; *raja kota* | 13:2–3 |
+| Joshua | Shihor; Avvim; Mearah; Gebalites; Lebo-hamath | Syihor; orang Awi; Meara; orang Gebal; Lebo-Hamat | 13:3–5 |
+| Joshua | plateau (*mishor*); Medeba; Dibon | *dataran tinggi*; Medeba; Dibon | 13:9 |
+| Joshua | Bamoth-baal; Beth-baal-meon; Jahaz; Kedemoth; Mephaath | Bamot-Baal; Bet-Baal-Meon; Yahas; Kedemot; Mefaat | 13:17–18 |
+| Joshua | Kiriathaim; Sibmah; Zereth-shahar; Beth-peor | Kiryataim; Sibma; Zeret-Syahar; Bet-Peor | 13:19–20 |
+| Joshua | Evi; Rekem; Zur; Hur; Reba; Beor | Ewi; Rekem; Zur; Hur; Reba; Beor | 13:21–22 |
+| Joshua | diviner | *juru tenung* | 13:22 |
+| Joshua | Jazer; Rabbah; Ramath-mizpeh; Betonim; Mahanaim | Yaezer; Raba; Ramat-Mizpe; Betonim; Mahanaim | 13:25–26 |
+| Joshua | Beth-haram; Beth-nimrah; Succoth; Zaphon; Sea of Chinnereth | Bet-Haram; Bet-Nimra; Sukot; Zafon; danau Kineret | 13:27 |
+| Joshua | offerings by fire (*isheh*) | *korban api-apian* (L); *korban makanan* (B, R) | 13:14 |
+| Joshua | Jephunneh; Kenizzite; Kiriath-arba; Arba | Yefune; orang Kenas; Kiryat-Arba; Arba | 14:6, 15 |
+| Joshua | the man of God | *abdi Allah* | 14:6 |
+| Joshua | pasturelands (*migrash*) | *padang rumput* | 14:4 |
+| Joshua | wilderness of Zin; Ascent of Akrabbim | padang gurun Zin; Pendakian Akrabim (L, B), Tanjakan Kalajengking (R) | 15:1, 3 |
+| Joshua | Hezron; Addar; Karka; Azmon; Wadi of Egypt | Hezron; Adar; Karka; Azmon; sungai Mesir (L), Wadi Mesir (B, R) | 15:3–4 |
+| Joshua | Beth-hoglah; Beth-arabah; Stone of Bohan; Adummim; En-shemesh; En-rogel | Bet-Hogla; Bet-Araba; Batu Bohan; Adumim; En-Syemesy; En-Rogel | 15:6–7 |
+| Joshua | Valley of Ben-hinnom; Valley of Rephaim; Nephtoah; Mount Ephron; Baalah | Lembah Ben-Hinom; Lembah Refaim; Neftoah; gunung Efron; Baala | 15:8–9 |
+| Joshua | Mount Jearim; Chesalon; Beth-shemesh; Timnah; Shikkeron; Jabneel | gunung Yearim; Kesalon; Bet-Syemesy; Timna; Syikeron; Yabneel | 15:10–11 |
+| Joshua | Sheshai; Ahiman; Talmai; Kiriath-sepher; Achsah; Othniel; Kenaz | Syesai; Ahiman; Talmai; Kiryat-Sefer; Akhsa; Otniel; Kenas | 15:14–17 |
+| Joshua | the Negev towns (15:21–32) | Kabzeel, Eder, Yagur, Kina, Dimona, Adada, Kedesy, Hazor, Yitnan, Zif, Telem, Bealot, Hazor-Hadata, Keriot-Hezron, Amam, Syema, Molada, Hazar-Gada, Hesymon, Bet-Pelet, Hazar-Syual, Bersyeba, Bizyotya, Baala, Iyim, Ezem, Eltolad, Kesil, Horma, Ziklag, Madmana, Sansana, Lebaot, Syilhim, Ain, Rimon | 15:21–32 |
+| Joshua | the Shephelah towns (15:33–47) | Esytaol, Zora, Asyna, Zanoah, En-Ganim, Tapuah, Enam, Yarmut, Adulam, Sokho, Azeka, Syaaraim, Aditaim, Gedera, Gederotaim, Zenan, Hadasya, Migdal-Gad, Dilean, Mizpa, Yokteel, Lakhis, Boskat, Eglon, Kabon, Lahmas, Kitlis, Gederot, Bet-Dagon, Naama, Makeda, Libna, Eter, Asyan, Yifta, Nezib, Kehila, Akhzib, Maresya | 15:33–44 |
+| Joshua | the hill-country and wilderness towns (15:48–62) | Syamir, Yatir, Dana, Kiryat-Sana, Esytemoa, Anim, Holon, Gilo, Arab, Ruma, Esyan, Yanum, Bet-Tapuah, Afeka, Humta, Zior, Maon, Karmel, Yuta, Yizreel, Yokdeam, Kain, Gibea, Halhul, Bet-Zur, Gedor, Maarat, Bet-Anot, Eltekon, Kiryat-Baal, Raba, Midin, Sekhakha, Nibsyan, Kota Garam, En-Gedi | 15:48–62 |
+| Joshua | its daughters (dependent towns) | *anak-anak kotanya* (L); *kota-kota* (B, R) | 15:45 |
+| Joshua | Luz; Archites; Ataroth; Japhletites | Lus; orang Arki; Atarot; orang Yafleti | 16:2–3 |
+| Joshua | Lower / Upper Beth-horon; Ataroth-addar | Bet-Horon Hilir / Hulu; Atarot-Adar | 16:3, 5 |
+| Joshua | Michmethath; Taanath-shiloh; Janoah; Naarah; Wadi Kanah | Mikhmetat; Taanat-Silo; Yanoah; Naara; sungai Kana (L), Wadi Kana (B, R) | 16:6–8 |
+| Joshua | forced labor (*mas*) | *pekerja rodi* (L, B); *kerja paksa* (R) | 16:10 |
+| Joshua | Abiezer; Helek; Asriel; Hepher; Shemida | Abiezer; Helek; Asriel; Hefer; Syemida | 17:2 |
+| Joshua | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelofehad; Mahla; Noa; Hogla; Milka; Tirza | 17:3 |
+| Joshua | En-tappuah; Beth-shean; Ibleam; En-dor; Valley of Jezreel | En-Tapuah; Bet-Syean; Yibleam; En-Dor; Lembah Yizreel | 17:7–16 |
+| Joshua | iron chariots | *kereta besi* | 17:16 |
+| Joshua | Gelilot; the Benjamin towns (18:21–28) | Gelilot; Emek-Kezis, Zemaraim, Awim, Para, Ofra, Kefar-Amona, Ofni, Geba, Moza, Rekem, Yirpeel, Tarala, Zela, Haelef, Yebus, Kiryat | 18:17–28 |
+| Joshua | the Simeon towns (19:2–8) | Syeba, Bala, Betul, Bet-Markabot, Hazar-Susa, Bet-Lebaot, Syaruhen, Baalat-Beer, Rama di Tanah Negeb | 19:2–8 |
+| Joshua | the Zebulun names (19:10–15) | Sarid, Marala, Dabesyet, Kislot-Tabor, Daberat, Yafia, Gat-Hefer, Et-Kazin, Nea, Hanaton, lembah Yifta-El, Katat, Nahalal, Idala | 19:10–15 |
+| Joshua | the Issachar names (19:18–22) | Kesulot, Syunem, Hafaraim, Syion, Anaharat, Rabit, Kisyon, Ebes, Remet, En-Hada, Bet-Pazes, Tabor, Syahazuma | 19:18–22 |
+| Joshua | the Asher names (19:25–30) | Helkat, Hali, Beten, Alamelekh, Amad, Misyal, Syihor-Libnat, Bet-Emek, Neiel, Kabul, Ebron, Rehob, Hamon, Kana, Hosa, Uma | 19:25–30 |
+| Joshua | the Naphtali names (19:33–38) | Helef, Zaananim, Adami-Nekeb, Lakum, Aznot-Tabor, Hukok, Zidim, Zer, Hamat, Rakat, Adama, En-Hazor, Yiron, Migdal-El, Horem, Bet-Anat | 19:33–38 |
+| Joshua | the Dan names (19:41–47) | Ir-Syemesy, Syaalabin, Yitla, Elon, Elteke, Gibeton, Baalat, Yehud, Bene-Berak, Gat-Rimon, Me-Yarkon, Rakon, Lesyem | 19:41–47 |
+| Joshua | Timnath-serah | Timnat-Serah | 19:50 |
+| Joshua | cities of refuge | *kota-kota perlindungan* (L, B); *kota-kota tempat berlindung* (R) | 20:2 |
+| Joshua | avenger of blood | *penuntut balas darah* (L, B); *kerabat yang ingin membalas kematian itu* (R) | 20:3 |
+| Joshua | Bezer; Ramoth; Golan | Bezer; Ramot; Golan | 20:8 |
+| Joshua | Kohathites; Gershon; Merari | orang Kehat; Gerson; Merari | 21:4–7 |
+| Joshua | Anathoth; Almon; Kibzaim; Beeshterah | Anatot; Almon; Kibzaim; Beestera | 21:18–27 |
+| Joshua | Abdon; Hammoth-dor; Kartan; Kartah; Dimnah | Abdon; Hamot-Dor; Kartan; Karta; Dimna | 21:30–35 |
+| Joshua | breach of faith (*ma'al*) | *ketidaksetiaan*; *berlaku tidak setia* | 7:1; 22:16 |
+| Joshua | El, Elohim, YHWH (22:22) | *Yang Perkasa, Allah, {{divine_name:TUHAN\|Yahweh}}* | 22:22 |
+| Joshua | the altar named Witness | Saksi | 22:34 |
+| Joshua | the River (Euphrates) | *Sungai* (L, B); *sungai Efrat* (R) | 24:2 |
+| Joshua | Terah; Nahor; Zippor | Terah; Nahor; Zipor | 24:2, 9 |
+| Joshua | hornet | *tabuhan* | 24:12 |
+| Joshua | jealous God | *Allah yang cemburu* | 24:19 |
+| Joshua | oak at Shechem | *pohon tarbantin* | 24:26 |
+| Joshua | Hamor; qesitah; Mount Gaash | Hemor; *kesita* (L), *keping perak* (B, R); gunung Gaas | 24:30–32 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
