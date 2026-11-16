@@ -806,6 +806,12 @@ records it. Empty until the first book is drafted.
 | 1 Corinthians | head covering (11:4-15) | *tudung*; *bertudung*, *menudungi* | 11:5 |
 | 1 Corinthians | Fortunatus; Achaicus | Fortunatus; Akhaikus | 16:17 |
 | 1 Corinthians | Marana tha | *Marana tha* (L); *Tuhan kami, datanglah* (B, R) | 16:22 |
+| Galatians | James the brother of the Lord | Yakobus, saudara Tuhan | 1:19 |
+| Galatians | Syria; Cilicia | Siria; Kilikia | 1:21 |
+| Galatians | pillars (of the church) | *sokoguru* (L, B); *tiang-tiang utama* (R) | 2:9 |
+| Galatians | the guardian (*paidagōgos*) | *pengasuh* | 3:24 |
+| Galatians | the elements of the world | *roh-roh dasar dunia* (L); *kuasa-kuasa dasar dunia* (B); *kuasa-kuasa dan aturan-aturan* (R) | 4:3 |
+| Galatians | flesh (Paul's moral sense) | *daging* (L); *tabiat lama* (B); *diri yang berdosa* (R) | 5:13 |
 | Matthew | Jechoniah | Yekhonya | 1:11 |
 | Matthew | Joram (king) | Yoram | 1:8 |
 | Matthew | Asaph; Amos (the Greek's spellings of Asa, Amon) | Asaf; Amos (L) | 1:7; 1:10 |
