@@ -1664,6 +1664,10 @@ class SearchMetadataTest(unittest.TestCase):
         self.assertEqual(data["alternateName"], term["lemma"])
         self.assertEqual(data["inDefinedTermSet"]["url"], f"{build_site.SITE_URL}/terms/")
         self.assertEqual(data["termCode"], build_site.term_strong(term))
+        # The page opens with a definition, which is also its description.
+        lead = html.unescape(re.search(r'<p class="dek term-def">(.*?)</p>', page)[1])
+        self.assertTrue(lead.startswith(f"{term['lemma']} (Greek, Strong’s {build_site.term_strong(term)})"), lead)
+        self.assertEqual(data["description"], lead)
 
     def test_link_previews_name_a_locale(self):
         self.assertIn('<meta property="og:locale" content="en_US">', self.page("jhn/3"))

@@ -4772,7 +4772,9 @@ def term_page(term, lang="en"):
     tr = term_translation(term, lang)
     head = term_head(term, lang, (html.escape(sense), lang_attr(sense_lang, lang)),
                      f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a>')
+    definition = term_definition(term, lang, sense)
     body = f"""{head}
+<p class="dek term-def">{html.escape(definition)}</p>
 <section class="term-section" aria-labelledby="settled-h">
 <h2 id="settled-h">{t(lang, "terms.settled")}</h2>
 {term_english_html(term, lang)}
@@ -4784,17 +4786,24 @@ def term_page(term, lang="en"):
 {listing}
 </section>
 """
-    description = t(lang, "meta.term_description", sense=sense, lemma=term["lemma"])
-    body += term_ld(term, lang, sense, html.unescape(description))
+    description = shorten(definition)
+    body += term_ld(term, lang, sense, definition)
     return page(lang, f'{sense} · {t(lang, "terms.title")}', body, path=term_path(term),
                 current="/about/", description=description)
+
+
+def term_definition(term, lang, sense):
+    """A key term's page opens with what it is: its word, language and
+    Strong's number, its sense, and the English kept for it."""
+    return t(lang, "terms.definition", lemma=term["lemma"], language=t(lang, "terms.language_" + term_key(term)[0]),
+             strong=term_strong(term), sense=sense, english=", ".join(term_english(term)))
 
 
 def term_ld(term, lang, sense, description):
     """schema.org data for a key term: a defined term in the translation's
     set of key terms, named by its sense, with the original word and its
     Strong's number as its other names. (A term's note is for translators,
-    not a definition, so it is not the description.)"""
+    not a definition, so the description is term_definition's sentence.)"""
     data = {"@context": "https://schema.org", "@type": "DefinedTerm", "name": sense,
             "alternateName": term["lemma"], "termCode": term_strong(term),
             "url": SITE_URL + url(lang, term_path(term)), "inLanguage": lang,
