@@ -20,6 +20,7 @@ import re
 import shutil
 import subprocess
 import sys
+import unicodedata
 import urllib.parse
 import zipfile
 from pathlib import Path
@@ -74,15 +75,33 @@ QUOTES = (f'<path class="quotes" d="{QUOTES_PATH}" fill="{{fill}}"/>'
           f'<path class="quotes" d="{QUOTES_PATH}" transform="rotate(180 32 31)" fill="{{fill}}"/>')
 # Sized and filled in its own attributes too, so a page whose stylesheet has
 # not loaded shows a small mark rather than a black square across the header.
+MARK_DRAWING = (f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
+                f'{QUOTES.format(fill="#3f3d9a")}')
 MARK = (f'<svg class="mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">'
-        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
-        f'{QUOTES.format(fill="#3f3d9a")}</svg>')
+        f'{MARK_DRAWING}</svg>')
+
+
+def mark_use():
+    """The brand mark from the sprite, for a second mark on a page (the
+    footer's): the header's is drawn whole, so the page has its mark even
+    before the sprite loads."""
+    return f'<svg class="mark" width="32" height="32" aria-hidden="true"><use href="{sprite()[1]}#mark"/></svg>'
+
+
+ICON_STROKE = ('fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+               'stroke-linejoin="round"')
 
 
 def icon(paths, size=18, cls="icon"):
-    """A line icon in the header's style (24-unit grid, drawn in currentColor)."""
-    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
-            'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" '
+    """A line icon in the header's style (24-unit grid, drawn in currentColor).
+    One of ICONS is drawn from the site's sprite (sprite()), so a page names
+    it in a few bytes instead of repeating its paths: a page has some forty
+    icons, and the site some 30,000 pages."""
+    name = ICON_NAMES.get(paths)
+    if name:
+        return (f'<svg class="{cls}" width="{size}" height="{size}" aria-hidden="true">'
+                f'<use href="{sprite()[1]}#{name}"/></svg>')
+    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" {ICON_STROKE} '
             f'aria-hidden="true">{paths}</svg>')
 
 
@@ -113,6 +132,27 @@ ICONS = {
     "feed": '<path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
+ICON_NAMES = {paths: name for name, paths in ICONS.items()}
+
+
+@functools.cache
+def sprite():
+    """/sprite.svg, every icon in ICONS and the brand mark as symbols that
+    pages draw with <use>, and its URL with a content hash as its version.
+    A symbol carries the icon's drawing attributes, which its paths inherit,
+    and currentColor is the colour where it is used."""
+    symbols = "".join(f'<symbol id="{name}" viewBox="0 0 24 24" {ICON_STROKE}>{paths}</symbol>'
+                      for name, paths in ICONS.items())
+    # The page's style sheet cannot reach inside a <use>, so the mark's
+    # colours (.mark rect, path and .quotes in style.css) are the colour
+    # mode's own variables here, which do reach it.
+    accent, contrast = "fill:var(--accent,#3f3d9a)", "fill:var(--accent-contrast,#faf6ef)"
+    themed = (f'<rect width="64" height="64" rx="14" style="{accent}"/><path d="{BOOK_PATH}" style="{contrast}"/>'
+              f'<path d="{QUOTES_PATH}" style="{accent}"/>'
+              f'<path d="{QUOTES_PATH}" transform="rotate(180 32 31)" style="{accent}"/>')
+    symbols += f'<symbol id="mark" viewBox="0 0 64 64">{themed}</symbol>'
+    text = f'<svg xmlns="http://www.w3.org/2000/svg">{symbols}</svg>\n'
+    return text, f"/sprite.svg?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 # The site's interface languages. English is served at the root and every
@@ -333,8 +373,21 @@ def og_card_article(article):
     return f"article-{article['slug']}"
 
 
+# Open Graph names a locale as language_TERRITORY. Each language's is the
+# territory most of its readers are in (or the language's home): Portuguese
+# as in Brazil, Spanish as in Latin America's largest country, Swahili as
+# in Tanzania.
+OG_LOCALES = {"en": "en_US", "es": "es_MX", "fr": "fr_FR", "sw": "sw_TZ", "vi": "vi_VN", "ko": "ko_KR",
+              "pt": "pt_BR", "am": "am_ET", "hi": "hi_IN", "ru": "ru_RU", "uk": "uk_UA", "ja": "ja_JP",
+              "id": "id_ID"}
+
+
+def og_locale(lang):
+    return OG_LOCALES.get(lang, lang)
+
+
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES, unlisted=None, head=""):
+         translated=LANGUAGES, unlisted=None, head="", alternates=None, indexed=True, og=None):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated (the languages it exists in),
@@ -343,35 +396,50 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
     site's. card_alt says what the card shows. An unlisted page (the account
     page) has no path: it is not indexed and has no preview, but unlisted
     names its path, so the language switch still leads to it. head is more
-    for the <head> (the articles page's feed link)."""
+    for the <head> (the articles page's feed link).
+
+    alternates, when given, are the languages the hreflang links name
+    instead of translated: a chapter is offered in every language (the
+    switch leads to it, and it reads in English where it has no
+    translation yet) but is the same page in another language only where
+    it is wholly translated. A page that is not indexed (a chapter not yet
+    wholly in lang) says noindex and has no canonical link, and the sitemap
+    leaves it out. og is more link-preview tags as (property, value) pairs,
+    with og:type among them for a page that is not a website's page (an
+    article)."""
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or t(lang, "meta.description")
     meta = ""
     if path is not None:
         own = html.escape(SITE_URL + url(lang, path))
-        canonical = own
-        alternates = "".join(
+        same = translated if alternates is None else alternates
+        links = "".join(
             f'\n<link rel="alternate" hreflang="{code}" href="{html.escape(SITE_URL + url(code, path))}">'
-            for code in translated)
-        default = url("en" if "en" in translated else translated[0], path)
-        alternates += f'\n<link rel="alternate" hreflang="x-default" href="{html.escape(SITE_URL + default)}">'
+            for code in same)
+        if same:
+            default = url("en" if "en" in same else same[0], path)
+            links += f'\n<link rel="alternate" hreflang="x-default" href="{html.escape(SITE_URL + default)}">'
+        canonical = f'<link rel="canonical" href="{own}">' if indexed else '<meta name="robots" content="noindex, follow">'
+        extra = dict(og or ())
+        og_type = extra.pop("og:type", "website")
+        more_og = "".join(f'\n<meta property="{html.escape(k)}" content="{html.escape(v)}">' for k, v in extra.items())
         if not (OG / f"{card}.jpg").is_file():
             card, card_alt = "site", None
         card_alt = card_alt or t(lang, "meta.card_alt")
         image = html.escape(f"{SITE_URL}/og/{card}.jpg")
         meta = f"""
-<link rel="canonical" href="{canonical}">{alternates}
+{canonical}{links}
 <meta property="og:site_name" content="{SITE_NAME}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
 <meta property="og:url" content="{own}">
-<meta property="og:locale" content="{lang}">
+<meta property="og:locale" content="{og_locale(lang)}">
 <meta property="og:title" content="{html.escape(full_title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:image" content="{image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{html.escape(card_alt)}">
-<meta name="twitter:card" content="summary_large_image">"""
+<meta name="twitter:card" content="summary_large_image">{more_og}"""
     here = path if path is not None else unlisted
     takeroot = f'\n<meta name="owb-takeroot" content="{html.escape(TAKE_ROOT_URL)}">' if TAKE_ROOT_URL else ""
     if unlisted is not None:
@@ -646,7 +714,7 @@ def site_footer(lang, path=None, translated=LANGUAGES):
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-top">
 <div class="foot-about">
-<a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
@@ -910,6 +978,15 @@ def chapter_summary(book, chapter, records, lang):
     if shown not in summary:
         return ""
     return f'<p class="chapter-summary"{lang_attr(shown, lang)}>{html.escape(summary[shown])}</p>'
+
+
+def chapter_book_link(book, lang):
+    """Under a chapter's summary: a link to its book's introduction, where
+    the book has one in lang."""
+    if lang not in book_languages(book):
+        return ""
+    return (f'<p class="chapter-book"><a href="{url(lang, book_url(book))}">'
+            f'{t(lang, "reader.about_book", book=html.escape(BOOK_NAMES[book][lang]))}&nbsp;&rarr;</a></p>')
 
 
 def chapters():
@@ -1225,6 +1302,13 @@ def chapter_notes(records, chapter, lang="en", words=None):
             f'<h2>{heading}</h2></div><ol>{items}</ol></section>')
 
 
+def section_id(record, chapter):
+    """The id of the section a heading over record opens: "s" and the
+    verse it starts at ("s16", or "s7-53" in the chapter before)."""
+    ref = refs.parse(record["refs"][0])
+    return f"s{ref.verse}" if ref.chapter == chapter else f"s{ref.chapter}-{ref.verse}"
+
+
 def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
     """The chapter as reader.js's drawText() first draws it: Balanced, every
     setting at its default, headings shown, Study view. Written into the
@@ -1274,7 +1358,11 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
             close()
             para = None
             cls = "section-head" + ("" if hlang == lang else " fallback")
-            out.append(f'<h2 class="{cls}"{lang_attr(hlang, lang)}>{esc(markup.render(heading[hlang]), quote=False)}</h2>')
+            # Each section has an address (#s16, from the verse it opens
+            # with), the same in every language, that search results and
+            # the book's outline link to.
+            out.append(f'<h2 class="{cls}" id="{section_id(r, chapter)}"{lang_attr(hlang, lang)}>'
+                       f'{esc(markup.render(heading[hlang]), quote=False)}</h2>')
         if para is None or heading or r["id"] in starts:
             close()
             para = ['<p class="para">']
@@ -1289,12 +1377,15 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
         cls = "verse" if tl == lang else "verse fallback"
         for i, (v, text) in enumerate(verses):
             sup = f"<sup>{esc(v)}</sup>" if v != shown else ""
+            # A verse's address (#v16), on its first sentence: the links
+            # across the site lead there, and work before reader.js runs.
+            anchor = f' id="v{esc(v)}"' if v != shown else ""
             shown = v
             fn = ""
             if marks and i == len(verses) - 1:
                 fn = ('<sup class="fn" aria-hidden="true">'
                       + "".join(f'<span class="fn-mark">{m}</span>' for m in marks) + "</sup>")
-            para.append(f'<span class="{cls}"{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
+            para.append(f'<span class="{cls}"{anchor}{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
                         f'{sup}{esc(markup.render(text), quote=False)}{fn}</span> ')
     close()
     if in_disputed:
@@ -1312,23 +1403,93 @@ SOURCE_TEXTS = {
 CC0_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
 
 
-def chapter_ld(records, book, chapter, title, lang="en"):
-    """schema.org data for a chapter page, as a script element."""
+@functools.cache
+def git_dates():
+    """{path relative to the repository: the date of the last commit that
+    changed it}, for the sitemap's lastmod and the linked data's
+    dateModified. Empty in a shallow clone, whose history would give every
+    file the date of its one commit, or where git is missing."""
+    try:
+        shallow = subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=ROOT,
+                                 capture_output=True, text=True, check=True).stdout.strip()
+        if shallow != "false":
+            return {}
+        log = subprocess.run(["git", "log", "--format=%x01%cs", "--name-only", "--no-renames",
+                              "--", "content", "data", "articles"],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    dates, day = {}, None
+    for line in log.splitlines():
+        if line.startswith("\x01"):
+            day = line[1:]
+        elif line:
+            # Newest first: the first date seen for a file is its last change.
+            dates.setdefault(line, day)
+    return dates
+
+
+def last_modified(paths):
+    """The latest of the last-change dates of paths (relative to the
+    repository), or None if git knows none of them."""
+    found = [git_dates()[p] for p in paths if p in git_dates()]
+    return max(found) if found else None
+
+
+@functools.cache
+def chapter_sources(book, chapter):
+    """The files a chapter page is made from that change with its text: its
+    passages' records, and the book's headings and summaries."""
+    return tuple(book_chapter_files(book).get(chapter, []) + [f"data/headings/{book}.json", f"data/summaries/{book}.json"])
+
+
+@functools.cache
+def book_chapter_files(book):
+    """{chapter: the record files of a book that have a sentence in it}."""
+    found = {}
+    for path in sorted((ROOT / "content" / book).glob("*.json")):
+        rel = path.relative_to(ROOT).as_posix()
+        for ch in sorted({refs.parse(v).chapter for r in json.loads(path.read_text(encoding="utf-8"))["records"]
+                          for v in r["refs"]}):
+            found.setdefault(ch, []).append(rel)
+    return found
+
+
+def chapter_ld(records, book, chapter, title, lang="en", summary=None):
+    """schema.org data for a chapter page, as a script element: the chapter,
+    with its summary and its sections (from the headings), as part of its
+    book of the Bible, which is part of the translation."""
     source = SOURCE_TEXTS[source_language(book)]
+    own = SITE_URL + url(lang, chapter_url(book, chapter))
+    whole = all(lang in r["renderings"] for r in records)
+    bible = {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "license": CC0_URL}
+    book_ld = {"@type": "Book", "name": BOOK_NAMES[book][lang], "isPartOf": bible}
+    if lang in book_languages(book):
+        book_ld["url"] = SITE_URL + url(lang, book_url(book))
     data = {
         "@context": "https://schema.org",
         "@type": "Chapter",
         "name": title,
-        "url": SITE_URL + url(lang, chapter_url(book, chapter)),
+        "url": own,
         "inLanguage": lang,
-        "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"),
-                     "license": CC0_URL},
+        "position": chapter,
+        "isPartOf": book_ld,
         "license": CC0_URL,
         # Nothing is reviewed until a named human reviewer approves it.
         "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in records) else "Published",
         "translationOfWork": source,
         "isBasedOn": source,
     }
+    if summary:
+        data["description"] = summary
+    sections = [{"@type": "CreativeWork", "name": markup.render(headings()[r["id"]][lang]),
+                 "url": f"{own}#{section_id(r, chapter)}"}
+                for r in records if whole and headings().get(r["id"], {}).get(lang)]
+    if sections:
+        data["hasPart"] = sections
+    modified = last_modified(chapter_sources(book, chapter))
+    if modified:
+        data["dateModified"] = modified
     return ld_script(data)
 
 
@@ -1385,6 +1546,76 @@ def chapter_languages(records):
     """Every language any of the sentences has, in the site's order: English
     may run ahead of the others."""
     return [code for code in LANGUAGES if any(code in r["renderings"] for r in records)]
+
+
+def passage_languages(records):
+    """The languages every sentence of a passage has: the languages its page
+    is wholly in. A page in another language reads partly in English, so it
+    is offered (the language switch leads to it) but not indexed as that
+    language's page (chapter_page)."""
+    return [code for code in LANGUAGES if all(code in r["renderings"] for r in records)]
+
+
+@functools.cache
+def chapter_indexed(book, chapter, lang):
+    """Whether a chapter's page in lang is indexed: whether every sentence
+    of it is in lang."""
+    return lang in passage_languages(load_chapter(book, chapter)[0])
+
+
+def text_width(text):
+    """How wide text is in search results, in Latin letters: a Chinese,
+    Japanese or Korean character takes about two."""
+    return sum(2 if unicodedata.east_asian_width(c) in "WF" else 1 for c in text)
+
+
+def shorten(text, limit=160):
+    """text cut to at most limit wide (text_width) for a meta description:
+    whole while it fits, else at the last sentence end, then the last word,
+    before the limit, with an ellipsis."""
+    text = " ".join(text.split())
+    if text_width(text) <= limit:
+        return text
+    cut, width = "", 0
+    for c in text:
+        width += text_width(c)
+        if width > limit - 1:
+            break
+        cut += c
+    for stop in (". ", "。", "। ", "። ", "! ", "? "):
+        at = cut.rfind(stop)
+        if at >= len(cut) // 2:
+            return cut[:at + len(stop)].rstrip()
+    at = cut.rfind(" ")
+    return (cut[:at] if at >= len(cut) // 2 else cut).rstrip(",;:、，") + "…"
+
+
+def chapter_heads(records, lang):
+    """A passage's section headings in lang, as plain text, in order."""
+    return [markup.render(headings()[r["id"]][lang]) for r in records
+            if r["id"] in headings() and headings()[r["id"]].get(lang)]
+
+
+# A page title at most this long (without " · Open Word Bible") is shown
+# whole in search results.
+TITLE_LIMIT = 60
+
+
+def chapter_page_title(records, title, lang):
+    """A chapter page's <title>: its name with the stories it tells, from
+    its section headings ("John 3: Jesus and Nicodemus, John points to
+    Jesus"), as many as fit in TITLE_LIMIT, so a search for the story finds
+    it. Only headings in lang: a page that reads in English where lang has
+    no translation yet keeps its plain name."""
+    heads = chapter_heads(records, lang) if all(lang in r["renderings"] for r in records) else []
+    best = title
+    for n in range(1, len(heads) + 1):
+        candidate = t(lang, "meta.chapter_title", title=title,
+                      headings=t(lang, "meta.list_join").join(heads[:n]))
+        if text_width(candidate) > TITLE_LIMIT:
+            break
+        best = candidate
+    return best
 
 
 @functools.cache
@@ -1573,6 +1804,7 @@ def chapter_page(book, chapter, lang="en"):
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
     {chapter_summary(book, chapter, records, lang)}
+    {chapter_book_link(book, lang)}
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
@@ -1588,7 +1820,7 @@ def chapter_page(book, chapter, lang="en"):
 </div>
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
-{chapter_ld(records, book, chapter, title, lang)}
+{chapter_ld(records, book, chapter, title, lang, None if partial else summaries().get((book, chapter), {}).get(lang))}
 {breadcrumb_ld(lang, book_crumbs(book, lang) + [(title, chapter_url(book, chapter))])}
 <script src="{reader_shared(lang)[1]}"></script>
 <script src="{chapter_shared(book, chapter)[1]}"></script>
@@ -1597,11 +1829,17 @@ def chapter_page(book, chapter, lang="en"):
 <script src="{asset("reader.js")}"></script>
 {plans_script()}
 """
-    return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
+    # The summary says what this chapter is about; the plain description
+    # is the fallback, and stands where the summary is not in lang.
+    summary = summaries().get((book, chapter), {}).get(lang) if not partial else None
+    complete = passage_languages(records)
+    return page(lang, chapter_page_title(records, title, lang), body, path=chapter_url(book, chapter),
+                current="/read/",
                 card=og_card_chapter(book, chapter),
                 card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
                            verse=opening_verse(records, chapter, lang)),
-                description=t(lang, "meta.chapter_description" + suffix, title=title))
+                description=shorten(summary) if summary else t(lang, "meta.chapter_description" + suffix, title=title),
+                alternates=complete, indexed=lang in complete)
 
 
 def chapter_crossrefs(records):
@@ -1649,6 +1887,13 @@ def book_url(book):
     return f"/{book.lower()}/"
 
 
+def intro_sources(book, lang):
+    """The files a book's page is made from: its introduction in lang, and
+    the book's headings and summaries, which its outline lists."""
+    path = (INTROS if lang == "en" else INTROS / lang) / f"{book}.md"
+    return (path.relative_to(ROOT).as_posix(), f"data/headings/{book}.json", f"data/summaries/{book}.json")
+
+
 @functools.lru_cache(maxsize=None)
 def book_languages(book):
     """The languages a book's page is built in: those its introduction is
@@ -1684,11 +1929,18 @@ def book_page(book, lang="en"):
     chaps = dict(books(lang))[book]
     outline = []
     for p in chaps:
-        heads = [markup.render(headings()[r["id"]][lang]) for r in p.records
-                 if r["id"] in headings() and headings()[r["id"]].get(lang)]
-        sections = f'<span class="outline-heads">{html.escape(" · ".join(heads))}</span>' if heads else ""
-        outline.append(f'<li><a href="{url(lang, chapter_url(book, p.chapter))}">'
-                       f'{html.escape(ui["chapter"].replace("{n}", str(p.chapter)))}</a>{sections}</li>')
+        href = url(lang, chapter_url(book, p.chapter))
+        # Each heading links to its section of the chapter (chapter_text).
+        heads = [f'<a href="{href}#{section_id(r, p.chapter)}">'
+                 f'{html.escape(markup.render(headings()[r["id"]][lang]))}</a>'
+                 for r in p.records if r["id"] in headings() and headings()[r["id"]].get(lang)]
+        sections = f'<span class="outline-heads">{" · ".join(heads)}</span>' if heads else ""
+        # What the chapter is about, so the outline reads as a summary of
+        # the whole book.
+        summary = summaries().get((book, p.chapter), {}).get(lang)
+        about = f'<span class="outline-summary">{html.escape(summary)}</span>' if summary else ""
+        outline.append(f'<li><a href="{href}">'
+                       f'{html.escape(ui["chapter"].replace("{n}", str(p.chapter)))}</a>{sections}{about}</li>')
     articles = [a for a in sorted(load_articles(lang), key=lambda a: a["order"])
                 if any(b == book for b, _, _ in a["passages"])]
     more = (f'<section class="more" aria-labelledby="book-articles-h"><h2 id="book-articles-h">'
@@ -1715,10 +1967,27 @@ def book_page(book, lang="en"):
 </article>
 </div>
 {more}
+{book_ld(book, lang, intro, chaps)}
 {breadcrumb_ld(lang, book_crumbs(book, lang))}
 """
     return page(lang, ui["title"].replace("{book}", name), body, path=book_url(book), current="/read/",
                 description=intro["summary"], translated=book_languages(book))
+
+
+def book_ld(book, lang, intro, chaps):
+    """schema.org data for a book's page: the book of the Bible, its
+    introduction's summary, and its chapters."""
+    data = {"@context": "https://schema.org", "@type": "Book", "name": BOOK_NAMES[book][lang],
+            "url": SITE_URL + url(lang, book_url(book)), "inLanguage": lang,
+            "abstract": intro["summary"], "license": CC0_URL, "creativeWorkStatus": "Draft",
+            "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "license": CC0_URL},
+            "translationOfWork": SOURCE_TEXTS[source_language(book)],
+            "hasPart": [{"@type": "Chapter", "position": p.chapter, "name": chapter_name(p.records, book, p.chapter, lang),
+                         "url": SITE_URL + url(lang, chapter_url(book, p.chapter))} for p in chaps]}
+    modified = last_modified(intro_sources(book, lang))
+    if modified:
+        data["dateModified"] = modified
+    return ld_script(data)
 
 
 def edition_url(book):
@@ -2583,7 +2852,9 @@ def resume_link(lang, cls="button", names=False):
     books_attr = ""
     if names:
         names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-        books_attr = f' data-books="{html.escape(names)}"'
+        # In single quotes, so the JSON's double quotes need no escapes:
+        # 66 names, on every page.
+        books_attr = f" data-books='{html.escape(names, quote=False).replace(chr(39), '&#x27;')}'"
     return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}"{books_attr} href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
@@ -4237,9 +4508,24 @@ def term_page(term, lang="en"):
 {listing}
 </section>
 """
+    description = t(lang, "meta.term_description", sense=sense, lemma=term["lemma"])
+    body += term_ld(term, lang, sense, html.unescape(description))
     return page(lang, f'{sense} · {t(lang, "terms.title")}', body, path=term_path(term),
-                current="/about/",
-                description=t(lang, "meta.term_description", sense=sense, lemma=term["lemma"]))
+                current="/about/", description=description)
+
+
+def term_ld(term, lang, sense, description):
+    """schema.org data for a key term: a defined term in the translation's
+    set of key terms, named by its sense, with the original word and its
+    Strong's number as its other names. (A term's note is for translators,
+    not a definition, so it is not the description.)"""
+    data = {"@context": "https://schema.org", "@type": "DefinedTerm", "name": sense,
+            "alternateName": term["lemma"], "termCode": term_strong(term),
+            "url": SITE_URL + url(lang, term_path(term)), "inLanguage": lang,
+            "inDefinedTermSet": {"@type": "DefinedTermSet", "name": t(lang, "terms.title"),
+                                 "url": SITE_URL + url(lang, "/terms/")}}
+    data["description"] = description
+    return ld_script(data)
 
 
 def term_book_page(term, book, lang="en"):
@@ -4551,6 +4837,12 @@ def article_url(article):
     return f"/articles/{article['slug']}/"
 
 
+def article_source(article, lang):
+    """An article's file in lang, relative to the repository."""
+    path = (ARTICLES if lang == "en" else ARTICLES / lang) / f"{article['slug']}.md"
+    return path.relative_to(ROOT).as_posix()
+
+
 def _date(iso, lang="en"):
     import datetime
     day = datetime.date.fromisoformat(iso)
@@ -4804,7 +5096,7 @@ def article_page(article, articles, lang="en"):
 <p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a>{part}</p>
 <h1>{display(article["title"])}</h1>
 <p class="dek">{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
+<p class="byline">{mark_use()}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
 </header>
 <div class="article-body">
 {content}
@@ -4824,7 +5116,17 @@ def article_page(article, articles, lang="en"):
                 card_alt=t(lang, "meta.article_card_alt", section=section,
                            title=article["title"], summary=article["summary"]),
                 description=article["summary"],
-                translated=article_languages(article))
+                translated=article_languages(article), og=article_og(article, lang))
+
+
+def article_og(article, lang):
+    """An article's own link-preview tags: that it is an article, and when it
+    was published and last changed."""
+    tags = [("og:type", "article"), ("article:published_time", article["date"])]
+    modified = last_modified((article_source(article, lang),))
+    if modified:
+        tags.append(("article:modified_time", modified))
+    return tags
 
 
 def article_ld(article, lang):
@@ -4834,8 +5136,17 @@ def article_ld(article, lang):
     data = {"@context": "https://schema.org", "@type": "Article",
             "headline": article["title"], "description": article["summary"],
             "url": SITE_URL + url(lang, article_url(article)), "inLanguage": lang,
+            "abstract": article["summary"],
             "datePublished": article["date"], "author": ORGANIZATION, "publisher": ORGANIZATION,
+            # Drafted with AI help, as every article is, and not yet
+            # reviewed by a named person.
+            "creativeWorkStatus": "Draft",
             "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL + url(lang, "/")}}
+    modified = last_modified((article_source(article, lang),))
+    if modified:
+        data["dateModified"] = modified
+    if lang != "en":
+        data["translationOfWork"] = {"@type": "Article", "url": SITE_URL + article_url(article), "inLanguage": "en"}
     card = og_card_article(article)
     if (OG / f"{card}.jpg").is_file():
         data["image"] = f"{SITE_URL}/og/{card}.jpg"
@@ -5358,7 +5669,7 @@ def service_worker():
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
     shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "plans.js")]
-    shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
+    shell += ["/favicon.svg", sprite()[1], "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
     current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "account.js", "plans.js",
                                   "compare.js", "word.js", "saved.js", "groups.js", "edition.js")]
@@ -5588,11 +5899,53 @@ def search_page(lang="en"):
                 description=t(lang, "meta.search_description"))
 
 
-def sitemap(paths):
-    urls = "".join(f"<url><loc>{html.escape(SITE_URL + p)}</loc></url>\n" for p in paths)
-    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-            f"{urls}</urlset>\n")
+class SitemapEntry(NamedTuple):
+    """An indexed page: its language, its path without the language, and the
+    files (relative to the repository) whose last change is its lastmod."""
+    lang: str
+    path: str
+    sources: tuple = ()
+
+
+def sitemap_url(lang):
+    return f"/sitemap-{lang}.xml"
+
+
+def sitemaps(entries):
+    """{file: text}: sitemap.xml, an index of one sitemap per language, and
+    those sitemaps. Each page lists the same page in the other languages it
+    is indexed in (hreflang alternates), and its last change where git
+    knows it, so a crawler can tell which of some 20,000 pages to fetch
+    again after a deploy."""
+    esc = html.escape
+    by_path = {}
+    for e in entries:
+        by_path.setdefault(e.path, []).append(e.lang)
+    files, index = {}, []
+    for lang in LANGUAGES:
+        rows = []
+        for e in (e for e in entries if e.lang == lang):
+            langs = by_path[e.path]
+            alts = ""
+            if len(langs) > 1:
+                alts = "".join(f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(SITE_URL + url(code, e.path))}"/>'
+                               for code in langs)
+                default = "en" if "en" in langs else langs[0]
+                alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(SITE_URL + url(default, e.path))}"/>'
+            mod = last_modified(e.sources)
+            rows.append(f"<url><loc>{esc(SITE_URL + url(lang, e.path))}</loc>"
+                        f"{f'<lastmod>{mod}</lastmod>' if mod else ''}{alts}</url>\n")
+        if not rows:
+            continue
+        files[sitemap_url(lang).lstrip("/")] = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+            f"{''.join(rows)}</urlset>\n")
+        index.append(f"<sitemap><loc>{esc(SITE_URL + sitemap_url(lang))}</loc></sitemap>\n")
+    files["sitemap.xml"] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                            f"{''.join(index)}</sitemapindex>\n")
+    return files
 
 
 def build(out):
@@ -5620,10 +5973,10 @@ def build(out):
 
     indexed = []
     for lang in LANGUAGES:
-        def add(path, text, index=True):
+        def add(path, text, index=True, sources=()):
             write(page_file(url(lang, path)), text)
             if index:
-                indexed.append(url(lang, path))
+                indexed.append(SitemapEntry(lang, path, sources))
 
         add("/", home_page(lang))
         add("/read/", read_page(lang))
@@ -5648,10 +6001,11 @@ def build(out):
                 for book in term_books(term):
                     add(term_path(term, book), term_book_page(term, book, lang))
         for book, chapter in chapters():
-            add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
+            add(chapter_url(book, chapter), chapter_page(book, chapter, lang),
+                index=chapter_indexed(book, chapter, lang), sources=chapter_sources(book, chapter))
         for book, _ in books(lang):
             if lang in book_languages(book):
-                add(book_url(book), book_page(book, lang))
+                add(book_url(book), book_page(book, lang), sources=intro_sources(book, lang))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
@@ -5660,7 +6014,7 @@ def build(out):
             write(feed_url(lang).lstrip("/"), articles_feed(articles, lang))
         write(votd_feed_url(lang).lstrip("/"), votd_feed(lang))
         for article in articles:
-            add(article_url(article), article_page(article, articles, lang))
+            add(article_url(article), article_page(article, articles, lang), sources=(article_source(article, lang),))
         add("/account/", account_page(lang), index=False)
         add("/login/", login_page(lang), index=False)
         add("/reset-password/", reset_page(lang), index=False)
@@ -5679,13 +6033,14 @@ def build(out):
         for code in langs:
             path = plan_url(plan)
             write(page_file(url(code, path)), plan_page(plan, code, langs))
-            indexed.append(url(code, path))
+            indexed.append(SitemapEntry(code, path))
     files = {}
     files["404.html"] = not_found_page()
-    files["sitemap.xml"] = sitemap(indexed)
+    files.update(sitemaps(indexed))
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
+    files["sprite.svg"] = sprite()[0]
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
