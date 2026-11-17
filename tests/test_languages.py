@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site, page_data  # noqa: E402
+from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
 
@@ -105,7 +105,7 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(f'<link rel="alternate" hreflang="{lang}" href="{href}">', home)
         self.assertIn(f'hreflang="x-default" href="{build_site.SITE_URL}/"', home)
         self.assertIn(f'<link rel="canonical" href="{build_site.SITE_URL}/es/">', home)
-        sitemap = self.read("sitemap.xml")
+        sitemap = sitemap_text(self.out)
         for path in ("es/", "es/read/", "es/jhn/1/"):
             self.assertIn(f"<loc>{build_site.SITE_URL}/{path}</loc>", sitemap)
         # A language's articles page is listed once it has articles.
@@ -316,7 +316,7 @@ class LanguagesTest(unittest.TestCase):
         # Unlisted, but the switch and the remembered choice still lead to it.
         self.assertIn('<a href="/account/" lang="en"', page)
         self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
-        self.assertNotIn("/account/", self.read("sitemap.xml"))
+        self.assertNotIn("/account/", sitemap_text(self.out))
 
     def test_chapter_strip_and_turns_stay_in_the_language(self):
         page = self.read("es/php/2/index.html")
