@@ -3,11 +3,15 @@ builds from the site's own search documents, and the endpoint, in each site
 language."""
 import sys
 import time
+from datetime import timedelta
+from types import SimpleNamespace
+from unittest import mock
 
 from django.conf import settings
 from django.core.cache import cache
 from django.db import connection
 from django.test import SimpleTestCase, TestCase
+from django.utils import timezone
 
 from api import views
 from backend_tests.test_backend import import_content, load_extract_words
@@ -88,10 +92,59 @@ class SearchTest(TestCase):
     def test_search_budget_leaves_languages_for_the_next_run(self):
         # Past the deadline no language is started, and the ones done stay.
         before = SearchEntry.objects.count()
-        self.assertEqual(search.rebuild(until=time.monotonic() - 1), {})
+        self.assertEqual(search.rebuild(until=time.time() - 1), {})
+        self.assertEqual(search.rebuild(stop=time.time() - 1), {})
         self.assertEqual(SearchEntry.objects.count(), before)
         # The records loaded for one language don't outlive the rebuild.
         self.assertIsNone(build_site.SEARCH_LANG)
+
+    def test_a_stopped_update_keeps_its_batches_and_the_next_finishes(self):
+        # Render stops a pre-deploy at 30 minutes; a language whose update
+        # would run past --deadline writes what it can in committed batches
+        # and leaves the rest for the next run.
+        docs = build_site.search_documents("sw")["docs"]
+        self.addCleanup(search.site_build)   # one language's records must not outlive the test
+        clock = [0.0]
+        write = search._write
+
+        def first_batch_only(*args):
+            write(*args)
+            clock[0] = 100.0   # the deadline has come
+
+        with mock.patch.object(search, "CHUNK", 100), mock.patch.object(search, "_write", first_batch_only), \
+                mock.patch.object(search, "time", SimpleNamespace(time=lambda: clock[0])):
+            change = search._rebuild_language(search.site_build("sw"), "sw", full=True, stop=50.0)
+        self.assertEqual((change.added, change.left), (100, len(docs) - 100))
+        self.assertEqual(SearchEntry.objects.filter(language="sw").count(), 100)
+        self.assertIsNone(SearchLanguage.objects.get(code="sw").checked)
+        # Left behind, it goes first next time.
+        self.assertEqual(search.order(build_site.LANGUAGES)[0], "sw")
+        kept = set(SearchEntry.objects.filter(language="sw").values_list("id", flat=True))
+        change = search._rebuild_language(search.site_build("sw"), "sw", full=False)
+        self.assertEqual((change.added, change.removed, change.left), (len(docs) - 100, 0, 0))
+        entries = SearchEntry.objects.filter(language="sw").order_by("position", "sub")
+        self.assertEqual([e.doc for e in entries], docs)
+        self.assertTrue(kept <= set(entries.values_list("id", flat=True)))
+        self.assertIsNotNone(SearchLanguage.objects.get(code="sw").checked)
+
+    def test_an_update_out_of_time_changes_nothing(self):
+        self.addCleanup(search.site_build)
+        first = SearchEntry.objects.filter(language="en", kind="v").order_by("position", "sub").first()
+        first.doc = {**first.doc, "u": "/stale/"}
+        first.save()
+        change = search._rebuild_language(search.site_build("en"), "en", full=False, stop=time.time() - 1)
+        self.assertEqual((change.added, change.removed, change.left), (0, 0, 1))
+        self.assertTrue(SearchEntry.objects.filter(id=first.id).exists())
+
+    def test_languages_waiting_longest_go_first(self):
+        languages = list(build_site.LANGUAGES)
+        SearchLanguage.objects.update(checked=timezone.now())
+        SearchLanguage.objects.filter(code=languages[-1]).update(checked=None)
+        SearchLanguage.objects.filter(code=languages[0]).update(checked=timezone.now() + timedelta(hours=1))
+        self.assertEqual(search.order(languages), [languages[-1], *languages[1:-1], languages[0]])
+        # Never brought up to date: the newest language first.
+        SearchLanguage.objects.update(checked=None)
+        self.assertEqual(search.order(languages), languages[::-1])
 
     def test_one_languages_records_give_the_same_documents(self):
         # The rebuild loads only a language's renderings (English's where a
