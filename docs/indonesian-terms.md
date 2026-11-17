@@ -2340,3 +2340,10 @@ records it. Empty until the first book is drafted.
 | Jeremiah | governor (Gedaliah, "appointed over the land") | *kepala daerah* (B), *pemimpin* (R) | 41:2 |
 | Jeremiah | Baasha; Geruth Chimham | Baesa; Gerut-Kimham | 41:9, 17 |
 | Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
+| Jeremiah | Azariah son of Hoshaiah | Azarya anak Hosaya | 43:2 |
+| Jeremiah | brick terrace; mortar | lantai batu bata; tanah liat | 43:9 |
+| Jeremiah | royal canopy | permadani kerajaan (L, B); tenda kerajaan (R) | 43:10 |
+| Jeremiah | Beth-shemesh (in Egypt) | Bet-Semes (L, B); Heliopolis, kota matahari (R) | 43:13 |
+| Jeremiah | Pathros | Patros | 44:1 |
+| Jeremiah | LORD God of hosts | TUHAN, Allah semesta alam | 44:7 |
+| Jeremiah | Pharaoh Hophra | Firaun Hofra | 44:30 |
