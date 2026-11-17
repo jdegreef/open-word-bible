@@ -1181,6 +1181,15 @@
   // The card for a linked word in Parallel: the source word under both
   // sides, what each side made of it, and the decisions that chose the
   // wording, with a way to keep the pair.
+  // An element's text without its furigana.
+  function bare(node) {
+    var out = "";
+    node.childNodes.forEach(function (c) {
+      if (c.nodeType === 3) out += c.data;
+      else if (c.nodeName !== "RT") out += bare(c);
+    });
+    return out;
+  }
   function openWordCard(w, r, ids) {
     var same = popover && popover.opener === w;
     closeNote(false);
@@ -1195,8 +1204,8 @@
       var bits = [], last = null;
       if (!row) return "";
       row.querySelectorAll("." + cls + " .aw.lit").forEach(function (a) {
-        if (last && a.previousSibling === last) bits[bits.length - 1] += a.textContent;
-        else bits.push(a.textContent);
+        if (last && a.previousSibling === last) bits[bits.length - 1] += bare(a);
+        else bits.push(bare(a));
         last = a;
       });
       return bits.join(" \u2026 ");
@@ -1210,12 +1219,16 @@
     orig.lang = DATA.source;
     head.appendChild(orig);
     var lemmas = source.map(function (x) { return x.lemma; }).filter(function (x, i, a) { return x && a.indexOf(x) === i; });
+    // The word to look up and keep: not the article, and of the rest the
+    // longest (the noun of "in him", not the preposition).
+    var main = source.filter(function (x) { return x.lemma && !/^T-|^T[a-z]/.test(x.morph || ""); })
+      .sort(function (a, b) { return b.lemma.length - a.lemma.length; })[0] || source[0];
     if (lemmas.length) {
       var lm = el("span", "wcard-lemma", lemmas.join(" \u00b7 "));
       lm.lang = DATA.source;
       head.appendChild(lm);
     }
-    box.setAttribute("aria-label", t("wcard_label").replace("{word}", w.textContent));
+    box.setAttribute("aria-label", t("wcard_label").replace("{word}", bare(w)));
     box.appendChild(head);
     var gloss = source.map(function (x) { return HEBREW ? x.gloss.replace(/\./g, " ") : x.gloss; }).filter(Boolean).join(" ");
     if (gloss) box.appendChild(el("p", "wi-gloss", "\u201c" + gloss + "\u201d"));
@@ -1255,11 +1268,11 @@
     var links = el("p", "wi-links");
     if (lemmas.length && DATA.word_url) {
       var more = el("a", "fn-pop-more", t("word_page") + " →");
-      more.href = DATA.word_url + "?w=" + encodeURIComponent(lemmas[0]);
+      more.href = DATA.word_url + "?w=" + encodeURIComponent(main.lemma);
       links.appendChild(more);
     }
     if (lemmas.length && window.OWBStudy && window.OWBStudy.setPair) {
-      var pair = { w: lemmas[0], g: gloss, l: HEBREW ? (source[0].lang === "A" ? "arc" : "hbo") : "grc",
+      var pair = { w: main.lemma, g: gloss, l: HEBREW ? (main.lang === "A" ? "arc" : "hbo") : "grc",
                    s: OWBMarkup.joinWords(source), a: [langs[0], texts[0]], b: [langs[1], texts[1]],
                    v: r.refs[0], u: location.pathname + "#v" + verseOf(r.refs[0]) };
       var keep = el("button", "mark-bookmark save-word");
@@ -1327,7 +1340,7 @@
     } else if (interlinear() && !anyLinks(settings.level)) {
       tools.appendChild(el("span", "vt-label", t("interlinear_none")));
     }
-    if (furi) tools.appendChild(toggleTool("furigana", t("furigana")));
+    if (furi && !parallel()) tools.appendChild(toggleTool("furigana", t("furigana")));
   }
 
   // A button that turns a 0/1 setting on and off.
@@ -1397,6 +1410,7 @@
     opts.appendChild(toggleTool("partner_hide", t("parallel_hide")));
     var both = linkedBoth(right);
     if (both) opts.appendChild(toggleTool("gaps", t("parallel_gaps")));
+    if (hasRuby() && (left === "ja" || right === "ja")) opts.appendChild(toggleTool("furigana", t("furigana")));
     tools.appendChild(opts);
 
     tools.appendChild(el("p", "vt-label pair-note", both ? t("parallel_links").replace("{lang}", names[right] || right)

@@ -2016,7 +2016,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
    numbers, footnote letters, notes or reasoning panel. */
 .control.view-control { margin-left: auto; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
-body.plain .passage { margin: 0 auto; }
+body.plain .passage { margin: 0 auto; width: 100%; min-width: 0; }
 body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
 /* Verse numbers in the views for reading, when the reader shows them. */
 body.plain.numbered .verse sup:not(.fn) { display: inline; }
@@ -2310,13 +2310,17 @@ body.view-parallel .text { max-width: none; font-size: calc(18px * var(--read-sc
 .view-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
 .view-tools[hidden] { display: none; }
 .view-tools .text-tool { margin: 0; }
+/* The views' own tools stay when Study's are hidden (body.plain). */
+body.plain .view-tools .text-tool:not([hidden]) { display: inline-flex; align-items: center; }
 .vt-label { font-size: 13px; color: var(--muted); }
 
 /* Parallel's tools: the pair of languages, the other side's level and options. */
 .pair-pick, .pair-opts, .pair-recent { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; flex-basis: 100%; }
 .pair-select { margin: 0; padding-right: 10px; max-width: 12rem; }
 .pair-swap { font-size: 16px; line-height: 1; padding-inline: 10px; }
-.pair-level { display: inline-flex; gap: 0; }
+.pair-level { display: inline-flex; flex-wrap: wrap; gap: 0; max-width: 100%; }
+.pair-opts > *, .pair-pick > * { min-width: 0; }
+@media (max-width: 520px) { .pair-level .text-tool { padding-inline: 8px; } .pair-select { max-width: 9.5rem; } }
 .pair-level .text-tool { border-radius: 0; margin-left: -1px; }
 .pair-level .text-tool:first-child { border-radius: 999px 0 0 999px; margin-left: 0; }
 .pair-level .text-tool:last-child { border-radius: 0 999px 999px 0; }
