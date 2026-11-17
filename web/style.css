@@ -1376,6 +1376,12 @@ body.plain .chapter-book { display: none; }
 .notes .note:hover, .notes .note:focus-visible { background: var(--accent-soft); }
 .notes .note-mark { font-style: italic; color: var(--accent); margin-right: 6px; }
 .notes .note-ref { font-weight: 600; margin-right: 6px; }
+/* The reason under a footnote, in the page as served (build_site
+   chapter_notes); the reader redraws the notes and opens reasons in its
+   panel instead. */
+.note-why { margin: 0 6px 6px 22px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.note-why summary { cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--accent); }
+.note-why p { margin: 4px 0 0; max-width: 60ch; }
 /* Footnotes, or every note by topic (web/reader.js drawNotes). */
 .notes-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 8px; }
 .notes-head h2 { margin: 0 !important; }
