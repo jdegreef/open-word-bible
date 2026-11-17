@@ -3,6 +3,110 @@
 // (backend/staff/). The rail shows only the areas the account's roles open
 // (GET /api/me "admin"); the API checks every request again. All text is
 // inserted with textContent. English only, as Ochorus's admin is.
+
+// The page-free part, tested in tests/js/admin.test.mjs: which kept reads a
+// change can affect, how kept reads are packed for sessionStorage, and the
+// review queue's next and previous sentences.
+var OWBAdminCore = (function () {
+  "use strict";
+  var ADMIN = "/api/admin/";
+
+  // What a change sent to an endpoint can alter, as read paths (under
+  // /api/admin/) that start so. The first rule that fits the path is used;
+  // a change to anything else forgets every kept read.
+  var RULES = [
+    // A review action on one sentence: its own reads, the queues and flags,
+    // the counts that include review states, and the verse inspector's
+    // statuses. Another sentence's reads stay, unless its "next" was this one.
+    // A flag can put an approved sentence back in the queue, becoming the
+    // "next" of any sentence before it, so a flag forgets every sentence.
+    [/^review\/([^/?]+)\/$/, function (m, body) {
+      return { paths: ["review/?", "review/flags/", body && body.action === "flag" ? "review/" : "review/" + m[1] + "/",
+        "overview/", "coverage/", "books/", "languages/", "health/", "verses/"], next: decodeURIComponent(m[1]) };
+    }],
+    [/^inbox\//, ["inbox/", "overview/", "books/", "activity/", "engagement/"]],
+    [/^fixes\//, ["fixes/", "overview/", "activity/", "verses/", "inbox/", "work/"]],
+    [/^articles\//, ["articles/", "overview/", "activity/", "work/"]],
+    [/^jobs\//, ["jobs/", "overview/", "activity/", "work/"]],
+    [/^emails\//, ["emails/", "activity/"]],
+    [/^users\//, ["users/", "team/", "activity/", "overview/", "engagement/", "inbox/"]]
+  ];
+
+  // drops("/api/admin/inbox/4/", body), for a change sent there: {paths:
+  // [...], next: record or null}, or null for "forget everything".
+  function drops(path, body) {
+    if (path.indexOf(ADMIN) !== 0) return null;
+    var rest = path.slice(ADMIN.length).split("#")[0];
+    for (var i = 0; i < RULES.length; i++) {
+      var m = RULES[i][0].exec(rest);
+      if (!m) continue;
+      var r = typeof RULES[i][1] === "function" ? RULES[i][1](m, body) : { paths: RULES[i][1], next: null };
+      return { paths: r.paths.map(function (p) { return ADMIN + p; }), next: r.next || null };
+    }
+    return null;
+  }
+
+  // Whether the kept read at key (with its answer, value) goes, given drops().
+  function stale(drop, key, value) {
+    if (!drop) return true;
+    for (var i = 0; i < drop.paths.length; i++) if (key.indexOf(drop.paths[i]) === 0) return true;
+    return !!(drop.next && key.indexOf(ADMIN + "review/") === 0 && value && value.next === drop.next);
+  }
+
+  // The kept reads as one string of at most limit characters, newest first:
+  // entries is [[path, at, value], ...]; the oldest are left out to fit.
+  function pack(entries, limit, who) {
+    var list = entries.slice().sort(function (a, b) { return b[1] - a[1]; });
+    var out = [], size = 0;
+    for (var i = 0; i < list.length; i++) {
+      var s = JSON.stringify(list[i]);
+      if (size + s.length + 1 > limit) continue;
+      out.push(list[i]);
+      size += s.length + 1;
+    }
+    return JSON.stringify({ who: who, reads: out });
+  }
+  // The entries pack() kept, if they are who's and newer than oldest.
+  function unpack(text, who, oldest) {
+    try {
+      var d = JSON.parse(text || "null");
+      if (!d || d.who !== who || !Array.isArray(d.reads)) return [];
+      return d.reads.filter(function (e) { return Array.isArray(e) && typeof e[0] === "string" && e[1] >= oldest; });
+    } catch (e) { return []; }
+  }
+
+  // A short tag for an account's token, so one account's kept reads aren't
+  // shown to the next to sign in on the tab. Not a secret: a djb2 hash.
+  function tag(text) {
+    var n = 5381;
+    for (var i = 0; i < (text || "").length; i++) n = ((n * 33) ^ text.charCodeAt(i)) >>> 0;
+    return n.toString(36);
+  }
+
+  // The review queue as last listed: rows [{record, state}], more (whether
+  // it goes on past them). step() is the sentence before or after record in
+  // it (null at either end or if record isn't listed); todo() the next one
+  // after it that isn't approved, undefined when the list is no help.
+  function step(rows, record, by) {
+    var i = index(rows, record);
+    if (i < 0) return null;
+    var r = rows[i + by];
+    return r ? r.record : null;
+  }
+  function todo(rows, record, more) {
+    var i = index(rows, record);
+    if (i < 0) return undefined;
+    for (var j = i + 1; j < rows.length; j++) if (rows[j].state !== "approved") return rows[j].record;
+    return more ? undefined : null;
+  }
+  function index(rows, record) {
+    for (var i = 0; i < (rows || []).length; i++) if (rows[i].record === record) return i;
+    return -1;
+  }
+
+  return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo };
+})();
+
 (function () {
   "use strict";
   var root = document.getElementById("admin");
@@ -59,25 +163,92 @@
   function plural(n, one, many) { return num(n) + " " + (n === 1 ? one : (many || one + "s")); }
   function ghFile(path) { return GITHUB + "/blob/main/" + path; }
 
-  // Admin reads are kept for a minute, so going back to a section (or to
-  // one fetched ahead) draws at once. Anything that changes something
-  // forgets them all, so the next drawing asks again. Each caller gets its
-  // own copy, as views may change what they are given.
-  var READ_MS = 60000;
-  var reads = {};
+  // Admin reads are kept, so going back to a section (or to one fetched
+  // ahead) draws at once. For a minute a kept read is simply used; after
+  // that, for up to half an hour, it is drawn at once while the API is asked
+  // again, and the section is drawn again if the answer differs (and nothing
+  // has been typed into it meanwhile). Kept reads last the tab's session in
+  // sessionStorage, so a reload draws at once too; those are always asked
+  // again. A change forgets only the reads it can affect
+  // (OWBAdminCore.drops). Each caller gets its own copy, as views may change
+  // what they are given.
+  var C = OWBAdminCore;
+  var READ_MS = 60000, STALE_MS = 30 * 60000;
+  var STORE = "owb.admin.reads", STORE_MAX = 1500000;
+  var reads = {};       // path: {at, data: a promise, value: once answered}
+  var WHO = C.tag((saved() || {}).token || "");
+  (function restore() {
+    var text = null;
+    try { text = sessionStorage.getItem(STORE); } catch (e) { /* none */ }
+    C.unpack(text, WHO, Date.now() - STALE_MS).forEach(function (e) {
+      // Before this page: drawn at once, but asked again.
+      reads[e[0]] = { at: Math.min(e[1], Date.now() - READ_MS - 1), data: Promise.resolve(e[2]), value: e[2] };
+    });
+  })();
+  var storing = null;
+  function store() {
+    clearTimeout(storing);
+    storing = setTimeout(function () {
+      var entries = [];
+      for (var path in reads) {
+        var r = reads[path];
+        if ("value" in r && path.indexOf("/api/admin/search/") !== 0) entries.push([path, r.at, r.value]);
+      }
+      try { sessionStorage.setItem(STORE, C.pack(entries, STORE_MAX, WHO)); } catch (e) { /* full or blocked */ }
+    }, 400);
+  }
+  function forget(drop) {
+    for (var path in reads) if (C.stale(drop, path, reads[path].value)) delete reads[path];
+    store();
+  }
+  function forgetAll() {
+    reads = {};
+    try { sessionStorage.removeItem(STORE); } catch (e) { /* none */ }
+  }
+  function copy(data) { return JSON.parse(JSON.stringify(data)); }
 
   // The API, with the saved token. A 401 means the token is gone.
+  // options.quiet: a read fetched ahead, which never redraws the page.
   function api(path, options) {
     options = options || {};
     var method = options.method || "GET";
-    if (method !== "GET") reads = {};
-    if (method !== "GET" || path.indexOf("/api/admin/") !== 0) return request(path, options);
-    var hit = reads[path];
-    if (!hit || Date.now() - hit.at > READ_MS) {
-      hit = reads[path] = { at: Date.now(), data: request(path, options) };
-      hit.data.catch(function () { if (reads[path] === hit) delete reads[path]; });
+    if (method !== "GET") {
+      // Forgotten before (a read started meanwhile would be old) and after.
+      var drop = C.drops(path, options.body);
+      forget(drop);
+      return request(path, options).then(function (data) { forget(drop); return data; },
+        function (e) { forget(drop); throw e; });
     }
-    return hit.data.then(function (data) { return JSON.parse(JSON.stringify(data)); });
+    if (path.indexOf("/api/admin/") !== 0) return request(path, options);
+    var hit = reads[path], age = hit ? Date.now() - hit.at : 0;
+    if (hit && "value" in hit && age > READ_MS && age <= STALE_MS) {
+      // Asked while a view is being drawn: that drawing waits on the answer.
+      revalidate(path, hit, options.quiet || drawn === drawing ? 0 : drawing);
+      return Promise.resolve(copy(hit.value));
+    }
+    if (!hit || age > READ_MS) {
+      var entry = hit = reads[path] = { at: Date.now() };
+      entry.data = request(path, options).then(function (data) {
+        if (reads[path] === entry) { entry.value = data; store(); }
+        return data;
+      });
+      entry.data.catch(function () { if (reads[path] === entry) delete reads[path]; });
+    }
+    return hit.data.then(copy);
+  }
+  // Asks again for a kept read drawn stale; by is the drawing that used it
+  // (0 for none), drawn again if the answer differs and it is still shown.
+  function revalidate(path, hit, by) {
+    hit.by = hit.by || [];
+    if (by) hit.by.push(by);
+    if (hit.asking) return;
+    hit.asking = true;
+    request(path, {}).then(function (data) {
+      if (reads[path] !== hit) return;   // forgotten or replaced meanwhile
+      reads[path] = { at: Date.now(), data: Promise.resolve(data), value: data };
+      store();
+      if (JSON.stringify(data) !== JSON.stringify(hit.value) && hit.by.indexOf(drawing) >= 0) redraw();
+    }, function () { hit.asking = false; });
   }
   function request(path, options) {
     var account = saved();
@@ -114,6 +285,17 @@
     button.disabled = on;
     button.setAttribute("aria-busy", on ? "true" : "false");
   }
+
+  // Search as you type: run(the trimmed value) a quarter second after the
+  // last key. A form's own button runs it at once (with stopLive()).
+  var LIVE = null;
+  function live(input, run) {
+    input.addEventListener("input", function () {
+      clearTimeout(LIVE);
+      LIVE = setTimeout(function () { run(input.value.trim()); }, 250);
+    });
+  }
+  function stopLive() { clearTimeout(LIVE); }
 
   // A button that asks again before doing something hard to undo.
   function confirmButton(label, ask, run, cls) {
@@ -214,8 +396,36 @@
 
   // Each drawing gets a number, so a slow answer for a section that has
   // since been left (or a stop()) doesn't overwrite the page.
-  var drawing = 0;
+  // drawn is the drawing on the page now; shown its address.
+  var drawing = 0, drawn = 0, shown = null;
+  // Whether anything has been typed into the drawing on the page, which a
+  // fresher answer then doesn't redraw.
+  var touched = false;
+  main.addEventListener("input", function () { touched = true; });
+  var redrawing = null;
+  function redraw() {
+    clearTimeout(redrawing);
+    redrawing = setTimeout(function () { if (!touched) route(); }, 0);
+  }
+  // The field being typed in, carried over when the same section is drawn
+  // again (a search as you type, a fresher answer).
+  function typingIn() {
+    var a = document.activeElement;
+    if (!a || !a.id || !main.contains(a) || !/^(INPUT|TEXTAREA)$/.test(a.tagName)) return null;
+    var at = null;
+    try { at = [a.selectionStart, a.selectionEnd]; } catch (e) { /* not a text field */ }
+    return { id: a.id, tag: a.tagName, value: a.value, at: at };
+  }
+  function carry(was) {
+    var n = document.getElementById(was.id);
+    if (!n || n.tagName !== was.tag || !main.contains(n)) return;
+    if (n.value !== was.value) n.value = was.value;
+    n.focus();
+    try { if (was.at) n.setSelectionRange(was.at[0], was.at[1]); } catch (e) { /* not a text field */ }
+  }
 
+  // The section on the page stays, dimmed, until the next one is ready; a
+  // loading line replaces it only if that takes a while.
   function route() {
     var mine = ++drawing;
     var hash = location.hash.replace(/^#/, "") || "dashboard";
@@ -223,29 +433,61 @@
     var name = parts[0], arg = decodeURIComponent(parts.slice(1).join("/"));
     var section = SECTIONS.filter(function (s) { return s.id === (PARENT[name] || name); })[0];
     if (!section || !opens(section)) { name = "dashboard"; section = SECTIONS[0]; }
+    var moved = hash !== shown;
     drawRail(name);
-    main.textContent = "";
-    main.appendChild(head("Admin", section.label));
+    KEYS = null;
     main.setAttribute("aria-busy", "true");
+    main.classList.add("admin-stale");
+    var slow = setTimeout(function () {
+      if (mine !== drawing) return;
+      main.classList.remove("admin-stale");
+      main.textContent = "";
+      main.appendChild(head("Admin", section.label));
+      main.appendChild(h("p", { class: "admin-loading" }, "Loading…"));
+    }, 300);
+    function show(nodes) {
+      var was = moved ? null : typingIn();
+      main.textContent = "";
+      add(main, nodes);
+      drawn = mine;
+      shown = hash;
+      touched = false;
+      if (was) carry(was);
+      if (moved && main.getBoundingClientRect().top < 0) window.scrollTo(0, 0);
+    }
     var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
       if (mine !== drawing) return;
-      main.textContent = "";
-      add(main, nodes);
+      show(nodes);
       var status = main.querySelector(".admin-note");
       if (FLASH && status) note(status, FLASH);
       FLASH = "";
     }).catch(function (e) {
       if (mine !== drawing) return;
-      main.textContent = "";
-      main.appendChild(head("Admin", section.label));
-      main.appendChild(h("p", { class: "notice" }, e.message));
+      show([head("Admin", section.label), h("p", { class: "notice" }, e.message)]);
     }).then(function () {
       if (mine !== drawing) return;
+      clearTimeout(slow);
+      main.classList.remove("admin-stale");
       main.removeAttribute("aria-busy");
       document.title = section.label + " · Admin · Open Word Bible";
     });
   }
+
+  // Keys for the view on the page: KEYS = {at: its drawing, "a": fn, ...},
+  // set by a view (the review sentence) and cleared by the next route().
+  // Not while typing, and never "/" (the admin search's, below) or with
+  // Ctrl, Cmd or Alt.
+  var KEYS = null;
+  window.addEventListener("keydown", function (e) {
+    if (!KEYS || KEYS.at !== drawing || drawn !== drawing || e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    var run = e.key !== "/" && Object.prototype.hasOwnProperty.call(KEYS, e.key) ? KEYS[e.key] : null;
+    if (typeof run !== "function") return;
+    e.preventDefault();
+    run();
+  });
 
   var VIEWS = {};
 
@@ -508,7 +750,7 @@
 
   // Reader inbox.
   // #inbox/mine opens the messages assigned to you (the dashboard links it).
-  var INBOX = { status: "new", kind: "", lang: "", assigned: "" };
+  var INBOX = { status: "new", kind: "", lang: "", assigned: "", q: "" };
   var INBOX_TEAM = [];
   VIEWS.inbox = function (arg) {
     if (arg === "mine") INBOX.assigned = "me";
@@ -526,9 +768,33 @@
       var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
         INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
       });
+      // Words to find in the messages listed (the API's inbox takes no
+      // words, so this filters the page drawn), as you type.
+      var cards = d.messages.map(function (m) {
+        return [messageCard(m), [m.text, m.verse_label, m.verse, m.language, m.from.name, m.from.email, m.reply, m.note,
+          m.assigned_to ? m.assigned_to.name + " " + m.assigned_to.email : ""].join(" \n").toLowerCase()];
+      });
+      var nothing = empty("No messages here have those words.");
+      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words in these messages", "aria-label": "Find in these messages" });
+      var found = h("span", { class: "admin-sub", role: "status" });
+      function find(v) {
+        INBOX.q = v;
+        var words = v.toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
+        cards.forEach(function (c) {
+          var on = words.every(function (w) { return c[1].indexOf(w) >= 0; });
+          c[0].hidden = !on;
+          if (on) shown++;
+        });
+        nothing.hidden = !cards.length || shown > 0;
+        found.textContent = words.length && cards.length ? shown + " of " + cards.length + " shown" : "";
+      }
+      var form = h("form", { class: "admin-toolbar", role: "search" }, search, h("button", { type: "submit", class: "admin-btn" }, "Find"), found);
+      form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
+      live(search, find);
+      find(INBOX.q);
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, whose, kind),
-        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty("No messages here."),
+        h("div", { class: "admin-toolbar" }, tabs, whose, kind), form,
+        d.messages.length ? h("div", { class: "admin-messages" }, cards.map(function (c) { return c[0]; }), nothing) : empty("No messages here."),
         d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
     });
   };
@@ -801,7 +1067,8 @@
         pick("decision-category", "Every category", d.categories.map(function (c) { return [c.code, c.code.replace(/_/g, " ") + " (" + num(c.count) + ")"]; }), "category"),
         pick("decision-book", "Every book", d.books.map(function (b) { return [b.code, b.name + " (" + num(b.count) + ")"]; }), "book"),
         search, h("button", { type: "submit", class: "admin-btn" }, "Search"));
-      form.addEventListener("submit", function (e) { e.preventDefault(); f.q = search.value.trim(); f.offset = 0; route(); });
+      form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); f.q = search.value.trim(); f.offset = 0; route(); });
+      live(search, function (v) { if (v !== f.q) { f.q = v; f.offset = 0; route(); } });
       var pager = h("div", { class: "admin-actions" });
       if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = Math.max(0, d.offset - d.page); route(); } }, "\u2039 Earlier"));
       if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = d.offset + d.page; route(); } }, "Later \u203a"));
@@ -1117,7 +1384,8 @@
       var role = select("user-role", [["", "Everyone"], ["any", "The team (any role)"]].concat(d.roles.map(function (r) { return [r.kind, r.label]; })), USERS.role);
       role.setAttribute("aria-label", "Role");
       var form = h("form", { class: "admin-toolbar", role: "search" }, search, role, h("button", { type: "submit", class: "admin-btn" }, "Search"));
-      form.addEventListener("submit", function (e) { e.preventDefault(); USERS.q = search.value.trim(); USERS.role = role.value; USERS.offset = 0; route(); });
+      form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); USERS.q = search.value.trim(); USERS.role = role.value; USERS.offset = 0; route(); });
+      live(search, function (v) { if (v !== USERS.q) { USERS.q = v; USERS.offset = 0; route(); } });
       role.addEventListener("change", function () { USERS.role = role.value; USERS.offset = 0; route(); });
       var rows = d.users.map(function (u) {
         return h("tr", null, h("td", null, h("a", { href: "#user/" + u.id }, u.email), u.active ? null : pill("inactive", "warn")),
@@ -1622,6 +1890,11 @@
   var REVIEW_STATE = { not_reviewed: ["Not reviewed", ""], approved: ["Approved", "good"], changed: ["Changed since approval", "warn"],
     flagged: ["Flagged", "bad"] };
   function reviewPill(state) { return pill(REVIEW_STATE[state][0], REVIEW_STATE[state][1]); }
+  // The queue as last listed, for a sentence's next and previous (j, k) and
+  // the next to review after approving one: {layer, rows: [{record,
+  // state}], more}. Kept here, not in the read cache, so it outlives an
+  // approval (which forgets the queue's reads) and keeps its order.
+  var QUEUE = null;
   VIEWS.review = function (arg) {
     var parts = arg ? arg.split("/") : [];
     return parts[1] ? reviewSentence(parts[0], parts[1]) : reviewQueue(parts[0] || sessionTab("review.layer", ""));
@@ -1646,7 +1919,10 @@
           h("thead", null, h("tr", null, h("th", null, "Sentence"), h("th", null, page.layer.kind === "meaning" ? "Literal gloss" : "Balanced"),
             h("th", null, "State"), h("th", null, "Last"))), rows)) : empty("Nothing here with these filters."));
       }
+      if (!offset) QUEUE = { layer: page.layer.code, rows: [], more: false };
+      QUEUE.more = page.more;
       page.sentences.forEach(function (s) {
+        QUEUE.rows.push({ record: s.record, state: s.state });
         rows.appendChild(h("tr", null,
           h("th", { scope: "row" }, h("a", { href: "#review/" + layer + "/" + s.record }, s.label), h("div", { class: "admin-sub" }, s.record)),
           h("td", { class: "admin-wrap", lang: page.layer.kind === "meaning" ? "en" : layer }, rendering(s.preview)),
@@ -1685,6 +1961,7 @@
     });
   }
   function reviewSentence(layer, record) {
+    var drew = drawing;   // this drawing, for its keys
     return api("/api/admin/review/" + encodeURIComponent(record) + "/?layer=" + encodeURIComponent(layer)).then(function (d) {
       var r = d.record, kind = d.layer.kind;
       var names = {};
@@ -1706,21 +1983,84 @@
       var noteBox = h("textarea", { id: "review-note", rows: 3, maxlength: 4000,
         placeholder: "A note: what is wrong (needed to flag), or anything the next reviewer should know" });
       var status = h("p", { class: "admin-note", role: "status" });
+      // Next and previous in the queue as listed (j, k); after approving
+      // or flagging, the next one there that isn't approved, else the API's
+      // next to review in the layer. Both are fetched ahead.
+      var rows = QUEUE && QUEUE.layer === layer ? QUEUE.rows : null;
+      var listed = rows ? C.step(rows, record, 0) === record : false;
+      var after = listed ? C.step(rows, record, 1) || (QUEUE.more ? d.next : null) : d.next;
+      var before = listed ? C.step(rows, record, -1) : null;
+      function ahead(next) {
+        var t = listed ? C.todo(rows, record, QUEUE.more) : undefined;
+        return t === undefined ? next : t;
+      }
+      function sentencePath(rec) { return "/api/admin/review/" + encodeURIComponent(rec) + "/?layer=" + encodeURIComponent(layer); }
+      var busyNow = false;
       function act(action, button) {
+        if (busyNow) return;
+        busyNow = true;
         busy(button, true);
         api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: action, note: noteBox.value } })
           .then(function (res) {
-            FLASH = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + ".";
+            if (listed && action !== "comment") rows.filter(function (x) { return x.record === record; })[0].state = res.state;
+            var next = ahead(res.next);
+            FLASH = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + "." +
+              (action !== "comment" && !next ? " That's the end of the queue." : "");
             if (action === "comment") route();
-            else location.hash = res.next ? "#review/" + layer + "/" + res.next : "#review/" + layer;
-          }, function (e) { busy(button, false); note(status, e, true); });
+            else location.hash = next ? "#review/" + layer + "/" + next : "#review/" + layer;
+          }, function (e) { busyNow = false; busy(button, false); note(status, e, true); });
       }
-      var buttons = h("div", { class: "admin-actions" },
-        h("button", { type: "button", class: "admin-btn primary", onclick: function () { act("approve", this); } },
-          kind === "meaning" ? "Approve the meaning" : "Approve the " + d.layer.name.replace(/ wording$/, "") + " wording"),
-        h("button", { type: "button", class: "admin-btn", onclick: function () { act("flag", this); } }, "Flag a problem"),
+      var approveBtn = h("button", { type: "button", class: "admin-btn primary", onclick: function () { act("approve", this); } },
+        kind === "meaning" ? "Approve the meaning" : "Approve the " + d.layer.name.replace(/ wording$/, "") + " wording");
+      var flagBtn = h("button", { type: "button", class: "admin-btn", onclick: function () { act("flag", this); } }, "Flag a problem");
+      var buttons = h("div", { class: "admin-actions" }, approveBtn, flagBtn,
         h("button", { type: "button", class: "admin-btn", onclick: function () { act("comment", this); } }, "Comment"),
         d.next ? h("a", { href: "#review/" + layer + "/" + d.next }, "Skip to the next ›") : null);
+      // f: write what's wrong, then Ctrl or Cmd Enter flags it.
+      var flagging = false;
+      noteBox.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && (e.ctrlKey || e.metaKey) && flagging) { e.preventDefault(); act("flag", flagBtn); }
+        else if (e.key === "Escape") { flagging = false; flagBtn.classList.remove("armed"); noteBox.blur(); }
+      });
+      var help = h("div", { class: "admin-keys-help", id: "review-keys", hidden: true },
+        h("h3", { class: "admin-h3" }, "Keyboard shortcuts"),
+        h("dl", null, [["a", "Approve, then open the next sentence to review"],
+          ["f", "Flag a problem: write it in the note, then Ctrl Enter (⌘ Enter) to flag"],
+          ["j", "Next sentence in the queue"], ["k", "Previous sentence in the queue"],
+          ["/", "Search the admin"], ["?", "Show or hide these shortcuts"], ["Esc", "Leave the note"]].map(function (k) {
+          return [h("dt", null, h("kbd", null, k[0])), h("dd", null, k[1])];
+        })));
+      function toggleHelp() { help.hidden = !help.hidden; helpBtn.setAttribute("aria-expanded", help.hidden ? "false" : "true"); }
+      var helpBtn = h("button", { type: "button", class: "admin-link", "aria-controls": "review-keys", "aria-expanded": "false", onclick: toggleHelp }, "All shortcuts");
+      var hint = h("p", { class: "admin-keys" }, "Keys: ", h("kbd", null, "a"), " approve · ", h("kbd", null, "f"), " flag · ",
+        h("kbd", null, "j"), " / ", h("kbd", null, "k"), " next / previous · ", h("kbd", null, "/"), " search · ",
+        h("kbd", null, "?"), " ", helpBtn);
+      function go(rec, none) {
+        if (rec) location.hash = "#review/" + layer + "/" + rec;
+        else note(status, none);
+      }
+      KEYS = {
+        at: drew,
+        a: function () { if (!approveBtn.disabled) act("approve", approveBtn); },
+        f: function () {
+          flagging = true;
+          flagBtn.classList.add("armed");
+          noteBox.focus();
+          note(status, "Say what is wrong in the note, then press Ctrl Enter (⌘ Enter) or Flag a problem.");
+        },
+        j: function () { go(after, "That's the last sentence in the queue."); },
+        k: function () { go(before, listed ? "That's the first sentence in the queue." : "Open this sentence from the queue to step back through it."); },
+        "?": toggleHelp,
+        Escape: function () { if (!help.hidden) toggleHelp(); }
+      };
+      // While the reviewer reads this one, fetch the sentences they are
+      // likely to open next, so approving (or j) draws at once.
+      setTimeout(function () {
+        if (drew !== drawing) return;
+        [ahead(d.next), after].forEach(function (rec, i, all) {
+          if (rec && all.indexOf(rec) === i) api(sentencePath(rec), { quiet: true }).catch(function () { /* drawn with its error if opened */ });
+        });
+      }, 200);
       var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
         return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
           h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
@@ -1736,7 +2076,7 @@
           words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
           meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
-        h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status),
+        h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
   }
@@ -1842,7 +2182,9 @@
 
   function stop(title, text, link) {
     drawing++;
+    KEYS = null;
     window.removeEventListener("hashchange", route);
+    main.classList.remove("admin-stale");
     rail.hidden = true;
     main.removeAttribute("aria-busy");
     main.textContent = "";
@@ -1852,6 +2194,7 @@
 
   var account = saved();
   if (!account || !account.token) {
+    forgetAll();
     stop("Sign in to use the admin", "The admin is for the Open Word Bible team.", ["/login/?redirect=/admin/", "Sign in"]);
     return;
   }
@@ -1882,6 +2225,7 @@
   }, function (e) {
     if (e.status === 401) {
       try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
+      forgetAll();
       stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
     } else if (!started) {
       stop("The admin couldn't load", e.message);
