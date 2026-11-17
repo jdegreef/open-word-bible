@@ -1241,10 +1241,23 @@ def chapter_notes(records, chapter, lang="en", words=None):
         return (f' <a class="note-article" href="{esc(a["url"])}">'
                 f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
                 f'<span{attr}>{esc(a["title"], quote=False)}</span> →</a>')
+    why_label = esc(catalog(lang)["compare.ui"]["why"], quote=False)
+
+    def why(r, d):
+        """The decision's reason, folded under the note: the reasoning the
+        site exists to show, in the page as served, so search engines and
+        AI answers read it too (the reader opens it in its panel)."""
+        own = translated.get(r["id"], {}).get(d["id"], {}).get("reason")
+        reason = own or d.get("reason")
+        if not reason:
+            return ""
+        attr = ' lang="en"' if not own and lang != "en" else ""
+        return (f'<details class="note-why"><summary>{why_label}</summary>'
+                f'<p{attr}>{esc(markup.render(reason), quote=False)}</p></details>')
     items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
                     f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
                     f'<span class="note-text">{note_html(d, lang, translated.get(r["id"], {}).get(d["id"]))}'
-                    f'</span>{more(r, d)}</span></li>'
+                    f'</span>{more(r, d)}</span>{why(r, d)}</li>'
                     for i, (r, d) in enumerate(notes))
     heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
     return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
@@ -4102,23 +4115,27 @@ def variants_page(lang="en"):
     (linked to the reader), the reading followed and the others."""
     ui = catalog(lang)
     groups, jump = [], []
+    english = False  # a note shown in English because it has no current translation
     for book, found in footnoted_variants():
         name = html.escape(book_name(book, lang))
         items = []
+        notes = book_notes(book, lang)
         for r, d in found:
             ref = refs.parse(r["refs"][0])
             label = html.escape(verse_name(book, ref.chapter, ref.verse, lang))
             href = verse_link(book, ref.chapter, ref.verse, lang)
             where = f'<a href="{href}">{label}</a>' if href else label
+            tr = notes.get(r["id"], {}).get(d["id"])
+            english = english or (lang != "en" and not tr)
             items.append(f'<li class="variant"><span class="variant-ref">{where}</span> '
-                         f'<span class="variant-note">{note_html(d, lang)}</span></li>')
+                         f'<span class="variant-note">{note_html(d, lang, tr)}</span></li>')
         count = t(lang, "variants.count_one") if len(found) == 1 else t(lang, "variants.count", n=len(found))
         code = book.lower()
         jump.append(f'<li><a href="#{code}">{name}</a></li>')
         groups.append(f'<section class="variant-book" id="{code}" aria-labelledby="{code}-h">'
                       f'<h2 id="{code}-h">{name} <span class="fine">{html.escape(count)}</span></h2>'
                       f'<ul class="variant-list">{"".join(items)}</ul></section>')
-    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if lang != "en" else ""
+    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if english else ""
     body = f"""
 <header class="page-head">
 <p class="eyebrow">{t(lang, "variants.title")}</p>
