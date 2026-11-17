@@ -2332,3 +2332,5 @@ records it. Empty until the first book is drafted.
 | Isaiah | land of Sinim | tanah Sinim | 49:12 |
 | Isaiah | antimony (dark mortar) | *celak* (L); *adukan hitam* (B) | 54:11 |
 | Isaiah | ruby (*kadkod*) | *batu delima* | 54:12 |
+| Isaiah | eunuch | *sida-sida* | 56:3 |
+| Isaiah | fruit of the lips | *buah bibir* | 57:19 |
