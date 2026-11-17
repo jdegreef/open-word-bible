@@ -2330,3 +2330,5 @@ records it. Empty until the first book is drafted.
 | Isaiah | Bel; Nebo (gods of Babylon) | Bel; Nebo (L, B); *dewa Bel*, *dewa Nebo* (R) | 46:1 |
 | Isaiah | virgin daughter of Babylon; daughter of the Chaldeans | *perawan, putri Babel* (L), *Anak Dara, Putri Babel* (B); *putri Kasdim* (L), *Putri Kasdim* (B) | 47:1 |
 | Isaiah | land of Sinim | tanah Sinim | 49:12 |
+| Isaiah | antimony (dark mortar) | *celak* (L); *adukan hitam* (B) | 54:11 |
+| Isaiah | ruby (*kadkod*) | *batu delima* | 54:12 |
