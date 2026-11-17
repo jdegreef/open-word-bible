@@ -2364,3 +2364,8 @@ records it. Empty until the first book is drafted.
 | Jeremiah | Bel; Merodach | Bel; Merodakh (L), Marduk (B, R) | 50:2 |
 | Jeremiah | Merathaim; Pekod | Merataim; Pekod | 50:21 |
 | Jeremiah | Arrogance (a name for Babylon) | Kecongkakan (L); Si Congkak (B); kota yang sombong (R) | 50:31 |
+| Jeremiah | Leb-qamai | Leb-Kamai | 51:1 |
+| Jeremiah | war club | gada | 51:20 |
+| Jeremiah | Ararat; Minni; Ashkenaz | Ararat; Mini; Askenas | 51:27 |
+| Jeremiah | Seraiah son of Neriah; officer of the resting place | Seraya anak Neria; pengurus tempat persinggahan (L), kepala perbekalan (B) | 51:59 |
+| Jeremiah | Evil-merodach | Ewil-Merodakh | 52:31 |
