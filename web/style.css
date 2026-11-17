@@ -1065,6 +1065,28 @@ a.a-ref:hover { border-color: var(--accent); }
 
 /* Under a chapter: the articles that read it. */
 .chapter-articles { margin: 40px 0 0; }
+/* Links to the chapter's verse pages (build_site verse_page_links). */
+.verse-pages { margin: 24px 0 0; font-size: 15px; color: var(--muted); }
+.verse-pages a { margin-right: 8px; }
+/* A verse's page (build_site verse_page): its three levels, the original
+   words and the decisions behind it. */
+.verse-page { max-width: 46rem; margin: 0 auto; }
+.verse-levels { margin: 24px 0; display: grid; gap: 14px; }
+.vl-row { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.vl-row dt { font-family: var(--sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.vl-row dd { margin: 0; font-family: var(--read-font); font-size: 20px; line-height: 1.6; }
+.vl-row:first-child dd { font-size: 23px; }
+@media (max-width: 560px) { .vl-row { grid-template-columns: 1fr; gap: 2px; } }
+.verse-section { margin: 28px 0; }
+.verse-section h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0 0 10px; }
+.verse-section h3 { font-size: 15px; margin: 18px 0 8px; color: var(--muted); }
+.verse-original { font-size: 21px; line-height: 1.7; }
+.verse-gloss { font-style: italic; color: var(--muted); }
+.verse-decisions { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.verse-decisions p { margin: 0 0 4px; line-height: 1.55; }
+.vd-unsure { font-size: 12.5px; font-weight: 600; color: var(--gold); margin-left: 6px; }
+.vd-alts { color: var(--muted); font-size: 15px; }
+.vd-reason { font-size: 16px; }
 .chapter-articles h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0 0 14px; }
 
 /* Passage cards on the Read page share the article-card look. */
