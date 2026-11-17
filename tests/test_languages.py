@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site, page_data  # noqa: E402
+from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
 
@@ -76,15 +76,15 @@ class LanguagesTest(unittest.TestCase):
         return (self.out / rel).read_text(encoding="utf-8")
 
     def english_pages(self):
-        """Every English page but the articles, the reading plans and the
-        books' pages, which a language has only once they are translated,
-        and the admin, which is in English only."""
+        """Every English page but the articles, the reading plans, the
+        books' pages and the verse pages, which a language has only once
+        they are translated, and the admin, which is in English only."""
         langs = set(OTHERS)
         books = {p.stem.lower() for p in build_site.INTROS.glob("*.md")}
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
         return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] != "admin"
                 and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)
-                and not (rel.parts[0] in books and len(rel.parts) == 2)]
+                and not (rel.parts[0] in books and len(rel.parts) in (2, 4))]
 
     def test_every_page_is_built_in_every_language(self):
         pages = self.english_pages()
@@ -105,7 +105,7 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(f'<link rel="alternate" hreflang="{lang}" href="{href}">', home)
         self.assertIn(f'hreflang="x-default" href="{build_site.SITE_URL}/"', home)
         self.assertIn(f'<link rel="canonical" href="{build_site.SITE_URL}/es/">', home)
-        sitemap = self.read("sitemap.xml")
+        sitemap = sitemap_text(self.out)
         for path in ("es/", "es/read/", "es/jhn/1/"):
             self.assertIn(f"<loc>{build_site.SITE_URL}/{path}</loc>", sitemap)
         # A language's articles page is listed once it has articles.
@@ -316,7 +316,7 @@ class LanguagesTest(unittest.TestCase):
         # Unlisted, but the switch and the remembered choice still lead to it.
         self.assertIn('<a href="/account/" lang="en"', page)
         self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
-        self.assertNotIn("/account/", self.read("sitemap.xml"))
+        self.assertNotIn("/account/", sitemap_text(self.out))
 
     def test_chapter_strip_and_turns_stay_in_the_language(self):
         page = self.read("es/php/2/index.html")

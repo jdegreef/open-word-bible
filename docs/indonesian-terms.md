@@ -2341,3 +2341,10 @@ records it. Empty until the first book is drafted.
 | Isaiah | the angel of his presence | *malaikat hadirat-Nya* | 63:9 |
 | Isaiah | Gad and Meni (gods of fortune) | Gad; Meni (*dewa keberuntungan*, *dewa nasib* at R) | 65:11 |
 | Isaiah | the God of amen | *Allah yang setia* (L); *Allah Sang Amin* (B); *Allah yang setia dan benar* (R) | 65:16 |
+| Zechariah | cup of reeling | *cawan yang membuat terhuyung-huyung* | 12:2 |
+| Zechariah | they will look on me, the one they pierced | *memandang kepada-Ku, yang telah mereka tikam*; "him" is plain *dia* | 12:10 |
+| Zechariah | Hadad-rimmon; plain of Megiddo; Shimeites | Hadad-Rimon; *dataran Megido* (L, B), *lembah Megido* (R); *kaum Simei* | 12:11–13 |
+| Zechariah | my shepherd; my associate | *gembala-Ku*; *sekutu-Ku* (L), *orang yang berdiri di samping-Ku* (B) | 13:7 |
+| Zechariah | Azal; Gate of Benjamin; First Gate; Corner Gate; king's winepresses | Azal; Gerbang Benyamin; Gerbang Pertama; Gerbang Sudut; *tempat-tempat pemerasan anggur raja* | 14:5, 10 |
+| Zechariah | the LORD will be one, and his name one | *TUHAN akan esa, dan nama-Nya esa* | 14:9 |
+| Zechariah | trader (Canaanite) | *pedagang* | 14:21 |
