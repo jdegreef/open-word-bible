@@ -75,15 +75,33 @@ QUOTES = (f'<path class="quotes" d="{QUOTES_PATH}" fill="{{fill}}"/>'
           f'<path class="quotes" d="{QUOTES_PATH}" transform="rotate(180 32 31)" fill="{{fill}}"/>')
 # Sized and filled in its own attributes too, so a page whose stylesheet has
 # not loaded shows a small mark rather than a black square across the header.
+MARK_DRAWING = (f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
+                f'{QUOTES.format(fill="#3f3d9a")}')
 MARK = (f'<svg class="mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">'
-        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
-        f'{QUOTES.format(fill="#3f3d9a")}</svg>')
+        f'{MARK_DRAWING}</svg>')
+
+
+def mark_use():
+    """The brand mark from the sprite, for a second mark on a page (the
+    footer's): the header's is drawn whole, so the page has its mark even
+    before the sprite loads."""
+    return f'<svg class="mark" width="32" height="32" aria-hidden="true"><use href="{sprite()[1]}#mark"/></svg>'
+
+
+ICON_STROKE = ('fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+               'stroke-linejoin="round"')
 
 
 def icon(paths, size=18, cls="icon"):
-    """A line icon in the header's style (24-unit grid, drawn in currentColor)."""
-    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
-            'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" '
+    """A line icon in the header's style (24-unit grid, drawn in currentColor).
+    One of ICONS is drawn from the site's sprite (sprite()), so a page names
+    it in a few bytes instead of repeating its paths: a page has some forty
+    icons, and the site some 30,000 pages."""
+    name = ICON_NAMES.get(paths)
+    if name:
+        return (f'<svg class="{cls}" width="{size}" height="{size}" aria-hidden="true">'
+                f'<use href="{sprite()[1]}#{name}"/></svg>')
+    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" {ICON_STROKE} '
             f'aria-hidden="true">{paths}</svg>')
 
 
@@ -114,6 +132,27 @@ ICONS = {
     "feed": '<path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
+ICON_NAMES = {paths: name for name, paths in ICONS.items()}
+
+
+@functools.cache
+def sprite():
+    """/sprite.svg, every icon in ICONS and the brand mark as symbols that
+    pages draw with <use>, and its URL with a content hash as its version.
+    A symbol carries the icon's drawing attributes, which its paths inherit,
+    and currentColor is the colour where it is used."""
+    symbols = "".join(f'<symbol id="{name}" viewBox="0 0 24 24" {ICON_STROKE}>{paths}</symbol>'
+                      for name, paths in ICONS.items())
+    # The page's style sheet cannot reach inside a <use>, so the mark's
+    # colours (.mark rect, path and .quotes in style.css) are the colour
+    # mode's own variables here, which do reach it.
+    accent, contrast = "fill:var(--accent,#3f3d9a)", "fill:var(--accent-contrast,#faf6ef)"
+    themed = (f'<rect width="64" height="64" rx="14" style="{accent}"/><path d="{BOOK_PATH}" style="{contrast}"/>'
+              f'<path d="{QUOTES_PATH}" style="{accent}"/>'
+              f'<path d="{QUOTES_PATH}" transform="rotate(180 32 31)" style="{accent}"/>')
+    symbols += f'<symbol id="mark" viewBox="0 0 64 64">{themed}</symbol>'
+    text = f'<svg xmlns="http://www.w3.org/2000/svg">{symbols}</svg>\n'
+    return text, f"/sprite.svg?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 # The site's interface languages. English is served at the root and every
@@ -675,7 +714,7 @@ def site_footer(lang, path=None, translated=LANGUAGES):
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-top">
 <div class="foot-about">
-<a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
@@ -2813,7 +2852,9 @@ def resume_link(lang, cls="button", names=False):
     books_attr = ""
     if names:
         names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-        books_attr = f' data-books="{html.escape(names)}"'
+        # In single quotes, so the JSON's double quotes need no escapes:
+        # 66 names, on every page.
+        books_attr = f" data-books='{html.escape(names, quote=False).replace(chr(39), '&#x27;')}'"
     return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}"{books_attr} href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
@@ -5055,7 +5096,7 @@ def article_page(article, articles, lang="en"):
 <p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a>{part}</p>
 <h1>{display(article["title"])}</h1>
 <p class="dek">{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
+<p class="byline">{mark_use()}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
 </header>
 <div class="article-body">
 {content}
@@ -5628,7 +5669,7 @@ def service_worker():
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
     shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "plans.js")]
-    shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
+    shell += ["/favicon.svg", sprite()[1], "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
     current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "account.js", "plans.js",
                                   "compare.js", "word.js", "saved.js", "groups.js", "edition.js")]
@@ -5999,6 +6040,7 @@ def build(out):
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
+    files["sprite.svg"] = sprite()[0]
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]

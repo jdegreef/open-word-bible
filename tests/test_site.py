@@ -1673,6 +1673,25 @@ class SearchMetadataTest(unittest.TestCase):
         self.assertIn('<meta property="og:locale" content="pt_BR">', self.page("pt/jhn/3"))
 
 
+class SpriteTest(unittest.TestCase):
+    def test_icons_come_from_the_sprite(self):
+        text, href = build_site.sprite()
+        for name in build_site.ICONS:
+            self.assertIn(f'<symbol id="{name}"', text)
+        self.assertIn('<symbol id="mark"', text)
+        self.assertEqual(build_site.icon(build_site.ICONS["home"]),
+                         f'<svg class="icon" width="18" height="18" aria-hidden="true"><use href="{href}#home"/></svg>')
+        # An icon not in ICONS is still drawn whole.
+        self.assertIn('<path d="M1 1"/>', build_site.icon('<path d="M1 1"/>'))
+        # The offline worker keeps it, so icons show with no connection.
+        self.assertIn(json.dumps(href), build_site.service_worker())
+
+    def test_footer_book_names_parse(self):
+        link = build_site.resume_link("fr", names=True)
+        names = json.loads(html.unescape(re.search(r"data-books='([^']*)'", link)[1]))
+        self.assertEqual(names["JHN"], build_site.BOOK_NAMES["JHN"]["fr"])
+
+
 class NoteReasonsTest(unittest.TestCase):
     def test_footnotes_carry_their_reasons_in_the_page(self):
         # The reasoning is what the site shows that no other Bible does:
