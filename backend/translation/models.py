@@ -113,6 +113,9 @@ class ReviewEvent(models.Model):
     digest = models.CharField(max_length=64, blank=True,
                               help_text="What was reviewed (staff/review.py digest): an approval whose "
                                         "sentence no longer matches it has changed since")
+    snapshot = models.JSONField(default=dict, blank=True,
+                                help_text="What was approved (staff/snapshot.py), so the admin can show what has "
+                                          "changed since word by word. Empty for approvals made before it was kept")
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -186,6 +189,39 @@ class SentenceChange(models.Model):
 
     def __str__(self):
         return f"{self.record_id} {self.language}/{self.level} {self.kind}"
+
+
+class RecordChange(models.Model):
+    """What an import did to a sentence besides its renderings' text
+    (SentenceChange): a sentence drafted in a language for the first time,
+    and a decision added, changed or removed in a sentence already drafted
+    (in that language, for a rendering decision; at all, for a meaning
+    decision). The admin's release notes (staff/history.py) read these with
+    SentenceChange. Never touches review status."""
+    class Kind(models.TextChoices):
+        DRAFTED = "drafted", "Drafted in the language"
+        DECISION_ADDED = "decision_added", "Decision added"
+        DECISION_CHANGED = "decision_changed", "Decision changed"
+        DECISION_REMOVED = "decision_removed", "Decision removed"
+
+    run = models.ForeignKey(ImportRun, on_delete=models.CASCADE, related_name="record_changes")
+    record_id = models.CharField(max_length=24)
+    verse = models.CharField(max_length=16, help_text="The sentence's first verse, e.g. JHN.1.12")
+    book = models.CharField(max_length=3)
+    chapter = models.PositiveSmallIntegerField()
+    language = models.CharField(max_length=3, blank=True, help_text="Blank for a meaning decision")
+    kind = models.CharField(max_length=16, choices=Kind.choices)
+    key = models.CharField(max_length=16, blank=True, help_text="The decision's key, e.g. m1, r-en-2")
+    before = models.JSONField(default=dict, blank=True, help_text="The decision as it was")
+    after = models.JSONField(default=dict, blank=True, help_text="The decision as it is now")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [models.Index(fields=["language", "kind"])]
+        ordering = ["id"]
+
+    def __str__(self):
+        return f"{self.record_id} {self.language or 'meaning'} {self.kind} {self.key}"
 
 
 # Search (GET /api/search/, translation/search.py). import_content updates

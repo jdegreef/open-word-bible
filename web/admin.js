@@ -364,6 +364,7 @@ var OWBAdminCore = (function () {
     { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
     { id: "export", label: "Export", area: "export", group: "Text" },
+    { id: "releases", label: "Release notes", area: "export", group: "Text" },
     { id: "overlap", label: "Similarity", area: "overview", group: "Text" },
     { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
     { id: "users", label: "Users", area: "users", group: "Readers" },
@@ -939,6 +940,7 @@ var OWBAdminCore = (function () {
           "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text)));
       }
       d.records.forEach(function (r) { out.push(recordCard(r, d, names, from)); });
+      if (d.records.length) out.push(approvalHistory(d.verse));
       if (d.messages && d.messages.length) {
         out.push(h("section", { class: "admin-block" }, h("h2", null, "Reader messages"),
           h("div", { class: "admin-messages" }, d.messages.map(messageCard))));
@@ -1535,7 +1537,7 @@ var OWBAdminCore = (function () {
     }
     more.addEventListener("click", load);
     return load().then(function () {
-      return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."), list, more];
+      return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."), list, more, approvalLog()];
     });
   };
 
@@ -2277,6 +2279,142 @@ var OWBAdminCore = (function () {
         }).join("; ") + ".") : null,
         h("div", { class: "admin-toolbar" }, h("label", null, "Language ", langSel), h("label", null, "Book ", bookSel))), list, more);
       return out;
+    });
+  };
+
+  // History (staff/history.py): what has changed since a reviewer approved
+  // a sentence, and release notes for one language. The server makes the
+  // word diffs; they are drawn here as text, with <ins> and <del>.
+  function diffView(segments) {
+    return h("span", { class: "admin-diff" }, segments.map(function (s) {
+      return s.op === "ins" ? h("ins", null, rendering(s.text)) : s.op === "del" ? h("del", null, rendering(s.text)) : rendering(s.text);
+    }));
+  }
+  var KNOWN = { snapshot: "", unchanged: "", reconstructed: "Worked out from the imports since: this approval is older than the kept text.",
+    unknown: "Approved before approvals kept their text: only that something has changed is known." };
+  function sinceApproval(a, withVerse) {
+    var changedTexts = a.texts.filter(function (t) { return t.changed; });
+    var dec = a.decisions, decText = dec ? ["added", "changed", "removed"].filter(function (k) { return dec[k].length; }).map(function (k) {
+      return "decisions " + k + ": " + dec[k].join(", ");
+    }).join("; ") : "";
+    var lang = a.layer.kind === "wording" ? a.layer.code : null;
+    return h("div", { class: "admin-block" },
+      h("p", null, h("time", { datetime: a.at, title: new Date(a.at).toLocaleString("en-GB") }, when(a.at)), " ",
+        withVerse ? [h("a", { href: "#verse/" + a.verse }, a.label), " "] : null,
+        h("strong", null, a.by), " approved " + a.layer.name.replace(/^Meaning/, "the meaning") + " ",
+        a.changed ? pill("changed since", "warn") : pill("unchanged since", "good"),
+        a.note ? h("span", { class: "admin-sub" }, ": " + a.note) : null),
+      KNOWN[a.known] ? h("p", { class: "admin-sub" }, KNOWN[a.known]) : null,
+      changedTexts.length ? table(["Level", "Approved → now"], changedTexts.map(function (t) {
+        return h("tr", null, h("th", { scope: "row" }, t.name), h("td", { class: "admin-wrap", lang: lang }, diffView(t.segments)));
+      }), "admin-renderings") : null,
+      a.changed && a.known !== "unknown" && !changedTexts.length ? h("p", { class: "admin-sub" }, "The text is the same; " + (decText || "its decisions have changed") + ".") : null,
+      changedTexts.length && decText ? h("p", { class: "admin-sub" }, "Also " + decText + ".") : null);
+  }
+  function approvalHistory(vid) {
+    var box = h("section", { class: "admin-block" }, h("h2", null, "Since approval"), h("p", { class: "admin-sub" }, "Loading the approvals…"));
+    api("/api/admin/history/verse/" + encodeURIComponent(vid) + "/").then(function (d) {
+      box.textContent = "";
+      box.appendChild(h("h2", null, "Since approval"));
+      var any = false;
+      d.sentences.forEach(function (s) {
+        if (!s.approvals.length) return;
+        any = true;
+        box.appendChild(h("h3", { class: "admin-h3" }, s.record));
+        s.approvals.forEach(function (a) { box.appendChild(sinceApproval(a, false)); });
+      });
+      if (!any) box.appendChild(empty("No reviewer has approved these sentences yet."));
+    }, function (e) { box.textContent = ""; box.appendChild(h("p", { class: "notice" }, e.message)); });
+    return box;
+  }
+  function approvalLog() {
+    var list = h("div");
+    var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "Older approvals");
+    var last = null;
+    function load() {
+      busy(more, true);
+      api("/api/admin/history/approvals/" + (last ? "?before=" + last : "")).then(function (d) {
+        if (d.approvals.length) last = d.approvals[d.approvals.length - 1].id;
+        d.approvals.forEach(function (a) { list.appendChild(sinceApproval(a, true)); });
+        if (!list.childNodes.length) list.appendChild(empty("No approvals yet."));
+        more.hidden = !d.more;
+        busy(more, false);
+      }, function (e) { busy(more, false); list.appendChild(h("p", { class: "notice" }, e.message)); });
+    }
+    more.addEventListener("click", load);
+    load();
+    return h("section", { class: "admin-block" }, h("h2", null, "Approvals"),
+      h("p", { class: "admin-sub" }, "Reviewers' approvals, newest first, and what has changed in each sentence since, word by word."), list, more);
+  }
+
+  // Release notes: what changed in one language since a date.
+  var RELEASES = { lang: "en", since: "", until: "" };
+  VIEWS.releases = function () {
+    var f = RELEASES;
+    if (!f.since) f.since = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+    return api("/api/admin/export/").then(function (opts) {
+      var langSel = select("releases-lang", opts.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      var since = h("input", { type: "date", id: "releases-since", value: f.since, required: true });
+      var until = h("input", { type: "date", id: "releases-until", value: f.until });
+      var show = h("button", { type: "submit", class: "admin-btn primary" }, "Show");
+      var download = h("button", { type: "button", class: "admin-btn" }, "Download Markdown");
+      var status = h("p", { class: "admin-note", role: "status" });
+      var result = h("div");
+      function query() {
+        f.lang = langSel.value; f.since = since.value; f.until = until.value;
+        return "?lang=" + encodeURIComponent(f.lang) + "&since=" + encodeURIComponent(f.since) + (f.until ? "&until=" + encodeURIComponent(f.until) : "");
+      }
+      function listed(items, line) { return h("ul", { class: "admin-feed" }, items.map(line)); }
+      function drawNotes(d) {
+        result.textContent = "";
+        var t = d.totals;
+        result.appendChild(h("div", { class: "admin-tiles" }, tile(num(t.drafted), "sentences drafted"), tile(num(t.renderings), "renderings changed"),
+          tile(num(t.decisions), "decisions added or changed"), tile(num(t.footnotes), "footnotes added"), tile(num(d.imports), "imports")));
+        if (!d.books.length) { result.appendChild(empty("Nothing changed in " + d.language.name + " in that time.")); return; }
+        d.books.forEach(function (b) {
+          var cut = ["added", "renderings", "decisions", "footnotes"].some(function (k) { return b.counts[k] > b[k].length; });
+          result.appendChild(h("section", { class: "admin-block" }, h("h2", null, b.name),
+            b.drafted || b.counts.added ? h("p", null, h("strong", null, plural(b.drafted || b.counts.added, "sentence") + " drafted"),
+              b.added_verses ? h("span", { class: "admin-sub" }, " (" + b.added_verses + ")") : null) : null,
+            b.renderings.length ? [h("h3", { class: "admin-h3" }, plural(b.counts.renderings, "rendering") + " changed"),
+              table(["Verse", "Level", "Change"], b.renderings.map(function (r) {
+                return h("tr", null, h("th", { scope: "row" }, h("a", { href: "#verse/" + r.verse }, r.label)), h("td", null, r.name),
+                  h("td", { class: "admin-wrap", lang: d.language.code }, pill(CHANGE_KIND[r.kind][0], CHANGE_KIND[r.kind][1]), " ", diffView(r.segments)));
+              }))] : null,
+            b.decisions.length ? [h("h3", { class: "admin-h3" }, plural(b.counts.decisions, "decision") + " added, changed or removed"),
+              listed(b.decisions, function (x) {
+                return h("li", null, h("a", { href: "#verse/" + x.verse }, x.label), h("span", null, h("code", null, x.key), " " + x.layer + " decision " + x.kind + ": ",
+                  h("strong", null, x.choice), x.was && x.was !== x.choice ? h("span", { class: "admin-sub" }, " (was: " + x.was + ")") : null,
+                  x.fields.length ? h("span", { class: "admin-sub" }, " · " + x.fields.join(", ")) : null));
+              })] : null,
+            b.footnotes.length ? [h("h3", { class: "admin-h3" }, plural(b.counts.footnotes, "footnote") + " added"),
+              listed(b.footnotes, function (x) {
+                return h("li", null, h("a", { href: "#verse/" + x.verse }, x.label), h("span", null, h("code", null, x.key), " ", h("strong", null, x.choice),
+                  h("span", { class: "admin-sub" }, ": " + x.reason)));
+              })] : null,
+            cut ? h("p", { class: "admin-sub" }, "The first " + d.shown + " of each are shown; the Markdown file has them all.") : null));
+        });
+      }
+      var form = h("form", { class: "admin-form stacked" },
+        h("label", { class: "admin-field", for: "releases-lang" }, "Language", langSel),
+        h("label", { class: "admin-field", for: "releases-since" }, "Since", since),
+        h("label", { class: "admin-field", for: "releases-until" }, "Until (optional, inclusive)", until),
+        h("div", { class: "admin-actions" }, show, download), status);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        busy(show, true);
+        note(status, "Reading the imports…");
+        api("/api/admin/history/release-notes/" + query()).then(function (d) { note(status, ""); drawNotes(d); },
+          function (err) { note(status, err, true); }).then(function () { busy(show, false); });
+      });
+      download.addEventListener("click", function () {
+        busy(download, true);
+        saveFile("/api/admin/history/release-notes/" + query() + "&file=md").then(function (name) { note(status, "Saved " + name + "."); },
+          function (err) { note(status, err, true); }).then(function () { busy(download, false); });
+      });
+      return [head("Text", "Release notes", "What changed in one language between two dates, from what each deploy's import recorded: sentences drafted, renderings changed word by word, decisions added or changed, and footnotes added, by book. Nothing here changes a sentence's review state."),
+        h("p", { class: "notice" }, "Every sentence is an AI-assisted draft until a named reviewer approves it. Imports before release notes existed recorded rendering changes and how many sentences were drafted, but not which sentences or decisions."),
+        form, result];
     });
   };
 
