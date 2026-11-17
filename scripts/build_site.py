@@ -1202,10 +1202,23 @@ def chapter_notes(records, chapter, lang="en", words=None):
         return (f' <a class="note-article" href="{esc(a["url"])}">'
                 f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
                 f'<span{attr}>{esc(a["title"], quote=False)}</span> →</a>')
+    why_label = esc(catalog(lang)["compare.ui"]["why"], quote=False)
+
+    def why(r, d):
+        """The decision's reason, folded under the note: the reasoning the
+        site exists to show, in the page as served, so search engines and
+        AI answers read it too (the reader opens it in its panel)."""
+        own = translated.get(r["id"], {}).get(d["id"], {}).get("reason")
+        reason = own or d.get("reason")
+        if not reason:
+            return ""
+        attr = ' lang="en"' if not own and lang != "en" else ""
+        return (f'<details class="note-why"><summary>{why_label}</summary>'
+                f'<p{attr}>{esc(markup.render(reason), quote=False)}</p></details>')
     items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
                     f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
                     f'<span class="note-text">{note_html(d, lang, translated.get(r["id"], {}).get(d["id"]))}'
-                    f'</span>{more(r, d)}</span></li>'
+                    f'</span>{more(r, d)}</span>{why(r, d)}</li>'
                     for i, (r, d) in enumerate(notes))
     heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
     return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
