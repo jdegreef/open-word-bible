@@ -1102,7 +1102,9 @@ class SiteTest(unittest.TestCase):
             self.assertTrue(linked, chapter)
             for r in linked:
                 text = r["renderings"]["en"]["B"]
-                for (start, end, tokens), al in zip(r["links"]["en"]["B"], r["alignments"]):
+                english = [al for al in r["alignments"] if al["language"] == "en" and al["level"] == "B"]
+                self.assertEqual(len(english), len(r["links"]["en"]["B"]))
+                for (start, end, tokens), al in zip(r["links"]["en"]["B"], english):
                     self.assertEqual(al["tokens"], tokens)
                     # Curly quotes on the page keep every range in place.
                     self.assertEqual(build_site.smart_quotes(al["target_span"]), text[start:end])

@@ -711,8 +711,172 @@
       langs.filter(function (c) { return byLang[c]; }).map(function (c) {
         return [h("h3", { class: "admin-h3" }, (names[c] || c) + " decisions"), h("div", { class: "admin-decisions" }, byLang[c].map(decision))];
       }));
-    if (ME.admin.indexOf("inbox") >= 0) card.appendChild(fixForm(r, langs, names, from));
+    if (ME.admin.indexOf("inbox") >= 0) {
+      card.appendChild(fixForm(r, langs, names, from));
+      card.appendChild(linksEditor(r, d, names));
+    }
     return card;
+  }
+
+  // Word links (a record's alignments) for one language and level: the
+  // source words above, the rendering below, and the links between them.
+  // A reviewer picks source words, selects their words in the rendering and
+  // links them; the result is filed as a fix request carrying the links in
+  // scripts/align.py's spec form, which a Claude session applies and
+  // validates. Nothing here edits content/ or marks anything reviewed.
+  var UNSPACED = /[々぀-ヿ㐀-䶿一-鿿豈-﫿ｦ-ﾟ]/;
+  var WORDISH = /[\p{L}\p{N}]/u;
+  function joined(a, b) { return WORDISH.test(a) && WORDISH.test(b) && !UNSPACED.test(a) && !UNSPACED.test(b); }
+  // owb/markup.py alignment_ranges, for showing links already made: each
+  // span found after the one before, as a whole word.
+  function linkRanges(text, spans) {
+    var at = 0, out = [];
+    spans.forEach(function (span) {
+      var start = text.indexOf(span, at);
+      while (start >= 0 && !wholeAt(text, start, start + span.length)) start = text.indexOf(span, start + 1);
+      out.push(start < 0 ? null : [start, start + span.length]);
+      if (start >= 0) at = start + span.length;
+    });
+    return out;
+  }
+  function wholeAt(text, s, e) {
+    return !(s > 0 && joined(text[s - 1], text[s])) && !(e < text.length && joined(text[e], text[e - 1]));
+  }
+
+  function linksEditor(r, d, names) {
+    var langs = Object.keys(r.renderings);
+    var box = h("div", { class: "admin-links", hidden: true });
+    var toggle = h("button", { type: "button", class: "admin-btn" }, "Edit word links");
+    toggle.addEventListener("click", function () { box.hidden = !box.hidden; if (!box.hidden) draw(); });
+    var lang = select("links-lang-" + r.id, langs.map(function (c) { return [c, names[c] || c]; }), langs.indexOf("ja") >= 0 ? "ja" : langs[0]);
+    var level = select("links-level-" + r.id, [["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], "B");
+    var tokens = h("p", { class: "admin-source admin-link-tokens", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null });
+    var textBox = h("p", { class: "admin-link-text" });
+    var list = h("ol", { class: "admin-link-list" });
+    var status = h("p", { class: "admin-note", role: "status" });
+    var reason = h("textarea", { id: "links-reason-" + r.id, rows: 2, maxlength: 4000, placeholder: "Why (optional): what was wrong or missing" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "File word-links request");
+    var linkBtn = h("button", { type: "button", class: "admin-btn" }, "Link selection");
+    var picked = [];   // token numbers, 1-based
+    var links = [];    // {start, end, tokens: [numbers]}
+    var text = "";
+
+    function load() {
+      text = (r.renderings[lang.value] || {})[level.value] || "";
+      var mine = (r.alignments || []).filter(function (a) { return a.language === lang.value && a.level === level.value; });
+      var ranges = linkRanges(text, mine.map(function (a) { return a.target_span; }));
+      links = [];
+      mine.forEach(function (a, i) {
+        if (!ranges[i]) return;
+        links.push({ start: ranges[i][0], end: ranges[i][1], tokens: a.tokens.map(function (t) { return r.source.tokens.indexOf(t) + 1; }) });
+      });
+      picked = [];
+      draw();
+    }
+    function wordOf(n) { var w = d.words[r.source.tokens[n - 1]]; return w ? w.text : "#" + n; }
+    function draw() {
+      tokens.textContent = "";
+      var used = {};
+      links.forEach(function (l) { l.tokens.forEach(function (n) { used[n] = true; }); });
+      r.source.tokens.forEach(function (t, i) {
+        var n = i + 1, w = d.words[t] || {};
+        var b = h("button", { type: "button", class: "admin-link-token" + (picked.indexOf(n) >= 0 ? " on" : "") + (used[n] ? " used" : ""),
+          title: n + " · " + [w.lemma, w.gloss].filter(Boolean).join(" · "), "aria-pressed": picked.indexOf(n) >= 0 ? "true" : "false" },
+          h("span", null, w.text || "#" + n), h("small", null, String(n)));
+        b.addEventListener("click", function () {
+          var k = picked.indexOf(n);
+          if (k >= 0) picked.splice(k, 1); else picked.push(n);
+          picked.sort(function (a, b2) { return a - b2; });
+          draw();
+        });
+        add(tokens, [b, " "]);
+      });
+      textBox.textContent = "";
+      textBox.lang = lang.value;
+      var at = 0;
+      links.slice().sort(function (a, b) { return a.start - b.start; }).forEach(function (l) {
+        add(textBox, text.slice(at, l.start));
+        var lit = l.tokens.some(function (n) { return picked.indexOf(n) >= 0; });
+        add(textBox, h("mark", { class: "admin-link-span" + (lit ? " lit" : ""), title: l.tokens.map(wordOf).join(" ") }, text.slice(l.start, l.end)));
+        at = l.end;
+      });
+      add(textBox, text.slice(at));
+      list.textContent = "";
+      links.sort(function (a, b) { return a.start - b.start; }).forEach(function (l, i) {
+        var del = h("button", { type: "button", class: "admin-btn small" }, "Remove");
+        del.addEventListener("click", function () { links.splice(i, 1); draw(); });
+        add(list, h("li", null, h("span", { lang: lang.value }, text.slice(l.start, l.end)), " ← ",
+          h("span", { lang: r.source.language }, l.tokens.map(wordOf).join(" ")), " ", h("code", null, l.tokens.join(",")), " ", del));
+      });
+      var covered = {};
+      links.forEach(function (l) { l.tokens.forEach(function (n) { covered[n] = true; }); });
+      status.textContent = links.length + " links; " + Object.keys(covered).length + " of " + r.source.tokens.length +
+        " source words linked." + (picked.length ? " Selected: " + picked.join(", ") + "." : "");
+      status.className = "admin-note";
+    }
+    // The selection inside the rendering, as offsets into its text.
+    function selected() {
+      var sel = window.getSelection();
+      if (!sel.rangeCount || sel.isCollapsed) return null;
+      var range = sel.getRangeAt(0);
+      if (!textBox.contains(range.startContainer) || !textBox.contains(range.endContainer)) return null;
+      function offset(node, off) {
+        var pre = document.createRange();
+        pre.selectNodeContents(textBox);
+        pre.setEnd(node, off);
+        return pre.toString().length;
+      }
+      var s = offset(range.startContainer, range.startOffset), e = offset(range.endContainer, range.endOffset);
+      while (s < e && /\s/.test(text[s])) s++;
+      while (e > s && /\s/.test(text[e - 1])) e--;
+      return e > s ? [s, e] : null;
+    }
+    linkBtn.addEventListener("click", function () {
+      var span = selected();
+      if (!picked.length) { note(status, "Pick the source words first.", true); return; }
+      if (!span) { note(status, "Select the words in the rendering to link them to.", true); return; }
+      var s = span[0], e = span[1], piece = text.slice(s, e);
+      if (/\\v \d|\\q/.test(piece)) { note(status, "A link can't hold a verse or line marker.", true); return; }
+      var setting = /\{\{[^{}]*\}\}/g, m;
+      while ((m = setting.exec(text))) {
+        var a = m.index, b = a + m[0].length;
+        if ((a < s && s < b) || (a < e && e < b)) { note(status, "Take a reader setting {{...}} whole, or leave it out.", true); return; }
+      }
+      if (!wholeAt(text, s, e)) { note(status, "Select whole words.", true); return; }
+      if (links.some(function (l) { return s < l.end && l.start < e; })) { note(status, "That overlaps a link; remove it first.", true); return; }
+      links.push({ start: s, end: e, tokens: picked.slice() });
+      picked = [];
+      window.getSelection().removeAllRanges();
+      draw();
+    });
+    function spec() {
+      return r.id + ": " + links.slice().sort(function (a, b) { return a.start - b.start; })
+        .map(function (l) { return text.slice(l.start, l.end) + "=" + l.tokens.join(","); }).join(" | ");
+    }
+    [lang, level].forEach(function (s) { s.addEventListener("change", load); });
+    var form = h("form", { class: "admin-form stacked" },
+      h("div", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: lang.id }, "Language", lang),
+        h("label", { class: "admin-field", for: level.id }, "Level", level)),
+      h("p", { class: "admin-sub" }, "Pick source words, select what they became in the text, then Link selection. Links show highlighted; picking a word lights its links."),
+      tokens, textBox, h("div", { class: "admin-actions" }, linkBtn), list,
+      h("label", { class: "admin-field", for: reason.id }, "Reason", reason),
+      h("p", { class: "admin-sub" }, "Filed as a fix request with the links in scripts/align.py's form. A Claude session applies and validates them in a pull request; the sentence stays an AI draft."),
+      send, status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!links.length) { note(status, "Make at least one link.", true); return; }
+      busy(send, true);
+      api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: location.hash.split("/")[1], language: lang.value,
+        levels: [level.value], links: spec(), reason: reason.value } }).then(function (res) {
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        busy(send, false);
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    box.appendChild(form);
+    load();
+    return h("div", { class: "admin-fix-wrap" }, toggle, box);
   }
 
   function decision(x) {

@@ -503,6 +503,30 @@ class FixTest(AdminTestCase):
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
 
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_file_word_links(self):
+        calls = []
+
+        def github(path, method="GET", body=None):
+            calls.append((path, method, body))
+            return {"number": 10, "html_url": "https://github.com/x/y/issues/10"}
+        editor = client_for(account("ed@example.org", (K.EDITOR,)))
+        links = {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "levels": ["B"],
+                 "links": "JHN.1.1.s1: Au commencement=1,2 | Verbe=4,5", "reason": "Missing links"}
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            two = editor.post("/api/admin/fixes/", {**links, "levels": ["B", "R"]}, format="json")
+            self.assertEqual(two.json()["code"], "one_level")
+            other = editor.post("/api/admin/fixes/", {**links, "links": "JHN.1.2.s1: x=1"}, format="json")
+            self.assertEqual(other.json()["code"], "invalid_links")
+            r = editor.post("/api/admin/fixes/", links, format="json")
+        self.assertEqual(r.status_code, 201, r.content)
+        body = calls[-1][2]
+        self.assertEqual(body["title"], "Word links John 1:1 (French, Balanced)")
+        self.assertIn("```\nJHN.1.1.s1: Au commencement=1,2 | Verbe=4,5\n```", body["body"])
+        self.assertIn("scripts/align.py apply", body["body"])
+        self.assertIn('"kind": "links"', body["body"])
+        self.assertEqual(AdminAction.objects.get(action="fix.request").detail["kind"], "links")
+
 
 class TextTest(AdminTestCase):
     def setUp(self):

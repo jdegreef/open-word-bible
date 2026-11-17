@@ -52,6 +52,19 @@ with "Fixes #N" in its body.
 If it doesn't hold: comment on the issue with the reasoning (what the source
 says, what the brief says), and close it as not planned.
 
+## Word-links requests
+
+A request whose machine line has `"kind": "links"` comes from the verse
+inspector's word-links editor. Its body holds a spec for one language and
+level in `scripts/align.py`'s form (`RECORD: span=1,2 | ...`, token numbers
+counting the sentence's source words from 1), replacing that language's
+links at that level. Check each link says what the words say (the source
+word's gloss, the rendering), apply it with
+`python3 scripts/align.py apply <file> <spec> --lang <lang> --level <level>`,
+run `owb.validate`, and open a pull request as above. A link that cannot be
+right (the wrong source word, a span that is not the word) is left out and
+named on the issue.
+
 ## 4. Close the loop
 
 If the issue names a reader message, the editor answers the reader from the

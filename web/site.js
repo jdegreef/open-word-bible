@@ -587,6 +587,31 @@ window.OWBStudy = (function () {
     write("owb.words", all, "owb:words");
     return all[lemma];
   }
+  // Word pairs kept from Parallel (owb.pairs, on this device): a source
+  // word and what two languages made of it in one verse, newest first.
+  // Keeping one also saves its dictionary form to the word list.
+  var PAIRS = "owb.pairs", MAX_PAIRS = 300;
+  function pairs() {
+    try {
+      var v = JSON.parse(localStorage.getItem(PAIRS) || "[]");
+      return Array.isArray(v) ? v.filter(function (p) { return p && p.w && p.a && p.b; }) : [];
+    } catch (e) { return []; }
+  }
+  function pairKey(p) { return [p.w, p.v, p.a[0], p.a[1], p.b[0], p.b[1]].join("\u0001"); }
+  function hasPair(p) {
+    var k = pairKey(p);
+    return pairs().some(function (x) { return pairKey(x) === k; });
+  }
+  function setPair(p, on) {
+    var k = pairKey(p);
+    var list = pairs().filter(function (x) { return pairKey(x) !== k; });
+    if (on) {
+      list.unshift({ w: p.w, g: String(p.g || "").slice(0, 120), l: p.l, s: p.s, a: p.a, b: p.b, v: p.v, u: p.u, at: Date.now() });
+      if (!(word(p.w) || {}).s) setWord(p.w, { s: true }, { g: p.g, l: p.l });
+    }
+    try { localStorage.setItem(PAIRS, JSON.stringify(list.slice(0, MAX_PAIRS))); } catch (e) { /* full or blocked */ }
+    document.dispatchEvent(new Event("owb:words"));
+  }
   function lookups() {
     try {
       var v = JSON.parse(localStorage.getItem("owb.lookups") || "[]");
@@ -604,7 +629,8 @@ window.OWBStudy = (function () {
 
   return { read: read, write: write, kept: kept, collections: collections, cleanTag: cleanTag,
            hasTag: hasTag, withTag: withTag, dropCollection: dropCollection,
-           word: word, setWord: setWord, lookups: lookups, lookedUp: lookedUp, forgetLookups: forgetLookups };
+           word: word, setWord: setWord, lookups: lookups, lookedUp: lookedUp, forgetLookups: forgetLookups,
+           pairs: pairs, hasPair: hasPair, setPair: setPair };
 })();
 
 // A key term's "Save to word list" (save_word_button in

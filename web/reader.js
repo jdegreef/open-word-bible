@@ -39,7 +39,7 @@
   // language and any it falls back on come with the page, the one Parallel
   // sets beside it when chosen (loadText). Only the page language's rendering
   // decisions are shown, after the meaning decisions, as they always were.
-  DATA.records.forEach(function (r) { r.renderings = {}; r.links = {}; });
+  DATA.records.forEach(function (r) { r.renderings = {}; r.links = {}; r.ruby = {}; r.otherDecisions = {}; });
   var texts = {}, loadingText = {};
   function addText(code) {
     var text = window.OWB_TEXTS && window.OWB_TEXTS[code];
@@ -48,7 +48,11 @@
     DATA.records.forEach(function (r) {
       if (text.renderings[r.id]) r.renderings[code] = text.renderings[r.id];
       if (text.links[r.id]) r.links[code] = text.links[r.id];
+      if (text.ruby && text.ruby[r.id]) r.ruby[code] = text.ruby[r.id];
       if (code === DATA.lang && text.decisions[r.id]) r.decisions = r.decisions.concat(noteLanguage(r, text.decisions[r.id]));
+      // Another language's rendering decisions, for the word card in
+      // Parallel: why that language says it as it does.
+      else if (text.decisions[r.id]) r.otherDecisions[code] = text.decisions[r.id];
     });
   }
   Object.keys(window.OWB_TEXTS || {}).forEach(addText);
@@ -93,7 +97,12 @@
   // owb.settings with the account; the latest device's copy wins whole).
   var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0, plural_you: 0, view: 0,
                    headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0, verse_numbers: 0,
-                   presets: [] };
+                   presets: [],
+                   // Parallel: the other side's level ("" = the same as
+                   // the page's), its side hidden until tapped, words with
+                   // no partner marked, the pairs last read; and furigana
+                   // over Japanese kanji where readings are written.
+                   partner_level: "", partner_hide: 0, gaps: 0, pairs: [], furigana: 0 };
   var settingsAt = 0;
   function loadSettings() {
     try {
@@ -223,7 +232,7 @@
   }
 
   // A rendering split at its verse markers, each verse a list of pieces
-  // [text, token ids or null, words of Jesus]: the pieces with ids are the
+  // [text, token ids or null, words of Jesus, furigana or null]: the pieces with ids are the
   // English that aligned Greek words became (r.links, built from the
   // record's alignments); the third is true where Jesus speaks (r.wj, from
   // data/words_of_jesus/). A poetic line break is the piece [null, null].
@@ -231,17 +240,21 @@
     var raw = r.renderings[lang][level];
     var ranges = (r.links && r.links[lang] && r.links[lang][level]) || [];
     var red = (r.wj && r.wj[lang] && r.wj[lang][level]) || [];
-    // Every place a piece starts or ends: the links' ends and the red's.
+    // Furigana (data/furigana/): the reading of each run of kanji, where
+    // written, as ranges like the links'.
+    var ruby = (r.ruby && r.ruby[lang] && r.ruby[lang][level]) || [];
+    // Every place a piece starts or ends: the links' ends, the red's and the readings'.
     var cuts = [0, raw.length];
-    ranges.concat(red).forEach(function (g) { cuts.push(g[0], g[1]); });
+    ranges.concat(red, ruby).forEach(function (g) { cuts.push(g[0], g[1]); });
     cuts = cuts.filter(function (c, i) { return cuts.indexOf(c) === i; }).sort(function (a, b) { return a - b; });
     var chunks = [];
     for (var n = 0; n + 1 < cuts.length; n++) {
       var a = cuts[n], b = cuts[n + 1];
       var link = ranges.filter(function (g) { return g[0] <= a && b <= g[1]; })[0];
       var wj = red.some(function (g) { return g[0] <= a && b <= g[1]; });
+      var reading = ruby.filter(function (g) { return g[0] === a && b === g[1]; })[0];
       // A link split by the red's edge keeps its ids on both sides.
-      chunks.push([raw.slice(a, b), link ? link[2] : null, wj]);
+      chunks.push([raw.slice(a, b), link ? link[2] : null, wj, reading ? reading[2] : null]);
     }
     var out = [[verseOf(r.refs[0]), []]];
     chunks.forEach(function (c) {
@@ -251,7 +264,7 @@
         // never hold one, so it only ever falls in unlinked text.
         part.split(LINE).forEach(function (bit, j) {
           if (j) out[out.length - 1][1].push([null, null]);
-          if (bit) out[out.length - 1][1].push([bit, c[1], c[2]]);
+          if (bit) out[out.length - 1][1].push([bit, c[1], c[2], c[3]]);
         });
       });
     });
@@ -278,8 +291,21 @@
 
   // Text as a node: a span the red letters colour where Jesus speaks
   // (body.red-letter, the reader's setting), plain text elsewhere.
-  function wordsNode(text, wj) {
-    return wj ? el("span", "wj", text) : document.createTextNode(text);
+  function wordsNode(text, wj, reading) {
+    var node = wj ? el("span", "wj") : document.createDocumentFragment();
+    withReading(node, text, reading);
+    return node;
+  }
+  // Text into a node, under its furigana when the reader shows them.
+  function withReading(node, text, reading) {
+    if (reading && settings.furigana) {
+      var ruby = el("ruby", "furi", text);
+      ruby.appendChild(el("rt", null, reading));
+      node.appendChild(ruby);
+    } else {
+      node.appendChild(document.createTextNode(text));
+    }
+    return node;
   }
 
   function el(tag, cls, text) {
@@ -465,6 +491,7 @@
     var numbers = document.querySelector('[data-setting="verse_numbers"]');
     if (numbers) numbers.parentNode.hidden = !plain();
     document.body.classList.toggle("red-letter", settings.red_letter === 1);
+    document.body.classList.toggle("furigana", !!settings.furigana && hasRuby());
     document.body.classList.toggle("view-parallel", parallel());
     document.body.classList.toggle("view-interlinear", interlinear());
     document.body.classList.toggle("view-recall", recall());
@@ -557,6 +584,7 @@
 
   function closeNote(refocus) {
     if (!popover) return;
+    if (popover.classList.contains("wc-pop")) light([]);
     var opener = popover.opener;
     popover.remove();
     popover = null;
@@ -876,7 +904,7 @@
             return;
           }
           var text = render(piece[0]);
-          if (!piece[1]) { into.appendChild(wordsNode(text, piece[2])); return; }
+          if (!piece[1]) { into.appendChild(wordsNode(text, piece[2], piece[3])); return; }
           if (interlinear()) {
             // The original words over the English they became.
             var ruby = el("ruby", "il" + (piece[2] ? " wj" : ""));
@@ -887,7 +915,7 @@
             into.appendChild(ruby);
             return;
           }
-          var w = el("span", "aw" + (piece[2] ? " wj" : ""), text);
+          var w = withReading(el("span", "aw" + (piece[2] ? " wj" : "")), text, piece[3]);
           w.dataset.tokens = piece[1].join(" ");
           var doubt = [];
           piece[1].forEach(function (id) {
@@ -994,55 +1022,267 @@
     return note;
   }
 
-  // Parallel: each sentence in a row, the page's language beside another.
+  // Parallel: each sentence in a row, the page's language beside another,
+  // that one at its own level if the reader chose one. Where both sides are
+  // linked word by word to the source (alignments), a word lights its
+  // partner on the other side: both point at the same Greek or Hebrew
+  // words, so no language is ever aligned to another directly.
+  function partnerLevel() { return /^[LBR]$/.test(settings.partner_level) ? settings.partner_level : settings.level; }
+  function linksAt(r, lang, level) { return !!(r.links && r.links[lang] && r.links[lang][level]); }
+  function linkedBoth(other) {
+    return DATA.records.some(function (r) { return linksAt(r, textLang(r), settings.level) && linksAt(r, other, partnerLevel()); });
+  }
+  function hasRuby() {
+    return DATA.records.some(function (r) { return r.ruby && Object.keys(r.ruby).length; });
+  }
+
+  // The pairs read last, newest first, for the chips above the text.
+  function rememberPair(a, b) {
+    var pairs = (settings.pairs || []).filter(function (p) { return Array.isArray(p) && !(p[0] === a && p[1] === b); });
+    if (settings.pairs && settings.pairs[0] && settings.pairs[0][0] === a && settings.pairs[0][1] === b) return;
+    settings.pairs = [[a, b]].concat(pairs).slice(0, 4);
+    save();
+  }
+
+  // This chapter in another language: the footer's link to it.
+  function langHref(code) {
+    var a = document.querySelector('a[data-lang="' + code + '"]');
+    return a ? a.getAttribute("href") : null;
+  }
+  function readPair(a, b) {
+    settings.partner = b;
+    if (a === settings.lang) { setSetting("partner", b); return; }
+    var href = langHref(a);
+    if (!href) return;
+    save();
+    location.href = href + location.hash;
+  }
+
   function drawParallel(box) {
     var other = partner();
     if (loadText(other)) return;
+    var left = DATA.languages.indexOf(settings.lang) >= 0 ? settings.lang : "en";
+    rememberPair(left, other);
     var starts = new Set(DATA.paragraphs);
-    box.appendChild(parallelRow(DATA.languages.indexOf(settings.lang) >= 0 ? settings.lang : "en", other, true));
+    var both = linkedBoth(other);
+    box.appendChild(parallelRow(left, other));
     DATA.records.forEach(function (r) {
       var heading = DATA.headings[r.id];
       if (heading && settings.headings === 0 && (heading[settings.lang] || heading.en)) {
         box.appendChild(el("h2", "section-head", render(heading[settings.lang] || heading.en)));
       }
       var row = el("div", "prow" + (starts.has(r.id) ? " pstart" : ""));
+      row.dataset.record = r.id;
       [textLang(r), other].forEach(function (lang, i) {
-        var cell = el("div", "pcell");
-        var has = r.renderings[lang];
+        var level = i ? partnerLevel() : settings.level;
+        var cell = el("div", "pcell " + (i ? "pother" : "pfirst"));
+        var has = r.renderings[lang] && r.renderings[lang][level];
         if (!has) {
           cell.appendChild(el("span", "pmissing", t("not_in_language")));
-        } else {
-          cell.lang = lang;
-          // Each verse its number and words; poetry a block of lines, as in
-          // the reading view.
-          var poem = poetic(r, lang);
-          versePieces(r, lang, settings.level).forEach(function (part) {
-            var verse = poem ? el("span", "poem") : cell;
-            var line = poem ? el("span", "line") : cell;
-            if (poem) verse.appendChild(line);
-            line.appendChild(el("sup", "pv", part[0]));
-            part[1].forEach(function (piece) {
-              if (piece[0] !== null) { line.appendChild(wordsNode(render(piece[0]), piece[2])); return; }
-              if (!poem) { line.appendChild(document.createTextNode(" ")); return; }
-              verse.appendChild(document.createTextNode(" "));
-              line = el("span", "line");
-              verse.appendChild(line);
-            });
-            if (poem) cell.appendChild(verse);
-            cell.appendChild(document.createTextNode(" "));
+          row.appendChild(cell);
+          return;
+        }
+        cell.lang = lang;
+        var words = el("div", "ptext");
+        // Words with no partner are marked only where this side has links.
+        var gaps = settings.gaps && both && linksAt(r, lang, level);
+        // Each verse its number and words; poetry a block of lines, as in
+        // the reading view.
+        var poem = poetic(r, lang);
+        versePieces(r, lang, level).forEach(function (part) {
+          var verse = poem ? el("span", "poem") : words;
+          var line = poem ? el("span", "line") : words;
+          if (poem) verse.appendChild(line);
+          line.appendChild(el("sup", "pv", part[0]));
+          part[1].forEach(function (piece) {
+            if (piece[0] !== null) { line.appendChild(parallelPiece(r, lang, piece, gaps)); return; }
+            if (!poem) { line.appendChild(document.createTextNode(" ")); return; }
+            verse.appendChild(document.createTextNode(" "));
+            line = el("span", "line");
+            verse.appendChild(line);
           });
-          if (i === 0 && lang !== settings.lang) cell.classList.add("fallback");
+          if (poem) words.appendChild(verse);
+          words.appendChild(document.createTextNode(" "));
+        });
+        cell.appendChild(words);
+        if (i === 0 && lang !== settings.lang) cell.classList.add("fallback");
+        // The other side hidden until tapped, to recall it; on a phone,
+        // where the two stack, the tap flips the row to the other language.
+        if (i === 1 && settings.partner_hide) {
+          row.classList.add("covered");
+          var show = el("button", "pshow", t("parallel_show").replace("{lang}", t("lang_names")[lang] || lang));
+          show.type = "button";
+          show.addEventListener("click", function (e) { e.stopPropagation(); flip(row); });
+          cell.appendChild(show);
         }
         row.appendChild(cell);
       });
+      if (settings.partner_hide) {
+        row.addEventListener("click", function (e) {
+          if (e.target.closest(".aw")) return;
+          flip(row);
+        });
+      }
       box.appendChild(row);
     });
   }
 
+  function flip(row) {
+    row.classList.toggle("flipped");
+    var other = row.querySelector(".pother .ptext");
+    if (other) other.setAttribute("aria-hidden", row.classList.contains("flipped") ? "false" : "true");
+  }
+
+  // A piece of a Parallel cell: a word linked to the source is a button
+  // that lights its partners and opens its card; unlinked words are marked
+  // when the reader asks to see them.
+  var LETTERS = /([\p{L}\p{N}][\p{L}\p{M}\p{N}'’-]*)/u;
+  function parallelPiece(r, lang, piece, gaps) {
+    var text = render(piece[0]);
+    if (!piece[1]) {
+      if (!gaps) return wordsNode(text, piece[2], piece[3]);
+      var node = piece[2] ? el("span", "wj") : document.createDocumentFragment();
+      text.split(LETTERS).forEach(function (bit, k) {
+        if (!bit) return;
+        if (k % 2) node.appendChild(withReading(el("span", "nolink"), bit, piece[3]));
+        else node.appendChild(document.createTextNode(bit));
+      });
+      return node;
+    }
+    var w = withReading(el("span", "aw" + (piece[2] ? " wj" : "")), text, piece[3]);
+    w.dataset.tokens = piece[1].join(" ");
+    w.dataset.lang = lang;
+    w.tabIndex = 0;
+    w.setAttribute("role", "button");
+    w.setAttribute("aria-label", t("wcard_label").replace("{word}", text));
+    w.setAttribute("aria-expanded", "false");
+    w.addEventListener("click", function (e) { e.stopPropagation(); openWordCard(w, r, piece[1]); });
+    w.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); openWordCard(w, r, piece[1]); }
+    });
+    if (!TOUCH) {
+      w.addEventListener("mouseenter", function () { if (!popover) light(piece[1]); });
+      w.addEventListener("mouseleave", function () { if (!popover) light([]); });
+    }
+    return w;
+  }
+
   function parallelRow(a, b) {
     var row = el("div", "prow phead");
-    [a, b].forEach(function (l) { row.appendChild(el("div", "pcell", t("lang_names")[l] || l)); });
+    [a, b].forEach(function (l, i) {
+      var level = i ? partnerLevel() : settings.level;
+      var name = el("div", "pcell", t("lang_names")[l] || l);
+      if (i && settings.partner_level && settings.partner_level !== settings.level) name.appendChild(el("span", "plevel", " \u00b7 " + DATA.levelNames[level]));
+      row.appendChild(name);
+    });
     return row;
+  }
+
+  // The card for a linked word in Parallel: the source word under both
+  // sides, what each side made of it, and the decisions that chose the
+  // wording, with a way to keep the pair.
+  function openWordCard(w, r, ids) {
+    var same = popover && popover.opener === w;
+    closeNote(false);
+    if (same) return;
+    var set = new Set(ids);
+    // Everything aligned to any of these words lights up: its partners
+    // and, through them, the rest of a phrase the languages split differently.
+    light(ids);
+    var row = w.closest(".prow");
+    function said(cls) {
+      // Pieces side by side are one phrase; a gap between them is shown.
+      var bits = [], last = null;
+      if (!row) return "";
+      row.querySelectorAll("." + cls + " .aw.lit").forEach(function (a) {
+        if (last && a.previousSibling === last) bits[bits.length - 1] += a.textContent;
+        else bits.push(a.textContent);
+        last = a;
+      });
+      return bits.join(" \u2026 ");
+    }
+    var source = ids.map(function (id) { return WORD[id]; }).filter(Boolean);
+    var box = el("div", "fn-pop wc-pop");
+    box.id = "fn-pop";
+    box.setAttribute("role", "dialog");
+    var head = el("p", "fn-pop-head");
+    var orig = el("span", "wc-source", OWBMarkup.joinWords(source));
+    orig.lang = DATA.source;
+    head.appendChild(orig);
+    var lemmas = source.map(function (x) { return x.lemma; }).filter(function (x, i, a) { return x && a.indexOf(x) === i; });
+    if (lemmas.length) {
+      var lm = el("span", "wcard-lemma", lemmas.join(" \u00b7 "));
+      lm.lang = DATA.source;
+      head.appendChild(lm);
+    }
+    box.setAttribute("aria-label", t("wcard_label").replace("{word}", w.textContent));
+    box.appendChild(head);
+    var gloss = source.map(function (x) { return HEBREW ? x.gloss.replace(/\./g, " ") : x.gloss; }).filter(Boolean).join(" ");
+    if (gloss) box.appendChild(el("p", "wi-gloss", "\u201c" + gloss + "\u201d"));
+    var langs = [textLang(r), partner()];
+    var texts = [said("pfirst"), said("pother")];
+    var dl = el("dl", "wc-sides");
+    langs.forEach(function (l, i) {
+      dl.appendChild(el("dt", null, t("lang_names")[l] || l));
+      var dd = el("dd", null, texts[i] || "\u2014");
+      dd.lang = l;
+      dl.appendChild(dd);
+    });
+    box.appendChild(dl);
+    // The meaning decided once for every language, then each side's
+    // wording: where the two differ, this says why.
+    var levels = [settings.level, partnerLevel()];
+    var ds = r.decisions.filter(function (d) {
+      if (!d.tokens.some(function (id) { return set.has(id); })) return false;
+      return d.layer === "meaning" || (d.language === langs[0] && d.levels.includes(levels[0]));
+    });
+    (r.otherDecisions[langs[1]] || []).forEach(function (d) {
+      if (d.levels.includes(levels[1]) && d.tokens.some(function (id) { return set.has(id); })) ds.push(d);
+    });
+    if (ds.length) {
+      box.appendChild(el("p", "wc-why", t("wcard_why")));
+      ds.slice(0, 4).forEach(function (d) {
+        var p = el("p", "fn-pop-text");
+        var tag = d.layer === "meaning" ? t("category")[d.category] || "" : t("lang_names")[d.language] || d.language;
+        if (tag) p.appendChild(el("span", "fn-pop-cat", tag));
+        p.appendChild(document.createTextNode(" " + render(d.choice) + ": "));
+        var why = el("span", null, d.reason);
+        if (d.layer !== "meaning" || d.english) why.lang = "en";
+        p.appendChild(why);
+        box.appendChild(p);
+      });
+    }
+    var links = el("p", "wi-links");
+    if (lemmas.length && DATA.word_url) {
+      var more = el("a", "fn-pop-more", t("word_page") + " →");
+      more.href = DATA.word_url + "?w=" + encodeURIComponent(lemmas[0]);
+      links.appendChild(more);
+    }
+    if (lemmas.length && window.OWBStudy && window.OWBStudy.setPair) {
+      var pair = { w: lemmas[0], g: gloss, l: HEBREW ? (source[0].lang === "A" ? "arc" : "hbo") : "grc",
+                   s: OWBMarkup.joinWords(source), a: [langs[0], texts[0]], b: [langs[1], texts[1]],
+                   v: r.refs[0], u: location.pathname + "#v" + verseOf(r.refs[0]) };
+      var keep = el("button", "mark-bookmark save-word");
+      keep.type = "button";
+      var showKeep = function () {
+        var on = window.OWBStudy.hasPair(pair);
+        keep.textContent = t(on ? "pair_saved" : "pair_save");
+        keep.setAttribute("aria-pressed", on ? "true" : "false");
+      };
+      keep.addEventListener("click", function () { window.OWBStudy.setPair(pair, !window.OWBStudy.hasPair(pair)); showKeep(); });
+      showKeep();
+      links.appendChild(keep);
+    }
+    if (links.childNodes.length) box.appendChild(links);
+    box.addEventListener("click", function (e) { e.stopPropagation(); });
+    document.body.appendChild(box);
+    popover = box;
+    box.opener = w;
+    w.setAttribute("aria-expanded", "true");
+    w.setAttribute("aria-controls", "fn-pop");
+    placeNote();
+    box.tabIndex = -1;
+    box.focus({ preventScroll: true });
   }
 
   // Above the text, in Parallel and Interlinear: the language to set beside
@@ -1056,7 +1296,9 @@
       box.parentNode.insertBefore(tools, box);
     }
     tools.textContent = "";
-    tools.hidden = !(parallel() || interlinear() || recall());
+    // Furigana: offered wherever Japanese with written readings is shown.
+    var furi = hasRuby() && (settings.lang === "ja" || (parallel() && partner() === "ja"));
+    tools.hidden = !(parallel() || interlinear() || recall() || furi);
     if (recall()) {
       tools.appendChild(el("span", "vt-label", MUI.recall_hint));
       [["hide_fewer", -0.3], ["hide_more", 0.3]].forEach(function (x) {
@@ -1081,16 +1323,99 @@
         tools.appendChild(mine);
       }
     } else if (parallel()) {
-      tools.appendChild(el("span", "vt-label", t("parallel_with")));
-      partners().forEach(function (l) {
-        var b = el("button", "text-tool", t("lang_names")[l] || l);
-        b.type = "button";
-        b.setAttribute("aria-pressed", l === partner() ? "true" : "false");
-        b.addEventListener("click", function () { setSetting("partner", l); });
-        tools.appendChild(b);
-      });
+      drawPairTools(tools);
     } else if (interlinear() && !anyLinks(settings.level)) {
       tools.appendChild(el("span", "vt-label", t("interlinear_none")));
+    }
+    if (furi) tools.appendChild(toggleTool("furigana", t("furigana")));
+  }
+
+  // A button that turns a 0/1 setting on and off.
+  function toggleTool(name, label) {
+    var b = el("button", "text-tool", label);
+    b.type = "button";
+    b.setAttribute("aria-pressed", settings[name] ? "true" : "false");
+    b.addEventListener("click", function () { setSetting(name, settings[name] ? 0 : 1); });
+    return b;
+  }
+
+  function langSelect(id, codes, value, change) {
+    var sel = el("select", "text-tool pair-select");
+    sel.id = id;
+    codes.forEach(function (c) {
+      var o = el("option", null, t("lang_names")[c] || c);
+      o.value = c;
+      o.lang = settings.lang;
+      if (c === value) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change", function () { change(sel.value); });
+    return sel;
+  }
+
+  // Parallel's tools: the two languages (the page's and the one beside
+  // it) with a swap, the level of the one beside, the pairs read last,
+  // hiding the other side to recall it, and marking unlinked words.
+  function drawPairTools(tools) {
+    var left = settings.lang, right = partner();
+    var names = t("lang_names");
+    var pick = el("div", "pair-pick");
+    var leftLabel = el("label", "vt-label", t("parallel_reading"));
+    leftLabel.htmlFor = "pair-left";
+    pick.appendChild(leftLabel);
+    // Only languages this chapter is translated into, with a page to go to.
+    var lefts = DATA.languages.filter(function (c) { return c === left || langHref(c); });
+    pick.appendChild(langSelect("pair-left", lefts, left, function (c) {
+      readPair(c, c === right ? left : right);
+    }));
+    var swap = el("button", "text-tool pair-swap", "\u21c4");
+    swap.type = "button";
+    swap.setAttribute("aria-label", t("parallel_swap"));
+    swap.title = t("parallel_swap");
+    swap.hidden = !langHref(right);
+    swap.addEventListener("click", function () { readPair(right, left); });
+    pick.appendChild(swap);
+    var rightLabel = el("label", "vt-label", t("parallel_with"));
+    rightLabel.htmlFor = "pair-right";
+    pick.appendChild(rightLabel);
+    pick.appendChild(langSelect("pair-right", partners(), right, function (c) { setSetting("partner", c); }));
+    tools.appendChild(pick);
+
+    var opts = el("div", "pair-opts");
+    var lv = el("div", "seg pair-level");
+    lv.setAttribute("role", "group");
+    lv.setAttribute("aria-label", t("parallel_level").replace("{lang}", names[right] || right));
+    opts.appendChild(el("span", "vt-label", t("parallel_level").replace("{lang}", names[right] || right)));
+    [["", t("parallel_same")], ["L", DATA.levelNames.L], ["B", DATA.levelNames.B], ["R", DATA.levelNames.R]].forEach(function (x) {
+      var b = el("button", "text-tool", x[1]);
+      b.type = "button";
+      b.setAttribute("aria-pressed", (settings.partner_level || "") === x[0] ? "true" : "false");
+      b.addEventListener("click", function () { setSetting("partner_level", x[0]); });
+      lv.appendChild(b);
+    });
+    opts.appendChild(lv);
+    opts.appendChild(toggleTool("partner_hide", t("parallel_hide")));
+    var both = linkedBoth(right);
+    if (both) opts.appendChild(toggleTool("gaps", t("parallel_gaps")));
+    tools.appendChild(opts);
+
+    tools.appendChild(el("p", "vt-label pair-note", both ? t("parallel_links").replace("{lang}", names[right] || right)
+      : t("parallel_links_none")));
+
+    var recent = (settings.pairs || []).filter(function (p) {
+      return Array.isArray(p) && !(p[0] === left && p[1] === right) && DATA.languages.indexOf(p[0]) >= 0 &&
+        DATA.languages.indexOf(p[1]) >= 0 && p[0] !== p[1] && (p[0] === left || langHref(p[0]));
+    }).slice(0, 3);
+    if (recent.length) {
+      var chips = el("div", "pair-recent");
+      chips.appendChild(el("span", "vt-label", t("parallel_recent")));
+      recent.forEach(function (p) {
+        var b = el("button", "text-tool", (names[p[0]] || p[0]) + " \u00b7 " + (names[p[1]] || p[1]));
+        b.type = "button";
+        b.addEventListener("click", function () { readPair(p[0], p[1]); });
+        chips.appendChild(b);
+      });
+      tools.appendChild(chips);
     }
   }
 
@@ -3910,33 +4235,110 @@
   var speech = window.speechSynthesis;
   var LISTEN = "owb.listen";
   var RATES = [0.8, 1, 1.25, 1.5, 2];
-  var listen = { on: false, paused: false, at: 0, utter: null, rate: 1, voices: {} };
+  var listen = { on: false, paused: false, at: 0, utter: null, rate: 1, voices: {}, both: false };
   try {
     var kept = JSON.parse(localStorage.getItem(LISTEN) || "{}");
     if (RATES.indexOf(kept.rate) >= 0) listen.rate = kept.rate;
     if (kept.voices) listen.voices = kept.voices;
+    listen.both = !!kept.both;
   } catch (e) { /* defaults */ }
   function keepListen() {
-    try { localStorage.setItem(LISTEN, JSON.stringify({ rate: listen.rate, voices: listen.voices })); } catch (e) { /* ignore */ }
+    try { localStorage.setItem(LISTEN, JSON.stringify({ rate: listen.rate, voices: listen.voices, both: listen.both })); } catch (e) { /* ignore */ }
   }
 
   // A sentence as it is read: its language, and its text without verse
   // markers, in pieces of up to about 220 characters split at punctuation
   // (some voices stop after about fifteen seconds of one utterance).
-  function spoken(r) {
-    var lang = textLang(r);
-    var rest = flat(render(r.renderings[lang][settings.level])).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
-    var parts = [];
-    while (rest.length > 220) {
-      var cut = -1, re = /[,;:\u2014.!?]\s/g, m;
+  // Each part keeps where it starts in the whole (starts), so the word a
+  // voice is saying can be found on the page.
+  function spoken(r, lang, level) {
+    lang = lang || textLang(r);
+    var full = flat(render(r.renderings[lang][level || settings.level])).replace(new RegExp(VERSE.source, "g"), "").replace(/\s+/g, " ").trim();
+    var parts = [], starts = [], pos = 0;
+    while (full.length - pos > 220) {
+      var rest = full.slice(pos);
+      var cut = -1, re = /[,;:\u2014.!?\u3001\u3002]\s?/g, m;
       while ((m = re.exec(rest)) && m.index < 220) cut = m.index + 1;
       if (cut < 40) cut = rest.lastIndexOf(" ", 220);
       if (cut < 40) cut = 220;
       parts.push(rest.slice(0, cut).trim());
-      rest = rest.slice(cut).trim();
+      starts.push(pos);
+      pos += cut;
+      while (full[pos] === " ") pos++;
     }
-    if (rest) parts.push(rest);
-    return { lang: lang, parts: parts };
+    if (pos < full.length) { parts.push(full.slice(pos)); starts.push(pos); }
+    return { lang: lang, parts: parts, starts: starts, full: full };
+  }
+
+  // What is read for a sentence: its text, and in Parallel, when the
+  // reader asks for both, the other language's after it.
+  function readings(r) {
+    var out = [{ s: spoken(r), side: "pfirst" }];
+    var other = parallel() && partner();
+    if (listen.both && other && r.renderings[other] && r.renderings[other][partnerLevel()])
+      out.push({ s: spoken(r, other, partnerLevel()), side: "pother" });
+    return out;
+  }
+
+  // The word being said, lit where the browser can mark text (CSS custom
+  // highlights) and the voice says where it is (boundary events). Found in
+  // the sentence's text on the page, after the word lit before it.
+  var SKIP = ".pv, sup, .fn, .speaker-label, rt, button, .verse-num, .vn";
+  var spokenAt = { node: null, from: 0 };
+  function spokenText(root) {
+    var map = [], text = "";
+    var walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return n.parentElement && n.parentElement.closest(SKIP) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
+    });
+    for (var n = walk.nextNode(); n; n = walk.nextNode()) {
+      for (var i = 0; i < n.data.length; i++) {
+        var c = n.data[i];
+        if (/\s/.test(c)) { if (!text || text[text.length - 1] === " ") continue; c = " "; }
+        text += c;
+        map.push([n, i]);
+      }
+    }
+    return { text: text, map: map };
+  }
+  function sayingRoots(r, side) {
+    if (parallel()) return Array.prototype.slice.call(document.querySelectorAll('#text .prow[data-record="' + r.id + '"] .' + side + " .ptext"));
+    return Array.prototype.slice.call(document.querySelectorAll('#text .verse[data-record="' + r.id + '"]'));
+  }
+  function lightSpoken(r, side, said, at, len) {
+    if (!window.CSS || !CSS.highlights || typeof Highlight !== "function") return;
+    if (!len) {
+      var rest = said.slice(at);
+      var seg = window.Intl && Intl.Segmenter ? new Intl.Segmenter(undefined, { granularity: "word" }) : null;
+      var first = seg ? seg.segment(rest)[Symbol.iterator]().next().value : null;
+      len = first ? first.segment.length : (rest.search(/[\s,.;:!?]/) + 1 || rest.length + 1) - 1;
+    }
+    var word = said.slice(at, at + len).trim();
+    if (!word) return;
+    var roots = sayingRoots(r, side);
+    if (!roots.length) return;
+    // One run of text across the sentence's verses.
+    var all = { text: "", map: [] };
+    roots.forEach(function (root) {
+      var part = spokenText(root);
+      if (all.text && part.text && all.text[all.text.length - 1] !== " ") { all.text += " "; all.map.push(all.map[all.map.length - 1]); }
+      all.text += part.text;
+      all.map = all.map.concat(part.map);
+    });
+    var key = r.id + side;
+    var from = spokenAt.node === key ? spokenAt.from : 0;
+    var hit = all.text.indexOf(word, from);
+    if (hit < 0) hit = all.text.indexOf(word);
+    if (hit < 0) return;
+    spokenAt = { node: key, from: hit + word.length };
+    var a = all.map[hit], b = all.map[hit + word.length - 1];
+    var range = document.createRange();
+    range.setStart(a[0], a[1]);
+    range.setEnd(b[0], b[1] + 1);
+    CSS.highlights.set("owb-spoken", new Highlight(range));
+  }
+  function clearSpoken() {
+    spokenAt = { node: null, from: 0 };
+    if (window.CSS && CSS.highlights) CSS.highlights.delete("owb-spoken");
   }
 
   // The device's voices for a language, the most natural first, without
@@ -3974,7 +4376,7 @@
     var before = document.querySelector("#text .speaking");
     if (follow === "auto") follow = !before || inView(before);
     var first = null;
-    document.querySelectorAll("#text .verse").forEach(function (v) {
+    document.querySelectorAll("#text .verse, #text .prow[data-record]").forEach(function (v) {
       var on = r && v.dataset.record === r.id;
       v.classList.toggle("speaking", on);
       if (on && !first) first = v;
@@ -3998,7 +4400,10 @@
     if (i >= DATA.records.length) { stopListening(); return; }
     listen.at = i;
     listen.paused = false;
-    var s = spoken(DATA.records[i]);
+    clearSpoken();
+    var r = DATA.records[i];
+    var queue = readings(r).filter(function (q, n) { return n === 0 || voiceFor(q.s.lang); });
+    var s = queue[0].s;
     var voice = voiceFor(s.lang);
     // Voices known but none for this language: say so rather than read
     // the words in another language's voice.
@@ -4011,15 +4416,28 @@
     note.hidden = true;
     mark(jump === false ? "auto" : true);
     drawBar();
+    var q = 0;
     (function next(k) {
       var u = new SpeechSynthesisUtterance(s.parts[k]);
+      var side = queue[q].side, said = s;
       u.lang = s.lang;
       if (voice) u.voice = voice;
       u.rate = listen.rate;
+      u.onboundary = function (e) {
+        if (listen.utter !== u || (e.name && e.name !== "word")) return;
+        lightSpoken(r, side, said.full, said.starts[k] + e.charIndex, e.charLength);
+      };
       u.onend = function () {
         if (listen.utter !== u) return;   // stopped or moved on
-        if (k + 1 < s.parts.length) next(k + 1);
-        else speakRecord(i + 1, false);
+        if (k + 1 < s.parts.length) { next(k + 1); return; }
+        if (q + 1 < queue.length) {
+          q++;
+          s = queue[q].s;
+          voice = voiceFor(s.lang);
+          next(0);
+          return;
+        }
+        speakRecord(i + 1, false);
       };
       u.onerror = function (e) {
         if (listen.utter === u && e.error !== "interrupted" && e.error !== "canceled") stopListening();
@@ -4048,6 +4466,7 @@
     note.hidden = true;
     document.body.classList.remove("listening");
     document.querySelectorAll("#text .speaking").forEach(function (v) { v.classList.remove("speaking"); });
+    clearSpoken();
     startBtn.setAttribute("aria-pressed", "false");
     startBtn.focus({ preventScroll: true });
   }
@@ -4109,8 +4528,17 @@
     keepListen();
     if (!listen.paused) speakRecord(listen.at);
   });
+  // In Parallel: read each sentence in both languages, one after the other.
+  var bothBtn = el("button", "listen-rate listen-both", t("listen_both"));
+  bothBtn.type = "button";
+  bothBtn.addEventListener("click", function () {
+    listen.both = !listen.both;
+    keepListen();
+    if (!listen.paused) speakRecord(listen.at);
+    drawBar();
+  });
   var stopBtn = button("stop", t("listen_stop"), stopListening);
-  [prevBtn, playBtn, nextBtn, where, rateBtn, voiceSel, stopBtn].forEach(function (n) { row.appendChild(n); });
+  [prevBtn, playBtn, nextBtn, where, rateBtn, bothBtn, voiceSel, stopBtn].forEach(function (n) { row.appendChild(n); });
   var note = el("p", "listen-note", t("listen_no_voice"));
   note.hidden = true;
   bar.appendChild(row);
@@ -4127,6 +4555,8 @@
     playBtn.title = playBtn.getAttribute("aria-label");
     playBtn.querySelector("path").setAttribute("d", ICON[paused ? "play" : "pause"]);
     rateBtn.textContent = listen.rate + "\u00d7";
+    bothBtn.hidden = !parallel();
+    bothBtn.setAttribute("aria-pressed", listen.both ? "true" : "false");
   }
 
   // The voice menu offers the page language's best few voices, when there
