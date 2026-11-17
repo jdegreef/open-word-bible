@@ -1,7 +1,7 @@
 """Load the sentence records in content/ into the database.
 
     python manage.py import_content
-    python manage.py import_content --if-texts-loaded --budget 900   # every deploy
+    python manage.py import_content --if-texts-loaded --budget 900 --deadline $END   # every deploy
     python manage.py import_content --all               # every file, all of search
 
 Every record is checked first with owb.validate against the words already in
@@ -24,6 +24,14 @@ are left for the next run, so a deploy after a big change (or the first one,
 with no digests yet) still finishes, and the next deploys catch up.
 --search-budget SECONDS does the same for the search update below: no
 language is started once that long has passed since the command began.
+--deadline EPOCH_SECONDS is a hard end for the whole command, whatever a
+merge changed: no file is started after it, and a search language's update
+writes no batch of entries that would end after it (search.rebuild). Render
+stops a pre-deploy command after 30 minutes, counted from before migrate,
+and a language started just inside --search-budget could still need longer
+than what was left (Indonesian, the newest and last, after its first fifty
+books: deploys failed at Render's limit). What is left waits for the next
+deploy, and languages left behind go first then (search.order).
 With --separate-processes each language is updated by a process of its own
 (update_search), which a deploy needs to stay within the API's 512 MB.
 
@@ -73,21 +81,26 @@ class Command(BaseCommand):
         parser.add_argument("--search-budget", type=float, metavar="SECONDS",
                             help="Start updating no search language after this long (from the start); "
                                  "the rest wait for the next run")
+        parser.add_argument("--deadline", type=float, metavar="EPOCH_SECONDS",
+                            help="Start no file, and write no search entries, after this time "
+                                 "(seconds since 1970, as date +%%s gives); the rest wait for the next run")
         parser.add_argument("--separate-processes", action="store_true",
                             help="Update each search language in a process of its own (update_search)")
 
     def handle(self, *args, paths, if_texts_loaded=False, everything=False, budget=None, search_budget=None,
-               separate_processes=False, **options):
-        started = time.monotonic()
+               deadline=None, separate_processes=False, **options):
+        started = time.time()
         if if_texts_loaded and not Word.objects.exists():
             self.stdout.write("No source texts in the database yet; run import_texts, "
                               "then import_content. Nothing imported.")
             return
         self.run = ImportRun.objects.create(everything=everything)
         try:
-            self.import_files(paths, if_texts_loaded, everything, budget, started)
+            files_until = min(t for t in (None if budget is None else started + budget, deadline, float("inf"))
+                              if t is not None)
+            self.import_files(paths, if_texts_loaded, everything, files_until)
             self.update_search(everything, None if search_budget is None else started + search_budget,
-                               separate_processes)
+                               deadline, separate_processes)
         except CommandError as e:
             self.run.finish(error=str(e))
             raise
@@ -96,7 +109,7 @@ class Command(BaseCommand):
             raise
         self.run.finish()
 
-    def import_files(self, paths, if_texts_loaded, everything, budget, started):
+    def import_files(self, paths, if_texts_loaded, everything, until):
         files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
         if not files:
             raise CommandError("No content files found")
@@ -113,7 +126,7 @@ class Command(BaseCommand):
             if not everything and imported.get(name) == digest:
                 unchanged += 1
                 continue
-            if budget is not None and time.monotonic() - started > budget:
+            if time.time() > until:
                 left = files[i:]
                 break
             records = json.loads(data.decode("utf-8"))["records"]
@@ -141,17 +154,23 @@ class Command(BaseCommand):
         self.run.unchanged = unchanged
         self.stdout.write(f"{total} records imported" + (f"; {unchanged} files unchanged" if unchanged else ""))
         if left:
-            message = (f"Budget of {budget:.0f} s used up: {len(left)} file(s) left for the next "
+            message = (f"Time budget used up: {len(left)} file(s) left for the next "
                        f"run, from {left[0]}")
             self.stdout.write(message)
             self.run.skipped.append(message)
         self.stdout.flush()
 
-    def update_search(self, everything, until, separate):
+    def update_search(self, everything, until, stop, separate):
         self.stdout.flush()   # before the subprocesses write theirs
-        changes = search.rebuild(full=everything, until=until, separate=separate)
+        changes = search.rebuild(full=everything, until=until, separate=separate, stop=stop)
         self.stdout.write("search: " + ", ".join(
-            f"{lang} {c.entries} (+{c.added} -{c.removed})" for lang, c in changes.items()))
+            f"{lang} {c.entries} (+{c.added} -{c.removed}" + (f", {c.left} left" if c.left else "") + ")"
+            for lang, c in changes.items()))
+        part = [f"{lang} ({c.left} entries)" for lang, c in changes.items() if c.left]
+        if part:
+            message = f"Search deadline reached part way: {', '.join(part)} left for the next run"
+            self.stdout.write(message)
+            self.run.skipped.append(message)
         left = [lang for lang in search.site_build().LANGUAGES if lang not in changes]
         if left:
             message = f"Search budget used up: {', '.join(left)} left for the next run"
