@@ -177,6 +177,7 @@
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
+    { id: "checks", label: "Checks", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
@@ -1510,6 +1511,107 @@
           seg([["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], f.level, function (v) { f.level = v; route(); })),
         h("p", null, plural(split, "key term") + " split in " + langSel.selectedOptions[0].textContent + " at this level."),
         blocks.length ? blocks : empty("No sentence that uses a key term is drafted in this language yet.")];
+    });
+  };
+
+  // Checks (GET /api/admin/checks/): footnotes whose verse words the
+  // alternative or not the choice, and verses and glossary entries at odds
+  // with the language's terms glossary. Heuristics to look at, not rules.
+  var CHECKS = { lang: "en", kind: "all" };
+  var CHECK_KINDS = {
+    alternative: "Words the alternative",
+    choice_missing: "Choice not worded",
+    different_forms: "Two forms",
+    ruled_out: "Uses a ruled-out form"
+  };
+  VIEWS.checks = function () {
+    var f = CHECKS;
+    return api("/api/admin/checks/?lang=" + f.lang).then(function (d) {
+      var langSel = select("checks-lang", d.languages.map(function (l) {
+        return [l.code, l.name + (l.glossary ? " (glossary)" : "")];
+      }), f.lang);
+      langSel.setAttribute("aria-label", "Language");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; f.kind = "all"; route(); });
+      var name = d.languages.filter(function (l) { return l.code === d.language; }).map(function (l) { return l.name; })[0] || d.language;
+      function verseLink(x) {
+        return [h("a", { href: "#verse/" + x.verse }, x.label), h("div", { class: "admin-sub" }, x.record)];
+      }
+      function levels(x) { return (x.levels || [x.level]).join(", "); }
+      function glossaryLine(file, line) {
+        return h("a", { href: ghFile(file) + "#L" + line, rel: "noopener" }, "line " + line);
+      }
+
+      var notes = d.notes.hits.filter(function (x) { return f.kind === "all" || x.kind === f.kind; });
+      var kindSeg = seg([["all", "All (" + num(d.notes.total) + ")"],
+        ["alternative", CHECK_KINDS.alternative + " (" + num(d.notes.kinds.alternative) + ")"],
+        ["choice_missing", CHECK_KINDS.choice_missing + " (" + num(d.notes.kinds.choice_missing) + ")"]],
+        f.kind, function (v) { f.kind = v; route(); });
+      var noteRows = notes.map(function (x) {
+        var tags = [pill(CHECK_KINDS[x.kind] || x.kind, x.kind === "alternative" ? "warn" : "")];
+        if (x.kind === "alternative") {
+          tags.push(h("div", { class: "admin-sub" }, x.contrast === "english" ? "The English words the choice" : "Another level words the choice"));
+        }
+        if (x.english_too) tags.push(" ", pill("English too", "bad"));
+        return h("tr", null,
+          h("td", null, verseLink(x)),
+          h("td", null, levels(x), h("div", { class: "admin-sub" }, x.decision)),
+          h("td", null, tags),
+          h("td", { class: "admin-wrap" }, h("div", { lang: d.language }, x.choice),
+            x.alternative ? h("div", { class: "admin-sub", lang: d.language }, "Alternative: " + x.alternative) : null,
+            h("div", { class: "admin-sub" }, (x.kind === "alternative" ? "Verse has: " : "Verse lacks: ") + x.words.join(", "))),
+          h("td", { class: "admin-wrap", lang: d.language }, x.text));
+      });
+      var noteBlock = h("section", { class: "admin-block" },
+        h("h2", null, "Footnotes and verses"),
+        h("p", { class: "admin-sub" }, "Footnoted meaning decisions whose translated note says one thing while the verse says another: at some level the verse has an alternative's distinctive words and none of the choice's (while the English at that level, or another level of this language, words the choice), or it has none of a short choice's words where the English has them. Text variants, grammar and punctuation are left out. “English too”: the English verse words the alternative as well, so a fix may start there."),
+        h("div", { class: "admin-toolbar" }, kindSeg),
+        noteRows.length ? table(["Verse", "Levels", "Signal", "Note", "Verse text"], noteRows)
+          : empty(d.notes.total ? "None of this kind." : "No footnote and verse at odds in " + name + "."));
+
+      var g = d.glossary, glossBlock;
+      if (!g.file) {
+        glossBlock = h("section", { class: "admin-block" }, h("h2", null, "Terms glossary"),
+          empty(d.language === "en" ? "English has no terms glossary: the glossaries say how other languages word its terms." :
+            name + " has no terms glossary (docs/" + name.toLowerCase() + "-terms.md)."));
+      } else {
+        var verseRows = g.verses.hits.map(function (x) {
+          return h("tr", null,
+            h("td", null, verseLink(x)),
+            h("td", null, levels(x)),
+            h("td", null, pill(x.kind === "avoided" ? "Ruled out" : "Alternative only", x.kind === "avoided" ? "bad" : "warn")),
+            h("td", null, h("b", { lang: d.language }, x.form), h("div", { class: "admin-sub" }, "for “" + x.term + "”")),
+            h("td", { class: "admin-wrap" }, glossaryLine(g.file, x.row.line), " ", h("code", { lang: d.language }, x.row.forms),
+              x.allowed_by ? h("div", { class: "admin-sub" }, "This book's own entry gives it: ", glossaryLine(g.file, x.allowed_by)) : null),
+            h("td", { class: "admin-wrap", lang: d.language }, x.text));
+        });
+        var conflictRows = g.rows.map(function (c) {
+          return h("tr", null,
+            h("td", null, h("b", null, c.term)),
+            h("td", null, pill(CHECK_KINDS[c.kind] || c.kind, c.kind === "ruled_out" ? "bad" : "warn"),
+              c.forms.length ? h("div", { class: "admin-sub", lang: d.language }, c.forms.join(", ")) : null),
+            h("td", { class: "admin-wrap" }, h("ul", { class: "admin-examples" }, c.rows.map(function (r) {
+              return h("li", null, glossaryLine(g.file, r.line), " ", r.book ? h("span", { class: "admin-sub" }, r.book + " ") : null,
+                r.source + ": ", h("code", { lang: d.language }, r.forms));
+            }))));
+        });
+        glossBlock = h("section", { class: "admin-block" },
+          h("h2", null, "Terms glossary"),
+          h("p", { class: "admin-sub" }, "From ", h("a", { href: ghFile(g.file), rel: "noopener" }, g.file),
+            ": verses that use a form the glossary rules out (“Not *x*”, “never *x*”) or names only as an alternative, where the English verse has the entry's English term. An “Added while drafting” entry counts in its own book only."),
+          verseRows.length ? table(["Verse", "Levels", "Signal", "Form", "Glossary entry", "Verse text"], verseRows)
+            : empty("No verse uses a form the glossary rules out."),
+          h("h3", { class: "admin-h3" }, "Entries at odds"),
+          h("p", { class: "admin-sub" }, "Entries for one English term (articles, plurals and asides aside) whose forms share no word, or where one uses a form another rules out. Entries naming different source words are kept apart. Some differences are deliberate (two senses, two people of one name): read the entries' notes."),
+          conflictRows.length ? table(["English term", "Signal", "Entries"], conflictRows)
+            : empty("No two entries disagree."));
+      }
+      return [head("Text", "Checks", "Content checks from the database and the files the deploy carries (data/notes/, docs/*-terms.md). They are heuristics for a reviewer and never block a merge; scripts/content_checks.py prints the same lists."),
+        h("div", { class: "admin-toolbar" }, langSel),
+        h("div", { class: "admin-tiles" },
+          tile(num(d.notes.total), "footnote and verse mismatches"),
+          tile(g.file ? num(g.verses.total) : "—", "verses against the glossary"),
+          tile(g.file ? num(g.rows.length) : "—", "glossary terms at odds")),
+        noteBlock, glossBlock];
     });
   };
 
