@@ -2339,3 +2339,5 @@ records it. Empty until the first book is drafted.
 | Isaiah | Hephzibah; Beulah | Hefzibah; Beula (L); *Kesukaan-Ku Ada Padanya*; *Yang Bersuami* (B) | 62:4 |
 | Isaiah | Bozrah | Bozra | 63:1 |
 | Isaiah | the angel of his presence | *malaikat hadirat-Nya* | 63:9 |
+| Isaiah | Gad and Meni (gods of fortune) | Gad; Meni (*dewa keberuntungan*, *dewa nasib* at R) | 65:11 |
+| Isaiah | the God of amen | *Allah yang setia* (L); *Allah Sang Amin* (B); *Allah yang setia dan benar* (R) | 65:16 |
