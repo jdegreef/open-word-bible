@@ -94,6 +94,11 @@
           "L": "{{gender:Блаженна людина|Блаженний чоловік}}, що не ходить за порадою нечестивих, \\q і на шляху грішників не стоїть, \\q і на місці насмішників не сидить!",
           "B": "{{gender:Блаженна та людина|Блаженний той чоловік}}, що не живе за порадами нечестивих, \\q не зупиняється на стежці, якою ходять грішники, \\q і не сідає там, де збираються насмішники!",
           "R": "Справді добре живеться тій людині, що не слухає порад злих людей, \\q не стоїть на дорозі разом із грішниками \\q і не сідає з тими, хто насміхається."
+        },
+        "id": {
+          "L": "Berbahagialah orang yang tidak berjalan menurut nasihat orang fasik, \\q dan di jalan orang berdosa tidak berdiri, \\q dan di tempat duduk para pencemooh tidak duduk!",
+          "B": "Berbahagialah orang yang tidak mengikuti nasihat orang fasik, \\q tidak berdiri di jalan yang ditempuh orang berdosa, \\q dan tidak duduk di tempat para pencemooh berkumpul!",
+          "R": "Sungguh bahagia hidup orang yang tidak mengikuti nasihat orang jahat, \\q tidak berdiri di jalan bersama orang berdosa, \\q dan tidak duduk bersama orang-orang yang suka mengejek."
         }
       },
       "decisions": [
@@ -797,6 +802,84 @@
           "reason": "The cry of how well someone fares is \"блаженний\" at L and B, the word of the Beatitudes in the Ukrainian Gospels; Readable says it in everyday words, as the English does. The gender setting chooses \"людина\" or \"чоловік\", with the agreeing adjective inside the span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010022"
+          ],
+          "choice": "\"orang\" for \"the man\", with no gender span; \"berbahagialah\" (L, B), \"sungguh bahagia\" (R)",
+          "alternatives": [],
+          "reason": "Indonesian \"orang\" means a person of either sex, so the English gender spans of this psalm (and the \"they\"/\"he\" spans after it) have no Indonesian counterpart: \"orang\" and \"-nya\" are already inclusive (style guide section 8). This holds for the whole book, which has no gender spans in Indonesian. \"Berbahagialah\" is the glossary's word for \"blessed\" at Literal; Balanced keeps the exclamation, and Readable says it plainly, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010011",
+            "o190010010021",
+            "o190010010022",
+            "o190010010031",
+            "o190010010041",
+            "o190010010051",
+            "o190010010061",
+            "o190010010062",
+            "o190010010071",
+            "o190010010081",
+            "o190010010082",
+            "o190010010083",
+            "o190010010091",
+            "o190010010101",
+            "o190010010111",
+            "o190010010121",
+            "o190010010122",
+            "o190010010123",
+            "o190010010131",
+            "o190010010141",
+            "o190010010151"
+          ],
+          "choice": "\"{{divine_name:TUHAN|Yahweh}}\" for the divine name, and every pronoun for God in a deity_pronoun span",
+          "alternatives": [],
+          "reason": "For the whole of Psalms, as the Indonesian style guide sets (section 4): the name is printed \"TUHAN\" with \"Yahweh\" as the setting; pronouns for God are capitalised in a span (\"-{{deity_pronoun:nya|Nya}}\", \"{{deity_pronoun:engkau|Engkau}}\"), except at the start of a sentence. The psalmist says \"aku\" and speaks to God as \"Engkau\" (section 12).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-3",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010062",
+            "o190010010131"
+          ],
+          "choice": "\"orang fasik\" (L, B), \"orang jahat\" (R); \"pencemooh\" (L, B), \"orang-orang yang suka mengejek\" (R)",
+          "alternatives": [],
+          "reason": "The glossary forms for the wicked; the mockers are those who scorn wisdom and correction (m5).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -889,6 +972,11 @@
           "L": "Але в настанові {{divine_name:ГОСПОДА|Ягве}} — {{gender:її|його}} втіха, \\q і над {{deity_pronoun:його|Його}} настановою {{gender:вона|він}} шепоче вдень і вночі.",
           "B": "Навпаки, настанова {{divine_name:ГОСПОДА|Ягве}} — {{gender:її|його}} радість, \\q і {{gender:вона|він}} стиха повторює її собі вдень і вночі.",
           "R": "Навпаки, ця людина любить навчання {{divine_name:ГОСПОДА|Ягве}} і повторює його, роздумуючи над ним вдень і вночі."
+        },
+        "id": {
+          "L": "Tetapi kesukaannya ialah hukum {{divine_name:TUHAN|Yahweh}}, \\q dan hukum-{{deity_pronoun:nya|Nya}} ia gumamkan siang dan malam.",
+          "B": "Sebaliknya, kesukaannya ialah pengajaran {{divine_name:TUHAN|Yahweh}}, \\q dan siang dan malam ia mengucapkannya perlahan-lahan bagi dirinya sendiri.",
+          "R": "Sebaliknya, orang itu senang akan ajaran {{divine_name:TUHAN|Yahweh}} dan mengulang-ulangnya, sambil merenungkannya siang dan malam."
         }
       },
       "decisions": [
@@ -1458,6 +1546,29 @@
           "reason": "The English reads torah here as instruction, not a legal code; \"Закон\" would suggest the code of Moses alone. Psalm 119 keeps the same word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063",
+            "o190010020071"
+          ],
+          "choice": "\"hukum\" (L), \"pengajaran\" (B), \"ajaran\" (R) for torah; \"gumamkan\" (L), \"mengucapkannya perlahan-lahan\" (B), \"mengulang-ulangnya, sambil merenungkannya\" (R)",
+          "alternatives": [
+            "\"Taurat\" at Literal"
+          ],
+          "reason": "Torah here is the LORD's teaching (m1); Literal keeps the familiar \"hukum\", the levels after it say teaching, as the English does. The verb is reading or repeating under the breath (m2), not silent thought alone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1560,6 +1671,11 @@
           "L": "І {{gender:вона|він}} як дерево, пересаджене над потоками води, \\q що дає свій плід своєї пори, \\q і листя його не вʼяне; \\q і все, що {{gender:вона|він}} робить, вдається.",
           "B": "{{gender:Вона|Він}} — як дерево, посаджене біля водних потоків, \\q що родить плід, коли настає його пора, \\q і чиє листя ніколи не всихає. \\q Усе, що {{gender:вона|він}} робить, має добрий кінець.",
           "R": "Ця людина — як дерево, посаджене біля струмків. \\q Воно дає плоди вчасно, \\q і листя його не засихає. \\q Усе, що робить ця людина, вдається."
+        },
+        "id": {
+          "L": "Dan ia seperti pohon yang dipindahkan ke tepi aliran-aliran air, \\q yang memberikan buahnya pada musimnya, \\q dan daunnya tidak layu; \\q dan segala yang dilakukannya berhasil.",
+          "B": "Ia seperti pohon yang ditanam di tepi aliran-aliran air, \\q yang menghasilkan buah ketika musimnya tiba, \\q dan daunnya tidak pernah kering. \\q Apa saja yang dilakukannya berhasil.",
+          "R": "Orang itu seperti pohon yang ditanam di tepi sungai-sungai kecil. \\q Pohon itu berbuah pada waktunya, \\q dan daunnya tidak menjadi kering. \\q Apa saja yang dilakukan orang itu berhasil."
         }
       },
       "decisions": [
@@ -1748,6 +1864,23 @@
           "reason": "The tree was planted on purpose where it would thrive (m1); Literal and Balanced keep that sense, Readable says simply \"посаженное\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010030031"
+          ],
+          "choice": "\"dipindahkan ke tepi\" (L) for \"transplanted\"",
+          "alternatives": [],
+          "reason": "The tree is planted on purpose where it will thrive (m1); Literal keeps the moving, Balanced and Readable say \"ditanam\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1837,6 +1970,11 @@
           "L": "Не так нечестиві, \\q а [вони] як полова, яку розвіює вітер.",
           "B": "Нечестиві зовсім не такі. \\q Вони — як полова, яку розносить вітер.",
           "R": "Злі люди зовсім не такі. \\q Вони як суха лушпина зерна, яку здуває вітер."
+        },
+        "id": {
+          "L": "Tidak demikian orang fasik, \\q tetapi [mereka] seperti sekam yang ditiupkan angin.",
+          "B": "Orang fasik sama sekali tidak seperti itu. \\q Mereka seperti sekam yang diterbangkan angin.",
+          "R": "Orang jahat sama sekali tidak seperti itu. \\q Mereka seperti kulit gandum kering yang ditiup angin."
         }
       },
       "decisions": [
@@ -2123,6 +2261,11 @@
           "L": "Тому не встоять нечестиві на суді, \\q ані грішники в громаді праведних.",
           "B": "Ось чому нечестиві не встоять, коли настане суд, \\q і грішникам не буде місця в громаді праведних.",
           "R": "Тож коли Бог судитиме, злі люди не встоять. \\q Грішникам не буде місця серед тих, хто чинить правильно."
+        },
+        "id": {
+          "L": "Karena itu orang fasik tidak akan bangkit dalam penghakiman, \\q dan orang berdosa [tidak akan bangkit] dalam perkumpulan orang benar.",
+          "B": "Itulah sebabnya orang fasik tidak akan tahan berdiri ketika penghakiman datang, \\q dan orang berdosa tidak akan mendapat tempat dalam perkumpulan orang benar.",
+          "R": "Jadi, ketika Allah menghakimi, orang jahat tidak akan dapat bertahan. \\q Orang berdosa tidak akan mendapat tempat di antara orang-orang yang melakukan apa yang benar."
         }
       },
       "decisions": [
@@ -2419,6 +2562,11 @@
           "L": "Бо {{divine_name:ГОСПОДЬ|Ягве}} знає дорогу праведних, \\q а дорога нечестивих загине.",
           "B": "Бо {{divine_name:ГОСПОДЬ|Ягве}} знає шлях праведних і дбає про нього, \\q а шлях нечестивих веде до загибелі.",
           "R": "{{divine_name:ГОСПОДЬ|Ягве}} пильнує життя тих, хто чинить правильно. \\q А життя злих людей закінчиться загибеллю."
+        },
+        "id": {
+          "L": "Sebab {{divine_name:TUHAN|Yahweh}} mengenal jalan orang benar, \\q dan jalan orang fasik akan binasa.",
+          "B": "Sebab {{divine_name:TUHAN|Yahweh}} mengenal jalan orang benar dan memeliharanya, \\q tetapi jalan orang fasik berakhir dengan kebinasaan.",
+          "R": "{{divine_name:TUHAN|Yahweh}} menjaga hidup orang-orang yang melakukan apa yang benar. \\q Tetapi hidup orang jahat akan berakhir dengan kehancuran."
         }
       },
       "decisions": [
@@ -2570,6 +2718,25 @@
             "знает путь"
           ],
           "reason": "Knowing here is knowing with care (m1), and the way is a whole way of life (m2); Balanced keeps \"путь\" and adds the care, Readable says \"жизнь\", as the English does. Literal keeps the participle.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010060021"
+          ],
+          "choice": "\"mengenal\" (L), \"mengenal ... dan memeliharanya\" (B), \"menjaga\" (R)",
+          "alternatives": [],
+          "reason": "To know here is to know with care and approval (m1), which Balanced and Readable make explicit, as the English does.",
           "uncertain": false,
           "footnote": false
         }
