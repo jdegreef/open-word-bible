@@ -2358,3 +2358,9 @@ records it. Empty until the first book is drafted.
 | Jeremiah | Holon; Jahaz; Mephaath; Beth-diblathaim; Beth-gamul; Beth-meon; Kerioth; Bozrah | Holon; Yahas; Mefaat; Bet-Diblataim; Bet-Gamul; Bet-Meon; Keriot; Bozra | 48:21-24 |
 | Jeremiah | Kir-heres | Kir-Heres | 48:31 |
 | Jeremiah | Jazer; Sibmah; Elealeh; Eglath-shelishiyah; Nimrim | Yaezer; Sibma; Elale; Eglat-Selisia; Nimrim | 48:32-34 |
+| Jeremiah | Milcom; Rabbah; Ai (in Ammon) | Milkom; Raba; Ai | 49:1-3 |
+| Jeremiah | sons of the east | bani Timur (L); orang-orang dari timur (B); suku-suku padang gurun di timur (R) | 49:28 |
+| Jeremiah | Hamath; Arpad; Ben-hadad | Hamat; Arpad; Ben-Hadad | 49:23-27 |
+| Jeremiah | Bel; Merodach | Bel; Merodakh (L), Marduk (B, R) | 50:2 |
+| Jeremiah | Merathaim; Pekod | Merataim; Pekod | 50:21 |
+| Jeremiah | Arrogance (a name for Babylon) | Kecongkakan (L); Si Congkak (B); kota yang sombong (R) | 50:31 |
