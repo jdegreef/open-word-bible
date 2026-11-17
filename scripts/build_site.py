@@ -1202,10 +1202,23 @@ def chapter_notes(records, chapter, lang="en", words=None):
         return (f' <a class="note-article" href="{esc(a["url"])}">'
                 f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
                 f'<span{attr}>{esc(a["title"], quote=False)}</span> →</a>')
+    why_label = esc(catalog(lang)["compare.ui"]["why"], quote=False)
+
+    def why(r, d):
+        """The decision's reason, folded under the note: the reasoning the
+        site exists to show, in the page as served, so search engines and
+        AI answers read it too (the reader opens it in its panel)."""
+        own = translated.get(r["id"], {}).get(d["id"], {}).get("reason")
+        reason = own or d.get("reason")
+        if not reason:
+            return ""
+        attr = ' lang="en"' if not own and lang != "en" else ""
+        return (f'<details class="note-why"><summary>{why_label}</summary>'
+                f'<p{attr}>{esc(markup.render(reason), quote=False)}</p></details>')
     items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
                     f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
                     f'<span class="note-text">{note_html(d, lang, translated.get(r["id"], {}).get(d["id"]))}'
-                    f'</span>{more(r, d)}</span></li>'
+                    f'</span>{more(r, d)}</span>{why(r, d)}</li>'
                     for i, (r, d) in enumerate(notes))
     heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
     return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
@@ -2636,7 +2649,7 @@ def read_page(lang="en"):
 <header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
-<p class="dek">{t(lang, "read.dek")}</p>
+<p class="dek">{t(lang, "read.dek", n=len(complete_languages()))}</p>
 <p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a>
 <a class="button ghost" href="{url(lang, "/plans/")}">{icon(ICONS["calendar"])}{t(lang, "nav.plans")}</a></p>
 </header>
@@ -3187,6 +3200,35 @@ def example_html(lang="en"):
 """
 
 
+@functools.lru_cache(maxsize=None)
+def language_coverage():
+    """Each reading language's share of the Bible's sentence records, as
+    {code: (drafted, total)}, so the home, Read and About pages say where
+    the work stands without naming languages in their messages."""
+    records = all_records()
+    return {code: (sum(code in r["renderings"] for r in records), len(records)) for code in LANGUAGES}
+
+
+def complete_languages():
+    """The languages with every sentence of the Bible drafted."""
+    return [code for code, (drafted, total) in language_coverage().items() if drafted == total]
+
+
+def progress_text(lang):
+    """The home page's progress paragraph: how many languages have the whole
+    Bible, each language still under way and how far it has got, and that
+    all of it is an unreviewed AI-assisted draft."""
+    names = catalog(lang)["language_names"]
+    parts = [t(lang, "home.progress_full", n=len(complete_languages()))]
+    for code, (drafted, total) in language_coverage().items():
+        if 0 < drafted < total:
+            parts.append(t(lang, "home.progress_partial", language=html.escape(names[code]),
+                           pct=min(99, round(100 * drafted / total))))
+    parts.append(t(lang, "home.progress_review"))
+    # Japanese sentences, ending in 。, run on without a space.
+    return "".join(part + ("" if part.endswith("。") else " ") for part in parts).rstrip()
+
+
 def progress_html(lang="en"):
     """The home page's progress: sentences and decisions, in the page's
     language only (the footer maps the books). A sentence's decisions in
@@ -3201,7 +3243,7 @@ def progress_html(lang="en"):
 <div><b>{decisions}</b><span>{t(lang, "home.stat_decisions")}</span></div>
 <div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
-<p>{t(lang, "home.progress_text")}</p>
+<p>{progress_text(lang)}</p>
 </section>
 """
 
@@ -3481,7 +3523,7 @@ def home_page(lang="en"):
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
-<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(LANGUAGES) - 1)}</li>
+<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(complete_languages()))}</li>
 </ul>
 </section>
 {verse_of_the_day(lang)}
@@ -3534,7 +3576,7 @@ def about_page(lang="en"):
     body = f"""
 <div class="prose">
 <h1>{t(lang, "about.title")}</h1>
-<p>{t(lang, "about.intro")}</p>
+<p>{t(lang, "about.intro", n=len(complete_languages()))}</p>
 <h2>{t(lang, "about.licences")}</h2>
 <p>{t(lang, "about.licences_text")}</p>
 <p>{t(lang, "about.source")} <a href="{GITHUB_URL}">github.com/jdegreef/open-word-bible</a>.</p>
@@ -4032,23 +4074,27 @@ def variants_page(lang="en"):
     (linked to the reader), the reading followed and the others."""
     ui = catalog(lang)
     groups, jump = [], []
+    english = False  # a note shown in English because it has no current translation
     for book, found in footnoted_variants():
         name = html.escape(book_name(book, lang))
         items = []
+        notes = book_notes(book, lang)
         for r, d in found:
             ref = refs.parse(r["refs"][0])
             label = html.escape(verse_name(book, ref.chapter, ref.verse, lang))
             href = verse_link(book, ref.chapter, ref.verse, lang)
             where = f'<a href="{href}">{label}</a>' if href else label
+            tr = notes.get(r["id"], {}).get(d["id"])
+            english = english or (lang != "en" and not tr)
             items.append(f'<li class="variant"><span class="variant-ref">{where}</span> '
-                         f'<span class="variant-note">{note_html(d, lang)}</span></li>')
+                         f'<span class="variant-note">{note_html(d, lang, tr)}</span></li>')
         count = t(lang, "variants.count_one") if len(found) == 1 else t(lang, "variants.count", n=len(found))
         code = book.lower()
         jump.append(f'<li><a href="#{code}">{name}</a></li>')
         groups.append(f'<section class="variant-book" id="{code}" aria-labelledby="{code}-h">'
                       f'<h2 id="{code}-h">{name} <span class="fine">{html.escape(count)}</span></h2>'
                       f'<ul class="variant-list">{"".join(items)}</ul></section>')
-    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if lang != "en" else ""
+    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if english else ""
     body = f"""
 <header class="page-head">
 <p class="eyebrow">{t(lang, "variants.title")}</p>
@@ -5558,10 +5604,24 @@ def build(out):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
-    pages, indexed, feeds = {}, [], {}
+    # Each file is written as soon as it is made, not gathered first: the
+    # whole site (over 3 GB) held in memory took the build past 8 GB, more
+    # than Render's build machine has, and deploys failed (2026-11-15).
+    written = []
+
+    def write(rel, text):
+        path = out / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        written.append(rel)
+
+    def page_file(page_url):
+        return (page_url.strip("/") + "/index.html").lstrip("/")
+
+    indexed = []
     for lang in LANGUAGES:
         def add(path, text, index=True):
-            pages[url(lang, path)] = text
+            write(page_file(url(lang, path)), text)
             if index:
                 indexed.append(url(lang, path))
 
@@ -5597,8 +5657,8 @@ def build(out):
         articles = load_articles(lang)
         add("/articles/", articles_page(articles, lang), index=bool(articles))
         if articles:
-            feeds[feed_url(lang).lstrip("/")] = articles_feed(articles, lang)
-        feeds[votd_feed_url(lang).lstrip("/")] = votd_feed(lang)
+            write(feed_url(lang).lstrip("/"), articles_feed(articles, lang))
+        write(votd_feed_url(lang).lstrip("/"), votd_feed(lang))
         for article in articles:
             add(article_url(article), article_page(article, articles, lang))
         add("/account/", account_page(lang), index=False)
@@ -5611,17 +5671,16 @@ def build(out):
         add(MY_PLANS_PATH, my_plans_page(lang), index=False)
         add("/groups/", groups_page(lang), index=False)
     # The admin is in English only (admin_page).
-    pages["/admin/"] = admin_page()
+    write(page_file("/admin/"), admin_page())
     # A plan's page is in the languages that offer it.
     offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
     for plan in load_plans():
         langs = tuple(code for code in LANGUAGES if plan.id in offered[code])
         for code in langs:
             path = plan_url(plan)
-            pages[url(code, path)] = plan_page(plan, code, langs)
+            write(page_file(url(code, path)), plan_page(plan, code, langs))
             indexed.append(url(code, path))
-    files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
-    files.update(feeds)
+    files = {}
     files["404.html"] = not_found_page()
     files["sitemap.xml"] = sitemap(indexed)
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
@@ -5631,17 +5690,14 @@ def build(out):
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     files["basemap.json"] = basemap_file()[0]
-    files.update(verse_files())
-    files.update(editions_files())
-    files.update(word_files())
-    files.update(chapter_data_files())
-    for lang in LANGUAGES:
-        files[f"search-ui-{lang}.json"] = search_ui(lang)
-        files[f"plans-{lang}.json"] = plans_json(lang)
     for rel, text in files.items():
-        path = out / rel
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding="utf-8")
+        write(rel, text)
+    for made in (verse_files, editions_files, word_files, chapter_data_files):
+        for rel, text in made().items():
+            write(rel, text)
+    for lang in LANGUAGES:
+        write(f"search-ui-{lang}.json", search_ui(lang))
+        write(f"plans-{lang}.json", plans_json(lang))
     blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
     for rel, data in blobs.items():
         path = out / rel
@@ -5652,7 +5708,7 @@ def build(out):
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
+    return sorted(set(written)) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
                             "saved.js", "groups.js", "search.js", "site.js", "style.css"]
 
 
