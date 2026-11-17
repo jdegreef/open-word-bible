@@ -2268,3 +2268,16 @@ records it. Empty until the first book is drafted.
 | Amos | sycamore figs | *pohon ara hutan* | 7:14 |
 | Amos | Caphtor | Kaftor (L, B); Kreta (R) | 9:7 |
 | Amos | the fallen booth of David | *pondok Daud yang telah roboh* | 9:11 |
+| Obadiah | Sepharad | Sefarad | 1:20 |
+| Micah | Moresheth; Moresheth-gath | Moresyet (as Jeremiah 26:18); Moresyet-Gat | 1:1, 14 |
+| Micah | Beth-leaphrah; Shaphir; Zaanan; Beth-ezel; Maroth | Bet-Leafra; Syafir; Zaanan; Bet-Ezel; Marot; Readable adds the meanings (*Rumah Debu*, *Kota Indah*, *Kota Keluar*, *Kota Pahit*, *Kota Dusta* for Akhzib) | 1:10–14 |
+| Micah | Mareshah | Maresa, as 2 Chronicles 11:8 (Joshua 15:44 has Maresya: one of the two should change) | 1:15 |
+| Micah | preach (*nataf*, "drip") | *bernubuat* (L, B); *berkhotbah*, *pengkhotbah* (R) | 2:6, 11 |
+| Micah | assembly of the LORD | *jemaah TUHAN* | 2:5 |
+| Micah | seers; diviners; divination | *pelihat*; *tukang tenung*; *tenung* | 3:6–7 |
+| Micah | tower of the flock (*migdal-'eder*) | *menara kawanan ternak* (L), *menara jaga kawanan ternak* (B), translated, not the place name Migdal-Eder | 4:8 |
+| Micah | love of *hesed* | *mencintai kasih setia* (L); *mencintai kesetiaan* (B); *suka berbuat baik serta setia* (R), the founder's ruling for this verse | 6:8 |
+| Micah | walk humbly with your God | *berjalan dengan rendah hati bersama Allahmu* (L); *hidup dengan rendah hati bersama Allahmu* (B); *hidup dengan rendah hati, menaati Allahmu* (R) | 6:8 |
+| Malachi | my messenger; the messenger of the covenant | *utusan-Ku*; *utusan perjanjian* (lowercase) | 3:1 |
+| Malachi | on the day when I act | *pada hari yang Aku siapkan* (L); *pada hari Aku bertindak* (B, R) | 3:17, 21 |
+| Malachi | the sun of righteousness | *matahari kebenaran* (lowercase) | 3:20 |

@@ -199,6 +199,9 @@ class SearchLanguage(models.Model):
     code = models.CharField(max_length=3, primary_key=True)
     books = models.JSONField()
     pages = models.JSONField()
+    checked = models.DateTimeField(null=True, blank=True,
+                                   help_text="When its entries were last brought fully up to date "
+                                             "(search.rebuild takes the longest waiting first)")
 
     def __str__(self):
         return self.code
