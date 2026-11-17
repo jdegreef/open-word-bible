@@ -1672,6 +1672,43 @@ class SearchMetadataTest(unittest.TestCase):
         self.assertIn('<meta property="og:locale" content="en_US">', self.page("jhn/3"))
         self.assertIn('<meta property="og:locale" content="pt_BR">', self.page("pt/jhn/3"))
 
+class VersePageTest(unittest.TestCase):
+    def test_every_verse_of_the_day_with_records_has_a_page(self):
+        data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
+        ids = build_site.verse_page_ids()
+        self.assertEqual(set(ids), {v for v in data["refs"] if build_site.verse_records(v)})
+        self.assertIn("JHN.3.16", ids)
+        self.assertEqual(build_site.verse_page_url("JHN.3.16"), "/jhn/3/16/")
+
+    def test_a_verse_page_shows_three_levels_the_original_and_the_reasoning(self):
+        page = build_site.verse_page("JHN.3.16", "en")
+        levels = build_site.verse_levels("JHN.3.16", "en")
+        for code in "LBR":
+            self.assertIn(html.escape(levels[code], quote=False), page)
+        self.assertIn("<title>John 3:16 at three levels, with the reasoning · Open Word Bible</title>", page)
+        # The Greek comes from the source data, word by word.
+        _, words = build_site.load_chapter("JHN", 3)
+        self.assertIn(words["JHN.3.16"][0]["text"], page)
+        self.assertIn(", ἵνα", page)
+        record = build_site.verse_records("JHN.3.16")[0]
+        reason = next(d["reason"] for d in record["decisions"] if d["layer"] == "meaning")
+        self.assertIn(html.escape(build_site.markup.render(reason), quote=False), page)
+        self.assertIn('href="/jhn/3/#v16"', page)
+        data = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)]
+        work = next(d for d in data if d["@type"] == "CreativeWork")
+        self.assertEqual(work["text"], levels["B"])
+        self.assertEqual(work["creativeWorkStatus"], "Draft")
+
+    def test_a_verse_page_is_only_in_languages_it_is_translated_into(self):
+        for vid in build_site.verse_page_ids():
+            for lang in build_site.verse_page_languages(vid):
+                self.assertTrue(all(lang in r["renderings"] for r in build_site.verse_records(vid)), (vid, lang))
+
+    def test_chapter_links_its_verse_pages(self):
+        self.assertIn('<a href="/jhn/3/16/">John 3:16</a>', build_site.verse_page_links("JHN", 3, "en"))
+        none = next((b, c) for b, c in build_site.chapters() if not build_site.verse_pages_in_chapter(b, c))
+        self.assertEqual(build_site.verse_page_links(*none, "en"), "")
+
 
 class SpriteTest(unittest.TestCase):
     def test_icons_come_from_the_sprite(self):
