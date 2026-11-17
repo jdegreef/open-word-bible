@@ -29,6 +29,14 @@ def built_site():
     return out
 
 
+def sitemap_text(out):
+    """Every page the sitemaps list: the language sitemaps that sitemap.xml
+    indexes (build_site.sitemaps), read together."""
+    index = (out / "sitemap.xml").read_text(encoding="utf-8")
+    return "".join((out / loc.split("/")[-1]).read_text(encoding="utf-8")
+                   for loc in re.findall(r"<loc>([^<]+)</loc>", index))
+
+
 SHARED = re.compile(r'<script src="(/(?:chapter-data/[^"?]+|reader-[a-z]+)\.js\?v=[0-9a-f]+)"></script>')
 
 

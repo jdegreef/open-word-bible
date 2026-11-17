@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, sitemap_text  # noqa: E402
 
 
 class PlanDataTest(unittest.TestCase):
@@ -80,7 +80,7 @@ class PlanSiteTest(unittest.TestCase):
         return (self.out / (rel + "index.html" if rel.endswith("/") or not rel else rel)).read_text(encoding="utf-8")
 
     def test_plans_page_lists_the_plans_offered_in_its_language(self):
-        sitemap = self.read("/sitemap.xml")
+        sitemap = sitemap_text(self.out)
         for lang in build_site.LANGUAGES:
             page = self.read(build_site.url(lang, "/plans/"))
             offered = build_site.available_plans(lang)

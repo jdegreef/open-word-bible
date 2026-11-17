@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import crossrefs  # noqa: E402
-from tests.site_build import built_site, page_data  # noqa: E402
+from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
 
 
 class SiteTest(unittest.TestCase):
@@ -54,7 +54,7 @@ class SiteTest(unittest.TestCase):
         self.assertFalse(has_control("hi", "jhn", "3"))
 
     def test_account_pages_are_built_but_not_indexed(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         for name, marker in (("account", 'id="name-form"'), ("login", 'id="login-form"'),
                              ("reset-password", 'id="reset-form"'), ("handoff", 'id="handoff"')):
             page = (self.out / name / "index.html").read_text(encoding="utf-8")
@@ -99,7 +99,7 @@ class SiteTest(unittest.TestCase):
         self.assertIn(build_site.asset("admin.css"), page)
         self.assertTrue((self.out / "admin.js").is_file())
         self.assertFalse((self.out / "es" / "admin").exists())
-        self.assertNotIn("/admin/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        self.assertNotIn("/admin/", sitemap_text(self.out))
         # The account menu's Admin link opens it, for anyone on the team.
         self.assertIn('<a class="pop-item admin-link" href="/admin/" hidden>',
                       (self.out / "es" / "index.html").read_text(encoding="utf-8"))
@@ -337,7 +337,7 @@ class SiteTest(unittest.TestCase):
 
     def test_there_is_no_status_page(self):
         # The translation status page was removed: nothing builds or links to it.
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         self.assertNotIn("/about/status/", sitemap)
         for lang in build_site.LANGUAGES:
             path = build_site.url(lang, "/about/status/")
@@ -407,7 +407,7 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(self.ld("jhn/3", "Chapter")["license"], build_site.CC0_URL)
 
     def test_book_pages_introduce_the_books_that_have_one(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         intros = sorted(p.stem for p in build_site.INTROS.glob("*.md"))
         self.assertTrue(intros)
         for book in intros:
@@ -521,7 +521,7 @@ class SiteTest(unittest.TestCase):
         self.assertFalse(set(five[0]["source"]["tokens"]) & set(five[1]["source"]["tokens"]))
 
     def test_pages_have_canonical_urls_and_a_sitemap(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         for path in ("", "read/", "about/", "jhn/1/", "php/4/"):
             url = f"{build_site.SITE_URL}/{path}"
             self.assertIn(f"<loc>{url}</loc>", sitemap)
@@ -713,7 +713,7 @@ class SiteTest(unittest.TestCase):
         chapters = [p.chapter for p in dict(build_site.books())["JHN"]]
         self.assertEqual([int(c) for c in re.findall(r'class="ed-chapter" id="c(\d+)"', page)], chapters)
         self.assertIn('<meta name="robots" content="noindex">', page)
-        self.assertNotIn("/jhn/read/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        self.assertNotIn("/jhn/read/", sitemap_text(self.out))
         data = json.loads(re.search(r'<script type="application/json" id="edition-data">(.*?)</script>', page, re.S)[1])
         self.assertEqual((data["book"], data["lang"], data["chapters"]), ("JHN", "en", chapters))
         # The book page and the chapter pages lead to it.
@@ -856,7 +856,8 @@ class SiteTest(unittest.TestCase):
         names = {(p.book, p.chapter): (p.name, p.complete) for p in build_site.passages()}
         self.assertEqual(names[("PHP", 2)], ("Philippians 2", True))
         page = (self.out / "php" / "2" / "index.html").read_text(encoding="utf-8")
-        self.assertIn("<title>Philippians 2 · Open Word Bible</title>", page)
+        # The title names the chapter, then the stories its headings name.
+        self.assertRegex(page, r"<title>Philippians 2(: [^<]+)? · Open Word Bible</title>")
         self.assertNotIn("Sample passage", page)
 
     def test_reader_links_every_chapter_and_its_neighbours(self):
@@ -1301,7 +1302,7 @@ class SiteTest(unittest.TestCase):
             self.assertIn(build_site.url(lang, "/offline/"), precache)
         page = (self.out / "jhn" / "2" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<link rel="manifest" href="/manifest.webmanifest">', page)
-        self.assertNotIn("/offline/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        self.assertNotIn("/offline/", sitemap_text(self.out))
 
     def test_reader_can_read_aloud(self):
         for code in build_site.LANGUAGES:
@@ -1315,7 +1316,7 @@ class SiteTest(unittest.TestCase):
                 self.assertTrue(ui.get(key), (code, key))
 
     def test_saved_verses_page(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         self.assertNotIn("/saved/", sitemap)
         for code in build_site.LANGUAGES:
             rel = build_site.url(code, "/saved/").lstrip("/")
@@ -1378,7 +1379,7 @@ class SiteTest(unittest.TestCase):
                       (self.out / "index.html").read_text(encoding="utf-8"))
 
     def test_offline_pages_are_built_but_not_indexed(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         self.assertNotIn("/offline/", sitemap)
         for code in build_site.LANGUAGES:
             page = self.built(build_site.url(code, "/offline/")).read_text(encoding="utf-8")
@@ -1536,6 +1537,137 @@ class SharedDataTest(unittest.TestCase):
                     self.assertTrue(text.strip(), where)
                     # Shown as plain text under the title: no reader settings.
                     self.assertNotIn("{{", text, where)
+
+class SearchMetadataTest(unittest.TestCase):
+    """What search engines and AI answer engines read on a page: titles,
+    descriptions, addresses for verses and sections, linked data and the
+    sitemaps."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.out = built_site()
+
+    def page(self, rel):
+        return (self.out / rel / "index.html").read_text(encoding="utf-8")
+
+    def ld(self, page, kind):
+        found = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)]
+        return next(d for d in found if d["@type"] == kind)
+
+    def test_chapter_title_names_its_stories(self):
+        page = self.page("jhn/3")
+        self.assertIn("<title>John 3: Jesus and Nicodemus", page)
+        title = re.search(r"<title>(.*?) · Open Word Bible</title>", page)[1]
+        self.assertLessEqual(build_site.text_width(html.unescape(title)), build_site.TITLE_LIMIT)
+
+    def test_chapter_description_is_its_summary(self):
+        summary = build_site.summaries()[("JHN", 3)]["en"]
+        description = html.unescape(re.search(r'<meta name="description" content="([^"]*)"', self.page("jhn/3"))[1])
+        self.assertEqual(description, build_site.shorten(summary))
+        self.assertTrue(summary.startswith(description.rstrip("…")))
+
+    def test_shorten(self):
+        self.assertEqual(build_site.shorten("Short."), "Short.")
+        long = "One sentence that runs on for a while. " * 8
+        cut = build_site.shorten(long)
+        self.assertLessEqual(build_site.text_width(cut), 160)
+        self.assertTrue(cut.endswith("."))
+        words = build_site.shorten("word " * 60)
+        self.assertTrue(words.endswith("…"))
+        self.assertLessEqual(build_site.text_width(words), 160)
+        # A Japanese character is about two letters wide in results.
+        self.assertLessEqual(build_site.text_width(build_site.shorten("あ" * 200)), 160)
+
+    def test_every_verse_and_section_has_an_address(self):
+        for rel in ("jhn/3", "jhn/8", "psa/23"):
+            page = self.page(rel)
+            text = re.search(r'<div class="text" id="text">(.*?)</div>\n', page, re.S)[1]
+            ids = re.findall(r'id="(v[^"]+)"', text)
+            self.assertEqual(len(ids), len(set(ids)), rel)
+            verses = list(dict.fromkeys(re.findall(r'data-v="([^"]+)"', text)))
+            self.assertEqual(ids, [f"v{v}" for v in verses], rel)
+            heads = re.findall(r'<h2 class="section-head[^"]*" id="(s[0-9-]+)"', text)
+            self.assertEqual(len(heads), text.count('class="section-head'), rel)
+        self.assertIn('id="s7-53"', self.page("jhn/8"))
+        # The book's outline links each heading to its section.
+        self.assertIn('href="/jhn/3/#s1"', self.page("jhn"))
+
+    def test_book_outline_has_each_chapter_summary(self):
+        page = self.page("jhn")
+        summary = build_site.summaries()[("JHN", 3)]["en"]
+        self.assertIn(f'<span class="outline-summary">{html.escape(summary)}</span>', page)
+        book = self.ld(page, "Book")
+        self.assertEqual(book["name"], "John")
+        self.assertEqual(book["abstract"], build_site.load_intro("JHN")["summary"])
+        self.assertEqual(book["hasPart"][2]["url"], f"{build_site.SITE_URL}/jhn/3/")
+
+    def test_chapter_links_to_its_book_introduction(self):
+        self.assertIn('<p class="chapter-book"><a href="/jhn/">Introduction to John', self.page("jhn/3"))
+
+    def test_chapter_linked_data(self):
+        chapter = self.ld(self.page("jhn/3"), "Chapter")
+        self.assertEqual(chapter["position"], 3)
+        self.assertEqual(chapter["isPartOf"]["name"], "John")
+        self.assertEqual(chapter["isPartOf"]["url"], f"{build_site.SITE_URL}/jhn/")
+        self.assertEqual(chapter["description"], build_site.summaries()[("JHN", 3)]["en"])
+        self.assertEqual(chapter["hasPart"][0], {"@type": "CreativeWork", "name": "Jesus and Nicodemus",
+                                                 "url": f"{build_site.SITE_URL}/jhn/3/#s1"})
+
+    def test_a_chapter_not_wholly_translated_is_not_indexed(self):
+        partial = next(((b, c, lang) for lang in build_site.LANGUAGES for b, c in build_site.chapters()
+                        if not build_site.chapter_indexed(b, c, lang)), None)
+        if partial is None:
+            self.skipTest("every chapter is in every language")
+        book, chapter, lang = partial
+        rel = build_site.url(lang, build_site.chapter_url(book, chapter)).strip("/")
+        page = self.page(rel)
+        self.assertIn('<meta name="robots" content="noindex, follow">', page)
+        self.assertNotIn('rel="canonical"', page)
+        self.assertNotIn(f'hreflang="{lang}" href', page)
+        self.assertNotIn(f"<loc>{build_site.SITE_URL}/{rel}/</loc>", sitemap_text(self.out))
+        english = self.page(build_site.chapter_url(book, chapter).strip("/"))
+        self.assertNotIn(f'hreflang="{lang}" href', english)
+
+    def test_sitemaps_list_each_language_and_its_alternates(self):
+        index = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("<sitemapindex", index)
+        self.assertIn(f"<loc>{build_site.SITE_URL}/sitemap-en.xml</loc>", index)
+        en = (self.out / "sitemap-en.xml").read_text(encoding="utf-8")
+        row = re.search(rf"<url><loc>{build_site.SITE_URL}/jhn/3/</loc>.*?</url>", en)[0]
+        self.assertIn(f'hreflang="es" href="{build_site.SITE_URL}/es/jhn/3/"', row)
+        self.assertIn(f'hreflang="x-default" href="{build_site.SITE_URL}/jhn/3/"', row)
+
+    def test_sitemap_lastmod_comes_from_git(self):
+        dates = {"content/JHN/JHN.3.1-21.json": "2026-11-01", "data/headings/JHN.json": "2026-11-03"}
+        with mock.patch.object(build_site, "git_dates", return_value=dates):
+            files = build_site.sitemaps([build_site.SitemapEntry("en", "/jhn/3/", tuple(dates)),
+                                         build_site.SitemapEntry("en", "/about/")])
+        en = files["sitemap-en.xml"]
+        self.assertIn("<loc>https://openwordbible.org/jhn/3/</loc><lastmod>2026-11-03</lastmod>", en)
+        self.assertIn("<loc>https://openwordbible.org/about/</loc></url>", en)
+
+    def test_article_is_marked_as_an_article(self):
+        article = next(a for a in build_site.load_articles("en") if a["slug"] == "how-reliable-is-the-text")
+        page = self.page("articles/how-reliable-is-the-text")
+        self.assertIn('<meta property="og:type" content="article">', page)
+        self.assertIn(f'<meta property="article:published_time" content="{article["date"]}">', page)
+        data = self.ld(page, "Article")
+        self.assertEqual(data["abstract"], article["summary"])
+        self.assertEqual(data["creativeWorkStatus"], "Draft")
+        es = self.ld(self.page("es/articles/how-reliable-is-the-text"), "Article")
+        self.assertEqual(es["translationOfWork"]["url"], f"{build_site.SITE_URL}/articles/how-reliable-is-the-text/")
+
+    def test_key_term_is_a_defined_term(self):
+        term = next(iter(build_site.validate.KEY_TERMS.values()))
+        page = self.page(build_site.term_path(term).strip("/"))
+        data = self.ld(page, "DefinedTerm")
+        self.assertEqual(data["alternateName"], term["lemma"])
+        self.assertEqual(data["inDefinedTermSet"]["url"], f"{build_site.SITE_URL}/terms/")
+        self.assertEqual(data["termCode"], build_site.term_strong(term))
+
+    def test_link_previews_name_a_locale(self):
+        self.assertIn('<meta property="og:locale" content="en_US">', self.page("jhn/3"))
+        self.assertIn('<meta property="og:locale" content="pt_BR">', self.page("pt/jhn/3"))
 
 
 if __name__ == "__main__":

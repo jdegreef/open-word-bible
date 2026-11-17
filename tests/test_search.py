@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import markup  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, sitemap_text  # noqa: E402
 
 
 class SearchTest(unittest.TestCase):
@@ -72,7 +72,7 @@ class SearchTest(unittest.TestCase):
         self.assertIn('url.pathname.indexOf("/api/") === 0', sw)
 
     def test_search_page_in_each_language_and_in_the_sitemap(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         for lang in build_site.LANGUAGES:
             path = build_site.url(lang, "/search/")
             page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
