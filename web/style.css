@@ -1073,6 +1073,28 @@ a.a-ref:hover { border-color: var(--accent); }
 .xr-static li { break-inside: avoid; margin: 0 0 4px; }
 .xr-static li > a:first-child { font-weight: 600; margin-right: 4px; }
 body.plain .xr-static { display: none; }
+/* Links to the chapter's verse pages (build_site verse_page_links). */
+.verse-pages { margin: 24px 0 0; font-size: 15px; color: var(--muted); }
+.verse-pages a { margin-right: 8px; }
+/* A verse's page (build_site verse_page): its three levels, the original
+   words and the decisions behind it. */
+.verse-page { max-width: 46rem; margin: 0 auto; }
+.verse-levels { margin: 24px 0; display: grid; gap: 14px; }
+.vl-row { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.vl-row dt { font-family: var(--sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.vl-row dd { margin: 0; font-family: var(--read-font); font-size: 20px; line-height: 1.6; }
+.vl-row:first-child dd { font-size: 23px; }
+@media (max-width: 560px) { .vl-row { grid-template-columns: 1fr; gap: 2px; } }
+.verse-section { margin: 28px 0; }
+.verse-section h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0 0 10px; }
+.verse-section h3 { font-size: 15px; margin: 18px 0 8px; color: var(--muted); }
+.verse-original { font-size: 21px; line-height: 1.7; }
+.verse-gloss { font-style: italic; color: var(--muted); }
+.verse-decisions { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.verse-decisions p { margin: 0 0 4px; line-height: 1.55; }
+.vd-unsure { font-size: 12.5px; font-weight: 600; color: var(--gold); margin-left: 6px; }
+.vd-alts { color: var(--muted); font-size: 15px; }
+.vd-reason { font-size: 16px; }
 .chapter-articles h2 { font-family: var(--display); font-weight: 600; font-size: 22px; margin: 0 0 14px; }
 
 /* Passage cards on the Read page share the article-card look. */
@@ -1362,6 +1384,12 @@ body.plain .chapter-book { display: none; }
 .notes .note:hover, .notes .note:focus-visible { background: var(--accent-soft); }
 .notes .note-mark { font-style: italic; color: var(--accent); margin-right: 6px; }
 .notes .note-ref { font-weight: 600; margin-right: 6px; }
+/* The reason under a footnote, in the page as served (build_site
+   chapter_notes); the reader redraws the notes and opens reasons in its
+   panel instead. */
+.note-why { margin: 0 6px 6px 22px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.note-why summary { cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--accent); }
+.note-why p { margin: 4px 0 0; max-width: 60ch; }
 /* Footnotes, or every note by topic (web/reader.js drawNotes). */
 .notes-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 8px; }
 .notes-head h2 { margin: 0 !important; }

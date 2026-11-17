@@ -75,15 +75,33 @@ QUOTES = (f'<path class="quotes" d="{QUOTES_PATH}" fill="{{fill}}"/>'
           f'<path class="quotes" d="{QUOTES_PATH}" transform="rotate(180 32 31)" fill="{{fill}}"/>')
 # Sized and filled in its own attributes too, so a page whose stylesheet has
 # not loaded shows a small mark rather than a black square across the header.
+MARK_DRAWING = (f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
+                f'{QUOTES.format(fill="#3f3d9a")}')
 MARK = (f'<svg class="mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">'
-        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
-        f'{QUOTES.format(fill="#3f3d9a")}</svg>')
+        f'{MARK_DRAWING}</svg>')
+
+
+def mark_use():
+    """The brand mark from the sprite, for a second mark on a page (the
+    footer's): the header's is drawn whole, so the page has its mark even
+    before the sprite loads."""
+    return f'<svg class="mark" width="32" height="32" aria-hidden="true"><use href="{sprite()[1]}#mark"/></svg>'
+
+
+ICON_STROKE = ('fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+               'stroke-linejoin="round"')
 
 
 def icon(paths, size=18, cls="icon"):
-    """A line icon in the header's style (24-unit grid, drawn in currentColor)."""
-    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
-            'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" '
+    """A line icon in the header's style (24-unit grid, drawn in currentColor).
+    One of ICONS is drawn from the site's sprite (sprite()), so a page names
+    it in a few bytes instead of repeating its paths: a page has some forty
+    icons, and the site some 30,000 pages."""
+    name = ICON_NAMES.get(paths)
+    if name:
+        return (f'<svg class="{cls}" width="{size}" height="{size}" aria-hidden="true">'
+                f'<use href="{sprite()[1]}#{name}"/></svg>')
+    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" {ICON_STROKE} '
             f'aria-hidden="true">{paths}</svg>')
 
 
@@ -114,6 +132,27 @@ ICONS = {
     "feed": '<path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
+ICON_NAMES = {paths: name for name, paths in ICONS.items()}
+
+
+@functools.cache
+def sprite():
+    """/sprite.svg, every icon in ICONS and the brand mark as symbols that
+    pages draw with <use>, and its URL with a content hash as its version.
+    A symbol carries the icon's drawing attributes, which its paths inherit,
+    and currentColor is the colour where it is used."""
+    symbols = "".join(f'<symbol id="{name}" viewBox="0 0 24 24" {ICON_STROKE}>{paths}</symbol>'
+                      for name, paths in ICONS.items())
+    # The page's style sheet cannot reach inside a <use>, so the mark's
+    # colours (.mark rect, path and .quotes in style.css) are the colour
+    # mode's own variables here, which do reach it.
+    accent, contrast = "fill:var(--accent,#3f3d9a)", "fill:var(--accent-contrast,#faf6ef)"
+    themed = (f'<rect width="64" height="64" rx="14" style="{accent}"/><path d="{BOOK_PATH}" style="{contrast}"/>'
+              f'<path d="{QUOTES_PATH}" style="{accent}"/>'
+              f'<path d="{QUOTES_PATH}" transform="rotate(180 32 31)" style="{accent}"/>')
+    symbols += f'<symbol id="mark" viewBox="0 0 64 64">{themed}</symbol>'
+    text = f'<svg xmlns="http://www.w3.org/2000/svg">{symbols}</svg>\n'
+    return text, f"/sprite.svg?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 # The site's interface languages. English is served at the root and every
@@ -677,7 +716,7 @@ def site_footer(lang, path=None, translated=LANGUAGES):
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-top">
 <div class="foot-about">
-<a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
@@ -1242,10 +1281,23 @@ def chapter_notes(records, chapter, lang="en", words=None):
         return (f' <a class="note-article" href="{esc(a["url"])}">'
                 f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
                 f'<span{attr}>{esc(a["title"], quote=False)}</span> →</a>')
+    why_label = esc(catalog(lang)["compare.ui"]["why"], quote=False)
+
+    def why(r, d):
+        """The decision's reason, folded under the note: the reasoning the
+        site exists to show, in the page as served, so search engines and
+        AI answers read it too (the reader opens it in its panel)."""
+        own = translated.get(r["id"], {}).get(d["id"], {}).get("reason")
+        reason = own or d.get("reason")
+        if not reason:
+            return ""
+        attr = ' lang="en"' if not own and lang != "en" else ""
+        return (f'<details class="note-why"><summary>{why_label}</summary>'
+                f'<p{attr}>{esc(markup.render(reason), quote=False)}</p></details>')
     items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
                     f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
                     f'<span class="note-text">{note_html(d, lang, translated.get(r["id"], {}).get(d["id"]))}'
-                    f'</span>{more(r, d)}</span></li>'
+                    f'</span>{more(r, d)}</span>{why(r, d)}</li>'
                     for i, (r, d) in enumerate(notes))
     heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
     return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
@@ -1765,6 +1817,7 @@ def chapter_page(book, chapter, lang="en"):
     {chapter_crossrefs_html(records, chapter, lang)}
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
+    {verse_page_links(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
@@ -1976,6 +2029,185 @@ def book_ld(book, lang, intro, chaps):
     modified = last_modified(intro_sources(book, lang))
     if modified:
         data["dateModified"] = modified
+    return ld_script(data)
+
+
+# Verse pages: one page for each of the best-known verses (the verses of the
+# day, data/verse_of_the_day.json), at /<book>/<chapter>/<verse>/, with the
+# verse at all three levels, the original words and every decision behind
+# it with its reasoning. People search for a verse by its reference ("John
+# 3:16 meaning"), and a chapter page shows only the Balanced text, with the
+# reasoning in the reader's data.
+@functools.cache
+def verse_page_ids():
+    """The verses that have a page: the verses of the day that have
+    records, once each, in Bible order."""
+    data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
+    have = set(chapters())
+    found = {vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
+             and verse_records(vid)}
+    return sorted(found, key=lambda vid: refs.parse(vid).sort_key())
+
+
+def verse_page_url(vid):
+    ref = refs.parse(vid)
+    return f"/{ref.book.lower()}/{ref.chapter}/{ref.verse}/"
+
+
+def verse_records(vid):
+    """The records with a sentence in a verse."""
+    ref = refs.parse(vid)
+    return [r for r in chapter_records(ref.book, ref.chapter) if vid in r["refs"]]
+
+
+@functools.cache
+def verse_page_languages(vid):
+    """The languages every sentence of a verse is in: those its page is
+    built in."""
+    rs = verse_records(vid)
+    return tuple(code for code in LANGUAGES if all(code in r["renderings"] for r in rs))
+
+
+def verse_levels(vid, lang):
+    """{level: the verse's text at that level in lang}, at the default
+    settings, its sentences joined."""
+    out = {}
+    for r in verse_records(vid):
+        for level, text in record_verses(r).get(vid, {}).get(lang, {}).items():
+            text = plain(text)
+            out[level] = f"{out[level]} {text}" if level in out else text
+    return out
+
+
+def verse_ref_name(vid, lang):
+    """A verse's reference in lang: "John 3:16", "Psalm 23:1"."""
+    ref = refs.parse(vid)
+    return f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}"
+
+
+@functools.cache
+def verse_pages_in_chapter(book, chapter):
+    """The verses of a chapter that have a page, by verse number."""
+    return [vid for vid in verse_page_ids() if refs.parse(vid).book == book and refs.parse(vid).chapter == chapter]
+
+
+def verse_page_links(book, chapter, lang):
+    """Under a chapter: links to the pages of its verses that have one."""
+    vids = [vid for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)]
+    if not vids:
+        return ""
+    links = " ".join(f'<a href="{url(lang, verse_page_url(vid))}">{html.escape(verse_ref_name(vid, lang))}</a>'
+                     for vid in vids)
+    return f'<p class="verse-pages">{catalog(lang)["verse_page"]["in_chapter"]} {links}</p>'
+
+
+def verse_decision_html(d, own, lang):
+    """One decision on a verse page: the choice, whether it is uncertain,
+    the alternatives and the reason. own is its translation into lang
+    (data/notes/), if any; a meaning decision not translated, and every
+    reason not translated, is marked as English."""
+    esc = html.escape
+    ui = catalog(lang)["compare.ui"]
+    english = ' lang="en"' if lang != "en" else ""
+    shown = {**d, **(own or {})}
+    choice_attr = english if d["layer"] == "meaning" and not own else ""
+    reason_attr = english if not (own and own.get("reason")) else ""
+    out = f'<li><p class="vd-choice"{choice_attr}><strong>{esc(markup.render(shown["choice"]), quote=False)}</strong>'
+    if d.get("uncertain"):
+        out += f' <span class="vd-unsure">{esc(ui["uncertain"], quote=False)}</span>'
+    out += "</p>"
+    if shown.get("alternatives"):
+        alts = "; ".join(markup.render(a) for a in shown["alternatives"])
+        out += (f'<p class="vd-alts">{esc(ui["also"], quote=False)}'
+                f'<span{choice_attr}>{esc(alts, quote=False)}</span></p>')
+    if shown.get("reason"):
+        out += f'<p class="vd-reason"{reason_attr}>{esc(markup.render(shown["reason"]), quote=False)}</p>'
+    return out + "</li>"
+
+
+def verse_page(vid, lang="en"):
+    """A verse's page in lang (see verse_page_ids)."""
+    esc = html.escape
+    ref = refs.parse(vid)
+    book, chapter = ref.book, ref.chapter
+    records, words = load_chapter(book, chapter)
+    rs = verse_records(vid)
+    ui = catalog(lang)["verse_page"]
+    cui = catalog(lang)["compare.ui"]
+    names = catalog(lang)["levels"]
+    source = source_language(book)
+    suffix = "_hbo" if source == "hbo" else ""
+    name = verse_ref_name(vid, lang)
+    levels = verse_levels(vid, lang)
+    level_rows = "".join(f'<div class="vl-row"><dt>{names[code]}</dt><dd>{esc(levels[code], quote=False)}</dd></div>'
+                         for code in "BLR" if code in levels)
+    gloss = ""
+    if lang == "en" and len(rs) == 1 and rs[0]["refs"] == [vid] and rs[0].get("literal_gloss"):
+        gloss = (f'<section class="verse-section"><h2>{ui["gloss"]}</h2>'
+                 f'<p class="verse-gloss">{esc(rs[0]["literal_gloss"], quote=False)}</p></section>')
+    # A Hebrew word's "after" is empty where a prefix joins the next word;
+    # a Greek word's may be bare punctuation, which a space follows.
+    original = "".join(w["text"] + (w.get("after", " ") if source == "hbo" or w.get("after", " ").endswith(" ")
+                                    else w["after"] + " ")
+                       for w in words.get(vid, [])).strip()
+    direction = ' dir="rtl"' if source == "hbo" else ""
+    english = [e for e in versification.to_english(ref) if e != ref]
+    numbering = (f'<p class="fine">{ui["english_number"].format(ref=esc(verse_ref_name(str(english[0]), lang)))}</p>'
+                 if english else "")
+    translated = page_notes(rs, lang)
+    in_verse = {w["id"] for w in words.get(vid, [])}
+
+    def about_verse(d):
+        return not d.get("tokens") or bool(in_verse & set(d["tokens"]))
+    meaning = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"] if d["layer"] == "meaning" and about_verse(d))
+    wording = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"]
+                      if d["layer"] != "meaning" and d.get("language") == lang and about_verse(d))
+    why = ""
+    if meaning or wording:
+        why = (f'<section class="verse-section"><h2>{cui["why"]}</h2>'
+               + (f'<h3>{cui["meaning"]}</h3><ul class="verse-decisions">{meaning}</ul>' if meaning else "")
+               + (f'<h3>{cui["wording"]}</h3><ul class="verse-decisions">{wording}</ul>' if wording else "")
+               + "</section>")
+    chapter_link = url(lang, chapter_url(book, chapter)) + f"#v{ref.verse}"
+    body = f"""
+<article class="article verse-page">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, chapter_url(book, chapter))}">{esc(f"{chapter_book(book, lang)} {chapter}")}</a></p>
+<h1>{esc(name)}</h1>
+<p class="notice">{ui["draft"]}</p>
+</header>
+<dl class="verse-levels">{level_rows}</dl>
+{numbering}
+<section class="verse-section"><h2>{ui["original" + suffix]}</h2>
+<p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
+{gloss}
+{why}
+<p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;&rarr;</a>
+<a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
+</article>
+{verse_ld(vid, lang, name, levels, rs)}
+{breadcrumb_ld(lang, book_crumbs(book, lang) + [(chapter_name(records, book, chapter, lang), chapter_url(book, chapter)), (name, verse_page_url(vid))])}
+"""
+    return page(lang, ui["title"].format(ref=name), body, path=verse_page_url(vid), current="/read/",
+                description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
+                else ui["description" + suffix].format(ref=name),
+                translated=verse_page_languages(vid))
+
+
+def verse_ld(vid, lang, name, levels, rs):
+    """schema.org data for a verse's page: the verse as a work, its
+    Balanced text, part of its chapter, translated from the source text."""
+    ref = refs.parse(vid)
+    source = SOURCE_TEXTS[source_language(ref.book)]
+    data = {"@context": "https://schema.org", "@type": "CreativeWork", "name": name,
+            "url": SITE_URL + url(lang, verse_page_url(vid)), "inLanguage": lang,
+            "text": levels.get("B", ""), "license": CC0_URL,
+            "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in rs) else "Published",
+            "isPartOf": {"@type": "Chapter", "name": f"{chapter_book(ref.book, lang)} {ref.chapter}",
+                         "url": SITE_URL + url(lang, chapter_url(ref.book, ref.chapter))},
+            "translationOfWork": source, "isBasedOn": source}
     return ld_script(data)
 
 
@@ -2963,7 +3195,9 @@ def resume_link(lang, cls="button", names=False):
     books_attr = ""
     if names:
         names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-        books_attr = f' data-books="{html.escape(names)}"'
+        # In single quotes, so the JSON's double quotes need no escapes:
+        # 66 names, on every page.
+        books_attr = f" data-books='{html.escape(names, quote=False).replace(chr(39), '&#x27;')}'"
     return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}"{books_attr} href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
@@ -4454,23 +4688,27 @@ def variants_page(lang="en"):
     (linked to the reader), the reading followed and the others."""
     ui = catalog(lang)
     groups, jump = [], []
+    english = False  # a note shown in English because it has no current translation
     for book, found in footnoted_variants():
         name = html.escape(book_name(book, lang))
         items = []
+        notes = book_notes(book, lang)
         for r, d in found:
             ref = refs.parse(r["refs"][0])
             label = html.escape(verse_name(book, ref.chapter, ref.verse, lang))
             href = verse_link(book, ref.chapter, ref.verse, lang)
             where = f'<a href="{href}">{label}</a>' if href else label
+            tr = notes.get(r["id"], {}).get(d["id"])
+            english = english or (lang != "en" and not tr)
             items.append(f'<li class="variant"><span class="variant-ref">{where}</span> '
-                         f'<span class="variant-note">{note_html(d, lang)}</span></li>')
+                         f'<span class="variant-note">{note_html(d, lang, tr)}</span></li>')
         count = t(lang, "variants.count_one") if len(found) == 1 else t(lang, "variants.count", n=len(found))
         code = book.lower()
         jump.append(f'<li><a href="#{code}">{name}</a></li>')
         groups.append(f'<section class="variant-book" id="{code}" aria-labelledby="{code}-h">'
                       f'<h2 id="{code}-h">{name} <span class="fine">{html.escape(count)}</span></h2>'
                       f'<ul class="variant-list">{"".join(items)}</ul></section>')
-    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if lang != "en" else ""
+    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if english else ""
     body = f"""
 <header class="page-head">
 <p class="eyebrow">{t(lang, "variants.title")}</p>
@@ -5201,7 +5439,7 @@ def article_page(article, articles, lang="en"):
 <p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a>{part}</p>
 <h1>{display(article["title"])}</h1>
 <p class="dek">{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
+<p class="byline">{mark_use()}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
 </header>
 <div class="article-body">
 {content}
@@ -5774,7 +6012,7 @@ def service_worker():
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
     shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "plans.js")]
-    shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
+    shell += ["/favicon.svg", sprite()[1], "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
     current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "account.js", "plans.js",
                                   "compare.js", "word.js", "saved.js", "groups.js", "edition.js")]
@@ -6114,6 +6352,10 @@ def build(out):
         for book, _ in books(lang):
             if lang in book_languages(book):
                 add(book_url(book), book_page(book, lang), sources=intro_sources(book, lang))
+        for vid in verse_page_ids():
+            if lang in verse_page_languages(vid):
+                ref = refs.parse(vid)
+                add(verse_page_url(vid), verse_page(vid, lang), sources=chapter_sources(ref.book, ref.chapter))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
@@ -6148,6 +6390,7 @@ def build(out):
     files["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n"
     files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
+    files["sprite.svg"] = sprite()[0]
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
