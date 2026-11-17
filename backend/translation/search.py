@@ -42,6 +42,7 @@ from typing import NamedTuple
 
 from django.conf import settings
 from django.db import connection, transaction
+from django.utils import timezone
 
 from translation.models import SearchEntry, SearchLanguage, SearchWord
 
@@ -213,6 +214,8 @@ class Change(NamedTuple):
     entries: int
     added: int
     removed: int
+    # Documents not written yet: the deadline came first (_rebuild_language).
+    left: int = 0
 
 
 def plan(old, new):
@@ -262,28 +265,53 @@ def plan(old, new):
     return delete, places
 
 
-def rebuild(full=False, until=None, separate=False):
+# New entries are written this many at a time, each batch committed, so a
+# language whose update outlasts a deploy keeps what it wrote.
+CHUNK = 2000
+
+
+def order(languages):
+    """languages in the order rebuild() takes them: any never brought fully
+    up to date first, newest language first among those (a language just
+    added has the most to write), then the one that has waited longest. In
+    the fixed order the last language (Indonesian, the newest) was the one a
+    deploy always reached late, with its first fifty books to write: deploys
+    ran into Render's limit and saved none of it."""
+    checked = dict(SearchLanguage.objects.values_list("code", "checked"))
+    rank = {lang: i for i, lang in enumerate(languages)}
+    never = sorted((lang for lang in languages if checked.get(lang) is None), key=lambda lang: -rank[lang])
+    return never + sorted((lang for lang in languages if checked.get(lang) is not None),
+                          key=lambda lang: (checked[lang], rank[lang]))
+
+
+def rebuild(full=False, until=None, separate=False, stop=None):
     """Bring the search tables up to date with the site's documents in every
     site language, rewriting only the entries whose documents changed (all
-    of them with full=True). Each language is a transaction of its own, so
-    a deploy stopped part way keeps the languages it finished, and the next
-    picks up from there. With until (a time.monotonic() value), no language
-    is started after that time: those left out wait for the next rebuild.
+    of them with full=True). Each language is updated in batches that are
+    committed as they go, so a deploy stopped part way keeps what it wrote,
+    and the next picks up from there. With until (a time.time() value), no
+    language is started after that time: those left out wait for the next
+    rebuild. With stop (also a time.time() value), a language started before
+    until writes no new batch once stop is near (_rebuild_language), so the
+    whole update ends by then whatever a merge changed.
     With separate=True, each language is updated in a process of its own
     (manage.py update_search), so memory doesn't build up from one to the
-    next. Returns {language: Change} for the languages it brought up to date."""
+    next. Returns {language: Change} for the languages it worked on; a
+    Change with left > 0 was stopped part way."""
     site = site_build()
     with transaction.atomic():
         SearchLanguage.objects.exclude(code__in=site.LANGUAGES).delete()
         SearchEntry.objects.exclude(language__in=site.LANGUAGES).delete()
         SearchWord.objects.exclude(language__in=site.LANGUAGES).delete()
+    if stop is not None:
+        until = stop if until is None else min(until, stop)
     changes = {}
     try:
-        for lang in site.LANGUAGES:
-            if until is not None and time.monotonic() > until:
+        for lang in order(site.LANGUAGES):
+            if until is not None and time.time() > until:
                 break
-            changes[lang] = (_rebuild_separately(lang, full) if separate
-                             else _rebuild_language(site_build(lang), lang, full))
+            changes[lang] = (_rebuild_separately(lang, full, stop) if separate
+                             else _rebuild_language(site_build(lang), lang, full, stop))
         return changes
     finally:
         # Records that hold one language's renderings must not outlive the
@@ -291,24 +319,36 @@ def rebuild(full=False, until=None, separate=False):
         site_build()
 
 
-def _rebuild_separately(lang, full):
+def _rebuild_separately(lang, full, stop=None):
     command = [sys.executable, str(settings.BASE_DIR / "manage.py"), "update_search", lang]
     if full:
         command.append("--all")
+    if stop is not None:
+        command += ["--stop", str(stop)]
     out = subprocess.run(command, check=True, stdout=subprocess.PIPE, text=True).stdout
     return Change(**json.loads(out.splitlines()[-1]))
 
 
-@transaction.atomic
-def _rebuild_language(site, lang, full):
+def _rebuild_language(site, lang, full, stop=None, out=None):
+    """Bring lang's entries up to date. The entries of changed documents are
+    deleted, and the new ones written CHUNK at a time, each batch in a
+    transaction of its own: a stopped update leaves some documents out of
+    search for a while, never a half-written entry, and the next update
+    finds the batches written as entries to keep (plan). With stop (a
+    time.time() value), no batch is started that, at the pace of the last
+    one, would end after it; the documents left are counted in Change.left.
+    Only an update that wrote everything marks the language checked. With
+    out (a function taking a line), says how long each step took: the
+    deploy log once showed nothing for 25 minutes before Render stopped it."""
+    began = time.time()
     data = site.search_documents(lang)
     # The documents are all that's needed now: the records go (every cache
     # cleared), so the memory they held serves the work below.
     site_build(site.SEARCH_LANG)
-    SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
     entries, words = _table(), SearchWord._meta.db_table
-    with connection.cursor() as cursor:
+    with transaction.atomic(), connection.cursor() as cursor:
+        SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
         # A full rebuild, or the first, matches nothing, so needs no keys.
         cursor.execute(f"SELECT id, position, sub, {'NULL' if full else KEY_SQL} FROM {entries} "
                        "WHERE language = %s ORDER BY position, sub", [lang])
@@ -318,34 +358,33 @@ def _rebuild_language(site, lang, full):
         delete, places = (None if full or not old else plan(old, [key(c, doc) for doc, c in docs])) or (
             [row[0] for row in old], [(i, i, 0) for i in range(len(docs))])
         del old
+        if out:
+            out(f"search {lang}: {len(docs)} documents, {len(delete)} to remove, {len(places)} to write "
+                f"(planned in {time.time() - began:.0f} s)")
         if not delete and not places and SearchWord.objects.filter(language=lang).exists():
+            SearchLanguage.objects.filter(code=lang).update(checked=timezone.now())
             return Change(len(docs), 0, 0)
+        if stop is not None and time.time() > stop:
+            # Out of time already: change nothing, so search stays as it was,
+            # but mark the language behind, so it goes first next time.
+            SearchLanguage.objects.filter(code=lang).update(checked=None)
+            return Change(len(docs), 0, 0, len(places))
         if delete:
             cursor.execute(f"DELETE FROM {entries} WHERE id = ANY(%s)", [delete])
-        # New entries go through a scratch table, so each row is written
-        # once, with its vector, rather than inserted and then updated.
-        cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
-            position integer, sub integer, config text, title text, extra text, body text, doc jsonb,
-            title_v text, extra_v text, body_v text)
-            ON COMMIT DROP""")
-        # A generator: a full rebuild's rows, held at once, are as big again
-        # as the documents.
-        rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *f,
-                 json.dumps(docs[i][0], ensure_ascii=False), *indexed(docs[i][1], f))
-                for i, position, sub in places for f in [fields(docs[i][0])])
-        _copy(cursor, "search_load", ENTRY_COLUMNS + INDEXED_COLUMNS, rows)
-        cursor.execute(f"""INSERT INTO {entries} ({', '.join(ENTRY_COLUMNS)}, vector)
-            SELECT {', '.join(ENTRY_COLUMNS)},
-              setweight(to_tsvector(config::regconfig, coalesce(title_v, title)), 'A')
-              || setweight(to_tsvector(config::regconfig, coalesce(extra_v, extra)), 'B')
-              || setweight(to_tsvector(config::regconfig, coalesce(body_v, body)), 'C')
-              || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', coalesce(title_v, title),
-                                                              coalesce(extra_v, extra),
-                                                              coalesce(body_v, body))), 'D')
-            FROM search_load ORDER BY position, sub""")
-        # Dropped now as well as at commit: inside a test the transaction
-        # never commits, and the next rebuild would find it still there.
-        cursor.execute("DROP TABLE search_load")
+    written, pace, writing = 0, 0.0, time.time()
+    for at in range(0, len(places), CHUNK):
+        if stop is not None and time.time() + pace > stop:
+            break
+        batch = time.time()
+        with transaction.atomic(), connection.cursor() as cursor:
+            _write(cursor, lang, docs, places[at:at + CHUNK])
+        written += len(places[at:at + CHUNK])
+        pace = time.time() - batch
+    left = len(places) - written
+    if out:
+        out(f"search {lang}: wrote {written} in {time.time() - writing:.0f} s"
+            + (f", {left} left for the next run" if left else ""))
+    with transaction.atomic(), connection.cursor() as cursor:
         found = Counter()
         for doc, _ in docs:
             # Words for "did you mean": a run of kanji and kana is a clause,
@@ -354,13 +393,45 @@ def _rebuild_language(site, lang, full):
                          if not CJK_RUN.search(w))
         SearchWord.objects.filter(language=lang).delete()
         _copy(cursor, words, ("language", "word", "count"), ((lang, w, n) for w, n in found.items()))
+        # Behind (None) goes first next time (order).
+        SearchLanguage.objects.filter(code=lang).update(checked=None if left else timezone.now())
         # Fresh statistics for the planner. Without them it can take the
         # tables for empty (after a full rebuild's delete, or a vacuum that
         # ran while they were) and plan a search that ranks every match
         # once for every entry: hours instead of milliseconds.
         for model in (SearchEntry, SearchWord, SearchLanguage):
             cursor.execute(f"ANALYZE {model._meta.db_table}")
-    return Change(len(docs), len(places), len(delete))
+    if out:
+        out(f"search {lang}: done in {time.time() - began:.0f} s")
+    return Change(len(docs), written, len(delete), left)
+
+
+def _write(cursor, lang, docs, places):
+    """Write the entries for places, [(index in docs, position, sub)]."""
+    # New entries go through a scratch table, so each row is written
+    # once, with its vector, rather than inserted and then updated.
+    cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
+        position integer, sub integer, config text, title text, extra text, body text, doc jsonb,
+        title_v text, extra_v text, body_v text)
+        ON COMMIT DROP""")
+    # A generator: a full rebuild's rows, held at once, are as big again
+    # as the documents.
+    rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *f,
+             json.dumps(docs[i][0], ensure_ascii=False), *indexed(docs[i][1], f))
+            for i, position, sub in places for f in [fields(docs[i][0])])
+    _copy(cursor, "search_load", ENTRY_COLUMNS + INDEXED_COLUMNS, rows)
+    cursor.execute(f"""INSERT INTO {_table()} ({', '.join(ENTRY_COLUMNS)}, vector)
+        SELECT {', '.join(ENTRY_COLUMNS)},
+          setweight(to_tsvector(config::regconfig, coalesce(title_v, title)), 'A')
+          || setweight(to_tsvector(config::regconfig, coalesce(extra_v, extra)), 'B')
+          || setweight(to_tsvector(config::regconfig, coalesce(body_v, body)), 'C')
+          || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', coalesce(title_v, title),
+                                                          coalesce(extra_v, extra),
+                                                          coalesce(body_v, body))), 'D')
+        FROM search_load ORDER BY position, sub""")
+    # Dropped now as well as at commit: inside a test the transaction
+    # never commits, and the next rebuild would find it still there.
+    cursor.execute("DROP TABLE search_load")
 
 
 # ---- Queries ------------------------------------------------------------
