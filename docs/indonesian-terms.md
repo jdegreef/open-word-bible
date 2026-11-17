@@ -2322,3 +2322,11 @@ records it. Empty until the first book is drafted.
 | Malachi | my messenger; the messenger of the covenant | *utusan-Ku*; *utusan perjanjian* (lowercase) | 3:1 |
 | Malachi | on the day when I act | *pada hari yang Aku siapkan* (L); *pada hari Aku bertindak* (B, R) | 3:17, 21 |
 | Malachi | the sun of righteousness | *matahari kebenaran* (lowercase) | 3:20 |
+| Isaiah | poplars (*'aravim*) | *pohon gandarusa* (L, B), as the Wadi of the Poplars at 15:7 | 44:4 |
+| Isaiah | Jeshurun | Yesyurun (L, B); *Israel yang lurus hati* (R), as Deuteronomy 32:15 | 44:2 |
+| Isaiah | holm oak (*tirzah*); oak (*'allon*) | *pohon tarzah*; *pohon tarbantin* (L, B); *pohon yang keras kayunya* (R) (uncertain) | 44:14 |
+| Isaiah | his anointed (Cyrus) | *orang yang diurapi-Nya* (L, B); *orang yang telah Dia pilih* (R) | 45:1 |
+| Isaiah | the Sabeans (of Seba) | *orang Seba*, not *orang Syeba* (the Sabeans of Sheba, Joel 4:8) | 45:14 |
+| Isaiah | Bel; Nebo (gods of Babylon) | Bel; Nebo (L, B); *dewa Bel*, *dewa Nebo* (R) | 46:1 |
+| Isaiah | virgin daughter of Babylon; daughter of the Chaldeans | *perawan, putri Babel* (L), *Anak Dara, Putri Babel* (B); *putri Kasdim* (L), *Putri Kasdim* (B) | 47:1 |
+| Isaiah | land of Sinim | tanah Sinim | 49:12 |
