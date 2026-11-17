@@ -1960,6 +1960,7 @@ def book_page(book, lang="en"):
 </div>
 {more}
 {book_ld(book, lang, intro, chaps)}
+{intro_faq_ld(book, lang, intro)}
 {breadcrumb_ld(lang, book_crumbs(book, lang))}
 """
     return page(lang, ui["title"].replace("{book}", name), body, path=book_url(book), current="/read/",
@@ -1980,6 +1981,53 @@ def book_ld(book, lang, intro, chaps):
     if modified:
         data["dateModified"] = modified
     return ld_script(data)
+
+
+# The questions a book's introduction answers, by its English section
+# heading: each translation keeps the English sections' order.
+INTRO_QUESTIONS = {"What the book is": "q_about", "Who wrote it, and when": "q_author",
+                   "Who wrote them, and when": "q_author"}
+
+
+def intro_sections(body):
+    """An introduction's sections as (heading, text) pairs."""
+    return [(m[1].strip(), m[2]) for m in re.finditer(r"^## ([^\n]*)\n(.*?)(?=^## |\Z)", body, re.M | re.S)]
+
+
+def first_paragraph(text):
+    """A section's opening paragraph as plain text: links read as their
+    words, emphasis dropped. A quotation, list or table is not one."""
+    for block in re.split(r"\n\s*\n", text.strip()):
+        block = block.strip()
+        if block and not block.startswith((">", "-", "*", "|", "{{", "#")):
+            block = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", block)
+            return smart_quotes(re.sub(r"\*\*?([^*]+)\*\*?", r"\1", " ".join(block.split())))
+    return ""
+
+
+def intro_questions(book, lang, intro):
+    """The questions a book's introduction answers, each with its section's
+    opening paragraph, which states the answer before the detail."""
+    english = [h for h, _ in intro_sections(load_intro(book)["body"])]
+    sections = intro_sections(intro["body"])
+    if len(sections) != len(english):
+        return []
+    ui, name = catalog(lang)["book_page"], BOOK_NAMES[book][lang]
+    out = []
+    for heading, (_, text) in zip(english, sections):
+        answer = first_paragraph(text)
+        if heading in INTRO_QUESTIONS and answer:
+            out.append((ui[INTRO_QUESTIONS[heading]].replace("{book}", name), answer))
+    return out
+
+
+def intro_faq_ld(book, lang, intro):
+    """schema.org data for the questions a book's introduction answers."""
+    qs = intro_questions(book, lang, intro)
+    if not qs:
+        return ""
+    return ld_script({"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": lang, "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qs]})
 
 
 def edition_url(book):

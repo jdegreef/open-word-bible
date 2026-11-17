@@ -1657,6 +1657,16 @@ class SearchMetadataTest(unittest.TestCase):
         es = self.ld(self.page("es/articles/how-reliable-is-the-text"), "Article")
         self.assertEqual(es["translationOfWork"]["url"], f"{build_site.SITE_URL}/articles/how-reliable-is-the-text/")
 
+    def test_book_intro_answers_its_questions(self):
+        # Each introduction's sections open with the answer, so its page
+        # names the questions and gives those opening paragraphs.
+        faq = self.ld(self.page("heb"), "FAQPage")["mainEntity"]
+        who = next(q for q in faq if q["name"] == "Who wrote Hebrews, and when?")
+        self.assertTrue(who["acceptedAnswer"]["text"].startswith("No one knows who wrote Hebrews."))
+        self.assertNotIn("](", " ".join(q["acceptedAnswer"]["text"] for q in faq))
+        es = self.ld(self.page("es/heb"), "FAQPage")["mainEntity"]
+        self.assertEqual(len(es), 2)
+
     def test_key_term_is_a_defined_term(self):
         term = next(iter(build_site.validate.KEY_TERMS.values()))
         page = self.page(build_site.term_path(term).strip("/"))
