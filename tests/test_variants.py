@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 import variants  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, sitemap_text  # noqa: E402
 
 HEBREW = {"source": {"language": "hbo"}}
 GREEK = {"source": {"language": "grc"}}
@@ -81,7 +81,7 @@ class PageTest(unittest.TestCase):
             self.assertIn(f'href="/{lang}/psa/105/#v22"', page)
         about = self.read("about")
         self.assertIn('href="/variants/"', about)
-        self.assertIn("/variants/", (self.out / "sitemap.xml").read_text(encoding="utf-8"))
+        self.assertIn("/variants/", sitemap_text(self.out))
 
 
 if __name__ == "__main__":

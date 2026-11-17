@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, sitemap_text  # noqa: E402
 
 
 class AudienceDataTest(unittest.TestCase):
@@ -47,7 +47,7 @@ class AudiencePageTest(unittest.TestCase):
         return set(re.findall(r'href="([^"]+)"', page))
 
     def test_each_audience_has_a_page_in_every_language(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         for lang in build_site.LANGUAGES:
             prefix = "" if lang == "en" else f"{lang}/"
             for audience in build_site.AUDIENCES:
