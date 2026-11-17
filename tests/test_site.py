@@ -1717,5 +1717,49 @@ class LinkedPagesTest(unittest.TestCase):
         for lang in build_site.LANGUAGES:
             self.assertTrue((self.out / build_site.url(lang, "/quotations/").strip("/") / "index.html").is_file())
 
+
+class EntityPagesTest(unittest.TestCase):
+    """A page for each person, place, people and glossary word the reader's
+    cards explain, in English."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.out = built_site()
+
+    def page(self, rel):
+        return (self.out / rel / "index.html").read_text(encoding="utf-8")
+
+    def ld(self, page):
+        return [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)]
+
+    def test_person(self):
+        page = self.page("names/david")
+        self.assertIn("<h1>David</h1>", page)
+        person = next(d for d in self.ld(page) if d["@type"] == "Person")
+        self.assertTrue(person["description"].startswith("Israel"))
+        self.assertIn('<a href="/1sa/16/#v13">16</a>', page)
+        self.assertIn('<meta name="description" content="Israel', page)
+
+    def test_place_and_its_names(self):
+        # Jerusalem's Hebrew and Greek words share one page, with its point.
+        page = self.page("names/jerusalem")
+        place = next(d for d in self.ld(page) if d["@type"] == "Place")
+        self.assertEqual(len(place["alternateName"]), len(set(place["alternateName"])))
+        self.assertGreater(len(place["alternateName"]), 1)
+        self.assertAlmostEqual(place["geo"]["latitude"], 31.8, places=0)
+
+    def test_glossary_word(self):
+        page = self.page("glossary/sabbath")
+        term = next(d for d in self.ld(page) if d["@type"] == "DefinedTerm")
+        self.assertEqual(term["inDefinedTermSet"]["url"], build_site.SITE_URL + "/glossary/")
+        self.assertIn('href="/glossary/sabbath/"', self.page("glossary"))
+        self.assertIn('href="/names/david/"', self.page("names"))
+
+    def test_english_only_and_in_the_sitemap(self):
+        self.assertFalse((self.out / "es" / "names" / "david").exists())
+        self.assertIn("/names/david/", sitemap_text(self.out))
+        cards = page_data(self.page("1sa/16"))["cards"]["list"]
+        self.assertIn("/names/david/", {c.get("href") for c in cards})
+
 if __name__ == "__main__":
     unittest.main()
