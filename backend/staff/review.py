@@ -45,6 +45,7 @@ from translation.models import Decision, Rendering, ReviewEvent, Sentence, Statu
 
 from .inbox import verse_label
 from .permissions import admin_view, is_super_admin
+from .snapshot import snapshot
 
 A = ReviewEvent.Action
 PAGE = 50
@@ -294,7 +295,8 @@ def _act(request, s, layer, data):
     kind = {"approve": _approve(layer), "flag": A.FLAGGED, "comment": A.COMMENT}[action]
     event = ReviewEvent.objects.create(sentence=s, user=request.user, action=kind, note=note,
                                        language="" if _meaning(layer) else layer,
-                                       digest=digest(s, layer) if action == "approve" else "")
+                                       digest=digest(s, layer) if action == "approve" else "",
+                                       snapshot=snapshot(s, layer) if action == "approve" else {})
     if kind == A.MEANING_REVIEWED:
         # update(), not save(): updated_at says when the text last changed.
         Sentence.objects.filter(pk=s.pk, status=Status.AI_DRAFT).update(status=Status.MEANING_REVIEWED)

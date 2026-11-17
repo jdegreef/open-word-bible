@@ -2,6 +2,7 @@ from django.urls import path
 
 from . import (articles, changes, consistency, emails, export, fixes, inbox, jobs, overlap, progress, review, search,
                team, text, users, verses, work)
+from . import history
 
 urlpatterns = [
     path("overview/", progress.overview),
@@ -39,4 +40,7 @@ urlpatterns = [
     path("team/roles/<int:role_id>/", team.revoke),
     path("team/invite/", team.resend),
     path("activity/", team.activity),
+    path("history/verse/<str:vid>/", history.verse),
+    path("history/approvals/", history.approvals),
+    path("history/release-notes/", history.notes),
 ]
