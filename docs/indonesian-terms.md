@@ -2336,3 +2336,4 @@ records it. Empty until the first book is drafted.
 | Isaiah | fruit of the lips | *buah bibir* | 57:19 |
 | Isaiah | Nebaioth; Ephah (tribe) | Nebayot; Efa | 60:6–7 |
 | Isaiah | coat of mail; helmet | *baju zirah*; *ketopong* | 59:17 |
+| Isaiah | Hephzibah; Beulah | Hefzibah; Beula (L); *Kesukaan-Ku Ada Padanya*; *Yang Bersuami* (B) | 62:4 |
