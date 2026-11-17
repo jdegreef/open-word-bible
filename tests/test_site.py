@@ -158,7 +158,8 @@ class SiteTest(unittest.TestCase):
                 self.assertIn(f'data-record="{r["id"]}"', text)
             for heading in data["headings"].values():
                 shown = html.escape(build_site.markup.render(heading["en"]), quote=False)
-                self.assertIn(f'<h2 class="section-head">{shown}</h2>', text)
+                # Each heading carries its section's address (#s16).
+                self.assertRegex(text, rf'<h2 class="section-head" id="s[\d-]+">{re.escape(shown)}</h2>')
             self.assertIn("<noscript>", page)
             self.assertIn(build_site.t("en", "reader.noscript", level="Balanced"), page)
         self.assertIn('<sup class="fn" aria-hidden="true"><span class="fn-mark">a</span></sup>',
@@ -173,7 +174,7 @@ class SiteTest(unittest.TestCase):
                 if not missing:
                     continue
                 page, text = self.chapter_text(build_site.url(lang, p.url).strip("/"))
-                self.assertIn('class="verse fallback" lang="en" data-v=', text)
+                self.assertRegex(text, r'class="verse fallback" id="v\d+" lang="en" data-v=')
                 self.assertIn(f'data-record="{missing[0]["id"]}"', text)
                 self.assertNotIn('id="partial" hidden', page)
                 return
@@ -215,7 +216,9 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(data["@type"], "Chapter")
             self.assertEqual(data["url"], build_site.SITE_URL + "/" + path + "/")
             self.assertEqual(data["inLanguage"], "es" if path.startswith("es/") else "en")
-            self.assertEqual(data["isPartOf"]["name"], "Open Word Bible")
+            # Part of its book, which is part of the Bible.
+            self.assertEqual(data["isPartOf"]["@type"], "Book")
+            self.assertEqual(data["isPartOf"]["isPartOf"]["name"], "Open Word Bible")
             self.assertEqual(data["license"], "https://creativecommons.org/publicdomain/zero/1.0/")
             # Nothing is reviewed yet.
             self.assertEqual(data["creativeWorkStatus"], "Draft")
