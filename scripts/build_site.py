@@ -2636,7 +2636,7 @@ def read_page(lang="en"):
 <header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
-<p class="dek">{t(lang, "read.dek")}</p>
+<p class="dek">{t(lang, "read.dek", n=len(complete_languages()))}</p>
 <p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a>
 <a class="button ghost" href="{url(lang, "/plans/")}">{icon(ICONS["calendar"])}{t(lang, "nav.plans")}</a></p>
 </header>
@@ -3187,6 +3187,35 @@ def example_html(lang="en"):
 """
 
 
+@functools.lru_cache(maxsize=None)
+def language_coverage():
+    """Each reading language's share of the Bible's sentence records, as
+    {code: (drafted, total)}, so the home, Read and About pages say where
+    the work stands without naming languages in their messages."""
+    records = all_records()
+    return {code: (sum(code in r["renderings"] for r in records), len(records)) for code in LANGUAGES}
+
+
+def complete_languages():
+    """The languages with every sentence of the Bible drafted."""
+    return [code for code, (drafted, total) in language_coverage().items() if drafted == total]
+
+
+def progress_text(lang):
+    """The home page's progress paragraph: how many languages have the whole
+    Bible, each language still under way and how far it has got, and that
+    all of it is an unreviewed AI-assisted draft."""
+    names = catalog(lang)["language_names"]
+    parts = [t(lang, "home.progress_full", n=len(complete_languages()))]
+    for code, (drafted, total) in language_coverage().items():
+        if 0 < drafted < total:
+            parts.append(t(lang, "home.progress_partial", language=html.escape(names[code]),
+                           pct=min(99, round(100 * drafted / total))))
+    parts.append(t(lang, "home.progress_review"))
+    # Japanese sentences, ending in 。, run on without a space.
+    return "".join(part + ("" if part.endswith("。") else " ") for part in parts).rstrip()
+
+
 def progress_html(lang="en"):
     """The home page's progress: sentences and decisions, in the page's
     language only (the footer maps the books). A sentence's decisions in
@@ -3201,7 +3230,7 @@ def progress_html(lang="en"):
 <div><b>{decisions}</b><span>{t(lang, "home.stat_decisions")}</span></div>
 <div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
-<p>{t(lang, "home.progress_text")}</p>
+<p>{progress_text(lang)}</p>
 </section>
 """
 
@@ -3481,7 +3510,7 @@ def home_page(lang="en"):
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
-<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(LANGUAGES) - 1)}</li>
+<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(complete_languages()))}</li>
 </ul>
 </section>
 {verse_of_the_day(lang)}
@@ -3534,7 +3563,7 @@ def about_page(lang="en"):
     body = f"""
 <div class="prose">
 <h1>{t(lang, "about.title")}</h1>
-<p>{t(lang, "about.intro")}</p>
+<p>{t(lang, "about.intro", n=len(complete_languages()))}</p>
 <h2>{t(lang, "about.licences")}</h2>
 <p>{t(lang, "about.licences_text")}</p>
 <p>{t(lang, "about.source")} <a href="{GITHUB_URL}">github.com/jdegreef/open-word-bible</a>.</p>
