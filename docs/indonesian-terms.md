@@ -2268,3 +2268,4 @@ records it. Empty until the first book is drafted.
 | Amos | sycamore figs | *pohon ara hutan* | 7:14 |
 | Amos | Caphtor | Kaftor (L, B); Kreta (R) | 9:7 |
 | Amos | the fallen booth of David | *pondok Daud yang telah roboh* | 9:11 |
+| Obadiah | Sepharad | Sefarad | 1:20 |
