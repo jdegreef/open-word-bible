@@ -2347,3 +2347,14 @@ records it. Empty until the first book is drafted.
 | Jeremiah | Pathros | Patros | 44:1 |
 | Jeremiah | LORD God of hosts | TUHAN, Allah semesta alam | 44:7 |
 | Jeremiah | Pharaoh Hophra | Firaun Hofra | 44:30 |
+| Jeremiah | Pharaoh Neco; Carchemish | Firaun Nekho; Karkemis | 46:2 |
+| Jeremiah | buckler and shield | perisai kecil dan perisai besar | 46:3 |
+| Jeremiah | Cush; Put; Ludites | Kush (L, B), Etiopia (R); Put; orang Lud | 46:9 |
+| Jeremiah | Amon of Thebes (No) | Amon dari Tebe (L, B); Amon, dewa kota Tebe (R) | 46:25 |
+| Jeremiah | gadfly | pikat (L, B); lalat penyengat (R) | 46:20 |
+| Jeremiah | Caphtor | pesisir Kaftor (L, B); pulau Kreta (R) | 47:4 |
+| Jeremiah | Madmen; Horonaim; Luhith | Madmen; Horonaim; Luhit | 48:2-5 |
+| Jeremiah | Chemosh | Kamos | 48:7 |
+| Jeremiah | Holon; Jahaz; Mephaath; Beth-diblathaim; Beth-gamul; Beth-meon; Kerioth; Bozrah | Holon; Yahas; Mefaat; Bet-Diblataim; Bet-Gamul; Bet-Meon; Keriot; Bozra | 48:21-24 |
+| Jeremiah | Kir-heres | Kir-Heres | 48:31 |
+| Jeremiah | Jazer; Sibmah; Elealeh; Eglath-shelishiyah; Nimrim | Yaezer; Sibma; Elale; Eglat-Selisia; Nimrim | 48:32-34 |
