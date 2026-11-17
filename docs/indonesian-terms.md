@@ -2322,3 +2322,10 @@ records it. Empty until the first book is drafted.
 | Jeremiah | Hanamel; Neriah; Mahseiah | Hanamel; Neria; Mahseya | 32:7, 12 |
 | Jeremiah | the family redeemer's right (*ge'ullah*) | *hak penebusan* (L); *kerabat penebus* (B, R) | 32:7 |
 | Jeremiah | Lachish; Azekah | Lakhis; Azeka | 34:7 |
+| Jeremiah | the Rechabites; Jonadab, Jehonadab son of Rechab | *kaum Rekhab* (L), *keluarga Rekhab* (B, R); Yonadab, Yehonadab anak Rekhab | 35:2, 6 |
+| Jeremiah | Jaazaniah; Habazziniah; Hanan son of Igdaliah; man of God | Yaazanya; Habazinya; Hanan anak Yigdalya; *abdi Allah* | 35:3–4 |
+| Jeremiah | Micaiah; Elishama; Delaiah; Jehudi; Nethaniah; Shelemiah; Cushi | Mikhaya; Elisama; Delaya; Yehudi; Netanya; Selemya; Kusyi | 36:11–14 |
+| Jeremiah | Jerahmeel; Seraiah son of Azriel; Abdeel | Yerahmeel; Seraya anak Azriel; Abdeel | 36:26 |
+| Jeremiah | scribe, secretary (*sofer*, of the court) | *juru tulis* (L), *juru tulis negara* (B), *juru tulis kerajaan* (R) | 36:10 |
+| Jeremiah | Jehucal (Jucal); Irijah | Yehukhal (Yukhal); Yiria | 37:3, 13 |
+| Jeremiah | the cistern house | *rumah bak air* (L, B); *lubang di bawah tanah* (R) (uncertain) | 37:16 |
