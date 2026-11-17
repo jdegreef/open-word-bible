@@ -2334,3 +2334,9 @@ records it. Empty until the first book is drafted.
 | Jeremiah | Ebed-melech the Cushite | Ebed-Melekh, orang Kush (L, B); orang Etiopia (R) | 38:7 |
 | Jeremiah | Middle Gate; Nergal-sharezer; Samgar-nebu; Sarsekim; Nebushazban; Rab-saris; Rab-mag | Pintu Gerbang Tengah; Nergal-Sarezer; Samgar-Nebu; Sarsekim; Nebusyazban; Rab-Saris (L), *kepala para pegawai istana* (B, R); Rab-Mag | 39:3, 13 |
 | Jeremiah | Riblah; Hamath | Ribla; Hamat | 39:5 |
+| Jeremiah | Mizpah; Johanan son of Kareah; Ishmael son of Nethaniah | Mizpa; Yohanan anak Kareah; Ismael anak Netanya (as 2 Kings 25:23) | 40:6–8 |
+| Jeremiah | Jezaniah (son of the Maacathite; son of Hoshaiah); Ephai the Netophathite; Tanhumeth | Yezanya (2 Kings 25:23 has Yaazanya); Hosaya; Efai, orang Netofa; Tanhumet | 40:8; 42:1 |
+| Jeremiah | Baalis | Baalis | 40:14 |
+| Jeremiah | governor (Gedaliah, "appointed over the land") | *kepala daerah* (B), *pemimpin* (R) | 41:2 |
+| Jeremiah | Baasha; Geruth Chimham | Baesa; Gerut-Kimham | 41:9, 17 |
+| Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
