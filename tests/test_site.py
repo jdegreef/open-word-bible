@@ -1257,7 +1257,7 @@ class SiteTest(unittest.TestCase):
                 self.assertTrue(all(len(s["at"]) == 2 and s["href"] and s["ref"] for s in j["stops"]))
         # The reader's map links a journey from a chapter it stops in.
         trips = self.chapter_data("act/13")["journeys"]
-        paul = next(j for j in trips if j["href"].endswith("#paul-1"))
+        paul = next(j for j in trips if j["href"].endswith("/journeys/paul-1/"))
         self.assertIn("ACT.13.4", paul["verses"])
         self.assertTrue((self.out / "journeys.js").is_file())
 
@@ -1669,6 +1669,53 @@ class SearchMetadataTest(unittest.TestCase):
         self.assertIn('<meta property="og:locale" content="en_US">', self.page("jhn/3"))
         self.assertIn('<meta property="og:locale" content="pt_BR">', self.page("pt/jhn/3"))
 
+
+
+class LinkedPagesTest(unittest.TestCase):
+    """Pages that tie passages together in the HTML as served: each verse's
+    strongest cross-references, a page per journey, and the Old Testament
+    quotations in the New."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.out = built_site()
+
+    def page(self, rel):
+        return (self.out / rel / "index.html").read_text(encoding="utf-8")
+
+    def test_chapter_links_its_cross_references(self):
+        page = self.page("jhn/3")
+        block = re.search(r'<details class="xr-static">(.*?)</details>', page, re.S)[1]
+        self.assertIn('<a href="#v16">16</a>', block)
+        rows = re.findall(r"<li>(.*?)</li>", block)
+        self.assertTrue(rows)
+        for row in rows:
+            links = re.findall(r'<a href="(/[a-z0-9]+/\d+/#v\d+)">', row)
+            self.assertTrue(1 <= len(links) <= build_site.STATIC_CROSSREFS, row)
+
+    def test_each_journey_has_a_page(self):
+        ids = [j["id"] for j in build_site.journeys()]
+        for lang in ("en", "ja"):
+            index = self.page(build_site.url(lang, "/journeys/").strip("/"))
+            for jid in ids:
+                self.assertIn(f'href="{build_site.journeys_url(lang, jid)}" data-journey="{jid}"', index)
+        page = self.page("journeys/paul-1")
+        self.assertIn("<h1>Paul&#x27;s first journey</h1>", page)
+        stops = re.search(r'<ol class="jr-stops">(.*?)</ol>', page, re.S)[1]
+        self.assertIn('href="/act/13/#v4"', stops)
+        self.assertIn('"single":true', page)
+        self.assertIn("journeys/paul-1/", sitemap_text(self.out))
+
+    def test_quotations_page(self):
+        page = self.page("quotations")
+        self.assertIn("<h1>The Old Testament in the New</h1>", page)
+        # Matthew 2:6 quotes Micah 5:2, which is 5:1 in the Hebrew numbering.
+        row = re.search(r'<li><p class="q-text">[^<]*</p><p class="q-refs"><a href="/mat/2/#v6">.*?</li>', page)[0]
+        self.assertIn('href="/mic/5/#v1"', row)
+        self.assertIn("Bethlehem", row)
+        self.assertEqual(page.count('<p class="q-text"'), len(build_site.quotations()))
+        for lang in build_site.LANGUAGES:
+            self.assertTrue((self.out / build_site.url(lang, "/quotations/").strip("/") / "index.html").is_file())
 
 if __name__ == "__main__":
     unittest.main()
