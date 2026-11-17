@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("texts", "0003_edition_loader_version"),
-        ("translation", "0013_search_language_checked"),
+        ("translation", "0014_review_snapshot_and_record_changes"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 

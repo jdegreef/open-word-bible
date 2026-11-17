@@ -258,7 +258,7 @@ class QueueOrderTest(AdminTestCase):
         greek = Sentence.objects.get(record_id="REV.1.1.s1")
         ReviewEvent.objects.create(sentence=greek, user=self.boss, action="meaning_reviewed", digest="old")
         ReviewState.objects.all().delete()
-        migration = importlib.import_module("translation.migrations.0014_review_state_and_bible_order")
+        migration = importlib.import_module("translation.migrations.0015_review_state_and_bible_order")
         migration.fill_review_states(apps, None)
         self.assertEqual(sorted(ReviewState.objects.values_list("sentence__record_id", "layer", "state")),
                          [("ACT.1.1.s1", "en", "flagged"), ("JHN.2.1.s1", "en", "approved"),

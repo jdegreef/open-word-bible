@@ -58,6 +58,7 @@ from translation.models import Decision, Rendering, ReviewEvent, ReviewState, Se
 
 from .inbox import verse_label
 from .permissions import admin_view, is_super_admin
+from .snapshot import snapshot
 
 A = ReviewEvent.Action
 RS = ReviewState.State
@@ -353,7 +354,8 @@ def _act(request, s, layer, data):
         # Saving the event brings the sentence's ReviewState up to date.
         event = ReviewEvent.objects.create(sentence=s, user=request.user, action=kind, note=note,
                                            language="" if _meaning(layer) else layer,
-                                           digest=digest(s, layer) if action == "approve" else "")
+                                           digest=digest(s, layer) if action == "approve" else "",
+                                           snapshot=snapshot(s, layer) if action == "approve" else {})
         if action == "approve":
             # The digest was just taken from s as loaded: no need to compare again.
             ReviewState.objects.filter(sentence=s, layer=layer, event=event).update(checked_at=s.updated_at)
