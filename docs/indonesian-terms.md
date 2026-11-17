@@ -2337,3 +2337,5 @@ records it. Empty until the first book is drafted.
 | Isaiah | Nebaioth; Ephah (tribe) | Nebayot; Efa | 60:6–7 |
 | Isaiah | coat of mail; helmet | *baju zirah*; *ketopong* | 59:17 |
 | Isaiah | Hephzibah; Beulah | Hefzibah; Beula (L); *Kesukaan-Ku Ada Padanya*; *Yang Bersuami* (B) | 62:4 |
+| Isaiah | Bozrah | Bozra | 63:1 |
+| Isaiah | the angel of his presence | *malaikat hadirat-Nya* | 63:9 |
