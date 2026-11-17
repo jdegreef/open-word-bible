@@ -1762,6 +1762,7 @@ def chapter_page(book, chapter, lang="en"):
     {chapter_notes(records, chapter, lang, words)}
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
+    {verse_page_links(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
@@ -1935,6 +1936,185 @@ def book_ld(book, lang, intro, chaps):
     modified = last_modified(intro_sources(book, lang))
     if modified:
         data["dateModified"] = modified
+    return ld_script(data)
+
+
+# Verse pages: one page for each of the best-known verses (the verses of the
+# day, data/verse_of_the_day.json), at /<book>/<chapter>/<verse>/, with the
+# verse at all three levels, the original words and every decision behind
+# it with its reasoning. People search for a verse by its reference ("John
+# 3:16 meaning"), and a chapter page shows only the Balanced text, with the
+# reasoning in the reader's data.
+@functools.cache
+def verse_page_ids():
+    """The verses that have a page: the verses of the day that have
+    records, once each, in Bible order."""
+    data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
+    have = set(chapters())
+    found = {vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
+             and verse_records(vid)}
+    return sorted(found, key=lambda vid: refs.parse(vid).sort_key())
+
+
+def verse_page_url(vid):
+    ref = refs.parse(vid)
+    return f"/{ref.book.lower()}/{ref.chapter}/{ref.verse}/"
+
+
+def verse_records(vid):
+    """The records with a sentence in a verse."""
+    ref = refs.parse(vid)
+    return [r for r in chapter_records(ref.book, ref.chapter) if vid in r["refs"]]
+
+
+@functools.cache
+def verse_page_languages(vid):
+    """The languages every sentence of a verse is in: those its page is
+    built in."""
+    rs = verse_records(vid)
+    return tuple(code for code in LANGUAGES if all(code in r["renderings"] for r in rs))
+
+
+def verse_levels(vid, lang):
+    """{level: the verse's text at that level in lang}, at the default
+    settings, its sentences joined."""
+    out = {}
+    for r in verse_records(vid):
+        for level, text in record_verses(r).get(vid, {}).get(lang, {}).items():
+            text = plain(text)
+            out[level] = f"{out[level]} {text}" if level in out else text
+    return out
+
+
+def verse_ref_name(vid, lang):
+    """A verse's reference in lang: "John 3:16", "Psalm 23:1"."""
+    ref = refs.parse(vid)
+    return f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}"
+
+
+@functools.cache
+def verse_pages_in_chapter(book, chapter):
+    """The verses of a chapter that have a page, by verse number."""
+    return [vid for vid in verse_page_ids() if refs.parse(vid).book == book and refs.parse(vid).chapter == chapter]
+
+
+def verse_page_links(book, chapter, lang):
+    """Under a chapter: links to the pages of its verses that have one."""
+    vids = [vid for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)]
+    if not vids:
+        return ""
+    links = " ".join(f'<a href="{url(lang, verse_page_url(vid))}">{html.escape(verse_ref_name(vid, lang))}</a>'
+                     for vid in vids)
+    return f'<p class="verse-pages">{catalog(lang)["verse_page"]["in_chapter"]} {links}</p>'
+
+
+def verse_decision_html(d, own, lang):
+    """One decision on a verse page: the choice, whether it is uncertain,
+    the alternatives and the reason. own is its translation into lang
+    (data/notes/), if any; a meaning decision not translated, and every
+    reason not translated, is marked as English."""
+    esc = html.escape
+    ui = catalog(lang)["compare.ui"]
+    english = ' lang="en"' if lang != "en" else ""
+    shown = {**d, **(own or {})}
+    choice_attr = english if d["layer"] == "meaning" and not own else ""
+    reason_attr = english if not (own and own.get("reason")) else ""
+    out = f'<li><p class="vd-choice"{choice_attr}><strong>{esc(markup.render(shown["choice"]), quote=False)}</strong>'
+    if d.get("uncertain"):
+        out += f' <span class="vd-unsure">{esc(ui["uncertain"], quote=False)}</span>'
+    out += "</p>"
+    if shown.get("alternatives"):
+        alts = "; ".join(markup.render(a) for a in shown["alternatives"])
+        out += (f'<p class="vd-alts">{esc(ui["also"], quote=False)}'
+                f'<span{choice_attr}>{esc(alts, quote=False)}</span></p>')
+    if shown.get("reason"):
+        out += f'<p class="vd-reason"{reason_attr}>{esc(markup.render(shown["reason"]), quote=False)}</p>'
+    return out + "</li>"
+
+
+def verse_page(vid, lang="en"):
+    """A verse's page in lang (see verse_page_ids)."""
+    esc = html.escape
+    ref = refs.parse(vid)
+    book, chapter = ref.book, ref.chapter
+    records, words = load_chapter(book, chapter)
+    rs = verse_records(vid)
+    ui = catalog(lang)["verse_page"]
+    cui = catalog(lang)["compare.ui"]
+    names = catalog(lang)["levels"]
+    source = source_language(book)
+    suffix = "_hbo" if source == "hbo" else ""
+    name = verse_ref_name(vid, lang)
+    levels = verse_levels(vid, lang)
+    level_rows = "".join(f'<div class="vl-row"><dt>{names[code]}</dt><dd>{esc(levels[code], quote=False)}</dd></div>'
+                         for code in "BLR" if code in levels)
+    gloss = ""
+    if lang == "en" and len(rs) == 1 and rs[0]["refs"] == [vid] and rs[0].get("literal_gloss"):
+        gloss = (f'<section class="verse-section"><h2>{ui["gloss"]}</h2>'
+                 f'<p class="verse-gloss">{esc(rs[0]["literal_gloss"], quote=False)}</p></section>')
+    # A Hebrew word's "after" is empty where a prefix joins the next word;
+    # a Greek word's may be bare punctuation, which a space follows.
+    original = "".join(w["text"] + (w.get("after", " ") if source == "hbo" or w.get("after", " ").endswith(" ")
+                                    else w["after"] + " ")
+                       for w in words.get(vid, [])).strip()
+    direction = ' dir="rtl"' if source == "hbo" else ""
+    english = [e for e in versification.to_english(ref) if e != ref]
+    numbering = (f'<p class="fine">{ui["english_number"].format(ref=esc(verse_ref_name(str(english[0]), lang)))}</p>'
+                 if english else "")
+    translated = page_notes(rs, lang)
+    in_verse = {w["id"] for w in words.get(vid, [])}
+
+    def about_verse(d):
+        return not d.get("tokens") or bool(in_verse & set(d["tokens"]))
+    meaning = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"] if d["layer"] == "meaning" and about_verse(d))
+    wording = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"]
+                      if d["layer"] != "meaning" and d.get("language") == lang and about_verse(d))
+    why = ""
+    if meaning or wording:
+        why = (f'<section class="verse-section"><h2>{cui["why"]}</h2>'
+               + (f'<h3>{cui["meaning"]}</h3><ul class="verse-decisions">{meaning}</ul>' if meaning else "")
+               + (f'<h3>{cui["wording"]}</h3><ul class="verse-decisions">{wording}</ul>' if wording else "")
+               + "</section>")
+    chapter_link = url(lang, chapter_url(book, chapter)) + f"#v{ref.verse}"
+    body = f"""
+<article class="article verse-page">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, chapter_url(book, chapter))}">{esc(f"{chapter_book(book, lang)} {chapter}")}</a></p>
+<h1>{esc(name)}</h1>
+<p class="notice">{ui["draft"]}</p>
+</header>
+<dl class="verse-levels">{level_rows}</dl>
+{numbering}
+<section class="verse-section"><h2>{ui["original" + suffix]}</h2>
+<p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
+{gloss}
+{why}
+<p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;&rarr;</a>
+<a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
+</article>
+{verse_ld(vid, lang, name, levels, rs)}
+{breadcrumb_ld(lang, book_crumbs(book, lang) + [(chapter_name(records, book, chapter, lang), chapter_url(book, chapter)), (name, verse_page_url(vid))])}
+"""
+    return page(lang, ui["title"].format(ref=name), body, path=verse_page_url(vid), current="/read/",
+                description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
+                else ui["description" + suffix].format(ref=name),
+                translated=verse_page_languages(vid))
+
+
+def verse_ld(vid, lang, name, levels, rs):
+    """schema.org data for a verse's page: the verse as a work, its
+    Balanced text, part of its chapter, translated from the source text."""
+    ref = refs.parse(vid)
+    source = SOURCE_TEXTS[source_language(ref.book)]
+    data = {"@context": "https://schema.org", "@type": "CreativeWork", "name": name,
+            "url": SITE_URL + url(lang, verse_page_url(vid)), "inLanguage": lang,
+            "text": levels.get("B", ""), "license": CC0_URL,
+            "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in rs) else "Published",
+            "isPartOf": {"@type": "Chapter", "name": f"{chapter_book(ref.book, lang)} {ref.chapter}",
+                         "url": SITE_URL + url(lang, chapter_url(ref.book, ref.chapter))},
+            "translationOfWork": source, "isBasedOn": source}
     return ld_script(data)
 
 
@@ -5948,6 +6128,10 @@ def build(out):
         for book, _ in books(lang):
             if lang in book_languages(book):
                 add(book_url(book), book_page(book, lang), sources=intro_sources(book, lang))
+        for vid in verse_page_ids():
+            if lang in verse_page_languages(vid):
+                ref = refs.parse(vid)
+                add(verse_page_url(vid), verse_page(vid, lang), sources=chapter_sources(ref.book, ref.chapter))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
