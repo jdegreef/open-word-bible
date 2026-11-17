@@ -1537,6 +1537,31 @@ class SharedDataTest(unittest.TestCase):
                     # Shown as plain text under the title: no reader settings.
                     self.assertNotIn("{{", text, where)
 
+class NoteReasonsTest(unittest.TestCase):
+    def test_footnotes_carry_their_reasons_in_the_page(self):
+        # The reasoning is what the site shows that no other Bible does:
+        # it is in the page as served, under each footnote, not only in
+        # the reader's data.
+        records, words = build_site.load_chapter("JHN", 3)
+        notes = [d for r in records for d in build_site.footnote_decisions(r, "en")]
+        page = build_site.chapter_notes(records, 3, "en", words)
+        self.assertEqual(page.count('<details class="note-why">'), sum(1 for d in notes if d.get("reason")))
+        first = next(d for d in notes if d.get("reason"))
+        self.assertIn(html.escape(build_site.markup.render(first["reason"]), quote=False), page)
+
+    def test_a_reason_not_translated_is_marked_english(self):
+        records, words = build_site.load_chapter("JHN", 3)
+        translated = build_site.page_notes(records, "es")
+        page = build_site.chapter_notes(records, 3, "es", words)
+        for r in records:
+            for d in build_site.footnote_decisions(r, "es"):
+                own = translated.get(r["id"], {}).get(d["id"], {}).get("reason")
+                if own:
+                    self.assertIn(html.escape(build_site.markup.render(own), quote=False), page)
+                elif d.get("reason"):
+                    reason = html.escape(build_site.markup.render(d["reason"]), quote=False)
+                    self.assertIn(f'<p lang="en">{reason}</p>', page)
+
 
 if __name__ == "__main__":
     unittest.main()
