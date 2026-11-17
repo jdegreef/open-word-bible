@@ -10,8 +10,11 @@ from django.contrib.postgres.fields import ArrayField
 from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.db import models
+from django.db.models.signals import post_delete, post_save
+from django.dispatch import receiver
 from django.utils import timezone
 
+from owb.refs import BOOK_CODES
 from texts.models import Edition
 
 
@@ -38,10 +41,19 @@ class Sentence(models.Model):
                                   help_text="Links from source tokens to rendering spans, as in content/")
     status = models.CharField(max_length=20, choices=Status.choices, default=Status.AI_DRAFT)
     updated_at = models.DateTimeField(auto_now=True)
+    # The book's place in the Bible (owb.refs.BOOK_CODES), worked out by the
+    # database from book, so review queues are sorted and paged there.
+    book_order = models.GeneratedField(
+        expression=models.Case(*(models.When(book=code, then=models.Value(i))
+                                 for i, code in enumerate(BOOK_CODES)),
+                               default=models.Value(99), output_field=models.SmallIntegerField()),
+        output_field=models.SmallIntegerField(), db_persist=True)
 
     class Meta:
         # updated_at: the admin's progress counts are cached until it changes.
-        indexes = [models.Index(fields=["book", "chapter"]), models.Index(fields=["updated_at"])]
+        indexes = [models.Index(fields=["book", "chapter"]), models.Index(fields=["updated_at"]),
+                   models.Index(fields=["book_order", "chapter", "verse", "number", "id"],
+                                name="sentence_bible_order")]
         ordering = ["book", "chapter", "verse", "number"]
 
     def __str__(self):
@@ -62,6 +74,8 @@ class Rendering(models.Model):
     class Meta:
         constraints = [models.UniqueConstraint(fields=["sentence", "language", "level"],
                                                name="one_rendering_per_language_level")]
+        # A language's sentences: review queues, coverage.
+        indexes = [models.Index(fields=["language", "sentence"], name="rendering_language_sentence")]
         ordering = ["sentence", "language", "level"]
 
     def __str__(self):
@@ -89,6 +103,7 @@ class Decision(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=["sentence", "key"], name="unique_decision_key")]
+        indexes = [models.Index(fields=["language", "sentence"], name="decision_language_sentence")]
         ordering = ["sentence", "order"]
 
     def __str__(self):
@@ -116,10 +131,77 @@ class ReviewEvent(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        indexes = [models.Index(fields=["sentence", "created_at"], name="review_event_trail"),
+                   models.Index(fields=["action", "created_at"], name="review_event_action")]
         ordering = ["-created_at"]
 
     def __str__(self):
         return f"{self.sentence} {self.action} by {self.user}"
+
+
+class ReviewState(models.Model):
+    """Where a sentence stands in one review layer, kept from its review
+    trail so the admin's queues are filtered and paged in the database: the
+    latest approval or flag in the layer, and what that makes the sentence.
+    A sentence with no approval or flag in a layer has no row ("not
+    reviewed").
+
+    Saving or deleting a ReviewEvent brings its row up to date (sync).
+    Whether an approval still matches the sentence ("approved") or not
+    ("changed") is worked out by staff/review.py's refresh, for the rows
+    whose sentence was saved after they were last checked, as an import
+    saves every sentence it touches. Nothing here changes Sentence.status."""
+    class State(models.TextChoices):
+        APPROVED = "approved", "Approved"
+        CHANGED = "changed", "Changed since approval"
+        FLAGGED = "flagged", "Flagged"
+
+    sentence = models.ForeignKey(Sentence, on_delete=models.CASCADE, related_name="review_states")
+    layer = models.CharField(max_length=3, help_text="grc or hbo for the meaning, a reading language for wording")
+    state = models.CharField(max_length=8, choices=State.choices)
+    event = models.ForeignKey(ReviewEvent, on_delete=models.CASCADE, related_name="+",
+                              help_text="The latest approval or flag in the layer")
+    checked_at = models.DateTimeField(null=True, blank=True,
+                                      help_text="The sentence's updated_at when its approval was last "
+                                                "compared with it; empty until then")
+
+    DECIDING = (ReviewEvent.Action.MEANING_REVIEWED, ReviewEvent.Action.REVIEWED, ReviewEvent.Action.FLAGGED)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["sentence", "layer"], name="one_review_state_per_layer")]
+        indexes = [models.Index(fields=["layer", "state"], name="review_state_layer"),
+                   models.Index(fields=["state"], name="review_state_state")]
+
+    def __str__(self):
+        return f"{self.sentence_id} {self.layer} {self.state}"
+
+    @classmethod
+    def sync(cls, sentence_id, language, saved=None):
+        """Bring the row for one sentence and layer (an event's language,
+        blank for the meaning) up to date with the sentence's trail, after
+        the event with id saved was saved or deleted."""
+        original = (Sentence.objects.filter(pk=sentence_id)
+                    .values_list("source_edition__language", flat=True).first())
+        if original is None:   # the sentence is being deleted
+            return
+        layer = language or original
+        latest = (ReviewEvent.objects.filter(sentence_id=sentence_id, language=language, action__in=cls.DECIDING)
+                  .order_by("-created_at", "-id").first())
+        if latest is None:
+            cls.objects.filter(sentence_id=sentence_id, layer=layer).delete()
+            return
+        state = cls.State.FLAGGED if latest.action == ReviewEvent.Action.FLAGGED else cls.State.APPROVED
+        row = cls.objects.filter(sentence_id=sentence_id, layer=layer).first()
+        if row and row.event_id == latest.id and latest.id != saved:
+            return   # a comment, say: nothing changes, nor needs comparing again
+        cls.objects.update_or_create(sentence_id=sentence_id, layer=layer,
+                                     defaults={"event": latest, "state": state, "checked_at": None})
+
+
+@receiver(post_save, sender=ReviewEvent)
+@receiver(post_delete, sender=ReviewEvent)
+def _sync_review_state(sender, instance, **kwargs):
+    ReviewState.sync(instance.sentence_id, instance.language, saved=instance.pk)
 
 
 class ContentFile(models.Model):

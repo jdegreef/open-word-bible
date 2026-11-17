@@ -23,6 +23,7 @@ from datetime import timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
+from django.db import connection
 from django.db.models import Count, Max, Q
 from django.db.models.functions import TruncWeek
 from django.utils import timezone
@@ -38,7 +39,7 @@ from translation.models import ContentFile, Decision, ImportRun, Rendering, Revi
 from . import inbox
 from .models import AdminAction
 from .permissions import admin_view
-from .review import open_flags
+from .review import open_flag_count
 
 log = logging.getLogger(__name__)
 
@@ -57,32 +58,53 @@ def _languages():
             for code, lang in languages.READING.items()]
 
 
-def _by_book():
-    """{book: {"sentences", "chapters", "statuses": {status: n}, "langs": {lang: n}}}
-    for every book with a sentence. Counting every rendering takes seconds,
-    so the answer is cached until a sentence is added or saved again
-    (import_content saves a sentence, bumping its updated_at, whenever its
-    renderings change) or reviewed."""
+def _stamps():
+    """(content, review): strings that change when a sentence is added or
+    saved again (import_content saves a sentence, bumping its updated_at,
+    whenever its renderings change), and when a review is made. Cache keys
+    for what is counted from them."""
     stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
-    # Approving the meaning changes a status without touching updated_at.
-    review = ReviewEvent.objects.aggregate(i=Max("id"))["i"] or 0
-    key = "staff.by_book.{}.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0, review)
+    content = "{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0)
+    return content, f"{content}.{ReviewEvent.objects.aggregate(i=Max('id'))['i'] or 0}"
+
+
+def _by_book(stamps=None):
+    """{book: {"sentences", "chapters", "statuses": {status: n}, "langs": {lang: n}}}
+    for every book with a sentence. Counting every rendering takes a second
+    or more, so that is cached until the content changes; the statuses,
+    which a review changes (approving the meaning, without touching
+    updated_at), are counted again after one."""
+    content, review = stamps or _stamps()
+    key = f"staff.by_book.{content}"
     out = cache.get(key)
     if out is None:
         out = _count_by_book()
         cache.set(key, out, 7 * 86400)
-    return out
+    key = f"staff.by_book.statuses.{review}"
+    statuses = cache.get(key)
+    if statuses is None:
+        statuses = {}
+        for row in Sentence.objects.order_by().values("book", "status").annotate(n=Count("id")):
+            statuses.setdefault(row["book"], {})[row["status"]] = row["n"]
+        cache.set(key, statuses, 7 * 86400)
+    return {book: {**row, "statuses": statuses.get(book, {})} for book, row in out.items()}
 
 
 def _count_by_book():
     out = {}
-    for row in Sentence.objects.values("book").annotate(n=Count("id"), chapters=Count("chapter", distinct=True)):
-        out[row["book"]] = {"sentences": row["n"], "chapters": row["chapters"], "statuses": {}, "langs": {}}
-    for row in Sentence.objects.values("book", "status").annotate(n=Count("id")):
-        out[row["book"]]["statuses"][row["status"]] = row["n"]
-    for row in (Rendering.objects.values("sentence__book", "language")
-                .annotate(n=Count("sentence", distinct=True))):
-        out[row["sentence__book"]]["langs"][row["language"]] = row["n"]
+    for row in (Sentence.objects.order_by().values("book")
+                .annotate(n=Count("id"), chapters=Count("chapter", distinct=True))):
+        out[row["book"]] = {"sentences": row["n"], "chapters": row["chapters"], "langs": {}}
+    # Sentences per book and language: the distinct (language, sentence)
+    # pairs first, read from the rendering_language_sentence index, is
+    # several times faster than COUNT(DISTINCT) over every rendering.
+    with connection.cursor() as cursor:
+        cursor.execute(f"""SELECT s.book, r.language, COUNT(*)
+                           FROM (SELECT DISTINCT language, sentence_id FROM {Rendering._meta.db_table}) r
+                           JOIN {Sentence._meta.db_table} s ON s.id = r.sentence_id
+                           GROUP BY s.book, r.language""")
+        for book, language, n in cursor.fetchall():
+            out[book]["langs"][language] = n
     return out
 
 
@@ -96,8 +118,8 @@ def _state(book, rendered, sentences, chapters_drafted):
     return "partial"
 
 
-def _coverage():
-    data = _by_book()
+def _coverage(stamps=None):
+    data = _by_book(stamps)
     books = []
     for code in refs.BOOK_CODES:
         row = data.get(code, {"sentences": 0, "chapters": 0, "statuses": {}, "langs": {}})
@@ -272,14 +294,50 @@ def engagement(request):
     })
 
 
+def _summary():
+    """The dashboard's numbers that are the same for every account, cached
+    until the content changes or a review is made: the totals, each
+    language's sentences, books not started or partly drafted, and the
+    open flags."""
+    stamps = _stamps()
+    key = f"staff.overview.{stamps[1]}"
+    out = cache.get(key)
+    if out is not None:
+        return out
+    books = _coverage(stamps)
+    statuses = {}
+    for b in books:
+        for status, n in b["statuses"].items():
+            statuses[status] = statuses.get(status, 0) + n
+    out = {
+        "totals": {
+            "sentences": sum(b["sentences"] for b in books),
+            "books_started": sum(1 for b in books if b["sentences"]),
+            "books_drafted": sum(1 for b in books if b["languages"]["en"]["state"] == "drafted"),
+            "books": len(books),
+            "chapters_drafted": sum(b["chapters_drafted"] for b in books),
+            "chapters": sum(CHAPTERS.values()),
+            "statuses": statuses,
+        },
+        "languages": [{**lang, "sentences": sum(b["languages"][lang["code"]]["sentences"] for b in books)}
+                      for lang in _languages()],
+        "not_started": sum(1 for b in books if not b["sentences"]),
+        "partial": sum(1 for b in books if b["sentences"] and b["chapters_drafted"] < b["chapters"]),
+        "flags": open_flag_count(),
+    }
+    cache.set(key, out, 7 * 86400)
+    return out
+
+
 @admin_view("overview")
 def overview(request):
     """The dashboard. What needs attention comes first, each item linking to
     the admin page that deals with it; areas the account can't open are
-    left out."""
+    left out. The numbers about the translation come from _summary; the
+    inbox, the team and the last import are read as they are (each a
+    query on an index)."""
     mine = request.admin_areas
-    books = _coverage()
-    sentences = sum(b["sentences"] for b in books)
+    summary = _summary()
     attention = []
     if "inbox" in mine:
         waiting = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).aggregate(
@@ -296,10 +354,8 @@ def overview(request):
         if waiting["mine"]:
             attention.append({"key": "inbox_mine", "count": waiting["mine"], "tone": "warn",
                               "label": "reader messages assigned to you", "href": "#inbox/mine"})
-    if "inbox" in mine:
-        flagged = len(open_flags())
-        if flagged:
-            attention.append({"key": "flags", "count": flagged, "tone": "hot",
+        if summary["flags"]:
+            attention.append({"key": "flags", "count": summary["flags"], "tone": "hot",
                               "label": "sentences flagged by reviewers", "href": "#flags"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
@@ -314,33 +370,18 @@ def overview(request):
     elif last and last.skipped:
         attention.append({"key": "import", "count": len(last.skipped), "tone": "warn",
                           "label": "content files skipped for a missing source text", "href": "#health"})
-    not_started = sum(1 for b in books if not b["sentences"])
-    if not_started:
-        attention.append({"key": "books", "count": not_started, "tone": "info",
+    if summary["not_started"]:
+        attention.append({"key": "books", "count": summary["not_started"], "tone": "info",
                           "label": "books not started in English", "href": "#coverage"})
-    partial = sum(1 for b in books if b["sentences"] and b["chapters_drafted"] < b["chapters"])
-    if partial:
-        attention.append({"key": "partial", "count": partial, "tone": "info",
+    if summary["partial"]:
+        attention.append({"key": "partial", "count": summary["partial"], "tone": "info",
                           "label": "books partly drafted", "href": "#coverage"})
     activity = []
     if "team" in mine:
         activity = [_action_json(a) for a in AdminAction.objects.all()[:8]]
-    statuses = {}
-    for b in books:
-        for status, n in b["statuses"].items():
-            statuses[status] = statuses.get(status, 0) + n
     return Response({
-        "totals": {
-            "sentences": sentences,
-            "books_started": sum(1 for b in books if b["sentences"]),
-            "books_drafted": sum(1 for b in books if b["languages"]["en"]["state"] == "drafted"),
-            "books": len(books),
-            "chapters_drafted": sum(b["chapters_drafted"] for b in books),
-            "chapters": sum(CHAPTERS.values()),
-            "statuses": statuses,
-        },
-        "languages": [{**lang, "sentences": sum(b["languages"][lang["code"]]["sentences"] for b in books)}
-                      for lang in _languages()],
+        "totals": summary["totals"],
+        "languages": summary["languages"],
         "attention": attention,
         "activity": activity,
         "last_import": _run_json(last) if last else None,

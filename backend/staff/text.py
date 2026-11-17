@@ -15,7 +15,7 @@ import json
 
 from django.conf import settings
 from django.core.cache import cache
-from django.db.models import Case, Count, IntegerField, Q, Value, When
+from django.db.models import Count, Q
 from rest_framework.response import Response
 
 from owb import languages, refs
@@ -27,11 +27,6 @@ from .permissions import admin_view
 from .progress import book_name
 
 PAGE = 50
-# Bible order, for a decision (by its sentence) and for a sentence.
-ORDER = Case(*[When(sentence__book=code, then=Value(i)) for i, code in enumerate(refs.BOOK_CODES)],
-             output_field=IntegerField())
-BOOK_ORDER = Case(*[When(book=code, then=Value(i)) for i, code in enumerate(refs.BOOK_CODES)],
-                  output_field=IntegerField())
 
 
 def _decision_json(d):
@@ -69,8 +64,8 @@ def decisions(request):
     except ValueError:
         offset = 0
     total = found.count()
-    page = (found.select_related("sentence").annotate(book_order=ORDER)
-            .order_by("book_order", "sentence__chapter", "sentence__verse", "sentence__number", "order")
+    page = (found.select_related("sentence")
+            .order_by("sentence__book_order", "sentence__chapter", "sentence__verse", "sentence__number", "order")
             [offset:offset + PAGE])
     return Response({
         "decisions": [_decision_json(d) for d in page], "total": total, "offset": offset, "page": PAGE,
@@ -102,7 +97,7 @@ def terms(request):
             ids = list(uses.values_list("id", flat=True))
             by_lang = dict(Rendering.objects.filter(sentence_id__in=ids).values("language")
                            .annotate(n=Count("sentence", distinct=True)).values_list("language", "n"))
-            first = [r[0] for r in Sentence.objects.filter(id__in=ids).annotate(book_order=BOOK_ORDER)
+            first = [r[0] for r in Sentence.objects.filter(id__in=ids)
                      .order_by("book_order", "chapter", "verse").values_list("refs", flat=True)[:8]]
             cached.append({**term, "language": term.get("language", "grc"), "uses": len(ids),
                            "by_language": {c: by_lang.get(c, 0) for c in languages.CODES},

@@ -36,6 +36,8 @@ class ReaderMessage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
+        # The inbox and the dashboard: messages in one status, oldest or newest first.
+        indexes = [models.Index(fields=["status", "created_at"], name="reader_message_status")]
         ordering = ["-created_at"]
 
     def __str__(self):
