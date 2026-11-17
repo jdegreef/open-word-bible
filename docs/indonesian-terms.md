@@ -2308,3 +2308,31 @@ records it. Empty until the first book is drafted.
 | Malachi | my messenger; the messenger of the covenant | *utusan-Ku*; *utusan perjanjian* (lowercase) | 3:1 |
 | Malachi | on the day when I act | *pada hari yang Aku siapkan* (L); *pada hari Aku bertindak* (B, R) | 3:17, 21 |
 | Malachi | the sun of righteousness | *matahari kebenaran* (lowercase) | 3:20 |
+| Ezekiel | Gog; Magog; chief prince of Meshech and Tubal | Gog; Magog; *pemimpin tertinggi* Mesekh dan Tubal | 38:2 |
+| Ezekiel | Put; Gomer; Beth-togarmah; Sheba; Dedan; Tarshish | Put; Gomer; Bet-Togarma; Syeba; Dedan; Tarsis | 38:5–13 |
+| Ezekiel | valley of the Travelers; Hamon-gog; Hamonah | *lembah Para Pelintas* (uncertain; alternative *Para Pengembara*); Hamon-Gog; Hamona (*Gerombolan*, R) | 39:11–16 |
+| Ezekiel | measuring reed; the reed as a unit; linen cord | *buluh pengukur* (L, B), *tongkat pengukur* (R); *buluh*, `{{units:sekitar 3,2 meter\|satu buluh}}` (B, R); *tali lenan* | 40:3–5 |
+| Ezekiel | cubit (long cubit, a cubit and a handbreadth) | *hasta* in words (L); `{{units:sekitar ... meter\|... hasta}}` reckoned at 53 cm (B, R); handbreadth `{{units:sekitar 7,5 sentimeter\|satu telapak tangan}}` | 40:5 |
+| Ezekiel | gate; threshold; alcoves; jambs; porch | *pintu gerbang* (L), *gerbang* (B, R); *ambang*; *relung* (uncertain); *tiang sisi* (uncertain); *serambi* | 40:6–9 |
+| Ezekiel | outer court; inner court; pavement; chambers | *pelataran luar*; *pelataran dalam*; *lantai batu*; *bilik* (L), *kamar* (B, R) | 40:17 |
+| Ezekiel | recessed windows; palm trees | *jendela-jendela yang menjorok ke dalam* (L, B), *jendela-jendela dengan bingkai yang dalam* (R); *pohon-pohon kurma* (L, B), *ukiran pohon kurma* (R) | 40:16 |
+| Ezekiel | barrier; steps; dressed stone; hooks | *pembatas* (L, B), *tembok rendah* (R); *anak tangga*; *batu pahat*; *kait-kait* (*bercabang dua*, L) | 40:12–43 |
+| Ezekiel | the house; the temple area | *rumah itu* (L), *Bait Allah* (B), *rumah Allah* (R); *kawasan Bait Allah* (B), *kawasan rumah Allah* (R) | 40:47 |
+| Ezekiel | the nave (*hekhal*); the most holy place | *ruang besar* (L), *ruang utama* (B, R); *tempat yang mahakudus* (L), *Ruang Mahakudus* (B, R) | 41:1–4 |
+| Ezekiel | side chambers; raised platform; free space; separate area (*gizrah*) | *bilik samping*; *tempat yang ditinggikan* (L), *landasan yang ditinggikan* (B, R); *ruang yang dibiarkan kosong* (L), *ruang terbuka* (B, R); *kawasan terpisah* (uncertain) | 41:5–12 |
+| Ezekiel | galleries; wooden canopy; pillars | *selasar-selasar* (uncertain); *atap emper dari kayu*; *tiang-tiang* | 41:15–26; 42:3–6 |
+| Ezekiel | holy and common | *yang kudus dan yang biasa* | 42:20 |
+| Ezekiel | altar: gutter, rim, ledge, hearth, horns; span | *parit*, *bibir*, *birai* (uncertain), *perapian mezbah*, *tanduk-tanduk*; *jengkal* (L), `{{units:sekitar 27 sentimeter\|setengah hasta}}` (B, R) | 43:13–17 |
+| Ezekiel | sanctuary (*miqdash*) | *tempat kudus* (L, B), *rumah Allah* where the English Readable has "temple" (R) | 43:21 |
+| Ezekiel | the prince (*nasi'*) | *pemimpin* (uncertain) at every level | 44:3 |
+| Ezekiel | Levitical priests; sons of Zadok | *imam-imam orang Lewi* (L, B), *para imam dari suku Lewi* (R); *anak-anak Zadok* (L), *keturunan Zadok* (B, R) | 44:15 |
+| Ezekiel | fill the hand (ordain); without blemish | *mengisi tangannya* (L), *menahbiskannya* (B), *mengkhususkannya bagi TUHAN* (R); *tidak bercela* (L), *tidak bercacat* (B), *tidak ada cacatnya* (R) | 43:26; 43:22 |
+| Ezekiel | turban; undergarments; devoted thing (*cherem*) | *serban*; *celana*; *barang yang dikhususkan* | 44:18–29 |
+| Ezekiel | contribution (*terumah*) of land; holding; open land | *persembahan khusus* (L), *bagian khusus* (B), *daerah khusus* (R); *tanah milik*; *tanah lapang* | 45:1–6 |
+| Ezekiel | ephah; bath; hin; homer; kor | *efa*; *bat*; *hin*; *homer*; *kor*; at B and R `{{units:sekitar 22 liter\|satu efa}}`, `{{units:sekitar 4 liter\|satu hin}}`, `{{units:sekitar 220 liter\|satu homer}}` | 45:10–14 |
+| Ezekiel | shekel; gerah | *syikal*, about 11,5 grams (B, R); *gera* | 45:12 |
+| Ezekiel | the year of liberty | *tahun pembebasan* (L, B); *tahun Yobel* (R) | 46:17 |
+| Ezekiel | kitchens; regular burnt offering | *dapur-dapur*; *korban bakaran tetap* (L, B), *korban bakaran harian* (R) | 46:15–24 |
+| Ezekiel | En-eglaim; Hethlon; Zedad; Berothah; Sibraim; Hazer-hattikon; Hauran; Hazar-enan | En-Eglaim; Hetlon; Zedad; Berota; Sibraim; Hazer-Hatikon; Hauran; Hazar-Enan | 47:10–17 |
+| Ezekiel | Meribath-kadesh; the eastern sea | Meribat-Kadesy; *laut timur* (L, B), *Laut Mati* (R) | 47:18–19 |
+| Ezekiel | The LORD Is There (the city's name) | *TUHAN [Ada] di Sana* (L), *TUHAN Ada di Sana* (B, R) | 48:35 |
