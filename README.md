@@ -86,7 +86,18 @@ sentence-opening "and" the English drops, a recitative "that" before a
 quotation. The article goes in the alignment of the word it belongs to
 ("the kingdom" ← article + noun; "Jesus's" ← article + name), and a setting
 span is always inside a span whole ("to {{deity_pronoun:him|Him}}"). John,
-Mark and Genesis 1–11 are aligned in English Balanced.
+Mark and Genesis 1–11 are aligned in English Balanced, and John in Japanese
+Balanced. In a script written without spaces (Japanese), a span may begin
+or end beside another character: 言 is a word of 言は. Because every language
+is aligned to the same source tokens, the reader's Parallel view lights a
+word's partner in the other language through them; no two languages are
+aligned to each other. `scripts/align.py` shows a passage's source words
+and drafts a language's alignments from a short spec.
+
+`data/furigana/<BOOK>.json` holds readings for the kanji of Japanese
+renderings (`owb/furigana.py`), which the reader can set over the text. They
+are a reading aid, not wording, drafted with `scripts/furigana.py`; John is
+done at the Balanced level.
 
 In the Hebrew, where MACULA gives each prefix and suffix a token of its
 own, the same rules apply morpheme by morpheme. The article prefix joins

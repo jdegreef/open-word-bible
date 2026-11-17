@@ -258,10 +258,24 @@ def render(text, settings=None):
     return SPAN.sub(choose, text)
 
 
+def _unspaced(ch):
+    """True for a character of a script written without spaces between
+    words (Chinese characters, hiragana, katakana): Japanese 「言は」 holds
+    the word 言, so a span may begin or end beside such a character."""
+    o = ord(ch)
+    return (0x3040 <= o <= 0x30FF or 0x3400 <= o <= 0x4DBF or 0x4E00 <= o <= 0x9FFF
+            or 0xF900 <= o <= 0xFAFF or 0xFF66 <= o <= 0xFF9F or o == 0x3005)
+
+
+def _joined(a, b):
+    """True if a and b are letters of one word."""
+    return a.isalnum() and b.isalnum() and not (_unspaced(a) or _unspaced(b))
+
+
 def _whole(text, start, end):
     """True if text[start:end] does not begin or end inside a word."""
-    inside_before = start > 0 and text[start - 1].isalnum() and text[start].isalnum()
-    inside_after = end < len(text) and text[end].isalnum() and text[end - 1].isalnum()
+    inside_before = start > 0 and _joined(text[start - 1], text[start])
+    inside_after = end < len(text) and _joined(text[end], text[end - 1])
     return not (inside_before or inside_after)
 
 
