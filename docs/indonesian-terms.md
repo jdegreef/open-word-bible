@@ -2334,3 +2334,5 @@ records it. Empty until the first book is drafted.
 | Isaiah | ruby (*kadkod*) | *batu delima* | 54:12 |
 | Isaiah | eunuch | *sida-sida* | 56:3 |
 | Isaiah | fruit of the lips | *buah bibir* | 57:19 |
+| Isaiah | Nebaioth; Ephah (tribe) | Nebayot; Efa | 60:6–7 |
+| Isaiah | coat of mail; helmet | *baju zirah*; *ketopong* | 59:17 |
