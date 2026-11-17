@@ -2318,3 +2318,7 @@ records it. Empty until the first book is drafted.
 | Malachi | my messenger; the messenger of the covenant | *utusan-Ku*; *utusan perjanjian* (lowercase) | 3:1 |
 | Malachi | on the day when I act | *pada hari yang Aku siapkan* (L); *pada hari Aku bertindak* (B, R) | 3:17, 21 |
 | Malachi | the sun of righteousness | *matahari kebenaran* (lowercase) | 3:20 |
+| Jeremiah | courtyard of the guard | *pelataran pengawal* (L, B); *halaman pengawal* (R) | 32:2 |
+| Jeremiah | Hanamel; Neriah; Mahseiah | Hanamel; Neria; Mahseya | 32:7, 12 |
+| Jeremiah | the family redeemer's right (*ge'ullah*) | *hak penebusan* (L); *kerabat penebus* (B, R) | 32:7 |
+| Jeremiah | Lachish; Azekah | Lakhis; Azeka | 34:7 |
