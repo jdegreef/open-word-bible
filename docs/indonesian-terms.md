@@ -2329,3 +2329,8 @@ records it. Empty until the first book is drafted.
 | Jeremiah | scribe, secretary (*sofer*, of the court) | *juru tulis* (L), *juru tulis negara* (B), *juru tulis kerajaan* (R) | 36:10 |
 | Jeremiah | Jehucal (Jucal); Irijah | Yehukhal (Yukhal); Yiria | 37:3, 13 |
 | Jeremiah | the cistern house | *rumah bak air* (L, B); *lubang di bawah tanah* (R) (uncertain) | 37:16 |
+| Jeremiah | Shephatiah son of Mattan; Jucal | Sefatya anak Matan; Yukhal | 38:1 |
+| Jeremiah | cistern (*bor*, the pit Jeremiah is lowered into) | *perigi* (uncertain; *bak air* the alternative) | 38:6 |
+| Jeremiah | Ebed-melech the Cushite | Ebed-Melekh, orang Kush (L, B); orang Etiopia (R) | 38:7 |
+| Jeremiah | Middle Gate; Nergal-sharezer; Samgar-nebu; Sarsekim; Nebushazban; Rab-saris; Rab-mag | Pintu Gerbang Tengah; Nergal-Sarezer; Samgar-Nebu; Sarsekim; Nebusyazban; Rab-Saris (L), *kepala para pegawai istana* (B, R); Rab-Mag | 39:3, 13 |
+| Jeremiah | Riblah; Hamath | Ribla; Hamat | 39:5 |
