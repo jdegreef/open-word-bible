@@ -315,14 +315,14 @@ class SearchTest(TestCase):
         self.assertIn("JHN.2.1", found)
         self.assertEqual(self.get(q="カリラヤ", lang="ja")["totals"].get("verse", 0), 0)
 
-    def test_a_language_with_no_text_yet_searches_the_english(self):
-        # Indonesian was added before its first book: its site finds the
-        # English sentences it shows, and references by its book names and
-        # abbreviations. Its own entries use the Indonesian stemmer.
+    def test_indonesian_searches_its_own_text(self):
+        # Indonesian now has every book: its site finds its own sentences,
+        # and references by its book names and abbreviations. Its entries
+        # use the Indonesian stemmer.
         ref = self.get(q="Yohanes 3:16", lang="id")["reference"]
         self.assertEqual((ref["label"], ref["url"]), ("Yohanes 3:16", "/id/jhn/3/#v16"))
         self.assertEqual(self.get(q="Yoh 3:16", lang="id")["reference"]["url"], "/id/jhn/3/#v16")
-        self.assertGreater(self.get(q="light", lang="id")["totals"].get("verse", 0), 0)
+        self.assertGreater(self.get(q="terang", lang="id")["totals"].get("verse", 0), 0)
         self.assertEqual(search.config("id"), "owb_indonesian")
         with connection.cursor() as cur:
             cur.execute("SELECT to_tsvector('owb_indonesian', 'dikasihi') @@ to_tsquery('owb_indonesian', 'kasih')")
