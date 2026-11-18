@@ -86,8 +86,8 @@ sentence-opening "and" the English drops, a recitative "that" before a
 quotation. The article goes in the alignment of the word it belongs to
 ("the kingdom" ← article + noun; "Jesus's" ← article + name), and a setting
 span is always inside a span whole ("to {{deity_pronoun:him|Him}}"). John,
-Mark and Genesis 1–11 are aligned in English Balanced, and John in Japanese
-Balanced. In a script written without spaces (Japanese), a span may begin
+Mark and Genesis 1–11 are aligned in English Balanced, and John and Mark in
+Japanese Balanced. In a script written without spaces (Japanese), a span may begin
 or end beside another character: 言 is a word of 言は. Because every language
 is aligned to the same source tokens, the reader's Parallel view lights a
 word's partner in the other language through them; no two languages are
