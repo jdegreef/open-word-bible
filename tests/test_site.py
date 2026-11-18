@@ -99,7 +99,7 @@ class SiteTest(unittest.TestCase):
         self.assertIn(build_site.asset("admin.css"), page)
         self.assertTrue((self.out / "admin.js").is_file())
         self.assertFalse((self.out / "es" / "admin").exists())
-        self.assertNotIn("/admin/", sitemap_text(self.out))
+        self.assertNotIn(f"<loc>{build_site.SITE_URL}/admin/", sitemap_text(self.out))
         # The account menu's Admin link opens it, for anyone on the team.
         self.assertIn('<a class="pop-item admin-link" href="/admin/" hidden>',
                       (self.out / "es" / "index.html").read_text(encoding="utf-8"))

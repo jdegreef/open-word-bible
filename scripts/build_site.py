@@ -2435,6 +2435,9 @@ def name_cards():
 # referent share a page: the same person's note, the same place's point,
 # or the same people, deity or word.
 ENTITY_SECTIONS = {"names": "/names/", "glossary": "/glossary/"}
+# An entity named in a single verse has no page: its card says all there is,
+# and a page of one link is thin (and the site's size budget is tight).
+ENTITY_MIN_VERSES = 2
 
 
 def entity_section(kind):
@@ -2496,6 +2499,8 @@ def entities():
         g["where"] = g["where"] or where
     out, paths, by_slug = {}, {}, {}
     for g in groups.values():
+        if len(g["verses"]) < ENTITY_MIN_VERSES:
+            continue
         g["verses"] = sorted(g["verses"], key=lambda v: refs.parse(v).sort_key())
         by_slug.setdefault((entity_section(g["kind"]), slugify(g["name"])), []).append(g)
     for (section, slug), gs in sorted(by_slug.items()):
