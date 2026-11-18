@@ -991,6 +991,13 @@ def chapter_book_link(book, lang):
             f'{t(lang, "reader.about_book", book=html.escape(BOOK_NAMES[book][lang]))}&nbsp;&rarr;</a></p>')
 
 
+@functools.lru_cache(maxsize=None)
+def chapter_set():
+    """chapters() as a set, read once: a page that asks whether a chapter
+    exists must not read all of content/ again, as chapters() does."""
+    return frozenset(chapters())
+
+
 def chapters():
     """Every (book, chapter) with content, in canonical order."""
     found = set()
@@ -1866,7 +1873,7 @@ def chapter_crossrefs_html(records, chapter, lang):
     folded, in the page as served. The reader draws them all in its margin
     from its data; these are for readers without it and for crawlers, and
     tie each chapter to the passages it is read with."""
-    have = set(chapters())
+    have = chapter_set()
     rows = []
     for vid, targets in chapter_crossrefs(records).items():
         ref = refs.parse(vid)
@@ -2043,7 +2050,7 @@ def verse_page_ids():
     """The verses that have a page: the verses of the day that have
     records, once each, in Bible order."""
     data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
-    have = set(chapters())
+    have = chapter_set()
     found = {vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
              and verse_records(vid)}
     return sorted(found, key=lambda vid: refs.parse(vid).sort_key())
@@ -2551,7 +2558,7 @@ def quotations_page(lang="en"):
     them, linked to both passages, and whether the Greek follows the
     Hebrew, the Septuagint or neither closely."""
     ui = catalog(lang)["quotations.ui"]
-    have = set(chapters())
+    have = chapter_set()
     groups = {}
     for q in quotations():
         nt, ot = span_verses(q["nt"]), quotation_ot(q["ot"])
