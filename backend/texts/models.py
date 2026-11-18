@@ -71,7 +71,9 @@ class Word(models.Model):
     lang = models.CharField(max_length=3, blank=True, help_text="grc, H (Hebrew) or A (Aramaic)")
 
     class Meta:
-        indexes = [models.Index(fields=["book", "chapter", "verse"])]
+        # strong: the admin's key terms and consistency look words up by it.
+        indexes = [models.Index(fields=["book", "chapter", "verse"]),
+                   models.Index(fields=["strong"], name="word_strong")]
         ordering = ["seq"]
 
     def __str__(self):

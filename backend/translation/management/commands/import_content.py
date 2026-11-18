@@ -51,6 +51,7 @@ entries whose documents changed are rewritten, or all of them with --all.
 import hashlib
 import json
 import time
+from collections import Counter
 from pathlib import Path
 
 from django.conf import settings
@@ -59,7 +60,7 @@ from django.db import transaction
 
 from owb import refs, validate
 from texts.models import Edition, Word
-from translation import search
+from translation import counts, search
 from translation.models import ContentFile, Decision, ImportRun, RecordChange, Rendering, Sentence, SentenceChange
 
 # Romans 16:25-27 come from Nestle 1904 (owb/sources/macula_greek.py); import_texts
@@ -295,6 +296,8 @@ class Command(BaseCommand):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
         self.record_changes(records)
+        # The drafted counts (DraftedCount) change by what this file adds or drops.
+        before = counts.drafted(Sentence.objects.filter(record_id__in=[r["id"] for r in records]))
         sentences = []
         for record in records:
             first = refs.parse(record["refs"][0])
@@ -329,3 +332,6 @@ class Command(BaseCommand):
                       uncertain=d["uncertain"], footnote=d["footnote"])
              for sentence, record in zip(sentences, records) for i, d in enumerate(record["decisions"])),
             batch_size=2000)
+        after = Counter((sentence.book, lang) for sentence, record in zip(sentences, records)
+                        for lang, levels in record["renderings"].items() if levels)
+        counts.apply({key: after[key] - before[key] for key in after.keys() | before.keys()})

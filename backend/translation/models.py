@@ -40,7 +40,7 @@ class Sentence(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        # updated_at: the admin's progress counts are cached until it changes.
+        # updated_at: the admin's health page shows the last change.
         indexes = [models.Index(fields=["book", "chapter"]), models.Index(fields=["updated_at"])]
         ordering = ["book", "chapter", "verse", "number"]
 
@@ -62,10 +62,29 @@ class Rendering(models.Model):
     class Meta:
         constraints = [models.UniqueConstraint(fields=["sentence", "language", "level"],
                                                name="one_rendering_per_language_level")]
+        # One language's renderings (export, the wording review queue)
+        # without reading the other languages' 90%.
+        indexes = [models.Index(fields=["language", "sentence"], name="rendering_language")]
         ordering = ["sentence", "language", "level"]
 
     def __str__(self):
         return f"{self.sentence} {self.language}/{self.level}"
+
+
+class DraftedCount(models.Model):
+    """How many of a book's sentences are drafted in a language (have any
+    rendering in it). import_content keeps these as it saves each file, so
+    the admin's progress pages read 66 x languages rows instead of counting
+    over a million renderings in a web request (translation/counts.py)."""
+    book = models.CharField(max_length=3)
+    language = models.CharField(max_length=3)
+    sentences = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["book", "language"], name="one_count_per_book_language")]
+
+    def __str__(self):
+        return f"{self.book} {self.language}: {self.sentences}"
 
 
 class Decision(models.Model):
@@ -89,6 +108,9 @@ class Decision(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=["sentence", "key"], name="unique_decision_key")]
+        # The admin's uncertain decisions, by language.
+        indexes = [models.Index(fields=["language"], condition=models.Q(uncertain=True),
+                                name="decision_uncertain")]
         ordering = ["sentence", "order"]
 
     def __str__(self):

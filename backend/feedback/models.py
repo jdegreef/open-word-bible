@@ -36,6 +36,8 @@ class ReaderMessage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
+        # verse__startswith="JHN.": a book's messages (the admin's book page).
+        indexes = [models.Index(fields=["verse"], opclasses=["varchar_pattern_ops"], name="message_verse")]
         ordering = ["-created_at"]
 
     def __str__(self):
