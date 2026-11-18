@@ -194,7 +194,10 @@ class TermPagesTest(unittest.TestCase):
         data = page_data(page)
         cards = {c["title"]: c for c in data["cards"]["list"]}
         self.assertEqual(cards["grace"]["href"], "/terms/grace/")
-        self.assertNotIn("href", next(c for c in cards.values() if c["type"] == "name"))
+        # A name's card links its own page, not a key term's.
+        for c in cards.values():
+            if c["type"] == "name" and "href" in c:
+                self.assertRegex(c["href"], r"^/(names|glossary)/[a-z0-9-]+/$")
         es = (self.out / "es" / "gen" / "2" / "index.html").read_text(encoding="utf-8")
         self.assertIn('"href":"/es/terms/the-divine-name-yhwh/"', es.replace(": ", ":"))
         reader = (self.out / "reader.js").read_text(encoding="utf-8")
