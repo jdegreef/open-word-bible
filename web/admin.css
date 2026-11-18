@@ -212,3 +212,13 @@ form.admin-toolbar { justify-content: flex-start; }
 :root[data-theme="dark"] .admin-diff del, :root[data-theme="night"] .admin-diff del,
 :root[data-theme="dark"] .admin-wrap > del, :root[data-theme="night"] .admin-wrap > del { color: #f0a093; }
 .admin-table tr[aria-current="true"] th { font-weight: 700; }
+
+/* A section that couldn't be drawn (admin.js errorPanel). */
+:root { --admin-danger: #a63a29; }
+:root[data-theme="dark"], :root[data-theme="night"] { --admin-danger: #f0a093; }
+@media (prefers-color-scheme: dark) { :root[data-theme="auto"] { --admin-danger: #f0a093; } }
+.admin-error { border: 1px solid var(--admin-danger); background: color-mix(in srgb, var(--admin-danger) 8%, var(--surface)); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 10px; max-width: 70ch; }
+.admin-error h2 { margin: 0; font-size: 18px; color: var(--admin-danger); }
+.admin-error p { margin: 0; }
+.admin-error .admin-actions { margin: 0; }
+.admin-error-details { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; user-select: all; }

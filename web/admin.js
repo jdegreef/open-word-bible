@@ -104,7 +104,41 @@ var OWBAdminCore = (function () {
     return -1;
   }
 
-  return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo };
+  // What a failed request's error says: {status, code, message, id}, from
+  // its answer (data, {} when it wasn't JSON). The API answers JSON with a
+  // request id when an admin endpoint fails (staff/permissions.py); a proxy
+  // in front of it (502, 504) answers HTML.
+  function failed(status, data) {
+    data = data || {};
+    var text = typeof data.detail === "string" ? data.detail : Array.isArray(data.detail) ? data.detail[0] : "";
+    if (!text) for (var k in data) if (k !== "code" && k !== "request_id") { text = Array.isArray(data[k]) ? data[k][0] : String(data[k]); break; }
+    if (!text) {
+      text = status === 502 || status === 503 || status === 504
+        ? "The server is restarting or too busy to answer (" + status + "). Try again in a minute."
+        : "The server hit an error answering this (" + status + ").";
+    }
+    return { status: status, code: data.code || "", message: text, id: data.request_id || "" };
+  }
+
+  // How a failed section is shown: {title, text, details, retry}. e is an
+  // Error from request() (status, code, id, method, path) or from a view.
+  function failure(e, at) {
+    var status = e.status || 0, code = e.code || "";
+    var title = code === "timeout" ? "This took too long"
+      : code === "no_answer" ? "The server didn't answer"
+      : code === "offline" ? "Can't reach the server"
+      : status === 403 ? "Your roles don't open this"
+      : status === 404 ? "Not found"
+      : status >= 500 ? "The server hit an error" : "This couldn't be loaded";
+    var details = [
+      e.path ? (e.method || "GET") + " " + e.path.split("?")[0] + (status ? " \u2192 " + status : "") : "",
+      code, e.id ? "request " + e.id : "", at ? at.toISOString().slice(0, 19).replace("T", " ") + " UTC" : ""
+    ].filter(Boolean).join(" \u00b7 ");
+    return { title: title, text: e.message, details: details, retry: status !== 403 && status !== 404 };
+  }
+
+  return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo,
+    failed: failed, failure: failure };
 })();
 
 (function () {
@@ -250,32 +284,43 @@ var OWBAdminCore = (function () {
       if (JSON.stringify(data) !== JSON.stringify(hit.value) && hit.by.indexOf(drawing) >= 0) redraw();
     }, function () { hit.asking = false; });
   }
+  // A request the server hasn't answered in this long is given up, so a
+  // hung one can't leave the section dimmed for good.
+  var REQUEST_MS = 30000;
   function request(path, options) {
     var account = saved();
+    var method = options.method || "GET";
     var headers = { "Content-Type": "application/json" };
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
+    var abort = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = abort ? setTimeout(function () { abort.abort(); }, REQUEST_MS) : null;
+    function fail(message, extra) {
+      var e = new Error(message);
+      e.method = method;
+      e.path = path;
+      for (var k in extra) e[k] = extra[k];
+      return e;
+    }
     return fetch(API + path, {
-      method: options.method || "GET", headers: headers,
+      method: method, headers: headers, signal: abort ? abort.signal : undefined,
       body: options.body ? JSON.stringify(options.body) : undefined
-    }).catch(function () {
-      throw new Error("Can't reach the server. Check your connection and try again.");
+    }).catch(function (err) {
+      clearTimeout(timer);
+      if (err && err.name === "AbortError") {
+        throw fail("No answer after " + REQUEST_MS / 1000 + " seconds. The server may be busy; try again in a minute.",
+          { code: "no_answer" });
+      }
+      throw fail("Can't reach the server. Check your connection and try again.", { code: "offline" });
     }).then(function (r) {
+      clearTimeout(timer);
       if (r.status === 204) return null;
       return r.json().catch(function () { return {}; }).then(function (data) {
         if (r.ok) return data;
-        var e = new Error(message(data) || "Something went wrong (" + r.status + ").");
-        e.status = r.status;
-        throw e;
+        var f = C.failed(r.status, data);
+        throw fail(f.message, { status: f.status, code: f.code, id: f.id });
       });
     });
   }
-  function message(data) {
-    if (!data) return "";
-    if (data.detail) return Array.isArray(data.detail) ? data.detail[0] : data.detail;
-    for (var k in data) if (k !== "code") return Array.isArray(data[k]) ? data[k][0] : String(data[k]);
-    return "";
-  }
-
   // A status line under a form: note(el, "Saved.") or note(el, err, true).
   function note(el, text, bad) {
     el.textContent = text instanceof Error ? text.message : text;
@@ -466,7 +511,7 @@ var OWBAdminCore = (function () {
       FLASH = "";
     }).catch(function (e) {
       if (mine !== drawing) return;
-      show([head("Admin", section.label), h("p", { class: "notice" }, e.message)]);
+      show([head("Admin", section.label), errorPanel(e)]);
     }).then(function () {
       if (mine !== drawing) return;
       clearTimeout(slow);
@@ -474,6 +519,39 @@ var OWBAdminCore = (function () {
       main.removeAttribute("aria-busy");
       document.title = section.label + " · Admin · Open Word Bible";
     });
+  }
+
+  // A section that couldn't be drawn: what happened in plain words, Try
+  // again, and details to copy into a report (the request id finds the
+  // server's log line and Sentry event).
+  function errorPanel(e) {
+    var f = C.failure(e, new Date());
+    var details = h("p", { class: "admin-error-details" }, f.details);
+    var actions = h("div", { class: "admin-actions" });
+    if (f.retry) {
+      var again = h("button", { type: "button", class: "admin-btn primary" }, "Try again");
+      again.addEventListener("click", function () { busy(again, true); route(); });
+      actions.appendChild(again);
+    }
+    if (f.details) {
+      var copyBtn = h("button", { type: "button", class: "admin-btn" }, "Copy details");
+      copyBtn.addEventListener("click", function () {
+        var text = f.title + ": " + f.text + "\n" + f.details;
+        var done = function () { copyBtn.textContent = "Copied"; };
+        var select = function () {
+          var range = document.createRange();
+          range.selectNodeContents(details);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select);
+        else select();
+      });
+      actions.appendChild(copyBtn);
+    }
+    return h("div", { class: "admin-error", role: "alert" },
+      h("h2", null, f.title), h("p", null, f.text), actions, f.details ? details : null);
   }
 
   // Keys for the view on the page: KEYS = {at: its drawing, "a": fn, ...},
@@ -1267,7 +1345,7 @@ var OWBAdminCore = (function () {
       .catch(function () { throw new Error("Can't reach the server. Check your connection and try again."); })
       .then(function (r) {
         if (!r.ok) return r.json().catch(function () { return {}; }).then(function (data) {
-          throw new Error(message(data) || "Something went wrong (" + r.status + ").");
+          throw new Error(C.failed(r.status, data).message);
         });
         var m = /filename="([^"]+)"/.exec(r.headers.get("Content-Disposition") || "");
         return r.blob().then(function (blob) {

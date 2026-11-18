@@ -97,3 +97,22 @@ test("the queue's next, previous and next to review", () => {
   assert.equal(C.todo(rows, "z", false), undefined);
   assert.equal(C.todo(null, "a", false), undefined);
 });
+
+test("a failed answer's message: the API's detail, or the status in words when it wasn't JSON", () => {
+  assert.deepEqual(plain(C.failed(500, { detail: "The server hit an error answering this.", code: "server_error", request_id: "7f3a9c21" })),
+    { status: 500, code: "server_error", message: "The server hit an error answering this.", id: "7f3a9c21" });
+  assert.equal(C.failed(400, { reply: ["Keep the reply under 4,000 characters."] }).message, "Keep the reply under 4,000 characters.");
+  assert.match(C.failed(502, {}).message, /restarting or too busy to answer \(502\)/);
+  assert.match(C.failed(500, {}).message, /\(500\)/);
+});
+
+test("a failed section says what happened, offers Try again, and gives details without the query string", () => {
+  const at = new Date(Date.UTC(2026, 10, 17, 23, 41, 5));
+  const timeout = Object.assign(new Error("Stopped."), { status: 503, code: "timeout", id: "7f3a9c21", method: "GET", path: "/api/admin/coverage/?q=secret" });
+  assert.deepEqual(plain(C.failure(timeout, at)), {
+    title: "This took too long", text: "Stopped.", retry: true,
+    details: "GET /api/admin/coverage/ → 503 · timeout · request 7f3a9c21 · 2026-11-17 23:41:05 UTC" });
+  assert.equal(C.failure(Object.assign(new Error("x"), { code: "offline", path: "/api/admin/" })).title, "Can't reach the server");
+  assert.equal(C.failure(Object.assign(new Error("x"), { status: 403 })).retry, false);
+  assert.equal(C.failure(new Error("A view's own error")).details, "");
+});

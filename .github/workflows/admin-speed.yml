@@ -1,0 +1,67 @@
+# The admin on the whole Bible: imports all of content/ into Postgres and
+# opens every admin endpoint under the web server's 15-second statement limit
+# (staff/management/commands/check_admin_speed.py). The backend tests use a
+# few sentences, so a query that takes 27 seconds on the real data passes
+# them; Coverage, Key terms and Consistency failed in production that way.
+#
+# Nightly and on demand rather than on every pull request: the import takes
+# 10 to 15 minutes. A runner's database fits in memory and Render's doesn't,
+# so the limit here is 5 seconds, not 15.
+name: Admin speed
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: admin-speed
+  cancel-in-progress: true
+
+jobs:
+  admin-speed:
+    name: Every admin endpoint on the full content
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: owb
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s
+          --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/owb
+      DJANGO_DEBUG: "1"
+      OWB_VENDOR: ${{ github.workspace }}/vendor
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - run: pip install -r backend/requirements.txt
+      - uses: actions/cache@v6
+        with:
+          path: vendor
+          key: sources-${{ hashFiles('sources.lock.json') }}
+      - name: Database
+        run: |
+          python backend/manage.py migrate --verbosity 0
+          python backend/manage.py createcachetable
+      # The original-language texts the content's records point into.
+      - name: Source texts
+        run: python backend/manage.py import_texts sblgnt wlc
+      # Every record; the search tables are left out (--search-budget 0),
+      # since no admin endpoint reads them.
+      - name: All of content/
+        run: python backend/manage.py import_content --search-budget 0 > import.log
+      - name: Every admin endpoint
+        run: python backend/manage.py check_admin_speed --cold --limit 5
