@@ -4,6 +4,7 @@ data/grc/ and data/hbo/."""
 import io
 import json
 import tempfile
+from collections import Counter
 from pathlib import Path
 from unittest import mock
 
@@ -92,9 +93,16 @@ class ImportContentTest(TestCase):
                       if r["id"] == "JHN.1.12.s1")
         self.assertEqual(s.renderings.count(), sum(len(levels) for levels in record["renderings"].values()))
         self.assertTrue(s.decisions.filter(layer="meaning").exists())
-        # The drafted counts import_content keeps match a count of the renderings.
+        # The drafted counts import_content keeps match the records. Counted
+        # from the files: a count over every rendering here, in the test's
+        # transaction (no statistics), was planned so badly on CI that it
+        # ran past the job's time limit.
+        expected = Counter()
+        for p in files:
+            for r in json.loads(p.read_text())["records"]:
+                expected.update((r["id"].split(".")[0], lang) for lang, levels in r["renderings"].items() if levels)
         stored = {(c.book, c.language): c.sentences for c in DraftedCount.objects.exclude(sentences=0)}
-        self.assertEqual(stored, dict(counts.drafted(Sentence.objects.all())))
+        self.assertEqual(stored, dict(expected))
 
     def test_drafted_counts_follow_a_language_leaving_and_coming_back(self):
         path = CONTENT / "JHN" / "JHN.1.1-18.json"

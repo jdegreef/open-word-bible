@@ -17,11 +17,13 @@ from django.db.models.expressions import RawSQL
 from .models import DraftedCount, Rendering, Sentence
 
 
-def drafted(sentences):
-    """Counter {(book, language): sentences drafted} over a queryset of
-    sentences."""
-    rows = (Rendering.objects.filter(sentence__in=sentences).values("sentence__book", "language")
-            .annotate(n=Count("sentence", distinct=True)))
+def drafted(books=None):
+    """Counter {(book, language): sentences drafted}, for books (default:
+    every book). A plain join filtered by book: `sentence IN (subquery)`
+    was planned as a nested loop over every rendering on a database
+    without statistics yet (CI's), and ran for most of an hour."""
+    renderings = Rendering.objects.all() if books is None else Rendering.objects.filter(sentence__book__in=books)
+    rows = renderings.values("sentence__book", "language").annotate(n=Count("sentence", distinct=True))
     return Counter({(r["sentence__book"], r["language"]): r["n"] for r in rows})
 
 
@@ -38,8 +40,7 @@ def apply(delta):
 def recount(books=None):
     """Count the renderings of books (default: every book) again and store
     the result."""
-    sentences = Sentence.objects.all() if books is None else Sentence.objects.filter(book__in=books)
-    counts = drafted(sentences)
+    counts = drafted(books)
     old = DraftedCount.objects.all() if books is None else DraftedCount.objects.filter(book__in=books)
     old.delete()
     DraftedCount.objects.bulk_create(DraftedCount(book=b, language=lang, sentences=n)
