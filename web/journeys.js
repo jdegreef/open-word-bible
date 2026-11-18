@@ -1,7 +1,9 @@
 // The journeys page (/journeys/, scripts/build_site.py journeys_page): one
 // journey at a time, chosen from the list or by the address's #id, drawn by
 // web/map.js drawJourney with its numbered stops, and the stops listed with
-// links to the verses that take the traveller there.
+// links to the verses that take the traveller there. The list links each
+// journey's own page (journey_page), which this script opens in place; on
+// that page ("single") it only draws the map, as the page lists the stops.
 (function () {
   "use strict";
   var DATA = JSON.parse(document.getElementById("jr-data").textContent);
@@ -18,6 +20,12 @@
   }
 
   function render() {
+    if (DATA.single) {
+      var only = el("figure", "pmap jmap");
+      show.appendChild(only);
+      window.OWBMap.drawJourney(only, DATA.journeys[0], { base: DATA.map.base, t: t });
+      return;
+    }
     var id = decodeURIComponent(location.hash.slice(1));
     var j = DATA.journeys.filter(function (x) { return x.id === id; })[0] || DATA.journeys[0];
     if (!j) return;
@@ -44,6 +52,15 @@
     show.appendChild(list);
   }
 
+  if (!DATA.single) {
+    links.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        location.hash = a.dataset.journey;
+      });
+    });
+  }
   window.addEventListener("hashchange", render);
   render();
 })();

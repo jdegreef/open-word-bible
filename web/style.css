@@ -1065,6 +1065,14 @@ a.a-ref:hover { border-color: var(--accent); }
 
 /* Under a chapter: the articles that read it. */
 .chapter-articles { margin: 40px 0 0; }
+/* Each verse's strongest cross-references, folded under the notes
+   (build_site chapter_crossrefs_html); the reader's margin has them all. */
+.xr-static { margin: 24px 0 0; font-size: 14px; }
+.xr-static summary { cursor: pointer; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.xr-static ol { list-style: none; padding: 0; margin: 8px 0; columns: 2 16rem; column-gap: 24px; }
+.xr-static li { break-inside: avoid; margin: 0 0 4px; }
+.xr-static li > a:first-child { font-weight: 600; margin-right: 4px; }
+body.plain .xr-static { display: none; }
 /* Links to the chapter's verse pages (build_site verse_page_links). */
 .verse-pages { margin: 24px 0 0; font-size: 15px; color: var(--muted); }
 .verse-pages a { margin-right: 8px; }
@@ -2358,6 +2366,17 @@ ruby.il rt:lang(hbo) { font-family: var(--hebrew); }
 .jr-stops { columns: 2 220px; padding-left: 1.6em; font-size: 14px; }
 .jr-stops li { break-inside: avoid; margin-bottom: 3px; }
 .jr-stops a { color: var(--muted); }
+.jr-more { margin-top: 32px; }
+.jr-more .jr-list { columns: 2 220px; }
+
+/* /quotations/ (build_site quotations_page): the Old Testament in the New. */
+.q-kinds { list-style: none; padding: 0; margin: 0 0 24px; font-size: 14px; color: var(--muted); }
+.q-kinds li { margin: 0 0 4px; }
+.q-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.q-list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.q-text { margin: 0 0 4px; font-family: var(--serif, inherit); }
+.q-refs { margin: 0; font-size: 14px; color: var(--muted); }
+.q-kind { display: inline-block; font-size: 12px; padding: 1px 6px; border-radius: var(--radius-sm); background: var(--surface-2); color: var(--muted); }
 .jmap-route { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; opacity: .8; }
 .jmap-route-unsure { stroke-dasharray: 6 4; }
 .jmap-stop { fill: var(--accent); stroke: var(--surface-2); stroke-width: 1.5; }

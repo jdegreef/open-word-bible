@@ -612,6 +612,8 @@ def footer_links(lang):
     if start:
         learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
     learn.append((url(lang, "/terms/"), t(lang, "nav.terms"), None))
+    learn.append((url(lang, "/journeys/"), t(lang, "journeys.title"), None))
+    learn.append((url(lang, "/quotations/"), t(lang, "quotations.title"), None))
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
                (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
                (url(lang, "/download/"), catalog(lang)["download"]["nav"], None),
@@ -987,6 +989,13 @@ def chapter_book_link(book, lang):
         return ""
     return (f'<p class="chapter-book"><a href="{url(lang, book_url(book))}">'
             f'{t(lang, "reader.about_book", book=html.escape(BOOK_NAMES[book][lang]))}&nbsp;&rarr;</a></p>')
+
+
+@functools.lru_cache(maxsize=None)
+def chapter_set():
+    """chapters() as a set, read once: a page that asks whether a chapter
+    exists must not read all of content/ again, as chapters() does."""
+    return frozenset(chapters())
 
 
 def chapters():
@@ -1812,6 +1821,7 @@ def chapter_page(book, chapter, lang="en"):
     <div class="xr-margin" id="xr-margin"></div>
     <div class="text" id="text">{text}</div>
     {chapter_notes(records, chapter, lang, words)}
+    {chapter_crossrefs_html(records, chapter, lang)}
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
     {verse_page_links(book, chapter, lang)}
@@ -1841,6 +1851,44 @@ def chapter_page(book, chapter, lang="en"):
                            verse=opening_verse(records, chapter, lang)),
                 description=shorten(summary) if summary else t(lang, "meta.chapter_description" + suffix, title=title),
                 alternates=complete, indexed=lang in complete)
+
+
+# How many cross-references of each verse the chapter page lists as links
+# (the reader's margin shows them all).
+STATIC_CROSSREFS = 2
+
+
+def crossref_link(target, lang):
+    """A cross-reference ("ROM.5.8" or "PSA.26.4-5") as a link to its
+    verse's address in lang."""
+    first, _, last = target.partition("-")
+    ref = refs.parse(first)
+    label = verse_name(ref.book, ref.chapter, ref.verse, lang) + (f"\u2013{last}" if last else "")
+    href = url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"
+    return f'<a href="{href}">{html.escape(label)}</a>'
+
+
+def chapter_crossrefs_html(records, chapter, lang):
+    """Under the notes: each verse's strongest cross-references as links,
+    folded, in the page as served. The reader draws them all in its margin
+    from its data; these are for readers without it and for crawlers, and
+    tie each chapter to the passages it is read with."""
+    have = chapter_set()
+    rows = []
+    for vid, targets in chapter_crossrefs(records).items():
+        ref = refs.parse(vid)
+        if ref.chapter != chapter:
+            continue
+        shown = [x for x in targets if (refs.parse(x.partition("-")[0]).book,
+                                        refs.parse(x.partition("-")[0]).chapter) in have][:STATIC_CROSSREFS]
+        if shown:
+            rows.append(f'<li><a href="#v{ref.verse}">{ref.verse}</a> '
+                        f'{", ".join(crossref_link(x, lang) for x in shown)}</li>')
+    if not rows:
+        return ""
+    ui = catalog(lang)["reader.ui"]
+    return (f'<details class="xr-static"><summary>{t(lang, "reader.crossrefs")}</summary>'
+            f'<ol>{"".join(rows)}</ol><p class="fine">{ui["crossrefs_credit"]}</p></details>')
 
 
 def chapter_crossrefs(records):
@@ -2002,7 +2050,7 @@ def verse_page_ids():
     """The verses that have a page: the verses of the day that have
     records, once each, in Bible order."""
     data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
-    have = set(chapters())
+    have = chapter_set()
     found = {vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
              and verse_records(vid)}
     return sorted(found, key=lambda vid: refs.parse(vid).sort_key())
@@ -2359,8 +2407,13 @@ def journeys():
     return json.loads(path.read_text(encoding="utf-8"))["journeys"] if path.exists() else []
 
 
+def journey_path(jid):
+    return f"/journeys/{jid}/"
+
+
 def journeys_url(lang, jid=None):
-    return url(lang, "/journeys/") + (f"#{jid}" if jid else "")
+    """The journeys page, or one journey's own page."""
+    return url(lang, journey_path(jid) if jid else "/journeys/")
 
 
 def journey_data(j, lang):
@@ -2402,7 +2455,8 @@ def journeys_page(lang="en"):
     ui = data["ui"]
     groups = []
     for testament in ("ot", "nt"):
-        items = "".join(f'<li><a href="#{j["id"]}" data-journey="{j["id"]}">{html.escape(j["name"])}</a></li>'
+        items = "".join(f'<li><a href="{journeys_url(lang, j["id"])}" data-journey="{j["id"]}">'
+                        f'{html.escape(j["name"])}</a></li>'
                         for j in data["journeys"] if j["testament"] == testament)
         if items:
             groups.append(f'<h2>{html.escape(ui[testament])}</h2>\n<ul class="jr-list">{items}</ul>')
@@ -2427,6 +2481,122 @@ def journeys_page(lang="en"):
 """
     return page(lang, t(lang, "journeys.title"), body, path="/journeys/", current="/read/",
                 description=t(lang, "journeys.dek"))
+
+
+def journey_page(j, lang="en"):
+    """/journeys/<id>/: one journey, its stops listed in the page as served
+    with links to their verses, and drawn on the map (web/journeys.js in
+    its single mode), so each journey can be found and linked on its own."""
+    reader = catalog(lang)["reader.ui"]
+    ui = {**catalog(lang)["journeys.ui"], **{k: reader[k] for k in ("map_sure", "map_unsure", "map_credit")}}
+    one = journey_data(j, lang)
+    data = {"ui": ui, "map": {"base": basemap_file()[1]}, "journeys": [one], "single": True}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    stops = "".join(f'<li>{html.escape(s["title"])} <a href="{s["href"]}">{html.escape(s["ref"])}</a></li>'
+                    for s in one["stops"])
+    uncertain = f'<p class="notice">{html.escape(ui["uncertain"])}</p>' if one["uncertain"] else ""
+    others = "".join(f'<li><a href="{journeys_url(lang, o["id"])}">{html.escape(o["name"].get(lang, o["name"]["en"]))}'
+                     f'</a></li>' for o in journeys() if o["id"] != j["id"])
+    body = f"""
+<header class="page-head journeys-head">
+<p class="eyebrow"><a href="{url(lang, "/journeys/")}">{t(lang, "journeys.title")}</a> · {html.escape(ui[one["testament"]])}</p>
+<h1>{html.escape(one["name"])}</h1>
+<p class="dek">{html.escape(one["description"])}</p>
+</header>
+{uncertain}
+<section class="jr-show" id="jr-show"></section>
+<h2>{html.escape(ui["stops"])}</h2>
+<ol class="jr-stops">{stops}</ol>
+<nav class="jr-more" aria-label="{html.escape(ui["choose"])}"><h2>{html.escape(ui["choose"])}</h2>
+<ul class="jr-list">{others}</ul></nav>
+<script type="application/json" id="jr-data">{blob}</script>
+<script src="{asset("map.js")}"></script>
+<script src="{asset("journeys.js")}" defer></script>
+"""
+    return page(lang, one["name"], body, path=journey_path(j["id"]), current="/read/",
+                description=shorten(one["description"]))
+
+
+# Quotation marks trimmed from the ends of a quoted New Testament verse,
+# which often opens or closes mid-speech.
+QUOTE_MARKS = "\u201c\u201d\u2018\u2019\"'\u00ab\u00bb\u300c\u300d\u300e\u300f\u201e \u00a0"
+
+
+def quotations():
+    """data/quotations.json: the Old Testament quoted in the New, "nt" in
+    our numbering and "ot" in English numbering."""
+    return json.loads((ROOT / "data" / "quotations.json").read_text(encoding="utf-8"))["quotations"]
+
+
+def span_verses(span):
+    """A verse id or a range in one chapter ("MAT.4.15-16") as its verse ids."""
+    first, _, last = span.partition("-")
+    ref = refs.parse(first)
+    end = int(last) if last else ref.verse
+    return [f"{ref.book}.{ref.chapter}.{v}" for v in range(ref.verse, end + 1)]
+
+
+def span_label(vids, lang):
+    first, last = refs.parse(vids[0]), refs.parse(vids[-1])
+    name = verse_name(first.book, first.chapter, first.verse, lang)
+    if last == first:
+        return name
+    return name + (f"\u2013{last.verse}" if last.chapter == first.chapter else f"\u2013{last.chapter}:{last.verse}")
+
+
+def quotation_ot(span):
+    """A quotation's Old Testament side in our numbering (owb/versification.py)."""
+    out = []
+    for vid in span_verses(span):
+        out.extend(f"{r.book}.{r.chapter}.{r.verse}" for r in versification.to_source(refs.parse(vid)))
+    return list(dict.fromkeys(out))
+
+
+def quotations_page(lang="en"):
+    """/quotations/: every explicit quotation of the Old Testament in the
+    New, by New Testament book: the New Testament words as we translate
+    them, linked to both passages, and whether the Greek follows the
+    Hebrew, the Septuagint or neither closely."""
+    ui = catalog(lang)["quotations.ui"]
+    have = chapter_set()
+    groups = {}
+    for q in quotations():
+        nt, ot = span_verses(q["nt"]), quotation_ot(q["ot"])
+        first = refs.parse(nt[0])
+        if (first.book, first.chapter) not in have:
+            continue
+        texts, tl = [], lang
+        for vid in nt:
+            ref = refs.parse(vid)
+            rec = next((x for x in chapter_records(ref.book, ref.chapter) if vid in x["refs"]), None)
+            if rec:
+                texts.append(verse_text(rec, vid, lang))
+                tl = text_lang(rec, lang) if tl == lang else tl
+        nt_link = f'<a href="{url(lang, chapter_url(first.book, first.chapter))}#v{first.verse}">' \
+                  f'{html.escape(span_label(nt, lang))}</a>'
+        o = refs.parse(ot[0])
+        ot_label = html.escape(span_label(ot, lang))
+        ot_link = (f'<a href="{url(lang, chapter_url(o.book, o.chapter))}#v{o.verse}">{ot_label}</a>'
+                   if (o.book, o.chapter) in have else ot_label)
+        groups.setdefault(first.book, []).append(
+            f'<li><p class="q-text"{lang_attr(tl, lang)}>{html.escape(" ".join(texts).strip(QUOTE_MARKS))}</p>'
+            f'<p class="q-refs">{nt_link} · {ui["quotes"].format(ot=ot_link)}'
+            f' <span class="q-kind q-{q["kind"]}">{html.escape(ui[q["kind"]])}</span></p></li>')
+    sections = "\n".join(f'<section><h2>{html.escape(chapter_book(book, lang))}</h2>'
+                         f'<ol class="q-list">{"".join(items)}</ol></section>' for book, items in groups.items())
+    kinds = "".join(f'<li><span class="q-kind q-{k}">{html.escape(ui[k])}</span> {html.escape(ui[k + "_note"])}</li>'
+                    for k in ("hebrew", "septuagint", "loose"))
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "quotations.title")}</p>
+<h1>{t(lang, "quotations.heading")}</h1>
+<p class="dek">{t(lang, "quotations.dek")}</p>
+</header>
+<ul class="q-kinds">{kinds}</ul>
+{sections}
+"""
+    return page(lang, t(lang, "quotations.title"), body, path="/quotations/", current="/read/",
+                description=shorten(t(lang, "quotations.dek")))
 
 
 @functools.lru_cache(maxsize=None)
@@ -6169,6 +6339,9 @@ def build(out):
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))
         add("/journeys/", journeys_page(lang))
+        for j in journeys():
+            add(journey_path(j["id"]), journey_page(j, lang))
+        add("/quotations/", quotations_page(lang))
         for audience in AUDIENCES:
             add(audience_url(audience), audience_page(audience, lang))
         plans = available_plans(lang)
