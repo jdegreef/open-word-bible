@@ -1605,6 +1605,111 @@ records it. Empty until the first book is drafted.
 | Romans | Philologus; Julia; Nereus; Olympas | Filologus; Yulia; Nereus; Olimpas | 16:15 |
 | Romans | Lucius; Jason; Sosipater | Lukius; Yason; Sosipater | 16:21 |
 | Romans | Tertius; Quartus | Tertius; Kwartus | 16:22–23 |
+| Ezekiel | the river / canal Kebar | *sungai Kebar* (L); *Terusan Kebar* (B, R) | 1:1 |
+| Ezekiel | Buzi | Busi | 1:3 |
+| Ezekiel | living creatures (*chayyot*) | *makhluk hidup* | 1:5 |
+| Ezekiel | amber, gleaming metal (*chashmal*) | *ambar* (L); *logam yang berkilauan* (B), *logam yang bersinar* (R); uncertain | 1:4 |
+| Ezekiel | a house of rebellion (*bet meri*) | *kaum pemberontak* (L, B); *orang-orang yang tidak mau taat* (R) | 2:5 |
+| Ezekiel | the house of Israel | *kaum Israel* (L); *bangsa Israel* (B); *orang Israel* (R) | 3:1 |
+| Ezekiel | Tel-abib | Tel-Abib | 3:15 |
+| Ezekiel | watchman | *penjaga* | 3:17 |
+| Ezekiel | abominations (*to'evah*) | *kekejian* (L); *perbuatan yang keji* (B); *hal-hal yang menjijikkan* (R) | 5:9 |
+| Ezekiel | detestable things (*shiqqutsim*) | *barang kejijikan* (L); *berhala yang menjijikkan* (B, R) | 5:11 |
+| Ezekiel | as I live, declares the Lord GOD | *demi Aku yang hidup, firman Tuhan ALLAH* (L; B *demikianlah firman*, R *itulah firman*) | 5:11 |
+| Ezekiel | filthy idols (*gillulim*) | *berhala-berhala najis* (L); *berhala-berhala* (B, R); uncertain | 6:4 |
+| Ezekiel | set your face toward | *arahkanlah mukamu ke* (L); *hadapkanlah mukamu ke* (B); *menghadaplah ke* (R) | 6:2 |
+| Ezekiel | you will know that I am the LORD | *kalian akan mengetahui bahwa Akulah TUHAN* (L, B); *kalian akan tahu bahwa Aku ini TUHAN* (R) | 6:7 |
+| Ezekiel | Diblah | Dibla (uncertain; alternative *Ribla*) | 6:14 |
+| Ezekiel | image of jealousy | *patung cemburuan* (L, B); *patung berhala yang membuat Allah cemburu* (R) | 8:3 |
+| Ezekiel | Jaazaniah son of Shaphan; censer | Yaazanya anak Safan; *pedupaan* | 8:11 |
+| Ezekiel | Tammuz | Tamus (*dewa Tamus*, R) | 8:14 |
+| Ezekiel | the temple of the LORD (*hekhal*) | *ruang besar TUHAN* (L), *Bait Suci TUHAN* (B), *gedung rumah TUHAN* (R); uncertain | 8:16 |
+| Ezekiel | whirling wheels (*galgal*) | *roda-roda yang berpusing* (L, B); *roda-roda yang berputar* (R) | 10:2 |
+| Ezekiel | Jaazaniah son of Azzur; Pelatiah son of Benaiah | Yaazanya anak Azur; Pelatya anak Benaya (uncertain; alternative *Pelaca*) | 11:1 |
+| Ezekiel | prostitute oneself (*zanah*); prostitution | *bersundal*, *persundalan* (L); *melacurkan diri* (B); *tidak setia* (R) | 16:15 |
+| Ezekiel | restore the fortunes | *memulihkan keadaan* | 16:53 |
+| Ezekiel | Bamah | Bama | 20:29 |
+| Ezekiel | Rabbah of the Ammonites; teraphim | Raba bani Amon (L), Raba, kota orang Amon (B, R); *terafim* (L, B), *berhala-berhala keluarga* (R) | 21:25–26 |
+| Ezekiel | Oholah; Oholibah | Ohola; Oholiba | 23:4 |
+| Ezekiel | Pekod; Shoa; Koa | Pekod; Syoa; Koa | 23:23 |
+| Isaiah | Amoz | Amos (not the prophet Amos) | 1:1 |
+| Isaiah | the Mighty One of Israel | Yang Mahakuat dari Israel | 1:24 |
+| Isaiah | Remaliah | Remalya | 7:1 |
+| Isaiah | Shear-jashub | Syear-Yasyub | 7:3 |
+| Isaiah | Upper Pool; Fuller's Field | Kolam Atas; Ladang Tukang Penatu | 7:3 |
+| Isaiah | Tabeel | Tabeel | 7:6 |
+| Isaiah | Maher-shalal-hash-baz | Maher-Syalal-Hasy-Bas | 8:1 |
+| Isaiah | Jeberekiah; prophetess | Yeberekhya; *nabiah* | 8:2–3 |
+| Isaiah | Shiloah | Siloah | 8:6 |
+| Isaiah | spirits of the dead (*'ob*); shades (*rephaim*) | *arwah*; *roh-roh orang mati* (L), *orang-orang mati* (B, R) | 8:19; 14:9 |
+| Isaiah | Calno; Carchemish | Kalno; Karkemis | 10:9 |
+| Isaiah | Aiath; Migron; Michmash | Ayat; Migron; Mikhmas | 10:28 |
+| Isaiah | Geba; Gibeah of Saul | Geba; Gibea-Saul | 10:29 |
+| Isaiah | Gallim; Laishah; Anathoth | Galim; Laisa; Anatot | 10:30 |
+| Isaiah | Madmenah; Gebim; Nob | Madmena; Gebim; Nob | 10:31–32 |
+| Isaiah | Pathros; Shinar | Patros; Sinear (L, B), Babilonia (R) | 11:11 |
+| Isaiah | oracle (*massa*, title) | *Nubuat* (L, B); *pesan* (R) | 13:1 |
+| Isaiah | Ophir | Ofir | 13:12 |
+| Isaiah | Zaphon | Zafon (L, B); *jauh di utara* (R) | 14:13 |
+| Isaiah | Ar; Kir (of Moab) | Ar; Kir | 15:1 |
+| Isaiah | Luhith; Eglath-shelishiyah | Luhit; Eglat-Syelisyia | 15:5 |
+| Isaiah | Nimrim; Wadi of the Poplars | Nimrim; Sungai Gandarusa (L, B), Lembah Pohon Gandarusa (R) | 15:6–7 |
+| Isaiah | Eglaim; Beer-elim; Dimon | Eglaim; Beer-Elim; Dimon | 15:8–9 |
+| Isaiah | Kir-heres | Kir-Heres | 16:11 |
+| Isaiah | Zoan; Noph | Zoan; Nof (L), Memfis (B, R) | 19:11, 13 |
+| Isaiah | City of Destruction | Kota Kebinasaan | 19:18 |
+| Isaiah | Sargon; commander-in-chief (*tartan*) | Sargon; Tartan (L), *panglima tertinggi* (B) | 20:1 |
+| Isaiah | wilderness of the sea | *padang gurun di tepi laut* | 21:1 |
+| Isaiah | Dumah; Dedan; Tema; Kedar | Duma; Dedan; Tema; Kedar | 21:11–16 |
+| Isaiah | valley of vision | Lembah Penglihatan | 22:1 |
+| Isaiah | House of the Forest | Gedung Hutan | 22:8 |
+| Isaiah | Shihor; Kittim | Sihor; Kitim (L, B), Siprus (R) | 23:1–3 |
+| Isaiah | Upright One (God) | Yang Mahalurus | 26:7 |
+| Isaiah | Leviathan; sea monster (*tannin*) | Lewiatan; *naga* | 27:1 |
+| Isaiah | Wadi of Egypt | Sungai Mesir | 27:12 |
+| Isaiah | tsav latsav, qav laqav | *tsav latsav, qav laqav* (kept as sounds) | 28:10 |
+| Isaiah | spelt | *sekoi* | 28:25 |
+| Isaiah | Ariel | Ariel | 29:1 |
+| Isaiah | Hanes; Rahab (Egypt) | Hanes; Rahab | 30:4, 7 |
+| Isaiah | Topheth | Tofet | 30:33 |
+| Isaiah | Ophel | Ofel | 32:14 |
+| Jeremiah | Anathoth; Hilkiah | Anatot; Hilkia | 1:1 |
+| Jeremiah | almond (tree) | *pohon badam* | 1:11 |
+| Jeremiah | Kittim; Kedar | Kitim (L, B), *pulau Siprus* (R); Kedar | 2:10 |
+| Jeremiah | Memphis (Noph); Tahpanhes | Memfis; Tahpanhes | 2:16 |
+| Jeremiah | Shihor | Sikhor (L, B); *sungai Nil* (R) | 2:18 |
+| Jeremiah | faithless Israel; treacherous Judah | *Israel si murtad* (L, B), *Israel yang tidak setia* (R); *Yehuda yang tidak setia* (L, B), *yang berkhianat* (R) | 3:6–8 |
+| Jeremiah | the daughter of my people (*bat-'ammi*) | *putri bangsaku* / *putri umat-Ku* (L); *bangsaku yang kukasihi* / *umat-Ku yang Kukasihi* (B); *bangsaku* / *umat-Ku* (R) | 4:11; 8:19 |
+| Jeremiah | Daughter Zion (*bat-tsiyyon*) | *putri Sion* (L); *Putri Sion* (B); *penduduk Sion* (R) | 4:31 |
+| Jeremiah | the stubbornness of their (evil) heart | *kedegilan hati mereka (yang jahat)* (L, B); *dengan keras kepala mengikuti hati mereka (yang jahat)* (R) | 3:17 |
+| Jeremiah | Tekoa; Beth-haccherem | Tekoa; Bet-Hakerem | 6:1 |
+| Jeremiah | terror on every side; Magor-missabib | *kengerian di sekeliling* (L), *kengerian di mana-mana* (B, R); Magor-Misabib (L, B), *Kengerian di Mana-Mana* (R) | 6:25; 20:3 |
+| Jeremiah | rising early and speaking/sending | *bangun pagi-pagi dan berbicara* (L); *berulang-ulang* (B); *terus-menerus* (R) | 7:13 |
+| Jeremiah | the queen of heaven | *ratu langit* (uncertain; *ratu surga* the familiar alternative) | 7:18 |
+| Jeremiah | Valley of Slaughter | *Lembah Pembantaian* | 7:32 |
+| Jeremiah | sword, famine and pestilence | *pedang, kelaparan dan penyakit sampar* (L, B); *perang, kelaparan dan penyakit* (R) | 14:12 |
+| Jeremiah | a horror, a hissing (*shereqah*), a curse | *kengerian, tempat orang bersuit, kutuk* (L); *kengerian, bahan ejekan, kutuk* (B); *sesuatu yang mengerikan, sesuatu yang diejek orang, kutuk* (R) | 18:16; 25:18 |
+| Jeremiah | jackal | *anjing hutan* | 9:10 |
+| Jeremiah | wormwood | *apsintus* (L, B); *tumbuhan pahit* (R) | 9:14 |
+| Jeremiah | Uphaz | Ufas | 10:9 |
+| Jeremiah | loincloth; Perath | *cawat*; Perat (L, B), *sungai Efrat* (R) | 13:1–4 |
+| Jeremiah | the Hope of Israel | *Pengharapan Israel* (L, B) | 14:8 |
+| Jeremiah | divination | *tenung* (L, B) | 14:14 |
+| Jeremiah | the People's Gate | *pintu gerbang Bani Rakyat* (L); *Pintu Gerbang Rakyat* (B, R) | 17:19 |
+| Jeremiah | potter; flask | *tukang periuk*; *buli-buli* | 18:2; 19:1 |
+| Jeremiah | Potsherd Gate | *Gerbang Beling* | 19:2 |
+| Jeremiah | Pashhur son of Immer; stocks; Upper Benjamin Gate | Pasyhur anak Imer; *pasungan*; *Pintu Gerbang Benyamin Atas* | 20:1–2 |
+| Jeremiah | Pashhur son of Malchiah; Zephaniah son of Maaseiah | Pasyhur anak Malkia; Zefanya anak Maaseya | 21:1 |
+| Jeremiah | Nebuchadrezzar | Nebukadnezar (one form, as the glossary; uncertain) | 21:2 |
+| Jeremiah | his life as plunder | *nyawanya akan menjadi jarahan baginya* (L); *hanya nyawanya saja yang dapat ia selamatkan* (B); *luput dengan nyawa mereka, dan hanya itulah yang mereka dapat* (R) | 21:9 |
+| Jeremiah | Shallum (Jehoahaz); Coniah, Jeconiah (Jehoiachin) | Salum; Konya; Yekhonya | 22:11; 22:24; 24:1 |
+| Jeremiah | Abarim | Abarim | 22:20 |
+| Jeremiah | the righteous Branch; The LORD is our righteousness | *Tunas yang benar*; *TUHAN kebenaran kita* (L, B), *TUHAN Kebenaran Kita* (R) | 23:5–6 |
+| Jeremiah | burden (*massa'*, 23:33–40) | *beban* (every level) | 23:33 |
+| Jeremiah | Uz; Buz; Zimri; Sheshach | Us; Bus; Zimri; Sesakh | 25:20–26 |
+| Jeremiah | the cup (of wrath) | *piala* | 25:15 |
+| Jeremiah | Micah the Morashtite | Mikha, orang Moresyet | 26:18 |
+| Jeremiah | Uriah son of Shemaiah; Kiriath-jearim | Uria anak Semaya; Kiryat-Yearim | 26:20 |
 | Judges | Adoni-Bezek; Bezek | Adoni-Bezek; Bezek | 1:4–5 |
 | Judges | Sheshai; Ahiman; Talmai | Syesai; Ahiman; Talmai | 1:10 |
 | Judges | Kenite(s); city of palm trees | orang Keni; kota pohon kurma | 1:16 |
@@ -2281,6 +2386,76 @@ records it. Empty until the first book is drafted.
 | Malachi | my messenger; the messenger of the covenant | *utusan-Ku*; *utusan perjanjian* (lowercase) | 3:1 |
 | Malachi | on the day when I act | *pada hari yang Aku siapkan* (L); *pada hari Aku bertindak* (B, R) | 3:17, 21 |
 | Malachi | the sun of righteousness | *matahari kebenaran* (lowercase) | 3:20 |
+| Isaiah | poplars (*'aravim*) | *pohon gandarusa* (L, B), as the Wadi of the Poplars at 15:7 | 44:4 |
+| Isaiah | Jeshurun | Yesyurun (L, B); *Israel yang lurus hati* (R), as Deuteronomy 32:15 | 44:2 |
+| Isaiah | holm oak (*tirzah*); oak (*'allon*) | *pohon tarzah*; *pohon tarbantin* (L, B); *pohon yang keras kayunya* (R) (uncertain) | 44:14 |
+| Isaiah | his anointed (Cyrus) | *orang yang diurapi-Nya* (L, B); *orang yang telah Dia pilih* (R) | 45:1 |
+| Isaiah | the Sabeans (of Seba) | *orang Seba*, not *orang Syeba* (the Sabeans of Sheba, Joel 4:8) | 45:14 |
+| Isaiah | Bel; Nebo (gods of Babylon) | Bel; Nebo (L, B); *dewa Bel*, *dewa Nebo* (R) | 46:1 |
+| Isaiah | virgin daughter of Babylon; daughter of the Chaldeans | *perawan, putri Babel* (L), *Anak Dara, Putri Babel* (B); *putri Kasdim* (L), *Putri Kasdim* (B) | 47:1 |
+| Isaiah | land of Sinim | tanah Sinim | 49:12 |
+| Isaiah | antimony (dark mortar) | *celak* (L); *adukan hitam* (B) | 54:11 |
+| Isaiah | ruby (*kadkod*) | *batu delima* | 54:12 |
+| Isaiah | eunuch | *sida-sida* | 56:3 |
+| Isaiah | fruit of the lips | *buah bibir* | 57:19 |
+| Isaiah | Nebaioth; Ephah (tribe) | Nebayot; Efa | 60:6–7 |
+| Isaiah | coat of mail; helmet | *baju zirah*; *ketopong* | 59:17 |
+| Isaiah | Hephzibah; Beulah | Hefzibah; Beula (L); *Kesukaan-Ku Ada Padanya*; *Yang Bersuami* (B) | 62:4 |
+| Isaiah | Bozrah | Bozra | 63:1 |
+| Isaiah | the angel of his presence | *malaikat hadirat-Nya* | 63:9 |
+| Isaiah | Gad and Meni (gods of fortune) | Gad; Meni (*dewa keberuntungan*, *dewa nasib* at R) | 65:11 |
+| Isaiah | the God of amen | *Allah yang setia* (L); *Allah Sang Amin* (B); *Allah yang setia dan benar* (R) | 65:16 |
+| Jeremiah | courtyard of the guard | *pelataran pengawal* (L, B); *halaman pengawal* (R) | 32:2 |
+| Jeremiah | Hanamel; Neriah; Mahseiah | Hanamel; Neria; Mahseya | 32:7, 12 |
+| Jeremiah | the family redeemer's right (*ge'ullah*) | *hak penebusan* (L); *kerabat penebus* (B, R) | 32:7 |
+| Jeremiah | Lachish; Azekah | Lakhis; Azeka | 34:7 |
+| Jeremiah | the Rechabites; Jonadab, Jehonadab son of Rechab | *kaum Rekhab* (L), *keluarga Rekhab* (B, R); Yonadab, Yehonadab anak Rekhab | 35:2, 6 |
+| Jeremiah | Jaazaniah; Habazziniah; Hanan son of Igdaliah; man of God | Yaazanya; Habazinya; Hanan anak Yigdalya; *abdi Allah* | 35:3–4 |
+| Jeremiah | Micaiah; Elishama; Delaiah; Jehudi; Nethaniah; Shelemiah; Cushi | Mikhaya; Elisama; Delaya; Yehudi; Netanya; Selemya; Kusyi | 36:11–14 |
+| Jeremiah | Jerahmeel; Seraiah son of Azriel; Abdeel | Yerahmeel; Seraya anak Azriel; Abdeel | 36:26 |
+| Jeremiah | scribe, secretary (*sofer*, of the court) | *juru tulis* (L), *juru tulis negara* (B), *juru tulis kerajaan* (R) | 36:10 |
+| Jeremiah | Jehucal (Jucal); Irijah | Yehukhal (Yukhal); Yiria | 37:3, 13 |
+| Jeremiah | the cistern house | *rumah bak air* (L, B); *lubang di bawah tanah* (R) (uncertain) | 37:16 |
+| Jeremiah | Shephatiah son of Mattan; Jucal | Sefatya anak Matan; Yukhal | 38:1 |
+| Jeremiah | cistern (*bor*, the pit Jeremiah is lowered into) | *perigi* (uncertain; *bak air* the alternative) | 38:6 |
+| Jeremiah | Ebed-melech the Cushite | Ebed-Melekh, orang Kush (L, B); orang Etiopia (R) | 38:7 |
+| Jeremiah | Middle Gate; Nergal-sharezer; Samgar-nebu; Sarsekim; Nebushazban; Rab-saris; Rab-mag | Pintu Gerbang Tengah; Nergal-Sarezer; Samgar-Nebu; Sarsekim; Nebusyazban; Rab-Saris (L), *kepala para pegawai istana* (B, R); Rab-Mag | 39:3, 13 |
+| Jeremiah | Riblah; Hamath | Ribla; Hamat | 39:5 |
+| Jeremiah | Mizpah; Johanan son of Kareah; Ishmael son of Nethaniah | Mizpa; Yohanan anak Kareah; Ismael anak Netanya (as 2 Kings 25:23) | 40:6–8 |
+| Jeremiah | Jezaniah (son of the Maacathite; son of Hoshaiah); Ephai the Netophathite; Tanhumeth | Yezanya (2 Kings 25:23 has Yaazanya); Hosaya; Efai, orang Netofa; Tanhumet | 40:8; 42:1 |
+| Jeremiah | Baalis | Baalis | 40:14 |
+| Jeremiah | governor (Gedaliah, "appointed over the land") | *kepala daerah* (B), *pemimpin* (R) | 41:2 |
+| Jeremiah | Baasha; Geruth Chimham | Baesa; Gerut-Kimham | 41:9, 17 |
+| Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
+| Jeremiah | Azariah son of Hoshaiah | Azarya anak Hosaya | 43:2 |
+| Jeremiah | brick terrace; mortar | lantai batu bata; tanah liat | 43:9 |
+| Jeremiah | royal canopy | permadani kerajaan (L, B); tenda kerajaan (R) | 43:10 |
+| Jeremiah | Beth-shemesh (in Egypt) | Bet-Semes (L, B); Heliopolis, kota matahari (R) | 43:13 |
+| Jeremiah | Pathros | Patros | 44:1 |
+| Jeremiah | LORD God of hosts | TUHAN, Allah semesta alam | 44:7 |
+| Jeremiah | Pharaoh Hophra | Firaun Hofra | 44:30 |
+| Jeremiah | Pharaoh Neco; Carchemish | Firaun Nekho; Karkemis | 46:2 |
+| Jeremiah | buckler and shield | perisai kecil dan perisai besar | 46:3 |
+| Jeremiah | Cush; Put; Ludites | Kush (L, B), Etiopia (R); Put; orang Lud | 46:9 |
+| Jeremiah | Amon of Thebes (No) | Amon dari Tebe (L, B); Amon, dewa kota Tebe (R) | 46:25 |
+| Jeremiah | gadfly | pikat (L, B); lalat penyengat (R) | 46:20 |
+| Jeremiah | Caphtor | pesisir Kaftor (L, B); pulau Kreta (R) | 47:4 |
+| Jeremiah | Madmen; Horonaim; Luhith | Madmen; Horonaim; Luhit | 48:2-5 |
+| Jeremiah | Chemosh | Kamos | 48:7 |
+| Jeremiah | Holon; Jahaz; Mephaath; Beth-diblathaim; Beth-gamul; Beth-meon; Kerioth; Bozrah | Holon; Yahas; Mefaat; Bet-Diblataim; Bet-Gamul; Bet-Meon; Keriot; Bozra | 48:21-24 |
+| Jeremiah | Kir-heres | Kir-Heres | 48:31 |
+| Jeremiah | Jazer; Sibmah; Elealeh; Eglath-shelishiyah; Nimrim | Yaezer; Sibma; Elale; Eglat-Selisia; Nimrim | 48:32-34 |
+| Jeremiah | Milcom; Rabbah; Ai (in Ammon) | Milkom; Raba; Ai | 49:1-3 |
+| Jeremiah | sons of the east | bani Timur (L); orang-orang dari timur (B); suku-suku padang gurun di timur (R) | 49:28 |
+| Jeremiah | Hamath; Arpad; Ben-hadad | Hamat; Arpad; Ben-Hadad | 49:23-27 |
+| Jeremiah | Bel; Merodach | Bel; Merodakh (L), Marduk (B, R) | 50:2 |
+| Jeremiah | Merathaim; Pekod | Merataim; Pekod | 50:21 |
+| Jeremiah | Arrogance (a name for Babylon) | Kecongkakan (L); Si Congkak (B); kota yang sombong (R) | 50:31 |
+| Jeremiah | Leb-qamai | Leb-Kamai | 51:1 |
+| Jeremiah | war club | gada | 51:20 |
+| Jeremiah | Ararat; Minni; Ashkenaz | Ararat; Mini; Askenas | 51:27 |
+| Jeremiah | Seraiah son of Neriah; officer of the resting place | Seraya anak Neria; pengurus tempat persinggahan (L), kepala perbekalan (B) | 51:59 |
+| Jeremiah | Evil-merodach | Ewil-Merodakh | 52:31 |
 | Zechariah | cup of reeling | *cawan yang membuat terhuyung-huyung* | 12:2 |
 | Zechariah | they will look on me, the one they pierced | *memandang kepada-Ku, yang telah mereka tikam*; "him" is plain *dia* | 12:10 |
 | Zechariah | Hadad-rimmon; plain of Megiddo; Shimeites | Hadad-Rimon; *dataran Megido* (L, B), *lembah Megido* (R); *kaum Simei* | 12:11–13 |
@@ -2288,3 +2463,31 @@ records it. Empty until the first book is drafted.
 | Zechariah | Azal; Gate of Benjamin; First Gate; Corner Gate; king's winepresses | Azal; Gerbang Benyamin; Gerbang Pertama; Gerbang Sudut; *tempat-tempat pemerasan anggur raja* | 14:5, 10 |
 | Zechariah | the LORD will be one, and his name one | *TUHAN akan esa, dan nama-Nya esa* | 14:9 |
 | Zechariah | trader (Canaanite) | *pedagang* | 14:21 |
+| Ezekiel | Gog; Magog; chief prince of Meshech and Tubal | Gog; Magog; *pemimpin tertinggi* Mesekh dan Tubal | 38:2 |
+| Ezekiel | Put; Gomer; Beth-togarmah; Sheba; Dedan; Tarshish | Put; Gomer; Bet-Togarma; Syeba; Dedan; Tarsis | 38:5–13 |
+| Ezekiel | valley of the Travelers; Hamon-gog; Hamonah | *lembah Para Pelintas* (uncertain; alternative *Para Pengembara*); Hamon-Gog; Hamona (*Gerombolan*, R) | 39:11–16 |
+| Ezekiel | measuring reed; the reed as a unit; linen cord | *buluh pengukur* (L, B), *tongkat pengukur* (R); *buluh*, `{{units:sekitar 3,2 meter\|satu buluh}}` (B, R); *tali lenan* | 40:3–5 |
+| Ezekiel | cubit (long cubit, a cubit and a handbreadth) | *hasta* in words (L); `{{units:sekitar ... meter\|... hasta}}` reckoned at 53 cm (B, R); handbreadth `{{units:sekitar 7,5 sentimeter\|satu telapak tangan}}` | 40:5 |
+| Ezekiel | gate; threshold; alcoves; jambs; porch | *pintu gerbang* (L), *gerbang* (B, R); *ambang*; *relung* (uncertain); *tiang sisi* (uncertain); *serambi* | 40:6–9 |
+| Ezekiel | outer court; inner court; pavement; chambers | *pelataran luar*; *pelataran dalam*; *lantai batu*; *bilik* (L), *kamar* (B, R) | 40:17 |
+| Ezekiel | recessed windows; palm trees | *jendela-jendela yang menjorok ke dalam* (L, B), *jendela-jendela dengan bingkai yang dalam* (R); *pohon-pohon kurma* (L, B), *ukiran pohon kurma* (R) | 40:16 |
+| Ezekiel | barrier; steps; dressed stone; hooks | *pembatas* (L, B), *tembok rendah* (R); *anak tangga*; *batu pahat*; *kait-kait* (*bercabang dua*, L) | 40:12–43 |
+| Ezekiel | the house; the temple area | *rumah itu* (L), *Bait Allah* (B), *rumah Allah* (R); *kawasan Bait Allah* (B), *kawasan rumah Allah* (R) | 40:47 |
+| Ezekiel | the nave (*hekhal*); the most holy place | *ruang besar* (L), *ruang utama* (B, R); *tempat yang mahakudus* (L), *Ruang Mahakudus* (B, R) | 41:1–4 |
+| Ezekiel | side chambers; raised platform; free space; separate area (*gizrah*) | *bilik samping*; *tempat yang ditinggikan* (L), *landasan yang ditinggikan* (B, R); *ruang yang dibiarkan kosong* (L), *ruang terbuka* (B, R); *kawasan terpisah* (uncertain) | 41:5–12 |
+| Ezekiel | galleries; wooden canopy; pillars | *selasar-selasar* (uncertain); *atap emper dari kayu*; *tiang-tiang* | 41:15–26; 42:3–6 |
+| Ezekiel | holy and common | *yang kudus dan yang biasa* | 42:20 |
+| Ezekiel | altar: gutter, rim, ledge, hearth, horns; span | *parit*, *bibir*, *birai* (uncertain), *perapian mezbah*, *tanduk-tanduk*; *jengkal* (L), `{{units:sekitar 27 sentimeter\|setengah hasta}}` (B, R) | 43:13–17 |
+| Ezekiel | sanctuary (*miqdash*) | *tempat kudus* (L, B), *rumah Allah* where the English Readable has "temple" (R) | 43:21 |
+| Ezekiel | the prince (*nasi'*) | *pemimpin* (uncertain) at every level | 44:3 |
+| Ezekiel | Levitical priests; sons of Zadok | *imam-imam orang Lewi* (L, B), *para imam dari suku Lewi* (R); *anak-anak Zadok* (L), *keturunan Zadok* (B, R) | 44:15 |
+| Ezekiel | fill the hand (ordain); without blemish | *mengisi tangannya* (L), *menahbiskannya* (B), *mengkhususkannya bagi TUHAN* (R); *tidak bercela* (L), *tidak bercacat* (B), *tidak ada cacatnya* (R) | 43:26; 43:22 |
+| Ezekiel | turban; undergarments; devoted thing (*cherem*) | *serban*; *celana*; *barang yang dikhususkan* | 44:18–29 |
+| Ezekiel | contribution (*terumah*) of land; holding; open land | *persembahan khusus* (L), *bagian khusus* (B), *daerah khusus* (R); *tanah milik*; *tanah lapang* | 45:1–6 |
+| Ezekiel | ephah; bath; hin; homer; kor | *efa*; *bat*; *hin*; *homer*; *kor*; at B and R `{{units:sekitar 22 liter\|satu efa}}`, `{{units:sekitar 4 liter\|satu hin}}`, `{{units:sekitar 220 liter\|satu homer}}` | 45:10–14 |
+| Ezekiel | shekel; gerah | *syikal*, about 11,5 grams (B, R); *gera* | 45:12 |
+| Ezekiel | the year of liberty | *tahun pembebasan* (L, B); *tahun Yobel* (R) | 46:17 |
+| Ezekiel | kitchens; regular burnt offering | *dapur-dapur*; *korban bakaran tetap* (L, B), *korban bakaran harian* (R) | 46:15–24 |
+| Ezekiel | En-eglaim; Hethlon; Zedad; Berothah; Sibraim; Hazer-hattikon; Hauran; Hazar-enan | En-Eglaim; Hetlon; Zedad; Berota; Sibraim; Hazer-Hatikon; Hauran; Hazar-Enan | 47:10–17 |
+| Ezekiel | Meribath-kadesh; the eastern sea | Meribat-Kadesy; *laut timur* (L, B), *Laut Mati* (R) | 47:18–19 |
+| Ezekiel | The LORD Is There (the city's name) | *TUHAN [Ada] di Sana* (L), *TUHAN Ada di Sana* (B, R) | 48:35 |

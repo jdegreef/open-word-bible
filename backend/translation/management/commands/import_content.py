@@ -39,7 +39,10 @@ Each run is recorded (ImportRun), so the admin's health page can show
 when content/ last reached the database and what failed. So is each
 rendering it changed, added or removed in a sentence already drafted in that
 language (SentenceChange, the admin's Changes page); sentences drafted in a
-language for the first time are only counted (ImportRun.drafted).
+language for the first time are counted (ImportRun.drafted) and listed
+(RecordChange), as is each decision it added, changed or removed in a
+sentence already drafted (the admin's release notes, staff/history.py).
+Neither touches a sentence's review status.
 
 Afterwards the search tables are brought up to date (translation/search.py)
 from all of content/ and articles/, whichever files were imported: only the
@@ -48,6 +51,7 @@ entries whose documents changed are rewritten, or all of them with --all.
 import hashlib
 import json
 import time
+from collections import Counter
 from pathlib import Path
 
 from django.conf import settings
@@ -56,8 +60,8 @@ from django.db import transaction
 
 from owb import refs, validate
 from texts.models import Edition, Word
-from translation import search
-from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence, SentenceChange
+from translation import counts, search
+from translation.models import ContentFile, Decision, ImportRun, RecordChange, Rendering, Sentence, SentenceChange
 
 # Romans 16:25-27 come from Nestle 1904 (owb/sources/macula_greek.py); import_texts
 # loads their verses and words into the sblgnt edition with the rest of the Greek.
@@ -65,6 +69,8 @@ TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "Nestle1904@macula-greek": "sblgnt",
 # Raise when save() or validate_records() changes what they do with a file,
 # so the next deploy imports every file again.
 IMPORT_VERSION = 1
+# What a change to a decision is noted by (RecordChange), as staff/snapshot.py keeps them.
+DECISION_FIELDS = ("category", "levels", "tokens", "choice", "alternatives", "reason", "uncertain", "footnote")
 
 
 class Command(BaseCommand):
@@ -211,13 +217,15 @@ class Command(BaseCommand):
 
     def record_changes(self, records):
         """Note what this file changes in the renderings already in the
-        database, in one query, before save() replaces them."""
+        database, in one query, before save() replaces them. Returns those
+        renderings, {record id: {language: {level: text}}}."""
         before = {}
         for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
                                        .values_list("sentence__record_id", "language", "level", "text")):
             before.setdefault(rid, {}).setdefault(lang, {})[level] = text
         Kind = SentenceChange.Kind
         changes = []
+        others = self.decision_changes(records, before)
         for record in records:
             first = refs.parse(record["refs"][0])
             was = before.get(record["id"], {})
@@ -226,6 +234,10 @@ class Command(BaseCommand):
                 if not was.get(lang):
                     drafted = self.run.drafted.setdefault(first.book, {})
                     drafted[lang] = drafted.get(lang, 0) + 1
+                    others.append(RecordChange(run=self.run, record_id=record["id"],
+                                               verse=f"{first.book}.{first.chapter}.{first.verse}",
+                                               book=first.book, chapter=first.chapter, language=lang,
+                                               kind=RecordChange.Kind.DRAFTED))
                     continue
                 for level, text in levels.items():
                     if level not in was[lang]:
@@ -242,11 +254,54 @@ class Command(BaseCommand):
                                        before=old, after=new)
                         for lang, level, kind, old, new in found]
         SentenceChange.objects.bulk_create(changes, batch_size=2000)
+        RecordChange.objects.bulk_create(others, batch_size=2000)
+        return before
+
+    def decision_changes(self, records, renderings):
+        """The decisions this file adds, changes or removes in sentences
+        already in the database: meaning decisions in any such sentence, and
+        rendering decisions in a language it was already drafted in
+        (renderings: {record id: {language: {level: text}}} before the
+        import). A sentence new to a language is listed as drafted instead."""
+        ids = [r["id"] for r in records]
+        before = {}
+        for row in Decision.objects.filter(sentence__record_id__in=ids).values("sentence__record_id", "key",
+                                                                                "language", *DECISION_FIELDS):
+            before.setdefault(row["sentence__record_id"], {})[row["key"]] = (
+                row["language"], {f: row[f] for f in DECISION_FIELDS})
+        existing = set(Sentence.objects.filter(record_id__in=ids).values_list("record_id", flat=True))
+        Kind = RecordChange.Kind
+        out = []
+        for record in records:
+            if record["id"] not in existing:
+                continue
+            first = refs.parse(record["refs"][0])
+            drafted = renderings.get(record["id"], {})
+            was = before.get(record["id"], {})
+            now = {d["id"]: (d["language"] or "" if d["layer"] == "rendering" else "",
+                             {**{f: d.get(f) for f in DECISION_FIELDS}, "levels": d.get("levels", [])})
+                   for d in record["decisions"]}
+            for key in sorted(was.keys() | now.keys()):
+                lang, old = was.get(key, (None, {}))
+                lang_now, new = now.get(key, (lang, {}))
+                lang = lang_now if lang is None else lang
+                if old == new or (lang and not drafted.get(lang)):
+                    continue
+                kind = Kind.DECISION_CHANGED if old and new else Kind.DECISION_ADDED if new else Kind.DECISION_REMOVED
+                out.append(RecordChange(run=self.run, record_id=record["id"],
+                                        verse=f"{first.book}.{first.chapter}.{first.verse}", book=first.book,
+                                        chapter=first.chapter, language=lang, kind=kind, key=key,
+                                        before=old, after=new))
+        return out
 
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
-        self.record_changes(records)
+        was = self.record_changes(records)
+        # The drafted counts (DraftedCount) change by what this file adds or
+        # drops; what was there comes from record_changes' one query.
+        before = Counter((refs.parse(record["refs"][0]).book, lang) for record in records
+                         for lang, levels in was.get(record["id"], {}).items() if levels)
         sentences = []
         for record in records:
             first = refs.parse(record["refs"][0])
@@ -281,3 +336,6 @@ class Command(BaseCommand):
                       uncertain=d["uncertain"], footnote=d["footnote"])
              for sentence, record in zip(sentences, records) for i, d in enumerate(record["decisions"])),
             batch_size=2000)
+        after = Counter((sentence.book, lang) for sentence, record in zip(sentences, records)
+                        for lang, levels in record["renderings"].items() if levels)
+        counts.apply({key: after[key] - before[key] for key in after.keys() | before.keys()})

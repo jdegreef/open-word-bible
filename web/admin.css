@@ -19,7 +19,11 @@
 .admin-rail .admin-search-list a[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
 .admin-rail-group { margin: 16px 0 4px; padding: 0 10px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .admin-main { min-width: 0; font-size: 15px; }
-.admin-main[aria-busy="true"] { opacity: .6; }
+/* The section on the page while the next one loads: dimmed after a moment
+   (a quick answer never flickers) and not clickable; typing goes on. */
+.admin-main { transition: opacity .12s ease; }
+.admin-main.admin-stale { opacity: .55; pointer-events: none; transition: opacity .15s ease .1s; }
+.admin-loading { color: var(--muted); margin: 0; }
 .admin-main .page-head { padding-top: 0; }
 .admin-head { margin: 0 0 22px; max-width: 760px; }
 .admin-head h1 { font-family: var(--display); font-weight: 600; letter-spacing: -.02em; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; margin: 0 0 8px; text-wrap: balance; }
@@ -161,7 +165,19 @@ form.admin-toolbar { justify-content: flex-start; }
   .admin-rail a { border: 1px solid var(--line); background: var(--surface); }
   .admin-bar-row { grid-template-columns: minmax(70px, 110px) minmax(0, 1fr) auto; }
 }
-@media (prefers-reduced-motion: reduce) { .admin-main[aria-busy="true"] { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .admin-main { transition: none; }
+  .admin-main.admin-stale { transition: opacity 0s linear .1s; }
+}
+
+/* Review keys (#review/<layer>/<record>): the hint line and the list "?" opens. */
+.admin-keys { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+.admin-keys kbd, .admin-keys-help kbd { font-size: 12px; }
+.admin-keys-help { margin: 10px 0 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); }
+.admin-keys-help .admin-h3 { margin-top: 0; }
+.admin-keys-help dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; margin: 0; font-size: 14px; }
+.admin-keys-help dd { margin: 0; }
+.admin-btn.armed { border-color: #b3412f; color: #b3412f; box-shadow: 0 0 0 2px color-mix(in srgb, #b3412f 25%, transparent); }
 
 /* The verse inspector (#verse/...): a sentence record whole. */
 .admin-record .admin-toolbar { margin: 0 0 10px; }
@@ -210,3 +226,13 @@ form.admin-toolbar { justify-content: flex-start; }
 :root[data-theme="dark"] .admin-wrap > del, :root[data-theme="night"] .admin-wrap > del { color: #f0a093; }
 .admin-table tr[aria-current="true"] th { font-weight: 700; }
 .admin-btn.small { padding: 2px 8px; font-size: 13px; min-height: 0; }
+
+/* A section that couldn't be drawn (admin.js errorPanel). */
+:root { --admin-danger: #a63a29; }
+:root[data-theme="dark"], :root[data-theme="night"] { --admin-danger: #f0a093; }
+@media (prefers-color-scheme: dark) { :root[data-theme="auto"] { --admin-danger: #f0a093; } }
+.admin-error { border: 1px solid var(--admin-danger); background: color-mix(in srgb, var(--admin-danger) 8%, var(--surface)); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 10px; max-width: 70ch; }
+.admin-error h2 { margin: 0; font-size: 18px; color: var(--admin-danger); }
+.admin-error p { margin: 0; }
+.admin-error .admin-actions { margin: 0; }
+.admin-error-details { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; user-select: all; }

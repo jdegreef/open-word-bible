@@ -30,6 +30,7 @@ from rest_framework.response import Response
 
 from owb import export, languages, refs
 from texts.models import Word
+from translation import counts
 from translation.models import Decision, Rendering, Sentence
 
 from .inbox import verse_label
@@ -84,7 +85,7 @@ def _stamp():
     return "{}.{}".format(s["n"], s["t"].timestamp() if s["t"] else 0)
 
 
-def _uses():
+def term_uses():
     """{term slug: [sentence rows]} for every key term, in two queries: the
     words by Strong's number (Greek ids start n, Hebrew o), then the
     sentences holding any of them."""
@@ -98,10 +99,9 @@ def _uses():
     out = {t["slug"]: [] for t in TERMS}
     if not every:
         return out, ids
-    rows = (Sentence.objects.filter(tokens__overlap=list(every))
-            .values("id", "record_id", "book", "chapter", "verse", "number", "refs", "tokens"))
+    rows = counts.using(every).values("id", "record_id", "book", "chapter", "verse", "number", "refs", "tokens")
     order = {code: i for i, code in enumerate(refs.BOOK_CODES)}
-    rows = sorted(rows, key=lambda r: (order[r["book"]], r["chapter"], r["verse"], r["number"]))
+    rows = sorted(rows, key=lambda r: (order.get(r["book"], len(order)), r["chapter"], r["verse"], r["number"]))
     for t in TERMS:
         mine = ids.get((t.get("language", "grc"), t["strong"]), set())
         out[t["slug"]] = [{**r, "term_tokens": mine & set(r["tokens"])} for r in rows if mine & set(r["tokens"])]
@@ -109,7 +109,7 @@ def _uses():
 
 
 def measure(lang, level, slug, least):
-    uses, _ = _uses()
+    uses, _ = term_uses()
     sentence_ids = {r["id"] for rows in uses.values() for r in rows}
     texts = dict(Rendering.objects.filter(sentence_id__in=sentence_ids, language=lang, level=level)
                  .values_list("sentence_id", "text"))
