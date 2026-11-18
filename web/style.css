@@ -91,8 +91,13 @@
 
 /* Russian's Cyrillic letters in Gentium Book Plus, from
    @fontsource/gentium-book-plus@5.2.7. Fraunces has none, so Cyrillic
-   headings fall back to Gentium; Hanken Grotesk has only the extended
-   letters, so the interface sets Russian in the system's sans. */
+   headings fall back to Gentium. Hanken Grotesk and Atkinson Hyperlegible
+   have none either, so the interface sets Russian and Ukrainian in Noto
+   Sans (variable weight, like Hanken Grotesk), from
+   @fontsource-variable/noto-sans@5.3.0; its unicode-range keeps other
+   pages from downloading it. */
+@font-face { font-family: "Noto Sans"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url(/fonts/noto-sans-cyrillic-wght-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
 @font-face { font-family: "Gentium Book Plus"; font-style: normal; font-weight: 400; font-display: swap;
   src: url(/fonts/gentium-book-plus-cyrillic-400-normal.woff2) format("woff2"); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
 @font-face { font-family: "Gentium Book Plus"; font-style: italic; font-weight: 400; font-display: swap;
@@ -149,7 +154,7 @@
   --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", "Noto Serif Devanagari", Georgia, serif;
   --greek: "Gentium Book Plus", "Gentium Plus", serif;
   --hebrew: "Noto Serif Hebrew", serif;
-  --sans: "Hanken Grotesk", "Noto Sans Ethiopic", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: "Hanken Grotesk", "Noto Sans", "Noto Sans Ethiopic", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 12px;
   --radius-sm: 9px;
   --fast: 150ms;
