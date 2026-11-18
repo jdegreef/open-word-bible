@@ -217,7 +217,8 @@ class Command(BaseCommand):
 
     def record_changes(self, records):
         """Note what this file changes in the renderings already in the
-        database, in one query, before save() replaces them."""
+        database, in one query, before save() replaces them. Returns those
+        renderings, {record id: {language: {level: text}}}."""
         before = {}
         for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
                                        .values_list("sentence__record_id", "language", "level", "text")):
@@ -254,6 +255,7 @@ class Command(BaseCommand):
                         for lang, level, kind, old, new in found]
         SentenceChange.objects.bulk_create(changes, batch_size=2000)
         RecordChange.objects.bulk_create(others, batch_size=2000)
+        return before
 
     def decision_changes(self, records, renderings):
         """The decisions this file adds, changes or removes in sentences
@@ -295,9 +297,11 @@ class Command(BaseCommand):
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
-        self.record_changes(records)
-        # The drafted counts (DraftedCount) change by what this file adds or drops.
-        before = counts.drafted(Sentence.objects.filter(record_id__in=[r["id"] for r in records]))
+        was = self.record_changes(records)
+        # The drafted counts (DraftedCount) change by what this file adds or
+        # drops; what was there comes from record_changes' one query.
+        before = Counter((refs.parse(record["refs"][0]).book, lang) for record in records
+                         for lang, levels in was.get(record["id"], {}).items() if levels)
         sentences = []
         for record in records:
             first = refs.parse(record["refs"][0])
