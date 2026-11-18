@@ -49,7 +49,8 @@ Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 Korean, (Brazilian) Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese
 and Indonesian. `docs/hindi-terms.md`, `docs/russian-terms.md` and
 `docs/indonesian-terms.md` are the Hindi, Russian and Indonesian glossaries,
-Genesis to Revelation.
+Genesis to Revelation. `docs/hindi-review-guide.md` and
+`docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
