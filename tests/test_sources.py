@@ -1,6 +1,12 @@
 """Source loading. Sources are found via OWB_VENDOR, defaulting to vendor/."""
+import os
+import subprocess
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
 
+import owb.sources
 from owb import refs
 from owb.sources import macula_greek, macula_hebrew, sblgnt
 
@@ -82,6 +88,39 @@ class MaculaHebrewTest(unittest.TestCase):
             self.assertEqual((sref, smorphemes), (ref, morphemes))
         self.assertIsNone(next(streamed, None))
         self.assertEqual(next(iter(loaded)), refs.Ref("GEN", 1, 1))
+
+
+class GitCloneSourceTest(unittest.TestCase):
+    """A source kept as a clone without its files is read with git show,
+    which must reach that clone even inside a git hook, where git exports
+    GIT_DIR and GIT_INDEX_FILE for the repository being committed to."""
+
+    def test_read_from_clone_ignores_outer_git_environment(self):
+        def git(*args, cwd):
+            out = subprocess.run(
+                ["git", "-c", "user.name=t", "-c", "user.email=t@example.org", *args],
+                cwd=cwd, check=True, capture_output=True, text=True,
+                env=owb.sources.clone_env())
+            return out.stdout.strip()
+
+        with tempfile.TemporaryDirectory() as vendor:
+            clone = Path(vendor) / "fake-source"
+            clone.mkdir()
+            git("init", "-q", cwd=clone)
+            (clone / "data.txt").write_text("from the clone\n", encoding="utf-8")
+            git("add", "data.txt", cwd=clone)
+            git("commit", "-q", "-m", "data", cwd=clone)
+            commit = git("rev-parse", "HEAD", cwd=clone)
+            (clone / "data.txt").unlink()
+
+            outer = Path(git("rev-parse", "--absolute-git-dir", cwd=owb.sources.ROOT))
+            hook_env = {"OWB_VENDOR": vendor, "GIT_DIR": str(outer),
+                        "GIT_INDEX_FILE": str(outer / "index"),
+                        "GIT_WORK_TREE": str(owb.sources.ROOT)}
+            with mock.patch.dict(os.environ, hook_env), \
+                    mock.patch.dict(owb.sources.LOCK, {"fake-source": {"commit": commit}}):
+                self.assertEqual(owb.sources.read_text("fake-source", "data.txt"),
+                                 "from the clone\n")
 
 
 if __name__ == "__main__":

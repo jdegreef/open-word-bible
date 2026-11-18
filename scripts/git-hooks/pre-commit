@@ -5,7 +5,16 @@
 # (the cloud session start hook does this). Skip once with --no-verify.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
-export OWB_VENDOR="${OWB_VENDOR:-$PWD/vendor}"
+# A linked worktree (git worktree add) usually has no vendor/ of its own:
+# use the main checkout's, found from the shared git directory.
+if [ -z "${OWB_VENDOR:-}" ]; then
+  OWB_VENDOR="$PWD/vendor"
+  if [ ! -d "$OWB_VENDOR" ]; then
+    main="$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")"
+    if [ -d "$main/vendor" ]; then OWB_VENDOR="$main/vendor"; fi
+  fi
+fi
+export OWB_VENDOR
 
 staged() { git diff --cached --name-only --diff-filter=ACMR -- "$@"; }
 
