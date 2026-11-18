@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import notes as owb_notes, speakers, words_of_jesus  # noqa: E402
+from owb import furigana, notes as owb_notes, speakers, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
@@ -792,6 +792,10 @@ def curl_record(r):
     stores straight ones; curling here, the one loader, covers the reader,
     the home page and articles alike."""
     r["links"] = alignment_links(r)
+    # Readings over kanji where written (data/furigana/), ranges like the links.
+    ruby = furigana.record_ranges(r)
+    if ruby:
+        r["ruby"] = ruby
     # Where Jesus speaks, for the reader's red letters: ranges into each
     # rendering, like the links (data/words_of_jesus/).
     if r["id"] in words_of_jesus.marked():
@@ -1639,6 +1643,8 @@ def chapter_language_data(book, chapter, code):
     records, _ = load_chapter(book, chapter)
     data = {"renderings": {r["id"]: r["renderings"][code] for r in records if code in r["renderings"]},
             "links": {r["id"]: r["links"][code] for r in records if code in r.get("links", {})},
+            # Furigana over kanji (data/furigana/), as ranges into each rendering.
+            "ruby": {r["id"]: r["ruby"][code] for r in records if code in r.get("ruby", {})},
             "decisions": {r["id"]: mine for r in records
                           if (mine := [d for d in r["decisions"] if d["language"] == code])}}
     text = (f'window.OWB_TEXTS=window.OWB_TEXTS||{{}};window.OWB_TEXTS["{code}"]='
@@ -1667,6 +1673,8 @@ def reader_shared(lang):
         # reader's verses.
         "memory": catalog(lang)["memory.ui"],
         "memorize_url": url(lang, MEMORIZE_PATH),
+        # The levels' names, for Parallel's level of the other language.
+        "levelNames": catalog(lang)["levels"],
         "bookRefs": book_refs(lang),
         # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
         "books": {b: chapter_book(b, lang) for b, _ in books()}})

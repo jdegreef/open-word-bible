@@ -2029,7 +2029,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
    numbers, footnote letters, notes or reasoning panel. */
 .control.view-control { margin-left: auto; }
 body.plain .reader { grid-template-columns: minmax(0, 1fr); }
-body.plain .passage { margin: 0 auto; }
+body.plain .passage { margin: 0 auto; width: 100%; min-width: 0; }
 body.plain .panel, body.plain .notes, body.plain .verse sup, body.plain .passage .sub, body.plain .chapter-summary { display: none; }
 /* Verse numbers in the views for reading, when the reader shows them. */
 body.plain.numbered .verse sup:not(.fn) { display: inline; }
@@ -2323,7 +2323,61 @@ body.view-parallel .text { max-width: none; font-size: calc(18px * var(--read-sc
 .view-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
 .view-tools[hidden] { display: none; }
 .view-tools .text-tool { margin: 0; }
+/* The views' own tools stay when Study's are hidden (body.plain). */
+body.plain .view-tools .text-tool:not([hidden]) { display: inline-flex; align-items: center; }
 .vt-label { font-size: 13px; color: var(--muted); }
+
+/* Parallel's tools: the pair of languages, the other side's level and options. */
+.pair-pick, .pair-opts, .pair-recent { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; flex-basis: 100%; }
+.pair-select { margin: 0; padding-right: 10px; max-width: 12rem; }
+.pair-swap { font-size: 16px; line-height: 1; padding-inline: 10px; }
+.pair-level { display: inline-flex; flex-wrap: wrap; gap: 0; max-width: 100%; }
+.pair-opts > *, .pair-pick > * { min-width: 0; }
+@media (max-width: 520px) { .pair-level .text-tool { padding-inline: 8px; } .pair-select { max-width: 9.5rem; } }
+.pair-level .text-tool { border-radius: 0; margin-left: -1px; }
+.pair-level .text-tool:first-child { border-radius: 999px 0 0 999px; margin-left: 0; }
+.pair-level .text-tool:last-child { border-radius: 0 999px 999px 0; }
+.pair-note { flex-basis: 100%; margin: 2px 0 0; max-width: 62ch; }
+.plevel { font-weight: 500; letter-spacing: 0; text-transform: none; }
+
+/* Linked words in Parallel: each lights its partner on the other side. */
+.pcell .aw { cursor: pointer; }
+.pcell .aw:hover { background: var(--accent-soft); }
+.pcell .aw:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.pcell .aw.lit { background: var(--mark); color: inherit; box-shadow: 0 0 0 2px var(--mark); }
+.nolink { text-decoration: underline dotted var(--line-strong); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+/* The other side hidden until tapped; on a phone the tap flips the row. */
+.pshow { display: none; font: 600 13px var(--sans); color: var(--accent); background: var(--accent-soft); border: 1px dashed var(--accent-soft-border); border-radius: var(--radius-sm); padding: 6px 10px; cursor: pointer; }
+.prow.covered { cursor: pointer; }
+.prow.covered .pother { position: relative; }
+.prow.covered:not(.flipped) .pother .ptext { visibility: hidden; }
+.prow.covered:not(.flipped) .pother .pshow { display: inline-block; position: absolute; top: 4px; left: 0; }
+@media (max-width: 860px) {
+  .prow.covered:not(.flipped) .pother { min-height: 0; }
+  .prow.covered:not(.flipped) .pother .ptext { display: none; }
+  .prow.covered:not(.flipped) .pother .pshow { position: static; }
+  .prow.covered.flipped .pfirst { display: none; }
+  .prow.covered.flipped .pother { color: inherit; padding-left: 0; border-left: 0; }
+}
+
+/* The word card: the source word, what each side made of it, and why. */
+.wc-pop .wc-source { font-family: var(--greek); font-size: 20px; }
+.wc-pop .fn-pop-head .wcard-lemma { color: var(--muted); }
+.wc-sides { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 8px 0; }
+.wc-sides dt { font: 600 12px var(--sans); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; align-self: baseline; }
+.wc-sides dd { margin: 0; font-family: var(--read-font); font-size: 17px; }
+.wc-why { font: 600 12px var(--sans); color: var(--muted); letter-spacing: .04em; text-transform: uppercase; margin: 10px 0 2px; }
+.wc-pop .fn-pop-text .fn-pop-cat { margin-right: 4px; }
+
+/* Furigana over kanji. */
+ruby.furi { ruby-position: over; }
+ruby.furi rt { font-family: var(--sans); font-size: .5em; color: var(--muted); letter-spacing: 0; }
+body.furigana .text { line-height: calc(2.1 * var(--read-leading)); }
+
+/* The word being read aloud. */
+::highlight(owb-spoken) { background-color: var(--mark); color: inherit; }
+.prow.speaking { background: var(--accent-soft); box-shadow: 0 0 0 6px var(--accent-soft); border-radius: 2px; }
 
 /* Interlinear view: the original words over the English they became. */
 body.view-interlinear .text { line-height: calc(2.6 * var(--read-leading)); }
@@ -2483,6 +2537,8 @@ body.listening { padding-bottom: calc(var(--listen-h, 64px) + 12px); }
   font: inherit; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer;
 }
 .listen-btn:hover, .listen-rate:hover { border-color: var(--accent); color: var(--accent); }
+.listen-both { width: auto; padding-inline: 10px; }
+.listen-both[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
 .listen-btn svg { width: 18px; height: 18px; fill: currentColor; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
 .listen-play { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
 .listen-where { flex: 1; min-width: 0; font-size: 14px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -2691,6 +2747,10 @@ button.button { font-family: inherit; cursor: pointer; }
 .saved-item.passage { border-style: dashed; }
 .saved-lemma { font-size: 1.25em; font-weight: 600; }
 .saved-gloss { color: var(--muted); font-size: 14px; }
+.saved-pair { display: block; font-family: var(--serif); font-size: 17px; color: inherit; text-decoration: none; margin-top: 2px; }
+.saved-pair:hover { text-decoration: underline; }
+.saved-pair-ref { font-family: var(--sans); font-size: 13px; color: var(--muted); }
+.saved-pair-source { font-family: var(--greek); font-size: 18px; }
 .saved-recent { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 8px; }
 .saved-print-head { display: none; }
 .saved-remove.armed, .saved-tag-delete.armed { color: var(--danger, #b3261e); }
