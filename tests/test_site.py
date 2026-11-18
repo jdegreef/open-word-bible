@@ -577,8 +577,9 @@ class SiteTest(unittest.TestCase):
         self.assertIn("noto-serif-ethiopic-ethiopic-400-normal.woff2", files)
         self.assertIn("noto-serif-devanagari-devanagari-400-normal.woff2", files)
         self.assertIn("gentium-book-plus-cyrillic-400-normal.woff2", files)
+        self.assertIn("noto-sans-cyrillic-wght-normal.woff2", files)
         for licence in ("OFL-Gentium.txt", "OFL-NotoSerifHebrew.txt", "OFL-NotoEthiopic.txt",
-                        "OFL-NotoDevanagari.txt"):
+                        "OFL-NotoDevanagari.txt", "OFL-NotoSans.txt"):
             self.assertIn("SIL Open Font License", (ROOT / "web" / "fonts" / licence).read_text(encoding="utf-8"))
         home = (self.out / "index.html").read_text(encoding="utf-8")
         preload = re.search(r'<link rel="preload" href="/fonts/([^"]+)"', home)[1]
