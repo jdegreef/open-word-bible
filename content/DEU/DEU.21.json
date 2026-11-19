@@ -101,6 +101,11 @@
           "L": "Apabila di tanah yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu untuk mendudukinya didapati seorang yang terbunuh, terbaring di padang, dan tidak diketahui siapa yang membunuhnya,",
           "B": "Apabila di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu untuk diduduki didapati seseorang yang terbunuh, terbaring di padang, dan tidak diketahui siapa yang membunuhnya,",
           "R": "Mungkin di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian didapati mayat seseorang yang dibunuh, terbaring di padang. Tidak ada yang tahu siapa yang membunuh orang itu."
+        },
+        "zh": {
+          "L": "在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你得为业的地上，若发现有被杀的人倒在田野里，不知道是谁杀了他，",
+          "B": "在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你占领的地上，若发现有人被杀，倒在野外，没有人知道是谁杀害了这人，",
+          "R": "在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作为自己产业的土地上，可能会有人在野外发现一个被杀的人的尸体，却没有人知道是谁杀了这人。"
         }
       },
       "decisions": [
@@ -347,6 +352,49 @@
           "reason": "The victim may be a man or a woman; \"людина\" says so without a gender span, and the English Balanced and Readable avoid \"him\" too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050210010071"
+          ],
+          "choice": "神 (default), 上帝 (reader setting)",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神"
+          ],
+          "reason": "The word for God is the Chinese reader setting god_term: \"神\" by default, \"上帝\" for readers who choose it. The English has no such setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210010031",
+            "o050210010162"
+          ],
+          "choice": "这人",
+          "alternatives": [
+            "他"
+          ],
+          "reason": "The law covers any victim, man or woman (m3): Balanced and Readable say \"这人\", as the English says \"the victim\" and \"that person\"; Literal keeps \"他\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -445,6 +493,11 @@
           "L": "tua-tuamu dan hakim-hakimmu harus keluar dan mengukur jarak ke kota-kota yang ada di sekeliling orang yang terbunuh itu.",
           "B": "tua-tua dan hakim-hakimmu harus keluar dan mengukur jarak dari mayat itu ke setiap kota di sekelilingnya.",
           "R": "Kalau begitu, tua-tua dan hakim-hakim kalian harus pergi ke tempat itu. Mereka harus mengukur berapa jauh jarak dari mayat itu ke setiap kota di dekatnya."
+        },
+        "zh": {
+          "L": "你的长老和你的审判官就要出去，从被杀的人那里量到四周的各城[的距离]。",
+          "B": "你的长老和审判官要出去，量出从尸体到附近各城的距离。",
+          "R": "那么你们的长老和法官必须到那个地方去。他们要量一量从尸体到附近每一座城有多远。"
         }
       },
       "decisions": [
@@ -611,6 +664,11 @@
           "L": "Dan kota yang paling dekat dengan orang yang terbunuh itu, tua-tua kota itu harus mengambil seekor lembu muda betina yang belum pernah dipakai bekerja, yang belum pernah menarik kuk.",
           "B": "Tua-tua kota yang paling dekat dengan mayat itu harus mengambil seekor lembu muda betina dari kawanan, yang belum pernah dipakai bekerja dan belum pernah memikul kuk.",
           "R": "Tua-tua dari kota yang paling dekat dengan mayat itu harus memilih seekor sapi muda yang belum pernah dipakai bekerja atau memikul kuk."
+        },
+        "zh": {
+          "L": "那离被杀的人最近的城：那城的长老要从牛群中取一头没有被用来耕作、没有负过轭的母牛犊。",
+          "B": "离尸体最近那座城的长老，要从牛群中取一头从未干过活、从未负过轭的母牛犊。",
+          "R": "离尸体最近那座城的长老，必须选一头从来没有干过活、也没有套过轭的小母牛。"
         }
       },
       "decisions": [
@@ -704,6 +762,27 @@
             "\"иго\""
           ],
           "reason": "As settled in Matthew for this translation, \"ярмо\" is the plain word for the yoke; \"иго\" is now only figurative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210030101"
+          ],
+          "choice": "母牛犊 (L, B), 小母牛 (R)",
+          "alternatives": [
+            "母牛"
+          ],
+          "reason": "The heifer is a young cow not yet worked (m2): \"母牛犊\" at Literal and Balanced, \"小母牛\" at Readable, as the English says \"young cow\".",
           "uncertain": false,
           "footnote": false
         }
@@ -817,6 +896,11 @@
           "L": "Dan tua-tua kota itu harus membawa lembu muda itu turun ke sebuah lembah yang airnya selalu mengalir, yang belum pernah dikerjakan dan belum pernah ditaburi, dan mereka harus mematahkan batang leher lembu muda itu di sana di lembah itu.",
           "B": "Tua-tua kota itu harus membawa lembu muda itu turun ke sebuah lembah dengan sungai yang tidak pernah kering, di tanah yang belum pernah dibajak atau ditaburi, dan di lembah itu mereka harus mematahkan leher lembu muda itu.",
           "R": "Mereka harus membawa sapi itu turun ke sebuah lembah yang sungainya selalu mengalir. Tanah di sana harus tanah yang belum pernah dibajak atau ditanami. Di lembah itu mereka harus mematahkan leher sapi itu."
+        },
+        "zh": {
+          "L": "那城的长老要把母牛犊牵下到常流不断的溪谷里，就是没有耕种也没有撒种的地方，在溪谷那里打断母牛犊的颈项。",
+          "B": "那城的长老要把母牛犊牵到一个溪水长流的山谷，那里的地既没有耕过，也没有种过；他们要在那山谷里打断母牛犊的脖子。",
+          "R": "他们必须把这头小母牛牵到一个有溪水常流的山谷。那里的地必须是没有耕过也没有种过的。他们要在山谷里打断小母牛的脖子。"
         }
       },
       "decisions": [
@@ -907,6 +991,27 @@
           ],
           "reason": "The meaning note reads eitan as ever-flowing and marks it uncertain; all three levels follow that reading.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210040081"
+          ],
+          "choice": "溪谷 (L), 山谷 (B, R)",
+          "alternatives": [
+            "旱谷"
+          ],
+          "reason": "The naḥal is a stream bed in a narrow valley; here the stream never runs dry (m1). \"溪谷\" at Literal names both; Balanced and Readable say \"山谷\" with the stream.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -1022,6 +1127,11 @@
           "L": "Dan imam-imam bani Lewi harus datang mendekat, sebab merekalah yang dipilih {{divine_name:TUHAN|Yahweh}}, Allahmu, untuk melayani-{{deity_pronoun:nya|Nya}} dan untuk memberkati demi nama {{divine_name:TUHAN|Yahweh}}, dan atas perkataan merekalah setiap perselisihan dan setiap penganiayaan diputuskan.",
           "B": "Imam-imam, keturunan Lewi, harus tampil. Merekalah yang dipilih {{divine_name:TUHAN|Yahweh}}, Allahmu, untuk melayani-{{deity_pronoun:nya|Nya}} dan untuk memberkati demi nama {{divine_name:TUHAN|Yahweh}}, dan perkataan merekalah yang harus memutuskan setiap perselisihan dan setiap perkara penganiayaan.",
           "R": "Para imam dari suku Lewi juga harus datang ke sana. {{divine_name:TUHAN|Yahweh}}, Allah kalian, sudah memilih mereka untuk melayani-{{deity_pronoun:nya|Nya}} dan untuk memberkati bangsa itu atas nama {{divine_name:TUHAN|Yahweh}}. Merekalah yang memutuskan setiap perselisihan dan setiap perkara orang yang dilukai."
+        },
+        "zh": {
+          "L": "祭司，就是利未的子孙，要近前来，因为{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}拣选了他们事奉{{deity_pronoun:他|祂}}，奉{{divine_name:上主|雅威}}的名祝福，并且一切争讼和一切殴伤的案件，都要凭他们的口[判定]。",
+          "B": "祭司，就是利未的子孙，要上前来。{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}拣选了他们事奉{{deity_pronoun:他|祂}}，奉{{divine_name:上主|雅威}}的名祝福，一切争讼和伤人的案件都要由他们的话来判定。",
+          "R": "来自利未支派的祭司也必须到那里去。{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}选了他们来事奉{{deity_pronoun:他|祂}}，并且奉{{divine_name:上主|雅威}}的名为百姓祝福。一切争执和有人受伤的案件，都由他们来判决。"
         }
       },
       "decisions": [
@@ -1150,6 +1260,28 @@
           "reason": "Japanese has no deity_pronoun spans; the reflexive respect form refers back to the LORD.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210050022",
+            "o050210050031",
+            "o050210050041"
+          ],
+          "choice": "祭司，就是利未的子孙",
+          "alternatives": [
+            "利未支派的祭司"
+          ],
+          "reason": "\"The priests, the sons of Levi\" (m1) keeps its apposition at Literal and Balanced, as the English does; Readable says \"来自利未支派的祭司\", as at 17:9.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1255,6 +1387,11 @@
           "L": "Dan semua tua-tua kota itu, yang paling dekat dengan orang yang terbunuh itu, harus membasuh tangan mereka di atas lembu muda yang batang lehernya dipatahkan di lembah itu.",
           "B": "Lalu semua tua-tua kota yang paling dekat dengan mayat itu harus membasuh tangan mereka di lembah itu, di atas lembu muda yang lehernya telah dipatahkan.",
           "R": "Lalu semua tua-tua kota yang paling dekat dengan mayat itu harus membasuh tangan mereka di atas sapi yang mati itu di lembah itu."
+        },
+        "zh": {
+          "L": "那离被杀的人最近之城的众长老，要在溪谷里，在那被打断颈项的母牛犊上面洗手，",
+          "B": "离尸体最近那座城的众长老，要在山谷里，在那头被打断脖子的母牛犊上面洗手，",
+          "R": "然后离尸体最近那座城的众长老必须在山谷里，在那头死了的小母牛上面洗手。"
         }
       },
       "decisions": [
@@ -1405,6 +1542,11 @@
           "L": "Dan mereka harus menjawab dan berkata, 'Tangan kami tidak menumpahkan darah ini, dan mata kami tidak melihatnya.",
           "B": "Mereka harus menyatakan, 'Tangan kami tidak menumpahkan darah ini, dan mata kami tidak melihat hal itu dilakukan.",
           "R": "Mereka harus berkata, 'Kami tidak membunuh orang ini, dan kami tidak melihat siapa yang melakukannya."
+        },
+        "zh": {
+          "L": "他们要回答说：‘我们的手没有流这人的血，我们的眼也没有看见。",
+          "B": "他们要宣告说：‘我们的手没有流这血，我们的眼也没有看见这事发生。",
+          "R": "他们必须说：‘我们没有杀这个人，也没有看见是谁杀的。"
         }
       },
       "decisions": [
@@ -1540,6 +1682,47 @@
           "reason": "The declaration leads into a prayer (21:8); people speaking to God are polite, as DEU-2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210070012",
+            "o050210070022"
+          ],
+          "choice": "回答说",
+          "alternatives": [
+            "宣告"
+          ],
+          "reason": "The formula \"answered and said\" (m2), here a formal declaration: \"回答说\" at Literal, as the style guide sets it; Balanced says \"宣告\", Readable \"说\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210070082",
+            "o050210070091",
+            "o050210070092"
+          ],
+          "choice": "这人的血",
+          "alternatives": [
+            "这血"
+          ],
+          "reason": "\"This blood\" is the blood of the man found dead; Literal says \"这人的血\" so that \"这血\" is not taken as the heifer's.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1646,6 +1829,11 @@
           "L": "Adakanlah pendamaian bagi umat-{{deity_pronoun:mu|Mu}} Israel, yang telah {{deity_pronoun:kau|Kau}}tebus, ya {{divine_name:TUHAN|Yahweh}}, dan janganlah menimpakan darah orang yang tidak bersalah ke tengah-tengah umat-{{deity_pronoun:mu|Mu}} Israel.' Dan darah itu akan didamaikan bagi mereka.",
           "B": "Adakanlah pendamaian bagi umat-{{deity_pronoun:mu|Mu}} Israel, yang telah {{deity_pronoun:kau|Kau}}tebus, ya {{divine_name:TUHAN|Yahweh}}, dan janganlah menanggungkan kesalahan atas darah orang yang tidak bersalah kepada umat-{{deity_pronoun:mu|Mu}} Israel.' Dengan demikian penumpahan darah itu didamaikan bagi mereka.",
           "R": "Ya {{divine_name:TUHAN|Yahweh}}, hapuskanlah dosa umat-{{deity_pronoun:mu|Mu}} Israel, yang sudah {{deity_pronoun:kau|Kau}}bebaskan. Jangan salahkan umat-{{deity_pronoun:mu|Mu}} atas kematian orang yang tidak bersalah ini.' Lalu kesalahan atas kematian itu akan dihapuskan dari mereka."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}为{{deity_pronoun:你|祢}}所救赎的子民以色列赎罪，不要把无辜人的血归在{{deity_pronoun:你|祢}}的子民以色列中间。’这流血的罪就必为他们赎去。",
+          "B": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}为{{deity_pronoun:你|祢}}所救赎的子民以色列赎罪，不要使{{deity_pronoun:你|祢}}的子民以色列担当流无辜人血的罪。’这样，流血的罪就会为他们赎去。",
+          "R": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}除去{{deity_pronoun:你|祢}}的子民以色列的罪。{{deity_pronoun:你|祢}}曾使他们得自由。不要因为一个无辜的人被杀，就怪罪{{deity_pronoun:你|祢}}的子民。’这样，那人被杀的罪责就会从他们身上除去。"
         }
       },
       "decisions": [
@@ -1983,6 +2171,49 @@
           "reason": "The glossary's words for kipper; the elders speak to the LORD as \"Engkau\" with the span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o050210080061"
+          ],
+          "choice": "the vocative first",
+          "alternatives": [
+            "the vocative after \"whom you redeemed\""
+          ],
+          "reason": "Chinese puts the address \"上主啊\" at the head of the prayer; the Hebrew has it after \"whom you redeemed\". The English Readable does the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210080011",
+            "o050210080142"
+          ],
+          "choice": "为……赎罪 (L, B), 除去……的罪 (R)",
+          "alternatives": [
+            "赦免"
+          ],
+          "reason": "The glossary's form for kipper (m2). \"救赎\" for \"redeemed\" (m3) at Literal and Balanced; Readable \"使他们得自由\", as the English says \"set free\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2082,6 +2313,11 @@
           "L": "Dan engkau harus menghapus darah orang yang tidak bersalah dari tengah-tengahmu, sebab engkau melakukan apa yang benar di mata {{divine_name:TUHAN|Yahweh}}.",
           "B": "Dengan begitu engkau menghapus kesalahan atas darah orang yang tidak bersalah dari tengah-tengahmu, sebab engkau melakukan apa yang benar menurut pandangan {{divine_name:TUHAN|Yahweh}}.",
           "R": "Dengan cara inilah kalian menghapus kesalahan karena membunuh orang yang tidak bersalah dari tengah-tengah kalian. Kalian melakukan apa yang dikatakan {{divine_name:TUHAN|Yahweh}} benar."
+        },
+        "zh": {
+          "L": "这样，你就要从你们中间除掉无辜人的血，因为你行了{{divine_name:上主|雅威}}眼中看为正的事。",
+          "B": "这样，你就能从你们中间除掉流无辜人血的罪，因为你做了{{divine_name:上主|雅威}}看为正的事。",
+          "R": "你们必须这样从你们中间除掉杀害无辜者的罪。这样你们就是做了{{divine_name:上主|雅威}}说是正确的事。"
         }
       },
       "decisions": [
@@ -2276,6 +2512,11 @@
           "L": "Apabila engkau keluar berperang melawan musuhmu, dan {{divine_name:TUHAN|Yahweh}}, Allahmu, menyerahkan mereka ke dalam tanganmu, dan engkau menawan tawanan dari mereka,",
           "B": "Apabila engkau maju berperang melawan musuhmu, dan {{divine_name:TUHAN|Yahweh}}, Allahmu, menyerahkan mereka kepadamu, lalu engkau menawan sebagian dari mereka,",
           "R": "Mungkin kalian pergi berperang melawan musuh kalian, dan {{divine_name:TUHAN|Yahweh}}, Allah kalian, memberi kalian kemenangan atas mereka. Kalian mungkin menawan sebagian dari mereka."
+        },
+        "zh": {
+          "L": "你出去与你的仇敌争战，{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}把他们交在你手中，你掳了他们一些人，",
+          "B": "你出去与仇敌作战的时候，{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}把他们交给你，你俘虏了他们当中的一些人，",
+          "R": "你可能出去和仇敌作战，{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}可能会使你打败他们。你可能会把他们当中的一些人抓来作俘虏。"
         }
       },
       "decisions": [
@@ -2463,6 +2704,11 @@
           "L": "dan engkau melihat di antara tawanan itu seorang perempuan yang cantik rupanya, dan hatimu terpikat kepadanya dan engkau mau mengambilnya menjadi istrimu,",
           "B": "dan engkau melihat di antara para tawanan itu seorang perempuan yang cantik, yang kauingini dan hendak kaunikahi,",
           "R": "Di antara mereka kalian mungkin melihat seorang perempuan yang cantik. Kalian mungkin tertarik kepadanya dan ingin menikahinya."
+        },
+        "zh": {
+          "L": "你在被掳的人中看见一个容貌美丽的女子，恋慕她，要娶她为妻，",
+          "B": "你在俘虏中看见一个美丽的女子，喜爱她，想娶她为妻，",
+          "R": "在这些俘虏中，你可能看见一个美丽的女子。你可能喜欢她，想娶她。"
         }
       },
       "decisions": [
@@ -2648,6 +2894,11 @@
           "L": "engkau harus membawanya ke dalam rumahmu, dan ia harus mencukur kepalanya dan memotong kukunya,",
           "B": "bawalah dia ke rumahmu. Ia harus mencukur rambut kepalanya, memotong kukunya,",
           "R": "Bawalah dia ke rumah kalian. Ia harus mencukur rambut kepalanya dan memotong kukunya."
+        },
+        "zh": {
+          "L": "你就要领她到你家里，她要剃头，修指甲，",
+          "B": "就要把她带回家。她要剃头、修剪指甲，",
+          "R": "那就把她带回家。她必须剃掉头发，剪短指甲。"
         }
       },
       "decisions": [
@@ -2878,6 +3129,11 @@
           "L": "dan menanggalkan pakaian tawanannya dari padanya, dan ia harus tinggal di rumahmu dan menangisi ayahnya dan ibunya sebulan lamanya; dan sesudah itu engkau boleh menghampirinya dan menjadi suaminya, dan ia akan menjadi istrimu.",
           "B": "dan menanggalkan pakaian yang dipakainya waktu ia ditawan. Ia harus tinggal di rumahmu dan berkabung untuk ayah dan ibunya sebulan penuh. Sesudah itu engkau boleh tidur dengannya dan menjadi suaminya, dan ia akan menjadi istrimu.",
           "R": "Ia harus menanggalkan pakaian yang dipakainya waktu ia ditawan. Ia akan tinggal di rumah kalian dan berkabung untuk ayah dan ibunya selama satu bulan penuh. Sesudah itu kalian boleh tidur dengannya dan menjadi suaminya, dan ia akan menjadi istri kalian."
+        },
+        "zh": {
+          "L": "脱去她被掳时所穿的衣服，住在你家里，为她的父亲和她的母亲哀哭一个整月；然后你可以进到她那里，作她的丈夫，她就作你的妻子。",
+          "B": "脱下她被俘时所穿的衣服。她要住在你家里，为她的父母哀哭整整一个月。然后你才可以与她同房，作她的丈夫，她就成为你的妻子。",
+          "R": "她必须脱下她被抓时穿的衣服。她要住在你家里，为她的父母哀哭整整一个月。以后你才可以和她同房，作她的丈夫，她就是你的妻子了。"
         }
       },
       "decisions": [
@@ -2992,6 +3248,27 @@
           "reason": "For \"go in to her\" (m3), Literal says \"deitar-se com\", as Genesis 16:4 and 38:8 do in Portuguese, since \"entrar a ela\" is not Portuguese; Balanced and Readable say \"dormir com ela\", the plain and decent way of naming sexual union, as the English says \"sleep with her\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210130171",
+            "o050210130181",
+            "o050210130192"
+          ],
+          "choice": "进到她那里",
+          "alternatives": [
+            "与她同房"
+          ],
+          "reason": "\"Go in to her\" (m3) keeps the Hebrew expression at Literal; Balanced and Readable say \"与她同房\", the ordinary written Chinese for beginning the marriage.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3102,6 +3379,11 @@
           "L": "Dan apabila engkau tidak suka lagi kepadanya, engkau harus membiarkan dia pergi sesuka hatinya; tetapi sekali-kali janganlah engkau menjualnya dengan uang; janganlah engkau memperlakukannya sebagai budak, sebab engkau telah merendahkannya.",
           "B": "Tetapi jika engkau tidak lagi menyukainya, biarkanlah dia pergi dengan bebas ke mana pun ia mau. Engkau sama sekali tidak boleh menjualnya dengan uang atau memperlakukannya sebagai budak, sebab engkau telah merendahkannya.",
           "R": "Tetapi mungkin kemudian kalian tidak menginginkannya lagi. Kalau begitu, kalian harus membiarkannya pergi dengan bebas untuk tinggal di mana pun ia mau. Kalian sama sekali tidak boleh menjualnya atau memperlakukannya sebagai budak, karena kalian sudah mempermalukannya."
+        },
+        "zh": {
+          "L": "你若不喜欢她，就要让她随自己的意思离去；你绝不可为钱卖她，也不可把她当奴隶对待，因为你曾玷辱了她。",
+          "B": "但如果你不再喜爱她，就要让她自由离去，她愿意去哪里就去哪里。你绝不可为钱把她卖掉，也不可把她当奴隶对待，因为你已经使她蒙羞。",
+          "R": "但你以后可能不再想要她。那么你必须让她自由离去，她想去哪里住就去哪里住。你绝不可把她卖掉，也不可把她当奴隶对待，因为你已经使她受了羞辱。"
         }
       },
       "decisions": [
@@ -3271,6 +3553,27 @@
           "reason": "The rare verb means to deal with a person as property, as the meaning note; slavery itself is the point, so 奴隷 at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210140131"
+          ],
+          "choice": "当奴隶对待 (every level)",
+          "alternatives": [
+            "当仆人对待"
+          ],
+          "reason": "The sentence is about selling a person as property, so \"奴隶\" stays at every level, as the English keeps \"slave\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3384,6 +3687,11 @@
           "L": "Apabila seorang laki-laki mempunyai dua orang istri, yang seorang dicintai dan yang seorang tidak dicintai, dan keduanya, yang dicintai dan yang tidak dicintai, telah melahirkan anak-anak laki-laki baginya, dan anak sulung itu adalah anak dari istri yang tidak dicintai,",
           "B": "Apabila seorang laki-laki mempunyai dua istri, yang seorang dicintainya dan yang lain tidak, dan keduanya telah melahirkan anak laki-laki baginya, tetapi anak sulungnya adalah anak dari istri yang tidak dicintai,",
           "R": "Mungkin seorang laki-laki mempunyai dua istri. Ia mungkin lebih mencintai yang satu daripada yang lain. Kedua istri itu mungkin melahirkan anak laki-laki baginya, dan anak sulungnya mungkin anak dari istri yang kurang dicintainya."
+        },
+        "zh": {
+          "L": "若一个人有两个妻子，一个被爱，一个被恨，被爱的和被恨的都给他生了儿子，而长子是被恨的那个[妻子]所生的，",
+          "B": "如果一个人有两个妻子，一个是他所爱的，一个是他不爱的，两个都给他生了儿子，而长子是那个不受宠爱的妻子所生的，",
+          "R": "一个男人可能有两个妻子。他可能爱其中一个比爱另一个多。两个妻子都可能给他生了儿子，而长子可能是他比较不爱的那个妻子生的。"
         }
       },
       "decisions": [
@@ -3623,6 +3931,30 @@
           "reason": "The glossary gives \"cinta\" for human romantic love; \"dikasihi\" stays for God's love and the love God asks.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210150071",
+            "o050210150091",
+            "o050210150132",
+            "o050210150143",
+            "o050210150182"
+          ],
+          "choice": "不爱的 / 不受宠爱的 (B), 比较不爱的 (R)",
+          "alternatives": [
+            "被恨的"
+          ],
+          "reason": "\"Hated\" here means loved less (m1). Literal keeps \"被恨\"; Balanced and Readable say what is meant, as the English says \"unloved\" and \"loves less\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3734,6 +4066,11 @@
           "L": "pada hari ia membagikan miliknya kepada anak-anaknya sebagai warisan, ia tidak boleh memperlakukan anak dari istri yang dicintai sebagai anak sulung, mendahului anak dari istri yang tidak dicintai, yang adalah anak sulung.",
           "B": "pada hari ia membagikan hartanya kepada anak-anaknya sebagai warisan, ia tidak boleh memberikan hak kesulungan kepada anak dari istri yang dicintai sebagai ganti anak dari istri yang tidak dicintai, yang sesungguhnya anak sulung.",
           "R": "Waktu laki-laki itu membagikan miliknya kepada anak-anaknya, ia tidak boleh memperlakukan anak dari istri yang dicintainya sebagai anak sulung. Anak sulung yang sebenarnya adalah anak dari istri yang lain itu."
+        },
+        "zh": {
+          "L": "到了他把自己所有的分给儿子们作产业的那一天，他不可把被爱的[妻子]所生的儿子立为长子，取代被恨的[妻子]所生的儿子，就是那真长子。",
+          "B": "那么他把财产分给儿子们作产业的时候，不可把长子的权利给他所爱的妻子生的儿子，取代那不受宠爱的妻子所生的真正长子。",
+          "R": "那个男人把自己的财产分给儿子们的时候，不可以把他所爱的妻子生的儿子当作长子。真正的长子是另一个妻子生的儿子。"
         }
       },
       "decisions": [
@@ -3974,6 +4311,11 @@
           "L": "Tetapi anak sulung, anak dari istri yang tidak dicintai, harus diakuinya dengan memberikan kepadanya dua bagian dari segala yang dimilikinya, sebab dialah permulaan kekuatannya; dialah yang mempunyai hak kesulungan.",
           "B": "Ia harus mengakui anak dari istri yang tidak dicintai itu sebagai anak sulung dengan memberikan kepadanya dua bagian dari segala miliknya. Anak itulah tanda pertama kekuatan ayahnya, dan hak kesulungan adalah miliknya.",
           "R": "Ia harus menerima anak itu sebagai anak sulungnya dan memberinya dua kali lipat dari yang diberikannya kepada setiap anaknya yang lain. Anak itulah tanda pertama kekuatan ayahnya. Hak anak sulung adalah miliknya."
+        },
+        "zh": {
+          "L": "他要承认被恨的[妻子]所生的儿子为长子，在他一切所有的中给他双份，因为这儿子是他力量的开始，长子的权利是属于他的。",
+          "B": "他必须承认那不受宠爱的妻子所生的儿子是长子，把他一切所有的分给这儿子双份。这儿子是他父亲壮年时的头生子，长子的权利是属于他的。",
+          "R": "他必须承认这个儿子是他的长子，给他的要比给其他每个儿子的多一倍。这个儿子是他父亲年轻力壮时最先生的。长子的权利是属于他的。"
         }
       },
       "decisions": [
@@ -4179,6 +4521,29 @@
           "reason": "The glossary's word for the birthright.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210170171",
+            "o050210170181",
+            "o050210170182"
+          ],
+          "choice": "他力量的开始 (L), 壮年时的头生子 (B), 年轻力壮时最先生的 (R)",
+          "alternatives": [
+            "他力量的初果"
+          ],
+          "reason": "\"The beginning of his strength\" (m3), the first son of his father's manhood, as at Genesis 49:3: Literal keeps the picture; Balanced and Readable say what it means.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4290,6 +4655,11 @@
           "L": "Apabila seseorang mempunyai anak laki-laki yang degil dan durhaka, yang tidak mau mendengarkan suara ayahnya dan suara ibunya, dan walaupun mereka menghajarnya, ia tidak mau mendengarkan mereka,",
           "B": "Andaikata seseorang mempunyai anak laki-laki yang degil dan durhaka, yang tidak mau menaati ayah atau ibunya, dan tidak mau mendengarkan mereka walaupun mereka telah menghajarnya,",
           "R": "Mungkin seorang laki-laki mempunyai anak laki-laki yang keras kepala dan melawan orang tuanya. Ia tidak menaati ayah atau ibunya. Mereka menegurnya, tetapi ia tetap tidak mau mendengarkan mereka."
+        },
+        "zh": {
+          "L": "若有人有一个顽固悖逆的儿子，不听他父亲的声音和他母亲的声音，他们管教他，他还是不听从他们，",
+          "B": "假如有人有一个顽固悖逆的儿子，不听从父亲或母亲的话，即使他们管教他，他也不肯听，",
+          "R": "一个人可能有一个顽固、反抗父母的儿子。他不听父亲或母亲的话。父母纠正他，他还是不肯听。"
         }
       },
       "decisions": [
@@ -4350,6 +4720,27 @@
           "choice": "his father and his mother: both parents together",
           "alternatives": [],
           "reason": "The law names both parents here and in verses 19-20. It upholds the command to honor father and mother (5:16), and it does not let one angry parent bring the case alone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210180132"
+          ],
+          "choice": "管教 (L, B), 纠正 (R)",
+          "alternatives": [
+            "惩罚"
+          ],
+          "reason": "The glossary's \"管教\" for musar, \"纠正\" at Readable (Proverbs).",
           "uncertain": false,
           "footnote": false
         }
@@ -4456,6 +4847,11 @@
           "L": "ayahnya dan ibunya harus memegang dia dan membawa dia ke luar kepada tua-tua kotanya, ke pintu gerbang tempatnya,",
           "B": "ayah dan ibunya harus menangkapnya dan membawanya ke luar kepada tua-tua kotanya, ke pintu gerbang tempat tinggalnya,",
           "R": "Kalau begitu, ayah dan ibunya harus membawanya kepada tua-tua kota mereka di pintu gerbang kota."
+        },
+        "zh": {
+          "L": "他的父亲和他的母亲就要抓住他，把他带出来，到他本城的长老那里，到他本地的城门那里，",
+          "B": "他的父母就要抓住他，带他到他本城的长老那里，就是到他所住之地的城门口，",
+          "R": "那么他的父母必须把他带到城门口，交给本城的长老。"
         }
       },
       "decisions": [
@@ -4612,6 +5008,11 @@
           "L": "dan berkata kepada tua-tua kotanya, 'Anak kami ini degil dan durhaka; ia tidak mau mendengarkan suara kami; ia pelahap dan peminum.'",
           "B": "Mereka harus berkata kepada tua-tua kotanya, 'Anak kami ini degil dan durhaka. Ia tidak mau menaati kami. Ia pelahap dan pemabuk.'",
           "R": "Mereka harus berkata kepada tua-tua itu, 'Anak kami keras kepala dan melawan kami. Ia tidak mau menaati kami. Ia makan berlebihan dan suka mabuk.'"
+        },
+        "zh": {
+          "L": "对他本城的长老说：‘我们这个儿子顽固悖逆，不听我们的声音，是个暴食酗酒的人。’",
+          "B": "他们要对他本城的长老说：‘我们这个儿子顽固悖逆，不听从我们的话，又贪吃又酗酒。’",
+          "R": "他们必须告诉长老：‘我们的儿子很顽固，反抗我们，不听我们的话。他吃得太多，又常常喝醉。’"
         }
       },
       "decisions": [
@@ -4813,6 +5214,11 @@
           "L": "Lalu semua laki-laki di kotanya harus melempari dia dengan batu sampai mati; dan engkau harus menghapus yang jahat itu dari tengah-tengahmu, dan seluruh Israel akan mendengar dan menjadi takut.",
           "B": "Lalu semua laki-laki di kotanya harus melempari dia dengan batu sampai mati. Engkau harus menghapus kejahatan itu dari tengah-tengahmu; seluruh Israel akan mendengarnya dan menjadi takut.",
           "R": "Lalu semua laki-laki di kotanya harus melempari dia dengan batu sampai ia mati. Kalian harus menyingkirkan kejahatan itu dari tengah-tengah kalian. Seluruh bangsa Israel akan mendengar tentang hal itu dan takut melakukan hal yang sama."
+        },
+        "zh": {
+          "L": "他本城所有的男人就要用石头打他，他就要死。这样，你就要把那恶从你们中间除掉；全以色列都要听见而害怕。",
+          "B": "然后他本城所有的男人要用石头把他打死。你必须把那恶从你们中间除掉。全以色列都会听见而害怕。",
+          "R": "那么他本城所有的男人都必须用石头打他，直到他死。你必须把这邪恶从你们中间除掉。全以色列的人都会听说这事，就不敢做同样的事。"
         }
       },
       "decisions": [
@@ -5020,6 +5426,11 @@
           "L": "Dan apabila pada seseorang ada dosa yang patut dihukum mati, dan ia dihukum mati, dan engkau menggantungnya pada sebuah pohon,",
           "B": "Apabila seseorang melakukan dosa yang patut dihukum mati, lalu ia dihukum mati dan engkau menggantung mayatnya pada sebuah pohon,",
           "R": "Mungkin seseorang bersalah atas kejahatan yang hukumannya mati. Sesudah orang itu dihukum mati, mayatnya mungkin digantung pada sebuah pohon."
+        },
+        "zh": {
+          "L": "人若犯了该判死罪的罪，被处死了，你把他挂在木头上，",
+          "B": "如果有人犯了该判死刑的罪，已经被处死，你又把尸体挂在木头上，",
+          "R": "有人可能犯了该判死刑的罪。这人被处死以后，尸体可能被挂在木头上。"
         }
       },
       "decisions": [
@@ -5162,6 +5573,46 @@
           "reason": "The Hebrew word means a tree or a wooden post (m2). Galatians 3:13 quotes the next verse, and this translation has \"काठ\" there at Literal and Balanced and \"पेड़\" at Readable; Deuteronomy keeps the same words so the two passages read together.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210220111"
+          ],
+          "choice": "木头 (every level)",
+          "alternatives": [
+            "树"
+          ],
+          "reason": "The ʿets is a tree or a wooden post (m2). \"木头\" covers both and is the word Galatians 3:13 uses in Chinese for the line of verse 23; the English says \"tree\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050210220032"
+          ],
+          "choice": "人 (no gender span)",
+          "alternatives": [
+            "男人"
+          ],
+          "reason": "\"A man\" means anyone (m3); Chinese \"人\" is already inclusive.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5277,6 +5728,11 @@
           "L": "janganlah mayatnya dibiarkan semalam-malaman pada pohon itu, tetapi engkau harus benar-benar menguburkannya pada hari itu juga, sebab orang yang digantung terkutuk oleh Allah; dan janganlah engkau menajiskan tanahmu yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu menjadi milik pusaka.",
           "B": "jangan biarkan mayatnya tergantung pada pohon itu semalaman. Kuburkanlah mayat itu pada hari itu juga, sebab orang yang digantung berada di bawah kutuk Allah. Jangan menajiskan negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu menjadi milik pusaka.",
           "R": "Jangan biarkan mayat itu tergantung pada pohon sepanjang malam. Kalian harus menguburkannya pada hari itu juga, karena siapa pun yang digantung pada pohon berada di bawah kutuk Allah. Jangan menajiskan negeri itu. {{divine_name:TUHAN|Yahweh}}, Allah kalian, memberikannya kepada kalian menjadi milik kalian."
+        },
+        "zh": {
+          "L": "他的尸体不可整夜留在木头上，必须当天把他埋葬，因为被挂的人是被{{god_term:神|上帝}}诅咒的；你不可玷污{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作产业的地。",
+          "B": "不可让尸体整夜留在木头上，一定要在当天把它埋葬，因为被挂在木头上的人都在{{god_term:神|上帝}}的诅咒之下。你不可玷污{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作产业的地。",
+          "R": "不要让尸体整夜留在木头上。你必须当天把它埋葬，因为凡是被挂在木头上的人，都在{{god_term:神|上帝}}的诅咒之下。不要玷污这地。{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}要把它赐给你作为自己的产业。"
         }
       },
       "decisions": [
@@ -5548,6 +6004,29 @@
           "reason": "The words are taken up in Galatians 3:13; the Ukrainian keeps \"прокляття\", the noun, as the Hebrew has it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050210230121",
+            "o050210230131",
+            "o050210230141"
+          ],
+          "choice": "被挂的人是被神诅咒的 (L); 被挂在木头上的人都在神的诅咒之下 (B); 凡是被挂在木头上的人，都在神的诅咒之下 (R)",
+          "alternatives": [
+            "被挂的人是神的诅咒"
+          ],
+          "reason": "Galatians 3:13 quotes this line (m3) without \"of God\" and in its own wording. Balanced and Readable keep Galatians' Chinese frame (\"被挂在木头上的人都在……之下\", \"凡是被挂在木头上的人\"), adding \"神的\" as the Hebrew has it, and use the glossary's \"诅咒\" where Galatians has \"咒诅\". Literal gives the Hebrew's short phrase \"a curse of God\" (m2) as \"被神诅咒的\".",
+          "uncertain": true,
+          "footnote": true
         }
       ],
       "status": "ai_draft"
