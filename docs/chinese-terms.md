@@ -2628,3 +2628,46 @@ Forced labour is 服苦役 in Judges and Joshua (16:10; 17:13), as Genesis
 49:15. Shaalabbin 沙拉宾 (Joshua 19:42) and Shaalbim 沙宾 (Judges 1:35),
 Aphek 亚弗 and Aphik 亚弗革, Timnath-serah 亭拿西拉 and Timnath-heres 亭拿希烈
 follow the two spellings of the Hebrew.
+
+### Ruth
+
+Ruth keeps the forms of Genesis to Judges for every name and term above (士师 for "the judges judged", 1:1; the oath of Judges 8:19 at 3:13; Leviticus 19:9 and 25 for gleaning and redeeming; Deuteronomy 25:5-10 for the levirate and the sandal; Genesis 29, 35 and 38 and Matthew 1:3-6 for the names of 4:11-22), and settles these:
+
+| English (first verse) | Chinese |
+|---|---|
+| Elimelech; Mahlon, Chilion; Orpah (1:2-4) | 以利米勒; 玛伦, 基连; 俄珥巴 |
+| Ephrathites (1:2); Ephrathah (4:11) | 以法他人; 以法他 (as Genesis 35:19) |
+| the fields of Moab | 摩押的田野 (L, as Genesis 36:35); 摩押地 (B, R) |
+| Mara (1:20) | 玛拉, the name of Exodus 15:23's bitter water; R explains both names in the text (‘甜美’, ‘苦’), with a footnoted decision |
+| Shaddai (1:20-21) | 全能者 (L, B); 全能的*gt* (R), as Numbers 24:4 |
+| mother-in-law; daughter-in-law; sister-in-law (1:15) | 婆婆; 儿媳; 妯娌 |
+| "my daughter(s)" (Naomi, Boaz) | 我的女儿(们) (L); 女儿(们) (B, R) |
+| people (1:10, 15, 16) | 百姓 (L); 同胞 (B); 族人 (R) |
+| "your people my people, your God my God" (1:16) | 你的百姓[要作]我的百姓，你的*gt*[要作]我的*gt* (L); 如今是 / 如今也是 (B); 从今天起……也是 (R); drafted fresh |
+| "May the LORD do so to me, and more" (1:17) | 愿*dn*这样对待我，并且加倍对待我 (L); 愿*dn*严厉地惩罚我，而且罚得更重 (B); a promise, then 愿{{deity_pronoun:他\|祂}}严厉地惩罚我 (R) |
+| hesed between people (1:8; 3:10) | 慈爱 (L); 恩待 / 恩情 (B); 善待 / 恩情 (R) |
+| the LORD's hesed (2:20) | 慈爱 (L, B); 始终不变的爱 (R) |
+| rest, a resting place (1:9; 3:1) | 安息 / 安息之处 (L); 安身之处 (B) |
+| glean; ears; sheaves; bundles (2:2-16) | 捡拾 (L, B), 捡 (R), as Leviticus 19:9; 穗子 / 麦穗; 麦捆; 禾把 |
+| the harvesters; Boaz's young men; young women | 收割的人; 年轻人 (L), 年轻男仆 (B), 年轻男工 (R); 女仆 (L, B), 年轻女子 (R); the whole crew (2:21) 工人 (B, R) |
+| "find favor in your eyes" | 在……眼中得恩宠 (L, as Genesis 18:3); 恩待 (B) |
+| "The LORD be with you" / "The LORD bless you" (2:4) | 愿*dn*与你们同在！ / 愿*dn*赐福给你（您）！ |
+| vinegar; roasted grain (2:14) | 醋 (L), 酸酒 (B, R); 烘过的谷物 (L), 烤过的谷粒 (B, R), as Joshua 5:11 |
+| ephah (2:17) | 约一伊法 (L); `{{units:约22升\|约一伊法}}` (B, R) |
+| six measures of barley (3:15, 17) | 六[份] (L), 六份 (B, R), no units span |
+| wings (2:12, God's); wing (3:9, Boaz's garment) | 翅膀 at every level in 2:12; 3:9 翅膀 (L), 衣襟 (B), 外衣的衣角 (R), with a footnoted decision on the echo |
+| maidservant: shifchah (2:13); amah (3:9) | 婢女 (L), 使女 / 女仆 (B); 使女 (L, B) |
+| go'el, kinsman-redeemer | 有赎回权的亲属 (L); 至亲 (B); 有责任照顾我们（你们 / 拿俄米一家）的亲人 (R), then 那个亲人 in chapter 4 |
+| redeem (3:13; 4:4-6); acquire (4:4-10) | 赎回 (L, B), 买回来 (R), as Leviticus 25; the land 买, Ruth 得着 (L), 得到 (B), 娶 (B, R in 4:10) |
+| threshing floor; winnow (3:2) | 禾场 (L, B), 打谷场 (R); 扬 |
+| uncover his feet (3:4, 7) | 掀开他脚上的遮盖 (L, B); 把盖在他脚上的外衣掀开 (R) |
+| a woman of worth (3:11); mighty in wealth (2:1); make strength (4:11) | 有才德的女子 (L), 才德兼备 (B), 品德好、又能干 (R); 大有财势 (L); 得着财势 (L), 兴旺 (B, R) |
+| "as the LORD lives" (3:13) | [我指着]永活的*dn*[起誓] (L); 我指着永活的*dn*起誓 (B); 发誓 (R), as Judges 8:19 |
+| Mr. So-and-so (4:1) | 某某人 (L); 某某先生 (B, R) |
+| the sandal (4:7-8) | 鞋, 脱下, as Deuteronomy 25:9-10 |
+| raise up the name of the dead on his inheritance (4:5, 10) | 为死人兴起名字 (L); 使死者的名……延续下去 (B); 死者的家族名字……延续下去 (R), as Deuteronomy 25:6-7 |
+| nurse (4:16) | 抚养他的人 (L) |
+| the generations of Perez (4:18) | 世系 (L, as Genesis 11:10); 后代 (B); 家谱 (R); "fathered" 生了 (L, B), 是……的父亲 (R) |
+| Perez, Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz, Obed, Jesse, David (4:18-22) | 法勒斯, 希斯仑, 兰, 亚米拿达, 拿顺, 撒门, 波阿斯, 俄备得, 耶西, 大卫 (Matthew 1:3-6); Salmah (4:20) 撒玛 at L only (uncertain), 撒门 at B and R; Rachel, Leah 拉结, 利亚; Tamar, Judah 他玛, 犹大 |
+
+Address: Naomi and her daughters-in-law say 你 to each other at every level (uncertain: 您 from the daughters-in-law is possible at B and R); Boaz says 你 and 女儿 to Ruth; Ruth says 您 to Boaz at B and R, with 我主 (L), 大人 (B), 先生 (R) for "my lord"; the harvesters say 您 to Boaz at B and R.
