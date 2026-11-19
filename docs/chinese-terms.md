@@ -301,7 +301,7 @@ the English conversion, written in Arabic digits in the modern option.
 | cubit | 肘 | 约45厘米 (Ezekiel 40-48: 约53厘米) |
 | handbreadth; span | 掌; 虎口 | 约7.5厘米; 约23厘米 |
 | shekel; beka; gerah | 舍客勒; 比加; 季拉 | 11.5克; 5.7克; 0.6克 |
-| talent; mina | 他连得; 弥那 | 34公斤; 0.6公斤 |
+| talent; mina | 他连得; 弥那 | as money, in wages, as the denarius: a talent about twenty years' wages (`{{units:约二十年的工钱\|一他连得}}`, five talents 约一百年的工钱), a mina about a hundred days' wages; the weight (34公斤; 0.6公斤) only where the text weighs it |
 | ephah (a tenth of an ephah); omer | 伊法 (伊法的十分之一); 俄梅珥 | 22升 (2.2升); 2.2升 |
 | seah; hin; bath | 细亚; 欣; 罢特 | 7升; 3.7升; 22升 |
 | homer; cor | 贺梅珥; 柯珥 | 220升 |
@@ -650,5 +650,56 @@ with its main alternative:
 ## Added while drafting
 
 Names and terms coined while drafting, each with the verse where it first
-appears and the decision that records it. Empty until the first book is
-drafted.
+appears and the decision that records it.
+
+### Matthew
+
+Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Ram (1:3-4) | 兰 |
+| the genealogy (1:2-16) | 他玛, 法勒斯, 谢拉, 希斯仑, 亚米拿达, 拿顺, 撒门, 喇合, 波阿斯, 路得, 俄备得, 耶西; 罗波安, 亚比雅, 约沙法, 约兰, 乌西雅, 约坦, 亚哈斯, 希西家, 玛拿西, 约西亚, 耶哥尼雅; 撒拉铁, 所罗巴伯, 亚比玉, 以利亚敬, 亚所, 撒督, 亚金, 以律, 以利亚撒, 马但 |
+| Asaph / Asa, Amos / Amon (1:7, 10) | 亚萨, 阿摩司 (L, the Greek spelling); 亚撒, 亚们 (B, R, the kings' names) |
+| Archelaus (2:22) | 亚基老 |
+| Gadarenes (8:28) | 加大拉人 |
+| Chorazin (11:21) | 哥拉汛 |
+| Simon the Cananaean (10:4) | 加纳奈人西门 (L, B); 奋锐党的西门 (R) |
+| Magadan (15:39) | 马加丹 |
+| Simon Bar-Jonah (16:17) | 西门巴约拿 (L); 约拿的儿子西门 (B, R) |
+| Bethphage (21:1) | 伯法其 |
+| Barachiah (23:35) | 巴拉加 |
+| Cyrene (27:32) | 古利奈 |
+| Arimathea (27:57) | 亚利马太 |
+| Jesus Barabbas (27:16-17) | 耶稣巴拉巴 |
+
+Terms settled in Matthew:
+
+| English | Chinese |
+|---|---|
+| magi (2:1) | 星象家 (L, B); 研究星象的智者, then 智者 (R). Not 博士 or 术士. |
+| the Sanhedrin, the council (5:22; 26:59) | 公会 (L); 最高公会 (B, R). Local councils (10:17): 公会 (L), 地方的公会 (B), 法庭 (R). |
+| talents (18:24; 25:14-30) | 他连得 (L); in wages at B and R: `{{units:约二十年的工钱\|一他连得}}`, 五他连得 约一百年的工钱, 一万他连得 约二十万年的工钱 |
+| denarius (18:28; 20:2) | 一个银币 (L); `{{units:一天的工钱\|一个银币}}` (B, R) |
+| the two-drachma tax (17:24) | 两德拉克马 (L); `{{units:圣殿税\|两德拉克马税}}` (B, R) |
+| stater (17:27) | 斯塔特 (L); `{{units:一枚值四天工钱的银币\|一枚斯塔特}}` (B, R) |
+| tetrarch (14:1) | 分封王 (L, B); 统治加利利的 (R) |
+| Herodians (22:16) | 希律党人 (L, B); 支持希律王家族的人 (R) |
+| Hades (11:23; 16:18) | 阴间 (L, B); Readable follows the English Readable (死人去的地方, 11:23) |
+| weeds (13:24-43) | 稗子 (L, B); 杂草 (R) |
+| serious skin disease (8:2; 10:8; 11:5; 26:6) | 患严重皮肤病的人 at every level; 麻风 named in a decision |
+| a single fellow believer (5:22-24; 7:3-5; 18:15-35) | `{{gender:弟兄或姐妹\|弟兄}}`; the plural `{{gender:弟兄姐妹\|弟兄}}` |
+| "sons of the bridal chamber" (9:15) | 陪伴新郎的人 (L); 婚宴的宾客 (B); 新郎的朋友 (R); no gender span |
+| the fulfilment formula (1:22 and nine more) | 好使……借着先知……所说的话得以应验，[那话]说 (L; 那时……就应验了 for "then ... was fulfilled", 2:17; 27:9); 这是要使借先知……所说的话得以应验 (B); 这使先知……说过的话成真了 (R) |
+| blessed (makarios, 5:3-11 and later) | 有福; 蒙福 only for "blessed" (eulogeo, 21:9; 23:39) |
+| ransom (20:28) | 赎价 |
+| the end of the age (aion; 13:39; 24:3; 28:20) | 时代的终结 (L); 这个时代的终结 (B, R). 世代 only for the generation (genea). |
+| Father in heaven | 你们那在天上的父 (L), 你们在天上的父 (B, R); "heavenly Father" 天上的父 |
+| Sea of Galilee | 海, 加利利海 (L); 湖, 加利利湖 (B, R) |
+| "It is written" | 经上写着 (L, B); 圣经上说 (R) |
+| "you of little faith" | 你们这些信心小的人哪 (L); 你们这些信心太小的人哪 (B); 你们的信心太小了 (R) |
+| brood of vipers (3:7; 12:34; 23:33) | 毒蛇的后代啊 (L); 你们这一窝毒蛇 (B); 你们就像一窝毒蛇 (R) |
+| weeping and gnashing of teeth | 在那里将有哭泣和咬牙 (L); 人们会在那里哭泣、咬牙 (B); 人们会在那里哭，会咬牙 (R) |
+| chief priests and elders of the people | 祭司长和百姓的长老 |
+| clock time (20:3-9; 27:45-46) | 第三时, 第六时 ... (L); 上午九点左右, 中午十二点, 下午三点, 下午五点 (B, R) |
+| 您 (B, R) | servants to their master (13:27; 18:26; 25:20-25), hired workers to the landowner (20:12), the chief priests to Pilate (27:64) |
