@@ -202,7 +202,10 @@ capitalised "He" until a reader picks lowercase (`DEFAULTS` in
 `owb/markup.py` and `web/markup.js`).
 
 Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
-`plural_you` (a future `spelling` setting needs a reader control first).
+`plural_you` (Spanish only) and `god_term` (Chinese only: 神 or 上帝); a
+future `spelling` setting needs a reader control first. In Chinese,
+`deity_pronoun` gives the reverent forms (`{{deity_pronoun:他|祂}}`,
+`{{deity_pronoun:你|祢}}`) where other languages capitalise.
 `owb/markup.py` and `web/markup.js` list and render the spans;
 `tests/markup_vectors.json` holds the two to the same answers.
 

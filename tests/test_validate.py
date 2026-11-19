@@ -383,6 +383,32 @@ class ValidateTest(unittest.TestCase):
         self.assertIn("renderings.en.R: plural_you is not a setting in this language",
                       validate.validate_record(record))
 
+    def test_god_term_is_chinese_only(self):
+        # The word for God, 神 or 上帝, is a Chinese reader setting; the
+        # English stands in for the rest of the Chinese text here.
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["zh"] = {level: text + " {{god_term:神|上帝}}的话"
+                                      for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["R"] += " {{god_term:God|the Lord}}"
+        self.assertIn("renderings.en.R: god_term is not a setting in this language",
+                      validate.validate_record(record))
+
+    def test_chinese_deity_pronouns_take_their_reverent_forms(self):
+        # Chinese has no capitals: 他 / 祂 and 你 / 祢 are its pairs, and
+        # only in Chinese; any other pair is still a change of wording.
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["zh"] = {level: text + " {{deity_pronoun:他|祂}} {{deity_pronoun:你|祢}}"
+                                      for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["zh"]["B"] += " {{deity_pronoun:他|你}}"
+        self.assertTrue(any(e.startswith("renderings.zh.B: deity_pronoun alternative")
+                            for e in validate.validate_record(record)))
+        del record["renderings"]["zh"]
+        record["renderings"]["en"]["B"] += " {{deity_pronoun:他|祂}}"
+        self.assertTrue(any(e.startswith("renderings.en.B: deity_pronoun alternative must be the default capitalised")
+                            for e in validate.validate_record(record)))
+
     def test_indonesian_renderings_keep_the_record_id(self):
         # Indonesian's code is "id", which is also the name of a record's
         # and a decision's own field. (The English stands in for Indonesian

@@ -44,12 +44,17 @@ LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 
 # A meaning decision is shared by every language, so it must not name one of
 # the languages the translation is made into (in English or in that language),
-# nor Spanish by its other name or Portuguese, which may come next.
-TARGET_LANGUAGE_NAMES = re.compile(r"\b(" + "|".join(
+# nor Spanish by its other name or Portuguese, which may come next, nor
+# Chinese without "(Simplified)".
+TARGET_LANGUAGE_NAMES = re.compile(r"(?<!\w)(" + "|".join(map(re.escape,
     [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])]
-    + ["castellano", "Portuguese", "portugu\u00eas"]) + r")\b", re.IGNORECASE)
+    + ["castellano", "Portuguese", "portugu\u00eas", "Chinese"])) + r")(?!\w)", re.IGNORECASE)
 # Reader settings only some languages have ({{plural_you:...}} is Spanish).
 LANGUAGE_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
+# A deity_pronoun span capitalises the pronoun ({{deity_pronoun:he|He}}).
+# Chinese has no capitals; its reverent forms take the radical 礻 instead:
+# 他 / 祂 ("he") and 你 / 祢 ("you"), these pairs only (docs/chinese-style.md).
+DEITY_PRONOUN_PAIRS = {"zh": {("他", "祂"), ("你", "祢")}}
 
 # Keyed by (source language, Strong's number): Greek and Hebrew Strong's
 # numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
@@ -91,7 +96,7 @@ def _fields(obj, schema_obj, where, errors):
     return True
 
 
-def _check_markup(text, where, errors):
+def _check_markup(text, where, errors, lang=None):
     if not isinstance(text, str):
         errors.append(f"{where}: must be a string")
         return
@@ -109,11 +114,14 @@ def _check_markup(text, where, errors):
         elif any(o != o.strip() for o in options):
             errors.append(f"{where}: {span.setting} span option has spaces at its edge")
         elif span.setting == "deity_pronoun" and any(
-                o != options[0][:1].upper() + options[0][1:] for o in options[1:]):
-            # The setting only capitalises the pronoun; any other change of
-            # wording would be a decision, not a setting.
+                o != options[0][:1].upper() + options[0][1:] for o in options[1:]) and (
+                tuple(options) not in DEITY_PRONOUN_PAIRS.get(lang, ())):
+            # The setting only capitalises the pronoun (or, in Chinese, gives
+            # it its reverent form); any other change of wording would be a
+            # decision, not a setting.
             errors.append(f"{where}: deity_pronoun alternative must be the default "
-                          "capitalised")
+                          "capitalised"
+                          + (" or its reverent form (他|祂, 你|祢)" if lang in DEITY_PRONOUN_PAIRS else ""))
 
 
 def _strings(obj, where):
@@ -341,7 +349,7 @@ def validate_record(record, known_tokens=None, original_language=True):
             errors.append(f"renderings.{lang}: must have exactly {LEVELS}")
             continue
         for level, text in levels.items():
-            _check_markup(text, f"renderings.{lang}.{level}", errors)
+            _check_markup(text, f"renderings.{lang}.{level}", errors, lang)
             check_verses(text, f"renderings.{lang}.{level}")
             used = {span.setting for span in markup.spans(text)} if isinstance(text, str) else set()
             own = languages.READING.get(lang, {}).get("settings", {})
@@ -409,13 +417,13 @@ def validate_record(record, known_tokens=None, original_language=True):
         if d.get("category") not in CATEGORIES:
             errors.append(f"{where}.category: {d.get('category')!r} not allowed")
         check_tokens(d.get("tokens"), f"{where}.tokens")
-        _check_markup(d.get("choice"), f"{where}.choice", errors)
+        _check_markup(d.get("choice"), f"{where}.choice", errors, d.get("language"))
         alternatives = d.get("alternatives")
         if not isinstance(alternatives, list):
             errors.append(f"{where}.alternatives: must be a list")
         else:
             for alt in alternatives:
-                _check_markup(alt, f"{where}.alternatives", errors)
+                _check_markup(alt, f"{where}.alternatives", errors, d.get("language"))
         if not (isinstance(d.get("reason"), str) and d.get("reason").strip()):
             errors.append(f"{where}.reason: must be a non-empty string")
         for flag in ("uncertain", "footnote"):

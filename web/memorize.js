@@ -726,7 +726,7 @@ var OWBMemory = (function () {
   // The reader's settings (web/reader.js owb.settings) and those a link
   // names (?level=B&title=1, as the reader's links do).
   var PARAMS = { gender: "gender", christos: "title", divine_name: "name", deity_pronoun: "pronoun",
-                 plural_you: "plural" };
+                 plural_you: "plural", god_term: "god" };
   function readerSettings() {
     var s = {};
     try { s = OWBMarkup.fromSaved(JSON.parse(localStorage.getItem("owb.settings") || "{}")); } catch (e) { /* defaults */ }
@@ -744,7 +744,7 @@ var OWBMemory = (function () {
     return { settings: out, query: query.join("&") };
   }
   function settingsQuery(settings) {
-    var DEF = { gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, plural_you: 0 };
+    var DEF = { gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, plural_you: 0, god_term: 0 };
     return Object.keys(PARAMS).filter(function (k) { return k in settings && settings[k] !== DEF[k]; })
       .map(function (k) { return PARAMS[k] + "=" + settings[k]; }).join("&");
   }

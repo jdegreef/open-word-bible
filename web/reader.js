@@ -95,7 +95,7 @@
   // with "at", when the reader last changed one, so that a signed-in
   // reader's settings follow them to their other devices (site.js syncs
   // owb.settings with the account; the latest device's copy wins whole).
-  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0, plural_you: 0, view: 0,
+  var settings = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0, plural_you: 0, god_term: 0, view: 0,
                    headings: 0, crossrefs: 0, red_letter: 0, uncertain: 0, partner: "", script: 0, verse_numbers: 0,
                    presets: [],
                    // Parallel: the other side's level ("" = the same as
@@ -117,9 +117,9 @@
 
   // A shared link may carry the sender's settings (?level=L&title=1): they
   // apply to this visit and are not saved unless the reader changes one.
-  var DEFAULTS = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, plural_you: 0 };
+  var DEFAULTS = { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, plural_you: 0, god_term: 0 };
   var PARAMS = { level: "level", gender: "gender", christos: "title", divine_name: "name",
-                 deity_pronoun: "pronoun", plural_you: "plural" };
+                 deity_pronoun: "pronoun", plural_you: "plural", god_term: "god" };
   (function () {
     var q = new URLSearchParams(location.search);
     Object.keys(PARAMS).forEach(function (name) {
@@ -155,7 +155,8 @@
 
   // Presets: several choices at once. A built-in one sets the level and
   // the wording settings it names; what it leaves out (plural "you", which
-  // is regional, and the view) stays as the reader has it.
+  // is regional, the Chinese word for God, a reader's own tradition, and
+  // the view) stays as the reader has it.
   // scripts/build_site.py PRESETS lists the same names, in this order.
   var PRESETS = {
     standard: { level: "B", gender: 0, christos: 0, divine_name: 0, deity_pronoun: 1, units: 0 },
@@ -166,7 +167,7 @@
   // A reader's own preset keeps how the text reads, not how it is laid out.
   // They are kept with the other settings (owb.settings), so they follow a
   // signed-in reader to their other devices.
-  var PRESET_KEYS = ["level", "gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you",
+  var PRESET_KEYS = ["level", "gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term",
                      "headings", "crossrefs", "red_letter"];
   var MAX_PRESETS = 6;
 
@@ -455,7 +456,7 @@
     // A page shows either the divine name (Old Testament) or the title
     // Christ (New Testament), and measures only where it has them, so
     // some hints are missing.
-    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "view", "headings", "crossrefs", "red_letter",
+    ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term", "view", "headings", "crossrefs", "red_letter",
      "verse_numbers"].forEach(function (name) {
       var hint = document.getElementById("hint-" + name);
       if (hint) hint.textContent = t("hint_" + name)[settings[name]];

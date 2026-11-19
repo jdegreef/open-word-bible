@@ -1493,7 +1493,7 @@ var OWBAdminCore = (function () {
   var EXPORT = { lang: "en", level: "B", type: "usfm", numbering: "english", books: "", settings: {} };
   var BOOK_SETS = { OT: [0, 39], NT: [39, 66] };
   var SETTING_NAME = { gender: "Gender", christos: "Title", divine_name: "Name of God", deity_pronoun: "Pronouns for God",
-    units: "Measures", plural_you: "Plural you" };
+    units: "Measures", plural_you: "Plural you", god_term: "Word for God (Chinese)" };
   function exportQuery(d) {
     var f = EXPORT, books = f.books;
     if (BOOK_SETS[books]) books = d.books.slice(BOOK_SETS[books][0], BOOK_SETS[books][1]).map(function (b) { return b.code; }).join(",");

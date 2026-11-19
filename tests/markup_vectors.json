@@ -1,6 +1,6 @@
 {
   "about": "Reader-setting spans and verse markers, implemented twice: owb/markup.py (validation, the build) and web/markup.js (the reader). Settings change wording, never meaning, so both must give the same text. tests/test_markup.py and tests/js/markup.test.mjs run every case. 'cases': text + settings -> rendered text, and (where given) that text split at its verse markers as [verse or null, text]. 'differences': inputs where the two implementations currently disagree, with each one's answer, so a change on either side is noticed.",
-  "settings": ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you"],
+  "settings": ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term"],
   "defaults": {"deity_pronoun": 1},
   "cases": [
     {"name": "plain text is unchanged",
@@ -39,6 +39,14 @@
      "rendered": "Les digo a ustedes:"},
     {"name": "plural_you alternate (Spanish)", "text": "Les digo a {{plural_you:ustedes|vosotros}}:", "settings": {"plural_you": 1},
      "rendered": "Les digo a vosotros:"},
+    {"name": "god_term default (Chinese)", "text": "{{god_term:神|上帝}}的国降临", "settings": {},
+     "rendered": "神的国降临"},
+    {"name": "god_term alternate (Chinese)", "text": "{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}", "settings": {"god_term": 1},
+     "rendered": "上主你的上帝"},
+    {"name": "deity_pronoun reverent form by default (Chinese)", "text": "跟从{{deity_pronoun:他|祂}}", "settings": {},
+     "rendered": "跟从祂"},
+    {"name": "deity_pronoun plain form (Chinese)", "text": "{{deity_pronoun:你|祢}}的国", "settings": {"deity_pronoun": 0},
+     "rendered": "你的国"},
 
     {"name": "several settings at once",
      "text": "{{divine_name:The LORD|Yahweh}} spoke to {{gender:all people|men}}; {{deity_pronoun:his|His}} word, about {{christos:the Messiah|Christ}}",

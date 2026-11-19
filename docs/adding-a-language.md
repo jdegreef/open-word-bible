@@ -21,6 +21,14 @@ footer's language switch and has every page; its chapters show the English in
 grey with a notice, its Read page lists no books yet, and it offers no reading
 plan.
 
+Chinese (Simplified) (`zh`), added after it, needed three things no language
+had before: a second language-only setting (`god_term`, 神 or 上帝, wired
+everywhere `plural_you` is), Chinese pairs for `deity_pronoun` in
+`owb/validate.py`, and curly quotation marks as the outer pair
+(`owb/markup.py` `_marks`). Its pages keep `lang="zh"`: the site and its
+scripts use `<html lang>` as the language code, and the stylesheet's
+Simplified Chinese fonts choose the glyphs.
+
 ## 0. Before the code: the brief
 
 - `docs/<language>-style.md`: the drafting brief (levels and their names,

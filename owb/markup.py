@@ -11,7 +11,7 @@ from typing import NamedTuple
 
 # The settings a span may name: each has a control in the reader
 # (web/markup.js SETTINGS is the same list).
-SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you")
+SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term")
 
 # The option a setting shows until the reader picks one, where it is not the
 # first: pronouns for God are capitalised by default ("He"), though the span
