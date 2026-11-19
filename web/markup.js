@@ -11,7 +11,7 @@ var OWBMarkup = (function () {
   var VERSE = /\\v (\d+) ?/;
   // The settings a span may name: each has a control in the reader
   // (owb/markup.py SETTINGS is the same list).
-  var SETTINGS = ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you"];
+  var SETTINGS = ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term"];
   // The option a setting shows until the reader picks one, where it is not
   // the first: pronouns for God are capitalised by default (owb/markup.py
   // DEFAULTS is the same).

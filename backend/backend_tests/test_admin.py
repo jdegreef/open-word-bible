@@ -795,6 +795,9 @@ class ExportTest(AdminTestCase):
         self.assertIn({"name": "deity_pronoun", "options": ["he", "He"], "default": 1}, en["settings"])
         es = next(lang for lang in d["languages"] if lang["code"] == "es")
         self.assertIn({"name": "plural_you", "options": ["ustedes", "vosotros"], "default": 0}, es["settings"])
+        zh = next(lang for lang in d["languages"] if lang["code"] == "zh")
+        self.assertIn({"name": "god_term", "options": ["神", "上帝"], "default": 0}, zh["settings"])
+        self.assertNotIn("god_term", [s["name"] for s in es["settings"]])
         self.assertEqual(len(d["books"]), 66)
 
     def test_preview(self):

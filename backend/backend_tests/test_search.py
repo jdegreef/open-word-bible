@@ -377,6 +377,27 @@ class JapaneseTextTest(SimpleTestCase):
         self.assertEqual(build_site.fold("ガラテヤ３"), search.fold("ガラテヤ３"))
 
 
+class ChineseTextTest(SimpleTestCase):
+    def test_chinese_is_searched_by_bigrams(self):
+        self.assertEqual(search.config("zh"), search.CJK)
+        self.assertEqual(search.ngrams("神爱世人。").split(), ["神爱", "爱世", "世人", "人", "。"])
+        self.assertEqual(search.cjk_terms("约翰福音3"), ["约翰福音", "3"])
+
+    def test_each_setting_option_is_indexed_beside_its_neighbours(self):
+        # The word for God and the divine name are setting spans: 神的国 and
+        # 上帝的国 must both be bigrams of the sentence, not 神 and 上帝 side
+        # by side before 的国.
+        doc = {"k": "v", "x": {"B": "{{god_term:神|上帝}}的国降临，{{divine_name:上主|雅威}}说"}}
+        _, _, body = search.indexed(search.CJK, search.fields(doc), doc)
+        for pair in ("神的", "上帝", "帝的", "主说", "威说"):
+            self.assertIn(pair, body.split())
+        self.assertEqual(search.readings(doc["x"]).split(search.GAP),
+                         ["神的国降临，上主说", "上帝的国降临，上主说", "神的国降临，雅威说", "上帝的国降临，雅威说"])
+        # The entry's own text is unchanged; other configurations index the fields as they are.
+        self.assertIn("神 上帝的国", search.fields(doc)[2])
+        self.assertEqual(search.indexed("owb_english", search.fields(doc), doc), (None, None, None))
+
+
 class PlanTest(SimpleTestCase):
     """search.plan: which stored entries a rebuild keeps, and where new ones go."""
 
