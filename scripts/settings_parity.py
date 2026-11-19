@@ -50,7 +50,7 @@ LEVEL_SETTINGS = ("deity_pronoun", "christos", "divine_name")
 # Languages whose words are not separated by spaces, or take particles and
 # suffixes on the same word: their wording is matched as a substring, not as
 # a whole word.
-NO_WORD_BOUNDARY = {"ja", "ko", "am", "hi"}
+NO_WORD_BOUNDARY = {"ja", "zh", "ko", "am", "hi"}
 # A language whose share is below this fraction of the median is an outlier.
 OUTLIER_RATIO = 0.5
 

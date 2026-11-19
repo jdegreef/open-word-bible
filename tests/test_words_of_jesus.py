@@ -32,6 +32,26 @@ class QuotationsTest(unittest.TestCase):
         self.assertEqual(quoted("世を救うためである。」 そして去った。", inside=True), ["世を救うためである。"])
         self.assertEqual(quoted("霊から生まれる者は霊である。", inside=True), ["霊から生まれる者は霊である。"])
 
+    def test_chinese_curly_quotes(self):
+        # Chinese writes “ ” outside and ‘ ’ inside, after a colon or a comma.
+        self.assertEqual(quoted("耶稣回答他说：“我实实在在地告诉你。”"), ["我实实在在地告诉你。"])
+        self.assertEqual(quoted("“主啊，”他说，“你来。”"), ["主啊，", "你来。"])
+        # ‘ ’ inside “ ” belongs to it, and “ ” again inside that.
+        text = "他说：“经上写着：‘他说：“你们来。”’”"
+        self.assertEqual(quoted(text), [text[text.index("“") + 1:-1]])
+        self.assertEqual([text[s:e] for s, e in markup.quotations(text, inner=True)],
+                         ["他说：“你们来。”"])
+        # A sentence that begins inside a speech an earlier one opened, at
+        # either depth: a ’ here closes a quotation, it is not an apostrophe.
+        self.assertEqual(quoted("从灵生的就是灵。” 然后他走了。", inside=True), ["从灵生的就是灵。"])
+        self.assertEqual(quoted("从灵生的就是灵。", inside=True), ["从灵生的就是灵。"])
+        text = "愿你的国降临。’”他们就去了。"
+        self.assertEqual(quoted(text, inside=True), ["愿你的国降临。’"])
+        self.assertEqual([text[s:e] for s, e in markup.quotations(text, inside=True, inner=True)],
+                         ["愿你的国降临。"])
+        # A sentence can end inside a speech a later one closes.
+        self.assertEqual(quoted("他说：“你们要悔改，"), ["你们要悔改，"])
+
     def test_a_sentence_can_begin_or_end_inside_a_quotation(self):
         self.assertEqual(quoted('of the Spirit." Then he left.'), ["of the Spirit."])
         self.assertEqual(quoted('Jesus replied, "Truly, truly.'), ["Truly, truly."])

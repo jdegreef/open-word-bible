@@ -340,6 +340,31 @@ body {
 }
 :lang(ja) { line-break: strict; overflow-wrap: break-word; }
 :lang(ja) em, :lang(ja) i, :lang(ja) cite { font-style: normal; }
+/* Chinese (Simplified) is set as Japanese is, in the reader's own
+   Simplified Chinese fonts (Song for the reading text, Hei for the
+   interface), so shared characters take their Simplified forms. Latin
+   letters, digits and Greek stay in Gentium and Hanken Grotesk, but the
+   curly quotation marks, the ellipsis and the dash Chinese writes (“ ” ‘ ’
+   …… ——) are full-width in a Chinese font and narrow in a Latin one, so
+   they come first from a Chinese face of their own (unicode-range).
+   Lines break by the strict rules (no ，。、 or closing quotation mark at a
+   line start), and Chinese has no italics. */
+@font-face { font-family: "OWB Chinese Punctuation Serif"; font-display: swap;
+  src: local("Songti SC Regular"), local("STSongti-SC-Regular"), local("STSong"), local("Noto Serif CJK SC"),
+       local("NotoSerifCJKsc-Regular"), local("Source Han Serif SC"), local("SourceHanSerifSC-Regular"), local("SimSun");
+  unicode-range: U+2014, U+2018-2019, U+201C-201D, U+2026; }
+@font-face { font-family: "OWB Chinese Punctuation Sans"; font-display: swap;
+  src: local("PingFang SC Regular"), local("PingFangSC-Regular"), local("Hiragino Sans GB W3"), local("HiraginoSansGB-W3"),
+       local("Microsoft YaHei"), local("Noto Sans CJK SC"), local("NotoSansCJKsc-Regular"), local("Source Han Sans SC"),
+       local("SourceHanSansSC-Regular");
+  unicode-range: U+2014, U+2018-2019, U+201C-201D, U+2026; }
+:root:lang(zh) {
+  --display: "OWB Chinese Punctuation Serif", "Fraunces", "Gentium Book Plus", "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "SimSun", serif;
+  --serif: "OWB Chinese Punctuation Serif", "Gentium Book Plus", "Noto Serif Hebrew", "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", "SimSun", serif;
+  --sans: "OWB Chinese Punctuation Sans", "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "Noto Sans SC", system-ui, sans-serif;
+}
+:lang(zh) { line-break: strict; overflow-wrap: break-word; }
+:lang(zh) em, :lang(zh) i, :lang(zh) cite { font-style: normal; }
 a { color: var(--accent); text-underline-offset: 3px; }
 .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
