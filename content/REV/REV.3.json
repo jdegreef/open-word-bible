@@ -111,6 +111,11 @@
           "L": "Dan kepada malaikat jemaat di Sardis tuliskanlah: \"Inilah yang dikatakan oleh {{deity_pronoun:dia|Dia}} yang memiliki ketujuh roh Allah dan ketujuh bintang itu: Aku tahu perbuatan-perbuatanmu, bahwa engkau dikatakan hidup, padahal engkau mati.",
           "B": "Kepada malaikat jemaat di Sardis tuliskanlah: \"Inilah yang dikatakan oleh {{deity_pronoun:dia|Dia}} yang memiliki ketujuh roh Allah dan ketujuh bintang itu: Aku tahu segala perbuatanmu. Engkau dikenal sebagai jemaat yang hidup, padahal engkau mati.",
           "R": "Tuliskanlah surat ini kepada malaikat jemaat di Sardis: \"Inilah pesan dari {{deity_pronoun:dia|Dia}} yang mempunyai ketujuh roh Allah dan ketujuh bintang itu. Aku tahu semua yang kamu lakukan. Orang menyangka bahwa kamu hidup, padahal sebenarnya kamu mati."
+        },
+        "zh": {
+          "L": "你要写信给在撒狄的教会的天使：“那有{{god_term:神|上帝}}的七灵和七颗星的，这样说：我知道你的行为，你有活着的名声，其实你是死的。",
+          "B": "你要写信给撒狄教会的天使：“这是那位有{{god_term:神|上帝}}的七灵和七颗星的所说的话：我知道你的行为。人们说你是活的，其实你是死的。",
+          "R": "你要把这封信写给撒狄教会的天使：“这信息是那位有{{god_term:神|上帝}}的七灵和七颗星的发出的。我知道你所做的一切。人们以为你是活的，其实你已经死了。"
         }
       },
       "decisions": [
@@ -335,6 +340,67 @@
           "reason": "Literal keeps \"name\", which the next verses take up (3:4); Balanced and Readable say what it means, a reputation (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n66003001017"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [],
+          "reason": "The first word naming God in this chapter: \"神\" by default, \"上帝\" as the reader's god_term setting; the same through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003001009",
+            "n66003001010"
+          ],
+          "choice": "\"……的，这样说\" (L); \"这是……所说的话\" (B); \"这信息是……发出的\" (R)",
+          "alternatives": [],
+          "reason": "The prophet's formula that opens each letter (m1), worded as in chapter 2; the angel of each church is \"天使\", as there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003001014",
+            "n66003001015"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的七灵\"",
+          "alternatives": [
+            "\"{{god_term:神|上帝}}的七位圣灵\""
+          ],
+          "reason": "As in 1:4, \"灵\" rather than \"圣灵\", so the wording leaves m2 open, as the English lowercase does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -437,6 +503,11 @@
           "L": "Berjaga-jagalah, dan kuatkanlah apa yang masih tinggal, yang sudah hampir mati, sebab {{deity_pronoun:aku|Aku}} tidak mendapati perbuatan-perbuatanmu sempurna di hadapan Allah-{{deity_pronoun:ku|Ku}}.",
           "B": "Bangunlah, dan kuatkanlah apa yang masih tersisa, yang sudah hampir mati, sebab {{deity_pronoun:aku|Aku}} mendapati bahwa perbuatan-perbuatanmu belum sempurna di hadapan Allah-{{deity_pronoun:ku|Ku}}.",
           "R": "Bangunlah! Kuatkanlah sedikit yang masih hidup di dalam dirimu sebelum itu juga mati. Aku sudah melihat apa yang kamu lakukan, dan di mata Allah-{{deity_pronoun:ku|Ku}} semua itu belum selesai."
+        },
+        "zh": {
+          "L": "你要警醒，坚固那剩下、将要死的；因为我发现你的行为在我的{{god_term:神|上帝}}面前没有一样是完全的。",
+          "B": "你要警醒起来，使那剩下、快要死的重新刚强；因为我看出你的行为在我的{{god_term:神|上帝}}面前并不完全。",
+          "R": "醒过来吧！你还剩下一点点生命，要使它刚强，免得它也死去。我看过你所做的，在我的{{god_term:神|上帝}}眼中，你所做的还没有完成。"
         }
       },
       "decisions": [
@@ -592,6 +663,25 @@
           "reason": "The English capitalizes pronouns for Christ and God as a reader setting. The Ethiopic script has no capital letters, so the setting has nothing to change in Amharic and the text has no spans; this holds for the letters of chapter 3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n66003002020"
+          ],
+          "choice": "\"我的{{god_term:神|上帝}}\", with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "Jesus speaks of God as his God (m4). The English spans \"my\"; Chinese has no reverent first person, so \"我\" takes no span, here and through this chapter (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -700,6 +790,11 @@
           "L": "Karena itu ingatlah bagaimana engkau telah menerima dan mendengarnya, dan turutilah itu, dan bertobatlah. Jadi jika engkau tidak berjaga-jaga, {{deity_pronoun:aku|Aku}} akan datang seperti pencuri, dan engkau sekali-kali tidak akan tahu pada jam berapa {{deity_pronoun:aku|Aku}} akan datang kepadamu.",
           "B": "Karena itu ingatlah apa yang telah engkau terima dan dengar. Turutilah itu dan bertobatlah! Jika engkau tidak bangun, {{deity_pronoun:aku|Aku}} akan datang seperti pencuri, dan engkau tidak akan tahu pada saat mana {{deity_pronoun:aku|Aku}} akan datang kepadamu.",
           "R": "Jadi ingatlah berita yang sudah kamu terima dan dengar. Taatilah berita itu, dan berbaliklah dari dosa-dosamu. Kalau kamu tidak bangun, {{deity_pronoun:aku|Aku}} akan datang pada saat yang tidak kamu duga, seperti pencuri datang. Kamu tidak akan tahu kapan {{deity_pronoun:aku|Aku}} akan datang untuk menghakimi kamu."
+        },
+        "zh": {
+          "L": "所以你要回想你是怎样领受、怎样听见的，又要遵守，并要悔改。你若不警醒，我就要像贼一样来到，你绝不会知道我在什么时候临到你那里。",
+          "B": "所以要回想你当初是怎样领受、怎样听见这信息的。你要持守，并且悔改。你若仍然沉睡，我就要像贼一样来到，你绝不会知道我在什么时候来攻击你。",
+          "R": "所以要记得别人传给你、你也听见了的信息。你要遵守，并且离开你的罪。你如果不醒过来，我就要在你想不到的时候来，像贼一样。你不会知道我什么时候来审判你。"
         }
       },
       "decisions": [
@@ -846,6 +941,25 @@
           "reason": "The coming is against this church (m3), so Literal and Balanced say \"襲う\" for \"come upon you\"; the thief's arrival keeps \"来る\". Readable says what the coming is for, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003003017"
+          ],
+          "choice": "\"像贼一样\"",
+          "alternatives": [],
+          "reason": "Jesus's own picture of a coming no one expects (m2), in the plain words of the Gospels' saying about the thief.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -949,6 +1063,11 @@
           "L": "Tetapi engkau mempunyai beberapa nama di Sardis yang tidak mencemarkan pakaian mereka, dan mereka akan berjalan dengan {{deity_pronoun:aku|Aku}} dalam pakaian putih, karena mereka layak.",
           "B": "Tetapi di Sardis ada beberapa orang padamu yang tidak mencemarkan pakaian mereka. Mereka akan berjalan bersama {{deity_pronoun:aku|Aku}} dalam pakaian putih, karena mereka layak.",
           "R": "Tetapi ada beberapa orang di Sardis yang menjaga pakaian mereka tetap bersih. Mereka tidak membiarkan dosa mengotori diri mereka. Mereka akan berjalan bersama-{{deity_pronoun:ku|Ku}} dengan memakai pakaian putih, karena mereka layak."
+        },
+        "zh": {
+          "L": "然而在撒狄你还有几个名字，是没有弄脏自己衣服的；他们要穿着白衣与我同行，因为他们是配得的。",
+          "B": "不过在撒狄你还有几个人没有玷污自己的衣服。他们要穿着白衣与我同行，因为他们配得这样。",
+          "R": "但在撒狄有几个人一直保持自己的衣服干净。他们没有让罪把自己弄脏。他们要穿着白衣服，和我一起行走，因为他们配得这样。"
         }
       },
       "decisions": [
@@ -1096,6 +1215,24 @@
           "reason": "\"Names\" stands for persons (m1). Literal keeps the word with brackets; Balanced uses the counter \"名\", which keeps the echo of \"name\" in 3:1 while reading naturally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003004003",
+            "n66003004004"
+          ],
+          "choice": "\"几个名字\" (L); \"几个人\" (B, R)",
+          "alternatives": [],
+          "reason": "The Greek says \"a few names\" for a few people (m1). Literal keeps the word, which Chinese can read as people named; Balanced and Readable say \"人\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1211,6 +1348,11 @@
           "L": "Siapa yang menang, ia akan dikenakan pakaian putih seperti itu, dan {{deity_pronoun:aku|Aku}} sekali-kali tidak akan menghapus namanya dari kitab kehidupan, dan {{deity_pronoun:aku|Aku}} akan mengaku namanya di hadapan Bapa-{{deity_pronoun:ku|Ku}} dan di hadapan malaikat-malaikat-{{deity_pronoun:nya|Nya}}.",
           "B": "Siapa yang menang akan dikenakan pakaian putih seperti itu. Aku tidak akan menghapus namanya dari kitab kehidupan, dan {{deity_pronoun:aku|Aku}} akan mengaku namanya di hadapan Bapa-{{deity_pronoun:ku|Ku}} dan di hadapan malaikat-malaikat-{{deity_pronoun:nya|Nya}}.",
           "R": "Setiap orang yang menang akan memakai pakaian putih seperti itu. Aku tidak akan pernah menghapus nama mereka dari kitab kehidupan. Aku akan memberitahukan kepada Bapa-{{deity_pronoun:ku|Ku}} dan malaikat-malaikat-{{deity_pronoun:nya|Nya}} bahwa mereka adalah milik-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "那得胜的人，必要这样穿上白衣；我绝不从生命册上抹去他的名，并且要在我父面前和{{deity_pronoun:他|祂}}的众天使面前承认他的名。",
+          "B": "每一个得胜的人，都要这样穿上白衣。我绝不会从生命册上抹去他的名字；我要在我父面前和{{deity_pronoun:他|祂}}的天使面前公开承认他的名字。",
+          "R": "每一个得到胜利的人，都要穿上这样的白衣服。我永远不会从生命册上除掉他的名字。我要告诉我的父和{{deity_pronoun:他|祂}}的天使，这个人是属于我的。"
         }
       },
       "decisions": [
@@ -1636,6 +1778,48 @@
           "reason": "The glossary's form for the book of life.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n66003005014",
+            "n66003005024"
+          ],
+          "choice": "\"他\", \"这个人\", with no gender span",
+          "alternatives": [],
+          "reason": "The English spans the pronouns for the one who overcomes (that person's / his; their / his). Chinese \"他\" after \"……的人\" is the general pronoun, and \"这个人\" is neither man nor woman, so no setting is needed (style guide section 8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003005017",
+            "n66003005019"
+          ],
+          "choice": "\"生命册\"",
+          "alternatives": [
+            "\"生命的书\""
+          ],
+          "reason": "God's list of those who belong to him (m2); one form for the book of life through Revelation (13:8; 17:8; 20:12, 15; 21:27).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1728,6 +1912,11 @@
           "L": "Siapa yang bertelinga, hendaklah ia mendengar apa yang dikatakan Roh kepada jemaat-jemaat.\"",
           "B": "Siapa yang bertelinga, hendaklah ia mendengar apa yang dikatakan Roh kepada jemaat-jemaat.\"",
           "R": "Setiap orang yang dapat mendengar harus mendengarkan baik-baik apa yang dikatakan Roh kepada jemaat-jemaat.\""
+        },
+        "zh": {
+          "L": "那有耳朵的人，要听圣灵对众教会所说的话。”",
+          "B": "有耳朵的人，都应当留心听圣灵正在对各教会说的话。”",
+          "R": "每一个能听的人，都要仔细听圣灵正在对各教会说的话。”"
         }
       },
       "decisions": [
@@ -1751,6 +1940,27 @@
           "choice": "the call that closes every letter",
           "alternatives": [],
           "reason": "The same call ends each of the seven letters; see the notes on 2:7. What the risen Jesus says to one church, the Spirit says to all of them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003006001",
+            "n66003006003",
+            "n66003006004"
+          ],
+          "choice": "\"那有耳朵的人，要听……\" (L); \"有耳朵的人，都应当留心听……\" (B); \"每一个能听的人，都要仔细听……\" (R)",
+          "alternatives": [],
+          "reason": "The call that closes every letter, worded as in chapter 2. The English Literal's gender span has no counterpart: \"人\" is already anyone.",
           "uncertain": false,
           "footnote": false
         }
@@ -1864,6 +2074,11 @@
           "L": "Dan kepada malaikat jemaat di Filadelfia tuliskanlah: \"Inilah yang dikatakan oleh Yang Kudus, Yang Benar, yang memegang kunci Daud, yang membuka dan tidak ada yang dapat menutup, dan yang menutup dan tidak ada yang dapat membuka:",
           "B": "Kepada malaikat jemaat di Filadelfia tuliskanlah: \"Inilah yang dikatakan oleh Yang Kudus dan Yang Benar, yang memegang kunci Daud. Apabila {{deity_pronoun:dia|Dia}} membuka, tidak ada yang dapat menutup, dan apabila {{deity_pronoun:dia|Dia}} menutup, tidak ada yang dapat membuka:",
           "R": "Tuliskanlah surat ini kepada malaikat jemaat di Filadelfia: \"Inilah pesan dari {{deity_pronoun:dia|Dia}} yang kudus dan benar. Dia memegang kunci Raja Daud. Kalau {{deity_pronoun:dia|Dia}} membuka sebuah pintu, tidak ada yang dapat menutupnya. Kalau {{deity_pronoun:dia|Dia}} menutup sebuah pintu, tidak ada yang dapat membukanya."
+        },
+        "zh": {
+          "L": "你要写信给在非拉铁非的教会的天使：“那圣洁的、真实的，拿着大卫的钥匙，开了就没有人能关、关了就没有人能开的，这样说：",
+          "B": "你要写信给非拉铁非教会的天使：“这是那位圣洁、真实、拿着大卫钥匙的所说的话；{{deity_pronoun:他|祂}}开了，就没有人能关；{{deity_pronoun:他|祂}}关了，就没有人能开：",
+          "R": "你要把这封信写给非拉铁非教会的天使：“这信息是那位圣洁又真实的发出的。{{deity_pronoun:他|祂}}拿着大卫王的钥匙。{{deity_pronoun:他|祂}}打开门，就没有人能关上；{{deity_pronoun:他|祂}}关上门，就没有人能打开。"
         }
       },
       "decisions": [
@@ -2026,6 +2241,26 @@
           "reason": "Holy and true are titles of God (m2), used here as names, so Literal and Balanced write them with capitals; Readable turns them into a description.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003007018",
+            "n66003007019"
+          ],
+          "choice": "\"大卫的钥匙\"",
+          "alternatives": [],
+          "reason": "An echo of Isaiah 22:22 (m3): the key of David's house, the authority to open and shut. Readable adds \"王\", as the English Readable says \"David the king\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2138,6 +2373,11 @@
           "L": "Aku tahu perbuatan-perbuatanmu—lihatlah, {{deity_pronoun:aku|Aku}} telah menaruh di depanmu sebuah pintu yang terbuka, yang tidak dapat ditutup oleh siapa pun—bahwa kekuatanmu kecil, tetapi engkau menuruti firman-{{deity_pronoun:ku|Ku}} dan engkau tidak menyangkal nama-{{deity_pronoun:ku|Ku}}.",
           "B": "Aku tahu segala perbuatanmu. Lihat, {{deity_pronoun:aku|Aku}} telah membukakan sebuah pintu di depanmu, yang tidak dapat ditutup oleh siapa pun. Aku tahu bahwa kekuatanmu kecil, tetapi engkau menuruti firman-{{deity_pronoun:ku|Ku}} dan tidak menyangkal nama-{{deity_pronoun:ku|Ku}}.",
           "R": "Aku tahu semua yang kamu lakukan. Lihat! Aku sudah membukakan sebuah pintu bagimu, dan tidak ada yang dapat menutupnya. Aku tahu kamu tidak begitu kuat. Tetapi kamu sudah menaati perkataan-{{deity_pronoun:ku|Ku}}, dan kamu tidak menyangkal bahwa kamu milik-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "我知道你的行为——看哪，我在你面前给你开了一道门，是没有人能关的——[我知道]你的力量很小，却遵守了我的道，没有弃绝我的名。",
+          "B": "我知道你的行为。你看，我已经在你面前开了一道门，没有人能关上。你的力量虽然微小，却遵守了我的道，没有否认我的名。",
+          "R": "我知道你所做的一切。你看！我已经为你打开了一道门，没有人能关上。我知道你的力量不大，但你遵守了我的话，没有否认你是属于我的。"
         }
       },
       "decisions": [
@@ -2400,6 +2640,11 @@
           "L": "Lihatlah, {{deity_pronoun:aku|Aku}} akan memberikan [beberapa orang] dari jemaah Iblis, yaitu mereka yang menyebut dirinya orang Yahudi, tetapi sebenarnya bukan, melainkan berdusta—lihatlah, {{deity_pronoun:aku|Aku}} akan membuat mereka datang dan sujud di depan kakimu, dan mengetahui bahwa {{deity_pronoun:aku|Aku}} mengasihi engkau.",
           "B": "Lihat, {{deity_pronoun:aku|Aku}} akan menyerahkan kepadamu orang-orang dari jemaah Iblis, yang menyebut dirinya orang Yahudi, padahal bukan, melainkan berdusta. Aku akan membuat mereka datang dan sujud di depan kakimu, dan mereka akan tahu bahwa {{deity_pronoun:aku|Aku}} mengasihi engkau.",
           "R": "Ada orang-orang yang berkata bahwa mereka orang Yahudi, tetapi mereka berdusta. Mereka termasuk jemaah Iblis. Dengarlah! Aku akan membuat mereka datang dan sujud di depan kakimu. Mereka akan tahu bahwa {{deity_pronoun:aku|Aku}} mengasihi kamu."
+        },
+        "zh": {
+          "L": "看哪，我要使撒但会堂的[一些人]，就是那些自称是犹太人、其实不是、而是说谎的——看哪，我要使他们来，在你脚前下拜，并且知道我是爱你的。",
+          "B": "你看我要怎样对待撒但会堂的人：他们自称是犹太人，其实不是，而是在说谎。我要使他们来到你脚前下拜，他们就会知道我爱你。",
+          "R": "有些人说他们是犹太人，其实他们在说谎。他们属于撒但的会堂。你要留心听！我要使他们来，在你的脚前下拜。他们就会知道我爱你。"
         }
       },
       "decisions": [
@@ -2669,6 +2914,24 @@
           "reason": "\"拝む\" would mean worship, which Revelation keeps for God; \"ひれ伏す\" is the bow of homage that the word means here (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n66003009001",
+            "n66003009018"
+          ],
+          "choice": "\"看哪……——看哪，我要使他们来……\" (L)",
+          "alternatives": [],
+          "reason": "The Greek sentence starts twice (m4). Literal keeps both \"看哪\" with a dash, as the English Literal keeps both \"look\"; Balanced and Readable make one smooth sentence or short ones.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2779,6 +3042,11 @@
           "L": "Karena engkau menuruti firman-{{deity_pronoun:ku|Ku}} tentang ketekunan, {{deity_pronoun:aku|Aku}} pun akan melindungi engkau dari jam pencobaan yang akan datang atas seluruh dunia, untuk mencobai mereka yang diam di bumi.",
           "B": "Karena engkau menuruti firman-{{deity_pronoun:ku|Ku}} untuk bertekun, {{deity_pronoun:aku|Aku}} pun akan melindungi engkau dari saat pencobaan yang akan datang atas seluruh dunia untuk menguji mereka yang diam di bumi.",
           "R": "Kamu sudah menaati {{deity_pronoun:aku|Aku}} ketika {{deity_pronoun:aku|Aku}} menyuruhmu untuk terus bertahan. Karena itu {{deity_pronoun:aku|Aku}} akan menjaga kamu dari masa pencobaan yang akan datang. Masa itu akan datang atas seluruh dunia untuk menguji semua orang yang tinggal di bumi."
+        },
+        "zh": {
+          "L": "因为你遵守了我忍耐的道，我也要保守你免去那试炼的时候，就是将要临到全世界、试验住在地上之人的时候。",
+          "B": "你既然遵守了我要你忍耐的吩咐，我也要保守你，使你免去那将要临到全世界的试炼时刻，就是要试验地上之人的时刻。",
+          "R": "我告诉过你们要坚持下去，你们就听从了我。所以，那试验的时候来到时，我要保护你平安。那时候要临到全世界，试验所有住在地上的人。"
         }
       },
       "decisions": [
@@ -2982,6 +3250,28 @@
           "reason": "The Greek plays on one verb: because you kept my word, I will keep you (m2). Japanese uses \"守る\" for both, and keeps the open phrase \"試練の時から守る\" without saying how the protection is given.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003010010",
+            "n66003010011"
+          ],
+          "choice": "\"保守你免去\" (L, B); \"保护你平安\" (R)",
+          "alternatives": [
+            "\"保守你脱离\""
+          ],
+          "reason": "Keep from the hour of testing: whether by sparing them from it or keeping them safe through it (m2). \"保守\" leaves the two open, as \"keep you from\" does in English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3075,6 +3365,11 @@
           "L": "Aku datang segera. Peganglah apa yang ada padamu, supaya tidak seorang pun mengambil mahkotamu.",
           "B": "Aku segera datang. Peganglah teguh apa yang ada padamu, supaya tidak seorang pun mengambil mahkotamu.",
           "R": "Aku akan segera datang. Peganglah erat-erat apa yang sudah kamu miliki. Dengan begitu tidak ada orang yang akan mengambil hadiahmu, yaitu mahkota pemenang."
+        },
+        "zh": {
+          "L": "我快要来了。你要持守你所有的，免得有人夺去你的冠冕。",
+          "B": "我快要来了。你要紧紧持守你所有的，免得有人夺去你的冠冕。",
+          "R": "我很快就要来了。你要紧紧抓住你所有的。这样，就没有人能夺走你的奖赏，就是得胜者的冠冕。"
         }
       },
       "decisions": [
@@ -3242,6 +3537,11 @@
           "L": "Siapa yang menang, ia akan {{deity_pronoun:ku|Ku}}jadikan sokoguru di dalam Bait Suci Allah-{{deity_pronoun:ku|Ku}}, dan ia sekali-kali tidak akan keluar lagi dari situ, dan pada dia akan {{deity_pronoun:ku|Ku}}tuliskan nama Allah-{{deity_pronoun:ku|Ku}} dan nama kota Allah-{{deity_pronoun:ku|Ku}}, yaitu Yerusalem baru, yang turun dari surga dari Allah-{{deity_pronoun:ku|Ku}}, dan nama-{{deity_pronoun:ku|Ku}} yang baru.",
           "B": "Siapa yang menang akan {{deity_pronoun:ku|Ku}}jadikan sokoguru di dalam Bait Suci Allah-{{deity_pronoun:ku|Ku}}, dan ia tidak akan pernah keluar lagi dari situ. Pada dia akan {{deity_pronoun:ku|Ku}}tuliskan nama Allah-{{deity_pronoun:ku|Ku}} dan nama kota Allah-{{deity_pronoun:ku|Ku}}, yaitu Yerusalem baru, yang turun dari surga dari Allah-{{deity_pronoun:ku|Ku}}, dan juga nama-{{deity_pronoun:ku|Ku}} yang baru.",
           "R": "Setiap orang yang menang akan {{deity_pronoun:aku|Aku}} jadikan seperti tiang di rumah Allah-{{deity_pronoun:ku|Ku}}. Mereka tidak akan pernah harus meninggalkannya. Aku akan menuliskan nama Allah-{{deity_pronoun:ku|Ku}} pada mereka. Aku akan menuliskan nama kota Allah-{{deity_pronoun:ku|Ku}}, yaitu Yerusalem baru, yang turun dari surga, dari Allah-{{deity_pronoun:ku|Ku}}. Dan {{deity_pronoun:aku|Aku}} akan menuliskan nama-{{deity_pronoun:ku|Ku}} yang baru pada mereka."
+        },
+        "zh": {
+          "L": "那得胜的人，我要使他在我{{god_term:神|上帝}}的殿中作柱子，他绝不再从那里出去；我又要把我{{god_term:神|上帝}}的名，和我{{god_term:神|上帝}}城的名，就是从天上、从我{{god_term:神|上帝}}那里降下来的新耶路撒冷，以及我的新名，都写在他身上。",
+          "B": "每一个得胜的人，我都要使他在我{{god_term:神|上帝}}的圣殿中作柱子，他再也不会离开那里。我要把我{{god_term:神|上帝}}的名字，和我{{god_term:神|上帝}}之城的名字，就是从天上、从我{{god_term:神|上帝}}那里降下来的新耶路撒冷，还有我自己的新名字，都写在他身上。",
+          "R": "每一个得到胜利的人，我都要使他像我{{god_term:神|上帝}}圣殿里的柱子。他们永远不必离开那里。我要把我{{god_term:神|上帝}}的名字写在他们身上。我也要写上我{{god_term:神|上帝}}之城的名字，就是新耶路撒冷；这城要从天上、从我的{{god_term:神|上帝}}那里降下来。我还要把我的新名字写在他们身上。"
         }
       },
       "decisions": [
@@ -3584,6 +3884,45 @@
           "reason": "\"sokoguru\" is the main pillar that holds a house up; \"Bait Suci\" and \"rumah Allah\" are the glossary's forms for \"naos\" (as in Mark); \"Yerusalem baru\" is the glossary's form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003012008"
+          ],
+          "choice": "\"殿\" (L); \"圣殿\" (B, R)",
+          "alternatives": [],
+          "reason": "The Greek has naos, the sanctuary itself; as the style guide, \"殿\" at Literal and \"圣殿\" at Balanced and Readable. The same for God's temple in heaven through Revelation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n66003012004",
+            "n66003012021"
+          ],
+          "choice": "\"他\", \"他们\", with no gender span",
+          "alternatives": [],
+          "reason": "As in 3:5: the English gender spans for the one who overcomes become the general pronouns in Chinese, which need no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3676,6 +4015,11 @@
           "L": "Siapa yang bertelinga, hendaklah ia mendengar apa yang dikatakan Roh kepada jemaat-jemaat.\"",
           "B": "Siapa yang bertelinga, hendaklah ia mendengar apa yang dikatakan Roh kepada jemaat-jemaat.\"",
           "R": "Setiap orang yang dapat mendengar harus mendengarkan baik-baik apa yang dikatakan Roh kepada jemaat-jemaat.\""
+        },
+        "zh": {
+          "L": "那有耳朵的人，要听圣灵对众教会所说的话。”",
+          "B": "有耳朵的人，都应当留心听圣灵正在对各教会说的话。”",
+          "R": "每一个能听的人，都要仔细听圣灵正在对各教会说的话。”"
         }
       },
       "decisions": [
@@ -3807,6 +4151,11 @@
           "L": "Dan kepada malaikat jemaat di Laodikia tuliskanlah: \"Inilah yang dikatakan oleh Sang Amin, Saksi yang setia dan benar, permulaan dari ciptaan Allah:",
           "B": "Kepada malaikat jemaat di Laodikia tuliskanlah: \"Inilah yang dikatakan oleh Sang Amin, Saksi yang setia dan benar, sumber dari ciptaan Allah:",
           "R": "Tuliskanlah surat ini kepada malaikat jemaat di Laodikia: \"Inilah pesan dari {{deity_pronoun:dia|Dia}} yang disebut Sang Amin. Dialah Saksi yang setia dan selalu mengatakan kebenaran. Segala sesuatu yang diciptakan Allah berawal di dalam {{deity_pronoun:dia|Dia}}."
+        },
+        "zh": {
+          "L": "你要写信给在老底嘉的教会的天使：“那位阿们，那忠信真实的见证人，{{god_term:神|上帝}}创造的开端，这样说：",
+          "B": "你要写信给老底嘉教会的天使：“这是那位阿们、那忠信又真实的见证人、{{god_term:神|上帝}}创造的根源所说的话：",
+          "R": "你要把这封信写给老底嘉教会的天使：“这信息是那位名叫阿们的发出的。{{deity_pronoun:他|祂}}是忠信的见证人，总是说真话。{{god_term:神|上帝}}所造的一切，都是在{{deity_pronoun:他|祂}}里面开始的。"
         }
       },
       "decisions": [
@@ -4189,6 +4538,49 @@
           "reason": "\"Sang\" is the title particle that makes \"Amin\" a name (style guide section 8). The meaning decision reads \"the beginning\" as the source or origin, which Balanced says with \"sumber\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003014012"
+          ],
+          "choice": "\"那位阿们\"",
+          "alternatives": [
+            "\"阿们者\""
+          ],
+          "reason": "The Amen as a title: the one in whom God's word is true and sure (m2). It keeps the word \"阿们\" used elsewhere in the book, with \"那位\" to show it names a person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003014020",
+            "n66003014022"
+          ],
+          "choice": "\"开端\" (L); \"根源\" (B); \"在{{deity_pronoun:他|祂}}里面开始\" (R)",
+          "alternatives": [
+            "\"元首\""
+          ],
+          "reason": "The beginning of God's creation as its source and origin (m3), following the English: beginning, origin, had its beginning in him. Not \"the first thing made\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4281,6 +4673,11 @@
           "L": "Aku tahu perbuatan-perbuatanmu, bahwa engkau tidak dingin dan tidak panas.",
           "B": "Aku tahu segala perbuatanmu: engkau tidak dingin dan tidak panas.",
           "R": "Aku tahu semua yang kamu lakukan. Kamu tidak dingin, dan kamu juga tidak panas."
+        },
+        "zh": {
+          "L": "我知道你的行为，你也不冷，也不热。",
+          "B": "我知道你的行为：你不冷，也不热。",
+          "R": "我知道你所做的一切。你不冷，也不热。"
         }
       },
       "decisions": [
@@ -4390,6 +4787,11 @@
           "L": "Alangkah baiknya jika engkau dingin atau panas.",
           "B": "Alangkah baiknya jika engkau dingin atau panas!",
           "R": "Seandainya saja kamu dingin atau panas!"
+        },
+        "zh": {
+          "L": "我宁愿你或冷或热。",
+          "B": "但愿你不是冷的，就是热的！",
+          "R": "我真希望你要么冷，要么热！"
         }
       },
       "decisions": [
@@ -4508,6 +4910,11 @@
           "L": "Jadi karena engkau suam-suam kuku, dan tidak panas atau dingin, {{deity_pronoun:aku|Aku}} akan memuntahkan engkau dari mulut-{{deity_pronoun:ku|Ku}}.",
           "B": "Jadi karena engkau suam-suam kuku, tidak panas dan tidak dingin, {{deity_pronoun:aku|Aku}} akan memuntahkan engkau dari mulut-{{deity_pronoun:ku|Ku}}.",
           "R": "Tetapi kamu hanya suam-suam kuku, tidak panas dan tidak dingin. Jadi {{deity_pronoun:aku|Aku}} akan meludahkan kamu dari mulut-{{deity_pronoun:ku|Ku}}, seperti air yang rasanya tidak enak."
+        },
+        "zh": {
+          "L": "所以，因为你是温的，不热也不冷，我要把你从我口中吐出去。",
+          "B": "现在你既然是温吞的，不热也不冷，我就要把你从我口中吐出去。",
+          "R": "但你只是温温的，不热也不冷。所以我要把你从我口里吐出来，好像吐掉难喝的水一样。"
         }
       },
       "decisions": [
@@ -4657,6 +5064,27 @@
           "reason": "Literal keeps the force of the Greek word with the traditional \"изблюю\"; Balanced says \"извергнуть\", still strong; Readable uses the everyday \"выплюну\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66003016012"
+          ],
+          "choice": "\"吐出去\" (L, B); \"吐出来\" (R)",
+          "alternatives": [
+            "\"呕吐\""
+          ],
+          "reason": "Utter rejection in the strongest picture (m1). \"吐\" covers both spitting and vomiting in Chinese and keeps the picture of the mouth at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4799,6 +5227,11 @@
           "L": "Karena engkau berkata, 'Aku kaya, dan aku telah memperkaya diriku, dan aku tidak kekurangan apa-apa,' dan engkau tidak tahu bahwa engkau melarat, dan malang, miskin, buta, dan telanjang, \\v 18 {{deity_pronoun:aku|Aku}} menasihati engkau supaya engkau membeli dari-{{deity_pronoun:ku|Ku}} emas yang telah dimurnikan dalam api, supaya engkau menjadi kaya, dan pakaian putih, supaya engkau memakainya dan supaya rasa malu karena ketelanjanganmu tidak kelihatan, dan minyak untuk diurapkan pada matamu, supaya engkau dapat melihat.",
           "B": "Engkau berkata, 'Aku kaya, aku telah memperkaya diriku, dan aku tidak kekurangan apa-apa,' padahal engkau tidak tahu bahwa engkau melarat dan malang, miskin, buta, dan telanjang. \\v 18 Karena itu {{deity_pronoun:aku|Aku}} menasihati engkau supaya engkau membeli dari-{{deity_pronoun:ku|Ku}} emas yang telah dimurnikan dalam api, supaya engkau menjadi kaya, dan pakaian putih untuk engkau kenakan, supaya rasa malu karena ketelanjanganmu tidak kelihatan, dan minyak untuk melumasi matamu, supaya engkau dapat melihat.",
           "R": "Kamu berkata, 'Aku kaya. Aku punya semua yang aku mau. Aku tidak memerlukan apa-apa.' Tetapi kamu tidak tahu betapa buruk keadaanmu yang sebenarnya. Kamu sengsara dan menyedihkan. Kamu miskin, buta, dan telanjang. \\v 18 Jadi {{deity_pronoun:aku|Aku}} menasihati kamu untuk membeli emas dari-{{deity_pronoun:ku|Ku}}, emas yang sudah dimurnikan dalam api. Dengan begitu kamu akan sungguh-sungguh kaya. Belilah juga pakaian putih dari-{{deity_pronoun:ku|Ku}} untuk kamu pakai, supaya kamu tidak malu karena telanjang. Dan belilah obat dari-{{deity_pronoun:ku|Ku}} untuk dioleskan pada matamu, supaya kamu dapat melihat."
+        },
+        "zh": {
+          "L": "因为你说：‘我是富足的，已经发了财，什么都不缺’，却不知道你是那困苦的、可怜的、贫穷的、瞎眼的、赤身的，\\v 18 我劝你向我买火炼的金子，使你富足；又买白衣穿上，使你赤身的羞耻不显露出来；又买眼药擦你的眼睛，使你能看见。",
+          "B": "你对自己说：‘我很富有，我积累了财富，我什么都不缺。’你却看不出，困苦可怜的正是你，你又贫穷、又瞎眼、又赤身。\\v 18 所以我劝你：向我买经过火炼的金子，你就富足了；买白衣穿上，你赤身的羞耻就不会被人看见；再买眼药擦你的眼睛，你就能看见了。",
+          "R": "你说：‘我很富有，我想要的都有了，我什么都不需要。’你却不知道你的情况有多糟。你很悲惨，很可怜。你又穷、又瞎、又光着身子。\\v 18 所以我劝你向我买金子，就是在火里炼纯的金子，你才会真正富有。也要向我买白衣服穿上，你就不会因为赤身露体而羞愧。还要向我买药擦你的眼睛，你就能看见了。"
         }
       },
       "decisions": [
@@ -5088,6 +5521,24 @@
           "reason": "The Greek is one sentence (m1), but Japanese would have to put \"I counsel you\" at its very end, after all of verse 18. Literal ends verse 17 with \"だから\" so that the reason stays tied to the advice that follows.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n66003017001",
+            "n66003018001"
+          ],
+          "choice": "one sentence across 3:17-18 (L)",
+          "alternatives": [],
+          "reason": "Verses 17 and 18 are one sentence, \"because you say ... I counsel you\" (m1). Literal keeps it, with each verse's content after its own marker; Balanced and Readable divide it, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5181,6 +5632,11 @@
           "L": "Aku menegur dan mendidik setiap orang yang {{deity_pronoun:aku|Aku}} kasihi. Karena itu bersungguh-sungguhlah dan bertobatlah.",
           "B": "Barang siapa {{deity_pronoun:ku|Ku}}kasihi, ia {{deity_pronoun:ku|Ku}}tegur dan {{deity_pronoun:ku|Ku}}didik. Karena itu bersungguh-sungguhlah dan bertobatlah!",
           "R": "Aku menegur dan melatih setiap orang yang {{deity_pronoun:aku|Aku}} kasihi. Jadi bersungguh-sungguhlah, dan berbaliklah dari dosa-dosamu."
+        },
+        "zh": {
+          "L": "我所爱的人，我都要责备和管教。所以你要热切，也要悔改。",
+          "B": "我爱谁，就纠正谁、训练谁。所以你要火热起来，并且悔改。",
+          "R": "我爱谁，就纠正谁、训练谁。所以你要认真起来，离开你的罪。"
         }
       },
       "decisions": [
@@ -5394,6 +5850,11 @@
           "L": "Lihatlah, {{deity_pronoun:aku|Aku}} berdiri di depan pintu dan mengetuk. Jika ada orang yang mendengar suara-{{deity_pronoun:ku|Ku}} dan membuka pintu, {{deity_pronoun:aku|Aku}} akan masuk mendapatkannya dan makan bersama dia, dan ia bersama {{deity_pronoun:aku|Aku}}.",
           "B": "Lihat, {{deity_pronoun:aku|Aku}} berdiri di depan pintu dan mengetuk. Jika ada orang yang mendengar suara-{{deity_pronoun:ku|Ku}} dan membuka pintu, {{deity_pronoun:aku|Aku}} akan masuk ke dalam rumahnya dan makan bersama dia, dan ia bersama {{deity_pronoun:aku|Aku}}.",
           "R": "Dengarlah! Aku sedang berdiri di depan pintu dan mengetuk. Kalau ada orang yang mendengar suara-{{deity_pronoun:ku|Ku}} dan membuka pintu, {{deity_pronoun:aku|Aku}} akan masuk. Kami akan makan bersama sebagai sahabat."
+        },
+        "zh": {
+          "L": "看哪，我站在门口敲门。如果有人听见我的声音，把门打开，我就要进到他那里，和他一起吃饭，他也和我一起吃饭。",
+          "B": "你看，我正站在门口敲门。如果有人听见我的声音，把门打开，我就要进去，和他一同用饭，他也和我一同用饭。",
+          "R": "你要留心听！我正站在门口敲门。如果有人听见我的声音，把门打开，我就要进去。我们要像朋友一样一起吃饭。"
         }
       },
       "decisions": [
@@ -5522,6 +5983,25 @@
           "reason": "The Greek verb is to eat the main evening meal, so Literal says \"chakula cha jioni\"; Balanced and Readable say only that they share a meal, which is the point (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n66003020021",
+            "n66003020027"
+          ],
+          "choice": "\"他\", with no gender span",
+          "alternatives": [],
+          "reason": "The English spans the pronouns for \"anyone\" (that person / him; them / him). Chinese \"他\" after \"有人\" is the general pronoun and reads as anyone, so no setting is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5628,6 +6108,11 @@
           "L": "Siapa yang menang, kepadanya akan {{deity_pronoun:ku|Ku}}berikan [hak] untuk duduk bersama-sama dengan {{deity_pronoun:aku|Aku}} di atas takhta-{{deity_pronoun:ku|Ku}}, sama seperti {{deity_pronoun:aku|Aku}} juga telah menang dan duduk bersama-sama dengan Bapa-{{deity_pronoun:ku|Ku}} di atas takhta-{{deity_pronoun:nya|Nya}}.",
           "B": "Siapa yang menang akan {{deity_pronoun:ku|Ku}}beri tempat untuk duduk bersama-sama dengan {{deity_pronoun:aku|Aku}} di atas takhta-{{deity_pronoun:ku|Ku}}, sama seperti {{deity_pronoun:aku|Aku}} juga telah menang dan duduk bersama-sama dengan Bapa-{{deity_pronoun:ku|Ku}} di atas takhta-{{deity_pronoun:nya|Nya}}.",
           "R": "Setiap orang yang menang akan {{deity_pronoun:aku|Aku}} izinkan duduk bersama-{{deity_pronoun:ku|Ku}} di atas takhta-{{deity_pronoun:ku|Ku}}. Sama seperti {{deity_pronoun:aku|Aku}} sudah menang dan duduk bersama Bapa-{{deity_pronoun:ku|Ku}} di atas takhta-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "那得胜的人，我要准许他与我同坐在我的宝座上，正如我也得了胜，与我父同坐在{{deity_pronoun:他|祂}}的宝座上一样。",
+          "B": "每一个得胜的人，我都要让他在我的宝座上与我同坐，正如我得了胜，在我父的宝座上与{{deity_pronoun:他|祂}}同坐一样。",
+          "R": "每一个得到胜利的人，我都要让他和我一起坐在我的宝座上。同样，我也得到了胜利，和我的父一起坐在{{deity_pronoun:他|祂}}的宝座上。"
         }
       },
       "decisions": [
@@ -5769,6 +6254,11 @@
           "L": "Siapa yang bertelinga, hendaklah ia mendengar apa yang dikatakan Roh kepada jemaat-jemaat.\"",
           "B": "Siapa yang bertelinga, hendaklah ia mendengar apa yang dikatakan Roh kepada jemaat-jemaat.\"",
           "R": "Setiap orang yang dapat mendengar harus mendengarkan baik-baik apa yang dikatakan Roh kepada jemaat-jemaat.\""
+        },
+        "zh": {
+          "L": "那有耳朵的人，要听圣灵对众教会所说的话。”",
+          "B": "有耳朵的人，都应当留心听圣灵正在对各教会说的话。”",
+          "R": "每一个能听的人，都要仔细听圣灵正在对各教会说的话。”"
         }
       },
       "decisions": [

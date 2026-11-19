@@ -134,6 +134,11 @@
           "L": "Sesudah itu aku mendengar [sesuatu] seperti suara nyaring dari orang banyak yang besar di surga, katanya, \\q \"Haleluya! Keselamatan dan kemuliaan dan kuasa [adalah milik] Allah kita, \\v 2 sebab benar dan adil segala penghakiman-{{deity_pronoun:nya|Nya}}, \\q sebab {{deity_pronoun:dia|Dia}} telah menghakimi pelacur besar yang merusak bumi dengan percabulannya, \\q dan {{deity_pronoun:dia|Dia}} telah membalaskan darah hamba-hamba-{{deity_pronoun:nya|Nya}} dari tangannya.\"",
           "B": "Sesudah itu aku mendengar sesuatu seperti suara nyaring dari orang banyak yang besar di surga, katanya, \\q \"Haleluya! Keselamatan, kemuliaan, dan kuasa adalah milik Allah kita, \\v 2 sebab benar dan adil segala penghakiman-{{deity_pronoun:nya|Nya}}! \\q Dia telah menghakimi pelacur besar yang merusak bumi dengan percabulannya, \\q dan {{deity_pronoun:dia|Dia}} telah membalaskan darah hamba-hamba-{{deity_pronoun:nya|Nya}} kepada pelacur itu.\"",
           "R": "Sesudah itu saya mendengar suara yang seperti suara orang banyak yang sangat besar jumlahnya di surga. Mereka berseru, \\q \"Haleluya! \\q Pujilah Tuhan! Allah kita sudah menyelamatkan kita. Kemuliaan dan kuasa adalah milik-{{deity_pronoun:nya|Nya}}. \\v 2 Dia menghakimi dengan benar dan adil. \\q Dia sudah menghukum pelacur besar yang merusak bumi dengan dosa-dosa seksualnya. \\q Pelacur itu membunuh hamba-hamba-{{deity_pronoun:nya|Nya}}, dan {{deity_pronoun:dia|Dia}} sudah menghukumnya karena hal itu.\""
+        },
+        "zh": {
+          "L": "这些事以后，我听见天上好像有一大群人的大声音，说： \\q “哈利路亚！救恩、荣耀和能力[都归于]我们的{{god_term:神|上帝}}，\\v 2 因为{{deity_pronoun:他|祂}}的审判又真实又公义； \\q 因为{{deity_pronoun:他|祂}}审判了那用自己的淫乱败坏大地的大妓女， \\q 并且从她手中讨回了{{deity_pronoun:他|祂}}奴隶的血。”",
+          "B": "然后我听见天上好像有一大群人在大声说： \\q “哈利路亚！救恩、荣耀和能力都属于我们的{{god_term:神|上帝}}，\\v 2 {{deity_pronoun:他|祂}}的审判真实而正确。 \\q {{deity_pronoun:他|祂}}已经审判了那用淫乱败坏大地的大妓女， \\q 并且从她手中追讨了{{deity_pronoun:他|祂}}仆人的血。”",
+          "R": "这以后，我听见天上好像有一大群人的声音。他们喊着说： \\q “哈利路亚！ \\q 要赞美主！我们的{{god_term:神|上帝}}拯救了我们。荣耀和能力都属于{{deity_pronoun:他|祂}}。\\v 2 {{deity_pronoun:他|祂}}审判得真实又公平。 \\q {{deity_pronoun:他|祂}}惩罚了那用性方面的罪败坏大地的大妓女。 \\q 她杀了{{deity_pronoun:他|祂}}的仆人，{{deity_pronoun:他|祂}}就为这事惩罚了她。”"
         }
       },
       "decisions": [
@@ -731,6 +736,66 @@
           "reason": "The glossary's spelling, with no divine_name span, as the English writes \"Hallelujah\"; Readable explains it as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n66019001023"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "Every word naming the one God is a god_term span (style guide section 4): 神 by default, 上帝 as the reader's alternative. Noted once in this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019001013"
+          ],
+          "choice": "\"哈利路亚\" (no span); R adds \"要赞美主\"",
+          "alternatives": [
+            "你们要赞美{{divine_name:上主|雅}}"
+          ],
+          "reason": "Where the English keeps Hallelujah as a word, Chinese writes \"哈利路亚\" with no divine_name span (glossary); Readable adds what it means, as the English Readable. The same through 19:1-6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019002027"
+          ],
+          "choice": "\"奴隶\" (L); \"仆人\" (B, R)",
+          "alternatives": [],
+          "reason": "As the English and the style guide: slave at Literal, servant at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -827,6 +892,11 @@
           "L": "Dan untuk kedua kalinya mereka berkata, \\q \"Haleluya! Dan asapnya naik sampai selama-lamanya.\"",
           "B": "Lalu untuk kedua kalinya mereka berseru, \\q \"Haleluya! Asap kota itu naik sampai selama-lamanya.\"",
           "R": "Lalu mereka berseru lagi, \\q \"Haleluya! \\q Pujilah Tuhan! Asap dari kota yang terbakar itu naik untuk selama-lamanya.\""
+        },
+        "zh": {
+          "L": "他们第二次说： \\q “哈利路亚！并且她的烟升起，直到永永远远。”",
+          "B": "他们又说： \\q “哈利路亚！ \\q 她的烟永永远远地上升。”",
+          "R": "他们又喊着说： \\q “哈利路亚！ \\q 要赞美主！那城燃烧的烟，永永远远往上冒。”"
         }
       },
       "decisions": [
@@ -1021,6 +1091,11 @@
           "L": "Dan kedua puluh empat tua-tua dan keempat makhluk hidup itu sujud dan menyembah Allah yang duduk di atas takhta, sambil berkata, \\q \"Amin! Haleluya!\"",
           "B": "Lalu kedua puluh empat tua-tua dan keempat makhluk hidup itu sujud dan menyembah Allah yang duduk di atas takhta, sambil berkata, \\q \"Amin! Haleluya!\"",
           "R": "Kedua puluh empat tua-tua dan keempat makhluk hidup itu sujud dan menyembah Allah, yang duduk di atas takhta. Mereka berkata, \\q \"Amin! Haleluya! Pujilah Tuhan!\""
+        },
+        "zh": {
+          "L": "那二十四位长老和四个活物俯伏下来，敬拜那位坐在宝座上的{{god_term:神|上帝}}，说： \\q “阿们！哈利路亚！”",
+          "B": "二十四位长老和四个活物都俯伏在地，敬拜坐在宝座上的{{god_term:神|上帝}}，说： \\q “阿们！哈利路亚！”",
+          "R": "二十四位长老和四个活物都跪下来，敬拜坐在宝座上的{{god_term:神|上帝}}。他们说： \\q “阿们！哈利路亚！要赞美主！”"
         }
       },
       "decisions": [
@@ -1229,6 +1304,11 @@
           "L": "Dan dari takhta itu keluarlah suatu suara, katanya, \\q \"Pujilah Allah kita, \\q hai kalian semua hamba-{{deity_pronoun:nya|Nya}}, \\q kalian yang takut akan {{deity_pronoun:dia|Dia}}, kecil dan besar.\"",
           "B": "Lalu dari takhta itu terdengar suatu suara yang berkata, \\q \"Pujilah Allah kita, \\q hai kalian semua hamba-{{deity_pronoun:nya|Nya}}, \\q kalian yang takut akan {{deity_pronoun:dia|Dia}}, baik kecil maupun besar!\"",
           "R": "Kemudian terdengar suara dari takhta itu. Suara itu berkata, \\q \"Pujilah Allah kita, hai kalian semua hamba-{{deity_pronoun:nya|Nya}}! \\q Pujilah {{deity_pronoun:dia|Dia}}, hai kalian semua yang menghormati {{deity_pronoun:dia|Dia}} dengan takut, baik orang penting maupun orang biasa!\""
+        },
+        "zh": {
+          "L": "有一个声音从宝座那里出来，说： \\q “要赞美我们的{{god_term:神|上帝}}， \\q {{deity_pronoun:他|祂}}所有的奴隶， \\q [你们]敬畏{{deity_pronoun:他|祂}}的，无论小的大的！”",
+          "B": "有一个声音从宝座那里发出，说： \\q “要赞美我们的{{god_term:神|上帝}}， \\q {{deity_pronoun:他|祂}}所有的仆人和一切敬畏{{deity_pronoun:他|祂}}的人， \\q 无论卑微的还是尊贵的！”",
+          "R": "然后有一个声音从宝座那里传出来，说： \\q “{{deity_pronoun:他|祂}}所有的仆人哪，要赞美我们的{{god_term:神|上帝}}！ \\q 所有尊敬{{deity_pronoun:他|祂}}、敬畏{{deity_pronoun:他|祂}}的人，无论是重要的人还是不重要的人，都要赞美{{deity_pronoun:他|祂}}！”"
         }
       },
       "decisions": [
@@ -1473,6 +1553,11 @@
           "L": "Dan aku mendengar [sesuatu] seperti suara orang banyak yang besar dan seperti bunyi banyak air dan seperti bunyi guruh yang dahsyat, katanya, \\q \"Haleluya! \\q Sebab Tuhan Allah kita, Yang Mahakuasa, telah mulai memerintah.",
           "B": "Lalu aku mendengar sesuatu seperti suara orang banyak yang besar, seperti gemuruh air bah dan seperti bunyi guruh yang dahsyat, katanya, \\q \"Haleluya! \\q Sebab Tuhan Allah kita, Yang Mahakuasa, telah mulai memerintah sebagai Raja.",
           "R": "Lalu saya mendengar suara seperti suara orang banyak yang sangat besar jumlahnya. Suara itu sekeras air terjun yang besar dan sekeras guruh. Mereka berseru, \\q \"Haleluya! Pujilah Tuhan! \\q Tuhan Allah Yang Mahakuasa sekarang memerintah sebagai Raja."
+        },
+        "zh": {
+          "L": "我又听见[一种声音]，好像一大群人的声音，好像众水的声音，又好像大雷的声音，说： \\q “哈利路亚！ \\q 因为主{{god_term:神|上帝}}，全能者，已经开始作王了。",
+          "B": "我又听见好像一大群人的声音，像众水的轰响，又像大雷的巨响： \\q “哈利路亚！ \\q 因为全能的主{{god_term:神|上帝}}已经开始作王了。",
+          "R": "然后我听见好像一大群人的声音。那声音大得像大瀑布，又像雷声。他们喊着说： \\q “哈利路亚！要赞美主！ \\q 统管万有的主{{god_term:神|上帝}}现在作王了。"
         }
       },
       "decisions": [
@@ -1639,6 +1724,29 @@
           "reason": "\"主である神\" avoids the literary なる; the Almighty is 全能者 at Literal and Balanced and \"the one who rules over all\" at Readable, as across Revelation.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019006021",
+            "n66019006022",
+            "n66019006023",
+            "n66019006024",
+            "n66019006025"
+          ],
+          "choice": "\"主{{god_term:神|上帝}}，全能者\" (L); \"全能的主{{god_term:神|上帝}}\" (B); \"统管万有的主{{god_term:神|上帝}}\" (R)",
+          "alternatives": [],
+          "reason": "As 15:3 and 16:7.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1758,6 +1866,11 @@
           "L": "Marilah kita bersukacita dan bersorak-sorai, dan kita akan memuliakan {{deity_pronoun:dia|Dia}}, \\q karena pernikahan Anak Domba telah tiba, \\q dan pengantin perempuan-{{deity_pronoun:nya|Nya}} telah siap sedia, \\v 8 dan kepadanya dikaruniakan untuk memakai lenan halus yang berkilau-kilauan [dan] murni.\" \\q Sebab lenan halus itu adalah perbuatan-perbuatan benar orang-orang kudus.",
           "B": "Marilah kita bersukacita dan bersorak-sorai, dan memuliakan {{deity_pronoun:dia|Dia}}, \\q karena hari pernikahan Anak Domba telah tiba, \\q dan pengantin perempuan-{{deity_pronoun:nya|Nya}} telah siap sedia. \\v 8 Kepadanya dikaruniakan untuk memakai lenan halus yang berkilau-kilauan dan murni.\" \\q Lenan halus itu adalah perbuatan-perbuatan benar orang-orang kudus.",
           "R": "Marilah kita bergembira dan bersorak-sorai dan memuliakan {{deity_pronoun:dia|Dia}}! \\q Sudah tiba waktunya Anak Domba menikah. \\q Pengantin perempuan-{{deity_pronoun:nya|Nya}} sudah mempersiapkan dirinya. \\v 8 Dia sudah diberi pakaian dari lenan yang halus untuk dipakai, yang berkilau dan bersih.\" \\q Lenan halus itu melambangkan perbuatan-perbuatan baik yang sudah dilakukan umat Allah."
+        },
+        "zh": {
+          "L": "让我们欢喜，让我们雀跃，我们也要把荣耀归给{{deity_pronoun:他|祂}}， \\q 因为羔羊的婚礼已经来到， \\q {{deity_pronoun:他|祂}}的新娘也已经把自己预备好了，\\v 8 她蒙准穿上明亮洁净的细麻衣。” \\q 因为细麻衣是圣徒公义的作为。",
+          "B": "让我们欢欣雀跃，把荣耀归给{{deity_pronoun:他|祂}}， \\q 因为羔羊的婚礼已经到了， \\q {{deity_pronoun:他|祂}}的新娘也已经预备好了自己。\\v 8 她蒙恩准穿上细麻衣，光明而洁净。” \\q 这细麻衣代表圣徒公正的作为。",
+          "R": "我们要高兴，要庆祝，要把荣耀归给{{deity_pronoun:他|祂}}！ \\q 羔羊举行婚礼的时候到了。 \\q {{deity_pronoun:他|祂}}的新娘已经准备好了。\\v 8 她得到了细麻布的衣服可以穿，衣服又明亮又洁净。” \\q 这细麻布代表属于{{god_term:神|上帝}}的人所做的好事。"
         }
       },
       "decisions": [
@@ -2267,6 +2380,51 @@
           "reason": "Fine linen is a costly cloth; Readable uses the common word 麻 and says it is clothing.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019007012",
+            "n66019007014",
+            "n66019007017"
+          ],
+          "choice": "\"羔羊的婚礼\"; \"新娘\" for the bride",
+          "alternatives": [
+            "新妇"
+          ],
+          "reason": "The wedding of the Lamb and his bride, God and his people as bridegroom and bride (meaning m1). \"新娘\" is the everyday word, the same for the bride of 21:2, 9 and 22:17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019008013",
+            "n66019008015"
+          ],
+          "choice": "\"公义的作为\" (L, B); \"所做的好事\" (R)",
+          "alternatives": [
+            "义行"
+          ],
+          "reason": "The same word as God's \"righteous acts\" in 15:4 at Literal; Readable follows the English \"good things\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2363,6 +2521,11 @@
           "L": "Lalu ia berkata kepadaku, \"Tuliskanlah: Berbahagialah mereka yang diundang ke perjamuan kawin Anak Domba.\"",
           "B": "Lalu ia berkata kepadaku, \"Tuliskanlah: Berbahagialah mereka yang diundang ke perjamuan kawin Anak Domba!\"",
           "R": "Lalu malaikat itu berkata kepada saya, \"Tuliskanlah ini: Allah memberkati orang-orang yang diundang ke pesta pernikahan Anak Domba!\""
+        },
+        "zh": {
+          "L": "他对我说：“写下来：那些被邀请赴羔羊婚宴的人有福了。”",
+          "B": "他告诉我：“你要写：被召去赴羔羊婚宴的人是多么有福啊！”",
+          "R": "然后天使对我说：“你要写下：{{god_term:神|上帝}}赐福给那些被邀请赴羔羊婚宴的人！”"
         }
       },
       "decisions": [
@@ -2543,6 +2706,32 @@
           "reason": "The Beatitude form as settled in Matthew (14:13).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019009009",
+            "n66019009010",
+            "n66019009011",
+            "n66019009012",
+            "n66019009013",
+            "n66019009014"
+          ],
+          "choice": "\"羔羊婚宴\"",
+          "alternatives": [
+            "羔羊的婚筵"
+          ],
+          "reason": "The marriage supper of the Lamb: \"婚宴\", the word for a wedding feast in Matthew 22 and Luke 14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2635,6 +2824,11 @@
           "L": "Dan ia berkata kepadaku, \"Inilah perkataan-perkataan Allah yang benar.\"",
           "B": "Katanya lagi kepadaku, \"Inilah perkataan Allah yang benar.\"",
           "R": "Dia juga berkata kepada saya, \"Perkataan ini benar. Perkataan ini datang dari Allah.\""
+        },
+        "zh": {
+          "L": "他又对我说：“这些是{{god_term:神|上帝}}真实的话。”",
+          "B": "他又告诉我：“这些是{{god_term:神|上帝}}真实的话。”",
+          "R": "他又对我说：“这些话是真实的，是从{{god_term:神|上帝}}来的。”"
         }
       },
       "decisions": [
@@ -2747,6 +2941,11 @@
           "L": "Lalu aku tersungkur di depan kakinya untuk menyembah dia.",
           "B": "Lalu aku tersungkur di depan kakinya untuk menyembah dia.",
           "R": "Saya sujud di depan kaki malaikat itu untuk menyembahnya."
+        },
+        "zh": {
+          "L": "我就扑倒在他脚前，要向他下拜。",
+          "B": "于是我扑倒在他脚前，要敬拜他。",
+          "R": "我在天使的脚前跪下来，要敬拜他。"
         }
       },
       "decisions": [
@@ -2923,6 +3122,11 @@
           "L": "Tetapi ia berkata kepadaku, \"Jangan berbuat demikian! Aku adalah hamba sama seperti engkau dan saudara-saudaramu, yang memegang kesaksian Yesus. Sembahlah Allah! Sebab kesaksian Yesus adalah roh nubuat.\"",
           "B": "\"Jangan!\" katanya. \"Aku hanyalah hamba sama seperti engkau dan saudara-saudaramu, yang memegang kesaksian Yesus. Sembahlah Allah! Sebab kesaksian Yesus adalah roh nubuat.\"",
           "R": "Tetapi ia berkata kepada saya, \"Jangan lakukan itu! Aku adalah hamba Allah sama seperti kamu dan saudara-saudaramu yang terus memberitakan kebenaran tentang Yesus. Sembahlah Allah! Kebenaran tentang Yesus itulah yang menjadi pokok dari semua nubuat yang sejati.\""
+        },
+        "zh": {
+          "L": "他对我说：“要小心，不可[这样做]！我是与你、与你那些持守耶稣之见证的{{gender:弟兄姐妹|弟兄}}一同作奴隶的。要敬拜{{god_term:神|上帝}}。因为耶稣的见证就是预言的灵。”",
+          "B": "“不可这样！”他说，“我只是和你，以及你那些持守耶稣见证的{{gender:弟兄姐妹|弟兄}}，一同作仆人的。要敬拜{{god_term:神|上帝}}。因为耶稣的见证就是预言的灵。”",
+          "R": "可是他对我说：“不要这样做！我和你，还有你那些不断说出耶稣真相的{{gender:弟兄姐妹|弟兄}}，都是{{god_term:神|上帝}}的仆人。要敬拜{{god_term:神|上帝}}！所有真正的预言，都是在讲关于耶稣的真相。”"
         }
       },
       "decisions": [
@@ -3418,6 +3622,26 @@
           "reason": "The angel refuses worship and calls himself a fellow servant; \"hamba\" here is a fellow servant of God. \"roh\" stays lowercase, as the English keeps \"spirit\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019010035"
+          ],
+          "choice": "\"灵\" (L, B), not \"圣灵\"",
+          "alternatives": [
+            "圣灵"
+          ],
+          "reason": "As the English, Literal and Balanced keep the open phrase without deciding whether the Holy Spirit is meant (meaning m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3524,6 +3748,11 @@
           "L": "Lalu aku melihat surga terbuka, dan lihatlah, seekor kuda putih, dan {{deity_pronoun:dia|Dia}} yang menungganginya bernama Yang Setia dan Yang Benar, dan {{deity_pronoun:dia|Dia}} menghakimi dan berperang dengan adil.",
           "B": "Lalu aku melihat surga terbuka, dan tampaklah seekor kuda putih. Penunggangnya bernama Yang Setia dan Yang Benar, dan {{deity_pronoun:dia|Dia}} menghakimi dan berperang dengan adil.",
           "R": "Kemudian saya melihat surga terbuka. Di sana ada seekor kuda putih. Nama penunggangnya adalah Yang Setia dan Yang Benar. Dia menghakimi dan berperang dengan adil."
+        },
+        "zh": {
+          "L": "我又看见天开了，看哪，有一匹白马，那坐在马上的名叫忠信和真实，{{deity_pronoun:他|祂}}凭公义审判，也凭公义作战。",
+          "B": "我看见天在我眼前开了，有一匹白马。骑在马上的那一位名叫忠信真实；{{deity_pronoun:他|祂}}按公义审判，也按公义出征。",
+          "R": "然后我看见天开了。那里有一匹白马。骑马的那一位名叫忠信真实。{{deity_pronoun:他|祂}}按着公义审判，也按着公义作战。"
         }
       },
       "decisions": [
@@ -3860,6 +4089,25 @@
           "reason": "The rider judges and makes war justly (meaning decision m1); \"adil\" is the style guide's word where just judging is meant, so \"kebenaran\" is not used here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019011021"
+          ],
+          "choice": "\"公义\"",
+          "alternatives": [],
+          "reason": "Righteousness is a key term: \"公义\" at every level, here God's justice in judging (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3979,6 +4227,11 @@
           "L": "Dan mata-{{deity_pronoun:nya|Nya}} bagaikan nyala api, dan di atas kepala-{{deity_pronoun:nya|Nya}} ada banyak mahkota, dan pada-{{deity_pronoun:nya|Nya}} tertulis suatu nama yang tidak diketahui oleh seorang pun selain {{deity_pronoun:dia|Dia}} sendiri, \\v 13 dan {{deity_pronoun:dia|Dia}} memakai jubah yang telah dicelup dalam darah, dan nama-{{deity_pronoun:nya|Nya}} disebut Firman Allah.",
           "B": "Mata-{{deity_pronoun:nya|Nya}} bagaikan nyala api, dan di atas kepala-{{deity_pronoun:nya|Nya}} ada banyak mahkota. Pada-{{deity_pronoun:nya|Nya}} tertulis suatu nama yang tidak diketahui oleh seorang pun selain {{deity_pronoun:dia|Dia}} sendiri. \\v 13 Dia memakai jubah yang telah dicelup dalam darah, dan nama-{{deity_pronoun:nya|Nya}} ialah Firman Allah.",
           "R": "Mata-{{deity_pronoun:nya|Nya}} seperti nyala api. Di atas kepala-{{deity_pronoun:nya|Nya}} ada banyak mahkota. Ada sebuah nama yang tertulis pada-{{deity_pronoun:nya|Nya}}, tetapi hanya {{deity_pronoun:dia|Dia}} sendiri yang tahu nama itu. \\v 13 Dia memakai jubah yang sudah dicelupkan ke dalam darah. Nama-{{deity_pronoun:nya|Nya}} adalah Firman Allah."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}的眼睛是火的火焰，{{deity_pronoun:他|祂}}的头上有许多王冠；{{deity_pronoun:他|祂}}有一个写好的名字，除了{{deity_pronoun:他|祂}}自己，没有人知道；\\v 13 {{deity_pronoun:他|祂}}身上披着一件浸过血的袍子，{{deity_pronoun:他|祂}}的名字叫作{{god_term:神|上帝}}的道。",
+          "B": "{{deity_pronoun:他|祂}}的眼睛像火焰，{{deity_pronoun:他|祂}}头上戴着许多王冠。{{deity_pronoun:他|祂}}身上写着一个名字，只有{{deity_pronoun:他|祂}}自己知道。\\v 13 {{deity_pronoun:他|祂}}所穿的袍子是在血里浸过的；人称{{deity_pronoun:他|祂}}的名为{{god_term:神|上帝}}的道。",
+          "R": "{{deity_pronoun:他|祂}}的眼睛像火焰一样。{{deity_pronoun:他|祂}}头上戴着许多王冠。{{deity_pronoun:他|祂}}身上写着一个名字，可是只有{{deity_pronoun:他|祂}}自己知道那是什么名字。\\v 13 {{deity_pronoun:他|祂}}穿着一件浸过血的袍子。{{deity_pronoun:他|祂}}的名字是{{god_term:神|上帝}}的道。"
         }
       },
       "decisions": [
@@ -4406,6 +4659,49 @@
           "reason": "As \"Firman\" in John 1 (style guide section 7), the Word is a person here and is capitalised at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019013012",
+            "n66019013014"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的道\"",
+          "alternatives": [
+            "{{god_term:神|上帝}}的话语"
+          ],
+          "reason": "The Word (logos) as a title of Christ, \"道\" at every level as John 1:1 (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019012012"
+          ],
+          "choice": "\"王冠\" for the diadems",
+          "alternatives": [
+            "冠冕"
+          ],
+          "reason": "Diadēma is a king's crown (meaning m1), distinct from the victor's wreath (stephanos).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4504,6 +4800,11 @@
           "L": "Dan pasukan-pasukan yang di surga mengikuti {{deity_pronoun:dia|Dia}} dengan menunggang kuda-kuda putih, berpakaian lenan halus yang putih [dan] murni.",
           "B": "Pasukan-pasukan yang di surga mengikuti {{deity_pronoun:dia|Dia}} dengan menunggang kuda-kuda putih. Mereka berpakaian lenan halus yang putih bersih.",
           "R": "Pasukan-pasukan surga mengikuti {{deity_pronoun:dia|Dia}} dengan menunggang kuda-kuda putih. Mereka memakai pakaian dari lenan yang putih bersih."
+        },
+        "zh": {
+          "L": "天上的军队一直骑着白马跟随{{deity_pronoun:他|祂}}，他们身穿白色纯洁的细麻衣。",
+          "B": "天上的众军骑着白马跟在{{deity_pronoun:他|祂}}后面，穿着洁白纯净的细麻衣。",
+          "R": "天上的军队骑着白马跟随{{deity_pronoun:他|祂}}。他们穿着纯白的细麻布衣服。"
         }
       },
       "decisions": [
@@ -4656,6 +4957,11 @@
           "L": "Dan dari mulut-{{deity_pronoun:nya|Nya}} keluar sebilah pedang tajam, supaya dengan pedang itu {{deity_pronoun:dia|Dia}} memukul bangsa-bangsa, dan {{deity_pronoun:dia|Dia}} akan menggembalakan mereka dengan tongkat besi, dan {{deity_pronoun:dia|Dia}} memeras anggur di dalam tempat pemerasan anggur, yaitu kegeraman murka Allah Yang Mahakuasa.",
           "B": "Dari mulut-{{deity_pronoun:nya|Nya}} keluar sebilah pedang tajam untuk memukul bangsa-bangsa, dan {{deity_pronoun:dia|Dia}} akan menggembalakan mereka dengan tongkat besi. Dia akan memeras anggur di dalam tempat pemerasan anggur kegeraman murka Allah Yang Mahakuasa.",
           "R": "Sebilah pedang tajam keluar dari mulut-{{deity_pronoun:nya|Nya}}. Dia akan memakai pedang itu untuk mengalahkan bangsa-bangsa. Dia akan memerintah mereka dengan tongkat besi. Dia akan menghancurkan mereka seperti anggur yang diinjak-injak di tempat pemerasan anggur, yaitu murka Allah Yang Mahakuasa yang dahsyat."
+        },
+        "zh": {
+          "L": "从{{deity_pronoun:他|祂}}口中出来一把锋利的剑，好让{{deity_pronoun:他|祂}}用它击打列国；{{deity_pronoun:他|祂}}要用铁杖牧养他们；{{deity_pronoun:他|祂}}也踩踏全能者{{god_term:神|上帝}}愤怒的烈怒之酒的榨酒池。",
+          "B": "{{deity_pronoun:他|祂}}口中出来一把锋利的剑，要用来击打列国。{{deity_pronoun:他|祂}}要用铁杖牧养他们，又要在榨酒池里踩踏，榨出全能的{{god_term:神|上帝}}猛烈怒气的酒。",
+          "R": "有一把锋利的剑从{{deity_pronoun:他|祂}}口中出来。{{deity_pronoun:他|祂}}要用这剑打败列国。{{deity_pronoun:他|祂}}要用铁杖统治他们。{{deity_pronoun:他|祂}}要像在榨酒池里踩葡萄一样，用统管万有的{{god_term:神|上帝}}可怕的怒气压碎他们。"
         }
       },
       "decisions": [
@@ -4956,6 +5262,25 @@
           "reason": "Literal and Balanced keep the shepherd's word of Psalm 2:9, as the English does; Readable says what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019015017"
+          ],
+          "choice": "\"牧养\" (L, B); \"统治\" (R)",
+          "alternatives": [],
+          "reason": "As 2:27 and the English levels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5055,6 +5380,11 @@
           "L": "Dan pada jubah-{{deity_pronoun:nya|Nya}} dan pada paha-{{deity_pronoun:nya|Nya}} tertulis suatu nama: Raja segala raja dan Tuhan segala tuan.",
           "B": "Pada jubah-{{deity_pronoun:nya|Nya}} dan pada paha-{{deity_pronoun:nya|Nya}} tertulis suatu nama: Raja segala raja dan Tuhan segala tuan.",
           "R": "Sebuah nama tertulis pada jubah-{{deity_pronoun:nya|Nya}} dan pada kaki-{{deity_pronoun:nya|Nya}}: Raja atas segala raja dan Tuhan atas segala tuan."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}在衣袍上和{{deity_pronoun:他|祂}}的大腿上有一个写好的名字：万王之王，万主之主。",
+          "B": "在{{deity_pronoun:他|祂}}的衣袍上和大腿上，写着一个名字：万王之王，万主之主。",
+          "R": "{{deity_pronoun:他|祂}}的袍子上和腿上写着一个名字：万王之王，万主之主。"
         }
       },
       "decisions": [
@@ -5130,6 +5460,29 @@
             "\"만왕의 왕이요 만주의 주\""
           ],
           "reason": "The title of 17:14 and 1 Timothy 6:15 (meaning decision); each level keeps its Korean from 17:14, in the Greek order of this verse, king first.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019016013",
+            "n66019016014",
+            "n66019016015",
+            "n66019016016",
+            "n66019016017"
+          ],
+          "choice": "\"万王之王，万主之主\" at every level",
+          "alternatives": [],
+          "reason": "The fixed form of the title, as 17:14 (L, B); here the English Readable keeps the title too.",
           "uncertain": false,
           "footnote": false
         }
@@ -5273,6 +5626,11 @@
           "L": "Dan aku melihat seorang malaikat berdiri di dalam matahari, dan ia berseru dengan suara nyaring kepada semua burung yang terbang di tengah langit, katanya, \"Marilah, berkumpullah untuk perjamuan Allah yang besar, \\v 18 supaya kalian makan daging raja-raja dan daging panglima-panglima dan daging orang-orang kuat dan daging kuda-kuda dan para penunggangnya, dan daging semua orang, baik merdeka maupun budak, baik kecil maupun besar.\"",
           "B": "Lalu aku melihat seorang malaikat berdiri di dalam matahari, dan ia berseru dengan suara nyaring kepada semua burung yang terbang di tengah langit, \"Marilah, berkumpullah untuk perjamuan Allah yang besar, \\v 18 supaya kalian makan daging raja-raja, daging panglima-panglima, daging orang-orang kuat, daging kuda-kuda dan para penunggangnya, dan daging semua orang, baik merdeka maupun budak, baik kecil maupun besar.\"",
           "R": "Kemudian saya melihat seorang malaikat berdiri di dalam matahari. Dia berseru kepada semua burung yang terbang di langit, \"Marilah! Berkumpullah untuk pesta besar Allah. \\v 18 Datanglah dan makanlah mayat raja-raja, panglima-panglima, dan orang-orang yang berkuasa. Makanlah mayat kuda-kuda dan para penunggangnya. Makanlah mayat semua orang, orang merdeka dan budak, orang penting dan orang biasa.\""
+        },
+        "zh": {
+          "L": "我又看见一位天使站在太阳里，他用大声音向所有在空中飞的鸟喊着说：“你们来吧，聚集起来参加{{god_term:神|上帝}}盛大的晚宴，\\v 18 好吃众王的肉、将领的肉、有能力者的肉、马匹和坐在马上之人的肉，以及一切人的肉，无论是自由人还是奴隶，无论是小的还是大的。”",
+          "B": "接着我看见一位天使站在太阳中。他向一切在高空飞翔的鸟大声呼叫：“来吧，聚集起来，赴{{god_term:神|上帝}}所摆设的大宴席，\\v 18 来吃君王的肉、将领的肉、有权势之人的肉，吃马和骑马之人的肉，吃所有人的肉，无论自由人或奴隶，无论卑微或尊贵。”",
+          "R": "然后我看见一位天使站在太阳里。他向所有在天空飞的鸟大声喊着说：“来吧！聚集起来，来赴{{god_term:神|上帝}}的大宴席。\\v 18 来吃君王、军官和有权势之人的尸体。来吃马和骑马之人的尸体。来吃所有人的尸体，不论是自由人还是奴隶，是重要的人还是不重要的人。”"
         }
       },
       "decisions": [
@@ -5610,6 +5968,28 @@
           "reason": "Literal keeps the Greek's \"commander of a thousand\"; Balanced and Readable give the rank in modern words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019018022",
+            "n66019018025"
+          ],
+          "choice": "\"奴隶\" at every level",
+          "alternatives": [
+            "仆人"
+          ],
+          "reason": "Slave set against free: \"奴隶\" at every level, as the English and the style guide.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5720,6 +6100,11 @@
           "L": "Dan aku melihat binatang buas itu dan raja-raja di bumi dan tentara-tentara mereka berkumpul untuk berperang melawan {{deity_pronoun:dia|Dia}} yang menunggang kuda itu dan melawan pasukan-{{deity_pronoun:nya|Nya}}.",
           "B": "Lalu aku melihat binatang buas itu, raja-raja di bumi, dan tentara-tentara mereka berkumpul untuk berperang melawan {{deity_pronoun:dia|Dia}} yang menunggang kuda itu dan melawan pasukan-{{deity_pronoun:nya|Nya}}.",
           "R": "Kemudian saya melihat binatang buas itu, raja-raja di bumi, dan tentara-tentara mereka. Mereka sudah berkumpul untuk berperang melawan Penunggang kuda itu dan pasukan-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "我看见那兽、地上的众王和他们的众军，已经集结起来，要和那坐在马上的以及{{deity_pronoun:他|祂}}的军队交战。",
+          "B": "我看见那兽，以及跟它一起的地上众王和他们的军队，都集结起来，要攻打那骑在马上的和{{deity_pronoun:他|祂}}的军队。",
+          "R": "然后我看见那兽、地上的君王和他们的军队。他们聚集在一起，要攻打骑马的那一位和{{deity_pronoun:他|祂}}的军队。"
         }
       },
       "decisions": [
@@ -5932,6 +6317,11 @@
           "L": "Dan binatang buas itu ditangkap, dan bersama-sama dengan dia nabi palsu yang telah mengadakan tanda-tanda di hadapannya, yang dengannya ia menyesatkan mereka yang telah menerima tanda binatang buas itu dan mereka yang menyembah patungnya; keduanya dilemparkan hidup-hidup ke dalam lautan api yang menyala-nyala oleh belerang.",
           "B": "Binatang buas itu ditangkap, dan bersama-sama dengan dia juga nabi palsu yang telah mengadakan tanda-tanda di hadapannya. Dengan tanda-tanda itu ia menyesatkan mereka yang telah menerima tanda binatang buas itu dan yang menyembah patungnya. Keduanya dilemparkan hidup-hidup ke dalam lautan api yang menyala-nyala oleh belerang.",
           "R": "Binatang buas itu ditangkap. Nabi palsu juga ditangkap, yaitu nabi yang sudah melakukan tanda-tanda bagi binatang buas itu. Dia memakai tanda-tanda itu untuk menipu orang-orang yang memakai tanda binatang buas itu dan menyembah patungnya. Binatang buas dan nabi palsu itu dilemparkan hidup-hidup ke dalam lautan api yang menyala dengan belerang."
+        },
+        "zh": {
+          "L": "那兽被抓住了，和它一起被抓的还有那在它面前行神迹的假先知；他曾用这些神迹迷惑那些接受了兽的记号的人和那些敬拜兽像的人；这两个被活生生地抛进那用硫磺燃烧的火湖里。",
+          "B": "但那兽被擒获了，那在它面前行过神迹、用神迹迷惑了那些接受兽的记号、向兽像下拜之人的假先知，也一同被擒。这两个还活着，就被扔进了火湖，那湖里燃烧着硫磺。",
+          "R": "兽被抓住了。假先知也被抓住了。他曾经为兽行神迹，用这些神迹欺骗那些有兽的记号、拜兽的雕像的人。兽和假先知还活着，就被扔进了那烧着硫磺的火湖。"
         }
       },
       "decisions": [
@@ -6294,6 +6684,27 @@
           "reason": "The glossary's form for the lake of fire.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n66019020037",
+            "n66019020038",
+            "n66019020039"
+          ],
+          "choice": "\"火湖\"",
+          "alternatives": [],
+          "reason": "The lake of fire, the place of final judgment (meaning m2): one form for 19:20; 20:10, 14-15; 21:8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6403,6 +6814,11 @@
           "L": "Dan yang lain dibunuh dengan pedang {{deity_pronoun:dia|Dia}} yang menunggang kuda itu, yang keluar dari mulut-{{deity_pronoun:nya|Nya}}, dan semua burung menjadi kenyang oleh daging mereka.",
           "B": "Yang lain dibunuh dengan pedang yang keluar dari mulut {{deity_pronoun:dia|Dia}} yang menunggang kuda itu, dan semua burung kenyang memakan daging mereka.",
           "R": "Penunggang kuda itu membunuh semua yang lain dengan pedang yang keluar dari mulut-{{deity_pronoun:nya|Nya}}. Semua burung makan daging mereka sampai kenyang."
+        },
+        "zh": {
+          "L": "其余的人都被那坐在马上那位的剑杀死，那剑是从{{deity_pronoun:他|祂}}口中出来的；所有的鸟都因他们的肉而饱足。",
+          "B": "其余的人被那骑在马上的那位用剑处死，就是从{{deity_pronoun:他|祂}}口中出来的那把剑；所有的鸟都饱餐了他们的肉。",
+          "R": "骑马的那一位用从{{deity_pronoun:他|祂}}口中出来的剑，杀了其余所有的人。所有的鸟都尽情地吃了他们的尸体。"
         }
       },
       "decisions": [
