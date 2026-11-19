@@ -20,13 +20,16 @@ query word matches an entry in its stemmed forms, in the entry's own
 language only, or word for word as the start of a word (tsquery explains
 why). A "quoted phrase" matches word for word, in order.
 
-Japanese is written without spaces, and Postgres's parser takes a run of
-kanji and kana as one word, so a word could only be found at the start of
-a clause. Japanese entries (owb_cjk, migration 0011) are indexed by
-character bigrams instead (ngrams): each run of kanji and kana becomes its
-overlapping pairs and its last character, and a Japanese query term
-becomes the phrase of its pairs, so it matches anywhere inside a run. The
-entries keep their text as it is; only the vector is built from the pairs.
+Japanese and Chinese are written without spaces, and Postgres's parser
+takes a run of kanji and kana (or Chinese characters) as one word, so a
+word could only be found at the start of a clause. Japanese and Chinese
+entries (owb_cjk, migration 0011) are indexed by character bigrams instead
+(ngrams): each run becomes its overlapping pairs and its last character,
+and a query term in those scripts becomes the phrase of its pairs, so it
+matches anywhere inside a run. The entries keep their text as it is; only
+the vector is built from the pairs, and a sentence's vector from each of
+its readings (readings), so that a setting's word joins the words beside
+it: {{god_term:神|上帝}}的国 is found as 神的国 and as 上帝的国.
 """
 import functools
 import hashlib
@@ -50,7 +53,7 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
 CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese",
-           "ru": "owb_russian", "ja": "owb_cjk", "id": "owb_indonesian"}
+           "ru": "owb_russian", "ja": "owb_cjk", "id": "owb_indonesian", "zh": "owb_cjk"}
 SIMPLE = "owb_simple"
 # Entries in languages written without spaces between words: indexed and
 # queried by character bigrams (ngrams).
@@ -167,10 +170,41 @@ ENTRY_COLUMNS = ("language", "kind", "position", "sub", "config", "title", "extr
 INDEXED_COLUMNS = ("title_v", "extra_v", "body_v")
 
 
-def indexed(config_name, doc_fields):
+def readings(levels):
+    """Each level as a reader can see it, for a sentence's owb_cjk vector:
+    every span at its first option; each setting at each of its other
+    options, the others at their first; and every span at its second,
+    third, ... option. everything() puts a span's options side by side
+    ("神 上帝的国"), which breaks a bigram across the span's edge; these
+    keep each option beside its neighbours ("神的国", "上帝的国")."""
+    out = []
+    for text in levels.values():
+        spans = [(m[1], m[2].split("|")) for m in SPAN.finditer(text)]
+        choices = [{}]
+        for name in dict.fromkeys(n for n, _ in spans):
+            most = max(len(o) for n, o in spans if n == name)
+            choices += [{name: i} for i in range(1, most)]
+        most = max((len(o) for _, o in spans), default=1)
+        choices += [{n: i for n, _ in spans} for i in range(1, most)]
+        for choice in choices:
+            def pick(m, choice=choice):
+                options = m[2].split("|")
+                i = choice.get(m[1], 0)
+                return options[i] if i < len(options) else options[0]
+            reading = VERSE_MARK.sub(" ", SPAN.sub(pick, text))
+            if reading not in out:
+                out.append(reading)
+    return GAP.join(out)
+
+
+def indexed(config_name, doc_fields, doc=None):
     """The text each field is indexed as: its bigrams for owb_cjk, else None
-    (the field itself)."""
-    return tuple(ngrams(f) for f in doc_fields) if config_name == CJK else (None, None, None)
+    (the field itself). A sentence's body is indexed from its readings."""
+    if config_name != CJK:
+        return None, None, None
+    if doc is not None and doc["k"] == "v":
+        doc_fields = (*doc_fields[:2], readings(doc["x"]))
+    return tuple(ngrams(f) for f in doc_fields)
 
 
 def _copy(cursor, table, columns, rows):
@@ -417,7 +451,7 @@ def _write(cursor, lang, docs, places):
     # A generator: a full rebuild's rows, held at once, are as big again
     # as the documents.
     rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *f,
-             json.dumps(docs[i][0], ensure_ascii=False), *indexed(docs[i][1], f))
+             json.dumps(docs[i][0], ensure_ascii=False), *indexed(docs[i][1], f, docs[i][0]))
             for i, position, sub in places for f in [fields(docs[i][0])])
     _copy(cursor, "search_load", ENTRY_COLUMNS + INDEXED_COLUMNS, rows)
     cursor.execute(f"""INSERT INTO {_table()} ({', '.join(ENTRY_COLUMNS)}, vector)
