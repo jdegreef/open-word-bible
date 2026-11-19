@@ -106,6 +106,11 @@
           "L": "Dan terjadilah sesudah hal-hal ini, orang berkata kepada Yusuf, \"Lihatlah, ayahmu sakit.\" Lalu ia membawa kedua anaknya bersama dia, Manasye dan Efraim.",
           "B": "Sesudah semuanya itu, ada kabar sampai kepada Yusuf bahwa ayahnya sakit. Lalu ia pergi membawa kedua anaknya, Manasye dan Efraim.",
           "R": "Beberapa waktu kemudian, seseorang datang kepada Yusuf membawa kabar: \"Ayahmu sakit.\" Jadi Yusuf pergi menjenguk ayahnya dan membawa kedua anaknya, Manasye dan Efraim."
+        },
+        "zh": {
+          "L": "在这些事以后，有人对约瑟说：“看哪，你父亲患病了。”于是他带着两个儿子玛拿西和以法莲与他同去。",
+          "B": "这些事过后，有消息传给约瑟，说他的父亲病了。他就带着两个儿子玛拿西和以法莲前去。",
+          "R": "过了一些时候，有人来告诉约瑟：“你的父亲病了。”约瑟就带着两个儿子玛拿西和以法莲去看他。"
         }
       },
       "decisions": [
@@ -194,6 +199,26 @@
             "a span like the English {{deity_pronoun:he|He}}"
           ],
           "reason": "The Ethiopic script has no capital letters, so the deity_pronoun setting has nothing to change in Amharic. This holds for every pronoun for God in Genesis 48.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480010011",
+            "o010480010012"
+          ],
+          "choice": "a time clause (\"在这些事以后\") for wayehi",
+          "alternatives": [
+            "\"那时\""
+          ],
+          "reason": "\"And it came to pass\" is given as a time clause at Literal (style guide section 12), not as a separate verb.",
           "uncertain": false,
           "footnote": false
         }
@@ -299,6 +324,11 @@
           "L": "Dan orang memberitahukan kepada Yakub, katanya, \"Lihatlah, Yusuf, anakmu, datang kepadamu.\" Dan Israel mengumpulkan kekuatannya dan duduk di atas tempat tidurnya.",
           "B": "Ketika Yakub diberi tahu bahwa Yusuf, anaknya, datang kepadanya, Israel mengumpulkan kekuatannya dan duduk di tempat tidurnya.",
           "R": "Seseorang memberi tahu Yakub, \"Yusuf, anakmu, datang menjenguk.\" Jadi Yakub mengumpulkan tenaganya supaya dapat duduk di tempat tidur."
+        },
+        "zh": {
+          "L": "[有人]告诉雅各，说：“看哪，你的儿子约瑟来到你这里了。”以色列便鼓起力气，在床上坐了起来。",
+          "B": "雅各听说儿子约瑟来看他，以色列就打起精神，在床上坐了起来。",
+          "R": "有人告诉雅各：“你的儿子约瑟来看你了。”雅各就使出力气，在床上坐了起来。"
         }
       },
       "decisions": [
@@ -487,6 +517,11 @@
           "L": "Dan Yakub berkata kepada Yusuf, \"Allah Yang Mahakuasa telah menampakkan diri kepadaku di Lus di tanah Kanaan dan memberkati aku,",
           "B": "Yakub berkata kepada Yusuf, \"Di Lus, di tanah Kanaan, Allah Yang Mahakuasa menampakkan diri kepadaku dan memberkati aku.",
           "R": "Yakub berkata kepada Yusuf, \"Allah Yang Mahakuasa menampakkan diri-{{deity_pronoun:nya|Nya}} kepadaku di Lus, di tanah Kanaan. Dia memberkati aku di sana."
+        },
+        "zh": {
+          "L": "雅各对约瑟说：“全能的{{god_term:神|上帝}}从前在迦南地的路斯向我显现，又赐我福，",
+          "B": "雅各对约瑟说：“在迦南地的路斯，全能的{{god_term:神|上帝}}曾向我显现，为我祝福。",
+          "R": "雅各对约瑟说：“全能的{{god_term:神|上帝}}在迦南地的路斯亲自向我显现。{{deity_pronoun:他|祂}}在那里赐福给我。"
         }
       },
       "decisions": [
@@ -660,6 +695,46 @@
           "reason": "Japanese has no capitals, so it has no deity_pronoun spans in this chapter (48:3, 4, 11, 16); God is named or left unstated, with respect forms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010480030051"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" for God",
+          "alternatives": [
+            "\"上帝\" fixed",
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's alternative (style guide section 4). The English has no such setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010480030071",
+            "o010480030122"
+          ],
+          "choice": "\"亲自向我显现\" with no pronoun; \"{{deity_pronoun:他|祂}}在那里赐福给我\"",
+          "alternatives": [],
+          "reason": "Chinese says \"showed Himself\" with \"亲自\", which needs no pronoun, so the English span has no Chinese counterpart there. The pronoun for God that opens the next sentence takes the span, as Chinese marks it at every position (style guide section 4); English uses plain \"He\" at a sentence start.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -773,6 +848,11 @@
           "L": "dan {{deity_pronoun:dia|Dia}} berfirman kepadaku, 'Lihatlah, Aku akan membuat engkau berbuah dan membuat engkau bertambah banyak, dan Aku akan menjadikan engkau suatu himpunan bangsa-bangsa, dan Aku akan memberikan negeri ini kepada keturunanmu sesudah engkau menjadi milik untuk selama-lamanya.'",
           "B": "Dia berfirman kepadaku, 'Aku akan membuat engkau beranak cucu dan bertambah banyak. Aku akan menjadikan engkau suatu himpunan bangsa-bangsa, dan Aku akan memberikan negeri ini kepada keturunanmu sesudah engkau menjadi milik mereka untuk selama-lamanya.'",
           "R": "Dia berfirman kepadaku, 'Aku akan memberi kamu banyak anak dan membuat keluargamu sangat besar. Banyak bangsa akan berasal dari kamu. Aku akan memberikan negeri ini kepada keturunanmu sesudah kamu. Negeri ini akan menjadi milik mereka untuk selama-lamanya.'"
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}对我说：‘看哪，我要使你生育，使你繁增，使你成为众民族的会众；我要把这地赐给你以后的后裔，作永久的产业。’",
+          "B": "{{deity_pronoun:他|祂}}对我说：‘我要使你生育兴旺，人丁众多；我要使你成为众民族的集合，把这地赐给你以后的后代，永远归他们所有。’",
+          "R": "{{deity_pronoun:他|祂}}对我说：‘我要让你有很多孩子，使你的家族非常庞大。许多民族要从你而出。我要把这地赐给你以后的后代，永远归他们所有。’"
         }
       },
       "decisions": [
@@ -930,6 +1010,46 @@
           "reason": "The same phrase as the earlier promises Jacob is recalling.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010480040011",
+            "o010480040012"
+          ],
+          "choice": "\"{{deity_pronoun:他|祂}}\" for \"He said\" (B, R)",
+          "alternatives": [
+            "\"神\" (B)"
+          ],
+          "reason": "Pronouns for God, one treatment through Genesis (style guide section 4): every Chinese pronoun for God takes the deity_pronoun span, {{deity_pronoun:他|祂}} or {{deity_pronoun:你|祢}}, wherever the English has a span and also where the English pronoun opens a sentence and so has its capital without a span, or where Chinese needs a pronoun the English does not write; God is not named instead of the pronoun, and the divine_name span stands exactly where the English has it. God's own \"I\" is 我, with no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480040132"
+          ],
+          "choice": "\"后裔\" (L), \"后代\" (B, R) for zera",
+          "alternatives": [],
+          "reason": "As in chapter 46: Literal keeps the older word, Balanced and Readable say descendants.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1044,6 +1164,11 @@
           "L": "Dan sekarang kedua anakmu yang lahir bagimu di tanah Mesir sebelum aku datang kepadamu ke Mesir, mereka adalah anakku; Efraim dan Manasye, seperti Ruben dan Simeon, mereka akan menjadi anakku.",
           "B": "Jadi kedua anakmu yang lahir bagimu di Mesir sebelum aku datang kepadamu, sekarang adalah anak-anakku. Efraim dan Manasye akan dihitung sebagai anak-anakku, sama seperti Ruben dan Simeon.",
           "R": "Kedua anakmu lahir di Mesir sebelum aku datang ke sini. Sekarang aku mengangkat mereka menjadi anak-anakku sendiri. Efraim dan Manasye akan dihitung sebagai anakku, sama seperti Ruben dan Simeon."
+        },
+        "zh": {
+          "L": "现在，你在埃及地所生的两个儿子，就是我还没有来到埃及你这里以前所生的，是我的；以法莲和玛拿西要归我，像流便和西缅一样。",
+          "B": "所以，你的两个儿子，就是我来埃及与你团聚以前，在埃及为你所生的，现在归我了。以法莲和玛拿西要算作我的儿子，与流便和西缅毫无分别。",
+          "R": "你这两个儿子是我来埃及以前在这里生的。现在我要认他们作我自己的儿子。以法莲和玛拿西要算是我的，就像流便和西缅一样。"
         }
       },
       "decisions": [
@@ -1264,6 +1389,11 @@
           "L": "Dan keturunanmu yang kauperanakkan sesudah mereka akan menjadi milikmu; menurut nama saudara-saudara mereka mereka akan disebut dalam warisan mereka.",
           "B": "Anak-anak yang lahir bagimu sesudah mereka akan menjadi milikmu; dalam pembagian warisan mereka akan dihitung di bawah nama saudara-saudara mereka.",
           "R": "Kalau kamu mempunyai anak lagi sesudah kedua anak ini, mereka akan menjadi milikmu. Mereka akan menerima tanah sebagai bagian dari milik Efraim dan Manasye."
+        },
+        "zh": {
+          "L": "但你在他们以后所生的孩子要归你；他们要在他们的产业中按他们兄弟的名被称呼。",
+          "B": "你在他们以后所生的孩子要归你；分产业的时候，他们要算在他们兄弟的名下。",
+          "R": "如果你在这两个以后还有别的孩子，他们要归你。他们要从以法莲和玛拿西的那一份里得到土地。"
         }
       },
       "decisions": [
@@ -1453,6 +1583,11 @@
           "L": "Dan aku, ketika aku datang dari Padan, Rahel mati di sisiku di tanah Kanaan dalam perjalanan, ketika masih sedikit jauhnya untuk sampai ke Efrata; dan aku menguburkan dia di sana di jalan ke Efrata, yaitu Betlehem.\"",
           "B": "Sedangkan aku, ketika aku pulang dari Padan, Rahel meninggal di sisiku di tanah Kanaan, dalam perjalanan, ketika kami masih agak jauh dari Efrata, dan aku menguburkan dia di sana di tepi jalan ke Efrata\" (yaitu Betlehem).",
           "R": "Dalam perjalanan pulang dari Padan, aku kehilangan Rahel. Dia meninggal di tanah Kanaan ketika kami masih dalam perjalanan, sebelum sampai di Efrata. Itu kesedihan yang sangat dalam bagiku. Aku menguburkan dia di sana, di dekat jalan ke Efrata\" (yaitu Betlehem)."
+        },
+        "zh": {
+          "L": "至于我，我从巴旦回来的时候，拉结在迦南地的路上撇下我死了，那时离以法他还有一段路程；我就把她葬在往以法他去的路上。”（以法他就是伯利恒。）",
+          "B": "至于我，我从巴旦回来的时候，拉结在迦南地的路上撇下我死了，那时我们离以法他还有一段路，我就把她葬在通往以法他的路旁。”（以法他就是伯利恒。）",
+          "R": "我从巴旦回来的路上失去了拉结。我们还在赶路，离以法他还有一段路的时候，她就在迦南地死了。这让我非常悲伤。我把她葬在通往以法他的路边。”（以法他就是伯利恒。）"
         }
       },
       "decisions": [
@@ -1739,6 +1874,48 @@
           "reason": "The meaning decision hears a loss Jacob felt as his own, marked uncertain; \"di sisiku\" keeps the personal note without adding to it. \"Padan\" as the Hebrew shortens Padan-Aram.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480070041",
+            "o010480070051",
+            "o010480070052"
+          ],
+          "choice": "\"撇下我死了\" for \"died on me\"",
+          "alternatives": [
+            "\"死在我身边\""
+          ],
+          "reason": "The Hebrew \"died to me\" tells a loss Jacob felt as his own (meaning decision m2); \"撇下我\" (left me) keeps that in Chinese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480070032",
+            "o010480070141"
+          ],
+          "choice": "\"巴旦\" for Paddan; \"以法他\" for Ephrath",
+          "alternatives": [],
+          "reason": "Conventional Chinese forms; Paddan is the short form of Paddan-aram (巴旦亚兰, 46:15).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1831,6 +2008,11 @@
           "L": "Dan Israel melihat anak-anak Yusuf dan berkata, \"Siapakah mereka ini?\"",
           "B": "Israel melihat anak-anak Yusuf dan bertanya, \"Siapakah mereka ini?\"",
           "R": "Israel memandang anak-anak Yusuf. \"Siapa anak-anak ini?\" tanyanya."
+        },
+        "zh": {
+          "L": "以色列看见约瑟的儿子们，就说：“这些是谁？”",
+          "B": "以色列注意到约瑟的儿子们，便问：“他们是谁？”",
+          "R": "以色列看着约瑟的儿子们，问：“这两个男孩是谁？”"
         }
       },
       "decisions": [
@@ -1956,6 +2138,11 @@
           "L": "Dan Yusuf berkata kepada ayahnya, \"Mereka anak-anakku, yang telah diberikan Allah kepadaku di sini.\" Dan ia berkata, \"Bawalah kiranya mereka kepadaku, supaya aku memberkati mereka.\"",
           "B": "\"Mereka anak-anakku,\" jawab Yusuf kepada ayahnya, \"yang telah dikaruniakan Allah kepadaku di negeri ini.\" Kata Yakub, \"Bawalah mereka kemari, aku akan memberkati mereka.\"",
           "R": "Yusuf menjawab, \"Mereka anak-anak saya, Ayah. Allah memberikan mereka kepada saya di Mesir ini.\" Ayahnya berkata, \"Tolong bawa mereka kepadaku. Aku ingin memberkati mereka.\""
+        },
+        "zh": {
+          "L": "约瑟对他父亲说：“他们是我的儿子，是{{god_term:神|上帝}}在这里赐给我的。”他说：“请领他们到我这里来，我好为他们祝福。”",
+          "B": "“这些是我的儿子，”约瑟告诉父亲，“是{{god_term:神|上帝}}在这地方赐给我的。”雅各说：“请把他们带到我这里来，我要祝福他们。”",
+          "R": "约瑟回答：“他们是我的儿子。是{{god_term:神|上帝}}在埃及这里赐给我的。”他父亲说：“请把他们带过来。我要祝福他们。”"
         }
       },
       "decisions": [
@@ -2120,6 +2307,11 @@
           "L": "Dan mata Israel telah kabur karena tua; ia tidak dapat melihat. Dan ia membawa mereka dekat kepadanya, lalu ia mencium mereka dan memeluk mereka.",
           "B": "Mata Israel sudah kabur karena usianya, dan ia tidak dapat melihat. Yusuf membawa anak-anak itu mendekat kepadanya, lalu ia mencium dan memeluk mereka.",
           "R": "Israel sudah sangat tua, dan matanya terlalu lemah untuk melihat. Yusuf membawa anak-anak itu kepadanya, lalu Israel mencium dan memeluk mereka."
+        },
+        "zh": {
+          "L": "以色列的眼睛因年老而昏沉，看不见了。他就领他们挨近他，他就亲吻他们，抱住他们。",
+          "B": "以色列上了年纪，视力衰退，看不见了。约瑟领两个孩子到他面前，他亲吻他们，把他们搂在怀里。",
+          "R": "以色列年纪很大了，眼睛几乎看不见。约瑟把两个孩子带到他跟前，以色列亲了亲他们，又抱住他们。"
         }
       },
       "decisions": [
@@ -2312,6 +2504,11 @@
           "L": "Dan Israel berkata kepada Yusuf, \"Aku tidak menyangka akan melihat mukamu, dan lihatlah, Allah bahkan memperlihatkan kepadaku juga keturunanmu.\"",
           "B": "Israel berkata kepada Yusuf, \"Aku sudah tidak berharap akan melihat wajahmu lagi, tetapi lihatlah, Allah bahkan memperlihatkan anak-anakmu juga kepadaku.\"",
           "R": "Israel berkata kepada Yusuf, \"Aku kira aku tidak akan pernah melihat kamu lagi. Tetapi Allah berbuat lebih dari itu: {{deity_pronoun:dia|Dia}} membiarkan aku melihat anak-anakmu juga!\""
+        },
+        "zh": {
+          "L": "以色列对约瑟说：“我没想到能见到你的面，看哪，{{god_term:神|上帝}}竟然连你的后裔也让我看见了。”",
+          "B": "以色列对约瑟说：“我早已不再指望见到你的面，可是你看，{{god_term:神|上帝}}连你的孩子也让我看见了。”",
+          "R": "以色列对约瑟说：“我以为再也见不到你了。可是{{god_term:神|上帝}}为我做的更多：{{deity_pronoun:他|祂}}还让我看见了你的孩子！”"
         }
       },
       "decisions": [
@@ -2446,6 +2643,11 @@
           "L": "Lalu Yusuf mengeluarkan mereka dari antara lutut ayahnya, dan ia sujud dengan mukanya ke tanah.",
           "B": "Kemudian Yusuf memindahkan anak-anak itu dari sisi lutut ayahnya, lalu ia sujud dengan mukanya sampai ke tanah.",
           "R": "Lalu Yusuf mengambil anak-anak itu dari pangkuan ayahnya. Dia sujud dengan mukanya sampai ke tanah."
+        },
+        "zh": {
+          "L": "约瑟把他们从他的双膝旁带开，就脸伏于地下拜。",
+          "B": "约瑟把孩子们从父亲膝旁领开，然后俯伏在地下拜。",
+          "R": "然后约瑟把孩子们从父亲的腿上抱下来。他跪下，脸贴着地下拜。"
         }
       },
       "decisions": [
@@ -2566,6 +2768,29 @@
           "reason": "The sign of adoption, as Rachel's \"di atas lutut\" at 30:3; Literal and Balanced name the father, since the Hebrew's \"his knees\" are Jacob's (meaning decision).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480120061",
+            "o010480120062",
+            "o010480120071",
+            "o010480120072",
+            "o010480120081"
+          ],
+          "choice": "\"脸伏于地\" (L), \"俯伏在地\" (B), \"跪下，脸贴着地\" (R)",
+          "alternatives": [],
+          "reason": "The formula for bowing with the face to the ground keeps one form per level through the Old Testament (style guide section 12).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2675,6 +2900,11 @@
           "L": "Dan Yusuf mengambil keduanya, Efraim dengan tangan kanannya ke sebelah kiri Israel, dan Manasye dengan tangan kirinya ke sebelah kanan Israel, lalu ia membawa [mereka] dekat kepadanya.",
           "B": "Yusuf menempatkan keduanya di depan ayahnya: Efraim, yang dipegang dengan tangan kanannya, di sebelah kiri Israel, dan Manasye, yang dipegang dengan tangan kirinya, di sebelah kanan Israel. Lalu ia membawa mereka mendekat kepadanya.",
           "R": "Yusuf membawa kedua anak itu kepada ayahnya. Dia memegang Efraim dengan tangan kanannya, sehingga Efraim berdiri di sebelah kiri Israel. Dia memegang Manasye dengan tangan kirinya, sehingga Manasye berdiri di sebelah kanan Israel."
+        },
+        "zh": {
+          "L": "约瑟领着他们两个：用右手拉着以法莲，使他在以色列的左边；用左手拉着玛拿西，使他在以色列的右边；把[他们]带到他跟前。",
+          "B": "约瑟把两个孩子带到父亲面前：右手拉着以法莲，让他站在以色列的左边；左手拉着玛拿西，让他站在以色列的右边。然后领他们走近父亲。",
+          "R": "约瑟领着两个孩子到父亲跟前。他用右手拉着以法莲，所以以法莲站在以色列的左边。他用左手拉着玛拿西，所以玛拿西站在以色列的右边。"
         }
       },
       "decisions": [
@@ -2806,6 +3036,11 @@
           "L": "Dan Israel mengulurkan tangan kanannya dan meletakkannya di atas kepala Efraim, padahal ia yang lebih muda, dan tangan kirinya di atas kepala Manasye; ia menyilangkan tangannya, sebab Manasye adalah anak sulung.",
           "B": "Tetapi Israel mengulurkan tangan kanannya dan meletakkannya di atas kepala Efraim, yang lebih muda, dan tangan kirinya di atas kepala Manasye. Ia sengaja menyilangkan tangannya, sebab Manasye adalah anak sulung.",
           "R": "Israel mengulurkan tangan kanannya dan meletakkannya di atas kepala Efraim, anak yang lebih muda. Dia meletakkan tangan kirinya di atas kepala Manasye. Dia harus menyilangkan lengannya untuk melakukan itu, karena Manasye, anak yang lebih tua, berdiri di sebelah kanannya."
+        },
+        "zh": {
+          "L": "以色列却伸出右手，放在以法莲的头上，虽然他是较年幼的，又把左手放在玛拿西的头上；他把手交叉着，因为玛拿西是长子。",
+          "B": "以色列却伸出右手，放在年幼的以法莲头上，把左手放在玛拿西头上。他是有意交叉双手的，因为玛拿西是长子。",
+          "R": "以色列伸出右手，放在年纪小的以法莲头上，又把左手放在玛拿西的头上。他得把两只手交叉起来才能这样做，因为年纪大的玛拿西站在他的右边。"
         }
       },
       "decisions": [
@@ -3048,6 +3283,11 @@
           "L": "Dan ia memberkati Yusuf dan berkata, \"Allah yang di hadapan-{{deity_pronoun:nya|Nya}} nenek moyangku Abraham dan Ishak telah hidup, Allah yang telah menggembalakan aku sejak aku ada sampai hari ini,",
           "B": "Lalu ia memberkati Yusuf: \"Kiranya Allah, yang di hadapan-{{deity_pronoun:nya|Nya}} nenek moyangku Abraham dan Ishak hidup, Allah yang telah menggembalakan aku seperti seorang gembala sejak aku lahir sampai hari ini,",
           "R": "Lalu dia memberkati Yusuf dengan kata-kata ini: \"Abraham, kakekku, dan Ishak, ayahku, hidup dengan melayani Allah. Dan Allah sudah memelihara aku seperti seorang gembala sejak aku lahir sampai sekarang."
+        },
+        "zh": {
+          "L": "他为约瑟祝福，说：“我的祖先亚伯拉罕和以撒在{{deity_pronoun:他|祂}}面前行事为人的那位{{god_term:神|上帝}}，从我有生以来直到今天作我牧者的那位{{god_term:神|上帝}}，",
+          "B": "然后他为约瑟祝福：“愿那位{{god_term:神|上帝}}，就是我的祖先亚伯拉罕和以撒在{{deity_pronoun:他|祂}}面前度过一生的{{god_term:神|上帝}}，从我出生直到今天像牧人一样看顾我的{{god_term:神|上帝}}，",
+          "R": "然后他用这些话为约瑟祝福：“我的祖父亚伯拉罕和我的父亲以撒一生都事奉{{god_term:神|上帝}}。{{god_term:神|上帝}}也像牧人一样照顾我，从我出生那天直到现在。"
         }
       },
       "decisions": [
@@ -3224,6 +3464,26 @@
           "reason": "The first time God is called a shepherd in Scripture; the shepherd's verb is kept at Literal and Balanced, and Readable keeps the picture with \"seperti seorang gembala\". \"hidup di hadapan-Nya\" for \"walked before him\", as at 17:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010480150091",
+            "o010480150092",
+            "o010480150093"
+          ],
+          "choice": "\"在{{deity_pronoun:他|祂}}面前\" for \"before whom\"",
+          "alternatives": [],
+          "reason": "English says \"before whom\" with no pronoun; Chinese has no relative pronoun and needs \"before him\" inside the relative clause, which takes the deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3340,6 +3600,11 @@
           "L": "malaikat yang telah menebus aku dari segala bahaya, kiranya {{deity_pronoun:dia|Dia}} memberkati anak-anak ini; dan kiranya namaku dan nama nenek moyangku Abraham dan Ishak disebut pada mereka, dan kiranya mereka bertambah-tambah menjadi banyak di tengah-tengah bumi.\"",
           "B": "malaikat yang telah melepaskan aku dari segala bahaya, kiranya {{deity_pronoun:dia|Dia}} memberkati anak-anak ini. Melalui mereka kiranya namaku dan nama nenek moyangku Abraham dan Ishak tetap diingat, dan kiranya mereka berkembang biak dan menjadi banyak di bumi.\"",
           "R": "Dialah malaikat yang sudah melindungi aku dari segala bahaya. Aku berdoa supaya {{deity_pronoun:dia|Dia}} memberkati anak-anak ini. Melalui mereka semoga namaku dan nama Abraham dan Ishak tetap ada. Semoga keturunan mereka bertambah sangat banyak di seluruh bumi.\""
+        },
+        "zh": {
+          "L": "那位天使，就是从一切灾祸中救赎了我的那位，愿{{deity_pronoun:他|祂}}赐福给这些孩子；愿我的名和我祖先亚伯拉罕和以撒的名在他们身上被称呼；愿他们在地的中间繁衍成群。”",
+          "B": "就是那位在一切危难中拯救我的天使，赐福给这两个孩子。愿我的名，和我祖先亚伯拉罕、以撒的名，借着他们流传下去；愿他们在地上繁衍增多。”",
+          "R": "{{deity_pronoun:他|祂}}就是那位保护我、使我脱离一切危险的天使。我求{{deity_pronoun:他|祂}}赐福给这两个孩子。愿我的名字和亚伯拉罕、以撒的名字借着他们传下去。愿他们的家族在地上人数众多。”"
         }
       },
       "decisions": [
@@ -3689,6 +3954,47 @@
           "reason": "The meaning decision reads the angel as God himself, in parallel with \"the God\" of verse 15, as the English does with its span. \"menebus\" (L) for \"redeemed\", the glossary's word for the work of a kinsman-redeemer.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480160011",
+            "o010480160012"
+          ],
+          "choice": "\"天使\" for ha-malakh, with the deity_pronoun span for him",
+          "alternatives": [
+            "\"使者\""
+          ],
+          "reason": "The English says \"angel\" at every level, so Chinese says \"天使\" (glossary: \"使者\" is kept for \"the angel of the LORD\"). The angel is God himself as he met Jacob (meaning decision m1), so his pronoun takes the span as in English; Readable's opening \"He is the angel\" is spanned too, as every Chinese pronoun for God is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480160162"
+          ],
+          "choice": "\"繁衍成群\" for yidgu (teem)",
+          "alternatives": [
+            "\"多如鱼群\""
+          ],
+          "reason": "The verb is built on the word for fish (meaning decision m4); \"成群\" keeps the picture of a teeming shoal without naming fish.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3805,6 +4111,11 @@
           "L": "Dan ketika Yusuf melihat bahwa ayahnya meletakkan tangan kanannya di atas kepala Efraim, hal itu tidak baik di matanya, dan ia memegang tangan ayahnya untuk memindahkannya dari kepala Efraim ke kepala Manasye.",
           "B": "Yusuf melihat bahwa ayahnya meletakkan tangan kanannya di atas kepala Efraim, dan ia tidak senang. Ia memegang tangan ayahnya untuk memindahkannya dari kepala Efraim ke kepala Manasye.",
           "R": "Yusuf tidak senang melihat tangan kanan ayahnya di atas kepala Efraim. Jadi dia memegang tangan ayahnya untuk memindahkannya ke kepala Manasye."
+        },
+        "zh": {
+          "L": "约瑟看见他父亲把右手放在以法莲的头上，他眼中看这事不好，便握住他父亲的手，想把它从以法莲头上移开，放到玛拿西头上。",
+          "B": "约瑟看见父亲把右手放在以法莲头上，心里不以为然。他握住父亲的手，打算把它从以法莲头上移到玛拿西头上。",
+          "R": "约瑟看见父亲的右手放在以法莲的头上，心里不高兴。所以他伸手去拉父亲的手，想把它放到玛拿西的头上。"
         }
       },
       "decisions": [
@@ -3925,6 +4236,11 @@
           "L": "Dan Yusuf berkata kepada ayahnya, \"Bukan begitu, ayahku, sebab inilah yang sulung; letakkanlah tangan kananmu di atas kepalanya.\"",
           "B": "Yusuf berkata kepada ayahnya, \"Jangan begitu, Ayah! Yang sulung adalah anak ini. Tangan kanan Ayah seharusnya di atas kepalanya.\"",
           "R": "\"Ayah, itu terbalik!\" kata Yusuf. \"Anak ini yang lebih tua. Tangan kanan Ayah seharusnya di atas kepalanya.\""
+        },
+        "zh": {
+          "L": "约瑟对父亲说：“不要这样，我的父亲；这一个才是长子，请把你的右手放在他的头上。”",
+          "B": "约瑟对父亲说：“父亲，不是这样！这一个才是长子，你的右手应该放在他头上。”",
+          "R": "“父亲，你放错了！”约瑟说，“这个孩子才是大的。你的右手应该放在他的头上。”"
         }
       },
       "decisions": [
@@ -4064,6 +4380,11 @@
           "L": "Tetapi ayahnya menolak dan berkata, \"Aku tahu, anakku, aku tahu; ia pun akan menjadi suatu bangsa, dan ia pun akan menjadi besar; tetapi adiknya akan lebih besar daripada dia, dan keturunannya akan menjadi sejumlah besar bangsa-bangsa.\"",
           "B": "Tetapi ayahnya tidak mau. \"Aku tahu, anakku, aku tahu,\" katanya. \"Keturunan Manasye juga akan menjadi suatu bangsa, dan bangsa itu akan besar juga. Tetapi adiknya akan menjadi lebih besar lagi, dan keturunannya akan memenuhi banyak bangsa.\"",
           "R": "Tetapi ayahnya tidak mau memindahkan tangannya. \"Aku tahu, anakku, aku tahu,\" katanya. \"Keluarga Manasye juga akan menjadi suatu bangsa, dan bangsa itu akan besar juga. Meskipun begitu, adiknya akan menjadi lebih besar. Keturunannya akan memenuhi banyak bangsa.\""
+        },
+        "zh": {
+          "L": "他父亲不肯，说：“我知道，我儿，我知道；他也会成为一个民族，他也会强大；然而他的弟弟要比他更强大，他的后裔要成为众多的国。”",
+          "B": "他父亲却不肯这样做。“我知道，我的儿子，我知道，”他说，“玛拿西的后代也要成为一个民族，也会强大。但他的弟弟会更加强大，他的后代要遍满许多国家。”",
+          "R": "但他父亲不肯换手。“我知道，孩子，我知道，”他说，“玛拿西的家族也会成为一个民族，也会强大。但是弟弟会比他更强大。弟弟的后代要遍布许多国家。”"
         }
       },
       "decisions": [
@@ -4228,6 +4549,11 @@
           "L": "Dan ia memberkati mereka pada hari itu, katanya, \"Dengan namamu Israel akan memberkati, katanya, 'Kiranya Allah membuat engkau seperti Efraim dan seperti Manasye.'\" Demikianlah ia mendahulukan Efraim daripada Manasye.",
           "B": "Pada hari itu ia memberkati mereka, katanya, \"Orang Israel akan menyebut nama kalian apabila mereka memberkati, katanya, 'Kiranya Allah membuat engkau seperti Efraim dan Manasye.'\" Demikianlah ia mendahulukan Efraim daripada Manasye.",
           "R": "Jadi pada hari itu Yakub memberkati anak-anak itu. Dia berkata, \"Kalau orang Israel memberkati seseorang, mereka akan menyebut nama kalian. Mereka akan berkata, 'Semoga Allah membuat kamu seperti Efraim dan Manasye.'\" Demikianlah Yakub mendahulukan Efraim daripada Manasye."
+        },
+        "zh": {
+          "L": "那一天他祝福他们，说：“以色列要指着你祝福，说：‘愿{{god_term:神|上帝}}使你像以法莲，像玛拿西。’”他就把以法莲放在玛拿西前面。",
+          "B": "那一天他为他们祝福，说：“以色列人祝福的时候，要提起你们的名字，说：‘愿{{god_term:神|上帝}}使你像以法莲和玛拿西。’”这样，他把以法莲放在玛拿西之前。",
+          "R": "那天雅各为两个孩子祝福。他说：“以色列人为别人祝福的时候，会提到你们的名字。他们会说：‘愿{{god_term:神|上帝}}使你像以法莲和玛拿西一样。’”这样，雅各让以法莲居首位，排在玛拿西前面。"
         }
       },
       "decisions": [
@@ -4448,6 +4774,26 @@
           "reason": "The Hebrew pronoun is singular, addressed to each boy or to Joseph; Literal keeps the singular, Balanced and Readable say \"kalian\" as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480200051",
+            "o010480200052"
+          ],
+          "choice": "\"你\" (L), \"你们\" (B, R)",
+          "alternatives": [],
+          "reason": "The Hebrew \"you\" is singular but stands for both boys; Literal keeps the singular, Balanced and Readable say \"你们\", since Chinese shows the plural that English \"you\" leaves open.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4551,6 +4897,11 @@
           "L": "Dan Israel berkata kepada Yusuf, \"Lihatlah, aku akan mati, tetapi Allah akan menyertai kalian, dan {{deity_pronoun:dia|Dia}} akan membawa kalian kembali ke negeri nenek moyang kalian.",
           "B": "Israel berkata lagi kepada Yusuf, \"Aku sudah hampir mati. Tetapi Allah akan menyertai kalian semua dan akan membawa kalian kembali ke negeri nenek moyang kalian.",
           "R": "Israel juga berkata kepada Yusuf, \"Aku akan segera meninggal. Tetapi Allah akan menyertai kalian semua. Dia akan membawa kalian kembali ke negeri tempat nenek moyang kalian tinggal."
+        },
+        "zh": {
+          "L": "以色列对约瑟说：“看哪，我快要死了；{{god_term:神|上帝}}却要与你们同在，要把你们带回你们祖先的地。",
+          "B": "以色列又对约瑟说：“我的死期近了。但{{god_term:神|上帝}}会与你们大家同在，带领你们回到你们祖先的地方。",
+          "R": "以色列又告诉约瑟：“我很快就要死了。但{{god_term:神|上帝}}会和你们所有的人在一起。{{deity_pronoun:他|祂}}要带你们回到你们祖先住过的地方。"
         }
       },
       "decisions": [
@@ -4749,6 +5100,26 @@
           "reason": "Indonesian shows, as the meaning decision says, that the promise is to the whole family, not to Joseph alone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010480210101",
+            "o010480210102"
+          ],
+          "choice": "\"你们\" (plural)",
+          "alternatives": [],
+          "reason": "The Hebrew \"you\" is plural here, the whole family (meaning decision m1); Chinese \"你们\" shows it at every level. Readable's \"He will bring\" takes the deity_pronoun span where the English uses plain \"He\" at a sentence start.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4854,6 +5225,11 @@
           "L": "Dan aku memberikan kepadamu satu lereng lebih daripada saudara-saudaramu, yang kurebut dari tangan orang Amori dengan pedangku dan dengan busurku.\"",
           "B": "Dan kepadamu, lebih daripada kepada saudara-saudaramu, aku memberikan satu lereng gunung, yaitu Sikhem, yang kurebut dari orang Amori dengan pedangku dan busurku.\"",
           "R": "Dan aku memberi kamu satu bagian tanah lebih banyak daripada saudara-saudaramu: punggung bukit di Sikhem. Aku merebutnya dari orang Amori dengan pedang dan busurku.\""
+        },
+        "zh": {
+          "L": "我给你比你兄弟们多一道山岭，就是我用我的刀、用我的弓从亚摩利人手中夺来的。”",
+          "B": "我要把一块山坡，就是示剑，分给你，比你的兄弟们多一份；那是我用刀用弓从亚摩利人手中夺来的。”",
+          "R": "我要比你的兄弟多给你一份土地，就是示剑的那道山岭。那是我用我的刀和弓从亚摩利人那里夺来的。”"
         }
       },
       "decisions": [
