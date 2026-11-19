@@ -1,5 +1,5 @@
 {
- "description": "The languages of Open Word Bible. \"reading\" lists the languages the translation is made into and the site is built in, in the order the site lists them; English comes first and is served at the root, the others under /<code>/. Each has a message catalog, i18n/<code>.json, a name for every book in data/books.json and grammar words in owb/morph.py. name is the language's English name, native its own name (the footer's language switch). quotes wraps a quoted verse on a passage card; settings are the reader settings only that language has, with the labels of their options. \"original\" lists the languages the translation is made from, which scholar reviewers review (Hebrew includes the Aramaic passages). owb/languages.py reads this file.",
+ "description": "The languages of Open Word Bible. \"reading\" lists the languages the translation is made into and the site is built in, in the order the site lists them; English comes first and is served at the root, the others under /<code>/. Each has a message catalog, i18n/<code>.json, a name for every book in data/books.json and grammar words in owb/morph.py. name is the language's English name, native its own name (the footer's language switch). quotes wraps a quoted verse on a passage card; settings are the reader settings only that language has, with the labels of their options; dir is \"rtl\" for a language written right to left (left to right if absent). \"original\" lists the languages the translation is made from, which scholar reviewers review (Hebrew includes the Aramaic passages). owb/languages.py reads this file.",
  "reading": [
   {"code": "en", "name": "English", "native": "English", "quotes": "&ldquo;{}&rdquo;"},
   {"code": "es", "name": "Spanish", "native": "Español", "quotes": "&laquo;{}&raquo;",
@@ -18,6 +18,6 @@
  ],
  "original": [
   {"code": "grc", "name": "Greek"},
-  {"code": "hbo", "name": "Hebrew"}
+  {"code": "hbo", "name": "Hebrew", "dir": "rtl"}
  ]
 }

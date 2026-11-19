@@ -262,6 +262,86 @@ def langs_meta(translated):
     """The tag naming the languages a page is in, for the boot script."""
     return f'<meta name="owb-langs" content="{" ".join(translated)}">'
 
+
+# Right to left (owb/languages.py; docs/adding-a-language.md). A page in a
+# language written right to left is <html dir="rtl">. While any reading
+# language is, every page names the codes written right to left in an
+# owb-rtl tag, for web/site.js (OWBDir), and isolate_directions gives each
+# element tagged with a language its own dir where that language's direction
+# differs from what surrounds it: an Arabic verse in an English page, an
+# English fallback or a Greek word in an Arabic one. With every reading
+# language left to right, pages are as they were: Hebrew carries its own
+# dir="rtl" where it is shown.
+_TAG = re.compile(r"""<(/?)([a-zA-Z][a-zA-Z0-9-]*)((?:[^>"']|"[^"]*"|'[^']*')*)>""")
+_ATTR_LANG = re.compile(r'\slang="([^"]*)"')
+_ATTR_DIR = re.compile(r'\sdir="([^"]*)"')
+_VOID = frozenset("area base br col embed hr img input link meta source track wbr".split())
+_RAW = frozenset(("script", "style"))
+
+
+def html_dir(lang):
+    """The dir attribute of a page's <html> in lang: none for left to right."""
+    return ' dir="rtl"' if owb_languages.direction(lang) == "rtl" else ""
+
+
+def rtl_meta():
+    """The tag naming the codes written right to left, for web/site.js:
+    none while every reading language is left to right."""
+    if not owb_languages.RTL_READING:
+        return ""
+    return f'\n<meta name="owb-rtl" content="{" ".join(sorted(owb_languages.RTL))}">'
+
+
+def forward(lang):
+    """The arrow after a link that leads on ("Read&nbsp;&rarr;"), pointing
+    the way lang reads. Arrows in the catalogs are their translators'."""
+    return "&larr;" if owb_languages.direction(lang) == "rtl" else "&rarr;"
+
+
+def isolate_directions(text, base, direction=None):
+    """text (a page's body) with dir="rtl" or dir="ltr" added to each element
+    whose lang is written in the other direction from its nearest ancestor
+    with a dir (base, the page's, at the top). An element with a dir of its
+    own keeps it. Script and style elements are left as they are."""
+    direction = direction or owb_languages.direction
+    out, pos, stack = [], 0, [("", base)]
+    while True:
+        m = _TAG.search(text, pos)
+        if not m:
+            break
+        closing, name, attrs = m.group(1), m.group(2).lower(), m.group(3)
+        out.append(text[pos:m.start()])
+        pos = m.end()
+        if closing:
+            out.append(m.group())
+            names = [n for n, _ in stack]
+            if name in names[1:]:
+                del stack[len(names) - 1 - names[::-1].index(name):]
+            continue
+        around = stack[-1][1]
+        own = _ATTR_DIR.search(attrs)
+        tag = m.group()
+        if own and own.group(1) in ("ltr", "rtl"):
+            here = own.group(1)
+        elif own:
+            here = around
+        else:
+            code = _ATTR_LANG.search(attrs)
+            here = direction(code.group(1)) if code and code.group(1) else around
+            if here != around:
+                at = m.start(3) - m.start() + code.end()
+                tag = f'{tag[:at]} dir="{here}"{tag[at:]}'
+        out.append(tag)
+        if name in _RAW:
+            end = text.find(f"</{name}", pos)
+            end = len(text) if end < 0 else end
+            out.append(text[pos:end])
+            pos = end
+        elif name not in _VOID and not attrs.rstrip().endswith("/"):
+            stack.append((name, here))
+    out.append(text[pos:])
+    return "".join(out)
+
 GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
         '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83'
@@ -446,15 +526,15 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
         meta += '\n<meta name="robots" content="noindex">'
     if here is not None:
         meta += "\n" + langs_meta(translated)
-    return f"""<!doctype html>
-<html lang="{lang}">
+    text = f"""<!doctype html>
+<html lang="{lang}"{html_dir(lang)}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}{head}
 <meta name="owb-api" content="{API_URL}">{takeroot}
-<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">
+<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">{rtl_meta()}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -478,6 +558,10 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </body>
 </html>
 """
+    if not owb_languages.RTL_READING:
+        return text
+    start = text.index("<body>")
+    return text[:start] + isolate_directions(text[start:], owb_languages.direction(lang))
 
 
 def languages_label(records):
@@ -995,7 +1079,7 @@ def chapter_book_link(book, lang):
     if lang not in book_languages(book):
         return ""
     return (f'<p class="chapter-book"><a href="{url(lang, book_url(book))}">'
-            f'{t(lang, "reader.about_book", book=html.escape(BOOK_NAMES[book][lang]))}&nbsp;&rarr;</a></p>')
+            f'{t(lang, "reader.about_book", book=html.escape(BOOK_NAMES[book][lang]))}&nbsp;{forward(lang)}</a></p>')
 
 
 @functools.lru_cache(maxsize=None)
@@ -1294,7 +1378,7 @@ def chapter_notes(records, chapter, lang="en", words=None):
         attr = f' lang="{a["lang"]}"' if a["lang"] != lang else ""
         return (f' <a class="note-article" href="{esc(a["url"])}">'
                 f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
-                f'<span{attr}>{esc(a["title"], quote=False)}</span> →</a>')
+                f'<span{attr}>{esc(a["title"], quote=False)}</span> {html.unescape(forward(lang))}</a>')
     why_label = esc(catalog(lang)["compare.ui"]["why"], quote=False)
 
     def why(r, d):
@@ -2014,7 +2098,7 @@ def book_page(book, lang="en"):
 <h1>{html.escape(name)}</h1>
 <p class="dek">{display(intro["summary"])}</p>
 <p class="notice">{ui["draft"]}</p>
-<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;&rarr;</a>
+<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, edition_url(book))}">{catalog(lang)["edition"]["read"]}</a></p>
 </header>
 <div class="article-body">
@@ -2250,7 +2334,7 @@ def verse_page(vid, lang="en"):
 <p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
 {gloss}
 {why}
-<p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;&rarr;</a>
+<p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
 </article>
 {verse_ld(vid, lang, name, levels, rs)}
@@ -3480,7 +3564,7 @@ def read_page(lang="en"):
         name = BOOK_NAMES[book][lang]
         # The book's page, where it has one.
         page_link = (f'<a class="book-page-link" href="{url(lang, book_url(book))}">'
-                     f'{catalog(lang)["book_page"]["title"].replace("{book}", name)}&nbsp;&rarr;</a>'
+                     f'{catalog(lang)["book_page"]["title"].replace("{book}", name)}&nbsp;{forward(lang)}</a>'
                      if lang in book_languages(book) else "")
         testament = "old_testament" if book in refs.OT_CODES else "new_testament"
         tiles[testament].append(
@@ -5670,7 +5754,7 @@ def article_page(article, articles, lang="en"):
     contents = "".join(f'<li><a href="#{slug}">{label}</a></li>' for slug, label in toc)
     links = [(passage_label(b, c, vs, lang), next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None))
              for b, c, vs in article["passages"]]
-    read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;&rarr;</a>'
+    read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;{forward(lang)}</a>'
                    for label, href in links if href)
     passage = (f'<aside class="read-card"><h2>{t(lang, "article.read_passage")}</h2>'
                f'<p>{t(lang, "article.read_passage_text")}</p><p>{read}</p></aside>'
