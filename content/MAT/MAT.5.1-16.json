@@ -94,6 +94,11 @@
           "L": "Dan ketika melihat orang banyak itu, {{deity_pronoun:dia|Dia}} naik ke atas bukit, dan setelah {{deity_pronoun:dia|Dia}} duduk, murid-murid-{{deity_pronoun:nya|Nya}} datang kepada-{{deity_pronoun:nya|Nya}}.",
           "B": "Ketika melihat orang banyak itu, Yesus naik ke atas bukit. Dia duduk, dan para murid-{{deity_pronoun:nya|Nya}} datang kepada-{{deity_pronoun:nya|Nya}}.",
           "R": "Yesus melihat orang banyak itu, lalu {{deity_pronoun:dia|Dia}} naik ke sebuah bukit. Di sana {{deity_pronoun:dia|Dia}} duduk, dan murid-murid-{{deity_pronoun:nya|Nya}} datang kepada-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}看见群众，就登上那座山；{{deity_pronoun:他|祂}}坐下以后，{{deity_pronoun:他|祂}}的门徒来到{{deity_pronoun:他|祂}}跟前，",
+          "B": "耶稣看见群众，就上到山上。{{deity_pronoun:他|祂}}坐下来，{{deity_pronoun:他|祂}}的门徒就到{{deity_pronoun:他|祂}}那里。",
+          "R": "耶稣看见很多人，就上到一座小山上坐下来。{{deity_pronoun:他|祂}}的门徒来到{{deity_pronoun:他|祂}}身边。"
         }
       },
       "decisions": [
@@ -506,6 +511,25 @@
           "reason": "The mountain of the sermon is a hill by the lake; \"Khotbah di Bukit\" is the established Indonesian name of the sermon.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005001015"
+          ],
+          "choice": "\"门徒\" at every level",
+          "alternatives": [
+            "\"跟随的人\" (R)"
+          ],
+          "reason": "The English Readable says \"followers\"; Chinese keeps the glossary's \"门徒\", a word every reader knows, at every level through Matthew, so the disciples are not confused with the crowds who also follow.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -596,6 +620,11 @@
           "L": "Dan setelah membuka mulut-{{deity_pronoun:nya|Nya}}, {{deity_pronoun:dia|Dia}} mengajar mereka, sambil berkata:",
           "B": "Lalu {{deity_pronoun:dia|Dia}} mulai mengajar mereka:",
           "R": "Lalu {{deity_pronoun:dia|Dia}} mulai mengajar mereka. Kata-{{deity_pronoun:nya|Nya}}:"
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}张开{{deity_pronoun:他|祂}}的口，教导他们，说：",
+          "B": "{{deity_pronoun:他|祂}}就开始教导他们：",
+          "R": "{{deity_pronoun:他|祂}}开始教导他们。{{deity_pronoun:他|祂}}说："
         }
       },
       "decisions": [
@@ -735,6 +764,11 @@
           "L": "\"Berbahagialah orang yang miskin dalam roh, sebab merekalah yang empunya Kerajaan Surga.",
           "B": "\"Berbahagialah orang yang miskin di hadapan Allah: merekalah yang empunya Kerajaan Surga.",
           "R": "\"Bahagialah orang yang sadar bahwa mereka membutuhkan Allah. Allah memerintah atas hidup mereka sebagai Raja."
+        },
+        "zh": {
+          "L": "“有福的是灵里贫穷的人，因为天国属于他们。",
+          "B": "“灵里贫穷的人是有福的：天国属于他们。",
+          "R": "“知道自己贫乏、需要{{god_term:神|上帝}}的人真有福。天国是属于他们的。"
         }
       },
       "decisions": [
@@ -1380,6 +1414,90 @@
           "reason": "Literal keeps the Greek phrase; Balanced and Readable say what the meaning decision takes it to mean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003001"
+          ],
+          "choice": "\"有福的是……\" (L); \"……是有福的：\" (B); \"……真有福。\" (R)",
+          "alternatives": [
+            "\"……的人有福了\""
+          ],
+          "reason": "\"有福\" is the church's word for the happy state of those God favors. Literal keeps the Greek order, with \"blessed\" first; Balanced puts the promise after a colon, as the English Balanced does; Readable uses two short sentences. Each level keeps its pattern through 5:3-10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003003",
+            "n40005003005"
+          ],
+          "choice": "\"灵里贫穷\" (L, B); \"知道自己贫乏、需要{{god_term:神|上帝}}\" (R)",
+          "alternatives": [
+            "\"虚心\""
+          ],
+          "reason": "The poor in spirit are those who know they have nothing to offer God. \"虚心\" now means \"modest, open to advice\", which is not the sense; Readable explains, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005003001"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"上帝\" (the reader setting)"
+          ],
+          "reason": "Every word naming the one God is written as the god_term setting: \"神\" by default, \"上帝\" for readers who choose it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-4",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005003010",
+            "n40005003012"
+          ],
+          "choice": "\"天国\"",
+          "alternatives": [
+            "\"天上的国\""
+          ],
+          "reason": "The glossary's term for Matthew's \"kingdom of the heavens\", kept at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1468,6 +1586,11 @@
           "L": "Berbahagialah orang yang berdukacita, sebab mereka akan dihibur.",
           "B": "Berbahagialah orang yang berdukacita: mereka akan dihibur.",
           "R": "Bahagialah orang yang sedih, karena Allah akan menghibur mereka."
+        },
+        "zh": {
+          "L": "有福的是哀恸的人，因为他们将得安慰。",
+          "B": "哀伤的人是有福的：他们将得到安慰。",
+          "R": "伤心难过的人真有福。{{god_term:神|上帝}}会安慰他们。"
         }
       },
       "decisions": [
@@ -1654,6 +1777,11 @@
           "L": "Berbahagialah orang yang lemah lembut, sebab mereka akan mewarisi bumi.",
           "B": "Berbahagialah orang yang lemah lembut: mereka akan mewarisi bumi.",
           "R": "Bahagialah orang yang rendah hati dan lembut, karena Allah akan memberikan bumi kepada mereka."
+        },
+        "zh": {
+          "L": "有福的是温柔的人，因为他们将承受这地。",
+          "B": "温和的人是有福的：他们将承受大地。",
+          "R": "温和谦卑的人真有福。{{god_term:神|上帝}}要把大地赐给他们作产业。"
         }
       },
       "decisions": [
@@ -1855,6 +1983,27 @@
           "reason": "\"柔和\" is the familiar church word but rare in speech. Balanced uses a current word for the quality (m2), and Readable gives both its sides, gentleness and humility.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005005003"
+          ],
+          "choice": "\"温柔\" (L); \"温和\" (B); \"温和谦卑\" (R)",
+          "alternatives": [
+            "\"谦和\""
+          ],
+          "reason": "The meek are gentle and humble, not grasping or violent. \"温柔\" can sound tender or soft-spoken today, so Balanced and Readable use words for the quality meant, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1947,6 +2096,11 @@
           "L": "Berbahagialah orang yang lapar dan haus akan kebenaran, sebab mereka akan dikenyangkan.",
           "B": "Berbahagialah orang yang lapar dan haus akan kebenaran: mereka akan dipuaskan.",
           "R": "Bahagialah orang yang sangat ingin melakukan apa yang benar di mata Allah, seperti orang lapar ingin makan dan orang haus ingin minum. Allah akan memuaskan keinginan mereka."
+        },
+        "zh": {
+          "L": "有福的是对义又饥又渴的人，因为他们将被填饱。",
+          "B": "如饥似渴地追求义的人是有福的：他们将得到满足。",
+          "R": "渴望义的人，就像饥饿的人渴望食物、口渴的人渴望水一样，这样的人真有福。{{god_term:神|上帝}}会让他们得到所渴望的一切。"
         }
       },
       "decisions": [
@@ -2125,6 +2279,28 @@
           "reason": "\"義\" is a written word that young readers may not know. Readable says what it is, right living before God (m1), and keeps the same wording wherever righteousness comes in the sermon.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005006007"
+          ],
+          "choice": "\"义\"",
+          "alternatives": [
+            "\"公义\"",
+            "\"正义\""
+          ],
+          "reason": "\"义\" is the key term for righteousness through Matthew: right living before God, and God setting things right. Readable keeps it and spells out the picture of hunger and thirst, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2213,6 +2389,11 @@
           "L": "Berbahagialah orang yang murah hati, sebab mereka akan dikasihani.",
           "B": "Berbahagialah orang yang berbelas kasihan: mereka akan menerima belas kasihan.",
           "R": "Bahagialah orang yang menunjukkan belas kasihan kepada orang lain, karena Allah akan berbelas kasihan kepada mereka."
+        },
+        "zh": {
+          "L": "有福的是怜悯人的人，因为他们将蒙怜悯。",
+          "B": "怜悯人的人是有福的：他们将得到怜悯。",
+          "R": "对别人有怜悯心的人真有福。{{god_term:神|上帝}}会怜悯他们。"
         }
       },
       "decisions": [
@@ -2364,6 +2545,11 @@
           "L": "Berbahagialah orang yang suci hatinya, sebab mereka akan melihat Allah.",
           "B": "Berbahagialah orang yang suci hatinya: mereka akan melihat Allah.",
           "R": "Bahagialah orang yang hatinya bersih, karena mereka akan melihat Allah."
+        },
+        "zh": {
+          "L": "有福的是心里纯洁的人，因为他们将看见{{god_term:神|上帝}}。",
+          "B": "内心纯洁的人是有福的：他们将看见{{god_term:神|上帝}}。",
+          "R": "心里纯洁的人真有福。他们会看见{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -2530,6 +2716,11 @@
           "L": "Berbahagialah orang yang membawa damai, sebab mereka akan disebut anak-anak Allah.",
           "B": "Berbahagialah orang yang mendamaikan: mereka akan disebut anak-anak Allah.",
           "R": "Bahagialah orang yang mengusahakan perdamaian, karena Allah akan menyebut mereka anak-anak-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "有福的是缔造和平的人，因为他们将被称为{{god_term:神|上帝}}的{{gender:儿女|儿子}}。",
+          "B": "促成和平的人是有福的：他们将被称为{{god_term:神|上帝}}的{{gender:儿女|儿子}}。",
+          "R": "努力使人与人和好的人真有福。{{god_term:神|上帝}}会称他们为{{deity_pronoun:他|祂}}的{{gender:儿女|儿子}}。"
         }
       },
       "decisions": [
@@ -2862,6 +3053,25 @@
           "reason": "\"anak-anak\" means sons and daughters, so the English span {{gender:children|sons}} has no counterpart here or in 5:45.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005009006"
+          ],
+          "choice": "{{gender:儿女|儿子}}",
+          "alternatives": [],
+          "reason": "As the English: sons and daughters are meant, so the inclusive \"儿女\" is the default and the traditional \"儿子\" the alternative. Only the noun is spanned, after \"{{god_term:神|上帝}}的\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2956,6 +3166,11 @@
           "L": "Berbahagialah orang yang dianiaya oleh karena kebenaran, sebab merekalah yang empunya Kerajaan Surga.",
           "B": "Berbahagialah orang yang dianiaya karena kebenaran: merekalah yang empunya Kerajaan Surga.",
           "R": "Bahagialah orang yang dianiaya karena mereka melakukan apa yang benar di mata Allah. Allah memerintah atas hidup mereka sebagai Raja."
+        },
+        "zh": {
+          "L": "有福的是因义而被迫害的人，因为天国属于他们。",
+          "B": "为了义而遭受迫害的人是有福的：天国属于他们。",
+          "R": "因为行义而受到恶待的人真有福。天国是属于他们的。"
         }
       },
       "decisions": [
@@ -3133,6 +3348,11 @@
           "L": "Berbahagialah kalian apabila mereka mencela kalian dan menganiaya [kalian] dan mengatakan segala yang jahat terhadap kalian dengan berdusta oleh karena {{deity_pronoun:aku|Aku}}.",
           "B": "Berbahagialah kalian apabila orang mencaci kalian, menganiaya kalian, dan menyebarkan segala macam fitnah tentang kalian karena {{deity_pronoun:aku|Aku}}.",
           "R": "Bahagialah kalian kalau orang menghina kalian, menganiaya kalian, dan menyebarkan segala macam kebohongan yang jahat tentang kalian karena kalian mengikut {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "当人们为了我的缘故侮辱你们、迫害[你们]，并且说谎、用一切恶言攻击你们的时候，你们是有福的。",
+          "B": "当人们因为我的缘故辱骂你们、迫害你们，又散布各种恶毒的谎言中伤你们的时候，你们是有福的。",
+          "R": "如果人们因为你们跟随我，就说你们的坏话，伤害你们，编造谎言来攻击你们，你们真有福。"
         }
       },
       "decisions": [
@@ -3312,6 +3532,25 @@
           "reason": "Literal keeps the ninth saying in the same blessing-first form as the eight before it, and puts the \"when\" clause after it as the Greek does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005011016"
+          ],
+          "choice": "\"我\" with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The English spans \"Me\" when Jesus speaks of himself. Chinese has no reverent first person, so \"我\" takes no span (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3413,6 +3652,11 @@
           "L": "Bersukacitalah dan bergembiralah, sebab besarlah upah kalian di surga, sebab demikianlah mereka telah menganiaya para nabi sebelum kalian.",
           "B": "Bersukacitalah dan bergembiralah, karena upah yang besar menanti kalian di surga. Begitulah dulu mereka menganiaya para nabi sebelum kalian.",
           "R": "Bergembiralah dan bersukacitalah, karena Allah akan memberi kalian upah yang besar di surga. Ingatlah, nabi-nabi yang hidup sebelum kalian juga dianiaya seperti itu."
+        },
+        "zh": {
+          "L": "你们要喜乐，要欢欣，因为你们的赏赐在天上是大的；人们正是这样迫害了你们以前的先知。",
+          "B": "你们要欢喜，要庆贺，因为有丰厚的赏赐在天上等着你们。从前的先知也曾这样被人迫害。",
+          "R": "你们要高兴，要庆祝！你们在天上会得到很大的赏赐。在你们以前活着的先知，也受到人们同样的对待。"
         }
       },
       "decisions": [
@@ -3624,6 +3868,28 @@
           "reason": "The reward is God's gift, not wages (m1), so \"報酬\" is avoided. Readable uses the everyday word for a prize given.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005012006"
+          ],
+          "choice": "\"赏赐\"",
+          "alternatives": [
+            "\"奖赏\"",
+            "\"报酬\""
+          ],
+          "reason": "The reward is what God gives and keeps for his people; \"赏赐\" says it is given, not earned like a wage or won like a prize. Kept through Matthew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3720,6 +3986,11 @@
           "L": "Kalian adalah garam dunia; tetapi jika garam menjadi tawar, dengan apakah ia akan diasinkan?",
           "B": "Kalian adalah garam bagi bumi. Tetapi jika garam menjadi tawar, apa yang dapat membuatnya asin kembali?",
           "R": "Kalian seperti garam bagi dunia. Tetapi kalau garam sudah tidak asin lagi, bagaimana garam itu bisa dibuat asin kembali?"
+        },
+        "zh": {
+          "L": "你们是大地的盐；但如果盐变得无味了，要用什么来使它有咸味呢？",
+          "B": "你们是这地上的盐。但如果盐淡而无味，还能用什么让它重新变咸呢？",
+          "R": "你们就像盐，对世上所有的人都有用处。但是盐如果失去了咸味，就没有办法让它再变咸了。"
         }
       },
       "decisions": [
@@ -3874,6 +4145,11 @@
           "L": "Ia tidak berguna lagi untuk apa pun selain dibuang ke luar dan diinjak-injak orang.",
           "B": "Garam itu tidak berguna lagi selain untuk dibuang dan diinjak-injak orang.",
           "R": "Garam itu tidak ada gunanya lagi. Garam itu hanya dibuang ke jalan dan diinjak-injak orang."
+        },
+        "zh": {
+          "L": "它不再有任何用处，只好被扔出去，任人踩踏。",
+          "B": "它什么用也没有了，只能被扔掉，任人踩在脚下。",
+          "R": "它一点用处也没有。人们会把它扔掉，在上面走来走去。"
         }
       },
       "decisions": [
@@ -4057,6 +4333,25 @@
           "reason": "The English needs a span for people/men. Japanese \"人々\" already means people in general, so no span is needed; the same holds for \"人々\" in 5:16 and through the sermon.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40005013026"
+          ],
+          "choice": "\"人\" with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The English Literal spans \"people / men\". Chinese \"人\" already includes everyone, so it takes no span; the same holds in 5:16.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4145,6 +4440,11 @@
           "L": "Kalian adalah terang dunia.",
           "B": "Kalian adalah terang dunia.",
           "R": "Kalian seperti terang bagi dunia."
+        },
+        "zh": {
+          "L": "你们是世界的光。",
+          "B": "你们是世界的光。",
+          "R": "你们就像照亮整个世界的光。"
         }
       },
       "decisions": [
@@ -4277,6 +4577,11 @@
           "L": "Sebuah kota yang terletak di atas bukit tidak dapat disembunyikan.",
           "B": "Kota yang dibangun di atas bukit tidak dapat disembunyikan.",
           "R": "Kota yang dibangun di atas bukit tidak bisa disembunyikan."
+        },
+        "zh": {
+          "L": "一座坐落在山上的城，是无法被隐藏的。",
+          "B": "建在山顶上的城镇无法遮掩。",
+          "R": "建在山顶上的城镇，人人都看得见。"
         }
       },
       "decisions": [
@@ -4423,6 +4728,11 @@
           "L": "Lagi pula orang tidak menyalakan pelita lalu meletakkannya di bawah gantang, melainkan di atas kaki pelita, dan pelita itu menerangi semua orang di dalam rumah.",
           "B": "Tidak ada orang yang menyalakan pelita lalu menutupinya dengan gantang; pelita itu ditaruh di atas kaki pelita, supaya menerangi semua orang di dalam rumah.",
           "R": "Tidak ada orang yang menyalakan pelita lalu menutupinya dengan keranjang. Pelita itu pasti ditaruh di tempat yang tinggi, supaya menerangi semua orang di rumah itu."
+        },
+        "zh": {
+          "L": "人们也不会点了灯，却把它放在量谷的斗下面，而是放在灯台上，好照亮屋里的每一个人。",
+          "B": "没有人点了灯却用筐子把它盖住；灯要放在灯台上，才能照亮屋里所有的人。",
+          "R": "人们不会点了灯，又用碗把它盖起来。他们会把灯放在高高的灯台上，让它照亮屋里的每一个人。"
         }
       },
       "decisions": [
@@ -4712,6 +5022,27 @@
           "reason": "\"gantang\" is the Indonesian grain measure, a close match for the modios; Readable says a plain basket.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005015009"
+          ],
+          "choice": "\"量谷的斗\" (L); \"筐子\" (B); \"碗\" (R)",
+          "alternatives": [
+            "\"斗\""
+          ],
+          "reason": "The Greek names a grain measure. Literal says so; Balanced and Readable name a common container, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4817,6 +5148,11 @@
           "L": "Demikianlah hendaknya terang kalian bercahaya di depan orang, supaya mereka melihat perbuatan-perbuatan kalian yang baik dan memuliakan Bapa kalian yang di surga.",
           "B": "Demikian juga terang kalian harus bercahaya di depan orang, supaya mereka melihat perbuatan baik kalian dan memuliakan Bapa kalian di surga.",
           "R": "Begitu juga, biarlah terang kalian bersinar di depan semua orang, supaya mereka melihat perbuatan baik kalian dan memuji Bapa kalian di surga."
+        },
+        "zh": {
+          "L": "同样，要让你们的光在众人面前发亮，使他们看到你们美好的行为，并且荣耀你们那在天上的父。",
+          "B": "同样，你们的光必须照在人们看得见的地方，好让他们看见你们所做的善事，使你们在天上的父得到荣耀。",
+          "R": "同样，你们也要让自己的光照出来，让人看见。他们看见你们所做的好事，就会使你们在天上的父得着荣耀。"
         }
       },
       "decisions": [
@@ -5064,6 +5400,48 @@
           "choice": "\"Bapa kalian\" for \"your Father\"",
           "alternatives": [],
           "reason": "As the style guide sets (section 5): \"kalian\" as possessor, since \"Bapamu\" would read as singular.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005016018",
+            "n40005016023"
+          ],
+          "choice": "\"你们（那）在天上的父\"",
+          "alternatives": [
+            "\"你们天上的父\""
+          ],
+          "reason": "Matthew's \"your Father in the heavens\" is kept as one phrase through the Sermon on the Mount; \"天上\" stands for the Greek plural, as in \"天国\". Literal adds \"那\" for the Greek article.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40005016016"
+          ],
+          "choice": "\"使……得到荣耀\"",
+          "alternatives": [
+            "\"荣耀\" as a verb"
+          ],
+          "reason": "Balanced and Readable use the noun \"荣耀\", the key term, as the English uses \"give glory\".",
           "uncertain": false,
           "footnote": false
         }

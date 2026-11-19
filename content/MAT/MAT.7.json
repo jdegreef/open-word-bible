@@ -83,6 +83,11 @@
           "L": "Janganlah kalian menghakimi, supaya kalian tidak dihakimi.",
           "B": "Berhentilah menghakimi orang lain, supaya kalian tidak dihakimi.",
           "R": "Jangan menghakimi orang lain, supaya Allah tidak menghakimi kalian."
+        },
+        "zh": {
+          "L": "你们不要论断，免得你们被论断。",
+          "B": "不要再论断别人，这样你们就不会被论断。",
+          "R": "不要审判别人，{{god_term:神|上帝}}就不会审判你们。"
         }
       },
       "decisions": [
@@ -279,6 +284,47 @@
           "reason": "The passive points to God (m2), and Readable names him, as the English does. The respect form \"裁かれない\" would read as the passive again, so Readable says \"なさらない\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007001005"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting: 神 by default, 上帝 for readers who choose it. The meaning does not change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40007001002"
+          ],
+          "choice": "\"论断\" (L, B); \"审判\" (R)",
+          "alternatives": [
+            "\"评判\"",
+            "\"定罪\""
+          ],
+          "reason": "\"论断\" is passing judgment on another person, the sense here; Readable uses the plainer \"审判\" because it names God as the judge.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -374,6 +420,11 @@
           "L": "Sebab dengan penghakiman yang kalian pakai untuk menghakimi, kalian akan dihakimi, dan dengan ukuran yang kalian pakai untuk mengukur, akan diukurkan kepada kalian.",
           "B": "Sebab sebagaimana kalian menghakimi orang lain, demikianlah kalian akan dihakimi, dan ukuran yang kalian pakai bagi mereka akan dipakai bagi kalian.",
           "R": "Sebab Allah akan menghakimi kalian dengan cara yang sama seperti kalian menghakimi orang lain. Ukuran yang kalian pakai untuk orang lain akan dipakai juga untuk kalian."
+        },
+        "zh": {
+          "L": "因为你们用什么判断来论断人，也必用什么判断被论断；你们用什么量器量给人，也必用什么量器量给你们。",
+          "B": "你们怎样论断别人，也会怎样被论断；你们用什么尺度待人，别人也会用什么尺度待你们。",
+          "R": "{{god_term:神|上帝}}会用你们审判别人的方式来审判你们。{{deity_pronoun:他|祂}}会用你们对待别人的标准来对待你们。"
         }
       },
       "decisions": [
@@ -490,6 +541,25 @@
           "reason": "The measure is the proverb of the grain market (m1), not a unit, and the wording follows Mark 4:24 (\"あなたがたが量るその量りで、あなたがたにも量られ\"), where Matthew has the same Greek. Readable says what the measure stands for, the standard used for others.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007002012"
+          ],
+          "choice": "\"{{deity_pronoun:他|祂}}\" for the English \"He\"",
+          "alternatives": [
+            "plain \"他\""
+          ],
+          "reason": "The English starts the sentence with a capital \"He\" for God, with no span; Chinese has no capitals, so the span is written.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -593,6 +663,11 @@
           "L": "Dan mengapa engkau melihat selumbar di mata saudaramu, sedangkan balok di matamu sendiri tidak engkau perhatikan?",
           "B": "Mengapa engkau memperhatikan selumbar di mata saudaramu, tetapi tidak pernah memperhatikan balok di matamu sendiri?",
           "R": "Kenapa kamu memperhatikan serpihan kayu kecil di mata saudaramu, tetapi balok besar di matamu sendiri tidak kamu perhatikan?"
+        },
+        "zh": {
+          "L": "为什么你看见你{{gender:弟兄或姐妹|弟兄}}眼中的木屑，却不察觉你自己眼中的梁木呢？",
+          "B": "为什么你盯着你{{gender:弟兄或姐妹|弟兄}}眼中的木屑，却从来不留意你自己眼中的梁木呢？",
+          "R": "为什么你注意到你{{gender:弟兄或姐妹|弟兄}}眼中的一点灰尘，却没有注意到你自己眼中的一大块木头呢？"
         }
       },
       "decisions": [
@@ -1079,6 +1154,27 @@
           "reason": "\"saudara\" is a brother or a sister, so the English span has no counterpart in 7:3-5. \"selumbar\" is the KBBI word for a splinter; Readable says it plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007003011"
+          ],
+          "choice": "{{gender:弟兄或姐妹|弟兄}}",
+          "alternatives": [
+            "{{gender:弟兄姐妹|弟兄}}"
+          ],
+          "reason": "The style guide's span for a fellow believer, inclusive by default, as the English has it. One person is meant, so \"弟兄或姐妹\" rather than \"弟兄姐妹\", which reads as a group; the same through 7:5 and wherever Matthew speaks of a single fellow believer.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1183,6 +1279,11 @@
           "L": "Atau bagaimana engkau dapat berkata kepada saudaramu, 'Biarlah aku mengeluarkan selumbar itu dari matamu,' padahal ada balok di dalam matamu?",
           "B": "Bagaimana engkau dapat berkata kepada saudaramu, 'Biar aku mengeluarkan selumbar itu dari matamu,' padahal di matamu sendiri ada balok?",
           "R": "Bagaimana kamu bisa berkata kepada saudaramu, 'Sini, aku keluarkan serpihan kayu dari matamu,' padahal di matamu sendiri ada balok?"
+        },
+        "zh": {
+          "L": "或者你怎能对你{{gender:弟兄或姐妹|弟兄}}说‘让我把你眼中的木屑取出来’，看哪，梁木[却]在你自己的眼中呢？",
+          "B": "你自己眼中一直有梁木，怎么能对你{{gender:弟兄或姐妹|弟兄}}说‘让我把你眼中的木屑取出来’呢？",
+          "R": "你自己眼中有一大块木头，怎么能对你{{gender:弟兄或姐妹|弟兄}}说‘让我帮你把眼中的灰尘弄出来’呢？"
         }
       },
       "decisions": [
@@ -1305,6 +1406,26 @@
           "reason": "The settled form for the pointing word is \"見なさい\", not \"見よ\". Balanced and Readable turn it into a contrast, as the English does, which Japanese puts first in the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40007004016"
+          ],
+          "choice": "the beam in your own eye put first",
+          "alternatives": [
+            "the beam last, after the quotation"
+          ],
+          "reason": "Chinese puts the circumstance \"when all the time there is a beam\" before the question it qualifies.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1408,6 +1529,11 @@
           "L": "Hai orang munafik, keluarkanlah dahulu balok dari matamu, dan kemudian engkau akan melihat dengan jelas untuk mengeluarkan selumbar dari mata saudaramu.",
           "B": "Hai orang munafik! Keluarkanlah dahulu balok dari matamu, dan engkau akan melihat dengan jelas untuk mengeluarkan selumbar dari mata saudaramu.",
           "R": "Hai orang munafik! Keluarkan dulu balok dari matamu. Sesudah itu kamu bisa melihat dengan jelas untuk mengeluarkan serpihan kayu dari mata saudaramu."
+        },
+        "zh": {
+          "L": "假冒为善的人！先把梁木从你自己眼中取出来，然后你才能看清楚，把你{{gender:弟兄或姐妹|弟兄}}眼中的木屑取出来。",
+          "B": "你这假冒为善的人！先把梁木从你自己眼中取出来，然后你才看得清楚，能把你{{gender:弟兄或姐妹|弟兄}}眼中的木屑取出来。",
+          "R": "你只是在装好人！先把木头从你自己眼中取出来，然后你才看得清楚，能帮你{{gender:弟兄或姐妹|弟兄}}把眼中的灰尘弄出来。"
         }
       },
       "decisions": [
@@ -1551,6 +1677,46 @@
           "reason": "The English Readable has a span on 'their/his eye'. Russian does not need the possessive here, so the sentence keeps only the span on 'брат'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40007005001"
+          ],
+          "choice": "\"假冒为善的人\" (L, B); \"你只是在装好人\" (R)",
+          "alternatives": [
+            "\"伪君子\" at R"
+          ],
+          "reason": "The glossary's phrase at Literal and Balanced; Readable says what a hypocrite does, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007005021"
+          ],
+          "choice": "no pronoun for \"their / his eye\"",
+          "alternatives": [
+            "\"他的眼\" with a span"
+          ],
+          "reason": "The English Readable spans \"their / his\". Chinese leaves the pronoun out, so there is nothing to switch.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1658,6 +1824,11 @@
           "L": "Janganlah kalian memberikan barang yang kudus kepada anjing, dan janganlah kalian melemparkan mutiara kalian kepada babi, supaya jangan diinjak-injaknya dengan kakinya, lalu ia berbalik mengoyak kalian.",
           "B": "Jangan memberikan barang yang kudus kepada anjing, dan jangan melemparkan mutiara kalian kepada babi. Nanti mereka menginjak-injaknya, lalu berbalik menyerang dan mencabik-cabik kalian.",
           "R": "Jangan memberikan barang yang kudus kepada anjing, dan jangan melemparkan mutiara kalian kepada babi. Nanti binatang-binatang itu hanya menginjak-injaknya, lalu berbalik menyerang kalian."
+        },
+        "zh": {
+          "L": "不要把圣洁的东西给狗，也不要把你们的珍珠扔在猪的面前，免得它们用脚践踏珍珠，又转过身来把你们撕碎。",
+          "B": "别把圣洁之物给狗，也别把你们的珍珠抛给猪。它们会把珍珠踩在脚下，再转过来把你们撕成碎片。",
+          "R": "不要把圣洁的东西给狗。不要把你们的珍珠扔到猪面前。它们只会把珍珠踩在脚下，然后转过身来攻击你们。"
         }
       },
       "decisions": [
@@ -1884,6 +2055,11 @@
           "L": "Mintalah, dan akan diberikan kepada kalian; carilah, dan kalian akan mendapat; ketuklah, dan akan dibukakan bagi kalian.",
           "B": "Teruslah meminta, dan kalian akan menerima. Teruslah mencari, dan kalian akan menemukan. Teruslah mengetuk, dan pintu akan dibukakan bagi kalian.",
           "R": "Teruslah meminta kepada Allah, dan {{deity_pronoun:dia|Dia}} akan memberi kalian. Teruslah mencari, dan kalian akan menemukan. Teruslah mengetuk, dan pintu akan dibukakan untuk kalian."
+        },
+        "zh": {
+          "L": "你们要祈求，就会得到赐予；要寻找，就会找到；要叩门，门就会向你们打开。",
+          "B": "你们要不断地求，就会得到；要不断地找，就会找到；要不断地敲门，门就会为你们打开。",
+          "R": "你们要一直向{{god_term:神|上帝}}求，{{deity_pronoun:他|祂}}就会给你们。要一直去找，就会找到。要一直敲门，门就会为你们打开。"
         }
       },
       "decisions": [
@@ -2228,6 +2404,11 @@
           "L": "Sebab setiap orang yang meminta, menerima, dan yang mencari, mendapat, dan bagi yang mengetuk, akan dibukakan.",
           "B": "Sebab setiap orang yang meminta akan menerima, setiap orang yang mencari akan menemukan, dan bagi setiap orang yang mengetuk, pintu akan dibukakan.",
           "R": "Sebab setiap orang yang meminta akan menerima, orang yang mencari akan menemukan, dan bagi orang yang mengetuk, pintu akan dibukakan."
+        },
+        "zh": {
+          "L": "因为每一个祈求的人都会得到，那寻找的会找到，那叩门的，门会向他打开。",
+          "B": "因为求的人都会得到，找的人都会找到，敲门的人，门就会为他打开。",
+          "R": "每个一直求的人都会得到。每个一直找的人都会找到。每个一直敲门的人，门都会为他打开。"
         }
       },
       "decisions": [
@@ -2356,6 +2537,11 @@
           "L": "Atau siapakah di antara kalian, yang jika anaknya meminta roti, akan memberi dia batu?",
           "B": "Adakah di antara kalian yang memberi anaknya batu, kalau anak itu meminta roti?",
           "R": "Kalau anak kalian meminta roti, apakah kalian akan memberi dia batu?"
+        },
+        "zh": {
+          "L": "或者你们中间有哪一个人，{{gender:孩子|儿子}}向他要饼，反倒给一块石头呢？",
+          "B": "你们当中有谁会在{{gender:孩子|儿子}}要饼的时候，给一块石头呢？",
+          "R": "假如你的{{gender:孩子|儿子}}向你要饼，你不会给一块石头吧？"
         }
       },
       "decisions": [
@@ -2703,6 +2889,28 @@
           "reason": "\"anak\" and \"dia\" are a son or a daughter, so the English spans in 7:9-10 have no counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007009010",
+            "n40007009016"
+          ],
+          "choice": "{{gender:孩子|儿子}}, and no pronoun for \"them / him\"",
+          "alternatives": [
+            "\"他\" with a span"
+          ],
+          "reason": "The child is spanned as in the English, since Chinese has the two words \"孩子\" and \"儿子\". The English pronoun spans become no pronoun in Chinese, so there is nothing to switch; likewise \"人\" for \"people / men\" (7:12) needs no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2793,6 +3001,11 @@
           "L": "Atau jika ia meminta ikan, akan memberi dia ular?",
           "B": "Atau memberinya ular, kalau ia meminta ikan?",
           "R": "Atau kalau dia meminta ikan, apakah kalian akan memberi dia ular?"
+        },
+        "zh": {
+          "L": "或者[孩子]要鱼，[你们]会给一条蛇吗？",
+          "B": "或者在孩子要鱼的时候，给一条蛇呢？",
+          "R": "如果孩子要鱼，你也不会给一条蛇！"
         }
       },
       "decisions": [
@@ -2942,6 +3155,11 @@
           "L": "Jadi jika kalian yang jahat tahu memberikan pemberian yang baik kepada anak-anak kalian, terlebih lagi Bapa kalian yang di surga akan memberikan yang baik kepada mereka yang meminta kepada-{{deity_pronoun:nya|Nya}}.",
           "B": "Jadi jika kalian yang jahat ini tahu memberikan pemberian yang baik kepada anak-anak kalian, terlebih lagi Bapa kalian di surga akan memberikan yang baik kepada orang yang meminta kepada-{{deity_pronoun:nya|Nya}}!",
           "R": "Kalian ini orang jahat, tetapi kalian tahu memberikan yang baik kepada anak-anak kalian. Apalagi Bapa kalian di surga! Dia pasti memberikan yang baik kepada orang yang meminta kepada-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "那么，你们既是恶的，还知道把好的礼物给你们的儿女，你们那在天上的父，把好东西赐给求{{deity_pronoun:他|祂}}的人，又该多得多呢！",
+          "B": "你们本是有罪的人，尚且懂得把好礼物送给自己的儿女，那么你们在天上的父，更会把美好的东西赐给求{{deity_pronoun:他|祂}}的人！",
+          "R": "你们是有罪的人，但你们还是知道把好东西给自己的孩子。所以你们可以确信，你们在天上的父一定会把好东西赐给求{{deity_pronoun:他|祂}}的人。"
         }
       },
       "decisions": [
@@ -3198,6 +3416,11 @@
           "L": "Jadi segala sesuatu yang kalian kehendaki supaya orang lakukan kepada kalian, demikian juga lakukanlah kepada mereka, sebab inilah [isi] hukum Taurat dan kitab para nabi.",
           "B": "Jadi dalam segala hal, perlakukanlah orang lain sebagaimana kalian ingin diperlakukan oleh mereka, sebab itulah inti hukum Taurat dan kitab para nabi.",
           "R": "Jadi perlakukanlah orang lain seperti kalian ingin diperlakukan oleh mereka. Itulah inti dari hukum Taurat dan ajaran para nabi."
+        },
+        "zh": {
+          "L": "所以，凡是你们希望人对你们做的一切，你们也要照样对他们做；因为这就是律法和先知。",
+          "B": "所以，在一切事上，你们希望别人如何对待你们，你们就该那样去对待他们，因为律法和先知书的要旨就在于此。",
+          "R": "你们希望别人为你们做的每一件事，都要先为别人去做。摩西的律法和先知的教导，说的全是这一点。"
         }
       },
       "decisions": [
@@ -3440,6 +3663,28 @@
           "reason": "The English needs a people/men span for the Greek's \"men\"; the Japanese words for people are already inclusive, so no span is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40007012020",
+            "n40007012023"
+          ],
+          "choice": "\"律法和先知\" (L); \"律法和先知书\" (B); \"摩西的律法和先知的教导\" (R)",
+          "alternatives": [
+            "\"律法和先知\" at every level"
+          ],
+          "reason": "The phrase names the Scriptures. Balanced says \"先知书\" so it is heard as the books; Readable says what both are, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3547,6 +3792,11 @@
           "L": "Masuklah melalui pintu yang sempit, sebab lebarlah pintu dan luaslah jalan yang menuju kepada kebinasaan, dan banyak orang yang masuk melaluinya.",
           "B": "Masuklah melalui pintu yang sempit. Pintu yang menuju kepada kebinasaan itu lebar dan jalannya mudah, dan banyak orang masuk melaluinya.",
           "R": "Masuklah melalui pintu yang sempit. Pintu dan jalan yang menuju kepada kebinasaan itu lebar dan mudah dilalui. Banyak orang masuk melalui pintu itu."
+        },
+        "zh": {
+          "L": "要从窄门进入；因为那门宽，那路阔，通向毁灭，从它进去的人多；",
+          "B": "要从窄门进去。通向毁灭的门是宽的，路是好走的，从那里进去的人很多。",
+          "R": "要从窄门进去。通向灭亡的门很宽，路也好走，很多人走那条路。"
         }
       },
       "decisions": [
@@ -3787,6 +4037,11 @@
           "L": "Karena sempitlah pintu dan sesaklah jalan yang menuju kepada kehidupan, dan sedikit orang yang menemukannya.",
           "B": "Tetapi pintu yang menuju kepada kehidupan itu sempit dan jalannya sukar, dan hanya sedikit orang yang menemukannya.",
           "R": "Tetapi pintu yang menuju kepada hidup itu sempit dan jalannya sulit. Hanya sedikit orang yang menemukannya."
+        },
+        "zh": {
+          "L": "因为那门窄，那路难行，通向生命，找到它的人少。",
+          "B": "但通向生命的门是窄的，路是难走的，只有少数人找得到。",
+          "R": "但通向生命的门很窄，路也难走。只有很少的人找得到。"
         }
       },
       "decisions": [
@@ -3979,6 +4234,11 @@
           "L": "Waspadalah terhadap nabi-nabi palsu, yang datang kepada kalian dengan menyamar seperti domba, tetapi di dalamnya mereka adalah serigala yang buas.",
           "B": "Waspadalah terhadap nabi-nabi palsu. Mereka datang kepada kalian dengan rupa seperti domba, tetapi sebenarnya mereka serigala yang buas.",
           "R": "Hati-hati terhadap nabi-nabi palsu. Mereka datang kepada kalian dan kelihatan baik seperti domba, padahal sebenarnya mereka seperti serigala yang ganas."
+        },
+        "zh": {
+          "L": "你们要提防那些假先知，他们穿着羊的衣服来到你们这里，内里却是贪婪的狼。",
+          "B": "要提防假先知。他们来到你们中间，看上去像羊，骨子里却是饥饿的狼。",
+          "R": "要小心那些自称替{{god_term:神|上帝}}说话、其实不是的人。他们来到你们中间，看起来像羊一样温和，里头却像饿狼一样。"
         }
       },
       "decisions": [
@@ -4248,6 +4508,11 @@
           "L": "Dari buahnya kalian akan mengenal mereka.",
           "B": "Kalian akan mengenal mereka dari buah hidup mereka.",
           "R": "Kalian akan mengenal mereka dari perbuatan mereka."
+        },
+        "zh": {
+          "L": "你们会借着他们的果子认出他们。",
+          "B": "从他们生命结出的果子，你们就能认识他们。",
+          "R": "看他们做的事，你们就会知道他们是什么样的人。"
         }
       },
       "decisions": [
@@ -4398,6 +4663,11 @@
           "L": "Apakah orang memetik buah anggur dari semak duri atau buah ara dari rumput duri?",
           "B": "Apakah orang memetik buah anggur dari semak duri, atau buah ara dari tumbuhan berduri?",
           "R": "Orang tidak bisa memetik buah anggur dari semak berduri atau buah ara dari rumput berduri, bukan?"
+        },
+        "zh": {
+          "L": "人难道从荆棘上摘葡萄，或从蒺藜上摘无花果吗？",
+          "B": "人会从荆棘丛中采到葡萄，或从蒺藜里采到无花果吗？",
+          "R": "人不会从荆棘丛里摘到葡萄，也不会从野草里摘到无花果。"
         }
       },
       "decisions": [
@@ -4554,6 +4824,11 @@
           "L": "Demikianlah setiap pohon yang baik menghasilkan buah yang baik, tetapi pohon yang buruk menghasilkan buah yang buruk.",
           "B": "Demikian juga setiap pohon yang sehat menghasilkan buah yang baik, dan pohon yang tidak sehat menghasilkan buah yang buruk.",
           "R": "Begitu juga, pohon yang sehat menghasilkan buah yang baik, dan pohon yang sakit menghasilkan buah yang buruk."
+        },
+        "zh": {
+          "L": "同样，每一棵好树都结出好的果子，那坏的树却结出坏的果子。",
+          "B": "同样，健康的树都结好果子，有病的树却结坏果子。",
+          "R": "同样，好树都结出好果子，坏树都结出坏果子。"
         }
       },
       "decisions": [
@@ -4767,6 +5042,11 @@
           "L": "Pohon yang baik tidak mungkin menghasilkan buah yang buruk, dan pohon yang buruk tidak mungkin menghasilkan buah yang baik.",
           "B": "Pohon yang sehat tidak mungkin menghasilkan buah yang buruk, dan pohon yang tidak sehat tidak mungkin menghasilkan buah yang baik.",
           "R": "Pohon yang sehat tidak bisa menghasilkan buah yang buruk, dan pohon yang sakit tidak bisa menghasilkan buah yang baik."
+        },
+        "zh": {
+          "L": "一棵好树不能结出坏果子，一棵坏树也不能结出好果子。",
+          "B": "健康的树结不出坏果子，有病的树也结不出好果子。",
+          "R": "好树不可能长出坏果子，坏树也不可能长出好果子。"
         }
       },
       "decisions": [
@@ -4890,6 +5170,11 @@
           "L": "Setiap pohon yang tidak menghasilkan buah yang baik ditebang dan dibuang ke dalam api.",
           "B": "Setiap pohon yang tidak menghasilkan buah yang baik akan ditebang dan dibuang ke dalam api.",
           "R": "Setiap pohon yang tidak berbuah baik akan ditebang dan dibakar."
+        },
+        "zh": {
+          "L": "每一棵不结好果子的树，都被砍倒，扔进[那]火里。",
+          "B": "任何不结好果子的树都会被砍倒，丢进火中。",
+          "R": "每一棵不长好果子的树，都会被砍倒，扔进火里烧掉。"
         }
       },
       "decisions": [
@@ -5027,6 +5312,11 @@
           "L": "Jadi dari buahnyalah kalian akan mengenal mereka.",
           "B": "Jadi kalian akan mengenal mereka dari buah hidup mereka.",
           "R": "Jadi kalian akan mengenal nabi-nabi palsu itu dari perbuatan mereka."
+        },
+        "zh": {
+          "L": "这样，你们会借着他们的果子认出他们。",
+          "B": "所以，从他们生命结出的果子，你们就能认识他们。",
+          "R": "所以，看他们做的事，你们就会知道他们是什么样的人。"
         }
       },
       "decisions": [
@@ -5175,6 +5465,11 @@
           "L": "Bukan setiap orang yang berkata kepada-{{deity_pronoun:ku|Ku}}, 'Tuhan, Tuhan,' akan masuk ke dalam Kerajaan Surga, melainkan dia yang melakukan kehendak Bapa-{{deity_pronoun:ku|Ku}} yang di surga.",
           "B": "Tidak setiap orang yang memanggil-{{deity_pronoun:ku|Ku}} 'Tuhan, Tuhan' akan masuk ke dalam Kerajaan Surga, tetapi hanya orang yang melakukan kehendak Bapa-{{deity_pronoun:ku|Ku}} di surga.",
           "R": "Tidak semua orang yang memanggil-{{deity_pronoun:ku|Ku}} 'Tuhan, Tuhan' akan masuk Kerajaan Surga. Hanya orang yang melakukan kehendak Bapa-{{deity_pronoun:ku|Ku}} di surga yang akan masuk."
+        },
+        "zh": {
+          "L": "不是每一个对我说‘主啊，主啊’的人，都能进入天国，而是那遵行我那在天上的父旨意的人。",
+          "B": "不是每个称我为‘主啊，主啊’的人都能进天国，只有那些遵行我在天上的父心意的人才能进去。",
+          "R": "不是每个叫我‘主’的人都能进天国。只有照我在天上的父的心意去做的人，才能进去。"
         }
       },
       "decisions": [
@@ -5537,6 +5832,51 @@
           "reason": "The will of the Father is what God requires (m2). Literal keeps the noun with the respectful \"御心\", written in kanji throughout; Balanced and Readable turn it into a verb, which reads more naturally.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40007021011",
+            "n40007021013"
+          ],
+          "choice": "\"天国\"",
+          "alternatives": [
+            "\"诸天的国\" at L",
+            "\"天上的国\" at R"
+          ],
+          "reason": "The glossary's one word for Matthew's \"kingdom of the heavens\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007021005",
+            "n40007021021"
+          ],
+          "choice": "\"我\" and \"我的\" with no span",
+          "alternatives": [
+            "a span on Jesus's first person"
+          ],
+          "reason": "The English spans \"me / Me\" and \"my / My\" when Jesus speaks. Chinese has no reverent first person, so \"我\" takes no span, as the style guide says; \"你\" spoken to Jesus keeps its span (7:22).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5646,6 +5986,11 @@
           "L": "Pada hari itu banyak orang akan berkata kepada-{{deity_pronoun:ku|Ku}}, 'Tuhan, Tuhan, bukankah kami bernubuat demi nama-{{deity_pronoun:mu|Mu}}, dan mengusir setan demi nama-{{deity_pronoun:mu|Mu}}, dan melakukan banyak mukjizat demi nama-{{deity_pronoun:mu|Mu}}?'",
           "B": "Pada hari itu banyak orang akan berkata kepada-{{deity_pronoun:ku|Ku}}, 'Tuhan, Tuhan, bukankah kami bernubuat dalam nama-{{deity_pronoun:mu|Mu}}, mengusir roh jahat dalam nama-{{deity_pronoun:mu|Mu}}, dan melakukan banyak mukjizat dalam nama-{{deity_pronoun:mu|Mu}}?'",
           "R": "Pada hari penghakiman banyak orang akan berkata kepada-{{deity_pronoun:ku|Ku}}, 'Tuhan, Tuhan, kami sudah menyampaikan pesan Allah atas nama-{{deity_pronoun:mu|Mu}}. Kami sudah mengusir roh-roh jahat atas nama-{{deity_pronoun:mu|Mu}}, dan kami sudah melakukan banyak mukjizat atas nama-{{deity_pronoun:mu|Mu}}.'"
+        },
+        "zh": {
+          "L": "到那日，会有许多人对我说：‘主啊，主啊，难道我们没有借着{{deity_pronoun:你|祢}}的名发预言，借着{{deity_pronoun:你|祢}}的名驱鬼，又借着{{deity_pronoun:你|祢}}的名做了许多大能的事吗？’",
+          "B": "到了那一天，许多人会对我说：‘主啊，主啊，我们不是曾以{{deity_pronoun:你|祢}}的名说预言，以{{deity_pronoun:你|祢}}的名赶出邪灵，又以{{deity_pronoun:你|祢}}的名行了许多神迹吗？’",
+          "R": "到审判的日子，许多人会对我说：‘主啊，主啊，我们曾用{{deity_pronoun:你|祢}}的名替{{god_term:神|上帝}}说话。我们曾用{{deity_pronoun:你|祢}}的名把邪灵从人身上赶出去，也曾用{{deity_pronoun:你|祢}}的名行了许多神迹。’"
         }
       },
       "decisions": [
@@ -6000,6 +6345,27 @@
           "reason": "\"mukjizat\" (KBBI spelling) for works of power; \"tanda\" is kept for sēmeion.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40007022019"
+          ],
+          "choice": "\"鬼\" (L); \"邪灵\" (B, R)",
+          "alternatives": [
+            "\"鬼\" at every level"
+          ],
+          "reason": "The glossary's forms: \"鬼\" alone at Balanced and Readable would be heard as \"ghost\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6097,6 +6463,11 @@
           "L": "Dan pada waktu itu {{deity_pronoun:aku|Aku}} akan berterus terang kepada mereka, 'Aku tidak pernah mengenal kalian; enyahlah dari hadapan-{{deity_pronoun:ku|Ku}}, kalian yang melakukan kedurhakaan.'",
           "B": "Lalu {{deity_pronoun:aku|Aku}} akan berkata terus terang kepada mereka, 'Aku tidak pernah mengenal kalian. Pergilah dari hadapan-{{deity_pronoun:ku|Ku}}, kalian yang melanggar hukum Allah.'",
           "R": "Tetapi {{deity_pronoun:aku|Aku}} akan berkata kepada mereka, 'Aku tidak pernah mengenal kalian. Pergi dari hadapan-{{deity_pronoun:ku|Ku}}, hai orang-orang yang melanggar hukum Allah!'"
+        },
+        "zh": {
+          "L": "那时我要向他们宣告：‘我从未认识你们；你们这些行不法之事的人，从我这里离开吧。’",
+          "B": "那时我会公开对他们说：‘我从来没有认识过你们。你们这些违背{{god_term:神|上帝}}律法的人，走开，离开我！’",
+          "R": "那时我会告诉他们：‘我根本不认识你们。离开我！你们做的都是错事。’"
         }
       },
       "decisions": [
@@ -6402,6 +6773,11 @@
           "L": "Jadi setiap orang yang mendengar perkataan-{{deity_pronoun:ku|Ku}} ini dan melakukannya, ia akan disamakan dengan orang bijaksana yang membangun rumahnya di atas batu.",
           "B": "Jadi setiap orang yang mendengar perkataan-{{deity_pronoun:ku|Ku}} ini dan melakukannya akan sama seperti orang bijaksana yang membangun rumahnya di atas batu yang kokoh.",
           "R": "Jadi setiap orang yang mendengar ajaran-{{deity_pronoun:ku|Ku}} ini dan melakukannya, dia seperti orang bijak yang membangun rumahnya di atas batu yang kokoh."
+        },
+        "zh": {
+          "L": "所以，每一个听见我这些话并且遵行的人，将会像一个有智慧的{{gender:人|男人}}，他把自己的房子建造在那磐石上。",
+          "B": "所以，任何人听了我在这里所讲的，并且照着去做，就像一个明智的{{gender:人|男人}}，把房子建在坚固的岩石上。",
+          "R": "所以，任何人听了我的教导并且去遵守，就像一个聪明的{{gender:人|男人}}，把房子建在岩石上。"
         }
       },
       "decisions": [
@@ -6781,6 +7157,28 @@
           "reason": "\"orang\" is a person of either sex, so the English spans in 7:24-26 have no counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40007024013",
+            "n40007024017"
+          ],
+          "choice": "{{gender:人|男人}}, and \"自己的\" or nothing for \"their / his\"",
+          "alternatives": [
+            "\"人\" with no span"
+          ],
+          "reason": "The style guide's span for a man standing for anyone; the English spans the possessive too, which Chinese says with \"自己的\" or leaves out, so that needs no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6888,6 +7286,11 @@
           "L": "Kemudian turunlah hujan dan datanglah banjir dan bertiuplah angin dan melanda rumah itu, tetapi rumah itu tidak roboh, sebab didirikan di atas batu.",
           "B": "Hujan turun dengan deras, banjir datang, dan angin bertiup melanda rumah itu. Tetapi rumah itu tidak roboh, karena dasarnya di atas batu.",
           "R": "Hujan turun dengan deras, air banjir naik, dan angin kencang bertiup menerpa rumah itu. Tetapi rumah itu tidak roboh, karena dibangun di atas batu."
+        },
+        "zh": {
+          "L": "于是雨降下来，河水涌来，风吹来，扑向那座房子，它却没有倒塌，因为它是奠基在那磐石上的。",
+          "B": "大雨倾盆，洪水上涨，狂风吹袭那座房子，房子却没有倒塌，因为它的地基建在岩石上。",
+          "R": "下大雨了，河水泛滥，大风猛吹那座房子。可是房子没有倒，因为它建在岩石上。"
         }
       },
       "decisions": [
@@ -7095,6 +7498,11 @@
           "L": "Dan setiap orang yang mendengar perkataan-{{deity_pronoun:ku|Ku}} ini dan tidak melakukannya, ia akan disamakan dengan orang bodoh yang membangun rumahnya di atas pasir.",
           "B": "Dan setiap orang yang mendengar perkataan-{{deity_pronoun:ku|Ku}} ini tetapi tidak melakukannya akan sama seperti orang bodoh yang membangun rumahnya di atas pasir.",
           "R": "Tetapi orang yang mendengar ajaran-{{deity_pronoun:ku|Ku}} ini dan tidak melakukannya, dia seperti orang bodoh yang membangun rumahnya di atas pasir."
+        },
+        "zh": {
+          "L": "并且每一个听见我这些话却不遵行的人，将会像一个愚蠢的{{gender:人|男人}}，他把自己的房子建造在沙土上。",
+          "B": "任何人听了我在这里所讲的，却不照着去做，就像一个愚蠢的{{gender:人|男人}}，把房子建在沙地上。",
+          "R": "但是任何人听了我的教导却不遵守，就像一个愚蠢的{{gender:人|男人}}，把房子建在沙地上。"
         }
       },
       "decisions": [
@@ -7266,6 +7674,11 @@
           "L": "Kemudian turunlah hujan dan datanglah banjir dan bertiuplah angin dan menerpa rumah itu, dan rumah itu roboh, dan hebatlah kerobohannya.\"",
           "B": "Hujan turun dengan deras, banjir datang, dan angin bertiup menerpa rumah itu, lalu rumah itu roboh. Dan betapa hebat kerobohannya!\"",
           "R": "Hujan turun dengan deras, air banjir naik, dan angin kencang bertiup menerpa rumah itu. Rumah itu pun roboh, dan hancur sama sekali!\""
+        },
+        "zh": {
+          "L": "于是雨降下来，河水涌来，风吹来，冲击那座房子，它就倒了，它的倒塌极其惨烈。”",
+          "B": "大雨倾盆，洪水上涨，狂风吹打那座房子，房子就倒了，而且倒得一败涂地！”",
+          "R": "下大雨了，河水泛滥，大风猛吹那座房子。房子就倒了，发出巨大的响声。”"
         }
       },
       "decisions": [
@@ -7387,6 +7800,11 @@
           "L": "Dan terjadilah, ketika Yesus mengakhiri perkataan-perkataan ini, orang banyak takjub akan pengajaran-{{deity_pronoun:nya|Nya}};",
           "B": "Ketika Yesus selesai mengucapkan perkataan-perkataan itu, orang banyak takjub akan pengajaran-{{deity_pronoun:nya|Nya}}.",
           "R": "Ketika Yesus selesai mengajar, orang banyak sangat heran mendengar ajaran-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "后来，当耶稣结束了这些话的时候，群众对{{deity_pronoun:他|祂}}的教导感到惊讶，",
+          "B": "耶稣说完这番话，群众都对{{deity_pronoun:他|祂}}的教导大感惊奇。",
+          "R": "耶稣说完这些话以后，人们都对{{deity_pronoun:他|祂}}的教导感到很惊讶。"
         }
       },
       "decisions": [
@@ -7649,6 +8067,11 @@
           "L": "sebab {{deity_pronoun:dia|Dia}} mengajar mereka sebagai orang yang berkuasa, dan tidak seperti ahli-ahli Taurat mereka.",
           "B": "Dia mengajar mereka sebagai orang yang memiliki kuasa-{{deity_pronoun:nya|Nya}} sendiri, tidak seperti ahli-ahli Taurat mereka.",
           "R": "Dia mengajar mereka dengan kuasa-{{deity_pronoun:nya|Nya}} sendiri. Dia tidak seperti guru-guru agama Yahudi mereka."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}是以一位有权柄者的身份教导他们，而不是像他们的文士那样。",
+          "B": "{{deity_pronoun:他|祂}}教导他们时，带着{{deity_pronoun:他|祂}}自己的权柄，不像他们的文士。",
+          "R": "{{deity_pronoun:他|祂}}凭着自己的权柄教导人，不像他们的律法教师那样。"
         }
       },
       "decisions": [
@@ -7942,6 +8365,27 @@
           "alternatives": [],
           "reason": "The glossary gives \"kuasa\" (L) and \"wewenang\" (B, R); here, where the crowds hear authority in the teaching itself, \"kuasa\" is kept at every level.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40007029012"
+          ],
+          "choice": "\"文士\" (L, B); \"律法教师\" (R)",
+          "alternatives": [
+            "\"经学家\""
+          ],
+          "reason": "The glossary's forms: the church's word at Literal and Balanced, a plain description at Readable.",
+          "uncertain": false,
           "footnote": false
         }
       ],
