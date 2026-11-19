@@ -1996,3 +1996,635 @@ Terms settled in Revelation:
 | every tribe and language and people and nation (5:9; 7:9; 10:11; 11:9; 13:7; 14:6; 17:15) | 各部族、各语言、各民族、各邦国 (L, B), the Greek's order where it changes |
 | 您 (B, R) | John to the elder (7:14, 先生，您知道), the only address to a heavenly figure; the angels say 你 to John (10:9; 19:10; 22:9) |
 | measures | `{{units:约1升\|一科尼克斯}}`, denarius in wages (6:6); `{{units:约300公里\|一千六百个斯塔迪亚}}` (14:20); `{{units:34公斤\|一他连得}}` (16:21); `{{units:约2200公里\|一万二千个斯塔迪亚}}`, `{{units:约65米\|一百四十四肘}}` (21:16-17); Literal keeps the original unit in Chinese numerals |
+
+### Genesis
+
+Genesis keeps the glossary's forms for every name and term above, and the
+New Testament's Chinese wherever it quotes the same Hebrew: 1:27 and 2:24 as
+Matthew 19:4-5 (他们 for "they", since the Hebrew has no "two"); 2:2 as
+Hebrews 4:4; 2:7 "成了活的生灵" as 1 Corinthians 15:45; 12:1 as Acts 7:3;
+12:3, 18:18 and 22:18 as Galatians 3:8 and Acts 3:25 (万族 / 万国 as the
+Hebrew has families or nations); 15:5 as Romans 4:18; 15:6 as Romans 4:3
+(with the Hebrew's active "he counted it"); 17:5 "我已经立你作多国的父" as
+Romans 4:17; 18:10, 14 as Romans 9:9; 21:10 as Galatians 4:30; 21:12 as
+Romans 9:7 and Hebrews 11:18; 22:17 as Hebrews 6:14; 25:23 as Romans 9:12;
+28:12 as John 1:51. 47:31 keeps the Hebrew "bed" (床头), with a decision
+naming Hebrews 11:21's "staff" (杖头, from the Greek). Names shared with Luke
+3:34-38 and Matthew 1:2-3 keep their forms (塞特, 以挪士, 该南, 玛勒列, 雅列,
+以诺, 玛土撒拉, 拉麦, 闪, 亚法撒, 沙拉, 希伯, 法勒, 拉吴, 西鹿, 拿鹤, 他拉;
+法勒斯, 谢拉, 希斯仑, 他玛).
+
+Terms settled in Genesis:
+
+| English | Chinese |
+|---|---|
+| toledot, "these are the generations of" (2:4; 5:1; 6:9; 10:1; 11:10, 27; 25:12, 19; 36:1, 9; 37:2) | 这些是……的世系 (L, every heading; 5:1 世系的册子); B and R as the English level: "story" 故事, "account of the family (line)" 家族的记录 / 家族世系的记录, "list" 名单 |
+| genealogy refrains (chapters 5 and 11, one wording for both) | X活了N年，就生了Y / X生了Y以后，又活了N年，也生了儿子和女儿 / X所有的日子是N年，他就死了 (L); X活到N岁时，成了Y的父亲 / Y出生以后，X又活了N年，还生了其他的儿女 / X的一生总共有N年，然后他死了 (B); X N岁的时候，生了一个儿子，名叫Y / ……他还有其他的儿子和女儿 / X活到N岁，然后就死了 (R) |
+| "be fruitful and multiply" (1:22, 28; 8:17; 9:1, 7; 35:11; 17:20; 28:3; 47:27; 48:4) | 要生育，要繁增 / 使你生育，使你繁增 (L); 繁衍增多 (B, as Acts 7:17); R as the English Readable. 生养众多 (the Union Version's) is not used |
+| offspring (zera) in the promises | 后裔 (L); 后代 (B, R), as Galatians 3:16; NT quotations keep their own wording (15:5; 21:12) |
+| "and it came to pass" (wayehi) | 那时 or a time clause (……的时候, ……以后) (L); left out or a time clause (B, R) |
+| behold (hinneh) | 看哪 (L); 看 / 你看, or left out (B); left out, 看 (R) |
+| "lifted up his eyes and saw" | 举目观看 / 举目看见 (L); 抬起眼来 ("raised his eyes"), 抬头一看 ("looked up") (B); 抬头一看, 往四周一看 (R) |
+| "Here I am" (hinneni) | 我在这里 (L; B where the English says "Here I am"); 是，我在这里 ("Yes, I am here") |
+| "answered and said" | 回答说 (L); 回答 (B, R) |
+| "fell on his face" (17:3, 17) | 脸伏于地 (L); 俯伏在地 (B); 跪下，脸贴着地 (R) |
+| "Fear not" | 不要怕 (L, B); 不要害怕 (R) |
+| "gathered to his people" (25:8, 17; 35:29; 49:29, 33) | 被收聚到他的族人那里 (L); 归到他的族人那里 (B); 去和（先他而死的）祖先团聚了 (R). "Breathed his last" 断了气 (L), 气息断绝 (B) |
+| "knew" (yada, sexual) | 认识 (L, as Matthew 1:25); 有了夫妻关系 (B, "was intimate"); 同房 elsewhere |
+| "went in to" (bo el) | 进到她那里 (L); 同房 (B, R) |
+| "lay with" (shakhav im) | 同寝 (L); B and R as the English level (同寝, 同房, 睡) |
+| the angel of the LORD; of God | `{{divine_name:上主\|雅威}}`的使者; *gt*的使者 (L, B, R). Angels in the plural (19; 28:12, as John 1:51; 32:2 B, R) 天使; 32:2 L 使者们 (the wordplay with the messengers of 32:4); 48:16 "the angel who redeemed me" 天使 |
+| "the word of the LORD came" (15:1, 4) | *dn*的话临到 (L, B); *dn*对……说 (R) |
+| YHWH Elohim (2:4-3:23) | `{{divine_name:上主\|雅威}}{{god_term:神\|上帝}}` |
+| El Shaddai; Shaddai (49:25) | 全能的*gt*; 全能者 |
+| El Elyon (14:18-22) | 至高的*gt* (as Hebrews 7:1) |
+| El Olam (21:33) | 永恒的*gt* (L, B); 永远活着的*gt* (R) |
+| El Roi (16:13) | 看见人的*gt* (L); 看见我的*gt* (B, R) |
+| YHWH-yireh (22:14) | *dn*会预备 (L, R); *dn*会看顾 (B), the verbs of 22:8 |
+| names with El- | 伊勒 throughout: 伊勒巴兰 (14:6), 伊勒伊罗伊以色列 (33:20), 伊勒伯特利 (35:7) |
+| the God of Nahor (31:53) | 拿鹤的*gt*, with the span as the English writes "God"; a decision notes the plural verb (Laban may mean two gods) |
+| the sons of God (6:2, 4) | *gt*的众子 at every level, as every English level keeps the phrase |
+| pronouns for God | every Chinese pronoun for God in a `deity_pronoun` span, also where the English pronoun opens a sentence (its capital hides the span) or where Chinese adds one (求`{{deity_pronoun:你\|祢}}`, 32:12); God is not named instead of the pronoun; God's "I" is 我 |
+| address (您) | 你 at L everywhere, 我主 for "my lord". 您 at B and R: servants to their master (24; 39:8-9; 40), sons to Isaac (27; 22:7), hosts and strangers in courtesy (18:3; 19:18-20; 23; 24), Jacob to Esau (32-33), Rachel to Laban (31:35), subjects to Pharaoh (40-41; 46:34-47:9; 50:5), the brothers and the Egyptians to Joseph and his steward with 大人 (42-44; 47:15-25) until 45:4. 你 between Jacob and Laban, from Esau to Jacob, and from the brothers to Joseph after 45:4. Strangers addressed as "sir" at R: 先生 (18:3; 19:18; 23) |
+| Sheol (37:35; 42:38; 44:29, 31) | 阴间 (L, B); 死亡之地 (R), where the English Balanced and Readable say "the grave" |
+| units | shekel 舍客勒 (L; 11.5克 in `units` spans at B and R: 十舍客勒 约115克, 二十舍客勒银子 约230克银子, 四百舍客勒 约4.6公斤, 一千舍客勒 约11.5公斤); beka 比加 (约5.7克); cubit 肘 (约45厘米); seah 细亚 (三细亚 约21升) |
+| Noah's ark; gopher wood | 方舟 (as Hebrews 11:7); 歌斐木 (L, B) |
+| the Negev | 内盖夫 at every level |
+| Nephilim | 拿非利人 (R: 巨人，叫作拿非利人) |
+| household gods (teraphim, 31) | 家中的神像, then 神像 (no span) |
+| birthright | 长子的名分 |
+
+Names not in the tables above, as the text has them (the conventional
+Chinese Bible forms unless a note says otherwise):
+
+| English (first verse) | Chinese |
+|---|---|
+| Enoch (Cain's son and his city, 4:17); Irad, Mehujael, Methushael (4:18) | 以诺; 以拿, 米户雅利, 玛土撒利 |
+| Adah, Zillah; Jabal, Jubal, Tubal-cain, Naamah (4:19-22) | 亚大 (also Esau's wife, 36:2), 洗拉; 雅八, 犹八, 土八该隐, 拿玛 |
+| Kenan, Mahalalel, Jared, Methuselah (5:9-27) | 该南, 玛勒列, 雅列, 玛土撒拉 (as Luke 3:37-38) |
+| Pishon, Havilah; Gihon (2:11-13) | 比逊, 哈腓拉; 基训 |
+| Ararat (8:4); gopher wood (6:14) | 亚拉腊; 歌斐木 |
+| the sons of Japheth (10:2-4) | 歌篾, 玛各, 玛代, 雅完, 土巴, 米设, 提拉; 亚实基拿, 利法, 陀迦玛; 以利沙 (Elishah, spelled like the prophet Elisha, marked uncertain), 他施, 基提, 多单 |
+| the sons of Ham (10:6-20) | 古实, 麦西 (Mizraim, L; 埃及 B, R), 弗, 迦南; 宁录; 以力, 亚甲, 甲尼, 示拿; 利河伯城, 迦拉, 利鲜; 赫 (Heth; the Hittites 赫人, the sons of Heth 赫的子孙) |
+| the sons of Shem (10:22-30) | 以拦, 亚述, 亚法撒, 路德, 亚兰; 乌斯, 户勒, 基帖, 玛施; 沙拉, 希伯, 法勒, 约坍; 亚摩答 … 约巴 as 10:26-29; 俄斐 |
+| Milcah, Iscah (11:29) | 密迦, 亦迦 |
+| Moreh (12:6); Mamre (13:18); Eshcol, Aner (14:13) | 摩利的大树; 幔利的大树 (大树, not 橡树); 以实各, 亚乃 |
+| the kings of 14:1-2 | 暗拉非, 亚略, 基大老玛, 提达; 以拉撒, 戈印; 比喇 (Bera, kept apart from Bela 比拉), 比沙, 示纳, 善以别; 押玛, 洗扁, 琐珥 |
+| places of 14:3-17 | 西订谷; 盐海 (L), 死海 (B, R); 亚特律加宁, 沙微基列亭, 伊勒巴兰, 安密巴, 加低斯, 哈洗逊他玛, 何把, 沙微谷, 王谷 |
+| peoples of 14:5-6; 15:19-21 | 利乏音人, 苏西人, 以米人, 何利人; 基尼人, 基尼洗人, 甲摩尼人 |
+| Eliezer of Damascus (15:2) | 以利以谢 |
+| Shur; Beer-lahai-roi; Bered (16:7, 14) | 书珥; 庇耳拉海莱; 巴列 |
+| Moab, Ben-ammi (19:37-38) | 摩押, 便亚米 |
+| Gerar; Abimelech; Phicol; Ahuzzath (20:1; 21:22; 26:26) | 基拉耳; 亚比米勒; 非各; 亚户撒 |
+| Paran (21:21) | 巴兰, spelled like Balaam (noted once, uncertain) |
+| Moriah (22:2) | 摩利亚 |
+| Nahor's sons (22:20-24) | 乌斯, 布斯, 基母利, 基薛, 哈瑶, 必达, 益拉, 彼土利; 流玛, 提八, 迦含, 他辖, 玛迦 |
+| Kiriath-arba; Ephron, Zohar; Machpelah (23:2-9) | 基列亚巴; 以弗仑, 琐辖 (also Simeon's son, 46:10); 麦比拉洞 |
+| Aram-naharaim (24:10); Bethuel | 亚兰拿哈拉音; 彼土利 |
+| Keturah and her sons (25:1-4) | 基土拉; 心兰, 约珊, 米但, 米甸, 伊施巴, 书亚; 亚书利人, 利都是人, 利乌米人; 以法, 以弗, 哈诺 (Hanoch, kept apart from Enoch 以诺 as the English spells the two apart), 亚比大, 以勒大 |
+| Ishmael's sons (25:13-15) | 尼拜约, 基达, 亚德别, 米比衔, 米施玛, 度玛, 玛撒, 哈大, 提玛, 伊突, 拿非施, 基底玛 |
+| Paddan-aram (25:20); Paddan (48:7) | 巴旦亚兰; 巴旦 |
+| Esek, Sitnah, Rehoboth (26:20-22) | 埃色, 西提拿, 利河伯 (also 36:37) |
+| Judith, Beeri, Basemath, Elon (26:34) | 犹滴, 比利, 巴实抹, 以伦 (also Zebulun's son, 46:14) |
+| Mahalath (28:9) | 玛哈拉 (36:3 names Ishmael's daughter Basemath) |
+| Luz (28:19) | 路斯 |
+| Jegar-sahadutha, Galeed; Mizpah (31:47-49) | 伊迦尔撒哈杜他, 迦累得; 米斯巴 |
+| Mahanaim (32:3); Jabbok (32:23); Peniel, Penuel (32:31-32) | 玛哈念; 雅博渡口; 毗尼伊勒, 毗努伊勒 (two forms, as the English keeps two) |
+| Succoth (33:17); Hamor (33:19) | 疏割; 哈抹 |
+| Allon-bacuth; Ben-oni; Ephrath; Migdal-eder (35:8-21) | 亚隆巴古; 便俄尼; 以法他; 以得台 |
+| Esau's family (36) | 亚大, 阿荷利巴玛, 亚纳, 祭便, 以利法, 流珥, 耶乌施, 雅兰, 可拉; 提幔, 阿抹, 洗玻, 迦坦, 基纳斯, 亭纳, 亚玛力; 拿哈, 谢拉 (Zerah, as Judah's son), 沙玛, 米撒 |
+| the Horites (36:20-30) | 西珥, 罗坍, 朔巴, 底顺, 以察, 底珊, 何利, 希曼, 亚勒文, 玛拿哈, 以巴录, 示玻, 阿南, 亚雅, 欣但, 伊是班, 益兰, 基兰, 辟罕, 撒番, 亚甘, 亚然 |
+| the kings and chiefs of Edom (36:31-43) | 比拉, 比珥, 亭哈巴, 约巴, 波斯拉, 户珊, 哈达, 比达, 亚未得, 桑拉, 玛士利加, 扫罗 (Shaul, as Saul), 巴勒哈南, 亚革波, 哈达珥, 巴乌, 米希他别, 玛特列, 米萨合; 亚勒瓦, 耶帖, 以拉, 比嫩, 基纳斯, 提幔, 米比萨, 玛基叠, 以兰 |
+| Dothan (37:17); the Medanites (37:36) | 多坍; 米但人 |
+| Hirah the Adullamite; Shua; Er, Onan, Shelah; Chezib; Timnah; Enaim (38) | 亚杜兰人希拉; 书亚; 珥, 俄南, 示拉 (kept apart from Shem's grandson 沙拉, a different Hebrew name); 基悉; 亭拿; 伊拿印 |
+| Perez, Zerah (38:29-30); Hezron, Hamul (46:12) | 法勒斯, 谢拉 (as Matthew 1:3); 希斯仑, 哈母勒 |
+| Zaphenath-paneah, Asenath, Potiphera, On (41:45) | 撒发那忒巴内亚, 亚西纳, 波提非拉, 安 (安城 at R) |
+| Rameses (47:11) | 兰塞 |
+| Jacob's family (46:9-24) | 哈诺, 法路, 迦米; 耶母利, 雅悯, 阿辖, 雅斤, 琐辖, 扫罗 (Shaul, as Saul); 革顺, 哥辖, 米拉利; 陀拉, 普瓦, 约伯 (Iob), 伸仑; 西烈, 以伦, 雅利; 洗非芸, 哈基, 书尼, 以斯本, 以利 (Eri), 亚罗底, 亚列利; 音拿, 亦施瓦, 亦施韦, 比利亚, 西拉 (Serah), 希别, 玛结; 比拉, 比结, 亚实别, 基拉, 乃缦, 以希, 罗实, 母平, 户平, 亚勒; 户伸; 雅薛, 古尼, 耶色, 示冷 |
+| Atad; Abel-mizraim (50:10-11); Machir (50:23) | 亚达的禾场; 亚伯麦西; 玛吉 |
+
+Names spelled like a better-known person (one decision text, marked
+uncertain for a reviewer): Elishah 以利沙 (10:4) like the prophet Elisha; Iob
+约伯 (46:13) like Job; Eri 以利 (46:16) like Eli the priest; Serah 西拉
+(46:17) like Silas. Paran 巴兰 (21:21) is spelled like Balaam, as in the
+Union Version, noted once. Haran the man and Haran the city are both 哈兰, as
+the English spells them alike (the Hebrew differs; 11:26, 31).
+
+### Exodus
+
+Exodus keeps the glossary's forms for every name and term above, and Genesis's
+Chinese for the names the two books share (Levi's sons 革顺, 哥辖, 米拉利, and the
+sons of Reuben and Simeon in 6:14-15 as Genesis 46:9-11). Where the New
+Testament quotes Exodus and the Hebrew says the same, its Chinese is kept at
+each level: 3:6 as Matthew 22:32; 20:12-17 as Matthew 19:18-19, Mark 7:10 and
+Romans 13:9 (Balanced keeps the law's "不可" before their verbs); 21:24 as
+Matthew 5:38; "the blood of the covenant" 24:8 as Matthew 26:28 and Mark 14:24;
+16:18 as 2 Corinthians 8:15; 32:6 as 1 Corinthians 10:7; 33:19 as Romans 9:15
+for the clause where the Greek and the Hebrew agree (恩待 for the Hebrew "be
+gracious", where Romans has 怜悯). The tabernacle chapters 35-40 repeat the
+wording of 25-31 wherever the Hebrew repeats, with only the verbs changed from
+command to report. Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Pithom, Rameses (1:11) | 比东, 兰塞 |
+| Shiphrah, Puah (1:15) | 施弗拉, 普阿 |
+| Reuel (2:18) | 流珥 (Jethro's other name; each kept where the Hebrew has it) |
+| Gershom (2:22); Eliezer (18:4) | 革舜 (kept apart from Levi's son Gershon 革顺); 以利以谢 |
+| Hanoch, Pallu, Hezron, Carmi (6:14) | 哈诺, 法路, 希斯仑, 迦米 (as Genesis 46:9) |
+| Jemuel, Jamin, Ohad, Jakin, Zohar, Shaul (6:15) | 耶母利, 雅悯, 阿辖, 雅斤, 琐辖, 扫罗 (as Genesis 46:10) |
+| Libni, Shimei (6:17) | 立尼, 示每 |
+| Amram, Izhar, Hebron, Uzziel (6:18) | 暗兰, 以斯哈, 希伯仑 (the man, spelled as the city), 乌薛 |
+| Mahli, Mushi (6:19); Jochebed (6:20) | 抹利, 母示; 约基别 |
+| Korah, Nepheg, Zikri (6:21) | 可拉, 尼斐, 细基利 |
+| Mishael, Elzaphan, Sithri (6:22) | 米沙利, 以利撒反, 西提利 |
+| Elisheba, Amminadab, Nahshon (6:23) | 以利沙巴, 亚米拿达, 拿顺 |
+| Nadab, Abihu, Ithamar (6:23) | 拿答, 亚比户, 以他玛 |
+| Assir, Elkanah, Abiasaph (6:24); Putiel (6:25) | 亚惜, 以利加拿, 亚比亚撒; 普铁 |
+| Succoth (12:37); Etham (13:20) | 疏割; 以倘 |
+| Pi-hahiroth, Migdol, Baal-zephon (14:2) | 比哈希录, 密夺, 巴力洗分 |
+| Shur, Marah, Elim (15:22-27) | 书珥, 玛拉, 以琳 |
+| the wilderness of Sin (16:1); Rephidim (17:1) | 汛的旷野; 利非订 |
+| Massah, Meribah (17:7) | 玛撒, 米利巴 |
+| Amalek (17:8) | 亚玛力, 亚玛力人 |
+| Hur (17:10) | 户珥 (also Bezalel's grandfather, 31:2) |
+| Nun (33:11) | 嫩 (约书亚的父亲) |
+| Bezalel, Uri (31:2) | 比撒列, 乌利 |
+| Oholiab, Ahisamach (31:6) | 亚何利亚伯, 亚希撒抹 |
+
+Terms settled in Exodus:
+
+| English | Chinese |
+|---|---|
+| Pharaoh's heart: ḥazaq (be / make strong); kabed (be / make heavy); qashah (make hard) | 强硬; 沉重; 刚硬 at Literal, one verb each through 4:21-14:17 (使……的心强硬, 法老的心沉重, 使……的心刚硬); 顽固 (B) and 固执 (R) for all three |
+| Pharaoh hardens his own heart (8:11, 28; 9:34; 13:15) | 使自己的心沉重 (L; 使[自己的心]刚硬 for qashah, 13:15); 使自己的心顽固起来 (B); 固执起来 (R) |
+| "Let my people go, that they may serve me" | 让我的子民走，好让他们事奉我 (L); 释放我的子民，让他们可以事奉我 (B); 让我的百姓走，好让他们敬拜我 (R); shillach "let go" otherwise 让……走 at L |
+| "the LORD spoke to Moses, saying" | *dn*对摩西说话，说： (L); *dn*对摩西说： (B, R); "said to Moses" *dn*对摩西说 at every level |
+| the LORD, the God of the Hebrews | *dn*，希伯来人的*gt* (every level) |
+| "I AM WHO I AM"; "I AM has sent me" (3:14) | 我是我所是 (L, B), 我是我所是的那一位 (R); 我是者 (L, B), 那位称为我是的 (R). The Union Version's 我是自有永有的 is not used |
+| ʾAdonai YHWH (23:17; 34:23) | 主宰*dn* |
+| "God to Pharaoh" (7:1); "as God to him" (4:16) | *gt* in a span in both, as the English capital shows: 作*gt* / 如同*gt* (L), 如同*gt* / 就像*gt*一样 (B, R) |
+| gods of the nations; the calf | 神明, 众神, 别的神明, no span |
+| a sentence-initial "He" / "You" for God that the English capital hides | the span is written: `{{deity_pronoun:他\|祂}}`, `{{deity_pronoun:你\|祢}}` (never 上主 named in its place) |
+| address | Moses and Aaron, the foremen, Miriam to Pharaoh's daughter, Aaron to Moses (32:22) say 您 at B and R; Pharaoh says 你 / 你们; God's words relayed to Pharaoh keep 你 |
+| tabernacle; tent of meeting; tent (the goats'-hair covering) | 帐幕; 会幕; 帐篷 |
+| curtains (yeriʿot); the veil (parokhet); screen (masakh); courtyard hangings (qelaʿim) | 幕; 帘幕; 门帘; 帷幔 |
+| frames; bars; bases (sockets); poles; clasps; loops | 竖板; 横木; 底座; 杠 (杠子 at R); 搭扣; 线环 |
+| the ark; the ark of the testimony | 柜 (L), 约柜 (B, R); 见证的柜 (L), 约柜 (B, R) |
+| the testimony (the tablets) | 见证版 (L, B); 刻着诫命的两块石版 (R), also for "the two tablets of the testimony" (31:18; 32:15; 34:29); the ark at R 存放刻着诫命的两块石版的约柜 |
+| atonement cover (kapporet) | 赎罪盖 (L, B); 约柜的盖子，就是遮盖罪的地方 (R) |
+| altar; altar of burnt offering; altar of incense | 坛 (L), 祭坛 (B, R; 坛 for the short form inside a description); 燔祭坛 (L, B), 献全烧祭的祭坛 (R); 香坛 (L, B), 烧香用的坛 (R); the gold altar 金坛 |
+| basin (kiyyor) and its stand | 水盆和盆座 (L, B); 大铜盆和它的座 (R) |
+| lampstand; table; bread of the Presence | 灯台; 桌子; 陈设饼 (L, B), 摆在*gt*面前的饼 (R) |
+| ephod; breastpiece (of judgment); robe; tunic; turban; sash; the gold plate | 以弗得; (决断的)胸牌; 外袍; 内袍; 头巾; 腰带; 纯金的牌子 |
+| woven garments (bigde haserad) | 编织的衣服 (L); 精工织成的衣服 (B); 精心织成的衣服 (R) |
+| acacia wood | 金合欢木 |
+| contribution (terumah) | 举祭 (L, B); 献给*dn*的礼物 (R) |
+| anointing oil; holy anointing oil | 膏抹的油 (L), 膏油 (B), 膏抹用的油 (R); 膏抹用的圣油 (L, R), 圣膏油 (B) |
+| consecrate (qiddash) | 使……成圣 (L); 使……分别为圣 (B); 使……分别出来，成为圣洁 (R), or as the English Readable says ("make holy" 使……成为圣洁; "set apart for God" 分别出来归给*gt*) |
+| ordain ("fill the hand"); ram of ordination | 充满……的手 (L), 授圣职 (B), 担任祭司的职分 (R); 授职的公羊 (L, B) |
+| a lasting statute | 永远的定例 (L, B); 必须永远遵守的规定 (R) |
+| "as the LORD commanded Moses" (35-40) | 照着*dn*吩咐摩西的 (L); 正如*dn*吩咐摩西的 (B); 都是照着*dn*吩咐摩西的做的 (R) |
+| units | Literal the Hebrew unit; Balanced and Readable a `units` span, metric first: cubit 约45厘米 (一肘半 约70厘米, 两肘半 约1.1米, 一百肘 约45米); handbreadth 约7.5厘米; span 约23厘米; shekel 11.5克 (半舍客勒 约5.7克银子; 三十舍客勒银子 约345克银子); talent 约34公斤; omer, a tenth of an ephah 约2.2升; hin (a quarter) 约0.9升 |
+| the Ten Words (34:28) | 十句话 |
+| the Festival of Unleavened Bread; of Harvest; of Ingathering; of Weeks | 除酵节; 收割节; 收藏节; 七七节 |
+| "YHWH is my banner" (17:15) | “*dn*是我的旗帜” |
+
+### Leviticus
+
+Leviticus keeps the glossary's forms for every name and term above, and
+Exodus's Chinese for the tabernacle, its furniture and the priests' garments.
+The ordination of Aaron and his sons (8) repeats Exodus 29's Chinese wherever
+the Hebrew repeats it, with only the verbs changed from command to report
+(8:30 keeps Exodus 29:21's 弹 / 洒). Where the New Testament quotes Leviticus
+and the Hebrew says the same, its Chinese is kept at each level: "You shall be
+holy, for I am holy" (11:44-45; 19:2; 20:26) as 1 Peter 1:16; 18:5 as
+Galatians 3:12 and Romans 10:5 (L, B; Readable explains "live by them");
+19:18 as Matthew 22:39 and Romans 13:9; 24:20 as Matthew 5:38 and Exodus
+21:24. Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Nadab, Abihu, Eleazar, Ithamar (10:1, 6) | 拿答, 亚比户, 以利亚撒, 以他玛 (as Exodus 6:23) |
+| Mishael, Elzaphan, Uzziel (10:4) | 米沙利, 以利撒反, 乌薛 (as Exodus 6:18, 22) |
+| Azazel (16:8) | 阿撒泻勒 |
+| Shelomith, Dibri (24:11) | 示罗密, 底伯利 |
+| Molech (18:21) | 摩洛, no span; 摩洛这个神明 (R) |
+| the goat-demons (se'irim, 17:7) | 山羊鬼魔 (L, B); 山羊形状的鬼魔 (R), no span (uncertain) |
+
+The rite and sacrifice formulas, one wording per level through the book
+(*dn* = `{{divine_name:上主|雅威}}`):
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| "a burnt offering, a food offering, a soothing aroma to the LORD" | 这是燔祭，是火祭，是献给*dn*的馨香之气 | 这是燔祭，是火祭，是使*dn*喜悦的馨香之气 | 这是全烧的祭，是用火献上的祭，是让*dn*喜悦的香气 |
+| "the priest shall make atonement for him, and he shall be forgiven" | 祭司要为他赎罪，他就要蒙赦免 | 祭司要这样为他赎罪，他就会得到赦免 | 祭司这样除去他的罪，他就会得到饶恕 |
+| make atonement (kipper) for a person's sin | 为……赎罪 | 为……赎罪 | 除去……的罪 |
+| kipper removing uncleanness that is no sin (12:7-8; 14:18-31; 15:15, 30), and the rite named without a person (16:17, 27) | 为……赎罪 | 为……赎罪 | 为……举行赎罪的仪式 |
+| kipper for a thing: the altar, a house, the sanctuary and the tent (8:15; 14:53; 16:16-20, 33) | 为……赎罪 | 为……赎罪 | 为……行洁净礼 |
+| most holy | 至圣的; 至圣之物 for "a most holy [thing]" | 至圣的 | 最圣洁的 |
+| make smoke (on the altar) | 在坛上烧成烟 | 放在祭坛上烧，使烟上升 | 烧掉 |
+| throw the blood against the altar; sprinkle | 泼在坛的周围; 弹 | 泼在祭坛的四周; 弹 | 泼在祭坛的四周; 弹 (洒 where the blood and water are sprinkled with hyssop, 14:7, 51, at every level, and 8:30 R as Exodus 29:21) |
+| a statute forever (for your generations) | 永远的定例 | 永久的定例 | 必须永远遵守的规定 |
+| a portion forever | 永远的份 / 永远应得的份 | 永久应得的份 | as the English Readable |
+| cut off from his people | 从他的族人中被剪除 | 从百姓中被剪除 | 从百姓中被除掉 |
+| bear his iniquity | 担当他的罪孽 | 承担自己的罪责 | 必须为此负责 |
+| in error, unintentionally (shegagah) | 误犯 | 无意中犯了罪 | 不是故意地犯了罪 |
+| offering (qorban); bring near | 供物; 奉上 | 祭物; 献 | 祭物; 献 |
+| surely be put to death | 一定要被处死 | 必须被处死 | 必须被处死 |
+| "The LORD spoke to Moses, saying" | *dn*对摩西说话，说： | *dn*对摩西说： | *dn*对摩西说： |
+| "I am the LORD (your God)" | 我是*dn*(你们的*gt*) | as L | as L |
+| "I am the LORD who makes you holy" | 我是使你们成圣的*dn* | as L | 我是*dn*，是我使你们圣洁 |
+| "for holy am I, the LORD" (19:2; 20:26; 21:8) | 因为我圣洁，我*dn* | 因为我*dn*……是圣洁的 | 因为我是圣洁的。我是*dn* |
+
+Terms settled in Leviticus:
+
+| English | Chinese |
+|---|---|
+| burnt offering; grain offering; peace offering; sin offering; guilt offering | 燔祭 (L, B), 全烧的祭 (R); 素祭 (L, B), 谷物祭 (R); 平安祭; 赎罪祭; 赎过祭 |
+| food offering (ʾishsheh); drink offering | 火祭 (L, B), 用火献上的祭 (R); 奠祭 (L, B), 倒酒的祭 (R) |
+| wave offering; contribution (terumah) | 摇祭, 摇一摇 (L) / 摇动 (B, R); 举祭 (L, B), at R said in words (特别分出来的, 献上的礼物) |
+| thanksgiving offering | 感谢祭 (L, B); 为了感谢 (R) |
+| ordination offering; ordain ("fill the hand") | 授职[祭] (L), 授职祭 (B), 为祭司就职献的祭 (R); 充满……的手 (L), 授圣职 (B), 就职 (R) |
+| memorial portion | 纪念的部分 (L); 作纪念的一份 (B); 代表全部祭物的那一份 (R) |
+| fat; suet (peder); fat tail | 脂肪; 板油 (L, B), 脂肪 (R); 肥尾巴 |
+| turtledoves, young pigeons | 斑鸠, 雏鸽 (L, B), 小鸽子 (R) |
+| foul meat (piggul, 7:18; 19:7) | 腐坏的[肉] (L), 腐坏的肉 (B), 那肉已经坏了 (R), kept apart from 可憎 |
+| clean; unclean; uncleanness | 洁净; 不洁净 (adjective); 不洁 (noun, 种种不洁) |
+| "unclean until the evening" | 不洁净到傍晚 / 直到傍晚, at every level (11-17, 22) |
+| detestable (sheqets); abomination (toʿevah) | 可憎的 (L, B), 令人厌恶的 (R); 可憎的事 (L), 令人憎恶的事 (B), 令人厌恶的事 (R) |
+| serious skin disease (tsaraʿat); its mark | 严重的皮肤病 (every level); 病斑 (L), 患处 (B, R). In cloth, leather and houses (13:47-59; 14:33-57): 严重皮肤病的斑 (L), 霉斑 / 霉 (B, R), as the English levels |
+| discharge (zov); emission of semen | 漏出 (L), 漏症 (B), 流出的东西 (R); 遗精 |
+| cedar wood, scarlet yarn, hyssop | 香柏木, 朱红色线 (L, B) / 红线 (R), 牛膝草 |
+| holy convocation | 圣会 (L, B); 神圣的聚会 (R), as Exodus 12:16 |
+| appointed festivals (moʿadim) | 节期 (L, B); 特别的节日 (R) |
+| Passover; the Festival of Unleavened Bread | 逾越节; 除酵节 (every level, as Exodus 23:15; 34:18) |
+| the Festival of Booths; the Day of Atonement; the Jubilee; the Sabbath year | 住棚节; 赎罪日; 禧年; 安息年 |
+| "a memorial of blasting" (23:24) | 吹号的纪念 (L); 大声吹号作为纪念 (B, R) |
+| shofar (25:9) | 羊角号 (every level, as Exodus 19:16, 19) |
+| sojourner (ger); temporary resident (toshav) | 寄居的人 (L, B), 外来的人 (R); 暂住的人 |
+| devoted thing (ḥerem, 27:28) | 完全奉献的 |
+| units | Literal the Hebrew unit; Balanced and Readable a `units` span, metric first: a tenth of an ephah 约2.2升, two tenths 约4.4升, three tenths 约6.6升; ephah 约22升; hin 约3.7升, a quarter hin 约0.9升; log 约0.3升 (罗革); homer 约220升 (贺梅珥); shekels of silver 11.5克 each (约35 / 57 / 115 / 170 / 230 / 345 / 575克银子) |
+
+The animals of 11 (L; R as the English Readable groups them): 骆驼, 蹄兔,
+野兔, 猪; 鹰, 胡兀鹫, 秃鹫, 赤鸢, 黑鸢, 乌鸦 (R 渡鸦和乌鸦), 鸵鸟, 角鸮, 海鸥,
+隼, 小鸮, 鸬鹚, 雕鸮, 仓鸮, 沙漠鸮, 白兀鹫 (R 兀鹫), 鹳, 鹭, 戴胜, 蝙蝠; 蝗虫,
+秃头蝗, 蟋蟀, 蚱蜢; 黄鼠狼, 老鼠, 大蜥蜴, 壁虎, 巨蜥, 壁蜥, 沙蜥, 变色龙.
+
+### Numbers
+
+Numbers keeps the glossary's forms for every name and term above, Exodus's
+Chinese for the tabernacle, its furniture and the Levite clans (革顺, 哥辖,
+米拉利; 立尼, 示每, 暗兰, 以斯哈, 希伯仑, 乌薛, 抹利, 母示, as Exodus 6:16-22),
+Genesis 46's forms for the clans of chapter 26, and Leviticus's rite and
+sacrifice formulas (the table in the Leviticus section) in 5-6, 8, 15, 18-19
+and 28-29. Where the Hebrew repeats a paragraph, the Chinese repeats it,
+changing only names and numbers: the census of each tribe (1:20-43; 26), the
+camps (2), the twelve leaders' offerings (7:12-83), the festival offerings
+(28-29), the stages of the journey (33:5-49). Where the New Testament recalls
+Numbers and the Hebrew says the same, its Chinese is kept at each level: 12:7
+as Hebrews 3:2, 5 ("在我的全家是忠心的"); 14:18 as Exodus 34:6-7; 14:29, 32 as
+Hebrews 3:17 ("尸体倒毙在旷野" L, "横卧在旷野" B, "留在荒野里" R); 21:8-9 with
+John 3:14 ("杆子", "铜蛇"); 19:2 as Hebrews 9:13 ("母牛犊"); 17:20-25 as Hebrews
+9:4 ("杖", "发芽"). 16:5 follows the Hebrew, with a decision naming 2 Timothy
+2:19's Greek form ("主认识属他的人"); 25:9 keeps the Hebrew's 两万四千, with a
+decision naming 1 Corinthians 10:8's 两万三千. Names not in the tables above,
+as the text has them (the conventional Chinese Bible forms):
+
+| English (first verse) | Chinese |
+|---|---|
+| the tribal leaders (1:5-15; again in 2, 7, 10) | 示丢珥的儿子以利蓿; 苏利沙代的儿子示路蔑; 亚米拿达的儿子拿顺; 苏押的儿子拿坦业; 希伦的儿子以利押; 亚米忽的儿子以利沙玛; 比大蓿的儿子迦玛列 (as Acts 5:34; 比大苏 is not used); 基多尼的儿子亚比但; 亚米沙代的儿子亚希以谢; 俄兰的儿子帕结; 丢珥 (Deuel, 1:14; 7:42; 10:20) / 流珥 (Reuel, 2:14) 的儿子以利雅萨, as each verse spells the father; 以南的儿子亚希拉 |
+| Lael; Zuriel, Abihail (3:24, 35) | 拉伊勒; 苏列, 亚比亥 |
+| Taberah; Kibroth-hattaavah; Hazeroth (11:3, 34-35) | 他备拉; 基博罗哈他瓦; 哈洗录 |
+| Eldad, Medad (11:26) | 伊利达, 米达 (kept apart from Elidad 以利达, 34:21) |
+| Cush, the Cushite woman (12:1) | 古实, 古实女子 |
+| Paran (10:12; 12:16; 13:3, 26) | 巴兰, spelled like Balaam, with Genesis 21:21's decision text (uncertain) |
+| the twelve scouts (13:4-15) | 撒刻的儿子沙母亚; 何利的儿子沙法; 耶孚尼的儿子迦勒; 约瑟的儿子以迦; 嫩的儿子何西阿 (Hoshea; Joshua 约书亚, 13:16); 拉孚的儿子帕提; 梭底的儿子迦叠; 苏西的儿子迦底; 基玛利的儿子亚米利; 米迦勒的儿子西帖; 末西的儿子拿比; 玛基的儿子臼埃尔 |
+| Zin; Rehob; Lebo-hamath (13:21) | 寻 (kept apart from Sin 汛, Exodus 16:1); 利合; 利波哈马 |
+| Ahiman, Sheshai, Talmai; Anak; Zoan (13:22) | 亚希幔, 示筛, 挞买; 亚衲, 亚衲人; 琐安 |
+| the Valley of Eshcol (13:23); Hormah (14:45) | 以实各谷; 何珥玛 |
+| Korah, Dathan, Abiram, Eliab, On, Peleth (16:1) | 可拉, 大坍, 亚比兰, 以利押, 安, 比勒 |
+| Mount Hor (20:22); Arad (21:1); Atharim | 何珥山; 亚拉得; 亚他林 |
+| Oboth, Iye-abarim (21:10-11; 33:44); Iyim (33:45 L) | 阿伯, 以耶亚巴琳; 以因 |
+| Zered, Arnon; Beer; Mattanah, Nahaliel, Bamoth, Pisgah (21:12-20) | 撒烈谷, 亚嫩河; 比尔 (kept apart from Beor 比珥); 玛他拿, 拿哈列, 巴末, 毗斯迦 |
+| Sihon, Heshbon; Og, Bashan, Edrei; Jazer (21:21-35) | 西宏, 希实本; 噩, 巴珊, 以得来; 雅谢 |
+| Balak son of Zippor; Balaam son of Beor; Pethor (22:2-5) | 西拨的儿子巴勒; 比珥的儿子巴兰 (as 2 Peter 2:15 and Revelation 2:14 for Balaam; 比珥 for the Hebrew Beor); 毗夺 |
+| Kiriath-huzoth; Zophim; Peor; Jeshimon (22:39-23:28) | 基列胡琐; 琐腓田野; 毗珥; 耶示门 |
+| Agag; Sheth; Kain, Asshur; Kittim, Eber (24:7-24) | 亚甲; 塞特; 该隐, 亚述; 基提, 希伯 |
+| Shittim; the Baal of Peor (25:1-3) | 什亭; 毗珥的巴力 |
+| Zimri son of Salu; Cozbi daughter of Zur (25:14-15) | 撒路的儿子心利; 苏珥的女儿哥斯比 |
+| the clans of chapter 26 | as Genesis 46:9-24 where the English spells the name alike (哈诺, 法路, 希斯仑, 迦米; 雅悯, 雅斤, 谢拉, 扫罗; 哈基, 书尼, 以利, 亚列利; 示拉, 法勒斯, 希斯仑, 哈母勒; 陀拉, 普瓦, 伸仑; 西烈, 以伦, 雅利; 比拉, 亚实别, 乃缦, 亚勒; 音拿, 亦施韦, 比利亚, 希别, 玛结, 西拉; 雅薛, 古尼, 耶色, 示冷), and where it differs: 尼母利 (Nemuel), 洗分 (Zephon), 阿斯尼 (Ozni), 亚律 (Arod), 普尼人 (the Punites), 雅述 (Jashub), 亚希兰 (Ahiram), 示孚反 and 书反人 (Shephupham, the Shuphamites), 户反 (Hupham), 书含 (Shuham); Manasseh's and Ephraim's clans 玛吉, 基列, 伊以谢, 希勒, 亚斯列, 示剑, 示米大, 希弗; 书提拉, 比结, 他罕, 以兰 |
+| Zelophehad and his daughters (26:33; 27:1; 36:11) | 希弗的儿子西罗非哈; 玛拉, 挪阿, 曷拉, 密迦, 得撒 (one form in all three lists, in each list's order) |
+| the Abarim mountains (27:12) | 亚巴琳山 (亚巴琳山区, 33:47) |
+| the kings of Midian (31:8) | 以未, 利金, 苏珥, 户珥 (as the Hur of Exodus 17:10), 利巴 |
+| the towns of 32:3, 34-42 | 亚他录, 底本, 雅谢, 宁拉, 希实本, 以利亚利, 示班, 尼波, 比稳; 亚罗珥, 亚特录朔反, 约比哈, 伯宁拉, 伯哈兰, 基列亭, 巴力免, 西比玛; 睚珥, 哈倭特睚珥; 挪巴, 基纳 |
+| the stages of 33 not in Exodus | 脱加, 亚录, 利提玛, 临门帕烈, 立拿, 勒撒, 基希拉他, 沙斐山, 哈拉大, 玛吉希录, 他哈, 他拉, 密加, 哈摩拿, 摩西录, 比尼亚干, 曷哈及甲, 约巴他, 阿博拿, 以旬迦别, 撒摩拿, 普嫩, 底本迦得, 亚门低比拉太音, 伯耶西末, 亚伯什亭 |
+| the borders of 34 | 亚克拉滨坡 (L, B; 蝎子坡 R), 哈萨亚达, 押们, 西达达, 西斐仑, 哈萨以难, 示番, 利比拉, 亚延, 基尼烈海 |
+| the men who divide the land (34:19-28) | 示母利, 以利达, 布基, 汉尼业, 基母利, 以利撒反 (Elizaphan son of Parnach 帕纳, spelled as the Levite of 3:30 since the English spells them alike), 帕铁, 亚希忽, 比大黑; their fathers 亚米忽, 基斯伦, 约利, 以弗得, 拾弗但, 阿散, 示罗米 |
+
+Terms settled in Numbers:
+
+| English | Chinese |
+|---|---|
+| "The LORD spoke to Moses (and Aaron), saying" | *dn*对摩西(和亚伦)说话，说： (L); *dn*对摩西(和亚伦)说： (B, R), as Exodus and Leviticus; a sentence-initial "He said" for God is `{{deity_pronoun:他\|祂}}`说：, never 上主 named again (1:1; 26:1) |
+| encamp (chanah); the camp | 安营 (L); 扎营 (B, R); 营, 营地; Readable 搭帐篷住下 where the English Readable speaks of tents (1:50; 3:23-38) |
+| set out (nasaʿ) | 起程 / 起行 (L); 出发, 起程 (B); 离开, 出发 (R) |
+| census: muster, count (paqad); able to go to war | 数点 (L, R), 登记 (B); 能出去从军的 (L), 能出去打仗的 (B), 能上战场打仗的 (R); "lift up the head" 统计……的总数 |
+| tribe; clan; father's house; leader (nasi) | 支派; 宗族; 父家 (L), 家族 (B, R); 首领 |
+| standard; banner | 旗号 (L, B), 旗帜 (R); 标记 |
+| the congregation; Korah's company | 会众; 一伙人 (L, B), 跟随他的人 (R) |
+| grumble (lun); grumbling | 埋怨 (L, B), 抱怨 (R), as Exodus 16-17; the noun 怨言 |
+| silver trumpets; teruah blast | 号 (银号 L), 羊角号 kept for the shofar; 警号 (L; B, R in war, 10:9), 号令 (B), 响亮号声 (R) for the signal to march |
+| the cloud of the LORD's presence; pillar of cloud | 云彩; 云柱 (L, B), 高高的云彩 (R) |
+| water of impurity (19; 31:23) | 除污秽的水 (L); 除去不洁的水 (B); 使人去掉不洁的水 (R). The "water of purification" of 8:7, a different Hebrew phrase, is 除罪的水 (L, B), 能除去罪的特别的水 (R) |
+| "unclean until the evening" | 不洁净到傍晚 (every level, as Leviticus) |
+| the red heifer (19:2) | 红色母牛犊 (L, B); 红色的小母牛 (R), as Hebrews 9:13 |
+| water of bitterness that brings the curse (5:18) | 招致诅咒的苦水 (L); 带来诅咒的苦水 (B, R) |
+| Nazirite; the Nazirite's vow | 拿细耳人; 拿细耳人的愿 |
+| strong drink (shekar) | 烈酒 (L, B, and 28:7 at every level, as Leviticus 10:9); 麦酒 (B, R in 6:3, where the English says "beer") |
+| kipper at Readable | for a person's sin 除去……的罪; the census ransom for lives (31:50) 为自己的生命赎罪 as Exodus 30:15; for the land (35:33) 为……行洁净礼, as Leviticus |
+| a statute forever for your generations | 世世代代永远的定例 (L); 世世代代永久的定例 (B); 必须永远遵守的规定 (R) |
+| a portion forever; covenant of salt (18:19) | 永远应得的份 (L), 永久应得的份 (B); 永远的盐约 |
+| devoted thing (ḥerem, 18:14); destroy completely (21:2-3) | 完全奉献的; 彻底毁灭 |
+| tithe; a tithe of the tithe | 十分之一; 十分之一中的十分之一 |
+| plague (maggefah); deadly sickness | 瘟疫; 致命的疾病 (R) where the English Readable says "deadly sickness" (8:19; 31:16) |
+| fiery snakes; the bronze snake; pole | 火蛇; 铜蛇; 杆子 |
+| censer | 香炉 (L, B); 烧香用的火盘 / 火盘 (R) |
+| Aaron's staff; sprout; almonds | 杖 (L, B), 手杖 (R); 发芽; 杏子 |
+| the Spirit on Moses and the elders (11:17-29); the spirit in Joshua (27:18) | 灵, with no 圣, as the meaning decision; *dn*的灵 (11:29); *gt*的灵 (24:2) |
+| prophesy (11:25) | 说预言 (L, B); 像先知一样说话 (R) |
+| Balaam's oracles (mashal) | 预言: 说出他的预言 (L), 宣讲他的预言 (B), 说出他得到的信息 (R); 神谕 is not used |
+| the Book of the Wars of the LORD (21:14) | 《*dn*的战记》 |
+| Sheol (16:30, 33) | 阴间 (L, B); 死亡之地 (R) |
+| Nephilim; descendants of Anak (13:33) | 拿非利人; 亚衲的后代 |
+| judges of Israel (25:5) | 审判官 (士师 kept for Judges) |
+| city of refuge; avenger (of blood) | 逃城 (L, B), 避难城 (R); 报仇者 / 报血仇的人 (L), 报仇的人 / 报血仇的人 (B), 为死者报仇的亲属 (R) |
+| sojourner; settler (35:15) | 寄居的人 (L, B), 外来的人 (R); 暂住的人 (as Leviticus 25:35). 9:14 keeps Exodus 12:48's wording |
+| Urim (27:21) | 乌陵 |
+| address | 你 at L everywhere. 您 at B and R: Aaron to Moses (12:11-12), Joshua to Moses (11:28), the people pleading with Moses (21:7), the officers and the Gadites and Reubenites (31:49; 32), the clan leaders (36:2), messengers to the king of Edom and to Sihon (20:14-19; 21:22), Balaam to Balak in prose (22:38; 23-24); Balaam's oracles, Balak to Balaam and the quarrels of 16 and 20 say 你 |
+| "my lord" (ʾadoni) to Moses | 我主 (L, B); 您 or 主人 (R) |
+| units | Literal the Hebrew unit; Balanced and Readable a `units` span, metric first: shekel 11.5克 (five shekels 约57克银子; ten 约115克; seventy 约800克; 130 约1.5公斤; 1,365 约15.7公斤; 2,400 约27.6公斤; 16,750 约190公斤); a tenth of an ephah 约2.2升, two tenths 约4.4升, three tenths 约6.6升; hin: half 约1.9升, a third 约1.2升, a quarter 约0.9升; homer 约220升 (ten homers 约2200升); cubit 约45厘米 (two cubits 约90厘米, a thousand 约450米, two thousand 约900米) |
+
+### Deuteronomy
+
+Deuteronomy keeps the glossary's forms for every name and term above, and
+the Chinese of Exodus, Leviticus and Numbers for what it retells: the Ten
+Words (5:6-21) are Exodus 20:2-17's Chinese wherever the Hebrew is the same
+and differ only where Deuteronomy's Hebrew does (5:12 "keep" for "remember";
+5:14-15 the ox and the donkey, and the Sabbath grounded in the exodus; 5:20
+"empty" witness; 5:21 the wife first and "desire" for the house); the
+journeys of 1-3 and 10:6-7 keep Numbers 20-21 and 33's names; the clean and
+unclean animals of 14:3-21 are Leviticus 11's list; the feasts of 16 keep
+逾越节, 除酵节, 七七节, 住棚节. Where the New Testament quotes Deuteronomy and
+the Hebrew says the same, its Chinese is kept at each level, with
+`{{divine_name:上主|雅威}}` where the Greek has "Lord": 5:16 (Ephesians 6:2-3),
+5:17-21 (Matthew 19:18; Romans 13:9), 6:4-5 (Mark 12:29-30, without "mind"),
+6:13 (Matthew 4:10, with the Hebrew "fear"), 6:16 (Matthew 4:7: 试验, where
+Exodus 17:2, 7 has 试探), 8:3 (Matthew 4:4), 18:15 (Acts 3:22), 19:15
+(Matthew 18:16; 2 Corinthians 13:1), 21:23 (Galatians 3:13's frame, with the
+glossary's 诅咒 for Galatians' 咒诅 and the Hebrew's "of God"), 25:4
+(1 Corinthians 9:9), 27:26 (Galatians 3:10), 30:12, 14 (Romans 10:6, 8; 30:13
+keeps the Hebrew "beyond the sea"), 31:6 (Hebrews 13:5's verbs), 32:35
+(Romans 12:19; Hebrews 10:30), 32:43 (Romans 15:10's frame). 18:19 follows
+the Hebrew ("I will require it"), with a decision naming Acts 3:23. Names not
+in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Suph, Tophel, Laban, Hazeroth, Di-zahab (1:1) | 苏弗, 陀弗, 拉班, 哈洗录 (as Numbers 11:35), 底撒哈 |
+| the Arabah; the Sea of the Arabah, the Salt Sea (1:1; 3:17) | 亚拉巴; 亚拉巴海, 盐海 |
+| Ashtaroth, Edrei (1:4) | 亚斯他录 (kept apart from Ashteroth-karnaim, Genesis 14:5), 以得来 (as Numbers 21:33) |
+| the Shephelah; the Negev (1:7) | 示非拉 (L), 丘陵 (B), 西边的低矮丘陵 (R); 内盖夫 (L, B), 南方的荒漠 (R) |
+| the valley of Eshcol (1:24) | 以实各谷 (as Numbers 13:23) |
+| Hormah (1:44) | 何珥玛 (as Numbers 14:45) |
+| Elath, Ezion-geber (2:8) | 以拉他, 以旬迦别 (as Numbers 33:35) |
+| Ar (2:9) | 亚珥 (as Numbers 21:15) |
+| the Emim; the Anakim; the Rephaim (2:10-11) | 以米人; 亚衲人 (as Numbers 13:33's sons of Anak 亚衲); 利乏音人 |
+| the Zamzummim (2:20) | 散送冥人, the conventional form, kept though a reviewer may prefer one without 冥 ("dark, underworld") |
+| the Avvim; Caphtor, the Caphtorim (2:23) | 亚卫人; 迦斐托, 迦斐托人 |
+| the wadi of Zered; of Arnon; the Jabbok (2:13, 24, 37) | as the English level: 撒烈溪谷, 亚嫩溪谷, 雅博溪谷 (L); 撒烈谷, 亚嫩谷, 雅博河 (B); 撒烈谷, 亚嫩河, 雅博河 (R) |
+| Kedemoth; Jahaz; Aroer (2:26, 32, 36) | 基底莫; 雅杂 (as Numbers 21:23); 亚罗珥 |
+| Argob; Salecah (3:4, 10) | 亚珥歌伯; 撒迦 |
+| Jair; the Geshurites, the Maacathites; Havvoth-jair (3:14) | 睚珥; 基述人, 玛迦人; 哈倭特睚珥 (as Numbers 32:41) |
+| Sirion, Senir; Mount Siyon (3:9; 4:48) | 西连, 示尼珥; 西云山, each for Mount Hermon 黑门山 |
+| Kinnereth; Pisgah; Beth-peor; Baal-peor (3:17, 29; 4:3) | 基尼烈; 毗斯迦 (毗斯迦山坡, 毗斯迦山顶); 伯毗珥; 巴力毗珥 (as Numbers 25:3) |
+| Bezer, Ramoth in Gilead, Golan in Bashan (4:43) | 比悉, 基列的拉末, 巴珊的哥兰 |
+| Taberah, Massah, Kibroth-hattaavah (9:22) | 他备拉, 玛撒 (as Exodus 17:7), 基博罗哈他瓦 (as Numbers 11:34) |
+| Beeroth Bene-jaakan, Moserah, Gudgodah, Jotbathah (10:6-7) | 比录比尼亚干, 摩西拉 (kept apart from Moseroth 摩西录, Numbers 33:30), 古歌大, 约巴他 (as Numbers 33:33) |
+| Dathan, Abiram, Eliab (11:6) | 大坍, 亚比兰, 以利押 (as Numbers 16:1) |
+| Mount Gerizim, Mount Ebal; Gilgal; the oaks of Moreh (11:29-30) | 基利心山, 以巴路山; 吉甲; 摩利的大树 |
+| Pethor, Aram-naharaim (23:5) | 毗夺 (as Numbers 22:5), 亚兰拿哈拉音 (as Genesis 24:10) |
+| Admah, Zeboiim (29:22) | 押玛, 洗扁 (as Genesis 14:2) |
+| Jeshurun (32:15; 33:5, 26) | 耶书仑 |
+| Mount Abarim; Mount Nebo; Meribath-kadesh; the wilderness of Zin (32:49-51) | 亚巴琳山; 尼波山; 加低斯的米利巴水; 寻的旷野 |
+| Mount Paran (33:2) | 巴兰山 |
+| Zoar; the city of palms (34:3) | 琐珥; 棕树城 |
+
+Terms settled in Deuteronomy (*dn* = `{{divine_name:上主|雅威}}`, *gt* =
+`{{god_term:神|上帝}}`):
+
+| English | Chinese |
+|---|---|
+| the LORD your God | *dn*你的*gt* / *dn*你们的*gt*: Literal follows the Hebrew number in every verse; Balanced and Readable follow it too from chapter 5, but say 你们 for the people through the historical prologue of 1-4 (decision at 1:21) |
+| ʾAdonai YHWH (3:24; 9:26) | 主宰*dn*, one decision at 3:24 |
+| statutes and rules (ḥuqqim u-mishpatim) | 律例和典章 (L); 律例和规定 (B, R) |
+| the law words, by Hebrew word | commandment (mitswah) 诫命 (L, B), 命令 (R); statute (ḥoq, ḥuqqah) 律例; rule (mishpat) 典章 (L), 规定 (B, R); testimonies (ʿedot) 见证 (L), 法度 (B), 指示 (R) |
+| keep and do; be careful to do (shamar la-ʿasot) | 谨守遵行 (L); 谨慎遵行 (B); 小心遵守 (R) |
+| take possession of (yarash, the land) | 得……为业 (L); 占领 (B); 据为己有 (R), as Joshua; 占领 (R) where the English Readable speaks of a military take-over (2:24, 31; 3:12; 4:47). Dispossess nations: 赶出 / 赶走 |
+| the land the LORD swore to your fathers | *dn*向你(们)列祖起誓要赐给……的地 (L); *dn*向你(们)祖先起誓要赐给……的地 / 起誓应许你祖先的地 (B); *dn*起誓应许你祖先的地 (R) |
+| so that it may go well with you | 事事顺利 at every level, as Ephesians 6:3 (4:40; 5:16, 29, 33; 6:3, 18; 12:25, 28; 19:13; 22:7). 得福 is not used |
+| prolong your days | 年日得以延长 (L); 享长寿 (B); 活得长久 (R), as Exodus 20:12 |
+| with a mighty hand and an outstretched arm | 用大能的手和伸出的膀臂 (L, B); *dn*的大能 (R) (4:34) |
+| with all your heart and with all your soul (and strength) | 用你整个的心、用你整个的灵魂 (L); 用你全部的心、全部的生命 (B); 用全部的心和全部的生命 (R), as Mark 12:30 |
+| other gods; the gods of the peoples | 别的神明; 神明, no span |
+| herem (devote to destruction); the devoted thing | 彻底毁灭 (L, B), 完全毁灭，献给*dn* (R); 当彻底毁灭的 (L), 要彻底毁灭的 (B) |
+| be strong and courageous (31:6, 7, 23) | 要刚强，要勇敢 (L); 要刚强勇敢 (B); 要坚强勇敢 (R), binding for Joshua |
+| the tassels (gedilim, 22:12) | 穗子 at every level, as Numbers 15:38 (tsitsit), with a decision that the Hebrew words differ |
+| test (nissah) the LORD | 试验, as Matthew 4:7 (6:16; 33:8); God testing Israel 试验 (L, B), 考验 (R) |
+| Cursed / blessed (27:15-26; 28:3-6, 16-19) | ……的，是受诅咒的 (L); ……的人要受诅咒 (B); 谁……，谁就要受诅咒 (R); 蒙福 / 受诅咒 in parallel wording in 28 |
+| address to Moses and to Sihon | 您 at Balanced (and Readable where a pronoun is needed) for the people's petitions to Moses (1:14; 5:27) and the message to King Sihon (2:27-28); 你 at Literal |
+| unit spans | cubits (3:11) and shekels (22:19, 29) in units spans at B and R, metric by default, as Exodus and Leviticus (约45厘米 a cubit; 11.5克 a shekel) |
+
+### Joshua
+
+Joshua keeps the forms of Genesis to Numbers and Deuteronomy for every name
+and term above: the charge of Deuteronomy 31, the ban (herem), the
+possession and inheritance words, the clans and the tabernacle. The altar on
+Mount Ebal (8:31) uses the words of Deuteronomy 27:5-6. Joshua 15:15-19 and
+Judges 1:11-15 retell one story in nearly the same Hebrew, so each level
+keeps one Chinese wording where the Hebrew is the same. Joshua 15:17 B is
+drafted fresh. Rahab keeps the form of Hebrews 11:31 and James 2:25. Names
+not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Rahab (2:1); Shittim | 喇合 (as Hebrews 11:31, James 2:25); 什亭 (as Numbers 25:1) |
+| Gilgal; the Hill of Foreskins (5:3) | 吉甲; 包皮山 |
+| Achan son of Carmi, son of Zabdi, son of Zerah (7:1); the Valley of Achor (7:26) | 亚干, 迦米, 撒底, 谢拉; 亚割谷 |
+| Ai; Beth-aven | 艾城 (every time); 伯亚文 |
+| Mount Ebal; Mount Gerizim (8:30, 33) | 以巴路山; 基利心山 |
+| Gibeon, Chephirah, Beeroth, Kiriath-jearim (9:17) | 基遍, 基非拉, 比录, 基列耶琳 |
+| the Book of Jashar (10:13) | 《雅煞珥书》 |
+| Makkedah; Hazor; the waters of Merom | 玛基大; 夏琐; 米伦水 |
+| Kiriath-arba (14:15), Kiriath-sepher (15:15), Kiriath-baal, Kiriath-sannah, Kiriathaim (13:19), Kiriath (18:28) | 基列亚巴, 基列西弗, 基列巴力, 基列萨拿, 基列亭, 基列: the conventional forms; "基列" is also Gilead, a different Hebrew name (decision at 18:28) |
+| Bamoth-baal (13:17) | 巴末巴力, in the order of the Hebrew parts; Numbers 22:41 has 巴力巴末 for the same name (uncertain, for a reviewer) |
+| Beth-haram (13:27) | 伯亚兰, kept apart from the Beth-haran of Numbers 32:36 (伯哈兰), as the Hebrew spells them |
+| Rumah (15:52) | 路玛, as the Hebrew read here; *alt.* 度玛 (Dumah) |
+| Othniel son of Kenaz; Achsah (15:16-17) | 俄陀聂, 基纳斯; 押撒 (as Judges 1:12-13) |
+| Sheshai, Ahiman, Talmai (15:14) | 示筛, 亚希幔, 挞买 (as Numbers 13:22) |
+| Zelophehad; Mahlah, Noah, Hoglah, Milcah, Tirzah (17:3) | 西罗非哈; 玛拉, 挪阿, 曷拉, 密迦, 得撒 (as Numbers 26:33; 27:1) |
+| Kohath, Gershon, Merari (21:4-7) | 哥辖, 革顺, 米拉利 (as Numbers 3) |
+| Timnath-serah (19:50; 24:30); Mount Gaash | 亭拿西拉, kept apart from Judges 2:9's Timnath-heres 亭拿希烈; 迦实山 |
+| Gibeah of Phinehas (24:33) | 他儿子非尼哈的基比亚 (L); 基比亚，就是他儿子非尼哈的山城 (B) |
+| the Salt Sea; the Sea of Arabah | 盐海 (L), 死海 (B, R); 亚拉巴海 |
+| the Sea of Reeds (2:10; 4:23; 24:6) | 芦苇海 (L), 红海 (B, R), as the English level |
+
+Terms settled in Joshua:
+
+| English | Chinese |
+|---|---|
+| be strong and courageous (1:6-9, 18; 10:25) | 要刚强，要勇敢 (L); 要刚强勇敢 (B); 要坚强勇敢 (R), as Deuteronomy 31; "be very strong" (23:6) 要非常刚强 (L, B), 要非常坚强 (R) |
+| devote to destruction (herem, verb) | 彻底毁灭 (L, B); 完全毁灭，当作献给*dn*的 (R) |
+| the devoted things (herem, noun) | 当彻底毁灭的东西 (L, B; as Deuteronomy 13:18); 当毁灭的东西 (R). Of people or the camp under the ban: 成为当彻底毁灭的 (L, B); 被定为要毁灭的 (R) |
+| possess the land (yarash qal) | 得……为业 (L); 占领 (B); 据为己有 (R). Seizing one city (8:7): 占据 / 夺取 / 攻下 |
+| drive out, dispossess (yarash hiphil; garash) | 赶出 / 赶出去 (L, B); 赶走 (R) |
+| inheritance (nachalah) | 产业 (L, B); 分到的地 (R) |
+| possession (yerushshah, achuzzah) | 为业 / 地业 (L); 地业 / 自己的地 (B); 归……所有 (R), kept apart from 产业 |
+| the ark | 约柜 where the Hebrew says "covenant", 柜 / *dn*的柜 where it says only "the ark (of the LORD)", 见证的柜 for the ark of the testimony (L); 约柜 / *dn*的约柜 (B, R) |
+| commander of the LORD's army (5:14) | *dn*军队的统帅; Joshua's address 我主 |
+| city; town | 城 (L; 城邑 for "cities" in general); 城镇 (B, R) |
+| clan (mishpachah); father's house | 宗族 at every level; 父家 (L), 家族 (B, R) |
+| villages around the towns; pasturelands (21) | 村庄 (周围的村庄 B, R); 郊野 (L), 草场 (B, R) |
+| the lot formula (18:11-19:40) | 第N支签抽出来，是为……，按着他们的宗族 (L); 第N支签抽出来，归……支派，按宗族分地 (B); 第N次抽签是为……支派抽的，按宗族分地 (R) |
+| the closing formula ("This is the inheritance of …") | 这是……按着他们的宗族所得的产业，就是这些城和它们的村庄 (L); 这是……支派按宗族所得的产业，就是这些城镇和周围的村庄 (B); 这是……支派按宗族分到的地，就是这些城镇和周围的村庄 (R) |
+| town tallies | ：共N座城，还有它们的村庄 (L); ，共N座城镇和周围的村庄 (B); 一共有N座城镇，还有周围的村庄 (R); Literal lists with 、 |
+| border verbs (L) | 上到, 下到, 经过, 通到, 绕到 / 转到, 延伸, 碰到; "its ends were at" 直通到……为止 |
+| the king list (12:9-24) | ……王，一个； (every level); 所有的王：三十一个 (L) |
+| the land had rest from war (11:23; 14:15) | 这地就安静了，没有战争 (L); 这地就太平了，不再有战争 (B); 从此这地有了太平的日子，战争停止了 (R), as Judges 3:11 |
+| forced labour (16:10; 17:13) | 服苦役 (L, B), as Genesis 49:15 and Judges 1:28-35; 做苦工 (R) |
+| cities of refuge (20) | 逃城 (L, B); 避难城 (R), as Numbers 35 |
+| address to Joshua | 您 at B and R from the eastern tribes (1:16-18) and the Gibeonites (9:8-25; 10:6); 你 from Caleb (14:6-12) and Joseph's descendants (17:14-18) |
+| Moses, Joshua as servant of the LORD | *dn*的仆人 at every level |
+| El in 22:22 | 大能者, with no god_term span (uncertain) |
+| other gods; foreign gods | 别的神明; 外族神明 (L, B, as Genesis 35:2), 别的民族的神明 (R) |
+| the altar named Witness (22:34) | 见证, with no quotation marks |
+| two thousand cubits (3:4) | 两千肘 (L); `{{units:约900米\|两千肘}}` (B, R) |
+
+### Judges
+
+Judges keeps the glossary's forms for every name and term above, and the
+forms of Genesis to Deuteronomy for places, tribes and clans (Numbers and
+Deuteronomy for the Transjordan, Joshua's lists for the towns of Canaan).
+1:11-15 retells Joshua 15:15-19 in nearly the same Hebrew and follows its
+Chinese closely at each level, differing where the Hebrew differs ("went" for
+"went up", "the younger than he", "to him") and in a few Balanced phrases
+(1:13 攻下了那城 / 许配给他; 1:15 你已经把内盖夫的地给了我，现在也请给我几处水泉),
+for a reviewer to bring into line with whichever is settled. The book's refrains have one
+wording per level wherever they return (*dn* = `{{divine_name:上主|雅威}}`,
+*gt* = `{{god_term:神|上帝}}`):
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| did evil in the eyes of the LORD (2:11; 3:7, 12; 4:1; 6:1; 10:6; 13:1) | 做了在*dn*眼中为恶的事 | 做了*dn*看为恶的事 | 做了*dn*认为邪恶的事 |
+| served the Baals / the Ashtaroth / the Asherahs | 事奉众巴力 / 亚斯他录 / 众亚舍拉 | 事奉众巴力 / 亚斯他录 / 众亚舍拉 | 拜众巴力 / 称为亚斯他录的女神 / 称为亚舍拉的女神 |
+| the anger of the LORD burned against Israel (2:14, 20; 3:8; 10:7) | *dn*的怒气向以色列发作 | *dn*向以色列大发烈怒 | *dn*对以色列非常生气 |
+| sold them into the hand of (2:14; 3:8; 4:2; 10:7) | 卖在……的手中 | 卖在……的权下 | 交给 |
+| cried out to the LORD | 向*dn*呼求 | 向*dn*呼求 | 向*dn*呼求帮助 |
+| raised up a deliverer; judges | 兴起一位拯救者; 兴起士师 | 兴起一位拯救者; 兴起士师 | as the English; 兴起一些领袖，称为士师 (2:16), then 领袖 |
+| judged Israel N years (3:10; 4:4; 10:2-3; 12:7-14; 15:20; 16:31) | 作以色列的士师N年 | 作以色列的士师N年 | 领导以色列N年 |
+| the land had rest N years (3:11, 30; 5:31; 8:28) | 这地安静了N年 | 这地太平了N年 | 这地有N年太平的日子 |
+| the Spirit of the LORD was upon (3:10; 11:29) | *dn*的灵在……身上 | 降在……身上 | 临到……身上 |
+| the Spirit clothed Gideon (6:34) | 以基甸为衣 | 像衣服一样披在基甸身上 | 降在基甸身上，掌管了他 |
+| the Spirit rushed upon Samson (14:6, 19; 15:14) | *dn*的灵猛然降在他身上 (every level) | | |
+| In those days there was no king in Israel (17:6; 18:1; 19:1; 21:25) | 在那些日子，以色列中没有王 | 那时以色列没有王 | 那个时候，以色列没有王 |
+| each did what was right in his own eyes (17:6; 21:25) | 各人都做自己眼中看为正的事 (as Deuteronomy 12:8; Samson's "right in my eyes", 14:3, 7: 在我眼中看为正) | 人人都做自己认为对的事 | 每个人都照自己觉得对的去做 |
+
+Terms settled in Judges:
+
+| English | Chinese |
+|---|---|
+| judge (shofet, the deliverer-leaders) | 士师 (L, B); 领袖 (R). God as Judge (11:27): 审判者 |
+| the angel of the LORD; of God (2:1; 6; 13) | *dn*的使者; *gt*的使者, at every level; 13:6 R 天使 where the English Readable says "an angel of God" |
+| the man of God (13:6, 8) | *gt*的人 |
+| shofar (3:27; 6:34; 7:8-22) | 羊角号 at every level, as Exodus 19, Leviticus 25 and Joshua 6 |
+| the rulers of the Philistines (seranim; 3:3; 16) | 首领 (非利士人的首领; 五个首领) |
+| commander of the army (sar tsava; 4:2, 7); commander (qatsin; 11:6, 11) | 军队统帅 (as Genesis 21:22, Joshua 5:14); 统帅, kept apart from 首领 "head" (11:8-11) |
+| the lords of Shechem (baʿale, 9) and of Gibeah (20:5) | 主人 (L, as Joshua 24:11); 首领 (B, R); Gibeah B 基比亚的人 as the English |
+| the commanders of Israel (5:9, 14, 15) | 将领 |
+| the middle watch (7:19) | 中更 (L, B); 半夜……第二更 (R). 三更 is not used (the Chinese night has five watches) |
+| gods of the nations; Dagon, Baal-berith, El-berith, Chemosh | 神明 / 别的神明, no span; 大衮, 巴力比利土, 伊勒比利土, 基抹 |
+| ephod; teraphim; carved image; cast image (8:27; 17-18) | 以弗得; 家中的神像 (L, B), 家中的小神像 (R); 雕刻的像 (L, B), 雕刻的偶像 (R); 铸造的偶像 (L, B), 用金属熔铸的偶像 (R) |
+| the Asherah pole (6:25-30) | 亚舍拉木柱; the Asherahs as goddesses (3:7) 众亚舍拉 |
+| inquire of God / the LORD (1:1; 18:5; 20:18, 23, 27) | 求问 |
+| devote to destruction (herem; 1:17; 21:11) | 彻底毁灭 (L, B); 完全毁灭，当作献给*dn*的 (R) |
+| forced labour (1:28-35) | 服苦役 (L, B); 做苦工 (R) |
+| dispossess (yarash; 1:19-33; 2:21, 23; 11:23-24) | 赶出 (L, B); 赶走 (R), as Joshua; "drive out" (garash; 2:3; 6:9; 9:41; 11:2, 7) as the sentence needs |
+| possess the land | 得……为业 (L); 占领 (B); 据为己有 (R) |
+| the Lord GOD (6:22; 16:28) | 主宰*dn* |
+| the sons of Ammon | 亚扪的子孙 (L; 亚扪子孙的 before a noun); 亚扪人 (B, R) |
+| silver by weight (8:26; 16:5; 17:2-10) | units spans at B and R at 11.5 grams the shekel, one decimal: 1,700 `{{units:约19.6公斤\|一千七百舍客勒}}`; 1,100 `约12.7公斤`; 200 `约2.3公斤`; ten `约115克` |
+| concubine (pilegesh) | 妾; R explains it once per chapter: 妾（地位较低的妻子） |
+| sons of worthlessness (19:22; 20:13) | 卑劣之徒 (L); 无赖 (B); 坏人 (R), as Deuteronomy 13:14 |
+| Nazirite (13:5, 7; 16:17) | 拿细耳人, as Numbers 6:2 |
+
+Address: Ehud to Eglon 您 (B, R) with 王啊 (L), 陛下 (B); Barak to Deborah
+您 (B, R); Jael to Sisera 大人 and 您 (B), 先生 (R); Zebul's message to
+Abimelech 您 (B, R; 9:31-33); Manoah to the man of God 您 (B, R), since he
+takes him for a prophet; Gideon to the angel 先生 (6:13), and 你 in the
+deity_pronoun span once the English spans "you" (6:17-18); Jephthah's
+daughter to her father 您 (B, R); Jephthah and the Ammonite king 你 (one
+ruler to another); Israel's request to Edom and Sihon (11:17-19) as Numbers
+20:17 with 您.
+
+Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Bezek; Adoni-bezek (1:4-5) | 比色; 亚多尼比色 |
+| Debir, Kiriath-sepher; Achsah; Othniel; Kenaz (1:11-13) | 底璧, 基列西弗; 押撒; 俄陀聂; 基纳斯 (as Joshua 15) |
+| the city of palms (1:16) | 棕树城 |
+| Zephath (1:17) | 洗法 |
+| Beth-shean, Taanach, Dor, Ibleam (1:27) | 伯善, 他纳, 多珥, 以伯莲 (as Joshua 17:11) |
+| Gezer; Kitron, Nahalol (1:29-30) | 基色; 基伦, 拿哈拉 |
+| Acco, Ahlab, Achzib, Helbah, Aphik, Rehob (1:31) | 亚柯, 亚黑拉, 亚革悉, 黑巴, 亚弗革, 利合 |
+| Beth-shemesh, Beth-anath (1:33) | 伯示麦, 伯亚纳 |
+| Har-heres, Aijalon, Shaalbim (1:35) | 希烈山, 亚雅仑, 沙宾 |
+| the ascent of Akrabbim; Sela (1:36) | 亚克拉滨坡 (as Numbers 34:4); 塞拉, kept apart from Silas 西拉 |
+| Bochim; Gilgal (2:1) | 波金; 吉甲 |
+| Timnath-heres; Mount Gaash (2:9) | 亭拿希烈; 迦实山 |
+| the Ashtaroth (2:13) | 亚斯他录 (no 众) |
+| Cushan-rishathaim; Aram-naharaim (3:8) | 古珊利萨田; 亚兰拿哈拉音 |
+| Eglon; Ehud; Gera; Seirah (3:12-26) | 伊矶伦; 以笏; 基拉; 西伊拉 |
+| Shamgar; Anath (3:31) | 珊迦; 亚纳, kept apart from Anna 亚拿 |
+| Jabin; Hazor; Sisera; Harosheth-hagoyim (4:2) | 耶宾; 夏琐; 西西拉; 夏罗设哥印 |
+| Deborah; Lappidoth; Barak; Abinoam; Kedesh (4:4-6) | 底波拉; 拉比多; 巴拉 (Hebrews 11:32); 亚比挪庵; 基低斯 |
+| the Kishon (4:7) | 基顺溪 (L), 基顺河 (B, R) |
+| Heber; Kain; Zaanannim; Jael (4:11, 17) | 希百; 该隐 (L, the same Hebrew name as Cain; uncertain), 基尼 (B, R); 撒拿音; 雅亿 |
+| Machir; Meroz (5:14, 23) | 玛吉; 米罗斯 |
+| Ophrah; Joash; Abiezer; Gideon; Jerubbaal (6:11, 32) | 俄弗拉; 约阿施; 亚比以谢; 基甸; 耶路巴力 |
+| the spring of Harod; the hill of Moreh; Purah (7:1, 10) | 哈律泉; 摩利冈; 普拉 |
+| Beth-shittah, Zererah, Abel-meholah, Tabbath, Beth-barah (7:22, 24) | 伯哈示他, 西利拉, 亚伯米何拉, 他巴, 伯巴拉 |
+| Oreb, Zeeb (7:25) | 俄立, 西伊伯 |
+| Succoth, Penuel; Zebah, Zalmunna; Karkor; Nobah, Jogbehah; Heres (8:5-13) | 疏割, 毗努伊勒; 西巴, 撒慕拿; 加各; 挪巴, 约比哈; 希列斯 |
+| Jether (8:20) | 益帖, the same Hebrew as Jethro's other name (Exodus 4:18) |
+| Abimelech; Baal-berith; Beth-millo; Jotham; Beer (8:31-9:21) | 亚比米勒; 巴力比利土; 伯米罗; 约坦; 比尔 |
+| Gaal, Ebed; Zebul; Arumah; the Tower of Shechem; El-berith; Mount Zalmon; Thebez (9:26-50) | 迦阿勒 (kept apart from Caleb 迦勒), 以别; 西布勒; 亚鲁玛; 示剑塔; 伊勒比利土; 撒们山; 提备斯 |
+| Tola, Puah, Dodo, Shamir; Jair; Kamon; Havvoth-jair (10:1-5) | 陀拉, 普瓦, 朵多, 沙密; 睚珥; 加们; 哈倭特睚珥 |
+| the Maonites (10:12) | 马云 (L), 马云人 (B, R) |
+| Jephthah; Tob; Minnith; Abel-keramim (11:1-33) | 耶弗他; 陀伯地; 米匿; 亚备勒基拉明 |
+| Zaphon; Shibboleth, Sibboleth (12:1, 6) | 撒分; 示播列, 西播列 |
+| Ibzan; Elon; Abdon, Hillel, Pirathon (12:8-15) | 以比赞; 以伦; 押顿, 希列, 比拉顿 |
+| Zorah, Manoah; Mahaneh-dan, Eshtaol (13:2, 25; 18) | 琐拉, 玛挪亚; 玛哈尼但, 以实陶 |
+| Timnah; Etam; Lehi; Ramath-lehi; En-hakkore (14:1-15:19) | 亭拿; 以坦; 利希; 拉玛利希; 隐哈歌利 |
+| the Valley of Sorek; Delilah (16:4) | 梭烈谷; 大利拉 |
+| Micah (17:1) | 米迦, kept apart from the prophet 弥迦 |
+| Laish; Beth-rehob (18:7, 28) | 拉亿; 伯利合 |
+| Jonathan son of Gershom (18:30) | 约拿单, 革舜 (Exodus 2:22); 玛拿西 as written (m1), 玛拿西的后代 (B, R) |
+| Jebus; Gibeah (19:10, 12) | 耶布斯; 基比亚 (Geba 迦巴 at L in 20:10, 33) |
+| Baal-tamar; Menuhah; the rock of Rimmon; Gidom (20:33-45) | 巴力他玛; 米努哈; 临门磐石; 基顿 |
+| Jabesh-gilead; Lebonah (21:8, 19) | 基列雅比; 利波拿 |
+
+Forced labour is 服苦役 in Judges and Joshua (16:10; 17:13), as Genesis
+49:15. Shaalabbin 沙拉宾 (Joshua 19:42) and Shaalbim 沙宾 (Judges 1:35),
+Aphek 亚弗 and Aphik 亚弗革, Timnath-serah 亭拿西拉 and Timnath-heres 亭拿希烈
+follow the two spellings of the Hebrew.
