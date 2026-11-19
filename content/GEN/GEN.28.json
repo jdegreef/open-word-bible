@@ -100,6 +100,11 @@
           "L": "Dan Ishak memanggil Yakub dan memberkatinya dan memerintahkan kepadanya dan berkata kepadanya, \"Janganlah engkau mengambil istri dari perempuan-perempuan Kanaan.",
           "B": "Lalu Ishak memanggil Yakub, memberkatinya, dan memberinya pesan ini: \"Jangan mengambil perempuan Kanaan menjadi istrimu.",
           "R": "Lalu Ishak memanggil Yakub dan memberkatinya. Kemudian dia berpesan kepadanya, \"Jangan menikah dengan perempuan dari negeri Kanaan."
+        },
+        "zh": {
+          "L": "以撒把雅各叫来，为他祝福，又吩咐他，对他说：“你不可从迦南的众女儿中娶妻。",
+          "B": "于是以撒派人叫雅各来，为他祝福，嘱咐他说：“不要娶任何迦南女子为妻。",
+          "R": "于是以撒叫雅各到他跟前来，为他祝福。然后他告诉雅各：“不要和迦南地的女子结婚。"
         }
       },
       "decisions": [
@@ -289,6 +294,11 @@
           "L": "Bangkitlah, pergilah ke Padan-Aram, ke rumah Betuel, ayah ibumu, dan ambillah bagimu dari sana seorang istri dari anak-anak perempuan Laban, saudara ibumu.",
           "B": "Berangkatlah sekarang ke Padan-Aram, ke rumah keluarga Betuel, ayah ibumu, dan carilah istri di sana dari antara anak-anak perempuan Laban, pamanmu.",
           "R": "Pergilah ke Padan-Aram, ke keluarga Betuel, kakekmu dari pihak ibu. Menikahlah dengan salah seorang anak perempuan Laban, saudara ibumu."
+        },
+        "zh": {
+          "L": "起身，往巴旦亚兰去，到你母亲的父亲彼土利的家，从那里为你自己娶一个妻子，就是从你母亲的哥哥拉班的女儿们中[娶]。",
+          "B": "现在就动身到巴旦亚兰去，到你外祖父彼土利的家里，在你舅舅拉班的女儿中为自己找一个妻子。",
+          "R": "你要到巴旦亚兰去，到你母亲的父亲彼土利的家里。你要娶你母亲的哥哥拉班的一个女儿。"
         }
       },
       "decisions": [
@@ -411,6 +421,26 @@
           "reason": "Hindi has single words for the mother's father and the mother's brother; Balanced and Readable use them, while Literal keeps the Hebrew's description.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280020071",
+            "o010280020151"
+          ],
+          "choice": "\"外祖父\", \"舅舅\" (B)",
+          "alternatives": [
+            "\"你母亲的父亲\", \"你母亲的哥哥\""
+          ],
+          "reason": "Chinese has single words for a mother's father and brother; Balanced uses them, as the English Balanced says \"uncle\". Literal and Readable keep \"your mother's father / brother\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -510,6 +540,11 @@
           "L": "Dan kiranya Allah Yang Mahakuasa memberkati engkau dan membuat engkau berbuah dan membuat engkau banyak, sehingga engkau menjadi suatu himpunan bangsa-bangsa.",
           "B": "Kiranya Allah Yang Mahakuasa memberkati engkau, memberi engkau keturunan dan membuatnya bertambah banyak, sampai engkau menjadi suatu himpunan bangsa-bangsa.",
           "R": "Semoga Allah Yang Mahakuasa memberkati kamu. Semoga {{deity_pronoun:dia|Dia}} memberi kamu banyak anak, sehingga keluargamu bertambah menjadi banyak bangsa."
+        },
+        "zh": {
+          "L": "愿全能的{{god_term:神|上帝}}赐福给你，使你生育，使你繁增，好让你成为众民的大会。",
+          "B": "愿全能的{{god_term:神|上帝}}赐福给你，使你多有儿女，子孙繁多，直到你成为一大群民族。",
+          "R": "愿全能的{{god_term:神|上帝}}赐福给你。愿{{deity_pronoun:他|祂}}使你有很多孩子，好让你的家族发展成许多民族。"
         }
       },
       "decisions": [
@@ -810,6 +845,69 @@
           "reason": "\"himpunan\" is a gathered company without the Islamic overtone of \"jemaah\" or the church sense of \"jemaat\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010280030012"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\": 神 by default, 上帝 as the reader's setting",
+          "alternatives": [
+            "a fixed \"神\"",
+            "a fixed \"上帝\""
+          ],
+          "reason": "Every word naming the one God takes the Chinese god_term setting (style guide section 4); the English has no such setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280030012",
+            "o010280030021"
+          ],
+          "choice": "\"全能的{{god_term:神|上帝}}\" for El Shaddai",
+          "alternatives": [
+            "\"全能的主\""
+          ],
+          "reason": "The glossary's form for El Shaddai (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280030082"
+          ],
+          "choice": "\"大会\" (L) for qahal",
+          "alternatives": [
+            "\"会众\""
+          ],
+          "reason": "The glossary's word for qahal at Literal; Balanced and Readable say \"peoples\" as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -919,6 +1017,11 @@
           "L": "Dan kiranya {{deity_pronoun:dia|Dia}} memberikan kepadamu berkat Abraham, kepadamu dan kepada keturunanmu bersama engkau, supaya engkau memiliki negeri tempat engkau tinggal sebagai pendatang, yang telah diberikan Allah kepada Abraham.\"",
           "B": "Kiranya {{deity_pronoun:dia|Dia}} memberikan kepadamu dan kepada keturunanmu berkat yang telah diberikan-{{deity_pronoun:nya|Nya}} kepada Abraham, sehingga engkau memiliki negeri tempat engkau sekarang tinggal sebagai pendatang, negeri yang telah diberikan Allah kepada Abraham.\"",
           "R": "Semoga {{deity_pronoun:dia|Dia}} memberikan kepadamu dan kepada keturunanmu berkat yang sudah diberikan-{{deity_pronoun:nya|Nya}} kepada Abraham. Dengan begitu kamu akan memiliki negeri tempat kamu sekarang tinggal sebagai orang asing. Allah sudah memberikan negeri ini kepada Abraham.\""
+        },
+        "zh": {
+          "L": "愿{{deity_pronoun:他|祂}}把亚伯拉罕所得的福赐给你，给你和与你一起的后裔，好让你得着你寄居的这片土地，就是{{god_term:神|上帝}}给了亚伯拉罕的那地。”",
+          "B": "愿{{deity_pronoun:他|祂}}把{{deity_pronoun:他|祂}}赐给亚伯拉罕的福也赐给你和你的后代，使你拥有你现在作外人居住的这片土地，就是{{god_term:神|上帝}}赐给亚伯拉罕的地。”",
+          "R": "愿{{deity_pronoun:他|祂}}把{{deity_pronoun:他|祂}}给亚伯拉罕的祝福也给你和你的后代。那样，你就会拥有你现在作外人居住的这片土地。{{god_term:神|上帝}}已经把这片土地赐给了亚伯拉罕。”"
         }
       },
       "decisions": [
@@ -1139,6 +1242,11 @@
           "L": "Dan Ishak melepas Yakub, dan ia pergi ke Padan-Aram, kepada Laban, anak Betuel, orang Aram itu, saudara Ribka, ibu Yakub dan Esau.",
           "B": "Kemudian Ishak melepas Yakub pergi, dan ia berangkat ke Padan-Aram, kepada Laban anak Betuel, orang Aram itu. Laban adalah saudara Ribka, ibu Yakub dan Esau.",
           "R": "Lalu Ishak menyuruh Yakub pergi. Yakub pergi ke Padan-Aram, kepada Laban. Laban adalah anak Betuel, orang Aram, dan saudara Ribka, ibu Yakub dan Esau."
+        },
+        "zh": {
+          "L": "以撒送走了雅各，雅各就前往巴旦亚兰，去见拉班，他是亚兰人彼土利的儿子，是利百加的哥哥，利百加是雅各和以扫的母亲。",
+          "B": "然后以撒送雅各上路，雅各动身前往巴旦亚兰，投奔亚兰人彼土利的儿子拉班。雅各和以扫的母亲利百加就是拉班的妹妹。",
+          "R": "然后以撒送雅各走了。雅各到了巴旦亚兰，到拉班那里。拉班的父亲是亚兰人彼土利，他的妹妹利百加就是雅各和以扫的母亲。"
         }
       },
       "decisions": [
@@ -1293,6 +1401,11 @@
           "L": "Dan Esau melihat bahwa Ishak telah memberkati Yakub dan menyuruhnya pergi ke Padan-Aram untuk mengambil istri dari sana, dan bahwa ketika ia memberkatinya ia memerintahkan kepadanya, katanya, \"Janganlah engkau mengambil istri dari perempuan-perempuan Kanaan,\"",
           "B": "Esau mengetahui bahwa Ishak telah memberkati Yakub dan menyuruhnya ke Padan-Aram untuk mencari istri di sana, dan bahwa ketika memberkatinya Ishak telah berpesan kepadanya, \"Jangan menikah dengan perempuan Kanaan,\"",
           "R": "Esau mengetahui bahwa Ishak sudah memberkati Yakub dan menyuruhnya pergi ke Padan-Aram untuk mencari istri di sana. Dia mendengar bahwa Ishak berkata kepada Yakub, \"Jangan menikah dengan perempuan dari Kanaan.\""
+        },
+        "zh": {
+          "L": "以扫看到以撒已为雅各祝福，并送他去巴旦亚兰，好从那里为自己娶一个妻子，又看到他为他祝福时，曾吩咐他说：“你不可从迦南的众女儿中娶妻”，",
+          "B": "以扫得知以撒为雅各祝福，打发他到巴旦亚兰去找妻子，并且在为他祝福的时候告诉他：“不要娶迦南女子”，",
+          "R": "以扫得知以撒为雅各祝福了，并且打发他到巴旦亚兰去找妻子。他听说以撒曾告诉雅各：“不要娶迦南的女子。”"
         }
       },
       "decisions": [
@@ -1425,6 +1538,11 @@
           "L": "dan bahwa Yakub telah mendengarkan ayahnya dan ibunya dan pergi ke Padan-Aram.",
           "B": "dan bahwa Yakub telah menuruti perkataan ayah dan ibunya dan pergi ke Padan-Aram.",
           "R": "Dia juga mengetahui bahwa Yakub menuruti ayah dan ibunya dan pergi ke Padan-Aram."
+        },
+        "zh": {
+          "L": "又看到雅各听了他父亲，也听了他母亲，就去了巴旦亚兰。",
+          "B": "也看到雅各照他父母的话去做，已经往巴旦亚兰去了。",
+          "R": "他也知道雅各听从了父母的话，到巴旦亚兰去了。"
         }
       },
       "decisions": [
@@ -1562,6 +1680,11 @@
           "L": "Dan Esau melihat bahwa perempuan-perempuan Kanaan itu jahat di mata Ishak, ayahnya.",
           "B": "Jelaslah bagi Esau bahwa Ishak, ayahnya, tidak menyukai perempuan-perempuan Kanaan,",
           "R": "Sekarang Esau mengerti bahwa ayahnya, Ishak, tidak suka kepada perempuan-perempuan Kanaan."
+        },
+        "zh": {
+          "L": "以扫又看出，迦南的众女儿在他父亲以撒的眼中是不好的。",
+          "B": "以扫这才明白，他父亲以撒不喜欢迦南女子，",
+          "R": "以扫现在明白了，他父亲以撒不喜欢迦南的女子。"
         }
       },
       "decisions": [
@@ -1684,6 +1807,11 @@
           "L": "Dan Esau pergi kepada Ismael dan mengambil Mahalat, anak perempuan Ismael, anak Abraham, adik Nebayot, menjadi istrinya, selain istri-istri yang sudah ada padanya.",
           "B": "karena itu ia pergi kepada keluarga Ismael, dan selain istri-istri yang sudah ada padanya, ia mengambil Mahalat menjadi istrinya, anak perempuan Ismael, anak Abraham, adik Nebayot.",
           "R": "Jadi Esau pergi kepada keluarga Ismael, anak Abraham. Dia menikah dengan Mahalat, anak perempuan Ismael, adik Nebayot. Esau sudah mempunyai istri-istri yang lain."
+        },
+        "zh": {
+          "L": "以扫就到以实玛利那里去，娶了玛哈拉作妻子，加在他原有的妻子们之上；她是亚伯拉罕的儿子以实玛利的女儿，是尼拜约的妹妹。",
+          "B": "于是他到以实玛利的家族那里，在已有的妻子之外，又娶了亚伯拉罕的儿子以实玛利的女儿、尼拜约的妹妹玛哈拉为妻。",
+          "R": "所以以扫到亚伯拉罕的儿子以实玛利的家族那里去。他娶了以实玛利的女儿玛哈拉，她是尼拜约的妹妹。以扫已经有了别的妻子。"
         }
       },
       "decisions": [
@@ -1814,6 +1942,28 @@
           "reason": "Formed by the style guide's rules and added to the glossary; the name is kept as the Hebrew gives it here, though 36:3 calls her Basmat.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280090071",
+            "o010280090121"
+          ],
+          "choice": "\"玛哈拉\"; \"妹妹\"",
+          "alternatives": [
+            "\"姐姐\""
+          ],
+          "reason": "\"玛哈拉\" is the conventional form. Chinese must say older or younger; Nebaioth was Ishmael's firstborn (25:13), so Mahalath is taken as his younger sister. The list of Esau's wives in 36:3 names Ishmael's daughter Basemath (巴实抹); each passage keeps the name its Hebrew has.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1906,6 +2056,11 @@
           "L": "Dan Yakub keluar dari Bersyeba dan pergi ke Haran.",
           "B": "Yakub meninggalkan Bersyeba dan berangkat ke Haran.",
           "R": "Yakub meninggalkan Bersyeba dan mulai berjalan ke Haran."
+        },
+        "zh": {
+          "L": "雅各从别是巴出来，往哈兰去。",
+          "B": "雅各离开别是巴，动身前往哈兰。",
+          "R": "雅各离开别是巴，踏上去哈兰的路。"
         }
       },
       "decisions": [
@@ -2055,6 +2210,11 @@
           "L": "Dan ia sampai di suatu tempat dan bermalam di sana, sebab matahari telah terbenam; dan ia mengambil sebuah dari batu-batu di tempat itu dan menaruhnya di dekat kepalanya, dan berbaring di tempat itu.",
           "B": "Ia tiba di suatu tempat dan bermalam di sana, karena matahari sudah terbenam. Ia mengambil salah satu batu yang ada di situ, menaruhnya di dekat kepalanya, lalu berbaring tidur di tempat itu.",
           "R": "Ketika matahari terbenam, Yakub tiba di suatu tempat, dan dia bermalam di sana. Dia mengambil sebuah batu di situ dan menaruhnya di dekat kepalanya. Lalu dia berbaring untuk tidur."
+        },
+        "zh": {
+          "L": "他碰到一个地方，就在那里过夜，因为太阳已经落下。他从那地方的石头中拿了一块，放在他的头[旁]，就在那地方躺下。",
+          "B": "他来到某个地方，因为太阳已经下山，就停在那里过夜。他从那里拿了一块石头，放在头旁，就在那地方躺下睡觉。",
+          "R": "太阳下山的时候，雅各来到一个地方，在那里停下来过夜。他拿了那里的一块石头，放在头旁边。然后他躺下睡觉。"
         }
       },
       "decisions": [
@@ -2195,6 +2355,27 @@
           "reason": "The meaning decision leaves open whether the stone was beside or under his head; \"di dekat\" does not decide for \"under\", as a pillow would.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280110022",
+            "o010280110102",
+            "o010280110142"
+          ],
+          "choice": "\"那地方\" three times (L)",
+          "alternatives": [
+            "varying the word"
+          ],
+          "reason": "Literal keeps the threefold \"the place\" (m1), which prepares for verses 16-17 and 19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2301,6 +2482,11 @@
           "L": "Dan ia bermimpi, dan lihatlah, sebuah tangga berdiri di bumi, dan puncaknya sampai ke langit; dan lihatlah, malaikat-malaikat Allah naik dan turun di tangga itu.",
           "B": "Ia bermimpi. Tampak di hadapannya sebuah tangga berdiri di atas tanah, puncaknya sampai ke langit, dan malaikat-malaikat Allah naik dan turun di tangga itu.",
           "R": "Yakub bermimpi. Dia melihat sebuah tangga berdiri di bumi. Ujungnya sampai ke langit. Malaikat-malaikat Allah naik dan turun di tangga itu."
+        },
+        "zh": {
+          "L": "他做了一个梦，看哪，有一道阶梯立在地上，梯顶直达天上；看哪，{{god_term:神|上帝}}的众天使在上面上升又降下。",
+          "B": "他做了一个梦，梦中他看见一道阶梯立在地上，顶端碰到天，{{god_term:神|上帝}}的天使在上面升上降下。",
+          "R": "雅各做了一个梦。他看见一道阶梯立在地上，顶端一直通到天上。{{god_term:神|上帝}}的天使在阶梯上上去、下来。"
         }
       },
       "decisions": [
@@ -2598,6 +2784,51 @@
           "reason": "\"tangga\" covers both a staircase and a ramp of steps, as the meaning decision allows; \"lihatlah\" (L) and \"tampak\" (B) for \"and look\", as the recurring formulas set it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280120031"
+          ],
+          "choice": "\"阶梯\" for sullam",
+          "alternatives": [
+            "\"梯子\""
+          ],
+          "reason": "The meaning decision reads it as a stairway or ramp rather than a ladder (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280120101",
+            "o010280120111",
+            "o010280120121",
+            "o010280120132"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的众天使……上升又降下\" (L), \"升上降下\" (B), \"上去、下来\" (R)",
+          "alternatives": [
+            "\"使者\""
+          ],
+          "reason": "Jesus takes up this picture in John 1:51 (m2), so each level uses the verbs and the word \"天使\" of John 1:51 at the same level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2712,6 +2943,11 @@
           "L": "Dan lihatlah, {{divine_name:TUHAN|Yahweh}} berdiri di atasnya dan berfirman, \"Akulah {{divine_name:TUHAN|Yahweh}}, Allah Abraham, ayahmu, dan Allah Ishak; tanah tempat engkau berbaring ini akan Kuberikan kepadamu dan kepada keturunanmu.",
           "B": "Di atasnya berdiri {{divine_name:TUHAN|Yahweh}}, dan {{deity_pronoun:dia|Dia}} berfirman, \"Akulah {{divine_name:TUHAN|Yahweh}}, Allah Abraham, ayahmu, dan Allah Ishak. Tanah tempat engkau berbaring ini akan Kuberikan kepadamu dan kepada keturunanmu.",
           "R": "{{divine_name:TUHAN|Yahweh}} berdiri di atas tangga itu. Dia berfirman, \"Aku ini {{divine_name:TUHAN|Yahweh}}, Allah Abraham, kakekmu, dan Allah Ishak, ayahmu. Aku akan memberikan kepadamu dan kepada keturunanmu tanah tempat kamu berbaring ini."
+        },
+        "zh": {
+          "L": "看哪，{{divine_name:上主|雅威}}站在它上面，说：“我是{{divine_name:上主|雅威}}，你父亲亚伯拉罕的{{god_term:神|上帝}}，也是以撒的{{god_term:神|上帝}}。你正躺在上面的这片地，我要把它赐给你和你的后裔。",
+          "B": "在阶梯的上方站着{{divine_name:上主|雅威}}，{{deity_pronoun:他|祂}}说：“我是{{divine_name:上主|雅威}}，你父亲亚伯拉罕的{{god_term:神|上帝}}，也是以撒的{{god_term:神|上帝}}。我要把你躺着的这块地赐给你和你的后代。",
+          "R": "{{divine_name:上主|雅威}}站在阶梯的上方，说：“我是{{divine_name:上主|雅威}}，是你祖父亚伯拉罕的{{god_term:神|上帝}}，也是你父亲以撒的{{god_term:神|上帝}}。我要把你现在躺着的这片土地给你和你的后代。"
         }
       },
       "decisions": [
@@ -3087,6 +3323,11 @@
           "L": "Dan keturunanmu akan menjadi seperti debu tanah, dan engkau akan mengembang ke barat dan ke timur dan ke utara dan ke selatan; dan olehmu semua kaum di muka bumi akan mendapat berkat, dan oleh keturunanmu.",
           "B": "Keturunanmu akan sebanyak debu tanah yang tak terhitung, dan engkau akan meluas ke barat dan ke timur, ke utara dan ke selatan. Melalui engkau dan keturunanmu semua kaum di bumi akan mendapat berkat.",
           "R": "Kamu akan mempunyai keturunan sebanyak butir debu di bumi. Mereka akan menyebar ke segala arah: ke barat, ke timur, ke utara, dan ke selatan. Melalui kamu dan keturunanmu semua kaum di bumi akan diberkati."
+        },
+        "zh": {
+          "L": "你的后裔要像地上的尘土，你要向西、向东、向北、向南扩展；地上的万族都要在你里面、也在你的后裔里面蒙福。",
+          "B": "你的后代要多得像地上的尘土，你要冲破界限，向西向东，向北向南扩张。藉着你和你的后代，地上的万族都要得到福气。",
+          "R": "你的后代会多得像地上的尘土一样。他们会向四面八方扩展：西、东、北、南。通过你和你的后代，世上所有的家族都要得到祝福。"
         }
       },
       "decisions": [
@@ -3201,6 +3442,29 @@
           "choice": "mishpachot \"氏族\" (L, B); \"民\" (R)",
           "alternatives": [],
           "reason": "\"Families\" here are clans and peoples, as in 12:3 (m3); \"家族\" would sound like single households.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280140121",
+            "o010280140131",
+            "o010280140142"
+          ],
+          "choice": "\"地上的万族\" (L, B), \"世上所有的家族\" (R)",
+          "alternatives": [
+            "\"地上的列国\""
+          ],
+          "reason": "The glossary's forms for \"all the families of the earth\", the words of 12:3 (m3).",
           "uncertain": false,
           "footnote": false
         }
@@ -3318,6 +3582,11 @@
           "L": "Dan lihatlah, Aku menyertai engkau, dan Aku akan melindungi engkau di mana pun engkau pergi, dan Aku akan membawa engkau kembali ke negeri ini; sebab Aku tidak akan meninggalkan engkau sampai Aku melakukan apa yang telah Kukatakan kepadamu.\"",
           "B": "Aku menyertai engkau. Aku akan melindungi engkau ke mana pun engkau pergi dan membawa engkau kembali ke negeri ini. Aku tidak akan meninggalkan engkau sebelum Aku melakukan semua yang telah Kujanjikan kepadamu.\"",
           "R": "Aku menyertai kamu. Aku akan melindungi kamu ke mana pun kamu pergi. Aku akan membawa kamu kembali ke negeri ini. Aku akan tetap bersamamu sampai Aku melakukan semua yang sudah Kujanjikan kepadamu.\""
+        },
+        "zh": {
+          "L": "看哪，我与你同在，在你所去的一切地方，我都要看守你，并要把你带回这片土地；因为我不会撇下你，直到我做成了我对你所说的。”",
+          "B": "我与你同在。你无论到哪里，我都会守护你，并且带你回到这片土地。在我完成我告诉你我要做的一切以前，我绝不会抛弃你。”",
+          "R": "我与你同在。你到哪里去，我都会保护你。我也会带你回到这片土地。我会一直和你在一起，直到我做完我答应你的一切。”"
         }
       },
       "decisions": [
@@ -3516,6 +3785,11 @@
           "L": "Dan Yakub terbangun dari tidurnya dan berkata, \"Sesungguhnya {{divine_name:TUHAN|Yahweh}} ada di tempat ini, dan aku, aku tidak mengetahuinya.\"",
           "B": "Ketika Yakub bangun dari tidurnya, ia berkata, \"Sungguh, {{divine_name:TUHAN|Yahweh}} ada di tempat ini, dan aku sama sekali tidak tahu!\"",
           "R": "Lalu Yakub terbangun. Dia berkata, \"{{divine_name:TUHAN|Yahweh}} benar-benar ada di tempat ini! Tetapi aku tidak tahu.\""
+        },
+        "zh": {
+          "L": "雅各从他的睡眠中醒来，说：“{{divine_name:上主|雅威}}确实在这地方，而我，我却不知道。”",
+          "B": "雅各睡醒以后，说：“{{divine_name:上主|雅威}}确实就在这个地方，我却一点也不知道！”",
+          "R": "然后雅各醒了。他说：“{{divine_name:上主|雅威}}就在这地方！可是我原来不知道。”"
         }
       },
       "decisions": [
@@ -3654,6 +3928,11 @@
           "L": "Dan ia takut dan berkata, \"Betapa dahsyatnya tempat ini! Ini tidak lain adalah rumah Allah, dan inilah pintu gerbang langit.\"",
           "B": "Ia diliputi rasa takut dan berkata, \"Alangkah dahsyatnya tempat ini! Inilah rumah Allah sendiri, dan di sinilah pintu masuk ke surga.\"",
           "R": "Yakub takut. Dia berkata, \"Tempat ini kudus dan menakutkan! Ini pasti rumah Allah. Inilah pintu gerbang ke surga.\""
+        },
+        "zh": {
+          "L": "他害怕起来，说：“这地方多么令人敬畏！这里无非就是{{god_term:神|上帝}}的家，这里是天的门。”",
+          "B": "他心里充满了敬畏，说：“这是一个多么可怕的地方！这里就是{{god_term:神|上帝}}自己的家，这里是通往天上的门口。”",
+          "R": "雅各很害怕。他说：“这地方神圣又可怕！这一定是{{god_term:神|上帝}}的家。这是通往天上的门。”"
         }
       },
       "decisions": [
@@ -3812,6 +4091,28 @@
           "reason": "\"Bait Allah\" is the glossary's word for the temple and would read as one; here it is God's dwelling and explains the name Betel (verse 19). The Hebrew word \"shamayim\" is both sky and heaven; Literal keeps \"langit\", Balanced and Readable say \"surga\", as the English \"heaven\" does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280170111",
+            "o010280170121"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的家\" for beit elohim",
+          "alternatives": [
+            "\"{{god_term:神|上帝}}的殿\""
+          ],
+          "reason": "There is no temple here: Jacob names the place as God's dwelling (m2), and verse 19 explains Bethel as \"{{god_term:神|上帝}}的家\". The glossary's \"殿\" is for the house of the LORD as a temple.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3919,6 +4220,11 @@
           "L": "Dan Yakub bangun pagi-pagi dan mengambil batu yang telah ditaruhnya di dekat kepalanya, dan ia mendirikannya sebagai tugu, dan menuangkan minyak ke atasnya.",
           "B": "Pagi-pagi keesokan harinya Yakub mengambil batu yang ditaruhnya di dekat kepalanya, mendirikannya sebagai tugu yang kudus, lalu menuangkan minyak ke atasnya.",
           "R": "Pagi-pagi sekali Yakub mengambil batu yang ditaruhnya di dekat kepalanya. Dia mendirikan batu itu tegak sebagai tugu untuk menandai tempat itu. Lalu dia menuangkan minyak ke atasnya."
+        },
+        "zh": {
+          "L": "雅各早晨很早起来，拿了他放在头边的石头，把它立起来作一根柱子，又把油倒在它的顶上。",
+          "B": "第二天一早，雅各拿起他放在头旁的那块石头，把它竖起来作为圣柱，在它顶上浇上油。",
+          "R": "一大早，雅各拿起他放在头旁边的那块石头。他把石头竖起来，作为柱子来标记这个地方。然后他把油倒在石头顶上。"
         }
       },
       "decisions": [
@@ -4200,6 +4506,11 @@
           "L": "Dan ia menamai tempat itu Betel; tetapi dahulu nama kota itu Lus.",
           "B": "Ia menamai tempat itu Betel, walaupun dahulu kota itu bernama Lus.",
           "R": "Yakub menamai tempat itu Betel, yang artinya \"rumah Allah.\" Sebelumnya kota itu bernama Lus."
+        },
+        "zh": {
+          "L": "他把那地方的名称叫作伯特利；不过那城最初的名字是路斯。",
+          "B": "他给那地方取名叫伯特利，虽然那城以前叫路斯。",
+          "R": "雅各给那地方取名叫伯特利，意思是“{{god_term:神|上帝}}的家”。在这以前，那城叫路斯。"
         }
       },
       "decisions": [
@@ -4329,6 +4640,28 @@
           "reason": "\"Lus\" is formed by the style guide's rules, as \"Us\" for Uz at 10:23, and added to the glossary.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010280190061",
+            "o010280190091"
+          ],
+          "choice": "\"伯特利\", \"路斯\"",
+          "alternatives": [
+            "new transliterations"
+          ],
+          "reason": "The glossary's Bethel and the conventional form of Luz.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4443,6 +4776,11 @@
           "L": "Dan Yakub bernazar suatu nazar, katanya, \"Jika Allah menyertai aku dan melindungi aku di jalan yang kutempuh ini, dan memberi aku roti untuk dimakan dan pakaian untuk dikenakan,",
           "B": "Lalu Yakub bernazar, \"Jika Allah menyertai aku dan melindungi aku dalam perjalanan yang kutempuh ini, dan memberi aku makanan untuk dimakan dan pakaian untuk dipakai,",
           "R": "Lalu Yakub mengucapkan janji yang sungguh-sungguh kepada Allah. Dia berkata, \"Kalau Allah menyertai aku dan melindungi aku dalam perjalanan ini, dan memberi aku makanan dan pakaian,"
+        },
+        "zh": {
+          "L": "雅各许下一个誓愿，说：“如果{{god_term:神|上帝}}会与我同在，在我正走的这段旅程上看守我，并给我饼吃、给我衣服穿，",
+          "B": "然后雅各许了一个愿：“如果{{god_term:神|上帝}}一直与我同在，在我走的路上保护我，供应我吃的食物和穿的衣服，",
+          "R": "然后雅各向{{god_term:神|上帝}}郑重地许下诺言。他说：“如果{{god_term:神|上帝}}与我同在，在这次旅途中保护我，给我吃的和穿的，"
         }
       },
       "decisions": [
@@ -4723,6 +5061,11 @@
           "L": "dan aku kembali dengan selamat ke rumah ayahku, maka {{divine_name:TUHAN|Yahweh}} akan menjadi Allahku,",
           "B": "dan aku kembali dengan selamat ke rumah ayahku, {{divine_name:TUHAN|Yahweh}} akan menjadi Allahku,",
           "R": "dan kalau aku pulang dengan selamat ke rumah ayahku, {{divine_name:TUHAN|Yahweh}} akan menjadi Allahku."
+        },
+        "zh": {
+          "L": "并且我平安地回到我父亲的家，那么{{divine_name:上主|雅威}}就要作我的{{god_term:神|上帝}}，",
+          "B": "让我平安地回到我父亲家里，那么{{divine_name:上主|雅威}}就是我的{{god_term:神|上帝}}，",
+          "R": "而且我能平安地回到我父亲的家，那么{{divine_name:上主|雅威}}就是我的{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -4931,6 +5274,11 @@
           "L": "dan batu yang telah kudirikan sebagai tugu ini akan menjadi rumah Allah; dan dari segala yang {{deity_pronoun:engkau|Engkau}} berikan kepadaku, sepersepuluhnya akan kuberikan kepada-{{deity_pronoun:mu|Mu}}.\"",
           "B": "dan batu yang kudirikan sebagai tugu ini akan menjadi rumah Allah. Dan dari segala yang {{deity_pronoun:kau|Kau}}berikan kepadaku, sepersepuluhnya akan kuberikan kembali kepada-{{deity_pronoun:mu|Mu}}.\"",
           "R": "Batu yang sudah kudirikan ini akan menjadi rumah Allah. Dan aku akan memberikan kembali kepada-{{deity_pronoun:mu|Mu}} sepersepuluh dari semua yang {{deity_pronoun:kau|Kau}}berikan kepadaku.\""
+        },
+        "zh": {
+          "L": "而我立作柱子的这块石头，必成为{{god_term:神|上帝}}的家；{{deity_pronoun:你|祢}}所给我的一切，我一定要拿出十分之一献给{{deity_pronoun:你|祢}}。”",
+          "B": "我立作柱子的这块石头，将成为{{god_term:神|上帝}}的家。{{deity_pronoun:你|祢}}赐给我的一切，我都要把十分之一归还给{{deity_pronoun:你|祢}}。”",
+          "R": "我立起来的这块石头将会是{{god_term:神|上帝}}的家。{{deity_pronoun:你|祢}}给我的一切，我都会把十分之一还给{{deity_pronoun:你|祢}}。”"
         }
       },
       "decisions": [
