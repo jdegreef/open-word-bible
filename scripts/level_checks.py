@@ -53,7 +53,7 @@ BRACKET = re.compile(r"\[([^\[\]]*)\]")
 QUOTED = re.compile(r'"([^"]+)"|“([^”]+)”|«\s*([^»]+?)\s*»|「([^」]+)」|(?<!\w)\'([^\']+)\'(?!\w)')
 ANNOTATION = re.compile(r"\(([^()]*)\)")
 SENTENCE_END = re.compile(r"(?<=[.!?。！？።।])")
-CHARACTER_LANGS = {"ja"}
+CHARACTER_LANGS = {"ja", "zh"}
 RARE_BELOW = 5
 MIN_RECORDS = 20  # books with fewer records in a language are left out of part (b)
 SHORTER = 0.95  # Readable sentences should be at most this share of Balanced's
@@ -235,13 +235,13 @@ def bracket_checks(records):
 # ------------------------------------------------------- (b) readability
 
 def words(text, lang):
-    """The words (characters, for Japanese) of a plain text."""
+    """The words (characters, for Japanese and Chinese) of a plain text."""
     text = BRACKET.sub(lambda m: m[1], text)
     if lang in CHARACTER_LANGS:
         return [ch for ch in text if ch.isalnum()]
     found = []
     for token in text.split():
-        token = token.strip("\"'“”‘’«»「」『』()[].,;:!?¿¡—–-·።፣፤፥፦।॥…").casefold()
+        token = token.strip("\"'“”‘’«»「」『』()[].,;:!?¿¡—–-·።፣፤፥፦।॥…，。、；：？！《》〈〉（）").casefold()
         if any(ch.isalnum() for ch in token):
             found.append(token)
     return found

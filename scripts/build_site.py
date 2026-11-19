@@ -379,7 +379,7 @@ def og_card_article(article):
 # in Tanzania.
 OG_LOCALES = {"en": "en_US", "es": "es_MX", "fr": "fr_FR", "sw": "sw_TZ", "vi": "vi_VN", "ko": "ko_KR",
               "pt": "pt_BR", "am": "am_ET", "hi": "hi_IN", "ru": "ru_RU", "uk": "uk_UA", "ja": "ja_JP",
-              "id": "id_ID"}
+              "id": "id_ID", "zh": "zh_CN"}
 
 
 def og_locale(lang):
@@ -1768,6 +1768,10 @@ def chapter_page(book, chapter, lang="en"):
     own = owb_languages.settings(lang)
     plural = ("\n  " + control("plural", "plural_you", list(enumerate(own["plural_you"])))
               if "plural_you" in own else "")
+    # The word for God (Chinese: 神 or 上帝) only where a passage has it.
+    has_god = "god_term" in own and any("{{god_term:" in text for r in records
+                                        for text in r["renderings"].get(lang, {}).values())
+    god = ("\n  " + control("god_term", "god_term", list(enumerate(own["god_term"]))) if has_god else "")
     # Measures (modern or original units) only where a passage has them.
     has_units = any("{{units:" in text for r in records
                     for levels_ in r["renderings"].values() for text in levels_.values())
@@ -1807,7 +1811,7 @@ def chapter_page(book, chapter, lang="en"):
   {presets}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {pronouns}{units}{plural}
+  {pronouns}{god}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}{red_letter}
   </div>
@@ -1817,7 +1821,7 @@ def chapter_page(book, chapter, lang="en"):
                             ("4", t(lang, "reader.recall"))], " view-control")}
   {control("verse_numbers", "verse_numbers", [("1", t(lang, "reader.show")), ("0", t(lang, "reader.hide"))], " numbers-control")}
 </div>
-<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
+<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-god_term"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
 </div>
 <div class="reader">
   <article class="passage">

@@ -50,7 +50,7 @@ KATAKANA = re.compile(r"[ァ-ヴー・]{2,}")
 MIN_RECORDS = 3
 MIN_SHARE = 0.5
 SIMILAR = 0.67
-STRIP = "\"'“”‘’«»「」『』()[].,;:!?¿¡—–-·።፣፤፥፦।॥…"
+STRIP = "\"'“”‘’«»「」『』()[].,;:!?¿¡—–-·።፣፤፥፦।॥…，。、；：？！《》〈〉（）"
 
 
 def norm_strong(prefix, strong):

@@ -1,5 +1,5 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/), the footer's language
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/, /zh/), the footer's language
 switch, and the message catalogs in i18n/."""
 import html
 import json
@@ -199,6 +199,13 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn(">Équilibrée</button>", fr)
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
+        # The Chinese word for God (神 or 上帝) only on Chinese pages whose
+        # text has it, as measures only where a passage has units.
+        zh = self.read("zh/jhn/1/index.html")
+        has_god = any("{{god_term:" in text for r in build_site.chapter_records("JHN", 1)
+                      for text in r["renderings"].get("zh", {}).values())
+        self.assertEqual('data-setting="god_term"' in zh, has_god)
+        self.assertNotIn('data-setting="god_term"', en + es + fr + sw)
         self.assertIn(">Linganifu</button>", sw)
         for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("pt", "Equilibrada"), ("am", "ሚዛናዊ")):
             page = self.read(f"{lang}/mat/1/index.html")

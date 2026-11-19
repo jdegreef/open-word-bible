@@ -3,7 +3,8 @@
 The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
 V-2AAI-3S. describe() turns one into words a reader can follow, in each
 reading language (English, Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian):
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian,
+Chinese):
 "Noun · dative singular feminine", "Verb · second aorist active indicative ·
 3rd person singular". An unknown code raises ValueError, so a new code in
 the data fails the tests rather than showing a reader nothing.
@@ -412,6 +413,36 @@ WORDS = {
                    "ATT": "bentuk Attika", "K": "krasis (dua kata dilebur menjadi satu)",
                    "P": "dengan partikel yang melekat", "ABB": "bentuk singkatan"},
     },
+    "zh": {
+        "pos": {"N": "名词", "V": "动词", "A": "形容词", "T": "冠词",
+                "P": "人称代词", "R": "关系代词", "D": "指示代词",
+                "K": "相关代词", "X": "不定代词", "I": "疑问代词",
+                "F": "反身代词", "C": "相互代词", "S": "物主代词",
+                "Q": "相关代词或疑问代词",
+                "ADV": "副词", "CONJ": "连词", "PREP": "介词", "PRT": "小品词",
+                "COND": "条件连词", "INJ": "感叹词",
+                "HEB": "希伯来语词", "ARAM": "亚兰语词"},
+        "indeclinable": {"PRI": "专有名词，不变格", "LI": "字母，不变格",
+                         "OI": "不变格", "NUI": "数词，不变格"},
+        "case": {"N": "主格", "G": "属格", "D": "与格", "A": "宾格", "V": "呼格"},
+        "number": {"S": "单数", "P": "复数"},
+        "gender": {"M": "阳性", "F": "阴性", "N": "中性"},
+        "tense": {"P": "现在时", "I": "未完成时", "F": "将来时", "A": "不定过去时",
+                  "R": "完成时", "L": "过去完成时"},
+        "second": "第二{}",
+        "verb": "{tense}，{mood}{voice}", "voiced": "，{}",
+        "voice": {"A": "主动态", "M": "中间态", "P": "被动态", "E": "中间态或被动态",
+                  "D": "中间态（主动意义）", "O": "被动态（主动意义）",
+                  "N": "中间态或被动态（主动意义）", "Q": "无人称主动态", "X": ""},
+        "mood": {"I": "直陈语气", "S": "虚拟语气", "O": "祈愿语气", "M": "命令语气",
+                 "N": "不定式", "P": "分词", "R": "分词（命令意义）"},
+        "person": {"1": "第一人称", "2": "第二人称", "3": "第三人称"},
+        "person_number": "{person}{number}",
+        "join": "，",
+        "suffix": {"N": "否定", "I": "疑问", "S": "最高级", "C": "比较级",
+                   "ATT": "阿提卡形式", "K": "融合形式（两个词合为一个）",
+                   "P": "带附加小品词", "ABB": "缩略形式"},
+    },
 }
 
 _VERB = re.compile(r"(2?)([PIFARL])([AMPEDONQX])([ISOMNPR])(?:-(.+))?")
@@ -774,6 +805,27 @@ HEBREW_WORDS = {
         "gender": {"m": "maskulin", "f": "feminin", "b": "maskulin atau feminin", "c": "umum"},
         "number": {"s": "tunggal", "p": "jamak", "d": "dual"},
         "state": {"a": "absolut", "c": "konstruk", "d": "tertentu"},
+    },
+    "zh": {
+        "pos": {"A": "形容词", "C": "连词", "D": "副词", "N": "名词",
+                "P": "代词", "R": "介词", "S": "后缀", "T": "小品词", "V": "动词"},
+        "noun": {"c": "普通名词", "g": "民族名或地名", "p": "专有名词", "x": ""},
+        "adjective": {"a": "", "c": "基数词", "g": "民族名", "o": "序数词"},
+        "pronoun": {"d": "指示", "f": "不定", "i": "疑问", "p": "人称", "r": "关系"},
+        "particle": {"a": "肯定", "d": "定冠词", "e": "劝勉", "i": "疑问", "j": "感叹词",
+                     "m": "指示", "n": "否定", "o": "直接宾语标记", "r": "关系"},
+        "suffix": {"d": "方向后缀（往……）", "h": "附加的He", "n": "附加的Nun", "p": "代词"},
+        "with_article": "带冠词",
+        "stem": None,  # the stems are names, the same in every language
+        "conjugation": {"p": "完成式（qatal）", "q": "带“和”的完成式（weqatal）",
+                        "i": "未完成式（yiqtol）", "w": "叙事过去式（wayyiqtol）",
+                        "h": "鼓励式", "j": "祈使式（第三人称）", "v": "命令式",
+                        "r": "分词", "s": "被动分词",
+                        "a": "独立不定式", "c": "附属不定式"},
+        "person": {"1": "第一人称", "2": "第二人称", "3": "第三人称"},
+        "gender": {"m": "阳性", "f": "阴性", "b": "阳性或阴性", "c": "通性"},
+        "number": {"s": "单数", "p": "复数", "d": "双数"},
+        "state": {"a": "独立形", "c": "附属形", "d": "限定形"},
     },
 }
 

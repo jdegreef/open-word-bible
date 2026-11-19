@@ -59,9 +59,11 @@ BUDGETS = {
     # sentence records came from chapter-data/ rather than every
     # language's page (each language then about 130 MB); 2,996 MB on
     # 2026-11-14 with Indonesian as the thirteenth site language and
-    # footnotes in every reader language].
+    # footnotes in every reader language; 3,579 MB on 2026-11-19 with
+    # Chinese (Simplified) as the fourteenth, its folder about 95 MB before
+    # any Chinese text is drafted].
     # Grows with each book translated and each language added.
-    "site_total": 3500 * MB,
+    "site_total": 3700 * MB,
 }
 
 

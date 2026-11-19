@@ -2,7 +2,8 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese and Indonesian.
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian and
+Chinese (Simplified).
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -44,14 +45,13 @@ brief for drafting it and `data/key_terms.json` the settled key terms.
 Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/vietnamese-style.md`, `docs/korean-style.md`,
 `docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
-`docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md` and
-`docs/indonesian-style.md` are the briefs for French, Swahili, Vietnamese,
-Korean, (Brazilian) Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese
-and Indonesian. `docs/hindi-terms.md`, `docs/russian-terms.md` and
-`docs/indonesian-terms.md` are the Hindi, Russian and Indonesian glossaries,
-Genesis to Revelation. `docs/chinese-style.md` and `docs/chinese-terms.md`
-are the proposed brief and glossary for Chinese (Simplified), not yet a
-reading language. `docs/hindi-review-guide.md` and
+`docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md`,
+`docs/indonesian-style.md` and `docs/chinese-style.md` are the briefs for
+French, Swahili, Vietnamese, Korean, (Brazilian) Portuguese, Amharic, Hindi,
+Russian, Ukrainian, Japanese, Indonesian and Chinese (Simplified).
+`docs/hindi-terms.md`, `docs/russian-terms.md`, `docs/indonesian-terms.md`
+and `docs/chinese-terms.md` are the Hindi, Russian, Indonesian and Chinese
+glossaries, Genesis to Revelation. `docs/hindi-review-guide.md` and
 `docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
@@ -202,7 +202,10 @@ capitalised "He" until a reader picks lowercase (`DEFAULTS` in
 `owb/markup.py` and `web/markup.js`).
 
 Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
-`plural_you` (a future `spelling` setting needs a reader control first).
+`plural_you` (Spanish only) and `god_term` (Chinese only: 神 or 上帝); a
+future `spelling` setting needs a reader control first. In Chinese,
+`deity_pronoun` gives the reverent forms (`{{deity_pronoun:他|祂}}`,
+`{{deity_pronoun:你|祢}}`) where other languages capitalise.
 `owb/markup.py` and `web/markup.js` list and render the spans;
 `tests/markup_vectors.json` holds the two to the same answers.
 

@@ -11,7 +11,7 @@ from typing import NamedTuple
 
 # The settings a span may name: each has a control in the reader
 # (web/markup.js SETTINGS is the same list).
-SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you")
+SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term")
 
 # The option a setting shows until the reader picks one, where it is not the
 # first: pronouns for God are capitalised by default ("He"), though the span
@@ -118,13 +118,35 @@ def line_errors(text):
 # quotes, curly quotes, or straight double quotes again at the third level.
 # Japanese uses corner brackets: 「 」 outside, 『 』 inside, and
 # 「 」 again at the third level. They always open and close as they
-# look, and are never apostrophes.
+# look, and are never apostrophes. Chinese writes curly quotes: “ ”
+# outside, ‘ ’ inside, and “ ” again at the third level; in
+# Chinese text (Han characters, curly quotes and no straight double quote)
+# a ’ is never an apostrophe, so it can close a ‘ an earlier
+# sentence opened.
 # A straight quote opens at the start or after a space, bracket or dash,
 # when a word follows it, and closes anywhere else (as
 # build_site.smart_quotes curls it). A straight single quote can also be an
 # apostrophe; see quotations().
 _QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019\u300c\u300d\u300e\u300f]")
 _PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018", "\u300d": "\u300c", "\u300f": "\u300e"}
+
+
+# Han characters (Chinese; Japanese kanji, but Japanese quotes with corner
+# brackets, which are tested first).
+_HAN = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]")
+
+
+def _marks(text):
+    """(outer, inner, curly): the opening marks of the outermost
+    quotations in text and of those inside them, and whether text is
+    Chinese with curly quotes, where a \u2019 is never an apostrophe."""
+    if re.search("[\u300c-\u300f]", text):
+        return "\u300c", "\u300e", False
+    if re.search("[\u00ab\u00bb]", text):
+        return "\u00ab", "\u201c", False
+    if '"' not in text and _HAN.search(text) and re.search("[\u201c\u201d\u2018\u2019]", text):
+        return "\u201c", "\u2018", True
+    return '"', "'", False
 
 
 def _opens_here(text, pos):
@@ -136,11 +158,7 @@ def _quotations(text, depth, level=1):
     or 2: inside a quotation inside the outer one), as ranges of the
     quotations level deep (1, the outermost; 2, those inside them);
     raises ValueError."""
-    if re.search("[\u300c-\u300f]", text):
-        outer, inner = "\u300c", "\u300e"
-    else:
-        outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
-        inner = "\u201c" if outer == "\u00ab" else "'"
+    outer, inner, curly = _marks(text)
     stack, ranges = [outer, inner][:depth], []
     start = 0
     # A setting span holds no quotation marks (quotations() checks), only
@@ -165,9 +183,10 @@ def _quotations(text, depth, level=1):
         # particle right after a closing quote), and so is one after a word
         # that closes nothing ("the disciples' feet"), unless it ends a
         # quotation open since before the sentence ('...'"). A curly one
-        # (French and Spanish apostrophes) only ever closes a \u2018 it follows.
-        if want in "'\u2018" and ((after.isalnum() and after < "\u0250") or after == "{"
-                                   or (want not in stack and (after.isspace() or ch == "\u2019"))):
+        # (French and Spanish apostrophes) only ever closes a \u2018 it follows,
+        # except in Chinese, which has no apostrophes.
+        if want in "'\u2018" and not curly and ((after.isalnum() and after < "\u0250") or after == "{"
+                                                 or (want not in stack and (after.isspace() or ch == "\u2019"))):
             continue
         if want not in stack and stack and want != stack[0]:
             # A quotation inside the outer one, open since before this
