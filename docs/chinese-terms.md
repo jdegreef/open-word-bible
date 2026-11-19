@@ -749,3 +749,50 @@ Terms settled in Mark:
 | two lepta, a quadrans (12:42) | 两个小铜钱，就是一文钱 (L); in a units span at B and R |
 | clock time (15:25, 33-34) | 第三时, 第六时, 第九时 (L); 上午九点, 中午十二点, 下午三点 (B, R) |
 | 您 (B, R) | the messengers from Jairus's house to him (5:35); the girl to King Herod (6:25, R) |
+
+### Luke
+
+Luke keeps Matthew's and Mark's forms for every name and term above, and
+their Chinese wherever its Greek is the same as theirs (at each level);
+where the Greek differs, the Chinese differs. Names not in the tables above,
+as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Theophilus (1:3) | 提阿非罗; addressed with 您 at B and R, 尊敬的提阿非罗 (R) |
+| the division of Abijah (1:5) | 亚比雅班 |
+| Gabriel (1:19, 26) | 加百列 |
+| Quirinius (2:2) | 居里扭 |
+| Phanuel, Asher (2:36) | 法内力, 亚设 |
+| Pontius Pilate, Ituraea, Trachonitis, Lysanias, Abilene (3:1) | 本丢彼拉多, 以土利亚, 特拉可尼, 吕撒聂, 亚比利尼 |
+| the genealogy (3:23-38) | Old Testament and Matthew 1 forms where the man is the same; the rest transliterated: 希里, 玛他, 麦基, 雅拿, 玛他提亚, 以斯利, 拿该, 玛押, 西美, 约色 (Josech, kept apart from 约瑟), 约大, 约亚南 (Joanan, kept apart from Joanna 约亚拿), 利撒, 尼利, 押底, 哥桑, 以摩当, 珥, 约令, 约南, 米利亚, 买南, 玛达他, 亚德民, 亚尼 |
+| Sala (3:32); Shelah (3:35) | 萨拉 (Matthew 1:4-5 has 撒门 for Salmon, as its Greek does); 沙拉 |
+| Zarephath, Naaman (4:25-27) | 撒勒法, 乃缦 |
+| Nain (7:11) | 拿因 |
+| Joanna, Chuza, Susanna (8:3; 24:10) | 约亚拿, 苦撒, 苏撒拿 |
+| Siloam (13:4) | 西罗亚 |
+| Zacchaeus (19:2) | 撒该 |
+| Simon of Cyrene (23:26) | 古利奈人西门 |
+| the Skull (23:33) | 头骨 (Luke has no Aramaic name, so no 各各他) |
+| Emmaus, Cleopas (24:13, 18) | 以马忤斯, 革流巴 |
+
+Terms settled in Luke:
+
+| English | Chinese |
+|---|---|
+| "Master" (epistata; 5:5; 8:24, 45; 9:33, 49; 17:13) | 师父 at every level, kept apart from 老师 (Teacher), 主 (Lord) and 主人 (a slave's master) |
+| "Truly I tell you" with alethos (9:27; 12:44; 21:3) | 我真实地告诉你们 (L); 我如实告诉你们 (B); 我把实话告诉你们 (R, as for amen). The amen formula (4:24; 12:37; 18:17, 29; 21:32; 23:43) as Matthew and Mark; "in truth" (ep' aletheias, 4:25) is worded freely |
+| experts in the law (nomikos; 7:30; 10:25; 11:45-52; 14:3) | 律法专家 (L); 精通律法的人 (B, as Matthew 22:35); 熟悉`{{god_term:神\|上帝}}`律法的人 (R) |
+| teachers of the law (nomodidaskalos, 5:17) | 律法教师 at every level; the scribes stay 文士 (L, B), 律法教师 (R) |
+| evil spirits (7:21; 8:2) | 恶灵 (L, B); 邪灵 (R). Unclean spirit and demon as Mark |
+| the lake (limne; 5:1-2; 8:22-33) | 湖 at every level, 革尼撒勒湖 (5:1); Luke never calls it a sea |
+| the colt (19:30-35) | 小驹 (L, B); 小驴 (R), as Mark 11 |
+| woe (6:24-26; 10:13; 11:42-52; 17:1; 21:23; 22:22) | 有祸了 (L, B, even where the English Balanced says "How terrible"); 真是可悲 (R), 将会多么可悲 (17:1, as Matthew 18:7) |
+| denarii as wages (7:41; 10:35) | 五百个银币 (L), `{{units:五百天的工钱\|五百个银币}}` (B, R); 两个银币 (L), `{{units:两天的工钱\|两个银币}}` (B, R). The coin shown to Jesus (20:24) has no span, as the English |
+| drachmas (15:8-9) | 德拉克马 (L); `{{units:十个银币，每个值一天的工钱\|十个德拉克马银币}}` (B, R), then 银币 |
+| minas (19:13-25) | 弥那 (L); `{{units:约一百天的工钱\|一弥那}}`, 五弥那 约五百天的工钱, 十弥那 约一千天的工钱 (B, R) |
+| lepta (12:59; 21:2) | 小铜钱 (L); `{{units:最后一分钱\|最后一个小铜钱}}` (12:59); `{{units:两个小铜钱，只值几分钟的工钱\|两个小铜钱}}` (B), `{{units:两个几乎不值钱的小铜钱\|两个小铜钱}}` (R), as Mark 12:42 |
+| assaria (12:6) | 两个阿萨利昂 (L); `{{units:两分钱\|两个阿萨利昂}}` (B, R), as Matthew 10:29 |
+| the faith that saved/healed (7:50; 8:48; 17:19; 18:42) | 使你得救了 (L); 使你痊愈了 (B, where the English says "made you well"; 7:50 使你得救了); 使你好了，也救了你 (R) |
+| a single fellow believer (6:41-42; 17:3) | `{{gender:弟兄或姐妹\|弟兄}}`; siblings `{{gender:兄弟姐妹\|兄弟}}` (14:12; 21:16) where the English spans them |
+| 您 (B, R) | Theophilus (1:3-4); both sons to their father (15:12-30); the servant to the elder son (15:27); servants to their master (14:22; 19:16-21); the vinedresser to the owner (13:9); the rich man to Abraham (16:24-30); the widow to the judge (18:3); the messenger to Jairus (8:49) |
