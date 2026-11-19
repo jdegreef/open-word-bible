@@ -796,3 +796,64 @@ Terms settled in Luke:
 | the faith that saved/healed (7:50; 8:48; 17:19; 18:42) | 使你得救了 (L); 使你痊愈了 (B, where the English says "made you well"; 7:50 使你得救了); 使你好了，也救了你 (R) |
 | a single fellow believer (6:41-42; 17:3) | `{{gender:弟兄或姐妹\|弟兄}}`; siblings `{{gender:兄弟姐妹\|兄弟}}` (14:12; 21:16) where the English spans them |
 | 您 (B, R) | Theophilus (1:3-4); both sons to their father (15:12-30); the servant to the elder son (15:27); servants to their master (14:22; 19:16-21); the vinedresser to the owner (13:9); the rich man to Abraham (16:24-30); the widow to the judge (18:3); the messenger to Jairus (8:49) |
+
+### John
+
+John keeps Matthew's, Mark's and Luke's forms for every name and term
+above, and their Chinese where its Greek is the same as theirs (the feeding
+and the walking on the water in 6:1-21, the anointing and the entry in
+12:1-15, the passion in 18-19); where the Greek differs, the Chinese
+differs. Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Bethany beyond the Jordan (1:28) | 约旦河对岸的伯大尼 (L), 约旦河东岸的伯大尼 (B, R); Bethany near Jerusalem (11:1) is 伯大尼 too |
+| Cephas (1:42) | 矶法 |
+| Nathanael (1:45) | 拿但业 |
+| Aenon near Salim (3:23) | 哀嫩, 撒林 |
+| Sychar; Jacob's well (4:5-6) | 叙加; 雅各的井 |
+| Bethesda (5:2) | 毕士大 (Bethsaida, 1:44; 12:21, stays 伯赛大) |
+| Tiberias (6:1, 23; 21:1) | 提比利亚; the Sea of Tiberias 提比利亚海 (L), 提比利亚湖 (B, R) |
+| Siloam (9:7, 11) | 西罗亚, as Luke 13:4 |
+| the Feast of Dedication; Solomon's Portico (10:22-23) | 修殿节; 所罗门的柱廊 |
+| Lazarus (11:1) | 拉撒路 |
+| Didymus, "the Twin" (11:16; 20:24; 21:2) | 低土马 (L, B, with 双胞胎 explained at B); Readable says 双胞胎, as the English Readable says "the Twin" |
+| Ephraim (11:54) | 以法莲 |
+| Judas son of Simon Iscariot (6:71; 13:2, 26) | 加略人西门的儿子犹大 (L brackets [儿子]); Judas Iscariot (12:4; 14:22) 加略人犹大 |
+| Kidron (18:1) | 汲沦 |
+| Malchus (18:10) | 马勒古 |
+| Annas (18:13) | 亚拿 |
+| the Stone Pavement, Gabbatha (19:13) | 铺石地, 加巴他 |
+| Golgotha, the Place of the Skull (19:17) | 各各他, 头骨之地, as Matthew 27:33 and Mark 15:22 |
+| Clopas (19:25) | 革罗罢 (Luke 24:18's Cleopas is 革流巴) |
+| Mary Magdalene (19:25) | 抹大拉的马利亚 |
+| Rabbouni (20:16) | 拉波尼 at every level, with John's own explanation 老师 (Mark 10:51 has 我的老师 at R, where there is no explanation) |
+
+Terms settled in John:
+
+| English | Chinese |
+|---|---|
+| the Word (logos, 1:1-14) | 道 at every level; 道成为肉身 (1:14) |
+| "Truly, truly I tell you" (amēn amēn; 25 times) | 阿们，阿们，我告诉你们 (L); 我确确实实地告诉你们 (B); 我把实话告诉你们 (R, as the Synoptic Readable, since the English Readable does not mark the doubling); each followed by a comma; 你 for one hearer (3:3, 5, 11; 13:38; 21:18) |
+| "I am" with a predicate (6:35, 48, 51; 8:12; 10:7-14; 11:25; 14:6; 15:1, 5) | 我是…… at every level |
+| "I am" with no predicate (8:24, 28, 58; 13:19) | the bare 我是 at every level, with 我就是那一位 named in the decision |
+| "I am he", the predicate supplied by the context (4:26; 18:5-8) | 我就是 (L brackets [`{{deity_pronoun:他\|祂}}`]; B and R have no span where the English spans "He") |
+| "It is I" (6:20) | 我就是[`{{deity_pronoun:他\|祂}}`] (L); 是我 (B, R), as Matthew 14:27 and Mark 6:50; the healed man's "I am the man" (9:9) 我就是[他] (L), 我就是那个人 (B), 就是我 (R) |
+| remain, abide (menō, theological) | 留在 (……里面) at every level (1:32-33; 5:38; 6:56; 8:31; 14:10, 17; 15:4-10); ordinary staying 住, 留下, 待; the fruit that lasts (15:16) 存留; not 常在 |
+| "the Jews" | 犹太人 at L every time; 犹太领袖 at B and R where they mean the authorities (as the English says "the Jewish leaders"); 犹太人 at every level for the people (3:1; 4:22; 6:41; 11:19-45) |
+| the Father, the Son (titles) | 父 at every level (父亲 only for human fathers, 8:19, 38-44); 子 (L, B), 儿子 (R); 独一儿子 for monogenēs (1:14, 18; 3:16, 18); the Son of God `{{god_term:神\|上帝}}`的儿子 |
+| believe in (pisteuō eis) | 信入 (L, as Matthew 18:6 and Mark 9:42); 信 with its object (B, R); 相信 for "believe that" and for believing words |
+| eternal life | 永生 |
+| sign (sēmeion) | 神迹 at every level; signs and wonders 神迹和奇事 (4:48) |
+| the hour (hōra) | 时刻 (L, B); 时候 (R); kairos (7:6-8) 时机; clock time as Matthew (1:39; 4:6, 52; 19:14) |
+| the Advocate (paraklētos, 14:16, 26; 15:26; 16:7) | 辩护者 (L, B); 帮助者 (R) |
+| the world (kosmos) | 世界 (世人 where the English says the people of the world) |
+| truth; light and darkness | 真理; 光, 黑暗 |
+| glory, glorify | 荣耀; 得荣耀, 使……得荣耀 |
+| Rabbi | 拉比 (L, B); 老师 (R), as Mark; 1:38, where John explains the word, keeps 拉比 at R |
+| "Woman" in address (2:4; 4:21; 19:26; 20:13, 15) | 妇人 (L); 女士 (B, R), as Luke 13:12 and 22:57, Jesus's mother included |
+| "Sir" (kyrie to Jesus or to Philip from someone who does not yet know him; 4:11-19, 49; 5:7; 6:34; 8:11; 9:36; 12:21; 20:15) | 先生 |
+| 您 (B, R) | the accusers to Pilate (18:30; 19:12), as Matthew 27:64; the servants to the royal official (4:51, R). Jesus and Pilate say 你 to each other |
+| the Sea of Galilee, of Tiberias | 海 (L); 湖 (B, R) |
+| the litra (12:3; 19:39) | 一罗马磅, 一百利特拉 (L); `{{units:约330克\|一罗马磅}}`, `{{units:约33公斤\|约一百利特拉}}` (B, R) |
+| denarii as wages (6:7; 12:5) | as Mark 6:37 and 14:5 |
