@@ -1,3 +1,74 @@
+// Right to left (owb/languages.py; docs/adding-a-language.md). A page in a
+// language written right to left is <html dir="rtl">; while any reading
+// language is, each page names the codes written right to left in its
+// owb-rtl tag. Then every element the scripts tag with a lang gets its own
+// dir where that language's direction differs from its nearest ancestor
+// with one, as build_site.py's isolate_directions does for the page as
+// served: an Arabic verse in an English parallel column, an English
+// fallback or a Greek word on an Arabic page. A dir set by a script stays.
+// Without the tag (every reading language left to right) nothing is
+// watched. window.OWBDir: rtl (the page's direction), sign (1, or -1 on a
+// right-to-left page, for left and right keys), of(code), and
+// create(codes), the same for a list of codes (tests/js/bidi.test.mjs).
+// Scripts that may run before this one (reader.js, compare.js) read
+// <html dir> themselves.
+(function () {
+  "use strict";
+  function create(codes) {
+    var rtl = {};
+    codes.forEach(function (c) { if (c) rtl[c] = true; });
+    var ours = typeof WeakSet === "function" ? new WeakSet() : null;
+
+    function of(code) { return code && rtl[String(code).split("-")[0]] ? "rtl" : "ltr"; }
+
+    function around(node) {
+      for (var p = node.parentElement; p; p = p.parentElement) {
+        var d = p.getAttribute("dir");
+        if (d === "rtl" || d === "ltr") return d;
+      }
+      return "ltr";
+    }
+
+    // One element: its dir, if it needs one.
+    function fix(node) {
+      var mine = !!ours && ours.has(node);
+      if (node.hasAttribute("dir") && !mine) return;
+      var code = node.getAttribute("lang");
+      var want = code ? of(code) : null;
+      if (want && want !== around(node)) {
+        node.setAttribute("dir", want);
+        if (ours) ours.add(node);
+      } else if (mine) {
+        node.removeAttribute("dir");
+        ours.delete(node);
+      }
+    }
+
+    // An element and everything in it, parents first.
+    function sweep(node) {
+      if (!node || node.nodeType !== 1) return;
+      if (node.hasAttribute("lang") && node.parentElement) fix(node);
+      Array.prototype.forEach.call(node.querySelectorAll("[lang]"), fix);
+    }
+
+    return { of: of, fix: fix, sweep: sweep };
+  }
+
+  var root = document.documentElement;
+  var meta = document.querySelector('meta[name="owb-rtl"]');
+  var dirs = create(meta ? meta.getAttribute("content").split(" ") : []);
+  var rtl = root.getAttribute("dir") === "rtl";
+  window.OWBDir = { rtl: rtl, sign: rtl ? -1 : 1, of: dirs.of, create: create };
+  if (!meta || typeof MutationObserver !== "function") return;
+  new MutationObserver(function (changes) {
+    changes.forEach(function (c) {
+      if (c.type === "attributes") dirs.sweep(c.target);
+      else Array.prototype.forEach.call(c.addedNodes, dirs.sweep);
+    });
+  }).observe(root, { subtree: true, childList: true, attributes: true, attributeFilter: ["lang"] });
+  if (document.body) dirs.sweep(document.body);
+})();
+
 // The display menu behind the gear in the header (see colour_menu in
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
@@ -62,7 +133,7 @@
     options.forEach(function (o, i) {
       o.addEventListener("click", function () { choose(group, o.getAttribute("data-value")); });
       o.addEventListener("keydown", function (e) {
-        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        var step = { ArrowDown: 1, ArrowRight: window.OWBDir.sign, ArrowUp: -1, ArrowLeft: -window.OWBDir.sign }[e.key];
         if (!step) return;
         e.preventDefault();
         var next = options[(i + step + options.length) % options.length];
@@ -829,7 +900,7 @@ window.OWBStudy = (function () {
     tabs.forEach(function (tab, n) {
       tab.addEventListener("click", function () { select(n); });
       tab.addEventListener("keydown", function (e) {
-        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        var d = (e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0) * window.OWBDir.sign;
         if (d) { e.preventDefault(); select((n + d + tabs.length) % tabs.length, true); }
       });
     });
