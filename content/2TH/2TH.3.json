@@ -111,6 +111,11 @@
           "L": "Akhirnya, saudara-saudara, berdoalah untuk kami, supaya firman Tuhan berlari dan dimuliakan, sama seperti [yang terjadi] juga di antara kalian, \\v 2 dan supaya kami dilepaskan dari orang-orang yang bengkok dan jahat, sebab tidak semua orang [mempunyai] iman.",
           "B": "Akhirnya, saudara-saudara, berdoalah untuk kami: doakanlah supaya firman Tuhan cepat tersebar dan dimuliakan di mana-mana, seperti yang terjadi di antara kalian, \\v 2 dan supaya kami dilepaskan dari orang-orang yang bengkok dan jahat, sebab tidak semua orang beriman.",
           "R": "Dan sekarang, saudara-saudara, doakanlah kami. Doakanlah supaya berita Tuhan cepat tersebar dan dimuliakan di mana-mana, seperti yang terjadi di antara kalian. \\v 2 Doakan juga supaya kami dilepaskan dari orang-orang yang jahat dan keji, karena tidak semua orang beriman."
+        },
+        "zh": {
+          "L": "最后，{{gender:弟兄姐妹|弟兄}}们，请为我们祷告，使主的道快快奔跑，得着荣耀，正如在你们那里[一样]；\\v 2 也使我们脱离那些乖谬和邪恶的人，因为不是人人都有信心。",
+          "B": "最后，{{gender:弟兄姐妹|弟兄}}们，请为我们祷告：求主的道迅速传开，在各处得着荣耀，就像在你们中间一样；\\v 2 也求主救我们脱离那些乖僻邪恶的人，因为不是每一个人都有信心。",
+          "R": "还有，{{gender:弟兄姐妹|弟兄}}们，请为我们祷告。求主的信息很快地传开，在各地都得着荣耀，就像在你们那里一样。\\v 2 也求主救我们脱离那些坏人和恶人，因为不是每个人都有信心。"
         }
       },
       "decisions": [
@@ -581,6 +586,63 @@
           "reason": "\"orang\" already includes women and men, so the English span {{gender:people|men}} has no counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003002009"
+          ],
+          "choice": "\"人\" with no setting",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The English Literal has a gender span (people / men); Chinese \"人\" already means human beings in general.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003001009",
+            "n53003001012"
+          ],
+          "choice": "\"主的道\" (L, B), \"主的信息\" (R); \"快快奔跑\" (L), \"迅速传开\" (B, R)",
+          "alternatives": [],
+          "reason": "The word of the Lord as Acts has it; Literal keeps the picture of the runner, Balanced and Readable its sense (m2), keeping the key term \"荣耀\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003001001",
+            "n53003001002"
+          ],
+          "choice": "\"还有\" (R); \"最后\" (L, B)",
+          "alternatives": [],
+          "reason": "\"Finally\" means \"as for the rest\" (m1); Readable says \"And now\", as the English Readable does and as 1 Thessalonians 4:1.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -676,6 +738,11 @@
           "L": "Tetapi Tuhan itu setia, yang akan menguatkan kalian dan menjaga [kalian] dari si jahat.",
           "B": "Tetapi Tuhan dapat dipercaya: {{deity_pronoun:dia|Dia}} akan menguatkan kalian dan menjaga kalian dari si jahat.",
           "R": "Tetapi Tuhan itu setia. Dia akan menguatkan kalian dan melindungi kalian dari si jahat."
+        },
+        "zh": {
+          "L": "但主是信实的，{{deity_pronoun:他|祂}}要坚固你们，保护[你们]脱离那恶者。",
+          "B": "但主是可以信赖的：{{deity_pronoun:他|祂}}会使你们坚强，保护你们脱离那恶者。",
+          "R": "但主是信实的，一定会使你们坚强，保护你们不受那恶者的伤害。"
         }
       },
       "decisions": [
@@ -973,6 +1040,44 @@
           "reason": "The evil one is Satan (m1); \"si jahat\" keeps the personal title, as in Ephesians 6:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003003006"
+          ],
+          "choice": "\"{{deity_pronoun:他|祂}}要坚固你们\"",
+          "alternatives": [],
+          "reason": "The English Literal has \"who will strengthen\" with no pronoun; Chinese needs a subject and writes the pronoun for the Lord with the span. Readable joins the sentences and needs none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003003013"
+          ],
+          "choice": "\"那恶者\"",
+          "alternatives": [
+            "凶恶"
+          ],
+          "reason": "The evil one is Satan (m1); the masculine reading is kept at every level, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1068,6 +1173,11 @@
           "L": "Dan kami yakin di dalam Tuhan tentang kalian, bahwa kalian melakukan dan akan melakukan apa yang kami perintahkan.",
           "B": "Karena Tuhan, kami yakin tentang kalian: kalian melakukan apa yang kami pesankan, dan kalian akan terus melakukannya.",
           "R": "Tuhan memberi kami keyakinan bahwa kalian sedang menaati ajaran kami, dan bahwa kalian akan terus menaatinya."
+        },
+        "zh": {
+          "L": "我们在主里对你们有信心，相信我们所吩咐的，你们正在做，也将会做。",
+          "B": "因着主，我们对你们有信心：我们吩咐你们的，你们正在做，也会继续去做。",
+          "R": "主使我们有信心，相信你们正在遵行我们的教导，也会一直遵行下去。"
         }
       },
       "decisions": [
@@ -1228,6 +1338,11 @@
           "L": "Dan kiranya Tuhan mengarahkan hati kalian kepada kasih Allah dan kepada ketekunan {{christos:Kristus|Mesias}}.",
           "B": "Kiranya Tuhan menuntun hati kalian kepada kasih Allah dan ketekunan {{christos:Kristus|Mesias}}.",
           "R": "Kami berdoa supaya Tuhan menolong kalian untuk makin mengerti betapa Allah mengasihi kalian, dan menolong kalian untuk terus bertahan dengan sabar, seperti yang dilakukan {{christos:Kristus|Mesias}}."
+        },
+        "zh": {
+          "L": "愿主引导你们的心，进入{{god_term:神|上帝}}的爱，和{{christos:基督|弥赛亚}}的忍耐。",
+          "B": "愿主引领你们的心，进入{{god_term:神|上帝}}的爱和{{christos:基督|弥赛亚}}的坚忍。",
+          "R": "我们祈求主帮助你们越来越明白{{god_term:神|上帝}}多么爱你们，也帮助你们像{{christos:基督|弥赛亚}}一样，耐心地坚持下去。"
         }
       },
       "decisions": [
@@ -1418,6 +1533,45 @@
           "reason": "\"मसीह\" is both the familiar name and the word Messiah itself, so the choice the English setting offers is already made (style guide, section 7). The same through this chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n53003005012"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). It changes the word, never the meaning; this note stands for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n53003005010",
+            "n53003005016"
+          ],
+          "choice": "\"神多么爱你们\"; \"像基督一样，耐心地坚持下去\"",
+          "alternatives": [],
+          "reason": "Readable states the sense chosen in the meaning decision (m1), which is uncertain, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1527,6 +1681,11 @@
           "L": "Dan kami memerintahkan kalian, saudara-saudara, dalam nama Tuhan kita Yesus {{christos:Kristus|Mesias}}, supaya kalian menjauhkan diri dari setiap saudara yang hidup tidak tertib dan tidak menurut ajaran yang telah mereka terima dari kami.",
           "B": "Saudara-saudara, dalam nama Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} kami memerintahkan kalian: jauhilah setiap saudara yang hidup tidak tertib, yang bertentangan dengan ajaran yang telah mereka terima dari kami.",
           "R": "Saudara-saudara, kami memberi kalian perintah ini dengan wewenang Tuhan kita Yesus {{christos:Kristus|Sang Mesias}}: jauhilah setiap orang percaya yang menolak bekerja dan tidak hidup sesuai dengan apa yang telah kami ajarkan."
+        },
+        "zh": {
+          "L": "{{gender:弟兄姐妹|弟兄}}们，我们奉我们主耶稣{{christos:基督|弥赛亚}}的名吩咐你们，凡有不守规矩地行事为人、不照着从我们所领受的传统而行的{{gender:弟兄或姐妹|弟兄}}，你们都要远离他。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，我们奉我们主耶稣{{christos:基督|弥赛亚}}的名吩咐你们：任何{{gender:弟兄或姐妹|弟兄}}，如果生活散漫，违背了从我们领受的传统，你们都要和他保持距离。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，我们凭着我们主耶稣{{christos:基督|弥赛亚}}的权柄命令你们：如果有信徒不肯工作，也不照着我们教导的去生活，就要远离他。"
         }
       },
       "decisions": [
@@ -2026,6 +2185,47 @@
           "reason": "The disorderly here refuse to work (m1); Readable says so, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003006017",
+            "n53003006018"
+          ],
+          "choice": "\"不守规矩地行事为人\" (L); \"生活散漫\" (B); \"不肯工作\" (R)",
+          "alternatives": [
+            "游手好闲"
+          ],
+          "reason": "\"Disorderly\" here means out of line by refusing to work (m1); Literal keeps the general word and the walk figure, Readable states the sense the context gives, as the English does. The same words in 3:7 and 3:11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003006023"
+          ],
+          "choice": "\"传统\" (L, B); \"我们教导的\" (R)",
+          "alternatives": [],
+          "reason": "Paul's teaching, here about work (m4), as \"traditions\" in 2:15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2142,6 +2342,11 @@
           "L": "Sebab kalian sendiri tahu bagaimana kalian harus meneladani kami, karena kami tidak hidup tidak tertib di antara kalian, \\v 8 dan kami tidak makan roti siapa pun dengan cuma-cuma, tetapi dengan jerih payah dan kesusahan, bekerja siang dan malam, supaya tidak menjadi beban bagi siapa pun dari kalian.",
           "B": "Kalian sendiri tahu bahwa kalian harus meneladani kami. Kami tidak hidup bermalas-malasan di antara kalian, \\v 8 dan kami tidak pernah makan roti siapa pun dengan cuma-cuma; kami bekerja keras dan bersusah payah, siang dan malam, supaya tidak menjadi beban bagi siapa pun dari kalian.",
           "R": "Kalian tahu bahwa kalian harus hidup seperti cara kami hidup. Kami tidak malas ketika kami bersama kalian. \\v 8 Kami tidak makan makanan siapa pun tanpa membayarnya. Kami bekerja keras siang dan malam, supaya kami tidak menjadi beban bagi siapa pun dari kalian."
+        },
+        "zh": {
+          "L": "因为你们自己知道应当怎样效法我们；因为我们在你们中间没有不守规矩，\\v 8 也没有白吃任何人的饭，反而劳苦辛勤，昼夜做工，免得加重你们任何人的负担。",
+          "B": "你们自己知道，你们应当效法我们。我们在你们中间并没有懒散度日，\\v 8 也从来没有白吃别人的饭；我们辛苦劳碌，日夜做工，免得成为你们任何人的负担。",
+          "R": "你们知道，你们应该照着我们的样子生活。我们和你们在一起的时候，并没有懒惰。\\v 8 我们吃任何人的饭，都付了钱。我们白天黑夜都辛苦工作，这样就不会成为你们任何人的负担。"
         }
       },
       "decisions": [
@@ -2284,6 +2489,27 @@
           "reason": "\"To eat bread\" means to live on food someone provides, and the style brief keeps \"እንጀራ\" for bread as food; Readable says \"food\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003008002",
+            "n53003008003"
+          ],
+          "choice": "\"白吃……的饭\"",
+          "alternatives": [
+            "白白吃饼"
+          ],
+          "reason": "\"Eat bread freely\" means to live at someone else's expense (m2); the Chinese idiom says the same with \"饭\", the everyday word for a meal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2381,6 +2607,11 @@
           "L": "Bukan karena kami tidak mempunyai hak, tetapi supaya kami memberikan diri kami kepada kalian sebagai teladan untuk ditiru.",
           "B": "Bukan karena kami tidak berhak mendapat tunjangan, tetapi kami ingin memberikan kepada kalian teladan untuk diikuti.",
           "R": "Kami berhak meminta bantuan kalian, tetapi kami tidak melakukannya. Kami ingin menunjukkan kepada kalian bagaimana hidup, supaya kalian hidup dengan cara yang sama."
+        },
+        "zh": {
+          "L": "这并不是因为我们没有权利，而是要把我们自己作为榜样给你们，让你们效法我们。",
+          "B": "这不是因为我们没有权利接受供应，而是我们想给你们立一个可以效法的榜样。",
+          "R": "我们有权利请你们帮助我们，可是我们没有这样做。我们想让你们看到应该怎样生活，好让你们也这样生活。"
         }
       },
       "decisions": [
@@ -2537,6 +2768,11 @@
           "L": "Sebab memang, ketika kami bersama kalian, kami telah memberikan perintah ini kepada kalian: \"Jika seseorang tidak mau bekerja, janganlah ia makan.\"",
           "B": "Sebab ketika kami masih bersama kalian, kami telah memberikan pesan ini kepada kalian: \"Siapa yang tidak mau bekerja, janganlah ia makan.\"",
           "R": "Ketika kami bersama kalian, kami memberikan peraturan ini kepada kalian: \"Kalau seseorang tidak mau bekerja, dia tidak boleh makan.\""
+        },
+        "zh": {
+          "L": "其实，我们在你们那里的时候，就一直把这命令交给你们：“如果有人不愿意做工，那人也不可吃。”",
+          "B": "我们还在你们那里的时候，就给过你们这个指示：“谁不愿意工作，谁就不该吃饭。”",
+          "R": "我们和你们在一起的时候，给过你们这样一条规矩：“如果有人不想工作，就不应该吃东西。”"
         }
       },
       "decisions": [
@@ -2724,6 +2960,28 @@
           "reason": "The rule is about refusing to work, not being unable to; Ukrainian keeps \"не хоче\" at every level, so it is not read as the familiar slogan.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003010014",
+            "n53003010015"
+          ],
+          "choice": "\"不愿意\" (L, B); \"不想\" (R)",
+          "alternatives": [
+            "不能"
+          ],
+          "reason": "The rule is about refusing to work, not being unable to (m1), so Chinese says \"unwilling\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2817,6 +3075,11 @@
           "L": "Sebab kami mendengar bahwa ada beberapa orang di antara kalian yang hidup tidak tertib, sama sekali tidak bekerja, tetapi sibuk dengan urusan orang lain.",
           "B": "Kami mendengar bahwa ada beberapa orang di antara kalian yang hidup tidak tertib: mereka tidak sibuk bekerja, tetapi sibuk mencampuri urusan orang lain.",
           "R": "Kami mendengar bahwa ada beberapa orang di antara kalian yang tidak bekerja. Sebaliknya, mereka mencampuri urusan orang lain."
+        },
+        "zh": {
+          "L": "因为我们听说，你们中间有些人不守规矩地行事为人，什么工作都不做，反倒到处管闲事。",
+          "B": "我们听说，你们中间有些人生活散漫：他们不忙着做工，却忙着管别人的闲事。",
+          "R": "我们听说，你们当中有些人不工作，反而去管别人的事。"
         }
       },
       "decisions": [
@@ -3112,6 +3375,25 @@
           "reason": "Paul's play on \"working\" and \"working around\" (m1) is echoed with the repeated \"sibuk\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003011009",
+            "n53003011011"
+          ],
+          "choice": "\"什么工作都不做，反倒到处管闲事\" (L); \"不忙着做工，却忙着管别人的闲事\" (B)",
+          "alternatives": [],
+          "reason": "The Greek plays on \"working\" and \"working around\" (m1); Balanced keeps the play with \"忙着……忙着……\", as the English does with \"busy\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3212,6 +3494,11 @@
           "L": "Dan orang-orang seperti itu kami perintahkan dan nasihati di dalam Tuhan Yesus {{christos:Kristus|Mesias}}, supaya mereka bekerja dengan tenang dan makan roti mereka sendiri.",
           "B": "Orang-orang seperti itu kami perintahkan, dan kami nasihati di dalam Tuhan Yesus {{christos:Kristus|Sang Mesias}}, supaya mereka bekerja dengan tenang dan makan roti hasil kerja mereka sendiri.",
           "R": "Dalam nama Tuhan Yesus {{christos:Kristus|Sang Mesias}}, kami menyuruh orang-orang itu, dan kami memohon kepada mereka, supaya mereka hidup tertib, bekerja dengan tenang, dan mencari nafkah mereka sendiri."
+        },
+        "zh": {
+          "L": "我们在主耶稣{{christos:基督|弥赛亚}}里吩咐、劝勉这样的人，要安静地做工，吃自己的饭。",
+          "B": "我们吩咐这样的人，也在主耶稣{{christos:基督|弥赛亚}}里劝勉他们，要安安静静地做工，吃自己挣来的饭。",
+          "R": "我们奉主耶稣{{christos:基督|弥赛亚}}的名告诉这些人，也恳求他们：要安定下来，安静地工作，自己挣饭吃。"
         }
       },
       "decisions": [
@@ -3351,6 +3638,11 @@
           "L": "Tetapi kalian, saudara-saudara, janganlah jemu-jemu berbuat baik.",
           "B": "Sedangkan kalian, saudara-saudara, janganlah tawar hati dalam berbuat baik.",
           "R": "Saudara-saudara, jangan pernah bosan berbuat baik."
+        },
+        "zh": {
+          "L": "但{{gender:弟兄姐妹|弟兄}}们，你们行善不可厌倦。",
+          "B": "至于你们，{{gender:弟兄姐妹|弟兄}}们，做正确的事，不要灰心。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，永远不要厌倦去做好事。"
         }
       },
       "decisions": [
@@ -3491,6 +3783,11 @@
           "L": "Dan jika ada orang yang tidak menaati perkataan kami dalam surat ini, tandailah orang itu dan janganlah bergaul dengan dia, supaya ia menjadi malu.",
           "B": "Jika ada orang yang tidak mau menaati apa yang kami katakan dalam surat ini, perhatikanlah orang itu dan jangan bergaul dengan dia, supaya ia menjadi malu.",
           "R": "Mungkin ada orang yang tidak menaati apa yang kami katakan kepada kalian dalam surat ini. Perhatikanlah siapa mereka, dan jangan bergaul dengan mereka. Dengan begitu mereka akan merasa malu."
+        },
+        "zh": {
+          "L": "如果有人不听从我们借着这封信所说的话，要留意那人，不要与[那人]交往，好使[那人]感到羞愧。",
+          "B": "如果有人不肯听从我们在这封信里所说的话，就要留意这个人，不要和他来往，好让他感到羞愧。",
+          "R": "有些人可能不听从我们在这封信里告诉你们的话。你们要注意他们是谁，不要和他们来往。这样，他们就会感到羞愧。"
         }
       },
       "decisions": [
@@ -3648,6 +3945,25 @@
           "reason": "The English supplies \"that person\" and \"them\" to avoid a masculine pronoun. Japanese \"その人\" is already inclusive and is the natural way to refer back to \"anyone\", so it needs neither brackets nor a span. The same at 3:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003014012",
+            "n53003014016"
+          ],
+          "choice": "\"那人\" (L); \"他\" (B)",
+          "alternatives": [],
+          "reason": "The Greek \"anyone\" may be a man or a woman; Literal keeps \"that person\", as the English Literal does. Chinese \"他\" in Balanced is the common pronoun for a person of either sex, so it needs no setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3739,6 +4055,11 @@
           "L": "Dan janganlah menganggap dia sebagai musuh, tetapi tegurlah dia sebagai saudara.",
           "B": "Tetapi janganlah memperlakukan orang itu sebagai musuh; tegurlah dia sebagai saudara.",
           "R": "Tetapi jangan memperlakukan mereka seperti musuh. Tegurlah mereka seperti kalian menegur sesama orang percaya."
+        },
+        "zh": {
+          "L": "不要把[那人]当作仇敌，而要把[那人]当作{{gender:弟兄或姐妹|弟兄}}来劝诫。",
+          "B": "但不要把那人当仇敌看待；要像对待{{gender:弟兄或姐妹|弟兄}}那样纠正他。",
+          "R": "可是不要把他们当作敌人。要像警告信徒同伴一样警告他们。"
         }
       },
       "decisions": [
@@ -3878,6 +4199,11 @@
           "L": "Dan kiranya Tuhan damai sejahtera sendiri memberikan damai sejahtera kepada kalian senantiasa, dalam segala hal.",
           "B": "Kiranya Tuhan sumber damai sejahtera sendiri memberikan damai sejahtera kepada kalian terus-menerus dan dalam segala hal.",
           "R": "Kami berdoa supaya Tuhan, yang memberikan damai, memberikan damai kepada kalian setiap waktu dan dalam segala keadaan."
+        },
+        "zh": {
+          "L": "愿平安的主{{deity_pronoun:他|祂}}自己，时时处处赐平安给你们。",
+          "B": "愿平安的主{{deity_pronoun:他|祂}}自己，不断地在各方面赐你们平安。",
+          "R": "我们祈求赐人平安的主，在任何时候、任何情况下都赐给你们平安。"
         }
       },
       "decisions": [
@@ -4026,6 +4352,26 @@
           "reason": "The title matches \"平和の神\" (1 Thessalonians 5:23; Romans). The peace given to the readers in every circumstance is the inner peace of a blessing, which the style guide writes \"平安\", as in the greetings.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003016004",
+            "n53003016006"
+          ],
+          "choice": "\"平安的主\" (L, B); \"赐人平安的主\" (R)",
+          "alternatives": [],
+          "reason": "Like \"the God of peace\" in Romans 15:33 and 1 Thessalonians 5:23; here the Lord Jesus, who gives peace (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4113,6 +4459,11 @@
           "L": "Tuhan [menyertai] kalian semua.",
           "B": "Tuhan menyertai kalian semua.",
           "R": "Semoga Tuhan menyertai kalian semua."
+        },
+        "zh": {
+          "L": "主[与]你们众人[同在]。",
+          "B": "愿主与你们众人同在。",
+          "R": "愿主与你们所有的人同在。"
         }
       },
       "decisions": [
@@ -4131,6 +4482,26 @@
           "choice": "with all of you: including the disorderly",
           "alternatives": [],
           "reason": "πάντων ὑμῶν (\"all of you\") comes three times at the end of the letter (verses 16 and 18).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003016018",
+            "n53003016019"
+          ],
+          "choice": "\"[与]你们众人[同在]\" (L); \"与你们众人同在\" (B); \"与你们所有的人同在\" (R)",
+          "alternatives": [],
+          "reason": "Romans 15:33's forms for \"with you all\", so the letter's closing blessings read alike (3:18).",
           "uncertain": false,
           "footnote": false
         }
@@ -4229,6 +4600,11 @@
           "L": "Salam [ini] dengan tanganku sendiri, Paulus, yang menjadi tanda dalam setiap surat; beginilah aku menulis.",
           "B": "Salam ini kutulis dengan tanganku sendiri, Paulus. Inilah tanda keaslian dalam setiap suratku; beginilah caraku menulis.",
           "R": "Saya, Paulus, menulis salam ini dengan tangan saya sendiri. Saya melakukan hal ini dalam setiap surat sebagai tanda bahwa surat itu benar-benar dari saya. Beginilah cara saya menulis."
+        },
+        "zh": {
+          "L": "我保罗亲手写的问候，这是每封信的记号；我就是这样写的。",
+          "B": "这问候是我保罗亲笔写的。这是我每一封信真实可靠的记号；我的字就是这样写的。",
+          "R": "我保罗亲手写下这个问候。我每封信都这样做，作为记号，证明这封信真的是我写的。我的字就是这样的。"
         }
       },
       "decisions": [
@@ -4312,6 +4688,24 @@
             "\"प्रमाण\""
           ],
           "reason": "The sign is a mark that shows the letter is genuine (meaning decision m2); \"चिह्न\" is the word for semeion through the New Testament. The signature keeps the wording of Colossians 4:18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n53003017009"
+          ],
+          "choice": "\"真实可靠的记号\" (B); \"证明这封信真的是我写的\" (R)",
+          "alternatives": [],
+          "reason": "The sign shows the letter is genuine (m1, m2), as the English Balanced and Readable say.",
           "uncertain": false,
           "footnote": false
         }
@@ -4406,6 +4800,11 @@
           "L": "Kasih karunia Tuhan kita Yesus {{christos:Kristus|Mesias}} [menyertai] kalian semua.",
           "B": "Kiranya kasih karunia Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} menyertai kalian semua.",
           "R": "Semoga kasih karunia Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} menyertai kalian semua."
+        },
+        "zh": {
+          "L": "我们主耶稣{{christos:基督|弥赛亚}}的恩典[与]你们众人[同在]。",
+          "B": "愿我们主耶稣{{christos:基督|弥赛亚}}的恩典与你们众人同在。",
+          "R": "愿我们主耶稣{{christos:基督|弥赛亚}}的恩典与你们所有的人同在。"
         }
       },
       "decisions": [
@@ -4484,6 +4883,26 @@
             "... со всеми вами. Аминь."
           ],
           "reason": "Letter closings keep one form across Paul's letters, copied from Romans 16:24; SBLGNT has no \"Amen\" here (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n53003018002",
+            "n53003018008"
+          ],
+          "choice": "\"……的恩典[与]你们众人[同在]\" (L); \"愿……与你们众人同在\" (B); \"……与你们所有的人同在\" (R)",
+          "alternatives": [],
+          "reason": "The closing blessing in Romans 16:20's forms, with \"all\" as Romans 15:33, so the two letters end alike (1 Thessalonians 5:28).",
           "uncertain": false,
           "footnote": false
         }
