@@ -105,6 +105,11 @@
           "L": "Dan seluruh bani Israel keluar, dan umat itu berkumpul seperti satu orang, dari Dan sampai Bersyeba, dan tanah Gilead, menghadap {{divine_name:TUHAN|Yahweh}} di Mizpa.",
           "B": "Lalu seluruh orang Israel keluar, dari Dan sampai Bersyeba, juga dari tanah Gilead, dan umat itu berkumpul dengan bulat menghadap {{divine_name:TUHAN|Yahweh}} di Mizpa.",
           "R": "Lalu seluruh orang Israel berkumpul, dari Dan di ujung utara sampai Bersyeba di ujung selatan, dan dari tanah Gilead di sebelah timur sungai Yordan. Seluruh umat itu berkumpul dengan bulat di hadapan {{divine_name:TUHAN|Yahweh}} di Mizpa."
+        },
+        "zh": {
+          "L": "{{gender:以色列的子孙|以色列的儿子}}都出来了，会众如同一人聚集，从但到别是巴，还有基列地，都到米斯巴{{divine_name:上主|雅威}}那里。",
+          "B": "于是以色列人全都出来，从但到别是巴，还有基列地的人，会众同心合一地聚集在米斯巴{{divine_name:上主|雅威}}面前。",
+          "R": "于是所有以色列人都聚集起来，有的从北边最远的但来，有的从南边最远的别是巴来，也有的从约旦河东边的基列地来。全体会众同心合一，聚集在米斯巴{{divine_name:上主|雅威}}面前。"
         }
       },
       "decisions": [
@@ -499,6 +504,52 @@
           "reason": "The formula as the glossary sets it (section 7), and \"umat\" for the edah, as Joshua 9:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o070200010031",
+            "o070200010041"
+          ],
+          "choice": "{{gender:以色列的子孙|以色列的儿子}} (L); \"以色列人\" (B, R), no span",
+          "alternatives": [
+            "{{gender:以色列人|以色列的子孙}} (B, R)"
+          ],
+          "reason": "As the glossary, Numbers and Deuteronomy have it: \"以色列人\" already means the whole people, so Balanced and Readable take no span where the English has one. Where the English Literal says \"the sons of Israel\" with no setting (the army, verse 3 on), Literal says \"以色列的子孙\" with no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200010072",
+            "o070200010081",
+            "o070200010093",
+            "o070200010121",
+            "o070200010142",
+            "o070200010172"
+          ],
+          "choice": "\"如同一人\" (L), \"同心合一\" (B, R); \"从但到别是巴\"; \"基列\"; \"米斯巴\" (Mizpah, as Genesis 31:49)",
+          "alternatives": [],
+          "reason": "\"As one man\" means all together, with one purpose (m2); Literal keeps the picture here and in verses 8 and 11. The places are the glossary's and Genesis's forms; Readable says where they lie, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -602,6 +653,11 @@
           "L": "Dan para pemuka seluruh rakyat, semua suku Israel, hadir dalam jemaah umat Allah: 400.000 orang pejalan kaki yang menghunus pedang.",
           "B": "Para pemimpin seluruh rakyat, yaitu semua suku Israel, hadir dalam pertemuan umat Allah: 400.000 orang prajurit berjalan kaki yang bersenjata pedang.",
           "R": "Para pemimpin semua suku Israel mengambil tempat dalam pertemuan umat Allah. Ada 400.000 prajurit berjalan kaki, semuanya bersenjata pedang."
+        },
+        "zh": {
+          "L": "全民的角石，就是以色列的众支派，都站在{{god_term:神|上帝}}子民的大会中：拔刀的步兵四十万人。",
+          "B": "全民的首领，就是以色列各支派的首领，都在{{god_term:神|上帝}}子民的会众中就位。那里有四十万手持刀剑的步兵。",
+          "R": "以色列各支派的首领，都在{{god_term:神|上帝}}子民的聚会中就位。那里有四十万步兵，都带着刀。"
         }
       },
       "decisions": [
@@ -1000,6 +1056,51 @@
           "reason": "The corners are the leaders (m1). \"Jemaah\" for the qahal as Joshua 8:35 sets. Numbers that need more than two words are written in digits, as the style guide sets (section 10).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o070200020102"
+          ],
+          "choice": "{{god_term:神|上帝}}: \"神\" by default, \"上帝\" as the reader's alternative",
+          "alternatives": [
+            "\"神\" fixed",
+            "\"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting, in this chapter as in the others; the English has no such setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200020021",
+            "o070200020161",
+            "o070200020171"
+          ],
+          "choice": "\"角石\" (L), \"首领\" (B, R); \"拔刀的\" (L), \"手持刀剑的\" (B), \"带着刀的\" (R)",
+          "alternatives": [
+            "\"房角\" (L)"
+          ],
+          "reason": "\"The corners\" are the leaders (m1): Literal keeps a picture a Chinese reader can follow, \"角石\" (cornerstones); Balanced and Readable say \"leaders\". \"Drawing the sword\" means armed fighting men (m3); each level keeps its wording of it through the chapter (verses 15, 17, 25, 35, 46).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1103,6 +1204,11 @@
           "L": "Dan bani Benyamin mendengar bahwa bani Israel telah naik ke Mizpa. Dan bani Israel berkata, \"Katakanlah: bagaimana kejahatan ini terjadi?\"",
           "B": "Orang Benyamin mendengar bahwa orang Israel telah naik ke Mizpa. Orang Israel berkata, \"Ceritakanlah, bagaimana kejahatan ini terjadi?\"",
           "R": "Orang Benyamin mendengar bahwa orang Israel yang lain sudah naik ke Mizpa. Orang Israel berkata, \"Ceritakanlah kepada kami bagaimana kejahatan yang mengerikan ini terjadi.\""
+        },
+        "zh": {
+          "L": "便雅悯的子孙听见以色列的子孙已经上到米斯巴。以色列的子孙说：“你们说吧，这恶事是怎么发生的？”",
+          "B": "便雅悯人听说以色列人已经上到米斯巴。以色列人说：“请告诉我们，这件恶事是怎样发生的。”",
+          "R": "便雅悯人听说其余的以色列人已经上到米斯巴。以色列人说：“告诉我们，这可怕的罪行是怎样发生的。”"
         }
       },
       "decisions": [
@@ -1314,6 +1420,28 @@
           "reason": "As the English per level (sons of Benjamin / Benjaminites / men of Benjamin), with no gender span; the tribe alone is \"ベニヤミン\" at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200030021",
+            "o070200030031",
+            "o070200030061",
+            "o070200030071"
+          ],
+          "choice": "\"便雅悯的子孙\", \"以色列的子孙\" (L), no span; \"便雅悯人\", \"以色列人\" (B, R)",
+          "alternatives": [],
+          "reason": "In this chapter the \"sons\" of Benjamin and of Israel are the fighting men, so no gender setting is used, as the English decision says. Literal keeps \"子孙\"; Balanced and Readable name the tribes. So through chapters 20-21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1422,6 +1550,11 @@
           "L": "Dan orang Lewi itu, suami perempuan yang dibunuh itu, menjawab dan berkata, \"Aku datang ke Gibea, kota Benyamin, aku dan gundikku, untuk bermalam.",
           "B": "Orang Lewi itu, suami perempuan yang dibunuh itu, menjawab, \"Aku datang ke Gibea, kota Benyamin, bersama gundikku untuk bermalam.",
           "R": "Orang Lewi yang istrinya dibunuh itu menjawab, \"Aku dan gundikku, yaitu istriku yang tidak resmi, datang ke kota Gibea di wilayah Benyamin untuk bermalam."
+        },
+        "zh": {
+          "L": "那利未人，就是那被杀害的妇人的丈夫，回答说：“我来到属便雅悯的基比亚，我和我的妾，要在那里过夜。",
+          "B": "那利未人，就是被害妇人的丈夫，回答：“我和我的妾来到便雅悯的基比亚过夜。",
+          "R": "那个妻子被害的利未人回答：“我和我的妾（地位较低的妻子）来到便雅悯地的基比亚城，要在那里过夜。"
         }
       },
       "decisions": [
@@ -1557,6 +1690,27 @@
           "reason": "A speech of testimony before the whole people; the assembly's own words (20:3, 8-13) are plain too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200040012",
+            "o070200040072",
+            "o070200040132"
+          ],
+          "choice": "\"回答说\" (L), \"回答\" (B, R); \"妾（地位较低的妻子）\" (R)",
+          "alternatives": [],
+          "reason": "\"Answered and said\" in the style guide's forms. Readable explains \"妾\" the first time in the chapter, as 19:1 and the English Readable do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1666,6 +1820,11 @@
           "L": "Dan warga kota Gibea bangkit melawan aku dan mengepung rumah itu di sekelilingku pada malam hari. Aku hendak mereka bunuh, dan gundikku mereka perkosa, sehingga dia mati.",
           "B": "Lalu warga kota Gibea bangkit melawan aku. Pada malam hari mereka mengepung rumah tempat aku berada. Mereka bermaksud membunuh aku, dan gundikku mereka perkosa sampai dia mati.",
           "R": "Pada malam hari para pemimpin Gibea datang melawan aku dan mengepung rumah tempat aku menginap. Mereka mau membunuh aku. Tetapi mereka memperkosa gundikku, dan dia mati."
+        },
+        "zh": {
+          "L": "基比亚的主人们起来攻击我，夜间包围我所在的房子。我，他们想要杀；我的妾，他们凌辱了，她就死了。",
+          "B": "基比亚的人起来对付我，夜里围住了那房子要抓我。他们想杀我。他们强奸了我的妾，她就死了。",
+          "R": "夜里，基比亚的首领们来对付我，围住了我住的房子。他们想杀我。结果他们强奸了我的妾，她就死了。"
         }
       },
       "decisions": [
@@ -1853,6 +2012,26 @@
           "reason": "As the lords of Shechem in 9:2.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200050031",
+            "o070200050151"
+          ],
+          "choice": "\"基比亚的主人们\" (L), \"基比亚的人\" (B), \"基比亚的首领们\" (R); \"凌辱\" (L), \"强奸\" (B, R)",
+          "alternatives": [],
+          "reason": "The citizens, the men of standing in the town (m1): Literal keeps \"lords\" as \"主人们\"; Balanced and Readable follow the English. \"Abused\" means raped (m3); Literal keeps 19:25's \"凌辱\", Balanced and Readable say it plainly, as there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1958,6 +2137,11 @@
           "L": "Dan aku memegang gundikku dan memotong-motongnya dan mengirimkannya ke seluruh daerah milik pusaka Israel, karena mereka telah melakukan perbuatan mesum dan perbuatan noda di Israel.",
           "B": "Lalu aku mengambil mayat gundikku, memotong-motongnya, dan mengirimkannya ke seluruh daerah milik pusaka Israel, karena mereka telah melakukan perbuatan mesum dan keji di Israel.",
           "R": "Jadi aku mengambil mayatnya dan memotong-motongnya. Aku mengirimkan potongan-potongan itu ke seluruh negeri Israel, karena orang-orang itu sudah melakukan perbuatan yang memalukan dan jahat di Israel."
+        },
+        "zh": {
+          "L": "我就抓住我的妾，把她切成块子，送到以色列产业的全境，因为他们在以色列中行了淫乱和愚妄可耻的事。",
+          "B": "于是我把我的妾切成块，送到以色列所承受的全地，因为他们在以色列中做了淫乱又可耻的事。",
+          "R": "所以我把她的身体切成块，把这些块送到以色列地的各个地方，因为这些人在以色列中做了可耻又邪恶的事。"
         }
       },
       "decisions": [
@@ -2182,6 +2366,11 @@
           "L": "Lihatlah, kalian semua [adalah] bani Israel; berikanlah di sini pendapat dan nasihat kalian.\"",
           "B": "Kalian semua adalah orang Israel. Berikanlah pendapat dan keputusan kalian di sini.\"",
           "R": "Kalian semua adalah orang Israel. Jadi bicarakanlah hal ini dan putuskanlah di sini apa yang harus dilakukan.\""
+        },
+        "zh": {
+          "L": "看哪，你们都是以色列的子孙，你们要在这里为自己提出意见和计策。”",
+          "B": "现在你们以色列人都在这里，大家出主意，决定该怎么做吧。”",
+          "R": "你们都是以色列人。所以大家就在这里商量一下，决定该怎么办。”"
         }
       },
       "decisions": [
@@ -2363,6 +2552,11 @@
           "L": "Dan seluruh rakyat bangkit seperti satu orang, katanya, \"Tidak seorang pun dari kami akan pergi ke kemahnya, dan tidak seorang pun akan pulang ke rumahnya.",
           "B": "Seluruh rakyat bangkit dengan bulat dan berkata, \"Tidak seorang pun dari kami akan pulang ke kemahnya, tidak seorang pun akan kembali ke rumahnya.",
           "R": "Seluruh rakyat berdiri bersama-sama dan berkata, \"Tidak seorang pun dari kami akan pulang."
+        },
+        "zh": {
+          "L": "众民都如同一人起来，说：“我们中间不会有一个人回自己的帐棚，也不会有一个人转回自己的家。",
+          "B": "众民同心合一地站起来，说：“我们中间没有一个人要回自己的帐棚，没有一个人要回自己的家。",
+          "R": "所有的人都一起站起来说：“我们没有一个人要回家去。"
         }
       },
       "decisions": [
@@ -2514,6 +2708,11 @@
           "L": "Dan sekarang inilah yang akan kami lakukan terhadap Gibea: [kami akan maju] melawannya menurut undian.",
           "B": "Inilah yang akan kami lakukan terhadap Gibea: kami akan maju melawannya menurut undian.",
           "R": "Inilah yang akan kami lakukan terhadap Gibea: kami akan membuang undi untuk menentukan siapa yang maju menyerangnya."
+        },
+        "zh": {
+          "L": "现在我们要这样对待基比亚：按着签[上去]攻打它。",
+          "B": "我们要这样对待基比亚：按照抽签的结果上去攻打它。",
+          "R": "我们要这样对付基比亚：我们要抽签，决定谁先上去攻打它。"
         }
       },
       "decisions": [
@@ -2747,6 +2946,11 @@
           "L": "Dan kami akan mengambil sepuluh orang dari [setiap] seratus dari semua suku Israel, dan seratus dari [setiap] seribu, dan seribu dari [setiap] sepuluh ribu, untuk mengambil bekal bagi rakyat, supaya apabila mereka sampai di Geba di Benyamin, mereka berbuat sesuai dengan segala perbuatan noda yang telah dilakukannya di Israel.\"",
           "B": "Dari semua suku Israel kami akan mengambil sepuluh orang dari setiap seratus, seratus dari setiap seribu, dan seribu dari setiap sepuluh ribu, untuk mengurus bekal bagi tentara. Lalu apabila tentara itu sampai di Geba di Benyamin, mereka akan membalas segala perbuatan keji yang telah dilakukannya di Israel.\"",
           "R": "Dari semua suku Israel kami akan memilih satu orang dari setiap sepuluh orang untuk membawa makanan bagi tentara. Lalu tentara itu dapat pergi ke Gibea di Benyamin dan menghukum penduduknya karena perbuatan jahat yang mereka lakukan di Israel.\""
+        },
+        "zh": {
+          "L": "我们要从以色列众支派中，每一百人取十人，每一千人取一百人，每一万人取一千人，为众民运粮；等他们到了便雅悯的迦巴，好照着它在以色列中所行的一切愚妄可耻的事对待它。”",
+          "B": "我们要从以色列各支派中，每一百人挑出十人，每一千人挑出一百人，每一万人挑出一千人，为军队运粮。等军队到了便雅悯的基比亚，就照着他们在以色列中所做的一切可耻的事惩罚他们。”",
+          "R": "我们要从以色列各支派中，每十个人选出一个人，为军队运送粮食。然后军队就可以到便雅悯的基比亚去，为他们在以色列中所做的可怕的事惩罚那里的人。”"
         }
       },
       "decisions": [
@@ -2992,6 +3196,25 @@
           "reason": "The Hebrew spells the town \"Geba\" here; the meaning note says Gibeah is meant (m2), and Readable names it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200100172"
+          ],
+          "choice": "\"迦巴\" (L); \"基比亚\" (B, R)",
+          "alternatives": [],
+          "reason": "The Hebrew writes \"Geba\" for Gibeah here (m2). Literal keeps \"迦巴\"; Balanced and Readable say \"基比亚\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3086,6 +3309,11 @@
           "L": "Dan semua orang Israel berkumpul melawan kota itu, seperti satu orang, bersatu padu.",
           "B": "Semua orang Israel berkumpul melawan kota itu, bersatu padu seperti satu orang.",
           "R": "Jadi semua orang Israel berkumpul untuk melawan kota itu. Mereka benar-benar bersatu."
+        },
+        "zh": {
+          "L": "于是以色列人都聚集攻击那城，如同一人，联合在一起。",
+          "B": "于是以色列人都聚集起来攻打那城，同心合一。",
+          "R": "于是以色列人都聚集起来攻打那城。他们完全团结一致。"
         }
       },
       "decisions": [
@@ -3238,6 +3466,11 @@
           "L": "Dan suku-suku Israel mengirim orang-orang ke seluruh suku Benyamin, katanya, \"Kejahatan apakah ini yang telah terjadi di antara kalian?",
           "B": "Suku-suku Israel mengirim utusan ke seluruh kaum Benyamin dengan pesan, \"Kejahatan apa ini yang telah terjadi di antara kalian?",
           "R": "Suku-suku Israel mengirim utusan-utusan kepada semua kaum suku Benyamin. Mereka berkata, \"Kejahatan apa ini yang sudah terjadi di antara kalian?"
+        },
+        "zh": {
+          "L": "以色列众支派派人到便雅悯的众支派那里，说：“在你们中间发生的这恶事是什么呢？",
+          "B": "以色列众支派派人到便雅悯全支派那里，说：“在你们中间做出的这件恶事是怎么回事？",
+          "R": "以色列众支派派使者到便雅悯的各个宗族那里。他们说：“在你们中间发生的这件恶事是怎么回事？"
         }
       },
       "decisions": [
@@ -3424,6 +3657,11 @@
           "L": "Dan sekarang serahkanlah orang-orang itu, orang-orang dursila yang [ada] di Gibea, supaya kami membunuh mereka dan menghapuskan kejahatan dari Israel.\" Tetapi bani Benyamin tidak mau mendengarkan suara saudara-saudara mereka, bani Israel.",
           "B": "Sekarang serahkanlah orang-orang dursila di Gibea itu, supaya kami menghukum mati mereka dan menghapuskan kejahatan dari Israel.\" Tetapi orang Benyamin tidak mau mendengarkan saudara-saudara mereka, orang Israel.",
           "R": "Sekarang serahkanlah orang-orang jahat di Gibea itu kepada kami. Kami akan menghukum mati mereka, dan dengan begitu kami menghapuskan kejahatan ini dari Israel.\" Tetapi orang Benyamin tidak mau mendengarkan saudara-saudara mereka sendiri, orang Israel yang lain."
+        },
+        "zh": {
+          "L": "现在你们要把那些人，就是在基比亚的卑劣之徒交出来，我们好把他们处死，从以色列中除掉这恶。”便雅悯的子孙却不肯听他们的弟兄以色列子孙的话。",
+          "B": "现在把基比亚的那些无赖交出来，我们好把他们处死，从以色列中除掉这恶。”可是便雅悯人不肯听他们的弟兄以色列人的话。",
+          "R": "现在把基比亚的那些坏人交给我们。我们要把他们处死，这样就可以从以色列中除掉这恶。”可是便雅悯人不肯听他们自己的亲族，就是其余以色列人的话。"
         }
       },
       "decisions": [
@@ -3647,6 +3885,27 @@
           "reason": "The words of the law in Deuteronomy for a crime that must be punished (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200130051",
+            "o070200130061",
+            "o070200130191"
+          ],
+          "choice": "\"卑劣之徒\" (L), \"无赖\" (B), \"坏人\" (R); \"弟兄\" (L, B), \"亲族\" (R)",
+          "alternatives": [],
+          "reason": "\"Sons of worthlessness\" as 19:22 and Deuteronomy 13:14 (m1). The tribes are brothers as kin; Readable says \"relatives\", as the English Readable does, here and in verses 23 and 28.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3746,6 +4005,11 @@
           "L": "Dan bani Benyamin berkumpul dari kota-kota ke Gibea, untuk keluar berperang melawan bani Israel.",
           "B": "Orang Benyamin berkumpul dari kota-kota mereka di Gibea untuk maju berperang melawan orang Israel.",
           "R": "Sebaliknya, orang Benyamin meninggalkan kota-kota mereka dan berkumpul di Gibea untuk berperang melawan orang Israel."
+        },
+        "zh": {
+          "L": "便雅悯的子孙从各城聚集到基比亚，要出去与以色列的子孙作战。",
+          "B": "便雅悯人反而从各城聚集到基比亚，要出去和以色列人作战。",
+          "R": "便雅悯人反而离开他们的城，聚集到基比亚，要和以色列人打仗。"
         }
       },
       "decisions": [
@@ -3803,6 +4067,26 @@
           "choice": "\"बिन्यामीन के पुत्र\" (L), \"बिन्यामीनी\" (B), \"बिन्यामीन के पुरुष\" (R); \"युद्ध करने को निकलना\" (L)",
           "alternatives": [],
           "reason": "In this chapter the sons of Benjamin are the tribe's fighting men, so no level has a gender span, as in the English; the same three wordings hold through the chapter, and \"to go out to battle\" keeps one wording at Literal (verses 20, 23, 28).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200140072",
+            "o070200140082"
+          ],
+          "choice": "\"出去……作战\" (L, B); \"打仗\" / \"攻打\" (R)",
+          "alternatives": [],
+          "reason": "The chapter's phrase for marching out to fight (verses 20, 23, 28): Literal keeps \"go out to battle\" each time; Readable says simply \"fight\", as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -3916,6 +4200,11 @@
           "L": "Dan bani Benyamin pada hari itu dihitung dari kota-kota: 26.000 orang yang menghunus pedang, belum termasuk penduduk Gibea, yang dihitung 700 orang pilihan.",
           "B": "Pada hari itu orang Benyamin dari kota-kota itu dihitung: 26.000 orang yang bersenjata pedang, belum termasuk penduduk Gibea yang berjumlah 700 orang pilihan.",
           "R": "Hari itu kota-kota Benyamin menghitung 26.000 prajurit yang bersenjata pedang. Kota Gibea sendiri menambahkan 700 orang terbaiknya."
+        },
+        "zh": {
+          "L": "那日，便雅悯的子孙从各城被数点的，有拔刀的二万六千人；此外，基比亚的居民被数点的，有七百精选的人。",
+          "B": "那天，便雅悯人从各城召集了二万六千手持刀剑的人，此外基比亚的居民也召集了七百精兵。",
+          "R": "那天，便雅悯各城数点出二万六千个带着刀的士兵。基比亚城也加上了七百个最好的战士。"
         }
       },
       "decisions": [
@@ -4110,6 +4399,11 @@
           "L": "Dari seluruh rakyat itu [ada] tujuh ratus orang pilihan yang terhambat tangan kanannya; setiap orang dari mereka dapat mengumban dengan batu ke sehelai rambut dan tidak meleset.",
           "B": "Di antara seluruh pasukan itu ada tujuh ratus orang pilihan yang kidal. Setiap orang dari mereka dapat mengumban batu tepat ke sehelai rambut tanpa meleset.",
           "R": "Di antara para prajurit itu ada tujuh ratus pejuang terbaik yang kidal. Setiap orang dari mereka dapat melempar batu dengan umban dan mengenai sasaran setipis rambut tanpa meleset."
+        },
+        "zh": {
+          "L": "在这众民中，有七百精选的人是右手受限制的；这些人都能用投石器甩石，打一根头发也不偏差。",
+          "B": "在这些士兵中，有七百个精兵是用左手作战的，个个都能用投石器甩石头打中一根头发，毫无偏差。",
+          "R": "在这些士兵中，有七百个最好的战士是用左手的。他们每个人都能用投石器甩出石头，打中像头发那样细的东西，从不失手。"
         }
       },
       "decisions": [
@@ -4412,6 +4706,28 @@
           "reason": "The same words as for Ehud, as the Hebrew uses the same phrase.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200160081",
+            "o070200160131"
+          ],
+          "choice": "\"右手受限制\" (L), \"用左手\" (B, R); \"投石器\"",
+          "alternatives": [
+            "\"机弦\""
+          ],
+          "reason": "\"Restricted in the right hand\" means left-handed (m1); Literal keeps the Hebrew phrase. \"投石器\" is the current word for a sling.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4512,6 +4828,11 @@
           "L": "Dan orang-orang Israel dihitung, belum termasuk Benyamin, 400.000 orang yang menghunus pedang; setiap orang dari mereka adalah prajurit.",
           "B": "Orang Israel, tidak termasuk Benyamin, dihitung: 400.000 orang yang bersenjata pedang, semuanya prajurit.",
           "R": "Orang Israel, tidak termasuk suku Benyamin, berjumlah 400.000 prajurit yang bersenjata pedang. Semuanya terlatih untuk berperang."
+        },
+        "zh": {
+          "L": "除了便雅悯以外，以色列人被数点的，有拔刀的四十万人，这些都是战士。",
+          "B": "不算便雅悯，以色列人召集了四十万手持刀剑的人，个个都是有经验的战士。",
+          "R": "不算便雅悯，以色列有四十万个带着刀的士兵。他们都受过作战的训练。"
         }
       },
       "decisions": [
@@ -4678,6 +4999,11 @@
           "L": "Dan mereka bangun dan naik ke Betel dan bertanya kepada Allah, dan bani Israel berkata, \"Siapakah yang akan maju bagi kami yang pertama untuk berperang melawan bani Benyamin?\" Dan {{divine_name:TUHAN|Yahweh}} berfirman, \"Yehuda yang pertama.\"",
           "B": "Lalu mereka bangun dan naik ke Betel untuk bertanya kepada Allah. Orang Israel berkata, \"Siapa di antara kami yang harus maju lebih dulu untuk berperang melawan orang Benyamin?\" {{divine_name:TUHAN|Yahweh}} berfirman, \"Yehuda lebih dulu.\"",
           "R": "Orang Israel naik ke Betel dan meminta petunjuk dari Allah. \"Suku mana yang harus pergi lebih dulu untuk menyerang orang Benyamin?\" tanya mereka. {{divine_name:TUHAN|Yahweh}} menjawab, \"Suku Yehuda yang pergi lebih dulu.\""
+        },
+        "zh": {
+          "L": "他们起来，上到伯特利，求问{{god_term:神|上帝}}。以色列的子孙说：“我们中间谁要为我们先上去与便雅悯的子孙作战？”{{divine_name:上主|雅威}}说：“犹大先[上去]。”",
+          "B": "以色列人动身上到伯特利，求问{{god_term:神|上帝}}：“我们中间应该由谁先上去攻打便雅悯人？”{{divine_name:上主|雅威}}回答：“犹大要先上去。”",
+          "R": "以色列人上到伯特利，求问{{god_term:神|上帝}}该怎么做。“哪个支派应当先去攻打便雅悯人？”他们问。{{divine_name:上主|雅威}}回答：“犹大先去。”"
         }
       },
       "decisions": [
@@ -4973,6 +5299,26 @@
           "reason": "The same question opens the book; the same Indonesian words show it (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200180031",
+            "o070200180052"
+          ],
+          "choice": "\"伯特利\" (Bethel); \"求问\" (L, B), \"求问……该怎么做\" (R)",
+          "alternatives": [],
+          "reason": "Bethel is the town, not \"the house of God\" (m2). \"求问\" as at 18:5, the same word each time the tribes ask God or the LORD (verses 23, 27); Readable says what the asking was for, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5066,6 +5412,11 @@
           "L": "Dan bani Israel bangun pada pagi hari dan berkemah mengepung Gibea.",
           "B": "Keesokan paginya orang Israel bangun dan berkemah mengepung Gibea.",
           "R": "Keesokan paginya orang Israel berangkat dan berkemah dekat Gibea."
+        },
+        "zh": {
+          "L": "以色列的子孙早晨起来，对着基比亚安营。",
+          "B": "第二天早上，以色列人动身，在基比亚对面安营。",
+          "R": "第二天早上，以色列人出发，在基比亚附近扎营。"
         }
       },
       "decisions": [
@@ -5204,6 +5555,11 @@
           "L": "Dan orang-orang Israel keluar untuk berperang melawan Benyamin, dan orang-orang Israel mengatur barisan perang melawan mereka di Gibea.",
           "B": "Orang-orang Israel maju berperang melawan Benyamin, dan mereka mengatur barisan perang melawan mereka di Gibea.",
           "R": "Orang-orang Israel maju untuk berperang melawan Benyamin. Mereka mengatur barisan untuk bertempur di Gibea."
+        },
+        "zh": {
+          "L": "以色列人出去与便雅悯作战，以色列人在基比亚对着他们摆阵。",
+          "B": "以色列人出去攻打便雅悯，在基比亚对着他们摆开阵势。",
+          "R": "以色列人出去攻打便雅悯，在基比亚摆好阵势准备作战。"
         }
       },
       "decisions": [
@@ -5340,6 +5696,26 @@
           "reason": "As the English per level (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200200072",
+            "o070200200111"
+          ],
+          "choice": "\"摆阵\" (L); \"摆开阵势\" (B); \"摆好阵势准备作战\" (R)",
+          "alternatives": [],
+          "reason": "One wording per level for \"arranged battle\" through the chapter (verses 22, 30, 33), as the English does. Where the Hebrew has the verb alone (verses 30, 33), Literal brackets \"[阵]\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5444,6 +5820,11 @@
           "L": "Dan bani Benyamin keluar dari Gibea, dan mereka membinasakan dari Israel pada hari itu 22.000 orang sampai rebah ke tanah.",
           "B": "Lalu orang Benyamin keluar dari Gibea, dan pada hari itu mereka menewaskan 22.000 orang Israel.",
           "R": "Lalu orang Benyamin keluar dari Gibea dan menyerang. Hari itu mereka membunuh 22.000 prajurit Israel."
+        },
+        "zh": {
+          "L": "便雅悯的子孙从基比亚出来，那日在以色列中把二万二千人杀倒在地。",
+          "B": "便雅悯人从基比亚出来，那天在战场上杀了以色列人二万二千。",
+          "R": "便雅悯人从基比亚出来攻击。那天他们杀死了二万二千个以色列士兵。"
         }
       },
       "decisions": [
@@ -5520,6 +5901,27 @@
             "destruíram"
           ],
           "reason": "The verb is to destroy, and \"to the ground\" pictures the men falling where they fought (m1). \"Abater\" is the Portuguese for striking men down, and Literal keeps \"por terra\"; the same wording returns in verse 25.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200210062",
+            "o070200210141",
+            "o070200210142"
+          ],
+          "choice": "\"杀倒在地\" (L); \"在战场上杀了\" (B); \"杀死了\" (R)",
+          "alternatives": [],
+          "reason": "\"Destroyed to the ground\" means struck down dead on the field (m1); the same wording is used at each level in verse 25.",
           "uncertain": false,
           "footnote": false
         }
@@ -5624,6 +6026,11 @@
           "L": "Dan rakyat itu, orang-orang Israel, menguatkan hati, dan mereka mengatur lagi barisan perang di tempat mereka mengaturnya pada hari pertama.",
           "B": "Tetapi tentara Israel menguatkan hati, dan mereka mengatur lagi barisan perang di tempat yang sama seperti pada hari pertama.",
           "R": "Tetapi tentara Israel tidak menyerah. Mereka menguatkan hati dan mengatur barisan lagi di tempat yang sama seperti pada hari pertama."
+        },
+        "zh": {
+          "L": "众民，就是以色列人，就壮起胆来，又在头一日摆阵的地方摆阵。",
+          "B": "可是军队，就是以色列人，鼓起勇气，又在第一天摆开阵势的地方摆开阵势。",
+          "R": "可是以色列军队没有放弃。他们鼓起勇气，又在第一天的地方摆好阵势准备作战。"
         }
       },
       "decisions": [
@@ -5828,6 +6235,11 @@
           "L": "Dan bani Israel naik dan menangis di hadapan {{divine_name:TUHAN|Yahweh}} sampai petang, dan mereka bertanya kepada {{divine_name:TUHAN|Yahweh}}, katanya, \"Haruskah aku maju lagi berperang melawan bani Benyamin, saudaraku?\" Dan {{divine_name:TUHAN|Yahweh}} berfirman, \"Majulah melawan dia.\"",
           "B": "Orang Israel naik dan menangis di hadapan {{divine_name:TUHAN|Yahweh}} sampai petang. Mereka bertanya kepada {{divine_name:TUHAN|Yahweh}}, \"Haruskah kami maju lagi berperang melawan orang Benyamin, saudara kami?\" {{divine_name:TUHAN|Yahweh}} berfirman, \"Majulah melawan mereka.\"",
           "R": "Orang Israel naik dan menangis di hadapan {{divine_name:TUHAN|Yahweh}} sampai petang. Mereka meminta petunjuk dari {{divine_name:TUHAN|Yahweh}}. \"Haruskah kami berperang lagi melawan orang Benyamin? Mereka itu saudara-saudara kami,\" kata mereka. {{divine_name:TUHAN|Yahweh}} menjawab, \"Pergilah dan seranglah mereka.\""
+        },
+        "zh": {
+          "L": "以色列的子孙上去，在{{divine_name:上主|雅威}}面前哭到晚上，求问{{divine_name:上主|雅威}}说：“我还要再近前去与我的弟兄便雅悯的子孙交战吗？”{{divine_name:上主|雅威}}说：“上去攻打他。”",
+          "B": "以色列人上去，在{{divine_name:上主|雅威}}面前哭到晚上。他们求问{{divine_name:上主|雅威}}：“我们还要再去攻打我们的弟兄便雅悯人吗？”{{divine_name:上主|雅威}}回答：“上去攻打他们。”",
+          "R": "以色列人上去，在{{divine_name:上主|雅威}}面前哭到晚上。他们求问{{divine_name:上主|雅威}}该怎么做。“我们还要再去攻打便雅悯人吗？他们是我们的亲族，”他们说。{{divine_name:上主|雅威}}回答：“去攻打他们吧。”"
         }
       },
       "decisions": [
@@ -6061,6 +6473,25 @@
           "reason": "Literal keeps Israel speaking as one person of Benjamin as its brother (m2); the other levels say \"kami\", as the English Readable says \"we\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200230122",
+            "o070200230182",
+            "o070200230222"
+          ],
+          "choice": "\"我\", \"我的弟兄\", \"他\" (L); \"我们\", \"他们\" (B, R)",
+          "alternatives": [],
+          "reason": "Israel speaks as one person of Benjamin as its brother (m2); Literal keeps the singular, Balanced and Readable use the plural, as the English does. So in verse 28.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6154,6 +6585,11 @@
           "L": "Dan bani Israel mendekati bani Benyamin pada hari kedua.",
           "B": "Pada hari kedua orang Israel maju mendekati orang Benyamin.",
           "R": "Jadi pada hari kedua orang Israel maju melawan orang Benyamin."
+        },
+        "zh": {
+          "L": "第二天，以色列的子孙近前攻击便雅悯的子孙。",
+          "B": "第二天，以色列人向便雅悯人进攻。",
+          "R": "第二天，以色列人出去攻打便雅悯人。"
         }
       },
       "decisions": [
@@ -6298,6 +6734,11 @@
           "L": "Dan Benyamin keluar menyongsong mereka dari Gibea pada hari kedua, dan mereka membinasakan lagi dari bani Israel 18.000 orang sampai rebah ke tanah; semuanya itu orang yang menghunus pedang.",
           "B": "Pada hari kedua orang Benyamin keluar dari Gibea menyongsong mereka, dan sekali lagi mereka menewaskan 18.000 orang Israel, semuanya orang yang bersenjata pedang.",
           "R": "Pada hari kedua tentara Benyamin keluar dari Gibea untuk melawan mereka. Sekali lagi mereka membunuh banyak orang Israel: 18.000 prajurit, semuanya bersenjata pedang."
+        },
+        "zh": {
+          "L": "第二天，便雅悯从基比亚出来迎击他们，又在以色列的子孙中把一万八千人杀倒在地，这些都是拔刀的。",
+          "B": "第二天，便雅悯从基比亚出来迎战，又在战场上杀了以色列人一万八千，都是手持刀剑的。",
+          "R": "第二天，便雅悯的军队从基比亚出来迎战。他们又杀死了很多以色列人：一万八千个士兵，都是带着刀的。"
         }
       },
       "decisions": [
@@ -6474,6 +6915,11 @@
           "L": "Dan seluruh bani Israel dan seluruh rakyat naik dan sampai ke Betel, dan mereka menangis dan duduk di sana di hadapan {{divine_name:TUHAN|Yahweh}}, dan mereka berpuasa pada hari itu sampai petang, dan mempersembahkan korban bakaran dan korban persekutuan di hadapan {{divine_name:TUHAN|Yahweh}}.",
           "B": "Lalu seluruh orang Israel, seluruh tentara itu, naik ke Betel. Mereka duduk menangis di sana di hadapan {{divine_name:TUHAN|Yahweh}} dan berpuasa pada hari itu sampai petang. Mereka mempersembahkan korban bakaran dan korban persekutuan di hadapan {{divine_name:TUHAN|Yahweh}}.",
           "R": "Lalu seluruh orang Israel, seluruh tentara itu, naik ke Betel. Mereka duduk dan menangis di sana di hadapan {{divine_name:TUHAN|Yahweh}}. Mereka berpuasa sepanjang hari itu sampai petang. Mereka mempersembahkan korban bakaran dan korban persekutuan kepada {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "以色列的子孙和众民都上去，来到伯特利，在那里哭泣，坐在{{divine_name:上主|雅威}}面前；那日他们禁食直到晚上，又在{{divine_name:上主|雅威}}面前献燔祭和平安祭。",
+          "B": "于是以色列人，全体军队，都上到伯特利。他们坐在那里，在{{divine_name:上主|雅威}}面前哭泣。那天他们禁食到晚上，又在{{divine_name:上主|雅威}}面前献上燔祭和平安祭。",
+          "R": "于是所有以色列人，全体军队，都上到伯特利。他们坐在那里，在{{divine_name:上主|雅威}}面前哭泣。那一整天直到晚上，他们都没有吃东西。他们向{{divine_name:上主|雅威}}献上全烧的祭和平安祭。"
         }
       },
       "decisions": [
@@ -6692,6 +7138,28 @@
           "reason": "As the style guide sets at every level; the familiar \"korban keselamatan\" is the alternative a reviewer may prefer.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200260211",
+            "o070200260222"
+          ],
+          "choice": "\"燔祭和平安祭\" (L, B); \"全烧的祭和平安祭\" (R)",
+          "alternatives": [
+            "\"和好祭\", \"团契祭\" for the peace offering"
+          ],
+          "reason": "The glossary's and Leviticus's words for the two offerings (m3). Readable says what fasting is (\"没有吃东西\"), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6790,6 +7258,11 @@
           "L": "Dan bani Israel bertanya kepada {{divine_name:TUHAN|Yahweh}} (dan di sana [ada] tabut perjanjian Allah pada zaman itu,",
           "B": "Lalu orang Israel bertanya kepada {{divine_name:TUHAN|Yahweh}}. Pada zaman itu tabut perjanjian Allah ada di sana,",
           "R": "Lalu orang Israel meminta petunjuk dari {{divine_name:TUHAN|Yahweh}}. Pada waktu itu tabut perjanjian Allah ada di Betel."
+        },
+        "zh": {
+          "L": "以色列的子孙求问{{divine_name:上主|雅威}}（那些日子，{{god_term:神|上帝}}的约柜在那里，",
+          "B": "以色列人求问{{divine_name:上主|雅威}}。那时{{god_term:神|上帝}}的约柜就在那里，",
+          "R": "然后以色列人求问{{divine_name:上主|雅威}}该怎么做。那时，{{god_term:神|上帝}}的约柜就在伯特利。"
         }
       },
       "decisions": [
@@ -7092,6 +7565,27 @@
           "reason": "The glossary's term (section 3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200270061",
+            "o070200270071",
+            "o070200270082"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的约柜\"",
+          "alternatives": [],
+          "reason": "The ark of the covenant of God, in the glossary's word \"约柜\" at every level, since the Hebrew names the covenant here (m1). Literal opens a full-width parenthesis, closed in verse 28, as the English Literal does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7215,6 +7709,11 @@
           "L": "dan Pinehas anak Eleazar, anak Harun, berdiri di hadapannya pada zaman itu), katanya, \"Haruskah aku maju lagi berperang melawan bani Benyamin, saudaraku, atau haruskah aku berhenti?\" Dan {{divine_name:TUHAN|Yahweh}} berfirman, \"Majulah, karena besok {{deity_pronoun:aku|Aku}} akan menyerahkan dia ke dalam tanganmu.\"",
           "B": "dan Pinehas anak Eleazar, anak Harun, yang melayani di hadapannya pada zaman itu. Mereka bertanya, \"Haruskah kami maju lagi berperang melawan orang Benyamin, saudara kami, atau haruskah kami berhenti?\" {{divine_name:TUHAN|Yahweh}} berfirman, \"Majulah, karena besok {{deity_pronoun:aku|Aku}} akan menyerahkan mereka ke dalam tanganmu.\"",
           "R": "Pinehas, cucu Harun, adalah imam yang melayani di sana. Orang Israel bertanya, \"Haruskah kami maju lagi untuk melawan saudara-saudara kami, orang Benyamin? Atau haruskah kami berhenti?\" {{divine_name:TUHAN|Yahweh}} menjawab, \"Pergilah dan seranglah mereka. Besok {{deity_pronoun:aku|Aku}} akan membuat kalian menang atas mereka.\""
+        },
+        "zh": {
+          "L": "以利亚撒的儿子、亚伦的儿子非尼哈，那些日子站在它面前），说：“我还要再出去与我的弟兄便雅悯的子孙作战呢，还是要停止？”{{divine_name:上主|雅威}}说：“上去吧，因为明天我要把他交在你手中。”",
+          "B": "以利亚撒的儿子、亚伦的孙子非尼哈在约柜前供职。他们问：“我们还要再出去攻打我们的弟兄便雅悯人呢，还是该停下来？”{{divine_name:上主|雅威}}回答：“上去吧，因为明天我要把他们交在你们手里。”",
+          "R": "非尼哈是亚伦的孙子，他是在那里供职的祭司。以色列人问：“我们应该再出去攻打我们的亲族便雅悯人吗？还是我们应该停下来？”{{divine_name:上主|雅威}}回答：“去攻打他们吧。明天我要使你们战胜他们。”"
         }
       },
       "decisions": [
@@ -7460,6 +7959,28 @@
           "reason": "The glossary's forms.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200280012",
+            "o070200280031",
+            "o070200280051",
+            "o070200280061"
+          ],
+          "choice": "\"非尼哈\", \"以利亚撒\", \"亚伦\"; \"站在它面前\" (L), \"在约柜前供职\" (B), \"在那里供职的祭司\" (R); \"亚伦的孙子\" (B, R)",
+          "alternatives": [],
+          "reason": "The glossary's names. Standing before the ark means serving as priest there (m2); Literal keeps the picture. Balanced and Readable say \"grandson\", which he was (m1), as the English Readable does; Literal keeps \"son\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7550,6 +8071,11 @@
           "L": "Dan Israel menempatkan para penghadang di sekeliling Gibea.",
           "B": "Lalu Israel menempatkan pasukan penghadang di sekeliling Gibea.",
           "R": "Jadi orang Israel menyembunyikan prajurit-prajurit di sekeliling Gibea, siap untuk menyerang dengan tiba-tiba."
+        },
+        "zh": {
+          "L": "以色列在基比亚四围设下伏兵。",
+          "B": "于是以色列在基比亚四周设下埋伏。",
+          "R": "于是以色列在基比亚四周埋伏了士兵，准备突袭。"
         }
       },
       "decisions": [
@@ -7757,6 +8283,11 @@
           "L": "Dan bani Israel maju melawan bani Benyamin pada hari ketiga, dan mengatur barisan perang melawan Gibea seperti yang sudah-sudah.",
           "B": "Pada hari ketiga orang Israel maju melawan orang Benyamin, dan mengatur barisan perang melawan Gibea seperti yang sudah-sudah.",
           "R": "Pada hari ketiga orang Israel maju untuk melawan orang Benyamin. Mereka mengatur barisan untuk bertempur di Gibea seperti yang sudah-sudah."
+        },
+        "zh": {
+          "L": "第三天，以色列的子孙上去攻击便雅悯的子孙，像前几次一样对着基比亚摆[阵]。",
+          "B": "第三天，以色列人上去攻打便雅悯人，像以前一样对着基比亚摆开阵势。",
+          "R": "第三天，以色列人上去攻打便雅悯人。他们像前两次一样，在基比亚摆好阵势准备作战。"
         }
       },
       "decisions": [
@@ -7933,6 +8464,11 @@
           "L": "Dan bani Benyamin keluar menyongsong rakyat itu; mereka terpancing menjauh dari kota. Dan mereka mulai memukul [sebagian] dari rakyat itu, yang tertikam seperti yang sudah-sudah, di jalan-jalan raya, yang satu menuju ke Betel dan yang lain ke Gibea di padang, kira-kira tiga puluh orang Israel.",
           "B": "Orang Benyamin keluar menyongsong tentara itu dan terpancing menjauh dari kota. Seperti yang sudah-sudah, mereka mulai menewaskan sebagian dari tentara itu di jalan-jalan raya, yang satu menuju ke Betel dan yang lain ke Gibea, di padang terbuka. Kira-kira tiga puluh orang Israel tewas.",
           "R": "Orang Benyamin keluar untuk melawan tentara itu, dan orang Israel memancing mereka menjauh dari kota. Seperti sebelumnya, orang Benyamin mulai membunuh sebagian prajurit Israel di padang terbuka di sepanjang jalan. Jalan yang satu menuju ke Betel, dan yang lain ke Gibea. Mereka membunuh kira-kira tiga puluh orang Israel."
+        },
+        "zh": {
+          "L": "便雅悯的子孙出来迎击众民，被引诱离开了城。他们开始像前几次一样击杀众民中的[一些人]，有被刺死的，在大路上，一条上伯特利，一条往田野中的基比亚，在以色列中约有三十人。",
+          "B": "便雅悯人出来迎战军队，被引离了城。他们像以前一样，开始在野外的大路上击杀一些军兵；一条路通往伯特利，另一条通往基比亚。他们杀了以色列人约三十名。",
+          "R": "便雅悯人出来攻打军队，以色列人引他们离开了城。便雅悯人像以前一样，开始在野外的大路上杀死一些士兵。一条路通往伯特利，另一条通往基比亚。他们杀了大约三十个以色列人。"
         }
       },
       "decisions": [
@@ -8153,6 +8689,11 @@
           "L": "Dan bani Benyamin berkata, \"Mereka terpukul kalah di depan kita seperti semula.\" Tetapi bani Israel berkata, \"Marilah kita melarikan diri dan memancing dia menjauh dari kota ke jalan-jalan raya.\"",
           "B": "Orang Benyamin berkata, \"Mereka kalah di depan kita seperti semula.\" Tetapi orang Israel telah berkata, \"Mari kita melarikan diri dan memancing mereka menjauh dari kota ke jalan-jalan raya.\"",
           "R": "Orang Benyamin berkata, \"Kita mengalahkan mereka, sama seperti sebelumnya.\" Tetapi orang Israel sudah merencanakan hal ini. Mereka sudah berkata, \"Mari kita lari, supaya kita dapat memancing mereka menjauh dari kota ke jalan-jalan.\""
+        },
+        "zh": {
+          "L": "便雅悯的子孙说：“他们像起初一样在我们面前被击败了。”以色列的子孙却说：“我们逃跑吧，把他从城里引到大路上来。”",
+          "B": "便雅悯人说：“他们又像以前一样被我们打败了。”可是以色列人早就说过：“我们逃跑吧，把他们从城里引到大路上来。”",
+          "R": "便雅悯人说：“我们像以前一样打败他们了。”可是这是以色列人事先计划好的。他们曾经说过：“我们逃跑吧，好把他们从城里引到大路上来。”"
         }
       },
       "decisions": [
@@ -8327,6 +8868,11 @@
           "L": "Dan semua orang Israel bangkit dari tempatnya dan mengatur [barisan] di Baal-Tamar, dan para penghadang Israel menyerbu keluar dari tempatnya, dari tanah terbuka Geba.",
           "B": "Seluruh tentara Israel bangkit dari tempatnya dan mengatur barisan di Baal-Tamar, sementara pasukan penghadang Israel menyerbu keluar dari tempat persembunyiannya di tanah terbuka dekat Geba.",
           "R": "Tentara Israel yang besar meninggalkan tempatnya dan mengatur barisan untuk bertempur di Baal-Tamar. Pada saat yang sama prajurit-prajurit yang bersembunyi di sebelah barat Geba menyerbu keluar dari tempat persembunyian mereka."
+        },
+        "zh": {
+          "L": "以色列人都从他们的地方起来，在巴力他玛摆[阵]；以色列的伏兵从他们的地方，从迦巴的空旷之处冲出来。",
+          "B": "以色列人都从原地起来，在巴力他玛摆开阵势；同时以色列的伏兵从迦巴西边的阵地冲了出来。",
+          "R": "以色列的主力军离开原来的阵地，在巴力他玛摆好阵势准备作战。同时，埋伏在迦巴西边的士兵从藏身的地方冲了出来。"
         }
       },
       "decisions": [
@@ -8500,6 +9046,27 @@
           "reason": "Formed by the style guide's rules; \"Geba\" as in Joshua 18:24.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200330072",
+            "o070200330081",
+            "o070200330141"
+          ],
+          "choice": "\"巴力他玛\" (Baal-tamar); \"迦巴\" (Geba)",
+          "alternatives": [],
+          "reason": "The conventional Chinese forms; Baal with \"巴力\" as the glossary. Literal keeps \"the open place\"; Balanced and Readable say \"west of\" (m2), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8609,6 +9176,11 @@
           "L": "Dan datanglah dari depan Gibea 10.000 orang pilihan dari seluruh Israel, dan pertempuran itu hebat; dan mereka tidak tahu bahwa malapetaka sedang menimpa mereka.",
           "B": "Lalu 10.000 orang pilihan dari seluruh Israel menyerbu Gibea dari depan, dan pertempuran itu sengit. Orang Benyamin tidak tahu bahwa malapetaka akan menimpa mereka.",
           "R": "Lalu 10.000 prajurit terbaik Israel menyerang Gibea. Pertempuran itu sangat sengit. Orang Benyamin tidak tahu bahwa malapetaka akan segera menimpa mereka."
+        },
+        "zh": {
+          "L": "有一万从全以色列精选的人从基比亚对面来到，战事十分激烈；他们却不知道灾祸临近他们了。",
+          "B": "于是从全以色列选出的一万精兵来攻打基比亚，战斗非常激烈。便雅悯人却没有察觉灾祸就要临到他们身上。",
+          "R": "然后一万个以色列最好的士兵攻打基比亚。战斗打得很艰苦。便雅悯人不知道灾祸就要临到他们身上了。"
         }
       },
       "decisions": [
@@ -8812,6 +9384,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} memukul Benyamin di depan Israel, dan bani Israel membinasakan dari Benyamin pada hari itu 25.100 orang; semuanya itu orang yang menghunus pedang.",
           "B": "{{divine_name:TUHAN|Yahweh}} memukul kalah Benyamin di depan Israel, dan pada hari itu orang Israel menewaskan 25.100 orang Benyamin, semuanya orang yang bersenjata pedang.",
           "R": "{{divine_name:TUHAN|Yahweh}} membuat Israel menang atas Benyamin. Hari itu orang Israel membunuh 25.100 prajurit Benyamin, semuanya bersenjata pedang."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}在以色列面前击败便雅悯；那日以色列的子孙在便雅悯中杀了二万五千一百人，这些都是拔刀的。",
+          "B": "{{divine_name:上主|雅威}}在以色列面前击败了便雅悯。那天以色列人在战场上杀了便雅悯人二万五千一百，都是手持刀剑的。",
+          "R": "{{divine_name:上主|雅威}}使以色列战胜了便雅悯。那天以色列人杀死了二万五千一百个便雅悯士兵，都是带着刀的。"
         }
       },
       "decisions": [
@@ -8997,6 +9574,11 @@
           "L": "Dan bani Benyamin melihat bahwa mereka terpukul kalah. Dan orang-orang Israel memberi tempat kepada Benyamin, karena mereka percaya kepada para penghadang yang telah mereka tempatkan melawan Gibea.",
           "B": "Orang Benyamin melihat bahwa mereka kalah. Orang-orang Israel sengaja mundur di depan Benyamin, karena mereka mengandalkan pasukan penghadang yang telah mereka tempatkan di dekat Gibea.",
           "R": "Lalu orang Benyamin melihat bahwa mereka sudah kalah. Orang Israel sengaja mundur di depan mereka, karena mereka mengandalkan prajurit-prajurit yang mereka sembunyikan di dekat Gibea."
+        },
+        "zh": {
+          "L": "便雅悯的子孙看见自己被击败了。以色列人给便雅悯让地，因为他们倚靠在基比亚所设的伏兵。",
+          "B": "这时便雅悯人看出自己被打败了。以色列人先前已向便雅悯人退让，因为他们倚靠在基比亚设下的伏兵。",
+          "R": "这时便雅悯人看出他们输了。原来以色列人是故意从他们面前退后的，因为他们指望着埋伏在基比亚附近的士兵。"
         }
       },
       "decisions": [
@@ -9169,6 +9751,11 @@
           "L": "Dan para penghadang itu bergegas dan menyerbu Gibea, dan para penghadang itu bergerak maju dan memukul seluruh kota itu dengan mata pedang.",
           "B": "Pasukan penghadang itu segera menyerbu Gibea. Mereka bergerak maju dan menewaskan seluruh penduduk kota itu dengan pedang.",
           "R": "Prajurit-prajurit yang bersembunyi itu cepat-cepat menyerbu masuk ke Gibea. Mereka menyebar ke seluruh kota dan membunuh semua orang di dalamnya dengan pedang."
+        },
+        "zh": {
+          "L": "伏兵急忙冲向基比亚；伏兵散开，用刀刃击杀全城。",
+          "B": "伏兵迅速冲进基比亚，分散开来，用刀击杀了全城的人。",
+          "R": "埋伏的士兵很快冲进了基比亚。他们分散到城里各处，用刀杀死了城里所有的人。"
         }
       },
       "decisions": [
@@ -9367,6 +9954,11 @@
           "L": "Dan tanda yang telah ditetapkan orang-orang Israel dengan para penghadang ialah [ini]: supaya mereka membubungkan asap yang tebal dari kota itu.",
           "B": "Orang-orang Israel telah menetapkan tanda dengan pasukan penghadang itu: mereka harus membubungkan asap yang tebal dari kota itu.",
           "R": "Tentara Israel dan prajurit-prajurit yang bersembunyi itu sudah menyepakati sebuah tanda. Kalau prajurit-prajurit itu sudah merebut kota, mereka akan membuat asap tebal membubung dari kota itu."
+        },
+        "zh": {
+          "L": "以色列人与伏兵约定的记号是：要他们使城中大有烟气上腾。",
+          "B": "以色列人和伏兵事先约定了一个信号：他们要从城里放出大股浓烟。",
+          "R": "以色列军队和埋伏的士兵事先约好了一个信号。士兵们攻下那城以后，就要让一大股烟从城里升起来。"
         }
       },
       "decisions": [
@@ -9588,6 +10180,11 @@
           "L": "Dan orang-orang Israel berbalik dalam pertempuran itu. Dan Benyamin telah mulai memukul [beberapa orang] yang tertikam di antara orang-orang Israel, kira-kira tiga puluh orang, karena kata mereka, \"Sungguh, dia terpukul kalah di depan kita, seperti [dalam] pertempuran yang pertama.\"",
           "B": "Lalu orang-orang Israel berbalik dalam pertempuran itu. Orang Benyamin sudah mulai menewaskan kira-kira tiga puluh orang Israel, karena pikir mereka, \"Mereka pasti kalah di depan kita seperti dalam pertempuran yang pertama.\"",
           "R": "Lalu orang-orang Israel berbalik untuk bertempur. Orang Benyamin sudah mulai membunuh beberapa dari mereka, kira-kira tiga puluh orang. Mereka berkata, \"Kita pasti mengalahkan mereka, sama seperti dalam pertempuran yang pertama.\""
+        },
+        "zh": {
+          "L": "以色列人在阵上转身。便雅悯已经开始击杀以色列人中被刺死的，约有三十人，因为他们说：“他必定在我们面前被彻底击败了，像头一次作战一样。”",
+          "B": "于是以色列人在战场上转过身来。便雅悯已经开始击杀以色列人，杀了约三十人。他们说：“他们一定又被我们打败了，就像第一次作战一样。”",
+          "R": "然后以色列人转回来作战。便雅悯人已经开始杀以色列人，杀了大约三十个人。他们说：“我们一定又打败他们了，就像第一次打仗一样。”"
         }
       },
       "decisions": [
@@ -9788,6 +10385,11 @@
           "L": "Dan asap itu mulai membubung dari kota itu, seperti tiang asap, dan Benyamin menoleh ke belakangnya, dan lihatlah, seluruh kota itu membubung ke langit.",
           "B": "Ketika asap mulai membubung dari kota itu seperti tiang asap, orang Benyamin menoleh ke belakang, dan tampaklah seluruh kota itu membubung ke langit.",
           "R": "Lalu tanda asap itu mulai membubung dari kota seperti tiang. Orang Benyamin menoleh ke belakang dan melihat seluruh kota terbakar, dengan asap membubung sampai ke langit."
+        },
+        "zh": {
+          "L": "那上腾的[烟]开始从城中升起，成为烟柱；便雅悯回头往后看，看哪，全城都往天上升去。",
+          "B": "可是当信号像烟柱一样开始从城里升起的时候，便雅悯人往后一看，只见全城都化作浓烟，升到天上。",
+          "R": "这时，烟的信号像柱子一样开始从城里升起。便雅悯人回头一看，只见全城都在燃烧，浓烟冲上天空。"
         }
       },
       "decisions": [
@@ -9960,6 +10562,11 @@
           "L": "Dan orang-orang Israel berbalik, dan orang-orang Benyamin terkejut, karena mereka melihat bahwa malapetaka telah menimpa mereka.",
           "B": "Lalu orang-orang Israel berbalik menyerang, dan orang-orang Benyamin menjadi panik, karena mereka melihat bahwa malapetaka telah menimpa mereka.",
           "R": "Lalu orang-orang Israel berbalik menyerang, dan orang-orang Benyamin menjadi sangat ketakutan. Mereka melihat bahwa malapetaka sudah menimpa mereka."
+        },
+        "zh": {
+          "L": "以色列人转身回来，便雅悯人就惊慌，因为他们看见灾祸临到他们了。",
+          "B": "以色列人转过身来迎战，便雅悯人就惊慌失措，因为他们看出灾祸已经临到他们身上。",
+          "R": "以色列人转过身来攻击，便雅悯人非常害怕。他们看出灾祸已经临到他们身上了。"
         }
       },
       "decisions": [
@@ -10138,6 +10745,11 @@
           "L": "Dan mereka berbalik di depan orang-orang Israel ke arah padang gurun, tetapi pertempuran itu menyusul mereka, dan orang-orang yang [datang] dari kota-kota membinasakan mereka di tengah-tengahnya.",
           "B": "Mereka melarikan diri dari orang-orang Israel ke arah padang gurun, tetapi pertempuran itu terus menyusul mereka, dan orang-orang yang keluar dari kota-kota membinasakan mereka di tengah-tengah.",
           "R": "Jadi mereka lari dari orang-orang Israel ke arah padang gurun. Tetapi mereka tidak dapat meloloskan diri dari pertempuran itu. Prajurit-prajurit Israel keluar dari kota-kota dan membunuh mereka di antara kedua pasukan."
+        },
+        "zh": {
+          "L": "他们在以色列人面前转身，往旷野的路去；战事却追上了他们，那些从各城出来的人在其中把他们消灭。",
+          "B": "于是他们转身从以色列人面前逃向旷野，可是他们逃不脱战斗，从各城出来的人在战场中间把他们击杀了。",
+          "R": "于是他们从以色列人面前逃向荒野。可是他们逃不出战场。以色列士兵从各城出来，就在两军之间把他们杀了。"
         }
       },
       "decisions": [
@@ -10309,6 +10921,11 @@
           "L": "Mereka mengepung Benyamin, mereka mengejarnya; [di] Menuha mereka menginjak-injaknya, sampai ke depan Gibea, ke arah matahari terbit.",
           "B": "Mereka mengepung orang Benyamin dan mengejar mereka. Di Menuha mereka menginjak-injak mereka sampai ke depan Gibea, ke arah timur.",
           "R": "Mereka mengepung orang Benyamin dan mengejar mereka. Mereka menghancurkan orang Benyamin di sebuah tempat bernama Menuha, sampai ke daerah di sebelah timur Gibea."
+        },
+        "zh": {
+          "L": "他们包围便雅悯，追赶他，[在]米努哈践踏他，直到日出那边的基比亚对面。",
+          "B": "他们包围便雅悯人，追赶他们，在米努哈把他们践踏在脚下，一直追到基比亚东边一带。",
+          "R": "他们包围了便雅悯人，追赶他们。他们在一个叫米努哈的地方击溃了便雅悯人，一直追到基比亚东边一带。"
         }
       },
       "decisions": [
@@ -10459,6 +11076,27 @@
           "reason": "Taken as a place name, as the English takes it (m1); formed by the style guide's rules.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200430051"
+          ],
+          "choice": "\"米努哈\" (Menuhah), a new transliteration",
+          "alternatives": [
+            "\"安歇之处\" (the word read as \"rest\")"
+          ],
+          "reason": "As the English, the word is taken as a place name (m1), transliterated by the style guide's rules; it can also mean \"rest\" or \"easily\". Literal brackets \"[在]\", since the Hebrew has no preposition.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10554,6 +11192,11 @@
           "L": "Dan tewaslah dari Benyamin 18.000 orang; semuanya itu orang-orang yang gagah perkasa.",
           "B": "Dari orang Benyamin tewaslah 18.000 orang, semuanya orang yang gagah perkasa.",
           "R": "Dari tentara Benyamin, 18.000 orang terbunuh. Semuanya prajurit yang berani."
+        },
+        "zh": {
+          "L": "便雅悯倒下的有一万八千人，这些都是英勇的人。",
+          "B": "便雅悯阵亡的有一万八千人，都是勇敢的战士。",
+          "R": "便雅悯的军队中有一万八千人被杀。他们都是勇敢的士兵。"
         }
       },
       "decisions": [
@@ -10721,6 +11364,11 @@
           "L": "Dan mereka berbalik dan melarikan diri ke arah padang gurun, ke gunung batu Rimon. Dan mereka memungut mereka di jalan-jalan raya, 5.000 orang, dan mereka terus mengejar mereka sampai ke Gidom dan memukul 2.000 orang dari mereka.",
           "B": "Sisanya berbalik dan melarikan diri ke arah padang gurun, ke gunung batu Rimon. Orang Israel menewaskan 5.000 orang dari mereka di jalan-jalan raya, dan terus mengejar mereka sampai ke Gidom serta menewaskan 2.000 orang lagi.",
           "R": "Sisa tentara Benyamin lari ke arah padang gurun, ke gunung batu Rimon. Orang Israel memburu dan membunuh 5.000 orang dari mereka di sepanjang jalan. Mereka mengejar mereka sampai ke Gidom dan membunuh 2.000 orang lagi."
+        },
+        "zh": {
+          "L": "他们转身往旷野逃跑，到临门磐石。他们在大路上拾取了他们五千人，又紧紧追赶他们直到基顿，击杀了他们二千人。",
+          "B": "他们转身往旷野逃到临门磐石。以色列人在大路上一个一个地击杀了他们五千人，又紧追他们直到基顿，再杀了二千人。",
+          "R": "便雅悯其余的人往荒野逃到临门磐石。以色列人在大路上追杀了他们五千人，又追他们直到基顿，再杀了二千人。"
         }
       },
       "decisions": [
@@ -11014,6 +11662,27 @@
           "reason": "The gleaning verb of Ruth 2:2, as the Hebrew uses it of picking men off one by one (m1); \"Rimon\" as in Joshua 15:32.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070200450051",
+            "o070200450062",
+            "o070200450151"
+          ],
+          "choice": "\"临门磐石\" (the rock of Rimmon); \"基顿\" (Gidom)",
+          "alternatives": [],
+          "reason": "The conventional Chinese forms of the two places east of Gibeah (m2). \"Gleaned\" means picked off one by one (m1); Literal keeps \"拾取\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -11119,6 +11788,11 @@
           "L": "Dan semua yang tewas dari Benyamin ialah 25.000 orang yang menghunus pedang pada hari itu; semuanya itu orang-orang yang gagah perkasa.",
           "B": "Seluruh orang Benyamin yang tewas pada hari itu ialah 25.000 orang yang bersenjata pedang, semuanya orang yang gagah perkasa.",
           "R": "Hari itu 25.000 prajurit Benyamin terbunuh. Semuanya orang yang berani dan bertempur dengan pedang."
+        },
+        "zh": {
+          "L": "那日便雅悯倒下的，共有拔刀的二万五千人，这些都是英勇的人。",
+          "B": "那天便雅悯阵亡的手持刀剑的人共有二万五千，都是勇敢的战士。",
+          "R": "那天便雅悯有二万五千个士兵被杀。他们都是用刀作战的勇士。"
         }
       },
       "decisions": [
@@ -11276,6 +11950,11 @@
           "L": "Tetapi enam ratus orang berbalik dan melarikan diri ke arah padang gurun, ke gunung batu Rimon, dan mereka tinggal di gunung batu Rimon empat bulan lamanya.",
           "B": "Tetapi enam ratus orang berbalik dan melarikan diri ke padang gurun, ke gunung batu Rimon, dan mereka tinggal di gunung batu Rimon selama empat bulan.",
           "R": "Tetapi enam ratus orang berhasil lolos ke padang gurun, ke gunung batu Rimon. Mereka tinggal di sana selama empat bulan."
+        },
+        "zh": {
+          "L": "可是有六百人转身往旷野逃到临门磐石，在临门磐石住了四个月。",
+          "B": "可是有六百人转身逃进旷野，到了临门磐石，在那里住了四个月。",
+          "R": "可是有六百人逃进荒野，到了临门磐石。他们在那里住了四个月。"
         }
       },
       "decisions": [
@@ -11445,6 +12124,11 @@
           "L": "Dan orang-orang Israel kembali kepada bani Benyamin dan memukul mereka dengan mata pedang, dari seluruh kota sampai ternak, sampai segala sesuatu yang didapati; juga semua kota yang didapati mereka bakar dengan api.",
           "B": "Orang-orang Israel kembali menyerang orang Benyamin dan menewaskan mereka dengan pedang, dari penduduk kota sampai ternak, segala sesuatu yang mereka dapati. Juga semua kota yang mereka dapati, mereka bakar.",
           "R": "Lalu orang-orang Israel kembali ke kota-kota Benyamin. Mereka membunuh penduduknya dan ternaknya, segala sesuatu yang mereka temukan. Mereka membakar setiap kota yang mereka datangi."
+        },
+        "zh": {
+          "L": "以色列人又转回来攻击便雅悯的子孙，用刀刃击杀他们，从整座城直到牲畜，直到所遇见的一切；他们又放火烧了所遇见的一切城镇。",
+          "B": "以色列人又转回来攻打便雅悯人，用刀击杀他们，从城里的人到牲畜，凡遇见的都杀了。他们又放火烧了所到的每一座城。",
+          "R": "然后以色列人回到便雅悯的各城。他们杀了那里的人和牲畜，凡是遇见的都杀了。他们还放火烧了所到的每一座城。"
         }
       },
       "decisions": [
