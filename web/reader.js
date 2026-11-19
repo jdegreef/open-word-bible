@@ -2993,7 +2993,7 @@
         if (len >= 3 && (!best || len > best[0])) best = [len, sp];
       });
       if (!best) return;
-      var source = best[1][2].map(function (id) { return WORD_TEXT[id] || ""; }).join(" ").trim();
+      var source = best[1][2].map(function (id) { return WORD[id] ? WORD[id].text : ""; }).join(" ").trim();
       if (source) out.push([i, source, best[1][3].replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "")]);
     });
     return out;
