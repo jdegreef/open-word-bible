@@ -85,6 +85,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, firman-{{deity_pronoun:nya|Nya}},",
           "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa. Firman-{{deity_pronoun:nya|Nya}},",
           "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa,"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说话，说：",
+          "B": "{{divine_name:上主|雅威}}对摩西说：",
+          "R": "{{divine_name:上主|雅威}}对摩西说："
         }
       },
       "decisions": [
@@ -225,6 +230,11 @@
           "L": "\"Berbicaralah kepada bani Israel, demikian, 'Apabila seorang perempuan mengandung dan melahirkan seorang anak laki-laki, ia akan najis tujuh hari; seperti [pada] hari-hari kenajisan haidnya ia akan najis.",
           "B": "\"Berbicaralah kepada orang Israel dan katakan kepada mereka, 'Jika seorang perempuan mengandung dan melahirkan anak laki-laki, ia najis selama tujuh hari. Ia najis sama seperti pada waktu haidnya.",
           "R": "\"Katakan kepada orang Israel, 'Perempuan yang melahirkan bayi laki-laki tidak bersih selama tujuh hari. Keadaannya sama seperti pada waktu dia datang bulan."
+        },
+        "zh": {
+          "L": "“你要告诉{{gender:以色列的子孙|以色列的儿子}}说：‘妇女若怀孕生了男孩，她就不洁净七天，像在她月经污秽的日子一样不洁净。",
+          "B": "“你要对以色列人说：‘妇女怀孕生了男孩，就不洁净七天。她的不洁净，和她在月经期间的一样。",
+          "R": "“你要告诉以色列人：‘妇女生了男孩，就不洁净七天，跟她来月经的时候一样。"
         }
       },
       "decisions": [
@@ -533,6 +543,67 @@
           "reason": "Unclean here means ritually impure, not sinful or dirty (m2), so Readable keeps the style guide's \"tidak bersih\" for the state that keeps her from holy things. \"haid\" is the standard word for the monthly period (m3); Readable uses the everyday \"datang bulan\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030120020031",
+            "o030120020041"
+          ],
+          "choice": "{{gender:以色列的子孙|以色列的儿子}} (L); \"以色列人\" (B, R), no span",
+          "alternatives": [],
+          "reason": "As the glossary: \"以色列人\" already includes men and women.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120020112",
+            "o030120020171"
+          ],
+          "choice": "\"不洁净\" (unclean)",
+          "alternatives": [
+            "污秽"
+          ],
+          "reason": "The glossary's word for ritual uncleanness: it bars from what is holy, and says nothing of sin or dirt (meaning decision). Literal keeps \"污秽\" only for the Hebrew word of the menstrual impurity itself.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030120020011"
+          ],
+          "choice": "\"要……\", \"不可……\" (L, B); \"必须……\", \"不要……\" (R)",
+          "alternatives": [],
+          "reason": "The forms for law in Leviticus (style guide section 11).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -624,6 +695,11 @@
           "L": "Dan pada hari kedelapan haruslah daging kulit khatannya disunat.",
           "B": "Pada hari kedelapan anak itu harus disunat.",
           "R": "Pada hari kedelapan bayi laki-laki itu harus disunat."
+        },
+        "zh": {
+          "L": "到第八天，他的包皮要受割礼。",
+          "B": "第八天，要给男孩行割礼。",
+          "R": "到了第八天，必须给男婴行割礼。"
         }
       },
       "decisions": [
@@ -762,6 +838,26 @@
           "reason": "\"menyunat\" is the glossary word; Literal keeps \"the flesh of his foreskin\" as \"daging kulit khatannya\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120030031",
+            "o030120030051"
+          ],
+          "choice": "\"包皮要受割礼\" (L); \"行割礼\" (B, R)",
+          "alternatives": [],
+          "reason": "The glossary's words for circumcision; Literal names the foreskin, as the Hebrew does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -870,6 +966,11 @@
           "L": "Dan tiga puluh tiga hari lamanya ia harus tinggal dalam darah pentahirannya; janganlah ia menyentuh sesuatu yang kudus, dan janganlah ia masuk ke tempat kudus sampai genap hari-hari pentahirannya.",
           "B": "Sesudah itu ia harus tinggal tiga puluh tiga hari lagi dalam masa pentahiran darahnya. Sampai masa itu selesai, ia tidak boleh menyentuh sesuatu yang kudus atau masuk ke tempat kudus.",
           "R": "Lalu selama tiga puluh tiga hari lagi perdarahannya sedang ditahirkan. Selama waktu itu dia tidak boleh menyentuh apa pun yang kudus. Dia tidak boleh masuk ke Kemah Suci sampai hari-hari itu selesai."
+        },
+        "zh": {
+          "L": "她要在洁净的血中住三十三天；在她洁净的日子满了以前，她不可摸任何圣物，也不可进入圣所。",
+          "B": "此后，她要再等三十三天，度过血得洁净的日子。这些日子满了以前，她不可摸任何圣物，也不可进入圣所。",
+          "R": "然后再过三十三天，她的出血才会得洁净。在这段时间里，她不要摸任何圣洁的东西。在这些日子结束以前，她不要进入会幕。"
         }
       },
       "decisions": [
@@ -1106,6 +1207,45 @@
           "reason": "The bleeding of the weeks after birth is a time of becoming clean (m1); \"pentahiran\" is formed from \"tahir\", the glossary's word for clean.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120040062",
+            "o030120040071"
+          ],
+          "choice": "\"洁净的血\" (L); \"血得洁净的日子\" (B); \"她的出血才会得洁净\" (R)",
+          "alternatives": [],
+          "reason": "The bleeding of the weeks after birth, a time of becoming clean: Literal keeps the Hebrew phrase, Balanced and Readable say what it is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120040132"
+          ],
+          "choice": "\"会幕\" (R) for \"the holy tent\"",
+          "alternatives": [
+            "圣所"
+          ],
+          "reason": "As 10:4: Readable names the tent the reader knows.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1208,6 +1348,11 @@
           "L": "Dan jika ia melahirkan seorang anak perempuan, ia akan najis dua minggu, seperti [pada] haidnya; dan enam puluh enam hari lamanya ia harus tinggal dalam darah pentahirannya.",
           "B": "Jika ia melahirkan anak perempuan, ia najis selama dua minggu, sama seperti pada waktu haidnya. Sesudah itu ia harus tinggal enam puluh enam hari dalam masa pentahiran darahnya.",
           "R": "Kalau dia melahirkan bayi perempuan, dia tidak bersih selama dua minggu, sama seperti pada waktu dia datang bulan. Lalu selama enam puluh enam hari lagi perdarahannya sedang ditahirkan."
+        },
+        "zh": {
+          "L": "她若生了女孩，就不洁净两周，像在她月经的时候一样；她要在洁净的血中住六十六天。",
+          "B": "她若生了女孩，就不洁净两个星期，和她在月经期间的一样。然后她要再等六十六天，度过血得洁净的日子。",
+          "R": "如果她生了女孩，就不洁净两个星期，跟她来月经的时候一样。然后再过六十六天，她的出血才会得洁净。"
         }
       },
       "decisions": [
@@ -1355,6 +1500,11 @@
           "L": "Dan apabila genap hari-hari pentahirannya, untuk seorang anak laki-laki atau untuk seorang anak perempuan, haruslah ia membawa seekor domba berumur setahun untuk korban bakaran, dan seekor anak burung merpati atau seekor burung tekukur untuk korban penghapus dosa, ke pintu Kemah Pertemuan, kepada imam.",
           "B": "Apabila hari-hari pentahirannya sudah genap, baik untuk anak laki-laki maupun anak perempuan, ia harus membawa kepada imam, di pintu Kemah Pertemuan, seekor domba berumur setahun untuk korban bakaran dan seekor anak burung merpati atau seekor burung tekukur untuk korban penghapus dosa.",
           "R": "Kalau waktu pentahirannya sudah selesai, entah dia melahirkan anak laki-laki entah anak perempuan, dia harus membawa dua hewan kepada imam di pintu Kemah Pertemuan. Dia harus membawa seekor domba berumur satu tahun untuk korban bakaran. Dia juga harus membawa seekor anak burung merpati atau seekor burung tekukur untuk korban penghapus dosa."
+        },
+        "zh": {
+          "L": "她为儿子或为女儿洁净的日子满了，就要带一只一岁的羊羔作燔祭，又带一只雏鸽或一只斑鸠作赎罪祭，到会幕门口，交给祭司。",
+          "B": "她洁净的日子满了以后，不论生的是儿子还是女儿，她都要带一只一岁的羊羔作燔祭，带一只雏鸽或一只斑鸠作赎罪祭，到会幕门口交给祭司。",
+          "R": "她得洁净的日子结束以后，不论她生的是儿子还是女儿，都必须带两只动物到会幕门口交给祭司。她必须带一只一岁的羊羔来作全烧的祭，还要带一只小鸽子或一只斑鸠来作赎罪祭。"
         }
       },
       "decisions": [
@@ -1506,6 +1656,47 @@
           "reason": "LEV-1's forms (1:14).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120060112",
+            "o030120060162"
+          ],
+          "choice": "\"燔祭\" (L, B), \"全烧的祭\" (R); \"赎罪祭\"",
+          "alternatives": [],
+          "reason": "The glossary's sacrifice terms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120060122",
+            "o030120060131",
+            "o030120060151"
+          ],
+          "choice": "\"雏鸽\" (L, B), \"小鸽子\" (R); \"斑鸠\"",
+          "alternatives": [],
+          "reason": "A young pigeon and a turtledove, the birds of 1:14.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1613,6 +1804,11 @@
           "L": "Dan imam itu haruslah mempersembahkannya di hadapan {{divine_name:TUHAN|Yahweh}} dan mengadakan pendamaian baginya, dan ia akan tahir dari sumber darahnya. Inilah hukum tentang [perempuan] yang melahirkan, anak laki-laki atau anak perempuan.",
           "B": "Imam harus mempersembahkannya di hadapan {{divine_name:TUHAN|Yahweh}} dan mengadakan pendamaian baginya, dan sesudah itu ia tahir dari perdarahannya. Itulah hukum bagi perempuan yang melahirkan anak laki-laki atau anak perempuan.",
           "R": "Imam harus mempersembahkannya kepada {{divine_name:TUHAN|Yahweh}} dan menghapus kenajisannya. Sesudah itu dia bersih dari perdarahannya. Itulah aturan untuk perempuan yang melahirkan bayi, entah laki-laki entah perempuan."
+        },
+        "zh": {
+          "L": "祭司要把它奉到{{divine_name:上主|雅威}}面前，为她赎罪，她就从血源得洁净。这是关于生育的[妇女]、生男或生女的律法。",
+          "B": "祭司要把它献在{{divine_name:上主|雅威}}面前，为她赎罪，这样她的出血就洁净了。这是关于妇女生男孩或女孩的条例。",
+          "R": "祭司必须把它献给{{divine_name:上主|雅威}}，为她举行赎罪的仪式。这样，她的出血就得洁净了。这些是关于妇女生孩子的规定，不论生的是男孩还是女孩。"
         }
       },
       "decisions": [
@@ -1809,6 +2005,46 @@
           "reason": "Here atonement removes her uncleanness so she may come near God (m1), not a sin, so Readable says \"kenajisan\" (uncleanness) rather than the \"dosa\" of its usual wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120070042"
+          ],
+          "choice": "\"为……赎罪\" (L, B); \"为……举行赎罪的仪式\" (R)",
+          "alternatives": [
+            "\"除去……的罪\" (R)"
+          ],
+          "reason": "Here the meaning decision says the rite removes uncleanness (after childbirth, a healed skin disease or a discharge), which is not a sin. Readable names the rite, \"为……举行赎罪的仪式\", instead of the glossary's \"除去……的罪\", so as not to suggest that the person sinned; Literal and Balanced keep the glossary's \"为……赎罪\". The same in 12:7-8, 14:18-31 and 15:15, 30.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120070101"
+          ],
+          "choice": "\"律法\" (L); \"条例\" (B); \"规定\" (R)",
+          "alternatives": [],
+          "reason": "Torah as the instruction for one case, as 11:46.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1922,6 +2158,11 @@
           "L": "Dan jika tangannya tidak mendapat cukup untuk seekor domba, haruslah ia mengambil dua ekor burung tekukur atau dua ekor anak burung merpati, seekor untuk korban bakaran dan seekor untuk korban penghapus dosa; dan imam itu akan mengadakan pendamaian baginya, dan ia akan tahir.'\"",
           "B": "Jika ia tidak mampu membeli seekor domba, ia harus mengambil dua ekor burung tekukur atau dua ekor anak burung merpati, seekor untuk korban bakaran dan seekor lagi untuk korban penghapus dosa. Imam akan mengadakan pendamaian baginya, dan ia akan tahir.'\"",
           "R": "Mungkin seorang perempuan tidak punya cukup uang untuk membeli seekor domba. Kalau begitu, dia harus membawa dua ekor burung tekukur atau dua ekor anak burung merpati. Seekor untuk korban bakaran, dan seekor lagi untuk korban penghapus dosa. Imam akan menghapus kenajisannya, dan dia akan bersih.'\""
+        },
+        "zh": {
+          "L": "她的手若得不着够一只羊羔的，就要取两只斑鸠或两只雏鸽，一只作燔祭，一只作赎罪祭；祭司要为她赎罪，她就洁净了。’”",
+          "B": "她若负担不起一只羊羔，就要带两只斑鸠或两只雏鸽，一只作燔祭，另一只作赎罪祭。祭司要为她赎罪，她就洁净了。’”",
+          "R": "有的妇女可能没有足够的钱买一只羊羔。那么她必须带两只斑鸠或两只小鸽子来。一只作全烧的祭，另一只作赎罪祭。祭司要为她举行赎罪的仪式，她就洁净了。’”"
         }
       },
       "decisions": [
@@ -2036,6 +2277,27 @@
           "choice": "lo timtsa yadah dei seh \"手が小羊に足りるものを得られない\" (L), \"余裕がない\" (B), \"買うお金がない\" (R)",
           "alternatives": [],
           "reason": "Meaning decision m1: she cannot afford it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030120080021",
+            "o030120080031",
+            "o030120080041",
+            "o030120080042",
+            "o030120080051"
+          ],
+          "choice": "\"她的手若得不着够一只羊羔的\" (L)",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew idiom; Balanced and Readable say she cannot afford it, as the English does.",
           "uncertain": false,
           "footnote": false
         }

@@ -90,6 +90,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa dan kepada Harun, firman-{{deity_pronoun:nya|Nya}} kepada mereka,",
           "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa dan Harun. Firman-{{deity_pronoun:nya|Nya}} kepada mereka,",
           "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa dan Harun,"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西和亚伦说话，对他们说：",
+          "B": "{{divine_name:上主|雅威}}对摩西和亚伦说：",
+          "R": "{{divine_name:上主|雅威}}对摩西和亚伦说："
         }
       },
       "decisions": [
@@ -268,6 +273,11 @@
           "L": "\"Berbicaralah kepada bani Israel, demikian, 'Inilah makhluk hidup yang boleh kalian makan dari antara segala binatang yang [ada] di bumi:",
           "B": "\"Berbicaralah kepada orang Israel dan katakan kepada mereka, 'Dari semua binatang yang hidup di darat, inilah makhluk yang boleh kalian makan.",
           "R": "\"Katakan kepada orang Israel, 'Inilah binatang darat yang boleh kalian makan."
+        },
+        "zh": {
+          "L": "“你们要告诉{{gender:以色列的子孙|以色列的儿子}}说：‘在地上的一切走兽中，你们可以吃的活物是这些：",
+          "B": "“你们要对以色列人说：‘在陆地上生活的一切动物中，你们可以吃的是这些。",
+          "R": "“你们要告诉以色列人：‘下面是你们可以吃的陆地动物。"
         }
       },
       "decisions": [
@@ -559,6 +569,66 @@
           "reason": "Meaning decision m1: any living land creature, wild or tame.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030110020031",
+            "o030110020041"
+          ],
+          "choice": "{{gender:以色列的子孙|以色列的儿子}} (L); \"以色列人\" (B, R), no span",
+          "alternatives": [],
+          "reason": "As the glossary: \"以色列人\" already includes men and women, so Balanced and Readable need no gender span where the English has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110020091"
+          ],
+          "choice": "\"可以吃\" (may eat)",
+          "alternatives": [
+            "要吃"
+          ],
+          "reason": "The verb gives permission, not a command.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o030110020011"
+          ],
+          "choice": "\"你们要……\", \"不可……\" (L, B); \"你们必须……\", \"不要……\" (R)",
+          "alternatives": [],
+          "reason": "The forms for law in Leviticus (style guide section 11), through this chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -655,6 +725,11 @@
           "L": "Setiap [binatang] yang berkuku belah dan yang kukunya terbelah sama sekali, [dan] yang memamah biak, di antara binatang-binatang itu, itulah yang boleh kalian makan.",
           "B": "Kalian boleh makan setiap binatang yang memamah biak dan kukunya terbelah sama sekali menjadi dua.",
           "R": "Kalian boleh makan setiap binatang yang memamah biak dan juga kukunya terbelah menjadi dua bagian."
+        },
+        "zh": {
+          "L": "走兽中凡是分蹄、蹄裂成两半、又反刍的，你们都可以吃。",
+          "B": "你们可以吃任何既反刍、蹄又完全分成两半的动物。",
+          "R": "你们可以吃那些会反刍、蹄子又分成两半的动物。"
         }
       },
       "decisions": [
@@ -971,6 +1046,28 @@
           "reason": "The hoof split completely into two toes (m1), and chewing again food brought back up (m2); \"memamah biak\" is the ordinary Indonesian word for ruminating.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110030071",
+            "o030110030081"
+          ],
+          "choice": "\"反刍\" (chews the cud)",
+          "alternatives": [
+            "倒嚼"
+          ],
+          "reason": "The ordinary modern word for chewing the cud, understood by every reader; the older \"倒嚼\" is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1083,6 +1180,11 @@
           "L": "Akan tetapi, inilah yang tidak boleh kalian makan dari antara yang memamah biak atau dari antara yang berkuku belah: unta, sebab ia memamah biak, tetapi kukunya tidak terbelah; najislah itu bagi kalian.",
           "B": "Tetapi binatang-binatang berikut tidak boleh kalian makan, walaupun memamah biak atau berkuku belah: unta, karena memamah biak tetapi kukunya tidak terbelah. Unta najis bagi kalian.",
           "R": "Tetapi jangan makan binatang yang hanya mempunyai salah satu dari kedua tanda itu. Unta memamah biak, tetapi kukunya tidak terbelah. Jadi unta tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "但那些反刍的或分蹄的当中，有这些你们不可吃：骆驼，因为它反刍，却不分蹄，它对你们是不洁净的。",
+          "B": "不过，下面这些动物虽然反刍或分蹄，你们却不可吃：骆驼，因为它虽然反刍，蹄却没有分开。它对你们是不洁净的。",
+          "R": "但是只有其中一种特征的动物，你们不要吃。骆驼会反刍，但它的蹄子没有分开，所以它对你们是不洁净的。"
         }
       },
       "decisions": [
@@ -1228,6 +1330,25 @@
           "reason": "The style guide does not use \"haram\" and \"halal\" for clean and unclean (section 9): \"najis\" and \"tahir\" at Literal and Balanced, \"tidak bersih\" and \"bersih\" at Readable. For the whole of chapter 11.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110040191"
+          ],
+          "choice": "\"不洁净\" (unclean), \"对你们是不洁净的\"",
+          "alternatives": [],
+          "reason": "The glossary's term for ritual uncleanness, at every level through the chapter; \"洁净\" for clean.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1326,6 +1447,11 @@
           "L": "Dan marmot batu, sebab ia memamah biak, tetapi kukunya tidak terbelah; najislah itu bagi kalian.",
           "B": "Marmot batu memamah biak, tetapi kukunya tidak terbelah; binatang itu najis bagi kalian.",
           "R": "Marmot batu memamah biak, tetapi kakinya tidak berkuku belah. Jadi binatang itu tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "还有蹄兔，因为它反刍，却不分蹄，它对你们是不洁净的。",
+          "B": "蹄兔反刍，蹄却没有分开，它对你们是不洁净的。",
+          "R": "蹄兔会反刍，但它的脚没有分开的蹄子，所以它对你们是不洁净的。"
         }
       },
       "decisions": [
@@ -1629,6 +1755,28 @@
           "reason": "Probably the rock hyrax, a small animal that lives among rocks (m1, uncertain); Indonesian has no common name for it, so \"marmot batu\" describes it as the English \"rock badger\" does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110050022"
+          ],
+          "choice": "\"蹄兔\" (rock hyrax)",
+          "alternatives": [
+            "石獾",
+            "沙番"
+          ],
+          "reason": "The meaning decision identifies the animal as probably the rock hyrax, whose modern Chinese name is \"蹄兔\". The English \"rock badger\" would be \"石獾\"; \"沙番\" is the old Bible word, not a living name.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1727,6 +1875,11 @@
           "L": "Dan terwelu, sebab ia memamah biak, tetapi kukunya tidak terbelah; najislah itu bagi kalian.",
           "B": "Terwelu juga memamah biak, tetapi kukunya tidak terbelah; binatang itu najis bagi kalian.",
           "R": "Kelinci hutan juga memamah biak, tetapi tidak berkuku belah. Jadi binatang itu tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "还有野兔，因为它反刍，却不分蹄，它对你们是不洁净的。",
+          "B": "野兔也反刍，蹄却没有分开，它对你们是不洁净的。",
+          "R": "野兔也会反刍，但它没有分开的蹄子，所以它对你们是不洁净的。"
         }
       },
       "decisions": [
@@ -1869,6 +2022,11 @@
           "L": "Dan babi, sebab ia berkuku belah dan kukunya terbelah sama sekali, tetapi ia tidak memamah biak; najislah itu bagi kalian.",
           "B": "Babi berkuku belah sama sekali, tetapi tidak memamah biak; binatang itu najis bagi kalian.",
           "R": "Babi berkuku belah, tetapi tidak memamah biak. Jadi babi tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "还有猪，因为它分蹄，蹄裂成两半，却不反刍，它对你们是不洁净的。",
+          "B": "猪的蹄完全分成两半，却不反刍，它对你们是不洁净的。",
+          "R": "猪的蹄子是分开的，但它不反刍，所以它对你们是不洁净的。"
         }
       },
       "decisions": [
@@ -2018,6 +2176,11 @@
           "L": "Dari dagingnya janganlah kalian makan, dan bangkainya janganlah kalian sentuh; najislah semuanya itu bagi kalian.",
           "B": "Jangan makan dagingnya sedikit pun, dan jangan sentuh bangkainya. Binatang-binatang itu najis bagi kalian.",
           "R": "Jangan makan dagingnya. Jangan sentuh tubuhnya sesudah binatang itu mati. Binatang-binatang itu tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "它们的肉，你们不可吃；它们的尸体，你们不可摸；它们对你们是不洁净的。",
+          "B": "不可吃它们的肉，它们死了以后也不可摸它们。它们对你们是不洁净的。",
+          "R": "不要吃它们的肉。它们死了以后，不要摸它们的身体。它们对你们是不洁净的。"
         }
       },
       "decisions": [
@@ -2305,6 +2468,11 @@
           "L": "Inilah yang boleh kalian makan dari segala yang [ada] di dalam air: segala yang bersirip dan bersisik di dalam air, di laut dan di sungai, itulah yang boleh kalian makan.",
           "B": "Inilah makhluk air yang boleh kalian makan: segala yang bersirip dan bersisik, entah hidup di laut entah di sungai.",
           "R": "Kalian boleh makan binatang air yang bersirip dan bersisik, entah hidupnya di laut entah di sungai."
+        },
+        "zh": {
+          "L": "在水中的一切当中，你们可以吃这些：凡在水中有鳍有鳞的，无论在海里还是在溪流里，你们都可以吃。",
+          "B": "水中的动物，你们可以吃的是这些：凡有鳍有鳞的，不论生活在海里还是溪流里，都可以吃。",
+          "R": "你们可以吃有鳍有鳞的水中动物。不管它们是住在海里还是河里，都可以吃。"
         }
       },
       "decisions": [
@@ -2521,6 +2689,11 @@
           "L": "Tetapi segala yang tidak bersirip dan bersisik di laut dan di sungai, dari segala binatang merayap di air dan dari segala makhluk hidup yang [ada] di dalam air, itulah yang menjijikkan bagi kalian.",
           "B": "Tetapi segala yang ada di laut atau sungai yang tidak bersirip dan bersisik, entah binatang kecil yang berkeriapan di air entah makhluk hidup lain di sana, haruslah menjijikkan bagi kalian.",
           "R": "Tetapi kalian harus menganggap semua binatang air lainnya menjijikkan. Itulah binatang yang tidak bersirip dan bersisik, baik binatang kecil yang berkeriapan di air maupun yang lain."
+        },
+        "zh": {
+          "L": "但在海里和溪流里，凡没有鳍没有鳞的，无论是水中一切成群滋生的小动物，还是水中一切有生命的活物，对你们都是可憎的。",
+          "B": "但是在海里或溪流里，凡没有鳍和鳞的，不论是在水中成群游动的小动物，还是水里其他的活物，你们都要看为可憎的。",
+          "R": "但是其他一切水中动物，你们都必须看为令人厌恶的。这些就是没有鳍和鳞的动物，包括在水里成群游动的小动物和所有其他的动物。"
         }
       },
       "decisions": [
@@ -2900,6 +3073,47 @@
           "reason": "The word means to be regarded with loathing and kept at a distance (m1); \"kekejian\" is kept for the stronger word for abomination (glossary, section 2), so the two Hebrew words stay apart. For the whole of chapter 11.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110100171"
+          ],
+          "choice": "\"可憎的\" (L, B); \"令人厌恶的\" (R)",
+          "alternatives": [
+            "可厌的"
+          ],
+          "reason": "Detestable (sheqets), kept apart from \"不洁净\": one word per level through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110100101"
+          ],
+          "choice": "\"成群滋生的小动物\" (L); \"成群游动的小动物\" (B, of water creatures)",
+          "alternatives": [
+            "爬物"
+          ],
+          "reason": "The swarming creatures, small animals that appear in great numbers; Literal keeps one phrase for them on land, in water and in the air, Balanced says how they move.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2997,6 +3211,11 @@
           "L": "Dan haruslah semuanya itu menjijikkan bagi kalian; dari dagingnya janganlah kalian makan, dan bangkainya haruslah kalian jijikkan.",
           "B": "Semua itu harus tetap menjijikkan bagi kalian. Jangan makan dagingnya, dan anggaplah bangkainya menjijikkan.",
           "R": "Binatang-binatang itu harus tetap menjijikkan bagi kalian. Jangan makan dagingnya, dan anggaplah bangkainya menjijikkan."
+        },
+        "zh": {
+          "L": "它们对你们要是可憎的；它们的肉，你们不可吃；它们的尸体，你们要憎恶。",
+          "B": "你们要一直把它们看为可憎的。不可吃它们的肉，要把它们的尸体看为可憎的。",
+          "R": "你们必须一直认为它们令人厌恶。不要吃它们的肉，要把它们的尸体看为令人厌恶的。"
         }
       },
       "decisions": [
@@ -3109,6 +3328,11 @@
           "L": "Segala yang tidak bersirip dan bersisik di dalam air, itulah yang menjijikkan bagi kalian.",
           "B": "Segala yang hidup di air tetapi tidak bersirip dan bersisik haruslah menjijikkan bagi kalian.",
           "R": "Setiap binatang air yang tidak bersirip dan bersisik menjijikkan bagi kalian."
+        },
+        "zh": {
+          "L": "凡在水中没有鳍没有鳞的，对你们都是可憎的。",
+          "B": "凡生活在水中、没有鳍和鳞的，你们都要看为可憎的。",
+          "R": "任何没有鳍和鳞的水中动物，对你们来说都是令人厌恶的。"
         }
       },
       "decisions": [
@@ -3230,6 +3454,11 @@
           "L": "Dan inilah yang harus kalian jijikkan di antara burung-burung; janganlah dimakan; semuanya itu menjijikkan: burung rajawali, dan burung nasar janggut, dan burung nasar hitam,",
           "B": "Di antara burung-burung, inilah yang harus kalian anggap menjijikkan. Burung-burung itu tidak boleh dimakan, karena menjijikkan: burung rajawali, burung nasar janggut, burung nasar hitam,",
           "R": "Inilah burung-burung yang harus kalian anggap menjijikkan. Jangan memakannya: burung rajawali, burung nasar janggut, burung nasar hitam,"
+        },
+        "zh": {
+          "L": "鸟类中你们要憎恶这些，它们不可吃，它们是可憎的：鹰、胡兀鹫、秃鹫、",
+          "B": "在鸟类中，你们要憎恶下面这些。不可吃它们，因为它们是可憎的：鹰、胡兀鹫、秃鹫、",
+          "R": "下面这些鸟，你们必须看为令人厌恶的。不要吃它们：鹰、胡兀鹫、秃鹫、"
         }
       },
       "decisions": [
@@ -3554,6 +3783,46 @@
           "reason": "The exact identity of many of these birds is uncertain (m1). Indonesian uses common names where they exist (\"rajawali\", \"nasar\", \"elang\", \"gagak\", \"burung unta\", \"camar\", \"alap-alap\", \"pecuk\", \"bangau\", \"kuntul\", \"kelelawar\") and descriptive names for owls and the hoopoe (\"burung hantu\", \"pungguk\", \"serak\", \"burung hupo\").",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110130112",
+            "o030110130132",
+            "o030110130152"
+          ],
+          "choice": "plain modern names for the birds of verses 13-19, as the English identifies them: \"鹰\", \"胡兀鹫\", \"秃鹫\", \"赤鸢\", \"黑鸢\", \"乌鸦\" (R \"渡鸦和乌鸦\"), \"鸵鸟\", \"角鸮\", \"海鸥\", \"隼\", \"小鸮\", \"鸬鹚\", \"雕鸮\", \"仓鸮\", \"沙漠鸮\", \"白兀鹫\" (R \"兀鹫\"), \"鹳\", \"鹭\", \"戴胜\", \"蝙蝠\"",
+          "alternatives": [],
+          "reason": "Many of the Hebrew bird names are uncertain (meaning decision); the Chinese follows the English identifications with the ordinary zoological names, not the old Bible words. A reviewer may refine them.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o030110130101"
+          ],
+          "choice": "the list runs on to verse 19 with \"、\"",
+          "alternatives": [],
+          "reason": "As the English, each verse holds its own birds and the list ends in verse 19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3647,6 +3916,11 @@
           "L": "dan burung elang merah, dan burung elang hitam menurut jenisnya,",
           "B": "burung elang merah, berbagai jenis burung elang hitam,",
           "R": "burung elang merah, segala jenis burung elang hitam,"
+        },
+        "zh": {
+          "L": "赤鸢、黑鸢和它的同类、",
+          "B": "赤鸢、各种黑鸢、",
+          "R": "赤鸢、各种黑鸢、"
         }
       },
       "decisions": [
@@ -3755,6 +4029,29 @@
           "reason": "Kites are among the birds Amharic calls \"ጭልፊት\"; the colour names keep the two Hebrew words apart. Probable identifications.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110140051",
+            "o030110140052",
+            "o030110140053"
+          ],
+          "choice": "\"和它的同类\" (L); \"各种\" (B, R) for \"after its kind\"",
+          "alternatives": [
+            "各从其类"
+          ],
+          "reason": "One form per level through the chapter; the four-character \"各从其类\" is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3843,6 +4140,11 @@
           "L": "setiap burung gagak menurut jenisnya,",
           "B": "setiap jenis burung gagak,",
           "R": "segala jenis burung gagak,"
+        },
+        "zh": {
+          "L": "一切乌鸦和它的同类、",
+          "B": "各种乌鸦、",
+          "R": "各种渡鸦和乌鸦、"
         }
       },
       "decisions": [
@@ -4018,6 +4320,11 @@
           "L": "dan burung unta, dan burung hantu jerit, dan burung camar, dan burung alap-alap menurut jenisnya,",
           "B": "burung unta, burung hantu jerit, burung camar, berbagai jenis burung alap-alap,",
           "R": "burung unta, burung hantu jerit, burung camar, segala jenis burung alap-alap,"
+        },
+        "zh": {
+          "L": "鸵鸟、角鸮、海鸥、隼和它的同类、",
+          "B": "鸵鸟、角鸮、海鸥、各种隼、",
+          "R": "鸵鸟、角鸮、海鸥、各种隼、"
         }
       },
       "decisions": [
@@ -4304,6 +4611,11 @@
           "L": "dan burung pungguk, dan burung pecuk, dan burung hantu besar,",
           "B": "burung pungguk, burung pecuk, burung hantu besar,",
           "R": "burung pungguk, burung pecuk, burung hantu besar,"
+        },
+        "zh": {
+          "L": "小鸮、鸬鹚、雕鸮、",
+          "B": "小鸮、鸬鹚、雕鸮、",
+          "R": "小鸮、鸬鹚、雕鸮、"
         }
       },
       "decisions": [
@@ -4489,6 +4801,11 @@
           "L": "dan burung serak, dan burung hantu padang gurun, dan burung nasar bangkai,",
           "B": "burung serak, burung hantu padang gurun, burung nasar bangkai,",
           "R": "burung serak, burung hantu padang gurun, burung nasar,"
+        },
+        "zh": {
+          "L": "仓鸮、沙漠鸮、白兀鹫、",
+          "B": "仓鸮、沙漠鸮、白兀鹫、",
+          "R": "仓鸮、沙漠鸮、兀鹫、"
         }
       },
       "decisions": [
@@ -4677,6 +4994,11 @@
           "L": "dan burung bangau, burung kuntul menurut jenisnya, dan burung hupo, dan kelelawar.",
           "B": "burung bangau, berbagai jenis burung kuntul, burung hupo dan kelelawar.",
           "R": "burung bangau, segala jenis burung kuntul, burung hupo dan kelelawar."
+        },
+        "zh": {
+          "L": "鹳、鹭和它的同类、戴胜和蝙蝠。",
+          "B": "鹳、各种鹭、戴胜和蝙蝠。",
+          "R": "鹳、各种鹭鸟、戴胜和蝙蝠。"
         }
       },
       "decisions": [
@@ -4849,6 +5171,11 @@
           "L": "Setiap binatang merayap yang bersayap, yang berjalan dengan empat [kaki], itulah yang menjijikkan bagi kalian.",
           "B": "Setiap binatang kecil bersayap yang berjalan dengan keempat kakinya haruslah menjijikkan bagi kalian.",
           "R": "Serangga bersayap yang merangkak dengan kakinya menjijikkan bagi kalian."
+        },
+        "zh": {
+          "L": "一切有翅膀、用四足行走的成群滋生的小动物，对你们都是可憎的。",
+          "B": "凡有翅膀、又用四条腿行走的成群小动物，你们都要看为可憎的。",
+          "R": "有翅膀又用腿爬来爬去的昆虫，对你们来说是令人厌恶的。"
         }
       },
       "decisions": [
@@ -4944,6 +5271,26 @@
           "choice": "\"binatang merayap yang bersayap\" (L), \"binatang kecil bersayap\" (B), \"serangga bersayap\" (R)",
           "alternatives": [],
           "reason": "Winged swarming things that move along on their legs (m1); Readable names them as insects, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110200042",
+            "o030110200051",
+            "o030110200061"
+          ],
+          "choice": "\"用四足行走\" (L); \"用四条腿行走\" (B)",
+          "alternatives": [],
+          "reason": "The Hebrew idiom \"goes on four\": moving along on its legs like a four-footed animal. Readable says \"昆虫\" and \"用腿爬来爬去\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -5057,6 +5404,11 @@
           "L": "Akan tetapi, inilah yang boleh kalian makan dari segala binatang merayap yang bersayap, yang berjalan dengan empat [kaki]: yang mempunyai kaki di atas kakinya untuk melompat di atas tanah.",
           "B": "Tetapi dari binatang kecil bersayap yang berjalan dengan keempat kakinya, ada yang boleh kalian makan, yaitu yang mempunyai sepasang kaki panjang di atas kakinya untuk melompat di tanah.",
           "R": "Tetapi kalian boleh makan sebagian dari serangga itu. Kalian boleh makan serangga yang mempunyai kaki belakang yang panjang untuk melompat."
+        },
+        "zh": {
+          "L": "但在一切有翅膀、用四足行走的成群滋生的小动物中，你们可以吃这些：就是在脚以上有腿，可以用来在地上跳的。",
+          "B": "但是在有翅膀、用四条腿行走的成群小动物中，有些你们可以吃，就是脚的上方有一对长腿、可以在地上跳跃的。",
+          "R": "但是这些昆虫中，有一些你们可以吃。你们可以吃那些有长长的后腿、可以跳的。"
         }
       },
       "decisions": [
@@ -5246,6 +5598,11 @@
           "L": "Inilah dari antaranya yang boleh kalian makan: belalang menurut jenisnya, dan belalang gundul menurut jenisnya, dan jangkrik menurut jenisnya, dan belalang padang menurut jenisnya.",
           "B": "Dari antaranya kalian boleh makan yang berikut ini, masing-masing menurut jenisnya: belalang, belalang gundul, jangkrik dan belalang padang.",
           "R": "Inilah yang boleh kalian makan: segala jenis belalang dan jangkrik."
+        },
+        "zh": {
+          "L": "其中你们可以吃这些：蝗虫和它的同类、秃头蝗和它的同类、蟋蟀和它的同类、蚱蜢和它的同类。",
+          "B": "你们可以吃的是下面这些，包括它们各自的同类：飞蝗、秃头蝗、蟋蟀和蚱蜢。",
+          "R": "你们可以吃的是这些：各种蝗虫、蟋蟀和蚱蜢。"
         }
       },
       "decisions": [
@@ -5496,6 +5853,28 @@
           "reason": "Four kinds of leaping insect (m1, uncertain); \"belalang\" is the glossary word for the locust.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110220062",
+            "o030110220092",
+            "o030110220122",
+            "o030110220152"
+          ],
+          "choice": "\"蝗虫\" (L; B \"飞蝗\" for the swarming locust), \"秃头蝗\", \"蟋蟀\", \"蚱蜢\"",
+          "alternatives": [],
+          "reason": "Four kinds of leaping insect, named as the English identifies them; \"秃头蝗\" renders \"bald locust\" word for word, since no common Chinese name matches it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5592,6 +5971,11 @@
           "L": "Dan setiap binatang merayap yang bersayap yang berkaki empat, itulah yang menjijikkan bagi kalian.",
           "B": "Setiap binatang kecil bersayap lainnya yang berjalan dengan empat kaki haruslah menjijikkan bagi kalian.",
           "R": "Semua serangga bersayap lainnya yang berjalan dengan kakinya menjijikkan bagi kalian."
+        },
+        "zh": {
+          "L": "凡有翅膀、有四只脚的成群滋生的小动物，对你们都是可憎的。",
+          "B": "其他一切有翅膀、用四条腿行走的成群小动物，你们都要看为可憎的。",
+          "R": "其他所有有翅膀、用腿走路的昆虫，对你们来说都是令人厌恶的。"
         }
       },
       "decisions": [
@@ -5723,6 +6107,11 @@
           "L": "Dan oleh binatang-binatang ini kalian akan menajiskan diri; setiap orang yang menyentuh bangkainya akan najis sampai petang.",
           "B": "Binatang-binatang ini juga akan membuat kalian najis. Siapa pun yang menyentuh bangkai salah satunya akan najis sampai petang.",
           "R": "Ada binatang yang akan membuat kalian tidak bersih. Kalau kalian menyentuh tubuh salah satunya sesudah binatang itu mati, kalian tidak bersih sampai petang."
+        },
+        "zh": {
+          "L": "这些会使你们成为不洁净；凡摸了它们尸体的，就不洁净直到傍晚。",
+          "B": "下面这些动物也会使你们不洁净。凡摸了其中一只的尸体的人，都会不洁净到傍晚。",
+          "R": "有些动物会使你们不洁净。如果你们摸了这样一只死了的动物，你们就会不洁净，直到傍晚。"
         }
       },
       "decisions": [
@@ -5958,6 +6347,49 @@
           "reason": "The uncleanness lasts until sunset, when a new day begins (m1); \"petang\" is the late afternoon and evening, the time the Hebrew means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110240071",
+            "o030110240081",
+            "o030110240082"
+          ],
+          "choice": "\"直到傍晚\" / \"不洁净到傍晚\"",
+          "alternatives": [
+            "直到晚上"
+          ],
+          "reason": "The uncleanness lasts until sunset, when the new day begins; \"傍晚\" names that time (glossary, times of day), one form through the book (chapters 11-15, 17 and 22).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110240052"
+          ],
+          "choice": "\"尸体\" (carcass)",
+          "alternatives": [
+            "死尸"
+          ],
+          "reason": "The ordinary word for a dead body, of an animal too; Readable says \"死了的动物\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6055,6 +6487,11 @@
           "L": "Dan setiap orang yang mengangkat [sebagian] dari bangkainya haruslah mencuci pakaiannya, dan ia akan najis sampai petang.",
           "B": "Siapa pun yang mengangkat bagian mana pun dari bangkainya harus mencuci pakaiannya, dan ia tetap najis sampai petang.",
           "R": "Kalau kalian mengangkat bagian tubuh binatang seperti itu yang sudah mati, kalian harus mencuci pakaian. Kalian tidak bersih sampai petang."
+        },
+        "zh": {
+          "L": "凡搬了它们尸体任何部分的，要洗他的衣服，并且不洁净到傍晚。",
+          "B": "凡搬动它们尸体任何部分的人，都要洗自己的衣服，并且不洁净到傍晚。",
+          "R": "如果你们搬动这样一只死了的动物的任何部分，就必须洗自己的衣服。你们会不洁净，直到傍晚。"
         }
       },
       "decisions": [
@@ -6227,6 +6664,11 @@
           "L": "Setiap binatang yang berkuku belah tetapi tidak terbelah sama sekali, dan tidak memamah biak: najislah semuanya itu bagi kalian; setiap orang yang menyentuhnya akan najis.",
           "B": "Setiap binatang yang kukunya tidak terbelah sama sekali dan tidak memamah biak adalah najis bagi kalian. Siapa pun yang menyentuh bangkainya akan menjadi najis.",
           "R": "Ada binatang yang kukunya tidak terbelah sampai habis. Binatang itu juga tidak memamah biak. Binatang seperti itu tidak bersih bagi kalian. Kalau kalian menyentuh bangkainya, kalian tidak bersih."
+        },
+        "zh": {
+          "L": "至于一切分蹄、但蹄没有裂成两半、也不反刍的走兽，它们对你们是不洁净的；凡摸了它们的，都不洁净。",
+          "B": "一切有蹄但蹄没有完全分开、又不反刍的动物，对你们都是不洁净的。谁摸了这样一只死了的动物，都会变为不洁净。",
+          "R": "有些动物的蹄子没有完全分开，它们也不反刍。这些动物对你们是不洁净的。如果你们摸了这样一只死了的动物，你们就会不洁净。"
         }
       },
       "decisions": [
@@ -6419,6 +6861,11 @@
           "L": "Dan segala yang berjalan dengan telapak kakinya di antara segala makhluk hidup yang berjalan dengan empat [kaki]: najislah semuanya itu bagi kalian; setiap orang yang menyentuh bangkainya akan najis sampai petang.",
           "B": "Setiap binatang berkaki empat yang berjalan dengan telapak kakinya adalah najis bagi kalian. Siapa pun yang menyentuh bangkainya akan najis sampai petang.",
           "R": "Binatang berkaki empat yang berjalan dengan telapak kaki tidak bersih bagi kalian. Kalau kalian menyentuh tubuh binatang seperti itu yang sudah mati, kalian tidak bersih sampai petang."
+        },
+        "zh": {
+          "L": "在一切用四足行走的活物中，凡用脚掌行走的，对你们都是不洁净的；凡摸了它们尸体的，都不洁净到傍晚。",
+          "B": "一切用脚掌行走的四足动物，对你们都是不洁净的。谁摸了它们的尸体，都会不洁净到傍晚。",
+          "R": "用脚掌走路的四足动物，对你们是不洁净的。如果你们摸了这样一只死了的动物，你们就会不洁净，直到傍晚。"
         }
       },
       "decisions": [
@@ -6576,6 +7023,27 @@
           "reason": "Meaning decision m1: walks on the soles of its feet, not on hooves.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110270041"
+          ],
+          "choice": "\"脚掌\" (paws)",
+          "alternatives": [
+            "爪子"
+          ],
+          "reason": "Walking on the soles of the feet rather than on hooves.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6676,6 +7144,11 @@
           "L": "Dan orang yang mengangkat bangkainya haruslah mencuci pakaiannya, dan ia akan najis sampai petang; najislah semuanya itu bagi kalian.",
           "B": "Siapa pun yang mengangkat bangkainya harus mencuci pakaiannya, dan ia najis sampai petang. Binatang-binatang itu najis bagi kalian.",
           "R": "Kalau kalian mengangkat tubuh salah satunya, kalian harus mencuci pakaian. Kalian tidak bersih sampai petang. Binatang-binatang itu tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "搬它们尸体的人要洗他的衣服，并且不洁净到傍晚；它们对你们是不洁净的。",
+          "B": "谁搬了它们的尸体，都要洗自己的衣服，并且不洁净到傍晚。这些动物对你们是不洁净的。",
+          "R": "如果你们搬了其中一只的尸体，就必须洗自己的衣服。你们会不洁净，直到傍晚。这些动物对你们是不洁净的。"
         }
       },
       "decisions": [
@@ -6801,6 +7274,11 @@
           "L": "Dan inilah yang najis bagi kalian di antara binatang merayap yang berkeriapan di bumi: musang, dan tikus, dan kadal besar menurut jenisnya,",
           "B": "Dari antara binatang kecil yang berkeriapan di tanah, inilah yang najis bagi kalian: musang, tikus, berbagai jenis kadal besar,",
           "R": "Ada binatang kecil yang berkeriapan di tanah yang tidak bersih bagi kalian. Inilah binatang-binatang itu: musang, tikus, segala jenis kadal besar,"
+        },
+        "zh": {
+          "L": "在地上成群滋生的小动物中，这些对你们是不洁净的：黄鼠狼、老鼠、大蜥蜴和它的同类、",
+          "B": "在地上成群出没的小动物中，对你们不洁净的是这些：黄鼠狼、老鼠、各种大蜥蜴、",
+          "R": "有些在地上成群出没的小动物对你们是不洁净的。它们是黄鼠狼、老鼠、各种大蜥蜴、"
         }
       },
       "decisions": [
@@ -7025,6 +7503,47 @@
           "reason": "Eight small creatures (m1) with probable identifications (m2, uncertain); all are animals Indonesian readers know.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110290082",
+            "o030110290093",
+            "o030110290103"
+          ],
+          "choice": "\"黄鼠狼\", \"老鼠\", \"大蜥蜴\"; in verse 30 \"壁虎\", \"巨蜥\", \"壁蜥\", \"沙蜥\", \"变色龙\"",
+          "alternatives": [
+            "鼬鼠"
+          ],
+          "reason": "Plain modern names, following the English identifications, which the meaning decision calls probable.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110290052"
+          ],
+          "choice": "\"成群出没\" (B, R) for creatures that swarm on the ground",
+          "alternatives": [],
+          "reason": "Literal keeps \"成群滋生\" for every swarming creature; Balanced and Readable say how the small ground animals appear.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7122,6 +7641,11 @@
           "L": "dan tokek, dan biawak, dan cicak, dan kadal pasir, dan bunglon.",
           "B": "tokek, biawak, cicak, kadal pasir dan bunglon.",
           "R": "tokek, biawak, cicak, kadal pasir dan bunglon."
+        },
+        "zh": {
+          "L": "壁虎、巨蜥、壁蜥、沙蜥和变色龙。",
+          "B": "壁虎、巨蜥、壁蜥、沙蜥和变色龙。",
+          "R": "壁虎、巨蜥、壁蜥、沙蜥和变色龙。"
         }
       },
       "decisions": [
@@ -7318,6 +7842,11 @@
           "L": "Inilah yang najis bagi kalian di antara segala binatang merayap; setiap orang yang menyentuhnya ketika sudah mati akan najis sampai petang.",
           "B": "Itulah binatang kecil berkeriapan yang najis bagi kalian. Jika seseorang menyentuh salah satunya sesudah binatang itu mati, ia najis sampai petang.",
           "R": "Binatang-binatang kecil itu tidak bersih bagi kalian. Kalau kalian menyentuh salah satunya sesudah binatang itu mati, kalian tidak bersih sampai petang."
+        },
+        "zh": {
+          "L": "在一切成群滋生的小动物中，这些对你们是不洁净的；它们死了，凡摸它们的，都不洁净到傍晚。",
+          "B": "这些成群出没的小动物对你们是不洁净的。它们死了以后，谁摸了其中一只，都会不洁净到傍晚。",
+          "R": "这些小动物对你们是不洁净的。它们死了以后，如果你们摸了其中一只，你们就会不洁净，直到傍晚。"
         }
       },
       "decisions": [
@@ -7457,6 +7986,11 @@
           "L": "Dan segala sesuatu yang ditimpa oleh [salah satu] dari binatang-binatang itu ketika sudah mati akan najis, entah perkakas kayu, entah pakaian, entah kulit, entah karung, segala perkakas yang dipakai untuk bekerja; haruslah itu dimasukkan ke dalam air, dan itu akan najis sampai petang, lalu itu akan tahir.",
           "B": "Apa saja yang ditimpa salah satu binatang itu sesudah mati menjadi najis: perkakas kayu apa pun, pakaian, kulit atau kain karung, alat atau barang apa pun yang dipakai untuk bekerja. Barang itu harus dicelupkan ke dalam air dan tetap najis sampai petang; sesudah itu barang itu tahir.",
           "R": "Kadang-kadang salah satu binatang yang mati itu jatuh ke atas suatu barang. Barang itu menjadi tidak bersih. Barang itu mungkin terbuat dari kayu, kain, kulit atau kain karung. Mungkin juga barang itu alat atau perkakas apa pun yang dipakai orang. Masukkanlah ke dalam air. Barang itu tidak bersih sampai petang. Sesudah itu barang itu bersih kembali."
+        },
+        "zh": {
+          "L": "它们当中死了的，掉在什么东西上，那东西就不洁净，无论是木器、衣服、皮子、麻袋，凡用来做工的器具，都要放在水里，并且不洁净到傍晚，[然后]才洁净。",
+          "B": "它们当中有死了的掉在什么东西上，那东西就变为不洁净：无论是木器、衣服、皮革或麻布，任何用来工作的工具或器具都是这样。这东西必须浸在水里，而且会不洁净到傍晚；过了傍晚，它就洁净了。",
+          "R": "有时这样一只死了的动物会掉在某样东西上。那样东西就会变为不洁净。它可能是用木头、布、皮革或麻布做的，也可能是人们使用的任何工具或碗盘。要把它放在水里。它会不洁净，直到傍晚。过了傍晚，它就洁净了。"
         }
       },
       "decisions": [
@@ -7663,6 +8197,11 @@
           "L": "Dan setiap bejana tanah liat yang ke dalamnya jatuh [salah satu] dari binatang-binatang itu, segala yang [ada] di dalamnya akan najis, dan bejana itu haruslah kalian pecahkan.",
           "B": "Jika salah satu binatang itu jatuh ke dalam periuk tanah liat, semua yang ada di dalam periuk itu menjadi najis, dan periuk itu sendiri harus dipecahkan.",
           "R": "Misalkan salah satunya jatuh ke dalam periuk tanah liat. Semua isinya menjadi tidak bersih, dan periuk itu harus dipecahkan."
+        },
+        "zh": {
+          "L": "它们当中若有掉在瓦器里面的，器里所有的都不洁净，你们要把这器打破。",
+          "B": "如果有一只掉进陶罐里，罐里所有的东西都变为不洁净，罐子本身也必须打碎。",
+          "R": "假如有一只掉进陶罐里，罐里所有的东西都会变为不洁净，罐子也必须打破。"
         }
       },
       "decisions": [
@@ -7720,6 +8259,26 @@
           "choice": "keli cheres \"土の器\" at every level",
           "alternatives": [],
           "reason": "As LEV-3 (14:5): earthenware, a clay vessel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110330021",
+            "o030110330031"
+          ],
+          "choice": "\"瓦器\" (L); \"陶罐\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the general word for an earthenware vessel; Balanced and Readable name the pot, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -7825,6 +8384,11 @@
           "L": "Dari segala makanan yang boleh dimakan, yang kena air itu, akan najis; dan segala minuman yang boleh diminum dalam bejana apa pun akan najis.",
           "B": "Makanan apa pun yang boleh dimakan menjadi najis jika terkena air dari periuk seperti itu, dan minuman apa pun di dalam periuk seperti itu menjadi najis.",
           "R": "Makanan yang terkena air dari periuk itu tidak bersih. Begitu juga minuman yang ada di dalam periuk itu."
+        },
+        "zh": {
+          "L": "一切可吃的食物，若有[这器里的]水落在上面，就不洁净；在任何[这样的]器皿里可喝的饮料，都不洁净。",
+          "B": "可以吃的食物，如果沾了这种罐子里的水，就变为不洁净；这种罐子里的任何饮料，也变为不洁净。",
+          "R": "沾了那罐子里的水的食物，是不洁净的。那罐子里任何可以喝的东西，也是不洁净的。"
         }
       },
       "decisions": [
@@ -7967,6 +8531,11 @@
           "L": "Dan segala sesuatu yang ditimpa oleh [sebagian] dari bangkainya akan najis; tungku atau anglo haruslah dirobohkan; najislah semuanya itu, dan najislah itu bagi kalian.",
           "B": "Apa saja yang tertimpa bagian bangkainya menjadi najis. Jika itu tungku atau anglo, benda itu harus dibongkar. Benda-benda itu najis, dan kalian harus terus menganggapnya najis.",
           "R": "Kalau sebagian bangkai binatang itu jatuh ke atas sesuatu, barang itu menjadi tidak bersih. Kalau barang itu tungku atau anglo, kalian harus menghancurkannya. Barang itu tidak bersih, dan kalian harus menganggapnya tidak bersih."
+        },
+        "zh": {
+          "L": "它们尸体的任何部分掉在什么东西上，那东西就不洁净；无论是炉子或灶，都要拆毁；它们是不洁净的，对你们要是不洁净的。",
+          "B": "它们的尸体有任何部分掉在什么东西上，那东西就变为不洁净。如果是炉子或灶台，就必须拆毁。这些东西是不洁净的，你们要继续把它们当作不洁净的。",
+          "R": "如果这些死了的动物有任何部分掉在什么东西上，那东西就会变为不洁净。如果是炉子或灶台，你们必须把它打碎。它是不洁净的，你们必须把它当作不洁净的。"
         }
       },
       "decisions": [
@@ -8126,6 +8695,11 @@
           "L": "Akan tetapi, mata air atau sumur, tempat air terkumpul, akan tetap tahir; tetapi orang yang menyentuh bangkainya akan najis.",
           "B": "Air di mata air atau di sumur penampungan tetap tahir. Tetapi siapa pun yang menyentuh bangkai itu menjadi najis.",
           "R": "Tetapi mata air atau sumur tempat air terkumpul tetap bersih. Namun, kalau kalian menyentuh bangkai binatang di dalamnya, kalian menjadi tidak bersih."
+        },
+        "zh": {
+          "L": "只是泉源或水池，就是聚水的地方，仍是洁净的；但摸了它们尸体的，就不洁净。",
+          "B": "泉水或水池里聚集的水，仍然是洁净的。但谁摸了里面的尸体，都会不洁净。",
+          "R": "但是泉水或聚水的井仍然是洁净的。不过，如果你们摸了里面死了的动物，你们就会不洁净。"
         }
       },
       "decisions": [
@@ -8296,6 +8870,11 @@
           "L": "Dan jika [sebagian] dari bangkainya jatuh ke atas benih apa pun untuk ditaburkan, benih itu tetap tahir.",
           "B": "Benih untuk ditanam tetap tahir walaupun sebagian bangkai jatuh ke atasnya.",
           "R": "Benih untuk ditanam tetap bersih, walaupun sebagian bangkai binatang jatuh ke atasnya."
+        },
+        "zh": {
+          "L": "若它们尸体的任何部分掉在要播种的种子上，那种子仍是洁净的。",
+          "B": "要种的种子，即使有一部分尸体掉在上面，仍然是洁净的。",
+          "R": "要种的种子，即使有一部分死了的动物掉在上面，也仍然是洁净的。"
         }
       },
       "decisions": [
@@ -8413,6 +8992,11 @@
           "L": "Tetapi jika air dituangkan ke atas benih itu dan [sebagian] dari bangkainya jatuh ke atasnya, najislah itu bagi kalian.",
           "B": "Tetapi jika benih itu sudah direndam dalam air lalu sebagian bangkai jatuh ke atasnya, kalian harus menganggapnya najis.",
           "R": "Tetapi kalau benih itu basah ketika sebagian bangkai binatang jatuh ke atasnya, benih itu tidak bersih bagi kalian."
+        },
+        "zh": {
+          "L": "但若种子上浇了水，它们尸体的任何部分又掉在上面，这种子对你们就是不洁净的。",
+          "B": "但如果种子已经用水泡过，又有一部分尸体掉在上面，你们就要把它当作不洁净的。",
+          "R": "但是如果种子是湿的，又有一部分死了的动物掉在上面，这种子对你们就是不洁净的。"
         }
       },
       "decisions": [
@@ -8534,6 +9118,11 @@
           "L": "Dan jika salah satu dari binatang yang [boleh] kalian makan mati, orang yang menyentuh bangkainya akan najis sampai petang.",
           "B": "Jika seekor binatang dari jenis yang boleh kalian makan mati dengan sendirinya, siapa pun yang menyentuh bangkainya najis sampai petang.",
           "R": "Kadang-kadang binatang yang boleh kalian makan mati dengan sendirinya. Kalau kalian menyentuh bangkainya, kalian tidak bersih sampai petang."
+        },
+        "zh": {
+          "L": "你们可以作食物的牲畜若死了，摸它尸体的人就不洁净到傍晚。",
+          "B": "你们可以吃的那类牲畜如果自己死了，谁摸了它的尸体，都会不洁净到傍晚。",
+          "R": "有时你们可以吃的动物会自己死掉。如果你们摸了它的尸体，你们就会不洁净，直到傍晚。"
         }
       },
       "decisions": [
@@ -8698,6 +9287,11 @@
           "L": "Dan orang yang memakan sebagian dari bangkainya haruslah mencuci pakaiannya, dan ia akan najis sampai petang; dan orang yang mengangkat bangkainya haruslah mencuci pakaiannya, dan ia akan najis sampai petang.",
           "B": "Orang yang memakan sebagian bangkainya harus mencuci pakaiannya, dan ia najis sampai petang. Begitu juga orang yang mengangkat bangkainya: ia harus mencuci pakaiannya dan najis sampai petang.",
           "R": "Kalau kalian memakan sebagian dagingnya, kalian harus mencuci pakaian. Kalian tidak bersih sampai petang. Kalau kalian mengangkat bangkainya, kalian juga harus mencuci pakaian. Kalian tidak bersih sampai petang."
+        },
+        "zh": {
+          "L": "吃了它尸体的人要洗他的衣服，并且不洁净到傍晚；搬它尸体的人也要洗他的衣服，并且不洁净到傍晚。",
+          "B": "谁吃了这尸体的任何部分，都要洗自己的衣服，并且不洁净到傍晚。搬这尸体的人也是这样：他们要洗自己的衣服，并且不洁净到傍晚。",
+          "R": "如果你们吃了它的一些肉，就必须洗自己的衣服。你们会不洁净，直到傍晚。如果你们搬了它的尸体，也必须洗自己的衣服。你们会不洁净，直到傍晚。"
         }
       },
       "decisions": [
@@ -8810,6 +9404,11 @@
           "L": "Dan setiap binatang merayap yang berkeriapan di bumi [adalah] menjijikkan; janganlah dimakan.",
           "B": "Semua binatang kecil yang berkeriapan di tanah menjijikkan dan tidak boleh dimakan.",
           "R": "Jangan makan binatang kecil apa pun yang berkeriapan di tanah. Binatang itu menjijikkan."
+        },
+        "zh": {
+          "L": "凡在地上成群滋生的小动物都是可憎的，不可吃。",
+          "B": "一切在地上成群出没的小动物都是可憎的，不可吃。",
+          "R": "不要吃任何在地上成群出没的小动物。它们是令人厌恶的。"
         }
       },
       "decisions": [
@@ -8938,6 +9537,11 @@
           "L": "Segala yang berjalan dengan perutnya, dan segala yang berjalan dengan empat [kaki], sampai segala yang berkaki banyak, dari segala binatang merayap yang berkeriapan di bumi, janganlah kalian memakannya, sebab semuanya itu menjijikkan.",
           "B": "Tidak satu pun binatang yang berkeriapan di tanah boleh dimakan, entah yang menjalar dengan perutnya, entah yang berkaki empat, entah yang berkaki sangat banyak. Semuanya menjijikkan.",
           "R": "Itu termasuk binatang yang menjalar dengan perutnya, binatang berkaki empat, dan binatang berkaki banyak. Jangan memakannya. Binatang-binatang itu menjijikkan."
+        },
+        "zh": {
+          "L": "凡用肚子行走的，凡用四足行走的，以及凡有许多脚的，就是一切在地上成群滋生的小动物，你们都不可吃，因为它们是可憎的。",
+          "B": "在地上成群出没的小动物，无论是用肚子爬行的、用四条腿走的，还是有许多脚的，你们都不可吃。它们是可憎的。",
+          "R": "这包括用肚子滑行的动物、有四条腿的动物和有许多条腿的动物。不要吃它们。它们是令人厌恶的。"
         }
       },
       "decisions": [
@@ -9092,6 +9696,11 @@
           "L": "Janganlah kalian menjadikan diri kalian menjijikkan oleh binatang merayap apa pun yang berkeriapan, dan janganlah kalian menajiskan diri oleh binatang-binatang itu, sehingga kalian menjadi najis olehnya.",
           "B": "Jangan menjadikan diri kalian menjijikkan oleh binatang berkeriapan apa pun. Jangan menajiskan diri kalian dengan binatang-binatang itu, sehingga kalian menjadi najis karenanya.",
           "R": "Jangan membuat diri kalian menjijikkan dengan memakan binatang yang berkeriapan itu. Jangan biarkan binatang-binatang itu membuat kalian tidak bersih."
+        },
+        "zh": {
+          "L": "你们不可因任何成群滋生的小动物使自己成为可憎的，也不可因它们使自己不洁净，以致你们因它们而不洁净。",
+          "B": "你们不可因任何成群出没的小动物使自己成为可憎的。不可因它们使自己不洁净，以致你们因它们变为不洁净。",
+          "R": "不要吃这些成群出没的小动物，使自己变得令人厌恶。不要让它们使你们不洁净。"
         }
       },
       "decisions": [
@@ -9254,6 +9863,11 @@
           "L": "Sebab {{deity_pronoun:akulah|Akulah}} {{divine_name:TUHAN|Yahweh}}, Allah kalian, dan haruslah kalian menguduskan diri, dan kalian akan menjadi kudus, sebab {{deity_pronoun:aku|Aku}} ini kudus. Dan janganlah kalian menajiskan diri oleh binatang merayap apa pun yang merayap di bumi.",
           "B": "Sebab {{deity_pronoun:akulah|Akulah}} {{divine_name:TUHAN|Yahweh}}, Allah kalian. Karena itu kuduskanlah diri kalian. Kalian harus kudus, sebab {{deity_pronoun:aku|Aku}} kudus. Jangan biarkan binatang apa pun yang merayap di tanah menajiskan kalian.",
           "R": "Aku ini {{divine_name:TUHAN|Yahweh}}, Allah kalian. Kuduskanlah diri kalian. Kalian harus kudus, sebab {{deity_pronoun:aku|Aku}} kudus. Jangan biarkan binatang apa pun yang merayap di tanah membuat kalian tidak bersih."
+        },
+        "zh": {
+          "L": "因为我是{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}，所以你们要使自己成圣；你们将是圣洁的，因为我圣洁。你们不可因任何在地上爬行的成群滋生的小动物使自己不洁净。",
+          "B": "因为我是{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。所以你们要使自己分别为圣。你们必须圣洁，因为我是圣洁的。不可让任何在地上爬行的小动物使你们不洁净。",
+          "R": "我是{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。你们要把自己分别出来，成为圣洁。你们必须圣洁，因为我是圣洁的。不要让任何在地上爬行的动物使你们不洁净。"
         }
       },
       "decisions": [
@@ -9546,6 +10160,69 @@
           "reason": "The recurring formula of the style guide (section 12a), with \"kalian\" for the people. \"be holy, for I am holy\" is worded so that the familiar sentence of 1 Peter 1:16 is said in Open Word Bible's own Indonesian (m1, m2); \"menguduskan diri\" for consecrate yourselves (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030110440041"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's alternative. The English has no setting here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110440062",
+            "o030110440071",
+            "o030110440081",
+            "o030110440091",
+            "o030110440101"
+          ],
+          "choice": "\"你们将是圣洁的，因为我圣洁\" (L); \"你们必须圣洁，因为我是圣洁的\" (B, R)",
+          "alternatives": [],
+          "reason": "1 Peter 1:16 quotes this line, and the Hebrew says the same: the wording of 1 Peter 1:16 is kept at each level (also verse 45).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110440052"
+          ],
+          "choice": "\"使自己成圣\" (L); \"使自己分别为圣\" (B); \"把自己分别出来，成为圣洁\" (R)",
+          "alternatives": [],
+          "reason": "The forms for \"consecrate\" of chapter 8 and Exodus 29.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9650,6 +10327,11 @@
           "L": "Sebab {{deity_pronoun:akulah|Akulah}} {{divine_name:TUHAN|Yahweh}} yang telah membawa kalian keluar dari tanah Mesir untuk menjadi Allah kalian; dan kalian akan menjadi kudus, sebab {{deity_pronoun:aku|Aku}} ini kudus.",
           "B": "Sebab {{deity_pronoun:akulah|Akulah}} {{divine_name:TUHAN|Yahweh}}, yang telah membawa kalian keluar dari tanah Mesir supaya {{deity_pronoun:aku|Aku}} menjadi Allah kalian. Kalian harus kudus, sebab {{deity_pronoun:aku|Aku}} kudus.",
           "R": "Aku ini {{divine_name:TUHAN|Yahweh}}. Aku sudah membawa kalian keluar dari Mesir supaya {{deity_pronoun:aku|Aku}} menjadi Allah kalian. Kalian harus kudus, sebab {{deity_pronoun:aku|Aku}} kudus."
+        },
+        "zh": {
+          "L": "因为我是把你们从埃及地领上来、要作你们{{god_term:神|上帝}}的{{divine_name:上主|雅威}}；你们将是圣洁的，因为我圣洁。",
+          "B": "因为我是{{divine_name:上主|雅威}}，我把你们从埃及地领上来，是要作你们的{{god_term:神|上帝}}。你们必须圣洁，因为我是圣洁的。",
+          "R": "我是{{divine_name:上主|雅威}}。我把你们从埃及领上来，为的是要作你们的{{god_term:神|上帝}}。你们必须圣洁，因为我是圣洁的。"
         }
       },
       "decisions": [
@@ -9792,6 +10474,11 @@
           "L": "Inilah hukum tentang binatang dan burung dan setiap makhluk hidup yang bergerak di dalam air dan tentang setiap makhluk yang berkeriapan di bumi,",
           "B": "Itulah petunjuk-petunjuk tentang binatang darat, burung, setiap makhluk hidup yang bergerak di dalam air, dan setiap makhluk yang berkeriapan di tanah,",
           "R": "Itulah aturan-aturan tentang binatang darat, burung, binatang air, dan binatang kecil yang berkeriapan di tanah."
+        },
+        "zh": {
+          "L": "这是关于牲畜、飞鸟、在水中游动的一切活物和在地上成群滋生的一切小动物的律法，",
+          "B": "以上是关于陆地动物、飞鸟、在水中游动的一切活物和在地上成群出没的一切小动物的条例，",
+          "R": "这些是关于陆地动物、飞鸟、水中动物和在地上成群出没的小动物的规定。"
         }
       },
       "decisions": [
@@ -9911,6 +10598,27 @@
           "reason": "Meaning decision m1: instruction on a subject; the book-wide form for torah of a case (6:2, 14:2), so the summary formulas of chapters 6-15 read alike.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030110460021"
+          ],
+          "choice": "\"律法\" (L); \"条例\" (B); \"规定\" (R)",
+          "alternatives": [
+            "教导"
+          ],
+          "reason": "Torah here is the instruction on one subject: Literal keeps the word \"law\", Balanced and Readable say \"instructions\" and \"rules\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10015,6 +10723,11 @@
           "L": "untuk membedakan antara yang najis dan yang tahir, dan antara makhluk hidup yang boleh dimakan dan makhluk hidup yang tidak boleh dimakan.'\"",
           "B": "supaya kalian dapat membedakan yang najis dari yang tahir, dan makhluk yang boleh dimakan dari yang tidak boleh dimakan.'\"",
           "R": "Aturan-aturan itu menunjukkan cara membedakan apa yang tidak bersih dari apa yang bersih. Aturan-aturan itu menunjukkan binatang mana yang boleh dimakan dan mana yang tidak.'\""
+        },
+        "zh": {
+          "L": "为要分别不洁净的和洁净的，可吃的活物和不可吃的活物。’”",
+          "B": "好让你们能分辨不洁净的和洁净的，可以吃的活物和不可以吃的活物。’”",
+          "R": "这些规定教你们怎样分辨什么是不洁净的、什么是洁净的。它们也告诉你们哪些动物可以吃，哪些不可以吃。’”"
         }
       },
       "decisions": [
