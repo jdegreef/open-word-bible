@@ -85,6 +85,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, firman-{{deity_pronoun:nya|Nya}},",
           "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa. Firman-{{deity_pronoun:nya|Nya}},",
           "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa,"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说话，说：",
+          "B": "{{divine_name:上主|雅威}}对摩西说：",
+          "R": "{{divine_name:上主|雅威}}对摩西说："
         }
       },
       "decisions": [
@@ -242,6 +247,11 @@
           "L": "\"Berbicaralah kepada bani Israel dan katakanlah kepada mereka, 'Apabila seseorang mengucapkan nazar khusus menurut penilaianmu atas orang bagi {{divine_name:TUHAN|Yahweh}},",
           "B": "\"Berbicaralah kepada orang Israel dan katakan kepada mereka, 'Apabila seseorang mengucapkan nazar khusus untuk memberikan kepada {{divine_name:TUHAN|Yahweh}} nilai seseorang,",
           "R": "\"Katakan kepada orang Israel, 'Seseorang mungkin bernazar secara khusus untuk menyerahkan seseorang kepada {{divine_name:TUHAN|Yahweh}}. Kalau begitu, dia harus membayar harga yang sudah ditetapkan untuk orang itu."
+        },
+        "zh": {
+          "L": "“你要对{{gender:以色列的子孙|以色列的儿子}}说话，对他们说：‘人若许了特别的愿，要按你的估价把人献给{{divine_name:上主|雅威}}，",
+          "B": "“你要对以色列人说，告诉他们：‘如果有人许了特别的愿，要把一个人的身价献给{{divine_name:上主|雅威}}，",
+          "R": "“你要告诉以色列人：‘有人可能会许下特别的愿，要把一个人献给{{divine_name:上主|雅威}}。那么，他就要为那人付规定的价钱。"
         }
       },
       "decisions": [
@@ -745,6 +755,47 @@
           "reason": "\"nazar\" is the glossary word for a vow. The valuation is kept as one word through the chapter at each level so the series of rates reads as a single system.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270020031",
+            "o030270020041",
+            "o030270020071"
+          ],
+          "choice": "\"{{gender:以色列的子孙|以色列的儿子}}\" (L); \"以色列人\" (B, R); \"人\" / \"有人\" with no gender span",
+          "alternatives": [],
+          "reason": "As the Chinese glossary and Exodus have it: Literal keeps \"sons of Israel\" in the gender setting; \"以色列人\" at Balanced and Readable, and \"人\" for \"a man\" meaning anyone (m3), already include men and women and take no span where the English has one. So through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270020101",
+            "o030270020112"
+          ],
+          "choice": "\"许愿\"; \"估价\" (L, B), \"身价\" (B), \"规定的价钱\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's word for a vow; the valuation is the fixed price of a person, paid in silver (m2). Literal keeps \"your valuation\"; Readable says \"the set price\", as the English Readable does, through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -853,6 +904,11 @@
           "L": "penilaianmu atas laki-laki dari umur dua puluh tahun sampai umur enam puluh tahun haruslah, penilaianmu haruslah lima puluh syikal perak, menurut syikal tempat kudus.",
           "B": "nilai seorang laki-laki yang berumur dua puluh sampai enam puluh tahun ialah lima puluh syikal perak, menurut ukuran syikal tempat kudus.",
           "R": "Untuk seorang laki-laki yang berumur dua puluh sampai enam puluh tahun, harganya lima puluh syikal perak, ditimbang dengan syikal resmi yang dipakai di Kemah Suci."
+        },
+        "zh": {
+          "L": "你的估价，男人从二十岁到六十岁——你的估价要是五十舍客勒银子，按圣所的舍客勒。",
+          "B": "二十岁到六十岁的男人，估价是{{units:约575克银子|五十舍客勒银子}}，按圣所的舍客勒来称。",
+          "R": "二十岁到六十岁的男人，规定的价钱是{{units:约575克银子|五十舍客勒银子}}，按圣所规定的标准重量来称。"
         }
       },
       "decisions": [
@@ -1157,6 +1213,42 @@
           "reason": "The English gives no units span for the shekel in this chapter, so neither does the Indonesian; Readable explains the sanctuary standard as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270030141",
+            "o030270030151"
+          ],
+          "choice": "{{units:约575克银子|五十舍客勒银子}}",
+          "alternatives": [],
+          "reason": "Units setting: the silver by weight in grams by default (a shekel about 11.5 grams, as the glossary), the shekel as the alternative, as in Exodus 30:13. The English keeps \"shekels\" here with no span; the Chinese follows its own guide, which gives the metric weight at Balanced and Readable. Literal keeps the shekels. So through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270030172"
+          ],
+          "choice": "\"按圣所规定的标准重量来称\" (R)",
+          "alternatives": [],
+          "reason": "The sanctuary shekel is the standard weight (m2), as Readable says in Exodus 30:13; Literal and Balanced keep \"圣所的舍客勒\". So in verse 25.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1249,6 +1341,11 @@
           "L": "Dan jika ia [seorang] perempuan, penilaianmu haruslah tiga puluh syikal.",
           "B": "Jika orang itu perempuan, nilainya tiga puluh syikal.",
           "R": "Untuk seorang perempuan, harganya tiga puluh syikal."
+        },
+        "zh": {
+          "L": "若是女人，你的估价要是三十舍客勒。",
+          "B": "如果是女人，估价是{{units:约345克银子|三十舍客勒}}。",
+          "R": "女人的价钱是{{units:约345克银子|三十舍客勒}}。"
         }
       },
       "decisions": [
@@ -1390,6 +1487,11 @@
           "L": "Dan jika [orang itu] berumur lima tahun sampai dua puluh tahun, penilaianmu atas laki-laki haruslah dua puluh syikal, dan atas perempuan sepuluh syikal.",
           "B": "Untuk orang yang berumur lima sampai dua puluh tahun, nilainya dua puluh syikal bagi laki-laki dan sepuluh syikal bagi perempuan.",
           "R": "Untuk anak laki-laki atau perempuan yang berumur lima sampai dua puluh tahun, harganya dua puluh syikal bagi anak laki-laki dan sepuluh syikal bagi anak perempuan."
+        },
+        "zh": {
+          "L": "若是从五岁到二十岁，你的估价，男的要是二十舍客勒，女的要是十舍客勒。",
+          "B": "五岁到二十岁的人，男的估价是{{units:约230克银子|二十舍客勒}}，女的是{{units:约115克银子|十舍客勒}}。",
+          "R": "五岁到二十岁的男孩和女孩，男孩的价钱是{{units:约230克银子|二十舍客勒}}，女孩是{{units:约115克银子|十舍客勒}}。"
         }
       },
       "decisions": [
@@ -1534,6 +1636,11 @@
           "L": "Dan jika [orang itu] berumur satu bulan sampai lima tahun, penilaianmu atas laki-laki haruslah lima syikal perak, dan atas perempuan penilaianmu [haruslah] tiga syikal perak.",
           "B": "Untuk anak yang berumur satu bulan sampai lima tahun, nilainya lima syikal perak bagi laki-laki dan tiga syikal perak bagi perempuan.",
           "R": "Untuk anak yang berumur satu bulan sampai lima tahun, harganya lima syikal perak bagi anak laki-laki dan tiga syikal perak bagi anak perempuan."
+        },
+        "zh": {
+          "L": "若是从一个月到五岁，你的估价，男的要是五舍客勒银子，女的你的估价要是三舍客勒银子。",
+          "B": "从一个月到五岁的孩子，男的估价是{{units:约57克银子|五舍客勒银子}}，女的是{{units:约35克银子|三舍客勒银子}}。",
+          "R": "从一个月到五岁的孩子，男孩的价钱是{{units:约57克银子|五舍客勒银子}}，女孩是{{units:约35克银子|三舍客勒银子}}。"
         }
       },
       "decisions": [
@@ -1655,6 +1762,11 @@
           "L": "Dan jika [orang itu] berumur enam puluh tahun ke atas, jika laki-laki, penilaianmu haruslah lima belas syikal, dan atas perempuan sepuluh syikal.",
           "B": "Untuk orang yang berumur enam puluh tahun atau lebih, nilainya lima belas syikal bagi laki-laki dan sepuluh syikal bagi perempuan.",
           "R": "Untuk orang yang berumur lebih dari enam puluh tahun, harganya lima belas syikal bagi laki-laki dan sepuluh syikal bagi perempuan."
+        },
+        "zh": {
+          "L": "若是从六十岁以上，若是男的，你的估价要是十五舍客勒，女的要是十舍客勒。",
+          "B": "六十岁以上的人，男的估价是{{units:约170克银子|十五舍客勒}}，女的是{{units:约115克银子|十舍客勒}}。",
+          "R": "六十岁以上的人，男人的价钱是{{units:约170克银子|十五舍客勒}}，女人是{{units:约115克银子|十舍客勒}}。"
         }
       },
       "decisions": [
@@ -1785,6 +1897,11 @@
           "L": "Tetapi jika ia terlalu miskin untuk penilaianmu, ia harus menghadapkan orang itu kepada imam, dan imam harus menilainya; sesuai dengan apa yang dapat dicapai tangan orang yang bernazar itu, imam harus menilainya.",
           "B": "Tetapi jika orang yang bernazar itu terlalu miskin untuk membayar nilai itu, orang yang dinazarkan harus dibawa kepada imam, dan imam akan menetapkan nilainya sesuai dengan kemampuan orang yang bernazar itu.",
           "R": "Tetapi mungkin seseorang terlalu miskin untuk membayar harga itu. Kalau begitu, orang yang dinazarkan itu harus dibawa kepada imam. Imam akan menentukan harga yang sanggup dibayar oleh orang yang bernazar itu."
+        },
+        "zh": {
+          "L": "他若贫穷，付不起你的估价，就要把那人带到祭司面前，祭司要为他估价；祭司要按许愿之人的手所能及的为他估价。",
+          "B": "但许愿的人如果太穷，付不起估价，就要把那人带到祭司面前，由祭司为他估价，按许愿的人能付得起的数目来定。",
+          "R": "但许愿的人可能太穷，付不起规定的价钱。那么，就要把他所许的那个人带到祭司那里。祭司要定一个许愿的人付得起的价钱。"
         }
       },
       "decisions": [
@@ -1938,6 +2055,11 @@
           "L": "Dan jika [itu adalah] binatang yang boleh dipersembahkan sebagai persembahan kepada {{divine_name:TUHAN|Yahweh}}, semua yang diberikannya dari binatang itu kepada {{divine_name:TUHAN|Yahweh}} haruslah kudus.",
           "B": "Jika nazar itu berupa binatang dari jenis yang boleh dipersembahkan kepada {{divine_name:TUHAN|Yahweh}}, setiap binatang seperti itu yang diberikan kepada {{divine_name:TUHAN|Yahweh}} menjadi kudus.",
           "R": "Seseorang mungkin bernazar untuk memberikan seekor binatang dari jenis yang boleh dipersembahkan kepada {{divine_name:TUHAN|Yahweh}}. Setiap binatang yang diberikan kepada {{divine_name:TUHAN|Yahweh}} dengan cara itu menjadi kudus."
+        },
+        "zh": {
+          "L": "若是人奉给{{divine_name:上主|雅威}}作供物的牲畜，凡人献给{{divine_name:上主|雅威}}的，都要成为圣。",
+          "B": "如果所许的是可以献给{{divine_name:上主|雅威}}作祭物的牲畜，凡这样献给{{divine_name:上主|雅威}}的牲畜，都要成为圣。",
+          "R": "有人可能会许愿献上一头可以献给{{divine_name:上主|雅威}}的牲畜。这样献给{{divine_name:上主|雅威}}的牲畜，都成为圣的。"
         }
       },
       "decisions": [
@@ -2083,6 +2205,11 @@
           "L": "Janganlah ia menggantinya dan janganlah ia menukarnya, yang baik dengan yang buruk atau yang buruk dengan yang baik; dan jika ia memang menukar binatang dengan binatang, binatang itu dan penggantinya haruslah kudus.",
           "B": "Pemiliknya tidak boleh menukarnya atau menggantinya dengan binatang lain, yang baik dengan yang jelek atau yang jelek dengan yang baik. Jika ia tetap mengganti binatang itu dengan yang lain, kedua-duanya, binatang yang pertama dan penggantinya, menjadi kudus.",
           "R": "Pemiliknya tidak boleh menukarnya dengan binatang lain, yang lebih baik dengan yang lebih jelek atau yang lebih jelek dengan yang lebih baik. Kalau dia menukarnya juga, kedua binatang itu menjadi milik {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "他不可更换它，也不可调换它，不可以好换坏，或以坏换好；他若真的以牲畜换牲畜，这牲畜和它的替换物都要成为圣。",
+          "B": "牲畜的主人不可更换或替换它，不可以好的换坏的，或以坏的换好的。他若真的以一头牲畜换另一头，原来的和换上的都要成为圣。",
+          "R": "牲畜的主人不可用别的牲畜换它，不可用好的换坏的，也不可用坏的换好的。如果他换了，两头牲畜就都归{{divine_name:上主|雅威}}。"
         }
       },
       "decisions": [
@@ -2152,6 +2279,23 @@
             "교환하다"
           ],
           "reason": "Korean keeps two verbs so that no kind of substitute is left open, as the meaning decision says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270100201"
+          ],
+          "choice": "\"都归{{divine_name:上主|雅威}}\" (R)",
+          "alternatives": [],
+          "reason": "Readable explains \"holy\" here as belonging to the LORD (m2 of verse 9), as the English Readable does; so in verse 33.",
           "uncertain": false,
           "footnote": false
         }
@@ -2258,6 +2402,11 @@
           "L": "Dan jika [itu adalah] binatang najis apa pun, yang tidak boleh dipersembahkan sebagai persembahan kepada {{divine_name:TUHAN|Yahweh}}, ia harus menghadapkan binatang itu kepada imam,",
           "B": "Jika nazar itu berupa binatang najis, dari jenis yang tidak boleh dipersembahkan kepada {{divine_name:TUHAN|Yahweh}}, binatang itu harus dibawa kepada imam,",
           "R": "Seseorang mungkin bernazar untuk memberikan binatang yang najis, yang tidak boleh dipersembahkan kepada {{divine_name:TUHAN|Yahweh}}. Kalau begitu, binatang itu harus dibawa kepada imam."
+        },
+        "zh": {
+          "L": "若是任何不洁净的牲畜，就是人不奉给{{divine_name:上主|雅威}}作供物的，他就要把这牲畜带到祭司面前，",
+          "B": "如果所许的是不洁净的牲畜，就是不可以献给{{divine_name:上主|雅威}}作祭物的那一类，就要把这牲畜带到祭司面前，",
+          "R": "有人可能会许愿献上一头不洁净的牲畜，就是不可以献给{{divine_name:上主|雅威}}的那一类。那么，他就要把这牲畜带到祭司那里。"
         }
       },
       "decisions": [
@@ -2293,6 +2442,25 @@
             "더러운"
           ],
           "reason": "The term sheet's word for ritual uncleanness; \"더러운\" would suggest dirt.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270110041"
+          ],
+          "choice": "\"不洁净的\"",
+          "alternatives": [],
+          "reason": "The glossary's word for what is ritually unclean, here an animal not allowed on the altar (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -2395,6 +2563,11 @@
           "L": "dan imam harus menilainya, baik atau buruk; sesuai dengan penilaianmu, hai imam, demikianlah jadinya.",
           "B": "dan imam akan menetapkan nilainya menurut baik atau jeleknya binatang itu. Nilai yang ditetapkannya itulah yang berlaku.",
           "R": "Imam akan menentukan berapa harganya, apakah binatang itu baik atau jelek. Harga yang ditentukan imam tidak dapat diubah."
+        },
+        "zh": {
+          "L": "祭司要为它估价，无论是好是坏；照你的估价，祭司啊，就要怎样定。",
+          "B": "祭司要按牲畜的好坏为它估价，祭司估定的价值就算数。",
+          "R": "祭司要定出它值多少钱，不管它是好牲畜还是坏牲畜。祭司定的价钱就是最后的价钱。"
         }
       },
       "decisions": [
@@ -2583,6 +2756,11 @@
           "L": "Dan jika ia memang menebusnya, ia harus menambahkan seperlimanya pada penilaianmu.",
           "B": "Jika pemiliknya hendak menebusnya, ia harus membayar nilainya ditambah seperlima.",
           "R": "Kalau pemiliknya ingin membeli kembali binatang itu, dia harus membayar harganya ditambah seperlima."
+        },
+        "zh": {
+          "L": "他若真的要赎回它，就要在你的估价上加五分之一。",
+          "B": "如果主人要赎回它，就必须照估价再加五分之一。",
+          "R": "如果主人想把这牲畜买回来，就必须付规定的价钱，再加五分之一。"
         }
       },
       "decisions": [
@@ -2830,6 +3008,25 @@
           "reason": "Keeps one word for buying back through chapters 25 and 27.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270130021"
+          ],
+          "choice": "\"赎回\" (L, B); \"买回来\" (R)",
+          "alternatives": [],
+          "reason": "To redeem is to buy back what was given (m1), as in chapter 25; Readable says \"buy back\" through the chapter, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2941,6 +3138,11 @@
           "L": "Dan apabila seseorang menguduskan rumahnya [sebagai] sesuatu yang kudus bagi {{divine_name:TUHAN|Yahweh}}, imam harus menilainya, baik atau buruk; seperti imam menilainya, demikianlah ketetapannya.",
           "B": "Apabila seseorang menguduskan rumahnya sebagai persembahan kudus bagi {{divine_name:TUHAN|Yahweh}}, imam harus menilai apakah rumah itu dalam keadaan baik atau buruk dan menetapkan nilainya. Nilai yang ditetapkan imam itulah yang berlaku.",
           "R": "Seseorang mungkin mengkhususkan rumahnya sebagai persembahan kudus bagi {{divine_name:TUHAN|Yahweh}}. Kalau begitu, imam akan menentukan berapa harganya, apakah rumah itu baik atau jelek. Harga yang ditentukannya tidak akan berubah."
+        },
+        "zh": {
+          "L": "人若把自己的房屋分别为圣归给{{divine_name:上主|雅威}}，祭司要为它估价，无论是好是坏；祭司怎样估定，就要怎样算数。",
+          "B": "如果有人把房屋分别为圣，归给{{divine_name:上主|雅威}}，祭司要看它是好是坏，为它估价。祭司估定的价值就算数。",
+          "R": "有人可能会把自己的房子分别出来，作为圣的归给{{divine_name:上主|雅威}}。那么，祭司要定出它值多少钱，不管它是好房子还是坏房子。他定的价钱不会改变。"
         }
       },
       "decisions": [
@@ -3030,6 +3232,26 @@
           "choice": "consecrate (hiqdish) \"聖別する\" (L, B), \"…のために取り分ける\" (R), as Exodus 13:2",
           "alternatives": [],
           "reason": "The Exodus forms for setting apart as holy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270140031",
+            "o030270140031"
+          ],
+          "choice": "\"分别为圣\"",
+          "alternatives": [],
+          "reason": "To consecrate is to give over to the LORD (m1); \"分别为圣\" is the plain Chinese for setting apart as holy, through the chapter. The English gender spans have no Chinese counterpart (\"人\", \"有人\").",
           "uncertain": false,
           "footnote": false
         }
@@ -3134,6 +3356,11 @@
           "L": "Dan jika orang yang menguduskannya hendak menebus rumahnya, ia harus menambahkan seperlima dari uang penilaianmu padanya, dan rumah itu menjadi miliknya.",
           "B": "Jika orang yang menguduskan rumah itu hendak menebusnya, ia harus membayar nilainya dalam perak ditambah seperlima, dan rumah itu menjadi miliknya lagi.",
           "R": "Kalau pemiliknya ingin membeli kembali rumah itu, dia harus membayar harganya ditambah seperlima. Sesudah itu rumah itu menjadi miliknya lagi."
+        },
+        "zh": {
+          "L": "那分别为圣的人若要赎回他的房屋，就要在你估价的银子上加五分之一，房屋就归他。",
+          "B": "那分别房屋为圣的人如果要赎回它，就必须照估价付银子，再加五分之一，房屋就重新归他。",
+          "R": "如果房子的主人想把它买回来，就必须付规定的价钱，再加五分之一。这样，房子就又是他的了。"
         }
       },
       "decisions": [
@@ -3277,6 +3504,11 @@
           "L": "Dan jika seseorang menguduskan bagi {{divine_name:TUHAN|Yahweh}} sebagian dari ladang miliknya, penilaianmu haruslah sesuai dengan benihnya: benih satu homer jelai senilai lima puluh syikal perak.",
           "B": "Jika seseorang menguduskan bagi {{divine_name:TUHAN|Yahweh}} sebagian ladang yang menjadi tanah milik keluarganya, nilainya ditentukan menurut benih yang diperlukan untuk menaburinya: lima puluh syikal perak untuk {{units:sekitar dua ratus liter|satu homer}} benih jelai.",
           "R": "Seseorang mungkin memberikan sebagian tanah milik keluarganya kepada {{divine_name:TUHAN|Yahweh}}. Kalau begitu, harganya ditentukan menurut banyaknya benih yang diperlukan untuk menanaminya. Harganya lima puluh syikal perak untuk setiap {{units:dua ratus liter|homer}} benih jelai."
+        },
+        "zh": {
+          "L": "人若把他产业中的一块田地分别为圣归给{{divine_name:上主|雅威}}，你的估价要按它的种子：一贺梅珥大麦种子，要五十舍客勒银子。",
+          "B": "如果有人把家族产业中的一块田地分别为圣归给{{divine_name:上主|雅威}}，它的估价要按撒种所需的种子来计算：{{units:约220升|一贺梅珥}}大麦种子，估价{{units:约575克银子|五十舍客勒银子}}。",
+          "R": "有人可能会把家族的一部分田地献给{{divine_name:上主|雅威}}。那么，这块地的价钱要看种它需要多少种子。每{{units:约220升|一贺梅珥}}大麦种子，价钱是{{units:约575克银子|五十舍客勒银子}}。"
         }
       },
       "decisions": [
@@ -3565,6 +3797,42 @@
           "reason": "Metric by default with the original measure as the alternative (style guide section 8), where the English gives US bushels. A homer is about 220 litres.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030270160121"
+          ],
+          "choice": "{{units:约220升|一贺梅珥}}",
+          "alternatives": [],
+          "reason": "Units setting: the homer in litres by default, from the glossary's value, where the English gives bushels; the homer \"贺梅珥\" as the alternative. Literal keeps \"一贺梅珥\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270160031"
+          ],
+          "choice": "\"家族产业\" (B); \"家族的田地\" (R)",
+          "alternatives": [],
+          "reason": "\"His possession\" is inherited family land (m1); Balanced and Readable say so, as the English does; so in verses 22 and 28.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3659,6 +3927,11 @@
           "L": "Jika ia menguduskan ladangnya sejak tahun Yobel, ladang itu tetap menurut penilaianmu.",
           "B": "Jika ladang itu dikuduskan sejak tahun Yobel, nilainya tetap penuh.",
           "R": "Kalau ladang itu diberikan pada tahun Yobel, harganya tetap penuh."
+        },
+        "zh": {
+          "L": "他若从禧年起把田地分别为圣，就要照你的估价算数。",
+          "B": "如果他从禧年起把田地分别为圣，就按全部估价算数。",
+          "R": "如果他在禧年把田地献上，价钱就不减少，按全价计算。"
         }
       },
       "decisions": [
@@ -3756,6 +4029,25 @@
             "\"mwaka wa uhuru\""
           ],
           "reason": "The fiftieth year of release (25:10-13). Swahili keeps the name of the year, as the other languages do, and the chapter explains it where the English Readable does (verse 21).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270170032"
+          ],
+          "choice": "\"禧年\"",
+          "alternatives": [],
+          "reason": "The glossary's word for the Jubilee at every level, as in chapter 25; the English \"Year of Jubilee\" is \"禧年\" too.",
           "uncertain": false,
           "footnote": false
         }
@@ -3872,6 +4164,11 @@
           "L": "Tetapi jika ia menguduskan ladangnya sesudah tahun Yobel, imam harus menghitung uangnya baginya menurut tahun-tahun yang tersisa sampai tahun Yobel, dan itu harus dikurangkan dari penilaianmu.",
           "B": "Tetapi jika ladang itu dikuduskan sesudah tahun Yobel, imam akan menghitung harganya menurut tahun-tahun yang tersisa sampai tahun Yobel berikutnya, dan nilainya dikurangi sesuai dengan itu.",
           "R": "Tetapi mungkin ladang itu diberikan beberapa tahun sesudah tahun Yobel. Kalau begitu, imam akan menghitung harganya dengan menghitung tahun-tahun yang tersisa sampai tahun Yobel berikutnya. Harganya akan lebih rendah."
+        },
+        "zh": {
+          "L": "他若在禧年以后把田地分别为圣，祭司就要按到禧年所剩的年数为他计算银子，并要从你的估价中扣除。",
+          "B": "但如果他在禧年以后把田地分别为圣，祭司就要按到下一个禧年所剩的年数计算价钱，从估价中相应减去。",
+          "R": "但他可能在禧年过了几年以后才献上田地。那么，祭司要算一算到下一个禧年还剩几年，来定价钱。这样，价钱就会少一些。"
         }
       },
       "decisions": [
@@ -4014,6 +4311,11 @@
           "L": "Dan jika orang yang menguduskannya memang menebus ladang itu, ia harus menambahkan seperlima dari uang penilaianmu padanya, dan ladang itu tetap menjadi miliknya.",
           "B": "Jika orang yang menguduskan ladang itu hendak menebusnya, ia harus membayar nilainya dalam perak ditambah seperlima, dan ladang itu tetap menjadi miliknya.",
           "R": "Kalau pemiliknya ingin membeli kembali ladang itu, dia harus membayar harganya ditambah seperlima. Sesudah itu ladang itu menjadi miliknya lagi."
+        },
+        "zh": {
+          "L": "那分别田地为圣的人若真的要赎回它，就要在你估价的银子上加五分之一，田地就确定归他。",
+          "B": "那分别田地为圣的人如果要赎回它，就必须照估价付银子，再加五分之一，田地仍归他所有。",
+          "R": "如果主人想把田地买回来，就必须付这价钱，再加五分之一。这样，田地就又是他的了。"
         }
       },
       "decisions": [
@@ -4147,6 +4449,11 @@
           "L": "Tetapi jika ia tidak menebus ladang itu, atau jika ia telah menjual ladang itu kepada orang lain, ladang itu tidak dapat ditebus lagi.",
           "B": "Tetapi jika ia tidak menebus ladang itu, atau jika ladang itu telah dijual kepada orang lain, ladang itu tidak dapat ditebus lagi untuk selamanya.",
           "R": "Tetapi kalau pemiliknya tidak membeli kembali ladang itu, atau kalau ladang itu sudah dijual kepada orang lain, ladang itu tidak dapat dibeli kembali lagi."
+        },
+        "zh": {
+          "L": "他若不赎回那田地，或是已把田地卖给别人，就再也不能赎回。",
+          "B": "但如果他不赎回那田地，或是田地已经卖给了别人，就再也不能赎回。",
+          "R": "但如果主人不把田地买回来，或是田地已经卖给了别人，就再也不能买回来了。"
         }
       },
       "decisions": [
@@ -4307,6 +4614,11 @@
           "L": "Dan ladang itu, ketika dibebaskan pada tahun Yobel, haruslah kudus bagi {{divine_name:TUHAN|Yahweh}}, seperti ladang yang dikhususkan; ladang itu akan menjadi milik imam.",
           "B": "Ketika ladang itu dibebaskan pada tahun Yobel, ladang itu menjadi kudus bagi {{divine_name:TUHAN|Yahweh}}, seperti ladang yang dikhususkan sepenuhnya bagi-{{deity_pronoun:nya|Nya}}. Ladang itu menjadi tanah milik imam.",
           "R": "Pada tahun Yobel, ketika tanah dikembalikan kepada pemiliknya, ladang ini menjadi kudus dan menjadi milik {{divine_name:TUHAN|Yahweh}}. Ladang itu sama seperti tanah yang diberikan kepada {{divine_name:TUHAN|Yahweh}} untuk selamanya. Ladang itu akan menjadi milik imam."
+        },
+        "zh": {
+          "L": "到了禧年，这田地出来的时候，要归{{divine_name:上主|雅威}}为圣，像完全奉献的田地一样，要作祭司的产业。",
+          "B": "到了禧年，这田地归还的时候，要成为归{{divine_name:上主|雅威}}的圣地，好像完全奉献给{{deity_pronoun:他|祂}}的田地一样。它要归祭司所有，作他自己的产业。",
+          "R": "到了禧年，土地都要还给原来的主人。那时，这块田地却要成为圣的，归给{{divine_name:上主|雅威}}，好像永远献给{{divine_name:上主|雅威}}的田地一样。它要归给祭司。"
         }
       },
       "decisions": [
@@ -4631,6 +4943,27 @@
           "reason": "The word means something given over wholly and for good, which can never be bought back.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270210082"
+          ],
+          "choice": "\"完全奉献的田地\" (L); \"完全奉献给{{deity_pronoun:他|祂}}的田地\" (B); \"永远献给{{divine_name:上主|雅威}}的田地\" (R)",
+          "alternatives": [
+            "永献的地"
+          ],
+          "reason": "The devoted thing (herem) is given over to the LORD wholly and for good (m2); \"完全奉献\" says that at Literal and Balanced, with the deity_pronoun span where the English Balanced has \"Him\", and Readable adds \"forever\". The Union Version's \"永献\" is not used. So in verses 28-29.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4728,6 +5061,11 @@
           "L": "Dan jika ia menguduskan bagi {{divine_name:TUHAN|Yahweh}} ladang yang dibelinya, yang bukan bagian dari ladang miliknya,",
           "B": "Jika seseorang menguduskan bagi {{divine_name:TUHAN|Yahweh}} ladang yang dibelinya, yang bukan bagian dari tanah milik keluarganya,",
           "R": "Seseorang mungkin memberikan kepada {{divine_name:TUHAN|Yahweh}} ladang yang dibelinya, yang bukan bagian dari tanah milik keluarganya."
+        },
+        "zh": {
+          "L": "他若把所买的田地，不是他产业中的田地，分别为圣归给{{divine_name:上主|雅威}}，",
+          "B": "如果有人把自己买来的田地，而不是家族产业中的田地，分别为圣归给{{divine_name:上主|雅威}}，",
+          "R": "有人可能会把自己买来的田地献给{{divine_name:上主|雅威}}，而不是家族的田地。"
         }
       },
       "decisions": [
@@ -4855,6 +5193,11 @@
           "L": "imam harus menghitung baginya jumlah penilaianmu sampai tahun Yobel, dan ia harus memberikan nilai itu pada hari itu juga, [sebagai] sesuatu yang kudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "imam akan menghitung jumlah nilainya sampai tahun Yobel, dan orang itu harus membayar nilai itu pada hari itu juga sebagai persembahan kudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "R": "Imam akan menghitung harganya sampai tahun Yobel. Orang itu harus membayar harga itu pada hari itu juga. Uang itu menjadi persembahan kudus bagi {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "祭司就要为他计算你估价的数目，直到禧年；他要在那日把你的估价交上，作为归{{divine_name:上主|雅威}}为圣的。",
+          "B": "祭司就要计算到禧年为止的估价，那人要在当天交上估价的银子，作为归给{{divine_name:上主|雅威}}的圣物。",
+          "R": "祭司要算出到禧年为止它值多少钱。那人必须在当天付这价钱。这钱是献给{{divine_name:上主|雅威}}的圣礼物。"
         }
       },
       "decisions": [
@@ -4976,6 +5319,11 @@
           "L": "Pada tahun Yobel ladang itu harus kembali kepada orang yang darinya ladang itu dibeli, kepada orang yang empunya tanah milik itu.",
           "B": "Pada tahun Yobel ladang itu kembali kepada orang yang menjualnya, yaitu orang yang memiliki tanah itu sebagai milik keluarganya.",
           "R": "Pada tahun Yobel ladang itu akan dikembalikan kepada orang yang menjualnya, yaitu keluarga pemilik tanah itu."
+        },
+        "zh": {
+          "L": "到了禧年，那田地要归回卖给他的人，就是那地原本的业主。",
+          "B": "到了禧年，那田地要归还给原来卖地的人，就是以这地为家族产业的人。",
+          "R": "到了禧年，那田地要还给卖地的人，因为那块地属于他的家族。"
         }
       },
       "decisions": [
@@ -5090,6 +5438,11 @@
           "L": "Dan setiap penilaianmu haruslah menurut syikal tempat kudus; dua puluh gera satu syikal.",
           "B": "Setiap penilaian harus memakai syikal tempat kudus, yaitu dua puluh gera.",
           "R": "Setiap harga harus dihitung dengan syikal resmi yang dipakai di Kemah Suci. Syikal itu beratnya dua puluh gera."
+        },
+        "zh": {
+          "L": "你一切的估价都要按圣所的舍客勒；二十季拉是一舍客勒。",
+          "B": "一切估价都要按圣所的舍客勒计算，一舍客勒是二十季拉。",
+          "R": "一切价钱都要按圣所规定的舍客勒来计算。这舍客勒重二十季拉。"
         }
       },
       "decisions": [
@@ -5124,6 +5477,25 @@
           "choice": "\"гера\" (plural \"гер\") at every level, with no conversion, as the English has none.",
           "alternatives": [],
           "reason": "A small weight named only to define the shekel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270250011"
+          ],
+          "choice": "\"舍客勒\", \"季拉\" with no units span",
+          "alternatives": [],
+          "reason": "Here the shekel is defined, not used to give an amount, so Balanced and Readable keep the units' names, as in Exodus 30:13; the glossary's words for shekel and gerah.",
           "uncertain": false,
           "footnote": false
         }
@@ -5228,6 +5600,11 @@
           "L": "Akan tetapi anak sulung di antara ternak, yang lahir sebagai yang sulung bagi {{divine_name:TUHAN|Yahweh}}, janganlah seseorang menguduskannya; baik lembu maupun domba, itu [milik] {{divine_name:TUHAN|Yahweh}}.",
           "B": "Tetapi tidak seorang pun boleh menguduskan anak sulung binatang, sebab anak sulung sudah menjadi milik {{divine_name:TUHAN|Yahweh}}. Baik dari lembu maupun dari kambing domba, binatang itu milik {{divine_name:TUHAN|Yahweh}}.",
           "R": "Tetapi tidak seorang pun boleh bernazar untuk memberikan kepada {{divine_name:TUHAN|Yahweh}} anak pertama yang lahir dari sapi atau domba. Anak binatang itu sudah menjadi milik {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "只是牲畜中头生的，就是归{{divine_name:上主|雅威}}为头生的——人不可把它分别为圣；无论是牛是羊，都是{{divine_name:上主|雅威}}的。",
+          "B": "但头生的牲畜，没有人可以把它分别为圣，因为头生的本来就属于{{divine_name:上主|雅威}}。无论是牛群中的还是羊群中的，都是{{divine_name:上主|雅威}}的。",
+          "R": "但没有人可以许愿把牛或羊头生的献给{{divine_name:上主|雅威}}，因为它本来就属于{{divine_name:上主|雅威}}。"
         }
       },
       "decisions": [
@@ -5319,6 +5696,25 @@
           "choice": "firstborn \"初子\" (L, B), \"最初に生まれた子\" (R), as Exodus 13",
           "alternatives": [],
           "reason": "The Exodus forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270260021"
+          ],
+          "choice": "\"头生的\"",
+          "alternatives": [],
+          "reason": "The glossary's word for the firstborn of animals, at every level.",
           "uncertain": false,
           "footnote": false
         }
@@ -5429,6 +5825,11 @@
           "L": "Dan jika [itu] dari ternak yang najis, ia boleh menebus[nya] menurut penilaianmu dan menambahkan seperlimanya padanya; dan jika tidak ditebus, binatang itu harus dijual menurut penilaianmu.",
           "B": "Jika itu binatang najis, pemiliknya boleh menebusnya menurut nilainya, ditambah seperlima. Jika tidak ditebus, binatang itu harus dijual menurut nilainya.",
           "R": "Kalau anak pertama yang lahir itu binatang najis, pemiliknya boleh membelinya kembali. Dia harus membayar harganya ditambah seperlima. Kalau dia tidak membelinya kembali, binatang itu harus dijual dengan harga yang sudah ditentukan."
+        },
+        "zh": {
+          "L": "若是不洁净的牲畜，他就要按你的估价赎回，另加五分之一；若不赎回，就要按你的估价卖掉。",
+          "B": "如果是不洁净的牲畜，主人可以照估价把它赎回，另加五分之一。如果不赎回，就要照估价把它卖掉。",
+          "R": "如果头生的牲畜是不洁净的，主人可以把它买回来。他必须付规定的价钱，再加五分之一。如果他不把它买回来，就要按规定的价钱把它卖掉。"
         }
       },
       "decisions": [
@@ -5653,6 +6054,11 @@
           "L": "Akan tetapi setiap barang yang dikhususkan yang dikhususkan seseorang bagi {{divine_name:TUHAN|Yahweh}} dari segala miliknya, dari manusia dan binatang dan dari ladang miliknya, tidak boleh dijual dan tidak boleh ditebus; setiap barang yang dikhususkan [adalah] mahakudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "Tetapi apa pun yang dikhususkan seseorang sepenuhnya bagi {{divine_name:TUHAN|Yahweh}} dari miliknya, baik manusia, binatang, maupun ladang tanah milik keluarganya, tidak boleh dijual dan tidak boleh ditebus. Segala yang dikhususkan seperti itu mahakudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "R": "Tetapi seseorang mungkin memberikan sesuatu kepada {{divine_name:TUHAN|Yahweh}} untuk dikhususkan sepenuhnya bagi-{{deity_pronoun:nya|Nya}}. Itu mungkin seorang manusia, seekor binatang, atau tanah milik keluarga. Itu tidak pernah boleh dijual atau dibeli kembali. Segala yang dikhususkan dengan cara itu sangat kudus bagi {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "只是人从他一切所有的，无论是人，是牲畜，或是他产业中的田地，完全奉献给{{divine_name:上主|雅威}}的，都不可卖，也不可赎回；凡完全奉献的都是归{{divine_name:上主|雅威}}为至圣的。",
+          "B": "但凡有人从自己所有的当中完全奉献给{{divine_name:上主|雅威}}的，无论是人，是牲畜，或是家族产业中的田地，都不可卖，也不可赎回。一切完全奉献的，都是归{{divine_name:上主|雅威}}为至圣的。",
+          "R": "但有人可能会把东西完全献给{{divine_name:上主|雅威}}，永远归给{{deity_pronoun:他|祂}}。献上的可能是人，是牲畜，或是家族的田地。这些东西永远不可卖，也不可买回来。所有这样献上的，对{{divine_name:上主|雅威}}来说都是最圣洁的。"
         }
       },
       "decisions": [
@@ -5829,6 +6235,11 @@
           "L": "Setiap [orang] yang dikhususkan, yang dikhususkan dari antara manusia, tidak boleh ditebus; ia pastilah dihukum mati.",
           "B": "Apabila seorang manusia telah dikhususkan untuk dibinasakan, ia tidak boleh ditebus; ia harus dihukum mati.",
           "R": "Kalau seseorang sudah dikhususkan untuk dibinasakan, tidak seorang pun dapat membayar untuk membebaskan orang itu. Orang itu harus dihukum mati."
+        },
+        "zh": {
+          "L": "凡从人中被完全奉献的，都不可赎回，必定要被处死。",
+          "B": "一个人若被判定要彻底毁灭，就不可为他付赎价，他必须被处死。",
+          "R": "如果有人被定为要彻底毁灭，谁也不可付钱救他。那人必须被处死。"
         }
       },
       "decisions": [
@@ -5960,6 +6371,24 @@
           "reason": "For a person the ban means devotion to destruction, as the English levels say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270290021"
+          ],
+          "choice": "\"被判定要彻底毁灭\" (B); \"被定为要彻底毁灭\" (R); \"被完全奉献的\" (L)",
+          "alternatives": [],
+          "reason": "This is the ban, a person placed under it by judgment (m1), as the English Balanced says; \"彻底毁灭\" is this translation's wording for herem as destruction (Exodus 22:19).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6061,6 +6490,11 @@
           "L": "Dan setiap persepuluhan dari tanah, dari benih tanah [dan] dari buah pohon, itu [milik] {{divine_name:TUHAN|Yahweh}}; [itu adalah] sesuatu yang kudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "Seluruh persepuluhan dari hasil tanah adalah milik {{divine_name:TUHAN|Yahweh}}, baik biji-bijian dari apa yang ditabur maupun buah dari pohon-pohon. Persepuluhan itu kudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "R": "Sepersepuluh dari semua hasil tanah adalah milik {{divine_name:TUHAN|Yahweh}}. Itu termasuk biji-bijian dari ladang dan buah dari pohon-pohon. Bagian itu kudus bagi {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "地上一切的十分之一，无论是地里的种子，是树上的果子，都是{{divine_name:上主|雅威}}的；是归{{divine_name:上主|雅威}}为圣的。",
+          "B": "地上一切出产的十分之一都属于{{divine_name:上主|雅威}}，无论是田里种的谷物，还是树上结的果子，都是归{{divine_name:上主|雅威}}为圣的。",
+          "R": "地上出产的一切东西，都要拿出十分之一归给{{divine_name:上主|雅威}}。这包括田里的谷物和树上的果子。这些都是归{{divine_name:上主|雅威}}的圣物。"
         }
       },
       "decisions": [
@@ -6298,6 +6732,25 @@
           "reason": "R states the amount plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030270300021"
+          ],
+          "choice": "\"十分之一\"",
+          "alternatives": [],
+          "reason": "The glossary's word for the tithe, a tenth part (m1), at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6393,6 +6846,11 @@
           "L": "Dan jika seseorang memang hendak menebus sebagian dari persepuluhannya, ia harus menambahkan seperlimanya padanya.",
           "B": "Jika seseorang hendak menebus sebagian dari persepuluhannya, ia harus menambahkan seperlima pada nilainya.",
           "R": "Kalau seseorang ingin membeli kembali sebagian dari persepuluhannya, dia harus membayar nilainya ditambah seperlima."
+        },
+        "zh": {
+          "L": "人若真的要赎回他十分之一中的一些，就要另加五分之一。",
+          "B": "如果有人要赎回自己所献的十分之一中的一部分，就必须照价再加五分之一。",
+          "R": "如果有人想把他所献的十分之一中的一部分买回来，就必须照价钱付，再加五分之一。"
         }
       },
       "decisions": [
@@ -6512,6 +6970,11 @@
           "L": "Dan setiap persepuluhan dari lembu sapi dan kambing domba, semua yang lewat di bawah tongkat, yang kesepuluh haruslah kudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "Mengenai lembu sapi dan kambing domba, dari semua binatang yang lewat di bawah tongkat ketika dihitung, setiap binatang yang kesepuluh menjadi kudus bagi {{divine_name:TUHAN|Yahweh}}.",
           "R": "Gembala menghitung sapi, domba dan kambing ketika binatang-binatang itu lewat di bawah tongkatnya. Setiap binatang yang kesepuluh menjadi milik {{divine_name:TUHAN|Yahweh}} sebagai persembahan kudus."
+        },
+        "zh": {
+          "L": "牛群羊群的一切十分之一，凡从杖下经过的，每第十只都要归{{divine_name:上主|雅威}}为圣。",
+          "B": "至于牛群和羊群，所有在数点时从杖下经过的牲畜，每第十只都要归{{divine_name:上主|雅威}}为圣。",
+          "R": "牧人数牛羊的时候，让它们从他的杖下走过。每数到第十只，那一只就要归给{{divine_name:上主|雅威}}，作为圣的。"
         }
       },
       "decisions": [
@@ -6670,6 +7133,11 @@
           "L": "Janganlah ia memeriksa [apakah itu] baik atau buruk, dan janganlah ia menukarnya; dan jika ia memang menukarnya, binatang itu dan penggantinya haruslah kudus; itu tidak boleh ditebus.'\"",
           "B": "Pemiliknya tidak boleh memilih-milih yang baik dari yang jelek, dan tidak boleh menukar yang satu dengan yang lain. Jika ia tetap menukarnya, binatang itu dan penggantinya kedua-duanya menjadi kudus, dan tidak ada yang boleh ditebus.'\"",
           "R": "Pemiliknya tidak boleh memeriksa apakah binatang itu baik atau jelek, dan tidak boleh menukarnya dengan binatang lain. Kalau dia menukarnya juga, kedua binatang itu menjadi milik {{divine_name:TUHAN|Yahweh}} sebagai persembahan kudus. Tidak satu pun dari keduanya boleh dibeli kembali.'\""
+        },
+        "zh": {
+          "L": "他不可察看是好是坏，也不可调换；他若真的调换，这牲畜和它的替换物都要成为圣，不可赎回。’”",
+          "B": "主人不可挑选好坏，也不可调换。如果他调换了，原来的和换上的都要成为圣，都不可赎回。’”",
+          "R": "主人不可察看牲畜是好是坏，也不可调换。如果他换了，两头牲畜都要归{{divine_name:上主|雅威}}，作为圣的。哪一头都不能买回来。’”"
         }
       },
       "decisions": [
@@ -6815,6 +7283,11 @@
           "L": "Inilah perintah-perintah yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa bagi bani Israel di Gunung Sinai.",
           "B": "Itulah perintah-perintah yang diberikan {{divine_name:TUHAN|Yahweh}} kepada Musa bagi orang Israel di Gunung Sinai.",
           "R": "{{divine_name:TUHAN|Yahweh}} memberikan semua perintah ini kepada Musa di Gunung Sinai untuk orang Israel."
+        },
+        "zh": {
+          "L": "这些是{{divine_name:上主|雅威}}在西奈山上为{{gender:以色列的子孙|以色列的儿子}}吩咐摩西的诫命。",
+          "B": "以上是{{divine_name:上主|雅威}}在西奈山上为以色列人交给摩西的诫命。",
+          "R": "{{divine_name:上主|雅威}}在西奈山上把这一切诫命交给摩西，要他传给以色列人。"
         }
       },
       "decisions": [

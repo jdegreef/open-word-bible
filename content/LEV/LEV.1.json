@@ -92,6 +92,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} memanggil Musa, dan {{divine_name:TUHAN|Yahweh}} berfirman kepadanya dari Kemah Pertemuan, firman-{{deity_pronoun:nya|Nya}},",
           "B": "Dari Kemah Pertemuan {{divine_name:TUHAN|Yahweh}} memanggil Musa dan berfirman kepadanya. Firman-{{deity_pronoun:nya|Nya}},",
           "R": "{{divine_name:TUHAN|Yahweh}} memanggil Musa dari Kemah Pertemuan. Dia berfirman kepadanya,"
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}呼叫摩西，{{divine_name:上主|雅威}}从会幕中对他说：",
+          "B": "{{divine_name:上主|雅威}}从会幕中呼叫摩西，对他说：",
+          "R": "{{divine_name:上主|雅威}}从会幕中呼叫摩西，对他说："
         }
       },
       "decisions": [
@@ -737,6 +742,48 @@
           "reason": "For the whole of Leviticus, as the Indonesian style guide sets (sections 4 and 8) and as Numbers is drafted: the name is printed \"TUHAN\" with \"Yahweh\" as the setting, and every pronoun for God takes the deity_pronoun span with the EYD hyphen. The English gender spans of Leviticus (\"children/sons of Israel\", \"a person/a man\") have no Indonesian counterpart: \"bani Israel\" (L) and \"orang Israel\" (B, R), \"orang\" and \"seseorang\" are already inclusive. \"Kemah Pertemuan\" is the glossary term; the English Readable \"meeting tent\" needs no plainer word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010010072",
+            "o030010010081"
+          ],
+          "choice": "会幕",
+          "alternatives": [
+            "聚会的帐棚"
+          ],
+          "reason": "The glossary's word for the tent of meeting, as in Exodus, at every level; the Readable \"meeting tent\" needs no simpler Chinese, since \"会幕\" already says \"the tent where God meets\" in two characters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o030010010092"
+          ],
+          "choice": "对他说：",
+          "alternatives": [
+            "他说："
+          ],
+          "reason": "\"Saying\" introduces the speech. Balanced and Readable fold it into one clause with the LORD as subject (\"对他说：\") rather than a new sentence with \"他\", which would need a deity_pronoun span the English \"He\" there does not have.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -849,6 +896,11 @@
           "L": "\"Berbicaralah kepada bani Israel dan katakanlah kepada mereka, 'Apabila seseorang di antara kalian mempersembahkan suatu persembahan kepada {{divine_name:TUHAN|Yahweh}}, dari ternak, dari lembu sapi dan dari kambing domba, haruslah kalian mempersembahkan persembahan kalian.",
           "B": "\"Berbicaralah kepada orang Israel dan katakan kepada mereka, 'Jika seseorang di antara kalian membawa seekor hewan sebagai persembahan kepada {{divine_name:TUHAN|Yahweh}}, hewan itu harus diambil dari lembu sapi atau dari kambing domba.",
           "R": "\"Katakan kepada orang Israel, 'Kalau kalian membawa hewan sebagai persembahan kepada {{divine_name:TUHAN|Yahweh}}, hewan itu harus salah satu dari sapi, domba atau kambing kalian."
+        },
+        "zh": {
+          "L": "“你要告诉{{gender:以色列的子孙|以色列的儿子}}，对他们说：‘你们中间若有人向{{divine_name:上主|雅威}}奉上供物，就要从牲畜中，从牛群或羊群中，奉上你们的供物。",
+          "B": "“你要对以色列人说：‘你们中间若有人把牲畜献给{{divine_name:上主|雅威}}作祭物，就要从牛群或羊群中献上。",
+          "R": "“你要告诉以色列人：‘你们把牲畜献给{{divine_name:上主|雅威}}作祭物的时候，必须是你们的牛、绵羊或山羊。"
         }
       },
       "decisions": [
@@ -1493,6 +1545,49 @@
           "reason": "The noun names anything brought near to God (m1), so Indonesian uses the general \"persembahan\"; the named kinds of offering keep the glossary's \"korban\" compounds (Indonesian terms, section 3), as Exodus and Numbers do. \"bani Israel\" (L), \"orang Israel\" (B, R) for \"the sons of Israel\", as the glossary has it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030010020031",
+            "o030010020041"
+          ],
+          "choice": "以色列人 (no gender span)",
+          "alternatives": [
+            "{{gender:以色列人|以色列的儿子}}"
+          ],
+          "reason": "The English has a gender span (Israelites / sons of Israel). In Chinese \"以色列人\" is already inclusive, so Balanced and Readable write it plainly, as the glossary and Exodus do; Literal keeps the span \"{{gender:以色列的子孙|以色列的儿子}}\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010020091",
+            "o030010020111"
+          ],
+          "choice": "奉上供物 (L); 献……作祭物 (B, R)",
+          "alternatives": [
+            "献上礼物"
+          ],
+          "reason": "Literal keeps the link between the verb \"bring near\" and the noun built from it with \"奉上\" and \"供物\" (what is brought before God); Balanced and Readable use the ordinary \"献\" and \"祭物\". One wording per level through Leviticus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1599,6 +1694,11 @@
           "L": "Jika persembahannya [adalah] korban bakaran dari lembu sapi, haruslah ia mempersembahkan seekor jantan yang tidak bercela; ke pintu Kemah Pertemuan haruslah ia membawanya, supaya ia diterima di hadapan {{divine_name:TUHAN|Yahweh}}.",
           "B": "Korban bakaran dari lembu sapi harus seekor jantan yang tidak bercacat. Hewan itu harus dibawa ke pintu Kemah Pertemuan, supaya {{divine_name:TUHAN|Yahweh}} berkenan menerima orang yang mempersembahkannya.",
           "R": "Kalau kamu membawa korban bakaran dari sapimu, hewan itu harus jantan dan tidak ada cacatnya. Bawalah hewan itu ke pintu Kemah Pertemuan. Dengan begitu {{divine_name:TUHAN|Yahweh}} akan menerima kamu."
+        },
+        "zh": {
+          "L": "他的供物若是从牛群中[取的]燔祭，他就要奉上一头没有瑕疵的公牛；他要在会幕门口奉上，使他在{{divine_name:上主|雅威}}面前蒙悦纳。",
+          "B": "从牛群中献的燔祭，必须是没有瑕疵的公牛。要把它牵到会幕门口献上，好让{{divine_name:上主|雅威}}悦纳献祭的人。",
+          "R": "你若从牛群中献全烧的祭，就必须献一头公牛，它身上不能有任何毛病。要把它牵到会幕门口，这样{{divine_name:上主|雅威}}就会悦纳你。"
         }
       },
       "decisions": [
@@ -2117,6 +2217,47 @@
           "reason": "The English Readable turns the laws into direct address (\"you\"). Indonesian Readable uses \"kamu\" for the one worshiper the law is about, and \"kalian\" where the whole people is addressed (style guide section 5).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030021"
+          ],
+          "choice": "燔祭 (L, B); 全烧的祭 (R)",
+          "alternatives": [
+            "燔祭 at every level"
+          ],
+          "reason": "The glossary's forms for the burnt offering, kept through Leviticus: the church word \"燔祭\" at Literal and Balanced; Readable says what it is, an offering burned whole.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010030071"
+          ],
+          "choice": "没有瑕疵的",
+          "alternatives": [
+            "完好的"
+          ],
+          "reason": "The glossary's \"without defect\"; Readable says it in plain words (\"身上不能有任何毛病\"), as Exodus 29:1 does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2215,6 +2356,11 @@
           "L": "Dan haruslah ia menumpangkan tangannya ke atas kepala korban bakaran itu, dan korban itu akan diterima baginya untuk mengadakan pendamaian baginya.",
           "B": "Orang yang mempersembahkannya harus meletakkan tangannya di atas kepala korban bakaran itu, dan korban itu akan diterima baginya dan mengadakan pendamaian baginya.",
           "R": "Letakkan tanganmu di atas kepala hewan itu. Dengan begitu hewan itu akan diterima untuk menggantikan kamu dan menghapus dosamu."
+        },
+        "zh": {
+          "L": "他要按手在燔祭的头上，燔祭就为他蒙悦纳，为他赎罪。",
+          "B": "献祭的人要把手按在燔祭牲的头上，这燔祭就会为这人蒙悦纳，为他赎罪。",
+          "R": "你必须把手放在这牲畜的头上。这样，它就会为你蒙悦纳，除去你的罪。"
         }
       },
       "decisions": [
@@ -2668,6 +2814,29 @@
           "reason": "The glossary's words for atonement (Indonesian style guide, section 7), for the whole of Leviticus: Readable says what atonement does, putting right what stands between the worshiper and God (m2). Readable adds \"untuk menggantikan kamu\" to make the \"for him\" of m3 plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010040082",
+            "o030010040091",
+            "o030010040092"
+          ],
+          "choice": "\"为……赎罪\" (L, B); \"除去……的罪\" (R)",
+          "alternatives": [
+            "为他遮盖罪"
+          ],
+          "reason": "The glossary's forms for \"make atonement for\" where the rite deals with a person's sin, as Leviticus 1-7 set them: \"为……赎罪\" at Literal and Balanced, \"除去……的罪\" at Readable. Readable keeps one wording for each other kind of atonement: \"为……举行赎罪的仪式\" where it removes uncleanness that is no sin (12:7-8; 14:18-31; 15:15, 30) and where the rite is named without a person (16:17, 27), and \"为……行洁净礼\" where a thing is cleansed (8:15; 14:53; 16:16-20, 33).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2781,6 +2950,11 @@
           "L": "Lalu haruslah ia menyembelih lembu jantan muda itu di hadapan {{divine_name:TUHAN|Yahweh}}, dan anak-anak Harun, para imam, haruslah mempersembahkan darah itu dan menyiramkan darah itu ke sekeliling mezbah yang [ada di] pintu Kemah Pertemuan.",
           "B": "Orang yang membawa lembu jantan muda itu harus menyembelihnya di sana, di hadapan {{divine_name:TUHAN|Yahweh}}. Sesudah itu anak-anak Harun, para imam, harus mempersembahkan darahnya dan memercikkannya ke setiap sisi mezbah yang berdiri di pintu Kemah Pertemuan.",
           "R": "Lalu kamu harus menyembelih lembu jantan muda itu di sana, di hadapan {{divine_name:TUHAN|Yahweh}}. Anak-anak Harun, para imam, akan membawa darahnya. Mereka akan memercikkan darah itu ke semua sisi mezbah di pintu Kemah Pertemuan."
+        },
+        "zh": {
+          "L": "他要在{{divine_name:上主|雅威}}面前宰那头小公牛；亚伦的儿子们，就是众祭司，要奉上血，把血泼在会幕门口那坛的周围。",
+          "B": "献祭的人要在{{divine_name:上主|雅威}}面前宰这头小公牛。然后，亚伦的儿子们，就是祭司们，要把血献上，泼在会幕门口祭坛的四周。",
+          "R": "然后你必须在{{divine_name:上主|雅威}}面前把小公牛杀了。亚伦的儿子们，就是祭司们，会把血拿来，泼在会幕门口祭坛的四周。"
         }
       },
       "decisions": [
@@ -3148,6 +3322,29 @@
           "reason": "\"Harun\" is the glossary form, shared by church and Islamic usage. The blood is thrown or splashed in quantity against the altar (m3): Literal keeps the verb of throwing liquid, Balanced and Readable the commoner \"memercikkan\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010050132",
+            "o030010050172",
+            "o030010050181"
+          ],
+          "choice": "泼在坛的周围 (L); 泼在祭坛的四周 (B, R)",
+          "alternatives": [
+            "洒在坛的周围"
+          ],
+          "reason": "Exodus 29:16's wording for throwing the blood against the altar. \"泼\" (splash, throw) is kept apart from \"弹\" and \"洒\" (sprinkle) used for other rites; Literal says \"坛\" as Exodus does, Balanced and Readable \"祭坛\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3242,6 +3439,11 @@
           "L": "Dan haruslah ia menguliti korban bakaran itu dan memotong-motongnya menurut bagian-bagiannya.",
           "B": "Lalu orang itu harus menguliti korban bakaran itu dan memotongnya menjadi bagian-bagiannya.",
           "R": "Lalu kamu harus menguliti hewan itu dan memotongnya menjadi beberapa bagian."
+        },
+        "zh": {
+          "L": "他要剥去燔祭的皮，把它切成块。",
+          "B": "然后献祭的人要剥去燔祭牲的皮，把它切成块。",
+          "R": "然后你必须剥下牲畜的皮，把它切成几块。"
         }
       },
       "decisions": [
@@ -3397,6 +3599,11 @@
           "L": "Dan anak-anak Harun, imam itu, haruslah menaruh api di atas mezbah dan menyusun kayu di atas api itu.",
           "B": "Anak-anak Harun, sang imam, harus menyalakan api di atas mezbah dan menyusun kayu dengan teratur di atas api itu.",
           "R": "Anak-anak Harun, sang imam, akan menyalakan api di atas mezbah dan menumpuk kayu di atasnya."
+        },
+        "zh": {
+          "L": "祭司亚伦的儿子们要把火放在坛上，把柴摆在火上。",
+          "B": "祭司亚伦的儿子们要在祭坛上放火，把柴整齐地摆在火上。",
+          "R": "祭司亚伦的儿子们会在祭坛上生火，把柴堆在火上。"
         }
       },
       "decisions": [
@@ -3557,6 +3764,11 @@
           "L": "Dan anak-anak Harun, para imam, haruslah menyusun potongan-potongan itu, kepala dan lemak, di atas kayu yang [ada] di atas api yang [ada] di atas mezbah.",
           "B": "Anak-anak Harun, para imam, harus mengatur potongan-potongan itu di atas kayu yang menyala di mezbah, bersama kepala dan lemaknya.",
           "R": "Lalu mereka akan meletakkan potongan-potongan daging itu, kepalanya dan lemaknya di atas kayu yang menyala di mezbah."
+        },
+        "zh": {
+          "L": "亚伦的儿子们，就是众祭司，要把肉块、头和板油摆在坛上那火上的柴上。",
+          "B": "亚伦的儿子们，就是祭司们，要把肉块连同头和板油，摆在祭坛上燃烧着的柴上。",
+          "R": "然后他们会把肉块、头和脂肪放在祭坛上燃烧着的柴上。"
         }
       },
       "decisions": [
@@ -3774,6 +3986,27 @@
           "reason": "The word means the hard fat of the animal (m1); Indonesian \"lemak\" covers it without a rarer technical word, for the whole of Leviticus.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010080102"
+          ],
+          "choice": "板油 (L, B); 脂肪 (R)",
+          "alternatives": [
+            "脂油"
+          ],
+          "reason": "The rare word for hard fat (suet) is \"板油\" at Literal and Balanced, kept apart from the ordinary \"脂肪\" (fat) of the peace and sin offerings; Readable says \"脂肪\", as the English Readable says \"the fat\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3881,6 +4114,11 @@
           "L": "Dan isi perutnya dan betisnya haruslah ia basuh dengan air, dan imam itu haruslah membakar seluruhnya menjadi asap di atas mezbah, [sebagai] korban bakaran, persembahan api, aroma yang menenangkan bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "Isi perut dan kakinya harus dibasuh dengan air, lalu imam harus membakar seluruh hewan itu menjadi asap di atas mezbah. Itulah korban bakaran, persembahan yang dibakar, aroma yang berkenan kepada {{divine_name:TUHAN|Yahweh}}.",
           "R": "Kamu harus membasuh isi perut dan kaki hewan itu dengan air. Lalu imam harus membakar semuanya di atas mezbah. Itulah korban bakaran, persembahan yang dibakar di atas api, bau yang disukai {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "他要用水洗它的内脏和腿；祭司要把全部在坛上烧成烟。这是燔祭，是火祭，是献给{{divine_name:上主|雅威}}的馨香之气。",
+          "B": "内脏和腿要用水洗净，祭司要把整只牲畜放在祭坛上烧，使烟上升。这是燔祭，是火祭，是使{{divine_name:上主|雅威}}喜悦的馨香之气。",
+          "R": "你必须用水把内脏和腿洗干净。然后祭司要把整只牲畜放在祭坛上烧掉。这是全烧的祭，是用火献上的祭，是让{{divine_name:上主|雅威}}喜悦的香气。"
         }
       },
       "decisions": [
@@ -4542,6 +4780,52 @@
           "reason": "The traditional phrase is the word most readers know, but its reduplicated form is no longer current Indonesian; \"persembahan api\" keeps the Hebrew's link with fire.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090111",
+            "o030010090121",
+            "o030010090131",
+            "o030010090141",
+            "o030010090142"
+          ],
+          "choice": "这是燔祭，是火祭，是献给{{divine_name:上主|雅威}}的馨香之气 (L); 这是燔祭，是火祭，是使{{divine_name:上主|雅威}}喜悦的馨香之气 (B); 这是全烧的祭，是用火献上的祭，是让{{divine_name:上主|雅威}}喜悦的香气 (R)",
+          "alternatives": [
+            "是馨香的火祭献给{{divine_name:上主|雅威}}"
+          ],
+          "reason": "Leviticus's closing formula, one wording per level for the whole book, built from the glossary's \"火祭\" / \"用火献上的祭\" and \"馨香之气\" / \"让{{divine_name:上主|雅威}}喜悦的香气\", as in Exodus 29:18, 25, 41. Balanced says whom the aroma pleases (\"使{{divine_name:上主|雅威}}喜悦\") without a pronoun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010090052"
+          ],
+          "choice": "烧成烟 (L); 烧，使烟上升 (B); 烧掉 (R)",
+          "alternatives": [
+            "焚烧"
+          ],
+          "reason": "\"Make smoke\" on the altar, one form per level as Exodus 29:13, 18: Literal keeps the image of smoke, Balanced says the smoke goes up, Readable simply \"burn\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4644,6 +4928,11 @@
           "L": "Dan jika persembahannya [adalah] dari kambing domba, dari domba atau dari kambing, untuk korban bakaran, haruslah ia mempersembahkan seekor jantan yang tidak bercela.",
           "B": "Jika hewan untuk korban bakaran diambil dari kambing domba, yaitu dari domba atau kambing, hewan itu harus jantan yang tidak bercacat.",
           "R": "Kalau kamu membawa seekor domba atau kambing sebagai korban bakaran, hewan itu harus jantan. Hewan itu harus sehat dan tidak ada cacatnya."
+        },
+        "zh": {
+          "L": "他的供物若是从羊群中，从绵羊或山羊中[取来]作燔祭的，他就要奉上一只没有瑕疵的公羊。",
+          "B": "燔祭牲若是从羊群中，就是从绵羊或山羊中选的，必须是没有瑕疵的公羊。",
+          "R": "你若献一只绵羊或山羊作全烧的祭，必须献公的。它必须健康，没有任何毛病。"
         }
       },
       "decisions": [
@@ -4844,6 +5133,11 @@
           "L": "Dan haruslah ia menyembelihnya di sisi mezbah sebelah utara di hadapan {{divine_name:TUHAN|Yahweh}}, dan anak-anak Harun, para imam, haruslah menyiramkan darahnya ke sekeliling mezbah.",
           "B": "Hewan itu harus disembelih di hadapan {{divine_name:TUHAN|Yahweh}} di sisi utara mezbah, dan anak-anak Harun, para imam, harus memercikkan darahnya ke setiap sisi mezbah.",
           "R": "Kamu harus menyembelihnya di hadapan {{divine_name:TUHAN|Yahweh}} di sisi utara mezbah. Anak-anak Harun, para imam, akan memercikkan darahnya ke semua sisi mezbah."
+        },
+        "zh": {
+          "L": "他要在坛的北边、在{{divine_name:上主|雅威}}面前宰它；亚伦的儿子们，就是众祭司，要把它的血泼在坛的周围。",
+          "B": "要在{{divine_name:上主|雅威}}面前，在祭坛北边宰这牲畜；亚伦的儿子们，就是祭司们，要把它的血泼在祭坛的四周。",
+          "R": "你必须在{{divine_name:上主|雅威}}面前，在祭坛的北边把它杀了。亚伦的儿子们，就是祭司们，会把它的血泼在祭坛的四周。"
         }
       },
       "decisions": [
@@ -4990,6 +5284,11 @@
           "L": "Dan haruslah ia memotong-motongnya menurut bagian-bagiannya, beserta kepalanya dan lemaknya, dan imam itu haruslah menyusunnya di atas kayu yang [ada] di atas api yang [ada] di atas mezbah.",
           "B": "Hewan itu harus dipotong menjadi bagian-bagiannya, dan imam harus mengatur potongan-potongan itu, bersama kepala dan lemaknya, di atas kayu yang menyala di mezbah.",
           "R": "Lalu kamu harus memotongnya menjadi beberapa bagian. Imam akan meletakkan potongan-potongan itu, kepalanya dan lemaknya di atas kayu yang menyala di mezbah."
+        },
+        "zh": {
+          "L": "他要把它切成块，连同它的头和板油；祭司要把这些摆在坛上那火上的柴上。",
+          "B": "要把它切成块，祭司要把肉块连同头和板油摆在祭坛上燃烧着的柴上。",
+          "R": "然后你必须把它切成几块。祭司会把肉块、头和脂肪放在祭坛上燃烧着的柴上。"
         }
       },
       "decisions": [
@@ -5118,6 +5417,11 @@
           "L": "Dan isi perut dan betisnya haruslah ia basuh dengan air, dan imam itu haruslah mempersembahkan seluruhnya dan membakarnya menjadi asap di atas mezbah; itulah korban bakaran, persembahan api, aroma yang menenangkan bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "Isi perut dan kakinya harus dibasuh dengan air. Imam harus mempersembahkan semuanya dan membakarnya menjadi asap di atas mezbah. Itulah korban bakaran, persembahan yang dibakar, aroma yang berkenan kepada {{divine_name:TUHAN|Yahweh}}.",
           "R": "Kamu harus membasuh isi perut dan kaki hewan itu dengan air. Imam akan mempersembahkan semuanya dan membakarnya di atas mezbah. Itulah korban bakaran, persembahan yang dibakar di atas api, bau yang disukai {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "他要用水洗内脏和腿；祭司要把全部奉上，在坛上烧成烟。这是燔祭，是火祭，是献给{{divine_name:上主|雅威}}的馨香之气。",
+          "B": "内脏和腿要用水洗净。祭司要把全部献上，放在祭坛上烧，使烟上升。这是燔祭，是火祭，是使{{divine_name:上主|雅威}}喜悦的馨香之气。",
+          "R": "你必须用水把内脏和腿洗干净。祭司会把整只牲畜献上，放在祭坛上烧掉。这是全烧的祭，是用火献上的祭，是让{{divine_name:上主|雅威}}喜悦的香气。"
         }
       },
       "decisions": [
@@ -5261,6 +5565,11 @@
           "L": "Dan jika persembahannya kepada {{divine_name:TUHAN|Yahweh}} [adalah] korban bakaran dari burung, haruslah ia mempersembahkan persembahannya dari burung tekukur atau dari anak burung merpati.",
           "B": "Jika korban bakaran seseorang kepada {{divine_name:TUHAN|Yahweh}} berupa burung, ia harus membawa seekor burung tekukur atau seekor anak burung merpati.",
           "R": "Kalau kamu mempersembahkan burung sebagai korban bakaran kepada {{divine_name:TUHAN|Yahweh}}, pilihlah seekor burung tekukur atau seekor anak burung merpati."
+        },
+        "zh": {
+          "L": "他献给{{divine_name:上主|雅威}}的供物若是从飞鸟中[取的]燔祭，他就要从斑鸠或雏鸽中奉上他的供物。",
+          "B": "人献给{{divine_name:上主|雅威}}的燔祭若是鸟，就要献上斑鸠或雏鸽。",
+          "R": "你若献一只鸟给{{divine_name:上主|雅威}}作全烧的祭，就要选一只斑鸠或小鸽子。"
         }
       },
       "decisions": [
@@ -5447,6 +5756,29 @@
           "reason": "Both are common Indonesian birds; the English Readable's \"dove\" is the same bird, so Readable keeps \"tekukur\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010140092",
+            "o030010140121",
+            "o030010140132"
+          ],
+          "choice": "斑鸠或雏鸽 (L, B); 斑鸠或小鸽子 (R)",
+          "alternatives": [
+            "鸽子或雏鸽"
+          ],
+          "reason": "\"斑鸠\" (turtledove) is a common word, so Readable keeps it where the English Readable says \"dove\"; \"雏鸽\" (young pigeons) becomes the everyday \"小鸽子\" at Readable. Kept through Leviticus 5 and 12.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5555,6 +5887,11 @@
           "L": "Dan imam itu haruslah membawanya ke mezbah dan memuntir kepalanya dan membakarnya menjadi asap di atas mezbah, dan darahnya haruslah ditiriskan pada dinding mezbah.",
           "B": "Imam harus membawa burung itu ke mezbah. Ia harus memuntir lepas kepalanya dan membakar kepala itu menjadi asap di atas mezbah, dan darah burung itu harus diperas keluar pada dinding mezbah.",
           "R": "Imam akan membawa burung itu ke mezbah. Dia akan memutuskan kepalanya dengan jari lalu membakar kepala itu di atas mezbah. Sesudah itu dia akan membiarkan darahnya mengalir ke luar pada sisi mezbah."
+        },
+        "zh": {
+          "L": "祭司要把它奉到坛前，掐下它的头，在坛上烧成烟；它的血要流在坛的侧面。",
+          "B": "祭司要把鸟带到祭坛那里，掐下它的头，把头放在祭坛上烧，使烟上升；鸟的血要挤出来，流在祭坛的侧面。",
+          "R": "祭司会把鸟带到祭坛那里，拧下它的头，把头放在祭坛上烧掉。然后他要让鸟的血流在祭坛的侧面。"
         }
       },
       "decisions": [
@@ -5785,6 +6122,11 @@
           "L": "Dan haruslah ia menyingkirkan temboloknya beserta bulu-bulunya dan melemparkannya ke samping mezbah, ke sebelah timur, ke tempat abu berlemak.",
           "B": "Ia harus mengeluarkan temboloknya beserta bulu-bulunya dan melemparkannya ke sebelah timur mezbah, ke tempat abu.",
           "R": "Dia akan membuang tembolok dan bulu burung itu. Dia akan melemparkannya ke sebelah timur mezbah, ke tempat abu dikumpulkan."
+        },
+        "zh": {
+          "L": "他要除去它的嗉囊和羽毛，把它丢在坛的东边，放油灰的地方。",
+          "B": "他要取出鸟的嗉囊和羽毛，丢在祭坛的东边，就是倒灰的地方。",
+          "R": "他会除去鸟喉咙下装食物的嗉囊和它的羽毛，丢在祭坛的东边，就是堆灰的地方。"
         }
       },
       "decisions": [
@@ -5957,6 +6299,28 @@
           "reason": "\"tembolok\" is the ordinary Indonesian word for a bird's crop (m1, uncertain). The ash is soaked with the fat of the offerings (m3): Literal keeps \"berlemak\", Balanced and Readable say only the ash heap, as the English does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030010160121",
+            "o030010160122"
+          ],
+          "choice": "油灰 (L); 灰 (B, R)",
+          "alternatives": [
+            "灰烬"
+          ],
+          "reason": "The ash soaked with the fat of the offerings: Literal \"油灰\" keeps \"fatty\"; Balanced and Readable say \"灰\", as the English does. Readable also explains the crop (\"喉咙下装食物的嗉囊\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6071,6 +6435,11 @@
           "L": "Dan haruslah ia mengoyakkannya pada sayapnya; janganlah ia membelahnya; dan imam itu haruslah membakarnya menjadi asap di atas mezbah, di atas kayu yang [ada] di atas api; itulah korban bakaran, persembahan api, aroma yang menenangkan bagi {{divine_name:TUHAN|Yahweh}}.",
           "B": "Sambil memegang sayapnya, ia harus mengoyakkan burung itu, tetapi tidak sampai terbelah dua. Lalu imam harus membakarnya menjadi asap di atas mezbah, di atas kayu yang menyala. Itulah korban bakaran, persembahan yang dibakar, aroma yang berkenan kepada {{divine_name:TUHAN|Yahweh}}.",
           "R": "Imam akan memegang sayapnya dan mengoyakkan burung itu, tetapi tidak sampai terpisah menjadi dua. Lalu imam akan membakarnya di atas api di mezbah. Itulah korban bakaran, persembahan yang dibakar di atas api, bau yang disukai {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "他要拿着它的两个翅膀把它撕开，却不可把它分开；祭司要在坛上，在火上的柴上，把它烧成烟。这是燔祭，是火祭，是献给{{divine_name:上主|雅威}}的馨香之气。",
+          "B": "他要抓住鸟的翅膀，把它撕开，但不可撕成两半。然后祭司要把它放在祭坛上燃烧着的柴上烧，使烟上升。这是燔祭，是火祭，是使{{divine_name:上主|雅威}}喜悦的馨香之气。",
+          "R": "他要抓住鸟的翅膀，把它撕开，但不要撕成两块。然后祭司会把它放在祭坛的火上烧掉。这是全烧的祭，是用火献上的祭，是让{{divine_name:上主|雅威}}喜悦的香气。"
         }
       },
       "decisions": [
