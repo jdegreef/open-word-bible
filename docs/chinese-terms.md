@@ -703,3 +703,49 @@ Terms settled in Matthew:
 | chief priests and elders of the people | 祭司长和百姓的长老 |
 | clock time (20:3-9; 27:45-46) | 第三时, 第六时 ... (L); 上午九点左右, 中午十二点, 下午三点, 下午五点 (B, R) |
 | 您 (B, R) | servants to their master (13:27; 18:26; 25:20-25), hired workers to the landowner (20:12), the chief priests to Pilate (27:64) |
+
+### Mark
+
+Mark keeps Matthew's forms for every name and term above, and Matthew's
+Chinese wherever its Greek is the same as Matthew's (at each level); where
+the Greek differs, the Chinese differs. Names and Aramaic words not in the
+tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| John the Baptizer (participle, 1:4; 6:14, 24) / John the Baptist (noun, 6:25; 8:28) | 施洗的约翰 / 施洗约翰 |
+| Idumea (3:8) | 以土买 |
+| Boanerges, "Sons of Thunder" (3:17) | 半尼其; 雷的儿子们 (L), 雷的儿子 (B, R) |
+| Gerasenes (5:1) | 格拉森人 (Matthew 8:28 has 加大拉人, as its Greek does) |
+| Legion (5:9) | 军团 |
+| Jairus (5:22) | 睚鲁 |
+| Talitha koum (5:41) | 塔利塔，古姆 |
+| Joses (6:3; 15:40, 47) | 约西 (kept apart from Joseph, 约瑟) |
+| Corban (7:11) | 科尔班 |
+| Syrophoenician (7:26) | 叙利亚腓尼基人 (L); 出生在叙利亚的腓尼基 (B), 腓尼基 (R) |
+| Ephphatha (7:34) | 以法他 |
+| Dalmanutha (8:10) | 大玛努他 |
+| Timaeus, Bartimaeus (10:46) | 底买, 巴底买 |
+| Rabbouni (10:51) | 拉波尼 (L, B); 我的老师 (R) |
+| Abba (14:36) | 阿爸，父啊 |
+| Alexander, Rufus (15:21) | 亚历山大, 鲁孚 |
+| Eloi, Eloi, lema sabachthani (15:34) | 以罗伊，以罗伊，勒马撒巴赫他尼 (Matthew 27:46's form, but 以罗伊 for Mark's Eloi) |
+| Salome (15:40; 16:1) | 撒罗米 |
+
+Terms settled in Mark:
+
+| English | Chinese |
+|---|---|
+| unclean spirit (1:23 and often) | 污灵 (L, B); 邪灵 (R), as Matthew 10:1. A demon: 鬼 (L); 邪灵 (B, R) |
+| synagogue leader (5:22-38) | 会堂主管 (L, B); 会堂的一位主管 or Jairus by name (R) |
+| "immediately" (euthys) | 立即 (L, every time); varied at B and R (随即, 马上, 立刻) |
+| Rabbi (9:5; 11:21; 14:45) | 拉比 (L, B); 老师 (R) |
+| "Truly I tell you" | 阿们，我告诉你们 (L); 我确实告诉你们 (B); 我把实话告诉你们 (R), followed by a comma |
+| the Sanhedrin (14:55; 15:1, 43) | 公会 (L); 最高公会 (B, R), at Readable too where the English says "Jewish council"; local councils (13:9) as Matthew 10:17 |
+| King of the Jews (15:2-26) | 犹太人的王 at every level |
+| the saved/healed of faith (5:34; 10:52) | 使你得救了 (L); 使你得救，也使你痊愈了 (B); 使你好了，也救了你 (R), since Mark's meaning note keeps both senses |
+| Jesus's anger (1:41, the SBLGNT reading) | 动了怒 (L); 心中激起怒气 (B); 很生气 (R), with the reading "moved with compassion" named in the decision |
+| denarii as wages (6:37; 14:5; 12:15) | 二百个银币 (L), `{{units:八个月的工钱\|二百个银币}}` (B, R); 三百多个银币 (L), `{{units:一年的工钱\|三百个银币}}` (B, R); one denarius as Matthew 22:19 |
+| two lepta, a quadrans (12:42) | 两个小铜钱，就是一文钱 (L); in a units span at B and R |
+| clock time (15:25, 33-34) | 第三时, 第六时, 第九时 (L); 上午九点, 中午十二点, 下午三点 (B, R) |
+| 您 (B, R) | the messengers from Jairus's house to him (5:35); the girl to King Herod (6:25, R) |
