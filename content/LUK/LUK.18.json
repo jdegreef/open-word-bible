@@ -107,6 +107,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} mengatakan kepada mereka sebuah perumpamaan tentang perlunya mereka selalu berdoa dan tidak tawar hati, \\v 2 kata-{{deity_pronoun:nya|Nya}}, \"Di sebuah kota ada seorang hakim yang tidak takut akan Allah dan tidak menghormati manusia.",
           "B": "Yesus menceritakan sebuah perumpamaan kepada mereka untuk menunjukkan bahwa mereka harus selalu berdoa dan tidak boleh putus asa. \\v 2 Kata-{{deity_pronoun:nya|Nya}}, \"Di sebuah kota ada seorang hakim yang tidak takut akan Allah dan tidak menghormati siapa pun.",
           "R": "Yesus menceritakan sebuah perumpamaan kepada murid-murid-{{deity_pronoun:nya|Nya}}. Dia ingin mengajar mereka bahwa mereka harus selalu berdoa dan tidak pernah putus asa. \\v 2 Dia berkata, \"Di sebuah kota ada seorang hakim. Dia tidak takut kepada Allah, dan dia tidak peduli kepada orang lain."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}对他们讲了一个比喻，是关于他们必须常常祷告、不可灰心的，\\v 2 说：“某城里有一个法官，他不敬畏{{god_term:神|上帝}}，也不尊重人。",
+          "B": "耶稣给他们讲了一个比喻，教导他们要时常祷告，不要灰心。\\v 2 {{deity_pronoun:他|祂}}说：“从前，某座城里有一个法官，他不敬畏{{god_term:神|上帝}}，也不把任何人放在眼里。",
+          "R": "耶稣给{{deity_pronoun:他|祂}}的门徒讲了一个故事。{{deity_pronoun:他|祂}}要教导他们应当常常祷告，永远不要失去盼望。\\v 2 {{deity_pronoun:他|祂}}说：“在某个城里有一个法官。他不怕{{god_term:神|上帝}}，也不在乎别人。"
         }
       },
       "decisions": [
@@ -589,6 +594,68 @@
           "reason": "A common Japanese way to say that someone has no regard for anyone; used again in 18:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42018002009"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"神\" fixed",
+            "\"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's choice. Both name the same God; the setting changes only the word. The same holds through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42018002013"
+          ],
+          "choice": "\"人\" with no gender span",
+          "alternatives": [
+            "\"人\" in a span with \"男人\""
+          ],
+          "reason": "Chinese \"人\" already means anyone, man or woman, so the English gender spans in this chapter (18:2, 4, 11, 14, 27) have no Chinese counterpart, as in Matthew and Mark.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018001003"
+          ],
+          "choice": "\"比喻\" (L, B); \"故事\" (R)",
+          "alternatives": [
+            "\"寓言\""
+          ],
+          "reason": "The church's word for a parable at Literal and Balanced; Readable says it was a story, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -689,6 +756,11 @@
           "L": "Dan di kota itu ada seorang janda, dan ia terus datang kepadanya, katanya, 'Belalah hakku terhadap lawanku.'",
           "B": "Di kota itu ada pula seorang janda yang selalu datang kepadanya dan berkata, 'Berikanlah keadilan kepadaku terhadap lawanku.'",
           "R": "Di kota itu juga ada seorang janda. Dia terus datang kepada hakim itu dan berkata, 'Ada orang yang berbuat tidak adil kepada saya. Tolong adili perkara saya dan berikan keadilan kepada saya.'"
+        },
+        "zh": {
+          "L": "那城里有一个寡妇，她常常到他那里来，说：‘求你为我主持公道，对付我的对头。’",
+          "B": "那城里还有一个寡妇，一次又一次地来找他，说：‘请您为我主持公道，对付我的对手。’",
+          "R": "那城里还有一个寡妇。她不断地来找法官，说：‘有人对我不公平。请您审理我的案子，还我一个公道。’"
         }
       },
       "decisions": [
@@ -968,6 +1040,27 @@
           "reason": "Readable says what a widow is in everyday words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n42018003013",
+            "n42018003014"
+          ],
+          "choice": "\"您\" (B, R); \"你\" (L)",
+          "alternatives": [
+            "\"你\" (B, R)"
+          ],
+          "reason": "A petitioner speaking to a judge uses the polite \"您\" at Balanced and Readable, as the style guide sets for an official; Literal keeps the source's single \"你\". The judge is a figure in a parable, so he takes no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1089,6 +1182,11 @@
           "L": "Dan untuk beberapa waktu ia tidak mau; tetapi kemudian ia berkata dalam hatinya, 'Walaupun aku tidak takut akan Allah dan tidak menghormati manusia, \\v 5 namun karena janda ini menyusahkan aku, aku akan membela haknya, supaya ia jangan terus datang dan akhirnya menyerang aku.'\"",
           "B": "Beberapa waktu lamanya hakim itu menolak. Tetapi akhirnya ia berkata dalam hati, 'Walaupun aku tidak takut akan Allah dan tidak menghormati siapa pun, \\v 5 janda ini terus merepotkan aku. Karena itu aku akan membela haknya, supaya ia tidak terus datang dan akhirnya membuat aku kelelahan.'\"",
           "R": "Untuk beberapa waktu hakim itu tidak mau menolongnya. Tetapi akhirnya dia berkata kepada dirinya sendiri, 'Aku tidak takut kepada Allah, dan aku tidak peduli kepada orang lain. \\v 5 Tetapi janda ini terus menggangguku. Jadi aku akan memastikan dia mendapat keadilan. Kalau tidak, dia akan terus datang dan membuatku lelah!'\""
+        },
+        "zh": {
+          "L": "他有一段时间不肯，但后来他心里说：‘我虽然不敬畏{{god_term:神|上帝}}，也不尊重人，\\v 5 但因为这寡妇给我添麻烦，我就要为她主持公道，免得她不断地来，最后把我累垮。’”",
+          "B": "他有一段时间拒绝了。可是后来他心里想：‘我不敬畏{{god_term:神|上帝}}，也不把任何人放在眼里。\\v 5 但是这个寡妇实在太烦人了，我还是为她主持公道吧。不然她会不停地来，直到把我磨得筋疲力尽。’”",
+          "R": "有一段时间，法官不肯帮她。可是最后他对自己说：‘我不怕{{god_term:神|上帝}}，也不在乎别人。\\v 5 可是这个寡妇一直来烦我。所以我要让她得到公道。不然的话，她会一直来，把我累坏！’”"
         }
       },
       "decisions": [
@@ -1376,6 +1474,11 @@
           "L": "Lalu Tuhan berkata, \"Dengarkanlah apa yang dikatakan hakim yang tidak benar itu.",
           "B": "Kata Tuhan, \"Camkanlah apa yang dikatakan hakim yang tidak adil itu!",
           "R": "Lalu Tuhan Yesus berkata, \"Dengarkanlah apa yang dikatakan hakim yang tidak adil ini."
+        },
+        "zh": {
+          "L": "主说：“你们听这不义的法官所说的话。",
+          "B": "主说：“你们要听听这个不公正的法官所说的话。",
+          "R": "然后主耶稣说：“听听这个不公平的法官说了什么。"
         }
       },
       "decisions": [
@@ -1617,6 +1720,11 @@
           "L": "Dan tidakkah Allah akan membela hak orang-orang pilihan-{{deity_pronoun:nya|Nya}}, yang berseru kepada-{{deity_pronoun:nya|Nya}} siang dan malam? Dan akankah {{deity_pronoun:dia|Dia}} mengulur-ulur waktu bagi mereka?",
           "B": "Tidakkah Allah akan membela hak orang-orang pilihan-{{deity_pronoun:nya|Nya}} yang siang malam berseru kepada-{{deity_pronoun:nya|Nya}}? Apakah {{deity_pronoun:dia|Dia}} akan menunda-nunda menolong mereka?",
           "R": "Allah pasti akan memastikan umat pilihan-{{deity_pronoun:nya|Nya}} mendapat keadilan. Mereka berseru kepada-{{deity_pronoun:nya|Nya}} siang dan malam. Apakah {{deity_pronoun:dia|Dia}} akan membiarkan mereka menunggu terus?"
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}难道不会为{{deity_pronoun:他|祂}}所拣选、昼夜向{{deity_pronoun:他|祂}}呼求的人主持公道吗？{{deity_pronoun:他|祂}}会迟迟不帮他们吗？",
+          "B": "那么，{{god_term:神|上帝}}一定会为{{deity_pronoun:他|祂}}所拣选的人主持公道，因为他们昼夜向{{deity_pronoun:他|祂}}呼求。{{deity_pronoun:他|祂}}会迟迟不帮助他们吗？",
+          "R": "{{god_term:神|上帝}}一定会让{{deity_pronoun:他|祂}}所拣选的人得到公道。他们日日夜夜向{{deity_pronoun:他|祂}}呼求。{{deity_pronoun:他|祂}}会让他们一直等下去吗？"
         }
       },
       "decisions": [
@@ -1841,6 +1949,27 @@
           "reason": "Jesus speaks plainly, but what God does takes the same light respect forms as in narration, as in the letters (brief, 7a).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018007008"
+          ],
+          "choice": "\"主持公道\" at every level",
+          "alternatives": [
+            "\"伸冤\""
+          ],
+          "reason": "The same verb as the widow's plea (18:3, 5), so Chinese keeps one phrase through the parable and its point. \"伸冤\" suggests avenging a wrong and is the CUV's word here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1932,6 +2061,11 @@
           "L": "Aku berkata kepada kalian bahwa {{deity_pronoun:dia|Dia}} akan segera membela hak mereka.",
           "B": "Aku berkata kepada kalian, {{deity_pronoun:dia|Dia}} akan segera membela hak mereka.",
           "R": "Aku berkata kepada kalian, {{deity_pronoun:dia|Dia}} akan memberikan keadilan kepada mereka, dan {{deity_pronoun:dia|Dia}} akan melakukannya dengan segera."
+        },
+        "zh": {
+          "L": "我告诉你们，{{deity_pronoun:他|祂}}要快快地为他们主持公道。",
+          "B": "我告诉你们，{{deity_pronoun:他|祂}}会使他们得到公道，而且毫不迟延。",
+          "R": "我告诉你们，{{deity_pronoun:他|祂}}会给他们公道，而且很快就会做到。"
         }
       },
       "decisions": [
@@ -2124,6 +2258,11 @@
           "L": "Namun, ketika Anak Manusia datang, akankah {{deity_pronoun:dia|Dia}} mendapati iman di bumi?\"",
           "B": "Akan tetapi, ketika Anak Manusia datang, akankah {{deity_pronoun:dia|Dia}} mendapati iman di bumi?\"",
           "R": "Tetapi ketika Anak Manusia datang, apakah {{deity_pronoun:dia|Dia}} akan menemukan orang di bumi yang masih beriman?\""
+        },
+        "zh": {
+          "L": "然而，人子来的时候，{{deity_pronoun:他|祂}}在地上能找到信心吗？”",
+          "B": "即使这样，人子来的时候，{{deity_pronoun:他|祂}}在地上找得到这样的信心吗？”",
+          "R": "可是人子来的时候，{{deity_pronoun:他|祂}}在地上还能找到有信心的人吗？”"
         }
       },
       "decisions": [
@@ -2287,6 +2426,28 @@
           "reason": "When Jesus speaks of himself as the Son of Man, the title takes plain singular forms, as in Matthew and Mark; here, in 18:31-33 and through the book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018008012",
+            "n42018008014"
+          ],
+          "choice": "\"人子\"",
+          "alternatives": [
+            "\"人的儿子\""
+          ],
+          "reason": "The glossary's form for Jesus's title for himself, at every level, never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2388,6 +2549,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} juga mengatakan perumpamaan ini kepada beberapa orang yang yakin akan diri mereka sendiri bahwa mereka benar dan memandang rendah semua orang lain.",
           "B": "Kepada beberapa orang yang menganggap diri benar dan memandang rendah semua orang lain, Yesus menyampaikan perumpamaan ini:",
           "R": "Ada orang-orang yang merasa yakin bahwa mereka baik dan benar di hadapan Allah, dan mereka merasa lebih baik daripada semua orang lain. Yesus menceritakan perumpamaan ini kepada mereka."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}也向一些倚靠自己、以为自己是义人、又藐视其余所有人的人，讲了这个比喻。",
+          "B": "有些人仗着自己，确信自己是义人，又看不起其他所有的人。耶稣就对他们讲了这个比喻。",
+          "R": "有些人以为自己很好，在{{god_term:神|上帝}}面前是正直的，又觉得自己比别人都强。耶稣就给他们讲了这个故事。"
         }
       },
       "decisions": [
@@ -2659,6 +2825,27 @@
           "reason": "As the brief allows for \"righteous\", Readable says what being right means here (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018009012"
+          ],
+          "choice": "\"义人\" (L, B); \"在{{god_term:神|上帝}}面前是正直的\" (R)",
+          "alternatives": [
+            "\"好人\""
+          ],
+          "reason": "The glossary's word for the righteous at Literal and Balanced; Readable says what it means, in the right before God (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2755,6 +2942,11 @@
           "L": "\"Dua orang laki-laki pergi ke Bait Allah untuk berdoa; yang seorang Farisi dan yang lain pemungut cukai.",
           "B": "\"Ada dua orang pergi ke Bait Allah untuk berdoa. Yang seorang adalah orang Farisi dan yang lain pemungut cukai.",
           "R": "\"Dua orang laki-laki pergi ke halaman rumah Allah untuk berdoa. Yang seorang adalah orang Farisi. Yang lain adalah seorang penagih pajak."
+        },
+        "zh": {
+          "L": "“有两个人上圣殿去祷告，一个是法利赛人，另一个是税吏。",
+          "B": "“有两个人上圣殿去祷告。一个是法利赛人，另一个是税吏。",
+          "R": "“有两个人上到圣殿的院子里去祷告。其中一个是法利赛人，另一个是收税的人。"
         }
       },
       "decisions": [
@@ -3050,6 +3242,47 @@
           "reason": "The word is the temple with its courts (m3), as the Gospel terms have it for hieron.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018010010",
+            "n42018010014"
+          ],
+          "choice": "\"法利赛人\"; \"税吏\" (L, B), \"收税的人\" (R)",
+          "alternatives": [
+            "\"税务员\""
+          ],
+          "reason": "The glossary's forms: \"税吏\" is the church's word at Literal and Balanced, and Readable uses the everyday \"收税的人\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n42018010006"
+          ],
+          "choice": "\"圣殿的院子\" (R)",
+          "alternatives": [
+            "\"圣殿\""
+          ],
+          "reason": "Readable shows that they prayed in the courts, not inside the building, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3160,6 +3393,11 @@
           "L": "Orang Farisi itu berdiri dan berdoa dalam hatinya tentang dirinya begini: 'Ya Allah, aku mengucap syukur kepada-{{deity_pronoun:mu|Mu}}, karena aku tidak sama seperti orang-orang lain, perampok, orang lalim, pezina, atau bahkan seperti pemungut cukai ini.",
           "B": "Orang Farisi itu berdiri dan berdoa tentang dirinya sendiri: 'Ya Allah, aku bersyukur kepada-{{deity_pronoun:mu|Mu}} karena aku tidak seperti orang lain: perampok, orang jahat, dan pezina, dan juga tidak seperti pemungut cukai ini.",
           "R": "Orang Farisi itu berdiri dan berdoa tentang dirinya sendiri. Dia berkata, 'Ya Allah, terima kasih karena aku tidak seperti orang-orang lain. Mereka merampok orang, mereka berbuat jahat, dan mereka tidak setia dalam pernikahan. Terima kasih juga karena aku tidak seperti penagih pajak ini."
+        },
+        "zh": {
+          "L": "那法利赛人站着，向着自己这样祷告：‘{{god_term:神|上帝}}啊，我感谢{{deity_pronoun:你|祢}}，因为我不像其他的人，就是勒索的、不义的、通奸的，也不像这个税吏。",
+          "B": "那法利赛人站着，为自己这样祷告：‘{{god_term:神|上帝}}啊，我感谢{{deity_pronoun:你|祢}}，因为我不像其他的人那样，是敲诈的、行骗的、通奸的，也不像这个税吏。",
+          "R": "那个法利赛人站着，为自己祷告。他说：‘{{god_term:神|上帝}}啊，谢谢{{deity_pronoun:你|祢}}，我不像别的人。他们抢夺别人，做坏事，对婚姻不忠。谢谢{{deity_pronoun:你|祢}}，我也不像这个收税的人。"
         }
       },
       "decisions": [
@@ -3636,6 +3874,11 @@
           "L": "Aku berpuasa dua kali seminggu; aku memberikan sepersepuluh dari segala penghasilanku.'",
           "B": "Aku berpuasa dua kali seminggu, dan aku memberikan sepersepuluh dari seluruh penghasilanku.'",
           "R": "Aku tidak makan selama dua hari setiap minggu. Dan aku memberikan sepersepuluh dari semua uang yang kudapat.'"
+        },
+        "zh": {
+          "L": "我一个星期禁食两次，凡我所得的，我都献上十分之一。’",
+          "B": "我每个星期禁食两次，我所得的一切，都献上十分之一。’",
+          "R": "我每个星期有两天不吃饭。我得到的所有钱，我都拿出十分之一来奉献。’"
         }
       },
       "decisions": [
@@ -3861,6 +4104,11 @@
           "L": "Tetapi pemungut cukai itu berdiri jauh-jauh, bahkan tidak mau menengadah ke langit, melainkan memukul-mukul dadanya, katanya, 'Ya Allah, kasihanilah aku, orang berdosa ini.'",
           "B": "Tetapi pemungut cukai itu berdiri jauh-jauh. Ia bahkan tidak berani menengadah ke langit, melainkan memukul-mukul dadanya dan berkata, 'Ya Allah, kasihanilah aku, orang berdosa ini.'",
           "R": "Tetapi penagih pajak itu berdiri jauh-jauh. Dia bahkan tidak berani memandang ke langit. Dia terus memukul-mukul dadanya karena sedih. Dia berkata, 'Ya Allah, kasihanilah aku. Aku orang berdosa!'"
+        },
+        "zh": {
+          "L": "那税吏却远远地站着，连举目望天都不肯，只是捶着自己的胸，说：‘{{god_term:神|上帝}}啊，求{{deity_pronoun:你|祢}}恩待我这个罪人。’",
+          "B": "那税吏却站在远处，连抬眼望天也不敢，只是不住地捶着胸口，说：‘{{god_term:神|上帝}}啊，求{{deity_pronoun:你|祢}}怜悯我这个罪人！’",
+          "R": "可是那个收税的人站得远远的，连抬头望天都不敢。他心里很难过，一直捶着自己的胸口，说：‘{{god_term:神|上帝}}啊，求{{deity_pronoun:你|祢}}怜悯我。我是个罪人！’"
         }
       },
       "decisions": [
@@ -4149,6 +4397,46 @@
           "reason": "The article points to himself alone (m2); \"この\" carries it at Literal.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42018013023"
+          ],
+          "choice": "\"求{{deity_pronoun:你|祢}}\"",
+          "alternatives": [
+            "\"恩待我\" with no pronoun"
+          ],
+          "reason": "Chinese says a plea to God with \"求你\", so the prayer has a \"you\" the English lacks; it takes the deity_pronoun span, as in 17:13.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018013023"
+          ],
+          "choice": "\"恩待\" (L); \"怜悯\" (B, R)",
+          "alternatives": [
+            "\"开恩\""
+          ],
+          "reason": "The verb asks God to turn his anger away and show mercy (meaning decision m1); Literal says \"恩待\", to deal kindly with, and Balanced and Readable the plain \"怜悯\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4253,6 +4541,11 @@
           "L": "Aku berkata kepada kalian, orang ini pulang ke rumahnya sebagai orang yang dibenarkan, dan orang lain itu tidak. Sebab setiap orang yang meninggikan dirinya akan direndahkan, tetapi orang yang merendahkan dirinya akan ditinggikan.\"",
           "B": "Aku berkata kepada kalian, pemungut cukai itulah, dan bukan orang Farisi itu, yang pulang ke rumahnya sebagai orang yang dibenarkan Allah. Sebab setiap orang yang meninggikan diri akan direndahkan, dan setiap orang yang merendahkan diri akan ditinggikan.\"",
           "R": "Aku berkata kepada kalian, ketika kedua orang itu pulang, Allah menerima penagih pajak itu sebagai orang yang benar di hadapan-{{deity_pronoun:nya|Nya}}, tetapi orang Farisi itu tidak. Siapa pun yang menempatkan dirinya di atas orang lain akan direndahkan. Tetapi siapa pun yang rendah hati akan ditinggikan.\""
+        },
+        "zh": {
+          "L": "我告诉你们，这个人下去回家的时候，是已被称义的，而那个人却不是；因为每一个高举自己的，将被降低，而那降低自己的，将被高举。”",
+          "B": "我告诉你们，回家时在{{god_term:神|上帝}}面前被称为义的，是这个人，而不是那一个。因为每一个抬高自己的人，都会被降低；甘愿处在低处的人，却会被抬高。”",
+          "R": "我告诉你们，这两个人回家的时候，{{god_term:神|上帝}}已经接纳那个收税的人为义人，却没有接纳那个法利赛人。凡是把自己放在别人之上的，会被拉下来；凡是谦卑的，会被抬起来。”"
         }
       },
       "decisions": [
@@ -4749,6 +5042,27 @@
           "reason": "The glossary words for justify; Readable says what it means, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018014005"
+          ],
+          "choice": "\"被称义\" (L); \"在{{god_term:神|上帝}}面前被称为义\" (B); \"{{god_term:神|上帝}}接纳……为义人\" (R)",
+          "alternatives": [
+            "\"算为义\""
+          ],
+          "reason": "The glossary's forms for justify: Literal keeps the word; Balanced says before whom; Readable says that God accepted him. Readable names God and so has no pronoun where the English has \"with him\", so no deity_pronoun span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4846,6 +5160,11 @@
           "L": "Lalu orang membawa juga bayi-bayi kepada-{{deity_pronoun:nya|Nya}}, supaya {{deity_pronoun:dia|Dia}} menjamah mereka; tetapi murid-murid, ketika melihat[nya], memarahi mereka.",
           "B": "Orang-orang membawa juga bayi-bayi mereka kepada Yesus supaya {{deity_pronoun:dia|Dia}} menjamah mereka. Tetapi ketika murid-murid melihat hal itu, mereka memarahi orang-orang itu.",
           "R": "Orang-orang membawa bahkan bayi-bayi mereka kepada Yesus. Mereka ingin {{deity_pronoun:dia|Dia}} menyentuh bayi-bayi itu. Tetapi ketika murid-murid melihat hal itu, mereka menyuruh orang-orang itu berhenti."
+        },
+        "zh": {
+          "L": "人们甚至把婴孩带到{{deity_pronoun:他|祂}}这里来，要{{deity_pronoun:他|祂}}摸他们；门徒看见了，就责备那些人。",
+          "B": "人们连自己的婴儿也带到{{deity_pronoun:他|祂}}面前，要{{deity_pronoun:他|祂}}摸摸他们。门徒看见了，就开始斥责那些人。",
+          "R": "人们甚至把自己的婴儿带到耶稣面前。他们希望{{deity_pronoun:他|祂}}摸摸孩子们。可是门徒看见了，就叫那些人不要这样做。"
         }
       },
       "decisions": [
@@ -5121,6 +5440,11 @@
           "L": "Tetapi Yesus memanggil mereka kepada[-{{deity_pronoun:nya|Nya}}], kata-{{deity_pronoun:nya|Nya}}, \"Biarkanlah anak-anak kecil itu datang kepada-{{deity_pronoun:ku|Ku}}, dan jangan menghalang-halangi mereka, sebab Kerajaan Allah adalah milik orang-orang yang seperti mereka.",
           "B": "Tetapi Yesus memanggil anak-anak itu kepada-{{deity_pronoun:nya|Nya}} dan berkata, \"Biarkan anak-anak kecil itu datang kepada-{{deity_pronoun:ku|Ku}}, dan jangan menghalangi mereka, sebab orang-orang seperti merekalah yang memiliki Kerajaan Allah.",
           "R": "Tetapi Yesus memanggil anak-anak itu datang kepada-{{deity_pronoun:nya|Nya}}. Dia berkata, \"Biarkan anak-anak datang kepada-{{deity_pronoun:ku|Ku}}! Jangan menghalangi mereka. Kerajaan Allah adalah milik orang-orang yang seperti mereka."
+        },
+        "zh": {
+          "L": "耶稣却把他们叫到[{{deity_pronoun:他|祂}}]跟前，说：“让小孩子到我这里来，不要拦阻他们，因为{{god_term:神|上帝}}的国正是属于像这样的[人]。",
+          "B": "耶稣却把他们叫过来，说：“让孩子们到我这里来。不要阻挡他们，因为{{god_term:神|上帝}}的国正是属于像他们这样的人的。",
+          "R": "耶稣却叫孩子们到{{deity_pronoun:他|祂}}跟前来。{{deity_pronoun:他|祂}}说：“让小孩子到我这里来！不要拦着他们。{{god_term:神|上帝}}的国是属于像这些孩子一样的人的。"
         }
       },
       "decisions": [
@@ -5314,6 +5638,28 @@
           "reason": "The Greek of Jesus' saying is the same as in Mark 10:14, so the Japanese keeps Mark's wording at each level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018016007",
+            "n42018016024"
+          ],
+          "choice": "The wording of Mark 10:14",
+          "alternatives": [
+            "new wording"
+          ],
+          "reason": "Jesus's words have the same Greek as Mark 10:14, so each level keeps Mark's Chinese; \"{{god_term:神|上帝}}的国\" as the glossary has it. Jesus's \"me\" is \"我\", which has no reverent form, so it takes no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5414,6 +5760,11 @@
           "L": "Amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, siapa yang tidak menyambut Kerajaan Allah seperti seorang anak kecil, ia sama sekali tidak akan masuk ke dalamnya.\"",
           "B": "Sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, siapa yang tidak menyambut Kerajaan Allah seperti seorang anak kecil, ia tidak akan masuk ke dalamnya.\"",
           "R": "Aku mengatakan yang sebenarnya kepada kalian, kalian harus menerima Kerajaan Allah seperti seorang anak kecil menerimanya. Kalau tidak, kalian tidak akan pernah masuk ke dalamnya.\""
+        },
+        "zh": {
+          "L": "阿们，我告诉你们，凡不像小孩子那样接受{{god_term:神|上帝}}的国的，绝不能进入那国。”",
+          "B": "我确实告诉你们，谁不像小孩子那样接受{{god_term:神|上帝}}的国，就绝对进不去。”",
+          "R": "我把实话告诉你们，你们必须像小孩子那样欢迎{{god_term:神|上帝}}的国。如果不这样，你们就绝对进不去。”"
         }
       },
       "decisions": [
@@ -5792,6 +6143,28 @@
           "reason": "The shared Gospel form for Jesus' \"amen\" (4:24); the whole verse is word for word Mark 10:15 in Greek and keeps Mark's Japanese.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018017001",
+            "n42018017003"
+          ],
+          "choice": "\"阿们，我告诉你们\" (L); \"我确实告诉你们\" (B); \"我把实话告诉你们\" (R)",
+          "alternatives": [
+            "\"我实在告诉你们\""
+          ],
+          "reason": "The style guide's fixed forms for Jesus's solemn opening; the sentence has the same Greek as Mark 10:15 and keeps its wording at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5887,6 +6260,11 @@
           "L": "Dan seorang pemimpin bertanya kepada-{{deity_pronoun:nya|Nya}}, katanya, \"Guru yang baik, dengan melakukan apakah aku akan mewarisi hidup yang kekal?\"",
           "B": "Seorang pemimpin bertanya kepada Yesus, \"Guru yang baik, apa yang harus saya lakukan untuk memperoleh hidup kekal?\"",
           "R": "Seorang pemimpin yang terpandang bertanya kepada Yesus, \"Guru yang baik, apa yang harus saya lakukan supaya mendapat hidup kekal?\""
+        },
+        "zh": {
+          "L": "有一个官长问{{deity_pronoun:他|祂}}说：“良善的老师，我要做什么，好承受永生？”",
+          "B": "有一位领袖问{{deity_pronoun:他|祂}}：“良善的老师，我应该怎样做，才能承受永生？”",
+          "R": "有一个重要的领袖问耶稣：“好老师，我必须做什么，才能得到永生？”"
         }
       },
       "decisions": [
@@ -6259,6 +6637,49 @@
           "reason": "As in Mark 10:17, Readable uses a simpler verb; the meaning decision (m3) explains \"inherit\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018018005"
+          ],
+          "choice": "\"官长\" (L); \"领袖\" (B, R)",
+          "alternatives": [
+            "\"官\""
+          ],
+          "reason": "A leader, perhaps of a synagogue or of the council (meaning decision m1). Literal says \"官长\"; Balanced and Readable the general \"领袖\". The question keeps Mark 10:17's wording, since the Greek is the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018018011",
+            "n42018018013"
+          ],
+          "choice": "\"承受永生\" (L, B); \"得到永生\" (R)",
+          "alternatives": [
+            "\"继承永生\""
+          ],
+          "reason": "The glossary's key term \"永生\", the same at every level; \"承受\" keeps the picture of an inheritance, and Readable uses a simpler verb, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6350,6 +6771,11 @@
           "L": "Dan Yesus berkata kepadanya, \"Mengapa engkau menyebut {{deity_pronoun:aku|Aku}} baik?",
           "B": "Jawab Yesus, \"Mengapa engkau menyebut {{deity_pronoun:aku|Aku}} baik?",
           "R": "Yesus berkata kepadanya, \"Mengapa kamu mengatakan bahwa {{deity_pronoun:aku|Aku}} baik?"
+        },
+        "zh": {
+          "L": "耶稣对他说：“你为什么叫我良善？",
+          "B": "耶稣回答：“你为什么称呼我为良善的呢？",
+          "R": "耶稣对他说：“你为什么说我是好人？"
         }
       },
       "decisions": [
@@ -6503,6 +6929,11 @@
           "L": "Tidak ada seorang pun yang baik selain satu, yaitu Allah.",
           "B": "Tidak ada seorang pun yang baik selain Allah saja.",
           "R": "Hanya Allah yang baik. Tidak ada yang lain."
+        },
+        "zh": {
+          "L": "没有谁是良善的，只有一位，就是{{god_term:神|上帝}}。",
+          "B": "没有人是良善的，只有{{god_term:神|上帝}}是。",
+          "R": "只有{{god_term:神|上帝}}是好的，别人都不是。"
         }
       },
       "decisions": [
@@ -6688,6 +7119,11 @@
           "L": "Engkau mengetahui perintah-perintah: 'Jangan berzina, jangan membunuh, jangan mencuri, jangan bersaksi dusta, hormatilah ayahmu dan ibumu.'\"",
           "B": "Engkau tahu perintah-perintah Allah: 'Jangan berzina, jangan membunuh, jangan mencuri, jangan memberi kesaksian palsu, hormatilah ayahmu dan ibumu.'\"",
           "R": "Kamu tahu apa yang dikatakan perintah-perintah Allah: 'Jangan tidak setia dalam pernikahan. Jangan membunuh. Jangan mencuri. Jangan berbohong tentang orang lain di pengadilan. Hormatilah ayahmu dan ibumu.'\""
+        },
+        "zh": {
+          "L": "你知道那些诫命：‘不要通奸，不要杀人，不要偷窃，不要作假见证，要孝敬你的父亲和母亲。’”",
+          "B": "你知道诫命是怎么说的：‘不要通奸。不要杀人。不要偷盗。不要作伪证。要孝敬父母。’”",
+          "R": "你知道{{god_term:神|上帝}}的命令：‘不要对婚姻不忠。不要杀害别人。不要偷东西。不要在法庭上说谎话害别人。要尊敬你的父母。’”"
         }
       },
       "decisions": [
@@ -6940,6 +7376,28 @@
           "reason": "Each commandment keeps the Japanese of Mark 10:19; Luke puts adultery first (m1). Readable keeps \"姦淫\" as Mark's Readable does, and explains false witness as lying in court.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018020004",
+            "n42018020018"
+          ],
+          "choice": "The commandments in Luke's order, in Mark 10:19's words",
+          "alternatives": [
+            "Mark's order"
+          ],
+          "reason": "Luke puts adultery before murder and has no \"do not defraud\", so the list follows Luke; each commandment keeps Mark 10:19's wording at each level, except that Readable says \"对婚姻不忠\" as the English Readable explains adultery here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7031,6 +7489,11 @@
           "L": "Dan ia berkata, \"Semuanya itu telah kutaati sejak masa mudaku.\"",
           "B": "Kata orang itu, \"Semua itu sudah saya taati sejak masa muda saya.\"",
           "R": "Orang itu berkata, \"Saya sudah menaati semua perintah itu sejak saya masih muda.\""
+        },
+        "zh": {
+          "L": "他说：“这一切我从年轻的时候就都遵守了。”",
+          "B": "那人回答：“这些诫命，我从少年时就一直遵行。”",
+          "R": "那人说：“这些诫命我从小到现在都遵守了。”"
         }
       },
       "decisions": [
@@ -7212,6 +7675,11 @@
           "L": "Dan setelah mendengar [hal itu], Yesus berkata kepadanya, \"Masih ada satu hal yang kurang padamu: juallah segala yang kaumiliki dan bagi-bagikanlah [itu] kepada orang-orang miskin, maka engkau akan mempunyai harta di surga; kemudian datanglah, ikutlah {{deity_pronoun:aku|Aku}}.\"",
           "B": "Mendengar itu, Yesus berkata kepadanya, \"Masih ada satu hal yang kurang padamu. Juallah segala milikmu dan bagikanlah uangnya kepada orang miskin, maka engkau akan memperoleh harta di surga. Kemudian datanglah ke mari dan ikutlah {{deity_pronoun:aku|Aku}}.\"",
           "R": "Ketika Yesus mendengar hal itu, {{deity_pronoun:dia|Dia}} berkata, \"Ada satu hal lagi yang perlu kamu lakukan. Juallah semua yang kamu miliki. Berikanlah uangnya kepada orang-orang miskin. Dengan begitu kamu akan mempunyai harta di surga. Sesudah itu, datanglah dan ikutlah {{deity_pronoun:aku|Aku}}.\""
+        },
+        "zh": {
+          "L": "耶稣听了，就对他说：“你还缺少一件事：把你所拥有的一切都卖了，分给穷人，你在天上就会有财宝；然后来，跟从我。”",
+          "B": "耶稣听了，就对他说：“你还少一件事。把你所有的东西都卖掉，把钱分给穷人，这样你在天上就会有财宝。然后你来跟从我。”",
+          "R": "耶稣听了，就说：“你还有一件事需要去做。把你所有的东西都卖了，把钱送给穷人。这样，你在天上就会有财富。然后来跟从我吧。”"
         }
       },
       "decisions": [
@@ -7441,6 +7909,11 @@
           "L": "Tetapi setelah mendengar hal-hal itu, ia menjadi sangat sedih, sebab ia sangat kaya.",
           "B": "Ketika orang itu mendengar perkataan itu, ia menjadi sangat sedih, karena ia sangat kaya.",
           "R": "Ketika orang itu mendengar hal itu, dia menjadi sangat sedih. Dia sangat kaya."
+        },
+        "zh": {
+          "L": "他听了这些话，就非常忧愁，因为他极其富有。",
+          "B": "那人听了这些话，心里充满忧伤，因为他是个非常富有的人。",
+          "R": "那人听了，就变得很难过。他非常富有。"
         }
       },
       "decisions": [
@@ -7575,6 +8048,11 @@
           "L": "Dan Yesus, setelah melihat dia, berkata, \"Betapa sukarnya orang yang mempunyai kekayaan masuk ke dalam Kerajaan Allah!",
           "B": "Yesus memandang orang itu dan berkata, \"Alangkah sukarnya orang kaya masuk ke dalam Kerajaan Allah!",
           "R": "Yesus melihat betapa sedihnya orang itu. Dia berkata, \"Sangat sulit bagi orang kaya untuk masuk ke dalam Kerajaan Allah!"
+        },
+        "zh": {
+          "L": "耶稣看见他，就说：“拥有钱财的人进入{{god_term:神|上帝}}的国，是多么艰难！",
+          "B": "耶稣看见这情形，就说：“有财富的人要进{{god_term:神|上帝}}的国，是多么困难啊！",
+          "R": "耶稣看见那人很难过，就说：“有钱人要进{{god_term:神|上帝}}的国，是非常困难的！"
         }
       },
       "decisions": [
@@ -7801,6 +8279,11 @@
           "L": "Sebab lebih mudah seekor unta masuk melalui lubang jarum daripada seorang kaya masuk ke dalam Kerajaan Allah.\"",
           "B": "Sebab lebih mudah seekor unta masuk melalui lubang jarum daripada seorang kaya masuk ke dalam Kerajaan Allah.\"",
           "R": "Lebih mudah seekor unta melewati lubang jarum yang kecil daripada orang kaya masuk ke dalam Kerajaan Allah.\""
+        },
+        "zh": {
+          "L": "因为骆驼穿过针眼，比富人进入{{god_term:神|上帝}}的国还容易。”",
+          "B": "其实，骆驼穿过针眼，也比有钱人进{{god_term:神|上帝}}的国容易。”",
+          "R": "骆驼穿过针上的小孔，都比有钱人进入{{god_term:神|上帝}}的国容易。”"
         }
       },
       "decisions": [
@@ -8050,6 +8533,11 @@
           "L": "Dan mereka yang mendengar[nya] berkata, \"Kalau begitu, siapakah yang dapat diselamatkan?\"",
           "B": "Orang-orang yang mendengar hal itu bertanya, \"Kalau begitu, siapa yang dapat diselamatkan?\"",
           "R": "Orang-orang yang mendengar perkataan itu bertanya, \"Kalau begitu, siapa yang dapat diselamatkan?\""
+        },
+        "zh": {
+          "L": "听见的人说：“这样，谁能得救呢？”",
+          "B": "听的人问：“这样说来，谁能得救呢？”",
+          "R": "听见这话的人问：“那还有谁能得救呢？”"
         }
       },
       "decisions": [
@@ -8201,6 +8689,11 @@
           "L": "Tetapi {{deity_pronoun:dia|Dia}} berkata, \"Hal-hal yang mustahil bagi manusia, mungkin bagi Allah.\"",
           "B": "Jawab Yesus, \"Apa yang mustahil bagi manusia, mungkin bagi Allah.\"",
           "R": "Yesus menjawab, \"Ada hal-hal yang tidak mungkin bagi manusia, tetapi mungkin bagi Allah.\""
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}说：“对人来说不可能的事，对{{god_term:神|上帝}}来说是可能的。”",
+          "B": "{{deity_pronoun:他|祂}}回答：“人做不到的事，{{god_term:神|上帝}}做得到。”",
+          "R": "耶稣回答：“有些事对人来说是不可能的，对{{god_term:神|上帝}}却是可能的。”"
         }
       },
       "decisions": [
@@ -8403,6 +8896,11 @@
           "L": "Dan Petrus berkata, \"Lihatlah, kami telah meninggalkan milik kami sendiri dan mengikut {{deity_pronoun:engkau|Engkau}}.\"",
           "B": "Lalu Petrus berkata, \"Kami telah meninggalkan segala milik kami untuk mengikut {{deity_pronoun:engkau|Engkau}}.\"",
           "R": "Lalu Petrus berkata, \"Kami sudah meninggalkan rumah dan semua milik kami supaya kami dapat mengikut {{deity_pronoun:engkau|Engkau}}.\""
+        },
+        "zh": {
+          "L": "彼得说：“看哪，我们离开了自己所有的，跟从了{{deity_pronoun:你|祢}}。”",
+          "B": "彼得说：“我们可是把自己所有的都放下，来跟从{{deity_pronoun:你|祢}}了！”",
+          "R": "于是彼得说：“我们离开了家和所有的一切，为的是跟从{{deity_pronoun:你|祢}}。”"
         }
       },
       "decisions": [
@@ -8619,6 +9117,27 @@
           "reason": "As in Mark 10:28: Peter speaks politely to Jesus, and Balanced carries the force of \"look\" in the flow of the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018028005"
+          ],
+          "choice": "\"看哪\" (L); not rendered (B, R)",
+          "alternatives": [
+            "\"你看\""
+          ],
+          "reason": "The style guide's form for idou: Literal keeps it; Balanced and Readable carry its force in the flow of the sentence (\"可是\"), since \"你看\" would add a \"you\" addressed to Jesus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8745,6 +9264,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, tidak ada seorang pun yang telah meninggalkan rumah atau istri atau saudara-saudara atau orang tua atau anak-anak karena Kerajaan Allah, \\v 30 yang tidak akan menerima kembali berlipat ganda pada masa ini juga, dan pada zaman yang akan datang, hidup yang kekal.\"",
           "B": "Jawab Yesus kepada mereka, \"Sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, setiap orang yang karena Kerajaan Allah meninggalkan rumahnya, istrinya, saudara-saudaranya, orang tuanya, atau anak-anaknya, \\v 30 akan menerima kembali berlipat ganda pada masa ini, dan pada zaman yang akan datang ia akan menerima hidup kekal.\"",
           "R": "Yesus berkata kepada mereka, \"Aku mengatakan yang sebenarnya kepada kalian. Siapa pun yang meninggalkan rumah atau istri atau saudara-saudara atau orang tua atau anak-anak demi Kerajaan Allah, \\v 30 akan menerima kembali jauh lebih banyak dalam hidup ini. Dan pada zaman yang akan datang, orang itu akan mendapat hidup kekal.\""
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}对他们说：“阿们，我告诉你们，凡为{{god_term:神|上帝}}的国的缘故，离开了房屋或妻子或兄弟或父母或儿女的，\\v 30 没有一个不在现今这个时期领受多倍，并且在那将要来的时代领受永生。”",
+          "B": "{{deity_pronoun:他|祂}}回答他们：“我确实告诉你们，任何人为了{{god_term:神|上帝}}的国，舍下了房屋、妻子、兄弟、父母或儿女，\\v 30 都一定会在今生得到多得多的回报，并且在将来的时代得到永生。”",
+          "R": "耶稣对他们说：“我把实话告诉你们。有些人为了{{god_term:神|上帝}}的国，离开了自己的家、妻子、兄弟、父母或儿女。\\v 30 他们在今生会得到多得多的东西。在将来的时代，他们还会得到永生。”"
         }
       },
       "decisions": [
@@ -9072,6 +9596,27 @@
           "reason": "Literal keeps the double negative across the verse boundary, with \"だれもいない\" at the end where Japanese puts the verb; Balanced and Readable turn it into a plain statement, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018030013"
+          ],
+          "choice": "\"时代\"",
+          "alternatives": [
+            "\"世界\""
+          ],
+          "reason": "As settled in Matthew, \"时代\" is kept for the age (aion) and \"世代\" for a generation; Readable keeps it too.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9177,6 +9722,11 @@
           "L": "Dan setelah memanggil kedua belas [murid-{{deity_pronoun:nya|Nya}}] ke samping, {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Lihatlah, kita sekarang pergi ke Yerusalem, dan segala sesuatu yang telah ditulis oleh para nabi tentang Anak Manusia akan digenapi.",
           "B": "Yesus memanggil kedua belas murid-{{deity_pronoun:nya|Nya}} ke samping dan berkata kepada mereka, \"Sekarang kita pergi ke Yerusalem, dan segala sesuatu yang ditulis oleh para nabi tentang Anak Manusia akan digenapi.",
           "R": "Yesus memanggil kedua belas rasul ke tempat yang terpisah dan berkata kepada mereka, \"Sekarang kita pergi ke Yerusalem. Di sana semua yang ditulis para nabi tentang Anak Manusia akan terjadi."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}把那十二个人带到一边，对他们说：“看哪，我们正上耶路撒冷去，借着先知们所写下关于人子的一切，都将得以完成。",
+          "B": "{{deity_pronoun:他|祂}}把十二个门徒带到一边，告诉他们：“我们现在要上耶路撒冷去，众先知所写关于人子的事，都要实现了。",
+          "R": "耶稣把十二个使徒带到一边，对他们说：“我们现在要上耶路撒冷去。在那里，先知们所写关于人子的一切事都会发生。"
         }
       },
       "decisions": [
@@ -9606,6 +10156,11 @@
           "L": "Sebab {{deity_pronoun:dia|Dia}} akan diserahkan kepada bangsa-bangsa, dan akan diolok-olok dan dihina dan diludahi, \\v 33 dan setelah mereka menyesah[-{{deity_pronoun:nya|Nya}}], mereka akan membunuh-{{deity_pronoun:nya|Nya}}, dan pada hari ketiga {{deity_pronoun:dia|Dia}} akan bangkit.\"",
           "B": "Dia akan diserahkan kepada bangsa-bangsa lain, diolok-olok, dihina, dan diludahi. \\v 33 Mereka akan mencambuk-{{deity_pronoun:nya|Nya}} dan membunuh-{{deity_pronoun:nya|Nya}}, tetapi pada hari ketiga {{deity_pronoun:dia|Dia}} akan bangkit.\"",
           "R": "Dia akan diserahkan kepada orang-orang bukan Yahudi. Mereka akan menertawakan-{{deity_pronoun:nya|Nya}}, menghina-{{deity_pronoun:nya|Nya}}, dan meludahi-{{deity_pronoun:nya|Nya}}. \\v 33 Mereka akan mencambuk-{{deity_pronoun:nya|Nya}} dan membunuh-{{deity_pronoun:nya|Nya}}. Tetapi pada hari ketiga {{deity_pronoun:dia|Dia}} akan hidup kembali.\""
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}将被交给外邦人，被戏弄，被侮辱，被吐唾沫，\\v 33 他们鞭打[{{deity_pronoun:他|祂}}]之后，要杀死{{deity_pronoun:他|祂}}；第三天{{deity_pronoun:他|祂}}要复活。”",
+          "B": "{{deity_pronoun:他|祂}}要被交给外邦人。他们要嘲弄{{deity_pronoun:他|祂}}，凌辱{{deity_pronoun:他|祂}}，向{{deity_pronoun:他|祂}}吐唾沫，\\v 33 鞭打{{deity_pronoun:他|祂}}以后，把{{deity_pronoun:他|祂}}处死。第三天{{deity_pronoun:他|祂}}要复活。”",
+          "R": "{{deity_pronoun:他|祂}}要被交给非犹太人。他们会嘲笑{{deity_pronoun:他|祂}}，侮辱{{deity_pronoun:他|祂}}，向{{deity_pronoun:他|祂}}吐口水。\\v 33 他们会用鞭子抽打{{deity_pronoun:他|祂}}，然后杀死{{deity_pronoun:他|祂}}。可是到了第三天，{{deity_pronoun:他|祂}}要又活过来。”"
         }
       },
       "decisions": [
@@ -10005,6 +10560,27 @@
           "reason": "The brief's forms for the Gentiles; Readable explains the word, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018032004"
+          ],
+          "choice": "\"外邦人\" (L, B); \"非犹太人\" (R)",
+          "alternatives": [
+            "\"罗马人\""
+          ],
+          "reason": "The glossary's forms for the Gentiles; Readable explains the word, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10105,6 +10681,11 @@
           "L": "Dan mereka tidak mengerti sedikit pun hal-hal itu, dan perkataan itu tersembunyi bagi mereka, dan mereka tidak mengetahui apa yang dikatakan itu.",
           "B": "Tetapi mereka sama sekali tidak mengerti hal itu. Arti perkataan itu tersembunyi bagi mereka, dan mereka tidak tahu apa yang dimaksudkan.",
           "R": "Tetapi para rasul tidak mengerti satu pun dari hal-hal ini. Arti kata-kata itu tersembunyi dari mereka. Mereka sama sekali tidak tahu apa maksud Yesus."
+        },
+        "zh": {
+          "L": "这些事他们一点也不明白；这话对他们是隐藏的，他们也不知道所说的是什么。",
+          "B": "可是十二个门徒对这些事一点也不明白。{{deity_pronoun:他|祂}}所说的话对他们是隐藏的，他们不理解{{deity_pronoun:他|祂}}的意思。",
+          "R": "可是使徒们一点也不明白这些话。这些话的意思向他们隐藏了。他们根本不知道耶稣在说什么。"
         }
       },
       "decisions": [
@@ -10291,6 +10872,11 @@
           "L": "Dan terjadilah, ketika {{deity_pronoun:dia|Dia}} mendekati Yerikho, ada seorang buta sedang duduk di pinggir jalan, mengemis.",
           "B": "Ketika Yesus mendekati Yerikho, ada seorang buta duduk di pinggir jalan dan mengemis.",
           "R": "Yesus sedang mendekati kota Yerikho. Seorang buta sedang duduk di pinggir jalan. Dia meminta-minta uang kepada orang yang lewat."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}快到耶利哥的时候，有一个瞎眼的人坐在路边乞讨。",
+          "B": "耶稣快到耶利哥了。有一个瞎眼的人坐在路旁讨饭。",
+          "R": "耶稣快要到耶利哥城了。有一个瞎眼的人坐在路边。他在向人讨钱。"
         }
       },
       "decisions": [
@@ -10406,6 +10992,25 @@
           "reason": "The terms of the parallel in Mark 10:46 for the blind beggar; Luke does not give his name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n42018035001"
+          ],
+          "choice": "\"……的时候\" with no word for \"it happened\" (L)",
+          "alternatives": [
+            "\"事情是这样的\""
+          ],
+          "reason": "The style guide renders the old opening \"it came to pass\" as a time clause.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10496,6 +11101,11 @@
           "L": "Dan ketika mendengar orang banyak lewat, ia bertanya apa itu.",
           "B": "Ketika ia mendengar orang banyak lewat, ia bertanya apa yang sedang terjadi.",
           "R": "Dia mendengar banyak orang lewat. Dia bertanya apa yang sedang terjadi."
+        },
+        "zh": {
+          "L": "他听见群众经过，就问这是什么事。",
+          "B": "他听见一群人走过，就问发生了什么事。",
+          "R": "他听见很多人从旁边走过，就问发生了什么事。"
         }
       },
       "decisions": [
@@ -10512,6 +11122,26 @@
             "he asked once"
           ],
           "reason": "The tense suggests he asked more than once, or asked those around him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018036003"
+          ],
+          "choice": "\"群众\" (L); \"一群人\" (B); \"很多人\" (R)",
+          "alternatives": [
+            "\"人群\""
+          ],
+          "reason": "The glossary's forms for the crowd.",
           "uncertain": false,
           "footnote": false
         }
@@ -10604,6 +11234,11 @@
           "L": "Dan mereka memberitahukan kepadanya, \"Yesus orang Nazaret sedang lewat.\"",
           "B": "Kata orang kepadanya, \"Yesus orang Nazaret sedang lewat.\"",
           "R": "Orang-orang berkata kepadanya, \"Yesus dari Nazaret sedang lewat.\""
+        },
+        "zh": {
+          "L": "他们告诉他说：“拿撒勒人耶稣正在经过。”",
+          "B": "人们告诉他：“拿撒勒的耶稣正从这里经过。”",
+          "R": "有人告诉他：“从拿撒勒来的耶稣正从这里走过。”"
         }
       },
       "decisions": [
@@ -10883,6 +11518,11 @@
           "L": "Lalu ia berseru, katanya, \"Yesus, Anak Daud, kasihanilah aku!\"",
           "B": "Lalu ia berseru, \"Yesus, Anak Daud, kasihanilah aku!\"",
           "R": "Karena itu dia berteriak, \"Yesus, Anak Daud, tolong kasihanilah aku!\""
+        },
+        "zh": {
+          "L": "他就呼喊说：“耶稣，大卫的子孙，求{{deity_pronoun:你|祢}}怜悯我！”",
+          "B": "于是他大声喊叫：“大卫的子孙耶稣啊，求{{deity_pronoun:你|祢}}怜悯我！”",
+          "R": "于是他大喊：“耶稣，大卫的子孙，求{{deity_pronoun:你|祢}}可怜我吧！”"
         }
       },
       "decisions": [
@@ -11134,6 +11774,49 @@
           "reason": "The glossary title, capitalised.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018038005",
+            "n42018038006"
+          ],
+          "choice": "\"大卫的子孙\"",
+          "alternatives": [
+            "\"大卫的儿子\""
+          ],
+          "reason": "As in Matthew and Mark, the title names David's descendant, the promised king (meaning decision m1), not his son.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42018038007"
+          ],
+          "choice": "\"求{{deity_pronoun:你|祢}}怜悯我\"",
+          "alternatives": [
+            "\"怜悯我\" with no pronoun"
+          ],
+          "reason": "Chinese says a plea with \"求你\", so the cry has a \"you\" the English lacks; it takes the deity_pronoun span, as at Mark 10:47, here and in 18:39.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -11232,6 +11915,11 @@
           "L": "Dan mereka yang berjalan di depan menegurnya supaya ia diam; tetapi ia makin keras berseru, \"Anak Daud, kasihanilah aku!\"",
           "B": "Orang-orang yang berjalan di depan menegurnya supaya ia diam, tetapi ia makin keras berseru, \"Anak Daud, kasihanilah aku!\"",
           "R": "Orang-orang yang berjalan di depan menyuruhnya diam. Tetapi dia berteriak lebih keras lagi, \"Anak Daud, tolong kasihanilah aku!\""
+        },
+        "zh": {
+          "L": "在前面走的人责备他，要他不作声；他却越发呼喊：“大卫的子孙，求{{deity_pronoun:你|祢}}怜悯我！”",
+          "B": "走在前头的人严厉地叫他安静，他却喊得更大声：“大卫的子孙，求{{deity_pronoun:你|祢}}怜悯我！”",
+          "R": "走在前面的人叫他安静。可是他喊得更大声：“大卫的子孙，求{{deity_pronoun:你|祢}}可怜我吧！”"
         }
       },
       "decisions": [
@@ -11393,6 +12081,11 @@
           "L": "Lalu Yesus berhenti dan memerintahkan supaya orang itu dibawa kepada-{{deity_pronoun:nya|Nya}}.",
           "B": "Yesus berhenti dan menyuruh orang membawa dia kepada-{{deity_pronoun:nya|Nya}}.",
           "R": "Yesus berhenti. Dia menyuruh orang-orang membawa orang buta itu kepada-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "耶稣站住，吩咐把他带到{{deity_pronoun:他|祂}}这里来。",
+          "B": "耶稣站定，吩咐人把那人带到{{deity_pronoun:他|祂}}面前。",
+          "R": "耶稣停下来。{{deity_pronoun:他|祂}}叫人把那个瞎眼的人带到{{deity_pronoun:他|祂}}这里来。"
         }
       },
       "decisions": [
@@ -11522,6 +12215,11 @@
           "L": "Dan ketika ia sudah dekat, {{deity_pronoun:dia|Dia}} bertanya kepadanya,",
           "B": "Ketika orang itu sudah dekat, Yesus bertanya kepadanya,",
           "R": "Ketika orang itu sudah dekat, Yesus bertanya kepadanya,"
+        },
+        "zh": {
+          "L": "他走近了，{{deity_pronoun:他|祂}}就问他：",
+          "B": "那人走近了，耶稣就问他：",
+          "R": "那人走到近前，耶稣问他："
         }
       },
       "decisions": [
@@ -11651,6 +12349,11 @@
           "L": "\"Apa yang kaukehendaki supaya {{deity_pronoun:aku|Aku}} perbuat bagimu?\"",
           "B": "\"Apa yang kaukehendaki supaya {{deity_pronoun:aku|Aku}} lakukan bagimu?\"",
           "R": "\"Apa yang kamu mau {{deity_pronoun:aku|Aku}} lakukan untukmu?\""
+        },
+        "zh": {
+          "L": "“你要我为你做什么？”",
+          "B": "“你希望我为你做什么呢？”",
+          "R": "“你想要我为你做什么？”"
         }
       },
       "decisions": [
@@ -11837,6 +12540,11 @@
           "L": "Dan ia berkata, \"Tuhan, supaya aku dapat melihat.\"",
           "B": "Jawab orang itu, \"Tuhan, saya ingin dapat melihat.\"",
           "R": "Orang itu menjawab, \"Tuhan, saya ingin dapat melihat lagi.\""
+        },
+        "zh": {
+          "L": "他说：“主啊，[求]让我能看见。”",
+          "B": "他回答：“主啊，我想要重新看见。”",
+          "R": "那人回答：“主啊，我想要能再看得见。”"
         }
       },
       "decisions": [
@@ -12110,6 +12818,11 @@
           "L": "Dan Yesus berkata kepadanya, \"Melihatlah; imanmu telah menyelamatkan engkau.\"",
           "B": "Kata Yesus kepadanya, \"Melihatlah! Imanmu telah menyelamatkan engkau.\"",
           "R": "Yesus berkata kepadanya, \"Kalau begitu, melihatlah! Imanmu sudah menyembuhkan dan menyelamatkan kamu.\""
+        },
+        "zh": {
+          "L": "耶稣对他说：“你看见吧！你的信心使你得救了。”",
+          "B": "耶稣告诉他：“你重新看见吧。你的信心使你痊愈了。”",
+          "R": "耶稣对他说：“那你就看见吧！你的信心使你好了，也救了你。”"
         }
       },
       "decisions": [
@@ -12280,6 +12993,27 @@
           "reason": "As at 17:19 and in Mark 10:52.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42018042010"
+          ],
+          "choice": "\"使你得救了\" (L); \"使你痊愈了\" (B); \"使你好了，也救了你\" (R)",
+          "alternatives": [
+            "\"救了你\" at every level"
+          ],
+          "reason": "As at 17:19: Literal keeps \"saved\", Balanced says what happened to his body, and Readable gives both senses (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -12371,6 +13105,11 @@
           "L": "Dan seketika itu juga ia dapat melihat, lalu mengikuti {{deity_pronoun:dia|Dia}} sambil memuliakan Allah.",
           "B": "Seketika itu juga ia dapat melihat, lalu ia mengikuti Yesus sambil memuliakan Allah.",
           "R": "Saat itu juga orang itu dapat melihat lagi. Dia mengikuti Yesus sambil memuliakan Allah."
+        },
+        "zh": {
+          "L": "他立刻就看见了，并且跟从{{deity_pronoun:他|祂}}，荣耀{{god_term:神|上帝}}。",
+          "B": "他马上就能看见了，就跟从{{deity_pronoun:他|祂}}，把荣耀归给{{god_term:神|上帝}}。",
+          "R": "那人马上又看得见了。他跟着耶稣走，把荣耀归给{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -12534,6 +13273,11 @@
           "L": "Dan seluruh rakyat, setelah melihat [hal itu], memuji Allah.",
           "B": "Seluruh rakyat yang melihat kejadian itu memuji Allah.",
           "R": "Semua orang yang melihat hal itu juga memuji Allah."
+        },
+        "zh": {
+          "L": "众百姓看见了[这事]，也赞美{{god_term:神|上帝}}。",
+          "B": "所有的人看见所发生的事，都赞美{{god_term:神|上帝}}。",
+          "R": "所有看见这事的人也都赞美{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
