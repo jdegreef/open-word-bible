@@ -85,6 +85,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, demikian,",
           "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa,",
           "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa,"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说话，说：",
+          "B": "{{divine_name:上主|雅威}}对摩西说：",
+          "R": "{{divine_name:上主|雅威}}对摩西说："
         }
       },
       "decisions": [
@@ -277,6 +282,11 @@
           "L": "\"Lihatlah, {{deity_pronoun:aku|Aku}} telah memanggil dengan namanya Bezalel anak Uri, anak Hur, dari suku Yehuda.",
           "B": "\"Perhatikanlah: {{deity_pronoun:aku|Aku}} telah memilih Bezalel dengan menyebut namanya, anak Uri, anak Hur, dari suku Yehuda,",
           "R": "\"Lihat, {{deity_pronoun:aku|Aku}} telah memilih Bezalel untuk pekerjaan ini. Dia anak Uri dan cucu Hur, dari suku Yehuda."
+        },
+        "zh": {
+          "L": "“看哪，我已经提名召了犹大支派户珥的孙子、乌利的儿子比撒列，",
+          "B": "“你要留意：我已经按名字拣选了犹大支派的比撒列，他是户珥的孙子、乌利的儿子，",
+          "R": "“你看，我已经挑选了比撒列做这项工作。他是乌利的儿子，户珥的孙子，属于犹大支派。"
         }
       },
       "decisions": [
@@ -604,6 +614,46 @@
           "reason": "Bezalel and Oholiab follow the current spelling closer to the Hebrew (style guide section 6, rule 3) over the older church forms Bezaleel and Aholiab; Ahisamakh writes the Hebrew kaf as kh.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310020041",
+            "o020310020061",
+            "o020310020081"
+          ],
+          "choice": "\"比撒列\", \"乌利\", \"户珥\"",
+          "alternatives": [],
+          "reason": "Names not yet in the glossary, in the forms of the Chinese Bibles, as 35:30; 户珥 is the Hur of 17:10 and 24:14. \"Son of Hur\" is 户珥的孙子 at every level, since Hur is Bezalel's grandfather (m2), and the wording matches 35:30.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310020011"
+          ],
+          "choice": "\"看哪\" for \"see\"",
+          "alternatives": [
+            "你看"
+          ],
+          "reason": "The formula word for a call to look (style guide section 12) at Literal; Balanced \"你要留意\" and Readable \"你看\", as in 35:30.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -704,6 +754,11 @@
           "L": "Dan {{deity_pronoun:aku|Aku}} telah memenuhinya [dengan] Roh Allah, dengan hikmat dan dengan pengertian dan dengan pengetahuan dan dengan segala macam keterampilan,",
           "B": "dan {{deity_pronoun:aku|Aku}} telah memenuhinya dengan Roh Allah, sehingga ia mempunyai hikmat, pengertian dan pengetahuan dalam segala macam pekerjaan,",
           "R": "Aku telah memenuhinya dengan Roh Allah. Aku telah memberinya hikmat, pengertian dan pengetahuan untuk mengerjakan segala macam kerajinan."
+        },
+        "zh": {
+          "L": "我又以{{god_term:神|上帝}}的灵充满了他，使他有智慧、有悟性、有知识，能做各样的工，",
+          "B": "我用{{god_term:神|上帝}}的灵充满了他，使他在各样工作上有智慧、悟性和知识，",
+          "R": "我用{{god_term:神|上帝}}的灵充满了他。我赐给他智慧、悟性和知识，能做各种手艺。"
         }
       },
       "decisions": [
@@ -929,6 +984,49 @@
           "reason": "As at Genesis 1:2; Japanese has no capital letter, so the English \"Spirit\" is carried by the word itself.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020310030041"
+          ],
+          "choice": "{{god_term:神|上帝}}的灵",
+          "alternatives": [
+            "神的灵",
+            "上帝的灵"
+          ],
+          "reason": "The god_term setting: every word naming the one God is written so that the reader can choose 神 (the default) or 上帝. The Spirit of God is {{god_term:神|上帝}}的灵, as 35:31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310030052",
+            "o020310030063",
+            "o020310030073"
+          ],
+          "choice": "wording as 35:31-33",
+          "alternatives": [],
+          "reason": "Verses 3-5 and 35:31-33 have the same Hebrew list of gifts (wisdom, understanding, knowledge, every craft), so the Chinese keeps one wording for both.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1024,6 +1122,11 @@
           "L": "untuk merancang rancangan-rancangan, untuk bekerja dengan emas dan dengan perak dan dengan tembaga,",
           "B": "untuk merancang karya-karya seni dan mengerjakannya dalam emas, perak dan tembaga,",
           "R": "Dia dapat merancang hiasan-hiasan yang indah dan membuatnya dari emas, perak dan tembaga."
+        },
+        "zh": {
+          "L": "能设计巧妙的图样，用金、银、铜制作，",
+          "B": "能构思精美的设计，并用金、银、铜把它们做出来，",
+          "R": "他能设计美丽的图样，用金子、银子和铜把它们做出来。"
         }
       },
       "decisions": [
@@ -1176,6 +1279,11 @@
           "L": "dan dalam mengasah batu untuk ditatah, dan dalam mengukir kayu, untuk bekerja dalam segala macam keterampilan.",
           "B": "untuk mengasah batu permata yang akan ditatah, untuk mengukir kayu, dan untuk mengerjakan segala macam pekerjaan yang membutuhkan keahlian.",
           "R": "Dia dapat mengasah batu permata untuk dipasang, mengukir kayu, dan mengerjakan segala macam kerajinan lain."
+        },
+        "zh": {
+          "L": "能雕刻宝石以便镶嵌，能雕刻木头，能做各样精巧的工。",
+          "B": "能切割宝石来镶嵌，能雕刻木头，能做各样精巧的工艺。",
+          "R": "他能切磨宝石来镶嵌，能雕刻木头，还能做各种精美的手工。"
         }
       },
       "decisions": [
@@ -1321,6 +1429,11 @@
           "L": "Dan {{deity_pronoun:aku|Aku}}, lihatlah, {{deity_pronoun:aku|Aku}} telah menempatkan bersamanya Oholiab anak Ahisamakh dari suku Dan; dan ke dalam hati setiap orang yang berhati bijak telah {{deity_pronoun:aku|Aku}} taruh hikmat, supaya mereka membuat segala yang telah {{deity_pronoun:aku|Aku}} perintahkan kepadamu:",
           "B": "Aku sendiri juga telah menunjuk Oholiab anak Ahisamakh, dari suku Dan, untuk menjadi rekannya. Ke dalam hati semua orang yang berhati bijak telah {{deity_pronoun:aku|Aku}} taruh hikmat, supaya mereka membuat segala yang telah {{deity_pronoun:aku|Aku}} perintahkan kepadamu:",
           "R": "Aku juga telah memilih Oholiab anak Ahisamakh, dari suku Dan, untuk bekerja bersama dia. Setiap pekerja yang berbakat untuk pekerjaan ini telah menerima hikmat yang lebih banyak dari-{{deity_pronoun:ku|Ku}}. Bersama-sama mereka akan membuat segala yang telah {{deity_pronoun:aku|Aku}} perintahkan kepadamu."
+        },
+        "zh": {
+          "L": "至于我，看哪，我已经指派但支派亚希撒抹的儿子亚何利亚伯与他在一起；在每一个心里有智慧的人心里，我都放了智慧，他们要做我所吩咐你的一切：",
+          "B": "我也亲自指定了但支派亚希撒抹的儿子亚何利亚伯作他的同工。凡心里有智慧的人，我都把智慧放在他们心里，好让他们做我吩咐你的一切：",
+          "R": "我也挑选了但支派亚希撒抹的儿子亚何利亚伯和他一起工作。每一个有手艺的工人，我都赐给他们更多的智慧。他们要一起做我吩咐你的一切。"
         }
       },
       "decisions": [
@@ -1517,6 +1630,45 @@
           "reason": "As at 28:3; skill in a craft (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310060061",
+            "o020310060081"
+          ],
+          "choice": "\"亚何利亚伯\", \"亚希撒抹\"",
+          "alternatives": [],
+          "reason": "Names not yet in the glossary, in the forms of the Chinese Bibles, as 35:34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020310060151"
+          ],
+          "choice": "\"我\" with no span",
+          "alternatives": [
+            "a reverent first-person form (Chinese has none)"
+          ],
+          "reason": "The English Readable spans God's \"me\"; Chinese has no reverent first person, so God speaking says 我 with no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1621,6 +1773,11 @@
           "L": "Kemah Pertemuan, dan tabut loh hukum, dan tutup pendamaian yang ada di atasnya, dan segala perkakas kemah itu,",
           "B": "Kemah Pertemuan, tabut loh hukum dengan tutup pendamaian di atasnya, dan segala perabot lain kemah itu;",
           "R": "Mereka akan membuat Kemah Pertemuan, tabut tempat loh-loh perjanjian, dan tutup tabut, tempat dosa-dosa ditutupi. Mereka akan membuat semua perlengkapan lain untuk kemah itu,"
+        },
+        "zh": {
+          "L": "会幕、见证的柜和其上的赎罪盖，以及会幕的一切器具，",
+          "B": "会幕、约柜和约柜上面的赎罪盖，以及会幕里其他的一切器具；",
+          "R": "他们要做会幕、存放刻着诫命的两块石版的约柜，以及约柜的盖子，就是遮盖罪的地方。他们要做会幕里其他的一切东西，"
         }
       },
       "decisions": [
@@ -1715,6 +1872,30 @@
           "choice": "\"Lều Hội Kiến\", \"hòm chứng ước\", \"nắp thi ân\"",
           "alternatives": [],
           "reason": "The words the Pentateuch terms note sets for the tent of meeting, the ark of the testimony and the atonement cover. Readable explains the ark and the cover, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310070052",
+            "o020310070062",
+            "o020310070081",
+            "o020310070082"
+          ],
+          "choice": "\"见证的柜\" (L), \"约柜\" (B, R); \"赎罪盖\" (L, B), \"约柜的盖子\" (R)",
+          "alternatives": [
+            "施恩座"
+          ],
+          "reason": "The glossary's tabernacle words, as in 30:6: Readable explains the ark and its lid, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1823,6 +2004,11 @@
           "L": "dan meja beserta perkakasnya, dan kaki pelita yang murni beserta segala perkakasnya, dan mezbah ukupan,",
           "B": "meja dan perkakasnya, kaki pelita dari emas murni dengan segala perkakasnya, mezbah ukupan,",
           "R": "meja dan perlengkapannya, kaki pelita dari emas murni dan semua alat-alatnya, mezbah untuk membakar ukupan,"
+        },
+        "zh": {
+          "L": "桌子和它的器具，纯净的灯台和它的一切器具，以及香坛，",
+          "B": "桌子和它的器具、纯金的灯台和它的一切器具、香坛，",
+          "R": "桌子和桌上用的东西、纯金的灯台和它的一切用具、烧香用的坛，"
         }
       },
       "decisions": [
@@ -1977,6 +2163,11 @@
           "L": "dan mezbah korban bakaran beserta segala perkakasnya, dan bejana pembasuhan beserta kakinya,",
           "B": "mezbah korban bakaran dengan segala perkakasnya, bejana pembasuhan dengan kakinya,",
           "R": "mezbah untuk korban bakaran dan semua alat-alatnya, dan bejana besar untuk membasuh dengan kakinya."
+        },
+        "zh": {
+          "L": "燔祭坛和它的一切器具，以及水盆和盆座，",
+          "B": "燔祭坛和它的一切器具、水盆和盆座，",
+          "R": "献全烧祭的祭坛和它的一切用具，以及大铜盆和它的座。"
         }
       },
       "decisions": [
@@ -2031,6 +2222,27 @@
           ],
           "reason": "\"물두멍\" is the established name of the priests' washbasin and is used through Exodus 25-40 in Korean; Readable adds what it was for, as the English Readable does. A reviewer may prefer the everyday \"대야\".",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310090021",
+            "o020310090032",
+            "o020310090082"
+          ],
+          "choice": "\"燔祭坛\" (L, B), \"献全烧祭的祭坛\" (R); \"水盆\" (L, B), \"大铜盆\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's sacrifice word, and the basin as in 30:18 and 30:28.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -2135,6 +2347,11 @@
           "L": "dan pakaian tenunan, dan pakaian kudus bagi imam Harun dan pakaian anak-anaknya untuk melayani sebagai imam,",
           "B": "pakaian yang ditenun halus, yaitu pakaian kudus bagi imam Harun dan pakaian bagi anak-anaknya ketika mereka melayani sebagai imam,",
           "R": "Mereka akan membuat pakaian yang ditenun halus: pakaian kudus untuk imam Harun dan pakaian untuk anak-anaknya ketika mereka melayani sebagai imam."
+        },
+        "zh": {
+          "L": "以及编织的衣服，和祭司亚伦的圣衣，和他儿子们供祭司职分时[穿]的衣服，",
+          "B": "精工织成的衣服，就是祭司亚伦的圣衣，和他儿子们作祭司时所穿的衣服，",
+          "R": "他们要做精心织成的衣服：就是祭司亚伦的圣洁衣服，和他儿子们作祭司时穿的衣服。"
         }
       },
       "decisions": [
@@ -2213,6 +2430,28 @@
           "alternatives": [],
           "reason": "The meaning of serad is uncertain (m1); Balanced and Readable follow the English's \"finely woven\".",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310100021",
+            "o020310100032",
+            "o020310100051",
+            "o020310100062"
+          ],
+          "choice": "\"编织的衣服\" (L), \"精工织成的衣服\" (B), \"精心织成的衣服\" (R); \"圣衣\" (L, B), \"圣洁衣服\" (R)",
+          "alternatives": [],
+          "reason": "The meaning of the word for the woven garments is uncertain (m1); Chinese says woven, as the English does, and keeps the wording of 35:19 for the same phrase.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -2314,6 +2553,11 @@
           "L": "dan minyak urapan dan ukupan dari rempah-rempah untuk tempat kudus. Sesuai dengan segala yang telah {{deity_pronoun:aku|Aku}} perintahkan kepadamu mereka harus melakukannya.\"",
           "B": "minyak urapan, dan ukupan dari rempah-rempah untuk tempat kudus. Dalam segala hal mereka harus mengikuti apa yang telah {{deity_pronoun:aku|Aku}} perintahkan kepadamu.\"",
           "R": "Mereka juga akan membuat minyak khusus untuk mengurapi dan ukupan yang harum untuk tempat kudus. Mereka harus membuat setiap bagiannya tepat seperti yang telah {{deity_pronoun:aku|Aku}} perintahkan kepadamu.\""
+        },
+        "zh": {
+          "L": "膏抹的油，和为圣所用的芬芳的香。他们要照我所吩咐你的一切去做。”",
+          "B": "膏油，以及圣所用的芬芳的香。他们要在每一个细节上遵照我吩咐你的去做。”",
+          "R": "他们还要做膏抹用的特别的油，以及圣所用的气味芬芳的香。他们必须完全照着我吩咐你的去做每一样东西。”"
         }
       },
       "decisions": [
@@ -2400,6 +2644,28 @@
             "\"관유\""
           ],
           "reason": "The Sino-Korean \"관유\" is a church term few readers know; Korean describes the oil by its use.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310110021",
+            "o020310110032",
+            "o020310110051",
+            "o020310110062"
+          ],
+          "choice": "\"膏抹的油\" (L), \"膏油\" (B); \"芬芳的香\" (L, B), \"气味芬芳的香\" (R)",
+          "alternatives": [],
+          "reason": "The anointing oil as in 25:6 and 29:7, and the fragrant incense as in chapters 25 and 35; Readable says \"特别的油\" as the English Readable says \"special oil\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2491,6 +2757,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, demikian,",
           "B": "{{divine_name:TUHAN|Yahweh}} juga berfirman kepada Musa,",
           "R": "{{divine_name:TUHAN|Yahweh}} juga berfirman kepada Musa,"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说话，说：",
+          "B": "{{divine_name:上主|雅威}}又对摩西说：",
+          "R": "{{divine_name:上主|雅威}}又对摩西说："
         }
       },
       "decisions": [
@@ -2621,6 +2892,11 @@
           "L": "\"Dan engkau, berbicaralah kepada bani Israel, demikian, 'Sesungguhnya hari-hari Sabat-{{deity_pronoun:ku|Ku}} harus kalian pelihara, sebab itulah tanda antara {{deity_pronoun:aku|Aku}} dan kalian turun-temurun, supaya kalian mengetahui bahwa Akulah {{divine_name:TUHAN|Yahweh}} yang menguduskan kalian.",
           "B": "\"Katakanlah kepada orang Israel, 'Apa pun yang kalian lakukan, peliharalah hari-hari Sabat-{{deity_pronoun:ku|Ku}}. Sabat adalah tanda antara {{deity_pronoun:aku|Aku}} dan kalian turun-temurun, supaya kalian mengetahui bahwa Akulah {{divine_name:TUHAN|Yahweh}} yang menguduskan kalian.",
           "R": "\"Katakan kepada orang Israel, 'Bagaimanapun juga, peliharalah hari-hari Sabat-{{deity_pronoun:ku|Ku}}. Hari-hari Sabat itu adalah tanda antara {{deity_pronoun:aku|Aku}} dan kalian untuk selamanya. Hari-hari itu menunjukkan bahwa {{deity_pronoun:aku|Aku}} ini {{divine_name:TUHAN|Yahweh}}, yang telah menjadikan kalian umat-{{deity_pronoun:ku|Ku}} sendiri yang kudus."
+        },
+        "zh": {
+          "L": "“你要对{{gender:以色列的子孙|以色列的儿子}}说：‘你们一定要守我的安息日；因为它是我和你们之间的记号，直到你们的世世代代，好使[你们]知道我是使你们成圣的{{divine_name:上主|雅威}}。",
+          "B": "“你要告诉以色列人：‘无论如何，你们都要守我的安息日。安息日是我和你们之间世世代代的记号，使你们知道我是{{divine_name:上主|雅威}}，是使你们分别为圣的那一位。",
+          "R": "“要告诉以色列人：‘不管怎样，都要守我的安息日。安息日是我和你们之间永远的记号。它表明我是{{divine_name:上主|雅威}}，是我使你们成为属于我的圣洁子民。"
         }
       },
       "decisions": [
@@ -2915,6 +3191,50 @@
           "reason": "Above all, or nevertheless (m1, uncertain); the Balanced and Readable wordings follow the English's \"Whatever else you do\" / \"No matter what\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020310130041",
+            "o020310130051"
+          ],
+          "choice": "{{gender:以色列的子孙|以色列的儿子}} (L); \"以色列人\" (B, R), no span",
+          "alternatives": [
+            "{{gender:以色列人|以色列的儿子}}"
+          ],
+          "reason": "The glossary's form: Literal keeps \"sons of Israel\" with the gender setting; Balanced and Readable say \"以色列人\", which already includes everyone, so they need no span, though the English has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020310130092",
+            "o020310130142"
+          ],
+          "choice": "\"我\", \"我的\" with no span",
+          "alternatives": [
+            "a reverent first-person form (Chinese has none)"
+          ],
+          "reason": "The English spans God's \"my\" and \"me\"; God speaking says 我 with no span in Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3028,6 +3348,11 @@
           "L": "Dan kalian harus memelihara hari Sabat, sebab itulah hari kudus bagi kalian. Siapa yang menajiskannya pastilah dihukum mati; sebab siapa pun yang melakukan pekerjaan pada hari itu, orang itu harus dilenyapkan dari tengah-tengah bangsanya.",
           "B": "Jadi peliharalah hari Sabat, sebab itulah hari yang kudus bagi kalian. Siapa yang menajiskannya harus dihukum mati. Siapa yang bekerja pada hari itu harus dilenyapkan dari tengah bangsanya.",
           "R": "Peliharalah hari Sabat, sebab itulah hari yang kudus bagi kalian. Siapa saja yang memperlakukannya seperti hari biasa harus dihukum mati. Siapa saja yang bekerja pada hari itu harus disingkirkan dari tengah umat."
+        },
+        "zh": {
+          "L": "所以你们要守安息日，因为它对你们是圣的。凡亵渎它的，必须被处死；因为凡在这日做工的，那人要从民中被剪除。",
+          "B": "所以你们要守安息日，因为它对你们是圣日。凡亵渎安息日的人，都要被处死。凡在这日做工的人，都要从民中被剪除。",
+          "R": "你们必须守安息日，因为它对你们是圣日。谁把它当作普通的日子，就必须被处死。谁在这一天工作，就必须被逐出自己的族群。"
         }
       },
       "decisions": [
@@ -3339,6 +3664,28 @@
           "reason": "Japanese is already inclusive here, as at 30:33.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020310140191",
+            "o020310140201",
+            "o020310140202"
+          ],
+          "choice": "no gender span: \"从民中\"",
+          "alternatives": [
+            "{{gender:他们的|他的}}"
+          ],
+          "reason": "The English spans \"their / his people\"; Chinese needs no pronoun here, so the sentence is already inclusive and takes no span. \"Cut off\" is 被剪除 at Literal and Balanced and 被逐出自己的族群 at Readable, as in 30:33.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3445,6 +3792,11 @@
           "L": "Enam hari lamanya pekerjaan boleh dilakukan, tetapi pada hari yang ketujuh [adalah] sabat perhentian penuh, kudus bagi {{divine_name:TUHAN|Yahweh}}; setiap orang yang melakukan pekerjaan pada hari Sabat pastilah dihukum mati.",
           "B": "Ada enam hari untuk bekerja. Tetapi hari ketujuh adalah Sabat, hari perhentian penuh, yang dikhususkan sebagai hari kudus bagi {{divine_name:TUHAN|Yahweh}}. Siapa pun yang bekerja pada hari Sabat harus dihukum mati.",
           "R": "Kalian boleh bekerja selama enam hari. Tetapi hari ketujuh adalah hari istirahat penuh. Hari itu milik {{divine_name:TUHAN|Yahweh}}. Siapa saja yang bekerja pada hari itu harus dihukum mati."
+        },
+        "zh": {
+          "L": "工作要做六天，但第七天是完全安息的安息日，对{{divine_name:上主|雅威}}是圣的。凡在安息日那天做工的，必须被处死。",
+          "B": "可以做工的日子有六天，但第七天是完全休息的安息日，是归给{{divine_name:上主|雅威}}的圣日。凡在安息日做工的人，都要被处死。",
+          "R": "你们可以工作六天。但第七天是完全休息的日子，是属于{{divine_name:上主|雅威}}的。在那一天工作的人，都必须被处死。"
         }
       },
       "decisions": [
@@ -3534,6 +3886,26 @@
           "choice": "shabbat shabbaton: \"全き休みの安息日\" (L), \"完全な休みの安息日\" (B), \"完全に休む日\" (R)",
           "alternatives": [],
           "reason": "The fullest rest (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310150071",
+            "o020310150081"
+          ],
+          "choice": "\"完全安息的安息日\"",
+          "alternatives": [
+            "安息圣日"
+          ],
+          "reason": "Literal keeps the Hebrew's doubled word (a sabbath of sabbath rest); Balanced says \"完全休息的安息日\" and Readable \"完全休息的日子\", as in 35:2.",
           "uncertain": false,
           "footnote": false
         }
@@ -3635,6 +4007,11 @@
           "L": "Dan bani Israel harus memelihara hari Sabat, dengan merayakan Sabat turun-temurun [sebagai] perjanjian untuk selama-lamanya.",
           "B": "Orang Israel harus memelihara hari Sabat dan berpegang padanya turun-temurun sebagai perjanjian untuk selama-lamanya.",
           "R": "Orang Israel harus memelihara hari Sabat dari angkatan ke angkatan. Itulah perjanjian yang berlaku untuk selamanya."
+        },
+        "zh": {
+          "L": "{{gender:以色列的子孙|以色列的儿子}}要守安息日，世世代代遵行安息日，[作为]永远的约。",
+          "B": "以色列人要守安息日，世世代代遵守它，作为永远的约。",
+          "R": "以色列人每一代都必须守安息日。这是永远有效的盟约。"
         }
       },
       "decisions": [
@@ -3702,6 +4079,25 @@
           "choice": "aliança perpétua (L); uma aliança para sempre (B, R)",
           "alternatives": [],
           "reason": "\"Aliança\" is the book's word for covenant (docs/pentateuch-portuguese-terms.md); Literal says \"perpétua\", as with \"estatuto perpétuo\", and Balanced and Readable \"para sempre\". The \"filhos de Israel\" take no gender setting (1:7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310160101"
+          ],
+          "choice": "\"盟约\" (R); \"约\" (L, B)",
+          "alternatives": [
+            "约"
+          ],
+          "reason": "The glossary's word for covenant: 约 at Literal and Balanced, 盟约 at Readable.",
           "uncertain": false,
           "footnote": false
         }
@@ -3816,6 +4212,11 @@
           "L": "Antara {{deity_pronoun:aku|Aku}} dan bani Israel itulah tanda untuk selama-lamanya; sebab enam hari lamanya {{divine_name:TUHAN|Yahweh}} menjadikan langit dan bumi, dan pada hari yang ketujuh {{deity_pronoun:dia|Dia}} berhenti dan beristirahat.'\"",
           "B": "Itulah tanda antara {{deity_pronoun:aku|Aku}} dan orang Israel untuk selama-lamanya, sebab dalam enam hari {{divine_name:TUHAN|Yahweh}} menjadikan langit dan bumi, dan pada hari ketujuh {{deity_pronoun:dia|Dia}} berhenti bekerja dan dipulihkan kekuatan-{{deity_pronoun:nya|Nya}}.'\"",
           "R": "Hari Sabat adalah tanda antara {{deity_pronoun:aku|Aku}} dan orang Israel untuk selamanya. Dalam enam hari {{divine_name:TUHAN|Yahweh}} menjadikan langit dan bumi. Lalu pada hari ketujuh {{deity_pronoun:dia|Dia}} beristirahat dari pekerjaan-{{deity_pronoun:nya|Nya}} dan segar kembali.'\""
+        },
+        "zh": {
+          "L": "这是我与{{gender:以色列的子孙|以色列的儿子}}之间永远的记号；因为{{divine_name:上主|雅威}}在六天里造了天和地，第七天{{deity_pronoun:他|祂}}安息了，又舒了一口气。’”",
+          "B": "这是我与以色列人之间永远的记号，因为{{divine_name:上主|雅威}}在六天之内造了天和地，第七天{{deity_pronoun:他|祂}}停了工，精神焕发。’”",
+          "R": "安息日是我和以色列人之间永远的记号。{{divine_name:上主|雅威}}用六天造了天空和大地。到了第七天，{{deity_pronoun:他|祂}}停下{{deity_pronoun:他|祂}}的工作休息，精神焕发。’”"
         }
       },
       "decisions": [
@@ -4132,6 +4533,27 @@
           "reason": "The meaning decision reads the verb as being refreshed; Literal keeps the plainer rest, Balanced and Readable say the refreshment.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310170202"
+          ],
+          "choice": "\"舒了一口气\" (L); \"精神焕发\" (B, R)",
+          "alternatives": [
+            "安息舒畅"
+          ],
+          "reason": "Literal keeps the picture of drawing breath (m2); Balanced and Readable say \"refreshed\" in a word that does not suggest God had been worn out.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4238,6 +4660,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} memberikan kepada Musa, ketika {{deity_pronoun:dia|Dia}} selesai berbicara dengan dia di Gunung Sinai, kedua loh hukum, loh-loh batu, yang ditulisi oleh jari Allah.",
           "B": "Setelah {{deity_pronoun:dia|Dia}} selesai berbicara dengan Musa di Gunung Sinai, {{deity_pronoun:dia|Dia}} menyerahkan kepadanya kedua loh hukum, yaitu loh-loh batu yang ditulisi oleh jari Allah.",
           "R": "Setelah Allah selesai berbicara dengan Musa di Gunung Sinai, {{deity_pronoun:dia|Dia}} memberikan kepada Musa kedua loh batu perjanjian. Allah sendiri telah menulisinya dengan jari-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}在西奈山上与摩西说完了话，就把两块见证版给了摩西，就是两块石版，是由{{god_term:神|上帝}}的指头写成的。",
+          "B": "{{deity_pronoun:他|祂}}在西奈山上和摩西说完了话，就把两块见证版交给他。那是两块石版，上面的字是{{god_term:神|上帝}}用指头写的。",
+          "R": "{{god_term:神|上帝}}在西奈山上和摩西说完了话，就把刻着诫命的两块石版交给摩西。上面的字是{{god_term:神|上帝}}用{{deity_pronoun:他|祂}}自己的指头写的。"
         }
       },
       "decisions": [
@@ -4429,6 +4856,28 @@
           "choice": "\"loh hukum\" for the tablets of the testimony; \"loh batu\" for the stone tablets",
           "alternatives": [],
           "reason": "The glossary terms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020310180101",
+            "o020310180112"
+          ],
+          "choice": "\"见证版\" (L, B); \"刻着诫命的两块石版\" (R)",
+          "alternatives": [
+            "法版"
+          ],
+          "reason": "The glossary's words for the tablets of the testimony; Readable says what they are, as the English Readable says \"tablets of the covenant\" (m1), in the glossary's Readable form used through 25-40.",
           "uncertain": false,
           "footnote": false
         }
