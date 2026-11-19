@@ -11,6 +11,9 @@
 (function () {
   "use strict";
   var DATA = JSON.parse(document.getElementById("owb-data").textContent);
+  // A page in a language written right to left (<html dir="rtl">): left
+  // and right keys and swipes turn the other way, and arrows point left.
+  var RTL = document.documentElement.dir === "rtl", FORWARD = RTL ? "\u2190" : "\u2192";
   [window.OWB_LANG, window.OWB_CHAPTER].forEach(function (shared) {
     for (var k in shared) DATA[k] = shared[k];
   });
@@ -763,7 +766,7 @@
     var title = el("span", null, a.title);
     if (a.lang !== settings.lang) title.lang = a.lang;
     link.appendChild(title);
-    link.appendChild(document.createTextNode(" →"));
+    link.appendChild(document.createTextNode(" " + FORWARD));
     return link;
   }
 
@@ -1268,7 +1271,7 @@
     }
     var links = el("p", "wi-links");
     if (lemmas.length && DATA.word_url) {
-      var more = el("a", "fn-pop-more", t("word_page") + " →");
+      var more = el("a", "fn-pop-more", t("word_page") + " " + FORWARD);
       more.href = DATA.word_url + "?w=" + encodeURIComponent(main.lemma);
       links.appendChild(more);
     }
@@ -1733,7 +1736,7 @@
     var need = "";
     if (room) {
       box.style.top = text.offsetTop + "px";
-      box.style.left = (text.offsetLeft + text.offsetWidth) + "px";
+      box.style.left = (RTL ? text.offsetLeft - box.offsetWidth : text.offsetLeft + text.offsetWidth) + "px";
       var top = box.getBoundingClientRect().top, below = 0;
       Array.prototype.forEach.call(box.children, function (note) {
         var y = Math.max(Math.round(note.verse.getBoundingClientRect().top - top), below);
@@ -2224,6 +2227,7 @@
     // Hebrew reads left to right.
     var greek = el("div", "interlinear");
     if (HEBREW && settings.script !== 1) greek.dir = "rtl";
+    else if (RTL) greek.dir = "ltr";
     var info = el("div", "wordinfo");
     info.setAttribute("aria-live", "polite");
     info.hidden = true;
@@ -3738,11 +3742,13 @@
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && popover) { closeNote(true); return; }
-    // Left and right arrows turn to the previous and next passage, unless
-    // the reader is typing or a control wants the arrows.
+    // Left and right arrows turn to the previous and next passage (right
+    // and left on a right-to-left page), unless the reader is typing or a
+    // control wants the arrows.
     if ((e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
       if (!typing(e.target)) {
-        var turn = document.querySelector('[data-turn="' + (e.key === "ArrowLeft" ? "prev" : "next") + '"]');
+        var back = e.key === (RTL ? "ArrowRight" : "ArrowLeft");
+        var turn = document.querySelector('[data-turn="' + (back ? "prev" : "next") + '"]');
         if (turn) { e.preventDefault(); location.href = turn.href; return; }
       }
     }
@@ -3898,7 +3904,8 @@
   panelEl.addEventListener("touchend", endDrag);
   panelEl.addEventListener("touchcancel", endDrag);
 
-  // Swipe the sheet sideways for the next (left) or previous (right) verse.
+  // Swipe the sheet sideways for the next (left) or previous (right) verse;
+  // on a right-to-left page, the other way round.
   // The direction is settled by the first few pixels: a mostly vertical
   // drag is left to scrolling and to the handle drag above. The sheet
   // follows the finger a little, unless the reader asked for less motion.
@@ -3927,7 +3934,7 @@
     if (!s || s.axis !== "x") return;
     panelEl.style.transform = panelEl.style.transition = "";
     var dx = e.type === "touchend" ? e.changedTouches[0].clientX - s.x : 0;
-    if (Math.abs(dx) > 60) step(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 60) step((dx < 0 ? 1 : -1) * (RTL ? -1 : 1));
   }
   panelEl.addEventListener("touchend", endSwipe);
   panelEl.addEventListener("touchcancel", endSwipe);

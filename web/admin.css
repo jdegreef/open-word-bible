@@ -8,7 +8,7 @@
 .admin-rail a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
 .admin-search { position: relative; margin: 0 0 12px; }
 .admin .admin-search input { width: 100%; font-size: 14.5px; }
-.admin-search-list { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; width: min(380px, calc(100vw - 32px));
+.admin-search-list { position: absolute; z-index: 20; top: calc(100% + 4px); inset-inline-start: 0; width: min(380px, calc(100vw - 32px));
   max-height: min(70vh, 480px); overflow-y: auto; padding: 6px; background: var(--surface); border: 1px solid var(--line-strong);
   border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, .14); }
 .admin-search-list .admin-empty { padding: 8px 10px; }
@@ -37,7 +37,7 @@
 .admin-sub { display: block; font-size: 13px; color: var(--muted); }
 span.admin-sub { display: inline; }
 td .admin-sub, th .admin-sub { display: block; }
-.admin-num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.admin-num { font-variant-numeric: tabular-nums; text-align: end; white-space: nowrap; }
 .admin-empty { color: var(--muted); font-style: italic; margin: 0; }
 .admin-ok { margin: 0 0 22px; color: var(--muted); }
 
@@ -76,7 +76,7 @@ td .admin-bar { margin: 4px 0; }
 .admin-scroll { overflow-x: auto; margin: 0 0 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 .admin-block .admin-scroll { border: 0; margin: 0; }
 .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.admin-table th, .admin-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.admin-table th, .admin-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: top; }
 .admin-table thead th { font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); white-space: nowrap; background: var(--surface); }
 .admin-table tbody th { font-weight: 600; }
 .admin-table tbody tr:last-child > * { border-bottom: 0; }
@@ -152,7 +152,7 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-messages { display: grid; gap: 14px; }
 .admin-message { padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
 .admin-message header { font-size: 14.5px; }
-.admin-message blockquote { margin: 10px 0; padding: 8px 14px; border-left: 3px solid var(--line-strong); font-family: var(--serif); font-size: 17px; white-space: pre-wrap; }
+.admin-message blockquote { margin: 10px 0; padding: 8px 14px; border-inline-start: 3px solid var(--line-strong); font-family: var(--serif); font-size: 17px; white-space: pre-wrap; }
 .admin-reply { margin: 10px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--surface-2); white-space: pre-wrap; }
 .admin-reply p { margin: 0; }
 
@@ -209,7 +209,7 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-link-text { font-family: var(--serif); font-size: 20px; line-height: 1.9; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); white-space: pre-wrap; user-select: text; }
 .admin-link-span { background: var(--accent-soft); color: inherit; border-radius: 3px; box-shadow: inset 0 -2px 0 var(--accent-soft-border); }
 .admin-link-span.lit { background: var(--mark); box-shadow: inset 0 -2px 0 var(--accent); }
-.admin-link-list { margin: 0; padding-left: 1.4em; display: grid; gap: 4px; font-size: 15px; }
+.admin-link-list { margin: 0; padding-inline-start: 1.4em; display: grid; gap: 4px; font-size: 15px; }
 .admin-link-list code { font-size: 12px; color: var(--muted); }
 .admin-form.stacked > button { justify-self: start; }
 .admin-term { font-family: var(--serif); font-size: 19px; font-weight: 400; }

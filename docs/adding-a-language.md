@@ -48,6 +48,8 @@ Simplified Chinese fonts choose the glyphs.
   a passage card: `&ldquo;{}&rdquo;` for languages that use “ ”), and
   `settings` only if the language has a reader setting no other has (as
   Spanish has `plural_you`).
+  A language written right to left also gets `"dir": "rtl"`; see section
+  11 before registering one.
 - **`README.md`**: the language in the opening list and its brief in the
   list of briefs.
 - **Tests** that name every language in a docstring or list:
@@ -177,3 +179,96 @@ record, but check two places when adding it:
 Draft book by book with the `drafting-worker` skill or by hand, following
 the brief; run `check-book-before-translating` first. Records stay
 `ai_draft` until a named reviewer approves them.
+
+## 11. Right to left (Arabic, Persian, Urdu)
+
+No reading language is written right to left yet; the site is ready for
+one (November 2026, "Right to left: a direction per language ..."). Hebrew
+already was, as an original language. What the first one's registration
+pull request does on top of sections 1–8:
+
+- **`"dir": "rtl"`** on its entry in `data/languages.json`
+  (`owb/languages.py` checks the value; `direction(code)` reads it). From
+  then on:
+  - its pages are built with `<html lang="ar" dir="rtl">`;
+  - every page names the right-to-left codes in `<meta name="owb-rtl">`,
+    and `build_site.isolate_directions` gives each element tagged with a
+    `lang` its own `dir` where that language reads the other way from its
+    nearest ancestor with a `dir`: an Arabic verse in an English compare
+    view or parallel column, the footer's "العربية" on an English page, an
+    English fallback verse or a Greek word on an Arabic page;
+  - `web/site.js` (`window.OWBDir`) does the same for text the scripts add
+    (reader, compare, saved verses, editions, plans, memorizing, admin),
+    with a MutationObserver, so a script that sets `node.lang` needs
+    nothing more. Set `dir` yourself only where a direction is not a
+    language's (transliterated Hebrew reads left to right);
+  - the left and right arrow keys, the panel's swipe and the
+    cross-reference margin mirror, and arrows the code writes
+    (`build_site.forward`, and in `web/reader.js`, `compare.js`,
+    `groups.js` and `word.js` from `<html dir>`) point the way the page
+    reads.
+  - Still to do in that pull request: `web/compare.js` shows the English
+    decision notes (choice, alternatives, reasons) without `lang="en"`,
+    so on a right-to-left page they would run right to left; tag them as
+    `web/reader.js` does (`d.english`).
+
+  With no right-to-left reading language, none of this changes a page:
+  `tests/test_rtl.py` and `tests/js/bidi.test.mjs` flag a language for the
+  length of a test instead of adding one.
+- **Arrows in the catalog** are the translator's: in `i18n/<code>.json`
+  "Previous" points right and "Next" left (`reader.prev`, `reader.next`),
+  "All articles" and the like end with `&larr;`, `login.back` starts with
+  `→`, and `reader.ui.keys_hint` / `keys_list` say that → turns back and
+  ← forward, as the keys do on that page.
+- **CSS.** `web/style.css` and `web/admin.css` give margins, padding,
+  borders, corners, alignment and offsets by start and end
+  (`margin-inline-start`, `padding-inline`, `inset-inline-end`,
+  `text-align: start`); `tests/test_rtl.py` keeps it so. What logical
+  properties cannot say (an arrow icon, a float, a gradient, a rotated
+  chevron) is mirrored in the "Right to left" section at the end of
+  `web/style.css`, under `html[dir="rtl"]`, not `[dir="rtl"]`, which a
+  Hebrew paragraph on a left-to-right page also matches. Before the pull
+  request, look at the home page, a chapter in the reader (study panel,
+  settings panel, footnote and cross-reference pop-ups, parallel view with
+  English), the compare page, a key-term page and the footer, on a phone
+  and a wide screen; a `:lang(ar)` rule goes beside the Korean and
+  Japanese ones for anything the script needs.
+- **Letter spacing and italics.** Arabic letters join, so tracking breaks
+  them: the eyebrows, labels and headings that set `letter-spacing`
+  need `:lang(ar) { letter-spacing: 0 }` (or the language's code), and
+  Arabic has no italic, so turn italics off as Japanese does
+  (`:lang(ja) em`). `text-transform: uppercase` does nothing to it.
+- **Fonts** (OFL, in `web/fonts/` with `@font-face` in `web/style.css`):
+  Noto Naskh Arabic for Arabic and Persian reading text (Noto Sans Arabic
+  for the interface), subset to the Arabic blocks (`unicode-range:
+  U+0600-06FF, U+0750-077F, U+0870-08FF, U+FB50-FDFF, U+FE70-FEFF`), so
+  Latin pages never download it. Urdu is read in Nastaliq: Noto Nastaliq
+  Urdu is large and tall, so it needs its own `:root:lang(ur)` line height
+  (around 2.2) and a check that verse numbers and footnote letters still
+  sit on the line. Put the Arabic font in the language's `--serif` and
+  `--sans` stacks after Gentium and Hanken Grotesk, as Japanese does, so
+  Latin letters and digits keep the site's faces.
+- **Quotation marks.** `owb/markup.py` and `owb/words_of_jesus.py` work on
+  the text in its logical (typed) order, so direction changes nothing
+  there: « is the opening mark even though a right-to-left line shows it
+  mirrored. Arabic and Persian use « » outside and “ ” inside, the
+  guillemet path Spanish and French use; `quotes` is `&laquo;{}&raquo;`.
+  Urdu often uses “ ” outside: then the outer/inner choice in
+  `_quotations` needs the language's marks (as Japanese's 「 」 did), with
+  tests in `tests/test_words_of_jesus.py`; and “ ” are not mirrored
+  characters, so the brief should say which of them the language's printed
+  Bibles type first. The Arabic question mark ؟ ends sentences and goes in
+  the verse-of-the-day regex in `tests/test_site.py`; the Arabic comma ،
+  and semicolon ؛ need nothing.
+- **Numerals.** Verse and chapter numbers, references and URLs are ASCII
+  digits everywhere. Arabic Bibles print either those or Arabic-Indic
+  digits (٠١٢٣); Persian and Urdu use Eastern Arabic-Indic (۰۱۲۳, with
+  Urdu's own shapes for 4, 6 and 7). Which the reader shows is a decision
+  for the language's brief, not settled here; if native digits, they are
+  a display step in `build_site.py` and `web/reader.js` (never in records,
+  references or URLs), and search must find a reference typed either way.
+- **Search.** Postgres has an `arabic` Snowball stemmer (section 5);
+  Persian and Urdu have none and use `owb_simple`. Either way, search
+  should ignore the short vowels (harakat) and treat the Arabic and
+  Persian forms of ya and kaf (ي ی, ك ک) as one letter.
+
