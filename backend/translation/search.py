@@ -115,7 +115,8 @@ WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
 # Persian yeh (ی) as yeh (ي), the Persian keheh (ک) as kaf (ك); Arabic-Indic
 # and Persian digits as ASCII. A word written either way then finds the
 # other. Teh marbuta (ة) stays: the Arabic stemmer takes it off a word
-# (كلمة, الكلمة: كلم) but leaves a heh after the article (الكلمه: كلمه). The site's search.js and build_site.fold do the same.
+# (كلمة, الكلمة: كلم) but leaves a heh after the article (الكلمه: كلمه).
+# The site's search.js and build_site.fold do the same.
 ARABIC = {0x0640: None, 0x0670: None, **dict.fromkeys(range(0x064B, 0x0660)),
           0x0622: 0x0627, 0x0623: 0x0627, 0x0625: 0x0627, 0x0671: 0x0627, 0x0624: 0x0648,
           0x0626: 0x064A, 0x0649: 0x064A, 0x06CC: 0x064A, 0x06A9: 0x0643,
