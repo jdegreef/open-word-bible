@@ -1242,7 +1242,9 @@ def paragraph_starts(records, words):
     sentence with a full stop. The Hebrew codex has no capitals; it marks a
     paragraph's end with an open or closed paragraph sign (petuchah, pe;
     setumah, samekh) after the last word, which MACULA keeps in "after".
-    A chapter's first record always opens one."""
+    A chapter's first record always opens one, and so does the first record
+    of a Hebrew chapter that the NIV numbering puts inside another (Hebrew
+    1 Kings 5:1 is 4:21): the codex marks no paragraph at a chapter's end."""
     order = [w for verse in words.values() for w in verse]
     by_id = {w["id"]: w for w in order}
     before = {b["id"]: a for a, b in zip(order, order[1:])}
@@ -1251,7 +1253,7 @@ def paragraph_starts(records, words):
         first = r["source"]["tokens"][0]
         word = by_id.get(first)
         prev = before.get(first)
-        if i == 0 or prev is None or HEBREW_PARAGRAPH.search(prev["after"]) or (
+        if i == 0 or prev is None or r["id"].split(".")[2:] == ["1", "s1"] or HEBREW_PARAGRAPH.search(prev["after"]) or (
                 word and word["text"][:1].isupper() and word["lemma"][:1].islower()
                 and prev["after"].strip().endswith(".")):
             starts.append(r["id"])

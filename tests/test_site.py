@@ -939,11 +939,12 @@ class SiteTest(unittest.TestCase):
                          ["GEN.1.1.s1", "GEN.1.6.s1", "GEN.1.9.s1", "GEN.1.14.s1", "GEN.1.20.s1", "GEN.1.24.s1"])
 
     def test_headings_stand_above_paragraphs(self):
-        ids = {r["id"] for b, c in build_site.chapters() for r in build_site.load_chapter(b, c)[0]}
+        # A record is on the page of its NIV chapter: Hebrew 1 Chr 5:27 is 6:1.
+        pages = {r["id"]: (b, c) for b, c in build_site.chapters() for r in build_site.load_chapter(b, c)[0]}
         for rid, heading in build_site.headings().items():
-            self.assertIn(rid, ids, rid)
+            self.assertIn(rid, pages, rid)
             self.assertIn("en", heading, rid)
-            book, chapter = rid.split(".")[:2]
+            book, chapter = pages[rid]
             data = self.chapter_data(f"{book.lower()}/{chapter}")
             self.assertIn(rid, data["paragraphs"], rid)
             self.assertEqual(data["headings"][rid], heading)
@@ -1017,10 +1018,10 @@ class SiteTest(unittest.TestCase):
         john = json.loads((self.out / "editions" / "JHN" / "3.json").read_text(encoding="utf-8"))
         self.assertEqual(set(john), {code for code, _, _ in build_site.EDITIONS})
         self.assertIn("loved the world", john["bsb"]["16"])
-        # English Psalm 3:1 is our 3:2; our 3:1 is the title, which they lack.
+        # Numbered as the NIV: the title is verse 0, which they lack.
         psalm = json.loads((self.out / "editions" / "PSA" / "3.json").read_text(encoding="utf-8"))
-        self.assertNotIn("1", psalm["bsb"])
-        self.assertTrue(psalm["bsb"]["2"].startswith("O LORD"))
+        self.assertNotIn("0", psalm["bsb"])
+        self.assertTrue(psalm["bsb"]["1"].startswith("O LORD"))
         # The reader's panel links each verse here.
         self.assertEqual(self.chapter_data("jhn/3")["compare_url"], "/compare/")
         self.assertEqual(self.chapter_data("es/jhn/3")["compare_url"], "/es/compare/")
@@ -1843,9 +1844,9 @@ class LinkedPagesTest(unittest.TestCase):
     def test_quotations_page(self):
         page = self.page("quotations")
         self.assertIn("<h1>The Old Testament in the New</h1>", page)
-        # Matthew 2:6 quotes Micah 5:2, which is 5:1 in the Hebrew numbering.
+        # Matthew 2:6 quotes Micah 5:2 (5:1 in Hebrew Bibles), linked as the NIV.
         row = re.search(r'<li><p class="q-text">[^<]*</p><p class="q-refs"><a href="/mat/2/#v6">.*?</li>', page)[0]
-        self.assertIn('href="/mic/5/#v1"', row)
+        self.assertIn('href="/mic/5/#v2"', row)
         self.assertIn("Bethlehem", row)
         self.assertEqual(page.count('<p class="q-text"'), len(build_site.quotations()))
         for lang in build_site.LANGUAGES:
