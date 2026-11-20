@@ -243,6 +243,16 @@ class ValidateTest(unittest.TestCase):
             errors = validate.validate_record(record)
             self.assertTrue(any("decisions[0].reason: names" in e for e in errors), (text, errors))
 
+    def test_a_people_and_its_ancient_language_may_be_named(self):
+        # Persian kings and Arabic cognates of Hebrew words are history, not
+        # wording, even once Arabic and Persian are reading languages.
+        for text in ("The Persian king Cyrus.", "An Arabic word of the same root means \"to cover\"."):
+            record = example_records()[0]
+            record["decisions"][0]["reason"] = text
+            errors = validate.validate_record(record)
+            self.assertFalse(any("names" in e for e in errors), (text, errors))
+        self.assertEqual(validate.HISTORICAL_NAMES, {"Arabic", "Persian"})
+
     def test_meaning_decision_with_a_setting_fails(self):
         record = example_records()[0]
         record["decisions"][0]["choice"] = "{{gender:all people|men}}"
