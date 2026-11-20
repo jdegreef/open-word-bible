@@ -3881,32 +3881,13 @@ class Plan(NamedTuple):
 
 @functools.lru_cache(maxsize=None)
 def load_plans():
-    """Every plan in data/plans.json, in its order."""
+    """Every plan in data/plans.json, in its order. Days list chapters as
+    readers see them (NIV numbering: Malachi has 4, Joel 3)."""
     out = []
     for p in json.loads(PLAN_DATA.read_text(encoding="utf-8"))["plans"]:
-        # The file lists chapters as content/ numbers them: each becomes the
-        # reader chapters its verses are in (Malachi 3 is NIV 3 and 4), each
-        # read once, on the first day that reaches it (Hebrew Joel 3 is the
-        # end of NIV Joel 2, read the day before).
-        seen, days = set(), []
-        for day in p["days"]:
-            got = []
-            for ref in day:
-                book, chapter = ref.split(".")[0], int(ref.split(".")[1])
-                for bc in reader_chapters(book, chapter):
-                    if bc not in seen:
-                        seen.add(bc)
-                        got.append(bc)
-            days.append(tuple(got))
-        out.append(Plan(p["id"], p["name"], tuple(days)))
+        days = tuple(tuple((ref.split(".")[0], int(ref.split(".")[1])) for ref in day) for day in p["days"])
+        out.append(Plan(p["id"], p["name"], days))
     return tuple(out)
-
-
-def reader_chapters(book, chapter):
-    """The reader chapters that hold one of content/'s chapters, in order."""
-    found = {refs.parse(r).chapter for v in source_chapter_verses(book, chapter)
-             for r in versification.reader_ids(v)}
-    return [(book, c) for c in sorted(found or {chapter})]
 
 
 @functools.lru_cache(maxsize=None)
