@@ -6398,6 +6398,14 @@ SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans
 _WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
 
 
+# Arabic-script letters written more than one way, as the backend's
+# search.ARABIC folds them (the marks go with the other combining marks).
+_ARABIC = {0x0640: None, 0x0622: 0x0627, 0x0623: 0x0627, 0x0625: 0x0627, 0x0671: 0x0627,
+           0x0624: 0x0648, 0x0626: 0x064A, 0x0649: 0x064A, 0x06CC: 0x064A, 0x06A9: 0x0643,
+           **{0x0660 + i: 0x30 + i for i in range(10)},
+           **{0x06F0 + i: 0x30 + i for i in range(10)}}
+
+
 def fold(text):
     """Text as search compares it: lower case, without accents, full-width
     letters and digits as ASCII, Vietnamese "đ" as "d". The rest is composed
@@ -6407,7 +6415,7 @@ def fold(text):
     import unicodedata
     return unicodedata.normalize("NFC", "".join(
         c for c in unicodedata.normalize("NFD", text.translate(_WIDE).lower())
-        if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("\u0111", "d")
+        if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("\u0111", "d").translate(_ARABIC)
 
 
 def book_aliases(code, names):
