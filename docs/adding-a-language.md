@@ -269,7 +269,7 @@ pull request does on top of sections 1–8:
   `backend/translation/search.py`, with the same steps in
   `build_site.fold` and `web/search.js`): the short vowels (harakat) and
   tatweel go, أ إ آ ٱ are ا, ى and the Persian ی are ي, the Persian ک is
-  ك, ة is ه, and Arabic-Indic and Persian digits are ASCII, so "٣:١٦"
+  ك, and Arabic-Indic and Persian digits are ASCII, so "٣:١٦"
   finds 3:16. Fields in Arabic script are indexed folded the same way
   (`search.indexed`), whatever the language's configuration, since
   Postgres's `unaccent` leaves them as they are. Postgres has an `arabic`
