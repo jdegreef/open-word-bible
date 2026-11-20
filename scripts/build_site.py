@@ -957,6 +957,35 @@ def search_only(r):
                           if d["layer"] != "rendering" or d["language"] in keep]}
 
 
+@functools.cache
+def reader_verse_starts():
+    """data/reader_verses.json's records: {record id: {"verse", "before":
+    {lang: {level: text}}}}, where an NIV verse starts inside a sentence."""
+    return json.loads((ROOT / "data" / "reader_verses.json").read_text(encoding="utf-8"))["records"]
+
+
+def mark_reader_verses(r):
+    """Put a verse marker where an NIV verse starts inside the record
+    (reader_verse_starts): Psalm 13:6 in content/ is NIV 13:5 and 13:6, and
+    "I will sing" starts 13:6. A line marker just before it gives way to the
+    verse marker, which always starts a line. A rendering whose text no
+    longer holds the start (edited since) is left as it is."""
+    start = reader_verse_starts().get(r["id"])
+    if not start:
+        return r
+    n = refs.parse(start["verse"]).verse
+    for lang, levels in r["renderings"].items():
+        for level, text in levels.items():
+            before = start["before"].get(lang, {}).get(level)
+            if not before or text.count(before) != 1:
+                continue
+            i = text.index(before)
+            head = text[:i]
+            head = head[:-3] if head.endswith("\\q ") else head
+            levels[level] = f"{head.rstrip()} \\v {n} {text[i:]}"
+    return r
+
+
 def reader_record(r):
     """A record as the site shows it: its refs in reader (NIV) numbering
     (owb/versification.py reader_ids), so Malachi 3:19 is 4:1 and a psalm's
@@ -979,6 +1008,7 @@ def _book_records(book):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
             # Search needs no links or red letters: only the texts it keeps
             # are curled.
+            r = mark_reader_verses(r)
             r = reader_record(curl_texts(search_only(r)) if SEARCH_ONLY else curl_record(r))
             for ch in {refs.parse(v).chapter for v in r["refs"]}:
                 by_chapter.setdefault(ch, []).append(r)
@@ -1003,6 +1033,9 @@ def _reader_book_words(book):
     # takes its words to its verse.
     moved = {t: versification.READER_RECORDS[r["id"]][0] for rs in _book_records(book).values() for r in rs
              if r["id"] in versification.READER_RECORDS for t in r["source"]["tokens"]}
+    # Where an NIV verse starts inside one of our verses (mark_reader_verses),
+    # nothing says which source words fall in it (the Hebrew is not aligned
+    # word by word), so the verse's words all stay with the first NIV verse.
     have = book_reader_verses(book)
     out = {}
     for path in files:
@@ -6775,7 +6808,7 @@ def sitemaps(entries):
 
 
 def build(out):
-    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,

@@ -108,6 +108,29 @@ class VersificationTest(unittest.TestCase):
                     with self.subTest(r["id"]):
                         self.assertEqual(versification.reader_ids_of(r["refs"]), r["refs"])
 
+    def test_reader_verse_starts_fit_their_renderings(self):
+        # data/reader_verses.json: each of our verses that is two NIV verses
+        # says, in every rendering of its sentence, where the second starts,
+        # and that text occurs there once.
+        import json
+        data = json.loads((ROOT / "data" / "reader_verses.json").read_text(encoding="utf-8"))["records"]
+        splits = {h: es for h, es in ((str(h), es) for h, es in versification._tables()[0].items()) if len(es) > 1}
+        records = {}
+        for verse_id in splits:
+            book, chapter, _ = verse_id.split(".")
+            path = ROOT / "content" / book / f"{book}.{chapter}.json"
+            for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
+                if verse_id in r["refs"] and r["id"] not in versification.READER_RECORDS:
+                    records[r["id"]] = r
+        self.assertEqual(set(data), set(records))
+        for rid, start in data.items():
+            r = records[rid]
+            self.assertEqual(versification.reader_ids(r["refs"][0])[1], start["verse"])
+            for lang, levels in r["renderings"].items():
+                for level, text in levels.items():
+                    with self.subTest(rid=rid, lang=lang, level=level):
+                        self.assertEqual(text.count(start["before"][lang][level]), 1)
+
     def test_derive_from_a_verse_map(self):
         xml = """<verseMap><book osisID="Ps">
         <verse wlc="Ps.3.2" kjv="Ps.3.1" type="full"/><verse wlc="Ps.3.3" kjv="Ps.3.2" type="full"/>

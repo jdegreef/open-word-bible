@@ -1095,6 +1095,10 @@ class SiteTest(unittest.TestCase):
         # numbers as a verse of its own.
         num26 = self.chapter_data("num/26")["records"]
         self.assertEqual([r["refs"] for r in num26[:2]], [["NUM.26.1"], ["NUM.26.1"]])
+        # One of our verses that is two NIV verses (data/reader_verses.json).
+        page = (self.out / "psa" / "13" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<sup>6</sup>I will sing", page)
+        self.assertIn("ISA.64.1", {v for r in self.chapter_data("isa/64")["records"] for v in r["refs"]})
         acts = {r["id"]: r["refs"] for r in self.chapter_data("act/19")["records"]}
         self.assertEqual(acts["ACT.19.40.s2"], ["ACT.19.41"])
 
