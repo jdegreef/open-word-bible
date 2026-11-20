@@ -1311,7 +1311,7 @@ def heading_record(rid):
 @functools.cache
 def summaries():
     """Chapter summaries by (book, chapter) (data/summaries/, one file per
-    book, keyed by chapter number), each in the languages it has."""
+    book, keyed by the chapter number readers see), each in the languages it has."""
     return {(path.stem, int(ch)): {lang: smart_quotes(text) for lang, text in s.items()}
             for path in sorted((ROOT / "data" / "summaries").glob("*.json"))
             for ch, s in json.loads(path.read_text(encoding="utf-8"))["summaries"].items()}
