@@ -328,6 +328,17 @@ class SearchTest(TestCase):
             cur.execute("SELECT to_tsvector('owb_indonesian', 'dikasihi') @@ to_tsquery('owb_indonesian', 'kasih')")
             self.assertTrue(cur.fetchone()[0])
 
+    def test_arabic_is_stemmed_after_it_is_folded(self):
+        # owb_arabic (translation 0016) takes off the article and the
+        # attached conjunction, on text folded as search.fold folds it, so
+        # "الكلمة" and "وَالْكَلِمَةُ" (John 1:1) find each other.
+        self.assertEqual(search.config("ar"), "owb_arabic")
+        word = search.fold("\u0648\u064e\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f")
+        query = search.fold("\u0627\u0644\u0643\u0644\u0645\u0629")
+        with connection.cursor() as cur:
+            cur.execute("SELECT to_tsvector('owb_arabic', %s) @@ plainto_tsquery('owb_arabic', %s)", [word, query])
+            self.assertTrue(cur.fetchone()[0])
+
     def test_japanese_references_with_full_width_digits(self):
         ref = self.get(q="ヨハネによる福音書３：１６", lang="ja")["reference"]
         self.assertEqual((ref["label"], ref["url"]), ("ヨハネによる福音書 3:16", "/ja/jhn/3/#v16"))

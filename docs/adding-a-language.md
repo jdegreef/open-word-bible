@@ -29,6 +29,12 @@ everywhere `plural_you` is), Chinese pairs for `deity_pronoun` in
 scripts use `<html lang>` as the language code, and the stylesheet's
 Simplified Chinese fonts choose the glyphs.
 
+Arabic (`ar`), added in November 2026, is the first reading language
+written right to left: section 11 says what that took. Its registration
+added only data and the catalog on top of the shared right-to-left pieces
+(fonts, `:lang` rules, search folding), so Persian and Urdu can follow the
+same pattern.
+
 ## 0. Before the code: the brief
 
 - `docs/<language>-style.md`: the drafting brief (levels and their names,
@@ -182,10 +188,9 @@ the brief; run `check-book-before-translating` first. Records stay
 
 ## 11. Right to left (Arabic, Persian, Urdu)
 
-No reading language is written right to left yet; the site is ready for
-one (November 2026, "Right to left: a direction per language ..."). Hebrew
-already was, as an original language. What the first one's registration
-pull request does on top of sections 1–8:
+Arabic is the first reading language written right to left (November
+2026); Hebrew already was, as an original language. What a right-to-left
+language's registration pull request does on top of sections 1–8:
 
 - **`"dir": "rtl"`** on its entry in `data/languages.json`
   (`owb/languages.py` checks the value; `direction(code)` reads it). From

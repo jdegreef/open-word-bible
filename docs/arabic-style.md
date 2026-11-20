@@ -634,11 +634,12 @@ notes it once.
 Arabic is written with spaces, so site search indexes it word by word.
 Postgres ships an Arabic Snowball stemmer, which strips the article, the
 joined *و*, *ف*, *ب*, *ك*, *ل* and the common suffixes, so *والإيمان* finds
-*الإيمان* (search uses `owb_arabic`, translation migration `0014`). The
-search text is normalised so that a reader's spelling finds the drafts'
-(`backend/translation/search.py` `normalize_arabic`): short vowels and the
-shadda are removed, *أ إ آ* are read as *ا*, final *ى* as *ي*, *ة* as *ه*,
-and the Persian *ی* and *ک* as *ي* and *ك*. This does not affect drafting,
+*الإيمان* (search uses `owb_arabic`, translation migration `0016`). The
+search text is folded so that a reader's spelling finds the drafts'
+(`search.ARABIC` in `backend/translation/search.py`, the same in
+`web/search.js`): short vowels, the shadda and tatweel are removed, *أ إ آ
+ٱ* are read as *ا*, *ؤ* as *و* and *ئ* and final *ى* as *ي*, *ة* as *ه*,
+the Persian *ی* and *ک* as *ي* and *ك*, and Arabic-Indic digits as ASCII. This does not affect drafting,
 but a term written two ways (*خطيئة* / *خطية*) is two words to search: keep
 the glossary's spelling throughout.
 
