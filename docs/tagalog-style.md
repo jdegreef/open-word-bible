@@ -255,6 +255,12 @@ default and the `deity_pronoun` setting lets a reader choose lowercase.
     `{{deity_pronoun:natin|Natin}}`, `{{deity_pronoun:tayo|Tayo}}`.
 - A pronoun at the start of a sentence is written plainly with its capital
   and no span (*Siya ang ...*), as in English.
+- **Where the English starts a sentence with a plain "He"**, the Tagalog
+  pronoun usually falls after the verb (*Inihiwalay niya ...*). It takes the
+  span there, so it shows the same capital as every other pronoun for God;
+  a lowercase *niya* with no span in the middle of a sentence would break
+  the default. The count of spans may therefore exceed the English one.
+  (Settled in Genesis 1:4.)
 - **Enclitics.** Tagalog's short pronouns come second in the clause (*Pinuri
   {{deity_pronoun:ka|Ka}} namin*, *Hindi {{deity_pronoun:niya|Niya}} sila
   iniwan*). A span does not move them: write the clause as Tagalog orders

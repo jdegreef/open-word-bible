@@ -67,6 +67,36 @@ class VersificationTest(unittest.TestCase):
         self.assertEqual(ids(versification.to_english(ref("JHN.3.16"))), ["JHN.3.16"])
         self.assertEqual(versification.english_chapters("REV", 12), [12, 13])
 
+    def test_hebrew_half_verses(self):
+        # Two Hebrew verses that make one English verse, which the verse map
+        # pairs only by their second half (OLD_TESTAMENT_HALVES).
+        for first, second, english in (("NUM.25.19", "NUM.26.1", "NUM.26.1"),
+                                       ("1SA.20.42", "1SA.21.1", "1SA.20.42"),
+                                       ("1CH.12.4", "1CH.12.5", "1CH.12.4")):
+            with self.subTest(english):
+                self.assertEqual(ids(versification.to_english(ref(first))), [english])
+                self.assertEqual(ids(versification.to_english(ref(second))), [english])
+                self.assertEqual(ids(versification.to_source(ref(english))), [first, second])
+
+    def test_only_psalm_titles_have_no_english_number(self):
+        hebrew = set(macula_hebrew.verses())
+        unnumbered = {h.book for h in hebrew if not versification.to_english(h)}
+        self.assertEqual(unnumbered, {"PSA"})
+
+    def test_niv_numbering(self):
+        # The NIV numbers as the KJV does, except that 3 John has a verse 15.
+        self.assertEqual(ids(versification.to_niv(ref("3JN.1.15"))), ["3JN.1.15"])
+        self.assertEqual(ids(versification.from_niv(ref("3JN.1.15"))), ["3JN.1.15"])
+        self.assertEqual(ids(versification.from_niv(ref("3JN.1.14"))), ["3JN.1.14"])
+        for verse_id, niv in (("MAL.3.19", ["MAL.4.1"]), ("JOL.3.1", ["JOL.2.28"]), ("PSA.3.1", []),
+                              ("PSA.51.3", ["PSA.51.1"]), ("2CO.13.13", ["2CO.13.14"]),
+                              ("REV.12.18", ["REV.13.1"]), ("ISA.63.19", ["ISA.63.19", "ISA.64.1"]),
+                              ("JHN.3.16", ["JHN.3.16"])):
+            with self.subTest(verse_id):
+                self.assertEqual(ids(versification.to_niv(ref(verse_id))), niv)
+        self.assertEqual(versification.niv_ids(["3JN.1.14", "3JN.1.15", "MAL.3.19"]),
+                         ["3JN.1.14", "3JN.1.15", "MAL.4.1"])
+
     def test_derive_from_a_verse_map(self):
         xml = """<verseMap><book osisID="Ps">
         <verse wlc="Ps.3.2" kjv="Ps.3.1" type="full"/><verse wlc="Ps.3.3" kjv="Ps.3.2" type="full"/>
