@@ -131,8 +131,17 @@ never meaning decisions.
 - **Script.** Standard modern orthography (常用漢字 and 現代仮名遣い, 送り仮名
   as in the 送り仮名の付け方). Write in kana the words modern writing usually
   writes in kana (こと, もの, とき as a noun of time, ください, いる, ある, できる,
-  ～ように, わたし, あなた). No furigana: the reader cannot show ruby, so choose
-  words a reader can read at the level, more kana at Readable.
+  ～ように, わたし, あなた). Choose words a reader can read at the level, more
+  kana at Readable: furigana are an optional reading aid, not a licence for
+  hard kanji.
+- **Furigana.** `data/furigana/<BOOK>.json` gives the reading of each kanji
+  run (`owb/furigana.py`), which the reader shows over the kanji when the
+  furigana tool is on. John's Balanced readings were drafted by hand; the
+  other books' Balanced readings were drafted with `scripts/draft_furigana.py`
+  (MeCab with UniDic, plus the Bible's own readings: 主 しゅ, 御心 みこころ,
+  罪人 つみびと, ユダヤ人 じん, the ritual 汚れ けがれ, dates such as 第一の月の
+  一日 ついたち). When a rendering changes, rerun it with `--refresh` for that
+  book; it keeps every reading that still fits.
 - **Punctuation.** Full-width 、 and 。; ？ and ！ only where the Greek asks or
   exclaims, followed by nothing at the end of a sentence (a full-width space is
   not used). Quotation marks are 「 」 outside, 『 』 for a quotation inside a
