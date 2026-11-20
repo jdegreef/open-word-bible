@@ -2,10 +2,10 @@
 (owb/languages.py), <html dir="rtl"> for a page in such a language, and a dir
 on text whose language reads the other way from what surrounds it
 (build_site.isolate_directions; web/site.js does the same for text the
-scripts add, tests/js/bidi.test.mjs). These tests flag a language for a
-while (Spanish, for the length of a test), or unflag the real right-to-left
-reading languages (Persian), rather than depend on data/; with none, pages
-are as before."""
+scripts add, tests/js/bidi.test.mjs). Arabic and Persian are the reading
+languages written right to left; these tests also flag one for a while
+(Spanish, for the length of a test), and take the real flags away to check
+that with none, pages are as they were before."""
 import json
 import re
 import sys
@@ -53,7 +53,7 @@ class DirectionTest(unittest.TestCase):
     def test_each_reading_language_reads_as_data_says(self):
         data = json.loads((ROOT / "data" / "languages.json").read_text(encoding="utf-8"))["reading"]
         self.assertEqual(languages.RTL_READING, tuple(lang["code"] for lang in data if lang.get("dir") == "rtl"))
-        self.assertIn("fa", languages.RTL_READING)
+        self.assertEqual(set(languages.RTL_READING), {"ar", "fa"})
         for code in languages.CODES:
             self.assertEqual(languages.direction(code), "rtl" if code in languages.RTL_READING else "ltr", code)
 
@@ -107,8 +107,8 @@ class IsolateTest(unittest.TestCase):
 
 
 class PageTest(unittest.TestCase):
-    """build_site.page, with no reading language right to left and with
-    Spanish flagged as one."""
+    """build_site.page, with no reading language right to left, in Arabic,
+    and with Spanish flagged as one too."""
 
     def page(self, lang):
         return build_site.page(lang, "Title", '<p>Body <span lang="hbo" dir="rtl">x</span></p>', path="/about/")
@@ -148,6 +148,18 @@ class PageTest(unittest.TestCase):
         self.assertIn('<a href="/es/about/" lang="es" dir="rtl" hreflang="es" data-lang="es">Español '
                       '<span class="lang-gloss" lang="en" dir="ltr">(Spanish)</span></a>', text)
         self.assertNotIn('lang="fr" dir=', text)
+
+
+    def test_an_arabic_page(self):
+        text = self.page("ar")
+        self.assertEqual(build_site.forward("ar"), "&larr;")
+        self.assertIn('<html lang="ar" dir="rtl">', text)
+        self.assertIn(rtl_meta(), text)
+        self.assertRegex(text, r'<a href="/about/" lang="en" dir="ltr" hreflang="en" data-lang="en">English '
+                               r'<span class="lang-gloss" lang="ar" dir="rtl">\(')
+        self.assertIn('<span lang="ar" aria-current="true">العربية', text)
+        # An English page names Arabic in its footer, isolated.
+        self.assertIn('<a href="/ar/about/" lang="ar" dir="rtl" hreflang="ar" data-lang="ar">العربية', self.page("en"))
 
 
 class StyleTest(unittest.TestCase):

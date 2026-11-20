@@ -89,6 +89,9 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe("N-DSF", "id"), "Kata benda · datif, tunggal, feminin")
         self.assertEqual(morph.describe("V-2AAI-3S", "zh"), "动词 · 第二不定过去时，直陈语气，主动态 · 第三人称单数")
         self.assertEqual(morph.describe("N-DSF", "zh"), "名词 · 与格，单数，阴性")
+        self.assertEqual(morph.describe("V-2AAI-3S", "ar"),
+                         "فعل · الأوريست الثاني، الخبري، المعلوم · الغائب، مفرد")
+        self.assertEqual(morph.describe("N-DSF", "ar"), "اسم · القابل، مفرد، مؤنّث")
         self.assertEqual(morph.describe("V-2AAI-3S", "fa"), "فعل · آئوریست دوم، اخباری، معلوم · سوم شخص مفرد")
         self.assertEqual(morph.describe("N-DSF", "fa"), "اسم · داتیو، مفرد، مؤنث")
 
@@ -136,6 +139,8 @@ class MorphTest(unittest.TestCase):
                          "Kata kerja · Qal · narasi lampau (wayyiqtol) · orang ketiga maskulin tunggal")
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "zh"),
                          "动词 · Qal · 叙事过去式（wayyiqtol） · 第三人称 阳性 单数")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "ar"),
+                         "فعل · Qal · السرد الماضي (wayyiqtol) · الغائب مذكّر مفرد")
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "fa"),
                          "فعل · Qal · ماضی روایی (wayyiqtol) · سوم شخص مذکر مفرد")
         # Aramaic stems share letters with Hebrew ones but not names.

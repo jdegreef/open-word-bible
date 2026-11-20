@@ -29,16 +29,22 @@ everywhere `plural_you` is), Chinese pairs for `deity_pronoun` in
 scripts use `<html lang>` as the language code, and the stylesheet's
 Simplified Chinese fonts choose the glyphs.
 
+Arabic (`ar`), added in November 2026, is the first reading language
+written right to left: section 11 says what that took. Its registration
+added only data and the catalog on top of the shared right-to-left pieces
+(fonts, `:lang` rules, search folding), so Persian and Urdu can follow the
+same pattern.
+
 Persian (`fa`), added in November 2026 before any of its text was drafted
-("Register Persian (fa) as a reading language"), was the first reading
-language written right to left (section 11). Beyond the usual steps it
+("Register Persian (fa) as a reading language"), followed Arabic as the
+second reading language written right to left (section 11). Beyond the usual steps it
 needed: `"dir": "rtl"`; arrows in its catalog that point the way it reads;
 validation of its own letters and digits (`owb/validate.py`
 `FOREIGN_CHARACTERS`: the Arabic ي, ك and Arabic-Indic digits are refused in
 `fa` renderings) and of direction marks in any rendering; ؟ as a sentence
 end; and "Persian" left out of the language names a meaning decision may
 not use, since it also names the Persians of Ezra, Esther and Daniel
-(`HISTORICAL_NAMES`, with "Farsi" refused instead).
+(`HISTORICAL_NAMES`, shared with Arabic, with "Farsi" refused instead).
 
 ## 0. Before the code: the brief
 
@@ -193,10 +199,9 @@ the brief; run `check-book-before-translating` first. Records stay
 
 ## 11. Right to left (Arabic, Persian, Urdu)
 
-No reading language is written right to left yet; the site is ready for
-one (November 2026, "Right to left: a direction per language ..."). Hebrew
-already was, as an original language. What the first one's registration
-pull request does on top of sections 1–8:
+Arabic is the first reading language written right to left (November
+2026); Hebrew already was, as an original language. What a right-to-left
+language's registration pull request does on top of sections 1–8:
 
 - **`"dir": "rtl"`** on its entry in `data/languages.json`
   (`owb/languages.py` checks the value; `direction(code)` reads it). From
