@@ -329,12 +329,12 @@ class SearchTest(TestCase):
             self.assertTrue(cur.fetchone()[0])
 
     def test_arabic_is_stemmed_after_it_is_folded(self):
-        # owb_arabic (translation 0016) takes off the article and the
-        # attached conjunction, on text folded as search.fold folds it, so
-        # "الكلمة" and "وَالْكَلِمَةُ" (John 1:1) find each other.
+        # owb_arabic (translation 0016) takes off the attached preposition
+        # and the article and the ending, on text folded as search.fold
+        # folds it, so "كلمة" finds "بِالْكَلِمَةِ" (by the word).
         self.assertEqual(search.config("ar"), "owb_arabic")
-        word = search.fold("\u0648\u064e\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f")
-        query = search.fold("\u0627\u0644\u0643\u0644\u0645\u0629")
+        word = search.fold("\u0628\u0650\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u0650")
+        query = search.fold("\u0643\u0644\u0645\u0629")
         with connection.cursor() as cur:
             cur.execute("SELECT to_tsvector('owb_arabic', %s) @@ plainto_tsquery('owb_arabic', %s)", [word, query])
             self.assertTrue(cur.fetchone()[0])
