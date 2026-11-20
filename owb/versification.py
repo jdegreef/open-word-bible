@@ -14,7 +14,12 @@ English counterpart is not the verse with the same id: {"PSA.3.1": [],
 counterpart (a psalm title, which English Bibles print unnumbered above
 verse 1). Under "not_in_hebrew" are the English verse ids the WLC has no verse
 for (GEN.31.55 is Hebrew GEN.32.1). Any other verse is numbered the same in
-both, except the few New Testament verses in NEW_TESTAMENT below.
+both, except the few New Testament verses in NEW_TESTAMENT below and the
+three Hebrew half-verses in OLD_TESTAMENT_HALVES, which the verse map leaves
+out.
+
+The site shows readers the NIV's numbering (to_niv(), from_niv()), which is
+the English numbering but for 3 John 15.
 
 The file is derived by scripts/build_versification.py from the Open
 Scriptures Hebrew Bible's wlc/VerseMap.xml (CC BY 4.0), keeping only verses
@@ -49,12 +54,28 @@ NEW_TESTAMENT = {
 # English verse ids those leave with no SBLGNT verse of their own number.
 NEW_TESTAMENT_ABSENT = ("ACT.19.41", "2CO.13.14")
 
+# Three Hebrew verses that are the first half of an English verse whose second
+# half is the next Hebrew verse. VerseMap.xml pairs only the second half
+# (1Sam.21.1 -> 1Sam.20.42), which leaves the first looking like a psalm
+# title with no English verse; written by hand, against the KJV's text.
+OLD_TESTAMENT_HALVES = {
+    "NUM.26.1": ("NUM.26.1",),    # Hebrew 25:19 "after the plague" + 26:1 = English 26:1
+    "1SA.20.42": ("1SA.20.42",),  # Hebrew 20:42 + 21:1 = English 20:42
+    "1CH.12.4": ("1CH.12.4",),    # Hebrew 12:4 + 12:5 = English 12:4
+}
+
+# Reader numbering: what the site shows readers, the NIV's. It is the
+# English (KJV) numbering above except in 3 John, where the NIV, like the
+# SBLGNT, has a verse 15 ("Peace to you ..."), so our verses keep their own
+# numbers there.
+NIV_AS_SOURCE = ("3JN.1.15",)
+
 
 @lru_cache(maxsize=None)
 def _tables():
     data = json.loads(DATA.read_text(encoding="utf-8"))
     english = {refs.parse(h): tuple(refs.parse(e) for e in es)
-               for h, es in (data["english"] | NEW_TESTAMENT).items()}
+               for h, es in (data["english"] | OLD_TESTAMENT_HALVES | NEW_TESTAMENT).items()}
     absent = {refs.parse(e) for e in (*data["not_in_hebrew"], *NEW_TESTAMENT_ABSENT)}
     source, chapters = defaultdict(list), defaultdict(set)
     for h, es in english.items():
@@ -83,6 +104,29 @@ def english_ids(verse_ids):
     out = []
     for verse_id in verse_ids:
         for ref in to_english(refs.parse(verse_id)):
+            if str(ref) not in out:
+                out.append(str(ref))
+    return out
+
+
+def to_niv(ref):
+    """The verses in reader (NIV) numbering that hold one of our verses:
+    to_english() except where the NIV numbers as the SBLGNT does."""
+    return (ref,) if str(ref) in NIV_AS_SOURCE else to_english(ref)
+
+
+def from_niv(ref):
+    """Our verses that hold one verse in reader (NIV) numbering."""
+    if str(ref) in NIV_AS_SOURCE:
+        return (ref,)
+    return tuple(r for r in to_source(ref) if str(r) not in NIV_AS_SOURCE)
+
+
+def niv_ids(verse_ids):
+    """The reader (NIV) verse ids for a list of our verse ids, in order, each once."""
+    out = []
+    for verse_id in verse_ids:
+        for ref in to_niv(refs.parse(verse_id)):
             if str(ref) not in out:
                 out.append(str(ref))
     return out

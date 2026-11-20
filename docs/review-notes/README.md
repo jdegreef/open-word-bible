@@ -24,11 +24,13 @@ Each language has two files:
 | Swahili | [sw-review-checklist.md](sw-review-checklist.md) | [sw-uncertain.md](sw-uncertain.md) |
 | Vietnamese | [vi-review-checklist.md](vi-review-checklist.md) | [vi-uncertain.md](vi-uncertain.md) |
 | Korean | [ko-review-checklist.md](ko-review-checklist.md) | [ko-uncertain.md](ko-uncertain.md) |
+| Japanese | [ja-review-checklist.md](ja-review-checklist.md) | [ja-uncertain.md](ja-uncertain.md) |
 | Amharic | [amharic-review-guide.md](../amharic-review-guide.md) | [am-review-priorities.md](am-review-priorities.md), section 1 |
 | Hindi | [hindi-review-guide.md](../hindi-review-guide.md) | [hi-uncertain.md](hi-uncertain.md) |
 | Russian | [russian-review-guide.md](../russian-review-guide.md) | [ru-uncertain.md](ru-uncertain.md) |
 | Indonesian | [id-review-checklist.md](id-review-checklist.md) (an outline written before drafting) | `id-uncertain.md`, once books are drafted |
 | Chinese (Simplified) | [zh-review-checklist.md](zh-review-checklist.md) (an outline written before drafting and before registration) | `zh-uncertain.md`, once books are drafted |
+| Arabic | [ar-review-checklist.md](ar-review-checklist.md) (an outline written before drafting) | `ar-uncertain.md`, once books are drafted |
 
 Amharic has a guide (`docs/amharic-review-guide.md`: the levels, the settings,
 what to check, how review works in the admin and where to start) and a

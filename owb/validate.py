@@ -46,8 +46,14 @@ LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 # the languages the translation is made into (in English or in that language),
 # nor Spanish by its other name or Portuguese, which may come next, nor
 # Chinese without "(Simplified)".
+# Reading languages' English names that are also the names of a people and
+# an ancient language a meaning decision may speak of (the Persian kings of
+# Ezra and Esther, an Arabic cognate of a rare Hebrew word): they are not
+# taken as naming a reading language. The native names still are.
+HISTORICAL_NAMES = {"Arabic", "Persian"}
 TARGET_LANGUAGE_NAMES = re.compile(r"(?<!\w)(" + "|".join(map(re.escape,
-    [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])]
+    [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])
+     if n not in HISTORICAL_NAMES]
     + ["castellano", "Portuguese", "portugu\u00eas", "Chinese"])) + r")(?!\w)", re.IGNORECASE)
 # Reader settings only some languages have ({{plural_you:...}} is Spanish).
 LANGUAGE_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
