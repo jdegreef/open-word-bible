@@ -51,7 +51,9 @@ French, Swahili, Vietnamese, Korean, (Brazilian) Portuguese, Amharic, Hindi,
 Russian, Ukrainian, Japanese, Indonesian and Chinese (Simplified).
 `docs/hindi-terms.md`, `docs/russian-terms.md`, `docs/indonesian-terms.md`
 and `docs/chinese-terms.md` are the Hindi, Russian, Indonesian and Chinese
-glossaries, Genesis to Revelation. `docs/hindi-review-guide.md` and
+glossaries, Genesis to Revelation. `docs/persian-style.md` and
+`docs/persian-terms.md` are the proposed brief and glossary for Persian,
+not yet a reading language. `docs/hindi-review-guide.md` and
 `docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
