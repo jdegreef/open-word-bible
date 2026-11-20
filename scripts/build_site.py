@@ -1122,7 +1122,10 @@ def reader_record(r):
     a sentence by it. A record with verse markers (\\v) is never one of the
     renumbered ones (tests/test_site.py checks), so its text needs no change."""
     r["source_refs"] = r["refs"]
-    segments = len(markup.split_verses(next(iter(r["renderings"]["en"].values())))) if "en" in r["renderings"] else 1
+    # Search keeps one language's renderings, perhaps none: any will do, as
+    # every language marks the same verses.
+    texts = [t for levels in r["renderings"].values() for t in levels.values()][:1]
+    segments = len(markup.split_verses(texts[0])) if texts else 1
     r["refs"] = versification.record_reader_ids(r["id"], r["refs"], segments)
     return r
 
