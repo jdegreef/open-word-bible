@@ -1000,8 +1000,13 @@ _NUMBERING_WORDS = re.compile(
 
 
 def numbering_word(text, start, end):
-    """Whether a reference at text[start:end] has a numbering word close by."""
-    return bool(_NUMBERING_WORDS.search(text[max(0, start - 12):end + 20]))
+    """Whether a reference at text[start:end] has a numbering word close by,
+    or in the brackets right after it: "Exodus 22:28 (22:27 in the Hebrew
+    numbering)" already gives the English number."""
+    if _NUMBERING_WORDS.search(text[max(0, start - 12):end + 20]):
+        return True
+    after = re.match(r"\s*[(（]([^)）]*)", text[end:])
+    return bool(after and _NUMBERING_WORDS.search(after[1]))
 
 
 def reader_note_refs(text, lang="en", record_id=None):
