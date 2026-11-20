@@ -213,7 +213,7 @@ class SiteChromeTest(unittest.TestCase):
             # Links stay in the page's language: /es/ pages link to /es/.
             # (The menu lists the books translated into it: Matthew, in
             # every language that has it.)
-            lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+            lang = re.search(r'<html lang="([a-z]+)"[ >]', text)[1]
             if lang in matthew:
                 self.assertIn(f'href="{build_site.url(lang, "/read/#mat")}"', text, path)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")
