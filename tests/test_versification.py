@@ -97,6 +97,17 @@ class VersificationTest(unittest.TestCase):
         self.assertEqual(versification.niv_ids(["3JN.1.14", "3JN.1.15", "MAL.3.19"]),
                          ["3JN.1.14", "3JN.1.15", "MAL.4.1"])
 
+    def test_records_with_verse_markers_keep_their_numbers(self):
+        # The site renumbers a record's refs but not the verse markers in its
+        # text (build_site.reader_record), so no record that spans verses
+        # may be one the NIV numbers otherwise.
+        import json
+        for path in sorted((ROOT / "content").glob("*/*.json")):
+            for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
+                if len(r["refs"]) > 1:
+                    with self.subTest(r["id"]):
+                        self.assertEqual(versification.reader_ids_of(r["refs"]), r["refs"])
+
     def test_derive_from_a_verse_map(self):
         xml = """<verseMap><book osisID="Ps">
         <verse wlc="Ps.3.2" kjv="Ps.3.1" type="full"/><verse wlc="Ps.3.3" kjv="Ps.3.2" type="full"/>

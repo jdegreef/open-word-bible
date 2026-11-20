@@ -949,15 +949,17 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(data["headings"][rid], heading)
 
     def test_chapter_pages_carry_their_cross_references(self):
-        # Every verse on the page with references has them, and only those:
-        # Psalm 3:1 is the title, so the first references are verse 2's.
+        # Every verse on the page with references has them, and only those,
+        # in reader numbering: Psalm 3's title is verse 0 and has none.
         for path, book in (("jhn/3", "JHN"), ("psa/3", "PSA"), ("es/jhn/3", "JHN")):
             data = self.chapter_data(path)
             vids = {vid for r in data["records"] for vid in r["refs"]}
-            table = crossrefs.load(book)
+            table = crossrefs.load_reader(book)
             self.assertEqual(data["crossrefs"], {v: table[v] for v in vids if v in table}, path)
         self.assertEqual(self.chapter_data("jhn/3")["crossrefs"]["JHN.3.16"][0], "ROM.5.8")
-        self.assertNotIn("PSA.3.1", self.chapter_data("psa/3")["crossrefs"])
+        self.assertNotIn("PSA.3.0", self.chapter_data("psa/3")["crossrefs"])
+        self.assertEqual(self.chapter_data("psa/3")["crossrefs"]["PSA.3.1"],
+                         [crossrefs.reader_target(t) for t in crossrefs.load("PSA")["PSA.3.2"]])
         page = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
         self.assertIn('data-setting="crossrefs"', page)
         self.assertIn('id="xr-margin"', page)
@@ -1061,15 +1063,40 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(data["verses"]["compare"][0][0], "rv1909")
 
     def test_preview_files_number_untranslated_verses_as_we_do(self):
-        # A chapter with comparison text has it under our verse numbers:
-        # English Psalm 3:1 is our Psalm 3:2, after the title.
+        # A chapter with comparison text has it under the site's verse
+        # numbers, which are the English Bibles' (reader numbering).
         for path in sorted((self.out / build_site.VERSES_DIR).glob("*/*.json")):
             data = json.loads(path.read_text(encoding="utf-8"))
             for code, verses in data.get("c", {}).items():
                 self.assertIn(code, build_site.COMPARISON_EDITIONS)
                 self.assertFalse(set(verses) & set(data.get("v", {})), path)
-        moved = build_site.versification.to_source(build_site.refs.parse("PSA.3.1"))
-        self.assertEqual([str(r) for r in moved], ["PSA.3.2"])
+        web = build_site.comparison_ours("web")
+        self.assertEqual(web[build_site.refs.parse("PSA.3.1")], build_site.comparison_text("web")["PSA.3.1"])
+
+    def test_pages_number_verses_as_the_niv(self):
+        # Malachi has four chapters and Joel three, as in the NIV.
+        self.assertTrue((self.out / "mal" / "4" / "index.html").exists())
+        self.assertFalse((self.out / "jol" / "4" / "index.html").exists())
+        mal4 = self.chapter_data("mal/4")
+        self.assertEqual([r["refs"] for r in mal4["records"]][0], ["MAL.4.1"])
+        self.assertEqual(mal4["records"][0]["id"], "MAL.3.19.s1")
+        self.assertEqual(mal4["records"][0]["source_refs"], ["MAL.3.19"])
+        joel2 = {v for r in self.chapter_data("jol/2")["records"] for v in r["refs"]}
+        self.assertIn("JOL.2.32", joel2)
+        # A psalm's title is verse 0, drawn without a number.
+        psa3 = self.chapter_data("psa/3")
+        self.assertEqual(psa3["records"][0]["refs"], ["PSA.3.0"])
+        self.assertEqual(psa3["records"][1]["refs"], ["PSA.3.1"])
+        page = (self.out / "psa" / "3" / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(page, r'<span class="verse psalm-title" id="v0"[^>]*data-record="PSA\.3\.1\.s1">[^<]')
+        self.assertIn('<sup>1</sup>', page)
+        self.assertNotIn('<sup>0</sup>', page)
+        # Two of our verses that are one NIV verse, and a sentence the NIV
+        # numbers as a verse of its own.
+        num26 = self.chapter_data("num/26")["records"]
+        self.assertEqual([r["refs"] for r in num26[:2]], [["NUM.26.1"], ["NUM.26.1"]])
+        acts = {r["id"]: r["refs"] for r in self.chapter_data("act/19")["records"]}
+        self.assertEqual(acts["ACT.19.40.s2"], ["ACT.19.41"])
 
     def test_summary_stands_under_the_title(self):
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")

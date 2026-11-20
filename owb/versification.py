@@ -70,6 +70,15 @@ OLD_TESTAMENT_HALVES = {
 # numbers there.
 NIV_AS_SOURCE = ("3JN.1.15",)
 
+# Sentences of one SBLGNT verse that the NIV numbers as two verses, each
+# sentence wholly in one of them: record id -> its verses in reader numbering.
+READER_RECORDS = {
+    "ACT.19.40.s1": ("ACT.19.40",),
+    "ACT.19.40.s2": ("ACT.19.41",),   # "With these words he sent the assembly away."
+    "2CO.13.12.s1": ("2CO.13.12",),
+    "2CO.13.12.s2": ("2CO.13.13",),   # "All God's holy people send you greetings."
+}
+
 
 @lru_cache(maxsize=None)
 def _tables():
@@ -130,6 +139,58 @@ def niv_ids(verse_ids):
             if str(ref) not in out:
                 out.append(str(ref))
     return out
+
+
+def reader_ids(verse_id):
+    """The verse ids the site shows readers for one of our verse ids (reader,
+    NIV, numbering), as strings: usually one, two where one of our verses
+    is two in the NIV (PSA.13.6 is Psalm 13:5-6). A psalm's title, which the
+    NIV prints unnumbered above verse 1, is verse 0 of its psalm (PSA.3.1 ->
+    PSA.3.0), so it still has a place in its chapter."""
+    ref = refs.parse(verse_id)
+    niv = to_niv(ref)
+    if not niv:
+        return (f"{ref.book}.{ref.chapter}.0",)
+    return tuple(str(r) for r in niv)
+
+
+def reader_ids_of(verse_ids):
+    """reader_ids() of a list of our verse ids, in order, each once."""
+    out = []
+    for verse_id in verse_ids:
+        for r in reader_ids(verse_id):
+            if r not in out:
+                out.append(r)
+    return out
+
+
+def record_reader_ids(record_id, verse_ids, segments):
+    """A record's verses in reader numbering: READER_RECORDS's for the
+    sentences named there, otherwise reader_ids_of(verse_ids), keeping no
+    more verses than the text has segments (its verse markers plus one). So
+    a verse of ours that is two NIV verses keeps only the first until its
+    text marks where the second starts."""
+    if record_id in READER_RECORDS:
+        return list(READER_RECORDS[record_id])
+    return reader_ids_of(verse_ids)[:max(segments, len(verse_ids))]
+
+
+def from_reader(verse_id):
+    """Our verse ids that hold one reader (NIV) verse id (PSA.3.0 -> the
+    psalm's title verses)."""
+    ref = refs.parse(verse_id)
+    if ref.verse == 0:
+        return tuple(str(h) for h in _titles().get((ref.book, ref.chapter), ()))
+    return tuple(str(r) for r in from_niv(ref))
+
+
+@lru_cache(maxsize=None)
+def _titles():
+    out = defaultdict(list)
+    for h, es in _tables()[0].items():
+        if not es:
+            out[h.book, h.chapter].append(h)
+    return {k: tuple(sorted(v, key=refs.Ref.sort_key)) for k, v in out.items()}
 
 
 def english_chapters(book, chapter):
