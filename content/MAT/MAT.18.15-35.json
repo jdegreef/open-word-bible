@@ -94,6 +94,11 @@
           "L": "Dan jika saudaramu berbuat dosa terhadapmu, pergilah dan tegorlah dia di bawah empat mata.",
           "B": "Jika saudaramu berbuat dosa terhadapmu, pergilah dan tegurlah dia, hanya engkau dan dia saja.",
           "R": "Kalau saudaramu seiman berbuat salah kepadamu, pergilah kepadanya dan bicarakan kesalahannya hanya berdua saja."
+        },
+        "zh": {
+          "L": "如果你的{{gender:弟兄或姐妹|弟兄}}得罪了你，你就去，只在你和对方之间指出[那]过错。",
+          "B": "如果有{{gender:弟兄或姐妹|弟兄}}得罪了你，你就去找对方当面说清楚，只有你们两个人在场。",
+          "R": "如果{{god_term:神|上帝}}家里的一位{{gender:弟兄或姐妹|弟兄}}得罪了你，你就去单独和对方谈。让对方看到自己做错了什么。"
         }
       },
       "decisions": [
@@ -553,6 +558,68 @@
           "reason": "The verb means to bring the wrong into the open so that it is admitted (m3), not to scold.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007"
+          ],
+          "choice": "{{gender:弟兄或姐妹|弟兄}}",
+          "alternatives": [
+            "{{gender:弟兄姐妹|弟兄}}"
+          ],
+          "reason": "As the English, a fellow disciple, man or woman, is in the gender setting, with the traditional \"弟兄\" as the alternative. For one person Chinese says \"弟兄或姐妹\" rather than the plural address \"弟兄姐妹\" of the style guide (section 5); this should be harmonised across the book.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015011"
+          ],
+          "choice": "\"对方\" with no gender setting",
+          "alternatives": [
+            "{{gender:对方|他}}"
+          ],
+          "reason": "The English puts \"them / him\" and \"they / he\" in the gender setting through 18:15-21. Chinese says \"对方\" (the other person), which is already inclusive, so the pronouns need no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018015007"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "\"神\" fixed",
+            "\"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written in the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's alternative. Both name the same God; the setting changes only the word (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -642,6 +709,11 @@
           "L": "Jika ia mendengarkan engkau, engkau telah mendapatkan saudaramu kembali.",
           "B": "Jika ia mendengarkan engkau, engkau telah memenangkan saudaramu kembali.",
           "R": "Kalau dia mau mendengarkan kamu, berarti kamu sudah mendapatkan saudaramu itu kembali."
+        },
+        "zh": {
+          "L": "如果对方听你的，你就赢得了你的{{gender:弟兄或姐妹|弟兄}}；",
+          "B": "如果对方肯听你的，你就把你的{{gender:弟兄或姐妹|弟兄}}挽回了。",
+          "R": "也许对方会听你的。那么你就把你的{{gender:弟兄或姐妹|弟兄}}挽回了。"
         }
       },
       "decisions": [
@@ -880,6 +952,11 @@
           "L": "Tetapi jika ia tidak mendengarkan, bawalah bersamamu seorang atau dua orang lagi, supaya 'atas keterangan dua atau tiga orang saksi, setiap perkara ditetapkan.'",
           "B": "Jika ia tetap tidak mau mendengarkan, datanglah lagi dengan membawa satu atau dua orang lain, supaya 'setiap perkara diputuskan atas keterangan dua atau tiga orang saksi.'",
           "R": "Kalau dia tidak mau mendengarkan kamu, ajak satu atau dua orang lain, supaya 'setiap perkara diputuskan berdasarkan kesaksian dua atau tiga orang saksi.'"
+        },
+        "zh": {
+          "L": "如果对方不听，就再带一个或两个人和你一起去，好让‘凭两个或三个见证人的口，每一句话都得以确立’。",
+          "B": "如果对方还是不听，你就带上一两个人再去，好让‘每一项指控都凭两三个证人的话来确定’。",
+          "R": "如果对方还是不听，你就带上另外一两个人一起去。圣经上说：‘每一项指控都必须有两三个证人来证实。’"
         }
       },
       "decisions": [
@@ -1187,6 +1264,11 @@
           "L": "Dan jika ia tidak mau mendengarkan mereka, sampaikanlah kepada jemaat. Dan jika ia tidak mau mendengarkan jemaat juga, hendaklah ia bagimu seperti seorang dari bangsa lain dan seorang pemungut cukai.",
           "B": "Jika ia tidak mau mendengarkan mereka juga, sampaikanlah persoalan itu kepada jemaat. Dan jika ia tidak mau mendengarkan jemaat juga, anggaplah dia orang luar, seperti orang bukan Yahudi atau pemungut cukai.",
           "R": "Kalau dia tetap tidak mau mendengarkan mereka, bawalah persoalan itu ke jemaat. Kalau dia juga tidak mau mendengarkan jemaat, anggaplah dia orang luar, seperti orang yang tidak mengenal Allah atau penagih pajak."
+        },
+        "zh": {
+          "L": "如果对方拒绝听从他们，就把[事情]告诉教会；对方若连教会也拒绝听从，对你来说，就让对方像外邦人和税吏一样。",
+          "B": "如果对方连他们的话也不听，就把这事提到教会面前。如果对方连教会的话也不听，就把对方看作外人，像外邦人或税吏一样。",
+          "R": "如果对方不听他们的，就告诉整个教会。如果对方连教会的话也不听，就把对方当作不认识{{god_term:神|上帝}}的人，或者当作收税的人。"
         }
       },
       "decisions": [
@@ -1725,6 +1807,28 @@
           "reason": "The local congregation is meant, so the glossary's \"jemaat\" at every level (contrast 16:18).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018017018",
+            "n40018017021"
+          ],
+          "choice": "\"外邦人\", \"税吏\" (L, B); \"不认识神的人\", \"收税的人\" (R)",
+          "alternatives": [
+            "\"非犹太人\" (R)"
+          ],
+          "reason": "The glossary's words at Literal and Balanced. Readable follows the English in saying what a Gentile meant here, someone outside the people of God, and uses the everyday word for a tax collector.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1831,6 +1935,11 @@
           "L": "Amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, apa saja yang kalian ikat di bumi akan terikat di surga, dan apa saja yang kalian lepaskan di bumi akan terlepas di surga.",
           "B": "Sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, apa yang kalian ikat di bumi akan terikat di surga, dan apa yang kalian lepaskan di bumi akan terlepas di surga.",
           "R": "Aku mengatakan yang sebenarnya kepada kalian: apa yang kalian larang di bumi akan dilarang juga di surga, dan apa yang kalian izinkan di bumi akan diizinkan juga di surga."
+        },
+        "zh": {
+          "L": "阿们，我告诉你们，你们在地上捆绑什么，在天上就已经被捆绑了；你们在地上释放什么，在天上就已经被释放了。",
+          "B": "我确实告诉你们，你们在地上捆住的，在天上也会被捆住；你们在地上解开的，在天上也会被解开。",
+          "R": "我把实话告诉你们，你们在地上禁止的，在天上也会被禁止。你们在地上允许的，在天上也会被允许。"
         }
       },
       "decisions": [
@@ -2190,6 +2299,26 @@
           "reason": "Literal keeps the future perfect (m2) with \"〜ていることになる\"; Balanced uses the simple future, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018018001",
+            "n40018018002"
+          ],
+          "choice": "\"阿们，我告诉你们\" (L); \"我确实告诉你们\" (B); \"我把实话告诉你们\" (R); the wording of 16:19",
+          "alternatives": [],
+          "reason": "The style guide's formula for \"Truly I tell you\" (section 12). The promise repeats 16:19, now to all the disciples, so each level uses the same words as there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2300,6 +2429,11 @@
           "L": "Lagi, amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, jika dua orang dari kalian di bumi sepakat meminta apa pun juga, permintaan mereka akan dikabulkan oleh Bapa-{{deity_pronoun:ku|Ku}} yang di surga.",
           "B": "Dan lagi, sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, jika dua orang dari kalian di bumi ini sepakat tentang apa pun yang mereka minta, permintaan itu akan dikabulkan oleh Bapa-{{deity_pronoun:ku|Ku}} di surga.",
           "R": "Aku juga mengatakan yang sebenarnya kepada kalian: kalau dua orang dari kalian di bumi ini sepakat meminta sesuatu kepada Allah, Bapa-{{deity_pronoun:ku|Ku}} di surga akan memberikannya."
+        },
+        "zh": {
+          "L": "再者，阿们，我告诉你们，如果你们当中有两个人在地上，对他们所求的任何一件事意见一致，那事就会由我那在天上的父为他们成就。",
+          "B": "我再一次确实告诉你们：如果你们当中有两个人在这地上，为所求的任何事心意相同，我在天上的父就会为他们成就。",
+          "R": "我再把实话告诉你们。假如你们当中有两个人在这世上，对某件事意见一致，一起向{{god_term:神|上帝}}求，那么我在天上的父就会为他们成就。"
         }
       },
       "decisions": [
@@ -2577,6 +2711,11 @@
           "L": "Sebab di mana dua atau tiga orang berkumpul dalam nama-{{deity_pronoun:ku|Ku}}, di situ {{deity_pronoun:aku|Aku}} ada di tengah-tengah mereka.\"",
           "B": "Sebab di mana dua atau tiga orang berkumpul dalam nama-{{deity_pronoun:ku|Ku}}, di situ {{deity_pronoun:aku|Aku}} hadir di tengah-tengah mereka.\"",
           "R": "Sebab di mana ada dua atau tiga orang berkumpul sebagai pengikut-{{deity_pronoun:ku|Ku}}, {{deity_pronoun:aku|Aku}} ada bersama mereka.\""
+        },
+        "zh": {
+          "L": "因为两个或三个人在哪里因我的名聚集，我就在哪里，在他们当中。”",
+          "B": "因为只要有两三个人以我的名义聚集，我就和他们同在那里。”",
+          "R": "当两三个人因为跟随我而聚在一起的时候，我就在那里和他们在一起。”"
         }
       },
       "decisions": [
@@ -2821,6 +2960,11 @@
           "L": "Lalu Petrus datang dan berkata kepada-{{deity_pronoun:nya|Nya}}, \"Tuhan, sampai berapa kali saudaraku berbuat dosa terhadap aku dan aku harus mengampuninya?",
           "B": "Kemudian Petrus datang kepada Yesus dan bertanya, \"Tuhan, kalau saudaraku terus berbuat dosa terhadapku, berapa kali aku harus mengampuninya?",
           "R": "Lalu Petrus datang kepada Yesus dan bertanya, \"Tuhan, kalau saudara seiman saya terus berbuat salah kepada saya, berapa kali saya harus mengampuni dia?"
+        },
+        "zh": {
+          "L": "那时彼得来到{{deity_pronoun:他|祂}}跟前，说：“主啊，我的{{gender:弟兄或姐妹|弟兄}}可以得罪我多少次，而我[仍]赦免对方？",
+          "B": "后来彼得来问耶稣：“主啊，如果有{{gender:弟兄或姐妹|弟兄}}一再得罪我，我必须赦免多少次？",
+          "R": "后来彼得来问耶稣：“主啊，假如{{god_term:神|上帝}}家里的一位{{gender:弟兄或姐妹|弟兄}}一次又一次地得罪我，我应该饶恕对方多少次呢？"
         }
       },
       "decisions": [
@@ -3091,6 +3235,27 @@
           "reason": "The Japanese term for forgiving, kept through Peter's question, the parable (18:27, 32) and 18:35, since the same verb ties them together.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018021016"
+          ],
+          "choice": "\"赦免\" (L, B); \"饶恕\" (R)",
+          "alternatives": [
+            "\"原谅\" (R)"
+          ],
+          "reason": "The glossary's words for \"forgive\". One word per level is kept through Peter's question, the king's pardon (18:27, 32) and 18:35, so the parable is heard as the answer to the question.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3175,6 +3340,11 @@
           "L": "Sampai tujuh kali?\"",
           "B": "Sampai tujuh kali?\"",
           "R": "Sampai tujuh kali?\""
+        },
+        "zh": {
+          "L": "到七次吗？”",
+          "B": "多到七次吗？”",
+          "R": "我应该饶恕七次吗？”"
         }
       },
       "decisions": [
@@ -3309,6 +3479,11 @@
           "L": "Yesus berkata kepadanya, \"Aku berkata kepadamu, bukan sampai tujuh kali, melainkan sampai tujuh puluh tujuh kali.",
           "B": "Yesus berkata kepadanya, \"Bukan hanya sampai tujuh kali, melainkan sampai tujuh puluh tujuh kali.",
           "R": "Yesus menjawab, \"Bukan hanya tujuh kali, tetapi tujuh puluh tujuh kali. Kamu harus selalu mengampuni."
+        },
+        "zh": {
+          "L": "耶稣对他说：“我不是对你说到七次，而是到七十七次。",
+          "B": "耶稣告诉他：“不只是七次，而是七十七次。",
+          "R": "耶稣回答：“我告诉你，不只是七次。你要饶恕七十七次。"
         }
       },
       "decisions": [
@@ -3696,6 +3871,11 @@
           "L": "Karena itu Kerajaan Surga seumpama seorang raja yang hendak mengadakan perhitungan dengan hamba-hambanya.",
           "B": "Itulah sebabnya Kerajaan Surga itu seperti ini: seorang raja memutuskan untuk mengadakan perhitungan dengan hamba-hambanya.",
           "R": "Kerajaan Surga itu seperti seorang raja yang ingin memeriksa utang para pegawainya."
+        },
+        "zh": {
+          "L": "因此，天国好比一个人，一个君王，要和他的奴隶们结算账目。",
+          "B": "所以，天国就像这样：有一个王决定要清查他仆人的账目。",
+          "R": "所以，天国就像这样。有一个王决定要他的仆人们把所欠他的钱还清。"
         }
       },
       "decisions": [
@@ -4207,6 +4387,44 @@
           "reason": "As the English: Literal keeps slave, Balanced and Readable say servant, and the meaning decision (m2) keeps that they were owned. In 18:25 Readable says \"奴隷として売る\", where being sold is the point. The master (kyrios) is \"主人\" (L, B) and \"王\" (R) through the parable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023016"
+          ],
+          "choice": "\"奴隶\" (L); \"仆人\" (B, R)",
+          "alternatives": [],
+          "reason": "The glossary's words for a slave, as the English slave / servant; at Readable \"奴隶\" is kept in 18:25, where being sold into slavery is the point.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018023009"
+          ],
+          "choice": "\"王\" with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The king is a figure in a parable, so the pronouns for him take no span, though he stands for God (18:35).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4299,6 +4517,11 @@
           "L": "Dan ketika ia mulai mengadakan perhitungan, dibawalah kepadanya seorang yang berutang sepuluh ribu talenta.",
           "B": "Ketika ia mulai, dibawalah kepadanya seorang yang berutang {{units:jumlah yang tidak dapat dibayar dengan upah kerja seratus ribu tahun|sepuluh ribu talenta}}.",
           "R": "Ketika dia mulai memeriksa, seorang pegawai dibawa kepadanya. Orang itu berutang {{units:jumlah yang tidak dapat dibayar dengan upah kerja seratus ribu tahun|sepuluh ribu talenta}}."
+        },
+        "zh": {
+          "L": "他开始结算的时候，有一个欠了一万他连得的人被带到他面前来。",
+          "B": "他刚开始，就有一个人被带到他面前，这人欠他{{units:约二十万年的工钱|一万他连得}}。",
+          "R": "他刚开始，就有一个仆人被带到他面前。这个仆人欠他{{units:约二十万年的工钱|一万他连得}}。没有人能还得起这么多钱。"
         }
       },
       "decisions": [
@@ -4566,6 +4789,28 @@
           "reason": "As the English: the impossible size of the debt by default and the coin as the alternative. Literal keeps the coin with no span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018024009",
+            "n40018024010"
+          ],
+          "choice": "{{units:约二十万年的工钱|一万他连得}} (B, R); Literal \"一万他连得\"",
+          "alternatives": [
+            "\"{{units:一个工人十万年也挣不到的巨款|一万他连得}}\" (as the English)",
+            "\"{{units:约340吨银子|一万他连得}}\" (the weight)"
+          ],
+          "reason": "A sum of money has no metric form, so the units span gives its worth in wages by default, as for the denarius, with the original talents (\"他连得\", the glossary's form) as the alternative; Literal keeps the talents with no span. A talent was about twenty years' wages, so ten thousand talents is about two hundred thousand years' wages, the same short pattern as 25:14-30. The glossary's 34 kg is the talent's weight, not used here because the point is the debt's value.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4670,6 +4915,11 @@
           "L": "Tetapi karena ia tidak mampu melunasinya, tuannya memerintahkan supaya ia dijual beserta istrinya dan anak-anaknya dan segala miliknya untuk membayar utangnya.",
           "B": "Karena ia tidak mampu membayar, tuannya memerintahkan supaya ia dijual bersama istri, anak-anak, dan segala miliknya untuk membayar utang itu.",
           "R": "Orang itu tidak bisa membayar utangnya. Karena itu raja memerintahkan supaya dia dijual sebagai budak, bersama istri, anak-anak, dan semua miliknya, untuk membayar utang itu."
+        },
+        "zh": {
+          "L": "他既然没有[钱]偿还，主人就命令把他卖掉，连同[他的]妻子、孩子和他所有的一切，用来偿还。",
+          "B": "他没有能力偿还，于是他的主人下令，把他连同他的妻子、孩子和他所有的财产都卖掉，用来抵债。",
+          "R": "这个仆人还不起。于是王下令把他卖为奴隶，连同他的妻子和孩子，还有他所有的东西都一起卖掉。卖得的钱要用来还他欠的债。"
         }
       },
       "decisions": [
@@ -4991,6 +5241,11 @@
           "L": "Lalu sujudlah hamba itu dan menyembah dia, katanya, 'Sabarlah dahulu terhadap aku, dan aku akan melunasi semuanya kepadamu.'",
           "B": "Hamba itu pun sujud di hadapannya dan memohon, 'Beri hamba waktu, dan hamba akan membayar semuanya.'",
           "R": "Pegawai itu sujud di depan raja dan memohon, 'Beri saya waktu, Tuan, saya akan membayar semua utang saya.'"
+        },
+        "zh": {
+          "L": "于是那奴隶跪倒，一直向他下拜，说：‘请对我忍耐，我会把一切都还给你。’",
+          "B": "那仆人就扑倒在他面前，恳求说：‘请您宽限我一些时间，我会把欠的全部还给您。’",
+          "R": "那仆人在王面前跪下，求他说：‘求求您对我有耐心。我会把钱全部还给您。’"
         }
       },
       "decisions": [
@@ -5312,6 +5567,26 @@
           "reason": "A servant pleading before his king speaks of himself as \"hamba\", the court register the style guide keeps for a king's subjects; Readable uses \"saya\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40018026014"
+          ],
+          "choice": "\"您\" (B, R); \"你\" (L)",
+          "alternatives": [
+            "\"你\""
+          ],
+          "reason": "A servant pleading with his king says \"您\" at Balanced and Readable (style guide section 5); Literal keeps the single \"你\". The king stands for God in the parable, but this is a servant's courtesy to a human king, not address to God. Between the two servants (18:29) it is \"你\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5408,6 +5683,11 @@
           "L": "Lalu tergeraklah hati tuan hamba itu oleh belas kasihan, sehingga ia membebaskannya dan menghapuskan utangnya.",
           "B": "Hati tuannya tergerak oleh belas kasihan kepada hamba itu. Ia membebaskannya dan menghapus utangnya.",
           "R": "Raja merasa kasihan kepada pegawainya itu. Dia membebaskannya dan menghapus semua utangnya."
+        },
+        "zh": {
+          "L": "那奴隶的主人心里怜悯他，就放了他，又赦免了他所借的。",
+          "B": "主人对那个仆人起了怜悯之心，就释放了他，还赦免了他的债。",
+          "R": "王很同情这个仆人，就放了他，饶恕了他，把他欠的债全部免了。"
         }
       },
       "decisions": [
@@ -5752,6 +6032,11 @@
           "L": "Tetapi ketika hamba itu keluar, ia bertemu dengan seorang hamba lain yang berutang seratus dinar kepadanya. Ia menangkap dan mencekiknya, katanya, 'Bayarlah apa yang engkau utangkan!'",
           "B": "Tetapi begitu keluar, hamba itu bertemu dengan seorang hamba lain yang berutang {{units:upah seratus hari|seratus dinar}} kepadanya. Ia menangkap dan mencekiknya. 'Bayar utangmu!' katanya.",
           "R": "Tetapi waktu pegawai itu keluar, dia bertemu dengan seorang teman sekerjanya yang berutang {{units:upah seratus hari|seratus dinar}} kepadanya. Dia menangkap orang itu dan mencekiknya sambil berkata, 'Bayar utangmu!'"
+        },
+        "zh": {
+          "L": "但那奴隶出去后，找到了他的一个同伴奴隶，那人欠他一百个银币；他抓住那人，开始掐[他]，说：‘你欠什么就还什么。’",
+          "B": "可是那仆人刚出去，就碰见一个欠他{{units:大约一百天的工钱|一百个银币}}的同伴。他一把掐住对方的喉咙。‘把你欠我的还给我！’他说。",
+          "R": "后来那个仆人出去，找到另一个欠他{{units:大约一百天的工钱|一百个银币}}的仆人。他抓住那人，开始掐他的脖子。他说：‘把你欠我的钱还给我！’"
         }
       },
       "decisions": [
@@ -6094,6 +6379,44 @@
           "reason": "As the style guide sets for coins: the value in wages by default and the coin as the alternative.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40018028014",
+            "n40018028015"
+          ],
+          "choice": "{{units:大约一百天的工钱|一百个银币}}",
+          "alternatives": [],
+          "reason": "Coins have no metric form: the default gives the value in wages, as the English does, and the units setting shows the coin.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40018028015"
+          ],
+          "choice": "\"银币\" for the denarius",
+          "alternatives": [
+            "\"第纳流斯\""
+          ],
+          "reason": "The glossary's word: the denarius was a Roman silver coin, about a day's wage for a labourer. The transliteration \"第纳流斯\" is the main alternative for a reviewer.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6190,6 +6513,11 @@
           "L": "Lalu sujudlah hamba yang lain itu dan memohon kepadanya, katanya, 'Sabarlah dahulu terhadap aku, dan aku akan melunasinya kepadamu.'",
           "B": "Hamba yang lain itu sujud dan memohon kepadanya, 'Beri aku waktu, dan aku akan membayar utangku kepadamu.'",
           "R": "Teman sekerjanya itu sujud dan memohon kepadanya, 'Beri aku waktu, aku akan membayar utangku.'"
+        },
+        "zh": {
+          "L": "他的同伴奴隶就跪倒，一直求他说：‘请对我忍耐，我会还给你。’",
+          "B": "他的同伴扑倒在地，恳求他说：‘请你宽限我一些时间，我会还给你。’",
+          "R": "那个仆人跪下来求他说：‘求求你对我有耐心。我会把钱还给你。’"
         }
       },
       "decisions": [
@@ -6431,6 +6759,11 @@
           "L": "Tetapi ia menolak dan pergi memasukkan dia ke dalam penjara sampai ia melunasi utangnya.",
           "B": "Tetapi ia tidak mau. Ia pergi dan memasukkan orang itu ke dalam penjara sampai ia melunasi utangnya.",
           "R": "Tetapi dia tidak mau. Dia menyuruh orang memasukkan temannya itu ke penjara sampai utangnya lunas."
+        },
+        "zh": {
+          "L": "但他不愿意，反而去把那人投进监狱，直到那人还清欠款为止。",
+          "B": "但他根本不听，竟去叫人把那人关进监狱，直到还清债务。",
+          "R": "可是第一个仆人不肯等。他叫人把那个人关进监狱。那人要一直待在那里，直到把欠的钱还清。"
         }
       },
       "decisions": [
@@ -6611,6 +6944,11 @@
           "L": "Melihat apa yang terjadi itu, hamba-hamba yang lain sangat sedih lalu pergi dan menceritakan segala yang telah terjadi kepada tuan mereka.",
           "B": "Ketika hamba-hamba yang lain melihat apa yang terjadi, mereka sangat sedih. Mereka pergi kepada tuan mereka dan menceritakan semuanya.",
           "R": "Waktu pegawai-pegawai lain melihat apa yang terjadi, mereka sangat sedih. Mereka pergi kepada raja dan menceritakan semuanya."
+        },
+        "zh": {
+          "L": "他的同伴奴隶们看见所发生的事，就非常忧愁，去把所发生的一切都向他们的主人说明了。",
+          "B": "其他仆人看到这事，都很难过。他们去见主人，把整件事都告诉了他。",
+          "R": "其他的仆人看到发生的事，心里很不安。于是他们去把一切都告诉了王。"
         }
       },
       "decisions": [
@@ -6786,6 +7124,11 @@
           "L": "Lalu tuannya memanggil dia dan berkata kepadanya, 'Hai hamba yang jahat, seluruh utangmu itu telah kuhapuskan karena engkau memohon kepadaku.",
           "B": "Tuannya memanggil dia kembali dan berkata kepadanya, 'Hai hamba yang jahat! Engkau memohon kepadaku, dan seluruh utangmu itu kuhapuskan.",
           "R": "Lalu raja memanggil pegawai itu dan berkata kepadanya, 'Kamu pegawai yang jahat! Kamu memohon kepadaku, jadi aku menghapus semua utangmu."
+        },
+        "zh": {
+          "L": "那时他的主人把他召来，对他说：‘邪恶的奴隶！你求了我，我就赦免了你那全部的债。",
+          "B": "主人就派人把他叫回来，对他说：‘你这恶仆人！你恳求我，我就赦免了你那一大笔债。",
+          "R": "于是王把这个仆人叫来，对他说：‘你这个坏仆人！你求我帮你，所以我饶恕了你，免了你欠我的一切。"
         }
       },
       "decisions": [
@@ -7060,6 +7403,11 @@
           "L": "Bukankah engkau pun harus mengasihani kawanmu seperti aku telah mengasihani engkau?'",
           "B": "Bukankah engkau juga harus berbelas kasihan kepada kawanmu, sama seperti aku telah berbelas kasihan kepadamu?'",
           "R": "Seharusnya kamu juga mengasihani temanmu, sama seperti aku mengasihani kamu!'"
+        },
+        "zh": {
+          "L": "我怎样怜悯了你，你不也应当照样怜悯你的同伴奴隶吗？’",
+          "B": "难道你不该像我对你施怜悯那样，也怜悯你的同伴吗？’",
+          "R": "你应该怜悯另一个仆人，就像我怜悯了你一样。’"
         }
       },
       "decisions": [
@@ -7267,6 +7615,11 @@
           "L": "Dan tuannya itu marah dan menyerahkannya kepada algojo-algojo, sampai ia melunasi seluruh utangnya.",
           "B": "Lalu tuannya marah dan menyerahkannya kepada para penyiksa sampai ia melunasi seluruh utangnya.",
           "R": "Raja itu sangat marah. Dia menyerahkan pegawai itu kepada para penjaga penjara untuk disiksa sampai dia membayar semua utangnya."
+        },
+        "zh": {
+          "L": "他的主人在怒气中把他交给了施酷刑的狱卒，直到他把所欠的全部还清。",
+          "B": "这时主人发怒了，把他交给施刑的狱卒，要他待在那里，直到还清全部债务。",
+          "R": "王非常生气。他把这个仆人交给监狱里会折磨他的人。他要一直待在那里，直到把欠的钱全部还清。"
         }
       },
       "decisions": [
@@ -7485,6 +7838,11 @@
           "L": "Demikian juga Bapa-{{deity_pronoun:ku|Ku}} yang di surga akan berbuat terhadap kalian, jika kalian masing-masing tidak mengampuni saudaranya dengan segenap hatinya.\"",
           "B": "Begitulah juga Bapa-{{deity_pronoun:ku|Ku}} di surga akan memperlakukan kalian, jika kalian masing-masing tidak mengampuni saudaranya dengan tulus hati.\"",
           "R": "Bapa-{{deity_pronoun:ku|Ku}} di surga juga akan berbuat seperti itu kepada kalian, kalau kalian tidak mengampuni saudara kalian dengan tulus.\""
+        },
+        "zh": {
+          "L": "我天上的父也会这样对待你们，如果你们各人不从心里赦免自己的{{gender:弟兄或姐妹|弟兄}}。”",
+          "B": "如果你们各人不发自内心地赦免自己的{{gender:弟兄或姐妹|弟兄}}，我天上的父也会同样处置你们。”",
+          "R": "如果你们不从心里真正饶恕你们的{{gender:弟兄或姐妹|弟兄}}，我天上的父也会这样对待你们。”"
         }
       },
       "decisions": [
@@ -7713,6 +8071,25 @@
           "choice": "the condition first, then \"父も……同じようになさる\"",
           "alternatives": [],
           "reason": "Japanese puts the condition before the main clause; the sense of \"so also my Father will do\" is kept at the end.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40018035010",
+            "n40018035012"
+          ],
+          "choice": "the condition first (B, R); the Greek order (L)",
+          "alternatives": [],
+          "reason": "Chinese normally puts an \"if\" clause first; Literal keeps the Greek order, with the condition after the main clause.",
           "uncertain": false,
           "footnote": false
         }

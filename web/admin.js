@@ -104,7 +104,41 @@ var OWBAdminCore = (function () {
     return -1;
   }
 
-  return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo };
+  // What a failed request's error says: {status, code, message, id}, from
+  // its answer (data, {} when it wasn't JSON). The API answers JSON with a
+  // request id when an admin endpoint fails (staff/permissions.py); a proxy
+  // in front of it (502, 504) answers HTML.
+  function failed(status, data) {
+    data = data || {};
+    var text = typeof data.detail === "string" ? data.detail : Array.isArray(data.detail) ? data.detail[0] : "";
+    if (!text) for (var k in data) if (k !== "code" && k !== "request_id") { text = Array.isArray(data[k]) ? data[k][0] : String(data[k]); break; }
+    if (!text) {
+      text = status === 502 || status === 503 || status === 504
+        ? "The server is restarting or too busy to answer (" + status + "). Try again in a minute."
+        : "The server hit an error answering this (" + status + ").";
+    }
+    return { status: status, code: data.code || "", message: text, id: data.request_id || "" };
+  }
+
+  // How a failed section is shown: {title, text, details, retry}. e is an
+  // Error from request() (status, code, id, method, path) or from a view.
+  function failure(e, at) {
+    var status = e.status || 0, code = e.code || "";
+    var title = code === "timeout" ? "This took too long"
+      : code === "no_answer" ? "The server didn't answer"
+      : code === "offline" ? "Can't reach the server"
+      : status === 403 ? "Your roles don't open this"
+      : status === 404 ? "Not found"
+      : status >= 500 ? "The server hit an error" : "This couldn't be loaded";
+    var details = [
+      e.path ? (e.method || "GET") + " " + e.path.split("?")[0] + (status ? " \u2192 " + status : "") : "",
+      code, e.id ? "request " + e.id : "", at ? at.toISOString().slice(0, 19).replace("T", " ") + " UTC" : ""
+    ].filter(Boolean).join(" \u00b7 ");
+    return { title: title, text: e.message, details: details, retry: status !== 403 && status !== 404 };
+  }
+
+  return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo,
+    failed: failed, failure: failure };
 })();
 
 (function () {
@@ -250,32 +284,43 @@ var OWBAdminCore = (function () {
       if (JSON.stringify(data) !== JSON.stringify(hit.value) && hit.by.indexOf(drawing) >= 0) redraw();
     }, function () { hit.asking = false; });
   }
+  // A request the server hasn't answered in this long is given up, so a
+  // hung one can't leave the section dimmed for good.
+  var REQUEST_MS = 30000;
   function request(path, options) {
     var account = saved();
+    var method = options.method || "GET";
     var headers = { "Content-Type": "application/json" };
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
+    var abort = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = abort ? setTimeout(function () { abort.abort(); }, REQUEST_MS) : null;
+    function fail(message, extra) {
+      var e = new Error(message);
+      e.method = method;
+      e.path = path;
+      for (var k in extra) e[k] = extra[k];
+      return e;
+    }
     return fetch(API + path, {
-      method: options.method || "GET", headers: headers,
+      method: method, headers: headers, signal: abort ? abort.signal : undefined,
       body: options.body ? JSON.stringify(options.body) : undefined
-    }).catch(function () {
-      throw new Error("Can't reach the server. Check your connection and try again.");
+    }).catch(function (err) {
+      clearTimeout(timer);
+      if (err && err.name === "AbortError") {
+        throw fail("No answer after " + REQUEST_MS / 1000 + " seconds. The server may be busy; try again in a minute.",
+          { code: "no_answer" });
+      }
+      throw fail("Can't reach the server. Check your connection and try again.", { code: "offline" });
     }).then(function (r) {
+      clearTimeout(timer);
       if (r.status === 204) return null;
       return r.json().catch(function () { return {}; }).then(function (data) {
         if (r.ok) return data;
-        var e = new Error(message(data) || "Something went wrong (" + r.status + ").");
-        e.status = r.status;
-        throw e;
+        var f = C.failed(r.status, data);
+        throw fail(f.message, { status: f.status, code: f.code, id: f.id });
       });
     });
   }
-  function message(data) {
-    if (!data) return "";
-    if (data.detail) return Array.isArray(data.detail) ? data.detail[0] : data.detail;
-    for (var k in data) if (k !== "code") return Array.isArray(data[k]) ? data[k][0] : String(data[k]);
-    return "";
-  }
-
   // A status line under a form: note(el, "Saved.") or note(el, err, true).
   function note(el, text, bad) {
     el.textContent = text instanceof Error ? text.message : text;
@@ -359,6 +404,7 @@ var OWBAdminCore = (function () {
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
     { id: "terms", label: "Key terms", area: "overview", group: "Text" },
     { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
+    { id: "checks", label: "Checks", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
@@ -465,7 +511,7 @@ var OWBAdminCore = (function () {
       FLASH = "";
     }).catch(function (e) {
       if (mine !== drawing) return;
-      show([head("Admin", section.label), h("p", { class: "notice" }, e.message)]);
+      show([head("Admin", section.label), errorPanel(e)]);
     }).then(function () {
       if (mine !== drawing) return;
       clearTimeout(slow);
@@ -473,6 +519,39 @@ var OWBAdminCore = (function () {
       main.removeAttribute("aria-busy");
       document.title = section.label + " · Admin · Open Word Bible";
     });
+  }
+
+  // A section that couldn't be drawn: what happened in plain words, Try
+  // again, and details to copy into a report (the request id finds the
+  // server's log line and Sentry event).
+  function errorPanel(e) {
+    var f = C.failure(e, new Date());
+    var details = h("p", { class: "admin-error-details" }, f.details);
+    var actions = h("div", { class: "admin-actions" });
+    if (f.retry) {
+      var again = h("button", { type: "button", class: "admin-btn primary" }, "Try again");
+      again.addEventListener("click", function () { busy(again, true); route(); });
+      actions.appendChild(again);
+    }
+    if (f.details) {
+      var copyBtn = h("button", { type: "button", class: "admin-btn" }, "Copy details");
+      copyBtn.addEventListener("click", function () {
+        var text = f.title + ": " + f.text + "\n" + f.details;
+        var done = function () { copyBtn.textContent = "Copied"; };
+        var select = function () {
+          var range = document.createRange();
+          range.selectNodeContents(details);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, select);
+        else select();
+      });
+      actions.appendChild(copyBtn);
+    }
+    return h("div", { class: "admin-error", role: "alert" },
+      h("h2", null, f.title), h("p", null, f.text), actions, f.details ? details : null);
   }
 
   // Keys for the view on the page: KEYS = {at: its drawing, "a": fn, ...},
@@ -979,8 +1058,172 @@ var OWBAdminCore = (function () {
       langs.filter(function (c) { return byLang[c]; }).map(function (c) {
         return [h("h3", { class: "admin-h3" }, (names[c] || c) + " decisions"), h("div", { class: "admin-decisions" }, byLang[c].map(decision))];
       }));
-    if (ME.admin.indexOf("inbox") >= 0) card.appendChild(fixForm(r, langs, names, from));
+    if (ME.admin.indexOf("inbox") >= 0) {
+      card.appendChild(fixForm(r, langs, names, from));
+      card.appendChild(linksEditor(r, d, names));
+    }
     return card;
+  }
+
+  // Word links (a record's alignments) for one language and level: the
+  // source words above, the rendering below, and the links between them.
+  // A reviewer picks source words, selects their words in the rendering and
+  // links them; the result is filed as a fix request carrying the links in
+  // scripts/align.py's spec form, which a Claude session applies and
+  // validates. Nothing here edits content/ or marks anything reviewed.
+  var UNSPACED = /[々぀-ヿ㐀-䶿一-鿿豈-﫿ｦ-ﾟ]/;
+  var WORDISH = /[\p{L}\p{N}]/u;
+  function joined(a, b) { return WORDISH.test(a) && WORDISH.test(b) && !UNSPACED.test(a) && !UNSPACED.test(b); }
+  // owb/markup.py alignment_ranges, for showing links already made: each
+  // span found after the one before, as a whole word.
+  function linkRanges(text, spans) {
+    var at = 0, out = [];
+    spans.forEach(function (span) {
+      var start = text.indexOf(span, at);
+      while (start >= 0 && !wholeAt(text, start, start + span.length)) start = text.indexOf(span, start + 1);
+      out.push(start < 0 ? null : [start, start + span.length]);
+      if (start >= 0) at = start + span.length;
+    });
+    return out;
+  }
+  function wholeAt(text, s, e) {
+    return !(s > 0 && joined(text[s - 1], text[s])) && !(e < text.length && joined(text[e], text[e - 1]));
+  }
+
+  function linksEditor(r, d, names) {
+    var langs = Object.keys(r.renderings);
+    var box = h("div", { class: "admin-links", hidden: true });
+    var toggle = h("button", { type: "button", class: "admin-btn" }, "Edit word links");
+    toggle.addEventListener("click", function () { box.hidden = !box.hidden; if (!box.hidden) draw(); });
+    var lang = select("links-lang-" + r.id, langs.map(function (c) { return [c, names[c] || c]; }), langs.indexOf("ja") >= 0 ? "ja" : langs[0]);
+    var level = select("links-level-" + r.id, [["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], "B");
+    var tokens = h("p", { class: "admin-source admin-link-tokens", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null });
+    var textBox = h("p", { class: "admin-link-text" });
+    var list = h("ol", { class: "admin-link-list" });
+    var status = h("p", { class: "admin-note", role: "status" });
+    var reason = h("textarea", { id: "links-reason-" + r.id, rows: 2, maxlength: 4000, placeholder: "Why (optional): what was wrong or missing" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "File word-links request");
+    var linkBtn = h("button", { type: "button", class: "admin-btn" }, "Link selection");
+    var picked = [];   // token numbers, 1-based
+    var links = [];    // {start, end, tokens: [numbers]}
+    var text = "";
+
+    function load() {
+      text = (r.renderings[lang.value] || {})[level.value] || "";
+      var mine = (r.alignments || []).filter(function (a) { return a.language === lang.value && a.level === level.value; });
+      var ranges = linkRanges(text, mine.map(function (a) { return a.target_span; }));
+      links = [];
+      mine.forEach(function (a, i) {
+        if (!ranges[i]) return;
+        links.push({ start: ranges[i][0], end: ranges[i][1], tokens: a.tokens.map(function (t) { return r.source.tokens.indexOf(t) + 1; }) });
+      });
+      picked = [];
+      draw();
+    }
+    function wordOf(n) { var w = d.words[r.source.tokens[n - 1]]; return w ? w.text : "#" + n; }
+    function draw() {
+      tokens.textContent = "";
+      var used = {};
+      links.forEach(function (l) { l.tokens.forEach(function (n) { used[n] = true; }); });
+      r.source.tokens.forEach(function (t, i) {
+        var n = i + 1, w = d.words[t] || {};
+        var b = h("button", { type: "button", class: "admin-link-token" + (picked.indexOf(n) >= 0 ? " on" : "") + (used[n] ? " used" : ""),
+          title: n + " · " + [w.lemma, w.gloss].filter(Boolean).join(" · "), "aria-pressed": picked.indexOf(n) >= 0 ? "true" : "false" },
+          h("span", null, w.text || "#" + n), h("small", null, String(n)));
+        b.addEventListener("click", function () {
+          var k = picked.indexOf(n);
+          if (k >= 0) picked.splice(k, 1); else picked.push(n);
+          picked.sort(function (a, b2) { return a - b2; });
+          draw();
+        });
+        add(tokens, [b, " "]);
+      });
+      textBox.textContent = "";
+      textBox.lang = lang.value;
+      var at = 0;
+      links.slice().sort(function (a, b) { return a.start - b.start; }).forEach(function (l) {
+        add(textBox, text.slice(at, l.start));
+        var lit = l.tokens.some(function (n) { return picked.indexOf(n) >= 0; });
+        add(textBox, h("mark", { class: "admin-link-span" + (lit ? " lit" : ""), title: l.tokens.map(wordOf).join(" ") }, text.slice(l.start, l.end)));
+        at = l.end;
+      });
+      add(textBox, text.slice(at));
+      list.textContent = "";
+      links.sort(function (a, b) { return a.start - b.start; }).forEach(function (l, i) {
+        var del = h("button", { type: "button", class: "admin-btn small" }, "Remove");
+        del.addEventListener("click", function () { links.splice(i, 1); draw(); });
+        add(list, h("li", null, h("span", { lang: lang.value }, text.slice(l.start, l.end)), " ← ",
+          h("span", { lang: r.source.language }, l.tokens.map(wordOf).join(" ")), " ", h("code", null, l.tokens.join(",")), " ", del));
+      });
+      var covered = {};
+      links.forEach(function (l) { l.tokens.forEach(function (n) { covered[n] = true; }); });
+      status.textContent = links.length + " links; " + Object.keys(covered).length + " of " + r.source.tokens.length +
+        " source words linked." + (picked.length ? " Selected: " + picked.join(", ") + "." : "");
+      status.className = "admin-note";
+    }
+    // The selection inside the rendering, as offsets into its text.
+    function selected() {
+      var sel = window.getSelection();
+      if (!sel.rangeCount || sel.isCollapsed) return null;
+      var range = sel.getRangeAt(0);
+      if (!textBox.contains(range.startContainer) || !textBox.contains(range.endContainer)) return null;
+      function offset(node, off) {
+        var pre = document.createRange();
+        pre.selectNodeContents(textBox);
+        pre.setEnd(node, off);
+        return pre.toString().length;
+      }
+      var s = offset(range.startContainer, range.startOffset), e = offset(range.endContainer, range.endOffset);
+      while (s < e && /\s/.test(text[s])) s++;
+      while (e > s && /\s/.test(text[e - 1])) e--;
+      return e > s ? [s, e] : null;
+    }
+    linkBtn.addEventListener("click", function () {
+      var span = selected();
+      if (!picked.length) { note(status, "Pick the source words first.", true); return; }
+      if (!span) { note(status, "Select the words in the rendering to link them to.", true); return; }
+      var s = span[0], e = span[1], piece = text.slice(s, e);
+      if (/\\v \d|\\q/.test(piece)) { note(status, "A link can't hold a verse or line marker.", true); return; }
+      var setting = /\{\{[^{}]*\}\}/g, m;
+      while ((m = setting.exec(text))) {
+        var a = m.index, b = a + m[0].length;
+        if ((a < s && s < b) || (a < e && e < b)) { note(status, "Take a reader setting {{...}} whole, or leave it out.", true); return; }
+      }
+      if (!wholeAt(text, s, e)) { note(status, "Select whole words.", true); return; }
+      if (links.some(function (l) { return s < l.end && l.start < e; })) { note(status, "That overlaps a link; remove it first.", true); return; }
+      links.push({ start: s, end: e, tokens: picked.slice() });
+      picked = [];
+      window.getSelection().removeAllRanges();
+      draw();
+    });
+    function spec() {
+      return r.id + ": " + links.slice().sort(function (a, b) { return a.start - b.start; })
+        .map(function (l) { return text.slice(l.start, l.end) + "=" + l.tokens.join(","); }).join(" | ");
+    }
+    [lang, level].forEach(function (s) { s.addEventListener("change", load); });
+    var form = h("form", { class: "admin-form stacked" },
+      h("div", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: lang.id }, "Language", lang),
+        h("label", { class: "admin-field", for: level.id }, "Level", level)),
+      h("p", { class: "admin-sub" }, "Pick source words, select what they became in the text, then Link selection. Links show highlighted; picking a word lights its links."),
+      tokens, textBox, h("div", { class: "admin-actions" }, linkBtn), list,
+      h("label", { class: "admin-field", for: reason.id }, "Reason", reason),
+      h("p", { class: "admin-sub" }, "Filed as a fix request with the links in scripts/align.py's form. A Claude session applies and validates them in a pull request; the sentence stays an AI draft."),
+      send, status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!links.length) { note(status, "Make at least one link.", true); return; }
+      busy(send, true);
+      api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: location.hash.split("/")[1], language: lang.value,
+        levels: [level.value], links: spec(), reason: reason.value } }).then(function (res) {
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        busy(send, false);
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    box.appendChild(form);
+    load();
+    return h("div", { class: "admin-fix-wrap" }, toggle, box);
   }
 
   function decision(x) {
@@ -1250,7 +1493,7 @@ var OWBAdminCore = (function () {
   var EXPORT = { lang: "en", level: "B", type: "usfm", numbering: "english", books: "", settings: {} };
   var BOOK_SETS = { OT: [0, 39], NT: [39, 66] };
   var SETTING_NAME = { gender: "Gender", christos: "Title", divine_name: "Name of God", deity_pronoun: "Pronouns for God",
-    units: "Measures", plural_you: "Plural you" };
+    units: "Measures", plural_you: "Plural you", god_term: "Word for God (Chinese)" };
   function exportQuery(d) {
     var f = EXPORT, books = f.books;
     if (BOOK_SETS[books]) books = d.books.slice(BOOK_SETS[books][0], BOOK_SETS[books][1]).map(function (b) { return b.code; }).join(",");
@@ -1266,7 +1509,7 @@ var OWBAdminCore = (function () {
       .catch(function () { throw new Error("Can't reach the server. Check your connection and try again."); })
       .then(function (r) {
         if (!r.ok) return r.json().catch(function () { return {}; }).then(function (data) {
-          throw new Error(message(data) || "Something went wrong (" + r.status + ").");
+          throw new Error(C.failed(r.status, data).message);
         });
         var m = /filename="([^"]+)"/.exec(r.headers.get("Content-Disposition") || "");
         return r.blob().then(function (blob) {
@@ -1780,6 +2023,107 @@ var OWBAdminCore = (function () {
           seg([["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], f.level, function (v) { f.level = v; route(); })),
         h("p", null, plural(split, "key term") + " split in " + langSel.selectedOptions[0].textContent + " at this level."),
         blocks.length ? blocks : empty("No sentence that uses a key term is drafted in this language yet.")];
+    });
+  };
+
+  // Checks (GET /api/admin/checks/): footnotes whose verse words the
+  // alternative or not the choice, and verses and glossary entries at odds
+  // with the language's terms glossary. Heuristics to look at, not rules.
+  var CHECKS = { lang: "en", kind: "all" };
+  var CHECK_KINDS = {
+    alternative: "Words the alternative",
+    choice_missing: "Choice not worded",
+    different_forms: "Two forms",
+    ruled_out: "Uses a ruled-out form"
+  };
+  VIEWS.checks = function () {
+    var f = CHECKS;
+    return api("/api/admin/checks/?lang=" + f.lang).then(function (d) {
+      var langSel = select("checks-lang", d.languages.map(function (l) {
+        return [l.code, l.name + (l.glossary ? " (glossary)" : "")];
+      }), f.lang);
+      langSel.setAttribute("aria-label", "Language");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; f.kind = "all"; route(); });
+      var name = d.languages.filter(function (l) { return l.code === d.language; }).map(function (l) { return l.name; })[0] || d.language;
+      function verseLink(x) {
+        return [h("a", { href: "#verse/" + x.verse }, x.label), h("div", { class: "admin-sub" }, x.record)];
+      }
+      function levels(x) { return (x.levels || [x.level]).join(", "); }
+      function glossaryLine(file, line) {
+        return h("a", { href: ghFile(file) + "#L" + line, rel: "noopener" }, "line " + line);
+      }
+
+      var notes = d.notes.hits.filter(function (x) { return f.kind === "all" || x.kind === f.kind; });
+      var kindSeg = seg([["all", "All (" + num(d.notes.total) + ")"],
+        ["alternative", CHECK_KINDS.alternative + " (" + num(d.notes.kinds.alternative) + ")"],
+        ["choice_missing", CHECK_KINDS.choice_missing + " (" + num(d.notes.kinds.choice_missing) + ")"]],
+        f.kind, function (v) { f.kind = v; route(); });
+      var noteRows = notes.map(function (x) {
+        var tags = [pill(CHECK_KINDS[x.kind] || x.kind, x.kind === "alternative" ? "warn" : "")];
+        if (x.kind === "alternative") {
+          tags.push(h("div", { class: "admin-sub" }, x.contrast === "english" ? "The English words the choice" : "Another level words the choice"));
+        }
+        if (x.english_too) tags.push(" ", pill("English too", "bad"));
+        return h("tr", null,
+          h("td", null, verseLink(x)),
+          h("td", null, levels(x), h("div", { class: "admin-sub" }, x.decision)),
+          h("td", null, tags),
+          h("td", { class: "admin-wrap" }, h("div", { lang: d.language }, x.choice),
+            x.alternative ? h("div", { class: "admin-sub", lang: d.language }, "Alternative: " + x.alternative) : null,
+            h("div", { class: "admin-sub" }, (x.kind === "alternative" ? "Verse has: " : "Verse lacks: ") + x.words.join(", "))),
+          h("td", { class: "admin-wrap", lang: d.language }, x.text));
+      });
+      var noteBlock = h("section", { class: "admin-block" },
+        h("h2", null, "Footnotes and verses"),
+        h("p", { class: "admin-sub" }, "Footnoted meaning decisions whose translated note says one thing while the verse says another: at some level the verse has an alternative's distinctive words and none of the choice's (while the English at that level, or another level of this language, words the choice), or it has none of a short choice's words where the English has them. Text variants, grammar and punctuation are left out. “English too”: the English verse words the alternative as well, so a fix may start there."),
+        h("div", { class: "admin-toolbar" }, kindSeg),
+        noteRows.length ? table(["Verse", "Levels", "Signal", "Note", "Verse text"], noteRows)
+          : empty(d.notes.total ? "None of this kind." : "No footnote and verse at odds in " + name + "."));
+
+      var g = d.glossary, glossBlock;
+      if (!g.file) {
+        glossBlock = h("section", { class: "admin-block" }, h("h2", null, "Terms glossary"),
+          empty(d.language === "en" ? "English has no terms glossary: the glossaries say how other languages word its terms." :
+            name + " has no terms glossary (docs/" + name.toLowerCase() + "-terms.md)."));
+      } else {
+        var verseRows = g.verses.hits.map(function (x) {
+          return h("tr", null,
+            h("td", null, verseLink(x)),
+            h("td", null, levels(x)),
+            h("td", null, pill(x.kind === "avoided" ? "Ruled out" : "Alternative only", x.kind === "avoided" ? "bad" : "warn")),
+            h("td", null, h("b", { lang: d.language }, x.form), h("div", { class: "admin-sub" }, "for “" + x.term + "”")),
+            h("td", { class: "admin-wrap" }, glossaryLine(g.file, x.row.line), " ", h("code", { lang: d.language }, x.row.forms),
+              x.allowed_by ? h("div", { class: "admin-sub" }, "This book's own entry gives it: ", glossaryLine(g.file, x.allowed_by)) : null),
+            h("td", { class: "admin-wrap", lang: d.language }, x.text));
+        });
+        var conflictRows = g.rows.map(function (c) {
+          return h("tr", null,
+            h("td", null, h("b", null, c.term)),
+            h("td", null, pill(CHECK_KINDS[c.kind] || c.kind, c.kind === "ruled_out" ? "bad" : "warn"),
+              c.forms.length ? h("div", { class: "admin-sub", lang: d.language }, c.forms.join(", ")) : null),
+            h("td", { class: "admin-wrap" }, h("ul", { class: "admin-examples" }, c.rows.map(function (r) {
+              return h("li", null, glossaryLine(g.file, r.line), " ", r.book ? h("span", { class: "admin-sub" }, r.book + " ") : null,
+                r.source + ": ", h("code", { lang: d.language }, r.forms));
+            }))));
+        });
+        glossBlock = h("section", { class: "admin-block" },
+          h("h2", null, "Terms glossary"),
+          h("p", { class: "admin-sub" }, "From ", h("a", { href: ghFile(g.file), rel: "noopener" }, g.file),
+            ": verses that use a form the glossary rules out (“Not *x*”, “never *x*”) or names only as an alternative, where the English verse has the entry's English term. An “Added while drafting” entry counts in its own book only."),
+          verseRows.length ? table(["Verse", "Levels", "Signal", "Form", "Glossary entry", "Verse text"], verseRows)
+            : empty("No verse uses a form the glossary rules out."),
+          h("h3", { class: "admin-h3" }, "Entries at odds"),
+          h("p", { class: "admin-sub" }, "Entries for one English term (articles, plurals and asides aside) whose forms share no word, or where one uses a form another rules out. Entries naming different source words are kept apart. Some differences are deliberate (two senses, two people of one name): read the entries' notes."),
+          conflictRows.length ? table(["English term", "Signal", "Entries"], conflictRows)
+            : empty("No two entries disagree."));
+      }
+      return [head("Text", "Checks", "Content checks from the database and the files the deploy carries (data/notes/, docs/*-terms.md). They are heuristics for a reviewer and never block a merge; scripts/content_checks.py prints the same lists."),
+        h("div", { class: "admin-toolbar" }, langSel),
+        h("div", { class: "admin-tiles" },
+          tile(num(d.notes.total), "footnote and verse mismatches"),
+          tile(g.file ? num(g.verses.total) : "—", "verses against the glossary"),
+          tile(g.file ? num(g.rows.length) : "—", "glossary terms at odds")),
+        noteBlock, glossBlock];
     });
   };
 

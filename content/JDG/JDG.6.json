@@ -96,6 +96,11 @@
           "L": "Dan bani Israel melakukan yang jahat di mata {{divine_name:TUHAN|Yahweh}}, dan {{divine_name:TUHAN|Yahweh}} menyerahkan mereka ke dalam tangan Midian tujuh tahun lamanya.",
           "B": "Orang Israel melakukan apa yang jahat menurut pandangan {{divine_name:TUHAN|Yahweh}}, dan {{divine_name:TUHAN|Yahweh}} menyerahkan mereka ke dalam tangan orang Midian selama tujuh tahun.",
           "R": "Orang Israel berbuat jahat di hadapan {{divine_name:TUHAN|Yahweh}}. Karena itu {{divine_name:TUHAN|Yahweh}} menyerahkan mereka kepada orang Midian selama tujuh tahun."
+        },
+        "zh": {
+          "L": "{{gender:以色列的子孙|以色列的儿子}}做了在{{divine_name:上主|雅威}}眼中为恶的事，{{divine_name:上主|雅威}}就把他们交在米甸的手中七年。",
+          "B": "以色列人做了{{divine_name:上主|雅威}}看为恶的事，{{divine_name:上主|雅威}}就把他们交在米甸的权下七年。",
+          "R": "以色列人做了{{divine_name:上主|雅威}}认为邪恶的事。于是{{divine_name:上主|雅威}}把他们交给米甸人，长达七年。"
         }
       },
       "decisions": [
@@ -307,6 +312,69 @@
           "reason": "The form of the Ukrainian Numbers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o070060010021",
+            "o070060010031"
+          ],
+          "choice": "\"{{gender:以色列的子孙|以色列的儿子}}\" (L); \"以色列人\" with no span (B, R)",
+          "alternatives": [],
+          "reason": "As Exodus, Numbers and the glossary have it: Literal keeps \"sons of Israel\" in the gender setting; at Balanced and Readable \"以色列人\" already means the whole people, men and women, so it takes no span where the English has one. So through Judges 6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060010042",
+            "o070060010052"
+          ],
+          "choice": "\"做了在上主眼中为恶的事\" (L); \"做了上主看为恶的事\" (B); \"做了上主认为邪恶的事\" (R)",
+          "alternatives": [
+            "\"做了上主不喜悦的事\" (R, the regnal formula in Kings)"
+          ],
+          "reason": "The book's refrain, worded as the verdict formula of the glossary at Literal and Balanced. Readable keeps the word \"evil\" as the English Readable does (\"what the LORD said was evil\"), so the refrain stays recognisable each time it returns (as 2:11).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060010091",
+            "o070060010092"
+          ],
+          "choice": "\"交在米甸的权下\" (B); \"交给米甸人\" (R)",
+          "alternatives": [
+            "\"交在米甸的手中\" (L)"
+          ],
+          "reason": "\"Into the hand of\" means into the power of (m2); Balanced says \"power\", Readable \"handed over to\", as the English levels.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -417,6 +485,11 @@
           "L": "Dan tangan Midian kuat atas Israel. Karena Midian bani Israel membuat bagi diri mereka liang-liang yang [ada] di gunung-gunung, dan gua-gua, dan kubu-kubu.",
           "B": "Kekuasaan Midian menekan Israel. Karena takut kepada orang Midian, orang Israel membuat tempat-tempat persembunyian di gunung-gunung, gua-gua, dan kubu-kubu.",
           "R": "Orang Midian begitu berkuasa atas Israel, sehingga orang Israel membuat tempat-tempat persembunyian di bukit-bukit. Mereka juga memakai gua-gua dan tempat-tempat yang sulit dicapai."
+        },
+        "zh": {
+          "L": "米甸的手压制以色列。因着米甸，{{gender:以色列的子孙|以色列的儿子}}为自己在山中挖了洞穴，又[造了]山洞和堡垒。",
+          "B": "米甸的势力沉重地压在以色列身上。因为米甸人，以色列人在山中为自己造了藏身之处，又躲进山洞和堡垒。",
+          "R": "米甸人的势力压得以色列人喘不过气来，以色列人只好在山里为自己造了藏身的地方。他们也躲进山洞和难以到达的地方。"
         }
       },
       "decisions": [
@@ -543,6 +616,26 @@
           "reason": "Meaning decisions m1 and m2: shelters in the hillsides (uncertain) and high places hard to reach.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060020132",
+            "o070060020192"
+          ],
+          "choice": "\"洞穴……山洞……堡垒\" (L); \"藏身之处……山洞……堡垒\" (B); \"藏身的地方……山洞……难以到达的地方\" (R)",
+          "alternatives": [],
+          "reason": "The first word is a shelter dug into the hillside (m1), so Literal says \"洞穴\", kept apart from the natural caves; Balanced and Readable say what it was for. Readable explains \"strongholds\" (m2), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -642,6 +735,11 @@
           "L": "Dan terjadilah, setiap kali Israel selesai menabur, Midian dan Amalek dan orang-orang timur datang, dan mereka maju melawan mereka.",
           "B": "Setiap kali orang Israel selesai menabur, orang Midian, orang Amalek, dan orang-orang dari timur datang menyerang mereka.",
           "R": "Setiap kali orang Israel menanam benih, orang Midian datang menyerang mereka. Orang Amalek dan bangsa-bangsa lain dari timur ikut bersama mereka."
+        },
+        "zh": {
+          "L": "每当以色列撒了种，米甸人、亚玛力人和东方人就上来，上来攻击他们。",
+          "B": "每当以色列人撒了种，米甸人、亚玛力人和东方各族就上来攻打他们。",
+          "R": "每一次以色列人种下庄稼，米甸人就上来攻打他们。亚玛力人和其他从东方来的人也跟他们一起来。"
         }
       },
       "decisions": [
@@ -851,6 +949,50 @@
           "reason": "The people of the east are the desert peoples beyond the Jordan (m2); no gender span, as set at 1:1.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o070060030082",
+            "o070060030091"
+          ],
+          "choice": "\"东方人\" (L); \"东方各族\" (B); \"从东方来的人\" (R), no span",
+          "alternatives": [
+            "\"东方的{{gender:人|子孙}}\""
+          ],
+          "reason": "The English Literal puts \"people / sons\" in the gender setting. \"东方人\" already means the eastern peoples as a whole, men and women, so Chinese needs no span; Literal does not render \"sons\" word for word, as \"东方的子孙\" would read as descendants of a man called East.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060030111",
+            "o070060030112"
+          ],
+          "choice": "\"攻击他们\" / \"攻打他们\"",
+          "alternatives": [
+            "\"攻击他\""
+          ],
+          "reason": "\"Against him\" is Israel as one people (m3); Chinese says \"them\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -959,6 +1101,11 @@
           "L": "Dan mereka berkemah melawan mereka dan memusnahkan hasil tanah sampai ke dekat Gaza, dan mereka tidak meninggalkan bahan makanan di Israel, ataupun domba atau lembu atau keledai.",
           "B": "Mereka berkemah di tanah orang Israel dan memusnahkan hasil tanah sampai ke dekat Gaza. Mereka tidak meninggalkan apa pun untuk dimakan di Israel, juga tidak domba, lembu, atau keledai.",
           "R": "Mereka mendirikan kemah di tanah orang Israel dan merusak hasil panen sampai ke kota Gaza. Mereka tidak meninggalkan apa-apa untuk dimakan orang Israel, juga tidak domba, sapi, atau keledai."
+        },
+        "zh": {
+          "L": "他们就对着他们安营，毁坏地里的出产，直到你往迦萨去的地方；在以色列中没有留下可以维生的东西，也没有留下羊、牛或驴。",
+          "B": "他们在以色列人的土地上安营，毁坏庄稼，一直到迦萨。他们在以色列没有留下任何可以维生的东西，连一只羊、一头牛、一头驴也不留。",
+          "R": "他们在以色列人的土地上扎营，毁坏庄稼，一直毁到迦萨城。他们没有给以色列人留下任何吃的东西，也没有留下羊、牛或驴。"
         }
       },
       "decisions": [
@@ -1123,6 +1270,11 @@
           "L": "Karena mereka datang dengan ternak mereka, dan kemah-kemah mereka, dan mereka datang seperti belalang banyaknya; dan mereka dan unta-unta mereka tidak terhitung; dan mereka masuk ke negeri itu untuk memusnahkannya.",
           "B": "Sebab mereka datang membawa ternak dan kemah mereka, sebanyak kawanan belalang. Mereka dan unta-unta mereka tidak terhitung banyaknya. Mereka masuk ke negeri itu untuk memusnahkannya.",
           "R": "Mereka membawa ternak dan kemah mereka. Jumlah mereka begitu banyak, seperti kawanan belalang. Tidak ada yang dapat menghitung orang-orang itu dan unta-unta mereka. Mereka masuk ke negeri itu untuk merusaknya."
+        },
+        "zh": {
+          "L": "因为他们和他们的牲畜都上来，还有他们的帐篷；他们来的时候像蝗虫那样多；他们和他们的骆驼无法计数；他们进入这地，要毁坏它。",
+          "B": "他们带着牲畜和帐篷上来，多得像成群的蝗虫。他们和他们的骆驼多得数不清；他们进入这地，要使它变成一片荒凉。",
+          "R": "他们带着自己的牲畜和帐篷一起来。他们的人数非常多，就像一大群蝗虫一样。没有人能数清他们和他们的骆驼有多少。他们来到这地，要把它毁掉。"
         }
       },
       "decisions": [
@@ -1284,6 +1436,11 @@
           "L": "Dan Israel menjadi sangat melarat karena Midian, dan bani Israel berseru kepada {{divine_name:TUHAN|Yahweh}}.",
           "B": "Israel menjadi sangat melarat karena orang Midian, lalu orang Israel berseru kepada {{divine_name:TUHAN|Yahweh}}.",
           "R": "Israel menjadi sangat miskin karena orang Midian. Karena itu orang Israel berseru kepada {{divine_name:TUHAN|Yahweh}} minta tolong."
+        },
+        "zh": {
+          "L": "以色列因米甸的缘故极其贫弱，{{gender:以色列的子孙|以色列的儿子}}就向{{divine_name:上主|雅威}}呼求。",
+          "B": "以色列因为米甸人而极度贫困，以色列人就向{{divine_name:上主|雅威}}呼求。",
+          "R": "因为米甸人，以色列变得非常贫穷。于是以色列人向{{divine_name:上主|雅威}}呼求帮助。"
         }
       },
       "decisions": [
@@ -1424,6 +1581,11 @@
           "L": "Dan terjadilah, ketika bani Israel berseru kepada {{divine_name:TUHAN|Yahweh}} oleh karena Midian,",
           "B": "Ketika orang Israel berseru kepada {{divine_name:TUHAN|Yahweh}} karena orang Midian,",
           "R": "Orang Israel berseru kepada {{divine_name:TUHAN|Yahweh}} minta tolong karena perbuatan orang Midian terhadap mereka."
+        },
+        "zh": {
+          "L": "那时，{{gender:以色列的子孙|以色列的儿子}}因米甸的缘故向{{divine_name:上主|雅威}}呼求，",
+          "B": "以色列人因米甸的缘故向{{divine_name:上主|雅威}}呼求的时候，",
+          "R": "以色列人因为米甸人对他们所做的事，向{{divine_name:上主|雅威}}呼求帮助。"
         }
       },
       "decisions": [
@@ -1472,6 +1634,23 @@
           "choice": "because of what the Midianites were doing to them",
           "alternatives": [],
           "reason": "Readable spells out what \"on account of Midian\" means, and ends the sentence here; verse 8 begins a new one with \"So\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060070012"
+          ],
+          "choice": "\"那时……\"",
+          "alternatives": [],
+          "reason": "\"And it came to pass\" (wayehi) is given as a time clause, as the style guide's formula table has it; the sentence runs on into verse 8 (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -1586,6 +1765,11 @@
           "L": "{{divine_name:TUHAN|Yahweh}} mengutus seorang laki-laki, seorang nabi, kepada bani Israel, dan dia berkata kepada mereka, \"Beginilah firman {{divine_name:TUHAN|Yahweh}}, Allah Israel: 'Aku, {{deity_pronoun:aku|Aku}}lah yang membawa kalian naik dari Mesir dan membawa kalian keluar dari rumah perbudakan.",
           "B": "{{divine_name:TUHAN|Yahweh}} mengutus seorang nabi kepada mereka, yang berkata kepada mereka, \"Beginilah firman {{divine_name:TUHAN|Yahweh}}, Allah Israel: 'Akulah yang membawa kalian keluar dari Mesir, keluar dari rumah perbudakan.",
           "R": "{{divine_name:TUHAN|Yahweh}} mengutus seorang nabi kepada mereka. Nabi itu berkata, \"Inilah firman {{divine_name:TUHAN|Yahweh}}, Allah Israel: 'Aku telah membawa kalian keluar dari Mesir. Aku memimpin kalian keluar dari negeri tempat kalian menjadi budak."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}就差遣一个人，一位先知，到{{gender:以色列的子孙|以色列的儿子}}那里，他对他们说：“{{divine_name:上主|雅威}}以色列的{{god_term:神|上帝}}如此说：‘我，是我把你们从埃及领上来，把你们从奴隶之家领出来。",
+          "B": "{{divine_name:上主|雅威}}就差遣一位先知到以色列人那里，他对他们说：“{{divine_name:上主|雅威}}以色列的{{god_term:神|上帝}}这样说：‘是我把你们从埃及领上来，把你们从受奴役之地领了出来。",
+          "R": "于是{{divine_name:上主|雅威}}派了一位先知到他们那里。他说：“{{divine_name:上主|雅威}}以色列的{{god_term:神|上帝}}说：‘我把你们从埃及领了上来。我把你们从作奴隶的地方领了出来。"
         }
       },
       "decisions": [
@@ -1863,6 +2047,65 @@
           "reason": "The formula as the style guide sets it (section 12a).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o070060080131"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [],
+          "reason": "The Chinese reader setting for the word God: \"神\" by default, \"上帝\" as the alternative, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060080101",
+            "o070060080111"
+          ],
+          "choice": "\"上主如此说\" (L); \"上主这样说\" (B); \"上主说\" (R)",
+          "alternatives": [],
+          "reason": "The prophets' formula \"thus says the LORD\", in the one wording per level the glossary sets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060080212",
+            "o070060080221"
+          ],
+          "choice": "\"奴隶之家\" (L); \"受奴役之地\" (B); \"作奴隶的地方\" (R)",
+          "alternatives": [],
+          "reason": "The words Exodus 20:2 and Deuteronomy 6:12 use for \"the house of slaves\" (m3), so the prophet's echo of the exodus is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1973,6 +2216,11 @@
           "L": "Dan {{deity_pronoun:aku|Aku}} melepaskan kalian dari tangan Mesir dan dari tangan semua orang yang menindas kalian, dan {{deity_pronoun:aku|Aku}} menghalau mereka dari hadapan kalian dan memberikan negeri mereka kepada kalian.",
           "B": "Aku melepaskan kalian dari tangan orang Mesir dan dari tangan semua penindas kalian. Aku menghalau mereka dari hadapan kalian dan memberikan negeri mereka kepada kalian.",
           "R": "Aku menyelamatkan kalian dari orang Mesir dan dari semua orang lain yang menindas kalian. Aku mengusir mereka ketika kalian masuk, dan {{deity_pronoun:aku|Aku}} memberikan negeri mereka kepada kalian."
+        },
+        "zh": {
+          "L": "我从埃及人的手中，并从一切压迫你们之人的手中救了你们，又把他们从你们面前赶出去，把他们的地赐给你们。",
+          "B": "我从埃及的权势下，又从一切欺压你们之人的权势下救了你们。我在你们前面赶走了他们，把他们的地赐给了你们。",
+          "R": "我从埃及人手中救了你们，也从所有欺负你们的人手中救了你们。你们进来的时候，我把他们赶出那地，又把他们的地给了你们。"
         }
       },
       "decisions": [
@@ -2147,6 +2395,11 @@
           "L": "Dan {{deity_pronoun:aku|Aku}} berkata kepada kalian, \"Akulah {{divine_name:TUHAN|Yahweh}}, Allah kalian; janganlah kalian takut kepada allah-allah orang Amori, yang negerinya kalian diami.\" Tetapi kalian tidak mendengarkan suara-{{deity_pronoun:ku|Ku}}.'\"",
           "B": "Aku berkata kepada kalian, \"Akulah {{divine_name:TUHAN|Yahweh}}, Allah kalian. Janganlah kalian menyembah allah-allah orang Amori, yang negerinya kalian diami.\" Tetapi kalian tidak mendengarkan suara-{{deity_pronoun:ku|Ku}}.'\"",
           "R": "Aku berkata kepada kalian, \"Aku ini {{divine_name:TUHAN|Yahweh}}, Allah kalian. Jangan menyembah dewa-dewa orang Amori, walaupun kalian tinggal di negeri mereka.\" Tetapi kalian tidak taat kepada-{{deity_pronoun:ku|Ku}}.'\""
+        },
+        "zh": {
+          "L": "我又对你们说：“我是{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}；你们住在亚摩利人的地上，不可敬畏他们的神明。”你们却没有听从我的声音。’”",
+          "B": "我对你们说：“我是{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。你们虽然住在亚摩利人的地上，却不可敬畏他们的神明。”你们却没有听从我。’”",
+          "R": "我对你们说：“我是{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。虽然你们住在亚摩利人的地上，也不要敬拜他们的神明。”你们却不听从我。’”"
         }
       },
       "decisions": [
@@ -2318,6 +2571,25 @@
           "reason": "The formula as the style guide sets it (section 12a); fearing a god means revering and worshiping it (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060100091"
+          ],
+          "choice": "\"神明\"",
+          "alternatives": [],
+          "reason": "The gods of the Amorites are not the one God, so the word takes no god_term span, as the glossary has it for \"other gods\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2430,6 +2702,11 @@
           "L": "Dan malaikat {{divine_name:TUHAN|Yahweh}} datang dan duduk di bawah pohon tarbantin yang [ada] di Ofra, kepunyaan Yoas, orang Abiezer; dan Gideon anaknya sedang mengirik gandum di tempat pemerasan anggur supaya tersembunyi dari Midian.",
           "B": "Malaikat {{divine_name:TUHAN|Yahweh}} datang dan duduk di bawah pohon tarbantin di Ofra, kepunyaan Yoas, orang Abiezer. Gideon, anak Yoas, sedang mengirik gandum di tempat pemerasan anggur supaya tersembunyi dari orang Midian.",
           "R": "Lalu malaikat {{divine_name:TUHAN|Yahweh}} datang ke kota Ofra. Dia duduk di bawah sebatang pohon besar di sana, kepunyaan Yoas dari keluarga Abiezer. Gideon, anak Yoas, sedang memukul-mukul gandum untuk melepaskan bijinya di dalam tempat pemerasan anggur. Dia melakukannya di situ supaya orang Midian tidak menemukan gandum itu."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的使者来了，坐在俄弗拉的那棵笃耨香树下，[那树]是属于亚比以谢人约阿施的；他的儿子基甸正在酒榨里打麦子，为要藏起来，不让米甸人[看见]。",
+          "B": "后来，{{divine_name:上主|雅威}}的使者来到俄弗拉，坐在那里的笃耨香树下；那树属于亚比以谢人约阿施。约阿施的儿子基甸正在酒榨里打麦子，免得被米甸人看见。",
+          "R": "后来，{{divine_name:上主|雅威}}的使者来到俄弗拉城。他坐在那里的一棵大树下，那树是亚比以谢家族的约阿施的。约阿施的儿子基甸正在一个压葡萄的池子里打麦子。他在那里打麦子，是不想让米甸人找到这些麦子。"
         }
       },
       "decisions": [
@@ -2752,6 +3029,70 @@
           "reason": "The tree as Joshua 24:26 names it; \"Ofra\" as in Joshua 18:23. Readable says what threshing is, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060110021"
+          ],
+          "choice": "\"上主的使者\"",
+          "alternatives": [
+            "\"上主的天使\""
+          ],
+          "reason": "\"The angel of the LORD\" is the glossary's \"使者\" (messenger) at every level, as in Genesis and Exodus 3:2: the one sent, in whom God himself is present (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060110082",
+            "o070060110102",
+            "o070060110132"
+          ],
+          "choice": "\"俄弗拉\", \"亚比以谢人约阿施\", \"基甸\"",
+          "alternatives": [],
+          "reason": "Names in the forms of the Chinese glossary (Gideon) and the conventional Chinese forms (Ophrah, Joash, Abiezer). Readable says \"亚比以谢家族\" for the clan (m4), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060110062",
+            "o070060110172"
+          ],
+          "choice": "\"笃耨香树\" (L, B); \"大树\" (R); \"酒榨\" (L, B); \"压葡萄的池子\" (R)",
+          "alternatives": [
+            "\"橡树\""
+          ],
+          "reason": "The terebinth is a large, long-lived tree (m2), not an oak, so Literal and Balanced use its own name; Readable says \"a big tree\" and explains the winepress, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2850,6 +3191,11 @@
           "L": "Dan malaikat {{divine_name:TUHAN|Yahweh}} menampakkan diri kepadanya dan berkata kepadanya, \"{{divine_name:TUHAN|Yahweh}} menyertaimu, hai pahlawan yang gagah perkasa.\"",
           "B": "Malaikat {{divine_name:TUHAN|Yahweh}} menampakkan diri kepadanya dan berkata, \"{{divine_name:TUHAN|Yahweh}} menyertaimu, hai pahlawan yang gagah perkasa!\"",
           "R": "Malaikat {{divine_name:TUHAN|Yahweh}} menampakkan diri kepada Gideon dan berkata, \"{{divine_name:TUHAN|Yahweh}} menyertaimu, hai pejuang yang kuat!\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的使者向他显现，对他说：“{{divine_name:上主|雅威}}与你同在，你这强壮有力的勇士。”",
+          "B": "{{divine_name:上主|雅威}}的使者向他显现，说：“英勇的战士啊，{{divine_name:上主|雅威}}与你同在。”",
+          "R": "{{divine_name:上主|雅威}}的使者在基甸面前出现，说：“{{divine_name:上主|雅威}}和你在一起，你这强壮的战士！”"
         }
       },
       "decisions": [
@@ -2979,6 +3325,26 @@
             "com você"
           ],
           "reason": "The angel of the LORD speaks for God, so he addresses Gideon with \"tu\", as the angels do in Genesis in Portuguese (Genesis 16:9-11), and as the LORD does from verse 14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060120091",
+            "o070060120102"
+          ],
+          "choice": "\"强壮有力的勇士\" (L); \"英勇的战士\" (B); \"强壮的战士\" (R)",
+          "alternatives": [],
+          "reason": "\"Mighty man of strength\" is a strong warrior (m1); each level says so in its own register.",
           "uncertain": false,
           "footnote": false
         }
@@ -3114,6 +3480,11 @@
           "L": "Dan Gideon berkata kepadanya, \"Mohon maaf, tuanku, jika {{divine_name:TUHAN|Yahweh}} menyertai kami, mengapa semuanya ini menimpa kami? Dan di manakah segala perbuatan-{{deity_pronoun:nya|Nya}} yang ajaib yang diceritakan nenek moyang kami kepada kami, katanya, 'Bukankah {{divine_name:TUHAN|Yahweh}} telah membawa kita naik dari Mesir?' Tetapi sekarang {{divine_name:TUHAN|Yahweh}} telah meninggalkan kami dan menyerahkan kami ke dalam telapak tangan Midian.\"",
           "B": "Gideon menjawab, \"Maaf, Tuan, jika {{divine_name:TUHAN|Yahweh}} menyertai kami, mengapa semua ini menimpa kami? Di manakah segala perbuatan-{{deity_pronoun:nya|Nya}} yang ajaib, yang diceritakan nenek moyang kami kepada kami, waktu mereka berkata, 'Bukankah {{divine_name:TUHAN|Yahweh}} telah membawa kita keluar dari Mesir?' Tetapi sekarang {{divine_name:TUHAN|Yahweh}} telah meninggalkan kami dan menyerahkan kami ke dalam tangan orang Midian.\"",
           "R": "Gideon berkata, \"Maaf, Tuan, kalau {{divine_name:TUHAN|Yahweh}} menyertai kami, mengapa semua kesusahan ini menimpa kami? Nenek moyang kami menceritakan kepada kami perbuatan-perbuatan ajaib yang dilakukan-{{deity_pronoun:nya|Nya}}. Mereka berkata, '{{divine_name:TUHAN|Yahweh}} membawa kita keluar dari Mesir!' Jadi di mana perbuatan-perbuatan ajaib itu sekarang? {{divine_name:TUHAN|Yahweh}} sudah meninggalkan kami dan membiarkan orang Midian menguasai kami.\""
+        },
+        "zh": {
+          "L": "基甸对他说：“我主啊，请听，{{divine_name:上主|雅威}}若与我们同在，这一切为什么临到我们身上呢？我们的列祖向我们讲述{{deity_pronoun:他|祂}}的一切奇事，说：‘{{divine_name:上主|雅威}}不是把我们从埃及领上来了吗？’那些奇事在哪里呢？现在{{divine_name:上主|雅威}}却离弃了我们，把我们交在米甸的掌中。”",
+          "B": "基甸回答他：“先生，请恕我直言，{{divine_name:上主|雅威}}若与我们同在，为什么这一切会临到我们呢？我们的{{gender:祖先|列祖}}曾告诉我们{{deity_pronoun:他|祂}}所行的一切奇事，说：‘{{divine_name:上主|雅威}}不是把我们从埃及领上来了吗？’那些奇事都在哪里呢？现在{{divine_name:上主|雅威}}离弃了我们，把我们交在米甸人手里了。”",
+          "R": "基甸说：“对不起，先生，如果{{divine_name:上主|雅威}}与我们同在，为什么会有这么多的灾难临到我们？我们的{{gender:祖先|列祖}}告诉过我们{{deity_pronoun:他|祂}}所做的奇妙的事。他们说：‘{{divine_name:上主|雅威}}把我们从埃及领了出来！’那么，那些奇事现在在哪里呢？{{divine_name:上主|雅威}}已经离开了我们，让米甸人控制了我们。”"
         }
       },
       "decisions": [
@@ -3450,6 +3821,44 @@
           "reason": "A polite address to a stranger (m1). Gideon speaks for Israel to a visitor, so \"kami\"; the fathers spoke among themselves, so \"kita\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o070060130051"
+          ],
+          "choice": "\"我主\" (L); \"先生\" (B, R)",
+          "alternatives": [
+            "\"大人\""
+          ],
+          "reason": "Gideon addresses the stranger politely (m1) and does not yet know who he is. Literal keeps \"my lord\"; Balanced and Readable use the everyday polite address to a stranger, as the style guide asks for \"sir\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060130191"
+          ],
+          "choice": "\"我们的列祖\" (L, no span); \"我们的{{gender:祖先|列祖}}\" (B, R)",
+          "alternatives": [],
+          "reason": "As the English: the gender setting where the English Balanced and Readable have one; Literal keeps \"fathers\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3555,6 +3964,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berpaling kepadanya dan berfirman, \"Pergilah dengan kekuatanmu ini, dan engkau akan menyelamatkan Israel dari telapak tangan Midian. Bukankah {{deity_pronoun:aku|Aku}} mengutus engkau?\"",
           "B": "{{divine_name:TUHAN|Yahweh}} berpaling kepadanya dan berfirman, \"Pergilah dengan kekuatanmu ini dan selamatkanlah Israel dari tangan orang Midian. Bukankah {{deity_pronoun:aku|Aku}} yang mengutus engkau?\"",
           "R": "Lalu {{divine_name:TUHAN|Yahweh}} berpaling kepadanya dan berfirman, \"Pergilah dengan kekuatan yang ada padamu, dan selamatkanlah Israel dari orang Midian. Akulah yang mengutus kamu!\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}转向他，说：“你凭着你这力量去吧，你要从米甸的掌中拯救以色列。不是我差遣你的吗？”",
+          "B": "{{divine_name:上主|雅威}}转向他，说：“你就凭着你这股力量去吧，你要从米甸人的权势下拯救以色列。难道不是我差你去的吗？”",
+          "R": "于是{{divine_name:上主|雅威}}转向他，说：“凭着你现有的力量去吧，去把以色列从米甸人手中救出来。是我差你去的！”"
         }
       },
       "decisions": [
@@ -3806,6 +4220,11 @@
           "L": "Dan dia berkata kepada-{{deity_pronoun:nya|Nya}}, \"Mohon maaf, Tuhanku, dengan apakah aku akan menyelamatkan Israel? Lihatlah, kaumku [adalah] yang paling lemah di Manasye, dan aku [adalah] yang paling kecil di rumah ayahku.\"",
           "B": "Gideon menjawab-{{deity_pronoun:nya|Nya}}, \"Mohon maaf, Tuhan, bagaimana aku dapat menyelamatkan Israel? Kaumku adalah yang paling lemah di antara suku Manasye, dan aku yang paling kecil di keluarga ayahku.\"",
           "R": "Gideon berkata, \"Tolong, Tuhan, bagaimana mungkin aku menyelamatkan Israel? Kaumku adalah yang paling lemah di suku Manasye. Dan di keluargaku, akulah yang paling tidak berarti.\""
+        },
+        "zh": {
+          "L": "他对{{deity_pronoun:他|祂}}说：“主啊，请听，我凭什么拯救以色列呢？看哪，我的宗族在玛拿西是最弱的，我在我父家是最小的。”",
+          "B": "基甸对{{deity_pronoun:他|祂}}说：“主啊，请恕我直言，我怎么能拯救以色列呢？我的宗族在玛拿西是最弱的，我在我的家族中又是最小的。”",
+          "R": "基甸说：“主啊，我怎么能救以色列呢？我的宗族在玛拿西支派中是最弱小的。在我家里，我又是最不重要的。”"
         }
       },
       "decisions": [
@@ -4063,6 +4482,27 @@
           "reason": "The vowels mark the title used for God (m1); Indonesian shows the difference in one letter, as the English does with a capital.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060150041"
+          ],
+          "choice": "\"主啊\"",
+          "alternatives": [
+            "\"我主啊\""
+          ],
+          "reason": "Here the Hebrew vowels mark the title used for God (m1), so every level says \"主\", the word for Adonai, kept apart from \"我主\" (my lord) in verse 13.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4161,6 +4601,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Sungguh, {{deity_pronoun:aku|Aku}} akan menyertai engkau, dan engkau akan memukul kalah Midian seperti satu orang.\"",
           "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Aku akan menyertai engkau, dan engkau akan mengalahkan orang Midian seperti mengalahkan satu orang saja.\"",
           "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Aku akan menyertai kamu. Kamu akan mengalahkan semua orang Midian dengan mudah, seakan-akan kamu hanya melawan satu orang.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对他说：“我一定会与你同在，你要击败米甸，如同击败一个人。”",
+          "B": "{{divine_name:上主|雅威}}回答他：“我会与你同在，你要击败米甸人，就好像他们只是一个人。”",
+          "R": "{{divine_name:上主|雅威}}对他说：“我会与你同在。你要打败所有的米甸人，就像只对付一个人那么容易。”"
         }
       },
       "decisions": [
@@ -4319,6 +4764,11 @@
           "L": "Dan dia berkata kepada-{{deity_pronoun:nya|Nya}}, \"Jika sekarang aku mendapat kasih karunia di mata-{{deity_pronoun:mu|Mu}}, buatlah bagiku suatu tanda bahwa {{deity_pronoun:engkau|Engkau}}lah yang berbicara denganku.",
           "B": "Gideon berkata kepada-{{deity_pronoun:nya|Nya}}, \"Jika aku mendapat kasih karunia di mata-{{deity_pronoun:mu|Mu}}, berilah aku suatu tanda bahwa {{deity_pronoun:engkau|Engkau}}lah yang berbicara denganku.",
           "R": "Gideon berkata, \"Kalau {{deity_pronoun:engkau|Engkau}} berkenan kepadaku, tolong tunjukkan kepadaku suatu tanda. Dengan begitu aku akan tahu bahwa {{deity_pronoun:engkau|Engkau}} sungguh-sungguh berbicara denganku."
+        },
+        "zh": {
+          "L": "他对{{deity_pronoun:他|祂}}说：“我若在{{deity_pronoun:你|祢}}眼前蒙恩，就请为我显一个记号，[证明]与我说话的就是{{deity_pronoun:你|祢}}。",
+          "B": "基甸对{{deity_pronoun:他|祂}}说：“我若在{{deity_pronoun:你|祢}}面前蒙恩，求{{deity_pronoun:你|祢}}给我一个记号，证明与我说话的真的是{{deity_pronoun:你|祢}}。",
+          "R": "基甸说：“如果{{deity_pronoun:你|祢}}喜欢我，就请给我一个记号。这样，我就会知道跟我说话的真的是{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -4555,6 +5005,11 @@
           "L": "Janganlah kiranya {{deity_pronoun:engkau|Engkau}} pergi dari sini sampai aku datang kepada-{{deity_pronoun:mu|Mu}} dan membawa persembahanku dan meletakkannya di hadapan-{{deity_pronoun:mu|Mu}}.\" Dan {{deity_pronoun:dia|Dia}} berkata, \"Aku, {{deity_pronoun:aku|Aku}} akan tinggal sampai engkau kembali.\"",
           "B": "Janganlah pergi dari sini sampai aku kembali kepada-{{deity_pronoun:mu|Mu}} membawa persembahanku dan meletakkannya di hadapan-{{deity_pronoun:mu|Mu}}.\" Dia menjawab, \"Aku akan menunggu sampai engkau kembali.\"",
           "R": "Tolong jangan pergi sampai aku kembali membawa hadiah makanan untuk-{{deity_pronoun:mu|Mu}}.\" Dia menjawab, \"Aku akan menunggu di sini sampai kamu kembali.\""
+        },
+        "zh": {
+          "L": "请不要离开这里，等我回到{{deity_pronoun:你|祢}}这里，把我的礼物带出来，摆在{{deity_pronoun:你|祢}}面前。”{{deity_pronoun:他|祂}}说：“我，我要留在这里，等你回来。”",
+          "B": "请不要离开这里，等我回到{{deity_pronoun:你|祢}}这里，把我的礼物拿出来，摆在{{deity_pronoun:你|祢}}面前。”他说：“我会留在这里，等你回来。”",
+          "R": "请不要走开，等我拿一份食物回来献给{{deity_pronoun:你|祢}}。”他回答：“我会在这里等你回来。”"
         }
       },
       "decisions": [
@@ -4660,6 +5115,27 @@
           "choice": "\"my offering\" (minchah): \"ささげ物\" (L, B), \"食べ物の贈り物\" (R); the visitor as \"その方\", never \"彼\"",
           "alternatives": [],
           "reason": "Meaning decision m1: a gift that could be a meal or a sacrifice; the Genesis consistency forms for minchah.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060180101"
+          ],
+          "choice": "\"礼物\" (L, B); \"一份食物\" (R)",
+          "alternatives": [
+            "\"供物\""
+          ],
+          "reason": "The word is a gift that could be a meal or a sacrifice (m1); \"礼物\" keeps it open. Readable says what it turns out to be, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4776,6 +5252,11 @@
           "L": "Dan Gideon masuk dan mengolah seekor anak kambing, dan roti tidak beragi [dari] satu efa tepung. Dagingnya ditaruhnya dalam bakul, dan kuahnya ditaruhnya dalam periuk, dan dibawanya keluar kepada-{{deity_pronoun:nya|Nya}} di bawah pohon tarbantin itu dan disuguhkannya.",
           "B": "Gideon masuk dan memasak seekor anak kambing, dan membuat roti tidak beragi dari {{units:sekitar 22 liter|satu efa}} tepung. Dia menaruh dagingnya dalam bakul dan kuahnya dalam periuk, lalu membawanya keluar kepada-{{deity_pronoun:nya|Nya}} di bawah pohon tarbantin itu dan menyuguhkannya.",
           "R": "Gideon pergi dan memasak seekor anak kambing. Dia juga memakai {{units:sekitar 22 liter|satu efa}} tepung untuk membuat roti tanpa ragi. Dia menaruh dagingnya dalam bakul dan kuahnya dalam periuk. Lalu dia membawa makanan itu keluar kepada malaikat itu di bawah pohon dan menyuguhkannya kepadanya."
+        },
+        "zh": {
+          "L": "基甸就进去，预备了一只山羊羔，又用一伊法细面做了无酵[饼]；他把肉放在篮子里，把汤盛在锅里，带出来到笃耨香树下给他，奉上[这些食物]。",
+          "B": "基甸进去，预备了一只山羊羔，又用{{units:约22升|一伊法}}面粉做了无酵饼。他把肉放在篮子里，把汤盛在锅里，带到笃耨香树下给他，摆在他面前。",
+          "R": "基甸去煮了一只小山羊。他又用{{units:约22升|一伊法}}面粉烤了一些没有酵的饼。他把肉放在篮子里，把汤倒在锅里。然后他把这些食物带到大树下的使者那里，献给他。"
         }
       },
       "decisions": [
@@ -5073,6 +5554,24 @@
           "reason": "The style guide sets metric units (section 8), where the English default is quarts. The pronoun for the visitor follows the English: \"kepada-Nya\" with the span at Literal and Balanced, where the English says \"him\" of the LORD, and \"malaikat itu\" at Readable, which names the angel.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o070060190062"
+          ],
+          "choice": "\"{{units:约22升|一伊法}}\"",
+          "alternatives": [],
+          "reason": "The units setting: metric by default, the ephah as the alternative. The English gives US quarts; Chinese gives litres, as the glossary's table of measures.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5184,6 +5683,11 @@
           "L": "Dan malaikat Allah berkata kepadanya, \"Ambillah daging dan roti tidak beragi itu, dan letakkanlah di atas batu ini, dan tuangkanlah kuahnya.\" Dan dia berbuat demikian.",
           "B": "Malaikat Allah berkata kepadanya, \"Ambillah daging dan roti tidak beragi itu, letakkanlah di atas batu ini, lalu tuangkanlah kuahnya.\" Gideon berbuat demikian.",
           "R": "Malaikat Allah berkata kepadanya, \"Ambil daging dan roti itu, lalu taruh di atas batu ini. Sesudah itu tuangkan kuahnya.\" Gideon melakukan apa yang dikatakannya."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}的使者对他说：“把肉和无酵[饼]拿来，放在这块磐石上，把汤倒出来。”他就这样做了。",
+          "B": "{{god_term:神|上帝}}的使者吩咐他：“把肉和无酵饼拿来，放在这块磐石上，再把汤倒出来。”他就照着做了。",
+          "R": "{{god_term:神|上帝}}的使者对他说：“把肉和饼拿来，放在这块大石头上，然后把汤倒出来。”基甸就照他的话做了。"
         }
       },
       "decisions": [
@@ -5357,6 +5861,11 @@
           "L": "Dan malaikat {{divine_name:TUHAN|Yahweh}} mengulurkan ujung tongkat yang [ada] di tangannya dan menyentuh daging dan roti tidak beragi itu; dan api naik dari batu itu dan memakan habis daging dan roti tidak beragi itu. Dan malaikat {{divine_name:TUHAN|Yahweh}} pergi dari pandangannya.",
           "B": "Malaikat {{divine_name:TUHAN|Yahweh}} mengulurkan ujung tongkat yang dipegangnya dan menyentuh daging dan roti tidak beragi itu. Lalu api menyala dari batu itu dan memakan habis daging dan roti itu. Kemudian malaikat {{divine_name:TUHAN|Yahweh}} lenyap dari pandangannya.",
           "R": "Malaikat {{divine_name:TUHAN|Yahweh}} mengulurkan tongkat yang dipegangnya dan menyentuh daging dan roti itu dengan ujungnya. Api menyala dari batu itu dan membakar habis semua makanan itu. Lalu malaikat {{divine_name:TUHAN|Yahweh}} menghilang."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的使者伸出他手中所拿的杖的尖端，碰了碰肉和无酵[饼]，就有火从磐石中上来，烧尽了肉和无酵[饼]；{{divine_name:上主|雅威}}的使者也从他眼前离去了。",
+          "B": "{{divine_name:上主|雅威}}的使者伸出手中的杖，用杖的尖端碰了碰肉和无酵饼。立刻有火从磐石中冒出来，把肉和饼都烧尽了；{{divine_name:上主|雅威}}的使者也从他眼前消失了。",
+          "R": "{{divine_name:上主|雅威}}的使者伸出手里拿着的杖，用杖尖碰了碰肉和饼。火就从石头里冒出来，把所有的食物都烧光了。然后，{{divine_name:上主|雅威}}的使者不见了。"
         }
       },
       "decisions": [
@@ -5514,6 +6023,11 @@
           "L": "Dan Gideon melihat bahwa dia [adalah] malaikat {{divine_name:TUHAN|Yahweh}}, dan Gideon berkata, \"Celaka, Tuhan {{divine_name:ALLAH|Yahweh}}! Sebab sesungguhnya aku telah melihat malaikat {{divine_name:TUHAN|Yahweh}} dengan berhadapan muka.\"",
           "B": "Gideon sadar bahwa itu adalah malaikat {{divine_name:TUHAN|Yahweh}}, lalu dia berkata, \"Celakalah aku, Tuhan {{divine_name:ALLAH|Yahweh}}! Aku telah melihat malaikat {{divine_name:TUHAN|Yahweh}} dengan berhadapan muka!\"",
           "R": "Lalu Gideon mengerti bahwa yang tadi itu malaikat {{divine_name:TUHAN|Yahweh}}. Dia berseru, \"Aduh, Tuhan {{divine_name:ALLAH|Yahweh}}! Aku sudah melihat malaikat {{divine_name:TUHAN|Yahweh}} muka dengan muka!\""
+        },
+        "zh": {
+          "L": "基甸看出他是{{divine_name:上主|雅威}}的使者，基甸就说：“哀哉，主宰{{divine_name:上主|雅威}}啊！因为我面对面看见了{{divine_name:上主|雅威}}的使者。”",
+          "B": "基甸看出那是{{divine_name:上主|雅威}}的使者，就大声说：“不好了，主宰{{divine_name:上主|雅威}}啊！我竟然面对面看见了{{divine_name:上主|雅威}}的使者！”",
+          "R": "这时，基甸才明白那是{{divine_name:上主|雅威}}的使者。他喊着说：“糟了，主宰{{divine_name:上主|雅威}}啊！我面对面看见了{{divine_name:上主|雅威}}的使者！”"
         }
       },
       "decisions": [
@@ -5787,6 +6301,48 @@
           "reason": "As the style guide sets (section 4) and Joshua 7:7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060220101",
+            "o070060220111"
+          ],
+          "choice": "\"主宰上主\"",
+          "alternatives": [
+            "\"主上主\""
+          ],
+          "reason": "The Lord GOD (Adonai YHWH), as the Chinese style guide sets it: \"主宰\" (Sovereign) for Adonai in this phrase, because \"主上主\" can be read as \"主上\" (His Majesty) followed by \"主\". The first time in Judges.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060220091"
+          ],
+          "choice": "\"不好了\" (B); \"糟了\" (R)",
+          "alternatives": [
+            "\"哀哉\" (L)"
+          ],
+          "reason": "A cry of alarm (m2). Literal keeps the old cry; Balanced and Readable use the plain modern exclamation, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5881,6 +6437,11 @@
           "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Damai sejahtera bagimu; jangan takut; engkau tidak akan mati.\"",
           "B": "Tetapi {{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Damai sejahtera bagimu! Jangan takut, engkau tidak akan mati.\"",
           "R": "Tetapi {{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Damai bagimu. Jangan takut. Kamu tidak akan mati.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对他说：“愿你平安！不要怕，你不会死。”",
+          "B": "{{divine_name:上主|雅威}}却对他说：“愿你平安！不要怕，你不会死的。”",
+          "R": "但{{divine_name:上主|雅威}}对他说：“你可以安心。不要害怕，你不会死。”"
         }
       },
       "decisions": [
@@ -5984,6 +6545,45 @@
           "choice": "\"damai sejahtera\" (L, B), \"damai\" (R) for shalom",
           "alternatives": [],
           "reason": "The style guide's term (section 7), carried into the altar's name in verse 24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060230061",
+            "o070060230071"
+          ],
+          "choice": "\"不要怕\" (L, B); \"不要害怕\" (R)",
+          "alternatives": [],
+          "reason": "\"Fear not\" in the one wording per level the style guide sets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060230041"
+          ],
+          "choice": "\"你可以安心\"",
+          "alternatives": [
+            "\"愿你平安\""
+          ],
+          "reason": "Readable gives \"peace to you\" its sense here, safety and well-being (m1), since Gideon fears he will die.",
           "uncertain": false,
           "footnote": false
         }
@@ -6092,6 +6692,11 @@
           "L": "Dan Gideon mendirikan di sana sebuah mezbah bagi {{divine_name:TUHAN|Yahweh}} dan menamainya \"{{divine_name:TUHAN|Yahweh}} [Adalah] Damai Sejahtera.\" Sampai hari ini mezbah itu masih ada di Ofra, kepunyaan orang Abiezer.",
           "B": "Gideon mendirikan di sana sebuah mezbah bagi {{divine_name:TUHAN|Yahweh}} dan menamainya \"{{divine_name:TUHAN|Yahweh}} Adalah Damai Sejahtera.\" Sampai hari ini mezbah itu masih ada di Ofra, kota orang Abiezer.",
           "R": "Gideon membangun sebuah mezbah di sana untuk menyembah {{divine_name:TUHAN|Yahweh}}. Dia menamainya \"{{divine_name:TUHAN|Yahweh}} Adalah Damai.\" Sampai sekarang mezbah itu masih ada di Ofra, kota keluarga Abiezer."
+        },
+        "zh": {
+          "L": "基甸就在那里为{{divine_name:上主|雅威}}筑了一座祭坛，称它为“{{divine_name:上主|雅威}}[是]平安”。直到今日，它还在亚比以谢人的俄弗拉。",
+          "B": "于是基甸在那里为{{divine_name:上主|雅威}}筑了一座祭坛，给它起名叫“{{divine_name:上主|雅威}}是平安”。直到今日，这座坛还在亚比以谢人的俄弗拉。",
+          "R": "基甸在那里筑了一座祭坛来敬拜{{divine_name:上主|雅威}}。他给这座坛起名叫“{{divine_name:上主|雅威}}是平安”。这座坛今天还在俄弗拉，就是亚比以谢家族的城。"
         }
       },
       "decisions": [
@@ -6188,6 +6793,26 @@
             "Jeová-Shalom"
           ],
           "reason": "The altar's name is a sentence, and Portuguese translates it, as the English does, so the reader hears the word \"paz\" the LORD has just said to Gideon (\"Paz a ti\", verse 23; m1). The Hebrew form \"Yahweh-Shalom\", familiar from older Portuguese Bibles as \"Jeová-Shalom\", is not used (Jeová is not used at all); the divine name setting gives \"Javé é paz\". Literal brackets \"[é]\", which the Hebrew leaves understood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060240081",
+            "o070060240091"
+          ],
+          "choice": "\"上主是平安\"",
+          "alternatives": [],
+          "reason": "The altar's name is translated, as the English does, so the reader hears that it echoes Yahweh's word \"peace to you\" (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -6316,6 +6941,11 @@
           "L": "Dan terjadilah pada malam itu, {{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Ambillah lembu jantan kepunyaan ayahmu, yaitu lembu jantan yang kedua, yang berumur tujuh tahun, dan robohkanlah mezbah Baal kepunyaan ayahmu, dan tebanglah tiang Asyera yang [ada] di sampingnya.",
           "B": "Pada malam itu {{divine_name:TUHAN|Yahweh}} berfirman kepada Gideon, \"Ambillah lembu jantan ayahmu, yaitu lembu jantan yang kedua, yang berumur tujuh tahun. Robohkanlah mezbah Baal kepunyaan ayahmu, dan tebanglah tiang Asyera yang ada di sampingnya.",
           "R": "Malam itu {{divine_name:TUHAN|Yahweh}} berfirman kepada Gideon, \"Ambil salah satu lembu jantan ayahmu, yaitu yang kedua, yang berumur tujuh tahun. Robohkan mezbah ayahmu untuk dewa Baal. Tebang tiang di sampingnya yang dipakai untuk menyembah dewi Asyera."
+        },
+        "zh": {
+          "L": "就在那天夜里，{{divine_name:上主|雅威}}对他说：“你要取你父亲的牛群中的公牛，就是那第二头七岁的公牛，拆毁你父亲那座巴力的祭坛，砍下坛旁的亚舍拉木柱；",
+          "B": "当天夜里，{{divine_name:上主|雅威}}对他说：“你要从你父亲的牛群中取一头公牛，就是那第二头七岁的公牛。你要拆毁你父亲那座巴力的祭坛，砍倒坛旁的亚舍拉木柱。",
+          "R": "那天晚上，{{divine_name:上主|雅威}}对基甸说：“你要从你父亲的公牛中牵一头来，就是那第二头七岁的公牛。你要拆掉你父亲为巴力这个神明筑的祭坛，又砍倒坛旁边那根用来敬拜亚舍拉女神的木柱。"
         }
       },
       "decisions": [
@@ -6638,6 +7268,26 @@
           "reason": "The Asherah here is the wooden pole of the goddess (m3), named with her name as set at 3:7; Readable explains it, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060250202",
+            "o070060250242"
+          ],
+          "choice": "\"巴力\" (L, B), \"巴力这个神明\" (R); \"亚舍拉木柱\" (L, B), \"用来敬拜亚舍拉女神的木柱\" (R)",
+          "alternatives": [],
+          "reason": "Baal and the Asherah in the glossary's forms; Readable says who they were and what the pole was for, as the English Readable does, and afterwards says \"亚舍拉木柱\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6751,6 +7401,11 @@
           "L": "Dan dirikanlah sebuah mezbah bagi {{divine_name:TUHAN|Yahweh}}, Allahmu, di puncak kubu ini, dengan susunan [yang benar], dan ambillah lembu jantan yang kedua itu dan persembahkanlah [sebagai] korban bakaran dengan kayu tiang Asyera yang akan kautebang itu.\"",
           "B": "Lalu dirikanlah sebuah mezbah bagi {{divine_name:TUHAN|Yahweh}}, Allahmu, di puncak kubu ini dengan susunan yang benar. Ambillah lembu jantan yang kedua itu dan persembahkanlah sebagai korban bakaran dengan kayu tiang Asyera yang kautebang itu.\"",
           "R": "Sesudah itu bangunlah sebuah mezbah bagi {{divine_name:TUHAN|Yahweh}}, Allahmu, di puncak tempat yang tinggi dan aman ini, dan bangunlah dengan cara yang benar. Ambil lembu jantan yang kedua itu dan persembahkan di atas mezbah itu sebagai korban bakaran. Pakailah kayu tiang Asyera yang kamu tebang untuk apinya.\""
+        },
+        "zh": {
+          "L": "你要在这堡垒的顶上，按着[规定的]排列，为{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}筑一座坛，然后取那第二头公牛，用你所砍下的亚舍拉木柱作柴，献为燔祭。”",
+          "B": "然后，你要在这座堡垒的顶上，按照规定的样式为{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}筑一座坛。你要取那第二头公牛，用你砍下来的亚舍拉木柱作柴，献为燔祭。”",
+          "R": "然后，你要在这个又高又安全的地方，为{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}好好地筑一座祭坛。你要牵那第二头公牛来，在坛上献为全烧的祭。要用你砍下来的亚舍拉木柱当柴烧。”"
         }
       },
       "decisions": [
@@ -6814,6 +7469,25 @@
           "choice": "high, safe place",
           "alternatives": [],
           "reason": "Readable explains \"stronghold\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060260151"
+          ],
+          "choice": "\"燔祭\" (L, B); \"全烧的祭\" (R)",
+          "alternatives": [],
+          "reason": "The burnt offering in the glossary's and Leviticus's words.",
           "uncertain": false,
           "footnote": false
         }
@@ -6934,6 +7608,11 @@
           "L": "Dan Gideon mengambil sepuluh orang dari budak-budaknya dan berbuat seperti yang telah difirmankan {{divine_name:TUHAN|Yahweh}} kepadanya. Tetapi karena dia terlalu takut kepada keluarga ayahnya dan kepada orang-orang kota itu untuk melakukannya pada siang hari, dia melakukannya pada malam hari.",
           "B": "Gideon membawa sepuluh orang dari antara hamba-hambanya dan melakukan apa yang difirmankan {{divine_name:TUHAN|Yahweh}} kepadanya. Tetapi karena dia terlalu takut kepada keluarganya dan kepada orang-orang kota itu untuk melakukannya pada siang hari, dia melakukannya pada malam hari.",
           "R": "Lalu Gideon membawa sepuluh orang hambanya dan melakukan apa yang difirmankan {{divine_name:TUHAN|Yahweh}} kepadanya. Tetapi dia takut kepada keluarganya dan kepada orang-orang di kota itu. Karena itu dia melakukannya pada malam hari, bukan pada siang hari."
+        },
+        "zh": {
+          "L": "基甸就从他的奴隶中带了十个人，照{{divine_name:上主|雅威}}对他所说的做了。但因为他怕他父家和城里的人，不敢在白天做，就在夜间做了。",
+          "B": "于是基甸从他的仆人中带了十个人，照着{{divine_name:上主|雅威}}吩咐他的做了。但他太害怕他父亲的家族和城里的人，不敢在白天做，就在夜里做了。",
+          "R": "于是基甸带了十个仆人，照着{{divine_name:上主|雅威}}告诉他的去做了。但他害怕他的家人和城里的人，所以没有在白天做，而是在夜里做。"
         }
       },
       "decisions": [
@@ -7039,6 +7718,25 @@
           "choice": "\"his slaves\" (avadim): \"奴隷\" (L), \"しもべ\" (B, R), as the English per level",
           "alternatives": [],
           "reason": "The Genesis consistency rule for eved.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060270052"
+          ],
+          "choice": "\"奴隶\" (L); \"仆人\" (B, R)",
+          "alternatives": [],
+          "reason": "As the glossary for *ʿeved*: slave at Literal, servant at Balanced and Readable, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -7155,6 +7853,11 @@
           "L": "Dan orang-orang kota itu bangun pagi-pagi, dan lihatlah, mezbah Baal telah dirobohkan, dan tiang Asyera yang [ada] di sampingnya telah ditebang, dan lembu jantan yang kedua telah dipersembahkan di atas mezbah yang [baru] didirikan.",
           "B": "Ketika orang-orang kota itu bangun pagi-pagi, tampaklah mezbah Baal sudah dirobohkan, tiang Asyera di sampingnya sudah ditebang, dan lembu jantan yang kedua sudah dipersembahkan di atas mezbah yang baru didirikan.",
           "R": "Pagi-pagi sekali orang-orang kota itu bangun. Mereka melihat bahwa mezbah Baal sudah dirobohkan dan tiang Asyera di sampingnya sudah ditebang. Mereka juga melihat bahwa lembu jantan yang kedua sudah dipersembahkan sebagai korban di atas mezbah yang baru."
+        },
+        "zh": {
+          "L": "城里的人清早起来，看哪，巴力的祭坛被拆毁了，坛旁的亚舍拉木柱被砍下了，那第二头公牛也被献在新筑的坛上了。",
+          "B": "城里的人清早起来，看见巴力的祭坛被拆毁了，坛旁的亚舍拉木柱被砍倒了，那第二头公牛也献在了新筑的坛上。",
+          "R": "第二天清早，城里的人起来，看见巴力的祭坛被拆掉了，坛旁边的亚舍拉木柱也被砍倒了。他们又看见那第二头公牛已经被献在新的祭坛上。"
         }
       },
       "decisions": [
@@ -7313,6 +8016,11 @@
           "L": "Dan mereka berkata seorang kepada yang lain, \"Siapakah yang telah melakukan hal ini?\" Dan mereka menyelidiki dan mencari, lalu mereka berkata, \"Gideon anak Yoas telah melakukan hal ini.\"",
           "B": "Mereka bertanya seorang kepada yang lain, \"Siapa yang melakukan hal ini?\" Setelah menyelidiki dan mencari tahu, mereka berkata, \"Gideon anak Yoas yang melakukannya.\"",
           "R": "Mereka bertanya seorang kepada yang lain, \"Siapa yang melakukan ini?\" Mereka bertanya-tanya dan mencari tahu. Lalu mereka berkata, \"Gideon anak Yoas yang melakukannya.\""
+        },
+        "zh": {
+          "L": "他们彼此说：“这事是谁做的？”他们查问寻找，就说：“这事是约阿施的儿子基甸做的。”",
+          "B": "他们互相问：“这是谁做的？”他们到处打听、查问以后，就说：“是约阿施的儿子基甸做的。”",
+          "R": "他们彼此问：“这是谁干的？”他们到处问，四处查。后来他们说：“是约阿施的儿子基甸干的。”"
         }
       },
       "decisions": [
@@ -7476,6 +8184,11 @@
           "L": "Dan orang-orang kota itu berkata kepada Yoas, \"Bawalah keluar anakmu, supaya dia mati, karena dia telah merobohkan mezbah Baal, dan karena dia telah menebang tiang Asyera yang [ada] di sampingnya.\"",
           "B": "Orang-orang kota itu berkata kepada Yoas, \"Bawa keluar anakmu! Dia harus mati, karena dia telah merobohkan mezbah Baal dan menebang tiang Asyera yang ada di sampingnya.\"",
           "R": "Orang-orang kota itu berkata kepada Yoas, \"Bawa anakmu keluar ke sini. Dia harus dibunuh! Dia sudah merobohkan mezbah Baal dan menebang tiang Asyera yang ada di sampingnya.\""
+        },
+        "zh": {
+          "L": "城里的人对约阿施说：“把你的儿子带出来，让他死，因为他拆毁了巴力的祭坛，又砍下了坛旁的亚舍拉木柱。”",
+          "B": "城里的人对约阿施说：“把你的儿子交出来，他必须死！因为他拆毁了巴力的祭坛，又砍倒了坛旁的亚舍拉木柱。”",
+          "R": "城里的人对约阿施说：“把你的儿子带出来，他必须被处死！他拆掉了巴力的祭坛，又砍倒了坛旁边的亚舍拉木柱。”"
         }
       },
       "decisions": [
@@ -7686,6 +8399,11 @@
           "L": "Dan Yoas berkata kepada semua orang yang berdiri melawan dia, \"Kaliankah yang akan membela Baal? Atau kaliankah yang akan menyelamatkannya? Siapa yang membelanya akan dihukum mati sebelum pagi. Jika dia allah, biarlah dia membela dirinya sendiri, karena orang telah merobohkan mezbahnya.\"",
           "B": "Tetapi Yoas berkata kepada semua orang yang mengerumuninya, \"Apakah kalian mau membela Baal? Apakah kalian mau menyelamatkan dia? Siapa yang membela Baal akan dihukum mati sebelum pagi! Jika Baal memang allah, biarlah dia membela dirinya sendiri, karena mezbahnyalah yang dirobohkan orang.\"",
           "R": "Tetapi Yoas menjawab orang banyak yang melawan dia, \"Apakah kalian mau membela Baal? Apakah kalian pikir kalian harus menyelamatkan dia? Siapa yang membela Baal akan dihukum mati sebelum pagi! Kalau Baal memang dewa, biar dia membela dirinya sendiri. Mezbahnya sendirilah yang dirobohkan.\""
+        },
+        "zh": {
+          "L": "约阿施对所有站着攻击他的人说：“你们要为巴力争辩吗？你们要拯救他吗？谁为他争辩，谁就要在早晨以前被处死。他若是神明，就让他为自己争辩吧，因为有人拆毁了他的祭坛。”",
+          "B": "约阿施却对所有站出来反对他的人说：“你们要替巴力辩护吗？你们要救他吗？谁替他辩护，到早晨就要被处死！巴力若是神明，就该为自己辩护，因为被拆毁的是他的祭坛。”",
+          "R": "约阿施却回答站在那里反对他的众人：“你们要为巴力争辩吗？你们以为自己必须救他吗？谁为巴力争辩，谁就要在早晨以前被处死！如果巴力真的是神明，他可以自己为自己争辩。被拆掉的是他的祭坛啊。”"
         }
       },
       "decisions": [
@@ -7926,6 +8644,46 @@
           "reason": "Lowercase \"allah\" for a false god, as the style guide sets (section 4), with \"dewa\" at Readable as set at 2:3; the challenge (m2) keeps Baal's claim in the words of his worshipers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060310081",
+            "o070060310151",
+            "o070060310231"
+          ],
+          "choice": "\"争辩\" (L, R); \"辩护\" (B)",
+          "alternatives": [],
+          "reason": "\"Contend\" is to plead a case or fight for someone (m1). Balanced uses the language of a court case, as the English Balanced does; Literal and Readable use the plain word for arguing a case, the same word as Jerubbaal's name in verse 32.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060310211"
+          ],
+          "choice": "\"神明\"",
+          "alternatives": [],
+          "reason": "\"If he is a god\": Baal, not the one God, so no god_term span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8029,6 +8787,11 @@
           "L": "Dan pada hari itu dia menamai dia Yerubaal, katanya, \"Biarlah Baal membela perkaranya melawan dia, karena dia telah merobohkan mezbahnya.\"",
           "B": "Sejak hari itu Gideon dinamai Yerubaal, artinya, \"Biarlah Baal berperkara dengan dia,\" karena dia telah merobohkan mezbah Baal.",
           "R": "Sejak hari itu Gideon juga disebut Yerubaal. Nama itu berarti \"Biarlah Baal melawan dia.\" Dia diberi nama itu karena dia sudah merobohkan mezbah Baal."
+        },
+        "zh": {
+          "L": "那一天，他称基甸为耶路巴力，说：“让巴力与他争辩，因为他拆毁了巴力的祭坛。”",
+          "B": "因此在那一天，基甸得了一个名字叫耶路巴力，因为人说：“让巴力与他争辩吧，因为他拆毁了巴力的祭坛。”",
+          "R": "从那天起，基甸也被叫作耶路巴力。这名字的意思是“让巴力跟他争辩”。他得了这个名字，是因为他拆掉了巴力的祭坛。"
         }
       },
       "decisions": [
@@ -8286,6 +9049,44 @@
           "reason": "Formed by the style guide's rules (y for yod, one b as Indonesian writes it).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060320051"
+          ],
+          "choice": "\"耶路巴力\"",
+          "alternatives": [],
+          "reason": "Jerubbaal, \"let Baal contend\" (m1), in its conventional Chinese form; the word for contend, \"争辩\", is the same as Joash's in verse 31, so the name's sense is heard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060320132"
+          ],
+          "choice": "\"巴力的祭坛\"",
+          "alternatives": [
+            "\"他的祭坛\""
+          ],
+          "reason": "Literal names Baal here, since \"他的\" would leave it unclear whose altar is meant after two men called \"he\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8385,6 +9186,11 @@
           "L": "Dan seluruh Midian dan Amalek dan orang-orang timur berkumpul bersama-sama, dan mereka menyeberang dan berkemah di lembah Yizreel.",
           "B": "Seluruh orang Midian, orang Amalek, dan orang-orang dari timur berkumpul, lalu menyeberang dan berkemah di lembah Yizreel.",
           "R": "Lalu semua orang Midian, orang Amalek, dan bangsa-bangsa lain dari timur berkumpul. Mereka menyeberangi sungai Yordan dan berkemah di Lembah Yizreel."
+        },
+        "zh": {
+          "L": "米甸人、亚玛力人和东方人全都聚集在一起，过[河]来，在耶斯列谷安营。",
+          "B": "那时，所有的米甸人、亚玛力人和东方各族都联合起来，渡过约旦河，在耶斯列谷安营。",
+          "R": "后来，所有的米甸人、亚玛力人和其他从东方来的人聚集在一起。他们渡过了约旦河，在耶斯列谷扎营。"
         }
       },
       "decisions": [
@@ -8531,6 +9337,11 @@
           "L": "Dan Roh {{divine_name:TUHAN|Yahweh}} menyelubungi Gideon, dan dia meniup sangkakala, dan orang Abiezer dikerahkan untuk mengikuti dia.",
           "B": "Roh {{divine_name:TUHAN|Yahweh}} menguasai Gideon. Dia meniup sangkakala, dan orang Abiezer dikerahkan untuk mengikuti dia.",
           "R": "Lalu Roh {{divine_name:TUHAN|Yahweh}} datang ke atas Gideon dan menguasai dia. Gideon meniup terompet untuk memanggil orang-orang kaumnya, yaitu keluarga Abiezer, supaya mengikuti dia."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的灵以基甸为衣，他就吹起羊角号，亚比以谢人都被召集跟随他。",
+          "B": "{{divine_name:上主|雅威}}的灵像衣服一样披在基甸身上。他吹响羊角号，亚比以谢人就被召集起来跟随他。",
+          "R": "后来，{{divine_name:上主|雅威}}的灵降在基甸身上，掌管了他。他吹响羊角号，召集他的宗族亚比以谢家族的人来跟随他。"
         }
       },
       "decisions": [
@@ -8823,6 +9634,48 @@
           "reason": "Literal keeps the image of clothing; the other levels say what it means (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060340031"
+          ],
+          "choice": "\"以基甸为衣\" (L); \"像衣服一样披在基甸身上\" (B); \"降在基甸身上，掌管了他\" (R)",
+          "alternatives": [
+            "\"降在基甸身上\""
+          ],
+          "reason": "The Spirit \"clothed\" Gideon, took him over completely (m1). Literal and Balanced keep the picture of clothing; Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060340072"
+          ],
+          "choice": "\"羊角号\" at every level",
+          "alternatives": [
+            "\"号角\" (L, R)"
+          ],
+          "reason": "The shofar (m2), the ram's horn of Exodus 19: \"羊角号\" at every level, as at 3:27.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8933,6 +9786,11 @@
           "L": "Dan dia mengirim utusan-utusan ke seluruh Manasye, dan mereka pun dikerahkan untuk mengikuti dia; dan dia mengirim utusan-utusan kepada Asyer dan kepada Zebulon dan kepada Naftali, dan mereka maju menyongsong mereka.",
           "B": "Dia mengirim utusan-utusan ke seluruh daerah Manasye, dan mereka pun dikerahkan untuk mengikuti dia. Dia juga mengirim utusan-utusan kepada Asyer, Zebulon, dan Naftali, dan mereka pun maju bergabung dengan mereka.",
           "R": "Dia mengirim utusan-utusan ke seluruh daerah suku Manasye untuk memanggil orang-orangnya supaya mengikuti dia, dan mereka datang. Dia juga mengirim utusan-utusan kepada suku Asyer, Zebulon, dan Naftali. Orang-orang mereka datang bergabung dengan Gideon dan pasukannya."
+        },
+        "zh": {
+          "L": "他派使者走遍玛拿西，他们也被召集跟随他；他又派使者到亚设、西布伦和拿弗他利，他们就上来与他们会合。",
+          "B": "他派使者走遍玛拿西，玛拿西人也被召集起来跟随他。他又派使者到亚设、西布伦和拿弗他利那里，这些人也上来与他们会合。",
+          "R": "他派使者走遍玛拿西支派，召集那里的人跟随他，他们就来了。他也派使者到亚设、西布伦和拿弗他利支派。那里的人也上来，与基甸和他的人会合。"
         }
       },
       "decisions": [
@@ -9103,6 +9961,11 @@
           "L": "Dan Gideon berkata kepada Allah, \"Jika {{deity_pronoun:engkau|Engkau}} mau menyelamatkan Israel dengan perantaraan tanganku, seperti yang telah {{deity_pronoun:engkau|Engkau}} firmankan,",
           "B": "Gideon berkata kepada Allah, \"Jika {{deity_pronoun:engkau|Engkau}} memang mau menyelamatkan Israel dengan perantaraanku, seperti yang telah {{deity_pronoun:engkau|Engkau}} firmankan,",
           "R": "Lalu Gideon berkata kepada Allah, \"Aku perlu tahu apakah {{deity_pronoun:engkau|Engkau}} sungguh-sungguh akan memakai aku untuk menyelamatkan Israel, seperti yang {{deity_pronoun:engkau|Engkau}} katakan."
+        },
+        "zh": {
+          "L": "基甸对{{god_term:神|上帝}}说：“{{deity_pronoun:你|祢}}若要借我的手拯救以色列，正如{{deity_pronoun:你|祢}}所说过的，",
+          "B": "后来基甸对{{god_term:神|上帝}}说：“{{deity_pronoun:你|祢}}若真要借着我拯救以色列，正如{{deity_pronoun:你|祢}}所说过的，",
+          "R": "后来基甸对{{god_term:神|上帝}}说：“我需要知道{{deity_pronoun:你|祢}}是不是真的要使用我来拯救以色列，就像{{deity_pronoun:你|祢}}说过的那样。"
         }
       },
       "decisions": [
@@ -9308,6 +10171,11 @@
           "L": "lihatlah, aku menaruh guntingan bulu domba di tempat pengirikan. Jika ada embun pada guntingan bulu itu saja, dan kering pada seluruh tanah, aku akan tahu bahwa {{deity_pronoun:engkau|Engkau}} akan menyelamatkan Israel dengan perantaraan tanganku, seperti yang telah {{deity_pronoun:engkau|Engkau}} firmankan.\"",
           "B": "aku akan menaruh guntingan bulu domba di tempat pengirikan. Jika embun hanya ada pada guntingan bulu itu, sedangkan seluruh tanah di sekitarnya kering, aku akan tahu bahwa {{deity_pronoun:engkau|Engkau}} akan menyelamatkan Israel dengan perantaraanku, seperti yang telah {{deity_pronoun:engkau|Engkau}} firmankan.\"",
           "R": "Aku akan menaruh bulu domba di tempat pengirikan, tempat kami memukul-mukul gandum. Kalau besok pagi hanya bulu domba itu yang basah oleh embun, dan semua tanah di sekitarnya kering, aku akan tahu bahwa {{deity_pronoun:engkau|Engkau}} akan memakai aku untuk menyelamatkan Israel, seperti yang {{deity_pronoun:engkau|Engkau}} katakan.\""
+        },
+        "zh": {
+          "L": "看哪，我要把一团剪下的羊毛放在禾场上。如果只有羊毛上有露水，而整个地面都是干的，我就知道{{deity_pronoun:你|祢}}要借我的手拯救以色列，正如{{deity_pronoun:你|祢}}所说过的。”",
+          "B": "看，我要把一团羊毛放在禾场上。如果露水只落在羊毛上，四周的地面都是干的，我就能确定{{deity_pronoun:你|祢}}要借着我拯救以色列，正如{{deity_pronoun:你|祢}}所说过的。”",
+          "R": "所以我要把一些羊毛放在打谷的场上。到了早上，如果只有羊毛上有露水，周围的地面都是干的，我就知道{{deity_pronoun:你|祢}}要使用我来拯救以色列，就像{{deity_pronoun:你|祢}}说过的那样。”"
         }
       },
       "decisions": [
@@ -9562,6 +10430,26 @@
           "reason": "The fleece is the wool shorn in one piece (m1); the threshing floor as the glossary names it (section 6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o070060370051",
+            "o070060370072"
+          ],
+          "choice": "\"一团剪下的羊毛\" (L), \"一团羊毛\" (B), \"一些羊毛\" (R); \"禾场\" (L, B), \"打谷的场\" (R)",
+          "alternatives": [],
+          "reason": "The fleece is wool shorn from a sheep in one piece (m1); the threshing floor is the open place where grain was beaten out (m2), which Readable explains.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9666,6 +10554,11 @@
           "L": "Dan terjadilah demikian. Dan dia bangun pagi-pagi keesokan harinya dan memeras guntingan bulu itu, dan dia memeras embun dari guntingan bulu itu, semangkuk penuh air.",
           "B": "Dan memang demikianlah yang terjadi. Keesokan harinya pagi-pagi Gideon bangun dan memeras guntingan bulu itu, dan dari guntingan bulu itu dia memeras embun, semangkuk penuh air.",
           "R": "Dan memang itulah yang terjadi. Keesokan harinya pagi-pagi Gideon bangun dan memeras bulu domba itu. Begitu banyak embun keluar dari bulu itu sehingga semangkuk penuh air."
+        },
+        "zh": {
+          "L": "事就这样成了。第二天他清早起来，挤那团羊毛，从羊毛中拧出露水，满满一碗水。",
+          "B": "事情果然如此。第二天清早他起来，挤压那团羊毛，从羊毛里拧出的露水足足装满了一碗。",
+          "R": "事情果然这样发生了。第二天清早，基甸起来挤那团羊毛。从羊毛里挤出来的露水很多，装满了一碗。"
         }
       },
       "decisions": [
@@ -9839,6 +10732,11 @@
           "L": "Dan Gideon berkata kepada Allah, \"Janganlah murka-{{deity_pronoun:mu|Mu}} bangkit terhadap aku, dan biarlah aku berbicara sekali ini saja. Izinkanlah aku menguji sekali ini saja dengan guntingan bulu itu: biarlah kering pada guntingan bulu itu saja, dan pada seluruh tanah biarlah ada embun.\"",
           "B": "Lalu Gideon berkata kepada Allah, \"Janganlah murka-{{deity_pronoun:mu|Mu}} bangkit terhadap aku. Izinkanlah aku berbicara sekali ini lagi. Izinkanlah aku menguji sekali lagi dengan guntingan bulu itu: biarlah hanya guntingan bulu itu yang kering, sedangkan seluruh tanah di sekitarnya basah oleh embun.\"",
           "R": "Lalu Gideon berkata kepada Allah, \"Tolong jangan marah kepadaku. Izinkan aku meminta satu hal lagi. Izinkan aku menguji sekali lagi dengan bulu domba itu. Kali ini biarlah bulu domba itu kering, dan semua tanah di sekitarnya basah oleh embun.\""
+        },
+        "zh": {
+          "L": "基甸对{{god_term:神|上帝}}说：“求{{deity_pronoun:你|祢}}的怒气不要向我发作，让我只再说这一次。求{{deity_pronoun:你|祢}}让我用羊毛只再试这一次：让只有羊毛是干的，而整个地面都有露水。”",
+          "B": "基甸又对{{god_term:神|上帝}}说：“请不要向我发怒，让我只再说一次。请让我用这团羊毛再试一次。这一次，让只有羊毛是干的，四周的地面都有露水。”",
+          "R": "基甸又对{{god_term:神|上帝}}说：“请不要生我的气。让我再求一件事。让我用这团羊毛再试一次。这一次，让羊毛是干的，周围的地面都被露水打湿。”"
         }
       },
       "decisions": [
@@ -10031,6 +10929,11 @@
           "L": "Dan Allah berbuat demikian pada malam itu; dan hanya guntingan bulu itu saja yang kering, dan pada seluruh tanah ada embun.",
           "B": "Malam itu Allah berbuat demikian: hanya guntingan bulu itu yang kering, sedangkan seluruh tanah di sekitarnya basah oleh embun.",
           "R": "Malam itu Allah melakukan apa yang diminta Gideon. Pagi harinya bulu domba itu kering, tetapi semua tanah di sekitarnya basah oleh embun."
+        },
+        "zh": {
+          "L": "那一夜{{god_term:神|上帝}}就这样做了；只有羊毛是干的，整个地面都有露水。",
+          "B": "那天夜里，{{god_term:神|上帝}}就这样做了。只有羊毛是干的，整个地面都布满了露水。",
+          "R": "那天夜里，{{god_term:神|上帝}}照着基甸所求的做了。到了早上，羊毛是干的，周围的地面却都被露水打湿了。"
         }
       },
       "decisions": [

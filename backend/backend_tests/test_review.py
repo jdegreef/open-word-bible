@@ -242,12 +242,13 @@ class QueueOrderTest(AdminTestCase):
         s.save()
         self.assertEqual(self.records("&state=approved"), ["MAT.1.1.s1", "JHN.2.1.s1", "ACT.1.1.s1"])
 
-    def test_dashboard_keeps_its_rendering_counts_after_a_review(self):
+    def test_dashboard_reads_no_renderings_after_a_review(self):
         self.admin.get("/api/admin/overview/")
-        with mock.patch("staff.progress._count_by_book", side_effect=AssertionError("counted again")):
-            self.act("JHN.2.1.s1", "flag", "Look")
+        self.act("JHN.2.1.s1", "flag", "Look")
+        with CaptureQueriesContext(connection) as queries:
             chips = {a["key"]: a["count"] for a in self.admin.get("/api/admin/overview/").json()["attention"]}
-            self.assertEqual(chips["flags"], 1)
+        self.assertEqual(chips["flags"], 1)
+        self.assertFalse([q["sql"] for q in queries if Rendering._meta.db_table in q["sql"]])
         self.assertEqual(review.open_flag_count(), 1)
 
     def test_migration_fills_states_from_the_trail(self):
@@ -258,7 +259,7 @@ class QueueOrderTest(AdminTestCase):
         greek = Sentence.objects.get(record_id="REV.1.1.s1")
         ReviewEvent.objects.create(sentence=greek, user=self.boss, action="meaning_reviewed", digest="old")
         ReviewState.objects.all().delete()
-        migration = importlib.import_module("translation.migrations.0015_review_state_and_bible_order")
+        migration = importlib.import_module("translation.migrations.0016_review_state_and_bible_order")
         migration.fill_review_states(apps, None)
         self.assertEqual(sorted(ReviewState.objects.values_list("sentence__record_id", "layer", "state")),
                          [("ACT.1.1.s1", "en", "flagged"), ("JHN.2.1.s1", "en", "approved"),

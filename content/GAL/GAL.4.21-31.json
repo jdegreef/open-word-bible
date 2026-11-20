@@ -89,6 +89,11 @@
           "L": "Katakanlah kepadaku, kalian yang mau berada di bawah hukum Taurat, tidakkah kalian mendengarkan hukum Taurat?",
           "B": "Kalian yang ingin hidup di bawah hukum Taurat, katakanlah kepadaku: tidakkah kalian mendengar apa yang dikatakan hukum Taurat?",
           "R": "Kalian mau hidup di bawah hukum Taurat. Kalau begitu, katakanlah kepada saya, tidakkah kalian mendengarkan apa yang dikatakan hukum Taurat itu sendiri?"
+        },
+        "zh": {
+          "L": "告诉我，你们这些想要在律法之下的人，难道没有听律法吗？",
+          "B": "你们这些想要在律法之下的人，告诉我：你们没有听见律法怎么说吗？",
+          "R": "你们想要活在律法之下。那么告诉我，你们难道没有好好听听律法本身怎么说吗？"
         }
       },
       "decisions": [
@@ -435,6 +440,11 @@
           "L": "Sebab ada tertulis bahwa Abraham mempunyai dua anak laki-laki, seorang dari hamba perempuan dan seorang dari perempuan merdeka.",
           "B": "Kitab Suci berkata bahwa Abraham mempunyai dua anak laki-laki: yang seorang anak dari hamba perempuan, yang lain anak dari perempuan merdeka.",
           "R": "Kitab Suci berkata bahwa Abraham mempunyai dua anak laki-laki. Ibu dari anak yang satu adalah seorang budak perempuan. Ibu dari anak yang lain adalah seorang perempuan merdeka."
+        },
+        "zh": {
+          "L": "因为经上写着，亚伯拉罕有两个儿子，一个是从女奴生的，一个是从自由的[妇人]生的。",
+          "B": "经上写着，亚伯拉罕有两个儿子：一个是女奴所生的，另一个是自由的妇人所生的。",
+          "R": "圣经上说，亚伯拉罕有两个儿子。一个儿子的母亲是女奴，另一个儿子的母亲是自由的女人。"
         }
       },
       "decisions": [
@@ -888,6 +898,48 @@
           "reason": "The slave woman (m2) is \"hamba perempuan\", the familiar term for a woman servant owned by her mistress; Readable says plainly that she was a slave.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004022011"
+          ],
+          "choice": "\"女奴\" at every level",
+          "alternatives": [
+            "使女"
+          ],
+          "reason": "As the English keeps \"slave woman\": the contrast with \"free\" carries the passage, and \"使女\" (a maid) would hide it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004022001"
+          ],
+          "choice": "经上写着 (L, B); 圣经上说 (R)",
+          "alternatives": [
+            "律法上记着"
+          ],
+          "reason": "The glossary's formula for \"it is written\", as Romans has it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -986,6 +1038,11 @@
           "L": "Tetapi anak dari hamba perempuan itu dilahirkan menurut daging, dan anak dari perempuan merdeka itu oleh janji.",
           "B": "Anak dari hamba perempuan itu dilahirkan menurut daging, tetapi anak dari perempuan merdeka itu dilahirkan oleh janji.",
           "R": "Anak dari budak perempuan itu lahir secara biasa, melalui rencana yang dibuat manusia. Tetapi anak dari perempuan merdeka itu lahir karena apa yang telah Allah janjikan."
+        },
+        "zh": {
+          "L": "然而那从女奴[生]的，是按着肉体生的；那从自由的[妇人生]的，是借着应许[生]的。",
+          "B": "女奴的儿子是按着肉体生的，自由妇人的儿子却是借着应许生的。",
+          "R": "女奴的儿子是按普通的方式出生的，是人们自己的安排。但自由女人的儿子出生，是因为{{god_term:神|上帝}}的应许。"
         }
       },
       "decisions": [
@@ -1204,6 +1261,49 @@
           "reason": "Key terms \"плоть\" and \"обетование\" at Literal and Balanced; Readable says what the phrases mean in the Genesis story (m1, m2), as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n48004023015"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God (here R)",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). It changes the word, never the meaning; this note stands for the whole passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004023007",
+            "n48004023008"
+          ],
+          "choice": "按着肉体 (L, B); 按普通的方式……人们自己的安排 (R)",
+          "alternatives": [
+            "按着血气"
+          ],
+          "reason": "Here flesh means ordinary human means, as people arranged it (meaning m1); Readable says so, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1326,6 +1426,11 @@
           "L": "Hal-hal ini adalah kiasan, sebab perempuan-perempuan ini adalah dua perjanjian: yang satu dari gunung Sinai, yang melahirkan [anak-anak] untuk perbudakan, itulah Hagar. \\v 25 Dan Hagar adalah gunung Sinai di tanah Arab, dan ia sama dengan Yerusalem yang sekarang, sebab ia hidup dalam perbudakan bersama anak-anaknya.",
           "B": "Hal-hal ini dapat dibaca sebagai kiasan. Kedua perempuan itu adalah dua perjanjian. Yang satu berasal dari gunung Sinai dan melahirkan anak-anak yang akan menjadi budak; itulah Hagar. \\v 25 Hagar melambangkan gunung Sinai di tanah Arab, dan ia sepadan dengan Yerusalem pada masa sekarang, karena ia hidup dalam perbudakan bersama anak-anaknya.",
           "R": "Kisah ini juga merupakan gambaran tentang hal lain. Kedua perempuan itu melambangkan dua perjanjian. Perjanjian yang satu datang dari gunung Sinai, dan anak-anak yang lahir di bawahnya adalah budak. Perjanjian itu adalah Hagar. \\v 25 Hagar melambangkan gunung Sinai di tanah Arab. Dia seperti kota Yerusalem sekarang ini, karena Yerusalem dan penduduknya hidup sebagai budak."
+        },
+        "zh": {
+          "L": "这些事是用寓意来讲的：这两个[女人]就是两个约。一个来自西奈山，所生的[儿女]归于奴役，她就是夏甲。\\v 25 夏甲就是阿拉伯境内的西奈山，相当于今日的耶路撒冷，因为她和她的儿女一起在作奴隶。",
+          "B": "这些事可以看作寓言。这两个女人代表两个约。一个约来自西奈山，所生的儿女都要作奴隶，这就是夏甲。\\v 25 夏甲代表阿拉伯的西奈山，与现在的耶路撒冷相当，因为她和她的儿女都在作奴隶。",
+          "R": "这个故事也是在描绘另一件事。这两个女人代表两个约。一个约来自西奈山，在这约之下出生的儿女都是奴隶。这个约就是夏甲。\\v 25 夏甲代表阿拉伯的西奈山。她就像今天的耶路撒冷城，因为耶路撒冷和她的人民都活在奴役之中。"
         }
       },
       "decisions": [
@@ -1950,6 +2055,27 @@
           "reason": "\"kiasan\" is the plain Indonesian word for a figurative reading (m1); the glossary forms of Sinai and Hagar.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004024003"
+          ],
+          "choice": "用寓意来讲 (L); 看作寓言 (B); 也是在描绘另一件事 (R)",
+          "alternatives": [
+            "比方"
+          ],
+          "reason": "The story also says something beyond itself (meaning m1); Readable avoids the word, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2042,6 +2168,11 @@
           "L": "Tetapi Yerusalem yang di atas adalah merdeka, dan itulah ibu kita.",
           "B": "Akan tetapi, Yerusalem yang di atas itu merdeka, dan dialah ibu kita.",
           "R": "Tetapi ada Yerusalem yang lain, yaitu kota Allah di surga. Kota itu merdeka, dan kota itulah ibu kita."
+        },
+        "zh": {
+          "L": "然而那上面的耶路撒冷是自由的，就是我们的母亲。",
+          "B": "然而，在上面的耶路撒冷是自由的，她才是我们的母亲。",
+          "R": "但是还有另一个耶路撒冷，就是{{god_term:神|上帝}}在天上的城。她是自由的，她是我们的母亲。"
         }
       },
       "decisions": [
@@ -2220,6 +2351,11 @@
           "L": "Sebab ada tertulis: \"Bersukacitalah, hai perempuan mandul yang tidak melahirkan; bergembiralah dan bersoraklah, engkau yang tidak menderita sakit bersalin; sebab anak-anak dari perempuan yang ditinggalkan lebih banyak daripada anak-anak dari perempuan yang bersuami.\"",
           "B": "Sebab ada tertulis: \"Bersukacitalah, hai perempuan mandul, engkau yang tidak pernah melahirkan; bersoraklah, engkau yang tidak pernah merasakan sakit bersalin. Sebab perempuan yang ditinggalkan mempunyai banyak anak, lebih banyak daripada perempuan yang bersuami.\"",
           "R": "Kitab Suci berkata, \"Bergembiralah, hai perempuan yang tidak pernah dapat mempunyai anak! Engkau tidak pernah merasakan sakit melahirkan, tetapi sekarang bersoraklah dengan sukacita! Perempuan yang ditinggalkan mempunyai anak lebih banyak daripada perempuan yang mempunyai suami.\""
+        },
+        "zh": {
+          "L": "因为经上写着：“不生育的不孕之妇啊，要欢喜！没有经历阵痛的，要突然高声呼喊！因为孤单妇人的儿女众多，比有丈夫的更多。”",
+          "B": "因为经上写着：“不曾生过孩子的不孕妇人哪，要欢喜；从来没有经历过产痛的，要放声呼喊。因为被撇下的妇人，儿女比有丈夫的妇人还要多。”",
+          "R": "圣经上说：“你这一直不能生孩子的女人，要欢喜！你从来没有经历过生产的痛苦，现在却要高声欢呼！被撇下独自生活的女人，儿女比有丈夫的女人还要多。”"
         }
       },
       "decisions": [
@@ -2613,6 +2749,27 @@
           "reason": "Quoted Scripture inside the letter keeps the plain style (m1), so the prophet's call sounds as a call, and the reader hears that Paul is quoting. No exclamation marks are added.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n48004027019"
+          ],
+          "choice": "孤单妇人 (L); 被撇下的妇人 (B, R)",
+          "alternatives": [
+            "没有丈夫的"
+          ],
+          "reason": "The word means a woman left alone, deserted (meaning m2); Isaiah 54:1 is drafted from the Greek Paul quotes, as no earlier book has it in Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2703,6 +2860,11 @@
           "L": "Tetapi kalian, saudara-saudara, adalah anak-anak janji seperti Ishak.",
           "B": "Dan kalian, saudara-saudara, adalah anak-anak janji, sama seperti Ishak.",
           "R": "Dan kalian, saudara-saudara, sama seperti Ishak. Kalian adalah anak-anak yang lahir karena apa yang telah Allah janjikan."
+        },
+        "zh": {
+          "L": "而你们，{{gender:弟兄姐妹|弟兄}}们，就像以撒一样，是应许的儿女。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，你们是应许的儿女，就像以撒一样。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，你们就像以撒。你们是因为{{god_term:神|上帝}}的应许而出生的儿女。"
         }
       },
       "decisions": [
@@ -2973,6 +3135,11 @@
           "L": "Tetapi sama seperti pada waktu itu anak yang dilahirkan menurut daging menganiaya anak [yang dilahirkan] menurut Roh, demikian juga sekarang.",
           "B": "Pada waktu itu anak yang dilahirkan menurut daging menganiaya anak yang dilahirkan menurut Roh, dan sekarang pun sama.",
           "R": "Tetapi dulu, anak yang lahir dengan cara manusia biasa itu menganiaya anak yang lahir oleh kuasa Roh. Hal yang sama terjadi sekarang."
+        },
+        "zh": {
+          "L": "然而就像当时那按肉体出生的迫害了那按圣灵[出生]的，如今也是如此。",
+          "B": "那时，按着肉体出生的儿子迫害按着圣灵出生的儿子，现在也一样。",
+          "R": "但是在那个时候，按普通人的方式出生的儿子欺负了靠着圣灵的能力出生的儿子。现在也是同样的情形。"
         }
       },
       "decisions": [
@@ -3196,6 +3363,11 @@
           "L": "Tetapi apa kata Kitab Suci?",
           "B": "Tetapi apa kata Kitab Suci?",
           "R": "Tetapi apa yang dikatakan Kitab Suci?"
+        },
+        "zh": {
+          "L": "但经上怎么说呢？",
+          "B": "但圣经怎么说呢？",
+          "R": "但圣经是怎么说的呢？"
         }
       },
       "decisions": [
@@ -3354,6 +3526,11 @@
           "L": "\"Usirlah hamba perempuan itu beserta anaknya, sebab anak hamba perempuan itu sekali-kali tidak akan mendapat warisan bersama-sama dengan anak dari perempuan merdeka itu.\"",
           "B": "\"Usirlah hamba perempuan itu dan anaknya, sebab anak hamba perempuan itu tidak akan pernah ikut mewarisi bersama anak dari perempuan merdeka itu.\"",
           "R": "\"Usirlah budak perempuan itu dan anaknya. Anak budak perempuan itu tidak akan pernah ikut menerima warisan bersama anak dari perempuan merdeka itu.\""
+        },
+        "zh": {
+          "L": "“要驱逐女奴和她的儿子，因为女奴的儿子绝不会和自由[妇人]的儿子一起继承。”",
+          "B": "“把女奴和她的儿子打发走，因为女奴的儿子绝不能和自由妇人的儿子分享产业。”",
+          "R": "“把女奴和她的儿子送走。女奴的儿子绝不能和自由女人的儿子分享产业。”"
         }
       },
       "decisions": [
@@ -3702,6 +3879,11 @@
           "L": "Karena itu, saudara-saudara, kita bukanlah anak-anak hamba perempuan, melainkan anak-anak dari perempuan merdeka.",
           "B": "Jadi, saudara-saudara, kita bukan anak-anak hamba perempuan, melainkan anak-anak dari perempuan merdeka itu.",
           "R": "Jadi, saudara-saudara, kita bukan anak-anak seorang budak perempuan. Kita adalah anak-anak dari perempuan merdeka itu."
+        },
+        "zh": {
+          "L": "因此，{{gender:弟兄姐妹|弟兄}}们，我们不是一个女奴的儿女，而是属于那自由[妇人]的。",
+          "B": "所以，{{gender:弟兄姐妹|弟兄}}们，我们不是女奴的儿女，我们是那自由妇人的儿女。",
+          "R": "所以，{{gender:弟兄姐妹|弟兄}}们，我们不是女奴的儿女。我们是自由女人的儿女。"
         }
       },
       "decisions": [

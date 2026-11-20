@@ -13,6 +13,9 @@
   "use strict";
   var DATA = JSON.parse(document.getElementById("cmp-data").textContent);
   var UI = DATA.ui;
+  // Arrows that point the way the page reads (<html dir="rtl">).
+  var RTL = document.documentElement.dir === "rtl";
+  var BACK = RTL ? "\u2192" : "\u2190", FORWARD = RTL ? "\u2190" : "\u2192";
   var box = document.getElementById("cmp");
   var status = document.getElementById("cmp-status");
   var form = document.getElementById("cmp-form");
@@ -143,12 +146,12 @@
       if (vid) a.href = "?v=" + vid; else a.setAttribute("aria-disabled", "true");
       return a;
     }
-    p.appendChild(step("← " + UI.prev, verse > 1 ? code + "." + chapter + "." + (verse - 1) : null));
-    var read = el("a", "button", UI.read + " →");
+    p.appendChild(step(BACK + " " + UI.prev, verse > 1 ? code + "." + chapter + "." + (verse - 1) : null));
+    var read = el("a", "button", UI.read + " " + FORWARD);
     read.href = translated(code, chapter) ? chapterPage(code, chapter) + "#v" + verse : chapterPage(code, chapter);
     if (!translated(code, chapter)) read.hidden = true;
     p.appendChild(read);
-    p.appendChild(step(UI.next + " →", next));
+    p.appendChild(step(UI.next + " " + FORWARD, next));
     return p;
   }
 

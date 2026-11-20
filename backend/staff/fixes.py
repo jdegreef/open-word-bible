@@ -9,6 +9,11 @@ GET  /api/admin/fixes/      open fix requests on GitHub
 POST /api/admin/fixes/  {verse, record, language, levels, change, reason, message}
                             file one; message (a reader message id) links the
                             request to what prompted it
+POST /api/admin/fixes/  {verse, record, language, levels: [level], links, reason}
+                            file a word-links request: links is the record's
+                            alignments for that language and level in
+                            scripts/align.py's spec form, from the verse
+                            inspector's word-links editor
 
 For editors and super admins (the inbox area). Filing needs
 OWB_GITHUB_TOKEN, as drafting jobs do.
@@ -91,6 +96,13 @@ def _file(request):
         raise ValidationError({"language": f"This sentence isn't drafted in "
                                f"{languages.READING[lang]['name']} yet.", "code": "not_drafted"})
     levels = [lv for lv in LEVELS if lv in (data.get("levels") or [])] or list(LEVELS)
+    links = _text(data, "links", 4000, required=False)
+    if links:
+        if len(levels) != 1:
+            raise ValidationError({"levels": "Word links are for one level.", "code": "one_level"})
+        if not links.startswith(sentence.record_id + ":"):
+            raise ValidationError({"links": "Links must name this sentence.", "code": "invalid_links"})
+        return _file_links(request, sentence, vid, lang, levels[0], links, _text(data, "reason", 4000, required=False))
     change = _text(data, "change", 2000)
     reason = _text(data, "reason", 4000, required=False)
     message = None
@@ -131,4 +143,36 @@ def _file(request):
         note = f"Fix requested: #{issue['number']}"
         message.note = f"{message.note}\n{note}".strip() if message.note else note
         message.save(update_fields=["note"])
+    return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
+
+
+def _file_links(request, sentence, vid, lang, level, links, reason):
+    """A word-links request: the reviewer's links for one language and level,
+    for a Claude session to apply with scripts/align.py and validate."""
+    label = verse_label(vid)
+    path = content_file(sentence.book, sentence.chapter, sentence.verse)
+    name = languages.READING[lang]["name"]
+    lines = [f"**Sentence:** `{sentence.record_id}` ({label}), {name}, {LEVELS[level]}",
+             f"**File:** `{path or 'not found'}`",
+             f"**Read it:** {verse_url(vid, lang)}", "",
+             f"**Word links requested** for {name} {LEVELS[level]}, replacing the ones there now "
+             "(token numbers count the sentence's source words from 1):", "",
+             "```", links, "```"]
+    if reason:
+        lines += ["", "**Why:**", "", reason]
+    lines += ["", "Apply them with `python3 scripts/align.py apply <file> <spec> --lang "
+              f"{lang} --level {level}` (the block above is the spec), check they link what the words "
+              "say, run `owb.validate`, keep the record `ai_draft`, and open a pull request or say here why not. "
+              "Follow `.claude/skills/fix-worker/SKILL.md`.",
+              "", f"Requested in the admin by {request.user.username}.", "",
+              "<!-- fix-request " + json.dumps({"record": sentence.record_id, "verse": vid, "language": lang,
+                                               "levels": [level], "kind": "links", "message": None}) + " -->"]
+    try:
+        issue = jobs._github("issues", "POST", {"title": f"Word links {label} ({name}, {LEVELS[level]})",
+                                                "body": "\n".join(lines), "labels": [LABEL]})
+    except jobs.GitHubError:
+        return Response({"detail": "GitHub refused the request. Check OWB_GITHUB_TOKEN can create issues.",
+                         "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    record(request.user, "fix.request", f"#{issue['number']} {sentence.record_id}", verse=vid, language=lang,
+           number=issue["number"], url=issue["html_url"], kind="links")
     return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)

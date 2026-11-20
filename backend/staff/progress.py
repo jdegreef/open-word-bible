@@ -23,8 +23,7 @@ from datetime import timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
-from django.db import connection
-from django.db.models import Count, Max, Q
+from django.db.models import Count, Max, Q, Sum
 from django.db.models.functions import TruncWeek
 from django.utils import timezone
 from rest_framework.exceptions import NotFound
@@ -34,7 +33,8 @@ from accounts.models import ApiToken, Mark, ReadingPlace, Role
 from feedback.models import ReaderMessage
 from owb import languages, refs
 from texts.models import Edition
-from translation.models import ContentFile, Decision, ImportRun, Rendering, ReviewEvent, Sentence
+from translation import counts
+from translation.models import ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, Sentence
 
 from . import inbox
 from .models import AdminAction
@@ -61,50 +61,28 @@ def _languages():
 def _stamps():
     """(content, review): strings that change when a sentence is added or
     saved again (import_content saves a sentence, bumping its updated_at,
-    whenever its renderings change), and when a review is made. Cache keys
-    for what is counted from them."""
+    whenever its renderings change), when the drafted counts change
+    (import_content, `manage.py recount_drafted`), and when a review is
+    made. Cache keys for what is counted from them."""
     stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
-    content = "{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0)
+    drafted = DraftedCount.objects.aggregate(n=Sum("sentences"))["n"] or 0
+    content = "{}.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0, drafted)
     return content, f"{content}.{ReviewEvent.objects.aggregate(i=Max('id'))['i'] or 0}"
 
 
-def _by_book(stamps=None):
+def _by_book():
     """{book: {"sentences", "chapters", "statuses": {status: n}, "langs": {lang: n}}}
-    for every book with a sentence. Counting every rendering takes a second
-    or more, so that is cached until the content changes; the statuses,
-    which a review changes (approving the meaning, without touching
-    updated_at), are counted again after one."""
-    content, review = stamps or _stamps()
-    key = f"staff.by_book.{content}"
-    out = cache.get(key)
-    if out is None:
-        out = _count_by_book()
-        cache.set(key, out, 7 * 86400)
-    key = f"staff.by_book.statuses.{review}"
-    statuses = cache.get(key)
-    if statuses is None:
-        statuses = {}
-        for row in Sentence.objects.order_by().values("book", "status").annotate(n=Count("id")):
-            statuses.setdefault(row["book"], {})[row["status"]] = row["n"]
-        cache.set(key, statuses, 7 * 86400)
-    return {book: {**row, "statuses": statuses.get(book, {})} for book, row in out.items()}
-
-
-def _count_by_book():
+    for every book with a sentence. Drafted counts come from DraftedCount,
+    which import_content keeps, so nothing here reads the renderings; the
+    rest is two small queries over the sentences."""
     out = {}
-    for row in (Sentence.objects.order_by().values("book")
-                .annotate(n=Count("id"), chapters=Count("chapter", distinct=True))):
-        out[row["book"]] = {"sentences": row["n"], "chapters": row["chapters"], "langs": {}}
-    # Sentences per book and language: the distinct (language, sentence)
-    # pairs first, read from the rendering_language_sentence index, is
-    # several times faster than COUNT(DISTINCT) over every rendering.
-    with connection.cursor() as cursor:
-        cursor.execute(f"""SELECT s.book, r.language, COUNT(*)
-                           FROM (SELECT DISTINCT language, sentence_id FROM {Rendering._meta.db_table}) r
-                           JOIN {Sentence._meta.db_table} s ON s.id = r.sentence_id
-                           GROUP BY s.book, r.language""")
-        for book, language, n in cursor.fetchall():
-            out[book]["langs"][language] = n
+    for row in Sentence.objects.values("book").annotate(n=Count("id"), chapters=Count("chapter", distinct=True)):
+        out[row["book"]] = {"sentences": row["n"], "chapters": row["chapters"], "statuses": {}, "langs": {}}
+    for row in Sentence.objects.values("book", "status").annotate(n=Count("id")):
+        out[row["book"]]["statuses"][row["status"]] = row["n"]
+    for book, langs in counts.by_book().items():
+        if book in out:
+            out[book]["langs"] = langs
     return out
 
 
@@ -118,8 +96,8 @@ def _state(book, rendered, sentences, chapters_drafted):
     return "partial"
 
 
-def _coverage(stamps=None):
-    data = _by_book(stamps)
+def _coverage():
+    data = _by_book()
     books = []
     for code in refs.BOOK_CODES:
         row = data.get(code, {"sentences": 0, "chapters": 0, "statuses": {}, "langs": {}})
@@ -304,7 +282,7 @@ def _summary():
     out = cache.get(key)
     if out is not None:
         return out
-    books = _coverage(stamps)
+    books = _coverage()
     statuses = {}
     for b in books:
         for status, n in b["statuses"].items():

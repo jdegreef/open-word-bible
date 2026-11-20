@@ -14,7 +14,9 @@ from django.contrib.auth import get_user_model
 from django.core import mail
 from django.core.cache import cache
 from django.core.management import CommandError, call_command
+from django.db import OperationalError, connection
 from django.test import TestCase, override_settings
+from django.test.utils import CaptureQueriesContext
 from django.urls import get_resolver
 from django.utils import timezone
 from rest_framework.test import APIClient
@@ -27,6 +29,7 @@ from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
 from staff.verses import covers
 from texts.models import Edition, Verse, Word
+from translation import counts
 from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
 
 SITE = "https://openwordbible.org"
@@ -66,6 +69,8 @@ def sentence(record_id, langs=("en",), status="ai_draft", edition=None):
     for lang in langs:
         for level in "LBR":
             Rendering.objects.create(sentence=s, language=lang, level=level, text="x")
+    # import_content keeps the drafted counts as it saves; so does this.
+    counts.recount([book])
     return s
 
 
@@ -110,6 +115,27 @@ class AccessTest(AdminTestCase):
         self.assertEqual(client_for(reviewer).get("/api/me").json()["admin"], ["overview", "export", "review"])
         self.assertEqual(client_for(account("r@example.org")).get("/api/me").json()["admin"], [])
 
+    def test_a_failing_endpoint_answers_json_with_a_request_id(self):
+        with mock.patch("staff.progress._coverage", side_effect=RuntimeError("boom")), \
+                self.assertLogs("staff.permissions", "ERROR") as logged:
+            r = self.admin.get("/api/admin/coverage/?q=private")
+        self.assertEqual(r.status_code, 500)
+        body = r.json()
+        self.assertEqual(body["code"], "server_error")
+        self.assertRegex(body["request_id"], r"^[0-9a-f]{8}$")
+        self.assertEqual(r["X-Request-Id"], body["request_id"])
+        self.assertIn(body["request_id"], logged.output[0])
+        self.assertNotIn("private", logged.output[0])   # no query strings in the log
+
+    def test_a_query_the_database_stopped_is_a_503_timeout(self):
+        error = OperationalError("canceling statement due to statement timeout")
+        with mock.patch("staff.progress._coverage", side_effect=error), self.assertLogs("staff.permissions", "ERROR"):
+            r = self.admin.get("/api/admin/coverage/")
+        self.assertEqual((r.status_code, r.json()["code"]), (503, "timeout"))
+
+    def test_api_errors_keep_their_own_answers(self):
+        self.assertEqual(self.admin.get("/api/admin/books/XYZ/").status_code, 404)
+
     def test_an_editor_cannot_open_the_team(self):
         editor = client_for(account("ed@example.org", (K.EDITOR,)))
         self.assertEqual(editor.get("/api/admin/inbox/").status_code, 200)
@@ -139,15 +165,16 @@ class ProgressTest(AdminTestCase):
         self.assertEqual(books["JHN"]["statuses"], {"ai_draft": 2})
         self.assertEqual(books["GEN"]["sentences"], 0)
 
-    def test_coverage_is_cached_until_sentences_change(self):
-        def jhn():
+    def test_coverage_reads_the_drafted_counts_not_the_renderings(self):
+        # Counting every rendering in the request made Coverage fail with a
+        # 500 once the table outgrew the database's memory.
+        with CaptureQueriesContext(connection) as queries:
             books = self.admin.get("/api/admin/coverage/").json()["books"]
-            return next(b for b in books if b["code"] == "JHN")["sentences"]
-        self.assertEqual(jhn(), 2)
-        with mock.patch("staff.progress._count_by_book", side_effect=AssertionError("counted again")):
-            self.assertEqual(jhn(), 2)
-        sentence("JHN.1.3.s1", ("en",))
-        self.assertEqual(jhn(), 3)
+        self.assertFalse([q["sql"] for q in queries if Rendering._meta.db_table in q["sql"]])
+        self.assertEqual(next(b for b in books if b["code"] == "JHN")["languages"]["fr"]["sentences"], 1)
+        sentence("JHN.1.3.s1", ("en", "fr"))
+        books = self.admin.get("/api/admin/coverage/").json()["books"]
+        self.assertEqual(next(b for b in books if b["code"] == "JHN")["languages"]["fr"]["sentences"], 2)
 
     def test_languages(self):
         data = self.admin.get("/api/admin/languages/").json()
@@ -503,6 +530,30 @@ class FixTest(AdminTestCase):
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
 
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_file_word_links(self):
+        calls = []
+
+        def github(path, method="GET", body=None):
+            calls.append((path, method, body))
+            return {"number": 10, "html_url": "https://github.com/x/y/issues/10"}
+        editor = client_for(account("ed@example.org", (K.EDITOR,)))
+        links = {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "levels": ["B"],
+                 "links": "JHN.1.1.s1: Au commencement=1,2 | Verbe=4,5", "reason": "Missing links"}
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            two = editor.post("/api/admin/fixes/", {**links, "levels": ["B", "R"]}, format="json")
+            self.assertEqual(two.json()["code"], "one_level")
+            other = editor.post("/api/admin/fixes/", {**links, "links": "JHN.1.2.s1: x=1"}, format="json")
+            self.assertEqual(other.json()["code"], "invalid_links")
+            r = editor.post("/api/admin/fixes/", links, format="json")
+        self.assertEqual(r.status_code, 201, r.content)
+        body = calls[-1][2]
+        self.assertEqual(body["title"], "Word links John 1:1 (French, Balanced)")
+        self.assertIn("```\nJHN.1.1.s1: Au commencement=1,2 | Verbe=4,5\n```", body["body"])
+        self.assertIn("scripts/align.py apply", body["body"])
+        self.assertIn('"kind": "links"', body["body"])
+        self.assertEqual(AdminAction.objects.get(action="fix.request").detail["kind"], "links")
+
 
 class TextTest(AdminTestCase):
     def setUp(self):
@@ -744,6 +795,9 @@ class ExportTest(AdminTestCase):
         self.assertIn({"name": "deity_pronoun", "options": ["he", "He"], "default": 1}, en["settings"])
         es = next(lang for lang in d["languages"] if lang["code"] == "es")
         self.assertIn({"name": "plural_you", "options": ["ustedes", "vosotros"], "default": 0}, es["settings"])
+        zh = next(lang for lang in d["languages"] if lang["code"] == "zh")
+        self.assertIn({"name": "god_term", "options": ["神", "上帝"], "default": 0}, zh["settings"])
+        self.assertNotIn("god_term", [s["name"] for s in es["settings"]])
         self.assertEqual(len(d["books"]), 66)
 
     def test_preview(self):

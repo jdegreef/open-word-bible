@@ -6,22 +6,21 @@ GET /api/admin/decisions/?layer=&category=&book=&q=&offset=&all=
         "meaning" or a reading language's code.
 GET /api/admin/terms/
         the key terms (data/key_terms.json), each with how many drafted
-        sentences use it and the first of them
+        sentences use it (as staff/consistency.py finds them) and the first
+        of them
 
 Read-only: a decision is changed by a fix request (staff/fixes.py) that a
 Claude session works into a pull request.
 """
-import json
 
-from django.conf import settings
 from django.core.cache import cache
 from django.db.models import Count, Q
 from rest_framework.response import Response
 
 from owb import languages, refs
-from texts.models import Word
-from translation.models import Decision, Rendering, Sentence
+from translation.models import Decision, Rendering
 
+from . import consistency
 from .inbox import verse_label
 from .permissions import admin_view
 from .progress import book_name
@@ -76,32 +75,27 @@ def decisions(request):
     })
 
 
-def _uses(term):
-    """The drafted sentences that use a key term: Words by Strong's number,
-    Greek ids starting n and Hebrew o, as owb.validate tells them apart."""
-    prefix = "o" if term.get("language") == "hbo" else "n"
-    ids = list(Word.objects.filter(strong=term["strong"], id__startswith=prefix).values_list("id", flat=True))
-    if not ids:
-        return Sentence.objects.none()
-    return Sentence.objects.filter(tokens__overlap=ids)
-
-
 @admin_view("overview")
 def terms(request):
     cached = cache.get("staff.terms")
     if cached is None:
-        data = json.loads((settings.REPO_ROOT / "data" / "key_terms.json").read_text(encoding="utf-8"))["terms"]
+        # The sentences come from consistency's lookup: two queries for every
+        # term, in Bible order. The languages each is drafted in, one more.
+        uses, _ = consistency.term_uses()
+        every = {r["id"] for rows in uses.values() for r in rows}
+        drafted = {}
+        # order_by(): the model's ordering adds level, and DISTINCT with it.
+        for sid, lang in (Rendering.objects.filter(sentence_id__in=every).order_by()
+                          .values_list("sentence_id", "language").distinct()):
+            drafted.setdefault(sid, set()).add(lang)
         cached = []
-        for term in data:
-            uses = _uses(term)
-            ids = list(uses.values_list("id", flat=True))
-            by_lang = dict(Rendering.objects.filter(sentence_id__in=ids).values("language")
-                           .annotate(n=Count("sentence", distinct=True)).values_list("language", "n"))
-            first = [r[0] for r in Sentence.objects.filter(id__in=ids)
-                     .order_by("book_order", "chapter", "verse").values_list("refs", flat=True)[:8]]
-            cached.append({**term, "language": term.get("language", "grc"), "uses": len(ids),
-                           "by_language": {c: by_lang.get(c, 0) for c in languages.CODES},
-                           "first": [{"verse": v, "label": verse_label(v)} for v in first]})
+        for term in consistency.TERMS:
+            rows = uses[term["slug"]]
+            by_lang = {c: sum(1 for r in rows if c in drafted.get(r["id"], ())) for c in languages.CODES}
+            cached.append({**term, "language": term.get("language", "grc"), "uses": len(rows),
+                           "by_language": by_lang,
+                           "first": [{"verse": r["refs"][0], "label": verse_label(r["refs"][0])}
+                                     for r in rows[:8] if r["refs"]]})
         cache.set("staff.terms", cached, 600)
     return Response({"terms": cached,
                      "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()]})

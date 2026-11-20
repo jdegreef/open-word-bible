@@ -258,7 +258,7 @@
   }
   function showGroup(g) {
     box.textContent = "";
-    var back = el("a", "groups-back", "← " + T.all_groups);
+    var back = el("a", "groups-back", (document.documentElement.dir === "rtl" ? "\u2192 " : "\u2190 ") + T.all_groups);
     back.href = "#";
     box.appendChild(back);
     var head = el("header", "groups-head");

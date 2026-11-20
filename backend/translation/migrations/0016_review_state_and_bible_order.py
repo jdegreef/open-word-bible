@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ("texts", "0003_edition_loader_version"),
-        ("translation", "0014_review_snapshot_and_record_changes"),
+        ("translation", "0015_drafted_counts_and_indexes"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -156,12 +156,6 @@ class Migration(migrations.Migration):
             model_name="decision",
             index=models.Index(
                 fields=["language", "sentence"], name="decision_language_sentence"
-            ),
-        ),
-        migrations.AddIndex(
-            model_name="rendering",
-            index=models.Index(
-                fields=["language", "sentence"], name="rendering_language_sentence"
             ),
         ),
         migrations.AddIndex(

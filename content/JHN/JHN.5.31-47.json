@@ -89,6 +89,11 @@
           "L": "Jika {{deity_pronoun:aku|Aku}} bersaksi tentang diri-{{deity_pronoun:ku|Ku}} sendiri, kesaksian-{{deity_pronoun:ku|Ku}} tidak benar;",
           "B": "Kalau {{deity_pronoun:aku|Aku}} bersaksi tentang diri-{{deity_pronoun:ku|Ku}} sendiri, kesaksian-{{deity_pronoun:ku|Ku}} tidak sah.",
           "R": "Kalau hanya {{deity_pronoun:aku|Aku}} sendiri yang bersaksi tentang diri-{{deity_pronoun:ku|Ku}}, kesaksian-{{deity_pronoun:ku|Ku}} tidak dianggap benar."
+        },
+        "zh": {
+          "L": "如果我是在为我自己作见证，我的见证就不算真实。",
+          "B": "如果我替自己作证，我的见证就不真实。",
+          "R": "如果只有我一个人为我自己作证，我的见证就不能算是真的。"
         }
       },
       "alignments": [
@@ -165,6 +170,81 @@
           "language": "en",
           "level": "B",
           "target_span": "true"
+        },
+        {
+          "tokens": [
+            "n43005031001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もし"
+        },
+        {
+          "tokens": [
+            "n43005031002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005031004",
+            "n43005031005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分のために"
+        },
+        {
+          "tokens": [
+            "n43005031003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証しする"
+        },
+        {
+          "tokens": [
+            "n43005031001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43005031008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005031006",
+            "n43005031007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証し"
+        },
+        {
+          "tokens": [
+            "n43005031011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "真実"
+        },
+        {
+          "tokens": [
+            "n43005031009",
+            "n43005031010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とは認められない"
         }
       ],
       "decisions": [
@@ -660,6 +740,50 @@
           "reason": "m1: \"true\" here means valid as evidence in a court. Balanced says \"sah\" (legally valid), which makes the court sense plain; Literal keeps \"benar\" and Readable explains it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43005031005",
+            "n43005031008"
+          ],
+          "choice": "\"我\" with no span",
+          "alternatives": [
+            "a reverent form of \"我\" (Chinese has none)"
+          ],
+          "reason": "The English spans Jesus's \"myself\", \"my\" and \"me\". Chinese has no reverent form of the first person (style guide section 4), so \"我\" takes no span, through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005031003",
+            "n43005031007"
+          ],
+          "choice": "\"作见证\" (L), \"作证\" (B, R); \"见证\" for the noun",
+          "alternatives": [
+            "\"证明\""
+          ],
+          "reason": "The language of a trial runs through the chapter; one verb and one noun are kept for it so the repeated word stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -759,6 +883,11 @@
           "L": "Ada yang lain yang bersaksi tentang {{deity_pronoun:aku|Aku}}, dan {{deity_pronoun:aku|Aku}} tahu bahwa kesaksian yang diberikan-{{deity_pronoun:nya|Nya}} tentang {{deity_pronoun:aku|Aku}} adalah benar.",
           "B": "Ada yang lain yang bersaksi tentang {{deity_pronoun:aku|Aku}}, dan {{deity_pronoun:aku|Aku}} tahu bahwa kesaksian yang {{deity_pronoun:dia|Dia}} berikan tentang {{deity_pronoun:aku|Aku}} itu benar.",
           "R": "Tetapi ada yang lain yang bersaksi tentang {{deity_pronoun:aku|Aku}}, yaitu Bapa. Dan {{deity_pronoun:aku|Aku}} tahu bahwa apa yang {{deity_pronoun:dia|Dia}} katakan tentang {{deity_pronoun:aku|Aku}} itu benar."
+        },
+        "zh": {
+          "L": "为我作见证的是另一位，而且我知道，{{deity_pronoun:他|祂}}关于我所作的见证是真实的。",
+          "B": "还有别的一位在为我作证，我知道{{deity_pronoun:他|祂}}关于我的见证是真实的。",
+          "R": "但是有另一位为我作证，就是父。我知道{{deity_pronoun:他|祂}}所说关于我的话是真的。"
         }
       },
       "alignments": [
@@ -855,6 +984,115 @@
           "language": "en",
           "level": "B",
           "target_span": "true"
+        },
+        {
+          "tokens": [
+            "n43005032005",
+            "n43005032006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしについて"
+        },
+        {
+          "tokens": [
+            "n43005032003",
+            "n43005032004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証ししておられる方"
+        },
+        {
+          "tokens": [
+            "n43005032001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ほかに"
+        },
+        {
+          "tokens": [
+            "n43005032002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おられる"
+        },
+        {
+          "tokens": [
+            "n43005032007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そして"
+        },
+        {
+          "tokens": [
+            "n43005032015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その方"
+        },
+        {
+          "tokens": [
+            "n43005032016",
+            "n43005032017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしについて"
+        },
+        {
+          "tokens": [
+            "n43005032014",
+            "n43005032015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なさる"
+        },
+        {
+          "tokens": [
+            "n43005032012",
+            "n43005032013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証し"
+        },
+        {
+          "tokens": [
+            "n43005032010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "真実"
+        },
+        {
+          "tokens": [
+            "n43005032011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "である"
+        },
+        {
+          "tokens": [
+            "n43005032008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005032008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っている"
         }
       ],
       "decisions": [
@@ -1051,6 +1289,27 @@
           "reason": "The other witness is the Father (meaning decision m1), so Balanced and Readable already speak of him with the light respect form Jesus uses for God; Literal keeps the neutral \"方\" and leaves him unnamed, as the Greek does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43005032015"
+          ],
+          "choice": "{{deity_pronoun:他|祂}}",
+          "alternatives": [
+            "\"他\" with no span"
+          ],
+          "reason": "Chinese has no capital letters; the reverent \"祂\" does what the English capital does, and the setting lets the reader choose the plain \"他\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1141,6 +1400,11 @@
           "L": "Kalian telah mengutus [orang] kepada Yohanes, dan ia telah bersaksi tentang kebenaran;",
           "B": "Kalian sendiri telah mengutus orang kepada Yohanes, dan ia telah bersaksi tentang kebenaran.",
           "R": "Kalian mengutus orang untuk bertanya kepada Yohanes, dan ia bersaksi tentang kebenaran."
+        },
+        "zh": {
+          "L": "你们自己派过[人]去见约翰，他也已经为真理作了见证。",
+          "B": "你们自己派人去问过约翰，他已经为真理作证。",
+          "R": "你们派人去问过约翰，他为真理作了证。"
         }
       },
       "alignments": [
@@ -1193,6 +1457,64 @@
           "language": "en",
           "level": "B",
           "target_span": "to the truth"
+        },
+        {
+          "tokens": [
+            "n43005033001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた自身"
+        },
+        {
+          "tokens": [
+            "n43005033003",
+            "n43005033004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨハネのもとに"
+        },
+        {
+          "tokens": [
+            "n43005033002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "使いを送った"
+        },
+        {
+          "tokens": [
+            "n43005033005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そして"
+        },
+        {
+          "tokens": [
+            "n43005033006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼"
+        },
+        {
+          "tokens": [
+            "n43005033007",
+            "n43005033008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "真理について"
+        },
+        {
+          "tokens": [
+            "n43005033006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証しした"
         }
       ],
       "decisions": [
@@ -1351,6 +1673,27 @@
           "reason": "The truth about who Jesus is (meaning decision m2). \"真理\" is the key term; Readable says \"本当のこと\" for what is true, as the brief allows.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005033008"
+          ],
+          "choice": "\"真理\"",
+          "alternatives": [
+            "\"真相\""
+          ],
+          "reason": "The glossary's key term for truth, one form through John; here it is the truth about who Jesus is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1447,6 +1790,11 @@
           "L": "Tetapi {{deity_pronoun:aku|Aku}} tidak menerima kesaksian dari manusia; melainkan {{deity_pronoun:aku|Aku}} mengatakan hal-hal ini supaya kalian diselamatkan.",
           "B": "Tetapi {{deity_pronoun:aku|Aku}} tidak memerlukan kesaksian dari manusia. Aku mengatakan hal-hal ini supaya kalian diselamatkan.",
           "R": "Aku tidak bergantung pada kesaksian manusia. Aku memberi tahu kalian tentang Yohanes supaya kalian dapat diselamatkan."
+        },
+        "zh": {
+          "L": "但我不从人那里接受见证；我说这些[话]，是要使你们得救。",
+          "B": "然而，我并不接受人的见证；我说这些，是为了让你们得救。",
+          "R": "我不需要靠人的见证。我跟你们讲约翰的事，是为了让你们能够得救。"
         }
       },
       "alignments": [
@@ -1539,6 +1887,96 @@
           "language": "en",
           "level": "B",
           "target_span": "may be saved"
+        },
+        {
+          "tokens": [
+            "n43005034001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005034004",
+            "n43005034005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "人から"
+        },
+        {
+          "tokens": [
+            "n43005034006",
+            "n43005034007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証し"
+        },
+        {
+          "tokens": [
+            "n43005034008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受け入れる"
+        },
+        {
+          "tokens": [
+            "n43005034003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のではない"
+        },
+        {
+          "tokens": [
+            "n43005034011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005034010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "これらのこと"
+        },
+        {
+          "tokens": [
+            "n43005034011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言う"
+        },
+        {
+          "tokens": [
+            "n43005034013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005034014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "救われる"
+        },
+        {
+          "tokens": [
+            "n43005034012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ためである"
         }
       ],
       "decisions": [
@@ -1939,6 +2377,27 @@
           "reason": "The English has a gender span (a human being|man). Indonesian \"manusia\" is any human being, so the setting has nothing to switch.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43005034005"
+          ],
+          "choice": "\"人\" with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The English spans \"a human being / man\" (and \"people / men\" in verse 41). Chinese \"人\" already includes everyone, so it takes no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2039,6 +2498,11 @@
           "L": "Dia itu adalah pelita yang menyala dan bercahaya, dan kalian mau bersukaria untuk sesaat dalam terangnya.",
           "B": "Yohanes adalah pelita yang menyala dan bercahaya, dan untuk sementara waktu kalian mau bersukaria dalam terangnya.",
           "R": "Yohanes itu seperti pelita yang menyala dan bersinar. Untuk sementara waktu kalian senang menikmati terangnya."
+        },
+        "zh": {
+          "L": "那一位是那盏燃烧着、照耀着的灯，你们也曾愿意一时在他的光中欢乐。",
+          "B": "约翰是一盏点着而发亮的灯，你们有一段短短的时间乐意在他的光中欢喜。",
+          "R": "约翰好像一盏点亮了的灯，发出光来。有一小段时间，你们很高兴享受他的光。"
         }
       },
       "alignments": [
@@ -2149,6 +2613,92 @@
           "language": "en",
           "level": "B",
           "target_span": "light"
+        },
+        {
+          "tokens": [
+            "n43005035001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨハネ"
+        },
+        {
+          "tokens": [
+            "n43005035005",
+            "n43005035006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "燃えて"
+        },
+        {
+          "tokens": [
+            "n43005035008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "輝く"
+        },
+        {
+          "tokens": [
+            "n43005035003",
+            "n43005035004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ともし火"
+        },
+        {
+          "tokens": [
+            "n43005035002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "であった"
+        },
+        {
+          "tokens": [
+            "n43005035009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005035013",
+            "n43005035014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらくの間"
+        },
+        {
+          "tokens": [
+            "n43005035015",
+            "n43005035016",
+            "n43005035017",
+            "n43005035018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その光の中で"
+        },
+        {
+          "tokens": [
+            "n43005035012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜び楽しもう"
+        },
+        {
+          "tokens": [
+            "n43005035011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とした"
         }
       ],
       "decisions": [
@@ -2592,6 +3142,11 @@
           "L": "Tetapi {{deity_pronoun:aku|Aku}} mempunyai kesaksian yang lebih besar daripada [kesaksian] Yohanes; sebab pekerjaan-pekerjaan yang telah diberikan Bapa kepada-{{deity_pronoun:ku|Ku}} untuk {{deity_pronoun:aku|Aku}} selesaikan, yaitu pekerjaan-pekerjaan itu sendiri yang {{deity_pronoun:aku|Aku}} lakukan, bersaksi tentang {{deity_pronoun:aku|Aku}}, bahwa Bapa telah mengutus {{deity_pronoun:aku|Aku}}. \\v 37 Dan Bapa yang mengutus {{deity_pronoun:aku|Aku}}, {{deity_pronoun:dia|Dia}} sendiri telah bersaksi tentang {{deity_pronoun:aku|Aku}}.",
           "B": "Tetapi {{deity_pronoun:aku|Aku}} mempunyai kesaksian yang lebih besar daripada kesaksian Yohanes. Pekerjaan-pekerjaan yang diberikan Bapa kepada-{{deity_pronoun:ku|Ku}} untuk {{deity_pronoun:aku|Aku}} selesaikan, yaitu pekerjaan-pekerjaan yang sedang {{deity_pronoun:aku|Aku}} lakukan ini, bersaksi tentang {{deity_pronoun:aku|Aku}}: pekerjaan-pekerjaan itu menunjukkan bahwa Bapa telah mengutus {{deity_pronoun:aku|Aku}}. \\v 37 Dan Bapa yang mengutus {{deity_pronoun:aku|Aku}}, {{deity_pronoun:dia|Dia}} sendiri telah bersaksi tentang {{deity_pronoun:aku|Aku}}.",
           "R": "Tetapi {{deity_pronoun:aku|Aku}} mempunyai kesaksian yang lebih besar daripada kesaksian Yohanes. Bapa telah memberi-{{deity_pronoun:ku|Ku}} pekerjaan untuk dilakukan dan diselesaikan. Pekerjaan-pekerjaan yang sedang {{deity_pronoun:aku|Aku}} lakukan ini bersaksi tentang {{deity_pronoun:aku|Aku}}. Semuanya menunjukkan bahwa Bapa telah mengutus {{deity_pronoun:aku|Aku}}. \\v 37 Dan Bapa yang mengutus {{deity_pronoun:aku|Aku}}, {{deity_pronoun:dia|Dia}} sendiri sudah bersaksi tentang {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "但我有比约翰的见证更大的见证；因为父赐给我、要我完成的那些工作，就是我正在做的这些工作，为我作见证，说父差了我来。\\v 37 而且差我来的父，{{deity_pronoun:他|祂}}已经为我作了见证。",
+          "B": "但我有比约翰的见证更大的见证。父交给我、要我完成的工作，也就是我正在做的这些工作本身，为我作证：它们表明是父差了我来。\\v 37 差我来的父也亲自为我作了证。",
+          "R": "但我有比约翰的见证更大的见证。父给了我工作，要我去做，并且做完。我正在做的这些工作为我作证。它们表明是父差我来的。\\v 37 差我来的父也亲自为我作了证。"
         }
       },
       "alignments": [
@@ -2827,6 +3382,235 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:himself|Himself}}"
+        },
+        {
+          "tokens": [
+            "n43005036002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43005036001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005036007",
+            "n43005036008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨハネの証し"
+        },
+        {
+          "tokens": [
+            "n43005036006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "よりもまさる"
+        },
+        {
+          "tokens": [
+            "n43005036004",
+            "n43005036005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証し"
+        },
+        {
+          "tokens": [
+            "n43005036003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ある"
+        },
+        {
+          "tokens": [
+            "n43005036015",
+            "n43005036016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43005036014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005036018",
+            "n43005036019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "成し遂げる"
+        },
+        {
+          "tokens": [
+            "n43005036017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ように"
+        },
+        {
+          "tokens": [
+            "n43005036013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "与えてくださった"
+        },
+        {
+          "tokens": [
+            "n43005036011",
+            "n43005036012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "業"
+        },
+        {
+          "tokens": [
+            "n43005036024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005036023",
+            "n43005036024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行っている"
+        },
+        {
+          "tokens": [
+            "n43005036020",
+            "n43005036021",
+            "n43005036022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その業そのもの"
+        },
+        {
+          "tokens": [
+            "n43005036026",
+            "n43005036027"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしについて"
+        },
+        {
+          "tokens": [
+            "n43005036025"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証ししている"
+        },
+        {
+          "tokens": [
+            "n43005036029",
+            "n43005036030"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43005036031"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005036032"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "遣わされた"
+        },
+        {
+          "tokens": [
+            "n43005036028"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことを示している"
+        },
+        {
+          "tokens": [
+            "n43005037001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43005037004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005037002",
+            "n43005037003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "遣わされた"
+        },
+        {
+          "tokens": [
+            "n43005037005",
+            "n43005037006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父ご自身"
+        },
+        {
+          "tokens": [
+            "n43005037008",
+            "n43005037009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしについて"
+        },
+        {
+          "tokens": [
+            "n43005037007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証ししてくださった"
         }
       ],
       "decisions": [
@@ -3290,6 +4074,11 @@
           "L": "Kalian tidak pernah mendengar suara-{{deity_pronoun:nya|Nya}}, dan tidak pernah melihat rupa-{{deity_pronoun:nya|Nya}}, \\v 38 dan firman-{{deity_pronoun:nya|Nya}} tidak tinggal di dalam kalian, sebab kalian tidak percaya kepada {{deity_pronoun:dia|Dia}} yang diutus-{{deity_pronoun:nya|Nya}}.",
           "B": "Kalian tidak pernah sekali pun mendengar suara-{{deity_pronoun:nya|Nya}} atau melihat rupa-{{deity_pronoun:nya|Nya}}. \\v 38 Firman-{{deity_pronoun:nya|Nya}} juga tidak tinggal di dalam kalian, karena kalian tidak percaya kepada {{deity_pronoun:dia|Dia}} yang diutus-{{deity_pronoun:nya|Nya}}.",
           "R": "Kalian tidak pernah mendengar suara-{{deity_pronoun:nya|Nya}}. Kalian tidak pernah melihat seperti apa rupa-{{deity_pronoun:nya|Nya}}. \\v 38 Firman-{{deity_pronoun:nya|Nya}} juga tidak tinggal di dalam hati kalian. Itu jelas, karena kalian tidak percaya kepada {{deity_pronoun:dia|Dia}} yang diutus-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}的声音你们从未听过，{{deity_pronoun:他|祂}}的形貌你们也未曾见过；\\v 38 {{deity_pronoun:他|祂}}的话也没有留在你们里面，因为{{deity_pronoun:他|祂}}差来的那一位，你们不相信{{deity_pronoun:他|祂}}。",
+          "B": "你们一次也没有听过{{deity_pronoun:他|祂}}的声音，也没有看过{{deity_pronoun:他|祂}}的形貌。\\v 38 {{deity_pronoun:他|祂}}的话也没有留在你们里面，因为你们不相信{{deity_pronoun:他|祂}}所差来的那一位。",
+          "R": "你们从来没有听过{{deity_pronoun:他|祂}}的声音，也从来没有看见{{deity_pronoun:他|祂}}长什么样子。\\v 38 {{deity_pronoun:他|祂}}的话也没有留在你们里面。这一点很清楚，因为你们不相信{{deity_pronoun:他|祂}}差来的那一位。"
         }
       },
       "alignments": [
@@ -3465,6 +4254,144 @@
           "language": "en",
           "level": "B",
           "target_span": "sent"
+        },
+        {
+          "tokens": [
+            "n43005037010",
+            "n43005037013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "一度も"
+        },
+        {
+          "tokens": [
+            "n43005037012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その方"
+        },
+        {
+          "tokens": [
+            "n43005037011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "声"
+        },
+        {
+          "tokens": [
+            "n43005037014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聞いたことがなく"
+        },
+        {
+          "tokens": [
+            "n43005037016",
+            "n43005037017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その姿"
+        },
+        {
+          "tokens": [
+            "n43005037015",
+            "n43005037018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見たこともない"
+        },
+        {
+          "tokens": [
+            "n43005038001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43005038004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その方"
+        },
+        {
+          "tokens": [
+            "n43005038002",
+            "n43005038003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことば"
+        },
+        {
+          "tokens": [
+            "n43005038007",
+            "n43005038008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがたの内に"
+        },
+        {
+          "tokens": [
+            "n43005038005",
+            "n43005038006",
+            "n43005038009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とどまっていない"
+        },
+        {
+          "tokens": [
+            "n43005038013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その方"
+        },
+        {
+          "tokens": [
+            "n43005038011",
+            "n43005038012",
+            "n43005038014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "遣わされた者"
+        },
+        {
+          "tokens": [
+            "n43005038015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005038016",
+            "n43005038017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じない"
+        },
+        {
+          "tokens": [
+            "n43005038010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "からである"
         }
       ],
       "decisions": [
@@ -3821,6 +4748,49 @@
           "reason": "The John terms keep \"とどまる\" for the theological sense of the verb (meaning decision m2), at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005038009"
+          ],
+          "choice": "\"留在……里面\"",
+          "alternatives": [
+            "\"住在……里面\"",
+            "\"常在……里面\""
+          ],
+          "reason": "John's \"remain\" (meno) in its theological sense is one form through the book, so its thread (6:56; 8:31; 15:4-10) can be followed; \"常在\" is the familiar church word but says \"always\" rather than \"stay\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005038003"
+          ],
+          "choice": "\"话\"",
+          "alternatives": [
+            "\"道\""
+          ],
+          "reason": "God's spoken word. \"道\" is kept for the Word as a title (1:1-14).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3921,6 +4891,11 @@
           "L": "Kalian menyelidiki Kitab-kitab Suci, karena kalian menyangka bahwa di dalamnya kalian mempunyai hidup yang kekal; dan Kitab-kitab itulah yang bersaksi tentang {{deity_pronoun:aku|Aku}};",
           "B": "Kalian tekun menyelidiki Kitab Suci, karena kalian menyangka bahwa di dalamnya kalian akan menemukan hidup kekal; padahal Kitab Suci itulah yang bersaksi tentang {{deity_pronoun:aku|Aku}}.",
           "R": "Kalian mempelajari Kitab Suci dengan tekun, karena kalian pikir di dalamnya kalian mendapat hidup kekal, yaitu hidup dari zaman yang akan datang. Padahal Kitab Suci sendiri bersaksi tentang {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "你们仔细查考圣经，因为你们认为自己在圣经里有永生；而正是这些[圣经]在为我作见证。",
+          "B": "你们钻研圣经，因为你们以为永生就在圣经里面；可是圣经本身就是为我作证的。",
+          "R": "你们仔细研究圣经，因为你们以为在圣经里能得到永生，就是将来那个时代的生命，而且现在就开始。其实，圣经本身就在为我作证。"
         }
       },
       "alignments": [
@@ -4039,6 +5014,116 @@
           "language": "en",
           "level": "B",
           "target_span": "about {{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43005039001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005039002",
+            "n43005039003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聖書"
+        },
+        {
+          "tokens": [
+            "n43005039001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "熱心に調べている"
+        },
+        {
+          "tokens": [
+            "n43005039007",
+            "n43005039008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこに"
+        },
+        {
+          "tokens": [
+            "n43005039010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "永遠"
+        },
+        {
+          "tokens": [
+            "n43005039009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "命"
+        },
+        {
+          "tokens": [
+            "n43005039011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ある"
+        },
+        {
+          "tokens": [
+            "n43005039005",
+            "n43005039006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "考えている"
+        },
+        {
+          "tokens": [
+            "n43005039004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "からだ"
+        },
+        {
+          "tokens": [
+            "n43005039012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ところが"
+        },
+        {
+          "tokens": [
+            "n43005039013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聖書"
+        },
+        {
+          "tokens": [
+            "n43005039017",
+            "n43005039018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしについて"
+        },
+        {
+          "tokens": [
+            "n43005039014",
+            "n43005039015",
+            "n43005039016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "証ししている"
         }
       ],
       "decisions": [
@@ -4385,6 +5470,26 @@
           "reason": "The Jewish Scriptures (meaning decision m3); \"聖書\" is the ordinary Japanese word, and the context shows which writings are meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005039009",
+            "n43005039010"
+          ],
+          "choice": "\"永生\"; Readable adds \"将来那个时代的生命，而且现在就开始\"",
+          "alternatives": [],
+          "reason": "The glossary's key term, one form through John; Readable explains it once in the passage, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4476,6 +5581,11 @@
           "L": "dan kalian tidak mau datang kepada-{{deity_pronoun:ku|Ku}} supaya kalian mempunyai hidup.",
           "B": "Namun kalian tidak mau datang kepada-{{deity_pronoun:ku|Ku}} untuk memperoleh hidup itu.",
           "R": "Tetapi kalian tidak mau datang kepada-{{deity_pronoun:ku|Ku}} supaya kalian mendapat hidup itu."
+        },
+        "zh": {
+          "L": "可是你们不愿意来到我这里，使你们可以有生命。",
+          "B": "但你们就是不愿意到我这里来，好让你们得到生命。",
+          "R": "可是你们不想到我这里来，得到那生命。"
         }
       },
       "alignments": [
@@ -4543,6 +5653,64 @@
           "language": "en",
           "level": "B",
           "target_span": "life"
+        },
+        {
+          "tokens": [
+            "n43005040001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "それなのに"
+        },
+        {
+          "tokens": [
+            "n43005040008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "命"
+        },
+        {
+          "tokens": [
+            "n43005040009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "得る"
+        },
+        {
+          "tokens": [
+            "n43005040007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ために"
+        },
+        {
+          "tokens": [
+            "n43005040005",
+            "n43005040006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしのところへ"
+        },
+        {
+          "tokens": [
+            "n43005040004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来よう"
+        },
+        {
+          "tokens": [
+            "n43005040002",
+            "n43005040003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "としない"
         }
       ],
       "decisions": [
@@ -4748,6 +5916,11 @@
           "L": "Hormat dari manusia tidak {{deity_pronoun:aku|Aku}} terima, \\v 42 tetapi {{deity_pronoun:aku|Aku}} mengenal kalian, bahwa kalian tidak mempunyai kasih kepada Allah di dalam diri kalian.",
           "B": "Aku tidak mencari hormat dari manusia. \\v 42 Tetapi {{deity_pronoun:aku|Aku}} mengenal kalian, dan di dalam diri kalian tidak ada kasih kepada Allah.",
           "R": "Aku tidak mencari pujian dari manusia. \\v 42 Tetapi {{deity_pronoun:aku|Aku}} mengenal kalian. Di dalam hati kalian, kalian tidak mengasihi Allah."
+        },
+        "zh": {
+          "L": "荣耀，我不从人那里领受；\\v 42 而是我认识你们，[知道]你们自己里面没有对{{god_term:神|上帝}}的爱。",
+          "B": "我不接受人给的荣耀。\\v 42 但我了解你们，你们心里没有对{{god_term:神|上帝}}的爱。",
+          "R": "我不接受人给我的荣耀。\\v 42 但是我了解你们。你们心里并不爱{{god_term:神|上帝}}。"
         }
       },
       "alignments": [
@@ -4850,6 +6023,108 @@
           "language": "en",
           "level": "B",
           "target_span": "in you"
+        },
+        {
+          "tokens": [
+            "n43005041002",
+            "n43005041003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "人々から"
+        },
+        {
+          "tokens": [
+            "n43005041001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "栄光"
+        },
+        {
+          "tokens": [
+            "n43005041005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005041004",
+            "n43005041005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受けない"
+        },
+        {
+          "tokens": [
+            "n43005042001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43005042002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005042003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005042002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っている"
+        },
+        {
+          "tokens": [
+            "n43005042011",
+            "n43005042012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがたの内に"
+        },
+        {
+          "tokens": [
+            "n43005042007",
+            "n43005042008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神"
+        },
+        {
+          "tokens": [
+            "n43005042005",
+            "n43005042006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "愛"
+        },
+        {
+          "tokens": [
+            "n43005042009",
+            "n43005042010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ない"
         }
       ],
       "decisions": [
@@ -5114,6 +6389,48 @@
           "reason": "m1: here the word means the honour people give one another, not the divine glory of 1:14, so the key term \"kemuliaan\" is set aside for \"hormat\", as in verse 44. \"manusia\" has no gender, so the English gender span has no counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43005042008"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"上帝\" (the reader setting)"
+          ],
+          "reason": "Every word naming the one God is written as the god_term setting: \"神\" by default, \"上帝\" for readers who choose it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005041001"
+          ],
+          "choice": "\"荣耀\"",
+          "alternatives": [
+            "\"称赞\""
+          ],
+          "reason": "The glossary's key term for glory, one form through John, here the honour people give; keeping it shows the link to the glory from God in verse 44.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5218,6 +6535,11 @@
           "L": "Aku telah datang dalam nama Bapa-{{deity_pronoun:ku|Ku}}, dan kalian tidak menerima {{deity_pronoun:aku|Aku}}; jika orang lain datang dalam namanya sendiri, dia akan kalian terima.",
           "B": "Aku datang dalam nama Bapa-{{deity_pronoun:ku|Ku}}, tetapi kalian tidak menerima {{deity_pronoun:aku|Aku}}. Kalau orang lain datang dalam namanya sendiri, dia akan kalian terima.",
           "R": "Aku datang dengan kuasa dari Bapa-{{deity_pronoun:ku|Ku}}, tetapi kalian tidak mau menerima {{deity_pronoun:aku|Aku}}. Kalau orang lain datang dengan kuasanya sendiri, kalian akan menerima dia."
+        },
+        "zh": {
+          "L": "我是以我父的名来的，而你们不接纳我；若有另一个人以他自己的名来，你们就会接纳那人。",
+          "B": "我是以我父的名义来的，你们却不接受我。要是有别人以他自己的名义来，你们倒会接受他。",
+          "R": "我带着我父的权柄来，你们却不接受我。如果有人凭他自己的权柄来，你们反而会接受他。"
         }
       },
       "alignments": [
@@ -5340,6 +6662,128 @@
           "language": "en",
           "level": "B",
           "target_span": "you will accept"
+        },
+        {
+          "tokens": [
+            "n43005043001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005043006",
+            "n43005043007",
+            "n43005043008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43005043003",
+            "n43005043004",
+            "n43005043005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "名によって"
+        },
+        {
+          "tokens": [
+            "n43005043002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来た"
+        },
+        {
+          "tokens": [
+            "n43005043009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のに"
+        },
+        {
+          "tokens": [
+            "n43005043011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005043012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005043010",
+            "n43005043011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受け入れない"
+        },
+        {
+          "tokens": [
+            "n43005043014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ほかの者"
+        },
+        {
+          "tokens": [
+            "n43005043016",
+            "n43005043017",
+            "n43005043018",
+            "n43005043019",
+            "n43005043020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分の名によって"
+        },
+        {
+          "tokens": [
+            "n43005043013",
+            "n43005043015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来れば"
+        },
+        {
+          "tokens": [
+            "n43005043021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その者"
+        },
+        {
+          "tokens": [
+            "n43005043022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005043022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受け入れる"
         }
       ],
       "decisions": [
@@ -5682,6 +7126,11 @@
           "L": "Bagaimana kalian dapat percaya, kalau kalian saling menerima hormat, tetapi hormat yang datang dari Allah yang esa tidak kalian cari?",
           "B": "Bagaimana kalian dapat percaya? Kalian menerima hormat seorang dari yang lain, sedangkan hormat yang datang dari satu-satunya Allah tidak kalian cari.",
           "R": "Kalian saling memberi pujian, tetapi kalian tidak mencari pujian yang datang dari satu-satunya Allah. Jadi, bagaimana kalian bisa percaya?"
+        },
+        "zh": {
+          "L": "你们彼此领受荣耀，却不寻求那来自独一{{god_term:神|上帝}}的荣耀，这样，你们怎么能够信呢？",
+          "B": "你们怎么可能信呢？你们接受彼此给的荣耀，而那来自独一的{{god_term:神|上帝}}的荣耀，你们却不去寻求。",
+          "R": "你们接受别人给的荣耀，却不去寻求那来自独一的{{god_term:神|上帝}}的荣耀。这样，你们怎么能信呢？"
         }
       },
       "alignments": [
@@ -5786,6 +7235,93 @@
           "language": "en",
           "level": "B",
           "target_span": "seek"
+        },
+        {
+          "tokens": [
+            "n43005044001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どうして"
+        },
+        {
+          "tokens": [
+            "n43005044003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005044004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じる"
+        },
+        {
+          "tokens": [
+            "n43005044002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことができる"
+        },
+        {
+          "tokens": [
+            "n43005044006",
+            "n43005044007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "互いに"
+        },
+        {
+          "tokens": [
+            "n43005044005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "栄光"
+        },
+        {
+          "tokens": [
+            "n43005044008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受け合いながら"
+        },
+        {
+          "tokens": [
+            "n43005044013",
+            "n43005044014",
+            "n43005044015",
+            "n43005044016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "唯一の神から"
+        },
+        {
+          "tokens": [
+            "n43005044010",
+            "n43005044011",
+            "n43005044012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "栄光"
+        },
+        {
+          "tokens": [
+            "n43005044017",
+            "n43005044018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "求めようとしない"
         }
       ],
       "decisions": [
@@ -6068,6 +7604,47 @@
           "reason": "The confession that God is one (meaning decision m4); Readable uses plainer words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43005044001",
+            "n43005044004"
+          ],
+          "choice": "the question \"你们怎么能够信呢\" placed last",
+          "alternatives": [
+            "\"你们怎么能够信呢？\" first"
+          ],
+          "reason": "Chinese puts the participle's clauses before the main question; the Greek order is kept at Balanced, which breaks the sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43005044004"
+          ],
+          "choice": "\"信\"",
+          "alternatives": [
+            "\"相信\""
+          ],
+          "reason": "John's \"believe\" used absolutely or with \"in\" is \"信\" through the book; \"相信\" is kept for believing a person's words or that something is so.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6168,6 +7745,11 @@
           "L": "Janganlah kalian menyangka bahwa {{deity_pronoun:aku|Aku}} akan mendakwa kalian di hadapan Bapa; yang mendakwa kalian adalah Musa, kepada siapa kalian menaruh pengharapan.",
           "B": "Jangan kalian kira bahwa {{deity_pronoun:aku|Aku}}lah yang akan mendakwa kalian di hadapan Bapa. Kalian sudah mempunyai pendakwa, yaitu Musa, yang kepadanya kalian menaruh pengharapan.",
           "R": "Jangan pikir bahwa {{deity_pronoun:aku|Aku}}lah yang akan menuduh kalian di hadapan Bapa. Musalah yang menuduh kalian, Musa yang kalian harapkan itu."
+        },
+        "zh": {
+          "L": "不要以为我会在父面前控告你们；控告你们的是摩西，就是你们一直寄予盼望的那位。",
+          "B": "不要以为我会是在父面前控告你们的那一位。你们已经有一个控告者了，就是摩西，你们把盼望寄托在他身上。",
+          "R": "不要以为我会在父面前告你们。控告你们的是摩西，正是你们寄予盼望的那个摩西。"
         }
       },
       "alignments": [
@@ -6286,6 +7868,107 @@
           "language": "en",
           "level": "B",
           "target_span": "have put your hope"
+        },
+        {
+          "tokens": [
+            "n43005045004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005045007",
+            "n43005045008",
+            "n43005045009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父の前で"
+        },
+        {
+          "tokens": [
+            "n43005045006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005045005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "訴える"
+        },
+        {
+          "tokens": [
+            "n43005045002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "思って"
+        },
+        {
+          "tokens": [
+            "n43005045001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "はならない"
+        },
+        {
+          "tokens": [
+            "n43005045013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005045011",
+            "n43005045012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "訴える者"
+        },
+        {
+          "tokens": [
+            "n43005045010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いる"
+        },
+        {
+          "tokens": [
+            "n43005045017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43005045015",
+            "n43005045016",
+            "n43005045018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "望みをかけている"
+        },
+        {
+          "tokens": [
+            "n43005045014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "モーセ"
         }
       ],
       "decisions": [
@@ -6552,6 +8235,11 @@
           "L": "Sebab jika kalian percaya kepada Musa, kalian akan percaya juga kepada-{{deity_pronoun:ku|Ku}}, sebab tentang {{deity_pronoun:aku|Aku}}lah ia telah menulis.",
           "B": "Seandainya kalian sungguh-sungguh percaya kepada Musa, kalian akan percaya kepada-{{deity_pronoun:ku|Ku}}, sebab yang ditulisnya adalah tentang {{deity_pronoun:aku|Aku}}.",
           "R": "Kalau kalian benar-benar percaya kepada Musa, kalian juga akan percaya kepada-{{deity_pronoun:ku|Ku}}, karena Musa menulis tentang {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "因为你们如果相信摩西，就会相信我；因为他正是写到了我。",
+          "B": "如果你们真的相信摩西，就会相信我，因为他所写的是关于我的事。",
+          "R": "如果你们真的相信摩西，也就会相信我，因为摩西写的是关于我的事。"
         }
       },
       "alignments": [
@@ -6628,6 +8316,88 @@
           "language": "en",
           "level": "B",
           "target_span": "about {{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43005046001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もし"
+        },
+        {
+          "tokens": [
+            "n43005046004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "モーセ"
+        },
+        {
+          "tokens": [
+            "n43005046003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じていた"
+        },
+        {
+          "tokens": [
+            "n43005046001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43005046007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005046005",
+            "n43005046006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じたはずだ"
+        },
+        {
+          "tokens": [
+            "n43005046011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "モーセ"
+        },
+        {
+          "tokens": [
+            "n43005046012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "書いた"
+        },
+        {
+          "tokens": [
+            "n43005046008",
+            "n43005046010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしについて"
+        },
+        {
+          "tokens": [
+            "n43005046009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なのだから"
         }
       ],
       "decisions": [
@@ -6860,6 +8630,11 @@
           "L": "Tetapi jika kalian tidak percaya kepada tulisan-tulisannya, bagaimana kalian akan percaya kepada perkataan-perkataan-{{deity_pronoun:ku|Ku}}?\"",
           "B": "Tetapi kalau kalian tidak percaya kepada tulisan-tulisan Musa, bagaimana mungkin kalian akan percaya kepada perkataan yang {{deity_pronoun:aku|Aku}} ucapkan?\"",
           "R": "Tetapi kalian tidak percaya kepada apa yang ditulis Musa. Jadi, bagaimana kalian akan percaya kepada apa yang {{deity_pronoun:aku|Aku}} katakan?\""
+        },
+        "zh": {
+          "L": "但如果他所写的你们不相信，你们又怎么会相信我所说的话呢？”",
+          "B": "可是，如果你们不相信摩西所写的，又怎么会相信我口里说的话呢？”",
+          "R": "可是你们不相信摩西写的东西。那么，你们怎么会相信我说的话呢？”"
         }
       },
       "alignments": [
@@ -6944,6 +8719,81 @@
           "language": "en",
           "level": "B",
           "target_span": "spoken words"
+        },
+        {
+          "tokens": [
+            "n43005047002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43005047004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "モーセ"
+        },
+        {
+          "tokens": [
+            "n43005047003",
+            "n43005047005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "書いたもの"
+        },
+        {
+          "tokens": [
+            "n43005047006",
+            "n43005047007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じない"
+        },
+        {
+          "tokens": [
+            "n43005047001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43005047008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どうして"
+        },
+        {
+          "tokens": [
+            "n43005047010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43005047009",
+            "n43005047011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "語ることば"
+        },
+        {
+          "tokens": [
+            "n43005047012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じるだろうか"
         }
       ],
       "decisions": [

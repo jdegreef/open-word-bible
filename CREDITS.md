@@ -123,7 +123,8 @@ The Noto Project Authors, Amharic in Noto Serif Ethiopic and Noto Sans
 Ethiopic, Copyright 2022 The Noto Project Authors, and Hindi in Noto Serif
 Devanagari and Noto Sans Devanagari, Copyright 2022 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
 Fraunces Project Authors, and the interface in Hanken Grotesk, Copyright 2021
-The Hanken Grotesk Project Authors. Readers can choose Atkinson Hyperlegible
+The Hanken Grotesk Project Authors, with Cyrillic in Noto Sans, Copyright 2022
+The Noto Project Authors. Readers can choose Atkinson Hyperlegible
 for the reading text, Copyright 2020 Braille Institute of America, Inc. All
-seven are licensed under the SIL Open Font License 1.1; the licences are in
+of them are licensed under the SIL Open Font License 1.1; the licences are in
 `web/fonts/`.

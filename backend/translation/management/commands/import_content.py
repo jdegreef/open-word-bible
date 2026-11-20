@@ -51,6 +51,7 @@ entries whose documents changed are rewritten, or all of them with --all.
 import hashlib
 import json
 import time
+from collections import Counter
 from pathlib import Path
 
 from django.conf import settings
@@ -59,7 +60,7 @@ from django.db import transaction
 
 from owb import refs, validate
 from texts.models import Edition, Word
-from translation import search
+from translation import counts, search
 from translation.models import ContentFile, Decision, ImportRun, RecordChange, Rendering, Sentence, SentenceChange
 
 # Romans 16:25-27 come from Nestle 1904 (owb/sources/macula_greek.py); import_texts
@@ -216,7 +217,8 @@ class Command(BaseCommand):
 
     def record_changes(self, records):
         """Note what this file changes in the renderings already in the
-        database, in one query, before save() replaces them."""
+        database, in one query, before save() replaces them. Returns those
+        renderings, {record id: {language: {level: text}}}."""
         before = {}
         for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
                                        .values_list("sentence__record_id", "language", "level", "text")):
@@ -253,6 +255,7 @@ class Command(BaseCommand):
                         for lang, level, kind, old, new in found]
         SentenceChange.objects.bulk_create(changes, batch_size=2000)
         RecordChange.objects.bulk_create(others, batch_size=2000)
+        return before
 
     def decision_changes(self, records, renderings):
         """The decisions this file adds, changes or removes in sentences
@@ -294,7 +297,11 @@ class Command(BaseCommand):
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
-        self.record_changes(records)
+        was = self.record_changes(records)
+        # The drafted counts (DraftedCount) change by what this file adds or
+        # drops; what was there comes from record_changes' one query.
+        before = Counter((refs.parse(record["refs"][0]).book, lang) for record in records
+                         for lang, levels in was.get(record["id"], {}).items() if levels)
         sentences = []
         for record in records:
             first = refs.parse(record["refs"][0])
@@ -329,3 +336,6 @@ class Command(BaseCommand):
                       uncertain=d["uncertain"], footnote=d["footnote"])
              for sentence, record in zip(sentences, records) for i, d in enumerate(record["decisions"])),
             batch_size=2000)
+        after = Counter((sentence.book, lang) for sentence, record in zip(sentences, records)
+                        for lang, levels in record["renderings"].items() if levels)
+        counts.apply({key: after[key] - before[key] for key in after.keys() | before.keys()})

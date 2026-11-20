@@ -4,6 +4,8 @@
 `ai_draft`. If a choice here changes, every passage drafted under it is
 revised.
 
+Reviewers: start with [`docs/hindi-review-guide.md`](hindi-review-guide.md).
+
 ## How this glossary relates to the style guide
 
 `docs/hindi-style.md` is the brief for drafting Hindi and still holds in
@@ -179,7 +181,7 @@ recorded in decisions at 119:1-11 and kept through the psalm.
 
 | Hebrew (English) | Hindi |
 |---|---|
-| Sheol | शिओल (L), अधोलोक (B), मृत्यु का लोक (R). *Replaces* the Pentateuch note's अधोलोक at R; 2 Samuel 22 set मृत्यु का लोक and the Psalms and Prophets follow it. Genesis, Numbers, Deuteronomy and 1 Samuel were drafted with अधोलोक at R and are to be brought into line in the consistency pass. |
+| Sheol | शिओल (L), अधोलोक (B), मृत्यु का लोक (R). *Replaces* the Pentateuch note's अधोलोक at R; 2 Samuel 22 set मृत्यु का लोक and the Psalms and Prophets follow it. Genesis, Numbers, Deuteronomy and 1 Samuel were drafted with अधोलोक at R; the consistency sweep brought them into line. |
 | the Pit | गड्ढा (L), क़ब्र (B, R) |
 
 ### Nations and peoples

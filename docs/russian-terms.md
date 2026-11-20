@@ -4,6 +4,8 @@
 is `ai_draft`. If a choice here changes, every passage drafted under it is
 revised.
 
+Reviewers: start with [`docs/russian-review-guide.md`](russian-review-guide.md).
+
 ## How this glossary relates to the style guide
 
 `docs/russian-style.md` is the brief for drafting Russian and still holds in

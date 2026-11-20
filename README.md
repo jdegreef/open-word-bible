@@ -2,7 +2,8 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese and Indonesian.
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian and
+Chinese (Simplified).
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -44,12 +45,14 @@ brief for drafting it and `data/key_terms.json` the settled key terms.
 Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/vietnamese-style.md`, `docs/korean-style.md`,
 `docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
-`docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md` and
-`docs/indonesian-style.md` are the briefs for French, Swahili, Vietnamese,
-Korean, (Brazilian) Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese
-and Indonesian. `docs/hindi-terms.md`, `docs/russian-terms.md` and
-`docs/indonesian-terms.md` are the Hindi, Russian and Indonesian glossaries,
-Genesis to Revelation.
+`docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md`,
+`docs/indonesian-style.md` and `docs/chinese-style.md` are the briefs for
+French, Swahili, Vietnamese, Korean, (Brazilian) Portuguese, Amharic, Hindi,
+Russian, Ukrainian, Japanese, Indonesian and Chinese (Simplified).
+`docs/hindi-terms.md`, `docs/russian-terms.md`, `docs/indonesian-terms.md`
+and `docs/chinese-terms.md` are the Hindi, Russian, Indonesian and Chinese
+glossaries, Genesis to Revelation. `docs/hindi-review-guide.md` and
+`docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
@@ -86,7 +89,18 @@ sentence-opening "and" the English drops, a recitative "that" before a
 quotation. The article goes in the alignment of the word it belongs to
 ("the kingdom" ← article + noun; "Jesus's" ← article + name), and a setting
 span is always inside a span whole ("to {{deity_pronoun:him|Him}}"). John,
-Mark and Genesis 1–11 are aligned in English Balanced.
+Mark and Genesis 1–11 are aligned in English Balanced, and John and Mark in
+Japanese Balanced. In a script written without spaces (Japanese), a span may begin
+or end beside another character: 言 is a word of 言は. Because every language
+is aligned to the same source tokens, the reader's Parallel view lights a
+word's partner in the other language through them; no two languages are
+aligned to each other. `scripts/align.py` shows a passage's source words
+and drafts a language's alignments from a short spec.
+
+`data/furigana/<BOOK>.json` holds readings for the kanji of Japanese
+renderings (`owb/furigana.py`), which the reader can set over the text. They
+are a reading aid, not wording, drafted with `scripts/furigana.py`; John is
+done at the Balanced level.
 
 In the Hebrew, where MACULA gives each prefix and suffix a token of its
 own, the same rules apply morpheme by morpheme. The article prefix joins
@@ -188,7 +202,10 @@ capitalised "He" until a reader picks lowercase (`DEFAULTS` in
 `owb/markup.py` and `web/markup.js`).
 
 Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
-`plural_you` (a future `spelling` setting needs a reader control first).
+`plural_you` (Spanish only) and `god_term` (Chinese only: 神 or 上帝); a
+future `spelling` setting needs a reader control first. In Chinese,
+`deity_pronoun` gives the reverent forms (`{{deity_pronoun:他|祂}}`,
+`{{deity_pronoun:你|祢}}`) where other languages capitalise.
 `owb/markup.py` and `web/markup.js` list and render the spans;
 `tests/markup_vectors.json` holds the two to the same answers.
 

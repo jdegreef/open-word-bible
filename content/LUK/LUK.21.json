@@ -90,6 +90,11 @@
           "L": "Dan sambil menengadah, {{deity_pronoun:dia|Dia}} melihat orang-orang kaya memasukkan persembahan mereka ke dalam peti persembahan.",
           "B": "Yesus mengangkat muka dan melihat orang-orang kaya memasukkan persembahan mereka ke dalam peti persembahan di Bait Allah.",
           "R": "Yesus memandang ke sekeliling. Dia melihat orang-orang kaya memasukkan uang persembahan mereka ke dalam kotak-kotak persembahan di rumah Allah."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}抬头一看，看见那些富有的人把他们的礼物投进库房。",
+          "B": "耶稣抬起头，看着富有的人把他们的礼物投进圣殿的奉献箱。",
+          "R": "耶稣抬起头来，看见一些有钱人把奉献的钱投进圣殿里的奉献箱。"
         }
       },
       "decisions": [
@@ -452,6 +457,27 @@
           "reason": "The treasury is the place in the temple courts with chests for gifts (m1); Japanese uses Mark 12:41's \"献金箱\", and Balanced and Readable add \"神殿の\" as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021001008"
+          ],
+          "choice": "\"库房\" (L); \"圣殿的奉献箱\" (B); \"圣殿里的奉献箱\" (R)",
+          "alternatives": [
+            "\"银库\""
+          ],
+          "reason": "As Mark 12:41: Literal keeps the word for the treasury, Balanced and Readable say what the gifts were put into.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -558,6 +584,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} melihat juga seorang janda miskin memasukkan dua peser ke situ, \\v 3 lalu {{deity_pronoun:dia|Dia}} berkata, \"Amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, janda miskin ini telah memasukkan lebih banyak daripada semua [orang itu].",
           "B": "Dia juga melihat seorang janda miskin memasukkan {{units:dua keping uang tembaga|dua peser}} ke situ. \\v 3 Lalu {{deity_pronoun:dia|Dia}} berkata, \"Sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, janda miskin ini telah memberi lebih banyak daripada semua orang itu.",
           "R": "Dia juga melihat seorang janda yang sangat miskin memasukkan {{units:dua keping uang tembaga|dua peser}}. \\v 3 Lalu {{deity_pronoun:dia|Dia}} berkata, \"Aku mengatakan yang sebenarnya kepada kalian, janda miskin ini telah memberi lebih banyak daripada semua orang kaya itu."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又看见一个贫苦的寡妇在那里投进两个小铜钱，\\v 3 {{deity_pronoun:他|祂}}就说：“我真实地告诉你们，这个穷寡妇投的比[他们]所有人都多。",
+          "B": "耶稣又注意到一个贫苦的寡妇投进{{units:两个小铜钱，只值几分钟的工钱|两个小铜钱}}。\\v 3 {{deity_pronoun:他|祂}}就说：“我如实告诉你们，这个穷寡妇所给的，比其他所有的人都多。",
+          "R": "耶稣又看见一个非常穷的寡妇投进{{units:两个几乎不值钱的小铜钱|两个小铜钱}}。\\v 3 {{deity_pronoun:他|祂}}就说：“我把实话告诉你们，这个穷寡妇给的，比那些有钱人给的都多。"
         }
       },
       "decisions": [
@@ -1219,6 +1250,51 @@
           "reason": "The value by default and the glossary's \"peser\" for the lepton as the alternative, where the English has a units span; Literal keeps \"peser\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42021002008",
+            "n42021002009"
+          ],
+          "choice": "{{units:两个小铜钱，只值几分钟的工钱|两个小铜钱}} (B); {{units:两个几乎不值钱的小铜钱|两个小铜钱}} (R)",
+          "alternatives": [
+            "{{units:两分钱|两个小铜钱}}"
+          ],
+          "reason": "Coins have no metric form, so the default gives the coins' value in wages, as Mark 12:42 does, with the coin \"小铜钱\" (lepton) as the alternative. The English uses a modern small coin instead. Literal keeps the coin.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021003003",
+            "n42021003004",
+            "n42021003005"
+          ],
+          "choice": "\"我真实地告诉你们\" (L); \"我如实告诉你们\" (B); \"我把实话告诉你们\" (R)",
+          "alternatives": [
+            "\"阿们，我告诉你们\" (L); \"我确实告诉你们\" (B)",
+            "\"我实在告诉你们\" (B)"
+          ],
+          "reason": "Luke has the adverb \"truly\" (alethos) here, not Jesus's \"amen\". Literal and Balanced keep it apart from the glossary's formula for \"Truly (amen) I tell you\" (\"阿们，我告诉你们\", \"我确实告诉你们\"), with one form each for 9:27, 12:44 and 21:3; Readable uses its plain form for both, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1324,6 +1400,11 @@
           "L": "Sebab mereka semua memberi persembahan dari kelimpahan mereka, tetapi janda ini dari kekurangannya telah memberikan seluruh nafkah yang dimilikinya.\"",
           "B": "Sebab mereka semua memberi dari kelebihan mereka, tetapi janda ini memberi dari kekurangannya, bahkan seluruh nafkahnya.\"",
           "R": "Orang-orang kaya itu hanya memberi dari sisa uang mereka. Tetapi janda ini miskin, dan dia memberikan semua uang yang dia miliki untuk hidupnya.\""
+        },
+        "zh": {
+          "L": "因为这些人都是从自己富余的当中投进礼物里；她却是从她的缺乏中，把她所有的一切生计都投了进去。”",
+          "B": "这些人都是拿自己富余的来奉献；可是她在贫困中，把自己全部的生活所需都献上了。”",
+          "R": "那些有钱人给的，只是他们用不着的钱。可是她很穷，却把她用来生活的钱全都给了。”"
         }
       },
       "decisions": [
@@ -1547,6 +1628,11 @@
           "L": "Dan ketika beberapa orang berbicara tentang Bait Allah, bahwa Bait Allah itu dihiasi dengan batu-batu yang indah dan barang-barang persembahan, {{deity_pronoun:dia|Dia}} berkata,",
           "B": "Ketika beberapa orang membicarakan Bait Allah, betapa indahnya bangunan itu dihiasi dengan batu-batu bagus dan barang-barang persembahan, Yesus berkata,",
           "R": "Beberapa orang sedang membicarakan rumah Allah. Mereka berbicara tentang betapa indahnya batu-batunya, dan tentang persembahan-persembahan yang diberikan orang untuk memperindahnya. Yesus berkata,"
+        },
+        "zh": {
+          "L": "有些人谈论圣殿，说它是用美好的石头和奉献的礼物装饰的，{{deity_pronoun:他|祂}}就说：",
+          "B": "有些人在谈论圣殿，说它的石头多么精美，又用献给{{god_term:神|上帝}}的礼物装饰起来。耶稣说：",
+          "R": "有些人在谈论圣殿。他们说圣殿的石头多么美丽，又说人们献上了许多礼物，把圣殿装饰得很漂亮。耶稣说："
         }
       },
       "decisions": [
@@ -1719,6 +1805,25 @@
           "reason": "The word means gifts dedicated to God and set up in the temple (m2); \"奉納物\" says exactly that, and Readable explains it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42021005011"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "Every word naming the one God is a god_term span: 神 by default, 上帝 as the reader's alternative (style guide section 4). The setting changes the word only, never the meaning.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1816,6 +1921,11 @@
           "L": "\"[Mengenai] semua yang kalian lihat ini, akan datang harinya ketika tidak satu batu pun akan dibiarkan terletak di atas batu yang lain yang tidak akan diruntuhkan.\"",
           "B": "\"Akan tiba waktunya semua yang kalian lihat ini diruntuhkan, dan tidak ada satu batu pun yang akan dibiarkan terletak di atas batu yang lain.\"",
           "R": "\"Kalian melihat semua bangunan ini. Tetapi akan tiba harinya setiap batu di sini dirobohkan. Tidak akan ada dua batu pun yang tetap tertumpuk satu di atas yang lain.\""
+        },
+        "zh": {
+          "L": "“[至于]你们所看见的这些，日子将要来到，那时不会有一块石头留在另一块石头上而不被拆毁。”",
+          "B": "“你们看着这一切。但日子将到，这一切都会被拆毁，没有一块石头会留在另一块石头上。”",
+          "R": "“你们看见这些建筑。但有一天，这里的每一块石头都会被拆下来。连两块叠在一起的石头都不会留下。”"
         }
       },
       "decisions": [
@@ -2024,6 +2134,11 @@
           "L": "Lalu mereka bertanya kepada-{{deity_pronoun:nya|Nya}}, katanya, \"Guru, bilamanakah hal-hal itu akan terjadi, dan apakah tandanya kalau hal-hal itu akan terjadi?\"",
           "B": "Mereka bertanya kepada-{{deity_pronoun:nya|Nya}}, \"Guru, kapan semua itu akan terjadi? Dan apa tandanya bahwa hal-hal itu sudah hampir terjadi?\"",
           "R": "Jadi mereka bertanya kepada-{{deity_pronoun:nya|Nya}}, \"Guru, kapan hal-hal itu akan terjadi? Tanda apa yang akan menunjukkan kepada kami bahwa semua itu akan segera terjadi?\""
+        },
+        "zh": {
+          "L": "他们就问{{deity_pronoun:他|祂}}说：“老师，那么这些事什么时候会发生？这些事将要发生的时候，[会有]什么征兆？”",
+          "B": "他们问{{deity_pronoun:他|祂}}：“老师，这些事什么时候会发生？这些事快要发生的时候，会有什么征兆？”",
+          "R": "于是他们问{{deity_pronoun:他|祂}}：“老师，这些事什么时候会发生？有什么征兆会让我们知道这些事就要发生了？”"
         }
       },
       "decisions": [
@@ -2159,6 +2274,28 @@
           "reason": "With the honorific plural for Jesus, \"उन्होंने उनसे\" could leave it unclear who asked whom; Balanced and Readable name the askers, as the style guide asks.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021007005",
+            "n42021007013"
+          ],
+          "choice": "\"老师\"; \"征兆\"",
+          "alternatives": [
+            "\"夫子\"; \"预兆\""
+          ],
+          "reason": "As Mark 13:1-4: \"老师\" for Teacher (the style guide does not use the old \"夫子\"), and \"征兆\" for the sign that shows the event is near.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2265,6 +2402,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} berkata, \"Waspadalah supaya kalian jangan disesatkan, sebab banyak orang akan datang dengan memakai nama-{{deity_pronoun:ku|Ku}} dan berkata, 'Akulah dia,' dan, 'Saatnya sudah dekat.' Jangan mengikuti mereka.",
           "B": "Jawab-{{deity_pronoun:nya|Nya}}, \"Waspadalah, jangan sampai kalian disesatkan. Sebab banyak orang akan datang dengan memakai nama-{{deity_pronoun:ku|Ku}} dan berkata, 'Akulah dia,' dan, 'Waktunya sudah dekat.' Jangan ikuti mereka.",
           "R": "Yesus berkata, \"Hati-hati! Jangan biarkan siapa pun menipu kalian. Banyak orang akan datang dan memakai nama-{{deity_pronoun:ku|Ku}}. Mereka akan berkata, 'Akulah orang yang kalian tunggu-tunggu!' Mereka akan berkata, 'Saatnya sudah tiba!' Jangan ikuti mereka."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}说：“你们要当心，免得你们迷失；因为许多人要借我的名来，说：‘我就是[那位]。’又说：‘时候近了。’你们不要跟从他们。",
+          "B": "耶稣回答：“你们要提防，不要被人带入歧途。将有许多人冒用我的名来，说：‘我就是那位！’又说：‘时候近了！’你们不要跟从他们。",
+          "R": "耶稣说：“你们要小心！不要让任何人骗了你们。会有许多人来，借用我的名。他们会说：‘我就是你们在等的那一位！’他们又会说：‘时候到了！’你们不要跟从他们。"
         }
       },
       "decisions": [
@@ -2528,6 +2670,27 @@
           "reason": "The words are a claim to be the one promised (m2), as in Mark 13:6, whose wording the Japanese keeps; Readable says who they claim to be, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42021008013"
+          ],
+          "choice": "\"我\", with no deity_pronoun span",
+          "alternatives": [
+            "a span on 我"
+          ],
+          "reason": "Chinese has no reverent first person, so Jesus' \"I\", \"my\" and \"me\" are plain 我 where the English spans \"My\" and \"Me\" (style guide section 4), here and through this chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2628,6 +2791,11 @@
           "L": "Dan apabila kalian mendengar tentang peperangan dan pemberontakan, janganlah gentar; sebab semuanya itu harus terjadi dahulu, tetapi kesudahannya tidak terjadi dengan segera.\"",
           "B": "Kalau kalian mendengar tentang perang dan pemberontakan, jangan takut. Semua itu harus terjadi lebih dahulu, tetapi kesudahannya tidak langsung datang.\"",
           "R": "Kalian akan mendengar tentang perang dan tentang orang-orang yang memberontak melawan penguasa mereka. Jangan takut. Semua itu harus terjadi lebih dahulu. Tetapi akhir zaman tidak langsung datang sesudahnya.\""
+        },
+        "zh": {
+          "L": "当你们听见战争和动乱的时候，不要惊恐；因为这些事必须先发生，但终结不会立刻[来到]。”",
+          "B": "你们听到战争和叛乱的消息时，不要惊慌。这一切必须先发生，但这并不表示终结马上就会来到。”",
+          "R": "你们会听到打仗的消息，也会听到有人起来反抗统治者。不要害怕。这些事必须先发生，但终结不会紧接着就来到。”"
         }
       },
       "decisions": [
@@ -2869,6 +3037,11 @@
           "L": "Lalu {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Bangsa akan bangkit melawan bangsa dan kerajaan melawan kerajaan, \\v 11 dan akan terjadi gempa bumi yang dahsyat, dan di berbagai tempat kelaparan dan penyakit sampar; dan akan terjadi hal-hal yang mengerikan dan tanda-tanda yang dahsyat dari langit.",
           "B": "Kemudian {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Bangsa akan bangkit melawan bangsa, dan kerajaan melawan kerajaan. \\v 11 Akan terjadi gempa bumi yang dahsyat, dan di berbagai tempat akan ada kelaparan dan wabah penyakit. Akan terjadi juga hal-hal yang menakutkan dan tanda-tanda yang dahsyat dari langit.",
           "R": "Lalu {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Bangsa-bangsa akan saling berperang. Kerajaan-kerajaan akan saling berperang. \\v 11 Akan ada gempa bumi yang kuat. Di banyak tempat orang akan kelaparan dan jatuh sakit. Hal-hal yang mengerikan akan terjadi, dan akan ada tanda-tanda besar di langit."
+        },
+        "zh": {
+          "L": "那时{{deity_pronoun:他|祂}}对他们说：“民族要起来攻击民族，王国要起来攻击王国，\\v 11 并且会有大地震，各处会有饥荒和瘟疫；又会有可怕的事和从天上来的大征兆。",
+          "B": "接着{{deity_pronoun:他|祂}}又对他们说：“一个民族要和另一个民族交战，一个王国要和另一个王国交战。\\v 11 会有强烈的地震，各地会接连发生饥荒和疾病。会有可怕的事发生，天空中也会出现大征兆。",
+          "R": "然后{{deity_pronoun:他|祂}}对他们说：“国家和国家会互相打仗，王国会攻打别的王国。\\v 11 会有强烈的地震。很多地方的人会挨饿，会生病。可怕的事会发生，天空中会出现大征兆。"
         }
       },
       "decisions": [
@@ -3240,6 +3413,11 @@
           "L": "Tetapi sebelum semuanya itu, mereka akan menangkap kalian dan menganiaya [kalian], menyerahkan [kalian] ke sinagoge-sinagoge dan penjara-penjara, [dan kalian akan] dihadapkan kepada raja-raja dan gubernur-gubernur karena nama-{{deity_pronoun:ku|Ku}}.",
           "B": "Tetapi sebelum semua itu terjadi, kalian akan ditangkap dan dianiaya. Kalian akan diserahkan ke sinagoge-sinagoge dan dimasukkan ke dalam penjara, dan kalian akan dihadapkan kepada raja-raja dan gubernur-gubernur karena nama-{{deity_pronoun:ku|Ku}}.",
           "R": "Tetapi sebelum semua ini terjadi, orang-orang akan menangkap kalian dan memperlakukan kalian dengan kejam. Mereka akan membawa kalian ke rumah-rumah ibadat untuk diadili, dan mereka akan memasukkan kalian ke dalam penjara. Mereka akan menyeret kalian ke hadapan raja-raja dan para penguasa, karena kalian mengikut {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "但在这一切以前，他们要下手拿住你们，迫害[你们]，把[你们]交给会堂，关进监狱；[你们]又要因为我的名被带到君王和总督面前。",
+          "B": "然而在这一切发生以前，他们会逮捕你们，迫害你们。他们会把你们交给会堂，送进监狱；你们会为了我的名被带去站在君王和总督面前。",
+          "R": "但在这一切发生以前，人们会抓住你们，残酷地对待你们。他们会把你们带到会堂去受审，又会把你们关进监狱。他们会把你们拖到君王和统治者面前，因为你们跟从我。"
         }
       },
       "decisions": [
@@ -3549,6 +3727,11 @@
           "L": "Hal itu akan menjadi bagi kalian [kesempatan untuk] bersaksi.",
           "B": "Hal itu akan menjadi kesempatan bagi kalian untuk bersaksi.",
           "R": "Itulah kesempatan kalian untuk menceritakan tentang {{deity_pronoun:aku|Aku}} kepada mereka."
+        },
+        "zh": {
+          "L": "这事会成为你们作见证的[机会]。",
+          "B": "这会给你们机会作见证。",
+          "R": "这就是你们把我的事告诉他们的机会。"
         }
       },
       "decisions": [
@@ -3734,6 +3917,11 @@
           "L": "Karena itu, tetapkanlah dalam hati kalian untuk tidak memikirkan lebih dahulu bagaimana kalian akan membela diri, \\v 15 sebab {{deity_pronoun:aku|Aku}} akan memberikan kepada kalian mulut dan hikmat yang tidak dapat ditentang atau dibantah oleh semua lawan kalian.",
           "B": "Karena itu, tetapkanlah dalam hati kalian untuk tidak memikirkan lebih dahulu pembelaan kalian, \\v 15 sebab {{deity_pronoun:aku|Aku}} sendiri akan memberikan kepada kalian kata-kata dan hikmat yang tidak dapat dilawan atau dibantah oleh semua lawan kalian.",
           "R": "Jadi putuskanlah sekarang bahwa kalian tidak akan merencanakan lebih dahulu apa yang akan kalian katakan untuk membela diri. \\v 15 Aku akan memberi kalian kata-kata yang tepat untuk diucapkan. Aku akan membuat kalian bijaksana. Tidak seorang pun dari musuh kalian akan dapat melawan kalian atau membuktikan bahwa kalian salah."
+        },
+        "zh": {
+          "L": "所以你们要在心里定意，不要预先思考怎样申辩，\\v 15 因为我要赐给你们口才和智慧，是一切敌对你们的人都不能抵挡、也不能反驳的。",
+          "B": "所以你们要在心里拿定主意：不要事先准备怎样为自己辩护。\\v 15 我自己要赐给你们当说的话和智慧，你们所有的对手都不能抵挡，也不能反驳。",
+          "R": "所以你们现在就要决定，不要预先计划怎样为自己辩护。\\v 15 我会给你们该说的话。我会使你们有智慧。你们的敌人没有一个能抵挡你们，也没有一个能证明你们错了。"
         }
       },
       "decisions": [
@@ -3959,6 +4147,25 @@
           "reason": "\"A mouth\" means words to speak (m3); Literal keeps the image, Balanced and Readable say \"言葉\". \"わたし自身が\" (B) shows the emphatic pronoun (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021015005"
+          ],
+          "choice": "\"口才\"",
+          "alternatives": [
+            "\"口\""
+          ],
+          "reason": "\"A mouth\" means words to speak; a bare \"口\" is not Chinese for that, so Literal keeps the character in \"口才\" (the gift of speech). Balanced and Readable say \"the words to say\", as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4066,6 +4273,11 @@
           "L": "Dan kalian akan diserahkan bahkan oleh orang tua dan saudara-saudara dan kerabat dan sahabat-sahabat, dan mereka akan membunuh [beberapa] dari antara kalian, \\v 17 dan kalian akan dibenci oleh semua orang karena nama-{{deity_pronoun:ku|Ku}}.",
           "B": "Kalian bahkan akan diserahkan oleh orang tua, saudara-saudara, kaum kerabat, dan sahabat-sahabat kalian, dan beberapa dari kalian akan dibunuh. \\v 17 Kalian akan dibenci semua orang karena nama-{{deity_pronoun:ku|Ku}}.",
           "R": "Bahkan orang tua kalian, saudara-saudara kalian, kerabat kalian, dan teman-teman kalian akan menyerahkan kalian kepada musuh-musuh kalian. Mereka akan membunuh beberapa dari kalian. \\v 17 Semua orang akan membenci kalian karena kalian mengikut {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "你们甚至会被父母、{{gender:兄弟姐妹|兄弟}}、亲属和朋友出卖，他们还要把你们中[有些人]处死；\\v 17 并且你们要因为我的名被所有人憎恨。",
+          "B": "连你们自己的父母、{{gender:兄弟姐妹|兄弟}}、亲属和朋友都会出卖你们，你们当中有些人会被他们杀害。\\v 17 人人都会因我的名而恨你们。",
+          "R": "就连你们的父母、{{gender:兄弟姐妹|兄弟}}、亲戚和朋友，也会把你们交给你们的敌人。他们会杀害你们当中的一些人。\\v 17 所有的人都会因为你们属于我而恨你们。"
         }
       },
       "decisions": [
@@ -4357,6 +4569,27 @@
           "reason": "The word means a person's own brothers and sisters (m2); the inclusive kana spelling \"きょうだい\" is the default, with \"兄弟\" as the alternative, matching the English span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n42021016007"
+          ],
+          "choice": "{{gender:兄弟姐妹|兄弟}}",
+          "alternatives": [
+            "{{gender:弟兄姐妹|弟兄}}"
+          ],
+          "reason": "Here the word means the children of one family, so the family words \"兄弟姐妹\" / \"兄弟\" are used, not the church's \"弟兄姐妹\". 21:17 keeps Mark 13:13's wording, where the Greek is the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4448,6 +4681,11 @@
           "L": "Tetapi tidak sehelai pun rambut kepala kalian akan hilang.",
           "B": "Tetapi tidak sehelai pun rambut di kepala kalian akan hilang.",
           "R": "Tetapi bahkan sehelai rambut di kepala kalian pun tidak akan binasa."
+        },
+        "zh": {
+          "L": "并且你们头上连一根头发也绝不会失去。",
+          "B": "然而，你们头上连一根头发也不会丢失。",
+          "R": "但是，就连你们头上的一根头发也不会被毁掉。"
         }
       },
       "decisions": [
@@ -4618,6 +4856,11 @@
           "L": "Dengan ketekunan kalian, kalian akan memperoleh hidup kalian.",
           "B": "Kalau kalian tetap bertahan, kalian akan memperoleh hidup kalian.",
           "R": "Jangan menyerah! Kalau kalian terus bertahan, kalian akan memperoleh hidup yang sejati."
+        },
+        "zh": {
+          "L": "你们要借着你们的忍耐，得着你们的生命。",
+          "B": "你们要坚持到底，这样就能赢得你们的生命。",
+          "R": "不要放弃！如果你们坚持下去，就会得到真正的生命。"
         }
       },
       "decisions": [
@@ -4982,6 +5225,11 @@
           "L": "Tetapi apabila kalian melihat Yerusalem dikepung oleh tentara-tentara, ketahuilah bahwa kehancurannya sudah dekat.",
           "B": "Apabila kalian melihat Yerusalem dikepung oleh tentara, ketahuilah bahwa kehancurannya sudah dekat.",
           "R": "Suatu hari kalian akan melihat tentara-tentara mengepung Yerusalem. Kalau hal itu terjadi, kalian dapat yakin bahwa kota itu akan segera dihancurkan."
+        },
+        "zh": {
+          "L": "当你们看见耶路撒冷被军队包围，那时就要知道，它的荒凉近了。",
+          "B": "你们一看见耶路撒冷四周有军队扎营，就可以确定，这城很快就要变成废墟了。",
+          "R": "有一天，你们会看见耶路撒冷四周都是军队。那时，你们就可以确定，这城很快就要被毁灭了。"
         }
       },
       "decisions": [
@@ -5205,6 +5453,11 @@
           "L": "Pada waktu itu orang-orang yang di Yudea harus melarikan diri ke pegunungan, dan orang-orang yang di dalam kota harus keluar, dan orang-orang yang di pedesaan jangan masuk ke dalamnya, \\v 22 sebab itulah hari-hari pembalasan, supaya segala sesuatu yang tertulis digenapi.",
           "B": "Pada waktu itu orang-orang di Yudea harus melarikan diri ke pegunungan, orang-orang yang di dalam kota harus mengungsi, dan orang-orang yang di pedesaan jangan masuk ke kota, \\v 22 sebab itulah masa pembalasan, ketika segala sesuatu yang tertulis akan digenapi.",
           "R": "Pada waktu itu orang-orang di Yudea harus lari ke pegunungan. Orang-orang di dalam kota harus meninggalkannya. Orang-orang di pedesaan jangan masuk ke kota. \\v 22 Pada waktu itu Allah akan menghukum kota itu. Semua yang dikatakan Kitab Suci akan terjadi."
+        },
+        "zh": {
+          "L": "那时，在犹太的人要逃到山上；在城里的人要离开；在乡下的人不要进城，\\v 22 因为这是报应的日子，要使经上所写的一切都得以应验。",
+          "B": "那时，在犹太的人应当逃到山区。城里的人应当离开，在田野的人不要再回城里去。\\v 22 因为这些是惩罚的日子，经上所写的一切都要成就。",
+          "R": "那时，住在犹太的人必须逃到山上去。城里的人必须离开那里。在乡下的人不可进城。\\v 22 那时{{god_term:神|上帝}}要惩罚这城。圣经上所说的一切都会发生。"
         }
       },
       "decisions": [
@@ -5565,6 +5818,11 @@
           "L": "Celakalah ibu-ibu yang sedang mengandung atau yang menyusui pada hari-hari itu! Sebab akan datang kesesakan yang dahsyat atas negeri ini dan murka atas bangsa ini, \\v 24 dan mereka akan tewas oleh mata pedang dan dibawa sebagai tawanan ke segala bangsa, dan Yerusalem akan diinjak-injak oleh bangsa-bangsa, sampai genap zaman bangsa-bangsa itu.",
           "B": "Celakalah ibu-ibu yang sedang hamil atau menyusui bayi pada masa itu! Sebab akan terjadi kesesakan yang hebat di seluruh negeri, dan murka akan menimpa bangsa ini. \\v 24 Mereka akan tewas oleh mata pedang dan diangkut sebagai tawanan ke segala bangsa, dan Yerusalem akan diinjak-injak oleh bangsa-bangsa lain sampai genap waktu yang ditentukan bagi mereka.",
           "R": "Celaka sekali perempuan-perempuan yang sedang hamil dan ibu-ibu yang sedang menyusui pada masa itu! Akan terjadi kesusahan besar di negeri ini. Allah akan murka kepada bangsa ini dan menghukum mereka. \\v 24 Sebagian akan dibunuh dengan pedang. Yang lain akan dibawa sebagai tawanan ke semua bangsa. Bangsa-bangsa lain, yaitu orang-orang bukan Yahudi, akan menginjak-injak Yerusalem sampai waktu yang diberikan Allah kepada mereka selesai."
+        },
+        "zh": {
+          "L": "在那些日子里，怀着孕的和正在哺乳的有祸了！因为将有大灾难临到这地，也有愤怒临到这百姓；\\v 24 他们要倒在刀口之下，被掳到万国去；耶路撒冷将受外邦人践踏，直到外邦人的时期届满。",
+          "B": "在那些日子，怀孕的妇女和哺育婴孩的母亲有祸了！这地将有大灾难，这百姓也要遭受愤怒。\\v 24 他们会被刀剑杀倒，被掳到各国去。耶路撒冷会被外邦人践踏，直到外邦人的时期结束。",
+          "R": "那些日子，对怀孕的妇女和正在给婴儿喂奶的母亲来说，会非常艰难。这地将有大灾难。{{god_term:神|上帝}}会向这百姓发怒，惩罚他们。\\v 24 有些人会被刀剑杀死，有些人会被掳到各国去作囚犯。非犹太人会践踏耶路撒冷，直到{{god_term:神|上帝}}给他们的时间结束。"
         }
       },
       "decisions": [
@@ -6050,6 +6308,49 @@
           "reason": "The style guide's word for Gentiles; Readable explains it, as the English Readable does (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021023001"
+          ],
+          "choice": "\"……有祸了\" (L, B); \"……会非常艰难\" (R)",
+          "alternatives": [
+            "\"真是可悲\""
+          ],
+          "reason": "The opening line keeps Mark 13:17's Chinese, where the Greek is the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021024016",
+            "n42021024021"
+          ],
+          "choice": "\"外邦人\" (L, B); \"非犹太人\" (R)",
+          "alternatives": [
+            "\"列国\""
+          ],
+          "reason": "The glossary's word for Gentiles; Readable uses the plain word, as the English Readable explains \"Gentiles\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6170,6 +6471,11 @@
           "L": "Dan akan ada tanda-tanda pada matahari dan bulan dan bintang-bintang, dan di bumi kesesakan bangsa-bangsa, yang kebingungan karena deru laut dan gelombangnya, \\v 26 orang-orang akan pingsan karena ketakutan dan karena menantikan hal-hal yang akan menimpa dunia; sebab kuasa-kuasa langit akan diguncangkan.",
           "B": "Akan ada tanda-tanda pada matahari, bulan, dan bintang-bintang, dan di bumi bangsa-bangsa akan ketakutan dan bingung menghadapi deru dan gelora laut. \\v 26 Orang akan pingsan karena takut menantikan apa yang akan menimpa dunia ini, sebab kuasa-kuasa langit akan diguncangkan.",
           "R": "Hal-hal yang aneh akan terjadi pada matahari, bulan, dan bintang-bintang. Semua itu akan menjadi tanda. Di bumi, bangsa-bangsa akan berada dalam kesusahan besar. Mereka akan bingung dan takut karena laut menderu dan ombaknya menghantam. \\v 26 Orang-orang akan begitu takut sampai mereka hampir pingsan. Mereka akan menunggu dengan takut apa yang akan terjadi pada dunia. Ini terjadi karena kuasa-kuasa di langit akan diguncangkan."
+        },
+        "zh": {
+          "L": "日、月、星辰上将有征兆；地上的列国要困苦，因海和波浪的咆哮而不知所措；\\v 26 人们因恐惧，又因等待那将要临到世界的事，就发昏了，因为诸天的权势都要被摇动。",
+          "B": "日、月、星辰都会出现征兆。地上的各国都会陷入困境，因海浪的咆哮翻腾而不知所措。\\v 26 人们等待着将要临到世界的事，会因恐惧而丧胆，因为天上的各种力量都要被震动。",
+          "R": "太阳、月亮和星星都会发生奇怪的事。这些都是征兆。在地上，各国会陷入极大的困境。海洋咆哮，浪涛翻滚，使他们惊慌失措。\\v 26 人们会害怕得几乎昏倒。他们会恐惧地等待着将要临到世界的事。这是因为天上的各种力量都会被摇动。"
         }
       },
       "decisions": [
@@ -6384,6 +6690,26 @@
           "reason": "As in Mark 13:25 (\"天にある諸力\"): the powers are the heavenly bodies (m3); Readable says \"空\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021026013",
+            "n42021026015"
+          ],
+          "choice": "\"诸天的权势\" (L); \"天上的各种力量\" (B, R)",
+          "alternatives": [],
+          "reason": "The last clause keeps Matthew 24:29's Chinese, where the Greek is the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6481,6 +6807,11 @@
           "L": "Dan pada waktu itu mereka akan melihat Anak Manusia datang dalam awan dengan kuasa dan kemuliaan yang besar.",
           "B": "Pada waktu itu mereka akan melihat Anak Manusia datang dalam awan dengan kuasa dan kemuliaan yang besar.",
           "R": "Pada waktu itu orang-orang akan melihat Anak Manusia datang di dalam awan. Dia akan datang dengan kuasa dan kemuliaan yang besar."
+        },
+        "zh": {
+          "L": "那时，他们要看见人子在云中来临，带着能力和大荣耀。",
+          "B": "那时，人们会看见人子在云中来临，带着能力和大荣耀。",
+          "R": "那时，人们会看见人子在云中来临。人子会带着能力和大荣耀而来。"
         }
       },
       "decisions": [
@@ -6683,6 +7014,27 @@
           "reason": "When Jesus speaks of himself in the third person, the title takes plain singular forms, as settled in Matthew (style guide 7b) and as in Mark 13:26.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021027005",
+            "n42021027006",
+            "n42021027007"
+          ],
+          "choice": "\"人子\"",
+          "alternatives": [],
+          "reason": "Jesus' title, the same at every level (style guide section 7), as Mark 13:26, whose wording this verse keeps where the Greek agrees.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6780,6 +7132,11 @@
           "L": "Dan apabila hal-hal itu mulai terjadi, berdirilah tegak dan angkatlah kepala kalian, sebab penebusan kalian sudah dekat.\"",
           "B": "Apabila semua itu mulai terjadi, bangkitlah dan angkatlah muka kalian, sebab penebusan kalian sudah dekat.\"",
           "R": "Kalau hal-hal ini mulai terjadi, berdirilah tegak dan pandanglah ke atas! Allah akan segera datang untuk membebaskan kalian.\""
+        },
+        "zh": {
+          "L": "这些事一开始发生，你们就要站直，抬起你们的头，因为你们的救赎临近了。”",
+          "B": "这些事一开始发生，你们就要站直身子，抬头仰望，因为你们得救赎的日子快到了。”",
+          "R": "这些事开始发生的时候，你们要站直，抬头看！{{god_term:神|上帝}}很快就要来使你们得自由了。”"
         }
       },
       "decisions": [
@@ -7127,6 +7484,11 @@
           "L": "Dan {{deity_pronoun:dia|Dia}} mengatakan kepada mereka sebuah perumpamaan: \"Perhatikanlah pohon ara dan semua pohon.",
           "B": "Lalu Yesus menyampaikan perumpamaan ini kepada mereka: \"Perhatikanlah pohon ara atau pohon apa saja.",
           "R": "Lalu Yesus menceritakan sebuah perumpamaan kepada mereka, yaitu cerita yang mengandung pelajaran: \"Lihatlah pohon ara dan semua pohon yang lain."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又对他们讲了一个比喻：“你们看无花果树和所有的树。",
+          "B": "耶稣给他们讲了一个比喻：“你们看看无花果树，也看看所有的树。",
+          "R": "然后，耶稣给他们讲了一个比喻，就是一个有教训的故事：“你们看看无花果树和其他所有的树。"
         }
       },
       "decisions": [
@@ -7438,6 +7800,11 @@
           "L": "Apabila pohon-pohon itu sudah bertunas, kalian melihat[nya] dan tahu sendiri bahwa musim panas sudah dekat.",
           "B": "Kalau kalian melihat pohon-pohon itu sudah bertunas, kalian tahu sendiri bahwa musim panas sudah dekat.",
           "R": "Kalau pohon-pohon itu mulai menumbuhkan daun-daun baru, kalian melihatnya, dan kalian tahu bahwa musim panas akan segera tiba."
+        },
+        "zh": {
+          "L": "它们一发芽，你们看见了，自己就知道夏天已经近了。",
+          "B": "它们一长出叶子，你们只要一看，就知道夏天近了。",
+          "R": "它们开始长出新叶子的时候，你们看见了，就知道夏天很快就要到了。"
         }
       },
       "decisions": [
@@ -7654,6 +8021,11 @@
           "L": "Demikian juga kalian, apabila kalian melihat hal-hal itu terjadi, ketahuilah bahwa Kerajaan Allah sudah dekat.",
           "B": "Begitu juga, kalau kalian melihat hal-hal itu terjadi, ketahuilah bahwa Kerajaan Allah sudah dekat.",
           "R": "Begitu juga dengan kalian. Kalau kalian melihat hal-hal itu terjadi, kalian akan tahu bahwa Kerajaan Allah akan segera datang."
+        },
+        "zh": {
+          "L": "同样，你们看见这些事发生，也要知道{{god_term:神|上帝}}的国近了。",
+          "B": "你们也是这样。你们看见这些事发生的时候，就可以确定：{{god_term:神|上帝}}的国近了。",
+          "R": "你们也是一样。你们看见这些事发生的时候，就会知道{{god_term:神|上帝}}的国很快就要来到了。"
         }
       },
       "decisions": [
@@ -7868,6 +8240,11 @@
           "L": "Amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, generasi ini sama sekali tidak akan berlalu sebelum semuanya itu terjadi.",
           "B": "Sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, orang-orang dari generasi ini tidak akan berlalu sebelum semua itu terjadi.",
           "R": "Aku mengatakan yang sebenarnya kepada kalian, orang-orang dari generasi ini tidak akan semuanya mati sebelum semua hal ini terjadi."
+        },
+        "zh": {
+          "L": "阿们，我告诉你们，这个世代绝不会过去，直到这一切都发生。",
+          "B": "我确实告诉你们，这个世代还没有过去，这一切就都会发生。",
+          "R": "我把实话告诉你们：现在活着的人还没有全死去，这一切就都会发生。"
         }
       },
       "decisions": [
@@ -8148,6 +8525,29 @@
           "reason": "The amen formula of the shared Gospel terms; the sentence keeps Mark 13:30's Japanese, with Balanced turning the double negative into a statement as the English Balanced does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n42021032001",
+            "n42021032002",
+            "n42021032003"
+          ],
+          "choice": "\"阿们，我告诉你们\" (L); \"我确实告诉你们\" (B); \"我把实话告诉你们\" (R)",
+          "alternatives": [
+            "\"我实在告诉你们\""
+          ],
+          "reason": "The glossary's formula for amen; the verse keeps Mark 13:30's Chinese, where the Greek is the same. \"世代\" is the generation (genea).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8243,6 +8643,11 @@
           "L": "Langit dan bumi akan berlalu, tetapi perkataan-{{deity_pronoun:ku|Ku}} sama sekali tidak akan berlalu.",
           "B": "Langit dan bumi akan lenyap, tetapi perkataan-{{deity_pronoun:ku|Ku}} tidak akan pernah lenyap.",
           "R": "Langit dan bumi tidak akan bertahan selamanya. Tetapi apa yang {{deity_pronoun:aku|Aku}} katakan akan bertahan selamanya."
+        },
+        "zh": {
+          "L": "天和地将要过去，但我的话绝不会过去。",
+          "B": "天地会消逝，我的话却永不消逝。",
+          "R": "天和地都会有结束的一天，但我的话会永远长存。"
         }
       },
       "decisions": [
@@ -8525,6 +8930,11 @@
           "L": "Tetapi jagalah diri kalian, supaya hati kalian jangan dibebani dengan pesta pora dan kemabukan dan kekhawatiran hidup, dan hari itu datang atas kalian dengan tiba-tiba \\v 35 seperti suatu jerat; sebab hari itu akan menimpa semua orang yang tinggal di seluruh muka bumi.",
           "B": "Jagalah diri kalian, supaya hati kalian jangan sarat dengan pesta pora, kemabukan, dan kekhawatiran hidup, sehingga hari itu datang atas kalian dengan tiba-tiba \\v 35 seperti jerat. Sebab hari itu akan menimpa semua penduduk di seluruh muka bumi.",
           "R": "Hati-hatilah! Jangan biarkan pesta-pesta liar, mabuk-mabukan, atau kekhawatiran tentang hidup ini memenuhi pikiran kalian. Kalau begitu, hari itu akan datang atas kalian ketika kalian tidak menduganya, \\v 35 seperti jerat yang menangkap binatang. Hari itu akan datang kepada semua orang yang tinggal di bumi."
+        },
+        "zh": {
+          "L": "但你们要谨慎自己，免得你们的心被放荡、醉酒和今生的忧虑压住，那日子就突然临到你们，\\v 35 如同陷阱；因为它要临到住在全地面上的所有人。",
+          "B": "你们要警惕，不要让狂欢、醉酒和日常生活的忧虑使你们的心变得迟钝，否则那日子会在你们没有防备的时候临到，\\v 35 就像陷阱突然合上一样。那日子要临到住在地上各处的每一个人。",
+          "R": "你们要小心！不要让狂欢作乐、喝酒过量，或者为今生的事忧虑，占满了你们的心思。如果是那样，那日子会在你们想不到的时候临到你们，\\v 35 就像陷阱捉住动物一样。那日子会临到住在地上的每一个人。"
         }
       },
       "decisions": [
@@ -8858,6 +9268,11 @@
           "L": "Tetapi berjaga-jagalah setiap saat sambil berdoa, supaya kalian mendapat kekuatan untuk luput dari semua yang akan terjadi itu, dan untuk berdiri di hadapan Anak Manusia.\"",
           "B": "Berjaga-jagalah senantiasa sambil berdoa, supaya kalian mendapat kekuatan untuk luput dari semua yang akan terjadi itu dan dapat berdiri di hadapan Anak Manusia.\"",
           "R": "Selalu bersiap-siaplah, dan teruslah berdoa. Berdoalah supaya Allah membuat kalian cukup kuat untuk melewati semua hal yang akan terjadi itu. Berdoalah supaya kalian dapat berdiri di depan Anak Manusia tanpa rasa takut.\""
+        },
+        "zh": {
+          "L": "你们要时时警醒，祈求，使你们有力量逃脱这一切将要发生的事，并且能站在人子面前。”",
+          "B": "你们要时刻守望，要祷告，求能得着力量，平安度过一切将要发生的事，并能站立在人子面前。”",
+          "R": "你们要随时准备好，要不停地祷告。要祷告求{{god_term:神|上帝}}使你们刚强，能够平安度过这一切将要发生的事。要祷告求自己能够站在人子面前，毫无惧怕。”"
         }
       },
       "decisions": [
@@ -9111,6 +9526,11 @@
           "L": "Pada siang hari {{deity_pronoun:dia|Dia}} mengajar di Bait Allah, dan pada malam hari {{deity_pronoun:dia|Dia}} keluar dan bermalam di bukit yang bernama Bukit Zaitun.",
           "B": "Setiap hari Yesus mengajar di Bait Allah, dan setiap malam {{deity_pronoun:dia|Dia}} keluar dan bermalam di bukit yang disebut Bukit Zaitun.",
           "R": "Setiap hari Yesus mengajar di rumah Allah. Setiap malam {{deity_pronoun:dia|Dia}} meninggalkan kota dan bermalam di Bukit Zaitun."
+        },
+        "zh": {
+          "L": "白天{{deity_pronoun:他|祂}}在圣殿里教导人，夜里{{deity_pronoun:他|祂}}出去，在那叫作橄榄山的山上住宿。",
+          "B": "白天耶稣在圣殿里教导人。到了晚上，{{deity_pronoun:他|祂}}就出城，在名叫橄榄山的山上过夜。",
+          "R": "每天，耶稣都在圣殿里教导人。每天晚上，{{deity_pronoun:他|祂}}都离开城，在橄榄山上过夜。"
         }
       },
       "decisions": [
@@ -9323,6 +9743,11 @@
           "L": "Dan seluruh rakyat datang kepada-{{deity_pronoun:nya|Nya}} pagi-pagi benar di Bait Allah untuk mendengarkan-{{deity_pronoun:nya|Nya}}.",
           "B": "Seluruh rakyat datang pagi-pagi ke Bait Allah untuk mendengarkan-{{deity_pronoun:nya|Nya}}.",
           "R": "Semua orang bangun pagi-pagi setiap hari dan datang ke rumah Allah untuk mendengarkan-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "所有的百姓清早都到圣殿里{{deity_pronoun:他|祂}}那里，要听{{deity_pronoun:他|祂}}。",
+          "B": "天一亮，所有的百姓都会到圣殿里{{deity_pronoun:他|祂}}那里来听讲。",
+          "R": "所有的百姓每天一早就起来，到圣殿去听{{deity_pronoun:他|祂}}讲道。"
         }
       },
       "decisions": [

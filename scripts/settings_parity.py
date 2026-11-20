@@ -15,7 +15,8 @@ setting (at any level). A share far below the other languages' median, or
 zero, is an outlier. Some outliers are by design, and the language's style
 brief says why: those are listed in DOCUMENTED with the brief that explains
 them and are reported as documented, not as outliers. Settings only some
-languages have (plural_you, Spanish) are counted but not compared.
+languages have (plural_you, Spanish; god_term, Chinese) are counted but not
+compared.
 
 Parity across levels. A record's levels say the same thing, so a pronoun for
 God that Balanced spans should be spanned at Readable too, where Readable
@@ -42,15 +43,18 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from owb import markup  # noqa: E402
+from owb import languages, markup  # noqa: E402
 
 LEVELS = ("L", "B", "R")
 # Settings whose spans the cross-level check follows.
 LEVEL_SETTINGS = ("deity_pronoun", "christos", "divine_name")
+# Settings only some languages have (data/languages.json): counted, not compared.
+OWN_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
+COMPARED = [s for s in markup.SETTINGS if s not in OWN_SETTINGS]
 # Languages whose words are not separated by spaces, or take particles and
 # suffixes on the same word: their wording is matched as a substring, not as
 # a whole word.
-NO_WORD_BOUNDARY = {"ja", "ko", "am", "hi"}
+NO_WORD_BOUNDARY = {"ja", "zh", "ko", "am", "hi"}
 # A language whose share is below this fraction of the median is an outlier.
 OUTLIER_RATIO = 0.5
 
@@ -213,13 +217,11 @@ def report(records, show_levels=False):
             "",
             "Of the records where the English spans a setting, the share where the",
             "language spans it too.", "",
-            "| lang | " + " | ".join(s for s in markup.SETTINGS if s != "plural_you") + " |",
-            "|---" * len(markup.SETTINGS) + "|"]
+            "| lang | " + " | ".join(COMPARED) + " |",
+            "|---" * (len(COMPARED) + 1) + "|"]
     for lang in langs[1:]:
         cells = []
-        for setting in markup.SETTINGS:
-            if setting == "plural_you":
-                continue
+        for setting in COMPARED:
             total, hit = pairs.get((lang, setting), (0, 0))
             cells.append(f"{hit}/{total} ({hit / total:.0%})" if total else "-")
         out.append(f"| {lang} | " + " | ".join(cells) + " |")
