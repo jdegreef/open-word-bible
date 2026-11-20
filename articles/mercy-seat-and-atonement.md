@@ -52,7 +52,7 @@ The verb behind *kapporet* is *kipper*, usually translated "make atonement". In 
 
 The English word itself has an interesting history. "Atonement" was built from "at one": to make two parties at one, to reconcile them. Tyndale did much to bring it into the English Bible. But what does the Hebrew verb mean? Scholars have offered three main pictures, and the records keep all three in view.
 
-**To cover.** Jacob, afraid of meeting Esau, sends gifts ahead to "cover his face", that is, to appease him, so that he no longer sees the wrong (Genesis 32:21). The meaning decision there notes that the verb "is the one later used for atonement, covering or wiping away an offense." Some Psalms speak of God "covering" sin: "you cover over our rebellions" (Psalm 65:4, Balanced).
+**To cover.** Jacob, afraid of meeting Esau, sends gifts ahead to "cover his face", that is, to appease him, so that he no longer sees the wrong (Genesis 32:20). The meaning decision there notes that the verb "is the one later used for atonement, covering or wiping away an offense." Some Psalms speak of God "covering" sin: "you cover over our rebellions" (Psalm 65:3, Balanced).
 
 **To wipe clean.** Leviticus uses the verb for cleansing the sanctuary itself from the people's impurity (16:16), and it states the purpose plainly:
 
