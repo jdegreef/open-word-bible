@@ -153,8 +153,8 @@ class ArabicFoldTest(unittest.TestCase):
     the others. The site's search.js folds as build_site.fold (and the API's
     search.fold) do."""
     CASES = {
-        "\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f":  # الْكَلِمَةُ: الكلمه
-            "\u0627\u0644\u0643\u0644\u0645\u0647",
+        "\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f":  # الْكَلِمَةُ: الكلمة
+            "\u0627\u0644\u0643\u0644\u0645\u0629",
         "\u0623\u0628\u0631\u0627\u0647\u064a\u0645": "\u0627\u0628\u0631\u0627\u0647\u064a\u0645",  # أبراهيم: ابراهيم
         "\u0625\u0644\u0647 \u0622\u062f\u0645 \u0671\u0644": "\u0627\u0644\u0647 \u0627\u062f\u0645 \u0627\u0644",
         "\u0645\u0648\u0633\u0649": "\u0645\u0648\u0633\u064a",  # موسى: alef maqsura as yeh
