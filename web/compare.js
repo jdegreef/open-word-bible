@@ -131,10 +131,20 @@
     if (level) meta.appendChild(el("span", "cmp-levels", " · " + level));
     if (d.uncertain) meta.appendChild(el("span", "badge unc", UI.uncertain));
     c.appendChild(meta);
-    c.appendChild(el("h3", "cmp-choice", render(d.choice)));
-    if (d.alternatives && d.alternatives.length)
-      c.appendChild(el("p", "cmp-also", UI.also + d.alternatives.map(render).join("; ")));
-    c.appendChild(el("p", "cmp-reason", render(d.reason)));
+    // Decisions are written in English: on another language's page their
+    // words are tagged lang="en", so they read left to right on a
+    // right-to-left page (web/site.js gives them their dir) and a screen
+    // reader voices them in English. The labels around them are the page's.
+    var english = DATA.lang !== "en";
+    var choice = c.appendChild(el("h3", "cmp-choice", render(d.choice)));
+    if (english) choice.lang = "en";
+    if (d.alternatives && d.alternatives.length) {
+      var also = c.appendChild(el("p", "cmp-also", UI.also));
+      var alts = also.appendChild(el("span", null, d.alternatives.map(render).join("; ")));
+      if (english) alts.lang = "en";
+    }
+    var reason = c.appendChild(el("p", "cmp-reason", render(d.reason)));
+    if (english) reason.lang = "en";
     return c;
   }
 
