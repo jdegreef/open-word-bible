@@ -1109,7 +1109,7 @@ def describe(word, lang):
 # or English's where a sentence is not in it yet (text_lang). Every other
 # language keeps an empty entry, so a record still says which languages it
 # is in (passages_in, languages_label).
-SEARCH_DECISION_KEYS = ("layer", "language", "category", "choice", "alternatives", "reason")
+SEARCH_DECISION_KEYS = ("id", "layer", "language", "category", "choice", "alternatives", "reason")
 SEARCH_ONLY = False
 SEARCH_LANG = None
 
