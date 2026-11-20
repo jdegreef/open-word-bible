@@ -43,9 +43,9 @@ from owb import refs, versification  # noqa: E402
 
 NBSP = " "
 # A sentence's end, as tests/test_site.py checks a verse of the day's.
-ENDS = re.compile("[.?!።।。？！](?:[”’»」』]{1,2}|" + NBSP + "»)?$")
+ENDS = re.compile("[.?!።।。？！؟](?:[”’»」』]{1,2}|" + NBSP + "»)?$")
 # The sentence before may also close a bracketed passage (John 8:11).
-ENDED = re.compile("[.?!።।。？！](?:[”’»」』]{1,2}|" + NBSP + r"»)?[\])]?$")
+ENDED = re.compile("[.?!።।。？！؟](?:[”’»」』]{1,2}|" + NBSP + r"»)?[\])]?$")
 # Words that tie a sentence to the one before it, by language (lower case,
 # matched at the start after any opening quotation mark).
 LEANS = {

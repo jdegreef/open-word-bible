@@ -11,9 +11,9 @@ Matching follows the language of each document's own text, not the
 site's: notes are written in English, and a sentence not yet translated is
 shown, and found, in English. Each language has a text search
 configuration that removes accents and then stems (migrations 0003 and
-0009, 0010, 0012): owb_english, owb_spanish, owb_french, owb_portuguese,
-owb_russian, owb_indonesian, and owb_simple for languages Postgres has no
-stemmer for. Every entry is also
+0009, 0010, 0012, 0016): owb_english, owb_spanish, owb_french,
+owb_portuguese, owb_russian, owb_indonesian, owb_arabic, and owb_simple for
+languages Postgres has no stemmer for. Every entry is also
 indexed word for word (owb_simple, the lowest weight), so words a stemmer
 drops ("I am") or shortens ("runn" while typing "running") still match. A
 query word matches an entry in its stemmed forms, in the entry's own
@@ -53,7 +53,8 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
 CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese",
-           "ru": "owb_russian", "ja": "owb_cjk", "id": "owb_indonesian", "zh": "owb_cjk"}
+           "ru": "owb_russian", "ja": "owb_cjk", "id": "owb_indonesian", "zh": "owb_cjk",
+           "ar": "owb_arabic"}
 SIMPLE = "owb_simple"
 # Entries in languages written without spaces between words: indexed and
 # queried by character bigrams (ngrams).
@@ -107,6 +108,23 @@ KANA_MARKS = {0x3099, 0x309A}
 WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
 
 
+# Arabic script, as Arabic and Persian are typed: the short vowels and other
+# marks (harakat, which fold removes with every combining mark) and the
+# tatweel stretching a word dropped; alef with hamza or madda and alef wasla
+# as alef, the hamza seats waw and yeh as their letters, alef maqsura and the
+# Persian yeh (ی) as yeh (ي), the Persian keheh (ک) as kaf (ك); Arabic-Indic
+# and Persian digits as ASCII. A word written either way then finds the
+# other. Teh marbuta (ة) stays: the Arabic stemmer takes it off a word
+# (كلمة, الكلمة: كلم) but leaves a heh after the article (الكلمه: كلمه).
+# The site's search.js and build_site.fold do the same.
+ARABIC = {0x0640: None, 0x0670: None, **dict.fromkeys(range(0x064B, 0x0660)),
+          0x0622: 0x0627, 0x0623: 0x0627, 0x0625: 0x0627, 0x0671: 0x0627, 0x0624: 0x0648,
+          0x0626: 0x064A, 0x0649: 0x064A, 0x06CC: 0x064A, 0x06A9: 0x0643,
+          **{0x0660 + i: 0x30 + i for i in range(10)},
+          **{0x06F0 + i: 0x30 + i for i in range(10)}}
+ARABIC_LETTER = re.compile("[\u0600-\u06ff\u0750-\u077f\u0870-\u08ff]")
+
+
 @functools.cache
 def _marks():
     """Every combining mark but the kana voicing marks, for str.translate to remove."""
@@ -121,7 +139,7 @@ def fold(text):
     # character, as Postgres indexes it (NFD splits it into its letters).
     text = unicodedata.normalize("NFC", unicodedata.normalize("NFD", text.translate(WIDE).lower())
                                  .translate(_marks()))
-    text = text.replace("\u0111", "d")   # Vietnamese đ, as unaccent does
+    text = text.replace("\u0111", "d").translate(ARABIC)   # Vietnamese đ, as unaccent does
     return re.sub("[‘’ʼ]", "'", re.sub("[“”«»]", '"', text))
 
 
@@ -198,10 +216,13 @@ def readings(levels):
 
 
 def indexed(config_name, doc_fields, doc=None):
-    """The text each field is indexed as: its bigrams for owb_cjk, else None
-    (the field itself). A sentence's body is indexed from its readings."""
+    """The text each field is indexed as: its bigrams for owb_cjk; a field in
+    Arabic script folded as fold folds a query (Postgres's unaccent leaves
+    its marks and letters as they are); else None (the field itself). A
+    sentence's body is indexed from its readings for owb_cjk."""
     if config_name != CJK:
-        return None, None, None
+        return tuple(f.translate(ARABIC) if f and ARABIC_LETTER.search(f) else None
+                     for f in doc_fields)
     if doc is not None and doc["k"] == "v":
         doc_fields = (*doc_fields[:2], readings(doc["x"]))
     return tuple(ngrams(f) for f in doc_fields)
