@@ -322,3 +322,12 @@ Names and terms a drafter added, in the book where they first appear.
 | Ruth | Mara | *مُرّة* | The pun on *نعمي* ("pleasant"): a footnote gives the meanings (Ruth 1:20). The damma keeps it from reading *مرّة* "once". |
 | Ruth | Ephrathites | *أفراتيّون* | |
 | Ruth | the man's name not given ("such-and-such", *peloni almoni*) | *يا فلان* | Ruth 4:1. |
+| Ruth | sister-in-law (husband's brother's wife) | *سِلفة* (L, B); *زوجة أخي زوجك* (R) | Ruth 1:15. |
+| Ruth | redeem (the kinsman's act for a person) | *قام بحقّ الوليّ* | Ruth 3:13; *افتدى* is kept for God. |
+| Ruth | redeem (buy back land); right of redemption | *فكّ*; *حقّ الفكاك* | Ruth 4:4-7, Leviticus 25. |
+| Ruth | elders (of a town) | *الشيوخ* (L, B); *الوجهاء* (R) | Ruth 4:2. |
+| Ruth | roasted grain | *فريك* (L); *حبوب محمّصة* (B, R) | Ruth 2:14. |
+| Ruth | sour wine (a dip) | *الخلّ* (L); *النبيذ الحامض* (B, R) | Ruth 2:14. |
+| Ruth | a woman of worth | *امرأة فاضلة* | Ruth 3:11; also Proverbs 31:10. |
+| Ruth | Hezron; Ram; Amminadab; Nahshon | *حصرون*; *رام*; *عمّيناداب*; *نحشون* | Ruth 4:19-20. |
+| Ruth | Salmah; Salmon | *سلمى* (Literal, 4:20); *سلمون* | Ruth 4:20-21. |
