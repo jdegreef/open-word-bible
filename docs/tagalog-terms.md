@@ -471,3 +471,341 @@ names the book where the form was first used.
 
 | Book | English | Tagalog | Notes |
 |---|---|---|---|
+| Genesis 2:11 | Pishon | Pishon |  |
+| Genesis 2:11 | Havilah | Havilah |  |
+| Genesis 2:13 | Gihon | Gihon |  |
+| Genesis 4:16 | Nod | Nod |  |
+| Genesis 4:18 | Irad | Irad |  |
+| Genesis 4:18 | Mehujael | Mehujael |  |
+| Genesis 4:18 | Methushael | Metushael | th > t (style §6, rule 4) |
+| Genesis 4:19 | Adah | Adah |  |
+| Genesis 4:19 | Zillah | Zillah |  |
+| Genesis 4:20 | Jabal | Jabal |  |
+| Genesis 4:21 | Jubal | Jubal |  |
+| Genesis 4:22 | Tubal-cain | Tubal-cain |  |
+| Genesis 4:22 | Naamah | Naamah |  |
+| Genesis 4:26 | Enosh | Enos | established form, also used in Luke 3:38 (rule 5) |
+| Genesis 5:9 | Kenan | Kenan |  |
+| Genesis 5:12 | Mahalalel | Mahalalel |  |
+| Genesis 5:15 | Jared | Jared |  |
+| Genesis 6:4 | Nephilim | Nefilim | ph > f (style §6, rule 4) |
+| Genesis 8:4 | Ararat | Ararat |  |
+| Genesis 10:2 | Magog | Magog |  |
+| Genesis 10:2 | Madai | Madai |  |
+| Genesis 10:2 | Javan | Javan |  |
+| Genesis 10:2 | Tubal | Tubal |  |
+| Genesis 10:2 | Meshech | Meshek | ch > k (style §6, rule 4) |
+| Genesis 10:2 | Tiras | Tiras |  |
+| Genesis 10:3 | Ashkenaz | Ashkenaz |  |
+| Genesis 10:3 | Riphath | Rifat | ph > f (style §6, rule 4) |
+| Genesis 10:3 | Togarmah | Togarmah |  |
+| Genesis 10:4 | Elishah | Elishah |  |
+| Genesis 10:4 | Kittim | Kittim |  |
+| Genesis 10:4 | Dodanim | Dodanim |  |
+| Genesis 10:6 | Mizraim | Mizraim |  |
+| Genesis 10:6 | Put | Put |  |
+| Genesis 10:7 | Seba | Seba |  |
+| Genesis 10:7 | Sabtah | Sabtah |  |
+| Genesis 10:7 | Raamah | Raamah |  |
+| Genesis 10:7 | Sabteca | Sabteca |  |
+| Genesis 10:7 | Dedan | Dedan |  |
+| Genesis 10:10 | Erech | Erek | ch > k (style §6, rule 4) |
+| Genesis 10:10 | Akkad | Akkad |  |
+| Genesis 10:10 | Calneh | Calneh |  |
+| Genesis 10:10 | Shinar | Shinar |  |
+| Genesis 10:11 | Rehoboth | Rehobot-Ir | th > t (style §6, rule 4) |
+| Genesis 10:11 | Calah | Calah |  |
+| Genesis 10:12 | Resen | Resen |  |
+| Genesis 10:13 | Ludites | Ludita | people name in -ita |
+| Genesis 10:13 | Anamites | Anamita | people name in -ita |
+| Genesis 10:13 | Lehabites | Lehabita | people name in -ita |
+| Genesis 10:13 | Naphtuhites | Naftuhita | ph > f (style §6, rule 4) |
+| Genesis 10:14 | Pathrusites | Patrusita | th > t (style §6, rule 4) |
+| Genesis 10:14 | Casluhites | Casluhita | people name in -ita |
+| Genesis 10:14 | Caphtorites | Caftorita | ph > f (style §6, rule 4) |
+| Genesis 10:15 | Heth | Het | th > t (style §6, rule 4) |
+| Genesis 10:17 | Arkites | Arkita | people name in -ita |
+| Genesis 10:17 | Sinites | Sinita | people name in -ita |
+| Genesis 10:18 | Arvadites | Arvadita | people name in -ita |
+| Genesis 10:18 | Zemarites | Zemarita | people name in -ita |
+| Genesis 10:18 | Hamathites | Hamatita | th > t (style §6, rule 4) |
+| Genesis 10:19 | Gerar | Gerar |  |
+| Genesis 10:19 | Admah | Admah |  |
+| Genesis 10:19 | Zeboiim | Zeboiim |  |
+| Genesis 10:19 | Lasha | Lasha |  |
+| Genesis 10:21 | Eber | Eber |  |
+| Genesis 10:22 | Elam | Elam |  |
+| Genesis 10:22 | Asshur | Ashur |  |
+| Genesis 10:22 | Arpachshad | Arpakshad | ch > k (style §6, rule 4) |
+| Genesis 10:22 | Lud | Lud |  |
+| Genesis 10:23 | Uz | Uz |  |
+| Genesis 10:23 | Hul | Hul |  |
+| Genesis 10:23 | Gether | Geter | th > t (style §6, rule 4) |
+| Genesis 10:23 | Mash | Mash |  |
+| Genesis 10:24 | Shelah | Shelah |  |
+| Genesis 10:25 | Peleg | Peleg |  |
+| Genesis 10:25 | Joktan | Joktan |  |
+| Genesis 10:26 | Almodad | Almodad |  |
+| Genesis 10:26 | Sheleph | Shelef | ph > f (style §6, rule 4) |
+| Genesis 10:26 | Hazarmaveth | Hazarmavet | th > t (style §6, rule 4) |
+| Genesis 10:26 | Jerah | Jerah |  |
+| Genesis 10:27 | Uzal | Uzal |  |
+| Genesis 10:27 | Diklah | Diklah |  |
+| Genesis 10:27 | Hadoram | Hadoram |  |
+| Genesis 10:28 | Abimael | Abimael |  |
+| Genesis 10:28 | Obal | Obal |  |
+| Genesis 10:29 | Jobab | Jobab |  |
+| Genesis 10:30 | Mesha | Mesha |  |
+| Genesis 10:30 | Sephar | Sefar | ph > f (style §6, rule 4) |
+| Genesis 11:18 | Reu | Reu |  |
+| Genesis 11:20 | Serug | Serug |  |
+| Genesis 11:22 | Nahor | Nahor |  |
+| Genesis 11:29 | Milcah | Milcah |  |
+| Genesis 11:29 | Iscah | Iscah |  |
+| Genesis 12:6 | Moreh | Moreh |  |
+| Genesis 12:9 | Negev | Negev |  |
+| Genesis 13:10 | Zoar | Zoar |  |
+| Genesis 13:18 | Mamre | Mamre |  |
+| Genesis 14:1 | Amraphel | Amrafel | ph > f (style §6, rule 4) |
+| Genesis 14:1 | Arioch | Ariok | ch > k (style §6, rule 4) |
+| Genesis 14:1 | Ellasar | Ellasar |  |
+| Genesis 14:1 | Kedorlaomer | Kedorlaomer |  |
+| Genesis 14:1 | Tidal | Tidal |  |
+| Genesis 14:1 | Goyim | Goyim |  |
+| Genesis 14:2 | Bera | Bera |  |
+| Genesis 14:2 | Birsha | Birsha |  |
+| Genesis 14:2 | Shinab | Shinab |  |
+| Genesis 14:2 | Shemeber | Shemeber |  |
+| Genesis 14:2 | Bela | Bela |  |
+| Genesis 14:3 | Siddim | Siddim |  |
+| Genesis 14:5 | Rephaites | Refaita | ph > f (style §6, rule 4) |
+| Genesis 14:5 | Ashteroth-karnaim | Ashterot-karnaim | th > t (style §6, rule 4) |
+| Genesis 14:5 | Zuzites | Zuzita | people name in -ita |
+| Genesis 14:5 | Emites | Emita | people name in -ita |
+| Genesis 14:5 | Shaveh-kiriathaim | Shaveh-kiriataim | th > t (style §6, rule 4) |
+| Genesis 14:6 | Horites | Horeo | like the glossary peoples in -eo |
+| Genesis 14:6 | Seir | Seir |  |
+| Genesis 14:6 | El-paran | El-paran |  |
+| Genesis 14:7 | En-mishpat | En-mishpat |  |
+| Genesis 14:7 | Hazazon-tamar | Hazazon-tamar |  |
+| Genesis 14:13 | Eshcol | Eshcol |  |
+| Genesis 14:13 | Aner | Aner |  |
+| Genesis 14:15 | Hobah | Hobah |  |
+| Genesis 14:17 | Shaveh | Shaveh |  |
+| Genesis 14:18 | Salem | Salem |  |
+| Genesis 15:2 | Eliezer | Eliezer |  |
+| Genesis 15:19 | Kenites | Kenita | people name in -ita |
+| Genesis 15:19 | Kenizzites | Kenizita | people name in -ita |
+| Genesis 15:19 | Kadmonites | Kadmonita | people name in -ita |
+| Genesis 16:1 | Egyptian (woman) | Egipcia |  |
+| Genesis 16:7 | Shur | Shur |  |
+| Genesis 16:14 | Beer-lahai-roi | Beer-lahai-roi |  |
+| Genesis 16:14 | Bered | Bered |  |
+| Genesis 19:38 | Ben-ammi | Ben-ammi |  |
+| Genesis 20:2 | Abimelech | Abimelec |  |
+| Genesis 21:22 | Phicol | Ficol |  |
+| Genesis 22:21 | Buz | Buz |  |
+| Genesis 22:21 | Kemuel | Kemuel |  |
+| Genesis 22:22 | Chesed | Kesed | ch > k (style §6, rule 4) |
+| Genesis 22:22 | Hazo | Hazo |  |
+| Genesis 22:22 | Pildash | Pildash |  |
+| Genesis 22:22 | Jidlaph | Jidlaf | ph > f (style §6, rule 4) |
+| Genesis 22:22 | Bethuel | Betuel | th > t (style §6, rule 4) |
+| Genesis 22:24 | Reumah | Reumah |  |
+| Genesis 22:24 | Tebah | Tebah |  |
+| Genesis 22:24 | Gaham | Gaham |  |
+| Genesis 22:24 | Tahash | Tahash |  |
+| Genesis 22:24 | Maacah | Maacah |  |
+| Genesis 23:2 | Kiriath-arba | Kiriat-arba | th > t (style §6, rule 4) |
+| Genesis 23:8 | Ephron | Efron | ph > f (style §6, rule 4) |
+| Genesis 23:8 | Zohar | Zohar |  |
+| Genesis 23:9 | Machpelah | Macpela |  |
+| Genesis 24:10 | Aram-naharaim | Aram-naharaim |  |
+| Genesis 24:10 | Mesopotamia | Mesopotamia |  |
+| Genesis 25:1 | Keturah | Keturah |  |
+| Genesis 25:2 | Zimran | Zimran |  |
+| Genesis 25:2 | Jokshan | Jokshan |  |
+| Genesis 25:2 | Medan | Medan |  |
+| Genesis 25:2 | Midian | Midian |  |
+| Genesis 25:2 | Ishbak | Ishbak |  |
+| Genesis 25:2 | Shuah | Shuah |  |
+| Genesis 25:3 | Asshurim | Asshurim |  |
+| Genesis 25:3 | Letushim | Letushim |  |
+| Genesis 25:3 | Leummim | Leummim |  |
+| Genesis 25:3 | Asshurite | Asshurita | people name in -ita |
+| Genesis 25:3 | Letushite | Letushita | people name in -ita |
+| Genesis 25:3 | Leummite | Leummita | people name in -ita |
+| Genesis 25:4 | Ephah | Efah | ph > f (style §6, rule 4) |
+| Genesis 25:4 | Epher | Efer | ph > f (style §6, rule 4) |
+| Genesis 25:4 | Hanoch | Hanok | ch > k (style §6, rule 4) |
+| Genesis 25:4 | Abida | Abida |  |
+| Genesis 25:4 | Eldaah | Eldaah |  |
+| Genesis 25:13 | Nebaioth | Nebaiot | th > t (style §6, rule 4) |
+| Genesis 25:13 | Kedar | Kedar |  |
+| Genesis 25:13 | Adbeel | Adbeel |  |
+| Genesis 25:13 | Mibsam | Mibsam |  |
+| Genesis 25:14 | Mishma | Mishma |  |
+| Genesis 25:14 | Dumah | Dumah |  |
+| Genesis 25:14 | Massa | Massa |  |
+| Genesis 25:15 | Tema | Tema |  |
+| Genesis 25:15 | Jetur | Jetur |  |
+| Genesis 25:15 | Naphish | Nafish | ph > f (style §6, rule 4) |
+| Genesis 25:15 | Kedemah | Kedemah |  |
+| Genesis 26:20 | Esek | Esek |  |
+| Genesis 26:21 | Sitnah | Sitnah |  |
+| Genesis 26:22 | Rehoboth | Rehobot | th > t (style §6, rule 4) |
+| Genesis 26:26 | Ahuzzath | Ahuzzat | th > t (style §6, rule 4) |
+| Genesis 26:33 | Shibah | Shibah |  |
+| Genesis 26:34 | Judith | Judit | th > t (style §6, rule 4) |
+| Genesis 26:34 | Beeri | Beeri |  |
+| Genesis 26:34 | Basemath | Basemat | th > t (style §6, rule 4) |
+| Genesis 26:34 | Elon | Elon |  |
+| Genesis 28:2 | Paddan-aram | Padan-aram |  |
+| Genesis 28:9 | Mahalath | Mahalat | th > t (style §6, rule 4) |
+| Genesis 28:19 | Luz | Luz |  |
+| Genesis 29:24 | Zilpah | Zilpa |  |
+| Genesis 29:29 | Bilhah | Bilha |  |
+| Genesis 31:47 | Jegar-sahadutha | Jegar-sahaduta | th > t (style §6, rule 4) |
+| Genesis 31:47 | Galeed | Galeed |  |
+| Genesis 31:49 | Mizpah | Mizpa |  |
+| Genesis 32:3 | Mahanaim | Mahanaim |  |
+| Genesis 32:23 | Jabbok | Jaboc |  |
+| Genesis 32:31 | Peniel | Peniel |  |
+| Genesis 32:32 | Penuel | Penuel |  |
+| Genesis 33:17 | Succoth | Sucot | th > t (style §6, rule 4) |
+| Genesis 33:19 | Hamor | Hamor |  |
+| Genesis 33:20 | El-Elohe-Israel | El-Elohe-Israel |  |
+| Genesis 35:7 | El-bethel | El-Betel | th > t (style §6, rule 4) |
+| Genesis 35:8 | Allon-bacuth | Allon-bacut | th > t (style §6, rule 4) |
+| Genesis 35:16 | Ephrath | Efrata | ph > f (style §6, rule 4) |
+| Genesis 35:18 | Ben-oni | Ben-oni |  |
+| Genesis 35:21 | Migdal-eder | Migdal-eder |  |
+| Genesis 36:2 | Oholibamah | Oholibamah |  |
+| Genesis 36:2 | Anah | Anah |  |
+| Genesis 36:2 | Zibeon | Zibeon |  |
+| Genesis 36:4 | Reuel | Reuel |  |
+| Genesis 36:5 | Jeush | Jeush |  |
+| Genesis 36:5 | Jalam | Jalam |  |
+| Genesis 36:11 | Teman | Teman |  |
+| Genesis 36:11 | Omar | Omar |  |
+| Genesis 36:11 | Zepho | Zefo | ph > f (style §6, rule 4) |
+| Genesis 36:11 | Gatam | Gatam |  |
+| Genesis 36:11 | Kenaz | Kenaz |  |
+| Genesis 36:12 | Timna | Timna |  |
+| Genesis 36:12 | Amalek | Amalek |  |
+| Genesis 36:13 | Nahath | Nahat | th > t (style §6, rule 4) |
+| Genesis 36:13 | Zerah | Zerah |  |
+| Genesis 36:13 | Shammah | Shammah |  |
+| Genesis 36:13 | Mizzah | Mizzah |  |
+| Genesis 36:20 | Lotan | Lotan |  |
+| Genesis 36:20 | Shobal | Shobal |  |
+| Genesis 36:21 | Ezer | Ezer |  |
+| Genesis 36:21 | Dishan | Dishan |  |
+| Genesis 36:22 | Hori | Hori |  |
+| Genesis 36:22 | Hemam | Hemam |  |
+| Genesis 36:23 | Alvan | Alvan |  |
+| Genesis 36:23 | Manahath | Manahat | th > t (style §6, rule 4) |
+| Genesis 36:23 | Ebal | Ebal |  |
+| Genesis 36:23 | Shepho | Shefo | ph > f (style §6, rule 4) |
+| Genesis 36:23 | Onam | Onam |  |
+| Genesis 36:24 | Aiah | Aiah |  |
+| Genesis 36:25 | Dishon | Dishon |  |
+| Genesis 36:26 | Hemdan | Hemdan |  |
+| Genesis 36:26 | Eshban | Eshban |  |
+| Genesis 36:26 | Ithran | Itran | th > t (style §6, rule 4) |
+| Genesis 36:26 | Cheran | Keran | ch > k (style §6, rule 4) |
+| Genesis 36:27 | Bilhan | Bilhan |  |
+| Genesis 36:27 | Zaavan | Zaavan |  |
+| Genesis 36:27 | Akan | Akan |  |
+| Genesis 36:28 | Aran | Aran |  |
+| Genesis 36:32 | Beor | Beor |  |
+| Genesis 36:32 | Dinhabah | Dinhabah |  |
+| Genesis 36:34 | Husham | Husham |  |
+| Genesis 36:34 | Temanites | Temanita | people name in -ita |
+| Genesis 36:35 | Hadad | Hadad |  |
+| Genesis 36:35 | Bedad | Bedad |  |
+| Genesis 36:35 | Avith | Avit | th > t (style §6, rule 4) |
+| Genesis 36:36 | Samlah | Samlah |  |
+| Genesis 36:38 | Baal-hanan | Baal-hanan |  |
+| Genesis 36:38 | Achbor | Acbor |  |
+| Genesis 36:39 | Hadar | Hadar |  |
+| Genesis 36:39 | Pau | Pau |  |
+| Genesis 36:39 | Mehetabel | Mehetabel |  |
+| Genesis 36:39 | Matred | Matred |  |
+| Genesis 36:39 | Mezahab | Mezahab |  |
+| Genesis 36:40 | Alvah | Alvah |  |
+| Genesis 36:40 | Jetheth | Jetet | th > t (style §6, rule 4) |
+| Genesis 36:41 | Elah | Elah |  |
+| Genesis 36:41 | Pinon | Pinon |  |
+| Genesis 36:42 | Mibzar | Mibzar |  |
+| Genesis 36:43 | Magdiel | Magdiel |  |
+| Genesis 36:43 | Iram | Iram |  |
+| Genesis 37:17 | Dothan | Dotan | th > t (style §6, rule 4) |
+| Genesis 37:25 | Ishmaelite | Ismaelita | people name in -ita |
+| Genesis 37:36 | Medanites | Medanita | people name in -ita |
+| Genesis 38:1 | Adullamite | Adulamita | people name in -ita |
+| Genesis 38:1 | Hirah | Hirah |  |
+| Genesis 38:1 | Adullam | Adulam |  |
+| Genesis 38:2 | Shua | Shua |  |
+| Genesis 38:3 | Er | Er |  |
+| Genesis 38:4 | Onan | Onan |  |
+| Genesis 38:5 | Kezib | Kezib |  |
+| Genesis 38:12 | Timnah | Timnah |  |
+| Genesis 38:14 | Enaim | Enaim |  |
+| Genesis 38:29 | Perez | Perez |  |
+| Genesis 41:45 | Zaphenath-paneah | Zafenat-paneah | ph > f (style §6, rule 4) |
+| Genesis 41:45 | Asenath | Asenat | th > t (style §6, rule 4) |
+| Genesis 41:45 | Potiphera | Potifera | ph > f (style §6, rule 4) |
+| Genesis 41:45 | On | On |  |
+| Genesis 46:9 | Pallu | Falu |  |
+| Genesis 46:9 | Hezron | Hezron |  |
+| Genesis 46:9 | Carmi | Carmi |  |
+| Genesis 46:10 | Jemuel | Jemuel |  |
+| Genesis 46:10 | Jamin | Jamin |  |
+| Genesis 46:10 | Ohad | Ohad |  |
+| Genesis 46:10 | Jachin | Jakin | ch > k (style §6, rule 4) |
+| Genesis 46:10 | Shaul | Shaul |  |
+| Genesis 46:11 | Gershon | Gershon |  |
+| Genesis 46:11 | Kohath | Kohat | th > t (style §6, rule 4) |
+| Genesis 46:11 | Merari | Merari |  |
+| Genesis 46:12 | Hamul | Hamul |  |
+| Genesis 46:13 | Tola | Tola |  |
+| Genesis 46:13 | Puvah | Puvah |  |
+| Genesis 46:13 | Iob | Iob |  |
+| Genesis 46:13 | Shimron | Shimron |  |
+| Genesis 46:14 | Sered | Sered |  |
+| Genesis 46:14 | Jahleel | Jahleel |  |
+| Genesis 46:16 | Ziphion | Zifion | ph > f (style §6, rule 4) |
+| Genesis 46:16 | Haggi | Haggi |  |
+| Genesis 46:16 | Shuni | Shuni |  |
+| Genesis 46:16 | Ezbon | Ezbon |  |
+| Genesis 46:16 | Eri | Eri |  |
+| Genesis 46:16 | Arodi | Arodi |  |
+| Genesis 46:16 | Areli | Areli |  |
+| Genesis 46:17 | Imnah | Imnah |  |
+| Genesis 46:17 | Ishvah | Ishvah |  |
+| Genesis 46:17 | Ishvi | Ishvi |  |
+| Genesis 46:17 | Beriah | Beriah |  |
+| Genesis 46:17 | Serah | Serah |  |
+| Genesis 46:17 | Heber | Heber |  |
+| Genesis 46:17 | Malkiel | Malkiel |  |
+| Genesis 46:21 | Becher | Beker | ch > k (style §6, rule 4) |
+| Genesis 46:21 | Ashbel | Ashbel |  |
+| Genesis 46:21 | Gera | Gera |  |
+| Genesis 46:21 | Ehi | Ehi |  |
+| Genesis 46:21 | Rosh | Rosh |  |
+| Genesis 46:21 | Muppim | Muppim |  |
+| Genesis 46:21 | Huppim | Huppim |  |
+| Genesis 46:21 | Ard | Ard |  |
+| Genesis 46:23 | Hushim | Hushim |  |
+| Genesis 46:24 | Jahzeel | Jahzeel |  |
+| Genesis 46:24 | Guni | Guni |  |
+| Genesis 46:24 | Jezer | Jezer |  |
+| Genesis 46:24 | Shillem | Shillem |  |
+| Genesis 47:11 | Rameses | Rameses |  |
+| Genesis 48:7 | Paddan | Padan |  |
+| Genesis 49:11 | Binding | Magiging |  |
+| Genesis 49:21 | Naphtali | Nagsasalita |  |
+| Genesis 50:10 | Atad | Atad |  |
+| Genesis 50:11 | Abel-mizraim | Abel-mizraim |  |
+| Genesis 50:23 | Machir | Makir | ch > k (style §6, rule 4) |
