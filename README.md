@@ -2,8 +2,8 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian and
-Chinese (Simplified).
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian,
+Chinese (Simplified) and Persian.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -52,8 +52,8 @@ Russian, Ukrainian, Japanese, Indonesian and Chinese (Simplified).
 `docs/hindi-terms.md`, `docs/russian-terms.md`, `docs/indonesian-terms.md`
 and `docs/chinese-terms.md` are the Hindi, Russian, Indonesian and Chinese
 glossaries, Genesis to Revelation. `docs/persian-style.md` and
-`docs/persian-terms.md` are the proposed brief and glossary for Persian,
-not yet a reading language. `docs/hindi-review-guide.md` and
+`docs/persian-terms.md` are the brief and glossary for Persian, the first
+reading language written right to left. `docs/hindi-review-guide.md` and
 `docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists

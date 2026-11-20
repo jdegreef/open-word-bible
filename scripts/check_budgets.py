@@ -61,9 +61,10 @@ BUDGETS = {
     # 2026-11-14 with Indonesian as the thirteenth site language and
     # footnotes in every reader language; 3,579 MB on 2026-11-19 with
     # Chinese (Simplified) as the fourteenth, its folder about 95 MB before
-    # any Chinese text is drafted].
+    # any Chinese text is drafted; plus about 130 MB on 2026-11-20 for
+    # Persian's folder, before any Persian text is drafted].
     # Grows with each book translated and each language added.
-    "site_total": 3700 * MB,
+    "site_total": 3830 * MB,
 }
 
 

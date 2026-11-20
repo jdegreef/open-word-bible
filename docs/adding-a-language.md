@@ -29,6 +29,17 @@ everywhere `plural_you` is), Chinese pairs for `deity_pronoun` in
 scripts use `<html lang>` as the language code, and the stylesheet's
 Simplified Chinese fonts choose the glyphs.
 
+Persian (`fa`), added in November 2026 before any of its text was drafted
+("Register Persian (fa) as a reading language"), was the first reading
+language written right to left (section 11). Beyond the usual steps it
+needed: `"dir": "rtl"`; arrows in its catalog that point the way it reads;
+validation of its own letters and digits (`owb/validate.py`
+`FOREIGN_CHARACTERS`: the Arabic ي, ك and Arabic-Indic digits are refused in
+`fa` renderings) and of direction marks in any rendering; ؟ as a sentence
+end; and "Persian" left out of the language names a meaning decision may
+not use, since it also names the Persians of Ezra, Esther and Daniel
+(`HISTORICAL_NAMES`, with "Farsi" refused instead).
+
 ## 0. Before the code: the brief
 
 - `docs/<language>-style.md`: the drafting brief (levels and their names,

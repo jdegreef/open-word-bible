@@ -1,6 +1,7 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/, /zh/), the footer's language
-switch, and the message catalogs in i18n/."""
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/,
+/ja/, /id/, /zh/, /fa/), the footer's language switch, and the message
+catalogs in i18n/."""
 import html
 import json
 import re

@@ -409,6 +409,36 @@ class ValidateTest(unittest.TestCase):
         self.assertTrue(any(e.startswith("renderings.en.B: deity_pronoun alternative must be the default capitalised")
                             for e in validate.validate_record(record)))
 
+    def test_persian_letters_and_digits_are_persian(self):
+        # The Arabic yeh and kaf, and Arabic-Indic digits, look like
+        # Persian's own in many fonts; in Persian text they are refused.
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["fa"] = {level: text + " \u06cc\u06a9 \u06f3"
+                                      for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["fa"]["B"] += " \u064a"
+        record["renderings"]["fa"]["R"] += " \u0663"
+        errors = validate.validate_record(record)
+        self.assertTrue(any(e.startswith("renderings.fa.B: the Arabic") for e in errors), errors)
+        self.assertTrue(any(e.startswith("renderings.fa.R: the Arabic") for e in errors), errors)
+        # Another language may write them (an Arabic word quoted in English).
+        del record["renderings"]["fa"]
+        record["renderings"]["en"]["B"] += " \u064a"
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_renderings_hold_no_direction_marks(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["en"]["L"] += "\u200f"
+        self.assertTrue(any(e.startswith("renderings.en.L: a direction mark")
+                            for e in validate.validate_record(record)))
+
+    def test_persian_is_not_named_but_the_persians_may_be(self):
+        # A meaning decision may speak of the Persians (Esther, Daniel) but
+        # not of Persian wording, by its own name or as Farsi.
+        self.assertIsNone(validate.TARGET_LANGUAGE_NAMES.search("Cyrus the Persian; a Persian loanword"))
+        self.assertIsNotNone(validate.TARGET_LANGUAGE_NAMES.search("Farsi says it otherwise"))
+        self.assertIsNotNone(validate.TARGET_LANGUAGE_NAMES.search("\u0641\u0627\u0631\u0633\u06cc"))
+
     def test_indonesian_renderings_keep_the_record_id(self):
         # Indonesian's code is "id", which is also the name of a record's
         # and a decision's own field. (The English stands in for Indonesian

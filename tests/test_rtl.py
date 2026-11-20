@@ -2,9 +2,10 @@
 (owb/languages.py), <html dir="rtl"> for a page in such a language, and a dir
 on text whose language reads the other way from what surrounds it
 (build_site.isolate_directions; web/site.js does the same for text the
-scripts add, tests/js/bidi.test.mjs). No reading language is right to left
-yet, so these tests flag one for a while (Spanish, for the length of a
-test) rather than adding one to data/; with none, pages are as before."""
+scripts add, tests/js/bidi.test.mjs). These tests flag a language for a
+while (Spanish, for the length of a test), or unflag the real right-to-left
+reading languages (Persian), rather than depend on data/; with none, pages
+are as before."""
 import json
 import re
 import sys
@@ -26,6 +27,18 @@ def flagged_rtl(code):
     return mock.patch.multiple(languages, RTL=rtl, RTL_READING=reading)
 
 
+def no_rtl_reading():
+    """A patch leaving only the original languages right to left, as
+    before the first right-to-left reading language."""
+    rtl = languages.RTL - set(languages.RTL_READING)
+    return mock.patch.multiple(languages, RTL=rtl, RTL_READING=())
+
+
+def rtl_meta(*extra):
+    """The owb-rtl meta a page has, with extra codes flagged."""
+    return f'<meta name="owb-rtl" content="{" ".join(sorted(languages.RTL | set(extra)))}">'
+
+
 def tags_with_dir(text):
     """Every start tag in text that has a dir attribute."""
     return re.findall(r"<[a-zA-Z][^<>]*\sdir=\"[^\"]*\"[^<>]*>", text)
@@ -37,10 +50,12 @@ class DirectionTest(unittest.TestCase):
             self.assertEqual(languages.direction(code), "rtl", code)
         self.assertEqual(languages.direction("grc"), "ltr")
 
-    def test_every_reading_language_reads_left_to_right_so_far(self):
-        self.assertEqual(languages.RTL_READING, ())
+    def test_each_reading_language_reads_as_data_says(self):
+        data = json.loads((ROOT / "data" / "languages.json").read_text(encoding="utf-8"))["reading"]
+        self.assertEqual(languages.RTL_READING, tuple(lang["code"] for lang in data if lang.get("dir") == "rtl"))
+        self.assertIn("fa", languages.RTL_READING)
         for code in languages.CODES:
-            self.assertEqual(languages.direction(code), "ltr", code)
+            self.assertEqual(languages.direction(code), "rtl" if code in languages.RTL_READING else "ltr", code)
 
     def test_a_tag_with_a_region_counts_as_its_language(self):
         with flagged_rtl("es"):
@@ -99,7 +114,8 @@ class PageTest(unittest.TestCase):
         return build_site.page(lang, "Title", '<p>Body <span lang="hbo" dir="rtl">x</span></p>', path="/about/")
 
     def test_left_to_right_pages_are_as_before(self):
-        with mock.patch.object(build_site, "isolate_directions", side_effect=AssertionError("called")):
+        with no_rtl_reading(), mock.patch.object(build_site, "isolate_directions",
+                                                 side_effect=AssertionError("called")):
             for lang in ("en", "es"):
                 text = self.page(lang)
                 self.assertIn(f'<!doctype html>\n<html lang="{lang}">\n<head>', text)
@@ -114,7 +130,7 @@ class PageTest(unittest.TestCase):
             text = self.page("es")
             self.assertEqual(build_site.forward("es"), "&larr;")
         self.assertIn('<html lang="es" dir="rtl">', text)
-        self.assertIn('<meta name="owb-rtl" content="arc es hbo he">', text)
+        self.assertIn(rtl_meta("es"), text)
         # The footer's languages in their own names: each left-to-right one
         # is isolated, its gloss in the page's language is not.
         self.assertIn('<a href="/about/" lang="en" dir="ltr" hreflang="en" data-lang="en">English '
@@ -128,7 +144,7 @@ class PageTest(unittest.TestCase):
         with flagged_rtl("es"):
             text = self.page("en")
         self.assertIn('<html lang="en">', text)
-        self.assertIn('<meta name="owb-rtl" content="arc es hbo he">', text)
+        self.assertIn(rtl_meta("es"), text)
         self.assertIn('<a href="/es/about/" lang="es" dir="rtl" hreflang="es" data-lang="es">Español '
                       '<span class="lang-gloss" lang="en" dir="ltr">(Spanish)</span></a>', text)
         self.assertNotIn('lang="fr" dir=', text)
