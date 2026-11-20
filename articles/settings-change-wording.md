@@ -15,6 +15,7 @@ Readers of English Bibles disagree about some things that are, strictly, matters
 - **Name of God.** In the Old Testament, God's personal name is written "the LORD" by default, following the ancient custom of not saying it aloud, and "Yahweh" as an option.
 - **Measures.** Where a passage has a measurement, modern units by default and the original units as an option. Noah's ark is 450 feet long, or 300 cubits (Genesis 6:15); the jars at Cana held 20 to 30 gallons, or two or three measures (John 2:6). The Literal level always keeps the ancient unit.
 - **Spanish plural "you".** *Ustedes*, as spoken in Latin America, or *vosotros*, as in Spain.
+- **Chinese word for God.** 神 (*Shén*) or 上帝 (*Shàngdì*), the two words Chinese Bibles have long used for the one God.
 
 A setting for UK spelling is planned.
 
