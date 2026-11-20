@@ -45,10 +45,12 @@ LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 # A meaning decision is shared by every language, so it must not name one of
 # the languages the translation is made into (in English or in that language),
 # nor Spanish by its other name or Portuguese, which may come next, nor
-# Chinese without "(Simplified)", nor Persian as Farsi. "Persian" itself is
-# left out: it also names the Persians of Ezra, Esther and Daniel, their
-# kings and their loanwords, which meaning decisions discuss.
-HISTORICAL_NAMES = {"Persian"}
+# Chinese without "(Simplified)", nor Persian as Farsi.
+# Reading languages' English names that are also the names of a people and
+# an ancient language a meaning decision may speak of (the Persian kings of
+# Ezra and Esther, an Arabic cognate of a rare Hebrew word): they are not
+# taken as naming a reading language. The native names still are.
+HISTORICAL_NAMES = {"Arabic", "Persian"}
 TARGET_LANGUAGE_NAMES = re.compile(r"(?<!\w)(" + "|".join(map(re.escape,
     [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])
      if n not in HISTORICAL_NAMES]
