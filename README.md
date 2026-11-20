@@ -2,8 +2,8 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian and
-Chinese (Simplified).
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian,
+Chinese (Simplified) and Tagalog.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -46,12 +46,12 @@ Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/vietnamese-style.md`, `docs/korean-style.md`,
 `docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
 `docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md`,
-`docs/indonesian-style.md` and `docs/chinese-style.md` are the briefs for
-French, Swahili, Vietnamese, Korean, (Brazilian) Portuguese, Amharic, Hindi,
-Russian, Ukrainian, Japanese, Indonesian and Chinese (Simplified).
-`docs/hindi-terms.md`, `docs/russian-terms.md`, `docs/indonesian-terms.md`
-and `docs/chinese-terms.md` are the Hindi, Russian, Indonesian and Chinese
-glossaries, Genesis to Revelation. `docs/hindi-review-guide.md` and
+`docs/indonesian-style.md`, `docs/chinese-style.md` and `docs/tagalog-style.md`
+are the briefs for French, Swahili, Vietnamese, Korean, (Brazilian)
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian, Chinese
+(Simplified) and Tagalog. `docs/hindi-terms.md`, `docs/russian-terms.md`,
+`docs/indonesian-terms.md`, `docs/chinese-terms.md` and `docs/tagalog-terms.md`
+are the Hindi, Russian, Indonesian, Chinese and Tagalog glossaries, Genesis to Revelation. `docs/hindi-review-guide.md` and
 `docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
