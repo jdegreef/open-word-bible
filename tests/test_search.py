@@ -147,5 +147,38 @@ class SearchTest(unittest.TestCase):
         subprocess.run(["node", "--check", str(ROOT / "web" / "search.js")], check=True)
 
 
+class ArabicFoldTest(unittest.TestCase):
+    """Arabic and Persian are typed with and without the short vowels, with
+    hamza or without, and with either form of yeh and kaf: each way finds
+    the others. The site's search.js folds as build_site.fold (and the API's
+    search.fold) do."""
+    CASES = {
+        "\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f":  # الْكَلِمَةُ: الكلمه
+            "\u0627\u0644\u0643\u0644\u0645\u0647",
+        "\u0623\u0628\u0631\u0627\u0647\u064a\u0645": "\u0627\u0628\u0631\u0627\u0647\u064a\u0645",  # أبراهيم: ابراهيم
+        "\u0625\u0644\u0647 \u0622\u062f\u0645 \u0671\u0644": "\u0627\u0644\u0647 \u0627\u062f\u0645 \u0627\u0644",
+        "\u0645\u0648\u0633\u0649": "\u0645\u0648\u0633\u064a",  # موسى: alef maqsura as yeh
+        "\u06a9\u062a\u0627\u0628 \u0639\u06cc\u0633\u06cc":  # Persian ک and ی
+            "\u0643\u062a\u0627\u0628 \u0639\u064a\u0633\u064a",
+        "\u0627\u0644\u0644\u0640\u0640\u0647": "\u0627\u0644\u0644\u0647",  # tatweel
+        "\u064a\u0648\u062d\u0646\u0627 \u0663:\u0661\u0666 \u06f3:\u06f1\u06f6":
+            "\u064a\u0648\u062d\u0646\u0627 3:16 3:16",
+    }
+
+    def test_fold(self):
+        for text, folded in self.CASES.items():
+            self.assertEqual(build_site.fold(text), folded, text)
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_search_js_folds_the_same(self):
+        source = (ROOT / "web" / "search.js").read_text()
+        body = re.search(r"\n  function fold\(s\) \{\n.*?\n  \}\n", source, re.S)[0]
+        script = body + "process.stdout.write(JSON.stringify(JSON.parse(process.argv[1]).map(fold)));"
+        texts = list(self.CASES)
+        out = subprocess.run(["node", "-e", script, json.dumps(texts)], check=True,
+                             capture_output=True, text=True).stdout
+        self.assertEqual(json.loads(out), [build_site.fold(t) for t in texts])
+
+
 if __name__ == "__main__":
     unittest.main()

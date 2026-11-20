@@ -36,12 +36,18 @@
   // straightened: what matching compares, so "corazon" finds "corazón" and
   // "duc" finds "Đức". The rest is composed again, so a Korean syllable stays
   // one character (NFD splits it into its letters) and the kana voicing marks
-  // are kept (ガ is not カ), as in the API's search.fold.
+  // are kept (ガ is not カ), as in the API's search.fold. Arabic script loses
+  // its short vowels and tatweel, and letters typed more than one way are made
+  // one (أ إ آ ٱ as ا, ى and Persian ی as ي, Persian ک as ك, ة as ه), with
+  // Arabic-Indic and Persian digits as ASCII.
   function fold(s) {
     return s.replace(/[\uff01-\uff5e]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xfee0); })
       .replace(/\u3000/g, " ")
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC").toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f\u0640\u064b-\u065f\u0670]/g, "").normalize("NFC").toLowerCase()
       .replace(/\u0111/g, "d")
+      .replace(/\u0671/g, "\u0627").replace(/[\u0649\u06cc]/g, "\u064a").replace(/\u06a9/g, "\u0643")
+      .replace(/\u0629/g, "\u0647")
+      .replace(/[\u0660-\u0669\u06f0-\u06f9]/g, function (d) { return String((d.charCodeAt(0) & 0xf)); })
       .replace(/[\u2018\u2019\u02bc]/g, "'").replace(/[\u201c\u201d\u00ab\u00bb]/g, '"');
   }
 
