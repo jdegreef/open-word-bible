@@ -909,10 +909,27 @@ def curl_texts(r):
         for level, text in levels.items():
             levels[level] = smart_quotes(text)
     for d in r["decisions"]:
-        d["choice"] = reader_note_refs(smart_quotes(d["choice"]), "en", r["id"])
-        d["alternatives"] = [reader_note_refs(smart_quotes(a), "en", r["id"]) for a in d["alternatives"]]
-        d["reason"] = reader_note_refs(smart_quotes(d["reason"]), "en", r["id"])
+        def moved(text, did=d["id"]):
+            return note_refs(smart_quotes(text), "en", r["id"], did)
+        d["choice"] = moved(d["choice"])
+        d["alternatives"] = [moved(a) for a in d["alternatives"]]
+        d["reason"] = moved(d["reason"])
     return r
+
+
+@functools.cache
+def niv_notes():
+    """The notes written in NIV numbering already (data/niv_notes.json), as
+    (record id, decision id): those that explain the numbering itself."""
+    data = json.loads((ROOT / "data" / "niv_notes.json").read_text(encoding="utf-8"))
+    return frozenset(tuple(key.split(" ")) for key in data["notes"])
+
+
+def note_refs(text, lang, record_id, decision_id):
+    """reader_note_refs for a decision's text, unless niv_notes has it."""
+    if (record_id, decision_id) in niv_notes():
+        return text
+    return reader_note_refs(text, lang, record_id)
 
 
 # A note's bare reference to a verse of its own chapter ("verse 7",
@@ -987,7 +1004,9 @@ def _note_ref_pattern(lang):
             if form:
                 names[form] = code
     alts = "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True))
-    return re.compile(r"(?<!\w)(" + alts + r") ?(\d+):(\d+)(?:([-–])(\d+))?(?![\d:])"), names
+    # The book name is optional: "13:1" on its own is matched too, but not
+    # the "3:16" of a time or a ratio inside a word.
+    return re.compile(r"(?<![\w:.])(?:(" + alts + r") ?)?(\d+):(\d+)(?:([-–])(\d+))?(?![\d:])"), names
 
 
 # Words that say a reference near them is in one numbering or the other
@@ -1009,30 +1028,48 @@ def numbering_word(text, start, end):
     return bool(after and _NUMBERING_WORDS.search(after[1]))
 
 
+# Between two references of one list ("Exodus 12:14; 28:12", "Psalms 9:9,
+# 96:13 and 98:9"): the second is in the first's book.
+_LIST_GAP = re.compile(r"[\s,;、，；]*(?:and|et|y|e|na|và|및|과|와|と|और|и|і|та|dan|及|ve)?[\s,;、，；]*")
+
+
 def reader_note_refs(text, lang="en", record_id=None):
     """A note with its references to verses in reader (NIV) numbering:
     content/ writes notes in its own numbering, so "Psalm 51:3" (the
     verse after its two-verse title) is shown as "Psalm 51:1", and
     "Malachi 3:19–24" as "Malachi 4:1–6". A range keeps one chapter where
-    the NIV does; a reference to a psalm's title says so."""
+    the NIV does; a reference to a psalm's title says so. A chapter and
+    verse with no book name ("13:1") is in the book named just before it
+    in a list, or else in the note's own book."""
     pattern, names = _note_ref_pattern(lang)
+    own = record_id.split(".")[0] if record_id else None
+    last = {"end": -1, "code": None}
 
     def moved(m):
-        if numbering_word(m.string, m.start(), m.end()):
+        if m[1]:
+            code = names[m[1]]
+        elif last["code"] and last["end"] >= 0 and _LIST_GAP.fullmatch(m.string, last["end"], m.start()):
+            code = last["code"]
+        else:
+            code = own
+        last["end"], last["code"] = m.end(), code
+        if code is None or numbering_word(m.string, m.start(), m.end()):
             return m[0]
-        code = names[m[1]]
+        name = m[1] or ""
         first = refs.parse(versification.reader_ids(f"{code}.{m[2]}.{m[3]}")[0])
-        space = " " if m[0][len(m[1])] == " " else ""
-        last = refs.parse(versification.reader_ids(f"{code}.{m[2]}.{m[5] or m[3]}")[-1])
-        if not m[5] or last.verse == 0:
+        space = " " if name and m[0][len(name)] == " " else ""
+        end = refs.parse(versification.reader_ids(f"{code}.{m[2]}.{m[5] or m[3]}")[-1])
+        if not m[5] or end.verse == 0:
             if first.verse == 0:
-                return catalog(lang)["reader.ui"]["title_ref"].format(ref=f"{m[1]}{space}{first.chapter}")
-            if last == first:
-                return f"{m[1]}{space}{first.chapter}:{first.verse}"
+                if not name:
+                    return m[0]
+                return catalog(lang)["reader.ui"]["title_ref"].format(ref=f"{name}{space}{first.chapter}")
+            if end == first:
+                return f"{name}{space}{first.chapter}:{first.verse}"
         if first.verse == 0:
             first = refs.Ref(first.book, first.chapter, 1)
-        end = str(last.verse) if last.chapter == first.chapter else f"{last.chapter}:{last.verse}"
-        return f"{m[1]}{space}{first.chapter}:{first.verse}{m[4] or '–'}{end}"
+        tail = str(end.verse) if end.chapter == first.chapter else f"{end.chapter}:{end.verse}"
+        return f"{name}{space}{first.chapter}:{first.verse}{m[4] or '–'}{tail}"
 
     text = pattern.sub(moved, text)
     if record_id:
@@ -1545,9 +1582,9 @@ def book_notes(book, lang):
     out, so the English shows until it is translated again."""
     if lang == "en":
         return {}
-    return {rid: {did: {"choice": reader_note_refs(smart_quotes(n["choice"]), lang, rid),
-                        "alternatives": [reader_note_refs(smart_quotes(a), lang, rid) for a in n["alternatives"]],
-                        "reason": reader_note_refs(smart_quotes(n["reason"]), lang, rid)} for did, n in ds.items()}
+    return {rid: {did: {"choice": note_refs(smart_quotes(n["choice"]), lang, rid, did),
+                        "alternatives": [note_refs(smart_quotes(a), lang, rid, did) for a in n["alternatives"]],
+                        "reason": note_refs(smart_quotes(n["reason"]), lang, rid, did)} for did, n in ds.items()}
             for rid, ds in owb_notes.current_notes(lang, book).items()}
 
 
