@@ -73,6 +73,8 @@ DOCUMENTED = {
     ("ja", "gender"): "docs/japanese-style.md: Japanese words for people are already inclusive",
     ("hi", "gender"): "docs/hindi-style.md section 7: Hindi nouns for people are often already inclusive",
     ("id", "gender"): "docs/indonesian-style.md section 8: Indonesian words for people are already inclusive",
+    ("fa", "christos"): "docs/persian-style.md section 9: مسیح is both the name and the word Messiah",
+    ("fa", "deity_pronoun"): "docs/persian-style.md section 4: Persian has no capitals and one third-person pronoun",
 }
 
 
