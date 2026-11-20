@@ -1307,7 +1307,18 @@ def heading_record(rid):
     # verse's second sentence (Philippians 4:5) stays.
     same = [x for x in chapter_records(ref.book, ref.chapter)
             if x["refs"][0] == r["refs"][0] and x["source_refs"][0] != r["source_refs"][0]]
-    return same[0]["id"] if same and same[0]["id"] != rid else rid
+    if not same or same[0]["id"] == rid:
+        return rid
+    if ref.verse == 1:
+        # The verse opens an NIV chapter (Hebrew Numbers 25:19 + 26:1 are NIV
+        # 26:1): the heading goes over all of it.
+        return same[0]["id"]
+    # The verse ends an NIV chapter (Hebrew 1 Samuel 20:42 + 21:1 are NIV
+    # 20:42): the heading goes over the verse after it, NIV 21:1.
+    order = chapter_records(ref.book, ref.chapter) + chapter_records(ref.book, ref.chapter + 1)
+    ids = [x["id"] for x in order]
+    after = [x for x in order[ids.index(rid) + 1:] if x["refs"][0] != r["refs"][0]]
+    return after[0]["id"] if after else rid
 
 
 @functools.cache
