@@ -376,6 +376,27 @@ class JapaneseTextTest(SimpleTestCase):
         # The site's book aliases are folded the same way.
         self.assertEqual(build_site.fold("ガラテヤ３"), search.fold("ガラテヤ３"))
 
+    def test_fold_makes_arabic_letters_typed_either_way_one(self):
+        # الْكَلِمَةُ with its vowels, أ for ا, Persian ی and ک, tatweel,
+        # Arabic-Indic and Persian digits.
+        for text in ("\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f",
+                     "\u0623\u0628\u0631\u0627\u0647\u064a\u0645 \u0645\u0648\u0633\u0649",
+                     "\u06a9\u062a\u0627\u0628 \u0639\u06cc\u0633\u06cc \u0627\u0644\u0644\u0640\u0647",
+                     "\u0663:\u0661\u0666 \u06f3:\u06f1\u06f6"):
+            self.assertEqual(search.fold(text), build_site.fold(text), text)
+        self.assertEqual(search.fold("\u0623\u0628\u0631\u0627\u0647\u064a\u0645"),
+                         "\u0627\u0628\u0631\u0627\u0647\u064a\u0645")
+        self.assertEqual(search.fold("\u06a9\u06cc"), "\u0643\u064a")
+        self.assertEqual(search.fold("\u0663:\u0661\u0666"), "3:16")
+
+    def test_arabic_script_is_indexed_folded(self):
+        # Postgres's unaccent leaves Arabic marks and letters as they are, so
+        # the fields are folded before they are indexed, as a query is.
+        fields = ("\u0631\u0627\u0639\u0648\u062b", "", "\u0625\u0650\u0644\u0652\u0647\u064f \u06a9")
+        self.assertEqual(search.indexed("owb_simple", fields),
+                         ("\u0631\u0627\u0639\u0648\u062b", None, "\u0627\u0644\u0647 \u0643"))
+        self.assertEqual(search.indexed("owb_english", ("Ruth", "", "word")), (None, None, None))
+
 
 class ChineseTextTest(SimpleTestCase):
     def test_chinese_is_searched_by_bigrams(self):
