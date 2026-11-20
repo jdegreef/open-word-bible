@@ -32,7 +32,7 @@ Israël n'était pas la première nation de l'histoire. La décision de sens lit
 
 > {{OWB:PSA.89.28.s1:L}}
 
-Les Psaumes ne sont pas encore traduits en français dans Open Word Bible ; cette citation est donc celle de l'édition anglaise : "Aussi je ferai de lui [le] premier-né, le plus haut des rois de la terre." (La plupart des Bibles anglaises numérotent ce verset 89:27.) Le roi ne naît pas le premier. Il est *fait* premier-né, et la seconde ligne dit ce que cela signifie : "le plus haut des rois de la terre". La décision de sens explique que le fils premier-né tenait le premier rang et recevait l'héritage, et qu'ici le roi reçoit ce rang. Le niveau Équilibrée de l'édition anglaise dit "I will give him the rank of firstborn" ("je lui donnerai le rang de premier-né").
+(La plupart des Bibles anglaises numérotent ce verset 89:27.) Le roi ne naît pas le premier. Il est *fait* premier-né, et la seconde ligne dit ce que cela signifie : "le plus élevé des rois de la terre". La décision de sens explique que le fils premier-né tenait le premier rang et recevait l'héritage, et qu'ici le roi reçoit ce rang. Le niveau Équilibrée dit "je lui donnerai le rang de premier-né".
 
 ## Le verset suivant
 

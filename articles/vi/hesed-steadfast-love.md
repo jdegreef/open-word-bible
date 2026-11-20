@@ -8,8 +8,6 @@ source: 135fe5e68913
 ---
 Có những từ mang nặng đến nỗi bản dịch nào cũng làm rơi rớt một phần. Từ Hê-bơ-rơ {{LEMMA:RUT.1.8:14}}, thường được viết là *ḥesed* hoặc *chesed*, là một trong số đó. Nó xuất hiện khoảng 250 lần trong Cựu Ước, khoảng một nửa trong số đó ở sách Thi Thiên. Nó nằm ở trung tâm của cách Y-sơ-ra-ên mô tả Đức Chúa Trời, và của cách người Y-sơ-ra-ên được mong đợi đối xử với nhau. Các bản Kinh Thánh tiếng Anh đã thử “mercy” (lòng thương xót), “kindness” (lòng tốt), “lovingkindness” (lòng nhân ái), “steadfast love” (tình yêu bền vững), “loyalty” (lòng trung thành), “faithful love” (tình yêu thành tín) và nhiều cách khác nữa. Mỗi cách nói lên một điều đúng, và mỗi cách bỏ sót một điều.
 
-Bài viết này nói nhiều về tiếng Anh, vì phần Cựu Ước của Open Word Bible hiện chỉ mới có bản tiếng Anh. Các sách Ru-tơ, Xuất Ai Cập Ký, Ca Thương và Ô-sê, cùng những thi thiên được trích dưới đây, chưa được dịch sang tiếng Việt, nên các câu trích hiện ra bằng tiếng Anh, ở cấp độ Cân bằng.
-
 ## Từ này chứa đựng những gì
 
 Hãy bắt đầu bằng một câu chuyện thay vì một định nghĩa. Trong sách Ru-tơ, hai góa phụ trẻ lên đường cùng mẹ chồng là Na-ô-mi về Bết-lê-hem. Na-ô-mi dừng lại giữa đường và bảo họ trở về nhà:
@@ -54,7 +52,7 @@ Ca Thương 3:22 cho thấy sự khác biệt. Câu này đặt *ḥesed* cạnh
 
 > {{OWB:LAM.3.22.s1:B}}
 
-Dòng thứ nhất có {{HEBREW:LAM.3.22:1}}, hình thức số nhiều của *ḥesed*: nhiều việc làm bởi tình yêu trung tín của Chúa. Dòng thứ hai có *raḥămîm*, một từ có liên hệ với từ chỉ dạ con, tình cảm dịu dàng của cha mẹ đối với con cái. Bản ghi giữ cho hai từ tách biệt: “loyal love” (tình yêu trung tín) cho từ thứ nhất và “mercies” (lòng thương xót) cho từ thứ hai, ở mọi cấp độ. Nếu cả hai đều là “mercy”, câu này sẽ nói cùng một điều hai lần.
+Dòng thứ nhất có {{HEBREW:LAM.3.22:1}}, hình thức số nhiều của *ḥesed*: nhiều việc làm bởi tình yêu trung tín của Chúa. Dòng thứ hai có *raḥămîm*, một từ có liên hệ với từ chỉ dạ con, tình cảm dịu dàng của cha mẹ đối với con cái. Bản ghi giữ cho hai từ tách biệt ở mọi cấp độ: “tình yêu thương thành tín” (ở cấp độ Dễ đọc là “tình thương không hề thay đổi”) cho từ thứ nhất và “lòng thương xót” cho từ thứ hai. Nếu cả hai đều là “lòng thương xót”, câu này sẽ nói cùng một điều hai lần.
 
 **“Lovingkindness” (lòng nhân ái).** Từ này được tạo ra cho Kinh Thánh. Người ta thường cho rằng Miles Coverdale đã đặt ra nó, trong bản Kinh Thánh tiếng Anh năm 1535 của ông, ở sách Thi Thiên, và bản King James giữ nó ở nhiều chỗ. Đó là một cố gắng tốt: nó ghép tình yêu và lòng tốt thành một từ. Nhưng nó không còn là tiếng Anh thông thường nữa, và nó bỏ sót lòng trung thành, tức là ý rằng lòng tốt này là điều mình nợ nhau trong một mối ràng buộc và được giữ qua thời gian.
 
@@ -68,7 +66,7 @@ Các học giả đã tranh luận xem mặt nào của từ này quan trọng n
 
 ## Điều Open Word Bible làm
 
-Những gì phần này mô tả là lời văn của bản tiếng Anh; bản tiếng Việt của các sách này sẽ cần những lựa chọn riêng, với những quyết định về cách diễn đạt riêng.
+Những gì phần này mô tả là lời văn của bản tiếng Anh.
 
 Các bản ghi dùng một nhóm nhỏ cách dịch, được chọn sao cho mỗi cách đều giữ được lòng trung thành trong từ này. Một quyết định về cách diễn đạt tại Ru-tơ 1:8 nói thẳng điều đó: chỉ dùng “kindness” (lòng tốt) thì sẽ bỏ mất lòng trung thành.
 

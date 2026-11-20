@@ -10,8 +10,6 @@ Mở gần như bất kỳ thi thiên nào, bạn sẽ nhận ra dường như n
 
 > {{OWB:PSA.19.2.s1:B}}
 
-(Câu trích nào chưa có bản tiếng Việt sẽ hiện ra theo bản tiếng Anh của Open Word Bible.)
-
 Các tầng trời và vòm trời là một. Kể ra và làm cho biết là cùng một hành động. Vinh quang của Đức Chúa Trời và công việc của tay Ngài là hai cách gọi tên điều bầu trời bày tỏ. Nửa sau của câu nói lại điều nửa đầu đã nói, bằng những lời khác.
 
 Đây không phải là lời độn cho đủ. Thơ Hê-bơ-rơ được dựng lên như thế. Người đọc hiểu cách nó vận hành sẽ đọc Thi Thiên, Châm Ngôn, Gióp và các sách tiên tri chính xác hơn, và sẽ thấy vì sao một bản dịch phải đưa ra một số lựa chọn về cách thơ hiện ra trên trang giấy.
@@ -34,7 +32,7 @@ Loại thứ nhất của Lowth là song hành *đồng nghĩa*, khi dòng thứ
 
 Câu này có bốn dòng, chia thành hai cặp. Con bò và con lừa là một cặp: mỗi con đều biết mình thuộc về đâu. Y-sơ-ra-ên và "dân Ta" là một cặp: không ai biết. Rồi hai nửa của câu được đặt đối nhau, loài vật đối với dân lẽ ra phải biết rõ hơn.
 
-Nhưng hãy nhìn lại cặp cuối. Trong bản tiếng Anh, "Israel does not know" (Y-sơ-ra-ên không biết) trở thành "my people give it no thought" (dân Ta chẳng hề suy nghĩ). Dòng thứ hai không chỉ lặp lại. Nó gọi Y-sơ-ra-ên là dân *của Đức Chúa Trời*, làm lời cáo trách sắc hơn, và nó đi từ biết sang suy xét. Bản ghi của câu này lưu ý rằng động từ Hê-bơ-rơ ở đây có nghĩa là để tâm suy nghĩ cẩn thận về điều gì đó. Y-sơ-ra-ên thậm chí không dừng lại để suy nghĩ.
+Nhưng hãy nhìn lại cặp cuối. "Y-sơ-ra-ên không biết" trở thành "dân ta chẳng hề suy nghĩ". Dòng thứ hai không chỉ lặp lại. Nó gọi Y-sơ-ra-ên là dân *của Đức Chúa Trời*, làm lời cáo trách sắc hơn, và nó đi từ biết sang suy xét. Bản ghi của câu này lưu ý rằng động từ Hê-bơ-rơ ở đây có nghĩa là để tâm suy nghĩ cẩn thận về điều gì đó. Y-sơ-ra-ên thậm chí không dừng lại để suy nghĩ.
 
 Bước chuyển nhỏ ấy là điều thường thấy. Ngay cả trong những dòng "đồng nghĩa", dòng thứ hai thường thêm vào điều gì đó: một từ cụ thể hơn, một hình ảnh mạnh hơn, một tiêu điểm gần hơn.
 
@@ -60,7 +58,7 @@ Một trong những mẫu nổi bật nhất là kiểu "bậc thang": một dò
 
 > {{OWB:PSA.93.3.s1:B}}
 
-Bản ghi gọi đó là một dòng được lặp lại và lớn dần mỗi lần, như những con sóng dâng cao. Thi Thiên 92:10 làm cùng điều ấy với kẻ thù của CHÚA ("Look at your enemies, LORD! Look, your enemies are doomed", tức là: "Lạy CHÚA, kìa kẻ thù của Ngài! Kìa, kẻ thù của Ngài sẽ bị diệt vong"), và bản ghi ở đó gọi tên nó là một mẫu của thơ Hê-bơ-rơ.
+Bản ghi gọi đó là một dòng được lặp lại và lớn dần mỗi lần, như những con sóng dâng cao. Thi Thiên 92:10 làm cùng điều ấy với kẻ thù của CHÚA ("Lạy CHÚA, hãy xem các kẻ thù của ngài! Kìa, các kẻ thù của ngài sẽ bị tiêu diệt"), và bản ghi ở đó gọi tên nó là một mẫu của thơ Hê-bơ-rơ.
 
 Một kiểu phát triển khác là sự chuyển động bên trong Thi Thiên 1:1:
 
@@ -115,7 +113,7 @@ Một vài quy tắc khác đến từ nguyên tắc rằng ý nghĩa và lời 
 
 Trong các chế độ đọc, nghiên cứu, song song và đối chiếu từng chữ của trang đọc, thơ được trình bày với thụt lề treo: dòng thứ hai của một câu lùi vào một bậc. Ở những chỗ bản văn hiện trên một dòng, như trong kết quả tìm kiếm, các câu trích được chia sẻ và các câu trích trong bài viết này, chỗ xuống dòng chỉ hiện ra như một khoảng trắng.
 
-Công việc chưa xong. Trong bản tiếng Anh, nhiều sách đã được trình bày thành dòng, trong đó có Châm Ngôn, Gióp, Ca Thương và phần lớn Ê-sai, nhưng Thi Thiên đang được làm từng nhóm một. Bản ghi nào chưa có chỗ ngắt dòng thì trang đọc hiển thị như văn xuôi.
+Công việc chưa xong. Nhiều sách đã được trình bày thành dòng, trong đó có Châm Ngôn, Gióp, Ca Thương và phần lớn Ê-sai, nhưng Thi Thiên đang được làm từng nhóm một. Bản ghi nào chưa có chỗ ngắt dòng thì trang đọc hiển thị như văn xuôi.
 
 ## Đôi lời về số câu
 

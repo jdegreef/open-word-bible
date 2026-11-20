@@ -24,7 +24,7 @@ En la primera Pascua se mandó a Israel comer vestido así, listo para salir de 
 
 Literal conserva «sus lomos ceñidos». Equilibrada dice cómo se veía: «la ropa recogida en el cinturón». Sencilla dice «Átense la ropa a la cintura». La decisión de redacción de la edición inglesa, que vale igual para la española, es breve: Equilibrada y Sencilla explican el modismo, y Literal lo conserva.
 
-La misma imagen es literal en 1 Reyes 18:46, donde Elías, fortalecido por el SEÑOR, se recoge la túnica y corre delante del carro del rey Acab hasta Jezreel. En la edición inglesa, Sencilla añade el porqué: «He tied up his long robe so he could run» («Se ató la túnica larga para poder correr»).
+La misma imagen es literal en 1 Reyes 18:46, donde Elías, fortalecido por el SEÑOR, se recoge la túnica y corre delante del carro del rey Acab hasta Jezreel. Sencilla añade el porqué: «Se ató el manto largo para poder correr».
 
 Jesús la usa como mandato en Lucas 12:35: «Tengan la cintura ceñida y las lámparas ardiendo». Así lo dice Literal; Equilibrada dice «Estén listos para el trabajo, con el cinturón bien atado». En la edición inglesa, la decisión de redacción explica que «gird» («ceñir») es una palabra antigua, y lo mismo vale para el «ceñir» español.
 
@@ -54,7 +54,7 @@ Sencilla lo explica en el sentido que eligió la decisión de significado:
 
 > {{OWB:PRO.25.22.s1:R}}
 
-(Proverbios aún no está traducido al español en Open Word Bible, así que estas dos citas se muestran por ahora en la edición inglesa.) La decisión de redacción de esa frase de Sencilla está marcada también como incierta, porque expresa un sentido que es incierto en sí mismo. En Romanos, Sencilla conserva la imagen y añade una frase; en español, «Tu bondad puede hacer que sienta vergüenza y se arrepienta». En la edición inglesa, la decisión de redacción señala que «may» («puede») deja la cuestión abierta, y pide a los revisores que comprueben que no dice demasiado. El «puede» español la deja abierta de la misma manera.
+La decisión de redacción de esa frase de Sencilla está marcada también como incierta, porque expresa un sentido que es incierto en sí mismo. En Romanos, Sencilla conserva la imagen y añade una frase; en español, «Tu bondad puede hacer que sienta vergüenza y se arrepienta». En la edición inglesa, la decisión de redacción señala que «may» («puede») deja la cuestión abierta, y pide a los revisores que comprueben que no dice demasiado. El «puede» español la deja abierta de la misma manera.
 
 ## Endurecer el corazón
 
@@ -76,9 +76,9 @@ La bendición sacerdotal de Números 6 termina con «Que el SEÑOR alce su rostr
 
 > {{OWB:NUM.6.26.s1:B}}
 
-En la edición inglesa (Números aún no está traducido al español), Equilibrada conserva la imagen y añade «to look on you» («para mirarte»), lo que hace ver qué hace el rostro alzado. Sencilla dice «turn toward you and care for you» («se vuelva hacia ti y cuide de ti»).
+Equilibrada conserva la imagen y añade «para mirarte», lo que hace ver qué hace el rostro alzado. Sencilla dice «se vuelva hacia ti y cuide de ti».
 
-El mismo modismo puede apuntar en la dirección contraria. En Levítico 19:15 se manda a los jueces no «alzar el rostro del pobre» ni «honrar el rostro del grande». La decisión de significado dice que alzar el rostro de una persona es mostrarle favor, aquí en un juicio, y un juez no debe favorecer a nadie por quién es. En la edición inglesa, Equilibrada dice «take the side of the poor because they are poor» («ponerse de parte del pobre por ser pobre») y «give special honor to the powerful» («dar un honor especial al poderoso»).
+El mismo modismo puede apuntar en la dirección contraria. En Levítico 19:15 se manda a los jueces no «alzar el rostro del pobre» ni «honrar el rostro del grande». La decisión de significado dice que alzar el rostro de una persona es mostrarle favor, aquí en un juicio, y un juez no debe favorecer a nadie por quién es. Equilibrada dice «No favorecerás al pobre por ser pobre» y «ni darás un honor especial al poderoso».
 
 Así, las mismas palabras hebreas pueden describir la bendición de Dios en un lugar y a un juez corrupto en otro. El favor de Dios es un regalo. El favor de un juez, mostrado a una persona en lugar de a la verdad, es injusticia. Un modismo no puede traducirse con una fórmula. Cada contexto tiene su propia decisión.
 
@@ -86,7 +86,7 @@ Así, las mismas palabras hebreas pueden describir la bendición de Dios en un l
 
 En 1 Samuel 9:15, el día antes de que llegue Saúl, el SEÑOR «había descubierto el oído de Samuel». La expresión es {{HEBREW:1SA.9.15:2-5}}. La decisión de significado lo explica: descubrir el oído de alguien es decirle algo en privado, un secreto o un plan, y cuando quien habla es Dios significa revelación.
 
-El español no tiene una expresión así, y «le descubrió el oído» sonaría extraño. En la edición inglesa, Literal la conserva. Equilibrada dice «the LORD had revealed this to Samuel» («el SEÑOR se lo había revelado a Samuel»). Sencilla dice «the LORD had told Samuel a secret» («el SEÑOR le había contado un secreto a Samuel»), lo que conserva algo del tono privado, de confidencia susurrada.
+El español no tiene una expresión así, y «le descubrió el oído» sonaría extraño. Literal la conserva. Equilibrada dice «el SEÑOR le había revelado esto a Samuel». Sencilla dice «el SEÑOR le había contado un secreto a Samuel», lo que conserva algo del tono privado, de confidencia susurrada.
 
 ## Entrañas de compasión
 
@@ -108,7 +108,7 @@ En todos estos ejemplos aparece un patrón.
 
 **Literal** conserva el modismo, para que el lector pueda ver la imagen del original. «Sus lomos ceñidos», «descubrió el oído», «hizo pesado su corazón». Es el nivel para quien quiere saber lo que el texto dice realmente, palabra por palabra.
 
-**Equilibrada** decide caso por caso. Donde un modismo es conocido y su significado es claro, a menudo lo conserva: «amontonar carbones encendidos», «alzar su rostro», «endureció su corazón». Donde desconcertaría o confundiría, da el sentido: «la ropa recogida en el cinturón», «se lo había revelado a Samuel».
+**Equilibrada** decide caso por caso. Donde un modismo es conocido y su significado es claro, a menudo lo conserva: «amontonar carbones encendidos», «levante su rostro», «endureció su corazón». Donde desconcertaría o confundiría, da el sentido: «la ropa recogida en el cinturón», «le había revelado esto a Samuel».
 
 **Sencilla** explica. Está escrita para lectores que quizá no conocen la cultura que hay detrás de la imagen, y dice lo que significa el modismo: «Átense la ropa a la cintura», «le había contado un secreto a Samuel», «se puso terco».
 

@@ -14,8 +14,6 @@ Le niveau Équilibrée d'Open Word Bible les rend de la manière familière :
 
 > {{OWB:GEN.1.1.s1:B}}
 
-La Genèse n'est pas encore traduite en français dans Open Word Bible. Les citations de cet article sont donc tirées de sa version anglaise ; ce qui suit porte sur le sens du texte hébreu, que la traduction française suivra.
-
 Cette familiarité cache plus de décisions qu'on ne pourrait le croire. Deux d'entre elles sont des choix serrés, et le dossier de chaque verset les marque *incertaines*.
 
 ## Là où commence la Bible
@@ -34,7 +32,7 @@ L'autre lecture a elle aussi une longue histoire. Rachi, le grand commentateur j
 
 La différence compte moins qu'il n'y paraît, mais elle est réelle. Lu comme une proposition principale, le verset 1 fait une affirmation d'ensemble : Dieu a créé toutes choses, et le reste du chapitre montre comment. Lu comme une proposition de temps, il plante le décor du verset 3, et le verset 2 décrit l'état des choses quand Dieu commença. Les deux lectures sont anciennes, et toutes deux se défendent. La décision est donc marquée incertaine, et une note donne l'autre lecture. Le dossier ajoute que, de quelque façon qu'on le lise, Dieu est là et agit avant que rien d'autre ne soit décrit.
 
-Le niveau Littérale montre l'article absent en le mettant entre crochets :
+Voici le niveau Littérale :
 
 > {{OWB:GEN.1.1.s1:L}}
 
@@ -44,7 +42,7 @@ Le reste du verset porte trois décisions plus discrètes :
 
 - **Créa.** Le verbe {{LEMMA:GEN.1.1:2}} n'est employé dans l'Ancien Testament que pour ce que fait Dieu, et jamais avec une matière à partir de laquelle une chose est faite. Genèse 1 l'emploie à trois moments : les cieux et la terre, les premiers êtres vivants (verset 21) et les êtres humains (verset 27). Le dossier prend soin de ne pas en dire trop. Le chapitre emploie aussi le verbe courant "faire" pour l'œuvre de Dieu, si bien que ce verbe à lui seul ne tranche pas *comment* Dieu a créé. Ce que le premier verset établit bien, c'est que Dieu se tient avant et au-dessus de tout ce qui existe.
 - **Dieu.** {{HEBREW:GEN.1.1:3}} a une forme plurielle, et ailleurs il peut vouloir dire "des dieux". Ici, son verbe est au singulier, "il créa", comme dans tout le chapitre, si bien qu'il désigne le Dieu unique. L'hébreu emploie souvent un pluriel pour exprimer la grandeur.
-- **Les cieux et la terre.** Nommer deux extrêmes pour dire tout ce qui se trouve entre eux est une manière de parler courante en hébreu, et l'hébreu n'a pas de mot unique pour l'univers. La Simple dit donc ce que veut dire la paire, et garde les mots : "God created everything: the heavens and the earth" ("Dieu a créé toutes choses : les cieux et la terre").
+- **Les cieux et la terre.** Nommer deux extrêmes pour dire tout ce qui se trouve entre eux est une manière de parler courante en hébreu, et l'hébreu n'a pas de mot unique pour l'univers. La Simple dit donc ce que veut dire la paire, et garde les mots : "Dieu a créé tout ce qui existe : le ciel et la terre".
 
 ## Esprit, ou vent ?
 
@@ -52,7 +50,7 @@ Le verset 2 décrit l'état des choses avant que Dieu ne parle pour la première
 
 > {{OWB:GEN.1.2.s1:B}}
 
-"Without form and empty" ("informe et vide") traduit deux mots qui riment, {{HEBREW:GEN.1.2:3-4}}. Le dossier note que le reste du chapitre répond aux deux : pendant les jours un à trois, Dieu donne au monde sa forme, et pendant les jours quatre à six, il le remplit.
+"Sans forme et vide" traduit deux mots qui riment, {{HEBREW:GEN.1.2:3-4}}. Le dossier note que le reste du chapitre répond aux deux : pendant les jours un à trois, Dieu donne au monde sa forme, et pendant les jours quatre à six, il le remplit.
 
 Le choix serré porte sur {{HEBREW:GEN.1.2:9-10}}. Le nom {{LEMMA:GEN.1.2:9.2}} veut dire souffle, vent ou esprit. Avec "Dieu", il pourrait vouloir dire "un vent puissant", puisque l'hébreu emploie parfois "de Dieu" pour dire "très grand", et qu'après le déluge, Dieu fait passer un vent sur les eaux (8:1).
 
@@ -72,6 +70,6 @@ Au verset 3, Dieu parle pour la première fois :
 
 > {{OWB:GEN.1.3.s1:L}}
 
-L'ordre et son résultat sont deux formes d'un même verbe, "qu'elle soit" et "elle fut", si bien que le récit répète l'ordre mot pour mot. Le niveau Littérale garde cet écho. L'Équilibrée dit "light came into being" ("la lumière vint à l'existence") et la Simple "light began to shine" ("la lumière se mit à briller"), chacune donnant au résultat un verbe à lui. Le schéma traverse tout le chapitre : Dieu parle, et ce qu'il dit arrive. Le dossier note aussi que la lumière vient le premier jour, et le soleil seulement le quatrième. Dans ce récit, la lumière vient de la parole de Dieu, et non des luminaires du ciel.
+L'ordre et son résultat sont deux formes d'un même verbe, "qu'elle soit" et "elle fut", si bien que le récit répète l'ordre mot pour mot. Le niveau Littérale garde cet écho. L'Équilibrée dit "la lumière apparut" et la Simple "la lumière s'est mise à briller", chacune donnant au résultat un verbe à lui. Le schéma traverse tout le chapitre : Dieu parle, et ce qu'il dit arrive. Le dossier note aussi que la lumière vient le premier jour, et le soleil seulement le quatrième. Dans ce récit, la lumière vient de la parole de Dieu, et non des luminaires du ciel.
 
 [Ouvrez Genèse 1](/gen/1/) et touchez le verset 1 pour voir le dossier complet.

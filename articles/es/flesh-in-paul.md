@@ -16,7 +16,7 @@ El trasfondo es la Biblia hebrea. Su palabra para la carne, *bāśār*, signific
 
 > {{OWB:ISA.40.6.s1:B}}
 
-Isaías aún no está traducido al español, así que la cita es de la edición inglesa. Su nivel Equilibrada dice «Humankind is grass» («la humanidad es hierba»), porque eso es lo que significa la expresión hebrea. Aquí la «carne» no es pecadora. Es débil y pasajera, puesta junto a la palabra de Dios, que «permanece para siempre» (versículo 8). La Septuaginta, la traducción griega del Antiguo Testamento, tradujo esta palabra hebrea por *sarx*, y Pablo leía su Biblia en ese griego.
+El nivel Equilibrada dice «La humanidad es hierba», porque eso es lo que significa la expresión hebrea. Aquí la «carne» no es pecadora. Es débil y pasajera, puesta junto a la palabra de Dios, que «permanece para siempre» (versículo 8). La Septuaginta, la traducción griega del Antiguo Testamento, tradujo esta palabra hebrea por *sarx*, y Pablo leía su Biblia en ese griego.
 
 El mismo sentido llano está en el Evangelio de Juan. «El Verbo se hizo carne» ({{GREEK:JHN.1.14:3-5}}) significa que el Verbo se hizo plenamente humano, cuerpo incluido. La decisión de significado del registro lo dice así, y el nivel Sencilla escribe «El Verbo se hizo hombre». La carne en este sentido es buena: el Hijo de Dios la asumió.
 

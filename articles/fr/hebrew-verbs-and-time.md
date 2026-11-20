@@ -10,7 +10,7 @@ source: c27aa9dda0a4
 
 > {{OWB:ISA.9.5.s1:B}}
 
-"Has been born", "est né". "Has been given", "a été donné". On parle de l'enfant comme s'il était déjà là. (Le livre d'Ésaïe n'est pas encore traduit en français dans Open Word Bible ; cette citation et les autres citations d'Ésaïe, des Psaumes et de Job sont donc tirées de sa version anglaise.) La plupart des Bibles anglaises numérotent ce verset 9:6 ; Open Word Bible suit la numérotation hébraïque, où il est le 9:5. Les chrétiens y lisent depuis longtemps une promesse du Christ, sept siècles plus tard. Alors pourquoi le prophète emploie-t-il un temps du passé ?
+"Est né". "A été donné". On parle de l'enfant comme s'il était déjà là. La plupart des Bibles anglaises numérotent ce verset 9:6 ; Open Word Bible suit la numérotation hébraïque, où il est le 9:5. Les chrétiens y lisent depuis longtemps une promesse du Christ, sept siècles plus tard. Alors pourquoi le prophète emploie-t-il un temps du passé ?
 
 La réponse courte est que l'hébreu biblique n'a pas de temps au sens où l'entendent l'anglais ou le français. Ses verbes disent quelque chose de la *manière* dont une action est vue plus que du *moment* où elle a lieu, et c'est au traducteur de déterminer le moment d'après le contexte. Cet article explique comment cela fonctionne, et ce qu'en fait Open Word Bible.
 
@@ -68,7 +68,7 @@ L'imparfait peut aussi couvrir à la fois le présent et l'avenir. Le Psaume 23 
 
 > {{OWB:PSA.23.1.s1:B}}
 
-Le verbe "manquer" est {{HEBREW:PSA.23.1:6}} (*ʾeḥsār*), un imparfait. Le dossier dit que sa forme couvre le présent et l'avenir : j'ai, et j'aurai, tout ce qu'il me faut. La Littérale dit "I will not lack [anything]" ("je ne manquerai [de rien]"), l'Équilibrée "I will never be in need" ("je ne serai jamais dans le besoin"), et la Simple "I have everything I need" ("j'ai tout ce qu'il me faut"). Les trois niveaux penchent dans des directions un peu différentes, mais ils ne choisissent pas des sens différents. Tous trois restent à l'intérieur de ce que dit la décision de sens.
+Le verbe "manquer" est {{HEBREW:PSA.23.1:6}} (*ʾeḥsār*), un imparfait. Le dossier dit que sa forme couvre le présent et l'avenir : j'ai, et j'aurai, tout ce qu'il me faut. La Littérale dit "je ne serai pas dans le manque", l'Équilibrée "jamais je ne serai dans le besoin", et la Simple "J'ai tout ce qu'il me faut". Les trois niveaux penchent dans des directions un peu différentes, mais ils ne choisissent pas des sens différents. Tous trois restent à l'intérieur de ce que dit la décision de sens.
 
 ## Des prophètes qui parlent de l'avenir au passé
 
@@ -95,9 +95,9 @@ Open Word Bible répond verset par verset, et les trois niveaux ne répondent pa
 
 > {{OWB:ISA.5.13.s1:B}}
 
-La Littérale garde la forme : "my people have gone into exile" ("mon peuple est parti en exil"). L'Équilibrée dit ce que veut dire le verset : "my people will be carried off into exile" ("mon peuple sera emmené en exil"). La décision de sens derrière les deux est marquée incertaine. Elle lit le verbe comme un événement futur présenté comme déjà accompli, puisque l'exil de Juda était encore à venir, et ajoute que le verset pourrait plutôt viser les tribus du Nord, déjà emmenées par l'Assyrie. La différence entre les niveaux est une différence de formulation, non de sens : les deux niveaux suivent la même décision, l'un en montrant la forme hébraïque, l'autre en énonçant son sens.
+La Littérale garde la forme : "mon peuple est parti en exil". L'Équilibrée dit ce que veut dire le verset : "mon peuple sera emmené en exil". La décision de sens derrière les deux est marquée incertaine. Elle lit le verbe comme un événement futur présenté comme déjà accompli, puisque l'exil de Juda était encore à venir, et ajoute que le verset pourrait plutôt viser les tribus du Nord, déjà emmenées par l'Assyrie. La différence entre les niveaux est une différence de formulation, non de sens : les deux niveaux suivent la même décision, l'un en montrant la forme hébraïque, l'autre en énonçant son sens.
 
-Josué 6:2 montre une autre façon de faire. Les trois niveaux gardent "I have given" ("j'ai livré"), mais la Simple ajoute une courte phrase de son cru, "It is as good as yours" ("C'est comme si elle était déjà à toi"), et la décision de formulation anglaise explique pourquoi : pour faire passer le sens du verbe accompli, à savoir que la ville appartiendra sûrement à Israël.
+Josué 6:2 montre une autre façon de faire. Les trois niveaux gardent le parfait ("j'ai livré", "je t'ai livré", "je t'ai donné"), mais la Simple ajoute une courte phrase de son cru, "C'est comme si elle était déjà à toi", et la décision de formulation anglaise explique pourquoi : pour faire passer le sens du verbe accompli, à savoir que la ville appartiendra sûrement à Israël.
 
 ## Ésaïe 9:5 : une naissance déjà annoncée
 
@@ -105,13 +105,13 @@ Josué 6:2 montre une autre façon de faire. Les trois niveaux gardent "I have g
 
 Les lecteurs ont adopté l'un et l'autre point de vue. Certains voient une naissance du temps même d'Ésaïe, peut-être un héritier royal, célébrée dans un langage qui dépasse tout roi ordinaire. Beaucoup de lecteurs chrétiens voient une prophétie du Christ, prononcée avec la certitude du parfait prophétique. Les deux ne s'excluent pas toujours : certains lisent le verset comme parlant d'un roi du temps d'Ésaïe dont les titres ne se sont pleinement réalisés que dans un fils de David plus tardif. Le dossier renvoie aux passages qui l'entourent : 7:14 promettait un fils appelé Emmanuel, et 11:1–5 décrit un roi issu de la lignée de Jessé.
 
-Ici, Open Word Bible garde la forme du passé à tous les niveaux : "a child has been born for us, a son has been given to us" ("un enfant nous est né, un fils nous a été donné"). C'est la forme qu'a employée Ésaïe, elle convient aux deux lectures, et la traduction peut la porter sans induire le lecteur en erreur. Un futur aurait tranché la question à la place du lecteur.
+Ici, Open Word Bible garde la forme du passé à tous les niveaux : "un enfant est né pour nous, un fils nous a été donné". C'est la forme qu'a employée Ésaïe, elle convient aux deux lectures, et la traduction peut la porter sans induire le lecteur en erreur. Un futur aurait tranché la question à la place du lecteur.
 
 ## Ésaïe 53 : un regard en arrière sur le serviteur
 
 Le chant du serviteur souffrant va d'Ésaïe 52:13 à la fin du chapitre 53, et ses verbes se déplacent dans le temps d'une manière que les lecteurs remarquent souvent.
 
-Il commence au futur. Le dossier de 52:13 donne "my servant will act wisely" ("mon serviteur agira avec sagesse"), "he will be high and lifted up" ("il sera haut placé et élevé"). Puis, au chapitre 53, un groupe de voix regarde en arrière ce qui est arrivé au serviteur, et les verbes passent au passé :
+Il commence au futur. Le dossier de 52:13 donne "mon serviteur agira avec sagesse", "il sera haut et élevé". Puis, au chapitre 53, un groupe de voix regarde en arrière ce qui est arrivé au serviteur, et les verbes passent au passé :
 
 > {{OWB:ISA.53.4.s1:B}}
 

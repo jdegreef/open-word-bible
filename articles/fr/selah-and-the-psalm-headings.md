@@ -10,8 +10,6 @@ La plupart des mots difficiles de la Bible le sont parce que les spécialistes n
 
 Cet article examine ce qu'on sait de ces mots, ce qu'on suppose, et comment une traduction devrait traiter un mot dont le sens s'est perdu.
 
-Les Psaumes ne sont pas encore traduits en français dans Open Word Bible ; les citations de cet article sont donc tirées de la version anglaise.
-
 ## Sélah
 
 Le Psaume 3 est une prière de David alors qu'il fuit devant son fils Absalom. Le verset 3 dans notre numérotation (le verset 2 dans la plupart des Bibles, pour une raison expliquée plus bas) rapporte ce que disent ses ennemis :
@@ -60,7 +58,7 @@ L'hébreu commence par {{HEBREW:PSA.4.1:1}}, "pour le chef de chœur", une formu
 
 Le titre soulève d'abord une question pratique. Dans le texte hébreu, le titre d'un psaume fait partie du psaume et compte comme son premier verset. La plupart des Bibles anglaises impriment le titre sans numéro et font commencer le verset 1 au premier vers du poème. Ainsi, à partir du Psaume 3, beaucoup de numéros de versets sont, dans Open Word Bible, supérieurs d'une unité à ceux des autres Bibles anglaises. Le dossier de Psaume 3:1 l'explique, et le dossier de chaque titre le répète. Open Word Bible suit la numérotation du texte hébreu qu'elle traduit. (Voir [Les numéros de chapitres et de versets](/articles/chapter-and-verse-numbers/) pour l'origine de cette numérotation.)
 
-Quand le titre est très court, l'hébreu le compte avec le premier vers, et les numéros sont les mêmes. Le Psaume 32 en est un exemple : "Of David. A maskil" ("De David. Maskil") fait partie du verset 1, avec "How blessed is the one whose rebellion is forgiven" ("Heureux celui dont la révolte est pardonnée").
+Quand le titre est très court, l'hébreu le compte avec le premier vers, et les numéros sont les mêmes. Le Psaume 32 en est un exemple : "De David. Maskil" fait partie du verset 1, avec "Heureux celui dont la révolte est pardonnée".
 
 ### Ce que veulent dire les mots des titres
 
@@ -82,13 +80,13 @@ Viennent ensuite des expressions qui sont probablement des noms d'airs. Le Psaum
 
 Ici, les trois niveaux se séparent, et la raison en est le but de chacun.
 
-La **Littérale** et l'**Équilibrée** gardent les termes hébreux comme des noms là où leur sens est inconnu : dans l'édition anglaise, "A miktam", "On alamoth", "On Ayyeleth-hashshahar". Elles traduisent ce qui est clair et gardent ce qui ne l'est pas. Le Psaume 57 fait légèrement exception, puisque "Ne détruis pas" est de l'hébreu tout à fait clair ; tous les niveaux le traduisent, et l'Équilibrée ajoute "To the tune" ("Sur l'air de"), en le prenant pour le nom d'un air.
+La **Littérale** et l'**Équilibrée** gardent les termes hébreux comme des noms là où leur sens est inconnu : "Un miktam", "Sur alamoth", "Sur Ayyéleth-hashshahar". Elles traduisent ce qui est clair et gardent ce qui ne l'est pas. Le Psaume 57 fait légèrement exception, puisque "Ne détruis pas" est de l'hébreu tout à fait clair ; tous les niveaux le traduisent, et l'Équilibrée ajoute "Sur l'air", en le prenant pour le nom d'un air.
 
 La **Simple** donne le sens le plus probable, et ses décisions de formulation sont marquées incertaines là où la supposition reste une supposition. Voici le titre du Psaume 22 à ce niveau :
 
 > {{OWB:PSA.22.1.s1:R}}
 
-Le Psaume 56 devient "To the tune “A Silent Dove Far Away”" ("Sur l'air de “La colombe silencieuse au loin”"), et "sur alamoth", au Psaume 46, devient "For high voices" ("Pour voix aiguës"). Là où même un sens probable est hors de portée, la Simple ne dit que ce qui est certain : pour "miktam", la décision de formulation est simplement "A song" ("Un chant"), parce que son sens est inconnu, et la Simple dit seulement que c'est un chant.
+Le Psaume 56 devient "Sur l'air « La colombe muette des lointains »", et "sur alamoth", au Psaume 46, devient "Pour voix aiguës". Là où même un sens probable est hors de portée, la Simple ne dit que ce qui est certain : pour "miktam", la Simple dit simplement "Un chant", parce que son sens est inconnu : elle dit seulement que c'est un chant.
 
 C'est ainsi qu'Open Word Bible sépare le sens de la formulation. La décision de sens dit ce qu'on sait et ce qu'on ne sait pas, et le marque incertain. La décision de formulation choisit, pour chaque niveau, des mots qui correspondent à cet état de la connaissance. La Simple peut être plus audacieuse dans sa formulation parce que la décision de sens, juste à côté, dit franchement quelle part en est supposée. (Voir [Trois niveaux, un seul sens](/articles/three-levels-one-meaning/).)
 
@@ -96,7 +94,7 @@ C'est ainsi qu'Open Word Bible sépare le sens de la formulation. La décision d
 
 Les lecteurs demandent parfois si les titres sont d'origine. La réponse honnête est que nous ne savons ni qui les a écrits ni quand. La plupart des spécialistes pensent qu'ils ont été ajoutés par ceux qui ont rassemblé et organisé les psaumes pour le culte, parfois longtemps après que les psaumes eux-mêmes ont été écrits. Mais ils sont très anciens. La traduction grecque les a, souvent avec ses propres ajouts, et les rouleaux des psaumes de Qumrân les ont aussi. Dans le texte hébreu, ils font partie du psaume, et dans certains cas le Nouveau Testament semble s'appuyer sur eux : Pierre et Paul argumentent tous deux à partir du Psaume 16 comme d'un psaume de David, l'auteur que lui donne son titre (Actes 2:25 ; 13:35–36).
 
-Certains spécialistes se sont aussi demandé si quelques notes n'appartiennent pas au psaume qui précède plutôt qu'à celui qui suit. En 1904, James W. Thirtle a soutenu que les notes musicales comme "pour le chef de chœur" se trouvaient à l'origine à la fin du psaume précédent. Habacuc 3 apporte un certain appui à cette idée : sa prière se termine, au verset 19, par exactement ce genre de note, "For the music director. With stringed instruments" ("Pour le chef de chœur. Avec instruments à cordes"), placée après le psaume. Notre dossier de ce verset la traite comme la note finale qu'elle est. Pour les Psaumes, la théorie n'a pas emporté l'adhésion générale, et nos dossiers gardent les titres là où le texte hébreu les place.
+Certains spécialistes se sont aussi demandé si quelques notes n'appartiennent pas au psaume qui précède plutôt qu'à celui qui suit. En 1904, James W. Thirtle a soutenu que les notes musicales comme "pour le chef de chœur" se trouvaient à l'origine à la fin du psaume précédent. Habacuc 3 apporte un certain appui à cette idée : sa prière se termine, au verset 19, par exactement ce genre de note, "Au chef de chœur. Avec instruments à cordes", placée après le psaume. Notre dossier de ce verset la traite comme la note finale qu'elle est. Pour les Psaumes, la théorie n'a pas emporté l'adhésion générale, et nos dossiers gardent les titres là où le texte hébreu les place.
 
 ## Dire "nous ne savons pas"
 

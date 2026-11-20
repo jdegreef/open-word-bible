@@ -24,7 +24,7 @@ Lors de la première Pâque, Israël reçut l'ordre de manger habillé ainsi, pr
 
 La Littérale garde "vos reins ceints". L'Équilibrée dit à quoi cela ressemblait : "vos vêtements relevés dans votre ceinture". La Simple dit : "Attachez vos vêtements à la ceinture". La décision de formulation est brève : l'Équilibrée et la Simple expliquent l'expression, et la Littérale la garde.
 
-La même image est à prendre au pied de la lettre en 1 Rois 18:46, où Élie, fortifié par le SEIGNEUR, relève sa robe et court devant le char du roi Achab jusqu'à Jizreel. La Simple ajoute pourquoi : "He tied up his long robe so he could run" ("Il releva sa longue robe pour pouvoir courir").
+La même image est à prendre au pied de la lettre en 1 Rois 18:46, où Élie, fortifié par le SEIGNEUR, relève sa robe et court devant le char du roi Achab jusqu'à Jizreel. La Simple ajoute pourquoi : "Il a remonté son long vêtement pour pouvoir courir".
 
 Jésus l'emploie comme un ordre en Luc 12:35 : "Ayez les reins ceints et les lampes allumées." L'Équilibrée dit : "Soyez prêts à travailler, la ceinture serrée". En anglais, la décision de formulation explique que "gird" est un mot vieilli ; en français, la Littérale garde "avoir les reins ceints", une tournure que le français connaît, et l'Équilibrée et la Simple disent ce qu'elle voulait dire.
 
@@ -54,8 +54,6 @@ La Simple l'explique, dans le sens qu'a choisi la décision de sens :
 
 > {{OWB:PRO.25.22.s1:R}}
 
-(Les Proverbes, comme Job, les Nombres, le Lévitique et les livres de Samuel et des Rois, ne sont pas encore traduits en français dans Open Word Bible ; les citations de ces livres sont donc tirées de sa version anglaise.)
-
 La décision de formulation de cette version Simple est elle aussi marquée incertaine, parce qu'elle énonce un sens qui est lui-même incertain. En Romains, la Simple garde l'image et ajoute une phrase, "Ta bonté peut lui faire honte et lui faire regretter ce qu'il a fait", et la décision de formulation note que "peut" laisse la question ouverte, et demande aux relecteurs de vérifier que la phrase n'en dit pas trop.
 
 ## Endurcir le cœur
@@ -78,9 +76,9 @@ La bénédiction sacerdotale de Nombres 6 se termine ainsi : "Que le SEIGNEUR l�
 
 > {{OWB:NUM.6.26.s1:B}}
 
-L'Équilibrée garde l'image et ajoute "to look on you" ("pour te regarder"), qui fait ressortir ce que fait la face levée. La Simple dit "turn toward you and care for you" ("se tourne vers toi et prenne soin de toi").
+L'Équilibrée garde l'image et ajoute "pour te regarder", qui fait ressortir ce que fait la face levée. La Simple dit "se tourne vers toi et prenne soin de toi".
 
-La même expression peut aller dans l'autre sens. En Lévitique 19:15, il est dit aux juges de ne pas "lever la face du pauvre" ni "honorer la face du grand". La décision de sens dit que lever la face de quelqu'un, c'est lui accorder sa faveur, ici au tribunal, et qu'un juge ne doit favoriser personne à cause de ce qu'il est. L'Équilibrée dit "take the side of the poor because they are poor" ("prendre le parti du pauvre parce qu'il est pauvre") et "give special honor to the powerful" ("accorder un honneur particulier aux puissants").
+La même expression peut aller dans l'autre sens. En Lévitique 19:15, il est dit aux juges de ne pas "lever la face du pauvre" ni "honorer la face du grand". La décision de sens dit que lever la face de quelqu'un, c'est lui accorder sa faveur, ici au tribunal, et qu'un juge ne doit favoriser personne à cause de ce qu'il est. L'Équilibrée dit "Tu ne prendras pas le parti du pauvre parce qu'il est pauvre" et "tu n'accorderas pas d'honneur particulier au puissant".
 
 Ainsi, les mêmes mots hébreux peuvent décrire la bénédiction de Dieu à un endroit et un juge corrompu à un autre. La faveur de Dieu est un don. La faveur d'un juge, accordée à une personne au lieu de la vérité, est une injustice. On ne traduit pas une expression idiomatique avec une formule. Chaque contexte a sa propre décision.
 
@@ -88,7 +86,7 @@ Ainsi, les mêmes mots hébreux peuvent décrire la bénédiction de Dieu à un 
 
 En 1 Samuel 9:15, la veille de l'arrivée de Saül, le SEIGNEUR "avait découvert l'oreille de Samuel". L'expression est {{HEBREW:1SA.9.15:2-5}}. La décision de sens l'explique : découvrir l'oreille de quelqu'un, c'est lui dire quelque chose en privé, un secret ou un projet, et quand c'est Dieu qui parle, cela veut dire une révélation.
 
-Ni l'anglais ni le français n'ont une telle expression, et "découvrit son oreille" paraîtrait étrange. La Littérale la garde. L'Équilibrée dit "the LORD had revealed this to Samuel" ("le SEIGNEUR l'avait révélé à Samuel"). La Simple dit "the LORD had told Samuel a secret" ("le SEIGNEUR avait confié un secret à Samuel"), ce qui garde quelque chose de l'impression d'une confidence murmurée.
+Ni l'anglais ni le français n'ont une telle expression, et "découvrit son oreille" paraîtrait étrange. La Littérale la garde. L'Équilibrée dit "le SEIGNEUR avait fait cette révélation à Samuel". La Simple dit "le SEIGNEUR avait confié un secret à Samuel", ce qui garde quelque chose de l'impression d'une confidence murmurée.
 
 ## Des entrailles de compassion
 
@@ -106,11 +104,11 @@ Parfois, la meilleure façon de rendre une expression idiomatique est une expres
 
 À travers ces exemples, un schéma se dessine.
 
-**La Littérale** garde l'expression idiomatique, pour qu'un lecteur puisse voir l'image de l'original : "vos reins ceints", "uncovered the ear" ("découvert l'oreille"), "il rendit son cœur lourd". C'est le niveau du lecteur qui veut savoir ce que dit réellement le texte, mot par mot.
+**La Littérale** garde l'expression idiomatique, pour qu'un lecteur puisse voir l'image de l'original : "vos reins ceints", "avait découvert l'oreille", "il rendit son cœur lourd". C'est le niveau du lecteur qui veut savoir ce que dit réellement le texte, mot par mot.
 
-**L'Équilibrée** décide au cas par cas. Là où une expression est bien connue et son sens clair, elle la garde souvent : "heaping burning coals" ("amasser des charbons ardents"), "lift up his face" ("lever sa face"). Là où elle déconcerterait ou induirait en erreur, elle donne le sens : "vos vêtements relevés dans votre ceinture", "revealed this to Samuel" ("l'avait révélé à Samuel").
+**L'Équilibrée** décide au cas par cas. Là où une expression est bien connue et son sens clair, elle la garde souvent : "tu entasseras des charbons ardents", "lève son visage". Là où elle déconcerterait ou induirait en erreur, elle donne le sens : "vos vêtements relevés dans votre ceinture", "avait fait cette révélation à Samuel".
 
-**La Simple** explique. Elle est écrite pour des lecteurs qui ne connaissent peut-être pas la culture qui se cache derrière l'image, et elle dit ce que veut dire l'expression : "Attachez vos vêtements à la ceinture", "told Samuel a secret" ("avait confié un secret à Samuel"), "il s'est entêté".
+**La Simple** explique. Elle est écrite pour des lecteurs qui ne connaissent peut-être pas la culture qui se cache derrière l'image, et elle dit ce que veut dire l'expression : "Attachez vos vêtements à la ceinture", "avait confié un secret à Samuel", "il s'est entêté".
 
 Derrière les trois se trouve une seule décision de sens, la même pour toutes les langues. Une traduction française, espagnole ou swahilie peut trouver sa propre expression pour le même sens, ou l'expliquer, mais elle ne change pas ce que veut dire l'expression. C'est le principe expliqué dans [Littérale, Équilibrée, Simple : trois niveaux, un seul sens](/articles/three-levels-one-meaning/).
 

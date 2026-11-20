@@ -6,7 +6,7 @@ order: 91
 section: passage
 source: 5156c545083f
 ---
-Fungua karibu zaburi yoyote nawe utaona kwamba inaonekana kusema mambo mara mbili. Zaburi 19 inaanza hivi (Zaburi bado hazijatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya Open Word Bible katika makala hii yanatoka katika tafsiri yake ya Kiingereza):
+Fungua karibu zaburi yoyote nawe utaona kwamba inaonekana kusema mambo mara mbili. Zaburi 19 inaanza hivi:
 
 > {{OWB:PSA.19.2.s1:B}}
 
@@ -32,7 +32,7 @@ Aina ya kwanza ya Lowth ni usambamba *wa visawe* (*synonymous*), ambapo mstari w
 
 Mstari huu una vipande vinne katika jozi mbili. Ng'ombe na punda ni jozi: kila mmoja anajua mahali anapohusika. Israeli na "watu wangu" ni jozi: hakuna anayejua. Kisha nusu mbili za mstari zinawekwa kinyume, wanyama dhidi ya watu waliopaswa kujua zaidi.
 
-Lakini angalia tena jozi ya mwisho. "Israeli hajui" inakuwa "watu wangu hawafikiri" (kwa Kiingereza, "my people give it no thought"). Kipande cha pili si marudio tu. Kinawataja Israeli kuwa watu *wa Mungu*, jambo linalolifanya shtaka kuwa kali zaidi, na kinasogea kutoka kujua hadi kutafakari. Rekodi ya mstari huu inaeleza kwamba kitenzi cha Kiebrania hapa kinamaanisha kulifikiria jambo kwa makini. Israeli hawasimami hata kufikiri.
+Lakini angalia tena jozi ya mwisho. "lakini Israeli hajui" inakuwa "watu wangu hawalitafakari". Kipande cha pili si marudio tu. Kinawataja Israeli kuwa watu *wa Mungu*, jambo linalolifanya shtaka kuwa kali zaidi, na kinasogea kutoka kujua hadi kutafakari. Rekodi ya mstari huu inaeleza kwamba kitenzi cha Kiebrania hapa kinamaanisha kulifikiria jambo kwa makini. Israeli hawasimami hata kufikiri.
 
 Msogeo huo mdogo ni wa kawaida. Hata katika mistari ya "visawe", kipande cha pili kwa kawaida huongeza kitu: neno mahususi zaidi, picha yenye nguvu zaidi, mtazamo wa karibu zaidi.
 
@@ -58,7 +58,7 @@ Mmojawapo unaovutia zaidi ni "ngazi", ambapo kipande kinaanza, kinakatika, na ku
 
 > {{OWB:PSA.93.3.s1:B}}
 
-Rekodi inauita mstari unaorudiwa na kukua kila mara, kama mawimbi yanayoinuka. Zaburi 92:10 inafanya vivyo hivyo na adui za BWANA ("Tazama adui zako, BWANA! Tazama, adui zako wataangamia"), na rekodi huko inautaja kuwa mtindo wa ushairi wa Kiebrania.
+Rekodi inauita mstari unaorudiwa na kukua kila mara, kama mawimbi yanayoinuka. Zaburi 92:10 inafanya vivyo hivyo na adui za BWANA ("Tazama adui zako, Ee BWANA! Tazama, adui zako wataangamia"), na rekodi huko inautaja kuwa mtindo wa ushairi wa Kiebrania.
 
 Aina nyingine ya kujenga ni msogeo ndani ya Zaburi 1:1:
 

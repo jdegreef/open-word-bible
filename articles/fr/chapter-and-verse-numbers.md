@@ -56,7 +56,7 @@ Il existe ailleurs des différences plus petites, comme à la fin de Genèse 31,
 
 ## Comment Open Word Bible gère les numéros
 
-Open Word Bible numérote chaque verset comme le fait son texte source. Pour l'Ancien Testament, c'est le Codex de Leningrad de Westminster : Malachie a donc trois chapitres, Joël quatre, et le titre d'un psaume est son premier verset. Là où cela compte, le premier verset concerné porte une note. Celle de Malachie 3:19 explique que ses six versets sont numérotés 4:1-6 dans beaucoup d'autres Bibles, et qu'Open Word Bible suit la numérotation du texte hébreu qu'elle traduit. Joël 3:1 a le même genre de note, de même que le titre du Psaume 3, cité ici dans la version anglaise, car les Psaumes ne sont pas encore traduits en français :
+Open Word Bible numérote chaque verset comme le fait son texte source. Pour l'Ancien Testament, c'est le Codex de Leningrad de Westminster : Malachie a donc trois chapitres, Joël quatre, et le titre d'un psaume est son premier verset. Là où cela compte, le premier verset concerné porte une note. Celle de Malachie 3:19 explique que ses six versets sont numérotés 4:1-6 dans beaucoup d'autres Bibles, et qu'Open Word Bible suit la numérotation du texte hébreu qu'elle traduit. Joël 3:1 a le même genre de note, de même que le titre du Psaume 3 :
 
 > {{OWB:PSA.3.1.s1:B}}
 
