@@ -295,6 +295,15 @@ hold for the later books.
   the reader setting, as the English has LORD / Yahweh. Particles go outside
   the span (`{{divine_name:主|ヤハウェ}}は`). *Adonai* ("Lord") is 主 with no
   span; *Elohim* is 神. エホバ is not used.
+- **Requests to God** take 〜てください (〜ないでください) in every book, inside
+  plain-style verse as in prose: the Psalter's form (Psalm 3:8, Numbers 10:35),
+  now also in the prophets' prayers, Lamentations, Job's words to God and
+  Agur's prayer (Proverbs 30:7-9). Not a bare imperative (見よ, 救え), and not
+  〜てほしい, which in Japanese voices the speaker's wish rather than asking
+  (the first drafts of the prophets, Lamentations and Job used it). Prose
+  prayers keep です・ます as before. 〜てほしい stays for requests between
+  people where the plain style fits (Elihu to Job, children to their mother),
+  and for God's own pleading with his people (Jeremiah 44:4).
 - **Lines.** Poetry is set in lines (`\q `), following the Hebrew accents'
   division of the verse (`scripts/poetry_lines.py`), at every level, as
   `docs/english-style.md` section 10 describes.
