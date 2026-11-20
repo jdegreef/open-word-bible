@@ -328,6 +328,17 @@ class SearchTest(TestCase):
             cur.execute("SELECT to_tsvector('owb_indonesian', 'dikasihi') @@ to_tsquery('owb_indonesian', 'kasih')")
             self.assertTrue(cur.fetchone()[0])
 
+    def test_arabic_is_stemmed_after_it_is_folded(self):
+        # owb_arabic (translation 0016) takes off the attached preposition
+        # and the article and the ending, on text folded as search.fold
+        # folds it, so "كلمة" finds "بِالْكَلِمَةِ" (by the word).
+        self.assertEqual(search.config("ar"), "owb_arabic")
+        word = search.fold("\u0628\u0650\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u0650")
+        query = search.fold("\u0643\u0644\u0645\u0629")
+        with connection.cursor() as cur:
+            cur.execute("SELECT to_tsvector('owb_arabic', %s) @@ plainto_tsquery('owb_arabic', %s)", [word, query])
+            self.assertTrue(cur.fetchone()[0])
+
     def test_japanese_references_with_full_width_digits(self):
         ref = self.get(q="ヨハネによる福音書３：１６", lang="ja")["reference"]
         self.assertEqual((ref["label"], ref["url"]), ("ヨハネによる福音書 3:16", "/ja/jhn/3/#v16"))
@@ -375,6 +386,27 @@ class JapaneseTextTest(SimpleTestCase):
         self.assertEqual(search.fold("Señor"), "senor")
         # The site's book aliases are folded the same way.
         self.assertEqual(build_site.fold("ガラテヤ３"), search.fold("ガラテヤ３"))
+
+    def test_fold_makes_arabic_letters_typed_either_way_one(self):
+        # الْكَلِمَةُ with its vowels, أ for ا, Persian ی and ک, tatweel,
+        # Arabic-Indic and Persian digits.
+        for text in ("\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f",
+                     "\u0623\u0628\u0631\u0627\u0647\u064a\u0645 \u0645\u0648\u0633\u0649",
+                     "\u06a9\u062a\u0627\u0628 \u0639\u06cc\u0633\u06cc \u0627\u0644\u0644\u0640\u0647",
+                     "\u0663:\u0661\u0666 \u06f3:\u06f1\u06f6"):
+            self.assertEqual(search.fold(text), build_site.fold(text), text)
+        self.assertEqual(search.fold("\u0623\u0628\u0631\u0627\u0647\u064a\u0645"),
+                         "\u0627\u0628\u0631\u0627\u0647\u064a\u0645")
+        self.assertEqual(search.fold("\u06a9\u06cc"), "\u0643\u064a")
+        self.assertEqual(search.fold("\u0663:\u0661\u0666"), "3:16")
+
+    def test_arabic_script_is_indexed_folded(self):
+        # Postgres's unaccent leaves Arabic marks and letters as they are, so
+        # the fields are folded before they are indexed, as a query is.
+        fields = ("\u0631\u0627\u0639\u0648\u062b", "", "\u0625\u0650\u0644\u0652\u0647\u064f \u06a9")
+        self.assertEqual(search.indexed("owb_simple", fields),
+                         ("\u0631\u0627\u0639\u0648\u062b", None, "\u0627\u0644\u0647 \u0643"))
+        self.assertEqual(search.indexed("owb_english", ("Ruth", "", "word")), (None, None, None))
 
 
 class ChineseTextTest(SimpleTestCase):
