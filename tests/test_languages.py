@@ -1,5 +1,6 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/, /zh/), the footer's language
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/, /zh/, /ar/), the footer's
+language
 switch, and the message catalogs in i18n/."""
 import html
 import json
@@ -15,6 +16,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
 from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
+
+
+def html_tag(lang):
+    """The page's opening html tag: a right-to-left language's says so."""
+    rtl = ' dir="rtl"' if languages.direction(lang) == "rtl" else ""
+    return f'<html lang="{lang}"{rtl}>'
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
 
@@ -94,7 +101,7 @@ class LanguagesTest(unittest.TestCase):
             for rel in pages:
                 self.assertTrue((self.out / lang / rel).is_file(), (lang, rel))
                 text = self.read(Path(lang) / rel)
-                self.assertIn(f'<html lang="{lang}">', text, rel)
+                self.assertIn(html_tag(lang), text, rel)
                 self.assertIn(build_site.langs_meta(build_site.LANGUAGES), text, rel)
         for rel in pages:
             self.assertIn('<html lang="en">', self.read(rel), rel)
@@ -165,7 +172,7 @@ class LanguagesTest(unittest.TestCase):
                 # So may a key-term page's English sentences and notes, the
                 # share card's description, which quotes the opening verse,
                 # and the home page's verses of the day ("Filho do Homem").
-                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
+                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en"[^>]*>.*?</p>'
                               r'|<meta property="og:image:alt" content="[^"]*">'
                               r'|<script type="application/json" class="votd-data">.*?</script>'
                               r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
@@ -243,7 +250,7 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(cat["read.heading"], read)
             self.assertNotIn('class="book-tile"', read)
             chapter = self.read(f"{lang}/jhn/1/index.html")
-            self.assertIn(f'<html lang="{lang}">', chapter)
+            self.assertIn(html_tag(lang), chapter)
             self.assertIn(html.escape(cat["reader.ui"]["partial"]), chapter)
             text = re.search(r'<div class="text" id="text">.*?</div>', chapter, re.S)[0]
             self.assertIn('lang="en"', text)

@@ -121,7 +121,9 @@ class TermPagesTest(unittest.TestCase):
             page = self.read(f"{prefix}terms")
             for key, term in validate.KEY_TERMS.items():
                 self.assertIn(f'href="{build_site.url(lang, build_site.term_path(term))}"', page)
-                self.assertIn(f'lang="{key[0]}">{term["lemma"]}<', page)
+                # A Hebrew word in a left-to-right page is marked right to
+                # left, and a Greek one in a right-to-left page left to right.
+                self.assertRegex(page, f'lang="{key[0]}"( dir="(rtl|ltr)")?>' + re.escape(term["lemma"]) + "<")
             self.assertLess(page.index('id="grc"'), page.index('id="hbo"'))
         sitemap = sitemap_text(self.out)
         self.assertIn("/terms/grace/", sitemap)

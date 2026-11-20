@@ -37,7 +37,7 @@ class SearchTest(unittest.TestCase):
                    for lang in build_site.LANGUAGES}
         for page in self.out.rglob("index.html"):
             text = page.read_text(encoding="utf-8")
-            lang = re.search(r'<html lang="(\w+)">', text)[1]
+            lang = re.search(r'<html lang="(\w+)"[ >]', text)[1]
             m = re.search(rf'<meta name="owb-search" content="{source}" '
                           r'data-ui="/search-ui-(\w+)\.json\?v=(\w+)">', text)
             self.assertIsNotNone(m, page)

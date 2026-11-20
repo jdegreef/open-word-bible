@@ -71,7 +71,7 @@ class SiteTest(unittest.TestCase):
         for path in self.out.rglob("index.html"):
             text = path.read_text(encoding="utf-8")
             self.assertIn(f'<meta name="owb-api" content="{build_site.API_URL}">', text, path)
-            lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+            lang = re.search(r'<html lang="([a-z]+)"[ >]', text)[1]
             self.assertIn(f'<a class="sign-in-btn" href="{build_site.url(lang, "/login/")}" data-login>', text, path)
             self.assertIn(f'<a class="pop-item" href="{build_site.url(lang, "/account/")}">', text, path)
 
