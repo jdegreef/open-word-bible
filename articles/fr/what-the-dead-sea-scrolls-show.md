@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
-source: a067bebd487f
+source: 63b04e4c28b5
 ---
 Quand la découverte des manuscrits de la mer Morte a été annoncée, beaucoup de gens se sont posé une question : montreraient-ils que la Bible avait été modifiée ? La réponse s'est révélée plus intéressante qu'un simple oui ou un simple non.
 
@@ -31,7 +31,7 @@ Eugene Ulrich, un autre éditeur des rouleaux bibliques, préfère décrire la s
 
 ## Trois exemples
 
-**Jérémie.** La version grecque de Jérémie dans la Septante est plus courte d'environ un septième que le texte hébreu massorétique, et ordonne certains chapitres différemment. Avant 1947, beaucoup de spécialistes supposaient que le traducteur grec avait librement abrégé. Mais des fragments de la grotte 4, en particulier 4QJer-b et 4QJer-d, conservent un texte hébreu du type le plus court. D'autres rouleaux de Jérémie de la même grotte ont la forme massorétique, plus longue. Les deux éditions existaient en hébreu et étaient copiées à la même époque. Les traducteurs suivent aujourd'hui l'édition massorétique, plus longue, qui est la forme que les communautés juives et chrétiennes lisent depuis deux mille ans ; l'édition plus courte aide les spécialistes à comprendre comment le livre s'est développé.
+**Jérémie.** La version grecque de Jérémie dans la Septante est plus courte d'environ un huitième que le texte hébreu massorétique, et ordonne certains chapitres différemment. Avant 1947, beaucoup de spécialistes supposaient que le traducteur grec avait librement abrégé. Mais des fragments de la grotte 4, en particulier 4QJer-b et 4QJer-d, conservent un texte hébreu du type le plus court. D'autres rouleaux de Jérémie de la même grotte ont la forme massorétique, plus longue. Les deux éditions existaient en hébreu et étaient copiées à la même époque. Les traducteurs suivent aujourd'hui l'édition massorétique, plus longue, qui est la forme que les communautés juives et chrétiennes lisent depuis deux mille ans ; l'édition plus courte aide les spécialistes à comprendre comment le livre s'est développé.
 
 **1 Samuel 11.** Un grand manuscrit de Samuel de la grotte 4, **4QSam-a**, contient avant 1 Samuel 11 un paragraphe qui n'est pas dans le texte massorétique. Il raconte comment Nahash, roi des Ammonites, opprimait les tribus de Gad et de Ruben et leur crevait l'œil droit, ce qui explique pourquoi son exigence en 11:2 est si cruelle. L'historien du Ier siècle Josèphe semble avoir connu ce passage (*Antiquités juives* 6.68–71). La New Revised Standard Version (1989) a inclus le paragraphe dans son texte ; la plupart des autres traductions ne le font pas, ou le mentionnent en note. Les spécialistes discutent encore pour savoir s'il a été perdu accidentellement dans le texte massorétique ou ajouté dans la tradition dont dépend 4QSam-a.
 

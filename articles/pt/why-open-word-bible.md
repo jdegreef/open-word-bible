@@ -4,7 +4,7 @@ summary: A maioria das traduções modernas tem direitos autorais, e quase todas
 date: 2026-10-10
 order: 1
 section: method
-source: 9fd8dc41ba74
+source: 367fdc3441f9
 ---
 Já existem muitas boas traduções da Bíblia. Então por que começar mais uma?
 
@@ -48,4 +48,4 @@ O registro ao lado do versículo diz por quê. João usa o mesmo verbo em 12:35 
 
 ## Onde estamos
 
-O projeto é jovem. A Bíblia inteira está redigida em inglês, espanhol, francês, suaíli, vietnamita, coreano, português e amárico, e o trabalho em híndi e russo já começou, cada uma a partir do grego e do hebraico. Cada frase vem com todo o seu raciocínio, e a página [Ler](/read/) mostra o que já está traduzido. Ele existe para mostrar o método e para ser criticado. Se você lê grego ou hebraico, ou simplesmente nota algo que soa mal, o [projeto no GitHub](https://github.com/jdegreef/open-word-bible) é o lugar para dizer isso.
+O projeto é jovem. A Bíblia inteira está redigida em inglês, espanhol, francês, suaíli, vietnamita, coreano, português, amárico, híndi, russo, ucraniano, japonês e indonésio, e outras línguas estão a caminho, cada uma a partir do grego e do hebraico. Cada frase vem com todo o seu raciocínio, e a página [Ler](/read/) mostra o que já está traduzido. Ele existe para mostrar o método e para ser criticado. Se você lê grego ou hebraico, ou simplesmente nota algo que soa mal, o [projeto no GitHub](https://github.com/jdegreef/open-word-bible) é o lugar para dizer isso.

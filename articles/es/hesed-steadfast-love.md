@@ -4,7 +4,7 @@ summary: Una sola palabra hebrea describe el amor de Dios por su pueblo y el amo
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Algunas palabras llevan tanto dentro que toda traducción de ellas deja escapar algo. La palabra hebrea {{LEMMA:RUT.1.8:14}}, que suele escribirse *ḥesed* o *jésed*, es una de ellas. Aparece unas 250 veces en el Antiguo Testamento, cerca de la mitad en los Salmos. Está en el centro de cómo Israel describía a Dios, y de cómo se esperaba que los israelitas se trataran unos a otros. Las Biblias en inglés han probado «mercy» («misericordia»), «kindness» («bondad»), «lovingkindness» («bondad amorosa»), «steadfast love» («amor constante»), «loyalty» («lealtad»), «faithful love» («amor fiel») y más. Cada una dice algo verdadero, y cada una deja algo fuera.
 
@@ -70,9 +70,9 @@ Los registros usan un pequeño conjunto de traducciones, elegidas para que cada 
 
 En la edición inglesa, en la Ley, los libros históricos y Rut, el nivel Literal dice «steadfast love» y los niveles Equilibrada y Sencilla dicen «faithful love». Así, en Éxodo 34:6 Dios es «great in steadfast love» en la Literal y «rich in faithful love» en la Equilibrada. Josué 2:12, donde Rajab pide a los espías que muestren a su familia la *ḥesed* que ella les ha mostrado, y 2 Samuel 9:1, donde David busca a alguien de la casa de Saúl a quien mostrar *ḥesed* por amor a Jonatán, siguen el mismo patrón. En español, lo traducido hasta ahora dice por lo general «amor fiel» en todos los niveles: en Éxodo 34:6, Dios es «grande en amor fiel y en verdad» en la Literal y «rico en amor fiel y en verdad» en la Equilibrada, como se ve en la cita de arriba.
 
-En los Salmos y los profetas, los niveles Literal y Equilibrada de la edición inglesa dicen «loyal love» («amor leal») y la Sencilla dice «faithful love». Es lo que se ve en el Salmo 136 y en Lamentaciones 3:22, más arriba.
+En los Salmos, los demás libros poéticos (Job, Proverbios, Eclesiastés, el Cantar de los Cantares), Lamentaciones y los profetas, los niveles Literal y Equilibrada de la edición inglesa dicen «loyal love» («amor leal») y la Sencilla dice «faithful love». Es lo que se ve en el Salmo 136 y en Lamentaciones 3:22, más arriba. Donde un libro histórico canta un salmo, conserva la redacción de los Salmos: el estribillo del templo «his loyal love is forever» en 1 y 2 Crónicas y en Esdras 3:11, y el canto de David en 2 Samuel 22, que es el Salmo 18. Contando todo el Antiguo Testamento, la Equilibrada inglesa dice «loyal love» unas tres veces más que «faithful love», simplemente porque la mayoría de los usos de la palabra están en los Salmos.
 
-La diferencia es solo de redacción. Las decisiones de significado describen el mismo sentido en todos estos lugares: un amor que se mantiene fiel dentro de un vínculo. Las dos redacciones se fijaron en las tablas de términos para grupos de libros distintos, y las notas del proyecto señalan un lugar donde se encuentran de forma incómoda: cuando Joel y Jonás citan Éxodo 34:6, todavía no coinciden entre sí. Es una cuestión abierta para la revisión, y habrá que elegir una sola redacción para esas citas.
+La diferencia es solo de redacción. Las decisiones de significado describen el mismo sentido en todos estos lugares: un amor que se mantiene fiel dentro de un vínculo. Las dos redacciones se fijaron en las tablas de términos para grupos de libros distintos, y la regla queda ahora registrada con los demás términos clave. Cuando un libro posterior cita Éxodo 34:6, la cita sigue a su propio libro: Números 14:18 y Nehemías 9:17 dicen «steadfast love» y «faithful love», como Éxodo, y Joel 2:13 y Jonás 4:2 dicen los dos «loyal love».
 
 Algunos versículos se apartan del patrón, cada uno con una razón registrada.
 

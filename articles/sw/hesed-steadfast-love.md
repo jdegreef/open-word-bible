@@ -4,7 +4,7 @@ summary: Neno moja la Kiebrania linaeleza upendo wa Mungu kwa watu wake na upend
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Maneno mengine yanabeba mengi kiasi kwamba kila tafsiri yake inavuja. Neno la Kiebrania {{LEMMA:RUT.1.8:14}}, ambalo kwa kawaida huandikwa *ḥesed* au *chesed*, ni mojawapo. Linatokea mara 250 hivi katika Agano la Kale, karibu nusu yake katika Zaburi. Liko katikati ya jinsi Israeli walivyomweleza Mungu, na ya jinsi Waisraeli walivyotarajiwa kutendeana. Biblia za Kiingereza zimejaribu "mercy" (rehema), "kindness" (wema), "lovingkindness" (wema wa upendo), "steadfast love" (upendo thabiti), "loyalty" (uaminifu), "faithful love" (upendo wa uaminifu) na mengine zaidi. Kila moja linasema jambo la kweli, na kila moja linaacha kitu nje.
 
@@ -74,9 +74,9 @@ Rekodi zinatumia tafsiri chache, zilizochaguliwa ili kila moja ibakize uaminifu 
 
 Katika toleo la Kiingereza, katika Torati, vitabu vya historia na Ruthu, kiwango cha Halisi kinasema "steadfast love" (upendo thabiti) na viwango vya Linganifu na Rahisi vinasema "faithful love" (upendo wa uaminifu). Kwa hiyo katika Kutoka 34:6 Mungu ni "great in steadfast love" (mkuu katika upendo thabiti) katika Halisi na "rich in faithful love" (mwingi wa upendo wa uaminifu) katika Linganifu. Yoshua 2:12, ambapo Rahabu anawaomba wapelelezi waionyeshe familia yake *ḥesed* aliyowaonyesha wao, na 2 Samweli 9:1, ambapo Daudi anamtafuta mtu wa nyumba ya Sauli ili amwonyeshe *ḥesed* kwa ajili ya Yonathani, vinafuata utaratibu huohuo. Toleo la Kiswahili la Kutoka linafuata mabadiliko hayo kwa njia yake: katika Kutoka 20:6 Halisi inasema "upendo usiokoma", Linganifu "upendo wa uaminifu", na Rahisi "ninawapenda kwa uaminifu bila kukoma".
 
-Katika Zaburi na manabii, viwango vya Halisi na Linganifu vya Kiingereza vinasema "loyal love" (upendo wa uaminifu) na Rahisi inasema "faithful love". Ndivyo unavyoona katika Zaburi 136 na katika Maombolezo 3:22 hapo juu.
+Katika Zaburi, vitabu vingine vya mashairi (Ayubu, Mithali, Mhubiri, Wimbo Ulio Bora), Maombolezo na manabii, viwango vya Halisi na Linganifu vya Kiingereza vinasema "loyal love" (upendo wa uaminifu) na Rahisi inasema "faithful love". Ndivyo unavyoona katika Zaburi 136 na katika Maombolezo 3:22 hapo juu. Pale ambapo kitabu cha historia kinaimba zaburi, kinabaki na maneno ya Zaburi: kiitikio cha hekalu "his loyal love is forever" (upendo wake wa uaminifu ni wa milele) katika 1 na 2 Mambo ya Nyakati na Ezra 3:11, na wimbo wa Daudi katika 2 Samweli 22, ambao ni Zaburi 18. Ukihesabu katika Agano la Kale lote, kiwango cha Linganifu cha Kiingereza kinasema "loyal love" takriban mara tatu zaidi ya "faithful love", kwa sababu tu matumizi mengi ya neno hilo yako katika Zaburi.
 
-Tofauti iko katika maneno tu. Maamuzi ya maana yanaeleza maana ileile katika kila mahali hapa: upendo unaobaki mwaminifu ndani ya kifungo. Maneno hayo mawili yaliwekwa katika majedwali ya istilahi kwa makundi tofauti ya vitabu, na maelezo ya mradi yanaonyesha mahali pamoja ambapo yanakutana vibaya: Yoeli na Yona wanaponukuu Kutoka 34:6, bado hawakubaliani. Hilo ni swali lililo wazi kwa ajili ya ukaguzi, na maneno mamoja yatachaguliwa kwa nukuu hizo.
+Tofauti iko katika maneno tu. Maamuzi ya maana yanaeleza maana ileile katika kila mahali hapa: upendo unaobaki mwaminifu ndani ya kifungo. Maneno hayo mawili yaliwekwa katika majedwali ya istilahi kwa makundi tofauti ya vitabu, na kanuni hiyo sasa imeandikwa pamoja na istilahi nyingine muhimu. Kitabu cha baadaye kinaponukuu Kutoka 34:6, nukuu inafuata kitabu chake chenyewe: Hesabu 14:18 na Nehemia 9:17 zinasema "steadfast love" na "faithful love" kama Kutoka, na Yoeli 2:13 na Yona 4:2 zote zinasema "loyal love".
 
 Mistari mingine inaachana na utaratibu huu, kila mmoja kwa sababu iliyoandikwa.
 

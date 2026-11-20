@@ -5,9 +5,9 @@ date: 2026-11-14
 order: 112
 nav_title: Les deux éditions de Jérémie
 section: passage
-source: 57b54f832e6f
+source: ab0e3f253839
 ---
-Chaque livre de la Bible a des endroits où les manuscrits divergent. Dans la plupart des livres, ils sont peu nombreux et minimes. Jérémie est différent. Dans les dossiers d'Open Word Bible, il compte 176 décisions de variante textuelle, plus que tout autre livre : plus que Jean (139), les Psaumes (134) ou Ésaïe (122). Quatre-vingt-seize d'entre elles portent une note de bas de page, et cinquante sont marquées comme incertaines.
+Chaque livre de la Bible a des endroits où les manuscrits divergent. Dans la plupart des livres, ils sont peu nombreux et minimes. Jérémie est différent. Dans les dossiers d'Open Word Bible, il compte 178 décisions de variante textuelle, plus que tout autre livre : plus que Jean (139), les Psaumes (134) ou Luc (125). Quatre-vingt-treize d'entre elles portent une note de bas de page, et cinquante sont marquées comme incertaines.
 
 La raison principale est que Jérémie nous est parvenu en deux éditions. Cet article explique ce qu'elles sont, pourquoi les spécialistes pensent que le livre existe sous deux formes, et ce que fait la traduction.
 
@@ -66,7 +66,7 @@ Beaucoup de ces notes disent quelque chose d'inhabituel : "Cette description du 
 
 ## L'autre moitié : ce que les scribes ont écrit et ce qu'ils lisaient
 
-Environ 84 des 176 décisions de Jérémie concernent le grec. Presque autant, environ 78, concernent autre chose : des endroits où les manuscrits hébreux eux-mêmes donnent deux formes d'un mot.
+Environ 84 des 178 décisions de Jérémie concernent le grec. Presque autant, environ 78, concernent autre chose : des endroits où les manuscrits hébreux eux-mêmes donnent deux formes d'un mot.
 
 Les massorètes, les scribes qui ont copié et vocalisé le texte hébreu au début du Moyen Âge, ne voulaient pas changer les lettres qu'ils avaient reçues. Là où ils pensaient qu'un mot devait se lire autrement, ils laissaient les consonnes écrites telles quelles et notaient en marge la forme à lire à voix haute. La forme écrite s'appelle le *ketiv* ("ce qui est écrit"), et la forme lue à voix haute le *qere* ("ce qui est lu"). Jérémie en compte un nombre inhabituel. Voir [Les massorètes : gardiens du texte hébreu](/articles/the-masoretes/).
 
@@ -80,7 +80,7 @@ Les quatorze décisions restantes, à peu près, concernent des endroits où cer
 
 ## Pourquoi tant de notes ?
 
-Tout compte fait, ce nombre n'est pas le signe que le texte de Jérémie est peu fiable. La plupart des 176 décisions consignent soit une différence d'orthographe que les scribes hébreux ont eux-mêmes signalée, soit un endroit où l'édition grecque est plus courte. La première sorte ne touche presque à rien. La seconde est réelle, mais elle est bien comprise et bien documentée : deux éditions du livre d'un même prophète, toutes deux anciennes, toutes deux copiées par des communautés fidèles.
+Tout compte fait, ce nombre n'est pas le signe que le texte de Jérémie est peu fiable. La plupart des 178 décisions consignent soit une différence d'orthographe que les scribes hébreux ont eux-mêmes signalée, soit un endroit où l'édition grecque est plus courte. La première sorte ne touche presque à rien. La seconde est réelle, mais elle est bien comprise et bien documentée : deux éditions du livre d'un même prophète, toutes deux anciennes, toutes deux copiées par des communautés fidèles.
 
 Le lecteur d'Open Word Bible peut voir les deux, sans être obligé de choisir. Le texte est l'édition hébraïque que l'Église et la synagogue ont lue. Les notes montrent où l'autre édition diffère, et les décisions expliquent pourquoi, et avec quelle assurance la traduction se prononce.
 

@@ -4,7 +4,7 @@ summary: Một từ Hê-bơ-rơ mô tả tình yêu của Đức Chúa Trời d�
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Có những từ mang nặng đến nỗi bản dịch nào cũng làm rơi rớt một phần. Từ Hê-bơ-rơ {{LEMMA:RUT.1.8:14}}, thường được viết là *ḥesed* hoặc *chesed*, là một trong số đó. Nó xuất hiện khoảng 250 lần trong Cựu Ước, khoảng một nửa trong số đó ở sách Thi Thiên. Nó nằm ở trung tâm của cách Y-sơ-ra-ên mô tả Đức Chúa Trời, và của cách người Y-sơ-ra-ên được mong đợi đối xử với nhau. Các bản Kinh Thánh tiếng Anh đã thử “mercy” (lòng thương xót), “kindness” (lòng tốt), “lovingkindness” (lòng nhân ái), “steadfast love” (tình yêu bền vững), “loyalty” (lòng trung thành), “faithful love” (tình yêu thành tín) và nhiều cách khác nữa. Mỗi cách nói lên một điều đúng, và mỗi cách bỏ sót một điều.
 
@@ -74,9 +74,9 @@ Các bản ghi dùng một nhóm nhỏ cách dịch, được chọn sao cho m�
 
 Trong các sách Luật Pháp (Ngũ Kinh), các sách lịch sử và sách Ru-tơ, cấp độ Sát nghĩa nói “steadfast love” (tình yêu bền vững), còn cấp độ Cân bằng và Dễ đọc nói “faithful love” (tình yêu thành tín). Như vậy trong Xuất Ai Cập Ký 34:6, Đức Chúa Trời “great in steadfast love” (giàu tình yêu bền vững) ở cấp độ Sát nghĩa và “rich in faithful love” (giàu tình yêu thành tín) ở cấp độ Cân bằng. Giô-suê 2:12, nơi Ra-háp xin các thám tử bày tỏ cho gia đình bà *ḥesed* mà bà đã bày tỏ cho họ, và 2 Sa-mu-ên 9:1, nơi Đa-vít tìm một người thuộc nhà Sau-lơ để bày tỏ *ḥesed* vì cớ Giô-na-than, cũng theo cùng khuôn mẫu ấy.
 
-Trong Thi Thiên và các sách tiên tri, cấp độ Sát nghĩa và Cân bằng nói “loyal love” (tình yêu trung tín) và cấp độ Dễ đọc nói “faithful love”. Đó là điều bạn thấy trong Thi Thiên 136 và Ca Thương 3:22 ở trên.
+Trong Thi Thiên, các sách thơ ca khác (Gióp, Châm Ngôn, Truyền Đạo, Nhã Ca), Ca Thương và các sách tiên tri, cấp độ Sát nghĩa và Cân bằng nói “loyal love” (tình yêu trung tín) và cấp độ Dễ đọc nói “faithful love”. Đó là điều bạn thấy trong Thi Thiên 136 và Ca Thương 3:22 ở trên. Ở những chỗ một sách lịch sử hát một bài thánh thi, sách ấy giữ lời văn của Thi Thiên: điệp khúc trong đền thờ “his loyal love is forever” (tình yêu trung tín của Ngài còn đến đời đời) trong 1 và 2 Sử Ký và E-xơ-ra 3:11, và bài ca của Đa-vít trong 2 Sa-mu-ên 22, tức là Thi Thiên 18. Tính trên toàn bộ Cựu Ước, cấp độ Cân bằng nói “loyal love” nhiều gấp khoảng ba lần “faithful love”, đơn giản vì phần lớn các lần từ này xuất hiện là trong Thi Thiên.
 
-Sự khác biệt chỉ nằm ở lời văn. Các quyết định về nghĩa mô tả cùng một ý nghĩa ở tất cả những chỗ này: tình yêu giữ trọn tình nghĩa trong một mối ràng buộc. Hai cách diễn đạt được ấn định trong các bảng thuật ngữ cho những nhóm sách khác nhau, và ghi chú của dự án đánh dấu một chỗ hai cách ấy gặp nhau không ăn khớp: khi Giô-ên và Giô-na trích Xuất Ai Cập Ký 34:6, chúng chưa thống nhất với nhau. Đó là một câu hỏi còn để ngỏ cho người duyệt, và sẽ cần chọn một cách diễn đạt cho những câu trích ấy.
+Sự khác biệt chỉ nằm ở lời văn. Các quyết định về nghĩa mô tả cùng một ý nghĩa ở tất cả những chỗ này: tình yêu giữ trọn tình nghĩa trong một mối ràng buộc. Hai cách diễn đạt được ấn định trong các bảng thuật ngữ cho những nhóm sách khác nhau, và quy tắc này nay đã được ghi lại cùng với các thuật ngữ then chốt khác. Khi một sách về sau trích Xuất Ai Cập Ký 34:6, câu trích theo chính sách của nó: Dân Số Ký 14:18 và Nê-hê-mi 9:17 nói “steadfast love” và “faithful love” như Xuất Ai Cập Ký, còn Giô-ên 2:13 và Giô-na 4:2 đều nói “loyal love”.
 
 Một số câu đi khác khuôn mẫu, mỗi câu đều có lý do được ghi lại.
 

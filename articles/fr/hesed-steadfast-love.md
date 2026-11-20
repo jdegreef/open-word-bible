@@ -4,7 +4,7 @@ summary: Un seul mot hébreu décrit l'amour de Dieu pour son peuple et l'amour 
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Certains mots portent tant de choses que chacune de leurs traductions laisse fuir quelque chose. Le mot hébreu {{LEMMA:RUT.1.8:14}}, qu'on écrit d'ordinaire *ḥesed* ou *chesed*, est de ceux-là. Il apparaît environ 250 fois dans l'Ancien Testament, dont à peu près la moitié dans les Psaumes. Il est au centre de la façon dont Israël décrivait Dieu, et de la façon dont les Israélites devaient se traiter les uns les autres. Les Bibles anglaises ont essayé "mercy" ("miséricorde"), "kindness" ("bonté"), "lovingkindness", "steadfast love" ("amour constant"), "loyalty" ("loyauté"), "faithful love" ("amour fidèle"), et d'autres encore. Chacun dit quelque chose de vrai, et chacun laisse quelque chose de côté.
 
@@ -72,11 +72,11 @@ Les dossiers emploient un petit ensemble de traductions, choisies pour que chacu
 
 Dans l'édition anglaise, pour la Loi, les livres historiques et Ruth, le niveau Littérale dit "steadfast love" et les niveaux Équilibrée et Simple disent "faithful love". Ainsi, en Exode 34:6, Dieu est "great in steadfast love" au niveau Littérale et "rich in faithful love" à l'Équilibrée. Josué 2:12, où Rahab demande aux espions de montrer à sa famille le *ḥesed* qu'elle leur a montré, et 2 Samuel 9:1, où David cherche quelqu'un de la maison de Saül à qui montrer du *ḥesed* par égard pour Jonathan, suivent le même modèle.
 
-Dans les Psaumes et les prophètes, les niveaux Littérale et Équilibrée de l'édition anglaise disent "loyal love" et la Simple dit "faithful love". C'est ce qu'on voit plus haut dans le Psaume 136 et en Lamentations 3:22.
+Dans les Psaumes, les autres livres poétiques (Job, Proverbes, Ecclésiaste, Cantique des cantiques), les Lamentations et les prophètes, les niveaux Littérale et Équilibrée de l'édition anglaise disent "loyal love" et la Simple dit "faithful love". C'est ce qu'on voit plus haut dans le Psaume 136 et en Lamentations 3:22. Là où un livre historique chante un psaume, il garde la formulation des Psaumes : le refrain du temple "his loyal love is forever" en 1 et 2 Chroniques et en Esdras 3:11, et le cantique de David en 2 Samuel 22, qui est le Psaume 18. Sur l'ensemble de l'Ancien Testament, l'Équilibrée anglaise dit "loyal love" environ trois fois plus souvent que "faithful love", simplement parce que la plupart des emplois du mot se trouvent dans les Psaumes.
 
 En français, là où la traduction existe déjà, le mot est "amour fidèle" aux trois niveaux : en Exode 34:6, Dieu est "grand en amour fidèle" au niveau Littérale et "riche en amour fidèle" à l'Équilibrée, et la Simple dit "Son amour fidèle est grand". Une décision de formulation en Exode 15:13 en donne la raison : "fidélité" seule perd l'amour que porte le mot, et "bonté" en perd la loyauté.
 
-La différence ne porte que sur la formulation. Les décisions de sens décrivent le même sens dans chacun de ces passages : un amour qui reste fidèle à l'intérieur d'un lien. Les deux formulations anglaises ont été fixées dans les tableaux de termes pour des groupes de livres différents, et les notes du projet signalent un endroit où elles se rencontrent mal : quand Joël et Jonas citent Exode 34:6, ils ne s'accordent pas encore entre eux. C'est une question ouverte pour la relecture, et une seule formulation doit être choisie pour ces citations.
+La différence ne porte que sur la formulation. Les décisions de sens décrivent le même sens dans chacun de ces passages : un amour qui reste fidèle à l'intérieur d'un lien. Les deux formulations anglaises ont été fixées dans les tableaux de termes pour des groupes de livres différents, et la règle est désormais consignée avec les autres termes clés. Quand un livre plus tardif cite Exode 34:6, la citation suit son propre livre : Nombres 14:18 et Néhémie 9:17 disent "steadfast love" et "faithful love", comme l'Exode, et Joël 2:13 et Jonas 4:2 disent tous deux "loyal love".
 
 Certains versets s'écartent du modèle, chacun avec une raison consignée.
 

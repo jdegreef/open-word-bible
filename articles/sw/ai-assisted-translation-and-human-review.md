@@ -4,7 +4,7 @@ summary: Kila kitu kwenye tovuti hii leo kimetafsiriwa kwa msaada wa AI. Hapa ni
 date: 2026-10-10
 order: 10
 section: method
-source: 2f05369a7dc4
+source: e1e9a6d4898e
 ---
 Open Word Bible inatafsiriwa kwa msaada wa AI. Tunasema hivyo waziwazi, kwa sababu mradi unaoahidi kuonyesha kazi yake hauwezi kuficha nani aliyefanya kazi hiyo. Makala hii inaeleza jinsi sentensi inavyoandikwa, unachoweza kuona kuihusu, mahali ambapo uandishi wa AI unapungukiwa, na kile kinachopaswa kutokea kabla sentensi yoyote haijaitwa imekaguliwa.
 
@@ -26,13 +26,13 @@ Hiki ndicho kiwango cha Linganifu cha sentensi iliyotoka katika hatua hizo:
 
 > {{OWB:PHP.4.6.s1:B}}
 
-Rekodi yake ina Kigiriki, kinachoanza na {{GREEK:PHP.4.6:1-2}}, "msiwe na wasiwasi juu ya jambo lolote"; maana ya neno kwa neno; viwango vya Halisi, Linganifu na Rahisi vya Kiingereza; na viwango hivyo vitatu katika lugha nyingine kadiri vinavyoandikwa. Ina pia maamuzi kumi na mawili. Saba ni maamuzi ya maana, yanayoshirikiwa na kila lugha. Moja linasema kwamba {{LEMMA:PHP.4.6:2}} hapa linamaanisha wasiwasi unaosumbua, neno ambalo Yesu analitumia katika Mathayo 6, na si kujali kwema ambako Paulo analitumia kwako katika 2:20. Lingine linasema kwamba kitenzi cha "kulinda" ni kile ambacho kikosi cha askari hufanya, picha ambayo watu wa Filipi, koloni la Kirumi lenye askari wastaafu miongoni mwa raia wake, wangeihisi. Matano mengine ni maamuzi ya maneno, kila moja la lugha moja. Uamuzi mmoja wa Kiingereza, kwa mfano, unaeleza kwa nini kiwango cha Linganifu kinasema amani "will stand guard over" (itasimama kulinda) mioyo yenu: kinabaki na picha ya askari bila neno la zamani "keep" (kuhifadhi).
+Rekodi yake ina Kigiriki, kinachoanza na {{GREEK:PHP.4.6:1-2}}, "msiwe na wasiwasi juu ya jambo lolote"; maana ya neno kwa neno; viwango vya Halisi, Linganifu na Rahisi vya Kiingereza; na viwango hivyo vitatu katika lugha nyingine kadiri vinavyoandikwa. Ina pia maamuzi ishirini na saba. Saba ni maamuzi ya maana, yanayoshirikiwa na kila lugha. Moja linasema kwamba {{LEMMA:PHP.4.6:2}} hapa linamaanisha wasiwasi unaosumbua, neno ambalo Yesu analitumia katika Mathayo 6, na si kujali kwema ambako Paulo analitumia kwako katika 2:20. Lingine linasema kwamba kitenzi cha "kulinda" ni kile ambacho kikosi cha askari hufanya, picha ambayo watu wa Filipi, koloni la Kirumi lenye askari wastaafu miongoni mwa raia wake, wangeihisi. Mengine ishirini ni maamuzi ya maneno, kila moja la lugha moja. Uamuzi mmoja wa Kiingereza, kwa mfano, unaeleza kwa nini kiwango cha Linganifu kinasema amani "will stand guard over" (itasimama kulinda) mioyo yenu: kinabaki na picha ya askari bila neno la zamani "keep" (kuhifadhi).
 
 Maamuzi mawili katika rekodi hii yamewekewa alama ya kutokuwa na uhakika. Moja linahusu maana: amani "inayopita kila ufahamu" inaweza kuwa amani iliyo juu ya kile ambacho akili inaweza kuelewa, au amani inayofanikisha zaidi ya mpango wowote wa kibinadamu. Rekodi inafuata usomaji unaojulikana zaidi na inautaja ule mwingine katika maelezo ya chini. La pili linahusu Kiingereza. Kiwango cha Rahisi kinasema amani inawalinda "because you are joined to Christ Jesus" (kwa sababu mmeunganishwa na Kristo Yesu), ambapo Kigiriki kinasema tu "katika". Uamuzi wa maneno unasema waziwazi kwamba hili linaongeza sababu ambayo Kigiriki hakiitaji, na kwamba wakaguzi wanapaswa kulikagua:
 
 > {{OWB:PHP.4.6.s1:R}}
 
-Ndivyo ilivyo kila mahali. Katika rasimu zilizopo hadi sasa, sentensi moja ina wastani wa maamuzi manne, na takriban uamuzi mmoja kati ya kumi na miwili umewekewa alama ya kutokuwa na uhakika. AI inaambiwa kuweka alama ya kutokuwa na uhakika kwenye uamuzi mgumu badala ya kuuonyesha kama umeamuliwa, na msomaji anaonyesha alama hiyo.
+Ndivyo ilivyo kila mahali. Katika rasimu, sentensi moja ina wastani wa maamuzi mawili au matatu ya maana, pamoja na maamuzi ya maneno kwa kila lugha, na takriban uamuzi mmoja wa maana kati ya tisa umewekewa alama ya kutokuwa na uhakika. AI inaambiwa kuweka alama ya kutokuwa na uhakika kwenye uamuzi mgumu badala ya kuuonyesha kama umeamuliwa, na msomaji anaonyesha alama hiyo.
 
 ## AI haifanyi nini
 
@@ -50,7 +50,7 @@ Msomaji ana haki ya kuuliza AI inakosea wapi. Tumeona aina kadhaa za makosa, na 
 
 **Ufasaha si busara.** Rasimu inaweza kusomeka vizuri na bado ikawa na kosa, au ikawa sahihi kwa sababu ambazo si hasa zile zilizotajwa. Sauti ya kujiamini ya sentensi si ushahidi wa usahihi wake.
 
-**Maneno ya kawaida yanahitaji wazawa wa lugha.** AI inaweza kuandika Kihispania, Kifaransa, Kiswahili, Kivietinamu, Kikorea, Kireno, Kiamhari, Kihindi au Kirusi chenye sarufi sahihi. Kama sentensi inasikika ya kawaida kwa msomaji aliyekulia na lugha hiyo ni swali jingine. Rekodi ya Kihispania ya Yohana 1:1, kwa mfano, inachagua *el Verbo* kwa "Neno" badala ya *la Palabra* na kuuwekea uchaguzi huo alama ili ukaguliwe na mzawa wa lugha.
+**Maneno ya kawaida yanahitaji wazawa wa lugha.** AI inaweza kuandika Kihispania, Kiswahili, Kikorea, Kiamhari au Kijapani chenye sarufi sahihi. Kama sentensi inasikika ya kawaida kwa msomaji aliyekulia na lugha hiyo ni swali jingine. Rekodi ya Kihispania ya Yohana 1:1, kwa mfano, inachagua *el Verbo* kwa "Neno" badala ya *la Palabra* na kuuwekea uchaguzi huo alama ili ukaguliwe na mzawa wa lugha.
 
 **Kulingana katika vitabu vyote ni vigumu.** Maelfu ya sentensi zilizoandikwa nyakati tofauti zinaweza kuachana polepole. Istilahi kuu zinazokaguliwa na programu, orodha za istilahi kwa vitabu virefu, na maamuzi yanayotaja yale ya awali, vyote vinapambana na hilo, lakini kuachana kwa kiasi fulani kutabaki ili wakaguzi wakugundue.
 
@@ -91,4 +91,4 @@ Huhitaji kuwangoja wakaguzi ili kupima unachosoma.
 
 ## Saidia kukagua
 
-Ikiwa unasoma Kigiriki au Kiebrania, au Kihispania, Kifaransa, Kiswahili, Kivietinamu, Kikorea, Kireno, Kiamhari, Kihindi au Kirusi ni lugha yako ya kwanza na unaweza kupima kama sentensi inasomeka kwa kawaida, tungethamini msaada wako. Kila kitu kiko wazi kwenye [GitHub](https://github.com/jdegreef/open-word-bible), pamoja na kila uamuzi na sababu zake, na kiungo cha "Ripoti tatizo" chini ya kila ukurasa kinafungua suala (issue) pale. Kutokubaliana na uamuzi, na kueleza kwa nini, ndio hasa msaada ambao mradi unauhitaji.
+Ikiwa unasoma Kigiriki au Kiebrania, au mojawapo ya lugha za tafsiri hii ni lugha yako ya kwanza na unaweza kupima kama sentensi inasomeka kwa kawaida, tungethamini msaada wako. Kila kitu kiko wazi kwenye [GitHub](https://github.com/jdegreef/open-word-bible), pamoja na kila uamuzi na sababu zake, na kiungo cha "Ripoti tatizo" chini ya kila ukurasa kinafungua suala (issue) pale. Kutokubaliana na uamuzi, na kueleza kwa nini, ndio hasa msaada ambao mradi unauhitaji.
