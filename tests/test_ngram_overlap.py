@@ -30,6 +30,21 @@ class NgramOverlapTest(unittest.TestCase):
         self.assertEqual(ngram_overlap.words("Christ’s body, God's people."),
                          ["Christ's", "body", "God's", "people"])
 
+    def test_arabic_words_are_compared_without_marks(self):
+        self.assertEqual(ngram_overlap.words("فَقَالَتْ رَاعُوثُ ٱلْمُوآبِيَّةُ إِلَى ٱلْحَقْلِ"),
+                         ngram_overlap.words("فقالت راعوث الموابيه الي الحقل"))
+
+    def test_usx_verses(self):
+        usx = ('<usx><chapter number="1" style="c" sid="RUT 1"/>'
+               '<para style="s1">heading</para>'
+               '<para style="p"><verse number="1" style="v" sid="RUT 1:1"/>one '
+               '<note caller="+" style="f">note</note>two<verse eid="RUT 1:1"/>'
+               '<verse number="2" style="v" sid="RUT 1:2"/>three</para>'
+               '<para style="p">four<verse eid="RUT 1:2"/></para></usx>')
+        with tempfile.TemporaryDirectory() as d:
+            Path(d, "08RUT.usx").write_text(usx, encoding="utf-8")
+            self.assertEqual(ngram_overlap.read_usx(d), {"RUT.1.1": "one two", "RUT.1.2": "three four"})
+
     def test_runs_merge_overlapping_ngrams(self):
         ours = "a b c d e x f g h".split()
         theirs = "q a b c d e r f g h".split()
