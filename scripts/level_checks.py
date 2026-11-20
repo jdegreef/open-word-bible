@@ -52,7 +52,7 @@ LEVEL_WORDS = {"l": "L", "literal": "L", "b": "B", "balanced": "B", "r": "R", "r
 BRACKET = re.compile(r"\[([^\[\]]*)\]")
 QUOTED = re.compile(r'"([^"]+)"|“([^”]+)”|«\s*([^»]+?)\s*»|「([^」]+)」|(?<!\w)\'([^\']+)\'(?!\w)')
 ANNOTATION = re.compile(r"\(([^()]*)\)")
-SENTENCE_END = re.compile(r"(?<=[.!?。！？።।])")
+SENTENCE_END = re.compile(r"(?<=[.!?。！？።।؟])")
 CHARACTER_LANGS = {"ja", "zh"}
 RARE_BELOW = 5
 MIN_RECORDS = 20  # books with fewer records in a language are left out of part (b)
@@ -241,7 +241,7 @@ def words(text, lang):
         return [ch for ch in text if ch.isalnum()]
     found = []
     for token in text.split():
-        token = token.strip("\"'“”‘’«»「」『』()[].,;:!?¿¡—–-·።፣፤፥፦।॥…，。、；：？！《》〈〉（）").casefold()
+        token = token.strip("\"'“”‘’«»「」『』()[].,;:!?¿¡—–-·።፣፤፥፦।॥…，。、；：？！《》〈〉（）،؛؟").casefold()
         if any(ch.isalnum() for ch in token):
             found.append(token)
     return found
