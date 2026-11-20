@@ -48,9 +48,10 @@ The lists this guide points to are generated in
 - **Every record is `ai_draft`.** The Amharic was drafted by Claude, an AI,
   and nothing is marked reviewed by an AI. A record moves on only when a named
   person approves it in the site's admin (section 5).
-- **Verse numbers** are those of the Hebrew and Greek. In the Old Testament
-  they sometimes differ from English Bibles (a psalm's title is verse 1, so
-  Psalm 51:1 in English is 51:3 here; Micah 5:2 in English is 5:1 here). The
+- **Verse numbers** here are those of the records, which follow the Hebrew
+  and Greek. In the Old Testament they sometimes differ from the site, which
+  shows the NIV's numbers (a psalm's title is verse 1, so Psalm 51:1 on the
+  site is 51:3 here; Micah 5:2 on the site is 5:1 here). The
   priorities list gives the English number in brackets where it differs.
 
 ## 2. The three levels
