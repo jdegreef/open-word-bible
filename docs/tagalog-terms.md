@@ -1144,3 +1144,82 @@ names the book where the form was first used.
 | Deuteronomy 32:15 | Jeshurun | Jesurun |  |
 | Deuteronomy 32:22 | Sheol | Sheol (L, B), *daigdig ng mga patay* (R) |  |
 | Deuteronomy 33:8 | Thummim and Urim | Tumim at Urim | order as in the Hebrew of this verse |
+| Joshua 2:1 | Shittim | Sitim | sh > s as in common church use; reviewer to confirm |
+| Joshua 3:16 | Zarethan | Zaretan | th > t |
+| Joshua 5:3 | Hill of Foreskins (Gibeath-haaraloth) | Burol ng mga Pinagtulian | name translated |
+| Joshua 7:1 | Achan; Carmi; Zabdi | Acan; Carmi; Zabdi |  |
+| Joshua 7:2 | Beth-aven | Bet-aven | th > t |
+| Joshua 7:5 | Shebarim | Sebarim |  |
+| Joshua 7:24 | Valley of Achor | Lambak ng Acor |  |
+| Joshua 9:17 | Chephirah; Beeroth | Kefira; Beerot | ch > k, th > t |
+| Joshua 10:1 | Adoni-zedek | Adoni-zedek |  |
+| Joshua 10:3 | Hoham; Piram; Japhia; Debir | Hoham; Piram; Jafia; Debir | ph > f |
+| Joshua 10:3 | Jarmuth; Lachish; Eglon | Jarmut; Laquis; Eglon |  |
+| Joshua 10:10 | Beth-horon; Azekah; Makkedah | Bet-horon; Azeca; Maceda |  |
+| Joshua 10:12 | Aijalon | Ajalon |  |
+| Joshua 10:13 | Book of Jashar | Aklat ni Jaser |  |
+| Joshua 10:33 | Horam | Horam |  |
+| Joshua 11:1 | Jabin; Jobab; Madon; Shimron; Achshaph | Jabin; Jobab; Madon; Shimron; Akshaf | ch > k, ph > f |
+| Joshua 11:2 | Chinneroth | Kinerot (L, B); Lawa ng Galilea (R) | th > t |
+| Joshua 11:8 | Misrephoth-maim | Misrefot-maim | ph > f, th > t |
+| Joshua 11:17 | Mount Halak; Baal-gad | Bundok Halak; Baal-gad |  |
+| Joshua 12:2 | Jabbok | Jaboc | as in Genesis 32:23 |
+| Joshua 12:17 | Tappuah | Tapua |  |
+| Joshua 12:18 | Aphek; Lasharon | Afek; Lasaron | ph > f |
+| Joshua 12:21 | Taanach | Taanac |  |
+| Joshua 12:22 | Jokneam | Jokneam |  |
+| Joshua 12:23 | Naphath-dor; Goiim | Nafat-dor; Goyim | ph > f |
+| Joshua 13:3 | Shihor | Sihor |  |
+| Joshua 13:3 | Avvim (people) | Avita | as in Deuteronomy 2:23 |
+| Joshua 13:4 | Mearah | Mearah |  |
+| Joshua 13:5 | Gebalites | Gebalita | people name in -ita |
+| Joshua 13:17 | Beth-baal-meon | Bet-baal-meon | th > t |
+| Joshua 13:18 | Mephaath | Mefaat | ph > f, th > t |
+| Joshua 13:19 | Zereth-shahar | Zeret-shahar | th > t |
+| Joshua 13:26 | Ramath-mizpeh; Betonim | Ramat-mizpeh; Betonim | th > t |
+| Joshua 13:27 | Beth-haram; Zaphon | Bet-haram; Zafon | th > t, ph > f |
+| Joshua 14:6 | man of God | tao ng Diyos | as in Deuteronomy 33:1 |
+| Joshua 15:7 | Ben-hinnom; Hinnom | Ben-hinom; Hinom | double consonant made single |
+| Joshua 15:7 | Adummim; En-shemesh; En-rogel | Adumim; En-shemesh; En-rogel |  |
+| Joshua 15:6 | Beth-hoglah; Beth-arabah; Stone of Bohan | Bet-hoglah; Bet-araba; Bato ni Bohan |  |
+| Joshua 15:9 | Nephtoah; Mount Ephron; Baalah | Neftoah; Bundok Efron; Baalah | ph > f |
+| Joshua 15:10 | Chesalon; Beth-shemesh | Kesalon; Bet-shemesh | ch > k |
+| Joshua 15:11 | Shikkeron; Jabneel | Shikeron; Jabneel |  |
+| Joshua 15:15 | Kiriath-sepher | Kiriat-sefer | th > t, ph > f |
+| Joshua 15:16 | Achsah; Othniel | Aksah; Otniel | ch > k, th > t |
+| Joshua 15:31 | Ziklag | Ziklag |  |
+| Joshua 15:33 | Eshtaol; Zorah | Estaol; Zora |  |
+| Joshua 15:44 | Keilah; Achzib; Mareshah | Keila; Akzib; Maresha |  |
+| Joshua 15:62 | City of Salt | Lungsod ng Asin | name translated |
+| Joshua 16:2 | Archites | Arkita | people name in -ita |
+| Joshua 16:3 | Japhletites | Jafletita | people name in -ita |
+| Joshua 16:6 | Michmethath; Taanath-shiloh; Janoah | Mikmetat; Taanat-shilo; Janoah |  |
+| Joshua 16:8 | Wadi Kanah | Wadi Kana (B, R); batis ng Kana (L) |  |
+| Joshua 17:2 | Abiezer | Abiezer |  |
+| Joshua 17:11 | Beth-shean; Ibleam; En-dor | Bet-shean; Ibleam; En-dor |  |
+| Joshua 18:1 | tent of meeting at Shiloh | Toldang Tipanan | as in the glossary |
+| Joshua 18:17 | Geliloth | Gelilot | th > t |
+| Joshua 18:22 | Zemaraim | Zemaraim |  |
+| Joshua 18:23 | Ophrah | Ofrah | ph > f |
+| Joshua 18:28 | Jebus | Jebus |  |
+| Joshua 19:12 | Chisloth-tabor; Daberath | Kislot-tabor; Daberat | ch > k, th > t |
+| Joshua 19:13 | Gath-hepher | Gat-hefer | th > t, ph > f |
+| Joshua 19:14 | Iphtah-el | Iftael | ph > f |
+| Joshua 19:18 | Chesulloth; Shunem | Kesulot; Sunem |  |
+| Joshua 19:28 | Hammon; Kanah | Hamon; Kana |  |
+| Joshua 19:29 | Tyre | Tiro |  |
+| Joshua 19:33 | Zaanannim; Adami-nekeb; Lakkum | Zaananim; Adami-nekeb; Lakum |  |
+| Joshua 19:35 | Hammath; Rakkath | Hamat; Rakat |  |
+| Joshua 19:46 | Joppa | Jope |  |
+| Joshua 19:47 | Leshem | Leshem |  |
+| Joshua 19:50 | Timnath-serah | Timnat-sera | th > t |
+| Joshua 20:2 | cities of refuge | mga lungsod na kanlungan (L, B); mga bayang kanlungan (R) | as in Numbers 35 |
+| Joshua 20:3 | avenger of blood | tagapaghiganti ng dugo (L, B); kamag-anak na maghihiganti sa namatay (R) |  |
+| Joshua 21:2 | pasturelands | mga pastulan |  |
+| Joshua 21:27 | Beeshterah | Beestera |  |
+| Joshua 21:32 | Hammoth-dor; Kartan | Hamot-dor; Kartan |  |
+| Joshua 22:16 | breach of faith | pagtataksil |  |
+| Joshua 22:34 | Witness (the altar) | Saksi |  |
+| Joshua 24:12 | hornet | putakti |  |
+| Joshua 24:30 | Mount Gaash | Bundok Gaas |  |
+| Joshua 24:32 | qesitah | kesita | as in Genesis 33:19 |
