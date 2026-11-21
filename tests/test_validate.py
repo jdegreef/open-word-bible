@@ -404,6 +404,18 @@ class ValidateTest(unittest.TestCase):
         self.assertIn("renderings.en.R: god_term is not a setting in this language",
                       validate.validate_record(record))
 
+    def test_tagalog_spans_hold_the_case_marker(self):
+        # Tagalog marks a title (ang, ng, sa) and a name (si, ni, kay) with
+        # different particles, so the marker, and a following linker, go
+        # inside the span (docs/tagalog-style.md, section 4).
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["tl"] = {
+            level: text + " Ito ang salita {{divine_name:ng PANGINOON|ni Yahweh}};"
+                          " {{divine_name:ang PANGINOONG|si Yahweh na}} Diyos;"
+                          " sa {{deity_pronoun:kaniyang|Kaniyang}} pangalan."
+            for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+
     def test_chinese_deity_pronouns_take_their_reverent_forms(self):
         # Chinese has no capitals: 他 / 祂 and 你 / 祢 are its pairs, and
         # only in Chinese; any other pair is still a change of wording.
