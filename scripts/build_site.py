@@ -947,6 +947,7 @@ _BARE_BEFORE = {
 _BARE_AFTER = {"ko": "절", "ja": "節", "zh": "节"}
 
 
+@functools.lru_cache(maxsize=None)
 def _renumbered_chapter(book, chapter):
     """Whether any verse of one of content/'s chapters has another number in
     reader numbering (owb/versification.py)."""
