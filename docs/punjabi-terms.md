@@ -1247,3 +1247,49 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   53:1, 65:1-2, 59:20, 40:13, 45:23, 11:10, 52:15; Psalms 44:22, 19:4,
   69:9, 69:22, 18:49, 117:1; Deuteronomy 32:43; 1 Kings 19:10-18.
 - Flagged uncertain: 9:5 (Christ as God over all).
+
+### 1 Corinthians
+
+- The church is addressed as ਤੁਸੀਂ; Paul's singular "you" (4:7, 7:16,
+  7:21, 7:27, 8:10, 14:16-17, 15:36-37) is ਤੂੰ, as in Romans. God, Christ
+  and the Son take the honorific plural (10:4 ਉਹ ਚਟਾਨ ਮਸੀਹ ਸਨ, 15:28 ਪੁੱਤਰ
+  ... ਅਧੀਨ ਹੋ ਜਾਣਗੇ) with no deity_pronoun or christos spans. The Spirit is
+  plain masculine; the human spirit is feminine (14:14 ਮੇਰੀ ਆਤਮਾ ...
+  ਕਰਦੀ ਹੈ). 12:3: "Jesus is cursed" ਯਿਸੂ ਸਰਾਪੀ ਹੈ (plain), "Jesus is Lord"
+  ਯਿਸੂ ਪ੍ਰਭੂ ਹਨ (honorific). Adam is plain, the last Adam honorific
+  (15:45-47).
+- Adelphoi: vocative {{gender:ਭਰਾਵੋ ਅਤੇ ਭੈਣੋ|ਭਰਾਵੋ}}, oblique
+  {{gender:ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ|ਭਰਾਵਾਂ}} (15:6), nominative
+  {{gender:ਭਰਾ ਅਤੇ ਭੈਣਾਂ|ਭਰਾ}} (16:20); one believer
+  {{gender:ਭਰਾ ਜਾਂ ਭੈਣ|ਭਰਾ}}. Travelling brothers (16:11-12) ਭਰਾਵਾਂ with no
+  span. 16:13 andrizesthe {{gender:ਹੌਸਲੇ ਵਾਲੇ ਬਣੋ|ਮਰਦਾਂ ਵਾਂਗ ਕੰਮ ਕਰੋ}} (L).
+- Terms: steward ਮੁਖ਼ਤਿਆਰ (L, as Titus 1:7), ਘਰ-ਪ੍ਰਬੰਧਕ (B); porneia
+  ਹਰਾਮਕਾਰੀ / ਹਰਾਮਕਾਰ (L, B), ਜਿਨਸੀ ਪਾਪ (R); idolater ਮੂਰਤੀ-ਪੂਜਕ; adulterer
+  ਵਿਭਚਾਰੀ; slave and free ਦਾਸ / ਅਜ਼ਾਦ; leaven ਖ਼ਮੀਰ; Passover ਪਸਾਹ; hagioi
+  ਪਵਿੱਤਰ ਲੋਕ (L, B; Romans L has ਪਵਿੱਤਰ ਜਨ), ਪਰਮੇਸ਼ੁਰ ਦੇ ਲੋਕ (R); exestin
+  ਜਾਇਜ਼ (L), ਖੁੱਲ੍ਹ (B, R); body ਸਰੀਰ, but Christ's body ਦੇਹ; conscience
+  ਜ਼ਮੀਰ; food offered to idols ਮੂਰਤੀਆਂ ਅੱਗੇ ਬਲੀ ਕੀਤੀਆਂ ਚੀਜ਼ਾਂ (L),
+  ਮੂਰਤੀਆਂ ਨੂੰ ਚੜ੍ਹਾਇਆ ਭੋਜਨ (B, R); gods ਦੇਵਤੇ; demons ਭੂਤ; wilderness
+  ਉਜਾੜ; jealousy ਅਣਖ; testing ਪਰਤਾਵਾ; oikodomeō ਉਸਾਰਨਾ (R ਮਜ਼ਬੂਤ ਬਣਾਉਣਾ in
+  chapter 14); misthos ਮਜ਼ਦੂਰੀ (L), ਫਲ (B, R); prophets ਨਬੀ, prophesy
+  ਭਵਿੱਖਬਾਣੀ ਕਰਨਾ; tongues ਭਾਸ਼ਾਵਾਂ (B ਹੋਰ ਭਾਸ਼ਾਵਾਂ, R ਦੂਜੀਆਂ ਭਾਸ਼ਾਵਾਂ in
+  chapter 14), interpretation ਅਰਥ ਦੱਸਣਾ; new covenant ਨਵਾਂ ਨੇਮ; Lord's
+  Supper ਪ੍ਰਭੂ ਦਾ ਭੋਜ (L), ਪ੍ਰਭੂ-ਭੋਜ (B, R); head ਸਿਰ; image ਸਰੂਪ; love
+  ਪਿਆਰ; mystery ਭੇਤ; raised ਜਿਵਾਏ ਗਏ (as Romans 6:4), resurrection of the
+  dead ਮੁਰਦਿਆਂ ਦਾ ਜੀ ਉੱਠਣਾ; firstfruits ਪਹਿਲਾ ਫਲ (L), ਫ਼ਸਲ ਦਾ ਪਹਿਲਾ ਹਿੱਸਾ
+  (B, R); natural / spiritual body ਪ੍ਰਾਕਿਰਤਿਕ / ਆਤਮਿਕ ਸਰੀਰ; perishable /
+  imperishable ਨਾਸਵਾਨ / ਅਵਿਨਾਸ਼, mortal / immortality ਮਰਨਹਾਰ / ਅਮਰਤਾ; sting
+  ਡੰਗ (as Hosea 13:14); collection ਚੰਦਾ; Marana tha ਮਾਰਾਨਾ ਥਾ (L), ਹੇ ਸਾਡੇ
+  ਪ੍ਰਭੂ, ਆਓ! (B, R); greetings ਸਲਾਮ ਆਖਣਾ / ਭੇਜਣਾ and the holy kiss as
+  Romans 16:16; closing grace in the form of Romans 16:20.
+- Names: ਕੇਫ਼ਾ (L, B), ਪਤਰਸ (R); ਅਪੁੱਲੋਸ, ਖਲੋਏ, ਸਤਫ਼ਨਾਸ, ਫ਼ਰਤੂਨਾਤੁਸ,
+  ਅਖਾਇਕੁਸ, ਪ੍ਰਿਸਕਾ, ਅਕੂਲਾ, ਅਫ਼ਸੁਸ, ਗਲਾਤਿਯਾ, ਅਖਾਯਾ, ਮਕਦੂਨਿਯਾ, ਪੰਤੇਕੁਸਤ;
+  Asia ਆਸਿਯਾ as Romans (Revelation 1 has ਏਸ਼ੀਆ: unify).
+- Matched to books already drafted: 6:16 Genesis 2:24 as Ephesians 5:31;
+  7:23 repeats 6:20 (ਮੁੱਲ ਦੇ ਕੇ ਖ਼ਰੀਦੇ ਗਏ); 9:9 Deuteronomy 25:4 as 1
+  Timothy 5:18 in each level; 15:27 Psalm 8:6 as Ephesians 1:22 (honorific
+  for Christ); 15:55 follows Hosea 13:14's ਹੇ ਮੌਤ ... ਡੰਗ.
+- First Punjabi wording, for those books to follow: Isaiah 29:14 (1:19),
+  64:4 (2:9), 28:11-12 (14:21), 22:13 (15:32), 25:8 (15:54); Job 5:13
+  (3:19); Psalms 94:11 (3:20), 24:1 (10:26); Deuteronomy 17:7 (5:13);
+  Exodus 32:6 (10:7); Genesis 2:7 (15:45).
