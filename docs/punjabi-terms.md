@@ -553,3 +553,22 @@ People and places: ਤਿਮੋਥਿਉਸ, ਇਪਫ਼ਰੋਦੀਤੁਸ, 
 - Citizenship (3:20) ਨਾਗਰਿਕਤਾ; Pharisee ਫ਼ਰੀਸੀ.
 - Paul says ਤੁਸੀਂ to the church, ਤੂੰ to the loyal yokefellow (4:3, ਸਾਥੀ).
 - Caesar's household (4:22) ਕੈਸਰ ਦਾ ਘਰਾਣਾ (L, B), ਮਹਿਲ (R); greetings ਸਲਾਮ, as 2 Timothy.
+
+### Ephesians
+
+People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, ਇਸਰਾਏਲ.
+
+- Gentiles ਪਰਾਈਆਂ ਕੌਮਾਂ (L, B), ਗ਼ੈਰ-ਯਹੂਦੀ (R); the uncircumcised and
+  the circumcised (2:11) ਬੇਸੁੰਨਤੀ ... ਸੁੰਨਤੀ.
+- In the heavenly places ਸਵਰਗੀ ਥਾਵਾਂ (L, B), ਸਵਰਗੀ ਸੰਸਾਰ or ਅਣਡਿੱਠ
+  ਸੰਸਾਰ (R); rulers and authorities ਹਕੂਮਤਾਂ ਅਤੇ ਅਧਿਕਾਰ (L), ਹਾਕਮ ਅਤੇ
+  ਅਧਿਕਾਰੀ (B, R), as Colossians.
+- Mystery ਭੇਤ; down payment (*arrabōn*) ਬਿਆਨਾ; seal ਮੋਹਰ; redemption
+  ਛੁਟਕਾਰਾ; inheritance ਵਿਰਾਸਤ; fullness ਭਰਪੂਰੀ; temple (2:21) ਹੈਕਲ.
+- One new humanity (2:15) {{gender:ਇਨਸਾਨ|ਮਨੁੱਖ}} (L), ਨਵੀਂ ਇਨਸਾਨੀਅਤ (B),
+  ਨਵੀਂ ਪਰਜਾ (R); old/new self ਇਨਸਾਨੀਅਤ (L, B), ਆਪਾ (R); inner self ਆਪਾ.
+- Body ਦੇਹ and flesh ਸਰੀਰ kept apart (2:14-16, 5:28-31).
+- Armor ਸ਼ਸਤਰ; breastplate ਸੀਨਾਬੰਦ; belt ਕਮਰਕੱਸਾ; the evil one ਉਸ ਦੁਸ਼ਟ.
+- Earthly masters and the Master in heaven are both ਮਾਲਕ (6:5, 6:9).
+- The sleeper (5:14) and the child in the fifth commandment (6:2-3) are
+  addressed as ਤੂੰ.
