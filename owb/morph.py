@@ -4,7 +4,7 @@ The word extracts (data/grc/) carry Robinson-style codes such as N-DSF or
 V-2AAI-3S. describe() turns one into words a reader can follow, in each
 reading language (English, Spanish, French, Swahili, Vietnamese, Korean,
 Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian,
-Chinese, Arabic):
+Chinese, Arabic, Tagalog, Persian):
 "Noun · dative singular feminine", "Verb · second aorist active indicative ·
 3rd person singular". An unknown code raises ValueError, so a new code in
 the data fails the tests rather than showing a reader nothing.
@@ -502,6 +502,35 @@ WORDS = {
                    "ATT": "anyong Attiko", "K": "krasis (dalawang salitang pinagsama sa isa)",
                    "P": "may nakadikit na kataga", "ABB": "pinaikling anyo"},
     },
+    "fa": {
+        "pos": {"N": "اسم", "V": "فعل", "A": "صفت", "T": "حرف تعریف",
+                "P": "ضمیر شخصی", "R": "ضمیر موصولی", "D": "ضمیر اشاره",
+                "K": "ضمیر همبسته", "X": "ضمیر مبهم", "I": "ضمیر پرسشی",
+                "F": "ضمیر انعکاسی", "C": "ضمیر متقابل", "S": "ضمیر ملکی",
+                "Q": "ضمیر همبسته یا پرسشی",
+                "ADV": "قید", "CONJ": "حرف ربط", "PREP": "حرف اضافه", "PRT": "ادات",
+                "COND": "حرف ربط شرطی", "INJ": "صوت",
+                "HEB": "واژهٔ عبری", "ARAM": "واژهٔ آرامی"},
+        "indeclinable": {"PRI": "اسم خاص، صرف‌نشدنی", "LI": "حرف، صرف‌نشدنی",
+                         "OI": "صرف‌نشدنی", "NUI": "عدد، صرف‌نشدنی"},
+        "case": {"N": "فاعلی", "G": "اضافی", "D": "داتیو", "A": "مفعولی", "V": "ندایی"},
+        "number": {"S": "مفرد", "P": "جمع"},
+        "gender": {"M": "مذکر", "F": "مؤنث", "N": "خنثی"},
+        "tense": {"P": "حال", "I": "ماضی استمراری", "F": "آینده", "A": "آئوریست",
+                  "R": "ماضی نقلی", "L": "ماضی بعید"},
+        "second": "{} دوم",
+        "verb": "{tense}، {mood}{voice}", "voiced": "، {}",
+        "voice": {"A": "معلوم", "M": "میانه", "P": "مجهول", "E": "میانه یا مجهول",
+                  "D": "میانه (با معنای معلوم)", "O": "مجهول (با معنای معلوم)",
+                  "N": "میانه یا مجهول (با معنای معلوم)", "Q": "معلوم غیرشخصی", "X": ""},
+        "mood": {"I": "اخباری", "S": "التزامی", "O": "تمنایی", "M": "امری",
+                 "N": "مصدر", "P": "صفت فعلی", "R": "صفت فعلی (در معنای امری)"},
+        "person": {"1": "اول شخص", "2": "دوم شخص", "3": "سوم شخص"},
+        "join": "، ",
+        "suffix": {"N": "منفی", "I": "پرسشی", "S": "عالی", "C": "تفضیلی",
+                   "ATT": "شکل آتیکی", "K": "ادغام (دو واژه در یکی)",
+                   "P": "با ادات پیوسته", "ABB": "شکل کوتاه‌شده"},
+    },
 }
 
 _VERB = re.compile(r"(2?)([PIFARL])([AMPEDONQX])([ISOMNPR])(?:-(.+))?")
@@ -930,6 +959,27 @@ HEBREW_WORDS = {
         "gender": {"m": "panlalaki", "f": "pambabae", "b": "panlalaki o pambabae", "c": "pangkalahatan"},
         "number": {"s": "isahan", "p": "maramihan", "d": "dalawahan"},
         "state": {"a": "absoluto", "c": "konstrukto", "d": "tiyak"},
+    },
+    "fa": {
+        "pos": {"A": "صفت", "C": "حرف ربط", "D": "قید", "N": "اسم",
+                "P": "ضمیر", "R": "حرف اضافه", "S": "پسوند", "T": "ادات", "V": "فعل"},
+        "noun": {"c": "عام", "g": "نام قوم یا مکان", "p": "اسم خاص", "x": ""},
+        "adjective": {"a": "", "c": "عدد اصلی", "g": "نام قوم", "o": "عدد ترتیبی"},
+        "pronoun": {"d": "اشاره", "f": "مبهم", "i": "پرسشی", "p": "شخصی", "r": "موصولی"},
+        "particle": {"a": "تأکید", "d": "حرف تعریف", "e": "ترغیب", "i": "پرسشی", "j": "صوت",
+                     "m": "اشاره", "n": "نفی", "o": "نشانهٔ مفعول صریح", "r": "موصولی"},
+        "suffix": {"d": "پسوند جهت (به سوی)", "h": "هه افزوده", "n": "نون افزوده", "p": "ضمیر"},
+        "with_article": "با حرف تعریف",
+        "stem": None,  # the stems are names, the same in every language
+        "conjugation": {"p": "ماضی (qatal)", "q": "ماضی با «و» (weqatal)",
+                        "i": "مضارع (yiqtol)", "w": "ماضی روایی (wayyiqtol)",
+                        "h": "ترغیبی", "j": "امر غایب", "v": "امری",
+                        "r": "صفت فعلی", "s": "صفت فعلی مجهول",
+                        "a": "مصدر مطلق", "c": "مصدر ساختی"},
+        "person": {"1": "اول شخص", "2": "دوم شخص", "3": "سوم شخص"},
+        "gender": {"m": "مذکر", "f": "مؤنث", "b": "مذکر یا مؤنث", "c": "مشترک"},
+        "number": {"s": "مفرد", "p": "جمع", "d": "مثنی"},
+        "state": {"a": "مطلق", "c": "اضافی", "d": "معرفه"},
     },
 }
 
