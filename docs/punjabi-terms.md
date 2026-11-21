@@ -34,7 +34,7 @@ under section 13 in the same pull request.
 | *Elohim* (God) | ਪਰਮੇਸ਼ੁਰ |
 | El Shaddai; *Shaddai* | ਸਰਬ ਸ਼ਕਤੀਮਾਨ ਪਰਮੇਸ਼ੁਰ; ਸਰਬ ਸ਼ਕਤੀਮਾਨ |
 | El Elyon; *ʿElyon* (Most High) | ਅੱਤ ਮਹਾਨ ਪਰਮੇਸ਼ੁਰ; ਅੱਤ ਮਹਾਨ |
-| YHWH of hosts | `ਸੈਨਾਂ ਦਾ {{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}}` (every level) |
+| YHWH of hosts | `ਸੈਨਾਂ ਦੇ {{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}}` (every level; ਦੇ agrees with the honorific plural) |
 | *Yah* | `{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹ}}` |
 | the angel of the LORD | `{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਦੂਤ` |
 | the God of Israel | ਇਸਰਾਏਲ ਦਾ ਪਰਮੇਸ਼ੁਰ |
@@ -330,3 +330,21 @@ People and places: ਯਹੂਦਾ, ਯਾਕੂਬ, ਮੀਕਾਏਲ (ਪ੍�
   prophesy ਭਵਿੱਖਬਾਣੀ ਕਰਨਾ; Savior ਮੁਕਤੀਦਾਤਾ; ages ਜੁਗ.
 - Beloved (plural) ਹੇ ਪਿਆਰਿਓ (L), ਪਿਆਰੇ ਮਿੱਤਰੋ (B, R).
 - 2 Peter 2 runs close to Jude 4-18 and should match when it is drafted.
+
+### Haggai
+
+People: ਹੱਜਈ, ਦਾਰਾ, ਸ਼ਅਲਤੀਏਲ ਦਾ ਪੁੱਤਰ ਜ਼ਰੁੱਬਾਬਲ (ਰਾਜਪਾਲ), ਯਹੋਸਾਦਾਕ ਦਾ
+ਪੁੱਤਰ ਯਹੋਸ਼ੁਆ (ਮਹਾਂ ਜਾਜਕ).
+
+- YHWH of hosts is ਸੈਨਾਂ ਦੇ, not ਸੈਨਾਂ ਦਾ (see the table above), so the
+  phrase agrees with the honorific plural verbs that follow it.
+- The word came: ਦਾ ਬਚਨ ... ਦੇ ਹੱਥੀਂ (L), ਦੇ ਰਾਹੀਂ (B) ... ਆਇਆ; Readable
+  ਨੇ ... ਦੇ ਰਾਹੀਂ ਸੰਦੇਸ਼ ਦਿੱਤਾ.
+- The house (*bayit*) ਘਰ at Literal and Balanced, ਹੈਕਲ at Readable; *hekhal*
+  (2:15) ਹੈਕਲ at every level. Headings and summaries use ਘਰ.
+- Consider your ways (1:5, 1:7, 2:15, 2:18): ਆਪਣੇ ਰਾਹਾਂ ਉੱਤੇ ਆਪਣਾ ਮਨ ਲਾਓ
+  (L), ਧਿਆਨ ਨਾਲ ਸੋਚੋ (B, R).
+- Shake (2:6, 2:7, 2:21): ਹਿਲਾਉਣ ਵਾਲਾ ਹਾਂ (L), ਹਿਲਾ ਦਿਆਂਗਾ (B, R);
+  2:7 B and R say ਝੰਜੋੜ ਦਿਆਂਗਾ to keep clear of the older Bibles' wording.
+  Hebrews 12:26 quotes 2:6 and should match it.
+- Signet ring (2:23) ਮੋਹਰ ਵਾਲੀ ਮੁੰਦਰੀ; God says ਤੂੰ to Zerubbabel and Joshua.
