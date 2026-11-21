@@ -1797,7 +1797,9 @@ class VersePageTest(unittest.TestCase):
     def test_every_verse_of_the_day_with_records_has_a_page(self):
         data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
         ids = build_site.verse_page_ids()
-        self.assertEqual(set(ids), {v for v in data["refs"] if build_site.verse_records(v)})
+        votd = {v for v in data["refs"] if build_site.verse_records(v)}
+        self.assertEqual(set(build_site.verse_of_the_day_ids()), votd)
+        self.assertLessEqual(votd, set(ids))
         self.assertIn("JHN.3.16", ids)
         self.assertEqual(build_site.verse_page_url("JHN.3.16"), "/jhn/3/16/")
 
