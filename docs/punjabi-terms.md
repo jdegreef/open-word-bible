@@ -348,3 +348,22 @@ People: ਹੱਜਈ, ਦਾਰਾ, ਸ਼ਅਲਤੀਏਲ ਦਾ ਪੁੱਤ
   2:7 B and R say ਝੰਜੋੜ ਦਿਆਂਗਾ to keep clear of the older Bibles' wording.
   Hebrews 12:26 quotes 2:6 and should match it.
 - Signet ring (2:23) ਮੋਹਰ ਵਾਲੀ ਮੁੰਦਰੀ; God says ਤੂੰ to Zerubbabel and Joshua.
+
+### Titus
+
+People and places: ਪੌਲੁਸ, ਤੀਤੁਸ, ਅਰਤਿਮਾਸ, ਤੁਖਿਕੁਸ, ਜ਼ੇਨਾਸ, ਅਪੁੱਲੋਸ; ਕਰੇਤ
+(ਕਰੇਤੀ, ਕਰੇਤ ਦੇ ਲੋਕ), ਨਿਕੁਪੁਲਿਸ.
+
+- Paul says ਤੂੰ to Titus; the closing grace (3:15) is plural, ਤੁਹਾਡੇ ਸਾਰਿਆਂ.
+- Elder (*presbyteros*, 1:5) ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B), ਕਲੀਸਿਯਾ ਲਈ ਆਗੂ
+  (R); overseer (*episkopos*, 1:7) ਨਿਗਰਾਨ (L, B), ਕਲੀਸਿਯਾ ਦਾ ਆਗੂ (R).
+  Older men (2:2) are ਬਜ਼ੁਰਗ ਆਦਮੀ, the age group, not the office.
+- Sound teaching ਤੰਦਰੁਸਤ ਸਿੱਖਿਆ (L), ਖਰੀ ਸਿੱਖਿਆ (B), ਸੱਚੀ ਸਿੱਖਿਆ (R);
+  godliness ਭਗਤੀ; self-controlled ਸੰਜਮੀ; Savior ਮੁਕਤੀਦਾਤਾ; conscience ਜ਼ਮੀਰ.
+- 2:13 keeps "our great God and Savior Jesus Christ" as one phrase under one
+  ਸਾਡੇ, naming one person.
+- 3:4 kindness (*chrēstotēs*) ਭਲਿਆਈ, so ਕਿਰਪਾ stays for grace (3:7);
+  washing of regeneration ਨਵੇਂ ਜਨਮ ਦਾ ਇਸ਼ਨਾਨ; justified ਧਰਮੀ ਠਹਿਰਾਏ ਜਾ ਕੇ.
+- The trustworthy saying (3:8) ਇਹ ਗੱਲ ਭਰੋਸੇਯੋਗ ਹੈ (L); 1 and 2 Timothy
+  should match.
+- Lawyer (*nomikos*, 3:13) ਵਕੀਲ (L), ਬਿਵਸਥਾ ਦਾ ਜਾਣਕਾਰ (B, R).
