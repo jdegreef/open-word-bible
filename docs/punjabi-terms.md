@@ -448,3 +448,22 @@ People and places: ਸਫ਼ਨਯਾਹ, ਕੂਸ਼ੀ, ਗਦਲਯਾਹ, �
 - Woes (2:5, 3:1) follow style §12a. Jerusalem is addressed as a woman with
   feminine ਤੂੰ at L and B (3:7, 3:11-19); Readable speaks to her people with
   ਤੁਸੀਂ. 3:20 is plural at every level, as in the Hebrew.
+
+### Malachi
+
+People and places: ਮਲਾਕੀ, ਏਸਾਓ, ਯਾਕੂਬ, ਅਦੋਮ, ਲੇਵੀ, ਮੂਸਾ, ਏਲੀਯਾਹ, ਹੋਰੇਬ.
+Malachi follows the Hebrew chapters: Hebrew 3:19-24 is English 4:1-6.
+
+- The book's question and answer: ਪਰ ਤੁਸੀਂ ਆਖਦੇ ਹੋ (L), ਫਿਰ ਵੀ ਤੁਸੀਂ ਪੁੱਛਦੇ
+  ਹੋ (B), ਪਰ ਤੁਸੀਂ ਪੁੱਛਦੇ ਹੋ (R); ਕਿਸ ਗੱਲ ਵਿੱਚ (L), ਕਿਸ ਤਰ੍ਹਾਂ (B), ਕਿਵੇਂ
+  (R). The people say ਤੂੰ to God (style §5).
+- *Amar YHWH tseva'ot* is `ਸੈਨਾਂ ਦੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਆਖਦੇ ਹਨ` at every
+  level; ne'um (1:2) stays ਦਾ ਵਾਕ ਹੈ at L and B.
+- Adonai alone (1:12, 1:14, 3:1) is plain ਪ੍ਰਭੂ. The messenger of the covenant
+  (3:1) takes the honorific; "my messenger" (3:1) and the priest as
+  messenger (2:7) take plain singular verbs. ਦੂਤ for all three.
+- Torah is ਸਿੱਖਿਆ for the priests' teaching (2:6-9) and ਬਿਵਸਥਾ for the Law
+  of Moses (3:22). Tithe ਦਸਵੰਧ (L, B), ਦਸਵਾਂ ਹਿੱਸਾ (R). Healing (3:20)
+  ਤੰਦਰੁਸਤੀ (L), not ਚੰਗਿਆਈ, which is goodness.
+- 3:1 should stay recognizable in Mark 1:2 and Matthew 11:10, 1:2-3 in
+  Romans 9:13, 3:23-24 in Luke 1:17.
