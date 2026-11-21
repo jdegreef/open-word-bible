@@ -359,6 +359,19 @@ priest), باراباس, قیصر, آگوستوس, پولس, سولس, برنا�
 Each book's drafting pull request adds the names and terms it settled, in a
 section for the book, here.
 
+### Jonah
+
+- **Names**: یونس, اَمِتّای (vowels marked at first use), نینوا, ترشیش, یافا.
+- **Words**: ناخدا (captain), قرعه انداختن (cast lots), پلاس (sackcloth),
+  روزه, بزرگان (the king's nobles), سایبان (booth), گیاه / گیاه پربرگ
+  (*qiqayon*), کلون (the bars of the earth), ماهی بزرگ (not نهنگ).
+- **Recurring verbs kept at L and B**: فرود آمدن (Jonah goes down), افکندن
+  (hurl), مقرر کردن (God appoints), دل سوزاندن (pity, 4:10-11).
+- **Relent** (*nacham*, of God): پشیمان شدن (L), منصرف شدن (B), تصمیم خود را
+  تغییر دادن (R); توبه کردن is kept for people.
+- **Exodus 34:6** as Jonah quotes it (4:2): خدایی پرفیض و رحیم، دیرخشم و سرشار
+  از محبت وفادارانه (L); to be matched when Exodus is drafted.
+
 ### Mark
 
 People: یایروس, بارتیمائوس پسر تیمائوس, یوشا (Joses), هیرودیا, ابیاتار,

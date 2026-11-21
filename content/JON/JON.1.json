@@ -88,6 +88,11 @@
           "L": "Dan firman {{divine_name:TUHAN|Yahweh}} datang kepada Yunus anak Amitai, demikian:",
           "B": "Firman {{divine_name:TUHAN|Yahweh}} datang kepada Yunus anak Amitai:",
           "R": "{{divine_name:TUHAN|Yahweh}} memberikan pesan ini kepada Yunus anak Amitai:"
+        },
+        "fa": {
+          "L": "و کلام {{divine_name:خداوند|یهوه}} بر یونس پسر اَمِتّای نازل شد و گفت:",
+          "B": "کلام {{divine_name:خداوند|یهوه}} بر یونس پسر اَمِتّای نازل شد:",
+          "R": "{{divine_name:خداوند|یهوه}} این پیام را به یونس پسر اَمِتّای داد:"
         }
       },
       "decisions": [
@@ -643,6 +648,73 @@
           "reason": "The recurring formula as the Indonesian style guide sets it (section 12a); Readable says it with the LORD as subject, as the English Readable does. \"Yunus\" is the glossary form, shared by the church and Islamic usage; \"Amitai\" is formed by the style guide's rules and added to the glossary. The divine name is \"{{divine_name:TUHAN|Yahweh}}\" and pronouns for God take the deity_pronoun span, for the whole of Jonah.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010010051",
+            "o320010010061",
+            "o320010010071"
+          ],
+          "choice": "\"یونس\", \"اَمِتّای\" (with vowel signs at first use)",
+          "alternatives": [
+            "\"یونا\""
+          ],
+          "reason": "Jonah is \"یونس\", the glossary's form and the name Persian readers know, also from the Quran. Amittai has its vowels marked once, as the style guide allows for a name a reader would misread.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fa-2",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010010011",
+            "o320010010012",
+            "o320010010021"
+          ],
+          "choice": "\"کلام خداوند بر X نازل شد\" (Literal, Balanced); \"خداوند این پیام را به X داد\" (Readable)",
+          "alternatives": [
+            "\"کلام خداوند به X رسید\""
+          ],
+          "reason": "As the style guide's formulas (section 11) set for \"the word of the LORD came to\". The same in 3:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fa-3",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o320010010021"
+          ],
+          "choice": "\"خداوند\" in a divine_name span (setting: \"یهوه\"); no deity_pronoun span",
+          "alternatives": [
+            "\"یهوه\" by default"
+          ],
+          "reason": "As in Ruth and the style guide section 4: the name is \"خداوند\" with \"یهوه\" as the setting. Persian has no capitals and one pronoun \"او\", so the English deity_pronoun spans have no Persian counterpart through the book.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -744,6 +816,11 @@
           "L": "\"Bangkitlah, pergilah ke Niniwe, kota besar itu, dan berserulah melawan kota itu, sebab kejahatan mereka telah naik ke hadapan-{{deity_pronoun:ku|Ku}}.\"",
           "B": "\"Bangunlah, pergilah ke Niniwe, kota yang besar itu, dan berserulah melawan dia, sebab kejahatan mereka telah sampai ke hadapan-{{deity_pronoun:ku|Ku}}.\"",
           "R": "\"Bangunlah dan pergilah ke kota besar Niniwe. Berkhotbahlah melawan kota itu, sebab perbuatan-perbuatan jahat penduduknya sudah sampai kepada-{{deity_pronoun:ku|Ku}}.\""
+        },
+        "fa": {
+          "L": "«برخیز، به نینوا، آن شهر بزرگ، برو و بر ضد آن ندا کن، زیرا شرارت ایشان به حضور من بالا آمده است.»",
+          "B": "«برخیز، به نینوا، آن شهر بزرگ، برو و بر ضد آن ندا کن، زیرا شرارتشان به حضور من رسیده است.»",
+          "R": "«برخیز و به شهر بزرگ نینوا برو. بر ضد آن موعظه کن، زیرا کارهای بدی که مردمش می‌کنند به گوش من رسیده است.»"
         }
       },
       "decisions": [
@@ -1286,6 +1363,28 @@
           "reason": "The book plays on both words (m2, m4): the evil of Nineveh, the evil (disaster) of the storm, God's relenting from evil, Jonah's displeasure. Literal and Balanced keep \"kejahatan\" and \"jahat\" where the English keeps \"evil\"; \"malapetaka\" where the meaning is disaster.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010020072",
+            "o320010020111",
+            "o320010020112"
+          ],
+          "choice": "\"ندا کن\" (call out); \"شرارت\" (evil, Literal and Balanced)",
+          "alternatives": [
+            "\"موعظه کن\" at every level"
+          ],
+          "reason": "Literal and Balanced keep the plain verb for calling out, as in 3:2 and 3:4; Readable says \"موعظه کن\" (preach) as the English does. The same word for evil (ra'ah) runs through the book; Persian uses \"شرارت\" for the people's wickedness and \"بلا\" for the disaster (1:7, 3:10).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1405,6 +1504,11 @@
           "L": "Tetapi Yunus bangkit untuk melarikan diri ke Tarsis dari hadapan {{divine_name:TUHAN|Yahweh}}. Dan dia turun ke Yope dan mendapati sebuah kapal yang akan berangkat ke Tarsis; dan dia membayar ongkosnya dan turun ke dalamnya untuk pergi bersama mereka ke Tarsis, dari hadapan {{divine_name:TUHAN|Yahweh}}.",
           "B": "Tetapi Yunus bangun untuk melarikan diri ke Tarsis, jauh dari hadapan {{divine_name:TUHAN|Yahweh}}. Dia turun ke Yope, dan di sana dia mendapati sebuah kapal yang hendak berlayar ke Tarsis. Dia membayar ongkosnya lalu turun ke dalam kapal itu untuk berlayar bersama mereka ke Tarsis, menjauhi hadapan {{divine_name:TUHAN|Yahweh}}.",
           "R": "Tetapi Yunus bangun dan melarikan diri dari {{divine_name:TUHAN|Yahweh}}. Dia malah pergi menuju Tarsis. Dia turun ke pelabuhan Yope dan mendapati sebuah kapal yang akan berlayar ke Tarsis. Dia membayar ongkos perjalanan lalu turun ke dalam kapal itu. Dia ingin berlayar bersama para awak kapal ke Tarsis, supaya jauh dari {{divine_name:TUHAN|Yahweh}}."
+        },
+        "fa": {
+          "L": "اما یونس برخاست تا از حضور {{divine_name:خداوند|یهوه}} به ترشیش بگریزد. و به یافا فرود آمد و کشتی‌ای یافت که به ترشیش می‌رفت؛ و کرایه‌اش را داد و به آن فرود آمد تا با ایشان به ترشیش برود، از حضور {{divine_name:خداوند|یهوه}}.",
+          "B": "اما یونس برخاست تا از حضور {{divine_name:خداوند|یهوه}} به ترشیش بگریزد. او به یافا فرود آمد و در آن‌جا کشتی‌ای یافت که عازم ترشیش بود. کرایه را پرداخت و به کشتی فرود آمد تا با آنان به ترشیش برود، دور از حضور {{divine_name:خداوند|یهوه}}.",
+          "R": "اما یونس برخاست و از {{divine_name:خداوند|یهوه}} گریخت. او به جای نینوا راهی ترشیش شد. به بندر یافا فرود آمد و کشتی‌ای یافت که به ترشیش می‌رفت. کرایهٔ سفر را پرداخت و به درون کشتی فرود آمد. می‌خواست با ملوانان به ترشیش برود تا از {{divine_name:خداوند|یهوه}} دور شود."
         }
       },
       "decisions": [
@@ -1869,6 +1973,30 @@
           "reason": "\"Tarsis\" is the glossary form; Joppa is \"Yope\", the glossary's form for the same port in Acts, kept here so that one place has one form. \"turun\" (went down) is kept at every level, as the English keeps it, for the steps of Jonah's descent (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010030042",
+            "o320010030081",
+            "o320010030072",
+            "o320010030152"
+          ],
+          "choice": "\"ترشیش\", \"یافا\"; \"فرود آمدن\" (went down) at every level",
+          "alternatives": [
+            "\"یافه\""
+          ],
+          "reason": "The places have the forms Persian readers know. Jonah \"goes down\" to Joppa, into the ship and into the hold (verse 5), and in 2:7 to the roots of the mountains; Persian keeps \"فرود آمدن\" each time so the reader can follow his descent.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1971,6 +2099,11 @@
           "L": "Tetapi {{divine_name:TUHAN|Yahweh}} melemparkan angin besar ke laut, dan terjadilah badai besar di laut, dan kapal itu menyangka akan pecah.",
           "B": "Tetapi {{divine_name:TUHAN|Yahweh}} melemparkan angin besar ke laut, dan timbullah badai yang begitu besar di laut sehingga kapal itu hampir pecah.",
           "R": "Tetapi {{divine_name:TUHAN|Yahweh}} melemparkan angin yang dahsyat ke laut. Badainya begitu kencang sehingga kapal itu hampir hancur berkeping-keping."
+        },
+        "fa": {
+          "L": "اما {{divine_name:خداوند|یهوه}} بادی سخت بر دریا افکند، و طوفانی بزرگ در دریا پدید آمد، و کشتی پنداشت که خواهد شکست.",
+          "B": "اما {{divine_name:خداوند|یهوه}} بادی سخت بر دریا افکند و چنان طوفان بزرگی در دریا برخاست که نزدیک بود کشتی در هم بشکند.",
+          "R": "اما {{divine_name:خداوند|یهوه}} باد شدیدی به سوی دریا افکند. طوفان چنان سهمگین بود که نزدیک بود کشتی تکه‌تکه شود."
         }
       },
       "decisions": [
@@ -2380,6 +2513,26 @@
           "reason": "The Hebrew verb recurs as the LORD hurls the wind, the sailors hurl the cargo, and they hurl Jonah (m1); Indonesian \"melemparkan\" can carry all three, so Readable keeps it too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010040021"
+          ],
+          "choice": "\"افکندن\" (hurl) at Literal and Balanced",
+          "alternatives": [
+            "\"انداختن\" at every level"
+          ],
+          "reason": "The same verb is used of the LORD hurling the wind, the sailors hurling the cargo and then Jonah (verses 5, 12, 15); Literal and Balanced keep \"افکندن\" each time. Readable says the everyday \"انداختن\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2499,6 +2652,11 @@
           "L": "Dan para pelaut menjadi takut, dan mereka berseru, masing-masing kepada allahnya; dan mereka melemparkan barang-barang yang [ada] di kapal ke laut untuk meringankan [beban] mereka. Tetapi Yunus telah turun ke bagian paling dalam dari kapal itu, dan dia telah berbaring dan tertidur nyenyak.",
           "B": "Para pelaut menjadi sangat takut, dan masing-masing berseru kepada allahnya sendiri. Mereka melemparkan muatan ke laut untuk meringankan beban mereka. Tetapi Yunus telah turun ke ruang bawah kapal; di sana dia berbaring dan tertidur lelap.",
           "R": "Para pelaut sangat ketakutan. Masing-masing berseru kepada dewanya sendiri minta tolong. Mereka melemparkan muatan ke laut supaya kapal menjadi lebih ringan. Tetapi Yunus sudah turun ke bagian bawah kapal. Dia berbaring di sana dan tidur sangat nyenyak."
+        },
+        "fa": {
+          "L": "و ملوانان ترسیدند و هر یک نزد خدای خود فریاد برآوردند؛ و بارهایی را که در کشتی [بود] به دریا افکندند تا برایشان سبک شود. اما یونس به درونی‌ترین بخش کشتی فرود آمده بود و دراز کشیده و به خوابی سنگین فرو رفته بود.",
+          "B": "ملوانان سخت ترسیدند و هر یک نزد خدای خود فریاد برآورد. آنان بار کشتی را به دریا افکندند تا آن را سبک کنند. اما یونس به انبار کشتی فرود آمده بود و در آن‌جا دراز کشیده و به خوابی سنگین فرو رفته بود.",
+          "R": "ملوانان بسیار ترسیده بودند. هر یک از آنان نزد خدای خود فریاد زد و کمک خواست. آنها بار کشتی را به دریا انداختند تا کشتی سبک‌تر شود. اما یونس به پایین کشتی رفته بود. او آن‌جا دراز کشیده بود و در خوابی عمیق بود."
         }
       },
       "decisions": [
@@ -2764,6 +2922,29 @@
           "reason": "The sailors' gods are \"allah\" in lowercase and \"dewa\" at Readable, as the style guide sets for gods other than the God of Israel.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010050061",
+            "o320010050062"
+          ],
+          "choice": "\"خدای خود\" for each sailor's god",
+          "alternatives": [
+            "\"بت خود\"",
+            "\"معبود خود\""
+          ],
+          "reason": "Persian has no capital letter to tell the God of Israel from the sailors' gods. \"خدای خود\" (his own god) follows the Hebrew, which says elohim of both; the context and the divine name make the difference plain, as they do in the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2875,6 +3056,11 @@
           "L": "Dan kepala para pelaut datang mendekatinya dan berkata kepadanya, \"Mengapa engkau, hai orang yang tidur? Bangkitlah, berserulah kepada allahmu! Barangkali allah itu akan mengingat kita, sehingga kita tidak binasa.\"",
           "B": "Nakhoda kapal itu datang kepadanya dan berkata, \"Bagaimana engkau bisa tidur? Bangunlah, berserulah kepada allahmu! Barangkali allah itu akan memperhatikan kita, sehingga kita tidak binasa.\"",
           "R": "Nakhoda kapal itu mendatanginya dan berkata, \"Bagaimana kamu bisa tidur? Bangun dan berdoalah kepada allahmu! Mungkin allahmu akan memperhatikan kita, sehingga kita tidak mati.\""
+        },
+        "fa": {
+          "L": "و ناخدای ملوانان نزد او آمد و به او گفت: «تو را چه شده است، ای خفته؟ برخیز، خدای خود را بخوان! شاید آن خدا به ما بیندیشد و هلاک نشویم.»",
+          "B": "ناخدا نزد او آمد و گفت: «چطور می‌توانی بخوابی؟ برخیز، خدای خود را بخوان! شاید آن خدا به ما توجه کند و هلاک نشویم.»",
+          "R": "ناخدا نزد او رفت و گفت: «چطور می‌توانی بخوابی؟ برخیز و به درگاه خدای خود دعا کن! شاید خدای تو به ما توجه کند و نمیریم.»"
         }
       },
       "decisions": [
@@ -3247,6 +3433,31 @@
           "reason": "The captain does not know which god Jonah serves (m2), so his words are written as he means them, in lowercase; \"kita\" is inclusive, since all on board are in danger.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010060031",
+            "o320010060041",
+            "o320010060042",
+            "o320010060101",
+            "o320010060111"
+          ],
+          "choice": "\"ناخدای ملوانان\" (Literal); \"ناخدا\" (Balanced, Readable)",
+          "alternatives": [
+            "\"کاپیتان\""
+          ],
+          "reason": "\"ناخدا\" is the Persian word for a ship's captain. Literal keeps the Hebrew \"chief of the sailors\" with it. He speaks to Jonah with \"تو\", as one man to another on the ship.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3360,6 +3571,11 @@
           "L": "Dan mereka berkata, masing-masing kepada temannya, \"Marilah, kita membuang undi, supaya kita tahu karena siapa kejahatan ini [menimpa] kita.\" Dan mereka membuang undi, dan undi itu jatuh kepada Yunus.",
           "B": "Lalu para pelaut itu berkata seorang kepada yang lain, \"Mari kita membuang undi untuk mengetahui siapa yang bersalah atas malapetaka yang menimpa kita ini.\" Mereka pun membuang undi, dan undi itu jatuh kepada Yunus.",
           "R": "Para pelaut itu berkata satu sama lain, \"Ayo, kita membuang undi untuk mengetahui siapa yang menyebabkan kesusahan ini.\" Lalu mereka membuang undi, dan undi itu menunjuk kepada Yunus."
+        },
+        "fa": {
+          "L": "و هر یک به رفیق خود گفتند: «بیایید قرعه بیندازیم تا بدانیم این بلا به سبب چه کسی بر ما [آمده است].» و قرعه انداختند و قرعه به نام یونس درآمد.",
+          "B": "آن‌گاه ملوانان به یکدیگر گفتند: «بیایید قرعه بیندازیم تا بفهمیم این مصیبتی که بر سر ما آمده تقصیر کیست.» پس قرعه انداختند و قرعه به نام یونس درآمد.",
+          "R": "ملوانان به یکدیگر گفتند: «بیایید! قرعه بیندازیم تا بفهمیم این گرفتاری تقصیر کیست.» پس قرعه انداختند و قرعه یونس را نشان داد."
         }
       },
       "decisions": [
@@ -3633,6 +3849,30 @@
           "reason": "Japanese has no one word for both wickedness and disaster; Literal 悪 for a storm would be wrong Japanese. The English decisions and the meaning notes show the shared Hebrew word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010070101",
+            "o320010070102",
+            "o320010070062",
+            "o320010070071"
+          ],
+          "choice": "\"بلا\" (Literal); \"مصیبت\" (Balanced); \"گرفتاری\" (Readable); \"قرعه انداختن\"",
+          "alternatives": [
+            "\"شرارت\" (Literal)"
+          ],
+          "reason": "The Hebrew word for evil here means the harm that has come on them, not wickedness, so each level says it as harm. \"قرعه انداختن\" is the Persian for casting lots.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3750,6 +3990,11 @@
           "L": "Dan mereka berkata kepadanya, \"Beri tahukanlah kepada kami, karena siapa kejahatan ini [menimpa] kami. Apa pekerjaanmu, dan dari mana engkau datang? Apa negerimu, dan dari bangsa manakah engkau?\"",
           "B": "Karena itu mereka berkata kepadanya, \"Beri tahu kami, siapa yang bersalah atas malapetaka yang menimpa kami ini? Apa pekerjaanmu? Dari mana engkau datang? Apa negerimu? Dari bangsa manakah engkau?\"",
           "R": "Karena itu mereka bertanya kepadanya, \"Katakan kepada kami, siapa yang menyebabkan kesusahan ini? Apa pekerjaanmu? Dari mana asalmu? Dari negeri mana kamu? Siapa bangsamu?\""
+        },
+        "fa": {
+          "L": "و به او گفتند: «تمنا اینکه به ما بگویی این بلا به سبب چه کسی بر ما [آمده است]. پیشهٔ تو چیست و از کجا می‌آیی؟ سرزمینت کدام است و از کدام قوم هستی؟»",
+          "B": "پس به او گفتند: «به ما بگو، این مصیبتی که بر سر ما آمده تقصیر کیست؟ کارت چیست؟ از کجا می‌آیی؟ سرزمینت کجاست؟ از کدام قوم هستی؟»",
+          "R": "پس از او پرسیدند: «به ما بگو، این گرفتاری تقصیر کیست؟ چه کاره‌ای؟ از کجا می‌آیی؟ اهل کدام سرزمینی؟ از چه قومی هستی؟»"
         }
       },
       "decisions": [
@@ -3992,6 +4237,11 @@
           "L": "Dan dia berkata kepada mereka, \"Aku [adalah] orang Ibrani, dan {{divine_name:TUHAN|Yahweh}}, Allah langit, aku takuti, yang telah menjadikan laut dan daratan.\"",
           "B": "Dia menjawab mereka, \"Aku orang Ibrani, dan aku takut akan {{divine_name:TUHAN|Yahweh}}, Allah semesta langit, yang telah menjadikan laut dan daratan.\"",
           "R": "Yunus menjawab, \"Aku orang Ibrani. Aku menyembah {{divine_name:TUHAN|Yahweh}}, Allah yang di surga. Dialah yang menjadikan laut dan daratan.\""
+        },
+        "fa": {
+          "L": "و به ایشان گفت: «من عبرانی [هستم]، و از {{divine_name:خداوند|یهوه}}، خدای آسمان‌ها، می‌ترسم که دریا و خشکی را آفرید.»",
+          "B": "او به آنان پاسخ داد: «من عبرانی هستم و از {{divine_name:خداوند|یهوه}}، خدای آسمان، می‌ترسم که دریا و خشکی را آفرید.»",
+          "R": "یونس پاسخ داد: «من عبرانی هستم. {{divine_name:خداوند|یهوه}}، خدای آسمان، را می‌پرستم. او دریا و خشکی را آفرید.»"
         }
       },
       "decisions": [
@@ -4374,6 +4624,27 @@
           "reason": "\"takut akan\" is the fixed phrase for the fear of the LORD (style guide section 7); Readable says what it means, as the English Readable does (m2). Jonah speaks to the sailors as \"aku\" and \"kalian\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010090071"
+          ],
+          "choice": "\"از خداوند می‌ترسم\" (Literal, Balanced); \"خداوند را می‌پرستم\" (Readable)",
+          "alternatives": [
+            "\"خداترس هستم\""
+          ],
+          "reason": "Literal and Balanced keep the verb \"fear\", which the narrator plays on in verses 10 and 16; Readable says what it means here, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4484,6 +4755,11 @@
           "L": "Dan orang-orang itu takut dengan ketakutan yang besar, dan mereka berkata kepadanya, \"Apa [yang] telah engkau perbuat ini?\" Sebab orang-orang itu tahu bahwa dari hadapan {{divine_name:TUHAN|Yahweh}} dia melarikan diri, karena dia telah memberi tahu mereka.",
           "B": "Orang-orang itu menjadi sangat ketakutan, dan mereka berkata kepadanya, \"Apa yang telah engkau perbuat ini?\" Sebab mereka tahu bahwa dia melarikan diri dari hadapan {{divine_name:TUHAN|Yahweh}}, karena dia telah memberitahukannya kepada mereka.",
           "R": "Para pelaut itu menjadi sangat ketakutan. \"Apa yang sudah kamu lakukan?\" tanya mereka kepadanya. Mereka tahu bahwa Yunus sedang melarikan diri dari {{divine_name:TUHAN|Yahweh}}, karena dia sudah memberi tahu mereka."
+        },
+        "fa": {
+          "L": "و آن مردان ترسی عظیم ترسیدند و به او گفتند: «این چیست که کردی؟» زیرا آن مردان می‌دانستند که او از حضور {{divine_name:خداوند|یهوه}} می‌گریزد، چون به ایشان گفته بود.",
+          "B": "آن‌گاه ترسی عظیم بر آن مردان چیره شد و به او گفتند: «این چه کاری است که کردی؟» زیرا آن مردان می‌دانستند که او از حضور {{divine_name:خداوند|یهوه}} می‌گریزد، چون خودش به آنان گفته بود.",
+          "R": "آن‌گاه ملوانان وحشت کردند. از او پرسیدند: «چه کرده‌ای؟» آنها می‌دانستند که یونس از {{divine_name:خداوند|یهوه}} می‌گریزد، زیرا خودش به آنها گفته بود."
         }
       },
       "decisions": [
@@ -4806,6 +5082,11 @@
           "L": "Dan mereka berkata kepadanya, \"Apa yang harus kami perbuat kepadamu, supaya laut menjadi tenang bagi kami?\" Sebab laut itu makin lama makin bergelora.",
           "B": "Lalu mereka bertanya kepadanya, \"Apa yang harus kami lakukan terhadapmu supaya laut menjadi tenang bagi kami?\" Sebab laut itu makin lama makin bergelora.",
           "R": "Badai itu makin lama makin hebat. Karena itu mereka bertanya kepada Yunus, \"Apa yang harus kami lakukan terhadapmu supaya laut menjadi tenang?\""
+        },
+        "fa": {
+          "L": "و به او گفتند: «با تو چه کنیم تا دریا برای ما آرام شود؟» زیرا دریا پیوسته طوفانی‌تر می‌شد.",
+          "B": "پس از او پرسیدند: «با تو چه کنیم تا دریا برای ما آرام شود؟» زیرا دریا هر دم متلاطم‌تر می‌شد.",
+          "R": "طوفان هر لحظه شدیدتر می‌شد. پس از یونس پرسیدند: «با تو چه کنیم تا دریا آرام شود؟»"
         }
       },
       "decisions": [
@@ -5021,6 +5302,11 @@
           "L": "Dan dia berkata kepada mereka, \"Angkatlah aku dan lemparkanlah aku ke laut, maka laut akan menjadi tenang bagi kalian; sebab aku tahu bahwa karena akulah badai besar ini [menimpa] kalian.\"",
           "B": "Dia menjawab mereka, \"Angkatlah aku dan lemparkanlah aku ke laut, dan laut akan menjadi tenang bagi kalian. Sebab aku tahu bahwa karena kesalahankulah badai besar ini menimpa kalian.\"",
           "R": "\"Angkat aku dan lemparkan aku ke laut,\" jawab Yunus. \"Lalu laut akan menjadi tenang. Aku tahu bahwa badai yang dahsyat ini menimpa kalian karena aku.\""
+        },
+        "fa": {
+          "L": "و به ایشان گفت: «مرا بردارید و به دریا افکنید، و دریا برای شما آرام خواهد شد؛ زیرا می‌دانم که این طوفان بزرگ به سبب من بر شما [آمده است].»",
+          "B": "او به آنان پاسخ داد: «مرا بردارید و به دریا افکنید، و دریا برای شما آرام خواهد شد. زیرا می‌دانم این طوفان بزرگ به سبب من بر شما آمده است.»",
+          "R": "یونس پاسخ داد: «مرا بردارید و به دریا بیندازید.» و گفت: «آن‌گاه دریا آرام خواهد شد. می‌دانم که این طوفان سهمگین به خاطر من بر شما آمده است.»"
         }
       },
       "decisions": [
@@ -5235,6 +5521,11 @@
           "L": "Dan orang-orang itu mendayung [sekuat tenaga] untuk kembali ke daratan, tetapi mereka tidak sanggup, sebab laut itu makin lama makin bergelora melawan mereka.",
           "B": "Sebaliknya, orang-orang itu berusaha keras mendayung untuk membawa kapal itu kembali ke daratan, tetapi mereka tidak sanggup, sebab laut makin lama makin bergelora melawan mereka.",
           "R": "Sebaliknya, para pelaut itu mendayung sekuat tenaga untuk membawa kapal itu kembali ke darat. Tetapi mereka tidak berhasil, karena badai itu makin hebat."
+        },
+        "fa": {
+          "L": "و آن مردان [پاروها را] فرو بردند تا به خشکی بازگردند، اما نتوانستند، زیرا دریا بر ضد ایشان پیوسته طوفانی‌تر می‌شد.",
+          "B": "در عوض، آن مردان با تمام نیرو پارو زدند تا کشتی را به خشکی برگردانند، اما نتوانستند، زیرا دریا بر ضد آنان هر دم متلاطم‌تر می‌شد.",
+          "R": "در عوض، ملوانان با تمام نیرو پارو زدند تا کشتی را به خشکی برگردانند. اما نتوانستند، چون طوفان پیوسته شدیدتر می‌شد."
         }
       },
       "decisions": [
@@ -5385,6 +5676,27 @@
           "reason": "\"Dig\" for rowing is not Japanese; the doubled verb keeps the force, and the bracket marks what Japanese supplies, as the English L brackets [in their oars].",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o320010130012"
+          ],
+          "choice": "\"[پاروها را] فرو بردند\" (Literal); \"با تمام نیرو پارو زدند\" (Balanced, Readable)",
+          "alternatives": [
+            "\"کندند\""
+          ],
+          "reason": "The Hebrew says they \"dug\", of oars in the water; Literal supplies the oars in brackets, as the English does, and Balanced and Readable say they rowed hard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5498,6 +5810,11 @@
           "L": "Dan mereka berseru kepada {{divine_name:TUHAN|Yahweh}} dan berkata, \"Ya {{divine_name:TUHAN|Yahweh}}, janganlah kiranya kami binasa karena nyawa orang ini, dan janganlah tanggungkan kepada kami darah orang yang tidak bersalah; sebab {{deity_pronoun:engkau|Engkau}}, ya {{divine_name:TUHAN|Yahweh}}, telah berbuat seperti yang {{deity_pronoun:kau|Kau}}kehendaki.\"",
           "B": "Lalu mereka berseru kepada {{divine_name:TUHAN|Yahweh}}, \"Ya {{divine_name:TUHAN|Yahweh}}, janganlah biarkan kami binasa karena mengambil nyawa orang ini! Janganlah tanggungkan kepada kami darah orang yang tidak bersalah. Sebab {{deity_pronoun:engkau|Engkau}}, ya {{divine_name:TUHAN|Yahweh}}, telah berbuat sesuai dengan kehendak-{{deity_pronoun:mu|Mu}}.\"",
           "R": "Lalu para pelaut itu berdoa kepada {{divine_name:TUHAN|Yahweh}}. \"Ya {{divine_name:TUHAN|Yahweh}},\" kata mereka, \"jangan biarkan kami mati karena mengambil nyawa orang ini. Jangan anggap kami bersalah karena membunuh orang yang tidak bersalah. Ya {{divine_name:TUHAN|Yahweh}}, {{deity_pronoun:engkau|Engkau}} telah melakukan apa yang {{deity_pronoun:engkau|Engkau}} kehendaki.\""
+        },
+        "fa": {
+          "L": "و {{divine_name:خداوند|یهوه}} را خواندند و گفتند: «آه، ای {{divine_name:خداوند|یهوه}}، مگذار به خاطر جان این مرد هلاک شویم، و خون بی‌گناه را بر ما مگذار؛ زیرا تو، ای {{divine_name:خداوند|یهوه}}، هر چه خواستی کردی.»",
+          "B": "آن‌گاه نزد {{divine_name:خداوند|یهوه}} فریاد برآوردند: «آه، ای {{divine_name:خداوند|یهوه}}، نگذار به خاطر گرفتن جان این مرد هلاک شویم! ما را به ریختن خون بی‌گناه مقصر نشمار. زیرا تو، ای {{divine_name:خداوند|یهوه}}، آنچه خواستی کردی.»",
+          "R": "آن‌گاه ملوانان به درگاه {{divine_name:خداوند|یهوه}} دعا کردند. گفتند: «آه، ای {{divine_name:خداوند|یهوه}}،» و ادامه دادند: «مگذار به خاطر گرفتن جان این مرد بمیریم. ما را مقصر کشتن مردی بی‌گناه نشمار. ای {{divine_name:خداوند|یهوه}}، تو آنچه خواستی کردی.»"
         }
       },
       "decisions": [
@@ -5832,6 +6149,28 @@
           "reason": "People speaking to God use です・ます in prose, as in the earlier books; their speech to Jonah stays plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o320010140061",
+            "o320010140201"
+          ],
+          "choice": "\"تو\" to the LORD from the sailors; \"آه\" for the Hebrew particle of pleading",
+          "alternatives": [
+            "\"شما\""
+          ],
+          "reason": "As the style guide sets, God is \"تو\" at every level, from Israelites and foreigners alike. \"آه، ای خداوند\" carries the Hebrew's urgent \"please\"; the same in 4:2.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5931,6 +6270,11 @@
           "L": "Dan mereka mengangkat Yunus dan melemparkannya ke laut, dan laut berhenti dari amukannya.",
           "B": "Lalu mereka mengangkat Yunus dan melemparkannya ke laut, dan laut pun berhenti mengamuk.",
           "R": "Lalu mereka mengangkat Yunus dan melemparkannya ke laut. Seketika laut menjadi tenang."
+        },
+        "fa": {
+          "L": "و یونس را برداشتند و به دریا افکندند، و دریا از خروش خود باز ایستاد.",
+          "B": "آن‌گاه یونس را برداشتند و به دریا افکندند و دریا از خروش باز ایستاد.",
+          "R": "سپس یونس را برداشتند و به دریا انداختند. و دریا آرام شد."
         }
       },
       "decisions": [
@@ -6093,6 +6437,11 @@
           "L": "Dan orang-orang itu takut akan {{divine_name:TUHAN|Yahweh}} [dengan] ketakutan yang besar, dan mereka mempersembahkan korban sembelihan kepada {{divine_name:TUHAN|Yahweh}} dan bernazar nazar-nazar.",
           "B": "Orang-orang itu menjadi sangat takut akan {{divine_name:TUHAN|Yahweh}}, lalu mereka mempersembahkan korban kepada {{divine_name:TUHAN|Yahweh}} dan bernazar.",
           "R": "Para pelaut itu menjadi sangat hormat dan gentar kepada {{divine_name:TUHAN|Yahweh}}. Mereka mempersembahkan korban kepada {{divine_name:TUHAN|Yahweh}} dan berjanji dengan sungguh-sungguh kepada-{{deity_pronoun:nya|Nya}}."
+        },
+        "fa": {
+          "L": "و آن مردان از {{divine_name:خداوند|یهوه}} ترسی عظیم ترسیدند، و برای {{divine_name:خداوند|یهوه}} قربانی گذراندند و نذرها کردند.",
+          "B": "آن‌گاه ترس عظیمی از {{divine_name:خداوند|یهوه}} آن مردان را فرا گرفت. آنان برای {{divine_name:خداوند|یهوه}} قربانی گذراندند و نذرها کردند.",
+          "R": "آن‌گاه ملوانان از {{divine_name:خداوند|یهوه}} پر از هیبت و احترام شدند. برای {{divine_name:خداوند|یهوه}} قربانی گذراندند و به او وعده‌های جدی دادند."
         }
       },
       "decisions": [
@@ -6307,6 +6656,29 @@
           "choice": "\"korban\"; \"bernazar\" (L, B), \"berjanji dengan sungguh-sungguh\" (R)",
           "alternatives": [],
           "reason": "\"korban\" and \"nazar\" are the glossary words for sacrifice and vow; Readable says what a vow is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-fa-1",
+          "layer": "rendering",
+          "language": "fa",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o320010160012",
+            "o320010160031",
+            "o320010160041",
+            "o320010160102",
+            "o320010160111"
+          ],
+          "choice": "\"پر از هیبت و احترام شدند\"; \"وعده‌های جدی دادند\" (Readable)",
+          "alternatives": [
+            "\"ترسیدند\" at every level"
+          ],
+          "reason": "Literal and Balanced keep \"fear\" (\"ترس\"); Readable says the awe and reverence the English means, and says \"vows\" as solemn promises.",
           "uncertain": false,
           "footnote": false
         }
