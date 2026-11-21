@@ -822,3 +822,55 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਨੂੰ ਸੱਦ ਲਿਆ" (Matthew 2:15); 13:14, "ਹੇ ਮੌਤ ... ਕਿੱਥੇ ਹੈ ਤੇਰਾ ਡੰਗ?"
   (1 Corinthians 15:55). Within the book, 7:10 repeats 5:5, 13:3 repeats the
   cloud and dew of 6:4, and 13:4 repeats 12:10.
+
+### Zechariah
+
+- Speech formulas follow style §12a and the book uses them many times:
+  thus says YHWH of hosts `ਸੈਨਾਂ ਦੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਇਉਂ ਆਖਦੇ ਹਨ`
+  (L, B), `... ਦਾ ਇਹ ਕਹਿਣਾ ਹੈ` (R); neʾum ਦਾ ਵਾਕ ਹੈ (L, B), ਆਖਦੇ ਹਨ (R);
+  the word came ਦਾ ਬਚਨ ... ਕੋਲ ਆਇਆ (L, B), ... ਨੇ ... ਨੂੰ ਇਹ ਸੰਦੇਸ਼ ਦਿੱਤਾ
+  (R). Massa (9:1, 12:1) ਭਾਰ ਦਾ ਵਾਕ (L), ਸੰਦੇਸ਼ (B, R), as in Malachi.
+  Adonai YHWH (9:14) `ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}`; Adonai alone
+  (9:4) ਪ੍ਰਭੂ; adon kol haʾarets (4:14, 6:5) ਸਾਰੀ ਧਰਤੀ ਦੇ ਪ੍ਰਭੂ.
+- People: ਜ਼ਕਰਯਾਹ, ਬਰਕਯਾਹ, ਇੱਦੋ, ਦਾਰਾ, ਜ਼ਰੁੱਬਾਬਲ, ਮਹਾਂ ਜਾਜਕ ਯਹੋਸ਼ੁਆ
+  ਯਹੋਸਾਦਾਕ ਦਾ ਪੁੱਤਰ, ਹਲਦਈ, ਟੋਬੀਯਾਹ, ਯਦਾਯਾਹ, ਯੋਸ਼ੀਯਾਹ, ਸਫ਼ਨਯਾਹ, ਹੇਲਮ,
+  ਹੇਨ, ਸ਼ਰਾਸਰ, ਰਗਮ-ਮਲਕ, ਉੱਜ਼ੀਯਾਹ, ਨਾਥਾਨ, ਲੇਵੀ, ਸ਼ਿਮਈ. Places: ਬਾਬਲ,
+  ਸ਼ਿਨਾਰ, ਬੈਤਏਲ, ਨੇਗੇਬ, ਸ਼ਫ਼ੇਲਾਹ, ਹਦਰਾਕ, ਦੰਮਿਸ਼ਕ, ਹਮਾਥ, ਸੂਰ, ਸੈਦਾ,
+  ਅਸ਼ਕਲੋਨ, ਗਾਜ਼ਾ, ਅਕਰੋਨ, ਅਸ਼ਦੋਦ, ਯਬੂਸੀ, ਯੂਨਾਨ, ਗਿਲਆਦ, ਲਬਾਨੋਨ, ਬਾਸ਼ਾਨ,
+  ਨੀਲ, ਹਦਦ-ਰਿੰਮੋਨ, ਮਗਿੱਦੋ, ਜ਼ੈਤੂਨ ਦਾ ਪਹਾੜ, ਆਸਲ, ਅਰਾਬਾਹ, ਗਬਾ, ਰਿੰਮੋਨ;
+  in Jerusalem ਬਿਨਯਾਮੀਨ ਦਾ ਫਾਟਕ, ਪਹਿਲਾ ਫਾਟਕ, ਖੂੰਜੇ ਦਾ ਫਾਟਕ, ਹਨਨੇਲ ਦਾ
+  ਬੁਰਜ. Months ਸ਼ਬਾਟ, ਕਿਸਲੇਵ.
+- The night visions: myrtles ਮਹਿੰਦੀ ਦੇ ਬੂਟੇ; sorrel ਕੁਮੈਤ (L), ਲਾਖੇ (B, R);
+  dappled ਡੱਬ-ਖੜੱਬੇ (L, B), ਡੱਬਾਂ ਵਾਲੇ (R); the interpreting angel ਉਹ ਦੂਤ ਜੋ
+  ਮੇਰੇ ਨਾਲ ਗੱਲਾਂ ਕਰਦਾ ਸੀ, addressed ਹੇ ਮੇਰੇ ਸੁਆਮੀ (L, B), ਸ੍ਰੀਮਾਨ ਜੀ (R);
+  the angel of YHWH ਪ੍ਰਭੂ ਦਾ ਦੂਤ, with plain singular verbs. Patrol
+  ਇੱਧਰ-ਉੱਧਰ ਫਿਰਨਾ (L), ਗਸ਼ਤ (B), ਘੁੰਮਣਾ (R). Horns ਸਿੰਗ, craftsmen ਕਾਰੀਗਰ;
+  the satan (3:1-2) ਸ਼ਤਾਨ (L), ਦੋਸ਼ ਲਾਉਣ ਵਾਲਾ (B, R); lampstand ਸ਼ਮਾਦਾਨ;
+  the stone of tin ਕਲੀ ਦਾ ਪੱਥਰ (L), ਸਾਹਲ (B, R); sons of fresh oil ਤਾਜ਼ੇ ਤੇਲ
+  ਦੇ ਪੁੱਤਰ (L), ਮਸਹ ਕੀਤੇ ਹੋਏ (B, R); scroll ਪੱਤਰੀ; ephah ਏਫਾਹ (L), ਟੋਕਰੀ
+  (B, R); stork ਲਮਢੀਂਗ; bronze ਪਿੱਤਲ; crown ਤਾਜ.
+- Branch (*tsemah*, 3:8, 6:12) ਕਰੂੰਬਲ; Jeremiah 23:5 and 33:15 should match.
+  Jealousy ਅਣਖ. Hekhal ਹੈਕਲ; bayit ਘਰ (L, B), ਹੈਕਲ (R). Fathers ਵੱਡ-ਵਡੇਰੇ.
+  Daughter Zion ਸੀਯੋਨ ਦੀ ਧੀ (L, B), ਸੀਯੋਨ ਦੇ ਲੋਕੋ (R). ʿAmmim ਉੱਮਤਾਂ (L),
+  ਕੌਮਾਂ (B, R), as in Hosea. Teraphim ਤਰਾਫ਼ੀਮ (L), ਘਰੇਲੂ ਦੇਵਤੇ (B); latter
+  rain ਪਿਛੇਤਾ ਮੀਂਹ; shofar ਨਰਸਿੰਗਾ; the two staffs (11:7) ਮਿਹਰ and ਏਕਤਾ;
+  thirty pieces of silver ਚਾਂਦੀ ਦੇ ਤੀਹ [ਟੁਕੜੇ] (L), ਸਿੱਕੇ (B, R); potter
+  ਘੁਮਿਆਰ; Booths ਡੇਰਿਆਂ ਦਾ ਤਿਉਹਾਰ; kenaʿani (14:21) ਵਪਾਰੀ; "Holy to YHWH"
+  (14:20) ਪਵਿੱਤਰਤਾਈ (L), ਪਵਿੱਤਰ (B, R), as Exodus 28:36 should read.
+- God speaks of the coming king (9:10), and of the pierced one (12:10), with
+  ordinary singular verbs; YHWH in the third person keeps honorific plurals
+  (10:11 ਉਹ ... ਲੰਘਣਗੇ). The prophet turns to God with ਤੂੰ in 14:5 (ਤੇਰੇ ਨਾਲ).
+- Spans: units in 5:2 (B, R), `{{units:ਲਗਭਗ 9 ਮੀਟਰ|ਵੀਹ ਹੱਥ}}` and
+  `{{units:ਲਗਭਗ 4.5 ਮੀਟਰ|ਦਸ ਹੱਥ}}`; gender (L) in 7:9, 7:10 and 8:17 for
+  "each his brother / neighbour", and 8:23 `{{gender:ਦਸ ਜਣੇ|ਦਸ ਮਰਦ}}` at every
+  level; 11:6 and 12:1 have none, as in Hindi.
+- Lines other books must match: 1:3 "ਮੇਰੇ ਵੱਲ ਮੁੜੋ ... ਮੈਂ ਤੁਹਾਡੇ ਵੱਲ ਮੁੜਾਂ" at L
+  (Malachi 3:7 has the same words); 3:2 "ਪ੍ਰਭੂ ਤੈਨੂੰ ਝਿੜਕਣ" (Jude 9); 4:6 "ਨਾ ਬਲ ਨਾਲ, ਨਾ
+  ਸ਼ਕਤੀ ਨਾਲ, ਸਗੋਂ ਮੇਰੇ ਆਤਮਾ ਦੇ ਰਾਹੀਂ"; the covenant formula of 8:8 and 13:9;
+  8:16 (Ephesians 4:25); 9:9 "ਵੇਖ, ਤੇਰਾ ਰਾਜਾ ਤੇਰੇ ਕੋਲ ਆਉਂਦਾ ਹੈ ... ਗਧੇ
+  ਉੱਤੇ ਸਵਾਰ" (Matthew 21:5, John 12:15); 9:10 (Psalm 72:8); 11:12-13, the
+  thirty pieces of silver thrown to the potter (Matthew 26:15, 27:9-10);
+  12:10 "ਜਿਸ ਨੂੰ ਉਨ੍ਹਾਂ ਨੇ ਵਿੰਨ੍ਹਿਆ" (John 19:37, Revelation 1:7; 13:3 keeps
+  ਵਿੰਨ੍ਹ at L and B for the same verb); 13:5 (Amos 7:14); 13:7 "ਆਜੜੀ ਨੂੰ ਮਾਰ
+  ... ਭੇਡਾਂ ਤਿੱਤਰ-ਬਿੱਤਰ" (Matthew 26:31, Mark 14:27); 14:9 ਇੱਕ ... ਇੱਕ
+  (Deuteronomy 6:4).
