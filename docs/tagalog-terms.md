@@ -1339,3 +1339,79 @@ names the book where the form was first used.
 | 1 Samuel 30:29 | Racal | Racal |  |
 | 1 Samuel 30:30 | Bor-ashan; Athach | Bor-ashan; Atac |  |
 | 1 Samuel 31:10 | Beth-shan | Bet-shan | the English keeps Beth-shan here, apart from Beth-shean |
+| 2 Samuel 1:18 | Book of Jashar | Aklat ni Jashar |  |
+| 2 Samuel 2:8 | Ish-bosheth | Isboset | sh > s, th > t |
+| 2 Samuel 2:9 | Ashurites | mga Ashurita |  |
+| 2 Samuel 2:16 | Helkath-hazzurim | Helkat-hazurim |  |
+| 2 Samuel 2:24 | Ammah; Giah | Amma; Gia | final -h dropped, for the reviewer |
+| 2 Samuel 2:29 | Bithron | Bitron |  |
+| 2 Samuel 3:3 | Chileab | Kileab |  |
+| 2 Samuel 3:4 | Adonijah; Haggith; Shephatiah; Abital | Adonias; Hagit; Sefatias; Abital | Spanish-derived -ias |
+| 2 Samuel 3:5 | Ithream; Eglah | Itream; Egla |  |
+| 2 Samuel 4:2 | Baanah; Rechab; Beerothite | Baana; Recab; Beerotita | final -h dropped, for the reviewer |
+| 2 Samuel 4:3 | Gittaim | Gitaim |  |
+| 2 Samuel 5:7 | Zion | Zion | English form kept; the glossary's Sion is not yet settled |
+| 2 Samuel 5:9 | Millo | Milo |  |
+| 2 Samuel 5:11 | Hiram | Hiram |  |
+| 2 Samuel 5:14 | Shobab | Shobab |  |
+| 2 Samuel 5:15 | Ibhar; Elishua | Ibhar; Elishua |  |
+| 2 Samuel 5:16 | Eliada; Eliphelet | Eliada; Elifelet |  |
+| 2 Samuel 5:20 | Baal-perazim | Baal-perazim |  |
+| 2 Samuel 6:2 | Baale-judah | Baale-juda |  |
+| 2 Samuel 6:3 | Uzzah; Ahio | Uzza; Ahio |  |
+| 2 Samuel 6:6 | Nacon | Nacon | as Genesis-Numbers spelling of c |
+| 2 Samuel 6:8 | Perez-uzzah | Perez-uzza |  |
+| 2 Samuel 6:10 | Obed-edom | Obed-edom |  |
+| 2 Samuel 8:1 | Metheg-ammah | Meteg-amma |  |
+| 2 Samuel 8:8 | Betah; Berothai | Beta; Berotai |  |
+| 2 Samuel 8:9 | Toi; Joram | Toi; Joram |  |
+| 2 Samuel 8:17 | Seraiah | Seraias |  |
+| 2 Samuel 9:12 | Mica | Mika |  |
+| 2 Samuel 10:1 | Hanun | Hanun |  |
+| 2 Samuel 10:16 | Hadadezer; Helam; Shobach | Hadadezer; Helam; Shobac |  |
+| 2 Samuel 11:3 | Bathsheba; Eliam | Batsheba; Eliam |  |
+| 2 Samuel 11:21 | Jerubbesheth | Jerubeshet |  |
+| 2 Samuel 12:25 | Jedidiah | Jedidias |  |
+| 2 Samuel 13:3 | Jonadab; Shimeah | Jonadab; Shimea |  |
+| 2 Samuel 13:23 | Baal-hazor | Baal-hazor |  |
+| 2 Samuel 14:2 | Tekoa | Tekoa; *taga-Tekoa* |  |
+| 2 Samuel 15:12 | Ahithophel the Gilonite; Giloh | Ahitofel na Gilonita; Giloh |  |
+| 2 Samuel 15:18 | Cherethites; Pelethites | mga Kereteo; mga Peleteo |  |
+| 2 Samuel 15:19 | Ittai | Itai |  |
+| 2 Samuel 15:23 | Kidron | Kidron |  |
+| 2 Samuel 15:32 | Hushai the Archite | Husai na Arkita |  |
+| 2 Samuel 16:1 | Ziba; Mephibosheth | Ziba; Mefiboset |  |
+| 2 Samuel 16:5 | Bahurim; Shimei son of Gera | Bahurim; Simei na anak ni Gera | Simei as Exodus 6:17 |
+| 2 Samuel 17:25 | Amasa; Ithra | Amasa; Itra |  |
+| 2 Samuel 17:27 | Shobi; Lo-debar; Rogelim; Barzillai | Shobi; Lo-debar; Rogelim; Barzilai |  |
+| 2 Samuel 18:18 | Absalom's Monument | Bantayog ni Absalom |  |
+| 2 Samuel 19:37 | Chimham | Kimham |  |
+| 2 Samuel 20:1 | Sheba son of Bichri | Sheba na anak ni Bicri |  |
+| 2 Samuel 20:14 | Abel-beth-maacah; Berites | Abel-bet-maacah; mga Berita |  |
+| 2 Samuel 20:24 | Adoram; Jehoshaphat son of Ahilud | Adoram; Josafat na anak ni Ahilud |  |
+| 2 Samuel 20:25 | Sheva | Seva |  |
+| 2 Samuel 20:26 | Ira the Jairite | Ira na Jairita |  |
+| 2 Samuel 21:8 | Rizpah; Armoni; Adriel the Meholathite | Rizpa; Armoni; Adriel na Meholatita | final -h dropped, for the reviewer |
+| 2 Samuel 21:16 | Ishbi-benob; Rapha | Isbi-benob; Rafa |  |
+| 2 Samuel 21:18 | Sibbecai the Hushathite; Saph; Gob | Sibecai na Husatita; Saf; Gob |  |
+| 2 Samuel 21:19 | Elhanan son of Jaare-oregim | Elhanan na anak ni Jaare-oregim |  |
+| 2 Samuel 23:8 | Josheb-basshebeth the Tahchemonite; Adino the Eznite | Josheb-basebet na Tacmonita; Adino na Eznita | final -th dropped, for the reviewer |
+| 2 Samuel 23:9 | Ahohite | Ahohita |  |
+| 2 Samuel 23:11 | Agee the Hararite | Age na Hararita |  |
+| 2 Samuel 23:25 | Harodite; Elika | Harodita; Elica |  |
+| 2 Samuel 23:26 | Helez the Paltite; Ikkesh | Helez na Paltita; Iques |  |
+| 2 Samuel 23:27 | Mebunnai | Mebunai |  |
+| 2 Samuel 23:28 | Zalmon; Maharai the Netophathite | Zalmon; Maharai na Netofatita |  |
+| 2 Samuel 23:29 | Heleb; Ribai | Heleb; Ribai |  |
+| 2 Samuel 23:30 | Hiddai | Hidai |  |
+| 2 Samuel 23:31 | Abi-albon the Arbathite; Azmaveth the Barhumite | Abi-albon na Arbatita; Azmavet na Barhumita |  |
+| 2 Samuel 23:32 | Eliahba the Shaalbonite; Jashen | Eliaba na Saalbonita; Jasen |  |
+| 2 Samuel 23:33 | Ahiam son of Sharar | Ahiam na anak ni Sarar |  |
+| 2 Samuel 23:34 | Ahasbai the Maacathite | Ahasbai na Maacatita |  |
+| 2 Samuel 23:35 | Hezrai; Paarai the Arbite | Hezrai; Paarai na Arbita |  |
+| 2 Samuel 23:36 | Igal; Bani | Igal; Bani |  |
+| 2 Samuel 23:37 | Zelek; Naharai | Zelek; Naharai |  |
+| 2 Samuel 23:38 | Ithrite; Gareb | Itrita; Gareb |  |
+| 2 Samuel 24:6 | Tahtim-hodshi; Dan-jaan | Tahtim-hodsi; Dan-jaan |  |
+| 2 Samuel 24:16 | Araunah | Arauna | final -h dropped, for the reviewer |
+| 2 Samuel 24:22 | threshing sledge | *panggiik* |  |
