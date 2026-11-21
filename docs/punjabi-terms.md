@@ -753,3 +753,33 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Avon in 4:6 and 4:22 is ਬਦੀ at L and ਸਜ਼ਾ at B and R (its punishment
   sense). The anointed of YHWH (4:20) ਮਸਹ ਕੀਤਾ ਹੋਇਆ.
 - Names: ਸੀਯੋਨ, ਯਹੂਦਾਹ, ਯਾਕੂਬ, ਸਦੂਮ, ਅਦੋਮ, ਊਸ, ਮਿਸਰ, ਅੱਸ਼ੂਰ.
+
+### Esther
+
+- The book has no divine name, and none is added: 4:14 keeps ਕਿਸੇ ਹੋਰ ਥਾਂ
+  ਤੋਂ (L, B), ਕਿਤੋਂ ਹੋਰ (R); 5:4 has no wording for the acrostic.
+- Court speech: courtiers, Haman and Esther speak of the king with
+  honorific plural verbs and to him with ਆਪ, and R adds ਮਹਾਰਾਜ; the king
+  says ਤੂੰ to his subjects and to Esther, and ਤੁਸੀਂ (ਤੁਸੀਂ ਦੋਵੇਂ at R) to
+  Esther and Mordecai together (8:8). Mordecai says ਤੂੰ to Esther; she says
+  ਤੁਸੀਂ to him. The narrator uses the plain singular for the king.
+- Susa the citadel ਸ਼ੂਸ਼ਨ ਗੜ੍ਹ (L), ਸ਼ੂਸ਼ਨ ਦਾ ਗੜ੍ਹ (B), ਸ਼ੂਸ਼ਨ ਦਾ ਸ਼ਾਹੀ
+  ਕਿਲ੍ਹਾ (R). Sar ਹਾਕਮ (L), ਅਧਿਕਾਰੀ (B), ਸਰਦਾਰ (R); eunuch ਖੋਜਾ (L, B),
+  ਮਹਿਲ ਦਾ ਅਧਿਕਾਰੀ (R); satraps ਸੂਬੇਦਾਰ (L, B), ਇਲਾਕਾਈ ਹਾਕਮ (R);
+  governors ਰਾਜਪਾਲ; runners ਦੌੜਾਕ (L), ਹਰਕਾਰੇ (B), ਸੰਦੇਸ਼ਵਾਹਕ (R).
+- Dat is ਨਿਯਮ for the house rule and ਕਾਨੂੰਨ for the laws; ʿam ਜਾਤੀ (L),
+  ਕੌਮ (B, R); the house of the women ਤੀਵੀਆਂ ਦਾ ਘਰ (L), ਰਣਵਾਸ (B), ਤੀਵੀਆਂ
+  ਦਾ ਨਿਵਾਸ (R); concubine ਰਖੇਲ; signet ring ਮੋਹਰ ਵਾਲੀ ਮੁੰਦਰੀ; scepter
+  ਰਾਜ-ਡੰਡਾ.
+- ʿEts is ਰੁੱਖ (L), ਫਾਂਸੀ ਦਾ ਖੰਭਾ (B), ਖੰਭਾ (R) in 2:23, and ਫਾਂਸੀ ਦਾ
+  ਖੰਭਾ at every level from 5:14 on. Units spans: ਲਗਭਗ 340 ਟਨ ਚਾਂਦੀ / ਦਸ
+  ਹਜ਼ਾਰ ਤੋੜੇ ਚਾਂਦੀ (3:9), ਲਗਭਗ 22.5 ਮੀਟਰ / ਪੰਜਾਹ ਹੱਥ (5:14, 7:9).
+- Pur ਪੂਰ, the lot ਪਰਚੀ, the feast ਪੂਰੀਮ. Months ਨੀਸਾਨ, ਸੀਵਾਨ, ਤੇਬੇਥ,
+  ਅਦਾਰ. 10:2 L uses the regnal source formula ਕੀ ਉਹ ... ਇਤਿਹਾਸ ਦੀ ਪੋਥੀ
+  ਵਿੱਚ ਨਹੀਂ ਲਿਖੇ ਹੋਏ?, which Kings and Chronicles should match.
+- Names: ਅਹਸ਼ਵੇਰੋਸ਼, ਵਸ਼ਤੀ, ਮਾਰਦਕਈ, ਅਸਤਰ, ਹਦੱਸਾਹ, ਅਬੀਹਾਇਲ, ਹਮਦਾਥਾ ਦੇ
+  ਪੁੱਤਰ ਅਗਾਗੀ ਹਾਮਾਨ, ਜ਼ਰਸ਼, ਹੇਗਈ, ਸ਼ਅਸ਼ਗਜ਼, ਹਥਾਕ, ਬਿਗਥਾਨ (2:21) and
+  ਬਿਗਥਾਨਾ (6:2), ਤਰਸ਼, ਹਰਬੋਨਾ, ਯਾਈਰ, ਸ਼ਿਮਈ, ਕੀਸ਼, ਬਿਨਯਾਮੀਨੀ, ਯਕਾਨਯਾਹ
+  (ਯਹੋਯਾਕੀਨ at R), ਨਬੂਕਦਨੱਸਰ, ਬਾਬੁਲ, ਫ਼ਾਰਸ ਅਤੇ ਮਾਦੀ, ਹਿੰਦ ਤੋਂ ਕੂਸ਼.
+  Haman's sons (9:7-9): ਪਰਸ਼ਨਦਾਥਾ, ਦਲਫ਼ੋਨ, ਅਸਪਾਥਾ, ਪੋਰਾਥਾ, ਅਦਲਯਾ,
+  ਅਰੀਦਾਥਾ, ਪਰਮਸ਼ਤਾ, ਅਰੀਸਈ, ਅਰੀਦਈ, ਵਯਜ਼ਾਥਾ.
