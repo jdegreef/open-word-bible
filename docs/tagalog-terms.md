@@ -1112,3 +1112,35 @@ names the book where the form was first used.
 | Numbers 34:28 | Pedahel | Pedahel |  |
 | Numbers 26:31 | Shechemites | Siquemita | from *Siquem* |
 | Numbers 12:1 | Cushite | Cushita | people name in -ita |
+| Deuteronomy 1:1 | Arabah | Araba |  |
+| Deuteronomy 1:1 | Tophel | Tofel | ph > f |
+| Deuteronomy 1:1 | Dizahab | Di-zahab |  |
+| Deuteronomy 1:4 | Ashtaroth | Ashtarot | th > t |
+| Deuteronomy 1:7 | Shephelah (lowland) | Shefelah | ph > f |
+| Deuteronomy 1:28 | Anakim | Anakita | people name in -ita |
+| Deuteronomy 2:8 | Elath | Elat | th > t |
+| Deuteronomy 2:20 | Zamzummim | Zamzumita | people name in -ita |
+| Deuteronomy 2:23 | Avvim | Avita | people name in -ita |
+| Deuteronomy 2:26 | Kedemoth | Kedemot | th > t |
+| Deuteronomy 3:4 | Argob | Argob |  |
+| Deuteronomy 3:8 | Hermon | Hermon |  |
+| Deuteronomy 3:9 | Sidonians | Sidonio |  |
+| Deuteronomy 3:9 | Sirion; Senir | Sirion; Senir |  |
+| Deuteronomy 3:10 | Salecah | Saleca |  |
+| Deuteronomy 3:11 | Rabbah | Rabba |  |
+| Deuteronomy 3:14 | Geshurites; Maacathites | Geshurita; Maacatita |  |
+| Deuteronomy 3:29 | Beth-peor | Bet-peor | th > t |
+| Deuteronomy 4:3 | Baal-peor | Baal-peor |  |
+| Deuteronomy 4:43 | Bezer; Ramoth; Golan | Bezer; Ramot; Golan |  |
+| Deuteronomy 4:43 | Manassites | Manasita |  |
+| Deuteronomy 4:48 | Sion (Hermon) | Siyon | kept apart from *Sion* (Zion) |
+| Deuteronomy 10:6 | Beeroth Bene-jaakan | Beerot Bene-jaakan |  |
+| Deuteronomy 10:6 | Moserah | Moserah |  |
+| Deuteronomy 10:7 | Gudgodah | Gudgodah |  |
+| Deuteronomy 11:24 | the western sea | *dagat sa kanluran* (L, B), *Dagat Mediteraneo* (R) |  |
+| Deuteronomy 11:29 | Gerizim | Gerizim |  |
+| Deuteronomy 27:4 | Ebal | Ebal |  |
+| Deuteronomy 32:4 | the Rock (God) | *Bato* (L, B), *matibay na kanlungan* (R) |  |
+| Deuteronomy 32:15 | Jeshurun | Jesurun |  |
+| Deuteronomy 32:22 | Sheol | Sheol (L, B), *daigdig ng mga patay* (R) |  |
+| Deuteronomy 33:8 | Thummim and Urim | Tumim at Urim | order as in the Hebrew of this verse |
