@@ -34,6 +34,9 @@ from owb import crossrefs, export, languages as owb_languages, markup, morph, re
 from owb import furigana, notes as owb_notes, speakers, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
+sys.path.insert(0, str(ROOT / "scripts"))
+import indexnow  # noqa: E402  (scripts/indexnow.py)
+
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
 # Every book's name in each interface language and its number of chapters
@@ -2191,15 +2194,28 @@ def intro_faq_ld(book, lang, intro):
 # verse at all three levels, the original words and every decision behind
 # it with its reasoning. People search for a verse by its reference ("John
 # 3:16 meaning"), and a chapter page shows only the Balanced text, with the
-# reasoning in the reader's data.
+# reasoning in the reader's data. The verses of the day have their page in
+# every language they are wholly in; every other verse with a footnoted
+# meaning decision (a question worth a note: a variant, an idiom, a
+# disputed sense) has one in English, where its reasoning is written.
 @functools.cache
-def verse_page_ids():
-    """The verses that have a page: the verses of the day that have
-    records, once each, in Bible order."""
+def verse_of_the_day_ids():
+    """The verses of the day that have records."""
     data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
     have = chapter_set()
-    found = {vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
-             and verse_records(vid)}
+    return frozenset(vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
+                     and verse_records(vid))
+
+
+@functools.cache
+def verse_page_ids():
+    """The verses that have a page, once each, in Bible order: the verses
+    of the day, and the verses with a footnoted meaning decision."""
+    found = set(verse_of_the_day_ids())
+    for book, chapter in chapters():
+        for r in chapter_records(book, chapter):
+            if any(d["layer"] == "meaning" and d.get("footnote") for d in r["decisions"]):
+                found.update(vid for vid in r["refs"] if refs.parse(vid).chapter == chapter)
     return sorted(found, key=lambda vid: refs.parse(vid).sort_key())
 
 
@@ -2216,10 +2232,14 @@ def verse_records(vid):
 
 @functools.cache
 def verse_page_languages(vid):
-    """The languages every sentence of a verse is in: those its page is
-    built in."""
+    """The languages its page is built in: for a verse of the day, every
+    language all its sentences are in; for another verse, English if they
+    are in it (see verse_page_ids)."""
     rs = verse_records(vid)
-    return tuple(code for code in LANGUAGES if all(code in r["renderings"] for r in rs))
+    langs = tuple(code for code in LANGUAGES if all(code in r["renderings"] for r in rs))
+    if vid in verse_of_the_day_ids():
+        return langs
+    return tuple(code for code in langs if code == "en")
 
 
 def verse_levels(vid, lang):
@@ -3296,12 +3316,13 @@ def word_shard(lemma):
     return h % WORD_SHARDS
 
 
+@functools.cache
 def word_entries():
     """{lemma: entry} for every dictionary form in the translated sentences:
     {"s": Strong's, "lang": "grc"/"hbo"/"arc", "tr": transliteration (Greek),
      "g": [[gloss, count], ...], "n": occurrences, "b": [[book, verses], ...],
      "v": [verse id, ...] (the first WORD_VERSES), "d": [decision, ...],
-     "t": key-term slug}. A decision is {"v": verse id, "layer", "c":
+     "t": key-term slug}. Callers must not change the result: it is cached. A decision is {"v": verse id, "layer", "c":
      category, "ch": choice, "lang": its language or null, "u": uncertain}."""
     entries, seen = {}, set()
     terms = {term_key(term): term_slug(term) for term in validate.KEY_TERMS.values()}
@@ -3358,7 +3379,9 @@ def word_files():
     """{path: text} for the WORD_SHARDS shards of word_entries()."""
     shards = {}
     for lemma, entry in word_entries().items():
-        shards.setdefault(word_shard(lemma), {})[lemma] = entry
+        # "p": the word's own page, which the English ?w= page leads to.
+        own = {"p": word_path(lemma)} if word_has_page(entry) else {}
+        shards.setdefault(word_shard(lemma), {})[lemma] = {**entry, **own}
     return {f"{WORDS_DIR}/{n}.json": json.dumps(shards.get(n, {}), ensure_ascii=False, separators=(",", ":"))
             for n in range(WORD_SHARDS)}
 
@@ -3367,7 +3390,68 @@ def word_url(lang, lemma=None):
     return url(lang, "/word/") + (f"?w={urllib.parse.quote(lemma)}" if lemma else "")
 
 
-def word_page(lang="en"):
+# Static word pages, in English: one page per dictionary word at
+# /word/<slug>/ (word_slugs), with what web/word.js shows for /word/?w=, so
+# search engines can find a word by its form, its transliteration or its
+# Strong's number ("agape meaning", "G26"). The page carries the same data
+# as the ?w= page with its lemma, so web/word.js adds the word list to it;
+# the English ?w= page sends the reader on to it. Index pages list every
+# word of a language, most frequent first, WORD_INDEX_PAGE to a page. The
+# glosses and decisions are in English, so the pages are too. A word found
+# fewer than WORD_PAGE_MIN times has no page of its own (the site is over
+# 3 GB already): the lists link it to its ?w= page.
+WORD_LANGUAGES = ("grc", "hbo", "arc")
+WORD_INDEX_PAGE = 500
+WORD_PAGE_MIN = 5
+
+
+def word_has_page(entry):
+    return entry["n"] >= WORD_PAGE_MIN
+
+
+def entry_strong(entry):
+    """A word's Strong's number as people write it: "G26", "H871a"."""
+    return ("G" if entry["lang"] == "grc" else "H") + entry["s"].lstrip("0")
+
+
+def word_translit(lemma, entry):
+    """A word's transliteration: Greek's from the entry, Hebrew's and
+    Aramaic's from owb.translit."""
+    return entry.get("tr") or translit.hebrew(lemma)
+
+
+@functools.cache
+def word_slugs():
+    """{lemma: slug} for every word: its Strong's number and its
+    transliteration ("g26-agape", "h430-elohim"), with -2, -3 for a word
+    that would share another's (lemmas in their sort order)."""
+    out, taken = {}, set()
+    entries = word_entries()
+    for lemma in sorted(entries):
+        e = entries[lemma]
+        slug = f"{entry_strong(e).lower()}-{slugify(word_translit(lemma, e))}"
+        n, base = 2, slug
+        while slug in taken:
+            slug, n = f"{base}-{n}", n + 1
+        taken.add(slug)
+        out[lemma] = slug
+    return out
+
+
+def word_path(lemma):
+    return f"/word/{word_slugs()[lemma]}/"
+
+
+def word_index_path(language, page_no=1):
+    return f"/word/{WORD_INDEX_NAMES[language]}/" + (f"{page_no}/" if page_no > 1 else "")
+
+
+WORD_INDEX_NAMES = {"grc": "greek", "hbo": "hebrew", "arc": "aramaic"}
+
+
+def word_data(lang, lemma=None):
+    """What web/word.js reads from a word page: its labels and addresses,
+    and on a static page the page's lemma."""
     ui = catalog(lang)["word.ui"]
     reader = catalog(lang)["reader.ui"]
     data = {"lang": lang, "ui": ui, "category": reader["category"], "notesLanguage": reader.get("notes_language", ""),
@@ -3375,12 +3459,148 @@ def word_page(lang="en"):
             "termUrl": url(lang, "/terms/"), "searchUrl": url(lang, "/search/"), "savedUrl": url(lang, "/saved/"),
             "books": {code: chapter_book(code, lang) for code in refs.BOOK_CODES},
             "bookNames": {code: BOOK_NAMES[code][lang] for code in refs.BOOK_CODES if code in BOOK_NAMES}}
-    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    if lemma:
+        data["lemma"] = lemma
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def word_static_html(lemma, e, lang="en"):
+    """A word's sections as web/word.js draws them (show), for the page as
+    served: glosses, where it occurs, its key term, and the decisions that
+    name it."""
+    esc = html.escape
+    ui = catalog(lang)["word.ui"]
+    category = catalog(lang)["reader.ui"]["category"]
+
+    def verse(vid):
+        b, c, v = vid.split(".")
+        return (f'<a href="{url(lang, chapter_url(b, int(c)))}#v{v}">'
+                f'{esc(chapter_book(b, lang))} {c}:{v}</a>')
+    out = []
+    if e["g"]:
+        tags = "".join(f'<li class="tag">{esc(g)}<span class="word-count"> {n}</span></li>' for g, n in e["g"])
+        out.append(f'<section class="word-section"><h2 class="label">{ui["glosses"]}</h2>'
+                   f'<ul class="tags">{tags}</ul><p class="word-note">{ui["glosses_note"]}</p></section>')
+    verses = sum(n for _, n in e["b"])
+    total = ui["count_one"] if e["n"] == 1 else ui["count"].replace("{n}", str(e["n"])).replace("{v}", str(verses))
+    books_ = " · ".join(f"<span>{esc(BOOK_NAMES.get(b, {}).get(lang, b))} {n}</span>" for b, n in e["b"])
+    uses = "".join(verse(vid).replace("<a ", '<a class="use" ', 1) for vid in e["v"])
+    more = (f'<p class="word-note">{ui["more"].replace("{n}", str(verses - len(e["v"])))}</p>'
+            if verses > len(e["v"]) else "")
+    out.append(f'<section class="word-section"><h2 class="label">{ui["where"]}</h2>'
+               f'<p class="word-total">{total}</p><p class="word-books">{books_}</p>'
+               f'<p class="uses-list">{uses}</p>{more}</section>')
+    if e.get("t"):
+        out.append(f'<p class="word-term"><a class="button ghost" href="{url(lang, "/terms/")}{e["t"]}/">'
+                   f'{ui["term"]} \u2192</a></p>')
+    decisions = [d for d in e["d"] if d["layer"] == "meaning" or d["lang"] == lang]
+    cards = []
+    for d in decisions:
+        kind = ui["meaning"] if d["layer"] == "meaning" else ui["wording"]
+        if category.get(d["c"]):
+            kind += f" · {category[d['c']]}"
+        unsure = f'<span class="badge unc">{ui["uncertain"]}</span>' if d["u"] else ""
+        cards.append(f'<article class="cmp-card"><p class="cmp-cat">{verse(d["v"])}<span>· {kind}</span>{unsure}</p>'
+                     f'<p class="cmp-choice">{esc(d["ch"])}</p></article>')
+    out.append(f'<section class="word-section"><h2 class="label">{ui["decisions"]}</h2>'
+               + ("".join(cards) or f'<p class="word-note">{ui["none"]}</p>') + "</section>")
+    return "".join(out)
+
+
+def word_static_page(lemma, e, lang="en"):
+    """A word's own page (see word_slugs)."""
+    esc = html.escape
+    ui = catalog(lang)["word.ui"]
+    script = "grc" if e["lang"] == "grc" else "he"
+    tr = word_translit(lemma, e)
+    strong = entry_strong(e)
+    language = ui["lang_" + e["lang"]]
+    dek = " · ".join(x for x in (tr, language, f'{ui["strong"]} {strong}') if x)
+    glosses = ", ".join(g for g, _ in e["g"][:3])
+    title = t(lang, "word.page_title", tr=tr, lemma=lemma, language=language, strong=strong)
+    description = t(lang, "word.page_description", tr=tr, lemma=lemma, language=language, strong=strong,
+                    glosses=glosses or "\u2013", n=e["n"])
+    path = word_path(lemma)
+    ld = ld_script({"@context": "https://schema.org", "@type": "DefinedTerm", "name": lemma,
+                    "alternateName": [tr, strong], "termCode": strong, "inLanguage": e["lang"],
+                    "description": glosses, "url": SITE_URL + url(lang, path),
+                    "inDefinedTermSet": {"@type": "DefinedTermSet", "name": t(lang, "word.index_title", language=language),
+                                         "url": SITE_URL + url(lang, word_index_path(e["lang"]))}})
+    crumbs = breadcrumb_ld(lang, [(SITE_NAME, "/"), (t(lang, "word.title"), "/word/"),
+                                  (t(lang, "word.index_title", language=language), word_index_path(e["lang"])),
+                                  (f"{lemma} ({tr})", path)])
+    body = f"""
+<header class="page-head word-head">
+<p class="eyebrow"><a href="{url(lang, word_index_path(e["lang"]))}">{t(lang, "word.index_title", language=language)}</a></p>
+<h1 id="word-title" lang="{script}"{' dir="rtl"' if script == "he" else ""}>{esc(lemma)}</h1>
+<p class="dek" id="word-dek">{esc(dek)}</p>
+</header>
+<p class="sr-only" id="word-status" aria-live="polite"></p>
+<div class="word" id="word">{word_static_html(lemma, e, lang)}</div>
+<script type="application/json" id="word-data">{word_data(lang, lemma)}</script>
+<script src="{asset("word.js")}" defer></script>
+{ld}
+{crumbs}
+"""
+    return page(lang, title, body, path=path, current="/read/", description=shorten(description),
+                translated=("en",), og=[("og:type", "article")])
+
+
+def word_index_pages(lang="en"):
+    """{path: page}: each language's words, most frequent first, a page
+    of WORD_INDEX_PAGE at a time, each with its transliteration, Strong's
+    number and commonest gloss."""
+    esc = html.escape
+    ui = catalog(lang)["word.ui"]
+    entries = word_entries()
+    out = {}
+    for language in WORD_LANGUAGES:
+        words = sorted((lm for lm, e in entries.items() if e["lang"] == language),
+                       key=lambda lm: (-entries[lm]["n"], word_slugs()[lm]))
+        name = ui["lang_" + language]
+        pages = [words[i:i + WORD_INDEX_PAGE] for i in range(0, len(words), WORD_INDEX_PAGE)] or [[]]
+        script = "grc" if language == "grc" else "he"
+        for n, chunk in enumerate(pages, 1):
+            rows = "".join(
+                f'<li><a href="{url(lang, word_path(lm)) if word_has_page(entries[lm]) else word_url(lang, lm)}"><span lang="{script}">{esc(lm)}</span> '
+                f'<span class="ent-hint">{esc(word_translit(lm, entries[lm]))} · {entry_strong(entries[lm])}'
+                + (f" · {esc(entries[lm]['g'][0][0])}" if entries[lm]["g"] else "")
+                + f' · {entries[lm]["n"]}\u00d7</span></a></li>' for lm in chunk)
+            nav = " ".join(f'<a href="{url(lang, word_index_path(language, k))}"'
+                           + (' aria-current="page"' if k == n else "") + f">{k}</a>" for k in range(1, len(pages) + 1))
+            others = " · ".join(f'<a href="{url(lang, word_index_path(o))}">{t(lang, "word.index_title", language=ui["lang_" + o])}</a>'
+                                for o in WORD_LANGUAGES if o != language)
+            title = t(lang, "word.index_title", language=name)
+            body = f"""
+<header class="page-head">
+<p class="eyebrow"><a href="{url(lang, "/word/")}">{t(lang, "word.title")}</a></p>
+<h1>{title}</h1>
+<p class="dek">{t(lang, "word.index_dek", language=name, n=len(words))}</p>
+<p class="fine">{others}</p>
+</header>
+{f'<nav class="ent-letters" aria-label="{t(lang, "word.index_pages")}">{nav}</nav>' if len(pages) > 1 else ""}
+<ol class="ent-list word-index" start="{(n - 1) * WORD_INDEX_PAGE + 1}">{rows}</ol>
+"""
+            path = word_index_path(language, n)
+            out[path] = page(lang, title if n == 1 else f"{title} ({n})", body, path=path, current="/read/",
+                             description=shorten(t(lang, "word.index_dek", language=name, n=len(words))),
+                             translated=("en",))
+    return out
+
+
+def word_page(lang="en"):
+    blob = word_data(lang)
+    # The word lists (English only, as the word pages are) for readers and
+    # crawlers that come without a word.
+    ui = catalog(lang)["word.ui"]
+    browse = " · ".join(f'<a href="{url("en", word_index_path(o))}" hreflang="en">'
+                        f'{t(lang, "word.index_title", language=ui["lang_" + o])}</a>' for o in WORD_LANGUAGES)
     body = f"""
 <header class="page-head word-head">
 <p class="eyebrow">{t(lang, "word.title")}</p>
 <h1 id="word-title">{t(lang, "word.heading")}</h1>
 <p class="dek" id="word-dek">{t(lang, "word.dek")}</p>
+<p class="fine word-browse">{t(lang, "word.browse")} {browse}</p>
 </header>
 <noscript><p class="notice">{t(lang, "word.noscript")}</p></noscript>
 <p class="sr-only" id="word-status" aria-live="polite"></p>
@@ -4759,6 +4979,8 @@ At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are revi
 - A chapter is at {SITE_URL}/<book>/<chapter>/, with the book's three-letter code in lower case: {SITE_URL}/jhn/3/ is John 3, and {SITE_URL}/jhn/3/#v16 is its verse 16. Other languages have a prefix ({other}).
 - A chapter page has the Balanced text and its footnotes as HTML. The full reasoning record of each sentence (the original words, a literal gloss, three levels of translation and every decision with its alternatives and reason) is in the page's data and opens beside the verse in the reader.
 - Old Testament verses are numbered as in the Hebrew text, so a psalm's title is verse 1.
+- {len(verse_page_ids()):,} verses have a page of their own at {SITE_URL}/<book>/<chapter>/<verse>/ ({SITE_URL}/jhn/3/16/): the verse at all three levels, the original words, a literal gloss and every decision behind it, with its alternatives and reason, as HTML. They are the best-known verses and every verse with a footnoted question of meaning.
+- A Greek, Hebrew or Aramaic word found {WORD_PAGE_MIN} times or more has a page at {SITE_URL}/word/<Strong's number>-<transliteration>/ ({SITE_URL}/word/g26-agape/): its glosses, where it occurs and the decisions that name it. Every word is listed at {SITE_URL}/word/greek/, {SITE_URL}/word/hebrew/ and {SITE_URL}/word/aramaic/.
 
 ## Key pages
 
@@ -6648,6 +6870,16 @@ class SitemapEntry(NamedTuple):
     sources: tuple = ()
 
 
+def page_fingerprint(text):
+    """A short hash of what a page says: its <main>, without the versions
+    in asset addresses, so a new stylesheet or a longer menu is not a
+    change to every page. scripts/indexnow.py tells search engines about
+    the pages whose fingerprint changed in a deploy."""
+    start, end = text.find("<main"), text.rfind("</main>")
+    body = text[start:end] if start >= 0 and end > start else text
+    return hashlib.sha256(re.sub(r"\?v=[0-9a-f]+", "", body).encode("utf-8")).hexdigest()[:12]
+
+
 def sitemap_url(lang):
     return f"/sitemap-{lang}.xml"
 
@@ -6694,7 +6926,7 @@ def build(out):
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
-                   owb_notes.book_records, owb_notes.book_decisions, owb_notes.english_cards):
+                   owb_notes.book_records, owb_notes.book_decisions, owb_notes.english_cards, word_entries, word_slugs):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
@@ -6712,12 +6944,13 @@ def build(out):
     def page_file(page_url):
         return (page_url.strip("/") + "/index.html").lstrip("/")
 
-    indexed = []
+    indexed, fingerprints = [], {}
     for lang in LANGUAGES:
         def add(path, text, index=True, sources=()):
             write(page_file(url(lang, path)), text)
             if index:
                 indexed.append(SitemapEntry(lang, path, sources))
+                fingerprints[url(lang, path)] = page_fingerprint(text)
 
         add("/", home_page(lang))
         add("/read/", read_page(lang))
@@ -6729,6 +6962,12 @@ def build(out):
         add("/search/", search_page(lang), index=False)
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))
+        if lang == "en":
+            for path, text in word_index_pages(lang).items():
+                add(path, text)
+            for lemma, e in word_entries().items():
+                if word_has_page(e):
+                    add(word_path(lemma), word_static_page(lemma, e, lang))
         add("/journeys/", journeys_page(lang))
         for j in journeys():
             add(journey_path(j["id"]), journey_page(j, lang))
@@ -6785,12 +7024,16 @@ def build(out):
         langs = tuple(code for code in LANGUAGES if plan.id in offered[code])
         for code in langs:
             path = plan_url(plan)
-            write(page_file(url(code, path)), plan_page(plan, code, langs))
+            text = plan_page(plan, code, langs)
+            write(page_file(url(code, path)), text)
             indexed.append(SitemapEntry(code, path))
+            fingerprints[url(code, path)] = page_fingerprint(text)
     files = {}
     files["404.html"] = not_found_page()
     files.update(sitemaps(indexed))
     files["robots.txt"] = robots_txt()
+    files[f"{indexnow.KEY}.txt"] = indexnow.KEY
+    files[indexnow.MANIFEST] = json.dumps(fingerprints, separators=(",", ":"), sort_keys=True)
     files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
     files["sprite.svg"] = sprite()[0]

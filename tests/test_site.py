@@ -562,6 +562,70 @@ class SiteTest(unittest.TestCase):
         self.assertIn("v16", ids)
         self.assertEqual(len(ids), len(set(ids)))
 
+    def test_words_have_pages_of_their_own_in_english(self):
+        entries = build_site.word_entries()
+        lemma = next(lm for lm, e in entries.items() if e["lang"] == "grc" and e["s"].lstrip("0") == "26")
+        path = build_site.word_path(lemma)
+        self.assertEqual(path, "/word/g26-agape/")
+        page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'<h1 id="word-title" lang="grc">{lemma}</h1>', page)
+        self.assertIn("G26", page)
+        self.assertIn('<a class="use" href="/', page)
+        self.assertIn(f'<link rel="canonical" href="{build_site.SITE_URL}{path}">', page)
+        self.assertIn('"@type":"DefinedTerm"', page)
+        # web/word.js adds the word list to it, and the ?w= page leads to it.
+        data = json.loads(re.search(r'id="word-data">(.*?)</script>', page)[1])
+        self.assertEqual(data["lemma"], lemma)
+        shard = json.loads((self.out / "words" / f"{build_site.word_shard(lemma)}.json").read_text(encoding="utf-8"))
+        self.assertEqual(shard[lemma]["p"], path)
+        self.assertFalse((self.out / "es" / path.strip("/") / "index.html").exists())
+        sitemap = sitemap_text(self.out)
+        self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
+        # A rare word has no page; its list links its ?w= page.
+        rare = next(lm for lm, e in entries.items() if not build_site.word_has_page(e))
+        self.assertNotIn("p", json.loads((self.out / "words" / f"{build_site.word_shard(rare)}.json")
+                                         .read_text(encoding="utf-8"))[rare])
+
+    def test_every_word_is_in_its_languages_list(self):
+        entries = build_site.word_entries()
+        for language, name in build_site.WORD_INDEX_NAMES.items():
+            listed, n = "", 1
+            while (index := self.out / "word" / name / ("" if n == 1 else str(n)) / "index.html").exists():
+                listed += index.read_text(encoding="utf-8")
+                n += 1
+            words = [lm for lm, e in entries.items() if e["lang"] == language]
+            self.assertTrue(words)
+            for lm in words:
+                self.assertIn(f">{html.escape(lm)}</span>", listed, lm)
+        word = (self.out / "word" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/word/greek/"', word)
+
+    def test_verses_with_a_footnoted_question_have_a_page_in_english(self):
+        votd = build_site.verse_of_the_day_ids()
+        vid = next(v for v in build_site.verse_page_ids() if v not in votd)
+        path = build_site.verse_page_url(vid).strip("/")
+        self.assertTrue((self.out / path / "index.html").is_file(), vid)
+        self.assertFalse((self.out / "fr" / path / "index.html").exists(), vid)
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="verse-decisions"', page)
+
+    def test_indexnow_key_and_page_fingerprints(self):
+        from indexnow import KEY, MANIFEST
+        self.assertEqual((self.out / f"{KEY}.txt").read_text(encoding="utf-8"), KEY)
+        marks = json.loads((self.out / MANIFEST).read_text(encoding="utf-8"))
+        self.assertIn("/jhn/3/", marks)
+        self.assertIn("/word/g26-agape/", marks)
+        self.assertNotIn("/search/", marks)
+        # Every page the sitemaps list, and nothing else.
+        listed = set(re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out)))
+        self.assertEqual(set(marks), listed)
+
+    def test_a_page_fingerprint_ignores_asset_versions(self):
+        a = "<head>x</head><main><p>Text</p><script src=\"/r.js?v=0123456789\"></script></main>"
+        b = a.replace("0123456789", "abcdef0123").replace("<head>x", "<head>y")
+        self.assertEqual(build_site.page_fingerprint(a), build_site.page_fingerprint(b))
+        self.assertNotEqual(build_site.page_fingerprint(a), build_site.page_fingerprint(a.replace("Text", "Other")))
+
     def test_404_page_knows_the_books_for_verse_addresses(self):
         lost = (self.out / "404.html").read_text(encoding="utf-8")
         data = json.loads(re.search(r'<script type="application/json" id="owb-lost">(.*?)</script>', lost)[1])
