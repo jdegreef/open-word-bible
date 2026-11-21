@@ -8,8 +8,6 @@ source: 2d027fefa8ba
 ---
 Peu d'expressions de la Bible sont aussi fréquentes, ou aussi facilement mal comprises, que "la crainte du SEIGNEUR". C'est la devise du livre des Proverbes. Elle est dite d'Abraham au moment de sa plus grande épreuve, promise au roi à venir dans Ésaïe, et encore employée pour l'Église dans les Actes. Pourtant, la première lettre de Jean dit que "l'amour parfait jette dehors la crainte". Un lecteur d'aujourd'hui peut légitimement se demander si Dieu veut être craint ou non, et de quelle crainte il s'agit.
 
-Les Proverbes, le Deutéronome et Ésaïe ne sont pas encore traduits en français dans Open Word Bible ; les citations de ces livres sont donc tirées de la version anglaise.
-
 ## Un mot, beaucoup de nuances
 
 Le nom hébreu est {{LEMMA:PRO.1.7:1}}, *yirʾah*, du verbe *yareʾ*, "craindre". Comme le mot français, il couvre tout un éventail. Il peut désigner la simple frayeur, celle d'une personne face au danger. Il peut désigner l'émerveillement respectueux devant ce qui est grand. Et dans l'expression "la crainte du SEIGNEUR", il en vient à signifier quelque chose de proche de ce que nous appellerions la religion : une vie ordonnée autour de Dieu, qui le prend au sérieux en tant que Dieu.
@@ -72,11 +70,11 @@ C'est ici qu'intervient la traduction. En anglais moderne, "fear" employé seul 
 
 La **Littérale** et l'**Équilibrée** gardent partout "la crainte du SEIGNEUR" (en anglais "the fear of the LORD"). C'est l'expression que les lecteurs connaissent et celle que la Bible répète, et la garder laisse voir les échos entre les Proverbes, Ésaïe, les Actes et 2 Corinthiens.
 
-La **Simple** dit ce qu'est cette crainte. En Proverbes 1:7, l'édition anglaise dit :
+La **Simple** dit ce qu'est cette crainte. En Proverbes 1:7, elle dit :
 
 > {{OWB:PRO.1.7.s1:R}}
 
-La décision de formulation en donne la raison : "En anglais moderne, “fear” employé seul fait penser à avoir peur. La Simple dit ce qu'est la crainte du SEIGNEUR." D'autres versets de la Simple emploient d'autres expressions pour le même sens. En français : "tu honores Dieu plus que tout" pour Abraham, "que vous le craigniez et que vous le respectiez" en Exode 20:20, "vivaient avec un profond respect pour le Seigneur" en Actes 9:31, "avec un profond respect pour Dieu" en Philippiens 2:12 ; en anglais, "deep respect for the LORD" ("un profond respect pour le SEIGNEUR") en Ésaïe 11. Là où la Bible elle-même oppose la terreur à la révérence, comme en Exode 20:20, la Simple dit "N'ayez pas peur" pour la première, et "craindre et respecter" pour la seconde.
+La décision de formulation en donne la raison : l'expression désigne une révérence pleine de respect, et non la peur du châtiment ; la Littérale et l'Équilibrée gardent l'expression traditionnelle, et la Simple dit ce qu'elle veut dire, comme le fait la Simple anglaise. D'autres versets de la Simple emploient d'autres expressions pour le même sens : "tu honores Dieu plus que tout" pour Abraham, "que vous le craigniez et que vous le respectiez" en Exode 20:20, "vivaient avec un profond respect pour le Seigneur" en Actes 9:31, "avec un profond respect pour Dieu" en Philippiens 2:12, "avoir un profond respect pour le SEIGNEUR" en Ésaïe 11:2. Là où la Bible elle-même oppose la terreur à la révérence, comme en Exode 20:20, la Simple dit "N'ayez pas peur" pour la première, et "craindre et respecter" pour la seconde.
 
 C'est un choix de formulation, non de sens. Les lecteurs qui veulent l'expression traditionnelle la trouvent à l'Équilibrée. Ceux qui entendraient "crainte" comme de la frayeur trouvent le sens expliqué à la Simple. Les trois niveaux désignent la même chose : la révérence de ceux qui savent qui est Dieu, qui conduit à l'obéissance et à la confiance, et que l'amour n'abolit pas, mais accomplit. (Voir [Trois niveaux, un seul sens](/articles/three-levels-one-meaning/) pour le fonctionnement des niveaux.)
 

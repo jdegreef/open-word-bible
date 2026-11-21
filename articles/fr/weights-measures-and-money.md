@@ -47,7 +47,7 @@ La **coudée** était la longueur d'un avant-bras, du coude au bout du majeur, e
 
 Pour les matières sèches comme le grain, la mesure ordinaire de l'Ancien Testament était l'**épha**, peut-être un demi-boisseau. L'**omer** valait un dixième d'épha, et le **homer**, peut-être "la charge d'un âne", en valait dix. Les liquides se mesuraient au **bath**, qu'Ézéchiel 45:11 fait égal à l'épha, et au **hin**, plus petit. Les jarres de Cana contenaient chacune deux ou trois d'une mesure grecque pour les liquides, le {{GREEK:JHN.2.6:15}} (*metrētēs*), d'environ 39 litres chacun.
 
-Les estimations des spécialistes pour ces volumes divergent davantage que pour les longueurs. Nos propres dossiers le disent franchement. La note d'Ézéchiel 45:11 dit que les estimations modernes "diffèrent beaucoup", que nos livres publiés donnent pour un épha environ 20 quarts américains, et que dans Ézéchiel, où le texte rend l'épha et le bath égaux, tous deux sont donnés à environ 6 gallons. (Ézéchiel n'est encore traduit qu'en anglais.) Une note de bas de page en avertit le lecteur.
+Les estimations des spécialistes pour ces volumes divergent davantage que pour les longueurs. Nos propres dossiers le disent franchement. La note d'Ézéchiel 45:11 dit que les estimations modernes "diffèrent beaucoup", que nos livres publiés donnent pour un épha environ 20 quarts américains, et que dans Ézéchiel, où le texte rend l'épha et le bath égaux, tous deux sont donnés à environ 6 gallons.. Une note de bas de page en avertit le lecteur.
 
 ## Quatre façons de traiter une unité
 
@@ -61,7 +61,7 @@ Les traductions ont suivi quatre grandes approches, et la plupart les mélangent
 
 **Expliquer la valeur.** Au lieu d'une monnaie, dire ce que la somme permettait d'acheter ou combien de temps il fallait pour la gagner : "une journée de salaire", "quatre mois de salaire". Cela ne se démode pas, parce que le salaire est une mesure humaine. C'est l'approche que suivent pour l'argent la plupart des traductions modernes fondées sur le sens. Son prix est qu'elle est moins exacte, et qu'elle est une interprétation de la valeur, non la traduction d'un mot.
 
-Aucune approche n'est juste partout. En Ézéchiel 45:10, où les mesures elles-mêmes sont le sujet, nos niveaux Littérale et Équilibrée gardent en anglais "an honest ephah and an honest bath" ("un épha honnête et un bath honnête"), sans chiffres modernes. Dans une parabole, où il s'agit de savoir combien, beaucoup ou peu, le lecteur a besoin de la valeur.
+Aucune approche n'est juste partout. En Ézéchiel 45:10, où les mesures elles-mêmes sont le sujet, nos niveaux Littérale et Équilibrée gardent "un épha juste et un bath juste" et "un épha exact et un bath exact", sans chiffres modernes. Dans une parabole, où il s'agit de savoir combien, beaucoup ou peu, le lecteur a besoin de la valeur.
 
 ## Ce que fait Open Word Bible
 

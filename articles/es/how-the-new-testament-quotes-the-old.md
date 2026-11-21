@@ -30,7 +30,7 @@ Las cifras varían según cómo se defina una cita, pero el Nuevo Testamento cit
 
 Mateo relata la concepción de Jesús y luego cita a Isaías: «la virgen quedará embarazada y tendrá un hijo, y lo llamarán Emanuel». La palabra de Mateo para «virgen» es {{GREEK:MAT.1.23:3}} (*parthenos*), la palabra que usa la Septuaginta en Isaías 7:14.
 
-El hebreo de Isaías tiene {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). La decisión de significado de Open Word Bible para Isaías 7:14 la describe con cuidado: una palabra para «una joven que ha llegado a la edad adulta», usada para Rebeca antes de casarse, para la hermana de Moisés de muchacha y para las jóvenes de la corte real. «No dice por sí misma si es virgen o casada, aunque nunca se usa claramente para una mujer casada». La decisión está marcada como incierta, y una nota al pie da «la virgen» como la otra traducción. Así dice nuestro Isaías, que por ahora solo está en inglés:
+El hebreo de Isaías tiene {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). La decisión de significado de Open Word Bible para Isaías 7:14 la describe con cuidado: una palabra para «una joven que ha llegado a la edad adulta», usada para Rebeca antes de casarse, para la hermana de Moisés de muchacha y para las jóvenes de la corte real. «No dice por sí misma si es virgen o casada, aunque nunca se usa claramente para una mujer casada». La decisión está marcada como incierta, y una nota al pie da «la virgen» como la otra traducción. Así dice nuestro Isaías:
 
 > {{OWB:ISA.7.14.s1:B}}
 
@@ -48,7 +48,7 @@ Hebreos pone las palabras del Salmo 40 en boca de Cristo cuando entra en el mund
 
 > {{OWB:HEB.10.5.s1:B}}
 
-La palabra clave es {{GREEK:HEB.10.5:12}} (*sōma*), «cuerpo». Pero el hebreo del salmo (40:7 en la numeración hebrea, 40:6 en muchas Biblias) tiene {{HEBREW:PSA.40.7:5-6}}, «oídos me has cavado». Nuestra Literal del salmo, por ahora solo en inglés, conserva la imagen:
+La palabra clave es {{GREEK:HEB.10.5:12}} (*sōma*), «cuerpo». Pero el hebreo del salmo (40:7 en la numeración hebrea, 40:6 en muchas Biblias) tiene {{HEBREW:PSA.40.7:5-6}}, «oídos me has cavado». Nuestra Literal del salmo conserva la imagen:
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -66,7 +66,7 @@ En el concilio de Jerusalén, la iglesia tenía que decidir si los creyentes gen
 
 > {{OWB:ACT.15.16.s1:B}}
 
-En el hebreo de Amós 9:12, el propósito de reconstruir la choza caída de David es otro. Amós aún no está traducido al español; nuestra Equilibrada inglesa dice:
+En el hebreo de Amós 9:12, el propósito de reconstruir la choza caída de David es otro. Nuestra Equilibrada dice:
 
 > {{OWB:AMO.9.12.s1:B}}
 
@@ -110,7 +110,7 @@ El Nuevo Testamento no siempre sigue la Septuaginta. Dos citas muestran la varie
 
 **«Dio dones a los hombres»** (Efesios 4:8; Salmo 68:19). Pablo cita el Salmo 68, un himno de victoria en el que Dios sube a su monte santo llevando cautivos. Pero donde tanto el salmo hebreo como el griego dicen que Dios «recibió dones» de los hombres, Pablo dice que «dio dones». Nuestros registros de ambos lados ponen una nota al pie sobre la diferencia. Señalan que una antigua paráfrasis aramea de los Salmos, y la traducción siríaca, también dicen «dio», así que Pablo puede estar siguiendo una interpretación conocida del versículo. El registro del Salmo 68:19 sugiere cómo encajan las dos: «el vencedor que recibe tributo es el que lo reparte entre su pueblo». El registro de Efesios marca el punto como incierto y expone con claridad el propósito de Pablo: Cristo resucitado da dones a su iglesia, que los versículos 11-16 enumeran a continuación.
 
-Un ejemplo menor es **Romanos 10:18**, donde Pablo cita el Salmo 19:5 (19:4 en muchas Biblias): «su voz salió a toda la tierra». La Septuaginta, que Pablo cita palabra por palabra, dice «su voz» o «su sonido». El hebreo tiene una palabra que significa un cordel de medir. Nuestra Literal del salmo, en inglés, conserva «their line» («su cordel»), y una nota al pie, marcada como incierta, explica el griego.
+Un ejemplo menor es **Romanos 10:18**, donde Pablo cita el Salmo 19:5 (19:4 en muchas Biblias): «su voz salió a toda la tierra». La Septuaginta, que Pablo cita palabra por palabra, dice «su voz» o «su sonido». El hebreo tiene una palabra que significa un cordel de medir. Nuestra Literal del salmo conserva «su cordel», y una nota al pie, marcada como incierta, explica el griego.
 
 ## Lo que hacían los apóstoles
 

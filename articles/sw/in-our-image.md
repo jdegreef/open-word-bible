@@ -6,7 +6,7 @@ order: 17
 section: passage
 source: 25d014a930ab
 ---
-Mwanzo 1 inapanda hadi kilele. Baada ya nuru, bahari, nchi kavu, mimea na wanyama, Mungu anawaumba wanadamu. Mwanzo bado haujatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya Open Word Bible katika makala hii yanatoka katika tafsiri yake ya Kiingereza:
+Mwanzo 1 inapanda hadi kilele. Baada ya nuru, bahari, nchi kavu, mimea na wanyama, Mungu anawaumba wanadamu:
 
 > {{OWB:GEN.1.26.s1:B}}
 
@@ -35,7 +35,7 @@ Mfano ni sanamu au nakala. Wafalme katika ulimwengu wa zamani walisimamisha sana
 
 Wasomaji hawajayachukua maneno hayo mawili pamoja kila mara. Irenaeus, katika karne ya pili, aliona tofauti: mfano ni sehemu ya asili ya binadamu, wakati sura ni karama ya Roho inayoweza kupotea na kurudishwa. Calvin, katika karne ya kumi na sita, aliona kwamba kutafuta tofauti ni kosa, na akasema "sura" imeongezwa ili kueleza "mfano". Rekodi inaunga mkono kuyasoma pamoja, na inatoa sababu kutoka Mwanzo wenyewe: Adamu anapopata mwana, maneno hayo mawili yanarudi kwa mpangilio wa kinyume, "kwa sura yake, kwa mfano wake" (5:3). Yanaeleza jambo moja, mwana anayemfanana baba yake.
 
-Linganifu na Rahisi zinasema "to be like us" (ili wafanane nasi) badala ya "kwa sura yetu", ili maana iwe wazi.
+Linganifu na Rahisi zinasema "wafanane nasi" badala ya "kulingana na mfano wetu", ili maana iwe wazi.
 
 Uamuzi mmoja mdogo uko mwishoni mwa mstari. Katika orodha ya wanyama, "nchi yote" inajitokeza kama kitu kisichofaa, na tafsiri ya Kisiria inasoma "wanyama wote wa mwituni wa nchi", jambo linalolingana na mistari ya 24–25. Maandishi ya Kiebrania na Septuaginta yote yana "nchi yote", kwa hiyo Open Word Bible inayafuata, inauwekea uamuzi alama ya kutokuwa na uhakika, na inatoa usomaji wa Kisiria katika maelezo ya chini.
 
@@ -51,7 +51,7 @@ Kisha mstari wa 27 unatoa mistari mitatu ya shairi inayojibu mstari wa 26:
 
 Kila mstari wa shairi una kitenzi kinachotumika kwa Mungu tu, "aliumba", na rekodi inaona marudio hayo kama alama ya kilele cha masimulizi. Mstari wa pili unasema Mungu alimuumba "yeye", kwa umoja, kwa kuwa wanadamu ni kitu kimoja kizima; wa tatu unasema "wao", mwanamume na mwanamke. Jinsia zote mbili zinabeba mfano wa Mungu, na baraka na kazi ya mstari wa 28 zimetolewa kwa wote wawili.
 
-Baraka hiyo ni tofauti na ile iliyotangulia. Samaki na ndege walibarikiwa kwa nafsi ya tatu (mstari wa 22). Wanadamu wanasemezwa moja kwa moja: "Mungu akawaambia". Wanapaswa kuijaza nchi na "kuitiisha". Rekodi hailainishi kitenzi hicho. Ni neno lenye nguvu, linalotumika kwa kuileta nchi chini ya udhibiti (Hesabu 32:22). Lakini rekodi inakisoma pia katika mazingira yake: ulimwengu ambao Mungu ameuita mwema hivi punde, na hadithi inayoendelea kumweka mwanamume bustanini ili aifanyie kazi na kuitunza (2:15). Rahisi inasema "take charge of it" (isimamieni).
+Baraka hiyo ni tofauti na ile iliyotangulia. Samaki na ndege walibarikiwa kwa nafsi ya tatu (mstari wa 22). Wanadamu wanasemezwa moja kwa moja: "Mungu akawaambia". Wanapaswa kuijaza nchi na "kuitiisha". Rekodi hailainishi kitenzi hicho. Ni neno lenye nguvu, linalotumika kwa kuileta nchi chini ya udhibiti (Hesabu 32:22). Lakini rekodi inakisoma pia katika mazingira yake: ulimwengu ambao Mungu ameuita mwema hivi punde, na hadithi inayoendelea kumweka mwanamume bustanini ili aifanyie kazi na kuitunza (2:15). Rahisi inasema "kuisimamia".
 
 ## "Msaidizi anayemfaa"
 
@@ -61,7 +61,7 @@ Mwanzo 2 inasimulia hadithi tena, kwa karibu zaidi. Hapa, kwa mara ya kwanza, ku
 
 Neno la kwanza, {{LEMMA:GEN.2.18:11}}, mara nyingi hutafsiriwa "msaidizi", na kwa Kiingereza neno hilo linaweza kusikika kama msaidizi wa cheo cha chini. Rekodi inasema kwamba Kiebrania hakidokezi cheo cha chini. Mara nyingi zaidi linatumika kwa Mungu mwenyewe kama msaidizi wa watu wake (Kutoka 18:4; Zaburi 121:1–2). Linamtaja mtu anayetoa msaada unaohitajika.
 
-Neno la pili linaunganisha "kama" na "mkabala wa". Msaidizi huyo atakuwa sawa naye na wa kumfaa, mtu anayesimama uso kwa uso naye, jambo ambalo hakuna mnyama anayeweza. Linganifu inasema "who matches him" (anayemfaa) ili kubaki na pande zote mbili. Rahisi inaenda mbali zaidi na kusema "a partner who is just right for him" (mwenzi anayemfaa kabisa). Uamuzi huo wa maneno umewekewa alama ya kutokuwa na uhakika, na Halisi na Linganifu zinabaki na "helper" (msaidizi).
+Neno la pili linaunganisha "kama" na "mkabala wa". Msaidizi huyo atakuwa sawa naye na wa kumfaa, mtu anayesimama uso kwa uso naye, jambo ambalo hakuna mnyama anayeweza. Linganifu inasema "msaidizi anayemfaa kikamilifu" ili kubaki na pande zote mbili. Rahisi inaenda mbali zaidi na kusema "mwenzi anayemfaa kabisa". Uamuzi huo wa maneno umewekewa alama ya kutokuwa na uhakika, na Halisi na Linganifu zinabaki na "msaidizi".
 
 Hadithi inaonyesha maneno hayo yanamaanisha nini. Mwanamume anawapa wanyama majina, lakini hakuna anayemfaa anayepatikana kati yao (2:20). Mungu anapomleta mwanamke, mwanamume anasema kwa mara ya kwanza katika Biblia, kwa shairi fupi:
 

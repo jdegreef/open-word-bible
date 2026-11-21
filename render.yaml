@@ -17,7 +17,23 @@ services:
     runtime: static
     buildCommand: python3 scripts/build_site.py
     staticPublishPath: site
-    pullRequestPreviewsEnabled: true
+    # Pipeline minutes are most of the Render bill, and a full site build
+    # takes about 29 minutes. Previews used to build for every pull request
+    # (566 in November 2026, most of them content PRs nobody opened a
+    # preview of). Now a pull request gets one only when its title contains
+    # [render preview].
+    previews:
+      generation: manual
+    # Changes that cannot alter the site don't rebuild it (each build is
+    # about 29 minutes). scripts/build_site.py reads content/, data/,
+    # articles/, i18n/, web/, owb/ and scripts/, never these.
+    buildFilter:
+      ignoredPaths:
+        - backend/**
+        - docs/**
+        - tests/**
+        - .github/**
+        - .claude/**
     # Deploy main only once its CI checks (.github/workflows/ci.yml) pass, so
     # a red main never goes live. Render skips the deploy if a check fails or
     # none are reported; the next green commit deploys.
@@ -310,6 +326,15 @@ services:
     plan: standard
     # As for the site: deploy main only once its CI checks pass.
     autoDeployTrigger: checksPass
+    # A deploy runs the pre-deploy below (up to 25 minutes, billed as
+    # pipeline minutes), so changes the API never reads don't deploy it.
+    # web/ is the reader site's own code; backend/ names it only in comments.
+    buildFilter:
+      ignoredPaths:
+        - web/**
+        - tests/**
+        - .github/**
+        - .claude/**
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
     # Migrate, make the cache table (settings.py CACHES), load any missing
     # source texts, then import what changed in content/ so the API matches
@@ -414,6 +439,17 @@ services:
     runtime: python
     plan: starter
     schedule: "5 * * * *"
+    # Rebuild only for what the job reads: Django, owb/ (languages), the
+    # message catalogs and the plan and book lists (accounts/reminders.py).
+    # Without this every merge to main rebuilt it.
+    buildFilter:
+      paths:
+        - backend/**
+        - owb/**
+        - i18n/**
+        - data/plans.json
+        - data/books.json
+        - data/languages.json
     buildCommand: pip install -r backend/requirements.txt
     startCommand: python backend/manage.py send_plan_reminders
     envVars:

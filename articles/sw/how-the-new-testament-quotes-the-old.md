@@ -12,8 +12,6 @@ Haya si makosa ya uchapishaji. Yanatokea kwa sababu Agano Jipya liliandikwa kwa 
 
 Makala hii inaangalia mifano sita inayojulikana sana, kile inachoonyesha kuhusu jinsi mitume walivyosoma Maandiko, na jinsi tafsiri inavyoweza kuwawezesha wasomaji kuona maandishi yote mawili.
 
-Kumbuka: Agano la Kale la Open Word Bible bado halijatafsiriwa kwa Kiswahili katika vitabu vingi vinavyotajwa hapa (Isaya, Zaburi, Amosi, Hosea). Pale ambapo makala hii inanukuu rekodi zetu za vitabu hivyo, msomaji ataona maneno ya toleo la Kiingereza.
-
 ## Kwa nini maneno yanatofautiana
 
 Kuna sababu kuu tatu.
@@ -32,7 +30,7 @@ Hesabu zinatofautiana kutegemea jinsi mtu anavyoifafanua nukuu, lakini Agano Jip
 
 Mathayo anasimulia kuchukuliwa mimba kwa Yesu kisha anamnukuu Isaya: "Bikira atapata mimba, naye atazaa mwana, nao watu watamwita Imanueli." Neno la Mathayo la "bikira" ni {{GREEK:MAT.1.23:3}} (*parthenos*), neno ambalo Septuaginta inalitumia katika Isaya 7:14.
 
-Kiebrania cha Isaya kina {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). Uamuzi wa maana wa Open Word Bible wa Isaya 7:14 unalieleza kwa uangalifu: ni neno la "mwanamke kijana aliyefikia umri wa kuolewa," linalotumika kwa Rebeka kabla ya kuolewa, kwa dada yake Musa alipokuwa msichana, na kwa wanawake vijana wa jumba la mfalme. "Lenyewe halisemi kama ni bikira au ameolewa, ingawa halitumiki kamwe waziwazi kwa mwanamke aliyeolewa." Uamuzi huo umewekewa alama ya kutokuwa na uhakika, na maelezo ya chini yanatoa "bikira" kama tafsiri nyingine. Kwa hiyo Isaya wetu (kwa sasa kwa Kiingereza) unasomeka hivi:
+Kiebrania cha Isaya kina {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). Uamuzi wa maana wa Open Word Bible wa Isaya 7:14 unalieleza kwa uangalifu: ni neno la "mwanamke kijana aliyefikia umri wa kuolewa," linalotumika kwa Rebeka kabla ya kuolewa, kwa dada yake Musa alipokuwa msichana, na kwa wanawake vijana wa jumba la mfalme. "Lenyewe halisemi kama ni bikira au ameolewa, ingawa halitumiki kamwe waziwazi kwa mwanamke aliyeolewa." Uamuzi huo umewekewa alama ya kutokuwa na uhakika, na maelezo ya chini yanatoa "bikira" kama tafsiri nyingine. Kwa hiyo Isaya wetu unasomeka hivi:
 
 > {{OWB:ISA.7.14.s1:B}}
 
@@ -50,7 +48,7 @@ Waebrania inaweka maneno ya Zaburi 40 kinywani mwa Kristo anapokuja ulimwenguni.
 
 > {{OWB:HEB.10.5.s1:B}}
 
-Neno muhimu ni {{GREEK:HEB.10.5:12}} (*sōma*), "mwili." Lakini Kiebrania cha zaburi hiyo (40:7 kwa hesabu ya Kiebrania, 40:6 katika Biblia nyingi za Kiingereza) kina {{HEBREW:PSA.40.7:5-6}}, "masikio umenichimbia." Kiwango chetu cha Halisi cha zaburi hiyo (kwa Kiingereza) kinabakiza picha hiyo:
+Neno muhimu ni {{GREEK:HEB.10.5:12}} (*sōma*), "mwili." Lakini Kiebrania cha zaburi hiyo (40:7 kwa hesabu ya Kiebrania, 40:6 katika Biblia nyingi za Kiingereza) kina {{HEBREW:PSA.40.7:5-6}}, "masikio umenichimbia." Kiwango chetu cha Halisi cha zaburi hiyo kinabakiza picha hiyo:
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -112,7 +110,7 @@ Agano Jipya halifuati Septuaginta kila mara. Nukuu mbili zinaonyesha upana wa ja
 
 **"Aliwapa wanadamu zawadi"** (Waefeso 4:8; Zaburi 68:19). Paulo ananukuu Zaburi 68, wimbo wa ushindi ambamo Mungu anapanda kwenda mlima wake mtakatifu, akiongoza mateka. Lakini pale ambapo zaburi ya Kiebrania na ya Kigiriki zote zinasema Mungu "alipokea zawadi" kutoka kwa wanadamu, Paulo anasema "aliwapa zawadi." Rekodi zetu za pande zote mbili zinaieleza tofauti hiyo katika maelezo ya chini. Zinaeleza kwamba tafsiri fafanuzi ya zamani ya Kiaramu ya Zaburi, na tafsiri ya Kisiria, pia zinasoma "aliwapa," kwa hiyo huenda Paulo anafuata ufafanuzi uliojulikana wa mstari huo. Rekodi ya Zaburi 68:19 inapendekeza jinsi mawili hayo yanavyopatana: "mshindi anayepokea kodi ndiye anayeigawa kwa watu wake." Rekodi ya Waefeso inaweka alama ya kutokuwa na uhakika kwenye jambo hili na inataja kusudi la Paulo waziwazi: Kristo aliyefufuka analipa kanisa lake zawadi, ambazo mistari ya 11–16 inaendelea kuziorodhesha.
 
-Mfano mdogo zaidi ni **Warumi 10:18**, ambapo Paulo ananukuu Zaburi 19:5 (19:4 katika Biblia za Kiingereza): "Sauti yao ilitoka kwenda dunia yote." Septuaginta, ambayo Paulo anainukuu neno kwa neno, ina "sauti yao" au "mlio wao." Kiebrania kina neno linalomaanisha kamba ya kupimia. Kiwango chetu cha Halisi cha zaburi hiyo (kwa Kiingereza) kinabakiza "their line" (kamba yao), na maelezo ya chini, yaliyowekewa alama ya kutokuwa na uhakika, yanaeleza Kigiriki.
+Mfano mdogo zaidi ni **Warumi 10:18**, ambapo Paulo ananukuu Zaburi 19:5 (19:4 katika Biblia za Kiingereza): "Sauti yao ilitoka kwenda dunia yote." Septuaginta, ambayo Paulo anainukuu neno kwa neno, ina "sauti yao" au "mlio wao." Kiebrania kina neno linalomaanisha kamba ya kupimia. Kiwango chetu cha Halisi cha zaburi hiyo kinabakiza "kamba yao", na maelezo ya chini, yaliyowekewa alama ya kutokuwa na uhakika, yanaeleza Kigiriki.
 
 ## Mitume walikuwa wakifanya nini
 

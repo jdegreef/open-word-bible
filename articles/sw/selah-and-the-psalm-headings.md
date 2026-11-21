@@ -10,8 +10,6 @@ Maneno mengi magumu ya Biblia ni magumu kwa sababu wasomi hawakubaliani juu yake
 
 Makala hii inaangalia kinachojulikana kuyahusu, kinachokisiwa, na jinsi tafsiri inavyopaswa kushughulikia neno ambalo maana yake imepotea.
 
-Zaburi na Habakuki bado hazijatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya Open Word Bible katika makala hii yanaonyeshwa katika tafsiri yake ya Kiingereza, na maelezo ya viwango yanahusu toleo hilo.
-
 ## Selah
 
 Zaburi 3 ni maombi ya Daudi anapomkimbia mwanawe Absalomu. Mstari wa 3 katika hesabu yetu (mstari wa 2 katika Biblia nyingi za Kiingereza, kwa sababu itakayoelezwa hapa chini) unaripoti kile ambacho adui zake wanasema:
@@ -60,7 +58,7 @@ Kiebrania kinaanza {{HEBREW:PSA.4.1:1}}, "kwa kiongozi wa uimbaji", usemi unaoon
 
 Kichwa kinaleta kwanza jambo la kivitendo. Katika maandishi ya Kiebrania, kichwa cha zaburi ni sehemu ya zaburi na kinahesabiwa kuwa mstari wake wa kwanza. Biblia nyingi za Kiingereza zinachapisha kichwa bila namba na kuanza mstari wa 1 na mstari wa kwanza wa shairi. Kwa hiyo kuanzia Zaburi 3, namba nyingi za mistari katika Open Word Bible ziko juu kwa moja kuliko katika Biblia nyingine za Kiingereza. Rekodi ya Zaburi 3:1 inaeleza hili, na rekodi ya kila kichwa inalirudia. Open Word Bible inafuata hesabu ya maandishi ya Kiebrania inayoyatafsiri. (Ona [Namba za sura na mistari](/articles/chapter-and-verse-numbers/) kuhusu jinsi hesabu hiyo ilivyotokea.)
 
-Pale ambapo kichwa ni kifupi sana, Kiebrania kinakihesabu pamoja na mstari wa kwanza wa shairi, na namba zinakuwa sawa. Zaburi 32 ni mfano: "Ya Daudi. Maskil" ni sehemu ya mstari wa 1, pamoja na "Heri mtu ambaye uasi wake umesamehewa".
+Pale ambapo kichwa ni kifupi sana, Kiebrania kinakihesabu pamoja na mstari wa kwanza wa shairi, na namba zinakuwa sawa. Zaburi 32 ni mfano: "Ya Daudi. Maskil" ni sehemu ya mstari wa 1, pamoja na "Ana heri kweli mtu ambaye uasi wake umesamehewa".
 
 ### Maneno ya vichwa yanamaanisha nini
 
@@ -82,13 +80,13 @@ Kisha kuna misemo ambayo huenda ni majina ya nyimbo. Zaburi 22 ni "on Ayyeleth-h
 
 Hapa viwango vitatu vinaachana, na sababu ni lengo la kila kiwango.
 
-**Halisi** na **Linganifu** zinabaki na istilahi za Kiebrania kama majina pale ambapo maana yake haijulikani: "A miktam", "On alamoth", "On Ayyeleth-hashshahar". Zinatafsiri kilicho wazi na kubakiza kisicho wazi. Zaburi 57 ni tofauti kidogo, kwa kuwa "Usiharibu" ni Kiebrania cha kawaida; kila kiwango kinalitafsiri, na Linganifu inaongeza "To the tune" (kwa sauti ya wimbo), ikilichukua kuwa jina la wimbo.
+**Halisi** na **Linganifu** zinabaki na istilahi za Kiebrania kama majina pale ambapo maana yake haijulikani: "Mikitamu", "Juu ya alamothi", "Kwa Ayeleth-hashahari". Zinatafsiri kilicho wazi na kubakiza kisicho wazi. Zaburi 57 ni tofauti kidogo, kwa kuwa "Usiharibu" ni Kiebrania cha kawaida; kila kiwango kinalitafsiri, na Linganifu inaongeza "Kwa sauti ya wimbo", ikilichukua kuwa jina la wimbo.
 
 **Rahisi** inatoa maana inayowezekana zaidi, na maamuzi yake ya maneno yanawekewa alama ya kutokuwa na uhakika pale ambapo kisio ni kisio. Hiki ndicho kichwa cha Zaburi 22 katika kiwango hicho:
 
 > {{OWB:PSA.22.1.s1:R}}
 
-Zaburi 56 inakuwa "To the tune 'A Silent Dove Far Away'" (kwa sauti ya wimbo "Njiwa Aliye Kimya Mbali"), na "on alamoth" ya Zaburi 46 inakuwa "For high voices" (kwa sauti za juu). Pale ambapo hata maana inayowezekana haifikiki, Rahisi inasema tu kilicho hakika: kwa "miktam", uamuzi wa maneno ni "A song" (wimbo) tu, kwa sababu maana yake haijulikani, na Rahisi inasema tu kwamba ni wimbo.
+Zaburi 56 inakuwa "Kwa sauti ya wimbo 'Hua Kimya wa Mbali'", na "juu ya alamothi" ya Zaburi 46 inakuwa "Kwa sauti za juu". Pale ambapo hata maana inayowezekana haifikiki, Rahisi inasema tu kilicho hakika: kwa "mikitamu", Rahisi inasema "Wimbo" tu, kwa sababu maana yake haijulikani: inasema tu kwamba ni wimbo.
 
 Hii ndiyo njia ambayo Open Word Bible inatenganisha maana na maneno. Uamuzi wa maana unasema kinachojulikana na kisichojulikana, na kukiwekea alama ya kutokuwa na uhakika. Uamuzi wa maneno unachagua maneno kwa kila kiwango yanayolingana na hali hiyo ya ujuzi. Rahisi inaweza kuwa jasiri zaidi katika maneno yake kwa sababu uamuzi wa maana ulio kando yake unasema waziwazi ni kiasi gani cha hayo ni kisio. (Ona [Viwango vitatu, maana moja](/articles/three-levels-one-meaning/).)
 
@@ -96,13 +94,13 @@ Hii ndiyo njia ambayo Open Word Bible inatenganisha maana na maneno. Uamuzi wa m
 
 Wasomaji wakati mwingine huuliza kama vichwa ni vya asili. Jibu la kweli ni kwamba hatujui ni nani aliyeviandika wala lini. Wasomi wengi wanadhani viliongezwa na watu waliozikusanya na kuzipanga zaburi kwa matumizi ya ibada, wakati mwingine muda mrefu baada ya zaburi zenyewe kuandikwa. Lakini ni vya zamani sana. Tafsiri ya Kigiriki inavyo, mara nyingi pamoja na nyongeza zake yenyewe, na hati za zaburi kutoka Qumran zinavyo pia. Katika maandishi ya Kiebrania ni sehemu ya zaburi, na katika visa vingine Agano Jipya linaonekana kuvitegemea: Petro na Paulo wote wawili wanatoa hoja kutoka Zaburi 16 kama zaburi ya Daudi, utunzi ambao kichwa chake kinautaja (Matendo 2:25; 13:35–36).
 
-Baadhi ya wasomi wameuliza pia kama maelezo machache ni ya zaburi iliyotangulia badala ya ile inayofuata. Mwaka 1904 James W. Thirtle alisema kwamba maelezo ya muziki kama "kwa kiongozi wa uimbaji" hapo awali yalisimama mwishoni mwa zaburi iliyotangulia. Habakuki 3 inatoa msaada fulani: maombi yake yanamalizika, katika mstari wa 19, na maelezo ya aina hiyohiyo hasa, "Kwa kiongozi wa muziki. Kwa ala za nyuzi", yakisimama baada ya zaburi. Rekodi yetu ya mstari huo inayachukua kuwa maelezo ya kufunga, kama yalivyo. Nadharia hiyo haijakubaliwa na wengi kuhusu Zaburi, na rekodi zetu zinaviacha vichwa pale ambapo maandishi ya Kiebrania yanaviweka.
+Baadhi ya wasomi wameuliza pia kama maelezo machache ni ya zaburi iliyotangulia badala ya ile inayofuata. Mwaka 1904 James W. Thirtle alisema kwamba maelezo ya muziki kama "kwa kiongozi wa uimbaji" hapo awali yalisimama mwishoni mwa zaburi iliyotangulia. Habakuki 3 inatoa msaada fulani: maombi yake yanamalizika, katika mstari wa 19, na maelezo ya aina hiyohiyo hasa, "Kwa kiongozi wa kwaya. Kwa ala zangu za nyuzi", yakisimama baada ya zaburi. Rekodi yetu ya mstari huo inayachukua kuwa maelezo ya kufunga, kama yalivyo. Nadharia hiyo haijakubaliwa na wengi kuhusu Zaburi, na rekodi zetu zinaviacha vichwa pale ambapo maandishi ya Kiebrania yanaviweka.
 
 ## Kusema "hatujui"
 
 Ingekuwa rahisi kwa tafsiri kuyafunika mapengo haya. Ingeweza kuchapisha kisio cha kujiamini kwa kila istilahi, au kuyaacha kimyakimya maneno ambayo hakuna anayeyaelewa. Wasomaji wengi wasingegundua kamwe.
 
-Open Word Bible inachukua njia nyingine. Pale ambapo maana ya neno imepotea, rekodi inasema hivyo, inatoa ushahidi na mapendekezo makuu, na inaacha maneno yafuate kutoka hapo. Selah inabaki Selah. "Miktam" inabaki "miktam" katika Halisi na Linganifu, na inakuwa tu "wimbo" katika Rahisi. Msomaji hapotezi chochote ambacho mtu yeyote anakijua kweli, wala hapewi chochote ambacho hakuna anayekijua. Kama rasimu zetu zote, rekodi hizi zimeandaliwa kwa msaada wa AI na zinasubiri kukaguliwa na wakaguzi binadamu wanaotajwa kwa majina.
+Open Word Bible inachukua njia nyingine. Pale ambapo maana ya neno imepotea, rekodi inasema hivyo, inatoa ushahidi na mapendekezo makuu, na inaacha maneno yafuate kutoka hapo. Selah inabaki Selah. "Mikitamu" inabaki "Mikitamu" katika Halisi na Linganifu, na inakuwa tu "wimbo" katika Rahisi. Msomaji hapotezi chochote ambacho mtu yeyote anakijua kweli, wala hapewi chochote ambacho hakuna anayekijua. Kama rasimu zetu zote, rekodi hizi zimeandaliwa kwa msaada wa AI na zinasubiri kukaguliwa na wakaguzi binadamu wanaotajwa kwa majina.
 
 Kuna jambo linalofaa katika hili. Zaburi ziliimbwa kwa karne nyingi na watu waliojua hasa Selah ilimaanisha nini, na zimeendelea kuimbwa na watu wasiojua. Maneno bado yanafanya kazi yake.
 

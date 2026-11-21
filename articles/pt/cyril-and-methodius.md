@@ -4,7 +4,7 @@ summary: Na década de 860, dois irmãos de Tessalônica inventaram um alfabeto 
 date: 2026-10-12
 order: 46
 section: translation
-source: b172b8909e6b
+source: 519f66de1208
 ---
 Centenas de milhões de pessoas escrevem russo, ucraniano, búlgaro, sérvio e outras línguas no alfabeto **cirílico**. Ele leva o nome de um estudioso bizantino do século IX, **Constantino**, mais conhecido pelo nome monástico que adotou pouco antes de morrer: **Cirilo**. Mas é quase certo que Cirilo não inventou o cirílico. Ele inventou outro alfabeto, o **glagolítico**, para que os eslavos pudessem ouvir a Bíblia na sua própria língua.
 
@@ -34,7 +34,7 @@ Durante séculos, os eslavos tiveram as Escrituras principalmente nos livros lit
 
 Cirilo e Metódio são honrados como santos tanto por cristãos ortodoxos quanto por católicos. Num ponto a sua posição é clara: eles rejeitaram a ideia de que só algumas poucas línguas sagradas servem para as Escrituras.
 
-A Open Word Bible segue essa tradição de modo modesto. Ela traduz para o espanhol, o francês, o suaíli, o vietnamita, o coreano, o português, o amárico, o híndi e o russo, além do inglês, cada um a partir do hebraico e do grego, para que nenhuma língua receba a cópia de outra tradução, como a equipe de Genádio teve de aceitar. O seu texto é publicado sob a licença CC0, por isso ninguém precisa de permissão para usá-lo. Ela é feita com a ajuda de IA, e nada dela foi aprovado ainda por revisores humanos identificados pelo nome.
+A Open Word Bible segue essa tradição de modo modesto. Ela traduz para uma dúzia de línguas além do inglês, entre elas o russo e o ucraniano, cada uma a partir do hebraico e do grego, para que nenhuma língua receba a cópia de outra tradução, como a equipe de Genádio teve de aceitar. O seu texto é publicado sob a licença CC0, por isso ninguém precisa de permissão para usá-lo. Ela é feita com a ajuda de IA, e nada dela foi aprovado ainda por revisores humanos identificados pelo nome.
 
 ## Fontes
 

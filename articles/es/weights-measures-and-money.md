@@ -61,7 +61,7 @@ Las traducciones han seguido cuatro enfoques generales, y la mayoría los mezcla
 
 **Explicar el valor.** En lugar de una moneda, decir lo que el dinero podía comprar o cuánto tiempo costaba ganarlo: «el jornal de un día», «cuatro meses de salario». Esto no se queda anticuado, porque el salario es una medida humana. Es el enfoque que siguen con el dinero la mayoría de las traducciones modernas centradas en el sentido. Su costo es que es menos exacto, y es una interpretación del valor, no la traducción de una palabra.
 
-Ningún enfoque es el correcto en todas partes. En Ezequiel 45:10, donde las medidas mismas son el tema, nuestros niveles Literal y Equilibrada en inglés conservan «an honest ephah and an honest bath» («un efa honrado y un bato honrado»), sin cifras modernas. (Ezequiel aún no está traducido al español). En una parábola, donde lo que importa es cuánto o qué poco, el lector necesita el valor.
+Ningún enfoque es el correcto en todas partes. En Ezequiel 45:10, donde las medidas mismas son el tema, nuestros niveles Literal y Equilibrada conservan «efa justo y bato justo» y «un efa exacto y un bato exacto», sin cifras modernas. En una parábola, donde lo que importa es cuánto o qué poco, el lector necesita el valor.
 
 ## Lo que hace Open Word Bible
 

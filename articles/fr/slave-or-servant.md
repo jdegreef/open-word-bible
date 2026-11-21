@@ -72,7 +72,7 @@ Open Word Bible traite cette question comme les autres mots difficiles : une seu
 
 **Le sens est toujours dit.** Chaque phrase où figure *doulos* ou *ʿeved* a une décision de sens qui dit quelle était la condition de la personne : possédée, non salariée. Cette décision vaut à chaque niveau et dans chaque langue.
 
-**La Littérale dit "esclave".** Un lecteur qui veut voir le tranchant du mot le voit : "Paul, esclave du Christ Jésus" (Romains 1:1) ; "Moses the slave of the LORD" ("Moïse, l'esclave du SEIGNEUR", Josué 1:1, encore traduit seulement en anglais) ; "la forme d'un esclave" (Philippiens 2:7).
+**La Littérale dit "esclave".** Un lecteur qui veut voir le tranchant du mot le voit : "Paul, esclave du Christ Jésus" (Romains 1:1) ; en anglais aussi "Moses the slave of the LORD" ("Moïse, l'esclave du SEIGNEUR", Josué 1:1) ; "la forme d'un esclave" (Philippiens 2:7).
 
 **L'Équilibrée et la Simple disent en général "serviteur".** Les décisions de formulation anglaises en répètent la raison : la décision de sens garde "le fait que la personne était possédée", tandis que les deux niveaux plus simples évitent "l'image de l'esclavage-propriété moderne que 'slave' évoque pour la plupart des lecteurs". Ainsi Romains 1:1, au niveau Équilibrée, dit "serviteur du Christ Jésus", et Marie, au niveau Équilibrée, dit : "Je suis la servante du Seigneur." La Simple explique plutôt ses paroles : "J'appartiens au Seigneur, et je suis prête à faire ce qu'il veut."
 
@@ -104,7 +104,7 @@ Open Word Bible les comprend comme "saisis l'occasion de devenir libre", et l'É
 
 ## Là où les brouillons ne sont pas encore cohérents
 
-Appliquer une telle règle à toute une Bible demande du discernement, et les brouillons ne l'appliquent pas encore partout de la même façon. Dans Ésaïe, la liste de termes du livre donne "servant" ("serviteur") pour le serviteur du SEIGNEUR même au niveau Littérale, si bien qu'Ésaïe 42:1 et 52:13 disent "my servant" ("mon serviteur") à tous les niveaux, alors que Josué 1:1 dit "Moses the slave of the LORD" au niveau Littérale. Ces deux livres ne sont encore traduits qu'en anglais. Les deux choix se défendent. Un relecteur devra décider si le titre doit se lire de la même façon dans les deux livres. Les brouillons sont faits avec l'aide de l'IA, et aucun n'a encore été relu.
+Appliquer une telle règle à toute une Bible demande du discernement, et les brouillons ne l'appliquent pas encore partout de la même façon. Dans l'édition anglaise, la liste de termes d'Ésaïe donne "servant" ("serviteur") pour le serviteur du SEIGNEUR même au niveau Littérale, si bien qu'Ésaïe 42:1 et 52:13 disent "my servant" ("mon serviteur") à tous les niveaux, alors que Josué 1:1 dit "Moses the slave of the LORD" au niveau Littérale. Les deux choix se défendent. Un relecteur devra décider si le titre doit se lire de la même façon dans les deux livres. Les brouillons sont faits avec l'aide de l'IA, et aucun n'a encore été relu.
 
 Voir aussi [Mot à mot ou sens pour sens ?](/articles/word-for-word-or-meaning-for-meaning/) et [Littérale, Équilibrée, Simple : trois niveaux, un seul sens](/articles/three-levels-one-meaning/).
 

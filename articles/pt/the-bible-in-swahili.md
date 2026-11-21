@@ -4,7 +4,7 @@ summary: Como uma língua comercial do litoral, com uma longa tradição escrita
 date: 2026-10-12
 order: 56
 section: translation
-source: 97ee70c7f00b
+source: 24b70e6a2a3e
 ---
 O suaíli é a língua africana da família banta mais falada. É língua nacional da Tanzânia e do Quênia, é usado em Uganda, Ruanda, Burundi e no leste do Congo, e foi adotado pela União Africana como uma das suas línguas de trabalho. As estimativas de quantas pessoas o falam variam muito, de cerca de 100 milhões a mais de 200 milhões, porque a maioria dos falantes o aprende como segunda língua e as contagens diferem no que incluem.
 
@@ -66,7 +66,7 @@ Toda tradução em suaíli enfrenta uma questão de vocabulário. Muitas palavra
 
 ## A Open Word Bible em suaíli
 
-O suaíli é uma das línguas da Open Word Bible, ao lado do inglês, do espanhol, do francês, do vietnamita, do coreano, do português, do amárico, do híndi e do russo. Como em todas as línguas, o suaíli é traduzido do grego e do hebraico, não do inglês, e cada frase compartilha as mesmas decisões de sentido das outras línguas, enquanto as decisões de formulação são tomadas para o próprio suaíli (veja [Literal, Equilibrada, Acessível: três níveis, um sentido](/articles/three-levels-one-meaning/)).
+O suaíli é uma das línguas da Open Word Bible, ao lado do inglês, do amárico e de uma lista crescente de outras. Como em todas as línguas, o suaíli é traduzido do grego e do hebraico, não do inglês, e cada frase compartilha as mesmas decisões de sentido das outras línguas, enquanto as decisões de formulação são tomadas para o próprio suaíli (veja [Literal, Equilibrada, Acessível: três níveis, um sentido](/articles/three-levels-one-meaning/)).
 
 Os rascunhos em suaíli já cobrem a Bíblia inteira. São feitos com ajuda de IA, e nenhum foi revisado ainda. Como as primeiras Bíblias suaílis, precisam do que os tradutores sempre precisaram mais: falantes nativos que possam dizer se uma frase soa como suaíli de verdade. A Open Word Bible não vai marcar nada do seu suaíli como revisado até que um revisor identificado, fluente em suaíli, o tenha lido. Se você é esse leitor, o [projeto no GitHub](https://github.com/jdegreef/open-word-bible) é o lugar para começar.
 

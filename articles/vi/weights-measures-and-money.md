@@ -21,11 +21,11 @@ Tiền đúc xuất hiện muộn. Trong phần lớn thời kỳ Cựu Ước, 
 
 Trọng lượng khác nhau tùy nơi và tùy thời. Có “siếc-lơ của nơi thánh” (Xuất Ai Cập Ký 30:13) và có chuẩn cân của nhà vua (2 Sa-mu-ên 14:26). Mọi con số hiện đại đều chỉ là ước lượng.
 
-Giá Ép-rôn đòi cho thửa ruộng là bốn trăm siếc-lơ. Bản ghi của Sáng Thế Ký 23:15 cho biết đó là một giá rất cao; Giê-rê-mi mua một thửa ruộng chỉ với mười bảy siếc-lơ (Giê-rê-mi 32:9). Sáng Thế Ký chưa được dịch sang tiếng Việt, nên dưới đây là cấp độ Cân bằng của bản tiếng Anh:
+Giá Ép-rôn đòi cho thửa ruộng là bốn trăm siếc-lơ. Bản ghi của Sáng Thế Ký 23:15 cho biết đó là một giá rất cao; Giê-rê-mi mua một thửa ruộng chỉ với mười bảy siếc-lơ (Giê-rê-mi 32:9). Cấp độ Cân bằng của chúng tôi là:
 
 > {{OWB:GEN.23.15.s1:B}}
 
-“About 10 pounds” (“khoảng 10 pao”, chừng 4,6 ki-lô-gam) bạc cho người đọc một hình ảnh cụ thể. Con số gốc “400 siếc-lơ” chỉ cách một lần chạm, như ta sẽ thấy.
+“Khoảng 4,6 kg” bạc cho người đọc một hình ảnh cụ thể. Con số gốc “400 siếc-lơ” chỉ cách một lần chạm, như ta sẽ thấy.
 
 Vì cân đúng là nền tảng của buôn bán ngay thẳng, các nhà tiên tri nhắc đến chuyện này hết lần này đến lần khác. “You shall have just balances, a just ephah, and a just bath” (“Các ngươi phải có cân đúng, ê-pha đúng và bát đúng”), Ê-xê-chi-ên 45:10 viết như vậy trong bản World English Bible. A-mốt lên án những kẻ làm ê-pha nhỏ lại và siếc-lơ nặng thêm (A-mốt 8:5).
 
@@ -61,7 +61,7 @@ Các bản dịch đã đi theo bốn hướng chính, và phần lớn kết h�
 
 **Giải thích giá trị.** Thay vì nói ra một loại tiền, hãy nói số tiền ấy mua được gì, hay phải làm bao lâu mới kiếm được: “tiền công một ngày”, “bốn tháng tiền công”. Cách này không lỗi thời, vì tiền công là một thước đo của con người. Đây là cách mà phần lớn các bản dịch theo nghĩa hiện đại dùng cho tiền bạc. Cái giá của nó là kém chính xác hơn, và nó là sự diễn giải giá trị chứ không phải bản dịch của một từ.
 
-Không có cách nào đúng ở mọi chỗ. Trong Ê-xê-chi-ên 45:10, nơi chính các đơn vị đo là đề tài, cấp độ Sát nghĩa và Cân bằng của chúng tôi (bản tiếng Anh) giữ “an honest ephah and an honest bath” (“ê-pha đúng và bát đúng”), không kèm con số hiện đại nào. Trong một dụ ngôn, nơi điều quan trọng là nhiều hay ít bao nhiêu, người đọc cần biết giá trị.
+Không có cách nào đúng ở mọi chỗ. Trong Ê-xê-chi-ên 45:10, nơi chính các đơn vị đo là đề tài, cấp độ Sát nghĩa và Cân bằng của chúng tôi giữ “ê-pha công chính và bát công chính” và “ê-pha đúng và bát đúng”, không kèm con số hiện đại nào. Trong một dụ ngôn, nơi điều quan trọng là nhiều hay ít bao nhiêu, người đọc cần biết giá trị.
 
 ## Open Word Bible làm gì
 
@@ -71,7 +71,7 @@ Open Word Bible giữ ý nghĩa ở một chỗ và để lời văn thay đổi
 
 Cấp độ **Sát nghĩa** luôn giữ đơn vị cổ. Người đọc đang nghiên cứu bản văn sẽ thấy ta-lâng, cu-đê và ê-pha, đúng như nguyên văn.
 
-Cấp độ **Cân bằng** và **Dễ đọc** mặc định đưa ra một đơn vị tương đương hiện đại, và cài đặt **Đơn vị đo** cho phép người đọc chuyển về đơn vị gốc. Trong trang đọc, cài đặt này chỉ xuất hiện ở những trang có đơn vị đo. Như mọi cài đặt đọc, nó thay đổi lời văn, không bao giờ thay đổi ý nghĩa: ba trăm cu-đê và 450 feet là cùng một chiều dài (xem [Cài đặt thay đổi lời văn, không thay đổi ý nghĩa](/articles/settings-change-wording/)). Kích thước chiếc tàu ở cấp độ Cân bằng, trong bản tiếng Anh, là:
+Cấp độ **Cân bằng** và **Dễ đọc** mặc định đưa ra một đơn vị tương đương hiện đại, và cài đặt **Đơn vị đo** cho phép người đọc chuyển về đơn vị gốc. Trong trang đọc, cài đặt này chỉ xuất hiện ở những trang có đơn vị đo. Như mọi cài đặt đọc, nó thay đổi lời văn, không bao giờ thay đổi ý nghĩa: ba trăm cu-đê và 135 m là cùng một chiều dài (xem [Cài đặt thay đổi lời văn, không thay đổi ý nghĩa](/articles/settings-change-wording/)). Kích thước chiếc tàu ở cấp độ Cân bằng là:
 
 > {{OWB:GEN.6.15.s1:B}}
 

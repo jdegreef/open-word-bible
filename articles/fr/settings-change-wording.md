@@ -4,7 +4,7 @@ summary: Inclusif ou traditionnel, Christ ou Messie, il ou Il. Pourquoi ce sont 
 date: 2026-10-10
 order: 4
 section: method
-source: f88c24659512
+source: 18d3e565024d
 ---
 Les lecteurs de la Bible ne s'accordent pas sur certaines questions qui sont, à strictement parler, des questions de formulation. Faut-il dire "frères et sœurs" plutôt que "frères" quand toute l'Église est visée ? Le titre de Jésus doit-il être "Christ" ou "Messie" ? Les pronoms qui désignent Dieu prennent-ils une majuscule ? Le nom de Dieu doit-il s'écrire "le SEIGNEUR" ou "Yahvé" ? Open Word Bible laisse chaque lecteur choisir.
 
@@ -16,7 +16,7 @@ Les lecteurs de la Bible ne s'accordent pas sur certaines questions qui sont, à
 - **Nom de Dieu.** Dans l'Ancien Testament, le nom personnel de Dieu s'écrit "le SEIGNEUR" par défaut, selon l'usage ancien de ne pas le prononcer à voix haute, et "Yahvé" en option.
 - **Mesures.** Là où un passage donne une mesure, des unités modernes par défaut, et les unités de l'original en option. L'arche de Noé mesure 135 mètres de long, ou 300 coudées (Genèse 6:15) ; les jarres de Cana contenaient 80 à 120 litres, ou deux ou trois mesures (Jean 2:6). Le niveau Littérale garde toujours l'unité ancienne.
 
-L'espagnol a en plus un réglage pour le "vous" pluriel : *ustedes*, comme en Amérique latine, ou *vosotros*, comme en Espagne. Le français n'en a pas besoin : "vous" sert partout. Un réglage pour l'orthographe britannique est prévu en anglais.
+L'espagnol a en plus un réglage pour le "vous" pluriel : *ustedes*, comme en Amérique latine, ou *vosotros*, comme en Espagne. Le français n'en a pas besoin : "vous" sert partout. Le chinois a un réglage pour le mot qui désigne Dieu : 神 (*Shén*) ou 上帝 (*Shàngdì*), les deux mots que les Bibles chinoises emploient depuis longtemps pour le Dieu unique. Un réglage pour l'orthographe britannique est prévu en anglais.
 
 ## Pourquoi ceux-là, et pas d'autres
 

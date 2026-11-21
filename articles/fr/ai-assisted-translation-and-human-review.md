@@ -4,7 +4,7 @@ summary: Tout ce qui se trouve aujourd'hui sur ce site est traduit avec l'aide d
 date: 2026-10-10
 order: 10
 section: method
-source: 2f05369a7dc4
+source: e1e9a6d4898e
 ---
 Open Word Bible est traduite avec l'aide de l'IA. Nous le disons clairement, car un projet qui promet de montrer son travail ne peut pas rester vague sur qui a fait ce travail. Cet article explique comment une phrase est rédigée, ce que vous pouvez en voir, où la rédaction par l'IA atteint ses limites, et ce qui doit se passer avant qu'une phrase soit dite relue.
 
@@ -26,13 +26,13 @@ Voici le niveau Équilibrée de la phrase issue de ces étapes :
 
 > {{OWB:PHP.4.6.s1:B}}
 
-Son dossier contient le grec, qui commence par {{GREEK:PHP.4.6:1-2}}, "ne vous inquiétez de rien" ; une glose littérale ; les niveaux Littérale, Équilibrée et Simple en anglais ; et les mêmes trois niveaux dans d'autres langues à mesure qu'ils sont rédigés. Il contient aussi douze décisions. Sept sont des décisions de sens, communes à toutes les langues. L'une dit que {{LEMMA:PHP.4.6:2}} désigne ici l'inquiétude anxieuse, le mot qu'emploie Jésus en Matthieu 6, et non le souci bienveillant pour lequel Paul l'emploie en 2:20. Une autre dit que le verbe "garder" décrit ce que fait une garnison, une image que les habitants de Philippes, colonie romaine qui comptait d'anciens soldats parmi ses citoyens, auraient ressentie. Les cinq autres sont des décisions de rendu, chacune pour une langue. Une décision anglaise, par exemple, explique pourquoi le niveau Équilibrée dit que la paix va "stand guard over" (monter la garde sur) vos cœurs : cela garde l'image du soldat sans le vieilli "keep" (garder).
+Son dossier contient le grec, qui commence par {{GREEK:PHP.4.6:1-2}}, "ne vous inquiétez de rien" ; une glose littérale ; les niveaux Littérale, Équilibrée et Simple en anglais ; et les mêmes trois niveaux dans d'autres langues à mesure qu'ils sont rédigés. Il contient aussi vingt-sept décisions. Sept sont des décisions de sens, communes à toutes les langues. L'une dit que {{LEMMA:PHP.4.6:2}} désigne ici l'inquiétude anxieuse, le mot qu'emploie Jésus en Matthieu 6, et non le souci bienveillant pour lequel Paul l'emploie en 2:20. Une autre dit que le verbe "garder" décrit ce que fait une garnison, une image que les habitants de Philippes, colonie romaine qui comptait d'anciens soldats parmi ses citoyens, auraient ressentie. Les vingt autres sont des décisions de rendu, chacune pour une langue. Une décision anglaise, par exemple, explique pourquoi le niveau Équilibrée dit que la paix va "stand guard over" (monter la garde sur) vos cœurs : cela garde l'image du soldat sans le vieilli "keep" (garder).
 
 Deux décisions de ce dossier sont marquées incertaines. L'une porte sur le sens : la paix qui "surpasse toute intelligence" peut être une paix au-delà de ce que l'esprit peut saisir, ou une paix qui accomplit plus que tout projet humain. Le dossier suit la lecture la plus courante et donne l'autre en note. La seconde porte sur l'anglais. Le niveau Simple dit que la paix vous garde "because you are joined to Christ Jesus" (parce que vous êtes unis au Christ Jésus), là où le grec dit seulement "en". La décision de rendu dit clairement que cela ajoute une raison que le grec laisse implicite, et que les relecteurs doivent la vérifier :
 
 > {{OWB:PHP.4.6.s1:R}}
 
-C'est partout la même chose. Dans les brouillons rédigés jusqu'ici, une phrase porte en moyenne environ quatre décisions, et environ une décision sur douze est marquée incertaine. L'IA a pour consigne de marquer un choix serré comme incertain plutôt que de le présenter comme acquis, et le lecteur affiche cette mention.
+C'est partout la même chose. Dans les brouillons, une phrase porte en moyenne environ deux ou trois décisions de sens, plus les décisions de rendu de chaque langue, et environ une décision de sens sur neuf est marquée incertaine. L'IA a pour consigne de marquer un choix serré comme incertain plutôt que de le présenter comme acquis, et le lecteur affiche cette mention.
 
 ## Ce que l'IA ne fait pas
 
@@ -50,7 +50,7 @@ Un lecteur a raison de demander ce qu'une IA fait mal. Nous avons vu plusieurs s
 
 **L'aisance n'est pas le jugement.** Un brouillon peut se lire sans heurt et être faux quand même, ou juste pour des raisons qui ne sont pas tout à fait celles qu'il donne. Le ton assuré d'une phrase ne prouve rien en sa faveur.
 
-**Une formulation naturelle demande des locuteurs natifs.** Une IA peut écrire un espagnol, un français, un swahili, un vietnamien, un coréen, un portugais, un amharique, un hindi ou un russe grammaticaux. Savoir si une phrase sonne naturellement pour un lecteur qui a grandi avec la langue est une autre question. Le dossier espagnol de Jean 1:1, par exemple, choisit *el Verbo* pour "la Parole" plutôt que *la Palabra*, et signale ce choix pour la relecture d'un locuteur natif.
+**Une formulation naturelle demande des locuteurs natifs.** Une IA peut écrire un espagnol, un swahili, un coréen, un amharique ou un japonais grammaticaux. Savoir si une phrase sonne naturellement pour un lecteur qui a grandi avec la langue est une autre question. Le dossier espagnol de Jean 1:1, par exemple, choisit *el Verbo* pour "la Parole" plutôt que *la Palabra*, et signale ce choix pour la relecture d'un locuteur natif.
 
 **La cohérence d'un livre à l'autre est difficile.** Des milliers de phrases rédigées à des moments différents peuvent dériver. Les termes clés vérifiés par le logiciel, les listes de termes pour les longs livres et les décisions qui renvoient aux précédentes vont tous contre cette dérive, mais il en restera que les relecteurs devront trouver.
 
@@ -91,4 +91,4 @@ Vous n'avez pas besoin d'attendre les relecteurs pour mettre à l'épreuve ce qu
 
 ## Aidez à relire
 
-Si vous lisez le grec ou l'hébreu, ou si l'espagnol, le français, le swahili, le vietnamien, le coréen, le portugais, l'amharique, le hindi ou le russe est votre langue maternelle et que vous savez juger si une phrase se lit naturellement, votre aide nous serait précieuse. Tout est ouvert sur [GitHub](https://github.com/jdegreef/open-word-bible), y compris chaque décision et son raisonnement, et le lien "Signaler un problème" en bas de chaque page y ouvre un ticket. Être en désaccord avec une décision, et dire pourquoi, est exactement le genre d'aide dont le projet a besoin.
+Si vous lisez le grec ou l'hébreu, ou si l'une des langues de la traduction est votre langue maternelle et que vous savez juger si une phrase se lit naturellement, votre aide nous serait précieuse. Tout est ouvert sur [GitHub](https://github.com/jdegreef/open-word-bible), y compris chaque décision et son raisonnement, et le lien "Signaler un problème" en bas de chaque page y ouvre un ticket. Être en désaccord avec une décision, et dire pourquoi, est exactement le genre d'aide dont le projet a besoin.
