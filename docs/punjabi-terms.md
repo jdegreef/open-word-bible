@@ -692,3 +692,22 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਅੰਮੀ-ਨਾਦੀਬ, ਬਆਲ-ਹਾਮੋਨ.
 - 8:6 *shalhevetyah* is {{divine_name:ਪ੍ਰਭੂ|ਯਾਹ}} ਦੀ ਲਾਟ in L only; B
   and R read it as a superlative. Sheol ਪਤਾਲ (L, B), ਕਬਰ (R).
+
+### Galatians
+
+- Justify ਧਰਮੀ ਠਹਿਰਾਉਣਾ (L, B), ਪਰਮੇਸ਼ੁਰ ਦੀ ਨਜ਼ਰ ਵਿੱਚ ਠੀਕ ਠਹਿਰਨਾ (R);
+  works of the law ਬਿਵਸਥਾ ਦੇ ਕੰਮ (L, B), ਬਿਵਸਥਾ ਦੇ ਹੁਕਮ ਮੰਨਣਾ (R).
+  Works are ਕੰਮ, as in James. Flesh ਸਰੀਰ (L, B), ਪਾਪੀ ਸੁਭਾਅ (R) where it
+  is the sinful nature; body (6:17) ਦੇਹ.
+- Gentiles ਪਰਾਈਆਂ ਕੌਮਾਂ (L, B), ਗ਼ੈਰ-ਯਹੂਦੀ (R). Sons
+  {{gender:ਸੰਤਾਨ|ਪੁੱਤਰ}}; the law as guardian (3:24-25) ਰਖਵਾਲੀ ਕਰਨ ਵਾਲੀ.
+- Quotations: Gen 15:6 in 3:6 as James 2:23; Lev 19:18 in 5:14 as James
+  2:8; Hab 2:4 in 3:11 ਧਰਮੀ ਵਿਸ਼ਵਾਸ ਨਾਲ ਜੀਉਂਦਾ ਰਹੇਗਾ, which Romans 1:17
+  and Hebrews 10:38 should match.
+- Fruit of the Spirit (5:22-23): kindness ਭਲਿਆਈ (as Colossians), goodness
+  ਨੇਕੀ, gentleness ਨਰਮਾਈ, self-control ਸੰਜਮ.
+- *Mē genoito* ਕਦੇ ਨਾ ਹੋਵੇ! (L), ਬਿਲਕੁਲ ਨਹੀਂ! (B), ਕਦੇ ਵੀ ਨਹੀਂ! (R).
+- Address: readers ਤੁਸੀਂ; Paul says ਤੂੰ to Cephas (2:14). Paul's singular
+  "you" (4:7, 6:1) is ਤੂੰ at L, ਤੁਸੀਂ ਹਰੇਕ at B and R. Cephas ਕੇਫ਼ਾਸ (L,
+  B), ਪਤਰਸ (R).
+- Names: ਦੰਮਿਸ਼ਕ, ਅਰਬ, ਸੀਰੀਆ, ਕਿਲਿਕਿਯਾ, ਅੰਤਾਕਿਯਾ, ਹਾਜ਼ਰਾ, ਸੀਨਈ.
