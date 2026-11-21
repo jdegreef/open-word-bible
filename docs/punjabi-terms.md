@@ -392,7 +392,7 @@ People and places: ਨਹੂਮ, ਅਲਕੋਸ਼ੀ (of Elkosh); ਨੀਨਵ
 
 - Oracle (*massa*, 1:1) ਭਾਰ ਦਾ ਵਾਕ, as in Habakkuk and Malachi when they come.
 - A jealous God (1:2) ਅਣਖੀ ਪਰਮੇਸ਼ੁਰ; the creed of 1:3 should read with
-  Exodus 34:6-7 (ਕ੍ਰੋਧ ਵਿੱਚ ਧੀਮੇ at L, ਛੇਤੀ ਗੁੱਸੇ ਨਹੀਂ ਹੁੰਦੇ at B and R), and 1:15 (2:1 Hebrew) with Isaiah
+  Exodus 34:6-7 (ਕ੍ਰੋਧ ਵਿੱਚ ਧੀਰਜਵਾਨ at L, as in Jonah 4:2; ਛੇਤੀ ਗੁੱਸੇ ਨਹੀਂ ਹੁੰਦੇ at B and R), and 1:15 (2:1 Hebrew) with Isaiah
   52:7, when those books are drafted.
 - Nineveh is addressed as a woman: feminine ਤੂੰ with forms such as ਕਰੇਂਗੀ,
   ਜਾਵੇਂਗੀ. The king of Assyria (1:14, 3:18-19) takes masculine forms.
