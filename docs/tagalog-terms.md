@@ -1273,3 +1273,69 @@ names the book where the form was first used.
 | Judges 20:45 | Gidom | Gidom |  |
 | Judges 21:8 | Jabesh-gilead | Jabes-gilead |  |
 | Judges 21:19 | Lebonah | Lebona |  |
+| 1 Samuel 1:1 | Ramathaim-zophim | Ramataim-zofim | th > t, ph > f |
+| 1 Samuel 1:1 | Zuph | Zuf | ph > f |
+| 1 Samuel 1:1 | Jeroham; Tohu | Jeroham; Tohu |  |
+| 1 Samuel 1:1 | Ephraimite | Efraimita |  |
+| 1 Samuel 1:2 | Peninnah | Penina | final -h dropped; reviewer to confirm |
+| 1 Samuel 1:3 | Hophni | Hofni | ph > f |
+| 1 Samuel 4:1 | Ebenezer | Ebenezer |  |
+| 1 Samuel 4:21 | Ichabod | Icabod | ch > c |
+| 1 Samuel 6:21 | Kiriath-jearim | Kiriat-jearim | th > t |
+| 1 Samuel 7:1 | Abinadab | Abinadab |  |
+| 1 Samuel 7:11 | Beth-car | Bet-car |  |
+| 1 Samuel 7:12 | Shen | Shen |  |
+| 1 Samuel 9:1 | Kish; Abiel; Zeror; Becorath; Aphiah | Kish; Abiel; Zeror; Becorat; Afia | final -h dropped in Afia |
+| 1 Samuel 9:4 | Shalishah; Shaalim | Shalisha; Shaalim |  |
+| 1 Samuel 10:2 | Zelzah | Zelza |  |
+| 1 Samuel 10:5 | Gibeah | Gibea | as Judges |
+| 1 Samuel 10:21 | Matrites | Matrita |  |
+| 1 Samuel 11:1 | Nahash | Nahas | sh > s; reviewer to confirm |
+| 1 Samuel 12:11 | Bedan | Bedan |  |
+| 1 Samuel 13:2 | Michmash | Micmas | ch > c, sh > s |
+| 1 Samuel 13:3 | Geba | Geba |  |
+| 1 Samuel 13:17 | Shual | Shual |  |
+| 1 Samuel 13:18 | Zeboim | Zeboim |  |
+| 1 Samuel 14:2 | Migron | Migron |  |
+| 1 Samuel 14:3 | Ahijah; Ahitub | Ahias; Ahitub | Spanish-derived *Ahias* |
+| 1 Samuel 14:4 | Bozez; Seneh | Bozez; Seneh |  |
+| 1 Samuel 14:47 | Zobah | Zoba |  |
+| 1 Samuel 14:49 | Ishvi; Malchi-shua; Merab | Isvi; Malki-shua; Merab |  |
+| 1 Samuel 14:50 | Ahinoam; Ahimaaz; Ner | Ahinoam; Ahimaaz; Ner |  |
+| 1 Samuel 15:4 | Telaim | Telaim |  |
+| 1 Samuel 15:7 | Havilah | Havilah | as Genesis |
+| 1 Samuel 17:1 | Socoh; Azekah; Ephes-dammim | Socoh; Azeka; Efes-dammim | Socoh as Joshua |
+| 1 Samuel 17:2 | Valley of Elah | Libis ng Elah |  |
+| 1 Samuel 17:12 | Ephrathite | Efrateo |  |
+| 1 Samuel 17:52 | Shaaraim | Shaaraim |  |
+| 1 Samuel 18:19 | Adriel the Meholathite | Adriel na taga-Mehola |  |
+| 1 Samuel 19:18 | Naioth | Naiot |  |
+| 1 Samuel 19:22 | Secu | Seku |  |
+| 1 Samuel 20:5 | new moon | L *bagong buwan*; B/R *Pista ng Bagong Buwan* |  |
+| 1 Samuel 20:19 | Ezel | Ezel |  |
+| 1 Samuel 21:1 | Nob; Ahimelech | Nob; Ahimelec | ch > c |
+| 1 Samuel 21:7 | Doeg | Doeg |  |
+| 1 Samuel 21:10 | Achish | Aquis | Spanish-derived |
+| 1 Samuel 22:5 | Hereth | Heret |  |
+| 1 Samuel 23:14 | Ziph; Ziphites | Zif; mga Zifita |  |
+| 1 Samuel 23:15 | Horesh | Horesh |  |
+| 1 Samuel 23:19 | Hachilah | Hakila |  |
+| 1 Samuel 23:24 | Maon | Maon |  |
+| 1 Samuel 23:28 | Sela-hammahlekoth | Sela-hammahlekot |  |
+| 1 Samuel 24:1 | En-gedi | En-gedi |  |
+| 1 Samuel 24:2 | Rocks of the Wild Goats | mga Bato ng mga Kambing-gubat |  |
+| 1 Samuel 25:3 | Nabal; Calebite | Nabal; Calebita |  |
+| 1 Samuel 25:44 | Gallim | Galim |  |
+| 1 Samuel 26:6 | Abishai; Zeruiah | Abisai; Zeruia |  |
+| 1 Samuel 27:2 | Maoch | Maoc |  |
+| 1 Samuel 27:8 | Girzites | mga Gizrita |  |
+| 1 Samuel 27:10 | Jerahmeelites | mga Jerameelita |  |
+| 1 Samuel 28:4 | Gilboa | Gilboa |  |
+| 1 Samuel 28:7 | medium (woman who has a spirit) | L *babaeng may-ari ng espiritu*; B *babaeng nakikipag-usap sa patay*; R *babaeng nakatatawag ng mga espiritu ng patay* |  |
+| 1 Samuel 28:7 | Endor | Endor |  |
+| 1 Samuel 30:9 | Brook Besor | Batis ng Besor |  |
+| 1 Samuel 30:27 | Jattir | Jatir | as Joshua |
+| 1 Samuel 30:28 | Siphmoth; Eshtemoa | Sifmot; Estemoa | Estemoa as Joshua |
+| 1 Samuel 30:29 | Racal | Racal |  |
+| 1 Samuel 30:30 | Bor-ashan; Athach | Bor-ashan; Atac |  |
+| 1 Samuel 31:10 | Beth-shan | Bet-shan | the English keeps Beth-shan here, apart from Beth-shean |
