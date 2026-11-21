@@ -895,3 +895,252 @@ names the book where the form was first used.
 | Leviticus 27:3 | sanctuary shekel; gerah | *siklo ng santuwaryo*; *gera* | R: *opisyal na siklong ginagamit sa Toldang Sambahan*. |
 | Leviticus 27:16 | homer | *homer* | Under `units` at B and R: *mga 200 litro*. |
 | Leviticus 27:28 | devoted thing (*kherem*) | *itinalagang bagay* (L), *lubos na itinalaga* (B, R) | Of a person under judgment: *itinalaga sa pagkawasak*. |
+| Numbers 6:2 | Nazirite; Nazirite vow | *Nazareo*; *panata ng Nazareo* |  |
+| Numbers 1:5 | Elizur | Elizur |  |
+| Numbers 1:5 | Shedeur | Shedeur |  |
+| Numbers 1:6 | Shelumiel | Shelumiel |  |
+| Numbers 1:6 | Zurishaddai | Zurishaddai |  |
+| Numbers 1:8 | Nethanel | Netanel | th > t (style §6, rule 4) |
+| Numbers 1:8 | Zuar | Zuar |  |
+| Numbers 1:9 | Eliab | Eliab |  |
+| Numbers 1:9 | Helon | Helon |  |
+| Numbers 1:10 | Elishama | Elishama |  |
+| Numbers 1:10 | Ammihud | Amihud |  |
+| Numbers 1:10 | Pedahzur | Pedazur |  |
+| Numbers 1:11 | Abidan | Abidan |  |
+| Numbers 1:11 | Gideoni | Gideoni |  |
+| Numbers 1:12 | Ahiezer | Ahiezer |  |
+| Numbers 1:12 | Ammishaddai | Amishaddai |  |
+| Numbers 1:13 | Pagiel | Pagiel |  |
+| Numbers 1:13 | Ochran | Okran | ch > k (style §6, rule 4) |
+| Numbers 1:14 | Eliasaph | Eliasaf | ph > f (style §6, rule 4) |
+| Numbers 1:14 | Deuel | Deuel |  |
+| Numbers 1:15 | Ahira | Ahira |  |
+| Numbers 1:15 | Enan | Enan |  |
+| Numbers 3:21 | Libnites | Libnita | people name in -ita |
+| Numbers 3:21 | Shimeites | Shimeita | people name in -ita |
+| Numbers 3:24 | Lael | Lael |  |
+| Numbers 3:30 | Elizaphan | Elisafan | ph > f (style §6, rule 4) |
+| Numbers 3:33 | Mushites | Mushita | people name in -ita |
+| Numbers 3:33 | Merarite | Merarita |  |
+| Numbers 3:35 | Zuriel | Zuriel |  |
+| Numbers 3:35 | Abihail | Abihail |  |
+| Numbers 10:29 | Hobab | Hobab |  |
+| Numbers 11:3 | Taberah | Tabera | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 11:26 | Eldad | Eldad |  |
+| Numbers 11:26 | Medad | Medad |  |
+| Numbers 11:34 | Kibroth-hattaavah | Kibrot-hataava | th > t (style §6, rule 4) |
+| Numbers 11:35 | Hazeroth | Hazerot | th > t (style §6, rule 4) |
+| Numbers 13:4 | Shammua | Shammua |  |
+| Numbers 13:4 | Zaccur | Zakur |  |
+| Numbers 13:5 | Shaphat | Shafat | ph > f (style §6, rule 4) |
+| Numbers 13:6 | Jephunneh | Jefune | ph > f (style §6, rule 4) |
+| Numbers 13:7 | Igal | Igal |  |
+| Numbers 13:8 | Hoshea | Hoshea |  |
+| Numbers 13:9 | Palti | Palti |  |
+| Numbers 13:9 | Raphu | Rafu | ph > f (style §6, rule 4) |
+| Numbers 13:10 | Gaddiel | Gadiel |  |
+| Numbers 13:10 | Sodi | Sodi |  |
+| Numbers 13:11 | Gaddi | Gadi |  |
+| Numbers 13:11 | Susi | Susi |  |
+| Numbers 13:12 | Ammiel | Amiel |  |
+| Numbers 13:12 | Gemalli | Gemali |  |
+| Numbers 13:13 | Sethur | Setur | th > t (style §6, rule 4) |
+| Numbers 13:13 | Michael | Mikael | ch > k (style §6, rule 4) |
+| Numbers 13:14 | Nahbi | Nahbi |  |
+| Numbers 13:14 | Vophsi | Vofsi | ph > f (style §6, rule 4) |
+| Numbers 13:15 | Geuel | Geuel |  |
+| Numbers 13:15 | Machi | Maki | ch > k (style §6, rule 4) |
+| Numbers 13:21 | Zin | Zin |  |
+| Numbers 13:21 | Rehob | Rehob |  |
+| Numbers 13:21 | Lebo-hamath | Lebo-hamat | th > t (style §6, rule 4) |
+| Numbers 13:22 | Ahiman | Ahiman |  |
+| Numbers 13:22 | Sheshai | Sheshai |  |
+| Numbers 13:22 | Talmai | Talmai |  |
+| Numbers 13:22 | Zoan | Zoan |  |
+| Numbers 14:45 | Hormah | Horma | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 16:1 | Dathan | Datan | th > t (style §6, rule 4) |
+| Numbers 16:1 | Abiram | Abiram |  |
+| Numbers 16:1 | Peleth | Pelet | th > t (style §6, rule 4) |
+| Numbers 20:22 | Hor | Hor |  |
+| Numbers 21:1 | Arad | Arad |  |
+| Numbers 21:1 | Atharim | Atarim | th > t (style §6, rule 4) |
+| Numbers 21:10 | Oboth | Obot | th > t (style §6, rule 4) |
+| Numbers 21:11 | Iye-abarim | Iye-abarim |  |
+| Numbers 21:12 | Zered | Zered |  |
+| Numbers 21:13 | Arnon | Arnon |  |
+| Numbers 21:14 | Waheb | Waheb |  |
+| Numbers 21:14 | Suphah | Sufa | ph > f (style §6, rule 4) |
+| Numbers 21:15 | Ar | Ar |  |
+| Numbers 21:18 | Mattanah | Matana | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 21:19 | Nahaliel | Nahaliel |  |
+| Numbers 21:19 | Bamoth | Bamot | th > t (style §6, rule 4) |
+| Numbers 21:20 | Pisgah | Pisga | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 21:20 | Jeshimon | Jeshimon |  |
+| Numbers 21:21 | Sihon | Sihon |  |
+| Numbers 21:23 | Jahaz | Jahaz |  |
+| Numbers 21:25 | Heshbon | Heshbon |  |
+| Numbers 21:29 | Chemosh | Kemosh | ch > k (style §6, rule 4) |
+| Numbers 21:30 | Dibon | Dibon |  |
+| Numbers 21:30 | Nophah | Nofa | ph > f (style §6, rule 4) |
+| Numbers 21:30 | Medeba | Medeba |  |
+| Numbers 21:32 | Jazer | Jazer |  |
+| Numbers 21:33 | Og | Og |  |
+| Numbers 21:33 | Edrei | Edrei |  |
+| Numbers 22:2 | Zippor | Zipor |  |
+| Numbers 22:5 | Pethor | Petor | th > t (style §6, rule 4) |
+| Numbers 22:39 | Kiriath-huzoth | Kiriat-huzot | th > t (style §6, rule 4) |
+| Numbers 22:41 | Bamoth-baal | Bamot-baal | th > t (style §6, rule 4) |
+| Numbers 23:14 | Zophim | Zofim | ph > f (style §6, rule 4) |
+| Numbers 23:28 | Peor | Peor |  |
+| Numbers 24:7 | Agag | Agag |  |
+| Numbers 24:22 | Kain | Kain |  |
+| Numbers 25:1 | Shittim | Sitim | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 25:14 | Zimri | Zimri |  |
+| Numbers 25:14 | Salu | Salu |  |
+| Numbers 25:15 | Cozbi | Cozbi |  |
+| Numbers 25:15 | Zur | Zur |  |
+| Numbers 26:9 | Nemuel | Nemuel |  |
+| Numbers 26:15 | Zephon | Zefon | ph > f (style §6, rule 4) |
+| Numbers 26:15 | Haggites | Haggita | people name in -ita |
+| Numbers 26:15 | Shunites | Shunita | people name in -ita |
+| Numbers 26:16 | Ozni | Ozni |  |
+| Numbers 26:16 | Oznites | Oznita | people name in -ita |
+| Numbers 26:17 | Arod | Arod |  |
+| Numbers 26:17 | Arelites | Arelita | people name in -ita |
+| Numbers 26:20 | Shelanites | Shelanita | people name in -ita |
+| Numbers 26:23 | Punites | Punita | people name in -ita |
+| Numbers 26:24 | Jashub | Jashub |  |
+| Numbers 26:30 | Iezer | Iezer |  |
+| Numbers 26:30 | Helek | Helek |  |
+| Numbers 26:31 | Asriel | Asriel |  |
+| Numbers 26:32 | Shemida | Shemida |  |
+| Numbers 26:32 | Hepher | Hefer | ph > f (style §6, rule 4) |
+| Numbers 26:33 | Zelophehad | Zelofehad | ph > f (style §6, rule 4) |
+| Numbers 26:33 | Mahlah | Mahlah |  |
+| Numbers 26:33 | Noah | Noa | daughter of Zelophehad; not *Noe* (Noah of Genesis) |
+| Numbers 26:33 | Hoglah | Hoglah |  |
+| Numbers 26:33 | Tirzah | Tirza | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 26:35 | Shuthelah | Shutelah | th > t (style §6, rule 4) |
+| Numbers 26:35 | Tahan | Tahan |  |
+| Numbers 26:36 | Eran | Eran |  |
+| Numbers 26:38 | Ahiram | Ahiram |  |
+| Numbers 26:39 | Shephupham | Shefufam | ph > f (style §6, rule 4) |
+| Numbers 26:39 | Shuphamites | Shufamita | ph > f (style §6, rule 4) |
+| Numbers 26:39 | Hupham | Hufam | ph > f (style §6, rule 4) |
+| Numbers 26:40 | Naamites | Naamita | people name in -ita |
+| Numbers 26:42 | Shuham | Shuham |  |
+| Numbers 26:44 | Imnites | Imnita | people name in -ita |
+| Numbers 26:44 | Ishvites | Ishvita | people name in -ita |
+| Numbers 26:44 | Beriites | Beriita | people name in -ita |
+| Numbers 26:48 | Gunites | Gunita | people name in -ita |
+| Numbers 26:58 | Mahlites | Mahlita | people name in -ita |
+| Numbers 27:12 | Abarim | Abarim |  |
+| Numbers 31:8 | Evi | Evi |  |
+| Numbers 31:8 | Rekem | Rekem |  |
+| Numbers 31:8 | Reba | Reba |  |
+| Numbers 32:3 | Ataroth | Atarot | th > t (style §6, rule 4) |
+| Numbers 32:3 | Nimrah | Nimrah |  |
+| Numbers 32:3 | Elealeh | Eleale |  |
+| Numbers 32:3 | Sebam | Sebam |  |
+| Numbers 32:3 | Nebo | Nebo |  |
+| Numbers 32:3 | Beon | Beon |  |
+| Numbers 32:8 | Kadesh-barnea | Kadesh-barnea |  |
+| Numbers 32:34 | Aroer | Aroer |  |
+| Numbers 32:35 | Atroth-shophan | Atrot-shofan | ph > f (style §6, rule 4) |
+| Numbers 32:35 | Jogbehah | Jogbehah |  |
+| Numbers 32:36 | Beth-nimrah | Bet-nimrah | th > t (style §6, rule 4) |
+| Numbers 32:36 | Beth-haran | Bet-haran | th > t (style §6, rule 4) |
+| Numbers 32:37 | Kiriathaim | Kiriataim | th > t (style §6, rule 4) |
+| Numbers 32:38 | Baal-meon | Baal-meon |  |
+| Numbers 32:38 | Sibmah | Sibmah |  |
+| Numbers 32:41 | Jair | Jair |  |
+| Numbers 32:41 | Havvoth-jair | Havot-jair | th > t (style §6, rule 4) |
+| Numbers 32:42 | Nobah | Nobah |  |
+| Numbers 32:42 | Kenath | Kenat | th > t (style §6, rule 4) |
+| Numbers 33:8 | Hahiroth | Hahirot | th > t (style §6, rule 4) |
+| Numbers 33:12 | Dophkah | Dofkah | ph > f (style §6, rule 4) |
+| Numbers 33:13 | Alush | Alush |  |
+| Numbers 33:18 | Rithmah | Ritmah | th > t (style §6, rule 4) |
+| Numbers 33:19 | Rimmon-perez | Rimon-perez |  |
+| Numbers 33:20 | Libnah | Libnah |  |
+| Numbers 33:21 | Rissah | Rissah |  |
+| Numbers 33:22 | Kehelathah | Kehelatah | th > t (style §6, rule 4) |
+| Numbers 33:23 | Shepher | Shefer | ph > f (style §6, rule 4) |
+| Numbers 33:24 | Haradah | Haradah |  |
+| Numbers 33:25 | Makheloth | Makhelot | th > t (style §6, rule 4) |
+| Numbers 33:26 | Tahath | Tahat | th > t (style §6, rule 4) |
+| Numbers 33:28 | Mithkah | Mitkah | th > t (style §6, rule 4) |
+| Numbers 33:29 | Hashmonah | Hashmonah |  |
+| Numbers 33:30 | Moseroth | Moserot | th > t (style §6, rule 4) |
+| Numbers 33:31 | Bene-jaakan | Bene-jaakan |  |
+| Numbers 33:32 | Hor-haggidgad | Hor-hagidgad |  |
+| Numbers 33:33 | Jotbathah | Jotbatah | th > t (style §6, rule 4) |
+| Numbers 33:34 | Abronah | Abronah |  |
+| Numbers 33:35 | Ezion-geber | Ezion-geber |  |
+| Numbers 33:41 | Zalmonah | Zalmonah |  |
+| Numbers 33:42 | Punon | Punon |  |
+| Numbers 33:45 | Iyim | Iyim |  |
+| Numbers 33:45 | Dibon-gad | Dibon-gad |  |
+| Numbers 33:46 | Almon-diblathaim | Almon-diblataim | th > t (style §6, rule 4) |
+| Numbers 33:49 | Beth-jeshimoth | Bet-jeshimot | th > t (style §6, rule 4) |
+| Numbers 33:49 | Abel-shittim | Abel-sitim | common Tagalog church form without final -h (rule 1); reviewer to confirm |
+| Numbers 34:4 | Akrabbim | Akrabim |  |
+| Numbers 34:4 | Hazar-addar | Hazar-adar |  |
+| Numbers 34:4 | Azmon | Azmon |  |
+| Numbers 34:5 | Brook (Wadi) of Egypt | *batis ng Egipto* (L), *Wadi ng Egipto* (B, R) | R explains it as a stream dry most of the year |
+| Numbers 34:8 | Zedad | Zedad |  |
+| Numbers 34:9 | Ziphron | Zifron | ph > f (style §6, rule 4) |
+| Numbers 34:9 | Hazar-enan | Hazar-enan |  |
+| Numbers 34:10 | Shepham | Shefam | ph > f (style §6, rule 4) |
+| Numbers 34:11 | Riblah | Riblah |  |
+| Numbers 34:11 | Ain | Ain |  |
+| Numbers 34:11 | Chinnereth | Kineret | th > t (style §6, rule 4) |
+| Numbers 34:20 | Shemuel | Shemuel |  |
+| Numbers 34:21 | Elidad | Elidad |  |
+| Numbers 34:21 | Chislon | Kislon | ch > k (style §6, rule 4) |
+| Numbers 34:22 | Bukki | Bukki |  |
+| Numbers 34:22 | Jogli | Jogli |  |
+| Numbers 34:23 | Hanniel | Haniel |  |
+| Numbers 34:23 | Ephod | Efod | ph > f (style §6, rule 4) |
+| Numbers 34:24 | Shiphtan | Shiftan | ph > f (style §6, rule 4) |
+| Numbers 34:25 | Parnach | Parnak | ch > k (style §6, rule 4) |
+| Numbers 34:26 | Paltiel | Paltiel |  |
+| Numbers 34:26 | Azzan | Azan |  |
+| Numbers 34:27 | Ahihud | Ahihud |  |
+| Numbers 34:27 | Shelomi | Shelomi |  |
+| Numbers 34:28 | Pedahel | Pedahel |  |
+| Numbers 26:31 | Shechemites | Siquemita | from *Siquem* |
+| Numbers 12:1 | Cushite | Cushita | people name in -ita |
+| Deuteronomy 1:1 | Arabah | Araba |  |
+| Deuteronomy 1:1 | Tophel | Tofel | ph > f |
+| Deuteronomy 1:1 | Dizahab | Di-zahab |  |
+| Deuteronomy 1:4 | Ashtaroth | Ashtarot | th > t |
+| Deuteronomy 1:7 | Shephelah (lowland) | Shefelah | ph > f |
+| Deuteronomy 1:28 | Anakim | Anakita | people name in -ita |
+| Deuteronomy 2:8 | Elath | Elat | th > t |
+| Deuteronomy 2:20 | Zamzummim | Zamzumita | people name in -ita |
+| Deuteronomy 2:23 | Avvim | Avita | people name in -ita |
+| Deuteronomy 2:26 | Kedemoth | Kedemot | th > t |
+| Deuteronomy 3:4 | Argob | Argob |  |
+| Deuteronomy 3:8 | Hermon | Hermon |  |
+| Deuteronomy 3:9 | Sidonians | Sidonio |  |
+| Deuteronomy 3:9 | Sirion; Senir | Sirion; Senir |  |
+| Deuteronomy 3:10 | Salecah | Saleca |  |
+| Deuteronomy 3:11 | Rabbah | Rabba |  |
+| Deuteronomy 3:14 | Geshurites; Maacathites | Geshurita; Maacatita |  |
+| Deuteronomy 3:29 | Beth-peor | Bet-peor | th > t |
+| Deuteronomy 4:3 | Baal-peor | Baal-peor |  |
+| Deuteronomy 4:43 | Bezer; Ramoth; Golan | Bezer; Ramot; Golan |  |
+| Deuteronomy 4:43 | Manassites | Manasita |  |
+| Deuteronomy 4:48 | Sion (Hermon) | Siyon | kept apart from *Sion* (Zion) |
+| Deuteronomy 10:6 | Beeroth Bene-jaakan | Beerot Bene-jaakan |  |
+| Deuteronomy 10:6 | Moserah | Moserah |  |
+| Deuteronomy 10:7 | Gudgodah | Gudgodah |  |
+| Deuteronomy 11:24 | the western sea | *dagat sa kanluran* (L, B), *Dagat Mediteraneo* (R) |  |
+| Deuteronomy 11:29 | Gerizim | Gerizim |  |
+| Deuteronomy 27:4 | Ebal | Ebal |  |
+| Deuteronomy 32:4 | the Rock (God) | *Bato* (L, B), *matibay na kanlungan* (R) |  |
+| Deuteronomy 32:15 | Jeshurun | Jesurun |  |
+| Deuteronomy 32:22 | Sheol | Sheol (L, B), *daigdig ng mga patay* (R) |  |
+| Deuteronomy 33:8 | Thummim and Urim | Tumim at Urim | order as in the Hebrew of this verse |

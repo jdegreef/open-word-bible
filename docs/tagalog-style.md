@@ -327,6 +327,15 @@ through a book so a scene does not change relationship from verse to verse.
   of John 1:14 and 1 John 1:1 are *kami*; Paul with his readers is *tayo*;
   Paul and his companions *kami*; a people praying to God is *kami*.
   Where the choice is not obvious, record it in a decision.
+- **Israel addressed as "you" singular** (Deuteronomy above all): Literal
+  follows the Hebrew number, singular *ikaw*, *mo*, *iyo* where the Hebrew
+  is singular. Balanced and Readable use *kayo*, *ninyo* for the assembly,
+  since a Tagalog speaker addressing a crowd says *kayo*. Keep the singular
+  at every level where the singular is the point: the Ten Words, the
+  Shema, the father answering his son (Deut 6:20-25), the one who entices
+  "you" in secret (Deut 13:7-12), each worshipper's rite (Deut 26:1-15),
+  the Song of Moses (Deut 32), and words to one person (Joshua, Moses).
+  Record the choice in the first verse of a chapter that switches.
 - **Dual** *kita* ("you and I") is standard; use it where two people speak
   to each other (Ruth 1:16 context), never as a plural.
 
