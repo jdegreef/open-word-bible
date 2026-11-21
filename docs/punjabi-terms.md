@@ -592,3 +592,19 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Flesh ਸਰੀਰ throughout chapter 4; brotherhood (5:9)
   {{gender:ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ ਦੇ ਪਰਿਵਾਰ|ਭਾਈਚਾਰੇ}} (L).
 - Wives (3:1-6) take feminine verbs (ਕਰਦੀਆਂ ਹੋ).
+
+### 1 Timothy
+
+- Names: ਤਿਮੋਥਿਉਸ, ਅਫ਼ਸੁਸ, ਮਕਦੂਨਿਯਾ, ਹੁਮਿਨਾਯੁਸ, ਸਿਕੰਦਰ, ਆਦਮ,
+  ਹੱਵਾਹ, ਪੁੰਤਿਯੁਸ ਪਿਲਾਤੁਸ. Paul says ਤੂੰ to Timothy; the closing
+  greeting (6:21) is plural.
+- Overseer ਨਿਗਰਾਨ (L, B), ਕਲੀਸਿਯਾ ਦਾ ਆਗੂ (R); deacons ਸੇਵਕ (L),
+  ਕਲੀਸਿਯਾ ਦੇ ਸੇਵਕ (B, R); elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B), ਕਲੀਸਿਯਾ ਦੇ
+  ਆਗੂ (R), council of elders ਬਜ਼ੁਰਗਾਂ ਦੀ ਮੰਡਲੀ (L). An older man in 5:1
+  is ਵੱਡੀ ਉਮਰ ਦਾ ਮਰਦ (B), not the office.
+- The trustworthy sayings (1:15, 3:1, 4:9) share one wording per level.
+- Sound teaching ਤੰਦਰੁਸਤ (L), ਖਰੀ (B), ਸੱਚੀ (R), as Titus; in 6:3-4
+  L and B keep the health/sickness contrast (ਰੋਗ).
+- Godliness ਭਗਤੀ; conscience ਜ਼ਮੀਰ; mystery ਭੇਤ; ransom ਛੁਟਕਾਰੇ ਦਾ ਮੁੱਲ;
+  mediator ਵਿਚੋਲਾ; the good fight of faith (6:12) ਕੁਸ਼ਤੀ (L), ਮੁਕਾਬਲਾ (B).
+- 2:11-12 *hēsychia* is ਸ਼ਾਂਤ, not silence, at every level.
