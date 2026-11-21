@@ -736,3 +736,20 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਕਰੀਯੋਥ, ਬਏਰਸ਼ਬਾ, ਗਿਲਗਾਲ, ਹਰਮੋਨ, ਕਲਨੇਹ, ਹਮਾਥ, ਗਥ, ਲੋ-ਦਬਾਰ, ਕਰਨਇਮ,
   ਲਬੋ-ਹਮਾਥ, ਅਮਸਯਾਹ, ਸਿੱਕੂਥ, ਕੀਯੂਨ, ਕਫ਼ਤੋਰ (ਕਰੇਤ at R); the Pleiades and
   Orion ਕਿਰਤੀਆਂ ਅਤੇ ਜਬਾਰ.
+
+### Lamentations
+
+- Chapters 1, 2 and 4 open with ਹਾਏ, ... ਕਿਵੇਂ ...! for eikhah. In chapter 1
+  and 2 Zion speaks as a woman (feminine verbs) and says ਤੂੰ to God; in
+  chapter 3 the speaker is a man (geber ਪੁਰਖ at L and B, masculine verbs);
+  chapter 5 is the people's prayer with ਤੂੰ.
+- Chesed ਅਟੱਲ ਪ੍ਰੇਮ and rachamim ਦਇਆ (3:22, 32); emunah ਸਚਿਆਈ (L),
+  ਵਫ਼ਾਦਾਰੀ (B, R); chelqi ਮੇਰਾ ਹਿੱਸਾ (3:24). 3:6 has the words of Psalm
+  143:3 (ਚਿਰਾਂ ਦੇ ਮੁਰਦਿਆਂ ਵਾਂਗ), which the Psalms should match.
+- The comforter refrain of chapter 1 is ਦਿਲਾਸਾ ਦੇਣ ਵਾਲਾ; wormwood
+  ਨਾਗਦੌਣਾ; bor (3:53, 55) ਟੋਆ; the daughter of my people ਮੇਰੀ ਪਰਜਾ ਦੀ ਧੀ
+  (L), ਮੇਰੀ ਪਿਆਰੀ ਪਰਜਾ (B), ਮੇਰੇ ਲੋਕ (R); daughter Judah, Jerusalem and
+  Edom follow daughter Zion (ਧੀ at L and B, ਲੋਕ at R).
+- Avon in 4:6 and 4:22 is ਬਦੀ at L and ਸਜ਼ਾ at B and R (its punishment
+  sense). The anointed of YHWH (4:20) ਮਸਹ ਕੀਤਾ ਹੋਇਆ.
+- Names: ਸੀਯੋਨ, ਯਹੂਦਾਹ, ਯਾਕੂਬ, ਸਦੂਮ, ਅਦੋਮ, ਊਸ, ਮਿਸਰ, ਅੱਸ਼ੂਰ.
