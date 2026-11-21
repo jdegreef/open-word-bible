@@ -688,7 +688,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   descriptions repeated in 6:5-7 (from 4:1-3), 7:4 (4:5) and 8:3 (2:6).
 - Plants and spices: myrrh ਗੰਧਰਸ, frankincense ਲੋਬਾਨ, nard ਜਟਾਮਾਸੀ,
   henna ਮਹਿੰਦੀ, cedar ਦਿਆਰ, lily ਸੋਸਨ, mandrake ਮੰਡਰਾਕ, nut trees
-  ਅਖਰੋਟ (B, R). Names: ਸ਼ੂਲੰਮੀਤ, ਤਿਰਸਾਹ, ਮਹਨਇਮ, ਹਸ਼ਬੋਨ, ਬਥ-ਰੱਬੀਮ,
+  ਅਖਰੋਟ (B, R). Names: ਸ਼ੂਲੰਮੀਤ, ਤਿਰਸਾਹ, ਮਹਨਇਮ, ਹਸ਼ਬੋਨ, ਬਥ-ਰੱਬੀਮ, ਦੰਮਿਸ਼ਕ,
   ਅੰਮੀ-ਨਾਦੀਬ, ਬਆਲ-ਹਾਮੋਨ.
 - 8:6 *shalhevetyah* is {{divine_name:ਪ੍ਰਭੂ|ਯਾਹ}} ਦੀ ਲਾਟ in L only; B
   and R read it as a superlative. Sheol ਪਤਾਲ (L, B), ਕਬਰ (R).
