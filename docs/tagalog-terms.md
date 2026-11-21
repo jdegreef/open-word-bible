@@ -1223,3 +1223,53 @@ names the book where the form was first used.
 | Joshua 24:12 | hornet | putakti |  |
 | Joshua 24:30 | Mount Gaash | Bundok Gaas |  |
 | Joshua 24:32 | qesitah | kesita | as in Genesis 33:19 |
+| Judges 1:4 | Bezek; Adoni-bezek | Bezek; Adoni-bezek |  |
+| Judges 1:17 | Zephath | Zefat | ph > f, th > t |
+| Judges 2:5 | Bochim | Bokim | ch > k |
+| Judges 3:8 | Cushan-rishathaim | Cushan-rishataim | th > t |
+| Judges 3:15 | Ehud | Ehud |  |
+| Judges 3:26 | Seirah | Seira | final -h dropped; reviewer to confirm |
+| Judges 3:31 | Shamgar son of Anath | Shamgar na anak ni Anat |  |
+| Judges 4:2 | Harosheth-hagoyim | Haroset-hagoyim | th > t |
+| Judges 4:4 | Lappidoth | Lapidot |  |
+| Judges 4:6 | Abinoam; Mount Tabor | Abinoam; Bundok Tabor |  |
+| Judges 4:7 | Kishon | Kishon |  |
+| Judges 4:17 | Jael | Jael |  |
+| Judges 5:23 | Meroz | Meroz |  |
+| Judges 6:11 | Abiezrite; Ophrah | Abiezerita; Ofrah | Ofrah as in Joshua 18:23 |
+| Judges 6:32 | Jerubbaal | Jerubaal |  |
+| Judges 7:1 | En-harod | En-harod |  |
+| Judges 7:10 | Purah | Pura | final -h dropped; reviewer to confirm |
+| Judges 7:22 | Beth-shittah; Zererah; Abel-meholah; Tabbath | Bet-shita; Zerera; Abel-mehola; Tabat | final -h dropped; reviewer to confirm |
+| Judges 7:24 | Beth-barah | Bet-bara |  |
+| Judges 7:25 | Oreb; Zeeb | Oreb; Zeeb |  |
+| Judges 8:5 | Zebah; Zalmunna | Zeba; Zalmuna |  |
+| Judges 8:10 | Karkor | Karkor |  |
+| Judges 8:31 | concubine | asawang-lingkod | R may add "(isang pangalawang asawa)" |
+| Judges 8:33 | Baal-berith | Baal-berit | th > t |
+| Judges 9:6 | Beth-millo | Bet-milo |  |
+| Judges 9:26 | Gaal | Gaal |  |
+| Judges 9:41 | Arumah | Aruma |  |
+| Judges 9:46 | El-berith | El-berit | th > t |
+| Judges 9:50 | Thebez | Tebez | th > t |
+| Judges 10:1 | Shamir | Shamir |  |
+| Judges 10:5 | Kamon | Kamon |  |
+| Judges 10:12 | Maonites | Maonita |  |
+| Judges 11:33 | Minnith; Abel-keramim | Minit; Abel-keramim |  |
+| Judges 12:6 | Shibboleth; Sibboleth | Shibolet; Sibolet | keep the sh / s contrast |
+| Judges 12:8 | Ibzan | Ibzan |  |
+| Judges 12:13 | Abdon; Pirathonite; Pirathon | Abdon; Piratonita; Piraton |  |
+| Judges 13:2 | Manoah | Manoa |  |
+| Judges 13:25 | Mahaneh-dan | Mahane-dan |  |
+| Judges 15:9 | Lehi | Lehi |  |
+| Judges 15:17 | Ramath-lehi | Ramat-lehi |  |
+| Judges 15:19 | En-hakkore | En-hakkore |  |
+| Judges 16:4 | Valley of Sorek | Libis ng Sorek |  |
+| Judges 16:23 | Dagon | Dagon |  |
+| Judges 18:7 | Laish | Laish |  |
+| Judges 18:28 | Beth-rehob | Bet-rehob |  |
+| Judges 20:33 | Baal-tamar | Baal-tamar |  |
+| Judges 20:43 | Menuhah | Menuha |  |
+| Judges 20:45 | Gidom | Gidom |  |
+| Judges 21:8 | Jabesh-gilead | Jabes-gilead |  |
+| Judges 21:19 | Lebonah | Lebona |  |
