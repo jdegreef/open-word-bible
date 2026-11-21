@@ -95,6 +95,8 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe("V-2AAI-3S", "tl"),
                          "Pandiwa · ikalawang aoristo, indikatibo, aktibo · ikatlong panauhan isahan")
         self.assertEqual(morph.describe("N-DSF", "tl"), "Pangngalan · datibo, isahan, pambabae")
+        self.assertEqual(morph.describe("V-2AAI-3S", "fa"), "فعل · آئوریست دوم، اخباری، معلوم · سوم شخص مفرد")
+        self.assertEqual(morph.describe("N-DSF", "fa"), "اسم · داتیو، مفرد، مؤنث")
         self.assertEqual(morph.describe("V-2AAI-3S", "pa"),
                          "ਕਿਰਿਆ · ਦੂਜਾ ਏਓਰਿਸਟ (ਆਮ ਭੂਤ), ਨਿਸ਼ਚੇਵਾਚਕ, ਕਰਤਰੀ ਵਾਚ · ਅਨਯ ਪੁਰਖ, ਇੱਕ-ਵਚਨ")
         self.assertEqual(morph.describe("N-DSF", "pa"), "ਨਾਂਵ · ਸੰਪ੍ਰਦਾਨ ਕਾਰਕ, ਇੱਕ-ਵਚਨ, ਇਸਤਰੀ ਲਿੰਗ")
@@ -147,6 +149,8 @@ class MorphTest(unittest.TestCase):
                          "فعل · Qal · السرد الماضي (wayyiqtol) · الغائب مذكّر مفرد")
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "tl"),
                          "Pandiwa · Qal · salaysay ng nakaraan (wayyiqtol) · ikatlong panauhan panlalaki isahan")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "fa"),
+                         "فعل · Qal · ماضی روایی (wayyiqtol) · سوم شخص مذکر مفرد")
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "pa"),
                          "ਕਿਰਿਆ · Qal · ਬੀਤੇ ਦਾ ਬਿਰਤਾਂਤ (ਵੱਯਿਕਤੋਲ) · ਅਨਯ ਪੁਰਖ ਪੁਲਿੰਗ ਇੱਕ-ਵਚਨ")
         # Aramaic stems share letters with Hebrew ones but not names.

@@ -64,12 +64,14 @@ BUDGETS = {
     # any Chinese text is drafted; +150 MB on 2026-11-20 for Arabic as the
     # fifteenth, its folder about as big as Chinese's before any Arabic text
     # is drafted, with room for its first books; +150 MB the same day for
-    # Tagalog as the sixteenth, its folder about 95 MB before its first books;
-    # +200 MB on 2026-11-21 for Punjabi (Gurmukhi), its folder about as big
-    # as Hindi's before its first books, with room for Ruth and the next].
+    # Tagalog as the sixteenth, its folder about 95 MB before its first
+    # books; +180 MB the same day for Persian as the seventeenth (CI measured 3,752 MB with Persian and
+    # without Arabic, so its folder is about 175 MB before any Persian text);
+    # +200 MB on 2026-11-21 for Punjabi (Gurmukhi) as the eighteenth, its folder
+    # about as big as Hindi's before its first books, with room for Ruth].
     # Grows with each book translated and each language added. Languages
     # added at the same time each add their own increment.
-    "site_total": 4200 * MB,
+    "site_total": 4380 * MB,
 }
 
 
