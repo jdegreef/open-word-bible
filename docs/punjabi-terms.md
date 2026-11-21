@@ -921,3 +921,37 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   (Jeremiah 9:24, also 1 Corinthians 1:31), 13:1 (Deuteronomy 19:15). The
   closing blessing 13:13 is ਪ੍ਰਭੂ ਯਿਸੂ ਮਸੀਹ ਦੀ ਕਿਰਪਾ ਅਤੇ ਪਰਮੇਸ਼ੁਰ ਦਾ ਪਿਆਰ ਅਤੇ
   ਪਵਿੱਤਰ ਆਤਮਾ ਦੀ ਸਾਂਝ (L); the holy kiss ਪਵਿੱਤਰ ਚੁੰਮਾ, as 1 Thessalonians.
+
+### Ecclesiastes
+
+- Qoheleth ਕੋਹਲਥ (L), ਉਪਦੇਸ਼ਕ (B, R), with no quotation marks around the
+  narrator's asides (1:2, 7:27, 12:8).
+- *Hevel* is ਸਾਹ (breath) at every level, never ਵਿਅਰਥ, so the image the book
+  builds stays visible. The motto: ਸਾਹਾਂ ਦਾ ਸਾਹ (L), ਸਾਹ ਉੱਤੇ ਸਾਹ (B), ਕੁਝ ਵੀ
+  ਨਹੀਂ ਟਿਕਦਾ! ... ਸਭ ਕੁਝ ਇੱਕ ਸਾਹ ਵਾਂਗ ਲੰਘ ਜਾਂਦਾ ਹੈ (R), the same in 1:2 and
+  12:8. Readable unfolds it where the sense is narrower: ਜਿਹੜਾ ਟਿਕਦਾ ਨਹੀਂ,
+  ਜਿਸ ਦੀ ਕੋਈ ਸਮਝ ਨਹੀਂ ਆਉਂਦੀ, ਜਿਸ ਨੂੰ ਕੋਈ ਫੜ ਨਹੀਂ ਸਕਦਾ. *Ruach* (spirit,
+  breath of life) is ਆਤਮਾ (3:19-21, 12:7), and ਸਾਹ is kept for *hevel*
+  except "breath of life" in 11:5.
+- Refrains: under the sun ਸੂਰਜ ਦੇ ਹੇਠਾਂ (L, B; R often ਇਸ ਧਰਤੀ ਉੱਤੇ / ਇਸ
+  ਦੁਨੀਆਂ ਵਿੱਚ); under the heavens ਅਕਾਸ਼ ਦੇ ਹੇਠਾਂ; chasing wind ਹਵਾ ਦਾ ਪਿੱਛਾ
+  (L), ਹਵਾ ਦੇ ਪਿੱਛੇ ਭੱਜਣਾ (B), ਹਵਾ ਨੂੰ ਫੜਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਵਰਗਾ (R); toil
+  (*'amal*) ਮਿਹਨਤ, ਸਖ਼ਤ ਮਿਹਨਤ (B, R); gain (*yitron*) ਲਾਭ; portion (*cheleq*)
+  ਭਾਗ (L), ਹਿੱਸਾ (B), ਜੀਵਨ ਉਨ੍ਹਾਂ ਨੂੰ ਇਹੋ ਦਿੰਦਾ ਹੈ (R); fate (*miqreh*) ਹੋਣੀ;
+  an "evil" that befalls ਬਦਕਿਸਮਤੀ / ਦੁਖਦਾਈ (B), ਦੁੱਖ ਦੀ ਗੱਲ (R).
+- Fear God ਪਰਮੇਸ਼ੁਰ ਦਾ ਭੈ ਮੰਨਣਾ (L, B), ਆਦਰ ਅਤੇ ਭੈ ਨਾਲ ਪਰਮੇਸ਼ੁਰ ਦਾ ਮਾਣ
+  ਕਰਨਾ (R), as Hindi. Eternity in the heart (3:11) ਸਦੀਪਕਤਾ (L), ਸਦੀਪਕਤਾ ਦੀ
+  ਸੋਝੀ (B), ਉਸ ਚੀਜ਼ ਦੀ ਤਾਂਘ ... ਜਿਹੜੀ ਸਦਾ ਰਹਿੰਦੀ ਹੈ (R). Creator (12:1)
+  ਰਚਣ ਵਾਲਾ (L), ਸਿਰਜਣਹਾਰ (B).
+- Vows (5:3-4) ਸੁੱਖਣਾ ਸੁੱਖਣਾ (L, B), ਪੱਕਾ ਪ੍ਰਣ (R); the messenger (5:5)
+  ਦੂਤ, ਹੈਕਲ ਦਾ ਦੂਤ (R). Sheol (9:10) ਪਤਾਲ (L, B), ਕਬਰ (R). Heaven ਸਵਰਗ.
+- Address: the Teacher says ਤੂੰ to the one he instructs (4:17 to 12:12),
+  ਹੇ ਜੁਆਨ (11:9), ਹੇ ਮੇਰੇ ਪੁੱਤਰ (12:12); the land is ਤੂੰ (10:16-17); a
+  subject says ਤੁਸੀਂ to the king (8:4). 1:18 R uses the general ਤੁਸੀਂ.
+- 4:17 keeps the Hebrew numbering (English 5:1).
+- Spans match Hindi (10 gender, no others), all
+  `{{gender:ਮਨੁੱਖਾਂ ਦੀ ਸੰਤਾਨ|ਮਨੁੱਖਾਂ ਦੇ ਪੁੱਤਰਾਂ}}` for "children of
+  humankind" at L (9:12 nominative ਪੁੱਤਰ). ਮਨੁੱਖ alone takes no span.
+- The poem of 12:1-7 keeps its images (keepers, grinders, almond tree,
+  grasshopper, caper-berry ਕਬਰ ਦਾ ਫਲ, silver cord, golden bowl, wheel at the
+  well) with no explanation added at L and B.
