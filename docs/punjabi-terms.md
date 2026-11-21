@@ -632,3 +632,22 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਵੈਰਨ; prayers to God (6:9, 7:14-20) say ਤੂੰ.
 - Our fathers (7:20) {{gender:ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ}}; ਹਰ ਕੋਈ, ਮਨੁੱਖ and
   ਹੇ ਮਨੁੱਖ (4:4, 6:8, 7:6) take no gender span.
+
+### 1 John
+
+- Remain (*menō*) ਟਿਕੇ ਰਹਿਣਾ throughout; truth ਸਚਾਈ (L, B), ਸੱਚ (R);
+  light ਚਾਨਣ (L, B), ਰੋਸ਼ਨੀ (R); eternal life ਸਦੀਪਕ ਜੀਵਨ (L, B), ਸਦਾ ਦਾ
+  ਜੀਵਨ (R); fellowship ਸਾਂਝ (L, B), ਸਾਂਝਾ ਜੀਵਨ (R).
+- Advocate ਸਹਾਇਕ; atoning sacrifice (*hilasmos*, 2:2, 4:10) ਪ੍ਰਾਸਚਿਤ;
+  anointing ਮਸਹ; antichrist ਮਸੀਹ-ਵਿਰੋਧੀ; lawlessness ਕੁਨੇਮ; wrongdoing
+  (*adikia*, 5:17) ਕੁਧਰਮ (L); confess ਇਕਰਾਰ ਕਰਨਾ; overcome (*nikaō*)
+  ਜਿੱਤ ਪਾਉਣਾ.
+- Beloved ਹੇ ਪਿਆਰਿਓ (L), ਪਿਆਰੇ ਮਿੱਤਰੋ (B, R); *teknia* ਹੇ (ਮੇਰੇ) ਬੱਚਿਓ
+  (L), (ਮੇਰੇ) ਪਿਆਰੇ ਬੱਚਿਓ (B, R); *paidia* ਬਾਲਕੋ (L).
+- Brother {{gender:ਭਰਾ ਜਾਂ ਭੈਣ|ਭਰਾ}} (L, B), ਸਾਥੀ ਵਿਸ਼ਵਾਸੀ (R). Spirits
+  take feminine agreement (4:1-6); the Spirit of God takes the honorific
+  masculine.
+- God is love (4:8, 16) ਪਰਮੇਸ਼ੁਰ ਪਿਆਰ ਹਨ, keeping the honorific. The one
+  born of God who keeps the believer (5:18) is the Son and takes the
+  honorific. 5:20 *houtos* ਇਹੀ.
+- 2 John and 3 John should follow these words.
