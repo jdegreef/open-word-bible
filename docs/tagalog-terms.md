@@ -1415,3 +1415,71 @@ names the book where the form was first used.
 | 2 Samuel 24:6 | Tahtim-hodshi; Dan-jaan | Tahtim-hodsi; Dan-jaan |  |
 | 2 Samuel 24:16 | Araunah | Arauna | final -h dropped, for the reviewer |
 | 2 Samuel 24:22 | threshing sledge | *panggiik* |  |
+| 1 Kings 1:3 | Abishag the Shunammite | Abisag na Sunamita |  |
+| 1 Kings 1:8 | Rei | Rei |  |
+| 1 Kings 1:9 | Stone of Zoheleth | Bato ng Zohelet | th > t |
+| 1 Kings 4:3 | Elihoreph; Shisha | Elihoref; Sisa | ph > f |
+| 1 Kings 4:5 | Zabud | Zabud |  |
+| 1 Kings 4:6 | Ahishar; Adoniram; Abda | Ahisar; Adoniram; Abda |  |
+| 1 Kings 4:8 | Ben-hur | Ben-hur |  |
+| 1 Kings 4:9 | Ben-deker; Makaz; Elon-beth-hanan | Ben-deker; Makaz; Elon-bet-hanan |  |
+| 1 Kings 4:10 | Ben-hesed; Arubboth | Ben-hesed; Arubot |  |
+| 1 Kings 4:11 | Ben-abinadab; Taphath | Ben-abinadab; Tafat |  |
+| 1 Kings 4:12 | Jokmeam | Jokmeam |  |
+| 1 Kings 4:13 | Ben-geber | Ben-geber |  |
+| 1 Kings 4:14 | Ahinadab; Iddo | Ahinadab; Iddo |  |
+| 1 Kings 4:17 | Paruah | Parua | final -h dropped, for the reviewer |
+| 1 Kings 4:19 | Geber | Geber |  |
+| 1 Kings 5:4 | Tiphsah | Tifsa | final -h dropped, for the reviewer |
+| 1 Kings 5:11 | Ethan the Ezrahite; Heman; Calcol; Darda; Mahol | Etan na Ezrahita; Heman; Calcol; Darda; Mahol |  |
+| 1 Kings 6:1 | Ziv (month) | Ziv |  |
+| 1 Kings 6:38 | Bul (month) | Bul |  |
+| 1 Kings 7:2 | House of the Forest of Lebanon | Bahay ng Gubat ng Lebanon |  |
+| 1 Kings 8:2 | Ethanim (month) | Etanim |  |
+| 1 Kings 9:16 | dowry | *bigay-kaya* |  |
+| 1 Kings 9:15 | forced labor | *sapilitang paggawa* |  |
+| 1 Kings 10:11 | almug wood | *almug* |  |
+| 1 Kings 10:28 | Kue | Kue |  |
+| 1 Kings 11:5 | Ashtoreth; Milcom | Ashtoret; Milcom |  |
+| 1 Kings 11:19 | Tahpenes | Tahpenes |  |
+| 1 Kings 11:20 | Genubath | Genubat |  |
+| 1 Kings 11:23 | Rezon | Rezon |  |
+| 1 Kings 11:26 | Jeroboam son of Nebat; Zeredah; Zeruah | Jeroboam na anak ni Nebat; Zereda; Zerua | final -h dropped, for the reviewer |
+| 1 Kings 11:29 | Ahijah the Shilonite | Ahias na Silonita |  |
+| 1 Kings 11:40 | Shishak | Sisac |  |
+| 1 Kings 12:22 | Shemaiah | Semaias |  |
+| 1 Kings 12:28 | golden calves | *mga guyang ginto* |  |
+| 1 Kings 14:21 | Naamah the Ammonite | Naamah na Ammonita |  |
+| 1 Kings 14:31 | Abijam | Abiam |  |
+| 1 Kings 15:2 | Maacah daughter of Abishalom | Maacah na anak ni Abisalom |  |
+| 1 Kings 15:13 | queen mother | *inang reyna* |  |
+| 1 Kings 15:16 | Baasha | Baasa |  |
+| 1 Kings 15:18 | Ben-hadad son of Tabrimmon son of Hezion | Ben-hadad na anak ni Tabrimon na anak ni Hezion |  |
+| 1 Kings 15:20 | Ijon; Abel-beth-maacah; Chinneroth | Ijon; Abel-bet-maacah; Kinerot |  |
+| 1 Kings 16:9 | Arza | Arza |  |
+| 1 Kings 16:21 | Tibni son of Ginath | Tibni na anak ni Ginat |  |
+| 1 Kings 16:24 | Shemer | Semer |  |
+| 1 Kings 16:31 | Ethbaal | Etbaal |  |
+| 1 Kings 16:34 | Hiel of Bethel; Segub | Hiel na taga-Betel; Segub |  |
+| 1 Kings 17:1 | Elijah the Tishbite | Elias na Tisbita |  |
+| 1 Kings 17:3 | Wadi Cherith | Batis ng Kerit |  |
+| 1 Kings 17:9 | Zarephath | Zarefat | ph > f |
+| 1 Kings 18:3 | Obadiah | Obadias | Spanish-derived -ias |
+| 1 Kings 18:19 | Mount Carmel; Asherah | Bundok Carmelo; Ashera |  |
+| 1 Kings 18:32 | two seahs | {{units:mga 14 litro\|dalawang seah}} | as other books' seah spans |
+| 1 Kings 18:40 | the wadi Kishon | wadi ng Kison (L); Ilog Kison (B, R) |  |
+| 1 Kings 19:3 | Beersheba; broom tree | Beer-seba; *punong retama* |  |
+| 1 Kings 19:12 | a sound of thin silence | *tunog ng manipis na katahimikan* | not "still small voice" |
+| 1 Kings 19:15 | Hazael | Hazael |  |
+| 1 Kings 19:16 | Jehu son of Nimshi; Abel-meholah; Shaphat | Jehu na anak ni Nimsi; Abel-mehola; Safat |  |
+| 1 Kings 20:26 | Aphek | Afek |  |
+| 1 Kings 20:35 | sons of the prophets | *mga anak ng mga propeta* (L); *samahan ng mga propeta* (B); *pangkat ng mga propeta* (R) |  |
+| 1 Kings 20:39 | a talent of silver | {{units:mga 34 kilong pilak\|isang talentong pilak}} | talent = 34 kg |
+| 1 Kings 21:1 | Naboth the Jezreelite | Nabot na Jezreelita |  |
+| 1 Kings 22:3 | Ramoth-gilead | Ramot-gilead | Gilead as elsewhere; "Ramot sa Gilead" where the Hebrew says "Ramoth in Gilead" |
+| 1 Kings 22:8 | Micaiah son of Imlah | Micaias na anak ni Imla |  |
+| 1 Kings 22:11 | Zedekiah son of Chenaanah | Zedekias na anak ni Quenaana |  |
+| 1 Kings 22:26 | Amon; Joash | Amon; Joas |  |
+| 1 Kings 22:40 | Ahaziah | Ahazias |  |
+| 1 Kings 22:42 | Azubah daughter of Shilhi | Azuba na anak ni Silhi | final -h dropped, for the reviewer |
+| 1 Kings 22:51 | Jehoram | Jehoram |  |
