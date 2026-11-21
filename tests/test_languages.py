@@ -85,12 +85,14 @@ class LanguagesTest(unittest.TestCase):
         """Every English page but the articles, the reading plans, the
         books' pages and the verse pages, which a language has only once
         they are translated, and the admin and the people, places and
-        glossary pages, which are in English only."""
+        glossary pages and the dictionary words' own pages and lists, which
+        are in English only."""
         langs = set(OTHERS)
         books = {p.stem.lower() for p in build_site.INTROS.glob("*.md")}
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
         return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] not in ("admin", "names", "glossary")
                 and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)
+                and not (rel.parts[0] == "word" and len(rel.parts) > 2)
                 and not (rel.parts[0] in books and len(rel.parts) in (2, 4))]
 
     def test_every_page_is_built_in_every_language(self):
