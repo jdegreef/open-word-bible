@@ -1483,3 +1483,84 @@ names the book where the form was first used.
 | 1 Kings 22:40 | Ahaziah | Ahazias |  |
 | 1 Kings 22:42 | Azubah daughter of Shilhi | Azuba na anak ni Silhi | final -h dropped, for the reviewer |
 | 1 Kings 22:51 | Jehoram | Jehoram |  |
+| 2 Kings 1:2 | Baal-zebub | Baal-zebub |  |
+| 2 Kings 3:25 | Kir-hareseth | Kir-hareset | th > t |
+| 2 Kings 4:12 | Gehazi | Gehazi |  |
+| 2 Kings 4:42 | Baal-shalishah | Baal-salisa |  |
+| 2 Kings 5:12 | Abana; Pharpar | Abana; Farfar | ph > f |
+| 2 Kings 5:18 | Rimmon | Rimon | double consonant made single |
+| 2 Kings 5:1 | skin disease | L *ketong*; B, R *malubhang sakit sa balat* |  |
+| 2 Kings 8:21 | Zair | Zair |  |
+| 2 Kings 9:25 | Bidkar | Bidkar |  |
+| 2 Kings 9:27 | Beth-haggan; Gur; Ibleam | Bet-hagan; Gur; Ibleam |  |
+| 2 Kings 10:12 | Beth-eked of the shepherds | Bet-eked ng mga pastol |  |
+| 2 Kings 10:15 | Jehonadab son of Rechab | Jehonadab na anak ni Recab |  |
+| 2 Kings 10:33 | Gadites; Reubenites; Manassites | mga Gadita; mga Rubenita; mga Manasita | people names in -ita |
+| 2 Kings 11:2 | Jehosheba | Josheba |  |
+| 2 Kings 11:4 | Jehoiada; Carites | Joiada; mga Carita |  |
+| 2 Kings 11:6 | Gate of Sur | Pintuang-bayan ng Sur |  |
+| 2 Kings 11:18 | Mattan | Matan |  |
+| 2 Kings 12:1 | Jehoash (of Judah); Zibiah | Jehoas; Zibia | Joas and Jehoas both kept, as in the Hebrew |
+| 2 Kings 12:20 | Beth-millo; Silla | Bet-milo; Sila |  |
+| 2 Kings 12:21 | Jozabad son of Shimeath; Jehozabad son of Shomer | Jozabad na anak ni Simeat; Jehozabad na anak ni Somer |  |
+| 2 Kings 14:2 | Jehoaddin | Jehoadin |  |
+| 2 Kings 14:7 | Valley of Salt; Sela; Joktheel | Lambak ng Asin; Sela; Jokteel |  |
+| 2 Kings 14:22 | Elath | Elat |  |
+| 2 Kings 14:25 | Jonah son of Amittai; Gath-hepher | Jonas na anak ni Amitai; Gat-hefer |  |
+| 2 Kings 15:2 | Jecoliah | Jecolia |  |
+| 2 Kings 15:10 | Shallum son of Jabesh | Salum na anak ni Jabes |  |
+| 2 Kings 15:14 | Menahem son of Gadi; Tirzah | Menahem na anak ni Gadi; Tirza |  |
+| 2 Kings 15:16 | Tiphsah | Tifsa |  |
+| 2 Kings 15:19 | Pul | Pul |  |
+| 2 Kings 15:23 | Pekahiah | Pekahias |  |
+| 2 Kings 15:25 | Pekah son of Remaliah; Argob; Arieh | Peka na anak ni Remalias; Argob; Arie |  |
+| 2 Kings 15:29 | Abel-beth-maacah; Kedesh; Hazor | Abel-bet-maacah; Kedes; Hazor |  |
+| 2 Kings 15:30 | Hoshea son of Elah | Oseas na anak ni Elah |  |
+| 2 Kings 15:33 | Jerusha daughter of Zadok | Jerusa na anak na babae ni Zadok |  |
+| 2 Kings 15:37 | Rezin | Rezin |  |
+| 2 Kings 16:6 | Edomites | mga Edomita |  |
+| 2 Kings 16:9 | Kir | Kir |  |
+| 2 Kings 16:10 | Uriah the priest | Urias na pari |  |
+| 2 Kings 17:3 | Shalmaneser | Salmaneser |  |
+| 2 Kings 17:4 | So king of Egypt | So na hari ng Egipto |  |
+| 2 Kings 17:6 | Halah; Habor; Gozan; Medes | Hala; Habor; Gozan; mga Medo |  |
+| 2 Kings 17:24 | Cuthah; Avva; Sepharvaim | Cuta; Ava; Sefarvaim | ph > f |
+| 2 Kings 17:29 | Samaritans (people of Samaria) | mga Samaritano |  |
+| 2 Kings 17:30 | Succoth-benoth; Cuth; Nergal; Ashima | Sucot-benot; Cut; Nergal; Asima |  |
+| 2 Kings 17:31 | Avvites; Nibhaz; Tartak; Sepharvites; Adrammelech; Anammelech | mga Aveo; Nibhaz; Tartak; mga Sefarvita; Adramelec; Anamelec |  |
+| 2 Kings 18:2 | Abi daughter of Zechariah | Abi na anak na babae ni Zacarias |  |
+| 2 Kings 18:4 | Nehushtan | Nehustan |  |
+| 2 Kings 18:17 | Tartan; Rab-saris; Rabshakeh | L *ang Tartan; ang Rabsaris; ang Rabsaces*; B *punong kumander; pinuno ng mga opisyal ng palasyo; punong opisyal*; R *kumander ng Asiria* | titles, not names |
+| 2 Kings 18:17 | Fuller's Field | Bukid ng Tagapaglaba |  |
+| 2 Kings 18:18 | Eliakim son of Hilkiah; Shebna; Joah son of Asaph | Eliakim na anak ni Hilkias; Sebna; Joa na anak ni Asaf |  |
+| 2 Kings 18:26 | Aramaic; the Judean language | *wikang Arameo*; *wika ng Juda* (R *Hebreo*) |  |
+| 2 Kings 18:34 | Arpad; Hena; Ivvah | Arpad; Hena; Iva |  |
+| 2 Kings 19:2 | Isaiah son of Amoz | Isaias na anak ni Amoz |  |
+| 2 Kings 19:9 | Tirhakah king of Cush | Tirhaka na hari ng Cush (R *Etiopia*) |  |
+| 2 Kings 19:12 | Rezeph; Eden; Telassar | Rezef; Eden; Telasar |  |
+| 2 Kings 19:37 | Nisroch; Adrammelech; Sharezer; Esarhaddon; Ararat | Nisroc; Adramelec; Sarezer; Esarhadon; Ararat |  |
+| 2 Kings 20:12 | Berodach-baladan son of Baladan | Berodac-baladan na anak ni Baladan |  |
+| 2 Kings 20:18 | eunuch | *eunuko* |  |
+| 2 Kings 21:1 | Hephzibah | Hefziba | ph > f |
+| 2 Kings 21:18 | garden of Uzza | halamanan ni Uza |  |
+| 2 Kings 21:19 | Meshullemeth daughter of Haruz from Jotbah | Mesulemet na anak ni Haruz na taga-Jotba |  |
+| 2 Kings 22:1 | Jedidah daughter of Adaiah from Bozkath | Jedida na anak ni Adaias na taga-Boskat |  |
+| 2 Kings 22:3 | Shaphan son of Azaliah son of Meshullam | Safan na anak ni Azalias na anak ni Mesulam |  |
+| 2 Kings 22:4 | high priest | *punong pari* | as in Numbers 35 |
+| 2 Kings 22:12 | Ahikam; Achbor son of Micaiah; Asaiah | Ahikam; Acbor na anak ni Micaias; Asaias |  |
+| 2 Kings 22:14 | Huldah the prophetess; Shallum son of Tikvah son of Harhas; the Second Quarter | Hulda na propetisa; Salum na anak ni Ticva na anak ni Harhas; Ikalawang Distrito |  |
+| 2 Kings 23:7 | male shrine prostitutes | *mga lalaking bayaran sa dambana* | as in 1 Kings 14:24 |
+| 2 Kings 23:8 | Gate of Joshua | Pintuang-bayan ni Josue |  |
+| 2 Kings 23:10 | Topheth | Tofet | ph > f, th > t |
+| 2 Kings 23:11 | Nathan-melech | Natan-melec |  |
+| 2 Kings 23:13 | Mount of Destruction | Bundok ng Pagkawasak |  |
+| 2 Kings 23:24 | household gods (teraphim) | *mga diyos ng sambahayan* | as in Genesis 31 |
+| 2 Kings 23:29 | Pharaoh Neco | Faraon Neco |  |
+| 2 Kings 23:31 | Hamutal daughter of Jeremiah from Libnah | Hamutal na anak ni Jeremias na taga-Libna |  |
+| 2 Kings 23:36 | Zebudah daughter of Pedaiah from Rumah | Zebuda na anak ni Pedaias na taga-Ruma |  |
+| 2 Kings 24:8 | Nehushta daughter of Elnathan | Nehusta na anak ni Elnatan |  |
+| 2 Kings 24:17 | Mattaniah | Matanias |  |
+| 2 Kings 25:4 | Chaldeans | mga Caldeo (R *mga taga-Babilonia*) |  |
+| 2 Kings 25:8 | Nebuzaradan the captain of the guard | Nebuzaradan na pinuno ng mga bantay |  |
+| 2 Kings 25:23 | Ishmael son of Nethaniah; Johanan son of Kareah; Seraiah son of Tanhumeth; Jaazaniah | Ismael na anak ni Netanias; Johanan na anak ni Karea; Seraias na anak ni Tanhumet; Jaazanias |  |
+| 2 Kings 25:27 | Evil-merodach | Evil-merodac |  |
