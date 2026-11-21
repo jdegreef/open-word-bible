@@ -31,9 +31,10 @@ it.)
 
 Counts in this guide were made from `content/` on 18 November 2026 with the
 scripts named in section 6; they will drift as the text is revised. Verse
-numbers are those of the Hebrew and Greek: in the Old Testament a psalm's
-title is verse 1 (Psalm 51:1 in English is 51:3 here) and Micah 5:2 in
-English is 5:1 here. `data/versification.json` maps one to the other.
+numbers are those of the records, which follow the Hebrew and Greek: in the
+Old Testament a psalm's title is verse 1 (Psalm 51:1 on the site is 51:3 here)
+and Micah 5:2 on the site is 5:1 here. The site shows the NIV's numbers;
+`data/versification.json` maps one to the other.
 
 ## 1. How to review
 

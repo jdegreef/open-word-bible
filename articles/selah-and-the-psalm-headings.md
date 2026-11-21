@@ -11,7 +11,7 @@ This article looks at what is known about them, what is guessed, and how a trans
 
 ## Selah
 
-Psalm 3 is a prayer of David as he flees from his son Absalom. Verse 3 in our numbering (verse 2 in most English Bibles, for a reason explained below) reports what his enemies are saying:
+Psalm 3 is a prayer of David as he flees from his son Absalom. Verse 2 (verse 3 in Hebrew Bibles, for a reason explained below) reports what his enemies are saying:
 
 > {{OWB:PSA.3.3.s1:L}}
 
@@ -37,7 +37,7 @@ The rendering decision follows from that. Every level, Literal, Balanced and Rea
 
 That is a deliberate choice, and other translations have made other ones. The King James Version keeps "Selah". Some modern versions put a guess in its place; the New Living Translation, for example, prints "Interlude". Others have at times moved it to the margin or a footnote. Printing a guess makes the text look clearer than our knowledge is. Leaving the word out hides something that is in the Hebrew text. Keeping it, with a decision that says plainly what we do and do not know, is the honest course, and it costs the reader only a moment's pause, which may be what the word asked for in the first place.
 
-One small adjustment is made. In a few verses the Hebrew puts Selah in the middle of the verse, after its first line, as in Psalm 57:4 and Habakkuk 3:3. Our rendering decision for those verses moves it to the end, so that the verse reads as a whole, and says so.
+One small adjustment is made. In a few verses the Hebrew puts Selah in the middle of the verse, after its first line, as in Psalm 57:3 and Habakkuk 3:3. Our rendering decision for those verses moves it to the end, so that the verse reads as a whole, and says so.
 
 Psalm 46 shows how Selah can shape a psalm. It appears three times there, after verse 4 and after the refrain in verses 8 and 12, which sounds twice:
 
@@ -55,22 +55,22 @@ The Hebrew begins {{HEBREW:PSA.4.1:1}}, "for the director", a phrase that heads 
 
 ### Why the verse numbers differ
 
-The heading raises a practical point first. In the Hebrew text, the heading of a psalm is part of the psalm and is counted as its first verse. Most English Bibles print the heading without a number and begin verse 1 with the first line of the poem. So from Psalm 3 on, many verse numbers in Open Word Bible are one higher than in other English Bibles. The record for Psalm 3:1 explains this, and every heading's record repeats it. Open Word Bible follows the numbering of the Hebrew text it translates. (See [Chapter and verse numbers](/articles/chapter-and-verse-numbers/) for how the numbering came about.)
+The heading raises a practical point first. In the Hebrew text, the heading of a psalm is part of the psalm and is counted as its first verse. Most English Bibles print the heading without a number and begin verse 1 with the first line of the poem. So from Psalm 3 on, many verse numbers in a Hebrew Bible are one higher than in English ones. Open Word Bible numbers verses as the NIV does: the heading has no number, and the record for the heading of Psalm 3 gives the Hebrew number, as every heading's record does. (See [Chapter and verse numbers](/articles/chapter-and-verse-numbers/) for how the numbering came about.)
 
 Where the heading is very short, the Hebrew counts it together with the first line, and the numbers are the same. Psalm 32 is an example: "Of David. A maskil" is part of verse 1, with "How blessed is the one whose rebellion is forgiven".
 
 ### What the words in the headings mean
 
-Some words in the headings are clear. {{LEMMA:PSA.4.1:3}}, *mizmôr*, is "a psalm", a song sung to music. "Of David" ties a psalm to David, though the record for Psalm 3:1 notes that the small word "of" can mean written by, belonging to, for or about. Notes like "when he fled from his son Absalom" connect a psalm with a story elsewhere in the Bible, and our records give the passage (2 Samuel 15–17 for Psalm 3).
+Some words in the headings are clear. {{LEMMA:PSA.4.1:3}}, *mizmôr*, is "a psalm", a song sung to music. "Of David" ties a psalm to David, though the record for the heading of Psalm 3 notes that the small word "of" can mean written by, belonging to, for or about. Notes like "when he fled from his son Absalom" connect a psalm with a story elsewhere in the Bible, and our records give the passage (2 Samuel 15–17 for Psalm 3).
 
-Others are partly clear. "For the director" is a form of a verb meaning to lead or oversee, and the record for Psalm 4:1 notes that 1 Chronicles 15:21 uses the verb for Levites who led the singing. It probably marks the psalm for the leader of the temple music. But the Greek translators read the same letters differently, as "for the end", which shows how early the sense was in doubt. The decision is marked uncertain.
+Others are partly clear. "For the director" is a form of a verb meaning to lead or oversee, and the record for the heading of Psalm 4 notes that 1 Chronicles 15:21 uses the verb for Levites who led the singing. It probably marks the psalm for the leader of the temple music. But the Greek translators read the same letters differently, as "for the end", which shows how early the sense was in doubt. The decision is marked uncertain.
 
 And some are almost entirely lost. Here is how our records treat a few of them.
 
 - **Miktam** heads Psalms 16 and 56–60. The record calls it "a kind of psalm whose meaning is unknown". The Greek translation took it as an inscription on a stone; others link it to a word for gold.
 - **Maskil** heads thirteen psalms. It comes from a verb meaning to have insight or act wisely, so it may mark a song that teaches, or one composed with skill. Its exact sense is unknown.
 - **On alamoth** (Psalm 46) is the plural of the word for a young woman. Since 1 Chronicles 15:20 has Levites playing harps "on alamoth", it is a musical term, perhaps for high voices or high-pitched instruments.
-- **Higgaion**, which stands beside Selah in Psalm 9:17, comes from a verb for murmuring. The record takes it as probably a musical direction and keeps it at every level.
+- **Higgaion**, which stands beside Selah in Psalm 9:16, comes from a verb for murmuring. The record takes it as probably a musical direction and keeps it at every level.
 - **Shigionoth**, in the title of Habakkuk's prayer, is the plural of the term in the heading of Psalm 7. Some link it to a verb for wandering or reeling, others to a word for lament.
 
 Then there are phrases that are probably the names of tunes. Psalm 22 is "on Ayyeleth-hashshahar", which means "the doe of the dawn". Psalm 57 is headed {{HEBREW:PSA.57.1:2-3}}, "Do not destroy", which also heads Psalms 58, 59 and 75. Psalm 56 has words that mean something like "a silent dove of far-off places". These look like the names of melodies the psalms were sung to, much as a hymn book prints a tune name above a hymn. The tunes themselves are long gone.
