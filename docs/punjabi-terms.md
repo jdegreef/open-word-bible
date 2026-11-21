@@ -202,13 +202,32 @@ Added when Revelation is drafted.
 ### Ruth
 
 People: ਅਲੀਮਲਕ, ਨਾਓਮੀ, ਮਹਿਲੋਨ, ਕਿਲਓਨ, ਆਰਪਾਹ, ਰੂਥ, ਬੋਅਜ਼, ਓਬੇਦ, ਯੱਸੀ,
-ਪਰਸ, ਤਾਮਾਰ, ਹਸਰੋਨ, ਰਾਮ, ਅੰਮੀਨਾਦਾਬ, ਨਹਸ਼ੋਨ, ਸਲਮੋਨ. Places and peoples:
-ਬੈਤਲਹਮ, ਯਹੂਦਾਹ, ਮੋਆਬ, ਮੋਆਬਣ (a Moabite woman), ਅਫ਼ਰਾਥੀ.
+ਦਾਊਦ, ਪਰਸ, ਤਾਮਾਰ, ਹਸਰੋਨ, ਰਾਮ, ਅੰਮੀਨਾਦਾਬ, ਨਹਸ਼ੋਨ, ਸਲਮੋਨ (ਸਲਮਾਹ at
+Literal in 4:20, as the Hebrew spells it), ਰਾਖ਼ੇਲ, ਲੇਆਹ. Places and
+peoples: ਬੈਤਲਹਮ, ਯਹੂਦਾਹ, ਮੋਆਬ, ਮੋਆਬਣ (a Moabite woman), ਅਫ਼ਰਾਥੀ,
+ਅਫ਼ਰਾਥਾਹ.
 
-- *Mara* (1:20) is ਮਾਰਾ with its sense, "ਕੌੜੀ", in the text at B and R,
-  as the English handles the pun.
-- *ḥesed* in Ruth (1:8, 2:20, 3:10) is ਅਟੱਲ ਪਿਆਰ at L and B, ਦਯਾ ਅਤੇ ਵਫ਼ਾ
-  at R where the English Readable says "kindness", one decision per
-  chapter.
-- The *goʾel* is ਛੁਡਾਉਣ ਵਾਲਾ (L), ਛੁਡਾਉਣ ਵਾਲਾ ਰਿਸ਼ਤੇਦਾਰ (B, R); "so-and-so"
-  (*peloni ʾalmoni*, 4:1) ਭਾਈ (B, R), ਫਲਾਣਾ (L).
+- *Naomi* and *Mara* (1:20): Literal gives the names alone; Balanced adds
+  the sense of Mara, ਕੌੜੀ (bitter); Readable explains both, ਸੁਹਾਵਣੀ
+  (pleasant) and ਕੌੜੀ.
+- *ḥesed* in Ruth (1:8, 2:20, 3:10) is ਅਟੱਲ ਪਿਆਰ at L and B and ਸੱਚਾ
+  ਪਿਆਰ ਨਿਭਾਉਣਾ at R, one decision per chapter.
+- The *goʾel* is ਛੁਡਾਉਣ ਵਾਲਾ (L), ਛੁਡਾਉਣ ਵਾਲਾ ਰਿਸ਼ਤੇਦਾਰ (B, R); to
+  redeem land is ਛੁਡਾਉਣਾ (L, B), ਪਰਿਵਾਰ ਲਈ ਵਾਪਸ ਖ਼ਰੀਦਣਾ (R).
+  "So-and-so" (*peloni ʾalmoni*, 4:1) is ਹੇ ਫਲਾਣਿਆ (L), ਭਾਈ (B, R).
+- Harvest: glean ਸਿਲਾ ਚੁਗਣਾ (L, B), ਦਾਣੇ ਚੁਗਣਾ (R); reapers ਵਾਢੇ;
+  sheaves (*ʿomer*) ਪੂਲੇ; the bundles of 2:16 ਭਰੀਆਂ; threshing floor ਪਿੜ; winnow ਉਡਾਈ ਕਰਨਾ;
+  ephah `{{units:ਲਗਭਗ 22 ਲੀਟਰ|ਲਗਭਗ ਇੱਕ ਏਫ਼ਾਹ}}`.
+- *kanaf* (2:12, 3:9): ਖੰਭ (wing) at every level in 2:12 and at L in 3:9,
+  where B and R say ਚਾਦਰ ਦਾ ਪੱਲਾ (the corner of the cloak). Ruth's shawl (3:15) is ਲੋਈ.
+- Family and people: sister-in-law ਦਰਾਣੀ; young woman ਮੁਟਿਆਰ; foreigner
+  (*nokhriyah*, 2:10) ਓਪਰੀ; a woman of worth (*eshet ḥayil*, 3:11)
+  ਗੁਣਵਾਨ ਇਸਤਰੀ; elders ਬਜ਼ੁਰਗ (L, B), ਆਗੂ (R); inheritance ਵਿਰਾਸਤ;
+  sandal ਜੁੱਤੀ.
+- "Name" is ਨਾਂ throughout, not ਨਾਮ.
+- Genealogy (4:18-22): ਦੇ ਘਰ ... ਜੰਮਿਆ (L), ... ਦਾ ਪਿਤਾ ਬਣਿਆ (B),
+  ... ਦਾ ਪਿਤਾ ਸੀ (R).
+- Address: Naomi says ਤੂੰ to Ruth and ਤੁਸੀਂ to both daughters-in-law; they
+  say ਤੁਸੀਂ to her. Boaz says ਤੂੰ to Ruth ("ਮੇਰੀ ਧੀਏ"); Ruth says ਤੁਸੀਂ
+  to Boaz ("ਹੇ ਮੇਰੇ ਸੁਆਮੀ" at L and B, "ਮਾਲਕ ਜੀ" at R). Men of the town,
+  the women and the elders say ਤੁਸੀਂ to one another and to Naomi.
