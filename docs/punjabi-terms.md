@@ -1201,3 +1201,49 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   the Exodus 34:6 / Joel 2:13 / Jonah 4:2 formula; 13:1-2 quote Deuteronomy
   23:3-5 (and the Balaam story of Numbers 22-24); 13:26 summarises 1 Kings
   11; the list of 7:6-73 must stay aligned with Ezra 2.
+
+### Romans
+
+- God and Christ take the honorific plural with no deity_pronoun spans;
+  ਮਸੀਹ has no christos span. The Spirit is masculine singular (ਆਤਮਾ ...
+  ਦਿੰਦਾ ਹੈ); the human spirit is feminine (ਸਾਡੀ ਆਤਮਾ). Prayer to God and
+  psalm lines addressed to God use ਤੂੰ.
+- Paul's singular "you" is ਤੂੰ at every level, since Punjabi has no middle
+  form like Hindi तुम: the objector (2:1-5, 9:19-20), the reader (8:2,
+  10:9), the Gentile believer (11:17-24), the enemy (12:20), the one under
+  authority (13:3-4) and the one who judges (14:4-22).
+- Refrains: mē genoito ਕਦੇ ਨਾ ਹੋਵੇ! (L), ਬਿਲਕੁਲ ਨਹੀਂ! (B), ਕਦੇ ਵੀ ਨਹੀਂ!
+  (R); "What then shall we say?" ਤਾਂ ਫਿਰ ਅਸੀਂ ਕੀ ਆਖਾਂਗੇ? (L), ਤਾਂ ਫਿਰ
+  ਅਸੀਂ ਕੀ ਆਖੀਏ? (B), ਤਾਂ ਇਸ ਬਾਰੇ ਅਸੀਂ ਕੀ ਆਖੀਏ? (R).
+- Body ਦੇਹ at L and B in chapters 6-8 (12:1 L ਦੇਹਾਂ), ਸਰੀਰ elsewhere and
+  at R; flesh ਸਰੀਰ (L, B), ਪਾਪੀ ਸੁਭਾਅ (R); nomos as a principle (7:21-25,
+  8:2) ਨਿਯਮ (B, R; 8:2 R ਸ਼ਕਤੀ), ਬਿਵਸਥਾ (L).
+- Gender spans: sons of God ਪਰਮੇਸ਼ੁਰ {{gender:ਦੀ ਸੰਤਾਨ|ਦੇ ਪੁੱਤਰ}} (as Hosea
+  2:1); adoption {{gender:ਸੰਤਾਨ|ਪੁੱਤਰ}} ਵਜੋਂ ਗੋਦ ਲਏ ਜਾਣ; tekna ਸੰਤਾਨ or ਬੱਚੇ
+  with no span; 11:4 {{gender:ਲੋਕ|ਮਰਦ}}; a single believer
+  {{gender:ਤੇਰੇ ਭਰਾ ਜਾਂ ਭੈਣ|ਤੇਰੇ ਭਰਾ}} / ਆਪਣੇ ... / ਕਿਸੇ ... (14:10-21),
+  ਸਾਥੀ ਵਿਸ਼ਵਾਸੀ at R.
+- Terms: slaves ਦਾਸ; grace ਕਿਰਪਾ; kindness ਦਯਾਲਤਾ; trespass ਅਪਰਾਧ; charisma
+  ਵਰਦਾਨ, dōrea ਦਾਤ; reconciliation ਮੇਲ (R ਮਿੱਤਰ ਬਣਾਉਣਾ); conscience ਜ਼ਮੀਰ;
+  mystery ਭੇਤ; remnant ਬਚਿਆ ਹੋਇਆ ਹਿੱਸਾ (L, B), ਬਚੇ ਹੋਏ ਲੋਕ (R); vessels
+  ਭਾਂਡੇ; God's people ਪਰਜਾ (L, B), ਲੋਕ (R); grafting ਪਿਓਂਦ (L, B), ਜੋੜਨਾ
+  (R); hagioi ਪਵਿੱਤਰ ਜਨ (L), ਪਰਮੇਸ਼ੁਰ ਦੇ ਪਵਿੱਤਰ ਲੋਕ (B), ਪਰਮੇਸ਼ੁਰ ਦੇ ਲੋਕ
+  (R); Gentiles ਪਰਾਈਆਂ ਕੌਮਾਂ (L, B), ਗ਼ੈਰ-ਯਹੂਦੀ (R, but ਕੌਮਾਂ inside the
+  psalm quotations of 15:9-12); Greeks ਯੂਨਾਨੀ (L, B), ਗ਼ੈਰ-ਯਹੂਦੀ (R); Kyrios
+  Sabaoth ਪ੍ਰਭੂ ਸਬਾਓਥ (L), ਸੈਨਾਵਾਂ ਦੇ ਪ੍ਰਭੂ (B); Abba ਅੱਬਾ, ਹੇ ਪਿਤਾ!;
+  diakonos ਸੇਵਕ, Phoebe ਸੇਵਿਕਾ and prostatis ਸਰਪ੍ਰਸਤ; syngeneis ਕੁਟੰਬੀ (L),
+  ਸਾਥੀ ਯਹੂਦੀ (B), ਮੇਰੇ ਵਾਂਗ ਯਹੂਦੀ (R); greetings ਨੂੰ ਸਲਾਮ ਆਖੋ (L, B), ਨੂੰ
+  ਮੇਰੀ ਸਲਾਮ ਆਖੋ (R).
+- Names: ਫ਼ੀਬੀ, ਕੰਖਰਿਯਾ, ਪ੍ਰਿਸਕਾ, ਅਕੂਲਾ, ਏਪੈਨਤੁਸ, ਯੂਨਿਆ (Junia, a woman),
+  ਰੂਫ਼ੁਸ, ਤਿਮੋਥਿਉਸ, ਗਾਯੁਸ, ਇਰਾਸਤੁਸ, ਤਰਤਿਯੁਸ, ਇੱਲੁਰਿਕੁਨ, ਆਸਿਯਾ; Spain
+  ਇਸਪਾਨੀਆ (L, B), ਸਪੇਨ (R).
+- Quotations matched to books already drafted: 9:7 Hebrews 11:18; 9:13
+  Malachi 1:2-3; 9:25-26 Hosea; 9:33 and 10:11 1 Peter 2:6-8; 10:5
+  Galatians 3:12; 10:13 Joel 3:5; 10:15 Nahum 2:1; 12:19 Hebrews 10:30; 13:9
+  Galatians 5:14 / James 2:8, with the commandments as 7:7 and James 2:11;
+  14:11 Zephaniah 2:9's oath and Philippians 2:10-11's knee and tongue.
+- First Punjabi wording, for those books to follow: Exodus 20:13-17 (7:7,
+  13:9), Genesis 18:10 and 25:23, Exodus 33:19 and 9:16, Isaiah 10:22, 1:9,
+  53:1, 65:1-2, 59:20, 40:13, 45:23, 11:10, 52:15; Psalms 44:22, 19:4,
+  69:9, 69:22, 18:49, 117:1; Deuteronomy 32:43; 1 Kings 19:10-18.
+- Flagged uncertain: 9:5 (Christ as God over all).
