@@ -502,3 +502,21 @@ People and places: ਪੌਲੁਸ, ਤਿਮੋਥਿਉਸ, ਇਪਫ਼ਰਾ
   fellow slave ਸੰਗੀ ਦਾਸ (L, B); ministry (*diakonia*) ਸੇਵਕਾਈ.
 - Household code: masters ਮਾਲਕ, the Lord ਪ੍ਰਭੂ; Christ as heavenly Master
   takes honorific verbs (4:1). Greetings ਸਲਾਮ ਆਖਣਾ, as Philemon.
+
+### 1 Thessalonians
+
+People and places: ਪੌਲੁਸ, ਸਿਲਵਾਨੁਸ, ਤਿਮੋਥਿਉਸ (plain verbs); ਥੱਸਲੁਨੀਕਾ,
+ਥੱਸਲੁਨੀਕੀਆਂ, ਮਕਦੂਨਿਯਾ, ਅਖਾਯਾ, ਫ਼ਿਲਿੱਪੈ, ਅਥੇਨੇ, ਯਹੂਦਿਯਾ; ਸ਼ੈਤਾਨ.
+
+- Address ਹੇ {{gender:ਭਰਾਵੋ ਅਤੇ ਭੈਣੋ|ਭਰਾਵੋ}}, oblique ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ;
+  philadelphia (4:9) is love among believers as family, as 2 Peter 1:7.
+- 2:14-16: those in Judea who persecuted the churches, not the Jewish
+  people as a whole; Balanced and Readable say so, as the English levels do.
+- Holy ones (3:13) ਪਵਿੱਤਰ ਲੋਕ; sexual immorality ਹਰਾਮਕਾਰੀ; archangel
+  ਪ੍ਰਧਾਨ ਦੂਤ; the coming (*parousia*) ਆਉਣਾ / ਮੁੜ ਆਉਣਾ.
+- Vessel (*skeuos*, 4:4) ਭਾਂਡਾ (L), ਦੇਹ (B), ਸਰੀਰ (R), marked uncertain:
+  it may mean one's wife.
+- Those who have fallen asleep ਜਿਹੜੇ ਸੌਂ ਗਏ ਹਨ (L, B), said plainly as
+  dead at R; in 5:10 awake/asleep means alive/dead, unlike 5:6.
+- Sons of light {{gender:ਬੱਚੇ|ਪੁੱਤਰ}} at L and B; light ਚਾਨਣ (L, B),
+  ਰੋਸ਼ਨੀ (R); spirit, soul and body ਆਤਮਾ, ਪ੍ਰਾਣ ਅਤੇ ਦੇਹ (5:23).
