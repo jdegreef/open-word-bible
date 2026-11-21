@@ -1872,3 +1872,76 @@ names the book where the form was first used.
 | 2 Chronicles 34:8 | Joahaz | Joahaz |  |
 | 2 Chronicles 34:22 | Hasrah; Tokhath | Hasrah; Tokhat |  |
 | 2 Chronicles 35:20 | Carchemish | Carquemis |  |
+| Ezra 1:8 | Mithredath; Sheshbazzar | Mitredat; Sheshbazzar |  |
+| Ezra 2:2 | Bigvai; Bilshan; Mispar; Reelaiah; Rehum | Bigvai; Bilshan; Mispar; Reelaias; Rehum |  |
+| Ezra 2:3 | Parosh | Parosh |  |
+| Ezra 2:6 | Pahath-moab | Pahat-moab |  |
+| Ezra 2:8 | Zattu | Zattu |  |
+| Ezra 2:9 | Zaccai | Zaccai |  |
+| Ezra 2:11 | Bebai | Bebai |  |
+| Ezra 2:12 | Azgad | Azgad |  |
+| Ezra 2:13 | Adonikam | Adonikam |  |
+| Ezra 2:15 | Adin | Adin |  |
+| Ezra 2:16 | Ater | Ater |  |
+| Ezra 2:17 | Bezai | Bezai |  |
+| Ezra 2:18 | Jorah | Jorah |  |
+| Ezra 2:19 | Hashum | Hashum |  |
+| Ezra 2:20 | Gibbar | Gibbar |  |
+| Ezra 2:22 | Netophah | Netofah |  |
+| Ezra 2:25 | Kiriath-arim | Kiriat-arim |  |
+| Ezra 2:30 | Magbish | Magbish |  |
+| Ezra 2:33 | Hadid | Hadid |  |
+| Ezra 2:35 | Senaah | Senaah |  |
+| Ezra 2:40 | Kadmiel | Kadmiel |  |
+| Ezra 2:42 | Hatita; Shobai | Hatita; Shobai |  |
+| Ezra 2:43 | Hasupha; Tabbaoth; Ziha | Hasufa; Tabbaot; Ziha |  |
+| Ezra 2:44 | Keros; Padon; Siaha | Keros; Padon; Siaha |  |
+| Ezra 2:45 | Hagabah; Lebanah | Hagabah; Lebanah |  |
+| Ezra 2:46 | Hagab; Shalmai | Hagab; Shalmai |  |
+| Ezra 2:47 | Gahar; Giddel | Gahar; Giddel |  |
+| Ezra 2:48 | Gazzam; Nekoda | Gazzam; Nekoda |  |
+| Ezra 2:49 | Besai | Besai |  |
+| Ezra 2:50 | Asnah; Meunim; Nephusim | Asnah; Meunim; Nefusim |  |
+| Ezra 2:51 | Bakbuk; Hakupha; Harhur | Bakbuk; Hakufa; Harhur |  |
+| Ezra 2:52 | Bazluth; Harsha; Mehida | Bazlut; Harsha; Mehida |  |
+| Ezra 2:53 | Barkos; Temah | Barkos; Temah |  |
+| Ezra 2:54 | Hatipha; Neziah | Hatifa; Nezias |  |
+| Ezra 2:55 | Hassophereth; Peruda; Sotai | Hassoferet; Peruda; Sotai |  |
+| Ezra 2:56 | Darkon; Jaala | Darkon; Jaala |  |
+| Ezra 2:57 | Ami; Hattil; Pochereth-hazzebaim | Ami; Hattil; Pokeret-hazzebaim |  |
+| Ezra 2:59 | Addan; Cherub; Tel-harsha; Tel-melah | Addan; Kerub; Tel-harsha; Tel-melah |  |
+| Ezra 2:61 | Hobaiah | Hobaias |  |
+| Ezra 2:63 | Tirshatha | Tirshata |  |
+| Ezra 3:2 | Jozadak | Jozadak |  |
+| Ezra 3:9 | Henadad | Henadad |  |
+| Ezra 4:7 | Bishlam; Tabeel | Bishlam; Tabeel |  |
+| Ezra 4:8 | Shimshai | Shimshai |  |
+| Ezra 4:10 | Osnappar | Osnappar |  |
+| Ezra 5:3 | Shethar-bozenai; Tattenai | Shetar-bozenai; Tattenai |  |
+| Ezra 6:2 | Ecbatana | Ecbatana |  |
+| Ezra 6:15 | Adar | Adar |  |
+| Ezra 8:10 | Josiphiah | Josifias |  |
+| Ezra 8:12 | Hakkatan | Hakkatan |  |
+| Ezra 8:15 | Ahava | Ahava |  |
+| Ezra 8:16 | Ariel; Joiarib | Ariel; Joiarib |  |
+| Ezra 8:17 | Casiphia | Casifia |  |
+| Ezra 8:18 | Sherebiah | Sherebias |  |
+| Ezra 8:33 | Binnui; Meremoth; Noadiah | Binnui; Meremot; Noadias |  |
+| Ezra 10:15 | Jahzeiah; Shabbethai | Jahzeias; Shabbetai |  |
+| Ezra 10:23 | Kelaiah; Kelita | Kelaias; Kelita |  |
+| Ezra 10:25 | Izziah; Malkijah; Ramiah | Izzias; Malkijah; Ramias |  |
+| Ezra 10:27 | Aziza | Aziza |  |
+| Ezra 10:28 | Athlai; Zabbai | Atlai; Zabbai |  |
+| Ezra 10:29 | Sheal | Sheal |  |
+| Ezra 10:30 | Adna; Kelal | Adna; Kelal |  |
+| Ezra 10:33 | Jeremai; Mattattah; Mattenai | Jeremai; Mattattah; Mattenai |  |
+| Ezra 10:34 | Maadai; Uel | Maadai; Uel |  |
+| Ezra 10:35 | Bedeiah; Keluhi | Bedeias; Keluhi |  |
+| Ezra 10:36 | Vaniah | Vanias |  |
+| Ezra 10:37 | Jaasai | Jaasai |  |
+| Ezra 10:40 | Machnadebai; Sharai; Shashai | Maknadebai; Sharai; Shashai |  |
+| Ezra 10:43 | Jaddai; Zebina | Jaddai; Zebina |  |
+| Ezra 4:9 | Dinaites; Apharsathchites; Tarpelites; Apharsites; Erechites; Susanchites; Dehavites; Elamites | mga Dinaita; mga Afarsatkita; mga Tarpelita; mga Afarsita; mga Erekita; mga Susankita; mga Dehaita; mga Elamita | uncertain peoples (L); B, R name the cities |
+| Ezra 4:10 | Beyond the River (the province) | L *Kabila ng Ilog*; B *lalawigan sa Kabila ng Ilog*; R *lalawigan sa kanluran ng Ilog Eufrates* |  |
+| Ezra 2:43 | Nethinim; temple servants | L *Netineo*; B, R *lingkod sa templo* |  |
+| Ezra 8:36 | satraps | L, B *mga satrapa*; R *mga gobernador ng mga rehiyon ng hari* |  |
