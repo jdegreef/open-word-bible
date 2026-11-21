@@ -367,3 +367,19 @@ People and places: ਪੌਲੁਸ, ਤੀਤੁਸ, ਅਰਤਿਮਾਸ, ਤ�
 - The trustworthy saying (3:8) ਇਹ ਗੱਲ ਭਰੋਸੇਯੋਗ ਹੈ (L); 1 and 2 Timothy
   should match.
 - Lawyer (*nomikos*, 3:13) ਵਕੀਲ (L), ਬਿਵਸਥਾ ਦਾ ਜਾਣਕਾਰ (B, R).
+
+### 2 Thessalonians
+
+People and places: ਪੌਲੁਸ, ਸਿਲਵਾਨੁਸ (the Greek's form of Silas), ਤਿਮੋਥਿਉਸ;
+ਥੱਸਲੁਨੀਕਾ, ਥੱਸਲੁਨੀਕੀ; ਸ਼ੈਤਾਨ.
+
+- Adelphoi in address is the vocative `ਹੇ {{gender:ਭਰਾਵੋ ਅਤੇ ਭੈਣੋ|ਭਰਾਵੋ}}`;
+  one believer (3:6, 3:15) is `{{gender:ਭਰਾ ਜਾਂ ਭੈਣ|ਭਰਾ}}`.
+- Lawlessness (*anomia*) ਕੁਨੇਮ, as in Titus 2:14; the man of lawlessness
+  ਕੁਨੇਮ ਦਾ ਮਨੁੱਖ, the lawless one ਕੁਨੇਮੀ. He takes plain verb forms; the Lord
+  Jesus takes honorific plurals, which keeps them apart in 2:8.
+- So-called gods (2:4) ਅਖੌਤੀ ਦੇਵਤੇ; his claim is to be ਪਰਮੇਸ਼ੁਰ.
+- Mystery ਭੇਤ; signs ਨਿਸ਼ਾਨ; traditions ਰੀਤਾਂ (L, B), ਸਿੱਖਿਆਵਾਂ (R);
+  firstfruits (2:13) ਪਹਿਲੇ ਫਲ; the evil one (3:3) ਉਸ ਦੁਸ਼ਟ.
+- Disorderly (*ataktōs*, 3:6-11) ਬੇਤਰਤੀਬੀ ਚਾਲ (L), ਬੇਲਗਾਮ ਜੀਵਨ (B);
+  Readable names the disorder, refusing to work.
