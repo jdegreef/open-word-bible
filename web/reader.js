@@ -209,6 +209,11 @@
     return Number(p[1]) === DATA.chapter ? p[2] : p[1] + ":" + p[2];
   }
 
+  // A psalm's title is verse 0 here (the NIV prints it unnumbered above
+  // verse 1; owb/versification.py reader_ids): it shows no number, and is
+  // named "title" where a verse would be.
+  function shownVerse(v) { return v === "0" ? t("title_short") : v; }
+
   function crossesChapter(r) {
     return r.refs[0].split(".")[1] !== r.refs[r.refs.length - 1].split(".")[1];
   }
@@ -218,7 +223,7 @@
     var ends = [r.refs[0], r.refs[r.refs.length - 1]].map(function (id) {
       return crossesChapter(r) ? id.split(".").slice(1).join(":") : verseOf(id);
     });
-    return ends[0] === ends[1] ? ends[0] : ends[0] + "\u2013" + ends[1];
+    return ends[0] === ends[1] ? shownVerse(ends[0]) : shownVerse(ends[0]) + "\u2013" + ends[1];
   }
 
   // The verse a marker starts. A marker gives only the verse number, so
@@ -882,9 +887,10 @@
         if (!plain()) {
           span.tabIndex = 0;
           span.setAttribute("role", "button");
-          span.setAttribute("aria-label", t("verse_label").replace("{v}", part[0]));
+          span.setAttribute("aria-label", t("verse_label").replace("{v}", shownVerse(part[0])));
         }
         span.dataset.v = part[0];
+        if (part[0] === "0") span.classList.add("psalm-title");
         span.dataset.record = r.id;
         // As on the built page: a verse's first span is its #v anchor.
         if (!anchored.has(part[0])) { anchored.add(part[0]); span.id = "v" + part[0]; }
@@ -1758,6 +1764,7 @@
   // verse with cross-references carries a small mark by its number that
   // opens their previews; the style sheet shows it only there.
   function verseNumber(v) {
+    if (v === "0") return document.createDocumentFragment();
     var sup = el("sup", null, v);
     var vid = verseId(v);
     if (!xrefsShown() || !DATA.crossrefs[vid]) return sup;
@@ -2741,6 +2748,7 @@
   // "1 Timothy 5:18" ("John 7:53" for another chapter's verse on this page).
   function verseName(verse) {
     var name = (DATA.books && DATA.books[DATA.book]) || DATA.title.replace(/[\d:\u2013\s]+$/, "");
+    if (String(verse) === "0") return t("title_ref").replace("{ref}", name + " " + DATA.chapter);
     return name + " " + (/:/.test(verse) ? verse : DATA.chapter + ":" + verse);
   }
   function pageLink(verse) {

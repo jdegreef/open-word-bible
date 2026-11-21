@@ -144,6 +144,20 @@
 @font-face { font-family: "Noto Sans Devanagari"; font-style: normal; font-weight: 700; font-display: swap;
   src: url(/fonts/noto-sans-devanagari-devanagari-700-normal.woff2) format("woff2"); unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+20F0,U+25CC,U+A830-A839,U+A8E0-A8FF,U+11B00-11B09; }
 
+/* Punjabi's Gurmukhi script (ਗੁਰਮੁਖੀ): Noto Serif Gurmukhi beside Gentium
+   and Fraunces, Noto Sans Gurmukhi beside Hanken Grotesk. From
+   @fontsource/noto-serif-gurmukhi@5.3.0 and
+   @fontsource/noto-sans-gurmukhi@5.3.0, limited to the Gurmukhi block (the
+   danda । and the Indian rupee sign come from the Devanagari fonts). */
+@font-face { font-family: "Noto Serif Gurmukhi"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-serif-gurmukhi-gurmukhi-400-normal.woff2) format("woff2"); unicode-range: U+0A01-0A76,U+262C,U+A830-A839; }
+@font-face { font-family: "Noto Serif Gurmukhi"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-serif-gurmukhi-gurmukhi-700-normal.woff2) format("woff2"); unicode-range: U+0A01-0A76,U+262C,U+A830-A839; }
+@font-face { font-family: "Noto Sans Gurmukhi"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/noto-sans-gurmukhi-gurmukhi-400-normal.woff2) format("woff2"); unicode-range: U+0A01-0A76,U+262C,U+A830-A839; }
+@font-face { font-family: "Noto Sans Gurmukhi"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/noto-sans-gurmukhi-gurmukhi-700-normal.woff2) format("woff2"); unicode-range: U+0A01-0A76,U+262C,U+A830-A839; }
+
 /* Atkinson Hyperlegible, the Readable typeface in the gear menu, made by the
    Braille Institute for low-vision readers. Generated from
    @fontsource/atkinson-hyperlegible@5.2.8. */
@@ -166,11 +180,11 @@
 
 :root {
   --header-h: 64px;
-  --display: "Fraunces", "Gentium Book Plus", "Noto Serif Ethiopic", "Noto Serif Devanagari", "Noto Naskh Arabic", "Iowan Old Style", Georgia, serif;
-  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", "Noto Serif Devanagari", "Noto Naskh Arabic", Georgia, serif;
+  --display: "Fraunces", "Gentium Book Plus", "Noto Serif Ethiopic", "Noto Serif Devanagari", "Noto Serif Gurmukhi", "Noto Naskh Arabic", "Iowan Old Style", Georgia, serif;
+  --serif: "Gentium Book Plus", "Noto Serif Hebrew", "Noto Serif Ethiopic", "Noto Serif Devanagari", "Noto Serif Gurmukhi", "Noto Naskh Arabic", Georgia, serif;
   --greek: "Gentium Book Plus", "Gentium Plus", serif;
   --hebrew: "Noto Serif Hebrew", serif;
-  --sans: "Hanken Grotesk", "Noto Sans", "Noto Sans Ethiopic", "Noto Sans Devanagari", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: "Hanken Grotesk", "Noto Sans", "Noto Sans Ethiopic", "Noto Sans Devanagari", "Noto Sans Gurmukhi", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 12px;
   --radius-sm: 9px;
   --fast: 150ms;
@@ -1361,6 +1375,9 @@ body.plain .chapter-book { display: none; }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse.fallback { color: var(--muted); }
+/* A psalm's title (verse 0, unnumbered as in the NIV): a line of its own,
+   set off in italics above verse 1. */
+.verse.psalm-title { display: block; font-style: italic; margin-bottom: .35em; }
 /* Poetry (a rendering with \q line markers): each verse is a block of lines.
    A verse's first line starts at the margin, its later lines one step in;
    a line too long for the measure wraps two steps in, so a wrap never looks

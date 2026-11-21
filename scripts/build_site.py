@@ -48,8 +48,22 @@ BOOK_NAMES = {code: {k: v for k, v in b.items() if k not in ("chapters", "chapte
 BOOK_ABBREVIATIONS = json.loads((ROOT / "data" / "book_abbreviations.json").read_text(encoding="utf-8"))["books"]
 # A book whose chapters go by another name: "Psalm 23", not "Psalms 23".
 CHAPTER_NAMES = {code: b["chapter_names"] for code, b in _BOOKS.items() if "chapter_names" in b}
-# Chapters in each book, for "2 of 21 chapters" and a book's completeness.
-BOOK_CHAPTERS = {code: b["chapters"] for code, b in _BOOKS.items()}
+
+
+def _reader_chapter_count(code, chapters):
+    """A book's chapter count in reader (NIV) numbering: the chapter its last
+    verse is in there (Malachi has 3 chapters in Hebrew and 4 in the NIV,
+    Joel 4 and 3)."""
+    path = ROOT / "data" / ("hbo" if code in refs.OT_CODES else "grc") / f"{code}.{chapters}.json"
+    if not path.exists():
+        return chapters
+    last = list(json.loads(path.read_text(encoding="utf-8"))["verses"])[-1]
+    return refs.parse(versification.reader_ids(last)[-1]).chapter
+
+
+# Chapters in each book, for "2 of 21 chapters" and a book's completeness, as
+# the site numbers them (data/books.json counts content/'s).
+BOOK_CHAPTERS = {code: _reader_chapter_count(code, b["chapters"]) for code, b in _BOOKS.items()}
 SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
@@ -462,7 +476,7 @@ def og_card_article(article):
 # in Tanzania.
 OG_LOCALES = {"en": "en_US", "es": "es_MX", "fr": "fr_FR", "sw": "sw_TZ", "vi": "vi_VN", "ko": "ko_KR",
               "pt": "pt_BR", "am": "am_ET", "hi": "hi_IN", "ru": "ru_RU", "uk": "uk_UA", "ja": "ja_JP",
-              "id": "id_ID", "zh": "zh_CN", "ar": "ar_AR", "tl": "tl_PH", "fa": "fa_IR"}
+              "id": "id_ID", "zh": "zh_CN", "ar": "ar_AR", "tl": "tl_PH", "fa": "fa_IR", "pa": "pa_IN"}
 
 
 def og_locale(lang):
@@ -892,15 +906,181 @@ def curl_record(r):
 
 
 def curl_texts(r):
-    """curl_record's quotes in a record's renderings and decisions."""
+    """curl_record's quotes in a record's renderings and decisions, and the
+    decisions' verse references in reader numbering (reader_note_refs)."""
     for levels in r["renderings"].values():
         for level, text in levels.items():
             levels[level] = smart_quotes(text)
     for d in r["decisions"]:
-        d["choice"] = smart_quotes(d["choice"])
-        d["alternatives"] = [smart_quotes(a) for a in d["alternatives"]]
-        d["reason"] = smart_quotes(d["reason"])
+        def moved(text, did=d["id"]):
+            return note_refs(smart_quotes(text), "en", r["id"], did)
+        d["choice"] = moved(d["choice"])
+        d["alternatives"] = [moved(a) for a in d["alternatives"]]
+        d["reason"] = moved(d["reason"])
     return r
+
+
+@functools.cache
+def niv_notes():
+    """The notes written in NIV numbering already (data/niv_notes.json), as
+    (record id, decision id): those that explain the numbering itself."""
+    data = json.loads((ROOT / "data" / "niv_notes.json").read_text(encoding="utf-8"))
+    return frozenset(tuple(key.split(" ")) for key in data["notes"])
+
+
+def note_refs(text, lang, record_id, decision_id):
+    """reader_note_refs for a decision's text, unless niv_notes has it."""
+    if (record_id, decision_id) in niv_notes():
+        return text
+    return reader_note_refs(text, lang, record_id)
+
+
+# A note's bare reference to a verse of its own chapter ("verse 7",
+# "verses 2, 7", "vv. 5-9", "7節"), in each language: the words before or
+# after the numbers, and the numbers between them.
+# A number that starts a book's name ("and 1 Samuel 21:1") is not one of them.
+_NUMBERS = (r"\d+(?:\s*(?:[-–,、~]|and|or|y|o|et|ou|e|na|au|và|hoặc|и|или|і|або|dan|atau|和|或)\s*"
+            r"\d+(?!\s*\S+\s?\d+:\d))*")
+_BARE_BEFORE = {
+    "en": r"\b(?:[Vv]erses?|vv?\.)", "es": r"\b[Vv]ers[íi]culos?|\bvv?\.", "pt": r"\b[Vv]ers[íi]culos?|\bvv?\.",
+    "fr": r"\b[Vv]ersets?|\bv\.", "sw": r"\b[Mm]stari|\b[Mm]istari|\b[Aa]ya", "vi": r"\b[Cc]âu",
+    "am": r"ቁጥር", "hi": r"पद", "ru": r"\b[Сс]тих(?:и|а|е|ов|ам|ах)?", "uk": r"\b[Вв]ірш(?:і|а|у|ів|ах)?",
+    "id": r"\b[Aa]yat", "zh": r"第",
+}
+_BARE_AFTER = {"ko": "절", "ja": "節", "zh": "节"}
+
+
+@functools.lru_cache(maxsize=None)
+def _renumbered_chapter(book, chapter):
+    """Whether any verse of one of content/'s chapters has another number in
+    reader numbering (owb/versification.py)."""
+    return any(versification.reader_ids(v) != (v,) for v in source_chapter_verses(book, chapter))
+
+
+@functools.lru_cache(maxsize=None)
+def _bare_pattern(lang):
+    parts = []
+    if lang in _BARE_BEFORE:
+        parts.append(r"(?P<b>(?:" + _BARE_BEFORE[lang] + r")\s?)(?P<bn>" + _NUMBERS + r")(?![\d:])")
+    if lang in _BARE_AFTER:
+        parts.append(r"(?<![\d:])(?P<an>" + _NUMBERS + r")(?P<a>\s?" + _BARE_AFTER[lang] + ")")
+    return re.compile("|".join(parts)) if parts else None
+
+
+def _bare_refs(text, lang, book, chapter):
+    """reader_note_refs for a note's bare references to verses of its own
+    chapter. One that follows a reference to another chapter in the same
+    sentence ("Exodus 3:15 ... verse 14") is left alone: it may mean that
+    chapter's verse."""
+    pattern = _bare_pattern(lang)
+    if pattern is None:
+        return text
+    other = _note_ref_pattern(lang)[0]
+
+    def number(n):
+        ref = refs.parse(versification.reader_ids(f"{book}.{chapter}.{n}")[0])
+        if ref.verse == 0:
+            return catalog(lang)["reader.ui"]["title_short"]
+        return str(ref.verse) if ref.chapter == chapter else f"{ref.chapter}:{ref.verse}"
+
+    def moved(m):
+        start = max(text.rfind(". ", 0, m.start()), text.rfind("。", 0, m.start()), text.rfind("። ", 0, m.start()))
+        if other.search(text, start + 1, m.start()) or numbering_word(text, m.start(), m.end()):
+            return m[0]
+        g = m.groupdict()
+        before = g.get("bn") is not None
+        new = re.sub(r"\d+", lambda d: number(d[0]), g["bn"] if before else g["an"])
+        # "4:1-4:6" (Malachi 3:19-24) as "4:1-6".
+        new = re.sub(r"(\d+):(\d+)([-–])\1:(\d+)", r"\1:\2\3\4", new)
+        return (g["b"] + new) if before else (new + g["a"])
+
+    return pattern.sub(moved, text)
+
+
+@functools.lru_cache(maxsize=None)
+def _note_ref_pattern(lang):
+    """"Psalm 51:3" or "Malachi 3:19–24" in a note in lang (English names
+    too, which notes in other languages keep at times): (name, chapter,
+    verse, dash, last verse), and each name's book."""
+    names = {}
+    for code, name in refs.BOOK_NAMES.items():
+        for form in (name, BOOK_NAMES.get(code, {}).get(lang), chapter_book(code), chapter_book(code, lang)):
+            if form:
+                names[form] = code
+    alts = "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True))
+    # The book name is optional: "13:1" on its own is matched too, but not
+    # the "3:16" of a time or a ratio inside a word.
+    return re.compile(r"(?<![\w:.])(?:(" + alts + r") ?)?(\d+):(\d+)(?:([-–])(\d+))?(?![\d:])"), names
+
+
+# Words that say a reference near them is in one numbering or the other
+# ("Leviticus 6:17-23 in the Hebrew numbering", "4:1 in many Bibles"): such a
+# reference is left as written (numbering_word).
+_NUMBERING_WORDS = re.compile(
+    r"Hebrew|numbering|numbered|English|[Mm]any Bibles|other Bibles|hebre|hébr|hebr|Kiebrania|Hê-bơ-rơ|히브리|ヘブライ|"
+    r"ዕብራይስጥ|इब्रानी|еврей|єврей|Ibrani|希伯来|numérot|numeraç|numeración|нумерац|нумерац|번호|番号|编号|penomoran|"
+    r"inglés|anglais|inglês|Kiingereza|tiếng Anh|영어|英語|英文|अंग्रेज़ी|английск|англійськ|Inggris|እንግሊዝኛ")
+
+
+def numbering_word(text, start, end):
+    """Whether a reference at text[start:end] has a numbering word close by,
+    or in the brackets right after it: "Exodus 22:28 (22:27 in the Hebrew
+    numbering)" already gives the English number."""
+    if _NUMBERING_WORDS.search(text[max(0, start - 12):end + 20]):
+        return True
+    after = re.match(r"\s*[(（]([^)）]*)", text[end:])
+    return bool(after and _NUMBERING_WORDS.search(after[1]))
+
+
+# Between two references of one list ("Exodus 12:14; 28:12", "Psalms 9:9,
+# 96:13 and 98:9"): the second is in the first's book.
+_LIST_GAP = re.compile(r"[\s,;、，；]*(?:and|et|y|e|na|và|및|과|와|と|और|и|і|та|dan|及|ve)?[\s,;、，；]*")
+
+
+def reader_note_refs(text, lang="en", record_id=None):
+    """A note with its references to verses in reader (NIV) numbering:
+    content/ writes notes in its own numbering, so "Psalm 51:3" (the
+    verse after its two-verse title) is shown as "Psalm 51:1", and
+    "Malachi 3:19–24" as "Malachi 4:1–6". A range keeps one chapter where
+    the NIV does; a reference to a psalm's title says so. A chapter and
+    verse with no book name ("13:1") is in the book named just before it
+    in a list, or else in the note's own book."""
+    pattern, names = _note_ref_pattern(lang)
+    own = record_id.split(".")[0] if record_id else None
+    last = {"end": -1, "code": None}
+
+    def moved(m):
+        if m[1]:
+            code = names[m[1]]
+        elif last["code"] and last["end"] >= 0 and _LIST_GAP.fullmatch(m.string, last["end"], m.start()):
+            code = last["code"]
+        else:
+            code = own
+        last["end"], last["code"] = m.end(), code
+        if code is None or numbering_word(m.string, m.start(), m.end()):
+            return m[0]
+        name = m[1] or ""
+        first = refs.parse(versification.reader_ids(f"{code}.{m[2]}.{m[3]}")[0])
+        space = " " if name and m[0][len(name)] == " " else ""
+        end = refs.parse(versification.reader_ids(f"{code}.{m[2]}.{m[5] or m[3]}")[-1])
+        if not m[5] or end.verse == 0:
+            if first.verse == 0:
+                if not name:
+                    return m[0]
+                return catalog(lang)["reader.ui"]["title_ref"].format(ref=f"{name}{space}{first.chapter}")
+            if end == first:
+                return f"{name}{space}{first.chapter}:{first.verse}"
+        if first.verse == 0:
+            first = refs.Ref(first.book, first.chapter, 1)
+        tail = str(end.verse) if end.chapter == first.chapter else f"{end.chapter}:{end.verse}"
+        return f"{name}{space}{first.chapter}:{first.verse}{m[4] or '–'}{tail}"
+
+    text = pattern.sub(moved, text)
+    if record_id:
+        book, chapter = record_id.split(".")[0], int(record_id.split(".")[1])
+        if _renumbered_chapter(book, chapter):
+            text = _bare_refs(text, lang, book, chapter)
+    return text
 
 
 def source_language(book):
@@ -933,7 +1113,7 @@ def describe(word, lang):
 # or English's where a sentence is not in it yet (text_lang). Every other
 # language keeps an empty entry, so a record still says which languages it
 # is in (passages_in, languages_label).
-SEARCH_DECISION_KEYS = ("layer", "language", "category", "choice", "alternatives", "reason")
+SEARCH_DECISION_KEYS = ("id", "layer", "language", "category", "choice", "alternatives", "reason")
 SEARCH_ONLY = False
 SEARCH_LANG = None
 
@@ -946,15 +1126,62 @@ def search_only(r):
                           if d["layer"] != "rendering" or d["language"] in keep]}
 
 
+@functools.cache
+def reader_verse_starts():
+    """data/reader_verses.json's records: {record id: {"verse", "before":
+    {lang: {level: text}}}}, where an NIV verse starts inside a sentence."""
+    return json.loads((ROOT / "data" / "reader_verses.json").read_text(encoding="utf-8"))["records"]
+
+
+def mark_reader_verses(r):
+    """Put a verse marker where an NIV verse starts inside the record
+    (reader_verse_starts): Psalm 13:6 in content/ is NIV 13:5 and 13:6, and
+    "I will sing" starts 13:6. A line marker just before it gives way to the
+    verse marker, which always starts a line. A rendering whose text no
+    longer holds the start (edited since) is left as it is."""
+    start = reader_verse_starts().get(r["id"])
+    if not start:
+        return r
+    n = refs.parse(start["verse"]).verse
+    for lang, levels in r["renderings"].items():
+        for level, text in levels.items():
+            before = start["before"].get(lang, {}).get(level)
+            if not before or text.count(before) != 1:
+                continue
+            i = text.index(before)
+            head = text[:i]
+            head = head[:-3] if head.endswith("\\q ") else head
+            levels[level] = f"{head.rstrip()} \\v {n} {text[i:]}"
+    return r
+
+
+def reader_record(r):
+    """A record as the site shows it: its refs in reader (NIV) numbering
+    (owb/versification.py reader_ids), so Malachi 3:19 is 4:1 and a psalm's
+    title is verse 0; "source_refs" keeps the verses as content/ numbers
+    them. Its id stays as content/ has it: headings, notes and the API know
+    a sentence by it. A record with verse markers (\\v) is never one of the
+    renumbered ones (tests/test_site.py checks), so its text needs no change."""
+    r["source_refs"] = r["refs"]
+    # Search keeps one language's renderings, perhaps none: any will do, as
+    # every language marks the same verses.
+    texts = [t for levels in r["renderings"].values() for t in levels.values()][:1]
+    segments = len(markup.split_verses(texts[0])) if texts else 1
+    r["refs"] = versification.record_reader_ids(r["id"], r["refs"], segments)
+    return r
+
+
 @functools.lru_cache(maxsize=None)
 def _book_records(book):
-    """A book's records, read once, by every chapter each one touches."""
+    """A book's records, read once, by every chapter each one touches, in
+    reader numbering (reader_record)."""
     by_chapter = {}
     for path in sorted((ROOT / "content" / book).glob("*.json")):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
             # Search needs no links or red letters: only the texts it keeps
             # are curled.
-            r = curl_texts(search_only(r)) if SEARCH_ONLY else curl_record(r)
+            r = mark_reader_verses(r)
+            r = reader_record(curl_texts(search_only(r)) if SEARCH_ONLY else curl_record(r))
             for ch in {refs.parse(v).chapter for v in r["refs"]}:
                 by_chapter.setdefault(ch, []).append(r)
     return by_chapter
@@ -962,21 +1189,78 @@ def _book_records(book):
 
 @functools.lru_cache(maxsize=None)
 def _chapter_words(book, chapter):
+    """A chapter's source words by verse, as the word extract numbers both."""
     return json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
+
+
+@functools.lru_cache(maxsize=None)
+def _reader_book_words(book):
+    """{reader chapter: {reader verse id: source words}} for a book: the word
+    extracts renumbered as the site shows them (reader_record). Two of our
+    verses that are one NIV verse share it (Numbers 25:19 and 26:1 are NIV
+    26:1); one of ours that is two NIV verses (Psalm 13:6) gives its words to
+    the first, and the second is listed with none."""
+    files = sorted(words_path(book, 1).parent.glob(f"{book}.*.json"), key=lambda p: int(p.stem.split(".")[1]))
+    # A sentence the NIV numbers on its own (versification.READER_RECORDS)
+    # takes its words to its verse.
+    moved = {t: versification.READER_RECORDS[r["id"]][0] for rs in _book_records(book).values() for r in rs
+             if r["id"] in versification.READER_RECORDS for t in r["source"]["tokens"]}
+    # Where an NIV verse starts inside one of our verses (mark_reader_verses),
+    # nothing says which source words fall in it (the Hebrew is not aligned
+    # word by word), so the verse's words all stay with the first NIV verse.
+    have = book_reader_verses(book)
+    out = {}
+    for path in files:
+        for vid, ws in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+            rids = [rid for rid in versification.reader_ids(vid) if rid in have] or list(versification.reader_ids(vid))[:1]
+            for rid in rids:
+                out.setdefault(refs.parse(rid).chapter, {}).setdefault(rid, [])
+            for w in ws:
+                rid = moved.get(w["id"], rids[0])
+                out.setdefault(refs.parse(rid).chapter, {}).setdefault(rid, []).append(w)
+    return {ch: dict(sorted(vs.items(), key=lambda kv: refs.parse(kv[0]).sort_key())) for ch, vs in out.items()}
+
+
+def reader_chapter_words(book, chapter):
+    """A chapter's source words by verse, in reader numbering (_reader_book_words)."""
+    return _reader_book_words(book).get(chapter, {})
 
 
 def chapter_records(book, chapter):
     """A chapter's records, in order, without its words (see load_chapter)."""
     return sorted(_book_records(book).get(chapter, []),
-                  key=lambda r: refs.parse(r["refs"][0]).sort_key() + (r["id"],))
+                  key=lambda r: refs.parse(r["refs"][0]).sort_key()
+                  + refs.parse(r["source_refs"][0]).sort_key() + (r["id"],))
 
 
 @functools.lru_cache(maxsize=None)
 def chapter_verses(book, chapter):
-    """The verse ids in a chapter's word extract. Listing the chapters needs
-    only these: the words themselves are hundreds of megabytes for the whole
-    Bible, more than the API's search rebuild has room for."""
-    return tuple(json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"])
+    """The verse ids of a chapter in reader numbering. Listing the chapters
+    needs only these: the words themselves are hundreds of megabytes for the
+    whole Bible, more than the API's search rebuild has room for, so a book's
+    are read once and only their verse ids kept."""
+    return tuple(versification_chapter_verses(book).get(chapter, ()))
+
+
+@functools.lru_cache(maxsize=None)
+def versification_chapter_verses(book):
+    """{reader chapter: [reader verse ids]} for a book, from its word extracts."""
+    have = book_reader_verses(book)
+    out = {}
+    for path in words_path(book, 1).parent.glob(f"{book}.*.json"):
+        for vid in json.loads(path.read_text(encoding="utf-8"))["verses"]:
+            # One of our verses that is two NIV verses counts the second only
+            # once a record has it (versification.record_reader_ids).
+            rids = versification.reader_ids(vid)
+            for rid in [r for r in rids if r in have] or rids[:1]:
+                out.setdefault(refs.parse(rid).chapter, set()).add(rid)
+    return {ch: sorted(vs, key=lambda v: refs.parse(v).sort_key()) for ch, vs in out.items()}
+
+
+@functools.lru_cache(maxsize=None)
+def book_reader_verses(book):
+    """Every verse id a record of book has, in reader numbering."""
+    return frozenset(v for rs in _book_records(book).values() for r in rs for v in r["refs"])
 
 
 def load_chapter(book, chapter):
@@ -989,7 +1273,7 @@ def load_chapter(book, chapter):
     records = chapter_records(book, chapter)
     words = {}
     for ch in sorted({chapter} | {refs.parse(v).chapter for r in records for v in r["refs"]}):
-        words.update(_chapter_words(book, ch))
+        words.update(reader_chapter_words(book, ch))
     return records, words
 
 
@@ -1007,7 +1291,9 @@ def paragraph_starts(records, words):
     sentence with a full stop. The Hebrew codex has no capitals; it marks a
     paragraph's end with an open or closed paragraph sign (petuchah, pe;
     setumah, samekh) after the last word, which MACULA keeps in "after".
-    A chapter's first record always opens one."""
+    A chapter's first record always opens one, and so does the first record
+    of a Hebrew chapter that the NIV numbering puts inside another (Hebrew
+    1 Kings 5:1 is 4:21): the codex marks no paragraph at a chapter's end."""
     order = [w for verse in words.values() for w in verse]
     by_id = {w["id"]: w for w in order}
     before = {b["id"]: a for a, b in zip(order, order[1:])}
@@ -1016,7 +1302,7 @@ def paragraph_starts(records, words):
         first = r["source"]["tokens"][0]
         word = by_id.get(first)
         prev = before.get(first)
-        if i == 0 or prev is None or HEBREW_PARAGRAPH.search(prev["after"]) or (
+        if i == 0 or prev is None or r["id"].split(".")[2:] == ["1", "s1"] or HEBREW_PARAGRAPH.search(prev["after"]) or (
                 word and word["text"][:1].isupper() and word["lemma"][:1].islower()
                 and prev["after"].strip().endswith(".")):
             starts.append(r["id"])
@@ -1049,16 +1335,45 @@ def word_uses():
 @functools.cache
 def headings():
     """Section headings by the record they stand above (data/headings/, one
-    file per book), each in the languages it has, with curly quotes."""
-    return {rid: {lang: smart_quotes(text) for lang, text in h.items()}
-            for path in sorted((ROOT / "data" / "headings").glob("*.json"))
-            for rid, h in json.loads(path.read_text(encoding="utf-8"))["headings"].items()}
+    file per book), each in the languages it has, with curly quotes. A
+    heading over a sentence that shares its NIV verse with the sentence
+    before (Hebrew Numbers 26:1, whose verse begins with 25:19's "After the
+    plague") stands over the verse's first sentence instead."""
+    out = {}
+    for path in sorted((ROOT / "data" / "headings").glob("*.json")):
+        for rid, h in json.loads(path.read_text(encoding="utf-8"))["headings"].items():
+            out[heading_record(rid)] = {lang: smart_quotes(text) for lang, text in h.items()}
+    return out
+
+
+def heading_record(rid):
+    """The record a heading written over rid stands over (headings())."""
+    r = record_by_id(rid)
+    if r is None:
+        return rid
+    ref = refs.parse(r["refs"][0])
+    # Only where two of our verses are one NIV verse: a heading over a
+    # verse's second sentence (Philippians 4:5), or over the first of them
+    # (a psalm title's first verse), stays.
+    same = [x for x in chapter_records(ref.book, ref.chapter) if x["refs"][0] == r["refs"][0]]
+    if same[0]["source_refs"][0] == r["source_refs"][0]:
+        return rid
+    if ref.verse == 1:
+        # The verse opens an NIV chapter (Hebrew Numbers 25:19 + 26:1 are NIV
+        # 26:1): the heading goes over all of it.
+        return same[0]["id"]
+    # The verse ends an NIV chapter (Hebrew 1 Samuel 20:42 + 21:1 are NIV
+    # 20:42): the heading goes over the verse after it, NIV 21:1.
+    order = chapter_records(ref.book, ref.chapter) + chapter_records(ref.book, ref.chapter + 1)
+    ids = [x["id"] for x in order]
+    after = [x for x in order[ids.index(rid) + 1:] if x["refs"][0] != r["refs"][0]]
+    return after[0]["id"] if after else rid
 
 
 @functools.cache
 def summaries():
     """Chapter summaries by (book, chapter) (data/summaries/, one file per
-    book, keyed by chapter number), each in the languages it has."""
+    book, keyed by the chapter number readers see), each in the languages it has."""
     return {(path.stem, int(ch)): {lang: smart_quotes(text) for lang, text in s.items()}
             for path in sorted((ROOT / "data" / "summaries").glob("*.json"))
             for ch, s in json.loads(path.read_text(encoding="utf-8"))["summaries"].items()}
@@ -1097,7 +1412,7 @@ def chapters():
     found = set()
     for path in (ROOT / "content").glob("*/*.json"):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
-            for v in r["refs"]:
+            for v in versification.reader_ids_of(r["refs"]):
                 ref = refs.parse(v)
                 found.add((ref.book, ref.chapter))
     return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
@@ -1274,9 +1589,9 @@ def book_notes(book, lang):
     out, so the English shows until it is translated again."""
     if lang == "en":
         return {}
-    return {rid: {did: {"choice": smart_quotes(n["choice"]),
-                        "alternatives": [smart_quotes(a) for a in n["alternatives"]],
-                        "reason": smart_quotes(n["reason"])} for did, n in ds.items()}
+    return {rid: {did: {"choice": note_refs(smart_quotes(n["choice"]), lang, rid, did),
+                        "alternatives": [note_refs(smart_quotes(a), lang, rid, did) for a in n["alternatives"]],
+                        "reason": note_refs(smart_quotes(n["reason"]), lang, rid, did)} for did, n in ds.items()}
             for rid, ds in owb_notes.current_notes(lang, book).items()}
 
 
@@ -1309,7 +1624,7 @@ def decision_article(r, d, words_by_id):
     the decision's category."""
     lemmas, categories = article_links()
     mine = {(word_strong(w), w["lemma"]) for w in (words_by_id.get(t) for t in d["tokens"]) if w}
-    verses = set(r["refs"])
+    verses = set(r.get("source_refs", r["refs"]))   # the file numbers verses as content/ does
     for need, where, slug in lemmas:
         if need <= mine and (where is None or where & verses):
             return slug
@@ -1479,7 +1794,8 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
         verses += [(marker_verse(r, n), text) for n, text in zip(parts[1::2], parts[2::2])]
         cls = "verse" if tl == lang else "verse fallback"
         for i, (v, text) in enumerate(verses):
-            sup = f"<sup>{esc(v)}</sup>" if v != shown else ""
+            # A psalm's title is verse 0, unnumbered (reader.js shownVerse).
+            sup = f"<sup>{esc(v)}</sup>" if v != shown and v != "0" else ""
             # A verse's address (#v16), on its first sentence: the links
             # across the site lead there, and work before reader.js runs.
             anchor = f' id="v{esc(v)}"' if v != shown else ""
@@ -1488,7 +1804,7 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
             if marks and i == len(verses) - 1:
                 fn = ('<sup class="fn" aria-hidden="true">'
                       + "".join(f'<span class="fn-mark">{m}</span>' for m in marks) + "</sup>")
-            para.append(f'<span class="{cls}"{anchor}{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
+            para.append(f'<span class="{cls}{" psalm-title" if v == "0" else ""}"{anchor}{lang_attr(tl, lang)} data-v="{esc(v)}" data-record="{esc(r["id"])}">'
                         f'{sup}{esc(markup.render(text), quote=False)}{fn}</span> ')
     close()
     if in_disputed:
@@ -1553,7 +1869,7 @@ def book_chapter_files(book):
     for path in sorted((ROOT / "content" / book).glob("*.json")):
         rel = path.relative_to(ROOT).as_posix()
         for ch in sorted({refs.parse(v).chapter for r in json.loads(path.read_text(encoding="utf-8"))["records"]
-                          for v in r["refs"]}):
+                          for v in versification.reader_ids_of(r["refs"])}):
             found.setdefault(ch, []).append(rel)
     return found
 
@@ -1999,7 +2315,7 @@ def chapter_crossrefs(records):
     out = {}
     for r in records:
         for vid in r["refs"]:
-            found = crossrefs.load(vid.split(".")[0]).get(vid)
+            found = crossrefs.load_reader(vid.split(".")[0]).get(vid)
             if found:
                 out[vid] = found
     return out
@@ -2201,9 +2517,8 @@ def intro_faq_ld(book, lang, intro):
 @functools.cache
 def verse_of_the_day_ids():
     """The verses of the day that have records."""
-    data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
     have = chapter_set()
-    return frozenset(vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
+    return frozenset(vid for vid in VERSES_OF_THE_DAY if (refs.parse(vid).book, refs.parse(vid).chapter) in have
                      and verse_records(vid))
 
 
@@ -2325,9 +2640,10 @@ def verse_page(vid, lang="en"):
                                     else w["after"] + " ")
                        for w in words.get(vid, [])).strip()
     direction = ' dir="rtl"' if source == "hbo" else ""
-    english = [e for e in versification.to_english(ref) if e != ref]
-    numbering = (f'<p class="fine">{ui["english_number"].format(ref=esc(verse_ref_name(str(english[0]), lang)))}</p>'
-                 if english else "")
+    # Where Hebrew Bibles number the verse otherwise (Malachi 4:1 is their 3:19).
+    hebrew = [v for r in rs for v in r.get("source_refs", []) if vid in versification.reader_ids(v) and v != vid]
+    numbering = (f'<p class="fine">{ui["hebrew_number"].format(ref=esc(verse_ref_name(hebrew[0], lang)))}</p>'
+                 if hebrew and source == "hbo" else "")
     translated = page_notes(rs, lang)
     in_verse = {w["id"] for w in words.get(vid, [])}
 
@@ -2568,7 +2884,9 @@ def slugify(text):
 def card_sense(senses, vid):
     """The sense of a name card for a verse: the one listing the verse, or
     the one for every other verse."""
-    return next((s for s in senses if vid in s.get("verses", [])), None) \
+    # A card lists verses as content/ numbers them; vid is in reader numbering.
+    ours = {vid, *versification.from_reader(vid)}
+    return next((s for s in senses if ours & set(s.get("verses", []))), None) \
         or next((s for s in senses if "verses" not in s), None)
 
 
@@ -2585,10 +2903,7 @@ def entities():
     cards = name_cards()
     found = {}
     for book, chapter in chapters():
-        path = words_path(book, chapter)
-        if not path.exists():
-            continue
-        for vid, ws in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+        for vid, ws in reader_chapter_words(book, chapter).items():
             for w in ws:
                 key = (word_strong(w), w["lemma"])
                 senses = cards.get(key)
@@ -2732,7 +3047,8 @@ def places_more():
     out = {}
     for key, p in more.items():
         strong, lemma, name = key.split("|")
-        out[(strong, lemma)] = (name, {k: p[k] for k in ("at", "sure", "area")}, frozenset(p["verses"]))
+        out[(strong, lemma)] = (name, {k: p[k] for k in ("at", "sure", "area")},
+                                frozenset(versification.reader_ids_of(p["verses"])))
     return out
 
 
@@ -2742,7 +3058,10 @@ def journeys():
     data/places.json and the verse that takes the traveller there), with a
     name and description per language."""
     path = ROOT / "data" / "journeys.json"
-    return json.loads(path.read_text(encoding="utf-8"))["journeys"] if path.exists() else []
+    found = json.loads(path.read_text(encoding="utf-8"))["journeys"] if path.exists() else []
+    # Stops name verses as content/ numbers them; the site's are reader numbering.
+    return [{**j, "stops": [{**st, "ref": versification.reader_ids(st["ref"])[0]} for st in j["stops"]]}
+            for j in found]
 
 
 def journey_path(jid):
@@ -2883,11 +3202,10 @@ def span_label(vids, lang):
 
 
 def quotation_ot(span):
-    """A quotation's Old Testament side in our numbering (owb/versification.py)."""
-    out = []
-    for vid in span_verses(span):
-        out.extend(f"{r.book}.{r.chapter}.{r.verse}" for r in versification.to_source(refs.parse(vid)))
-    return list(dict.fromkeys(out))
+    """A quotation's Old Testament side, as verse ids. The file numbers it
+    as English Bibles do, which is the site's reader numbering too
+    (owb/versification.py reader_ids)."""
+    return span_verses(span)
 
 
 def quotations_page(lang="en"):
@@ -3169,7 +3487,7 @@ def psalm_title(vid):
     """True for a verse that is only a psalm's title ("A psalm of David ..."),
     which the Hebrew text counts as a verse and English Bibles do not number.
     A chapter's cards quote the psalm itself."""
-    return not versification.to_english(refs.parse(vid))
+    return refs.parse(vid).verse == 0
 
 
 def opening(records, chapter):
@@ -3208,14 +3526,11 @@ COMPARISON_EDITIONS = ("web", "rv1909")
 
 @functools.cache
 def comparison_ours(code):
-    """A comparison edition's verses by our verse Ref (owb/versification.py):
-    English Psalm 3:1 is our PSA.3.2; two English verses that make one of
-    ours are joined."""
-    moved = {}
-    for eid, text in comparison_text(code).items():
-        for ref in versification.to_source(refs.parse(eid)):
-            moved[ref] = f"{moved[ref]} {text}" if ref in moved else text
-    return moved
+    """A comparison edition's verses by verse Ref in reader numbering. The
+    editions number verses as English Bibles do, and so does the site
+    (owb/versification.py reader_ids), so each verse keeps its number; only
+    3 John 15, which the KJV-numbered editions hold in verse 14, has none."""
+    return {refs.parse(eid): text for eid, text in comparison_text(code).items()}
 
 
 @functools.lru_cache(maxsize=None)
@@ -3843,12 +4158,20 @@ class Plan(NamedTuple):
 
 @functools.lru_cache(maxsize=None)
 def load_plans():
-    """Every plan in data/plans.json, in its order."""
+    """Every plan in data/plans.json, in its order. Days list chapters as
+    readers see them (NIV numbering: Malachi has 4, Joel 3)."""
     out = []
     for p in json.loads(PLAN_DATA.read_text(encoding="utf-8"))["plans"]:
         days = tuple(tuple((ref.split(".")[0], int(ref.split(".")[1])) for ref in day) for day in p["days"])
         out.append(Plan(p["id"], p["name"], days))
     return tuple(out)
+
+
+@functools.lru_cache(maxsize=None)
+def source_chapter_verses(book, chapter):
+    """A chapter's verse ids as content/ numbers them (its word extract)."""
+    path = words_path(book, chapter)
+    return tuple(json.loads(path.read_text(encoding="utf-8"))["verses"]) if path.exists() else ()
 
 
 def drafted_chapters(lang):
@@ -4410,7 +4733,9 @@ def progress_html(lang="en"):
 
 
 # The verse of the day (data/verse_of_the_day.json).
-VERSES_OF_THE_DAY = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))["refs"]
+# The file numbers verses as content/ does; the site shows them in reader numbering.
+VERSES_OF_THE_DAY = [versification.reader_ids(v)[0] for v in
+                     json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))["refs"]]
 
 
 def votd_record(vid):
@@ -5108,7 +5433,7 @@ def term_uses():
             seen.add(r["id"])
             for ref in {(refs.parse(v).book, refs.parse(v).chapter) for v in r["refs"]} - loaded:
                 loaded.add(ref)
-                for vid, ws in json.loads(words_path(*ref).read_text(encoding="utf-8"))["verses"].items():
+                for vid, ws in reader_chapter_words(*ref).items():
                     by_id.update((w["id"], (vid, w.get("strong") or "")) for w in ws)
             found = {}
             for tid in r["source"]["tokens"]:
@@ -5484,11 +5809,6 @@ ORIGINAL = {
 }
 
 
-@functools.lru_cache(maxsize=None)
-def _chapter_words(book, chapter):
-    return json.loads(words_path(book, chapter).read_text(encoding="utf-8"))["verses"]
-
-
 def _verse_words(book, chapter, verse):
     """The MACULA words of one verse, from the committed extract: data/grc/
     for the New Testament, data/hbo/ for the Old. A Hebrew word can be
@@ -5533,12 +5853,23 @@ def _lemma(m):
     return _original_span(book, chosen[0]["lemma"])
 
 
+def reader_ref(verse_id):
+    """The Ref the site shows for one of our verse ids (the first, where it
+    is two NIV verses): owb/versification.py reader_ids."""
+    return refs.parse(versification.reader_ids(verse_id)[0])
+
+
+def record_by_id(record_id):
+    """The record with this id (as content/ numbers it), as the site loads it, or None."""
+    ref = reader_ref(record_id.rsplit(".s", 1)[0])
+    return next((r for r in chapter_records(ref.book, ref.chapter) if r["id"] == record_id), None)
+
+
 def _owb(m, lang="en"):
     """{{OWB:JHN.1.1.s1:B}}: our translation of a sentence in lang (English
     if it is not in lang yet), with default settings."""
     record_id, level = m[1], m[2]
-    ref = refs.parse(record_id.rsplit(".s", 1)[0])
-    record = next((r for r in chapter_records(ref.book, ref.chapter) if r["id"] == record_id), None)
+    record = record_by_id(record_id)
     if record is None:
         raise SystemExit(f"no record {record_id} in content/")
     return html.escape(plain(record["renderings"][text_lang(record, lang)][level]))
@@ -5577,7 +5908,7 @@ def _quote_figure(body, inner, lang, text_language):
     the page's."""
     m = _ORIGINAL.fullmatch(body)
     if m:
-        book, chapter, verse = m[2], int(m[3]), int(m[4])
+        book, chapter, verse = reader_ref(f"{m[2]}.{m[3]}.{m[4]}")
         spec = ORIGINAL[source_language(book)]
         kind, attrs = f'{spec["name"]}-quote', f' {spec["attrs"]}'
         source = t(text_language, f'article.{spec["name"]}_source')
@@ -5585,7 +5916,7 @@ def _quote_figure(body, inner, lang, text_language):
         m = _OWB.fullmatch(body)
         if not m:
             return f"<blockquote><p>{inner}</p></blockquote>"
-        ref = refs.parse(m[1].rsplit(".s", 1)[0])
+        ref = reader_ref(m[1].rsplit(".s", 1)[0])
         book, chapter, verse = ref.book, ref.chapter, ref.verse
         source = t(text_language, "article.owb_source", level=catalog(text_language)["levels"][m[2]])
         kind, attrs = "owb-quote", ""
@@ -5677,13 +6008,13 @@ def article_passages(body):
     """The verses an article quotes, from its placeholders, as
     [(book, chapter, [verses])] in canonical order."""
     found = set()
+    # The tags name verses as content/ numbers them; the site's are reader numbering.
     for m in _ORIGINAL.finditer(body):
-        found.add((m[2], int(m[3]), int(m[4])))
+        found.add(tuple(reader_ref(f"{m[2]}.{m[3]}.{m[4]}")))
     for m in _LEMMA.finditer(body):
-        found.add((m[1], int(m[2]), int(m[3])))
+        found.add(tuple(reader_ref(f"{m[1]}.{m[2]}.{m[3]}")))
     for m in _OWB.finditer(body):
-        ref = refs.parse(m[1].rsplit(".s", 1)[0])
-        found.add((ref.book, ref.chapter, ref.verse))
+        found.add(tuple(reader_ref(m[1].rsplit(".s", 1)[0])))
     chapters_ = {}
     for book, chapter, verse in sorted(found, key=lambda f: refs.Ref(*f).sort_key()):
         chapters_.setdefault((book, chapter), []).append(verse)
@@ -6441,7 +6772,19 @@ MEMORY_PLAN_DATA = ROOT / "data" / "memory_plans.json"
 def load_memory_plans():
     """Every memory plan in data/memory_plans.json, in its order, each
     {id, name, verses}."""
-    return json.loads(MEMORY_PLAN_DATA.read_text(encoding="utf-8"))["plans"]
+    return [{**p, "verses": [reader_span(v) for v in p["verses"]]}
+            for p in json.loads(MEMORY_PLAN_DATA.read_text(encoding="utf-8"))["plans"]]
+
+
+def reader_span(span):
+    """"PSA.51.3-5" (a verse or a range in one chapter, as content/ numbers
+    them) in reader numbering: "PSA.51.1-3"."""
+    first, _, last = span.partition("-")
+    a = refs.parse(versification.reader_ids(first)[0])
+    if not last:
+        return str(a)
+    b = refs.parse(versification.reader_ids(f"{a.book}.{refs.parse(first).chapter}.{last}")[-1])
+    return f"{a}-{b.verse}" if b.chapter == a.chapter else str(a)
 
 
 def memory_plan_readable(plan, drafted):
@@ -6922,7 +7265,7 @@ def sitemaps(entries):
 
 
 def build(out):
-    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,

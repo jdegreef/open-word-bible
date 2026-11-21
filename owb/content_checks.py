@@ -81,9 +81,9 @@ SHARE = 0.75           # of a word that must appear in the verse to match
 RARE = 25              # verse texts a word may be in and still be rare
 LOOSE = 0.6            # the same, for choice_missing (a missing word must be clearly missing)
 
-# A letter, or a combining mark (Devanagari vowel signs, accents), which \w
-# leaves out.
-_LETTER = r"(?:[^\W\d_]|[\u0300-\u036f\u0900-\u097f])"
+# A letter, or a combining mark (Devanagari and Gurmukhi vowel signs,
+# accents), which \w leaves out.
+_LETTER = r"(?:[^\W\d_]|[\u0300-\u036f\u0900-\u097f\u0a00-\u0a7f])"
 _WORD = re.compile(rf"{_LETTER}+(?:-{_LETTER}+)*")
 _QUOTED = re.compile(r"[\"“”«»„‘’「」『』]([^\"“”«»„「」『』]{2,}?)[\"“”«»„’「」『』]")
 _ASIDE = re.compile(r"\([^()]*\)|\[[^\[\]]*\]|（[^（）]*）")
@@ -100,8 +100,8 @@ def _script(word):
         return 2      # Hangul: one syllable per character
     if "\u1200" <= ch <= "\u139f":
         return 2      # Ethiopic
-    if "\u0900" <= ch <= "\u097f":
-        return 3      # Devanagari
+    if "\u0900" <= ch <= "\u097f" or "\u0a00" <= ch <= "\u0a7f":
+        return 3      # Devanagari, Gurmukhi
     if "\u3040" <= ch <= "\u30ff" or "\u3400" <= ch <= "\u9fff":
         return 1      # Japanese: runs of kanji and katakana
     return 4

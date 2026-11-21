@@ -39,15 +39,15 @@ In Matthew, the meaning decision goes the other way, because Matthew's own word 
 
 There is a second, smaller difference. In the Hebrew, "she will call" him Immanuel; in the Septuagint, "you will call"; in Matthew, "they will call." Our record for Matthew 1:23 notes all three and takes Matthew's "they" as people in general.
 
-This verse has been argued over for centuries, often bitterly. The records do not try to settle the argument by translating one text to match the other. They translate each text as it stands and say why they differ. The record for Isaiah also notes what both texts share: the sign belonged to King Ahaz's day, and Isaiah's promise reaches further, to a child who will reign on David's throne (9:5–6).
+This verse has been argued over for centuries, often bitterly. The records do not try to settle the argument by translating one text to match the other. They translate each text as it stands and say why they differ. The record for Isaiah also notes what both texts share: the sign belonged to King Ahaz's day, and Isaiah's promise reaches further, to a child who will reign on David's throne (9:6–7).
 
-## 2. "A body you prepared for me" (Hebrews 10:5; Psalm 40:7)
+## 2. "A body you prepared for me" (Hebrews 10:5; Psalm 40:6)
 
 Hebrews puts the words of Psalm 40 into the mouth of Christ as he comes into the world. Our Balanced level:
 
 > {{OWB:HEB.10.5.s1:B}}
 
-The key word is {{GREEK:HEB.10.5:12}} (*sōma*), "body." But the Hebrew of the psalm (40:7 in the Hebrew numbering, 40:6 in most English Bibles) has {{HEBREW:PSA.40.7:5-6}}, "ears you have dug for me." Our Literal level of the psalm keeps the picture:
+The key word is {{GREEK:HEB.10.5:12}} (*sōma*), "body." But the Hebrew of the psalm (40:6 here and in most English Bibles, 40:7 in Hebrew Bibles) has {{HEBREW:PSA.40.7:5-6}}, "ears you have dug for me." Our Literal level of the psalm keeps the picture:
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -80,10 +80,10 @@ James also changes the opening. Amos says "On that day I will raise up"; James s
 In Romans 3, Paul proves that "all, Jews and Greeks alike, are under the power of sin" with a string of quotations, one after another, with no break between them. Our records name each source:
 
 - verses 10–12 from Psalm 14:1–3 (and Psalm 53), with Paul's own word "righteous" for the psalm's "does good";
-- verse 13 from Psalm 5:10 and Psalm 140:4 (Hebrew numbering);
+- verse 13 from Psalm 5:9 and Psalm 140:3;
 - verse 14 from Psalm 10:7;
 - verses 15–17 from Isaiah 59:7–8, shortened, with an echo of Proverbs 1:16;
-- verse 18 from Psalm 36:2.
+- verse 18 from Psalm 36:1.
 
 Paul follows the Septuagint for most of these lines, and he weaves them into a single indictment. This way of joining texts on a common theme, like pearls on a string, was familiar in Jewish teaching. A modern reader might expect quotation marks around each piece. Paul gives one formula, "as it is written," and lets the whole chain stand as Scripture's verdict.
 
@@ -107,9 +107,9 @@ The New Testament does not always follow the Septuagint. Two quotations show the
 
 **"Out of Egypt I called my son"** (Matthew 2:15; Hosea 11:1). Matthew quotes Hosea's words about the exodus of Israel and applies them to Jesus. Here Matthew agrees with the Hebrew, "my son." The Septuagint of Hosea reads "his children." Our record for Hosea 11:1 notes this, and says honestly that its description of the Greek is "written from general knowledge," for reviewers to check. Either way, Matthew did not take the line from the Septuagint as we have it. The record for Matthew 2:15 explains how Matthew reads it: "In Hosea the son is Israel." Matthew sees Jesus, God's Son, living through Israel's story again, into Egypt and out of it.
 
-**"He gave gifts to people"** (Ephesians 4:8; Psalm 68:19). Paul quotes Psalm 68, a victory hymn in which God goes up to his holy mountain, leading captives. But where both the Hebrew and the Greek psalm say God "received gifts" from people, Paul says he "gave gifts." Our records on both sides footnote the difference. They note that an old Aramaic paraphrase of the Psalms, and the Syriac translation, also read "gave," so Paul may be following a known interpretation of the verse. The record for Psalm 68:19 suggests how the two fit: "the conqueror who receives tribute is the one who gives it out to his people." The record for Ephesians marks the point uncertain and gives Paul's purpose plainly: the risen Christ gives gifts to his church, which verses 11–16 go on to list.
+**"He gave gifts to people"** (Ephesians 4:8; Psalm 68:18). Paul quotes Psalm 68, a victory hymn in which God goes up to his holy mountain, leading captives. But where both the Hebrew and the Greek psalm say God "received gifts" from people, Paul says he "gave gifts." Our records on both sides footnote the difference. They note that an old Aramaic paraphrase of the Psalms, and the Syriac translation, also read "gave," so Paul may be following a known interpretation of the verse. The record for Psalm 68:18 suggests how the two fit: "the conqueror who receives tribute is the one who gives it out to his people." The record for Ephesians marks the point uncertain and gives Paul's purpose plainly: the risen Christ gives gifts to his church, which verses 11–16 go on to list.
 
-A smaller example is **Romans 10:18**, where Paul quotes Psalm 19:5 (19:4 in English): "their voice went out to the whole earth." The Septuagint, which Paul quotes word for word, has "their voice" or "sound." The Hebrew has a word that means a measuring line. Our Literal level of the psalm keeps "their line," and a footnote, marked uncertain, explains the Greek.
+A smaller example is **Romans 10:18**, where Paul quotes Psalm 19:4: "their voice went out to the whole earth." The Septuagint, which Paul quotes word for word, has "their voice" or "sound." The Hebrew has a word that means a measuring line. Our Literal level of the psalm keeps "their line," and a footnote, marked uncertain, explains the Greek.
 
 ## What the apostles were doing
 
