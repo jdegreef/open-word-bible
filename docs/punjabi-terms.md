@@ -1164,3 +1164,40 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   "son of man" (8:17) is ਹੇ ਆਦਮੀ ਦੇ ਪੁੱਤਰ (L, B), ਹੇ ਮਨੁੱਖ (R), as in
   Ezekiel. 3:33 and 4:31 echo Psalm 145:13; 6:23 is echoed in Hebrews
   11:33.
+
+### Nehemiah
+
+- Names: ਨਹਮਯਾਹ son of ਹਕਲਯਾਹ; ਸਨਬੱਲਟ ਹੋਰੋਨੀ, ਟੋਬੀਯਾਹ ਅੰਮੋਨੀ, ਅਰਬੀ ਗਸ਼ਮ
+  (ਗਸ਼ਮੂ at L in 6:6); ਅਲਯਾਸ਼ੀਬ the high priest (ਮਹਾਂ ਜਾਜਕ at B and R,
+  ਵੱਡਾ ਜਾਜਕ at L), ਯੋਯਾਦਾ; ਅਰਤਹਸ਼ਸ਼ਤਾ, ਸ਼ੂਸ਼ਨ ਦਾ ਗੜ੍ਹ; Balaam ਬਿਲਆਮ. The
+  lists in chapters 7, 10, 11 and 12 keep Ezra 2 and 1 Chronicles spellings
+  (ਪਰਸ, ਬਏਰਸ਼ਬਾ, ਯੋਯਾਰੀਬ, ਕਾਲ-ਹੋਜ਼ਹ, ਹੱਟੂਸ਼, ਬਆਨਾਹ, ਨਟੋਫ਼ਾਹ), and keep
+  apart Ginnethoi / Ginnethon, Bilgah / Bilgai, Hanan / Anan, Joiarib / Jarib.
+- Wall ਕੰਧ, gate ਫਾਟਕ, tower ਬੁਰਜ, with one name per gate at every level:
+  ਭੇਡ ਫਾਟਕ, ਮੱਛੀ ਫਾਟਕ, ਯਸ਼ਾਨਾਹ ਫਾਟਕ, ਘਾਟੀ ਦਾ ਫਾਟਕ, ਕੂੜੇ ਦਾ ਫਾਟਕ,
+  ਚਸ਼ਮੇ ਦਾ ਫਾਟਕ, ਪਾਣੀ ਫਾਟਕ, ਘੋੜਾ ਫਾਟਕ, ਪੂਰਬੀ ਫਾਟਕ, ਨਿਰੀਖਣ ਫਾਟਕ,
+  ਇਫ਼ਰਾਈਮ ਦਾ ਫਾਟਕ, ਪਹਿਰੇ ਦਾ ਫਾਟਕ; ਸੌ ਦਾ ਬੁਰਜ, ਹਨਨੇਲ ਦਾ ਬੁਰਜ, ਤੰਦੂਰਾਂ
+  ਦਾ ਬੁਰਜ; ਚੌੜੀ ਕੰਧ; ਓਫ਼ਲ.
+- Offices: governor ਰਾਜਪਾਲ (Tirshatha ਤਿਰਸ਼ਾਥਾ at L); temple servants ਹੈਕਲ
+  ਦੇ ਸੇਵਕ; gatekeepers ਦਰਬਾਨ; "man of God" ਪਰਮੇਸ਼ੁਰ ਦਾ ਜਨ; Moses is ਦਾਸ.
+- Address: officials say ਆਪ to the king (as Ezra and Esther; see the open
+  question against Daniel's ਤੁਸੀਂ) and to Nehemiah as governor; Nehemiah
+  says ਤੁਸੀਂ to the leaders, people and officials; God says ਤੁਸੀਂ to the
+  people (1:8-9).
+- The covenant of chapter 10: ਇਕਰਾਰ / ਇਕਰਾਰਨਾਮਾ (not ਨੇਮ, which stays for
+  God's covenant); showbread ਕਤਾਰ ਦੀ ਰੋਟੀ (L); tithe ਦਸਵੰਧ (L, B), ਦਸਵਾਂ
+  ਹਿੱਸਾ (R); storerooms ਕੋਠੜੀਆਂ; terumah ਚੁੱਕਣ ਦੀ ਭੇਟ (L); 10:40 "we will
+  not neglect the house of our God" ਨਹੀਂ ਤਿਆਗਾਂਗੇ (L), ਅਣਗੌਲਿਆ ਨਹੀਂ
+  ਕਰਾਂਗੇ (B, R), echoed in 13:11. Weights use the units setting with
+  ਸ਼ੇਕੇਲ as the alternative (the glossary's ਸ਼ੈਕਲ; to be unified).
+- Booths ਡੇਰੇ (L, B), ਟਾਹਣੀਆਂ ਦੀਆਂ ਝੌਂਪੜੀਆਂ (R); instruments: cymbals
+  ਛੈਣੇ, nevel ਸਾਰੰਗੀ, kinnor ਵੀਣਾ; a town's "daughters" ਉਸ ਦੀਆਂ ਧੀਆਂ (L),
+  ਆਲੇ-ਦੁਆਲੇ ਦੇ ਨਗਰ (B), ਲਾਗਲੇ ਨਗਰ (R).
+- Nehemiah's "remember me" prayers (5:19, 13:14, 13:22, 13:31) share one
+  wording: ... ਭਲਾਈ ਲਈ ਮੇਰੇ ਪੱਖ ਵਿੱਚ ਚੇਤੇ ਰੱਖ (L), ... ਭਲਾਈ ਲਈ ਮੈਨੂੰ ਚੇਤੇ
+  ਕਰ (B), ਮੈਨੂੰ ਯਾਦ ਰੱਖ ਅਤੇ ਮੇਰਾ ਭਲਾ ਕਰ (R); the curses on enemies (6:14,
+  13:29) are ਉਨ੍ਹਾਂ ਨੂੰ ਚੇਤੇ ਰੱਖ.
+- Lines other books must match: 1:5 and 9:32 follow Daniel 9:4; 9:17 uses
+  the Exodus 34:6 / Joel 2:13 / Jonah 4:2 formula; 13:1-2 quote Deuteronomy
+  23:3-5 (and the Balaam story of Numbers 22-24); 13:26 summarises 1 Kings
+  11; the list of 7:6-73 must stay aligned with Ezra 2.
