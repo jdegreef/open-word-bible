@@ -1005,3 +1005,54 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   {{gender:ਸੰਤਾਨ|ਪੁੱਤਰਾਂ}} for "sons" (2:10, 12:5-8, 11:22 L ਦੀ ਸੰਤਾਨ);
   {{gender:ਮਨੁੱਖ ਦੀ ਸੰਤਾਨ|ਮਨੁੱਖ ਦਾ ਪੁੱਤਰ}} in Psalm 8 at B and R (2:6).
   ਮਨੁੱਖ alone takes no span; ਪਿਉ-ਦਾਦੇ (L), ਪੁਰਖੇ (B, R) take none either.
+
+### Ezra
+
+- The divine name is the usual span; God takes the honorific plural in the
+  narrative and when Cyrus, Darius or Artaxerxes speak of God; Ezra prays
+  with ਤੂੰ (9:6-15). Adonai (10:3) is plain ਪ੍ਰਭੂ. God of heaven ਅਕਾਸ਼ ਦੇ
+  ਪਰਮੇਸ਼ੁਰ.
+- The house of God is ਘਰ (L, B), ਹੈਕਲ (R); *hekhal* is ਹੈਕਲ at every
+  level; a pagan temple is ਮੰਦਰ.
+- Offices: province ਸੂਬਾ; governor ਰਾਜਪਾਲ; Tirshatha ਤਿਰਸ਼ਾਥਾ (L);
+  satraps ਸੂਬੇਦਾਰ (L, B), ਇਲਾਕਾਈ ਹਾਕਮ (R), as in Esther; *nasi* ਪ੍ਰਧਾਨ
+  (L, B), ਆਗੂ (R); *sarim* ਸਰਦਾਰ (L), ਆਗੂ (B, R); elders ਬਜ਼ੁਰਗ (L),
+  ਬਜ਼ੁਰਗ ਆਗੂ (B), ਆਗੂ (R); heads of fathers ਪਿਤਰਾਂ ਦੇ ਮੁਖੀਏ (L),
+  ਘਰਾਣਿਆਂ ਦੇ ਮੁਖੀਏ (B), ਪਰਿਵਾਰਾਂ ਦੇ ਆਗੂ (R); leading priests ਜਾਜਕਾਂ ਦੇ
+  ਮੁਖੀਏ (L), ਮੁੱਖ ਜਾਜਕ (B, R), kept apart from ਮਹਾਂ ਜਾਜਕ. Rehum ਹਾਕਮ (L),
+  ਮੁੱਖ ਅਧਿਕਾਰੀ (B, R); Shimshai ਲਿਖਾਰੀ (L, B), ਮੁਨਸ਼ੀ (R).
+- Ezra the scribe is ਸ਼ਾਸਤਰੀ (L), ਬਿਵਸਥਾ ਦਾ ਸਿੱਖਿਅਕ (B, R), never ਗ੍ਰੰਥੀ.
+- Exiles: *golah* ਗ਼ੁਲਾਮੀ ਵਿੱਚ ਗਏ / `{{gender:ਗ਼ੁਲਾਮੀ ਦੀ ਸੰਤਾਨ|ਗ਼ੁਲਾਮੀ ਦੇ
+  ਪੁੱਤਰਾਂ}}` (L), ਗ਼ੁਲਾਮੀ ਤੋਂ ਮੁੜੇ ਲੋਕ (B), ਗ਼ੁਲਾਮੀ ਤੋਂ ਵਾਪਸ ਆਏ ਲੋਕ (R).
+  "Sons of Israel" is `{{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰ(ਾਂ)}}` at
+  L and ਇਸਰਾਏਲੀ at B and R.
+- Lists (chapters 2, 8, 10): X ਦੇ ਪੁੱਤਰ / ਦੇ ਪੁੱਤਰਾਂ ਵਿੱਚੋਂ (L), X ਦੀ
+  ਔਲਾਦ (ਵਿੱਚੋਂ) (B), X ਦੀ ਔਲਾਦ (ch. 2) or X ਦੀ ਕੁਲ ਵਿੱਚੋਂ (R); towns X ਦੇ
+  ਲੋਕ, *anshe* X ਦੇ ਮਨੁੱਖ; *zakar* ਮਰਦ. Numbers under 100 in words. Ezra 2
+  parallels Nehemiah 7, and Ezra 1:1-3 is 2 Chronicles 36:22-23: those
+  books should take the same names and wording. Bezai ਬੇਜ਼ਈ and Besai ਬੇਸਾਈ
+  are different families.
+- Temple staff: singers ਗਾਇਕ; gatekeepers ਦਰਬਾਨ; Nethinim ਹੈਕਲ ਦੇ ਸੇਵਕ;
+  Solomon's servants ਦਾਸ; ministers (8:17) ਸੇਵਾਦਾਰ.
+- Beyond the River ਦਰਿਆ ਪਾਰ (L), ਦਰਿਆ ਪਾਰ ਦਾ ਸੂਬਾ (B), ਫ਼ਰਾਤ ਦਰਿਆ ਦੇ
+  ਪੱਛਮ ਵਾਲਾ ਸੂਬਾ (R). The Ahava is ਦਰਿਆ (L), ਨਹਿਰ (B, R).
+- Court address: officials to the king ਆਪ and ਆਪ ਦੇ ਦਾਸ, with ਮਹਾਰਾਜ at B
+  and R; the king to a group of officials ਤੁਸੀਂ, to Ezra ਤੂੰ; Shecaniah to
+  Ezra ਤੁਸੀਂ with ਜੀ (10:4). Letter greeting ਸ਼ਾਂਤੀ (L), ਸੁੱਖ-ਸਾਂਦ ਹੋਵੇ
+  (B, R); "eat the salt of the palace" ਮਹਿਲ ਦਾ ਲੂਣ ਖਾਂਦੇ ਹਾਂ (L, B).
+- Units: talent ਤੋੜਾ (about 34 kg), kor ਕੋਰ (220 litres), bath ਬਥ (22
+  litres), in `{{units:...}}` spans at B and R; daric ਦਾਰਕ with no span;
+  cubit spans as `{{units:ਲਗਭਗ 27 ਮੀਟਰ|ਸੱਠ ਹੱਥ}}`.
+- Worship: hesed ਅਟੱਲ ਪਿਆਰ (3:11, 7:28, 9:9; the 3:11 refrain should match
+  the Psalms and Chronicles); Booths ਡੇਰਿਆਂ ਦਾ ਤਿਉਹਾਰ; Unleavened Bread ਪਤੀਰੀ
+  ਰੋਟੀ ਦਾ ਤਿਉਹਾਰ (L, B), ਬਿਨਾਂ ਖ਼ਮੀਰ ਦੀ ਰੋਟੀ (R); Passover ਪਸਾਹ; freewill
+  offering ਆਪਣੀ ਖ਼ੁਸ਼ੀ ਦੀ ਭੇਟ; fast ਵਰਤ; impale ਸੂਲੀ ਚਾੜ੍ਹਨਾ.
+- Chapters 9-10: *ma'al* ਬੇਵਫ਼ਾਈ; abominations ਘਿਣਾਉਣੇ ਕੰਮ; holy seed
+  ਪਵਿੱਤਰ ਅੰਸ (L, B); remnant ਬਚ ਨਿੱਕਲੇ ਹੋਏ / ਬਚੇ ਹੋਏ; tent peg ਤੰਬੂ ਦੀ
+  ਕਿੱਲੀ (L), ਪੱਕਾ ਟਿਕਾਣਾ (B), both (R); foreign women ਪਰਾਈਆਂ ਔਰਤਾਂ (L),
+  ਪਰਾਈਆਂ ਪਤਨੀਆਂ (B, R); *cherem* (10:8) ਅਰਪਣ (L), ਜ਼ਬਤ (B).
+- Names: Persian kings and officials ਕੋਰਸ਼, ਫ਼ਾਰਸ, ਦਾਰਾ, ਅਹਸ਼ਵੇਰੋਸ਼,
+  ਅਰਤਹਸ਼ਸ਼ਤਾ, ਮਿਥਰਦਾਥ, ਸ਼ੇਸ਼ਬੱਸਰ, ਤੱਤਨਈ, ਸ਼ਥਰ-ਬੋਜ਼ਨਈ, ਰਹੂਮ, ਸ਼ਿਮਸ਼ਈ,
+  ਆਸਨੱਪਰ; leaders ਜ਼ਰੁੱਬਾਬਲ, ਯੇਸ਼ੂਆ (the high priest, ਯਹੋਸ਼ੁਆ in Haggai),
+  ਯੋਸਾਦਾਕ, ਸ਼ਅਲਤੀਏਲ; prophets ਹੱਜਈ, ਜ਼ਕਰਯਾਹ, ਇੱਦੋ; Ezra ਅਜ਼ਰਾ; Ezra's
+  priestly line (7:1-5) should be spelled as in 1 Chronicles 6.
