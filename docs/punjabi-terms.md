@@ -711,3 +711,28 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   "you" (4:7, 6:1) is ਤੂੰ at L, ਤੁਸੀਂ ਹਰੇਕ at B and R. Cephas ਕੇਫ਼ਾਸ (L,
   B), ਪਤਰਸ (R).
 - Names: ਦੰਮਿਸ਼ਕ, ਅਰਬ, ਸੀਰੀਆ, ਕਿਲਿਕਿਯਾ, ਅੰਤਾਕਿਯਾ, ਹਾਜ਼ਰਾ, ਸੀਨਈ.
+
+### Amos
+
+- The oracles of chapters 1-2 use one wording each for the opening
+  ("X ਦੇ ਤਿੰਨ ਅਪਰਾਧਾਂ ਦੇ ਕਾਰਨ, ਅਤੇ ਚਾਰ ਦੇ ਕਾਰਨ, ਮੈਂ ਇਸ ਨੂੰ ਵਾਪਸ ਨਹੀਂ
+  ਮੋੜਾਂਗਾ" at L; ਜੁਰਮ ... ਸਜ਼ਾ ਨਹੀਂ ਟਾਲਾਂਗਾ at B; ਵਾਰ-ਵਾਰ ਪਾਪ at R) and
+  the fire refrain (ਅੱਗ ਘੱਲਾਂਗਾ ... ਖਾ ਜਾਵੇਗੀ L; ਭੇਜਾਂਗਾ ... ਨਿਗਲ ਜਾਵੇਗੀ
+  B; ਅੱਗ ਲਾਵਾਂਗਾ ... ਸਾੜ ਕੇ ਸੁਆਹ R). The refrain of 4:6-11 is ਤਾਂ ਵੀ (L),
+  ਫਿਰ ਵੀ (B) ਤੁਸੀਂ ਮੇਰੇ ਵੱਲ ਨਾ ਮੁੜੇ; R ਮੇਰੇ ਕੋਲ ਵਾਪਸ ਨਾ ਆਏ.
+- Ne'um YHWH {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਦਾ ਵਾਕ ਹੈ (L, B), ... ਆਖਦੇ ਹਨ (R);
+  God of hosts ਸੈਨਾਂ ਦੇ ਪਰਮੇਸ਼ੁਰ; Adonai YHWH of hosts (9:5) ਪ੍ਰਭੂ, ਸੈਨਾਂ ਦੇ
+  {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}. The hymns (4:13, 5:8, 9:6) share their
+  closing line.
+- 1:2 uses Joel 4:16's wording, 9:13 Joel 4:18's. 5:25-27 and 9:11-12 are
+  quoted in Acts 7:42-43 and 15:16-17: the decisions list the words Acts
+  should keep (ਦਾਊਦ ਦੀ ਡਿੱਗੀ ਹੋਈ ਝੁੱਗੀ, ਖੰਡਰ, ਫੇਰ ਉਸਾਰਾਂਗਾ).
+- Torah (2:4) ਸਿੱਖਿਆ; qinah ਵੈਣ; the cows of Bashan (4:1-3) take
+  feminine plural verbs; God says ਤੂੰ to Amos, Amaziah ਆਪ to the king and ਤੂੰ
+  to Amos; Amos prays with ਤੂੰ. Plumb line ਸਾਹਲ; sycamore fig ਗੁੱਲਰ; Sheol
+  ਪਤਾਲ (L, B), ਮੁਰਦਿਆਂ ਦਾ ਥਾਂ (R). 8:2 states the qayits/qets pun only at R.
+- Names: ਤਕੋਆ, ਉੱਜ਼ੀਯਾਹ, ਯੋਆਸ਼, ਯਾਰਾਬੁਆਮ, ਹਜ਼ਾਏਲ, ਬਨ-ਹਦਦ, ਆਵਨ ਦੀ ਵਾਦੀ,
+  ਬੈਤ-ਅਦਨ, ਕੀਰ, ਗਾਜ਼ਾ, ਅਸ਼ਦੋਦ, ਅਸ਼ਕਲੋਨ, ਅਕਰੋਨ, ਤੇਮਾਨ, ਬਾਸਰਾਹ, ਰੱਬਾਹ,
+  ਕਰੀਯੋਥ, ਬਏਰਸ਼ਬਾ, ਗਿਲਗਾਲ, ਹਰਮੋਨ, ਕਲਨੇਹ, ਹਮਾਥ, ਗਥ, ਲੋ-ਦਬਾਰ, ਕਰਨਇਮ,
+  ਲਬੋ-ਹਮਾਥ, ਅਮਸਯਾਹ, ਸਿੱਕੂਥ, ਕੀਯੂਨ, ਕਫ਼ਤੋਰ (ਕਰੇਤ at R); the Pleiades and
+  Orion ਕਿਰਤੀਆਂ ਅਤੇ ਜਬਾਰ.
