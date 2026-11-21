@@ -4,7 +4,7 @@ summary: Como o século XX transformou a tradução da Bíblia num empreendiment
 date: 2026-10-12
 order: 58
 section: translation
-source: 3dbbb4442517
+source: c78348322026
 ---
 Há mais de sete mil línguas vivas no mundo. Algumas são faladas por centenas de milhões de pessoas; outras, por algumas centenas. Durante a maior parte da história, a tradução da Bíblia chegou só a uma pequena fração delas. No século XX, isso mudou. A tradução se tornou um esforço deliberado, organizado e cada vez mais profissional para alcançar todas as línguas e, nas últimas décadas, passou a ser, acima de tudo, o trabalho dos próprios falantes dessas línguas.
 
@@ -73,7 +73,7 @@ O caso depende de uma distinção que atravessa toda tradução: entre o que uma
 
 ## Onde a Open Word Bible se encaixa
 
-A Open Word Bible não é um projeto de línguas minoritárias. As suas línguas até agora são o inglês, o espanhol, o francês, o suaíli, o vietnamita, o coreano, o português, o amárico, o híndi e o russo, todas as quais já têm muitas Bíblias. Mas ela compartilha duas preocupações com o movimento moderno. A sua licença CC0 significa que qualquer pessoa, inclusive quem traduz para outras línguas, pode usá-la e adaptá-la livremente. E, como cada frase traz o seu raciocínio (veja [Mostrando o nosso trabalho: o que é um registro de raciocínio](/articles/showing-the-work/)), um tradutor para outra língua pode ver o que foi decidido sobre o grego e o hebraico, e não só um resultado em inglês. Os seus rascunhos são feitos com ajuda de IA, e nenhum ainda está marcado como revisado; como todos os projetos descritos aqui, ela depende de revisores humanos cujos nomes ficam registrados.
+A Open Word Bible não é um projeto de línguas minoritárias. As suas línguas até agora são o inglês, o espanhol, o francês, o suaíli, o vietnamita, o coreano, o português, o amárico, o híndi, o russo, o ucraniano, o japonês e o indonésio, com outras a caminho, todas as quais já têm muitas Bíblias. Mas ela compartilha duas preocupações com o movimento moderno. A sua licença CC0 significa que qualquer pessoa, inclusive quem traduz para outras línguas, pode usá-la e adaptá-la livremente. E, como cada frase traz o seu raciocínio (veja [Mostrando o nosso trabalho: o que é um registro de raciocínio](/articles/showing-the-work/)), um tradutor para outra língua pode ver o que foi decidido sobre o grego e o hebraico, e não só um resultado em inglês. Os seus rascunhos são feitos com ajuda de IA, e nenhum ainda está marcado como revisado; como todos os projetos descritos aqui, ela depende de revisores humanos cujos nomes ficam registrados.
 
 ## Fontes
 

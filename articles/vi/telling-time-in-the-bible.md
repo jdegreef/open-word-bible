@@ -44,7 +44,7 @@ Mác 13:35 gọi bốn canh của người La Mã bằng những tên thông d�
 
 Ở Y-sơ-ra-ên, ngày bắt đầu lúc mặt trời lặn. Khuôn mẫu ấy được đặt ra ngay trong chương đầu của Sáng Thế Ký: “có buổi chiều và có buổi sáng, ngày thứ nhất”. Bản Hê-bơ-rơ đặt {{HEBREW:GEN.1.5:9}} (*ʿerev*, buổi chiều) trước {{HEBREW:GEN.1.5:11}} (*bōqer*, buổi sáng). Bản ghi của Sáng Thế Ký 1:5 lưu ý rằng ngày được đếm từ buổi chiều, như ngày của Y-sơ-ra-ên được tính từ lúc mặt trời lặn.
 
-Luật pháp nói rõ điều này đối với Ngày Lễ Chuộc Tội: “từ chiều hôm này đến chiều hôm sau, các ngươi phải giữ ngày nghỉ của mình” (Lê-vi Ký 23:32). Cấp độ Dễ đọc của chúng tôi (bản tiếng Anh) nói rõ thời điểm: từ lúc mặt trời lặn ngày thứ chín của tháng “until sunset the next day” (“cho đến lúc mặt trời lặn ngày hôm sau”).
+Luật pháp nói rõ điều này đối với Ngày Lễ Chuộc Tội: “từ chiều hôm này đến chiều hôm sau, các ngươi phải giữ ngày nghỉ của mình” (Lê-vi Ký 23:32). Cấp độ Dễ đọc của chúng tôi nói rõ thời điểm: “từ lúc mặt trời lặn ngày mồng chín trong tháng cho đến lúc mặt trời lặn ngày hôm sau”.
 
 Điều này giải thích những chi tiết trong các sách Phúc Âm mà ta có thể thấy lạ. Đức Giê-xu chết vào buổi chiều ngày Chuẩn Bị, tức ngày trước ngày Sa-bát, và Ngài phải được chôn trước khi mặt trời lặn, lúc ngày Sa-bát bắt đầu. Các phụ nữ không thể đến mộ cho đến khi ngày Sa-bát qua đi.
 

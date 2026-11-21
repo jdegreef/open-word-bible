@@ -194,3 +194,10 @@ Read each against them and make sure no clause is copied (Style §1):
 - 1 Corinthians 13; Galatians 5:22–23; Ephesians 2:8–10
 - Philippians 2:5–11; 4:4–13; Hebrews 11:1
 - 1 John 1:9; 4:7–21; Revelation 21:1–5
+
+## Open questions from drafting
+
+- **Ruth 4:1, "Mr. So-and-so"**: drafted as *kaibigan* (friend) at every
+  level, since the placeholder names *kuwan* and *si Ano* sound colloquial
+  or comic. A reviewer should confirm or suggest a better form (r-tl-1 in
+  RUT.4.1.s1).

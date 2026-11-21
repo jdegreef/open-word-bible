@@ -4,7 +4,7 @@ summary: Lenguaje inclusivo o tradicional, Cristo o Mesías, él o Él, ustedes 
 date: 2026-10-10
 order: 4
 section: method
-source: f88c24659512
+source: 18d3e565024d
 ---
 Los lectores de la Biblia no se ponen de acuerdo en algunas cosas que, en rigor, son cuestiones de redacción. ¿Hay que decir «toda la humanidad» o «los hombres» cuando el original se refiere a todos? ¿El título de Jesús debe ser «Cristo» o «Mesías»? ¿Los pronombres que se refieren a Dios deben llevar mayúscula? ¿El nombre de Dios debe escribirse «el SEÑOR» o «Yahvé»? ¿Ustedes o vosotros? Open Word Bible deja que cada lector elija.
 
@@ -16,6 +16,7 @@ Los lectores de la Biblia no se ponen de acuerdo en algunas cosas que, en rigor,
 - **Nombre de Dios.** En el Antiguo Testamento, el nombre propio de Dios se escribe «el SEÑOR» de forma predeterminada, siguiendo la antigua costumbre de no pronunciarlo, y «Yahvé» como opción.
 - **Medidas.** Donde un pasaje da una medida, unidades actuales de forma predeterminada y las unidades originales como opción. El arca de Noé mide 135 metros de largo, o 300 codos (Génesis 6:15); en las tinajas de Caná cabían entre 80 y 120 litros, o dos o tres medidas (Juan 2:6). El nivel Literal conserva siempre la unidad antigua.
 - **Segunda persona del plural.** *Ustedes*, como se habla en América Latina, o *vosotros*, como en la mayor parte de España.
+- **Palabra china para Dios.** 神 (*Shén*) o 上帝 (*Shàngdì*), las dos palabras que las Biblias chinas usan desde hace mucho para el único Dios.
 
 Está previsto un ajuste para la ortografía británica del inglés.
 

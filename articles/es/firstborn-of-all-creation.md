@@ -32,7 +32,7 @@ Israel no fue la primera nación de la historia. La decisión de significado lee
 
 > {{OWB:PSA.89.28.s1:L}}
 
-(La mayoría de las Biblias numeran este versículo 89:27. Los Salmos aún no están traducidos al español, así que la cita es de la edición inglesa). El rey no nace primero. Es *hecho* primogénito, y la segunda línea dice lo que eso significa: «el más alto de los reyes de la tierra». La decisión de significado explica que el hijo primogénito tenía el primer rango y la herencia, y que aquí el rey recibe ese rango. El nivel Equilibrada inglés dice «I will give him the rank of firstborn» («le daré el rango de primogénito»).
+(La mayoría de las Biblias numeran este versículo 89:27). El rey no nace primero. Es *hecho* primogénito, y la segunda línea dice lo que eso significa: «el más alto de los reyes de la tierra». La decisión de significado explica que el hijo primogénito tenía el primer rango y la herencia, y que aquí el rey recibe ese rango. El nivel Equilibrada dice «Le daré el rango de primogénito».
 
 ## El versículo siguiente
 

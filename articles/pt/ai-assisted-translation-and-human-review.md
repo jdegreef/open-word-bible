@@ -4,7 +4,7 @@ summary: Tudo neste site hoje é traduzido com ajuda de IA. Eis como uma frase �
 date: 2026-10-10
 order: 10
 section: method
-source: 2f05369a7dc4
+source: e1e9a6d4898e
 ---
 A Open Word Bible é traduzida com a ajuda de IA. Dizemos isso claramente, porque um projeto que promete mostrar o seu trabalho não pode ser vago sobre quem fez o trabalho. Este artigo explica como uma frase é redigida, o que você pode ver dela, onde a redação por IA deixa a desejar e o que precisa acontecer antes que qualquer frase seja chamada de revisada.
 
@@ -26,13 +26,13 @@ Este é o nível Equilibrada da frase que saiu dessas etapas:
 
 > {{OWB:PHP.4.6.s1:B}}
 
-O seu registro contém o grego, que começa com {{GREEK:PHP.4.6:1-2}}, "com nada fiquem ansiosos"; uma glosa literal; os níveis Literal, Equilibrada e Acessível em inglês; e os mesmos três níveis em outras línguas, à medida que são redigidos. Ele também contém doze decisões. Sete são decisões de sentido, comuns a todas as línguas. Uma diz que {{LEMMA:PHP.4.6:2}} significa aqui a preocupação ansiosa, a palavra que Jesus usa em Mateus 6, e não a boa preocupação pelos outros para a qual Paulo a usa em 2:20. Outra diz que o verbo para "guardar" é o que faz uma guarnição, uma imagem que o povo de Filipos, uma colônia romana com soldados aposentados entre os seus cidadãos, teria sentido. As outras cinco são decisões de formulação, cada uma para uma língua. Uma decisão do inglês, por exemplo, explica por que a Equilibrada diz que a paz vai "stand guard over" os corações: ela mantém a imagem do soldado sem o antiquado "keep". O português faz a mesma escolha, "montará guarda sobre", e registra isso numa decisão própria.
+O seu registro contém o grego, que começa com {{GREEK:PHP.4.6:1-2}}, "com nada fiquem ansiosos"; uma glosa literal; os níveis Literal, Equilibrada e Acessível em inglês; e os mesmos três níveis em outras línguas, à medida que são redigidos. Ele também contém vinte e sete decisões. Sete são decisões de sentido, comuns a todas as línguas. Uma diz que {{LEMMA:PHP.4.6:2}} significa aqui a preocupação ansiosa, a palavra que Jesus usa em Mateus 6, e não a boa preocupação pelos outros para a qual Paulo a usa em 2:20. Outra diz que o verbo para "guardar" é o que faz uma guarnição, uma imagem que o povo de Filipos, uma colônia romana com soldados aposentados entre os seus cidadãos, teria sentido. As outras vinte são decisões de formulação, cada uma para uma língua. Uma decisão do inglês, por exemplo, explica por que a Equilibrada diz que a paz vai "stand guard over" os corações: ela mantém a imagem do soldado sem o antiquado "keep". O português faz a mesma escolha, "montará guarda sobre", e registra isso numa decisão própria.
 
 Duas decisões deste registro estão marcadas como incertas. Uma é sobre o sentido: a paz que "supera todo entendimento" pode ser a paz que vai além do que a mente consegue compreender, ou a paz que consegue mais do que qualquer plano humano conseguiria. O registro segue a leitura mais comum e dá a outra numa nota de rodapé. A segunda é sobre a formulação em inglês. O nível Acessível diz que a paz guarda vocês "porque vocês estão unidos a Cristo Jesus", onde o grego diz só "em". A decisão de formulação diz claramente que isso acrescenta uma razão que o grego deixa implícita, e que os revisores devem conferi-la. O português Acessível diz o mesmo:
 
 > {{OWB:PHP.4.6.s1:R}}
 
-Esse é o padrão em toda parte. Nos rascunhos feitos até agora, uma frase traz em média cerca de quatro decisões, e cerca de uma decisão em cada doze está marcada como incerta. A IA é instruída a marcar uma decisão apertada como incerta, em vez de apresentá-la como resolvida, e o leitor mostra a etiqueta.
+Esse é o padrão em toda parte. Nos rascunhos, uma frase traz em média cerca de duas ou três decisões de sentido, mais as decisões de formulação de cada língua, e cerca de uma decisão de sentido em cada nove está marcada como incerta. A IA é instruída a marcar uma decisão apertada como incerta, em vez de apresentá-la como resolvida, e o leitor mostra a etiqueta.
 
 ## O que a IA não faz
 
@@ -50,7 +50,7 @@ Um leitor tem razão em perguntar o que uma IA erra. Já vimos vários tipos de 
 
 **Fluência não é discernimento.** Um rascunho pode ser lido com facilidade e ainda assim estar errado, ou estar certo por razões que não são exatamente as declaradas. O tom confiante de uma frase não é prova a seu favor.
 
-**A formulação natural precisa de falantes nativos.** Uma IA consegue escrever espanhol, francês, suaíli, vietnamita, coreano, português, amárico, híndi ou russo gramaticalmente corretos. Se uma frase soa natural para um leitor que cresceu com a língua é outra questão. O registro em espanhol de João 1:1, por exemplo, escolhe *el Verbo* em vez de *la Palabra* para "o Verbo" e assinala a escolha para a revisão de um falante nativo.
+**A formulação natural precisa de falantes nativos.** Uma IA consegue escrever espanhol, suaíli, coreano, amárico ou japonês gramaticalmente corretos. Se uma frase soa natural para um leitor que cresceu com a língua é outra questão. O registro em espanhol de João 1:1, por exemplo, escolhe *el Verbo* em vez de *la Palabra* para "o Verbo" e assinala a escolha para a revisão de um falante nativo.
 
 **A coerência entre os livros é difícil.** Milhares de frases redigidas em momentos diferentes podem se desviar umas das outras. Os termos-chave conferidos por software, as listas de termos dos livros longos e as decisões que citam decisões anteriores trabalham contra isso, mas algum desvio vai restar para os revisores encontrarem.
 
@@ -91,4 +91,4 @@ Você não precisa esperar os revisores para testar o que lê.
 
 ## Ajude a revisar
 
-Se você lê grego ou hebraico, ou é falante nativo de espanhol, francês, suaíli, vietnamita, coreano, português, amárico, híndi ou russo e consegue avaliar se uma frase soa natural, a sua ajuda será muito bem-vinda. Tudo está aberto no [GitHub](https://github.com/jdegreef/open-word-bible), inclusive cada decisão e o seu raciocínio, e o link "Relatar um problema", no rodapé de cada página, abre uma *issue* ali. Discordar de uma decisão, e dizer por quê, é exatamente o tipo de ajuda de que o projeto precisa.
+Se você lê grego ou hebraico, ou é falante nativo de uma das línguas da tradução e consegue avaliar se uma frase soa natural, a sua ajuda será muito bem-vinda. Tudo está aberto no [GitHub](https://github.com/jdegreef/open-word-bible), inclusive cada decisão e o seu raciocínio, e o link "Relatar um problema", no rodapé de cada página, abre uma *issue* ali. Discordar de uma decisão, e dizer por quê, é exatamente o tipo de ajuda de que o projeto precisa.

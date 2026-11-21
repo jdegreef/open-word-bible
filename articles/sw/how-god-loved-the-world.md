@@ -26,7 +26,7 @@ Mstari wa 16 unafuata moja kwa moja. Unaanza na "Kwa maana", na maneno hayo mado
 
 Mstari unaanza na {{GREEK:JHN.3.16:1}}. Kwa Kiingereza, "God so loved the world" kwa kawaida husikika kama "Mungu aliupenda ulimwengu sana". Lakini neno la Kigiriki kwa kawaida linamaanisha "hivi" au "kwa njia hii", na ndivyo Yohana analitumia mahali pengine: upepo huvuma unakotaka, na "ndivyo" alivyo kila aliyezaliwa kwa Roho (3:8); Yesu, akiwa amechoka kwa safari, aliketi "hivyo" kisimani (4:6).
 
-Limetokea pia mistari miwili kabla, katika sentensi kuhusu nyoka: kama Musa alivyomwinua, {{GREEK:JHN.3.14:10}}, "vivyo hivyo", Mwana wa Adamu lazima ainuliwe. Ikisomwa pamoja, mistari hiyo miwili inasema: hivi ndivyo Mungu alivyoupenda ulimwengu, kwa kumtoa Mwana ili ainuliwe. 1 Yohana 4:9 inasema jambo hilohilo kwa maneno mengine (barua hii bado haijatafsiriwa kwa Kiswahili, kwa hiyo inaonyeshwa kwa Kiingereza):
+Limetokea pia mistari miwili kabla, katika sentensi kuhusu nyoka: kama Musa alivyomwinua, {{GREEK:JHN.3.14:10}}, "vivyo hivyo", Mwana wa Adamu lazima ainuliwe. Ikisomwa pamoja, mistari hiyo miwili inasema: hivi ndivyo Mungu alivyoupenda ulimwengu, kwa kumtoa Mwana ili ainuliwe. 1 Yohana 4:9 inasema jambo hilohilo kwa maneno mengine:
 
 > {{OWB:1JN.4.9.s1:B}}
 

@@ -5,9 +5,9 @@ date: 2026-11-14
 order: 112
 nav_title: As duas edições de Jeremias
 section: passage
-source: 57b54f832e6f
+source: ab0e3f253839
 ---
-Todo livro da Bíblia tem lugares em que os manuscritos divergem. Na maioria dos livros eles são poucos e pequenos. Jeremias é diferente. Nos registros da Open Word Bible ele tem 176 decisões de variante textual, mais do que qualquer outro livro: mais do que João (139), Salmos (134) ou Isaías (122). Noventa e seis delas têm nota de rodapé, e cinquenta estão marcadas como incertas.
+Todo livro da Bíblia tem lugares em que os manuscritos divergem. Na maioria dos livros eles são poucos e pequenos. Jeremias é diferente. Nos registros da Open Word Bible ele tem 178 decisões de variante textual, mais do que qualquer outro livro: mais do que João (139), Salmos (134) ou Lucas (125). Noventa e três delas têm nota de rodapé, e cinquenta estão marcadas como incertas.
 
 A razão principal é que Jeremias chegou até nós em duas edições. Este artigo explica quais são elas, por que os estudiosos pensam que o livro existe em duas formas e o que a tradução faz.
 
@@ -66,7 +66,7 @@ Muitas dessas notas dizem algo incomum: "Esta descrição do grego vem de conhec
 
 ## A outra metade: o que os escribas escreveram e o que eles liam
 
-Cerca de 84 das 176 decisões de Jeremias dizem respeito ao grego. Quase o mesmo número, cerca de 78, dizem respeito a outra coisa: lugares em que os próprios manuscritos hebraicos dão duas formas de uma palavra.
+Cerca de 84 das 178 decisões de Jeremias dizem respeito ao grego. Quase o mesmo número, cerca de 78, dizem respeito a outra coisa: lugares em que os próprios manuscritos hebraicos dão duas formas de uma palavra.
 
 Os massoretas, os escribas que copiaram e vocalizaram o texto hebraico no início da Idade Média, não mudavam as letras que tinham recebido. Onde achavam que uma palavra devia ser lida de outro modo, deixavam as consoantes escritas como estavam e anotavam na margem a forma a ser lida em voz alta. A forma escrita se chama *ketiv* ("o que está escrito"), e a forma lida em voz alta, *qere* ("o que se lê"). Jeremias tem um número incomum delas. Veja [Os massoretas: guardiões do texto hebraico](/articles/the-masoretes/).
 
@@ -80,7 +80,7 @@ As cerca de catorze decisões restantes dizem respeito a lugares em que alguns m
 
 ## Por que tantas notas?
 
-Somado tudo, o número não é sinal de que o texto de Jeremias seja pouco confiável. A maioria das 176 decisões registra ou uma diferença de grafia que os próprios escribas hebreus marcaram, ou um lugar em que a edição grega é mais curta. O primeiro tipo quase não afeta nada. O segundo é real, mas é bem compreendido e bem documentado: duas edições do livro de um profeta, ambas antigas, ambas copiadas por comunidades fiéis.
+Somado tudo, o número não é sinal de que o texto de Jeremias seja pouco confiável. A maioria das 178 decisões registra ou uma diferença de grafia que os próprios escribas hebreus marcaram, ou um lugar em que a edição grega é mais curta. O primeiro tipo quase não afeta nada. O segundo é real, mas é bem compreendido e bem documentado: duas edições do livro de um profeta, ambas antigas, ambas copiadas por comunidades fiéis.
 
 Quem lê a Open Word Bible pode ver as duas, sem ser obrigado a escolher. O texto é a edição hebraica que a igreja e a sinagoga leram. As notas de rodapé mostram onde a outra edição difere, e as decisões explicam por quê, e quão segura a tradução está.
 

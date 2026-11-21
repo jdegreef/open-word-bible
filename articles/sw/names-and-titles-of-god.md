@@ -49,11 +49,11 @@ Katika maono ya Isaya, "Nilimwona Bwana ameketi juu ya kiti cha enzi" (Isaya 6:1
 
 ## "Bwana wangu" katika Zaburi 110
 
-Tofauti kati ya *Adonai* na neno la kawaida la bwana ni muhimu zaidi katika Zaburi 110:1, mstari wa Agano la Kale ambao Agano Jipya unaunukuu mara nyingi kuliko mwingine wowote. Zaburi hii bado haijatafsiriwa kwa Kiswahili, kwa hiyo hapa chini kiwango cha Linganifu kinaonekana kwa Kiingereza:
+Tofauti kati ya *Adonai* na neno la kawaida la bwana ni muhimu zaidi katika Zaburi 110:1, mstari wa Agano la Kale ambao Agano Jipya unaunukuu mara nyingi kuliko mwingine wowote. Hiki hapa ni kiwango cha Linganifu:
 
 > {{OWB:PSA.110.1.s1:B}}
 
-Rekodi inaeleza kwamba "lord" wa pili si *Adonai* bali ni *ʾădōnî*, njia ya kila siku ya kumwita mkubwa, hasa mfalme. Maandishi ya Kiebrania yanaliwekea alama za irabu tofauti na cheo kinachotumika kwa Mungu katika mstari wa 5. Kwa hiyo rasimu za Kiingereza zinaandika "my lord" kwa herufi ndogo, na Rahisi inasema "my lord the king" (bwana wangu mfalme), ili asidhaniwe kuwa Mungu.
+Rekodi inaeleza kwamba "bwana" wa pili si *Adonai* bali ni *ʾădōnî*, njia ya kila siku ya kumwita mkubwa, hasa mfalme. Maandishi ya Kiebrania yanaliwekea alama za irabu tofauti na cheo kinachotumika kwa Mungu katika mstari wa 5. Kwa hiyo rasimu zinaandika "bwana wangu" kwa herufi ndogo, na Rahisi inasema "bwana wangu mfalme", ili asidhaniwe kuwa Mungu.
 
 Hata hivyo, kwa Kigiriki maneno yote mawili yakawa *kyrios*, "Bwana." Yesu anaponukuu zaburi hiyo, anauliza jinsi Daudi angeweza kumwita mzao wake mwenyewe "Bwana" (Mathayo 22:41–45). Hapa rasimu zinaandika "Bwana alimwambia Bwana wangu," zote mbili kwa herufi kubwa, kwa sababu Injili inaisoma zaburi hiyo kuwa inamhusu Masihi. Uamuzi wa maana wa Mathayo 22:44 unaeleza: "Bwana" wa kwanza anasimama badala ya jina la Mungu, "Bwana wangu" badala ya neno tofauti la Kiebrania linalotumika kwa bwana au mfalme, na "kwa Kigiriki yote mawili ni 'Bwana.'" Mstari uleule unatafsiriwa kwa njia mbili mahali pawili, na rekodi zinasema kwa nini.
 
@@ -63,7 +63,7 @@ Cheo {{LEMMA:1SA.1.3:9.2}} {{HEBREW:1SA.1.3:10}} (*YHWH ṣəbāʾôt*) kinatoke
 
 Uamuzi wa maana wa 1 Samweli 1:3 unaeleza neno hilo. *Ṣəbāʾôt* ni wingi wa neno la jeshi, kundi kubwa lililopangwa katika safu. Linatumika kwa majeshi ya Israeli, kwa jua, mwezi na nyota, na kwa viumbe wa mbinguni wanaozunguka kiti cha enzi cha Mungu. Likiunganishwa na jina la Mungu, linamwonyesha BWANA kama Mfalme anayeamuru kila nguvu mbinguni na duniani. Rekodi inakiunganisha cheo hiki katika Samweli na sanduku, "anayeketi juu ya makerubi," na Daudi, anayetoka kumkabili Goliathi kwa jina la BWANA wa majeshi, Mungu wa majeshi ya Israeli (17:45).
 
-Machaguo makuu ya Kiingereza yamechambuliwa katika [Jina la Mungu katika tafsiri](/articles/the-divine-name-in-translation/). Kiwango cha Halisi cha toleo la Kiingereza kinabakiza "the LORD of hosts" wa kimapokeo. Linganifu na Rahisi zinasema "the LORD of Armies." Uamuzi wa maneno unatoa sababu: kwa Kiingereza cha leo "hosts" mara nyingi humaanisha watu wanaokaribisha wageni, na "Armies" (majeshi) linasema maana waziwazi huku likibakiza picha ya kamanda. "Almighty" (Mwenyezi) lilifikiriwa na kuachwa, kwa sababu linageuza picha kuwa sifa ya kidhahania. Kwa Kiswahili tatizo hilo halipo: "Bwana wa majeshi" ndilo umbo la cheo hiki lililozoeleka, na linasema maana yake. Maono ya Isaya, ambayo bado hayajatafsiriwa kwa Kiswahili, yanasomeka hivi katika Linganifu ya Kiingereza:
+Machaguo makuu ya Kiingereza yamechambuliwa katika [Jina la Mungu katika tafsiri](/articles/the-divine-name-in-translation/). Kiwango cha Halisi cha toleo la Kiingereza kinabakiza "the LORD of hosts" wa kimapokeo. Linganifu na Rahisi zinasema "the LORD of Armies." Uamuzi wa maneno unatoa sababu: kwa Kiingereza cha leo "hosts" mara nyingi humaanisha watu wanaokaribisha wageni, na "Armies" (majeshi) linasema maana waziwazi huku likibakiza picha ya kamanda. "Almighty" (Mwenyezi) lilifikiriwa na kuachwa, kwa sababu linageuza picha kuwa sifa ya kidhahania. Kwa Kiswahili tatizo hilo halipo: "Bwana wa majeshi" ndilo umbo la cheo hiki lililozoeleka, na linasema maana yake. Maono ya Isaya yanasomeka hivi katika Linganifu:
 
 > {{OWB:ISA.6.3.s1:B}}
 
