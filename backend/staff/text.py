@@ -14,7 +14,7 @@ Claude session works into a pull request.
 """
 
 from django.core.cache import cache
-from django.db.models import Case, Count, IntegerField, Q, Value, When
+from django.db.models import Count, Q
 from rest_framework.response import Response
 
 from owb import languages, refs
@@ -26,9 +26,6 @@ from .permissions import admin_view
 from .progress import book_name
 
 PAGE = 50
-# Bible order, for a decision (by its sentence).
-ORDER = Case(*[When(sentence__book=code, then=Value(i)) for i, code in enumerate(refs.BOOK_CODES)],
-             output_field=IntegerField())
 
 
 def _decision_json(d):
@@ -66,8 +63,8 @@ def decisions(request):
     except ValueError:
         offset = 0
     total = found.count()
-    page = (found.select_related("sentence").annotate(book_order=ORDER)
-            .order_by("book_order", "sentence__chapter", "sentence__verse", "sentence__number", "order")
+    page = (found.select_related("sentence")
+            .order_by("sentence__book_order", "sentence__chapter", "sentence__verse", "sentence__number", "order")
             [offset:offset + PAGE])
     return Response({
         "decisions": [_decision_json(d) for d in page], "total": total, "offset": offset, "page": PAGE,
