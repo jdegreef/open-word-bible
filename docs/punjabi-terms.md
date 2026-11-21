@@ -483,3 +483,22 @@ Beor, kept as Peter spells it), ਪੌਲੁਸ; ਸਦੂਮ,
   ਤੋਬਾ (L, B).
 - 3:10 "will be found" is ਪ੍ਰਗਟ ਹੋ ਜਾਣਗੇ (L), flagged: other manuscripts
   read "burned up".
+
+### Colossians
+
+People and places: ਪੌਲੁਸ, ਤਿਮੋਥਿਉਸ, ਇਪਫ਼ਰਾਸ, ਤੁਖਿਕੁਸ, ਉਨੇਸਿਮੁਸ,
+ਅਰਿਸਤਰਖੁਸ, ਮਰਕੁਸ, ਬਰਨਬਾਸ, ਯਿਸੂ ਯੂਸਤੁਸ (plain verbs), ਲੂਕਾ, ਦੇਮਾਸ, ਨੁਮਫ਼ਾ,
+ਅਰਖਿੱਪੁਸ; ਕੁਲੁੱਸੇ, ਲਾਉਦਿਕੀਆ, ਹਿਯਰਾਪੁਲਿਸ; ਸਕੂਥੀ.
+
+- Flesh (*sarx*) ਸਰੀਰ and body (*sōma*) ਦੇਹ stay apart through the letter
+  (1:22, 2:11, 2:23); the church as Christ's body is ਦੇਹ.
+- Image (*eikōn*, 1:15, 3:10) ਸਰੂਪ, as Genesis 1:27; firstborn ਪਹਿਲੌਠਾ;
+  fullness (*plērōma*) ਭਰਪੂਰੀ; deity (*theotēs*, 2:9) ਈਸ਼ਵਰਤਾ at L only.
+- Rulers and authorities ਹਕੂਮਤਾਂ / ਹਾਕਮ and ਅਧਿਕਾਰ / ਅਧਿਕਾਰੀ; thrones
+  ਸਿੰਘਾਸਣ (L), ਰਾਜ-ਗੱਦੀਆਂ (B, R); elements of the world (*stoicheia*)
+  ਸੰਸਾਰ ਦੇ ਮੂਲ ਤੱਤ (L), ਮੂਲ ਸ਼ਕਤੀਆਂ (B).
+- Old and new self ਪੁਰਾਣੀ / ਨਵੀਂ ਇਨਸਾਨੀਅਤ (L, B), not a gendered ਮਨੁੱਖ.
+- Kindness (*chrēstotēs*) ਭਲਿਆਈ; redemption ਛੁਟਕਾਰਾ; inheritance ਵਿਰਾਸਤ;
+  fellow slave ਸੰਗੀ ਦਾਸ (L, B); ministry (*diakonia*) ਸੇਵਕਾਈ.
+- Household code: masters ਮਾਲਕ, the Lord ਪ੍ਰਭੂ; Christ as heavenly Master
+  takes honorific verbs (4:1). Greetings ਸਲਾਮ ਆਖਣਾ, as Philemon.
