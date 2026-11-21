@@ -43,7 +43,7 @@ Our records give one meaning for Sheol everywhere: the place or realm of the dea
 - **Balanced** keeps "Sheol" in the Psalms, Isaiah, Ecclesiastes and Jonah. In Genesis 37:35 it says "the grave", because, as the rendering decision there puts it, that is the plain sense of Jacob's words.
 - **Readable** says what Sheol is: "the place of the dead" in the Psalms, "the grave" in Isaiah, Ecclesiastes and Jonah.
 
-None of our levels says "hell" for Sheol anywhere. Jonah's prayer, in the Hebrew numbering 2:3, shows the pattern:
+None of our levels says "hell" for Sheol anywhere. Jonah's prayer, at 2:2 (2:3 in Hebrew Bibles), shows the pattern:
 
 > {{OWB:JON.2.3.s1:B}}
 

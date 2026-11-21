@@ -9,7 +9,7 @@ Isaiah lived in the eighth century before Christ. Yet in one of his best-known p
 
 > {{OWB:ISA.9.5.s1:B}}
 
-"Has been born." "Has been given." The child is spoken of as already here. Most English Bibles number this verse 9:6; Open Word Bible follows the Hebrew numbering, where it is 9:5. Christians have long read it as a promise of Christ, seven centuries later. So why does the prophet use a past tense?
+"Has been born." "Has been given." The child is spoken of as already here. In Hebrew Bibles this verse is 9:5; Open Word Bible, like most English Bibles, numbers it 9:6. Christians have long read it as a promise of Christ, seven centuries later. So why does the prophet use a past tense?
 
 The short answer is that Biblical Hebrew does not have tenses in the English sense. Its verbs say something about *how* an action is viewed more than *when* it happens, and the translator has to decide the time from the context. This article explains how that works, and what Open Word Bible does with it.
 
@@ -51,7 +51,7 @@ The second is for what is always true. Psalm 1 opens with a portrait of the bles
 
 The three verbs (walk, stand, sit) are all in the perfect. The record's grammar decision says so directly: the verbs are in the Hebrew past form, used for what is always true, so they are rendered in the present. "Who has not walked" would be a strange way to describe a way of life. The psalm is not looking back. It is describing a kind of person.
 
-Sometimes the choice is less clear. In Psalm 3:6 David says he lay down and slept and woke again, because the LORD sustained him. The verbs are perfects. The record reads them as last night, a real night in the middle of danger, and gives the other reading as its alternative: some take them as what he always does. The record adds that either way, sleep in the middle of danger shows his trust. The verb form alone cannot decide between them.
+Sometimes the choice is less clear. In Psalm 3:5 David says he lay down and slept and woke again, because the LORD sustained him. The verbs are perfects. The record reads them as last night, a real night in the middle of danger, and gives the other reading as its alternative: some take them as what he always does. The record adds that either way, sleep in the middle of danger shows his trust. The verb form alone cannot decide between them.
 
 ## The imperfect that is past
 
@@ -80,7 +80,7 @@ In the Hebrew Bible the settled thing is usually God's own decision. Open Word B
 - **Joshua 6:2.** Before the walls of Jericho fall, the LORD says, "I have given Jericho into your hand." The record says the victory is spoken of as already done, because God speaks of what he has decided as already settled.
 - **Amos 5:2.** Amos sings a funeral song over Israel: "Fallen, never to rise again, is Virgin Israel." The record notes that Israel was still standing and prosperous when Amos spoke. The lament speaks of its fall as already certain, as if the funeral had begun.
 - **Jeremiah 50:2.** Heralds are told to announce "Babylon is taken" while Babylon still rules the world. The record says they proclaim its fall as a fact, because God has decided it.
-- **Isaiah 9:1.** "The people walking in the dark have seen a great light." The record says the coming light is described as already here, and that Matthew quotes these verses of Jesus beginning his work in Galilee.
+- **Isaiah 9:2.** "The people walking in the dark have seen a great light." The record says the coming light is described as already here, and that Matthew quotes these verses of Jesus beginning his work in Galilee.
 
 The same habit reaches into the New Testament, though Greek verbs work differently. In Romans 8:30 Paul writes that those God justified, "he also glorified". The record for that verse notes that glory is still to be revealed, and that Paul uses the past tense because, in God's purpose, it is as certain as the calling and justifying that have already happened.
 
@@ -98,9 +98,9 @@ Literal keeps the form: "my people have gone into exile". Balanced says what the
 
 Joshua 6:2 shows another way. All three levels keep "I have given", but Readable adds a short sentence of its own, "It is as good as yours", and the rendering decision explains why: to carry the sense of the finished verb, that the city is certain to be Israel's.
 
-## Isaiah 9:5: a birth already announced
+## Isaiah 9:6: a birth already announced
 
-Isaiah 9:5 is harder, and the record treats it with care. Its meaning decision is marked uncertain. It notes that verses 3, 4 and 5 each begin with "for" and give reasons for the joy of verse 2: the oppressor broken, the war gear burned, and now a royal child. The verbs are in the form for completed action. Then it gives two possibilities without forcing a choice. A prophet can speak of what God will surely do as already done, or announce a birth that has just happened. The passage does not name the child.
+Isaiah 9:6 is harder, and the record treats it with care. Its meaning decision is marked uncertain. It notes that verses 3, 4 and 5 each begin with "for" and give reasons for the joy of verse 2: the oppressor broken, the war gear burned, and now a royal child. The verbs are in the form for completed action. Then it gives two possibilities without forcing a choice. A prophet can speak of what God will surely do as already done, or announce a birth that has just happened. The passage does not name the child.
 
 Readers have taken both views. Some see a birth in Isaiah's own time, perhaps a royal heir, celebrated in language that reaches beyond any ordinary king. Many Christian readers see a prophecy of Christ, spoken with the certainty of the prophetic perfect. The two are not always exclusive: some read the verse as speaking of a king in Isaiah's day whose titles were fully realised only in a later son of David. The record points to the passages around it: 7:14 promised a son called Immanuel, and 11:1–5 describes a king from the line of Jesse.
 
@@ -120,7 +120,7 @@ Whether the past tenses of chapter 53 are prophetic perfects, describing a futur
 
 ## How the decision is made
 
-For a Hebrew verb, the English tense is never simply copied. It is a meaning decision: what time, and what kind of action, does this verb describe in its context? The clues are the context, the surrounding verbs, the kind of verb (a state or an event), and the kind of text (story, law, psalm or prophecy). Where the clues point one way, the decision says so and gives the reason. Where they do not, the decision is marked uncertain and the alternative is named, as in Psalm 3:6, Isaiah 5:13 and Isaiah 9:5.
+For a Hebrew verb, the English tense is never simply copied. It is a meaning decision: what time, and what kind of action, does this verb describe in its context? The clues are the context, the surrounding verbs, the kind of verb (a state or an event), and the kind of text (story, law, psalm or prophecy). Where the clues point one way, the decision says so and gives the reason. Where they do not, the decision is marked uncertain and the alternative is named, as in Psalm 3:5, Isaiah 5:13 and Isaiah 9:6.
 
 The levels then put that decision into words. Literal shows the Hebrew form where English can bear it. Balanced chooses the tense an English reader needs to understand the sense. Readable may add a word or a short sentence to make the time plain. None of them changes what the meaning decision says.
 
