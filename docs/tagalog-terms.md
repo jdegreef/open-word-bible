@@ -830,3 +830,36 @@ names the book where the form was first used.
 | Ruth | as the LORD lives | *habang buhay ang PANGINOON* (L); *kung paanong tiyak na buhay ang PANGINOON* (B, R) | With the `divine_name` span. |
 | Ruth | Mr. So-and-so | *kaibigan* | No polite placeholder name in Tagalog. |
 | Ruth | shawl; cloak | *alampay*; *balabal* | |
+| Exodus 1:11 | Pithom | Pitom |  |
+| Exodus 1:15 | Shiphrah; Puah | Shifrah; Puah |  |
+| Exodus 2:22 | Gershom | Gershom | Moses' son; Levi's son is *Gershon*. |
+| Exodus 4:18 | Jether (Jethro) | Jeter | Only here; elsewhere *Jetro*. |
+| Exodus 6:18 | Amram; Izhar; Uzziel | Amram; Izhar; Uziel |  |
+| Exodus 6:17 | Libni | Libni |  |
+| Exodus 6:19 | Mahli; Mushi | Mahli; Mushi |  |
+| Exodus 6:20 | Jochebed | Jokebed | *ch* > *k* (style §6). |
+| Exodus 6:21 | Nepheg; Zichri | Nefeg; Zikri |  |
+| Exodus 6:22 | Mishael; Elzaphan; Sithri | Misael; Elzafan; Sitri |  |
+| Exodus 6:23 | Elisheba | Elisheba |  |
+| Exodus 6:24 | Assir; Elkanah; Abiasaph; Korahites | Asir; Elkanah; Abiasaf; mga Korita |  |
+| Exodus 6:25 | Putiel | Putiel |  |
+| Exodus 13:4 | Abib | Abib | The month; *buwan ng Abib*. |
+| Exodus 13:20 | Etham | Etam |  |
+| Exodus 14:2 | Pi-hahiroth; Migdol; Baal-zephon | Pi-hahirot; Migdol; Baal-zefon |  |
+| Exodus 15:14 | Philistia | Filistia | People: *mga Filisteo*. |
+| Exodus 15:23 | Marah | Mara | Same form as Naomi's *Mara* (Ruth 1:20). |
+| Exodus 15:27 | Elim | Elim |  |
+| Exodus 16:1 | wilderness of Sin | ilang ng Sin |  |
+| Exodus 17:1 | Rephidim | Refidim |  |
+| Exodus 17:7 | Massah; Meribah | Masah; Meriba |  |
+| Exodus 17:10 | Hur | Hur |  |
+| Exodus 28:1 | Ithamar | Itamar |  |
+| Exodus 28:17-20 | the twelve stones | *kornalina, topasyo, berilo; turkesa, safiro, esmeralda; hasinto, agata, amatista; krisolito, onise, haspe* | Several identifications are uncertain (meaning decision at 28:17). |
+| Exodus 30:23-24 | myrrh, cinnamon, aromatic cane, cassia | *mira, kanela, mabangong tambo, kasia* |  |
+| Exodus 30:34 | stacte, onycha, galbanum, frankincense | *estakte, onika, galbano, kamanyang* |  |
+| Exodus 31:2 | Bezalel son of Uri, son of Hur | Bezalel na anak ni Uri na anak ni Hur |  |
+| Exodus 31:6 | Oholiab son of Ahisamach | Oholiab na anak ni Ahisamak | *ch* > *k*. |
+| Exodus 33:11 | Joshua son of Nun | Josue na anak ni Nun |  |
+| Exodus 34:14 | Jealous (as a name) | *Mapanibughuin* |  |
+| Exodus 34:22 | Feast of Weeks | *Pista ng mga Sanlinggo* |  |
+| Exodus 40:2 | tabernacle; tent of meeting | *Tabernakulo* (L, B), *Toldang Sambahan* (R); *Toldang Tipanan* |  |
