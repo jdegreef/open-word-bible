@@ -1017,3 +1017,28 @@ window.OWBStudy = (function () {
   bar.appendChild(no);
   document.body.appendChild(bar);
 })();
+
+// The 404 page (not_found_page in scripts/build_site.py): an address that
+// names a verse or a book the way people type them, /jhn/3/16/, /john/3:16,
+// /john-3-16, /es/juan/3/, goes to the chapter page, at the verse (#v16).
+(function () {
+  "use strict";
+  var el = document.getElementById("owb-lost");
+  if (!el) return;
+  var data;
+  try { data = JSON.parse(el.textContent); } catch (e) { return; }
+  var path;
+  try { path = decodeURIComponent(location.pathname); } catch (e) { return; }
+  var lang = "", m = /^\/([a-z]{2,3})(\/.*)$/.exec(path);
+  if (m && data.langs.indexOf(m[1]) >= 0) { lang = "/" + m[1]; path = m[2]; }
+  m = /^\/([^/]+?)(?:[\/\-_+ ]+(\d+)(?:[\/:.\-_ ]+(\d+))?)?\/?$/.exec(path);
+  if (!m) return;
+  // Folded as the build folds it (address_books): lower case, no accents,
+  // no spaces, hyphens or dots.
+  var name = m[1].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").normalize("NFC")
+    .replace(/\u0111/g, "d").replace(/[\s.\-_]+/g, "");
+  var book = data.books[name];
+  if (!book) return;
+  var to = lang + "/" + book + "/" + (m[2] ? m[2] + "/" : "") + (m[3] ? "#v" + m[3] : "");
+  if (to !== location.pathname + location.hash) location.replace(to);
+})();

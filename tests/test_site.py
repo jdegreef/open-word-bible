@@ -535,6 +535,106 @@ class SiteTest(unittest.TestCase):
         self.assertIn(f"Sitemap: {build_site.SITE_URL}/sitemap.xml", robots)
         self.assertTrue((self.out / "favicon.svg").is_file())
 
+    def test_search_engines_and_ai_tools_may_read_everything(self):
+        robots = (self.out / "robots.txt").read_text(encoding="utf-8")
+        self.assertNotIn("Disallow", robots)
+        for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
+            self.assertIn(f"User-agent: {bot}\n", robots)
+        self.assertIn("User-agent: *\nAllow: /\n", robots)
+
+    def test_search_pages_are_not_listed(self):
+        page = (self.out / "search" / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(page, r'<meta name="robots" content="noindex[^"]*">')
+        self.assertNotIn("/search/</loc>", sitemap_text(self.out))
+
+    def test_home_page_names_the_site_and_its_search(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta property="og:type" content="website">', home)
+        site = json.loads(re.search(r'<script type="application/ld\+json">(\{"@context":"https://schema.org",'
+                                    r'"@type":"WebSite".*?)</script>', home)[1])
+        self.assertEqual(site["potentialAction"]["target"]["urlTemplate"],
+                         f"{build_site.SITE_URL}/search/?q={{search_term_string}}")
+
+    def test_each_verse_has_an_anchor(self):
+        chapter = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        text = chapter[chapter.index('id="text"'):]
+        ids = re.findall(r'<span class="verse[^"]*" id="(v[^"]+)"', text)
+        self.assertIn("v16", ids)
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_words_have_pages_of_their_own_in_english(self):
+        entries = build_site.word_entries()
+        lemma = next(lm for lm, e in entries.items() if e["lang"] == "grc" and e["s"].lstrip("0") == "26")
+        path = build_site.word_path(lemma)
+        self.assertEqual(path, "/word/g26-agape/")
+        page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'<h1 id="word-title" lang="grc">{lemma}</h1>', page)
+        self.assertIn("G26", page)
+        self.assertIn('<a class="use" href="/', page)
+        self.assertIn(f'<link rel="canonical" href="{build_site.SITE_URL}{path}">', page)
+        self.assertIn('"@type":"DefinedTerm"', page)
+        # web/word.js adds the word list to it, and the ?w= page leads to it.
+        data = json.loads(re.search(r'id="word-data">(.*?)</script>', page)[1])
+        self.assertEqual(data["lemma"], lemma)
+        shard = json.loads((self.out / "words" / f"{build_site.word_shard(lemma)}.json").read_text(encoding="utf-8"))
+        self.assertEqual(shard[lemma]["p"], path)
+        self.assertFalse((self.out / "es" / path.strip("/") / "index.html").exists())
+        sitemap = sitemap_text(self.out)
+        self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
+        # A rare word has no page; its list links its ?w= page.
+        rare = next(lm for lm, e in entries.items() if not build_site.word_has_page(e))
+        self.assertNotIn("p", json.loads((self.out / "words" / f"{build_site.word_shard(rare)}.json")
+                                         .read_text(encoding="utf-8"))[rare])
+
+    def test_every_word_is_in_its_languages_list(self):
+        entries = build_site.word_entries()
+        for language, name in build_site.WORD_INDEX_NAMES.items():
+            listed, n = "", 1
+            while (index := self.out / "word" / name / ("" if n == 1 else str(n)) / "index.html").exists():
+                listed += index.read_text(encoding="utf-8")
+                n += 1
+            words = [lm for lm, e in entries.items() if e["lang"] == language]
+            self.assertTrue(words)
+            for lm in words:
+                self.assertIn(f">{html.escape(lm)}</span>", listed, lm)
+        word = (self.out / "word" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/word/greek/"', word)
+
+    def test_verses_with_a_footnoted_question_have_a_page_in_english(self):
+        votd = build_site.verse_of_the_day_ids()
+        vid = next(v for v in build_site.verse_page_ids() if v not in votd)
+        path = build_site.verse_page_url(vid).strip("/")
+        self.assertTrue((self.out / path / "index.html").is_file(), vid)
+        self.assertFalse((self.out / "fr" / path / "index.html").exists(), vid)
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="verse-decisions"', page)
+
+    def test_indexnow_key_and_page_fingerprints(self):
+        from indexnow import KEY, MANIFEST
+        self.assertEqual((self.out / f"{KEY}.txt").read_text(encoding="utf-8"), KEY)
+        marks = json.loads((self.out / MANIFEST).read_text(encoding="utf-8"))
+        self.assertIn("/jhn/3/", marks)
+        self.assertIn("/word/g26-agape/", marks)
+        self.assertNotIn("/search/", marks)
+        # Every page the sitemaps list, and nothing else.
+        listed = set(re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out)))
+        self.assertEqual(set(marks), listed)
+
+    def test_a_page_fingerprint_ignores_asset_versions(self):
+        a = "<head>x</head><main><p>Text</p><script src=\"/r.js?v=0123456789\"></script></main>"
+        b = a.replace("0123456789", "abcdef0123").replace("<head>x", "<head>y")
+        self.assertEqual(build_site.page_fingerprint(a), build_site.page_fingerprint(b))
+        self.assertNotEqual(build_site.page_fingerprint(a), build_site.page_fingerprint(a.replace("Text", "Other")))
+
+    def test_404_page_knows_the_books_for_verse_addresses(self):
+        lost = (self.out / "404.html").read_text(encoding="utf-8")
+        data = json.loads(re.search(r'<script type="application/json" id="owb-lost">(.*?)</script>', lost)[1])
+        self.assertEqual(data["books"]["john"], "jhn")
+        self.assertEqual(data["books"]["1john"], "1jn")
+        self.assertEqual(data["books"]["juan"], "jhn")
+        self.assertIn("es", data["langs"])
+        self.assertNotIn("en", data["langs"])
+
     def test_home_page_example_comes_from_the_content(self):
         home = (self.out / "index.html").read_text(encoding="utf-8")
         example = home[home.index('class="example"'):home.index('class="points-wrap"')]
@@ -1730,9 +1830,10 @@ class SearchMetadataTest(unittest.TestCase):
 
 class VersePageTest(unittest.TestCase):
     def test_every_verse_of_the_day_with_records_has_a_page(self):
-        data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
         ids = build_site.verse_page_ids()
-        self.assertEqual(set(ids), {v for v in data["refs"] if build_site.verse_records(v)})
+        votd = {v for v in build_site.VERSES_OF_THE_DAY if build_site.verse_records(v)}
+        self.assertEqual(set(build_site.verse_of_the_day_ids()), votd)
+        self.assertLessEqual(votd, set(ids))
         self.assertIn("JHN.3.16", ids)
         self.assertEqual(build_site.verse_page_url("JHN.3.16"), "/jhn/3/16/")
 

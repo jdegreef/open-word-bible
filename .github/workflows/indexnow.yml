@@ -1,0 +1,46 @@
+# Tell search engines which pages changed (scripts/indexnow.py): Bing,
+# Yandex and the other IndexNow engines, and through Bing ChatGPT search and
+# Copilot. Every few hours rather than on each push: a deploy goes live only
+# after Render's build, and the script compares the live site with what the
+# last run saw, so it submits each change once whenever it runs.
+name: IndexNow
+
+on:
+  schedule:
+    - cron: "41 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    name: Submit changed pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts/indexnow.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      # The live manifest the last run saw. A cache entry can't be
+      # overwritten, so each run saves its own and the next restores the
+      # newest.
+      - uses: actions/cache/restore@v6
+        with:
+          path: indexnow-previous.json
+          key: indexnow-${{ github.run_id }}
+          restore-keys: indexnow-
+      - run: python3 scripts/indexnow.py --previous indexnow-previous.json --save indexnow-current.json
+      - run: mv indexnow-current.json indexnow-previous.json
+      - uses: actions/cache/save@v6
+        with:
+          path: indexnow-previous.json
+          key: indexnow-${{ github.run_id }}
