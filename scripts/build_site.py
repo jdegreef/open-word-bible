@@ -459,7 +459,7 @@ def og_card_article(article):
 # in Tanzania.
 OG_LOCALES = {"en": "en_US", "es": "es_MX", "fr": "fr_FR", "sw": "sw_TZ", "vi": "vi_VN", "ko": "ko_KR",
               "pt": "pt_BR", "am": "am_ET", "hi": "hi_IN", "ru": "ru_RU", "uk": "uk_UA", "ja": "ja_JP",
-              "id": "id_ID", "zh": "zh_CN", "ar": "ar_AR", "tl": "tl_PH"}
+              "id": "id_ID", "zh": "zh_CN", "ar": "ar_AR", "tl": "tl_PH", "pa": "pa_IN"}
 
 
 def og_locale(lang):

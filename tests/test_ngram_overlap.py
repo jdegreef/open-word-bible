@@ -45,6 +45,17 @@ class NgramOverlapTest(unittest.TestCase):
             Path(d, "08RUT.usx").write_text(usx, encoding="utf-8")
             self.assertEqual(ngram_overlap.read_usx(d), {"RUT.1.1": "one two", "RUT.1.2": "three four"})
 
+    def test_gurmukhi_words_are_compared_without_spelling_marks(self):
+        self.assertEqual(ngram_overlap.words("ਪੁੱਤ੍ਰਾਂ ਖ਼ੁਸ਼ਖ਼ਬਰੀ ਸੰਸਾਰ"),
+                         ngram_overlap.words("ਪੁਤਰਾਂ ਖੁਸਖਬਰੀ ਸਂਸਾਰ"))
+
+    def test_usfm_verses(self):
+        usfm = ("\\id RUT Punjabi\n\\h ਰੂਥ\n\\c 1\n\\s ਸਿਰਲੇਖ\n"
+                "\\p \\v 1 ਇੱਕ \\f + \\ft ਨੋਟ\\f* ਦੋ\n\\q ਤਿੰਨ \\v 2 \\wj ਚਾਰ\\wj*\n")
+        with tempfile.TemporaryDirectory() as d:
+            Path(d, "08_RUT.usfm").write_text(usfm, encoding="utf-8")
+            self.assertEqual(ngram_overlap.read_usfm(d), {"RUT.1.1": "ਇੱਕ ਦੋ ਤਿੰਨ", "RUT.1.2": "ਚਾਰ"})
+
     def test_runs_merge_overlapping_ngrams(self):
         ours = "a b c d e x f g h".split()
         theirs = "q a b c d e r f g h".split()
