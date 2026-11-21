@@ -22,6 +22,17 @@ Arabic is the first reading language written right to left
 only: records hold Arabic in its typed (logical) order, and nothing in this
 file depends on how a line is shown.
 
+## Settled
+
+- **How close Literal may come to Van Dyck** (founder, 2026-11-20). Van
+  Dyck is itself word for word, and Arabic shares Hebrew's grammar, so a
+  short literal clause often has one natural Arabic form. Literal rewrites
+  any run of **10 or more words** shared with Van Dyck, and any run in a
+  well-known verse; shorter runs are allowed where the Hebrew's word order
+  leaves no other natural wording. Balanced and Readable keep the rule of
+  section 1: no run longer than a short common phrase (6 words at most).
+  Section 14, step 4, has the command that measures it.
+
 ## 1. Sources and independence
 
 - Translate from the Hebrew (and the Greek), never from the English. The
@@ -660,9 +671,16 @@ without a later harmonising pass.
 3. **Draft each record at L, then B, then R**, from the Hebrew or Greek,
    the gloss and the meaning decisions. Keep the English record's verse
    markers, line breaks and quotations (section 2).
-4. **Compare each familiar verse with Van Dyck and the Good News Arabic**
-   and rewrite any clause that matches (section 1). Do not open them for
-   unfamiliar verses: the check is for memory's pull, not a source.
+4. **Compare with Van Dyck and the Good News Arabic** and rewrite what is
+   too close (section 1 and "Settled" above). Measure Van Dyck with
+   `python3 scripts/ngram_overlap.py --language ar --usx
+   vd=<ArabicVanDyckBible>/arb/usx --min 7 content/BOOK/*.json`, from a
+   clone of github.com/BibleAquifer/ArabicVanDyckBible (public domain, not
+   vendored): no Balanced or Readable run of 7 or more, no Literal run of
+   10 or more, and none in a well-known verse. Ruth's first draft had
+   Literal runs of up to 19 words before this check; after it the longest
+   is 9. Read the Good News Arabic only for familiar verses: the check is for
+   memory's pull, not a source.
 5. **Write the decisions** (section 2): the first use in the book of a
    glossary choice, a name not in the glossary, every setting span that
    differs from the English, every dual or feminine form the original does
