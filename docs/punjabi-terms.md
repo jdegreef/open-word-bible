@@ -520,3 +520,23 @@ People and places: ਪੌਲੁਸ, ਸਿਲਵਾਨੁਸ, ਤਿਮੋਥਿ
   dead at R; in 5:10 awake/asleep means alive/dead, unlike 5:6.
 - Sons of light {{gender:ਬੱਚੇ|ਪੁੱਤਰ}} at L and B; light ਚਾਨਣ (L, B),
   ਰੋਸ਼ਨੀ (R); spirit, soul and body ਆਤਮਾ, ਪ੍ਰਾਣ ਅਤੇ ਦੇਹ (5:23).
+
+### 2 Timothy
+
+People and places: ਤਿਮੋਥਿਉਸ, ਲੋਇਸ, ਯੂਨੀਕੇ, ਫ਼ੁਗਿਲੁਸ, ਹਰਮੁਗਿਨੇਸ,
+ਉਨੇਸਿਫ਼ੁਰੁਸ, ਹੁਮਿਨਾਯੁਸ, ਫ਼ਿਲੇਤੁਸ, ਯੰਨੇਸ, ਯੰਬਰੇਸ, ਦੇਮਾਸ, ਕ੍ਰੇਸਕੇਂਸ,
+ਤੀਤੁਸ, ਲੂਕਾ, ਮਰਕੁਸ, ਤੁਖਿਕੁਸ, ਕਾਰਪੁਸ, ਸਿਕੰਦਰ, ਪ੍ਰਿਸਕਾ, ਅਕੂਲਾ,
+ਇਰਾਸਤੁਸ, ਤ੍ਰੋਫ਼ਿਮੁਸ, ਯੂਬੂਲੁਸ, ਪੂਦੇਂਸ, ਲੀਨੁਸ, ਕਲੌਦਿਯਾ; ਆਸਿਯਾ, ਰੋਮ,
+ਅਫ਼ਸੁਸ, ਅੰਤਾਕਿਯਾ, ਇਕੁਨਿਯੁਮ, ਲੁਸਤ੍ਰਾ, ਥੱਸਲੁਨੀਕਾ, ਗਲਾਤਿਯਾ, ਦਲਮਾਤਿਯਾ,
+ਤ੍ਰੋਆਸ, ਕੁਰਿੰਥੁਸ, ਮਿਲੇਤੁਸ.
+
+- Paul says ਤੂੰ to Timothy, as to Titus; the closing grace (4:22b) is
+  plural ਤੁਹਾਡੇ ਸਾਰਿਆਂ.
+- Sound teaching ਤੰਦਰੁਸਤ (L), ਖਰੀ (B), ਸੱਚੀ (R) ਸਿੱਖਿਆ, as Titus; the
+  deposit (*parathēkē*) ਅਮਾਨਤ (L); God-breathed (3:16) ਪਰਮੇਸ਼ੁਰ ਦੇ ਸਾਹ ਨਾਲ.
+- The Spirit (1:7) takes masculine agreement; the human spirit (4:22) is
+  feminine ਤੇਰੀ ਆਤਮਾ, as Philemon 25.
+- Grandmother ਨਾਨੀ (1:5); evangelist ਖ਼ੁਸ਼ਖ਼ਬਰੀ ਸੁਣਾਉਣ ਵਾਲਾ; drink
+  offering ਪੀਣ ਦੀ ਭੇਟ; the good fight ਚੰਗੀ ਲੜਾਈ (L), ਚੰਗਾ ਮੁਕਾਬਲਾ (B).
+- Greetings ਸਲਾਮ ਆਖਣਾ at every level; avoid greetings tied to one faith
+  community.
