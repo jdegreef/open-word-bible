@@ -431,3 +431,20 @@ People and places: ਹਬੱਕੂਕ; ਕਸਦੀ (L, B), ਬਾਬਲ ਦੇ 
   Psalm 11:4, 3:19 Psalm 18:34, when those books are drafted.
 - The prophet prays with ਤੂੰ (1:2-4, 1:12-17, 3:2-19); Adonai YHWH in 3:19 is
   `ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}`.
+
+### Zephaniah
+
+People and places: ਸਫ਼ਨਯਾਹ, ਕੂਸ਼ੀ, ਗਦਲਯਾਹ, ਅਮਰਯਾਹ, ਹਿਜ਼ਕੀਯਾਹ, ਯੋਸ਼ੀਯਾਹ,
+ਆਮੋਨ; ਬਆਲ; ਮੱਛੀ ਫਾਟਕ, ਦੂਜਾ ਮਹੱਲਾ, ਉੱਖਲੀ (1:10-11); ਗਾਜ਼ਾ, ਅਸ਼ਕਲੋਨ,
+ਅਸ਼ਦੋਦ, ਅਕਰੋਨ, ਕਰੇਤੀ, ਫ਼ਲਿਸਤੀ; ਮੋਆਬ, ਅੰਮੋਨ (ਅੰਮੋਨੀ at B), ਸਦੂਮ, ਅਮੂਰਾਹ;
+ਕੂਸ਼ (ਕੂਸ਼ੀ), ਅੱਸ਼ੂਰ, ਨੀਨਵਾਹ.
+
+- Kemarim (1:4), priests of other gods, are ਪੁਜਾਰੀ; the LORD's priests (3:4)
+  are ਜਾਜਕ. Torah (3:4) ਸਿੱਖਿਆ, as in Habakkuk 1:4.
+- The day of the LORD (1:7, 14) is ਨੇੜੇ [ਹੈ] (L), ਸਿਰ ਉੱਤੇ ਆ ਪਹੁੰਚਿਆ ਹੈ (B),
+  ਨੇੜੇ ਹੈ (R), as in Joel 1:15. Ezekiel 7:19 should match 1:18.
+- Ne'um is ਦਾ ਵਾਕ ਹੈ (L, B), ਆਖਦੇ ਹਨ (R); *amar YHWH* (3:20) is ਆਖਦੇ ਹਨ at
+  every level. God's oath "as I live" (2:9) is ਮੇਰੀ ਜਿੰਦ ਦੀ ਸਹੁੰ (L, B).
+- Woes (2:5, 3:1) follow style §12a. Jerusalem is addressed as a woman with
+  feminine ਤੂੰ at L and B (3:7, 3:11-19); Readable speaks to her people with
+  ਤੁਸੀਂ. 3:20 is plural at every level, as in the Hebrew.
