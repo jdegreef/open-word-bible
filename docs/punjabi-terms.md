@@ -315,3 +315,18 @@ People: ਗਾਯੁਸ, ਦਿਯੁਤ੍ਰਿਫ਼ੇਸ, ਦੇਮੇਤ�
   send on (*propempō*) ਅੱਗੇ ਤੋਰਨਾ (L), ਸਮਾਨ ਦੇ ਕੇ ਤੋਰਨਾ (B).
 - The Gentiles in 7 are unbelievers: ਪਰਾਈਆਂ ਕੌਮਾਂ (L, B), ਜਿਹੜੇ ਲੋਕ
   ਵਿਸ਼ਵਾਸੀ ਨਹੀਂ ਹਨ (R).
+
+### Jude
+
+People and places: ਯਹੂਦਾ, ਯਾਕੂਬ, ਮੀਕਾਏਲ (ਪ੍ਰਧਾਨ ਦੂਤ), ਮੂਸਾ, ਕਾਇਨ,
+ਬਿਲਆਮ, ਕੋਰਹ, ਹਨੋਕ, ਆਦਮ; ਮਿਸਰ, ਸਦੂਮ, ਅਮੂਰਾਹ.
+
+- Ungodly (*asebēs*, 4, 15, 18) ਕੁਧਰਮੀ, ungodliness ਕੁਧਰਮ; Readable
+  explains it once in 4 (ਪਰਮੇਸ਼ੁਰ ਦਾ ਆਦਰ ਨਹੀਂ ਕਰਦੇ) and keeps ਕੁਧਰਮੀ after.
+- Keep (*tēreō*, 1, 6, 13, 21) ਸਾਂਭ ਕੇ ਰੱਖਣਾ at Literal through the letter,
+  so the play of verse 6 (did not keep / has kept) stays.
+- Sexual immorality ਹਰਾਮਕਾਰੀ; blaspheme ਨਿੰਦਿਆ ਕਰਨਾ (L), ਬੁਰਾ-ਭਲਾ ਆਖਣਾ
+  (B), ਅਪਮਾਨ ਕਰਨਾ (R); love feasts ਪਿਆਰ-ਭੋਜ; scoffers ਠੱਠਾ ਕਰਨ ਵਾਲੇ;
+  prophesy ਭਵਿੱਖਬਾਣੀ ਕਰਨਾ; Savior ਮੁਕਤੀਦਾਤਾ; ages ਜੁਗ.
+- Beloved (plural) ਹੇ ਪਿਆਰਿਓ (L), ਪਿਆਰੇ ਮਿੱਤਰੋ (B, R).
+- 2 Peter 2 runs close to Jude 4-18 and should match when it is drafted.
