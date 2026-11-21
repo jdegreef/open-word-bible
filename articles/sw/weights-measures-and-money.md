@@ -61,7 +61,7 @@ Tafsiri zimechukua njia nne kwa jumla, na nyingi zinazichanganya.
 
 **Kueleza thamani.** Badala ya kutaja sarafu, sema fedha hiyo ingeweza kununua nini au ilichukua muda gani kuipata: "ujira wa siku moja," "mshahara wa miezi minne." Njia hii haipitwi na wakati, kwa sababu ujira ni kipimo cha kibinadamu. Ndiyo njia ambayo tafsiri nyingi za kisasa zinazofuata maana huitumia kwa fedha. Gharama yake ni kwamba si sahihi sana, na ni tafsiri ya thamani, si tafsiri ya neno.
 
-Hakuna njia moja iliyo sahihi kila mahali. Katika Ezekieli 45:10, ambapo vipimo vyenyewe ndivyo somo, viwango vya Halisi na Linganifu vya toleo la Kiingereza vinabakiza "an honest ephah and an honest bath" (efa ya haki na bathi ya haki) bila hesabu za kisasa. Katika mfano, ambapo hoja ni wingi au uchache wa kitu, msomaji anahitaji thamani.
+Hakuna njia moja iliyo sahihi kila mahali. Katika Ezekieli 45:10, ambapo vipimo vyenyewe ndivyo somo, viwango vya Halisi na Linganifu vinabakiza "efa ya haki na bathi ya haki" bila hesabu za kisasa. Katika mfano, ambapo hoja ni wingi au uchache wa kitu, msomaji anahitaji thamani.
 
 ## Kile Open Word Bible inachofanya
 

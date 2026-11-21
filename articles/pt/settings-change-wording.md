@@ -4,7 +4,7 @@ summary: Inclusivo ou tradicional, Cristo ou Messias, ele ou Ele. Por que essas 
 date: 2026-10-10
 order: 4
 section: method
-source: f88c24659512
+source: 18d3e565024d
 ---
 Os leitores da Bíblia discordam sobre algumas questões que são, a rigor, questões de formulação. Devemos dizer "irmãos e irmãs" em vez de "irmãos" quando se fala da Igreja inteira? O título de Jesus deve ser "Cristo" ou "Messias"? Os pronomes que se referem a Deus levam letra maiúscula? O nome de Deus deve ser escrito "o SENHOR" ou "Javé"? A Open Word Bible deixa cada leitor escolher.
 
@@ -16,7 +16,7 @@ Os leitores da Bíblia discordam sobre algumas questões que são, a rigor, ques
 - **Nome de Deus.** No Antigo Testamento, o nome pessoal de Deus é escrito "o SENHOR" por padrão, seguindo o costume antigo de não pronunciá-lo em voz alta, e "Javé" como opção.
 - **Medidas.** Onde um trecho dá uma medida, as unidades atuais por padrão e as unidades originais como opção. A arca de Noé tem 135 metros de comprimento, ou 300 côvados (Gênesis 6:15); as talhas de Caná comportavam de oitenta a cento e vinte litros, ou duas ou três medidas (João 2:6). O nível Literal sempre mantém a unidade antiga.
 
-O espanhol tem ainda uma configuração para o "vocês": *ustedes*, como se fala na América Latina, ou *vosotros*, como na Espanha. O português não precisa dela: "vocês" é a única forma viva do plural no Brasil. Uma configuração para a ortografia britânica está prevista no inglês.
+O espanhol tem ainda uma configuração para o "vocês": *ustedes*, como se fala na América Latina, ou *vosotros*, como na Espanha. O português não precisa dela: "vocês" é a única forma viva do plural no Brasil. O chinês tem uma configuração para a palavra que designa Deus: 神 (*Shén*) ou 上帝 (*Shàngdì*), as duas palavras que as Bíblias chinesas usam há muito tempo para o Deus único. Uma configuração para a ortografia britânica está prevista no inglês.
 
 ## Por que essas, e não outras
 

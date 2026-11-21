@@ -10,8 +10,6 @@ Abre casi cualquier salmo y notarás que parece decir las cosas dos veces. El Sa
 
 > {{OWB:PSA.19.2.s1:B}}
 
-(Los libros poéticos aún no están traducidos al español en Open Word Bible. Mientras tanto, las citas de este artículo se muestran en la edición inglesa, y damos su sentido en español donde hace falta.)
-
 Los cielos y la bóveda del cielo son lo mismo. Contar y dar a conocer son el mismo acto. La gloria de Dios y la obra de sus manos son dos maneras de nombrar lo que muestra el cielo. La segunda mitad del versículo vuelve a decir lo que dijo la primera, con otras palabras.
 
 No es relleno. Así está construida la poesía hebrea. Quien sabe cómo funciona leerá los Salmos, los Proverbios, Job y los profetas con más precisión, y verá por qué una traducción tiene que tomar algunas decisiones sobre cómo se presenta la poesía en la página.
@@ -34,7 +32,7 @@ El primer tipo de Lowth es el paralelismo *sinonímico*, en el que el segundo ve
 
 El versículo tiene cuatro versos en dos parejas. El buey y el asno forman una pareja: cada uno sabe a quién pertenece. Israel y «mi pueblo» forman otra: ninguno de los dos sabe. Luego las dos mitades del versículo se oponen entre sí: los animales frente al pueblo que debería saberlo mejor.
 
-Pero mira otra vez la última pareja. «Israel no conoce» se convierte en «mi pueblo no se para a pensarlo» (en inglés, «my people give it no thought»). El segundo verso no es una simple repetición. Llama a Israel pueblo *de Dios*, lo que agrava la acusación, y pasa de conocer a reflexionar. El registro de este versículo señala que el verbo hebreo significa prestar atención cuidadosa a algo. Israel ni siquiera se detiene a pensar.
+Pero mira otra vez la última pareja. «Israel no conoce» se convierte en «mi pueblo no reflexiona». El segundo verso no es una simple repetición. Llama a Israel pueblo *de Dios*, lo que agrava la acusación, y pasa de conocer a reflexionar. El registro de este versículo señala que el verbo hebreo significa prestar atención cuidadosa a algo. Israel ni siquiera se detiene a pensar.
 
 Ese pequeño movimiento es típico. Incluso en los versos «sinónimos», el segundo suele añadir algo: una palabra más precisa, una imagen más fuerte, un enfoque más cercano.
 
@@ -60,7 +58,7 @@ Uno de los más llamativos es la «escalera», en la que un verso empieza, se in
 
 > {{OWB:PSA.93.3.s1:B}}
 
-El registro lo describe como un verso repetido que crece cada vez, como olas que se levantan. El Salmo 92:10 hace lo mismo con los enemigos del SEÑOR («¡Mira a tus enemigos, SEÑOR! Mira, tus enemigos perecerán»), y el registro de ese versículo lo identifica como un patrón de la poesía hebrea.
+El registro lo describe como un verso repetido que crece cada vez, como olas que se levantan. El Salmo 92:10 hace lo mismo con los enemigos del SEÑOR («¡Mira a tus enemigos, SEÑOR! Mira, tus enemigos están perdidos»), y el registro de ese versículo lo identifica como un patrón de la poesía hebrea.
 
 Otra forma de avanzar es el movimiento interno del Salmo 1:1:
 
@@ -74,7 +72,7 @@ En 1981 James Kugel publicó *The Idea of Biblical Poetry*, y en 1985 Robert Alt
 
 Kugel sostuvo que las categorías de Lowth hacían que los versos parecieran más iguales de lo que son. El segundo verso, decía, rara vez es una mera reformulación. Su fuerza es algo así como «A, y además, B»: el segundo verso secunda al primero, lo lleva más lejos, lo hace más vivo, más concreto o más intenso. Alter siguió el mismo movimiento y lo llamó intensificación, o enfoque. El día y la noche; una palabra general y luego otra más precisa; una acción y luego su resultado.
 
-No todos los estudiosos están de acuerdo con cada parte de sus explicaciones. Pero la mayoría lee hoy los versos paralelos atentos a lo que añade el segundo, y los ejemplos anteriores muestran por qué. «Mi pueblo» añade algo a «Israel». Las «olas que rompen» de los ríos (*crashing waves*) añaden algo a su «estruendo» (*roar*). El segundo verso es a menudo donde el poeta hebreo pone lo esencial.
+No todos los estudiosos están de acuerdo con cada parte de sus explicaciones. Pero la mayoría lee hoy los versos paralelos atentos a lo que añade el segundo, y los ejemplos anteriores muestran por qué. «Mi pueblo» añade algo a «Israel». Las «olas que rompen» de los ríos añaden algo a su «rugido». El segundo verso es a menudo donde el poeta hebreo pone lo esencial.
 
 Esto importa para la traducción. Si un traductor da por hecho que los versos simplemente se repiten, es tentador fundirlos, o elegir las mismas palabras para los dos. Una traducción que mantiene distintos los dos versos deja que el lector sienta cómo cae el segundo.
 

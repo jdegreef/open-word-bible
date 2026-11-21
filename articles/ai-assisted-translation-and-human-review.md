@@ -25,13 +25,13 @@ Here is the Balanced level of the sentence that came out of those steps:
 
 > {{OWB:PHP.4.6.s1:B}}
 
-The record for it holds the Greek, which begins {{GREEK:PHP.4.6:1-2}}, "nothing be anxious about"; a literal gloss; Literal, Balanced and Readable English; and the same three levels in other languages as they are drafted. It also holds twelve decisions. Seven are meaning decisions, shared by every language. One says that {{LEMMA:PHP.4.6:2}} here means anxious worry, the word Jesus uses in Matthew 6, and not the good concern Paul uses it for in 2:20. Another says the verb for "guard" is what a garrison does, an image the people of Philippi, a Roman colony with retired soldiers among its citizens, would have felt. The other five are rendering decisions for one language each. One English decision, for example, explains why Balanced says the peace will "stand guard over" your hearts: it keeps the soldier's image without the old-fashioned "keep".
+The record for it holds the Greek, which begins {{GREEK:PHP.4.6:1-2}}, "nothing be anxious about"; a literal gloss; Literal, Balanced and Readable English; and the same three levels in other languages as they are drafted. It also holds twenty-seven decisions. Seven are meaning decisions, shared by every language. One says that {{LEMMA:PHP.4.6:2}} here means anxious worry, the word Jesus uses in Matthew 6, and not the good concern Paul uses it for in 2:20. Another says the verb for "guard" is what a garrison does, an image the people of Philippi, a Roman colony with retired soldiers among its citizens, would have felt. The other twenty are rendering decisions, each for one language. One English decision, for example, explains why Balanced says the peace will "stand guard over" your hearts: it keeps the soldier's image without the old-fashioned "keep".
 
 Two decisions in this record are marked uncertain. One is about meaning: the peace that "surpasses every understanding" may be peace beyond what the mind can grasp, or peace that achieves more than any human plan could. The record follows the more common reading and gives the other in a footnote. The second is about English. The Readable level says the peace guards you "because you are joined to Christ Jesus", where the Greek says only "in". The rendering decision says plainly that this adds a reason the Greek leaves unstated, and that reviewers should check it:
 
 > {{OWB:PHP.4.6.s1:R}}
 
-That is the pattern everywhere. Across the drafts so far, a sentence carries about four decisions on average, and about one decision in twelve is marked uncertain. The AI is told to mark a close call as uncertain rather than present it as settled, and the reader shows the label.
+That is the pattern everywhere. Across the drafts, a sentence carries about two or three meaning decisions on average, plus rendering decisions for each language, and about one meaning decision in nine is marked uncertain. The AI is told to mark a close call as uncertain rather than present it as settled, and the reader shows the label.
 
 ## What the AI does not do
 
@@ -49,7 +49,7 @@ A reader is right to ask what an AI gets wrong. We have seen several kinds of mi
 
 **Fluency is not judgment.** A draft can read smoothly and still be wrong, or right for reasons that are not quite the stated ones. The confident tone of a sentence is no evidence for it.
 
-**Natural wording needs native speakers.** An AI can write grammatical Spanish, French, Swahili, Vietnamese, Korean, Portuguese, Amharic, Hindi or Russian. Whether a sentence sounds natural to a reader who grew up with the language is another question. The Spanish record for John 1:1, for example, chooses *el Verbo* for "the Word" over *la Palabra* and flags the choice for a native speaker's review.
+**Natural wording needs native speakers.** An AI can write grammatical Spanish, Swahili, Korean, Amharic or Japanese. Whether a sentence sounds natural to a reader who grew up with the language is another question. The Spanish record for John 1:1, for example, chooses *el Verbo* for "the Word" over *la Palabra* and flags the choice for a native speaker's review.
 
 **Consistency across books is hard.** Thousands of sentences drafted at different times can drift. Key terms checked by software, term lists for long books, and decisions that cite earlier ones all work against it, but some drift will remain for reviewers to find.
 
@@ -90,4 +90,4 @@ You do not have to wait for reviewers to test what you read.
 
 ## Help review
 
-If you read Greek or Hebrew, or are a native speaker of Spanish, French, Swahili, Vietnamese, Korean, Portuguese, Amharic, Hindi or Russian who can judge whether a sentence reads naturally, we would value your help. Everything is open on [GitHub](https://github.com/jdegreef/open-word-bible), including every decision and its reasoning, and the "Report a problem" link at the foot of every page opens an issue there. Disagreeing with a decision, and saying why, is exactly the kind of help the project needs.
+If you read Greek or Hebrew, or are a native speaker of one of the translation's languages who can judge whether a sentence reads naturally, we would value your help. Everything is open on [GitHub](https://github.com/jdegreef/open-word-bible), including every decision and its reasoning, and the "Report a problem" link at the foot of every page opens an issue there. Disagreeing with a decision, and saying why, is exactly the kind of help the project needs.

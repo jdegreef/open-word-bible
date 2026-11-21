@@ -4,7 +4,7 @@ summary: Jumuishi au kimapokeo, Kristo au Masihi, yeye au Yeye. Kwa nini haya ni
 date: 2026-10-10
 order: 4
 section: method
-source: f88c24659512
+source: 18d3e565024d
 ---
 Wasomaji wa Biblia hutofautiana kuhusu mambo fulani ambayo, kwa usahihi, ni mambo ya maneno tu. Je, mahali ambapo wanaume na wanawake wote wanamaanishwa, maandiko yaseme "wahenga" au "mababu"? Je, cheo cha Yesu kiwe "Kristo" au "Masihi"? Je, viwakilishi vya Mungu viandikwe kwa herufi kubwa? Je, jina la Mungu liandikwe "BWANA" au "Yahwe"? Open Word Bible inamwachia kila msomaji achague.
 
@@ -16,7 +16,7 @@ Wasomaji wa Biblia hutofautiana kuhusu mambo fulani ambayo, kwa usahihi, ni mamb
 - **Jina la Mungu.** Katika Agano la Kale, jina binafsi la Mungu linaandikwa "BWANA" kama chaguo la msingi, kwa kufuata desturi ya kale ya kutolitamka kwa sauti, na "Yahwe" ni chaguo jingine.
 - **Vipimo.** Pale ambapo kifungu kina kipimo, vipimo vya leo ni chaguo la msingi na vipimo vya asili ni chaguo jingine. Safina ya Nuhu ina urefu wa mita 135, au dhiraa 300 (Mwanzo 6:15); mitungi ya Kana ilishika lita 80 hadi 120, au vipimo viwili au vitatu (Yohana 2:6). Kiwango cha Halisi kinabaki daima na kipimo cha kale.
 
-Lugha nyingine zina mipangilio yao wenyewe. Kihispania, kwa mfano, kinamwachia msomaji achague wingi wa "ninyi": *ustedes*, kama unavyosemwa Amerika ya Kusini, au *vosotros*, kama nchini Hispania. Kiswahili hakihitaji mpangilio huo. Kwa Kiingereza, mpangilio wa tahajia ya Uingereza umepangwa.
+Lugha nyingine zina mipangilio yao wenyewe. Kihispania, kwa mfano, kinamwachia msomaji achague wingi wa "ninyi": *ustedes*, kama unavyosemwa Amerika ya Kusini, au *vosotros*, kama nchini Hispania. Kiswahili hakihitaji mpangilio huo. Kichina kina mpangilio wa neno la Mungu: 神 (*Shén*) au 上帝 (*Shàngdì*), maneno mawili ambayo Biblia za Kichina zimeyatumia tangu zamani kwa ajili ya Mungu mmoja. Kwa Kiingereza, mpangilio wa tahajia ya Uingereza umepangwa.
 
 ## Kwa nini haya, na si mengine
 

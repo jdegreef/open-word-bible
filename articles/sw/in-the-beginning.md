@@ -10,7 +10,7 @@ Biblia inaanza na maneno saba ya Kiebrania:
 
 > {{HEBREW:GEN.1.1:1-7}}
 
-Mwanzo bado haujatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya Open Word Bible katika makala hii yanatoka katika tafsiri yake ya Kiingereza. Kiwango cha Linganifu kinayatoa maneno hayo kwa njia inayojulikana:
+Kiwango cha Linganifu kinayatoa maneno hayo kwa njia inayojulikana:
 
 > {{OWB:GEN.1.1.s1:B}}
 
@@ -32,7 +32,7 @@ Usomaji mwingine pia una historia ndefu. Rashi, mfafanuzi mkuu wa Kiyahudi wa ka
 
 Tofauti hiyo ina uzito mdogo kuliko inavyoweza kuonekana, lakini ni ya kweli. Ukisomwa kama kishazi kikuu, mstari wa 1 unatoa tamko pana: Mungu aliumba kila kitu, na sura iliyobaki inaonyesha jinsi gani. Ukisomwa kama kishazi cha wakati, unaandaa mandhari ya mstari wa 3, na mstari wa 2 unaeleza hali ya mambo Mungu alipoanza. Usomaji wote miwili ni wa zamani, na wote unaweza kutetewa. Kwa hiyo uamuzi umewekewa alama ya kutokuwa na uhakika, na maelezo ya chini yanatoa usomaji mwingine. Rekodi inaongeza kwamba, kwa usomaji wowote, Mungu yupo na anatenda kabla ya kitu kingine chochote kuelezwa.
 
-Kiwango cha Halisi kinaonyesha kibainishi kinachokosekana kwa kukiweka ndani ya mabano:
+Hiki ndicho kiwango cha Halisi:
 
 > {{OWB:GEN.1.1.s1:L}}
 
@@ -42,7 +42,7 @@ Sehemu iliyobaki ya mstari inabeba maamuzi matatu yasiyojulikana sana:
 
 - **Aliumba.** Kitenzi {{LEMMA:GEN.1.1:2}} kinatumika katika Agano la Kale kwa yale tu ambayo Mungu anayafanya, na kamwe hakitumiki pamoja na malighafi ambayo kitu kinatengenezwa kwayo. Mwanzo 1 kinakitumia mahali patatu: mbingu na nchi, viumbe hai vya kwanza (mstari wa 21) na wanadamu (mstari wa 27). Rekodi inajihadhari isidai mengi mno. Sura hiyo inatumia pia kitenzi cha kila siku "kufanya" kwa kazi ya Mungu, kwa hiyo kitenzi hiki peke yake hakiamui *jinsi* Mungu alivyoumba. Kile ambacho mstari wa kwanza unaamua ni kwamba Mungu yuko kabla na juu ya kila kitu kilichopo.
 - **Mungu.** {{HEBREW:GEN.1.1:3}} lina umbo la wingi, na mahali pengine linaweza kumaanisha "miungu". Hapa kitenzi chake ni cha umoja, "aliumba", kama kilivyo katika sura nzima, kwa hiyo linamtaja Mungu mmoja. Kiebrania mara nyingi hutumia wingi kuonyesha ukuu.
-- **Mbingu na nchi.** Kutaja ncha mbili zinazopingana ili kumaanisha kila kitu kilicho kati yake ni njia ya kawaida ya Kiebrania ya kusema, na Kiebrania hakina neno moja kwa ajili ya ulimwengu wote. Kwa hiyo Rahisi inasema jozi hiyo inamaanisha nini na kubaki na maneno yenyewe: "God created everything: the heavens and the earth" (Mungu aliumba kila kitu: mbingu na nchi).
+- **Mbingu na nchi.** Kutaja ncha mbili zinazopingana ili kumaanisha kila kitu kilicho kati yake ni njia ya kawaida ya Kiebrania ya kusema, na Kiebrania hakina neno moja kwa ajili ya ulimwengu wote. Kwa hiyo Rahisi inasema jozi hiyo inamaanisha nini na kubaki na maneno yenyewe: "Mungu aliumba kila kitu: mbingu na dunia".
 
 ## Roho, au upepo?
 
@@ -56,7 +56,7 @@ Uamuzi mgumu ni {{HEBREW:GEN.1.2:9-10}}. Nomino {{LEMMA:GEN.1.2:9.2}} inamaanish
 
 Huu ni usomaji wa zamani, si wa kisasa. Targumu ya Onkelos, tafsiri ya zamani ya Kiaramu iliyosomwa katika masinagogi, inasema kwamba upepo kutoka mbele za BWANA ulivuma juu ya uso wa maji. Baadhi ya tafsiri za kisasa zinasema "upepo kutoka kwa Mungu" au "upepo mkuu".
 
-Open Word Bible inasema "Roho wa Mungu". Mahali pengine maneno hayo ni Roho wa Mungu mwenyewe akitenda kazi (Kutoka 31:3; 1 Samweli 10:10). Na kitenzi kinachofuata, "kutanda juu", ndicho kinachotumika kwa tai juu ya makinda yake katika Kumbukumbu la Torati 32:11. Kinafaa zaidi kwa uwepo ulio hai kuliko kwa upepo. Zaburi 33:6 inaunganisha neno la Mungu na pumzi yake katika kuumbwa kwa mbingu, jozi ileile ambayo mistari ya 2 na 3 inaiweka kando kwa kando. Uamuzi umewekewa alama ya kutokuwa na uhakika, na maelezo ya chini yanatoa "upepo kutoka kwa Mungu". Kiwango cha Halisi kinakuwezesha kuona umbo la Kiebrania chini ya haya yote:
+Open Word Bible inasema "Roho wa Mungu". Mahali pengine maneno hayo ni Roho wa Mungu mwenyewe akitenda kazi (Kutoka 31:3; 1 Samweli 10:10). Na kitenzi kinachofuata, "kuelea juu", ndicho kinachotumika kwa tai juu ya makinda yake katika Kumbukumbu la Torati 32:11. Kinafaa zaidi kwa uwepo ulio hai kuliko kwa upepo. Zaburi 33:6 inaunganisha neno la Mungu na pumzi yake katika kuumbwa kwa mbingu, jozi ileile ambayo mistari ya 2 na 3 inaiweka kando kwa kando. Uamuzi umewekewa alama ya kutokuwa na uhakika, na maelezo ya chini yanatoa "upepo kutoka kwa Mungu". Kiwango cha Halisi kinakuwezesha kuona umbo la Kiebrania chini ya haya yote:
 
 > {{OWB:GEN.1.2.s1:L}}
 
@@ -70,6 +70,6 @@ Mstari wa 3 ni mara ya kwanza Mungu anasema:
 
 > {{OWB:GEN.1.3.s1:L}}
 
-Amri na matokeo yake ni maumbo mawili ya kitenzi kimoja, "na iwe" na "ikawa", kwa hiyo taarifa inarudia amri neno kwa neno. Kiwango cha Halisi kinabaki na mwangwi huo. Linganifu inasema "light came into being" (nuru ikaja kuwako) na Rahisi "light began to shine" (nuru ikaanza kung'aa), kila kimoja kikiyapa matokeo kitenzi chake. Mtindo huo unapita katika sura nzima: Mungu anasema, na anachokisema kinatokea. Rekodi inaonyesha pia kwamba nuru inakuja siku ya kwanza na jua siku ya nne tu. Katika masimulizi haya nuru inatoka katika neno la Mungu, si katika mianga ya angani.
+Amri na matokeo yake ni maumbo mawili ya kitenzi kimoja, "na iwe" na "ikawa", kwa hiyo taarifa inarudia amri neno kwa neno. Kiwango cha Halisi kinabaki na mwangwi huo. Linganifu inasema "nuru ikatokea" na Rahisi "nuru ikaanza kung'aa", kila kimoja kikiyapa matokeo kitenzi chake. Mtindo huo unapita katika sura nzima: Mungu anasema, na anachokisema kinatokea. Rekodi inaonyesha pia kwamba nuru inakuja siku ya kwanza na jua siku ya nne tu. Katika masimulizi haya nuru inatoka katika neno la Mungu, si katika mianga ya angani.
 
 [Fungua Mwanzo 1](/gen/1/) na uguse mstari wa 1 kuona rekodi nzima.

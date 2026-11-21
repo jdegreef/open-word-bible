@@ -44,7 +44,7 @@ Marc 13:35 nomme les quatre veilles romaines par leurs noms populaires : le soir
 
 En Israël, le jour commençait au coucher du soleil. Le modèle en est posé dès le premier chapitre de la Genèse : "il y eut un soir et il y eut un matin, jour un". L'hébreu place {{HEBREW:GEN.1.5:9}} (*ʿerev*, le soir) avant {{HEBREW:GEN.1.5:11}} (*bōqer*, le matin). Le dossier de Genèse 1:5 note que le jour est compté à partir du soir, comme les jours d'Israël se comptaient à partir du coucher du soleil.
 
-La Loi le dit en toutes lettres pour le jour des Expiations : "d'un soir à l'autre soir, vous célébrerez votre sabbat" (Lévitique 23:32). Notre niveau Simple rend les moments explicites : depuis le coucher du soleil, le neuvième jour du mois, "until sunset the next day" ("jusqu'au coucher du soleil le lendemain") ; le Lévitique n'est encore traduit qu'en anglais.
+La Loi le dit en toutes lettres pour le jour des Expiations : "d'un soir à l'autre soir, vous célébrerez votre sabbat" (Lévitique 23:32). Notre niveau Simple rend les moments explicites : "depuis le coucher du soleil du neuvième jour du mois jusqu'au coucher du soleil du jour suivant".
 
 Cela explique des détails des Évangiles qui peuvent sembler étranges. Jésus mourut l'après-midi du jour de la Préparation, la veille du sabbat, et il fallait l'enterrer avant le coucher du soleil, quand commençait le sabbat. Les femmes ne purent venir au tombeau qu'une fois le sabbat passé.
 

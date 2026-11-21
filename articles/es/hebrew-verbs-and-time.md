@@ -10,8 +10,6 @@ Isaías vivió en el siglo VIII antes de Cristo. Sin embargo, en una de sus prof
 
 > {{OWB:ISA.9.5.s1:B}}
 
-(Isaías aún no está traducido al español en Open Word Bible, así que esta y otras citas de los profetas se muestran por ahora en la edición inglesa.)
-
 «Ha nacido». «Se nos ha dado». Se habla del niño como si ya estuviera aquí. La mayoría de las Biblias numeran este versículo como 9:6; Open Word Bible sigue la numeración hebrea, en la que es el 9:5. Los cristianos lo han leído desde hace mucho como una promesa de Cristo, siete siglos más tarde. Entonces, ¿por qué usa el profeta un tiempo pasado?
 
 La respuesta breve es que el hebreo bíblico no tiene tiempos verbales en el sentido en que los tiene el español. Sus verbos dicen algo sobre *cómo* se ve una acción más que sobre *cuándo* ocurre, y el traductor tiene que decidir el tiempo a partir del contexto. Este artículo explica cómo funciona eso y qué hace con ello Open Word Bible.
@@ -70,7 +68,7 @@ El imperfecto también puede abarcar a la vez el presente y el futuro. El Salmo 
 
 > {{OWB:PSA.23.1.s1:B}}
 
-El verbo «faltar» es {{HEBREW:PSA.23.1:6}} (*ʾeḥsār*), un imperfecto. El registro dice que su forma abarca el presente y el futuro: tengo, y tendré, todo lo que necesito. En la edición inglesa, el nivel Literal dice «I will not lack [anything]» («no me faltará [nada]»), Equilibrada «I will never be in need» («nunca pasaré necesidad») y Sencilla «I have everything I need» («tengo todo lo que necesito»). Los tres niveles se inclinan en direcciones ligeramente distintas, pero no eligen significados distintos. Los tres caben dentro de lo que dice la decisión de significado.
+El verbo «faltar» es {{HEBREW:PSA.23.1:6}} (*ʾeḥsār*), un imperfecto. El registro dice que su forma abarca el presente y el futuro: tengo, y tendré, todo lo que necesito. El nivel Literal dice «no me faltará [nada]», Equilibrada «nunca pasaré necesidad» y Sencilla «Tengo todo lo que necesito». Los tres niveles se inclinan en direcciones ligeramente distintas, pero no eligen significados distintos. Los tres caben dentro de lo que dice la decisión de significado.
 
 ## Profetas que hablan del futuro como pasado
 
@@ -97,9 +95,9 @@ Open Word Bible responde versículo por versículo, y los tres niveles no siempr
 
 > {{OWB:ISA.5.13.s1:B}}
 
-En la edición inglesa, Literal conserva la forma: «my people have gone into exile» («mi pueblo ha ido al destierro»). Equilibrada dice lo que significa el versículo: «my people will be carried off into exile» («mi pueblo será llevado al destierro»). La decisión de significado que está detrás de ambas está marcada como incierta. Lee el verbo como un suceso futuro del que se habla como ya hecho, puesto que el destierro de Judá estaba todavía por llegar, y añade que el versículo podría referirse en cambio a las tribus del norte, ya llevadas por Asiria. La diferencia entre los niveles es de redacción, no de significado: ambos niveles siguen la misma decisión, uno mostrando la forma hebrea y el otro expresando su sentido.
+Literal conserva la forma: «mi pueblo ha ido al destierro». Equilibrada dice lo que significa el versículo: «mi pueblo será llevado al destierro». La decisión de significado que está detrás de ambas está marcada como incierta. Lee el verbo como un suceso futuro del que se habla como ya hecho, puesto que el destierro de Judá estaba todavía por llegar, y añade que el versículo podría referirse en cambio a las tribus del norte, ya llevadas por Asiria. La diferencia entre los niveles es de redacción, no de significado: ambos niveles siguen la misma decisión, uno mostrando la forma hebrea y el otro expresando su sentido.
 
-Josué 6:2 muestra otra manera. En la edición inglesa, los tres niveles conservan «I have given» («he entregado»), pero Sencilla añade una breve frase propia, «It is as good as yours» («Es como si ya fuera tuya»), y la decisión de redacción explica por qué: para transmitir el sentido del verbo acabado, que la ciudad será de Israel con toda seguridad.
+Josué 6:2 muestra otra manera. Los tres niveles conservan el perfecto («he entregado», «te he dado»), pero Sencilla añade una breve frase propia, «Es como si ya fuera tuya», y la decisión de redacción explica por qué: para transmitir el sentido del verbo acabado, que la ciudad será de Israel con toda seguridad.
 
 ## Isaías 9:5: un nacimiento ya anunciado
 
@@ -107,13 +105,13 @@ Isaías 9:5 es más difícil, y el registro lo trata con cuidado. Su decisión d
 
 Los lectores han sostenido ambas opiniones. Algunos ven un nacimiento en tiempos del propio Isaías, quizá un heredero real, celebrado con un lenguaje que va más allá de cualquier rey ordinario. Muchos lectores cristianos ven una profecía de Cristo, pronunciada con la certeza del perfecto profético. Las dos no siempre se excluyen: algunos leen el versículo como referido a un rey de los días de Isaías cuyos títulos solo se cumplieron plenamente en un hijo posterior de David. El registro remite a los pasajes que lo rodean: 7:14 prometió un hijo llamado Emanuel, y 11:1–5 describe a un rey del linaje de Isaí.
 
-Aquí Open Word Bible conserva la forma de pasado en todos los niveles; en la edición inglesa, «a child has been born for us, a son has been given to us» («un niño nos ha nacido, un hijo se nos ha dado»). Es la forma que usó Isaías, encaja con ambas lecturas, y la traducción puede llevarla sin confundir al lector. Un futuro habría decidido la cuestión por el lector.
+Aquí Open Word Bible conserva la forma de pasado en todos los niveles: «un niño nos ha nacido, un hijo nos ha sido dado». Es la forma que usó Isaías, encaja con ambas lecturas, y la traducción puede llevarla sin confundir al lector. Un futuro habría decidido la cuestión por el lector.
 
 ## Isaías 53: mirando atrás hacia el siervo
 
 El canto del siervo sufriente va de Isaías 52:13 al final del capítulo 53, y sus verbos se mueven en el tiempo de una manera que los lectores notan a menudo.
 
-Empieza en futuro. El registro de 52:13 da «mi siervo actuará con sabiduría», «será alto y enaltecido». Luego, en el capítulo 53, un grupo de voces mira hacia atrás a lo que le ocurrió al siervo, y los verbos pasan al pasado:
+Empieza en futuro. El registro de 52:13 da «mi siervo actuará con sabiduría», «será alto y levantado». Luego, en el capítulo 53, un grupo de voces mira hacia atrás a lo que le ocurrió al siervo, y los verbos pasan al pasado:
 
 > {{OWB:ISA.53.4.s1:B}}
 

@@ -24,7 +24,7 @@ Katika Pasaka ya kwanza, Israeli waliambiwa wale wakiwa wamevaa hivyo, tayari ku
 
 Halisi inabaki na "viuno vyenu vimefungwa". Linganifu inasema ilionekanaje: "nguo zenu zimekazwa kiunoni". Rahisi inasema "Fungeni nguo zenu kiunoni". Uamuzi wa maneno ni mfupi: Linganifu na Rahisi zinaieleza nahau, na Halisi inaibakiza.
 
-Picha hiyohiyo ni halisi katika 1 Wafalme 18:46, ambapo Eliya, akiwa amepewa nguvu na BWANA, anakunja vazi lake na kukimbia mbele ya gari la Mfalme Ahabu njia yote hadi Yezreeli. Rahisi ya Kiingereza inaongeza sababu: "He tied up his long robe so he could run" (alilifunga vazi lake refu ili aweze kukimbia).
+Picha hiyohiyo ni halisi katika 1 Wafalme 18:46, ambapo Eliya, akiwa amepewa nguvu na BWANA, anakunja vazi lake na kukimbia mbele ya gari la Mfalme Ahabu njia yote hadi Yezreeli. Rahisi inaongeza sababu: "Akaifunga kanzu yake ndefu ili aweze kukimbia".
 
 Yesu anaitumia kama amri katika Luka 12:35: "Mwe mmejifunga mishipi viunoni, na taa zenu zikiwaka." Linganifu ya Kiswahili inasema "Kaeni tayari kwa kazi, mkiwa mmejifunga mishipi", na uamuzi wa maneno wa Kiingereza unaeleza kwamba "gird" (kujifunga) ni neno la zamani katika Kiingereza.
 
@@ -46,7 +46,7 @@ Unamaanisha nini? Picha ni ya maumivu ya kuungua, lakini wataalamu hawakubaliani
 
 Rekodi inafuata usomaji wa kwanza, na inaeleza kwamba katika Warumi 12:20–21 msemo huo unatumikia mwito wa kuushinda ubaya kwa wema, jambo linalouunga mkono. Rekodi ya Warumi 12:20 inafikia uamuzi uleule, ikiongeza kwamba usomaji wa hukumu haupatani vizuri na amri za Paulo katika mistari ya 14 na 17–19 za kuwabariki watesi na kamwe kutolipa ovu kwa ovu.
 
-Mithali bado haijatafsiriwa kwa Kiswahili, kwa hiyo manukuu yafuatayo yanatoka katika tafsiri ya Kiingereza. Hapa Linganifu inabaki na nahau. Inajulikana sana, ina picha hai na ni fupi, na maelezo yangeongeza maneno ambayo Kiebrania hakina:
+Hapa Linganifu inabaki na nahau. Inajulikana sana, ina picha hai na ni fupi, na maelezo yangeongeza maneno ambayo Kiebrania hakina:
 
 > {{OWB:PRO.25.22.s1:B}}
 
@@ -76,9 +76,9 @@ Baraka ya kikuhani katika Hesabu 6 inaishia kwa "BWANA akuinulie uso wake, na ku
 
 > {{OWB:NUM.6.26.s1:B}}
 
-Hesabu bado haijatafsiriwa kwa Kiswahili. Linganifu ya Kiingereza inabaki na picha na kuongeza "to look on you" (ili akutazame), jambo linalodhihirisha kile ambacho uso ulioinuliwa unafanya. Rahisi inasema "turn toward you and care for you" (akugeukie na kukujali).
+Linganifu inabaki na picha na kuongeza "akutazame", jambo linalodhihirisha kile ambacho uso ulioinuliwa unafanya. Rahisi inasema "akugeukie na kukujali".
 
-Nahau hiyohiyo inaweza kuelekea upande mwingine. Katika Mambo ya Walawi 19:15, waamuzi wanaambiwa wasiuinue "uso wa maskini" wala wasiuheshimu "uso wa mkuu". Uamuzi wa maana unasema kwamba kuuinua uso wa mtu ni kumpendelea, hapa mahakamani, na mwamuzi hapaswi kumpendelea mtu yeyote kwa sababu ya hali yake. Linganifu ya Kiingereza inasema "take the side of the poor because they are poor" (kumpendelea maskini kwa sababu ni maskini) na "give special honor to the powerful" (kuwapa wenye nguvu heshima ya pekee).
+Nahau hiyohiyo inaweza kuelekea upande mwingine. Katika Mambo ya Walawi 19:15, waamuzi wanaambiwa wasiuinue "uso wa maskini" wala wasiuheshimu "uso wa mkuu". Uamuzi wa maana unasema kwamba kuuinua uso wa mtu ni kumpendelea, hapa mahakamani, na mwamuzi hapaswi kumpendelea mtu yeyote kwa sababu ya hali yake. Linganifu inasema "Usimpendelee maskini kwa sababu ni maskini" na "wala usimpe mwenye nguvu heshima ya pekee".
 
 Kwa hiyo maneno yaleyale ya Kiebrania yanaweza kueleza baraka ya Mungu mahali pamoja na mwamuzi fisadi mahali pengine. Upendeleo kutoka kwa Mungu ni zawadi. Upendeleo kutoka kwa mwamuzi, unaoonyeshwa kwa mtu badala ya kwa ukweli, ni dhuluma. Nahau haiwezi kutafsiriwa kwa kanuni moja. Kila muktadha una uamuzi wake.
 
@@ -86,7 +86,7 @@ Kwa hiyo maneno yaleyale ya Kiebrania yanaweza kueleza baraka ya Mungu mahali pa
 
 Katika 1 Samweli 9:15, siku moja kabla Sauli hajafika, BWANA "alikuwa amelifunua sikio la Samweli". Maneno hayo ni {{HEBREW:1SA.9.15:2-5}}. Uamuzi wa maana unayaeleza: kumfunulia mtu sikio ni kumwambia jambo faraghani, siri au mpango, na Mungu anapokuwa msemaji linamaanisha ufunuo.
 
-Kiingereza hakina msemo kama huo, na "uncovered his ear" kingesikika cha ajabu. Halisi inaubakiza. Katika tafsiri ya Kiingereza, Linganifu inasema "the LORD had revealed this to Samuel" (BWANA alikuwa amemfunulia Samweli jambo hili). Rahisi inasema "the LORD had told Samuel a secret" (BWANA alikuwa amemwambia Samweli siri), jambo linalobaki na kitu fulani cha hisia ya siri inayonong'onwa.
+Kiingereza hakina msemo kama huo, na "uncovered his ear" kingesikika cha ajabu. Halisi inaubakiza. Linganifu inasema "BWANA alikuwa amemfunulia Samweli jambo hili". Rahisi inasema "BWANA alikuwa amemwambia Samweli siri", jambo linalobaki na kitu fulani cha hisia ya siri inayonong'onwa.
 
 ## Matumbo ya huruma
 
@@ -106,7 +106,7 @@ Katika mifano hii yote mtindo unajitokeza.
 
 **Halisi** inabaki na nahau, ili msomaji aweze kuona picha ya asili. "Viuno vyenu vimefungwa", "alikuwa amelifunua sikio", "akaufanya moyo wake kuwa mzito". Ni kiwango cha msomaji anayetaka kujua kile ambacho maandishi yanasema hasa, neno kwa neno.
 
-**Linganifu** inaamua kila jambo kivyake. Pale nahau inapojulikana vizuri na maana yake iko wazi, mara nyingi inaibakiza: "kurundika makaa yanayowaka", "kuinua uso wake", "akaushupaza moyo wake". Pale ambapo ingetatanisha au kupotosha, inatoa maana: "nguo zenu zimekazwa kiunoni", "alikuwa amemfunulia Samweli jambo hili".
+**Linganifu** inaamua kila jambo kivyake. Pale nahau inapojulikana vizuri na maana yake iko wazi, mara nyingi inaibakiza: "unampalia makaa ya moto", "auinue uso wake", "akaushupaza moyo wake". Pale ambapo ingetatanisha au kupotosha, inatoa maana: "nguo zenu zimekazwa kiunoni", "alikuwa amemfunulia Samweli jambo hili".
 
 **Rahisi** inaeleza. Imeandikwa kwa wasomaji ambao huenda hawajui utamaduni ulio nyuma ya picha, na inasema nahau inamaanisha nini: "Fungeni nguo zenu kiunoni", "alikuwa amemwambia Samweli siri", "akajifanya mkaidi".
 

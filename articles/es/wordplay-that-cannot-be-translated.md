@@ -48,7 +48,7 @@ Los profetas usan juegos de palabras en sus visiones. En Amós 8 el SEÑOR le mu
 
 La respuesta solo tiene sentido en hebreo. «Fruta de verano» es {{HEBREW:AMO.8.2:8}} (*qayiṣ*), y «el fin» es {{HEBREW:AMO.8.2:13}} (*haq-qēṣ*). Las dos palabras suenan casi igual. La nota al pie del registro lo explica: la cesta de fruta madura al final de la cosecha se convierte en señal de que Israel está maduro para el juicio.
 
-Aquí los tres niveles se separan, y la decisión de redacción dice cómo. Literal y Equilibrada conservan las palabras del hebreo, y una nota al pie da el juego de palabras. Sencilla dice en el texto que las dos palabras suenan parecido, «porque sin ello la respuesta del SEÑOR no tiene sentido para el lector». (Amós aún no está traducido al español en Open Word Bible, así que esta cita, como las de Jeremías, Isaías y Miqueas más abajo, se muestra por ahora en la edición inglesa.)
+Aquí los tres niveles se separan, y la decisión de redacción dice cómo. Literal y Equilibrada conservan las palabras del hebreo, y una nota al pie da el juego de palabras. Sencilla dice en el texto que las dos palabras suenan parecido, «porque sin ello la respuesta del SEÑOR no tiene sentido para el lector».
 
 > {{OWB:AMO.8.2.s1:R}}
 

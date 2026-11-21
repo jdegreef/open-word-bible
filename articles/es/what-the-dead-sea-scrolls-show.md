@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
-source: a067bebd487f
+source: 63b04e4c28b5
 ---
 Cuando se anunciaron por primera vez los Rollos del Mar Muerto, mucha gente se hizo una pregunta: ¿mostrarían que la Biblia había sido alterada? La respuesta resultó ser más interesante que un simple sí o un simple no.
 
@@ -31,7 +31,7 @@ Eugene Ulrich, otro editor de los rollos bíblicos, prefiere describir la situac
 
 ## Tres ejemplos
 
-**Jeremías.** La versión griega de Jeremías en la Septuaginta es aproximadamente una séptima parte más breve que el texto masorético hebreo, y ordena algunos capítulos de otra manera. Antes de 1947, muchos especialistas suponían que el traductor griego había abreviado libremente. Pero fragmentos de la Cueva 4, sobre todo 4QJer-b y 4QJer-d, conservan un texto hebreo del tipo más breve. Otros rollos de Jeremías de la misma cueva tienen la forma masorética más larga. Ambas ediciones existían en hebreo y se copiaban en el mismo periodo. Los traductores siguen hoy la edición masorética más larga, que es la forma que las comunidades judías y cristianas han leído durante dos mil años; la edición más breve ayuda a los especialistas a entender cómo creció el libro.
+**Jeremías.** La versión griega de Jeremías en la Septuaginta es aproximadamente una octava parte más breve que el texto masorético hebreo, y ordena algunos capítulos de otra manera. Antes de 1947, muchos especialistas suponían que el traductor griego había abreviado libremente. Pero fragmentos de la Cueva 4, sobre todo 4QJer-b y 4QJer-d, conservan un texto hebreo del tipo más breve. Otros rollos de Jeremías de la misma cueva tienen la forma masorética más larga. Ambas ediciones existían en hebreo y se copiaban en el mismo periodo. Los traductores siguen hoy la edición masorética más larga, que es la forma que las comunidades judías y cristianas han leído durante dos mil años; la edición más breve ayuda a los especialistas a entender cómo creció el libro.
 
 **1 Samuel 11.** Un gran manuscrito de Samuel de la Cueva 4, **4QSam-a**, contiene antes de 1 Samuel 11 un párrafo que no está en el texto masorético. Describe cómo Nahas, rey de los amonitas, había estado oprimiendo a las tribus de Gad y de Rubén y sacándoles el ojo derecho, lo que explica por qué su exigencia en 11:2 es tan cruel. El historiador Josefo, del siglo I, parece haber conocido este material (*Antigüedades judías* 6.68-71). La New Revised Standard Version (1989) incluyó el párrafo en su texto; la mayoría de las demás traducciones no lo hacen, o lo mencionan en una nota. Los especialistas siguen debatiendo si se perdió accidentalmente del texto masorético o si se añadió en la tradición que está detrás de 4QSam-a.
 

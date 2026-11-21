@@ -4,11 +4,9 @@ summary: Neno moja la Kiebrania linaeleza upendo wa Mungu kwa watu wake na upend
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Maneno mengine yanabeba mengi kiasi kwamba kila tafsiri yake inavuja. Neno la Kiebrania {{LEMMA:RUT.1.8:14}}, ambalo kwa kawaida huandikwa *ḥesed* au *chesed*, ni mojawapo. Linatokea mara 250 hivi katika Agano la Kale, karibu nusu yake katika Zaburi. Liko katikati ya jinsi Israeli walivyomweleza Mungu, na ya jinsi Waisraeli walivyotarajiwa kutendeana. Biblia za Kiingereza zimejaribu "mercy" (rehema), "kindness" (wema), "lovingkindness" (wema wa upendo), "steadfast love" (upendo thabiti), "loyalty" (uaminifu), "faithful love" (upendo wa uaminifu) na mengine zaidi. Kila moja linasema jambo la kweli, na kila moja linaacha kitu nje.
-
-Vitabu vingi vinavyotajwa hapa, kama Ruthu, Zaburi, Maombolezo na Hosea, bado havijatafsiriwa kwa Kiswahili, kwa hiyo mistari yake inaonyeshwa kwa Kiingereza.
 
 ## Neno hili linabeba nini
 
@@ -56,7 +54,7 @@ Maombolezo 3:22 inaonyesha tofauti hiyo. Inaweka *ḥesed* na neno la Kiebrania 
 
 > {{OWB:LAM.3.22.s1:B}}
 
-Mstari wa kwanza una {{HEBREW:LAM.3.22:1}}, wingi wa *ḥesed*: matendo mengi ya upendo wa uaminifu wa Bwana. Mstari wa pili una *raḥămîm*, neno linalohusiana na neno la tumbo la uzazi, hisia nyororo ya mzazi kwa mtoto. Rekodi inayatenganisha: katika toleo la Kiingereza ni "loyal love" (upendo wa uaminifu) kwa la kwanza na "mercies" (rehema) kwa la pili, katika kila kiwango. Kama yote mawili yangekuwa "rehema", mstari ungesema jambo lilelile mara mbili.
+Mstari wa kwanza una {{HEBREW:LAM.3.22:1}}, wingi wa *ḥesed*: matendo mengi ya upendo wa uaminifu wa Bwana. Mstari wa pili una *raḥămîm*, neno linalohusiana na neno la tumbo la uzazi, hisia nyororo ya mzazi kwa mtoto. Rekodi inayatenganisha katika kila kiwango: "upendo usiokoma" kwa la kwanza na "huruma" kwa la pili. Kama yote mawili yangekuwa "rehema", mstari ungesema jambo lilelile mara mbili.
 
 **"Lovingkindness" (wema wa upendo).** Neno hili lilibuniwa kwa ajili ya Biblia. Kwa kawaida linahusishwa na Miles Coverdale, ambaye Biblia yake ya Kiingereza ya mwaka 1535 ililitumia katika Zaburi, na King James Version ililibakiza mahali pengi. Ni jaribio zuri: linaunganisha upendo na wema katika neno moja. Lakini si tena Kiingereza cha kawaida, na linakosa uaminifu, yaani hisia kwamba wema huu unadaiwa ndani ya kifungo na unadumishwa kwa muda.
 
@@ -74,16 +72,16 @@ Rekodi zinatumia tafsiri chache, zilizochaguliwa ili kila moja ibakize uaminifu 
 
 Katika toleo la Kiingereza, katika Torati, vitabu vya historia na Ruthu, kiwango cha Halisi kinasema "steadfast love" (upendo thabiti) na viwango vya Linganifu na Rahisi vinasema "faithful love" (upendo wa uaminifu). Kwa hiyo katika Kutoka 34:6 Mungu ni "great in steadfast love" (mkuu katika upendo thabiti) katika Halisi na "rich in faithful love" (mwingi wa upendo wa uaminifu) katika Linganifu. Yoshua 2:12, ambapo Rahabu anawaomba wapelelezi waionyeshe familia yake *ḥesed* aliyowaonyesha wao, na 2 Samweli 9:1, ambapo Daudi anamtafuta mtu wa nyumba ya Sauli ili amwonyeshe *ḥesed* kwa ajili ya Yonathani, vinafuata utaratibu huohuo. Toleo la Kiswahili la Kutoka linafuata mabadiliko hayo kwa njia yake: katika Kutoka 20:6 Halisi inasema "upendo usiokoma", Linganifu "upendo wa uaminifu", na Rahisi "ninawapenda kwa uaminifu bila kukoma".
 
-Katika Zaburi na manabii, viwango vya Halisi na Linganifu vya Kiingereza vinasema "loyal love" (upendo wa uaminifu) na Rahisi inasema "faithful love". Ndivyo unavyoona katika Zaburi 136 na katika Maombolezo 3:22 hapo juu.
+Katika Zaburi, vitabu vingine vya mashairi (Ayubu, Mithali, Mhubiri, Wimbo Ulio Bora), Maombolezo na manabii, viwango vya Halisi na Linganifu vya Kiingereza vinasema "loyal love" (upendo wa uaminifu) na Rahisi inasema "faithful love". Pale ambapo kitabu cha historia kinaimba zaburi, kinabaki na maneno ya Zaburi: kiitikio cha hekalu "his loyal love is forever" (upendo wake wa uaminifu ni wa milele) katika 1 na 2 Mambo ya Nyakati na Ezra 3:11, na wimbo wa Daudi katika 2 Samweli 22, ambao ni Zaburi 18. Ukihesabu katika Agano la Kale lote, kiwango cha Linganifu cha Kiingereza kinasema "loyal love" takriban mara tatu zaidi ya "faithful love", kwa sababu tu matumizi mengi ya neno hilo yako katika Zaburi.
 
-Tofauti iko katika maneno tu. Maamuzi ya maana yanaeleza maana ileile katika kila mahali hapa: upendo unaobaki mwaminifu ndani ya kifungo. Maneno hayo mawili yaliwekwa katika majedwali ya istilahi kwa makundi tofauti ya vitabu, na maelezo ya mradi yanaonyesha mahali pamoja ambapo yanakutana vibaya: Yoeli na Yona wanaponukuu Kutoka 34:6, bado hawakubaliani. Hilo ni swali lililo wazi kwa ajili ya ukaguzi, na maneno mamoja yatachaguliwa kwa nukuu hizo.
+Tofauti iko katika maneno tu. Maamuzi ya maana yanaeleza maana ileile katika kila mahali hapa: upendo unaobaki mwaminifu ndani ya kifungo. Maneno hayo mawili yaliwekwa katika majedwali ya istilahi kwa makundi tofauti ya vitabu, na kanuni hiyo sasa imeandikwa pamoja na istilahi nyingine muhimu. Kitabu cha baadaye kinaponukuu Kutoka 34:6, nukuu inafuata kitabu chake chenyewe: Hesabu 14:18 na Nehemia 9:17 zinasema "steadfast love" na "faithful love" kama Kutoka, na Yoeli 2:13 na Yona 4:2 zote zinasema "loyal love".
 
 Mistari mingine inaachana na utaratibu huu, kila mmoja kwa sababu iliyoandikwa.
 
 - **Mwanzo 24:27.** Mtumishi wa Abrahamu anamsifu Mungu kwa kutouondoa "his loyalty and his faithfulness" (uaminifu wake na kweli yake) kwa bwana wake. Linganifu ya Kiingereza inaigeuza jozi hiyo kuwa "He has not stopped being kind and true to my master" (Hajaacha kuwa mwema na mkweli kwa bwana wangu), na Rahisi inasema Mungu "has kept his loving promises" (ametimiza ahadi zake za upendo). Toleo la Kiswahili linafanana: Halisi "fadhili zake na uaminifu wake", Linganifu "Hajaacha kumtendea bwana wangu wema na uaminifu", na Rahisi "Ametimiza ahadi zake za upendo".
-- **Esta 2:9.** Esta "alipata wema" mbele ya ofisa aliyesimamia wanawake. Uamuzi wa maana unaeleza kwamba hapa, kwa mkubwa anayeuonyesha, neno linamaanisha nia njema, na uamuzi wa maneno unasema kwamba "faithful love" ya kawaida ingepotosha. Linganifu ya Kiingereza inasema "won his favor" (alipata kibali chake).
-- **Mika 6:8.** Muhtasari wa nabii wa kile Mungu anachodai ni "kutenda haki, kupenda *ḥesed*, na kwenda kwa unyenyekevu pamoja na Mungu wako". Kiebrania kinaweka kitenzi "kupenda" mbele ya nomino, na "to love loyal love" (kupenda upendo wa uaminifu) ni Kiingereza kigumu. Kwa agizo la mwanzilishi Halisi inabaki nalo, Linganifu inasema "to love loyalty" (kupenda uaminifu), na Rahisi inasema "to love being kind and loyal" (kupenda kuwa mwema na mwaminifu). Uamuzi wa maneno unaeleza kwamba kuachana huko ni kwa maneno tu.
-- **Isaya 40:6.** "Wote wenye mwili ni majani, na *ḥesed* yao yote ni kama ua la kondeni." Likisemwa kuhusu wanadamu, neno hili linamaanisha uaminifu wao, usiodumu. Rekodi za Kiingereza zinasema "loyalty" katika Halisi na Linganifu na "faithfulness" katika Rahisi, na maelezo ya chini yanaeleza kwamba Septuaginta inasoma "utukufu" hapa, umbo ambalo 1 Petro 1:24 inalinukuu.
+- **Esta 2:9.** Esta "alipata wema" mbele ya ofisa aliyesimamia wanawake. Uamuzi wa maana unaeleza kwamba hapa, kwa mkubwa anayeuonyesha, neno linamaanisha nia njema, na uamuzi wa maneno unasema kwamba "faithful love" ya kawaida ingepotosha. Linganifu inasema "akapata kibali kwake".
+- **Mika 6:8.** Muhtasari wa nabii wa kile Mungu anachodai ni "kutenda haki, kupenda *ḥesed*, na kwenda kwa unyenyekevu pamoja na Mungu wako". Kiebrania kinaweka kitenzi "kupenda" mbele ya nomino, na "to love loyal love" (kupenda upendo wa uaminifu) ni Kiingereza kigumu. Kwa agizo la mwanzilishi Halisi inabaki nalo ("kupenda upendo usiokoma"), Linganifu inasema "kupenda uaminifu", na Rahisi inasema "kupenda kuwa mwema na mwaminifu". Uamuzi wa maneno unaeleza kwamba kuachana huko ni kwa maneno tu.
+- **Isaya 40:6.** "Wote wenye mwili ni majani, na *ḥesed* yao yote ni kama ua la kondeni." Likisemwa kuhusu wanadamu, neno hili linamaanisha uaminifu wao, usiodumu. Rekodi zinasema "uaminifu" katika Halisi, Linganifu na Rahisi, na maelezo ya chini yanaeleza kwamba Septuaginta inasoma "utukufu" hapa, umbo ambalo 1 Petro 1:24 inalinukuu.
 
 ## Kigiriki kinaposema "rehema"
 

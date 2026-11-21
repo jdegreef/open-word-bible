@@ -56,7 +56,7 @@ Kuna tofauti ndogo zaidi mahali pengine, kama mwishoni mwa Mwanzo 31, ambapo Kie
 
 ## Jinsi Open Word Bible inavyoshughulikia namba
 
-Open Word Bible inaipa kila mstari namba kama maandishi yake ya chanzo yanavyofanya. Kwa Agano la Kale hayo ni Kodeksi ya Leningrad ya Westminster, kwa hiyo Malaki ina sura tatu, Yoeli nne, na kichwa cha zaburi ni mstari wake wa kwanza. Pale jambo hili lina maana, mstari wa kwanza unaohusika una maelezo ya chini. Yale ya Malaki 3:19 yanaeleza kwamba mistari yake sita imepewa namba 4:1–6 katika Biblia nyingine nyingi, na kwamba Open Word Bible inafuata namba za maandishi ya Kiebrania inayoyatafsiri. Yoeli 3:1 ina maelezo ya aina hiyohiyo, na vivyo hivyo kichwa cha Zaburi 3, ambacho bado hakijatafsiriwa kwa Kiswahili na kwa hiyo kinaonyeshwa hapa kwa Kiingereza:
+Open Word Bible inaipa kila mstari namba kama maandishi yake ya chanzo yanavyofanya. Kwa Agano la Kale hayo ni Kodeksi ya Leningrad ya Westminster, kwa hiyo Malaki ina sura tatu, Yoeli nne, na kichwa cha zaburi ni mstari wake wa kwanza. Pale jambo hili lina maana, mstari wa kwanza unaohusika una maelezo ya chini. Yale ya Malaki 3:19 yanaeleza kwamba mistari yake sita imepewa namba 4:1–6 katika Biblia nyingine nyingi, na kwamba Open Word Bible inafuata namba za maandishi ya Kiebrania inayoyatafsiri. Yoeli 3:1 ina maelezo ya aina hiyohiyo, na vivyo hivyo kichwa cha Zaburi 3:
 
 > {{OWB:PSA.3.1.s1:B}}
 
