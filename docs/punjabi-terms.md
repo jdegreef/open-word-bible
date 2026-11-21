@@ -874,3 +874,50 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਵਿੰਨ੍ਹ at L and B for the same verb); 13:5 (Amos 7:14); 13:7 "ਆਜੜੀ ਨੂੰ ਮਾਰ
   ... ਭੇਡਾਂ ਤਿੱਤਰ-ਬਿੱਤਰ" (Matthew 26:31, Mark 14:27); 14:9 ਇੱਕ ... ਇੱਕ
   (Deuteronomy 6:4).
+
+### 2 Corinthians
+
+- Comfort (*paraklēsis*) ਦਿਲਾਸਾ (L, B), ਤਸੱਲੀ (R); affliction (*thlipsis*)
+  ਬਿਪਤਾ (L), ਦੁੱਖ (B), ਮੁਸੀਬਤ (R); grief (*lypē*) ਦੁੱਖ / ਦੁਖੀ ਕਰਨਾ (L, B),
+  ਉਦਾਸੀ / ਉਦਾਸ (R). Repentance (7:9-10, 12:21) ਤੋਬਾ (L, B); Readable says
+  "turned from what was wrong".
+- Paul's boasting (*kauchēsis*) is ਮਾਣ at every level; ਘਮੰਡ and, in Readable,
+  ਸ਼ੇਖੀਆਂ ਮਾਰਨਾ are kept for his rivals. Commend oneself ਆਪਣੀ ਸਿਫ਼ਾਰਸ਼ ਆਪ
+  ਕਰਨਾ throughout (3:1, 5:12, 10:12-18).
+- Ministry (*diakonia*) ਸੇਵਕਾਈ (L, B), ਸੇਵਾ / ਕੰਮ (R); for the collection
+  (8:4, 9:1) ਸੇਵਕਾਈ (L), ਸਹਾਇਤਾ (B), ਮਦਦ (R). *Charis* for the collection
+  ਕਿਰਪਾ (L), ਕਿਰਪਾ ਦਾ ਦਾਨ (B), ਉਦਾਰ ਦਾਨ (R); *eulogia* (9:5) ਬਰਕਤ (L).
+- Conscience ਜ਼ਮੀਰ (L, B), ਮਨ (R); deposit (*arrabōn*, 1:22, 5:5) ਬਿਆਨਾ
+  (L, B), ਪਹਿਲੀ ਕਿਸ਼ਤ (R); holy ones ਪਵਿੱਤਰ ਜਨ (L), ਪਰਮੇਸ਼ੁਰ ਦੇ ਪਵਿੱਤਰ ਲੋਕ (B),
+  ਪਰਮੇਸ਼ੁਰ ਦੇ ਲੋਕ (R).
+- Chapter 3: covenant ਨੇਮ; *gramma* ਅੱਖਰ (L), ਲਿਖਿਆ ਹੋਇਆ ਅੱਖਰ (B), ਲਿਖੇ ਹੋਏ
+  ਨਿਯਮ (R); veil ਪੜਦਾ; image ਸਰੂਪ. 3:7 and 3:13 have
+  `{{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰ}}` at L, as Hindi.
+- "According to the flesh" ਸਰੀਰ ਦੇ ਅਨੁਸਾਰ (L), ਸਿਰਫ਼ ਮਨੁੱਖੀ ਪੈਮਾਨਿਆਂ ਨਾਲ (B),
+  ਇਨਸਾਨੀ ਨਜ਼ਰ ਨਾਲ / ਸੁਆਰਥੀ ਲੋਕਾਂ ਵਾਂਗ (R) (5:16, 10:2, 11:18).
+- Reconciliation (5:18-20) ਮੇਲ ਕਰਾਉਣਾ / ਮੇਲ-ਮਿਲਾਪ (L, B), ਮੋੜ ਕੇ ਆਪਣੇ ਕੋਲ
+  ਲਿਆਉਣਾ (R); "be reconciled to God" ਪਰਮੇਸ਼ੁਰ ਨਾਲ ਆਪਣਾ ਮੇਲ ਹੋਣ ਦਿਓ. 5:21 ਪਾਪ
+  ਬਣਾ ਦਿੱਤਾ (L, B).
+- Chapters 10-13: super-apostles ਮਹਾਂ-ਰਸੂਲ (R ਅਖੌਤੀ); foolishness ਮੂਰਖਤਾ /
+  ਮੂਰਖ; "disguise" ਰੂਪ ਧਾਰਨਾ (L, 11:13-15); the thorn ਸਰੀਰ ਵਿੱਚ ਇੱਕ ਕੰਡਾ at
+  every level; paradise ਸਵਰਗ ਦਾ ਬਾਗ਼; *dokimos* / *adokimos* ਖਰਾ / ਖੋਟਾ
+  (13:5-7); field (*kanōn*) ਖੇਤਰ (L, B), ਇਲਾਕਾ (R); build up / tear down
+  ਉਸਾਰਨਾ / ਢਾਹੁਣਾ (10:8, 13:10).
+- Names: ਸਿਲਵਾਨੁਸ, ਤੀਤੁਸ, ਤ੍ਰੋਆਸ, ਮਕਦੂਨਿਯਾ (Macedonians ਮਕਦੂਨੀ), ਅਖਾਯਾ,
+  ਕੁਰਿੰਥੁਸ (ਕੁਰਿੰਥੀਓ in address), ਆਸਿਯਾ, ਯਹੂਦਿਯਾ, ਹੱਵਾਹ, ਬਲਿਆਲ, ਅਰਿਤਾਸ,
+  ਦੰਮਿਸ਼ਕ (as Galatians); Satan ਸ਼ੈਤਾਨ.
+- Address: Paul says ਤੁਸੀਂ to the church; God says ਤੂੰ in the quotation of
+  Isaiah 49:8 (6:2), and the Lord says ਤੂੰ to Paul in 12:9 ("ਮੇਰੀ ਕਿਰਪਾ ਤੇਰੇ
+  ਲਈ ਕਾਫ਼ੀ ਹੈ"). 9:9 (Psalm 112) uses plain singular forms, since its subject
+  is the person who fears God.
+- Spans match Hindi (14 gender, no others): `{{gender:ਭਰਾਵੋ ਅਤੇ ਭੈਣੋ|ਭਰਾਵੋ}}`
+  in address, `{{gender:ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ|ਭਰਾਵਾਂ}}` in 11:26, and the two
+  "children of Israel" spans. The particular men Paul sends (8:18-23, 9:3-5,
+  11:9) are ਭਰਾ with no span.
+- Quotations: 6:16-18 sets the covenant formula as ਮੈਂ ਉਨ੍ਹਾਂ ਦਾ ਪਰਮੇਸ਼ੁਰ
+  ਹੋਵਾਂਗਾ, ਅਤੇ ਉਹ ਮੇਰੇ ਲੋਕ ਹੋਣਗੇ (L), ਬਣਾਂਗਾ ... ਪਰਜਾ ਬਣਨਗੇ (B); Zechariah
+  8:8 has ਮੇਰੀ ਪਰਜਾ, and both were shaped by the overlap rule, so a reviewer may
+  want to settle one form. 8:15 (Exodus 16:18), 9:9 (Psalm 112:9), 10:17
+  (Jeremiah 9:24, also 1 Corinthians 1:31), 13:1 (Deuteronomy 19:15). The
+  closing blessing 13:13 is ਪ੍ਰਭੂ ਯਿਸੂ ਮਸੀਹ ਦੀ ਕਿਰਪਾ ਅਤੇ ਪਰਮੇਸ਼ੁਰ ਦਾ ਪਿਆਰ ਅਤੇ
+  ਪਵਿੱਤਰ ਆਤਮਾ ਦੀ ਸਾਂਝ (L); the holy kiss ਪਵਿੱਤਰ ਚੁੰਮਾ, as 1 Thessalonians.
