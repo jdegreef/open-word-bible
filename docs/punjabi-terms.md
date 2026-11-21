@@ -257,3 +257,21 @@ People and places: ਯੂਨਾਹ, ਅਮਿੱਤਈ, ਨੀਨਵਾਹ, ਤ�
   psalms and Jonah 2 should be brought into line when the psalms are drafted.
 - Address: God and the captain say ਤੂੰ to Jonah; the sailors say ਤੂੰ to
   him and he says ਤੁਸੀਂ to them (many); everyone says ਤੂੰ to God.
+
+### Obadiah
+
+People and places: ਓਬਦਯਾਹ, ਅਦੋਮ, ਏਸਾਓ, ਤੇਮਾਨ, ਯਾਕੂਬ, ਯੂਸੁਫ਼, ਸੀਯੋਨ,
+ਯਰੂਸ਼ਲਮ, ਨੇਗੇਵ, ਸ਼ਫ਼ੇਲਾਹ, ਫ਼ਲਿਸਤੀ, ਇਫ਼ਰਾਈਮ, ਸਾਮਰਿਯਾ, ਬਿਨਯਾਮੀਨ, ਗਿਲਆਦ,
+ਕਨਾਨੀ, ਸਾਰਫਥ, ਸਫ਼ਾਰਦ.
+
+- Vision (*ḥazon*) ਦਰਸ਼ਣ; the messenger among the nations ਦੂਤ.
+- God says ਤੂੰ to Edom, one people in the singular, as in the Hebrew. In
+  verse 16 the "you" who drank on the holy mountain is plural and is ਤੁਸੀਂ;
+  who is meant (Edom or Judah) is marked uncertain.
+- The day of disaster (*'ed*, 13) is ਆਫ਼ਤ at L; trouble (*ṣarah*, 12, 14)
+  ਸੰਕਟ; the day of the LORD ਦਾ ਦਿਨ, one phrase for all the prophets.
+- Possess (*yarash*, 17, 19, 20) is ਕਬਜ਼ਾ ਕਰਨਾ; possessions ਮਲਕੀਅਤਾਂ.
+- Deliverers (*moshiʿim*, 21) ਛੁਡਾਉਣ ਵਾਲੇ; stubble ਨਾੜ; casting lots ਗੁਣੇ
+  ਪਾਉਣਾ, as in Jonah.
+- Verses 1-9 run close to Jeremiah 49:7-22; Jeremiah should match these
+  when it is drafted.

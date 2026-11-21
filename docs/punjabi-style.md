@@ -459,8 +459,8 @@ notes it once.
 
 | Source (English) | Literal | Balanced | Readable |
 |---|---|---|---|
-| Thus says the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਇਹ ਆਖਦਾ ਹੈ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਇਹ ਕਹਿਣਾ ਹੈ* |
-| declares the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਵਾਕ ਹੈ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਆਖਦਾ ਹੈ* |
+| Thus says the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਇਉਂ ਆਖਦੇ ਹਨ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਇਹ ਕਹਿਣਾ ਹੈ* |
+| declares the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਵਾਕ ਹੈ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਆਖਦੇ ਹਨ* |
 | The word of the LORD came to ... | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਬਚਨ ... ਕੋਲ ਆਇਆ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਨੇ ... ਨਾਲ ਗੱਲ ਕੀਤੀ* |
 | I am the LORD | *ਮੈਂ {{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਹਾਂ* | as L | as L |
 | behold (*hinneh*, *idou*) | *ਵੇਖੋ* (ਵੇਖ to one person) | left out where it only marks attention | left out |
