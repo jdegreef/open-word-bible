@@ -955,3 +955,53 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - The poem of 12:1-7 keeps its images (keepers, grinders, almond tree,
   grasshopper, caper-berry ਕਬਰ ਦਾ ਫਲ, silver cord, golden bowl, wheel at the
   well) with no explanation added at L and B.
+
+### Hebrews
+
+- Address: no deity_pronoun spans; honorific plurals for God, the Son and
+  Jesus (ਪਰਮੇਸ਼ੁਰ ... ਬੋਲੇ ਹਨ, ਜਿਨ੍ਹਾਂ ਨੇ, ਉਨ੍ਹਾਂ ਦੀ ਅਵਾਜ਼). ਮਸੀਹ with no
+  christos setting. Inside quoted psalms God says ਤੂੰ to the Son (1:5, 1:8-13,
+  5:5-6) and the psalmist says ਤੂੰ to God; God also says ਤੂੰ to Moses (8:5),
+  Abraham (6:14) and in the promise of 13:5, and the Son says ਤੂੰ to God in
+  Psalm 40 (10:5-9). The Holy Spirit takes masculine singular verbs; the OT
+  high priest, Melchizedek and the "coming one" of Hab 2:3 (10:37) take plain
+  forms. In Proverbs 3:11-12 (12:5-6) the father says ਤੂੰ to his son and the
+  Lord takes honorific forms. "says the Lord" is ਪ੍ਰਭੂ ਆਖਦੇ ਹਨ.
+- Priesthood: high priest ਮਹਾਂ ਜਾਜਕ (never ਸਰਦਾਰ ਜਾਜਕ); Melchizedek
+  ਮਲਕਿਸਿਦਕ, "in the order of" ਦੀ ਰੀਤ ਦੇ ਅਨੁਸਾਰ (L), ਦੀ ਰੀਤ ਦਾ (B); atone
+  ਪ੍ਰਾਸਚਿਤ ਕਰਨਾ (L, B), ਪਾਪ ਦੂਰ ਕਰਨਾ (R); make perfect ਸਿੱਧ ਕਰਨਾ (L, B),
+  ਪੂਰੀ ਤਰ੍ਹਾਂ ਯੋਗ ਬਣਾਉਣਾ (R); pioneer (*archēgos*) ਆਗੂ; confession ਇਕਰਾਰ.
+- Rest (*katapausis*, *sabbatismos*) ਵਿਸ਼ਰਾਮ, ਸਬਤ ਦਾ ਵਿਸ਼ਰਾਮ; drift away
+  ਵਹਿ ਕੇ ਦੂਰ ਚਲੇ ਜਾਣਾ; maturity ਸਿੱਧਤਾ (L), ਪਰਿਪੱਕਤਾ (B); repentance ਤੋਬਾ
+  (L, B), ਮੁੜਨਾ (R); the Majesty ਮਹਾਂ-ਪ੍ਰਤਾਪੀ; firstborn ਪਹਿਲੌਠਾ.
+- Tabernacle: tent ਤੰਬੂ (L), ਪਵਿੱਤਰ ਤੰਬੂ (B, R); sanctuary ਪਵਿੱਤਰ ਸਥਾਨ;
+  Most Holy Place ਪਵਿੱਤਰਾਂ ਦਾ ਪਵਿੱਤਰ (L), ਅੱਤ ਪਵਿੱਤਰ ਸਥਾਨ (B, R);
+  lampstand ਸ਼ਮਾਦਾਨ; mercy seat ਪ੍ਰਾਸਚਿਤ ਦਾ ਢੱਕਣ; cherubim ਕਰੂਬੀ; hyssop
+  ਜ਼ੂਫ਼ਾ. Noah's ark is ਕਿਸ਼ਤੀ, kept apart from the ark of the covenant ਸੰਦੂਕ.
+- Covenant ਨੇਮ; mediator ਵਿਚੋਲਾ; will ਵਸੀਅਤ (9:16-17); eternal ਸਦੀਪਕ;
+  redemption ਛੁਟਕਾਰਾ; conscience ਜ਼ਮੀਰ; dead works ਮੁਰਦਾ ਕੰਮ; figure
+  ਦ੍ਰਿਸ਼ਟਾਂਤ (L, B), ਤਸਵੀਰ (R); law ਬਿਵਸਥਾ, laws ਬਿਵਸਥਾਵਾਂ.
+- Chapter 11: the refrain "by faith" is ਵਿਸ਼ਵਾਸ ਨਾਲ (L, B), ਵਿਸ਼ਵਾਸ ਦੇ ਕਾਰਨ
+  (R). Names: ਹਾਬਲ, ਕਾਇਨ, ਹਨੋਕ, ਨੂਹ, ਸਾਰਾਹ, ਇਸਹਾਕ, ਯਾਕੂਬ, ਏਸਾਓ, ਯੂਸੁਫ਼,
+  ਫ਼ਿਰਊਨ, ਯਰੀਹੋ, ਰਾਹਾਬ ਵੇਸਵਾ, ਗਿਦਾਊਨ, ਬਾਰਾਕ, ਸਮਸੂਨ, ਯਿਫ਼ਤਾਹ, ਸਮੂਏਲ;
+  Mount Zion ਸੀਯੋਨ ਪਹਾੜ, Sinai ਸੀਨਈ, Timothy ਤਿਮੋਥਿਉਸ, Italy ਇਤਾਲਿਯਾ.
+- Chapters 12-13: discipline ਤਾੜਨਾ (L, B), ਸੁਧਾਰਨਾ (R); illegitimate
+  ਨਾਜਾਇਜ਼; Father of spirits ਆਤਮਿਆਂ ਦੇ ਪਿਤਾ; leaders ਆਗੂ; saints ਪਵਿੱਤਰ
+  ਲੋਕ; thankful ਸ਼ੁਕਰਗੁਜ਼ਾਰ.
+- Quotations other books must match:
+  - Jeremiah 31 (8:8-12, 10:16-17): ਵੇਖੋ, ਦਿਨ ਆ ਰਹੇ ਹਨ, ਪ੍ਰਭੂ ਆਖਦੇ ਹਨ (L);
+    ਮੈਂ ਉਨ੍ਹਾਂ ਦਾ ਪਰਮੇਸ਼ੁਰ ਹੋਵਾਂਗਾ, ਅਤੇ ਉਹ ਮੇਰੀ ਆਪਣੀ ਪਰਜਾ ਹੋਣਗੇ (B);
+    ਉਨ੍ਹਾਂ ਦੇ ਪਾਪਾਂ ਨੂੰ ਮੈਂ ਫੇਰ ਕਦੇ ਵੀ ਯਾਦ ਨਹੀਂ ਕਰਾਂਗਾ (L).
+  - Deuteronomy 32:35 (10:30): ਬਦਲਾ ਮੇਰਾ [ਹੈ]; ਮੈਂ ਮੋੜ ਦਿਆਂਗਾ (L); ਬਦਲਾ
+    ਲੈਣਾ ਮੇਰਾ ਕੰਮ ਹੈ; ਮੋੜਨ ਵਾਲਾ ਮੈਂ ਹਾਂ (B). Romans 12:19 should match.
+  - Habakkuk 2:4 (10:38): ਮੇਰਾ ਧਰਮੀ ਵਿਸ਼ਵਾਸ ਨਾਲ ਜੀਉਂਦਾ ਰਹੇਗਾ, as
+    Galatians 3:11; Romans 1:17 should match.
+  - Genesis 21:12 (11:18): ਇਸਹਾਕ ਵਿੱਚ ਤੇਰੀ ਅੰਸ ਅਖਵਾਏਗੀ. Romans 9:7 should
+    match.
+  - Psalm 2:7 (1:5, 5:5) and Psalm 110:1 (1:13) are set here for Acts and the
+    Psalms; the doxology of 13:21 follows Galatians 1:5 and the closing grace
+    of 13:25 follows 2 Timothy 4:22.
+- Spans: {{gender:ਭਰਾਵੋ ਅਤੇ ਭੈਣੋ|ਭਰਾਵੋ}} and related forms for *adelphoi*;
+  {{gender:ਸੰਤਾਨ|ਪੁੱਤਰਾਂ}} for "sons" (2:10, 12:5-8, 11:22 L ਦੀ ਸੰਤਾਨ);
+  {{gender:ਮਨੁੱਖ ਦੀ ਸੰਤਾਨ|ਮਨੁੱਖ ਦਾ ਪੁੱਤਰ}} in Psalm 8 at B and R (2:6).
+  ਮਨੁੱਖ alone takes no span; ਪਿਉ-ਦਾਦੇ (L), ਪੁਰਖੇ (B, R) take none either.
