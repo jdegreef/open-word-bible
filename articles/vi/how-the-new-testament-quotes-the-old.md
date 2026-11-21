@@ -10,7 +10,7 @@ Người đọc tra một câu trích dẫn Cựu Ước trong Kinh Thánh của
 
 Đây không phải là lỗi in. Chúng xảy ra vì Tân Ước được viết bằng tiếng Hy Lạp, và các tác giả của nó thường cũng trích dẫn Cựu Ước bằng tiếng Hy Lạp. Bản Cựu Ước tiếng Hy Lạp mà họ dùng nhiều nhất, bản Bảy Mươi (Septuagint), là một bản dịch do các học giả Do Thái thực hiện trong những thế kỷ trước Đấng Christ (xem [Bản Bảy Mươi, bản dịch Kinh Thánh đầu tiên](/articles/the-septuagint/)). Phần lớn các bản Cựu Ước hiện đại, kể cả của Open Word Bible, được dịch từ tiếng Hê-bơ-rơ. Chỗ nào bản Bảy Mươi và bản Hê-bơ-rơ khác nhau, câu trích dẫn trong Tân Ước và đoạn văn trong Cựu Ước cũng sẽ khác nhau.
 
-Bài này xem xét sáu trường hợp nổi tiếng, điều chúng cho thấy về cách các sứ đồ đọc Kinh Thánh, và cách một bản dịch có thể giúp người đọc thấy cả hai bản văn. Các đoạn Cựu Ước được trích dưới đây (Ê-sai, Thi Thiên, A-mốt) chưa được dịch sang tiếng Việt, nên trang này hiển thị chúng theo bản tiếng Anh của Open Word Bible; các đoạn Tân Ước thì hiển thị bằng tiếng Việt.
+Bài này xem xét sáu trường hợp nổi tiếng, điều chúng cho thấy về cách các sứ đồ đọc Kinh Thánh, và cách một bản dịch có thể giúp người đọc thấy cả hai bản văn.
 
 ## Vì sao lời văn khác nhau
 
@@ -30,7 +30,7 @@ Con số thay đổi tùy cách định nghĩa thế nào là một câu trích 
 
 Ma-thi-ơ kể về việc Đức Giê-xu được thụ thai, rồi trích Ê-sai: “trinh nữ sẽ mang thai và sinh một con trai, và người ta sẽ gọi Ngài là Em-ma-nu-ên.” Chữ “trinh nữ” của Ma-thi-ơ là {{GREEK:MAT.1.23:3}} (*parthenos*), chữ mà bản Bảy Mươi dùng trong Ê-sai 7:14.
 
-Bản Hê-bơ-rơ của Ê-sai có chữ {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). Quyết định về nghĩa của Open Word Bible cho Ê-sai 7:14 mô tả chữ này cách thận trọng: một từ chỉ “một người nữ trẻ đã đến tuổi trưởng thành”, được dùng cho Rê-bê-ca trước khi lấy chồng, cho chị của Môi-se khi còn là một cô gái, và cho các thiếu nữ trong triều đình. Từ ấy “tự nó không nói người nữ ấy còn trinh hay đã có chồng, dù nó chưa bao giờ được dùng rõ ràng cho một người nữ đã có chồng”. Quyết định này được đánh dấu là chưa chắc chắn, và một chú thích đưa ra “trinh nữ” như cách dịch còn lại. Vì vậy, sách Ê-sai của chúng tôi, trong bản tiếng Anh, đọc là (“the young woman”: “người thiếu nữ”):
+Bản Hê-bơ-rơ của Ê-sai có chữ {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). Quyết định về nghĩa của Open Word Bible cho Ê-sai 7:14 mô tả chữ này cách thận trọng: một từ chỉ “một người nữ trẻ đã đến tuổi trưởng thành”, được dùng cho Rê-bê-ca trước khi lấy chồng, cho chị của Môi-se khi còn là một cô gái, và cho các thiếu nữ trong triều đình. Từ ấy “tự nó không nói người nữ ấy còn trinh hay đã có chồng, dù nó chưa bao giờ được dùng rõ ràng cho một người nữ đã có chồng”. Quyết định này được đánh dấu là chưa chắc chắn, và một chú thích đưa ra “trinh nữ” như cách dịch còn lại. Vì vậy, sách Ê-sai của chúng tôi đọc là “người thiếu nữ”:
 
 > {{OWB:ISA.7.14.s1:B}}
 
@@ -48,7 +48,7 @@ Sách Hê-bơ-rơ đặt những lời của Thi Thiên 40 vào miệng Đấng 
 
 > {{OWB:HEB.10.5.s1:B}}
 
-Chữ then chốt là {{GREEK:HEB.10.5:12}} (*sōma*), “thân thể”. Nhưng bản Hê-bơ-rơ của thi thiên này (40:7 theo cách đánh số Hê-bơ-rơ, 40:6 trong phần lớn các bản Kinh Thánh) có {{HEBREW:PSA.40.7:5-6}}, “Ngài đã đào tai cho tôi”. Cấp độ Sát nghĩa của thi thiên, trong bản tiếng Anh, giữ hình ảnh ấy (“ears you have dug for me”):
+Chữ then chốt là {{GREEK:HEB.10.5:12}} (*sōma*), “thân thể”. Nhưng bản Hê-bơ-rơ của thi thiên này (40:7 theo cách đánh số Hê-bơ-rơ, 40:6 trong phần lớn các bản Kinh Thánh) có {{HEBREW:PSA.40.7:5-6}}, “Ngài đã đào tai cho tôi”. Cấp độ Sát nghĩa của thi thiên giữ hình ảnh ấy (“đôi tai ngài đã đào cho tôi”):
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -66,7 +66,7 @@ Tại hội nghị ở Giê-ru-sa-lem, Hội Thánh phải quyết định xem c
 
 > {{OWB:ACT.15.16.s1:B}}
 
-Trong bản Hê-bơ-rơ của A-mốt 9:12, mục đích của việc xây lại cái lều đã đổ của Đa-vít lại khác (“possess what is left of Edom”: “chiếm lấy phần còn lại của Ê-đôm”):
+Trong bản Hê-bơ-rơ của A-mốt 9:12, mục đích của việc xây lại cái lều đã đổ của Đa-vít lại khác (“chiếm hữu phần còn lại của Ê-đôm”):
 
 > {{OWB:AMO.9.12.s1:B}}
 
@@ -110,7 +110,7 @@ Tân Ước không phải lúc nào cũng theo bản Bảy Mươi. Hai câu trí
 
 **“Ngài ban các món quà cho loài người”** (Ê-phê-sô 4:8; Thi Thiên 68:19). Phao-lô trích Thi Thiên 68, một bài ca chiến thắng trong đó Đức Chúa Trời lên núi thánh của Ngài, dẫn theo những kẻ bị bắt. Nhưng ở chỗ cả bản Hê-bơ-rơ lẫn bản Hy Lạp của thi thiên đều nói Đức Chúa Trời “đã nhận lễ vật” từ loài người, Phao-lô lại nói Ngài “ban các món quà”. Các bản ghi của chúng tôi ở cả hai phía đều có chú thích về sự khác biệt này. Chúng ghi nhận rằng một bản diễn ý cổ bằng tiếng A-ram của sách Thi Thiên, và bản dịch Sy-ri, cũng đọc là “đã ban”, nên có thể Phao-lô đang theo một cách hiểu đã có về câu này. Bản ghi của Thi Thiên 68:19 gợi ý cách hai bản văn ăn khớp với nhau: “vị chiến thắng nhận cống vật cũng là người phân phát nó cho dân mình”. Bản ghi của Ê-phê-sô đánh dấu điểm này là chưa chắc chắn và nói rõ mục đích của Phao-lô: Đấng Christ sống lại ban các ân tứ cho Hội Thánh Ngài, những ân tứ mà các câu 11–16 tiếp tục liệt kê.
 
-Một ví dụ nhỏ hơn là **Rô-ma 10:18**, nơi Phao-lô trích Thi Thiên 19:5 (19:4 trong các bản Kinh Thánh thông dụng): “tiếng của họ đã vang ra khắp đất”. Bản Bảy Mươi, mà Phao-lô trích từng chữ, ghi “tiếng của họ” hay “âm thanh của họ”. Bản Hê-bơ-rơ có một từ chỉ sợi dây đo. Cấp độ Sát nghĩa của thi thiên (bản tiếng Anh) giữ “their line” (“dây đo của chúng”), và một chú thích, được đánh dấu là chưa chắc chắn, giải thích bản Hy Lạp.
+Một ví dụ nhỏ hơn là **Rô-ma 10:18**, nơi Phao-lô trích Thi Thiên 19:5 (19:4 trong các bản Kinh Thánh thông dụng): “tiếng của họ đã vang ra khắp đất”. Bản Bảy Mươi, mà Phao-lô trích từng chữ, ghi “tiếng của họ” hay “âm thanh của họ”. Bản Hê-bơ-rơ có một từ chỉ sợi dây đo. Cấp độ Sát nghĩa của thi thiên giữ “dây đo của chúng”, và một chú thích, được đánh dấu là chưa chắc chắn, giải thích bản Hy Lạp.
 
 ## Các sứ đồ đã làm gì
 

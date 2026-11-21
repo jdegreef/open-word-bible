@@ -16,25 +16,25 @@ Open Word Bible inayashughulikia maneno haya kwa njia tofauti mahali tofauti, kw
 
 Kiebrania mara nyingi husema "mwana wa" pale ambapo Kiswahili kingesema "mmoja wa" au "mtu wa jamii ya". "Mwana wa nguvu" ni mtu hodari; "wana wa manabii" ni manabii walio katika kundi moja. Kwa hiyo "mwana wa mtu", {{HEBREW:EZK.2.1:3-4}} (*ben ʾādām*), linamaanisha tu mtu mmoja wa jamii ya wanadamu. Neno la pili ndilo linalotumika kwa Adamu na kwa wanadamu wote kwa pamoja.
 
-Zaburi 8 inaonyesha maneno haya yakifanya kazi. Mtunga zaburi anatazama juu angani usiku na kushangaa kwamba Mungu anawajali wanadamu hata kidogo. Zaburi bado haijatafsiriwa kwa Kiswahili, kwa hiyo mstari huu unaonyeshwa kwa Kiingereza:
+Zaburi 8 inaonyesha maneno haya yakifanya kazi. Mtunga zaburi anatazama juu angani usiku na kushangaa kwamba Mungu anawajali wanadamu hata kidogo.
 
 > {{OWB:PSA.8.5.s1:L}}
 
-Hicho ni kiwango cha Halisi, mipangilio ya msomaji ikiwa kama ilivyo. Nusu mbili za mstari zinasema jambo lilelile mara mbili, kama mashairi ya Kiebrania yanavyofanya mara nyingi: "mtu" na "mwana wa mtu" ni maneno sambamba yanayomaanisha mwanadamu, mdogo na mwenye kufa chini ya anga kubwa. Uamuzi wa maana wa mstari huu unasema hivyo hasa. (Biblia za Kiingereza zinauhesabu mstari huu kuwa 8:4; Open Word Bible inafuata hesabu ya Kiebrania, inayohesabu kichwa cha zaburi kuwa mstari wa 1.)
+Hicho ni kiwango cha Halisi, mipangilio ya msomaji ikiwa kama ilivyo. Nusu mbili za mstari zinasema jambo lilelile mara mbili, kama mashairi ya Kiebrania yanavyofanya mara nyingi: "binadamu" na "mwana wa Adamu" ni maneno sambamba yanayomaanisha mwanadamu, mdogo na mwenye kufa chini ya anga kubwa. Uamuzi wa maana wa mstari huu unasema hivyo hasa. (Biblia za Kiingereza zinauhesabu mstari huu kuwa 8:4; Open Word Bible inafuata hesabu ya Kiebrania, inayohesabu kichwa cha zaburi kuwa mstari wa 1.)
 
 Kwa sababu maneno haya yanamaanisha mwanadamu yeyote, mwanamume au mwanamke, katika zaburi hii yako chini ya mpangilio wa jinsia wa msomaji. Katika toleo la Kiingereza, kwa chaguo la msingi kiwango cha Halisi kinasema "a mortal" (mwenye kufa), na msomaji anayependa maneno ya kimapokeo anaweza kubadilisha mpangilio aone "the son of man" (mwana wa mtu). Mpangilio unabadilisha maneno, si maana: yote mawili yanasema "mwanadamu". Maneno ya kimapokeo yamebaki kama chaguo jingine kwa sababu ambayo rekodi inaitoa. Waebrania 2:6–8 inanukuu zaburi hii na kuisoma kuhusu Yesu, yule mwanadamu mmoja ambaye kwake maneno haya tayari yametimia: "kwa utukufu na heshima ulimvika taji". Msomaji anayelinganisha vifungu hivyo viwili anapaswa kuweza kuona maneno yaleyale katika vyote viwili.
 
-Hesabu 23:19 inayatumia maneno haya kwa njia ileile: Mungu si mwanadamu, hata aseme uongo, wala si "mwana wa binadamu", hata abadili nia yake. Hapa tofauti ni kati ya uaminifu wa Mungu na kubadilika-badilika kwa wanadamu, na kiwango cha Linganifu cha Kiingereza kinasema tu "a mortal" (mwanadamu mwenye kufa).
+Hesabu 23:19 inayatumia maneno haya kwa njia ileile: Mungu si mwanadamu, hata aseme uongo, wala si "mwana wa binadamu", hata abadili nia yake. Hapa tofauti ni kati ya uaminifu wa Mungu na kubadilika-badilika kwa wanadamu, na kiwango cha Linganifu cha Kiswahili kinasema tu "mtu wa kufa".
 
-## Ezekieli: "Mwana wa mtu, simama kwa miguu yako"
+## Ezekieli: "Mwana wa binadamu, simama kwa miguu yako"
 
-Maneno haya yanatokea mara nyingi zaidi katika Ezekieli kuliko mahali pengine popote katika Agano la Kale. Katika sura ya kwanza nabii anauona utukufu wa Mungu, maono ya moto, magurudumu na kiti cha enzi, naye anaanguka kifudifudi. Kisha sauti inasema (kitabu hiki pia bado kinaonyeshwa kwa Kiingereza):
+Maneno haya yanatokea mara nyingi zaidi katika Ezekieli kuliko mahali pengine popote katika Agano la Kale. Katika sura ya kwanza nabii anauona utukufu wa Mungu, maono ya moto, magurudumu na kiti cha enzi, naye anaanguka kifudifudi. Kisha sauti inasema:
 
 > {{OWB:EZK.2.1.s1:B}}
 
-Mungu hamwiti Ezekieli kamwe kwa jina lake. Anamwita "mwana wa mtu", mara tisini na tatu hivi katika kitabu chote. Uamuzi wa maana unasema maneno haya yanafanya nini hapa. Yakiwekwa kando ya utukufu unaowaka wa sura ya 1, yanamkumbusha Ezekieli kwamba yeye ni kiumbe mwenye kufa anayesimama mbele za Mungu. Pia yanasema jambo kuhusu Mungu, aliyechagua kusema na mwanadamu na kumtuma.
+Mungu hamwiti Ezekieli kamwe kwa jina lake. Anamwita "mwana wa binadamu", mara tisini na tatu hivi katika kitabu chote. Uamuzi wa maana unasema maneno haya yanafanya nini hapa. Yakiwekwa kando ya utukufu unaowaka wa sura ya 1, yanamkumbusha Ezekieli kwamba yeye ni kiumbe mwenye kufa anayesimama mbele za Mungu. Pia yanasema jambo kuhusu Mungu, aliyechagua kusema na mwanadamu na kumtuma.
 
-Biblia nyingi za kisasa zinayatafsiri maneno haya kwa maana yake. New Revised Standard Version, kwa mfano, inasema "O mortal" (Ewe mwanadamu); Biblia za Kiswahili zinazojulikana nazo husema "Mwanadamu". Open Word Bible haifanyi hivyo. Uamuzi wa maneno unaandika agizo la mwanzilishi kwamba "son of man" linabaki katika kila kiwango, hata Rahisi, ili msomaji akutane na maneno yaleyale kila mara Mungu anapomwita nabii. Maneno haya yanabaki kwa herufi ndogo, kwa sababu si cheo, na hayawekwi chini ya mpangilio wa jinsia, kwa sababu hapa yanamhusu mtu mmoja mahususi.
+Biblia nyingi za kisasa zinayatafsiri maneno haya kwa maana yake. New Revised Standard Version, kwa mfano, inasema "O mortal" (Ewe mwanadamu); Biblia za Kiswahili zinazojulikana nazo husema "Mwanadamu". Open Word Bible haifanyi hivyo. Uamuzi wa maneno wa Kiingereza unaandika agizo la mwanzilishi kwamba "son of man" linabaki katika kila kiwango, hata Rahisi, ili msomaji akutane na maneno yaleyale kila mara Mungu anapomwita nabii. Kiswahili nacho kinabaki na "mwana wa binadamu" katika kila kiwango, ili lisisomwe kama cheo cha Yesu "Mwana wa Adamu". Maneno haya yanabaki kwa herufi ndogo, kwa sababu si cheo, na hayawekwi chini ya mpangilio wa jinsia, kwa sababu hapa yanamhusu mtu mmoja mahususi.
 
 Maelezo hayohayo ya chini yanaongeza jambo moja zaidi. Jinsi Ezekieli anavyoitwa si cheo "Mwana wa Adamu" ambacho Yesu anakitumia. Cheo hicho kinatoka mahali pengine: katika maono ya Danieli.
 
@@ -42,7 +42,7 @@ Maelezo hayohayo ya chini yanaongeza jambo moja zaidi. Jinsi Ezekieli anavyoitwa
 
 Danieli 7 imeandikwa kwa Kiaramu, lugha ya sehemu kubwa ya Danieli 2–7, na umbo la Kiaramu la maneno haya ni {{HEBREW:DAN.7.13:9-10}} (*kĕbar ʾĕnāsh*), "kama mwana wa mtu". Yanakuja katika kilele cha ndoto.
 
-Danieli anaona wanyama wanne wakipanda kutoka baharini: simba mwenye mabawa ya tai, dubu, chui mwenye vichwa vinne, na mnyama wa nne wa kutisha kuliko wote, mwenye meno ya chuma na pembe inayojigamba. Kisha viti vya enzi vinawekwa, na Mzee wa Siku anaketi, mavazi yake meupe kama theluji, kiti chake cha enzi miali ya moto. Wanyama wanahukumiwa. Na kisha (Danieli pia bado inaonyeshwa kwa Kiingereza):
+Danieli anaona wanyama wanne wakipanda kutoka baharini: simba mwenye mabawa ya tai, dubu, chui mwenye vichwa vinne, na mnyama wa nne wa kutisha kuliko wote, mwenye meno ya chuma na pembe inayojigamba. Kisha viti vya enzi vinawekwa, na Mzee wa Siku anaketi, mavazi yake meupe kama theluji, kiti chake cha enzi miali ya moto. Wanyama wanahukumiwa. Na kisha:
 
 > {{OWB:DAN.7.13.s1:B}}
 
@@ -70,7 +70,7 @@ Baadhi ya wafasiri wanaeleza kwamba si lazima masomo haya yakatane. Katika Bibli
 
 Rekodi haichagui kati ya masomo haya. Inabaki na maelezo ya maono yenyewe na inaliacha swali wazi.
 
-Hili linaonekana katika maneno. Katika kila kiwango umbo hili ni "one like a son of man" (mmoja kama mwana wa mtu), kwa herufi ndogo, na viwakilishi vyake ("he", "him") havichukui mpangilio wa viwakilishi vya Mungu, ambao ungeviandika kwa herufi kubwa kwa msomaji anayependa hivyo. Kiwakilishi cha Mzee wa Siku katika mstari huohuo kinauchukua. Uamuzi wa maneno unaeleza kwa nini: maono yanaeleza umbo hilo, na maneno hayaamui yeye ni nani. Kiwango cha Rahisi kinatoa maana ya wazi ya Kiaramu: "someone who looked like a human being" (mtu aliyeonekana kama mwanadamu).
+Hili linaonekana katika maneno. Katika Halisi na Linganifu umbo hili ni "mmoja kama mwana wa mtu", kwa herufi ndogo, na viwakilishi vyake havichukui mpangilio wa viwakilishi vya Mungu, ambao ungeviandika kwa herufi kubwa kwa msomaji anayependa hivyo. Kiwakilishi cha Mzee wa Siku katika mstari huohuo kinauchukua. Uamuzi wa maneno unaeleza kwa nini: maono yanaeleza umbo hilo, na maneno hayaamui yeye ni nani. Kiwango cha Rahisi kinatoa maana ya wazi ya Kiaramu: "mtu aliyeonekana kama mwanadamu".
 
 Danieli 7 haikuwa mwisho wa picha hii katika maandiko ya Kiyahudi. Sehemu ya kitabu cha 1 Henoko inayojulikana kama Mifano (sura 37–71) inazungumza kuhusu umbo la mbinguni linaloitwa "yule Mwana wa Adamu", Mteule, anayeketi juu ya kiti cha enzi cha utukufu na kuhukumu. Tarehe yake inabishaniwa: ndiyo sehemu pekee ya 1 Henoko isiyopatikana kati ya Hati za Bahari ya Chumvi, na wataalamu wanaiweka popote kati ya karne ya kwanza KK na mwishoni mwa karne ya kwanza BK. Kitabu kingine cha mafunuo, 4 Ezra, kilichoandikwa karibu na mwisho wa karne ya kwanza BK, kinaona "kitu kama umbo la mtu" kikipanda kutoka baharini na kuruka pamoja na mawingu ya mbinguni (sura ya 13). Vyote viwili vinaonyesha Wayahudi wa kipindi hicho wakilisoma umbo la Danieli kuwa mtu mmoja na wakala wa Mungu wa mbinguni.
 
@@ -116,7 +116,7 @@ Rekodi hazijaribu kumaliza swali la kihistoria. Zinaeleza kile maandiko yanachos
 
 Kwa hiyo maneno haya yanaonekana katika maumbo mawili katika Open Word Bible, na tofauti hiyo ni ya makusudi.
 
-Pale ambapo ni maelezo, yanaandikwa kwa herufi ndogo: "son of man" (mwana wa mtu) katika Ezekieli na katika Danieli 8:17, ambapo Gabrieli anamwita Danieli kwa njia ileile; "one like a son of man" (mmoja kama mwana wa mtu) katika Danieli 7:13 na Ufunuo 1:13, ambapo toleo la Kiswahili linasema "mmoja aliye kama mwana wa mtu". Umbo la Ufunuo halina kibainishi katika Kigiriki, na rekodi huko inaeleza kwamba linarudia maelezo ya Danieli badala ya cheo cha Injili, ingawa mistari 17–18 inaonyesha kwamba umbo hilo ni Yesu.
+Pale ambapo ni maelezo, yanaandikwa kwa herufi ndogo: "mwana wa binadamu" katika Ezekieli na katika Danieli 8:17, ambapo Gabrieli anamwita Danieli kwa njia ileile; "mmoja kama mwana wa mtu" katika Danieli 7:13, na "mmoja aliye kama mwana wa mtu" katika Ufunuo 1:13. Umbo la Ufunuo halina kibainishi katika Kigiriki, na rekodi huko inaeleza kwamba linarudia maelezo ya Danieli badala ya cheo cha Injili, ingawa mistari 17–18 inaonyesha kwamba umbo hilo ni Yesu.
 
 Pale ambapo ni cheo ambacho Yesu anakitumia, ni "the Son of Man" kwa Kiingereza, kwa herufi kubwa, na "Mwana wa Adamu" kwa Kiswahili, katika kila kiwango. Maamuzi ya maneno katika Marko 2:10 na Yohana 1:51 yanaandika kwamba cheo hiki hakiwekwi kamwe chini ya mpangilio wa jinsia, na yanaorodhesha machaguo ambayo hayakuchaguliwa. Kwa Kiingereza ni "the Human One" (Yule Mwanadamu), ambalo Common English Bible inalitumia, na "the Son of the Human" (Mwana wa Mwanadamu). Kwa Kiswahili ni "Mwana wa Mtu", lililo halisi zaidi lakini lisilozoeleka; uamuzi huo umewekewa alama ya kutokuwa na uhakika ili mzungumzaji wa Kiswahili aukague. Tafsiri hizi zinaleta jambo la kweli, kwa kuwa maneno haya kweli yanamaanisha mwanadamu. Lakini katika Injili yamekuwa jina, na jina linabaki katika umbo lake linalojulikana ili msomaji aweze kulifuatilia kutoka Danieli hadi kesi mbele ya kuhani mkuu.
 

@@ -104,7 +104,7 @@ Open Word Bible inayaelewa kumaanisha "tumia nafasi ya kuwa huru," na Linganifu 
 
 ## Mahali rasimu bado hazilingani
 
-Kutumia kanuni kama hii katika Biblia nzima kunahitaji busara, na rasimu bado hazitumii kanuni hii kila mahali kwa njia moja. Katika Isaya, orodha ya maneno ya kitabu hicho inatoa "servant" (mtumishi) kwa mtumishi wa BWANA hata katika kiwango cha Halisi, kwa hiyo katika toleo la Kiingereza Isaya 42:1 na 52:13 zinasema "my servant" (mtumishi wangu) katika kila kiwango, wakati Yoshua 1:1 inasema "Moses the slave of the LORD" katika Halisi. (Vitabu hivi viwili bado havijatafsiriwa kwa Kiswahili.) Machaguo yote mawili yanaweza kutetewa. Mkaguzi atahitaji kuamua kama cheo hiki kinapaswa kusomeka sawa katika vitabu vyote viwili. Rasimu zimeandaliwa kwa msaada wa AI, na hakuna hata moja iliyokwisha kukaguliwa.
+Kutumia kanuni kama hii katika Biblia nzima kunahitaji busara, na rasimu bado hazitumii kanuni hii kila mahali kwa njia moja. Katika Isaya, orodha ya maneno ya kitabu hicho inatoa "servant" (mtumishi) kwa mtumishi wa BWANA hata katika kiwango cha Halisi, kwa hiyo katika toleo la Kiingereza Isaya 42:1 na 52:13 zinasema "my servant" (mtumishi wangu) katika kila kiwango, wakati Yoshua 1:1 inasema "Moses the slave of the LORD" katika Halisi. Kiswahili kinasema "mtumishi" katika vitabu vyote viwili. Machaguo yote mawili yanaweza kutetewa. Mkaguzi atahitaji kuamua kama cheo hiki kinapaswa kusomeka sawa katika vitabu vyote viwili. Rasimu zimeandaliwa kwa msaada wa AI, na hakuna hata moja iliyokwisha kukaguliwa.
 
 Ona pia [Neno kwa neno au maana kwa maana?](/articles/word-for-word-or-meaning-for-meaning/) na [Halisi, Linganifu, Rahisi: viwango vitatu, maana moja](/articles/three-levels-one-meaning/).
 

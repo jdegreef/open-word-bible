@@ -16,7 +16,7 @@ L'arrière-plan est la Bible hébraïque. Son mot pour la chair, *bāśār*, dé
 
 > {{OWB:ISA.40.6.s1:B}}
 
-Ésaïe n'est pas encore traduit en français dans Open Word Bible, et le verset paraît ici en anglais. Le niveau Équilibrée y dit "Humankind is grass" ("l'humanité est de l'herbe"), parce que c'est ce que veut dire l'expression hébraïque. La "chair", ici, n'est pas pécheresse. Elle est faible et passagère, placée à côté de la parole de Dieu, qui "demeure pour toujours" (verset 8). La Septante, la traduction grecque de l'Ancien Testament, a rendu ce mot hébreu par *sarx*, et Paul lisait sa Bible dans ce grec.
+Le niveau Équilibrée y dit "L'humanité n'est que de l'herbe", parce que c'est ce que veut dire l'expression hébraïque. La "chair", ici, n'est pas pécheresse. Elle est faible et passagère, placée à côté de la parole de Dieu, qui "demeure pour toujours" (verset 8). La Septante, la traduction grecque de l'Ancien Testament, a rendu ce mot hébreu par *sarx*, et Paul lisait sa Bible dans ce grec.
 
 Le même sens simple se trouve dans l'Évangile de Jean. "Le Verbe devint chair" ({{GREEK:JHN.1.14:3-5}}) veut dire que le Verbe est devenu pleinement humain, corps compris. La décision de sens du dossier le dit, et le niveau Simple écrit : "Le Verbe est devenu un être humain". La chair, en ce sens, est bonne : le Fils de Dieu l'a prise sur lui.
 

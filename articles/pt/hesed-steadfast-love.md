@@ -4,7 +4,7 @@ summary: Uma única palavra hebraica descreve o amor de Deus pelo seu povo e o a
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Algumas palavras carregam tanto que toda tradução delas deixa escapar alguma coisa. A palavra hebraica {{LEMMA:RUT.1.8:14}}, que costuma ser escrita *ḥesed* ou *chesed*, é uma delas. Ela aparece cerca de 250 vezes no Antigo Testamento, perto da metade delas nos Salmos. Está no centro do modo como Israel descrevia Deus e de como se esperava que os israelitas tratassem uns aos outros. As Bíblias inglesas tentaram "mercy" ("misericórdia"), "kindness" ("bondade"), "lovingkindness" ("benignidade"), "steadfast love" ("amor constante"), "loyalty" ("lealdade"), "faithful love" ("amor fiel") e outras ainda. Cada uma diz algo verdadeiro, e cada uma deixa algo de fora.
 
@@ -72,7 +72,7 @@ Em português, a *ḥesed* do Senhor é, em geral, "amor leal" nos níveis Liter
 
 Quando a *ḥesed* é mostrada entre pessoas, o português diz "lealdade" na Literal e na Equilibrada e "bondade leal", ou "bondoso e leal", na Acessível. "Amor" sugeriria romance numa cena como a de Boaz e Rute. É o que acontece em Rute 3:10, acima; em Josué 2:12, onde Raabe pede aos espiões que mostrem à sua família a *ḥesed* que ela lhes mostrou; e em 2 Samuel 9:1, onde Davi procura alguém da casa de Saul a quem mostrar *ḥesed* por causa de Jônatas.
 
-A diferença é apenas de formulação. As decisões de sentido descrevem o mesmo sentido em todos esses lugares: um amor que se mantém fiel dentro de um vínculo. Na edição inglesa, as palavras foram fixadas em tabelas de termos para grupos diferentes de livros ("steadfast love" e "faithful love" na Lei, nos livros históricos e em Rute; "loyal love" e "faithful love" nos Salmos e nos profetas), e as notas do projeto apontam um lugar onde elas se encontram de forma desajeitada: quando Joel e Jonas citam Êxodo 34:6, o inglês dos dois ainda não coincide. É uma questão em aberto para a revisão. Em português, Jonas já repete as palavras de Joel 2:13 em cada nível.
+A diferença é apenas de formulação. As decisões de sentido descrevem o mesmo sentido em todos esses lugares: um amor que se mantém fiel dentro de um vínculo. Na edição inglesa, as palavras foram fixadas em tabelas de termos para grupos diferentes de livros ("steadfast love" e "faithful love" na Lei, nos livros históricos e em Rute; "loyal love" e "faithful love" nos Salmos, nos outros livros poéticos, em Lamentações e nos profetas, e também onde um livro histórico canta um salmo, como no refrão do templo em 1 e 2 Crônicas e em Esdras 3:11 e no cântico de Davi em 2 Samuel 22, que é o Salmo 18), e a regra agora está registrada com os outros termos-chave. Contando todo o Antigo Testamento, a Equilibrada inglesa diz "loyal love" cerca de três vezes mais do que "faithful love", simplesmente porque a maioria dos usos da palavra está nos Salmos. Quando um livro posterior cita Êxodo 34:6, a citação segue o seu próprio livro: no inglês, Números 14:18 e Neemias 9:17 dizem "steadfast love" e "faithful love", como o Êxodo, e Joel 2:13 e Jonas 4:2 dizem ambos "loyal love". Em português, Jonas já repete as palavras de Joel 2:13 em cada nível.
 
 Alguns versículos se afastam do padrão, cada um com uma razão registrada.
 

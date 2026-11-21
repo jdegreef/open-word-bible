@@ -20,7 +20,7 @@ Từ này cũng có một từ đi cặp trong câu. Danh hiệu thứ nhất, �
 
 ## Con đầu lòng như một thứ bậc
 
-Ba đoạn Kinh Thánh cho thấy điều này rõ ràng. Xuất Ai Cập Ký và Thi Thiên chưa được dịch sang tiếng Việt, nên hai câu trích dưới đây hiện ra bằng bản tiếng Anh.
+Ba đoạn Kinh Thánh cho thấy điều này rõ ràng.
 
 **Y-sơ-ra-ên.** Khi Môi-se đến gặp Pha-ra-ôn, Đức Chúa Trời bảo ông phải nói gì:
 
@@ -34,7 +34,7 @@ Y-sơ-ra-ên không phải là dân tộc đầu tiên trong lịch sử. Quyế
 
 > {{OWB:PSA.89.28.s1:L}}
 
-(Các bản Kinh Thánh tiếng Anh đánh số câu này là 89:27.) Vị vua không được sinh ra đầu tiên. Người được *lập làm* con đầu lòng, và dòng thứ hai nói điều đó có nghĩa gì: “cao nhất trong các vua trên đất”. Quyết định về nghĩa giải thích rằng con trai đầu lòng giữ thứ bậc đứng đầu và quyền thừa kế, và ở đây vị vua nhận lấy thứ bậc ấy. Cấp độ Cân bằng tiếng Anh nói “I will give him the rank of firstborn” (Ta sẽ ban cho người thứ bậc của con đầu lòng).
+(Các bản Kinh Thánh tiếng Anh đánh số câu này là 89:27.) Vị vua không được sinh ra đầu tiên. Người được *lập làm* con đầu lòng, và dòng thứ hai nói điều đó có nghĩa gì: “cao nhất trong các vua trên đất”. Quyết định về nghĩa giải thích rằng con trai đầu lòng giữ thứ bậc đứng đầu và quyền thừa kế, và ở đây vị vua nhận lấy thứ bậc ấy. Cấp độ Cân bằng nói “Ta sẽ ban cho người địa vị con trưởng”.
 
 ## Câu kế tiếp
 

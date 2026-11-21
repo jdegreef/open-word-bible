@@ -78,15 +78,15 @@ Rồi có những cụm từ có lẽ là tên các giai điệu. Thi Thiên 22 
 
 ### Các cấp độ xử lý chúng thế nào
 
-Ở đây ba cấp độ tách ra, và lý do nằm ở mục đích của mỗi cấp độ. Các thi thiên này chưa được dịch sang tiếng Việt, nên những gì mô tả dưới đây là bản tiếng Anh.
+Ở đây ba cấp độ tách ra, và lý do nằm ở mục đích của mỗi cấp độ.
 
-**Sát nghĩa** và **Cân bằng** giữ các thuật ngữ Hê-bơ-rơ như những cái tên ở chỗ nghĩa của chúng không được biết: “A miktam” (Một miktam), “On alamoth” (Theo alamoth), “On Ayyeleth-hashshahar” (Theo Ayyeleth-hashshahar). Chúng dịch điều rõ ràng và giữ nguyên điều không rõ. Thi Thiên 57 là một ngoại lệ nhỏ, vì “Đừng hủy diệt” là tiếng Hê-bơ-rơ rõ nghĩa; mọi cấp độ đều dịch nó, và cấp Cân bằng thêm “To the tune” (Theo điệu), hiểu nó là tên một giai điệu.
+**Sát nghĩa** và **Cân bằng** giữ các thuật ngữ Hê-bơ-rơ như những cái tên ở chỗ nghĩa của chúng không được biết: “Bài Mích-tam”, “Theo điệu A-la-mốt”, “Theo điệu A-giê-lết Ha-sa-ha”. Chúng dịch điều rõ ràng và giữ nguyên điều không rõ. Thi Thiên 57 là một ngoại lệ nhỏ, vì “Đừng hủy diệt” là tiếng Hê-bơ-rơ rõ nghĩa; mọi cấp độ đều dịch nó, và cấp Cân bằng thêm “Theo điệu”, hiểu nó là tên một giai điệu.
 
 **Dễ đọc** đưa ra nghĩa khả dĩ nhất, và các quyết định về cách diễn đạt của nó được đánh dấu là chưa chắc chắn ở những chỗ phỏng đoán chỉ là phỏng đoán. Đây là tiêu đề Thi Thiên 22 ở cấp độ ấy:
 
 > {{OWB:PSA.22.1.s1:R}}
 
-Thi Thiên 56 trở thành “To the tune ‘A Silent Dove Far Away’” (Theo điệu “Chim bồ câu im lặng nơi xa”), và “on alamoth” của Thi Thiên 46 trở thành “For high voices” (Dành cho giọng cao). Ở chỗ ngay cả một nghĩa khả dĩ cũng ngoài tầm với, Dễ đọc chỉ nói điều chắc chắn: với “miktam”, quyết định về cách diễn đạt đơn giản là “A song” (Một bài ca), vì nghĩa của từ không được biết, và Dễ đọc chỉ nói rằng đó là một bài ca.
+Thi Thiên 56 trở thành “Theo điệu ‘Chim bồ câu lặng lẽ nơi xa’”, và “Theo điệu A-la-mốt” của Thi Thiên 46 trở thành “Cho giọng cao”. Ở chỗ ngay cả một nghĩa khả dĩ cũng ngoài tầm với, Dễ đọc chỉ nói điều chắc chắn: với “Mích-tam”, quyết định về cách diễn đạt đơn giản là “Bài ca”, vì nghĩa của từ không được biết, và Dễ đọc chỉ nói rằng đó là một bài ca.
 
 Đây là cách Open Word Bible tách ý nghĩa khỏi lời văn. Quyết định về ý nghĩa nói điều gì đã biết và điều gì chưa, và đánh dấu là chưa chắc chắn. Quyết định về cách diễn đạt chọn lời văn cho mỗi cấp độ phù hợp với mức hiểu biết ấy. Dễ đọc có thể mạnh dạn hơn trong lời văn vì quyết định về ý nghĩa bên cạnh nói thẳng phần nào trong đó là phỏng đoán. (Xem [Ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/).)
 
@@ -100,7 +100,7 @@ Một số học giả cũng đặt câu hỏi liệu vài ghi chú có thuộc 
 
 Một bản dịch có thể dễ dàng che lấp những khoảng trống này. Nó có thể in một phỏng đoán tự tin cho mọi thuật ngữ, hoặc lặng lẽ bỏ đi những từ không ai hiểu. Nhiều người đọc sẽ không bao giờ nhận ra.
 
-Open Word Bible đi con đường kia. Ở chỗ nghĩa của một từ đã mất, bản ghi nói thẳng như vậy, đưa ra bằng chứng và các giả thuyết chính, và để lời văn theo sau từ đó. Selah vẫn là Selah. “Miktam” vẫn là “miktam” ở cấp Sát nghĩa và Cân bằng, và đơn giản trở thành “một bài ca” ở cấp Dễ đọc. Người đọc không mất điều gì mà thật sự có người biết, và cũng không được trao điều gì mà không ai biết. Như mọi bản nháp của chúng tôi, các bản ghi này được soạn với sự hỗ trợ của AI và đang chờ những người duyệt có danh tính rõ ràng xem xét.
+Open Word Bible đi con đường kia. Ở chỗ nghĩa của một từ đã mất, bản ghi nói thẳng như vậy, đưa ra bằng chứng và các giả thuyết chính, và để lời văn theo sau từ đó. Selah vẫn là Selah. “Miktam” vẫn là “Mích-tam” ở cấp Sát nghĩa và Cân bằng, và đơn giản trở thành “bài ca” ở cấp Dễ đọc. Người đọc không mất điều gì mà thật sự có người biết, và cũng không được trao điều gì mà không ai biết. Như mọi bản nháp của chúng tôi, các bản ghi này được soạn với sự hỗ trợ của AI và đang chờ những người duyệt có danh tính rõ ràng xem xét.
 
 Có một điều gì đó thật thích hợp ở đây. Các thi thiên đã được hát qua nhiều thế kỷ bởi những người biết chính xác Selah có nghĩa gì, và chúng vẫn tiếp tục được hát bởi những người không biết. Những lời ấy vẫn có tác dụng.
 

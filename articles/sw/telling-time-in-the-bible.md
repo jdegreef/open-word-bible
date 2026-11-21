@@ -46,7 +46,7 @@ Marko 13:35 inazitaja zamu nne za Kirumi kwa majina yake ya kawaida: jioni, usik
 
 Katika Israeli siku ilianza jua linapozama. Mtindo huu unawekwa katika sura ya kwanza ya Mwanzo: "Na kukawa jioni, na kukawa asubuhi, siku moja." Kiebrania kinaweka {{HEBREW:GEN.1.5:9}} (*ʿerev*, jioni) kabla ya {{HEBREW:GEN.1.5:11}} (*bōqer*, asubuhi). Rekodi ya Mwanzo 1:5 inaeleza kwamba siku inahesabiwa kuanzia jioni, kama siku za Israeli zilivyohesabiwa kuanzia jua kuzama.
 
-Sheria inalisema waziwazi kuhusu Siku ya Upatanisho: "from evening to evening you shall keep your sabbath" ("tangu jioni hadi jioni mtaishika sabato yenu"; Mambo ya Walawi 23:32). Kiwango cha Rahisi cha toleo la Kiingereza kinazitaja nyakati waziwazi: tangu jua kuzama siku ya tisa ya mwezi "until sunset the next day" (hadi jua kuzama siku inayofuata). Sentensi hii bado haijatafsiriwa kwa Kiswahili.
+Sheria inalisema waziwazi kuhusu Siku ya Upatanisho: "tangu jioni hadi jioni, mtaishika Sabato yenu" (Mambo ya Walawi 23:32). Kiwango cha Rahisi kinazitaja nyakati waziwazi: "tangu jua linapotua siku ya tisa ya mwezi hadi jua linapotua siku inayofuata".
 
 Jambo hili linaeleza mambo madogo katika Injili ambayo yanaweza kuonekana ya ajabu. Yesu alikufa alasiri ya Siku ya Maandalio, siku iliyotangulia Sabato, na ilibidi azikwe kabla jua halijazama, Sabato ilipoanza. Wanawake hawakuweza kuja kaburini mpaka Sabato ilipokwisha.
 

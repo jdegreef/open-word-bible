@@ -10,7 +10,14 @@ should look at.
 Copyrighted translations are never stored in this repository. A reviewer who
 owns one can compare against it with --extra NAME=PATH, where PATH is a local
 tab-separated file of "VERSE_ID<TAB>text" lines (e.g. "COL.1.1<TAB>Paul, ...").
-Keep that file outside the repository.
+Keep that file outside the repository. A Bible in USX (a file, or a folder of
+one file per book) can be given with --usx NAME=PATH instead: the Arabic Van
+Dyck, for one, is public domain but not in open-bibles
+(github.com/BibleAquifer/ArabicVanDyckBible, arb/usx).
+
+Arabic words are compared without their vowel marks or tatweel, and with the
+alef, alef maqsura and teh marbuta forms folded, so that a voweled draft
+matches an unvoweled or differently voweled Bible.
 
 Our Old Testament verses are numbered as the Hebrew text is (a psalm's title
 is verse 1); the comparison Bibles, --extra files included, are taken to use
@@ -20,6 +27,7 @@ hold the same text (owb/versification.py).
 Usage:
     OWB_VENDOR=<sources dir> python3 scripts/ngram_overlap.py content/COL/COL.1.json
     python3 scripts/ngram_overlap.py --no-open-bibles --extra niv=~/niv-col.tsv content/COL/*.json
+    python3 scripts/ngram_overlap.py --language ar --usx vd=~/ArabicVanDyckBible/arb/usx content/RUT/*.json
 
 Options: --language en, --levels L,B,R, --min 6, --distinctive (only runs
 not shared with any public-domain Bible; needs --extra).
@@ -39,11 +47,14 @@ from owb import markup, refs, versification  # noqa: E402
 OPEN_BIBLE_LANGUAGE = {"en": "eng", "es": "spa"}
 
 _WORD = re.compile(r"[^\W_]+(?:'[^\W_]+)*")
+_ARABIC_MARKS = re.compile("[\u0640\u064b-\u065f\u0670]")
+_ARABIC_LETTERS = str.maketrans({"ٱ": "ا", "أ": "ا", "إ": "ا", "آ": "ا", "ى": "ي", "ة": "ه"})
 
 
 def words(text):
-    """The words of text, apostrophes kept inside words."""
-    return _WORD.findall(text.replace("’", "'"))
+    """The words of text, apostrophes kept inside words, Arabic folded."""
+    text = _ARABIC_MARKS.sub("", text.replace("’", "'")).translate(_ARABIC_LETTERS)
+    return _WORD.findall(text)
 
 
 def plain(rendering):
@@ -76,6 +87,21 @@ def read_tsv(path):
         verse_id, text = line.split("\t", 1)
         refs.parse(verse_id.strip())
         out[verse_id.strip()] = text.strip()
+    return out
+
+
+_USX_SKIP = re.compile(r'<note\b.*?</note>|<para style="(?:s\d?|r|ms\d?|mr|d|h|toc\d|mt\d?)"[^>]*>.*?</para>', re.S)
+_USX_VERSE = re.compile(r'<verse [^>]*sid="([A-Z0-9]{3}) (\d+):(\d+)"[^>]*/>(.*?)<verse eid=', re.S)
+
+
+def read_usx(path):
+    """{verse id: text} from a USX file, or from every .usx file in a folder."""
+    path = Path(path).expanduser()
+    out = {}
+    for file in sorted(path.glob("*.usx")) if path.is_dir() else [path]:
+        text = _USX_SKIP.sub(" ", file.read_text(encoding="utf-8"))
+        for book, chapter, verse, body in _USX_VERSE.findall(text):
+            out[f"{book}.{chapter}.{verse}"] = " ".join(re.sub(r"<[^>]+>", " ", body).split())
     return out
 
 
@@ -155,6 +181,8 @@ def main(argv=None):
     parser.add_argument("--min", type=int, default=6, help="shortest run to report (words)")
     parser.add_argument("--extra", action="append", default=[], metavar="NAME=PATH",
                         help="a local VERSE_ID<TAB>text file to compare against")
+    parser.add_argument("--usx", action="append", default=[], metavar="NAME=PATH",
+                        help="a USX file, or a folder of them, to compare against")
     parser.add_argument("--no-open-bibles", action="store_true",
                         help="skip the public-domain Bibles in vendor/open-bibles")
     parser.add_argument("--distinctive", action="store_true",
@@ -165,12 +193,13 @@ def main(argv=None):
 
     editions = {} if args.no_open_bibles else open_bible_editions(args.language)
     extra = []
-    for item in args.extra:
-        name, sep, path = item.partition("=")
-        if not sep or not name or not path:
-            parser.error(f"--extra needs NAME=PATH, got {item!r}")
-        editions[name] = read_tsv(path)
-        extra.append(name)
+    for option, items, read in (("--extra", args.extra, read_tsv), ("--usx", args.usx, read_usx)):
+        for item in items:
+            name, sep, path = item.partition("=")
+            if not sep or not name or not path:
+                parser.error(f"{option} needs NAME=PATH, got {item!r}")
+            editions[name] = read(path)
+            extra.append(name)
     if not editions:
         parser.error(f"no Bibles to compare against for language {args.language!r}")
     if args.distinctive and not extra:

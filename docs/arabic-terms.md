@@ -331,3 +331,13 @@ Names and terms a drafter added, in the book where they first appear.
 | Ruth | a woman of worth | *امرأة فاضلة* | Ruth 3:11; also Proverbs 31:10. |
 | Ruth | Hezron; Ram; Amminadab; Nahshon | *حصرون*; *رام*; *عمّيناداب*; *نحشون* | Ruth 4:19-20. |
 | Ruth | Salmah; Salmon | *سلمى* (Literal, 4:20); *سلمون* | Ruth 4:20-21. |
+| James | endurance (*hypomonē*) | *الصبر* | James 1:3; 5:11. |
+| James | be patient (*makrothymeō*) | *الأناة* (L, B); *تأنّوا* (R) | James 5:7-10. |
+| James | trial; tempt | *تجربة*, *تجارب*; *جرّب* | James 1:2, 13. |
+| James | works (of faith) | *أعمال* (L, B); *أفعال* (R) | James 2:14-26. |
+| James | favoritism | *محاباة الوجوه* | James 2:1, 9. |
+| James | religion (*thrēskeia*) | *العبادة* | James 1:26-27. |
+| James | double-minded | *ذو نفسين* (L); *منقسم القلب* (B) | James 1:8; 4:8. |
+| James | Lord of hosts (Greek *Sabaōth*) | *ربّ الصباؤوت* (L); *ربّ الجنود* (B, R) | James 5:4. No divine-name span: the Greek has *Kyrios*. |
+| James | if the Lord wills | *إن شاء الرب* | James 4:15. Not *إن شاء الله*. |
+| James | friend of God | *خليل الله* (L, B); *صديق الله* (R) | James 2:23. |

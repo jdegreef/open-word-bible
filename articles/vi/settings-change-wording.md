@@ -4,7 +4,7 @@ summary: Bao gồm hay truyền thống, Đấng Christ hay Đấng Mê-si-a, ng
 date: 2026-10-10
 order: 4
 section: method
-source: f88c24659512
+source: 18d3e565024d
 ---
 Người đọc Kinh Thánh không đồng ý với nhau về một số điều mà, nói cho chính xác, chỉ là chuyện cách diễn đạt. Có nên nói “anh chị em” thay cho “anh em” khi cả hội thánh được nhắc đến không? Danh hiệu của Đức Giê-xu nên là “Đấng Christ” hay “Đấng Mê-si-a”? Đại từ chỉ Đức Chúa Trời có nên viết hoa không? Danh của Đức Chúa Trời nên viết là “CHÚA” hay “Gia-vê”? Open Word Bible để mỗi người đọc tự chọn.
 
@@ -16,6 +16,7 @@ Người đọc Kinh Thánh không đồng ý với nhau về một số điều
 - **Danh của Đức Chúa Trời.** Trong Cựu Ước, danh riêng của Đức Chúa Trời mặc định được viết là “CHÚA”, theo tục lệ cổ xưa không đọc thành tiếng danh ấy, và “Gia-vê” là một lựa chọn.
 - **Đơn vị đo lường.** Ở những chỗ một đoạn văn có số đo, mặc định là đơn vị hiện đại, với đơn vị nguyên thủy là một lựa chọn. Con tàu của Nô-ê dài 135 mét, hay 300 cu-đê (Sáng Thế Ký 6:15); các chum nước ở Ca-na chứa 80 đến 120 lít, hay hai hoặc ba thùng (Giăng 2:6). Bản tiếng Việt dùng hệ mét, còn bản tiếng Anh dùng đơn vị của Mỹ (450 feet, 20 đến 30 gallon). Cấp độ Sát nghĩa luôn giữ đơn vị cổ.
 - **Ngôi thứ hai số nhiều trong tiếng Tây Ban Nha.** *Ustedes*, như người Mỹ La-tinh nói, hoặc *vosotros*, như ở Tây Ban Nha. Tiếng Việt không cần cài đặt này.
+- **Từ chỉ Đức Chúa Trời trong tiếng Hoa.** 神 (*Shén*) hoặc 上帝 (*Shàngdì*), hai từ mà các bản Kinh Thánh tiếng Hoa từ lâu đã dùng để gọi Đức Chúa Trời duy nhất.
 
 Một cài đặt cho cách viết chính tả kiểu Anh (trong bản tiếng Anh) đang được dự tính.
 

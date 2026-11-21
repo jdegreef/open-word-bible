@@ -44,7 +44,7 @@ Marcos 13:35 nombra las cuatro vigilias romanas por sus nombres populares: el an
 
 En Israel el día empezaba al ponerse el sol. La pauta queda fijada en el primer capítulo del Génesis: «hubo tarde y hubo mañana, día uno». El hebreo pone {{HEBREW:GEN.1.5:9}} (*ʿerev*, tarde) antes que {{HEBREW:GEN.1.5:11}} (*bōqer*, mañana). El registro de Génesis 1:5 señala que el día se cuenta desde la tarde, igual que los días de Israel se contaban desde la puesta del sol.
 
-La ley lo dice expresamente para el Día de la Expiación: «de tarde a tarde guardaréis vuestro reposo» (Levítico 23:32). En la edición inglesa (Levítico aún no está traducido al español), nuestra Sencilla hace explícitas las horas: desde la puesta del sol del día nueve del mes «until sunset the next day» («hasta la puesta del sol del día siguiente»).
+La ley lo dice expresamente para el Día de la Expiación: «de tarde a tarde guardaréis vuestro reposo» (Levítico 23:32). Nuestra Sencilla hace explícitas las horas: «desde la puesta del sol del día nueve del mes hasta la puesta del sol del día siguiente».
 
 Esto explica detalles de los Evangelios que pueden parecer extraños. Jesús murió en la tarde del día de la Preparación, la víspera del sábado, y había que sepultarlo antes de la puesta del sol, cuando empezaba el sábado. Las mujeres no pudieron ir al sepulcro hasta que pasó el sábado.
 

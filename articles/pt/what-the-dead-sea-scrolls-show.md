@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
-source: a067bebd487f
+source: 63b04e4c28b5
 ---
 Quando os Manuscritos do Mar Morto foram anunciados pela primeira vez, muita gente fez uma única pergunta: eles iam mostrar que a Bíblia tinha sido alterada? A resposta acabou sendo mais interessante do que um simples sim ou um simples não.
 
@@ -31,7 +31,7 @@ Eugene Ulrich, outro editor dos manuscritos bíblicos, prefere descrever a situa
 
 ## Três exemplos
 
-**Jeremias.** A versão grega de Jeremias na Septuaginta é cerca de um sétimo mais curta do que o texto massorético hebraico e organiza alguns capítulos de outra maneira. Antes de 1947, muitos estudiosos supunham que o tradutor grego tinha abreviado livremente. Mas fragmentos da Caverna 4, sobretudo o 4QJer-b e o 4QJer-d, preservam um texto hebraico do tipo mais curto. Outros manuscritos de Jeremias da mesma caverna têm a forma massorética mais longa. As duas edições existiam em hebraico e eram copiadas no mesmo período. Os tradutores de hoje seguem a edição massorética mais longa, que é a forma que as comunidades judaicas e cristãs leem há dois mil anos; a edição mais curta ajuda os estudiosos a entender como o livro cresceu.
+**Jeremias.** A versão grega de Jeremias na Septuaginta é cerca de um oitavo mais curta do que o texto massorético hebraico e organiza alguns capítulos de outra maneira. Antes de 1947, muitos estudiosos supunham que o tradutor grego tinha abreviado livremente. Mas fragmentos da Caverna 4, sobretudo o 4QJer-b e o 4QJer-d, preservam um texto hebraico do tipo mais curto. Outros manuscritos de Jeremias da mesma caverna têm a forma massorética mais longa. As duas edições existiam em hebraico e eram copiadas no mesmo período. Os tradutores de hoje seguem a edição massorética mais longa, que é a forma que as comunidades judaicas e cristãs leem há dois mil anos; a edição mais curta ajuda os estudiosos a entender como o livro cresceu.
 
 **1 Samuel 11.** Um grande manuscrito de Samuel da Caverna 4, o **4QSam-a**, contém antes de 1 Samuel 11 um parágrafo que não está no texto massorético. Ele conta como Naás, rei dos amonitas, vinha oprimindo as tribos de Gade e de Rúben e furando o olho direito dos seus homens, o que explica por que a sua exigência em 11:2 é tão cruel. O historiador Flávio Josefo, do século I, parece ter conhecido esse material (*Antiguidades Judaicas* 6.68–71). A New Revised Standard Version (1989) incluiu o parágrafo no seu texto; a maioria das outras traduções não o inclui, ou o menciona numa nota. Os estudiosos ainda discutem se ele se perdeu por acidente do texto massorético ou se foi acrescentado na tradição por trás do 4QSam-a.
 

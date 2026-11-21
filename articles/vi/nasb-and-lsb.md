@@ -4,7 +4,7 @@ summary: New American Standard Bible đặt mục tiêu giữ sự chính xác c
 date: 2026-10-14
 order: 64
 section: compare
-source: 427ee00533e6
+source: aaeed2a8afbe
 ---
 Khi người ta muốn một ví dụ về một bản Kinh Thánh tiếng Anh hiện đại thật sát chữ, họ thường nêu tên **New American Standard Bible** (NASB). Trong hơn nửa thế kỷ, đây là bản dịch được nhiều người học các ngôn ngữ nguyên bản ưa chọn, và là bản mà các bản dịch khác được đem ra so sánh khi câu hỏi đặt ra là “tiếng Hy Lạp thật sự nói gì?”
 
@@ -91,7 +91,7 @@ Những người bênh vực đáp rằng một bản dịch sát chữ được
 
 ## Nhìn thấy cấu trúc
 
-NASB và LSB dựa trên một xác tín mà Open Word Bible cũng chia sẻ: người đọc xứng đáng được thấy điều nguyên bản nói, chứ không chỉ điều mà một dịch giả nghĩ là nó muốn nói. Open Word Bible cố gắng phục vụ xác tín ấy theo một cách khác. Cấp độ Sát nghĩa của nó bám sát hình thức của tiếng Hy Lạp và tiếng Hê-bơ-rơ, trong khi các cấp độ Cân bằng và Dễ đọc diễn đạt cùng những quyết định về ý nghĩa ấy bằng ngôn ngữ tự nhiên hơn (xin xem [Ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/)), để không một cách dịch nào phải gánh hết mọi việc. Những lựa chọn ảnh hưởng đến cách diễn đạt nhưng không ảnh hưởng đến ý nghĩa, như “anh em” hay “anh chị em” ở chỗ muốn nói đến cả hội thánh, hoặc viết hoa các đại từ chỉ về Đức Chúa Trời, là những cài đặt đọc; một cài đặt cho danh xưng thánh đang được lên kế hoạch (xin xem [Cài đặt thay đổi cách diễn đạt, không bao giờ thay đổi ý nghĩa](/articles/settings-change-wording/)). Dự án dịch từ bản Tân Ước Hy Lạp SBL và Codex Leningrad Westminster, ghi lại lý lẽ cho từng câu văn, và chỉ dùng những bản dịch như NASB và LSB để so sánh. Các bản nháp của nó được AI hỗ trợ và đang chờ những người duyệt có danh tính xem xét, và nó được phát hành theo giấy phép CC0.
+NASB và LSB dựa trên một xác tín mà Open Word Bible cũng chia sẻ: người đọc xứng đáng được thấy điều nguyên bản nói, chứ không chỉ điều mà một dịch giả nghĩ là nó muốn nói. Open Word Bible cố gắng phục vụ xác tín ấy theo một cách khác. Cấp độ Sát nghĩa của nó bám sát hình thức của tiếng Hy Lạp và tiếng Hê-bơ-rơ, trong khi các cấp độ Cân bằng và Dễ đọc diễn đạt cùng những quyết định về ý nghĩa ấy bằng ngôn ngữ tự nhiên hơn (xin xem [Ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/)), để không một cách dịch nào phải gánh hết mọi việc. Những lựa chọn ảnh hưởng đến cách diễn đạt nhưng không ảnh hưởng đến ý nghĩa, như “anh em” hay “anh chị em” ở chỗ muốn nói đến cả hội thánh, viết hoa các đại từ chỉ về Đức Chúa Trời, hoặc “CHÚA” hay “Gia-vê” cho danh xưng thánh, là những cài đặt đọc (xin xem [Cài đặt thay đổi cách diễn đạt, không bao giờ thay đổi ý nghĩa](/articles/settings-change-wording/)). Dự án dịch từ bản Tân Ước Hy Lạp SBL và Codex Leningrad Westminster, ghi lại lý lẽ cho từng câu văn, và chỉ dùng những bản dịch như NASB và LSB để so sánh. Các bản nháp của nó được AI hỗ trợ và đang chờ những người duyệt có danh tính xem xét, và nó được phát hành theo giấy phép CC0.
 
 ## Nguồn tham khảo
 

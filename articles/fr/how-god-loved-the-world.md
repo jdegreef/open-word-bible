@@ -10,9 +10,7 @@ Beaucoup de lecteurs connaissent Jean 3:16 par cœur, dans les mots "Car Dieu a 
 
 > {{OWB:JHN.3.16.s1:B}}
 
-Ce chapitre de Jean n'est pas encore traduit en français dans Open Word Bible. Les citations de cet article sont donc tirées de sa version anglaise ; ce qui suit porte sur le sens du texte grec, que la traduction française suivra.
-
-Le changement est voulu, et le dossier du verset l'explique. Toutes les décisions sur le sens du verset sont communes à toutes les langues ; la formulation anglaise en découle.
+Le changement est voulu, et le dossier du verset l'explique. Toutes les décisions sur le sens du verset sont communes à toutes les langues ; la formulation française en découle.
 
 ## Où se situe le verset
 
@@ -54,7 +52,7 @@ Les spécialistes modernes s'y sont penchés à nouveau. En 1999, Robert Gundry 
 
 L'autre lecture a de vrais appuis. La grandeur de cet amour se voit à ce qu'il a donné, et les lecteurs entendent depuis longtemps "so loved" comme "a tant aimé". Le dossier marque la décision incertaine et donne la formulation familière dans une note.
 
-C'est pourquoi l'Équilibrée anglaise dit "God's love for the world was such that" ("l'amour de Dieu pour le monde a été tel que"). En anglais, "such" peut vouloir dire "de cette sorte" ou "si grand", comme "tel" en français. Il laisse la question ouverte, là où "so much" ("tellement") la trancherait dans un sens. Il s'écarte bien de la formulation familière, et la décision de rendu le dit.
+C'est pourquoi l'Équilibrée dit "tel a été l'amour de Dieu pour le monde qu'il a donné". "Tel ... que" peut vouloir dire "de cette sorte" ou "si grand", comme "such" en anglais. Il laisse la question ouverte, là où "tant" la trancherait dans un sens. Il s'écarte bien de la formulation familière, et la décision de rendu le dit.
 
 La Simple explicite le "comment" :
 
@@ -66,10 +64,10 @@ Quelques autres décisions du dossier méritent d'être connues :
 
 - **Le monde**, c'est l'humanité dans son ensemble, le monde qui n'a pas connu celui qui l'a fait (1:10) et qui aime les ténèbres (3:19). Que Dieu aime *ce* monde-là, voilà la surprise.
 - **L'unique** traduit {{GREEK:JHN.3.16:12}}, le mot que d'anciennes Bibles rendent par "unique engendré". Il veut dire unique ; voir ["Fils unique" ou "unique engendré" ?](/articles/one-and-only-son/). Une note donne la formulation ancienne.
-- **Son Fils.** Beaucoup de manuscrits portent "son Fils" ; le texte grec que suit Open Word Bible porte "le Fils". Le sens est le même, si bien qu'il n'y a pas de note. La Littérale garde "le Fils", et l'Équilibrée et la Simple disent "son", parce que l'anglais en a besoin.
+- **Son Fils.** Beaucoup de manuscrits portent "son Fils" ; le texte grec que suit Open Word Bible porte "le Fils". Le sens est le même, si bien qu'il n'y a pas de note. La Littérale garde "le Fils", et l'Équilibrée et la Simple disent "son Fils unique" : le Fils est celui de Dieu.
 - **A donné** comprend à la fois l'envoi du Fils dans le monde (verset 17) et le fait de le livrer à la mort, l'élévation du verset 14.
 - **Quiconque croit** est déjà inclusif, si bien que cette phrase n'a besoin d'aucun réglage de genre.
-- **Périr** est le contraire de la vie éternelle : la ruine définitive, et non la mort physique, puisque les croyants meurent quand même (11:25). La Simple dit "be lost" ("être perdu"), le sens qu'a le même verbe en 6:39 et 10:28.
+- **Périr** est le contraire de la vie éternelle : la ruine définitive, et non la mort physique, puisque les croyants meurent quand même (11:25). La Simple dit "ne soient pas perdus", le sens qu'a le même verbe en 6:39 et 10:28.
 
 Le dossier note aussi un écho possible de Genèse 22, où Dieu dit à Abraham de prendre "ton fils, ton unique, que tu aimes". Ici, c'est Dieu qui donne son propre Fils. Jean ne fait pas lui-même le rapprochement, si bien que cette décision est elle aussi marquée incertaine.
 

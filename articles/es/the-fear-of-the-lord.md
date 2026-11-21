@@ -16,7 +16,7 @@ Los Proverbios lo ponen al comienzo del libro:
 
 > {{OWB:PRO.1.7.s1:L}}
 
-(Los Proverbios todavía no están traducidos al español, así que el versículo aparece en inglés). El hebreo empieza con {{HEBREW:PRO.1.7:1-2}}, «el temor del SEÑOR». Nuestra decisión de significado para este versículo lo define como «un asombro reverente que confía y obedece», y menciona «terror» y «religión» como alternativas que no adopta. Da sus razones a partir de los propios Proverbios. El temor del SEÑOR no es un pavor que huye de Dios, sino un asombro que se aparta del mal (3:7; 8:13) y que confía en él: en el temor del SEÑOR, dice 14:26, hay una confianza firme.
+El hebreo empieza con {{HEBREW:PRO.1.7:1-2}}, «el temor del SEÑOR». Nuestra decisión de significado para este versículo lo define como «un asombro reverente que confía y obedece», y menciona «terror» y «religión» como alternativas que no adopta. Da sus razones a partir de los propios Proverbios. El temor del SEÑOR no es un pavor que huye de Dios, sino un asombro que se aparta del mal (3:7; 8:13) y que confía en él: en el temor del SEÑOR, dice 14:26, hay una confianza firme.
 
 Una segunda decisión se refiere a la palabra «principio». Puede significar lo primero de algo o lo mejor de algo. Proverbios 9:10 repite el dicho con otra palabra que solo significa el punto de partida, así que el registro toma ese como el sentido principal: el conocimiento no empieza en ningún otro lugar. Una nota al pie da el otro sentido, «la parte principal». El Salmo 111:10 y Job 28:28 dicen casi lo mismo, y por eso el registro del Salmo 111 lo llama «el lema de los libros sapienciales».
 
@@ -70,11 +70,11 @@ Aquí entra la traducción. En el inglés actual, «fear» a secas suele signifi
 
 La **Literal** y la **Equilibrada** conservan «el temor del SEÑOR» o «el temor del Señor» en todo momento. Es la expresión que los lectores conocen y la que la Biblia repite, y conservarla deja a la vista los ecos entre Proverbios, Isaías, Hechos y 2 Corintios.
 
-La **Sencilla** dice qué es ese temor. En la edición inglesa, Proverbios 1:7 dice:
+La **Sencilla** dice qué es ese temor. En Proverbios 1:7 dice:
 
 > {{OWB:PRO.1.7.s1:R}}
 
-La decisión de redacción inglesa da la razón: «En el inglés actual, "fear" a secas sugiere tener miedo. La Sencilla dice qué es el temor del SEÑOR». Los versículos ya traducidos al español siguen el mismo camino con otras expresiones para el mismo sentido: «honras a Dios por encima de todo» para Abraham, «lo teman y lo respeten» en Éxodo 20:20, «vivían con profundo respeto por el Señor» en Hechos 9:31, «con profundo respeto y reverencia hacia Dios» en Filipenses 2:12. (En Isaías 11, todavía sin traducir, la Sencilla inglesa dice «deep respect for the LORD», «profundo respeto por el SEÑOR»). Donde la propia Biblia contrapone el terror a la reverencia, como en Éxodo 20:20, la Sencilla dice «No tengan miedo» para el primero y «lo teman y lo respeten» para el segundo. De modo parecido, en 1 Juan 4:18 la Literal y la Equilibrada dicen «temor» y la Sencilla dice la palabra de todos los días, «miedo», porque allí se trata precisamente del pavor ante el juicio.
+La decisión de redacción da la razón: como en inglés, «temor» podría sonar a simple miedo, y la Sencilla dice que es honrar al SEÑOR con reverencia. Otros versículos siguen el mismo camino con otras expresiones para el mismo sentido: «honras a Dios por encima de todo» para Abraham, «lo teman y lo respeten» en Éxodo 20:20, «vivían con profundo respeto por el Señor» en Hechos 9:31, «con profundo respeto y reverencia hacia Dios» en Filipenses 2:12. (En Isaías 11:2, la Sencilla dice «tenerle un profundo respeto al SEÑOR»). Donde la propia Biblia contrapone el terror a la reverencia, como en Éxodo 20:20, la Sencilla dice «No tengan miedo» para el primero y «lo teman y lo respeten» para el segundo. De modo parecido, en 1 Juan 4:18 la Literal y la Equilibrada dicen «temor» y la Sencilla dice la palabra de todos los días, «miedo», porque allí se trata precisamente del pavor ante el juicio.
 
 Es una elección de redacción, no de significado. Quien quiere la expresión tradicional la encuentra en la Equilibrada. Quien oiría «temor» como susto encuentra el sentido explicado en la Sencilla. Los tres niveles señalan lo mismo: el asombro de quienes saben quién es Dios, que lleva a la obediencia y a la confianza, y que el amor no elimina sino que lleva a su plenitud. (Véase [Literal, Equilibrada, Sencilla: tres niveles, un solo significado](/articles/three-levels-one-meaning/) para saber cómo funcionan los niveles).
 
