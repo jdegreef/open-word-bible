@@ -10,8 +10,6 @@ Ouvrez presque n'importe quel psaume, et vous remarquerez qu'il semble dire les 
 
 > {{OWB:PSA.19.2.s1:B}}
 
-Les Psaumes et les autres livres poétiques ne sont pas encore traduits en français dans Open Word Bible. Les citations de cet article sont donc tirées de sa version anglaise ; ce qui suit porte sur le texte hébreu et sur son sens, que la traduction française suivra.
-
 Les cieux et la voûte du ciel sont une seule et même chose. Raconter et faire connaître sont un seul et même acte. La gloire de Dieu et l'œuvre de ses mains sont deux façons de nommer ce que montre le ciel. La seconde moitié du verset redit ce que disait la première, avec d'autres mots.
 
 Ce n'est pas du remplissage. C'est ainsi qu'est construite la poésie hébraïque. Un lecteur qui sait comment elle fonctionne lira plus justement les Psaumes, les Proverbes, Job et les prophètes, et comprendra pourquoi une traduction doit faire certains choix sur l'aspect que prend la poésie sur la page.
@@ -34,7 +32,7 @@ La première sorte de Lowth est le parallélisme *synonymique*, où la seconde l
 
 Le verset a quatre lignes, en deux paires. Le bœuf et l'âne forment une paire : chacun sait où est sa place. Israël et "mon peuple" forment une paire : ni l'un ni l'autre ne sait. Les deux moitiés du verset sont ensuite opposées l'une à l'autre, les bêtes contre le peuple qui devrait mieux savoir.
 
-Regardez de nouveau la dernière paire, pourtant. "Israel does not know" ("Israël ne sait pas") devient "my people give it no thought" ("mon peuple n'y réfléchit pas"). La seconde ligne n'est pas une simple répétition. Elle désigne Israël comme le peuple *de Dieu*, ce qui rend l'accusation plus vive, et elle passe de savoir à considérer. Le dossier de ce verset note que le verbe hébreu employé ici veut dire réfléchir attentivement à quelque chose. Israël ne s'arrête même pas pour réfléchir.
+Regardez de nouveau la dernière paire, pourtant. "mais Israël ne connaît pas" devient "mon peuple n'y prête aucune attention". La seconde ligne n'est pas une simple répétition. Elle désigne Israël comme le peuple *de Dieu*, ce qui rend l'accusation plus vive, et elle passe de savoir à considérer. Le dossier de ce verset note que le verbe hébreu employé ici veut dire réfléchir attentivement à quelque chose. Israël ne s'arrête même pas pour réfléchir.
 
 Ce petit mouvement est typique. Même dans les lignes "synonymiques", la seconde ligne ajoute généralement quelque chose : un mot plus précis, une image plus forte, un regard plus resserré.
 
@@ -60,7 +58,7 @@ L'un des plus frappants est l'"escalier", où une ligne commence, s'interrompt, 
 
 > {{OWB:PSA.93.3.s1:B}}
 
-Le dossier y voit une ligne répétée qui grandit à chaque reprise, comme des vagues qui montent. Le Psaume 92:10 fait la même chose avec les ennemis du SEIGNEUR ("Look at your enemies, LORD! Look, your enemies are doomed", "Vois tes ennemis, SEIGNEUR ! Vois, tes ennemis sont perdus"), et le dossier de ce verset le désigne comme un procédé de la poésie hébraïque.
+Le dossier y voit une ligne répétée qui grandit à chaque reprise, comme des vagues qui montent. Le Psaume 92:10 fait la même chose avec les ennemis du SEIGNEUR ("Regarde tes ennemis, SEIGNEUR ! Oui, tes ennemis vont à leur perte"), et le dossier de ce verset le désigne comme un procédé de la poésie hébraïque.
 
 Une autre façon de construire est le mouvement à l'intérieur du Psaume 1:1 :
 
@@ -74,7 +72,7 @@ En 1981, James Kugel publia *The Idea of Biblical Poetry*, et en 1985, Robert Al
 
 Kugel soutenait que les catégories de Lowth faisaient paraître les lignes plus semblables qu'elles ne le sont. La seconde ligne, disait-il, est rarement une simple reformulation. Sa force est à peu près celle de "A, et qui plus est, B" : la seconde ligne appuie la première, la prolonge, la rend plus vivante, plus précise ou plus intense. Alter a suivi le même mouvement et l'a appelé intensification, ou focalisation. Le jour puis la nuit, un mot général puis un mot plus aigu, une action puis son résultat.
 
-Tous les spécialistes ne suivent pas chaque point de leurs analyses. Mais la plupart lisent aujourd'hui les lignes parallèles en se demandant ce qu'ajoute la seconde, et les exemples ci-dessus montrent pourquoi. "Mon peuple" ajoute à "Israël". Les "crashing waves" ("vagues fracassantes") des fleuves ajoutent à leur "roar" ("grondement"). La seconde ligne est souvent l'endroit où un poète hébreu place l'essentiel.
+Tous les spécialistes ne suivent pas chaque point de leurs analyses. Mais la plupart lisent aujourd'hui les lignes parallèles en se demandant ce qu'ajoute la seconde, et les exemples ci-dessus montrent pourquoi. "Mon peuple" ajoute à "Israël". Les "vagues qui se brisent" des fleuves ajoutent à leur "grondement". La seconde ligne est souvent l'endroit où un poète hébreu place l'essentiel.
 
 Cela compte pour la traduction. Si un traducteur suppose que les lignes se répètent simplement, il sera tenté de les fondre en une seule, ou de choisir les mêmes mots pour les deux. Une traduction qui garde les deux lignes distinctes laisse le lecteur sentir l'impact de la seconde.
 

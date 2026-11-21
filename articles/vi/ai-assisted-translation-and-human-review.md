@@ -4,7 +4,7 @@ summary: Mọi thứ trên trang này hiện nay đều được dịch với s�
 date: 2026-10-10
 order: 10
 section: method
-source: 2f05369a7dc4
+source: e1e9a6d4898e
 ---
 Open Word Bible được dịch với sự trợ giúp của AI. Chúng tôi nói rõ điều đó, vì một dự án hứa sẽ trình bày công việc của mình thì không thể mập mờ về chuyện ai đã làm công việc ấy. Bài này giải thích một câu văn được soạn nháp như thế nào, bạn có thể thấy được gì về nó, việc soạn nháp bằng AI còn thiếu sót ở đâu, và điều gì phải xảy ra trước khi bất kỳ câu văn nào được gọi là đã duyệt.
 
@@ -26,13 +26,13 @@ Hãy lấy Phi-líp 4:6–7, một câu văn tiếng Hy Lạp dài nói về s�
 
 > {{OWB:PHP.4.6.s1:B}}
 
-Bản ghi của câu này chứa tiếng Hy Lạp, mở đầu bằng {{GREEK:PHP.4.6:1-2}}, "chẳng điều gì hãy lo lắng"; một bản dịch sát từng chữ; các cấp độ Sát nghĩa, Cân bằng và Dễ đọc bằng tiếng Anh; và cũng ba cấp độ ấy trong các ngôn ngữ khác khi chúng được soạn nháp. Nó cũng chứa mười hai quyết định. Bảy quyết định là về nghĩa, chung cho mọi ngôn ngữ. Một quyết định nói rằng {{LEMMA:PHP.4.6:2}} ở đây có nghĩa là sự lo âu phiền muộn, chữ Đức Giê-xu dùng trong Ma-thi-ơ 6, chứ không phải sự quan tâm tốt lành mà Phao-lô dùng chữ ấy để nói đến trong 2:20. Một quyết định khác nói rằng động từ "canh giữ" là việc mà một đội quân đồn trú làm, một hình ảnh mà người thành Phi-líp, một thuộc địa La Mã có những người lính giải ngũ trong số công dân, hẳn đã cảm nhận được. Năm quyết định còn lại là quyết định về cách diễn đạt, mỗi quyết định cho một ngôn ngữ. Chẳng hạn, một quyết định cho tiếng Anh giải thích vì sao bản Cân bằng nói sự bình an sẽ "stand guard over" (đứng canh giữ) lòng anh em: nó giữ hình ảnh người lính mà không dùng chữ cổ "keep" (gìn giữ).
+Bản ghi của câu này chứa tiếng Hy Lạp, mở đầu bằng {{GREEK:PHP.4.6:1-2}}, "chẳng điều gì hãy lo lắng"; một bản dịch sát từng chữ; các cấp độ Sát nghĩa, Cân bằng và Dễ đọc bằng tiếng Anh; và cũng ba cấp độ ấy trong các ngôn ngữ khác khi chúng được soạn nháp. Nó cũng chứa hai mươi bảy quyết định. Bảy quyết định là về nghĩa, chung cho mọi ngôn ngữ. Một quyết định nói rằng {{LEMMA:PHP.4.6:2}} ở đây có nghĩa là sự lo âu phiền muộn, chữ Đức Giê-xu dùng trong Ma-thi-ơ 6, chứ không phải sự quan tâm tốt lành mà Phao-lô dùng chữ ấy để nói đến trong 2:20. Một quyết định khác nói rằng động từ "canh giữ" là việc mà một đội quân đồn trú làm, một hình ảnh mà người thành Phi-líp, một thuộc địa La Mã có những người lính giải ngũ trong số công dân, hẳn đã cảm nhận được. Hai mươi quyết định còn lại là quyết định về cách diễn đạt, mỗi quyết định cho một ngôn ngữ. Chẳng hạn, một quyết định cho tiếng Anh giải thích vì sao bản Cân bằng nói sự bình an sẽ "stand guard over" (đứng canh giữ) lòng anh em: nó giữ hình ảnh người lính mà không dùng chữ cổ "keep" (gìn giữ).
 
 Hai quyết định trong bản ghi này được đánh dấu là chưa chắc chắn. Một quyết định là về nghĩa: sự bình an "vượt quá mọi sự hiểu biết" có thể là sự bình an vượt ngoài điều trí óc có thể nắm bắt, hoặc sự bình an đạt được nhiều hơn mọi kế hoạch của con người. Bản ghi theo cách hiểu phổ biến hơn và đưa cách kia vào chú thích. Quyết định thứ hai là về tiếng Anh. Cấp độ Dễ đọc nói sự bình an canh giữ anh em "because you are joined to Christ Jesus" (vì anh em được kết hợp với Đấng Christ Giê-xu), trong khi tiếng Hy Lạp chỉ nói "trong". Quyết định về cách diễn đạt nói thẳng rằng cách này thêm vào một lý do mà tiếng Hy Lạp không nói ra, và rằng những người duyệt nên kiểm tra lại:
 
 > {{OWB:PHP.4.6.s1:R}}
 
-Ở đâu cũng theo khuôn mẫu ấy. Trong các bản nháp cho đến nay, trung bình mỗi câu văn mang khoảng bốn quyết định, và cứ khoảng mười hai quyết định thì có một được đánh dấu là chưa chắc chắn. AI được dặn phải đánh dấu một lựa chọn sít sao là chưa chắc chắn thay vì trình bày nó như đã ngã ngũ, và trang đọc hiển thị nhãn ấy.
+Ở đâu cũng theo khuôn mẫu ấy. Trong các bản nháp, trung bình mỗi câu văn mang khoảng hai hoặc ba quyết định về nghĩa, cộng với các quyết định về cách diễn đạt cho từng ngôn ngữ, và cứ khoảng chín quyết định về nghĩa thì có một được đánh dấu là chưa chắc chắn. AI được dặn phải đánh dấu một lựa chọn sít sao là chưa chắc chắn thay vì trình bày nó như đã ngã ngũ, và trang đọc hiển thị nhãn ấy.
 
 ## Điều AI không làm
 
@@ -50,7 +50,7 @@ Người đọc có lý khi hỏi AI sai ở những chỗ nào. Chúng tôi đ�
 
 **Trôi chảy không phải là phán đoán đúng.** Một bản nháp có thể đọc rất trơn tru mà vẫn sai, hoặc đúng vì những lý do không hẳn là những lý do đã nêu. Giọng văn tự tin của một câu không phải là bằng chứng cho nó.
 
-**Lời văn tự nhiên cần đến người bản ngữ.** AI có thể viết tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt, tiếng Hàn, tiếng Bồ Đào Nha, tiếng Amhara, tiếng Hindi hay tiếng Nga đúng ngữ pháp. Câu văn ấy nghe có tự nhiên với một người lớn lên cùng ngôn ngữ đó hay không lại là chuyện khác. Chẳng hạn, bản ghi tiếng Tây Ban Nha cho Giăng 1:1 chọn *el Verbo* thay vì *la Palabra* cho "Ngôi Lời", và đánh dấu lựa chọn ấy để một người bản ngữ duyệt lại.
+**Lời văn tự nhiên cần đến người bản ngữ.** AI có thể viết tiếng Tây Ban Nha, tiếng Swahili, tiếng Hàn, tiếng Amhara hay tiếng Nhật đúng ngữ pháp. Câu văn ấy nghe có tự nhiên với một người lớn lên cùng ngôn ngữ đó hay không lại là chuyện khác. Chẳng hạn, bản ghi tiếng Tây Ban Nha cho Giăng 1:1 chọn *el Verbo* thay vì *la Palabra* cho "Ngôi Lời", và đánh dấu lựa chọn ấy để một người bản ngữ duyệt lại.
 
 **Giữ sự nhất quán giữa các sách là điều khó.** Hàng nghìn câu văn được soạn nháp vào những thời điểm khác nhau có thể dần lệch nhau. Các thuật ngữ chính được phần mềm kiểm tra, danh sách thuật ngữ cho các sách dài, và những quyết định dẫn lại các quyết định trước đều chống lại điều đó, nhưng vẫn sẽ còn một số chỗ lệch để người duyệt tìm ra.
 
@@ -91,4 +91,4 @@ Bạn không cần đợi người duyệt mới có thể thử thách điều 
 
 ## Giúp duyệt
 
-Nếu bạn đọc được tiếng Hy Lạp hay tiếng Hê-bơ-rơ, hoặc là người bản ngữ tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt, tiếng Hàn, tiếng Bồ Đào Nha, tiếng Amhara, tiếng Hindi hay tiếng Nga có thể nhận ra một câu văn đọc có tự nhiên hay không, chúng tôi rất trân trọng sự giúp đỡ của bạn. Mọi thứ đều công khai trên [GitHub](https://github.com/jdegreef/open-word-bible), kể cả từng quyết định và lập luận của nó, và liên kết "Báo lỗi" ở cuối mỗi trang sẽ mở một vấn đề ở đó. Không đồng ý với một quyết định, và nói rõ vì sao, chính là kiểu giúp đỡ mà dự án cần.
+Nếu bạn đọc được tiếng Hy Lạp hay tiếng Hê-bơ-rơ, hoặc là người bản ngữ của một trong các ngôn ngữ của bản dịch có thể nhận ra một câu văn đọc có tự nhiên hay không, chúng tôi rất trân trọng sự giúp đỡ của bạn. Mọi thứ đều công khai trên [GitHub](https://github.com/jdegreef/open-word-bible), kể cả từng quyết định và lập luận của nó, và liên kết "Báo lỗi" ở cuối mỗi trang sẽ mở một vấn đề ở đó. Không đồng ý với một quyết định, và nói rõ vì sao, chính là kiểu giúp đỡ mà dự án cần.

@@ -8,17 +8,17 @@ source: 134dbe4ffb68
 ---
 Éphésiens 2:8–9 est l'une des affirmations les plus claires du Nouveau Testament sur la manière dont une personne est sauvée.
 
-L'épître aux Éphésiens n'est pas encore traduite en français dans Open Word Bible. Les citations de cet article sont donc tirées de sa version anglaise ; ce qui suit porte sur le sens du texte grec, que la traduction française suivra. Voici le niveau Littérale :
+Voici le niveau Littérale :
 
 > {{OWB:EPH.2.8.s1:L}}
 
-Le niveau Littérale garde un petit mot dont on débat depuis des siècles : "this", "cela". Cela ne vient pas de vous. Mais qu'est-ce qui ne vient pas de vous ? La grâce ? La foi ? Ou quelque chose de plus large ?
+Le niveau Littérale garde un petit mot dont on débat depuis des siècles : "cela". Cela ne vient pas de vous. Mais qu'est-ce qui ne vient pas de vous ? La grâce ? La foi ? Ou quelque chose de plus large ?
 
 ## La place du verset
 
 Le verset 8 conclut un raisonnement qui commence au verset 1. Paul rappelle à ses lecteurs ce qu'ils étaient autrefois : morts dans leurs fautes et leurs péchés, suivant les voies du monde (versets 1–3). Puis viennent deux mots qui retournent tout le passage : "Mais Dieu" (verset 4). Dieu, riche en miséricorde, nous a rendus vivants avec le Christ alors que nous étions encore morts (verset 5). Au milieu de cette phrase, Paul glisse une brève exclamation : "c'est par grâce que vous avez été sauvés".
 
-Le verset 8 reprend cette exclamation et l'explique. Le grec dit "la grâce", avec l'article, et le dossier y voit un renvoi à la grâce des versets 5 et 7. C'est pourquoi l'Équilibrée anglaise dit "by this grace", "par cette grâce".
+Le verset 8 reprend cette exclamation et l'explique. Le grec dit "la grâce", avec l'article, et le dossier y voit un renvoi à la grâce des versets 5 et 7. C'est pourquoi l'Équilibrée dit "par cette grâce".
 
 ## Trois candidats
 
@@ -44,11 +44,11 @@ Selon l'une comme l'autre lecture, rien dans le salut n'est l'œuvre du lecteur.
 
 Ici, la formulation anglaise a un vrai travail à faire. Placez "this is not from you" ("cela ne vient pas de vous") juste après "through faith" ("par la foi"), et la plupart des lecteurs entendront "this" comme "la foi". L'anglais est moins clair que le grec, qui a le genre pour guider le lecteur.
 
-C'est pourquoi le niveau Équilibrée dit "None of this" ("Rien de tout cela"), qui renvoie à toute l'affirmation :
+C'est pourquoi le niveau Équilibrée dit "None of this" en anglais et "Rien de cela" en français, qui renvoie à toute l'affirmation :
 
 > {{OWB:EPH.2.8.s1:B}}
 
-Le niveau Simple le nomme en toutes lettres ("Being saved", "Être sauvé") :
+Le niveau Simple le nomme en toutes lettres ("Being saved" en anglais, "Être sauvé" en français) :
 
 > {{OWB:EPH.2.8.s1:R}}
 

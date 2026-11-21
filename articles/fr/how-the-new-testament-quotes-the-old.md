@@ -30,7 +30,7 @@ Les chiffres varient selon la façon dont on définit une citation, mais le Nouv
 
 Matthieu raconte la conception de Jésus, puis cite Ésaïe : "la vierge deviendra enceinte et donnera naissance à un fils, et on l'appellera Emmanuel". Le mot de Matthieu pour "vierge" est {{GREEK:MAT.1.23:3}} (*parthenos*), celui qu'emploie la Septante en Ésaïe 7:14.
 
-L'hébreu d'Ésaïe a {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). La décision de sens d'Open Word Bible pour Ésaïe 7:14 le décrit avec soin : un mot pour "une jeune femme en âge de se marier", employé pour Rébecca avant son mariage, pour la sœur de Moïse quand elle était jeune fille, et pour les jeunes femmes de la cour royale. Il "ne dit pas à lui seul si elle est vierge ou mariée, même s'il n'est jamais employé clairement pour une femme mariée". La décision est marquée incertaine, et une note de bas de page donne "la vierge" comme autre traduction possible. Ésaïe n'est encore traduit qu'en anglais ; voici notre texte :
+L'hébreu d'Ésaïe a {{LEMMA:ISA.7.14:8.2}} (*ʿalmāh*). La décision de sens d'Open Word Bible pour Ésaïe 7:14 le décrit avec soin : un mot pour "une jeune femme en âge de se marier", employé pour Rébecca avant son mariage, pour la sœur de Moïse quand elle était jeune fille, et pour les jeunes femmes de la cour royale. Il "ne dit pas à lui seul si elle est vierge ou mariée, même s'il n'est jamais employé clairement pour une femme mariée". La décision est marquée incertaine, et une note de bas de page donne "la vierge" comme autre traduction possible. Voici notre texte :
 
 > {{OWB:ISA.7.14.s1:B}}
 
@@ -48,7 +48,7 @@ L'épître aux Hébreux place les paroles du Psaume 40 dans la bouche du Christ,
 
 > {{OWB:HEB.10.5.s1:B}}
 
-Le mot clé est {{GREEK:HEB.10.5:12}} (*sōma*), "corps". Mais l'hébreu du psaume (40:7 dans la numérotation hébraïque, 40:6 dans la plupart des Bibles anglaises) a {{HEBREW:PSA.40.7:5-6}}, "des oreilles tu m'as creusées". Notre niveau Littérale du psaume, encore traduit seulement en anglais, garde l'image :
+Le mot clé est {{GREEK:HEB.10.5:12}} (*sōma*), "corps". Mais l'hébreu du psaume (40:7 dans la numérotation hébraïque, 40:6 dans la plupart des Bibles anglaises) a {{HEBREW:PSA.40.7:5-6}}, "des oreilles tu m'as creusées". Notre niveau Littérale du psaume garde l'image :
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -66,7 +66,7 @@ Le dossier d'Hébreux 10:6 relève un changement plus petit. La plupart des manu
 
 > {{OWB:ACT.15.16.s1:B}}
 
-Dans l'hébreu d'Amos 9:12, le but de la reconstruction de la cabane de David effondrée est différent. Amos n'est encore traduit qu'en anglais :
+Dans l'hébreu d'Amos 9:12, le but de la reconstruction de la cabane de David effondrée est différent. Notre niveau Équilibrée dit :
 
 > {{OWB:AMO.9.12.s1:B}}
 
@@ -110,7 +110,7 @@ Le Nouveau Testament ne suit pas toujours la Septante. Deux citations montrent l
 
 **"Il a fait des dons aux humains"** (Éphésiens 4:8 ; Psaume 68:19). Paul cite le Psaume 68, un hymne de victoire où Dieu monte vers sa montagne sainte, emmenant des captifs. Mais là où le psaume hébreu et le psaume grec disent tous deux que Dieu "a reçu des dons" des humains, Paul dit qu'il "a fait des dons". Nos dossiers des deux côtés signalent la différence en note. Ils relèvent qu'une ancienne paraphrase araméenne des Psaumes, ainsi que la traduction syriaque, lisent aussi "a fait des dons", si bien que Paul suit peut-être une interprétation connue du verset. Le dossier du Psaume 68:19 suggère comment les deux s'accordent : "le vainqueur qui reçoit le tribut est celui qui le distribue à son peuple". Le dossier d'Éphésiens marque le point comme incertain et dit clairement le but de Paul : le Christ ressuscité fait des dons à son Église, que les versets 11–16 énumèrent ensuite.
 
-Un exemple plus petit est **Romains 10:18**, où Paul cite le Psaume 19:5 (19:4 dans les Bibles anglaises) : "leur voix s'est répandue sur toute la terre". La Septante, que Paul cite mot pour mot, a "leur voix" ou "leur son". L'hébreu a un mot qui désigne un cordeau à mesurer. Notre niveau Littérale du psaume, encore traduit seulement en anglais, garde "their line" ("leur cordeau"), et une note de bas de page, marquée incertaine, explique le grec.
+Un exemple plus petit est **Romains 10:18**, où Paul cite le Psaume 19:5 (19:4 dans les Bibles anglaises) : "leur voix s'est répandue sur toute la terre". La Septante, que Paul cite mot pour mot, a "leur voix" ou "leur son". L'hébreu a un mot qui désigne un cordeau à mesurer. Notre niveau Littérale du psaume garde "leur cordeau", et une note de bas de page, marquée incertaine, explique le grec.
 
 ## Ce que faisaient les apôtres
 

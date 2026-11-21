@@ -22,7 +22,7 @@ Từ Hê-bơ-rơ {{HEBREW:EXO.21.2:3}} (*ʿeved*) thì rộng hơn. Nó đến t
 
 Luật pháp Cựu Ước không bãi bỏ chế độ nô lệ, nhưng giới hạn và điều chỉnh nó, và đối xử với một số hình thức rất khác với những hình thức khác.
 
-Một người Y-sơ-ra-ên mắc nợ có thể tự bán mình, hoặc bị bán, để làm việc trả nợ. Thời gian phục dịch của người ấy có giới hạn. Xuất Ai Cập Ký 21:2 mở đầu các luật về nô lệ bằng chính trường hợp này. Sách này chưa được dịch sang tiếng Việt; dưới đây là cấp độ Cân bằng của bản tiếng Anh:
+Một người Y-sơ-ra-ên mắc nợ có thể tự bán mình, hoặc bị bán, để làm việc trả nợ. Thời gian phục dịch của người ấy có giới hạn. Xuất Ai Cập Ký 21:2 mở đầu các luật về nô lệ bằng chính trường hợp này:
 
 > {{OWB:EXO.21.2.s1:B}}
 

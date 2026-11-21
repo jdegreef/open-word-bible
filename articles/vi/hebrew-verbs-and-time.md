@@ -10,9 +10,7 @@ source: c27aa9dda0a4
 
 > {{OWB:ISA.9.5.s1:B}}
 
-(Câu trích nào chưa có bản tiếng Việt sẽ hiện ra theo bản tiếng Anh của Open Word Bible.)
-
-"Has been born" (đã được sinh ra). "Has been given" (đã được ban cho). Đứa trẻ được nói đến như thể đã có mặt. Phần lớn các bản Kinh Thánh tiếng Anh đánh số câu này là 9:6; Open Word Bible theo cách đánh số của tiếng Hê-bơ-rơ, trong đó nó là 9:5. Từ lâu, Cơ Đốc nhân đã đọc câu này như một lời hứa về Đấng Christ, bảy thế kỷ sau. Vậy tại sao nhà tiên tri lại dùng thì quá khứ?
+"Đã sinh ra". "Đã được ban cho". Đứa trẻ được nói đến như thể đã có mặt. Phần lớn các bản Kinh Thánh tiếng Anh đánh số câu này là 9:6; Open Word Bible theo cách đánh số của tiếng Hê-bơ-rơ, trong đó nó là 9:5. Từ lâu, Cơ Đốc nhân đã đọc câu này như một lời hứa về Đấng Christ, bảy thế kỷ sau. Vậy tại sao nhà tiên tri lại dùng thì quá khứ?
 
 Câu trả lời ngắn gọn là tiếng Hê-bơ-rơ Kinh Thánh không có thì theo nghĩa của tiếng Anh. Động từ của nó cho biết hành động được nhìn *như thế nào* nhiều hơn là xảy ra *khi nào*, và người dịch phải xác định thời gian từ văn mạch. Bài này giải thích điều đó vận hành ra sao, và Open Word Bible làm gì với nó.
 
@@ -40,7 +38,7 @@ Sáng Thế Ký 1 được dựng nên từ dạng này. Trong câu 3:
 
 Các sách ngữ pháp cũ gọi chữ "và" trong dạng này là *waw chuyển đổi* (waw conversive), theo giả thuyết rằng nó chuyển một thì tương lai thành quá khứ. Phần lớn học giả ngày nay cho rằng đó hoàn toàn không phải là sự chuyển đổi, mà là một dạng động từ riêng, bắt nguồn từ một thì quá khứ cổ xưa còn sống sót trong cấu trúc này. Dù hiểu thế nào, kết quả đối với người đọc vẫn như nhau. Các câu chuyện Hê-bơ-rơ chạy trên những chuỗi dài "và ông làm điều này, và ông nói điều kia", và thì quá khứ trong tiếng Anh là đúng.
 
-Bản thân chuỗi "và" dài ấy cũng là một câu hỏi dịch thuật. Bản King James giữ gần như tất cả. Nhiều bản hiện đại bỏ phần lớn, vì tiếng Anh không bắt đầu câu này đến câu khác bằng "and". Trong bản tiếng Anh của Open Word Bible, cấp độ Sát nghĩa giữ "And God said" (Và Đức Chúa Trời phán); Cân bằng và Dễ đọc nói "God said" (Đức Chúa Trời phán) và "Then God said" (Rồi Đức Chúa Trời phán). Chữ "và" của tiếng Hê-bơ-rơ thường hoạt động giống một dấu chấm hay một chữ "rồi" hơn là giống chữ "and" của tiếng Anh.
+Bản thân chuỗi "và" dài ấy cũng là một câu hỏi dịch thuật. Bản King James giữ gần như tất cả. Nhiều bản hiện đại bỏ phần lớn, vì tiếng Anh không bắt đầu câu này đến câu khác bằng "and". Trong Open Word Bible, cấp độ Sát nghĩa giữ "Và Đức Chúa Trời phán"; Cân bằng và Dễ đọc nói "Đức Chúa Trời phán" và "Rồi Đức Chúa Trời phán". Chữ "và" của tiếng Hê-bơ-rơ thường hoạt động giống một dấu chấm hay một chữ "rồi" hơn là giống chữ "and" của tiếng Anh.
 
 ## Thể hoàn thành mang nghĩa hiện tại
 
@@ -97,9 +95,9 @@ Open Word Bible trả lời từng câu một, và ba cấp độ không phải 
 
 > {{OWB:ISA.5.13.s1:B}}
 
-Trong bản tiếng Anh, Sát nghĩa giữ dạng ấy: "my people have gone into exile" (dân Ta đã đi lưu đày). Cân bằng nói điều câu ấy muốn nói: "my people will be carried off into exile" (dân Ta sẽ bị bắt đi lưu đày). Quyết định về nghĩa đằng sau cả hai được đánh dấu chưa chắc chắn. Nó hiểu động từ ấy như một sự việc tương lai được nói đến như đã xong, vì cuộc lưu đày của Giu-đa vẫn còn ở phía trước, và nói thêm rằng câu này có thể nói về các chi phái phía bắc đã bị A-si-ri bắt đi. Sự khác biệt giữa các cấp độ là khác biệt về lời văn, không phải về ý nghĩa: cả hai cấp độ theo cùng một quyết định, một bên bằng cách cho thấy dạng Hê-bơ-rơ, bên kia bằng cách nói ra ý nghĩa của nó.
+Sát nghĩa giữ dạng ấy: "dân ta bị lưu đày". Cân bằng nói điều câu ấy muốn nói: "dân ta sẽ bị bắt đi lưu đày". Quyết định về nghĩa đằng sau cả hai được đánh dấu chưa chắc chắn. Nó hiểu động từ ấy như một sự việc tương lai được nói đến như đã xong, vì cuộc lưu đày của Giu-đa vẫn còn ở phía trước, và nói thêm rằng câu này có thể nói về các chi phái phía bắc đã bị A-si-ri bắt đi. Sự khác biệt giữa các cấp độ là khác biệt về lời văn, không phải về ý nghĩa: cả hai cấp độ theo cùng một quyết định, một bên bằng cách cho thấy dạng Hê-bơ-rơ, bên kia bằng cách nói ra ý nghĩa của nó.
 
-Giô-suê 6:2 cho thấy một cách khác. Cả ba cấp độ tiếng Anh đều giữ "I have given" (Ta đã phó), nhưng Dễ đọc thêm một câu ngắn của riêng mình, "It is as good as yours" (Coi như thành ấy đã là của con), và quyết định về cách diễn đạt giải thích lý do: để chuyển tải ý nghĩa của động từ đã hoàn thành, rằng thành ấy chắc chắn sẽ thuộc về Y-sơ-ra-ên.
+Giô-suê 6:2 cho thấy một cách khác. Cả ba cấp độ đều giữ dạng đã xong ("ta đã phó", "ta đã giao", "ta đã ban cho"), nhưng Dễ đọc thêm một câu ngắn của riêng mình, "Thành ấy coi như đã thuộc về con rồi", và quyết định về cách diễn đạt giải thích lý do: để chuyển tải ý nghĩa của động từ đã hoàn thành, rằng thành ấy chắc chắn sẽ thuộc về Y-sơ-ra-ên.
 
 ## Ê-sai 9:5: một sự ra đời đã được loan báo
 
@@ -107,7 +105,7 @@ Giô-suê 6:2 cho thấy một cách khác. Cả ba cấp độ tiếng Anh đ�
 
 Người đọc đã theo cả hai quan điểm. Một số người thấy ở đây một sự ra đời vào thời Ê-sai, có lẽ là một người thừa kế ngai vàng, được mừng bằng những lời vượt xa bất kỳ vị vua bình thường nào. Nhiều người đọc Cơ Đốc thấy đây là lời tiên tri về Đấng Christ, được nói ra với sự chắc chắn của thể hoàn thành tiên tri. Hai cách hiểu không phải lúc nào cũng loại trừ nhau: một số người đọc câu này như nói về một vị vua thời Ê-sai mà các danh hiệu chỉ được thành tựu trọn vẹn nơi một hậu duệ về sau của Đa-vít. Bản ghi chỉ đến các phân đoạn chung quanh: 7:14 đã hứa một con trai tên là Em-ma-nu-ên, và 11:1–5 mô tả một vị vua từ dòng dõi Gie-sê.
 
-Ở đây, bản tiếng Anh của Open Word Bible giữ dạng quá khứ ở mọi cấp độ: "a child has been born for us, a son has been given to us" (một con trẻ đã được sinh ra cho chúng ta, một con trai đã được ban cho chúng ta). Đó là dạng Ê-sai đã dùng, nó phù hợp với cả hai cách hiểu, và tiếng Anh có thể mang được nó mà không làm người đọc hiểu lầm. Một thì tương lai sẽ quyết định câu hỏi ấy thay cho người đọc.
+Ở đây, Open Word Bible giữ dạng quá khứ ở mọi cấp độ: "một con trẻ đã sinh ra cho chúng ta, một con trai đã được ban cho chúng ta". Đó là dạng Ê-sai đã dùng, nó phù hợp với cả hai cách hiểu, và lời văn có thể mang được nó mà không làm người đọc hiểu lầm. Một thì tương lai sẽ quyết định câu hỏi ấy thay cho người đọc.
 
 ## Ê-sai 53: nhìn lại người đầy tớ
 

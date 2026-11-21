@@ -22,7 +22,7 @@ Esa imagen se mantiene en todo el Antiguo Testamento. El Seol está abajo, en el
 
 > {{OWB:PSA.6.6.s1:B}}
 
-(Los Salmos todavía no están traducidos al español, así que este versículo y los demás del libro aparecen en inglés). El registro de ese versículo añade una advertencia que vale la pena repetir. El salmo no enseña lo que ocurre después de la muerte; pide vida ahora. Más adelante la Escritura habla con más plenitud de una esperanza más allá de la muerte (Isaías 26:19; Daniel 12:2).
+El registro de ese versículo añade una advertencia que vale la pena repetir. El salmo no enseña lo que ocurre después de la muerte; pide vida ahora. Más adelante la Escritura habla con más plenitud de una esperanza más allá de la muerte (Isaías 26:19; Daniel 12:2).
 
 Pero el Seol no está fuera del alcance de Dios. El Salmo 139 lo muestra poniendo lado a lado los dos extremos:
 
@@ -42,7 +42,7 @@ Nuestros registros dan al Seol un único significado en todas partes: el lugar o
 
 En español, la **Literal** dice siempre «el Seol», para que el lector vea el nombre, y la **Equilibrada** y la **Sencilla** dicen «el lugar de los muertos». Así ocurre en Génesis 37:35: la decisión de redacción en español nombra el reino de los muertos en lugar de «la tumba», que es un solo sepulcro, como hacen los términos ya fijados para el Pentateuco; el sentido es el mismo, Jacob estará de luto hasta su muerte.
 
-La edición inglesa, la única que por ahora incluye los Salmos, Isaías, el Eclesiastés y Jonás, reparte las palabras así:
+La edición inglesa reparte las palabras así:
 
 - La **Literal** conserva siempre «Sheol».
 - La **Equilibrada** conserva «Sheol» en los Salmos, Isaías, el Eclesiastés y Jonás. En Génesis 37:35 dice «the grave», «la tumba», porque, como explica allí la decisión de redacción inglesa, ese es el sentido llano de las palabras de Jacob.
@@ -62,7 +62,7 @@ Los escritores del Nuevo Testamento heredaron la palabra con su sentido del Anti
 
 > {{OWB:ACT.2.27.s1:B}}
 
-Nuestra decisión de significado dice que aquí el Hades representa el Seol hebreo, adonde van todos los muertos, y que no es un lugar de castigo. La decisión de redacción da las razones de la elección: «infierno» sugiere un castigo que no se quiere decir, y «la tumba» es demasiado estrecho. Así que la Literal conserva «el Hades», la Equilibrada dice «el mundo de los muertos» y la Sencilla «el lugar de los muertos». El mismo salmo en hebreo, en el Salmo 16:10, dice en inglés «Sheol» en la Literal y la Equilibrada y «the place of the dead» en la Sencilla. Los dos versículos se corresponden, como debe ser, ya que uno cita al otro.
+Nuestra decisión de significado dice que aquí el Hades representa el Seol hebreo, adonde van todos los muertos, y que no es un lugar de castigo. La decisión de redacción da las razones de la elección: «infierno» sugiere un castigo que no se quiere decir, y «la tumba» es demasiado estrecho. Así que la Literal conserva «el Hades», la Equilibrada dice «el mundo de los muertos» y la Sencilla «el lugar de los muertos». El mismo salmo en hebreo, en el Salmo 16:10, dice «Seol» en la Literal y «el lugar de los muertos» en la Equilibrada y la Sencilla. Los dos versículos se corresponden, como debe ser, ya que uno cita al otro.
 
 El Hades aparece diez veces en el texto griego estándar del Nuevo Testamento. Algunos de estos usos conservan intacto el sentido antiguo. Jesús dice que Cafarnaúm, que esperaba ser elevada hasta el cielo, bajará hasta el Hades (Mateo 11:23); el registro llama allí al Hades «el lugar más bajo, opuesto al cielo», y remite a Isaías 14:15. En Mateo 16:18 «las puertas del Hades» no prevalecerán contra la iglesia; el registro lo lee como el poder de la muerte, recordando «las puertas del Seol» de Isaías 38:10, y marca como incierto el sentido exacto del modismo. En el Apocalipsis, Jesús tiene «las llaves de la muerte y del Hades» (1:18), que el registro explica como autoridad sobre la muerte y el reino de los muertos. En estos versículos, el español dice «el Hades» en la Literal y la Equilibrada, y «el lugar de los muertos» en la Sencilla.
 

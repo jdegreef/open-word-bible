@@ -4,7 +4,7 @@ summary: A New American Standard Bible quis manter a precisão da American Stand
 date: 2026-10-14
 order: 64
 section: compare
-source: 427ee00533e6
+source: aaeed2a8afbe
 ---
 Quando alguém quer um exemplo de Bíblia inglesa moderna muito literal, costuma citar a **New American Standard Bible**. Há mais de meio século ela é a tradução preferida de muitos estudantes das línguas originais, e aquela com que as outras traduções são comparadas quando a pergunta é: "O que o grego diz de fato?"
 

@@ -56,7 +56,7 @@ Còn có những khác biệt nhỏ hơn ở những chỗ khác, như ở cuố
 
 ## Open Word Bible xử lý các con số thế nào
 
-Open Word Bible đánh số mọi câu theo đúng bản văn nguồn của mình. Với Cựu Ước, đó là Bản chép tay Leningrad theo ấn bản Westminster (Westminster Leningrad Codex), nên Ma-la-chi có ba chương, Giô-ên có bốn, và tiêu đề của một thi thiên là câu đầu tiên của nó. Ở những chỗ điều này quan trọng, câu đầu tiên bị ảnh hưởng mang một chú thích. Chú thích ở Ma-la-chi 3:19 giải thích rằng sáu câu của nó được đánh số 4:1–6 trong nhiều bản Kinh Thánh khác, và Open Word Bible theo cách đánh số của bản văn tiếng Hê-bơ-rơ mà nó dịch. Giô-ên 3:1 có cùng loại ghi chú, và tiêu đề của Thi Thiên 3 cũng vậy. Thi Thiên 3 chưa được dịch sang tiếng Việt, nên dưới đây là bản Cân bằng tiếng Anh:
+Open Word Bible đánh số mọi câu theo đúng bản văn nguồn của mình. Với Cựu Ước, đó là Bản chép tay Leningrad theo ấn bản Westminster (Westminster Leningrad Codex), nên Ma-la-chi có ba chương, Giô-ên có bốn, và tiêu đề của một thi thiên là câu đầu tiên của nó. Ở những chỗ điều này quan trọng, câu đầu tiên bị ảnh hưởng mang một chú thích. Chú thích ở Ma-la-chi 3:19 giải thích rằng sáu câu của nó được đánh số 4:1–6 trong nhiều bản Kinh Thánh khác, và Open Word Bible theo cách đánh số của bản văn tiếng Hê-bơ-rơ mà nó dịch. Giô-ên 3:1 có cùng loại ghi chú, và tiêu đề của Thi Thiên 3 cũng vậy:
 
 > {{OWB:PSA.3.1.s1:B}}
 

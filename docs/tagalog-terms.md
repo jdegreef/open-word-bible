@@ -809,3 +809,24 @@ names the book where the form was first used.
 | Genesis 50:10 | Atad | Atad |  |
 | Genesis 50:11 | Abel-mizraim | Abel-mizraim |  |
 | Genesis 50:23 | Machir | Makir | ch > k (style §6, rule 4) |
+| Ruth | Elimelech | Elimelec | The Spanish-derived form (style guide section 2). |
+| Ruth | Mahlon; Chilion | Mahlon; Kilion | *ch* > *k* (section 6, rule 4). |
+| Ruth | Orpah | Orpah | Final *-ah* kept (rule 4). |
+| Ruth | Ephrathites; Ephrathah | *mga taga-Efrata*; Efrata | One form for Ephrath and Ephrathah. |
+| Ruth | Mara | Mara | |
+| Ruth | Perez | Perez | Spanish-derived, *z* kept. |
+| Ruth | Hezron; Ram | Hezron; Ram | |
+| Ruth | Amminadab; Nahshon | Aminadab; Naason | Established forms, also in Matthew 1:4. |
+| Ruth | Salmah; Salmon | Salma (L, 4:20 only); Salmon | One man (4:20-21). |
+| Ruth | Obed | Obed | |
+| Ruth | glean | *mamulot* (*ng mga uhay*) | R: *mamulot ng butil*. |
+| Ruth | harvesters; sheaves; handfuls | *mga mang-aani*; *mga bigkis*; *mga tangkas* | Two Hebrew words, two Tagalog ones (2:15-16). |
+| Ruth | winnow | *magtahip* | |
+| Ruth | sister-in-law | *hipag* | |
+| Ruth | clan | *angkan* | *lipi* stays the tribe. |
+| Ruth | the kinsman's family redeemer | *tagapagtubos* (L); *tagapagtubos ng angkan* (B, R) | |
+| Ruth | town gate | *pintuan ng bayan* (B, R); *pintuan* (L) | For a town the book calls *bayan*. |
+| Ruth | woman of worth | *babaing marangal* | Also Proverbs 31:10. |
+| Ruth | as the LORD lives | *habang buhay ang PANGINOON* (L); *kung paanong tiyak na buhay ang PANGINOON* (B, R) | With the `divine_name` span. |
+| Ruth | Mr. So-and-so | *kaibigan* | No polite placeholder name in Tagalog. |
+| Ruth | shawl; cloak | *alampay*; *balabal* | |

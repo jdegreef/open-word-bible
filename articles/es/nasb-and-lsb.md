@@ -4,7 +4,7 @@ summary: La New American Standard Bible se propuso conservar en inglés moderno 
 date: 2026-10-14
 order: 64
 section: compare
-source: 427ee00533e6
+source: aaeed2a8afbe
 ---
 Cuando se busca un ejemplo de Biblia inglesa moderna muy literal, se suele nombrar la **New American Standard Bible** (NASB). Durante más de medio siglo ha sido la traducción preferida de muchos estudiantes de las lenguas originales, y aquella con la que se comparan las demás cuando la pregunta es «¿qué dice realmente el griego?».
 
@@ -93,7 +93,7 @@ Sus defensores responden que una traducción literal está pensada para leerse j
 
 ## Ver la estructura
 
-La NASB y la LSB descansan sobre una convicción que Open Word Bible comparte: que los lectores merecen ver lo que dice el original, no solo lo que un traductor piensa que significa. Open Word Bible intenta servir a esa convicción de otro modo. Su nivel Literal se mantiene cerca de la forma del griego y del hebreo, mientras que sus niveles Equilibrada y Sencilla expresan las mismas decisiones de sentido en un lenguaje más natural (véase [Tres niveles, un solo significado](/articles/three-levels-one-meaning/)), de modo que ninguna traducción tiene que hacerlo todo. Las elecciones que afectan a la redacción pero no al sentido, como «hermanos» o «hermanos y hermanas» donde se trata de toda la iglesia, o las mayúsculas en los pronombres referidos a Dios, son ajustes del lector; está previsto un ajuste para el nombre divino (véase [Los ajustes cambian la redacción, nunca el significado](/articles/settings-change-wording/)). Traduce a partir del Nuevo Testamento griego de la SBL y del Códice de Leningrado de Westminster, registra el razonamiento de cada frase y usa traducciones como la NASB y la LSB solo para comparar. Sus borradores se hacen con ayuda de IA y esperan la revisión de revisores humanos con nombre, y se publica bajo CC0.
+La NASB y la LSB descansan sobre una convicción que Open Word Bible comparte: que los lectores merecen ver lo que dice el original, no solo lo que un traductor piensa que significa. Open Word Bible intenta servir a esa convicción de otro modo. Su nivel Literal se mantiene cerca de la forma del griego y del hebreo, mientras que sus niveles Equilibrada y Sencilla expresan las mismas decisiones de sentido en un lenguaje más natural (véase [Tres niveles, un solo significado](/articles/three-levels-one-meaning/)), de modo que ninguna traducción tiene que hacerlo todo. Las elecciones que afectan a la redacción pero no al sentido, como «hermanos» o «hermanos y hermanas» donde se trata de toda la iglesia, las mayúsculas en los pronombres referidos a Dios, o «el SEÑOR» o «Yahvé» para el nombre divino, son ajustes del lector (véase [Los ajustes cambian la redacción, nunca el significado](/articles/settings-change-wording/)). Traduce a partir del Nuevo Testamento griego de la SBL y del Códice de Leningrado de Westminster, registra el razonamiento de cada frase y usa traducciones como la NASB y la LSB solo para comparar. Sus borradores se hacen con ayuda de IA y esperan la revisión de revisores humanos con nombre, y se publica bajo CC0.
 
 ## Fuentes
 

@@ -22,8 +22,6 @@ Ce tableau vaut pour tout l'Ancien Testament. Le Shéol est en bas, à l'opposé
 
 > {{OWB:PSA.6.6.s1:B}}
 
-Les Psaumes, Ésaïe, l'Ecclésiaste, Jonas et Jérémie ne sont pas encore traduits en français dans Open Word Bible ; les citations de ces livres sont donc tirées de la version anglaise.
-
 Le dossier de ce verset ajoute une mise en garde qui mérite d'être répétée. Le psaume n'enseigne pas ce qui se passe après la mort ; il demande la vie, maintenant. La suite de l'Écriture parle plus pleinement d'une espérance au-delà de la mort (Ésaïe 26:19 ; Daniel 12:2).
 
 Pourtant, le Shéol n'est pas hors de portée de Dieu. Le Psaume 139 le montre en plaçant les deux extrêmes côte à côte :
@@ -46,7 +44,7 @@ Nos dossiers donnent partout un seul sens au Shéol : le lieu ou le domaine des 
 - l'**Équilibrée** garde "Sheol" dans les Psaumes, Ésaïe, l'Ecclésiaste et Jonas. En Genèse 37:35, elle dit "the grave", "la tombe", parce que c'est, comme le dit la décision de formulation, le sens simple des paroles de Jacob ;
 - la **Simple** dit ce qu'est le Shéol : "the place of the dead", "le lieu des morts", dans les Psaumes, "the grave" dans Ésaïe, l'Ecclésiaste et Jonas.
 
-En français, seule la Genèse est traduite pour l'instant, et Genèse 37:35 suit un autre chemin : la Littérale dit "le Shéol", l'Équilibrée et la Simple "le séjour des morts". La décision de formulation française écarte "la tombe", qui désigne une sépulture particulière, au profit de l'expression établie pour le domaine de tous les morts.
+En français, la Littérale dit "le Shéol", et l'Équilibrée et la Simple "le séjour des morts", y compris en Genèse 37:35. La décision de formulation française écarte "la tombe", qui désigne une sépulture particulière, au profit de l'expression établie pour le domaine de tous les morts.
 
 Aucun de nos niveaux ne dit "hell" ni "l'enfer" pour le Shéol. La prière de Jonas, au verset 3 selon la numérotation hébraïque, montre le modèle :
 
@@ -62,7 +60,7 @@ Les auteurs du Nouveau Testament ont hérité du mot avec son sens de l'Ancien T
 
 > {{OWB:ACT.2.27.s1:B}}
 
-Notre décision de sens dit qu'ici l'Hadès correspond au Shéol hébreu, où vont tous les morts, et que ce n'est pas un lieu de châtiment. La décision de formulation explique le choix des mots : "l'enfer" ferait penser à un châtiment, ce qui n'est pas le sens, et "la tombe" est trop étroit. En français, la Littérale garde donc "l'Hadès", et l'Équilibrée et la Simple disent "le séjour des morts". (L'édition anglaise dit "the world of the dead", "le monde des morts", à l'Équilibrée, et "the place of the dead", "le lieu des morts", à la Simple.) Le même psaume en hébreu, au Psaume 16:10, dit en anglais "Sheol" à la Littérale et à l'Équilibrée et "the place of the dead" à la Simple. Les deux versets se répondent, comme il se doit, puisque l'un cite l'autre.
+Notre décision de sens dit qu'ici l'Hadès correspond au Shéol hébreu, où vont tous les morts, et que ce n'est pas un lieu de châtiment. La décision de formulation explique le choix des mots : "l'enfer" ferait penser à un châtiment, ce qui n'est pas le sens, et "la tombe" est trop étroit. En français, la Littérale garde donc "l'Hadès", et l'Équilibrée et la Simple disent "le séjour des morts". (L'édition anglaise dit "the world of the dead", "le monde des morts", à l'Équilibrée, et "the place of the dead", "le lieu des morts", à la Simple.) Le même psaume en hébreu, au Psaume 16:10, dit "Shéol" à la Littérale et "séjour des morts" à l'Équilibrée et à la Simple. Les deux versets se répondent, comme il se doit, puisque l'un cite l'autre.
 
 L'Hadès apparaît dix fois dans le texte grec de référence du Nouveau Testament. Certains de ces emplois gardent l'ancien sens tel quel. Jésus dit que Capharnaüm, qui espérait être élevée jusqu'au ciel, descendra jusqu'à l'Hadès (Matthieu 11:23) ; le dossier y voit "le lieu le plus bas, à l'opposé du ciel", et renvoie à Ésaïe 14:15. En Matthieu 16:18, "les portes de l'Hadès" ne l'emporteront pas sur l'Église ; le dossier y lit la puissance de la mort, en rappelant "les portes du Shéol" d'Ésaïe 38:10, et marque incertain le sens exact de l'expression. Dans l'Apocalypse, Jésus tient "les clés de la mort et de l'Hadès" (1:18), ce que le dossier explique comme l'autorité sur la mort et sur le domaine des morts.
 
