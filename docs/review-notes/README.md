@@ -32,6 +32,7 @@ Each language has two files:
 | Chinese (Simplified) | [zh-review-checklist.md](zh-review-checklist.md) (an outline written before drafting and before registration) | `zh-uncertain.md`, once books are drafted |
 | Arabic | [ar-review-checklist.md](ar-review-checklist.md) (an outline written before drafting) | `ar-uncertain.md`, once books are drafted |
 | Tagalog | [tl-review-checklist.md](tl-review-checklist.md) (an outline written before drafting and before registration) | `tl-uncertain.md`, once books are drafted |
+| Persian | [fa-review-checklist.md](fa-review-checklist.md) (an outline written before drafting and before registration) | `fa-uncertain.md`, once books are drafted |
 
 Amharic has a guide (`docs/amharic-review-guide.md`: the levels, the settings,
 what to check, how review works in the admin and where to start) and a

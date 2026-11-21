@@ -56,6 +56,8 @@ and `docs/tagalog-terms.md` are the Hindi, Russian, Indonesian, Chinese and
 Tagalog glossaries, Genesis to Revelation; `docs/arabic-terms.md` is the
 Arabic one, growing book by book.
 `docs/hindi-review-guide.md` and
+`docs/persian-style.md` and `docs/persian-terms.md` are the proposed brief
+and glossary for Persian, not yet a reading language.
 `docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
