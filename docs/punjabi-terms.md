@@ -383,3 +383,16 @@ People and places: ਪੌਲੁਸ, ਸਿਲਵਾਨੁਸ (the Greek's form o
   firstfruits (2:13) ਪਹਿਲੇ ਫਲ; the evil one (3:3) ਉਸ ਦੁਸ਼ਟ.
 - Disorderly (*ataktōs*, 3:6-11) ਬੇਤਰਤੀਬੀ ਚਾਲ (L), ਬੇਲਗਾਮ ਜੀਵਨ (B);
   Readable names the disorder, refusing to work.
+
+### Nahum
+
+People and places: ਨਹੂਮ, ਅਲਕੋਸ਼ੀ (of Elkosh); ਨੀਨਵਾਹ, ਅੱਸ਼ੂਰ, ਯਹੂਦਾਹ;
+ਬਾਸ਼ਾਨ, ਕਰਮਲ, ਲਬਾਨੋਨ; ਨੋ-ਆਮੋਨ (L, B) and ਥੀਬਸ (R) for Thebes; ਕੂਸ਼,
+ਮਿਸਰ, ਪੂਟ, ਲਿਬੀਆਈ.
+
+- Oracle (*massa*, 1:1) ਭਾਰ ਦਾ ਵਾਕ, as in Habakkuk and Malachi when they come.
+- A jealous God (1:2) ਅਣਖੀ ਪਰਮੇਸ਼ੁਰ; the creed of 1:3 should read with
+  Exodus 34:6-7 (ਕ੍ਰੋਧ ਵਿੱਚ ਧੀਰਜਵਾਨ at L, as in Jonah 4:2; ਛੇਤੀ ਗੁੱਸੇ ਨਹੀਂ ਹੁੰਦੇ at B and R), and 1:15 (2:1 Hebrew) with Isaiah
+  52:7, when those books are drafted.
+- Nineveh is addressed as a woman: feminine ਤੂੰ with forms such as ਕਰੇਂਗੀ,
+  ਜਾਵੇਂਗੀ. The king of Assyria (1:14, 3:18-19) takes masculine forms.
