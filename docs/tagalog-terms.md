@@ -1838,3 +1838,37 @@ names the book where the form was first used.
 | 1 Chronicles 27:30 | Obil; Meronothite | Obil; Meronotita |  |
 | 1 Chronicles 27:31 | Jaziz; Hagrite | Jaziz; Hagrita |  |
 | 1 Chronicles 29:8 | Gershonite | Gershonita | as in 1 Chronicles 23 |
+| 2 Chronicles 2:12 | Huram-abi | Huram-abi |  |
+| 2 Chronicles 3:6 | Parvaim | Parvaim |  |
+| 2 Chronicles 8:3 | Hamath-zobah | Hamat-zobah |  |
+| 2 Chronicles 8:4 | Tadmor | Tadmor |  |
+| 2 Chronicles 8:7 | Hivite; Hivites | Heveo; mga Heveo |  |
+| 2 Chronicles 8:17 | Eloth | Elot |  |
+| 2 Chronicles 11:9 | Adoraim | Adoraim |  |
+| 2 Chronicles 11:19 | Zaham | Zaham |  |
+| 2 Chronicles 13:19 | Jeshanah | Jeshanah |  |
+| 2 Chronicles 14:9 | Zephathah | Zefatah |  |
+| 2 Chronicles 15:1 | Oded | Oded |  |
+| 2 Chronicles 16:4 | Abel-maim | Abel-maim |  |
+| 2 Chronicles 17:7 | Ben-hail | Ben-hail |  |
+| 2 Chronicles 17:8 | Jehonathan; Tobijah; Tob-adonijah | Jehonatan; Tobias; Tob-adonias |  |
+| 2 Chronicles 17:16 | Amasiah | Amasias |  |
+| 2 Chronicles 20:16 | Jeruel; Ziz | Jeruel; Ziz |  |
+| 2 Chronicles 20:37 | Dodavahu | Dodavahu |  |
+| 2 Chronicles 22:11 | Jehoshabeath | Jehoshabeat |  |
+| 2 Chronicles 23:1 | Elishaphat | Elishafat |  |
+| 2 Chronicles 24:26 | Shimrith | Shimrit |  |
+| 2 Chronicles 25:1 | Jehoaddan | Jehoaddan |  |
+| 2 Chronicles 26:6 | Jabneh | Jabneh |  |
+| 2 Chronicles 26:7 | Gur-baal | Gur-baal |  |
+| 2 Chronicles 27:1 | Jerushah | Jerusa |  |
+| 2 Chronicles 27:3 | Ophel | Ofel |  |
+| 2 Chronicles 28:12 | Hadlai; Jehizkiah; Meshillemoth | Hadlai; Jehizkias; Meshillemot |  |
+| 2 Chronicles 28:18 | Gimzo | Gimzo |  |
+| 2 Chronicles 31:12 | Conaniah | Conanias |  |
+| 2 Chronicles 31:13 | Ismachiah | Ismakias |  |
+| 2 Chronicles 31:15 | Miniamin | Miniamin |  |
+| 2 Chronicles 33:19 | Hozai | Hozai |  |
+| 2 Chronicles 34:8 | Joahaz | Joahaz |  |
+| 2 Chronicles 34:22 | Hasrah; Tokhath | Hasrah; Tokhat |  |
+| 2 Chronicles 35:20 | Carchemish | Carquemis |  |
