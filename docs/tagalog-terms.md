@@ -830,3 +830,68 @@ names the book where the form was first used.
 | Ruth | as the LORD lives | *habang buhay ang PANGINOON* (L); *kung paanong tiyak na buhay ang PANGINOON* (B, R) | With the `divine_name` span. |
 | Ruth | Mr. So-and-so | *kaibigan* | No polite placeholder name in Tagalog. |
 | Ruth | shawl; cloak | *alampay*; *balabal* | |
+| Exodus 1:11 | Pithom | Pitom |  |
+| Exodus 1:15 | Shiphrah; Puah | Shifrah; Puah |  |
+| Exodus 2:22 | Gershom | Gershom | Moses' son; Levi's son is *Gershon*. |
+| Exodus 4:18 | Jether (Jethro) | Jeter | Only here; elsewhere *Jetro*. |
+| Exodus 6:18 | Amram; Izhar; Uzziel | Amram; Izhar; Uziel |  |
+| Exodus 6:17 | Libni | Libni |  |
+| Exodus 6:19 | Mahli; Mushi | Mahli; Mushi |  |
+| Exodus 6:20 | Jochebed | Jokebed | *ch* > *k* (style §6). |
+| Exodus 6:21 | Nepheg; Zichri | Nefeg; Zikri |  |
+| Exodus 6:22 | Mishael; Elzaphan; Sithri | Misael; Elzafan; Sitri |  |
+| Exodus 6:23 | Elisheba | Elisheba |  |
+| Exodus 6:24 | Assir; Elkanah; Abiasaph; Korahites | Asir; Elkanah; Abiasaf; mga Korita |  |
+| Exodus 6:25 | Putiel | Putiel |  |
+| Exodus 13:4 | Abib | Abib | The month; *buwan ng Abib*. |
+| Exodus 13:20 | Etham | Etam |  |
+| Exodus 14:2 | Pi-hahiroth; Migdol; Baal-zephon | Pi-hahirot; Migdol; Baal-zefon |  |
+| Exodus 15:14 | Philistia | Filistia | People: *mga Filisteo*. |
+| Exodus 15:23 | Marah | Mara | Same form as Naomi's *Mara* (Ruth 1:20). |
+| Exodus 15:27 | Elim | Elim |  |
+| Exodus 16:1 | wilderness of Sin | ilang ng Sin |  |
+| Exodus 17:1 | Rephidim | Refidim |  |
+| Exodus 17:7 | Massah; Meribah | Masah; Meriba |  |
+| Exodus 17:10 | Hur | Hur |  |
+| Exodus 28:1 | Ithamar | Itamar |  |
+| Exodus 28:17-20 | the twelve stones | *kornalina, topasyo, berilo; turkesa, safiro, esmeralda; hasinto, agata, amatista; krisolito, onise, haspe* | Several identifications are uncertain (meaning decision at 28:17). |
+| Exodus 30:23-24 | myrrh, cinnamon, aromatic cane, cassia | *mira, kanela, mabangong tambo, kasia* |  |
+| Exodus 30:34 | stacte, onycha, galbanum, frankincense | *estakte, onika, galbano, kamanyang* |  |
+| Exodus 31:2 | Bezalel son of Uri, son of Hur | Bezalel na anak ni Uri na anak ni Hur |  |
+| Exodus 31:6 | Oholiab son of Ahisamach | Oholiab na anak ni Ahisamak | *ch* > *k*. |
+| Exodus 33:11 | Joshua son of Nun | Josue na anak ni Nun |  |
+| Exodus 34:14 | Jealous (as a name) | *Mapanibughuin* |  |
+| Exodus 34:22 | Feast of Weeks | *Pista ng mga Sanlinggo* |  |
+| Exodus 40:2 | tabernacle; tent of meeting | *Tabernakulo* (L, B), *Toldang Sambahan* (R); *Toldang Tipanan* |  |
+| Leviticus 1:3 | burnt offering; offering by fire | *handog na sinusunog*; *handog na pinaraan sa apoy* (L, B), *handog na sinunog sa apoy* (R) |  |
+| Leviticus 10:1 | Nadab; Abihu | Nadab; Abihu |  |
+| Leviticus 10:4 | Mishael; Elzaphan; Uzziel | Misael; Elzafan; Uziel | As in Exodus 6:18-22. |
+| Leviticus 11:10 | detestable; abomination | *karima-rimarim* (L, B), *nakapandidiri* (R); *kasuklam-suklam* |  |
+| Leviticus 11:29 | swarming things | *nagkukulupon* |  |
+| Leviticus 13:2 | scale disease (*tsara'at*); mark | *ketong* (L), *malubhang sakit sa balat* (B, R); *tanda* (L), *sugat* (B, R) | As in §6. |
+| Leviticus 13:30 | scall | *galis* (L), *nangangaliskis na galis* (B), *makating batik na nangangaliskis* (R) |  |
+| Leviticus 13:47 | mold (in cloth or a house) | *amag*, *batik ng amag* (B, R) |  |
+| Leviticus 14:4 | cedar wood; scarlet yarn; hyssop | *kahoy na sedro*; *pulang sinulid*; *isopo* |  |
+| Leviticus 15:2 | discharge; semen | *agas*; *binhi* (L), *semilya* (B, R) |  |
+| Leviticus 16:8 | Azazel; lots | Azazel; *palabunutan* |  |
+| Leviticus 16:29 | afflict yourselves | *pahihirapan ninyo ang inyong sarili* (L), *magpakumbaba sa pamamagitan ng pag-aayuno* (B) |  |
+| Leviticus 17:7 | goat-demons | *mga demonyong kambing* |  |
+| Leviticus 18:6 | uncover nakedness | *ilantad ang kahubaran* (L), *makipagtalik* (B, R) |  |
+| Leviticus 18:21 | Molech | Molec | R: *diyos na si Molec*. |
+| Leviticus 19:31 | mediums; spiritists | *mga nakikipag-usap sa patay*; *mga espiritista* |  |
+| Leviticus 20:9 | his blood is on him | *ang kaniyang dugo [ay] nasa kaniya* (L), *siya ang may pananagutan sa sarili niyang kamatayan* (B) |  |
+| Leviticus 21:7 | prostitute | *babaeng nagbebenta ng aliw* |  |
+| Leviticus 21:17 | blemish, defect | *kapintasan* (L, B), *depekto* (R) |  |
+| Leviticus 23:2 | appointed times | *mga takdang panahon* (L), *mga takdang kapistahan* (B), *mga natatanging kapistahan* (R) |  |
+| Leviticus 23:10 | sheaf | *bigkis* |  |
+| Leviticus 23:24 | day of loud blasts | *malalakas na hudyat* |  |
+| Leviticus 23:42 | booths | *mga kubol* | R: *mga kubol na gawa sa mga sanga*. |
+| Leviticus 24:11 | Shelomith; Dibri | Selomit; Dibri |  |
+| Leviticus 24:11 | blaspheme the Name | *lapastanganin ang Pangalan* (L, B), *laitin ang pangalan ng PANGINOON* (R) |  |
+| Leviticus 25:9 | ram's horn (*shofar*) | *tambuli* | R: *tambuling yari sa sungay ng lalaking tupa*. |
+| Leviticus 25:23 | sojourners and settlers | *mga dayuhang nakikipamayan at mga naninirahan* (L), *mga dayuhan at mga nakikitira* (B) |  |
+| Leviticus 25:36 | interest | *patubo* |  |
+| Leviticus 27:2 | valuation | *pagtataya* (L), *halaga* (B), *takdang halaga* (R) |  |
+| Leviticus 27:3 | sanctuary shekel; gerah | *siklo ng santuwaryo*; *gera* | R: *opisyal na siklong ginagamit sa Toldang Sambahan*. |
+| Leviticus 27:16 | homer | *homer* | Under `units` at B and R: *mga 200 litro*. |
+| Leviticus 27:28 | devoted thing (*kherem*) | *itinalagang bagay* (L), *lubos na itinalaga* (B, R) | Of a person under judgment: *itinalaga sa pagkawasak*. |

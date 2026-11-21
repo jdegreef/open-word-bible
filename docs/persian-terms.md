@@ -347,6 +347,8 @@ priest), باراباس, قیصر, آگوستوس, پولس, سولس, برنا�
   15).
 - ملکوت or پادشاهی for "kingdom" at L and B.
 - عدالت or پارسایی for *dikaiosynē* and *tsedaqah*.
+- Jesse: یسا (Ruth 4:17, the Old Version's form) or یسّی; Ram: رام or ارام
+  (Matthew 1:3-4); the vowel sign in عُرفه.
 
 ## Added while drafting
 
@@ -365,3 +367,26 @@ section for the book, here.
   تغییر دادن (R); توبه کردن is kept for people.
 - **Exodus 34:6** as Jonah quotes it (4:2): خدایی پرفیض و رحیم، دیرخشم و سرشار
   از محبت وفادارانه (L); to be matched when Exodus is drafted.
+
+### Ruth
+
+- **Names**: الیملک, محلون, کلیون, عُرفه (with the damma, so it is not read
+  as عرفه), مارا, افراته (Ephrathah) and افراتی (Ephrathite), عوبید, یسا,
+  فارص, حصرون, رام, عمیناداب, نحشون, شلمه (Literal 4:20 only) / شلمون, تامار.
+- **Harvest**: خوشه‌چینی کردن (glean), دروگران (harvesters), بافه (sheaf,
+  *omer*), دسته (bundle, *tsevatim*), خرمنگاه (threshing floor), خرمن (the
+  heap), باد دادن (winnow), ایفه (ephah; `{{units:حدود ۲۲ لیتر|حدود یک ایفه}}`
+  at B and R), پیمانه (an unnamed measure), سرکه (the vinegar dip).
+- **Family**: مادرشوهر, عروس (daughter-in-law), جاری (a husband's brother's
+  wife, the exact word), خاندان (clan), میراث (the family land).
+- **The redeemer**: ولیّ / خویشاوند رهاننده / R as the table above; the
+  verb رهاندن for a person (3:13), بازخرید کردن for land (4:3-6); at R in
+  chapter 4 خویشاوند نزدیک‌تر for the other relative.
+- **Others**: غریب (resident outsider) and بیگانه (foreigner, 2:10) kept
+  apart; کنیز (maidservant, L and B) and خدمتکار (R); شال (shawl, not
+  چادر); کفش (sandal, not نعلین); پرستار (Naomi as the child's carer, not
+  دایه); مشایخ (L, B) and بزرگان شهر (R) for the elders.
+- **Address**: Naomi and Ruth say تو to each other; Boaz says تو to Ruth and
+  his workers' and Ruth's شما to him at B and R; Boaz and the other relative
+  say شما to each other at B and R; the townswomen and the elders say تو in
+  their blessings.

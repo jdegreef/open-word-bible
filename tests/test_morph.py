@@ -97,6 +97,9 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe("N-DSF", "tl"), "Pangngalan · datibo, isahan, pambabae")
         self.assertEqual(morph.describe("V-2AAI-3S", "fa"), "فعل · آئوریست دوم، اخباری، معلوم · سوم شخص مفرد")
         self.assertEqual(morph.describe("N-DSF", "fa"), "اسم · داتیو، مفرد، مؤنث")
+        self.assertEqual(morph.describe("V-2AAI-3S", "pa"),
+                         "ਕਿਰਿਆ · ਦੂਜਾ ਏਓਰਿਸਟ (ਆਮ ਭੂਤ), ਨਿਸ਼ਚੇਵਾਚਕ, ਕਰਤਰੀ ਵਾਚ · ਅਨਯ ਪੁਰਖ, ਇੱਕ-ਵਚਨ")
+        self.assertEqual(morph.describe("N-DSF", "pa"), "ਨਾਂਵ · ਸੰਪ੍ਰਦਾਨ ਕਾਰਕ, ਇੱਕ-ਵਚਨ, ਇਸਤਰੀ ਲਿੰਗ")
 
     def test_every_hebrew_code_in_the_extracts_is_described(self):
         words = [w for path in (ROOT / "data" / "hbo").glob("*.json")
@@ -148,6 +151,8 @@ class MorphTest(unittest.TestCase):
                          "Pandiwa · Qal · salaysay ng nakaraan (wayyiqtol) · ikatlong panauhan panlalaki isahan")
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "fa"),
                          "فعل · Qal · ماضی روایی (wayyiqtol) · سوم شخص مذکر مفرد")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "pa"),
+                         "ਕਿਰਿਆ · Qal · ਬੀਤੇ ਦਾ ਬਿਰਤਾਂਤ (ਵੱਯਿਕਤੋਲ) · ਅਨਯ ਪੁਰਖ ਪੁਲਿੰਗ ਇੱਕ-ਵਚਨ")
         # Aramaic stems share letters with Hebrew ones but not names.
         self.assertEqual(morph.describe_hebrew("Vai3ms", "en", "A"),
                          "Verb · Aphel · imperfect (yiqtol) · 3rd person masculine singular")

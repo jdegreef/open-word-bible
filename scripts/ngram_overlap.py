@@ -13,11 +13,18 @@ tab-separated file of "VERSE_ID<TAB>text" lines (e.g. "COL.1.1<TAB>Paul, ...").
 Keep that file outside the repository. A Bible in USX (a file, or a folder of
 one file per book) can be given with --usx NAME=PATH instead: the Arabic Van
 Dyck, for one, is public domain but not in open-bibles
-(github.com/BibleAquifer/ArabicVanDyckBible, arb/usx).
+(github.com/BibleAquifer/ArabicVanDyckBible, arb/usx). A Bible in USFM
+is given with --usfm NAME=PATH the same way: the Punjabi Bible of 1945
+(public domain, github.com/tfbf/Bible-Punjabi-Pavitr-Bible-1945) and its
+revision, the Punjabi IRV (CC BY-SA, github.com/FreeBiblesIndia/Punjabi_Bible),
+are both USFM.
 
 Arabic words are compared without their vowel marks or tatweel, and with the
 alef, alef maqsura and teh marbuta forms folded, so that a voweled draft
-matches an unvoweled or differently voweled Bible.
+matches an unvoweled or differently voweled Bible. Gurmukhi words keep
+their vowel signs, and are compared without the addak (ੱ), the nukta and
+the halant, with tippi read as bindi: the 1945 Punjabi Bible's ਪੁੱਤ੍ਰ and a
+modern ਪੁੱਤਰ, or ਸ਼ and ਸ, are one word.
 
 Our Old Testament verses are numbered as the Hebrew text is (a psalm's title
 is verse 1); the comparison Bibles, --extra files included, are taken to use
@@ -28,6 +35,8 @@ Usage:
     OWB_VENDOR=<sources dir> python3 scripts/ngram_overlap.py content/COL/COL.1.json
     python3 scripts/ngram_overlap.py --no-open-bibles --extra niv=~/niv-col.tsv content/COL/*.json
     python3 scripts/ngram_overlap.py --language ar --usx vd=~/ArabicVanDyckBible/arb/usx content/RUT/*.json
+    python3 scripts/ngram_overlap.py --language pa --usfm pb1945=~/pb1945/usfm \
+        --usfm irv=~/punjabi_bible/usfm content/RUT/*.json
 
 Options: --language en, --levels L,B,R, --min 6, --distinctive (only runs
 not shared with any public-domain Bible; needs --extra).
@@ -46,14 +55,20 @@ from owb import markup, refs, versification  # noqa: E402
 # Our language codes and the open-bibles language codes.
 OPEN_BIBLE_LANGUAGE = {"en": "eng", "es": "spa"}
 
-_WORD = re.compile(r"[^\W_]+(?:'[^\W_]+)*")
+_WORD = re.compile(r"(?:[^\W_]|[\u0a01-\u0a75])+(?:'[^\W_]+)*")
 _ARABIC_MARKS = re.compile("[\u0640\u064b-\u065f\u0670]")
 _ARABIC_LETTERS = str.maketrans({"ٱ": "ا", "أ": "ا", "إ": "ا", "آ": "ا", "ى": "ي", "ة": "ه"})
+# Gurmukhi: drop addak, nukta and halant, read tippi as bindi, and the
+# letters with a dot as the plain ones.
+_GURMUKHI = str.maketrans({"\u0a71": None, "\u0a3c": None, "\u0a4d": None, "\u0a70": "\u0a02",
+                           "\u0a36": "\u0a38", "\u0a59": "\u0a16", "\u0a5a": "\u0a17",
+                           "\u0a5b": "\u0a1c", "\u0a5e": "\u0a2b", "\u0a33": "\u0a32"})
 
 
 def words(text):
-    """The words of text, apostrophes kept inside words, Arabic folded."""
-    text = _ARABIC_MARKS.sub("", text.replace("’", "'")).translate(_ARABIC_LETTERS)
+    """The words of text, apostrophes kept inside words, Arabic and Gurmukhi
+    folded."""
+    text = _ARABIC_MARKS.sub("", text.replace("’", "'")).translate(_ARABIC_LETTERS).translate(_GURMUKHI)
     return _WORD.findall(text)
 
 
@@ -103,6 +118,38 @@ def read_usx(path):
         for book, chapter, verse, body in _USX_VERSE.findall(text):
             out[f"{book}.{chapter}.{verse}"] = " ".join(re.sub(r"<[^>]+>", " ", body).split())
     return out
+
+
+_USFM_SKIP = re.compile(r"\\f .*?\\f\*|\\x .*?\\x\*", re.S)
+_USFM_VERSE_START = re.compile(r"[ \t]*\\v ")  # a verse may start mid-line, after \p
+_USFM_MARKER = re.compile(r"\\\+?[a-z]+\d*\*?")
+
+
+def read_usfm(path):
+    """{verse id: text} from a USFM file, or from every .usfm and .sfm file
+    in a folder. Footnotes, cross-references, headings and introductions
+    are left out; character markers are dropped and their words kept."""
+    path = Path(path).expanduser()
+    out = {}
+    files = sorted([*path.glob("*.usfm"), *path.glob("*.sfm")]) if path.is_dir() else [path]
+    for file in files:
+        book = chapter = verse = None
+        text = _USFM_VERSE_START.sub("\n\\\\v ", _USFM_SKIP.sub(" ", file.read_text(encoding="utf-8")))
+        for line in text.splitlines():
+            marker, _, rest = line.strip().partition(" ")
+            if marker == "\\id":
+                book, verse = rest[:3].upper(), None
+            elif marker == "\\c":
+                chapter, verse = rest.split()[0], None
+            elif marker == "\\v" and book and chapter:
+                number, _, rest = rest.partition(" ")
+                verse = f"{book}.{chapter}.{number.split('-')[0]}"
+                out[verse] = rest
+            elif verse and marker in {"\\p", "\\q", "\\q1", "\\q2", "\\q3", "\\m", "\\pi", "\\li", "\\li1", "\\nb", ""}:
+                out[verse] += " " + rest if marker else " " + line
+            elif marker.startswith(("\\s", "\\ms", "\\mr", "\\r", "\\d", "\\i", "\\h", "\\toc", "\\mt", "\\cl")):
+                verse = None if not marker.startswith("\\d") else verse
+    return {key: " ".join(_USFM_MARKER.sub(" ", text).split()) for key, text in out.items()}
 
 
 def open_bible_editions(language):
@@ -183,6 +230,8 @@ def main(argv=None):
                         help="a local VERSE_ID<TAB>text file to compare against")
     parser.add_argument("--usx", action="append", default=[], metavar="NAME=PATH",
                         help="a USX file, or a folder of them, to compare against")
+    parser.add_argument("--usfm", action="append", default=[], metavar="NAME=PATH",
+                        help="a USFM file, or a folder of them, to compare against")
     parser.add_argument("--no-open-bibles", action="store_true",
                         help="skip the public-domain Bibles in vendor/open-bibles")
     parser.add_argument("--distinctive", action="store_true",
@@ -193,7 +242,8 @@ def main(argv=None):
 
     editions = {} if args.no_open_bibles else open_bible_editions(args.language)
     extra = []
-    for option, items, read in (("--extra", args.extra, read_tsv), ("--usx", args.usx, read_usx)):
+    for option, items, read in (("--extra", args.extra, read_tsv), ("--usx", args.usx, read_usx),
+                                ("--usfm", args.usfm, read_usfm)):
         for item in items:
             name, sep, path = item.partition("=")
             if not sep or not name or not path:

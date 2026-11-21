@@ -24,15 +24,28 @@ sentence whose digest has changed since, because an import changed it, is
 "changed since approval" and goes back in the queue. A flag stays open until
 the layer is approved again.
 
+Each sentence's state in a layer is kept in ReviewState (one row per
+sentence approved or flagged in the layer, kept up to date as events are
+saved), so queues are filtered, counted and paged in the database. refresh()
+compares the approvals of sentences saved since they were last checked with
+what the sentences say now, so "changed since approval" needs no full
+rebuild after an import or a review.
+
 Approving the meaning moves a sentence from ai_draft to meaning_reviewed.
 Wording approvals are kept per language and don't change the sentence's
 status: when a sentence counts as "reviewed" is the charter's to decide.
 """
 import hashlib
 import json
+from datetime import timedelta
+from functools import reduce
+from operator import or_
 
 from django.core.cache import cache
-from django.db.models import Count, Max, Prefetch
+from django.db import transaction
+from django.db.models import Count, F, FilteredRelation, Max, Prefetch, Q, Value
+from django.db.models.functions import Coalesce
+from django.utils import timezone
 from rest_framework import status
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
@@ -41,14 +54,18 @@ from accounts.models import Role
 from api.views import record_json
 from owb import languages, refs
 from texts.models import Word
-from translation.models import Decision, Rendering, ReviewEvent, Sentence, Status
+from translation.models import Decision, Rendering, ReviewEvent, ReviewState, Sentence, Status
 
 from .inbox import verse_label
 from .permissions import admin_view, is_super_admin
 from .snapshot import snapshot
 
 A = ReviewEvent.Action
+RS = ReviewState.State
 PAGE = 50
+BIBLE_ORDER = ("book_order", "chapter", "verse", "number", "id")
+# Longer than an import takes to commit one file's sentences (refresh).
+SLACK = timedelta(minutes=15)
 ORDER = {code: i for i, code in enumerate(refs.BOOK_CODES)}
 STATES = ("not_reviewed", "approved", "changed", "flagged")
 
@@ -83,12 +100,6 @@ def _scope(layer):
     return Sentence.objects.filter(id__in=Rendering.objects.filter(language=layer).values("sentence_id"))
 
 
-def _events(layer):
-    if _meaning(layer):
-        return ReviewEvent.objects.filter(language="", sentence__source_edition__language=layer)
-    return ReviewEvent.objects.filter(language=layer)
-
-
 def _approve(layer):
     return A.MEANING_REVIEWED if _meaning(layer) else A.REVIEWED
 
@@ -116,51 +127,88 @@ def _with_texts(queryset, layer):
                                      Prefetch("decisions", Decision.objects.filter(language=layer)))
 
 
-def _latest(events):
-    """{sentence id: its latest approval or flag} among events."""
-    return {e.sentence_id: e for e in events.filter(action__in=[A.MEANING_REVIEWED, A.REVIEWED, A.FLAGGED])
-            .select_related("user").order_by("sentence_id", "-created_at", "-id").distinct("sentence_id")}
+def _in_layer(sentences, layer):
+    """sentences with their state in layer (st) and the id of their latest
+    approval or flag there (last_id), from ReviewState."""
+    return (sentences.annotate(rs=FilteredRelation("review_states", condition=Q(review_states__layer=layer)))
+            .annotate(st=Coalesce("rs__state", Value("not_reviewed")), last_id=F("rs__event_id")))
+
+
+def refresh(layer):
+    """Compare each approval in layer whose sentence has been saved since it
+    was last compared (an import saves the sentences it changes) with what
+    the sentence says now: "approved" if it still matches, "changed" if not.
+    Only approvals never compared, and sentences saved after the last
+    refresh of the layer began, are looked at; or SLACK before, for an
+    import that had not committed yet then (updated_at is when a sentence
+    was saved, not when the import committed it)."""
+    began = timezone.now()
+    newest = Sentence.objects.aggregate(t=Max("updated_at"))["t"]
+    key = f"staff.review.refreshed.{layer}"
+    since = cache.get(key)
+    approvals = (ReviewState.objects.filter(layer=layer, state__in=[RS.APPROVED, RS.CHANGED])
+                 .values_list("id", "sentence_id", "event_id", "event__digest"))
+    saved = approvals.filter(checked_at__lt=F("sentence__updated_at"))
+    if since is not None:
+        saved = saved.filter(sentence__updated_at__gt=since)
+    stale = list({*approvals.filter(checked_at__isnull=True), *saved})
+    for start in range(0, len(stale), 500):
+        chunk = stale[start:start + 500]
+        sentences = _with_texts(Sentence.objects.filter(id__in=[row[1] for row in chunk]), layer).in_bulk()
+        groups = {}
+        for pk, sentence_id, event_id, approved in chunk:
+            s = sentences[sentence_id]
+            state = RS.APPROVED if digest(s, layer) == approved else RS.CHANGED
+            groups.setdefault((state, s.updated_at), []).append(Q(pk=pk, event_id=event_id))
+        for (state, checked), rows in groups.items():
+            # Only rows still on the approval compared: one made meanwhile
+            # has reset its row, to be compared next time.
+            ReviewState.objects.filter(reduce(or_, rows)).update(state=state, checked_at=checked)
+    # Every sentence saved by then has been compared.
+    done = min(newest, began - SLACK) if newest else None
+    if done is not None and (since is None or done > since + timedelta(minutes=1)):
+        cache.set(key, done, 30 * 86400)
 
 
 def states(layer):
     """{sentence id: "approved", "changed" or "flagged"} for every sentence
-    in the layer that has been approved or flagged. Cached until a review is
-    made or a sentence is imported again."""
+    in the layer that has been approved or flagged."""
+    refresh(layer)
+    return dict(ReviewState.objects.filter(layer=layer).values_list("sentence_id", "state"))
+
+
+def state_of(layer, sentence_id):
+    refresh(layer)
+    return (ReviewState.objects.filter(layer=layer, sentence_id=sentence_id).values_list("state", flat=True).first()
+            or "not_reviewed")
+
+
+def open_flag_count():
+    return ReviewState.objects.filter(state=RS.FLAGGED).count()
+
+
+def _next(layer, s):
+    """The record id of the next sentence after s in the layer's queue that
+    isn't approved, or None: one query, read along the Bible order index
+    from s's book."""
+    o, c, v, n = s.book_order, s.chapter, s.verse, s.number
+    after = (Q(book_order__gt=o) | Q(book_order=o, chapter__gt=c) | Q(book_order=o, chapter=c, verse__gt=v)
+             | Q(book_order=o, chapter=c, verse=v, number__gt=n)
+             | Q(book_order=o, chapter=c, verse=v, number=n, id__gt=s.id))
+    return (_in_layer(_scope(layer), layer).filter(after, ~Q(st=RS.APPROVED), book_order__gte=o)
+            .order_by(*BIBLE_ORDER).values_list("record_id", flat=True).first())
+
+
+def _books(layer):
+    """The layer's books in Bible order, cached until a sentence is added or
+    saved again."""
     stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
-    last = ReviewEvent.objects.aggregate(i=Max("id"))["i"] or 0
-    key = "staff.review.{}.{}.{}.{}".format(layer, last, stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0)
-    out = cache.get(key)
-    if out is None:
-        latest = _latest(_events(layer))
-        out = {sid: "flagged" for sid, e in latest.items() if e.action == A.FLAGGED}
-        approved = {sid: e for sid, e in latest.items() if e.action != A.FLAGGED}
-        for s in _with_texts(Sentence.objects.filter(id__in=list(approved)), layer):
-            out[s.id] = "approved" if digest(s, layer) == approved[s.id].digest else "changed"
-        cache.set(key, out, 7 * 86400)
-    return out
-
-
-def _rows(layer, book=None, chapter=None):
-    """(id, record_id, book, chapter, verse, number) of the layer's sentences,
-    in Bible order."""
-    rows = _scope(layer)
-    if book:
-        rows = rows.filter(book=book)
-        if chapter:
-            rows = rows.filter(chapter=chapter)
-    rows = list(rows.values_list("id", "record_id", "book", "chapter", "verse", "number"))
-    rows.sort(key=lambda r: (ORDER.get(r[2], 99), r[3], r[4], r[5]))
-    return rows
-
-
-def _next(layer, sentence_id):
-    """The record id of the next sentence after sentence_id in the layer's
-    queue that isn't approved, or None."""
-    rows = _rows(layer)
-    st = states(layer)
-    ids = [r[0] for r in rows]
-    start = ids.index(sentence_id) + 1 if sentence_id in ids else 0
-    return next((r[1] for r in rows[start:] if st.get(r[0]) != "approved"), None)
+    key = "staff.review.books.{}.{}.{}".format(layer, stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0)
+    books = cache.get(key)
+    if books is None:
+        books = [b for _, b in _scope(layer).order_by("book_order").values_list("book_order", "book").distinct()]
+        cache.set(key, books, 7 * 86400)
+    return books
 
 
 def _layer(layer, allowed):
@@ -205,16 +253,25 @@ def queue(request):
     state = request.query_params.get("state") or ""
     if state and state not in (*STATES, "todo"):
         raise ValidationError({"state": "Choose a state.", "code": "invalid_state"})
-    rows = _rows(layer, book, chapter)
-    st = states(layer)
+    refresh(layer)
+    rows = _scope(layer)
+    if book:
+        rows = rows.filter(book=book)
+        if chapter:
+            rows = rows.filter(chapter=chapter)
+    rows = _in_layer(rows, layer)
     counts = {s: 0 for s in STATES}
-    for r in rows:
-        counts[st.get(r[0], "not_reviewed")] += 1
+    for row in rows.order_by().values("st").annotate(n=Count("id")):
+        counts[row["st"]] = row["n"]
+    total = sum(counts.values())
     if state == "todo":
-        rows = [r for r in rows if st.get(r[0]) != "approved"]
+        rows, matching = rows.filter(~Q(st=RS.APPROVED)), total - counts["approved"]
     elif state:
-        rows = [r for r in rows if st.get(r[0], "not_reviewed") == state]
-    page = rows[offset:offset + PAGE]
+        rows, matching = rows.filter(st=state), counts[state]
+    else:
+        matching = total
+    page = list(rows.order_by(*BIBLE_ORDER)
+                .values_list("id", "record_id", "book", "chapter", "verse", "st", "last_id")[offset:offset + PAGE])
     ids = [r[0] for r in page]
     if _meaning(layer):
         preview = dict(Sentence.objects.filter(id__in=ids).values_list("id", "literal_gloss"))
@@ -224,17 +281,17 @@ def queue(request):
                                  .values_list("sentence_id", "level", "text")):
             if level == "B" or sid not in preview:
                 preview[sid] = text
-    latest = _latest(_events(layer).filter(sentence_id__in=ids))
-    books = sorted(_scope(layer).values_list("book", flat=True).distinct(), key=lambda b: ORDER.get(b, 99))
+    latest = ReviewEvent.objects.select_related("user").in_bulk([r[6] for r in page if r[6]])
+    books = _books(layer)
     return Response({
         "layer": layer_json(layer), "layers": [layer_json(code) for code in allowed],
         "books": [{"code": b, "name": refs.BOOK_NAMES.get(b, b)} for b in books],
-        "counts": {**counts, "total": sum(counts.values())},
-        "offset": offset, "more": offset + PAGE < len(rows), "matching": len(rows),
+        "counts": {**counts, "total": total},
+        "offset": offset, "more": offset + PAGE < matching, "matching": matching,
         "sentences": [{
             "record": r[1], "verse": f"{r[2]}.{r[3]}.{r[4]}", "label": verse_label(f"{r[2]}.{r[3]}.{r[4]}"),
-            "state": st.get(r[0], "not_reviewed"), "preview": preview.get(r[0], ""),
-            "last": _event_json(latest[r[0]]) if r[0] in latest else None,
+            "state": r[5], "preview": preview.get(r[0], ""),
+            "last": _event_json(latest[r[6]]) if r[6] in latest else None,
         } for r in page],
     })
 
@@ -276,10 +333,10 @@ def sentence(request, record_id):
         "layer": layer_json(layer), "layers": [layer_json(code) for code in fitting],
         "record": record_json(s), "verse": s.refs[0], "label": verse_label(s.refs[0]), "words": words,
         "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()],
-        "state": states(layer).get(s.id, "not_reviewed"),
+        "state": state_of(layer, s.id),
         "trail": [_event_json(e, currents.get(e.language or s.source_edition.language)
                               if e.action in (A.MEANING_REVIEWED, A.REVIEWED) else None) for e in trail],
-        "next": _next(layer, s.id),
+        "next": _next(layer, s),
     })
 
 
@@ -293,23 +350,31 @@ def _act(request, s, layer, data):
     if len(note) > 4000:
         raise ValidationError({"note": "Keep it under 4,000 characters.", "code": "too_long"})
     kind = {"approve": _approve(layer), "flag": A.FLAGGED, "comment": A.COMMENT}[action]
-    event = ReviewEvent.objects.create(sentence=s, user=request.user, action=kind, note=note,
-                                       language="" if _meaning(layer) else layer,
-                                       digest=digest(s, layer) if action == "approve" else "",
-                                       snapshot=snapshot(s, layer) if action == "approve" else {})
-    if kind == A.MEANING_REVIEWED:
-        # update(), not save(): updated_at says when the text last changed.
-        Sentence.objects.filter(pk=s.pk, status=Status.AI_DRAFT).update(status=Status.MEANING_REVIEWED)
-    return Response({"event": _event_json(event), "state": states(layer).get(s.id, "not_reviewed"),
-                     "next": _next(layer, s.id)}, status=status.HTTP_201_CREATED)
+    with transaction.atomic():
+        # Saving the event brings the sentence's ReviewState up to date.
+        event = ReviewEvent.objects.create(sentence=s, user=request.user, action=kind, note=note,
+                                           language="" if _meaning(layer) else layer,
+                                           digest=digest(s, layer) if action == "approve" else "",
+                                           snapshot=snapshot(s, layer) if action == "approve" else {})
+        if action == "approve":
+            # The digest was just taken from s as loaded: no need to compare again.
+            ReviewState.objects.filter(sentence=s, layer=layer, event=event).update(checked_at=s.updated_at)
+        if kind == A.MEANING_REVIEWED:
+            # update(), not save(): updated_at says when the text last changed.
+            Sentence.objects.filter(pk=s.pk, status=Status.AI_DRAFT).update(status=Status.MEANING_REVIEWED)
+    return Response({"event": _event_json(event), "state": state_of(layer, s.id),
+                     "next": _next(layer, s)}, status=status.HTTP_201_CREATED)
 
 
 def open_flags():
     """Flags not followed by an approval of the same layer, newest first."""
-    latest = (ReviewEvent.objects.filter(action__in=[A.MEANING_REVIEWED, A.REVIEWED, A.FLAGGED])
-              .select_related("user", "sentence__source_edition")
-              .order_by("sentence_id", "language", "-created_at", "-id").distinct("sentence_id", "language"))
-    return sorted((e for e in latest if e.action == A.FLAGGED), key=lambda e: e.created_at, reverse=True)
+    out = []
+    for row in (ReviewState.objects.filter(state=RS.FLAGGED)
+                .select_related("event__user", "sentence__source_edition")
+                .order_by("-event__created_at", "-event_id")):
+        row.event.sentence = row.sentence
+        out.append(row.event)
+    return out
 
 
 @admin_view("inbox")
