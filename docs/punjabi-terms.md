@@ -572,3 +572,23 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Earthly masters and the Master in heaven are both ਮਾਲਕ (6:5, 6:9).
 - The sleeper (5:14) and the child in the fifth commandment (6:2-3) are
   addressed as ਤੂੰ.
+
+### 1 Peter
+
+- Names: ਪਤਰਸ, ਸਿਲਵਾਨੁਸ (as 1 Thessalonians), ਮਰਕੁਸ, ਸਾਰਾਹ, ਅਬਰਾਹਾਮ,
+  ਨੂਹ, ਬਾਬੁਲ, ਸੀਯੋਨ; provinces ਪੁੰਤੁਸ, ਗਲਾਤਿਯਾ, ਕੱਪਦੁਕਿਯਾ, ਆਸਿਯਾ,
+  ਬਿਥੁਨਿਯਾ.
+- Priesthood ਜਾਜਕ-ਮੰਡਲੀ; cornerstone ਖੂੰਜੇ ਦਾ ਪੱਥਰ; overseer (2:25)
+  ਨਿਗਰਾਨ; Chief Shepherd ਮੁੱਖ ਚਰਵਾਹਾ; flock ਇੱਜੜ.
+- *Xylon* (2:24) ਲੱਕੜ (L), ਸਲੀਬ (B, R).
+- Elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B), ਕਲੀਸਿਯਾ ਦੇ ਆਗੂ (R), as Titus 1:5.
+- *Ta ethnē* in 4:3 are the readers' pagan past: ਪਰਾਈਆਂ ਕੌਮਾਂ (L),
+  ਮੂਰਤੀ-ਪੂਜਕ (B), ਪਰਮੇਸ਼ੁਰ ਨੂੰ ਨਾ ਜਾਣਨ ਵਾਲੇ ਲੋਕ (R), not ਗ਼ੈਰ-ਯਹੂਦੀ.
+- Kyrios said of Abraham (3:6) ਸੁਆਮੀ; ਪ੍ਰਭੂ stays for God and Christ.
+  Psalm 34 quotations (1:25, 3:12) use ਪ੍ਰਭੂ with no divine_name span.
+- *Pneuma* as disposition (3:4) and the spirits in prison (3:19) are not
+  the Holy Spirit; *ekēryxen* (3:19) ਘੋਸ਼ਣਾ ਕੀਤੀ, not "preached the
+  gospel" (marked uncertain).
+- Flesh ਸਰੀਰ throughout chapter 4; brotherhood (5:9)
+  {{gender:ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ ਦੇ ਪਰਿਵਾਰ|ਭਾਈਚਾਰੇ}} (L).
+- Wives (3:1-6) take feminine verbs (ਕਰਦੀਆਂ ਹੋ).
