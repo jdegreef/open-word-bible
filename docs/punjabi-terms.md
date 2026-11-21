@@ -195,7 +195,54 @@ the tribe; ਯਹੂਦਾ is Judas in the New Testament), ਯੂਸੁਫ਼, �
 
 ## 12. Revelation
 
-Added when Revelation is drafted.
+- Address: God on the throne and the Lamb take honorific plural forms
+  (ਲੇਲਾ ... ਜਿੱਤ ਪਾਉਣਗੇ, ਬੈਠੇ ਹਨ); a noun right beside its verb may keep
+  singular agreement (ਲੇਲਾ ਖੜ੍ਹਾ). Praise addressed to God uses ਤੂੰ. The
+  risen Jesus speaks with plain first-person forms and says ਤੂੰ to each
+  church; angels say ਤੂੰ to John; the angel in 14:15 says ਲਾਓ, ਚਲਾਓ to
+  the one like a son of man. The laments of chapter 18 address Babylon as
+  ਤੂੰ, feminine (ਵੱਡੀ ਨਗਰੀ in R). The rider of 19:11 is honorific.
+- Beings: one like a son of man ਮਨੁੱਖ ਦੇ ਪੁੱਤਰ ਵਰਗਾ ਕੋਈ (L, B), ਇੱਕ
+  ਮਨੁੱਖ ਵਰਗਾ ਕੋਈ (R), as Daniel 7:13; elders ਬਜ਼ੁਰਗ; living creatures
+  ਜੀਉਂਦੇ ਪ੍ਰਾਣੀ; beast ਪਸ਼ੂ (L, B), ਜਾਨਵਰ (R), as Daniel 7; dragon
+  ਅਜਗਰ; devil ਸ਼ੈਤਾਨ, but *diabolos* and *Satanas* together (12:9, 20:2)
+  ਇਬਲੀਸ ਅਤੇ ਸ਼ੈਤਾਨ, marked uncertain; false prophet ਝੂਠਾ ਨਬੀ; Michael
+  ਮੀਕਾਏਲ; fellow slave ਸੰਗੀ ਦਾਸ (L, B), ਪਰਮੇਸ਼ੁਰ ਦਾ ਦਾਸ (R); bride ਪਤਨੀ
+  (L, 19:7), ਲਾੜੀ (B, R); holy ones ਪਵਿੱਤਰ ਜਨ (L), ਪਰਮੇਸ਼ੁਰ ਦੇ ਪਵਿੱਤਰ
+  ਲੋਕ (B), ਪਰਮੇਸ਼ੁਰ ਦੇ ਲੋਕ (R).
+- Objects: scroll ਪੱਤਰੀ, little scroll ਛੋਟੀ ਪੱਤਰੀ, book of life ਜੀਵਨ ਦੀ
+  ਪੋਥੀ (ਕਿਤਾਬ at R); lampstands ਸ਼ਮਾਦਾਨ; censer ਧੂਪਦਾਨ; bowls of wrath
+  ਕਟੋਰੇ at every level; cup ਕਟੋਰਾ (L), ਪਿਆਲਾ (B, R); image ਮੂਰਤੀ (L, B),
+  ਬੁੱਤ (R); mark ਛਾਪ; royal crowns ਰਾਜ-ਮੁਕਟ (L, B), ਰਾਜੇ ਦਾ ਤਾਜ (R);
+  crown ਤਾਜ; harps ਰਬਾਬ (uncertain); sickle ਦਾਤਰੀ; winepress ਅੰਗੂਰ ਪੀੜਨ
+  ਦਾ ਕੁੰਡ; ark of the covenant ਨੇਮ ਦਾ ਸੰਦੂਕ; tent of witness ਗਵਾਹੀ ਦਾ
+  ਤੰਬੂ; fine linen ਮਲਮਲ; millstone ਚੱਕੀ ਦਾ ਪੁੜ; abyss ਅਥਾਹ ਕੁੰਡ (L, B),
+  ਬਿਨਾਂ ਥੱਲੇ ਵਾਲਾ ਟੋਆ (R); Hades ਪਤਾਲ (L, B), ਮੁਰਦਿਆਂ ਦਾ ਥਾਂ (R); lake
+  of fire ਅੱਗ ਦੀ ਝੀਲ; temple (*naos*) ਹੈਕਲ.
+- Places: Babylon ਬਾਬੁਲ (feminine); Sodom ਸਦੂਮ; Egypt ਮਿਸਰ; Harmagedon
+  ਹਰਮਗਿੱਦੋਨ; Euphrates ਫ਼ਰਾਤ; Mount Zion ਸੀਯੋਨ ਪਹਾੜ; new Jerusalem ਨਵਾਂ
+  ਯਰੂਸ਼ਲਮ; Gog and Magog ਗੋਗ ਅਤੇ ਮਾਗੋਗ; the seven churches ਅਫ਼ਸੁਸ, ਸਮੁਰਨਾ,
+  ਪਰਗਮੁਮ, ਥੂਆਤੀਰਾ, ਸਾਰਦੀਸ, ਫ਼ਿਲਦਲਫ਼ੀਆ, ਲਾਉਦਿਕੀਆ.
+- Formulas: Alpha and Omega ਅਲਫ਼ਾ ਅਤੇ ਓਮੇਗਾ; Almighty ਸਰਬ ਸ਼ਕਤੀਮਾਨ;
+  Hallelujah ਹਲਲੂਯਾਹ, with ਪ੍ਰਭੂ ਦੀ ਉਸਤਤ ਕਰੋ! added at R; word of God
+  ਪਰਮੇਸ਼ੁਰ ਦਾ ਬਚਨ; prophecy ਭਵਿੱਖਬਾਣੀ; overcome ਜਿੱਤ ਪਾਉਣਾ (L, B), ਜਿੱਤ
+  ਜਾਣਾ (R); repent ਤੋਬਾ ਕਰਨਾ; woe ਹਾਇ (L, B), ਭਿਆਨਕ (R); blasphemy
+  ਨਿੰਦਿਆ (L, B), ਪਰਮੇਸ਼ੁਰ ਦਾ ਅਪਮਾਨ (R); *porneia* ਹਰਾਮਕਾਰੀ (L), ਬਦਕਾਰੀ
+  (B), ਜਿਨਸੀ ਪਾਪ (R); pour out a bowl ਉਲੱਦਣਾ (L), ਖਾਲੀ ਕਰਨਾ (B), ਡੋਲ੍ਹਣਾ
+  (R); signs ਨਿਸ਼ਾਨ; forty-two months ਬਿਆਲੀ ਮਹੀਨੇ; a time, times and half a
+  time (12:14) as Daniel 7:25; a thousand years ਹਜ਼ਾਰ ਵਰ੍ਹੇ (L, B), ਹਜ਼ਾਰ
+  ਸਾਲ (R); resurrection ਜੀ ਉੱਠਣਾ (L), ਪੁਨਰ-ਉਥਾਨ (B, R). The Lamb's title
+  takes honorific ਦੇ: ਪ੍ਰਭੂਆਂ ਦੇ ਪ੍ਰਭੂ ਅਤੇ ਰਾਜਿਆਂ ਦੇ ਰਾਜਾ (17:14),
+  ਰਾਜਿਆਂ ਦੇ ਰਾਜਾ ਅਤੇ ਪ੍ਰਭੂਆਂ ਦੇ ਪ੍ਰਭੂ (19:16, with ਸਾਰੇ ... ਸਾਰੇ at R).
+- Units: B and R put the modern measure first, `{{units:ਲਗਭਗ 300
+  ਕਿਲੋਮੀਟਰ|1,600 ਸਟੇਡੀਆ}}`, `{{units:ਲਗਭਗ 2,200 ਕਿਲੋਮੀਟਰ|12,000
+  ਸਟੇਡੀਆ}}`, `{{units:ਲਗਭਗ 65 ਮੀਟਰ|144 ਹੱਥ}}`, `{{units:ਲਗਭਗ 34
+  ਕਿੱਲੋ|ਇੱਕ ਤੋੜਾ}}`; L keeps the original unit. 144,000 is 1,44,000.
+- The twelve stones (21:19-20): ਯਸ਼ਬ, ਨੀਲਮ, ਦੂਧੀਆ ਅਕੀਕ, ਪੰਨਾ, ਗੋਮੇਦ, ਲਾਲ
+  ਅਕੀਕ (as *sardion* in 4:3), ਪੀਤਮਣੀ, ਬੈਰੂਜ, ਪੁਖਰਾਜ, ਲਸਣੀਆ, ਜ਼ਰਕਨ,
+  ਕਟੇਲਾ, marked uncertain; crystal ਬਲੌਰ.
+- Gender: *anthrōpoi* has no span from chapter 13 on (ਲੋਕ, ਮਨੁੱਖ); 21:7
+  `{{gender:ਮੇਰੀ ਸੰਤਾਨ|ਮੇਰਾ ਪੁੱਤਰ}}`; the Israelites as in 2:14 and 7:4.
 
 ## 13. Added while drafting
 
