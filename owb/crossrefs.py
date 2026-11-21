@@ -102,3 +102,27 @@ def load(book):
     if not path.is_file():
         return {}
     return json.loads(path.read_text(encoding="utf-8"))["refs"]
+
+
+def reader_target(text):
+    """A target in reader (NIV) numbering (owb/versification.py reader_ids):
+    'PSA.51.3-5' -> 'PSA.51.1-3'."""
+    first, last = parse_target(text)
+    first = refs.parse(versification.reader_ids(str(first))[0])
+    last = refs.parse(versification.reader_ids(str(last))[-1])
+    return format_target(first, max(first, last, key=refs.Ref.sort_key))
+
+
+@functools.lru_cache(maxsize=None)
+def load_reader(book):
+    """load() in reader (NIV) numbering, as the site shows verses: each
+    verse's references, and the verses they point to, renumbered. Where two
+    of our verses are one NIV verse their references are joined, at most
+    PER_VERSE."""
+    out = {}
+    for vid, targets in load(book).items():
+        moved = [reader_target(t) for t in targets]
+        for rid in versification.reader_ids(vid):
+            have = out.setdefault(rid, [])
+            have.extend(t for t in moved if t not in have and t.partition("-")[0] != rid)
+    return {rid: ts[:PER_VERSE] for rid, ts in out.items()}

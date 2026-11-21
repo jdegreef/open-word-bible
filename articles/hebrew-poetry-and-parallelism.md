@@ -25,7 +25,7 @@ This is a gift to translators. Rhyme and metre are lost when a poem leaves its l
 
 ## Lines that echo
 
-Lowth's first kind is *synonymous* parallelism, where the second line restates the first. Psalm 19:2 is an example. So is Isaiah's complaint at the start of his book:
+Lowth's first kind is *synonymous* parallelism, where the second line restates the first. Psalm 19:1 is an example. So is Isaiah's complaint at the start of his book:
 
 > {{OWB:ISA.1.3.s1:B}}
 
@@ -57,7 +57,7 @@ One of the most striking is the "staircase", where a line starts, breaks off, an
 
 > {{OWB:PSA.93.3.s1:B}}
 
-The record calls it a repeated line that grows each time, like waves rising. Psalm 92:10 does the same thing with the LORD's enemies ("Look at your enemies, LORD! Look, your enemies are doomed"), and the record there names it as a pattern of Hebrew poetry.
+The record calls it a repeated line that grows each time, like waves rising. Psalm 92:9 does the same thing with the LORD's enemies ("Look at your enemies, LORD! Look, your enemies are doomed"), and the record there names it as a pattern of Hebrew poetry.
 
 Another kind of building is the movement inside Psalm 1:1:
 
@@ -116,9 +116,9 @@ The work is not finished. Many books are already set in lines, among them Prover
 
 ## A note on verse numbers
 
-Readers comparing Open Word Bible with other Bibles will notice that some psalm verses are numbered one higher. Many psalms have a title, such as "For the director of music. A psalm of David." The Hebrew Bible counts that title as verse 1, or as part of it. Most English Bibles print the title without a number and start counting with the poem.
+Readers comparing Open Word Bible with a Hebrew Bible will notice that many psalm verses are numbered one lower here. Many psalms have a title, such as "For the director of music. A psalm of David." The Hebrew Bible counts that title as verse 1, or as part of it. Most English Bibles print the title without a number and start counting with the poem.
 
-Open Word Bible follows the Hebrew numbering. That is why Psalm 19:2 here is the verse most English Bibles number 19:1. Where a short title shares its verse with the first line, as in Psalms 23 and 24, the numbers come out the same either way, and the records say so.
+Open Word Bible numbers verses as the NIV does, with the title unnumbered. That is why Psalm 19:1 here is 19:2 in a Hebrew Bible. Where a short title shares its verse with the first line, as in Psalms 23 and 24, the numbers come out the same either way, and the records say so.
 
 For more on how a single sentence can be given at three levels without changing what it means, see [Literal, Balanced, Readable: three levels, one meaning](/articles/three-levels-one-meaning/). Two related articles look at other features of Hebrew that are hard to carry into English: [Verb tenses that aren't tenses](/articles/hebrew-verbs-and-time/) and [Wordplay that can't be translated](/articles/wordplay-that-cannot-be-translated/). The headings at the top of many psalms have an article of their own, [Selah and the psalm headings](/articles/selah-and-the-psalm-headings/).
 
