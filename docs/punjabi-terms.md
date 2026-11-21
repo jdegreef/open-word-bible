@@ -414,3 +414,20 @@ People and places: ਯੋਏਲ, ਪਥੂਏਲ; ਸੀਯੋਨ, ਯਰੂਸ�
 - 2:13 uses the wording of Jonah 4:2 at each level, in the third person.
 - 3:1-5 should be matched by Acts 2:17-21 when Acts is drafted; 4:10 by
   Isaiah 2:4 and Micah 4:3 (reversed); 4:16 by Amos 1:2.
+
+### Habakkuk
+
+People and places: ਹਬੱਕੂਕ; ਕਸਦੀ (L, B), ਬਾਬਲ ਦੇ ਲੋਕ (R); ਲਬਾਨੋਨ; ਤੇਮਾਨ,
+ਪਾਰਾਨ ਪਹਾੜ, ਕੂਸ਼ਾਨ, ਮਿਦਯਾਨ. Music: ਸ਼ਿਗਯੋਨੋਥ, ਸਲਹ.
+
+- The five woes (2:6, 9, 12, 15, 19) follow style §12a: ਹਾਇ, [ਉਸ ਉੱਤੇ ਜਿਹੜਾ]
+  (L), ਉਸ ਉੱਤੇ ਹਾਇ ਜਿਹੜਾ (B), ਉਸ ਦਾ ਕਿੰਨਾ ਬੁਰਾ ਹਾਲ ਹੋਵੇਗਾ ਜਿਹੜਾ (R).
+  The spelling is ਹਾਇ for every cry of woe or alas; Nahum 3:1 and Joel 1:15
+  were brought into line in this branch. Wailing (*heilil*) stays ਹਾਏ-ਹਾਏ ਕਰਨਾ.
+- 2:4 ਧਰਮੀ ਆਪਣੀ ਵਫ਼ਾਦਾਰੀ ਨਾਲ ਜੀਉਂਦਾ ਰਹੇਗਾ (L, B); Romans 1:17, Galatians
+  3:11 and Hebrews 10:38 should keep the line recognizable.
+- Sheol (2:5) ਪਤਾਲ (L, B), ਕਬਰ (R). Torah (1:4) ਸਿੱਖਿਆ.
+- 2:14 matches Isaiah 11:9, 2:12 Micah 3:10, 2:13 Jeremiah 51:58, 2:20
+  Psalm 11:4, 3:19 Psalm 18:34, when those books are drafted.
+- The prophet prays with ਤੂੰ (1:2-4, 1:12-17, 3:2-19); Adonai YHWH in 3:19 is
+  `ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}`.
