@@ -304,3 +304,14 @@ People: ਫ਼ਿਲੇਮੋਨ, ਅੱਫ਼ੀਆ, ਅਰਖਿੱਪੁਸ, 
   ਮਸੀਹ-ਵਿਰੋਧੀ; come in the flesh ਸਰੀਰ ਵਿੱਚ ਆਉਣਾ (L), ਸਰੀਰ ਧਾਰ ਕੇ ਆਉਣਾ
   (B). 1 John 4:2 should match.
 - Reward (*misthos*) ਇਨਾਮ; the greeting *chairein* ਸਲਾਮ.
+
+### 3 John
+
+People: ਗਾਯੁਸ, ਦਿਯੁਤ੍ਰਿਫ਼ੇਸ, ਦੇਮੇਤ੍ਰਿਯੁਸ.
+
+- Gaius is ਤੂੰ throughout (the Greek is singular); beloved (*agapētos*)
+  ਹੇ ਪਿਆਰੇ (L), ਪਿਆਰੇ ਮਿੱਤਰ (B, R); the friends ਮਿੱਤਰ.
+- Testify, testimony ਗਵਾਹੀ ਦੇਣਾ, ਗਵਾਹੀ; strangers ਪਰਦੇਸੀ (L), ਓਪਰੇ (B);
+  send on (*propempō*) ਅੱਗੇ ਤੋਰਨਾ (L), ਸਮਾਨ ਦੇ ਕੇ ਤੋਰਨਾ (B).
+- The Gentiles in 7 are unbelievers: ਪਰਾਈਆਂ ਕੌਮਾਂ (L, B), ਜਿਹੜੇ ਲੋਕ
+  ਵਿਸ਼ਵਾਸੀ ਨਹੀਂ ਹਨ (R).
