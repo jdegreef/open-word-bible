@@ -291,3 +291,16 @@ People: ਫ਼ਿਲੇਮੋਨ, ਅੱਫ਼ੀਆ, ਅਰਖਿੱਪੁਸ, 
   (*splanchna*) ਦਿਲ, and "my very heart" (12) ਕਲੇਜਾ.
 - The wordplay on Onesimus (11, 20): ਕਿਸੇ ਕੰਮ ਦਾ ਨਹੀਂ / ਨਿਕੰਮਾ ... ਕੰਮ ਦਾ,
   and ਕੰਮ ਆਉਣਾ in 20 at B.
+
+### 2 John
+
+- The elder (*presbyteros*) ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B, R); the chosen lady
+  ਚੁਣੀ ਹੋਈ ਬੀਬੀ. She is ਤੂੰ where the Greek is singular (4, 5, 13) and she
+  and her children ਤੁਸੀਂ where it is plural; marked uncertain, since readers
+  may expect ਤੁਸੀਂ to her throughout.
+- Remain (*menō*) ਟਿਕੇ ਰਹਿਣਾ, for John's letters and the Gospel; truth
+  ਸਚਾਈ (L, B), ਸੱਚ (R); command ਹੁਕਮ; the teaching ਸਿੱਖਿਆ.
+- Deceiver ਭਰਮਾਉਣ ਵਾਲਾ (L, B), ਕੁਰਾਹੇ ਪਾਉਣ ਵਾਲਾ (R); antichrist
+  ਮਸੀਹ-ਵਿਰੋਧੀ; come in the flesh ਸਰੀਰ ਵਿੱਚ ਆਉਣਾ (L), ਸਰੀਰ ਧਾਰ ਕੇ ਆਉਣਾ
+  (B). 1 John 4:2 should match.
+- Reward (*misthos*) ਇਨਾਮ; the greeting *chairein* ਸਲਾਮ.
