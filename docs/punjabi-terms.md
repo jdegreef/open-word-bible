@@ -275,3 +275,19 @@ People and places: ਓਬਦਯਾਹ, ਅਦੋਮ, ਏਸਾਓ, ਤੇਮਾ�
   ਪਾਉਣਾ, as in Jonah.
 - Verses 1-9 run close to Jeremiah 49:7-22; Jeremiah should match these
   when it is drafted.
+
+### Philemon
+
+People: ਫ਼ਿਲੇਮੋਨ, ਅੱਫ਼ੀਆ, ਅਰਖਿੱਪੁਸ, ਉਨੇਸਿਮੁਸ, ਇਪਫ਼ਰਾਸ, ਮਰਕੁਸ, ਅਰਿਸਤਰਖੁਸ,
+ਦੇਮਾਸ, ਲੂਕਾ, ਤਿਮੋਥਿਉਸ.
+
+- Address in the letters: Paul says ਤੂੰ to one reader and ਤੁਸੀਂ where the
+  Greek "you" is plural (here 3, 22, 25: the house church). Other letters to
+  one person (1-2 Timothy, Titus) should do the same.
+- Letter ਚਿੱਠੀ; prisoner ਕੈਦੀ (L, B), ਜੇਲ੍ਹ ਵਿੱਚ (R); chains ਜ਼ੰਜੀਰਾਂ;
+  fellow worker ਸਹਿਕਰਮੀ; fellow soldier ਸਾਥੀ ਸਿਪਾਹੀ.
+- Greetings (*aspazomai*) ਸਲਾਮ ਆਖਣਾ (ਸਲਾਮ ਭੇਜਣਾ at B).
+- Refresh (*anapauō*) ਤਰੋਤਾਜ਼ਾ ਕਰਨਾ (L), ਤਾਜ਼ਗੀ ਦੇਣਾ (B); the heart
+  (*splanchna*) ਦਿਲ, and "my very heart" (12) ਕਲੇਜਾ.
+- The wordplay on Onesimus (11, 20): ਕਿਸੇ ਕੰਮ ਦਾ ਨਹੀਂ / ਨਿਕੰਮਾ ... ਕੰਮ ਦਾ,
+  and ਕੰਮ ਆਉਣਾ in 20 at B.
