@@ -447,7 +447,7 @@ needs a decision). The terms after them are settled for every book.
 | law (*torah*; *nomos*, the Law of Moses) | **Kautusan** (capitalised as the Law of Moses); *kautusan* (law in general) | *torah* as "teaching" (Proverbs) is *aral*, *turo*. |
 | the Law and the Prophets | *ang Kautusan at ang mga Propeta* | |
 | prophet | *propeta*; *mga propeta* | *propetisa* for a woman. |
-| priest; high priest; Levites | *pari*; *punong pari*; *mga Levita* | *pari* for Israel's priests too, as MBB and ASND have it; ADB's *saserdote* is old. |
+| priest; high priest; Levites | *pari*; *punong pari*; *mga Levita* | *pari* for Israel's priests too, as MBB and ASND have it; ADB's *pari* is old. |
 | sacrifice; offering | **handog**; *alay* | |
 | burnt offering; sin offering; guilt offering; peace offering; grain offering | *handog na sinusunog*; *handog para sa kasalanan*; *handog na pambayad sa pagkakasala*; *handog para sa pakikipag-isa*; *handog na pagkaing butil* | *handog para sa pakikipag-isa* for *shelamim* at every level (the meal shared with God). |
 | altar | *altar* | |
@@ -786,7 +786,7 @@ confirmed the cheaper.
    *Espiritu Santo*.
 8. **Baptize**: *bautismuhan*, rather than *binyagan*; *Juan na
    Tagapagbautismo*, rather than *Juan Bautista*.
-9. **Priest**: *pari*, rather than *saserdote*; **steadfast love**: *tapat
+9. **Priest**: *pari*, rather than *pari*; **steadfast love**: *tapat
    na pag-ibig*; **world**: *sanlibutan*, not *mundo*; **grace**: *biyaya*.
 10. **Names**: the Spanish-derived church forms without accents, by the
     rules of section 6.
