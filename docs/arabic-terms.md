@@ -331,3 +331,23 @@ Names and terms a drafter added, in the book where they first appear.
 | Ruth | a woman of worth | *امرأة فاضلة* | Ruth 3:11; also Proverbs 31:10. |
 | Ruth | Hezron; Ram; Amminadab; Nahshon | *حصرون*; *رام*; *عمّيناداب*; *نحشون* | Ruth 4:19-20. |
 | Ruth | Salmah; Salmon | *سلمى* (Literal, 4:20); *سلمون* | Ruth 4:20-21. |
+| Mark | kingdom (of God); kingdom (of David, of the earth) | *ملكوت الله*; *مملكة* | Mark 1:15; 3:24; 11:10. *ملكوت* for God's reign only. |
+| Mark | scribes; chief priests; disciples | *الكتبة* (L, B), *معلّمو الشريعة* (R); *رؤساء الكهنة* (L, B), *كبار الكهنة* (R); *التلاميذ* (L, B), *الأتباع* (R) | Readable says what the role is. |
+| Mark | Herodians; Sadducees | *الهيرودسيّون*; *الصدّوقيّون* | Mark 3:6; 12:18. |
+| Mark | Idumea; Boanerges; Thaddaeus; Simon the Cananaean | *أدوميّة*; *بوانرجس*; *تدّاوس*; *سمعان القانويّ* | Mark 3:8, 17-18. |
+| Mark | Beelzebul | *بعلزبول* | Mark 3:22. |
+| Mark | Gerasenes; Legion | *الجراسيّين*; *لجئون* | Mark 5:1, 9. |
+| Mark | Talitha koum; Ephphatha; Abba; Eloi, Eloi, lema sabachthani | *طليثا قومي*; *إفّثا*; *أبّا*; *إلوي، إلوي، لما شبقتني* | Mark 5:41; 7:34; 14:36; 15:34. Written as said, then Mark's own translation. |
+| Mark | Joses; Herodias; Gennesaret; Dalmanutha | *يوسي*; *هيروديّا*; *جنيسارت*; *دلمانوثة* | Mark 6:3, 17, 53; 8:10. |
+| Mark | executioner; basket (*kophinos*) | *سيّاف*; *قفّة* | Mark 6:27, 43. |
+| Mark | Rabbi; Rabbouni | *يا رابّي* (L, B), *يا معلّم* (R); *رابّوني* | Mark 9:5; 10:51. |
+| Mark | Bartimaeus; Bethphage | *بارتيماوس*; *بيت فاجي* | Mark 10:46; 11:1. |
+| Mark | Hosanna | *أوصنّا* | Mark 11:9-10. |
+| Mark | Gehenna | *جهنّم* | Mark 9:43-47. A footnote explains the valley. |
+| Mark | tax (to Caesar) | *الضريبة* | Mark 12:14. Not *الجزية*, which names the later poll tax on non-Muslims. |
+| Mark | lepton; quadrans | *فلس* (L); *ربع* | Mark 12:42. Balanced and Readable put coins in a units span. |
+| Mark | I am (Mark 6:50; 14:62) | *أنا هو* | A decision notes the echo of the divine name. |
+| Mark | Gethsemane; Barabbas; Golgotha | *جثسيماني*; *باراباس*; *جلجثة* | Mark 14:32; 15:7, 22. |
+| Mark | Cyrene; Alexander; Rufus; Arimathea; Salome | *القيروان*; *ألكسندر*; *روفس*; *الرامة*; *سالومة* | Mark 15:21, 40, 43. *يوسف الذي من الرامة*. |
+| Mark | spices (for the body) | *حنوط* (L); *أطياب* (B, R) | Mark 16:1. |
+| Mark | the shorter and longer endings | in square brackets, *[ ... آمين.]* for the shorter | Mark 16:8-20. |
