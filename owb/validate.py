@@ -45,7 +45,7 @@ LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 # A meaning decision is shared by every language, so it must not name one of
 # the languages the translation is made into (in English or in that language),
 # nor Spanish by its other name or Portuguese, which may come next, nor
-# Chinese without "(Simplified)".
+# Chinese without "(Simplified)", nor Persian as Farsi.
 # Reading languages' English names that are also the names of a people and
 # an ancient language a meaning decision may speak of (the Persian kings of
 # Ezra and Esther, an Arabic cognate of a rare Hebrew word): they are not
@@ -54,13 +54,22 @@ HISTORICAL_NAMES = {"Arabic", "Persian"}
 TARGET_LANGUAGE_NAMES = re.compile(r"(?<!\w)(" + "|".join(map(re.escape,
     [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])
      if n not in HISTORICAL_NAMES]
-    + ["castellano", "Portuguese", "portugu\u00eas", "Chinese"])) + r")(?!\w)", re.IGNORECASE)
+    + ["castellano", "Portuguese", "portugu\u00eas", "Chinese", "Farsi"])) + r")(?!\w)", re.IGNORECASE)
 # Reader settings only some languages have ({{plural_you:...}} is Spanish).
 LANGUAGE_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
 # A deity_pronoun span capitalises the pronoun ({{deity_pronoun:he|He}}).
 # Chinese has no capitals; its reverent forms take the radical 礻 instead:
 # 他 / 祂 ("he") and 你 / 祢 ("you"), these pairs only (docs/chinese-style.md).
 DEITY_PRONOUN_PAIRS = {"zh": {("他", "祂"), ("你", "祢")}}
+# Persian has its own yeh, kaf and digits (ی ک ۰-۹); the Arabic ones look
+# the same in many fonts but are other letters to search, sorting and a
+# screen reader (docs/persian-style.md section 7).
+FOREIGN_CHARACTERS = {"fa": (re.compile("[\u064a\u0643\u0660-\u0669]"),
+                             "the Arabic \u064a, \u0643 or Arabic-Indic digits; Persian writes "
+                             "\u06cc, \u06a9 and \u06f0-\u06f9")}
+# Text is stored in logical order in every language and the site sets its
+# direction, so a rendering holds no direction marks or embeddings.
+DIRECTION_MARKS = re.compile("[\u200e\u200f\u202a-\u202e\u2066-\u2069]")
 
 # Keyed by (source language, Strong's number): Greek and Hebrew Strong's
 # numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
@@ -364,6 +373,12 @@ def validate_record(record, known_tokens=None, original_language=True):
             if isinstance(text, str):
                 for reason in markup.line_errors(text):
                     errors.append(f"renderings.{lang}.{level}: {reason}")
+                if DIRECTION_MARKS.search(text):
+                    errors.append(f"renderings.{lang}.{level}: a direction mark (U+200E, U+200F, "
+                                  "U+202A-U+202E, U+2066-U+2069); the site sets direction")
+                foreign, what = FOREIGN_CHARACTERS.get(lang, (None, None))
+                if foreign and foreign.search(text):
+                    errors.append(f"renderings.{lang}.{level}: {what}")
 
     by_rendering = {}
     for i, al in enumerate(record.get("alignments", [])):
