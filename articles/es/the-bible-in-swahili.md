@@ -4,7 +4,7 @@ summary: Cómo una lengua comercial de la costa, con una larga tradición escrit
 date: 2026-10-12
 order: 56
 section: translation
-source: 97ee70c7f00b
+source: 24b70e6a2a3e
 ---
 El suajili es la lengua africana de la familia bantú con más hablantes. Es lengua nacional de Tanzania y de Kenia, se usa en Uganda, Ruanda, Burundi y el este del Congo, y la Unión Africana lo ha adoptado como una de sus lenguas de trabajo. Las estimaciones de cuántas personas lo hablan varían mucho, desde unos 100 millones hasta más de 200 millones, porque la mayoría de los hablantes lo aprenden como segunda lengua y los recuentos difieren en lo que incluyen.
 
@@ -66,7 +66,7 @@ Toda traducción al suajili se enfrenta a una cuestión de vocabulario. Muchas p
 
 ## Open Word Bible en suajili
 
-El suajili es una de las lenguas de Open Word Bible, junto con el inglés, el español, el francés, el vietnamita, el coreano, el portugués, el amhárico, el hindi y el ruso. Como en todas las lenguas, el suajili se traduce del griego y del hebreo, no del inglés, y cada frase comparte las mismas decisiones de significado que las demás lenguas, mientras que las decisiones de redacción se toman para el propio suajili (véase [Literal, Equilibrada, Sencilla: tres niveles, un solo significado](/articles/three-levels-one-meaning/)).
+El suajili es una de las lenguas de Open Word Bible, junto con el inglés, el amhárico y una lista creciente de otras. Como en todas las lenguas, el suajili se traduce del griego y del hebreo, no del inglés, y cada frase comparte las mismas decisiones de significado que las demás lenguas, mientras que las decisiones de redacción se toman para el propio suajili (véase [Literal, Equilibrada, Sencilla: tres niveles, un solo significado](/articles/three-levels-one-meaning/)).
 
 Los borradores en suajili ya abarcan toda la Biblia. Están hechos con ayuda de IA, y ninguno se ha revisado todavía. Como las primeras Biblias en suajili, necesitan lo que los traductores siempre han necesitado más: hablantes nativos que puedan decir si una frase suena a suajili de verdad. Open Word Bible no marcará como revisado nada de su suajili hasta que lo haya leído un revisor con nombre que domine la lengua. Si eres uno de esos lectores, el [proyecto en GitHub](https://github.com/jdegreef/open-word-bible) es el lugar por donde empezar.
 

@@ -10,8 +10,6 @@ Kiswahili, kama Kiingereza, kina maneno matatu pale ambapo Kiebrania kina neno m
 
 Katika mistari mingi jambo hili halileti shida. Muktadha unaifanya maana iwe wazi, na mtafsiri anachagua neno linalofaa. Lakini vifungu vichache vinalitumia neno hilo kwa makusudi kwa maana zaidi ya moja kwa wakati mmoja. Hapo ndipo tafsiri inapolazimika kuacha kitu, na ndipo msomaji anayelijua neno la asili anapoona zaidi.
 
-Zaburi na Ezekieli bado hazijatafsiriwa kwa Kiswahili, kwa hiyo manukuu ya Open Word Bible kutoka vitabu hivyo katika makala hii yanaonyeshwa katika tafsiri yake ya Kiingereza.
-
 ## Mwanzo 1:2: Roho au upepo?
 
 Mstari wa pili wa Biblia unaeleza ulimwengu kabla Mungu hajasema: dunia bila umbo na tupu, giza juu ya kilindi, na {{HEBREW:GEN.1.2:9-10}}, *rûaḥ ʾĕlōhîm*, juu ya maji. Biblia nyingi za Kiingereza, tangu King James Version, zinasema "the Spirit of God", Roho wa Mungu. Baadhi ya zile za kisasa zinasema "a wind from God", upepo kutoka kwa Mungu, miongoni mwao NRSV na tafsiri ya Jewish Publication Society.
@@ -48,7 +46,7 @@ Zaburi 104 inalifanya wazo hilo kuwa wimbo. Inamsifu Mungu kwa kumlisha kila kiu
 
 > {{OWB:PSA.104.30.s1:B}}
 
-Neno lilelile ni "pumzi yao" katika mstari wa 29 na "roho yako" katika mstari wa 30. Rekodi yetu inabakiza uhusiano huo: Mungu anairudisha pumzi aliyoitoa, na kuituma tena ili kuumba viumbe vipya. Uamuzi wa mstari wa 30 umewekewa alama ya kutokuwa na uhakika. Unachagua "pumzi yako inayotoa uhai" kuwa maana, na unaeleza kwamba wasomaji wengi wanaona hapa pia Roho wa Mungu akitenda kazi katika uumbaji, kama katika Mwanzo 1:2. Kwa hiyo Halisi na Linganifu za Kiingereza zinaandika "spirit" kwa herufi ndogo, zikiacha masomo yote mawili wazi, na Rahisi inasema "your breath of life" (pumzi yako ya uhai), ikibakiza uhusiano na mstari wa 29.
+Neno lilelile ni "pumzi yao" katika mstari wa 29 na "roho yako" katika mstari wa 30. Rekodi yetu inabakiza uhusiano huo: Mungu anairudisha pumzi aliyoitoa, na kuituma tena ili kuumba viumbe vipya. Uamuzi wa mstari wa 30 umewekewa alama ya kutokuwa na uhakika. Unachagua "pumzi yako inayotoa uhai" kuwa maana, na unaeleza kwamba wasomaji wengi wanaona hapa pia Roho wa Mungu akitenda kazi katika uumbaji, kama katika Mwanzo 1:2. Kwa hiyo Halisi na Linganifu zinasema "roho yako" kwa herufi ndogo, zikiacha masomo yote mawili wazi, na Rahisi inasema "pumzi yako ya uhai", ikibakiza uhusiano na mstari wa 29.
 
 Herufi hiyo ndogo nayo ni uamuzi. Nakala za Kiebrania na Kigiriki hazina herufi kubwa. Kama "roho" iandikwe "Roho" katika tafsiri ni uamuzi wa mtafsiri kila mara, na rekodi zetu zinautaja pale unapohusika.
 
@@ -64,7 +62,7 @@ Katika mstari huu mmoja Kiebrania kina neno hilo mara nne: {{HEBREW:EZK.37.9:5}}
 
 Pumzi iliyoifanya miili iishi sasa inatajwa kuwa Roho wa BWANA mwenyewe. Watu wa Israeli waliokufa, waliokatiliwa mbali uhamishoni, wataishi tena kwa Roho wa Mungu ndani yao.
 
-Tafsiri haiwezi kubakiza neno moja katika haya yote. Maamuzi yetu ya maneno yanachagua "Spirit" (Roho) katika mstari wa 1, "breath" (pumzi) katika mistari ya 5–10, "winds" (pepo) kwa pande nne na "Spirit" tena katika mstari wa 14, vilevile katika kila kiwango. Ili kufidia hasara hiyo, rekodi ya mstari wa 5 ina maelezo ya chini: "pumzi" pale ni *rûaḥ*, neno moja kwa pumzi, upepo na Roho, na nyuma ya kila moja ya tafsiri hizi kuna neno moja la Kiebrania. Rekodi inaeleza pia mwangwi wa Mwanzo 2:7. Kama Mungu alivyomfinyanga mtu wa kwanza kisha akampulizia pumzi, ndivyo hapa anaijenga upya miili kwanza kisha anaipa pumzi. Kurejeshwa kwa Israeli ni uumbaji mpya.
+Tafsiri haiwezi kubakiza neno moja katika haya yote. Maamuzi yetu ya maneno yanachagua "Roho" katika mstari wa 1, "pumzi" katika mistari ya 5–10, "pepo" kwa pande nne na "Roho" tena katika mstari wa 14, vilevile katika kila kiwango. Ili kufidia hasara hiyo, rekodi ya mstari wa 5 ina maelezo ya chini: "pumzi" pale ni *rûaḥ*, neno moja kwa pumzi, upepo na Roho, na nyuma ya kila moja ya tafsiri hizi kuna neno moja la Kiebrania. Rekodi inaeleza pia mwangwi wa Mwanzo 2:7. Kama Mungu alivyomfinyanga mtu wa kwanza kisha akampulizia pumzi, ndivyo hapa anaijenga upya miili kwanza kisha anaipa pumzi. Kurejeshwa kwa Israeli ni uumbaji mpya.
 
 ## Yohana 3: kuzaliwa kwa Roho
 

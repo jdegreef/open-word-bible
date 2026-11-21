@@ -46,9 +46,7 @@ Le Psaume 104 fait de cette idée un chant. Il loue Dieu de nourrir toutes les c
 
 > {{OWB:PSA.104.30.s1:B}}
 
-Les Psaumes et Ézéchiel ne sont pas encore traduits en français dans Open Word Bible ; leurs citations sont donc tirées de la version anglaise.
-
-Le même mot est "their breath", "leur souffle", au verset 29, et "your spirit", "ton esprit", au verset 30. Notre dossier garde le lien : Dieu reprend le souffle qu'il avait donné, et l'envoie de nouveau pour créer de nouvelles créatures. La décision sur le verset 30 est marquée incertaine. Elle retient comme sens "ton souffle qui donne la vie", et note que beaucoup de lecteurs voient aussi là l'Esprit de Dieu à l'œuvre dans la création, comme en Genèse 1:2. Dans l'édition anglaise, la Littérale et l'Équilibrée écrivent donc "spirit" avec une minuscule, ce qui laisse ouvertes les deux lectures, et la Simple dit "your breath of life", "ton souffle de vie", ce qui garde le lien avec le verset 29.
+Le même mot est "leur souffle" au verset 29, et "ton esprit" au verset 30. Notre dossier garde le lien : Dieu reprend le souffle qu'il avait donné, et l'envoie de nouveau pour créer de nouvelles créatures. La décision sur le verset 30 est marquée incertaine. Elle retient comme sens "ton souffle qui donne la vie", et note que beaucoup de lecteurs voient aussi là l'Esprit de Dieu à l'œuvre dans la création, comme en Genèse 1:2. La Littérale et l'Équilibrée écrivent donc "esprit" avec une minuscule, ce qui laisse ouvertes les deux lectures, et la Simple dit "ton souffle de vie", ce qui garde le lien avec le verset 29.
 
 Cette minuscule est elle-même une décision. Les manuscrits hébreux et grecs n'ont pas de majuscules. Écrire "esprit" ou "Esprit" est toujours une décision du traducteur, et nos dossiers l'expliquent là où cela compte.
 
@@ -64,7 +62,7 @@ Dans ce seul verset, l'hébreu a le mot quatre fois : {{HEBREW:EZK.37.9:5}} est 
 
 Le souffle qui a fait vivre les corps est maintenant nommé : c'est l'Esprit même du SEIGNEUR. Le peuple d'Israël, mort et coupé de tout en exil, revivra par l'Esprit de Dieu en lui.
 
-La traduction ne peut pas garder un seul mot à travers tout cela. Nos décisions de formulation choisissent, dans l'édition anglaise, "Spirit" (Esprit) au verset 1, "breath" (souffle) aux versets 5 à 10, "winds" (vents) pour les quatre points cardinaux et de nouveau "Spirit" au verset 14, de la même façon à tous les niveaux. Pour compenser la perte, le dossier du verset 5 porte une note de bas de page : "souffle" y traduit *rûaḥ*, un seul mot pour le souffle, le vent et l'Esprit, et derrière chacune de ces traductions se tient un seul mot hébreu. Le dossier relève aussi l'écho de Genèse 2:7. Comme Dieu a formé le premier homme avant de souffler en lui, il reconstruit ici d'abord les corps, puis leur donne le souffle. La restauration d'Israël est une nouvelle création.
+La traduction ne peut pas garder un seul mot à travers tout cela. Nos décisions de formulation choisissent "Esprit" au verset 1, "souffle" aux versets 5 à 10, "vents" pour les quatre points cardinaux et de nouveau "Esprit" au verset 14, de la même façon à tous les niveaux. Pour compenser la perte, le dossier du verset 5 porte une note de bas de page : "souffle" y traduit *rûaḥ*, un seul mot pour le souffle, le vent et l'Esprit, et derrière chacune de ces traductions se tient un seul mot hébreu. Le dossier relève aussi l'écho de Genèse 2:7. Comme Dieu a formé le premier homme avant de souffler en lui, il reconstruit ici d'abord les corps, puis leur donne le souffle. La restauration d'Israël est une nouvelle création.
 
 ## Jean 3 : né de l'Esprit
 

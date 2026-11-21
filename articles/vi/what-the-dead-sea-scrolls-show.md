@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
-source: a067bebd487f
+source: 63b04e4c28b5
 ---
 Khi các cuộn sách Biển Chết lần đầu được công bố, nhiều người đặt ra một câu hỏi: chúng có cho thấy Kinh Thánh đã bị thay đổi không? Câu trả lời hóa ra thú vị hơn cả một chữ “có” đơn giản lẫn một chữ “không” đơn giản.
 
@@ -31,7 +31,7 @@ Eugene Ulrich, một biên tập viên khác của các cuộn sách Kinh Thánh
 
 ## Ba ví dụ
 
-**Giê-rê-mi.** Bản Bảy Mươi tiếng Hy Lạp của sách Giê-rê-mi ngắn hơn bản văn Masorete tiếng Hê-bơ-rơ khoảng một phần bảy, và sắp xếp một số chương theo thứ tự khác. Trước năm 1947, nhiều học giả cho rằng dịch giả Hy Lạp đã tùy ý rút gọn. Nhưng các mảnh từ Hang 4, nhất là 4QJer-b và 4QJer-d, lưu giữ một bản văn Hê-bơ-rơ thuộc loại ngắn hơn. Những cuộn sách Giê-rê-mi khác từ cùng hang ấy có hình thức Masorete dài hơn. Cả hai ấn bản đều đã tồn tại bằng tiếng Hê-bơ-rơ và được sao chép trong cùng một thời kỳ. Các dịch giả ngày nay theo ấn bản Masorete dài hơn, là hình thức mà các cộng đồng Do Thái và Cơ Đốc đã đọc suốt hai nghìn năm; ấn bản ngắn hơn giúp các học giả hiểu sách này đã phát triển như thế nào.
+**Giê-rê-mi.** Bản Bảy Mươi tiếng Hy Lạp của sách Giê-rê-mi ngắn hơn bản văn Masorete tiếng Hê-bơ-rơ khoảng một phần tám, và sắp xếp một số chương theo thứ tự khác. Trước năm 1947, nhiều học giả cho rằng dịch giả Hy Lạp đã tùy ý rút gọn. Nhưng các mảnh từ Hang 4, nhất là 4QJer-b và 4QJer-d, lưu giữ một bản văn Hê-bơ-rơ thuộc loại ngắn hơn. Những cuộn sách Giê-rê-mi khác từ cùng hang ấy có hình thức Masorete dài hơn. Cả hai ấn bản đều đã tồn tại bằng tiếng Hê-bơ-rơ và được sao chép trong cùng một thời kỳ. Các dịch giả ngày nay theo ấn bản Masorete dài hơn, là hình thức mà các cộng đồng Do Thái và Cơ Đốc đã đọc suốt hai nghìn năm; ấn bản ngắn hơn giúp các học giả hiểu sách này đã phát triển như thế nào.
 
 **1 Sa-mu-ên 11.** Một bản chép tay lớn của sách Sa-mu-ên từ Hang 4, **4QSam-a**, có một đoạn văn trước 1 Sa-mu-ên 11 không có trong bản văn Masorete. Đoạn ấy mô tả việc Na-hách, vua dân Am-môn, đã áp bức các chi phái Gát và Ru-bên và móc mắt phải của họ, điều giải thích vì sao đòi hỏi của ông trong câu 11:2 tàn ác đến thế. Sử gia thế kỷ thứ nhất Josephus dường như đã biết tư liệu này (*Jewish Antiquities* 6.68–71). Bản New Revised Standard Version (1989) đã đưa đoạn văn này vào bản văn của mình; phần lớn các bản dịch khác không làm vậy, hoặc nhắc đến nó trong một ghi chú. Các học giả vẫn còn tranh luận liệu nó đã vô tình bị mất khỏi bản văn Masorete hay được thêm vào trong truyền thống đằng sau 4QSam-a.
 

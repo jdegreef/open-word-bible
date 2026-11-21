@@ -5,9 +5,9 @@ date: 2026-11-14
 order: 112
 nav_title: Matoleo mawili ya Yeremia
 section: passage
-source: 57b54f832e6f
+source: ab0e3f253839
 ---
-Kila kitabu cha Biblia kina mahali ambapo miswada inatofautiana. Katika vitabu vingi mahali hapo ni pachache na tofauti ni ndogo. Yeremia ni tofauti. Katika rekodi za Open Word Bible kina maamuzi 176 ya tofauti za maandishi, zaidi ya kitabu kingine chochote: zaidi ya Yohana (139), Zaburi (134) au Isaya (122). Tisini na sita kati yake yana maelezo ya chini, na hamsini yamewekewa alama ya kutokuwa na uhakika.
+Kila kitabu cha Biblia kina mahali ambapo miswada inatofautiana. Katika vitabu vingi mahali hapo ni pachache na tofauti ni ndogo. Yeremia ni tofauti. Katika rekodi za Open Word Bible kina maamuzi 178 ya tofauti za maandishi, zaidi ya kitabu kingine chochote: zaidi ya Yohana (139), Zaburi (134) au Luka (125). Tisini na tatu kati yake yana maelezo ya chini, na hamsini yamewekewa alama ya kutokuwa na uhakika.
 
 Sababu kuu ni kwamba Yeremia kimetufikia katika matoleo mawili. Makala hii inaeleza ni yapi, kwa nini wataalamu wanafikiri kitabu hiki kipo katika maumbo mawili, na kile tafsiri inachofanya.
 
@@ -66,7 +66,7 @@ Mengi ya maelezo haya yanasema jambo lisilo la kawaida: "Maelezo haya ya Kigirik
 
 ## Nusu nyingine: kile waandishi walichoandika na kile walichosoma
 
-Karibu maamuzi 84 kati ya 176 ya Yeremia yanahusu Kigiriki. Karibu idadi kama hiyo, karibu 78, yanahusu jambo jingine: mahali ambapo miswada ya Kiebrania yenyewe inatoa maumbo mawili ya neno moja.
+Karibu maamuzi 84 kati ya 178 ya Yeremia yanahusu Kigiriki. Karibu idadi kama hiyo, karibu 78, yanahusu jambo jingine: mahali ambapo miswada ya Kiebrania yenyewe inatoa maumbo mawili ya neno moja.
 
 Wamasoreti, waandishi walionakili maandishi ya Kiebrania na kuyawekea irabu mwanzoni mwa Zama za Kati, hawakubadilisha herufi walizozipokea. Pale walipofikiri kwamba neno linapaswa kusomwa tofauti, waliacha herufi zilizoandikwa kama zilivyo na kuandika pembeni umbo linalopaswa kusomwa kwa sauti. Umbo lililoandikwa linaitwa *ketiv* ("kilichoandikwa"), na umbo linalosomwa kwa sauti linaitwa *qere* ("kinachosomwa"). Yeremia kina idadi kubwa isiyo ya kawaida ya mahali hapo. Tazama [Wamasoreti: walinzi wa maandiko ya Kiebrania](/articles/the-masoretes/).
 
@@ -80,7 +80,7 @@ Maamuzi kumi na manne hivi yaliyobaki yanahusu mahali ambapo baadhi ya miswada y
 
 ## Kwa nini maelezo mengi hivi?
 
-Yakijumlishwa pamoja, idadi hii si ishara kwamba maandishi ya Yeremia hayategemewi. Mengi ya maamuzi 176 yanaandika ama tofauti ya tahajia ambayo waandishi wa Kiebrania wenyewe waliiwekea alama, ama mahali ambapo toleo la Kigiriki ni fupi zaidi. Aina ya kwanza haigusi karibu kitu chochote. Aina ya pili ni halisi, lakini inaeleweka vizuri na imeandikwa vizuri: matoleo mawili ya kitabu cha nabii mmoja, yote mawili ya kale, yote mawili yaliyonakiliwa na jumuiya za waaminifu.
+Yakijumlishwa pamoja, idadi hii si ishara kwamba maandishi ya Yeremia hayategemewi. Mengi ya maamuzi 178 yanaandika ama tofauti ya tahajia ambayo waandishi wa Kiebrania wenyewe waliiwekea alama, ama mahali ambapo toleo la Kigiriki ni fupi zaidi. Aina ya kwanza haigusi karibu kitu chochote. Aina ya pili ni halisi, lakini inaeleweka vizuri na imeandikwa vizuri: matoleo mawili ya kitabu cha nabii mmoja, yote mawili ya kale, yote mawili yaliyonakiliwa na jumuiya za waaminifu.
 
 Msomaji wa Open Word Bible anaweza kuona yote mawili, bila kulazimishwa kuchagua. Maandishi ni toleo la Kiebrania ambalo kanisa na sinagogi wamelisoma. Maelezo ya chini yanaonyesha mahali ambapo toleo jingine linatofautiana, na maamuzi yanaeleza kwa nini, na tafsiri ina uhakika kiasi gani.
 

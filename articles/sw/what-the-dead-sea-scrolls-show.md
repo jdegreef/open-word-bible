@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 28
 section: history
 part: ot
-source: a067bebd487f
+source: 63b04e4c28b5
 ---
 Hati-kunjo za Bahari ya Chumvi zilipotangazwa kwa mara ya kwanza, watu wengi waliuliza swali moja: je, zingeonyesha kwamba Biblia ilikuwa imebadilishwa? Jibu likaonekana kuwa la kuvutia zaidi kuliko "ndiyo" rahisi au "hapana" rahisi.
 
@@ -31,7 +31,7 @@ Eugene Ulrich, mhariri mwingine wa hati-kunjo za Biblia, anapendelea kueleza hal
 
 ## Mifano mitatu
 
-**Yeremia.** Toleo la Kigiriki la Septuaginta la Yeremia ni fupi kwa karibu sehemu moja ya saba kuliko maandiko ya Kiebrania ya Kimasoreti, na linapanga baadhi ya sura kwa namna tofauti. Kabla ya 1947 wasomi wengi walidhani kwamba mtafsiri wa Kigiriki alikuwa amefupisha kwa uhuru. Lakini vipande kutoka Pango la 4, hasa 4QJer-b na 4QJer-d, vinahifadhi maandiko ya Kiebrania ya aina hiyo fupi. Hati-kunjo nyingine za Yeremia kutoka pango lile lile zina umbo refu la Kimasoreti. Matoleo yote mawili yalikuwepo kwa Kiebrania na yalinakiliwa katika kipindi kile kile. Watafsiri leo wanafuata toleo refu la Kimasoreti, ambalo ndilo umbo ambalo jumuiya za Kiyahudi na za Kikristo zimelisoma kwa miaka elfu mbili; toleo fupi linawasaidia wasomi kuelewa jinsi kitabu hicho kilivyokua.
+**Yeremia.** Toleo la Kigiriki la Septuaginta la Yeremia ni fupi kwa karibu sehemu moja ya nane kuliko maandiko ya Kiebrania ya Kimasoreti, na linapanga baadhi ya sura kwa namna tofauti. Kabla ya 1947 wasomi wengi walidhani kwamba mtafsiri wa Kigiriki alikuwa amefupisha kwa uhuru. Lakini vipande kutoka Pango la 4, hasa 4QJer-b na 4QJer-d, vinahifadhi maandiko ya Kiebrania ya aina hiyo fupi. Hati-kunjo nyingine za Yeremia kutoka pango lile lile zina umbo refu la Kimasoreti. Matoleo yote mawili yalikuwepo kwa Kiebrania na yalinakiliwa katika kipindi kile kile. Watafsiri leo wanafuata toleo refu la Kimasoreti, ambalo ndilo umbo ambalo jumuiya za Kiyahudi na za Kikristo zimelisoma kwa miaka elfu mbili; toleo fupi linawasaidia wasomi kuelewa jinsi kitabu hicho kilivyokua.
 
 **1 Samweli 11.** Hati kubwa ya Samweli kutoka Pango la 4, **4QSam-a**, ina aya moja kabla ya 1 Samweli 11 ambayo haimo katika maandiko ya Kimasoreti. Inaeleza jinsi Nahashi, mfalme wa Waamoni, alivyokuwa akiyakandamiza makabila ya Gadi na Reubeni na kuwang'oa macho yao ya kulia, jambo linaloeleza kwa nini dai lake katika 11:2 ni la kikatili hivyo. Mwanahistoria wa karne ya kwanza Yosefu (Josephus) anaonekana kuyajua maelezo haya (*Jewish Antiquities* 6.68–71). New Revised Standard Version (1989) iliiweka aya hiyo katika maandiko yake; tafsiri nyingine nyingi haziiweki, au zinaitaja katika tanbihi. Wasomi bado wanajadiliana kama ilipotea kwa bahati mbaya kutoka maandiko ya Kimasoreti au iliongezwa katika mapokeo yaliyo nyuma ya 4QSam-a.
 

@@ -4,7 +4,7 @@ summary: New American Standard Bible ilikusudia kuhifadhi usahihi wa American St
 date: 2026-10-14
 order: 64
 section: compare
-source: 427ee00533e6
+source: aaeed2a8afbe
 ---
 Watu wanapotaka mfano wa Biblia ya kisasa ya Kiingereza iliyo halisi sana, kwa kawaida wanataja **New American Standard Bible** (NASB). Kwa zaidi ya nusu karne imekuwa tafsiri inayopendelewa na wanafunzi wengi wa lugha za asili, na ile ambayo tafsiri nyingine hulinganishwa nayo swali linapokuwa "Kigiriki kinasema nini hasa?"
 
@@ -91,7 +91,7 @@ Watetezi wanajibu kwamba tafsiri halisi imekusudiwa kusomwa pamoja na nyingine, 
 
 ## Kuona muundo
 
-NASB na LSB zinasimama juu ya imani ambayo Open Word Bible inaishiriki: kwamba wasomaji wanastahili kuona kile asili inachosema, si tu kile mtafsiri anachofikiri inamaanisha. Open Word Bible inajaribu kuitumikia imani hiyo kwa namna tofauti. Kiwango chake cha Halisi kinabaki karibu na muundo wa Kigiriki na Kiebrania, wakati viwango vya Linganifu na Rahisi vinaeleza maamuzi yaleyale ya maana kwa lugha ya kawaida zaidi (ona [Halisi, Linganifu, Rahisi: viwango vitatu, maana moja](/articles/three-levels-one-meaning/)), ili hakuna tafsiri moja inayolazimika kufanya kila kitu. Uchaguzi unaoathiri maneno lakini si maana, kama "brothers" au "brothers and sisters" ("ndugu" au "kaka na dada") pale kanisa zima linapokusudiwa, au herufi kubwa kwa viwakilishi vinavyomrejelea Mungu, ni mipangilio ya msomaji; mpangilio wa jina la Mungu umepangwa (ona [Mipangilio inabadilisha maneno, kamwe si maana](/articles/settings-change-wording/)). Inatafsiri kutoka Agano Jipya la Kigiriki la SBL na Kodeksi ya Leningrad ya Westminster, inaweka rekodi ya sababu za kila sentensi, na inatumia tafsiri kama NASB na LSB kwa ajili ya kulinganisha tu. Rasimu zake zinaandaliwa kwa msaada wa AI na zinasubiri ukaguzi wa wakaguzi binadamu wanaotajwa kwa majina, na inatolewa chini ya CC0.
+NASB na LSB zinasimama juu ya imani ambayo Open Word Bible inaishiriki: kwamba wasomaji wanastahili kuona kile asili inachosema, si tu kile mtafsiri anachofikiri inamaanisha. Open Word Bible inajaribu kuitumikia imani hiyo kwa namna tofauti. Kiwango chake cha Halisi kinabaki karibu na muundo wa Kigiriki na Kiebrania, wakati viwango vya Linganifu na Rahisi vinaeleza maamuzi yaleyale ya maana kwa lugha ya kawaida zaidi (ona [Halisi, Linganifu, Rahisi: viwango vitatu, maana moja](/articles/three-levels-one-meaning/)), ili hakuna tafsiri moja inayolazimika kufanya kila kitu. Uchaguzi unaoathiri maneno lakini si maana, kama "brothers" au "brothers and sisters" ("ndugu" au "kaka na dada") pale kanisa zima linapokusudiwa, herufi kubwa kwa viwakilishi vinavyomrejelea Mungu, au "BWANA" au "Yahwe" kwa jina la Mungu, ni mipangilio ya msomaji (ona [Mipangilio inabadilisha maneno, kamwe si maana](/articles/settings-change-wording/)). Inatafsiri kutoka Agano Jipya la Kigiriki la SBL na Kodeksi ya Leningrad ya Westminster, inaweka rekodi ya sababu za kila sentensi, na inatumia tafsiri kama NASB na LSB kwa ajili ya kulinganisha tu. Rasimu zake zinaandaliwa kwa msaada wa AI na zinasubiri ukaguzi wa wakaguzi binadamu wanaotajwa kwa majina, na inatolewa chini ya CC0.
 
 ## Vyanzo
 

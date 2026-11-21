@@ -5,9 +5,9 @@ date: 2026-11-14
 order: 112
 nav_title: Las dos ediciones de Jeremías
 section: passage
-source: 57b54f832e6f
+source: ab0e3f253839
 ---
-Todos los libros de la Biblia tienen lugares donde los manuscritos no coinciden. En la mayoría son pocos y pequeños. Jeremías es distinto. En los registros de Open Word Bible tiene 176 decisiones de variantes textuales, más que ningún otro libro: más que Juan (139), los Salmos (134) o Isaías (122). Noventa y seis llevan nota al pie, y cincuenta están marcadas como inciertas.
+Todos los libros de la Biblia tienen lugares donde los manuscritos no coinciden. En la mayoría son pocos y pequeños. Jeremías es distinto. En los registros de Open Word Bible tiene 178 decisiones de variantes textuales, más que ningún otro libro: más que Juan (139), los Salmos (134) o Lucas (125). Noventa y tres llevan nota al pie, y cincuenta están marcadas como inciertas.
 
 La razón principal es que Jeremías nos ha llegado en dos ediciones. Este artículo explica cuáles son, por qué los especialistas piensan que el libro existe en dos formas y qué hace la traducción.
 
@@ -66,7 +66,7 @@ Muchas de estas notas dicen algo poco habitual: «Esta descripción del griego p
 
 ## La otra mitad: lo que escribieron los escribas y lo que leían
 
-Unas 84 de las 176 decisiones de Jeremías tienen que ver con el griego. Casi otras tantas, unas 78, tienen que ver con otra cosa: lugares donde los propios manuscritos hebreos dan dos formas de una palabra.
+Unas 84 de las 178 decisiones de Jeremías tienen que ver con el griego. Casi otras tantas, unas 78, tienen que ver con otra cosa: lugares donde los propios manuscritos hebreos dan dos formas de una palabra.
 
 Los masoretas, los escribas que copiaron y vocalizaron el texto hebreo a comienzos de la Edad Media, no cambiaban las letras que habían recibido. Donde pensaban que una palabra debía leerse de otro modo, dejaban intactas las consonantes escritas y anotaban en el margen la forma que había que leer en voz alta. La forma escrita se llama *ketiv* («lo que está escrito»), y la que se lee en voz alta, *qere* («lo que se lee»). Jeremías tiene un número inusualmente grande. Consulta [Los masoretas: guardianes del texto hebreo](/articles/the-masoretes/).
 
@@ -80,7 +80,7 @@ Las catorce decisiones restantes, más o menos, tienen que ver con lugares donde
 
 ## ¿Por qué tantas notas?
 
-Sumado todo, el recuento no es señal de que el texto de Jeremías sea poco fiable. La mayoría de las 176 decisiones registran o bien una diferencia de ortografía que los propios escribas hebreos señalaron, o bien un lugar donde la edición griega es más corta. La primera clase casi no afecta a nada. La segunda es real, pero se entiende bien y está bien documentada: dos ediciones del libro de un profeta, las dos antiguas, las dos copiadas por comunidades fieles.
+Sumado todo, el recuento no es señal de que el texto de Jeremías sea poco fiable. La mayoría de las 178 decisiones registran o bien una diferencia de ortografía que los propios escribas hebreos señalaron, o bien un lugar donde la edición griega es más corta. La primera clase casi no afecta a nada. La segunda es real, pero se entiende bien y está bien documentada: dos ediciones del libro de un profeta, las dos antiguas, las dos copiadas por comunidades fieles.
 
 Quien lee Open Word Bible puede ver las dos, sin que se le obligue a elegir. El texto es la edición hebrea que la iglesia y la sinagoga han leído. Las notas al pie muestran dónde difiere la otra edición, y las decisiones explican por qué, y cuán segura está la traducción.
 

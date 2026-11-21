@@ -10,8 +10,6 @@ Chơi chữ là điều khó dịch nhất trong bất kỳ ngôn ngữ nào. N�
 
 Dưới đây là một số ví dụ nổi tiếng nhất. Open Word Bible xử lý chúng theo một cách nhất quán. Sát nghĩa và Cân bằng giữ những từ của tiếng Hê-bơ-rơ, và nói lối chơi chữ là gì trong một chú thích hoặc trong bản ghi. Dễ đọc thường giải thích lối chơi chữ ngay trong bản văn, vì không có nó, người đọc không thể thấy vì sao phân đoạn nói điều nó nói.
 
-(Câu trích nào chưa có bản tiếng Việt sẽ hiện ra theo bản tiếng Anh của Open Word Bible.)
-
 ## Con người từ đất
 
 Lối chơi chữ đầu tiên trong Kinh Thánh đến ở chương thứ hai. Trong Sáng Thế Ký 2:7, CHÚA là Đức Chúa Trời nắn nên con người từ bụi đất. Từ chỉ con người là {{LEMMA:GEN.2.7:5.2}} (*ʾādām*), và từ chỉ đất là {{LEMMA:GEN.2.7:8.2}} (*ʾădāmâ*). Con người được đặt tên theo chất liệu làm nên mình.
@@ -50,7 +48,7 @@ Các nhà tiên tri dùng chơi chữ trong các khải tượng của họ. Tro
 
 Câu trả lời chỉ có nghĩa trong tiếng Hê-bơ-rơ. "Trái cây mùa hạ" là {{HEBREW:AMO.8.2:8}} (*qayiṣ*), và "sự cuối cùng" là {{HEBREW:AMO.8.2:13}} (*haq-qēṣ*). Hai từ nghe gần như giống hệt nhau. Chú thích của bản ghi giải thích điều đó: giỏ trái cây chín vào cuối mùa gặt trở thành dấu hiệu rằng Y-sơ-ra-ên đã chín muồi cho sự phán xét.
 
-Ở đây ba cấp độ đi theo những con đường riêng, và quyết định về cách diễn đạt nói rõ cách nào. Sát nghĩa và Cân bằng giữ những từ của tiếng Hê-bơ-rơ, và một chú thích giải thích lối chơi chữ. Dễ đọc nói ngay trong bản văn rằng hai từ nghe giống nhau, "vì không có điều đó, câu trả lời của CHÚA chẳng có nghĩa gì với người đọc":
+Ở đây ba cấp độ đi theo những con đường riêng, và quyết định về cách diễn đạt nói rõ cách nào. Sát nghĩa và Cân bằng giữ những từ của tiếng Hê-bơ-rơ, và một chú thích giải thích lối chơi chữ. Dễ đọc nói ngay trong bản văn rằng trong tiếng Hê-bơ-rơ hai từ nghe giống nhau, và còn dùng một lối chơi chữ của riêng tiếng Việt với “chín” và “chín muồi”:
 
 > {{OWB:AMO.8.2.s1:R}}
 
@@ -74,7 +72,7 @@ Bài ca vườn nho của Ê-sai kết thúc bằng một trong những lối ch
 
 Trong tiếng Hê-bơ-rơ, hai dòng cuối được dựng trên âm thanh. Đức Chúa Trời trông đợi {{HEBREW:ISA.5.7:12}} (*mišpāṭ*, công lý) mà gặp {{HEBREW:ISA.5.7:14}} (*miśpāḥ*, sự đổ máu). Ngài trông đợi {{HEBREW:ISA.5.7:15}} (*ṣədāqâ*, sự công chính) mà gặp {{HEBREW:ISA.5.7:17}} (*ṣəʿāqâ*, tiếng kêu than). Chú thích của bản ghi nói đơn giản: Đức Chúa Trời tìm một điều và gặp một điều nghe giống nó nhưng lại là điều trái ngược. Bản ghi nói thêm rằng tiếng kêu than ấy là tiếng kêu của những người bị đối xử bất công, tiếng kêu thấu đến Đức Chúa Trời (Sáng Thế Ký 18:20–21; Xuất Ai Cập Ký 3:7, 9).
 
-Ý của lối chơi chữ là ý đạo đức. Dân sự có một điều nhìn từ xa trông giống công lý. Đến gần thì đó là điều trái ngược. Một quyết định về cách diễn đạt cho câu này nói vì sao không cố tạo ra một lối chơi chữ tiếng Anh: lối chơi âm thanh không thể giữ được mà không làm thay đổi ý nghĩa, nên chú thích giải thích nó.
+Ý của lối chơi chữ là ý đạo đức. Dân sự có một điều nhìn từ xa trông giống công lý. Đến gần thì đó là điều trái ngược. Một quyết định về cách diễn đạt cho câu này nói vì sao không bắt chước lối chơi chữ: tiếng Việt không có cặp từ tự nhiên nào như vậy, nên mỗi từ được dịch theo nghĩa của nó, và sự tương phản được chuyển tải bằng chữ “nhưng”.
 
 ## Các thành trong Mi-chê 1
 

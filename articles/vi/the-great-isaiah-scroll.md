@@ -55,7 +55,7 @@ Người ta dễ nghĩ cuộn sách là một bức ảnh chụp “sách Ê-sai
 
 ## Sách Ê-sai và Open Word Bible
 
-Khi Open Word Bible dịch sách Ê-sai, điểm khởi đầu của nó là Westminster Leningrad Codex, một bản văn Masorete. Ở cả ba câu trên, bản thảo hiện tại (bằng tiếng Anh; sách Ê-sai chưa được dịch sang tiếng Việt) giữ cách đọc Masorete: “người sẽ thấy” trong [Ê-sai 53:11](/isa/53/), con sư tử trong 21:8, và “có người nói” trong 40:6. Nhưng lựa chọn ấy không bị che giấu. Bản ghi lý do của mỗi câu văn nêu tên Cuộn Ê-sai Lớn, nói cuộn ấy đọc thế nào, và giải thích quyết định, và một chú thích đưa cho người đọc cách đọc của cuộn sách. Ở 53:11, quyết định được đánh dấu là chưa chắc chắn, và bản ghi lưu ý rằng ý nghĩa của hai cách đọc gần nhau. Đó là cách một bản dịch nên xử lý những gì các cuộn sách Biển Chết đã dạy chúng ta: với lòng biết ơn, với sự cẩn thận, và một cách công khai.
+Khi Open Word Bible dịch sách Ê-sai, điểm khởi đầu của nó là Westminster Leningrad Codex, một bản văn Masorete. Ở cả ba câu trên, bản thảo hiện tại giữ cách đọc Masorete: “người sẽ thấy” trong [Ê-sai 53:11](/isa/53/), con sư tử trong 21:8, và “có người nói” trong 40:6. Nhưng lựa chọn ấy không bị che giấu. Bản ghi lý do của mỗi câu văn nêu tên Cuộn Ê-sai Lớn, nói cuộn ấy đọc thế nào, và giải thích quyết định, và một chú thích đưa cho người đọc cách đọc của cuộn sách. Ở 53:11, quyết định được đánh dấu là chưa chắc chắn, và bản ghi lưu ý rằng ý nghĩa của hai cách đọc gần nhau. Đó là cách một bản dịch nên xử lý những gì các cuộn sách Biển Chết đã dạy chúng ta: với lòng biết ơn, với sự cẩn thận, và một cách công khai.
 
 ## Nguồn tham khảo
 

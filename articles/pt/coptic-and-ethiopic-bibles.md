@@ -5,7 +5,7 @@ date: 2026-10-12
 order: 44
 nav_title: Bíblias copta e gueze
 section: translation
-source: 376acd7c9185
+source: 156b7ed8d8ad
 ---
 É fácil contar a história da Bíblia como uma história que vai de Jerusalém a Roma e depois sobe para o norte da Europa. Mas algumas das primeiras traduções da Bíblia foram feitas na África. No Egito, os cristãos traduziram as Escrituras para o **copta** a partir do século III. No reino de Axum, no território das atuais Etiópia e Eritreia, elas foram traduzidas para o **gueze**, provavelmente a partir do século IV ou V. As duas traduções continuam sendo lidas no culto até hoje.
 
@@ -62,7 +62,7 @@ Sem a igreja etíope, esses livros seriam conhecidos hoje apenas em pedaços.
 
 O gueze continua sendo a língua litúrgica das igrejas ortodoxas etíope e eritreia, e a igreja copta ainda usa o boaírico ao lado do árabe. O cristianismo é uma religião africana desde os seus primeiros séculos, e os tradutores africanos levam as Escrituras para as suas próprias línguas há tanto tempo quanto qualquer outro povo.
 
-Essa história continua. A Open Word Bible está preparando versões em amárico e suaíli ao lado do inglês, do espanhol, do francês, do vietnamita, do coreano, do português, do híndi e do russo, cada uma a partir do hebraico e do grego, e não a partir do inglês (veja [A Bíblia em suaíli](/articles/the-bible-in-swahili/)). O trabalho é feito com ajuda de IA, e nada dele será marcado como revisado até que revisores nomeados, falantes nativos, o tenham conferido.
+Essa história continua. A Open Word Bible já redigiu a Bíblia inteira em amárico e suaíli, ao lado do inglês e de uma lista crescente de outras línguas, cada uma a partir do hebraico e do grego, e não a partir do inglês (veja [A Bíblia em suaíli](/articles/the-bible-in-swahili/)). O trabalho é feito com ajuda de IA, e nada dele será marcado como revisado até que revisores nomeados, falantes nativos, o tenham conferido.
 
 ## Fontes
 

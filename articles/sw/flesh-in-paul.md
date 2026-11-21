@@ -14,11 +14,11 @@ Kumbuka jambo moja la Kiswahili tangu mwanzo: *mwili* ni neno la "body" na pia l
 
 ## Neno hili linatoka wapi
 
-Msingi wake ni Biblia ya Kiebrania. Neno lake la mwili, *bāśār*, linamaanisha sehemu laini ya mwili, na kutoka hapo viumbe vyote vilivyo hai, na hasa wanadamu katika udhaifu wao. Isaya 40:6 inasema {{HEBREW:ISA.40.6:7-8}}, "wote wenye mwili ni majani". Isaya bado haijatafsiriwa kwa Kiswahili, kwa hiyo mstari unaonyeshwa kwa Kiingereza:
+Msingi wake ni Biblia ya Kiebrania. Neno lake la mwili, *bāśār*, linamaanisha sehemu laini ya mwili, na kutoka hapo viumbe vyote vilivyo hai, na hasa wanadamu katika udhaifu wao. Isaya 40:6 inasema {{HEBREW:ISA.40.6:7-8}}, "wote wenye mwili ni majani":
 
 > {{OWB:ISA.40.6.s1:B}}
 
-Kiwango cha Linganifu kinasema "Humankind is grass" (wanadamu ni majani), kwa sababu ndivyo maneno ya Kiebrania yanavyomaanisha. "Mwili" hapa si wa dhambi. Ni dhaifu na wa kupita, ukiwekwa kando ya neno la Mungu, ambalo "linasimama milele" (mstari wa 8). Septuaginta, tafsiri ya Kigiriki ya Agano la Kale, ililitafsiri neno hili la Kiebrania kwa *sarx*, na Paulo aliisoma Biblia yake katika Kigiriki hicho.
+Kiwango cha Linganifu kinasema "Wanadamu ni majani", kwa sababu ndivyo maneno ya Kiebrania yanavyomaanisha. "Mwili" hapa si wa dhambi. Ni dhaifu na wa kupita, ukiwekwa kando ya neno la Mungu, ambalo "linasimama milele" (mstari wa 8). Septuaginta, tafsiri ya Kigiriki ya Agano la Kale, ililitafsiri neno hili la Kiebrania kwa *sarx*, na Paulo aliisoma Biblia yake katika Kigiriki hicho.
 
 Maana hiyohiyo ya kawaida iko katika Injili ya Yohana. "Neno akawa mwili" ({{GREEK:JHN.1.14:3-5}}) inamaanisha kwamba Neno alikuwa mwanadamu kamili, pamoja na mwili wake wote. Uamuzi wa maana wa rekodi unasema hivyo, na kiwango cha Rahisi kinaandika "Neno akawa binadamu". Mwili kwa maana hii ni mwema: Mwana wa Mungu aliuvaa.
 

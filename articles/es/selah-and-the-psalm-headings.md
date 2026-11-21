@@ -8,7 +8,7 @@ source: d672c9c825da
 ---
 La mayoría de las palabras difíciles de la Biblia lo son porque los estudiosos no se ponen de acuerdo sobre ellas. Unas pocas son difíciles por una razón más simple: nadie sabe lo que significan. Los Salmos tienen más que ningún otro libro. Están en los títulos que encabezan muchos salmos, y en una pequeña palabra que aparece al final de algunas líneas a lo largo de todo el libro: «Selah».
 
-Este artículo repasa lo que se sabe de ellas, lo que se supone y cómo debe tratar una traducción una palabra cuyo significado se ha perdido. (Los Salmos todavía no están traducidos al español, así que las citas de los salmos aparecen en inglés, y lo que aquí se dice de nuestros niveles describe la edición inglesa).
+Este artículo repasa lo que se sabe de ellas, lo que se supone y cómo debe tratar una traducción una palabra cuyo significado se ha perdido.
 
 ## Selah
 
@@ -58,7 +58,7 @@ El hebreo empieza con {{HEBREW:PSA.4.1:1}}, «al director», una expresión que 
 
 El título plantea primero una cuestión práctica. En el texto hebreo, el título de un salmo es parte del salmo y cuenta como su primer versículo. La mayoría de las Biblias inglesas, y también la Reina-Valera, imprimen el título sin número y empiezan el versículo 1 con la primera línea del poema. Así que, a partir del Salmo 3, muchos números de versículo de Open Word Bible son uno más alto que en otras Biblias. El registro del Salmo 3:1 lo explica, y el registro de cada título lo repite. Open Word Bible sigue la numeración del texto hebreo que traduce. (Véase [Números de capítulo y de versículo](/articles/chapter-and-verse-numbers/) para saber cómo surgió la numeración).
 
-Donde el título es muy corto, el hebreo lo cuenta junto con la primera línea, y los números coinciden. El Salmo 32 es un ejemplo: «De David. Maskil» forma parte del versículo 1, con «Dichoso aquel cuya rebelión es perdonada».
+Donde el título es muy corto, el hebreo lo cuenta junto con la primera línea, y los números coinciden. El Salmo 32 es un ejemplo: «De David. Un masquil» forma parte del versículo 1, con «¡Qué dichoso es aquel cuya rebelión ha sido perdonada».
 
 ### Qué significan las palabras de los títulos
 
@@ -80,13 +80,13 @@ Después están las expresiones que probablemente son nombres de melodías. El S
 
 Aquí los tres niveles toman caminos distintos, y la razón es el propósito de cada uno.
 
-La **Literal** y la **Equilibrada** conservan los términos hebreos como nombres donde su sentido se desconoce: en inglés, «A miktam» («Un miktam»), «On alamoth» («Sobre alamot»), «On Ayyeleth-hashshahar» («Sobre Ayelet-hasajar»). Traducen lo que está claro y conservan lo que no lo está. El Salmo 57 es una pequeña excepción, porque «No destruyas» es hebreo llano; todos los niveles lo traducen, y la Equilibrada añade «To the tune» («Con la melodía»), entendiéndolo como el nombre de una melodía.
+La **Literal** y la **Equilibrada** conservan los términos hebreos como nombres donde su sentido se desconoce: «Mictam», «Sobre alamot», «Sobre Ayelet-hasájar». Traducen lo que está claro y conservan lo que no lo está. El Salmo 57 es una pequeña excepción, porque «No destruyas» es hebreo llano; todos los niveles lo traducen, y la Equilibrada añade «Con la melodía», entendiéndolo como el nombre de una melodía.
 
 La **Sencilla** da el sentido más probable, y sus decisiones de redacción se marcan como inciertas cuando la conjetura es una conjetura. Este es el título del Salmo 22 en ese nivel:
 
 > {{OWB:PSA.22.1.s1:R}}
 
-El Salmo 56 pasa a ser «To the tune "A Silent Dove Far Away"» («Con la melodía "Una paloma silenciosa lejana"»), y el «sobre alamot» del Salmo 46 pasa a ser «For high voices» («Para voces agudas»). Donde ni siquiera un sentido probable está al alcance, la Sencilla dice solo lo que es seguro: para «miktam», la decisión de redacción es simplemente «A song» («Un canto»), porque su significado se desconoce, y la Sencilla dice solo que es un canto.
+El Salmo 56 pasa a ser «Con la melodía "Una paloma callada a lo lejos"», y el «sobre alamot» del Salmo 46 pasa a ser «Para voces agudas». Donde ni siquiera un sentido probable está al alcance, la Sencilla dice solo lo que es seguro: para «mictam», la Sencilla dice simplemente «Canto», porque su significado se desconoce: dice solo que es un canto.
 
 Así es como Open Word Bible separa el significado de la redacción. La decisión de significado dice lo que se sabe y lo que no, y lo marca como incierto. La decisión de redacción elige para cada nivel palabras que se ajustan a ese estado del conocimiento. La Sencilla puede ser más atrevida en su redacción porque la decisión de significado que la acompaña dice claramente cuánto hay de conjetura. (Véase [Literal, Equilibrada, Sencilla: tres niveles, un solo significado](/articles/three-levels-one-meaning/)).
 
@@ -100,7 +100,7 @@ Algunos estudiosos también se han preguntado si unas pocas notas pertenecen al 
 
 Sería fácil que una traducción tapara estos huecos. Podría imprimir una conjetura segura para cada término, u omitir discretamente las palabras que nadie entiende. Muchos lectores nunca lo notarían.
 
-Open Word Bible toma el otro camino. Donde se ha perdido el significado de una palabra, el registro lo dice, da los datos y las principales propuestas, y deja que la redacción se siga de ahí. Selah sigue siendo Selah. «Miktam» sigue siendo «miktam» en la Literal y la Equilibrada, y en la Sencilla pasa a ser simplemente «un canto». El lector no pierde nada que alguien sepa de verdad, y no recibe nada que nadie sepa. Como todos nuestros borradores, estos registros se han hecho con ayuda de IA y esperan la revisión de revisores humanos con nombre.
+Open Word Bible toma el otro camino. Donde se ha perdido el significado de una palabra, el registro lo dice, da los datos y las principales propuestas, y deja que la redacción se siga de ahí. Selah sigue siendo Selah. «Mictam» sigue siendo «mictam» en la Literal y la Equilibrada, y en la Sencilla pasa a ser simplemente «canto». El lector no pierde nada que alguien sepa de verdad, y no recibe nada que nadie sepa. Como todos nuestros borradores, estos registros se han hecho con ayuda de IA y esperan la revisión de revisores humanos con nombre.
 
 Hay algo apropiado en ello. Los salmos se cantaron durante siglos por personas que sabían exactamente qué significaba Selah, y se siguen cantando por personas que no lo saben. Las palabras siguen funcionando.
 

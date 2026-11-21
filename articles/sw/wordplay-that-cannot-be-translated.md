@@ -44,19 +44,19 @@ Halisi na Linganifu zinayaacha maneno kama yalivyo. Rahisi inaongeza kishazi kif
 
 ## Kapu la matunda ya kiangazi
 
-Manabii wanatumia michezo ya maneno katika maono yao. Katika Amosi 8 BWANA anamwonyesha Amosi kapu la matunda. Anamwuliza Amosi anaona nini, na Amosi anasema, "kapu la matunda ya kiangazi". BWANA anajibu kwamba "mwisho" umewajia Israeli.
+Manabii wanatumia michezo ya maneno katika maono yao. Katika Amosi 8 BWANA anamwonyesha Amosi kapu la matunda. Anamwuliza Amosi anaona nini, na Amosi anasema, "kikapu cha matunda ya kiangazi". BWANA anajibu kwamba "mwisho" umewajia Israeli.
 
 Jibu hilo lina maana kwa Kiebrania tu. "Matunda ya kiangazi" ni {{HEBREW:AMO.8.2:8}} (*qayiṣ*), na "mwisho" ni {{HEBREW:AMO.8.2:13}} (*haq-qēṣ*). Maneno hayo mawili yanasikika karibu sawa. Maelezo ya chini ya rekodi yanaueleza: kapu la matunda yaliyoiva mwishoni mwa mavuno linakuwa ishara kwamba Israeli wameiva kwa ajili ya hukumu.
 
-Hapa viwango vitatu vinaachana, na uamuzi wa maneno unasema jinsi gani. Halisi na Linganifu zinabaki na maneno ya Kiebrania, na maelezo ya chini yanatoa mchezo wa maneno. Rahisi inasema ndani ya maandishi kwamba maneno hayo mawili yanafanana kwa sauti, "kwa kuwa bila hivyo jibu la BWANA halina maana kwa msomaji". Amosi bado haijatafsiriwa kwa Kiswahili, kwa hiyo hapa, kama katika manukuu mengine ya makala hii kutoka kwa manabii, tovuti inaonyesha tafsiri ya Kiingereza:
+Hapa viwango vitatu vinaachana, na uamuzi wa maneno unasema jinsi gani. Halisi na Linganifu zinabaki na maneno ya Kiebrania, na maelezo ya chini yanatoa mchezo wa maneno. Rahisi inasema ndani ya maandishi kwamba maneno hayo mawili yanafanana kwa sauti, "kwa kuwa bila hivyo jibu la BWANA halina maana kwa msomaji". Hiki ndicho kiwango cha Rahisi:
 
 > {{OWB:AMO.8.2.s1:R}}
 
 ## Mlozi na mlinzi
 
-Maono ya kwanza ya Yeremia yanafanya kazi kwa njia ileile. BWANA anamwuliza anaona nini, na Yeremia anajibu, "fimbo ya mlozi". BWANA anajibu kwamba yeye "analilinda" neno lake ili alitimize.
+Maono ya kwanza ya Yeremia yanafanya kazi kwa njia ileile. BWANA anamwuliza anaona nini, na Yeremia anajibu, "fimbo ya mlozi". BWANA anajibu kwamba yeye "anakesha" juu ya neno lake ili alitimize.
 
-"Mlozi" ni {{HEBREW:JER.1.11:12}} (*šāqēḏ*). "Kulinda" ni {{HEBREW:JER.1.12:7}} (*šōqēḏ*). Rekodi ya mstari wa 11 inaongeza kwa nini mlozi unafaa sana: ndio mti wa kwanza katika nchi kuchanua maua, mwishoni mwa majira ya baridi, wakati miti mingine bado inaonekana imekufa. Ni mti unaoamka kwanza. Rekodi ya mstari wa 12 inachora uhusiano: kama mlozi unavyoamka kwanza, ndivyo BWANA alivyo macho akilinda neno lake. Rekodi pia inaeleza kwamba mchezo huo wa maneno hauwezi kuhifadhiwa katika tafsiri nyingi, kwa hiyo maana inatolewa na uhusiano unaelezwa.
+"Mlozi" ni {{HEBREW:JER.1.11:12}} (*šāqēḏ*). "Kukesha" ni {{HEBREW:JER.1.12:7}} (*šōqēḏ*). Rekodi ya mstari wa 11 inaongeza kwa nini mlozi unafaa sana: ndio mti wa kwanza katika nchi kuchanua maua, mwishoni mwa majira ya baridi, wakati miti mingine bado inaonekana imekufa. Ni mti unaoamka kwanza. Rekodi ya mstari wa 12 inachora uhusiano: kama mlozi unavyoamka kwanza, ndivyo BWANA alivyo macho akilinda neno lake. Rekodi pia inaeleza kwamba mchezo huo wa maneno hauwezi kuhifadhiwa katika tafsiri nyingi, kwa hiyo maana inatolewa na uhusiano unaelezwa.
 
 Tena Halisi na Linganifu zinabaki na maneno ya kawaida, pamoja na maelezo ya chini, na Rahisi inaweka maelezo ndani ya maandishi:
 
@@ -72,7 +72,7 @@ Wimbo wa Isaya wa shamba la mizabibu unaishia kwa mojawapo ya michezo ya maneno 
 
 Kwa Kiebrania vipande viwili vya mwisho vimejengwa juu ya sauti. Mungu alitazamia {{HEBREW:ISA.5.7:12}} (*mišpāṭ*, haki) akapata {{HEBREW:ISA.5.7:14}} (*miśpāḥ*, umwagaji damu). Alitazamia {{HEBREW:ISA.5.7:15}} (*ṣədāqâ*, uadilifu) akapata {{HEBREW:ISA.5.7:17}} (*ṣəʿāqâ*, kilio). Maelezo ya chini ya rekodi yanasema kwa urahisi: Mungu alitazamia kitu kimoja na akapata kile kinachosikika kama hicho lakini ni kinyume chake. Kilio hicho, yanaongeza, ni kilio cha watu wanaodhulumiwa, kilio kinachomfikia Mungu (Mwanzo 18:20–21; Kutoka 3:7, 9).
 
-Hoja ya mchezo huo wa maneno ni ya kimaadili. Watu walikuwa na kitu kilichoonekana kama haki kwa mbali. Kwa karibu kilikuwa kinyume chake. Uamuzi wa maneno wa mstari huu unasema kwa nini hakuna mchezo wa maneno wa Kiingereza unaojaribiwa: mchezo wa sauti hauwezi kuhifadhiwa bila kubadilisha maana, kwa hiyo maelezo ya chini yanaueleza.
+Hoja ya mchezo huo wa maneno ni ya kimaadili. Watu walikuwa na kitu kilichoonekana kama haki kwa mbali. Kwa karibu kilikuwa kinyume chake. Uamuzi wa maneno wa mstari huu unasema kwa nini hakuna mchezo wa maneno wa Kiswahili unaojaribiwa: Kiswahili hakiwezi kuuiga mchezo huo wa sauti, kwa hiyo kinabaki na tofauti ya maana, na maelezo ya chini yanaueleza.
 
 ## Miji ya Mika 1
 

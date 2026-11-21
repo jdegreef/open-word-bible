@@ -5,9 +5,9 @@ date: 2026-11-14
 order: 112
 nav_title: Hai ấn bản của Giê-rê-mi
 section: passage
-source: 57b54f832e6f
+source: ab0e3f253839
 ---
-Sách nào trong Kinh Thánh cũng có những chỗ các bản chép tay không thống nhất. Ở phần lớn các sách, những chỗ ấy ít và nhỏ. Giê-rê-mi thì khác. Trong các bản ghi của Open Word Bible, sách này có 176 quyết định về dị bản, nhiều hơn bất cứ sách nào khác: nhiều hơn Giăng (139), Thi Thiên (134) hay Ê-sai (122). Chín mươi sáu quyết định trong số đó có chú thích, và năm mươi quyết định được đánh dấu là chưa chắc chắn.
+Sách nào trong Kinh Thánh cũng có những chỗ các bản chép tay không thống nhất. Ở phần lớn các sách, những chỗ ấy ít và nhỏ. Giê-rê-mi thì khác. Trong các bản ghi của Open Word Bible, sách này có 178 quyết định về dị bản, nhiều hơn bất cứ sách nào khác: nhiều hơn Giăng (139), Thi Thiên (134) hay Lu-ca (125). Chín mươi ba quyết định trong số đó có chú thích, và năm mươi quyết định được đánh dấu là chưa chắc chắn.
 
 Lý do chính là sách Giê-rê-mi đã đến với chúng ta trong hai ấn bản. Bài này giải thích hai ấn bản ấy là gì, vì sao các học giả nghĩ sách này tồn tại dưới hai dạng, và bản dịch làm gì.
 
@@ -66,7 +66,7 @@ Nhiều ghi chú trong số này nói một điều khác thường: “Phần m
 
 ## Nửa còn lại: điều các ký lục viết và điều họ đọc
 
-Khoảng 84 trong số 176 quyết định của Giê-rê-mi liên quan đến bản Hy Lạp. Gần bằng số đó, khoảng 78, liên quan đến một điều khác: những chỗ chính các bản chép tay Hê-bơ-rơ cho hai dạng của một từ.
+Khoảng 84 trong số 178 quyết định của Giê-rê-mi liên quan đến bản Hy Lạp. Gần bằng số đó, khoảng 78, liên quan đến một điều khác: những chỗ chính các bản chép tay Hê-bơ-rơ cho hai dạng của một từ.
 
 Các nhà Masorete, những ký lục sao chép và thêm dấu nguyên âm cho bản văn Hê-bơ-rơ vào đầu thời Trung Cổ, không chịu sửa các chữ cái họ đã nhận. Ở chỗ họ nghĩ một từ cần được đọc khác, họ để nguyên các phụ âm đã viết và ghi ở lề dạng cần đọc lớn lên. Dạng viết gọi là *ketiv* (“điều được viết”), và dạng đọc lớn gọi là *qere* (“điều được đọc”). Giê-rê-mi có số chỗ như vậy nhiều khác thường. Xem [Các nhà Masorete: những người canh giữ bản văn Hê-bơ-rơ](/articles/the-masoretes/).
 
@@ -80,7 +80,7 @@ Khoảng mười bốn quyết định còn lại liên quan đến những ch�
 
 ## Vì sao nhiều ghi chú đến vậy?
 
-Gộp tất cả lại, con số ấy không phải là dấu hiệu cho thấy bản văn Giê-rê-mi không đáng tin cậy. Phần lớn trong 176 quyết định ghi lại hoặc là một khác biệt về chính tả mà chính các ký lục Hê-bơ-rơ đã đánh dấu, hoặc là một chỗ ấn bản Hy Lạp ngắn hơn. Loại thứ nhất hầu như không ảnh hưởng gì. Loại thứ hai là có thật, nhưng được hiểu rõ và ghi chép rõ: hai ấn bản của sách một tiên tri, cả hai đều cổ, cả hai đều được những cộng đồng trung tín sao chép.
+Gộp tất cả lại, con số ấy không phải là dấu hiệu cho thấy bản văn Giê-rê-mi không đáng tin cậy. Phần lớn trong 178 quyết định ghi lại hoặc là một khác biệt về chính tả mà chính các ký lục Hê-bơ-rơ đã đánh dấu, hoặc là một chỗ ấn bản Hy Lạp ngắn hơn. Loại thứ nhất hầu như không ảnh hưởng gì. Loại thứ hai là có thật, nhưng được hiểu rõ và ghi chép rõ: hai ấn bản của sách một tiên tri, cả hai đều cổ, cả hai đều được những cộng đồng trung tín sao chép.
 
 Người đọc Open Word Bible có thể thấy cả hai mà không bị buộc phải chọn. Bản văn là ấn bản Hê-bơ-rơ mà Hội Thánh và nhà hội đã đọc. Các chú thích cho thấy ấn bản kia khác ở đâu, và các quyết định giải thích lý do, cũng như bản dịch chắc chắn đến mức nào.
 
