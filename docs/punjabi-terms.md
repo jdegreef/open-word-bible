@@ -608,3 +608,27 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Godliness ਭਗਤੀ; conscience ਜ਼ਮੀਰ; mystery ਭੇਤ; ransom ਛੁਟਕਾਰੇ ਦਾ ਮੁੱਲ;
   mediator ਵਿਚੋਲਾ; the good fight of faith (6:12) ਕੁਸ਼ਤੀ (L), ਮੁਕਾਬਲਾ (B).
 - 2:11-12 *hēsychia* is ਸ਼ਾਂਤ, not silence, at every level.
+
+### Micah
+
+- Names: ਮੀਕਾਹ, ਮੋਰਸ਼ਤੀ / ਮੋਰਸ਼ਤ, ਯੋਥਾਮ, ਆਹਾਜ਼, ਹਿਜ਼ਕੀਯਾਹ, ਸਾਮਰਿਯਾ;
+  the towns of 1:10-15: ਗਥ, ਬੈਤ-ਲਅਫ਼ਰਾਹ, ਸ਼ਾਫ਼ੀਰ, ਸਅਨਾਨ, ਬੈਤ-ਏਸਲ, ਮਾਰੋਥ,
+  ਲਾਕੀਸ਼, ਮੋਰਸ਼ਤ-ਗਥ, ਅਕਜ਼ੀਬ, ਮਾਰੇਸ਼ਾਹ, ਅਦੁੱਲਾਮ; ਬੈਤਲਹਮ ਅਫ਼ਰਾਥਾਹ (5:1, as
+  Ruth 4:11 and Matthew); ਨਿਮਰੋਦ, ਆਮਰੀ, ਅਹਾਬ, ਬਾਲਾਕ, ਬਿਲਆਮ, ਬਓਰ,
+  ਸ਼ਿੱਟੀਮ, ਗਿਲਗਾਲ, ਮਿਰਯਮ, ਕਰਮਲ, ਬਾਸ਼ਾਨ, ਗਿਲਆਦ; the River ਮਹਾਂ ਦਰਿਆ (L),
+  ਫ਼ਰਾਤ (B, R).
+- Ne'um YHWH ਦਾ ਵਾਕ ਹੈ (L, B), ਆਖਦੇ ਹਨ (R). Woe (2:1) follows style
+  §12a (ਉਨ੍ਹਾਂ ਉੱਤੇ ਹਾਇ at B); *alelai* (7:1) ਹਾਇ ਮੇਰੇ ਉੱਤੇ.
+- Peoples (*ammim*) ਉੱਮਤਾਂ (L), ਕੌਮਾਂ (B, R); my people ਮੇਰੀ ਪਰਜਾ (L),
+  ਮੇਰੇ ਲੋਕ (B, R), with ਮੇਰੀ ਪਰਜਾ kept at B in a few lines.
+- *Hittif* (2:6, 11), to drip words, is ਭਵਿੱਖਬਾਣੀ ਕਰਨੀ at every level;
+  divination (*qesem*) ਫਾਲ ਪਾਉਣਾ.
+- Steadfast love (*chesed*, 6:8, 7:18, 7:20) ਅਟੱਲ ਪਿਆਰ; at 6:8 B has
+  ਵਫ਼ਾਦਾਰੀ and R spells out kindness and loyalty. Remnant ਬਚੇ ਹੋਏ.
+- 4:1-3 matches Isaiah 2:2-4, 3:12 is quoted in Jeremiah 26:18, 4:4
+  echoes 1 Kings 5:5, 6:4 Exodus 20:2, 7:6 is quoted in Matthew 10:35-36:
+  those books should follow Micah's wording where the Hebrew agrees.
+- Zion speaks as a woman in 4:9-13 and 7:8-10, and her enemy is
+  ਵੈਰਨ; prayers to God (6:9, 7:14-20) say ਤੂੰ.
+- Our fathers (7:20) {{gender:ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ}}; ਹਰ ਕੋਈ, ਮਨੁੱਖ and
+  ਹੇ ਮਨੁੱਖ (4:4, 6:8, 7:6) take no gender span.
