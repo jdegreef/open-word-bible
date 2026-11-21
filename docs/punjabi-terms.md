@@ -467,3 +467,19 @@ Malachi follows the Hebrew chapters: Hebrew 3:19-24 is English 4:1-6.
   ਤੰਦਰੁਸਤੀ (L), not ਚੰਗਿਆਈ, which is goodness.
 - 3:1 should stay recognizable in Mark 1:2 and Matthew 11:10, 1:2-3 in
   Romans 9:13, 3:23-24 in Luke 1:17.
+
+### 2 Peter
+
+People and places: ਸ਼ਮਊਨ ਪਤਰਸ, ਨੂਹ, ਲੂਤ, ਬਿਲਆਮ, ਬੋਸੋਰ (the Greek form of
+Beor, kept as Peter spells it), ਪੌਲੁਸ; ਸਦੂਮ,
+ਅਮੂਰਾਹ; ਤਰਤਰੁਸ (*tartaroō*, 2:4, kept as a name).
+
+- Chapter 2 runs parallel to Jude; the shared terms follow Jude: ਕੁਧਰਮੀ,
+  ਘੁੱਪ ਹਨੇਰਾ, ਪਿਆਰ-ਭੋਜ, ਠੱਠਾ ਕਰਨ ਵਾਲੇ, the three blaspheme forms;
+  false teachers ਝੂਠੇ ਸਿੱਖਿਅਕ.
+- Scripture (*graphē*, 1:20, 3:16) ਪਵਿੱਤਰ ਸ਼ਾਸਤਰ; ਗ੍ਰੰਥ stays out.
+- Divine (*theios*, 1:3-4) ਪਰਮੇਸ਼ੁਰੀ, not ਈਸ਼ਵਰੀ.
+- Godliness ਭਗਤੀ; lawless (*athesmos*, 2:7, 3:17) ਬੇਨੇਮ; repentance
+  ਤੋਬਾ (L, B).
+- 3:10 "will be found" is ਪ੍ਰਗਟ ਹੋ ਜਾਣਗੇ (L), flagged: other manuscripts
+  read "burned up".
