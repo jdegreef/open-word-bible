@@ -347,8 +347,53 @@ priest), باراباس, قیصر, آگوستوس, پولس, سولس, برنا�
   15).
 - ملکوت or پادشاهی for "kingdom" at L and B.
 - عدالت or پارسایی for *dikaiosynē* and *tsedaqah*.
+- Mark 6:18: John the Baptist says تو to Herod at every level; شما at B
+  and R is the alternative.
+- Mark 7:28: the Syrophoenician woman calls Jesus سرورم; "سرور" or "آقا"
+  are the alternatives.
+- Mark 14:60 and 15:2: the high priest and Pilate say تو to Jesus, and Jesus
+  says تو to Pilate; شما at B and R is the alternative.
 
 ## Added while drafting
 
 Each book's drafting pull request adds the names and terms it settled, in a
 section for the book, here.
+
+### Mark
+
+People: یایروس, بارتیمائوس پسر تیمائوس, یوشا (Joses), هیرودیا, ابیاتار,
+لژیون (the spirits' name, 5:9), بوانرجس, شمعون قانوی (Mark's *Kananaios*;
+the glossary's شمعون غیور is Luke's word), شمعون جذامی, شمعون قیروانی,
+اسکندر, روفس, یعقوب کوچک, سالومه, یوسف رامه‌ای, الیاس, صدوقیان, هیرودیان.
+
+Places: جراسیان, دکاپولیس, دلمانوتا, جنیسارت, بیت‌فاجی, جتسیمانی, صور,
+صیدون, قیصریهٔ فیلیپی, قیروان, مجدل (Readable for Magdala).
+
+Aramaic and Hebrew words Mark keeps, written in Persian letters: تالیتا قوم,
+افاتا, قربان, ربونی, اَبّا, ایلوئی ایلوئی لما سبقتنی, هوشیعانا.
+
+Terms:
+
+| Term | L | B | R |
+|---|---|---|---|
+| *euthys* | فوراً | varied | varied |
+| the lake | دریا | دریاچه | دریاچه |
+| scribes | کاتبان | علمای دین | علمای شریعت خدا |
+| elders | مشایخ | مشایخ | بزرگان قوم |
+| unclean spirit | روح پلید | روح پلید | روح شریر |
+| parable | مَثَل | مثل | داستان |
+| Rabbi | ربی | ربی | استاد |
+| Truly I tell you | آمین، به شما می‌گویم | براستی به شما می‌گویم | حقیقت را به شما می‌گویم |
+| sign | آیت | آیت | نشانه |
+| temple courts | معبد | صحن معبد | محوطهٔ معبد |
+| sanctuary curtain | پردهٔ قدس | پردهٔ قدس | پردهٔ معبد |
+| praetorium | پرایتوریوم | مقر والی | کاخ والی |
+| centurion | یوزباشی | یوزباشی | افسری رومی |
+| the Council | شورای عالی | شورای عالی | شورای عالی یهود |
+| Feast of Unleavened Bread | [عید] فطیر | عید فطیر | عید نان بی‌خمیرمایه |
+| abomination of desolation | مکروه ویرانی | پلیدی ویرانگر | آن چیز هولناکی که ویران می‌کند |
+
+The units setting: {{units:مزد هشت ماه|دویست دینار}} (6:37), سیصد دینار as
+the wage of a year (14:5), a denarius as a day's wage (12:15), and دو لپتا
+که یک کودرانت می‌شود (12:42). جهنم stays at every level (9:43-47), and
+برده at every level in 10:43-44.
