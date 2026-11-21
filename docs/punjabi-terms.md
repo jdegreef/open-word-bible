@@ -231,3 +231,29 @@ peoples: ਬੈਤਲਹਮ, ਯਹੂਦਾਹ, ਮੋਆਬ, ਮੋਆਬਣ (
   say ਤੁਸੀਂ to her. Boaz says ਤੂੰ to Ruth ("ਮੇਰੀ ਧੀਏ"); Ruth says ਤੁਸੀਂ
   to Boaz ("ਹੇ ਮੇਰੇ ਸੁਆਮੀ" at L and B, "ਮਾਲਕ ਜੀ" at R). Men of the town,
   the women and the elders say ਤੁਸੀਂ to one another and to Naomi.
+
+### Jonah
+
+People and places: ਯੂਨਾਹ, ਅਮਿੱਤਈ, ਨੀਨਵਾਹ, ਤਰਸ਼ੀਸ਼, ਯਾਫ਼ਾ; a Hebrew ਇਬਰਾਨੀ.
+
+- *raʿah* (evil, disaster): ਬੁਰਿਆਈ at L through the book (1:2, 1:7, 3:10,
+  4:1, 4:6), so the reader hears one word; B and R say ਬਿਪਤਾ, ਮੁਸੀਬਤ,
+  ਦੁੱਖ as the sense requires.
+- *manah* (appoint) is ਠਹਿਰਾਉਣਾ at L and B for the fish, plant, worm and
+  wind; ਭੇਜਣਾ at R.
+- *tul* (hurl) is ਸੁੱਟਣਾ at every level; going down (*yarad*) is ਉਤਰਨਾ.
+- Sailors ਮਲਾਹ; the captain ਮਲਾਹਾਂ ਦਾ ਮੁਖੀਆ (L), ਕਪਤਾਨ (B, R); lots ਗੁਣੇ
+  ਪਾਉਣਾ; vows ਸੁੱਖਣਾ ਸੁੱਖਣਾ (L, B), ਪੱਕਾ ਪ੍ਰਣ (R).
+- Sackcloth ਤੱਪੜ; a proclamation ਹੋਕਾ; the nobles ਵੱਡੇ ਲੋਕ (L), ਸਰਦਾਰ (B,
+  R); to overturn ਉਲਟਾਉਣਾ.
+- God relenting (*niḥam*): ਪਛਤਾਉਣਾ (L), ਮਨ ਬਦਲਣਾ (B, R).
+- The *qiqayon* is ਬੂਟਾ (L), ਸੰਘਣੇ ਪੱਤਿਆਂ ਵਾਲਾ ਬੂਟਾ (B, R); the booth ਝੌਂਪੜੀ
+  (L), ਛੱਪਰ (B, R). Pity (*ḥus*, 4:10-11) is ਤਰਸ (L, B), ਫ਼ਿਕਰ (R).
+- Jonah's anger ("it burned to him") is [ਕ੍ਰੋਧ ਨਾਲ] ਤਪਣਾ at L, ਕ੍ਰੋਧ ਕਰਨਾ
+  at B, ਗੁੱਸੇ ਹੋਣਾ at R, the same in 4:1, 4:4 and 4:9.
+- Exodus 34:6 in 4:2: ਕਿਰਪਾਲੂ ਅਤੇ ਦਇਆਵਾਨ, ਕ੍ਰੋਧ ਵਿੱਚ ਧੀਰਜਵਾਨ, ਅਟੱਲ
+  ਪਿਆਰ ਨਾਲ ਭਰਪੂਰ (L). Exodus should match when it is drafted.
+- The psalm of chapter 2 echoes Psalms 120:1, 42:8, 31:7 and 3:9; those
+  psalms and Jonah 2 should be brought into line when the psalms are drafted.
+- Address: God and the captain say ਤੂੰ to Jonah; the sailors say ਤੂੰ to
+  him and he says ਤੁਸੀਂ to them (many); everyone says ਤੂੰ to God.
