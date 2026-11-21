@@ -671,3 +671,24 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   divine_name span because the Greek has *Kyrios*.
 - 2:3 the rich man is ਤੁਸੀਂ ... ਬੈਠੋ ਜੀ and the poor man ਤੂੰ, to show
   the favouritism. 4:4 *moichalides* is feminine at L (ਵਿਭਚਾਰਨੋ).
+
+### Song of Songs
+
+- The lovers say ਤੂੰ to each other; the women of Jerusalem are ਤੁਸੀਂ, and
+  she says ਤੁਸੀਂ (with ਜੀ in R) to Solomon in 8:12. The woman's verbs are
+  feminine, his masculine; her brothers (8:8-9) speak in the masculine.
+- Beloved (*dod*) ਮੇਰਾ ਪ੍ਰੀਤਮ (L, B), ਮੇਰਾ ਪਿਆਰਾ (R); darling
+  (*ra'yah*) ਮੇਰੀ ਸਾਥਣ (L), ਮੇਰੀ ਪਿਆਰੀ (B, R); bride ਲਾੜੀ; my sister,
+  bride ਹੇ ਮੇਰੀ ਭੈਣ, ਲਾੜੀ (L), ਮੇਰੀ ਭੈਣ, ਮੇਰੀ ਲਾੜੀ (B), ਭੈਣ ਵਰਗੀ ਪਿਆਰੀ
+  ਮੇਰੀ ਲਾੜੀ (R); love-making (*dodim*, 1:2, 7:13) ਪ੍ਰੇਮ-ਰਸ (L), ਪਿਆਰ
+  (B, R).
+- Refrains are worded once and reused: the oath (2:7, 3:5, 8:4, shorter in
+  8:4), the call to rise (2:10, 13), the search (3:1-2, 5:6), 'until the
+  day breathes' (2:17, 4:6), 'how beautiful you are' (1:15, 4:1), and the
+  descriptions repeated in 6:5-7 (from 4:1-3), 7:4 (4:5) and 8:3 (2:6).
+- Plants and spices: myrrh ਗੰਧਰਸ, frankincense ਲੋਬਾਨ, nard ਜਟਾਮਾਸੀ,
+  henna ਮਹਿੰਦੀ, cedar ਦਿਆਰ, lily ਸੋਸਨ, mandrake ਮੰਡਰਾਕ, nut trees
+  ਅਖਰੋਟ (B, R). Names: ਸ਼ੂਲੰਮੀਤ, ਤਿਰਸਾਹ, ਮਹਨਇਮ, ਹਸ਼ਬੋਨ, ਬਥ-ਰੱਬੀਮ, ਦੰਮਿਸ਼ਕ,
+  ਅੰਮੀ-ਨਾਦੀਬ, ਬਆਲ-ਹਾਮੋਨ.
+- 8:6 *shalhevetyah* is {{divine_name:ਪ੍ਰਭੂ|ਯਾਹ}} ਦੀ ਲਾਟ in L only; B
+  and R read it as a superlative. Sheol ਪਤਾਲ (L, B), ਕਬਰ (R).
