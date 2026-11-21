@@ -42,18 +42,21 @@ Rules the software enforces are marked **(checked)**.
   so a Hebrew record is one whole verse, or several where one sentence runs
   across them. **(checked)** A sentence that continues into the next verse ends
   its record with a comma at Literal and Balanced (Genesis 1:14, 1:17, 1:29).
-- **Psalms.** Verses are numbered as in the Hebrew text, where a psalm's title
-  is verse 1 (Psalm 3:1 is "A psalm of David ..."), so from Psalm 3 on many
-  verse numbers are one higher than in most English Bibles. The title is its
-  own record, translated at every level, and the first record's decisions say
-  so. Cite other psalms by the Hebrew numbers too (Psalm 31:14, not 31:13).
+- **Psalms.** Records are numbered as in the Hebrew text, where a psalm's
+  title is verse 1 (record PSA.3.1 is "A psalm of David ..."). The site shows
+  the NIV's numbers, with the title unnumbered (verse 0), so Psalm 3:2 in the
+  records is 3:1 on the site. The title is its own record, translated at every
+  level, and its footnote gives the Hebrew number. In notes, cite verses as
+  the records number them (Psalm 31:14, not 31:13): the site converts every
+  reference to the NIV's numbers. Only the notes that explain the numbering
+  itself are written in the NIV's numbers, and `data/niv_notes.json` lists
+  them so the site leaves their references alone.
   *Selah* stays "Selah" at every level, at the end of its line, with a meaning
   decision that its sense is unknown.
-- **Exodus.** Verses are numbered as in the Hebrew text too. Hebrew 7:26–29 is
-  8:1–4 in most English Bibles (so Hebrew 8:1–28 is English 8:5–32), and Hebrew
-  21:37 is English 22:1 (so Hebrew 22:1–30 is English 22:2–31). A footnoted
-  decision at 7:26, 8:1, 21:37 and 22:1 says so, and Exodus is cited by the
-  Hebrew numbers.
+- **Exodus.** Records are numbered as in the Hebrew text too. Hebrew 7:26–29
+  is 8:1–4 on the site, as in the NIV (so Hebrew 8:1–28 is 8:5–32), and Hebrew
+  21:37 is 22:1 (so Hebrew 22:1–30 is 22:2–31). A footnoted decision at each
+  of those places gives both numbers.
 
 ## 3. The literal gloss
 

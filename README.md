@@ -69,11 +69,17 @@ reader's red letters, found in each language from its own quotation marks;
 `web/og/<card>.digest`. Two pull requests that add different chapters touch
 different files, so they don't conflict.
 
-Old Testament verses are numbered as in the Hebrew text (a psalm's title is
-verse 1), not as in English Bibles; `data/versification.json` maps one to the
-other (`owb/versification.py`). Five New Testament verses are numbered as in
-the SBLGNT where English Bibles differ (2 Corinthians 13:13 is English 13:14);
-`versification.NEW_TESTAMENT` maps them.
+Records are numbered as their source text numbers them: Old Testament verses
+as in the Hebrew text (a psalm's title is verse 1), and New Testament verses as
+in the SBLGNT (2 Corinthians 13:13 is English 13:14). The site and its links
+show the NIV's numbers instead: Malachi has four chapters, Joel three, and a
+psalm's title is unnumbered (verse 0, `PSA.3.0`). `data/versification.json`
+maps the Hebrew to the English numbers and `owb/versification.py` gives the
+NIV's (`to_niv`, `reader_ids`); the site build converts records, words, notes
+and every other file in `data/` as it reads them, so `content/` and `data/`
+keep the source numbers. Where one Hebrew verse holds two NIV verses,
+`data/reader_verses.json` marks where the second begins in each rendering;
+`data/niv_notes.json` lists the notes written in the NIV's numbers.
 
 A record is one sentence of the source, not one verse. It ends where the
 SBLGNT ends a sentence: a full stop, a question mark, or a raised dot (·)

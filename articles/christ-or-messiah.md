@@ -73,7 +73,7 @@ Three kinds of words never take the setting.
 
 **"Christians."** The name the disciples were given in Antioch is a different Greek word, made from *christos*. It is the name of a group, and it stays "Christians".
 
-**"Anointed" in the Old Testament.** The Hebrew *mashiach* is translated "anointed" at every level, as in 1 Samuel 24:7 and Psalm 2:2 above. There is no setting, because in most of these verses the word describes a particular king or priest, and "the Messiah" would claim more than the verse says. Instead the meaning decisions point forward. At Psalm 18:51 the record says the word "is the word behind 'Messiah' and 'Christ', and the promise was later understood to point to the Messiah." At Daniel 9:25–26, where "an anointed one" will be cut off, the decision is marked uncertain and lists the ways readers have taken it, from the high priest Onias III to Jesus the Messiah. That is a question of meaning, and meaning is never a setting.
+**"Anointed" in the Old Testament.** The Hebrew *mashiach* is translated "anointed" at every level, as in 1 Samuel 24:6 and Psalm 2:2 above. There is no setting, because in most of these verses the word describes a particular king or priest, and "the Messiah" would claim more than the verse says. Instead the meaning decisions point forward. At Psalm 18:50 the record says the word "is the word behind 'Messiah' and 'Christ', and the promise was later understood to point to the Messiah." At Daniel 9:25–26, where "an anointed one" will be cut off, the decision is marked uncertain and lists the ways readers have taken it, from the high priest Onias III to Jesus the Messiah. That is a question of meaning, and meaning is never a setting.
 
 ## A setting, not a second translation
 
