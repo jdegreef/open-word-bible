@@ -1312,10 +1312,10 @@ def heading_record(rid):
         return rid
     ref = refs.parse(r["refs"][0])
     # Only where two of our verses are one NIV verse: a heading over a
-    # verse's second sentence (Philippians 4:5) stays.
-    same = [x for x in chapter_records(ref.book, ref.chapter)
-            if x["refs"][0] == r["refs"][0] and x["source_refs"][0] != r["source_refs"][0]]
-    if not same or same[0]["id"] == rid:
+    # verse's second sentence (Philippians 4:5), or over the first of them
+    # (a psalm title's first verse), stays.
+    same = [x for x in chapter_records(ref.book, ref.chapter) if x["refs"][0] == r["refs"][0]]
+    if same[0]["source_refs"][0] == r["source_refs"][0]:
         return rid
     if ref.verse == 1:
         # The verse opens an NIV chapter (Hebrew Numbers 25:19 + 26:1 are NIV
