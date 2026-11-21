@@ -32,6 +32,8 @@ Configuration comes from the environment:
                         it errors are only logged
   SENTRY_TRACES_SAMPLE_RATE  share of requests (0 to 1) whose timings go to
                         Sentry too (default 0: none)
+  REDIS_URL             a Redis instance (such as a Render Key Value) to cache
+                        in; without it the cache is a table in the database
 """
 import os
 import sys
@@ -138,17 +140,29 @@ DATABASES = {
 }
 DATABASES["default"].setdefault("OPTIONS", {}).update(database_options(statement_timeout_ms()))
 
-# One cache in the database, shared by every gunicorn worker and kept across
-# deploys (each process's memory is neither). The admin keeps its progress
-# counts and GitHub lookups here. render.yaml's pre-deploy runs
-# createcachetable; the test runner makes the table itself.
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
-        "LOCATION": "owb_cache",
-        "OPTIONS": {"MAX_ENTRIES": 2000},
-    },
-}
+# One cache shared by every gunicorn worker and kept across deploys (each
+# process's memory is neither). The admin keeps its progress counts, review
+# queue books and GitHub lookups here. With REDIS_URL it is Redis; otherwise
+# a table in the database: render.yaml's pre-deploy runs createcachetable and
+# the test runner makes the table itself. Keys name what they were counted
+# from, so stale ones are only ever culled; MAX_ENTRIES leaves room for a
+# good many imports and reviews before culling starts.
+if os.environ.get("REDIS_URL"):
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": os.environ["REDIS_URL"],
+            "KEY_PREFIX": "owb",
+        },
+    }
+else:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+            "LOCATION": "owb_cache",
+            "OPTIONS": {"MAX_ENTRIES": 20000},
+        },
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
