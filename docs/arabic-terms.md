@@ -341,3 +341,18 @@ Names and terms a drafter added, in the book where they first appear.
 | James | Lord of hosts (Greek *Sabaōth*) | *ربّ الصباؤوت* (L); *ربّ الجنود* (B, R) | James 5:4. No divine-name span: the Greek has *Kyrios*. |
 | James | if the Lord wills | *إن شاء الرب* | James 4:15. Not *إن شاء الله*. |
 | James | friend of God | *خليل الله* (L, B); *صديق الله* (R) | James 2:23. |
+| John | the Jews (meaning the authorities in Jerusalem) | *اليهود* (L); *قادة اليهود* (B, R) | A meaning decision gives the sense in each place. Where the people are meant, *اليهود* at every level. |
+| John | believe (trust a person's word or testimony) | *صدّق* | John 5:46-47; 10:37-38. *آمن* for believing in Jesus or God. |
+| John | Father (addressed in prayer) | *أيّها الآب* (L); *يا أبتِ* (B); *يا أبي* (R) | John 11:41; 17. With an adjective: *أيّها الآب القدّوس* (L, B), *يا أبي القدّوس* (R). |
+| John | peace to you (greeting) | *سلام لكم* (L, B); *السلام عليكم* (R) | John 20:19, 21, 26. |
+| John | hand over; betray | *سلّم*; *يسلّمه* (L), *يخونه* (B, R) | *سلّم* throughout the Passion (18-19). |
+| John | officers (of the chief priests) | *الخدّام* (L); *حرّاس الهيكل* (B, R) | John 7:32; 18:3. |
+| John | chief priests | *رؤساء الكهنة* (L, B); *كبار الكهنة* (R) | |
+| John | slave | *عبد*, *جارية* (L); *خادم*, *خادمة* (B, R) | John 8:34; 18:10, 17. |
+| John | I am he (18:5-8); I am not (Peter) | *أنا هو*; *لست أنا* | Every level. 8:58 is *أنا كائن*. |
+| John | charcoal fire | *نار فحم* | John 18:18; 21:9, so the echo is heard. |
+| John | It is finished | *قد تمّ* | John 19:30, every level. |
+| John | love (both Greek verbs in 21:15-17) | *أحبّ* | A footnote gives the other view. |
+| John | Teacher (Mary's word); my Lord (Mary) | *رابّوني*; *سيّدي* | John 20:15-16. Thomas: *ربّي وإلهي* (20:28). |
+| John | Annas; Caiaphas; Malchus; Clopas; Didymus | *حنّان*; *قيافا*; *ملخُس*; *كلوبا*; *ديديموس* | |
+| John | Gabbatha; Golgotha; Kidron | *جبّاثا*; *جلجثة*; *قدرون* | *جلجثة* as in Mark. |
