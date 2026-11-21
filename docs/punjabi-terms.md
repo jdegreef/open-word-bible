@@ -783,3 +783,42 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   (ਯਹੋਯਾਕੀਨ at R), ਨਬੂਕਦਨੱਸਰ, ਬਾਬੁਲ, ਫ਼ਾਰਸ ਅਤੇ ਮਾਦੀ, ਹਿੰਦ ਤੋਂ ਕੂਸ਼.
   Haman's sons (9:7-9): ਪਰਸ਼ਨਦਾਥਾ, ਦਲਫ਼ੋਨ, ਅਸਪਾਥਾ, ਪੋਰਾਥਾ, ਅਦਲਯਾ,
   ਅਰੀਦਾਥਾ, ਪਰਮਸ਼ਤਾ, ਅਰੀਸਈ, ਅਰੀਦਈ, ਵਯਜ਼ਾਥਾ.
+
+### Hosea
+
+- Names: ਹੋਸ਼ੇਆ, ਬਏਰੀ, ਗੋਮਰ, ਦਿਬਲਾਇਮ, ਯਿਜ਼ਰਏਲ, ਯੇਹੂ. The children's names
+  are transliterated at L and translated at B and R: Lo-ruhamah ਲੋ-ਰੁਹਾਮਾਹ
+  (L), ਦਇਆ-ਨਹੀਂ (B, R); Lo-ammi ਲੋ-ਅੰਮੀ (L), ਮੇਰੀ-ਪਰਜਾ-ਨਹੀਂ (B),
+  ਮੇਰੇ-ਲੋਕ-ਨਹੀਂ (R); in 2:3 ਅੰਮੀ / ਰੁਹਾਮਾਹ (L), ਮੇਰੀ-ਪਰਜਾ (B), ਮੇਰੇ-ਲੋਕ (R),
+  ਦਇਆ-ਮਿਲੀ (B, R). Kings ਉੱਜ਼ੀਯਾਹ, ਯੋਥਾਮ, ਆਹਾਜ਼, ਹਿਜ਼ਕੀਯਾਹ, ਯੋਆਸ਼ ਦਾ ਪੁੱਤਰ
+  ਯਾਰਾਬੁਆਮ. Places ਆਕੋਰ ਦੀ ਵਾਦੀ, ਗਿਲਗਾਲ, ਬੈਤ-ਆਵਨ, ਬੈਤਏਲ, ਮਿਸਪਾਹ, ਤਾਬੋਰ,
+  ਗਿਬਆਹ, ਰਾਮਾਹ, ਆਦਮ, ਗਿਲਆਦ, ਸ਼ਕਮ, ਸਾਮਰਿਯਾ (feminine), ਮੈਮਫ਼ਿਸ (9:6), ਸੂਰ
+  (9:13), ਅਦਮਾਹ and ਸਬੋਈਮ (11:8), ਸ਼ਲਮਨ and ਬੈਤ-ਅਰਬੇਲ (10:14), ਅਰਾਮ.
+  Baal ਬਆਲ, the Baals ਬਆਲਾਂ (L), ਬਆਲ ਦੇਵਤਿਆਂ (B, R); Baal of Peor ਪਓਰ ਦਾ
+  ਬਆਲ, and bosheth (9:10) ਉਸ ਸ਼ਰਮ (L), ਉਸ ਸ਼ਰਮਨਾਕ ਦੇਵਤੇ (B, R).
+- Zenunim ਵੇਸਵਾਪੁਣਾ (L, B), ਬੇਵਫ਼ਾਈ / ਬੇਵਫ਼ਾ ਹੋਣਾ (R); 1:2 ਵੇਸਵਾਪੁਣੇ ਦੀ
+  ਪਤਨੀ (L), ਬਦਚਲਣ ਤੀਵੀਂ (B). Lovers ਯਾਰ; adultery ਵਿਭਚਾਰ. Betroth ਆਪਣੇ
+  ਨਾਲ ਮੰਗ ਲਵਾਂਗਾ (L), ਮੰਗਣੀ ਕਰਾਂਗਾ (B), ਲਾੜੀ ਬਣਾਵਾਂਗਾ (R).
+- Hesed ਅਟੱਲ ਪ੍ਰੇਮ; human hesed (6:4, 6:6, 10:12, 12:7) is ਸੱਚਾ ਪ੍ਰੇਮ at
+  R. Rahamim ਦਇਆ, and 14:4 keeps ਦਇਆ to echo Lo-ruhamah; nihumim (11:8) ਦਇਆ
+  (L, B), ਕੋਮਲ ਪ੍ਰੇਮ (R). Daʿat elohim ਪਰਮੇਸ਼ੁਰ ਦਾ ਗਿਆਨ (L, B), ਪਰਮੇਸ਼ੁਰ
+  ਨੂੰ ਜਾਣਨਾ (R). Torah ਸਿੱਖਿਆ; covenant ਨੇਮ.
+- ʿAm ਪਰਜਾ (L, B), ਲੋਕ (R); ʿammim ਉੱਮਤਾਂ (L), ਕੌਮਾਂ (B, R). Kemarim
+  (10:5) ਪੁਜਾਰੀ, as in Zephaniah. Bamot (10:8) ਉੱਚੇ ਥਾਂ (L, B), ਪਹਾੜੀਆਂ
+  ਉੱਤੇ ਬਣੇ ਪੂਜਾ-ਸਥਾਨ (R). Shofar ਨਰਸਿੰਗਾ, trumpet ਤੁਰ੍ਹੀ; pillar ਥੰਮ੍ਹ;
+  ephod ਏਫ਼ੋਦ; teraphim ਤਰਾਫ਼ੀਮ (L), ਘਰੇਲੂ ਦੇਵਤੇ / ਘਰੇਲੂ ਮੂਰਤੀਆਂ; qedeshot
+  ਦੇਵਦਾਸੀਆਂ (L). Sheol ਪਤਾਲ (L, B), ਕਬਰ (R). God of hosts (12:6) ਸੈਨਾਂ ਦੇ
+  ਪਰਮੇਸ਼ੁਰ; Adonai (12:15) ਉਸ ਦੇ ਪ੍ਰਭੂ, with no divine_name span.
+- Woe ਹਾਇ ਉਨ੍ਹਾਂ ਉੱਤੇ (L), ਉਨ੍ਹਾਂ ਉੱਤੇ ਹਾਇ (B), ਉਨ੍ਹਾਂ ਦਾ ਕਿੰਨਾ ਭਿਆਨਕ
+  ਹਾਲ ਹੋਵੇਗਾ (R). Ne'um YHWH as in Amos.
+- Gender spans follow Hindi: {{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}},
+  {{gender:ਤੁਹਾਡੇ ਵੱਡ-ਵਡੇਰਿਆਂ|ਤੁਹਾਡੇ ਪਿਉ-ਦਾਦਿਆਂ}} (9:10), {{gender:ਸੰਤਾਨ|ਪੁੱਤਰ}}
+  (11:10); 11:9 and 14:10 have none, as in Hindi. 3:2 has two units spans
+  (silver and barley) at B and R.
+- Lines other books must match: 2:1 and 2:25 (Romans 9:25-26); 6:6, "ਮੈਂ
+  ਅਟੱਲ ਪ੍ਰੇਮ ਚਾਹੁੰਦਾ ਹਾਂ, ਬਲੀ ਨਹੀਂ" (Matthew 9:13, 12:7); 8:13 and 9:9
+  (Jeremiah 14:10); 10:8, "ਸਾਨੂੰ ਢਕ ਲਓ ... ਸਾਡੇ ਉੱਤੇ ਡਿੱਗ ਪਓ" (Luke 23:30);
+  10:12, the fallow ground (Jeremiah 4:3); 11:1, "ਮਿਸਰ ਵਿੱਚੋਂ ਮੈਂ ਆਪਣੇ ਪੁੱਤਰ
+  ਨੂੰ ਸੱਦ ਲਿਆ" (Matthew 2:15); 13:14, "ਹੇ ਮੌਤ ... ਕਿੱਥੇ ਹੈ ਤੇਰਾ ਡੰਗ?"
+  (1 Corinthians 15:55). Within the book, 7:10 repeats 5:5, 13:3 repeats the
+  cloud and dew of 6:4, and 13:4 repeats 12:10.
