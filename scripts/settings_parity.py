@@ -54,7 +54,7 @@ COMPARED = [s for s in markup.SETTINGS if s not in OWN_SETTINGS]
 # Languages whose words are not separated by spaces, or take particles and
 # suffixes on the same word: their wording is matched as a substring, not as
 # a whole word.
-NO_WORD_BOUNDARY = {"ja", "zh", "ko", "am", "hi"}
+NO_WORD_BOUNDARY = {"ja", "zh", "ko", "am", "hi", "pa"}
 # A language whose share is below this fraction of the median is an outlier.
 OUTLIER_RATIO = 0.5
 
@@ -75,6 +75,9 @@ DOCUMENTED = {
     ("tl", "gender"): "docs/tagalog-style.md section 8: Tagalog words for people are mostly inclusive",
     ("id", "gender"): "docs/indonesian-style.md section 8: Indonesian words for people are already inclusive",
     ("ar", "deity_pronoun"): "docs/arabic-style.md section 8: Arabic has no capitals and no reverent pronoun",
+    ("pa", "christos"): "docs/punjabi-style.md section 8: ਮਸੀਹ is both the name and the word Messiah",
+    ("pa", "deity_pronoun"): "docs/punjabi-style.md section 8: Gurmukhi has no capitals",
+    ("pa", "gender"): "docs/punjabi-style.md section 8: Punjabi nouns for people are often already inclusive",
     ("ar", "christos"): "docs/arabic-style.md section 8: المسيح is both the title Christ and the word Messiah",
     ("fa", "christos"): "docs/persian-style.md section 9: مسیح is both the name and the word Messiah",
     ("fa", "deity_pronoun"): "docs/persian-style.md section 4: Persian has no capitals and one third-person pronoun",

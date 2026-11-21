@@ -3,7 +3,7 @@
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
 Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian,
-Chinese (Simplified), Arabic, Tagalog and Persian.
+Chinese (Simplified), Arabic, Tagalog, Persian and Punjabi.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -47,14 +47,16 @@ Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
 `docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md`,
 `docs/indonesian-style.md`, `docs/chinese-style.md`,
-`docs/arabic-style.md` and `docs/tagalog-style.md` are the briefs for French,
+`docs/arabic-style.md`, `docs/tagalog-style.md` and `docs/punjabi-style.md`
+are the briefs for French,
 Swahili, Vietnamese, Korean, (Brazilian) Portuguese, Amharic, Hindi, Russian,
 Ukrainian, Japanese, Indonesian, Chinese (Simplified), Arabic (Modern Standard
-Arabic, read right to left) and Tagalog. `docs/hindi-terms.md`,
+Arabic, read right to left), Tagalog and Punjabi (Gurmukhi script).
+`docs/hindi-terms.md`,
 `docs/russian-terms.md`, `docs/indonesian-terms.md`, `docs/chinese-terms.md`
 and `docs/tagalog-terms.md` are the Hindi, Russian, Indonesian, Chinese and
 Tagalog glossaries, Genesis to Revelation; `docs/arabic-terms.md` is the
-Arabic one, growing book by book.
+Arabic one, growing book by book, and `docs/punjabi-terms.md` the Punjabi one.
 `docs/hindi-review-guide.md` and
 `docs/persian-style.md` and `docs/persian-terms.md` are the brief and
 glossary for Persian, also read right to left.

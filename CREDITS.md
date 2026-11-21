@@ -122,8 +122,9 @@ The reading text and Greek are set in Gentium Book Plus, Copyright (c)
 The Noto Project Authors, Amharic in Noto Serif Ethiopic and Noto Sans
 Ethiopic, Copyright 2022 The Noto Project Authors, and Hindi in Noto Serif
 Devanagari and Noto Sans Devanagari, Copyright 2022 The Noto Project Authors,
-and Arabic and Persian in Noto Naskh Arabic and Noto Sans Arabic, Copyright
-2022 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
+Punjabi in Noto Serif Gurmukhi and Noto Sans Gurmukhi, Copyright 2022 The
+Noto Project Authors, and Arabic and Persian in Noto Naskh Arabic and Noto
+Sans Arabic, Copyright 2022 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
 Fraunces Project Authors, and the interface in Hanken Grotesk, Copyright 2021
 The Hanken Grotesk Project Authors, with Cyrillic in Noto Sans, Copyright 2022
 The Noto Project Authors. Readers can choose Atkinson Hyperlegible

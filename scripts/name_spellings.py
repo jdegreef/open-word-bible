@@ -153,7 +153,7 @@ def same_stem(a, b, lang):
         a, b = a.replace("ё", "е"), b.replace("ё", "е")
         prefix = len(os.path.commonprefix([a, b]))
         return min(len(a), len(b)) >= 3 and prefix >= max(2, min(len(a), len(b)) - 2)
-    if lang == "hi":
+    if lang in {"hi", "pa"}:
         short = short[:-1]
     return len(short) >= 3 and len(long_) - len(short) <= 3 and long_.startswith(short)
 
