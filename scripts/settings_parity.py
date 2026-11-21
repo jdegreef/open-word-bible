@@ -77,6 +77,7 @@ DOCUMENTED = {
     ("ar", "christos"): "docs/arabic-style.md section 8: المسيح is both the title Christ and the word Messiah",
     ("fa", "christos"): "docs/persian-style.md section 9: مسیح is both the name and the word Messiah",
     ("fa", "deity_pronoun"): "docs/persian-style.md section 4: Persian has no capitals and one third-person pronoun",
+    ("fa", "gender"): "docs/persian-style.md section 5: Persian words for people are already inclusive",
 }
 
 
