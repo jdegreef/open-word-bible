@@ -651,3 +651,23 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   born of God who keeps the believer (5:18) is the Son and takes the
   honorific. 5:20 *houtos* ਇਹੀ.
 - 2 John and 3 John should follow these words.
+
+### James
+
+- Names: ਯਾਕੂਬ, ਅਬਰਾਹਾਮ, ਇਸਹਾਕ, ਰਾਹਾਬ, ਅੱਯੂਬ, ਏਲੀਯਾਹ. James's readers
+  are ਤੁਸੀਂ; his imagined objector (2:18-22, 4:11-12) is ਤੂੰ.
+- Endurance (*hupomonē*) and patience (*makrothumia*, 5:7-10) are both
+  ਧੀਰਜ. Trial (*peirasmos*, 1:2, 12) ਪਰਖ; being tempted to sin (1:13-14)
+  ਪਰੀਖਿਆ (L, B), ਲਲਚਾਉਣਾ (R); desire ਲਾਲਸਾ; double-minded ਦੁਚਿੱਤਾ (L).
+- Works (*erga*) ਕੰਮ at every level, never ਕਰਮ; justified ਧਰਮੀ ਠਹਿਰਾਉਣਾ
+  (L, B), ਧਰਮੀ ਗਿਣਿਆ ਜਾਣਾ (R); the law ਬਿਵਸਥਾ, the law of freedom
+  ਅਜ਼ਾਦੀ ਦੀ ਬਿਵਸਥਾ; religion (*thrēskeia*) ਭਗਤੀ; Gehenna (3:6) ਗਹੇਨਾ (L),
+  ਨਰਕ (B, R); demons ਭੂਤ; elders (5:14) as 1 Timothy.
+- Quotations: Leviticus 19:18 (2:8) "ਤੂੰ ਆਪਣੇ ਗੁਆਂਢੀ ਨੂੰ ਆਪਣੇ ਵਰਗਾ ਪਿਆਰ
+  ਕਰੀਂ"; Genesis 15:6 (2:23) "ਅਬਰਾਹਾਮ ਨੇ ਪਰਮੇਸ਼ੁਰ ਦਾ ਵਿਸ਼ਵਾਸ ਕੀਤਾ, ਅਤੇ ਇਹ
+  ਉਸ ਦੇ ਲਈ ਧਾਰਮਿਕਤਾ ਗਿਣਿਆ ਗਿਆ" (L, B), for Romans, Galatians and the
+  Torah to follow; Proverbs 3:34 (4:6) as 1 Peter 5:5.
+- Lord of Sabaoth (5:4) ਪ੍ਰਭੂ ਸਬਾਓਥ (L), ਸੈਨਾਂ ਦੇ ਪ੍ਰਭੂ (B), with no
+  divine_name span because the Greek has *Kyrios*.
+- 2:3 the rich man is ਤੁਸੀਂ ... ਬੈਠੋ ਜੀ and the poor man ਤੂੰ, to show
+  the favouritism. 4:4 *moichalides* is feminine at L (ਵਿਭਚਾਰਨੋ).
