@@ -396,3 +396,21 @@ People and places: ਨਹੂਮ, ਅਲਕੋਸ਼ੀ (of Elkosh); ਨੀਨਵ
   52:7, when those books are drafted.
 - Nineveh is addressed as a woman: feminine ਤੂੰ with forms such as ਕਰੇਂਗੀ,
   ਜਾਵੇਂਗੀ. The king of Assyria (1:14, 3:18-19) takes masculine forms.
+
+### Joel
+
+People and places: ਯੋਏਲ, ਪਥੂਏਲ; ਸੀਯੋਨ, ਯਰੂਸ਼ਲਮ, ਯਹੂਦਾਹ; ਯਹੋਸ਼ਾਫ਼ਾਟ ਦੀ ਵਾਦੀ,
+ਫ਼ੈਸਲੇ ਦੀ ਵਾਦੀ, ਸ਼ਿੱਟੀਮ ਦੀ ਵਾਦੀ; ਸੂਰ, ਸੈਦਾ, ਫ਼ਲਿਸਤ; ਯੂਨਾਨੀ, ਸਬਾਈ; ਮਿਸਰ,
+ਅਦੋਮ. Joel follows the Hebrew chapters (English 2:28-32 is 3:1-5, English 3 is 4).
+
+- The four locusts (1:4, 2:25): ਕੁਤਰਨ ਵਾਲੀ, ਦਲ ਵਾਲੀ, ਟੱਪਣ ਵਾਲੀ, ਚੱਟਣ ਵਾਲੀ
+  ਟਿੱਡੀ (L, B); ਟਿੱਡੀਆਂ ਦੇ ਦਲ ਉੱਤੇ ਦਲ (R).
+- Shofar ਨਰਸਿੰਗਾ; sackcloth ਤੱਪੜ; drink offering ਪੀਣ ਦੀ ਭੇਟ; new wine ਨਵੀਂ ਮੈ;
+  fresh oil ਤਾਜ਼ਾ ਤੇਲ (L), ਜ਼ੈਤੂਨ ਦਾ ਤੇਲ (B, R); vats ਚੁਬੱਚੇ; the winepress
+  ਅੰਗੂਰ ਪੀੜਨ ਦਾ ਕੁੰਡ; the early and late rain ਪਹਿਲੀ ਅਤੇ ਪਿਛਲੀ ਬਰਖਾ (L),
+  ਪਤਝੜ ਅਤੇ ਬਸੰਤ ਦੀ ਬਰਖਾ (B, R).
+- The day of the LORD `{{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਦਾ ਦਿਨ`; fearful ਭੈਦਾਇਕ
+  (L), ਭਿਆਨਕ (B, R). God's zeal (2:18) ਅਣਖ, as ਅਣਖੀ in Nahum 1:2.
+- 2:13 uses the wording of Jonah 4:2 at each level, in the third person.
+- 3:1-5 should be matched by Acts 2:17-21 when Acts is drafted; 4:10 by
+  Isaiah 2:4 and Micah 4:3 (reversed); 4:16 by Amos 1:2.
