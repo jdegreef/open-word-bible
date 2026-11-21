@@ -845,7 +845,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਮੇਰੇ ਨਾਲ ਗੱਲਾਂ ਕਰਦਾ ਸੀ, addressed ਹੇ ਮੇਰੇ ਸੁਆਮੀ (L, B), ਸ੍ਰੀਮਾਨ ਜੀ (R);
   the angel of YHWH ਪ੍ਰਭੂ ਦਾ ਦੂਤ, with plain singular verbs. Patrol
   ਇੱਧਰ-ਉੱਧਰ ਫਿਰਨਾ (L), ਗਸ਼ਤ (B), ਘੁੰਮਣਾ (R). Horns ਸਿੰਗ, craftsmen ਕਾਰੀਗਰ;
-  the satan (3:1-2) ਸ਼ਤਾਨ (L), ਦੋਸ਼ ਲਾਉਣ ਵਾਲਾ (B, R); lampstand ਸ਼ਮਾਦਾਨ;
+  the satan (3:1-2) ਸ਼ੈਤਾਨ (L), spelled as in the New Testament, ਦੋਸ਼ ਲਾਉਣ ਵਾਲਾ (B, R); lampstand ਸ਼ਮਾਦਾਨ;
   the stone of tin ਕਲੀ ਦਾ ਪੱਥਰ (L), ਸਾਹਲ (B, R); sons of fresh oil ਤਾਜ਼ੇ ਤੇਲ
   ਦੇ ਪੁੱਤਰ (L), ਮਸਹ ਕੀਤੇ ਹੋਏ (B, R); scroll ਪੱਤਰੀ; ephah ਏਫਾਹ (L), ਟੋਕਰੀ
   (B, R); stork ਲਮਢੀਂਗ; bronze ਪਿੱਤਲ; crown ਤਾਜ.
