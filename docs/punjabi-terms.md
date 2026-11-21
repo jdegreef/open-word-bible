@@ -540,3 +540,16 @@ People and places: ਤਿਮੋਥਿਉਸ, ਲੋਇਸ, ਯੂਨੀਕੇ, �
   offering ਪੀਣ ਦੀ ਭੇਟ; the good fight ਚੰਗੀ ਲੜਾਈ (L), ਚੰਗਾ ਮੁਕਾਬਲਾ (B).
 - Greetings ਸਲਾਮ ਆਖਣਾ at every level; avoid greetings tied to one faith
   community.
+
+### Philippians
+
+People and places: ਤਿਮੋਥਿਉਸ, ਇਪਫ਼ਰੋਦੀਤੁਸ, ਯੂਓਦਿਯਾ, ਸੁੰਤੁਖੇ, ਕਲੇਮੰਸ,
+ਕੈਸਰ, ਬਿਨਯਾਮੀਨ; ਫ਼ਿਲਿੱਪੈ, ਮਕਦੂਨਿਯਾ, ਥੱਸਲੁਨੀਕਾ.
+
+- Form (*morphē*, 2:6-7) ਰੂਪ, kept apart from image (*eikōn*) ਸਰੂਪ; slave
+  ਦਾਸ; the hymn of 2:6-11 is set as poetry with `\q` lines.
+- Their god is the belly (3:19) ਦੇਵਤਾ; circumcision ਸੁੰਨਤ, and the
+  mutilation of 3:2 ਅੰਗ-ਵੱਢ, keeping Paul's wordplay visible.
+- Citizenship (3:20) ਨਾਗਰਿਕਤਾ; Pharisee ਫ਼ਰੀਸੀ.
+- Paul says ਤੁਸੀਂ to the church, ਤੂੰ to the loyal yokefellow (4:3, ਸਾਥੀ).
+- Caesar's household (4:22) ਕੈਸਰ ਦਾ ਘਰਾਣਾ (L, B), ਮਹਿਲ (R); greetings ਸਲਾਮ, as 2 Timothy.
